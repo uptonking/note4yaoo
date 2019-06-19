@@ -1,0 +1,101 @@
+---
+title: note-dev-pc
+created: '2019-06-09T05:28:24.696Z'
+modified: '2019-06-11T10:37:07.239Z'
+---
+
+# note-dev-pc
+
+## Features
+- svg/canvas支持
+- webgl支持
+- 视频/音频播放
+- 截图
+- 输入法切换
+- 获取焦点
+- 鼠标悬停提示
+
+## dev
+
+- OSR渲染模式 Off Screen Rendering
+    - 创建真窗口，将整个页面渲染到一张位图上面
+    - 可以通过osr模式来进行视频录像
+- 在swing组件中显示javafx组件： 通过 **JFXPanel** 来实现
+- 在javafx组件中显示swing组件： 通过 **SwingNode** 来实现
+
+
+## javafx / swing / awt
+
+- AWT/Swing are used for desktop Java apps or applets. They both require JVM to run.
+- GWT is used to translate Java code to Javascript. This only runs on Javascript engines, i.e. browser.
+- AWT是一个非常简单的具有有限GUI组件、布局管理器和事件的工具包
+- Swing是在AWT组件基础上构建的，Swing使用了AWT的事件模型和支持类
+- awt优点
+    - part of java, stable
+    - 组件线程安全
+- awt缺点
+    - 有些经常使用的组件，例如表、树、进度条等，都没有提供
+- swing优点
+    - part of java, stable
+    - cross platform
+    - The integration of Swing components within JavaFX is easier.
+- swing缺点
+    - 组件在不同平台上行为不一致
+    - heavy components (native/awt) hide swing components
+    - Swing 无法充分利用硬件 GUI 加速器和专用主机 GUI 操作的优点
+    - swing组件不是线程安全的
+- swt优点
+    - has an integrated awt/swt bridge to allow use of awt and swing components
+- swt缺点
+    - requires native libraries for each supported system
+    - 不同平台可能某些行为不支持
+    - 使用SWT只能自顶向下地构建GUI。因此，如果没有父容器，子控件也就不存在了
+    - SWT组件也不是线程安全的
+    - SWT 和 JFace 并不是 Java 技术的标准配置
+
+
+## Webview
+
+### Java Chromium Embedded Framework (JCEF) 
+- CEF(Chromium Embedded Framework)，是基于Google Chromium项目的开源WebBrowser控件，支持Windows, Linux, Mac平台。除了提供C/C++接口外，也有其他语言的移植版。
+- CEF优点
+    - 可以使用最新的html5特性来制作UI，并显示在PC端
+    - OSR离屏渲染
+- CEF缺点
+    - Chrome的缓存设计成只能有一个进程读写，可能导致同一文件被下载多次
+    - osr对gpu加速、css 3d的支持有限
+    - cef体积较大
+- jcef works only with AWT/Swing, not javafx. (**jcef -> SwingNode -> JavaFX** no)
+- but you can embed JavaFX components in Swing using JFXPane(**jcef -> SwingNode JavaFX -> SwingPanel** yes)
+- With JCEF-based projects you'd have to think about supported platforms. There're different variants of natives and platform-specific problems,
+- JCEF into JavaFX
+    - https://github.com/dzikoysk/Pandomium/issues/8
+    - https://bitbucket.org/chromiumembedded/java-cef/issues/163/provide-javafx-node-for-jcef
+    - what are the plans to support JCEF as a JavaFX node? NO.
+
+
+### JavaFX Webview
+- Oracle created JavaFX WebView component — its own wrapper for the open source WebKit engine. By default WebKit doesn't support web page rendering. In order to render and display HTML content Oracle had to write its own renderer using Java Graphics 2D API.
+- One of the disadvantages of this approach is that some modern web pages might not be displayed correctly in WebView because the mentioned renderer does not always support the latest web standards and CSS/JavaScript/HTML frameworks. WebView in JavaFX has not been updated for years.
+
+### JxBrowser 
+- Unlike JavaFX, JxBrowser is based on Chromium engine, which is also based on WebKit, but provides its own renderer implementation. With Chromium engine JxBrowser does not have to render web pages using Java Graphics 2D API. 
+- JxBrowser API provides many more features comparing to JavaFX WebView API. To name just a few of the popular:
+    - Intercepting HTTP request/response headers,
+    - Handling SSL Certificates and errors,
+    - Proxy, Basic, Digest, and NTLM authentication,
+    - Geolocation,
+    - Flash and PDF Viewer support,
+    - Chromium remote debugging port support, etc.
+
+
+## electron
+- based on Node.js and Chromium 
+    - In Electron, Node.js and Chromium share a single V8 instance
+    - Electron uses Chromium's rendering library rather than all of Chromium. This makes it easier to upgrade Chromium but also means some browser features found in Google Chrome do not exist in Electron.
+- showcase
+    - Atom Editor
+
+## qt
+
+## native
