@@ -1,16 +1,16 @@
 ---
-title: note-cs
+title: log-cs
 created: '2019-04-22T03:42:22.447Z'
-modified: '2019-06-09T06:06:25.310Z'
+modified: '2019-07-03T06:27:15.609Z'
+tags: [log/cs]
 ---
 
-# note-cs
+# log-cs
 
 ## 开源协议
 
 ### GPL
 GPL明确规定，任何源码的衍生产品，如果对外发布，都必须保持同样的许可证。这就是说，任何人只要发布MySQL的修改版本，他就必须公开源码，并且同意他人可以自由地复制和分发。
-
 
 
 ## java中InputStream实例化时，文件是否已经读完了？
@@ -133,7 +133,17 @@ JavaScript Runtime Used by WebView and JavaFX applications
 - `<dependency>`的type也可以为bundle
 
 ## JPMS  
-- Java Platform Module System (JSR 376)，也就是Jigsaw 项目   
+- Java Platform Module System (JSR 376)，也就是Jigsaw项目   
+
+## SAX解析XML方法执行顺序
+1. startDocument()：开始处理文档；
+2. startElement(String uri, String localName, String qName, Attributes attributes)：处理元素的开始；
+3. characters(char[] ch, int start, int length)：用来读取文本内容；
+4. endElement(String uri, String localName, String qName)：元素处理结束；
+5. endDocument()：文档处理结束。  
+- 在开始处理标签后，如`<books>`或`</title>`后，会立即调用一次characters()方法，并且在ide里面debug时无法直接追踪  
+- 若两个xml标签之间无间隔，则不会调用characters()方法，如`<title>aa</title><author>bb</author>`
+
 
 ## xml的生成
 

@@ -1,7 +1,8 @@
 ---
 title: play-music
 created: '2019-06-09T05:39:37.052Z'
-modified: '2019-06-09T08:36:09.515Z'
+modified: '2019-07-03T06:35:40.587Z'
+tags: [play/music]
 ---
 
 # play-music
@@ -9,12 +10,14 @@ modified: '2019-06-09T08:36:09.515Z'
 ## soundhound
 
 
-## Jolin
+## beloved singers 
 
-## JJ Lin
+### Jolin/Wangju
 
-## Britney Spears
+### JJ Lin/Huachenyu
 
-## Charlie Puth
+## Britney Spears/Iggy
+
+## Linkin Park/Charlie Puth
 
 

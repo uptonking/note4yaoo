@@ -1,7 +1,8 @@
 ---
 title: note-lang-python
 created: '2019-06-09T05:36:34.221Z'
-modified: '2019-06-09T05:36:50.891Z'
+modified: '2019-07-03T05:36:04.432Z'
+tags: [lang/python]
 ---
 
 # note-lang-python

@@ -1,7 +1,8 @@
 ---
 title: note-working-xp
 created: '2019-06-18T13:35:51.119Z'
-modified: '2019-06-18T13:39:05.012Z'
+modified: '2019-07-03T05:26:10.324Z'
+tags: [wanted]
 ---
 
 # note-working-xp

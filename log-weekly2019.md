@@ -1,7 +1,8 @@
 ---
 title: log-weekly2019
 created: '2019-06-17T01:29:37.793Z'
-modified: '2019-06-19T09:08:57.815Z'
+modified: '2019-07-03T06:26:49.941Z'
+tags: [log/weekly]
 ---
 
 # log-weekly2019
@@ -19,9 +20,9 @@ modified: '2019-06-19T09:08:57.815Z'
     - 解决工作任务，积累技术...
 
 ## w0617-0623
--[ ] refactor excelbox
--[ ] read/write excel by sax
--[ ] datable-backend vo for datable-frontend
+-[ ] 未完成-refactor excelbox w
+-[ ] 未开始-read/write excel by sax
+-[ ] 未开始-datable-backend vo for datable-frontend
 
 ## w0610-0616
 -[x] jcef demo

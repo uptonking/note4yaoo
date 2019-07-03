@@ -1,10 +1,21 @@
 ---
 title: log-dev
 created: '2019-06-09T15:54:12.063Z'
-modified: '2019-06-17T02:37:01.404Z'
+modified: '2019-07-03T05:37:20.584Z'
+tags: [log/dev]
 ---
 
 # log-dev
+
+
+- 监听器的使用    
+    - 将业务逻辑系统用事件驱动方式拆分，既能使代码逻辑更清晰，又能自主掌控逻辑的同步和异步执行
+    - 在业务中很多场景都可以比喻为事件，比如用户注册，可能要求注册之后发送验证信息，或者创建订单之后需要发送订单详情邮件之类的，还有就是批量处理时，可以拆成一个批量输入命令，然后触发一个事件，事件处理一个任务，这个事件触发也可以在接口或者其它地方触发，但是事件监听是同一套，不用做任何修改，如果一块逻辑已经过时，那直接去掉监听即可，代码上可能只需要修改一行即可。
+
+- DNS_PROBE_FINISHED_NXDOMAIN
+
+-  Project 'com.datable:hello-poi:1.0.0' is duplicated in the reactor
+原因是父pom.xml指定了多个作为子module，某一个子module 的pom又指定了父 或者 同级 作为自己的子module，导致出现冲突
 
 - 切换jdk版本
    - update-java-alternatives --list

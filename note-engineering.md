@@ -1,7 +1,8 @@
 ---
 title: note-engineering
 created: '2019-06-18T09:56:43.623Z'
-modified: '2019-06-19T07:17:55.004Z'
+modified: '2019-07-03T05:25:04.524Z'
+tags: [engineering]
 ---
 
 # note-engineering   

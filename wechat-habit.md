@@ -1,7 +1,8 @@
 ---
 title: wechat-habit
 created: '2019-06-04T15:02:56.235Z'
-modified: '2019-06-09T05:35:43.170Z'
+modified: '2019-07-03T05:36:31.890Z'
+tags: [yaoo/habit]
 ---
 
 # wechat-habit
