@@ -1,7 +1,7 @@
 ---
 title: note-dev-mobile
 created: '2019-06-09T05:37:46.916Z'
-modified: '2019-07-03T05:38:09.602Z'
+modified: '2019-08-02T10:19:01.613Z'
 tags: [dev/mobile]
 ---
 
@@ -12,7 +12,6 @@ tags: [dev/mobile]
     - hbuilder/apicloud
     - 考虑跨平台是否需要一致的ui与功能，如ios刘海屏、支付功能
     - 考虑同时维护多套移动端代码的成本，后台业务逻辑可通用
-
 
 ## features
 - 跨平台一致的ui体验

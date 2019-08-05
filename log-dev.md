@@ -1,16 +1,28 @@
 ---
 title: log-dev
 created: '2019-06-09T15:54:12.063Z'
-modified: '2019-07-03T05:37:20.584Z'
+modified: '2019-07-31T08:14:38.414Z'
 tags: [log/dev]
 ---
 
 # log-dev
 
+## summary
+- 不要觉得直接使用别人的例子就方便，15年的project到19年就方法不一致了，自己编译更稳妥、更透彻
 
-- 监听器的使用    
-    - 将业务逻辑系统用事件驱动方式拆分，既能使代码逻辑更清晰，又能自主掌控逻辑的同步和异步执行
-    - 在业务中很多场景都可以比喻为事件，比如用户注册，可能要求注册之后发送验证信息，或者创建订单之后需要发送订单详情邮件之类的，还有就是批量处理时，可以拆成一个批量输入命令，然后触发一个事件，事件处理一个任务，这个事件触发也可以在接口或者其它地方触发，但是事件监听是同一套，不用做任何修改，如果一块逻辑已经过时，那直接去掉监听即可，代码上可能只需要修改一行即可。
+## pieces
+
+- 阿里飞冰 ice和ant design 区别
+    - ice是个项目开发与管理平台，生成的项目的确是没有交互和业务逻辑，这些需要手工编码完成
+    - ice前端使用的是阿里内部的fusion库，而不是antd
+    - 在ice体系里，组件不受限，既可以用ice提供的组件也可以使用ant的组件，还有更多社区组件
+    - 飞冰面向设计师推出iceland，能直接从设计到代码
+    - 面向开发者端我们提供了iceworks工具，iceworks是与物料体系打通的关键，所有物料资源，包括iceland上设计师生产的，都会无缝打通
+
+- npm install, Maximum call stack size exceeded
+    - verbose stack RangeError: Maximum call stack size exceeded 185 verbose stack     at RegExp.test (<anonymous>)
+    - solution: delete `package-lock.json`
+
 
 - DNS_PROBE_FINISHED_NXDOMAIN
 

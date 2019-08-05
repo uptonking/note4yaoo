@@ -1,7 +1,7 @@
 ---
 title: note-lang-java
 created: '2019-06-09T05:35:12.366Z'
-modified: '2019-07-03T06:37:09.532Z'
+modified: '2019-07-29T10:02:10.891Z'
 tags: [lang/java]
 ---
 
@@ -25,8 +25,6 @@ tags: [lang/java]
     - 或可以显式写出模型类的无参构造方法，若还存在其他构造方法则必须写出无参构造方法
 - 使用java命令执行jar包时，不能同时使用 -cp 和 -jar
     - `-jar` the JAR file is the source of all user classes, and other user class path settings are ignored.
-
-
 
 ## java basics
 
@@ -152,6 +150,27 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 - 在类库中经常会有类必须拥有一个默认构造器的限制。Objenesis通过绕开对象实例构造器来克服这个限制。
 - 实例化一个对象而不调用构造器是一个特殊的任务，然而在一些特定的场合是有用的，如：序列化，远程调用和持久化、代理，AOP库和Mock对象、容器框架
 
+### game
+- java游戏开发依赖于图形库
+- common
+    - https://jogamp.org/
+- 2D
+    - https://github.com/libgdx/libgdx
+- 3D
+    - https://github.com/jMonkeyEngine/jmonkeyengine
+    - https://github.com/benoit-dumas/OpenRTS
+- fxgl
+    - https://github.com/AlmasB/FXGL
+    - 支持2D，支持Java和Kotlin，MIT
+    - 提供示例 Win/Mac/Linux/Android 5.0+(Sample)/iOS(alpha)/Web(Sample)
+    - 0.5.4版本支持java8-10, 11.3版本支持java11，之后作者只会开发维护11+的版本，目前11版功能不如0.5.4全面
+- misc
+    - https://github.com/LWJGL/lwjgl3
+    - xmage 万智牌，类似 magic duels
+
+### 图形开发
+- JFC（全称为Java Foundation Classes，中文译为Java基础类）是一个图形框架
+- JFC主要是由Abstract Window Toolkit（AWT）、Swing以及Java 2D三者所构成，若将这些一同搭配运用，则用Java程式语言撰写开发成的使用者介面，无论转移到Windows、Mac OS X或Linux等各种不同的作业平台上，都能保有一致性的图像呈现。
 
 ## JDK
 
@@ -183,6 +202,26 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 
 #### Java SE 12 - 20190319
 
+### Alibaba Dragonwell JDK
+- Dragonwell是阿里巴巴公司发布并长期支持的一款JDK发行版，它基于OpenJDK项目，通过Java TCK测试，并包含了一些在阿里内部广泛使用的附加特性
+- 目前Dragonwell仅支持Linux x86-64操作系统(201907)
+- 目前Dragonwell仅支持JDK8版本
+
+#### 定制特性
+- JWarmup
+    - 根据前一次程序运行的情况，记录下热点方法、类编译顺序等信息，在应用下一次启动的时候积极加载相关的类，并积极编译相关的方法，进而应用启动后可以直接运行编译好的Java代码(C2编译）。
+    - 典型用法
+        - 在Beta灰度环境，进行应用压测，记录下热点方法、类编译顺序等信息
+        - 在Production环境，使用提前记录的profiling data提前编译热点方法
+- Java Flight Recorder (JFR) 
+    - 收集Java应用运行过程中的诊断及性能数据的工具
+    - 在使用默认配置的情况下，JFR带来的额外开销将小于2%
+    - JMC可以用于分析JFR产生的事件记录
+- Serviceability
+    - 迷你Heapdump支持 
+        - Alibaba Dragonwell允许您在使用jmap工具生成heapdump的时候忽略掉所有原始类型数组的内容，只dump出对象引用等信息，从而缩小生成的Heapdump文件大小。使用时，只需要给-dump子命令添加mini参数即可。
+    - `-XX:+PrintYoungGenHistoAfterParNewGC`这个参数会打印在一次ParNew GC之后的young区对象的histogram。
+    - `-XX:+PrintGCRootsTraceTime`这个参数会打印一次ParNew GC的具体耗时，类似于G1的gclog显示，这个参数主要用于用户排查时间较长的gc暂停时间
 
 ### OpenJDK
 
@@ -204,8 +243,9 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
         - https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html
 
 #### JDK Release Notes 
-    - https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html
-    - https://www.oracle.com/technetwork/java/javase/cpu-psu-explained-2331472.html
+- https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html
+- https://www.oracle.com/technetwork/java/javase/cpu-psu-explained-2331472.html
+
 #### Oracle Java SE Support Roadmap
 - java 11 is a LTS version. 2018-2026.
 - https://www.oracle.com/technetwork/java/java-se-support-roadmap.html
@@ -229,4 +269,19 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
     - https://www.oracle.com/downloads/licenses/javase-license1.html
     - http://openjdk.java.net/faq/
     - http://aleung.github.io/blog/2017/01/06/Use-OpenJDK-in-proprietary-software/
+
+### 其他JDK
+- IBM J9 JDK, for AIX, Linux, Windows, MVS, OS/400, Pocket PC, z/OS
+    - IBM于201709开源OpenJ9并托管给Eclipse基金会
+    - https://www.infoq.cn/article/2017/09/IBM-JVM-OpenJ9-Eclipse
+- Azul Zing JVM，since 2010, 实现类C4(Continuously Concurrent Compacting Collector)GC算法
+    - Azul distributes and supports Zulu and Zulu Enterprise, a certified binary build of OpenJDK since 201309.
+- Apache Harmony
+    - 一个兼容Java5的JDK实现，始于2005，于2011年终止研发
+    - Harmony类库于2007年底被Google Android采用为其类库
+    - Android平台所使用的虚拟机Dalvik(<=4.4)和ART(>4.4)使用了Harmony部份的子集
+    - Android 7.0 Nougat replaced Harmony with OpenJDK in 2016
+- jdk讨论参考
+    - https://www.zhihu.com/question/275665265
+
 

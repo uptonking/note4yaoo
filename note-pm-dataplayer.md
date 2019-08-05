@@ -1,7 +1,7 @@
 ---
 title: note-pm-dataplayer
 created: '2019-05-15T03:31:43.740Z'
-modified: '2019-07-03T05:25:53.295Z'
+modified: '2019-08-05T12:16:50.166Z'
 tags: [pm, yaoo]
 ---
 
@@ -11,11 +11,21 @@ tags: [pm, yaoo]
 
 ## todo
 
+## design
+- dashboard = list + chart
+
 ## 1.datable
 - excelbox + handsontable + swing/javafx/java-cef
 
+### 功能设计
+- 表格元数据类
+    - 可选择默认显示3表头+2行数据或者表格缩略图
+- 表格操作类
+
 ### extension
 - 投票活动
+- 维基百科表格内容提取导出
+- toc内容提取导出
 
 ### feature
 - wps sheet复制一块区域的数据粘贴时，没有样式
@@ -42,9 +52,6 @@ tags: [pm, yaoo]
 - 榜单类数据容易引战的问题
     - 关闭评论？
 
-#### 产品设计
-- 展示类功能导出ppt困难，导出pdf较容易
-
 ##### 文档类型产品
 - 基本功能：标题、列表、代码块、图片、链接、字体、表格、函数、toc
 - Markdown (github 56,333 results)
@@ -68,6 +75,4 @@ tags: [pm, yaoo]
     - https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
     - 功能：基本功能、表格、注释、目录索引、脚注、替换、UI Macros
 
-#### 关于产品、团队 & 资金
-- https://www.zhihu.com/question/321865618/answer/706964460
 

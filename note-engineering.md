@@ -1,12 +1,15 @@
 ---
 title: note-engineering
 created: '2019-06-18T09:56:43.623Z'
-modified: '2019-07-03T05:25:04.524Z'
+modified: '2019-08-02T10:19:29.844Z'
 tags: [engineering]
 ---
 
 # note-engineering   
-软件工程与架构  
+
+## dev-xp
+- 当一个功能涉及的参数过多时，可以考虑不直接传递各个参数，而传递包含所有参数的对象
+    - 如easyexcel的处理方式，读写参数包括文件类型、sheet的头尾行列数、bean模型类
 
 ## refactor
 

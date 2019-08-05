@@ -1,13 +1,27 @@
 ---
 title: log-news
 created: '2019-06-24T11:19:00.127Z'
-modified: '2019-07-03T05:39:11.642Z'
+modified: '2019-08-03T10:01:41.269Z'
 tags: [log/news]
 ---
 
 # log-news
 
-## 20190624
-- 微软内部禁用 Slack 鼓励使用自家 Microsoft Teams
-- Raspberry Pi 4 Model B 发布，四个 1.5GHz Cortex A72 CPU 核心，内存可选 1GB、2GB 和 4GB DDR4，桌面性能堪比入门级的 x86 PC 系统，为支持 Raspberry Pi 4，其系统基于即将发布的 Debian 10 Buster 打造，包括Chromium 74 Web 浏览器
-
+- 201908-world-即将取消传统邮政编码，新型邮政编码可能基于geohash算法
+    - 新型邮政编码系统兼具传统邮政编码和快递公司三段码的双重基因，它们可以并存
+- 201908-app-字节跳动宣布要做全网搜索
+    - 互联网封闭包括UGC屏蔽和搜索引擎屏蔽
+    - 搜索广告是搜索行为决定出现的广告，信息流广告是平台猜你喜欢的广告，前者更精准
+- 201907-world-Github开始限制受美国贸易制裁国家的开发者，美国也没那么自由
+- 201907-world-韩国不结婚运动，政府安排相亲遭厌恶，女生认为结婚后母亲奶奶地位低
+- 201907-app-Google称已终止审查版中国搜索引擎项目蜻蜓计划Project Dragonfly
+- 201906-app-微软内部禁用Slack鼓励使用自家Microsoft Teams
+- 201906-iot-Raspberry Pi 4 Model B发布，四个CPU核心，内存可选包括4GB DDR4
+- 201906-app-又拍云图床停服,201904新浪微博图床开始防盗链
+- 201903-world-英国在2016年6月举办脱离欧盟公投并获52%票数支持,2019正式脱欧
+- 201901-bug-拼多多漏洞，100元无门槛优惠券，官方声明实际损失低于千万
+- 201807-app-fgmt推出开源数据传输项目Data Transfer Project(DTP)
+    - apple于2019加入DTP
+    - DTP也是一直规避垄断的方式
+- 201706-app-头条问答正式更名悟空问答
+    - 201807头条研发团队整体转岗微头条，悟空问答不再补贴答主
