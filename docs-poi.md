@@ -1,13 +1,13 @@
 ---
+tags: [docs/poi]
 title: docs-poi
 created: '2019-08-01T16:03:46.386Z'
-modified: '2019-08-02T10:16:53.521Z'
-tags: [docs/poi]
+modified: '2019-08-22T10:13:37.088Z'
 ---
 
 # docs-poi 
 
-## dev tips
+## dev-tips
 
 - SS Usermodel同时支持HSSF和XSSF，老的HSSF Usermodel不推荐使用，org.apache.poi.ss.usermodel 基于 org.apache.poi.hssf.usermodel，
 - Sheet.getLastRowNum(): 获取sheet中最后一行数据的索引，包含，基于0开始，一般是行数-1

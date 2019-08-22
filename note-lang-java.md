@@ -1,11 +1,21 @@
 ---
+tags: [lang/java]
 title: note-lang-java
 created: '2019-06-09T05:35:12.366Z'
-modified: '2019-07-29T10:02:10.891Z'
-tags: [lang/java]
+modified: '2019-08-22T00:54:17.505Z'
 ---
 
 # note-lang-java
+
+## 开发通用问题
+- 搜索
+- 缓存
+- 消息
+- 日志
+
+## tips
+- all in java as backend 
+- 若要专注于提高渲染、存储、计算等方面的性能，请参考cpp
 
 ## dev
 

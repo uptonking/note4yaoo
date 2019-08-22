@@ -1,17 +1,34 @@
 ---
+tags: [lang/js]
 title: note-lang-js
 created: '2019-06-09T05:36:13.734Z'
-modified: '2019-08-03T06:22:54.350Z'
-tags: [lang/js]
+modified: '2019-08-21T14:09:38.681Z'
 ---
 
 # note-lang-js
 
 ## 前端框架通用问题
-- 前端国际化
-- 主题切换
-- css样式处理
+- 前端国际化/切换语言翻译
+    - react-intl
+- 切换主题
+    - react-with-styles
+- css解决方案
+    - css-in-js
 - 静态资源处理
+
+## tips
+- all in js as frontend
+
+## js guide
+- https://github.com/airbnb/javascript
+
+## faq
+- js虚拟机和jvm有什么关系
+    - JS的虚拟机有JSC、spidermonkey、v8等，跟JVM没有什么直接的联系
+    - V8的team leader是Lars Bak，jvm的Hotspot正是Lars Bak领导开发的
+    - 在V8出现之前，JS引擎的技术比较原始，正是Lars Bak率先将JVM中先进的技术带到了JS引擎中的，如分代式GC、机器码直接生成等
+
+
 
 ## mdn docs
 
@@ -543,3 +560,427 @@ const Header = (props) => {
         - 使用Typescript
 
 
+## booking-JavaScript语言精粹.修订版_Douglas Crockford_2012
+- 为什么要使用javascript
+    - 因为没有其他选择，js是唯一一种所有浏览器都支持的语言
+    - 尽管js有很多缺点，但js也有很多优秀的设计
+- js优点
+    - 自由的弱类型、动态对象、对象字面量表示法
+- js缺点
+    - 基于全局变量的编程模型
+- js数据类型
+    - NaN是一个数值，它表示一个不能产生正常结果的运算结果，NaN不等于任何值，包括它自己
+    - js字符串中字符使用的是16位的Unicode
+    - js没有字符类型，要表示一个字符，只需创建仅包含一个字符的字符串即可
+    - 字符串是不可变的，通过+号实际是创建了一个新字符串
+    - 两个包含着完全相同的字符且字符顺序也相同的字符串被认为是相同的字符串
+    - `'c'+'a'+'t'==='cat'`返回true
+    - type of运算符检查属性类型返回的值就是js数据类型，6种
+        - string
+        - number
+        - boolean
+        - undefined
+        - object
+        - function
+- js运算符与表达式
+    - 每个`<script>`标签提供一个被编译且立即执行的编译单元，因为缺少链接器，js把它们一起抛到一个公共的全局命名空间中
+    - 能配合break使用的语句：switch、for、while、do
+    - 代码块是包在一对花括号中的一组语句，不像许多其他语言，js中的代码块不会创建新的作用域，因此变量应该被定义在函数的头部，而不是在代码块中
+    - if表达式为假的情况
+        - false
+        - null
+        - undefined
+        - 空白字符串
+        - 数字0
+        - 数字NaN
+        - 其他情况表达式的值都为true，包括true、字符串"false"、所有对象
+    - for in语句会遍历对象的所有属性名
+        - 通常你需要检测obj.hasOwnProperty(var)来确定这个属性名是该对象的成员， 还是来自于原型链
+    - return语句会导致从函数中返回
+        - 如果没有指定返回表达式，那么返回值是undefined
+    - 运算符优先级
+        - 属性提取运算符.[]与函数调用运算符()优先级最高
+        - delete/new/type of/! 一元运算符
+        - 乘除取余
+        - 加减
+        - 比较
+        - 逻辑与&& 高于 逻辑或||
+        - ?:三元运算符
+- js对象
+    - js的简单数据类型包括number、string、boolean 、null、undefined，**其他所有的值都是对象**
+    - number、string、boolean貌似对象，因为它们拥有方法，但它们是不可变的。js的对象是**可变**的键控集合 (keyed collections) ，比如数组是对象，函数是对象，正则表达式也是对象
+    - 对象是属性的容器，其中每个属性都拥有名字和值
+        - 属性的名字可以是**包括空字符串**在内的任意字符串
+        - 属性的值可以是除undefined值之外的任何值
+    - js的对象是无类型( class-free )的。它对新属性的名字和属性的值没有限制。对象可以包含其他对象，所以它们可以容易地表示成树状或网状结构
+    - js包含一种原型链的特性，允许对象继承另一个对象的属性，正确地使用它能减少对象初始化时消耗的时间和内存
+- 对象字面量
+    - 提供了一种非常方便地创建新对象的表示法，一个对象字面量就是包围在一对花括号中的零或多个键值对
+    - 在对象字面量中，如果属性名是一个合法的标识符且不是保留字，则并不强制要求用引号括住属性名，所以用引号括住"first-name"是必需的，但是否括住first_name则是可选的
+    - 从对象取属性值的方式包括obj["attrName"]和obj.attrName
+        - []的方式属性名不能使保留字
+        - 推荐使用点号运算符取值
+        - 若属性名不存在，则返回undefined
+        - undefined可通过&&处理
+    - 给对象添加属性值的方式也是2种
+        - 若属性存在，则值覆盖
+        - 若属性不存在，则添加
+    - 对象传递传的是引用
+    - 全局变量削弱了程序的灵活性和健壮性，推荐为应用只创建唯一的全局变量`var v={};`
+        - 将全局资源都作为这个全局变量的属性，以减少冲突可能
+        - 另一种减少全局污染的方法是使用闭包
+- prototype 原型
+    - 每个对象都连接到一个原型对象，并且它可以从中继承属性
+    - **所有通过对象字面量创建的对象都连接到原型对象Object.prototype**
+    - 当你创建一个新对象时，你可以选择某个对象作为它的原型
+    - 原型连接在更新时是不起作用的，当我们对某个对象做出改变时，不会触及该对象的原型
+    - 原型连接只有在检索值的时候才被用到
+        - 如果我们尝试去获取对象的某个属性值，但该对象没有此属性名，那么js会试着从原型对象中获取属性值
+        - 如果那个原型对象也没有该属性，那么再从它的原型中寻找，依此类推，直到该过程最后到达终点Object.prototype
+        - 如果想要的属性完全不存在于原型链中，那么结果就是undefined值
+        - 这个过程称为委托
+    - 原型关系是一种动态的关系，如果我们添加一个新的属性到原型中，该属性会立即对所有基于该原型创建的对象可见
+    - 清除无用属性值的方法
+        - 通过type of检查属性值类型，然后手动去掉某种类型的属性，比如去掉function
+        - 通过obj.hasOwnProperty('attrN')确定属性值是否存在，此方法不检查原型链
+    - for in语句会遍历对象的所有属性
+        - 包括原型链中的属性，包括函数类型的属性
+        - 属性名遍历的顺序不确定
+        - 先取出所有属性名，再通过for语句+i次序遍历可以得到一致的顺序 ///to-test
+        - for in语句用在原型上表现很糟糕 ///to-test
+    - 通过delete运算符可以删除属性，不会删除原型链上游的同名属性
+- 函数
+    - 函数的作用
+        - 代码复用、功能复用
+        - 信息隐藏
+        - 组合调用
+    - js的函数也是对象
+        - **函数对象都连接到原型对象Function.prototype**
+        - Function.prototype该原型对象本身连接到Object.prototype
+    - 每个函数在创建时会附加两个隐藏属性：函数上下文和实现函数行为的代码
+    - **每个函数对象在创建时也会有一个prototype属性**，它的值是一个拥有constructor属性且值即为该函数的对象，这和隐藏连接到Function.prototype完全不同
+        - 类似 `this.prototype = {constructor: this};`
+    - 因为函数是对象，所以它们可以像任何其他的值一样被使用
+        - 函数可以保存在变量、对象 和数组中
+        - 函数可以被当做参数传递给其他函数，函数也可以再返回函数
+        - 因为函数是对象，所以函数可以拥有方法
+    - 柯里化允许我们把函数与传递给它的参数相结合，产生出一个新的函数
+- 函数对象通过函数字面量创建 
+    - `var fName = function(param1){ }`
+    - 函数字面量包括4部分
+        1. 保留字function
+        2. 函数名，可省略(如上)，省略名称后为匿名函数
+        3. 参数
+        4. 函数主体语句{ // }
+    - 函数可以被定义在函数中
+    - 通过函数字面量创建的函数对象包含一个连到外部上下文的连接，这被称为闭包(closure)
+- 函数调用
+    - 调用一个函数会暂停当前函数的执行，传递控制权和参数给新函数
+    - 除了声明时定义的形式参数，每个函数还接收两个附加的参数: this和arguments
+    - 参数this在面向对象编程中非常重要，它的值取决于调用的模式，在js中一共有4种调用模式：方法/函数/构造器/apply调用模式
+    - this到对象的绑定发生在调用的时候
+    - 若实参比形参多，多余的实参会被忽略
+    - 若实参比形参少，不足的参数换初始化为undefined
+    - 对参数值不会进行类型检查
+    - 函数可以通过arguments问所有它被调用时传递给它的参数列表，包括那些没有被分配给函数声明时定义的形式参数的多余参数
+        - 因为js语言设计的缺陷，arguments对象并不是一个真正的数组
+        - arguments对象拥有一个length属性，但它没有任何数组的方法
+        - 示例(不推荐这样使用)
+        ```
+        var sum = function () { 
+            var i , sum = 0; 
+            for (i = 0; i < arguments.length; i += 1) {
+              sum += arguments[i]; 
+            } 
+            return sum;
+        };
+        console.log(sum(4 , 8 , 15 , 16 , 23 , 42));   // 108
+        ```
+    - 方法调用模式
+        - 当一个函数被保存为对象的一个属性肘，我们称它为一个方法
+        - 一个方站被调用肘， this被绑定到该对象
+        - 典型使用： 点号和[]取属性
+        - 示例
+        ```
+        var myObject = { 
+            value: 0 ,
+            increment: function (inc) { 
+              this.value += typeof inc === 'number' ? inc : 1;
+            }
+        }；
+        myObject.increment(); 
+        console.log(myObject.value);  // 1
+        myObject.increment(2); 
+        console.log(myObject.value);  // 3
+        ```
+    - 函数调用模式
+        - 当一个函数并非一个对象的属性时，那么它就是被当做一个函数来调用的
+        - 以此模式调用函数时，this被绑定到全局对象
+        - 这个设计的后果就是方法不能利用内部函数来帮助它工作
+        - 示例
+        ```
+        var add = function(x,y){ return x+y; };
+        myObject.double = function () { 
+          var that = this; //解决方法是将外部函数的this保存一份传给内部函数
+          var helper = function () { 
+              that.value = add(that.value , that.value);
+          };
+          helper () ; //以函数的形式调用helper()
+          }；
+        //以方法的形式调用double
+        myObject.double(); 
+        console.log(myObject.value);   // 
+        ```
+    - 构造器调用模式
+        - 如果在一个函数前面带上new来调用，那将会创建一个连接到该函数的prototype属性的新对象，同时this会被绑定到那个新对象上
+        - 一个函数，如果创建的目的就是希望结合new来调用，那它就被称为构造器函数
+            - 按照约定，它们保存在以大写格式命名的变量里
+            - 如果调用构造器函数时没有在前面加上new，可能会发生非常糟糕的事情，既没有编译时警告，也没有运行时警告
+        - 不推荐使用构造器函数
+        - 示例
+        ```
+        //创建一个名为Quo的构造器函数
+        var Quo = function (string) { this.status = string;}
+        //给Quo的所有实例提供一个名为get_status的公共方法
+        Quo.prototype.get_status = function () { return this.status;}
+        var myQuo = new Quo("confused");
+        console.log(myQuo.get_status()); // confused
+        ```
+    - apply调用模式
+        - apply()方法让我们构建一个参数数组传递给调用函数，它也允许我们选择this的值 - apply()接收两个参数，第1个是要绑定给this的值，第2个就是一个参数数组
+        - 示例
+        ```
+        var array = [3 , 4]; 
+        var sum = add.apply(null , array); 
+        console.log(sum);   // 7
+        var statusObject = { status: 'OK' };
+        var status = Quo.prototype.get_status.apply(statusObject);
+        console.log(status); // OK
+        ```
+- 递归函数可以非常高效地操作树形结构
+    - 尾递归是在函数最后执行递归调用语句
+    - 尾递归优化是指将递归替换为循环，js语言未提供尾递归优化
+- 作用域
+    - 作用域控制着变量与参数的可见性及生命周期
+    - 在处理命名冲突和自动内存管理方面很有用
+    - js并不支持块级作用域
+    - js支持函数作用域
+        - 定义在函数中的参数和变量在函数外部是不可见的
+        - 在一个函数内部任何位置定义的变量，在该函数内部任何地方都可见
+    - 最好的做法是在函数体的顶部声明函数中可能用到的所有变量
+    - 要避免在循环中创建函数，它可能只会带来无谓的计算，还会引起棍淆，可以先在循环之外创建一个辅助函数  
+-  闭包
+    - 作用域的好处是内部函数可以访问定义它们的外部函数的参数和变量(除了this和args)
+    - 内部函数比它的外部函数拥有更长的生命周期，闭包的优势
+- 回调
+    - 常用于异步处理
+- 模块
+    - 模块是一个提供接口但隐藏状态与实现的对象
+    - 利用闭包和函数创建模块
+    - 模块一般形式
+        - 模块整体是一个定义了私有变量和函数的函数
+        - 利用闭包创建可以访问私有变量和函数的特权函数
+        - 最后返回这个特权函数，或者把它们保存到一个可访问到的地方
+    - 通过使用模块可以避免使用全局变量
+    - 模块模式通常结合单例模式使用，js的单例就是用对象字面量表示法创建的对象，对象的属性位可以是数值或函数，并且属性值在该对象的生命周期中不会发生变化，通常作为工具为程序其他部分提供功能支持
+- 继承
+    - Java继承优点
+        - 代码重用
+        - 引入了类型系统的规范
+    - js提供了一套更为丰富的代码重用模式，它可以模拟那些基于类的模式
+    - 当采用构造器调用模式，即用new前缀去调用一个函数时，函数执行的方式会被修改
+    - 构造器函数默认首字母大写
+    - 一个更好的备选方案就是根本不使用 new
+    - 基于原型的继承相比基于类的继承在概念上更为简单:一个新对象可以继承一个旧对象的属性
+        - 指明与所基于的基本对象的区别
+    - 使用函数化模块可以复用现有对象的功能，也可以作为一种继承
+- 数组
+    - 一个数组字面量是在一对`[]`中包围零个或多个用逗号分隔的值的表达式
+    - 数组默认的属性名依次是'0’，'1'...
+    - 对于超出范围的属性名，属性值为undefined
+    - 数组继承自Array.prototype，而普通对象继承自Object.prototype
+    - 多数语言要求一个数组的所有元素是相同的类型，但js允许数组包含任意混合类型的值
+    - 每个数组对象有个length属性，js的length无上界，若下标大于当前length，那数组自动扩容
+    - 你可以直接设置length的值，设置更大的length不会给数组分配更多的空间，而把length设小将导致所有下标大于等于新length的属性被删除
+    - 由于js的数组其实就是对象，所以delete运算符可以用来从数组中移除元素
+        - 示例 `delete numbers[2];`，执行后该位置的属性值会变为undefined，仍占位
+        - 若要删除后后面元素都前移，要用 `splice(start,num)`，效率可能不高/to-test
+    - 因为js数组其实就是对象，所以for in 语句可以用来遍历一个数组的所有属性，但无法保证属性的顺序，特别是原型链中有意外属性时，直接使用for循环可避免此问题
+    - 当属性名是小而连续的整数肘，应该使用数组，否则该使用对象
+    - typeof运算符报告数组的类型是object，js没有一个好的机制来区别数组和对象
+    - 可以通过定义自己的函数来区分数组和对象
+        - 示例
+        ```
+        var isArray = function (va1ue) { 
+            return va1ue && 
+                   typeof va1ue === 'object' &&
+                   va1ue.constructor === Array;
+        }
+        ```
+    - Array.prototype提供了操作数组的方法
+    - 因为数组其实就是对象，所以我们可以直接给一个单独的数组添加方法
+        - 直接给数组添加方法时，因为属性名不是整数，所有不会改变数组的length
+    - js的数组通常不会预置值
+        - 如果你用 [] 得到一个新数组，它将是空的
+        - 如果你访问一个不存在的元素，得到的值则是 undefined
+        - js支持元素为数组的数组
+- 正则表达式
+    - js的正则借鉴自Perl
+    - 可处理正则表达式的方法
+        - regexp.exec/.test
+        - string.match/.replace/.search/.split
+    - 在js程序中，正则表达式必须写在一行中
+    - 创建正则表达式
+        - 使用正则表达式字面量，正则表达式字面量被包围在一对斜杠中
+        - 使用构造器方法： new RegExp("字符串表示的规则")，要用双反斜杠
+- Array
+    - arr.concat(item...)  产生一个新数组，包含arr浅复制
+    - arr.join(separator)  将arr构造出一个字符串，用来连接字符串时比+运算符快
+    - arr.pop()  移除arr最后一个元素，并返回该元素
+    - arr.push(item...)  将item添加到arr尾部，返回数组新长度
+    - arr.reverse()  反转arr中元素顺序，返回arr本身
+    - arr.shift()  移除arr中第一个元素，并返回该元素，比pop()慢
+    - arr.slice(start,[end])  对arr中一部分做浅复制，返回新数组，前闭后开
+    - arr.splice(start,delCount,item) 从arr中移除元素并插入item，返回移除元素数组
+    - arr.sort()  对arr所有元素进行排序，不能给数字排序，排序元素默认被视为字符串
+        - 通过将自定义函数传入sort()可实现排序数字数组
+        - js的sort()不具有稳定性，不同浏览器实现方式不同
+    - arr.unshift(item...)  将元素添加到arr头部，返回arr新length
+- Function
+    - func.apply(thisArg,argArray)
+    - 调用func()时指定传入的this和参数
+- Number
+    - number.toFixed(fractionDigits)  转换成十进制形式的字符串，传入小数位数
+- Object
+    - obj.hasOwunProperty(name)  若obj包含name属性，则返回true
+- RegExp
+    - re.exec(string)  匹配正则表达式并返回匹配结果数组
+    - re.test(String)  若匹配存在，则返回true
+- String
+    - str.charAt(pos)  返回在str的pos位置处的字符
+    - str.concat(str2) 连接现有字符串构造一个新字符串
+    - str.indexOf(searchStr,pos)  在str内查找另一个字符串searchStr，返回位置索引
+    - str.match(regexp)  若无g标识，则功能相等于regexp.exec(str)
+    - str.replace(oldVal,newVal)  查找替换，返回一个新字符串
+        - 若oldVal是字符串，则只会替换第一次出现oldVal的地方
+        - 若oldVal是正则表达式且带有g标识，则会替换所有匹配
+        - newVal可以是字符串或函数
+    - str.search(regexp)  类似indexOf
+    - str.slice(start,end) 复制str的一部分来构造一个新的字符串
+    - str.split(sperator,limit)  分割字符串，返回数组
+    - str.substring(start,end)  同slice，但参数不能为负数，推荐使用slice
+- js问题
+    - 全局变量
+    - 没有快捷作用域
+    - +运算符
+        - 都是数字，才会求和，否则作为字符串连接
+    - typeof很多时候判断类型不明确
+        - typeof null // object
+        - typeof NaN  // number
+        - typeof arr  // object
+    - parseInt()，建议总是加上基数，因为以0开头的字符串会作为八进制求值
+    - 浮点数设计有一点缺陷
+        - 0.1+0.2 = 0.3000000000000000000004
+        - 小数中的错误可以通过指定精度来避免
+    - NaN
+        - 它是一个特殊的数值，表示不是一个数字
+        - + 'abc' // NaN
+        - NaN === NaN // false
+        - isNaN(NaN)  // true
+        - isNaN('abc) // true
+        - isNaN('0')  // false
+        - 判断一个值是否是数字推荐使用 isFinite(val)
+    - if中可以作为假的值
+        - false
+        - 0
+        - NaN
+        - '' 空字符串
+        - null
+        - undefined
+    - if中可以作为真的值
+        - '0' 字符串0
+        - [] 空数组
+        - {} 空对象
+    - 相对比较
+        - ==的两个运算数若是不同类型，会先强制转换类型
+        - 推荐使用 ===
+    - eval(str)需要运行编译器，降低程序性能
+    - 推荐使用function表达式，理解函数就是对象
+    - 不推荐使用new
+    - with语句的本意是提供一个访问深层嵌套对象成员的快捷方式，不推荐使用
+
+## 深入理解ES6_Nicholas C. Zakas_2016
+- ES历史
+    - js的标准在1999年发布es3后就未改变过
+    - 2007年由于ajax的流行开始了制定标准es4
+    - 2008年集中精力制定ECMAScript 3.1，也开始计划4
+    - ECMAScript 3.1最终发展成ES5
+    - ES6最终在2015年发布，包含大量新特性
+- 块级绑定
+    - const可用于for-in
+- 字符串
+    - 模板字面量基本语法用反引号`包裹普通字符串
+    - 模板字面量中无需对单引号或双引号进行转义，若要包含反引号需用反斜杠转义
+    - 模板字面量中所有空白符都是字符串的一部分，要注意处理缩进
+    - 模板字面量中的替换位是js表达式，可以轻松嵌入计算、函数调用
+    - 模板字面量本身也是js表达式，可以将模板字面量嵌入另一个模板字面量内部
+    - 模板标签是一个函数，能控制模板字面量的拼接过程
+- 函数
+    - js函数可以接受任意数量的实参，而不用考虑函数声明处形参的数量
+    - 箭头函数自身没有this,arguments,super
+- 对象
+    - 对面字面量重复属性会覆盖
+    - ES6正式将方法定义为：一个拥有 [[HomeObject]] 内部属性的函数，此内部属性指向该方法所属的对象
+- 集合
+    - Set
+        - 无重复值的有序列表
+        - Set不会使用强制类型转换来判断值是否重复，所以可以同时包含数值5与字符串"5"
+        - Set内部Object.is()方法判断是否相等
+        - WeakSet不可迭代，没有forEach()方法和size属性
+    - Map
+        - 键值对的有序列表，键和值多可以是任意类型
+        - key的比较使用的是Object.is()
+        - WeakMap的键必须是对象，内部存储键的弱引用，值无限制
+        - WeakMap是无序列表，键必须是非null的对象
+        - WeakMap的主要用途是关联数据与DOM元素
+        - WeakMap没有forEach(),clear(),size
+- 迭代器与生成器
+    - 可迭代对象包括数组、Set、Map、字符串，都有默认的迭代器
+    - for-of循环会先调用集合对象的Symbol.iterator()方法获取迭代器，然后调用iterator.next()获取value对应的对象
+        - for-of不能用于不可迭代对象、null、undefined
+    - 开发者自定义的对象默认不可迭代
+    - Set获取默认迭代器values()，Map获取默认迭代器entries(),WeakSet/Map无迭代器
+    - 字符串的方括号表示法str[1]作用于码元上，而非字符上，无法正确获取双码元字符
+    - 字符串的默认迭代器默认迭代的是字符，而不是码元 for(let c of str)
+    - HTML规范中规定NodeList带有默认迭代器，表现与数组迭代器一致
+    - 扩展运算符`...`能作用于所有可迭代对象，是创建数组最简单的方法
+- 异步编程
+    - Promise
+    - async await
+
+     
+## js-guide-google
+- 字符串优先使用单引号，方便包含html属性中的双引号
+- 声明常量要使用大写字符, 并用下划线分隔，不用简单地只使用const，IE不支持const
+- 总是使用分号，便于区分语句
+- 不要在块内声明一个函数
+    - ECMAScript只允许在脚本的根语句或函数中声明函数，部分浏览器支持块内
+    - 如果确实需要在块中定义函数, 建议使用函数表达式来初始化变量
+    - 示例
+    ```
+    if (x) { 
+        var foo = function() {}
+    }
+    ```
+- 不要使用封装类型，如new Boolean(
+- 小心使用闭包，闭包保留了一个指向它封闭作用域的指针, 所以在给DOM元素附加闭包时, 很可能会产生循环引用, 进一步导致内存泄漏
+- eval()只用于解析序列化串，如解析RPC响应，最好不要使用eval
+    - 解析序列化串是指将字节流转换成内存中的数据结构
+- with(){}让你的代码在语义上变得不清晰，不要用
+- this仅在对象构造器, 方法, 闭包中使用，易出错
+- for-in只用于 object/map/hash 的遍历，对Array的遍历用for-in会出现不按顺序遍历
+- 不要修改内置对象如 Object.prototype 和 Array.prototype 的原型
+
+
+## js-guide-es6-airbnb
+- 

@@ -1,10 +1,102 @@
 ---
+tags: [web]
 title: note-web-style
 created: '2019-08-05T11:51:59.761Z'
-modified: '2019-08-05T13:32:55.066Z'
+modified: '2019-08-19T04:37:24.548Z'
 ---
 
 # note-web-style
+
+## headache
+- 中文web字体体积大的问题
+    - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
+    - 动态中文web字体暂无解决方案
+- css模块化方案选择的问题
+    - 暂无统一标准的解决方案，可以参考ant-design等大型项目，直接使用css即可
+    - 要考虑与具体框架结合，方便实现国际化语言和样式主题切换
+    - 要考虑依赖的或将使用第三方组件的样式如何集成到现有项目
+    - 考虑在特殊情况下如何覆盖样式
+    
+## tips
+- all in js
+- css样式的渲染由浏览器实现，对开发者来说是黑盒，不用花过多时间
+- 当背景图片不够大时，可以考虑使用 background-repeat
+- weui的页面层级
+    - content：内容层，页面主要内容
+    - navi：导航层，用户滑动内容时可保持位置不动，常用语导航栏菜单
+    - mask：蒙版层，用于锁定内容层和导航层，不能单独使用，常配合popout
+    - popout：弹出层，常用于弹出菜单、通知、状态提示、操作提示
+    - 参考 https://weui.io/#layers
+- css原来的作用是复用class，现在复用组件就相当于复用了class
+
+## 大型项目参考
+- ant-design 
+    - 每个组件都有单独样式文件，如alert/index.tsx,alert/style/index.tsx(.less)
+    - 支持通过babel插件导入所需组件的css
+    - 依赖react,rc-table,rc-tree等组件
+    - 测试依赖react-router，react-dnd，react-intl，react-resizable,antd-theme-generator,antd-tools(webpack)
+- blueprint
+    - 每个组件都有单独样式文件，如alert.tsx,_alert.scss
+- grommet
+    - 组件大多有单独样式文件，如Button.js,StyleButton.js(只有样式)
+    - v2的样式基于styled-components实现
+- office-ui-fabric-react
+    - 每个组件都有单独的样式文件，如Checkbox.tsx,Checkbox.style.ts
+- element-react
+    - 每个组件都使用className指定类，样式基于scss
+- rsuite
+    - 每个组件都有单独的样式文件，如Alert.js,alert.less
+    - style作为props传入
+- uiw
+    - 每个组件都有单独样式文件，如alert/index.tsx,alert/style/index.less
+        - 再使用className
+- misc
+    - material-ui
+        - 每个组件都是一个完整的js文件，里面都有一个styles对象
+        - 提供单独的`@material-ui/styles`样式操作工具包，还提供ThemeProvider
+        - 样式使用的是基于css-in-js的jss
+    - react-bootstrap
+        - 每个组件都使用className指定类，样式由props传入
+
+## faq
+- 怎么让触摸设备支持下拉菜单
+    - 解决方案是使用Modernizr检测设备是否支持触摸，如果支持再去掉对visibilit 属性的过渡。如果设备支持触摸，Modernizr会给根元素html添加一个touch类，我们就可以针对触摸设备编写规则
+- 使用@import指令导入外部样式表和使用link导入样式表性能差距大吗
+    - 源码中使用@import指令可以通过css预处理器先处理成一个css，之后只需link一个css
+- 是否可以有使用内联样式的伪类？
+    - `<a href="http://bd.com" style="hover:text-decoration:none;">b</a>`
+    - 不可以
+    - 内联样式与规则集中的选择器参与同一级联，并且在级联中采用最高优先级(！重要)。因此，它们甚至优先于伪类状态。允许内嵌样式中的伪类或任何其他选择器可能会引入新的级联级别，并带来新的问题
+
+## css style guide  
+- https://github.com/airbnb/css
+- https://github.com/airbnb/javascript/tree/master/css-in-javascript
+- react处理样式的建议 
+    - https://reactjs.org/docs/faq-styling.html
+    - using the style attribute as the primary means of styling elements is generally not recommended. 
+    - In most cases, className should be used to reference classes defined in an external CSS stylesheet. 
+    - style is most often used in React applications to add dynamically-computed styles at render time.
+- w3c标准相关
+    - https://github.com/w3c/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md
+
+## web组件设计
+- Ant Design
+    - https://ant.design/
+- WeUI
+    - https://github.com/Tencent/weui
+    - 同微信原生视觉体验一致的基础样式库
+    - css命名基于BEM
+
+## summary
+- css要点
+    - 各类选择器
+    - 样式层叠规则
+    - 盒模型与元素定位
+    - 动画与变换
+    - 布局
+        - 基于float
+        - 基于flexbox
+        - 基于css grid
 
 ## common style
 
@@ -118,52 +210,231 @@ modified: '2019-08-05T13:32:55.066Z'
     - 媒体特性有时候不止一条，当出现多个条件，就需要通过关键词连接，如and, not, only
     - 断点，就是设备宽度的临界点。在Media Query中，媒体特性 min-width 和 max-width 对应的属性值就是响应式设计中的断点值
     - 参考bulma的breakpoints： https://bulma.io/documentation/overview/responsiveness/
-    - 参考媒体查询介绍 http://www.xsuchen.com/detail/css/11 http://www.xsuchen.com/detail/css/9.html
+    - 参考媒体查询介绍 
+        - http://www.xsuchen.com/detail/css/11 
+        - http://www.xsuchen.com/detail/css/9.html
 - pseudo elements: 4
     - before, after, first-letter, first-line
     - selector.class:pseudo-element {property:value;}
 - pseudo classes: 7
     - a:link, a:visited, a:hover, a:active
     - :focus, :lang
-    - first-child
+    - ：first-child
 - `.styl`样式文件是stylus扩展css语法的一种格式，stylus is similar to sass/less, except that it's based on nodejs.
-    
-## css style guide  
-- https://github.com/airbnb/css
 
-## bulma docs
-- By default, columns are only activated from tablet onwards. This means columns are stacked on top of each other on mobile.
-- Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
 
-## css 模块化
-### CSS命名约定  
-- 规范化CSS的模块化解决方案（比如BEM,OOCSS,AMCSS,SMACSS,SUITCSS)
-- 但存在以下问题：
-    - JS CSS之间依然没有打通变量和选择器等
-    - 复杂的命名
 
-### CSS in JS  
-- 彻底抛弃CSS，用JavaScript写CSS规则，并内联样式
-- React: CSS in JS 。Radium，react-style 属于这一类。但存在以下问题：
-    - 无法使用伪类，媒体查询等
-    - 样式代码也会出现大量重复。
-    - 不能利用成熟的 CSS 预处理器（或后处理器）
+## CSS模块化解决方案
 
-### 使用JS管理样式模块  
-- 使用JS编译原生的CSS文件，使其具备模块化的能力，代表是CSS Modules（GitHub：css-modules/css-modules）  
+### 为什么需要CSS模块化
+- 命名冲突，任何一个组件的样式规则，都对整个页面有效
+- css和js无法共享变量
+- 需要健壮且易于扩展的css
+- 参考
+    - https://zhuanlan.zhihu.com/p/26878157
+    - https://github.com/streamich/freestyler/blob/master/docs/en/generations.md
+    - https://medium.com/@piggyslasher/the-state-of-css-css-in-js-how-styled-components-is-solving-the-problems-weve-had-for-decades-d8abbc8bc148
 
-### css naming conventions
+### 使用CSS命名规则进行模块化
+- 典型代表
+    - BEM：`block__element_modifier`
+- 问题
+    - 命名较复杂
+    - JS和CSS之间依然没有打通变量和选择器等
+- 原生css的问题
+    - 缺少变量、嵌套支持、样式文件合并 > sass解决
+
+### css-in-js  
+- 典型代表
+    - https://github.com/styled-components/styled-components
+    - radium: A toolchain for React component styling
+    - styled-jsx: Inline style system for React and Preact
+- 彻底抛弃CSS，用JavaScript写CSS规则
+- 优点
+    - 使用js强大的功能编写和操作样式，支持单js文件包含组件所有样式和行为，组件独立
+    - 样式跟随组件局部化，副作用少，查找快速
+    - 尽管js体积增大了一点，但只需下载组件所需的css，且无需单独发送css文件请求
+    - 方便根据状态数据动态修改样式和主题
+    - js原生提供变量功能
+    - css-in-js包含大多数css预处理器的功能
+    - 将可修改的样式作为属性暴露给用户，丧失部分灵活性，但可统一样式标准
+    - js功能强大，也可以实现类似sass预处理的实用功能
+- 缺点
+    - 无法提取出单独的css文件？ 有的库可以提取
+    - 业务代码与样式代码杂糅
+    - js动态解析、生成样式会消耗一定性能
+    - 无法使用伪类，媒体查询？？？   2019已支持
+    - 不支持web字体
+    - 样式代码也会出现大量重复，特别是服务端渲染？？？   但组件复用方便
+    - 不能利用成熟的CSS预处理器或后处理器，如Sass/PostCSS？？？  2019已支持
+    - 如果全部使用css-in-js那将需要把每个样式都变成props，如果这个组件的dom还有多层级呢？你是无法把所有样式都添加到props中。同时也不能全部设置成变量，那就丧失了单独定制某个组件的能力。css-in-js生成的className通常是不稳定的随机串，这就给外部想灵活覆盖样式增加了困难
+    - 当css设置了一半样式，另一半真的需要js动态传入，你不得不css+css-in-js混合使用，项目久了，维护的时候发现某些css-in-js不变了，可以固化在css里，css里固定的值又因为新去求变得可变了，你又得拿出来放在css-in-js里
+    - css-in-js方案要考虑ts支持
+- 参考
+    - https://mxstbr.com/thoughts/css-in-js/ [20190218]
+    - https://robinchen.me/tech/2016/08/09/tech-Refactor-CSS-into-JS.html
+    - http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
+
+### 使用JS管理CSS样式模块  
+- 典型代表
+    - CSS Modules
+- 使用JS编译原生的CSS文件，使其具备模块化的能力
+- CSS Modules
+    - 对class名都做了混淆处理，使用对象来保存原class和混淆后class的对应关系
+    - 通过composes复用样式，无需借助sass
+    - CSS Modules的命名规范是从BEM扩展而来
+        - CSS文件名恰好对应block，只需要再考虑element和modifier
+    -  :export关键字可以把CSS中的变量输出到JS中，实现css共享变量到js
+    - 一般原则(不强制)
+        - 不使用id选择器，只使用class名来定义样式
+        - 不层叠多个class，只使用一个class把所有样式定义好
+        - 所有样式通过composes组合来实现复用
+        - 不嵌套
+    - 生成混淆的class名后，可以解决命名冲突，但因为无法预知最终class名，不能通过一般选择器覆盖，可以给组件关键节点加上data-role属性，然后通过属性选择器来覆盖样式
+    - css modules很好的避免了多人协同开发CSS的命名冲突问题   
+- 优点
+    - 最大化地结合现有CSS生态和JS模块化能力，包括sass/less
+    - 发布时依旧编译出单独的JS和CSS，它并不依赖于React
+    - 所有样式都是默认local的，解决了命名冲突和全局污染问题
+    - class名生成规则配置灵活，可以此来压缩class名
+    - 只需引用组件的JS就能搞定组件所有的JS和CSS
+    - 依然是CSS，只增加了很少的学习成本
+    - 现有项目能平滑迁移
+        - 可以对一元素应用多个class
+        - 只转换class选择器，id选择器、元素选择器、伪类不会被转换
+- 缺点
+    - 覆盖局部样式较复杂，写到最后可能一直在用 :global
+    - 原生css能力有限，大量使用预处理器也增加学习成本
+ - 参考
+    - https://zhuanlan.zhihu.com/p/28675375
+    - http://www.alloyteam.com/2017/03/getting-started-with-css-modules-and-react-in-practice/
+    - https://github.com/camsong/blog/issues/5
+    - https://github.com/css-modules/css-modules/issues/187
+    - https://glenmaddern.com/articles/css-modules
+        - 合作者之一Glen Maddern已转向styled-components
+
+### CSS命名
 - BEM
-    - block__element--modifier
+    - 命名规则：`block__element_modifier`
+    - block是逻辑和功能独立的组件，block可嵌套，可重复
+    - element是块的组成部分，它不能在块之外使用
+    - modifier定义块的外观和行为
+    - 推荐用双下划线连接`B__E`，用单下划线连接`E_M`或`B_M`
+    - 推荐描述元素的单词或多个单词使用camelCase
+    - 尽量不用元素选择器，虽然每个li都写.menu-item，但能避免影响其他嵌套元素
+    - 团队统一最重要
+    - 参考
+        - https://zhuanlan.zhihu.com/p/26407119
+        - https://tech.yandex.com/bem/
+        - https://en.bem.info/methodology/quick-start/
+    - 优点
+        - 无论DOM层级多深，统一扁平化命名B__E_M，解决scss嵌套3层以上变复杂的问题
+        - 命名较长，冲突少，选择器查找元素更快
+        - 命名长但模块化，可读性好，定位问题快速
+    - 缺点
+        - 命名长，书写得内容较多
+        - class较多不是问题
+        - 丑，但可读性好
 - SMACSS   
     - Scalable and Modular Architecture for CSS    
-    - https://smacss.com/book/   
+    - https://smacss.com/book/  
+    - 不同**类别**的组件需要以不同的方式处理
+    - 类别
+        - base：html默认基本样式 ，如title、a
+        - layout：只定义布局，不考虑颜色和排版，如`l-side`
+        - module：可重用的模块，如按钮、list，如`m-btn`
+        - state：用来描述layout或module在特定状态下的外观，如`is-collapsed`
+        - theme：用来描述layout或module在某一主题下的外观
 - OOCSS  
     - Object-Oriented CSS   
     - https://github.com/stubbornella/oocss/wiki  
+    - 样式是可重用的视觉模式，为常见的视觉模式创建可复用的类
+    - 样式与上下文无关
+    - 样式与元素标签结构无关
+    - 总是使用class来命名对象及其子元素，这样可以在不影响html结构的情况下修改样式
+    - 不使用id选择器，ID会扰乱CSS优先度，还不能复用
+    - 如leftCol
 - AMCSS 
-    - 属性模块或者说AM，其核心就是关于定义命名空间用来写样式。  
-    - 给一个元素加上属性，再通过属性选择器定位到这个元素，达到避免过多的使用class。   
+    - 属性模块或者说AM，其核心就是关于定义命名空间用来写样式。 
+    - 给一个元素加上属性，再通过属性选择器定位到这个元素，达到避免过多的使用class
+- 这些框架的相同之处远胜于其不同之处，可以组合使用最佳的部分
+    - 模块化元素
+        - module/模块：可复用的组件
+        - element/子元素：模块中的小块，不独立使用
+        - modifier修饰器：改变模块的视觉外观
+    - 模块化类别
+        - base
+        - layout
+        - module
+        - state
+        - helper：独立于模块，可小范围复用，如.h-uppercase
+    - 模块化规则
+        - 不要使用ID
+        - CSS嵌套不要超过一层
+        - 为子元素添加类名
+        - 遵循命名约定
+        - 为类名添加前缀
+- 其他命名方案
+    - SUITCSS
+
+
+### 有缺陷的CSS最佳实践
+- 不要使用过多的类？
+    - 大多数情况下类选择器的副作用会比id选择器和元素选择器小
+    - 如果class过多就该考虑扩大修饰范围，修饰范围过大就会出现重复，此时就该缩小范围
+    - 通过控制样式的修饰范围来调整样式数量
+- 不要添加无语义的元素？
+    - 有时可以作为trick
+    - 使用无语义但结构化的div可以统一样式
+- 少使用后代选择器？
+    - 后代选择器会受html标签结构变化影响，但有时更省事
+- 页面要在各种设备上外观一致？
+    - 没必要，根据实际用途来增减功能，特别是针对移动端
+
+### React开发中的CSS问题
+- 全局命名冲突
+    - CSS使用全局选择器机制来设置样式，优点是方便重写样式，缺点是所有的样式都是全局生效，样式可能被错误覆盖
+    - Web Components标准中的Shadow DOM能彻底解决这个问题，但它将样式彻底局部化，造成外部无法重写样式，损失了灵活性
+    - 多人协作开发命名会混乱
+- 依赖管理不彻底
+    - 引入一个组件时，应该只引入它所需要的CSS样式
+    - Saas/Less很难实现对每个组件都编译出单独的CSS，引入所有模块的CSS又造成浪费
+    - JS的模块化已经非常成熟，如果能让JS来管理CSS依赖是很好的解决办法，Webpack的 css-loader提供了这种能力
+- 无法共享变量
+    -复杂组件要使用JS和CSS来共同处理样式，就会造成有些变量在JS和CSS中冗余，Sass/PostCSS/CSS等都不提供跨JS和CSS共享变量这种能力
+- 代码压缩不彻底
+    - 由于移动端网络的不确定性，现在对CSS压缩已经到了变态的程度，但对非常长的class名却无能为力
+- 总结
+    - 上面的问题如果只凭CSS自身是无法解决的，如果是通过JS来管理CSS就很好解决
+    - Facebook工程师Vjeux给出的解决方案是完全的 CSS in JS
+    - 完全抛弃CSS，在JS中以Object语法来写CSS
+
+### react-css-in-js
+- 可以通过在目标元素前后放置占位元素，再通过js操作，实现伪元素的::before,::after
+- w3c标准不支持在行内样式中使用伪类，如:hover,:first-child
+- 内联样式中不支持定义keyframe
+- css-in-js的使用方式可以分5代，根据是否支持在css模板中使用js变量，如果支持，这些变量的作用范围是否包括模块，包括组件，包括render()方法
+- 五代css-in-js
+    1. css located in separate .*css files
+        - example: css-modules, babel-plugin-css-in-js, css-loader
+        - not allowed to write styling in JavaScript and use any of JavaScript variables
+        - you have to use CSS pre-processors
+    2. css as inline style objects
+        - example: radium
+        - use inline styles in style property of your React elements
+        - very dynamic, because they can use even .render() method scope variables
+        - 行内样式不支持伪类，无法最大化利用css功能
+    3. write static css templates in js and inject actual CSS into DOM `<style>` tags
+        - example: aphrodite, cssx, glamor, styletron
+        - the templates are static,defined in module scope, and thus they can't use component props
+        - have access only to module scope JavaScript variables, which evaluate only once when the module is imported for the first time
+    4. write dynamic css templates in js and emit CSS into DOM `<style>` tags
+        - example: styled-components, glamorous
+        - have access to component scope variables, such as props and state
+        -  templates normally also re-render on every component prop or state change.
+    5. dynamic css templates in js
+        - example: freestyler, jsxstyle, style-it, superstyle
+        - you can use JavaScript variables from component's `.render()` function scope.
 
 ## font icons
 
@@ -401,7 +672,380 @@ modified: '2019-08-05T13:32:55.066Z'
     - https://github.com/wentin/font-playground
         - 在线修改和预览
 
+### web fonts
+- 问题
+    - 中文webfont过大，目前暂无优秀的解决方案
+    - 目前中文WebFont的使用大多是将有限数目的字符转换为小字库部署到网站服务器上
+- google fonts
+    - http://www.googlefonts.cn/fonts
+- 有字库
+    - https://www.webfont.com/
+    - 免费单页500字
+- justfont
+    - http://justfont.com/
+- 腾讯的Font-Spider
+    - 可以把页面中没有的字从字库剔除掉，使用的是NodeJS
+    - 适合静态页面
+
 ## animation
 - https://github.com/ConnorAtherton/loaders.css
+
+## css预处理器
+- 都提供了语法糖，最终经过预处理工具转换成css
+- sass
+    - 使用场景：bootstrap4, foundation
+    - 特点
+        - 无大括号，使用缩进
+        - 支持变量$作用域
+        - 支持函数
+        - 支持流程控制
+        - 支持数据结构$list, $map
+    - 编译需要ruby
+    - node-sass国内安装不流畅
+    - 讨论度更高，资料更全
+    - since2007
+- less
+    - 使用场景：bootstrap3，ant-design，七牛pd团队
+    - 特点
+        - 有大括号
+        - 支持变量@
+        - 不支持函数
+    - 编译基于node
+    - since2009
+- scss
+    - 使用场景：
+    - 特点
+        - 有大括号
+        - **兼容css**
+    - 就是sass 3
+- stylus
+    - 使用场景：
+    - 特点
+        - 支持缩进和大括号
+    - since2010
+- postcss
+    - 使用场景：
+    - 特点
+- 预处理器使用建议
+    - CSS中不建议用@import导入css，因为会增加http请求。但CSS预处理器中的导入和CSS的有很大区别，它是将不同css是在语义上导入，最终编译结果会生成一个CSS文件
+
+
+
+## booking-CSS实战手册.第4版_David McFarland_2016
+- 全书结构
+    - css基础：选择器+层叠规则+盒模型
+    - 常用功能：文本+图片+动画
+    - 页面布局：float+flexbox+(css grid)+响应式设计
+    - 高级功能：sass
+- CSS(Cascading Style Sheets)是一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护
+- html提出的目的是以一种易于理解的结构组织页面内容
+    - 只负责内容的结构，可以控制部分外观，但不建议使用html来控制外观
+    - html标签用于标记各部分内容的作用，要尽量体现作用，ul可用css调样式为横向
+- css的作用是控制页面的外观和布局
+- IE8及之前的版本不支持html5的新增标签，微软于2016年1月停止支持IE8
+- 不推荐使用的html标签
+    - font > css
+    - b, i > strong, em
+    - 布局使用table标签 > css
+    - br > 块级元素
+    - 不要使用任何仅用于改变文字或图像外观的标签和属性，该用css 
+- 推荐使用语义化标签
+    - 用于标记元素的通用标签：div, span
+    - blockquote
+    - article
+- html5的文档类型声明： `<!doctype html>`
+- css版本
+    - css1
+        - 1996年发布，定义了样式基本结构，提出选择符
+    - css2
+        - 添加了媒体查询
+        - 新增了选择符
+    - css2.1 
+        - 所有浏览器都支持
+    - css3 标准模块化
+        - 选择器模块
+        - 盒式对齐模块
+        - 值和单位模块
+- 样式规则包括两部分：选择器，装饰指令声明
+- 浏览器会忽略空格和制表符
+- 样式表
+    - 外部样式表：推荐使用，所有样式保存在单独的文件，可以缓存，ctrl+F5不使用缓存
+        - `<link rel="stylesheets" href="path/to/style.css">`
+    - 内部样式表：放在`<head>`标签内的`<style>`标签中
+    - 行内样式：不推荐使用，可复用性差，多用于测试
+- selector 选择器
+    - http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
+    - 元素选择器：可选取特定html标签，不够精细
+    - 类选择器：以`点号`开头，类名区分大小写
+    - ID选择器：以`#号`开头，尽量不用id选择器，用类选择器
+    - 群组选择器：多个选择器用`逗号`分开，选择各选择器指定的元素并集，可混用多种选择器
+    - 通用选择器：`*号`表示选择所有元素标签，也可以作为后代选择器的部分
+    - 后代选择器：多个选择器用`空格`分开，选择一个标签的所有后代，包括子代和孙代
+    - 子代选择器： el1 `>` el2，只选择直接子代，不选孙代
+        - 还可以使用伪类，如:first-child，:nth-child(n)
+        - tr:nth-child(odd/even/3n+X/-n+2/9)
+        - 子代类型选择器：选取的是特定类型的子代标签，如`.sidebar p:first-of-type`
+    - 同级选择器
+        - `+`：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
+        - `~`：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
+        - 参考 https://blog.csdn.net/JaRiS_jade/article/details/79106406
+    - 伪类：E:link/visited/hover/active/focus，:first-child，:enable/checked
+        - 反选伪类：用于选择不符合指定条件的标签，如el:not(.clsName),not不用连用
+        - 结构性伪类:	E:root, E:nth-child(n)
+        - E:target,	常用于点击后让另一个元素具有特殊的外观，依赖于id属性，功能类似js
+    - 伪元素：:：first-letter/line, ::before/after, ::selection
+        - 伪类和伪元素用来选择页面中不由标签表示但易于标识的部分
+    - 属性选择器
+        - el[attrName]，.class[attrName]
+            - 可以筛选出设定了特定属性的标签 
+        - el[attrName="value"]
+        - 还可以选取属性值以特定值开头`^=`、结尾`$=`或包含指定值`*=`的元素
+        - E[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
+- 通过css继承来简化样式表
+    - 不会被继承的属性：影响元素在页面所在位置的属性，以及外边距、背景色和边框的属性
+    - border
+- cascade 层叠  
+    - 用于控制样式之间相互作用的方式，具体通过比较样式的优先级
+    - 继承时默认使用最近父辈的样式
+    - 特指度specificity：样式所依赖的所有选择器得分的和
+        - 行内样式：1000
+        - id选择器：100
+        - 类选择器：10
+        - 元素选择器：1
+    - 特指度相同时，使用后声明的选择器，注意外部样式表和内部样式表的位置
+        - 最好先链接外部样式表，仅当需要在单个页面中添加样式时才使用内部样式表
+    - 若要忽略特指度，只需在某个css属性之后分号前添加`!important`，只作用于单个属性
+        - 不推荐使用
+- css reset 重置
+    - 浏览器为所有html标签提供了默认样式，不同浏览器实现的默认样式会有差异
+    - 清除浏览器内置样式这种行为称为css重置
+    - css重置其实就是在样式表开头放一些核心标签的样式，在这些样式中设置在各种浏览器中表现不一致的属性，统一基准 
+    - https://github.com/necolas/normalize.css
+- 使用字体 font-family
+    - `p { font-family: Arial, "Times New Roman", sans-serif, serif; }`
+    - 使用font-family指定首选字体和后备字体，只能使用电脑中已经安装的字体
+    - 若计算机未安装指定字体，则使用浏览器的默认字体
+    - 可以使用web font，先获取字体文件，再用@font-face指令说明字体名称和下载地址
+        - google fonts
+        - Adobe Typekit 可将字体同步至你的电脑或网站当中
+        - 其他：Open Sans、Lato、PT Sans、Lobster、Rokkitt
+        - 最好指定后备字体
+        - 字形和变体会加大工作量
+    - 通用字体：Arial，serif，sans-serif
+- 常用字体
+    - 衬线字体：serif，"Times New Roman", Georgia
+    - 无衬线体：sans-serif，Arial，Helvetica，Verdana
+    - 等宽字体：monospace，Courier，常用于显示代码
+- 字体类型
+    - eot：ie5开始支持的字体，只有ie支持
+    - ttf和otf：常用电脑字体
+    - woff/2：web开放字体格式，体积小，大概是ttf的一半，所有现代浏览器都支持
+    - svg字体：浏览器支持十分有限，体积是ttf的两倍
+- html支持的颜色名称 color
+    - https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value
+    - rgba和text-shadow，box-shadow联合使用，ie8之前不支持rgba
+- 字号 font-size
+    - px：最常用，与浏览器的设置无关
+    - 关键字：xx-small,medium(=16px),x-large
+    - em：与%原理相同，1=100%
+    - rem：字号的大小基于根元素而定，通常基于基准字号16px，但可以为根部html元素设置20px后，其他元素就可以使用rem来设置百分比了
+    - %：100%==16px
+    - 对像素字号来说，在有视网膜显示屏的设备中，浏览器会把设定的像素值乘以2 
+    - 若样式表未设定字号，则使用浏览器预设字号，默认是16px
+    - em、百分比、关键字的设置字号方式会在浏览器预设字号的基础上增大或减小
+    - 修改基准字号要调整浏览器的偏好设置
+- 字体操作技巧
+    - text-transform : uppercase/capitalize/none
+    - text-decoration: underline/line-through/none
+    - letter-spacing：0.1em;    字符间距，中文文字间距
+    - word-spacing：2px/em/%    单词间距，用空格隔开的中文也是单词，若无空格则无效果
+    - text-shadow: 横偏移 纵偏移 阴影模糊度 投影颜色
+        - 为文本添加投影
+    - line-height: 150%； 推荐使用百分比，默认值为120%
+    - text-indent： 缩进
+- list  
+    - ul默认3种符号：circle空心圆形，disc实心圆形，square实心方形
+    - ol默认6种编号：decimal(-leading-zero),alpha,roman
+    - list-style-type：指定编号类型
+    - list-style-position:控制符号位置
+    - list-style-image：只能指定图形，不能控制位置
+- css盒模型
+    - box = content + padding + border + margin
+    - background-color包括padding和border
+    - 如果边框的样式是点划线或虚线，点划线和虚线的空隙之间能看到背景色，要避免这种情况可使用`background-clip: padding-box;`
+- 外边距折叠
+    - 外边距用来指定非浮动元素与其周围盒子边缘的最小距离
+    - 两个或两个以上的相邻的垂直外边距会被折叠并使用它们之间较大的那个外边距值
+- 块级元素与行内元素
+    - 可用左右内外边距在行内元素的左右添加空白，但不可用上下外边距增加行内元素的高度
+    - display：inline-block，元素前后无换行，且能设置上下内外编剧和高度
+    - display:none，在载入网页的时候会忽略这个元素，不会下载其内容，无宽高
+    - visibility:hidden，视觉上隐藏元素，但在浏览时保留位置空间，具有宽高
+- border
+    - 浏览器将所有元素视为盒子
+    - box-shadow在盒子的外边界添加投影
+- overflow
+    - 指定如何显示超出盒子边界的内容
+    - visible：默认值。等价于不设置overflow属性
+    - scroll：一直显示滚动条，即使比盒子内容小也显示
+    - auto：需要时才显示滚动条
+    - hidden：隐藏超出盒子边界的内容
+- float
+    - float把元素移到外层元素左侧或右侧，浮动元素下面的内容会上移，围绕在浮动元素周围
+    - 浏览器只会让文字围绕浮动的元素显示，而不包括边框或背景，解决方法
+        - 为浮动元素下面设置了背景或边框的元素添加 `overflow:hidden`
+        - 在浮动元素的四周添加边框线，将边框颜色设为与背景色相同
+    - clear属性告诉元素不要围着浮动的元素显示，作用是强制让元素显示在浮动的元素下面
+        - 默认值为none
+- box-sizing
+    - 盒子模型的默认定义，对一个元素所设置的width与height只会应用到内容区
+    - content-box：默认值。 设置的宽度 = contentWidth，不包含padding,border,margin
+    - border-box：设置的宽度 = 盒子宽度 = contentWidth+padding+border，不包含margin
+- 背景图片
+    - `background-image: url('path/to/a.jpg')`
+    - url的路径可绝对可相对，相对路径是相对样式表文件位置而言
+        - 而不是相对要应用样式的html文件而言
+        - 以 `./`开头为相对当前样式文件，以`/`开头为相对根目录
+    - background-repeat可以控制平铺方式，round和space作为值可禁止裁剪
+    - 定位属性
+- css sprite
+    - 在一个图像中包含不同状态
+    - 浏览器发送一个大文件要比发送多个小文件体验好
+- transform 变换
+    - 类型：缩放scale、平移translate、旋转rotate、倾斜skew
+    - skew可用于实现3D效果
+    - skewX和skewY分别沿X轴、Y轴倾斜，而skew(top,right)分别沿上边与右边倾斜，还可用矩阵控制更精细的变换
+    - 多个变换方法用逗号隔开
+    - 默认情况下，浏览器以元素中心作为变换的原点，transform-origin可改变原点
+    - 3D变换有专门的主题
+- transition 过渡
+    - 过渡是一种简单的动画，在一定时间内从一组CSS属性变成另一组属性，IE10后才支持
+    - 支持过渡的属性包括上面的变换，还包括 animatable properties
+    - 属性：transition-property/duration/timing-function/delay
+    - 过渡效果需要使用css选择器触发，如:hover,:focus，若想点击触发需要使用js
+    - cpu友好型的变换包括不透明度、缩放、平移、旋转
+    - 可以通过加入无实际视觉效果的`transform: translateZ(0);`来利用GPU加速渲染
+- animation 动画
+    - 过渡只能把一系列css属性从一个状态变到另一个状态，动画则能从状态1 > 2 > . > N
+    - 动画可重播，动画无需触发就可播放，过渡只可播放一次
+    - 通过`@keyframe`定义一系列状态
+    - 暂停动画可在css伪类中使用`animation-play-state: paused`，更常用js
+- table 表格
+    - 不推荐使用table布局，css布局更灵活，表格本来的用途是显示数据
+    - text-align控制横向对齐，会被继承
+    - vertical-align控制纵向对齐，不会被继承
+    - 若不明确禁止，浏览器会在单元格间添加几像素宽的间隙，为单元格添加边框后间隙会变明显
+    - 如果去掉了单元格之间的间隙，单元格的边框会叠到一起，宽度加倍
+    - 列的背景在单元格后面，注意覆盖顺序 
+- 网页布局
+    - 固定宽度布局，已淘汰
+    - 流式布局，宽度使用百分比
+    - 响应式设计，根据浏览器窗口的宽度改变页面布局
+    - 传统布局方式： table + div
+- float布局
+    - 处理溢出的4种方式
+    - 多栏布局：column-count/gap/rule
+    - box-sizing能避免浮动下坠
+- position 定位
+    - absolute：脱离文档流
+    - relative：相对于文档流的当前位置
+    - fixed：将元素固定在屏幕某个位置，脱离文档流
+    - static：默认显示方式
+    - 隐藏元素的3种方式:display, visibility, opacity
+- responsive 响应式设计
+    - 弹性栅格布局：小屏单栏，宽屏多栏
+    - 媒体查询：为不同宽度编写不同样式
+    - 弹性媒体：自适应图片或视频，暂无标准的解决方案 
+    - 对非响应式桌面网页，移动浏览器会自动缩小页面来显示整个网页，有时很难阅读
+- media query 媒体查询
+    - 根据浏览器宽度或高度为页面提供不同样式
+    - 使用场景：调整分栏、弹性宽度、导航目录、隐藏内容
+    - breakpoint：切换样式的宽度
+    - 创建方式 link+media, @media
+- 栅格系统
+    - 布局栅格是有条理的行和列，对css来说，栅格系统是预先定义好的样式表
+    - container > row > column
+    - skeleton css boilerplate
+- flexbox 弹性盒
+    - 弹性容器
+    - 弹性项目
+- css grid
+    - display:grid
+- css使用建议
+    - 能够简写的属性：font，padding，margin，background
+    - 重置浏览器的默认样式 css reset
+- sass
+    - 嵌套选择器
+    - source-map
+
+## booking-CSS设计指南.第3版_Charles Wyke-Smith_2013
+- html的闭合标签常用于显示文本，自闭合标签常用显示引用内容
+- id选择器和类选择器不用考虑文档结构层次
+- 多类选择器：.clsA.clsB，无空格，取交集，即选择同时具有clsA和clsB类名的元素
+    - 也可以是 el.clsName
+- 使用#id可以链接到同一页面的目标id元素位置，若<a href='#'>则会返回顶部
+- 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容。
+- 盒模型，就是浏览器为页面中的每个HTML元素生成的矩形盒子
+    - 默认所有盒子边框不可见，背景透明
+    - 边框属性默认值
+        - border-width:medium
+        - border-style:none，默认不显示边框
+        - border-color:black
+    - 不同浏览器默认的内外边距不同，特别是对表单和列表等复合元素，建议css重置
+    - 垂直外边距会折叠，但水平外边距正常
+    - 若不设置块级元素的width，则默认为auto，即扩展到填满父元素的宽度
+    - 盒子设置width默认是content的宽度，padding、border、margin都会加宽盒子
+- 浮动
+    - 浮动元素脱离了常规文档流之后，原来紧跟其后的元素就会在空间允许的情况下， 向上提升到与浮动元素并排
+    - 浮动非图片元素时，必须给它设定宽度，否则后果难以预料。图片本身有默认的宽度。
+    - 如果几个相邻的元素都具 有设定的宽度，都是浮动的，而且水平空间也足以容纳它们，它们就会并列排在一行
+    - 浮动元素脱离了文档流，其父元素也看不到它了，因而也不会包围它
+- 围住浮动元素的方法
+    - 为父元素添加overflow:hidden，强迫父元素包含浮动的子元素
+    - 让父元素也浮动，同时添加width:100%
+    - 给父元素最后添加一个非浮动的子元素，然后给子元素添加clear
+    - 通过伪类:after给父元素后面添加一个高度为0的clear:both元素
+- 定位
+    - static：每个元素都处在常规文档流，自上而下堆叠，默认方式
+    - relative：相对于元素在常规文档流中的位置，距离常规文档流位置的上边/左边
+    - absolute：绝对定位的元素脱离了常规文档流，相对于定位上下文进行定位，默认定位上下文是body元素，此外会寻找最近的postion为relative的祖先元素作为定位上下文
+    - fixed：脱离了文档流，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动，不常用
+    - 若未设置外层元素的position为relative/absolute/fixed，则内层元素的left/top等定位属性不会生效，会被忽略，默认都是static定位，内层div会和外层div同左上角起点
+    - 常用的定位模式是：外层ralative，内层absolute
+- background-color会应用到内容背景和padding背景，color前景色会应用到内容和边框
+- 页面布局
+    - 一般不应该给元素设定高度，保持height属性默认值auto
+    - auto能使元素随着自己所包含内容的增加而在垂直方向扩展，若设置了高度则会滚动条
+    - 块级元素的宽度默认填满父元素宽度 
+- 在一个包含多个同辈元素的容器内，这些同辈元素都会构造一个堆叠上下文，在这个上下文中，它们的子元素会上下堆叠起来，z-index属性用于控制元素的在堆叠上下文中的次序
+- 响应式设计三要素
+    - 媒体查询
+    - 弹性布局
+    - 弹性图片
+- 媒体查询
+    - 媒体类型：screen，print，handled，tv，tty，all，...
+    - 媒体特性：min/max-device-width，min/max-width，orientation
+    - 可以使用逻辑运算符 and、not、or 及关键字 all、only 组合媒体类型和媒体特性
+    - breakpoint指的是媒体查询其作用的宽度
+        - `@media screen and (max-width:640px)`
+        - 不要针对某款具体的设备设置断点，要慢慢缩小浏览器窗口，为某个宽度范围的屏幕提供样式
+- `<meta name="viewport" content="width=device-width; maximumscale=1.0" />`
+    - 告诉浏览器按照屏幕宽度来显示网页，不要缩小网页
+- 支持触摸的设备会跳过:hover规则中对visibility属性的过渡
+
+## css-style-guide
+### airbnb guide
+- 不要使用ID选择器，因为不可重用
+- 类名建议使用破折号代替驼峰法。如果你使用 BEM，也可以使用下划线
+- 在一个规则声明中应用了多个选择器时，每个选择器独占一行
+- 在定义无边框样式时，使用 0 代替 none
+- sass    
+    - 推荐使用scss
+    - 应避免使用 @extend 指令，因为它并不直观，而且具有潜在风险，特别是用在嵌套选择器的时候，推荐使用mixin函数复用代码
+
+### google guide
+- 避免使用类型选择器，影响范围太大，为了性能应避免使用父节点做选择器
+- url()中不要使用引号
+- 避免使用css hacks
 
 

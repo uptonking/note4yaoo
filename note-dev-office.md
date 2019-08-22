@@ -1,15 +1,19 @@
 ---
+tags: [dev/office]
 title: note-dev-office
 created: '2019-07-08T04:55:46.940Z'
-modified: '2019-07-19T10:28:26.218Z'
-tags: [dev/office]
+modified: '2019-08-20T09:57:25.348Z'
 ---
 
 # note-dev-office
 
+## tips
+- pdf阅读器/编辑器可参考已有解决方案
+- excel阅读器/编辑器可以自己动手实现，基本数据格式比较固定
+
 ## excel
 
-### poi - Apache2.0
+### poi  /Apache2.0
 - A Java library for reading and writing Microsoft Office binary and OOXML file formats.
 - 4.1.0 - 201904
 - 4.0.0 - 201808
@@ -17,7 +21,7 @@ tags: [dev/office]
 
 ## pdf
 
-### OpenPDF - LGPL3.0/MPL2.0
+### OpenPDF /LGPL3.0/MPL2.0
 - https://github.com/LibrePDF/OpenPDF
 - OpenPDF is the LGPL/MPL open source successor of iText, and is based on a fork, of a fork, of iText 4.2.0 svn tag. 
 - 1.2.21 - 201906
@@ -37,7 +41,27 @@ tags: [dev/office]
     - iText 7 is dual licensed as AGPL/Commercial software.
     - Buying a license is mandatory as soon as you develop commercial activities distributing the iText software inside your product or deploying it on a network without disclosing the source code
 
-### pdfbox - Apache2.0
+### pdfbox  /Apache2.0
 - https://github.com/apache/pdfbox
 - https://pdfbox.apache.org/
 - 2.0.16 - 201906
+
+### pdf viewer
+- JPedal PDF library /LGPL/NOUPDATE
+    - https://github.com/Lonzak/JPedal
+- OpenViewerFX  /LGPL/NOUPDATE
+    - https://github.com/qwertme/OpenViewerFX
+    - now part of JDeli
+- PDFrenderer  /LGPL/201901
+    - https://github.com/katjas/PDFrenderer
+    - It uses an improved version of JPedal's JBig2 decoder API.
+- MuPDF  /AGPL/201909
+    - https://github.com/ArtifexSoftware/mupdf
+    - https://github.com/muennich/mupdf
+    - written in C, providing Java JNI
+
+## office-dev
+- Apache OpenOffice
+- LibreOffice
+- JODConverter  /Apache2.0
+    - automates document conversions using LibreOffice or Apache OpenOffice

@@ -1,13 +1,24 @@
 ---
+tags: [viz/chart]
 title: note-viz-theory
 created: '2019-08-01T14:14:51.122Z'
-modified: '2019-08-02T10:25:25.779Z'
-tags: [viz/chart]
+modified: '2019-08-22T10:20:10.180Z'
 ---
 
 # note-viz-theory
 
-## 常用图表类型 Chart/Plot/Diagram
+## tips
+
+
+## chart summary
+- 沃罗诺伊图（Voronoi diagram）又叫狄利克雷镶嵌（Dirichlet tessellation）或者泰森多边形（Thiessen polygon）。
+  沃罗诺伊图解决的问题实际上就是基于一组特定点将平面分割成不同区域，而每一区域又仅包含唯一的特定点，并且该区域内任意位置到该特定点的距离比到其它的特定点都要更近。
+    - 可以在可视化的过程中用来划分平面，三角剖分
+    - 可以用来进行空间插值
+    - 北京奥运会的水立方即是基于此原理设计  
+
+
+## 常用图表类型 /Chart/Plot/Diagram
 
 - 饼状图  /Pie
     - 基础饼图 外部文本 内部文本  /basic pie
@@ -133,7 +144,7 @@ tags: [viz/chart]
     - voronoi
     
 
-## 地图图表类型 Map
+## 地图图表类型 /Map
 
 - 分级统计地图  /choropleth map
 - 地图气泡图  /bubble map
@@ -188,13 +199,5 @@ tags: [viz/chart]
     - 方向
     - 数量
     - 密度
-
-## tips
-
-- 沃罗诺伊图（Voronoi diagram）又叫狄利克雷镶嵌（Dirichlet tessellation）或者泰森多边形（Thiessen polygon）。
-  沃罗诺伊图解决的问题实际上就是基于一组特定点将平面分割成不同区域，而每一区域又仅包含唯一的特定点，并且该区域内任意位置到该特定点的距离比到其它的特定点都要更近。
-    - 可以在可视化的过程中用来划分平面，三角剖分
-    - 可以用来进行空间插值
-    - 北京奥运会的水立方即是基于此原理设计  
 
 

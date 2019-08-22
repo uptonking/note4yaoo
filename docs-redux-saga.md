@@ -1,8 +1,8 @@
 ---
+tags: [docs/react]
 title: docs-redux-saga
 created: '2019-08-01T16:03:46.390Z'
-modified: '2019-08-02T10:18:07.465Z'
-tags: [docs/react]
+modified: '2019-08-22T10:15:44.335Z'
 ---
 
 # docs-redux-saga  
@@ -14,7 +14,7 @@ tags: [docs/react]
     - better at handling failures
 
 
-## dev tips
+## dev-tips
 
 ## resources
 - docs
@@ -23,4 +23,3 @@ tags: [docs/react]
 
 ## redux-saga docs 
 
-### 

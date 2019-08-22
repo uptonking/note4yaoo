@@ -1,14 +1,15 @@
 ---
+tags: [docs/react]
 title: docs-react
 created: '2019-08-01T16:03:46.386Z'
-modified: '2019-08-02T10:17:19.789Z'
-tags: [docs/react]
+modified: '2019-08-22T10:15:04.521Z'
 ---
 
 # docs-react
 - React is a JavaScript library for building user interfaces.
 
-## dev tips
+## dev-tips
+
 - 在所有页面都能触发的行为
 	- toast
 	- language switch
@@ -35,7 +36,7 @@ tags: [docs/react]
     	If the data is not available by the time componentWillMount fires, the first render will still show a loading state regardless of where you initiate the fetch.
     	This is why moving the fetch to componentDidMount has no perceptible effect in the vast majority of cases.
 
-### resources
+## resources
 
 - docs
     - https://reactjs.org/docs/hello-world.html

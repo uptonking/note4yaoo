@@ -1,13 +1,13 @@
 ---
+tags: [docs/spring]
 title: docs-spring
 created: '2019-08-01T16:03:46.394Z'
-modified: '2019-08-02T10:18:15.631Z'
-tags: [docs/spring]
+modified: '2019-08-22T10:14:16.020Z'
 ---
 
 # docs-spring
 
-## spring summary
+## dev-tips
 
 - WebMvcConfigurationSupport精简了5个方法
     - beanNameHandlerMapping()
@@ -15,8 +15,7 @@ tags: [docs/spring]
     - mvcValidator()
     - mvcUriComponentsContributor()
     - mvcViewResolver()
-
-- spring处理带有@Configuration注解的类时，先子类，再父类，一直上溯到java.lang.Object
+- spring处理带有@Configuration注解的类时，先子类再父类，一直上溯到java.lang.Object
     - 但保存bean方法到configurationClasses时，用的是子类，而不是父类
 - play-mvc处理带有@Configuration注解的类时，只处理子类，以及子类继承的带有@Bean注解标注的方法
 - AnnotationConfigUtils.attributesForRepeatable() 获取注解的所有属性

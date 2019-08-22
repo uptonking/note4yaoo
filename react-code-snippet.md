@@ -1,11 +1,11 @@
 ---
+tags: [dev/react]
 title: react-code-snippet
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-08-01T16:08:13.927Z'
-tags: [dev/react]
+modified: '2019-08-22T10:21:06.721Z'
 ---
 
-# react sample
+# react-code-snippet
 
 ## awesome components
 

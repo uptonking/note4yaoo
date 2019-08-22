@@ -1,13 +1,12 @@
 ---
+tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2019-08-03T12:45:42.745Z'
-tags: [dev/web]
+modified: '2019-08-21T10:27:31.085Z'
 ---
 
 # note-dev-web
 
-## css
 
 ## webkit
 
@@ -15,4 +14,6 @@ tags: [dev/web]
 - JavaScriptCore是WebKit中默认的JavaScript引擎，它是苹果开源的一个项目，是苹果Safari浏览器的JavaScript引擎，应用较为广泛
 - JavaScriptCore的大致流程：JavaScript源代码 -> 抽象语法树（AST）-> 字节码-> 本地代码
 - V8的大致流程：JavaScript源代码 -> 抽象语法树（AST）-> 本地代码 （2017年4月发布5.9版本后新增了Ignition字节码解释器，与JScore流程大致相同）
+
+
 

@@ -1,8 +1,8 @@
 ---
+tags: [web]
 title: note-web-dom
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-08-02T10:25:37.934Z'
-tags: [web]
+modified: '2019-08-16T10:31:33.999Z'
 ---
 
 # note-web-dom
@@ -111,3 +111,5 @@ document.body.clientHeight：不包括整个文档的滚动条，也不包括<ht
 
 - 渐进式图片  
 JPEG、GIF和PNG这三种图像格式都提供了一种功能，让图像能够更快地显示。图像可以以一种特殊方式存储，显示时先大概显示图像的草图，当文件全部下载后再填充细
+
+

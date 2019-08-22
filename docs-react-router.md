@@ -1,14 +1,15 @@
 ---
+tags: [docs/react]
 title: docs-react-router
 created: '2019-08-01T16:03:46.390Z'
-modified: '2019-08-02T10:17:31.976Z'
-tags: [docs/react]
+modified: '2019-08-22T10:13:54.378Z'
 ---
 
 # docs-react-router
 - React Router is a collection of navigational components that compose declaratively with your application. 
 
-## dev tips
+## dev-tips
+
 - how to programmatically navigate using react router v4
 	- 参考 https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
 	- In v4, for navigating programatically you need to access the history object, which is available through React context

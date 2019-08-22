@@ -1,13 +1,14 @@
 ---
+tags: [docs/handsontable]
 title: docs-handsontable
 created: '2019-08-01T16:03:46.386Z'
-modified: '2019-08-02T10:13:05.425Z'
-tags: [docs/handsontable]
+modified: '2019-08-22T10:13:32.864Z'
 ---
 
 # docs-handsontable
 
-## dev tips
+## dev-tips
+
 - rowHeights/colWidths能够设置各行/各列的高度/宽度的默认值，也是最小值
 - stretchH能使表格充满容器宽度，且各列水平均分
 - handsontable大小尺寸
@@ -17,7 +18,6 @@ tags: [docs/handsontable]
     - 参考 https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable
 
 ## faq
-
 - Walkontable is the return value of many methods but not mentioned in the docs
     - Walkontable is for internal use only. 
     - It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
