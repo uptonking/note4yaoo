@@ -2,7 +2,7 @@
 tags: [java, js, web, webview]
 title: note-java-js-web
 created: '2019-10-15T12:34:00.837Z'
-modified: '2019-10-24T14:19:03.016Z'
+modified: '2019-10-25T10:07:02.908Z'
 ---
 
 # note-java-js-web
@@ -21,6 +21,12 @@ modified: '2019-10-24T14:19:03.016Z'
 - V8的大致流程：JavaScript源代码 -> 抽象语法树（AST）-> 本地代码 （2017年4月发布5.9版本后新增了Ignition字节码解释器，与JScore流程大致相同）
 - 参考
     - https://zhuanlan.zhihu.com/p/27628685
+
+### blink
+- chromium早期的排版引擎是Webkit，后面慢慢的Webkit被google改成了blink，虽然名字改了但是目前很多框架和原理还是Webkit
+- 随着浏览器内核的发展，blink和webkit越走越远，最近的一个大改动就是使用最新的NG排版引擎
+- 早期Blink采用的是引用计数管理内存，引用计数有循环引用的风险，C++中可以通过Raw指针绕开引进计数的管理，存在风险
+- Blink是实现了**Oilpan**垃圾自动回收机制
 
 ## react-native
 - React Native对于你写的所有JS和JSX代码都会被JS Engine来执行。在iOS上，默认的就是JavaScriptCore， iOS 7之后的设备都支持，**iOS不允许用自己的**JS Engine

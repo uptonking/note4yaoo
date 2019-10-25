@@ -1,8 +1,8 @@
 ---
-tags: [browser, web, webkit]
+tags: [web, webview]
 title: note-webkit
 created: '2019-10-17T09:05:43.329Z'
-modified: '2019-10-17T09:07:19.654Z'
+modified: '2019-10-25T10:03:14.536Z'
 ---
 
 # note-webkit
