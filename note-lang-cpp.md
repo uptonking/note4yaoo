@@ -1,8 +1,8 @@
 ---
+tags: [lang/c++]
 title: note-lang-cpp
 created: '2019-06-09T05:36:54.368Z'
-modified: '2019-08-01T05:17:07.738Z'
-tags: [lang/c++]
+modified: '2019-10-21T02:31:31.059Z'
 ---
 
 # note-lang-cpp
@@ -11,7 +11,7 @@ tags: [lang/c++]
 - make用来执行Makefile
     - make工具可以看成是一个智能的批处理工具，它本身并没有编译和链接的功能，而是用类似于批处理的方式，通过调用makefile文件中用户指定的命令来进行编译和链接的
     - makefile命令中就包含了调用gcc（也可以是别的编译器）去编译某个源文件的命令
-    - makefile对简单工程可以手写，对大工程手写makefile非常麻烦，若换个平台则要重新修改
+    - makefile对简单工程可以手写，对大工程手写makefile很麻烦，若换平台则要重新修改
 - cmake用来执行CMakeLists.txt
 - qmake用来处理*.pro工程文件
 - Makefile的抽象层次最低，cmake和qmake在Linux等环境下最后还是会生成一个Makefile
@@ -35,7 +35,7 @@ tags: [lang/c++]
     - .o为后缀的文件，是编译后的目标文件； 
     - .s为后缀的文件，是汇编语言源代码文件； 
     - .S为后缀的文件，是经过预编译的汇编语言源代码文件。
-- TCMalloc是Google开发的内存分配器，在不少项目中都有使用，例如在Golang中就使用了类似的算法进行内存分配。它具有现代化内存分配器的基本特征：对抗内存碎片、在多核处理器能够scale。据称，它的内存分配速度是 glibc2.3 中实现的 malloc的数倍。
+- TCMalloc是Google开发的内存分配器，在不少项目中都有使用，例如在Golang中就使用了类似的算法进行内存分配。它具有现代化内存分配器的基本特征：对抗内存碎片、在多核处理器能够scale。据称，它的内存分配速度是 glibc2.3 中实现的malloc的数倍。
 
 ## C
 

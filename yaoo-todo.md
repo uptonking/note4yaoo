@@ -2,13 +2,20 @@
 tags: [yaoo]
 title: yaoo-todo
 created: '2019-07-29T03:36:23.673Z'
-modified: '2019-08-22T10:22:25.191Z'
+modified: '2019-08-29T01:26:58.450Z'
 ---
 
 # yaoo-todo
 
+## todo-2019
+
+
+
 ## todo-ebook
 
+- TypeScript图形渲染实战：2D架构设计与实现
+    - https://book.douban.com/subject/31365348/
+    - 201906
 - Kotlin核心编程
     - https://book.douban.com/subject/33419618/
     - 201904

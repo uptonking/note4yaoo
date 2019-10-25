@@ -2,7 +2,7 @@
 tags: [log/cs]
 title: log-cs
 created: '2019-04-22T03:42:22.447Z'
-modified: '2019-08-22T10:05:46.528Z'
+modified: '2019-10-07T10:09:07.234Z'
 ---
 
 # log-cs
@@ -11,19 +11,49 @@ modified: '2019-08-22T10:05:46.528Z'
 - realtime/实时
 - dynamic/动态
 - 3d/三维
+- 算法性能优化
+
+## 开发原则
 - learn by practice/实用为先/使用为先
+- 不要花费过多时间进行工具选择
+    - 工具只是解决问题的捷径
+    - 在解决业务问题后，可以花更多时间深入工具原理与抽象自己的工具
 
 ## pieces
 - 监听器的使用    
     - 将业务逻辑系统用事件驱动方式拆分，既能使代码逻辑更清晰，又能自主掌控逻辑的同步和异步执行
     - 在业务中很多场景都可以比喻为事件，比如用户注册，可能要求注册之后发送验证信息，或者创建订单之后需要发送订单详情邮件之类的，还有就是批量处理时，可以拆成一个批量输入命令，然后触发一个事件，事件处理一个任务，这个事件触发也可以在接口或者其它地方触发，但是事件监听是同一套，不用做任何修改，如果一块逻辑已经过时，那直接去掉监听即可，代码上可能只需要修改一行即可
+- java network library comparison
+    - HttpURLConnection
+        - HttpURLConnection是java的标准类，什么都没封装，用起来太原始，不方便，比如重访问的自定义，以及一些高级功能等
+        - 从Java 9开始，通过JEP 110, HTTP/2 Client API proposal提供了对HTTP 2.0和WebSocket客户端的编程支持，以HttpClient替换HttpURLConnection/HttpsURLConnection
+        - 但是该模块仍然属于沙箱试验，Java 10仍然未能正式发布。从Java 11开始，JEP 110, HTTP/2 Client API终于正式发布，模块名java.net.http
+    - Apache HttpClient
+        - 在jdk标准库不给力的情况下，Apache HttpComponents HttpClient通常是最佳的HTTP Client library选择。但这个库当前还不支持HTTP/2，支持HTTP/2的版本还处于beta阶段（2018.09.23），因此并不适合用于Android APP中使用，20190722发布的HttpComponents HttpClient 5.0-beta5添加了对http/2协议的支持
+        - 在早期版本的Android中，Android SDK中集成了Apache的HttpClient模块，HttpClient就是一个增强版的HttpURLConnection，它只是关注于如何发送请求、接收响应，以及管理HTTP连接
+        - 如果做好封装或者使用android-async-http，Afinal，Xutils也能挺简单的完成http请求，但是Android6.0已经放弃了HttpClient，不是系统自带的了
+    - OkHttp
+        - 由于当前Apache HttpComponents HttpClient版本并不支持 HTTP/2, 而HTTP/2对于移动客户端而言，无论是从握手延迟、响应延迟，还是资源开销看都有相当吸引力。因此这就给了高层次封装且支持HTTP/2 的 http client lib 足够的生存空间，其中最典型的要数OkHttp
+        - OKHttp类似于HttpUrlConnection，是基于传输层实现应用层协议的网络框架，而不止是一个Http请求应用的库
+        - 默认情况下，OKHttp会自动处理常见的网络问题：像二次连接、SSL的握手问题
+        - 从Android4.4开始HttpURLConnection的底层实现采用的是okHttp
+        - OkHttp基于NIO 和 Okio，Okio是基于IO和NIO基础上做的一个更简单、高效处理数据流的一个库
+    - Volley
+        - 是谷歌官方13年I/O大会推出的，volley在设计的时候是将具体的请求客户端做了下封装：HurlStack，也就是说可以支持HttpUrlConnection, HttpClient, OkHttp
+        - 也有缺陷，比如不支持post大量数据，所以不适合上传文件。Volley设计的初衷本身也就是为频繁的、数据量小的网络请求而生
+        - volley是一个简单的异步http库，仅此而已。缺点是不支持同步，这点会限制开发模式；不能post大数据，所以不适合用来上传文件
+    - android-async-http
+        - 与volley一样是异步网络库，但volley是封装的httpUrlConnection，它是封装的httpClient，而android平台不推荐用HttpClient了，所以这个库已经不适合android平台了
+    - Retrofit
+        - 基于OkHttp封装的一套RESTful网络请求框架
+        - Retrofit 的封装可以说是很强大，里面涉及到一堆的设计模式，你可以通过注解直接配置请求，你可以使用不同的http客户端，虽然默认是用 Khttp ，可以使用不同Json Converter来序列化数据，同时提供对RxJava的支持
 - 阿里飞冰 ice和ant design 区别
     - ice是个项目开发与管理平台，生成的项目的确是没有交互和业务逻辑，这些需要手工编码完成
     - ice前端使用的是阿里内部的fusion库，而不是antd
     - 在ice体系里，组件不受限，既可以用ice提供的组件也可以使用ant的组件，还有更多社区组件
     - 飞冰面向设计师推出iceland，能直接从设计到代码
     - 面向开发者端我们提供了iceworks工具，iceworks是与物料体系打通的关键，所有物料资源，包括iceland上设计师生产的，都会无缝打通
- 
+
 
 ## 开源协议 Open Source License
 
@@ -340,4 +370,97 @@ startDocument --> 具体读到某个node（非根node和根node）的解析过�
 - java枚举类与switch使用
     - enum switch case label must be the unqualified name of an enumeration constant   
     - switch指定枚举类后，case后只能用枚举类的非限定名，不要再写枚举类了
+- REPL 交互式编程环境 (Read-Eval-Print-Loop) 
+    - jShell
+    - python 
+    - babel-node(有babel-cli提供)
+- targe=_blank
+    - 当一个外部链接使用了target=_blank的方式，这个外部链接会打开一个新的浏览器tab。此时，新页面会打开，并且和原始页面占用**同一个进程**(UI进程)。
+    - 这也意味着，如果这个新页面有任何性能上的问题，比如有一个很高的加载时间，这也将会影响到原始页面的表现。
+    - 如果你打开的是一个同域的页面，那么你将可以在新页面访问到原始页面的所有内容，包括document对象(window.opener.document)。
+    - 如果你打开的是一个跨域的页面，你虽然无法访问到document，但是你依然可以访问到location对象。
+- node依赖
+    - dependencies
+        - 是最常用普通业务依赖
+    - devDependencies
+        - 开发环境依赖，常用来指定打包、测试工具
+    - peerDependencies
+        - 比较适合插件库来声明所依赖的核心库，将依赖提升到根目录避免重复下载
+        - 指定当前包（也就是你写的包）兼容的宿主版本
+        - 可以避免类依赖库被重复下载
+            - 如果用户显式依赖了核心库，则可以忽略各插件的peerDependency声明
+            - 如果用户没有显式依赖核心库，则按照插件peerDependencies中声明的版本将库安装到项目根目录中
+            - 当用户依赖的版本、各插件依赖的版本之间不相互兼容，貌似会报错让用户自行修复
+    - optionalDependencies
+        - 可选依赖，它们即使安装失败，npm仍然继续运行
+    - bundleDependencies
+        - 在发布时会将指定的包打包到最终的发布包里
+        - undleDependencies节点的功能跟dependencies节点是一样的，区别在于，当需要构建项目并发布版本时，bundleDependencies节点下的依赖会被包含在构建结果中，不需要另外npm install来安装了
+    - 参考
+        - https://github.com/SamHwang1990/blog/issues/7
+- node-path
+    - `path.join(path1，path2，path3.......)`
+        - 先解析相对路径..，再拼接返回，path片段/docs,./docs,docs三种方式处理无差别
+        - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
+        - path片段前的`./`可有可无，只进行路径拼接
+        - `path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');`
+            - 返回: '/foo/bar/baz/asdf'
+    - `path.resolve([from...],to)`
+        - 先解析路径，再生成绝对路径返回，./docs,docs相同，/docs会作为绝对路径起点
+        - 按参数从左向右，把路径片段的序列解析为一个**绝对路径**，一定生成绝对路径
+        - path.resolve('/foo', '/bar', 'baz') 会返回 /bar/baz
+    - `__dirname`
+        - Node.js中的文件路径大概有 __dirname, __filename, process.cwd(), ./ 或者 ../
+            - 前3者都是绝对路径
+        - `__dirname`：    当前执行文件所在目录的绝对路径
+        - `__filename`：   当前执行文件的带有完整绝对路径文件名的绝对路径
+        - `process.cwd()`：当前执行node命令时候的文件夹目录名 
+        - `./`：跟process.cwd()一样，返回node命令时所在的文件夹的绝对路径
+        - `require(./a.js)`：当node遇到require时，会相对当前执行文件查找
+        - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
+- html a标签属性 rel='nofollow'
+    - 告诉搜索引擎不要此网页上的链接或不要追踪此特定链接
+    - 使用场景
+        - 屏蔽广告/付费链接的权重
+        - 屏蔽恶意用户
+        - 划分优先级
+    - rel="noopener noreferrer"可以取消传递相关信息
+- The main difference between Cyan and Teal is that the Cyan is a color visible between blue and green; subtractive (CMY) primary color and Teal is a low-saturated color, a bluish-green to dark medium, similar to medium blue-green and dark cyan.
+- 语言地区代码的构成，如en-US, zh-CN
+    - The syntax and registry of HTTP language tags is the same as that defined by RFC 1766 
+    - a language tag is composed of 1 or more parts: A primary language tag and a possibly empty series of subtags
+    - any two-letter primary-tag is an ISO-639 language abbreviation and any two-letter initial subtag is an ISO-3166 country code.
+    - 参考 https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html
+- 渐进式图片  
+    - JPEG、GIF和PNG这三种图像格式都提供了一种功能，让图像能够更快地显示图像可以以一种特殊方式存储，显示时先大概显示图像的草图，当文件全部下载后再填充细
+- file-loader will copy files to the build folder and insert links to them where they are included. 
+- url-loader will encode entire file bytes content as base64 and insert base64-encoded content where they are included. So there is no separate file.
+- The url-loader works like the file-loader, but can return a DataURL if the file is smaller than a byte limit.
+- 获取数组中随机元素
+    - ` arr[Math.floor(Math.random()*(arr.length))]`
+- `performance.now()` vs `date.now()`
+    - performance.now() returns the number of milliseconds, with microseconds in the fractional part and is more precise in orders of magnitude. 精度更高，不依赖系统时间，但在大型循环中使用会明显感觉慢，输出的是相对于performance.timing.navigationStart(页面初始化)的时间
+        - Use cases include benchmarking and other cases where a high-resolution time is required such as media (gaming, audio, video, etc.)
+        - performance.now() is only available in newer browsers (including IE10+).可能会有兼容性问题
+    - Date.now() returns the number of milliseconds elapsed since Unix epoch(1 January 1970 00:00:00 UTC) and is dependent on system clock.会因为系统时间的变化而改变，准确性有时不能保证
+        - Use cases include same old date manipulation ever since the beginning of JavaScript.
+- typescript typeof
+```
+let bar = {a: 0};
+let TypeofBar = typeof bar;  // the value "object"
+type TypeofBar = typeof bar; // the type {a: number}
+```
+- Object.prototype.hasOwnProperty.call(obj, attrName);
+    - obj.hasOwnProperty(prop)判断一个属性是定义在对象本身而不是继承自原型链
+        - 调用的是js中Object对象原型上的hasOwnProperty()方法
+    - js没有将hasOwnProperty作为一个敏感词，所以我们很有可能将对象的一个属性命名为hasOwnProperty，这样一来就无法再使用对象原型的hasOwnProperty 方法来判断属性是否是来自原型链，解决方法有几种
+        - ({}).hasOwnProperty.call(foo, 'bar'); // true
+        - Object.prototype.hasOwnProperty.call(foo, 'bar');
+- TypeScript 3.0在JSX命名空间中引入了一个新的类型别名`LibraryManagedAttributes`
+    - 这是一个辅助类型，用于告诉TypeScript某个JSX标记可以接受哪些属性
+    - TypeScript 3.0 adds support for a new type alias in the JSX namespace called LibraryManagedAttributes. 
+    - This helper type defines a transformation on the component’s Props type, before using to check a JSX expression targeting it; thus allowing customization like: how conflicts between provided props and inferred props are handled, how inferences are mapped, how optionality is handled, and how inferences from differing places should be combined.
+    - The default-ed properties are inferred from the defaultProps property type. If an explicit type annotation is added, e.g. static defaultProps: `Partial<Props>`; the compiler will not be able to identify which properties have defaults
+    - Use static defaultProps: `Pick<Props, "name">` as an explicit type annotation instead
+
 

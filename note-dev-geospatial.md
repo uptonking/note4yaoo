@@ -1,8 +1,8 @@
 ---
+tags: [dev/geo, geo]
 title: note-dev-geospatial
 created: '2019-06-09T05:38:26.039Z'
-modified: '2019-07-07T14:00:02.923Z'
-tags: [dev/geo]
+modified: '2019-09-07T04:06:08.109Z'
 ---
 
 # note-dev-geospatial

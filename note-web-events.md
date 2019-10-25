@@ -1,0 +1,295 @@
+---
+tags: [events, web]
+title: note-web-events
+created: '2019-10-17T08:31:14.028Z'
+modified: '2019-10-22T10:01:34.482Z'
+---
+
+# note-web-events
+
+## faq
+- react中分别有onClick和onDoubleClick,但将这两个事件同时写在一个div上时，点击只会触发单击事件，应该怎么实现在一个div中同时绑定单击与双击事件？
+    - Like browsers, React triggers two single click events before triggering the doubleclick event.
+    - 不要同时绑定这两个事件，只绑定单击事件，在单击事件的监听方法中
+        - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++。当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
+    - 同时js绑定单击和双击事件，在绑定的单击事件中，setTimeout设置一个延迟，双击事件中，clearTimeout这个延迟，再执行对应的方法
+    - 还可以使用lodash的debounce，区别是同时监听onCick和onDoubleClick
+    - 还可以使用promise来推迟onClick的执行，这种方式也称作cancelablePromise
+        - https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40
+    - 示例
+    ```  
+    let count = 0;
+    class App extends Component {
+        onClick = () => {
+            count += 1;
+            setTimeout(() => {
+              if (count === 1) {
+                console.log('do single click ', count);
+              } else if (count === 2) {
+                console.log('do onDoubleClick: ', count);
+              }
+              count = 0;
+            }, 300);
+        }
+        
+        render(){
+            return (...)
+        }
+    }
+    ```
+
+## summary
+- ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
+    - https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+- event.stopPropagation()
+    - 阻止继续冒泡，不让事件向document传播，但默认事件仍然会执行
+- event.preventDefault()
+    - 阻止默认行为，如调用此方法时链接不会被打开，但会发生冒泡，会传播到上一层父元素
+- return false
+    - 会同事阻止事件冒泡和默认行为
+    - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
+- oneventtype vs addEventListener
+    - onclick事件在同一时间只能指向唯一对象，addEventListener给一个对象注册多个listener
+    - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
+    - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
+    - 对于IE9之前，相对应的是attachEvent和detachEvent
+    - addEventListener
+        - This method allows the registration of event listeners on the event target. 
+        - If an EventListener is added to an EventTarget while it is processing an event, it will not be triggered by the current actions but may be triggered during a later stage of event flow, such as the bubbling phase.
+        - If multiple identical EventListeners are registered on the same EventTarget with the same parameters the duplicate instances are discarded. 
+        - They do not cause the EventListener to be called twice and since they are discarded they do not need to be removed with the removeEventListener method.
+    - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
+        - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.
+        - **avoid** writing inline javascript. It makes it harder to debug
+
+
+## Web/API/GlobalEventHandlers
+- `onchange` 
+    - ref
+        - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+    - change events fire when user commits a value change to a form control
+    - change event is fired for `<input>`, `<select>`, and `<textarea>` element when an alteration to the element's value is committed by user 
+    - Unlike the input event, the change event is not necessarily fired for each alteration to an element's value
+    - change event fires at a different moment Depending on the kind of element
+    - For some elements, including `<input type="text">`, the change event doesn't fire until the control loses focus. 
+        - onChange事件只有在文本框失去焦点的时候才能触发
+    - onBlur event is fired when you have moved away from an object without necessarily having changed its value.
+    - onChange event is only called when you have changed the value of the field and it loses focus.
+    - React组件主要使用onChange合成事件，作为文本输入框(input)或文字输入区(textarea)触发文字输入时的事件，这个事件用起来很直觉，理应当是如此
+    - onChange在浏览器上，只要在这个文本输入框上，有任何的键盘动作它都会触发，也就是如果你是使用了中文、日文、韩文输入法(IME)，不论是哪一种，拼音的、笔划的还是其他的，只要有按下一个键盘的动作，就会触发一次浏览器上这个元素的change事件   
+    - React attaches listeners for Component.onChange to the DOM element.oninput event. 
+        - https://github.com/facebook/react/issues/3964
+- `oninput`
+    - input event fires when the value of an `<input>`, `<select>`, or `<textarea>` element has been changed
+    - oninput event occurs when the text content of an element is changed through the user interface.
+    - The event also applies to elements with contenteditable enabled, and to any element when designMode is turned on.
+    - input event is fired every time the value of the element changes. 
+        - This is unlike the change event, which only fires when the value is committed, such as by pressing the enter key, selecting a value from a list of options, and the like.
+    - For `<input>` elements with type=checkbox or type=radio, the input event should fire whenever a user toggles the control
+        - However, historically this has not always been the case. 
+        - use the change event instead for elements of these types.
+    - ref
+        - https://blog.csdn.net/freshlover/article/details/39050609
+        - https://www.geekjc.com/post/5bcb2c34e6f24c5a85df4bff
+        - https://segmentfault.com/a/1190000020098620
+- onchange vs oninput
+    - onchange事件在内容改变（两次内容不能相等）且失去焦点时触发，js直接更改value值时不触发
+        - onpropertychange属性可在某些情况下解决上面存在的问题，不用考虑是否失去焦点，不管js操作还是键盘鼠标手动操作，只要HTML元素属性发生改变即可立即捕获到。遗憾的是，onpropertychange为IE专属的
+    - oninput只在value改变时触发，oninput要通过addEventListener()来注册，js直接更改value值时不触发
+    - 用js动态地设置input的值，会发现oninput和onchange事件都没有自动触发，解决方案是自己实现双向绑定
+- `onselect`
+    - select event only fires after text inside an `<input type="text">` or `<textarea>` is selected.
+- `onanimationstart`
+    - called when an animationstart event is sent, indicating that a CSS animation has started playing.   
+- `ontransitionstart`
+    - called when a transitionstart event is sent, indicating that a CSS transition has started transitioning.
+
+
+## drag
+- The HTML5 specification includes support for drag and drop operations.
+    - This is supported by all modern desktop browsers, but not by mobile browsers running under Android and IOS
+- JavaScript权威指南P462 例17-2 拖动文档元素的例子中提到
+    - 注意`将mousemove和mouseup处理程序注册为捕获阶段`的事件处理程序
+    - because the user may move the mouse faster than the document element can follow it
+    - 如果这种情况发生，某些mousemove事件会发生在原始目标元素之外，没有捕获，这些事件将无法分派正确的处理程序
+    - addEventListener方式其实对capture或者bubble都无影响，因为反正都是监听在document之上，不管鼠标多快，不管是不是超出目标元素的范围，mousemove事件都会发生，所以总会把目标元素移动到指定鼠标的位置
+    - 这里的考虑是针对ie浏览器的elementToDrag.attachEvent()这种方式的事件绑定，因为它将mousemove事件直接绑定在了目标元素上，那么如果鼠标移动太快，而元素没有跟上，那么mousemove事件就不会再目标元素身上发生，就触发不了处理函数
+- 元素无论自身有没有定位，offsetParent返回的是距离自己最近的有定位的祖先元素，若祖先没有定位，则返回body
+- offset值指的是元素外边到祖先元素内边的距离
+- event.page若有滚动条，要包括页面拉上面的部分，若无滚动条，则page与client一致
+- event.offset获取鼠标在盒子内部的位置
+- event.client获取鼠标在浏览器内部的位置
+- event.screen获取鼠标在显示器屏幕的位置
+- 拖拽步骤
+    - 获取初始位置clientX/Y
+    - 获取移动后的位置clentX/Y，计算偏移量=移动后clientX-初始clientX
+    - 给盒子的left和top加偏移量
+- FastClick实现原理 
+    - 将所有touch与mouse事件绑定到document.body上
+    - 当某个div触发touch事件，将会冒泡到document.body上
+    - 针对不同类型的touch事件，触发document不同的mouse事件
+    - 然后接下来就是document.body的事件委托了
+- 计算位置坐标
+    - Element.getBoundingClientRect() 
+        - returns the size of an element and its position relative to the viewport.
+        - The returned value is a DOMRect object,  with read-only left, top, right, bottom, x, y, width, and height properties
+        - Properties other than width and height are relative to the top-left of the viewport.
+- scrollLeft 、scrollTop：设置或获取位于对象最顶/左端和窗口中可见内容的最顶/左端之间的距离，即当前上滚或左滚的距离（针对父容器）
+- scrollHeight、scrollWidth：获取对象可滚动的总高度/宽度（针对父容器）
+- offsetLeft、offsetTop：获取当前对象与父元素之间的距离（不包含父元素的边框，父元素是porsition不为static）
+    - 这两个属性只能用于元素设置了overflow的css样式中，否者这两个属性没有任何意义。且overflow的值不能为visible，但可以为hidden,auto,scroll的之中，但是hidden最常见
+    - scrollLeft：是该元素的显示（可见）的内容与该元素实际的内容的距离
+    - 一开始scrollLeft的值为0，你就看到了你的页面最左边的内容，而不显示超过浏览器的那部分。当你向右拖动滚动条时，scrollLeft的值在增大，你就看到了右边隐藏的内容，而看不到左边隐藏的部分。就会从scrollLeft的位置开始显示，而不显示0-scrollLeft的元素内容。即：该元素的显示位置与实际内容的位置的距离变大。元素会从scrollLeft的位置显示该元素的内容
+- offsetWidth、 offsetHeight ：获取元素自身的宽度/高度（如果是标准盒模型width+padding+border；如果是IE盒模型 width）
+- clientLeft、 clientTop：效果和边框宽度相同，很少使用
+- clientWidth、 clientHeight：不含边框的元素自身的宽度/高度（如果是标准盒模型 width+padding；如果是IE盒模型 width-border）
+- Firefox的event不支持offsetX属性，兼容方法
+```
+function getOffsetX(event){
+    var evt =event||window.event;
+    var srcObj = evt.target || evt.srcElement;
+    if (evt.offsetX){
+        return evt.offsetX;
+    }else{
+        var rect = srcObj.getBoundingClientRect();
+        var clientx = evt.clientX;
+        return clientx - rect.left;
+    }
+```
+
+## scroll
+- scrollHeight
+    - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
+    - 包括content、padding，不包括margin
+    - 只有DOM元素才有，window/document没有
+    - 判断元素是否滚动到底 
+        - element.scrollHeight - element.scrollTop === element.clientHeight
+- scrollTop
+    - **可读写**，其他client?和offset?都只读
+    - 设置或获取一个元素不可见部分的顶部距离盒子border-top的距离
+    - 当一个元素的容器没有产生垂直方向的滚动条,那它的scrollTop的值默认为0
+    - 设置scrollTop的值小于0，scrollTop被设为0
+    - scrollTop属性只有DOM元素才有，window/document没有
+- scrollLeft
+    - 可读写
+    - 设置或获取位于元素左边界和目前可见内容的最左端之间的距离
+- onscroll
+    - 当元素的滚动条滚动时触发的事件
+    - element.onscroll=function(){}，元素包括DOM元素、window、document
+    - 滚动条一定要出现，而且滚动条是属于外层元素，触发的是外层元素的onscroll事件
+- window.scroll()
+    - 让window滚动条滚动到那个x,y坐标
+- window.scrollTo()
+    - 等于window.scroll()
+- window.scrollBy()
+    - 让window滚动条相对滚动x，y的距离
+
+### client?
+- clientHeight
+    - 返回元素内部的高度，单位像素，只读
+    - 包含content和padding，**不包含滚动条**、border和margin
+    - 对于inline的元素这个属性一直是0
+    - clientHeight = CSS height + CSS padding - 水平滚动条的高度
+    - 在没有滚动条时，scrollHeight===clientHeight恒成立
+- clientTop
+    - border-top的高度
+- clientLeft
+    - 元素的左边框的宽度，以像素表示
+    - 如果元素的文本方向是从右向左RTL，并且由于内容溢出导致左边出现了一个垂直滚动条，则该属性包括滚动条的宽度
+### offset?
+- offsetHeight
+    - 包含content、padding、滚动条、border，不包括margin
+    - 标准盒模型采用，设置style的height即这里
+    - 对于inline的元素这个属性一直是0
+- offsetLeft
+    - 当前元素相对于其offsetParent元素的左边的距离
+- offsetTop
+    - 当前元素相对于其offsetParent元素的顶部的距离，即子边框外侧到父边框的内侧的距离
+### window
+- window.innerHeight 
+    - DOM视口的大小，包括滚动条
+- window.outerHeight
+    - 整个浏览器窗口的大小，还包括标题栏、工具栏、状态栏等
+
+### limitations
+- In iOS UIWebViews, scroll events are not fired while scrolling is taking place; they are only fired after the scrolling has completed. See Bootstrap issue #16202. Safari and WKWebViews are not affected by this bug.
+
+## keyboard 
+- ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
+- `onkeydown`
+    - onkeydown/onkeypress/onkeyup在处理复制、粘贴、拖拽、长按键（按住键盘不放）等细节上并不完善
+- `onkeypress`
+    - This feature is no longer recommended. It may have already been removed from the relevant web standards
+    - Note that some implementations may fire keypress event if supported. 
+    - The events will be fired repeatedly while the key is held down.
+
+## mouse 
+- mousedown vs click
+    - click is fired after a full click action occurs; that is, the mouse button is pressed and released while the pointer remains inside the same element. 
+    - mousedown is fired the moment the button is initially pressed.
+    - 如果在某个地方按下鼠标后移开鼠标在另外一个地方松开鼠标会触发onmousedown事件，但是onclick事件却不会被触发
+- `onmousedown`
+    - mousedown event fires when the user depresses the mouse button按下时
+    - mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
+    - onmousedown > onmousemove > onmouseup
+- `onclick`
+    - click event is raised when the user clicks on an element.
+    - click fires after both the mousedown and mouseup events have fired, in that order.
+    - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
+    - `target.onclick = functionRef;`
+        - functionRef is a function name or a function expression. 
+        - functionRef receives a MouseEvent object as its sole argument. 
+        - Within the function, `this` will be the element upon which the event was triggered.
+        - MouseEvent object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
+            - In other words, detail will be 2 for a double-click, 3 for triple-click, and so forth.
+            - This counter resets after a short interval without any clicks occurring; the specifics of how long that interval is may vary from browser to browser
+    - Only one onclick handler can be assigned to an object at a time. 
+        - You may prefer to use `EventTarget.addEventListener()` method instead, since it's more flexible.
+    - An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located *inside* the element.
+    - If the button is pressed on one element and the pointer is moved outside the element before the button is released, the event is fired on the most specific ancestor element that contained *both* elements.
+- `ondblclick`
+    - dblclick event is raised when the user double clicks an element. 
+    - It fires after two click events.
+    - Only one ondblclick handler can be assigned to an object at a time. 
+        - You may prefer to use the EventTarget.addEventListener()
+- double click vs click
+    - You can use a timeout to check if there is an another click after the first click.
+    - If you don't need to mix them, you can rely on click and dblclick and each will do the job just fine.
+    - A problem arises when trying to mix them: a dblclick event will actually trigger a click event as well, so you need to determine whether a single click is a "stand-alone" single click, or part of a double click.
+    - u *shouldn't* use both click and dblclick on one and the same element
+    - It is inadvisable to bind handlers to both the click and dblclick events for the same element. 
+    - The sequence of events triggered varies from browser to browser, with some receiving two click events before the dblclick and others only one. 
+    - Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
+    - You can use the event's `detail` property to detect the number of clicks related to the event. This makes double clicks inside of click fairly easy to detect.
+    - The problem remains of detecting single clicks and whether or not they're part of a double click. For that, we're back to using a timer and `setTimeout`.
+    - The maximum delay required for two consecutive clicks to be interpreted as a double-click is not standardized
+    - React组件可以通过抽象出高阶组件DoubleClick记录点击次数
+    - ref
+        - https://stackoverflow.com/questions/5497073/how-to-differentiate-single-click-event-and-double-click-event
+
+## CompositionEvent
+    - ref
+        - https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
+        - https://segmentfault.com/a/1190000008023476
+    - The DOM CompositionEvent represents events that occur due to the user indirectly entering text
+    - Those events would fire when you type non-latin characters like Japanese with IME input to "compose" a word with one or more than two letters
+    - 组合事件是由compositionStart，compositionUpdate和compositionEnd三个事件的组合，Start和End事件只执行一次，Update会执行多次
+    - CompositionEvent(组成事件)可以辅助开发者，它可以在可编辑的DOM元素上触发，主要是input与textarea上，所以可以用来辅助解决change事件的输入法问题
+    - 共有三个事件，分别为compositionstart、compositionupdate与compositionend
+        - 它们代表的是开始进行字的输入的开始、更新与结束
+        - 也就是代表开始以输入法编辑器来组合键盘上的英文字符，选字或刷新字的组合，到最后输出字到真实DOM中的文本输入框中
+        - 每个中文字在输入时，compositionstart与compositionend都只会会被触发一次，而compositionupdate则是有可能多次触发
+     - 可以利用CompositionEvent作为一个信号，如果正在使用IME输入中文时，change事件中的代码就先不要运行，**等到compositionend触发时，接着change事件才可以运行**其中的代码，运作的原理就是这样简单而已
+     - 在React应用中，如果是一个"Uncontrolled"(不受控制的)的input组件，它与网页上真实DOM中的input元素的事件行为无差异，也就是说，直接使用CompositionEvent的解决方式，就可以解决这个输入法的问题
+    - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
+
+## event
+- event.target/currentTarget
+    - target is a reference to the object that dispatched the event. It identifies the element on which the event occurred and which may be its direct descendent.
+    - currentTarget always refers to the element to which the event handler has been attached. It is the element you actually bound the event to. This will never change.
+
+
+

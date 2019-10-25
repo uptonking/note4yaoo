@@ -1,8 +1,8 @@
 ---
-tags: [web]
+tags: [style, web]
 title: note-web-style
 created: '2019-08-05T11:51:59.761Z'
-modified: '2019-08-19T04:37:24.548Z'
+modified: '2019-10-15T05:45:26.419Z'
 ---
 
 # note-web-style
@@ -17,8 +17,111 @@ modified: '2019-08-19T04:37:24.548Z'
     - 要考虑依赖的或将使用第三方组件的样式如何集成到现有项目
     - 考虑在特殊情况下如何覆盖样式
     
+
+## z-index
+- When the z-index property is not specified on any element, elements are stacked in the following order (`from bottom to top`)
+    - background and borders of the root element
+    - Descendant non-positioned blocks, in order of appearance in the HTML
+    - **Floating blocks**
+    - Descendant non-positioned inline elements
+    - Descendant positioned elements, in order of appearance in the HTML
+- stack tips
+    - applying a opacity value creates a new stacking context
+-  Floating blocks are placed between non-positioned blocks and positioned blocks
+    -  the background and border of non-positioned block  is completely unaffected by floating blocks，but the content is affected
+-  If you want to create a custom stacking order, you can use the z-index property on a `positioned` element. 
+    - z-index只能用在非static定位元素上，若用在static定位元素上则无效果
+- When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero)
+- when z-index value is auto, the box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent's box
+-  the rendering order of certain elements is influenced by their z-index value. This occurs because these elements have special properties which cause them to form a stacking context.
+- A stacking context is formed, anywhere in the document, by any element in the following scenarios
+    - Root element of the document (`<html>`).
+    - Element with a position value absolute or relative and z-index value other than auto.
+    - Element with a position value fixed or sticky 
+    - Element that is a child of a flex (flexbox) container, with z-index value other than auto.
+    - Element that is a child of a grid (grid) container, with z-index value other than auto.
+    - Element with a opacity value less than 1
+    - Element with the following properties with value other than none
+        - tranform
+        - filter
+        - clip-path
+- Within a stacking context, child elements are stacked according to the same rules previously explained. Importantly, the z-index values of its child stacking contexts only have meaning in this parent. Stacking contexts are treated atomically as a single unit in the parent stacking context.
+- Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.
+- Each stacking context is completely independent of its siblings: only descendant elements are considered when stacking is processed.
+- Each stacking context is self-contained: after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context.
+- The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context
+- 参考
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index
+    - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+
+
+## float
+- 容器并没有把浮动的子元素包围起来，俗称塌陷
+- 如果父元素只包含浮动元素，且父元素未设置高度和宽度的时候，那么它的高度就会塌缩为零，也就是所谓的**高度塌陷**
+    - 此时如果父级元素包含背景或者边框，那么溢出的元素就不像父级元素的一部分
+    - 解决方法
+        - 浮动父级元素。如果让父级元素浮动，父级元素的高度就会扩大，直到完全包含它里面的浮动元素，虽然这个方法很奇怪，但是很有效。如果选择这种方法，一定要在该元素的下个元素添加`clear:both`, 确保浮动元素落到父级元素的下方。
+        - overflow:hiden
+- overlfow-hidden
+    - 当父div拥有固定的高度时，如height:500px，可以使用overflow:hidden来隐藏溢出
+    - 当父元素的高为height:auto时，我们使用 overflow：hidden 清除浮动
+        - 若为div1和div2加上一个属性`float: left`后，会发现：背景色为黑色父div消失了，这是因为浮动的元素脱离文档流，不占据空间。不浮动的元素会直接无视掉这个元素，父div无视了自己的两个子div，其高度为0（因为我们没有设置父div的高度），所以父div没有显现。
+        - 第一种方法是让父元素也浮动起来，给父div添加 float: right，再给父div设宽度就可见背景色了
+        - 第二种方法是给父元素添加 overflow:hidden 属性用以清除浮动
+            - 因为overflow可以使父容器形成BFC，BFC可以包含浮动
+
+    
 ## tips
-- all in js
+- tailwind css vs Atomic CSS
+    - 都是类似css原子类的语法，但Atomic CSS写起来包含大小写和括号太丑
+    - css原子类增加了记忆成本，效果和行内样式一样，仅仅是减少了需要拼写的字符数量
+        - CSS原子类就基本等同于变相写inline style内联样式
+        - gzip压缩后减少的体积并不大
+        - **过于细碎**的原子类降低了可读性，类名过长，要严格控制数量，避免记忆压力
+        - 维护工作量大，一旦修改属性值，要修改所有类名，因为类名中常包含数字，如m20
+        - 修改常增加新类名
+    - 参考 https://www.zhihu.com/question/22110291
+- postcss vs sass
+    - sass是css预处理器，支持现在css不支持的语法，方便高效编写可复用的css
+        - compass库为sass操作css提供更多工具函数，but deprecated
+    - postcss是css处理工具，是个开放的平台，通过插件提供处理css的方法
+        - precss插件提供类似sass语法
+        - autoprefixer向CSS规则添加浏览器厂商前缀
+        - stylelint校验css
+        - postcss-assets可以方便管理文件资源，自动更改url路径
+        - cssnano优化压缩css
+        - https://github.com/postcss/postcss/blob/master/README-cn.md
+- transform translate() vs translate3d()
+    - 移动距离要写单位，3d在移动设备上也可以使用硬件加速
+    - translate3d should be faster in a lot of browsers, mostly those that use gfx hardware acceleration to speed up rendering. especially on webkit translate3d was the prefered way of forcing hardware acceleration on page items.
+    - there is one drawback to using 3d transforms - in certain browser-versions/os combinations hardware accelerated rendering can slightly alter font smoothing as well as interpolation thus causing minor flicker or blur. those situations can mostly be worked around but should be kept in mind.
+    - 3d移动时若包含z方向或使用百分比，有时会出现字体模糊，参考下面链接中的例子
+    - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d
+    - https://segmentfault.com/q/1010000002926369
+    - 3D变换会开启GPU加速，GPU加速动画时，并不是把原生DOM传递给GPU，它生成一个元素图像，把该图像发送到GPU，GPU将图像应用为多边形纹理贴图代表元素，GPU可以流畅快速的对这些多边形进行旋转，缩放，转换，倾斜等变换，但由于只是传递元素图像到GPU进行处理，所以它并不能重新渲染内容，图像清晰度不能保证，元素显示清晰度自然就下降了
+    - 出现模糊的原因是因为元素的高度、宽度中有奇数， 使用translate(-50%,-50%)之后，相当于宽度、高度除以2的效果，会出现 0.5px。像素就是最小的单位了，要么1，2，3，要么就是0，没有小数
+    - 比方说一个Div的高度是100.5px,在Chrome浏览器在渲染的时候，会渲染成100px、101px、100px、101px、100px .... 100px 和 101px 交替渲染，就出现了模糊
+-  `pointer-events` 
+    - sets under what circumstances (if any) a particular graphic element can become the target of pointer events
+    - default: `auto'`
+    - `none`: The element is never the target of pointer events, pointer event to go "through" the element and target whatever is "underneath" that element instead.
+- `z-index`
+    - sets the z-order of a positioned element and its descendants or flex items. 设置该属性的元素的定位方式不能是static
+    - 可选值包括：auto，0，-N，N
+    - 无z-index或者z-index值相等时，堆叠顺序均由元素在文档中的先后位置决定，后出现的会在上面
+    - 一般，z-index越大，就在越上层
+    - 当向上追溯找不到含有z-index值的父元素的情况下，则可视为**自由的z-index元素**
+    - 自由的z-index元素可以与其他自由的定位元素或者父元素的同级兄弟定位元素来比较z-index的值，决定其堆叠顺序
+    - 在parent2的z-index大于或者等于parent1的z-index的时候，parent2以及它的子元素均位于parent1以及其子元素的上方
+    - z-index值只决定同一父元素中的同级子元素的堆叠顺序，子元素依赖于父元素z-index值来获得页面中的堆叠顺序
+    - https://godbasin.github.io/2016/06/25/about-position/
+- `will-change`
+    - 提供了一种告知浏览器该元素会有哪些变化的方法，这样浏览器可以在元素属性真正发生变化之前提前做好对应的优化准备工作可以将一部分复杂的计算工作提前准备好
+- `touch-action`
+    - sets how an element's region can be manipulated by a touchscreen user (for example, by zooming features built into the browser)
+- position
+    - fixed相对浏览器窗口定位，脱离文档流，且不占位
 - css样式的渲染由浏览器实现，对开发者来说是黑盒，不用花过多时间
 - 当背景图片不够大时，可以考虑使用 background-repeat
 - weui的页面层级
@@ -28,6 +131,26 @@ modified: '2019-08-19T04:37:24.548Z'
     - popout：弹出层，常用于弹出菜单、通知、状态提示、操作提示
     - 参考 https://weui.io/#layers
 - css原来的作用是复用class，现在复用组件就相当于复用了class
+- css变量(除IE外的浏览器都已支持)
+    - 定义局部变量 
+    ```
+    element {
+      --main-bg-color: brown;
+    }
+    ```
+    - 定义全局变量
+    ```
+    :root {
+      --main-bg-color: brown;
+    }
+    ```
+    - 使用变量
+    ```
+    element {
+      background-color: var(--main-bg-color);
+    }
+    ```
+    - 变量值只能用作属性值，不能用作属性名
 
 ## 大型项目参考
 - ant-design 
@@ -68,6 +191,44 @@ modified: '2019-08-19T04:37:24.548Z'
     - 不可以
     - 内联样式与规则集中的选择器参与同一级联，并且在级联中采用最高优先级(！重要)。因此，它们甚至优先于伪类状态。允许内嵌样式中的伪类或任何其他选择器可能会引入新的级联级别，并带来新的问题
 
+## BFC(Block formatting contexts)
+- `Formatting context` 是CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用
+    - 最常见的Formatting context有Block fomatting context (简称BFC)和Inline formatting context(简称IFC)
+    - CSS2.1中只有BFC和IFC, CSS3中还增加了G(grid)FC和F(flex)FC
+    - 在MDN中依然把flexbox跟gridbox算在BFC中，但在最新的规范里，它们已经从BFC中分离了出去，成为独立的一个CSS模块 　　
+- `Block fomatting context` = block-level box + Formatting Context
+    - BFC直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 
+    - display属性为block, list-item, table的元素，会生成block-level box；并且参与 block fomatting context；
+    - display属性为inline,inline-block inline-table的元素，会生成inline-level box。并且参与 inline formatting context；
+- BFC是一块渲染区域，那这块渲染区域到底在哪，它又是有多大，这些由生成BFC的元素决定，CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC
+    - 根元素
+    - float的值不为none
+    - overflow的值不为visible
+    - display的值为inline-block、table-cell、table-caption
+    - position的值为absolute或fixed，此时脱离了文档流
+- BFC三特性
+    - BFC会阻止垂直外边距（margin-top、margin-bottom）折叠
+        - 只有同属于一个BFC时，两个元素才有可能发生垂直Margin的重叠
+        - 这个包括相邻元素，嵌套元素，只要他们之间没有阻挡(例如边框，非空内容，padding等)就会发生margin重叠
+        - 要解决margin重叠问题，只要让它们不在同一个BFC就行了，但是对于两个相邻元素来说，意义不大，没有必要给它们加个外壳，但是对于嵌套元素来说就很有必要了，只要把父元素设为BFC就可以了。这样子元素的margin就不会和父元素的margin发生重叠了。
+    - BFC不会重叠浮动元素
+    - BFC可以包含浮动
+        - 只要父容器形成BFC就可以包含浮动的子元素
+- BFC约束规则
+    - 内部的Box会在垂直方向上一个接一个的放置，Block元素会扩展到与父元素同宽
+    - 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与方向无关。）
+    - 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）
+    - BFC的区域不会与float的元素区域重叠
+    - **计算BFC的高度时，浮动子元素也参与计算**
+    - BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
+- 可以给div加个display:inline-block，触每个div容器生成一个BFC
+- 若块级正常流元素的高度设置为auto，而且只有块级子元素时，其默认高度将是从最高块级子元素的外边框边界到最低块级子元素外边框边界之间的距离。如果块级元素有上内边距或下内边距，或者有上边框或下边框，其高度是从其最高子元素的上外边距边界到其最低子元素的下外边距边界之间的距离
+- BFC的几种方式都有各自的问题，overflow属性会影响滚动条和绝对定位的元素；position会改变元素的定位方式，这是我们不希望的，display这几种方式依然没有解决低版本IE问题
+- 参考
+    - https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md
+    - https://github.com/zuopf769/notebook/blob/master/fe/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E5%92%8CBFC/README.md
+
+
 ## css style guide  
 - https://github.com/airbnb/css
 - https://github.com/airbnb/javascript/tree/master/css-in-javascript
@@ -101,6 +262,34 @@ modified: '2019-08-19T04:37:24.548Z'
 ## common style
 
 ### color-palettes
+- nice css standard color
+    - Grey
+        - silver：银色，比grey浅
+        - dimgrey/lightgrey/lavender/gainsboro/whitesmoke：浅灰
+        - snow/ghostwhite：浅白
+    - Red/Warm
+        - lightyellow/lemonchiffon：粉黄色，有点浅
+        - bisque：橘黄偏粉
+        - darkorange：深橙色
+        - antiquewhite/linen/oldlace：古董白，粉红色
+        - lightcoral：珊瑚红，艳丽
+        - coral：珊瑚偏黄
+        - lavenderblush：淡紫红，有点浅
+        - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
+    - Green/Blue
+        - beige：浅绿泛黄
+        - darkseagreen/seagreen：深海绿，都有点深
+        - teal：深青色
+        - darkcyan：深青绿
+        - mediumslateblue：中暗蓝，深蓝偏紫
+        - lightblue：淡蓝，有点深，有点陈旧感
+        - aliceblue：浅灰蓝
+        - azure：亮蓝色，有点浅
+        - royalblue：墨蓝，又亮又深
+        - lightgoldenrodyellow：浅金黄，新绿活力
+        - lightgreen：亮绿色，艳丽
+        - mediumseagreen：海绿色，适合文字
+        - lightskyblue/deepskyblue:天蓝色，有点深
 - google logo color
     - https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/
     - red 
@@ -1008,10 +1197,11 @@ modified: '2019-08-19T04:37:24.548Z'
 - 定位
     - static：每个元素都处在常规文档流，自上而下堆叠，默认方式
     - relative：相对于元素在常规文档流中的位置，距离常规文档流位置的上边/左边
-    - absolute：绝对定位的元素脱离了常规文档流，相对于定位上下文进行定位，默认定位上下文是body元素，此外会寻找最近的postion为relative的祖先元素作为定位上下文
-    - fixed：脱离了文档流，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动，不常用
+    - absolute：绝对定位的元素**脱离了文档流**，相对于定位上下文进行定位，默认定位上下文是body元素，此外会寻找最近的postion为relative的祖先元素作为定位上下文
+    - fixed：**脱离了文档流**，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动
     - 若未设置外层元素的position为relative/absolute/fixed，则内层元素的left/top等定位属性不会生效，会被忽略，默认都是static定位，内层div会和外层div同左上角起点
     - 常用的定位模式是：外层ralative，内层absolute
+    - float元素也会脱离文档流
 - background-color会应用到内容背景和padding背景，color前景色会应用到内容和边框
 - 页面布局
     - 一般不应该给元素设定高度，保持height属性默认值auto

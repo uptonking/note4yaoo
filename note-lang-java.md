@@ -2,7 +2,7 @@
 tags: [lang/java]
 title: note-lang-java
 created: '2019-06-09T05:35:12.366Z'
-modified: '2019-08-22T00:54:17.505Z'
+modified: '2019-10-03T05:16:03.239Z'
 ---
 
 # note-lang-java
@@ -16,9 +16,14 @@ modified: '2019-08-22T00:54:17.505Z'
 ## tips
 - all in java as backend 
 - 若要专注于提高渲染、存储、计算等方面的性能，请参考cpp
+- java的优势是既简单又高性能(相对于其他语言)
+
+
+## java-next
+- java panama
+    - 项目的目的是让java更加方便滴集成native的类库，比如各种用c/c++提供的api，以前都是使用jni，有一定的局限性，比如需要用户同时了解java和c/c++，巴拿马项目可以根据c的头文件自动生成java的interface，并接入jit，这样用户就可以完全不碰c/c++代码而使用native类库了，应用的经典例子就是opengl
 
 ## dev
-
 - 枚举类以后增加枚举值的方式
     - 枚举类只适合做数量确定的元素的事情,不确定的还是另外设计方法来做吧
     - 既然要动态添加，就不适合用枚举。用xml配置文件，然后解析，是适合这种动态的做法

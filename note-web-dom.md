@@ -1,37 +1,174 @@
 ---
-tags: [web]
+tags: [dom, web]
 title: note-web-dom
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-08-16T10:31:33.999Z'
+modified: '2019-10-18T14:03:18.912Z'
 ---
 
 # note-web-dom
 
-## element
+## pieces
 
+- `<button>` vs `<input type=button>`
+    - Unlike `<input>` tags, `<button>`'s can contain other html elements as their labels. 
+    - `<button>` element accepts a wide range of uncommon but useful attributes regarding multiple forms and click actions.
+    - Without a type, button implicitly receives type of submit. It does not matter how many submit buttons or inputs there are in the form, any one of them which is explicitly or implicitly typed as submit, when clicked, will submit the form.  This can cause problems if you want to use a button in a form without it submitting.
+    - `<input type="button">` can only accept a string as its label text (css styles not withstanding).
+    - Input elements are considered empty or void elements (other empty elements are area , base , br , col , hr , img , input , link , meta , and param. You can also check here), meaning they cannot have any content. In addition to not having any content, empty elements cannot have any pseudo-elements like ::after and ::before, which I consider a major drawback.
+    - ref
+        - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+        - https://stackoverflow.com/questions/469059/button-vs-input-type-button-which-to-use
+        - https://stackoverflow.com/questions/3543615/difference-between-input-type-submit-and-button-type-submittext-butto
+- button
+    - type
+        - submit: button submits the form data to the server. This is the default if the attribute is not specified, 
+        - button: button has no default behavior and does nothing when pressed. It can have client-side scripts associated with the element's events, which are triggered when the events occur.
+        - reset: resets all the controls to their initial values, like <input type="reset">.
+- table标签
+    - tbody标签主要定义一段表格主体（正文），使用tbody标签，可以将表格分为一个单独的部分，tbody标签可将表格中的一行或几行合成一组
+    - TBODY包含行的内容下载完优先显示，不必等待表格结束
+        - 如果table表格很长，可以用tbody分段，一部分一部分地显示，不用等整个表格都下载完成，下载一块显示一块，表格巨大时有比较好的效果
+    - 表格的行本来是从上向下显示的。但是，应用了thead/tbody/tfoot以后，就“从头到脚”显示，不管你的行代码顺序如何。也就是说如果thead写在了tbody的后面，html显示时，还是以先thead后tbody显示
+- Document.defaultView(read only) Returns a reference to the window object
+    - `document.defaultView === window` 返回true
+    - defaultView是document关联的window对象，其用途体现在当前上下文的window不等于当前document关联的window时，比如iframe,chrome-extension,ff-addon，有时相等
+    - 当使用Firefox 3.6时，其frame中需要使用document.defaultView去获取window对象，才能使用其getComputedStyle方法
+    - 参考
+        - https://www.cnblogs.com/yuan-shuai/p/4125511.html
+-  `element.ownerDocument` read-only property of the Node interface returns the top-level document object of the node.
+    - 返回值是Document类型的实例
+    - If this property is used on a node that is itself a document, the value is null.
+- `Node.parentElement` read-only property returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element
+- `HTMLElement.offsetParent`
+    - a read-only property returns a reference to the object which is the closest (nearest in the containment hierarchy) `positioned` containing element. 
+    - If the element is non-positioned, the nearest td, th, table or the body is returned.
+    - offsetParent is useful because offsetTop and offsetLeft are relative to its padding edge.
+- parentNode vs parentElement
+    - 两者在通常情况下都是一样的，因为包含元素的节点只有可能是元素节点，文本节点的父节点直接是元素节点
+    - 唯一区别是，因为parentElement找的是元素，因此当找到根部document时候就是出现值为null的报错，而且parentNode找的是节点，就可以返回document
+- Node vs Element
+    - Node(节点)是DOM层次结构中的任何类型的父类
+        - Node类型包括element(1),attr(2),text(3),comments(8),document(9)
+    - Element继承了Node类，Element拥有id、class、children等属性
+    - `document.getElementById("xxx")`取到的既是Element也是Node
+- children属性 vs childNodes属性
+    - children属性只返回Element
+        - instanceof Node/Element都为true
+        - Node的children属性为undefined
+        - 只打印元素节点，不打印文本节点和其他
+    - childNodes属性返回所有的Node，包括文本节点、注释节点
+        - instanceof Node为true
+        - instanceof Element为false
+        - 此时闭合标签后的换行符和空格会被视为文本节点
+    - 两者都是即时的LIVE类型，改变子节点或子元素个数，length属性会立即改变
+    - children是Element的属性，childNodes是Node的属性
+- 元素高度
+    - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框
+        - 会导致handsontable的滚动条显示不出来  
+    - outerHeight是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
+    - document.documentElement.clientWidth：不包括滚动条，但包括边框
+    - document.body.clientHeight：不包括整个文档的滚动条，也不包括<html>元素的边框，也不包括<body>的边框和滚动条
+    - `documentElement`是文档根元素，就是<html>标签，`body`就是<body>标签了，这两种方式兼容性较好，可以一直兼容到IE6
+    - offsetHeight：(IE专属)整个可视区域大小，包括滚动条和边框
+    - clientHeight：内部可视区域大小，不包括滚动条，包括边框
+    - scrollHeight：元素内容的高度，包括溢出部分
+    - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0   
+    - `所有DOM元素都有上述4个属性，只需要给它固定大小并设置overflow:scroll即可表现出来`  
+- 位置坐标
+    - offsetX/Y:指鼠标指针相对于触发事件元素的左上角的偏移，在Chrome/Safari中指外边缘，即将该元素边框的宽度计算在内，firefox/ie则不包含边框值
+    - clientX/Y是相对于浏览器可视窗口viewport左上角的距离，参照点会随滚动条滚动而移动
+        - 不包含标题栏、状态栏
+    - pageX/Y是相对文档左上角的距离，不会随滚动条移动
+        - 当可视窗口和文档重叠(即无滚动条)时，pageX和clientX相等
+        - 当缩小可视窗口viewport(即缩小浏览器窗口)致使浏览器出现滚动条时，clientX小于pageX
+    - screenX/Y:鼠标位置相对于显示屏幕左上角的距离
+    - layerX/Y:FF特有，当触发元素没有设置绝对定位或相对定位，则以页面为参考点，如果设置了，则以触发盒子的左上角为参考点（包含border）
+    - X和Y:IE特有，由于IE坐标选择十分混乱，故尽量不要使用
+    - 没有标注的是各浏览器都支持的
+    ```  
+        e.offsetX：鼠标相对于事件源的X方向的距离( firfox 不支持)
+        e.offsetY：鼠标相对于事件源的Y方向的距离( firfox 不支持)
+        
+        e.clientX：距离浏览器可视区域X方向的距离
+        e.clientY：距离浏览器可视区域Y方向的距离
+        
+        e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
+        e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
+        
+        e.screenX：鼠标距离屏幕X方向的距离
+        e.screenY：鼠标距离屏幕Y方向的距离(包含浏览器的地址栏)
+    ```
+- pixels
+    - 物理像素（physical pixel）反映的就是显示屏内部led灯的数量，可以简单理解，一组三色led代表一个物理像素，当然根据屏幕物理属性以及处理led的方法不一样。这是一个纯硬件指标，比如我把屏幕锯了一半，物理像素就只有一半
+    - 渲染像素（render pixel）是在系统内部对物理像素的分配进行再一次的调整，在pc上渲染像素其实就是设置里边的分辨率。对于显示设备，系统为显示设备提供渲染尺寸，由显示设备的“缩放引擎”（带存储器阵列的数字视频处理器）处理。由于部分设备不能设置渲染像素，所以下文直接跳过渲染像素，直接等同于物理像素
+    - 逻辑像素/点（device point / device pixel / point），是为了调和距离不一样导致的差异，将所有设备根据距离透视缩放到一个相等水平的观看距离之后得到的尺寸。逻辑像素的引入，就是为了消除了不同屏幕观看距离和不同ppi之间的差异，衍生出来的一个虚拟的尺寸
+    - ppi（pixel per inch） 每英寸像素，指的是屏幕在每英寸的物理像素
+    - dpr（device pixel ratio） 渲染像素与逻辑像素的比例
+    - viewport是DIP（Device Independent Pixels），设备无关的像素，是浏览器内部对逻辑像素进行再处理的结果，调整逻辑像素的缩放来达到适应设备的一个中间层
+    - 对于pc，viewport是不生效的，所以在pc（chrome）上，px其实就是逻辑像素。但是逻辑像素是与软件实现有关的，所以会出现一些问题。比如在win上，对于部分国产马甲浏览器，viewport内部没有适配系统的缩放等级，导致渲染的内容过小
+- viewport
+    - viewport**只对移动端生效**
+        - 移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域
+        - 具体一点，就是浏览器上(也可能是一个app中的webview)用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域要大，也可能比浏览器的可视区域要小
+        - 移动设备上的浏览器都会把自己默认的viewport设为980px,1024px...
+        - 浏览器可视区域的宽度是比这个默认的viewport的宽度要小的，会出现横向滚动条
+    - width设置layout viewport的宽度,device-width就是设备的逻辑像素宽度，比如iPhone8 Plus，它的逻辑像素宽度是414px，虽然它的实际宽度是1080像素，但是网页上的每个像素在显示时的宽度是手机屏幕的宽度除以414
+    - 浏览器厂商设置的默认的viewport叫做`layout viewport`
+        - 以通过document.documentElement.clientWidth来获取(1020)
+        - layout viewport的宽度是大于浏览器可视区域的宽度的
+    - 代表浏览器可视区域的大小叫做`visual viewport`
+        - 可以通过window.innerWidth来获取(1035)
+    - 能完美适配移动设备的viewport叫`ideal viewport`
+        - 不同的设备拥有有不同的ideal viewport
+        - ideal viewport的宽度等于移动设备的屏幕宽度
+        - 只要在css中把某一元素的宽度设为ideal viewport的宽度(单位用px)，那么这个元素的宽度就是设备屏幕的宽度了，也就是宽度为100%的效果
+    - 移动设备默认的viewport是layout viewport，也就是那个比屏幕要宽的viewport
+    - meta标签的作用是让当前viewport的宽度等于屏幕尺寸宽度
+    - 如果width 和 initial-scale=1同时出现，并且还出现了冲突呢？
+        - 浏览器会取它们两个中较大的那个值
+    - 如果把scale设为0.5，那么网页显示的大小会变成原来的一半
+        - `当前缩放值= ideal viewport屏幕尺寸宽度 / visual viewport显示内容宽度`
+    - 在iphone和ipad上，无论你给viewport设的宽的是多少，如果没有指定默认的缩放值，则iphone和ipad会自动计算这个缩放值，以达到当前页面不会出现横向滚动条
+    - px是相对单位，不是屏幕上一个点对应一个px，如果你希望屏幕上一个点对应一个px，需要进行一些调整。以iPhone8 Plus为例，宽度为1080物理像素，所以需要先把viewport设为 1080px，然后把scale设为414/1080 = 0.38333
+    - `window.devicePixelRatio`可以查看网页缩放比，各tab页缩放比互不影响
+        - 可在开发者工具中toggle device，这样会改变dpr，也会改变innerWidth
+    - 在移动端浏览器中以及某些桌面浏览器中，window对象有一个devicePixelRatio属性，它的官方的定义为：设备物理像素和设备独立像素的比例，也就是 `devicePixelRatio = 物理像素 / 独立像素`
+        - css中的px就可以看做是设备的独立像素
+    - `screen`对象的属性无论浏览器窗口如何缩放，width/height都是屏幕宽高(1366/768)
+        - win10可通过分辨率/dpr比例得到浏览器的screen尺寸
+    - 如果不设置meta viewport标签，那么移动设备上浏览器默认的宽度值为800px，980px，1024px这些，总之是大于屏幕宽度的
+    - 每个移动设备浏览器中都有一个理想的宽度ideal viewport，这个理想的宽度是指css中的宽度，跟设备的物理宽度没有关系，在css中，这个宽度就相当于100%的所代表的那个宽度
+    - 可以用meta标签把viewport的宽度设为那个理想的宽度，如果不知道这个设备的理想宽度是多少，那么用device-width这个特殊值就行了，同时initial-scale=1也有把viewport的宽度设为理想宽度的作用
+    - 为什么分辨率大的这个手机的理想宽度要跟分辨率小的那个手机的理想宽度一样呢？只有这样才能保证同样的网站在不同分辨率的设备上看起来差不多
+    - 参考
+        - https://zhuanlan.zhihu.com/p/60800716
+        - https://www.cnblogs.com/2050/p/3877280.html
+
+## element
+- https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 - select vs dropdown
     - select各浏览器都有实现，dropdown需要自己实现
     - select各浏览器实现的样式不统一，难以跨平台体验一致
     - select可用于form
-- html全局属性可用于任何 HTML 元素
-	- accesskey	规定激活元素的快捷键。
-	- `class`	规定元素的一个或多个类名（引用样式表中的类）。
-	- contenteditable	规定元素内容是否可编辑。
-	- contextmenu	规定元素的上下文菜单，上下文菜单在用户点击元素时显示。
-	- `data-*`	用于存储页面或应用程序的私有定制数据。
-	- dir		规定元素中内容的文本方向。
-	- `draggable`	规定元素是否可拖动。
-	- `dropzone`	规定在拖动被拖动数据时是否进行复制、移动或链接。
-	- `hidden`	规定元素仍未或不再相关，浏览器不应显示已规定 hidden 属性的元素。
-	- `id`	规定元素的唯一 id。
-	- lang	规定元素内容的语言。
-	- spellcheck	规定是否对元素进行拼写和语法检查。
-	- `style`	规定元素的行内 CSS 样式。
-	- `tabindex`	规定元素的 tab 键次序。
-		- tabindex 属性规定元素的 tab 键控制次序（当 tab 键用于导航时）
-		- 以下元素支持 tabindex 属性：<a>, <area>, <button>, <input>, <object>, <select> 以及 <textarea>。
-	- title	规定有关元素的额外信息。
-	- translate	规定是否应该翻译元素内容。
+- html全局属性可用于任何HTML元素
+	- accesskey	规定激活元素的快捷键
+	- class	规定元素的一个或多个类名（引用样式表中的类）
+	- `contenteditable`	规定元素内容是否可编辑
+	- contextmenu	规定元素的上下文菜单，上下文菜单在用户点击元素时显示
+	- `data-*`	用于存储页面或应用程序的私有定制数据
+	- dir		规定元素中内容的文本方向
+	- `draggable`	规定元素是否可拖动
+	- `dropzone`	规定在拖动被拖动数据时是否进行复制、移动或链接
+	- `hidden`	规定元素仍未或不再相关，浏览器不应显示已规定 hidden 属性的元素
+	- `id`	规定元素的唯一 id
+	- lang	规定元素内容的语言
+	- spellcheck	规定是否对元素进行拼写和语法检查
+	- style	规定元素的行内CSS样式
+	- tabindex	规定元素的tab键次序
+		- tabindex属性规定元素的tab键控制次序（当tab键用于导航时）
+		- 以下元素支持tabindex属性：`<a>, <area>, <button>, <input>, <object>, <select> 以及 <textarea>`
+	- title	规定有关元素的额外信息
+	- translate	规定是否应该翻译元素内容
 - `<dl><dt><dd>` 定义带缩进的列表
 	- dt是title
 	- dd是带缩进的内容
@@ -59,7 +196,7 @@ modified: '2019-08-16T10:31:33.999Z'
 			- range
 			- date
 			- time
-			-datetime
+			- datetime
 			- month
 			- week
 			- search
@@ -67,49 +204,6 @@ modified: '2019-08-16T10:31:33.999Z'
 			- color
 	- `<textarea>`
 	- `<select>`
-		- `<option>`
-
-
-
-## window height
-
-- html高度问题
-    - window.innerWidth包括scrollBar
-    - innerHeight是DOM视口的大小，包括内容、边框以及滚动条  
-        - 会导致handsontable的滚动条显示不出来  
-    - outerHeight是整个浏览器窗口的大小，包括窗口标题、工具栏、状态栏等。
-    - document.documentElement.clientWidth不包括scrollBar
-
-```
-document.documentElement.clientHeight：不包括整个文档的滚动条，但包括<html>元素的边框
-document.body.clientHeight：不包括整个文档的滚动条，也不包括<html>元素的边框，也不包括<body>的边框和滚动条
-其中documentElement是文档根元素，就是<html>标签，body就是<body>标签了，这两种方式兼容性较好，可以一直兼容到IE6
-```
-
-- 滚动高度
-    - clientHeight: 内部可视区域大小
-    - offsetHeight：整个可视区域大小，包括border和scrollbar在内
-    - scrollHeight：元素内容的高度，包括溢出部分
-    - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0   
-    - `所有DOM元素都有上述4个属性，只需要给它固定大小并设置overflow:scroll即可表现出来`  
-
-- dom位置
-    - Event对象属性
-          - clientX：相对于可视区域的x坐标。  
-          - clientY：相对于可视区域的y坐标。   
-          - screenX：相对于用户屏幕的x坐标。  
-          - screenY：相对于用户屏幕的y坐标。  
-          
-    - IE特有属性
-          - offsetX：鼠标相对于目标事件的父元素的内边界在x坐标的位置  
-          - offsetY：鼠标相对于目标事件的父元素的内边界在y坐标的位置  
-          - x：设置或获取鼠标指针位置相对于父文档的y坐标。同clientX  
-          - y：设置或获取鼠标指针位置相对于父文档的y坐标。同clientY  
-
-
-## dev-log
-
-- 渐进式图片  
-JPEG、GIF和PNG这三种图像格式都提供了一种功能，让图像能够更快地显示。图像可以以一种特殊方式存储，显示时先大概显示图像的草图，当文件全部下载后再填充细
+		  - `<option>`
 
 

@@ -1,17 +1,16 @@
 ---
+tags: [copied, js]
 title: note-js-for-react
 created: '2019-08-01T16:03:46.394Z'
-modified: '2019-08-02T10:21:08.703Z'
-tags: [js]
+modified: '2019-10-21T02:30:46.075Z'
 ---
 
 # note-js-for-react
 
-> copied from https://github.com/dvajs/dva-knowledgemap/blob/master/README.md    
+> copied from [dvajs-README](https://github.com/dvajs/dva-knowledgemap/blob/master/README.md)    
 > 注：如果你使用 dva@2，请先忽略这里的路由部分，待更新。
 
 不知大家学 react 或 dva 时会不会有这样的疑惑：
-
 - es6 特性那么多，我需要全部学会吗?
 - react component 有 3 种写法，我需要全部学会吗?
 - reducer 的增删改应该怎么写?

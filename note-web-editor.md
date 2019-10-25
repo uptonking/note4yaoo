@@ -1,8 +1,8 @@
 ---
-tags: [web]
+tags: [components, prototype, web]
 title: note-web-editor
 created: '2019-08-22T03:45:48.886Z'
-modified: '2019-08-22T10:26:06.402Z'
+modified: '2019-10-17T08:45:16.254Z'
 ---
 
 # note-web-editor

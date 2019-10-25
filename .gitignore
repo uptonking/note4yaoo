@@ -1,4 +1,12 @@
 # files ignored
 
+# opinionated
 veil-*
+play-*
+pm-*
+work-*
+yaoo-*
+wechat-*
+
+# auto-generated
 *.cson

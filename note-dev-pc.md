@@ -2,7 +2,7 @@
 tags: [dev/pc]
 title: note-dev-pc
 created: '2019-06-09T05:28:24.696Z'
-modified: '2019-08-20T10:46:26.841Z'
+modified: '2019-10-11T10:38:12.668Z'
 ---
 
 # note-dev-pc
@@ -11,6 +11,16 @@ modified: '2019-08-20T10:46:26.841Z'
     - java swing/javafx
     - chrominum embedded framework
     - electron
+
+## tips
+- 基于系统自带的webview实现类似electron的应用
+    - 不考虑，普通第三方实现的webview功能有限，不如直接用厂商开发的chrominum
+    - 考虑webview是否支持webgl、视频、音频等功能
+- electron vs chrome apps
+    - google Chrome will be removing support for Chrome Apps
+    - 使用electron可自己自由分发，不依赖浏览器
+    - app依赖浏览器且只支持chrome浏览器，不同版本的浏览器所支持feature不一样，google还会限制部分功能
+    - 使用electron能开发更灵活的功能
 
 ## features
 - 跨平台一致的ui体验
@@ -31,6 +41,11 @@ modified: '2019-08-20T10:46:26.841Z'
     - 可以通过osr模式来进行视频录像
 - 在swing组件中显示javafx组件： 通过 **JFXPanel** 来实现
 - 在javafx组件中显示swing组件： 通过 **SwingNode** 来实现
+- java跨平台渲染
+    - java 2d api
+    - javafx prism
+    - nativefx
+    - efxclipse-drift
 
 
 ## javafx / swing / awt

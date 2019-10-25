@@ -1,8 +1,8 @@
 ---
+tags: [yaoo/health]
 title: wechat-health
 created: '2019-04-23T13:27:07.940Z'
-modified: '2019-08-01T15:40:25.661Z'
-tags: [yaoo/health]
+modified: '2019-09-10T08:46:50.783Z'
 ---
 
 # wechat-health
@@ -15,8 +15,9 @@ tags: [yaoo/health]
         - 显示肺部靠近胸膜处有两个像肿块一样的病灶，到底是肺占位还是真菌感染？
         - 肺部结节属于隐球菌性肉芽肿，经过3个月的抗真菌治疗，他的肺部结节大部分消失了
 - 肺病
+    - 肺部感染一般吃消炎药就好
 
-## 武汉 医院  
+## 武汉医院  
 
 - 参考资料
     - http://www.sohu.com/a/277735638_721514
