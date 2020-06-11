@@ -2,7 +2,7 @@
 tags: [lang/js]
 title: note-lang-js
 created: '2019-06-09T05:36:13.734Z'
-modified: '2019-10-21T13:57:38.010Z'
+modified: '2020-05-20T04:24:14.273Z'
 ---
 
 # note-lang-js
@@ -16,6 +16,12 @@ modified: '2019-10-21T13:57:38.010Z'
 
 ## faq
 
+- new Date() vs performance.timing
+    - Navigation Timing API gives us a more accurate measure  
+- eval vs template literals
+    - template literals are parsed at compile time
+    - the argument to eval only gets parsed at runtime, when eval is executed.
+    - eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable.A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
 - 如何导出组件到图片png/pdf
 - setTimeout添加的异步任务队列和requestAnimationFrame每帧执行的任务队列是一个吗
     - ？？？
@@ -267,7 +273,7 @@ Point === Point.prototype.constructor // true
     - es5中静态方法、静态属性是无法通过继承下来的，只能通过赋值传递，但es6可以
 - 子类必须在constructor()中调用super()， 否则新建实例时会报错。这是因为**子类没有自己的this对象**，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象
 - ES5继承
-    - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this(`Parent.apply(this)`)
+    - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this,类似`Parent.apply(this)`
 - ES6继承
     - 实质是先创造父类的实例对象this(所以必须先调用super)， 然后再用子类的构造函数修改this 
 

@@ -1,58 +1,50 @@
 ---
-tags: [components, data, git, react]
-title: toc-git-repo-react
+tags: [components, lib, react, toc]
+title: toc-lib-react-components
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-10-06T02:01:04.555Z'
+modified: '2020-05-03T08:35:14.732Z'
 ---
 
-# toc-git-repo-react
+# toc-lib-react-components
+
 
 ## popular-components
-- Ant Design  /MIT/51kStar/201908/ts
-    - https://github.com/ant-design/ant-design
-    - https://ant.design/
-    - An enterprise-class UI design language and React implementation
-    - 主要有蚂蚁金服支持，antd依赖自研的小组件
-    - changelog
-        - 4.0
-            - 对标记为Deprecated的属性进行移除
-            - 使用最新版本Reat的API，拥抱React17，提供相关组件的Hooks版本
-            - 使用Less3.x
-            - 停止支持IE9/10，继续支持IE11
-            - 减小图标体积，使用svg图标
-            - 组件
-                - Mention组件移除Draft.js
-                - Form组件将默认聚合表单数据域，你不再需要通过 Form.create()
-                - DatePicker重写
-            - 性能优化
-                - 由于存在动画效果，自定义虚拟滚动并不方便
-                - 使用更符合React的动画
-            - 参考
-                - https://juejin.im/post/5cefcc906fb9a07eca696138
-                - https://github.com/ant-design/ant-design/issues/16911
-        -3.0
-            - 3.9引入svg图标
-- Ant Design Pro /MIT/21kStar/201908/ts
+- Ant Design Pro  /MIT/21kStar/201908/ts
     - https://github.com/ant-design/ant-design-pro
     - https://pro.ant.design/
     - Out-of-box UI solution for enterprise applications
-- Material-UI /MIT/50kStar/201908
+- Material-UI  /MIT/50kStar/201908
     - https://github.com/mui-org/material-ui
     - https://material-ui.com/
     - React components that implement Google's Material Design
-- Base Design  /MIT/2kStar/201908
-    - https://github.com/uber-web/baseui
-    - https://baseweb.design/
-    - A React Component library implementing the Base design language
-    - 主要有uber支持，组件的第三方依赖较多
 - ring-ui  /Apache2.0/2kStar/201908
     - https://github.com/JetBrains/ring-ui
     - https://jetbrains.github.io/ring-ui/
     - A collection of JetBrains Web UI components 
     - 主要有jetbrains支持
+- Elastic UI  /Apache2.0/1400Star/201912
+    - https://github.com/elastic/eui
+    - https://elastic.github.io/eui/#/
+    - Alongside the React components is a SASS/CSS layer 
+- Fish Design /LICENSE/95Star/201909
+    - https://github.com/NSFI/ppfish-components
+    - https://nsfi.github.io/ppfish-components/#/home
+    - 网易云商服组件库
+- Fusion Design  /MIT/2549Star/201909
+    - https://github.com/alibaba-fusion/next
+    - https://fusion.design/
+    - configurable component library for web built on React
+- WeUI  /MIT/23kStar/201907
+    - https://github.com/Tencent/weui
+    - https://weui.io/
+    - an WeChat-like UI framework officially designed by the WeChat Team
 - Blueprint /Apache2.0/15kStar/201908/ts
     - https://github.com/palantir/blueprint
     - A React-based UI toolkit for the web
+- grommet /Apache2.0/5700Star/201912
+    - https://github.com/grommet/grommet
+    - https://v2.grommet.io/
+    - build responsive and accessible mobile-first projects for the web
 - react-virtualized /MIT/17kStar/201907
     - https://github.com/bvaughn/react-virtualized
     - https://bvaughn.github.io/react-virtualized/
@@ -97,10 +89,6 @@ modified: '2019-10-06T02:01:04.555Z'
     - https://github.com/buildo/react-placeholder
     - http://buildo.github.io/react-placeholder/#!/ReactPlaceholder
     - easily replicate your page with nice placeholders
-- Office UI Fabric React  /MIT/5kStar/201908/ts
-    - https://github.com/OfficeDev/office-ui-fabric-react
-    - https://developer.microsoft.com/en-us/fabric/#/components
-    - React-based front-end framework for building experiences for Office
 - react-data-grid /MIT/3kStar/201908/ts
     - https://github.com/adazzle/react-data-grid
     - http://adazzle.github.io/react-data-grid/
@@ -125,29 +113,16 @@ modified: '2019-10-06T02:01:04.555Z'
     - https://github.com/ElemeFE/element-react
     - https://elemefe.github.io/element-react/index
     - Element UI for React
-- Pivotal UI   /MIT/612Star/201908
-    - https://github.com/pivotal-cf/pivotal-ui
-    - https://styleguide.pivotal.io/
-    - Pivotal's design system & component library 
 - tinper-bee   /MIT/371Star/201908
     - https://github.com/iuap-design/tinper-bee
     - http://bee.tinper.org/
     -  一套基于react.js和iuap design设计语言实现的前端组件库
-- Fish Design /LICENSE/95Star/201909
-    - https://github.com/NSFI/ppfish-components
-    - https://nsfi.github.io/ppfish-components/#/home
-    - 网易云商服组件库
-- Fusion Design  /MIT/2549Star/201909
-    - https://github.com/alibaba-fusion/next
-    - https://fusion.design/
-    - configurable component library for web built on React
-- WeUI  /MIT/23kStar/201907
-    - https://github.com/Tencent/weui
-    - https://weui.io/
-    - an WeChat-like UI framework officially designed by the WeChat Team
 - misc
     - https://github.com/Yoshino-UI/Yoshino
     - https://github.com/chuchur-china/kui-react
+    - https://github.com/guardian/source-components
+    - https://github.com/brave/brave-ui
+
 
 
 ## popular-apps
@@ -228,6 +203,8 @@ modified: '2019-10-06T02:01:04.555Z'
     - https://github.com/infernojs/inferno
     - https://infernojs.org/
     - an insanely fast React-like library
+
+
 
 ## awesome-components
 
@@ -354,7 +331,5 @@ modified: '2019-10-06T02:01:04.555Z'
     - https://github.com/gcedo/react-solitaire
 
 
-## libries
-- https://github.com/tajo/react-movable
 
 

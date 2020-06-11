@@ -2,7 +2,7 @@
 tags: [events, web]
 title: note-web-events
 created: '2019-10-17T08:31:14.028Z'
-modified: '2019-10-22T10:01:34.482Z'
+modified: '2019-12-19T06:42:29.927Z'
 ---
 
 # note-web-events
@@ -51,7 +51,11 @@ modified: '2019-10-22T10:01:34.482Z'
     - 会同事阻止事件冒泡和默认行为
     - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
 - oneventtype vs addEventListener
-    - onclick事件在同一时间只能指向唯一对象，addEventListener给一个对象注册多个listener
+    - onclick事件在同一时间只能指向唯一对象
+        - 若分别指定window.onresize=f1/f2时，只会生效后指定的事件
+        - 若使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
+        - 若使用addEventListener重复定义相同的listener事件，只会执行一次
+    - addEventListener给一个对象注册多个listener
     - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
     - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
     - 对于IE9之前，相对应的是attachEvent和detachEvent
@@ -63,7 +67,12 @@ modified: '2019-10-22T10:01:34.482Z'
     - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
         - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.
         - **avoid** writing inline javascript. It makes it harder to debug
-
+- onkeydown vs onchange
+    - onkeydown: 当按键按下时，先触发事件发生，然后处理完后才会把按键对应的按键值显示在文本框中。当用户按下键盘按键时触发。
+        - onkeypress event handler has been deprecated. You may want to use onkeydown instead。当键盘按键被按下并释放一个键时发生。
+        - onkeypress事件不是适用于所有按键(如： ALT, CTRL, SHIFT, ESC)
+        - onkeypress与onkeydown一样，也是先处理事件，再显示文本
+    - onchange：当对象或选中区的内容改变且失去焦点时触发
 
 ## Web/API/GlobalEventHandlers
 - `onchange` 

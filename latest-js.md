@@ -2,11 +2,14 @@
 tags: [js, latest/js]
 title: latest-js
 created: '2019-10-15T12:20:05.196Z'
-modified: '2019-10-15T12:30:36.843Z'
+modified: '2019-12-18T08:56:17.462Z'
 ---
 
 # latest-js
 
+- react
+    - defaultProps可能废除 https://github.com/reactjs/rfcs/pull/107
+    - swr基于hooks的请求库，设计思想是stale-while-revalidate，先用缓存再请求
 
 - 201907-Hermes JS Engine
     - a new js engine optimized for running React Native on Android

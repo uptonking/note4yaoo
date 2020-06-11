@@ -2,7 +2,7 @@
 tags: [lang/c++]
 title: note-lang-cpp
 created: '2019-06-09T05:36:54.368Z'
-modified: '2019-10-21T02:31:31.059Z'
+modified: '2019-12-22T12:35:13.440Z'
 ---
 
 # note-lang-cpp
@@ -41,7 +41,6 @@ modified: '2019-10-21T02:31:31.059Z'
 
 ## C++
 
-## ecosystem
 
 ### STL
 

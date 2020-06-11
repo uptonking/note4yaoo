@@ -2,10 +2,15 @@
 tags: [animation, style, web]
 title: note-web-animation
 created: '2019-10-16T06:58:19.848Z'
-modified: '2019-10-17T09:09:49.857Z'
+modified: '2019-12-29T13:21:37.167Z'
 ---
 
 # note-web-animation
+
+## faq
+- 组件的hover effect如何实现
+    - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形
+    - 类似卡片变大
 
 ## animation
 - 动画原理

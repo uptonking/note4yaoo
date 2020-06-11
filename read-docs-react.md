@@ -2,17 +2,20 @@
 tags: [docs/react]
 title: read-docs-react
 created: '2019-08-01T16:03:46.386Z'
-modified: '2019-10-06T02:03:26.604Z'
+modified: '2019-11-30T12:41:29.251Z'
 ---
 
 # read-docs-react
 - React is a JavaScript library for building user interfaces.
 
-### react-future
+## react-future
 - [ ] react-events
 - [x] hooks：powerful functions for components, since 16.8
 
-### React组件设计实践总结
+## repeat
+- https://jxnblk.com/blog/defining-component-apis-in-react/
+
+## React组件设计实践总结
 - 参考
     - https://juejin.im/post/5cd7f2c4e51d453a7d63b715
     - [React Bits中文版](https://hateonion.me/books/react-bits-cn/)

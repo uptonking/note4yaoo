@@ -2,7 +2,7 @@
 tags: [lang/python]
 title: note-lang-python
 created: '2019-06-09T05:36:34.221Z'
-modified: '2019-10-03T04:59:55.781Z'
+modified: '2019-12-22T12:36:00.388Z'
 ---
 
 # note-lang-python
@@ -13,7 +13,7 @@ modified: '2019-10-03T04:59:55.781Z'
 
 ## python并发
 - Python是通过一个全局解释器锁GIL（Global Interpreter Lock）来实现线程同步的。当Python程序只有单线程时，并不会启用GIL，而当用户创建了一个thread时，表示要使用多线程，Python解释器就会自动激活GIL，并创建所需要的上下文环境和数据结构
-- 线程调度机制将会为线程分配GIL，获取到GIL的线程就能开始执行，而其他线程则必须等待。由于GIL的存在，Python的多线程性能十分低下，无法发挥多核CPU的优势，性能甚至不如单线程。因此如果你想用到多核 CPU，一个建议是使用多进程
+- 线程调度机制将会为线程分配GIL，获取到GIL的线程就能开始执行，而其他线程则必须等待。由于GIL的存在，Python的多线程性能十分低下，无法发挥多核CPU的优势，性能甚至不如单线程。因此如果你想用到多核CPU，一个建议是使用多进程
 - 操作系统里面最重要的两个概念是进程和线程，Python中使用的是PyInterpreterState和PyThreadState来表示的
 
 ## python解释器

@@ -2,17 +2,22 @@
 tags: [dom, web]
 title: note-web-dom
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-10-18T14:03:18.912Z'
+modified: '2019-12-01T06:57:53.867Z'
 ---
 
 # note-web-dom
 
+## repeat
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
+    - class,contenteditable,data-*,draggable,dropzone,hidden,id,style
+    - tabindex,title
+    
 ## pieces
 
 - `<button>` vs `<input type=button>`
     - Unlike `<input>` tags, `<button>`'s can contain other html elements as their labels. 
     - `<button>` element accepts a wide range of uncommon but useful attributes regarding multiple forms and click actions.
-    - Without a type, button implicitly receives type of submit. It does not matter how many submit buttons or inputs there are in the form, any one of them which is explicitly or implicitly typed as submit, when clicked, will submit the form.  This can cause problems if you want to use a button in a form without it submitting.
+    - Without a type, button implicitly receives type of submit. It does not matter how many submit buttons or inputs there are in the form, any one of them which is explicitly or implicitly typed as submit, when clicked, will submit the form. This can cause problems if you want to use a button in a form without it submitting.
     - `<input type="button">` can only accept a string as its label text (css styles not withstanding).
     - Input elements are considered empty or void elements (other empty elements are area , base , br , col , hr , img , input , link , meta , and param. You can also check here), meaning they cannot have any content. In addition to not having any content, empty elements cannot have any pseudo-elements like ::after and ::before, which I consider a major drawback.
     - ref
@@ -35,7 +40,7 @@ modified: '2019-10-18T14:03:18.912Z'
     - 当使用Firefox 3.6时，其frame中需要使用document.defaultView去获取window对象，才能使用其getComputedStyle方法
     - 参考
         - https://www.cnblogs.com/yuan-shuai/p/4125511.html
--  `element.ownerDocument` read-only property of the Node interface returns the top-level document object of the node.
+- `element.ownerDocument` read-only property of the Node interface returns the top-level document object of the node.
     - 返回值是Document类型的实例
     - If this property is used on a node that is itself a document, the value is null.
 - `Node.parentElement` read-only property returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element
@@ -107,6 +112,11 @@ modified: '2019-10-18T14:03:18.912Z'
     - viewport是DIP（Device Independent Pixels），设备无关的像素，是浏览器内部对逻辑像素进行再处理的结果，调整逻辑像素的缩放来达到适应设备的一个中间层
     - 对于pc，viewport是不生效的，所以在pc（chrome）上，px其实就是逻辑像素。但是逻辑像素是与软件实现有关的，所以会出现一些问题。比如在win上，对于部分国产马甲浏览器，viewport内部没有适配系统的缩放等级，导致渲染的内容过小
 - viewport
+    - ref
+        - https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+        - https://zhuanlan.zhihu.com/p/60800716
+        - https://www.cnblogs.com/2050/p/3877280.html
+        - https://www.zhihu.com/question/35221839
     - viewport**只对移动端生效**
         - 移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域
         - 具体一点，就是浏览器上(也可能是一个app中的webview)用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域要大，也可能比浏览器的可视区域要小
@@ -140,9 +150,8 @@ modified: '2019-10-18T14:03:18.912Z'
     - 每个移动设备浏览器中都有一个理想的宽度ideal viewport，这个理想的宽度是指css中的宽度，跟设备的物理宽度没有关系，在css中，这个宽度就相当于100%的所代表的那个宽度
     - 可以用meta标签把viewport的宽度设为那个理想的宽度，如果不知道这个设备的理想宽度是多少，那么用device-width这个特殊值就行了，同时initial-scale=1也有把viewport的宽度设为理想宽度的作用
     - 为什么分辨率大的这个手机的理想宽度要跟分辨率小的那个手机的理想宽度一样呢？只有这样才能保证同样的网站在不同分辨率的设备上看起来差不多
-    - 参考
-        - https://zhuanlan.zhihu.com/p/60800716
-        - https://www.cnblogs.com/2050/p/3877280.html
+   
+        
 
 ## element
 - https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list

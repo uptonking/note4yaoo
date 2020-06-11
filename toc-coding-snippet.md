@@ -1,12 +1,162 @@
 ---
-tags: [coding]
+tags: [coding, toc]
 title: toc-coding-snippet
 created: '2019-09-04T03:02:06.457Z'
-modified: '2019-10-17T13:37:22.026Z'
+modified: '2020-05-26T05:18:06.235Z'
 ---
 
 # toc-coding-snippet
 
+
+- react-jquery(plugins)-dom-ref
+```
+class SomePlugin extends React.Component {
+  componentDidMount() {
+    this.$el = $(this.el);
+    this.$el.somePlugin();
+  }
+
+  componentWillUnmount() {
+    this.$el.somePlugin('destroy');
+  }
+
+  render() {
+    return <div ref={el => this.el = el} />;
+  }
+}
+```
+
+```
+// react包装一个jquery的插件
+import React, {Component} from 'react'
+import ReactDom from 'react-dom'
+
+class QRCode extends Component {
+  componentDidMount(){
+    // returns the corresponding native browser DOM element
+    let node = ReactDom.findDOMNode(this);
+    if(this.props.text){
+      $(node).qrcode({...this.props});
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.text != nextProps.text){
+      let node = ReactDom.findDOMNode(this);
+      $(node).qrcode({...this.props});
+    }
+  }
+
+  render() {
+    return (
+        <div/>
+      );
+  }
+}
+```
+
+```
+import React from ‘react’;
+import { findDOMNode } from ‘react-dom’;
+import $ from ‘jquery’;
+class FullDesc extends React.Component {
+ constructor() {
+ super();
+ }
+handleToggle = () => {
+ const el = findDOMNode(this.refs.toggle);
+ $(el).slideToggle();
+ };
+render() {
+ return (
+ <div className=”long-desc”>
+  <ul className=”profile-info”>
+   <li>
+     <span className=”info-title”>User Name : </span> Shuvo Habib
+   </li>
+ </ul>
+<ul className=”profile-info additional-profile-info-list” ref=”toggle”>
+  <li>
+    <span className=”info-email”>Office Email</span> me@shuvohabib.com
+  </li>
+ </ul>
+  <div className=”ellipsis-click” onClick={this.handleToggle}>
+    <i className=”fa-ellipsis-h”/>
+  </div>
+ </div>
+ );
+ }
+}
+```
+- react-setState
+```
+class App extends React.Component {
+  state = { val: 0 }
+
+  componentDidMount() {
+    this.setState({ val: this.state.val + 1 })
+    console.log(this.state.val)
+
+    this.setState({ val: this.state.val + 1 })
+    console.log(this.state.val)
+
+    setTimeout(_ => {
+      this.setState({ val: this.state.val + 1 })
+      console.log(this.state.val);
+
+      this.setState({ val: this.state.val + 1 })
+      console.log(this.state.val)
+    }, 0)
+  }
+
+  render() {
+    return <div>{this.state.val}</div>
+  }
+}
+// 0,0,2,3
+// https://juejin.im/post/5b45c57c51882519790c7441
+```
+- class-extends
+```
+class A {
+    print () {
+    	console.log('print a');
+    }
+}
+class C extends A {
+    print () {
+      super.print();
+      console.log('print c');
+    }
+}
+const c = new C();
+c.print();
+// print a
+// print c
+
+
+class B {
+    print = () => {
+    	console.log('print b');
+    }
+}
+class D extends B {
+    print () {
+	    super.print();
+      console.log('print d');
+    }
+}
+const d = new D();
+d.print();
+// print b
+
+// 类的非静态属性都是定义在类的原型对象上，而不是类的实例上的
+// 但通过箭头函数定义的方法时绑定在this上，而this是指向当前创建的类实例对象
+// 类D继承B，不仅会继承类B原型上的属性和方法，也会继承其实例上的属性和方法
+// 当访问一个对象实例的属性时，会先在实例上进行查找，如果没有，则顺着原型链往上查找，直到原型链的顶端。若在实例上查找到对应属性，则会返回，停止查找。即使原型上定义了同一个属性，该属性也不会被访问到，这种情况称为"属性遮蔽 (property shadowing)"。
+// 只会输出print b，而不会输出print d
+
+```
 - cancelablePromise
 ```
 export const cancellablePromise = promise => {

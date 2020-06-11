@@ -2,12 +2,13 @@
 tags: [wiki, yaoo]
 title: wiki-common-sense
 created: '2019-05-30T13:45:37.931Z'
-modified: '2019-09-12T02:27:45.948Z'
+modified: '2019-12-08T06:26:17.468Z'
 ---
 
 # wiki-common-sense
 
 ## pieces
+- 铁路上的压道车是晚上在铁轨上跑，检测铁轨有木有问题的车，可能引起事故
 - 东方黄种人美白的时候，西方维密超模都在美黑
 - We will talk about some of their dissimilarities and common characters.
 - UTM是Urchin Tracking Module的简写，大意就是跟踪模块，包括5类参数utm_source, utm_medium, utm_term, utm_content, utm_campaign

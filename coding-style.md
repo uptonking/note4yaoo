@@ -2,7 +2,7 @@
 tags: [coding]
 title: coding-style
 created: '2019-09-03T14:06:29.976Z'
-modified: '2019-09-04T05:58:55.495Z'
+modified: '2020-01-12T09:12:00.010Z'
 ---
 
 # coding-style
@@ -24,5 +24,23 @@ modified: '2019-09-04T05:58:55.495Z'
 
 
 ## java
+
+## git
+- Conventional Commits (8种)
+    - `<type>[(optional scope)]: <description>`
+    - fix: patches a bug in your codebase
+    - feat: introduces a new feature to the codebase (minor
+    - refactor: A code change that neither fixes a bug nor adds a feature
+    - perf: A code change that improves performance
+    - test: Adding missing tests or correcting existing tests
+    - docs: Documentation only changes
+    - build: Changes that affect the build system or external dependencies
+    - chore: update version or dependencies, release...
+    - misc: revert,ci,mark,step
+    - BREAKING CHANGE: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope
+    - ref
+        - https://www.conventionalcommits.org/en/v1.0.0/
+        - https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines
+        - https://github.com/conventional-changelog/conventional-changelog
 
 

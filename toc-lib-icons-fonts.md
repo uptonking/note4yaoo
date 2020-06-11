@@ -1,13 +1,13 @@
 ---
-tags: [data, git, web]
-title: toc-git-repo-web
+tags: [fonts, icon, lib, toc]
+title: toc-lib-icons-fonts
 created: '2019-09-14T03:30:03.478Z'
-modified: '2019-10-06T02:01:27.707Z'
+modified: '2019-12-29T11:57:45.203Z'
 ---
 
-# toc-git-repo-web
+# toc-lib-icons-fonts
 
-### 现有图标库
+## icons
 - feather  /MIT/16kStar/201908
     - https://github.com/feathericons/feather
     - https://feathericons.com/
@@ -36,3 +36,4 @@ modified: '2019-10-06T02:01:27.707Z'
     - https://ionicons.com/
     -  icon font for Ionic Framework and web apps everywhere
 
+## fonts

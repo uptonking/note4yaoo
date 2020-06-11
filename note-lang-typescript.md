@@ -2,7 +2,7 @@
 tags: [lang/typescript]
 title: note-lang-typescript
 created: '2019-08-26T15:07:33.910Z'
-modified: '2019-10-07T03:36:42.343Z'
+modified: '2020-02-15T10:58:12.333Z'
 ---
 
 # note-lang-typescript
@@ -10,6 +10,11 @@ modified: '2019-10-07T03:36:42.343Z'
 ## tips
 - ts vs flow
     - ts特性 > flow静态类型检查 + ES6新语法 + vscode支持
+
+## dev-log
+- 使用is操作符而不用boolean，可以帮助编译器进一步进行类型检查
+    - https://stackoverflow.com/questions/40081332/what-does-the-is-keyword-do-in-typescript
+    - TypeScript will narrow the type to string in any block guarded by a call to the function. 
 
 ## faq
 - typescript generic type with equal operator means?
@@ -29,10 +34,14 @@ modified: '2019-10-07T03:36:42.343Z'
     - 建议
         - 编写三方库时使用interface
         - 如果想保持代码统一，可尽量选择使用type alias
-    - 参考
+    - ref
         - 接口定义的成员必须全部实现，不能少，也不能多
         - 接口声明可选成员要用问号`?`
         - 接口支持更多成员要用`[propName: string]: any;`，这样数量和类型都不限制
+        - type operands can be type parameters;
+        - interface... extends operands must be concrete types.
+        - 
+        - https://stackoverflow.com/questions/42735611/why-can-intersection-types-contain-conflicting-types
 
 ## ts-react
 - 所有用到jsx语法的文件都需要以`tsx`后缀命名
@@ -45,6 +54,16 @@ modified: '2019-10-07T03:36:42.343Z'
     - https://juejin.im/post/5bed5f03e51d453c9515e69b
 
 ## summary
+
+- 获取数组中元素类型的方法，使用 indexed access operator `T[K]`
+``` 
+type Foo = Array<{ name: string; test: number; }>;
+type FooItem = Foo[0];
+
+or
+
+type FooItem = Foo[number];
+```
 - any vs unknown
     - unknown is the type-safe counterpart of any. 
     - Anything is assignable to unknown, but unknown isn't assignable to anything but itself and any without a type assertion or a control flow based narrowing. 

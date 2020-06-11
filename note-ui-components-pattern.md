@@ -1,11 +1,11 @@
 ---
-tags: [style, ux, web]
-title: note-web-style-ux
+tags: [components, style, web]
+title: note-ui-components-pattern
 created: '2019-10-10T08:40:08.927Z'
-modified: '2019-10-21T02:33:18.249Z'
+modified: '2020-01-31T15:13:10.615Z'
 ---
 
-# note-web-style-ux
+# note-ui-components-pattern
 
 ## ux
 - 骨架屏效果

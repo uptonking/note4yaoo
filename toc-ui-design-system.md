@@ -1,0 +1,168 @@
+---
+favorited: true
+tags: [components, toc, ui]
+title: toc-ui-design-system
+created: '2019-12-12T13:39:25.692Z'
+modified: '2020-01-13T06:53:16.821Z'
+---
+
+# toc-ui-design-system
+
+## design-system
+- Ant Design  /MIT/51kStar/201908/ts/Alibaba
+    - https://github.com/ant-design/ant-design
+    - https://ant.design/
+    - An enterprise-class UI design language and React implementation
+    - 主要有阿里蚂蚁金服支持，antd严重依赖自研的基础组件rc-xxx
+- Material Design  /MIT/13.6kStar/201912/Google
+    - https://material.io/design/
+    - https://github.com/material-components/material-components-web
+    - https://github.com/material-components/material-components-android
+    - Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design
+- Bootstrap  /MIT/138kStar/202001/Twitter
+    - https://github.com/twbs/bootstrap
+    - https://getbootstrap.com/docs/4.4/getting-started/introduction/
+    - popular framework for building responsive, mobile-first sites
+- Fluent Design  /MIT/6500Star/201912/Microsoft
+    - https://github.com/OfficeDev/office-ui-fabric-react
+    - https://www.microsoft.com/design/fluent/#/
+    - https://developer.microsoft.com/en-us/fabric/#/components
+    - React-based front-end framework for building experiences for Office
+- Lightning Design System  /BSD/2700Star/201909/Salesforce
+    - https://www.lightningdesignsystem.com/
+    - https://www.lightningdesignsystem.com/design-tokens/
+    - https://react.lightningdesignsystem.com/
+    - https://github.com/salesforce-ux/design-system
+- Carbon Design System  /Apache2.0/2400Star/201912/IBM
+    - https://github.com/carbon-design-system/carbon
+    - https://www.carbondesignsystem.com/
+    - https://www.ibm.com/design/language/
+    - http://react.carbondesignsystem.com/?path=/story/buttons--default
+    - https://github.com/carbon-design-system/carbon-custom-elements
+    - carbon-custom-elements is a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
+    - https://github.com/carbon-design-system/carbon/tree/master/packages/react
+    - https://ics-design-system.us-east.mybluemix.net/ 
+- Primer Design System  /MIT/580Star/201912/Github
+    - https://github.com/primer/components
+    - https://primer.style/components
+    - React components which implement GitHub's Primer Design System    
+    - 主要有github支持
+- Base Design  /MIT/2kStar/201908/Uber
+    - https://github.com/uber-web/baseui
+    - https://baseweb.design/
+    - A React Component library implementing the Base design language
+    - 主要有uber支持，组件的第三方依赖较多
+- Atlassian Design   /Apache2.0/72Star/202001
+    - https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/
+    - https://atlassian.design/
+    - https://atlaskit.atlassian.com/
+    - https://atlaskit.atlassian.com/docs/guides/component-design
+    - Atlassian's official UI library, on the Atlassian Design Guidelines
+- Polaris Design System  /MIT/3000Star/202001
+    - https://github.com/Shopify/polaris-react
+    - https://polaris.shopify.com/components/get-started
+    - https://polaris.shopify.com/design/colors
+    - Our design system helps us work together to build a great experience for all of Shopify’s merchants
+- Storybook Design System  /MIT/456Star/201912
+    - https://github.com/storybookjs/design-system
+    - https://storybook-design-system.netlify.com/
+    - https://www.learnstorybook.com/design-systems-for-developers/
+    - a reusable component library that helps Storybook build UIs faster
+- Pivotal UI   /MIT/612Star/201908
+    - https://github.com/pivotal-cf/pivotal-ui
+    - https://styleguide.pivotal.io/
+    - Pivotal's design system & component library
+- GOV.UK Design System  /MIT/290Star/201912
+    - https://github.com/alphagov/govuk-frontend
+    - https://design-system.service.gov.uk/
+    - build a user interface for government platforms and services    
+    - https://github.com/govau/design-system-components
+    - https://github.com/alphagov/govuk-design-system
+- United States Web Design System(uswds)  /CC01.0/5400Star/201912
+    - https://github.com/uswds/uswds
+    - https://designsystem.digital.gov/
+    - visual style guide for U.S. federal government websites.
+    - https://design.va.gov/
+        - VA.gov is built on top of VA's design system (VADS). 
+        - VADS is based on the US Web Design System
+- Photon Design System  /MPL2.0/206Star/201909/Firefox
+    - https://github.com/FirefoxUX/photon
+    - https://design.firefox.com/photon/
+    - build modern, intuitive, delightful experiences
+- Clarity Design System  /MIT/5500Star/201912/Vmware
+    - https://github.com/vmware/clarity/
+    - https://clarity.design/
+    - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
+- Reach UI Philosophy
+    - https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7
+    - accessible, composable
+- design-system-deprecated
+    - Mineral UI  /Apache2.0/500Star/201912/CA Technologies
+        - https://github.com/mineral-ui/mineral-ui
+        - https://mineral-ui.netlify.com/
+    - [Nachos by Trello](https://design.trello.com/)
+- design-system-guidelines
+    - Airbnb Cereal
+        - https://airbnb.design/cereal/
+        - https://airbnb.design/building-a-visual-language/
+    - https://spectrum.adobe.com/
+    - https://styleguide.mailchimp.com/
+    - https://ux.mailchimp.com/patterns/color
+    - https://design.ubuntu.com/web/
+    - Apple Design
+        - https://developer.apple.com/design/
+        - https://developer.apple.com/design/resources/
+        - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+    - https://designsystem.quickbooks.com/
+    - https://marvelapp.com/styleguide/overview/code-guidelines
+    - https://www.audi.com/ci/en/intro/brand-appearance.html
+    - https://feelix.myob.com/#/Design%20patterns
+    - https://design-system.futurelearn.com/
+    - https://bradfrost.com/blog/post/atomic-web-design/
+    - https://spotify.design/
+    - design-style
+        - flat
+        - motion-blur
+    - Adele
+        - https://adele.uxpin.com/
+        - repository of publicly available design systems and pattern libraries
+    - Figma
+        - https://www.designsystems.com/
+        - A Figma publication for design systems designers and developers
+    - uxpin
+        - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+    - https://design.lyft.com/
+    - http://plasma.guide/
+- misc
+    - https://github.com/alexpate/awesome-design-systems
+    - https://github.com/miukimiu/design-systems
+    - https://github.com/CMSgov/design-system
+    - https://github.com/auth0/cosmos
+    - https://ether.thescenery.co/
+    - https://sproutsocial.com/seeds/
+    - https://palette.artsy.net/
+    - Solid  /MIT/115Star/202001/BuzzFeed
+        - https://github.com/buzzfeed/solid
+        - https://solid.buzzfeed.com/
+        - Solid is BuzzFeed's functional CSS framework and styleguide.
+        - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
+    - Workday Canvas Design System  /Apache2.0/74Star/202001
+        - https://github.com/workday/canvas-kit
+        - https://design.workday.com/guidelines
+    - Pluralsight Design System  /Apache2.0/158Star/202001
+        - https://github.com/pluralsight/design-system
+        - https://design-system.pluralsight.com/
+    - Predix Design System
+        - https://www.predix-ui.com/#/about/introduction
+    - Morningstar Design System
+        - https://designsystem.morningstar.com/
+        - v2 is using web components; v3 will use vue
+    - ServiceNow Design System
+        - http://designsystem.servicenow.com/#!/
+    - Eva Design System
+        - https://eva.design/
+        - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
+        - implemented for angular and react native
+    - Evergreen Design System  /MIT/9000Star/202001
+        - https://github.com/segmentio/evergreen
+        - https://evergreen.segment.com/

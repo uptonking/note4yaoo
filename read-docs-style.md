@@ -1,42 +1,229 @@
 ---
-tags: [style, web]
+favorited: true
+tags: [docs, style, web]
 title: read-docs-style
 created: '2019-08-17T10:19:06.636Z'
-modified: '2019-10-15T10:36:06.734Z'
+modified: '2020-06-09T08:11:45.701Z'
 ---
 
 # read-docs-style
 
 ## dev-tips
 - 如何复用现有项目的样式和第三方库的样式
+    - 必需支持class或className
 - 如何将本项目作为库提供给其他人使用
+    - 直接复用组件，而不是复用样式，若必需复用样式，则提取出变量通过theme来复用
+- why you should use css-in-js
+    - author CSS in JavaScript syntax
+    - Colocate styles with components
+    - Styles are generally "scoped" to a specific component
+    - Take advantage of native JS syntax features
+    - Take advantage of anything from the JS ecosystem
+    - make dead code elimination easier 
+    - type check and code auto suggestion with ts
+    - Many libraries offer support for theming
+    - Most libraries offer ways to handle dynamic styling
+    - easier to write unit tests with CSS-in-JS
+    - ref
+        - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
+        - https://mxstbr.com/thoughts/css-in-js
 
 ## docs-bulma
 ### basic
 - https://bulma.io/documentation/overview/start/
 - https://github.com/jgthms/bulma
-
 ### docs
 - By default, columns are only activated from tablet onwards. 
     - This means columns are stacked on top of each other on mobile.
 - Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
-
 ### booking-Creating Interfaces with Bulma_Jeremy Thomas_2018
 - bulma features
     - modern css framework with flexbox
     - 100% responsive, designed to be both mobile and desktop friendly
     - customizable with over 300 sass variables
     - css only, no js
+### theme-for-bulma
+- https://jenil.github.io/bulmaswatch/
 
+## docs-linaria
+### basic
+- https://github.com/callstack/linaria
+- https://linaria.now.sh/
+- https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md
+### pieces
+
+## docs-emotion
+### basic
+- https://emotion.sh/
+- https://github.com/emotion-js/emotion
+- Emotion is a library designed for writing css styles with JavaScript
+### faq
+- emotion创建样式的组件，可以提取成单独的css吗
+    - 旧版本可以，v10新版本不行
+    - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.
+    - facepaint provides responsive and dynamic style values for css-in-js. 常用语media-query
+    - https://github.com/emotion-js/emotion/blob/master/docs/extract-static.mdx
+- use case
+    - 变量
+    - theme
+    - ref
+        - https://github.com/jsjoeio/styled-components-vs-emotion
+- s-c的问题
+    - 嵌套过深，每个组件如styled.button下有StyledComp,还有2个Context.Consumer
+        - styled-components v5已解决嵌套过深的问题
+    - css prop需要babel插件支持 
+- emotion优势
+    - framework agnostic, 框架无关的，可以额外引入与框架对应的emotion包
+    - 兼容s-c的styled组件写法
+    - ref
+        - https://theme-ui.com/motivation/  (why emotion part)
+- emotion问题
+    - 缺少`.attrs()`方法传递属性
+        - https://github.com/emotion-js/emotion/issues/821
+        - `const withAttrs = (Component, attrs) => props => <Component {...attrs} {...props}/>`
+        - 使用css prop的方式     
+        `const MyComponent = props => (<input css={{}} {...props} />`
+
+- styled形式组件的样式可通过再次styled复用已有组件的样式，如何复用css prop的样式
+- className vs css prop
+    - className属性的值是字符串，想在生成字符串的过程中获取组件props，要么显式传入this.props，要么创建高阶组件隐式获取props再计算，所以通用的方法推荐使用css prop
+    - className example
+    ```
+    <div
+      className={css({
+        backgroundColor: 'hotpink',
+        '&:hover': {
+          color
+        }
+      })}
+    >
+
+    <div
+      className={css`
+        background-color: hotpink;
+        &:hover {
+          color: ${color};
+        }
+      `}
+    >
+    ```
+    - css prop example
+    ```
+    <div
+      css={{
+          backgroundColor: 'hotpink',
+          '&:hover': {
+            color: 'lightgreen'
+          }
+        }}
+    >
+
+    <div
+      css={css`
+        background-color: hotpink;
+        &:hover {
+          color: ${color};
+        }
+      `}
+    >
+    ```
+- s-c vs emotion
+    - https://github.com/jsjoeio/styled-components-vs-emotion
+    - https://github.com/emotion-js/emotion/issues/113
+    - https://material-ui.com/zh/guides/interoperability/
+    - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
+### emotion-docs
+- emotion - framework agnostic
+    -  use `css` function to generate class names and `cx` to compose them
+    - Requires no additional setup, babel plugin, or other config changes.
+    - `css` prop is not used or needed.
+    - Server side rendering requires additional work to set up
+    - Emotion is not using a "standard" autoprefixer (which works during build) - it ships with its own runtime parser ( thysultan/stylis.js ) which comes with autoprefixing and it's enabled for you by default.
+    ```
+    import { css, cx } from 'emotion'
+    const colorW = 'white'
+    render(
+      <div
+        className={css`
+          padding: 32px;
+          background-color: hotpink;
+          border-radius: 4px;
+          &:hover {
+            color: ${colorW};
+          }
+        `}
+      >
+        Hover to change color.
+      </div>
+    )
+    ```
+- @emotion/core - for react (emotion vs @emotion-core)
+    - `css` prop support
+        - Similar to the `style` prop but adds support for nested selectors, media queries, and auto-prefixing
+        - Allows developers to skip the styled API
+    - Server side rendering with zero configuration
+    - Theming works out of the box
+- @emotion/styled 
+    - use the styled.div style API for creating components
+    - https://github.com/jsjoeio/styled-components-vs-emotion
+- react-emotion
+    - Because Emotion 10 has more React-specific APIs and they shouldn’t all be bundled together, it doesn’t make sense to have a package called react-emotion, so we’re changing some package names. 
+    - The new APIs for React are in @emotion/core and styled is in @emotion/styled. 
+    - The emotion package exports nearly the same API as in v9 except for some internals that have changed.
+    - APIs such as css & keyframes are part of emotion, but in general react-emotion re-exports everything that is already in emotion. so react-emotion can just use a single package instead of importing some things from emotion & some from react-emotion.
+    - emotion itself is react-independent. it doesn't really have theming built in 
+- changelog
+    - 10.0.0-201810-new package name, better css prop, Global comp
+    
 ## docs-styled-components
 ### basic
 - https://www.styled-components.com/docs/basics
 - https://github.com/styled-components/styled-components
-
 ### faq
-- should react components use inline styles or classNames ?
+- styled(MyComp)会传递所有属性，如何只传递指定属性
+    - 对于styled('tag')，s-c只传递html属性
+    - 手动选出不需要传递下去的属性，然后传递给底层组件restProps
+- Why write styles inline with jsxstyle?
+    - Naming things is hard
+    - Jumping between JS and CSS in your editor wastes time
+    - inline styles are easy to find styles and to delete
+    - Styles written inline don’t remain inline
+    - Building tooling around inline styles is simple and straightforward
+    - webpack plugin , at build time, extracts static styles defined on jsxstyle components into separate CSS file and in some cases entirely removes the need for runtime jsxstyle
+- style vs className
+    - 使用inline style动态修改样式更方便
+    - inline styling does not support pseudos, media queries, keyframes,auto-prefix
+        - className is better for debugging
+    - The obvious conclusion must be that changing the className of an element is faster than changing its style (except in Safari)
+    - with inline styles, the browser spends more time both scripting and rendering. It spends more time in scripting because it has to map all the styles rules passed in to the component to actual css rules (remember, you have to camelCase all your css rules when using inline css in react). It ends up spending more time rendering because it has to calculate the styles for 10,000 divs each second.
+    - Inline styles take more size in the DOM, are converted more slowly from VDOM (have probably a bigger impact on memory), and take more time to be handled by the browser.But they have no impact on performance once it’s rendered.
+    - ref
+        - https://quirksmode.org/dom/classchange.html
+        - https://webkit.org/blog/13/classname-vs-style/
+        - https://medium.com/@swazza85/use-css-modules-instead-of-inlining-styles-in-react-fea247b97431
+        - https://www.sderosiaux.com/articles/2015/08/17/react-inline-styles-vs-css-stupid-benchmark/
+- inline styles/js vs external .css/.js 
+    - Inlining everything is the ultimate way to reduce the number of requests (in theory to one). But it’s not the best way to make your site faster.  
+        - inline的3个问题：缓存、按需加载、预加载、修改与维护
+        - If the HTML holds all the resources, and the HTML is not cacheable by itself, the resources are re-downloaded every time.
+        - Even if the HTML is cacheable, the cache duration has to be the shortest duration of all the resources on the page. If your HTML is cacheable for 10 minutes, and a resource in the page is cacheable for a day, you’re effectively reducing the cacheability of the resource to be 10 minutes as well.
+        - The traditional value of CDNs is called Edge Caching: caching static resources on the CDN edge. Cached resources are served directly from the edge, and thus delivered much faster than routing all the way to the origin server to get them.When inlining data, the resources are bundled into the HTML, and from the CDN’s perspective the whole thing is just one HTTP response. If the HTML is not cacheable, this entire HTTP response isn’t cacheable either. Therefore, the HTML and all of its resources would need to be fetched from the origin every time a user requests the page, while in the standard case many of the resources could have been served from the Edge Cache.
+        - Browsers offer a built-in loading on demand mechanism for CSS images. If a CSS rule references a background image, the browser would only download it if at least one element on the page matched the rule.Since inlining resources is a decision made on the server, it doesn’t benefit from loading on-demand. This means all the images (CSS or page images) are embedded, whether they’re needed by the specific client context or not
+        - Modern browsers use smart heuristics to try and prefetch resources at the bottom of the page ahead of time. If you’re making heavy use of inlining, the HTML itself becomes much bigger
     - Ordinarily, inline styling is discouraged by the react team, a concern that is very valid because inline styles do not allow the use of pseudos and media queries
-    - Also, inline styles should not be used due to a lot of concerns about browser compatibility, camel-casing, and automatically appended scalar quantities
+    - Also, inline styles should not be used due to a lot of concerns about browser compatibility, camel-casing, and automatically appended scalar quantities    
+    - size of inline styles can be huge, especially if we repeat elements
+    - Using the style attribute, the browser only paints the rule for that particular element. This reduces the amount of look up time for  CSS engine to find which elements match the CSS selector (e.g. a.hover).
+    - However, putting styling at element level would mean that you cannot cache the CSS style rules separately. Usually putting styles in CSS files would allow the caching to be done, thus reducing the amount of load from the server each time you load a page.
+    - Putting style rules at the element level will also make you lose track of what elements are styled what way. It might also backfire the performance boost of painting a particular element where you can repaint multiple elements together. Using CSS files separates the CSS from HTML, and thus allows you to make sure that your styles are correct and it's **easier to modify** later on. Inline styles are not easy to maintain.
+    - className可复用现有的大量css样式库
+    - I can suggest using JavaScript codes to create the CSS codes ahead of time and then just post the compiled CSS codes on the server for download by the client, rather than having the CSS codes being made up by the client.Also, I think you should not use the HTML "style" attribute; it is bad for accessibility. Use the "class" attribute instead.
+    - It's around three times as fast to create and render elements that use classNames, rather than style attributes. I was quite surprised by that. Browser processes className CSS rule only once, whereas it has to do it each time when it encounters style in an attribute. Furthermore browser might keep in cache already processed CSS file (if you use external CSS file) and on repeated view style calculations might be much faster.
+    - ref       
+        - https://jsperf.com/style-element-vs-attr
+        - https://stackoverflow.com/questions/4244886/rendering-performance-style-attributes-or-classnames-and-stylesheet-rules
+        - https://mathiasbynens.be/notes/inline-vs-separate-file
+        - https://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
 - s-c如何复用第三方库的css样式，如何复用第三方库的s-c样式
     - `attrs(props=>({}))`
     - 优先考虑直接复用组件，而不是复用样式，若要复用样式，尽量通过变量或对象复用
@@ -65,6 +252,8 @@ modified: '2019-10-15T10:36:06.734Z'
     - powerful js
     - 保持dom结构与样式分离的同时，不使用class，不需要跳转多文件，也不是内联样式
 - s-c**缺点**
+    - 每次点击会创建新class，但不会删除旧class，debug体验不好
+        - https://medium.com/styled-components/how-styled-components-works-618a69970421
     - 不能用stylelint检查CSS代码，不能使用prettier来格式化css，ide语法高亮与自动提示支持不完善
     - 父组件覆盖子组件的className较复杂，需要使用.container.container{}
     - 国内关注度不高，资料不丰富
@@ -74,6 +263,18 @@ modified: '2019-10-15T10:36:06.734Z'
     - 复杂组件开发时会产生嵌套地狱wrapper hell，这也是react的一个问题
         - custom hooks试图解决wrapper hell的问题
     - s-c只支持React，如果你用其他的JS框架你必须寻找其他CSS方案
+- css-in-js-pros
+    - Enforce only local styles
+    - Developer productivity
+    - Better theming support
+    - Better support for dynamic styles
+    - Easier to consume packages
+    - Typesafe styles
+- css-in-js-cons
+    - Worse runtime performance
+    - Bigger bundle size
+    - Fragmentation of ecosystem
+    - Idiosyncratic additions to css
 - Why do my DOM nodes have two classes
     - Each node actually has two classes connected to it
     - One is static per component, meaning each element of a styled component has this class. 
@@ -105,7 +306,7 @@ modified: '2019-10-15T10:36:06.734Z'
     - 参考
         - https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21
         - https://blog.logrocket.com/8-reasons-to-use-styled-components-cf3788f0bb4d/
-
+        - https://dev.to/christopherkade/styled-component-what-why-and-how-5gh3
 ### summary
 - s-c是典型的css-in-js样式解决方案
 - s-c使用ES6的字符串模板方式来定义css样式，这样使得css的写法与原生的css写法基本一致，不用按照react的camelCase写样式
@@ -147,15 +348,7 @@ modified: '2019-10-15T10:36:06.734Z'
 - 调整特指度的方式
     - The ampersand(&) can be used to refer back to the main component
     - The ampersand(&) can be used to increase the specificity of rules on the component
-- s-c vs emotion
-    - https://github.com/jsjoeio/styled-components-vs-emotion
-    - https://github.com/emotion-js/emotion/issues/113
-    - https://material-ui.com/zh/guides/interoperability/
-    - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
-
-
-
-### docs
+### styled-components-docs
 - The rule of thumb is to use `attrs` when you want every instance of a styled component to have that prop, and pass `props` directly when every instance needs a different one
     - you can set a property on attrs to a function that computes that prop based on other props.
 - ThemeProvider provides a theme to all React components underneath itself via the context API
@@ -165,8 +358,10 @@ modified: '2019-10-15T10:36:06.734Z'
     - If you want the class to always be attached to the component, you should use the `attrs` method to attach it. 
     - If you want to attach it only in some cases, you can use `className` props like you always have.
     - If the framework has a bunch of raw global CSS that needs to be included on the page, you can add it using the createGlobalStyle API. This is also useful for things like CSS resets.
-
-    
+- changelog
+    - 4.0.0-201810-A brand new createGlobalStyle API, support as, ref prop
+    - 4.1.2-201811-native support for the css prop
+    - 5.0.0-2019-alpha-no breaking, rewrite with hooks to no wrapper hell
 ### qucikstart
 - demo
 ```
@@ -203,11 +398,103 @@ const FormContainer = styled.form`
  //additional style goes here
 `
 ```
+### styled under the hood
+- ref
+     - https://medium.com/styled-components/how-styled-components-works-618a69970421
+     - https://mxstbr.blog/2016/11/styled-components-magic-explained/
+     - https://medium.com/@_jmoller/how-does-styled-components-work-under-the-hood-28cb035d48c6
+- styled用法
+```
+const Button = styled.button`
+  color: coral; 
+  padding: 0.25rem 1rem; 
+  border: solid 2px coral; 
+`;
+
+等价于  
+
+const Button = styled('button')([
+  'color: coral;' +
+  'padding: 0.25rem 1rem;' + 
+  'border: solid 2px coral;' 
+]);
+```
+- 自定义styled
+```
+// styled(Button)返回一个tag function，而标签函数返回高阶组件而不是拼接后的字符串
+const myStyled = (TargetComponent) => 
+  // tag function第一个参数是字符串字面量数组，随后参数是占位符表达式的值
+  (strs, ...exprs) => class extends React.Component {
+      interpolateStyle() {
+        const style = exprs.reduce((result, expr, index) => {
+          const isFunc = typeof expr === 'function';
+          const value = isFunc ? expr(this.props) : expr;
+          
+          return result + value + strs[index + 1];
+        }, strs[0]);
+
+        this.element.setAttribute('style', style);
+      }
+
+      componentDidMount() {
+        this.interpolateStyle();
+      }
+
+      componentDidUpdate() {
+        this.interpolateStyle();
+      }
+
+      render() {
+        return <TargetComponent {...this.props} ref={element => this.element = element } />
+      }
+};
+
+const primaryColor = 'coral';
+const Button = myStyled('button')`
+  background: ${({ primary }) => primary ? primaryColor : 'white'};
+  color: ${({ primary }) => primary ? 'white' : primaryColor};
+  padding: 0.25rem 1rem; 
+  border: solid 2px ${primaryColor}; 
+  border-radius: 3px;
+`;
+```
 
 ## bootstrap
-
+- components
+    - bootstrap中input添加.form-control类，表示为input元素添加表单控件样式
 - faq
     - bootstrap.css vs bootstrap-theme.css
         - bootstrap.css is the core css for BootStrap that defines all the style for various controls/components
         - bootstrap-theme.css defines the themes (gradient/animation) for buttons,dropdown menu,navbar,progressbar,panels
         - Most of the times adding bootstrap.css is enough for bootstrap to work, but for gradient/animation, you can use bootstrap-theme.css
+- theme-for-bootstrap
+    - https://bootswatch.com/
+    - https://themes.3rdwavemedia.com/bootstrap-templates/free/
+### bootswatch-themes
+- default
+- 绿色系
+    - minty 薄荷味的 *****
+- 蓝色系 
+    - cerulean ***
+    - cosmo ***
+    - lumen
+    - yeti
+- 黑色系
+    - darkly
+    - cyborg
+    - lux *****
+    - sandstone
+    - slate
+    - solar
+    - superhero
+- 红色系
+    - journal
+    - united
+- 紫色系
+    - pulse
+- flatly ***
+- litera *****
+- materia
+- simplex
+- sketchy
+- spacelab

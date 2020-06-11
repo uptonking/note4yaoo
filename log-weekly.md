@@ -2,19 +2,36 @@
 tags: [log/weekly]
 title: log-weekly
 created: '2019-06-17T01:29:37.793Z'
-modified: '2019-10-20T12:02:12.854Z'
+modified: '2020-06-09T12:59:15.400Z'
 ---
 
 # log-weekly
 
 
+# 2020
+## w0608-0614
+- [ ] create
 
+## w0608-0614
+- css-in-js: zero-runtime like linaria is not flexible enough to be used with styled-system
+- react-mde: load suggestions for md editor, github-like ui
 
+## w0217-0223
+- create back-garden-react button component 
+
+# 2019
+## w1125-1201
+- [x] learning styled-system for theme specification
+## w1118-1124
+- [x] learning emotion for css-in-js
+## w1111-1117
+## w1104-1110
 ## w1028-1103
+- [x] rdg addon CustomFilter: 自己将if条件写反了
 ## w1021-1027
+- [x] rdg addon DropdownEditor
 ## w1014-1020
 - [x] rdg demo for render and edit
-- [ ] rdg addon
 ## w1007-1013
 - [x] rdg add simple headerGroup
 ## w0930-1006

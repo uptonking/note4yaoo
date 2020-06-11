@@ -1,11 +1,11 @@
 ---
 tags: [components, dev, table]
-title: note-dev-table
+title: note-dev-product-table
 created: '2019-08-29T01:24:09.168Z'
-modified: '2019-10-25T09:05:20.414Z'
+modified: '2020-01-27T09:33:52.353Z'
 ---
 
-# note-dev-table
+# note-dev-product-table
 - A handy/efficient data table to pivot your data
 
 ## faq
@@ -123,9 +123,14 @@ modified: '2019-10-25T09:05:20.414Z'
     - tree view
     - context menu
     - keyboard navigation
-- reference
-    - migrate to typescript since v7.0.0-alpha.2 on 20190411
-
+- changelog
+    - 201606-1.0.0-only exports one package react-data-grid, rdg/addons
+    - 201701-2.0.0-exports two main packages react-data-grid and rdg-addons
+    - 201709-3.0.0-replace create-react-class with es6 class
+    - 201804-4.0.0-use latest version of react-context-menu(2.9 breaking)
+    - 201810-5.0.0-rewrite core to improve nav and scroll performance 
+    - 201811-6.0.0-use react portals for cell editors & upgrade build tools
+    - 201904-7.0.0-alpha.2-migrate to typescript
 
 ## toc-list-table
 - react-virtualized

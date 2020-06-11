@@ -1,15 +1,146 @@
 ---
-tags: [js, js/react, lib]
-title: note-lib-react
+favorited: true
+tags: [js, react]
+title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2019-10-24T14:15:18.254Z'
+modified: '2020-05-31T05:35:28.107Z'
 ---
 
-# note-lib-react
+# log-deving-react
 
 ## faq
 
-
+- Is setting state with this.setState inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
+    - Techincally yes.
+    - setting a state directly in render method will cause the function to trigger re-render in case of class component causing an infinite loop which is the case for functional components provided the state values are different. Regardless of that, it will still cause an issue because any other state update will be reverted back due to functional component calling state update directly 
+    - In a class component, if we set state in the render method an infinite loop will occur. This is because the class component does not care that the new state is the same as the previous state. It just keeps re-rendering on every this.setState.Yes, hence its recommended not to call setState directly in render
+- react中setState是同步的还是异步？
+    - 合成事件中的setState是异步的,合成事件是react为了解决跨平台封装的一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件
+    - 生命周期钩子函数中的setState是异步的
+    - 原生事件中的setState是同步执行的,原生事件是指非react合成事件，原生自带的事件监听 addEventListener ，或者也可以用原生js、jq直接 document.querySelector().onclick 这种绑定事件的形式都属于原生事件.当你在原生事件中setState后，能同步拿到更新后的state值。
+    - 不管是哪个场景(合成/原生/钩子)下，基于event loop的模型下， setTimeout中去取setState总能拿到最新的state值
+    - setState的“异步”并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的，只是合成事件和钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，形式了所谓的“异步”，当然可以通过第二个参数 setState(partialState, callback) 中的callback拿到更新后的结果。
+    - setState 的批量更新优化也是建立在“异步”（合成事件、钩子函数）之上的，在原生事件和setTimeout 中不会批量更新，在“异步”中如果对同一个值进行多次 setState ， setState 的批量更新策略会对其进行覆盖，取最后一次的执行，如果是同时 setState 多个不同的值，在更新时会对其进行合并批量更新。
+    - ref[你真的理解setState吗] https://juejin.im/post/5b45c57c51882519790c7441
+- setState: Does render get called any time setState is called?
+    - By default - yes
+    - By default, shouldComponentUpdate always returns true to prevent subtle bugs when the state is mutated in place
+    - Virtual DOM renders: when render method is called it returns a new virtual dom structure of the component. As I mentioned before, this render method is called always when you call setState(), because shouldComponentUpdate always returns true by default. So, by default, there is no optimization here in React.
+    - Native DOM renders: React changes real DOM nodes in your browser only if they were changed in the Virtual DOM and as little as needed - this is that great React's feature which optimizes real DOM mutation and makes React fast.
+    - In React class components, we are told that setState always causes a re-render, regardless of whether or not the state actually changed to a new value. In effect, a component will re-render, when state updates to the same value it was before. 
+        - setState() will always lead to a re-render unless shouldComponentUpdate() returns false. 
+        - If you set a valid value apart from returning null within setState, a re-render will always be triggered by react in a class component unless your component is a PureComponent or you implement shouldComponentUpdate
+    - With hooks however, the docs specify that updating state to a value identical to the previous state, will not cause a re-render (of child components). If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects. (React uses the Object.is comparison algorithm.)
+    - For a functional component using useState hook, the setter if called with the same state will not trigger a re-render. However for an occasional case if the setter is called immediately it does result in two renders instead of one
+    - 给React组件的状态每次设置相同的值，如setState({count: 1})。React组件是否会发生渲染？ 
+        - 会重复渲染. 可利用PureComponent组件来减少重复渲染。
+    - 利用PureComponent组件可减少组件的重复渲染，那么是否代表组件的状态没有发生变化呢？即引用地址是否依旧是上次地址呢？
+        - 虽然PureComponent组件减少了组件的重复渲染，但是组件状态的引用地址却发生了变化.
+        - react内部(ReactUpdateQueue.js文件)的getStateFromUpdate()会通过Object.assign生成一个全新的状态state， state的引用地址发生了变化. `return Object.assign({}, prevState, partialState);`
+        - Object.assign第一个参数是空对象，就说明新的state对象的引用地址发生了变化
+        - Object.assign进行的是浅拷贝，不是深拷贝
+    - 一个React组件，它包含两个子组件，分别是函数组件和Clas 组件。当这个React组件的 state 发生变化时，两个子组件的 props 并没有发生变化，此时是否会导致函数子组件和 Class 子组件发生重复渲染呢？
+        - 结果表明，无论是函数组件还是 Class 组件，只要父组件的 state 发生了变化，二者均会产生重复渲染
+        - React官方提供了memo组件和PureComponent组件分别用于减少函数组件和类组件的重复渲染
+    - 每次调用函数setState，react都会将要更新的状态添加到更新队列中，并产生一个调度任务。调度任务在执行的过程中会做两个事情：
+        - 遍历更新队列，计算出全新的状态 state，更新到组件实例中
+        - 根据标识shouldUpdate来决定是否对组件实例进行重新渲染，而标识shouldUpdate的值则取决于PureComponent组件浅比较结果或者生命周期函数shouldComponentUpdate执行结果；
+    - ref
+        - https://stackoverflow.com/questions/24718709/reactjs-does-render-get-called-any-time-setstate-is-called
+        - https://stackoverflow.com/questions/55373878/what-are-the-differences-when-re-rendering-after-state-was-set-with-hooks-compar
+        - [浅谈setState的更新机制] https://zhuanlan.zhihu.com/p/95865701
+        - [PureComponent与memo] https://juejin.im/post/5de364a4f265da05be3e5af3
+- useMemo vs React.memo
+    - useMemo is a function as a hook that returns a memoized value.
+        - useMemo will only recompute the memoized value when one of the dependencies (either a or b) has changed
+        - hooks should be used only at the top level from react functions
+    - React.memo is a higher order component that can optimize rendition of your component given that it renders the same output with the same properties.
+        - props itself is a new object on every render. memo() does shallow comparison by default. You can think of memo() as a useMemo() with a list of all your props like [props.foo, props.bar, props.foobar] except you don't need to type them all manually. It's a shortcut for the most common case.
+        - Basically if your component breaks without memo then you're not using it correctly. It only serves as perf optimization.
+- side effects的类型和处理方式
+    - data-fetching
+    - manual-dom-mutation
+    - sub and unsub
+- 为避免过多rerender的常用处理方式
+    - render props中函数每次执行时，都会新生成一个`value => <ValueUI value={value} />`函数，即Container的children属性，也就是说每次Main重渲染，Container的prop都会改变。解决方法是把这个函数独立出来，提取成renderValueUI()的单独函数
+    - Provider本身是一个组件，当它所处层级发生重渲染时，它与普通组件一样会触发自身与children的重渲染
+        - 另一方面，只要Provider的value发生改变(使用Object.is来判断)，它的子树上的所有Consumer也都会发生重渲染
+        - Main执行render -> render中的JSX重新解析(React.CreateElement) -> OtherComp执行render
+        - 可以不让Main来做管理Context的value这件事：建一个独立的组件来管理value和Provider，把children的JSX写在这个组件之外
+    - ref
+        - https://github.com/shaozj/blog/issues/36
+        - https://www.jianshu.com/p/033409adf916
+- Context.Provider的value经常变化时，为避免过多rerender，应如何处理
+    - `<Context.Provider>` will only re-render if its children prop does not share reference equality with its previous children prop.
+    - `<Context.Provider>` will not re-render if its value changes while its children stay the same. 
+    - To ensure that the entire app isn’t re-rendered on each context change, you’ll need to keep the children prop of your providers equal between renders.
+    - All you’ll need to do is move the state that you’ll provide into a separate component, with the children passed into that component from above
+    - to put it simply, you just need to create a `<SomethingProvider>` component that doesn’t except any props other than children
+    - try running with the **production** flags to see if your performance issue went away? Looking into the development bundle, 10ms of the time taken seems to be due to performance.measure markers being really bad for performance 
+    - 问题案例
+        - https://blog.theodo.com/2019/07/how-i-ruined-my-application-performances-by-using-react-context-instead-of-redux/
+        - From my experience, when you experience slowness with redux, the problem is often not redux itself, but because of the way redux is being used
+        - This would kinda be a big deal for react-redux, actually, because we're trying to switch to using `createContext` in version 6 instead of having all connected components be separate subscribers.
+        - we(react-redux) stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
+    - ref
+        - https://github.com/facebook/react/issues/15156
+        - https://github.com/facebook/react/issues/13739
+        - https://frontarm.com/james-k-nelson/react-context-performance/
+        - https://frontarm.com/james-k-nelson/when-context-replaces-redux/
+        - https://www.reddit.com/r/reactjs/comments/9kq2c7/react_context_isnt_for_state_management/
+        - https://www.reddit.com/r/reactjs/comments/a5sddz/redux_vs_context_api_performance/
+        - https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/
+- 组件间通信的方式
+    - props
+    - context
+    - eventbus
+    - redux/mobx
+    - ref
+        - https://blog.csdn.net/wengqt/article/details/80114590
+- 如何为现有组件添加props，比如添加样式属性props
+    - react.cloneElement
+    - hoc高阶组件
+- redux vs useReducer
+    - useReducer+useContext优点
+        - 减少依赖和复杂度，减少样板代码，减少组件的wrapper hell
+        - 缺点
+            - 需要手动组装成全局对象
+            - 混淆了容器组件和展示组件
+    - redux优点
+        - 框架无关
+        - redux dev tools支持time travel debugging
+        - 全局中心化的状态对象
+    - There are two ingredients missing from Redux to make it one and global.
+    - First, there is no native feature (yet) which combines all reducers to one ultimate reducer. 
+        - Redux is offering this feature.
+        - Only if we were able to combine all state containers form all useReducer hooks, we could speak of one state container.
+    - Second, every useReducer comes with its own dispatch function. There is no native feature (yet) which combines all dispatch functions to one dispatch function. 
+        - Redux provides one dispatch function that consumes any action dedicated for any reducer function. 
+        - The dispatch function from useReducer, in contrast, only deals with action that are specified by the reducer function to be consumed.
+        - The useReducer function is tightly coupled to its reducer which holds also true for its dispatch function.
+    - There is **no middleware** for useReducer (yet). Since it's not one global state container (see previous section), it's difficult to apply such middleware globally
+    - useReducer's state is local to a single component - if you wanted to use this state throughout your app, you'd need to pass it (and/or the dispatch function) down via the props. It's effectively just a more structured version of useState - in fact, useState is implemented using useReducer under the hood!
+    - Redux, on the other hand, does a bit more - among other things, it makes the state available to the entire app via a Context, and then provides APIs to connect your deeply nested components to this state without passing props down.
+- context vs redux
+    - Redux解决了，Context API没有解决的问题
+        - 逻辑/数据/视图分离的代码结构（reducer/store/component），很好地划分了代码职责
+        - 在不同项目之间通用的存储和事件机制，从而允许redux-devtools和time travel这种通用的开发工具、以及类似redux-observable这种强大中间件的存在（store/action）
+    - 适合redux的使用场景
+        - 与redux对比，感觉context适合很少修改，主要从根节点下发数据的情形，比如locale/主题。个人登录信息呢？这还有点迷惑。redux啰嗦点，但万能。
+        - 作为路由信息的补充，也就是完全可以序列化到路由，但因为设计原因无法放进路由的那些内容
+        - 存储跟领域模型相关的数据，例如后端Model的缓存以及会话认证信息等
+        - 其他例如窗口大小、临时Modal状态、视觉主题等等状态，都适合放在新Context或props中
+    - ref
+        - 和组件props相比，新旧的Context API和Redux都解决了props存在的“只要是子组件需要的信息，即使父组件不需要，也必须先传给父组件然后一层层传到子组件”的问题
+        - 和Redux相比，新旧的Context API都解决了Redux存在的“一些信息的内容需要根据组件的包含关系决定，而React难以处理这类包含关系”的问题
+        - 和旧的Context API相比，新API解决了旧API无法处理“两个互相嵌套的组件提供的两个Context中，key相同的部分会冲突”的问题
+        - 考虑：共享的业务数据，非UI数据，如登录信息、操作进度信息，应该存放在哪里
+- state vs redux
+    - 当你想一定要把一个状态放在Redux Store上，先问自己两个问题：
+        - 这个状态是否需要其他组件访问？（例如，一个“关注”按钮，是否要让其他组件也知道是否正在关注某人）
+        - 当组件unmount之后重新mount，状态是否要保存？（例如，一个对话框打开，输入一些内容，关闭对话框，重新打开对话框，要不要看见刚才输入的内容？）
+        - 只有这两个问题的回答都是“是”的时候，才有充足的理由把状态放在Redux Store上，除此之外，能在React上放state就在React上放吧
+    - 用action/reducer能够让代码结构更清晰，但是我也见过海量action/reducer把程序搞得一团糟的，对于大项目，还是要能够分解成各自独立的小块好，而React组件模型天生就适合分解为小块，但Redux不是，Redux中action type可能发生冲突，state key也是全局的，这些都是要考虑的因素
 - react组件总是有第一次无意义的渲染，对性能影响大吗
     - 如react-data-grid首次渲染每列使用默认宽度80px
 - 一个组件设计出来有50多个属性，有什么问题
@@ -115,6 +246,24 @@ modified: '2019-10-24T14:15:18.254Z'
     - 选择方式：面向star的编程、大公司支持、团队技术擅长
 - react
 
+- ref使用
+    - 基础组件最好都加上`forwardRef`，如果不加很可能出错
+    - 实例：Input要计算forwardRef，是因为当用做OverlayTrigger的children时，需要通过HTMLElement去计算clientRect，from react-ui-components
+- 请求相关问题-waterfalls 
+    - 当请求存在依赖关系时，一个请求结束，才开始下一个请求，等待的时间过长
+- 请求相关问题-race conditions 
+    - 当请求过快(如快速点击)时，后发的请求结果先到达，最后显示的数据是先前请求的数据
+- how to resue ref passed from forwardRef()
+    - 使用自定义hooks `useCombinedRefs`
+        - https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
+    - 使用useImperativeHandle
+        -  imperative code using refs should be avoided in most cases. 
+- An idiomatic React application consists mostly of function components. Function components have several key advantages:
+    - They help prevent abuse of `setState()` API, favoring props instead.
+    - They encourage the "smart" vs "dumb" component pattern.
+    - They encourage code that is more reusable and modular.
+    - They discourage giant, complicated components that do too many things.
+    - They allow React to make performance optimizations by avoiding unnecessary checks and memory allocations.
 - react组件A的render方法中，传递给子组件的属性使用箭头函数或使用bind方法，有什么问题
     - 若使用箭头函数或bind后的函数作为属性来传递，组件A的render方法每次调用都会创建一个匿名函数，会增加垃圾回收的次数
     - An arrow function does not have its own this; the this value of the enclosing execution context is used

@@ -2,7 +2,7 @@
 tags: [style, web]
 title: note-web-style-attr
 created: '2019-10-09T01:32:01.391Z'
-modified: '2019-10-17T08:46:18.567Z'
+modified: '2019-11-13T14:02:38.452Z'
 ---
 
 # note-web-style-attr
@@ -37,11 +37,20 @@ modified: '2019-10-17T08:46:18.567Z'
         - 当定义边框时,必须定义边框的显示样式，因为边框默认样式为不显示none,所以仅设置边框宽度,由于样式不存在,边框的宽度也自动被设置为0，最终不会显示
 - scroll
     - `window.scrollbars` property returns the scrollbars object, whose visibility can be checked.
+    - window.scrollbars 值为 `BarProp {visible:true}`，在无滚动条时也是此值
     - 浏览器默认 scrollbar width: 17pixels
-    - firefox的滚动条会自动隐藏宽度，chrome的滚动条会正常显示，可比较在线版google-spreadsheets和office-excel，所以滚动时右侧边框要注意处理，容易空白
+    - firefox的滚动条和chrome的滚动条显示样式有明显区别，如何处理差异
+        - 差异
+            - width: firefox滚动条会自动隐藏并收窄宽度
+            - color: firefox滚动条颜色会自动与背景色一致
+            - pos: Firefox displays scrollbar inside right padding area and Chrome displays scrollbar outside right padding area
+                - 这会导致水平滚动条一个显示，一个不显示
+                - https://drafts.csswg.org/css-overflow-3/#scrollable
+        - 可比较在线版google-spreadsheets和office-excel，所以滚动时右侧边框要注意处理，容易空白
+        - As of late 2018, since Firefox 64, it is possible to use new specs for a simple Scrollbar styling (not as complete as in Chrome with vendor prefixes).
     - css的scrollbar-width属性可设置滚动条宽度
         - auto，默认值
         - thin，更窄的滚动条
         - none，不显示滚动条，但能滚动
-        - 此属性目前仅firefox支持
+        - 此属性目前**仅firefox支持**
         - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars

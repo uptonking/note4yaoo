@@ -2,7 +2,7 @@
 tags: [style, web]
 title: note-web-style
 created: '2019-08-05T11:51:59.761Z'
-modified: '2019-10-15T05:45:26.419Z'
+modified: '2020-02-13T13:29:36.863Z'
 ---
 
 # note-web-style
@@ -73,6 +73,11 @@ modified: '2019-10-15T05:45:26.419Z'
 
     
 ## tips
+- 全局基础样式的内容(类似styled-system提供的)
+    - text, color, space, layout, border 
+- flexbox vs css grid
+    - Layout可以考虑Grid来做，单个Component中的东西可以考虑Flexbox来做
+    - grid的兼容性chrome要57以上才能兼容，ie就呵呵，相比之下flex稍微好点
 - tailwind css vs Atomic CSS
     - 都是类似css原子类的语法，但Atomic CSS写起来包含大小写和括号太丑
     - css原子类增加了记忆成本，效果和行内样式一样，仅仅是减少了需要拼写的字符数量
@@ -924,7 +929,7 @@ modified: '2019-10-15T05:45:26.419Z'
 - 全书结构
     - css基础：选择器+层叠规则+盒模型
     - 常用功能：文本+图片+动画
-    - 页面布局：float+flexbox+(css grid)+响应式设计
+    - 页面布局：float/flexbox/css grid/响应式设计
     - 高级功能：sass
 - CSS(Cascading Style Sheets)是一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言，由W3C定义和维护
 - html提出的目的是以一种易于理解的结构组织页面内容
@@ -964,13 +969,13 @@ modified: '2019-10-15T05:45:26.419Z'
     - 行内样式：不推荐使用，可复用性差，多用于测试
 - selector 选择器
     - http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
-    - 元素选择器：可选取特定html标签，不够精细
+    - 元素选择器：可选取所有指定html标签，不够精细
     - 类选择器：以`点号`开头，类名区分大小写
     - ID选择器：以`#号`开头，尽量不用id选择器，用类选择器
     - 群组选择器：多个选择器用`逗号`分开，选择各选择器指定的元素并集，可混用多种选择器
     - 通用选择器：`*号`表示选择所有元素标签，也可以作为后代选择器的部分
     - 后代选择器：多个选择器用`空格`分开，选择一个标签的所有后代，包括子代和孙代
-    - 子代选择器： el1 `>` el2，只选择直接子代，不选孙代
+    - 子代选择器： `el1 > el2`，只选择直接子代，不选孙代
         - 还可以使用伪类，如:first-child，:nth-child(n)
         - tr:nth-child(odd/even/3n+X/-n+2/9)
         - 子代类型选择器：选取的是特定类型的子代标签，如`.sidebar p:first-of-type`
@@ -1172,7 +1177,7 @@ modified: '2019-10-15T05:45:26.419Z'
 - id选择器和类选择器不用考虑文档结构层次
 - 多类选择器：.clsA.clsB，无空格，取交集，即选择同时具有clsA和clsB类名的元素
     - 也可以是 el.clsName
-- 使用#id可以链接到同一页面的目标id元素位置，若<a href='#'>则会返回顶部
+- 使用#id可以链接到同一页面的目标id元素位置，若`<a href='#'>`则会返回顶部
 - 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容。
 - 盒模型，就是浏览器为页面中的每个HTML元素生成的矩形盒子
     - 默认所有盒子边框不可见，背景透明

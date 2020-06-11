@@ -2,7 +2,7 @@
 tags: [tool/software]
 title: tool-software
 created: '2019-07-08T04:10:28.254Z'
-modified: '2019-09-22T13:13:16.831Z'
+modified: '2019-12-22T12:17:55.079Z'
 ---
 
 # tool-software
@@ -19,7 +19,7 @@ modified: '2019-09-22T13:13:16.831Z'
 - 可用ping检测ip，用telnet检测端口
 
 ## software
-- movie
+- video
     - vlc
         - 3.0.7 - 201907
         - win/linux/mac/android/ios
@@ -63,19 +63,25 @@ modified: '2019-09-22T13:13:16.831Z'
     - wechat
     - skype
     - teamviewer
-- fiance
+- finance
     - bank
-- basic tools
-    - calculator
-    - google calendar
+- health
+    - sleep cycle
+    - runner/keeper
+- os
+    - app store
+    - browser
+    - email
+    - im
+    - screen time    
     - contacts
     - camera
     - qr code scanner
-    - wps note/google keep
     - shadowsocks
-    - sleep cycle
-    - health/runner
-    - email
+    - calendar
+    - calculator
+- tools
+    - wps note/google keep
     - netdisk
     - emarket
 
@@ -138,9 +144,9 @@ modified: '2019-09-22T13:13:16.831Z'
     - wireshark
 - blog
     - jbake
+    - hexo
+    - gatsby
 
-## git-repo
-- https://github.com/fabienrenaud/java-json-benchmark
 
 ## device
 

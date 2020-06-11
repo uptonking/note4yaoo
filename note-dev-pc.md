@@ -2,7 +2,7 @@
 tags: [dev/pc]
 title: note-dev-pc
 created: '2019-06-09T05:28:24.696Z'
-modified: '2019-10-11T10:38:12.668Z'
+modified: '2020-05-18T10:03:18.632Z'
 ---
 
 # note-dev-pc
@@ -17,7 +17,7 @@ modified: '2019-10-11T10:38:12.668Z'
     - 不考虑，普通第三方实现的webview功能有限，不如直接用厂商开发的chrominum
     - 考虑webview是否支持webgl、视频、音频等功能
 - electron vs chrome apps
-    - google Chrome will be removing support for Chrome Apps
+    - Google Chrome will be removing support for Chrome Apps
     - 使用electron可自己自由分发，不依赖浏览器
     - app依赖浏览器且只支持chrome浏览器，不同版本的浏览器所支持feature不一样，google还会限制部分功能
     - 使用electron能开发更灵活的功能

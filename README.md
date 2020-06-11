@@ -2,18 +2,25 @@
 tags: [wiki]
 title: README
 created: '2019-06-19T09:12:15.964Z'
-modified: '2019-10-07T10:12:19.938Z'
+modified: '2019-12-12T09:21:26.022Z'
 ---
 
 # README
+- my daily notes and pieces  
 
-## about java
-
-## about web
-
-## about list
-
-## about geospatial  
+## note-categories
+- `note-`: dev and learning, mostly ahout java, web, list, geospatial
+- `topic-`: other dev and learning 
+- `read-`: summary from docs
+- `toc-`: list of data
+- `log-`: long term record
+- `latest-`: news of my subscription 
+- `tool-`: xp of using devices and software
+- `spec-`: specifications about dev
+- `wiki-`: summary about geo, history, law, fintech
+- other tags
+    - all, draft...
+    - app, cli, coding, play, pm, work...
 
 ## notable todo
 - [ ] fix-view: lgt symbol not rendered properly, e.g.`Pick<Props, "name">`

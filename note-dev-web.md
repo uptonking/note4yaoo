@@ -2,10 +2,37 @@
 tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2019-10-14T14:08:32.688Z'
+modified: '2020-05-22T16:28:42.850Z'
 ---
 
 # note-dev-web
+
+## 难点
+- tree-shaking
+    - 各工具库的编译方式不同，webpack各版本支持程度不同
+    - webpack
+        - Tree shaking does not apply to re-exported namespace imports
+        - v4不支持，v5支持
+        - rollup can tree-shake `import * as foo` just like other tools
+- component-to-image
+    - repng
+
+## 前端基础框架开发
+- 视图渲染
+  - MVC/MVVM
+  - VDOM结构
+  - DOM更新及操作
+  - 生命周期
+- 状态管理
+  - 拆分合并,子树更新
+  - 网络请求
+  - 中间件
+- 路由跳转
+- ssr
+- 同构
+- ui组件库
+
+
 
 ## 前端框架通用问题
 - 解决方案的选择
@@ -40,6 +67,62 @@ modified: '2019-10-14T14:08:32.688Z'
         - tooltip提示鼠标处内容信息
 
 ## faq
+
+- 弹性布局 vs 响应式布局
+    - rem是弹性布局的一种实现方式，弹性布局可以算作响应式布局的一种，但响应式布局不是弹性布局，弹性布局强调等比缩放，100%还原；响应式布局强调不同屏幕要有不同的显示，比如媒体查询
+    - 只用css，无需js，就可以实现元素大小随着屏幕宽度的变化而变化
+- 如何根据不同的屏幕尺寸去动态设置html的font-size呢
+    - 利用css的media query来设置，单位是px
+    - 利用js动态计算并修改，可能会有闪烁问题
+    - rem布局在加载的时候会出现元素一开始很小，闪烁一下恢复正常大小的问题
+        - JS动态计算并修改字体大小和媒体查询，只要选择一套方案就可以了，推荐媒体查询
+        - 外部css会阻塞DOM渲染，并不阻塞js解析，外部js既阻塞渲染，也阻塞解析
+    - 部分安卓手机或者webview调整了系统默认字体大小
+- 如何实现1px
+    - 将border设置为1px,然后将也页面的整体根据页面的dpr缩小相应的倍数，接着将rem补偿相应的倍数，这样页面中只有1px的边框缩小了，而其他内容经过缩小和扩大，还是原来的状态
+    - var fontSize = width/10*(window.devicePixelRatio) + 'px'
+- rem vs px
+    - 结论
+        - 考虑3类设备上的展示：手机、平板、pc、横竖屏
+        - 考虑系统默认字体、浏览器默认字体
+        - 在视觉稿要求固定尺寸的元素上使用px，比如1px线、4px的圆角边框
+        - 在字号、（大多数）间距上使用rem
+        - 不用em，因为会根据当前元素的字号按比例计算尺寸，若当前元素无字号则查找父元素
+        - 推荐：用户业务样式代码以 px 为单位，并且以 iPhone6 屏幕 “物理像素” 宽度 750 为基准 (即普通 “逻辑像素” 值的 2 倍大小)， 使用 postcss-pxtorem 把 px 转成 rem 单位，转换基准为1rem=100px (使用 rem 实现不同设备等比缩放效果)。对于使用 webpack 的项目，在 webpack.config.js 里新增 pxtorem 配置
+        - 将html元素的font-size设为62.5%(或10px)是为了方便计算，可以设置为625%
+        - 当使用小于12px的字体时，chrome只会渲染12px大小的字
+        - 若通过浏览器设置或系统设置或辅助功能设置了大字号，则内容及间隔都会变大，字号变大后，屏幕显示的内容会变少   
+        - 类似这样的适配在pad横屏展示超级大，所以还是要根据业务需求设置临界值
+        - 如果让html元素的font-size等于屏幕宽度的1/100，那1rem和1x就等价了，此时宽度为100rem
+            - 如何让html字体大小一直等于屏幕宽度的百分之一呢？ 可以通过js来设置
+            - 注意dom在ready,resize,rotate时更新宽度值
+            - 那么如何把设计图中的获取的像素单位的值，转换为已rem为单位的值呢？
+                - 375px/100rem = 48px/uNeedrem
+        - css3带来了rem的同时，也带来了vw和vh，vw为视口宽度的1/100，vh为视口高度的 1/100
+            - vw的兼容性不如rem好，android和ios的支持情况不同
+            - 若要限制最大宽度，vw
+        - 三方组件库是大家公用的，如果每个组件库的rem拆分不一致就会有很多问题，若一个库100rem就是100vw，有的是20rem是100vw，引入几个三放库中间大小肯定就不兼容了
+        - rem基于html的font-size，所有元素都受影响，引入三方库修改成本要尽量低
+        - 使用px的组件库，会利用js控制内联style进行适应屏幕
+        - ref
+            - https://www.zhihu.com/question/309599529
+            - https://zhuanlan.zhihu.com/p/30413803
+            - https://segmentfault.com/a/1190000014502172
+            - https://github.com/ant-design/ant-design-mobile/wiki/HD
+    - rem的特点是根据根元素按比例计算尺寸
+        - 优点是使用rem时，若修改了根元素的字体大小，就可以自动显示相应的尺寸
+        - 实现1px的border不精确，计算时常产生小数
+        - 横竖屏切换时，可能需要动态计算并设置根html的大小
+        `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px";`
+        - 最近在做开发的时候遇到rem的一个大坑，就是如果用户改变了手机的字体大小，而且我们的页面样式的宽用了rem,比如{width:1rem},那么页面的宽就会成倍增长，导致页面乱掉。。。还没找到办法解决，宽度还是先避免使用rem的好。
+        - 字体的大小和字体宽度，并不成线性关系，所以字体大小不能使用rem；由于设置了根元素字体的大小，会影响所有没有设置字体大小的元素。可以在body上做字体修正
+        - 如果用户在PC端浏览，页面过宽怎么办？一般我们都会设置一个最大宽度，大于这个宽度的话页面居中，两边留白 `body { margin: auto; width: 100rem }`
+    - px的特点是固定尺寸
+        - 浏览器的pixel是css pixel
+        - 当用图片或一些不能缩放的展示时，必须要使用固定的px值，因为缩放可能导致变形
+        - px是一直是浏览器厂商以及标准的推荐单位，是未来的主流
+    - bootstrap的选择
+        - While Bootstrap uses ems or rems for defining most sizes, pxs are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the font size.
 - 骨架屏生成方案
     - https://github.com/Jocs/jocs.github.io/issues/22
 - 支持web sockets的tomcat服务器7和8有何区别
@@ -395,3 +478,16 @@ modified: '2019-10-14T14:08:32.688Z'
 - htm
     - Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support
     - 使用标签模版字符串取代jsx
+
+## solutions
+- tree shaking
+    - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 
+    - It relies on the static structure of ES2015 module syntax, i.e. import and export
+    - example
+    ```
+    import * as Foo from './foo';             // namespace import
+    import { bar, bar2, bar3 } from './foo';  // named import
+    ```
+    - with a modern webpack setup, the two will generate the same compiled/transpiled JS
+    - ref
+        - https://medium.com/unsplash/named-namespace-imports-7345212bbffb
