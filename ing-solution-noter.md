@@ -2,7 +2,7 @@
 tags: [solution]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-08T12:03:09.572Z'
+modified: '2020-06-12T05:12:42.872Z'
 ---
 
 # ing-solution-noter
@@ -35,6 +35,12 @@ modified: '2020-06-08T12:03:09.572Z'
 - 其他需求
 
 ## notable
+## notable-xp-todo
+- [ ] fix: lgt symbol not rendered properly, e.g.`Pick<Props, "name">`
+- [ ] search: hightlight search results on current page
+- [ ] edit: edit at where you click  
+- [ ] edit: collapse current node  
+- [ ] keyboard: alt+arrow, move current line up/down
 ### notable-docs
 - The data directory is where all your notes and attachments will be stored
     - You can edit your notes/attachments without even using Notable

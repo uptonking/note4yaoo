@@ -2,7 +2,7 @@
 tags: [ux]
 title: app-software-ux
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-06-09T12:24:05.103Z'
+modified: '2020-06-12T05:15:56.601Z'
 ---
 
 # app-software-ux
@@ -15,10 +15,10 @@ modified: '2020-06-09T12:24:05.103Z'
 - go to npm package page
 
 ## app-win10
-- FileExplorer/D
+- FileExplorer
     - file count column is not implemented
 
 
 ## app-ubuntu
-- sysget/A
+- sysget
     - one syntax to every package manager

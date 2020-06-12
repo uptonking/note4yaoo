@@ -2,10 +2,26 @@
 tags: [engineering]
 title: cli-options
 created: '2019-10-06T10:29:08.772Z'
-modified: '2020-04-15T10:55:11.467Z'
+modified: '2020-06-12T05:02:15.261Z'
 ---
 
 # cli-options
+
+## git相关
+- 删除远程仓库中的文件，如意外提交了node_modules文件夹
+```
+git rm --cached 文件（夹）名，此时只删除了仓库中的缓存，实际文件不会删除
+git commit -m '备注'
+git push origin 分支
+```
+- 删除本地和远程两份文件
+```
+git rm 文件名       // 删除文件
+git rm -r 文件夹名   // 删除文件夹 
+git add .
+git commit -m '备注'
+git push origin 分支
+```
 
 ## linux shell
 - ssh免密登录
