@@ -4,7 +4,7 @@ favorited: true
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-07T06:54:48.722Z'
+modified: '2020-06-12T05:21:58.160Z'
 ---
 
 # log-dev-pieces-frontend
@@ -58,7 +58,7 @@ modified: '2020-06-07T06:54:48.722Z'
             - 访问器属性的功能用自定义函数也能实现，但es5原生支持更简洁
     - 数据属性主要有四个特性描述对象属性行为
         - [ ] [[Configurable]]:默认为true。表示能否通过delete删除属性来重新定义属性，或者能否把属性改为可访问属性；
-        - [ ] [[Enumerable]]:默认为true。表示能否通过for-in循环返回属性；
+        - [x] [[Enumerable]]:默认为true。表示能否通过for-in循环返回属性；
         - [ ] [[Writable]]:默认为true。表示能否修改属性的值；
         - [ ] [[Value]]:默认为underfined。表示包含属性的数据值。读写属性之都从这个位置进行；
     - 访问器属性不包含数据值。访问器属性不能直接定义，必须通过Object.defineProperty()定义。但包含一对getter和setter函数

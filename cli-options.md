@@ -2,13 +2,14 @@
 tags: [engineering]
 title: cli-options
 created: '2019-10-06T10:29:08.772Z'
-modified: '2020-06-12T05:02:15.261Z'
+modified: '2020-06-12T05:21:04.579Z'
 ---
 
 # cli-options
 
 ## git相关
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
+  - 另一种方法：直接将远程要删除的文件加入`.gitignore`
 ```
 git rm --cached 文件（夹）名，此时只删除了仓库中的缓存，实际文件不会删除
 git commit -m '备注'

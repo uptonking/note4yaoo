@@ -2,7 +2,7 @@
 tags: [amazing, pm, software, ux, yaoo]
 title: app-amazing
 created: '2019-09-04T09:50:42.583Z'
-modified: '2020-05-13T06:31:16.380Z'
+modified: '2020-06-12T10:05:06.121Z'
 ---
 
 # app-amazing
@@ -22,6 +22,7 @@ modified: '2020-05-13T06:31:16.380Z'
 
 ## renovate
 - skew layer effect
+- 广告字符通过动画形成名称文字的动画，类似不完美的她
 
 ## amazing-ideas
 - 日本公司推出午睡空间外卖服务，将面包车改装成卧室开往需要休息的人公司  

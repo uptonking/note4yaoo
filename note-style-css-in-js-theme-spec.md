@@ -3,7 +3,7 @@ favorited: true
 tags: [style, web]
 title: note-style-css-in-js-theme-spec
 created: '2019-11-30T10:00:18.020Z'
-modified: '2020-06-09T10:02:24.242Z'
+modified: '2020-06-12T06:21:31.840Z'
 ---
 
 # note-style-css-in-js-theme-spec
@@ -11,15 +11,27 @@ modified: '2020-06-09T10:02:24.242Z'
 ## faq
 
 - 为什么用css-in-js
+  - pros
+    - naming is hard
+    - simple dynamic styling adapting to its props
     - scoped styles
     - type check and code auto suggestion
+    - better maintainability
+      - easy to delete css
+      - easy to find styles
+      - css的样式层叠顺序更清晰，当很少使用全局样式时
+      - 大型软件通常更重视可维护性和兼容性，性能通常不是最高
+      - support all of CSS plus nesting
     - js is the future (for its ecosystem)
-    - define style helper functions in js rather than sass
-    - ref
-        - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
-        - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
-        - https://medium.com/@lindsay_jopson/is-css-in-js-really-better-than-traditional-css-8ac5b3f7fc20
-        - https://mxstbr.com/thoughts/css-in-js
+      - define style helper functions in js rather than sass
+  - cons
+    - learning curve
+    - css-in-js runtime cost in performance and size 
+  - ref
+      - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
+      - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
+      - https://medium.com/@lindsay_jopson/is-css-in-js-really-better-than-traditional-css-8ac5b3f7fc20
+      - https://mxstbr.com/thoughts/css-in-js
 - 为什么用emotion/styled-components
     - styles written inline, but className auto generated and added to dom
 - 为什么用styled-system
@@ -29,7 +41,7 @@ modified: '2020-06-09T10:02:24.242Z'
     - styled开发体验好，性能可能不是最好
 - css prop vs scss prop，不用className
     - className不能给组件动态添加样式属性
-        - 本质是需要一个atyled
+        - 因为需要一个styled
     - 样式写法上，差别不大
     - debug时，emotion的styled比styled-components的组件少一层styled.button
     - css prop的组件有时比styled的少一层Context.Consumer
@@ -138,6 +150,7 @@ modified: '2020-06-09T10:02:24.242Z'
 - https://www.infoq.com/news/2020/01/css-cssinjs-performance-cost/
 - https://dev.to/macsikora/css-in-js-did-we-do-something-wrong-l1j
 - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
+- https://itnext.io/css-in-js-vs-pre-post-processors-in-2019-8b1e20c066ed
 
 ## theme-specification
 - https://github.com/system-ui/theme-specification
