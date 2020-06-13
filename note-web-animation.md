@@ -2,7 +2,7 @@
 tags: [animation, style, web]
 title: note-web-animation
 created: '2019-10-16T06:58:19.848Z'
-modified: '2020-06-13T13:00:14.697Z'
+modified: '2020-06-13T17:47:36.858Z'
 ---
 
 # note-web-animation
@@ -85,6 +85,8 @@ modified: '2020-06-13T13:00:14.697Z'
   - Use CSS animations for simpler "one-shot" transitions, like toggling UI element states.
   - Use JavaScript animations when you want to have advanced effects like bouncing, stop, pause, rewind, or slow down.
   - If you choose to animate with JavaScript, use the **Web Animations API** or a modern framework that you're comfortable with.
+    - web animations api 在github上不受欢迎
+    - 还要考虑对svg, canvas的支持
   - Use CSS when you have smaller, self-contained states for UI elements. 
     - CSS transitions and animations are ideal for bringing a navigation menu in from the side, or showing a tooltip. 
     - You may end up using JavaScript to control the states, but the animations themselves will be in your CSS.
@@ -94,6 +96,8 @@ modified: '2020-06-13T13:00:14.697Z'
     - JavaScript is also useful when you need to stop, pause, slow down, or reverse your animations.
   - Use requestAnimationFrame directly when you want to orchestrate an entire scene by hand. This is an advanced JavaScript approach, but can be useful if you're building a game or drawing to an HTML canvas.
   - Alternatively, if you're already using a JavaScript framework that includes animation functionality, such as via jQuery's .animate() method or GreenSock's TweenMax, then you may find it more convenient overall to stick with that for your animations.
+- Animating with CSS is the simplest way to get something moving on screen. This approach is described as declarative, because you specify what you'd like to happen.
+- JavaScript animations are imperative, as you write them inline as part of your code. You can also encapsulate them inside other objects.
 - In terms of performance, there is no difference between implementing an animation with CSS transitions or animations. Both of them are classified under the same CSS-based umbrella in this article.
 -  Compared to setTimeout()/setInterval(), which need a specific delay parameter, requestAnimationFrame() is much more efficient. Developers can create an animation by simply changing an element's style each time the loop is called (or updating the Canvas draw, or whatever.)
 - Like CSS transitions and animations, requestAnimationFrame() pauses when the current tab is pushed into the background.
@@ -108,10 +112,46 @@ modified: '2020-06-13T13:00:14.697Z'
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance
   - https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript
+
+
+## animation performance
+- Take care that your animations don’t cause performance issues; ensure that you know the impact of animating a given CSS property.
+- Animating properties that change the geometry of the page (layout) or cause painting are particularly expensive.
+- Where you can, stick to changing transforms and opacity.
+- Use will-change to ensure that the browser knows what you plan to animate.
+- some properties are cheaper to animate than others. 
+  - For example, animating the width and height of an element changes its geometry and may cause other elements on the page to move or change size. 
+  - This process is called layout (or **reflow** in Gecko-based browsers like Firefox), and can be expensive if your page has a lot of elements. 
+  - Whenever layout is triggered, the page or part of it will normally need to be painted, which is typically even more expensive than the layout operation itself.
+- Where you can, you should avoid animating properties that trigger layout or paint. For most modern browsers, this means limiting animations to `opacity` or `transform`, both of which the browser can highly optimize; it doesn’t matter if the animation is handled by JavaScript or CSS.
+- The general rule of thumb is that if the animation might be triggered in the next 200ms, either by a user’s interaction or because of your application’s state, then having will-change on animating elements is a good idea. For most cases, then, any element in your app’s current view that you intend to animate should have will-change enabled for whichever properties you plan to change.
+- CSS-based animations, and Web Animations where supported natively, are typically handled on a thread known as the "compositor thread". 
+  - This is different from the browser's "main thread", where styling, layout, painting, and JavaScript are executed. 
+  - This means that if the browser is running some expensive tasks on the main thread, these animations can keep going without being interrupted.
+- Other changes to transforms and opacity can, in many cases, also be handled by the compositor thread.
+- If any animation triggers paint, layout, or both, the "main thread" will be required to do work. This is true for both CSS- and JavaScript-based animations, and the overhead of layout or paint will likely dwarf any work associated with CSS or JavaScript execution, rendering the question moot.
+- ref
   - https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance
+  - https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
 
 
 ## css animation
+- shortcomings of CSS-based animation
+  - Lack of independent scale/rotation/position control
+    - In CSS, they’re all crammed into one “transform” property, making them impossible to animate in a truly distinct way on a single element
+  - performance
+    - The newer GSAP is also JavaScript-based but it’s literally up to 20x faster than jQuery.
+    - Declaring your animations in CSS allows the browser to determine which elements should get GPU layers, and divvy them up accordingly.you can do that with JavaScript too
+    - using a different CPU thread for animation-related calculations doesn’t come without costs
+    - Also note that not all CSS properties get the GPU boost in CSS animations. In fact, most don’t. Transforms (scale, rotation, translation, and skew) and opacity are the primary beneficiaries.
+    - CSS animations are significantly faster than jQuery. However, on most devices and browsers I tested, the JavaScript-based GSAP performed even better than CSS animations 
+    - Although well-optimized JavaScript is often just as fast if not faster than CSS animations, 3D transforms do tend to be faster when animated with CSS, but that has a lot to do with the way browsers handle 16-element matrices today 
+  - Using css animations, You cannot seek to a particular spot in the animation, nor can you smoothly reverse part-way through or alter the time scale or add callbacks at certain spots or bind them to a rich set of playback events. JavaScript provides great control
+  - It is becoming increasingly common to animate canvas-based objects and other 3rd-party library objects but unfortunately CSS animations can only target DOM elements.
+  - There are a few more workflow-related conveniences that are missing in CSS Animations
+    - Relative values, Nesting, Progress reporting, Targeted kills, Concise code
+  - css animation effects are
+  - 
 - CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
 - The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
 - Animations consist of two components
@@ -124,3 +164,4 @@ modified: '2020-06-13T13:00:14.697Z'
     - Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
 - 参考
     - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+    - https://css-tricks.com/myth-busting-css-animations-vs-javascript/
