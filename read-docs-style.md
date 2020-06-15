@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, style, web]
 title: read-docs-style
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-06-09T08:11:45.701Z'
+modified: '2020-06-14T06:27:45.124Z'
 ---
 
 # read-docs-style
@@ -180,6 +180,8 @@ modified: '2020-06-09T08:11:45.701Z'
 - https://www.styled-components.com/docs/basics
 - https://github.com/styled-components/styled-components
 ### faq
+- 实现原理
+  - https://dev.to/stereobooster/styled-components-one-more-time-5g0l
 - styled(MyComp)会传递所有属性，如何只传递指定属性
     - 对于styled('tag')，s-c只传递html属性
     - 手动选出不需要传递下去的属性，然后传递给底层组件restProps

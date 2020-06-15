@@ -1,15 +1,20 @@
 ---
 tags: [js, latest/js]
-title: latest-js
+title: latest-lang-js
 created: '2019-10-15T12:20:05.196Z'
-modified: '2019-12-18T08:56:17.462Z'
+modified: '2020-06-15T10:25:20.898Z'
 ---
 
-# latest-js
+# latest-lang-js
 
 - react
     - defaultProps可能废除 https://github.com/reactjs/rfcs/pull/107
     - swr基于hooks的请求库，设计思想是stale-while-revalidate，先用缓存再请求
+
+
+- htm
+    - Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support
+    - 使用标签模版字符串取代jsx
 
 - 201907-Hermes JS Engine
     - a new js engine optimized for running React Native on Android

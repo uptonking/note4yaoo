@@ -2,7 +2,7 @@
 tags: [components, dev, table]
 title: note-dev-product-table
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-01-27T09:33:52.353Z'
+modified: '2020-06-14T04:58:16.569Z'
 ---
 
 # note-dev-product-table
@@ -133,8 +133,8 @@ modified: '2020-01-27T09:33:52.353Z'
     - 201904-7.0.0-alpha.2-migrate to typescript
 
 ## toc-list-table
-- react-virtualized
 - react-window
+- react-virtualized
 - ag-grid
     - lack of client-side pagination
     - inconvenient to change cell renderer

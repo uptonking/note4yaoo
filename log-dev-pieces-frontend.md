@@ -1,10 +1,9 @@
 ---
 attachments: [hello.txt]
-favorited: true
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-12T05:21:58.160Z'
+modified: '2020-06-14T04:56:17.568Z'
 ---
 
 # log-dev-pieces-frontend

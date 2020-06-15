@@ -2,15 +2,22 @@
 tags: [animation, style, web]
 title: note-web-animation
 created: '2019-10-16T06:58:19.848Z'
-modified: '2020-06-13T17:47:36.858Z'
+modified: '2020-06-14T05:16:54.605Z'
 ---
 
 # note-web-animation
 
+## summary
+- 根据应用场景，选择动画实现方式
+  - 对于普通ui切换效果，使用css transition或animation
+  - 对于连续执行，或依次执行，或包含3种以上效果的动画，采用js动画
+  - 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式
+  - 具体实现方式在github上的热度
+
 ## faq
 - 组件的hover effect如何实现
-    - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形
-    - 类似卡片变大
+  - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形
+  - 类似卡片变大
 
 ## js animation
 - 动画原理
@@ -64,13 +71,13 @@ modified: '2020-06-13T17:47:36.858Z'
   - This will cause lagging effect when many JS tasks are executing at the same time. Because all tasks are competing for the CPU. 
   - While CSS3 transition may lift the animation to GPU so that it will not compete with CPU and can be renderrred separately
   - animation使用GPU的方式是加上`transform: translateZ(0)` 或 `translate3d(0, 0, 0)` 或 `rotateZ(360deg)`. This will composite the elements into their own layers (by tricking the browser into thinking it will be doing 3D transforms) and the browser should, in most cases, take advantage of GPU acceleration, lessening the burden on the CPU.
-- 动画完成时，是否会保存状态
+- 动画完成时，是否会保存状态，animation会回到初始状态
   - After each animation, the CSS3 animation will move back to its original state where before the animation starts While CSS3 transition will keep the animation state after each transition.
-- 执行次数的区别，transition只执行一次
+- 执行次数的区别，animation可设置循环次数
   - CSS3 animation can have iteration count set(animation-iteration-count) which means how many times the animation will be repeated. 
   - But CSS3 transition will only perform the animation once. 
   - To repeat the animation with CSS3 transition, JavaScript may need to be used.
-- 动画中间状态的控制
+- 动画中间状态的控制，animation可设置多个中间态
   - CSS3 animation gives more control to the developer on how the animation is performed. You can define what the state should be at different stages of the animation, e.g, 0%, 10%, 30%, 50%....
   - CSS3 transition can only define the start and end state and the rest will be handled by the browser.
 - 易用性
@@ -81,12 +88,12 @@ modified: '2020-06-13T17:47:36.858Z'
 
 ## js animation vs css animation
 - There are two primary ways to create animations on the web: with CSS and with JavaScript. 
-  - Which one you choose really depends on the other dependencies of your project, and what kinds of effects you're trying to achieve.
+  - Which one you choose really depends on the *other dependencies* of your project, and what kinds of effects you're trying to achieve.
   - Use CSS animations for simpler "one-shot" transitions, like toggling UI element states.
   - Use JavaScript animations when you want to have advanced effects like bouncing, stop, pause, rewind, or slow down.
   - If you choose to animate with JavaScript, use the **Web Animations API** or a modern framework that you're comfortable with.
     - web animations api 在github上不受欢迎
-    - 还要考虑对svg, canvas的支持
+    - 还要考虑对svg、canvas的支持
   - Use CSS when you have smaller, self-contained states for UI elements. 
     - CSS transitions and animations are ideal for bringing a navigation menu in from the side, or showing a tooltip. 
     - You may end up using JavaScript to control the states, but the animations themselves will be in your CSS.
@@ -109,6 +116,24 @@ modified: '2020-06-13T17:47:36.858Z'
   - The key is that as long as the properties we want to animate do not trigger reflow/repaint (read CSS triggers for more information), we can move those sampling operations out of the main thread. 
   - The most common property is the CSS transform. If an element is promoted as a layer, animating transform properties can be done in the GPU, meaning better  performance/efficiency, especially on mobile. 
   - In summary, we should always try to create our animations using CSS transitions/animations where possible. If your animations are really complex, you may have to rely on JavaScript-based animations instead.
+- shortcomings of CSS-based animation
+  - Lack of independent scale/rotation/position control
+    - In CSS, they’re all crammed into one “transform” property, making them impossible to animate in a truly distinct way on a single element
+  - performance
+    - The newer GSAP is also JavaScript-based but it’s literally up to 20x faster than jQuery.
+    - Declaring your animations in CSS allows the browser to determine which elements should get GPU layers, and divvy them up accordingly.you can do that with JavaScript too
+    - using a different CPU thread for animation-related calculations doesn’t come without costs
+    - Also note that not all CSS properties get the GPU boost in CSS animations. In fact, most don’t. Transforms (scale, rotation, translation, and skew) and opacity are the primary beneficiaries.
+    - CSS animations are significantly faster than jQuery. However, on most devices and browsers I tested, the JavaScript-based GSAP performed even better than CSS animations 
+    - Although well-optimized JavaScript is often just as fast if not faster than CSS animations, 3D transforms do tend to be faster when animated with CSS, but that has a lot to do with the way browsers handle 16-element matrices today 
+  - Using css animations, You cannot seek to a particular spot in the animation, nor can you smoothly reverse part-way through or alter the time scale or add callbacks at certain spots or bind them to a rich set of playback events. JavaScript provides great control
+  - It is becoming increasingly common to animate canvas-based objects and other 3rd-party library objects but unfortunately CSS animations can only target DOM elements.
+  - There are a few more workflow-related conveniences that are missing in CSS Animations
+    - Relative values, Nesting, Progress reporting, Targeted kills, Concise code
+  - css animation effects are
+  - 
+- CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
+- The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance
   - https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript
@@ -133,27 +158,11 @@ modified: '2020-06-13T17:47:36.858Z'
 - ref
   - https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance
   - https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+  - https://css-tricks.com/myth-busting-css-animations-vs-javascript/
 
 
 ## css animation
-- shortcomings of CSS-based animation
-  - Lack of independent scale/rotation/position control
-    - In CSS, they’re all crammed into one “transform” property, making them impossible to animate in a truly distinct way on a single element
-  - performance
-    - The newer GSAP is also JavaScript-based but it’s literally up to 20x faster than jQuery.
-    - Declaring your animations in CSS allows the browser to determine which elements should get GPU layers, and divvy them up accordingly.you can do that with JavaScript too
-    - using a different CPU thread for animation-related calculations doesn’t come without costs
-    - Also note that not all CSS properties get the GPU boost in CSS animations. In fact, most don’t. Transforms (scale, rotation, translation, and skew) and opacity are the primary beneficiaries.
-    - CSS animations are significantly faster than jQuery. However, on most devices and browsers I tested, the JavaScript-based GSAP performed even better than CSS animations 
-    - Although well-optimized JavaScript is often just as fast if not faster than CSS animations, 3D transforms do tend to be faster when animated with CSS, but that has a lot to do with the way browsers handle 16-element matrices today 
-  - Using css animations, You cannot seek to a particular spot in the animation, nor can you smoothly reverse part-way through or alter the time scale or add callbacks at certain spots or bind them to a rich set of playback events. JavaScript provides great control
-  - It is becoming increasingly common to animate canvas-based objects and other 3rd-party library objects but unfortunately CSS animations can only target DOM elements.
-  - There are a few more workflow-related conveniences that are missing in CSS Animations
-    - Relative values, Nesting, Progress reporting, Targeted kills, Concise code
-  - css animation effects are
-  - 
-- CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
-- The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
+
 - Animations consist of two components
     - a style describing the CSS animation
     - a set of keyframes that indicate the start and end states of the animation’s style, as well as possible intermediate waypoints
@@ -164,4 +173,3 @@ modified: '2020-06-13T17:47:36.858Z'
     - Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
 - 参考
     - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
-    - https://css-tricks.com/myth-busting-css-animations-vs-javascript/

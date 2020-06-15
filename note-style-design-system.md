@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [style, ui]
-title: note-style-design-system-in-action
+title: note-style-design-system
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-02-24T15:29:31.954Z'
+modified: '2020-06-14T04:53:06.818Z'
 ---
 
-# note-style-design-system-in-action
+# note-style-design-system
 
 ## tips
 

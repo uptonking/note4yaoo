@@ -1,8 +1,9 @@
 ---
+favorited: true
 tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-05-22T16:28:42.850Z'
+modified: '2020-06-14T05:04:51.350Z'
 ---
 
 # note-dev-web
@@ -25,8 +26,8 @@ modified: '2020-05-22T16:28:42.850Z'
   - 生命周期
 - 状态管理
   - 拆分合并,子树更新
-  - 网络请求
   - 中间件
+- 网络请求
 - 路由跳转
 - ssr
 - 同构
@@ -38,9 +39,9 @@ modified: '2020-05-22T16:28:42.850Z'
 - 解决方案的选择
     - 不要浪费过多时间选择，简单采取面向star的编程，方便搜索文档和开发问题
     - 集中时间和精力解决具体一类问题
-- 多语言日期/国际化
+- locale:多语言日期/国际化
     - 解决方案大多与框架相关，如react-intl，要考虑兼容性
-- 多主题样式
+- theme:多主题样式
     - 解决方案大多与框架相关，如styled-components，也可以基于css变量
 - css样式及布局
     - css-in-js: styled-coponents, emotion
@@ -51,8 +52,9 @@ modified: '2020-05-22T16:28:42.850Z'
     - svg-icon:feather is a collection of SVG files
     - css-icon:icono,cssicon
 - animation
-    - pure css animation:animate.css
-    - js animation:anime.js,react-motion,react-move,react-transition-group
+    - pure css animation: animate.css
+    - js animation: anime.js,react-motion,react-move,react-transition-group
+    - svg/canvas/webgl animation
 - drag-layout
     - react-dnd/draggable
     - react-resizable/re-resizable 
@@ -69,7 +71,9 @@ modified: '2020-05-22T16:28:42.850Z'
 ## faq
 
 - 弹性布局 vs 响应式布局
-    - rem是弹性布局的一种实现方式，弹性布局可以算作响应式布局的一种，但响应式布局不是弹性布局，弹性布局强调等比缩放，100%还原；响应式布局强调不同屏幕要有不同的显示，比如媒体查询
+    - rem是弹性布局的一种实现方式，弹性布局可以算作响应式布局的一种，但响应式布局不是弹性布局
+      - 弹性布局强调等比缩放，100%还原
+      - 响应式布局强调不同屏幕要有不同的显示，比如媒体查询
     - 只用css，无需js，就可以实现元素大小随着屏幕宽度的变化而变化
 - 如何根据不同的屏幕尺寸去动态设置html的font-size呢
     - 利用css的media query来设置，单位是px
@@ -179,7 +183,9 @@ modified: '2020-05-22T16:28:42.850Z'
     - react-overlays
 
 ## animation
-- React Transition Group is not an animation library like React-Motion, it does not animate styles by itself. Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
+- React Transition Group 
+  - It is not an animation library like React-Motion, it does not animate styles by itself. 
+  - Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
 
 ## drag-layout
 ### drag
@@ -475,9 +481,6 @@ modified: '2020-05-22T16:28:42.850Z'
 
 
 ## dev-web-latest
-- htm
-    - Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support
-    - 使用标签模版字符串取代jsx
 
 ## solutions
 - tree shaking
