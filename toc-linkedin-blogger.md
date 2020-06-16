@@ -2,14 +2,14 @@
 tags: [linkedin, toc]
 title: toc-linkedin-blogger
 created: '2019-12-29T11:49:48.192Z'
-modified: '2020-02-16T14:35:15.337Z'
+modified: '2020-06-16T02:30:00.052Z'
 ---
 
 # toc-linkedin-blogger  
 
 ## dev
 - 方正
-    - react开发者，训记健身服务自由职业者，主要提供app和小程序
+    - react开发者，训记健身服务，自由职业者，主要提供app和小程序
     - https://www.zhihu.com/people/fang-zheng-3-34/answers
     
 ## data-analysis

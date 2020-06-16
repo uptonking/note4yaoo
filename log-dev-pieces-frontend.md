@@ -3,7 +3,7 @@ attachments: [hello.txt]
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-14T04:56:17.568Z'
+modified: '2020-06-16T13:02:45.593Z'
 ---
 
 # log-dev-pieces-frontend
@@ -11,7 +11,28 @@ modified: '2020-06-14T04:56:17.568Z'
 ## logging
 
 
-
+- lodash引用方式
+  - `import { cloneDeep } from 'lodash';`
+    - 70.9KB
+  - `import cloneDeep from 'lodash/cloneDeep';`
+    - 17.8KB
+  - `import { cloneDeep } from 'lodash-es';`
+    - 14.6KB
+  - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
+    - Lodash is a good example of a module that looks like it has lots of side-effects, even in places that it doesn't. 
+    - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'`).
+- named import和namespace import都可以被webpack v5和rollup进行tree shaking
+  - default import对于多属性的对象，无法进行tree shaking
+  - https://blog.csdn.net/qq_34629352/article/details/104258640
+  - https://webpack.js.org/guides/tree-shaking/
+  - Note that any imported file is subject to tree shaking. This means if you use something like css-loader in your project and import a CSS file, it needs to be added to the side effect list so it will not be unintentionally dropped in production mode
+- $ and $$ will work on any web page (if jQuery is not included also) on Google Chrome, Firefox and Safari browsers where $ returns first element of selector passed.
+    - `$` is `document.querySelector()`
+    - `$$` is `document.querySelectorAll()`
+    - `$x()` Returns an array of elements that match the specified XPath.
+    - Warning: These functions only work when you call them from the Chrome DevTools Console. They won't work if you try to call them in your scripts.
+    - They are native functions of Google Chrome and Firefox browsers, you can see $ and $$ definition in Safari as well.
+    - https://developers.google.com/web/tools/chrome-devtools/console/utilities
 - js对象内的属性引用同一对象的另一个属性
     - 如果不介意在对象字面量外写的话
     ```

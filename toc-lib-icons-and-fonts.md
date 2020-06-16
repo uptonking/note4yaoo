@@ -1,11 +1,11 @@
 ---
 tags: [fonts, icon, lib, toc]
-title: toc-lib-icons-fonts
+title: toc-lib-icons-and-fonts
 created: '2019-09-14T03:30:03.478Z'
-modified: '2019-12-29T11:57:45.203Z'
+modified: '2020-06-16T02:29:28.090Z'
 ---
 
-# toc-lib-icons-fonts
+# toc-lib-icons-and-fonts
 
 ## icons
 - feather  /MIT/16kStar/201908
