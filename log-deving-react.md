@@ -3,7 +3,7 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-05-31T05:35:28.107Z'
+modified: '2020-06-17T10:03:59.642Z'
 ---
 
 # log-deving-react
@@ -246,6 +246,12 @@ modified: '2020-05-31T05:35:28.107Z'
     - 选择方式：面向star的编程、大公司支持、团队技术擅长
 - react
 
+- portal示例中child组件会在portal挂载前先挂载
+  - https://github.com/reactjs/reactjs.org/issues/272
+  -  If a child component requires to be attached to the DOM tree immediately when mounted, for example to measure a DOM node, or uses 'autoFocus' in a descendant, add state to Modal and only render the children when Modal is inserted in the DOM tree.
+  - This guarantees that any children's componentDidMount is called when that child is inserted in the DOM tree, and enabling props like autoFocus to work as expected
+- componentWillMount and render methods should not have side effects. 
+  - Side effects (like modifying the DOM) are only safe in componentDidMount, componentDidUpdate, and componentWillUnmount methods.
 - ref使用
     - 基础组件最好都加上`forwardRef`，如果不加很可能出错
     - 实例：Input要计算forwardRef，是因为当用做OverlayTrigger的children时，需要通过HTMLElement去计算clientRect，from react-ui-components
