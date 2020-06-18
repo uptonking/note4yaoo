@@ -3,7 +3,7 @@ favorited: true
 tags: [components, web]
 title: note-ui-components-in-action
 created: '2019-09-07T13:04:41.983Z'
-modified: '2020-06-18T13:46:36.478Z'
+modified: '2020-06-18T13:57:30.373Z'
 ---
 
 # note-ui-components-in-action
@@ -234,6 +234,7 @@ modified: '2020-06-18T13:46:36.478Z'
     - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
     - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
     - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
+      - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件实例的setState
     - [React造轮系列：对话框组件 - Dialog 思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
 - Toast
 - Loading
