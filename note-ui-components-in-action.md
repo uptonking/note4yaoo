@@ -3,7 +3,7 @@ favorited: true
 tags: [components, web]
 title: note-ui-components-in-action
 created: '2019-09-07T13:04:41.983Z'
-modified: '2020-06-15T10:24:17.128Z'
+modified: '2020-06-18T13:46:36.478Z'
 ---
 
 # note-ui-components-in-action
@@ -226,6 +226,15 @@ modified: '2020-06-15T10:24:17.128Z'
         - 气泡位置：中间或上下左右，箭头或三角形
         - 弹层显示控制：第几层、覆盖情况、弹层控制、元素操作  
 - Modal/Dialog/弹出窗口对话框
+  -　一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
+    - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深。
+    - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面。
+  - ref
+    - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
+    - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
+    - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
+    - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
+    - [React造轮系列：对话框组件 - Dialog 思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
 - Toast
 - Loading
     - flower-loader
