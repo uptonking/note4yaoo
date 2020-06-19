@@ -3,7 +3,7 @@ favorited: true
 tags: [components, web]
 title: note-ui-components-in-action
 created: '2019-09-07T13:04:41.983Z'
-modified: '2020-06-18T13:46:36.478Z'
+modified: '2020-06-19T02:43:58.905Z'
 ---
 
 # note-ui-components-in-action
@@ -229,6 +229,18 @@ modified: '2020-06-18T13:46:36.478Z'
   -　一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
     - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深。
     - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面。
+  - 支持同时显示多个modal
+    - 类似地图上显示多个poi的overlay信息
+  - 关闭modal是否应该移除该modal原本挂载的目标节点呢
+    - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的 containerNode
+    - react-modal (Basic Example) 关闭modal后，目标节点保持、不移除
+      - 可以在body元素上动态添加和删除弹窗是否打开的属性
+    - react-bootstrap中的modal对目标节点，关闭modal后即移除
+  - modal状态恢复
+    - 如关闭弹窗查找信息，再恢复弹窗继续填写
+  - 显示和隐藏的动画
+    - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
+    - 隐藏弹窗时，先执行动画，再unmount弹窗组件
   - ref
     - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
     - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
