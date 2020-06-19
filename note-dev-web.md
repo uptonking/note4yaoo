@@ -3,7 +3,7 @@ favorited: true
 tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-06-14T05:04:51.350Z'
+modified: '2020-06-19T13:37:04.203Z'
 ---
 
 # note-dev-web
@@ -11,9 +11,8 @@ modified: '2020-06-14T05:04:51.350Z'
 ## 难点
 - tree-shaking
     - 各工具库的编译方式不同，webpack各版本支持程度不同
-    - webpack
+    - webpack v4不支持，v5支持
         - Tree shaking does not apply to re-exported namespace imports
-        - v4不支持，v5支持
         - rollup can tree-shake `import * as foo` just like other tools
 - component-to-image
     - repng
@@ -58,7 +57,7 @@ modified: '2020-06-14T05:04:51.350Z'
 - drag-layout
     - react-dnd/draggable
     - react-resizable/re-resizable 
-- layers多层内容
+- layer多层内容
     - 基于iframe，三国杀十周年新服游戏的处理方式
     - 基于float
 - 其他
@@ -131,13 +130,13 @@ modified: '2020-06-14T05:04:51.350Z'
     - https://github.com/Jocs/jocs.github.io/issues/22
 - 支持web sockets的tomcat服务器7和8有何区别
 
-## 多语言
+## solution-locale
 - 需要国际化的组件
     - popover信息提示
     - modal对话框操作提示
     - table选择、过滤、折叠、展开, pagination分页的上一页、下一页
 - 流程
-    - 先选择语言，再选择组件，再选择要替换的文本
+    - 先选择语言，然后选择要翻译的组件，再选择要替换的文本
 - react-intl
     - https://github.com/formatjs/react-intl
     - 国际化类型：string, number, datetime, (相对时间转换)
@@ -146,7 +145,7 @@ modified: '2020-06-14T05:04:51.350Z'
     - no dependencies
     - imperative api
 
-## 图标
+## solution-icon
 - svg图标
     - svg渲染的视觉体验更好
     - svg图标单独使用，修改更灵活
@@ -165,29 +164,13 @@ modified: '2020-06-14T05:04:51.350Z'
     - fork-awesome
     - ionicons
 
-## 组件分层方案
-- 使用场景
-    - popover、tooltip、toast
-    - modal、dialog
-- react-layer-stack
-    - api
-        - Layer: layer definition and controller
-            - props: id, to, use, children()
-        - LayerToggle: helper to access layer state, N LToggle > 1 Layer
-            - props: for,children()
-        - LayerStackMountPoint: a mount point for layer
-            - props: id,children()
-- bottom-to-up alternative ways
-    - redux
-    - react-portal
-    - react-overlays
 
-## animation
+## solution-animation
 - React Transition Group 
   - It is not an animation library like React-Motion, it does not animate styles by itself. 
   - Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
 
-## drag-layout
+## solution-drag-layout
 ### drag
 - 拖拽使用场景
     - list手动排序
@@ -327,170 +310,78 @@ modified: '2020-06-14T05:04:51.350Z'
     - https://juejin.im/post/5aebbdedf265da0ba469a56f
 
 
+## solution-layer
+- 图层顺序
+  - background: 背景层，一般在最底层
+  - content: 内容层，页面主要内容
+  - nav: 导航层，内容层之上，一般是主菜单按钮，在用户滑动内容层时可保持位置不动，通常用于承载导航栏等需要固定在页面的元素
+  - mask: 蒙板层，用于锁定内容层和导航层操作，一般不单独使用，常配合pop层使用
+  - pop: 弹出层，用于弹窗、通知、操作菜单、成功或加载中等状态的Toast、表单报错提示等弹出内容
+  - ad: 广告层，一般在最上层
+  - 考虑：z-index
+- 弹出层组件的结构
+  - portal将react elements渲染到组件树之外
+  - popover提供触发事件管理、弹层定位
+- modal的位置
+  - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
+  - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
+  - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
+- 支持同时显示多个modal
+  - 类似地图上显示多个poi的overlay信息
+  - modal下层无mask
+  - modal不重叠，若重叠，则先显示的在下层
+- modal的开闭控制，放在props还是state
+  - 示例多放在state
+  - antd
+- modal嵌套后的数据传递
+  - 如modal重视form，点击form的field会再弹出modal来选择，点击下层弹层组件，可关闭上一层弹层，点击mask，可关闭所有
+  - 弹层组件在react DOM树中的位置跟它们实际的层次以及包含关系是没有必然联系的，如果两个弹层是body下面的两个兄弟节点，但从弹层的使用角度看它们是有层次关系的，并不是并列的
+  - 弹层的层次关系数据是多叉树的结构
+- 关闭modal是否应该移除该modal原本挂载的目标节点呢
+  - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
+  - react-modal (Basic Example) 关闭modal后，目标节点保持、不移除
+    - 可以在body元素上动态添加和删除弹窗是否打开的属性
+  - react-bootstrap中的modal对目标节点，关闭modal后即移除
+- modal状态恢复
+  - 如关闭弹窗查找信息，再恢复弹窗继续填写
+  - modal变成悬浮按钮fab
+- 显示和隐藏的动画
+  - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
+  - 隐藏弹窗时，先执行动画，再unmount弹窗组件
+- ref
+  - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
+    - 嵌套modal的结构
+  - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
+    - 进出场动画
+  - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
+    - modal的位置应该放在body下的第一层、传递context到modal
+  - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
+    - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
+  - http://limoer.cc/2019/12/19/global-component/
+    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法，`ReactDOM.render(element, container[, callback])`
+    - the preferred solution is to attach a callback ref to the root element.
+    - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
+  - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
+    - 通过`ReactDOM.render`直接实现`<button onClick={() => alert('1')}>alert</button>`
+    - 在onClick方法内直接关闭modal，通过React.cloneElement传入`{visible: false}`
+    - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
+
+### 组件分层实现
+- 使用场景
+    - popover、tooltip、toast
+    - modal、dialog
+- react-layer-stack
+    - api
+        - Layer: layer definition and controller
+            - props: id, to, use, children()
+        - LayerToggle: helper to access layer state, N LToggle > 1 Layer
+            - props: for,children()
+        - LayerStackMountPoint: a mount point for layer
+            - props: id,children()
+- bottom-to-up alternative ways
+    - redux
+    - react-portal
+    - react-overlays
 
 
-## 前端兼容性处理 caniuse 
-- 兼容顺序
-    - 3大pc浏览器：chrome、firefox、safari
-    - mobile浏览器：3大pc对应的3大移动，Android, UC，Samsung，QQ Browser 
 
-
-## 前端工程化
-- storybook
-    - UI component dev & test: React, Vue, Angular, Web Components & more
-    - addon
-        - Knobs: edit props dynamically using the Storybook UI
-- codesandbox
-    - Online Code Editor Tailored for Web Application
-- eslint/tslint
-- jest
-- enzyme
-- webpack
-    - entry
-    - output
-    - module
-        - loader
-    - resolve：设置模块如何被解析
-        - alias选项设置别名
-        - extensions指定解析器接受的扩展名
-- npm
-    - 前端包管理器 
-    - 常用命令
-        - `npm config list`：查看npm配置信息
-        - `npm ls -g --depth=0`：查看本地全局安装的包
-        - `npm i -D webpack --registry=https://registry.npm.taobao.org`
-    - npm vs yarn
-    - npm包名规范
-        - 把包名中的标点符号去掉并与现有的包进行比较，相同则不允许发布
-        - 找到一个独一无二包名最简单方法就是使用作用域`@+用户名`，被划了作用域的包默认是私有的，所以要通过`--access=public`让它变为公有的包
-- yarn
-    - a package manager for your code
-    - Running `yarn` with no command will run `yarn install`
-    - workspaces
-        - 提升依赖下载到根目录，减少重复下载
-        - Nested workspaces are not supported at this time.
-    - yarn vs lerna
-        - lerna管理构建时的相互依赖和发布，yarn专注于依赖下载
-        - Yarn’s workspaces are the low-level primitives that tools like Lerna can (and do!) use. 
-        - They will never try to support the high-level feature that Lerna offers, but by implementing the core logic of the resolution and linking steps inside Yarn itself we hope to enable new usages and improve performance.
-- lerna
-    - A tool for managing JavaScript projects with multiple packages
-    - 多个package是放在单个仓库里维护还是放在多个仓库里单独维护
-        - monorepo：方便相互依赖的项目自动测试，但repo体积较大
-        - 多仓库维护：方便多人协作
-    - 多仓库包管理常见问题
-        - package之间相互依赖，开发人员需要在本地手动执行npm link，维护版本号的更替
-        - 每一个package都包含独立的node_modules，而且大部分都包含babel等开发时依赖，安装耗时冗余并且占用过多空间
-    - 多个包管理方案
-        - lerna
-        - yarn workspace
-        - npm link
-    - lerna使用体验
-        - 构建时自动解决packages之间的依赖关系，直接依赖本地项目源码
-        - 根据git提交记录，自动生成changelog
-        - 发布时一起发布多个包
-        - 统一管理依赖版本
-    - 包管理常用命令
-        - `lerna init`：以所有子包共用版本号的固定模式初始化项目， --independent
-        - `lerna bootstrap`：为所有项目安装依赖，类似于npm i/yarn
-        - `lerna add pkgA --scope=pkgB`：将A安装到B的字段， --dev，一次只能一包
-        - `lerna publish`：先确定哪些包需要publish，--skip-git/npm
-            -先设置version，先打tag，再push到github，再上传npm，可通过参数拆分流程
-            - `lerna publish from-package --yes --registry http:// `
-            - 参考 https://github.com/lerna/lerna/issues/1648
-        - `lerna ls`：显示packages下的各个package的version
-        - `npm link`：可添加本地正在开发的包作为依赖
-
-
-## 工程化常用工具
-- git
-    - 常用命令
-    - `git branch branchName`:创建新分支
-    - `git checkout branchName startPoint`：切换到新分支
-    - `git checkout -b bName` = `g branch bName` + `g checkout bName`
-    - `git merge b`：将b分支合并到当前分支
-        - 执行merge之后，会产生一个新的commit
-        - `git merge master feature`：将master分支合并到feature分支
-    - `git rebase`：功能和`git merge`类似，
-        - `git checkout feature` + `git rebase master`
-        - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
-        - 不会产生新commit
-    - Conventional Commits
-        - add human and machine readable meaning to commit messages
-        - https://www.conventionalcommits.org
-        - fix, feat, chore, docs, style, refactor, perf, test
-
-## 前端高效操作工具包
-- date-fns
-    - 方便在浏览器和Node中操作时间日期
-    - provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js
-- react-markdown
-    - Renders Markdown as pure React components
-- marked
-    - A markdown parser built for speed
-- raf
-    - requestAnimationFrame polyfill for node and the browser
-- fast-memoize
-    - fastest memoization library in js that supports N arguments
-    - memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
-- memoize-one
-    - Unlike other memoization libraries, memoize-one only remembers the latest arguments and result
-    - memoize-one simply remembers the last arguments, and if the function is next called with the same arguments then it returns the previous result
-- classnames
-    - js utility for conditionally joining classNames together
-- immutable-js
-    - v4
-        - The Iterable class has been renamed to Collection
-        - improve Record impl, Record is no longer an Immutable Collection type
-        - Flowtype and TypeScript type definitions have been completely rewritten
-
-## 前端工程测试工具包
-- rimraf
-    - 作用是以包的形式封装rm -rf命令，用来删除文件和文件夹，不管文件夹是否为空，都可删
-    - `rm -rf` for node 
-    - 命令也可在windows下使用
-- husky
-    - 能够防止不规范代码被commit、push、merge等等
-    - 在执行`git commit`之前会先执行script字段的precommit指定的命令，如yarn test
-    - pre-commit包功能更灵活
-- plop
-    - 设置好模板内容和生成文件路径后，可在命令行输入参数，自动生成组件到路径位置
-- replace-in-file
-    - A simple utility to quickly replace text in one or more files or globs
-- kkt
-    - Create React apps with no build configuration, Cli tool for creating react apps
-- tsbb
-    - a zero-config CLI that helps you develop, test, and publish modern TypeScript Node.js project.
-    - TypeScript + Babel = TSBB
-- KaTeX
-    - library for TeX math rendering on the web
-- tslib
-    - tslib将仅用于您的编译目标不支持的功能，以便我们生出的代码更小
-- webpack
-    - terser-webpack-plugin
-        - uses terser to minify your JavaScript
-
-## static-doc-site-generator
-- write with markdown and then render to html
-- hexo
-- jbake(java)
-- gatsby
-- react-static
-- bisheng
-    - transform Markdown(and other static files with transformers) into static websites and blogs using React.
-
-
-## dev-web-latest
-
-## solutions
-- tree shaking
-    - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 
-    - It relies on the static structure of ES2015 module syntax, i.e. import and export
-    - example
-    ```
-    import * as Foo from './foo';             // namespace import
-    import { bar, bar2, bar3 } from './foo';  // named import
-    ```
-    - with a modern webpack setup, the two will generate the same compiled/transpiled JS
-    - ref
-        - https://medium.com/unsplash/named-namespace-imports-7345212bbffb

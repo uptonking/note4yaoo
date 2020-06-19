@@ -2,7 +2,7 @@
 tags: [js, latest/js]
 title: latest-lang-js
 created: '2019-10-15T12:20:05.196Z'
-modified: '2020-06-15T10:25:20.898Z'
+modified: '2020-06-19T04:42:21.234Z'
 ---
 
 # latest-lang-js
@@ -22,3 +22,17 @@ modified: '2020-06-15T10:25:20.898Z'
     - 在移动应用开发中，首次加载启动、内存大小和应用大小都是衡量应用好坏的重要指标
     - Hermes现在并没有JIT编译器
     - Hermes编译的字节码文件比纯文本js文件增大100%
+
+
+## solutions
+- tree shaking
+    - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 
+    - It relies on the static structure of ES2015 module syntax, i.e. import and export
+    - example
+    ```
+    import * as Foo from './foo';             // namespace import
+    import { bar, bar2, bar3 } from './foo';  // named import
+    ```
+    - with a modern webpack setup, the two will generate the same compiled/transpiled JS
+    - ref
+        - https://medium.com/unsplash/named-namespace-imports-7345212bbffb

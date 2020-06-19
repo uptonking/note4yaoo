@@ -3,13 +3,22 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-17T10:03:59.642Z'
+modified: '2020-06-19T13:51:12.380Z'
 ---
 
 # log-deving-react
 
 ## faq
 
+- Is it antipattern to use React.cloneElement to extend an element and modify props in child components
+  - `React.cloneElement(element,[props],[...children])`
+    - 相当于 `<element.type {...element.props} {...props}>{children}</element.type>`
+    - Clone and return a new React element using element as the starting point. 
+    - The resulting element will have the original element’s props with the new props merged in shallowly. 
+    - New children will **replace** existing children. key and ref from the original element will be preserved.
+    - cloneElement gives the developer full control of the button instance, except the props you need to access/add/modify.
+    - React.cloneElement is a helper that's usually used to pass inline-props to avoid polluted codes
+    - renderProps is a technique to reuse stateful logic and has different applications than cloneElement.
 - Is setting state with this.setState inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
     - Techincally yes.
     - setting a state directly in render method will cause the function to trigger re-render in case of class component causing an infinite loop which is the case for functional components provided the state values are different. Regardless of that, it will still cause an issue because any other state update will be reverted back due to functional component calling state update directly 
