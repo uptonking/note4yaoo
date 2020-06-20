@@ -3,7 +3,7 @@ favorited: true
 tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-06-20T08:58:26.780Z'
+modified: '2020-06-20T17:16:59.985Z'
 ---
 
 # note-dev-web
@@ -372,6 +372,8 @@ modified: '2020-06-20T08:58:26.780Z'
     - 通过`ReactDOM.render`直接实现`<button onClick={() => alert('1')}>alert</button>`
     - 在onClick方法内直接关闭modal，通过React.cloneElement传入`{visible: false}`
     - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
+  - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
+  - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
 
 ### 组件分层实现
 - 使用场景
