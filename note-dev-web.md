@@ -3,7 +3,7 @@ favorited: true
 tags: [dev/web]
 title: note-dev-web
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-06-19T13:37:04.203Z'
+modified: '2020-06-20T08:58:26.780Z'
 ---
 
 # note-dev-web
@@ -54,7 +54,7 @@ modified: '2020-06-19T13:37:04.203Z'
     - pure css animation: animate.css
     - js animation: anime.js,react-motion,react-move,react-transition-group
     - svg/canvas/webgl animation
-- drag-layout
+- drag-layout-events
     - react-dnd/draggable
     - react-resizable/re-resizable 
 - layer多层内容
@@ -170,7 +170,7 @@ modified: '2020-06-19T13:37:04.203Z'
   - It is not an animation library like React-Motion, it does not animate styles by itself. 
   - Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
 
-## solution-drag-layout
+## solution-drag-layout-events
 ### drag
 - 拖拽使用场景
     - list手动排序
@@ -182,8 +182,9 @@ modified: '2020-06-19T13:37:04.203Z'
     - 基于HTML5的Drag Drop API，如react-dnd
         - SVG不支持HTML5的Darg Drop API
     - 通过mousedown -> mousemove -> mouseup实现拖动，如react-draggable
-        - 点击节点时无法触发节点的onClick()，是由于onClick事件可分解为onMouseDown 与onMouseUp
-        - 节点的onMouseDown事件使节点上方新渲染出一个dragNode，那么onMouseUp事件自然触发在它上面，造成该节点的onClick未能成功触发，给dragNode添加pointer-events: none即可解决
+        - 点击节点时无法触发节点的onClick()，是由于onClick事件可分解为onMouseDown与onMouseUp
+        - 节点的onMouseDown事件使节点上方新渲染出一个dragNode，那么onMouseUp事件自然触发在它上面，造成该节点的onClick未能成功触发
+          - 给dragNode添加pointer-events: none即可解决
 - 参考
     - react-draggable
         - DraggableCore
@@ -260,6 +261,9 @@ modified: '2020-06-19T13:37:04.203Z'
     ```
 - 参考
     - https://zhuanlan.zhihu.com/p/72923073
+ - Some of our requirements have different behavior of scrubs on player timeline
+    - when you do touch scrub, the indicator on timeline move, but mouse doesn't
+    - when you do mouse hover and keep moving, the indicator move as well
 
 ### html5-drag-drop-api
 - HTML drag-and-drop uses `DOM event model` and `drag events` inherited from mouse events.
@@ -322,6 +326,9 @@ modified: '2020-06-19T13:37:04.203Z'
 - 弹出层组件的结构
   - portal将react elements渲染到组件树之外
   - popover提供触发事件管理、弹层定位
+- trigger的位置和大小
+  - 点击trigger组件时，会触发弹出组件overlay的开关
+  - trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
 - modal的位置
   - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
   - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深

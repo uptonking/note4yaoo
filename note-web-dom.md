@@ -2,7 +2,7 @@
 tags: [dom, web]
 title: note-web-dom
 created: '2019-08-01T16:03:46.398Z'
-modified: '2019-12-01T06:57:53.867Z'
+modified: '2020-06-20T12:12:24.193Z'
 ---
 
 # note-web-dom
@@ -67,42 +67,7 @@ modified: '2019-12-01T06:57:53.867Z'
         - 此时闭合标签后的换行符和空格会被视为文本节点
     - 两者都是即时的LIVE类型，改变子节点或子元素个数，length属性会立即改变
     - children是Element的属性，childNodes是Node的属性
-- 元素高度
-    - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框
-        - 会导致handsontable的滚动条显示不出来  
-    - outerHeight是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
-    - document.documentElement.clientWidth：不包括滚动条，但包括边框
-    - document.body.clientHeight：不包括整个文档的滚动条，也不包括<html>元素的边框，也不包括<body>的边框和滚动条
-    - `documentElement`是文档根元素，就是<html>标签，`body`就是<body>标签了，这两种方式兼容性较好，可以一直兼容到IE6
-    - offsetHeight：(IE专属)整个可视区域大小，包括滚动条和边框
-    - clientHeight：内部可视区域大小，不包括滚动条，包括边框
-    - scrollHeight：元素内容的高度，包括溢出部分
-    - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0   
-    - `所有DOM元素都有上述4个属性，只需要给它固定大小并设置overflow:scroll即可表现出来`  
-- 位置坐标
-    - offsetX/Y:指鼠标指针相对于触发事件元素的左上角的偏移，在Chrome/Safari中指外边缘，即将该元素边框的宽度计算在内，firefox/ie则不包含边框值
-    - clientX/Y是相对于浏览器可视窗口viewport左上角的距离，参照点会随滚动条滚动而移动
-        - 不包含标题栏、状态栏
-    - pageX/Y是相对文档左上角的距离，不会随滚动条移动
-        - 当可视窗口和文档重叠(即无滚动条)时，pageX和clientX相等
-        - 当缩小可视窗口viewport(即缩小浏览器窗口)致使浏览器出现滚动条时，clientX小于pageX
-    - screenX/Y:鼠标位置相对于显示屏幕左上角的距离
-    - layerX/Y:FF特有，当触发元素没有设置绝对定位或相对定位，则以页面为参考点，如果设置了，则以触发盒子的左上角为参考点（包含border）
-    - X和Y:IE特有，由于IE坐标选择十分混乱，故尽量不要使用
-    - 没有标注的是各浏览器都支持的
-    ```  
-        e.offsetX：鼠标相对于事件源的X方向的距离( firfox 不支持)
-        e.offsetY：鼠标相对于事件源的Y方向的距离( firfox 不支持)
-        
-        e.clientX：距离浏览器可视区域X方向的距离
-        e.clientY：距离浏览器可视区域Y方向的距离
-        
-        e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
-        e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
-        
-        e.screenX：鼠标距离屏幕X方向的距离
-        e.screenY：鼠标距离屏幕Y方向的距离(包含浏览器的地址栏)
-    ```
+
 - pixels
     - 物理像素（physical pixel）反映的就是显示屏内部led灯的数量，可以简单理解，一组三色led代表一个物理像素，当然根据屏幕物理属性以及处理led的方法不一样。这是一个纯硬件指标，比如我把屏幕锯了一半，物理像素就只有一半
     - 渲染像素（render pixel）是在系统内部对物理像素的分配进行再一次的调整，在pc上渲染像素其实就是设置里边的分辨率。对于显示设备，系统为显示设备提供渲染尺寸，由显示设备的“缩放引擎”（带存储器阵列的数字视频处理器）处理。由于部分设备不能设置渲染像素，所以下文直接跳过渲染像素，直接等同于物理像素

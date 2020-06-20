@@ -1,42 +1,47 @@
 ---
+favorited: true
 tags: [events, web]
 title: note-web-events
 created: '2019-10-17T08:31:14.028Z'
-modified: '2019-12-19T06:42:29.927Z'
+modified: '2020-06-20T13:56:59.052Z'
 ---
 
 # note-web-events
 
 ## faq
 - react中分别有onClick和onDoubleClick,但将这两个事件同时写在一个div上时，点击只会触发单击事件，应该怎么实现在一个div中同时绑定单击与双击事件？
-    - Like browsers, React triggers two single click events before triggering the doubleclick event.
-    - 不要同时绑定这两个事件，只绑定单击事件，在单击事件的监听方法中
-        - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++。当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
-    - 同时js绑定单击和双击事件，在绑定的单击事件中，setTimeout设置一个延迟，双击事件中，clearTimeout这个延迟，再执行对应的方法
-    - 还可以使用lodash的debounce，区别是同时监听onCick和onDoubleClick
-    - 还可以使用promise来推迟onClick的执行，这种方式也称作cancelablePromise
-        - https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40
-    - 示例
-    ```  
-    let count = 0;
-    class App extends Component {
-        onClick = () => {
-            count += 1;
-            setTimeout(() => {
-              if (count === 1) {
-                console.log('do single click ', count);
-              } else if (count === 2) {
-                console.log('do onDoubleClick: ', count);
-              }
-              count = 0;
-            }, 300);
-        }
-        
-        render(){
-            return (...)
-        }
-    }
-    ```
+  - This is not a limitation of React, it is a limitation of the DOM's click and dblclick events
+  - 不要同时绑定这两个事件，只绑定单击事件，在单击事件的监听方法中
+      - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++
+      - 当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
+  - 同时绑定单击和双击事件，在绑定的单击事件中，setTimeout设置一个延迟，双击事件中，clearTimeout这个延迟，再执行对应的方法
+  - 还可以使用lodash的debounce，区别是同时监听onCick和onDoubleClick
+  - 还可以使用promise来推迟onClick的执行，这种方式也称作cancelablePromise
+  - ref
+    - https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40
+    - https://api.jquery.com/dblclick/
+    - https://stackoverflow.com/questions/5497073/how-to-differentiate-single-click-event-and-double-click-event
+  - 示例
+  ```  
+  let count = 0;
+  class App extends Component {
+      onClick = () => {
+          count += 1;
+          setTimeout(() => {
+            if (count === 1) {
+              console.log('do single click ', count);
+            } else if (count === 2) {
+              console.log('do onDoubleClick: ', count);
+            }
+            count = 0;
+          }, 300);
+      }
+      
+      render(){
+          return (...)
+      }
+  }
+  ```
 
 ## summary
 - ref
@@ -48,13 +53,15 @@ modified: '2019-12-19T06:42:29.927Z'
 - event.preventDefault()
     - 阻止默认行为，如调用此方法时链接不会被打开，但会发生冒泡，会传播到上一层父元素
 - return false
-    - 会同事阻止事件冒泡和默认行为
+    - 会同时阻止事件冒泡和默认行为
     - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
 - oneventtype vs addEventListener
     - onclick事件在同一时间只能指向唯一对象
         - 若分别指定window.onresize=f1/f2时，只会生效后指定的事件
-        - 若使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
+        - 若同时使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
         - 若使用addEventListener重复定义相同的listener事件，只会执行一次
+        - 通过onxxx绑定的事件方法，只能在目标阶段和冒泡阶段执行
+        - 通过addEventListener绑定的事件方法，我们可以通过第三个参数控制在捕获(true)或冒泡(false)阶段执行(默认为false)
     - addEventListener给一个对象注册多个listener
     - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
     - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
@@ -74,7 +81,7 @@ modified: '2019-12-19T06:42:29.927Z'
         - onkeypress与onkeydown一样，也是先处理事件，再显示文本
     - onchange：当对象或选中区的内容改变且失去焦点时触发
 
-## Web/API/GlobalEventHandlers
+## Web-API-GlobalEventHandlers
 - `onchange` 
     - ref
         - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
@@ -168,6 +175,8 @@ function getOffsetX(event){
     }
 ```
 
+## resize
+
 ## scroll
 - scrollHeight
     - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
@@ -199,11 +208,13 @@ function getOffsetX(event){
 - clientHeight
     - 返回元素内部的高度，单位像素，只读
     - 包含content和padding，**不包含滚动条**、border和margin
+    - `clientHeight = content height + padding - scrollbarHeight`
     - 对于inline的元素这个属性一直是0
-    - clientHeight = CSS height + CSS padding - 水平滚动条的高度
     - 在没有滚动条时，scrollHeight===clientHeight恒成立
+    - 练习中，不管有没有滚动条，document.body的scrollWidth与clientWidth一直相等
 - clientTop
-    - border-top的高度
+    - border-top的高度，及上边框的粗细宽度
+    - https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop
 - clientLeft
     - 元素的左边框的宽度，以像素表示
     - 如果元素的文本方向是从右向左RTL，并且由于内容溢出导致左边出现了一个垂直滚动条，则该属性包括滚动条的宽度
@@ -231,54 +242,64 @@ function getOffsetX(event){
 - `onkeydown`
     - onkeydown/onkeypress/onkeyup在处理复制、粘贴、拖拽、长按键（按住键盘不放）等细节上并不完善
 - `onkeypress`
-    - This feature is no longer recommended. It may have already been removed from the relevant web standards
+    - This feature is no longer recommended. 
+    - It may have already been **removed** from the relevant web standards
     - Note that some implementations may fire keypress event if supported. 
     - The events will be fired repeatedly while the key is held down.
 
 ## mouse 
 - mousedown vs click
-    - click is fired after a full click action occurs; that is, the mouse button is pressed and released while the pointer remains inside the same element. 
+    - click is fired after a full click action occurs:
+      - that is, the mouse button is pressed and released while the pointer remains inside the same element. 
     - mousedown is fired the moment the button is initially pressed.
     - 如果在某个地方按下鼠标后移开鼠标在另外一个地方松开鼠标会触发onmousedown事件，但是onclick事件却不会被触发
 - `onmousedown`
-    - mousedown event fires when the user depresses the mouse button按下时
+    - mousedown event fires when the user depresses the mouse button **按下时**
     - mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
     - onmousedown > onmousemove > onmouseup
 - `onclick`
-    - click event is raised when the user clicks on an element.
-    - click fires after both the mousedown and mouseup events have fired, in that order.
+    - ref
+      - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+      - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+    - The click event is raised when the user clicks on an element.
+    - It fires **after** both the mousedown and mouseup events have fired, in that order.
     - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
     - `target.onclick = functionRef;`
-        - functionRef is a function name or a function expression. 
-        - functionRef receives a MouseEvent object as its sole argument. 
-        - Within the function, `this` will be the element upon which the event was triggered.
-        - MouseEvent object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
-            - In other words, detail will be 2 for a double-click, 3 for triple-click, and so forth.
-            - This counter resets after a short interval without any clicks occurring; the specifics of how long that interval is may vary from browser to browser
-    - Only one onclick handler can be assigned to an object at a time. 
+      - functionRef is a function name or a function expression. 
+      - functionRef receives a MouseEvent object as its sole argument. 
+      - Within the function, `this` will be the element upon which the event was triggered.        
+      - Only one onclick handler can be assigned to an object at a time. 
         - You may prefer to use `EventTarget.addEventListener()` method instead, since it's more flexible.
     - An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located *inside* the element.
     - If the button is pressed on one element and the pointer is moved outside the element before the button is released, the event is fired on the most specific ancestor element that contained *both* elements.
+    - MouseEvent object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
+      - In other words, detail will be 2 for a double-click, 3 for triple-click, and so forth. 练习中，最大为3，继续点就变成1
+      - This counter resets after a short interval without any clicks occurring; 
+      - the specifics of how long that interval is may vary from browser to browser
 - `ondblclick`
-    - dblclick event is raised when the user double clicks an element. 
-    - It fires after two click events.
+    - ref
+      - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick
+      - https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
+    - The dblclick event is raised when the user double clicks an element. 
+    - It fires **after** two click events (and by extension, after two pairs of mousedown and mouseup events)..
+    - `target.ondblclick = functionRef;`
     - Only one ondblclick handler can be assigned to an object at a time. 
-        - You may prefer to use the EventTarget.addEventListener()
+      - You may prefer to use the EventTarget.addEventListener()
 - double click vs click
     - You can use a timeout to check if there is an another click after the first click.
     - If you don't need to mix them, you can rely on click and dblclick and each will do the job just fine.
-    - A problem arises when trying to mix them: a dblclick event will actually trigger a click event as well, so you need to determine whether a single click is a "stand-alone" single click, or part of a double click.
+    - A problem arises when trying to mix them
+      - a dblclick event will actually trigger a click event as well
+      - so you need to determine whether a single click is a "stand-alone" single click, or part of a double click.
     - u *shouldn't* use both click and dblclick on one and the same element
-    - It is inadvisable to bind handlers to both the click and dblclick events for the same element. 
-    - The sequence of events triggered varies from browser to browser, with some receiving two click events before the dblclick and others only one. 
-    - Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
+    - It is **inadvisable** to bind handlers to both the click and dblclick events for the same element. 
+      - The sequence of events triggered varies from browser to browser, with some receiving two click events before the dblclick and others only one. 
+      - Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
     - You can use the event's `detail` property to detect the number of clicks related to the event. This makes double clicks inside of click fairly easy to detect.
     - The problem remains of detecting single clicks and whether or not they're part of a double click. For that, we're back to using a timer and `setTimeout`.
     - The maximum delay required for two consecutive clicks to be interpreted as a double-click is not standardized
     - React组件可以通过抽象出高阶组件DoubleClick记录点击次数
-    - ref
-        - https://stackoverflow.com/questions/5497073/how-to-differentiate-single-click-event-and-double-click-event
-
+    
 ## CompositionEvent
     - ref
         - https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
@@ -300,5 +321,55 @@ function getOffsetX(event){
     - target is a reference to the object that dispatched the event. It identifies the element on which the event occurred and which may be its direct descendent.
     - currentTarget always refers to the element to which the event handler has been attached. It is the element you actually bound the event to. This will never change.
 
+### 位置坐标计算
+- 元素高度
+  - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框
+      - 会导致handsontable的滚动条显示不出来  
+  - outerHeight是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
+  - document.documentElement.clientWidth：不包括滚动条，但包括边框
+  - document.body.clientHeight：不包括整个文档的滚动条，也不包括`<html>`元素的边框，也不包括`<body>`的边框和滚动条
+  - `documentElement`是文档根元素，就是`<html>`标签，body就是`<body>`标签了，这两种方式兼容性较好，可以一直兼容到IE6
+  - 所有DOM元素都有4个属性，只需要给它固定大小并设置overflow:scroll即可表现出来
+    - offsetHeight：(IE专属)整个可视区域大小，包括滚动条和边框
+    - clientHeight：内部可视区域大小，不包括滚动条，包括边框
+    - scrollHeight：元素内容的高度，包括溢出部分
+    - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0 
+- 位置坐标
+  - ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX
+    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x
+  - offsetX/Y:指鼠标指针相对于触发事件元素的左上角的偏移
+    - 在Chrome/Safari中指外边缘，即将该元素边框的宽度计算在内，firefox/ie则不包含边框值
+  - clientX/Y是相对于浏览器可视窗口viewport左上角的距离，参照点会随滚动条滚动而移动
+    - 不包含标题栏、状态栏
+  - pageX/Y是相对文档左上角的距离，不会随滚动条移动
+    - 当可视窗口和文档重叠(即无滚动条)时，pageX和clientX相等
+    - 当缩小可视窗口viewport(即缩小浏览器窗口)致使浏览器出现滚动条时，clientX小于pageX
+  - screenX/Y:鼠标位置相对于显示屏幕左上角的距离
+  - layerX/Y:FF特有，当触发元素没有设置绝对定位或相对定位，则以页面为参考点，如果设置了，则以触发盒子的左上角为参考点（包含border）
+  - x和y:IE特有，由于IE坐标选择十分混乱，故尽量不要使用
+    - MouseEvent.x property is an alias for the MouseEvent.clientX property.
+  - 没有标注的是各浏览器都支持的
+  ```  
+    e.clientX：距离浏览器可视区域X方向的距离
+    e.clientY：距离浏览器可视区域Y方向的距离
 
+    e.screenX：鼠标距离屏幕X方向的距离
+    e.screenY：鼠标距离屏幕Y方向的距离(包含浏览器的地址栏)
+
+    e.offsetX：鼠标相对于事件源的X方向的距离 
+    e.offsetY：鼠标相对于事件源的Y方向的距离 
+      
+    e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
+    e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
+  ```
+- `MouseEvent.clientX`
+  - return a double floating point value, as redefined by the CSSOM View Module. Originally, this property was defined as a long integer.
+  - The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the application's client area at which the event occurred (as opposed to the coordinate within the page).
+  - For example, clicking on the left edge of the client area will always result in a mouse event with a clientX value of 0, regardless of whether the page is scrolled horizontally.
+- `MouseEvent.screenX`
+  - The screenX read-only property of the MouseEvent interface provides the horizontal coordinate (offset) of the mouse pointer in global (screen) coordinates.
 
