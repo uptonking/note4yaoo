@@ -3,7 +3,7 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-19T13:51:12.380Z'
+modified: '2020-06-20T02:47:27.887Z'
 ---
 
 # log-deving-react
@@ -15,10 +15,16 @@ modified: '2020-06-19T13:51:12.380Z'
     - 相当于 `<element.type {...element.props} {...props}>{children}</element.type>`
     - Clone and return a new React element using element as the starting point. 
     - The resulting element will have the original element’s props with the new props merged in shallowly. 
-    - New children will **replace** existing children. key and ref from the original element will be preserved.
+    - New children will **replace** existing children. 
+    - key and ref from the original element will be preserved.
     - cloneElement gives the developer full control of the button instance, except the props you need to access/add/modify.
     - React.cloneElement is a helper that's usually used to pass inline-props to avoid polluted codes
     - renderProps is a technique to reuse stateful logic and has different applications than cloneElement.
+    - the React.cloneElement example only works if your child is a single React element.
+    - For almost everything `this.props.children` is the one you want. Cloning is useful in some more advanced scenarios, where a parent sends in an element and the child component needs to change some props on that element or add things like ref for accessing the actual DOM element.
+    - 常用来修改现有的组件，如添加onClick函数，通过cloneElement为组件添加新的属性
+    - React.Children提供了直接访问黑盒props.children数据结构的能力；
+    - React.cloneElement接收一个React element并支持往其中浅层合并props，替换旧children；笔者看来该API可以从一定程度上减少代码的重复书写，使组件标签表达更加清晰
 - Is setting state with this.setState inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
     - Techincally yes.
     - setting a state directly in render method will cause the function to trigger re-render in case of class component causing an infinite loop which is the case for functional components provided the state values are different. Regardless of that, it will still cause an issue because any other state update will be reverted back due to functional component calling state update directly 
