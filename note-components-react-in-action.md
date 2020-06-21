@@ -3,7 +3,7 @@ favorited: true
 tags: [coponents, web]
 title: note-components-react-in-action
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-06-19T10:17:36.121Z'
+modified: '2020-06-21T06:54:34.231Z'
 ---
 
 # note-components-react-in-action
@@ -207,7 +207,9 @@ modified: '2020-06-19T10:17:36.121Z'
 - Toggle
 
 ## display
-- Collapse: 默认显示前16个字符串，也可显示单独设置的，点击时展开显示原内容
+- Collapsible: 默认显示前16个字符串，也可显示单独设置的，点击时展开显示原内容
+  - collapsible text   
+  - collapsible banner
 - Card
 - PinnableCard: 类似支付宝首页可固定的菜单
 - List

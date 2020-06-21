@@ -3,7 +3,7 @@ favorited: true
 tags: [events, web]
 title: note-web-events
 created: '2019-10-17T08:31:14.028Z'
-modified: '2020-06-20T13:56:59.052Z'
+modified: '2020-06-21T04:10:22.007Z'
 ---
 
 # note-web-events
@@ -12,8 +12,8 @@ modified: '2020-06-20T13:56:59.052Z'
 - react中分别有onClick和onDoubleClick,但将这两个事件同时写在一个div上时，点击只会触发单击事件，应该怎么实现在一个div中同时绑定单击与双击事件？
   - This is not a limitation of React, it is a limitation of the DOM's click and dblclick events
   - 不要同时绑定这两个事件，只绑定单击事件，在单击事件的监听方法中
-      - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++
-      - 当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
+    - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++
+    - 当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
   - 同时绑定单击和双击事件，在绑定的单击事件中，setTimeout设置一个延迟，双击事件中，clearTimeout这个延迟，再执行对应的方法
   - 还可以使用lodash的debounce，区别是同时监听onCick和onDoubleClick
   - 还可以使用promise来推迟onClick的执行，这种方式也称作cancelablePromise
@@ -45,41 +45,41 @@ modified: '2020-06-20T13:56:59.052Z'
 
 ## summary
 - ref
-    - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
-    - https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+  - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
+  - https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
 - event.stopPropagation()
-    - 阻止继续冒泡，不让事件向document传播，但默认事件仍然会执行
+  - 阻止继续冒泡，不让事件向document传播，但默认事件仍然会执行
 - event.preventDefault()
-    - 阻止默认行为，如调用此方法时链接不会被打开，但会发生冒泡，会传播到上一层父元素
+  - 阻止默认行为，如调用此方法时链接不会被打开，但会发生冒泡，会传播到上一层父元素
 - return false
-    - 会同时阻止事件冒泡和默认行为
-    - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
+  - 会同时阻止事件冒泡和默认行为
+  - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
 - oneventtype vs addEventListener
-    - onclick事件在同一时间只能指向唯一对象
-        - 若分别指定window.onresize=f1/f2时，只会生效后指定的事件
-        - 若同时使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
-        - 若使用addEventListener重复定义相同的listener事件，只会执行一次
-        - 通过onxxx绑定的事件方法，只能在目标阶段和冒泡阶段执行
-        - 通过addEventListener绑定的事件方法，我们可以通过第三个参数控制在捕获(true)或冒泡(false)阶段执行(默认为false)
-    - addEventListener给一个对象注册多个listener
-    - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
-    - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
-    - 对于IE9之前，相对应的是attachEvent和detachEvent
-    - addEventListener
-        - This method allows the registration of event listeners on the event target. 
-        - If an EventListener is added to an EventTarget while it is processing an event, it will not be triggered by the current actions but may be triggered during a later stage of event flow, such as the bubbling phase.
-        - If multiple identical EventListeners are registered on the same EventTarget with the same parameters the duplicate instances are discarded. 
-        - They do not cause the EventListener to be called twice and since they are discarded they do not need to be removed with the removeEventListener method.
-    - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
-        - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.
-        - **avoid** writing inline javascript. It makes it harder to debug
+  - onclick事件在同一时间只能指向唯一对象
+      - 若分别指定window.onresize=f1/f2时，只会生效后指定的事件
+      - 若同时使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
+      - 若使用addEventListener重复定义相同的listener事件，只会执行一次
+      - 通过onxxx绑定的事件方法，只能在目标阶段和冒泡阶段执行
+      - 通过addEventListener绑定的事件方法，我们可以通过第三个参数控制在捕获(true)或冒泡(false)阶段执行(默认为false)
+  - addEventListener给一个对象注册多个listener
+  - addEventListener对任何DOM都是有效的，而onclick仅限于HTML
+  - addEventListener可以控制listener的触发阶段（捕获/冒泡），对于多个相同的事件处理器，不会重复触发，不需要手动使用removeEventListener清除
+  - 对于IE9之前，相对应的是attachEvent和detachEvent
+  - addEventListener
+    - This method allows the registration of event listeners on the event target. 
+    - If an EventListener is added to an EventTarget while it is processing an event, it will not be triggered by the current actions but may be triggered during a later stage of event flow, such as the bubbling phase.
+    - If multiple identical EventListeners are registered on the same EventTarget with the same parameters the duplicate instances are discarded. 
+    - They do not cause the EventListener to be called twice and since they are discarded they do not need to be removed with the removeEventListener method.
+  - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
+      - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.
+      - **avoid** writing inline javascript. It makes it harder to debug
 - onkeydown vs onchange
-    - onkeydown: 当按键按下时，先触发事件发生，然后处理完后才会把按键对应的按键值显示在文本框中。当用户按下键盘按键时触发。
-        - onkeypress event handler has been deprecated. You may want to use onkeydown instead。当键盘按键被按下并释放一个键时发生。
-        - onkeypress事件不是适用于所有按键(如： ALT, CTRL, SHIFT, ESC)
-        - onkeypress与onkeydown一样，也是先处理事件，再显示文本
-    - onchange：当对象或选中区的内容改变且失去焦点时触发
+  - onkeydown: 当按键按下时，先触发事件发生，然后处理完后才会把按键对应的按键值显示在文本框中。当用户按下键盘按键时触发。
+    - onkeypress event handler has been deprecated. You may want to use onkeydown instead。当键盘按键被按下并释放一个键时发生。
+    - onkeypress事件不是适用于所有按键(如： ALT, CTRL, SHIFT, ESC)
+    - onkeypress与onkeydown一样，也是先处理事件，再显示文本
+  - onchange：当对象或选中区的内容改变且失去焦点时触发
 
 ## Web-API-GlobalEventHandlers
 - `onchange` 
@@ -124,6 +124,18 @@ modified: '2020-06-20T13:56:59.052Z'
 
 
 ## drag
+- HTML drag-and-drop uses `DOM event model` and `drag events` inherited from mouse events.
+- ondrag/start/enter/over/exit/leave/end
+- ondrop
+- Making an element `draggable` requires adding the `draggable` attribute and the `ondragstart` global event handler
+- Each drag event has a `dataTransfer` property that holds the event's data. 
+  - This property (which is a DataTransfer object) also has methods to manage drag data. 
+- The `dropEffect` property affects which cursor the browser displays while dragging
+- If an element is to become a drop zone or `droppable`, the element must have both `ondragover` and `ondrop` event handler attributes.
+- ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+    - https://developer.mozilla.org/en-US/docs/Web/API/DragEvent
+    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations
 - The HTML5 specification includes support for drag and drop operations.
     - This is supported by all modern desktop browsers, but not by mobile browsers running under Android and IOS
 - JavaScript权威指南P462 例17-2 拖动文档元素的例子中提到
@@ -249,57 +261,61 @@ function getOffsetX(event){
 
 ## mouse 
 - mousedown vs click
-    - click is fired after a full click action occurs:
-      - that is, the mouse button is pressed and released while the pointer remains inside the same element. 
-    - mousedown is fired the moment the button is initially pressed.
-    - 如果在某个地方按下鼠标后移开鼠标在另外一个地方松开鼠标会触发onmousedown事件，但是onclick事件却不会被触发
+  - click is fired after a full click action occurs:
+    - that is, the mouse button is pressed and released while the pointer remains inside the same element. 
+  - mousedown is fired the moment the button is initially pressed.
+  - 如果在某个地方按下鼠标后移开鼠标在另外一个地方松开鼠标会触发onmousedown事件，但是onclick事件却不会被触发
 - `onmousedown`
-    - mousedown event fires when the user depresses the mouse button **按下时**
-    - mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
-    - onmousedown > onmousemove > onmouseup
+  - mousedown event fires when the user depresses the mouse button **按下时**
+  - mousedown event is fired at an Element when a pointing device button is pressed while the pointer is inside the element.
+  - onmousedown > onmousemove > onmouseup
 - `onclick`
-    - ref
-      - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
-      - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
-    - The click event is raised when the user clicks on an element.
-    - It fires **after** both the mousedown and mouseup events have fired, in that order.
-    - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
-    - `target.onclick = functionRef;`
-      - functionRef is a function name or a function expression. 
-      - functionRef receives a MouseEvent object as its sole argument. 
-      - Within the function, `this` will be the element upon which the event was triggered.        
-      - Only one onclick handler can be assigned to an object at a time. 
-        - You may prefer to use `EventTarget.addEventListener()` method instead, since it's more flexible.
-    - An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located *inside* the element.
-    - If the button is pressed on one element and the pointer is moved outside the element before the button is released, the event is fired on the most specific ancestor element that contained *both* elements.
-    - MouseEvent object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
-      - In other words, detail will be 2 for a double-click, 3 for triple-click, and so forth. 练习中，最大为3，继续点就变成1
-      - This counter resets after a short interval without any clicks occurring; 
-      - the specifics of how long that interval is may vary from browser to browser
+  - ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick
+    - https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+  - The click event is raised when the user clicks on an element.
+  - It fires **after** both the mousedown and mouseup events have fired, in that order.
+  - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
+  - `target.onclick = functionRef;`
+    - functionRef is a function name or a function expression. 
+    - functionRef receives a MouseEvent object as its sole argument. 
+    - Within the function, `this` will be the element upon which the event was triggered.        
+    - Only one onclick handler can be assigned to an object at a time. 
+      - You may prefer to use `EventTarget.addEventListener()` method instead, since it's more flexible.
+  - An element receives a click event when a pointing device button (such as a mouse's primary mouse button) is both pressed and released while the pointer is located *inside* the element.
+  - If the button is pressed on one element and the pointer is moved outside the element before the button is released, the event is fired on the most specific ancestor element that contained *both* elements.
+  - MouseEvent object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
+    - In other words, detail will be 2 for a double-click, 3 for triple-click, and so forth. 练习中，最大为3，继续点就变成1
+    - This counter resets after a short interval without any clicks occurring; 
+    - the specifics of how long that interval is may vary from browser to browser
 - `ondblclick`
-    - ref
-      - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick
-      - https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
-    - The dblclick event is raised when the user double clicks an element. 
-    - It fires **after** two click events (and by extension, after two pairs of mousedown and mouseup events)..
-    - `target.ondblclick = functionRef;`
-    - Only one ondblclick handler can be assigned to an object at a time. 
-      - You may prefer to use the EventTarget.addEventListener()
+  - ref
+    - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick
+    - https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
+  - The dblclick event is raised when the user double clicks an element. 
+  - It fires **after** two click events (and by extension, after two pairs of mousedown and mouseup events)..
+  - `target.ondblclick = functionRef;`
+  - Only one ondblclick handler can be assigned to an object at a time. 
+    - You may prefer to use the EventTarget.addEventListener()
 - double click vs click
-    - You can use a timeout to check if there is an another click after the first click.
-    - If you don't need to mix them, you can rely on click and dblclick and each will do the job just fine.
-    - A problem arises when trying to mix them
-      - a dblclick event will actually trigger a click event as well
-      - so you need to determine whether a single click is a "stand-alone" single click, or part of a double click.
-    - u *shouldn't* use both click and dblclick on one and the same element
-    - It is **inadvisable** to bind handlers to both the click and dblclick events for the same element. 
-      - The sequence of events triggered varies from browser to browser, with some receiving two click events before the dblclick and others only one. 
-      - Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
-    - You can use the event's `detail` property to detect the number of clicks related to the event. This makes double clicks inside of click fairly easy to detect.
-    - The problem remains of detecting single clicks and whether or not they're part of a double click. For that, we're back to using a timer and `setTimeout`.
-    - The maximum delay required for two consecutive clicks to be interpreted as a double-click is not standardized
-    - React组件可以通过抽象出高阶组件DoubleClick记录点击次数
-    
+  - You can use a timeout to check if there is an another click after the first click.
+  - If you don't need to mix them, you can rely on click and dblclick and each will do the job just fine.
+  - A problem arises when trying to mix them
+    - a dblclick event will actually trigger a click event as well
+    - so you need to determine whether a single click is a "stand-alone" single click, or part of a double click.
+  - u *shouldn't* use both click and dblclick on one and the same element
+  - It is **inadvisable** to bind handlers to both the click and dblclick events for the same element. 
+    - The sequence of events triggered varies from browser to browser, with some receiving two click events before the dblclick and others only one. 
+    - Double-click sensitivity (maximum time between clicks that is detected as a double click) can vary by operating system and browser, and is often user-configurable.
+  - You can use the event's `detail` property to detect the number of clicks related to the event. This makes double clicks inside of click fairly easy to detect.
+  - The problem remains of detecting single clicks and whether or not they're part of a double click. For that, we're back to using a timer and `setTimeout`.
+  - The maximum delay required for two consecutive clicks to be interpreted as a double-click is not standardized
+  - React组件可以通过抽象出高阶组件DoubleClick记录点击次数
+- mouseover vs mouseenter
+  - mouseout和mouseleave类似
+  - mouseover支持事件冒泡，mouseenter不支持事件冒泡 
+    - mouseover从子元素进入父元素的时候，会触发父元素的mouseover事件，而mouseenter并不会
+
 ## CompositionEvent
     - ref
         - https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
@@ -317,9 +333,11 @@ function getOffsetX(event){
     - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
 
 ## event
-- event.target/currentTarget
-    - target is a reference to the object that dispatched the event. It identifies the element on which the event occurred and which may be its direct descendent.
-    - currentTarget always refers to the element to which the event handler has been attached. It is the element you actually bound the event to. This will never change.
+- `event.target` is a reference to the object that dispatched the event. 
+  - It identifies the element on which the event occurred and which may be its direct descendent.
+- `event.currentTarget` always refers to the element to which the event handler has been attached. 
+  - It is the element you actually bound the event to. 
+  - This will never change.
 
 ### 位置坐标计算
 - 元素高度

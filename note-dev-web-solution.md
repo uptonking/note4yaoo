@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [dev/web]
-title: note-dev-web
+title: note-dev-web-solution
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-06-20T17:16:59.985Z'
+modified: '2020-06-21T08:15:45.892Z'
 ---
 
-# note-dev-web
+# note-dev-web-solution
 
 ## 难点
 - tree-shaking
@@ -189,6 +189,7 @@ modified: '2020-06-20T17:16:59.985Z'
     - react-draggable
         - DraggableCore
         - Draggable
+
 ### resize
 - 缩放使用场景
     - 缩放card、modal
@@ -265,19 +266,7 @@ modified: '2020-06-20T17:16:59.985Z'
     - when you do touch scrub, the indicator on timeline move, but mouse doesn't
     - when you do mouse hover and keep moving, the indicator move as well
 
-### html5-drag-drop-api
-- HTML drag-and-drop uses `DOM event model` and `drag events` inherited from mouse events.
-- ondrag/start/enter/over/exit/leave/end
-- ondrop
-- Making an element `draggable` requires adding the `draggable` attribute and the `ondragstart` global event handler
-- Each drag event has a `dataTransfer` property that holds the event's data. This property (which is a DataTransfer object) also has methods to manage drag data. 
-- The `dropEffect` property affects which cursor the browser displays while dragging
-- If an element is to become a drop zone or `droppable`, the element must have both `ondragover` and `ondrop` event handler attributes.
-- 参考
-    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
-    - https://developer.mozilla.org/en-US/docs/Web/API/Event
-    - https://developer.mozilla.org/en-US/docs/Web/API/DragEvent
-    - https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations
+
 ### react-dnd
 - 是一组React高阶组件，只需要用对应的API将目标组件进行包裹，即可实现拖动或接受放置
 - 基于redux实现
@@ -300,11 +289,7 @@ modified: '2020-06-20T17:16:59.985Z'
 - `react-dnd-xxx-backend`通过Dispatch Action把native DnD状态传递到上层
 - 使用流程
     - 把应用的根组件包装在DragDropContext中
-    - 把可以拖拽的组件包装在DragSource中
-        - 设置 type
-        - 设置 spec，让组件可以响应拖拽事件
-        - 设置 collect，把拖拽过程中需要信息注入组件的 props
-    - 把可以接受拖拽的组件包装在DropTarget中
+    - 把可以拖拽的组件包装在DragSource中，或 把可以接受拖拽的组件包装在DropTarget中
         - 设置 type
         - 设置 spec，让组件可以响应拖拽事件
         - 设置 collect，把拖拽过程中需要信息注入组件的 props
@@ -316,7 +301,7 @@ modified: '2020-06-20T17:16:59.985Z'
 
 ## solution-layer
 - 图层顺序
-  - background: 背景层，一般在最底层
+  - background: 背景层，一般在最底层，不单独实现，可通过动画模拟上层组件卸载同时背景层出现
   - content: 内容层，页面主要内容
   - nav: 导航层，内容层之上，一般是主菜单按钮，在用户滑动内容层时可保持位置不动，通常用于承载导航栏等需要固定在页面的元素
   - mask: 蒙板层，用于锁定内容层和导航层操作，一般不单独使用，常配合pop层使用
@@ -329,6 +314,11 @@ modified: '2020-06-20T17:16:59.985Z'
 - trigger的位置和大小
   - 点击trigger组件时，会触发弹出组件overlay的开关
   - trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
+
+### modal
+- usecase
+  - 弹出菜单
+  - user guide tour
 - modal的位置
   - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
   - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
@@ -346,7 +336,7 @@ modified: '2020-06-20T17:16:59.985Z'
   - 弹层的层次关系数据是多叉树的结构
 - 关闭modal是否应该移除该modal原本挂载的目标节点呢
   - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
-  - react-modal (Basic Example) 关闭modal后，目标节点保持、不移除
+  - react-modal(Basic Example)关闭modal后，目标节点保持、不移除
     - 可以在body元素上动态添加和删除弹窗是否打开的属性
   - react-bootstrap中的modal对目标节点，关闭modal后即移除
 - modal状态恢复
@@ -374,6 +364,19 @@ modified: '2020-06-20T17:16:59.985Z'
     - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
   - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
   - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
+
+### sidebar
+- usecase
+  - 兼容移动浏览器
+    - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
+    - When viewing a web page on a smartphone browser, the browser will typically remove the URL and menu bars from the screen when the user scrolls down the page.
+    - For some reason react-sidebar breaks this behavior, leaving the browser UI in place even when the page is scrolled.
+    - Mobile Chrome's autohide works by listening for scroll events on the body element. 
+      - As far as I can see this plugin wraps your whole app in an absolutely positioned div with an `overflow-y: auto`
+      - as a result, scroll events never trigger on body and the browser chrome does not get hidden. 
+  - multi-sidebar: 使用多个sidebar用于导航
+    - https://github.com/balloob/react-sidebar/issues/65
+
 
 ### 组件分层实现
 - 使用场景
