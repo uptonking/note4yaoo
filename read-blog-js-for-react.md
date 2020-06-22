@@ -1,11 +1,11 @@
 ---
 tags: [copied, js]
-title: note-js-for-react
+title: read-blog-js-for-react
 created: '2019-08-01T16:03:46.394Z'
-modified: '2019-10-21T02:30:46.075Z'
+modified: '2020-06-22T08:18:36.153Z'
 ---
 
-# note-js-for-react
+# read-blog-js-for-react
 
 > copied from [dvajs-README](https://github.com/dvajs/dva-knowledgemap/blob/master/README.md)    
 > 注：如果你使用 dva@2，请先忽略这里的路由部分，待更新。

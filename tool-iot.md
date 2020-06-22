@@ -2,7 +2,7 @@
 tags: [tool/iot]
 title: tool-iot
 created: '2019-08-11T07:36:17.519Z'
-modified: '2019-09-26T11:31:47.167Z'
+modified: '2020-06-22T09:25:26.602Z'
 ---
 
 # tool-iot
@@ -15,20 +15,20 @@ modified: '2019-09-26T11:31:47.167Z'
 
 ## cross
 - 科学上网解决方案
-    - 自用vps
-        - 太容易被wall
-    - 可更换ip的shadowsocks服务
-        - 网速不稳定
-        - ios商店无法下载proxy
+  - 自用vps
+      - 太容易被wall
+  - 可更换ip的shadowsocks服务
+      - 网速不稳定
+      - ios商店无法下载proxy
 
 
 
 ## mobile
 - 小米mix alpha环绕屏的使用场景(官方未给出)
-    - 应用演示
-    - 背面歌词/封面
-    - 背部笔记
-    - ios widgets
+  - 应用演示
+  - 背面歌词/封面
+  - 背部笔记
+  - ios widgets
 
 ## Ubuntu
 - ubuntu的软件生态较为丰富

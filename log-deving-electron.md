@@ -2,7 +2,7 @@
 tags: [electron]
 title: log-deving-electron
 created: '2020-05-18T09:49:23.005Z'
-modified: '2020-05-31T08:19:54.513Z'
+modified: '2020-06-22T08:11:21.145Z'
 ---
 
 # log-deving-electron
@@ -10,10 +10,11 @@ modified: '2020-05-31T08:19:54.513Z'
 ## faq
 - electron vs cef
     - The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. Very early versions of Atom editor and NW.js used CEF.
-    - To maintain a stable API, *CEF hides all the details of Chromium and wraps Chromium's APIs with its own interface*. So when we needed to access underlying Chromium APIs, like integrating Node.js into web pages, the advantages of CEF became blockers.
+    - To maintain a stable API, **CEF hides all the details of Chromium and wraps Chromium's APIs with its own interface**. 
+    - So when we needed to access underlying Chromium APIs, like integrating Node.js into web pages, the advantages of CEF became blockers.
     - So in the end both Electron and NW.js switched to using Chromium's APIs directly.
     - ref
-        - https://www.electronjs.org/blog/electron-internals-building-chromium-as-a-library
+      - https://www.electronjs.org/blog/electron-internals-building-chromium-as-a-library
 - electron中可以使用web worker吗？
     - 结论是：可以用，但不推荐
     - It is possible to use Node.js features in Electron's Web Workers, to do so the nodeIntegrationInWorker option should be set to true in webPreferences

@@ -2,7 +2,7 @@
 tags: [wiki]
 title: README
 created: '2019-06-19T09:12:15.964Z'
-modified: '2020-06-12T05:11:24.798Z'
+modified: '2020-06-22T09:22:08.212Z'
 ---
 
 # README
@@ -19,8 +19,8 @@ modified: '2020-06-12T05:11:24.798Z'
 - `spec-`: specifications about dev
 - `wiki-`: abstract about geo, history, law, fintech, etc.
 - other tags
-    - all, draft...
-    - app, cli, coding, play, pm, work...
+  - all, draft...
+  - app, cli, coding, play, pm, work...
 
 
 

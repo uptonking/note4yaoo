@@ -3,7 +3,7 @@ attachments: [hello.txt]
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-16T13:02:45.593Z'
+modified: '2020-06-22T12:02:55.011Z'
 ---
 
 # log-dev-pieces-frontend
@@ -11,6 +11,29 @@ modified: '2020-06-16T13:02:45.593Z'
 ## logging
 
 
+- 从输入页面URL到页面渲染完成大致流程
+  - 解析URL
+  - 浏览器本地缓存
+  - DNS解析
+  - 建立TCP/IP连接
+  - 发送HTTP请求
+  - 服务器处理请求并返回HTTP报文
+  - 浏览器根据深度遍历的方式把html节点遍历构建DOM树
+  - 遇到CSS外链，异步加载解析CSS，构建CSS规则树
+  - 遇到script标签，如果是普通JS标签则同步加载并执行，阻塞页面渲染，如果标签上有defer/async属性则异步加载JS资源
+  - 将dom树和CSS DOM树构造成render树
+  - 渲染render树
+- 浏览器加载与渲染的时间概念 
+  - P：首次绘制。用于标记导航之后浏览器在屏幕上渲染像素的时间点。这个不难理解，就是浏览器开始请求网页到网页首帧绘制的时间点。这个指标表明了网页请求是否成功。
+  - FCP：首次内容绘制。FCP标记的是浏览器渲染来自DOM第一位内容的时间点，该内容可能是文本、图像、SVG甚至canvas元素。
+  - FMP：首次有效绘制。这是一个很主观的指标。根据业务的不同，每一个网站的有效内容都是不相同的，有效内容就是网页中"主角元素"。对于视频网站而言，主角元素就是视频。对于搜索引擎而言，主角元素就是搜索框。
+  - TTI：可交互时间。用于标记应用已进行视觉渲染并能可靠响应用户输入的时间点。应用可能会因为多种原因而无法响应用户输入：①页面组件运行所需的JavaScript尚未加载完成。②耗时较长的任务阻塞主线程
+  - 根据devtool时间轴的结果
+    - 虽然CSR(客户端渲染)配合预渲染方式（loading、骨架图）可以提前FP、FCP从而减少白屏问题，但无法提前FMP
+    - SSR(服务端渲染)将FMP提前至js加载前触发，提前显示网页中的"主角元素"。SSR不仅可以减少白屏时间还可以大幅减少首屏加载时间。
+  - ref
+    - https://www.zhihu.com/question/308792091
+    - https://zhuanlan.zhihu.com/p/90746589
 - lodash引用方式
   - `import { cloneDeep } from 'lodash';`
     - 70.9KB

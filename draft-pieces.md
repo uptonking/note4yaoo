@@ -2,7 +2,7 @@
 tags: [draft, todo]
 title: draft-pieces
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-05-22T12:29:31.545Z'
+modified: '2020-06-22T08:05:05.869Z'
 ---
 
 # draft-pieces
@@ -89,10 +89,10 @@ $grid-breakpoints: (
 ) !default;
 ```
 - react-data-grid使用的className
-    - 不确定的类
-        - row-selected， has-tooltip，has-error
-    - 使用了的样式
-        - pull-right
-        - glyphicon-remove form-control-feedback
-    - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
-    - FilterableHeaderCell组件使用了form-group/control
+  - 不确定的类
+      - row-selected， has-tooltip，has-error
+  - 使用了的样式
+      - pull-right
+      - glyphicon-remove form-control-feedback
+  - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
+  - FilterableHeaderCell组件使用了form-group/control

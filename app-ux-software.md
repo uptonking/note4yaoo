@@ -1,16 +1,16 @@
 ---
 tags: [ux]
-title: app-software-ux
+title: app-ux-software
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-06-17T03:06:59.911Z'
+modified: '2020-06-22T08:35:50.128Z'
 ---
 
-# app-software-ux
+# app-ux-software
 
 
 ## browser
 - browser extensions
-    - chrome助手：过滤google搜索结果到中文，mozilla-mdn文档语言切换
+  - chrome助手：过滤google搜索结果到中文，mozilla-mdn文档语言切换
   
 
 ## github
@@ -21,9 +21,9 @@ modified: '2020-06-17T03:06:59.911Z'
 
 ## app-win10
 - FileExplorer
-    - file count column is not implemented
+  - file count column is not implemented
 
 
 ## app-ubuntu
 - sysget
-    - one syntax to every package manager
+  - one syntax to every package manager

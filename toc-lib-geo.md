@@ -2,7 +2,7 @@
 tags: [geo, toc]
 title: toc-lib-geo
 created: '2019-12-22T12:22:13.746Z'
-modified: '2020-02-16T14:35:54.372Z'
+modified: '2020-06-22T09:24:05.317Z'
 ---
 
 # toc-lib-geo
@@ -35,7 +35,7 @@ modified: '2020-02-16T14:35:54.372Z'
 ### uDig - java - BSD
 - https://github.com/locationtech/udig-platform
 - licensed under Eclipse Public License(EPL)+BSD
-    - EPL允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布。
+  - EPL允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布。
 - uDig 2.0.0 is released on 20180426
 
 ### postgis - c - GPLv2

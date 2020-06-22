@@ -2,25 +2,25 @@
 tags: [dev/pc]
 title: note-dev-pc
 created: '2019-06-09T05:28:24.696Z'
-modified: '2020-05-18T10:03:18.632Z'
+modified: '2020-06-22T09:10:30.267Z'
 ---
 
 # note-dev-pc
 - 跨平台可选技术栈
-    - qt
-    - java swing/javafx
-    - chrominum embedded framework
-    - electron
+  - qt
+  - java swing/javafx
+  - chrominum embedded framework
+  - electron
 
 ## tips
 - 基于系统自带的webview实现类似electron的应用
-    - 不考虑，普通第三方实现的webview功能有限，不如直接用厂商开发的chrominum
-    - 考虑webview是否支持webgl、视频、音频等功能
+  - 不考虑，普通第三方实现的webview功能有限，不如直接用厂商开发的chrominum
+  - 考虑webview是否支持webgl、视频、音频等功能
 - electron vs chrome apps
-    - Google Chrome will be removing support for Chrome Apps
-    - 使用electron可自己自由分发，不依赖浏览器
-    - app依赖浏览器且只支持chrome浏览器，不同版本的浏览器所支持feature不一样，google还会限制部分功能
-    - 使用electron能开发更灵活的功能
+  - Google Chrome will be removing support for Chrome Apps
+  - 使用electron可自己自由分发，不依赖浏览器
+  - app依赖浏览器且只支持chrome浏览器，不同版本的浏览器所支持feature不一样，google还会限制部分功能
+  - 使用electron能开发更灵活的功能
 
 ## features
 - 跨平台一致的ui体验
@@ -37,15 +37,15 @@ modified: '2020-05-18T10:03:18.632Z'
 ## dev
 
 - OSR渲染模式 Off Screen Rendering
-    - 创建真窗口，将整个页面渲染到一张位图上面
-    - 可以通过osr模式来进行视频录像
+  - 创建真窗口，将整个页面渲染到一张位图上面
+  - 可以通过osr模式来进行视频录像
 - 在swing组件中显示javafx组件： 通过 **JFXPanel** 来实现
 - 在javafx组件中显示swing组件： 通过 **SwingNode** 来实现
 - java跨平台渲染
-    - java 2d api
-    - javafx prism
-    - nativefx
-    - efxclipse-drift
+  - java 2d api
+  - javafx prism
+  - nativefx
+  - efxclipse-drift
 
 
 ## javafx / swing / awt
@@ -55,27 +55,27 @@ modified: '2020-05-18T10:03:18.632Z'
 - AWT是一个非常简单的具有有限GUI组件、布局管理器和事件的工具包
 - Swing是在AWT组件基础上构建的，Swing使用了AWT的事件模型和支持类
 - awt优点
-    - part of java, stable
-    - 组件线程安全
+  - part of java, stable
+  - 组件线程安全
 - awt缺点
-    - 有些经常使用的组件，例如表、树、进度条等，都没有提供
+  - 有些经常使用的组件，例如表、树、进度条等，都没有提供
 - swing优点
-    - part of java, stable
-    - cross platform
-    - The integration of Swing components within JavaFX is easier.
+  - part of java, stable
+  - cross platform
+  - The integration of Swing components within JavaFX is easier.
 - swing缺点
-    - 组件在不同平台上行为不一致
-    - heavy components (native/awt) hide swing components
-    - Swing 无法充分利用硬件 GUI 加速器和专用主机 GUI 操作的优点
-    - swing组件不是线程安全的
+  - 组件在不同平台上行为不一致
+  - heavy components (native/awt) hide swing components
+  - Swing 无法充分利用硬件 GUI 加速器和专用主机 GUI 操作的优点
+  - swing组件不是线程安全的
 - swt优点
-    - has an integrated awt/swt bridge to allow use of awt and swing components
+  - has an integrated awt/swt bridge to allow use of awt and swing components
 - swt缺点
-    - requires native libraries for each supported system
-    - 不同平台可能某些行为不支持
-    - 使用SWT只能自顶向下地构建GUI。因此，如果没有父容器，子控件也就不存在了
-    - SWT组件也不是线程安全的
-    - SWT 和 JFace 并不是 Java 技术的标准配置
+  - requires native libraries for each supported system
+  - 不同平台可能某些行为不支持
+  - 使用SWT只能自顶向下地构建GUI。因此，如果没有父容器，子控件也就不存在了
+  - SWT组件也不是线程安全的
+  - SWT 和 JFace 并不是 Java 技术的标准配置
 
 ## javafx-tips
 
@@ -83,29 +83,29 @@ modified: '2020-05-18T10:03:18.632Z'
 - javafx以后可以跟其他任何一个渲染工具集成了，它提供一个内存块（writable image），然后你可以用任何一个你会的渲染工具，无论这个渲染的工具是opengl，vulkan还是d3d，metal或者是webgl 等等，来渲染这一个内存块，然后再将这个image交给javafx，剩下的就是javafx的日常代码了，就跟普通的image一样用
 - 当然它这里还只是writable image，还要给集成到node上去，node就是javafx的最基础组件，那要集成到node上去，有两个项目提供了选择
 - NativeFX /Apache2.0/201908
-    - https://github.com/miho/NativeFX
-    - 用native api来渲染node的例子，javafx 13之后，渲染效率会提升50%
+  - https://github.com/miho/NativeFX
+  - 用native api来渲染node的例子，javafx 13之后，渲染效率会提升50%
 - efxclipse-drift  /EPL1.0/201908
-    - https://github.com/eclipse-efx/efxclipse-drift
-    - 直接使用javafx的图形引擎prism的内部api，好处是更快，它的渲染直接在显存中处理，基本上没有内存和显存之间的拷贝
+  - https://github.com/eclipse-efx/efxclipse-drift
+  - 直接使用javafx的图形引擎prism的内部api，好处是更快，它的渲染直接在显存中处理，基本上没有内存和显存之间的拷贝
 
 
 ## Java Chromium Embedded Framework (JCEF) 
 - CEF(Chromium Embedded Framework)，是基于Google Chromium项目的开源WebBrowser控件，支持Windows, Linux, Mac平台。除了提供C/C++接口外，也有其他语言的移植版。
 - CEF优点
-    - 可以使用最新的html5特性来制作UI，并显示在PC端
-    - OSR离屏渲染
+  - 可以使用最新的html5特性来制作UI，并显示在PC端
+  - OSR离屏渲染
 - CEF缺点
-    - Chrome的缓存设计成只能有一个进程读写，可能导致同一文件被下载多次
-    - osr对gpu加速、css 3d的支持有限
-    - cef体积较大
+  - Chrome的缓存设计成只能有一个进程读写，可能导致同一文件被下载多次
+  - osr对gpu加速、css 3d的支持有限
+  - cef体积较大
 - jcef works only with AWT/Swing, not javafx. (**jcef -> SwingNode -> JavaFX** no)
 - but you can embed JavaFX components in Swing using JFXPane(**jcef -> SwingNode JavaFX -> SwingPanel** yes)
 - With JCEF-based projects you'd have to think about supported platforms. There're different variants of natives and platform-specific problems,
 - JCEF into JavaFX
-    - https://github.com/dzikoysk/Pandomium/issues/8
-    - https://bitbucket.org/chromiumembedded/java-cef/issues/163/provide-javafx-node-for-jcef
-    - what are the plans to support JCEF as a JavaFX node? NO.
+  - https://github.com/dzikoysk/Pandomium/issues/8
+  - https://bitbucket.org/chromiumembedded/java-cef/issues/163/provide-javafx-node-for-jcef
+  - what are the plans to support JCEF as a JavaFX node? NO.
 
 
 ## JavaFX Webview
@@ -115,12 +115,12 @@ modified: '2020-05-18T10:03:18.632Z'
 ## JxBrowser 
 - Unlike JavaFX, JxBrowser is based on Chromium engine, which is also based on WebKit, but provides its own renderer implementation. With Chromium engine JxBrowser does not have to render web pages using Java Graphics 2D API. 
 - JxBrowser API provides many more features comparing to JavaFX WebView API. To name just a few of the popular:
-    - Intercepting HTTP request/response headers,
-    - Handling SSL Certificates and errors,
-    - Proxy, Basic, Digest, and NTLM authentication,
-    - Geolocation,
-    - Flash and PDF Viewer support,
-    - Chromium remote debugging port support, etc.
+  - Intercepting HTTP request/response headers,
+  - Handling SSL Certificates and errors,
+  - Proxy, Basic, Digest, and NTLM authentication,
+  - Geolocation,
+  - Flash and PDF Viewer support,
+  - Chromium remote debugging port support, etc.
 
 ## swing
 
@@ -133,10 +133,10 @@ modified: '2020-05-18T10:03:18.632Z'
 
 ## electron
 - based on Node.js and Chromium 
-    - In Electron, Node.js and Chromium share a single V8 instance
-    - Electron uses Chromium's rendering library rather than all of Chromium. This makes it easier to upgrade Chromium but also means some browser features found in Google Chrome do not exist in Electron.
+  - In Electron, Node.js and Chromium share a single V8 instance
+  - Electron uses Chromium's rendering library rather than all of Chromium. This makes it easier to upgrade Chromium but also means some browser features found in Google Chrome do not exist in Electron.
 - showcase
-    - Atom Editor
+  - Atom Editor
 
 ### electron vs cef
 - The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. Very early versions of Atom editor and NW.js used CEF.
@@ -145,32 +145,32 @@ modified: '2020-05-18T10:03:18.632Z'
 - Even though Chromium does not officially support outside projects, the codebase is modular and it is easy to build a minimal browser based on Chromium. The core module providing the browser interface is called **Content Module**.
 - As a user of Content Module, Electron does not need to modify Chromium's code under most cases, so an obvious way to improve the building of Electron is to build Chromium as a shared library, and then link with it in Electron. In this way developers no longer need to build all off Chromium when contributing to Electron.
 - reference
-    - https://electronjs.org/blog/electron-internals-building-chromium-as-a-library
+  - https://electronjs.org/blog/electron-internals-building-chromium-as-a-library
 
 - 
 
 ### electron vs nw.js
 - 参考 
-    - https://zhuanlan.zhihu.com/p/34250289
+  - https://zhuanlan.zhihu.com/p/34250289
 - NW.js is an app runtime based on Chromium and node.js
 - Electron is based on Node.js and Chromium and is used by the Atom editor
 - 区别
-    - 程序入口。在NW.js中，应用的主入口是网页或者js脚本；在Electron中，入口是一个js脚本
-    - 构建系统。Electron通过libchromiumcontent来访问Chromium的Content API，避免了构建整个Chromium带来的复杂度
-    - 与Node集成。在NW.js，网页中的Node集成需要通过给Chromium打补丁来实现，Electron通过各个平台的消息循环与libuv的循环集成，避免了直接在Chromium上做改动
-    - 多上下文语境。NW.js包括Node上下文和web上下文，自从0.13以来NW.js选择性支持多上下文。通过使用Node的multi-context特性，Electron不需要在网页中引入新的js上下文
+  - 程序入口。在NW.js中，应用的主入口是网页或者js脚本；在Electron中，入口是一个js脚本
+  - 构建系统。Electron通过libchromiumcontent来访问Chromium的Content API，避免了构建整个Chromium带来的复杂度
+  - 与Node集成。在NW.js，网页中的Node集成需要通过给Chromium打补丁来实现，Electron通过各个平台的消息循环与libuv的循环集成，避免了直接在Chromium上做改动
+  - 多上下文语境。NW.js包括Node上下文和web上下文，自从0.13以来NW.js选择性支持多上下文。通过使用Node的multi-context特性，Electron不需要在网页中引入新的js上下文
 - node app on PC: Electron, NW.js
 - react-desktop
-    - React UI Components for macOS High Sierra and Windows 10
-    - linux也可用，但linux发行版界面样式风格不统一，所以没有为linux定制专门的样式
+  - React UI Components for macOS High Sierra and Windows 10
+  - linux也可用，但linux发行版界面样式风格不统一，所以没有为linux定制专门的样式
 - proton-native 
-    - https://github.com/kusti8/proton-native
-    - Same syntax as React Native
-    - Works with existing React libraries such as Redux
-    - Cross platform
-    - Native components. No more Electron
-    - Compatible with all normal Node.js packages
-    - 基于Libui-node，Creates the native widgets using GTK3, Cocoa, or Windows API
+  - https://github.com/kusti8/proton-native
+  - Same syntax as React Native
+  - Works with existing React libraries such as Redux
+  - Cross platform
+  - Native components. No more Electron
+  - Compatible with all normal Node.js packages
+  - 基于Libui-node，Creates the native widgets using GTK3, Cocoa, or Windows API
 
 ## qt
 

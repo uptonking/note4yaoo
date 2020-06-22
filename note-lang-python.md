@@ -2,7 +2,7 @@
 tags: [lang/python]
 title: note-lang-python
 created: '2019-06-09T05:36:34.221Z'
-modified: '2019-12-22T12:36:00.388Z'
+modified: '2020-06-22T09:13:34.577Z'
 ---
 
 # note-lang-python
@@ -18,16 +18,16 @@ modified: '2019-12-22T12:36:00.388Z'
 
 ## python解释器
 - Python程序运行的原理
-    - 执行`python demo.py`后，将会启动Python解释器
-    - python.exe解释器会将源码中的demo.py编译成一个字节码对象PyCodeObject
-        - 将编译结果保存到了pyc文件中，这样下次就不用编译，直接加载到内存
-        - .pyc文件是字节码对象(PyCodeObject)在本地磁盘上的表现形式
-        -  PyCodeObject对象包含了源码中的字符串、常量值以及通过语法解析后编译生成的字节码指令
-    - demo.py被编译后，接下来就由Python解释器来执行字节码指令了
-    - Python解释器会从编译得到的PyCodeObject对象中依次读入每一条字节码指令，并在当前的上下文环境中执行这条字节码指令
-   
+  - 执行`python demo.py`后，将会启动Python解释器
+  - python.exe解释器会将源码中的demo.py编译成一个字节码对象PyCodeObject
+    - 将编译结果保存到了pyc文件中，这样下次就不用编译，直接加载到内存
+    - .pyc文件是字节码对象(PyCodeObject)在本地磁盘上的表现形式
+    -  PyCodeObject对象包含了源码中的字符串、常量值以及通过语法解析后编译生成的字节码指令
+  - demo.py被编译后，接下来就由Python解释器来执行字节码指令了
+  - Python解释器会从编译得到的PyCodeObject对象中依次读入每一条字节码指令，并在当前的上下文环境中执行这条字节码指令
+  
 - 解释器
 - gc
-    - python虚拟机的垃圾回收使用的是引用计数法
-        - 频繁更新引用计数会降低运行效率
-        - 引用计数无法解决循环引用问题
+  - python虚拟机的垃圾回收使用的是引用计数法
+    - 频繁更新引用计数会降低运行效率
+    - 引用计数无法解决循环引用问题

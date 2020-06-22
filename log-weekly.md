@@ -2,7 +2,7 @@
 tags: [log/weekly]
 title: log-weekly
 created: '2019-06-17T01:29:37.793Z'
-modified: '2020-06-09T12:59:15.400Z'
+modified: '2020-06-22T09:09:27.471Z'
 ---
 
 # log-weekly
@@ -10,7 +10,7 @@ modified: '2020-06-09T12:59:15.400Z'
 
 # 2020
 ## w0608-0614
-- [ ] create
+- [ ] add 
 
 ## w0608-0614
 - css-in-js: zero-runtime like linaria is not flexible enough to be used with styled-system
