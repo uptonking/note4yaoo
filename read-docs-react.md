@@ -2,7 +2,7 @@
 tags: [docs/react]
 title: read-docs-react
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-22T13:50:45.610Z'
+modified: '2020-06-22T16:52:18.396Z'
 ---
 
 # read-docs-react 
@@ -166,22 +166,26 @@ modified: '2020-06-22T13:50:45.610Z'
 	- setState()会将你提供的对象合并到当前状态，是浅合并
 
 #### 6.handling events      
-- 
-- 
-- 
-- 
--
-- 
-- 
-- 
-- 
+- Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+  - React events are named using camelCase, rather than lowercase.
+  - With JSX you pass a function as the event handler, rather than a string.
+  - Another difference is that you cannot return false to prevent default behavior in React. 
+    - You must call preventDefault explicitly.
+- In react events, `e` is a synthetic event. React defines these synthetic events according to the W3C spec, so you don’t need to worry about cross-browser compatibility. 
+- When using React, you generally don’t need to call `addEventListener` to add listeners to a DOM element after it is created. 
+  Instead, just provide a listener when the element is initially rendered.
+-  it is common to want to pass an extra parameter to an event handler. 
+  ```
+  <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+  <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+  ```
+  - In both cases, the e argument representing the React event will be passed as a second argument after the ID. 
+  - With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
 - React元素的事件处理和 DOM元素的很相似，不同点：
 	- React事件绑定属性的命名采用驼峰式写法，而不是小写
 	- 如果采用 JSX 的语法你需要传入一个函数作为事件处理函数，而不是一个字符串
 	- React中不能使用`return false`的方式阻止默认行为，必须明确的使用`e.preventDefault()`
-- React根据 W3C spec 来定义这些合成事件，所以你不需要担心跨浏览器的兼容性问题
-- 使用 React 的时候不需要使用 addEventListener 为一个已创建的 DOM 元素添加监听器，需要在这个元素初始渲染的时候提供一个监听器。
-- 必须谨慎对待 JSX 回调函数中的 this，类的方法默认不会绑定 this，需要在constructor()中绑定`this.handleClick = this.handleClick.bind(this);`
+- 必须谨慎对待JSX回调函数中的this，类的方法默认不会绑定this，需要在constructor()中绑定`this.handleClick = this.handleClick.bind(this);`
 - 不使用bind()的方式，参考 https://reactjs.org/docs/handling-events.html
 	- 定义handleClick时使用箭头函数
 	- 在jsx中调用时使用箭头函数` <button onClick={(e) => this.handleClick(e)}>`
@@ -195,16 +199,30 @@ modified: '2020-06-22T13:50:45.610Z'
 		- 通过 bind 方式向监听函数传参，在类组件中定义的监听函数，事件对象 e 要排在所传递参数的后面
 
 #### 7.conditional rendering   
-
-- 使用 JavaScript 操作符 if 或条件运算符来创建表示当前状态的元素，然后让 React 根据它们来更新 UI
-- true && expression 总是返回 expression，而 false && expression 总是返回 false，如果条件是 true，&& 右侧的元素就会被渲染，如果是 false，React 会忽略并跳过它
+- In React, you can create distinct components that encapsulate behavior you need. 
+  - Then, you can render only some of them, depending on the state of your application.
+- Conditional rendering in React works the same way conditions work in JavaScript. 
+  - Use JavaScript operators like `if` or the conditional operator to create elements representing the current state, and let React update the UI to match them.
+- You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn’t change.
+- In JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+  - Therefore, if the condition is true, the element right after && will appear in the output. 
+  - If it is false, React will ignore and skip it.
+- remember that whenever conditions become too complex, it might be a good time to extract a component
+- Returning null from a component’s render method does not affect the firing of the component’s lifecycle methods. 
+  - For instance componentDidUpdate will still be called.
 - 三目条件运算符可以用来渲染小段文本，用在较大的表达式中不直观
-- 条件变得复杂时，要考虑提取组件
 - 在组件的render()中`return null`可以阻止组件渲染，也是实现条件渲染的一种方法
-- 组件的 render 方法返回 null 并不会影响该组件生命周期方法的回调，componentWillUpdate 和 componentDidUpdate 依然可以被调用。
 
-#### lists & keys   
-
+#### 8.lists & keys   
+- 
+- 
+- 
+- 
+-
+- 
+- 
+- 
+- 
 - 应当给数组中的每一个元素赋予一个确定的标识key，可以在DOM中的某些元素被增加或删除的时候帮助React识别哪些元素发生了变化
 - 一个元素的key最好是这个元素在列表中拥有的一个独一无二的字符串，元素没有确定的id时，你可以使用他的序列号索引index作为key
 - 如果列表可以重新排序，就不建议使用索引来进行排序，因为这会导致渲染变得很慢 
@@ -216,8 +234,16 @@ modified: '2020-06-22T13:50:45.610Z'
 	- 不能使用props.key来获取key
 - 如果在map()嵌套了太多层级的组件，要考虑提取组件
 
-#### form   
-
+#### 9.forms   
+- 
+- 
+- 
+- 
+-
+- 
+- 
+- 
+- 
 - 表单元素本身有内部状态
 - 受控组件的状态值由react控制
 - react种主要表单元素的特点
@@ -249,13 +275,30 @@ modified: '2020-06-22T13:50:45.610Z'
 -  有时使用受控组件可能很繁琐，因为要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。
 - 过于繁琐时，考虑使用非受控组件
 
-#### lifting state up    
-
+#### 10.lifting state up    
+- 
+- 
+- 
+- 
+-
+- 
+- 
+- 
+- 
 - 几个组件需要共用状态数据时，最好将这部分共享的状态提升至他们最近的父组件当中进行管理
 - 通常，state都是首先添加在需要渲染数据的组件中，此时如果另一个组件也需要这些数据，你可以将数据提升至离它们最近的父组件中
 - 状态提升比双向绑定方式要写更多的“模版代码”，但带来的好处是，你也可以更快地寻找和定位bug
 
-#### composition vs inheritance   
+#### 11.composition vs inheritance
+- 
+- 
+- 
+- 
+-
+- 
+- 
+- 
+-    
 - 建议使用**Composition组合**而不是继承来复用组件代码解决问题
 - 对于不能提前知道子组件是什么的组件，如Modal、Dialog、Sidebar、Card这类通用容器，推荐这类组件使用`props.children`将元素直接传递到输出
 	- 示例
@@ -316,8 +359,16 @@ modified: '2020-06-22T13:50:45.610Z'
 - **React组件可以接受任意props**，包括primitive values, functions or React elements
 - 如果要在组件之间复用UI无关的功能，建议将其提取到单独的JavaScript模块中
 
-#### thinking in react    
-
+#### 12.thinking in react    
+- 
+- 
+- 
+- 
+-
+- 
+- 
+- 
+- 
 使用react创建应用的一般思路： 
 0. 准备：设计原型图和json接口  
 1. 将UI划分出组件层级
