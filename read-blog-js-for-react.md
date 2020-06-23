@@ -1,8 +1,8 @@
 ---
-tags: [copied, js]
+tags: [blog, copied, js]
 title: read-blog-js-for-react
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-06-22T08:18:36.153Z'
+modified: '2020-06-23T07:39:40.222Z'
 ---
 
 # read-blog-js-for-react

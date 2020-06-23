@@ -1,8 +1,8 @@
 ---
-tags: [react]
+tags: [blog, react]
 title: read-blog-dev-react
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-06-22T09:20:45.356Z'
+modified: '2020-06-23T07:38:16.606Z'
 ---
 
 # read-blog-dev-react

@@ -1,9 +1,9 @@
 ---
 favorited: true
-tags: [coponents, web]
+tags: [components, web]
 title: note-components-react-in-action
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-06-22T09:09:41.308Z'
+modified: '2020-06-23T07:37:42.748Z'
 ---
 
 # note-components-react-in-action
