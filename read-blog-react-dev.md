@@ -1,11 +1,11 @@
 ---
 tags: [blog, react]
-title: read-blog-dev-react
+title: read-blog-react-dev
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-06-23T07:38:16.606Z'
+modified: '2020-06-24T08:36:08.086Z'
 ---
 
-# read-blog-dev-react
+# read-blog-react-dev
 
 ## React组件设计实践总结
 - 参考

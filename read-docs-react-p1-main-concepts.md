@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p1-main-concepts
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-23T13:27:20.378Z'
+modified: '2020-06-24T11:38:25.412Z'
 ---
 
 # read-docs-react-p1-main-concepts
@@ -31,6 +31,7 @@ modified: '2020-06-23T13:27:20.378Z'
 - components-common
   - https://github.com/reactjs/react-modal
   - https://github.com/reactjs/react-tabs
+  - https://github.com/reactjs/react-transition-group
   - https://github.com/react-component/upload
   - https://github.com/react-component/form
 
@@ -66,15 +67,15 @@ modified: '2020-06-23T13:27:20.378Z'
 - React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. 
   - It also allows React to show more useful error and warning messages.
 - You can put any valid JavaScript expression inside the curly braces in JSX
-- JSX is an Expression Too  
+- **JSX is an Expression Too**  
   - After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects
   - you can use JSX inside of if statements and for loops, assign it to variables, accept it as arguments, and return it from functions
 - By default, React DOM escapes any values embedded in JSX before rendering them. 
   - Thus it ensures that you can never inject anything that’s not explicitly written in your application. 
-  - Everything is converted to a string before being rendered. 
-  - This helps prevent XSS (cross-site-scripting) attacks
-- JSX Represents Objects
-  - Babel compiles JSX down to React.createElement() calls.
+  - *Everything is converted to a string* before being rendered. 
+  - This helps prevent XSS(cross-site-scripting) attacks
+- **JSX Represents Objects**
+  - Babel compiles JSX down to `React.createElement()` calls.
   - These two examples are identical:
   ```
   const element = (
@@ -114,11 +115,13 @@ modified: '2020-06-23T13:27:20.378Z'
 - React elements are immutable. 
   - Once you create an element, you can’t change its children or attributes. 
   - An element represents the UI at a certain point in time.
-  - With our knowledge so far, the only way to update the UI is to create a new element, and pass it to ReactDOM.render()
-- React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.
+  - With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`
+- React DOM compares the element and its children to the previous one, and *only applies the DOM updates necessary* to bring the DOM to the desired state.
+- Even though we create an element describing the whole UI tree on every tick, *only the text node whose contents have changed gets updated* by React DOM
+- In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
 
 ## 4.components & props    
- - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
+- Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
   - Conceptually, components are like JavaScript functions. 
   - They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 - We call such components “function components” because they are literally JavaScript functions.
@@ -128,7 +131,6 @@ modified: '2020-06-23T13:27:20.378Z'
 - React treats components starting with lowercase letters as DOM tags. 
 - We recommend naming props from the component’s own point of view rather than the context in which it is being used.
 - extract components
-  - Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. 
   - A good rule of thumb is that if a part of your UI is *used several times* (Button, Panel, Avatar), or is *complex enough* on its own (App, FeedStory, Comment), it is a good candidate to be extracted to a separate component
 - Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs.
 - All React components must act like pure functions with respect to their props.
@@ -136,15 +138,18 @@ modified: '2020-06-23T13:27:20.378Z'
    
 ## 5.state & lifecycle     
 - State is similar to props, but it is private and fully controlled by the component.
-- The render method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the Clock class will be used. This lets us use additional features such as local state and lifecycle methods.
-- While this.props is set up by React itself and this.state has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+- The render method will be called each time an update happens
+  - but as long as we render `<Clock />` into the same DOM node, only a single instance of the Clock class will be used. 
+  - This lets us use additional features such as local state and lifecycle methods.
+- While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
 - Using State Correctly
   - Do Not Modify State Directly
   - State Updates May Be Asynchronous
   - State Updates are Merged
     - React merges the object you provide into the current state.
 - Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.
-- This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+- This is why state is often called local or encapsulated. 
+  - It is not accessible to any component other than the one that owns and sets it.
 - A component may choose to pass its state down as props to its child components
 - This is commonly called a “top-down” or “unidirectional” data flow. 
   - Any state is always owned by some specific component
@@ -170,7 +175,7 @@ modified: '2020-06-23T13:27:20.378Z'
 - In react events, `e` is a synthetic event. React defines these synthetic events according to the W3C spec, so you don’t need to worry about cross-browser compatibility. 
 - When using React, you generally don’t need to call `addEventListener` to add listeners to a DOM element after it is created. 
   - Instead, just provide a listener when the element is initially rendered.
--  it is common to want to pass an extra parameter to an event handler. 
+- it is common to want to pass an extra parameter to an event handler. 
   ```
   <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
   <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
@@ -199,7 +204,8 @@ modified: '2020-06-23T13:27:20.378Z'
   - Therefore, if the condition is true, the element right after `&&` will appear in the output. 
   - If it is false, React will ignore and skip it.
 - remember that whenever conditions become too complex, it might be a good time to extract a component
-- In rare cases you might want a component to hide itself even though it was rendered by another component. To do this `return null` instead of its render output.
+- In rare cases you might want a component to hide itself even though it was rendered by another component. 
+  - To do this `return null` instead of its render output.
 - Returning null from a component’s render method does not affect the firing of the component’s lifecycle methods. 
   - For instance componentDidUpdate will still be called.
 - 三目条件运算符可以用来渲染小段文本，用在较大的表达式中不直观
@@ -208,17 +214,18 @@ modified: '2020-06-23T13:27:20.378Z'
     - componentDidMount() will fire exactly after render()! so you're saying that your render function returns null, which means render function executes
 
 ## 8.lists & keys   
-- You can build collections of elements and include them in JSX using curly braces {}
+- You can build collections of elements and include them in JSX using curly braces `{}`
 - you’ll be given a warning that a key should be provided for list items. 
   - A `key` is a special string attribute you need to include when creating lists of elements. 
 - Keys help React identify which items have changed, are added, or are removed. 
   - Keys should be given to the elements inside the array to give the elements a stable identity
   - Keys only make sense in the context of the surrounding array.
-  - A good rule of thumb is that elements inside the map() call need keys.
+  - A good rule of thumb is that *elements inside the map() call need keys*.
 - The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. 
   - Most often you would use IDs from your data as keys
   - When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort
-  - We **don’t recommend** using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.
+  - We *don’t recommend* using indexes for keys if the order of items may change. 
+    - This can negatively impact performance and may cause issues with component state.
   - If you choose not to assign an explicit key to list items, then React will default to using indexes as keys.
 - Keys used within arrays should be unique among their siblings. 
   - However they don’t need to be globally unique. 
@@ -254,12 +261,13 @@ modified: '2020-06-23T13:27:20.378Z'
 - In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the `File` API.
   - Because its value is read-only, it is an **uncontrolled component** in React
 - When you need to handle multiple controlled input elements
-  - you can add a name attribute to each element and let the handler function choose what to do based on the value of `event.target.name`
+  - you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`
 - It can sometimes be tedious to use controlled components
   - because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. 
+  - you might want to check out uncontrolled components, an alternative technique for implementing input forms.
 -  a complete solution for form
   - validation
-  - track  values
+  - track values
   - handle submit
 - 用react表示主要表单元素
 	- `<textarea>`用value属性表示内容，而不用节点内的text
@@ -286,12 +294,12 @@ modified: '2020-06-23T13:27:20.378Z'
 	  ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
 	};
 	```
--  有时使用受控组件可能很繁琐，因为要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。
+- 有时使用受控组件可能很繁琐，因为要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。
 - 过于繁琐时，考虑使用非受控组件
 
 ## 10.lifting state up    
 - Often, several components need to reflect the same changing data. 
-  - We **recommend** lifting the shared state up to their closest common ancestor.
+  - We *recommend* lifting the shared state up to their closest common ancestor.
 - components independently keep their values in the local state
   - However, we may want these two inputs to be in sync with each other. 
 - In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. 
@@ -306,7 +314,7 @@ modified: '2020-06-23T13:27:20.378Z'
   - Instead of trying to sync the state between different components, you should rely on this top-down data flow.
 - Lifting state involves writing more “boilerplate” code than two-way binding approaches
   - but as a benefit, it takes less work to find and isolate bugs
-  -  Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. 
+  - Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. 
   - Additionally, you can implement any custom logic to reject or transform user input.
 - If something can be derived from either props or state, it probably shouldn’t be in the state.
 
@@ -321,7 +329,7 @@ modified: '2020-06-23T13:27:20.378Z'
   - In such cases you may come up with your own convention instead of using `children` prop
   - React elements are just objects, so you can pass them as props like any other data. 
   - This approach may remind you of “slots” in other libraries but there are no limitations on what you can pass as props in React.
-- Specialization 使用组合处理泛化关系
+- Specialization 使用组合处理组件间的泛化关系
 - In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props  
 ```
 function WelcomeDialog() {
@@ -443,4 +451,6 @@ function WelcomeDialog() {
 	- 确定公共最小父组件
 5. 添加反向数据流
 	- 子组件通过回调函数修改父组件的状态
-	
+
+
+
