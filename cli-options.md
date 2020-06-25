@@ -2,7 +2,7 @@
 tags: [engineering]
 title: cli-options
 created: '2019-10-06T10:29:08.772Z'
-modified: '2020-06-22T08:04:42.563Z'
+modified: '2020-06-25T07:09:48.975Z'
 ---
 
 # cli-options
@@ -33,6 +33,15 @@ git rm -r 文件夹名   // 删除文件夹
 git add .
 git commit -m '备注'
 git push origin 分支
+```
+- 放弃本地修改，用远程覆盖本地
+```
+git fetch --all
+git reset --hard origin/master
+```
+- 用本地覆盖远程
+```
+git push origin master --force 
 ```
 
 ## linux shell

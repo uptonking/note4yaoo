@@ -1,8 +1,9 @@
 ---
+favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-24T13:50:41.178Z'
+modified: '2020-06-25T07:06:25.752Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -14,7 +15,7 @@ modified: '2020-06-24T13:50:41.178Z'
 - Capitalized types indicate that the JSX tag is referring to a React component. 
   - These tags get compiled into a direct reference to the named variable
   - so if you use the JSX `<Foo />` expression, `Foo` must be in scope.
-- Since JSX compiles into calls to  React.createElement`, the React library must also always be in scope from your JSX code.
+  - Since JSX compiles into calls to  `React.createElement`, the React library must also always be in scope from your JSX code.
 - When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string 'div' or 'span' passed to React.createElement. 
 - Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
 - We recommend naming components with a capital letter. 
@@ -33,22 +34,27 @@ modified: '2020-06-24T13:50:41.178Z'
       return <SpecificStory story={props.story} />;
     }
   ```
+- **Props in JSX**
 - You can pass any JavaScript expression as a prop, by surrounding it with `{}`
 - You can pass a string literal as a prop.
   - When you pass a string literal, its value is HTML-unescaped
-- If you pass no value for a prop, it defaults to true
+- If you pass no value for a prop, it defaults to `true`
   - we don’t recommend not passing a value for a prop, because it can be confused with the ES6 object shorthand
 - If you already have props as an object, and you want to pass it in JSX, you can use `...` as a “spread” operator to pass the whole props object
-  - Spread attributes can be useful but they also make it easy to pass unnecessary props to components that don’t care about them or to pass invalid HTML attributes to the DOM. 
+  - Spread attributes can be useful 
+  - but they also make it easy to pass unnecessary props to components that don’t care about them or to pass invalid HTML attributes to the DOM. 
   - We recommend using this syntax sparingly.
+- **Children in JSX**
 - In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop: `props.children`
 - You can put a string between the opening and closing tags and props.
   - children will just be that string. 
   - HTML is unescaped, so you can generally write JSX just like you would write HTML in this way
   - JSX removes whitespace at the beginning, ending of a line, blank lines
 - You can provide more JSX elements as the children
+  - You can mix together different types of children, so you can use string literals together with JSX children. 
   - A React component can also return an array of elements  
 - You can pass any JavaScript expression as children, by enclosing it within `{}`
+  - JavaScript expressions can be mixed with other types of children
 - If you have a custom component, you could have it take a *callback function* as `props.children`
   - Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering
 - `false`, `null`, `undefined`, and `true` are valid children. 
@@ -104,7 +110,7 @@ modified: '2020-06-24T13:50:41.178Z'
 	- With `createReactClass()`, this is not necessary because it binds all methods
 - mixins
 	- es6不支持混入，推荐使用高阶组件
-	- createReactClass()作为一个属性 ` mixins: [SetIntervalMixin]`
+	- createReactClass()作为一个属性`mixins: [SetIntervalMixin]`
 	
 ## React Without JSX
 - Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)`. 
@@ -122,7 +128,7 @@ ReactDOM.render(
 ## Fragments
 - A common pattern in React is for a component to *return multiple elements*. 
   - A common pattern is for a component to return a list of children. 
-- Fragments let you group a list of children without adding extra nodes to the DOM.
+- **Fragments let you group a list of children without adding extra nodes to the DOM**.
 - Fragments declared with the explicit `<React.Fragment>` syntax may have keys. 
 - `key` is the only attribute that can be passed to `Fragment`. 
 - In the future, we may add support for additional attributes, such as event handlers.
@@ -135,7 +141,7 @@ ReactDOM.render(
   - Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 - Context is designed to share data that can be considered *global* for a tree of React components, such as the current authenticated user, locale, theme, or data cache.
 - Using context, we can avoid passing props through intermediate elements
-- Context is primarily used when some data needs to be accessible by many components *at different nesting levels*. 
+- Context is primarily used when some data needs to be accessible by many components **at different nesting levels**. 
   - Apply it sparingly because it makes component reuse more difficult.
 - If you *only want to avoid passing some props through many levels*, component composition is often a simpler solution than context
   - It might feel redundant to pass down the user and avatarSize props through many levels if in the end only the Avatar component really needs it. 
@@ -143,7 +149,8 @@ ReactDOM.render(
   - One way to solve this issue without context is to *pass down the Avatar component itself* so that the intermediate components don’t need to know about the user or avatarSize props
   - With this change, only the top-most Page component needs to know about the Link and Avatar components’ use of user and avatarSize
 - This inversion of control can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. 
-  - However, this isn’t the right choice in every case: moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want
+  - However, this isn’t the right choice in every case: 
+    - moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want
 - This pattern is sufficient for many cases when you need to decouple a child from its immediate parents. 
   - You can take it even further with render props if the child needs to communicate with the parent before rendering.
 - However, sometimes the same data needs to be accessible by many components in the tree, and *at different nesting levels*. 
@@ -184,7 +191,7 @@ ReactDOM.render(
   });
   ```
 - To keep context re-rendering fast, React needs to make each context consumer a separate node in the tree.
-- If two or more context values are often used together, you might want to consider creating your own render prop component that provides both.
+- If *two or more context values are often used together*, you might want to consider creating your own render prop component that provides both.
 - Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders
   - For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`  
   ```
@@ -263,7 +270,7 @@ MessageList.childContextTypes = {
 ## Refs and the DOM
 - Refs provide a way to access DOM nodes or React elements created in the render method.
 - In the typical React dataflow, props are the only way that parent components interact with their children.
-- However, there are a few cases where you need to imperatively modify a child outside of the typical dataflow.
+- However, there are a few cases where you need to **imperatively modify a child outside of the typical dataflow**.
 - There are a few good use cases for refs:
   - Managing focus, text selection, or media playback.
   - Triggering imperative animations.
@@ -291,7 +298,7 @@ class MyComponent extends React.Component {
     - ref updates happen before componentDidMount or componentDidUpdate lifecycle methods.
   - When the ref attribute is used on a custom class component
     - the ref object receives the mounted instance of the component as its `current`.
-  - You may not use the ref attribute on function components because they don’t have instances.
+  - You **may not use the ref attribute on function components** because they don’t have instances.
     - If you want to allow people to take a ref to your function component, you can use forwardRef (possibly in conjunction with useImperativeHandle)
     - or you can convert the component to a class.
     - You can, however, use the `ref` attribute inside a function component as long as you refer to a DOM element or a class component
@@ -301,17 +308,16 @@ class MyComponent extends React.Component {
   - While you could add a ref to the child component, this is not an ideal solution, as you would only get a component instance rather than a DOM node. 
     - Additionally, this wouldn’t work with function components.
   - We recommend to use ref forwarding for these cases. 
-    - Ref forwarding lets components opt into exposing any child 
-  component’s ref as their own. 
+    - **Ref forwarding lets components opt into exposing any child component’s ref as their own**. 
   - If you need more flexibility than provided by ref forwarding, you can use this alternative approach and explicitly pass a ref as a differently named prop.
     - https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509
-  - When possible, we advise against exposing DOM nodes
-    - but it can be a useful escape hatch. 
-    - Note that this approach requires you to add some code to the child component. 
-    - If you have absolutely no control over the child component implementation, your last option is to use `findDOMNode()`, but it is discouraged and deprecated in StrictMode.
+- When possible, we advise against exposing DOM nodes
+  - but it can be a useful escape hatch. 
+  - Note that this approach requires you to add some code to the child component. 
+  - If you have absolutely no control over the child component implementation, your last option is to use `findDOMNode()`, but it is discouraged and deprecated in StrictMode.
 - React also supports another way to set refs called **callback refs**, which gives more fine-grain control over when refs are set and unset.
 - Instead of passing a ref attribute created by createRef(), you pass a function.
-  - The function receives the React component instance or HTML DOM element as its argument, which can be stored and accessed elsewhere.
+  - **The function receives the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
 - You can pass callback refs between components like you can with object refs that were created with React.createRef().
 ```
 function CustomTextInput(props) {
@@ -382,7 +388,7 @@ const ref = React.createRef();
 <FancyButton ref={ref}>Click me!</FancyButton>;
 ```
 - In the example, FancyButton uses React.forwardRef to obtain the ref passed to it, and then forward it to the DOM button that it renders
-  - This way, components using FancyButton can get a ref to the underlying button DOM node and access it if necessary—just like if they used a DOM button directly.
+  - This way, **components using FancyButton can get a ref to the underlying button DOM node** and access it if necessary—just like if they used a DOM button directly.
   - When the ref is attached, `ref.current` will point to the `<button>` DOM node.
 - The second ref argument only exists when you define a component with React.forwardRef call. 
 - Regular function or class components don’t receive the ref argument, and `ref` is not available in `props` either.
@@ -412,23 +418,23 @@ export default logProps(FancyButton);
 
 ##  Uncontrolled Components
 - In a controlled component, form data is handled by a React component. 
-- The alternative is uncontrolled components, where form data is handled by the DOM itself.
+- The alternative is uncontrolled components, where **form data is handled by the DOM itself**.
 - In most cases, we recommend using controlled components to implement forms. 
 - To write an uncontrolled component, instead of writing an event handler for every state update, you can use a `ref` to get form values from the DOM.
 - Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components.
 - With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled.
   - To handle this case, you can specify a `defaultValue` attribute instead of value
--In React, an `<input type="file" />` is always an uncontrolled component because its value can only be set by a user, and not programmatically.
+- **In React, an `<input type="file" />` is always an uncontrolled component**
+  - because its value can only be set by a user, and not programmatically.
   - You should use the File API to interact with the files. 
   - `this.fileInput.current.files[0].name`
 
-
 ## Higher-Order Components
-- A higher-order component (HOC) is an advanced technique in React for reusing component logic
-- A higher-order component is a function that takes a component and returns a new component.
-- `const EnhancedComponent = higherOrderComponent(WrappedComponent);`
+- A higher-order component(HOC) is an advanced technique in React for reusing component logic
+- **A higher-order component is a function that takes a component and returns a new component**.
+- `const EnhancedComponent = higherOrderComponent(WrappedComponent);`  
 - Note that a HOC doesn’t modify the input component, nor does it use inheritance to copy its behavior. 
-- Rather, a HOC composes the original component by wrapping it in a container component. 
+- Rather, a *HOC composes the original component by wrapping it in a container component*. 
 - A HOC is a pure function with zero side-effects.
 - The wrapped component receives all the props of the container, along with new props
 - The HOC isn’t concerned with how or why the data is used, and the wrapped component isn’t concerned with where the data came from.
@@ -441,17 +447,19 @@ export default logProps(FancyButton);
   - More crucially, if you apply another HOC to EnhancedComponent that also mutates componentDidUpdate, the first HOC’s functionality will be overridden! 
   - This HOC also won’t work with function components, which do not have lifecycle methods.
 - Instead of mutation, HOCs should use composition, by wrapping the input component in a container component
-- It works equally well with class and function components. And because it’s a pure function, it’s composable with other HOCs, or even with itself.
+- It works equally well with class and function components. 
+  - And because it’s a pure function, it’s composable with other HOCs, or even with itself.
 - You may have noticed similarities between HOCs and a pattern called container components. 
   - Container components are part of a strategy of separating responsibility between high-level and low-level concerns. 
   - Containers manage things like subscriptions and state, and pass props to components that handle things like rendering UI. 
   - HOCs use containers as part of their implementation. 
-  - You can think of HOCs as parameterized container component definitions.
+  - You can *think of HOCs as parameterized container component definitions*.
 - HOCs can add features to a component. 
   - They shouldn’t drastically alter its contract. 
   - It’s expected that the component returned from a HOC has a similar interface to the wrapped component.
-- HOCs should pass through props that are unrelated to its specific concern. Most HOCs contain a render method that looks something like this:
-```
+- HOCs should pass through props that are unrelated to its specific concern. 
+- Most HOCs contain a render method that looks something like this:
+```js
 render() {
   // Filter out extra props that are specific to this HOC and shouldn't be passed through
   const { extraProp, ...passThroughProps } = this.props;
@@ -469,8 +477,8 @@ render() {
 }
 ```
 - Not all HOCs look the same. Sometimes they accept only a single argument, the wrapped component.
-- Usually, HOCs accept additional arguments.
-```
+- Usually, HOCs accept additional arguments. The most common signature for HOCs looks like this:  
+```js
 // React Redux's `connect`
 const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
 
@@ -479,8 +487,13 @@ const enhance = connect(commentListSelector, commentListActions);
 // The returned function is a HOC, which returns a component that is connected to the Redux store
 const ConnectedComment = enhance(CommentList);
 ```
-- In other words, connect is a higher-order function that returns a higher-order component!
-```
+- In other words, **`connect` is a higher-order function that returns a higher-order component**!
+  - This form may seem confusing or unnecessary, but it has a useful property. 
+  - Single-argument HOCs like the one returned by the `connect` function have the signature `Component => Component`. 
+  - Functions whose output type is the same as its input type are really easy to compose together.
+  - This same property also allows `connect` and other enhancer-style HOCs to be used as decorators, an experimental JavaScript proposal  
+
+```js
 // Instead of doing this...
 const EnhancedComponent = withRouter(connect(commentSelector)(WrappedComponent))
 
@@ -496,7 +509,7 @@ const EnhancedComponent = enhance(WrappedComponent)
 - The `compose` utility function is provided by many third-party libraries including lodash (as lodash.flowRight), Redux, and Ramda
 - The container components created by HOCs show up in the React Developer Tools like any other component. 
   - The most common technique is to wrap the display name of the wrapped component.   
-```
+```js
 function withSubscription(WrappedComponent) {
   class WithSubscription extends React.Component {/* ... */}
   WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`;
@@ -508,17 +521,18 @@ function getDisplayName(WrappedComponent) {
 }
 ```
 - Don’t Use HOCs Inside the render Method
-- React’s diffing algorithm (called reconciliation) uses component identity to determine whether it should update the existing subtree or throw it away and mount a new one. 
+  - React’s diffing algorithm (called reconciliation) uses component identity to determine whether it should update the existing subtree or throw it away and mount a new one. 
   - If the component returned from `render` is identical (===) to the component from the previous render, React recursively updates the subtree by diffing it with the new one. 
   - If they’re not equal, the previous subtree is unmounted completely.
-- It matters for HOCs because it means you can’t apply a HOC to a component within the render method of a component
+  - It matters for HOCs because it means you can’t apply a HOC to a component within the render method of a component
   - The problem here isn’t just about performance — remounting a component causes the state of that component and all of its children to be lost.
-- Instead, apply HOCs outside the component definition so that the resulting component is created only once. 
+- Instead, **apply HOCs outside the component definition** so that the resulting component is created only once. 
   - Then, its identity will be consistent across renders. This is usually what you want, anyway.
   - In those rare cases where you need to apply a HOC dynamically, you can also do it inside a component’s lifecycle methods or its constructor.
 - When you apply a HOC to a component, though, the original component is wrapped with a container component. 
   - That means the new component does not have any of the static methods of the original component.
   - To solve this, you could copy the methods onto the container before returning it manually
+  - You can use `hoist-non-react-statics` to automatically copy all non-React static methods
   - Another possible solution is to export the static method separately from the component itself
 - If you add a ref to an element whose component is the result of a HOC, the ref refers to an instance of the outermost container component, not the wrapped component.
   - The solution for this problem is to use the `React.forwardRef`
@@ -543,48 +557,45 @@ function getDisplayName(WrappedComponent) {
 
 ## Render Props
 - render prop refers to a technique for sharing code between React components using a prop whose value is a function.
-- A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.   
+  - function as prop
+- A component with a **render prop takes a function that returns a React element and calls it instead of implementing its own render logic**.   
 ```
 <DataProvider render={data => (
   <h1>Hello {data.target}</h1>
 )}/>
 ```
-- Use Render Props for Cross-Cutting Concerns
-- you can implement most higher-order components (HOC) using a regular component with a render prop. 
-- Using Props  name Other Than  *render*     
-    - you don’t have to use a prop named render to use this pattern
-    - any prop that is a function that a component uses to know what to render is technically a "render prop"   
-```
-<Mouse children={mouse => (
-  <p>The mouse position is {mouse.x}, {mouse.y}</p>
-)}/>
-```
-等价于   
-```
-<Mouse>
-  {mouse => (
-    <p>The mouse position is {mouse.x}, {mouse.y}</p>
-  )}
-</Mouse>
-```   
-- render prop会抵消使用`React.PureComponent`带来的优势
-    -  each time `<MouseTracker>` renders, it generates a new function as the value of the `<Mouse render>` prop
-  	- because the shallow prop comparison will always return false for new props, and each render in this case will generate a new value for the render prop.
-    - define the prop as an instance method可以避免
-    - 也可以直接继承React.Component
-
-
+- Components are the primary unit of code reuse in React
+  - but it’s not always obvious how to share the state or behavior that one component encapsulates to other components that need that same state.
+  - For example, A component tracks the mouse position in a web app
+  - If another component needs to know about the cursor position, can we encapsulate that behavior so that we can easily share it with that component?
+- a render prop is a function prop that a component uses to know what to render.
+- One interesting thing to note about render props is that you can implement most higher-order components (HOC) using a regular component with a render prop.
+- In fact, any prop that is a function that a component uses to know what to render is technically a “render prop”
+  - Although the examples above use `render`, we could just as easily use the `children` prop!
+  - And remember, the children prop doesn’t actually need to be named in the list of “attributes” in your JSX element. 
+  - Instead, you can put it directly inside the element!
+- Using a render prop can negate the advantage that comes from using `React.PureComponent` if you create the function inside a `render` method. 
+  - This is because the shallow prop comparison will always return false for new props
+  - and each `render` in this case will generate a new value for the render prop.
+- To get around this problem, you can sometimes define the prop as an instance method
+- In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state), `<Mouse>` should extends `React.Component` instead.
 
 ## Portals
 - Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
-	- `ReactDOM.createPortal(child, container)`
-	- child is any renderable React child, such as an element, string, or fragment
-	- container is a DOM element
+- `ReactDOM.createPortal(child, container)`
+	- `child` is any renderable React child, such as an element, string, or fragment
+	- `container` is a DOM element
 - Normally, when you return an element from a component's render method, it's mounted into the DOM as a child of the nearest parent node
-- A typical use case for portals is when a parent component has an overflow: hidden or z-index style, but you need the child to visually break outof its container. 
+- A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually break outof its container. 
 	- For example, dialogs, hovercards, and tooltips.
-- Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. Features like context work exactly the same
+  - When working with portals, remember that managing keyboard focus becomes very important.
+- Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. 
+  - Features like context work exactly the same regardless of whether the child is a portal, as the portal still exists in the React tree regardless of position in the DOM tree.
 - An event fired from inside a portal will propagate to ancestors in the containing React tree, even if those elements are not ancestors in the DOM tree.
+- The **portal element is inserted in the DOM tree after the Modal's children are mounted**
+  - meaning that children will be mounted on a detached DOM node. 
+- If a child component requires to be attached to the DOM tree immediately when mounted, for example to measure a DOM node, or uses 'autoFocus' in a descendant, *add state to Modal* and only render the children when Modal is inserted in the DOM tree.
+- Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals.
 
 ## Optimizing Performance
 - Use the Production Build

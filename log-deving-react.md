@@ -3,15 +3,27 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-24T08:40:31.629Z'
+modified: '2020-06-25T07:05:21.575Z'
 ---
 
 # log-deving-react
 
 ## faq
 
+
 - 使用context作为全局唯一store和redux的区别
   - 
+- How does React know the component is removed from the DOM?
+  - There is no watcher on the actual DOM. 
+  - Everytime the render function of a component gets called, the Virtual DOM gets re-build. 
+  - If a component is no longer necessary, it gets removed from the virtual DOM.
+  - A diffing algorithm identifies those parts of the actual DOM that need to be changed for the actual DOM to be a reflection of the virtual DOM: 
+    - some components will have to be added to the actual DOM (= called mounting)
+    - other components will have to be removed (= unmounting).
+    - This whole process is called *reconciliation*.
+  - It is because of this reconciliation process, that React knows which components are to be removed from the actual DOM. Right before the component is removed, React calls the `componentWillUnmount()` lifecycle hook.
+  - If another script (Javascript or jQuery) causes the removal of a certain component from the actual DOM, React will never notice it and therefore will not call the componentWillUnmount() lifecycle hook.
+  - https://stackoverflow.com/questions/44996941/how-does-react-know-the-component-is-removed-from-the-dom
 - Is it antipattern to use React.cloneElement to extend an element and modify props in child components
   - `React.cloneElement(element,[props],[...children])`
     - 相当于 `<element.type {...element.props} {...props}>{children}</element.type>`

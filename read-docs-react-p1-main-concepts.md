@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p1-main-concepts
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-24T11:38:25.412Z'
+modified: '2020-06-25T06:03:59.932Z'
 ---
 
 # read-docs-react-p1-main-concepts
@@ -116,14 +116,14 @@ modified: '2020-06-24T11:38:25.412Z'
   - Once you create an element, you can’t change its children or attributes. 
   - An element represents the UI at a certain point in time.
   - With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`
-- React DOM compares the element and its children to the previous one, and *only applies the DOM updates necessary* to bring the DOM to the desired state.
+- React DOM compares the element and its children to the previous one, and **only applies the DOM updates necessary** to bring the DOM to the desired state.
 - Even though we create an element describing the whole UI tree on every tick, *only the text node whose contents have changed gets updated* by React DOM
 - In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
 
 ## 4.components & props    
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
   - Conceptually, components are like JavaScript functions. 
-  - They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+  - They **accept arbitrary inputs (called “props”) and return React elements** describing what should appear on the screen.
 - We call such components “function components” because they are literally JavaScript functions.
   - accepts a single props object argument with data and returns a React element. 
 - React elements can represent DOM tags, elements can also represent user-defined components
@@ -142,7 +142,7 @@ modified: '2020-06-24T11:38:25.412Z'
   - but as long as we render `<Clock />` into the same DOM node, only a single instance of the Clock class will be used. 
   - This lets us use additional features such as local state and lifecycle methods.
 - While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
-- Using State Correctly
+- **Using State Correctly**
   - Do Not Modify State Directly
   - State Updates May Be Asynchronous
   - State Updates are Merged
@@ -167,7 +167,8 @@ modified: '2020-06-24T11:38:25.412Z'
 	- setState()会将你提供的对象合并到当前状态，是浅合并
 
 ## 6.handling events      
-- Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+- Handling events with React elements is very similar to handling events on DOM elements. 
+- There are some syntax **differences**:
   - React events are named using camelCase, rather than lowercase.
   - With JSX you pass a function as the event handler, rather than a string.
   - Another difference is that you cannot use `return false` to prevent default behavior in React. 
@@ -180,7 +181,7 @@ modified: '2020-06-24T11:38:25.412Z'
   <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
   <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
   ```
-  - In both cases, the e argument representing the React event will be passed as a second argument after the ID. 
+  - In both cases, the `e` argument representing the React event will be passed as a second argument after the ID. 
   - With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
 - 必须谨慎对待JSX回调函数中的this，类的方法默认不会绑定this，需要在constructor()中绑定`this.handleClick = this.handleClick.bind(this);`
 - 不使用bind()的方式，参考 https://reactjs.org/docs/handling-events.html
@@ -220,7 +221,7 @@ modified: '2020-06-24T11:38:25.412Z'
 - Keys help React identify which items have changed, are added, or are removed. 
   - Keys should be given to the elements inside the array to give the elements a stable identity
   - Keys only make sense in the context of the surrounding array.
-  - A good rule of thumb is that *elements inside the map() call need keys*.
+  - A good rule of thumb is that **elements inside the map() call need keys**.
 - The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. 
   - Most often you would use IDs from your data as keys
   - When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort
@@ -240,7 +241,7 @@ modified: '2020-06-24T11:38:25.412Z'
 
 ## 9.forms   
 - HTML form elements work a little bit differently from other DOM elements in React
-  - because form elements naturally keep some internal state.   
+  - because **form elements naturally keep some internal state**.   
   ```
   <form>
     <label>
@@ -261,7 +262,8 @@ modified: '2020-06-24T11:38:25.412Z'
 - In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the `File` API.
   - Because its value is read-only, it is an **uncontrolled component** in React
 - When you need to handle multiple controlled input elements
-  - you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`
+  - you can add a `name` attribute to each element 
+  - and let the handler function choose what to do based on the value of `event.target.name`
 - It can sometimes be tedious to use controlled components
   - because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. 
   - you might want to check out uncontrolled components, an alternative technique for implementing input forms.
@@ -299,15 +301,16 @@ modified: '2020-06-24T11:38:25.412Z'
 
 ## 10.lifting state up    
 - Often, several components need to reflect the same changing data. 
-  - We *recommend* lifting the shared state up to their closest common ancestor.
-- components independently keep their values in the local state
-  - However, we may want these two inputs to be in sync with each other. 
+  - We recommend **lifting the shared state up to their closest common ancestor**.
+- Components independently keep their values in the local state
+  - However, we may **want these two inputs to be in sync** with each other. 
 - In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. 
   - This is called “lifting state up”. 
   - We will remove the local state from the TemperatureInput and move it into the Calculator instead.
   - It can instruct them both to have values that are consistent with each other.
   - Since the props of both TemperatureInput components are coming from the same parent Calculator component, the two inputs will always be in sync.
-- Just like the DOM `<input>` accepts both a `value` and an `onChange` prop, so can the custom TemperatureInput accept both temperature and onTemperatureChange props from its parent Calculator.
+- Just like the DOM `<input>` accepts both a `value` and an `onChange` prop
+  - so can the custom TemperatureInput accept both temperature and onTemperatureChange props from its parent Calculator.
 - There should be a single “source of truth” for any data that changes in a React application. 
   - Usually, the state is first added to the component that needs it for rendering. 
   - Then, if other components also need it, you can lift it up to their closest common ancestor. 
@@ -320,7 +323,7 @@ modified: '2020-06-24T11:38:25.412Z'
 
 ## 11.composition vs inheritance
 - we recommend using composition instead of inheritance to reuse code between components.
-- Containment 使用组合处理组件间的包含关系
+- **Containment** 使用组合处理组件间的包含关系
 - Some components don’t know their children ahead of time. 
   - This is especially common for components like Sidebar or Dialog that represent generic “boxes”.
   - We recommend that such components use the special `children` prop to pass children elements directly into their output
@@ -328,9 +331,11 @@ modified: '2020-06-24T11:38:25.412Z'
 - Sometimes you might need multiple “holes” in a component. 
   - In such cases you may come up with your own convention instead of using `children` prop
   - React elements are just objects, so you can pass them as props like any other data. 
-  - This approach may remind you of “slots” in other libraries but there are no limitations on what you can pass as props in React.
-- Specialization 使用组合处理组件间的泛化关系
-- In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props  
+  - This approach may remind you of “slots” in other libraries 
+  - but there are no limitations on what you can pass as props in React.
+- **Specialization** 使用组合处理组件间的泛化关系
+- In React, this is also achieved by composition
+  - where a more “specific” component renders a more “generic” one and configures it with props  
 ```
 function WelcomeDialog() {
   return (
@@ -340,9 +345,10 @@ function WelcomeDialog() {
   );
 }
 ```
-- At Facebook, we use React in thousands of components, and we haven’t found any use cases where we would recommend creating component inheritance hierarchies.
+- At Facebook, we use React in thousands of components
+  - and we haven’t found any use cases where we would recommend creating component inheritance hierarchies.
 - Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. 
-- Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+- Remember that **components may accept arbitrary props**, including primitive values, React elements, or functions.
 - If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. 
   - The components may import it and use that function, object, or a class, without extending it.   
 - 有时你可能需要在组件中有多个入口，这种情况下你可以使用自己约定的属性而不是children     
@@ -375,9 +381,9 @@ function WelcomeDialog() {
 - 如果要在组件之间复用UI无关的功能，建议将其提取到单独的JavaScript模块中
 
 ## 12.thinking in react    
-- Start With A Mock
+- **Start With A Mock**
   - Imagine that we already have a JSON API and a mock from our designer.
-- Step 1: Break The UI Into A Component Hierarchy
+- **Step 1: Break The UI Into A Component Hierarchy**
   - The first thing you’ll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. 
   - If you’re working with a designer, they may have already done this, so go talk to them! 
   - Their Photoshop layer names may end up being the names of your React components
@@ -388,7 +394,7 @@ function WelcomeDialog() {
   - Since you’re often displaying a JSON data model to a user, you’ll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. 
     - That’s because UI and data models tend to adhere to the same information architecture. Separate your UI into components, where each component matches one piece of your data model.
   - Components that appear within another component in the mock should appear as a child in the hierarchy
-- Step 2: Build A Static Version in React
+- **Step 2: Build A Static Version in React**
   - The easiest way is to build a version that takes your data model and renders the UI but has no interactivity. 
   - It’s best to decouple these processes because building a static version requires a lot of typing and no thinking, and adding interactivity requires a lot of thinking and not a lot of typing
   - To build a static version of your app that renders your data model, you’ll want to build components that reuse other components and pass data using props. 
@@ -403,7 +409,7 @@ function WelcomeDialog() {
     - If you make a change to your underlying data model and call `ReactDOM.render()` again, the UI will be updated. 
     - You can see how your UI is updated and where to make changes. 
     - React’s one-way data flow (also called one-way binding) keeps everything modular and fast.
-- Step 3: Identify The Minimal (but complete) Representation Of UI State
+- **Step 3: Identify The Minimal (but complete) Representation Of UI State**
   - To make your UI interactive, you need to be able to trigger changes to your underlying data model. 
     - React achieves this with state.
   - To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. 
@@ -413,7 +419,7 @@ function WelcomeDialog() {
     - Is it passed in from a parent via props? If so, it probably isn’t state.
     - Does it remain unchanged over time? If so, it probably isn’t state.
     - Can you compute it based on any other state or props in your component? If so, it isn’t state.
-- Step 4: Identify Where Your State Should Live
+- **Step 4: Identify Where Your State Should Live**
   - we need to identify which component mutates, or owns, this state.
   - It may not be immediately clear which component should own what state.
   - Remember: React is all about one-way data flow down the component hierarchy. 
@@ -423,7 +429,7 @@ function WelcomeDialog() {
     - Either the common owner or another component higher up in the hierarchy should own the state.
     - If you can’t find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common owner component.
     - You can start seeing how your application will behave: set `filterText` to "ball" and refresh your app. You’ll see that the data table is updated correctly.
-- Step 5: Add Inverse Data Flow
+- **Step 5: Add Inverse Data Flow**
   - So far, we’ve built an app that renders correctly as a function of props and state flowing down the hierarchy. 
   - Now it’s time to support data flowing the other way
     - the form components deep in the hierarchy need to update the state in ancestor component FilterableProductTable.
