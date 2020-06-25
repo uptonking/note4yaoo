@@ -2,7 +2,7 @@
 tags: [solution]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-22T09:02:53.824Z'
+modified: '2020-06-25T17:37:59.737Z'
 ---
 
 # ing-solution-noter
@@ -39,6 +39,7 @@ modified: '2020-06-22T09:02:53.824Z'
 - [ ] fix: lgt symbol not rendered properly, e.g.`Pick<Props, "name">`
 - [ ] fix: note file name shouldn't change when cut the most front text
 - [ ] search: hightlight search results on current page
+- [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]` 

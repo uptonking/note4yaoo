@@ -2,15 +2,12 @@
 tags: [docs, react]
 title: read-docs-react-p5-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-23T07:34:45.376Z'
+modified: '2020-06-25T17:58:32.328Z'
 ---
 
 # read-docs-react-p5-hooks
 
-
-### 5. hooks
-
-#### Introducing Hooks
+## Introducing Hooks
 
 - Hooks are an upcoming feature that lets you use state and other React features without writing a class. 
 	- They're currently in React v16.7.0-alpha.    
@@ -57,7 +54,7 @@ function Example() {
 	- We intend for Hooks to cover all existing use cases for classes,
 	- but we will keep supporting class components for the foreseeable future.
 	
-#### Hooks at a Glance
+## Hooks at a Glance
 
 - State Hook
 	- Declaring multiple state variables
@@ -84,22 +81,22 @@ function Example() {
 	- useContext
 	- useReducer
 
-#### Using the State Hook
+## Using the State Hook
 
 
-#### Using the Effect Hook
+## Using the Effect Hook
 
 
-#### Rules of Hooks
+## Rules of Hooks
 
 
-#### Building Your Own Hooks
+## Building Your Own Hooks
 
 
-#### Hooks API Reference
+## Hooks API Reference
 
 
-#### Hooks FAQ
+## Hooks FAQ
 
 - Adoption Strategy
 	- Should I use Hooks, classes, or a mix of both?

@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-25T13:49:41.335Z'
+modified: '2020-06-25T17:44:45.296Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -911,7 +911,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
     - Ignoring this rule can lead to a variety of problems, including memory leaks and invalid application state. 
     - Unfortunately, it can be difficult to detect these problems as they can often be non-deterministic.
 	- Strict mode can’t automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. 
-  - This is done by intentionally **double-invoking the following methods**:  
+  - This is done by intentionally **double-invoking the following methods**:
     - Class component `constructor`, `render`, and `shouldComponentUpdate` methods
     - Class component static `getDerivedStateFromProps` method
     - Function component bodies
@@ -932,29 +932,39 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 	- Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
 	- Server side rendering
 	- Errors thrown in the error boundary itself (rather than its children)
-- A class component becomes an error boundary if it defines either (or both) of the lifecycle methods 
+- A class component becomes an error boundary if it defines either (or both) of the lifecycle methods  
 	- `static getDerivedStateFromError(error)` to render a fallback UI after an error has been thrown.
 	- `componentDidCatch(error, errorInfo)` to log error information.
+  - Then you can use it as a regular component
 - Error boundaries work like a JavaScript `catch {}` block, but for components.
 - Only class components can be error boundaries. 
 - In practice, most of the time you’ll want to declare an error boundary component once and use it throughout your application.
 - Error boundaries only catch errors in the components below them in the tree. 
 - An error boundary can’t catch an error within itself. 
 - If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. 
+  - This, too, is similar to how `catch {}` block works in JavaScript.
 - You may wrap top-level route components to display a “Something went wrong” message to the user, just like server-side frameworks often handle crashes. 
 - You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
 - As of React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree.
+  - We debated this decision, but in our experience it is worse to leave corrupted UI in place than to completely remove it.
+  - It is worse for a payments app to display a wrong amount than to render nothing.
 - We also encourage you to use JS error reporting services (or build your own) so that you can learn about unhandled exceptions as they happen in production, and fix them.
-- 放置一个异常的UI比完全移除它要更糟糕。对于支付类的应用来说，什么都不展示也比显示一堆错误更好。
-- try/catch非常棒，但其仅能在命令式代码（imperative code）下可用
-- 如果需要在事件处理器内部捕获错误，使用普通的 JavaScript try / catch
+- React 16 prints all errors that occurred during rendering to the console in development, even if the application accidentally swallows them. 
+  - In addition to the error message and the JavaScript stack, it also provides component stack traces. 
+  - Component names displayed in the stack traces depend on the `Function.name` property. 
+- `try/catch` is great but it only works for imperative code
+- Error boundaries do not catch errors inside event handlers.
+  - React doesn’t need error boundaries to recover from errors in event handlers. 
+  - Unlike the render method and lifecycle methods, the event handlers don’t happen during rendering. 
+  - So if they throw, React still knows what to display on the screen.
+- If you need to catch an error inside event handler, use the regular JavaScript `try/catch` statement
 
 ## Integrating with Other Libraries
-
 - Integrating with DOM Manipulation Plugins
-	- React is unaware of changes made to the DOM outside of React. It determines updates based on its own internal representation
-	- The easiest way to avoid conflicts is to prevent the React component from updating. You can do this by rendering elements that React has no reason to update, like an empty <div />.
-	- 与jQuery集成示例
+- **React is unaware of changes made to the DOM outside of React**. It determines updates based on its own internal representation, and if the same DOM nodes are manipulated by another library, React gets confused and has no way to recover.
+- The easiest way to avoid conflicts is to prevent the React component from updating. 
+- You can do this by rendering elements that React has no reason to update, like an empty `<div />`.
+- 与jQuery集成示例
 	```
 	class SomePlugin extends React.Component {
 		  componentDidMount() {
@@ -971,10 +981,13 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 		  }
 	}
 	```
-	- 为了防止内存泄漏，请务必在生命周期函数中移除插件挂载的事件监听器
+- To prevent React from touching the DOM after mounting, we will return an empty `<div />` from the render() method.
+- The `<div />` element has no properties or children, so React has no reason to update it, leaving the jQuery plugin free to manage that part of the DOM
+- remember to remove any event listeners the plugin registered in `componentWillUnmount` to prevent memory leaks.
+  - If the plugin does not provide a method for cleanup, you will probably have to provide your own
+- We encourage you to use React components when you can.
 - Integrating with Other View Libraries
-	- Although React is commonly used at startup to load a single root React component into the DOM, 
-	  ReactDOM.render() can also be called multiple times for independent parts of the UI which can be as small as a button, or as large as an app.
+	- Although React is commonly used at startup to load a single root React component into the DOM, `ReactDOM.render()` can also be called multiple times for independent parts of the UI which can be as small as a button, or as large as an app.
 	- Replacing String-Based Rendering with React  
 	```
 	$('#container').html('<button id="btn">Say Hello</button>');
@@ -982,8 +995,11 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 	  alert('Hello!');
 	});
 	```
-	- 对于$el.html(htmlString)：Just rewrite the string based rendering as a React component.
+	- 对于`$el.html(htmlString)`：Just rewrite the string based rendering as a React component.
 	```
+  function Button() {
+    return <button id="btn">Say Hello</button>;
+  }
 	ReactDOM.render(
 	  <Button />,
 	  document.getElementById('container'),
@@ -994,23 +1010,39 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 	  }
 	);
 	```
+- You can have as many such isolated components as you like, and use `ReactDOM.render()` to render them to different DOM containers. 
+  - Gradually, as you convert more of your app to React, you will be able to combine them into larger components, and move some of the `ReactDOM.render()` calls up the hierarchy.
 - Integrating with Model Layers
-	- React components can use a model layer from other frameworks and libraries.
-	- 更推荐使用redux
-
+- While it is generally recommended to use unidirectional data flow such as React state, Flux, or Redux, React components can use a model layer from other frameworks and libraries.
+- You can use React with any model library by subscribing to its changes in the lifecycle methods and, optionally, copying the data into the local React state.
 
 ## Accessibility
 - Web accessibility (also referred to as `a11y`) is the design and creation of websites that can be used by everyone.  
-- WCAG: The Web Content Accessibility Guidelines provides guidelines for creating accessible web sites.
+- WCAG: The Web Content Accessibility Guidelines provides guidelines for creating accessible websites.
 - WAI-ARIA: The Web Accessibility Initiative - Accessible Rich Internet Applications document contains techniques for building fully accessible JavaScript widgets.  
-
-
+- Note that all `aria-*` HTML attributes are fully supported in JSX. Whereas most DOM properties and attributes in React are camelCased, these attributes should be **hyphen-cased** (also known as kebab-case, lisp-case, etc) as they are in plain HTML
+- Every HTML form control, such as `<input>` and `<textarea>`, needs to be labeled accessibly.
+- Although these standard HTML practices can be directly used in React, note that the `for` attribute is written as `htmlFor` in JSX
+- Only ever use CSS that removes this outline, for example by setting `outline: 0`, if you are replacing it with another keyboard focus outline implementation.
+- MDN Web Docs takes a look at this and describes how we can build keyboard-navigable JavaScript widgets.
+- To set focus in React, we can use Refs to DOM elements.
+- Ensure that all functionality exposed through a mouse or pointer event can also be accessed using the keyboard alone. 
+- Depending only on the pointer device will lead to many cases where keyboard users cannot use your application.
+- Other Points for Consideration
+  - Setting the language
+  - Setting the document title
+  - Ensure that all readable text on your website has sufficient color contrast to remain maximally readable by users with low vision
 
 ## Web Components
 - React and Web Components are built to solve different problems. 
 - Web Components provide strong encapsulation for reusable components
 - React provides a declarative library that keeps the DOM in sync with your data.
 - Using Web Components in React
+  - Web Components often expose an imperative API. 
+  - To access the imperative APIs of a Web Component, you will need to use a `ref` to interact with the DOM node directly. 
+  - If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
+  - Events emitted by a Web Component may not properly propagate through a React render tree. 
+  - You will need to manually attach event handlers to handle these events within your React components.
 ```
 class HelloMessage extends React.Component {
   render() {
@@ -1019,6 +1051,7 @@ class HelloMessage extends React.Component {
 }
 ```
 - Using React in your Web Components
+  - This code will not work if you transform classes with Babel.
 ```
 class XSearch extends HTMLElement {
   connectedCallback() {

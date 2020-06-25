@@ -1,16 +1,13 @@
 ---
 tags: [api, docs, react]
-title: read-docs-react-p3-api-test
+title: read-docs-react-p3-api
 created: '2020-06-23T07:30:37.293Z'
-modified: '2020-06-23T07:37:09.944Z'
+modified: '2020-06-25T17:57:38.172Z'
 ---
 
-# read-docs-react-p3-api-test
+# read-docs-react-p3-api
 
-
-### 4. api
-
-#### React API
+## React Top-Level API
 
 - React.Component
 - React.PureComponent
@@ -29,12 +26,12 @@ modified: '2020-06-23T07:37:09.944Z'
 
 - Suspense
 	- Suspense lets components “wait” for something before rendering. 
-		- Today, Suspense only supports one use case: loading components dynamically with React.lazy. 
-		- In the future, it will support other use cases like data fetching.
-	- React.lazy
-	- React.Suspense
+  - Today, Suspense only supports one use case: loading components dynamically with React.lazy. 
+  - In the future, it will support other use cases like data fetching.
+- React.lazy
+- React.Suspense
 
-#### React.Component
+## React.Component
 
 - The Component Lifecycle
 	- Mounting：methods are called in the following order when an instance of a component is being created and inserted into the DOM
@@ -63,7 +60,7 @@ modified: '2020-06-23T07:37:09.944Z'
 	- props
 	- state
 
-#### ReactDOM
+## ReactDOM
 
 - `ReactDOM.render(element, container[, callback])`
 	- Render a React element into the DOM in the supplied container and return a reference to the component (or returns null for stateless components).
@@ -101,7 +98,7 @@ modified: '2020-06-23T07:37:09.944Z'
 - `ReactDOM.createPortal(child, container)`
 	- Portals provide a way to render children into a DOM node that exists outside the hierarchy of the DOM component.
 
-#### ReactDOMServer
+## ReactDOMServer
 
 - ReactDOMServer enables you to render components to static markup.
 	- Typically, it's used on a Node server:
@@ -124,47 +121,47 @@ modified: '2020-06-23T07:37:09.944Z'
 - `ReactDOMServer.renderToStaticNodeStream(element)`
 	- Similar to renderToNodeStream, except this doesn’t create extra DOM attributes that React uses internally
 
-#### DOM Elements
-
+## DOM Elements
 - React implements a browser-independent DOM system for performance and cross-browser compatibility. 
 - In React, all DOM properties and attributes (including event handlers) should be camelCased.
-	- The exception is aria-* and data-* attributes, which should be lowercased. For example, you can keep aria-label as aria-label.
+	- The exception is `aria-*` and `data-*` attributes, which should be lowercased.
+    - For example, you can keep `aria-label` as `aria-label`.
 - There are a number of attributes that work differently between React and HTML:
-	- input-checkbox/radio: checked, defaultChecked
-	- className
-	- dangerouslySetInnerHTML
-		- 不推荐使用，很容易暴露用户，收到xss攻击
-		-  React's replacement for using innerHTML in the browser DOM
-		- 示例
-		```
-		function MyComponent() {
-		  return <div dangerouslySetInnerHTML={ {__html: 'First &middot; Second'} } />;
-		}
-		```
-	- htmlFor
-	- onChange
-		- whenever a form field is changed, this event is fired.
-		-  React relies on this event to handle user input in real time.
-	- selected
-		- selected attribute is supported by `<option>` components.
-	- style
-		- 不推荐直接使用style属性，推荐使用className
-		- 一般用来实现动态样式
-		- React 会自动为某些内联样式的数字属性值附加一个 “px” 后缀
-	- suppressContentEditableWarning
-	- suppressHydrationWarning
-	- value
-		- `<input>` 和 `<textarea>` 组件支持 value 属性，一般用于受控组件
-		- `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+- input-checkbox/radio: checked, defaultChecked
+- className
+- dangerouslySetInnerHTML
+  - 不推荐使用，很容易暴露用户，收到xss攻击
+  -  React's replacement for using innerHTML in the browser DOM
+  - 示例
+  ```
+  function MyComponent() {
+    return <div dangerouslySetInnerHTML={ {__html: 'First &middot; Second'} } />;
+  }
+  ```
+- htmlFor
+- onChange
+  - whenever a form field is changed, this event is fired.
+  -  React relies on this event to handle user input in real time.
+- selected
+  - selected attribute is supported by `<option>` components.
+- style
+  - 不推荐直接使用style属性，推荐使用className
+  - 一般用来实现动态样式
+  - React 会自动为某些内联样式的数字属性值附加一个 “px” 后缀
+- suppressContentEditableWarning
+- suppressHydrationWarning
+- value
+  - `<input>` 和 `<textarea>` 组件支持 value 属性，一般用于受控组件
+  - `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
 - As of React 16, any standard or custom DOM attributes are fully supported.
 - Similarly, all SVG attributes are fully supported:
 
-#### SyntheticEvent
+## SyntheticEvent
 
 - Your event handlers will be passed instances of SyntheticEvent, a cross-browser wrapper around the browser's native event. 
 	- It has the same interface as the browser's native event, including stopPropagation() and preventDefault(), except the events work identically across all browsers.
 - If you find that you need the underlying browser event for some reason, simply use the nativeEvent attribute to get it.
-- 从v0.14起，从事件处理程序return false将不再停止事件冒泡，应该根据需要手动 e.stopPropagation() 或 e.preventDefault() 
+- 从v0.14起，从事件处理程序`return false`将不再停止事件冒泡，应该根据需要手动 `e.stopPropagation()` 或 `e.preventDefault()` 
 - SyntheticEvent is pooled.
 	- This means that the SyntheticEvent object will be reused and all properties will be nullified after the event callback has been invoked.
 	-  you cannot access the event in an asynchronous way.
@@ -189,7 +186,7 @@ modified: '2020-06-23T07:37:09.944Z'
 	- Transition Events
 	- Other Events
 
-#### Test Utilities
+## Test Utilities
 
 - `import ReactTestUtils from 'react-dom/test-utils';`
 - jest是Facebook发布的js测试工具
@@ -213,7 +210,7 @@ modified: '2020-06-23T07:37:09.944Z'
 - findRenderedDOMComponentWithTag()
 - findRenderedComponentWithType()
 
-#### Shallow Renderer
+## Shallow Renderer
 
 - 组件
 ```
@@ -251,7 +248,7 @@ expect(result.props.children).toEqual([
 - `shallowRenderer.getRenderOutput()`
 	- get the shallowly rendered output.
 
-#### Test Renderer
+## Test Renderer
 
 - `import TestRenderer from 'react-test-renderer';`
 - This package provides a React renderer that can be used to render React components to pure JavaScript objects,
@@ -259,12 +256,12 @@ expect(result.props.children).toEqual([
 -  this package makes it easy to grab a snapshot of the platform view hierarchy (similar to a DOM tree) rendered by a React DOM or React Native component 
 	- without using a browser or jsdom.
 
-#### JavaScript Environment Requirements
+## JavaScript Environment Requirements
 
 - React 16 depends on the collection types Map and Set.
 - React also depends on requestAnimationFrame (even in test environments).
 
-#### Glossary of React Terms
+## Glossary of React Terms
 
 - Single-page Application
 	- 所有的交互行为不会导致页面重新加载
@@ -304,8 +301,7 @@ expect(result.props.children).toEqual([
 	- ref is an attribute that you can attach to any component.
 	- 不要过度使用 Refs。如果你发现自己经常在应用程序中使用refs来“搞事情”，请考虑使用状态提升。
 - Reconciliation
-	- When a component's props or state change, 
-	  React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. 
-	  When they are not equal, React will update the DOM.
-	  This process is called “reconciliation”.
+	- When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. 
+	- When they are not equal, React will update the DOM.
+	- This process is called “reconciliation”.
   
