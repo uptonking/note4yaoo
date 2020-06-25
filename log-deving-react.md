@@ -3,14 +3,17 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-25T07:05:21.575Z'
+modified: '2020-06-25T12:33:23.042Z'
 ---
 
 # log-deving-react
 
 ## faq
 
-
+- react code splitting
+  - Dynamic Imports
+- 父子组件的挂载顺序、生命周期顺序、DOM生成顺序
+  - 
 - 使用context作为全局唯一store和redux的区别
   - 
 - How does React know the component is removed from the DOM?

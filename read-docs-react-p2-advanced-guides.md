@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-25T07:06:25.752Z'
+modified: '2020-06-25T13:49:41.335Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -418,7 +418,7 @@ export default logProps(FancyButton);
 
 ##  Uncontrolled Components
 - In a controlled component, form data is handled by a React component. 
-- The alternative is uncontrolled components, where **form data is handled by the DOM itself**.
+- The alternative is **uncontrolled components, where form data is handled by the DOM itself**.
 - In most cases, we recommend using controlled components to implement forms. 
 - To write an uncontrolled component, instead of writing an event handler for every state update, you can use a `ref` to get form values from the DOM.
 - Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components.
@@ -601,53 +601,164 @@ function getDisplayName(WrappedComponent) {
 - Use the Production Build
 - Profiling Components with the Chrome Performance Tab: 使用Chrome性能分析工具分析组件性能
 	- 先暂停React DevTools扩展，再打开Chrome DevTools Performance并点击Record，在User Timing标签下，React事件将会分组列出
-- Profiling Components with the React DevTools Profiler
+- Profiling Components with the Chrome Performance Tab
+- In the development mode, you can visualize how components mount, update, and unmount, using the performance tools in supported browsers. 
+- To do this in Chrome:
+  - Temporarily disable all Chrome extensions, especially React DevTools. They can significantly skew the results!
+  - Make sure you’re running the application in the development mode.
+  - Open the Chrome DevTools Performance tab and press Record.
+  - Perform the actions you want to profile. Don’t record more than 20 seconds or Chrome might hang.
+  Stop recording.
+  - React events will be grouped under the User Timing label.
+- **Profiling Components with the DevTools Profiler**
+- react-dom 16.5+ and react-native 0.57+ provide enhanced profiling capabilities in DEV mode with the React DevTools Profiler.
+- The “Profiler” panel will be empty initially. Click the record button to start profiling
+- Browsing commits
+  - React does work in two phases
+  - The **render phase determines what changes need to be made to e.g. the DOM**. 
+    - During this phase, React calls `render` and then compares the result to the previous render.
+  - The **commit phase is when React applies any changes**. 
+    - In the case of React DOM, this is when React inserts, updates, and removes DOM nodes.
+    - React also calls lifecycles like `componentDidMount` and `componentDidUpdate` during this phase.
+  - The DevTools profiler groups performance info by commit. 
+- Filtering commits
+  - The longer you profile, the more times your application will render. 
+  - In some cases you may end up with too many commits to easily process. 
+  - The profiler offers a filtering mechanism to help with this. 
+  - Use it to specify a threshold and the profiler will hide all commits that were faster than that value.
+- The flame chart view represents the state of your application for a particular commit. 
+  - Each bar in the chart represents a React component (e.g. App, Nav). 
+  - The size and color of the bar represents how long it took to render the component and its children.
+- The ranked chart view represents a single commit. 
+  - Each bar in the chart represents a React component (e.g. App, Nav). 
+  - The chart is ordered so that the components which took the longest to render are at the top.
+  - A component’s render time includes the time spent rendering its children
+    - so the components which took the longest to render are generally near the top of the tree.
+- The component chart provides this information in the form of a bar chart
+  - to see how many times a particular component rendered while you were profiling. 
+  - Each bar in the chart represents a time when the component rendered. 
+- React recently added another experimental API for tracing the cause of an update. 
+  - “Interactions” traced with this API will also be shown in the profiler
+  - `import { unstable_trace as trace } from "scheduler/tracing"`
+  - https://gist.github.com/bvaughn/8de925562903afd2e7a12554adcdda16
 - Virtualize Long Lists
 	- If your application renders long lists of data (hundreds or thousands of rows), we recommended using a technique known as “windowing”.
 	- This technique only renders a small subset of your rows at any given time, and can dramatically reduce the time it takes to re-render the components as well as the number of DOM nodes created.
-	- react-window and react-virtualized are popular windowing libraries. They provide several reusable components for displaying lists, grids, and tabular data.
+	- `react-window` and `react-virtualized` are popular windowing libraries. They provide several reusable components for displaying lists, grids, and tabular data.
 - Avoid Reconciliation
+  - React builds and maintains an internal representation of the rendered UI. 
+    - It includes the React elements you return from your components. 
+    - This representation lets React avoid creating DOM nodes and accessing existing ones beyond necessity, as that can be slower than operations on JavaScript objects. 
+    - Sometimes it is referred to as a *virtual DOM*
 	- When a component’s props or state change, React decides whether an actual DOM update is necessary 
-	  by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM.
-	- shouldComponentUpdate() is triggered before the re-rendering process starts. The default implementation of this function returns true
-	- 示例：when we’re entering a second todo, the first todo also flashes on the screen on every keystroke.
-	- In most cases, instead of writing shouldComponentUpdate() by hand, you can inherit from React.PureComponent. 
-	  It is equivalent to implementing shouldComponentUpdate() with a shallow comparison of current and previous props and state.
+	  by comparing the newly returned element with the previously rendered one. 
+      - When they are not equal, React will update the DOM.
+	- `shouldComponentUpdate()` is triggered before the re-rendering process starts.
+    - The default implementation of this function returns `true`, leaving React to perform the update
+    - If you know that in some situations your component doesn’t need to update, you can return `false` from shouldComponentUpdate instead, to skip the whole rendering process, including calling render() on this component and below.
+  - In most cases, instead of writing shouldComponentUpdate() by hand, you can inherit from `React.PureComponent`. 
+    - It is equivalent to implementing shouldComponentUpdate() with a shallow comparison of current and previous props and state.
 - shouldComponentUpdate原理示意图
-- Using Immutable Data Structures
- 	- Immutable.js 通过结构共享实现(Structural Sharing)地不可变的(Immutable)、持久的(Persistent)集合
- 		- Immutable: once created, a collection cannot be altered at another point in time.
- 		- Persistent: new collections can be created from a previous collection and a mutation such as set. The original collection is still valid after the new collection is created.
- 		- Structural Sharing: new collections are created using as much of the same structure as the original collection as possible, reducing copying to a minimum to improve performance.
-	- 不可变数据提供了一种更简单的方式来追踪对象的改变，这正是实现 shouldComponentUpdate 所需要的
-	
-## Profiler
-- 
-- 
-- 
-- 
--
-- 
-- 
-- 
-- 
 
+## Profiler
+- Profiler measures how often a React application renders and what the “cost” of rendering is. 
+  - Its purpose is to help identify parts of an application that are slow and may benefit from optimizations such as memoization.
+- A `Profiler` Component can be added anywhere in a React tree to measure the cost of rendering that part of the tree. 
+  - It requires two props: an `id` (string) and an `onRender` callback function which React calls any time a component within the profiled tree “commits” an update.
+- Multiple Profiler components can be used to measure different parts of an application
+- Profiler components can also be nested to measure different components within the same subtree
+- onRender Callback receives parameters describing what was rendered and how long it took.
 
 ## Reconciliation 协调
 - https://reactjs.org/docs/reconciliation.html  
-- 
-- 
-- 
--
-- 
-- 
-- 
-- 
-- When you use React, at a single point in time you can think of the render() function as creating a tree of React elements. 
-On the next state or props update, that render() function will return a different tree of React elements. 
-React then needs to figure out how to efficiently update the UI to match the most recent tree.
+- When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. 
+- On the next state or props update, that `render()` function will return a different tree of React elements. 
+- React then needs to figure out how to efficiently update the UI to match the most recent tree.
+- There are some generic solutions to this algorithmic problem of generating the minimum number of operations to transform one tree into another. 
+- However, the state of the art algorithms have a complexity in the order of O(n3) where n is the number of elements in the tree.
+-  React implements a heuristic O(n) algorithm based on **two assumptions**:
+  - Two elements of different types will produce different trees.
+  - The developer can hint at which child elements may be stable across different renders with a `key` prop.
+- In practice, these assumptions are valid for almost all practical use cases.
+- The **Diffing Algorithm**
+- When diffing two trees, React first compares the two root elements.
+- **Elements Of Different Types**  
+- Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. 
+  - When tearing down a tree, old DOM nodes are destroyed. 
+  - Component instances receive `componentWillUnmount()`. 
+  - When building up a new tree, new DOM nodes are inserted into the DOM. 
+  - Component instances receive `componentWillMount()` and then `componentDidMount()`. 
+  - Any state associated with the old tree is lost.
+  - Any components below the root will also get unmounted and have their state destroyed. 
+- **DOM Elements Of The Same Type**  
+- When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes
+- After handling the DOM node, React then recurses on the children.
+- **Component Elements Of The Same Type**
+- When a component updates, the instance stays the same, so that state is maintained across renders. 
+- React updates the props of the underlying component instance to match the new element, and calls `componentWillReceiveProps()` and `componentWillUpdate()` on the underlying instance.
+- Next, the `render()` method is called and the diff algorithm recurses on the previous result and the new result.
+- **Recursing On Children**  
+- By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference.
+  - React will match the two `<li>first</li>` trees, match the two `<li>second</li>` trees, and then insert the `<li>third</li>` tree  
+  ```
+  <ul>
+    <li>first</li>
+    <li>second</li>
+  </ul>
+
+  <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+  </ul>
+  ```
+  - React will mutate every child instead of realizing it can keep the `<li>Duke</li>` and `<li>Villanova</li>` subtrees intact. This inefficiency can be a problem.
+  ```
+  <ul>
+    <li>Duke</li>
+    <li>Villanova</li>
+  </ul>
+
+  <ul>
+    <li>Connecticut</li>
+    <li>Duke</li>
+    <li>Villanova</li>
+  </ul>
+  ```
+- In order to solve this issue, React supports a `key` attribute. 
+- When children have keys, React uses the `key` to match children in the original tree with children in the subsequent tree. 
+- Now React knows that the element with key '2014' is the new one, and the elements with the keys '2015' and '2016' have just moved.
+```
+  <ul>
+    <li key="2015">Duke</li>
+    <li key="2016">Villanova</li>
+  </ul>
+
+  <ul>
+    <li key="2014">Connecticut</li>
+    <li key="2015">Duke</li>
+    <li key="2016">Villanova</li>
+  </ul>
+```
+- Reorders can also cause issues with component state when indexes are used as keys. 
+  - Component instances are updated and reused based on their key. 
+  - If the key is an index, moving an item changes it. 
+  - As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
+- It is important to remember that the reconciliation algorithm is an implementation detail. 
+  - React could rerender the whole app on every action; the end result would be the same. 
+  - Just to be clear, rerender in this context means calling `render` for all components
+  - it doesn’t mean React will unmount and remount them. 
+  - It will only apply the differences following the rules stated in the previous sections.
+- In the current implementation, you can express the fact that a subtree has been moved amongst its siblings, but you cannot tell that it has moved somewhere else. The algorithm will rerender that full subtree.
+- Because React relies on heuristics, if the assumptions behind them are not met, performance will suffer.
+  - The algorithm will not try to match subtrees of different component types. 
+    - If you see yourself alternating between two component types with very similar output, you may want to make it the same type. 
+    - In practice, we haven’t found this to be an issue.
+  - Keys should be stable, predictable, and unique. 
+    - Unstable keys (like those produced by Math.random()) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+
 - 将一棵树转换为另一棵树的最小操作数算法问题的通用方案，树中元素个数为n，最先进的算法 的时间复杂度为O(n3) 
-- React基于两点假设，实现了一个启发的O(n)算法：
+- React基于两点假设，实现了一个启发式的O(n)算法：
 	- 两个不同类型的元素将产生不同的树
 	- 通过渲染器附带key属性，开发者可以示意哪些子元素可能是稳定的
 - 对比算法
@@ -668,24 +779,20 @@ React then needs to figure out how to efficiently update the UI to match the mos
 		当索引用作key时，组件状态在重新排序时也会有问题。
 		组件实例基于key进行更新和重用。如果key是索引，则item的顺序变化会改变key值。
 		这将导致非受控组件的状态可能会以意想不到的方式混淆和更新。
-		```
-		- In the current implementation, you can express the fact that a subtree has been moved amongst its siblings,
-		but you cannot tell that it has moved somewhere else. The algorithm will rerender that full subtree.
-- react依赖于启发式算法，两个前提条件应该得到满足，若不满足会有性能问题
-	- The algorithm will not try to match subtrees of different component types.
-	  If you see yourself alternating between two component types with very similar output, you may want to make it the same type. 
-	  In practice, we haven't found this to be an issue.
-	- Keys should be stable, predictable, and unique. Unstable keys (like those produced by Math.random()) will cause many component instances
-	  and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
-
-
 
 ## Code-Splitting
--  Code-Splitting is a feature supported by bundlers like Webpack and Browserify (via factor-bundle) 
-    which can create multiple bundles that can be dynamically loaded at runtime.
+- Most React apps will have their files “bundled” using tools like Webpack, Rollup. 
+  - Bundling is the process of following imported files and merging them into a single file: a “bundle”.
+  - This bundle can then be included on a webpage to load an entire app at once.
+- Bundling is great, but as your app grows, your bundle will grow too. 
+  - Especially if you are including large third-party libraries. 
+  - To avoid winding up with a large bundle, it’s good to get ahead of the problem and start “splitting” your bundle
+- Code-Splitting is a feature supported by bundlers like Webpack and Browserify (via factor-bundle) which can create multiple bundles that can be dynamically loaded at runtime.
 - Code-splitting your app can help you "lazy-load" just the things that are currently needed by the user
-	- 虽然没有减少应用程序中的代码总量，但是已经避免了加载用户可能不需要的代码，并且减少了初始加载过程中的代码量
-- 动态import: The best way to introduce code-splitting into your app is through the dynamic import() syntax.
+	- While you haven’t reduced the overall amount of code in your app, you’ve avoided loading code that the user may never need, and reduced the amount of code needed during the initial load.
+- The **best way to introduce code-splitting** into your app is through the dynamic `import()` syntax.
+  - When Webpack comes across this syntax, it automatically starts code-splitting your app. 
+  - you’ll need to make sure that Babel can parse the dynamic import syntax but is not transforming it. 
 ```
 import { add } from './math';
 console.log(add(16, 26));
@@ -697,6 +804,9 @@ import("./math").then(math => {
 });
 ```
 - `React.lazy()`  function lets you render a dynamic import as a regular component.   
+  - React.lazy takes a function that must call a dynamic import().
+  - It returns a Promise which resolves to a module with a default export containing a React component.
+  - This will automatically load the bundle containing the OtherComponent when this component is first rendered.
 ```
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 function MyComponent() {
@@ -709,47 +819,86 @@ function MyComponent() {
 	  );
 }
 ```
-- React.lazy takes a function that must call a dynamic import(). 
-    This must return a Promise which resolves to a module with a default export containing a React component.
-- Suspense：如果在 MyComponent 渲染时尚未加载包含 OtherComponent 的模块，我们必须在等待加载时显示一些后备内容，如加载指示符，这是使用Suspense组件完成的
-- 可以将 Suspense 组件放在惰性组件上方的任何位置，甚至可以使用一个 Suspense 组件包装多个惰性组件
-- React.lazy() 和 Suspense 尚不可用于服务器端渲染。
-    如果要在服务器渲染的应用程序中进行代码拆分，我们建议使用 Loadable Components 。
-- Once you've created your Error Boundary, you can use it anywhere above your lazy components to display an error state when there's an error.
-- 基于路由的代码分割
-	- 可以使用React Router之类的库和React.lazy()一起 基于路由来拆分你的应用程序
-	- React.lazy()目前仅支持默认导出， 如果要导入的模块使用命名导出，则可以创建一个中间模块，将其重新导出为默认模块
+- The lazy component should then be rendered inside a `Suspense` component, which allows us to show some fallback content (such as a loading indicator) while we’re waiting for the lazy component to load.
+  - The `fallback` prop accepts any React elements that you want to render while waiting for the component to load. 
+  - You can place the `Suspense` component anywhere above the lazy component. 
+  - You can even wrap multiple lazy components with a single `Suspense` component.
+- Deciding where in your app to introduce code splitting can be a bit tricky. 
+- You want to make sure you choose places that will split bundles evenly, but won’t disrupt the user experience.
+- A good place to start is with routes. 
+- You can setup route-based code splitting into your app using libraries like React Router with React.lazy
+- React.lazy currently *only supports default exports*. 
+  - If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default.    
+```
+// ManyComponents.js
+export const MyComponent = /* ... */;
+export const MyUnusedComponent = /* ... */;
 
+// MyComponent.js
+export { MyComponent as default } from "./ManyComponents.js";
+
+// MyApp.js
+import React, { lazy } from 'react';
+const MyComponent = lazy(() => import("./MyComponent.js"));
+```
+- React.lazy和Suspense尚不可用于服务器端渲染
+  - 如果要在服务器渲染的应用程序中进行代码拆分，建议使用Loadable Components
+  - https://github.com/gregberge/loadable-components
 
 ## Static Type Checking
-
-- 对于复杂的代码库，建议使用 Flow 或者 TypeScript 来替代 PropTypes
-- flow
-- typescript
-- reason： 是一门基于 OCaml 的语言，既可以通过 BuckleScript 被同编译为 JavaScript，也支持直接编译为原生的二进制汇编
+- Static type checkers like Flow and TypeScript identify certain types of problems before you even run your code. 
+- They can also improve developer workflow by adding features like auto-completion. 
+- To be able to show errors and hints from other packages, the compiler relies on declaration files.
+  - A declaration file provides all the type information about a library.
+- Bundled - The library bundles its own declaration file. 
+  - To check if a library has bundled types, look for an `index.d.ts` file in the project. 
+  - Some libraries will have it specified in their `package.json` under the `typings` or `types` field.
+- DefinitelyTyped - DefinitelyTyped is a huge repository of declarations for libraries that don’t bundle a declaration file. 
+  - The declarations are crowd-sourced and managed by Microsoft and open source contributors. 
+  - React for example doesn’t bundle its own declaration file. Instead we can get it from DefinitelyTyped. 
+- Local Declarations 
+  - Sometimes the package that you want to use doesn’t bundle declarations nor is it available on DefinitelyTyped. 
+  - In that case, we can have a local declaration file.
+  -  To do this, create a `declarations.d.ts` file in the root of your source directory. 
+- https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+- 对于复杂的代码库，建议使用Flow或者TypeScript来替代PropTypes
+- Reason是一门基于OCaml的语言，既可以通过BuckleScript被编译为JavaScript，也支持直接编译为原生的二进制汇编
 
 ## Strict Mode
-- StrictMode is a tool for highlighting potential problems in an application. 
-- StrictMode不会渲染任何真实的UI
-- 严格模式检查只在开发模式下运行，不会与生产模式冲突
-1. Identifying components with unsafe lifecycles
+- `StrictMode` is a tool for highlighting potential problems in an application. 
+  - Like `Fragment`, `StrictMode` does not render any visible UI. 
+  - It activates additional checks and warnings for its descendants.
+  - Strict mode checks are **run in development mode only**; they do not impact the production build.
+- You can enable strict mode for any part of your application
+- Identifying components with unsafe lifecycles
 	- componentWillMount， componentWillReceiveProps， componentWillUpdate
-2. Warning about legacy string ref API usage
-	- 推荐使用回调函数或React.createRef();
-3. Warning about deprecated findDOMNode usage
-	- 推荐直接将 ref 附加到 DOM 节点上
-4. Detecting unexpected side effects
-	- react在 render 和 commit 两个阶段起作用
-	- render phase determines what changes need to be made to e.g. the DOM. 
-	  During this phase, React calls render and then compares the result to the previous render.
-	- commit phase is when React applies any changes.
-	  (In the case of React DOM, this is when React inserts, updates, and removes DOM nodes.) 
-	  React also calls lifecycles like componentDidMount and componentDidUpdate during this phase.
-	-  commit phase is usually very fast, but rendering can be slow
-	- the upcoming async mode ( not enabled by default yet) breaks the rendering work into pieces, pausing and resuming the work to avoid blocking the browser.
-	- This means that React may invoke render phase lifecycles more than once before committing,
-	  or it may invoke them without committing at all (because of an error or a higher priority interruption).
-	- Render phase lifecycles include the following class component methods:
+- Warning about legacy string ref API usage
+	- object refs by `React.createRef` were largely added as a replacement for string refs
+  - You don’t need to replace callback refs in your components. 
+    - They are slightly more flexible, so they will remain as an advanced feature.
+- Warning about deprecated findDOMNode usage
+	- React used to support `findDOMNode` to search the tree for a DOM node given a class instance. 
+  - Normally you don’t need this because you can attach a `ref` directly to a DOM node.
+  - `findDOMNode` can be used on class components but this was breaking abstraction levels by allowing a parent to demand that certain children was rendered. 
+  - It creates a refactoring hazard where you can’t change the implementation details of a component because a parent might be reaching into its DOM node
+  - `findDOMNode` is a one time read API. 
+    - It only gave you an answer when you asked for it.
+    - If a child component renders a different node, there is no way to handle this change. 
+    - Therefore findDOMNode only worked if components always return a single DOM node that never changes.
+- You can instead make this explicit by passing a ref to your custom component and pass that along to the DOM using ref forwarding.
+- You can also add a wrapper DOM node in your component and attach a ref directly to it.
+- In CSS, the `display: contents` attribute can be used if you don’t want the node to be part of the layout.
+- Detecting legacy context API
+  - The legacy context API is error-prone, and will be removed
+- Detecting unexpected side effects
+	- Conceptually, React does work in two phases
+	- **render phase** determines what changes need to be made to e.g. the DOM. 
+	- **commit phase** is when React applies any changes.
+	- The commit phase is usually very fast, but rendering can be slow. 
+  - For this reason, the upcoming concurrent mode (which is not enabled by default yet) *breaks the rendering work into pieces*, pausing and resuming the work to avoid blocking the browser. 
+  - This means that React may invoke render phase lifecycles more than once before committing
+    - or it may invoke them without committing at all (because of an error or a higher priority interruption)
+  - Render phase lifecycles include the following class component methods:
 		- constructor
 		- componentWillMount
 		- componentWillReceiveProps
@@ -758,30 +907,46 @@ function MyComponent() {
 		- shouldComponentUpdate
 		- render
 		- setState updater functions (the first argument)
-	- 因为渲染阶段的方法可能会调用多次，所以尽量不放在这些方法中包含副作用
+	- Because the above methods might be called more than once, it’s important that they do not contain side-effects. 
+    - Ignoring this rule can lead to a variety of problems, including memory leaks and invalid application state. 
+    - Unfortunately, it can be difficult to detect these problems as they can often be non-deterministic.
 	- Strict mode can’t automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. 
-	  This is done by intentionally double-invoking the following methods:  
-		- constructor, render, setState
-		- 只在开发模式生效，生产模式下生命周期不会被双调用
-5. Detecting legacy context API
+  - This is done by intentionally **double-invoking the following methods**:  
+    - Class component `constructor`, `render`, and `shouldComponentUpdate` methods
+    - Class component static `getDerivedStateFromProps` method
+    - Function component bodies
+    - State updater functions (the first argument to `setState`)
+    - Functions passed to `useState`, `useMemo`, or `useReducer`
+    - This only applies to development mode. Lifecycles will not be double-invoked in production mode.
+  - By intentionally double-invoking methods like the component constructor, strict mode makes patterns like this easier to spot.
+    - 如在constructor中调用非幂等的方法`SharedApplicationState.recordEvent('ExampleComponent');`
+    - instantiating this component multiple times could lead to invalid application state. 
 
 ## Error Boundaries
-- Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. 
+- A JavaScript error in a part of the UI shouldn’t break the whole app. 
+  - To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
+- Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. 
 - Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
-- 错误边界无法捕获以下错误：
+- Error boundaries do not catch errors for:
 	- Event handlers
 	- Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
 	- Server side rendering
 	- Errors thrown in the error boundary itself (rather than its children)
 - A class component becomes an error boundary if it defines either (or both) of the lifecycle methods 
-	- static getDerivedStateFromError() to render a fallback UI after an error has been thrown.
-	- componentDidCatch() to log error information.
+	- `static getDerivedStateFromError(error)` to render a fallback UI after an error has been thrown.
+	- `componentDidCatch(error, errorInfo)` to log error information.
+- Error boundaries work like a JavaScript `catch {}` block, but for components.
 - Only class components can be error boundaries. 
-- 错误边界仅获取其子组件的错误，无法捕获其自身的错误，如果一个错误边界无法渲染错误信息，则错误会向上冒泡至最接近的错误边界，这也类似于 JavaScript 中 catch {} 的工作机制
-- 可以将错误边界包装在最顶层的路由组件并为用户展示一个异常的错误信息，就像服务端框架通常处理崩溃一样，也可以将单独的插件包装在错误边界内部以保护应用不受该组件崩溃的影响
+- In practice, most of the time you’ll want to declare an error boundary component once and use it throughout your application.
+- Error boundaries only catch errors in the components below them in the tree. 
+- An error boundary can’t catch an error within itself. 
+- If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. 
+- You may wrap top-level route components to display a “Something went wrong” message to the user, just like server-side frameworks often handle crashes. 
+- You may also wrap individual widgets in an error boundary to protect them from crashing the rest of the application.
 - As of React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree.
+- We also encourage you to use JS error reporting services (or build your own) so that you can learn about unhandled exceptions as they happen in production, and fix them.
 - 放置一个异常的UI比完全移除它要更糟糕。对于支付类的应用来说，什么都不展示也比显示一堆错误更好。
-- try / catch 非常棒，但其仅能在命令式代码（imperative code）下可用
+- try/catch非常棒，但其仅能在命令式代码（imperative code）下可用
 - 如果需要在事件处理器内部捕获错误，使用普通的 JavaScript try / catch
 
 ## Integrating with Other Libraries

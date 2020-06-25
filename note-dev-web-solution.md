@@ -3,7 +3,7 @@ favorited: true
 tags: [dev/web]
 title: note-dev-web-solution
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-06-22T09:12:08.858Z'
+modified: '2020-06-25T09:35:34.208Z'
 ---
 
 # note-dev-web-solution
@@ -19,12 +19,12 @@ modified: '2020-06-22T09:12:08.858Z'
 
 ## 前端基础框架开发
 - 视图渲染
-- MVC/MVVM
-- VDOM结构
-- DOM更新及操作
-- 生命周期
+  - MVC/MVVM
+  - VDOM结构
+  - DOM更新及操作
+  - 生命周期
 - 状态管理
-- 拆分合并,子树更新
+  - 拆分合并,子树更新
 - 中间件
 - 网络请求
 - 路由跳转
@@ -62,10 +62,10 @@ modified: '2020-06-22T09:12:08.858Z'
   - 基于float
 - 其他
   - 静态资源处理
-      - webpack-loader
+    - webpack-loader
   - 鼠标键盘事件
-      - throttle和debounce
-      - tooltip提示鼠标处内容信息
+    - throttle和debounce
+    - tooltip提示鼠标处内容信息
 
 ## faq
 
@@ -108,10 +108,10 @@ modified: '2020-06-22T09:12:08.858Z'
       - rem基于html的font-size，所有元素都受影响，引入三方库修改成本要尽量低
       - 使用px的组件库，会利用js控制内联style进行适应屏幕
       - ref
-          - https://www.zhihu.com/question/309599529
-          - https://zhuanlan.zhihu.com/p/30413803
-          - https://segmentfault.com/a/1190000014502172
-          - https://github.com/ant-design/ant-design-mobile/wiki/HD
+        - https://www.zhihu.com/question/309599529
+        - https://zhuanlan.zhihu.com/p/30413803
+        - https://segmentfault.com/a/1190000014502172
+        - https://github.com/ant-design/ant-design-mobile/wiki/HD
   - rem的特点是根据根元素按比例计算尺寸
       - 优点是使用rem时，若修改了根元素的字体大小，就可以自动显示相应的尺寸
       - 实现1px的border不精确，计算时常产生小数
@@ -180,15 +180,15 @@ modified: '2020-06-22T09:12:08.858Z'
   - 在拖拽的研发中，复杂的并不是拖拽的实现，而是节点的位置确定与画布的动态扩展
 - 实现方法
   - 基于HTML5的Drag Drop API，如react-dnd
-      - SVG不支持HTML5的Darg Drop API
+    - SVG不支持HTML5的Darg Drop API
   - 通过mousedown -> mousemove -> mouseup实现拖动，如react-draggable
-      - 点击节点时无法触发节点的onClick()，是由于onClick事件可分解为onMouseDown与onMouseUp
-      - 节点的onMouseDown事件使节点上方新渲染出一个dragNode，那么onMouseUp事件自然触发在它上面，造成该节点的onClick未能成功触发
-        - 给dragNode添加pointer-events: none即可解决
+    - 点击节点时无法触发节点的onClick()，是由于onClick事件可分解为onMouseDown与onMouseUp
+    - 节点的onMouseDown事件使节点上方新渲染出一个dragNode，那么onMouseUp事件自然触发在它上面，造成该节点的onClick未能成功触发
+      - 给dragNode添加pointer-events: none即可解决
 - 参考
   - react-draggable
-      - DraggableCore
-      - Draggable
+    - DraggableCore
+    - Draggable
 
 ### resize
 - 缩放使用场景
@@ -199,20 +199,20 @@ modified: '2020-06-22T09:12:08.858Z'
   - resize事件只能加在window对象上，并不能监听具体某个DOM元素
 - 如何监听某个DOM元素的resize事件？
   - window.MutationObserver
-      - 监控到DOM中的改变并且等待一系列改变结束后就会触发回调函数
-      - 它与事件的不同之处在于，它在DOM变化时，会记录每一个DOM的变化（为一个MutationRecord对象），但是到DOM变化结束时触发回调
-      - DOM变化可能是一系列的（比如元素的宽和高同时改变），那么这一系列的变化就会产生一个队列，这个队列会作为参数传递给回调函数
-      - 兼容性好，浏览器几乎都支持
+    - 监控到DOM中的改变并且等待一系列改变结束后就会触发回调函数
+    - 它与事件的不同之处在于，它在DOM变化时，会记录每一个DOM的变化（为一个MutationRecord对象），但是到DOM变化结束时触发回调
+    - DOM变化可能是一系列的（比如元素的宽和高同时改变），那么这一系列的变化就会产生一个队列，这个队列会作为参数传递给回调函数
+    - 兼容性好，浏览器几乎都支持
   - ResizeObserver 
-      - 允许我们观察DOM元素的盒模型大小（宽度、高度）的变化，并做出相应的响应
-      - 兼容性不好，直到Chrome 64才支持，safari不支持
+    - 允许我们观察DOM元素的盒模型大小（宽度、高度）的变化，并做出相应的响应
+    - 兼容性不好，直到Chrome 64才支持，safari不支持
 - 还可以通过scroll来监听resize事件，resize和scroll事件经常相关联
 - 参考
   - https://zhuanlan.zhihu.com/p/24887312
   - https://juejin.im/post/5c26d01a6fb9a049b07d6ce2
   - react-resizable
-      - Resizable
-      - ResizableBox
+    - Resizable
+    - ResizableBox
 
 ### events
 - scroll
@@ -220,9 +220,9 @@ modified: '2020-06-22T09:12:08.858Z'
   - 当元素大于其父级元素，且父级元素允许其滚动的时候，该元素可以进行滚动
 - debounce 函数去抖 操作结束后等一段时间再执行
   - 目标
-      - 持续触发不执行
-      - 触发结束一段时间之后再执行
-      - 或当数值达到最大值时去抖
+    - 持续触发不执行
+    - 触发结束一段时间之后再执行
+    - 或当数值达到最大值时去抖
   - 方法
   ```
   function debounce(func, delay) {
@@ -290,9 +290,9 @@ modified: '2020-06-22T09:12:08.858Z'
 - 使用流程
   - 把应用的根组件包装在DragDropContext中
   - 把可以拖拽的组件包装在DragSource中，或 把可以接受拖拽的组件包装在DropTarget中
-      - 设置 type
-      - 设置 spec，让组件可以响应拖拽事件
-      - 设置 collect，把拖拽过程中需要信息注入组件的 props
+    - 设置 type
+    - 设置 spec，让组件可以响应拖拽事件
+    - 设置 collect，把拖拽过程中需要信息注入组件的 props
 - 参考
   - http://www.ayqy.net/blog/react-dnd/
   - https://scarletsky.github.io/2015/11/17/react-dnd-usage/
@@ -301,69 +301,75 @@ modified: '2020-06-22T09:12:08.858Z'
 
 ## solution-layer
 - 图层顺序
-- background: 背景层，一般在最底层，不单独实现，可通过动画模拟上层组件卸载同时背景层出现
-- content: 内容层，页面主要内容
-- nav: 导航层，内容层之上，一般是主菜单按钮，在用户滑动内容层时可保持位置不动，通常用于承载导航栏等需要固定在页面的元素
-- mask: 蒙板层，用于锁定内容层和导航层操作，一般不单独使用，常配合pop层使用
-- pop: 弹出层，用于弹窗、通知、操作菜单、成功或加载中等状态的Toast、表单报错提示等弹出内容
-- ad: 广告层，一般在最上层
-- 考虑：z-index
+  - background: 背景层，一般在最底层
+    - 不单独实现，可通过动画模拟上层组件边卸载背景层边出现
+  - content: 内容层，页面主要内容
+  - nav: 导航层，内容层之上，一般是主菜单按钮
+    - 长期存在，在用户滑动内容层时可保持位置不动，通常用于承载导航栏等需要固定在页面的元素
+  - quickAction: 快捷菜单、快速输入等次级导航面板
+    - 可长期存在，也可短期存在，支持连续多个操作，如fab
+  - mask: 蒙板层，用于锁定内容层和导航层操作，一般不单独使用，常配合pop层使用
+  - pop: 弹出层
+    - 用于弹窗、通知、操作菜单、成功或加载中等状态的Toast、表单报错提示等弹出内容
+    - 存在时间很短，用完即删
+  - ad: 广告层，一般在最上层
+  - 考虑：z-index
 - 弹出层组件的结构
-- portal将react elements渲染到组件树之外
-- popover提供触发事件管理、弹层定位
+  - portal将react elements渲染到组件树之外
+  - popover提供触发事件管理、弹层定位
 - trigger的位置和大小
-- 点击trigger组件时，会触发弹出组件overlay的开关
-- trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
+  - 点击trigger组件时，会触发弹出组件overlay的开关
+  - trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
 
 ### modal
 - usecase
-- 弹出菜单
-- user guide tour
+  - 弹出菜单
+  - user guide tour
 - modal的位置
-- 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
-- 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
-- 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
+  - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
+  - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
+  - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
 - 支持同时显示多个modal
-- 类似地图上显示多个poi的overlay信息
-- modal下层无mask
-- modal不重叠，若重叠，则先显示的在下层
+  - 类似地图上显示多个poi的overlay信息
+  - modal下层无mask
+  - modal不重叠，若重叠，则先显示的在下层
 - modal的开闭控制，放在props还是state
-- 示例多放在state
-- antd
+  - 示例多放在state
+  - antd
 - modal嵌套后的数据传递
-- 如modal重视form，点击form的field会再弹出modal来选择，点击下层弹层组件，可关闭上一层弹层，点击mask，可关闭所有
-- 弹层组件在react DOM树中的位置跟它们实际的层次以及包含关系是没有必然联系的，如果两个弹层是body下面的两个兄弟节点，但从弹层的使用角度看它们是有层次关系的，并不是并列的
+  - 如modal重视form，点击form的field会再弹出modal来选择，点击下层弹层组件，可关闭上一层弹层，点击mask，可关闭所有
+  - 弹层组件在react DOM树中的位置跟它们实际的层次以及包含关系是没有必然联系的，如果两个弹层是body下面的两个兄弟节点，但从弹层的使用角度看它们是有层次关系的，并不是并列的
 - 弹层的层次关系数据是多叉树的结构
 - 关闭modal是否应该移除该modal原本挂载的目标节点呢
-- 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
-- react-modal(Basic Example)关闭modal后，目标节点保持、不移除
-  - 可以在body元素上动态添加和删除弹窗是否打开的属性
-- react-bootstrap中的modal对目标节点，关闭modal后即移除
+  - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
+  - react-modal(Basic Example)关闭modal后，目标节点保持、不移除
+    - 可以在body元素上动态添加和删除弹窗是否打开的属性
+  - react-bootstrap中的modal对目标节点，关闭modal后即移除
+  - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
+  - 隐藏弹窗时，先执行动画，再unmount弹窗组件
 - modal状态恢复
-- 如关闭弹窗查找信息，再恢复弹窗继续填写
+  - 如关闭弹窗查找信息，再恢复弹窗继续填写
 - modal变成悬浮按钮fab
-- 显示和隐藏的动画
-- 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
-- 隐藏弹窗时，先执行动画，再unmount弹窗组件
+  - 显示和隐藏的动画
 - ref
-- [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
-  - 嵌套modal的结构
-- [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
-  - 进出场动画
-- [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
-  - modal的位置应该放在body下的第一层、传递context到modal
-- [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
-  - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
-- http://limoer.cc/2019/12/19/global-component/
-  - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法，`ReactDOM.render(element, container[, callback])`
-  - the preferred solution is to attach a callback ref to the root element.
-  - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
-- [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
-  - 通过`ReactDOM.render`直接实现`<button onClick={() => alert('1')}>alert</button>`
-  - 在onClick方法内直接关闭modal，通过React.cloneElement传入`{visible: false}`
-  - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
-- [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
-- [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
+  - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
+    - 嵌套modal的结构
+  - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
+    - 进出场动画
+  - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
+    - modal的位置应该放在body下的第一层、传递context到modal
+  - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
+    - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
+  - http://limoer.cc/2019/12/19/global-component/
+    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法，`ReactDOM.render(element, container[, callback])`
+    - the preferred solution is to attach a callback ref to the root element.
+    - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
+  - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
+    - 通过`ReactDOM.render`直接实现`<button onClick={() => alert('1')}>alert</button>`
+    - 在onClick方法内直接关闭modal，通过React.cloneElement传入`{visible: false}`
+    - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
+  - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
+  - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
 
 ### sidebar
 - usecase
@@ -385,11 +391,11 @@ modified: '2020-06-22T09:12:08.858Z'
 - react-layer-stack
   - api
     - Layer: layer definition and controller
-        - props: id, to, use, children()
+      - props: id, to, use, children()
     - LayerToggle: helper to access layer state, N LToggle > 1 Layer
-        - props: for,children()
+      - props: for,children()
     - LayerStackMountPoint: a mount point for layer
-        - props: id,children()
+      - props: id,children()
 - bottom-to-up alternative ways
   - redux
   - react-portal
