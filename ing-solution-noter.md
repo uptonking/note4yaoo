@@ -2,7 +2,7 @@
 tags: [solution]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-25T17:37:59.737Z'
+modified: '2020-06-25T18:08:30.052Z'
 ---
 
 # ing-solution-noter
@@ -42,6 +42,7 @@ modified: '2020-06-25T17:37:59.737Z'
 - [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
+- [ ] edit: toggle lines to list  
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]` 
 - [ ] keyboard: alt+arrow, move current line up/down
 

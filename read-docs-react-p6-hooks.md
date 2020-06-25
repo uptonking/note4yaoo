@@ -1,11 +1,11 @@
 ---
 tags: [docs, react]
-title: read-docs-react-p5-hooks
+title: read-docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-25T17:58:32.328Z'
+modified: '2020-06-25T18:01:35.720Z'
 ---
 
-# read-docs-react-p5-hooks
+# read-docs-react-p6-hooks
 
 ## Introducing Hooks
 

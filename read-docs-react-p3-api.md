@@ -2,34 +2,41 @@
 tags: [api, docs, react]
 title: read-docs-react-p3-api
 created: '2020-06-23T07:30:37.293Z'
-modified: '2020-06-25T17:57:38.172Z'
+modified: '2020-06-25T18:09:17.468Z'
 ---
 
 # read-docs-react-p3-api
 
 ## React Top-Level API
-
-- React.Component
-- React.PureComponent
-- React.memo
-- React.Fragment
-
-- createElement()
-- createFactory()      
-
-- cloneElement()
-- isValidElement()
-- React.Children
-
-- React.createRef
-- React.forwardRef
-
+- Components
+  - React.Component
+  - React.PureComponent
+  - React.memo
+  - React.Fragment
+- Creating React Elements
+  - createElement()
+  - createFactory()      
+- Transforming Elements
+  - cloneElement()
+  - isValidElement()
+  - React.Children
+- Refs
+  - React.createRef
+  - React.forwardRef
 - Suspense
-	- Suspense lets components “wait” for something before rendering. 
-  - Today, Suspense only supports one use case: loading components dynamically with React.lazy. 
-  - In the future, it will support other use cases like data fetching.
-- React.lazy
-- React.Suspense
+  - React.lazy
+  - React.Suspense
+- Hooks
+  - useState
+  - useEffect
+  - useContext
+  - useReducer
+  - useCallback
+  - useMemo
+  - useRef
+  - useImperativeHandle
+  - useLayoutEffect
+  - useDebugValue
 
 ## React.Component
 
