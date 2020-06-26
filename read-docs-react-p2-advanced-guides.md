@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-25T17:44:45.296Z'
+modified: '2020-06-26T05:19:34.856Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -775,10 +775,8 @@ function getDisplayName(WrappedComponent) {
 	- react支持key属性，当子节点有key时，React使用key来匹配原本树的子节点和新树的子节点
 		- key必须在其兄弟节点中是唯一的，而非全局唯一。
 		- 可以传递他们在数组中的索引作为key。若元素没有重排，该方法效果不错，但重排会使得其变慢。
-		```
-		当索引用作key时，组件状态在重新排序时也会有问题。
-		组件实例基于key进行更新和重用。如果key是索引，则item的顺序变化会改变key值。
-		这将导致非受控组件的状态可能会以意想不到的方式混淆和更新。
+		- 当索引用作key时，组件状态在重新排序时也会有问题。
+		- 组件实例基于key进行更新和重用。如果key是索引，则item的顺序变化会改变key值。这将导致非受控组件的状态可能会以意想不到的方式混淆和更新。
 
 ## Code-Splitting
 - Most React apps will have their files “bundled” using tools like Webpack, Rollup. 
@@ -890,7 +888,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - In CSS, the `display: contents` attribute can be used if you don’t want the node to be part of the layout.
 - Detecting legacy context API
   - The legacy context API is error-prone, and will be removed
-- Detecting unexpected side effects
+- **Detecting unexpected side effects**
 	- Conceptually, React does work in two phases
 	- **render phase** determines what changes need to be made to e.g. the DOM. 
 	- **commit phase** is when React applies any changes.
@@ -898,16 +896,16 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - For this reason, the upcoming concurrent mode (which is not enabled by default yet) *breaks the rendering work into pieces*, pausing and resuming the work to avoid blocking the browser. 
   - This means that React may invoke render phase lifecycles more than once before committing
     - or it may invoke them without committing at all (because of an error or a higher priority interruption)
-  - Render phase lifecycles include the following class component methods:
-		- constructor
-		- componentWillMount
-		- componentWillReceiveProps
-		- componentWillUpdate
-		- getDerivedStateFromProps
-		- shouldComponentUpdate
-		- render
-		- setState updater functions (the first argument)
-	- Because the above methods might be called more than once, it’s important that they do not contain side-effects. 
+  - Render phase lifecycles include the following class component methods:  
+    - constructor
+    - componentWillMount
+    - componentWillReceiveProps
+    - componentWillUpdate
+    - getDerivedStateFromProps
+    - shouldComponentUpdate
+    - render
+    - setState updater functions (the first argument)  
+  - Because the above methods might be called more than once, it’s important that they do not contain side-effects. 
     - Ignoring this rule can lead to a variety of problems, including memory leaks and invalid application state. 
     - Unfortunately, it can be difficult to detect these problems as they can often be non-deterministic.
 	- Strict mode can’t automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. 
