@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p5-codebase-deisgn-test
 created: '2020-06-25T17:53:19.549Z'
-modified: '2020-06-26T13:50:18.764Z'
+modified: '2020-06-26T17:35:35.224Z'
 ---
 
 # read-docs-react-p5-codebase-deisgn-test
@@ -11,8 +11,6 @@ modified: '2020-06-26T13:50:18.764Z'
 - https://reactjs.org/docs/how-to-contribute.html
 
 ## Codebase Overview
-- React has almost no external dependencies. 
-  - However, there are a few relatively rare exceptions, such as fbjs.
 - We don’t necessarily recommend any of these conventions in React apps.
   - Many of them exist for historical reasons and might change with time.
 - After cloning the React repository, you will see a few top-level folders in it
@@ -23,6 +21,11 @@ modified: '2020-06-26T13:50:18.764Z'
     - It is not in the repository but it will appear in your React clone after you build it for the first time.
 - We don't have a top-level directory for unit tests. 
   - Instead, we put them into a directory called `__tests__` relative to the files that they test.
+- “Invariant” is just a way of saying “this condition always holds true”. 
+  - You can think about it as making an assertion.
+  - The invariant is thrown when the invariant condition is false.
+- You can use `__DEV__` pseudo-global variable in the codebase to guard development-only blocks of code.
+  - It is inlined during the compile step, and turns into `process.env.NODE_ENV !== 'production'` checks in the CommonJS builds.
 - We recently started introducing Flow checks to the codebase. 
   - Files marked with the `@flow` annotation in the license header comment are being typechecked.
 - React uses dynamic injection in some modules. 
@@ -30,56 +33,72 @@ modified: '2020-06-26T13:50:18.764Z'
 	- React Native started as a React fork. We had to add dynamic injection to let React Native override some behaviors.
 	- In the future, we intend to get rid of the dynamic injection mechanism and wire up all the pieces statically during the build.
 - React is a monorepo containing multiple separate packages
-	- React core is located in `packages/react` in the source tree. 
-		- includes all the top-level React APIs
-		- React.createElement()
-		- React.Component
-		- React.Children
-		- React core only includes the APIs necessary to define components. 
-    - It does not include the reconciliation algorithm or any platform-specific code.
-		- It is used both by React DOM and React Native components.
-	- Renderers manage how a React tree turns into the underlying platform calls.
-		- React DOM Renderer renders React components to the DOM. 
-		- React Native Renderer renders React components to native views. It is used internally by React Native.
-		- React Test Renderer renders React components to JSON trees.
-	- Reconcilers
-    - Even vastly different renderers like React DOM and React Native need to share a lot of logic. 
-    - In particular, the reconciliation algorithm should be as similar as possible so that declarative rendering, custom components, state, lifecycle methods, and refs work consistently across platforms.
-    - To solve this, different renderers share some code. We call this part of React a “reconciler”.
-		- Reconcilers are not packaged separately because they currently have no public API. 
-		- Instead, they are exclusively used by renderers such as React DOM and React Native.
-  - Stack Reconciler is the implementation powering React 15 and earlier. 
-    - We have since stopped using it, but it is documented in detail in the next section
-	- Fiber Reconciler is a new effort aiming to resolve the problems inherent in the stack reconciler and fix a few long-standing issues. 
-    - It has been the default reconciler since React 16.
-    - Ability to split interruptible work in chunks.
-    - Ability to prioritize, rebase and reuse work in progress.
-    - Ability to yield back and forth between parents and children to support layout in React.
-    - Ability to return multiple elements from render().
-    - Better support for error boundaries.
-    - While it has shipped with React 16, the async features are not enabled by default yet.
-    - Its source code is located in `packages/react-reconciler`
-    - https://github.com/acdlite/react-fiber-architecture
-    - https://blog.ag-grid.com/inside-fiber-an-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/
-	- `packages/legacy-events`
-		- React implements a synthetic event system which is agnostic of the renderers and works both with React DOM and React Native.
+- React core is located in `packages/react` in the source tree. 
+  - includes all the top-level React APIs
+    - React.createElement()
+    - React.Component
+    - React.Children
+  - React core only includes the APIs necessary to define components. 
+  - It does not include the reconciliation algorithm or any platform-specific code.
+  - It is used both by React DOM and React Native components.
+- Renderers manage how a React tree turns into the underlying platform calls.
+  - React DOM Renderer renders React components to the DOM. 
+  - React Native Renderer renders React components to native views. 
+  - React Test Renderer renders React components to JSON trees.
+- Reconcilers
+  - Even vastly different renderers like React DOM and React Native need to share a lot of logic. 
+  - In particular, the reconciliation algorithm should be as similar as possible so that declarative rendering, custom components, state, lifecycle methods, and refs work consistently across platforms.
+  - To solve this, different renderers share some code. We call this part of React a “reconciler”.
+  - When an update such as `setState()` is scheduled, the reconciler calls `render()` on components in the tree and mounts, updates, or unmounts them.
+  - Reconcilers are not packaged separately because they currently have no public API. 
+  - Instead, they are exclusively used by renderers such as React DOM and React Native.
+- Stack Reconciler is the implementation powering React 15 and earlier. 
+- Fiber Reconciler has been the default reconciler since React 16.
+  - Ability to split interruptible work in chunks.
+  - Ability to prioritize, rebase and reuse work in progress.
+  - Ability to yield back and forth between parents and children to support layout in React.
+  - Ability to return multiple elements from render().
+  - Better support for error boundaries.
+  - While it has shipped with React 16, the async features are not enabled by default yet.
+  - Its source code is located in `packages/react-reconciler`
+  - https://github.com/acdlite/react-fiber-architecture
+  - https://blog.ag-grid.com/inside-fiber-an-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/
+- `packages/legacy-events`
+  - React implements a synthetic event system which is agnostic of the renderers and works both with React DOM and React Native.
 
-## Implementation Notes for  Stack Reconciler
+## Implementation Notes for Stack Reconciler
 - https://reactjs.org/docs/implementation-notes.html
 - It is very technical and assumes a strong understanding of React public API as well as how it’s divided into core, renderers, and the reconciler. 
 - located at `src/renderers/shared/stack/reconciler`  
 - The reconciler itself doesn’t have a public API. Renderers like React DOM and React Native use it to efficiently update the user interface according to the React components written by the user.
 - **Mounting as a Recursive Process**
-	- React elements are plain objects representing the component type (e.g. App) and the props.
+  - Let’s consider the first time you mount a component
+  - `ReactDOM.render(<App />, rootEl);`
+  - React DOM will pass `<App />` along to the reconciler. 
+  - Remember that `<App />` is a React element, that is, a description of what to render. You can think about it as a plain object
+  - The reconciler will check if App is a class or a function.
+  - If App is a function, the reconciler will call `App(props)` to get the rendered element.
+  - If App is a class, the reconciler will instantiate an App with `new App(props)`, call the `componentWillMount()` lifecycle method, and then will call the `render()` method to get the rendered element.
+  - Either way, the reconciler will learn the element App “rendered to”.
+	- This process is recursive. App may render to a `<Greeting />`, Greeting may render to a `<Button />`, and so on. The reconciler will “drill down” through user-defined components recursively as it learns what each component renders to.
+  - React elements are plain objects representing the component type (e.g. App) and the props.
 	- User-defined components (e.g. App) can be classes or functions but they all “render to” elements.
-	- Mounting is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. <App />).
+	- Mounting is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. `<App />`).
 - **Mounting Host Elements**
 	- In addition to user-defined (“composite”) components, React elements may also represent platform-specific (“host”) components. 
-	- If element's type property is a string, we are dealing with a host element:
-	- When the reconciler encounters a host element, it lets the renderer take care of mounting it. For example, React DOM would create a DOM node.
+	- If element's type property is a string, we are dealing with a host element
+	- When the reconciler encounters a host element, it lets the renderer take care of mounting it. 
+    - For example, React DOM would create a DOM node.
+  - If the host element has children, the reconciler recursively mounts them following the same algorithm as above.
+  - The DOM nodes produced by the child components will be appended to the parent DOM node, and recursively, the complete DOM structure will be assembled.
+  - The reconciler itself is not tied to the DOM. The exact result of mounting (sometimes called “mount image” in the source code) depends on the renderer, and can be a DOM node (React DOM), a string (React DOM Server), or a number representing a native view (React Native).
 - **Introducing Internal Instances**
-	- The key feature of React is that you can re-render everything, and it won't recreate the DOM or reset the state:
+	- The key feature of React is that you can re-render everything, and it won't recreate the DOM or reset the state
+  - However, our implementation above only knows how to mount the initial tree. It can’t perform updates on it because it doesn’t store all the necessary information, such as which DOM nodes correspond to which components.
+  - The stack reconciler codebase solves this by making the mount() function a method and putting it on a class. 
+    - There are drawbacks. rewrite the reconciler
 	- Instead of separate mountHost and mountComposite functions, we will create two classes: DOMComponent and CompositeComponent.
+  - As a result, each internal instance, composite or host, now points to its child internal instances
 	- The composite internal instances need to store:
 		- The current element.
 		- The public instance if element type is a class.
@@ -89,17 +108,39 @@ modified: '2020-06-26T13:50:18.764Z'
 		- The DOM node.
 		- All the child internal instances. Each of them can be either a DOMComponent or a CompositeComponent.
 - **Unmounting**
+  - For a composite component, unmounting calls a lifecycle method and recurses.
+  - For DOMComponent, unmounting tells each child to unmount
 	- unmounting DOM components also removes the event listeners and clears some caches
 - **Updating**
 	- The goal of the reconciler is to reuse existing instances where possible to preserve the DOM and the state
-	- When a composite component receives a new element, we run the componentWillUpdate() 
-	- Host component implementations, such as DOMComponent, update differently. When they receive an element, they need to update the underlying platform-specific view. 
-		- In case of React DOM, this means updating the DOM attributes
+  - both DOMComponent and CompositeComponent will implement a new method called `receive(nextElement)`
+  - Its job is to do whatever is necessary to bring the component (and any of its children) up to date with the description provided by the `nextElement`.
+  - This is the part that is often described as “virtual DOM diffing” although what really happens is that we walk the internal tree recursively and let each internal instance receive an update.
 - **Updating Composite Components**
+	- When a composite component receives a new element, we run the `componentWillUpdate()` and rerender
+  - To sum this up, when a composite component receives a new element, it may either delegate the update to its rendered internal instance, or unmount it and mount a new one in its place.
+    - There is another condition under which a component will re-mount rather than receive an element, and that is when the element’s key has changed. 
 - **Updating Host Components**
+	- Host component implementations, such as DOMComponent, update differently. 
+  - When they receive an element, they need to update the underlying platform-specific view. 
+		- In case of React DOM, this means updating the DOM attributes
+  - Then, host components need to update their children. Unlike composite components, they might contain more than a single child.
+  - We collect DOM operations on children in a list so we can execute them in batch
 - **Top-Level Updates**
+  - Now that both CompositeComponent and DOMComponent implement the `receive(nextElement)` method, we can change the top-level `mountTree()` function to use it when the element type is the same as it was the last time
 - **What We Left Out**
+  - render null
+  - The reconciler also reads `key` from the elements, and uses it to establish which internal instance corresponds to which element in an array. 
+  - there are also classes for “text” and “empty” components.
+  - Renderers use injection to pass the host internal class to the reconciler
+  - The logic for updating the list of children
+  - The reconciler also takes care of attaching and detaching refs 
 - **Jumping into the Code**
+  - ReactMount
+  - ReactDOMComponent
+  - ReactCompositeComponent
+  - instantiateReactComponent
+  - ReactReconciler 
 - Stack reconciler has inherent limitations such as being synchronous and unable to interrupt the work or split it in chunks. 
 - The new Fiber reconciler comes with a completely different architecture.
 
@@ -111,33 +152,41 @@ modified: '2020-06-26T13:50:18.764Z'
 	- Components written by different people should work well together. 
 - Common Abstraction
 	- If we notice that many components implement a certain feature in incompatible or inefficient ways, we might prefer to bake it into React. 
-	-  raising the abstraction level benefits the whole ecosystem. State, lifecycle methods, cross-browser event normalization are good examples of this.
+  - When we do it, it’s because we are confident that raising the abstraction level benefits the whole ecosystem.
+  - State, lifecycle methods, cross-browser event normalization are good examples of this.
 - Escape Hatches
-	- If we can't figure out a perfect API for something that we found necessary in many apps, 
-	   we will provide a temporary subpar working API as long as it is possible to get rid of it later and it leaves the door open for future improvements.
+	- If we can't figure out a perfect API for something that we found necessary in many apps, we will provide a temporary subpar working API as long as it is possible to get rid of it later and it leaves the door open for future improvements.
 - Stability
 	- We value API stability. At Facebook, we have more than 50 thousand components using React. 
 	- When we add a deprecation warning, we keep it for the rest of the current major version, and change the behavior in the next major version.
 - We place high value in interoperability with existing systems and gradual adoption.
 	- This is why React provides escape hatches to work with mutable models, and tries to work well together with other UI libraries. 
 - Scheduling
+  - Since you don’t call that component function but let React call it, it means React has the power to delay calling it if necessary. 
+  - In its current implementation React walks the tree recursively and calls render functions of the whole updated tree during a single tick. 
+  - However in the future it might start delaying some updates to avoid dropping frames.
+  - If something is offscreen, we can delay any logic related to it. 
+  - If data is arriving faster than the frame rate, we can coalesce and batch updates.
+  - We can prioritize work coming from user interactions (such as an animation caused by a button click) over less important background work (such as rendering new content just loaded from the network) to avoid dropping frames.
+  - The freedom to do something like this is why we prefer to have control over scheduling, and why setState() is asynchronous. Conceptually, we think of it as “scheduling an update”.
 	- It is a key goal for React that the amount of the user code that executes before yielding back into React is minimal. 
 	- This ensures that React retains the capability to schedule and split work in chunks according to what it knows about the UI.
 - Developer Experience
 - Debugging
 - Configuration
-	-  global configuration doesn't work well with composition. Since composition is central to React, we don't provide global configuration in code.
+	- We think that global global configuration doesn't work well with composition. Since composition is central to React, we don't provide global configuration in code.
 	- We do, however, provide some global configuration on the build level.
 - Beyond the DOM
 	- Being renderer-agnostic is an important design constraint of React.
-	- React Native
+  - It adds some overhead in the internal representations. 
+  - On the other hand, any improvements to the core translate across platforms.
 - Implementation
 	- We try to provide elegant APIs where possible. 
 	- When we evaluate new code, we are looking for an implementation that is correct, performant and affords a good developer experience. Elegance is secondary.
 - Optimized for Tooling
 	- make the points of interaction with the library highly visible.
 	- We value distinct verbose names, and especially for the features that should be used sparingly.
-	- optimized for search
+	- Optimizing for search - unique verbose names
 - Dogfooding
 	- Dogfooding it means that our vision stays sharp and we have a focused direction going forward.
 
