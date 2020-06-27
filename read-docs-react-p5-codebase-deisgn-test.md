@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p5-codebase-deisgn-test
 created: '2020-06-25T17:53:19.549Z'
-modified: '2020-06-26T17:35:35.224Z'
+modified: '2020-06-27T02:34:32.165Z'
 ---
 
 # read-docs-react-p5-codebase-deisgn-test
@@ -95,7 +95,7 @@ modified: '2020-06-26T17:35:35.224Z'
 - **Introducing Internal Instances**
 	- The key feature of React is that you can re-render everything, and it won't recreate the DOM or reset the state
   - However, our implementation above only knows how to mount the initial tree. It can’t perform updates on it because it doesn’t store all the necessary information, such as which DOM nodes correspond to which components.
-  - The stack reconciler codebase solves this by making the mount() function a method and putting it on a class. 
+  - The stack reconciler codebase solves this by making the `mount()` function a method and putting it on a class. 
     - There are drawbacks. rewrite the reconciler
 	- Instead of separate mountHost and mountComposite functions, we will create two classes: DOMComponent and CompositeComponent.
   - As a result, each internal instance, composite or host, now points to its child internal instances

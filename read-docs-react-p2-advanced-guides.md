@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-26T05:19:34.856Z'
+modified: '2020-06-27T04:42:51.915Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -650,9 +650,9 @@ function getDisplayName(WrappedComponent) {
     - It includes the React elements you return from your components. 
     - This representation lets React avoid creating DOM nodes and accessing existing ones beyond necessity, as that can be slower than operations on JavaScript objects. 
     - Sometimes it is referred to as a *virtual DOM*
-	- When a component’s props or state change, React decides whether an actual DOM update is necessary 
-	  by comparing the newly returned element with the previously rendered one. 
-      - When they are not equal, React will update the DOM.
+	- When a component’s props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. 
+    - When they are not equal, React will update the DOM.
+  - Even though React only updates the changed DOM nodes, re-rendering still takes some time
 	- `shouldComponentUpdate()` is triggered before the re-rendering process starts.
     - The default implementation of this function returns `true`, leaving React to perform the update
     - If you know that in some situations your component doesn’t need to update, you can return `false` from shouldComponentUpdate instead, to skip the whole rendering process, including calling render() on this component and below.
