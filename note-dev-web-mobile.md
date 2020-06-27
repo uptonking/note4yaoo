@@ -1,11 +1,11 @@
 ---
 tags: [mobile, web]
-title: note-dev-web-mobile-browser
+title: note-dev-web-mobile
 created: '2020-06-21T08:14:11.535Z'
-modified: '2020-06-22T08:16:05.380Z'
+modified: '2020-06-27T08:17:47.429Z'
 ---
 
-# note-dev-web-mobile-browser
+# note-dev-web-mobile
 
 ## features-for-mobile
 - 手机端的事件特点
