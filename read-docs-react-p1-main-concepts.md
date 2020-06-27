@@ -2,20 +2,11 @@
 tags: [docs, react]
 title: read-docs-react-p1-main-concepts
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-25T06:03:59.932Z'
+modified: '2020-06-27T15:10:06.744Z'
 ---
 
 # read-docs-react-p1-main-concepts
 - React is a javaScript library for building user interfaces.
-
-## react-roadmap
-- [ ] react-events
-- [ ] concurrent mode and suspense (stable-17)
-- [x] hooks (stable-16.8)
-  - powerful functions for components
-
-## repeat
-- https://jxnblk.com/blog/defining-component-apis-in-react/
 
 ## resources 
 - docs

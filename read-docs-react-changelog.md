@@ -2,16 +2,28 @@
 tags: [changelog, docs, react]
 title: read-docs-react-changelog
 created: '2020-06-23T05:49:13.941Z'
-modified: '2020-06-23T06:07:06.191Z'
+modified: '2020-06-27T15:28:36.910Z'
 ---
 
 # read-docs-react-changelog
+
+## react-roadmap
+- React Fire: Modernizing React DOM
+- React Flare: new React Events
+  - build UIs that feel great on desktop and mobile, with mouse and touch
+- concurrent mode and suspense (stable-17)
+- ref
+  - https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22
+  - [React Fire](https://github.com/facebook/react/issues/13525)
+  - [React Flare](https://github.com/facebook/react/issues/15257)
+
 
 ## features
 
 - 16.8-hooks
 - 16.6-lazy loading with Suspense
 - 16.3-new context api
+- 16.0-fiber reconciliation
 
 ## changelog
 - ref

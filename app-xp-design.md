@@ -1,11 +1,11 @@
 ---
-tags: [pm, ux]
-title: app-ux-design
+tags: [pm, xp]
+title: app-xp-design
 created: '2019-11-18T12:37:41.447Z'
-modified: '2020-06-22T13:15:10.797Z'
+modified: '2020-06-27T15:08:55.569Z'
 ---
 
-# app-ux-design
+# app-xp-design
 
 - style
   - handwritten：素描风格，线框图风格

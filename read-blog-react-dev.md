@@ -2,15 +2,17 @@
 tags: [blog, react]
 title: read-blog-react-dev
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-06-24T08:36:08.086Z'
+modified: '2020-06-27T15:13:55.952Z'
 ---
 
 # read-blog-react-dev
 
+## guide
+- https://jxnblk.com/blog/defining-component-apis-in-react/
+- [React组件设计实践](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
+- [React Bits中文版](https://hateonion.me/books/react-bits-cn/)
+
 ## React组件设计实践总结
-- 参考
-  - https://juejin.im/post/5cd7f2c4e51d453a7d63b715
-  - [React Bits中文版](https://hateonion.me/books/react-bits-cn/)
 - 类型检查
   - 静态类型检查的作用
       - 可以在开发时就避免许多类型问题, 减少低级错误的
