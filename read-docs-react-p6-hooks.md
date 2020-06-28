@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-28T09:23:13.475Z'
+modified: '2020-06-28T18:38:01.601Z'
 ---
 
 # read-docs-react-p6-hooks
@@ -292,10 +292,10 @@ function Example() {
   - The function passed to useEffect may return a clean-up function.
     - The clean-up function runs before the component is removed from the UI to prevent memory leaks. 
     - If a component renders multiple times (as they typically do), the previous effect is cleaned up before executing the next effect.
-  - Unlike `componentDidMount` and `componentDidUpdate`, the function passed to `useEffect` fires after layout and paint, during a deferred event. 
+  - Unlike `componentDidMount` and `componentDidUpdate`, **the function passed to `useEffect` fires after layout and paint**, during a deferred event. 
     - This makes it suitable for the many common side effects, like setting up subscriptions and event handlers, because most types of work shouldn’t block the browser from updating the screen.
     - Not all effects can be deferred. 
-    - For example, a DOM mutation that is visible to the user must fire synchronously before the next paint so that the user does not perceive a visual inconsistency.
+    - For example, a DOM mutation that is visible to the user must **fire synchronously before the next paint** so that the user does not perceive a visual inconsistency.
     - The distinction is conceptually similar to passive versus active event listeners.
     - For these types of effects, React provides one additional Hook called `useLayoutEffect`. 
     - It has the same signature as useEffect, and only differs in when it is fired
@@ -306,6 +306,12 @@ function Example() {
     - The array of dependencies is not passed as arguments to the effect function
       - Every value referenced inside the effect function should also appear in the dependencies array
       - In the future, a sufficiently advanced compiler could create this array automatically.
+
+- `useLayoutEffect`
+  - The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. 
+  - Use this to read layout from the DOM and synchronously re-render. 
+  - Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
+  - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
 
 - `const value = useContext(MyContext);`
   - Accepts a context object(the value returned from `React.createContext`) 
@@ -384,12 +390,6 @@ function Example() {
   FancyInput = forwardRef(FancyInput);
   ```
   
-- `useLayoutEffect`
-  - The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. 
-  - Use this to read layout from the DOM and synchronously re-render. 
-  - Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
-  - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
-
 - `useDebugValue(value)`
   - It can be used to display a label for custom hooks in React DevTools.
   - We don’t recommend adding debug values to every custom Hook. 

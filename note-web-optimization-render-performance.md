@@ -2,15 +2,51 @@
 tags: [browser, optimization, web]
 title: note-web-optimization-render-performance
 created: '2020-06-28T06:46:35.619Z'
-modified: '2020-06-28T13:54:40.509Z'
+modified: '2020-06-28T18:27:55.517Z'
 ---
 
 # note-web-optimization-render-performance
 
 ## guide
 - https://developers.google.com/web/fundamentals/performance/rendering/
-- https://developers.google.com/web/fundamentals/performance/get-started
-- https://developers.google.com/web/fundamentals/performance/why-performance-matters
+- [浏览器渲染详细过程：重绘、重排和 composite 只是冰山一角](https://juejin.im/entry/590801780ce46300617c89b8)
+- [浏览器的渲染过程2.0 — Composite](https://github.com/includeios/document/issues/10)
+- [dom_performance_reflow_repaint.md](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
+- [浏览器的工作原理：浏览器幕后揭秘](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/)
+- [无线性能优化：Composite](https://fed.taobao.org/blog/taofed/do71ct/performance-composite/)
+
+## summary
+- 呈现器在创建完成并添加到呈现树时，并不包含位置和大小信息。计算这些值的过程称为布局或重排。
+  - HTML采用基于流的布局模型，这意味着大多数情况下只要一次遍历就能计算出几何信息。处于流中靠后位置元素通常不会影响靠前位置元素的几何特征，因此布局可以按从左至右、从上至下的顺序遍历文档。
+  - 布局是一个递归的过程。它从根呈现器（对应于HTML文档的 `<html>` 元素）开始，然后递归遍历部分或所有的框架层次结构，为每一个需要计算的呈现器计算几何信息。
+  - 所有的呈现器都有一个“layout”或者“reflow”方法，每一个呈现器都会调用其需要进行布局的子代的layout方法。
+  - 为避免对所有细小更改都进行整体布局，浏览器采用了一种“dirty 位”系统。如果某个呈现器发生了更改，或者将自身及其子代标注为“dirty”，则需要进行布局
+- CSS2规范定义了绘制流程的顺序,绘制的顺序其实就是元素进入堆栈样式上下文的顺序
+  - 背景颜色、背景图片、边框、子代、轮廓
+- defer vs async
+  - defer与相比普通script，有两点区别：载入js文件时不阻塞HTML的解析，执行阶段被放到HTML标签解析完成之后
+  - 在加载多个JS脚本的时候，async是无顺序的加载，而defer是有顺序的加载
+- reflow vs repaint
+  - A reflow computes the layout of the page. A reflow on an element recomputes the dimensions and position of the element, and it also triggers further reflows on that element’s children, ancestors and elements that appear after it in the DOM. Then it calls a final repaint. Reflowing is very expensive.
+- reflow vs layout
+  - same
+  - There's always at least one initial page layout together with a paint. After that, changing the input information which was used to construct the render tree may result in one or both of these:
+    - parts of the render tree (or the whole tree) will need to be revalidated and the node dimensions recalculated. This is called a reflow, or layout, or layouting. Note that there's at least one reflow - the initial layout of the page
+    - parts of the screen will need to be updated, either because of changes in geometric properties of a node or because of stylistic change, such as changing the background color. This screen update is called a repaint, or a redraw.
+  - All of the below properties or methods, when requested/called in JavaScript, will trigger the browser to synchronously calculate the style and layout. This is also called reflow or layout thrashing, and is common performance bottleneck.
+- 很多文章里说，修改opacity、transform这两个属性仅仅会触发合成，不会触发重绘和合成。所以一定要用这两个属性来实现动画，没有重绘重排，效率很高。
+  - 并不一定是这样。
+  - 只有一个元素在被提升为合成层之后，上述情况才成立。
+  - 在合成多个合成层时，确实可以借助3D API的相关参数，从而直接实现合成层的transform、opacity效果。所以如果你将一个元素提升为合成层，然后用JS修改其transform或opacity 或者在 transform或opacity 上施加CSS过渡或动画，确实会避免CPU的Paint过程，因为transform和opacity可以直接基于GPU的合成参数来完成。
+  - 对于没有提升为合成层的元素，仅仅是他自己具有transform和opacity，他是作为合成层的内容。而生成合成层的内容和写进位图或纹理是在Paint和Rasterize阶段完成的，因此这个元素的transform和opacity的实现也是在Paint和Rasterize中完成的。所以还是会重排，也就没有启用我们常说的GPU加速的动画。
+- 重排Layout、强制重排Force Layout
+  - 如果你改了一个影响元素布局信息的CSS样式，比如width、height、left、top等（transform除外），那么浏览器会将当前的Layout标记为dirty，这会使得浏览器在下一帧执行上述11个步骤的时候执行Layout。
+    - 因为元素的位置信息变了，将可能会导致整个网页其他元素的位置情况都发生改变，所以需要执行Layout全局重新计算每个元素的位置。
+    - 注意到，浏览器是在下一帧、下一次渲染的时候才重排。并不是JS执行完这一行改变样式的语句之后立即重排，所以你可以在JS语句里写100行改CSS的语句，但是只会在下一帧的时候重排一次。
+  - 如果你在当前Layout被标记为dirty的情况下，访问了offsetTop、scrollHeight等属性，那么，浏览器会立即重新Layout，计算出此时元素正确的位置信息，以保证你在JS里获取到的offsetTop、scrollHeight等是正确的。这一过程被称为强制重排Force Layout，这一过程强制浏览器将本来在上述渲染流程中才执行的Layout过程提前至JS执行过程中。
+    - 提前不是问题，问题在于每次你在Layout为dirty时访问会触发重排的属性，都会Force Layout，这极大的延缓了JS的执行效率
+    - Layout一次的时间视DOM数量级从几十微秒到十几毫秒不等，这个开销是难以接受的。所以也就有了读写分离、纯用变量存储等避免Force Layout的方法。
+    - 每次重排或者强制重排后，当前Layout就不再dirty。所以你再访问offsetWidth之类的属性，并不会再触发重排。
 
 ## Web Performance Overview
 - Sites have more features than ever before. So much so, that many sites now struggle to achieve a high level of performance across a variety of network conditions and devices.
@@ -44,16 +80,17 @@ modified: '2020-06-28T13:54:40.509Z'
 - 60fps and Device Refresh Rates
   - Most devices today **refresh their screens 60 times a second**. 
   - If there’s an animation or transition running, or the user is scrolling the pages, the browser needs to match the device’s refresh rate and put up 1 new picture, or frame, for each of those screen refreshes
-  - Each of those frames has a budget of just over 16ms (1 second / 60 = 16.66ms). 
+  - Each of those frames has a budget of just over 16ms (1second/60 = 16.66ms). 
   - In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms. 
-  - When you fail to meet this budget the frame rate drops, and the content judders(抖动) on screen. 
+  - When you fail to meet this budget, the frame rate drops, and the content judders(抖动) on screen. 
   - This is often referred to as jank(卡顿)
 - There are areas you have the most control over, and key points in the pixels-to-screen pipeline
-  1. Trigger visual change by js or css.
+  1. Trigger visual change by js or css
     - Typically JavaScript is used to handle work that will result in visual changes, whether it’s jQuery’s animate function, sorting a data set, or adding DOM elements to the page. 
-    - It doesn’t have to be JavaScript that **triggers a visual change**, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
+    - It doesn’t have to be JavaScript that triggers a visual change, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
   2. Style calculations 
-    - It is the process of **figuring out which CSS rules apply to which elements based on matching selectors**, for example, `.headline or .nav > .nav__item`. 
+    - It is the process of **figuring out which CSS rules apply to which elements based on matching selectors**
+    - for example, `.headline or .nav > .nav__item`. 
     - From there, once rules are known, they are applied and the final styles for each element are calculated.
   3. Layout/Reflow
     - Once the browser knows which rules apply to an element, it can begin to calculate how much space it takes up and where it is on screen. 
@@ -65,23 +102,23 @@ modified: '2020-06-28T13:54:40.509Z'
     - The drawing is typically done onto multiple surfaces, often called layers.
     - Sometimes you may hear the term "rasterize" used in conjunction with paint. 
     - This is because painting is actually two tasks: 
-      - 1) creating a list of draw calls 
-      - 2) filling in the pixels.
+      1. creating a list of draw calls 
+      2. filling in the pixels.
       - The latter is called "rasterization" and so whenever you see paint records in DevTools, you should think of it as including rasterization.
       - In some architectures creating the list of draw calls and rasterizing are done in different threads, but that isn't something under developer control.
-  5. Compositing. 
+  5. Compositing(渲染层合并)
     - Since the parts of the page were drawn into potentially multiple layers, they need to be drawn to the screen in the correct order so that the page renders correctly.
     - This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
 - Each of these parts of the pipeline represents an opportunity to introduce jank, so it's important to understand exactly what parts of the pipeline your code triggers.
 - You won’t always necessarily touch every part of the pipeline on every frame. 
 - In fact, there are three ways the pipeline normally plays out for a given frame when you make a visual change, either with JavaScript, CSS, or Web Animations:
-- `JS / CSS > Style > Layout > Paint > Composite` 
+- `JS/CSS > Style > Layout > Paint > Composite` 
   - If you change a “layout” property, so that’s one that changes an element’s geometry, like its width, height, or its position with left or top, the browser will have to check all the other elements and “reflow” the page.
   - Any affected areas will need to be repainted, and the final painted elements will need to be composited back together.
-- `JS / CSS > Style > Paint > Composite`
+- `JS/CSS > Style > Paint > Composite`
   - If you changed a “paint only” property, like a background image, text color, or shadows, in other words one that does not affect the layout of the page, then the browser skips layout
   - but it will still do paint.
-- `JS / CSS > Style > Composite`
+- `JS/CSS > Style > Composite`
   - If you change a property that requires neither layout nor paint, and the browser jumps to just do compositing.
 - If you want to know which of the three versions above changing any given CSS property will trigger, head to CSS Triggers.
   - https://csstriggers.com/
@@ -95,14 +132,29 @@ modified: '2020-06-28T13:54:40.509Z'
   - Use Chrome DevTools’ Timeline and JavaScript Profiler to assess the impact of JavaScript.
 - JavaScript often triggers visual changes. 
   - Sometimes that's directly through style manipulations
-  - and sometimes it's calculations that result in visual changes, like searching or sorting data. 
+  - Sometimes it's calculations that result in visual changes, like searching or sorting data. 
   - Badly-timed or long-running JavaScript is a common cause of performance issues. 
 - The JavaScript you write is nothing like the code that is actually executed. 
   - Modern browsers use JIT compilers and all manner of optimizations and tricks to try and give you the fastest possible execution
-- Use requestAnimationFrame for visual changes
+- Use `requestAnimationFrame` for visual changes
+  - The only way to guarantee that your JavaScript will run at the start of a frame is to use `requestAnimationFrame(doSth())`.
+  - Frameworks or samples may use `setTimeout` or `setInterval` to do visual changes like animations, but the problem with this is that the callback will run at some point in the frame, possibly right at the end, and that can often have the effect of causing us to miss a frame, resulting in jank.
+  - jQuery 3 was changed to use requestAnimationFrame
 - Reduce complexity or use Web Workers
+  - JavaScript runs on the browser’s main thread, right alongside style calculations, layout, and, in many cases, paint. 
+  - If your JavaScript runs for a long time, it will block these other tasks, potentially causing frames to be missed.
+  - In many cases you can move pure computational work to Web Workers, if, for example, it doesn’t require DOM access. Data manipulation or traversal, like sorting or searching, are often good fits for this model, as are loading and model generation.
+  - Not all work can fit this model: Web Workers do not have DOM access. Where your work must be on the main thread, consider a batching approach, where you segment the larger task into micro-tasks, each taking no longer than a few milliseconds, and run inside of requestAnimationFrame handlers across each frame.
+  - There are UX and UI consequences to this approach, and you will need to ensure that the user knows that a task is being processed, either by using a progress or activity indicator. In any case this approach will keep your app's main thread free, helping it to stay responsive to user interactions.
 - Know your JavaScript’s “frame tax”
+  - When assessing a framework, library, or your own code, it’s important to assess how much it costs to run the JavaScript code on a frame-by-frame basis. This is especially important when doing performance-critical animation work like transitioning or scrolling.
+  - The Performance panel of Chrome DevTools is the best way to measure your JavaScript's cost. 
+  - The Main section provides a flame chart of JavaScript calls so you can analyze exactly which functions were called and how long each took
+  - You should seek to either remove long-running JavaScript, or, if that’s not possible, move it to a Web Worker freeing up the main thread to continue on with other tasks.
 - Avoid micro-optimizing your JavaScript
+  - It may be cool to know that the browser can execute one version of a thing 100 times faster than another thing, like that requesting an element’s `offsetTop` is faster than computing `getBoundingClientRect()`
+  - but it’s almost always true that you’ll only be calling functions like these a small number of times per frame
+  - so it’s normally wasted effort to focus on this aspect of JavaScript’s performance. You'll typically only save fractions of milliseconds.
 - ref
   - https://zhuanlan.zhihu.com/p/39878259
 

@@ -2,13 +2,19 @@
 tags: [hooks, react]
 title: note-react-hooks
 created: '2020-06-24T08:36:20.056Z'
-modified: '2020-06-28T09:31:36.884Z'
+modified: '2020-06-28T18:48:45.459Z'
 ---
 
 # note-react-hooks
 
 
 ## faq
+- `useCallback` vs `useMemo`
+  - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
+  - useMemo() makes the function run only when inputs change. 
+    - Else it returns the memoized(cached) result.
+  - useCallback() prevents the new instance of funtion being created on each rerender
+    - thus prevents the rerendering of child components if we pass the function as props to them
 - `useEffect` vs `useLayoutEffect`
   - 结论
     - useLayoutEffect总是比useEffect先执行
