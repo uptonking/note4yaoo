@@ -3,7 +3,7 @@ favorited: true
 tags: [components, web]
 title: note-components-react-in-action
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-06-23T07:37:42.748Z'
+modified: '2020-06-28T01:50:53.584Z'
 ---
 
 # note-components-react-in-action
@@ -36,8 +36,8 @@ modified: '2020-06-23T07:37:42.748Z'
 ## react-dev-in-action
 - dev-faq
   - 生成色板后，给各色值定义了类似blue900的名称，各组件如何使用相关颜色
-      - 对于不需改变的或很少变化的颜色，直接写，对于用户可控制的颜色放到组件props中
-          - 不必像bulma-styled-components那样抽象出所有变量，如边框色、hover色、active色等
+    - 对于不需改变的或很少变化的颜色，直接写，对于用户可控制的颜色放到组件props中
+      - 不必像bulma-styled-components那样抽象出所有变量，如边框色、hover色、active色等
 - styled-components
   - 多采用styled写法
   - 很少采用css prop写法

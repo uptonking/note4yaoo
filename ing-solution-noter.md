@@ -2,7 +2,7 @@
 tags: [solution]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-26T08:43:52.775Z'
+modified: '2020-06-28T01:57:10.481Z'
 ---
 
 # ing-solution-noter
@@ -42,6 +42,9 @@ modified: '2020-06-26T08:43:52.775Z'
 - [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
+- [ ] edit-character: special character support,like `「Microsoft Store」`
+  - https://copychar.cc/symbols/
+- [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
 - [ ] edit: toggle lines to list  
 - [ ] edit: insert one blank line below  
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]` 

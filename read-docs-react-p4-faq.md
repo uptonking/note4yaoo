@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p4-faq
 created: '2020-06-23T07:27:08.496Z'
-modified: '2020-06-27T04:31:08.538Z'
+modified: '2020-06-28T05:50:33.923Z'
 ---
 
 # read-docs-react-p4-faq
@@ -79,7 +79,7 @@ modified: '2020-06-27T04:31:08.538Z'
 	}
 	```
 	- Bind in Render
-		- Using `Function.prototype.bind` in render creates a new function each time the component renders, which may have performance implications
+		- **Using `Function.prototype.bind` in render creates a new function each time the component renders**, which may have performance implications
 	```
 	class Foo extends Component {
 	  handleClick() {

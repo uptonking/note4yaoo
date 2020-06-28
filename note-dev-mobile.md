@@ -2,7 +2,7 @@
 tags: [dev/mobile]
 title: note-dev-mobile
 created: '2019-06-09T05:37:46.916Z'
-modified: '2020-06-22T09:10:01.467Z'
+modified: '2020-06-28T01:51:05.930Z'
 ---
 
 # note-dev-mobile
@@ -44,4 +44,5 @@ modified: '2020-06-22T09:10:01.467Z'
 ## android
 - 开发因素
   - android设备过于碎片化，不同尺寸不同分辨率的设备ui体验很难一致
+
 ## ios

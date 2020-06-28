@@ -2,7 +2,7 @@
 tags: [web, webkit, webview]
 title: note-webkit
 created: '2019-10-17T09:05:43.329Z'
-modified: '2020-06-22T09:17:33.413Z'
+modified: '2020-06-28T09:37:09.302Z'
 ---
 
 # note-webkit
@@ -11,8 +11,9 @@ modified: '2020-06-22T09:17:33.413Z'
 ## reflow
 - reflow
   - 如果引起reflow，样式首先必须重新计算，因此重排会触发两种操作
-  - force reflow https://gist.github.com/paulirish/5d52fb081b3570c81e3a
-- 当在js中调用（requested/called）以下所有属性或方法时，浏览器将会同步地计算样式和布局，进行重排（`reflow` 或 layout thrashing ），通常是性能瓶颈
+  - force reflow 
+    - https://gist.github.com/paulirish/5d52fb081b3570c81e3a
+- 当在js中调用（requested/called）以下所有属性或方法时，浏览器将会同步地计算样式和布局，进行重排(`reflow` 或layout thrashing)，通常是性能瓶颈
 - element
   - 盒子计算
       - elem.offsetLeft/offsetTop, elem.offsetWidth/offsetHeight
@@ -67,7 +68,7 @@ modified: '2020-06-22T09:17:33.413Z'
   - for循环里触发重排或改变DOM性能最差
   - 使用DevTools Timeline分析性能问题的位置
   - 合并读写DOM操作，参考[FastDOM](https://github.com/wilsonpage/fastdom)，或使用虚拟DOM
-- 参考
+- ref
   - https://jinlong.github.io/2015/09/30/what-forces-layout-reflow/
   - https://www.zcfy.cc/article/fastersite-how-not-to-trigger-a-layout-in-webkit
 

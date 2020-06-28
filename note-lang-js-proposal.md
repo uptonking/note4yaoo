@@ -2,10 +2,13 @@
 tags: [js, lang, proposal]
 title: note-lang-js-proposal
 created: '2020-06-27T07:29:09.318Z'
-modified: '2020-06-27T08:16:29.088Z'
+modified: '2020-06-28T03:26:54.937Z'
 ---
 
 # note-lang-js-proposal
+
+## proposal-toc
+- https://babeljs.io/docs/en/plugins
 
 ## class fields
 - stage 3
@@ -35,6 +38,15 @@ modified: '2020-06-27T08:16:29.088Z'
   - Public static fields are not reinitialized on subclasses, but can be accessed via the prototype chain.
   - When initializing fields, `this` refers to the class constructor. 
     - You can also reference it by name, and use `super` to get the superclass constructor (if one exists).
+- Property assignment is frequently used to add new properties to an object. 
+  - Definition: `Object.defineProperty(obj, propName, propDesc)`
+  - Assignment: `obj.prop = value`
+  - This post explained that that can cause problems. 
+  - Hence, it is best to follow the simple rules:
+    - If you want to create a new property, use definition.
+    - If you want to change the value of a property, use assignment.
+  - ref
+    - https://2ality.com/2012/08/property-definition-assignment.html
 
 
 

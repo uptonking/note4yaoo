@@ -2,7 +2,7 @@
 tags: [browser, web]
 title: note-web-browser-engine
 created: '2020-06-27T08:19:22.900Z'
-modified: '2020-06-27T08:43:00.851Z'
+modified: '2020-06-28T12:09:22.498Z'
 ---
 
 # note-web-browser-engine
@@ -19,6 +19,8 @@ modified: '2020-06-27T08:43:00.851Z'
 
 
 ## Chrome
+- chrome各版本特性
+  - https://www.chromestatus.com/features
 
 ## Firefox
 - HTML引擎：Mariner -> Raptor -> NGLayout -> Gecko

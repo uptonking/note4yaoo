@@ -2,7 +2,7 @@
 tags: [pm, xp]
 title: app-xp-design
 created: '2019-11-18T12:37:41.447Z'
-modified: '2020-06-27T15:08:55.569Z'
+modified: '2020-06-28T01:38:57.761Z'
 ---
 
 # app-xp-design

@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-27T17:38:54.496Z'
+modified: '2020-06-28T09:23:13.475Z'
 ---
 
 # read-docs-react-p6-hooks
@@ -81,9 +81,9 @@ function Example() {
   - We call these operations **side effects** (or "effects" for short) because they can affect other components and can't be done during rendering.
   - `useEffect` Hook adds the ability to perform side effects from a function component. 
   - It serves the same purpose as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in React classes, but unified into a single API.
-  - When you call useEffect, you’re telling React to run your “effect” function after flushing changes to the DOM. 
+  - When you call `useEffect`, you’re telling React to run your “effect” function after flushing changes to the DOM. 
   - Effects are declared inside the component so they have access to its props and state. 
-  - By default, React runs the effects after every render — including the first render.
+  - By default, React runs the effects after every render - including the first render.
   - You can use more than a single effect in a component
 - Rules of Hooks
 - Building Your Own Hooks
@@ -115,7 +115,7 @@ function Example() {
 - React will remember state's current value between re-renders, and provide the most recent one to our function
   - state is only created the first time our component renders.
   - During the next renders, useState gives us the current state. 
-- When we declare a state variable with `useState`, it returns a pair — an array with two items. 
+- When we declare a state variable with `useState`, it returns a pair - an array with two items. 
   - The first item is the current value, and the second is a function that lets us update it.
   - Using `[0]` and `[1]` to access them is a bit confusing because they have a specific meaning. 
   - This is why we use array destructuring instead.
@@ -123,22 +123,23 @@ function Example() {
   - we can update them individually
   - You don’t have to use many state variables. 
 - State variables can hold objects and arrays just fine, so you can still group related data together. 
-- Unlike `this.setState` in a class, updating a state variable always replaces it instead of merging it.
+- Unlike `this.setState` in a class, **updating a state variable always replaces it** instead of merging it.
 
 ## Using the Effect Hook
 - `useEffect` Hook lets you perform side effects in function components
   - Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects (or just “effects”). 
-  - You can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+  - You can think of useEffect Hook as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined.
 - There are two common kinds of side effects in React components: those that don’t require cleanup, and those that do
 - Effects Without Cleanup
-  - Sometimes, we want to run some additional code after React has updated the DOM. Network requests, manual DOM mutations, and logging are common examples of effects that don’t require a cleanup. 
-  - We say that because we can run them and immediately forget about them
+  - Sometimes, we want to run some additional code after React has updated the DOM. 
+  - Network requests, manual DOM mutations, and logging are common examples of effects that don’t require a cleanup. 
 - In React class components, the `render` method itself shouldn’t cause side effects. 
-  - It would be too early — we typically want to perform our effects after React has updated the DOM.
+  - It would be too early - we typically want to perform our effects after React has updated the DOM.
   - We often put side effects into componentDidMount and componentDidUpdate
   - we have to duplicate the code
 - `useEffect` tells React that your component needs to do something after render.
-  - React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. 
+  - React will remember the function you passed (we’ll refer to it as our “effect”)
+    - and call it later after performing the DOM updates. 
   - In the effect, we could change the DOM, perform data fetching or call some other imperative API.
   - Placing `useEffect` inside the component lets us access its state variable (or any props) right from the effect. 
   - Hooks embrace JavaScript closures and avoid introducing React-specific APIs where JavaScript already provides a solution
@@ -152,6 +153,7 @@ function Example() {
 - Unlike `componentDidMount` or `componentDidUpdate`, effects scheduled with `useEffect` don’t block the browser from updating the screen.
   - The majority of effects don’t need to happen synchronously. 
   - In the uncommon cases where they do (such as measuring the layout), there is a separate `useLayoutEffect` Hook with an API identical to useEffect.
+  - componentDidMount and componentDidUpdate run synchronously after rendering
 - Effects with Cleanup
   - For example, we might want to set up a subscription to some external data source. 
   - It is important to clean up so that we don’t introduce a memory leak! 
@@ -232,10 +234,10 @@ function Example() {
   - If we pick a different friend and update the recipientID state variable, our useFriendStatus Hook will unsubscribe from the previously selected friend, and subscribe to the status of the newly selected one.
 - You can write custom Hooks that cover a wide range of use cases like form handling, animation, declarative subscriptions, timers, and probably many more we haven’t considered.
 - It’s likely that the average function component in your codebase will become longer. 
-  - This is normal — don’t feel like you have to immediately split it into Hooks. 
+  - This is normal - don’t feel like you have to immediately split it into Hooks. 
   - But we also encourage you to start spotting cases where a custom Hook could hide complex logic behind a simple interface, or help untangle a messy component.
   - For example, maybe you have a complex component that contains a lot of local state that is managed in an ad-hoc way. 
-    - useState doesn’t make centralizing the update logic any easier 
+    - `useState` doesn’t make centralizing the update logic any easier 
     - so you might prefer to write it as a Redux reducer
     - Reducers are very convenient to test in isolation, and scale to express complex update logic.
     - You can further break them apart into smaller reducers if necessary. 
@@ -386,7 +388,7 @@ function Example() {
   - The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. 
   - Use this to read layout from the DOM and synchronously re-render. 
   - Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
-  - Prefer the standard useEffect when possible to avoid blocking visual updates.
+  - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
 
 - `useDebugValue(value)`
   - It can be used to display a label for custom hooks in React DevTools.

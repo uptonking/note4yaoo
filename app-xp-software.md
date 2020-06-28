@@ -1,8 +1,8 @@
 ---
-tags: [xp]
+tags: [pm, xp]
 title: app-xp-software
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-06-27T15:08:48.271Z'
+modified: '2020-06-28T01:39:06.020Z'
 ---
 
 # app-xp-software

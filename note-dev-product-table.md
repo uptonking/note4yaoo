@@ -2,7 +2,7 @@
 tags: [components, dev, table]
 title: note-dev-product-table
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-06-22T09:10:53.389Z'
+modified: '2020-06-28T01:51:24.457Z'
 ---
 
 # note-dev-product-table
@@ -14,8 +14,8 @@ modified: '2020-06-22T09:10:53.389Z'
   - An infinite scroller is a modern alternative to pagination.
   - Rather than wait for the user to click 'next page', new content is automatically loaded everytime the user reaches the bottom of the page. 
   - 手动实现无限滚动的方法
-      - 在componentDidMount方法中this.refs.myscroll.addEventListener("scroll",f)
-      - 在滚动事件处理函数中判断，若到达底部，则触发请求新数据，再setState
+    - 在componentDidMount方法中this.refs.myscroll.addEventListener("scroll",f)
+    - 在滚动事件处理函数中判断，若到达底部，则触发请求新数据，再setState
   - pagination ux vs infinite scroll + search/filter
 - infinite scroll vs regular scroll
   - 无限滚动因为在开始时渲染的DOM元素较少而性能较高，在滚动时会不停地添加列表项到列表元素，一旦滚动数量过多，仍会由于DOM节点过多造成样式计算或DOM操作开销大，性能就变差了

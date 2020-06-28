@@ -2,7 +2,7 @@
 tags: [amazing, pm, software, ux, yaoo]
 title: app-amazing
 created: '2019-09-04T09:50:42.583Z'
-modified: '2020-06-22T08:32:43.664Z'
+modified: '2020-06-28T01:43:10.057Z'
 ---
 
 # app-amazing

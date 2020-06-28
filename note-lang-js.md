@@ -279,14 +279,7 @@ Point === Point.prototype.constructor // true
 
 
 ## dev tips
-- performance optimization
-  - ref
-      - https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution
-      - https://zhuanlan.zhihu.com/p/39878259
-  - Avoid setTimeout or setInterval for visual updates; always use requestAnimationFrame instead.
-  - Move long-running JavaScript off the main thread to Web Workers.
-  - Use micro-tasks to make DOM changes over several frames.
-  - Use Chrome DevTools' Timeline and JavaScript Profiler to assess the impact of JavaScript.
+
 - Object vs Map
   - Objects have been used as Maps historically
   - The keys of an Object are String and Symbol, whereas they can be any value for a Map, including functions, objects, and any primitive.

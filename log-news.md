@@ -2,11 +2,14 @@
 tags: [log/news]
 title: log-news
 created: '2019-06-24T11:19:00.127Z'
-modified: '2020-06-22T09:09:09.436Z'
+modified: '2020-06-28T02:16:47.880Z'
 ---
 
 # log-news
 
+- 202006-market-6月26日，微软宣布，将永久关闭其Microsoft Store实体零售店
+  - 本不想搞个大新闻，因为Microsoft Store实体店全球都不到100家店
+  - 黑人暴乱零元购的风险
 - 202003-market-国外疫情严重，口罩需求大，国内各种小作坊疯狂生产制作口罩用熔喷布，一家利润5万/天
 - 202003-market-npm, Inc., is being purchased by GitHub_20200316
 - 202002-market-腾讯成为B站最大股东
@@ -63,6 +66,7 @@ modified: '2020-06-22T09:09:09.436Z'
 - 201903-world-英国在2016年6月举办脱离欧盟公投并获52%票数支持,2019正式脱欧
 - 201901-bug-拼多多漏洞，100元无门槛优惠券，官方声明实际损失低于千万
 - 201901-market-Oracle宣布2019年1月后，没有商业许可证的Java SE8不会再收到更新
+- 201810-app-Google从官网移除拼音输入法，最初偷用搜狗词库
 - 201807-app-fgmt推出开源数据传输项目Data Transfer Project(DTP)
   - apple于2019加入DTP
   - DTP也是一种规避垄断的方式
@@ -70,3 +74,5 @@ modified: '2020-06-22T09:09:09.436Z'
   - 201807头条研发团队整体转岗微头条，悟空问答不再补贴答主
 - 201701-app-Trello acquired by Atlassian
 - 201612-market-Cyanogen宣布关闭服务，CM改名为Lineage继续开发下去
+
+

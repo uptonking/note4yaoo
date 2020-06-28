@@ -3,7 +3,7 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-26T16:33:58.979Z'
+modified: '2020-06-28T06:16:53.767Z'
 ---
 
 # log-deving-react
@@ -13,7 +13,8 @@ modified: '2020-06-26T16:33:58.979Z'
 - react code splitting
   - Dynamic Imports
 - 父子组件的挂载顺序、生命周期顺序、DOM生成顺序
-  - 
+  - 顶层父组件最先调用`render()`，然后依次调用下层子组件的render
+  - 接着调用最下层组件的didMount，依次向上调用didMount，最后调用顶层父组件的didMount
 - 使用context作为全局唯一store和redux的区别
   - 
 - How does React know the component is removed from the DOM?

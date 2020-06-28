@@ -2,7 +2,7 @@
 tags: [wiki]
 title: pick-vocabulary-dev
 created: '2019-09-02T04:34:22.505Z'
-modified: '2020-06-22T09:18:34.943Z'
+modified: '2020-06-28T01:58:58.459Z'
 ---
 
 # pick-vocabulary-dev
@@ -17,6 +17,8 @@ modified: '2020-06-22T09:18:34.943Z'
 
 
 ## cs
+- Pilcrow	
+  - 段落符号 ¶
 
 
 ## pieces
