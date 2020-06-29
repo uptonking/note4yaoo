@@ -2,7 +2,7 @@
 tags: [changelog, docs, react]
 title: read-docs-react-changelog
 created: '2020-06-23T05:49:13.941Z'
-modified: '2020-06-27T15:28:36.910Z'
+modified: '2020-06-29T09:48:03.903Z'
 ---
 
 # read-docs-react-changelog
@@ -13,7 +13,7 @@ modified: '2020-06-27T15:28:36.910Z'
   - build UIs that feel great on desktop and mobile, with mouse and touch
 - concurrent mode and suspense (stable-17)
 - ref
-  - https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22
+  - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
   - [React Fire](https://github.com/facebook/react/issues/13525)
   - [React Flare](https://github.com/facebook/react/issues/15257)
 

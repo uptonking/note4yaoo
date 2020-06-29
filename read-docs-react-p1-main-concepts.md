@@ -2,7 +2,7 @@
 tags: [docs, react]
 title: read-docs-react-p1-main-concepts
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-27T15:10:06.744Z'
+modified: '2020-06-29T09:22:55.337Z'
 ---
 
 # read-docs-react-p1-main-concepts
@@ -103,10 +103,11 @@ modified: '2020-06-27T15:10:06.744Z'
   - React DOM takes care of updating the DOM to match the React elements.
 - Applications built with just React usually have a single root DOM node
   - We call this a “root” DOM node because everything inside it will be managed by React DOM.
+  - To render a React element into a root DOM node, pass both to `ReactDOM.render()`
 - React elements are immutable. 
   - Once you create an element, you can’t change its children or attributes. 
   - An element represents the UI at a certain point in time.
-  - With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`
+- With our knowledge so far, the only way to update the UI is to create a new element, and pass it to `ReactDOM.render()`
 - React DOM compares the element and its children to the previous one, and **only applies the DOM updates necessary** to bring the DOM to the desired state.
 - Even though we create an element describing the whole UI tree on every tick, *only the text node whose contents have changed gets updated* by React DOM
 - In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
@@ -129,7 +130,10 @@ modified: '2020-06-27T15:10:06.744Z'
    
 ## 5.state & lifecycle     
 - State is similar to props, but it is private and fully controlled by the component.
-- The render method will be called each time an update happens
+- React then calls the Clock component’s `render()` method.
+  - This is how React learns what should be displayed on the screen. 
+  - React then updates the DOM to match the Clock’s render output.
+- The `render` method will be called each time an update happens
   - but as long as we render `<Clock />` into the same DOM node, only a single instance of the Clock class will be used. 
   - This lets us use additional features such as local state and lifecycle methods.
 - While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
@@ -145,6 +149,12 @@ modified: '2020-06-27T15:10:06.744Z'
 - This is commonly called a “top-down” or “unidirectional” data flow. 
   - Any state is always owned by some specific component
   - and any data or UI derived from that state can only affect components “below” them in the tree.
+- `render()` will be invoked if `shouldComponentUpdate()` returns `true`
+  - `shouldComponentUpdate()` is invoked before rendering when new props or state are being received. Defaults to `true`. 
+  - The default behavior is to re-render on every state change, 
+  - and in the vast majority of cases you should rely on the default behavior.
+- `render` method being called is not the same thing as the DOM ultimately getting updated. 
+  - There are a few additional steps React takes where the DOM is diffed
 - 如果需要存储不用于视觉输出的东西，则可以手动向类中添加不同于props和state的其他字段，如果你不在render()中使用某些东西，它就不应该在状态中
 - state要点
 	- 不要直接更新state，即不要使用`this.state.var1 = 'Hello'`，应当使用`this.setState({var1: 'Hello'});`

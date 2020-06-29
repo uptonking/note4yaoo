@@ -3,7 +3,7 @@ favorited: true
 tags: [components, web]
 title: note-components-react-in-action
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-06-28T01:50:53.584Z'
+modified: '2020-06-29T03:06:46.372Z'
 ---
 
 # note-components-react-in-action
@@ -379,6 +379,7 @@ modified: '2020-06-28T01:50:53.584Z'
   - unsplash-image-card
 - dataset
   - TopN
+  - AlphabeticalMenu：类似win10开始菜单的首字母排序
 - entertainment
   - AnimationPlayer: 类似视频播放器，点击播放动画，动画元素主要是图标，播放效果类似视频
 

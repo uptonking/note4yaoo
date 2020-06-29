@@ -2,7 +2,7 @@
 tags: [api, docs, react]
 title: read-docs-react-p3-api
 created: '2020-06-23T07:30:37.293Z'
-modified: '2020-06-26T12:37:30.964Z'
+modified: '2020-06-29T13:20:35.277Z'
 ---
 
 # read-docs-react-p3-api
@@ -73,6 +73,7 @@ modified: '2020-06-26T12:37:30.964Z'
 
 - `componentDidMount()`
 - It is invoked immediately after a component is mounted (inserted into the tree). 
+  - reading `clientHeight` from within componentDidMount should force the browser to do a *sync* layout (not great but sometimes necessary) and return a valid clientHeight.
 - Initialization that requires DOM nodes should go here. 
 - If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
 - This method is a good place to set up any subscriptions. 
@@ -252,13 +253,45 @@ this.setState((state) => {
   - useDebugValue
 
 - `React.PureComponent`
-- The difference between them is that `React.Component` doesn’t implement `shouldComponentUpdate()`, but `React.PureComponent` implements it with a shallow prop and state comparison.
+- `React.Component` doesn’t implement `shouldComponentUpdate()`, but `React.PureComponent` implements it with a shallow prop and state comparison.
+  - src `!shallowEqual(oldProps,newProps) || !shallowEqual(oldState,newState) `
+  - Performs equality by iterating through keys on an object
+    - If you mean individual properties, afaik they're compared using `Object.is` algorithm (which is slightly different from `===` because it also handles NaN).
+    - Returns false when any key has values which are not strictly equal between the arguments.
+    - Returns true when the values of all keys are strictly equal.
+  - https://github.com/facebook/react/issues/13468
+  - shallowCompare is a legacy add-on. Use React.memo or React.PureComponent instead.
 - `React.PureComponent`’s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also “pure”.
+- Using a render prop can negate the advantage that comes from using React.PureComponent if you create the function inside a render method.
+- You can't use PureComponent and specify shouldComponentUpdate at the same time. 
+- If your component utilizes a render prop, you can't do a shallow comparison, you would always need to re-render since the function reference isn't guaranteed to change on each render.
+- If you use render props, make sure shouldComponentUpdate() in your components always respects children (like PureComponent does). Otherwise you can end up with very confusing issues
+- Having each of your components check to see if props or state have changed, even if it is a shallow check, takes up some computation time.
+Don't overuse it.
+```
+class App extends React.PureComponent {
+  state={
+    ele: {a:'1'}
+  }
+  // click event triggers render every time.
+  // 因为setState每次都会通过Object.assign合并属性成一个新对象
+  trigger=()=>{
+    console.log('click')
+    this.setState({ele: {a:'1'}})
+  }
+  render() {
+    console.log('render')
+    return (
+      <div onClick={this.trigger}>click here to trigger setState</div>
+    );
+  }
+}
+```
 
 - `React.memo`
 - React.memo is a higher order component. 
 - It’s similar to `React.PureComponent` but for function components instead of classes.
-- React.memo only checks for prop changes. 
+- React.memo **only checks for prop changes**. 
   - If your function component wrapped in React.memo has a `useState` or `useContext` Hook in its implementation, it will still rerender when state or context change.
 - By default it will only shallowly compare complex objects in the props object. 
 - If you want control over the comparison, you can also provide a custom comparison function as the second argument.

@@ -1,8 +1,8 @@
 ---
-tags: [docs, react]
+tags: [docs, hooks, react]
 title: read-docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-28T18:38:01.601Z'
+modified: '2020-06-29T13:11:30.185Z'
 ---
 
 # read-docs-react-p6-hooks
@@ -10,7 +10,7 @@ modified: '2020-06-28T18:38:01.601Z'
 ## Introducing Hooks
 - Hooks are JavaScript functions letting you use state and other React features without writing a class. 
   - React 16.8.0 is the first release to support Hooks
-- Hooks are completely opt-in. You don't have to use it if you don't wnat to.
+- Hooks are completely opt-in. You don't have to use it if you don't want to.
 - Hooks are 100% backwards-compatible. Hooks don’t contain any breaking changes.
 - There are no plans to remove classes from React. 
 - Hooks don’t replace your knowledge of React concepts.
@@ -147,9 +147,9 @@ function Example() {
   - Instead of thinking in terms of “mounting” and “updating”, you might find it easier to think that effects happen “after render”. 
   - React guarantees the DOM has been updated by the time it runs the effects.
 - The function passed to `useEffect` is going to be different on every render. This is intentional. 
-  - This is what lets us read the count value from inside the effect without worrying about it getting stale. 
+  - This is what lets us read the latest state value `count` from inside the effect without worrying about it getting stale. 
   - Every time we re-render, we schedule a different effect, replacing the previous one. 
-  - In a way, this makes the effects behave more like a part of the render result — each effect “belongs” to a particular render
+  - In a way, this makes the effects behave more like a part of the render result - each effect “belongs” to a particular render
 - Unlike `componentDidMount` or `componentDidUpdate`, effects scheduled with `useEffect` don’t block the browser from updating the screen.
   - The majority of effects don’t need to happen synchronously. 
   - In the uncommon cases where they do (such as measuring the layout), there is a separate `useLayoutEffect` Hook with an API identical to useEffect.
@@ -176,7 +176,7 @@ function Example() {
   - This behavior ensures consistency by default and prevents bugs that are common in class components due to missing update logic.
   - What happens if the friend prop changes while the component is on the screen? 
     - Our component would continue displaying the online status of a different friend. This is a bug.
-  - We would also cause a memory leak or crash when unmounting since the unsubscribe call would use the wrong friend ID.
+    - We would also cause a memory leak or crash when unmounting since the unsubscribe call would use the wrong friend ID.
   - In a class component, we would need to add `componentDidUpdate` to handle this case
   - There is no special code for handling updates because `useEffect` handles them by default.
   - It cleans up the previous effects before applying the next effects. 
@@ -298,7 +298,7 @@ function Example() {
     - For example, a DOM mutation that is visible to the user must **fire synchronously before the next paint** so that the user does not perceive a visual inconsistency.
     - The distinction is conceptually similar to passive versus active event listeners.
     - For these types of effects, React provides one additional Hook called `useLayoutEffect`. 
-    - It has the same signature as useEffect, and only differs in when it is fired
+    - It has the same signature as `useEffect`, and only differs in when it is fired
     - Although useEffect is deferred until after the browser has painted, it’s guaranteed to fire before any new renders. React will always flush a previous render’s effects before starting a new update.
     - The default behavior for effects is to fire the effect after every completed render.
       - That way an effect is always recreated if one of its dependencies changes.
@@ -312,12 +312,14 @@ function Example() {
   - Use this to read layout from the DOM and synchronously re-render. 
   - Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
   - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
+  - With useLayoutEffect, the computation will be triggered before the browser has painted the update. Since the computation takes some time, this eats into the browser’s paint time.
+  - If you rely on these refs to perform an animation as soon as the component mounts, then you’ll find an unpleasant flickering of browser paints happen before your animation kicks in. This is the case with useEffect, but not useLayoutEffect.
 
 - `const value = useContext(MyContext);`
   - Accepts a context object(the value returned from `React.createContext`) 
   - Returns the current context value for that context.
     - The current context value is determined by the `value` prop of the nearest `<MyContext.Provider>` above the calling component in the tree.
-  - `useContext(MyContext)` is equivalent to `static contextType = MyContext` in a class, or to `<MyContext.Consumer>`.
+  - `useContext(MyContext)` is **equivalent** to `static contextType = MyContext` in a class, or to `<MyContext.Consumer>`.
     - `useContext(MyContext)` only lets you read the context and subscribe to its changes. 
     - You still need a `<MyContext.Provider>` above in the tree to provide the value for this context.
   - When the nearest `<MyContext.Provider>` above the component updates, this Hook will trigger a rerender 
@@ -363,7 +365,7 @@ function Example() {
   
 - `const refContainer = useRef(initialValue);`
   - `useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument (`initialValue`).
-  - The returned object will persist for the full lifetime of the component.
+  - The **returned object will persist for the full lifetime** of the component.
   - A common use case is to access a child imperatively
   - If you pass a ref object to React with `<div ref={myRef} />`, React will set its `.current` property to the corresponding DOM node whenever that node changes.
   - `useRef` is handy for keeping any mutable value around similar to how you’d use instance fields in classes.
@@ -424,12 +426,12 @@ function Example() {
   - Often, render props and higher-order components render only a single child. We think Hooks are a simpler way to serve this use case.
   - There is still a place for both patterns (for example, a virtual scroller component might have a renderItem prop, or a visual container component might have its own DOM structure).
   - But in most cases, Hooks will be sufficient and can help reduce nesting in your tree.
-- What do Hooks mean for popular APIs like Redux connect() and React Router?
+- What do Hooks mean for popular APIs like Redux `connect()` and React Router?
   - You can continue to use the exact same APIs as you always have; they'll continue to work.
   - In the future, new versions of these libraries might also export custom Hooks such as useRedux() or useRouter() that let you use the same features without needing wrapper components.
   - Other libraries might support hooks in the future too.
 - Do Hooks work with static typing?
-  -  Flow and TypeScript teams plan to include definitions for React Hooks in the future.
+  - Flow and TypeScript teams plan to include definitions for React Hooks in the future.
 - Do Hooks work with static typing?
   - Hooks are functions, they are easier to type correctly than patterns like higher-order components. 
   - The latest Flow and TypeScript React definitions include support for React Hooks.
@@ -440,26 +442,26 @@ function Example() {
   
 - **From Classes to Hooks**
 - How do lifecycle methods correspond to Hooks?
-  - constructor
+  - `constructor`
     - Function components don't need a constructor. 
     - You can initialize the state in the useState call.
     - If computing it is expensive, you can pass a function to useState.
-  - getDerivedStateFromProps
+  - `getDerivedStateFromProps`
     - Schedule an update while rendering instead.
-  - shouldComponentUpdate
+  - `shouldComponentUpdate`
     - use React.memo 
-  - render
+  - `render`
     - This is the function component body itself.
-  - componentDidMount, componentDidUpdate, componentWillUnmount
+  - `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`
     - The useEffect Hook can express all combinations of these (including less common cases).
-  - getSnapshotBeforeUpdate,componentDidCatch and getDerivedStateFromError
+  - `getSnapshotBeforeUpdate`,`componentDidCatch` and `getDerivedStateFromError`
     - There are no Hook equivalents for these methods yet, but they will be added soon.
 - How can I do data fetching with Hooks
   - https://www.robinwieruch.de/react-hooks-fetch-data/
 - Is there something like instance variables?
-  - useRef() Hook isn’t just for DOM refs. 
+  - `useRef()` Hook isn’t just for DOM refs. 
   - The “ref” object is a generic container whose `current` property is mutable and can hold any value, similar to an instance property on a class.
-  - avoid setting refs during rendering — this can lead to surprising behavior. 
+  - avoid setting refs during rendering - this can lead to surprising behavior. 
   - Instead, typically you want to modify refs in event handlers and effects.
 - Should I use one or many state variables?
   - If you're coming from classes, you might be tempted to always call useState() once and put all state into a single object
@@ -472,7 +474,7 @@ function Example() {
   - Currently, you can do it manually with a ref 
   - You can extract it into a custom Hook
   - Note how this would work for props, state, or any other calculated value.
-  - It’s possible that in the future React will provide a usePrevious Hook out of the box since it’s a relatively common use case.
+  - It’s possible that in the future React will provide a `usePrevious` Hook out of the box since it’s a relatively common use case.
 - Why am I seeing stale props or state inside my function?
   - Any function inside a component, including event handlers and effects, “sees” the props and state from the render it was created in
   - If you first click “Show alert” and then increment the counter, the alert will show the count variable at the time you clicked the “Show alert” button
@@ -481,18 +483,18 @@ function Example() {
     - The solution is to either remove the dependency array, or to fix it. 
 - How do I implement `getDerivedStateFromProps`?
   - You can update the state right during rendering.
-  - React will re-run the component with updated state immediately after exiting the first render so it wouldn’t be expensive.
+  - React will **re-run the component with updated state immediately** after exiting the first render so it wouldn’t be expensive.
   - We can store the previous value of the prop in a state variable so that we can compare
   - This might look strange at first, but an update during rendering is exactly what `getDerivedStateFromProps` has always been like conceptually.
 - Is there something like forceUpdate?
   - Both useState and useReducer Hooks bail out of updates if the next value is the same as the previous one. 
   - Mutating state in place and calling setState will not cause a re-render.
   - Normally, you shouldn’t mutate local state in React. 
-    - However, as an escape hatch, you can use an incrementing counter to force a re-render even if the state has not changed
-    - `const [ignored, forceUpdate] = useReducer(x => x + 1, 0);`
+  - However, as an escape hatch, you can use an incrementing counter to force a re-render even if the state has not changed
+  - `const [ignored, forceUpdate] = useReducer(x => x + 1, 0);`
   - Try to avoid this pattern if possible.
 - Can I make a ref to a function component?
-  - You may expose some imperative methods to a parent component with the 	`useImperativeMethods` Hook.
+  - You may expose some imperative methods to a parent component with the `useImperativeMethods` Hook.
 - How can I measure a DOM node?
   - use a callback ref. 
   - React will call that callback whenever the ref gets attached to a different node. 
@@ -513,15 +515,15 @@ function Example() {
     - If the function you’re calling is a pure computation and is safe to call while rendering, you may call it outside of the effect instead, and make the effect depend on the returned value.
     - As a last resort, you can add a function to effect dependencies but wrap its definition into the useCallback Hook. This ensures it doesn’t change on every render unless its own dependencies also change
 - What can I do if my effect dependencies change too often?
-  - We can use the functional update form of setState. It lets us specify how the state needs to change without referencing the current state
-  - The identity of the setCount function is guaranteed to be stable so it’s safe to omit.
+  - We can **use the functional update form of `setState`**. It lets us specify how the state needs to change without referencing the current state
+  - The identity of the `setCount` function is guaranteed to be stable so it’s safe to omit.
   - In more complex cases (such as if one state depends on another state), try moving the state update logic outside the effect with the useReducer Hook.
-  - The identity of the dispatch function from useReducer is always stable — even if the reducer function is declared inside the component and reads its props.
-  - As a last resort, if you want something like this in a class, you can use a ref to hold a mutable variable. Then you can write and read to it. 
+  - The identity of the dispatch function from useReducer is always stable - even if the reducer function is declared inside the component and reads its props.
+  - As a last resort, if you want something like this in a class, you can use a `ref` to hold a mutable variable. Then you can write and read to it. 
 - How do I implement `shouldComponentUpdate`?
   - You can wrap a function component with `React.memo` to shallowly compare its props
   - It's not a Hook because it doesn't compose like Hooks do. 
-  - React.memo is equivalent to PureComponent, but it only compares props.
+  - `React.memo` is equivalent to `PureComponent`, but it only compares props.
   - React.memo doesn’t compare state because there is no single state object to compare. 
 - How to memoize calculations?
   - `useMemo` Hook lets you cache calculations between multiple renders by "remembering" the previous computation
@@ -537,15 +539,15 @@ function Example() {
   - Idiomatic code using Hooks doesn't need the deep component tree nesting that is prevalent in codebases that use higher-order components, render props, and context. With smaller component trees, React has less work to do.
   - Traditionally, performance concerns around inline functions in React have been related to how passing new callbacks on each render breaks shouldComponentUpdate optimizations in child components. 
   - Hooks approach this problem from three sides
-    - useCallback Hook lets you keep the same callback reference between re-renders so that shouldComponentUpdate continues to work
-    - useMemo Hook makes it easier to control when individual children update, reducing the need for pure components.
-    - useReducer Hook reduces the need to pass callbacks deeply
+    - `useCallback` Hook lets you keep the same callback reference between re-renders so that shouldComponentUpdate continues to work
+    - `useMemo` Hook makes it easier to control when individual children update, reducing the need for pure components.
+    - `useReducer` Hook reduces the need to pass callbacks deeply
 - How to avoid passing callbacks down?
   - an alternative we recommend is to pass down a `dispatch` function from `useReducer` via `useContext`
   - You can still choose whether to pass the application state down as props (more explicit) or as context (more convenient for very deep updates).
-  - If you use context to pass down the state too, use two different context types — the dispatch context never changes, so components that read it don’t need to rerender unless they also need the application state.
-- How to read an often-changing value from useCallback?
-  - We recommend to pass dispatch down in context rather than individual callbacks in props.
+  - If you use context to pass down the state too, use two different context types - the dispatch context never changes, so components that read it don’t need to rerender unless they also need the application state.
+- How to read an often-changing value from `useCallback`?
+  - We recommend to pass `dispatch` down in context rather than individual callbacks in props.
     - this pattern might cause problems in the concurrent mode.
   - In some rare cases you might need to memoize a callback with useCallback but the memoization doesn’t work very well because the inner function has to be re-created too often. 
   - If the function you’re memoizing is an event handler and isn’t used during rendering, you can use ref as an instance variable, and save the last committed value into it manually
@@ -556,7 +558,7 @@ function Example() {
 - **Under the Hood**
 - How does React associate Hook calls with components?
   - React keeps track of the currently rendering component.
-  - Hooks are only called from React components (or custom Hooks — which are also only called from React components).
+  - Hooks are only called from React components (or custom Hooks - which are also only called from React components).
   - There is an internal list of "memory cells" associated with each component. 
   - They're just JavaScript objects where we can put some data. 
   - When you call a Hook like `useState()`, it reads the current cell (or initializes it during the first render), and then moves the pointer to the next one. 

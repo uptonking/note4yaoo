@@ -3,7 +3,7 @@ favorited: true
 tags: [docs, react]
 title: read-docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-27T04:42:51.915Z'
+modified: '2020-06-29T12:35:11.699Z'
 ---
 
 # read-docs-react-p2-advanced-guides
@@ -525,7 +525,7 @@ function getDisplayName(WrappedComponent) {
   - If the component returned from `render` is identical (===) to the component from the previous render, React recursively updates the subtree by diffing it with the new one. 
   - If they’re not equal, the previous subtree is unmounted completely.
   - It matters for HOCs because it means you can’t apply a HOC to a component within the render method of a component
-  - The problem here isn’t just about performance — remounting a component causes the state of that component and all of its children to be lost.
+  - The problem here isn’t just about performance - remounting a component causes the state of that component and all of its children to be lost.
 - Instead, **apply HOCs outside the component definition** so that the resulting component is created only once. 
   - Then, its identity will be consistent across renders. This is usually what you want, anyway.
   - In those rare cases where you need to apply a HOC dynamically, you can also do it inside a component’s lifecycle methods or its constructor.
@@ -572,13 +572,115 @@ function getDisplayName(WrappedComponent) {
 - One interesting thing to note about render props is that you can implement most higher-order components (HOC) using a regular component with a render prop.
 - In fact, any prop that is a function that a component uses to know what to render is technically a “render prop”
   - Although the examples above use `render`, we could just as easily use the `children` prop!
-  - And remember, the children prop doesn’t actually need to be named in the list of “attributes” in your JSX element. 
+  - And remember, the `children` prop doesn’t actually need to be named in the list of “attributes” in your JSX element. 
   - Instead, you can put it directly inside the element!
-- Using a render prop can negate the advantage that comes from using `React.PureComponent` if you create the function inside a `render` method. 
+```jsx
+<Mouse children={mouse => (
+  <p>The mouse position is {mouse.x}, {mouse.y}</p>
+)}/>
+
+<Mouse>
+  {mouse => (
+    <p>The mouse position is {mouse.x}, {mouse.y}</p>
+  )}
+</Mouse>
+```
+- Using a render prop can negate the advantage that comes from using `React.PureComponent` **if you create the function inside a `render` method**. 
   - This is because the shallow prop comparison will always return false for new props
-  - and each `render` in this case will generate a new value for the render prop.
-- To get around this problem, you can sometimes define the prop as an instance method
+  - and each `render` in this case will generate a new value for the render prop. So your Component would re-render all the time.
+  - To get around this problem, you can sometimes define the prop as an instance method  
+```js
+class MouseTracker extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Move the mouse around!</h1>
+
+        {/*
+          This is bad! 
+          The value of the `render` prop will be different on each render.
+        */}
+        <Mouse render={mouse => (
+          <Cat mouse={mouse} />
+        )}/>
+      </div>
+    );
+  }
+}
+
+class Mouse extends React.Pure/Component {
+  constructor(props) {
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
+  }
+  handleMouseMove(event) {
+    this.setState({
+      y: event.clientY
+    });
+  }
+  render() {
+    return (
+      <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+        {/*
+          Instead of providing a static representation of what <Mouse> renders,
+          use the `render` prop to dynamically determine what to render.
+        */}
+        {this.props.render(this.state)}
+      </div>
+    );
+  }
+}
+class MouseTracker extends React.Component {
+  // Defined as an instance method, 
+  // `this.renderTheCat` always refers to *same* function when we use it in render
+  renderTheCat(mouse) {
+    return <Cat mouse={mouse} />;
+  }
+
+  render() {
+    // 这么没绑定this，this value in an unbound renderTheCat will be the this.props object of Mouse.
+    return (
+      <div>
+        <h1>Move the mouse around!</h1>
+        <Mouse render={this.renderTheCat} />
+      </div>
+    );
+  }
+}
+```
 - In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state), `<Mouse>` should extends `React.Component` instead.
+  - In cases where you cannot define the render prop method (renderTheCat) statically (e.g. because you need to close over the Mouse component's props and/or state), Mouse Component should extend React.Component instead. When Mouse is a PureComponent, the child Cat will not re-render when Mouse's state or props change, since Cat's own props and state will not have changed! If Mouse is a regular Component instead, a change to the Mouse's state or props will automatically cause it's child Cat to re-render.
+  - I think including a bound method in the example is dangerous, because if the method did reference this.props or this.state, it would be incorrect to pass a bound version to the render prop because Mouse would fail to re-render when props/state change,
+  - https://github.com/reactjs/reactjs.org/pull/700
+```js
+class Foo extends PureComponent {
+  render() {
+    return this.props.render('abc')
+  }
+}
+
+class Bar extends Component {
+  constructor(props, context) {
+    super(props, context)
+    this.renderBaz = this.renderBaz.bind(this)
+  }
+
+  // 绑定this后，若this.props变化，但renderBaz引用未变，所以Foo不会rerender
+  // 若Foo继承的是Component，则Foo作为Bar的子组件会再次调用render
+  renderBaz(value) {
+    return value + this.props.value
+  }
+
+  render() {
+    return <Foo render={this.renderBaz} />
+  }
+}
+
+<Bar value="def" /> // renders "abcdef"
+<Bar value="ghi" /> // still renders "abcdef"
+It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to suggest binding as a solution, especially when the binding isn't even necessary in the particular example.
+```
 
 ## Portals
 - Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.

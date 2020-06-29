@@ -1,8 +1,8 @@
 ---
-tags: [docs, react]
+tags: [docs, faq, react]
 title: read-docs-react-p4-faq
 created: '2020-06-23T07:27:08.496Z'
-modified: '2020-06-28T05:50:33.923Z'
+modified: '2020-06-29T08:32:47.252Z'
 ---
 
 # read-docs-react-p4-faq

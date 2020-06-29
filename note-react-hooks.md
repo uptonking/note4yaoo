@@ -2,7 +2,7 @@
 tags: [hooks, react]
 title: note-react-hooks
 created: '2020-06-24T08:36:20.056Z'
-modified: '2020-06-28T18:48:45.459Z'
+modified: '2020-06-29T13:14:27.166Z'
 ---
 
 # note-react-hooks
@@ -15,10 +15,14 @@ modified: '2020-06-28T18:48:45.459Z'
     - Else it returns the memoized(cached) result.
   - useCallback() prevents the new instance of funtion being created on each rerender
     - thus prevents the rerendering of child components if we pass the function as props to them
+- react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
+  - render方法的执行时机
+  - One drawback of using `componentDidUpdate`, or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
 - `useEffect` vs `useLayoutEffect`
   - 结论
     - useLayoutEffect总是比useEffect先执行
-    - 涉及dom操作的用useLayoutEffect 
+    - useLayoutEffect: If you need to mutate the DOM and/or do need to perform measurements
+    - useEffect: If you don't need to interact with the DOM at all or your DOM changes are unobservable (seriously, most of the time you should use this). 
   - 正常情况用默认的useEffect钩子就够了，这可以保证状态变更不阻塞渲染过程
     - 但如果effect更新（清理）中涉及DOM更新操作，用useEffect就会有意想不到的效果。
     - 比如逐帧动画 requestAnimationFrame ，要做一个 useRaf hook 就得用上后者，需要保证同步变更。

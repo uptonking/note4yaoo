@@ -2,7 +2,7 @@
 tags: [blog, react]
 title: read-blog-react-fiber-architecture
 created: '2020-06-27T05:10:19.958Z'
-modified: '2020-06-27T05:18:56.310Z'
+modified: '2020-06-29T04:20:19.734Z'
 ---
 
 # read-blog-react-fiber-architecture
@@ -20,3 +20,5 @@ modified: '2020-06-27T05:18:56.310Z'
 - ref
   - https://dev.to/afairlie/to-understand-react-fiber-you-need-to-know-about-threads-3dof
   - https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render
+
+
