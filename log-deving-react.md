@@ -3,13 +3,13 @@ favorited: true
 tags: [js, react]
 title: log-deving-react
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-29T09:20:51.888Z'
+modified: '2020-06-29T15:50:55.313Z'
 ---
 
 # log-deving-react
 
 ## tips
-- react自由的生态
+- react开放的生态
   - 异步流方案、状态管理方案、不可变数据结构、服务端渲染方案、组件抽象方案
   - 选择方式：面向star的编程、大公司支持、团队技术擅长
 - react
