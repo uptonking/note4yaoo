@@ -2,11 +2,10 @@
 tags: [pm, xp]
 title: app-xp-software
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-06-28T01:39:06.020Z'
+modified: '2020-06-30T05:17:08.855Z'
 ---
 
 # app-xp-software
-
 
 ## browser
 - browser extensions

@@ -1,11 +1,11 @@
 ---
 tags: [docs/handsontable]
-title: read-docs-handsontable
+title: docs-handsontable
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-22T09:21:03.073Z'
+modified: '2020-06-30T05:09:23.379Z'
 ---
 
-# read-docs-handsontable
+# docs-handsontable
 
 ## dev-tips
 

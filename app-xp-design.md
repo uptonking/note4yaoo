@@ -2,18 +2,18 @@
 tags: [pm, xp]
 title: app-xp-design
 created: '2019-11-18T12:37:41.447Z'
-modified: '2020-06-28T01:38:57.761Z'
+modified: '2020-06-30T05:17:25.958Z'
 ---
 
 # app-xp-design
 
-- style
-  - handwritten：素描风格，线框图风格
-  - unfold:揭开效果，类似画皮的撕皮
-    - https://aframe.io/aframe/examples/animation/unfold/
-  - skew layer effect
-  - 广告字符通过动画形成名称文字的动画，类似不完美的她
-  - 一个文字或形状，通过动画渐变成另一个
+## style
+- handwritten：素描风格，线框图风格
+- unfold:揭开效果，类似画皮的撕皮
+  - https://aframe.io/aframe/examples/animation/unfold/
+- skew layer effect
+- 广告字符通过动画形成名称文字的动画，类似不完美的她
+- 一个文字或形状，通过动画渐变成另一个
 
 ## 界面类
 - 数字展示不直观，可以考虑百分比进度条

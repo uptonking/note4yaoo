@@ -1,17 +1,17 @@
 ---
 tags: [docs/react]
-title: read-docs-redux
+title: docs-redux
 created: '2019-08-01T16:03:46.390Z'
-modified: '2019-10-06T02:03:39.757Z'
+modified: '2020-06-30T05:15:07.906Z'
 ---
 
-# read-docs-redux
+# docs-redux
 - Redux is a predictable state container for JavaScript apps.
 
 ## dev-tips
 
-- 惟一会使用到 bindActionCreators 的场景是当你需要把 action creator 往下传到一个组件上，却不想让这个组件觉察到 Redux 的存在，而且不希望把 dispatch 或 Redux store 传给它。
-- 通过redux 的combineReducers可以很好的扁平化数据
+- 唯一会使用到bindActionCreators的场景是当你需要把action creator往下传到一个组件上，却不想让这个组件觉察到Redux的存在，而且不希望把dispatch或Redux store传给它
+- 通过redux的combineReducers可以很好的扁平化数据
 - compose：作用是从右到左来组合多个函数，其实就是让你少写几个函数嵌套，`compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`  
 
 

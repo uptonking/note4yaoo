@@ -1,11 +1,11 @@
 ---
 tags: [docs, react]
-title: read-docs-react-p5-codebase-deisgn-test
+title: docs-react-p5-codebase-deisgn-test
 created: '2020-06-25T17:53:19.549Z'
-modified: '2020-06-27T02:34:32.165Z'
+modified: '2020-06-30T05:14:25.332Z'
 ---
 
-# read-docs-react-p5-codebase-deisgn-test
+# docs-react-p5-codebase-deisgn-test
 
 ## How to Contribute
 - https://reactjs.org/docs/how-to-contribute.html

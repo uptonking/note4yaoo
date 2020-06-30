@@ -1,11 +1,11 @@
 ---
 tags: [blog, react]
-title: read-blog-react-dev
+title: page-blog-react-dev
 created: '2020-06-29T08:43:56.344Z'
-modified: '2020-06-29T08:46:29.852Z'
+modified: '2020-06-30T05:10:00.769Z'
 ---
 
-# read-blog-react-dev
+# page-blog-react-dev
 
 
 ## react component vs element vs instance

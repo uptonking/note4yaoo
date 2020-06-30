@@ -1,11 +1,11 @@
 ---
 tags: [blog, react]
-title: read-blog-react-fiber-architecture
+title: page-blog-react-fiber-architecture
 created: '2020-06-27T05:10:19.958Z'
-modified: '2020-06-29T04:20:19.734Z'
+modified: '2020-06-30T03:58:59.393Z'
 ---
 
-# read-blog-react-fiber-architecture
+# page-blog-react-fiber-architecture
 
 ## pieces
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.

@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [docs, react]
-title: read-docs-react-p2-advanced-guides
+title: docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-29T12:35:11.699Z'
+modified: '2020-06-30T05:13:45.128Z'
 ---
 
-# read-docs-react-p2-advanced-guides
+# docs-react-p2-advanced-guides
 
 ## JSX In Depth
 - JSX just provides syntactic sugar for the `React.createElement(componentType, props, ...children)` function

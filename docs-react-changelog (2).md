@@ -1,11 +1,11 @@
 ---
 tags: [changelog, docs, react]
-title: read-docs-react-changelog
+title: docs-react-changelog
 created: '2020-06-23T05:49:13.941Z'
-modified: '2020-06-29T09:48:03.903Z'
+modified: '2020-06-30T05:10:44.662Z'
 ---
 
-# read-docs-react-changelog
+# docs-react-changelog
 
 ## react-roadmap
 - React Fire: Modernizing React DOM

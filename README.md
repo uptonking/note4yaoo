@@ -9,12 +9,14 @@ modified: '2020-06-22T09:22:08.212Z'
 - my daily notes and pieces  
 
 ## note-categories
-- `note-`: dev and learning, mostly about js, java, web, list, geospatial
-- `topic-`: viewpoints about one topic 
-- `read-`: dev docs and guide 
+- `note-`: dev and learning notes, mostly about js, web, list, java, geospatial
+- `docs-`: dev docs 
+- `page-`: dev guide 
+- `read-`: reading books
+- `topic-`: contents about one topic 
 - `toc-`: list of data
-- `log-`: long term activity
-- `latest-`: news of interesting topics 
+- `log-`: long term logging
+- `latest-`: interesting news 
 - `tool-`: xp of using devices and software
 - `spec-`: specifications about dev
 - `wiki-`: abstract about geo, history, law, fintech, etc.

@@ -1,11 +1,11 @@
 ---
 tags: [java]
-title: read-docs-vertx-es4x
+title: docs-vertx-es4x
 created: '2020-01-10T12:55:33.206Z'
-modified: '2020-06-22T09:21:57.160Z'
+modified: '2020-06-30T05:16:25.874Z'
 ---
 
-# read-docs-vertx-es4x
+# docs-vertx-es4x
 
 ## Vert.x
 - vert.x vs spring+tomcat

@@ -2,7 +2,7 @@
 tags: [coding, dev]
 title: coding-style
 created: '2019-09-03T14:06:29.976Z'
-modified: '2020-06-28T01:44:02.286Z'
+modified: '2020-06-30T05:17:43.290Z'
 ---
 
 # coding-style
@@ -19,8 +19,8 @@ modified: '2020-06-28T01:44:02.286Z'
   - In most cases, you should be exporting one conceptual thing from a module. In other words, if you have both "foo" and "boo", those are two modules and thus should be export defaulted from two separate files.If you insist on having them in the same file, then you should be using multiple named exports.
   - As far as positioning, there will soon be a linter rule in `eslint-plugin-import` that will require that all export statements are grouped together - so I'd recommend grouping them together and putting them at the bottom of the file.
   - 参考
-      - https://github.com/airbnb/javascript/issues/710
-      - https://juejin.im/post/5b2b2d8de51d4558ba1a64e0
+    - https://github.com/airbnb/javascript/issues/710
+    - https://juejin.im/post/5b2b2d8de51d4558ba1a64e0
 
 
 ## java

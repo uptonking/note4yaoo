@@ -1,11 +1,11 @@
 ---
 tags: [blog, copied, react]
-title: read-blog-react-components-in-action-5parts
+title: page-blog-react-components-in-action-5parts
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-06-29T17:13:16.035Z'
+modified: '2020-06-30T05:24:04.923Z'
 ---
 
-# read-blog-react-components-in-action-5parts
+# page-blog-react-components-in-action-5parts
 
 ## guide
 - [React组件设计实践总结 by 荒山](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
@@ -22,7 +22,7 @@ modified: '2020-06-29T17:13:16.035Z'
   - 减少不必要的嵌套，一般不必要的节点嵌套都是滥用高阶组件、RenderProps导致的
   - 虚拟列表只渲染当前视口可见元素，减少渲染的节点
   - 惰性渲染，只在必要时才去渲染对应的节点，如树形选择器，模态窗，下拉列表，折叠组件等
-  - 选择合适的样式方案，运行时性能CSS > 大部分CSS-in-js > inline style
+  - 选择合适的样式方案，运行时性能 CSS > 大部分CSS-in-js > inline style
 - 利用缓存避免重复渲染
   - 对应到React中就是如何避免重新渲染，利用函数式编程如memo来避免组件重新渲染
   - 使用纯组件，控制组件的副作用

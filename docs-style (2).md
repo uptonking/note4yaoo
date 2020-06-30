@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [docs, style, web]
-title: read-docs-style
+title: docs-style
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-06-22T09:21:46.705Z'
+modified: '2020-06-30T05:28:41.048Z'
 ---
 
-# read-docs-style
+# docs-style
 
 ## dev-tips
 - 如何复用现有项目的样式和第三方库的样式
@@ -36,7 +36,7 @@ modified: '2020-06-22T09:21:46.705Z'
 - By default, columns are only activated from tablet onwards. 
   - This means columns are stacked on top of each other on mobile.
 - Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
-### booking-Creating Interfaces with Bulma_Jeremy Thomas_2018
+### book-Creating Interfaces with Bulma_Jeremy Thomas_2018
 - bulma features
   - modern css framework with flexbox
   - 100% responsive, designed to be both mobile and desktop friendly

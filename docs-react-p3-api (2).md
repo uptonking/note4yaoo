@@ -1,11 +1,11 @@
 ---
 tags: [api, docs, react]
-title: read-docs-react-p3-api
+title: docs-react-p3-api
 created: '2020-06-23T07:30:37.293Z'
-modified: '2020-06-29T13:20:35.277Z'
+modified: '2020-06-30T05:13:55.088Z'
 ---
 
-# read-docs-react-p3-api
+# docs-react-p3-api
 
 ## API for React Component Class Definition
 - React lets you define components as classes or functions. 

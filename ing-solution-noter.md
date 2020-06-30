@@ -2,7 +2,7 @@
 tags: [solution]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-28T01:57:10.481Z'
+modified: '2020-06-30T05:13:25.510Z'
 ---
 
 # ing-solution-noter
@@ -49,6 +49,8 @@ modified: '2020-06-28T01:57:10.481Z'
 - [ ] edit: insert one blank line below  
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]` 
 - [ ] keyboard: alt+arrow, move current line up/down
+- [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
+
 
 ### notable-docs
 - The data directory is where all your notes and attachments will be stored

@@ -1,11 +1,11 @@
 ---
 tags: [docs/react]
-title: read-docs-react-router
+title: docs-react-router
 created: '2019-08-01T16:03:46.390Z'
-modified: '2019-10-06T02:03:32.862Z'
+modified: '2020-06-30T05:18:42.738Z'
 ---
 
-# read-docs-react-router
+# docs-react-router
 - React Router is a collection of navigational components that compose declaratively with your application. 
 
 ## dev-tips
@@ -13,11 +13,11 @@ modified: '2019-10-06T02:03:32.862Z'
 - how to programmatically navigate using react router v4
 	- 参考 https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
 	- In v4, for navigating programatically you need to access the history object, which is available through React context
-	- as long as you have a <BrowserRouter> provider component as the top most parent in your application. 
+	- as long as you have a `<BrowserRouter>` provider component as the top most parent in your application. 
 	- The library exposes through context the router object, that itself contains history as a property. 
 	- The history interface offers several navigation methods, such as  push, replace and goBack, among others.
 	- https://reacttraining.com/react-router/web/api/history
-	- The history object is mutable. Therefore it is recommended to access the location from the render props of <Route>, not from history.location. 
+	- The history object is mutable. Therefore it is recommended to access the location from the render props of `<Route>`, not from `history.location`. 
 - Link vs Redirect
 	- React Router's BrowserRouter maintains the history stack for you, which means that you rarely need to modify it manually.
 	- You'll want to use Link or NavLink in almost all use cases

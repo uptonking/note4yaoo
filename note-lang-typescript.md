@@ -2,7 +2,7 @@
 tags: [lang/typescript]
 title: note-lang-typescript
 created: '2019-08-26T15:07:33.910Z'
-modified: '2020-06-22T09:13:54.082Z'
+modified: '2020-06-30T05:31:54.547Z'
 ---
 
 # note-lang-typescript
@@ -176,7 +176,7 @@ b.nomethod(); // Error: Property 'nomethod' not exist on type 'Object'
   - version
       - 0.106-201908
 
-## booking-Learning TypeScript_Remo H. Jansen_2016
+## book-Learning TypeScript_Remo H. Jansen_2016
 - ts基本数据类型
   - string
   - number

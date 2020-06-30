@@ -1,11 +1,11 @@
 ---
 tags: [docs, faq, react]
-title: read-docs-react-p4-faq
+title: docs-react-p4-faq
 created: '2020-06-23T07:27:08.496Z'
-modified: '2020-06-29T08:32:47.252Z'
+modified: '2020-06-30T05:14:08.093Z'
 ---
 
-# read-docs-react-p4-faq
+# docs-react-p4-faq
 
 ## AJAX and APIs
 - how to make an ajax call

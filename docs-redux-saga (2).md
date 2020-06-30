@@ -1,11 +1,11 @@
 ---
 tags: [docs/react]
-title: read-docs-redux-saga
+title: docs-redux-saga
 created: '2019-08-01T16:03:46.390Z'
-modified: '2020-06-22T09:21:36.952Z'
+modified: '2020-06-30T05:15:33.689Z'
 ---
 
-# read-docs-redux-saga  
+# docs-redux-saga
 - redux-saga is a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache)
 - advantages
   - easier to manage

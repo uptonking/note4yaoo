@@ -1,11 +1,11 @@
 ---
 tags: [docs, hooks, react]
-title: read-docs-react-p6-hooks
+title: docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-29T13:11:30.185Z'
+modified: '2020-06-30T05:14:35.291Z'
 ---
 
-# read-docs-react-p6-hooks
+# docs-react-p6-hooks
 
 ## Introducing Hooks
 - Hooks are JavaScript functions letting you use state and other React features without writing a class. 

@@ -1,11 +1,11 @@
 ---
 tags: [blog, copied, js]
-title: read-blog-js-for-react
+title: page-blog-js-for-react
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-06-23T07:39:40.222Z'
+modified: '2020-06-30T03:58:36.200Z'
 ---
 
-# read-blog-js-for-react
+# page-blog-js-for-react
 
 > copied from [dvajs-README](https://github.com/dvajs/dva-knowledgemap/blob/master/README.md)    
 > 注：如果你使用 dva@2，请先忽略这里的路由部分，待更新。

@@ -2,7 +2,7 @@
 tags: [log/dev]
 title: log-dev-pieces-backend
 created: '2020-02-20T10:56:13.810Z'
-modified: '2020-06-22T09:06:59.030Z'
+modified: '2020-06-30T05:20:00.829Z'
 ---
 
 # log-dev-pieces-backend
@@ -12,18 +12,18 @@ modified: '2020-06-22T09:06:59.030Z'
 
 - maven-config
   -  maven会根据模块的版本号(pom文件中的version)中是否带有-SNAPSHOT来判断是快照版本还是正式版本
-      - 如果是快照版本，那么在mvn deploy时会自动发布到快照版本库中，而使用快照版本的模块，在不更改版本号的情况下，直接编译打包时，maven会自动从镜像服务器上下载最新的快照版本
-      - 如果是正式发布版本，那么在mvn deploy时会自动发布到正式版本库中，而使用正式版本的模块，在不更改版本号的情况下，编译打包时如果本地已经存在该版本的模块则不会主动去镜像服务器上下载
+    - 如果是快照版本，那么在mvn deploy时会自动发布到快照版本库中，而使用快照版本的模块，在不更改版本号的情况下，直接编译打包时，maven会自动从镜像服务器上下载最新的快照版本
+    - 如果是正式发布版本，那么在mvn deploy时会自动发布到正式版本库中，而使用正式版本的模块，在不更改版本号的情况下，编译打包时如果本地已经存在该版本的模块则不会主动去镜像服务器上下载
   -  在distributionManagement段中配置的是snapshot快照库和release发布库的地址
   - 依赖搜索顺序： local_repo > settings_profile_repo > pom_profile_repo > pom_repositories > settings_mirror > central
   - mirror vs repository
-      - 镜像是一个特殊的配置，其实镜像等同与远程仓库，没有匹配远程仓库的镜像就毫无作用 
-      - 在mirrorOf与repositoryId相同的时候优先是使用mirror的地址
-          - 当一个 repository 存在 mirror 时，Maven 查找 jar 时永远使用的是 mirror 配置的地址
-          - 当一个 repository 不存在 mirror 时，按照在 repositories 节点中定义的先后顺序。先定义，先查找。
-      - mirrorOf等于*的时候覆盖所有repository配置
-      - 存在多个mirror配置的时候mirrorOf应该*放到最后
-      - 从超级父pom里继承来的中央repository在effective-pom里总是为最后一个repository
+    - 镜像是一个特殊的配置，其实镜像等同与远程仓库，没有匹配远程仓库的镜像就毫无作用 
+    - 在mirrorOf与repositoryId相同的时候优先是使用mirror的地址
+        - 当一个 repository 存在 mirror 时，Maven 查找 jar 时永远使用的是 mirror 配置的地址
+        - 当一个 repository 不存在 mirror 时，按照在 repositories 节点中定义的先后顺序。先定义，先查找。
+    - mirrorOf等于*的时候覆盖所有repository配置
+    - 存在多个mirror配置的时候mirrorOf应该*放到最后
+    - 从超级父pom里继承来的中央repository在effective-pom里总是为最后一个repository
 - maven-cli
   - `mvn install`
       - mvn install 会将项目生成的构件安装到本地Maven仓库，mvn deploy 用来将项目生成的构件分发到远程Maven仓库

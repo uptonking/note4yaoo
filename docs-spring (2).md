@@ -1,11 +1,11 @@
 ---
 tags: [docs/spring]
-title: read-docs-spring
+title: docs-spring
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-06-22T09:21:41.477Z'
+modified: '2020-06-30T05:15:45.625Z'
 ---
 
-# read-docs-spring
+# docs-spring
 
 ## dev-tips
 

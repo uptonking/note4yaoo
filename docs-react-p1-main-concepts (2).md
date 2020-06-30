@@ -1,11 +1,11 @@
 ---
 tags: [docs, react]
-title: read-docs-react-p1-main-concepts
+title: docs-react-p1-main-concepts
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-29T09:22:55.337Z'
+modified: '2020-06-30T05:11:03.190Z'
 ---
 
-# read-docs-react-p1-main-concepts
+# docs-react-p1-main-concepts
 - React is a javaScript library for building user interfaces.
 
 ## resources 

@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [docs, style, ux, web]
-title: read-docs-styled-system
+title: docs-styled-system
 created: '2019-12-17T03:13:59.953Z'
-modified: '2020-06-22T09:21:52.043Z'
+modified: '2020-06-30T05:16:04.780Z'
 ---
 
-# read-docs-styled-system
+# docs-styled-system
 
 ## summary
 - styled-system解决的问题
