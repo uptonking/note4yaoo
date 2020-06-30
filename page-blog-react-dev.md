@@ -15,6 +15,16 @@ modified: '2020-06-30T07:17:58.437Z'
 
 ## react开发总结
 
+- 自定义组件上的ref对象就是组件实例化之后的对象，包含props, context和state等属性。这种特性可以允许我们访问某个子组件的内部状态
+- 如果props的数据不会改变，就不需要在state或者组件实例属性里拷贝一份
+- 设置状态会触发组件重新渲染
+  - 因此应该只将渲染方法要用到的值保存在状态中
+  - 不要把没有参与渲染的数据放进state状态里
+- 关于render函数里面的条件判断
+  - 如果只是简单的条件判断，三目和与或运算符已经满足大多数人的需求；
+  - 如果想让关注点分离，renderIf是个不错的注意；
+  - 最后如果你希望你的判断逻辑能够被复用（就好像多个页面多个组件都需要用到判断登录状态和用户权限的逻辑），可以使用onlyIf构建项目内可复用的高阶组件。
+  - 避免在JSX中写复杂的三元表达式，应通过封装函数或组件实现，如renderXxx
 - 组件设计原则
   - 保持接口小，props数量要少
   - 根据数据边界来划分组件，充分利用组合
@@ -54,6 +64,7 @@ modified: '2020-06-30T07:17:58.437Z'
 ```
 
 - 尽量不要在JSX中写内联函数，比如 `<MyButton onClick={()=>{/*doSth*/}} >` ，每次渲染都会创建新函数
+  - Every time the parent component renders, a new function is created and passed to the Child.
 - Render props其实就是React用法中的“依赖注入”
   - 所谓依赖注入，指的是解决这样一个问题：逻辑A依赖于逻辑B，如果让A直接依赖于B，当然可行，但是A就没法做得通用了。
   - 依赖注入就是把B的逻辑以函数形式传递给A，A和B之间只需要对这个函数接口达成一致就行，如此一来，再来一个逻辑C，也可以用一样的方法重用逻辑A
@@ -63,8 +74,25 @@ modified: '2020-06-30T07:17:58.437Z'
   - 网站的数据流向太混乱，不好控制
 
 - 11 lessons learned as a React contractor
-  - 多个简单组件比一个高度定制化组件要好
-    - 如果一个组合组件导致了 bug，那么把它分解成若干个简单组件，即便代码重复也值得
+  - Multiple simple components are better than one highly customisable one
+    - if a composable component is causing bugs, break it into more simple single use components, even if you’re repeating code
+  - Always raise an Issue or Pull Request if you find bugs in libraries
+  - If you’re implementing React in an existing project, migrate your build process to Browserify or Webpack first.
+  - Raw SVG is better than D3 for simple data visualisation
+  - When all you have is two weeks, keep it lean
+  - Relying on CSS animation alone to move a lot of elements can be slow
+    - Make sure you’re only rendering or re-rendering components that really need it.
+    - That might mean, calculating what components are visible in the viewport and only rendering those.
+    - Test on lower spec machines, but also test with extreme data to see how well things run when they’re pushed to the limit.
+  - Only use boilerplates for what they’re good at — getting a project started quickly. 
+    - Don’t be afraid to break them, twist them and generally misuse them to your will.
+  - Maintain a predictable Components, connected Components and Container pattern
+  - Strict linting is a blessing and a curse
+  - Retrofitting Universal React rendering into an existing Express project is doable
+    - how to just render a single React component into an existing multi-page Express app
+    - ReactDOMServer
+  - Learning Sagas may melt your brain
+    - Make sure you have a deep understanding of Promises and Generators before you dive in
 
 - ref
   - [React设计模式和最佳实践总结]([hlinkttps://](https://blog.poetries.top/2019/08/10/react-good-practice/))
