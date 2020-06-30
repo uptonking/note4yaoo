@@ -44,7 +44,7 @@ modified: '2020-06-22T09:14:22.326Z'
       - 因为需要一个styled
   - 样式写法上，差别不大
   - debug时，emotion的styled比styled-components的组件少一层styled.button
-  - css prop的组件有时比styled的少一层Context.Consumer
+  - css prop的组件有时比styled的少一层Context. Consumer
   - css prop比styled少一层styled
 - className vs css prop
   - emotion的css方法返回的是字符串，@emotion/core的css方法返回的是一个对象，包含字符串和扁平化的样式属性值，可被styled方式使用，兼容性更好
@@ -77,7 +77,7 @@ modified: '2020-06-22T09:14:22.326Z'
   - ref
       - https://theme-ui.com/motivation/ 
       - 要考虑熟练度、提示需求(对象比str适合)、复用现有样式等
-      - 还可以使用分散写的单独的属性，类似`<Box color="primary" size="lg" />`
+      - 还可以使用分散写的单独的属性，类似 `<Box color="primary" size="lg" />`
       - https://levelup.gitconnected.com/react-css-in-js-es6-objects-vs-tagged-template-literals-71670e78995f
       - https://medium.com/@oleg008/template-strings-vs-objects-in-cssinjs-4028ecc420b2
       - https://spectrum.chat/styled-components/general/style-object-vs-template-literalls~789509f2-7460-4b4c-84bc-b169c2230132
@@ -91,7 +91,7 @@ modified: '2020-06-22T09:14:22.326Z'
   - better readability
 - Permissive vs Restrictive component API
   - styled-system v5中一个函数暴露一组样式api，可能会过多，对性能影响大吗
-  - 有人提出一种通用组件`<comp type='ul/h1/input' p1='' p2=''>`，支持1000+属性，每次创建都会遍历所有属性，并且性能也不差
+  - 有人提出一种通用组件 `<comp type='ul/h1/input' p1='' p2=''>` ，支持1000+属性，每次创建都会遍历所有属性，并且性能也不差
   - theme-ui allows use of any styled-system prop on any component (or element) through use of the sx prop
   - https://spectrum.chat/styled-system/general/permissive-vs-restrive-component-apis~475715ea-a538-41be-8366-779226339650
   - https://github.com/universalstandard/ook (any camelCased css property)
@@ -102,26 +102,28 @@ modified: '2020-06-22T09:14:22.326Z'
 - 是否需要提取使用css-in-js创建的样式到单独的文件
   - 有利有弊
   - https://github.com/emotion-js/emotion/blob/master/docs/extract-static.mdx
-      - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.
-      - https://github.com/emotion-js/emotion/issues/858
+    - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.
+    - https://github.com/emotion-js/emotion/issues/858
   - https://github.com/styled-components/styled-components/issues/1018
-      - There's SSR which sends only critical CSS, instead of all static CSS, for the entire page. You don't even need to do SSR, but can use snapshotting (react-snapshot) or generate a static page (gatsby, et al), which basically saves a SSR result to a html.
-      - Static extraction doesn't generate dynamic CSS, which means your page will either appear broken until the JS executes, or you'll need to defer until the JS is loaded
-      - Caching doesn't actually buy you an advantage, because the JS bundles will likely always change in tandem with the extracted CSS
+    - There's SSR which sends only critical CSS, instead of all static CSS, for the entire page. You don't even need to do SSR, but can use snapshotting (react-snapshot) or generate a static page (gatsby, et al), which basically saves a SSR result to a html.
+    - Static extraction doesn't generate dynamic CSS, which means your page will either appear broken until the JS executes, or you'll need to defer until the JS is loaded
+    - Caching doesn't actually buy you an advantage, because the JS bundles will likely always change in tandem with the extracted CSS
   - https://github.com/callstack/linaria/issues/465
-      - The reason this doesn't work is because styled system interpolates both the declaration name and the value. With linaria, you should only interpolate the value.
+    - The reason this doesn't work is because styled system interpolates both the declaration name and the value. With linaria, you should only interpolate the value.
   - https://github.com/callstack/linaria/issues/409
-      - No support for conditional CSS using the styled tag is the biggest hurdle for us moving to linaria from styled-components
+    - No support for conditional CSS using the styled tag is the biggest hurdle for us moving to linaria from styled-components
   - use styled-system with linaria
-      - not possible
-      - https://github.com/styled-system/styled-system/pull/868
-      - In terms of dynamic style from props, Linaria only accepts function interpolations on the value side of CSS property, and it must return the correct value. Neither accept style objects nor dynamic CSS string.
+    - not possible
+    - https://github.com/styled-system/styled-system/pull/868
+    - In terms of dynamic style from props, Linaria only accepts function interpolations on the value side of CSS property, and it must return the correct value. Neither accept style objects nor dynamic CSS string.
 
 ## css-in-js-spec
+
 - Interoperable Style Transfer Format
   - https://github.com/cssinjs/istf-spec
 
 ## pieces
+
 - zero-runtime-css-in-js
   - https://github.com/callstack/linaria
       - /MIT/5500Star/202006/ts
@@ -153,8 +155,9 @@ modified: '2020-06-22T09:14:22.326Z'
 - https://itnext.io/css-in-js-vs-pre-post-processors-in-2019-8b1e20c066ed
 
 ## theme-specification
+
 - https://github.com/system-ui/theme-specification
-- use case:styled-system,theme-ui,rebass,xstyled,onno
+- use case:styled-system, theme-ui, rebass, xstyled, onno
 - 对样式主题的需求
   - If you’ve ever worked on a large application that has been worked on by many different people over time, you know that consistency can be hard to maintain. The amount of different colors, spacing, font-sizes and media queries can easily get out of control. 
   - Having a style guide combats that by providing a set of constraints that your application’s UI should adhere to, helping to maintain a consistent look and feel.
@@ -163,15 +166,15 @@ modified: '2020-06-22T09:14:22.326Z'
 - 样式的写法
   - 写法上采用类似内联样式的style对象更方便查看，但采用类似className性能更高
   - css属性名编写时的代码提示，可在样式库解决，也可在ide解决，也可借助typescript
-      - 只需要代码提示，没必要用typestyle库
-      - csstype provides autocompletion and type checking for CSS properties and values
-      - styled-system让组件上的css属性有提示且有限制，但要使用styled组件写法
-      - typestyle书写样式对象返回className，和emotion类似，但写样式有提示，样式对象要作为参数传入style()，类似于emotion的css()
-      - typestyle基于free-style，两者都存在一个问题，嵌套时内层逗号分隔的选择器只在最后一个选择器元素处生效
-      - https://github.com/blakeembrey/free-style/issues/69
+    - 只需要代码提示，没必要用typestyle库
+    - csstype provides autocompletion and type checking for CSS properties and values
+    - styled-system让组件上的css属性有提示且有限制，但要使用styled组件写法
+    - typestyle书写样式对象返回className，和emotion类似，但写样式有提示，样式对象要作为参数传入style()，类似于emotion的css()
+    - typestyle基于free-style，两者都存在一个问题，嵌套时内层逗号分隔的选择器只在最后一个选择器元素处生效
+    - https://github.com/blakeembrey/free-style/issues/69
 - ref
   - System UI is an open source organization that houses a Theme Specification for creating interoperable UI components.
   - https://mitchgavan.com/styleguide-driven-development/
   - https://github.com/primer/components/blob/master/src/theme.js
-  
 
+  

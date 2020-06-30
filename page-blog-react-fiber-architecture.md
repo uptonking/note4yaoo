@@ -8,6 +8,7 @@ modified: '2020-06-30T03:58:59.393Z'
 # page-blog-react-fiber-architecture
 
 ## pieces
+
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.
   - Phase 1 is called Render/Reconciliation.
   - Phase 2 is called Commit.
@@ -20,5 +21,3 @@ modified: '2020-06-30T03:58:59.393Z'
 - ref
   - https://dev.to/afairlie/to-understand-react-fiber-you-need-to-know-about-threads-3dof
   - https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render
-
-

@@ -6,6 +6,7 @@ modified: '2020-06-28T01:51:05.930Z'
 ---
 
 # note-dev-mobile
+
 - 跨平台可选技术栈
   - react-native
   - flutter
@@ -14,11 +15,13 @@ modified: '2020-06-28T01:51:05.930Z'
   - 考虑同时维护多套移动端代码的成本，后台业务逻辑可通用
 
 ## features
+
 - 跨平台一致的ui体验
 - 动画支持
 - 调用摄像头扫码
 
 ## react-native
+
 - 优点
   - 跨平台
   - 大公司支持
@@ -35,13 +38,14 @@ modified: '2020-06-28T01:51:05.930Z'
 
 - 使用体验总结
   - aribnb
-      - [20180620](https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c)
-      - https://juejin.im/post/5b2a5368f265da595c0cf6d5
+    - [20180620](https://medium.com/airbnb-engineering/react-native-at-airbnb-f95aa460be1c)
+    - https://juejin.im/post/5b2a5368f265da595c0cf6d5
   - udacity
-      - [20180703](https://engineering.udacity.com/react-native-a-retrospective-from-the-mobile-engineering-team-at-udacity-89975d6a8102)
-      - https://juejin.im/post/5b421b606fb9a04fd15ff802
+    - [20180703](https://engineering.udacity.com/react-native-a-retrospective-from-the-mobile-engineering-team-at-udacity-89975d6a8102)
+    - https://juejin.im/post/5b421b606fb9a04fd15ff802
 
 ## android
+
 - 开发因素
   - android设备过于碎片化，不同尺寸不同分辨率的设备ui体验很难一致
 

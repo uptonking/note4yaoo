@@ -7,17 +7,17 @@ modified: '2020-06-29T13:14:27.166Z'
 
 # note-react-hooks
 
-
 ## faq
+
 - `useCallback` vs `useMemo`
-  - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`.
+  - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
   - useMemo() makes the function run only when inputs change. 
     - Else it returns the memoized(cached) result.
   - useCallback() prevents the new instance of funtion being created on each rerender
     - thus prevents the rerendering of child components if we pass the function as props to them
 - react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
   - render方法的执行时机
-  - One drawback of using `componentDidUpdate`, or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
+  - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
 - `useEffect` vs `useLayoutEffect`
   - 结论
     - useLayoutEffect总是比useEffect先执行
@@ -70,21 +70,24 @@ modified: '2020-06-29T13:14:27.166Z'
   - simple: `<Button onClick={() => handleClick(myValue)}></Button>`
     - onClick prop has new value on each render and triggers a re-render of child component - even if it's pure. 
   - If a value is static, a callback can be defined as constant function outside a component
-    ```js
+
+``` js
     // outside function component
     const myValue = "Hello World";
     const myHandleClick = () => handleClick(myValue);
     ...
     // inside function component
     <Button onClick={myHandleClick}></Button>
-    ```
+```
+
   - If a value is dynamic and is available only inside a component, a function can be defined inside a component and memoized with useMemo or useCallback hook 
-    ```js
+
+``` js
     // inside function component
     const myHandleClick = useCallback(() => handleClick(myValue), [myValue]);
     ...
     <Button onClick={myHandleClick}></Button>
-    ```
+```
 
 ## pieces
 
@@ -107,11 +110,11 @@ modified: '2020-06-29T13:14:27.166Z'
 - syntax
   - useState
   - useEffect
-      - The empty set of dependencies, `[]`, means that effect will only run once when the component mounts, and not on every re-render. 
-          - This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.
-          - If you pass an empty array ([]), the props and state inside the effect will always have their initial values. 
-      - 在useEffect中使用setInterval要注意问题
-      - React defers running useEffect until after the browser has painted, so doing extra work is less of a problem
+    - The empty set of dependencies, `[]` , means that effect will only run once when the component mounts, and not on every re-render. 
+      - This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.
+      - If you pass an empty array ([]), the props and state inside the effect will always have their initial values. 
+    - 在useEffect中使用setInterval要注意问题
+    - React defers running useEffect until after the browser has painted, so doing extra work is less of a problem
 - pros
   - reuse components state/lifecycle logic become possible
   - Separate (and isolated) concerns
@@ -124,7 +127,7 @@ modified: '2020-06-29T13:14:27.166Z'
   - 函数组件的函数体相当于class组件的render方法，当在函数体中实现getDerivedStateFromProps的内容时，会出现类似于在render方法中修改state的情况，破坏了render方法的纯净，和类组件提倡的pure render不一致
   - useState返回的更新状态的方式是replace，而不是类组件的merge
   - effects run on every update， which make cache local values as instance properties in React Class Components  difficult
-  - turn a React Class into a React Function is easier,  turn a React Function with React Hooks into React Class is hard
+  - turn a React Class into a React Function is easier, turn a React Function with React Hooks into React Class is hard
   - no way to handle Error Boundaries with React Hooks right now
 - hooks出现前的常见问题
   - 函数组件 vs class组件
@@ -132,17 +135,17 @@ modified: '2020-06-29T13:14:27.166Z'
   - this指向 
 - hooks作用
   - 函数变成了一个有状态的函数
-  - Hooks本质上就是一类特殊的函数，它们可以为你的函数型组件（function component）注入一些特殊的功能（生命周期钩子,useEffect,useContext）
+  - Hooks本质上就是一类特殊的函数，它们可以为你的函数型组件（function component）注入一些特殊的功能（生命周期钩子, useEffect, useContext）
   - 解决this指向问题
 - 函数型组件 vs 类组件 vs hooks
   - 函数组件每次渲染都拥有独立的props，这是因为在react中props是不可变的，每次重新render，函数都捕获到新的独立的props
-  - class组件编译es5后会多出一堆辅助函数（继承React.Component），而fc组件只有一个createElement
+  - class组件编译es5后会多出一堆辅助函数（继承React. Component），而fc组件只有一个createElement
   - 纯函数组件的渲染优化方法有很多，如useMemo, 还可以借助web worker
   - react hooks和class component只是写法上、范式上的差别，极限性能上的差距，可忽略不计，本质还是diff and patch
   - 使用hooks要更注意缓存的使用，否则很容易出现性能问题
   - 使用场景
-      - hoc特别适合做装饰插件，hooks的处理过程会与目标插件强绑定
-      - render props自身可以作为jsx的一部分，适合放置简单逻辑
+    - hoc特别适合做装饰插件，hooks的处理过程会与目标插件强绑定
+    - render props自身可以作为jsx的一部分，适合放置简单逻辑
 - 迁移到hooks
   - hooks无法与Class组件同时使用
   - hooks写法还是主要替换setState以及生命周期为主, useState/Effect/Context
@@ -151,5 +154,4 @@ modified: '2020-06-29T13:14:27.166Z'
   - hoc转hooks https://zhuanlan.zhihu.com/p/56617944
   - hooks使用现状  https://www.zhihu.com/question/327685582/answers
   - hooks体验 
-      - https://zhuanlan.zhihu.com/p/62791765
-
+    - https://zhuanlan.zhihu.com/p/62791765

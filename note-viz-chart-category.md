@@ -9,14 +9,13 @@ modified: '2020-06-22T09:15:25.947Z'
 
 ## tips
 
-
 ## chart summary
+
 - 沃罗诺伊图（Voronoi diagram）又叫狄利克雷镶嵌（Dirichlet tessellation）或者泰森多边形（Thiessen polygon）。
-沃罗诺伊图解决的问题实际上就是基于一组特定点将平面分割成不同区域，而每一区域又仅包含唯一的特定点，并且该区域内任意位置到该特定点的距离比到其它的特定点都要更近。
+  - 沃罗诺伊图解决的问题实际上就是基于一组特定点将平面分割成不同区域，而每一区域又仅包含唯一的特定点，并且该区域内任意位置到该特定点的距离比到其它的特定点都要更近。
   - 可以在可视化的过程中用来划分平面，三角剖分
   - 可以用来进行空间插值
   - 北京奥运会的水立方即是基于此原理设计  
-
 
 ## 常用图表类型 /Chart/Plot/Diagram
 
@@ -39,7 +38,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 堆叠面积图  /stacked area
   - 百分比堆叠面积图  /percentage area
   - 区间面积图  /ranged area
+
   
+
 - 柱状图  /Bar
   - 基础柱状图 竖直方向  /basic column
   - 分组柱状图  /grouped column
@@ -55,7 +56,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 分组条形图  /grouped bar
   - 堆叠条形图  /stacked bar
   - 区间条形图  /ranged bar
+
   
+
 - 点状图  /Point
   - 散点图 单色 多色  /scatter
   - 气泡图  /bubble
@@ -74,7 +77,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 矩阵树图 四叉矩阵  /treemap
   - 径向树  /radial tidy tree
   - circle packing
+
   
+
 - 热力图  /Heatmap
   - 色块图
   - 矩形分箱图  /rectangle box
@@ -83,7 +88,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 分块热力图  /grouped heatmap
   - 热力图  /heatmap
   - 六边形分箱图  /hexagon box
+
   
+
 - 雷达图  /Radar
   - 面状
   - 线状
@@ -98,7 +105,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 尖底漏斗图  /sharp funnel
   - 对比漏斗图  /compare funnel
   - 对称漏斗图  /mirror funnel
+
   
+
 - 箱型图  /Boxplot
   - 基础箱型图 普通 含异常值  /basic box
   - 分组箱型图  /group box
@@ -107,7 +116,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 点状 饼装
   - 柱状
   - 象形图例
+
   
+
 - 烛型图  /Candlestick
   - 股票图
   - 股票范围区域图
@@ -142,6 +153,7 @@ modified: '2020-06-22T09:15:25.947Z'
   - 元素周期表
   - 事件河流  /theme river
   - voronoi
+
   
 
 ## 地图图表类型 /Map
@@ -155,7 +167,6 @@ modified: '2020-06-22T09:15:25.947Z'
 - 鹰眼地图
 - 多级上卷下钻地图
 
-
 ## 3D
 
 - 星云
@@ -166,8 +177,11 @@ modified: '2020-06-22T09:15:25.947Z'
 
 - AQI空气质量质数图
 - 桑基图 
+
 漏斗模型
+
 - k线图
+
 股票趋势
 
 ## 数理统计图表
@@ -186,7 +200,9 @@ modified: '2020-06-22T09:15:25.947Z'
   - 数据注记
   - 图例
   - 整饰要素 标题、时间日期
+
   
+
 - animation
   - pan 平移
   - scale 缩放
@@ -199,5 +215,3 @@ modified: '2020-06-22T09:15:25.947Z'
   - 方向
   - 数量
   - 密度
-
-

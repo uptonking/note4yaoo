@@ -6,9 +6,11 @@ modified: '2020-06-30T05:11:03.190Z'
 ---
 
 # docs-react-p1-main-concepts
+
 - React is a javaScript library for building user interfaces.
 
 ## resources 
+
 - docs
   - https://reactjs.org/docs/hello-world.html
   - https://zh-hans.reactjs.org/docs/hello-world.html
@@ -27,6 +29,7 @@ modified: '2020-06-30T05:11:03.190Z'
   - https://github.com/react-component/form
 
 ## installation
+
 - react for developer/designer
 - https://unpkg.com/react@16/umd/react.development.js
 - https://unpkg.com/react@16/umd/react.production.min.js
@@ -35,9 +38,11 @@ modified: '2020-06-30T05:11:03.190Z'
 - https://cdn.bootcdn.net/ajax/libs/react/16.13.1/umd/react.development.js
 
 ## 1.hello world     
+
 - examine the building blocks of React apps: elements and components.
 - The smallest React example looks like this
-```jsx
+
+``` jsx
   ReactDOM.render(
     <h1>Hello, world!</h1>,
     document.getElementById('root')
@@ -45,6 +50,7 @@ modified: '2020-06-30T05:11:03.190Z'
 ```
 
 ## 2.jsx
+
 - `const element = <h1>Hello, world!</h1>;`
   - This funny tag syntax is neither a string nor HTML.
   - It is called JSX, and it is a syntax extension to JavaScript. 
@@ -68,7 +74,8 @@ modified: '2020-06-30T05:11:03.190Z'
 - **JSX Represents Objects**
   - Babel compiles JSX down to `React.createElement()` calls.
   - These two examples are identical:
-  ```
+
+``` jsx
   const element = (
     <h1 className="greeting">
       Hello, world!
@@ -76,13 +83,14 @@ modified: '2020-06-30T05:11:03.190Z'
   );
 
   const element = React.createElement(
-    'h1',
-    {className: 'greeting'},
+    'h1', { className: 'greeting' },
     'Hello, world!'
   );
-  ```
+```
+
   - React.createElement() performs a few checks to help you write bug-free code but essentially it creates an object like this:
-  ```
+
+``` js
   // Note: this structure is simplified
   const element = {
     type: 'h1',
@@ -91,12 +99,14 @@ modified: '2020-06-30T05:11:03.190Z'
       children: 'Hello, world!'
     }
   };
-  ```
+```
+
   - These objects are called “React elements”. 
     - You can think of them as descriptions of what you want to see on the screen. 
     - React reads these objects and uses them to construct the DOM and keep it up to date.
 
 ## 3.rendering elements    
+
 - Elements are the smallest building blocks of React apps.
   - An element describes what you want to see on the screen
   - Unlike browser DOM elements, React elements are plain objects, and are cheap to create. 
@@ -113,13 +123,14 @@ modified: '2020-06-30T05:11:03.190Z'
 - In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
 
 ## 4.components & props    
+
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
   - Conceptually, components are like JavaScript functions. 
   - They **accept arbitrary inputs (called “props”) and return React elements** describing what should appear on the screen.
 - We call such components “function components” because they are literally JavaScript functions.
   - accepts a single props object argument with data and returns a React element. 
 - React elements can represent DOM tags, elements can also represent user-defined components
-- When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object `props`.
+- When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object `props` .
 - React treats components starting with lowercase letters as DOM tags. 
 - We recommend naming props from the component’s own point of view rather than the context in which it is being used.
 - extract components
@@ -127,8 +138,11 @@ modified: '2020-06-30T05:11:03.190Z'
 - Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs.
 - All React components must act like pure functions with respect to their props.
   - Whether you declare a component as a function or a class, it must never modify its own props
+
    
+
 ## 5.state & lifecycle     
+
 - State is similar to props, but it is private and fully controlled by the component.
 - React then calls the Clock component’s `render()` method.
   - This is how React learns what should be displayed on the screen. 
@@ -150,24 +164,27 @@ modified: '2020-06-30T05:11:03.190Z'
   - Any state is always owned by some specific component
   - and any data or UI derived from that state can only affect components “below” them in the tree.
 - `render()` will be invoked if `shouldComponentUpdate()` returns `true`
-  - `shouldComponentUpdate()` is invoked before rendering when new props or state are being received. Defaults to `true`. 
+  - `shouldComponentUpdate()` is invoked before rendering when new props or state are being received. Defaults to `true` . 
   - The default behavior is to re-render on every state change, 
   - and in the vast majority of cases you should rely on the default behavior.
 - `render` method being called is not the same thing as the DOM ultimately getting updated. 
   - There are a few additional steps React takes where the DOM is diffed
 - 如果需要存储不用于视觉输出的东西，则可以手动向类中添加不同于props和state的其他字段，如果你不在render()中使用某些东西，它就不应该在状态中
 - state要点
-	- 不要直接更新state，即不要使用`this.state.var1 = 'Hello'`，应当使用`this.setState({var1: 'Hello'});`
+	- 不要直接更新state，即不要使用 `this.state.var1 = 'Hello'` ，应当使用 `this.setState({var1: 'Hello'});`
 	- setState()可能是异步的，React会将多个setState() 调用合并成一个调用来提高性能
 		- 所以最好不要依靠this.props和this.state来计算下一个状态，必要时可以使用
-		```
+
+``` js
 		this.setState((prevState, props) => ({
-		  	counter: prevState.counter + props.increment
+		  counter: prevState.counter + props.increment
 		}));
-		```
+```
+
 	- setState()会将你提供的对象合并到当前状态，是浅合并
 
 ## 6.handling events      
+
 - Handling events with React elements is very similar to handling events on DOM elements. 
 - There are some syntax **differences**:
   - React events are named using camelCase, rather than lowercase.
@@ -178,31 +195,34 @@ modified: '2020-06-30T05:11:03.190Z'
 - When using React, you generally don’t need to call `addEventListener` to add listeners to a DOM element after it is created. 
   - Instead, just provide a listener when the element is initially rendered.
 - it is common to want to pass an extra parameter to an event handler. 
-  ```
+
+``` jsx
   <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
   <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
-  ```
+```
+
   - In both cases, the `e` argument representing the React event will be passed as a second argument after the ID. 
   - With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.
-- 必须谨慎对待JSX回调函数中的this，类的方法默认不会绑定this，需要在constructor()中绑定`this.handleClick = this.handleClick.bind(this);`
+- 必须谨慎对待JSX回调函数中的this，类的方法默认不会绑定this，需要在constructor()中绑定 `this.handleClick = this.handleClick.bind(this);`
 - 不使用bind()的方式，参考 https://reactjs.org/docs/handling-events.html
 	- 定义handleClick时使用箭头函数
-	- 在jsx中调用时使用箭头函数`<button onClick={(e) => this.handleClick(e)}>`
+	- 在jsx中调用时使用箭头函数 `<button onClick={(e) => this.handleClick(e)}>`
 		- 这种方式的缺点是，每次渲染button都会创建一个不同的回调函数
     - 不推荐这种方式，推荐使用前两种
-- 向事件处理程序传递参数的方法的例子，上面两个例子中，参数`e`作为React事件对象将会被作为第二个参数进行传递
+- 向事件处理程序传递参数的方法的例子，上面两个例子中，参数 `e` 作为React事件对象将会被作为第二个参数进行传递
   - 通过箭头函数的方式，事件对象必须显式的进行传递
   - 但是通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递
   - 通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面
 
 ## 7.conditional rendering   
+
 - In React, you can create distinct components that encapsulate behavior you need. 
   - Then, you can render only some of them, depending on the state of your application.
 - Conditional rendering in React works the same way conditions work in JavaScript. 
   - Use JavaScript operators like `if` or the conditional operator to create elements representing the current state, and let React update the UI to match them.
 - You can **use variables to store elements**. 
   - This can help you conditionally render a part of the component while the rest of the output doesn’t change.
-- In JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+- In JavaScript, `true && expression` always evaluates to `expression` , and `false && expression` always evaluates to `false` .
   - Therefore, if the condition is true, the element right after `&&` will appear in the output. 
   - If it is false, React will ignore and skip it.
 - remember that whenever conditions become too complex, it might be a good time to extract a component
@@ -211,11 +231,12 @@ modified: '2020-06-30T05:11:03.190Z'
 - Returning null from a component’s render method does not affect the firing of the component’s lifecycle methods. 
   - For instance componentDidUpdate will still be called.
 - 三目条件运算符可以用来渲染小段文本，用在较大的表达式中不直观
-- 在组件的render()中`return null`，也是实现条件渲染的一种方法
+- 在组件的render()中 `return null` ，也是实现条件渲染的一种方法
   - If a component `return null` in its render function, why componentDidMount is triggered?
     - componentDidMount() will fire exactly after render()! so you're saying that your render function returns null, which means render function executes
 
 ## 8.lists & keys   
+
 - You can build collections of elements and include them in JSX using curly braces `{}`
 - you’ll be given a warning that a key should be provided for list items. 
   - A `key` is a special string attribute you need to include when creating lists of elements. 
@@ -236,29 +257,34 @@ modified: '2020-06-30T05:11:03.190Z'
   - If you need the same value in your component, pass it explicitly as a prop with a different prop name
 - Keep in mind that if the `map()` body is too nested, it might be a good time to extract a component.
 - 元素的key只有在它和它的兄弟节点对比时才有意义	
-	- 如果你提取出一个ListItem组件，你应该把key保存在数组中的这个<`ListItem />`元素上，而不是放在ListItem组件中的`<li>`元素上。
+	- 如果你提取出一个ListItem组件，你应该把key保存在数组中的这个< `ListItem />` 元素上，而不是放在ListItem组件中的 `<li>` 元素上。
 - key会作为给React的提示，但不会传递给你的组件，如果您的组件中需要使用和key相同的值，请将其作为属性传递
 	- 不能使用props.key来获取key
 
 ## 9.forms   
+
 - HTML form elements work a little bit differently from other DOM elements in React
   - because **form elements naturally keep some internal state**.   
-  ```
+
+```html 
   <form>
+
     <label>
       Name:
       <input type="text" name="name" />
     </label>
     <input type="submit" value="Submit" />
+
   </form>
-  ```
+
+``` 
 - This form has the default HTML form behavior of browsing to a new page when the user submits the form. 
   - If you want this behavior in React, it just works. 
   - But in most cases, it’s convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form.
   - The standard way to achieve this is with a technique called **controlled components**.
 - With a controlled component, the input’s value is always driven by the React state. 
   - While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
-- Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly 
+- Overall, this makes it so that `<input type="text">` , `<textarea>` , and `<select>` all work very similarly 
   - they all accept a `value` attribute that you can use to implement a controlled component.
 - In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the `File` API.
   - Because its value is read-only, it is an **uncontrolled component** in React
@@ -273,34 +299,37 @@ modified: '2020-06-30T05:11:03.190Z'
   - track values
   - handle submit
 - 用react表示主要表单元素
-	- `<textarea>`用value属性表示内容，而不用节点内的text
-	- `<select>`用value属性表示选中项的值，而不用selected这个boolean属性
+	- `<textarea>` 用value属性表示内容，而不用节点内的text
+	- `<select>` 用value属性表示选中项的值，而不用selected这个boolean属性
 - input file是非受控组件
 - 可以使用ES6中的计算属性名语法来更新与给定输入名称相对应的状态键
 	- 示例
-	```
+
+```js
 	this.setState({
 	  [name]: value
-	});	 
-	```
-	等价于    
-	```
-	var partialState = {};
-	partialState[name] = value;
-	this.setState(partialState);
-	```
+	}); 	 
+	// 等价于    
+	var partialState = {}; 
+	partialState[name] = value; 
+	this.setState(partialState); 
+```
+
 	- 参考 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names
-	```
+
+``` js
 	var param = 'size';
 	var config = {
 	  [param]: 12,
 	  ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
 	};
-	```
+```
+
 - 有时使用受控组件可能很繁琐，因为要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。
 - 过于繁琐时，考虑使用非受控组件
 
 ## 10.lifting state up    
+
 - Often, several components need to reflect the same changing data. 
   - We recommend **lifting the shared state up to their closest common ancestor**.
 - Components independently keep their values in the local state
@@ -323,12 +352,13 @@ modified: '2020-06-30T05:11:03.190Z'
 - If something can be derived from either props or state, it probably shouldn’t be in the state.
 
 ## 11.composition vs inheritance
+
 - we recommend using composition instead of inheritance to reuse code between components.
 - **Containment** 使用组合处理组件间的包含关系
 - Some components don’t know their children ahead of time. 
   - This is especially common for components like Sidebar or Dialog that represent generic “boxes”.
   - We recommend that such components use the special `children` prop to pass children elements directly into their output
-  - Anything inside the` <FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a children prop. 
+  - Anything inside the ` <FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a children prop. 
 - Sometimes you might need multiple “holes” in a component. 
   - In such cases you may come up with your own convention instead of using `children` prop
   - React elements are just objects, so you can pass them as props like any other data. 
@@ -337,15 +367,19 @@ modified: '2020-06-30T05:11:03.190Z'
 - **Specialization** 使用组合处理组件间的泛化关系
 - In React, this is also achieved by composition
   - where a more “specific” component renders a more “generic” one and configures it with props  
-```
+
+``` jsx
 function WelcomeDialog() {
   return (
+
     <Dialog
       title="Welcome"
       message="Thank you for visiting our spacecraft!" />
-  );
+
+  ); 
 }
 ```
+
 - At Facebook, we use React in thousands of components
   - and we haven’t found any use cases where we would recommend creating component inheritance hierarchies.
 - Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. 
@@ -353,7 +387,8 @@ function WelcomeDialog() {
 - If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. 
   - The components may import it and use that function, object, or a class, without extending it.   
 - 有时你可能需要在组件中有多个入口，这种情况下你可以使用自己约定的属性而不是children     
-```
+
+``` jsx
 	function SplitPane(props) {
 	  return (
 		<div className="SplitPane">
@@ -364,7 +399,7 @@ function WelcomeDialog() {
 			{props.right}
 		  </div>
 		</div>
-	  );
+	  ); 
 	}
 	
 	function App() {
@@ -376,12 +411,15 @@ function WelcomeDialog() {
 		  right={
 			<Chat />
 		  } />
-	  );
+	  ); 
 	}
+
 ```
+
 - 如果要在组件之间复用UI无关的功能，建议将其提取到单独的JavaScript模块中
 
 ## 12.thinking in react    
+
 - **Start With A Mock**
   - Imagine that we already have a JSON API and a mock from our designer.
 - **Step 1: Break The UI Into A Component Hierarchy**
@@ -437,12 +475,12 @@ function WelcomeDialog() {
     - We want to make sure that whenever the user changes the form, we update the state to reflect the user input. 
     - Since components should only update their own state, FilterableProductTable will pass callbacks to SearchBar that will fire whenever the state should be updated. 
     - We can use the onChange event on the inputs to be notified of it. 
-    - The callbacks passed by FilterableProductTable will call `setState()`, and the app will be updated.
+    - The callbacks passed by FilterableProductTable will call `setState()` , and the app will be updated.
 - 使用react创建应用的一般思路： 
 0. 准备：原型图和json数据接口  
 1. 将UI划分出组件层级
 	- 根据单一功能原则划分组件
-	- 考虑数据表示的结构，检查`数据 -> 组件`的映射
+	- 考虑数据表示的结构，检查 `数据 -> 组件` 的映射
 	- 整理组件的层级结构，最终树型
 2. 用React创建一个静态版本
 	- 只使用props，不用state
@@ -458,6 +496,3 @@ function WelcomeDialog() {
 	- 确定公共最小父组件
 5. 添加反向数据流
 	- 子组件通过回调函数修改父组件的状态
-
-
-

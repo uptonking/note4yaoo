@@ -8,4 +8,5 @@ modified: '2020-03-29T15:40:54.788Z'
 # note-olap-druid
 
 ## faq
+
 - druid vs pinot vs clickhouse

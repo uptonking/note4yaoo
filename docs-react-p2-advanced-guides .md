@@ -3,26 +3,28 @@ favorited: true
 tags: [docs, react]
 title: docs-react-p2-advanced-guides
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-30T05:13:45.128Z'
+modified: '2020-06-30T08:03:40.302Z'
 ---
 
 # docs-react-p2-advanced-guides
 
 ## JSX In Depth
+
 - JSX just provides syntactic sugar for the `React.createElement(componentType, props, ...children)` function
   - Create and return a new React element of the given type. 
   - The type argument can be either a tag name string (such as 'div' or 'span'), a React component type (a class or a function), or a React fragment type
 - Capitalized types indicate that the JSX tag is referring to a React component. 
   - These tags get compiled into a direct reference to the named variable
   - so if you use the JSX `<Foo />` expression, `Foo` must be in scope.
-  - Since JSX compiles into calls to  `React.createElement`, the React library must also always be in scope from your JSX code.
+  - Since JSX compiles into calls to `React.createElement` , the React library must also always be in scope from your JSX code.
 - When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string 'div' or 'span' passed to React.createElement. 
 - Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
 - We recommend naming components with a capital letter. 
   - If you do have a component that starts with a lowercase letter, assign it to a capitalized variable before using it in JSX.
 - If you do want to use a general expression to indicate the type of the element, just assign it to a capitalized variable first. 
   - This often comes up when you want to render a different component based on a prop    
-  ```
+
+``` jsx
     const components = {
       photo: PhotoStory,
       video: VideoStory
@@ -34,6 +36,7 @@ modified: '2020-06-30T05:13:45.128Z'
       return <SpecificStory story={props.story} />;
     }
   ```
+
 - **Props in JSX**
 - You can pass any JavaScript expression as a prop, by surrounding it with `{}`
 - You can pass a string literal as a prop.
@@ -57,10 +60,11 @@ modified: '2020-06-30T05:13:45.128Z'
   - JavaScript expressions can be mixed with other types of children
 - If you have a custom component, you could have it take a *callback function* as `props.children`
   - Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering
-- `false`, `null`, `undefined`, and `true` are valid children. 
+- `false` , `null` , `undefined` , and `true` are valid children. 
   - They simply don’t render. 
   - These JSX expressions will all render to the same thing
-  ```
+
+``` jsx
     <div />
     <div></div>
     <div>{false}</div>
@@ -68,37 +72,49 @@ modified: '2020-06-30T05:13:45.128Z'
     <div>{undefined}</div>
     <div>{true}</div>
   ```
+
   - One caveat is that some “falsy” values, such as the 0 number, are still rendered by React.
   - make sure that the expression before `&&` is always boolean
 - Conversely, if you want a value like false, true, null, or undefined to appear in the output, you have to convert it to a string first
 - 可以使用JSX的点表示法来引用React组件，可以方便地从一个模块中导出许多React组件
 - jsx的属性值
-	- 用`{ }`包含的js表达式
+	- 用 `{ }` 包含的js表达式
 	- 字符串
 	- 如果你没有给属性传值，它默认为true
-	``` 
-	<MyTextBox autocomplete /> 等价于 <MyTextBox autocomplete={true} />
-	```
+
+``` jsx
+  <MyTextBox autocomplete /> 
+  // 等价于 
+  <MyTextBox autocomplete={true} />
+```
+
 	- 现有对象使用使用扩展操作符来将整个对象作为属性传递给子组件 `return <Greeting {...props} />;`
 - This JSX only renders a `<Header />` if showHeader is true:
-```
+
+``` js
 <div>
   {showHeader && <Header />}
   <Content />
 </div>
 ```
+
 	
+
 ## React Without ES6
+
 - 声明类
-	- `class Greeting extends React.Component{}`
-	- 使用`var createReactClass = require('create-react-class');`
-	```
-	var Greeting = createReactClass({
-	  render: function() {
-		return <h1>Hello, {this.props.name}</h1>;
-	  }
-	});
-	```
+  - 使用class `class Greeting extends React.Component{}`
+  - 使用create-react-class
+
+``` js
+var createReactClass = require('create-react-class');
+var Greeting = createReactClass({
+  render: function() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+});
+```
+
 - 声明defaultProps
 	- `Greeting.defaultProps = {}`
 	- `createReactClass({ getDefaultProps: function() {} `
@@ -106,18 +122,21 @@ modified: '2020-06-30T05:13:45.128Z'
 	- 在class中 `constructor(props){ this.state={}}`
 	- `createReactClass({ getInitialState: function() {}`
 - 自动绑定
-	- es6的class中方法没有自动绑定this，要在constructor()中`this.handleClick = this.handleClick.bind(this);`
-	- With `createReactClass()`, this is not necessary because it binds all methods
+	- es6的class中方法没有自动绑定this，要在constructor()中 `this.handleClick = this.handleClick.bind(this);`
+	- With `createReactClass()` , this is not necessary because it binds all methods
 - mixins
 	- es6不支持混入，推荐使用高阶组件
-	- createReactClass()作为一个属性`mixins: [SetIntervalMixin]`
+	- createReactClass()作为一个属性 `mixins: [SetIntervalMixin]`
 	
+
 ## React Without JSX
-- Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)`. 
+
+- Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)` . 
   - So, anything you can do with JSX can also be done with just plain JavaScript.
-- The component can either be provided as a string, as a subclass of React.Component, or a plain function.
+- The component can either be provided as a string, as a subclass of React. Component, or a plain function.
 - If you get tired of typing `React.createElement` so much, one common pattern is to assign a shorthand
-```
+
+``` js
 const e = React.createElement;
 ReactDOM.render(
   e('div', null, 'Hello World'),
@@ -126,15 +145,17 @@ ReactDOM.render(
 ```
 
 ## Fragments
+
 - A common pattern in React is for a component to *return multiple elements*. 
   - A common pattern is for a component to return a list of children. 
 - **Fragments let you group a list of children without adding extra nodes to the DOM**.
 - Fragments declared with the explicit `<React.Fragment>` syntax may have keys. 
-- `key` is the only attribute that can be passed to `Fragment`. 
+- `key` is the only attribute that can be passed to `Fragment` . 
 - In the future, we may add support for additional attributes, such as event handlers.
 - You can use `<></>` the same way you’d use any other element except that it doesn’t support keys or attributes.
 
 ## Context
+
 - Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 - In a typical React application, data is passed top-down (parent to child) via props
   - but this can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. 
@@ -155,20 +176,20 @@ ReactDOM.render(
   - You can take it even further with render props if the child needs to communicate with the parent before rendering.
 - However, sometimes the same data needs to be accessible by many components in the tree, and *at different nesting levels*. 
   - Context lets you “broadcast” such data, and changes to it, to all components below
-- `const MyContext = React.createContext(defaultValue);`  
+- `const MyContext = React.createContext(defaultValue);`
   - Creates a Context object. 
   - When React renders a component that subscribes to this Context object, it will read the current context value from the closest matching `Provider` above it in the tree.
   - The `defaultValue` argument is only used when a component does not have a matching Provider above it in the tree. 
   - This can be helpful for testing components in isolation without wrapping them. 
-  - Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue`.
-- `<MyContext.Provider value={/* some value */}>`  
+  - Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue` .
+- `<MyContext.Provider value={/* some value */}>`
   - Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
   - Accepts a `value` prop to be passed to consuming components that are descendants of this Provider. 
   - One Provider can be connected to many consumers. 
   - Providers can be nested to override values deeper within the tree.
   - All consumers that are descendants of a Provider will re-render *whenever the Provider’s `value` prop changes*. 
-  - The propagation from Provider to its descendant consumers (including `.contextType` and `useContext`) is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component skips an update.
-  - Changes are determined by comparing the new and old values using the same algorithm as `Object.is`.
+  - The propagation from Provider to its descendant consumers (including `.contextType` and `useContext` ) is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component skips an update.
+  - Changes are determined by comparing the new and old values using the same algorithm as `Object.is` .
 - `<MyContext.Consumer> {value => /* use context value */} </MyContext.Consumer>`
   - A React component that subscribes to context changes
   - Requires a function as a child. 
@@ -176,52 +197,58 @@ ReactDOM.render(
     - The `value` argument passed to the function will be equal to the `value` prop of the closest Provider for this context above in the tree. 
     - If there is no Provider for this context above, the `value` argument will be equal to the `defaultValue` that was passed to `createContext()`
 - `Class.contextType`
-  - The `contextType` property on a class can be assigned a Context object created by `React.createContext()`. 
-  - This lets you consume the nearest current value of that Context type using `this.context`. 
+  - The `contextType` property on a class can be assigned a Context object created by `React.createContext()` . 
+  - This lets you consume the nearest current value of that Context type using `this.context` . 
   - You can reference this in any of the lifecycle methods including the render function.
   - You can only subscribe to a single context using this API- 
 - `Context.displayName`
   -  React DevTools uses this string to determine what to display for the context.
 - It is often necessary to update the context from a component that is nested somewhere deeply in the component tree. 
   - you can pass a function down through the context to allow consumers to update the context
-  ```
+
+``` js
   export const ThemeContext = React.createContext({
     theme: themes.dark,
     toggleTheme: () => {},
   });
-  ```
+```
+
 - To keep context re-rendering fast, React needs to make each context consumer a separate node in the tree.
 - If *two or more context values are often used together*, you might want to consider creating your own render prop component that provides both.
 - Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders
-  - For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`  
-  ```
+  - For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`
+
+``` js
      <MyContext.Provider value={{something: 'something'}}>
         <Toolbar />
      </MyContext.Provider>
-  ```
+```
+
   - To get around this, lift the value into the parent’s state
-  ```
+
+``` js
   constructor(props) {
     super(props);
     this.state = {
-      value: {something: 'something'},
+      value: { something: 'something' },
     };
   }
 
   <Provider value={this.state.value}>
-  ```
+```
+
 - Context旨在共享一个组件树内可被视为全局的数据，常见的使用场景
   - 当前经过身份验证的用户
   - 主题设置
   - 语言设置
   - 查询缓存
-使用static类属性代替
 - 可以在context中向下传递一个函数，以允许Consumer更新context
 - 因为context使用reference相等来确定何时重新渲染，每当Provider重新渲染时，Consumer子组件也会渲染
   - 解决方法是将Provider的value属性值放在state中初始化
 
 ## Context API (Legacy)
-```
+
+``` js
 const PropTypes = require('prop-types');
 class Button extends React.Component {
   render() {
@@ -238,7 +265,7 @@ Button.contextTypes = {
 };
 ```
 
-```
+``` js
 class Message extends React.Component {
   render() {
     return (
@@ -252,7 +279,7 @@ class Message extends React.Component {
 class MessageList extends React.Component {
   //声明并初始化context中的值
   getChildContext() {
-    return {color: "purple"};
+    return { color: "purple" };
   }
 
   render() {
@@ -268,6 +295,7 @@ MessageList.childContextTypes = {
 ```
 
 ## Refs and the DOM
+
 - Refs provide a way to access DOM nodes or React elements created in the render method.
 - In the typical React dataflow, props are the only way that parent components interact with their children.
 - However, there are a few cases where you need to **imperatively modify a child outside of the typical dataflow**.
@@ -278,7 +306,8 @@ MessageList.childContextTypes = {
 - Avoid using refs for anything that can be done declaratively.
   - For example, instead of exposing open() and close() methods on a Dialog component, pass an `isOpen` prop to it.
 - Refs are created using `React.createRef()` and attached to React elements via the `ref` attribute. 
-```jsx
+
+``` jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -289,15 +318,16 @@ class MyComponent extends React.Component {
   }
 }
 ```
+
 - Refs are commonly assigned to an instance property when a component is constructed， so they can be referenced throughout the component.
 - When a ref is passed to an element in render, a reference to the node becomes accessible at the `current` attribute of the ref.
 - The value of the ref differs depending on the type of the node:
-  - When the ref attribute is used on an HTML element,
+  - When the ref attribute is used on an HTML element, 
     - the ref created in the constructor with `React.createRef()` receives the underlying DOM element as its `current` property.
     - React will assign the `current` property with the DOM element when the component mounts, and assign it back to `null` when it unmounts. 
     - ref updates happen before componentDidMount or componentDidUpdate lifecycle methods.
   - When the ref attribute is used on a custom class component
-    - the ref object receives the mounted instance of the component as its `current`.
+    - the ref object receives the mounted instance of the component as its `current` .
   - You **may not use the ref attribute on function components** because they don’t have instances.
     - If you want to allow people to take a ref to your function component, you can use forwardRef (possibly in conjunction with useImperativeHandle)
     - or you can convert the component to a class.
@@ -314,12 +344,13 @@ class MyComponent extends React.Component {
 - When possible, we advise against exposing DOM nodes
   - but it can be a useful escape hatch. 
   - Note that this approach requires you to add some code to the child component. 
-  - If you have absolutely no control over the child component implementation, your last option is to use `findDOMNode()`, but it is discouraged and deprecated in StrictMode.
+  - If you have absolutely no control over the child component implementation, your last option is to use `findDOMNode()` , but it is discouraged and deprecated in StrictMode.
 - React also supports another way to set refs called **callback refs**, which gives more fine-grain control over when refs are set and unset.
 - Instead of passing a ref attribute created by createRef(), you pass a function.
   - **The function receives the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
 - You can pass callback refs between components like you can with object refs that were created with React.createRef().
-```
+
+``` js
 function CustomTextInput(props) {
   return (
     <div>
@@ -338,7 +369,8 @@ class Parent extends React.Component {
   }
 }
 ```
-- In the example above, Parent passes its ref callback as an `inputRef` prop to the CustomTextInput, and the CustomTextInput passes the same function as a special `ref` attribute to the `<input>`. 
+
+- In the example above, Parent passes its ref callback as an `inputRef` prop to the CustomTextInput, and the CustomTextInput passes the same function as a special `ref` attribute to the `<input>` . 
 - As a result, `this.inputElement` in Parent will be set to the DOM node corresponding to the `<input>` element in the CustomTextInput.
 - If the `ref` callback is defined as an inline function, it will get called twice during updates, first with `null` and then again with the DOM element.
   - This is because a new instance of the function is created with each render
@@ -346,8 +378,8 @@ class Parent extends React.Component {
   - You can avoid this by defining the ref callback as a bound method on the class
   - but note that it shouldn’t matter in most cases.
 - We *advise against* using string refs because string refs have some issues, are considered legacy, and are likely to be removed
-  - It requires that React keeps track of currently rendering component (since it can't guess `this`). This makes React a bit slower.
-  - It doesn't work as most people would expect with the "render callback" pattern (e.g. `<DataGrid renderRow={this.renderRow} />`) because the ref would get placed on DataGrid for the above reason.
+  - It requires that React keeps track of currently rendering component (since it can't guess `this` ). This makes React a bit slower.
+  - It doesn't work as most people would expect with the "render callback" pattern (e.g. `<DataGrid renderRow={this.renderRow} />` ) because the ref would get placed on DataGrid for the above reason.
   - It is not composable, i.e. if a library puts a ref on the passed child, the user can't put another ref on it. Callback refs are perfectly composable.
     - https://github.com/facebook/react/issues/8734
 
@@ -355,18 +387,20 @@ class Parent extends React.Component {
 	- 问题
 		- 不支持静态类型分析，如flow
 		- string ref的指向与当前组件，容易出错，且需要react跟踪当前执行的组件
-		- 参考 https://stackoverflow.com/questions/37468913/why-ref-string-is-legacy
-	- 例子
-	```
+		- 参考 https://stackoverflow.com/questions/37468913/why-ref-string-is-legacy  
+
+``` js
 	<input ref="input1" />
 	const inputEl = this.refs.input1;
-	```
-- 不管ref设置值是回调函数还是字符串，都可以通过`ReactDOM.findDOMNode(ref)`来获取组件挂载后真正的dom节点
+```
+
+- 不管ref设置值是回调函数还是字符串，都可以通过 `ReactDOM.findDOMNode(ref)` 来获取组件挂载后真正的dom节点
 - 但是对于html元素使用ref的情况，ref本身引用的就是该元素的实际dom节点，无需使用ReactDOM.findDOMNode(ref)来获取，该方法常用于React组件上的ref
 - 不建议在父组件中直接访问子组件的实例方法来完成某些逻辑，在大部分情况下请使用标准的react数据流的方式来代替则更为清晰；
 - 不要在组件的render方法中访问ref引用，render方法只是返回一个虚拟dom，这时组件不一定挂载到dom中或者render返回的虚拟dom不一定会更新到dom中。
 
 ## Forwarding Refs
+
 - Ref forwarding is a technique for automatically passing a ref through a component to one of its children
 - Forwarding refs to DOM components
   - Consider a `FancyButton` component that renders the native `button` DOM element
@@ -376,7 +410,8 @@ class Parent extends React.Component {
   - Although such encapsulation is desirable for application-level components like FeedStory or Comment, it *can be inconvenient* for highly reusable “leaf” components like FancyButton or MyTextInput.
   - These components tend to be used throughout the application in a similar manner as a regular DOM button and input, and accessing their DOM nodes may be unavoidable for managing focus, selection, or animations.
 - Ref forwarding is an opt-in feature that lets some components take a ref they receive, and pass it further down (in other words, “forward” it) to a child.  
-```
+
+``` js
 const FancyButton = React.forwardRef((props, ref) => (
   <button ref={ref} className="FancyButton">
     {props.children}
@@ -387,6 +422,7 @@ const FancyButton = React.forwardRef((props, ref) => (
 const ref = React.createRef();
 <FancyButton ref={ref}>Click me!</FancyButton>;
 ```
+
 - In the example, FancyButton uses React.forwardRef to obtain the ref passed to it, and then forward it to the DOM button that it renders
   - This way, **components using FancyButton can get a ref to the underlying button DOM node** and access it if necessary—just like if they used a DOM button directly.
   - When the ref is attached, `ref.current` will point to the `<button>` DOM node.
@@ -395,7 +431,8 @@ const ref = React.createRef();
 - Ref forwarding is not limited to DOM components. 
   - You can forward refs to class component instances, too.
 - Forwarding refs can also be useful with higher-order components (also known as HOCs). 
-```
+
+``` js
 class FancyButton extends React.Component {
   focus() {
     // ...
@@ -408,15 +445,17 @@ class FancyButton extends React.Component {
 // It will render a FancyButton though.
 export default logProps(FancyButton);
 ```
+
 - There is one caveat to the above example: refs will not get passed through. 
   - That’s because `ref` is not a prop. 
-  - Like `key`, it’s handled differently by React. 
+  - Like `key` , it’s handled differently by React. 
 - If you add a ref to a HOC, the ref will refer to the outermost container component, not the wrapped component.
 - We can explicitly forward refs to the inner FancyButton component using the `React.forwardRef` API. 
   - React.forwardRef accepts a render function that receives props and ref parameters and returns a React node.
   - If you name the render function, DevTools will also include its name (e.g. ”ForwardRef(myFunction)”) 
 
 ##  Uncontrolled Components
+
 - In a controlled component, form data is handled by a React component. 
 - The alternative is **uncontrolled components, where form data is handled by the DOM itself**.
 - In most cases, we recommend using controlled components to implement forms. 
@@ -430,9 +469,10 @@ export default logProps(FancyButton);
   - `this.fileInput.current.files[0].name`
 
 ## Higher-Order Components
+
 - A higher-order component(HOC) is an advanced technique in React for reusing component logic
 - **A higher-order component is a function that takes a component and returns a new component**.
-- `const EnhancedComponent = higherOrderComponent(WrappedComponent);`  
+- `const EnhancedComponent = higherOrderComponent(WrappedComponent);`
 - Note that a HOC doesn’t modify the input component, nor does it use inheritance to copy its behavior. 
 - Rather, a *HOC composes the original component by wrapping it in a container component*. 
 - A HOC is a pure function with zero side-effects.
@@ -459,7 +499,8 @@ export default logProps(FancyButton);
   - It’s expected that the component returned from a HOC has a similar interface to the wrapped component.
 - HOCs should pass through props that are unrelated to its specific concern. 
 - Most HOCs contain a render method that looks something like this:
-```js
+
+``` js
 render() {
   // Filter out extra props that are specific to this HOC and shouldn't be passed through
   const { extraProp, ...passThroughProps } = this.props;
@@ -476,9 +517,11 @@ render() {
   );
 }
 ```
+
 - Not all HOCs look the same. Sometimes they accept only a single argument, the wrapped component.
 - Usually, HOCs accept additional arguments. The most common signature for HOCs looks like this:  
-```js
+
+``` js
 // React Redux's `connect`
 const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
 
@@ -487,13 +530,14 @@ const enhance = connect(commentListSelector, commentListActions);
 // The returned function is a HOC, which returns a component that is connected to the Redux store
 const ConnectedComment = enhance(CommentList);
 ```
-- In other words, **`connect` is a higher-order function that returns a higher-order component**!
+
+- In other words, ** `connect` is a higher-order function that returns a higher-order component**!
   - This form may seem confusing or unnecessary, but it has a useful property. 
-  - Single-argument HOCs like the one returned by the `connect` function have the signature `Component => Component`. 
+  - Single-argument HOCs like the one returned by the `connect` function have the signature `Component => Component` . 
   - Functions whose output type is the same as its input type are really easy to compose together.
   - This same property also allows `connect` and other enhancer-style HOCs to be used as decorators, an experimental JavaScript proposal  
 
-```js
+``` js
 // Instead of doing this...
 const EnhancedComponent = withRouter(connect(commentSelector)(WrappedComponent))
 
@@ -506,13 +550,15 @@ const enhance = compose(
 )
 const EnhancedComponent = enhance(WrappedComponent)
 ```
+
 - The `compose` utility function is provided by many third-party libraries including lodash (as lodash.flowRight), Redux, and Ramda
 - The container components created by HOCs show up in the React Developer Tools like any other component. 
   - The most common technique is to wrap the display name of the wrapped component.   
-```js
+
+``` js
 function withSubscription(WrappedComponent) {
-  class WithSubscription extends React.Component {/* ... */}
-  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`;
+  class WithSubscription extends React.Component { /* ... */ }
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})` ;
   return WithSubscription;
 }
 
@@ -520,6 +566,7 @@ function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
 ```
+
 - Don’t Use HOCs Inside the render Method
   - React’s diffing algorithm (called reconciliation) uses component identity to determine whether it should update the existing subtree or throw it away and mount a new one. 
   - If the component returned from `render` is identical (===) to the component from the previous render, React recursively updates the subtree by diffing it with the new one. 
@@ -536,7 +583,6 @@ function getDisplayName(WrappedComponent) {
   - Another possible solution is to export the static method separately from the component itself
 - If you add a ref to an element whose component is the result of a HOC, the ref refers to an instance of the outermost container component, not the wrapped component.
   - The solution for this problem is to use the `React.forwardRef`
-
 - 使用mixins处理交叉关注点的问题
   - mixin可能导致命名冲突
   - mixin引入了隐式依赖关系，不方便组件层级移动和修改
@@ -545,25 +591,30 @@ function getDisplayName(WrappedComponent) {
 - 高阶组件在React第三方库中很常见，比如Redux的connect和Relay的createFragmentContainer.
 - 输入组件的静态方法要做拷贝
   - 示例
-  ```
+
+``` js
   // 定义静态方法
-  WrappedComponent.staticMethod = function() {/*...*/}
+  WrappedComponent.staticMethod = function() { /*...*/ }
   // 使用高阶组件
   const EnhancedComponent = enhance(WrappedComponent);
   // 增强型组件没有静态方法
-  typeof EnhancedComponent.staticMethod === 'undefined'  // true
-  ```
+  typeof EnhancedComponent.staticMethod === 'undefined' // true
+```
+
   - 这需要清楚的知道有哪些静态方法需要拷贝，可以使用hoist-non-react-statics来自动处理，它会自动拷贝所有非React的静态方法
 
 ## Render Props
+
 - render prop refers to a technique for sharing code between React components using a prop whose value is a function.
   - function as prop
 - A component with a **render prop takes a function that returns a React element and calls it instead of implementing its own render logic**.   
-```
+
+``` js
 <DataProvider render={data => (
   <h1>Hello {data.target}</h1>
 )}/>
 ```
+
 - Components are the primary unit of code reuse in React
   - but it’s not always obvious how to share the state or behavior that one component encapsulates to other components that need that same state.
   - For example, A component tracks the mouse position in a web app
@@ -571,10 +622,11 @@ function getDisplayName(WrappedComponent) {
 - a render prop is a function prop that a component uses to know what to render.
 - One interesting thing to note about render props is that you can implement most higher-order components (HOC) using a regular component with a render prop.
 - In fact, any prop that is a function that a component uses to know what to render is technically a “render prop”
-  - Although the examples above use `render`, we could just as easily use the `children` prop!
+  - Although the examples above use `render` , we could just as easily use the `children` prop!
   - And remember, the `children` prop doesn’t actually need to be named in the list of “attributes” in your JSX element. 
   - Instead, you can put it directly inside the element!
-```jsx
+
+``` jsx
 <Mouse children={mouse => (
   <p>The mouse position is {mouse.x}, {mouse.y}</p>
 )}/>
@@ -585,11 +637,13 @@ function getDisplayName(WrappedComponent) {
   )}
 </Mouse>
 ```
+
 - Using a render prop can negate the advantage that comes from using `React.PureComponent` **if you create the function inside a `render` method**. 
   - This is because the shallow prop comparison will always return false for new props
   - and each `render` in this case will generate a new value for the render prop. So your Component would re-render all the time.
   - To get around this problem, you can sometimes define the prop as an instance method  
-```js
+
+``` js
 class MouseTracker extends React.Component {
   render() {
     return (
@@ -608,7 +662,7 @@ class MouseTracker extends React.Component {
   }
 }
 
-class Mouse extends React.Pure/Component {
+class Mouse extends React.Pure / Component {
   constructor(props) {
     super(props);
     this.handleMouseMove = this.handleMouseMove.bind(this);
@@ -649,11 +703,13 @@ class MouseTracker extends React.Component {
   }
 }
 ```
+
 - In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state), `<Mouse>` should extends `React.Component` instead.
-  - In cases where you cannot define the render prop method (renderTheCat) statically (e.g. because you need to close over the Mouse component's props and/or state), Mouse Component should extend React.Component instead. When Mouse is a PureComponent, the child Cat will not re-render when Mouse's state or props change, since Cat's own props and state will not have changed! If Mouse is a regular Component instead, a change to the Mouse's state or props will automatically cause it's child Cat to re-render.
-  - I think including a bound method in the example is dangerous, because if the method did reference this.props or this.state, it would be incorrect to pass a bound version to the render prop because Mouse would fail to re-render when props/state change,
+  - In cases where you cannot define the render prop method (renderTheCat) statically (e.g. because you need to close over the Mouse component's props and/or state), Mouse Component should extend React. Component instead. When Mouse is a PureComponent, the child Cat will not re-render when Mouse's state or props change, since Cat's own props and state will not have changed! If Mouse is a regular Component instead, a change to the Mouse's state or props will automatically cause it's child Cat to re-render.
+  - I think including a bound method in the example is dangerous, because if the method did reference this.props or this.state, it would be incorrect to pass a bound version to the render prop because Mouse would fail to re-render when props/state change, 
   - https://github.com/reactjs/reactjs.org/pull/700
-```js
+
+``` js
 class Foo extends PureComponent {
   render() {
     return this.props.render('abc')
@@ -677,12 +733,15 @@ class Bar extends Component {
   }
 }
 
-<Bar value="def" /> // renders "abcdef"
-<Bar value="ghi" /> // still renders "abcdef"
-It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to suggest binding as a solution, especially when the binding isn't even necessary in the particular example.
+return <Bar value="def" /> // renders "abcdef"
+
+return <Bar value = "ghi" / > // still renders "abcdef"
+
+// It 's a pretty subtle mistake, which is why I think it's dangerous / incorrect to suggest binding as a solution, especially when the binding isn 't even necessary in the particular example.
 ```
 
 ## Portals
+
 - Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
 - `ReactDOM.createPortal(child, container)`
 	- `child` is any renderable React child, such as an element, string, or fragment
@@ -700,6 +759,7 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 - Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals.
 
 ## Optimizing Performance
+
 - Use the Production Build
 - Profiling Components with the Chrome Performance Tab: 使用Chrome性能分析工具分析组件性能
 	- 先暂停React DevTools扩展，再打开Chrome DevTools Performance并点击Record，在User Timing标签下，React事件将会分组列出
@@ -710,8 +770,7 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
   - Make sure you’re running the application in the development mode.
   - Open the Chrome DevTools Performance tab and press Record.
   - Perform the actions you want to profile. Don’t record more than 20 seconds or Chrome might hang.
-  Stop recording.
-  - React events will be grouped under the User Timing label.
+  - Stop recording. React events will be grouped under the User Timing label.
 - **Profiling Components with the DevTools Profiler**
 - react-dom 16.5+ and react-native 0.57+ provide enhanced profiling capabilities in DEV mode with the React DevTools Profiler.
 - The “Profiler” panel will be empty initially. Click the record button to start profiling
@@ -756,13 +815,14 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
     - When they are not equal, React will update the DOM.
   - Even though React only updates the changed DOM nodes, re-rendering still takes some time
 	- `shouldComponentUpdate()` is triggered before the re-rendering process starts.
-    - The default implementation of this function returns `true`, leaving React to perform the update
+    - The default implementation of this function returns `true` , leaving React to perform the update
     - If you know that in some situations your component doesn’t need to update, you can return `false` from shouldComponentUpdate instead, to skip the whole rendering process, including calling render() on this component and below.
-  - In most cases, instead of writing shouldComponentUpdate() by hand, you can inherit from `React.PureComponent`. 
+  - In most cases, instead of writing shouldComponentUpdate() by hand, you can inherit from `React.PureComponent` . 
     - It is equivalent to implementing shouldComponentUpdate() with a shallow comparison of current and previous props and state.
 - shouldComponentUpdate原理示意图
 
 ## Profiler
+
 - Profiler measures how often a React application renders and what the “cost” of rendering is. 
   - Its purpose is to help identify parts of an application that are slow and may benefit from optimizations such as memoization.
 - A `Profiler` Component can be added anywhere in a React tree to measure the cost of rendering that part of the tree. 
@@ -772,6 +832,7 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 - onRender Callback receives parameters describing what was rendered and how long it took.
 
 ## Reconciliation 协调
+
 - https://reactjs.org/docs/reconciliation.html  
 - When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. 
 - On the next state or props update, that `render()` function will return a different tree of React elements. 
@@ -787,9 +848,9 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 - **Elements Of Different Types**  
 - Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. 
   - When tearing down a tree, old DOM nodes are destroyed. 
-  - Component instances receive `componentWillUnmount()`. 
+  - Component instances receive `componentWillUnmount()` . 
   - When building up a new tree, new DOM nodes are inserted into the DOM. 
-  - Component instances receive `componentWillMount()` and then `componentDidMount()`. 
+  - Component instances receive `componentWillMount()` and then `componentDidMount()` . 
   - Any state associated with the old tree is lost.
   - Any components below the root will also get unmounted and have their state destroyed. 
 - **DOM Elements Of The Same Type**  
@@ -802,7 +863,8 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 - **Recursing On Children**  
 - By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there’s a difference.
   - React will match the two `<li>first</li>` trees, match the two `<li>second</li>` trees, and then insert the `<li>third</li>` tree  
-  ```
+
+``` html
   <ul>
     <li>first</li>
     <li>second</li>
@@ -813,9 +875,11 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
     <li>second</li>
     <li>third</li>
   </ul>
-  ```
+```
+
   - React will mutate every child instead of realizing it can keep the `<li>Duke</li>` and `<li>Villanova</li>` subtrees intact. This inefficiency can be a problem.
-  ```
+
+``` html
   <ul>
     <li>Duke</li>
     <li>Villanova</li>
@@ -826,11 +890,13 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
     <li>Duke</li>
     <li>Villanova</li>
   </ul>
-  ```
+```
+
 - In order to solve this issue, React supports a `key` attribute. 
 - When children have keys, React uses the `key` to match children in the original tree with children in the subsequent tree. 
 - Now React knows that the element with key '2014' is the new one, and the elements with the keys '2015' and '2016' have just moved.
-```
+
+``` html
   <ul>
     <li key="2015">Duke</li>
     <li key="2016">Villanova</li>
@@ -842,6 +908,7 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
     <li key="2016">Villanova</li>
   </ul>
 ```
+
 - Reorders can also cause issues with component state when indexes are used as keys. 
   - Component instances are updated and reused based on their key. 
   - If the key is an index, moving an item changes it. 
@@ -881,6 +948,7 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 		- 组件实例基于key进行更新和重用。如果key是索引，则item的顺序变化会改变key值。这将导致非受控组件的状态可能会以意想不到的方式混淆和更新。
 
 ## Code-Splitting
+
 - Most React apps will have their files “bundled” using tools like Webpack, Rollup. 
   - Bundling is the process of following imported files and merging them into a single file: a “bundle”.
   - This bundle can then be included on a webpage to load an entire app at once.
@@ -893,25 +961,31 @@ It's a pretty subtle mistake, which is why I think it's dangerous/incorrect to s
 - The **best way to introduce code-splitting** into your app is through the dynamic `import()` syntax.
   - When Webpack comes across this syntax, it automatically starts code-splitting your app. 
   - you’ll need to make sure that Babel can parse the dynamic import syntax but is not transforming it. 
-```
+
+``` js
 import { add } from './math';
 console.log(add(16, 26));
 ```
+
 之后  
-```
+
+``` js
 import("./math").then(math => {
   console.log(math.add(16, 26));
 });
 ```
-- `React.lazy()`  function lets you render a dynamic import as a regular component.   
+
+- `React.lazy()` function lets you render a dynamic import as a regular component.   
   - React.lazy takes a function that must call a dynamic import().
   - It returns a Promise which resolves to a module with a default export containing a React component.
   - This will automatically load the bundle containing the OtherComponent when this component is first rendered.
-```
+
+``` js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
+
 function MyComponent() {
-	  return (  
-	  <MyErrorBoundary>
+  return (
+      <MyErrorBoundary>
 		 <Suspense fallback={<div>Loading...</div>}>
 			  <OtherComponent />
 		 </Suspense>
@@ -919,6 +993,7 @@ function MyComponent() {
 	  );
 }
 ```
+
 - The lazy component should then be rendered inside a `Suspense` component, which allows us to show some fallback content (such as a loading indicator) while we’re waiting for the lazy component to load.
   - The `fallback` prop accepts any React elements that you want to render while waiting for the component to load. 
   - You can place the `Suspense` component anywhere above the lazy component. 
@@ -929,10 +1004,11 @@ function MyComponent() {
 - You can setup route-based code splitting into your app using libraries like React Router with React.lazy
 - React.lazy currently *only supports default exports*. 
   - If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default.    
-```
+
+``` js
 // ManyComponents.js
-export const MyComponent = /* ... */;
-export const MyUnusedComponent = /* ... */;
+export const MyComponent = /* ... */ ;
+export const MyUnusedComponent = /* ... */ ;
 
 // MyComponent.js
 export { MyComponent as default } from "./ManyComponents.js";
@@ -941,11 +1017,13 @@ export { MyComponent as default } from "./ManyComponents.js";
 import React, { lazy } from 'react';
 const MyComponent = lazy(() => import("./MyComponent.js"));
 ```
+
 - React.lazy和Suspense尚不可用于服务器端渲染
   - 如果要在服务器渲染的应用程序中进行代码拆分，建议使用Loadable Components
   - https://github.com/gregberge/loadable-components
 
 ## Static Type Checking
+
 - Static type checkers like Flow and TypeScript identify certain types of problems before you even run your code. 
 - They can also improve developer workflow by adding features like auto-completion. 
 - To be able to show errors and hints from other packages, the compiler relies on declaration files.
@@ -965,8 +1043,9 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - Reason是一门基于OCaml的语言，既可以通过BuckleScript被编译为JavaScript，也支持直接编译为原生的二进制汇编
 
 ## Strict Mode
+
 - `StrictMode` is a tool for highlighting potential problems in an application. 
-  - Like `Fragment`, `StrictMode` does not render any visible UI. 
+  - Like `Fragment` , `StrictMode` does not render any visible UI. 
   - It activates additional checks and warnings for its descendants.
   - Strict mode checks are **run in development mode only**; they do not impact the production build.
 - You can enable strict mode for any part of your application
@@ -1012,17 +1091,18 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
     - Unfortunately, it can be difficult to detect these problems as they can often be non-deterministic.
 	- Strict mode can’t automatically detect side effects for you, but it can help you spot them by making them a little more deterministic. 
   - This is done by intentionally **double-invoking the following methods**:
-    - Class component `constructor`, `render`, and `shouldComponentUpdate` methods
+    - Class component `constructor` , `render` , and `shouldComponentUpdate` methods
     - Class component static `getDerivedStateFromProps` method
     - Function component bodies
-    - State updater functions (the first argument to `setState`)
-    - Functions passed to `useState`, `useMemo`, or `useReducer`
+    - State updater functions (the first argument to `setState` )
+    - Functions passed to `useState` , `useMemo` , or `useReducer`
     - This only applies to development mode. Lifecycles will not be double-invoked in production mode.
   - By intentionally double-invoking methods like the component constructor, strict mode makes patterns like this easier to spot.
-    - 如在constructor中调用非幂等的方法`SharedApplicationState.recordEvent('ExampleComponent');`
+    - 如在constructor中调用非幂等的方法 `SharedApplicationState.recordEvent('ExampleComponent');`
     - instantiating this component multiple times could lead to invalid application state. 
 
 ## Error Boundaries
+
 - A JavaScript error in a part of the UI shouldn’t break the whole app. 
   - To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
 - Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. 
@@ -1060,27 +1140,30 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - If you need to catch an error inside event handler, use the regular JavaScript `try/catch` statement
 
 ## Integrating with Other Libraries
+
 - Integrating with DOM Manipulation Plugins
 - **React is unaware of changes made to the DOM outside of React**. It determines updates based on its own internal representation, and if the same DOM nodes are manipulated by another library, React gets confused and has no way to recover.
 - The easiest way to avoid conflicts is to prevent the React component from updating. 
-- You can do this by rendering elements that React has no reason to update, like an empty `<div />`.
+- You can do this by rendering elements that React has no reason to update, like an empty `<div />` .
 - 与jQuery集成示例
-	```
+
+``` js
 	class SomePlugin extends React.Component {
-		  componentDidMount() {
-			this.$el = $(this.el);
-			this.$el.somePlugin();
-		  }
-		
-		  componentWillUnmount() {
-			this.$el.somePlugin('destroy');
-		  }
-		
-		  render() {
-			return <div ref={el => this.el = el} />;
-		  }
+	  componentDidMount() {
+	    this.$el = $(this.el);
+	    this.$el.somePlugin();
+	  }
+
+	  componentWillUnmount() {
+	    this.$el.somePlugin('destroy');
+	  }
+
+	  render() {
+	    return <div ref={el => this.el = el} />;
+	  }
 	}
-	```
+```
+
 - To prevent React from touching the DOM after mounting, we will return an empty `<div />` from the render() method.
 - The `<div />` element has no properties or children, so React has no reason to update it, leaving the jQuery plugin free to manage that part of the DOM
 - remember to remove any event listeners the plugin registered in `componentWillUnmount` to prevent memory leaks.
@@ -1089,27 +1172,31 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - Integrating with Other View Libraries
 	- Although React is commonly used at startup to load a single root React component into the DOM, `ReactDOM.render()` can also be called multiple times for independent parts of the UI which can be as small as a button, or as large as an app.
 	- Replacing String-Based Rendering with React  
-	```
+
+``` js
 	$('#container').html('<button id="btn">Say Hello</button>');
 	$('#btn').click(function() {
 	  alert('Hello!');
 	});
-	```
-	- 对于`$el.html(htmlString)`：Just rewrite the string based rendering as a React component.
-	```
+```
+
+	- 对于 `$el.html(htmlString)` ：Just rewrite the string based rendering as a React component.
+
+``` js
   function Button() {
     return <button id="btn">Say Hello</button>;
   }
-	ReactDOM.render(
-	  <Button />,
-	  document.getElementById('container'),
-	  function() {
-		$('#btn').click(function() {
-		  alert('Hello!');
-		});
-	  }
-	);
-	```
+  ReactDOM.render(
+    <Button />,
+    document.getElementById('container'),
+    function() {
+      $('#btn').click(function() {
+        alert('Hello!');
+      });
+    }
+  );
+```
+
 - You can have as many such isolated components as you like, and use `ReactDOM.render()` to render them to different DOM containers. 
   - Gradually, as you convert more of your app to React, you will be able to combine them into larger components, and move some of the `ReactDOM.render()` calls up the hierarchy.
 - Integrating with Model Layers
@@ -1117,13 +1204,14 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - You can use React with any model library by subscribing to its changes in the lifecycle methods and, optionally, copying the data into the local React state.
 
 ## Accessibility
-- Web accessibility (also referred to as `a11y`) is the design and creation of websites that can be used by everyone.  
+
+- Web accessibility (also referred to as `a11y` ) is the design and creation of websites that can be used by everyone.  
 - WCAG: The Web Content Accessibility Guidelines provides guidelines for creating accessible websites.
 - WAI-ARIA: The Web Accessibility Initiative - Accessible Rich Internet Applications document contains techniques for building fully accessible JavaScript widgets.  
 - Note that all `aria-*` HTML attributes are fully supported in JSX. Whereas most DOM properties and attributes in React are camelCased, these attributes should be **hyphen-cased** (also known as kebab-case, lisp-case, etc) as they are in plain HTML
-- Every HTML form control, such as `<input>` and `<textarea>`, needs to be labeled accessibly.
+- Every HTML form control, such as `<input>` and `<textarea>` , needs to be labeled accessibly.
 - Although these standard HTML practices can be directly used in React, note that the `for` attribute is written as `htmlFor` in JSX
-- Only ever use CSS that removes this outline, for example by setting `outline: 0`, if you are replacing it with another keyboard focus outline implementation.
+- Only ever use CSS that removes this outline, for example by setting `outline: 0` , if you are replacing it with another keyboard focus outline implementation.
 - MDN Web Docs takes a look at this and describes how we can build keyboard-navigable JavaScript widgets.
 - To set focus in React, we can use Refs to DOM elements.
 - Ensure that all functionality exposed through a mouse or pointer event can also be accessed using the keyboard alone. 
@@ -1134,6 +1222,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - Ensure that all readable text on your website has sufficient color contrast to remain maximally readable by users with low vision
 
 ## Web Components
+
 - React and Web Components are built to solve different problems. 
 - Web Components provide strong encapsulation for reusable components
 - React provides a declarative library that keeps the DOM in sync with your data.
@@ -1143,16 +1232,19 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - If you are using third-party Web Components, the best solution is to write a React component that behaves as a wrapper for your Web Component.
   - Events emitted by a Web Component may not properly propagate through a React render tree. 
   - You will need to manually attach event handlers to handle these events within your React components.
-```
+
+``` js
 class HelloMessage extends React.Component {
   render() {
     return <div>Hello <x-search>{this.props.name}</x-search>!</div>;
   }
 }
 ```
+
 - Using React in your Web Components
   - This code will not work if you transform classes with Babel.
-```
+
+``` js
 class XSearch extends HTMLElement {
   connectedCallback() {
     const mountPoint = document.createElement('span');
@@ -1165,4 +1257,5 @@ class XSearch extends HTMLElement {
 }
 customElements.define('x-search', XSearch);
 ```
+
 	

@@ -3,7 +3,7 @@ favorited: true
 tags: [style, ui]
 title: note-style-design-system
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-06-22T09:14:39.136Z'
+modified: '2020-06-30T12:52:53.658Z'
 ---
 
 # note-style-design-system
@@ -14,29 +14,29 @@ modified: '2020-06-22T09:14:39.136Z'
   - displayed most frequently across your app’s screens and components.
   - to distinguish elements within a component
   - A secondary color provides more ways to distinguish your product.
-      - secondary color is optional, and should be applied sparingly 
-      - If you don’t have a secondary color, your primary color can also be used to accent elements.
+    - secondary color is optional, and should be applied sparingly 
+    - If you don’t have a secondary color, your primary color can also be used to accent elements.
   - Secondary colors are best for:
-      - Links and headlines
-      - Highlighting selected text
-      - Selection controls, like sliders and switches
-      - Progress bars
-      - Floating action buttons
+    - Links and headlines
+    - Highlighting selected text
+    - Selection controls, like sliders and switches
+    - Progress bars
+    - Floating action buttons
   -  Brand colors can be used in key moments
-      - that associate those colors with specific actions and info
-      - use color in bold ways to convey a sense of energy and excitement
-      - use color in subtle ways to convey sophistication, emphasizing content, or suiting content in some other way(state changes)
+   - that associate those colors with specific actions and info
+   - use color in bold ways to convey a sense of energy and excitement
+   - use color in subtle ways to convey sophistication, emphasizing content, or suiting content in some other way(state changes)
   - ref
-      - https://material.io/design/color
-      - https://material.io/design/color/applying-color-to-ui.html 
-      - https://material.io/design/color/color-usage.html
+    - https://material.io/design/color
+    - https://material.io/design/color/applying-color-to-ui.html 
+    - https://material.io/design/color/color-usage.html
 - 组件交互的states设计
-  - hover：加深所有背景色，如antd变浅，material-ui变深,material-io变色
+  - hover：加深所有背景色，如antd变浅，material-ui变深, material-io变色
   - active：上边框添加内部阴影，颜色更深，模拟按下效果
       - antd使用的是外圈波纹，material-ui使用的是内部点击处波纹
       - 点击过程中的状态是 `:active:focus`
   - focus：外圈添加阴影，颜色很浅(同hue)
-      - 点击结束后的状态是 `:focus`，结束后bg颜色就是点击前的颜色，但有外圈阴影
+      - 点击结束后的状态是 `:focus` ，结束后bg颜色就是点击前的颜色，但有外圈阴影
       - focus可用于多数键盘导航的元素，注意一致性，而hover和active仅用于交互类元素
   - disabled：降低不透明度
   - misc
@@ -66,32 +66,34 @@ modified: '2020-06-22T09:14:39.136Z'
   - https://bulma.io/documentation/overview/colors
 - green-theme design tokens
   - https://wizixo.webestica.com
-      - 90/100, Wizixo – Multipurpose Corporate Theme 
-      - color-palette
-          - primary(link)-secondary:#4cbd89(#3da676),#8f9397
-          - success-info-warn-danger:#28a745,#17a2b8,#ffc107,#dc3545
-          - bg-light-dark: #f7f8f9,#343a40
-          - primary-gradient:`linear-gradient(150deg, #2ab9a5 0%, #97c74e 50%, #2ab9a5 100%)`
-          - https://wizixo.webestica.com/assets/css/style.css
+    - 90/100, Wizixo – Multipurpose Corporate Theme 
+    - color-palette
+      - primary(link)-secondary:#4cbd89(#3da676),#8f9397
+      - success-info-warn-danger:#28a745,#17a2b8,#ffc107,#dc3545
+      - bg-light-dark: #f7f8f9,#343a40
+      - primary-gradient: `linear-gradient(150deg, #2ab9a5 0%, #97c74e 50%, #2ab9a5 100%)`
+      - https://wizixo.webestica.com/assets/css/style.css
   - https://htmlstream.com/preview/space-v1.6.1/html/home/index.html
-      - 80/100, Space – Multipurpose Responsive Template
-      - primary-secondary:#21c87a(#1ca766),#646f79
-      - purple: #796eff(#5648ff)
+    - 80/100, Space – Multipurpose Responsive Template
+    - primary-secondary:#21c87a(#1ca766),#646f79
+    - purple: #796eff(#5648ff)
   - https://themes.getbootstrap.com/preview/?theme_id=1692
-      - 65/100, for dashboard
+    - 65/100, for dashboard
   - https://pixelarity.com/altitude
-      - 70/100, for landing page
+    - 70/100, for landing page
   - https://pixelarity.com/faction
-      - 80/100 
+    - 80/100 
   - https://pixelarity.com/construct
-      - 80/100, for landing page
+    - 80/100, for landing page
 
 ## open-color
+
 - https://github.com/yeun/open-color
 - https://yeun.github.io/open-color/
 - open-source color scheme optimized for UI like font, background, border, etc.
 
 ## color
+
 - requirements
   - themable: consistent and distinct look and feel
   - scalable: additive and no breaking change when updating
@@ -199,7 +201,7 @@ modified: '2020-06-22T09:14:39.136Z'
 - HSB(色相，饱和度，色调)又称HSV，在概念上可以被认为是颜色的倒圆锥体
   - 黑点在下顶点，白色在上底面圆心
   - 设计类软件大多使用的是HSB，如PS、sketch、GIMP
-- HWB(Hue,Whiteness,Blackness)
+- HWB(Hue, Whiteness, Blackness)
 - HSB vs HSL
   - HSL is similar to HSB. The main difference is that HSL is symmetrical to lightness and darkness.  
       - In HSL, the Saturation component always goes from fully saturated color to the equivalent gray (in HSB, with B at maximum, it goes from saturated color to white).
@@ -246,13 +248,14 @@ modified: '2020-06-22T09:14:39.136Z'
   - https://www.dute.org/color-converter
 
 ## interaction
+
 - choices
   - mouse
   - keyboard
   - touchscreen
   - on mobile devices, the events that trigger these pseudo-classes can become conflated. 
 - tips
-  - hover,active,focus的书写顺序
+  - hover, active, focus的书写顺序
       - hover写在最前面(否则一直hover色)
       - active写在最后，点击过程才反馈，否则会被hover或focus颜色挡住
 - states
@@ -294,11 +297,11 @@ modified: '2020-06-22T09:14:39.136Z'
           - When users *tab* into a focusable element
           - When users *click* on a focusable element
       - Focusable elements are: 
-          - `<a>`,`<button>`,`<input>`,`<textarea>`
+          - `<a>` , `<button>` , `<input>` , `<textarea>`
           - Elements with `tabindex` attribute
           - Users cannot tab into an element with tabindex="-1", but they can click on it. The click triggers focus.
           - On Safari and Firefox (Mac), clicks do not focus the `<button>` element
-          - When you click on a link (`<a>`), focus remains on the link until you lift your finger from your mouse. When you lift your finger, the focus gets redirected elsewhere if the href points to a valid id on the same page.
+          - When you click on a link ( `<a>` ), focus remains on the link until you lift your finger from your mouse. When you lift your finger, the focus gets redirected elsewhere if the href points to a valid id on the same page.
       - When a user hits tab, they don’t know where the focus will go to. They can only guess. This is why we need a prominent change a user’s attention attention to the focused element.
           - The default focus style of browsers is okay most of the time
           - Adding an outline
@@ -318,6 +321,7 @@ modified: '2020-06-22T09:14:39.136Z'
   - https://polaris.shopify.com/design/interaction-states
 
 ## typography
+
 - contrast 对比度
   - 文本色与背景色的“对比度”不足会导致美感不足，甚至视觉不适
   - 对比度是指显示屏上两种相邻颜色之间的亮度或发出光线的强度的差异计算值。这个比值的范围在1到21之间（通常写为 1:1 到 21:1）；该值越大，则对比度越高
@@ -341,6 +345,7 @@ modified: '2020-06-22T09:14:39.136Z'
   - https://usecontrast.com/guide
 
 ## material-design
+
 - ref
   - https://material.io/design/introduction/
 - theme
@@ -358,6 +363,7 @@ modified: '2020-06-22T09:14:39.136Z'
   - zIndex:speedDial1000-drawer1200-modal1300-snackbar1400-tooltip1500
 
 ## ant-design
+
 - Ant Design将色彩体系解读成两个层面：系统级色彩体系和产品级色彩体系
   - 系统级色彩体系主要定义了蚂蚁中台设计中的基础色板、中性色板和数据可视化色板
   - 产品级色彩体系则是基于系统色彩进一步定义的符合功能、业务和产品调性的颜色
@@ -404,6 +410,7 @@ modified: '2020-06-22T09:14:39.136Z'
           - 3.9引入svg图标
 
 ## Mineral UI
+
 - Mineral ui system contains a gray ramp that is used across themes, and several theme ramps.
 - Base color swatch
   - Base color is the dominant color within the themes; 
@@ -419,15 +426,18 @@ modified: '2020-06-22T09:14:39.136Z'
 - 需要注意的颜色
   -  If we edited the Lime color to be 4.5:1 contrast with white text, it no longer looked like lime anymore (more like goose poop).
   - If the color contrast ratio of yellow is more than 4.5:1, it would look like the current Bronze color
+
   -Orange, used for the “Warning” variant in our theme, was easily confused with our “Danger” variant (Red). Bronze was born as a compliant way 
+
 - ref
   - https://uxplanet.org/designing-systematic-colors-b5d2605b15c
   - https://mineral-ui.netlify.com/color
 
 ## build-design-system
+
 - Design tokens are the atomic elements we use to store design related variables that describe things like colour, animation, spacing, fonts, shadows etc.
-  - text,color,spacing,border
-  - shadows,transition
+  - text, color, spacing, border
+  - shadows, transition
 - Good design is also hinged on principles. Principles serve as guidelines, something to adhere to when approaching your design system. 
   - semantic
   - designer and developer
@@ -440,46 +450,47 @@ modified: '2020-06-22T09:14:39.136Z'
   - https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421
   - https://bradfrost.com/blog/post/interface-inventory/
 
-
 ## design-tokens
+
 - design-tokens-in-action
   - https://sproutsocial.com/seeds/resources/tokens/
 
 ## components-examples
+
 - button
   - With buttons, interaction springs to life.
   - primary button
-      - Set a System’s Stylistic Tone: color,text,icon
-      - Set a Verbal Tone, Too: imperative or cute
-      - Invert Buttons When Backgrounds Get Complicated
-      - Limit One Per Page, Unless Repeating a Primary Action
-      - Design and Build a Button’s Arc of Interaction
-          - default > hover > active/pressed > focus > disabled > loading
-      - Be Resilient to including additional elements with one layout 
+    - Set a System’s Stylistic Tone: color,text,icon
+    - Set a Verbal Tone, Too: imperative or cute
+    - Invert Buttons When Backgrounds Get Complicated
+    - Limit One Per Page, Unless Repeating a Primary Action
+    - Design and Build a Button’s Arc of Interaction
+      - default > hover > active/pressed > focus > disabled > loading
+    - Be Resilient to including additional elements with one layout 
   - secondary button
-      - Ensure Secondary ≠ Disabled
-      - want to pair a secondary option with that inviting, saturated primary. 
-      - Solve for secondary colors and disabled states in concert.
+    - Ensure Secondary ≠ Disabled
+    - want to pair a secondary option with that inviting, saturated primary. 
+    - Solve for secondary colors and disabled states in concert.
   - ghost button
-      - Ghost buttons rely on only a border and label of the same color while lacking a background fill.
-      -  Behind that label rests an uncertain future,sometimes making the label difficult to read
+    - Ghost buttons rely on only a border and label of the same color while lacking a background fill.
+    - Behind that label rests an uncertain future,sometimes making the label difficult to read
   - button group
-      - From Toggles to Toolbars, Make Buttons Play Nice Together
-      - A button group pairs a primary with one or more other options
+    - From Toggles to Toolbars, Make Buttons Play Nice Together
+    - A button group pairs a primary with one or more other options
   - variant
-      - size
+    - size
   - Distinguish Buttons from Links
   - Enrich Variety with Menus & Zones
   - For Buttons, Use `<button>`
-      - If there is any kind of href you could put on that link that makes sense, by all means, use an anchor.
-      - Buttons are expected to be triggered using the Space key, while links are expected to be triggered through the Enter key
+    - If there is any kind of href you could put on that link that makes sense, by all means, use an anchor.
+    - Buttons are expected to be triggered using the Space key, while links are expected to be triggered through the Enter key
   - states
-      1. By default, active and focus are both off.
-      2. When you *tab* to cycle through focusable elements, they will enter `:focus` (without active).
-      3. When you *click* on a non-focusable element, it enters `:active`(without focus).
-      4. When you *click* on a focusable element it enters `:active:focus` (active and focus simultaneously).
-          - 点击后最终显示的是focus设置的color
+    1. By default, active and focus are both off.
+    2. When you *tab* to cycle through focusable elements, they will enter `:focus` (without active).
+    3. When you *click* on a non-focusable element, it enters `:active` (without focus).
+    4. When you *click* on a focusable element it enters `:active:focus` (active and focus simultaneously).
+      - 点击后最终显示的是focus设置的color
   - ref
-      - https://cloudfour.com/thinks/designing-button-states/
-      - https://medium.com/eightshapes-llc/buttons-in-design-systems-eac3acf7e23
-      - https://css-tricks.com/use-button-element/
+    - https://cloudfour.com/thinks/designing-button-states/
+    - https://medium.com/eightshapes-llc/buttons-in-design-systems-eac3acf7e23
+    - https://css-tricks.com/use-button-element/

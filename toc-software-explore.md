@@ -21,8 +21,6 @@ modified: '2020-06-22T09:24:25.550Z'
 - TagSpaces
   - no backend, no login, file manager, organizer and browser
   - It helps you organize your files, photos and other documents with tags
-  
-
 
 ## note
 
@@ -42,5 +40,3 @@ modified: '2020-06-22T09:24:25.550Z'
 
 - react-proto
 - ReacType
-
-

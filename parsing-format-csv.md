@@ -7,14 +7,16 @@ modified: '2020-06-22T09:17:44.438Z'
 
 # parsing-format-csv
 
-
 ## spec
+
 - 
 
 ## faq
+
 - 
 
 ## summary
+
 - 列表插件设计
   - 列表类
   - 图表类
@@ -22,4 +24,5 @@ modified: '2020-06-22T09:17:44.438Z'
   - 搜索类
 
 ## dev
+
 - 

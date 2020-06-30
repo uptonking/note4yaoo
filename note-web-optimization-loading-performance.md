@@ -8,16 +8,19 @@ modified: '2020-06-28T13:45:46.512Z'
 # note-web-optimization-loading-performance
 
 ## guide
+
 - https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
 - https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model
 
 ## Critical Rendering Path
+
 - Optimizing the critical rendering path refers to prioritizing the display of content that relates to the current user action.
 - Optimizing for performance is all about understanding what happens in these intermediate steps between receiving the HTML, CSS, and JavaScript bytes and the required processing to turn them into rendered pixels - that's the **critical rendering path**.
 - By optimizing the critical rendering path we can significantly improve the time to first render of our pages
 - Further, understanding the critical rendering path also serves as a foundation for building well-performing interactive applications. 
 
 ## Constructing the Object Model
+
 - Tips
   - Bytes → characters → tokens → nodes → object model.
   - HTML markup is transformed into a Document Object Model (DOM); CSS markup is transformed into a CSS Object Model (CSSOM).
@@ -30,7 +33,7 @@ modified: '2020-06-28T13:45:46.512Z'
   1. Conversion
     - The browser reads the raw bytes of HTML off the disk or network, and translates them to individual characters based on specified encoding of the file (for example, UTF-8).
   2. Tokenizing
-    - The browser converts strings of characters into distinct tokens—as specified by the W3C HTML5 standard; for example, `<html>`, `<body>`—and other strings within angle brackets. 
+    - The browser converts strings of characters into distinct tokens—as specified by the W3C HTML5 standard; for example, `<html>` , `<body>` —and other strings within angle brackets. 
     - Each token has a special meaning and its own set of rules.
   3. Lexing
     - The emitted tokens are converted into "objects," which define their properties and rules.
@@ -55,6 +58,7 @@ modified: '2020-06-28T13:45:46.512Z'
     - It captures parsing and CSSOM tree construction, plus the recursive calculation of computed styles under this one event.
 
 ## Render-tree Construction, Layout, and Paint
+
 - Tips
   - The DOM and CSSOM trees are combined to form the render tree.
   - Render tree contains only the nodes required to render the page.
@@ -62,20 +66,20 @@ modified: '2020-06-28T13:45:46.512Z'
   - The last step is paint, which takes in the final render tree and renders the pixels to the screen.
 - The CSSOM and DOM trees are combined into a render tree, which is then used to compute the layout of each visible element and serves as an input to the paint process that renders the pixels to screen
 - Optimizing each of these steps is critical to achieving optimal rendering performance.
-- First, the browser combines the DOM and CSSOM into a "render tree," which captures all the visible DOM content on the page and all the CSSOM style information for each node.
+- First, the browser combines the DOM and CSSOM into a "render tree, " which captures all the visible DOM content on the page and all the CSSOM style information for each node.
   1. Starting at the root of the DOM tree, traverse each visible node.
     - Some nodes are not visible (for example, script tags, meta tags, and so on), and are omitted since they are not reflected in the rendered output.
     - Some nodes are hidden via CSS and are also omitted from the render tree; for example, the span node---in the example above---is missing from the render tree because we have an explicit rule that sets the "display: none" property on it.
-    - note that `visibility: hidden` is different from `display: none`. 
+    - note that `visibility: hidden` is different from `display: none` . 
       - The former makes the element invisible, but the element still occupies space in the layout (that is, it's rendered as an empty box)
-      - the latter (`display: none`) removes the element entirely from the render tree such that the element is invisible and is not part of the layout.
+      - the latter ( `display: none` ) removes the element entirely from the render tree such that the element is invisible and is not part of the layout.
   2. For each visible node, find the appropriate matching CSSOM rules and apply them.
   3. Emit visible nodes with content and their computed styles.
   - The final output is a render that contains both the content and style information of all the visible content on the screen.
   - With the render tree in place, we can proceed to the "layout" stage.
 - Up to this point we've calculated which nodes should be visible and their computed styles, but we have not calculated their exact position and size within the viewport of the device---that's the "**layout**" stage, also known as "**reflow**."
   - To figure out the exact size and position of each object on the page, the browser begins at the root of the render tree and traverses it.
-  - The output of the layout process is a "box model," which precisely captures the exact position and size of each element within the viewport: all of the relative measurements are converted to absolute pixels on the screen.
+  - The output of the layout process is a "box model, " which precisely captures the exact position and size of each element within the viewport: all of the relative measurements are converted to absolute pixels on the screen.
 - Finally, now that we know which nodes are visible, and their computed styles and geometry, we can pass this information to the final stage, which converts each node in the render tree to actual pixels on the screen. This step is often referred to as "**painting**" or "rasterizing."
 - Chrome DevTools can provide some insight into all three of the stages described above.
   - The "Layout" event captures the render tree construction, position, and size calculation in the Timeline.
@@ -89,6 +93,7 @@ modified: '2020-06-28T13:45:46.512Z'
   5. Paint the individual nodes to the screen.
 
 ## Render Blocking CSS
+
 - Tips
   - By default, CSS is treated as a render blocking resource.
   - Media types and media queries allow us to mark some CSS resources as non-render blocking.
@@ -111,6 +116,7 @@ modified: '2020-06-28T13:45:46.512Z'
 - Finally, note that "render blocking" only refers to whether the browser has to hold the initial rendering of the page on that resource. The browser still downloads the CSS asset, albeit(although) with a lower priority for non-blocking resources.
 
 ## Adding Interactivity with JavaScript
+
 - Tips
   - JavaScript can query and modify the DOM and the CSSOM.
   - JavaScript execution blocks on the CSSOM.
@@ -143,8 +149,8 @@ modified: '2020-06-28T13:45:46.512Z'
     - `<script src="app.js" async></script>`
 - `async` keyword of the script tag tells the browser not to block DOM construction while it waits for the script to become available, which can significantly improve performance
 
-
 ## Analyzing Critical Rendering Path Performance
+
 - So far we've focused exclusively on what happens in the browser after the resource (CSS, JS, or HTML file) is available to process. 
 - We've ignored the time it takes to fetch the resource either from cache or from the network. We'll assume the following:
   - A network roundtrip (propagation latency) to the server costs 100ms.
@@ -155,6 +161,7 @@ modified: '2020-06-28T13:45:46.512Z'
   - The sooner the `domContentLoaded` event fires, the sooner other application logic can begin executing.
 
 ## Optimizing the Critical Rendering Path
+
 - To deliver the fastest possible time to first render, we need to minimize three variables:
   - The number of critical resources.
   - The critical path length.
@@ -164,10 +171,3 @@ modified: '2020-06-28T13:45:46.512Z'
   2. Minimize number of critical resources: eliminate them, defer their download, mark them as async, and so on.
   3. Optimize the number of critical bytes to reduce the download time (number of roundtrips).
   4. Optimize the order in which the remaining critical resources are loaded: download all critical assets as early as possible to shorten the critical path length.
-
-
-
-
-
-
-

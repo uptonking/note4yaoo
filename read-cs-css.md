@@ -2,12 +2,13 @@
 tags: [book, cs, css]
 title: read-cs-css
 created: '2020-06-30T04:05:22.389Z'
-modified: '2020-06-30T05:28:33.082Z'
+modified: '2020-06-30T13:01:06.145Z'
 ---
 
 # read-cs-css
 
-## book-CSS实战手册.第4版_David McFarland_2016
+## book-CSS实战手册. 第4版_David McFarland_2016
+
 - 全书结构
   - css基础：选择器+层叠规则+盒模型
   - 常用功能：文本+图片+动画
@@ -32,38 +33,38 @@ modified: '2020-06-30T05:28:33.082Z'
 - html5的文档类型声明： `<!doctype html>`
 - css版本
   - css1
-      - 1996年发布，定义了样式基本结构，提出选择符
+    - 1996年发布，定义了样式基本结构，提出选择符
   - css2
-      - 添加了媒体查询
-      - 新增了选择符
+    - 添加了媒体查询
+    - 新增了选择符
   - css2.1 
-      - 所有浏览器都支持
+    - 所有浏览器都支持
   - css3 标准模块化
-      - 选择器模块
-      - 盒式对齐模块
-      - 值和单位模块
+    - 选择器模块
+    - 盒式对齐模块
+    - 值和单位模块
 - 样式规则包括两部分：选择器，装饰指令声明
 - 浏览器会忽略空格和制表符
 - 样式表
   - 外部样式表：推荐使用，所有样式保存在单独的文件，可以缓存，ctrl+F5不使用缓存
     - `<link rel="stylesheets" href="path/to/style.css">`
-  - 内部样式表：放在`<head>`标签内的`<style>`标签中
+  - 内部样式表：放在 `<head>` 标签内的 `<style>` 标签中
   - 行内样式：不推荐使用，可复用性差，多用于测试
 - selector 选择器
   - http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
   - 元素选择器：可选取所有指定html标签，不够精细
-  - 类选择器：以`点号`开头，类名区分大小写
-  - ID选择器：以`#号`开头，尽量不用id选择器，用类选择器
-  - 群组选择器：多个选择器用`逗号`分开，选择各选择器指定的元素并集，可混用多种选择器
-  - 通用选择器：`*号`表示选择所有元素标签，也可以作为后代选择器的部分
-  - 后代选择器：多个选择器用`空格`分开，选择一个标签的所有后代，包括子代和孙代
-  - 子代选择器： `el1 > el2`，只选择直接子代，不选孙代
+  - 类选择器：以 `点号` 开头，类名区分大小写
+  - ID选择器：以 `#号` 开头，尽量不用id选择器，用类选择器
+  - 群组选择器：多个选择器用 `逗号` 分开，选择各选择器指定的元素并集，可混用多种选择器
+  - 通用选择器： `*号` 表示选择所有元素标签，也可以作为后代选择器的部分
+  - 后代选择器：多个选择器用 `空格` 分开，选择一个标签的所有后代，包括子代和孙代
+  - 子代选择器： `el1 > el2` ，只选择直接子代，不选孙代
     - 还可以使用伪类，如:first-child，:nth-child(n)
     - tr:nth-child(odd/even/3n+X/-n+2/9)
-    - 子代类型选择器：选取的是特定类型的子代标签，如`.sidebar p:first-of-type`
+    - 子代类型选择器：选取的是特定类型的子代标签，如 `.sidebar p:first-of-type`
 - 同级选择器
-    - `+`：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
-    - `~`：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
+    - `+` ：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
+    - `~` ：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
     - 参考 https://blog.csdn.net/JaRiS_jade/article/details/79106406
   - 伪类：E:link/visited/hover/active/focus，:first-child，:enable/checked
     - 反选伪类：用于选择不符合指定条件的标签，如el:not(.clsName),not不用连用
@@ -75,7 +76,7 @@ modified: '2020-06-30T05:28:33.082Z'
     - el[attrName]，.class[attrName]
         - 可以筛选出设定了特定属性的标签 
     - el[attrName="value"]
-    - 还可以选取属性值以特定值开头`^=`、结尾`$=`或包含指定值`*=`的元素
+    - 还可以选取属性值以特定值开头 `^=` 、结尾 `$=` 或包含指定值 `*=` 的元素
     - E[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
 - 通过css继承来简化样式表
   - 不会被继承的属性：影响元素在页面所在位置的属性，以及外边距、背景色和边框的属性
@@ -90,7 +91,7 @@ modified: '2020-06-30T05:28:33.082Z'
       - 元素选择器：1
   - 特指度相同时，使用后声明的选择器，注意外部样式表和内部样式表的位置
       - 最好先链接外部样式表，仅当需要在单个页面中添加样式时才使用内部样式表
-  - 若要忽略特指度，只需在某个css属性之后分号前添加`!important`，只作用于单个属性
+  - 若要忽略特指度，只需在某个css属性之后分号前添加 `!important` ，只作用于单个属性
       - 不推荐使用
 - css reset 重置
   - 浏览器为所有html标签提供了默认样式，不同浏览器实现的默认样式会有差异
@@ -122,7 +123,7 @@ modified: '2020-06-30T05:28:33.082Z'
   - rgba和text-shadow，box-shadow联合使用，ie8之前不支持rgba
 - 字号 font-size
   - px：最常用，与浏览器的设置无关
-  - 关键字：xx-small,medium(=16px),x-large
+  - 关键字：xx-small, medium(=16px), x-large
   - em：与%原理相同，1=100%
   - rem：字号的大小基于根元素而定，通常基于基准字号16px，但可以为根部html元素设置20px后，其他元素就可以使用rem来设置百分比了
   - %：100%==16px
@@ -133,7 +134,7 @@ modified: '2020-06-30T05:28:33.082Z'
 - 字体操作技巧
   - text-transform : uppercase/capitalize/none
   - text-decoration: underline/line-through/none
-  - letter-spacing：0.1em;    字符间距，中文文字间距
+  - letter-spacing：0.1em; 字符间距，中文文字间距
   - word-spacing：2px/em/%    单词间距，用空格隔开的中文也是单词，若无空格则无效果
   - text-shadow: 横偏移 纵偏移 阴影模糊度 投影颜色
       - 为文本添加投影
@@ -141,14 +142,14 @@ modified: '2020-06-30T05:28:33.082Z'
   - text-indent： 缩进
 - list  
   - ul默认3种符号：circle空心圆形，disc实心圆形，square实心方形
-  - ol默认6种编号：decimal(-leading-zero),alpha,roman
+  - ol默认6种编号：decimal(-leading-zero), alpha, roman
   - list-style-type：指定编号类型
-  - list-style-position:控制符号位置
+  - list-style-position: 控制符号位置
   - list-style-image：只能指定图形，不能控制位置
 - css盒模型
   - box = content + padding + border + margin
   - background-color包括padding和border
-  - 如果边框的样式是点划线或虚线，点划线和虚线的空隙之间能看到背景色，要避免这种情况可使用`background-clip: padding-box;`
+  - 如果边框的样式是点划线或虚线，点划线和虚线的空隙之间能看到背景色，要避免这种情况可使用 `background-clip: padding-box;`
 - 外边距折叠
   - 外边距用来指定非浮动元素与其周围盒子边缘的最小距离
   - 两个或两个以上的相邻的垂直外边距会被折叠并使用它们之间较大的那个外边距值
@@ -175,13 +176,13 @@ modified: '2020-06-30T05:28:33.082Z'
       - 默认值为none
 - box-sizing
   - 盒子模型的默认定义，对一个元素所设置的width与height只会应用到内容区
-  - content-box：默认值。 设置的宽度 = contentWidth，不包含padding,border,margin
+  - content-box：默认值。 设置的宽度 = contentWidth，不包含padding, border, margin
   - border-box：设置的宽度 = 盒子宽度 = contentWidth+padding+border，不包含margin
 - 背景图片
   - `background-image: url('path/to/a.jpg')`
   - url的路径可绝对可相对，相对路径是相对样式表文件位置而言
     - 而不是相对要应用样式的html文件而言
-    - 以 `./`开头为相对当前样式文件，以`/`开头为相对根目录
+    - 以 `./` 开头为相对当前样式文件，以 `/` 开头为相对根目录
   - background-repeat可以控制平铺方式，round和space作为值可禁止裁剪
   - 定位属性
 - css sprite
@@ -190,7 +191,7 @@ modified: '2020-06-30T05:28:33.082Z'
 - transform 变换
   - 类型：缩放scale、平移translate、旋转rotate、倾斜skew
   - skew可用于实现3D效果
-  - skewX和skewY分别沿X轴、Y轴倾斜，而skew(top,right)分别沿上边与右边倾斜，还可用矩阵控制更精细的变换
+  - skewX和skewY分别沿X轴、Y轴倾斜，而skew(top, right)分别沿上边与右边倾斜，还可用矩阵控制更精细的变换
   - 多个变换方法用逗号隔开
   - 默认情况下，浏览器以元素中心作为变换的原点，transform-origin可改变原点
   - 3D变换有专门的主题
@@ -198,14 +199,14 @@ modified: '2020-06-30T05:28:33.082Z'
   - 过渡是一种简单的动画，在一定时间内从一组CSS属性变成另一组属性，IE10后才支持
   - 支持过渡的属性包括上面的变换，还包括 animatable properties
   - 属性：transition-property/duration/timing-function/delay
-  - 过渡效果需要使用css选择器触发，如:hover,:focus，若想点击触发需要使用js
+  - 过渡效果需要使用css选择器触发，如:hover, :focus，若想点击触发需要使用js
   - cpu友好型的变换包括不透明度、缩放、平移、旋转
-  - 可以通过加入无实际视觉效果的`transform: translateZ(0);`来利用GPU加速渲染
+  - 可以通过加入无实际视觉效果的 `transform: translateZ(0);` 来利用GPU加速渲染
 - animation 动画
   - 过渡只能把一系列css属性从一个状态变到另一个状态，动画则能从状态1 > 2 > . > N
   - 动画可重播，动画无需触发就可播放，过渡只可播放一次
-  - 通过`@keyframe`定义一系列状态
-  - 暂停动画可在css伪类中使用`animation-play-state: paused`，更常用js
+  - 通过 `@keyframe` 定义一系列状态
+  - 暂停动画可在css伪类中使用 `animation-play-state: paused` ，更常用js
 - table 表格
   - 不推荐使用table布局，css布局更灵活，表格本来的用途是显示数据
   - text-align控制横向对齐，会被继承
@@ -254,12 +255,13 @@ modified: '2020-06-30T05:28:33.082Z'
   - 嵌套选择器
   - source-map
 
-## book-CSS设计指南.第3版_Charles Wyke-Smith_2013
+## book-CSS设计指南. 第3版_Charles Wyke-Smith_2013
+
 - html的闭合标签常用于显示文本，自闭合标签常用显示引用内容
 - id选择器和类选择器不用考虑文档结构层次
 - 多类选择器：.clsA.clsB，无空格，取交集，即选择同时具有clsA和clsB类名的元素
   - 也可以是 el.clsName
-- 使用#id可以链接到同一页面的目标id元素位置，若`<a href='#'>`则会返回顶部
+- 使用#id可以链接到同一页面的目标id元素位置，若 `<a href='#'>` 则会返回顶部
 - 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容。
 - 盒模型，就是浏览器为页面中的每个HTML元素生成的矩形盒子
   - 默认所有盒子边框不可见，背景透明
@@ -311,7 +313,9 @@ modified: '2020-06-30T05:28:33.082Z'
 - 支持触摸的设备会跳过:hover规则中对visibility属性的过渡
 
 ## css-style-guide
+
 ### airbnb guide
+
 - 不要使用ID选择器，因为不可重用
 - 类名建议使用破折号代替驼峰法。如果你使用 BEM，也可以使用下划线
 - 在一个规则声明中应用了多个选择器时，每个选择器独占一行
@@ -321,10 +325,7 @@ modified: '2020-06-30T05:28:33.082Z'
   - 应避免使用 @extend 指令，因为它并不直观，而且具有潜在风险，特别是用在嵌套选择器的时候，推荐使用mixin函数复用代码
 
 ### google guide
+
 - 避免使用类型选择器，影响范围太大，为了性能应避免使用父节点做选择器
 - url()中不要使用引号
 - 避免使用css hacks
-
-
-
-

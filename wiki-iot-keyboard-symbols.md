@@ -7,7 +7,7 @@ modified: '2020-05-14T10:02:10.901Z'
 
 # wiki-iot-keyboard-symbols
 
-```
+``` 
 ` -- Back quote
 ~ -- Tilde
 
@@ -18,15 +18,18 @@ $ -- Dollar
 % -- Percent
 ^ -- Caret
 & -- Ampersand
+
 * -- Star /asterisk / splat
+
 ( -- Open Parenthesis
 ) -- Closed Parenthesis
 
 - -- Dash
+
 _ -- Underscore
 = -- Equals
-+ -- Plus
 
++ -- Plus
 
 [ -- Open square bracket
 ] -- Closing square bracket

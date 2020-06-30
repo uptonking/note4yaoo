@@ -18,6 +18,7 @@ modified: '2020-06-30T05:09:23.379Z'
   - 参考 https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable
 
 ## faq
+
 - **Walkontable** is the return value of many methods but not mentioned in the docs
   - Walkontable is for internal use only. 
   - It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
@@ -25,6 +26,7 @@ modified: '2020-06-30T05:09:23.379Z'
 - Links/click events from custom renderers not working 
 
 ## resources
+
 - docs
   - https://handsontable.com/docs
 
@@ -102,10 +104,12 @@ modified: '2020-06-30T05:09:23.379Z'
   - getCellRenderer(row, col)
   - getCellEditor(row, col)
   - getCellValidator(row, col)
+
   
 
 - 内置9种cellTypes
-```
+
+``` 
 text for Handsontable.cellTypes.text
 numeric for Handsontable.cellTypes.numeric
 checkbox for Handsontable.cellTypes.checkbox
@@ -116,6 +120,7 @@ autocomplete for Handsontable.cellTypes.autocomplete
 password for Handsontable.cellTypes.password
 handsontable for Handsontable.cellTypes.handsontable
 ```
+
 - 自定义cellType的方法
   - Handsontable.cellTypes.registerCellType()
 - cell type name若重复，则后者覆盖前者
@@ -134,19 +139,20 @@ handsontable for Handsontable.cellTypes.handsontable
   - Check if element has child nodes: if (DIV.firstChild)
   - Change style by caching var style = element.style
 
-
 - handsontable基本用法
-```javascript
+
+``` js
 var container1 = document.getElementById('example1'),
-settings1 = {
-  data: data1
-},
-hot1;
+  settings1 = {
+    data: data1
+  },
+  hot1;
 
 hot1 = new Handsontable(container1, settings1);
-data1[0][1] = 'Ford'; 
+data1[0][1] = 'Ford';
 hot1.render();
 ```
+
 - 要想改变数据后立即显示，需要调用render()
 - handsontable支持的数据源    
   - 数组的数组
@@ -163,7 +169,6 @@ hot1.render();
 - Constructor options -> columns -> cells -> cellProperties
 - handsontable.js 与 handsontable.full.js的区别
   - 代码压缩程度不同
-
 
 - demo摘要
   - select是dropdown的简化版
@@ -188,8 +193,8 @@ hot1.render();
   - checkbox copy之后是true
   - linux 不能使用ctrl多选
 
-
 ## changelog
+
 - 7.0.0-20190306
   - Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.
   - Handsontable is now "source-available" instead of "open source". The MIT license has been replaced with custom, free for non-commercial license.
@@ -248,8 +253,9 @@ hot1.render();
   - Since version 1.14.0, it is required to pass a valid Handsontable Pro license key in the settings object under the licenseKey property
   - The corresponding Handsontable CE version is 0.34.2.
 - 1.11.0-beta1-20170517
-  - Migration from Traceur to Babel.We're now using Babel to transpile our code.
+  - Migration from Traceur to Babel. We're now using Babel to transpile our code.
 - 1.0.0-20160120
   - Backward incompatible change 
   - Prevent displaying the dropdown header buttons in higher levels of headers (for example, when using the nested headers plugin).
+
   

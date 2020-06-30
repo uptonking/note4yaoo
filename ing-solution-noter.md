@@ -8,6 +8,7 @@ modified: '2020-06-30T05:13:25.510Z'
 # ing-solution-noter
 
 ## noter-features-亮点
+
 - core
   - local/offline first markdown-based note app
       - offline means no ad 
@@ -20,7 +21,9 @@ modified: '2020-06-30T05:13:25.510Z'
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
   - video/audio 
   - paste html into md
-## noter-requirements-普通需求
+
+## noter-requirements-需求
+
 - io模块
 - 编辑器模块
   - markdown-editor-monaco
@@ -35,31 +38,33 @@ modified: '2020-06-30T05:13:25.510Z'
 - 其他需求
 
 ## notable
+
 ## notable-xp-todo
-- [ ] fix: lgt symbol not rendered properly, e.g.`Pick<Props, "name">`
+
+- [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`
 - [ ] fix: note file name shouldn't change when cut the most front text
 - [ ] search: hightlight search results on current page
 - [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
-- [ ] edit-character: special character support,like `「Microsoft Store」`
+- [ ] edit-character: special character support, like `「Microsoft Store」`
   - https://copychar.cc/symbols/
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
 - [ ] edit: toggle lines to list  
 - [ ] edit: insert one blank line below  
-- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]` 
+- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`
 - [ ] keyboard: alt+arrow, move current line up/down
 - [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
 
-
 ### notable-docs
+
 - The data directory is where all your notes and attachments will be stored
   - You can edit your notes/attachments without even using Notable
   - you could also import a Markdown note simply by copying it into the `notes` directory.
 - The sidebar is where all your notes are categorized.
   - All Notes: contains all notes
   - Favorites: fixed menu    
-  - Tags: all notes tagged with any tag except the special ones: `Notebooks/*` and `Templates/*` 
+  - Tags: all notes tagged with any tag except the special ones: `Notebooks/*` and `Templates/*`
       - You can create sub-categories in the following sections: Notebooks, Tags and Templates by using nested tags. 
   - Untagged: notes that have no tags
   - Trash: notes that have been deleted. 
@@ -82,14 +87,14 @@ modified: '2020-06-30T05:13:25.510Z'
   - syntax features: GFM, KaTex, AsciiMath, mermaid
   - attachments: simply copied into `attachments` sub-directory
 - Tags are useful for better categorization
-  - Root tags don't contain any forward slash (`/`)
+  - Root tags don't contain any forward slash ( `/` )
   - Tags can also be nested like a path
   - tag starting with `Notebooks/` will show in Notebooks section
   - tag starting with `Templates/` will only show in Templates section
 - Shortcuts
   - NoteApp/Editor/Nav/Other
 - Importing
-  - Markdown files: `md`, `mkd`, `mdwn`, `mdown`, `markdown`, `markdn`, `mdtxt`, `mdtext` or `txt`
+  - Markdown files: `md` , `mkd` , `mdwn` , `mdown` , `markdown` , `markdn` , `mdtxt` , `mdtext` or `txt`
   - Evernotes' exports with extension: `enex`
   - Alternatively you could also just put your Markdown notes into the `notes` sub-directory 
   - Newly imported tags will be tagged with a special `Import-XXXX` tag
@@ -115,21 +120,3 @@ modified: '2020-06-30T05:13:25.510Z'
   - not planned
 - Encrypted Notes
   - third-party program will take care of the encryption
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

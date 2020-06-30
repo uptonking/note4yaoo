@@ -9,7 +9,7 @@ modified: '2019-10-05T05:47:36.536Z'
 
 ## tablesaw
 
-
 ## nd4j
+
 - https://github.com/eclipse/deeplearning4j/blob/master/nd4j/README.md
 - https://deeplearning4j.org/cn/memory

@@ -7,23 +7,22 @@ modified: '2020-06-22T08:05:05.869Z'
 
 # draft-pieces
 
-
-
 - class extends
-```
+
+``` js
 class B {
-    print = () => {
-    	console.log('print b');
-    }
+  print = () => {
+    console.log('print b');
+  }
 }
 
 class D extends B {
-    print () {
-      console.log('before-super-print');
-	    super.print();
-      console.log('after-super-print');
-      console.log('print d');
-    }
+  print() {
+    console.log('before-super-print');
+    super.print();
+    console.log('after-super-print');
+    console.log('print d');
+  }
 }
 
 const d = new D();
@@ -32,15 +31,19 @@ d.__proto__.print()
 // print b
 // before-super-print
 ```
+
 - musicbrainz-rename
-```
+
+``` 
 $if2(%albumartist%,%artist%)/
 $if(%albumartist%,%album%/,)
 $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$num(%tracknumber%,2) ,)$if(%_multiartist%,%artist% - ,)%title%
 ```
+
 - maven-aliyun: https://maven.aliyun.com/repository/central 
 - emotion的button
-```
+
+``` 
  const renderButton = (Root: React.ElementType<any> = 'button') => (
     <Root
       ref={forwardRef}
@@ -75,7 +78,8 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 ```
 
 - bootstrap 4的breakpoints
-```
+
+``` 
 $font-size-base:  1rem !default; // Assumes the browser default, `16px`
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * .875 !default;
@@ -88,6 +92,7 @@ $grid-breakpoints: (
   xl: 1200px
 ) !default;
 ```
+
 - react-data-grid使用的className
   - 不确定的类
       - row-selected， has-tooltip，has-error

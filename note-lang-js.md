@@ -2,16 +2,17 @@
 tags: [lang/js]
 title: note-lang-js
 created: '2019-06-09T05:36:13.734Z'
-modified: '2020-06-22T09:13:12.664Z'
+modified: '2020-06-30T12:49:26.277Z'
 ---
 
 # note-lang-js
 
-
 ## tips
+
 - all in js as frontend
 
 ## js guide
+
 - https://github.com/airbnb/javascript
 
 ## faq
@@ -21,7 +22,7 @@ modified: '2020-06-22T09:13:12.664Z'
 - eval vs template literals
   - template literals are parsed at compile time
   - the argument to eval only gets parsed at runtime, when eval is executed.
-  - eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable.A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
+  - eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable. A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
 - 如何导出组件到图片png/pdf
 - setTimeout添加的异步任务队列和requestAnimationFrame每帧执行的任务队列是一个吗
   - ？？？
@@ -37,13 +38,15 @@ modified: '2020-06-22T09:13:12.664Z'
   - 参考 https://www.cnblogs.com/snandy/archive/2012/03/01/2373243.html
 - js连等赋值A=B=C的原理
   - 赋值云算符是右结合的，从右边开始向左边赋值
-  - 真正的运算规则是 B = C; A = B;  左右持有的是右边对象的引用
+  - 真正的运算规则是 B = C; A = B; 左右持有的是右边对象的引用
   - 实例分析
-      ```
+
+``` js
       var a = {n:1};
       a.x = a = {n:2};   // a.x指向之前的地址是因为.运算符优先于=赋值运算符
       console.log(a.x);  // 输出undefined 
-      ``` 
+```
+
       1. 在执行前，会先将a和a.x中的a的引用地址都取出来，此值他们都指向{n:1}
       2. 在内存中创建一个新对象{n:2}
       3. 执行a={n:2}，将a的引用从指向{n:1}改为指向新的{n:2}
@@ -59,15 +62,19 @@ modified: '2020-06-22T09:13:12.664Z'
 - 若在js函数内部不使用var直接定义一个变量并赋值，则在函数外部能访问吗
   - 可以访问
   - 示例
-  ```
-  function sayA(){ 
-    var a='aaa'; 
-    b='bbb'; 
-    console.log('===',a+b);
+
+``` js
+  function sayA() {
+
+    var a = 'aaa';
+    b = 'bbb';
+    console.log('===', a + b);
+
   }
-  console.log(a);  // error, not defined
-  console.log(b);  // bbb
-  ```
+  console.log(a); // error, not defined
+  console.log(b); // bbb
+```
+
 - 跨window传递数据的方法
   - `window.opener`
 
@@ -82,64 +89,68 @@ modified: '2020-06-22T09:13:12.664Z'
   - The arguments passed to window.postMessage() (i.e., the “message”) are exposed to the receiving window through the event object.
 - this
   - A property of an execution context (global, function or eval) that, in non–strict mode, is always a reference to an object and in strict mode can be any value.
-      - In the global execution context(outside of any function), `this` refers to the global object whether in strict mode or not.
-          - You can always easily get the global object using the global globalThis property, regardless of the current context in which your code is running.
-      - Inside a function, the value of `this` depends on how the function is called.
-          - e.g.
-          ```
+    - In the global execution context(outside of any function), `this` refers to the global object whether in strict mode or not.
+      - You can always easily get the global object using the global globalThis property, regardless of the current context in which your code is running.
+    - Inside a function, the value of `this` depends on how the function is called.
+      - e.g.
+
+``` js
           function f1() {
             return this;
           }
-          ```
-          - in non-strict mode, because the value of this is not set by the call, this will default to the global object, which is window in a browser.
-          - In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined
+```
+
+        - in non-strict mode, because the value of this is not set by the call, this will default to the global object, which is window in a browser.
+        - In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined
       - To set the value of this to a particular value when calling a function, use call(), or apply()
-          - es5 introduces `bind()`
-          - In arrow functions, this retains the value of the enclosing lexical context's this
+        - es5 introduces `bind()`
+        - In arrow functions, this retains the value of the enclosing lexical context's this
       - When the code is called from an inline on-event handler, its this is set to the DOM element on which the listener is placed
   - In most cases, the value of `this` is determined by how a function is called (runtime binding). 
   - It can't be set by assignment during execution, and it may be different each time the function is called.
 - globalThis
   - Historically, accessing the global object has required different syntax in different JavaScript environments. 
-  - On the web you can use `window`, `self`, or `frames` - but in Web Workers only self will work. 
+  - On the web you can use `window` , `self` , or `frames` - but in Web Workers only self will work. 
   - In Node.js none of these work, and you must instead use `global`
   - The `this` keyword could be used inside functions running in non–strict mode, but `this` will be `undefined` in Modules and inside functions running in strict mode. 
   - The `globalThis` property provides a standard way of accessing the global this value (and hence the global object itself) across environments. 
-      - Unlike similar properties such as window and self, it's guaranteed to work in window and non-window contexts.
-      - in global scope the `this` value is `globalThis`
-      - In many engines globalThis will be a reference to the actual global object
-      - but in web browsers, due to iframe and cross-window security considerations, it references a Proxy around the actual global object (which you can't directly access). 
-      - This distinction is rarely relevant in common usage, but important to be aware of.
+    - Unlike similar properties such as window and self, it's guaranteed to work in window and non-window contexts.
+    - in global scope the `this` value is `globalThis`
+    - In many engines globalThis will be a reference to the actual global object
+    - but in web browsers, due to iframe and cross-window security considerations, it references a Proxy around the actual global object (which you can't directly access). 
+    - This distinction is rarely relevant in common usage, but important to be aware of.
 - `Object()`
   - The Object constructor creates an object wrapper for the given value
   - If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value.
   - If the **value is an object already**, it will return the value.
-  ```
-  const a={aa:1};
-  Object(a)===a   //true
-  Object('a')==='a'  //false
-  Object(1)===1   //false
-  ```
-- `arr.slice()`   
-  - arr.slice();  // [0, end]
-  - arr.slice(begin);
+
+``` js
+  const a = { aa: 1 };
+  Object(a) === a //true
+  Object('a') === 'a' //false
+  Object(1) === 1 //false
+```
+
+- `arr.slice()`
+  - arr.slice(); // [0, end]
+  - arr.slice(begin); 
   - arr.slice(begin, end)     
   - 方法返回一个新的数组对象，这一对象是一个由begin和end（不包括end）决定的原数组的浅拷贝
   - 原始数组不会被改变
-- `array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`    
+- `array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`
   - start 指定修改的开始位置（从0计数）
   - deleteCount 整数，表示要移除的数组元素的个数
-  - item1, item2, .. 要添加进数组的元素,从start位置开始
+  - item1, item2, .. 要添加进数组的元素, 从start位置开始
   - 返回由被删除的元素组成的一个数组，如果只删除了一个元素，则返回只包含一个元素的数组，如果没有删除元素，则返回空数组
   - splice()与slice()的作用是不同的，splice()会直接对数组进行修改
--  `arr.reverse()`  
+- `arr.reverse()`
   - reverse 方法颠倒数组中元素的位置，并返回该数组的引用
 - `Object.assign(target, ...sources)`
   - method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
   - shallow copies property values. If the source value is a reference to an object, it only copies that reference value.
 
-
 ### setTimeout vs setInterval
+
 - 相同点
   - setTimeout和setInterval的回调函数，都是经过n毫秒后被添加到队列中，而不是过n毫秒后立即执行
       - 表示的是何时将定时器的代码添加到异步队列，而不是何时执行代码
@@ -152,6 +163,7 @@ modified: '2020-06-22T09:13:12.664Z'
 - 如果用setTimeout来模拟setInterval，这样函数执行的间隔时间就会保证（>=设置时间）
 
 ### setTimeout
+
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
   - https://www.jeffjade.com/2016/01/10/2016-01-10-javacript-setTimeout/
@@ -179,23 +191,24 @@ modified: '2020-06-22T09:13:12.664Z'
 - Code executed by setTimeout() is called from an execution context separate from the function from which setTimeout was called. The usual rules for setting the this keyword for the called function apply, and if you have not set this in the call or with bind, it will default to the global (or window) object in non-strict mode, or be undefined in strict mode.
 - A common way to solve the problem is to use a wrapper function that sets this to the required value
 - Arrow functions are a possible alternative, too
-- Passing a string instead of a function to setTimeout() has the same associated problems as using `eval`.
+- Passing a string instead of a function to setTimeout() has the same associated problems as using `eval` .
 - A string passed to setTimeout is evaluated in the global context, so local symbols in the context where setTimeout() was called will not be available when the string is evaluated as code.
 - Reasons for delays longer than specified
   - In modern browsers, setTimeout()/setInterval() calls are throttled to a minimum of once every 4 ms when successive calls are triggered due to callback nesting (where the nesting level is at least a certain depth), or after certain number of successive intervals.
       - 4 ms is specified by the HTML5 spec and is consistent across browsers released in 2010 and onward. Prior to (Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2), the minimum timeout value for nested timeouts was 10 ms.
-  - To reduce the load (and associated battery usage) from background tabs, timeouts are throttled to firing no more often than once per second (1,000 ms) in inactive tabs.
+  - To reduce the load (and associated battery usage) from background tabs, timeouts are throttled to firing no more often than once per second (1, 000 ms) in inactive tabs.
       - Firefox 50 no longer throttles background tabs if a Web Audio API AudioContext is actively playing sound
   - Since Firefox 55, tracking scripts (e.g. Google Analytics) have been subject to further throttling. When running in the foreground, the throttling minimum delay is still 4ms. In background tabs, however, the throttling minimum delay is 10 seconds, which comes into effect 30 seconds after a document has first loaded.
   - timeout can also fire later when the page (or the OS/browser itself) is busy with other tasks
       - even though setTimeout was called with a delay of zero, it's placed on a queue and scheduled to run at the next opportunity; not immediately
 - In WebExtension background pages, timers don't work properly. This is because background pages don't actually stay loaded all the time: the browser can unload them if they are not being used, and restore them when they are needed
-- Browsers store the delay as a 32-bit signed integer internally. This causes an integer overflow when using delays larger than 2,147,483,647 ms (about 24.8 days), resulting in the timeout being executed immediately
+- Browsers store the delay as a 32-bit signed integer internally. This causes an integer overflow when using delays larger than 2, 147, 483, 647 ms (about 24.8 days), resulting in the timeout being executed immediately
 - clearTimeout
 - setTimeout、setInternal、setImmediate这些方法在浏览器内一般是由浏览器内部实现，而Node.js中，这些方法都是由Timers模块提供的
   - 在Node.js里，这些定时器相关的函数是由基础库实现的，底层通过 C++ 在 libuv 的基础上包裹了一个 timer_wrap 模块，这个模块提供了 Timer 对象，实现了在 runtime 层面的定时功能
 
 ### setInterval
+
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
 - 问题
@@ -204,19 +217,22 @@ modified: '2020-06-22T09:13:12.664Z'
   - 每个setTimeout产生的任务会直接push到任务队列中；而setInterval在每次把任务push到任务队列前，都要进行一下判断(看上次的任务是否仍在队列中)
   - 可以**用setTimeout模拟setInterval**来规避掉上面的缺点
   - 示例：一秒后立即输出5个5
-  ```
+
+``` js
   for (var i = 0; i < 5; i++) {
-      setTimeout(function() {
-          console.log(i);
-      }, 1000);
+
+    setTimeout(function() {
+      console.log(i);
+    }, 1000);
+
   }
-  ```
+```
+
   - 每个setTimeout都由定时触发器线程负责计时，计时完毕后，添加到事件队列中(即：事件触发线程)，等待JS引擎线程空闲后，再来依次执行
   - 首先JS引擎线程要运行for循环，在每次循环中都会调用一个setTimeout函数，每个setTimeout计时结束后都会将其回调函数添加到事件队列中。等for循环结束后（即JS引擎线程空闲后），才开始按顺序执行事件队列中的函数。每次循环都会在一秒后将回调函数添加到事件队列中，但由于两次相邻的循环时间是短到可以忽略不计的，所以表面看上去一秒后立即执行了5次回调函数
 
-
-
 ### requestAnimationFrame
+
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
   - https://jinlong.github.io/2013/06/24/better-performance-with-requestanimationframe/
@@ -225,43 +241,48 @@ modified: '2020-06-22T09:13:12.664Z'
 - Your callback routine must itself call requestAnimationFrame() if you want to animate another frame at the next repaint.
 - The number of callbacks is usually *60 times per second*, but will generally match the display refresh rate in most web browsers as per W3C recommendation
 - requestAnimationFrame() calls are paused in most browsers when running in background tabs or hidden <iframe>s in order to improve performance and battery life
-- The callback method is passed a single argument, a `DOMHighResTimeStamp`, which indicates the current time (based on the number of milliseconds since time origin)
+- The callback method is passed a single argument, a `DOMHighResTimeStamp` , which indicates the current time (based on the number of milliseconds since time origin)
 
 ### es6的class
+
 - js生成对象的传统方法是通过构造函数
-```
+
+``` js
 function Point(x, y) {
-this.x = x;
-this.y = y;
-}
-
-Point.prototype.toString = function () {
-return '(' + this.x + ', ' + this.y + ')';
-};
-
-var p = new Point(1, 2);
-```
-- ES6的class只是语法糖，ES5的构造函数Point，对应ES6的Point类的构造方法
-```
-class Point {
-constructor(x, y) {
   this.x = x;
   this.y = y;
 }
 
-toString() {
+Point.prototype.toString = function() {
   return '(' + this.x + ', ' + this.y + ')';
-}
+};
+
+var p = new Point(1, 2);
+```
+
+- ES6的class只是语法糖，ES5的构造函数Point，对应ES6的Point类的构造方法
+
+``` js
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  toString() {
+    return '(' + this.x + ', ' + this.y + ')';
+  }
 }
 typeof Point // "function"
 Point === Point.prototype.constructor // true
 ```
+
 - 一个类必须有constructor方法，若没有显式定义，一个空的constructor()会被默认添加
 - **constructor方法默认返回实例对象**，即this
 - 类的所有实例共享一个原型对象
 - 实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）
 - 类的方法内部如果含有this，它默认指向类的实例
-- 类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为`静态方法`
+- 类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为 `静态方法`
 - 如果在实例上调用静态方法，会抛出一个错误，表示不存在该方法
 - **如果静态方法包含this关键字**，这个this指的是类，而不是实例
 - 父类的静态方法，可以被子类继承
@@ -269,14 +290,13 @@ Point === Point.prototype.constructor // true
 - 利用new.target可以写出不能独立使用、必须继承后才能使用的类
 - 子类**可继承**父类的实例属性、实例方法、静态属性、静态方法
   - 当静态属性是引用类型时，子类和父类指向的同一个地址，父类如果变化子类也会变化
-  - es5和es6实现继承的方式是不同的,前者通过原型链实现对父类原型方法、原型属性的继承，通过构造函数的调用实现对实例方法、实例属性的调用，后者通过extends关键字实现继承
+  - es5和es6实现继承的方式是不同的, 前者通过原型链实现对父类原型方法、原型属性的继承，通过构造函数的调用实现对实例方法、实例属性的调用，后者通过extends关键字实现继承
   - es5中静态方法、静态属性是无法通过继承下来的，只能通过赋值传递，但es6可以
 - 子类必须在constructor()中调用super()， 否则新建实例时会报错。这是因为**子类没有自己的this对象**，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象
 - ES5继承
-  - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this,类似`Parent.apply(this)`
+  - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this, 类似 `Parent.apply(this)`
 - ES6继承
   - 实质是先创造父类的实例对象this(所以必须先调用super)， 然后再用子类的构造函数修改this 
-
 
 ## dev tips
 
@@ -294,8 +314,8 @@ Point === Point.prototype.constructor // true
   - ref
       - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 - 逻辑运算符的玄学
-  - `const aa = undefined || false;`  // false
-  - `const bb = false || undefined;`  // undefined
+  - `const aa = undefined || false;` // false
+  - `const bb = false || undefined;` // undefined
 - js复制数组的方式
   - 浅拷贝
   - `arr2=[...arr1]`
@@ -304,25 +324,33 @@ Point === Point.prototype.constructor // true
   - `Array.from(arr1)`
   - `Array.prototype.push.apply(arr2,arr1);`
   - 使用数组遍历赋值
-  ```
-  arr1.forEach(function(value,index){
-    arr2[index] = value;
-  }) 
 
-  let arr2 = arr1.map(function(item){
+``` js
+  arr1.forEach(function(value, index) {
+
+    arr2[index] = value;
+
+  })
+
+  let arr2 = arr1.map(function(item) {
+
     return item;
+
   });
 
-  for(var a in arr1){
+  for (var a in arr1) {
+
     arr2[a] = arr[a];
+
   }
-  ```
+```
+
   - 深拷贝
   - `arr2=JSON.parse(JSON.stringify(array1));`
       - 数组中的项如果是undefined，那么转换后将变为null
       - 如果数组的项为对象，则对象之间不可相互引用。若存在循环引用，则无法JSON序列化
 - js遍历对象属性几种方法的区别
-  - `for-in`是es3中就存在的最早用来遍历对象（集合）的方法
+  - `for-in` 是es3中就存在的最早用来遍历对象（集合）的方法
       - 会输出自身以及原型链上**可枚举**的属性
       - 不同的浏览器对for in属性输出的顺序可能不同
       - 如果仅想输出自身的属性可以借助hasOwnProperty滤掉原型链上的属性
@@ -341,15 +369,15 @@ Point === Point.prototype.constructor // true
   - JS的定时器目前有三个：setTimeout、setInterval和setImmediate。定时器也是一种异步任务，浏览器通常有一个独立的定时器模块，定时器的延迟时间就由定时器模块来管理，当某个定时器到了可执行状态，就会被加入主线程队列
   - setTimeout(fn, x)表示延迟x毫秒之后执行fn，严格来说是加入异步任务队列。延迟的时间严格来说总是大于x毫秒。
       - 使用时要注意setTimeout()内fn中变量的作用域问题，以及循环内使用setTimeout()的问题
-      - `setTimeout(func, 0)`并不会立刻执行，仍会先加入异步任务队列
+      - `setTimeout(func, 0)` 并不会立刻执行，仍会先加入异步任务队列
       - 不要频繁使用，会导致程序执行的生命周期混乱和意想不到的问题，Promise和Generator也能实现异步编程
   - 多个定时器如不及时清除（clearTimeout），会存在干扰，使延迟时间更加难确定
   - HTML5规范规定最小延迟时间不能小于4ms，若x小于4，会被当做4来处理。不过不同浏览器的实现不一样，比如Chrome可以设置1ms，IE11是4ms
-  - 
+
 - 函数的length属性可以获取函数的形参个数，arguments.length得到实参个数
 - 模块
-  - ES6标准发布后，module成为标准，使用是以`export`导出模块，以`import`导入模块
-  - 常用的node模块中，采用的是CommonJS规范，使用`module.exports`导出模块，使用`require`导入模块
+  - ES6标准发布后，module成为标准，使用是以 `export` 导出模块，以 `import` 导入模块
+  - 常用的node模块中，采用的是CommonJS规范，使用 `module.exports` 导出模块，使用 `require` 导入模块
   - es6的default可以看成as的语法糖
   - import是编译期的，require是运行期的
   - 前端早期没有模块加载规范，只能通过html中的script标签引入js
@@ -408,42 +436,49 @@ Point === Point.prototype.constructor // true
   - 能读取函数内部的变量
   - 应用场景
       - 保护函数内的变量安全：如迭代器、生成器
+
   　　- 在内存中维持变量：如果缓存数据、柯里化
+
   - 闭包的特点很鲜明，闭包内，变量无法释放，无法被直接访问；闭包可以被延迟执行
 
 - 函数中的this
   - this的指向是由它所在函数调用的上下文决定的，而不是由它所在函数定义的上下文决定的
   - 由于函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。
   - 例子
-  ```
+
+``` js
   var name = "The Window";
-　　var object = {
-　　　　name : "My Object",
-　　　　getNameFunc : function(){
-          console.log(this.name); // my object
-　　　　　　return function(){
-              console.log(this.name); // the window
-　　　　　　　　return this.name;
-　　　　　　};
-　　　　}
-　　};
-　　const v=object.getNameFunc()();
+  var object = {
+    name: "My Object",
+    getNameFunc: function() {
+
+      console.log(this.name); // my object
+
+      return function() {
+
+        console.log(this.name); // the window
+
+        return this.name;
+      };
+    }
+  };
+  const v = object.getNameFunc()();
   console.log(v); // the window
-  ```
+```
+
   - object.getnameFunc() 返回的匿名闭包函数被全局变量所引用，其中的this指向全局变量，当执行时打印The Window 。
   - 闭包的两个作用：一个是可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
 
 - js equals
-  - `==`：普通相等，比较运算符，两边值类型不同的时候，先进行类型转换，再比较；
-  - `===`：全等，严格比较运算符，不做类型转换，类型不同就是不等；
-  - `Object.is()`是ES6新增的用来比较两个值是否严格相等的方法，与===的行为基本一致。
+  - `==` ：普通相等，比较运算符，两边值类型不同的时候，先进行类型转换，再比较；
+  - `===` ：全等，严格比较运算符，不做类型转换，类型不同就是不等；
+  - `Object.is()` 是ES6新增的用来比较两个值是否严格相等的方法，与===的行为基本一致。
 - window.location.assign(url) ： 加载 URL 指定的新的 HTML 文档，支持返回上个页面
 - window.location.replace(url) ： 通过加载 URL 指定的文档来替换当前文档 ，不支持返回
 - Object.assign()与spread operator扩展运算符 区别
 - 扩展运算符支持遍历数组
 - 扩展运算符 is A proposal, not standardized, Literal, not dynamic.
   - 动态示例 `options = Object.assign.apply(Object, [{}].concat(sources))`
-
 - core-js
   - core-js是babel-polyfill的底层依赖，用ES3实现了大部分的ES2017原生标准库
 
@@ -460,8 +495,7 @@ Point === Point.prototype.constructor // true
   - Tracking
     - Recording and analyzing user behavior
 - 浏览器在发送请求之前，首先会根据请求url中的域名在cookie列表中找所有与当前域名一样的cookie，然后再根据指定的路径进行匹配，
-    如果当前请求在域匹配的基础上还与路径匹配那么就会将所有匹配的cookie发送给服务器，这里要注意的是最大匹配和最小匹配问题，
-    有些cookie服务器在发送之前会有意扩大当前页面cookie的匹配范围，此时这些被扩大范围的cookie也会一起发送给服务器。
+  - 如果当前请求在域匹配的基础上还与路径匹配那么就会将所有匹配的cookie发送给服务器，这里要注意的是最大匹配和最小匹配问题，有些cookie服务器在发送之前会有意扩大当前页面cookie的匹配范围，此时这些被扩大范围的cookie也会一起发送给服务器。
 
 - XMLHttpRequest与fetch   
 - XMLHttpRequest是对象，fetch()是window的一个方法
@@ -474,40 +508,52 @@ Point === Point.prototype.constructor // true
 
 - 函数去抖（debounce）与 函数节流（throttle）
   -  以下场景往往由于事件频繁被触发，因而频繁执行DOM操作、资源加载等重行为，导致UI停顿甚至浏览器崩溃
-      - 拖拽组件时的mousemove事件
-      - window对象的resize、scroll事件
-      - 射击游戏中的mousedown、keydown事件
-      - 文字输入、自动完成的keyup事件
+
+   - 拖拽组件时的mousemove事件
+   - window对象的resize、scroll事件
+   - 射击游戏中的mousedown、keydown事件
+   - 文字输入、自动完成的keyup事件
+
   - 实际上对于window的resize事件，实际需求大多为**停止改变大小n毫秒后再执行**后续处理；而其他事件大多的需求是**以一定的频率执行**后续处理。针对这两种需求就出现了debounce和throttle两种解决办法
 - js debounce 去抖
   - 当调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间
   - 示例
-  ```
-  var debounce = function(idle, action){
+
+``` js
+  var debounce = function(idle, action) {
+
     var last
-    return function(){
-    var ctx = this, args = arguments
-    clearTimeout(last)
-    last = setTimeout(function(){
-      action.apply(ctx, args)
-    }, idle)
+    return function() {
+      var ctx = this,
+        args = arguments
+      clearTimeout(last)
+      last = setTimeout(function() {
+        action.apply(ctx, args)
+      }, idle)
     }
+
   }
-  ```  
+```
+
 - js throttle 节流   
   - 预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期
   - 示例
-  ```
-  var throttle = function(delay, action){
-    var last = 0return function(){
-    var curr = +new Date()
-    if (curr - last > delay){
-      action.apply(this, arguments)
-      last = curr 
+
+``` js
+  var throttle = function(delay, action) {
+
+    var last = 0
+    return function() {
+      var curr = +new Date()
+      if (curr - last > delay) {
+        action.apply(this, arguments)
+        last = curr
+      }
     }
-    }
+
   }
-  ```
+```
+
   - 函数节流和函数去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数
 - js事件性能考虑  
   - debounce：强制函数在某段时间内只执行一次
@@ -515,14 +561,14 @@ Point === Point.prototype.constructor // true
   - 在处理一些高频率触发的DOM事件的时候，它们都能极大提高用户体验
   - throttle和debounce均是通过减少实际逻辑处理过程的执行，来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数
 
-
 ## ECMAScript
+
 - 函数绑定运算符 两个冒号 ::  [doc](http://es6.ruanyifeng.com/#docs/function)
   - 双冒号左边是一个对象，右边是一个函数，该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。
   - 如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面
   - 如果双冒号运算符的运算结果还是一个对象，就可以采用链式写法
 - js的函数调用  
-  - 定义function f1(a,b){}  
+  - 定义function f1(a, b){}  
   - 单参数也可以调用 f1(c)  
 - 模块化开发不推荐使用css和html，可以都写在js中
 
@@ -532,41 +578,53 @@ Point === Point.prototype.constructor // true
   - 前端资源模块化管理和打包工具  
   - 通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等
   - 4个核心概念
-      - entry：webpack创建应用程序所有依赖的关系图(dependency graph)，图的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并根据依赖关系图确定需要打包的内容。可以将应用程序的入口起点认为是根上下文(contextual root) 或 app 第一个启动文件。
-      - output：告诉 webpack 在哪里打包应用程序，webpack 的 output 属性描述了如何处理归拢在一起的代码(bundled code)。  
-      通过 output.filename 和 output.path 属性，来告诉 webpack bundle 的名称，以及我们想要生成(emit)到哪里。
-      - loader：loader用于对模块的源代码进行转换，loader可以使你在 import 或"加载"模块时预处理文件，定义 loader 时，要定义在 module.rules 中，loader 有两个目标         
-          - test: 识别出(identify)应该被对应的 loader 进行转换(transform)的那些文件 
-          - use: 转换这些文件，从而使其能够被添加到依赖图中（并且最终添加到 bundle 中）
-      - plugins：插件目的在于解决loader无法实现的其他功能  
+    - entry：webpack创建应用程序所有依赖的关系图(dependency graph)，图的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并根据依赖关系图确定需要打包的内容。可以将应用程序的入口起点认为是根上下文(contextual root) 或 app 第一个启动文件。
+    - output：告诉 webpack 在哪里打包应用程序，webpack 的 output 属性描述了如何处理归拢在一起的代码(bundled code)。  
+
+    通过 output.filename 和 output.path 属性，来告诉 webpack bundle 的名称，以及我们想要生成(emit)到哪里。
+
+    - loader：loader用于对模块的源代码进行转换，loader可以使你在 import 或"加载"模块时预处理文件，定义 loader 时，要定义在 module.rules 中，loader 有两个目标         
+        - test: 识别出(identify)应该被对应的 loader 进行转换(transform)的那些文件 
+        - use: 转换这些文件，从而使其能够被添加到依赖图中（并且最终添加到 bundle 中）
+    - plugins：插件目的在于解决loader无法实现的其他功能  
 - js模块化 CommonJS、AMD、UMD  
   - CommonJS NodeJS  
-  `var $ = require('jquery');`   
-  `module.exports = myFunc;`   
+
+``` js
+var $ = require('jquery');
+module.exports = myFunc;
+```
+
   - AMD requirejs、dojo   
-  `require(['math'], function (math) { math.add(2, 3); });`  
-  `define(['jquery'], function ($) { return myFunc; });`  
+
+``` js
+require(['math'], function(math) { math.add(2, 3); });
+define(['jquery'], function($) { return myFunc; });
+```
+
   - UMD  
-  ```
-      (function (root, factory) {
-              if (typeof define === 'function' && define.amd) {
-                  // AMD
-                  define(['jquery'], factory);
-              } else if (typeof exports === 'object') {
-                  // Node, CommonJS之类的
-                  module.exports = factory(require('jquery'));
-              } else {
-                  // 浏览器全局变量(root 即 window)
-                  root.returnExports = factory(root.jQuery);
-              }
-          }(this, function ($) {
-              //    方法
-              function myFunc(){};
-  
-              //    暴露公共方法
-              return myFunc;
-          }));
-  ```
+
+``` js
+      (function(root, factory) {
+        if (typeof define === 'function' && define.amd) {
+          // AMD
+          define(['jquery'], factory);
+        } else if (typeof exports === 'object') {
+          // Node, CommonJS之类的
+          module.exports = factory(require('jquery'));
+        } else {
+          // 浏览器全局变量(root 即 window)
+          root.returnExports = factory(root.jQuery);
+        }
+      }(this, function($) {
+        //    方法
+        function myFunc() {};
+
+        //    暴露公共方法
+        return myFunc;
+      }));
+```
+
   - CMD seajs
   - es6
 - UMD的实现很简单： 
@@ -575,32 +633,38 @@ Point === Point.prototype.constructor // true
   3. 前两个都不存在，则将模块公开到全局（window或global）。
 - js自执行函数  
   - 因为JavaScript里括号()里面不能包含语句，用括号将函数括住，解析器在解析function关键字的时候，会将相应的代码解析成function表达式，而不是function声明。
-  ```
+
+  
+
+``` js
   // 下面2个括弧()都会立即执行
-  ( function () { /* code */ }() ); // 推荐使用这个  
-  ( function () { /* code */ }) (); // 但是这个也是可以用的  
+  (function() { /* code */ }()); // 推荐使用这个  
+  (function() { /* code */ })(); // 但是这个也是可以用的  
 
   // 由于括弧()和JS的&&，异或，逗号等操作符是在函数表达式和函数声明上消除歧义的
   // 所以一旦解析器知道其中一个已经是表达式了，其它的也都默认为表达式了
   // 不过，请注意下一章节的内容解释
-  var i = function () { return 10; } ();
-  true && function () { /* code */ } ();
-  0, function () { /* code */ } ();
+  var i = function() { return 10; }();
+  true && function() { /* code */ }();
+  0,
+  function() { /* code */ }();
 
   // 如果你不在意返回值，或者不怕难以阅读
   // 你甚至可以在function前面加一元操作符号
-  !function () { /* code */ } ();
-  ~function () { /* code */ } ();
-  -function () { /* code */ } ();
-  +function () { /* code */ } ();
+  ! function() { /* code */ }();
+  ~ function() { /* code */ }(); -
+  function() { /* code */ }(); +
+  function() { /* code */ }();
 
-  // 还有一个情况，使用new关键字,也可以用，但我不确定它的效率
-  new function () { /* code */ }
-  new function () { /* code */ } () // 如果需要传递参数，只需要加上括弧()
-  ```
+  // 还有一个情况，使用new关键字, 也可以用，但我不确定它的效率
+  new function() { /* code */ }
+  new function() { /* code */ }() // 如果需要传递参数，只需要加上括弧()
+```
+
 - core-js：为es5、es6提供polyfill   
 
 ## react
+
 - 优点
   - React的理念是界面**组件化**，在桌面开发中叫控件，可复用性强，开发效率高
   - 但这个组件的含义与Web Components并无明显联系，Web Components是底层标准，而上层框架的实现是足可以抹平这个差异的
@@ -620,6 +684,7 @@ Point === Point.prototype.constructor // true
   - 而结合Flux看的话，MVVM上也可以用Flux的思想，MVVM框架如果加上合适的优化，并不会比React慢，比如Vue的track by
 
 ### react-list
+
 - js libraries of list/table/spreadsheet/grid
 - 基于table, tr, td
   - handsontable-6.2.2 /201812/MIT/12Kstar
@@ -736,12 +801,14 @@ Point === Point.prototype.constructor // true
 ### ui library
 
 ### element-react 
+
 - github status: /201907/MIT/2200star
 - https://github.com/ElemeFE/element-react
-- 依赖react,react-transition-group,classnames,popper.js,requestAnimationFrame(raf) polyfill,async-validator(Validate form asynchronous.)
+- 依赖react, react-transition-group, classnames, popper.js, requestAnimationFrame(raf) polyfill, async-validator(Validate form asynchronous.)
 - table基于td
 
 ### 其他ui库
+
 - resuite /201907/MIT/2800star
   - https://github.com/rsuite/rsuite
   - https://rsuitejs.com/components/overview 
@@ -752,18 +819,14 @@ Point === Point.prototype.constructor // true
   - https://github.com/appbaseio/reactivebase 
   - deprecated
 
-## handsontable
-- 6.2.2 is licensed under MIT in 2018
-
-
-
-
 ## 样式处理
+
 ### css modules
 
 ### css in js
 
 #### styled-components
+
 - 使用模板字符串
 - 样式写在js文件里，可以使用变量，更加灵活
 - SSR类框架处理CSS Modules变量相当棘手，使用styled-components更方便
@@ -777,40 +840,45 @@ Point === Point.prototype.constructor // true
   - 2. 没法使用postcss，无法自动补全浏览器前缀，css代码压缩，postcss既不是预处理器也不是后处理器
   - 3. js 体积增大，目前没有类似 ExtractCssPlugin 的工具解决这问题。
 
-
-```
+``` js
 import styled from 'styled-components';
 import styles from './style.less';
 
-const Wrapper = styled(div)`
-border: 1px dashed ${props => props.color};
-width: 100%;
+const Wrapper = styled(div)
+`
+border: 1px dashed ${props => props.color}; 
+width: 100%; 
 `;
 
 const Header = (props) => {
-return (
-  <div>
+  return (
+    <div>
+
     {/* 直接看 jsx，看不出来 Wrapper 的原始标签是 div */}
     <Wrapper color="#000">使用 styled-component </Wrapper>
     <div className={styles.Wrapper}>使用 CSS Modules</div>
+
   </div>
-);
+  );
 };
 
-链接：https://www.zhihu.com/question/266625289/answer/321576411
+// 链接：https://www.zhihu.com/question/266625289/answer/321576411
 ```
 
 ## js ecosystem
-- codesanbox vs react-storybook
-    -codesandbox类似于codepen
-    - storybook只是测试工具
+
+- codesanbox vs react-storybook  
+  - codesandbox类似于codepen  
+  - storybook只是测试工具  
 
 ## JS Ecosystem
 
 ## resources
+
 - https://github.com/designmodo/html-website-templates
 
 ## web builder & prototype
+
 - 拖拽编辑器可用于界面设计、图表设计、产品原型设计
 - Webcodesk /201907/MIT/40star
   - https://github.com/webcodesk/webcodesk-app
@@ -837,6 +905,7 @@ return (
   - https://github.com/chriskitson/react-drag-drop-layout-builder
 
 ## WebAssembly
+
 - 典型应用场景
   - 扩展浏览器端视音频处理能力
   - 游戏计算
@@ -860,30 +929,29 @@ return (
       - Node.js像Java一样也存在JIT预热？
 
 ## game
+
 - 主流游戏开发引擎
   - Unity3D-免费不开源
   - Unreal Engine 4-开源但只能学习不能再次分发
 - common
   - https://github.com/libgdx/libgdx -  Apache 2
-      - 基于gwt，放弃
+    - 基于gwt，放弃
   - https://github.com/cocos2d/cocos2d-x - MIT
-      -  cocos2d-js不如-x好用
+    - cocos2d-js不如-x好用
   - https://github.com/pixijs/pixi.js - MIT
   - https://github.com/photonstorm/phaser - MIT
-      - 从性能到底层api的易用和强大
-      - 没有做模块拆分，tween,particles等全在一个包中，release的min版本大概在2M，egret在700K左右
-      - Phaser 2一直采用开源的Pixi2版本作为2D渲染引擎，在Phaser3中已放弃Pixi
-      - Phaser 3.0.0 is released on 20180213.
+    - 从性能到底层api的易用和强大
+    - 没有做模块拆分，tween,particles等全在一个包中，release的min版本大概在2M，egret在700K左右
+    - Phaser 2一直采用开源的Pixi2版本作为2D渲染引擎，在Phaser3中已放弃Pixi
+    - Phaser 3.0.0 is released on 20180213.
   - https://github.com/godotengine/godot - MIT
-  
+
 - misc
   - https://github.com/nicolodavis/boardgame.io - MIT    
   - https://github.com/FormidableLabs/react-game-kit - MIT
   - https://github.com/deck-of-cards/deck-of-cards - MIT
   - https://github.com/layabox/layaair 
-      - 引擎全部开源并且全部免费使用，包括商用
+    - 引擎全部开源并且全部免费使用，包括商用
   - https://github.com/hiloteam/Hilo - MIT，阿里h5游戏解决方案，有申请专利
   - https://github.com/egret-labs/egret-core - BSD
-      - 使用Typescript
-
-
+    - 使用Typescript

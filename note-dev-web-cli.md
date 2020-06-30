@@ -2,22 +2,23 @@
 tags: [web]
 title: note-dev-web-cli
 created: '2020-06-19T04:40:23.543Z'
-modified: '2020-06-22T09:11:06.093Z'
+modified: '2020-06-30T12:36:18.961Z'
 ---
 
 # note-dev-web-cli
 
 ## 前端兼容性处理 caniuse 
+
 - 兼容顺序
   - 3大pc浏览器：chrome、firefox、safari
   - mobile浏览器：3大pc对应的3大移动，Android, UC，Samsung，QQ Browser 
 
-
 ## 前端工程化
+
 - storybook
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - addon
-      - Knobs: edit props dynamically using the Storybook UI
+    - Knobs: edit props dynamically using the Storybook UI
 - codesandbox
   - Online Code Editor Tailored for Web Application
 - eslint/tslint
@@ -27,20 +28,20 @@ modified: '2020-06-22T09:11:06.093Z'
   - entry
   - output
   - module
-      - loader
+    - loader
   - resolve：设置模块如何被解析
-      - alias选项设置别名
-      - extensions指定解析器接受的扩展名
+    - alias选项设置别名
+    - extensions指定解析器接受的扩展名
 - npm
   - 前端包管理器 
   - 常用命令
-      - `npm config list`：查看npm配置信息
-      - `npm ls -g --depth=0`：查看本地全局安装的包
-      - `npm i -D webpack --registry=https://registry.npm.taobao.org`
+    - `npm config list` ：查看npm配置信息
+    - `npm ls -g --depth=0` ：查看本地全局安装的包
+    - `npm i -D webpack --registry=https://registry.npm.taobao.org`
   - npm vs yarn
   - npm包名规范
-      - 把包名中的标点符号去掉并与现有的包进行比较，相同则不允许发布
-      - 找到一个独一无二包名最简单方法就是使用作用域`@+用户名`，被划了作用域的包默认是私有的，所以要通过`--access=public`让它变为公有的包
+    - 把包名中的标点符号去掉并与现有的包进行比较，相同则不允许发布
+    - 找到一个独一无二包名最简单方法就是使用作用域 `@+用户名` ，被划了作用域的包默认是私有的，所以要通过 `--access=public` 让它变为公有的包
 - yarn
   - a package manager for your code
   - Running `yarn` with no command will run `yarn install`
@@ -69,27 +70,27 @@ modified: '2020-06-22T09:11:06.093Z'
       - 发布时一起发布多个包
       - 统一管理依赖版本
   - 包管理常用命令
-      - `lerna init`：以所有子包共用版本号的固定模式初始化项目， --independent
-      - `lerna bootstrap`：为所有项目安装依赖，类似于npm i/yarn
-      - `lerna add pkgA --scope=pkgB`：将A安装到B的字段， --dev，一次只能一包
-      - `lerna publish`：先确定哪些包需要publish，--skip-git/npm
-          -先设置version，先打tag，再push到github，再上传npm，可通过参数拆分流程
+      - `lerna init` ：以所有子包共用版本号的固定模式初始化项目， --independent
+      - `lerna bootstrap` ：为所有项目安装依赖，类似于npm i/yarn
+      - `lerna add pkgA --scope=pkgB` ：将A安装到B的字段， --dev，一次只能一包
+      - `lerna publish` ：先确定哪些包需要publish，--skip-git/npm
+          - 先设置version，先打tag，再push到github，再上传npm，可通过参数拆分流程
           - `lerna publish from-package --yes --registry http:// `
           - 参考 https://github.com/lerna/lerna/issues/1648
-      - `lerna ls`：显示packages下的各个package的version
-      - `npm link`：可添加本地正在开发的包作为依赖
-
+      - `lerna ls` ：显示packages下的各个package的version
+      - `npm link` ：可添加本地正在开发的包作为依赖
 
 ## 工程化常用工具
+
 - git
   - 常用命令
-  - `git branch branchName`:创建新分支
-  - `git checkout branchName startPoint`：切换到新分支
+  - `git branch branchName` : 创建新分支
+  - `git checkout branchName startPoint` ：切换到新分支
   - `git checkout -b bName` = `g branch bName` + `g checkout bName`
-  - `git merge b`：将b分支合并到当前分支
+  - `git merge b` ：将b分支合并到当前分支
       - 执行merge之后，会产生一个新的commit
-      - `git merge master feature`：将master分支合并到feature分支
-  - `git rebase`：功能和`git merge`类似，
+      - `git merge master feature` ：将master分支合并到feature分支
+  - `git rebase` ：功能和 `git merge` 类似，
       - `git checkout feature` + `git rebase master`
       - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
       - 不会产生新commit
@@ -99,6 +100,7 @@ modified: '2020-06-22T09:11:06.093Z'
       - fix, feat, chore, docs, style, refactor, perf, test
 
 ## 前端高效操作工具包
+
 - date-fns
   - 方便在浏览器和Node中操作时间日期
   - provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js
@@ -118,18 +120,19 @@ modified: '2020-06-22T09:11:06.093Z'
   - js utility for conditionally joining classNames together
 - immutable-js
   - v4
-      - The Iterable class has been renamed to Collection
-      - improve Record impl, Record is no longer an Immutable Collection type
-      - Flowtype and TypeScript type definitions have been completely rewritten
+    - The Iterable class has been renamed to Collection
+    - improve Record impl, Record is no longer an Immutable Collection type
+    - Flowtype and TypeScript type definitions have been completely rewritten
 
 ## 前端工程测试工具包
+
 - rimraf
   - 作用是以包的形式封装rm -rf命令，用来删除文件和文件夹，不管文件夹是否为空，都可删
   - `rm -rf` for node 
   - 命令也可在windows下使用
 - husky
   - 能够防止不规范代码被commit、push、merge等等
-  - 在执行`git commit`之前会先执行script字段的precommit指定的命令，如yarn test
+  - 在执行 `git commit` 之前会先执行script字段的precommit指定的命令，如yarn test
   - pre-commit包功能更灵活
 - plop
   - 设置好模板内容和生成文件路径后，可在命令行输入参数，自动生成组件到路径位置
@@ -146,9 +149,10 @@ modified: '2020-06-22T09:11:06.093Z'
   - tslib将仅用于您的编译目标不支持的功能，以便我们生出的代码更小
 - webpack
   - terser-webpack-plugin
-      - uses terser to minify your JavaScript
+    - uses terser to minify your JavaScript
 
 ## static-doc-site-generator
+
 - write with markdown and then render to html
 - hexo
 - jbake(java)
@@ -156,5 +160,3 @@ modified: '2020-06-22T09:11:06.093Z'
 - react-static
 - bisheng
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
-
-

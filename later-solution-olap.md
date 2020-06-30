@@ -8,6 +8,7 @@ modified: '2020-06-27T11:05:47.691Z'
 # later-solution-olap
 
 ## faq
+
 - Apache Druid vs Elasticsearch
   - Elasticsearch is a search system based on Apache Lucene. It provides full text search for schema-free documents and provides access to raw event level data. Elasticsearch is increasingly adding more support for analytics and aggregations. Some members of the community have pointed out the resource requirements for data ingestion and aggregation in Elasticsearch is much higher than those of Druid
   - Elasticsearch also does not support data summarization/roll-up at ingestion time, which can compact the data that needs to be stored up to 100x with real-world data sets. This leads to Elasticsearch having greater storage requirements.
@@ -17,8 +18,8 @@ modified: '2020-06-27T11:05:47.691Z'
 
 ## druid
 
-
 ## summary
+
 - ElasticSearch is a great alternative to a cube, we use it to build reports with pivot-like functionality  
   - One huge benefit is that with a cube you need to know what dimensions you want to create reports on. 
   - With ES you just shove in more and more data and figure out later how you want to report on it.
@@ -32,4 +33,3 @@ modified: '2020-06-27T11:05:47.691Z'
   - Inserting 1M rows into ES is very easy, updating 1M rows is a bigger pain.
 - ref
   - https://stackoverflow.com/questions/35513249/reasons-against-using-elasticsearch-as-an-olap-cube
-

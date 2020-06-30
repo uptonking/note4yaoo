@@ -2,13 +2,12 @@
 tags: [log/dev]
 title: log-dev-pieces-backend
 created: '2020-02-20T10:56:13.810Z'
-modified: '2020-06-30T05:20:00.829Z'
+modified: '2020-06-30T12:43:10.980Z'
 ---
 
 # log-dev-pieces-backend
 
 ## logging
-
 
 - maven-config
   -  maven会根据模块的版本号(pom文件中的version)中是否带有-SNAPSHOT来判断是快照版本还是正式版本
@@ -19,14 +18,14 @@ modified: '2020-06-30T05:20:00.829Z'
   - mirror vs repository
     - 镜像是一个特殊的配置，其实镜像等同与远程仓库，没有匹配远程仓库的镜像就毫无作用 
     - 在mirrorOf与repositoryId相同的时候优先是使用mirror的地址
-        - 当一个 repository 存在 mirror 时，Maven 查找 jar 时永远使用的是 mirror 配置的地址
-        - 当一个 repository 不存在 mirror 时，按照在 repositories 节点中定义的先后顺序。先定义，先查找。
+      - 当一个 repository 存在 mirror 时，Maven 查找 jar 时永远使用的是 mirror 配置的地址
+      - 当一个 repository 不存在 mirror 时，按照在 repositories 节点中定义的先后顺序。先定义，先查找。
     - mirrorOf等于*的时候覆盖所有repository配置
     - 存在多个mirror配置的时候mirrorOf应该*放到最后
     - 从超级父pom里继承来的中央repository在effective-pom里总是为最后一个repository
 - maven-cli
   - `mvn install`
-      - mvn install 会将项目生成的构件安装到本地Maven仓库，mvn deploy 用来将项目生成的构件分发到远程Maven仓库
+    - mvn install 会将项目生成的构件安装到本地Maven仓库，mvn deploy 用来将项目生成的构件分发到远程Maven仓库
 - JPMS  
   - Java Platform Module System (JSR 376)，也就是Jigsaw项目   
 - java枚举类与switch使用
@@ -37,15 +36,15 @@ modified: '2020-06-30T05:20:00.829Z'
   - String Pool是一个固定大小的Hashtable，默认大小是1009，如果放入常量池的字符串过多，就会造成hash冲突，导致链表很长，而链表长了后直接会造成的影响就是当调用String.intern时性能会大幅下降
   - 直接使用双引号声明出来的String对象会直接存储在常量池中
   - intern 方法会从字符串常量池中查询当前字符串是否存在，若不存在就会将当前字符串放入常量池中
-  - 在Jdk6以及以前的版本中，字符串的常量池是放在堆的Perm区的，Perm区是一个类静态的区域，主要存储一些加载类的信息，常量池，方法片段等内容，默认大小只有4m，一旦常量池中大量使用 intern 是会直接产生java.lang.OutOfMemoryError: PermGen space错误的。 所以在jdk7的版本中，字符串常量池已经从Perm区移到Java Heap区。jdk8已经直接取消了Perm区，而新建立了一个元区
+  - 在Jdk6以及以前的版本中，字符串的常量池是放在堆的Perm区的，Perm区是一个类静态的区域，主要存储一些加载类的信息，常量池，方法片段等内容，默认大小只有4m，一旦常量池中大量使用 intern 是会直接产生java.lang. OutOfMemoryError: PermGen space错误的。 所以在jdk7的版本中，字符串常量池已经从Perm区移到Java Heap区。jdk8已经直接取消了Perm区，而新建立了一个元区
 - maven的packaging为bundle
   - bundle是OSGI中的依赖单元，是一种特殊格式的jar
-  - `<dependency>`的type也可以为bundle
+  - `<dependency>` 的type也可以为bundle
 - jdk webview js engine
   - The full Oracle Java Runtime 8 ships with two JavaScript engines
   - Nashorn: "Nashorn's goal is to implement a lightweight high-performance JavaScript runtime in Java with a native JVM. This Project intends to enable Java developers embedding of JavaScript in Java applications via JSR-223 and to develop free standing JavaScript applications using the jrunscript command-line tool."
-  - JavaScriptCore: The JavaScript engine built into the WebKit implementation wrapped by WebView component the JavaFX system.
-  JavaScript Runtime Used by WebView and JavaFX applications
+  - JavaScriptCore: The JavaScript engine built into the WebKit implementation wrapped by WebView component the JavaFX system. JavaScript Runtime Used by WebView and JavaFX applications
+
   - JavaFX Webkit does not use Nashorn, it uses JavaScriptCore.
 - 如何遍历文件夹下上亿文件而不栈溢出   
   - 考虑层序遍历   

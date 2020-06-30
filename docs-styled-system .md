@@ -9,17 +9,18 @@ modified: '2020-06-30T05:16:04.780Z'
 # docs-styled-system
 
 ## summary
+
 - styled-system解决的问题
   - 组件样式属性值的一致性，本质通过重用预定义的工具函数
   - 解决组件临时添加样式的问题，需要新增props
-      - https://medium.com/@karthikbalaji99/styled-system-for-better-styled-components-a87a5eb2059c
+    - https://medium.com/@karthikbalaji99/styled-system-for-better-styled-components-a87a5eb2059c
   - 使用theme时需要写很长的解析表达式 props => props.theme.colors.primary 
-      - css()方法可直接写theme中的值
+    - css()方法可直接写theme中的值
 - tips
   - 可以逐步采用s-s，比如只用layout
 - s-s特点
   - first-class theme, with scalar values instead of remembering numbers
-      - interoperable theme
+    - interoperable theme
   - consistent prop names and values, thin/small
   - Component Hierarchy and Extensibility
   - Allow for setting single properties, such as width or font-size, responsively without needing to handle media queries
@@ -58,15 +59,15 @@ modified: '2020-06-30T05:16:04.780Z'
       - The other approach for things like this that I, personally prefer, is to create a base Button component that uses the lower-level parts of styled-system, e.g. space, color, fontSize, and then wrap that in a more modulz-specific component that takes props like size and variant and converts those into the lower level props – with an approach like this, more of the logic stays in React components and might be a little bit more readable IMO
       - You get to define Modulz's Button api the way you want it, and the logic to remap this to the lower level parts of styled-system remain within the boundaries of that component. 
 - limitations
-  - s-c的as prop和styled-system的color,width等一起出现时，as会失效
+  - s-c的as prop和styled-system的color, width等一起出现时，as会失效
   - s-c编写的svg属性可能会失效
 
-
 ## faq
+
 - s-s迁移到ts的开发计划
   - https://github.com/styled-system/styled-system/issues/464
 - variant的使用
-  - 如何实现支持type,size,color3个variant的button
+  - 如何实现支持type, size, color3个variant的button
       - https://spectrum.chat/styled-system/general/dealing-with-multiple-variants~b808556e-80e9-4c8e-be3f-dde9ae186c44
   - variant不支持在模板字符串中使用
       - https://spectrum.chat/styled-system/general/is-it-possible-to-use-multiple-arrays-for-fontsizes-for-media-queries~883222fa-1148-4260-98f7-ed0cf872bf17
@@ -121,14 +122,16 @@ modified: '2020-06-30T05:16:04.780Z'
       - https://medium.com/@matanbobi/react-defaultprops-is-dying-whos-the-contender-443c19d9e7f1       
 - style object中也可以使用pseudo
   - 不work
-  ```
+
+``` js
   {
     "&::before": {
       content: ""
     }
   }
-  ```
-  - 要改成`content: JSON.stringify("")`或`content: `""` 或 '""'
+```
+
+  - 要改成 `content: JSON.stringify("")` 或 `content: ` ""` 或 '""'
 - Styling: Object Styles vs String Styles
   - 涉及到pseudo-class/elements或选择器时，字符串形式更方便，也更易读
   - JS objects are based on types within the language itself, making transformations easier and avoids having to parse CSS syntax – it's similar to how JSX represents function calls vs using template literals and parsing HTML out with other approaches
@@ -140,4 +143,3 @@ modified: '2020-06-30T05:16:04.780Z'
   - 可以先只用所需的style prop function，然后根据新组建逐渐增加
   - started out with the default one but in the end put everything in it, I use these pretty much everywhere in my layout
   - https://spectrum.chat/styled-system/general/whats-in-your-box~6f41c990-f49f-4063-ba64-fcea702014f9
-

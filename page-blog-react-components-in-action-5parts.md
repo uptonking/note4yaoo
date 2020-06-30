@@ -8,11 +8,13 @@ modified: '2020-06-30T05:24:04.923Z'
 # page-blog-react-components-in-action-5parts
 
 ## guide
+
 - [React组件设计实践总结 by 荒山](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
 - [浅谈React性能优化的方向](https://juejin.im/post/5d045350f265da1b695d5bf2)
 - https://jxnblk.com/blog/defining-component-apis-in-react/
 
 ## React应用性能优化
+
 - **性能优化通用方向**
 - 减少计算量
   - 对应到React中就是减少渲染的节点, 或降低组件渲染的复杂度
@@ -39,18 +41,19 @@ modified: '2020-06-30T05:24:04.923Z'
     - 一般都不会直接使用Context.Provider, 而是封装为独立的Provider组件
 
 ## React组件设计实践总结01-类型检查
+
 - 静态类型检查的作用
   - 可以在开发时就避免许多类型问题, 减少低级错误
   - 通过类型自动补全的提示, 可以提高编码的效率
   - 有利于书写自描述的代码(类型即文档)
   - 方便代码重构，配合IDE可以自动重构
 - 开发参考建议
-  - 用Typescript可以约束Props和State, 没有必要引入React.PropTypes
-  - 可以在项目根目录下(和tsconfig.json同在一个目录下)放置一个`global.d.ts`作为项目的全局类型声明文件
+  - 用Typescript可以约束Props和State, 没有必要引入React. PropTypes
+  - 可以在项目根目录下(和tsconfig.json同在一个目录下)放置一个 `global.d.ts` 作为项目的全局类型声明文件
   - 始终开启strict模式, 避免使用any类型声明
-  - 推荐相对路径导入不应该超过两级, 即只能是`../`和`./`. 
-    - 可以尝试将相对路径转换成绝对路径形式, 例如webpack中可以配置`resolve.alias`属性来实现
-    - 对于Typescript可以配置`paths`选项;
+  - 推荐相对路径导入不应该超过两级, 即只能是 `../` 和 `./` . 
+    - 可以尝试将相对路径转换成绝对路径形式, 例如webpack中可以配置 `resolve.alias` 属性来实现
+    - 对于Typescript可以配置 `paths` 选项;
     - 对于babel可以使用babel-plugin-module-resolver插件来转换为相对路径
 - 函数组件的类型检查
   - ComponentNameProps形式命名Props类型并导出
@@ -58,7 +61,7 @@ modified: '2020-06-30T05:24:04.923Z'
     - 这个类型定义了默认的props(如children)以及一些静态属性(如defaultProps)
   - 不要直接使用export default导出组件，这种方式导出的组件在React Inspector查看时会显示为Unknown
 - defaultProps
-  - 使用FC类型声明的函数组件并不能完美支持defaultProps,若不传会警告
+  - 使用FC类型声明的函数组件并不能完美支持defaultProps, 若不传会警告
   - 可以在声明函数组件时，对参数props解构，同时设置默认值
   - 可以把占用计算资源大的默认值单独作为函数或变量声明，这样只会初始化一次
 - 泛型在列表型或容器型的组件中比较常用, 直接使用FC无法满足需求
@@ -87,14 +90,15 @@ modified: '2020-06-30T05:24:04.923Z'
     - 装饰器模式
 - Render Props: React的props(包括children)并没有限定类型, 可以是函数
 - 事件处理
-  - 如果存在多个相同事件处理器, 可以按照`handle{Type}{Event}`命名, 例如handleNameChange.
+  - 如果存在多个相同事件处理器, 可以按照 `handle{Type}{Event}` 命名, 例如handleNameChange.
   - `import { ChangeEventHandler } from 'react';`
   - 和原生html元素一样, 自定义组件应该暴露自己的事件处理器类型, 尤其是较为复杂的事件处理器, 这样可以避免开发者手动为每个事件处理器的参数声明类型
-  - 自定义事件处理器类型以`{ComponentName}{Event}Handler`命名，为了和原生事件处理器类型区分, 不使用EventHandler形式的后缀
+  - 自定义事件处理器类型以 `{ComponentName}{Event}Handler` 命名，为了和原生事件处理器类型区分, 不使用EventHandler形式的后缀
 - 组件相关问题
-  - 所有原生元素props都继承了`React.HTMLAttributes`, 某些特殊元素也会扩展了自己的属性, 例如InputHTMLAttributes
+  - 所有原生元素props都继承了 `React.HTMLAttributes` , 某些特殊元素也会扩展了自己的属性, 例如InputHTMLAttributes
 
 ## 组件设计02-组件组织
+
 - 组件设计的基本原则：单一职责(Single Responsibility Principle)
 - 组件设计基础
   - 如果组件不需要状态, 则使用无状态组件
@@ -138,6 +142,7 @@ modified: '2020-06-30T05:24:04.923Z'
   - 丰富的插件生态
 
 ## 组件设计03-样式的管理
+
 - **CSS的问题**
 - Global Namespace
   - CSS的选择器是没有隔离性的, 不管是使用命名空间还是BEM模式组织, 最终都会污染全局命名空间
@@ -145,7 +150,7 @@ modified: '2020-06-30T05:24:04.923Z'
 - Dependencies
   - 很难清晰地定义某个特定组件依赖于某段特定的CSS代码，不能随便修改你的样式, 以免破坏其他页面或组件的样式
   - 解决的方向: 组件是一个内聚单元, 样式应该是和组件绑定的
-  - 最基本的解决办法是使用类似BEM命名规范来避免组件之间的命名冲突, 再通过创建优于复用, 组合优于继承的原则, 来避免组件间样式耦合;
+  - 最基本的解决办法是使用类似BEM命名规范来避免组件之间的命名冲突, 再通过创建优于复用, 组合优于继承的原则, 来避免组件间样式耦合; 
 - Dead Code Elimination
   - 很难判断哪些样式属于那个组件; 在加上CSS的'叠层特性', 更无法确定删除样式会带来什么影响
   - 解决的方向: 如果样式的依赖比较明确，则可以安全地移除无用代码
@@ -160,7 +165,7 @@ modified: '2020-06-30T05:24:04.923Z'
   - 解决方向：避免使用全局样式，组件样式隔离；样式加载和组件生命周期绑定
 - Isolation
 - 组件的样式应该高度可定制化
-  - 应该考虑组件的各种使用场景，所以一个好的组件必须暴露相关的样式定制接口，至少需要支持为顶层元素配置`className`和`style`属性
+  - 应该考虑组件的各种使用场景，所以一个好的组件必须暴露相关的样式定制接口，至少需要支持为顶层元素配置 `className` 和 `style` 属性
   - 这两个属性应该是每个展示型组件应该暴露的props
 - 避免使用内联CSS
   - 内联CSS不支持复杂的样式配置, 例如伪元素, 伪类, 动画定义, 媒体查询和媒体回退
@@ -208,9 +213,10 @@ modified: '2020-06-30T05:24:04.923Z'
   - 支持非标准的语法, 例如:global, :local, :export, compose
 
 ## 组件设计04-组件的思维
+
 - 高阶组件的作用
   - 高阶组件是函数，它接收原始组件并返回原始组件的增强版本
-  - 高阶组件是一种用于复用组件逻辑模式,最为常见的例子就是redux的connect和react-router的withRouter，高阶组件最初用于取代mixin
+  - 高阶组件是一种用于复用组件逻辑模式, 最为常见的例子就是redux的connect和react-router的withRouter，高阶组件最初用于取代mixin
   - 逻辑复用，把一些通用的代码逻辑提取出来放到高阶组件中, 让更多组件可以共享
   - 分离关注点，将行为层或者业务层抽取到高阶组件中来实现, 让展示组件只关注于UI
 - 高阶组件实现方法
@@ -274,7 +280,7 @@ modified: '2020-06-30T05:24:04.923Z'
 - 路由状态
   - 传统的路由主要用于区分页面, 所以一开始前端路由设计也像后端路由(也称为静态路由)一样, 使用对象配置方式, 给不同的url分配不同的页面组件, 当应用启动时, 在路由配置表中查找匹配URL的组件并渲染出来.
   - React-Router v4算是一个真正意义上符合组件化思维的路由库, React-Router官方称之为‘动态路由’, 官方的解释是"指的是在应用程序渲染时发生的路由，而不是在运行应用程序之外的配置或约定中发生的路由"
-  - React-Router v4中`<Route/>`是一个普通React组件, 它在渲染时判断是否匹配URL, 如果匹配就渲染指定的组件, 不匹配就返回null
+  - React-Router v4中 `<Route/>` 是一个普通React组件, 它在渲染时判断是否匹配URL, 如果匹配就渲染指定的组件, 不匹配就返回null
   - 此时URL不再是简单的页面标志, 而是应用的状态
   - 应用构成也不再局限于扁平页面, 而是多个可以响应URL状态的区域(可嵌套)
 - React组件开发规范
@@ -283,7 +289,8 @@ modified: '2020-06-30T05:24:04.923Z'
   - react-in-patterns
 
 ## 组件设计05-状态管理
-- 现在的前端框架(包括React)的一个核心思想就是数据驱动视图, 即`UI = f(state)`
+
+- 现在的前端框架(包括React)的一个核心思想就是数据驱动视图, 即 `UI = f(state)`
   - 这种开发方式的变化其实得益于Virtual-DOM，它使得我们不需要关心浏览器底层DOM的操作细节，只需关心状态(state)和映射关系(f)
   - 随着state的复杂化, 框架现有的组件化方式很难驾驭 f(视图的映射关系变得复杂, 难以被表达和维护); 或者相关类型的应用数据流本来就比较复杂, 组件之间的交互关系多样，本来难以使用UI = f(state)这种关系来表达; 或者应用的组件状态过于离散，需要统一的治理等等。就有了状态管理的需求
 - 现有状态管理方式的特点
@@ -348,4 +355,3 @@ modified: '2020-06-30T05:24:04.923Z'
   - 组件侵入性。需要改变React组件原本的结构, 例如所有需要响应数据变动的组件都需要使用observer装饰，组件本地状态也需要observable装饰, 以及数据操作方式等等，对mobx耦合较深, 日后切换框架或重构的成本很高
 - RxJS
   - 非常适合复杂异步事件流的应用
-

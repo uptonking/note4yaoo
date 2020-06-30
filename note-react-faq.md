@@ -2,7 +2,7 @@
 tags: [faq, react]
 title: note-react-faq
 created: '2020-06-29T08:30:13.355Z'
-modified: '2020-06-29T13:37:19.389Z'
+modified: '2020-06-30T12:51:08.791Z'
 ---
 
 # note-react-faq
@@ -14,7 +14,7 @@ modified: '2020-06-29T13:37:19.389Z'
 - defaultProps设置默认值的方式
 - pass object literals as props create new object every render
 - If a parent component is updated, does React always update all the direct children within that component?
-  - No. React will only re-render a component if `shouldComponentUpdate()` returns `true`. 
+  - No. React will only re-render a component if `shouldComponentUpdate()` returns `true` . 
   - By default, that method always returns `true` to avoid any subtle bugs 
   - By default, if parent changes, all its direct children are re-rendered but that re-render doesn't necessarily changes the actual DOM. The DOM won't actually update unless something changed, lowering the impact
   - To prevent even re-rendering of virtual DOM
@@ -24,10 +24,10 @@ modified: '2020-06-29T13:37:19.389Z'
 - When will Function Component render?
 - 父子组件挂载的先后顺序、生命周期顺序、DOM生成顺序
   - 参考[implementation notes for stack reconciler](https://reactjs.org/docs/implementation-notes.html)
-  - mount时，顶层父组件最先调用`render()`，然后从上到下从外到内依次调用下层子组件的render
+  - mount时，顶层父组件最先调用 `render()` ，然后从上到下从外到内依次调用下层子组件的render
   - 接着调用最下层组件的didMount，依次向上调用didMount，最后调用顶层父组件的didMount
 - 使用context作为全局唯一store和redux的区别
-  - 
+
 - How does React know the component is removed from the DOM?
   - There is no watcher on the actual DOM. 
   - Everytime the render function of a component gets called, the Virtual DOM gets re-build. 
@@ -52,24 +52,24 @@ modified: '2020-06-29T13:37:19.389Z'
   - the React.cloneElement example only works if your child is a single React element.
   - For almost everything `this.props.children` is the one you want. Cloning is useful in some more advanced scenarios, where a parent sends in an element and the child component needs to change some props on that element or add things like ref for accessing the actual DOM element.
   - 常用来修改现有的组件，如添加onClick函数，通过cloneElement为组件添加新的属性
-  - React.Children提供了直接访问黑盒props.children数据结构的能力；
+  - React. Children提供了直接访问黑盒props.children数据结构的能力；
   - React.cloneElement接收一个React element并支持往其中浅层合并props，替换旧children；笔者看来该API可以从一定程度上减少代码的重复书写，使组件标签表达更加清晰
 - Is setting state with `this.setState` inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
   - Techincally yes.
   - setting a state directly in render method will cause the function to trigger re-render in case of class component causing an infinite loop which is the case for functional components provided the state values are different. Regardless of that, it will still cause an issue because any other state update will be reverted back due to functional component calling state update directly 
-  - In a class component, if we set state in the render method an infinite loop will occur. This is because the class component does not care that the new state is the same as the previous state. It just keeps re-rendering on every this.setState.Yes, hence its recommended not to call setState directly in render
+  - In a class component, if we set state in the render method an infinite loop will occur. This is because the class component does not care that the new state is the same as the previous state. It just keeps re-rendering on every this.setState. Yes, hence its recommended not to call setState directly in render
 - react中setState是同步的还是异步？
   - 合成事件中的setState是异步的
     - 合成事件是react为了解决跨平台封装的一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件
   - 生命周期钩子函数中的setState是异步的
   - 原生事件中的setState是同步执行的
     - 原生事件是指非react合成事件，原生自带的事件监听addEventListener
-    - 或者也可以用原生js、jq直接`document.querySelector().onclick`这种绑定事件的形式都属于原生事件.
+    - 或者也可以用原生js、jq直接 `document.querySelector().onclick` 这种绑定事件的形式都属于原生事件.
     - 当你在原生事件中setState后，能同步拿到更新后的state值
   - 不管是哪个场景(合成/原生/钩子)下，在基于event loop的模型下，setTimeout中去取setState总能拿到最新的state值
   - setState的“异步”并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的
     - 只是合成事件和钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，形式了所谓的“异步”
-    - 当然可以通过`setState(partialState, callback)` 的第二个参数callback拿到更新后的结果
+    - 当然可以通过 `setState(partialState, callback)` 的第二个参数callback拿到更新后的结果
   - setState的批量更新优化也是建立在“异步”（合成事件、钩子函数）之上的
     - 在原生事件和setTimeout 中不会批量更新
     - 在“异步”中如果对同一个值进行多次setState，setState的批量更新策略会对其进行覆盖，取最后一次的执行
@@ -123,7 +123,7 @@ modified: '2020-06-29T13:37:19.389Z'
   - manual-dom-mutation
   - sub and unsub
 - 为避免过多rerender的常用处理方式
-  - render props中函数每次执行时，都会新生成一个`value => <ValueUI value={value} />`函数，即Container的children属性，也就是说每次Main重渲染，Container的prop都会改变。解决方法是把这个函数独立出来，提取成renderValueUI()的单独函数
+  - render props中函数每次执行时，都会新生成一个 `value => <ValueUI value={value} />` 函数，即Container的children属性，也就是说每次Main重渲染，Container的prop都会改变。解决方法是把这个函数独立出来，提取成renderValueUI()的单独函数
   - Provider本身是一个组件，当它所处层级发生重渲染时，它与普通组件一样会触发自身与children的重渲染
       - 另一方面，只要Provider的value发生改变(使用Object.is来判断)，它的子树上的所有Consumer也都会发生重渲染
       - Main执行render -> render中的JSX重新解析(React.CreateElement) -> OtherComp执行render
@@ -131,7 +131,7 @@ modified: '2020-06-29T13:37:19.389Z'
   - ref
       - https://github.com/shaozj/blog/issues/36
       - https://www.jianshu.com/p/033409adf916
-- Context.Provider的value经常变化时，为避免过多rerender，应如何处理
+- Context. Provider的value经常变化时，为避免过多rerender，应如何处理
   - `<Context.Provider>` will only re-render if its children prop does not share reference equality with its previous children prop.
   - `<Context.Provider>` will not re-render if its value changes while its children stay the same. 
   - To ensure that the entire app isn’t re-rendered on each context change, you’ll need to keep the children prop of your providers equal between renders.
@@ -139,18 +139,18 @@ modified: '2020-06-29T13:37:19.389Z'
   - to put it simply, you just need to create a `<SomethingProvider>` component that doesn’t except any props other than children
   - try running with the **production** flags to see if your performance issue went away? Looking into the development bundle, 10ms of the time taken seems to be due to performance.measure markers being really bad for performance 
   - 问题案例
-      - https://blog.theodo.com/2019/07/how-i-ruined-my-application-performances-by-using-react-context-instead-of-redux/
-      - From my experience, when you experience slowness with redux, the problem is often not redux itself, but because of the way redux is being used
-      - This would kinda be a big deal for react-redux, actually, because we're trying to switch to using `createContext` in version 6 instead of having all connected components be separate subscribers.
-      - we(react-redux) stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
+    - https://blog.theodo.com/2019/07/how-i-ruined-my-application-performances-by-using-react-context-instead-of-redux/
+    - From my experience, when you experience slowness with redux, the problem is often not redux itself, but because of the way redux is being used
+    - This would kinda be a big deal for react-redux, actually, because we're trying to switch to using `createContext` in version 6 instead of having all connected components be separate subscribers.
+    - we(react-redux) stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
   - ref
-      - https://github.com/facebook/react/issues/15156
-      - https://github.com/facebook/react/issues/13739
-      - https://frontarm.com/james-k-nelson/react-context-performance/
-      - https://frontarm.com/james-k-nelson/when-context-replaces-redux/
-      - https://www.reddit.com/r/reactjs/comments/9kq2c7/react_context_isnt_for_state_management/
-      - https://www.reddit.com/r/reactjs/comments/a5sddz/redux_vs_context_api_performance/
-      - https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/
+    - https://github.com/facebook/react/issues/15156
+    - https://github.com/facebook/react/issues/13739
+    - https://frontarm.com/james-k-nelson/react-context-performance/
+    - https://frontarm.com/james-k-nelson/when-context-replaces-redux/
+    - https://www.reddit.com/r/reactjs/comments/9kq2c7/react_context_isnt_for_state_management/
+    - https://www.reddit.com/r/reactjs/comments/a5sddz/redux_vs_context_api_performance/
+    - https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/
 - 组件间通信的方式
   - props
   - context
@@ -213,7 +213,7 @@ modified: '2020-06-29T13:37:19.389Z'
   - 参考 https://jxnblk.com/blog/defining-component-apis-in-react/
 - 在react-window的FixedSizeList中，render()的return返回的是createElement
   - 若第3个参数有值，且使用组件时children部分也是组件，最终的渲染顺序应该怎样
-  - 思考的方向是组件最终会转换成React.createElement,children若有指定则直接用
+  - 思考的方向是组件最终会转换成React.createElement, children若有指定则直接用
 - react element vs component
   - react element is a plain js object that describes a DOM node and its attributes
   - react component is a factory for creating elements, accepting input and returning a React element
@@ -227,34 +227,37 @@ modified: '2020-06-29T13:37:19.389Z'
       - 取props发请求（loading external data specified by a source prop）
   - With 16.4.0 the expected behavior is for getDerivedStateFromProps to fire in all cases before shouldComponentUpdate.
   - `getDerivedStateFromProps` is invoked right before calling the render method, both on the initial mount and on subsequent updates
-      - 首次渲染也会调用
-      - It should return an object to update the state, or null to update nothing.
+    - 首次渲染也会调用
+    - It should return an object to update the state, or null to update nothing.
   - 参考
-      - http://www.ayqy.net/blog/%E4%BB%8Ecomponentwillreceiveprops%E8%AF%B4%E8%B5%B7/
+    - http://www.ayqy.net/blog/%E4%BB%8Ecomponentwillreceiveprops%E8%AF%B4%E8%B5%B7/
 - 当context变化后，与consumer同级但未被consumer包裹的组件会重新渲染吗
-  - App状态被改变，它的willUpdate与render方法会被调用，此时Context.Provider的value也被重新创建，value与之前不同，所以所有子组件包括非consumer组件也会被渲染
+  - App状态被改变，它的willUpdate与render方法会被调用，此时Context. Provider的value也被重新创建，value与之前不同，所以所有子组件包括非consumer组件也会被渲染
   - 解决方法是将provider的vaule值放到state，或创建一个独立的组件来管理state和Provider
   - 结论是provider的value属性值不要直接写字面量对象，建议在state中初始化
   - 参考
       - https://zhuanlan.zhihu.com/p/50336226
 - antd的国际化方案是如何基于context实现的
   - ConfigProvider组件的render()方法返回的是  
-      - `<ConfigConsumer>{this.renderProvider}</ConfigConsumer>;`  
-      - renderProvider由context api规定必须是函数，接收context作为参数，并返回react节点，本例返回如下
-      ```
-      <ConfigContext.Provider value={config}> //config由context计算得到
-          <LocaleProvider locale={locale} _ANT_MARK__={ANT_MARK}>
-              {children}
-          </LocaleProvider>
-      </ConfigContext.Provider>
-      ```
+    - `<ConfigConsumer>{this.renderProvider}</ConfigConsumer>;`
+    - renderProvider由context api规定必须是函数，接收context作为参数，并返回react节点，本例返回如下
+
+``` js
+  //config由context计算得到
+  <ConfigContext.Provider value={config}> 
+      <LocaleProvider locale={locale} _ANT_MARK__={ANT_MARK}>
+          {children}
+      </LocaleProvider>
+  </ConfigContext.Provider>
+```
+
   - ConfigProvider自身并没有实现国际化，而是依赖LocaleProvider实现国际化
   - 这样做的作用是在ConfigProvider的上层组件使用context的defaultValue(因为上层组件一般不会再有provider了，还可以有其他默认值)，而在它的下层组件使用当前传入的context，这也要求下层具体UI组件最外层必须是ConfigConsumer和LocaleReceiver
   - ConfigProvider相关配置
       - prefixCls：设置样式命名统一前缀
       - renderEmpty：自定义组件空状态
       - autoInsertSpaceInButton：若false，则移除按钮中汉字之间的空格
-      - csp：部分组件为了支持波纹效果，使用了动态样式，如果开启了Content Security Policy(CSP)，你可以通过`csp`属性来进行配置
+      - csp：部分组件为了支持波纹效果，使用了动态样式，如果开启了Content Security Policy(CSP)，你可以通过 `csp` 属性来进行配置
       - locale
       - getPopupContainer：弹出框（Select, Tooltip, Menu等）渲染父节点，默认渲染到body上
 - hoc vs render props
@@ -285,11 +288,10 @@ modified: '2020-06-29T13:37:19.389Z'
 - react PropTypes vs typescript 
   - TypeScript validate types at compile time while PropTypes validate types at runtime
   - When you build for production and are using prop types, ensure to remove them. If using Create React App, this is already handled for you
-  - 参考
-      - https://www.jianshu.com/p/3609626bd43a
-      - 没有propTypes定义，组件依然能够正常工作，而且，即使在propTypes检查出错的情况下，组件依然能工作，propTypes只是一个辅助开发的功能，并不会改变组件的行为
-      - 还要考虑以后复用propTypes的问题
-      - 当项目是TS+JS混合开发时，并不能保证引用你组件的开发者使用了TS，PropTypes至少能够在它们运行期间进行验证
-      - 同时维护TypeScript Type和 React PropTypes也是一件很痛苦的事情，如果能有一个工具可以在编译时自动从TypeScript interface生成PropTypes就方便了
-      - https://github.com/milesj/babel-plugin-typescript-to-proptypes
-
+  - ref
+    - https://www.jianshu.com/p/3609626bd43a
+    - 没有propTypes定义，组件依然能够正常工作，而且，即使在propTypes检查出错的情况下，组件依然能工作，propTypes只是一个辅助开发的功能，并不会改变组件的行为
+    - 还要考虑以后复用propTypes的问题
+    - 当项目是TS+JS混合开发时，并不能保证引用你组件的开发者使用了TS，PropTypes至少能够在它们运行期间进行验证
+    - 同时维护TypeScript Type和 React PropTypes也是一件很痛苦的事情，如果能有一个工具可以在编译时自动从TypeScript interface生成PropTypes就方便了
+    - https://github.com/milesj/babel-plugin-typescript-to-proptypes

@@ -9,6 +9,7 @@ modified: '2020-06-29T15:50:55.313Z'
 # log-deving-react
 
 ## tips
+
 - react开放的生态
   - 异步流方案、状态管理方案、不可变数据结构、服务端渲染方案、组件抽象方案
   - 选择方式：面向star的编程、大公司支持、团队技术擅长
@@ -27,7 +28,7 @@ modified: '2020-06-29T15:50:55.313Z'
 - componentWillMount and render methods should not have side effects. 
 - Side effects (like modifying the DOM) are only safe in componentDidMount, componentDidUpdate, and componentWillUnmount methods.
 - ref使用
-  - 基础组件最好都加上`forwardRef`，如果不加很可能出错
+  - 基础组件最好都加上 `forwardRef` ，如果不加很可能出错
   - 实例：Input要计算forwardRef，是因为当用做OverlayTrigger的children时，需要通过HTMLElement去计算clientRect，from react-ui-components
 - 请求相关问题-waterfalls 
   - 当请求存在依赖关系时，一个请求结束，才开始下一个请求，等待的时间过长
@@ -53,18 +54,20 @@ modified: '2020-06-29T15:50:55.313Z'
       - 在render方法中使用箭头函数或bind，都会有问题
           - Using Function.prototype.bind in render creates a new function each time the component renders, which may have performance implications
   - 示例
-  ```
-      <a onClick={() => this.props.handleClick(this.props.item)} />
-          更好的方式如下
+    - `<a onClick={() => this.props.handleClick(this.props.item)} />`
+
+``` js
+      // 更好的方式如下
       <a  onClick={this.onClick} />
       onClick = () => { this.props.handleClick(this.props.item); }
-  ```
+```
+
   - ref
       - https://stackoverflow.com/questions/39226757/react-passing-parameter-with-arrow-function-in-child-component
       - https://stackoverflow.com/questions/47679673/how-does-event-handlers-with-arrow-functions-achieve-context-binding
-- 通过`cloneElement(element`,[extraProps],[...children])直接给children添加新props，灵活性很高
+- 通过 `cloneElement(element` , [extraProps], [...children])直接给children添加新props，灵活性很高
   - 参考案例包括react-draggable/resizable
-  - 通过`createElement(children`,props,children)也能直接给children添加新属性
+  - 通过 `createElement(children` , props, children)也能直接给children添加新属性
 - `getDerivedStateFromProps(props, state)`
   - 会在调用render()方法前调用，具体包括
       - 首次挂载时在调用constructor之后
@@ -81,19 +84,23 @@ modified: '2020-06-29T15:50:55.313Z'
   - Clone and return a new React element 
   - The resulting element will have the original element’s props with the new props merged in shallowly. 
   - New children will replace existing children. 
-  - `key` and `ref` from the original element will be `preserved`.
+  - `key` and `ref` from the original element will be `preserved` .
   - React.cloneElement(this.props.children, this.props) 
-```
+
+``` js
 React.cloneElement(
-element,
-[props],
-[...children]
+  element,
+  [props],
+  [...children]
 )
-```  
-is almost equivalent to   
 ```
+
+  - is almost equivalent to   
+
+``` js
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
+
 - 条件渲染
   - 使用场景
       - 数据为空, 空页面
@@ -123,19 +130,19 @@ is almost equivalent to
 - props改变
   - 先触发componentWillReceiveProps
   - 然后利用shouldComponentUpdate判断是否需要重新渲染
-  - 如果不需要渲染,状态不变,不执行其他操作
+  - 如果不需要渲染, 状态不变, 不执行其他操作
 - state改变
   - 直接利用shouldComponentUpdate判断是否需要重新渲染
-  - 如果不需要渲染,走2->3 ; 如果不需要渲染,状态不变,不执行其他操作
+  - 如果不需要渲染, 走2->3 ; 如果不需要渲染, 状态不变, 不执行其他操作
 - 将函数作为属性传递的6种方式
   - https://daveceddia.com/avoid-bind-when-passing-props/
   - 推荐使用箭头函数定义，然后直接传递函数名，不要在属性值中bind
 - render props
   - 定义类组件时，在render()方法中使用**值为函数的属性**
   - 使用方式
-      - 定义组件时，在组件的render()方法return()部分调用`this.props.f(param)`
-      - 使用组件时，给组件中添加名为f的属性`f=()=>()`
-      - 从组件jsx内部实现考虑`React.createElement(type,props,children[])`
+      - 定义组件时，在组件的render()方法return()部分调用 `this.props.f(param)`
+      - 使用组件时，给组件中添加名为f的属性 `f=()=>()`
+      - 从组件jsx内部实现考虑 `React.createElement(type,props,children[])`
   - 定义组件时，在render()或函数方法中直接向children/任意名称传递props数据，使用时将函数作为组件children/任意名称属性的值
       - 使用children作为属性名的好处是使用组件时，可直接写在子组件的位置写上函数
       - 若使用其他任意名称，则需要在使用组件时显式写出属性名称并传递函数
@@ -146,35 +153,35 @@ is almost equivalent to
   - 使用场景是跨层级、跨组件数据通信
   - 新版本的Context只能在render方法里面访问，因为Context只暴露在Consumer的render prop里面，若要在生命周期中访问context，需要在包裹组件，将context作为属性传递给该组件
   - 当你封装完一个Consumer之后，或许你想要用ref来获取Consumer里面根组件的实例或者对应的DOM，如果直接在Consumer上使用ref，是得不到想要的结果的，React.forwardRef
-  - `getChildContext` function will be called when the state or props changes. (e.g.`getChildContext(){return {type:this.state.type};}`)
+  - `getChildContext` function will be called when the state or props changes. (e.g. `getChildContext(){return {type:this.state.type};}` )
       - In order to update data in the context, trigger a local state update with this.setState. This will trigger a new context and changes will be received by the children.
       - if a context value changes, descendants that use that value won’t update if an intermediate parent returns `false` from `shouldComponentUpdate`
   - 参考
       - https://juejin.im/post/5ac598916fb9a028ca53333c
       - https://juejin.im/post/5c74026ce51d4520f0178e06
 - hoc
-  - HOC属于静态构建,静态构建即是重新生成一个组件，即返回的新组件不会马上渲染，HOC工厂函数里定义的生命周期函数只有新组件渲染时才会执行
+  - HOC属于静态构建, 静态构建即是重新生成一个组件，即返回的新组件不会马上渲染，HOC工厂函数里定义的生命周期函数只有新组件渲染时才会执行
 - props.children的理解
   - In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop: `props.children`
-  - 所有嵌套在组件中的JSX结构都可以在组件内部通过`props.children`获取到
+  - 所有嵌套在组件中的JSX结构都可以在组件内部通过 `props.children` 获取到
   - children本身就是一个属性，属性名就是children，属性值可以是jsx或返回jsx的函数
   - 只有当子节点多余1个时，this.props.children才是一个数组，否则是不能用map方法的，使用children[i]还可以实现容器类布局组件的开发
   - props.children可以是普通字符串、jsx组件、返回字符串或jsx组件的函数
   - this.props.children用在class定义的类中，函数式组件中无this
-  - 在render()方法中只包含`return this.props.children`的组件可以用来做容器组件，只包含业务逻辑，等价于`return <div>{ this.props.children }</div>`
+  - 在render()方法中只包含 `return this.props.children` 的组件可以用来做容器组件，只包含业务逻辑，等价于 `return <div>{ this.props.children }</div>`
   - http://huziketang.mangojuice.top/books/react/lesson22
   - false, null, undefined, and true are valid children. They simply don’t render. These JSX expressions will all render to the same thing
 - 用户要离开页面的时候提示用户正在编辑是否确认要离开，react-router4提供了prompt
 - 组件export时使用装饰器会改变ref
 - ReactDom.render()不仅能写在页尾，也可以写在函数体中
 - React的props 有两个是私有的：key 和 ref，这两者是不能作为普通props传递给子组件的
-- `{...this.props}`不要滥用，请只传递component需要的props，传得太多，或者层次传得太深，都会加重shouldComponentUpdate里面的数据比较负担，因此，也请慎用spread attributes `<Component {...props} />`
+- `{...this.props}` 不要滥用，请只传递component需要的props，传得太多，或者层次传得太深，都会加重shouldComponentUpdate里面的数据比较负担，因此，也请慎用spread attributes `<Component {...props} />`
 - 不需要传入状态的component写成const element的形式，这样能加快初始渲染速度
-- react官方提供插件React.addons.Perf可以帮助我们分析组件的性能，以确定是否需要优化
-  - React 16干掉了React.addons.Perf，官方推荐使用浏览器的profiling tools 
+- react官方提供插件React.addons. Perf可以帮助我们分析组件的性能，以确定是否需要优化
+  - React 16干掉了React.addons. Perf，官方推荐使用浏览器的profiling tools 
   - react-perf-tool为React应用提供了一种可视化的性能检测方案，该工程同样是基于React.addons，但是使用图表来显示结果
 - 首屏时间可能会比较原生的慢一些，可以尝试用React Server Render(又称Isomorphic)去提高效率，还有利于SEO
-- 推荐在`componentDidMount()`中发起数据请求
+- 推荐在 `componentDidMount()` 中发起数据请求
   - https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
       - There is a common misconception that fetching in componentWillMount lets you avoid the first empty rendering state.
       - In practice this was never true because React has always executed render immediately after componentWillMount. 
@@ -197,7 +204,7 @@ is almost equivalent to
       - 原生DOM元素标签，如div
       - React Component
       - Fragment `<>`
-      - `ReactDOM.createPortal(child, container)`,参数2是DOMNode
+      - `ReactDOM.createPortal(child, container)` ,参数2是DOMNode
       - 字符串和数字，被渲染成text节点
       - boolean和null，不会渲染任何东西
 - react包
@@ -207,20 +214,23 @@ is almost equivalent to
       - ReactDOMServer.renderToString, .renderToStaticMarkup.
   - prop-types
 - 常用的受控组件
-  - input,textarea,select,checkbox,radio,form
+  - input, textarea, select, checkbox, radio, form
 - 高阶组件 Higher-Order Components  
   - 高阶组件是一个函数，接收一个组件作为输入，返回一个功能进行处理后的新组件      
   - 多个hoc嵌套的执行顺序 
-  `withDefaultProps(withCalSize(withAccessor(withTooltip(PiePlot))));`   
+
+ `withDefaultProps(withCalSize(withAccessor(withTooltip(PiePlot))));`
   属性从外层向里传，越来越多  
+
   - 使用  
       - 高阶组件调用wrapper组件的方法：使用ref    
-      ```js
+
+``` js
             var Wrapper = (Home) => {
               return React.createClass({
                 render() {
                   return (
-                      <div>
+                    <div>
                           <button onClick={() => {this.home.someFunc()}} />
                           <Home
                               {...this.props}
@@ -231,7 +241,8 @@ is almost equivalent to
                 }
               })
             }
-      ```
+```
+
   - 注意事项
       - 不要在render()方法中使用高阶组件
       - wrapped组件的静态方法要手动拷贝
@@ -247,8 +258,8 @@ is almost equivalent to
   - 组件声明周期
   - 单向数据流
 
-
 ## react events
+
 - SyntheticEvent是支持跨览器原生事件接口的跨浏览器实现
 - The SyntheticEvent is pooled
 - SyntheticEvent object will be reused and all properties will be nullified after the event callback has been invoked
@@ -258,5 +269,3 @@ is almost equivalent to
 - If you want to access the event properties in an asynchronous way, you should call `event.persist()` on the event, which will remove the synthetic event from the pool and allow references to the event to be retained by user code.
 - 如果要以异步方式访问事件属性，则应调用event.persist()，该方法将从池中删除合成事件，并允许用户代码保留对事件的引用
 - 在使用debounce函数时，其内部实际上是使用setTimeout异步调用回调函数，所以直接在debounce函数内部获取外部的event对象是不能直接拿到的，这时调用event.persist()就可以拿到事件的引用
-
-

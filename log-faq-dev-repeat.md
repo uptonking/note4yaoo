@@ -7,7 +7,6 @@ modified: '2020-06-30T05:21:55.764Z'
 
 # log-faq-dev-repeat
 
-
 - js function declaration vs function expression(named/anonymous)
   - 匿名函数表达式无法递归调用自身(arguments.callee无法在严格模式)，具名可以
   - 调试时的可读性
@@ -19,40 +18,43 @@ modified: '2020-06-30T05:21:55.764Z'
   - If we declare the variable as function funcName(){}, then the immutability of the variable is the same as declaring it with var。
     - function expression can be const
     - function declaration name can be reassigned, too
-  - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block (`{ ... }`) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 
+  - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block ( `{ ... }` ) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 
     - The only way Expression is allowed directly within Block is when it is part of ExpressionStatement. 
     - However, ExpressionStatement is explicitly defined to not begin with "function" keyword, and this is exactly why Function Declaration cannot appear directly within a Statement or Block (note that Block is merely a list of Statements).
   - ref
     - http://kangax.github.io/nfe/
     - https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
-- `var arr=[1,2,3]; arr.count=3;` 
-  - console.log(arr)得到`[1, 2, 3, b: 33]`
+- `var arr=[1,2,3]; arr.count=3;`
+  - console.log(arr)得到 `[1, 2, 3, b: 33]`
   - arr.length得到3
   - 可以借助此方法对数组插值，参考styled-system的responsive array prop value
 - Is it possible to have a comment inside a es6 template string?
   - comment in expression interpolation  
-  ```
+
+``` js
   const fields = `
     id, ${ /* post id */'' }
     message, ${ /* post status/message */'' }
     created_time
   `;
-  ```
+```
+
   - parse comment in tag function  
-  ```  
+
+``` js
   const commented = (strings, ...values) => {
     const pattern = /\/{2}.+$/gm; // basic idea
 
     return strings.map(
-          (str, i) => 
-            `${str}${values[i] !== undefined ? values[i] : ''}`
-          )
-          .join('')
-          .replace(pattern, '');
-      };
+        (str, i) =>
+ `${str}${values[i] !== undefined ? values[i] : ''}`
+      )
+      .join('')
+      .replace(pattern, '');
+  };
 
   const d = 10;
-  const fields = commented`
+  const fields = commented `
     ${d}
     id, // post ID
     ${d}
@@ -61,7 +63,8 @@ modified: '2020-06-30T05:21:55.764Z'
     permalink_uri,
     type
   `;
-  ```
+```
+
 - firefox与chrome滚动条样式不一致，应该如何处理
   - 结论
     - 选择1：放弃自定义滚动条，使用系统默认的，各操作系统实现的滚动条不一致
@@ -88,5 +91,3 @@ modified: '2020-06-30T05:21:55.764Z'
         - In contrast chrome uses a customized scrollbar instead of the default so it looks consistent in every OS it uses.
 - 前后端分离导致的单点登录不可用如何解决
   - 使用json web token，每个请求都带身份认证id
-
-

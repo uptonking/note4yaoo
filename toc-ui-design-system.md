@@ -9,6 +9,7 @@ modified: '2020-06-22T09:25:10.670Z'
 # toc-ui-design-system
 
 ## design-system
+
 - Ant Design  /MIT/51kStar/201908/ts/Alibaba
   - https://github.com/ant-design/ant-design
   - https://ant.design/
@@ -72,7 +73,7 @@ modified: '2020-06-22T09:25:10.670Z'
   - https://github.com/pivotal-cf/pivotal-ui
   - https://styleguide.pivotal.io/
   - Pivotal's design system & component library
-- GOV.UK Design System  /MIT/290Star/201912
+- GOV. UK Design System  /MIT/290Star/201912
   - https://github.com/alphagov/govuk-frontend
   - https://design-system.service.gov.uk/
   - build a user interface for government platforms and services    
@@ -81,7 +82,7 @@ modified: '2020-06-22T09:25:10.670Z'
 - United States Web Design System(uswds)  /CC01.0/5400Star/201912
   - https://github.com/uswds/uswds
   - https://designsystem.digital.gov/
-  - visual style guide for U.S. federal government websites.
+  - visual style guide for U. S. federal government websites.
   - https://design.va.gov/
       - VA.gov is built on top of VA's design system (VADS). 
       - VADS is based on the US Web Design System

@@ -8,6 +8,5 @@ modified: '2020-06-28T12:47:01.230Z'
 # note-web-browser-chrome
 
 ## DevTools
+
 - https://developers.google.com/web/tools/chrome-devtools
-
-

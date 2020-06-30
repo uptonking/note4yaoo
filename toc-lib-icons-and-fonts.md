@@ -8,6 +8,7 @@ modified: '2020-06-22T09:24:10.801Z'
 # toc-lib-icons-and-fonts
 
 ## icons
+
 - feather  /MIT/16kStar/201908
   - https://github.com/feathericons/feather
   - https://feathericons.com/
@@ -26,7 +27,7 @@ modified: '2020-06-22T09:24:10.801Z'
   - https://github.com/Templarian/MaterialDesign
   - https://materialdesignicons.com/
   - converted icons from Google's official icon set
-  - available via Webfont/SCSS,JavaScript/TypeScript,SVG/Meta.json,react
+  - available via Webfont/SCSS, JavaScript/TypeScript, SVG/Meta.json, react
 - react-icons  /MIT/3kStar/201905
   - https://github.com/react-icons/react-icons
   - https://react-icons.netlify.com/

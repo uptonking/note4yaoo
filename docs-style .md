@@ -3,12 +3,13 @@ favorited: true
 tags: [docs, style, web]
 title: docs-style
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-06-30T05:28:41.048Z'
+modified: '2020-06-30T12:41:05.207Z'
 ---
 
 # docs-style
 
 ## dev-tips
+
 - 如何复用现有项目的样式和第三方库的样式
   - 必需支持class或className
 - 如何将本项目作为库提供给其他人使用
@@ -25,39 +26,54 @@ modified: '2020-06-30T05:28:41.048Z'
   - Most libraries offer ways to handle dynamic styling
   - easier to write unit tests with CSS-in-JS
   - ref
-      - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
-      - https://mxstbr.com/thoughts/css-in-js
+    - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
+    - https://mxstbr.com/thoughts/css-in-js
 
 ## docs-bulma
+
 ### basic
+
 - https://bulma.io/documentation/overview/start/
 - https://github.com/jgthms/bulma
+
 ### docs
+
 - By default, columns are only activated from tablet onwards. 
   - This means columns are stacked on top of each other on mobile.
 - Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
+
 ### book-Creating Interfaces with Bulma_Jeremy Thomas_2018
+
 - bulma features
   - modern css framework with flexbox
   - 100% responsive, designed to be both mobile and desktop friendly
   - customizable with over 300 sass variables
   - css only, no js
+
 ### theme-for-bulma
+
 - https://jenil.github.io/bulmaswatch/
 
 ## docs-linaria
+
 ### basic
+
 - https://github.com/callstack/linaria
 - https://linaria.now.sh/
 - https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md
+
 ### pieces
 
 ## docs-emotion
+
 ### basic
+
 - https://emotion.sh/
 - https://github.com/emotion-js/emotion
 - Emotion is a library designed for writing css styles with JavaScript
+
 ### faq
+
 - emotion创建样式的组件，可以提取成单独的css吗
   - 旧版本可以，v10新版本不行
   - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.
@@ -69,7 +85,7 @@ modified: '2020-06-30T05:28:41.048Z'
   - ref
       - https://github.com/jsjoeio/styled-components-vs-emotion
 - s-c的问题
-  - 嵌套过深，每个组件如styled.button下有StyledComp,还有2个Context.Consumer
+  - 嵌套过深，每个组件如styled.button下有StyledComp, 还有2个Context. Consumer
       - styled-components v5已解决嵌套过深的问题
   - css prop需要babel插件支持 
 - emotion优势
@@ -78,17 +94,16 @@ modified: '2020-06-30T05:28:41.048Z'
   - ref
       - https://theme-ui.com/motivation/  (why emotion part)
 - emotion问题
-  - 缺少`.attrs()`方法传递属性
-      - https://github.com/emotion-js/emotion/issues/821
-      - `const withAttrs = (Component, attrs) => props => <Component {...attrs} {...props}/>`
-      - 使用css prop的方式     
-      `const MyComponent = props => (<input css={{}} {...props} />`
-
+  - 缺少 `.attrs()` 方法传递属性
+    - https://github.com/emotion-js/emotion/issues/821
+    - `const withAttrs = (Component, attrs) => props => <Component {...attrs} {...props}/>`
+    - 使用css prop `const MyComponent = props => (<input css={{}} {...props} />`
 - styled形式组件的样式可通过再次styled复用已有组件的样式，如何复用css prop的样式
 - className vs css prop
   - className属性的值是字符串，想在生成字符串的过程中获取组件props，要么显式传入this.props，要么创建高阶组件隐式获取props再计算，所以通用的方法推荐使用css prop
   - className example
-  ```
+
+``` js
   <div
     className={css({
       backgroundColor: 'hotpink',
@@ -106,9 +121,12 @@ modified: '2020-06-30T05:28:41.048Z'
       }
     `}
   >
-  ```
+  
+```
+
   - css prop example
-  ```
+
+``` js
   <div
     css={{
         backgroundColor: 'hotpink',
@@ -126,20 +144,25 @@ modified: '2020-06-30T05:28:41.048Z'
       }
     `}
   >
-  ```
+  
+```
+
 - s-c vs emotion
   - https://github.com/jsjoeio/styled-components-vs-emotion
   - https://github.com/emotion-js/emotion/issues/113
   - https://material-ui.com/zh/guides/interoperability/
   - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
+
 ### emotion-docs
+
 - emotion - framework agnostic
   -  use `css` function to generate class names and `cx` to compose them
   - Requires no additional setup, babel plugin, or other config changes.
   - `css` prop is not used or needed.
   - Server side rendering requires additional work to set up
   - Emotion is not using a "standard" autoprefixer (which works during build) - it ships with its own runtime parser ( thysultan/stylis.js ) which comes with autoprefixing and it's enabled for you by default.
-  ```
+
+``` js
   import { css, cx } from 'emotion'
   const colorW = 'white'
   render(
@@ -156,7 +179,8 @@ modified: '2020-06-30T05:28:41.048Z'
       Hover to change color.
     </div>
   )
-  ```
+```
+
 - @emotion/core - for react (emotion vs @emotion-core)
   - `css` prop support
       - Similar to the `style` prop but adds support for nested selectors, media queries, and auto-prefixing
@@ -174,12 +198,16 @@ modified: '2020-06-30T05:28:41.048Z'
   - emotion itself is react-independent. it doesn't really have theming built in 
 - changelog
   - 10.0.0-201810-new package name, better css prop, Global comp
-  
+
 ## docs-styled-components
+
 ### basic
+
 - https://www.styled-components.com/docs/basics
 - https://github.com/styled-components/styled-components
+
 ### faq
+
 - 实现原理
 - https://dev.to/stereobooster/styled-components-one-more-time-5g0l
 - styled(MyComp)会传递所有属性，如何只传递指定属性
@@ -194,16 +222,16 @@ modified: '2020-06-30T05:28:41.048Z'
   - webpack plugin , at build time, extracts static styles defined on jsxstyle components into separate CSS file and in some cases entirely removes the need for runtime jsxstyle
 - style vs className
   - 使用inline style动态修改样式更方便
-  - inline styling does not support pseudos, media queries, keyframes,auto-prefix
+  - inline styling does not support pseudos, media queries, keyframes, auto-prefix
       - className is better for debugging
   - The obvious conclusion must be that changing the className of an element is faster than changing its style (except in Safari)
-  - with inline styles, the browser spends more time both scripting and rendering. It spends more time in scripting because it has to map all the styles rules passed in to the component to actual css rules (remember, you have to camelCase all your css rules when using inline css in react). It ends up spending more time rendering because it has to calculate the styles for 10,000 divs each second.
-  - Inline styles take more size in the DOM, are converted more slowly from VDOM (have probably a bigger impact on memory), and take more time to be handled by the browser.But they have no impact on performance once it’s rendered.
+  - with inline styles, the browser spends more time both scripting and rendering. It spends more time in scripting because it has to map all the styles rules passed in to the component to actual css rules (remember, you have to camelCase all your css rules when using inline css in react). It ends up spending more time rendering because it has to calculate the styles for 10, 000 divs each second.
+  - Inline styles take more size in the DOM, are converted more slowly from VDOM (have probably a bigger impact on memory), and take more time to be handled by the browser. But they have no impact on performance once it’s rendered.
   - ref
-      - https://quirksmode.org/dom/classchange.html
-      - https://webkit.org/blog/13/classname-vs-style/
-      - https://medium.com/@swazza85/use-css-modules-instead-of-inlining-styles-in-react-fea247b97431
-      - https://www.sderosiaux.com/articles/2015/08/17/react-inline-styles-vs-css-stupid-benchmark/
+    - https://quirksmode.org/dom/classchange.html
+    - https://webkit.org/blog/13/classname-vs-style/
+    - https://medium.com/@swazza85/use-css-modules-instead-of-inlining-styles-in-react-fea247b97431
+    - https://www.sderosiaux.com/articles/2015/08/17/react-inline-styles-vs-css-stupid-benchmark/
 - inline styles/js vs external .css/.js 
   - Inlining everything is the ultimate way to reduce the number of requests (in theory to one). But it’s not the best way to make your site faster.  
       - inline的3个问题：缓存、按需加载、预加载、修改与维护
@@ -219,7 +247,7 @@ modified: '2020-06-30T05:28:41.048Z'
   - However, putting styling at element level would mean that you cannot cache the CSS style rules separately. Usually putting styles in CSS files would allow the caching to be done, thus reducing the amount of load from the server each time you load a page.
   - Putting style rules at the element level will also make you lose track of what elements are styled what way. It might also backfire the performance boost of painting a particular element where you can repaint multiple elements together. Using CSS files separates the CSS from HTML, and thus allows you to make sure that your styles are correct and it's **easier to modify** later on. Inline styles are not easy to maintain.
   - className可复用现有的大量css样式库
-  - I can suggest using JavaScript codes to create the CSS codes ahead of time and then just post the compiled CSS codes on the server for download by the client, rather than having the CSS codes being made up by the client.Also, I think you should not use the HTML "style" attribute; it is bad for accessibility. Use the "class" attribute instead.
+  - I can suggest using JavaScript codes to create the CSS codes ahead of time and then just post the compiled CSS codes on the server for download by the client, rather than having the CSS codes being made up by the client. Also, I think you should not use the HTML "style" attribute; it is bad for accessibility. Use the "class" attribute instead.
   - It's around three times as fast to create and render elements that use classNames, rather than style attributes. I was quite surprised by that. Browser processes className CSS rule only once, whereas it has to do it each time when it encounters style in an attribute. Furthermore browser might keep in cache already processed CSS file (if you use external CSS file) and on repeated view style calculations might be much faster.
   - ref       
       - https://jsperf.com/style-element-vs-attr
@@ -238,7 +266,7 @@ modified: '2020-06-30T05:28:41.048Z'
   - s-c每次渲染都会重新计算cssRule，并进行hash计算出className，如果已经对应的className还没插入到样式表中，则使用stylis进行预处理，并插入到样式表中
   - s-c对静态cssRule(没有任何内插函数)进行了优化，它们不会监听ThemeContext变化, 且在渲染时不会重新计算
   - s-c并不会对已有样式中的不变的部分规则进行复用，一旦状态变化s-c会生成一个全新的样式规则和类名, 这避免了样式复用的复杂性，同时保持样式的隔离性，问题是会产生样式冗余
-  - s-c会为每个状态生成一个样式表,动画一般会有很多中间值，在短时间内进行变化，如果动画值通过props传入该StyledComponent来应用样式，这样会生成很多样式,动画场景最好使用style内联样式来做
+  - s-c会为每个状态生成一个样式表, 动画一般会有很多中间值，在短时间内进行变化，如果动画值通过props传入该StyledComponent来应用样式，这样会生成很多样式, 动画场景最好使用style内联样式来做
       - 不是指不要使用CSS动画(animation|transition), 而是指js控制动画，变动StyledComponent的props值
   - does not use inline styles
   - 参考
@@ -249,7 +277,7 @@ modified: '2020-06-30T05:28:41.048Z'
   - 样式相关变量可以共享，都是作为在js中的变量
   - 支持样式组件继承(styled)，方便代码复用
   - 样式也作为一种组件
-  - 能通过`$(CompName)`直接选择其他react组件设置样式
+  - 能通过 `$(CompName)` 直接选择其他react组件设置样式
   - 支持ssr和react-native
   - powerful js
   - 保持dom结构与样式分离的同时，不使用class，不需要跳转多文件，也不是内联样式
@@ -287,13 +315,14 @@ modified: '2020-06-30T05:28:41.048Z'
   - For our use case, we didn’t convert our entire project to Styled Components. We chose to keep majority of CSS in the more traditional (i.e. separated) file structure and **use styled-components for elements whose styling (colors, images, etc.) is configured by the user**
   - What We Loved About Styled Components
       - It Makes Components Less Bulky
-          - s-c also helps to keep the concerns of styling and element architecture separated 
-          - s-c gives control of those states back to CSS instead of using a multitude of conditional class names
-          - Instead of relying on two separate style objects and having to use React event handlers to setup a simple hover state, we use a styled component. This makes it easy to inject values that only exist in JavaScript into our CSS while still allowing CSS to handle the various UI states.
+        - s-c also helps to keep the concerns of styling and element architecture separated 
+        - s-c gives control of those states back to CSS instead of using a multitude of conditional class names
+        - Instead of relying on two separate style objects and having to use React event handlers to setup a simple hover state, we use a styled component. 
+        - This makes it easy to inject values that only exist in JavaScript into our CSS while still allowing CSS to handle the various UI states.
       - ThemeProvider is useful when building a configurable page
       - powerful CSS Function
-          - use props to conditionally render css instead of rendering conditional class names based on props
-          - easy if we wanted to add a third state of button style
+        - use props to conditionally render css instead of rendering conditional class names based on props
+        - easy if we wanted to add a third state of button style
       - easy to test
   - What We Found Frustrating About Styled Components
       - There were certain style rules that we found hard to apply to Styled Components; namely, rules that set the placement of an element on a page (e.g. margin or display properties). They were difficult to standardize, so we still ended up leaning heavily on plain ol’ CSS for component placement in the flow of elements.
@@ -309,7 +338,9 @@ modified: '2020-06-30T05:28:41.048Z'
       - https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21
       - https://blog.logrocket.com/8-reasons-to-use-styled-components-cf3788f0bb4d/
       - https://dev.to/christopherkade/styled-component-what-why-and-how-5gh3
+
 ### summary
+
 - s-c是典型的css-in-js样式解决方案
 - s-c使用ES6的字符串模板方式来定义css样式，这样使得css的写法与原生的css写法基本一致，不用按照react的camelCase写样式
 - css()
@@ -317,7 +348,7 @@ modified: '2020-06-30T05:28:41.048Z'
 - s-c原理
   - When you import the library first time in you app, it creates an internal `counter` variable to count all the components created via the `styled` factory.
   - When styled-components creates a new component, it also creates internal identifier componentId using MurmurHash algorithm
-  - As soon as the identifier is created, styled-components inserts new HTML `<style>` element into the` <head>` (if it is the first component and the element is not inserted yet) of your page and adds special comment marker with the componentId to the element which will be used later. 
+  - As soon as the identifier is created, styled-components inserts new HTML `<style>` element into the ` <head>` (if it is the first component and the element is not inserted yet) of your page and adds special comment marker with the componentId to the element which will be used later. 
   - components are inherited from hidden `BaseStyledComponent` class which implements several lifecycle methods
   - `componentWillMount()` of BaseStyledComponent
       1. Evaluating tagged template
@@ -334,7 +365,7 @@ modified: '2020-06-30T05:28:41.048Z'
       - https://medium.com/styled-components/how-styled-components-works-618a69970421
       - my personal rule is to use the style attr for all dynamic styles with undermined number of results.
       - But if you have variety of buttons like default, primary, warn and etc. in one component it is ok to use interpolation with conditions in the styles string.
-      -  react-transition-group is so simple. If we use styled-componets,`<Transition>` component may be better than `<CSSTransition>`
+      -  react-transition-group is so simple. If we use styled-componets, `<Transition>` component may be better than `<CSSTransition>`
       - if you are using animations with styled-components you need to put them on the .attrs({})`` and not the style itself. Look at your inspector, the className changes on each redraw
 - s-c最终生成的是随机字符串类名，能解决命名冲突，设置到dom中的不是内联样式
 - s-c也有一套用JS实现的预处理器工具库polished，其中包括一些常用的CSS方法，比如 clearfix、hsl、mix 等，让开发者可以完全不再使用css预处理器来写css了
@@ -350,7 +381,9 @@ modified: '2020-06-30T05:28:41.048Z'
 - 调整特指度的方式
   - The ampersand(&) can be used to refer back to the main component
   - The ampersand(&) can be used to increase the specificity of rules on the component
+
 ### styled-components-docs
+
 - The rule of thumb is to use `attrs` when you want every instance of a styled component to have that prop, and pass `props` directly when every instance needs a different one
   - you can set a property on attrs to a function that computes that prop based on other props.
 - ThemeProvider provides a theme to all React components underneath itself via the context API
@@ -364,74 +397,86 @@ modified: '2020-06-30T05:28:41.048Z'
   - 4.0.0-201810-A brand new createGlobalStyle API, support as, ref prop
   - 4.1.2-201811-native support for the css prop
   - 5.0.0-2019-alpha-no breaking, rewrite with hooks to no wrapper hell
+
 ### qucikstart
+
 - demo
-```
+
+``` js
 import styled from 'styled-components';
-const Wrapper = styled.div`
+const Wrapper = styled.div `
 margin: 0 auto;
 width: 300px;
 `;
-const Button = styled.button`
+const Button = styled.button `
 width: 100px;
 color: blue;
 `;
 render(
-<Wrapper>
+  <Wrapper>
   <Button>Hello World</Button>
 </Wrapper>
 );
 ```
+
 - demo2
-```
+
+``` js
 const Button = () => <button></button>
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)
+`
 //style goes here
 `;
 export default StyledButton;
 import Button from './Button';
-const FormContainer = styled.form`
+const FormContainer = styled.form `
 ${Button] {
   //additional style goes here
 }
 `
 //给样式组件添加额外的样式
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)
+`
 //additional style goes here
 `
 ```
+
 ### styled under the hood
+
 - ref
     - https://medium.com/styled-components/how-styled-components-works-618a69970421
     - https://mxstbr.blog/2016/11/styled-components-magic-explained/
     - https://medium.com/@_jmoller/how-does-styled-components-work-under-the-hood-28cb035d48c6
 - styled用法
-```
-const Button = styled.button`
+
+``` js
+const Button = styled.button `
 color: coral; 
 padding: 0.25rem 1rem; 
 border: solid 2px coral; 
 `;
 
-等价于  
+// 等价于  
 
 const Button = styled('button')([
-'color: coral;' +
-'padding: 0.25rem 1rem;' + 
-'border: solid 2px coral;' 
+  'color: coral;' +
+  'padding: 0.25rem 1rem;' +
+  'border: solid 2px coral;'
 ]);
 ```
+
 - 自定义styled
-```
+
+``` js
 // styled(Button)返回一个tag function，而标签函数返回高阶组件而不是拼接后的字符串
-const myStyled = (TargetComponent) => 
-// tag function第一个参数是字符串字面量数组，随后参数是占位符表达式的值
-(strs, ...exprs) => class extends React.Component {
+const myStyled = (TargetComponent) =>
+  // tag function第一个参数是字符串字面量数组，随后参数是占位符表达式的值
+  (strs, ...exprs) => class extends React.Component {
     interpolateStyle() {
       const style = exprs.reduce((result, expr, index) => {
         const isFunc = typeof expr === 'function';
         const value = isFunc ? expr(this.props) : expr;
-        
+
         return result + value + strs[index + 1];
       }, strs[0]);
 
@@ -449,10 +494,11 @@ const myStyled = (TargetComponent) =>
     render() {
       return <TargetComponent {...this.props} ref={element => this.element = element } />
     }
-};
+  };
 
 const primaryColor = 'coral';
-const Button = myStyled('button')`
+const Button = myStyled('button')
+`
 background: ${({ primary }) => primary ? primaryColor : 'white'};
 color: ${({ primary }) => primary ? 'white' : primaryColor};
 padding: 0.25rem 1rem; 
@@ -462,6 +508,7 @@ border-radius: 3px;
 ```
 
 ## bootstrap
+
 - components
   - bootstrap中input添加.form-control类，表示为input元素添加表单控件样式
 - faq
@@ -472,7 +519,9 @@ border-radius: 3px;
 - theme-for-bootstrap
   - https://bootswatch.com/
   - https://themes.3rdwavemedia.com/bootstrap-templates/free/
+
 ### bootswatch-themes
+
 - default
 - 绿色系
   - minty 薄荷味的 *****

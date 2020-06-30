@@ -10,6 +10,7 @@ modified: '2020-06-15T10:50:46.981Z'
 ## pieces
 
 ## changelog
+
 - ref
   - https://ant.design/changelog-cn
   - https://github.com/ant-design/ant-design/blob/3.x-stable/CHANGELOG.zh-CN.md
@@ -38,5 +39,4 @@ modified: '2020-06-15T10:50:46.981Z'
   - 新增组件：Card, Rate, LocaleProvider
 - 0.7.0-201500721
   - 第一个公开版本
-  - 发布 layout、iconfont、button、form、checkbox、radio、switch、slider、input-number、datepicker、select、tabs、steps、breadcrumb、collapse、pagination、modal、message、dropdown、popover、popconfirm、tooltip、progress、table 等组件。
-
+  - 发布layout、iconfont、button、form、checkbox、radio、switch、slider、input-number、datepicker、select、tabs、steps、breadcrumb、collapse、pagination、modal、message、dropdown、popover、popconfirm、tooltip、progress、table 等组件。

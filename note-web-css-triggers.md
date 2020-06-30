@@ -8,6 +8,7 @@ modified: '2020-06-28T16:02:57.664Z'
 # note-web-css-triggers
 
 ## CSS Triggers
+
 - transform
   - Changing `transform` does not trigger any geometry changes or painting, which is very good. 
   - This means that the operation can likely be carried out by the compositor thread with the help of the GPU.

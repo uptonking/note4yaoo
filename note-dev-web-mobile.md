@@ -2,12 +2,13 @@
 tags: [mobile, web]
 title: note-dev-web-mobile
 created: '2020-06-21T08:14:11.535Z'
-modified: '2020-06-27T08:17:47.429Z'
+modified: '2020-06-30T12:36:31.808Z'
 ---
 
 # note-dev-web-mobile
 
 ## features-for-mobile
+
 - 手机端的事件特点
   - touch事件
   - 没有hover
@@ -16,7 +17,6 @@ modified: '2020-06-27T08:17:47.429Z'
   - 少用resize事件，拖动手势比点击复杂
 - 导航菜单项较多时，竖向放置更友好
 - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
-
 
 ## faq
 
@@ -32,32 +32,38 @@ modified: '2020-06-27T08:17:47.429Z'
 
 ## pieces
 
-- 一些情况下对非可点击元素（label，span）监听click事件，ios下不会触发，css增加`cursor：pointer`就搞定了
+- 一些情况下对非可点击元素（label，span）监听click事件，ios下不会触发，css增加 `cursor：pointer` 就搞定了
 - 防止手机中网页放大和缩小
-```
+
+``` html
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
 ```
+
 - 设置Web应用是否以全屏模式运行
-```
+
+``` 
 <meta name="apple-mobile-web-app-capable"content="yes">
 
 ```
+
 - 禁止复制、选中文本
-```
+
+``` 
 user-select: none;
 ```
+
 - 手机页面通常在第一次加载后会进行缓存，然后每次刷新会使用缓存而不是去重新向服务器发送请求。如果不希望使用缓存可以设置no-cache
-```
+
+``` 
 <meta http-equiv="Cache-Control"content="no-cache"/>
 ```
+
 - ios设置input按钮样式会被默认样式覆盖
-```
+
+``` css
 input,
 textarea {
   border: 0;
   -webkit-appearance: none;
 }
 ```
-
-
-

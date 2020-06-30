@@ -8,6 +8,7 @@ modified: '2020-06-28T17:29:32.465Z'
 # note-webkit
 
 ## 浏览器的渲染过程
+
 - 浏览器将HTML，CSS，JavaScript代码转换成屏幕上所能呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径（Critical Rendering Path）
 1. DOM Tree的构建
   - 从网络或者磁盘下读取的HTML原始字节码，通过设置的charset编码，转换成相字符
@@ -17,15 +18,15 @@ modified: '2020-06-28T17:29:32.465Z'
   - 事实上，在构建DOM树时，不是要等所有的Tokens都转换成Nodes后才开始，而是一边生成Token一边采取深度遍历算法消耗Token来生成Node
   - 从bytes到Tokens的这个过程，浏览器都可以交给其他单独的线程去处理，不会堵塞浏览器的渲染线程。但是后面的部分就都在渲染线程下进行了，也就是我们常说的js单线程环境
 2. CSSOM Tree的构建
-  - CSSOM的生成过程和DOM十分相似，也是：1.解析，2.Token化，3.生成Nodes并构建Tree
+  - CSSOM的生成过程和DOM十分相似，也是：1. 解析，2. Token化，3. 生成Nodes并构建Tree
 3. Render Tree的构建
   - Render Tree上的每一个节点被称为：RenderObject。
   - RenderObject跟DOM节点几乎是一一对应的，当一个可见的DOM节点被添加到DOM树上时，内核就会为它生成对应的RenderOject添加到Render Tree上。
   - 其中，可见的DOM节点不包括：
-    - 一些不会体现在渲染输出中的节点（如`<html><script><link>…`），会直接被忽略掉。
-    - 通过CSS隐藏的节点。例如上图中的span节点，因为有一个CSS显式规则在该节点上设置了`display:none`属性，那么它在生成RenderObject时会被直接忽略掉。
+    - 一些不会体现在渲染输出中的节点（如 `<html><script><link>…` ），会直接被忽略掉。
+    - 通过CSS隐藏的节点。例如上图中的span节点，因为有一个CSS显式规则在该节点上设置了 `display:none` 属性，那么它在生成RenderObject时会被直接忽略掉。
   - Render Tree是衔接浏览器排版引擎和渲染引擎之间的桥梁，它是排版引擎的输出，渲染引擎的输入
-  - 浏览器渲染引擎并不是直接使用Render树进行绘制，为了方便处理Positioning,Clipping,Overflow-scroll,CSS Transfrom/Opacrity/Animation/Filter,Mask or Reflection,Z-indexing等属性，浏览器需要生成另外一棵树：RenderLayer
+  - 浏览器渲染引擎并不是直接使用Render树进行绘制，为了方便处理Positioning, Clipping, Overflow-scroll, CSS Transfrom/Opacrity/Animation/Filter, Mask or Reflection, Z-indexing等属性，浏览器需要生成另外一棵树：RenderLayer
   - 浏览器会为一些特定的RenderObject生成对应的RenderLayer，其中的规则是：
     - 是否是页面的根节点 It’s the root object for the page
     - 是否有css的一些布局属性（relative absolute or a transform) It has explicit CSS position properties (relative, absolute or a transform)
@@ -62,6 +63,7 @@ modified: '2020-06-28T17:29:32.465Z'
 - 所以在元素存在transform、opacity等属性的css animation或者css transition时，动画处理会很高效，这些属性在动画中不需要重绘，只需要重新合成即可。
 
 ## 浏览器的渲染过程 - Composite
+
 - DOM Tree：浏览器将HTML解析成树形的数据结构。
 - Style Rules：浏览器将CSS解析成树形的数据结构，对应我们的CSSOM。
 - Render Tree：DOM和CSSOM合并后生成Render Tree。
@@ -80,15 +82,16 @@ modified: '2020-06-28T17:29:32.465Z'
 - 什么是纹理？可以把它想象成一个从主存储器(例如 RAM)移动到图像存储器(例如 GPU 中的 VRAM)的位图图像(bitmapimage)
 - Chrome 使用纹理来从GPU上获得大块的页面内容。通过将纹理应用到一个非常简单的矩形网格就能很容易匹配不同的位置(position)和变形(transformation)。这也就是3DCSS的工作原理，它对于快速滚动也十分有效
 - 提升到合成层后合成层的位图会交GPU处理，但请注意，仅仅只是合成的处理（把绘图上下文的位图输出进行组合）需要用到GPU，生成合成层的位图处理（绘图上下文的工作）是需要CPU。
-- 当需要repaint的时候可以只repaint本身，不影响其他层，但是paint之前还有style， layout,那就意味着即使合成层只是repaint了自己，但style和layout本身就很占用时间。
+- 当需要repaint的时候可以只repaint本身，不影响其他层，但是paint之前还有style， layout, 那就意味着即使合成层只是repaint了自己，但style和layout本身就很占用时间。
 - 仅仅是transform和opacity不会引发layout和paint，那么其他的属性不确定。
 
 ## reflow
+
 - reflow
   - 如果引起reflow，样式首先必须重新计算，因此重排会触发两种操作
   - force reflow 
     - https://gist.github.com/paulirish/5d52fb081b3570c81e3a
-- 当在js中调用（requested/called）以下所有属性或方法时，浏览器将会同步地计算样式和布局，进行重排(`reflow` 或layout thrashing)，通常是性能瓶颈
+- 当在js中调用（requested/called）以下所有属性或方法时，浏览器将会同步地计算样式和布局，进行重排( `reflow` 或layout thrashing)，通常是性能瓶颈
 - element
   - 盒子计算
       - elem.offsetLeft/offsetTop, elem.offsetWidth/offsetHeight
@@ -101,7 +104,9 @@ modified: '2020-06-28T17:29:32.465Z'
       - elem.scrollBy(), elem.scrollTo()
       - elem.scrollIntoView(), elem.scrollIntoViewIfNeeded()
       - elem.scrollWidth/scrollHeight, elem.scrollLeft/scrollTop
+
   -焦点
+
       - elem.focus() 可以引起两次重排
   - 获取其他属性
       - elem.computedRole, elem.computedName
@@ -118,10 +123,10 @@ modified: '2020-06-28T17:29:32.465Z'
       - transform, translate, rotate, scale
       - x, y, rx, ry
 - window
-  - window.scrollX, window.scrollY, scrollBy(), scrollTo(),scrollX/Y
+  - window.scrollX, window.scrollY, scrollBy(), scrollTo(), scrollX/Y
   - window.innerHeight, window.innerWidth
   - window.getMatchedCSSRules() 仅重新计算样式
-  - webkitConvertPointFromNodeToPage(),webkitConvertPointFromPageToNode()
+  - webkitConvertPointFromNodeToPage(), webkitConvertPointFromPageToNode()
 - form
   - inputElem.focus()
   - inputElem.select(), textareaElem.select()
@@ -133,8 +138,8 @@ modified: '2020-06-28T17:29:32.465Z'
   - range.getClientRects(), range.getBoundingClientRect()
 - svg
   - computeCTM(), getBBox()
-  - getCharNumAtPosition(),getNumberOfChars()
-  - getComputedTextLength(),getSubStringLength(), selectSubString()
+  - getCharNumAtPosition(), getNumberOfChars()
+  - getComputedTextLength(), getSubStringLength(), selectSubString()
   - instanceRoot
   - 很多
 - contenteditable
@@ -146,6 +151,3 @@ modified: '2020-06-28T17:29:32.465Z'
 - ref
   - https://jinlong.github.io/2015/09/30/what-forces-layout-reflow/
   - https://www.zcfy.cc/article/fastersite-how-not-to-trigger-a-layout-in-webkit
-
-## changelog
-

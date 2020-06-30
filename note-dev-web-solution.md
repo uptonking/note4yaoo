@@ -9,6 +9,7 @@ modified: '2020-06-25T09:35:34.208Z'
 # note-dev-web-solution
 
 ## 难点
+
 - tree-shaking
   - 各工具库的编译方式不同，webpack各版本支持程度不同
   - webpack v4不支持，v5支持
@@ -18,13 +19,14 @@ modified: '2020-06-25T09:35:34.208Z'
 - repng
 
 ## 前端基础框架开发
+
 - 视图渲染
   - MVC/MVVM
   - VDOM结构
   - DOM更新及操作
   - 生命周期
 - 状态管理
-  - 拆分合并,子树更新
+  - 拆分合并, 子树更新
 - 中间件
 - 网络请求
 - 路由跳转
@@ -32,15 +34,14 @@ modified: '2020-06-25T09:35:34.208Z'
 - 同构
 - ui组件库
 
-
-
 ## 前端框架通用问题
+
 - 解决方案的选择
   - 不要浪费过多时间选择，简单采取面向star的编程，方便搜索文档和开发问题
   - 集中时间和精力解决具体一类问题
-- locale:多语言日期/国际化
+- locale: 多语言日期/国际化
   - 解决方案大多与框架相关，如react-intl，要考虑兼容性
-- theme:多主题样式
+- theme: 多主题样式
   - 解决方案大多与框架相关，如styled-components，也可以基于css变量
 - css样式及布局
   - css-in-js: styled-coponents, emotion
@@ -49,10 +50,10 @@ modified: '2020-06-25T09:35:34.208Z'
 - icon
   - font-icon:fork-awesome
   - svg-icon:feather is a collection of SVG files
-  - css-icon:icono,cssicon
+  - css-icon:icono, cssicon
 - animation
   - pure css animation: animate.css
-  - js animation: anime.js,react-motion,react-move,react-transition-group
+  - js animation: anime.js, react-motion, react-move, react-transition-group
   - svg/canvas/webgl animation
 - drag-layout-events
   - react-dnd/draggable
@@ -82,7 +83,7 @@ modified: '2020-06-25T09:35:34.208Z'
       - 外部css会阻塞DOM渲染，并不阻塞js解析，外部js既阻塞渲染，也阻塞解析
   - 部分安卓手机或者webview调整了系统默认字体大小
 - 如何实现1px
-  - 将border设置为1px,然后将也页面的整体根据页面的dpr缩小相应的倍数，接着将rem补偿相应的倍数，这样页面中只有1px的边框缩小了，而其他内容经过缩小和扩大，还是原来的状态
+  - 将border设置为1px, 然后将也页面的整体根据页面的dpr缩小相应的倍数，接着将rem补偿相应的倍数，这样页面中只有1px的边框缩小了，而其他内容经过缩小和扩大，还是原来的状态
   - var fontSize = width/10*(window.devicePixelRatio) + 'px'
 - rem vs px
   - 结论
@@ -116,7 +117,8 @@ modified: '2020-06-25T09:35:34.208Z'
       - 优点是使用rem时，若修改了根元素的字体大小，就可以自动显示相应的尺寸
       - 实现1px的border不精确，计算时常产生小数
       - 横竖屏切换时，可能需要动态计算并设置根html的大小
-      `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px";`
+
+ `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px";`
       - 最近在做开发的时候遇到rem的一个大坑，就是如果用户改变了手机的字体大小，而且我们的页面样式的宽用了rem,比如{width:1rem},那么页面的宽就会成倍增长，导致页面乱掉。。。还没找到办法解决，宽度还是先避免使用rem的好。
       - 字体的大小和字体宽度，并不成线性关系，所以字体大小不能使用rem；由于设置了根元素字体的大小，会影响所有没有设置字体大小的元素。可以在body上做字体修正
       - 如果用户在PC端浏览，页面过宽怎么办？一般我们都会设置一个最大宽度，大于这个宽度的话页面居中，两边留白 `body { margin: auto; width: 100rem }`
@@ -131,6 +133,7 @@ modified: '2020-06-25T09:35:34.208Z'
 - 支持web sockets的tomcat服务器7和8有何区别
 
 ## solution-locale
+
 - 需要国际化的组件
   - popover信息提示
   - modal对话框操作提示
@@ -146,6 +149,7 @@ modified: '2020-06-25T09:35:34.208Z'
   - imperative api
 
 ## solution-icon
+
 - svg图标
   - svg渲染的视觉体验更好
   - svg图标单独使用，修改更灵活
@@ -164,17 +168,19 @@ modified: '2020-06-25T09:35:34.208Z'
   - fork-awesome
   - ionicons
 
-
 ## solution-animation
+
 - React Transition Group 
 - It is not an animation library like React-Motion, it does not animate styles by itself. 
 - Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
 
 ## solution-drag-layout-events
+
 ### drag
+
 - 拖拽使用场景
   - list手动排序
-  - 拖拽card，modal,dialog
+  - 拖拽card，modal, dialog
 - tips
   - 要将pc端的mouse事件转换成移动端的touch事件
   - 在拖拽的研发中，复杂的并不是拖拽的实现，而是节点的位置确定与画布的动态扩展
@@ -191,6 +197,7 @@ modified: '2020-06-25T09:35:34.208Z'
     - Draggable
 
 ### resize
+
 - 缩放使用场景
   - 缩放card、modal
 - resize events are only fired on `window` object (i.e. returned by document.defaultView). 
@@ -198,7 +205,7 @@ modified: '2020-06-25T09:35:34.208Z'
 - Only handlers registered on window object will receive resize events.
   - resize事件只能加在window对象上，并不能监听具体某个DOM元素
 - 如何监听某个DOM元素的resize事件？
-  - window.MutationObserver
+  - window. MutationObserver
     - 监控到DOM中的改变并且等待一系列改变结束后就会触发回调函数
     - 它与事件的不同之处在于，它在DOM变化时，会记录每一个DOM的变化（为一个MutationRecord对象），但是到DOM变化结束时触发回调
     - DOM变化可能是一系列的（比如元素的宽和高同时改变），那么这一系列的变化就会产生一个队列，这个队列会作为参数传递给回调函数
@@ -215,6 +222,7 @@ modified: '2020-06-25T09:35:34.208Z'
     - ResizableBox
 
 ### events
+
 - scroll
   - The scroll event is fired when the document view or an element has been scrolled.
   - 当元素大于其父级元素，且父级元素允许其滚动的时候，该元素可以进行滚动
@@ -224,7 +232,8 @@ modified: '2020-06-25T09:35:34.208Z'
     - 触发结束一段时间之后再执行
     - 或当数值达到最大值时去抖
   - 方法
-  ```
+
+``` js
   function debounce(func, delay) {
     let timeout；
     return function() {
@@ -235,23 +244,25 @@ modified: '2020-06-25T09:35:34.208Z'
       }, delay)；
     }
   }
-  ```
+```
+
 - throttle 函数节流 操作开始后每隔一段时间执行一次
   - 目标
       - 持续触发并不会持续不断地一直执行
       - 等到一定时间再去执行
   - 方法
-  ```
+
+``` js
   function throttle(func, delay) {
-  // 操作监视开关打开
-  let run = true；
-  return function () {
+    // 操作监视开关打开
+    let run = true；
+    return function() {
       // 如果开关关闭了，那就直接不执行下边的代码
       if (!run) {
-        return；  
+        return；
       }
       // 若持续触发，run一直是false，就会停在上面的判断
-      run = false； 
+      run = false；
       setTimeout(() => {
         func.apply(this, arguments);
         // 定时器到时间之后，会把开关打开，我们的函数就会被执行
@@ -259,34 +270,35 @@ modified: '2020-06-25T09:35:34.208Z'
       }, delay)；
     }
   }
-  ```
+```
+
 - 参考
   - https://zhuanlan.zhihu.com/p/72923073
 - Some of our requirements have different behavior of scrubs on player timeline
   - when you do touch scrub, the indicator on timeline move, but mouse doesn't
   - when you do mouse hover and keep moving, the indicator move as well
 
-
 ### react-dnd
+
 - 是一组React高阶组件，只需要用对应的API将目标组件进行包裹，即可实现拖动或接受放置
 - 基于redux实现
 - all the `Backend` do is translate the DOM events into the internal Redux actions that React DnD can process.
   - Backend是实现DnD的方式，默认是用HTML5 DnD API，它不能在触屏环境下工作
 - `Item` is a plain JavaScript object describing what’s being dragged.
   - Item是拖拽数据的表现形式，用Object来表示
-- `Type`表示拖/放组件的兼容性，DragSource和DropTarget必须指定 type
+- `Type` 表示拖/放组件的兼容性，DragSource和DropTarget必须指定 type
   - 只有在type相同的情况下，DragSource才能放到DropTarget中
-- `Monitor`是拖放状态的集合
+- `Monitor` 是拖放状态的集合
   - Monitors用来响应拖拽事件，可以用来更新组件的的状态
 - `Connector` lets you assign one of the predefined roles (a drag source, a drag preview, or a drop target) to the DOM nodes
   - 底层接触DOM，用来封装你的组件，让组件有拖拽的特性
   - 一般在collect方法中指定，然后注入到组件的props中，最后render方法中包装你自己的组件
   - spec是一个带有特定方法的Object，里面是一些响应拖拽事件的方法
   - collect是一个返回object的函数，返回的object会注入到组件的props中
-- `DnD Role`  tie the types, the items, the side effects, and the collecting functions together with your components.
-- `react-dnd`定义Context，提供Provider、Container factory等上层API
-- `dnd-core`定义Action、Reducer，连接上下层
-- `react-dnd-xxx-backend`通过Dispatch Action把native DnD状态传递到上层
+- `DnD Role` tie the types, the items, the side effects, and the collecting functions together with your components.
+- `react-dnd` 定义Context，提供Provider、Container factory等上层API
+- `dnd-core` 定义Action、Reducer，连接上下层
+- `react-dnd-xxx-backend` 通过Dispatch Action把native DnD状态传递到上层
 - 使用流程
   - 把应用的根组件包装在DragDropContext中
   - 把可以拖拽的组件包装在DragSource中，或 把可以接受拖拽的组件包装在DropTarget中
@@ -298,8 +310,8 @@ modified: '2020-06-25T09:35:34.208Z'
   - https://scarletsky.github.io/2015/11/17/react-dnd-usage/
   - https://juejin.im/post/5aebbdedf265da0ba469a56f
 
-
 ## solution-layer
+
 - 图层顺序
   - background: 背景层，一般在最底层
     - 不单独实现，可通过动画模拟上层组件边卸载背景层边出现
@@ -322,6 +334,7 @@ modified: '2020-06-25T09:35:34.208Z'
   - trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
 
 ### modal
+
 - usecase
   - 弹出菜单
   - user guide tour
@@ -361,17 +374,18 @@ modified: '2020-06-25T09:35:34.208Z'
   - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
     - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
   - http://limoer.cc/2019/12/19/global-component/
-    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法，`ReactDOM.render(element, container[, callback])`
+    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法， `ReactDOM.render(element, container[, callback])`
     - the preferred solution is to attach a callback ref to the root element.
     - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
   - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
-    - 通过`ReactDOM.render`直接实现`<button onClick={() => alert('1')}>alert</button>`
-    - 在onClick方法内直接关闭modal，通过React.cloneElement传入`{visible: false}`
+    - 通过 `ReactDOM.render` 直接实现 `<button onClick={() => alert('1')}>alert</button>`
+    - 在onClick方法内直接关闭modal，通过React.cloneElement传入 `{visible: false}`
     - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
   - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
   - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
 
 ### sidebar
+
 - usecase
 - 兼容移动浏览器
   - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
@@ -383,8 +397,8 @@ modified: '2020-06-25T09:35:34.208Z'
 - multi-sidebar: 使用多个sidebar用于导航
   - https://github.com/balloob/react-sidebar/issues/65
 
-
 ### 组件分层实现
+
 - 使用场景
   - popover、tooltip、toast
   - modal、dialog
@@ -400,6 +414,3 @@ modified: '2020-06-25T09:35:34.208Z'
   - redux
   - react-portal
   - react-overlays
-
-
-

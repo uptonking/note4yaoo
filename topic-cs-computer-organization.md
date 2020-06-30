@@ -8,6 +8,7 @@ modified: '2020-06-22T08:42:30.327Z'
 # topic-cs-computer-organization
 
 ## summary
+
 - topics
   - 计算机系统的硬件结构
   - 计算机指令集及运算原理
@@ -18,6 +19,7 @@ modified: '2020-06-22T08:42:30.327Z'
 ## hardware
 
 ## cpu
+
 - Meltdown 熔断
   - 正式名称为“Rogue Data Cache Load”，常译为恶意数据缓存加载
   - 是一个存在于英特尔大部分x86/x86-64微处理器、部分ARM架构处理器中的关于推测执行机制的硬件设计缺陷及安全漏洞

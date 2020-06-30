@@ -2,12 +2,13 @@
 tags: [style, web]
 title: note-web-style
 created: '2019-08-05T11:51:59.761Z'
-modified: '2020-06-30T05:26:20.794Z'
+modified: '2020-06-30T12:56:39.168Z'
 ---
 
 # note-web-style
 
 ## headache
+
 - 中文web字体体积大的问题
   - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
   - 动态中文web字体暂无解决方案
@@ -16,10 +17,10 @@ modified: '2020-06-30T05:26:20.794Z'
   - 要考虑与具体框架结合，方便实现国际化语言和样式主题切换
   - 要考虑依赖的或将使用第三方组件的样式如何集成到现有项目
   - 考虑在特殊情况下如何覆盖样式
-  
 
 ## z-index
-- When the z-index property is not specified on any element, elements are stacked in the following order (`from bottom to top`)
+
+- When the `z-index` property is not specified on any element, elements are stacked in the following order ( from bottom to top )
   - background and borders of the root element
   - Descendant non-positioned blocks, in order of appearance in the HTML
   - **Floating blocks**
@@ -35,16 +36,16 @@ modified: '2020-06-30T05:26:20.794Z'
 - when z-index value is auto, the box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent's box
 -  the rendering order of certain elements is influenced by their z-index value. This occurs because these elements have special properties which cause them to form a stacking context.
 - A stacking context is formed, anywhere in the document, by any element in the following scenarios
-  - Root element of the document (`<html>`).
+  - Root element of the document ( `<html>` ).
   - Element with a position value absolute or relative and z-index value other than auto.
   - Element with a position value fixed or sticky 
   - Element that is a child of a flex (flexbox) container, with z-index value other than auto.
   - Element that is a child of a grid (grid) container, with z-index value other than auto.
   - Element with a opacity value less than 1
   - Element with the following properties with value other than none
-      - tranform
-      - filter
-      - clip-path
+    - tranform
+    - filter
+    - clip-path
 - Within a stacking context, child elements are stacked according to the same rules previously explained. Importantly, the z-index values of its child stacking contexts only have meaning in this parent. Stacking contexts are treated atomically as a single unit in the parent stacking context.
 - Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.
 - Each stacking context is completely independent of its siblings: only descendant elements are considered when stacking is processed.
@@ -55,24 +56,26 @@ modified: '2020-06-30T05:26:20.794Z'
   - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index
   - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 
-
 ## float
+
 - 容器并没有把浮动的子元素包围起来，俗称塌陷
 - 如果父元素只包含浮动元素，且父元素未设置高度和宽度的时候，那么它的高度就会塌缩为零，也就是所谓的**高度塌陷**
   - 此时如果父级元素包含背景或者边框，那么溢出的元素就不像父级元素的一部分
   - 解决方法
-      - 浮动父级元素。如果让父级元素浮动，父级元素的高度就会扩大，直到完全包含它里面的浮动元素，虽然这个方法很奇怪，但是很有效。如果选择这种方法，一定要在该元素的下个元素添加`clear:both`, 确保浮动元素落到父级元素的下方。
-      - overflow:hiden
+    - 浮动父级元素。如果让父级元素浮动，父级元素的高度就会扩大，直到完全包含它里面的浮动元素，虽然这个方法很奇怪，但是很有效。如果选择这种方法，一定要在该元素的下个元素添加 `clear:both` , 确保浮动元素落到父级元素的下方。
+    - overflow:hiden
 - overlfow-hidden
   - 当父div拥有固定的高度时，如height:500px，可以使用overflow:hidden来隐藏溢出
   - 当父元素的高为height:auto时，我们使用 overflow：hidden 清除浮动
-      - 若为div1和div2加上一个属性`float: left`后，会发现：背景色为黑色父div消失了，这是因为浮动的元素脱离文档流，不占据空间。不浮动的元素会直接无视掉这个元素，父div无视了自己的两个子div，其高度为0（因为我们没有设置父div的高度），所以父div没有显现。
-      - 第一种方法是让父元素也浮动起来，给父div添加 float: right，再给父div设宽度就可见背景色了
-      - 第二种方法是给父元素添加 overflow:hidden 属性用以清除浮动
-          - 因为overflow可以使父容器形成BFC，BFC可以包含浮动
+    - 若为div1和div2加上一个属性 `float: left` 后，会发现：背景色为黑色父div消失了，这是因为浮动的元素脱离文档流，不占据空间。不浮动的元素会直接无视掉这个元素，父div无视了自己的两个子div，其高度为0（因为我们没有设置父div的高度），所以父div没有显现。
+    - 第一种方法是让父元素也浮动起来，给父div添加 float: right，再给父div设宽度就可见背景色了
+    - 第二种方法是给父元素添加 overflow:hidden 属性用以清除浮动
+      - 因为overflow可以使父容器形成BFC，BFC可以包含浮动
 
   
+
 ## tips
+
 - 全局基础样式的内容(类似styled-system提供的)
   - text, color, space, layout, border 
 - flexbox vs css grid
@@ -81,22 +84,22 @@ modified: '2020-06-30T05:26:20.794Z'
 - tailwind css vs Atomic CSS
   - 都是类似css原子类的语法，但Atomic CSS写起来包含大小写和括号太丑
   - css原子类增加了记忆成本，效果和行内样式一样，仅仅是减少了需要拼写的字符数量
-      - CSS原子类就基本等同于变相写inline style内联样式
-      - gzip压缩后减少的体积并不大
-      - **过于细碎**的原子类降低了可读性，类名过长，要严格控制数量，避免记忆压力
-      - 维护工作量大，一旦修改属性值，要修改所有类名，因为类名中常包含数字，如m20
-      - 修改常增加新类名
+    - CSS原子类就基本等同于变相写inline style内联样式
+    - gzip压缩后减少的体积并不大
+    - **过于细碎**的原子类降低了可读性，类名过长，要严格控制数量，避免记忆压力
+    - 维护工作量大，一旦修改属性值，要修改所有类名，因为类名中常包含数字，如m20
+    - 修改常增加新类名
   - 参考 https://www.zhihu.com/question/22110291
 - postcss vs sass
   - sass是css预处理器，支持现在css不支持的语法，方便高效编写可复用的css
-      - compass库为sass操作css提供更多工具函数，but deprecated
+    - compass库为sass操作css提供更多工具函数，but deprecated
   - postcss是css处理工具，是个开放的平台，通过插件提供处理css的方法
-      - precss插件提供类似sass语法
-      - autoprefixer向CSS规则添加浏览器厂商前缀
-      - stylelint校验css
-      - postcss-assets可以方便管理文件资源，自动更改url路径
-      - cssnano优化压缩css
-      - https://github.com/postcss/postcss/blob/master/README-cn.md
+    - precss插件提供类似sass语法
+    - autoprefixer向CSS规则添加浏览器厂商前缀
+    - stylelint校验css
+    - postcss-assets可以方便管理文件资源，自动更改url路径
+    - cssnano优化压缩css
+    - https://github.com/postcss/postcss/blob/master/README-cn.md
 - transform translate() vs translate3d()
   - 移动距离要写单位，3d在移动设备上也可以使用硬件加速
   - translate3d should be faster in a lot of browsers, mostly those that use gfx hardware acceleration to speed up rendering. especially on webkit translate3d was the prefered way of forcing hardware acceleration on page items.
@@ -105,12 +108,12 @@ modified: '2020-06-30T05:26:20.794Z'
   - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translate3d
   - https://segmentfault.com/q/1010000002926369
   - 3D变换会开启GPU加速，GPU加速动画时，并不是把原生DOM传递给GPU，它生成一个元素图像，把该图像发送到GPU，GPU将图像应用为多边形纹理贴图代表元素，GPU可以流畅快速的对这些多边形进行旋转，缩放，转换，倾斜等变换，但由于只是传递元素图像到GPU进行处理，所以它并不能重新渲染内容，图像清晰度不能保证，元素显示清晰度自然就下降了
-  - 出现模糊的原因是因为元素的高度、宽度中有奇数， 使用translate(-50%,-50%)之后，相当于宽度、高度除以2的效果，会出现 0.5px。像素就是最小的单位了，要么1，2，3，要么就是0，没有小数
-  - 比方说一个Div的高度是100.5px,在Chrome浏览器在渲染的时候，会渲染成100px、101px、100px、101px、100px .... 100px 和 101px 交替渲染，就出现了模糊
--  `pointer-events` 
+  - 出现模糊的原因是因为元素的高度、宽度中有奇数， 使用translate(-50%, -50%)之后，相当于宽度、高度除以2的效果，会出现 0.5px。像素就是最小的单位了，要么1，2，3，要么就是0，没有小数
+  - 比方说一个Div的高度是100.5px, 在Chrome浏览器在渲染的时候，会渲染成100px、101px、100px、101px、100px .... 100px 和 101px 交替渲染，就出现了模糊
+- `pointer-events`
   - sets under what circumstances (if any) a particular graphic element can become the target of pointer events
   - default: `auto'`
-  - `none`: The element is never the target of pointer events, pointer event to go "through" the element and target whatever is "underneath" that element instead.
+  - `none` : The element is never the target of pointer events, pointer event to go "through" the element and target whatever is "underneath" that element instead.
 - `z-index`
   - sets the z-order of a positioned element and its descendants or flex items. 设置该属性的元素的定位方式不能是static
   - 可选值包括：auto，0，-N，N
@@ -138,55 +141,65 @@ modified: '2020-06-30T05:26:20.794Z'
 - css原来的作用是复用class，现在复用组件就相当于复用了class
 - css变量(除IE外的浏览器都已支持)
   - 定义局部变量 
-  ```
+
+``` css
   element {
     --main-bg-color: brown;
   }
   ```
+
   - 定义全局变量
-  ```
+
+
+``` css
   :root {
     --main-bg-color: brown;
   }
   ```
+
   - 使用变量
-  ```
+
+
+``` css
   element {
     background-color: var(--main-bg-color);
   }
   ```
+
   - 变量值只能用作属性值，不能用作属性名
 
 ## 大型项目参考
+
 - ant-design 
-  - 每个组件都有单独样式文件，如alert/index.tsx,alert/style/index.tsx(.less)
+  - 每个组件都有单独样式文件，如alert/index.tsx, alert/style/index.tsx(.less)
   - 支持通过babel插件导入所需组件的css
-  - 依赖react,rc-table,rc-tree等组件
-  - 测试依赖react-router，react-dnd，react-intl，react-resizable,antd-theme-generator,antd-tools(webpack)
+  - 依赖react, rc-table, rc-tree等组件
+  - 测试依赖react-router，react-dnd，react-intl，react-resizable, antd-theme-generator, antd-tools(webpack)
 - blueprint
-  - 每个组件都有单独样式文件，如alert.tsx,_alert.scss
+  - 每个组件都有单独样式文件，如alert.tsx, _alert.scss
 - grommet
-  - 组件大多有单独样式文件，如Button.js,StyleButton.js(只有样式)
+  - 组件大多有单独样式文件，如Button.js, StyleButton.js(只有样式)
   - v2的样式基于styled-components实现
 - office-ui-fabric-react
-  - 每个组件都有单独的样式文件，如Checkbox.tsx,Checkbox.style.ts
+  - 每个组件都有单独的样式文件，如Checkbox.tsx, Checkbox.style.ts
 - element-react
   - 每个组件都使用className指定类，样式基于scss
 - rsuite
-  - 每个组件都有单独的样式文件，如Alert.js,alert.less
+  - 每个组件都有单独的样式文件，如Alert.js, alert.less
   - style作为props传入
 - uiw
-  - 每个组件都有单独样式文件，如alert/index.tsx,alert/style/index.less
+  - 每个组件都有单独样式文件，如alert/index.tsx, alert/style/index.less
       - 再使用className
 - misc
   - material-ui
       - 每个组件都是一个完整的js文件，里面都有一个styles对象
-      - 提供单独的`@material-ui/styles`样式操作工具包，还提供ThemeProvider
+      - 提供单独的 `@material-ui/styles` 样式操作工具包，还提供ThemeProvider
       - 样式使用的是基于css-in-js的jss
   - react-bootstrap
       - 每个组件都使用className指定类，样式由props传入
 
 ## faq
+
 - 怎么让触摸设备支持下拉菜单
   - 解决方案是使用Modernizr检测设备是否支持触摸，如果支持再去掉对visibilit 属性的过渡。如果设备支持触摸，Modernizr会给根元素html添加一个touch类，我们就可以针对触摸设备编写规则
 - 使用@import指令导入外部样式表和使用link导入样式表性能差距大吗
@@ -197,6 +210,7 @@ modified: '2020-06-30T05:26:20.794Z'
   - 内联样式与规则集中的选择器参与同一级联，并且在级联中采用最高优先级(！重要)。因此，它们甚至优先于伪类状态。允许内嵌样式中的伪类或任何其他选择器可能会引入新的级联级别，并带来新的问题
 
 ## BFC(Block formatting contexts)
+
 - `Formatting context` 是CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用
   - 最常见的Formatting context有Block fomatting context (简称BFC)和Inline formatting context(简称IFC)
   - CSS2.1中只有BFC和IFC, CSS3中还增加了G(grid)FC和F(flex)FC
@@ -204,7 +218,7 @@ modified: '2020-06-30T05:26:20.794Z'
 - `Block fomatting context` = block-level box + Formatting Context
   - BFC直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 
   - display属性为block, list-item, table的元素，会生成block-level box；并且参与 block fomatting context；
-  - display属性为inline,inline-block inline-table的元素，会生成inline-level box。并且参与 inline formatting context；
+  - display属性为inline, inline-block inline-table的元素，会生成inline-level box。并且参与 inline formatting context；
 - BFC是一块渲染区域，那这块渲染区域到底在哪，它又是有多大，这些由生成BFC的元素决定，CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC
   - 根元素
   - float的值不为none
@@ -233,8 +247,8 @@ modified: '2020-06-30T05:26:20.794Z'
   - https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md
   - https://github.com/zuopf769/notebook/blob/master/fe/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E5%92%8CBFC/README.md
 
-
 ## css style guide  
+
 - https://github.com/airbnb/css
 - https://github.com/airbnb/javascript/tree/master/css-in-javascript
 - react处理样式的建议 
@@ -246,6 +260,7 @@ modified: '2020-06-30T05:26:20.794Z'
   - https://github.com/w3c/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md
 
 ## web组件设计
+
 - Ant Design
   - https://ant.design/
 - WeUI
@@ -254,19 +269,21 @@ modified: '2020-06-30T05:26:20.794Z'
   - css命名基于BEM
 
 ## summary
+
 - css要点
   - 各类选择器
   - 样式层叠规则
   - 盒模型与元素定位
   - 动画与变换
   - 布局
-      - 基于float
-      - 基于flexbox
-      - 基于css grid
+    - 基于float
+    - 基于flexbox
+    - 基于css grid
 
 ## common style
 
 ### color-palettes
+
 - nice css standard color
   - Grey
       - silver：银色，比grey浅
@@ -381,19 +398,19 @@ modified: '2020-06-30T05:26:20.794Z'
 - handsontable-blue-font
   - #039be5
 
-
 ## dev tip
+
 - 行内元素同样具有盒子模型
   - 行内元素的padding-top/bottom、margin-top/bottom属性设置是无效的
   - 行内元素的padding-left/right、margin-left/right属性设置是有效的
 - z-index
   - For a positioned box (that is, one with any position other than static), Overlapping elements with a larger z-index cover those with a smaller one.
-  - default value is `auto` 
-- scss中的class不要通过`import styles from './index.scss'`这样的方式引入，`styles.className`未生效
+  - default value is `auto`
+- scss中的class不要通过 `import styles from './index.scss'` 这样的方式引入， `styles.className` 未生效
 - css direction: rtl, ltr - 指的是从left到right或相反
 - 项目配色板 color palette
   - https://www.canva.com/learn/brand-color-palette
-- `display: contents`能使拥有该属性的元素本身不能生成任何盒模型，但是它的子元素或者伪元素可以正常生成，该元素就好像在Dom树中被子元素与伪元素所替代一样
+- `display: contents` 能使拥有该属性的元素本身不能生成任何盒模型，但是它的子元素或者伪元素可以正常生成，该元素就好像在Dom树中被子元素与伪元素所替代一样
   - 使div元素不产生任何边框，因此元素的背景、边框和填充部分都不会渲染
   - 但该元素上的其他样式还是能够影响子元素
   - 该元素就会像是不存在一样，它的子元素会替代它在Dom树中的位置
@@ -409,18 +426,17 @@ modified: '2020-06-30T05:26:20.794Z'
       - http://www.xsuchen.com/detail/css/9.html
 - pseudo elements: 4
   - before, after, first-letter, first-line
-  - selector.class:pseudo-element {property:value;}
+  - selector.class:pseudo-element {property:value; }
 - pseudo classes: 7
   - a:link, a:visited, a:hover, a:active
   - :focus, :lang
   - ：first-child
-- `.styl`样式文件是stylus扩展css语法的一种格式，stylus is similar to sass/less, except that it's based on nodejs.
-
-
+- `.styl` 样式文件是stylus扩展css语法的一种格式，stylus is similar to sass/less, except that it's based on nodejs.
 
 ## CSS模块化解决方案
 
 ### 为什么需要CSS模块化
+
 - 命名冲突，任何一个组件的样式规则，都对整个页面有效
 - css和js无法共享变量
 - 需要健壮且易于扩展的css
@@ -430,8 +446,9 @@ modified: '2020-06-30T05:26:20.794Z'
   - https://medium.com/@piggyslasher/the-state-of-css-css-in-js-how-styled-components-is-solving-the-problems-weve-had-for-decades-d8abbc8bc148
 
 ### 使用CSS命名规则进行模块化
+
 - 典型代表
-  - BEM：`block__element_modifier`
+  - BEM： `block__element_modifier`
 - 问题
   - 命名较复杂
   - JS和CSS之间依然没有打通变量和选择器等
@@ -439,6 +456,7 @@ modified: '2020-06-30T05:26:20.794Z'
   - 缺少变量、嵌套支持、样式文件合并 > sass解决
 
 ### css-in-js  
+
 - 典型代表
   - https://github.com/styled-components/styled-components
   - radium: A toolchain for React component styling
@@ -470,6 +488,7 @@ modified: '2020-06-30T05:26:20.794Z'
   - http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
 
 ### 使用JS管理CSS样式模块  
+
 - 典型代表
   - CSS Modules
 - 使用JS编译原生的CSS文件，使其具备模块化的能力
@@ -508,12 +527,13 @@ modified: '2020-06-30T05:26:20.794Z'
       - 合作者之一Glen Maddern已转向styled-components
 
 ### CSS命名
+
 - BEM
-  - 命名规则：`block__element_modifier`
+  - 命名规则： `block__element_modifier`
   - block是逻辑和功能独立的组件，block可嵌套，可重复
   - element是块的组成部分，它不能在块之外使用
   - modifier定义块的外观和行为
-  - 推荐用双下划线连接`B__E`，用单下划线连接`E_M`或`B_M`
+  - 推荐用双下划线连接 `B__E` ，用单下划线连接 `E_M` 或 `B_M`
   - 推荐描述元素的单词或多个单词使用camelCase
   - 尽量不用元素选择器，虽然每个li都写.menu-item，但能避免影响其他嵌套元素
   - 团队统一最重要
@@ -535,9 +555,9 @@ modified: '2020-06-30T05:26:20.794Z'
   - 不同**类别**的组件需要以不同的方式处理
   - 类别
       - base：html默认基本样式 ，如title、a
-      - layout：只定义布局，不考虑颜色和排版，如`l-side`
-      - module：可重用的模块，如按钮、list，如`m-btn`
-      - state：用来描述layout或module在特定状态下的外观，如`is-collapsed`
+      - layout：只定义布局，不考虑颜色和排版，如 `l-side`
+      - module：可重用的模块，如按钮、list，如 `m-btn`
+      - state：用来描述layout或module在特定状态下的外观，如 `is-collapsed`
       - theme：用来描述layout或module在某一主题下的外观
 - OOCSS  
   - Object-Oriented CSS   
@@ -571,8 +591,8 @@ modified: '2020-06-30T05:26:20.794Z'
 - 其他命名方案
   - SUITCSS
 
-
 ### 有缺陷的CSS最佳实践
+
 - 不要使用过多的类？
   - 大多数情况下类选择器的副作用会比id选择器和元素选择器小
   - 如果class过多就该考虑扩大修饰范围，修饰范围过大就会出现重复，此时就该缩小范围
@@ -586,6 +606,7 @@ modified: '2020-06-30T05:26:20.794Z'
   - 没必要，根据实际用途来增减功能，特别是针对移动端
 
 ### React开发中的CSS问题
+
 - 全局命名冲突
   - CSS使用全局选择器机制来设置样式，优点是方便重写样式，缺点是所有的样式都是全局生效，样式可能被错误覆盖
   - Web Components标准中的Shadow DOM能彻底解决这个问题，但它将样式彻底局部化，造成外部无法重写样式，损失了灵活性
@@ -595,7 +616,9 @@ modified: '2020-06-30T05:26:20.794Z'
   - Saas/Less很难实现对每个组件都编译出单独的CSS，引入所有模块的CSS又造成浪费
   - JS的模块化已经非常成熟，如果能让JS来管理CSS依赖是很好的解决办法，Webpack的 css-loader提供了这种能力
 - 无法共享变量
+
   -复杂组件要使用JS和CSS来共同处理样式，就会造成有些变量在JS和CSS中冗余，Sass/PostCSS/CSS等都不提供跨JS和CSS共享变量这种能力
+
 - 代码压缩不彻底
   - 由于移动端网络的不确定性，现在对CSS压缩已经到了变态的程度，但对非常长的class名却无能为力
 - 总结
@@ -604,31 +627,32 @@ modified: '2020-06-30T05:26:20.794Z'
   - 完全抛弃CSS，在JS中以Object语法来写CSS
 
 ### react-css-in-js
-- 可以通过在目标元素前后放置占位元素，再通过js操作，实现伪元素的::before,::after
-- w3c标准不支持在行内样式中使用伪类，如:hover,:first-child
+
+- 可以通过在目标元素前后放置占位元素，再通过js操作，实现伪元素的::before, ::after
+- w3c标准不支持在行内样式中使用伪类，如:hover, :first-child
 - 内联样式中不支持定义keyframe
 - css-in-js的使用方式可以分5代，根据是否支持在css模板中使用js变量，如果支持，这些变量的作用范围是否包括模块，包括组件，包括render()方法
 - 五代css-in-js
   1. css located in separate .*css files
-      - example: css-modules, babel-plugin-css-in-js, css-loader
-      - not allowed to write styling in JavaScript and use any of JavaScript variables
-      - you have to use CSS pre-processors
+    - example: css-modules, babel-plugin-css-in-js, css-loader
+    - not allowed to write styling in JavaScript and use any of JavaScript variables
+    - you have to use CSS pre-processors
   2. css as inline style objects
-      - example: radium
-      - use inline styles in style property of your React elements
-      - very dynamic, because they can use even .render() method scope variables
-      - 行内样式不支持伪类，无法最大化利用css功能
+    - example: radium
+    - use inline styles in style property of your React elements
+    - very dynamic, because they can use even .render() method scope variables
+    - 行内样式不支持伪类，无法最大化利用css功能
   3. write static css templates in js and inject actual CSS into DOM `<style>` tags
-      - example: aphrodite, cssx, glamor, styletron
-      - the templates are static,defined in module scope, and thus they can't use component props
-      - have access only to module scope JavaScript variables, which evaluate only once when the module is imported for the first time
+    - example: aphrodite, cssx, glamor, styletron
+    - the templates are static,defined in module scope, and thus they can't use component props
+    - have access only to module scope JavaScript variables, which evaluate only once when the module is imported for the first time
   4. write dynamic css templates in js and emit CSS into DOM `<style>` tags
-      - example: styled-components, glamorous
-      - have access to component scope variables, such as props and state
-      -  templates normally also re-render on every component prop or state change.
+    - example: styled-components, glamorous
+    - have access to component scope variables, such as props and state
+    -  templates normally also re-render on every component prop or state change.
   5. dynamic css templates in js
-      - example: freestyler, jsxstyle, style-it, superstyle
-      - you can use JavaScript variables from component's `.render()` function scope.
+    - example: freestyler, jsxstyle, style-it, superstyle
+    - you can use JavaScript variables from component's `.render()` function scope.
 
 ## font icons
 
@@ -815,7 +839,7 @@ modified: '2020-06-30T05:26:20.794Z'
       - 站酷高端黑体、站酷酷黑体、站酷快乐体、站酷庆科黄油体、站酷文艺体、站酷小薇LOGO体
       - 免费商用
           - https://www.zcool.com.cn/special/zcoolfonts/
-  - 王汉宗自由字形 (H.T.Wang Free Fonts)
+  - 王汉宗自由字形 (H. T. Wang Free Fonts)
       - https://github.com/cghio/wangfonts
       - GPL v2
   - 文泉驿字体
@@ -867,6 +891,7 @@ modified: '2020-06-30T05:26:20.794Z'
       - 在线修改和预览
 
 ### web fonts
+
 - 问题
   - 中文webfont过大，目前暂无优秀的解决方案
   - 目前中文WebFont的使用大多是将有限数目的字符转换为小字库部署到网站服务器上
@@ -882,18 +907,20 @@ modified: '2020-06-30T05:26:20.794Z'
   - 适合静态页面
 
 ## animation
+
 - https://github.com/ConnorAtherton/loaders.css
 
 ## css预处理器
+
 - 都提供了语法糖，最终经过预处理工具转换成css
 - sass
   - 使用场景：bootstrap4, foundation
   - 特点
-      - 无大括号，使用缩进
-      - 支持变量$作用域
-      - 支持函数
-      - 支持流程控制
-      - 支持数据结构$list, $map
+    - 无大括号，使用缩进
+    - 支持变量$作用域
+    - 支持函数
+    - 支持流程控制
+    - 支持数据结构$list, $map
   - 编译需要ruby
   - node-sass国内安装不流畅
   - 讨论度更高，资料更全
@@ -901,26 +928,24 @@ modified: '2020-06-30T05:26:20.794Z'
 - less
   - 使用场景：bootstrap3，ant-design，七牛pd团队
   - 特点
-      - 有大括号
-      - 支持变量@
-      - 不支持函数
+    - 有大括号
+    - 支持变量@
+    - 不支持函数
   - 编译基于node
   - since2009
 - scss
   - 使用场景：
   - 特点
-      - 有大括号
-      - **兼容css**
+    - 有大括号
+    - **兼容css**
   - 就是sass 3
 - stylus
   - 使用场景：
   - 特点
-      - 支持缩进和大括号
+    - 支持缩进和大括号
   - since2010
 - postcss
   - 使用场景：
   - 特点
 - 预处理器使用建议
   - CSS中不建议用@import导入css，因为会增加http请求。但CSS预处理器中的导入和CSS的有很大区别，它是将不同css是在语义上导入，最终编译结果会生成一个CSS文件
-
-

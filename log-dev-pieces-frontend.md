@@ -3,14 +3,22 @@ attachments: [hello.txt]
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-22T12:02:55.011Z'
+modified: '2020-06-30T07:07:28.549Z'
 ---
 
 # log-dev-pieces-frontend
 
 ## logging
 
-
+- 确保FMP（首次有效绘制） 尽可能的快速, 方法之一就是分阶段进行代码拆分
+  - render loding-render-analytics
+  - FMP所需的所有数据都可以在加载阶段获取其他代码的同时获取
+  - http://www.alloyteam.com/2019/12/14174/
+- RESTful APIs 缺点(GraphQL的优点)
+  - 数据格式不规范
+  - 猜谜游戏（如何判定一个失败的请求，400，401，还是404？）
+  - 无意义的对话
+  - 无合约协议
 - 从输入页面URL到页面渲染完成大致流程
   - 解析URL
   - 浏览器本地缓存
@@ -26,7 +34,7 @@ modified: '2020-06-22T12:02:55.011Z'
 - 浏览器加载与渲染的时间概念 
   - P：首次绘制。用于标记导航之后浏览器在屏幕上渲染像素的时间点。这个不难理解，就是浏览器开始请求网页到网页首帧绘制的时间点。这个指标表明了网页请求是否成功。
   - FCP：首次内容绘制。FCP标记的是浏览器渲染来自DOM第一位内容的时间点，该内容可能是文本、图像、SVG甚至canvas元素。
-  - FMP：首次有效绘制。这是一个很主观的指标。根据业务的不同，每一个网站的有效内容都是不相同的，有效内容就是网页中"主角元素"。对于视频网站而言，主角元素就是视频。对于搜索引擎而言，主角元素就是搜索框。
+  - FMP：首次有效绘制(First Meaningful Paint)。这是一个很主观的指标。根据业务的不同，每一个网站的有效内容都是不相同的，有效内容就是网页中"主角元素"。对于视频网站而言，主角元素就是视频。对于搜索引擎而言，主角元素就是搜索框。
   - TTI：可交互时间。用于标记应用已进行视觉渲染并能可靠响应用户输入的时间点。应用可能会因为多种原因而无法响应用户输入：①页面组件运行所需的JavaScript尚未加载完成。②耗时较长的任务阻塞主线程
   - 根据devtool时间轴的结果
     - 虽然CSR(客户端渲染)配合预渲染方式（loading、骨架图）可以提前FP、FCP从而减少白屏问题，但无法提前FMP
@@ -43,7 +51,7 @@ modified: '2020-06-22T12:02:55.011Z'
     - 14.6KB
   - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
     - Lodash is a good example of a module that looks like it has lots of side-effects, even in places that it doesn't. 
-    - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'`).
+    - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'` ).
 - named import和namespace import都可以被webpack v5和rollup进行tree shaking
   - default import对于多属性的对象，无法进行tree shaking
   - https://blog.csdn.net/qq_34629352/article/details/104258640
@@ -58,14 +66,21 @@ modified: '2020-06-22T12:02:55.011Z'
     - https://developers.google.com/web/tools/chrome-devtools/console/utilities
 - js对象内的属性引用同一对象的另一个属性
     - 如果不介意在对象字面量外写的话
-    ```
+
+    
+
+``` 
     var a = {
        p1: [1]
     }
     a.p2 = a.p1
     ```
+
     - 如果要在对象字面量内写的话，可以使用访问器属性
-    ```
+
+    
+
+``` 
     var a = {
         p1: [1],
         // p2: a.p1//this.p1  // 都是错的
@@ -76,8 +91,12 @@ modified: '2020-06-22T12:02:55.011Z'
     a.p2=1;
     a.p1; // 1
     ```
+
     - 对象字面量里this和a都是从作用域链中去寻找的，ES6之前只有两个作用域，全局或函数，在这里，没有函数，就是全局作用域，所以 this 和 a 就会从当前全局作用域中去寻找
-    ```
+
+    
+
+``` 
     var a={p1:111};
     var a = {
         p1: [1],
@@ -85,6 +104,7 @@ modified: '2020-06-22T12:02:55.011Z'
     }
     a.p2 //111
     ```
+
     - The `get` syntax binds an object property to a function that will be called when that property is looked up.
         - 语法： `{get prop() { ... } }` 或 `{get [expression]() { ... } }`
         - prop is the name of the property to bind to the given function.
@@ -95,20 +115,20 @@ modified: '2020-06-22T12:02:55.011Z'
         - When using get the property will be defined on the instance's prototype, while using Object.defineProperty() the property will be defined on the instance it is applied to.
     - js定义了两种不同的属性
         - 如何区分属性的类型？
-            - 通过`Object.getOwnPropertyDescriptor()`查看属性的描述符。有`value`的是数据属性，没有的是访问器属性
+            - 通过 `Object.getOwnPropertyDescriptor()` 查看属性的描述符。有 `value` 的是数据属性，没有的是访问器属性
             - 数据属性存储值，访问器属性不存储值
             - value和set/get不能共存。因为有了set/get同时又有value，读写不明确
             - 访问器属性的功能用自定义函数也能实现，但es5原生支持更简洁
     - 数据属性主要有四个特性描述对象属性行为
-        - [ ] [[Configurable]]:默认为true。表示能否通过delete删除属性来重新定义属性，或者能否把属性改为可访问属性；
-        - [x] [[Enumerable]]:默认为true。表示能否通过for-in循环返回属性；
-        - [ ] [[Writable]]:默认为true。表示能否修改属性的值；
-        - [ ] [[Value]]:默认为underfined。表示包含属性的数据值。读写属性之都从这个位置进行；
+        - [ ] [[Configurable]]: 默认为true。表示能否通过delete删除属性来重新定义属性，或者能否把属性改为可访问属性；
+        - [x] [[Enumerable]]: 默认为true。表示能否通过for-in循环返回属性；
+        - [ ] [[Writable]]: 默认为true。表示能否修改属性的值；
+        - [ ] [[Value]]: 默认为underfined。表示包含属性的数据值。读写属性之都从这个位置进行；
     - 访问器属性不包含数据值。访问器属性不能直接定义，必须通过Object.defineProperty()定义。但包含一对getter和setter函数
-        - [ ] [[Configurable]]:默认为true。表示能否通过delete删除属性来重新定义属性，或者能否把属性改为可访问属性；
-        - [ ] [[Enumerable]]:默认为true。表示能否通过for-in 循环返回属性；
-        - [ ] [[Get]]:默认为underfined。表示读取属性时调用的函数；
-        - [ ] [[Set]]:默认为underfined。表示写入属性时调用的函数；
+        - [ ] [[Configurable]]: 默认为true。表示能否通过delete删除属性来重新定义属性，或者能否把属性改为可访问属性；
+        - [ ] [[Enumerable]]: 默认为true。表示能否通过for-in 循环返回属性；
+        - [ ] [[Get]]: 默认为underfined。表示读取属性时调用的函数；
+        - [ ] [[Set]]: 默认为underfined。表示写入属性时调用的函数；
 - import lodash
     - import { has } from 'lodash-es'; 
         - tree shakable, but CommonJS modules are not 
@@ -137,7 +157,8 @@ modified: '2020-06-22T12:02:55.011Z'
   - In the webpack bundling process, a few modules form a chunk. 
   - A bundle is an output file, produced by the bundling process. In most cases, each chunk emits exactly one bundle.
 - webpack-hmr
-```
+
+``` 
 const server = http.createServer(app);
 let currentApp = app;
 console.log(currentApp === app); // Returns true 
@@ -152,6 +173,7 @@ if (process.env.NODE_ENV !== 'production') {
     }
 }
 ```
+
 -  live reloading vs and hot module replacement/hot reloading vs React Fast Refresh
     - Live Reload - Triggers an app wide reload that listens to file changes
     - Hot Module Replacement - Is the same as Live Reload with the difference that it only replaces the modules that have been modified, hence the word Replacement. 
@@ -160,7 +182,7 @@ if (process.env.NODE_ENV !== 'production') {
     - webpack-hmr的原理
         - Hot Module Replacement is a core capability offered by Webpack. Webpack's compiler offers a `module.hot.accept()` API. Your application code can register callbacks to run when certain files have been recompiled. Here's how the process works:
             - Your Webpack config needs to include the HMR client code as an `entry` point in addition to your actual application entry file. This adds a small piece to the client bundle, which will open a websocket connection back to the Webpack dev server.
-            - Your client application code calls `module.hot.accept("./someFileName", callbackToRunWhenThatFileIsRecompiled)`.
+            - Your client application code calls `module.hot.accept("./someFileName", callbackToRunWhenThatFileIsRecompiled)` .
             - Webpack's dev server watches your files for changes, and recompiles source files when you hit save
             - The dev server sends a message to the client, announcing that those files have been recompiled, and including the new versions of the code
             - The client runs any `module.hot.accept` callbacks that match that file's path
@@ -172,7 +194,10 @@ if (process.env.NODE_ENV !== 'production') {
         - https://blog.isquaredsoftware.com/2017/08/blogged-answers-webpack-hmr-vs-rhl/
 - Can a JavaScript object property refer to another property of the same object?
     - Unfortunately, no. The `{}` syntax initiates creation of a new object, but until the object is created, it isn't assigned to the carousel variable. Also, the `this` value can only change as a result of a function call. If your "several more properties" are all going to depend only on slider, then you could get around with something like this:
-    ```
+
+    
+
+``` 
       var slider = $('.slider');
       var carousel = {
         panes: slider.children.length(),
@@ -187,8 +212,12 @@ if (process.env.NODE_ENV !== 'production') {
           c: a + b
       };
     ```
+
     - Not with object literals (this has the same value during constructing of the literal that it did before-hand). But you can do  
-    ```
+
+    
+
+``` 
       var carousel = new (function()
         {
               this.$slider =  $('#carousel1 .slider');
@@ -213,8 +242,12 @@ if (process.env.NODE_ENV !== 'production') {
           }
       }();
     ```
+
     - The `get` syntax binds an object property to a function that will be called when that property is looked up.
-    ```
+
+    
+
+``` 
       var foo = {
         a: 5,
         b: 6,
@@ -224,8 +257,12 @@ if (process.env.NODE_ENV !== 'production') {
       }
       console.log(foo.c) // 11
     ```
-    - eg1: assign the return value of init() to foo. you have to `return this`.
-    ```
+
+    - eg1: assign the return value of init() to foo. you have to `return this` .
+
+    
+
+``` 
       var foo = {
         a: 5,
         b: 6,
@@ -236,16 +273,24 @@ if (process.env.NODE_ENV !== 'production') {
         }
       }.init();
     ```
+
     - eg2: separate
-    ```
+
+    
+
+``` 
       var foo = {
           a: 5,
           b: 6
       };
       foo.c = foo.a + foo.b;
     ```
+
     - eg3: once, more 
-    ```
+
+    
+
+``` 
       var foo = function(o) {
           o.c = o.a + o.b;
           return o;
@@ -257,8 +302,12 @@ if (process.env.NODE_ENV !== 'production') {
           return o;
       }
     ```
+
     - eg4: es6 class
-    ```
+
+    
+
+``` 
       class Foo {
         constructor(){
           this.a = 5;
@@ -268,6 +317,7 @@ if (process.env.NODE_ENV !== 'production') {
       }
       const foo = new Foo();
     ```
+
 - Please stop using classes in JavaScript
     - Binding issues. As class constructor functions deal closely with `this ` keyword, it can introduce potential binding issues, especially if you try to pass your class method as a callback to an external routine (hello, React devs)
     - Performance issues. Because of classes' implementation, they are notoriously difficult to optimize at runtime. 
@@ -332,7 +382,7 @@ if (process.env.NODE_ENV !== 'production') {
     - `path.join(path1，path2，path3.......)`
         - 先解析相对路径..，再拼接返回，path片段/docs,./docs,docs三种方式处理无差别
         - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
-        - path片段前的`./`可有可无，只进行路径拼接
+        - path片段前的 `./` 可有可无，只进行路径拼接
         - `path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');`
             - 返回: '/foo/bar/baz/asdf'
     - `path.resolve([from...],to)`
@@ -342,11 +392,11 @@ if (process.env.NODE_ENV !== 'production') {
     - `__dirname`
         - Node.js中的文件路径大概有 __dirname, __filename, process.cwd(), ./ 或者 ../
             - 前3者都是绝对路径
-        - `__dirname`：    当前执行文件所在目录的绝对路径
-        - `__filename`：   当前执行文件的带有完整绝对路径文件名的绝对路径
-        - `process.cwd()`：当前执行node命令时候的文件夹目录名 
-        - `./`：跟process.cwd()一样，返回node命令时所在的文件夹的绝对路径
-        - `require(./a.js)`：当node遇到require时，会相对当前执行文件查找
+        - `__dirname` ：    当前执行文件所在目录的绝对路径
+        - `__filename` ：   当前执行文件的带有完整绝对路径文件名的绝对路径
+        - `process.cwd()` ：当前执行node命令时候的文件夹目录名 
+        - `./` ：跟process.cwd()一样，返回node命令时所在的文件夹的绝对路径
+        - `require(./a.js)` ：当node遇到require时，会相对当前执行文件查找
         - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
 - html a标签属性 rel='nofollow'
     - 告诉搜索引擎不要此网页上的链接或不要追踪此特定链接
@@ -375,37 +425,39 @@ if (process.env.NODE_ENV !== 'production') {
     - Date.now() returns the number of milliseconds elapsed since Unix epoch(1 January 1970 00:00:00 UTC) and is dependent on system clock.会因为系统时间的变化而改变，准确性有时不能保证
         - Use cases include same old date manipulation ever since the beginning of JavaScript.
 - typescript typeof
-```
+
+``` 
 let bar = {a: 0};
 let TypeofBar = typeof bar;  // the value "object"
 type TypeofBar = typeof bar; // the type {a: number}
 ```
-- Object.prototype.hasOwnProperty.call(obj, attrName);
+
+- Object.prototype.hasOwnProperty.call(obj, attrName); 
     - obj.hasOwnProperty(prop)判断一个属性是定义在对象本身而不是继承自原型链
         - 调用的是js中Object对象原型上的hasOwnProperty()方法
     - js没有将hasOwnProperty作为一个敏感词，所以我们很有可能将对象的一个属性命名为hasOwnProperty，这样一来就无法再使用对象原型的hasOwnProperty 方法来判断属性是否是来自原型链，解决方法有几种
         - ({}).hasOwnProperty.call(foo, 'bar'); // true
         - Object.prototype.hasOwnProperty.call(foo, 'bar');
-- TypeScript 3.0在JSX命名空间中引入了一个新的类型别名`LibraryManagedAttributes`
+- TypeScript 3.0在JSX命名空间中引入了一个新的类型别名 `LibraryManagedAttributes`
     - 这是一个辅助类型，用于告诉TypeScript某个JSX标记可以接受哪些属性
     - TypeScript 3.0 adds support for a new type alias in the JSX namespace called LibraryManagedAttributes. 
     - This helper type defines a transformation on the component’s Props type, before using to check a JSX expression targeting it; thus allowing customization like: how conflicts between provided props and inferred props are handled, how inferences are mapped, how optionality is handled, and how inferences from differing places should be combined.
-    - The default-ed properties are inferred from the defaultProps property type. If an explicit type annotation is added, e.g. static defaultProps: `Partial<Props>`; the compiler will not be able to identify which properties have defaults
+    - The default-ed properties are inferred from the defaultProps property type. If an explicit type annotation is added, e.g. static defaultProps: `Partial<Props>` ; the compiler will not be able to identify which properties have defaults
     - Use static defaultProps: `Pick<Props, "name">` as an explicit type annotation instead
 - As of NPM 2.0.0, importing local dependencies is supported natively.
     - `"bar": "file:../foo/bar"`
 - npm main vs module
-    - 当我们在不同环境下`import`一个npm包时，到底加载的是npm包的哪个文件？
-        - 由于我们使用的模块规范有ESM和CommonJS两种，为了能在node环境下原生执行 ESM 规范的脚本文件，.mjs文件就应运而生。当存在 index.mjs 和 index.js 这种同名不同后缀的文件时，`import './index'` 或者 `require('./index')` 是会优先加载 index.mjs 文件
+    - 当我们在不同环境下 `import` 一个npm包时，到底加载的是npm包的哪个文件？
+        - 由于我们使用的模块规范有ESM和CommonJS两种，为了能在node环境下原生执行 ESM 规范的脚本文件，.mjs文件就应运而生。当存在 index.mjs 和 index.js 这种同名不同后缀的文件时， `import './index'` 或者 `require('./index')` 是会优先加载 index.mjs 文件
         - `main` : 定义了npm包的入口文件，browser环境和node环境均可使用
         - `module` : 定义npm包的ESM规范的入口文件，browser环境和node环境均可使用
         - `browser` : 定义npm包在browser环境下的入口文件
-        - 实际上的优先级是`browser=browser+mjs > module > browser+cjs > main`
+        - 实际上的优先级是 `browser=browser+mjs > module > browser+cjs > main`
             - webpack会根据这个顺序去寻找字段指定的文件，直到找到为止
     - 最早的npm包都是基于CommonJS规范(name,version,main)，当require('package1')的时候，就会根据main字段去查找入口文件
         - ES2015后，js拥有了ES Module，相较于之前的模块化方案更优雅，并且ES模块也是官方标准（JS 规范），而CommonJS模块是一种特殊的传统格式，利用ES Module的特性可以提高打包的性能，其中提升一个便是 tree shaking
-        - CommonJS规范的包都是以`main`字段表示入口文件了，如果使用ES Module的也用main字段，就会对使用者造成困扰
-        - webpack从版本2开始也可以识别`module`字段。打包工具遇到 package1 的时候，如果存在 module 字段，会优先使用，如果没找到对应的文件，则会使用 main 字段，并按照 CommonJS 规范打包
+        - CommonJS规范的包都是以 `main` 字段表示入口文件了，如果使用ES Module的也用main字段，就会对使用者造成困扰
+        - webpack从版本2开始也可以识别 `module` 字段。打包工具遇到 package1 的时候，如果存在 module 字段，会优先使用，如果没找到对应的文件，则会使用 main 字段，并按照 CommonJS 规范打包
         - tree-shaking的功能就是把我们JS中无用的代码给去掉，如果把打包工具通过入口文件，产生的依赖树作为tree，tree-shaking就是把依赖树中用不到的代码shaking掉
 - html所有元素通用的title属性，可以作为鼠标悬浮提示，可以用来作为input前类似label的提示，可以作为a11y的补充(对键盘导航影响大)
 - tsc vs babel
@@ -421,7 +473,7 @@ type TypeofBar = typeof bar; // the type {a: number}
     - Options specific to a certain environment are merged into and overwrite non-env specific options.
     - Because it's JS you could do this in a lot of ways
 - IOS环境下的按钮都是经过美化的，但通常我们在设计web app的时候不需要这些看上去老土的样式，所以，去除这些显得很有必要
-    - `-webkit-appearance`会将webkit浏览器中的元素默认样式去除
+    - `-webkit-appearance` 会将webkit浏览器中的元素默认样式去除
     - 会导致无法获取checkbox值,给这个元素重新赋上-webkit-appearance:checkbox就不会报错了
 - typescript interface extends vs `&` intersect
     - the most significant is the difference in how members with the same property key are handled when present in both types.
@@ -430,5 +482,3 @@ type TypeofBar = typeof bar; // the type {a: number}
     - ref
         - https://stackoverflow.com/questions/52681316/difference-between-extending-and-intersecting-interfaces-in-typescript
         - https://stackoverflow.com/questions/42735611/why-can-intersection-types-contain-conflicting-types
-
-

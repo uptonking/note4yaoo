@@ -2,12 +2,13 @@
 tags: [tool/software]
 title: tool-software-usage
 created: '2019-07-08T04:10:28.254Z'
-modified: '2020-06-22T09:25:33.354Z'
+modified: '2020-06-30T13:03:42.094Z'
 ---
 
 # tool-software-usage
 
 ## 软件使用体验xp
+
 - Ubuntu开启显示隐藏文件后，文件夹的大小会变大，如git项目下的.git目录有时非常大
 - 常用端口(默认可不写)
   - HTTP：80
@@ -19,6 +20,7 @@ modified: '2020-06-22T09:25:33.354Z'
 - 可用ping检测ip，用telnet检测端口
 
 ## software
+
 - video
   - vlc
       - 3.0.7 - 201907
@@ -38,7 +40,8 @@ modified: '2020-06-22T09:25:33.354Z'
       - win/linu  -x/mac
       - https://www.clementine-player.org/
           - https://github.com/clementine-player/clementine
-          GPLv3
+          - GPLv3
+
   - netease cloud music
 - learning
   - goldendict
@@ -86,17 +89,19 @@ modified: '2020-06-22T09:25:33.354Z'
   - emarket
 
 ## chrome扩展
+
 - 信息收集类
   - pocket
   - 收趣云书签，开始做资讯与头条了
   - 简悦SimpleRead
 
 ## toolkit
+
 - browser
   - chrome
   - firefox/opera/yandex/vivaldi/brave/edge
 - java反编译
-  - jd-gui，win/linux/mac,GPLv3
+  - jd-gui，win/linux/mac, GPLv3
       - https://github.com/java-decompiler/jd-core
   - Android反编译gui工具Jadx
   - java反编译类库 fernflower，由intellij idea作为插件开源，Apache2.0
@@ -113,7 +118,7 @@ modified: '2020-06-22T09:25:33.354Z'
 - web
   - postman
 - file
-  - transfer: dukto,filezilla
+  - transfer: dukto, filezilla
 - geo
   - qgis
   - udig
@@ -147,10 +152,10 @@ modified: '2020-06-22T09:25:33.354Z'
   - hexo
   - gatsby
 
-
 ## device
 
 ### Chromebook
 
 ### FydeOS
+
 - 原名Flint OS，基于驱动Chrome OS及谷歌浏览器的开源项目二次开发，继承Chrome OS所有特性，适配更多硬件品类，为中国用户定制的本土化修改

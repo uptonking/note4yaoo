@@ -8,9 +8,11 @@ modified: '2020-06-28T03:26:54.937Z'
 # note-lang-js-proposal
 
 ## proposal-toc
+
 - https://babeljs.io/docs/en/plugins
 
 ## class fields
+
 - stage 3
 - https://github.com/tc39/proposal-class-fields
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
@@ -26,14 +28,14 @@ modified: '2020-06-28T03:26:54.937Z'
   - When initializing fields this refers to the class instance under construction. 
     - Just as in public instance methods, if you're in a subclass you can access the superclass prototype using super.
 - Public instance methods are methods available on class instances.
-  - Public instance methods are added to the class prototype at the time of class evaluation using `Object.defineProperty()`. 
+  - Public instance methods are added to the class prototype at the time of class evaluation using `Object.defineProperty()` . 
   - They are writable, non-enumerable, and configurable.
   - Inside instance methods, `this` refers to the instance itself. 
     - In subclasses, super lets you access the superclass prototype, allowing you to call methods from the superclass.
   - Use the `get` and `set` syntax to declare a public instance getter or setter.
 - Public static fields are useful when you want a field to exist only once per class, not on every class instance you create. 
   - This is useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.
-  - Public static fields are added to the class constructor at the time of class evaluation using `Object.defineProperty()`. They are accessed again from the class constructor.
+  - Public static fields are added to the class constructor at the time of class evaluation using `Object.defineProperty()` . They are accessed again from the class constructor.
   - Fields without initializers are initialized to undefined.
   - Public static fields are not reinitialized on subclasses, but can be accessed via the prototype chain.
   - When initializing fields, `this` refers to the class constructor. 
@@ -48,9 +50,8 @@ modified: '2020-06-28T03:26:54.937Z'
   - ref
     - https://2ality.com/2012/08/property-definition-assignment.html
 
-
-
 ## dynamic import
+
 - stage 4
 - https://github.com/tc39/proposal-dynamic-import
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports
@@ -72,5 +73,3 @@ modified: '2020-06-28T03:26:54.937Z'
   - This form also supports the `await` keyword
 - Use dynamic import only when necessary. 
   - The static form is preferable for loading initial dependencies, and can benefit more readily from static analysis tools and tree shaking.
-
-

@@ -8,14 +8,15 @@ modified: '2020-06-22T09:16:54.407Z'
 # note-web-dom
 
 ## repeat
+
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-  - class,contenteditable,data-*,draggable,dropzone,hidden,id,style
-  - tabindex,title
-  
+  - class, contenteditable, data-*, draggable, dropzone, hidden, id, style
+  - tabindex, title
+
 ## pieces
 
 - `<button>` vs `<input type=button>`
-  - Unlike `<input>` tags, `<button>`'s can contain other html elements as their labels. 
+  - Unlike `<input>` tags, `<button>` 's can contain other html elements as their labels. 
   - `<button>` element accepts a wide range of uncommon but useful attributes regarding multiple forms and click actions.
   - Without a type, button implicitly receives type of submit. It does not matter how many submit buttons or inputs there are in the form, any one of them which is explicitly or implicitly typed as submit, when clicked, will submit the form. This can cause problems if you want to use a button in a form without it submitting.
   - `<input type="button">` can only accept a string as its label text (css styles not withstanding).
@@ -36,7 +37,7 @@ modified: '2020-06-22T09:16:54.407Z'
   - 表格的行本来是从上向下显示的。但是，应用了thead/tbody/tfoot以后，就“从头到脚”显示，不管你的行代码顺序如何。也就是说如果thead写在了tbody的后面，html显示时，还是以先thead后tbody显示
 - Document.defaultView(read only) Returns a reference to the window object
   - `document.defaultView === window` 返回true
-  - defaultView是document关联的window对象，其用途体现在当前上下文的window不等于当前document关联的window时，比如iframe,chrome-extension,ff-addon，有时相等
+  - defaultView是document关联的window对象，其用途体现在当前上下文的window不等于当前document关联的window时，比如iframe, chrome-extension, ff-addon，有时相等
   - 当使用Firefox 3.6时，其frame中需要使用document.defaultView去获取window对象，才能使用其getComputedStyle方法
   - 参考
       - https://www.cnblogs.com/yuan-shuai/p/4125511.html
@@ -53,18 +54,18 @@ modified: '2020-06-22T09:16:54.407Z'
   - 唯一区别是，因为parentElement找的是元素，因此当找到根部document时候就是出现值为null的报错，而且parentNode找的是节点，就可以返回document
 - Node vs Element
   - Node(节点)是DOM层次结构中的任何类型的父类
-      - Node类型包括element(1),attr(2),text(3),comments(8),document(9)
+    - Node类型包括element(1),attr(2),text(3),comments(8),document(9)
   - Element继承了Node类，Element拥有id、class、children等属性
-  - `document.getElementById("xxx")`取到的既是Element也是Node
+  - `document.getElementById("xxx")` 取到的既是Element也是Node
 - children属性 vs childNodes属性
   - children属性只返回Element
-      - instanceof Node/Element都为true
-      - Node的children属性为undefined
-      - 只打印元素节点，不打印文本节点和其他
+    - instanceof Node/Element都为true
+    - Node的children属性为undefined
+    - 只打印元素节点，不打印文本节点和其他
   - childNodes属性返回所有的Node，包括文本节点、注释节点
-      - instanceof Node为true
-      - instanceof Element为false
-      - 此时闭合标签后的换行符和空格会被视为文本节点
+    - instanceof Node为true
+    - instanceof Element为false
+    - 此时闭合标签后的换行符和空格会被视为文本节点
   - 两者都是即时的LIVE类型，改变子节点或子元素个数，length属性会立即改变
   - children是Element的属性，childNodes是Node的属性
 
@@ -78,22 +79,22 @@ modified: '2020-06-22T09:16:54.407Z'
   - 对于pc，viewport是不生效的，所以在pc（chrome）上，px其实就是逻辑像素。但是逻辑像素是与软件实现有关的，所以会出现一些问题。比如在win上，对于部分国产马甲浏览器，viewport内部没有适配系统的缩放等级，导致渲染的内容过小
 - viewport
   - ref
-      - https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
-      - https://zhuanlan.zhihu.com/p/60800716
-      - https://www.cnblogs.com/2050/p/3877280.html
-      - https://www.zhihu.com/question/35221839
+    - https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+    - https://zhuanlan.zhihu.com/p/60800716
+    - https://www.cnblogs.com/2050/p/3877280.html
+    - https://www.zhihu.com/question/35221839
   - viewport**只对移动端生效**
-      - 移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域
-      - 具体一点，就是浏览器上(也可能是一个app中的webview)用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域要大，也可能比浏览器的可视区域要小
-      - 移动设备上的浏览器都会把自己默认的viewport设为980px,1024px...
-      - 浏览器可视区域的宽度是比这个默认的viewport的宽度要小的，会出现横向滚动条
-  - width设置layout viewport的宽度,device-width就是设备的逻辑像素宽度，比如iPhone8 Plus，它的逻辑像素宽度是414px，虽然它的实际宽度是1080像素，但是网页上的每个像素在显示时的宽度是手机屏幕的宽度除以414
-  - 浏览器厂商设置的默认的viewport叫做`layout viewport`
+    - 移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域
+    - 具体一点，就是浏览器上(也可能是一个app中的webview)用来显示网页的那部分区域，但viewport又不局限于浏览器可视区域的大小，它可能比浏览器的可视区域要大，也可能比浏览器的可视区域要小
+    - 移动设备上的浏览器都会把自己默认的viewport设为980px,1024px...
+    - 浏览器可视区域的宽度是比这个默认的viewport的宽度要小的，会出现横向滚动条
+  - width设置layout viewport的宽度, device-width就是设备的逻辑像素宽度，比如iPhone8 Plus，它的逻辑像素宽度是414px，虽然它的实际宽度是1080像素，但是网页上的每个像素在显示时的宽度是手机屏幕的宽度除以414
+  - 浏览器厂商设置的默认的viewport叫做 `layout viewport`
       - 以通过document.documentElement.clientWidth来获取(1020)
       - layout viewport的宽度是大于浏览器可视区域的宽度的
-  - 代表浏览器可视区域的大小叫做`visual viewport`
+  - 代表浏览器可视区域的大小叫做 `visual viewport`
       - 可以通过window.innerWidth来获取(1035)
-  - 能完美适配移动设备的viewport叫`ideal viewport`
+  - 能完美适配移动设备的viewport叫 `ideal viewport`
       - 不同的设备拥有有不同的ideal viewport
       - ideal viewport的宽度等于移动设备的屏幕宽度
       - 只要在css中把某一元素的宽度设为ideal viewport的宽度(单位用px)，那么这个元素的宽度就是设备屏幕的宽度了，也就是宽度为100%的效果
@@ -105,20 +106,20 @@ modified: '2020-06-22T09:16:54.407Z'
       - `当前缩放值= ideal viewport屏幕尺寸宽度 / visual viewport显示内容宽度`
   - 在iphone和ipad上，无论你给viewport设的宽的是多少，如果没有指定默认的缩放值，则iphone和ipad会自动计算这个缩放值，以达到当前页面不会出现横向滚动条
   - px是相对单位，不是屏幕上一个点对应一个px，如果你希望屏幕上一个点对应一个px，需要进行一些调整。以iPhone8 Plus为例，宽度为1080物理像素，所以需要先把viewport设为 1080px，然后把scale设为414/1080 = 0.38333
-  - `window.devicePixelRatio`可以查看网页缩放比，各tab页缩放比互不影响
+  - `window.devicePixelRatio` 可以查看网页缩放比，各tab页缩放比互不影响
       - 可在开发者工具中toggle device，这样会改变dpr，也会改变innerWidth
-  - 在移动端浏览器中以及某些桌面浏览器中，window对象有一个devicePixelRatio属性，它的官方的定义为：设备物理像素和设备独立像素的比例，也就是 `devicePixelRatio = 物理像素 / 独立像素`
-      - css中的px就可以看做是设备的独立像素
-  - `screen`对象的属性无论浏览器窗口如何缩放，width/height都是屏幕宽高(1366/768)
-      - win10可通过分辨率/dpr比例得到浏览器的screen尺寸
+  - 在移动端浏览器中以及某些桌面浏览器中，window对象有一个devicePixelRatio属性
+    - 它的官方的定义为：设备物理像素和设备独立像素的比例，也就是 `devicePixelRatio = 物理像素 / 独立像素`
+    - css中的px就可以看做是设备的独立像素
+  - `screen` 对象的属性无论浏览器窗口如何缩放，width/height都是屏幕宽高(1366/768)
+    - win10可通过分辨率/dpr比例得到浏览器的screen尺寸
   - 如果不设置meta viewport标签，那么移动设备上浏览器默认的宽度值为800px，980px，1024px这些，总之是大于屏幕宽度的
   - 每个移动设备浏览器中都有一个理想的宽度ideal viewport，这个理想的宽度是指css中的宽度，跟设备的物理宽度没有关系，在css中，这个宽度就相当于100%的所代表的那个宽度
   - 可以用meta标签把viewport的宽度设为那个理想的宽度，如果不知道这个设备的理想宽度是多少，那么用device-width这个特殊值就行了，同时initial-scale=1也有把viewport的宽度设为理想宽度的作用
   - 为什么分辨率大的这个手机的理想宽度要跟分辨率小的那个手机的理想宽度一样呢？只有这样才能保证同样的网站在不同分辨率的设备上看起来差不多
-  
-      
 
 ## element
+
 - https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 - select vs dropdown
   - select各浏览器都有实现，dropdown需要自己实现
@@ -127,20 +128,20 @@ modified: '2020-06-22T09:16:54.407Z'
 - html全局属性可用于任何HTML元素
 - accesskey	规定激活元素的快捷键
 - class	规定元素的一个或多个类名（引用样式表中的类）
-- `contenteditable`	规定元素内容是否可编辑
+- `contenteditable` 	规定元素内容是否可编辑
 - contextmenu	规定元素的上下文菜单，上下文菜单在用户点击元素时显示
-- `data-*`	用于存储页面或应用程序的私有定制数据
+- `data-*` 	用于存储页面或应用程序的私有定制数据
 - dir		规定元素中内容的文本方向
-- `draggable`	规定元素是否可拖动
-- `dropzone`	规定在拖动被拖动数据时是否进行复制、移动或链接
-- `hidden`	规定元素仍未或不再相关，浏览器不应显示已规定 hidden 属性的元素
-- `id`	规定元素的唯一 id
+- `draggable` 	规定元素是否可拖动
+- `dropzone` 	规定在拖动被拖动数据时是否进行复制、移动或链接
+- `hidden` 	规定元素仍未或不再相关，浏览器不应显示已规定 hidden 属性的元素
+- `id` 	规定元素的唯一 id
 - lang	规定元素内容的语言
 - spellcheck	规定是否对元素进行拼写和语法检查
 - style	规定元素的行内CSS样式
 - tabindex	规定元素的tab键次序
   - tabindex属性规定元素的tab键控制次序（当tab键用于导航时）
-  - 以下元素支持tabindex属性：`<a>, <area>, <button>, <input>, <object>, <select> 以及 <textarea>`
+  - 以下元素支持tabindex属性： `<a>, <area>, <button>, <input>, <object>, <select> 以及 <textarea>`
 - title	规定有关元素的额外信息
 - translate	规定是否应该翻译元素内容
 - `<dl><dt><dd>` 定义带缩进的列表
@@ -179,5 +180,3 @@ modified: '2020-06-22T09:16:54.407Z'
 - `<textarea>`
 - `<select>`
     - `<option>`
-
-

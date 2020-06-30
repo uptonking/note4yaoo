@@ -8,9 +8,11 @@ modified: '2020-06-30T05:14:25.332Z'
 # docs-react-p5-codebase-deisgn-test
 
 ## How to Contribute
+
 - https://reactjs.org/docs/how-to-contribute.html
 
 ## Codebase Overview
+
 - We don’t necessarily recommend any of these conventions in React apps.
   - Many of them exist for historical reasons and might change with time.
 - After cloning the React repository, you will see a few top-level folders in it
@@ -67,9 +69,10 @@ modified: '2020-06-30T05:14:25.332Z'
   - React implements a synthetic event system which is agnostic of the renderers and works both with React DOM and React Native.
 
 ## Implementation Notes for Stack Reconciler
+
 - https://reactjs.org/docs/implementation-notes.html
 - It is very technical and assumes a strong understanding of React public API as well as how it’s divided into core, renderers, and the reconciler. 
-- located at `src/renderers/shared/stack/reconciler`  
+- located at `src/renderers/shared/stack/reconciler`
 - The reconciler itself doesn’t have a public API. Renderers like React DOM and React Native use it to efficiently update the user interface according to the React components written by the user.
 - **Mounting as a Recursive Process**
   - Let’s consider the first time you mount a component
@@ -78,12 +81,12 @@ modified: '2020-06-30T05:14:25.332Z'
   - Remember that `<App />` is a React element, that is, a description of what to render. You can think about it as a plain object
   - The reconciler will check if App is a class or a function.
   - If App is a function, the reconciler will call `App(props)` to get the rendered element.
-  - If App is a class, the reconciler will instantiate an App with `new App(props)`, call the `componentWillMount()` lifecycle method, and then will call the `render()` method to get the rendered element.
+  - If App is a class, the reconciler will instantiate an App with `new App(props)` , call the `componentWillMount()` lifecycle method, and then will call the `render()` method to get the rendered element.
   - Either way, the reconciler will learn the element App “rendered to”.
-	- This process is recursive. App may render to a `<Greeting />`, Greeting may render to a `<Button />`, and so on. The reconciler will “drill down” through user-defined components recursively as it learns what each component renders to.
+	- This process is recursive. App may render to a `<Greeting />` , Greeting may render to a `<Button />` , and so on. The reconciler will “drill down” through user-defined components recursively as it learns what each component renders to.
   - React elements are plain objects representing the component type (e.g. App) and the props.
 	- User-defined components (e.g. App) can be classes or functions but they all “render to” elements.
-	- Mounting is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. `<App />`).
+	- Mounting is a recursive process that creates a DOM or Native tree given the top-level React element (e.g. `<App />` ).
 - **Mounting Host Elements**
 	- In addition to user-defined (“composite”) components, React elements may also represent platform-specific (“host”) components. 
 	- If element's type property is a string, we are dealing with a host element
@@ -114,7 +117,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - **Updating**
 	- The goal of the reconciler is to reuse existing instances where possible to preserve the DOM and the state
   - both DOMComponent and CompositeComponent will implement a new method called `receive(nextElement)`
-  - Its job is to do whatever is necessary to bring the component (and any of its children) up to date with the description provided by the `nextElement`.
+  - Its job is to do whatever is necessary to bring the component (and any of its children) up to date with the description provided by the `nextElement` .
   - This is the part that is often described as “virtual DOM diffing” although what really happens is that we walk the internal tree recursively and let each internal instance receive an update.
 - **Updating Composite Components**
 	- When a composite component receives a new element, we run the `componentWillUpdate()` and rerender
@@ -145,6 +148,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - The new Fiber reconciler comes with a completely different architecture.
 
 ## Design Principles
+
 - We wrote this document so that you have a better idea of how we decide what React does and what React doesn’t do, and what our development philosophy is like
   - This document assumes a strong understanding of React.
   - It describes the design principles of React itself, not React components or applications.
@@ -191,6 +195,7 @@ modified: '2020-06-30T05:14:25.332Z'
 	- Dogfooding it means that our vision stays sharp and we have a focused direction going forward.
 
 ## Testing Overview
+
 - There are a few ways to test React components. Broadly, they divide into two categories:
   - Rendering component trees in a simplified test environment and asserting on their output.
   - Running a complete app in a realistic browser environment (also known as “end-to-end” tests).
@@ -203,6 +208,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - React Testing Library is a set of helpers that let you test React components without relying on their implementation details.
 
 ## Testing Recipes
+
 - Setup/Teardown
   - For each test, we usually want to render our React tree to a DOM element that’s attached to document. 
   - This is important so that it can receive DOM events. 
@@ -238,10 +244,11 @@ modified: '2020-06-30T05:14:25.332Z'
   - Selectively mocking some child components can help reduce the size of snapshots and keep them readable for the code review.
 - Multiple Renderers
   - In rare cases, you may be running a test on a component that uses multiple renderers. 
-  - For example, you may be running snapshot tests on a component with `react-test-renderer`, that internally uses `ReactDOM.render` inside a child component to render some content. 
-  - In this scenario, you can wrap updates with `act()`s corresponding to their renderers
+  - For example, you may be running snapshot tests on a component with `react-test-renderer` , that internally uses `ReactDOM.render` inside a child component to render some content. 
+  - In this scenario, you can wrap updates with `act()` s corresponding to their renderers
 
 ## Testing Environments
+
 - This document goes through the factors that can affect your environment and recommendations for some scenarios.
 - Jest is widely compatible with React projects, supporting features like mocked modules and timers, and jsdom support. 
   - If you use Create React App, Jest is already included out of the box with useful defaults.
@@ -268,6 +275,3 @@ modified: '2020-06-30T05:14:25.332Z'
   - You might also likely want to make assertions not just on the DOM state, but on the backing data as well (e.g. to verify whether the updates have been persisted to the database).
   - Frameworks like Cypress, puppeteer and webdriver are useful for running end-to-end tests.
     - you can navigate between multiple routes and assert on side effects not just in the browser, but potentially on the backend as well.
-
-
-

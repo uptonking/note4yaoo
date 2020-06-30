@@ -8,6 +8,7 @@ modified: '2020-06-28T18:27:55.517Z'
 # note-web-optimization-render-performance
 
 ## guide
+
 - https://developers.google.com/web/fundamentals/performance/rendering/
 - [浏览器渲染详细过程：重绘、重排和 composite 只是冰山一角](https://juejin.im/entry/590801780ce46300617c89b8)
 - [浏览器的渲染过程2.0 — Composite](https://github.com/includeios/document/issues/10)
@@ -16,12 +17,13 @@ modified: '2020-06-28T18:27:55.517Z'
 - [无线性能优化：Composite](https://fed.taobao.org/blog/taofed/do71ct/performance-composite/)
 
 ## summary
+
 - 呈现器在创建完成并添加到呈现树时，并不包含位置和大小信息。计算这些值的过程称为布局或重排。
   - HTML采用基于流的布局模型，这意味着大多数情况下只要一次遍历就能计算出几何信息。处于流中靠后位置元素通常不会影响靠前位置元素的几何特征，因此布局可以按从左至右、从上至下的顺序遍历文档。
   - 布局是一个递归的过程。它从根呈现器（对应于HTML文档的 `<html>` 元素）开始，然后递归遍历部分或所有的框架层次结构，为每一个需要计算的呈现器计算几何信息。
   - 所有的呈现器都有一个“layout”或者“reflow”方法，每一个呈现器都会调用其需要进行布局的子代的layout方法。
   - 为避免对所有细小更改都进行整体布局，浏览器采用了一种“dirty 位”系统。如果某个呈现器发生了更改，或者将自身及其子代标注为“dirty”，则需要进行布局
-- CSS2规范定义了绘制流程的顺序,绘制的顺序其实就是元素进入堆栈样式上下文的顺序
+- CSS2规范定义了绘制流程的顺序, 绘制的顺序其实就是元素进入堆栈样式上下文的顺序
   - 背景颜色、背景图片、边框、子代、轮廓
 - defer vs async
   - defer与相比普通script，有两点区别：载入js文件时不阻塞HTML的解析，执行阶段被放到HTML标签解析完成之后
@@ -49,6 +51,7 @@ modified: '2020-06-28T18:27:55.517Z'
     - 每次重排或者强制重排后，当前Layout就不再dirty。所以你再访问offsetWidth之类的属性，并不会再触发重排。
 
 ## Web Performance Overview
+
 - Sites have more features than ever before. So much so, that many sites now struggle to achieve a high level of performance across a variety of network conditions and devices.
 - Performance issues vary. 
   - At best, they create small delays that are only briefly annoying to your users. 
@@ -63,10 +66,12 @@ modified: '2020-06-28T18:27:55.517Z'
   - Mind how much data you send
 
 ## Loading Performance Overview
+
 - Regardless of the platform, network, or device, faster apps are better apps.
 - https://web.dev/user-centric-performance-metrics/
 
 ## Measure performance with the RAIL model
+
 - https://web.dev/rail/
 - **RAIL** stands for four distinct aspects of web app life cycle: response, animation, idle, and load. 
 - RAIL is a user-centric performance model that provides a structure for thinking about performance. 
@@ -76,6 +81,7 @@ modified: '2020-06-28T18:27:55.517Z'
   - Lighthouse
 
 ## Rendering Performance Overview
+
 - Performance is the art of avoiding work, and making any work you do as efficient as possible.
 - 60fps and Device Refresh Rates
   - Most devices today **refresh their screens 60 times a second**. 
@@ -90,7 +96,7 @@ modified: '2020-06-28T18:27:55.517Z'
     - It doesn’t have to be JavaScript that triggers a visual change, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
   2. Style calculations 
     - It is the process of **figuring out which CSS rules apply to which elements based on matching selectors**
-    - for example, `.headline or .nav > .nav__item`. 
+    - for example, `.headline or .nav > .nav__item` . 
     - From there, once rules are known, they are applied and the final styles for each element are calculated.
   3. Layout/Reflow
     - Once the browser knows which rules apply to an element, it can begin to calculate how much space it takes up and where it is on screen. 
@@ -112,7 +118,7 @@ modified: '2020-06-28T18:27:55.517Z'
 - Each of these parts of the pipeline represents an opportunity to introduce jank, so it's important to understand exactly what parts of the pipeline your code triggers.
 - You won’t always necessarily touch every part of the pipeline on every frame. 
 - In fact, there are three ways the pipeline normally plays out for a given frame when you make a visual change, either with JavaScript, CSS, or Web Animations:
-- `JS/CSS > Style > Layout > Paint > Composite` 
+- `JS/CSS > Style > Layout > Paint > Composite`
   - If you change a “layout” property, so that’s one that changes an element’s geometry, like its width, height, or its position with left or top, the browser will have to check all the other elements and “reflow” the page.
   - Any affected areas will need to be repainted, and the final painted elements will need to be composited back together.
 - `JS/CSS > Style > Paint > Composite`
@@ -125,6 +131,7 @@ modified: '2020-06-28T18:27:55.517Z'
 - If you want the fast track to high performance animations, read the section on changing compositor-only properties.
 
 ## Optimize JavaScript Execution
+
 - Tips
   - Avoid `setTimeout` or `setInterval` for visual updates; always use `requestAnimationFrame` instead.
   - Move long-running JavaScript off the main thread to Web Workers.
@@ -137,7 +144,7 @@ modified: '2020-06-28T18:27:55.517Z'
 - The JavaScript you write is nothing like the code that is actually executed. 
   - Modern browsers use JIT compilers and all manner of optimizations and tricks to try and give you the fastest possible execution
 - Use `requestAnimationFrame` for visual changes
-  - The only way to guarantee that your JavaScript will run at the start of a frame is to use `requestAnimationFrame(doSth())`.
+  - The only way to guarantee that your JavaScript will run at the start of a frame is to use `requestAnimationFrame(doSth())` .
   - Frameworks or samples may use `setTimeout` or `setInterval` to do visual changes like animations, but the problem with this is that the callback will run at some point in the frame, possibly right at the end, and that can often have the effect of causing us to miss a frame, resulting in jank.
   - jQuery 3 was changed to use requestAnimationFrame
 - Reduce complexity or use Web Workers
@@ -159,6 +166,7 @@ modified: '2020-06-28T18:27:55.517Z'
   - https://zhuanlan.zhihu.com/p/39878259
 
 ## Reduce the Scope and Complexity of Style Calculations
+
 - Tips
   - Reduce the complexity of your selectors; use a class-centric methodology like BEM.
   - Reduce the number of elements on which style calculation must be calculated.
@@ -174,8 +182,8 @@ modified: '2020-06-28T18:27:55.517Z'
 - Measure your Style Recalculation Cost
 - Use Block, Element, Modifier
 
-
 ## Avoid Large, Complex Layouts and Layout Thrashing(Reflow)
+
 - Tips
   - Layout is normally scoped to the whole document.
   - The number of DOM elements will affect performance; you should avoid triggering layout wherever possible.
@@ -201,45 +209,52 @@ modified: '2020-06-28T18:27:55.517Z'
     - It is called a **forced synchronous layout**.
   - As the JavaScript runs, all the old layout values from the previous frame are known and available for you to query. 
   - Things get problematic if you’ve changed the styles of the box before you ask for its height
-  ```
+
+``` js
   // Schedule our function to run at the start of the frame.
   requestAnimationFrame(logBoxHeight);
 
   function logBoxHeight() {
 
-  box.classList.add('super-big');
+    box.classList.add('super-big');
 
     // Gets the height of the box in pixels and logs it out.
     console.log(box.offsetHeight);
   }
-  ```
+```
+
   - Now, in order to answer the height question, the browser must first apply the style change (because of adding the super-big class), and then run layout. Only then will it be able to return the correct height. This is unnecessary and potentially expensive work.
   - Because of this, you **should always batch your style reads and do them first** (where the browser can use the previous frame’s layout values) and then do any writes
   - Done correctly the above function would be:
-  ```
+
+``` js
   function logBoxHeight() {
     // Gets the height of the box in pixels and logs it out.
     console.log(box.offsetHeight);
 
     box.classList.add('super-big');
   }
-  ```
+```
+
   - For the most part you shouldn’t need to apply styles and then query values; using the last frame’s values should be sufficient. 
   - Running the style calculations and layout synchronously and earlier than the browser would like are potential bottlenecks, and not something you will typically want to do.
 - Avoid layout thrashing
   - There’s a way to make forced synchronous layouts even worse: do lots of them in quick succession.
-  ```
+
+``` js
   function resizeAllParagraphsToMatchBlockWidth() {
     // Puts the browser into a read-write-read-write cycle.
     for (var i = 0; i < paragraphs.length; i++) {
       paragraphs[i].style.width = box.offsetWidth + 'px';
     }
   }
-  ```
+```
+
   - The problem is that each iteration of the loop reads a style value (box.offsetWidth) and then immediately uses it to update the width of a paragraph
   - On the next iteration of the loop, the browser has to account for the fact that styles have changed since offsetWidth was last requested (in the previous iteration), and so it must apply the style changes, and run layout. This will happen on every single iteration
   - To fix
-  ```
+
+``` js
   // Read.
   var width = box.offsetWidth;
 
@@ -249,11 +264,12 @@ modified: '2020-06-28T18:27:55.517Z'
       paragraphs[i].style.width = width + 'px';
     }
   }
-  ```
+```
+
   - If you want to guarantee safety you should check out FastDOM, which automatically batches your reads and writes for you, and should prevent you from triggering forced synchronous layouts or layout thrashing accidentally.
 
-
 ## Simplify Paint Complexity and Reduce Paint Areas
+
 - Tips
   - Changing any property apart from transforms or opacity always triggers paint.
   - Paint is often the most expensive part of the pixel pipeline; avoid it where you can.
@@ -271,15 +287,17 @@ modified: '2020-06-28T18:27:55.517Z'
   - In fact, it’s possible for the browser to paint into multiple images, or compositor layers, if necessary.
   - Elements that are regularly repainted, or are moving on screen with transforms, can be handled without affecting other elements. 
     - like Sketch, GIMP, or Photoshop, where individual layers can be handled and composited on top of each other to create the final image.
-  - The **best way to create a new layer is to use the `will-change` CSS property**. This will work in Chrome, Firefox and Opera, and, with a value of `transform`, will create a new compositor layer
-  - For browsers that don’t support `will-change`, but benefit from layer creation, such as Safari and Mobile Safari, you need to (mis)use a 3D transform to force a new layer
-  ```
+  - The **best way to create a new layer is to use the `will-change` CSS property**. This will work in Chrome, Firefox and Opera, and, with a value of `transform` , will create a new compositor layer
+  - For browsers that don’t support `will-change` , but benefit from layer creation, such as Safari and Mobile Safari, you need to (mis)use a 3D transform to force a new layer
+
+``` css
   .moving-element {
     will-change: transform;
-    或者
+    /* 或者 */
     transform: translateZ(0);
   }
-  ```
+```
+
   - Care must be taken not to create too many layers, as each layer requires both memory and management.
   - If you have promoted an element to a new layer, use DevTools to confirm that doing so has given you a performance benefit. 
   - **Don't promote elements without profiling**.
@@ -291,12 +309,13 @@ modified: '2020-06-28T18:27:55.517Z'
   - Reducing paint areas is often a case of orchestrating your animations and transitions to not overlap as much, or finding ways to avoid animating certain parts of the page.
 - Simplify paint complexity
   - When it comes to painting, some things are more expensive than others. 
-  - For example, anything that involves a blur (like a `shadow`, for example) is going to take longer to paint than -- say -- drawing a red box.
+  - For example, anything that involves a blur (like a `shadow` , for example) is going to take longer to paint than -- say -- drawing a red box.
   - The paint profiler will allow you to determine if you need to look at other ways to achieve effects. 
   - Ask yourself if it’s possible to use a cheaper set of styles or alternative means to get to your end result.
   - Where you can, you should try to avoid paint during animations in particular, as the 10ms you have per frame is normally not long enough to get paint work done, especially on mobile devices.
 
 ## Stick to Compositor-Only Properties and Manage Layer Count
+
 - Tips
   - Stick to transform and opacity changes for your animations.
   - Promote moving elements with will-change or translateZ.
@@ -308,36 +327,45 @@ modified: '2020-06-28T18:27:55.517Z'
 - Use transform and opacity changes for animations
   - The best-performing version of the pixel pipeline avoids both layout and paint, and only requires compositing changes
   - There are only two properties that can be handled by the compositor alone  
-  ```
+
+``` css
   transform: translate(xpx, ypx);
   transform: scale(ratio);
   transform: rotate(ndeg);
   transform: skewX/Y(ndeg);
   transform: matrix/3d(...);
   opacity: 0~1
-  ```
+```
+
   - The caveat for the use of transforms and opacity is that the element on which you change these properties should be on its own compositor layer. 
   - In order to make a layer you must promote the element 
 - Promote elements that you plan to animate
   - You should promote elements that you plan to animate (within reason, don’t overdo it!) to their own layer
-  ```
+
+``` css
   .moving-element {
     will-change: transform;
   }
+
   .moving-element {
     transform: translateZ(0);
   }
-  ```
+```
+
   - This gives the browser the forewarning that changes are incoming 
     - depending on what you plan to change, the browser can potentially make provisions, such as creating compositor layers.
 - Manage layers and avoid layer explosions
   - It’s perhaps tempting, then, knowing that layers often help performance, to promote all the elements on your page with something like the following
-  ```
+
+``` css
+
   * {
+
     will-change: transform;
     transform: translateZ(0);
   }
-  ```
+```
+
   - This is a roundabout way of saying that you’d like to promote every single element on the page.
   - The problem here is that every layer you create requires memory and management, and that’s not free
   - On devices with limited memory, the impact on performance can far outweigh any benefit of creating a layer. 
@@ -346,6 +374,7 @@ modified: '2020-06-28T18:27:55.517Z'
   - Enable the Paint profiler in Chrome DevTools’ Timeline
 
 ## Debounce Your Input Handlers
+
 - Tips
   - Avoid long-running input handlers; they can block scrolling.
   - Do not make style changes in input handlers.
@@ -353,10 +382,3 @@ modified: '2020-06-28T18:27:55.517Z'
 - Avoid long-running input handlers
 - Avoid style changes in input handlers
 - Debounce your scroll handlers
-
-
-
-
-
-
-

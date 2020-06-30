@@ -10,7 +10,7 @@ modified: '2020-06-22T09:25:21.515Z'
 ## 问题
 
 - 支持存储和分析的数据量有限  
-  - 2007格式的excel支持16,384 columns and 1,048,476 rows
+  - 2007格式的excel支持16, 384 columns and 1, 048, 476 rows
 - 不支持并行修改
 - 打开大文件速度慢
 - 输入数据费时
@@ -29,11 +29,13 @@ modified: '2020-06-22T09:25:21.515Z'
   - OT  http://www3.ntu.edu.sg/home/czsun/projects/otfaq/
 
 ### 特定需求
+
 - 一批数据制作多表时，各表有同样的数据，存在冗余
 - 横向排版不能分栏
 - 不统计则不能分组显示
 
 ## 优点
+
 - 简单清晰
 - 使用广泛
 - 数据和样式保存在一个文件
@@ -55,23 +57,22 @@ modified: '2020-06-22T09:25:21.515Z'
   - xlsx则是采用OOXML(Office open Xml)的格式存储数据
 
 ### xlsx格式的Excel
+
 - .xlsx其实是个压缩包，解压后目录结构如下
   - `_rels/`
-      - `_rels`：记录描述excel整体的元信息文件的位置关系，包括app.xml,core.xml,workbook.xml
+    - `_rels` ：记录描述excel整体的元信息文件的位置关系，包括app.xml,core.xml,workbook.xml
   - `docProps/`
-      - `app.xml`：记录各sheet的heading和title名称
-      - `core.xml`：记录excel的创建和修改时间
-      - `custom.xml`：记录自定义属性信息，如KSOProductBuildVer
+    - `app.xml` ：记录各sheet的heading和title名称
+    - `core.xml` ：记录excel的创建和修改时间
+    - `custom.xml` ：记录自定义属性信息，如KSOProductBuildVer
   - `xl/`
-      - `_rels/`
-          - `workbook.xml.rels`：记录sheet数据和样式文件的位置关系，包括sheet1.xml,sharedStrings.xml,styles.xml,theme1.xml   
-      - `theme/`
-          - `theme1.xml`：记录excel使用的主题样式，包括字体、颜色、格式
-      - `worksheets/`
-          - `sheet1.xml`：记录sheet的元信息和各单元格值的索引号，元信息包括sheet中数据的行列范围、列宽、行列样式、页边距
-      - `sharedStrings.xml`：记录excel所有单元格的字符串的值
-      - `styles.xml`：记录excel整体样式和各单元格样式
-      - `workbook.xml`：记录excel所有sheet的name和sheetId，还有默认显示宽高
-  - `[Content_Types].xml`：记录其他各文件所对应的openxmlformats的具体类型ContentType
-
-
+    - `_rels/`
+      - `workbook.xml.rels` ：记录sheet数据和样式文件的位置关系，包括sheet1.xml,sharedStrings.xml,styles.xml,theme1.xml   
+    - `theme/`
+      - `theme1.xml` ：记录excel使用的主题样式，包括字体、颜色、格式
+    - `worksheets/`
+      - `sheet1.xml` ：记录sheet的元信息和各单元格值的索引号，元信息包括sheet中数据的行列范围、列宽、行列样式、页边距
+    - `sharedStrings.xml` ：记录excel所有单元格的字符串的值
+    - `styles.xml` ：记录excel整体样式和各单元格样式
+    - `workbook.xml` ：记录excel所有sheet的name和sheetId，还有默认显示宽高
+  - `[Content_Types].xml` ：记录其他各文件所对应的openxmlformats的具体类型ContentType

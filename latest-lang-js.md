@@ -2,7 +2,7 @@
 tags: [js, latest/js]
 title: latest-lang-js
 created: '2019-10-15T12:20:05.196Z'
-modified: '2020-06-22T13:16:27.627Z'
+modified: '2020-06-30T12:34:13.374Z'
 ---
 
 # latest-lang-js
@@ -10,7 +10,6 @@ modified: '2020-06-22T13:16:27.627Z'
 - react
   - defaultProps可能废除 https://github.com/reactjs/rfcs/pull/107
   - swr基于hooks的请求库，设计思想是stale-while-revalidate，先用缓存再请求
-
 
 - htm
   - Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support
@@ -23,16 +22,18 @@ modified: '2020-06-22T13:16:27.627Z'
   - Hermes现在并没有JIT编译器
   - Hermes编译的字节码文件比纯文本js文件增大100%
 
-
 ## solutions
+
 - tree shaking
   - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 
   - It relies on the static structure of ES2015 module syntax, i.e. import and export
   - example
-  ```
+
+``` js
   import * as Foo from './foo';             // namespace import
   import { bar, bar2, bar3 } from './foo';  // named import
-  ```
+```
+
   - with a modern webpack setup, the two will generate the same compiled/transpiled JS
   - ref
     - https://medium.com/unsplash/named-namespace-imports-7345212bbffb

@@ -7,8 +7,8 @@ modified: '2020-06-22T09:24:13.546Z'
 
 # toc-lib-react-components
 
-
 ## popular-components
+
 - Ant Design Pro  /MIT/21kStar/201908/ts
   - https://github.com/ant-design/ant-design-pro
   - https://pro.ant.design/
@@ -123,9 +123,8 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/guardian/source-components
   - https://github.com/brave/brave-ui
 
-
-
 ## popular-apps
+
 - vscode  /MIT/81kStar/201908/ts
   - https://github.com/microsoft/vscode
   - https://code.visualstudio.com/
@@ -138,15 +137,16 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/notable/notable
   - https://raw.githubusercontent.com/notable/notable/master/resources/comparison/table.png
   - license
-      - `<= v1.3.0`: MIT 
-      - `<= v1.5.1`: AGPLv3
-      - `>= v1.6.0`: Not open-source, trying to make it sustainable
+      - `<= v1.3.0` : MIT 
+      - `<= v1.5.1` : AGPLv3
+      - `>= v1.6.0` : Not open-source, trying to make it sustainable
 - Reactide /MIT/95kStar/201908
   - https://github.com/reactide/reactide
   - https://reactide.io/
   - The first dedicated IDE for React web application development
 
 ## popular-tools
+
 - React /MIT/135kStar/201908
   - https://github.com/facebook/react
   - https://reactjs.org/
@@ -204,11 +204,10 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://infernojs.org/
   - an insanely fast React-like library
 
-
-
 ## awesome-components
 
 ### resources 
+
 - https://bulma.io/documentation/components/    
   - form controls
   - simple elements:button, box, progressbar, table, tag
@@ -223,18 +222,23 @@ modified: '2020-06-22T09:24:13.546Z'
 - https://bulma.io/extensions/
 
 ### layout/panel 布局面板
+
 - https://github.com/STRML/react-grid-layout#demos
   - https://strml.github.io/react-grid-layout/examples/10-dynamic-min-max-wh.html
   - https://strml.github.io/react-grid-layout/examples/2-no-dragging.html
 - https://haltu.github.io/muuri
   - https://github.com/haltu/muuri
 - https://github.com/DanFessler/react-panelgroup
+
   
+
 ### modal 弹出框
+
 - http://reactcommunity.org/react-modal/examples/minimal.html
   - https://github.com/reactjs/react-modal
 
 ### card 卡片类  
+
 - https://nukeop.github.io/react-ui-cards/
   - https://github.com/nukeop/react-ui-cards
 - https://aaronccwong.github.io/react-card-flip/
@@ -245,10 +249,12 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/mzabriskie/react-flipcard
 
 ### tab 标签页
+
 - http://reactcommunity.org/react-tabs/
   - https://github.com/reactjs/react-tabs
 
 ### form 表单
+
 - https://joepuzzo.github.io/informed
   - https://github.com/joepuzzo/informed
 - https://github.com/erikras/redux-form
@@ -256,6 +262,7 @@ modified: '2020-06-22T09:24:13.546Z'
 - https://github.com/final-form/react-final-form
 
 ### tree 树型组件
+
 - https://frontend-collective.github.io/react-sortable-tree/
   - https://github.com/frontend-collective/react-sortable-tree
   - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
@@ -263,25 +270,31 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/chenglou/react-treeview
 
 ### dropdown 下拉菜单
+
 - http://fraserxu.me/react-dropdown/
   - https://github.com/fraserxu/react-dropdown
 - bulma
 
 ### list 列表
+
 - http://clauderic.github.io/react-sortable-hoc/#/basic-configuration/basic-usage   
   - https://github.com/clauderic/react-sortable-hoc
 - https://github.com/bvaughn/react-virtualized
 - handsontable
 
 ### sidebar/drawer 侧边栏
+
 - http://balloob.github.io/react-sidebar/example/   
   - https://github.com/balloob/react-sidebar
   - 不支持同时打开多个sidebar
   - 侧边栏宽度会随着内容宽度变化
 - https://react-motion-drawer.netlify.com
   - https://github.com/stoeffel/react-motion-drawer
+
   
+
 ### datepicker 时间日期选择器
+
 - http://projects.wojtekmaj.pl/react-calendar/
   - https://github.com/wojtekmaj/react-calendar
 - http://projects.wojtekmaj.pl/react-date-picker/
@@ -297,6 +310,7 @@ modified: '2020-06-22T09:24:13.546Z'
 - http://react-component.github.io/m-picker/examples/picker.html
 
 ### misc 其他组件
+
 - https://kyleamathews.github.io/react-headroom/
   - https://github.com/KyleAMathews/react-headroom
   - 自动隐藏header
@@ -312,6 +326,7 @@ modified: '2020-06-22T09:24:13.546Z'
       - https://github.com/diegomura/react-pdf
 
 ## animation
+
 - http://reactcommunity.org/react-transition-group/css-transition/
   - https://github.com/reactjs/react-transition-group
 - react-motion  /MIT/17kStar/201810 
@@ -325,11 +340,7 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://www.react-spring.io/
   - a spring-physics based animation library
 
-
 ## games
+
 - http://gcedo.github.io/react-solitaire/dist/index.html
   - https://github.com/gcedo/react-solitaire
-
-
-
-
