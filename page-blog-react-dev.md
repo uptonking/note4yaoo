@@ -10,12 +10,13 @@ modified: '2020-06-30T07:17:58.437Z'
 ## react hooks开发实践总结
 
 - 函数式组件
+  - 函数式组件就是在一个函数中返回React Element
   - 在本文中，我们给函数式组件的函数起个简单一点的名字：render函数
   - 在React内部，它会决定在何时调用render函数，并对返回的React Elements进行遍历，如果遇到函数组件，React便会继续调用这个函数组件
   - 这种把render函数交给React内部处理的机制，为引入状态带来了可能
-  - 在本文中，为了方便描述，对于render函数的每次调用，我想称它为一帧。
+  - 在本文中，为了方便描述，对于render函数的每次调用，称它为一帧
 
-``` JS
+``` js
 // 函数式组件就是在一个函数中返回React Element
 const App = (props) => {
   const { title } = props;
@@ -34,27 +35,100 @@ ReactDOM.render(
 ```
 
 - 每一帧拥有独立的变量
-  - 案例-props的行为差异
+  - 案例: props的行为差异
   - count属性由父组件传入，初始值为0，每隔一秒增加1。点击“Alert Count”按钮，将延迟3秒钟弹出count的值
     - 函数组件弹窗中出现的值，与页面中文本展示的值不同，count是点击时的旧值
     - class组件弹窗值与页面中文本展示的值是一样，都是最新值
   - class组件中，我们是从this中获取到的props.count。this是固定指向同一个组件实例的。在3秒的延时器生效后，组件重新进行了渲染，this.props也发生了改变。当延时的回调函数执行时，读取到的this.props是当前组件最新的属性值
   - 函数组件中，每一次执行render函数时，props作为该函数的参数传入，它是函数作用域下的变量
-  - 由于props是Example函数作用域下的变量，可以说对于这个函数的每一次调用中，都产生了新的props变量，它在声明时被赋予了当前的属性，他们相互间互不影响
-  - 换一种说法，对于其中任一个props ，其值在声明时便已经决定，不会随着时间产生变化。handleClick函数亦是如此。例如定时器的回调函数是在未来发生的，但props.count的值是在声明handleClick函数时就已经决定好的。
-- useState为当前的函数组件创建了一个状态，这个状态的值独立于函数存放。 useState会返回一个数组，在该数组中，得到该状态的值和更新该状态的方法。通过解构，该状态的值会赋值到当前render函数作用域下的一个常量state中
+  - 由于props是Example函数作用域下的变量，可以说对于这个函数的每一次调用中，都产生了新的props变量，它在声明时被赋予了当前帧的属性，他们相互间互不影响
+  - 换一种说法，对于其中任一个props，其值在声明时便已经决定，不会随着时间产生变化。handleClick函数亦是如此。例如定时器的回调函数是在未来发生的，但props.count的值是在声明handleClick函数时就已经决定好的。
+- `useState` 为当前的函数组件创建了一个状态，这个状态的值独立于函数存放。
+  - useState会返回一个数组，在该数组中，得到该状态的值和更新该状态的方法。
+  - 通过解构，该状态的值会赋值到当前render函数作用域下的一个常量state中
   - 当组件被创建而不是重用时，即在组件的第一帧中，该状态将被赋予初始值 initialState，而之后的重用过程中，不会被重复赋予初始值。
 - 每一帧拥有独立的状态
   - state作为函数中的一个常量，就是普通的数据，并不存在诸如数据绑定这样的操作来驱使DOM发生更新。在调用setState后，React将重新执行render函数，仅此而已。
   - 状态也是函数作用域下的普通变量。我们可以说每次函数执行拥有独立的状态。
 - 获取过去或未来帧中的值
   - 对于state，如果想要在第一帧时点击“Delay setCount”，在一个异步回调函数的执行中，获取到count最新一帧中的值，不妨向setCount传入函数作为参数
-  - 其他情况下，例如需要读取到state及其衍生的某个常量，相对于变量声明时所在帧过去或未来的值，就需要使用 `useRef` ，通过它来拥有一个在所有帧中共享的变量
+  - 其他情况下，例如需要读取到state及其衍生的某个常量，相对于变量声明时所在帧过去或未来的值，就需要使用 `useRef` ，通过它来**存放一个在所有帧中共享的变量**
   - 如果要与class组件进行比较，useRef的作用相对于让你在class组件的this上追加属性。
-  - `const refContainer = useRef(initialValue);` 你可以自己去设置它的值。设置它的值不会重新触发render函数
-  - 同样的方法，我们可以用于保存任何值：某 prop，某个state变量，甚至一个函数等。在后面的Effects部分会很有用
+  - `const refObj = useRef(initialValue);` 你可以自己去设置 `refObj.current` 的值，设置它的值不会重新触发render函数
+  - 同样的方法，我们可以用于保存任何值：某个prop，某个state变量，甚至一个函数等。在后面的Effects部分会很有用
 - 每一帧可以拥有独立的Effects
   - 若某个useEffect/useLayoutEffect有且仅有一个函数作为参数，那么每次render函数执行时该Effects也是独立的。因为它是在render函数中选择适当时机的执行。
+  - 如果useEffect没有传入第二个参数，那么第一个参数传入的effect函数在每次render函数执行是都是独立的。每个effect函数中捕获的props或state都来自于那一次的render函数。
+- 可以给 `useEffect` 传入第二个参数，作为依赖数组(deps)，避免Effects不必要的重复调用
+  - deps的含义是当前Effect依赖了哪些变量
+  - 若Effects依赖了函数或者其他引用类型。与原始数据类型不同的是，在未优化的情况下，每次render函数调用时，因为对这些内容的重新创建，其值总是发生了变化，导致Effects在使用deps的情况下依然会频繁被调用。
+  - 对于函数，使用 `useCallback` 避免重复创建；对于对象或者数组，则可以使用 `useMemo` 。从而减少deps的变化。
+- 有一个最佳实践：状态变更时，应该通过 `setState` 的函数形式来代替直接获取当前状态
+- 对于一些变量不希望引起effect重新更新的，使用ref解决。
+- 对于获取状态用于计算新的状态的，尝试 `setState` 的函数入参，或者使用 `useReducer` 整合多个类型的状态。
+- `useMemo` 的含义是，通过一些变量计算得到新的值，通过把这些变量加入依赖deps，当deps中的值均未发生变化时，跳过这次计算。
+  - useMemo中传入的函数，将在render函数调用过程被同步调用。
+  - 可以使用useMemo缓存一些相对耗时的计算。
+  - 除此以外，useMemo也非常适合用于存储引用类型的数据，可以传入对象字面量，匿名函数等，甚至是React Elements。
+  - 在这些例子中，useMemo 的目的其实是尽量使用缓存的值。
+  - 对于函数，其作为另外一个useEffect的deps时，减少函数的重新生成，就能减少该Effect的调用，甚至避免一些死循环的产生; 
+  - 对于对象和数组，如果某个子组件使用了它作为props，减少它的重新生成，就能避免子组件不必要的重复渲染，提升性能。
+  - 对于组件返回的React Elements，我们可以选择性地提取其中一部分 elements，通过useMemo进行缓存，也能避免这一部分的重复渲染。
+- 在过去的class组件中，我们通过 `shouldComponentUpdate` 判断当前属性和状态是否和上一次的相同，来避免组件不必要的更新。
+  - 其中的比较是对于本组件的所有属性和状态而言的，无法根据 shouldComponentUpdate 的返回值来使该组件一部分elements更新，另一部分不更新。
+  - 为了进一步优化性能，我们会对大组件进行拆分，拆分出的小组件只关心其中一部分属性，从而有更多的机会不去更新。
+  - 而函数组件中的 `useMemo` 其实就可以代替这一部分工作。
+- 虽然initialState的计算只在初始化时有其存在的价值，但在每一帧都被调用了，如果是一个相对耗时的操作，也可能占用很多性能
+  - 可以使用惰性初始化
+  - 因 `someExpensiveComputation` 运行在一个匿名函数下，该函数当且仅当初始化时被调用，从而优化性能。
+  - 我们甚至可以跳出计算 state 这一规定，来完成任何昂贵的初始化操作
+
+``` JS
+const [state, setState] = useState(() => {
+  const initialState = someExpensiveComputation(props);
+  return initialState;
+});
+
+useState(() => {
+  someExpensiveComputation(props);
+  return null;
+});
+```
+
+- 避免滥用refs
+  - 当 `useEffect` 的依赖频繁变化，你可能想到把频繁变化的值用 `ref` 保存起来。然而， `useReducer` 可能是更好的解决方式：使用 `dispatch` 消除对一些状态的依赖
+  - 最终可以总结出这样的实践
+  - useEffect对于函数依赖，尝试将该函数放置在effect内，或者使用 `useCallback` 包裹；
+  - useEffect/useCallback/useMemo，对于state或者其他属性的依赖，根据eslint的提示填入deps；
+  - 如果不直接使用state，只是想修改state，用setState的函数入参方式 `setState(c => c + 1)` 代替；
+  - 如果修改state的过程依赖了其他属性，尝试将state和属性聚合，改写成 `useReducer` 的形式。
+  - 当这些方法都不奏效，使用 `ref` ，但是依然要谨慎操作。
+- 避免滥用useMemo
+  - 使用 `useMemo` 当deps不变时，直接返回上一次计算的结果，从而使子组件跳过渲染。
+  - 但是当返回的是原始数据类型（如字符串、数字、布尔值）。即使参与了计算，只要deps依赖的内容不变，返回结果也很可能是不变的。此时就需要权衡这个计算的时间成本和useMemo额外带来的空间成本（缓存上一次的结果）了。
+  - 此外，如果useMemo的deps依赖数组为空，这样做说明你只是希望存储一个值，这个值在重新render时永远不会变。
+
+``` JS
+const Comp = () => {
+    const data = useMemo(() => ({ type: 'xxx' }), []);
+    return <Child data={data}>;
+}
+
+// 可被替换为
+
+const Comp = () => {
+    const { current: data } = useRef({ type: 'xxx' });
+    return <Child data={data}>;
+}
+
+const data = { type: 'xxx' };
+const Comp = () => {
+    return <Child data={data}>;
+}
+```
+
+- 如果deps频繁变动，我们也要思考，使用 `useMemo` 是否有必要。因为 `useMemo` 占用了额外的空间，还需要在每次render时检查deps是否变动，反而比不使用useMemo开销更大
+- 外部无法直接控制state的方式，我们称为非受控hook
 
 - hooks的使用体验就是简单，无生命周期，无this指向，逻辑复用也简单，无HOC或Render Props的繁琐
 - ref

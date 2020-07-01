@@ -11,10 +11,10 @@ modified: '2020-06-30T05:13:25.510Z'
 
 - core
   - local/offline first markdown-based note app
-      - offline means no ad 
-      - full control of your note data, born to keep data private
-      - online sync is optional
-      - extended md support, including GFM
+    - offline means no ad 
+    - full control of your note data, born to keep data private
+    - online sync is optional
+    - extended md support, including GFM
 - powerful markdown editor and viewer  
   - optimized table editor and viewer 
 - don't
@@ -52,6 +52,7 @@ modified: '2020-06-30T05:13:25.510Z'
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
 - [ ] edit: toggle lines to list  
 - [ ] edit: insert one blank line below  
+- [ ] edit: 粘贴后批量删除中文段落中英文单词两边的空格
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`
 - [ ] keyboard: alt+arrow, move current line up/down
 - [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
