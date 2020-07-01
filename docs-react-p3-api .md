@@ -41,7 +41,7 @@ modified: '2020-06-30T05:13:55.088Z'
 	- props
 	- state
 
-- `render()`
+- `render(): ReactNode`
 - When called, it should examine `this.props` and `this.state` and return one of the following types
   - React elements. 
     - Typically created via JSX. 
@@ -59,7 +59,7 @@ modified: '2020-06-30T05:13:55.088Z'
 - If you need to interact with the browser, perform your work in `componentDidMount()` or the other lifecycle methods instead.
 - Keeping render() pure makes components easier to think about
 
-- `constructor(props)`
+- `constructor(props: Readonly<P>);`
 - It is called before it is mounted.
 - If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component.
 - You should not call `setState()` in the `constructor()` . 
@@ -72,7 +72,7 @@ modified: '2020-06-30T05:13:55.088Z'
   - updates to the color prop won’t be reflected in the state
   - Only use this pattern if you intentionally want to ignore prop updates. In that case, it makes sense to rename the prop to be called initialColor or defaultColor
 
-- `componentDidMount()`
+- `componentDidMount?(): void`
 - It is invoked immediately after a component is mounted (inserted into the tree). 
   - reading `clientHeight` from within componentDidMount should force the browser to do a *sync* layout (not great but sometimes necessary) and return a valid clientHeight.
 - Initialization that requires DOM nodes should go here. 
@@ -86,7 +86,7 @@ modified: '2020-06-30T05:13:55.088Z'
   - In most cases, you should be able to assign the initial state in the constructor() instead. 
   - It can, however, be necessary for cases like modals and tooltips, when you need to measure a DOM node before rendering something that depends on its size or position.
 
-- `componentDidUpdate(prevProps, prevState, snapshot)`
+- `ccomponentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: SS): void`
 - It is invoked immediately after updating occurs.
 - Use this as an opportunity to operate on the DOM when the component has been updated. 
 - This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
@@ -95,13 +95,13 @@ modified: '2020-06-30T05:13:55.088Z'
   - If you’re trying to “mirror” some state to a prop coming from above, consider using the prop directly instead.
 - If your component implements the `getSnapshotBeforeUpdate()` lifecycle (which is rare), the value it returns will be passed as a third “snapshot” parameter to `componentDidUpdate()` . Otherwise this parameter will be undefined.
 
-- `componentWillUnmount()`
+- `componentWillUnmount?(): void`
 - It is invoked immediately before a component is unmounted and destroyed. 
 - Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in `componentDidMount()` .
 - You **should not call `setState()` in `componentWillUnmount()` ** because the component will never be re-rendered. 
 - Once a component instance is unmounted, it will never be mounted again.
 
-- `shouldComponentUpdate(nextProps, nextState)`
+- `shouldComponentUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean`
 - It is invoked before rendering when new props or state are being received. 
 - Defaults to `true` . 
 - The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
@@ -114,9 +114,11 @@ modified: '2020-06-30T05:13:55.088Z'
 - Currently, if shouldComponentUpdate() returns false, then componentWillUpdate(), render(), and componentDidUpdate() will not be invoked. 
 - In the future React may treat shouldComponentUpdate() as a hint rather than a strict directive, and returning false may still result in a re-rendering of the component.
 
-- `static getDerivedStateFromProps(props, state)`
-- It is invoked right before calling the render method, both on the initial mount and on subsequent updates. 
+- `static getDerivedStateFromProps(nextProps, prevState)`
+- It is invoked right **before calling the render method**, both on the initial mount and on subsequent updates. 
+  - Its presence prevents any of the deprecated lifecycle methods from being invoked
 - It should **return an object to update the state**, or null to update nothing.
+- Returns an update to a component's state based on its new props and old state.
 - This method exists for rare use cases where the state depends on changes in props over time.
 - If you need to perform a side effect (for example, data fetching or an animation) in response to a change in props, use `componentDidUpdate` lifecycle instead.
 - If you want to re-compute some data only when a prop changes, use a memoization helper instead.
@@ -125,8 +127,23 @@ modified: '2020-06-30T05:13:55.088Z'
   - If you’d like, you can reuse some code between getDerivedStateFromProps() and the other class methods by extracting pure functions of the component props and state outside the class definition.
 - Note that this method is fired on every render, regardless of the cause. 
   - This is in contrast to componentWillReceiveProps, which only fires when the parent causes a re-render and not as a result of a local setState.
+- getDerivedStateFromProps exists for only one purpose.
+  - It enables a component to update its internal state as the result of changes in props. 
+- 执行时机
+  - Firstly in version of React 16.3, getDerivedStateFromProps() just was invoked when updating props
+  - But since version of React 16.4, getDerivedStateFromProps() is invoked when updating props and updating state (regardless of the reason for re-rendering).
+  - getDerivedStateFromProps() is invoked before render() method under that conditions;
+    - Initial mount
+    - Every state and prop updating
+    - forceUpdate
+    - It's called any time a parent component rerenders, regardless of whether the props are “different” from before. 
+  - 如果setState和getDerivedStateFromProps同时存在，则getDerivedStateFromProps的参数中prevState是setState后的值，可自行创建ControlledInput组件测试，所以可以在这个方法中拦截强行修改state
+- ref
+  - repeat https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+  - https://tech.youzan.com/getderivedstatefromprops/
+  - http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-- `getSnapshotBeforeUpdate(prevProps, prevState)`
+- `getSnapshotBeforeUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>): SS | null`
 - It is invoked right before the most recently rendered output is committed to e.g. the DOM. 
 - It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. 
 - Any value returned by this lifecycle will be passed as a parameter to `componentDidUpdate()` .
