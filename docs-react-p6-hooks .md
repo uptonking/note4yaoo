@@ -252,16 +252,16 @@ function Example() {
 
 ## Hooks API Reference
 
-- built-in hooks
+- built-in hooks(10 api)
   - useState
-  - useEffect
-  - useContext
   - useReducer
+  - useEffect
+  - useLayoutEffect
   - useCallback
   - useMemo
+  - useContext
   - useRef
   - useImperativeHandle
-  - useLayoutEffect
   - useDebugValue
 
 - `const [state, setState] = useState(initialState);`
@@ -378,7 +378,7 @@ function Example() {
   - The **returned object will persist for the full lifetime** of the component.
   - A common use case is to access a child imperatively
   - If you pass a ref object to React with `<div ref={myRef} />` , React will set its `.current` property to the corresponding DOM node whenever that node changes.
-  - `useRef` is handy for keeping any mutable value around similar to how you’d use instance fields in classes.
+  - `useRef` is handy for keeping any mutable value around, similar to how you’d use instance fields in classes.
   - This works because `useRef()` creates a plain JavaScript object. 
     - The only difference between `useRef()` and creating a `{current: ...}` object yourself is that `useRef` will give you the same ref object on every render.
   - `useRef` doesn’t notify you when its content changes. 
@@ -497,7 +497,7 @@ function Example() {
     - The solution is to either remove the dependency array, or to fix it. 
 - How do I implement `getDerivedStateFromProps` ?
   - You can update the state right during rendering.
-  - React will **re-run the component with updated state immediately** after exiting the first render so it wouldn’t be expensive.
+  - React will **re-run the component with updated state immediately after exiting the first render** so it wouldn’t be expensive.
   - We can store the previous value of the prop in a state variable so that we can compare
   - This might look strange at first, but an update during rendering is exactly what `getDerivedStateFromProps` has always been like conceptually.
 - Is there something like forceUpdate?
@@ -548,10 +548,11 @@ function Example() {
   - But sometimes you need to be sure an object is only created once.
   - To avoid re-creating the ignored initial state, we can pass a function to useState
 - Are Hooks slow because of creating functions in render?
-  - No.
+  - No. In modern browsers, the raw performance of closures compared to classes doesn’t differ significantly except in extreme scenarios.
   - Hooks avoid a lot of the overhead that classes require, like the cost of creating class instances and binding event handlers in the constructor.
-  - Idiomatic code using Hooks doesn't need the deep component tree nesting that is prevalent in codebases that use higher-order components, render props, and context. With smaller component trees, React has less work to do.
-  - Traditionally, performance concerns around inline functions in React have been related to how passing new callbacks on each render breaks shouldComponentUpdate optimizations in child components. 
+  - Idiomatic code using Hooks doesn't need the deep component tree nesting that is prevalent in codebases that use higher-order components, render props, and context. 
+    - With smaller component trees, React has less work to do.
+  - Traditionally, performance concerns around inline functions in React have been related to how passing new callbacks on each render breaks `shouldComponentUpdate` optimizations in child components. 
   - Hooks approach this problem from three sides
     - `useCallback` Hook lets you keep the same callback reference between re-renders so that shouldComponentUpdate continues to work
     - `useMemo` Hook makes it easier to control when individual children update, reducing the need for pure components.
