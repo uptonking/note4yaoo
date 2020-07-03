@@ -24,13 +24,50 @@ modified: '2020-07-03T13:52:52.979Z'
   - [精读《怎么用 React Hooks 造轮子》](https://zhuanlan.zhihu.com/p/50274018)
   - [对React Hooks的一些思考](https://zhuanlan.zhihu.com/p/48264713)
   - [React Hooks的体系设计之一 - 分层](https://zhuanlan.zhihu.com/p/106665408)
+  - [React Hooks的体系设计之二 - 状态粒度](https://zhuanlan.zhihu.com/p/108432109)
+  - [React Hooks的体系设计之三 - 什么是ref](https://zhuanlan.zhihu.com/p/109742536)
+  - [React Hooks的体系设计之四 - 玩坏ref](https://zhuanlan.zhihu.com/p/111308773)
   - [useCallback invalidates too often in practice](https://github.com/facebook/react/issues/14099)
   - [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
     - [CN](https://zhuanlan.zhihu.com/p/66923924)
 
 ## pieces
 
-- 未来函数组件在使用Hooks时，统一将Hooks的调用放在函数的开头部分，随后紧跟一个纯函数组件的渲染逻辑，即一个组件的逻辑拆分为
+- We can solve any problem by introducing an extra level of indirection.
+  - 没有什么问题是加一层解决不了的
+- React内置的hook提供了基础的能力，虽然本质上它也有一些分层，比如：
+  - useState是基于useReducer的简化版。
+  - useMemo和useCallback事实上可以基于useRef实现。
+- 但在实际应用时，我们可以将这些统一视为一层，即最基础的底层。
+- 可以将hook在纵向分为了6个层，自底向上依次是：
+  1. 最底层的内置hook，不需要自己实现，官方直接提供。
+  2. 简化状态更新方式(setState)的hook，比较经典的是引入immer来达到更方便地进行不可变更新的目的。
+  3. 引入“状态 + 行为”的概念，通过声明状态结构与相应行为快速创建一个完整上下文。
+  4. 对常见数据结构的操作进行封装，如数组的操作。
+  5. 针对通用业务场景进行封装，如分页的列表、滚动加载的列表、多选等。
+  6. 实际面向业务的实现。
+- 需要注意的是，这边仅提到了对状态的分层设计。事实上有大量的hook是游离于状态之外的，如基于useEffect的useDocumentTitle、useElementSize，或基于useRef的usePreviousValue、useStableMemo等，这些hook是更加零散、独立的形态。
+- 如果属性的层级较深时，可以使用immer进行更新，利用Proxy的特性将可变的数据更新映射为不可变的操作。
+- 组件的开发，或者说绝大部分的业务的开发，逃不出“一个状态加一系列行为”这个模式，且行为与状态的结构是强相关的。
+  - 这个模式在面向对象里我们称之为类
+  - 在hooks中，可以使用useState和useCallback实现
+  - 太多的useState和useCallback调用，重复的编码工作。
+  - 如果不仔细阅读代码，很难找到状态与行为的对应关系。
+  - 一个自定义hook能帮我们把“一个状态”和“针对这个状态的行为”合并在一起
+1. 有一部分状态类型是业务无关的，是开发者公用的，比如最基础的数据类型number、string、Array等。
+2. 部分数据类型的不可变操作相当复杂，比如不可变地实现Array#splice，好在有immer合理地解决了问题。
+3. 部分操作的语义会发生变化，setState最典型的是没有返回值，因此Array#pop只能产生“移除最后一个元素”的行为，而无法将移除的元素返回。
+- 部分类型是天生可变的，如Set和Map，将之映射到不可变需要额外的工作。
+- 针对常用数据结构的抽象，在试图解决这些问题（第2个问题还真解决不了）的同时，也能扩展一些行为
+- 有了基本的数据结构后，可以对场景进行封装，这一点在阿里的@umijs/hooks体现的比较多，如useVirtualList
+- 需要注意的是，场景的封装不应与组件库耦合，它应当是业务与组件之间的桥梁，不同的组件库使用相同的hook实现不同的界面，这才是一个理想的模式：
+  - useTransfer实现左右双列表选择的能力。
+  - useSelection实现列表上单选、多选、范围选择的能力
+  - useScrollToLoad实现滚动加载的能力。
+- 在业务中暴力地直接使用useState等hook并不是一个值得提倡的方式，而针对状态这一块，精细地做一下分层，并在每个层提供相应的能力，是有助于组织hook库并赋能于业务研发效率的。
+
+- 受Suspence和Hooks的影响，函数组件不再是纯粹的数据到视图的映射这已然成为既定的事实，在Hooks的加持之下，组件将在原有的“输入到输出的映射逻辑”这一严格定义之外，逐渐地追加上“逻辑所依赖的前置条件”这一内容。
+- 未来函数组件在使用Hooks时，统一将Hooks的调用放在函数的开头部分，随后紧跟一个纯函数组件的渲染逻辑，即一个组件的逻辑拆分为如下3部分
 
 ``` js
 const FunctionComponent = props => {
@@ -51,21 +88,30 @@ const FunctionComponent = props => {
   - 在几乎所有的示例中，都推荐value是一个非常细粒度的值，甚至可以是一个字符串之类的原子值（在原本的React中使用非namespace型的对象作为state并不被提倡）。鼓励在一个函数组件中多次使用useState来得到不同维度的状态。
   - 在调用useState之外，函数组件依然会是一个实现渲染逻辑的纯组件，对状态的管理已经被Hooks内部所实现。
 - 在我们的团队中，不定期地会相互强调一个原则：**有状态的组件没有渲染，有渲染的组件没有状态**
+  - 包含实际业务状态的组件不应该进行视图的渲染，而是应该将实际业务状态传递给子孙组件，让子孙组件来进行视图渲染; 
+  - 能够进行视图渲染的组件，不要包含实际的业务状态，而是通过接受父辈的参数来进行渲染；
+  - 这样的话，有渲染的组件没有实际的业务状态，就与实际的业务解耦了，能够更好的服务于其他的有状态的组件，实现组件的复用。
+  - 这句话的思想确实到位，只是实际要完全按这么来，维护别人代码的时候就是各种的父组件引用子组件，子组件还有引用别的组件，一层层看下去太累了
+  - 视图与状态管理分离，导致视图没法自包含内聚，所以，我们所说的的组件应该是业务组件而非通用组件，每个业务组件，不应该自己管理状态，应该承接给一个不负责渲染的状态容器
+  - 有共享状态的组件（业务组件或业务模版）不负责渲染。负责渲染的组件（可重用组件或控件）管理内部状态，可以独立抽出来凑成一个项目。
+  - 正是因为很多人认为这过犹不及，才会在生产代码中有大量的重复。我看到我们自己的产品里有不下30个的isShow、isOpen、isVisible和对应一个toggle方法，而没有人去想过可以有withToggle这样的HoC解决问题。并不是不想去抽象，而是当isShow、isOpen和其它的逻辑混在一起，比如{isShow, username}和{isOpen, validationErrors}的时候，普通的人无法从这2个大集合中挑出isShow和isOpen并准确地认知到他们是可以复用的
+  - 我更倾向于叫Controller/Container层和Presentation层，比如一个组件根据参数获取一个列表数据，再展示成一个表格。那它就可以是一个组件负责获取数据，另一个组件负责表格展现，而不是混在一起
+  - 也可能是简单问题复杂化，强行抽象
 - getDerivedStateFromProps这一API想传递给开发者的思想，即不要再区分组件是否已经mount，使用统一的API来统一地进行状态管理
-- 用3个属性来声明一个外部的依赖：
-  - 数据在哪里（grab）：当数据有的时候，就没必要发起请求，这是一个很直接的逻辑。
+- 与生命周期相关的逻辑，不用定义mount与update的区别，用3个属性来声明一个外部的依赖：
+  - 数据在哪里（grab）：当已有数据的时候，就没必要发起请求，这是一个很直接的逻辑。
   - 数据与什么相关（selector）：可以认为这是“获取数据的参数”，仅当参数发生变化时，请求才会被重新发起（当然数据不存在依然是前提）。
   - 怎么发起请求（fetch）：真正的请求逻辑。
 - React的API设计
   - 对API的废弃有一整套成熟的流程。
-    - 并不会在一个大版本中就立即抛弃N多的API，而是通过标记UNSAFE_、使用StrictMode等形式，给开发者一个平滑的过渡。
+    - 并不会在一个大版本中就立即抛弃N多的API，而是通过标记 `UNSAFE_` 、使用StrictMode等形式，给开发者一个平滑的过渡。
     - 这种跨越大版本的API废弃模式，我只在语言级框架如.NET、Java中见过，尚未在任何一个视图层的框架中见识。
   - 不该用而又不得不存在的API，会用尽办法恶心调用者。
-    - 最为经典的dangerouslySetInnerHTML这一属性，除了加一个dangerously这么显眼的前缀外，还非得让它的值是一个对象，对象里还要有一个__html这样逼死强迫症的属性名。
+    - 最为经典的 `dangerouslySetInnerHTML` 这一属性，除了加一个dangerously这么显眼的前缀外，还非得让它的值是一个对象，对象里还要有一个 `__html` 这样逼死强迫症的属性名。
     - 凡是对代码美感有一些些追求的开发者，都会想方设法让这东西消失在自己的眼前。
   - 所有的API都具备非常强的最佳实践引导性。
-    - 比如getDerivedStateFromProps这一方法，硬是给做成了静态的，让开发者用不到this，也自然很难胡乱地在里面做出有副作用的事情来。
-    - 现比如setState使用callback而不是Promise，并且官方义正言辞地拒绝了转为Promise实现。
+    - 比如 `getDerivedStateFromProps` 这一方法，硬是给做成了静态的，让开发者用不到this，也自然很难胡乱地在里面做出有副作用的事情来。
+    - 现比如**setState使用callback**而不是Promise，并且官方义正言辞地拒绝了转为Promise实现。
     - 现在看到useState的出现，再回过头去看setState一直控制着让开发者尽量不使用callback是多么明智。
   - API的发布具有很好的承接性。
     - 先是componentDidCatch这一API，提供了Error Boundary的概念并让广大开发者接受，随后才是Suspence这个非常具备破坏力的炸弹，实际则是通过Error Bounday和Promise的类型判断来完成。
@@ -81,8 +127,6 @@ const FunctionComponent = props => {
   - 可以把原来用于HOC的展示组件继续复用，以前是包一层HOC，现在是新加一个组件先调用hook再渲染组件。当然这样依旧会造出组件树上多一个节点，是否要合并可以自行权衡。
   - hooks的一个特征是不访问props，因此通常调用HOC时传的propName之类的参数，在hook里会消失，变为直接将对应的属性值传过去
   - useCallback和useMemo对应以前reselect库提供的选择器
-
-  
 
 - 分析了这么多React-类的库，其核心思想有两个：
   - 将原生API转换为框架特有API，比如React系列的Hooks与ref
