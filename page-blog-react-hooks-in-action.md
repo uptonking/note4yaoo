@@ -1,19 +1,287 @@
-# react hooks开发实践总结
+---
+tags: [blog, react]
+title: page-blog-react-hooks-in-action
+created: '1970-01-01T00:00:00.000Z'
+modified: '2020-07-03T13:52:52.979Z'
+---
+
+# page-blog-react-hooks-in-action
+
+- react hooks开发实践总结
 
 ## guide
 
+- hooks rfc 
+  - usePrevious
 - ref
   - [React Hooks 最佳实践 by 网易云音乐前端团队](https://zh-hans.reactjs.org/blog/2020/05/22/react-hooks.html)
   - [React Hooks工程实践总结](https://github.com/forthealllight/blog/issues/49)
-  - [React Hook的实现原理和最佳实践](https://zhuanlan.zhihu.com/p/75146261)
+  - [React Hook的实现原理和最佳实践 by 携程](https://zhuanlan.zhihu.com/p/75146261)
   - [精读《React Hooks》](https://zhuanlan.zhihu.com/p/49408348)
   - [精读《React Hooks 最佳实践》](https://zhuanlan.zhihu.com/p/81752821)
-  - [精读《Function Component 入门》](https://zhuanlan.zhihu.com/p/67087685)
+  - [精读《Function Component 入门 - 使用hooks》](https://zhuanlan.zhihu.com/p/67087685)
   - [精读《useEffect 完全指南》](https://zhuanlan.zhihu.com/p/60277120)
   - [精读《怎么用 React Hooks 造轮子》](https://zhuanlan.zhihu.com/p/50274018)
+  - [对React Hooks的一些思考](https://zhuanlan.zhihu.com/p/48264713)
+  - [React Hooks的体系设计之一 - 分层](https://zhuanlan.zhihu.com/p/106665408)
   - [useCallback invalidates too often in practice](https://github.com/facebook/react/issues/14099)
+  - [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+    - [CN](https://zhuanlan.zhihu.com/p/66923924)
 
 ## pieces
+
+- 未来函数组件在使用Hooks时，统一将Hooks的调用放在函数的开头部分，随后紧跟一个纯函数组件的渲染逻辑，即一个组件的逻辑拆分为
+
+``` js
+const FunctionComponent = props => {
+  // 对所有Hooks的调用，声明前置条件
+
+  // 对props及hooks提供的内容的运算处理，数据加工
+
+  // 将数据转变为JSX并返回
+};
+```
+
+- 在 `useState` 的冲击下，开发者应当思考：
+  - 为何没有将“状态”与“变更状态的逻辑”两两配对，用更好的代码结构来组织它们。
+  - 为何没有将状态进行更细粒度的拆分，没有联动关系的状态放到不同的组件中单独管理，而是习惯性地使用一个大的状态，以及多处setState进行部分状态的更新。
+  - 为何没有将状态的管理与视图的渲染进行隔离，把一个带有复杂的render实现的类组件拆分为一个“单纯管理状态的类组件”和一个“实现渲染逻辑的纯函数组件”，并让前者的render方法直接返回后者。
+- useState正是将以上三个理论合而为一，用一个非常简洁的API表现出来的经典设计：
+  - value和setValue配对，后者一定影响前者，前者仅被后者影响，作为一个整体它们完全不受外界的影响。
+  - 在几乎所有的示例中，都推荐value是一个非常细粒度的值，甚至可以是一个字符串之类的原子值（在原本的React中使用非namespace型的对象作为state并不被提倡）。鼓励在一个函数组件中多次使用useState来得到不同维度的状态。
+  - 在调用useState之外，函数组件依然会是一个实现渲染逻辑的纯组件，对状态的管理已经被Hooks内部所实现。
+- 在我们的团队中，不定期地会相互强调一个原则：**有状态的组件没有渲染，有渲染的组件没有状态**
+- getDerivedStateFromProps这一API想传递给开发者的思想，即不要再区分组件是否已经mount，使用统一的API来统一地进行状态管理
+- 用3个属性来声明一个外部的依赖：
+  - 数据在哪里（grab）：当数据有的时候，就没必要发起请求，这是一个很直接的逻辑。
+  - 数据与什么相关（selector）：可以认为这是“获取数据的参数”，仅当参数发生变化时，请求才会被重新发起（当然数据不存在依然是前提）。
+  - 怎么发起请求（fetch）：真正的请求逻辑。
+- React的API设计
+  - 对API的废弃有一整套成熟的流程。
+    - 并不会在一个大版本中就立即抛弃N多的API，而是通过标记UNSAFE_、使用StrictMode等形式，给开发者一个平滑的过渡。
+    - 这种跨越大版本的API废弃模式，我只在语言级框架如.NET、Java中见过，尚未在任何一个视图层的框架中见识。
+  - 不该用而又不得不存在的API，会用尽办法恶心调用者。
+    - 最为经典的dangerouslySetInnerHTML这一属性，除了加一个dangerously这么显眼的前缀外，还非得让它的值是一个对象，对象里还要有一个__html这样逼死强迫症的属性名。
+    - 凡是对代码美感有一些些追求的开发者，都会想方设法让这东西消失在自己的眼前。
+  - 所有的API都具备非常强的最佳实践引导性。
+    - 比如getDerivedStateFromProps这一方法，硬是给做成了静态的，让开发者用不到this，也自然很难胡乱地在里面做出有副作用的事情来。
+    - 现比如setState使用callback而不是Promise，并且官方义正言辞地拒绝了转为Promise实现。
+    - 现在看到useState的出现，再回过头去看setState一直控制着让开发者尽量不使用callback是多么明智。
+  - API的发布具有很好的承接性。
+    - 先是componentDidCatch这一API，提供了Error Boundary的概念并让广大开发者接受，随后才是Suspence这个非常具备破坏力的炸弹，实际则是通过Error Bounday和Promise的类型判断来完成。
+    - 这给了开发者接受和准备的时间，不至于因为一下子连带的太多概念而产生更强烈的抵触情绪。
+  - 完全突破原有理论的API可以在没有大版本的情况下发布。
+    - 从Suspence到Hooks，这两个API的发布确实给了我很大的震憾，而这震憾有很大一部分来自于它们居然只在一个小版本上就发布出来了，可见React原本简洁的API有着多大的包容性。
+- 正因为有这么强大的API设计能力，React在引入Fiber这种几乎破坏性的底层变化之际，几乎没有在社区掀起反对的波浪。事实上有很多对React使用不当的场合是没有办法无缝地迁移到异步Fiber之上的，而15版本的React本身是可以搞出很多使用不当的场合的。依靠着自身API强大的最佳实践引导能力，Fiber的推进到开发者的适配几乎没有出现过大的失败案例
+
+- 从HOC迁移到hooks的建议
+  - 如果觉得实现hook没有思路，可以先实现HOC再翻译过来。
+  - 组件的重要功能几乎都有hooks的对应，主要的setState -> useState和生命周期转为useEffect。
+  - useEffect一共有3部分，即本体、返回的清理函数、依赖数组，分别对应生命周期的主要部分、componentDidUpdate和componentWillUnmount里的清理逻辑、componentDidUpdate里的if分支用到的属性。
+  - 可以把原来用于HOC的展示组件继续复用，以前是包一层HOC，现在是新加一个组件先调用hook再渲染组件。当然这样依旧会造出组件树上多一个节点，是否要合并可以自行权衡。
+  - hooks的一个特征是不访问props，因此通常调用HOC时传的propName之类的参数，在hook里会消失，变为直接将对应的属性值传过去
+  - useCallback和useMemo对应以前reselect库提供的选择器
+
+  
+
+- 分析了这么多React-类的库，其核心思想有两个：
+  - 将原生API转换为框架特有API，比如React系列的Hooks与ref
+  - 处理生命周期导致的边界情况，比如dom被更新时先unobserve再重新observe
+
+- 可以利用React Hooks，将React组件打造成：任何事物的变化都是输入源，当这些源变化时会重新触发组件的render，你只需要挑选组件绑定哪些数据源（use哪些Hooks），然后只管写render函数就行了
+- DOM副作用修改/监听
+  - 修改页面title
+  - 监听window size变化
+  - 监听网络断开
+- 组件增强或辅助
+  - 获取组件宽高
+  - 我们对组件增强时，组件的回调一般不需要销毁监听，而且仅需监听一次，这与DOM监听不同
+  - 因此大部分场景，我们需要利用 useCallback 包裹，并传一个空数组，来保证永远只监听一次，而且不需要在组件销毁时注销这个 callback
+- 动画
+  - useRaf
+  - useSPring：获取动画值，组件以固定频率刷新，而这个动画值以弹性函数进行增减
+  - useTween: 这个值的动画曲线是tween
+- network
+  - 可以将任意请求Promise封装为带有标准状态的对象：loading、error、result
+  - useAsync
+  - useService
+  - useForm
+- hooks模拟生命周期
+  - useMount
+  - useUpdate
+- 存数据
+  - 全局store
+- 封装现有库
+  - 用hooks替换render rops，可以包两层
+
+``` JS
+// class组件用法
+import { Toggle } from 'react-powerplug'
+
+function App() {
+  return (
+    <Toggle initial={true}>
+      {({ on, toggle }) => (
+        <Checkbox checked={on} onChange={toggle} />
+      )}
+    </Toggle>
+  )
+}
+// ↓ ↓ ↓ ↓ ↓ ↓  hooks用法
+import { useToggle } from 'react-powerhooks'
+
+function App() {
+  const [on, toggle] = useToggle()
+  return <Checkbox checked={on} onChange={toggle} />
+}
+
+// hooks实现
+export function Toggle() {
+  // 这是 Toggle 的源码
+}
+const App = wrap(() => {
+  // 第一步：包 wrap
+  const [on, toggle] = useRenderProps(Toggle); // 第二步：包 useRenderProps
+});
+const wrappers = []; // 全局存储 wrappers
+
+export const useRenderProps = (WrapperComponent, wrapperProps) => {
+  const [args, setArgs] = useState([]);
+  const ref = useRef({});
+  if (!ref.current.initialized) {
+    wrappers.push({
+      WrapperComponent,
+      wrapperProps,
+      setArgs
+    });
+  }
+  useEffect(() => {
+    ref.current.initialized = true;
+  }, []);
+  return args; // 通过下面 wrap 调用 setArgs 获取值。
+};
+export const wrap = FunctionComponent => props => {
+  const element = FunctionComponent(props);
+  const ref = useRef({ wrapper: wrappers.pop() }); // 拿到 useRenderProps 提供的 Toggle
+  const { WrapperComponent, wrapperProps } = ref.current.wrapper;
+  return createElement(WrapperComponent, wrapperProps, (...args) => {
+    // WrapperComponent => Toggle，这一步是在构造 RenderProps 执行环境
+    if (!ref.current.processed) {
+      ref.current.wrapper.setArgs(args); // 拿到 on、toggle 后，通过 setArgs 传给上面的 args。
+      ref.current.processed = true;
+    } else {
+      ref.current.processed = false;
+    }
+    return element;
+  });
+};
+```
+
+- 封装原本对 `setState` 增强的库
+  - immer
+- 本文列出了React Hooks的以下几种使用方式以及实现思路：
+  - DOM副作用修改/监听
+  - 组件辅助
+  - 做动画
+  - 发请求
+  - 填表单
+  - 模拟生命周期
+  - 存数据
+  - 封装原有库
+
+- `useState<S>(initialState: (() => S) | S)`
+  - initialState初始值的类型S可以是函数
+  - 注意不要写成下面的样子，类型S是 `undefined`
+    - `const [f, setF] = useState(() => console.log("default ooops"));`
+  - ` const [f, setF] = useState(() => () => console.log("default ooops"));`
+- When you pass a function to `useState` , that function is meant to lazily initialize the initial state.
+- If you want to use a function as a state value, you'll need to wrap it in another function that then returns that function.
+- `useReducer` is more suitable in most cases when you would like to pass a function as a state 
+
+``` JS
+function testPromise() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("done");
+    }, 1000);
+  });
+}
+
+function testRegular() {
+  return "done";
+}
+
+function App() {
+  const [p1, setP1] = useState(testPromise);
+  const [r1, setR1] = useState(testRegular);
+  const [p2, setP2] = useState(testPromise());
+  const [r2, setR2] = useState(testRegular());
+  console.log(p1, r1);
+  console.log(p2, r2);
+
+  // false
+  console.log(p1 === p2)
+  // true，useState的参数为函数时，会自动调用，都为done
+  console.log(r1 === r2)
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
+  );
+}
+```
+
+- 每次Render都有自己的Props与State
+- 每次Render都有自己的事件处理
+- 每次Render都有自己的Effects
+- 不仅是对象，函数在每次渲染时也是独立的，这就是Capture Value特性
+- 利用 `useRef` 就可以绕过Capture Value的特性。可以认为 ref 在所有 Render 过程中保持着唯一引用，因此所有对ref 赋值或取值，拿到的都只有一个最终状态，而不会在每个Render间存在隔离
+- 在组件被销毁时，会执行 `useEffect` 返回值函数内回调函数。同样，由于Capture Value特性，每次 “注册” “回收” 拿到的都是成对的固定值。
+- 如果你明明使用了某个变量，却没有声明在依赖中，后果就是，当依赖的变量改变时，useEffect也不会再次执行，effect内拿到的就是旧值或初始值
+- 如何保证useEffect高效执行
+  - 尽量不依赖外部变量，如setState第一次参数写成函数
+- 若同时依赖多个变量，可以使用useReducer
+  - 不管更新时需要依赖多少变量，在调用更新的动作里都不需要依赖任何变量
+  - 具体更新操作在reducer函数里写就可以了。
+- 将函数写在useEffect中，如果函数不在useEffect内，可能会遗漏依赖
+- 如果非要把函数写在useEffect外面，经过useCallback包装过的函数可以当作普通变量作为useEffect的依赖
+- useEffect只要关心取数函数的变化，而取数参数的变化在useCallback时关心，再配合eslint插件的扫描，能做到依赖不丢、逻辑内聚，从而容易维护
+- useEffect只是底层API，未来业务接触到的是更多封装后的上层API，比如 useFetch 或者 useTheme
+- 重新梳理一下这篇文章的思路：
+
+``` 
+从介绍 Render 引出 Capture Value 的特性。
+拓展到 Function Component 一切均可 Capture，除了 Ref。
+从 Capture Value 角度介绍 useEffect 的 API。
+介绍了 Function Component 只关注渲染状态的事实。
+引发了如何提高 useEffect 性能的思考。
+介绍了不要对 Dependencies 撒谎的基本原则。
+从不得不撒谎的特例中介绍了如何用 Function Component 思维解决这些问题。
+当你学会用 Function Component 理念思考时，你逐渐发现它的一些优势。
+最后点出了逻辑内聚，高阶封装这两大特点
+```
+
+- useEffect在渲染结束时执行，所以不会阻塞浏览器渲染进程，所以使用Function Component写的项目一般都有用更好的性能。
+- 自然符合React Fiber 的理念，因为Fiber会根据情况暂停或插队执行不同组件的Render，如果代码遵循了 Capture Value 的特性，在Fiber环境下会保证值的安全访问，同时弱化生命周期也能解决中断执行时带来的问题。
+- useEffect不会在服务端渲染时执行。
+
+- React Hooks要解决的问题是状态逻辑复用，只共享数据处理逻辑，不会共享数据本身
+- hooks优点
+  - 多个状态不会产生嵌套，写法还是平铺的
+    - renderProps可以通过compose解决，不但使用略为繁琐，而且因为强制封装一个新对象而增加了实体数量。
+  - Hooks可以引用其他Hooks。
+  - 更容易将组件的UI与状态分离
+- 一种实践：有状态的组件(使用useState)没有渲染(返回非UI)，有渲染(返回jsx)的组件没有状态(使用useState)
+  - 也可以类比容器组件和展示组件
+- 每次 `useReducer` 或者自己的 `useCustomHooks` 都不会持久化数据
+  - React Hooks只提供状态处理方法，不会持久化状态
+  - 如果要真正实现一个Redux功能，也就是全局维持一个状态，任何组件 `useReducer` 都会访问到同一份数据，可以和 `useContext` 一起使用。
+- React Hooks并不是通过Proxy或者getters实现的，而是通过数组实现的，每次useState都会改变下标，如果useState被包裹在condition中，那每次执行的下标就可能对不上，导致useState导出的setter更新错数据。
+- 第一次将 “约定优先” 理念引入了React框架中，带来了前所未有的代码命名和顺序限制，但带来的便利也是前所未有的。没有比React Hooks更好的状态共享方案了，约定带来提效，自由的代价就是回到Render Props or HOC，各团队可以自行评估
+- 因为React Hooks的特性，如果一个Hook不产生 UI，那么它可以永远被其他Hook封装，虽然允许有副作用，但是被包裹在 `useEffect` 里，总体来说还是挺函数式的。而Hooks要集中在UI函数顶部写，也很容易养成书写无状态UI组件的好习惯，践行 “状态与 UI 分开” 这个理念会更容易。
+- hooks组件里的状态何时被销毁呢？
+  - 类似闭包，等待系统回收。组件销毁后不再产生状态。
 
 - 如何不在每次渲染时重新实例化 `setInterval`
 

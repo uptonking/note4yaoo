@@ -2,7 +2,7 @@
 tags: [pm, solution, table, yaoo]
 title: ing-solution-datable
 created: '2019-05-15T03:30:55.244Z'
-modified: '2020-06-22T09:04:41.709Z'
+modified: '2020-07-03T10:09:06.349Z'
 ---
 
 # ing-solution-datable
@@ -13,6 +13,7 @@ modified: '2020-06-22T09:04:41.709Z'
 - features
   - 类似ide的同时打开多标签页并编辑
   - 记住不同tab的上次编辑位置
+  - 单列选择
 - globalOptions
   - defaultViewMode/defaultEditMode
   - indentationSpace

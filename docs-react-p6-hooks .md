@@ -288,6 +288,15 @@ function Example() {
   - The `initialState` argument is the state used during the initial render. 
     - In subsequent renders, it is disregarded. 
     - If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render
+
+``` JS
+// useState参数为函数时，会在首次render时自动执行，只执行这一次
+const [state, setState] = useState(() => {
+  const initialState = someExpensiveComputation(props);
+  return initialState;
+});
+```
+
   - If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects
     - React may still need to render that specific component again before bailing out. 
 
@@ -316,6 +325,10 @@ function Example() {
     - The array of dependencies is not passed as arguments to the effect function
       - Every value referenced inside the effect function should also appear in the dependencies array
       - In the future, a sufficiently advanced compiler could create this array automatically.
+  - We don't have a commit phase on the server, so `useEffect` will be a no-op for server side rendering.
+  - `useEffect` and `componentDidMount` both don't run during SSR
+    - useEffect will be a no-op for server side rendering.
+    - Set the initial state to all items and in useEffect (which is only run client side after hydration) check the url and update state
 
 - `useLayoutEffect`
   - The signature is identical to `useEffect` , but it fires synchronously after all DOM mutations. 

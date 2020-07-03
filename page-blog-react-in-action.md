@@ -1,13 +1,81 @@
-# react开发实践总结
+---
+tags: [blog, react]
+title: page-blog-react-in-action
+created: '1970-01-01T00:00:00.000Z'
+modified: '2020-07-03T10:04:36.103Z'
+---
+
+# page-blog-react-in-action
+
+- react开发实践总结
 
 ## guide
 
 - ref
   - [React小技巧汇总](https://www.yuque.com/runarale/gau4ci/qhsaxk)
   - [React设计模式和最佳实践总结](https://blog.poetries.top/2019/08/10/react-good-practice/)
+  - [精读《Function VS Class 组件》](https://zhuanlan.zhihu.com/p/59558396)
+  - [精读《React 性能调试》](https://zhuanlan.zhihu.com/p/136665404)
+  - [精读《setState 做了什么》](https://zhuanlan.zhihu.com/p/54217391)
+  - [精读《结合React使用原生 Drag Drop API》](https://zhuanlan.zhihu.com/p/108742572)
+  - [精读《Scheduling in React》](https://zhuanlan.zhihu.com/p/62428928)
   - [11 lessons react](https://hackernoon.com/11-lessons-learned-as-a-react-contractor-f515cd0491cf)
 
 ## pieces
+
+- 虽然props不可变，但 `this` 在Class Component中是可变的，因此 `this.props` 的调用会导致每次都访问最新的props
+- 而Function Component不存在this.props的语法，因此 `props` 总是不可变的。
+- FC怎么替代 `shouldComponentUpdate`
+
+``` typescript
+// 使用React.memo
+const Button = React.memo(props => {
+  // your component
+});
+
+// 或者在父级就直接生成一个被useMemo包裹的子元素
+function Parent({ a, b }) {
+  // Only re-rendered if `a` changes:
+  const child1 = useMemo(() => <Child1 a={a} />, [a]);
+  // Only re-rendered if `b` changes:
+  const child2 = useMemo(() => <Child2 b={b} />, [b]);
+  return (
+    <>
+      {child1}
+      {child2}
+    </>
+  );
+}
+
+// 对于class组件
+class Button extends React.PureComponent {}
+```
+
+- FC怎么替代didUpdate
+  - useEffect
+- FC怎么替代forceUpdate
+  - `const [ignored, forceUpdate] = useReducer(x => x + 1, 0);`
+  - `const useUpdate = () => useState(0)[1];`
+- useState目前的一种实践，是将变量名打平，而非像Class组件一样写在一个 `this.state` 对象里
+  - FC中若state拆分过多，也可以写在一个state对象中
+  - 只是更新的时候，不再会自动merge而是replace，而需要使用 `...state` 语法
+- Class Component可以通过 `componentWillReceiveProps` 拿到 `previousProps` 与 `nextProps` ，对于Function Component，最好通过自定义Hooks方式拿到上一个状态
+
+ 
+
+``` JS
+ function usePrevious(value) {
+   const ref = useRef();
+   useEffect(() => {
+     ref.current = value;
+   });
+   return ref.current;
+ }
+```
+
+- `useState` 函数的参数虽然是初始值，但由于整个函数都是render，因此每次初始化都会被调用
+  - 如果初始值计算非常消耗时间，建议使用函数传入，这样只会执行一次
+  - `useRef` 不支持这种特性，需要写一些冗余的判断来确定是否进行过初始化
 
 - 当我们想添加一个新功能而引入一个新依赖时，我们往往会评估该依赖的大小以及引入该依赖会对原有bundle造成多大影响。
   - 假如该功能很少被用到，那么我们可以痛快地使用 `React.lazy` 和 `React.Suspense` 来按需加载该功能，而无需牺牲用户体验了

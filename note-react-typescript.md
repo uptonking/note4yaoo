@@ -7,6 +7,11 @@ modified: '2020-06-24T08:40:39.069Z'
 
 # note-react-typescript
 
+## guide
+
+- ref
+  - [精读《@types react 值得注意的TS技巧》](https://zhuanlan.zhihu.com/p/129632306)
+
 - 组件相关
 
 ``` typescript

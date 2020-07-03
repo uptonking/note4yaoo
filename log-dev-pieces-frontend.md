@@ -3,13 +3,25 @@ attachments: [hello.txt]
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-06-30T07:07:28.549Z'
+modified: '2020-07-03T09:59:57.294Z'
 ---
 
 # log-dev-pieces-frontend
 
 ## logging
 
+- console对象
+  - 分级日志：console.log/info/debug/warn/error
+  - 字符串占位符： `%s` 代表字符串， `%o` 代表对象， `%d` 代表数字
+  - 设置样式：开头使用 `%c` , 如 `console.log('%cNull','color:gold;font-size:large')`
+  - `console.dir` ：强制以JSON模式输出，如DOM会转换成json对象
+  - `console.table` ：将对象属性或数组打印成表格更美观
+  - `console.assert` ：仅当第一个参数为false时才打印第二个参数
+  - `console.trace` ：打印调用栈
+  - `console.time/End` ：打印代码执行时间
+  - `console.memory` ：打印内存使用情况
+  - `console.clear` ：清空控制台输出
+  - `console.group` ： 分组输出，便于阅读
 - 确保FMP（首次有效绘制） 尽可能的快速, 方法之一就是分阶段进行代码拆分
   - render loding-render-analytics
   - FMP所需的所有数据都可以在加载阶段获取其他代码的同时获取
