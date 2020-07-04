@@ -1,13 +1,28 @@
 ---
-tags: [blog, react]
+tags: [blog, react, state]
 title: page-blog-react-state
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-04T13:54:01.611Z'
+modified: '2020-07-04T18:05:21.229Z'
 ---
 
 # page-blog-react-state
 
 ## pieces
+
+- state-management-package
+  - redux /53.7kStar
+  - mobx /22.1kStar
+  - xstate /12.2kStar
+  - recoil /7.9kStar
+  - bloc /4.9kStar
+  - easy-peasy /3.6kStar
+  - unstated-next /2.6kStar
+  - constate /2.6kStar
+
+- 有没有什么办法可以优化一下：使得不该更新的组件不rerender呢？
+  - 定义了一个Provider组件，但是它的 value 是一个通过 useRef 创建的值。
+  - 只有触发 forceUpdate 才会更新组件
+  - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个 优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件 rerender。
 
 - 状态管理要解决的问题是跨组件状态共享
   - state声明、读取、修改
@@ -227,7 +242,12 @@ function StateProvider({ children }) {
 
 ## context
 
-- `Context.Provide` r的 `value` 更新的时候，会默认通知所有使用了useContext该Context订阅的子组件重新渲染。这个在项目复杂的时候，性能上会变差。
+- ref
+  - [基于 React Context 的状态管理思考（一）](https://juejin.im/post/5d5ea99be51d45620064bb52)
+
+  - 
+
+- `Context.Provider` 的 `value` 更新的时候，会默认通知所有使用了useContext该Context订阅的子组件重新渲染。这个在项目复杂的时候，性能上会变差。
 - 所以要么就对多个模块分别使用不同Context来管理状态，要么就得参考react-redux的思路，通过对比新旧值来让真正需要渲染的子组件重新渲染。
 - 比较难解决的是thunk，redux中在dispatch执行前对action做判断，如果是异步action则传入middlewareAPI并执行，如果是同步action则立即dispatch。react中的dispatcher是一个用于启动performWork的scheduler（用于安排调度任务到任务队列）。redux的dispatch是原子操作，只有当所有reducers执行完毕才会通知订阅者进行下一步操作（redux理念中reducers是纯函数，subscriptions是副作用），确保getState不会脏读state，但是react是吗？ReactDispatcher执行单元是一个fiber，每个hook fiber实例（使用了useReducer）执行reducer后进行setState操作，组件实例执行的同时也等于通知订阅，它并不会关心（或者等）其他组件是否执行完毕，也就是在reducers没有全部执行完就去读全局state，造成脏读。（如果此时往全局state写入新值就更加错误了，也可以说没有保证事务隔离。）这也是concurrent并发调度模式所存在的难题。所以，既然难以保证IO操作拥有足够的隔离性，所以可以使用惰性求值（或者异步）来进行IO操作，即将所有组件pure纯化（访问全局context就不纯），将所有IO操作推迟到纯函数执行之后。譬如ReactDOM.render的第三个参数表示在一次完整的render之后执行一次操作，此时进行副作用IO。
 - 全局变量共享是一个复杂的问题，在并发访问时尤为突出。不过只要保证组件足够纯，再隔离副作用就好了。纯函数的优势就是并发，副作用IO可以交给异步任务队列执行，或者是用Monad来处理IO，保证IO操作次序，IO操作是需要保证先后顺序的，纯函数不需要
@@ -247,8 +267,43 @@ function StateProvider({ children }) {
   - 目前不支持ts，需要@types/recoil
   - 目前没有支持Class组件消费状态
   - API偏多，一共19个，同类可以合并
-  - 消费状态需要import多项，useRecoilState,store
+  - 消费状态需要import多项，useRecoilState, store
   - 没有足够的亮点吸引用户
+
+## state management using subscription
+
+- ref 
+  - [使用React Hooks进行状态管理 - 无Redux和Context](https://juejin.im/post/5d783fca6fb9a06af50ff577)
+
+``` JS
+// 自定义hook
+import { useState, useEffect } from 'react;
+
+let listeners = [];
+let state = { counter: 0 };
+
+const setState = (newState) => {
+  state = { ...state, ...newState }
+  listeners.forEach((listener) => {
+    listener(state)
+  })
+}
+
+const useGlobalState = () => {
+  const newListener = useState()[1];
+  useEffect(
+    () => {
+      listeners.push(newListener);
+
+      return () => {
+        listeners = listeners.filter(listener => listener != newListener)
+      }
+    },
+    []
+  )
+  return [state, setState];
+}
+```
 
 ## guide
 
@@ -259,3 +314,6 @@ function StateProvider({ children }) {
   - [编写一个管理异步的React Hook](https://zhuanlan.zhihu.com/p/58840809)
   - [Provide more ways to bail out inside Hooks](https://github.com/facebook/react/issues/14110)
   - [Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)
+  - [XState状态管理 - 基于Actor模式](https://blog.zfanw.com/xstate-state-management/)
+  - [说说react hooks做状态管理这件事-hooks+Context篇](https://webfe.kujiale.com/yong-hooks/)
+  - [The Problem with React's Context API](https://leewarrick.com/blog/the-problem-with-context/)
