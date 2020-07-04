@@ -13,6 +13,7 @@ modified: '2020-07-03T13:52:52.979Z'
 
 - hooks rfc 
   - usePrevious
+  - react-use就像是hooks界的lodash，一统api命名，提供参考实现
 - ref
   - [React Hooks 最佳实践 by 网易云音乐前端团队](https://zh-hans.reactjs.org/blog/2020/05/22/react-hooks.html)
   - [React Hooks工程实践总结](https://github.com/forthealllight/blog/issues/49)
@@ -32,6 +33,198 @@ modified: '2020-07-03T13:52:52.979Z'
     - [CN](https://zhuanlan.zhihu.com/p/66923924)
 
 ## pieces
+
+- 最常见的useRef的用法就是保存一个DOM元素的引用，然后拿着useEffect去访问
+
+``` JS
+// 下面会修改
+const Foo = ({ text }) => {
+  const [width, setWidth] = useState();
+  const root = useRef(null);
+  useLayoutEffect(
+    () => {
+      if (root.current) {
+        setWidth(root.current.offsetWidth);
+      }
+    },
+    []
+  );
+
+  return <span ref={root}>{text}</span>;
+};
+```
+
+- 条件型的ref，如 `return visible ? <span ref={root}>{text}</span> : null;`
+  - 若第一次render时visible为false，则无法正常工作
+  - 这个不执行的原因是没有传递依赖给useEffect函数
+- 有些DOM的变化并非由渲染引起，那么就不会有相应的useEffect被触发。
+- 在class时代，由于组件节点是通过class实例化而得，因此可以在类实例上存放内容，这些内容随着实例化产生，随着componentWillUnmount销毁。
+- 但是在hook的范围下，函数组件并没有this和对应的实例，因此useRef作为这一能力的弥补，扮演着跨多次渲染存放内容的角色
+- ref是一个与组件对应的React节点生命周期相同的，可用于存放自定义内容的容器。
+- 把fn放进一个ref当中，它就可以绕过useEffect的闭包问题，让useEffect回调每一次都能拿到正确的、最新的函数，却不需要将它作为依赖导致定时器频率不稳定
+- useRef为“hook中的作弊器”，所谓的“作弊”，其它是指它打破了类似useCallback、useEffect对闭包的约束，使用一个“可变的容器”让ref不需要成为闭包的依赖也可以在闭包中获得最新的内容
+- 为了解决useRef与DOM元素关联时的坑，最保守的方式就是使用函数作为ref
+- 函数ref一定会在元素生成或销毁时被执行，可以确保追踪到最新的DOM元素。但它依然有一个缺点，函数ref不支持销毁
+- 换个角度，我们真正缺失的是“将销毁函数保留下来以待执行”的功能，这是不是非常像useTimeout或者useInterval的功能？无非一个是延后一定时间执行，一个是延后到DOM元素销毁时执行。
+- 我们完全可以用useRef本身去保存一个销毁函数，来实现与useEffect等价的能力
+
+``` JS
+// 自定义useRef代替useEffect
+const noop = () => undefined;
+
+const useEffectRef = callback => {
+  const disposeRef = useRef(noop);
+  const effect = useCallback(
+    element => {
+      disposeRef.current();
+      // 确保这货只被调用一次，所以调用完就干掉
+      disposeRef.current = noop;
+
+      if (element) {
+        const dispose = callback(element);
+
+        if (typeof dispose === 'function') {
+          disposeRef.current = dispose;
+        } else if (dispose !== undefined) {
+          console.warn('Effect ref callback must return undefined or a dispose function');
+        }
+      }
+    },
+    [callback]
+  );
+
+  return effect;
+};
+const Foo = ({ visible, text }) => {
+  const colorful = useCallback(
+    element => {
+      const tick = setInterval(
+        () => {
+          // 循环取下一个字符变色
+        },
+        1000
+      );
+
+      return () => clearInterval(tick);
+    },
+    []
+  );
+  const ref = useEffectRef(colorful);
+
+  return visible ? <span ref={ref}>{text}</span> : null;
+};
+```
+
+- 使用useRef更新可变对象，如Set, Map
+
+``` JS
+// JavaScript
+const useForceUpdate = () => useReducer(v => v + 1, 0)[1];
+// const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+const useSet = initialEntries => {
+  const ref = useRef(new Set(initialEntries));
+  const forceUpdate = useForceUpdate();
+  const add = useCallback(
+    item => {
+      ref.current.add(item);
+      forceUpdate();
+    },
+    [forceUpdate]
+  );
+
+  return [ref.current, { add }];
+};
+```
+
+- 使用useRef进行渲染计数
+  - 用Chrome的性能面板去看情况当然非常可行，但其实成本也不小，录制、分析都挺花精力的
+  - 要用到不会触发更新的可变容器
+
+``` JS
+  // JavaScript
+  const useRenderTimes = () => {
+    const times = useRef(0);
+    times.current++;
+    return times.current;
+  };
+  const Foo = () => {
+    const renderTimes = useRenderTimes();
+
+    return (
+      <div title={ `Rendered ${renderTimes} times` }>
+            ...各种内容...
+        </div>
+    );
+  };
+```
+
+- 使用useRef获取前一次值
+- 使用useRef计算组件更新原因
+
+``` JS
+const useUpdateCause = (props, print) => {
+  const previousProps = usePreviousValue(props);
+  const differences = findDifferences(previousProps, props);
+
+  if (print) {
+    printUpdateCause(differences);
+  }
+
+  return differences;
+};
+```
+
+- 使用useRef进行对象追回
+  - 上一次的值与这一次内容相同的话，就把上一次还给你好啦
+  - 使用deepEquals和JSON.stringify比较都占性能，stringify更占，尽量用shallowEquals
+
+``` JS
+  const useOriginalCopy = (value, equals = shallowEquals) => {
+    const cache = useRef(undefined);
+
+    if (equals(cache.current, value)) {
+      return cache.current;
+    }
+
+    cache.current = value;
+    return value;
+  };
+
+  // const originalPrams = useOriginalCopy(params, deepEquals); // 用深比较
+
+  useEffect(
+    () => {
+      fetch('/users', params)
+        .then(response => response.json())
+        .then(list => setUserList(list));
+    },
+    [params] // 这东西要是引用不同就无限发请求
+    // [originalPrams]
+  );
+```
+
+- 最后一个param的例子，更简单直接的方式应该是，把你真正需要用的param.xxx作为useEffect依赖，而不是依赖整个param对象（大部分时候param.xxx已经是基本类型了）。如果项目的面向对象做得非常极致的话，缺失可能出现useEffect依赖整个对象的情况。这种时候，为了不破坏封装，也确实有足够的理由去依赖整个对象。但即使是这样，也应该在useEffect的回调里面去进行深度diff，比渲染阶段去diff要好一些
+  - 第一，例如发请求，用的就是整个params，强行变成params.xxx还是绕不过eslint检查（你高兴在effect里再拼回去那当我没说）
+  - 第二，params.xxx不一定就是基本类型，比如POST请求就可能是一个很深层级的对象
+  - 第三，弄不好params里的key数量是动态的，比如后端接口本身就有可选参数，这会使事情更麻烦一些（麻烦不到哪里去）
+  - 第四，只针对对象类型的params你的方法最坏情况还是可行的，但如果针对可变长度的数组的话，那可是真没办法了
+- 看一下想要通过工程化得到什么
+  - 比如我们有一个诉求是可测性，但最后我们并不一定是通过分层来解决，而是搞了一个顶层context把所有的数据请求api注入到这里面去，测试的时候往context里塞mock的api就行了
+  - 再比如我们有一些产品的诉求就是一个视图组件对接N种未知、不可控的数据源，这时我们就严格分出了数据控制层和视图层，视图组件绝不含useFetch之类的东西
+  - 我感觉很多时候不知道怎么工程化，是在于不知道要用工程化做到什么
+
+- 不否认class时代状态的集中管理是过于粗放的，但那个时代的状态更新粒度基本是没有问题的，所以在使用hook的时候千万不要太过暴力的拆分状态。
+- 过于细粒度的拆分状态会导致代码阅读者难以理解状态间的关系，无形提升代码维护的难度
+- 连续调用2个状态的更新，如果这件事发生在React管理的事件中，则更新会被合并起来，如果发生在其它场合（比如异步结束时），则会使得React触发多次渲染
+- 但状态合并这种做法，依然会有一个问题：状态的更新与状态的声明距离过远
+  - 把状态和更新封装到自定义的hook中，比如就叫useSelection。
+  - 使用useReducer来实现
+- 第一种方法自不必说，能不能找到合适的粒度来实现自定义hook就是对react开发者的素质的考验。但不少时候自定义hook作为一种解决方案还是过于重量级，虽然它仅仅是一个函数，但依然会需要阅读者去理解输入输出，使用TypeScript还可能造成类型定义上的额外工作。
+- 通过useReducer我们传递一个函数，这个函数清晰地表达了'select'这个类型的操作，以及对应的状态更新。useReducer的第二个参数也很好地说明了状态的结构。
+- 状态粒度过粗的问题就在于，它会隐藏掉可以复用的状态，让人不知不觉通过“行云流水地重复编码”来实现功能，离复用和精简越来越远
+- 有时候保持一定程度上的重复是有意义的，比如使代码更具语义化，让人更看得懂代码在干啥，这在class时代特别明显。在class明代能解决这一问题的办法就是HOC，比如我们做withLoading、withToggle、withRemoteData
+- 我认为不能已代码组织的角度来考虑颗粒度，应该以业务的角度，比如一个搜索表格，pagination和queries，从视觉上分成两个hook可读性更好，但是搜索的时候不仅要更新queries，同时要把页码重置为1的，不然接口就无法返回正确的数据。所以它们应该放在一起。
+  - 他们大多数情况是一起更新的我自然会倾向于放一起。但是放一起一定会有复用问题，没有query的表格怎么办再写一套吗？没有分页的表格怎么办还是再来一套吗？所以这事情也没有绝对
 
 - We can solve any problem by introducing an extra level of indirection.
   - 没有什么问题是加一层解决不了的
@@ -54,10 +247,10 @@ modified: '2020-07-03T13:52:52.979Z'
   - 太多的useState和useCallback调用，重复的编码工作。
   - 如果不仔细阅读代码，很难找到状态与行为的对应关系。
   - 一个自定义hook能帮我们把“一个状态”和“针对这个状态的行为”合并在一起
-1. 有一部分状态类型是业务无关的，是开发者公用的，比如最基础的数据类型number、string、Array等。
-2. 部分数据类型的不可变操作相当复杂，比如不可变地实现Array#splice，好在有immer合理地解决了问题。
-3. 部分操作的语义会发生变化，setState最典型的是没有返回值，因此Array#pop只能产生“移除最后一个元素”的行为，而无法将移除的元素返回。
-- 部分类型是天生可变的，如Set和Map，将之映射到不可变需要额外的工作。
+- 有一部分状态类型是业务无关的，是开发者公用的，比如最基础的数据类型number、string、Array等。
+  1. 部分数据类型的不可变操作相当复杂，比如不可变地实现Array#splice，好在有immer合理地解决了问题。
+  2. 部分操作的语义会发生变化，setState最典型的是没有返回值，因此Array#pop只能产生“移除最后一个元素”的行为，而无法将移除的元素返回。
+  3. 部分类型是天生可变的，如Set和Map，将之映射到不可变需要额外的工作。
 - 针对常用数据结构的抽象，在试图解决这些问题（第2个问题还真解决不了）的同时，也能扩展一些行为
 - 有了基本的数据结构后，可以对场景进行封装，这一点在阿里的@umijs/hooks体现的比较多，如useVirtualList
 - 需要注意的是，场景的封装不应与组件库耦合，它应当是业务与组件之间的桥梁，不同的组件库使用相同的hook实现不同的界面，这才是一个理想的模式：
