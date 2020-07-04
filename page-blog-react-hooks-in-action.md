@@ -9,30 +9,64 @@ modified: '2020-07-03T13:52:52.979Z'
 
 - react hooks开发实践总结
 
-## guide
-
-- hooks rfc 
-  - usePrevious
-  - react-use就像是hooks界的lodash，一统api命名，提供参考实现
-- ref
-  - [React Hooks 最佳实践 by 网易云音乐前端团队](https://zh-hans.reactjs.org/blog/2020/05/22/react-hooks.html)
-  - [React Hooks工程实践总结](https://github.com/forthealllight/blog/issues/49)
-  - [React Hook的实现原理和最佳实践 by 携程](https://zhuanlan.zhihu.com/p/75146261)
-  - [精读《React Hooks》](https://zhuanlan.zhihu.com/p/49408348)
-  - [精读《React Hooks 最佳实践》](https://zhuanlan.zhihu.com/p/81752821)
-  - [精读《Function Component 入门 - 使用hooks》](https://zhuanlan.zhihu.com/p/67087685)
-  - [精读《useEffect 完全指南》](https://zhuanlan.zhihu.com/p/60277120)
-  - [精读《怎么用 React Hooks 造轮子》](https://zhuanlan.zhihu.com/p/50274018)
-  - [对React Hooks的一些思考](https://zhuanlan.zhihu.com/p/48264713)
-  - [React Hooks的体系设计之一 - 分层](https://zhuanlan.zhihu.com/p/106665408)
-  - [React Hooks的体系设计之二 - 状态粒度](https://zhuanlan.zhihu.com/p/108432109)
-  - [React Hooks的体系设计之三 - 什么是ref](https://zhuanlan.zhihu.com/p/109742536)
-  - [React Hooks的体系设计之四 - 玩坏ref](https://zhuanlan.zhihu.com/p/111308773)
-  - [useCallback invalidates too often in practice](https://github.com/facebook/react/issues/14099)
-  - [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
-    - [CN](https://zhuanlan.zhihu.com/p/66923924)
-
 ## pieces
+
+- 闭包是一个特殊的对象，它由两部分组成，执行上下文A以及在A中创建的函数B。
+  - 当B执行时，如果访问了A中的变量对象，那么闭包就会产生。
+  - 在大多数理解中，包括许多著名的书籍、文章里都以函数B的名字代指这里生成的闭包。而在chrome中，则以执行上下文A的函数名代指闭包
+  - 许多地方喜欢用词法环境，或者词法作用域来定义闭包的概念，但是闭包是代码执行过程中才会产生的特殊对象，因此我认为使用执行上下文更为准确。当然，这并不影响闭包的理解与使用。
+- JavaScript中并没有自己的模块概念，我们只能使用函数/自执行函数来模拟模块。现在的前端工程中（ES6的模块语法规范），使用的模块，本质上都是函数或者自执行函数
+
+``` JS
+// Counter.jsx
+export default function Counter() {}
+
+// App.jsx
+import Counter from './Counter';
+export default function App() {
+  // todo
+  return (
+    <Counter />
+  )
+}
+
+// 转换后
+const CounterModule = (function() {
+  return function Counter() {}
+})()
+
+const AppModule = (function() {
+  const Counter = CounterModule;
+  return function App() {
+    return Counter();
+  }
+})()
+```
+
+- 当App在render中执行时，访问了AppModule中的变量对象(定义了变量Counter)，那么闭包就会产生。
+- 所以，闭包跟模块之间的关系，到这里，就非常清晰了。根据闭包的生成条件与实践场景，我们会发现，模块中，非常容易生成闭包。
+  - 每一个JS模块都可以认为是一个独立的作用域，当代码执行时，该词法作用域创建执行上下文，
+  - 如果在模块内部，创建了可供外部引用访问的函数时，就为闭包的产生提供了条件，只要该函数在外部执行访问了模块内部的其他变量，闭包就会产生。
+- 当useState在AppDemo中执行时，访问了state模块中的变量对象，那么闭包就会产生
+- 根据闭包的特性，state模块中的state变量，会持久存在。
+  - 因此当AppDemo函数再次执行时，我们也能获取到上一次AppDemo函数执行结束时state的值
+  - 这就是React Hooks能够让函数组件拥有内部状态的基本原理
+
+- react-use封装了很多常用的基础逻辑，其Hooks粒度比较小，类似于工具库
+- 在中台产品中，有很多特定的场景逻辑，需要多个Hooks进行组合，或者定制特定的逻辑。在蚂蚁内部，开发者在各自项目中沉淀了各种好用的custom Hooks，创建了@umijs/hooks
+
+- 使用hooks重构应用
+  - 没有了class关键字，使用了函数来代替
+  - 在函数式组件里没有this，而是使用了函数作用域来调用
+- props变成了函数参数，其默认值通过ES6的参数默认值来解决
+- 你可以会使用多个useState来拆分里面的属性，你也可以直接传一个对象给useState , 但是由于这些属性都是没有关联的，以后要把它们拆分成独立的 useState就会困难
+  - 如果你的组件里面有更多的setState方法，无论你是直接重写它们或是把它们放在另一个自定义的Hooks里，都需要花费更多的时间
+  - 可以使用useReducer
+- useEffect中对象的比较
+  - 若依赖数组中的参数中有一个是对象，对象的每次render时都会创建新的
+  - 使用JSON.stringify，慎用，只有当对象不是特别复杂，层级不是特别深的时候，才可以使用
+  - 使用useRef, 然后在useEffect中添加判断逻辑后才执行effect
+  - 使用useMemo包裹创建对象
 
 - 最常见的useRef的用法就是保存一个DOM元素的引用，然后拿着useEffect去访问
 
@@ -1070,3 +1104,33 @@ useSomething = (inputCount) => {
 - hooks组件间的通信，同样可以使用redux来实现
   - 可以使用react-redux 7.1提供的hooks
   - useSelector()、useDispatch()、useStore()这3个主要方法，分别对应与mapState、mapDispatch以及直接拿到redux中store的实例
+
+## guide
+
+- hooks rfc 
+  - usePrevious
+  - react-use就像是hooks界的lodash，一统api命名，提供参考实现
+- ref
+  - [React Hooks 最佳实践 by 网易云音乐前端团队](https://zh-hans.reactjs.org/blog/2020/05/22/react-hooks.html)
+  - [React Hooks工程实践总结](https://github.com/forthealllight/blog/issues/49)
+  - [React Hook的实现原理和最佳实践 by 携程](https://zhuanlan.zhihu.com/p/75146261)
+  - [精读《React Hooks》](https://zhuanlan.zhihu.com/p/49408348)
+  - [精读《React Hooks 最佳实践》](https://zhuanlan.zhihu.com/p/81752821)
+  - [精读《Function Component 入门 - 使用hooks》](https://zhuanlan.zhihu.com/p/67087685)
+  - [精读《useEffect 完全指南》](https://zhuanlan.zhihu.com/p/60277120)
+  - [精读《怎么用 React Hooks 造轮子》](https://zhuanlan.zhihu.com/p/50274018)
+  - [对React Hooks的一些思考](https://zhuanlan.zhihu.com/p/48264713)
+  - [React Hooks的体系设计之一 - 分层](https://zhuanlan.zhihu.com/p/106665408)
+  - [React Hooks的体系设计之二 - 状态粒度](https://zhuanlan.zhihu.com/p/108432109)
+  - [React Hooks的体系设计之三 - 什么是ref](https://zhuanlan.zhihu.com/p/109742536)
+  - [React Hooks的体系设计之四 - 玩坏ref](https://zhuanlan.zhihu.com/p/111308773)
+  - [useCallback invalidates too often in practice](https://github.com/facebook/react/issues/14099)
+  - [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+    - [CN](https://zhuanlan.zhihu.com/p/66923924)
+  - [[译]React Hooks 实践：如何使用Hooks重构你的应用](https://github.com/ychow/Blog/issues/20)
+  - [React Hooks 在蚂蚁金服的实践](https://zhuanlan.zhihu.com/p/94030173)
+  - [波大 - 五个大型项目实践总结，解密React Hooks最佳实践](https://juejin.im/post/5dde49846fb9a071aa34be81)
+  - [波大 - 超性感的React Hooks（二）再谈闭包](https://juejin.im/post/5dde6ac26fb9a0715d3cb194)
+  - [波大 - 超性感的React Hooks（六）自定义hooks的思维方式](https://mp.weixin.qq.com/s/GPcwIPJBc9I_NtixyU-U4Q)
+  - [源码分析：react hook 最佳实践](https://github.com/Godiswill/blog/issues/18)
+  - [Investigate use of context + observedBits for performance optimization](https://github.com/reduxjs/react-redux/issues/1018)

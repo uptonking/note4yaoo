@@ -23,6 +23,23 @@ modified: '2020-07-03T10:04:36.103Z'
 
 ## pieces
 
+- JSX is transpiled to function calls: `<Log /> -> createElement(Log, {})` . 
+  - So if you put the JSX in your render you're calling a function and getting a new return value each time.
+-  If you move the JSX up a level out of the re-rendering component then, it won't get re-created each time
+
+``` JS
+  // 仅供参考
+  function Counter(props) {
+    return (
+        <Logger level='info'>
+    )
+  }
+
+  function Counter2({logger}){
+    return {logger}
+  }
+```
+
 - 虽然props不可变，但 `this` 在Class Component中是可变的，因此 `this.props` 的调用会导致每次都访问最新的props
 - 而Function Component不存在this.props的语法，因此 `props` 总是不可变的。
 - FC怎么替代 `shouldComponentUpdate`

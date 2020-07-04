@@ -288,6 +288,7 @@ function Example() {
   - The `initialState` argument is the state used during the initial render. 
     - In subsequent renders, it is disregarded. 
     - If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render
+    - 如果initialState为函数，则useState在初始化时会立刻执行该函数和获取函数的返回值，在没有任何返回值得情况下为undefined。这里需要注意的是每次组件re-render都会导致useState中的函数重新计算，这里可以使用闭包函数来解决问题。在优化后只有组件初始化时才会执行一遍loop函数。
 
 ``` JS
 // useState参数为函数时，会在首次render时自动执行，只执行这一次
@@ -295,6 +296,24 @@ const [state, setState] = useState(() => {
   const initialState = someExpensiveComputation(props);
   return initialState;
 });
+
+const loop = () => {
+  console.log("calc!");
+  let res = 0;
+  for (let i = 0, len = 1000; i < len; i++) {
+    res += i;
+  }
+  return res;
+};
+
+// 这样每次render都会执行
+// const [value, setValue] = useState(loop());
+
+const App = () => {
+    // 这样只有首次会执行一次
+    const [value, setValue] = useState(() => {
+      return loop();
+    });
 ```
 
   - If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects
@@ -341,7 +360,7 @@ const [state, setState] = useState(() => {
 - `const value = useContext(MyContext);`
   - Accepts a context object(the value returned from `React.createContext` ) 
   - Returns the current context value for that context.
-    - The current context value is determined by the `value` prop of the nearest `<MyContext.Provider>` above the calling component in the tree.
+    - The current context value is determined by the `value` prop of the **nearest** `<MyContext.Provider>` above the calling component in the tree.
   - `useContext(MyContext)` is **equivalent** to `static contextType = MyContext` in a class, or to `<MyContext.Consumer>` .
     - `useContext(MyContext)` only lets you read the context and subscribe to its changes. 
     - You still need a `<MyContext.Provider>` above in the tree to provide the value for this context.

@@ -2,12 +2,18 @@
 tags: [linkedin, toc]
 title: toc-linkedin-crreator
 created: '2020-02-16T14:30:18.987Z'
-modified: '2020-07-03T13:22:57.716Z'
+modified: '2020-07-04T11:56:53.944Z'
 ---
 
 # toc-linkedin-crreator
 
 ## watchlist
+
+## indie-dev
+- Dan Abramov
+  - info: Co-author of Redux and Create React App
+    - http://twitter.com/dan_abramov
+    - https://github.com/gaearon
 
 ## web-dev
 

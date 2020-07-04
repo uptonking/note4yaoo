@@ -11,6 +11,10 @@ modified: '2020-06-30T05:15:07.906Z'
 
 ## dev-tips
 
+- we ultimately wound up shipping three hooks:
+  - `useSelector` : subscribes to the store and returns the selected value
+  - `useDispatch` : returns the store's dispatch function
+  - `useStore` : returns the store instance itself
 - 唯一会使用到bindActionCreators的场景是当你需要把action creator往下传到一个组件上，却不想让这个组件觉察到Redux的存在，而且不希望把dispatch或Redux store传给它
 - 通过redux的combineReducers可以很好的扁平化数据
 - compose：作用是从右到左来组合多个函数，其实就是让你少写几个函数嵌套， `compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`
@@ -19,8 +23,49 @@ modified: '2020-06-30T05:15:07.906Z'
 
 - redux api docs
 	- https://cn.redux.js.org/docs/api/
+	- [react-redux v7 release notes](https://github.com/reduxjs/react-redux/releases/tag/v7.0.1)
+	- [Discussion: Potential hooks API design](https://github.com/reduxjs/react-redux/issues/1179)
+	- [React-Redux Roadmap: v6, Context, Subscriptions, and Hooks](https://github.com/reduxjs/react-redux/issues/1177)
+	- [react-redux杂谈 - 设计结构变迁](https://zhuanlan.zhihu.com/p/86336676)
+	- [React-Redux v7100行代码简易版（Hook+TS实现）](https://zhuanlan.zhihu.com/p/103016304)
+	- [造玩具学原理系列 | redux 源码解析及模拟实现](https://zhuanlan.zhihu.com/p/82951588)
 - examples
 	- https://redux.js.org/introduction/examples
+
+## react-redux 
+
+- Performance downgrade after update to v.6.0.0
+
+  - In v5, connected components re-ran `mapState` immediately in the subscribe callbacks, and only called `setState()` once they knew they needed to re-render. 
+  - In v6, every store update calls `setState()` at the root of the component tree in `<Provider>` , and forces React to walk the component tree to find the consumers before they can even run `mapState` . That's a very meaningful difference.
+
+### v7
+
+- react-redux@7.x 重新使用了多个subscription逐层通知的结构，和 5.x 基本一致，并且使用React Hooks对项目进行了重构，增加了对hooks的支持。
+- As with v5 and earlier, v7 wrapper components all subscribe to the store directly, and only get React involved when the selector logic determines that the wrapper component needs to re-render. This was the first key step in bringing performance back to the level of v5.
+  - React has always had an API called unstable_batchedUpdates(). Internally, React wraps all your event handlers inside of that, which is what allows React to batch together multiple state updates from one event tick into a single render pass.
+  - The React team urged us to use unstable_batchedUpdates() directly in React-Redux. This was tricky, because it's actually exported from renderers like ReactDOM and React Native, not the core React package. React-Redux should work with any React renderer, so we couldn't add a direct dependency on either of those. We had to write some different wrapper files so that the "react-dom" import would get loaded in a web environment, and the "react-native" import when used with RN. For apps that might be using React-Redux with an alternate renderer, we added an additional entry point that falls back to a dummy batching implementation.
+  - In particular, we couldn't enforce top-down updates in a hooks environment, because v7 relies on overriding context values to pass down nested Subscription instances, and you can't render context values from a hook. This meant users would potentially encounter the "zombie child" issue again.
+
+- React-Redux version 7 resolves the performance issues that were reported with version 6, and lays the groundwork for us to design and ship a public useRedux()-type Hooks API in a later 7.x release.
+  - The major change for this release is that `connect` is now implemented using Hooks internally. 
+  - Because of this, we now require a minimum React version of 16.8.4 or higher
+- `connect` now uses `React.memo()` internally, which returns a special object rather than a function. 
+  - Any code that assumed React components are only functions is wrong, and has been wrong since the release of React 16.6. 
+  - If you were using PropTypes to check for valid component types, you should change from PropTypes.func to PropTypes.elementType instead.
+- In v6, we switched from individual components subscribing to the store, to having ` <Provider>` subscribe and components read the store state from React's Context API. 
+  - This worked, but unfortunately the Context API isn't as optimized for frequent updates as we'd hoped, and our usage patterns led to some folks reporting performance issues in some scenarios.
+- In v7, we've switched back to using direct subscriptions internally, which should improve performance considerably.
+  - This does result in some changes that are visible to user-facing code, in that updates dispatched in React lifecycle methods are immediately reflected in later component updates. 
+  - Examples of this include components dispatching while mounting in an SSR environment. 
+  - This was the behavior through v5, and is not considered part of our public API.)
+- React has an `unstable_batchedUpdates` API that it uses to group together multiple updates from the same event loop tick. 
+  - The React team encouraged us to use this, and we've updated our internal Redux subscription handling to leverage this API. 
+  - This should also help improve performance, by cutting down on the number of distinct renders caused by a Redux store update.
+- We've reimplemented our connect wrapper component to use hooks internally. While it may not be visible to you, it's nice to know we can take advantage of the latest React goodies!
+- React's `unstable_batchedUpdate()` API allows any React updates in an event loop tick to be batched together into a single render pass. 
+  - React already uses this internally for its own event handler callbacks. 
+  - This API is actually part of the renderer packages like ReactDOM and React Native, not the React core itself.
 
 ## redux docs
 
