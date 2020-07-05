@@ -1,5 +1,5 @@
 ---
-tags: [blog, react]
+tags: [blog, react, concurrent]
 title: page-blog-react-concurrent
 created: '1970-01-01T00:00:00.000Z'
 modified: '2020-07-03T09:36:59.280Z'
