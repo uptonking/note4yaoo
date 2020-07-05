@@ -14,6 +14,72 @@ modified: '2020-07-04T18:09:34.650Z'
 - https://recoiljs.org/docs/introduction/getting-started
 - https://github.com/facebookexperimental/Recoil
 
+## Getting Started
+
+``` typescript
+import React from 'react';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+
+function App() {
+  return (
+    <RecoilRoot>
+      <CharacterCounter />
+    </RecoilRoot>
+  );
+}
+
+function CharacterCounter() {
+  return (
+    <div>
+      <TextInput />
+      <CharacterCount />
+    </div>
+  );
+}
+
+const textState = atom({
+  key: 'textState', // unique ID (with respect to other atoms/selectors)
+  default: '', // default value (aka initial value)
+});
+
+function TextInput() {
+  const [text, setText] = useRecoilState(textState);
+
+  const onChange = (event) => {
+    setText(event.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={text} onChange={onChange} />
+      <br />
+      Echo: {text}
+    </div>
+  );
+}
+
+const charCountState = selector({
+  key: 'charCountState', // unique ID (with respect to other atoms/selectors)
+  get: ({ get }) => {
+    const text = get(textState);
+
+    return text.length;
+  },
+});
+
+function CharacterCount() {
+  const count = useRecoilValue(charCountState);
+
+  return <> Character Count: { count } </>;
+}
+```
+
 ## Motivation
 
 - For reasons of compatibility and simplicity, it's best to use React's built-in state management capabilities rather than external global state. 

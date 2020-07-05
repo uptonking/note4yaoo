@@ -9,20 +9,77 @@ modified: '2020-07-04T18:05:21.229Z'
 
 ## pieces
 
-- state-management-package
-  - redux /53.7kStar
-  - mobx /22.1kStar
-  - xstate /12.2kStar
-  - recoil /7.9kStar
-  - bloc /4.9kStar
-  - easy-peasy /3.6kStar
-  - unstated-next /2.6kStar
-  - constate /2.6kStar
+---
+
+- 精读《React Hooks 数据流》
+- 单组件最简单的数据流一定是 `useState`
+- 组件间共享数据流最简单的方案就是 `useContext`
+  - 问题是数据与UI不解耦，这个问题 `unstated-next` 可以作为解决方案
+- 数据流与组件解耦 `unstated-next`
+  - 可以将定义在App中的数据单独出来，然后Counter和App不再绑定
+  - 但是useState无法合并更新，可以使用useReducer
+  - Counter.useContainer提供的数据流是一个引用整体，其子节点foo引用变化后会导致整个Hook重新执行，继而所有引用它的组件也会重新渲染，此时可以使用可以利用Redux的 `useSelector` 实现按需更新
+- 对于极限场景，即便控制了重渲染次数与返回结果的引用最大程度不变，还是可能存在性能问题，这最后一块性能问题就出在useSelector上
+  - useSelector的第二个参数靠考虑使用deepEquals
+  - 一种方式是利用reselect根据参数引用进行缓存
+- 结合外部变量的缓存查询
+  - 为了不在组件函数内调用 createSelector，我们需要尽可能将用到外部变量的地方抽象成一个通用 Selector，并作为 createSelector 的一个先手环节
+  - 对于外部变量结合的环节，还需要 useMemo 与 useSelector 结合使用，useMemo 处理外部变量依赖的引用缓存，useSelector 处理 Store 相关引用缓存。
+
+``` JS
+// 只用context
+const CountContext = createContext();
+
+function App() {
+  const [count, setCount] = useState();
+  return (
+    <CountContext.Provider value={{ count, setCount }}>
+      <Child />
+    </CountContext.Provider>
+  );
+}
+
+function Child() {
+  const { count } = useContext(CountContext);
+}
+
+// 使用unstated-next
+import { createContainer } from "unstated-next";
+
+function useCounter() {
+  const [count, setCount] = useState();
+  return { count, setCount };
+}
+
+const Counter = createContainer(useCounter);
+
+function App() {
+  return (
+    <Counter.Provider>
+      <Child />
+    </Counter.Provider>
+  );
+}
+
+function Child() {
+  const { count } = Counter.useContainer();
+}
+```
+
+---
+
+- 针对conetxt的value频繁更新导致重复渲染性能降低的问题
+  - [RFC: Context selectors](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
+    - https://github.com/reactjs/rfcs/pull/119
+  - [RFC: useMutableSource](https://github.com/reactjs/rfcs/blob/master/text/0147-use-mutable-source.md)
+    - enables React components to safely and efficiently read from a mutable external source in Concurrent Mode
+  - With context selectors, we might still be facing the "unconditional render starting at the root" and "calculating selectors while rendering" aspects. It's possible that useMutableSource may allow us to work around that. But, at least we wouldn't be forcing every connected component to fully re-render.
+  - `useMutableSource()` seems to aim at solving this problem officially
 
 - 有没有什么办法可以优化一下：使得不该更新的组件不rerender呢？
   - 定义了一个Provider组件，但是它的 value 是一个通过 useRef 创建的值。
   - 只有触发 forceUpdate 才会更新组件
-  - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个 优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件 rerender。
+  - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件rerender。
 
 - 状态管理要解决的问题是跨组件状态共享
   - state声明、读取、修改
@@ -236,16 +293,18 @@ function StateProvider({ children }) {
   - [Redux - Not Dead Yet!](https://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/)
   - [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
 
-## pieces
-
 ## fetchData
 
-## context
+## 基于context
 
 - ref
   - [基于 React Context 的状态管理思考（一）](https://juejin.im/post/5d5ea99be51d45620064bb52)
 
-  - 
+- unstated-next
+  - My advice is to avoid putting everything at the top-level of your app unless it actually needs to be there.
+  - But if this is actually a problem, you can use compose
+  - Of course this still produces a fairly large tree. 
+  - But I don't want to build anything more complex in, and until/unless React gives us a useProvider(...) or a way to provide multiple contexts at once, that problem is gonna stick around.
 
 - `Context.Provider` 的 `value` 更新的时候，会默认通知所有使用了useContext该Context订阅的子组件重新渲染。这个在项目复杂的时候，性能上会变差。
 - 所以要么就对多个模块分别使用不同Context来管理状态，要么就得参考react-redux的思路，通过对比新旧值来让真正需要渲染的子组件重新渲染。
@@ -254,8 +313,6 @@ function StateProvider({ children }) {
 - react的useEffect就是pure操作，将副作用包裹在了Monad里（可以理解为外面又包了一层函数），react调度机制会在一轮渲染之后执行这些副作用操作，保证了副作用与函数组件主体的充分隔离。也就是目前的react已经实现了部分Monad机制。（说是部分因为现在还没有join运算，没办法把一个IO操作映射为另一个IO操作，即(a -> b) -> IO a -> IO b，也就是Functor，可以将Monad解包运算后再封包，，好吧其实这个理解了之后可以自己实现，封包就是f变成()=>f()，解包就是执行封包后的函数即(()=>f())()，解包运算之后再包一层函数纯化返回到Monad即可。）
 
 ## recoil
-
-### Recoil - Facebook 官方 React 状态管理器
 
 - ref
   - [Recoil - Facebook官方React状态管理器](https://juejin.im/post/5ec0f5905188256d8c4a99b8)
@@ -274,22 +331,30 @@ function StateProvider({ children }) {
 
 - ref 
   - [使用React Hooks进行状态管理 - 无Redux和Context](https://juejin.im/post/5d783fca6fb9a06af50ff577)
+  - [State Management with React Hooks — No Redux or Context API](https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8)
+  - 实现时只用到了 `useState` 返回值的第2个变量，用来触发内部state更新
+  - If you ever worked with complex state management library, you know that it is not the best idea to manipulate global state directly from the components
+    - The best way is to separate the business logic by creating actions which manipulate the state.
 
 ``` JS
-// 自定义hook
 import { useState, useEffect } from 'react;
 
+// 设置为let因为清理时会替换
 let listeners = [];
+// 每次都会创建新的state对象
 let state = { counter: 0 };
 
 const setState = (newState) => {
+  // 每次都会创建一个新的state对象，那每次都会render
   state = { ...state, ...newState }
   listeners.forEach((listener) => {
     listener(state)
   })
 }
 
+// 自定义hook
 const useGlobalState = () => {
+  // 不提供初始state只是第一次为undefined，后面每次render都会用新state对象replace
   const newListener = useState()[1];
   useEffect(
     () => {
@@ -301,9 +366,77 @@ const useGlobalState = () => {
     },
     []
   )
+  // 直接暴露
   return [state, setState];
 }
+
+// 使用示例
+const Counter = () => {
+  const [globalState, setGlobalState] = useGlobalState();
+
+  const add1Global = () => {
+    const newCounterValue = globalState.counter + 1;
+    setGlobalState({ counter: newCounterValue });
+  };
+
+  return (
+    <div>
+      <p>
+        counter: {globalState.counter}
+      </p>
+      <button type="button" onClick={add1Global}>
+        +1 to global
+      </button>
+    </div>
+  );
+};
 ```
+
+- [Steps to Develop Global State for React With Hooks Without Context](https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/)
+  - Usually, the global variable is in a file scope. Let’s put it in a function scope to narrow down the scope a bit and make it more reusable.
+  - Although we can create multiple containers, usually we put several items in a global state.
+    - Typical global state libraries have some functionality to scope only a part of the state. 
+    - For example, React Redux uses selector interface to get a derived value from a global state.
+    - We take a simpler approach here, which is to use a string key of a global state.
+- **react-hooks-global-state** is a library to provide a global state with React Hooks
+  - Optimization for shallow state getter and setter.
+    - The library cares the state object **only one-level deep**.
+  - TypeScript type definitions
+    - A creator function creates hooks with types inferred.
+  - Redux middleware support to some extent
+    - Some of libraries in Redux ecosystem can be used.
+    - Redux DevTools Extension could be used in a simple scenario.
+  - Concurrent Mode support (Experimental)
+    - Undocumented useGlobalStateProvider supports CM without React Context.
+  - [v2] new implementation with useMutableSource
+- issues
+  - [changelog](https://github.com/dai-shi/react-hooks-global-state/blob/master/CHANGELOG.md)
+  - observedBits 32bit limitation
+    - Option 1: we rotate the index. % 31
+    - Option 2: we use multiple contexts for each 31 items.
+    - Option 3: multiple contexts for each items. Do not rely on observedBits
+    - Option 4: we pass non-updating "store" in the context, and let hooks subscribe for key-based changes. This is mostly like the previous implementation which requires useState.
+    - https://github.com/dai-shi/react-hooks-global-state/issues/1
+  - redux-like API design question
+    - https://github.com/dai-shi/react-hooks-global-state/issues/3
+    - dispatch vs update 
+  - Great work! And some comments/tips
+    - https://github.com/dai-shi/react-hooks-global-state/issues/8
+  - react-hooks-global-state vs react-tracked
+    - https://github.com/dai-shi/react-hooks-global-state/issues/40
+    - react-hooks-global-state offers the property-based accessor useGlobalState(name) where name has to be a property (string).
+    - react-tracked provides useTrackedState which is a unique API with "state usage tracking". 
+      - It will track the state object usage in deep (even nested objects are tracked) and only trigger re-renders if the used part of the state is changed. 
+      - It also provides useSelector which is similar to the one in react-redux.
+    - react-hooks-global-state has an external store just like Redux.
+      - Although it's tied to React unlike Redux, it's definitely defined outside React.
+    - react-tracked has a state internally in the React component. 
+      - You can only update through React just like normal React state + context.
+    - A general note about external stores: 
+      - With upcoming Concurrent Mode, there's useTransition hook which allows "branching state". 
+      - This is only possible with state inside React. 
+      - So, react-hooks-global-state won't get benefits from that feature. 
+      - react-hooks-global-state should still be CM-safe though.
 
 ## guide
 
@@ -317,3 +450,7 @@ const useGlobalState = () => {
   - [XState状态管理 - 基于Actor模式](https://blog.zfanw.com/xstate-state-management/)
   - [说说react hooks做状态管理这件事-hooks+Context篇](https://webfe.kujiale.com/yong-hooks/)
   - [The Problem with React's Context API](https://leewarrick.com/blog/the-problem-with-context/)
+  - [Steps to Develop Global State for React With Hooks Without Context](https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/)
+  - [useReducer + useContext vs react-hooks-global-state](https://blog.axlight.com/posts/react-hooks-tutorial-for-pure-usereducer-usecontext-for-global-state-like-redux-and-comparison/)
+  - [How to Handle Async Actions for Global State With React Hooks and Context](https://blog.axlight.com/posts/how-to-handle-async-actions-for-global-state-with-react-hooks-and-context/)
+  - [Unstated vs Unstated-Next](https://github.com/jamiebuilds/unstated-next/issues/20)

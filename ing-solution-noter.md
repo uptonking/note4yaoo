@@ -50,7 +50,8 @@ modified: '2020-06-30T05:13:25.510Z'
 - [ ] edit-character: special character support, like `「Microsoft Store」`
   - https://copychar.cc/symbols/
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
-- [ ] edit: toggle lines to list  
+- [ ] edit-list: toggle lines to list  
+- [ ] edit-list: list symbol to number  
 - [ ] edit: insert one blank line below  
 - [ ] edit: 粘贴后批量删除中文段落中英文单词两边的空格
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`

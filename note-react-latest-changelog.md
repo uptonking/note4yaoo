@@ -1,22 +1,11 @@
 ---
-tags: [changelog, docs, react]
-title: docs-react-changelog
+tags: [changelog, react]
+title: note-react-latest-changelog
 created: '2020-06-23T05:49:13.941Z'
 modified: '2020-06-30T08:41:27.194Z'
 ---
 
-# docs-react-changelog
-
-## react-roadmap
-
-- React Fire: Modernizing React DOM
-- React Flare: new React Events
-  - build UIs that feel great on desktop and mobile, with mouse and touch
-- concurrent mode and suspense (stable-17)
-- ref
-  - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
-  - [React Fire](https://github.com/facebook/react/issues/13525)
-  - [React Flare](https://github.com/facebook/react/issues/15257)
+# note-react-latest-changelog
 
 ## features
 

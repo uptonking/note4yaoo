@@ -268,14 +268,22 @@ function Example() {
   - Returns a stateful value, and a function to update it.
   - During the initial render, the returned state ( `state` ) is the same as the value passed as the first argument ( `initialState` ).
   - During subsequent re-renders, the first value returned by useState will always be the most recent state after applying updates.
+  - why does useState return array?
+    - Because compared to an object, an array is more flexible and easy to use.
+    - If the method returned an object with a fixed set of properties, you wouldn’t be able to assign custom names in an easy way.
+    - 若使用对象，每次都要重命名
+    - 如 `const { state:list, setState:setList } = useState([]);`
   - `setState(newState)` function is used to update the state. 
     - It accepts a new state value and enqueues a re-render of the component
     - React guarantees that `setState` function identity is stable and won’t change on re-renders. 
       - This is why it’s safe to omit from the `useEffect` or `useCallback` dependency list.
     - If the new state is computed using the previous state, you can pass a function to `setState`
     - If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely.
+    - If you use the same value as the current state to update the state (React uses Object.is for comparing), React won’t trigger a re-render.
   - `useState` does not automatically merge update objects. 
     - You can replicate this behavior by combining the function updater form with object spread syntax
+    - It's better to split the state into multiple state variables based on which values tend to change together.
+    - The function returned by useState does not automatically merge update objects, it **replaces** them
 
 ``` js
     setState(prevState => {
@@ -289,6 +297,7 @@ function Example() {
     - In subsequent renders, it is disregarded. 
     - If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render
     - 如果initialState为函数，则useState在初始化时会立刻执行该函数和获取函数的返回值，在没有任何返回值得情况下为undefined。这里需要注意的是每次组件re-render都会导致useState中的函数重新计算，这里可以使用闭包函数来解决问题。在优化后只有组件初始化时才会执行一遍loop函数。
+    - The initial value will be assigned only on the initial render (if it’s a function, it will be executed only on the initial render).
 
 ``` JS
 // useState参数为函数时，会在首次render时自动执行，只执行这一次
@@ -306,10 +315,10 @@ const loop = () => {
   return res;
 };
 
-// 这样每次render都会执行
-// const [value, setValue] = useState(loop());
-
 const App = () => {
+    // 这样每次render都会执行
+    // const [value, setValue] = useState(loop());
+
     // 这样只有首次会执行一次
     const [value, setValue] = useState(() => {
       return loop();
@@ -318,6 +327,19 @@ const App = () => {
 
   - If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects
     - React may still need to render that specific component again before bailing out. 
+  - In general terms, here’s an example of how this works step-by-step:
+    - React initializes the list of Hooks and the variable that keeps track of the current Hook
+    - React calls your component for the first time
+    - React finds a call to useState, creates a new Hook object (with the initial state), changes the current Hook variable to point to this object, adds the object to the Hooks list, and return the array with the initial state and the function to update it
+    - React finds another call to useState and repeats the actions of the previous step, storing a new Hook object and changing the current Hook variable
+    - The component state changes
+    - React sends the state update operation (performed by the function returned by useState) to a queue to be processed
+    - React determines it needs to re-render the component
+    - React resets the current Hook variable and calls your component
+    - React finds a call to useState, but this time, since there’s already a Hook at the first position of the list of Hooks, it just changes the current Hook variable and returns the array with the current state and the function to update it
+    - React finds another call to useState and since a Hook exists in the second position, once again, it just changes the current Hook variable and returns the array with the current state and the function to update it
+    - If you like to read code, `ReactFiberHooks` is the class where you can learn how Hooks work under the hood.
+    - [A guide to useState in React](https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/)
 
 - `useEffect(didUpdate);`
   - Accepts a function that contains imperative, possibly effectful code.

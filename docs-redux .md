@@ -34,8 +34,25 @@ modified: '2020-07-04T18:01:53.073Z'
 
 ## react-redux 
 
-- Performance downgrade after update to v.6.0.0
+- In RRv6, there were four major issues with perf:
+  - If I have N connected components, there are N wrapper components in the tree
+  - If a Redux action was dispatched, we immediately put that into `setState({storeState})` in `<Provider>` at the root, 
+    - which **unconditionally** forced a re-render even if 0 components were actually interested in the change, 
+    - and that change was always starting at the root.
+    - `<Provider>` memoized its children, so the render didn't completely cascade from the root, but React still had to traverse the tree to find all context consumers.
+  - All N connected wrappers would have to re-render in order to run mapState and calculate if the wrapped child needed to re-render
+  - All that mapState calculation was done synchronously while rendering the wrappers
+  - In contrast, v7 and connect still have N wrapper components, 
+    - but if only say 5 out of 100 components actually have new values returned from mapState, only those 5 will have renders queued, 
+    - and they are much lower in the tree. 
+    - So, while I know React always starts renders from the root, it can skip over most of the tree and just update the few sub-trees that have renders queued.
+- So, huge differences in if renders are queued, and how many components are flagged for updates, and doing less work is generally going to be faster.
+- With context selectors, we might still be facing the "unconditional render starting at the root" and "calculating selectors while rendering" aspects. 
+  - It's possible that `useMutableSource` may allow us to work around that. 
+  - But, at least we wouldn't be forcing every connected component to fully re-render.
+- (and as I've said, it's also entirely possible that this is only something we can implement with useSelector and not connect.)
 
+- Performance downgrade after update to v.6.0.0
   - In v5, connected components re-ran `mapState` immediately in the subscribe callbacks, and only called `setState()` once they knew they needed to re-render. 
   - In v6, every store update calls `setState()` at the root of the component tree in `<Provider>` , and forces React to walk the component tree to find the consumers before they can even run `mapState` . That's a very meaningful difference.
 
