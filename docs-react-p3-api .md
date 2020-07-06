@@ -132,7 +132,7 @@ modified: '2020-06-30T05:13:55.088Z'
 - 执行时机
   - Firstly in version of React 16.3, getDerivedStateFromProps() just was invoked when updating props
   - But since version of React 16.4, getDerivedStateFromProps() is invoked when updating props and updating state (regardless of the reason for re-rendering).
-  - getDerivedStateFromProps() is invoked before render() method under that conditions;
+  - getDerivedStateFromProps() is invoked before render() method under that conditions; 
     - Initial mount
     - Every state and prop updating
     - forceUpdate
@@ -371,7 +371,7 @@ class App extends React.PureComponent {
 - `React.Suspense`
 - specify the loading indicator in case some components in the tree below it are not yet ready to render. 
 - Today, lazy loading components is **the only use case** supported by `<React.Suspense>`
-- The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use lazy() wherever you want to do code splitting.
+- The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
 - While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching.
 
 ## ReactDOM

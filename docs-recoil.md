@@ -199,7 +199,6 @@ const fontSizeLabelState = selector({
   - This is important as selector evaluations may execute one or more times, may be restarted, and may be cached. 
   - Because of this, selectors are a good way to model read-only DB queries where repeating a query provides consistent data. 
   - If you are looking to synchronize local and server state, then please see Asynchronous State Sync or State Persistence.
-
 - The interface of the selector is the same, so the component using this selector doesn't need to care if it was backed with synchronous atom state, derived selector state, or asynchronous queries!
 - But, since React render functions are synchronous, what will it render before the promise resolves? 
   - Recoil is designed to work with React `Suspense` to handle pending data. 
