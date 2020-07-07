@@ -1,11 +1,11 @@
 ---
 tags: [js, lang, proposal]
-title: note-lang-js-proposal
+title: lang-js-proposal
 created: '2020-06-27T07:29:09.318Z'
-modified: '2020-06-28T03:26:54.937Z'
+modified: '2020-07-07T08:10:16.774Z'
 ---
 
-# note-lang-js-proposal
+# lang-js-proposal
 
 ## proposal-toc
 

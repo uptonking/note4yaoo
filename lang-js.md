@@ -1,11 +1,11 @@
 ---
 tags: [lang/js]
-title: note-lang-js
+title: lang-js
 created: '2019-06-09T05:36:13.734Z'
-modified: '2020-06-30T12:49:26.277Z'
+modified: '2020-07-07T08:10:05.531Z'
 ---
 
-# note-lang-js
+# lang-js
 
 ## tips
 

@@ -1,11 +1,11 @@
 ---
 tags: [lang/python]
-title: note-lang-python
+title: lang-python
 created: '2019-06-09T05:36:34.221Z'
-modified: '2020-06-22T09:13:34.577Z'
+modified: '2020-07-07T08:10:42.079Z'
 ---
 
-# note-lang-python
+# lang-python
 
 ## python3
 

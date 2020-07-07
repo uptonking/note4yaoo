@@ -1,11 +1,11 @@
 ---
 tags: [lang/java/jvm]
-title: note-lang-java-jvm
+title: lang-java-jvm
 created: '2019-07-03T05:33:54.419Z'
-modified: '2020-06-22T09:13:08.181Z'
+modified: '2020-07-07T08:09:54.436Z'
 ---
 
-# note-lang-java-jvm
+# lang-java-jvm
 
 ## classloader
 

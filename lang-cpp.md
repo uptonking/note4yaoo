@@ -1,11 +1,11 @@
 ---
 tags: [lang/c++]
-title: note-lang-cpp
+title: lang-cpp
 created: '2019-06-09T05:36:54.368Z'
-modified: '2020-06-22T09:12:45.085Z'
+modified: '2020-07-07T08:09:16.024Z'
 ---
 
-# note-lang-cpp
+# lang-cpp
 
 ## dev
 - make用来执行Makefile

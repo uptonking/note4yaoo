@@ -1,11 +1,11 @@
 ---
 tags: [lang/java]
-title: note-lang-java
+title: lang-java
 created: '2019-06-09T05:35:12.366Z'
-modified: '2020-06-22T09:12:55.569Z'
+modified: '2020-07-07T08:09:31.383Z'
 ---
 
-# note-lang-java
+# lang-java
 
 ## 开发通用问题
 

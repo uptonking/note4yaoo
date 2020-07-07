@@ -1,11 +1,11 @@
 ---
 tags: [lang/typescript]
-title: note-lang-typescript
+title: lang-typescript
 created: '2019-08-26T15:07:33.910Z'
-modified: '2020-06-30T12:50:11.161Z'
+modified: '2020-07-07T08:10:51.705Z'
 ---
 
-# note-lang-typescript
+# lang-typescript
 
 ## tips
 
