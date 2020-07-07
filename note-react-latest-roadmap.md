@@ -7,7 +7,22 @@ modified: '2020-07-05T13:52:46.297Z'
 
 # note-react-latest-roadmap
 
-## roadmap-discussion
+## guide
+
+- ref
+  - [React 16.x Roadmap_20181127](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
+  - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
+
+## roadmap
+
+- We shipped Hooks on time, but we’re regrouping Concurrent Mode and Suspense for Data Fetching into a single release that we intend to release later this year
+- We (2018) plan to split the rollout of new React features into the following milestones:
+  - React 16.6 with Suspense for Code Splitting (already shipped)
+  - A minor 16.x release with React Hooks (~Q1 2019)
+  - A minor 16.x release with Concurrent Mode (~Q2 2019)
+  - A minor 16.x release with Suspense for Data Fetching (~mid 2019)
+
+## discussion
 
 - React Fire: Modernizing React DOM
 - React Flare: new React Events

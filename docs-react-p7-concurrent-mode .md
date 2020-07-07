@@ -668,8 +668,138 @@ function ProfilePage({ resource }) {
   - This is why they’re grouped into a new “mode” rather than released one by one in isolation.
 - You can’t opt into Concurrent Mode on a per-subtree basis. 
 - Instead, to opt in, you have to do it in the place where today you call `ReactDOM.render()`
+
+``` JS
+import ReactDOM from 'react-dom';
+
+// If you previously had:
+//
+// ReactDOM.render(<App />, document.getElementById('root'));
+//
+// You can opt into Concurrent Mode by writing:
+
+ReactDOM.createRoot(
+  document.getElementById('root')
+).render(<App />);
+```
+
+- This will enable Concurrent Mode for the whole `<App />` tree
 - Concurrent Mode APIs such as `createRoot` only exist in the experimental builds of React.
 - In Concurrent Mode, the lifecycle methods previously marked as “unsafe” actually are unsafe, and lead to bugs even more than in today’s React. 
 - We don’t recommend trying Concurrent Mode until your app is Strict Mode-compatible.
+- If you have a large existing app, or if your app depends on a lot of third-party packages, please don’t expect that you can use the Concurrent Mode immediately.
+- In our experience, code that uses idiomatic React patterns and doesn’t rely on external state management solutions is the easiest to get running in the Concurrent Mode.
+- Legacy Mode: `ReactDOM.render(<App />, rootNode)` . 
+  - This is what React apps use today. 
+  - There are no plans to remove the legacy mode in the observable future 
+  - but it won’t be able to support these new features.
+- Blocking Mode: `ReactDOM.createBlockingRoot(rootNode).render(<App />)` . 
+  - It is currently experimental. 
+  - It is intended as a first migration step for apps that want to get a subset of Concurrent Mode features.
+- Concurrent Mode: `ReactDOM.createRoot(rootNode).render(<App />)` . 
+  - It is currently experimental.
+  - In the future, after it stabilizes, we intend to make it the default React mode.
+  - This mode enables all the new features.
+- However, gradually moving the ecosystem away from the Legacy Mode will also solve problems that affect major libraries in the React ecosystem, 
+  - such as confusing Suspense behavior when reading layout and lack of consistent batching guarantees. 
+  - There’s a number of bugs that can’t be fixed in Legacy Mode without changing semantics, but don’t exist in Blocking and Concurrent Modes.
+- You can think of the Blocking Mode as a “gracefully degraded” version of the Concurrent Mode.
+- Legacy mode has automatic batching in React-managed events but it’s limited to one browser task. 
+  - Non-React events must opt-in using `unstable_batchedUpdates` . 
+  - In Blocking Mode and Concurrent Mode, all `setState` s are batched by default.
 
 ## Concurrent Mode API Reference
+
+- Enabling Concurrent Mode
+  - createRoot
+  - createBlockingRoot
+- Suspense API
+  - Suspense
+  - SuspenseList
+  - useTransition
+  - useDeferredValue
+
+### `ReactDOM.createRoot(rootNode).render(<App />);`
+
+- Replaces `ReactDOM.render(<App />, rootNode)` and enables Concurrent Mode.
+
+### `ReactDOM.createBlockingRoot(rootNode).render(<App />)`
+
+- Replaces `ReactDOM.render(<App />, rootNode)` and enables Blocking Mode.
+- Blocking Mode only contains a small subset of Concurrent Mode features and is intended as an intermediary migration step for apps that are unable to migrate directly.
+
+### Suspense
+
+``` JS
+<Suspense fallback={<h1>Loading...</h1>}>
+  <ProfilePhoto />
+  <ProfileDetails />
+</Suspense>
+```
+
+- Suspense lets your components “wait” for something before they can render, showing a fallback while waiting.
+- It is important to note that until all children inside `<Suspense>` has loaded, we will continue to show the fallback.
+- Suspense takes two props:
+  - `fallback` takes a loading indicator. 
+    - The fallback is shown until all of the children of the Suspense component have finished rendering.
+  - `unstable_avoidThisFallback` takes a boolean. 
+    - It tells React whether to “skip” revealing this boundary during the initial load. 
+    - This API will likely be removed in a future release.
+
+### SuspenseList
+
+``` JS
+<SuspenseList revealOrder="forwards">
+  <Suspense fallback={'Loading...'}>
+    <ProfilePicture id={1} />
+  </Suspense>
+  <Suspense fallback={'Loading...'}>
+    <ProfilePicture id={2} />
+  </Suspense>
+  <Suspense fallback={'Loading...'}>
+    <ProfilePicture id={3} />
+  </Suspense>
+  ...
+</SuspenseList>
+```
+
+- SuspenseList helps coordinate many components that can suspend by orchestrating the order in which these components are revealed to the user.
+- When multiple components need to fetch data, this data may arrive in an unpredictable order. 
+- However, if you wrap these items in a SuspenseList, React will not show an item in the list until previous items have been displayed (this behavior is adjustable).
+- `SuspenseList` only operates on the closest `Suspense` and `SuspenseList` components below it. 
+  - It does not search for boundaries deeper than one level. 
+  - However, it is possible to nest multiple `SuspenseList` components in each other to build grids.
+
+### `useTransition(SUSPENSE_CONFIG);`
+
+- `useTransition` allows components to avoid undesirable loading states by waiting for content to load before transitioning to the next screen. 
+- It also allows components to defer slower, data fetching updates until subsequent renders so that more crucial updates can be rendered immediately.
+- If some state update causes a component to suspend, that state update should be wrapped in a transition.
+- We recommend that you share Suspense Config between different modules.
+
+### `useDeferredValue(value, { timeoutMs: 2000 });`
+
+- Returns a deferred version of the value that may “lag behind” it for at most `timeoutMs` .
+- This is commonly used to keep the interface responsive when you have something that renders immediately based on user input and something that needs to wait for a data fetch.
+
+``` JS
+function App() {
+  const [text, setText] = useState("hello");
+  const deferredText = useDeferredValue(text, { timeoutMs: 2000 });
+
+  return (
+    <div className="App">
+      {/* Keep passing the current text to the input */}
+      <input value={text} onChange={handleChange} />
+      ...
+      {/* But the list is allowed to "lag behind" when necessary */}
+      <MySlowList text={deferredText} />
+    </div>
+  );
+}
+```
+
+- This allows us to start showing the new text for the `input` immediately, which allows the webpage to feel responsive. 
+  - Meanwhile, `MySlowList` “lags behind” for up to 2 seconds according to the `timeoutMs` before updating, allowing it to render with the current text in the background.
+- `timeoutMs` tells React how long the deferred value is allowed to lag behind.
+- React will always try to use a shorter lag when network and device allows it.

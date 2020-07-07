@@ -72,6 +72,7 @@ function useState<S>(initialState: S | (() => S)):
 ## reinvent the wheel
 
 - ref
+  - [从零开始的 React 再造之旅](https://segmentfault.com/a/1190000021689852)
   - [React 实践揭秘之旅，中高级前端必备(上)](https://github.com/xd-tayde/blog/blob/master/ReactGL-1.md)
   - [React 实践揭秘之旅，中高级前端必备(下)](https://github.com/xd-tayde/blog/blob/master/ReactGL-2.md)
 - 框架最核心的 `JSX - Render - Diff - Update` 的渲染更新机制
