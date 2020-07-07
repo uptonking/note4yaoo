@@ -8,10 +8,16 @@ modified: '2020-07-07T15:27:32.079Z'
 
 # note-react-dev
 
+## summary
+
+- react-urgent-feature
+  - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
+  - [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
+
 ## tips
 
 - react开放的生态
-  - 异步流方案、状态管理方案、不可变数据结构、服务端渲染方案、组件抽象方案
+  - 状态管理、路由管理、取数、不可变数据结构、服务端渲染
   - 选择方式：面向star的编程、大公司支持、团队技术擅长
 - react
 

@@ -9,6 +9,20 @@ modified: '2020-07-04T18:05:21.229Z'
 
 ## pieces
 
+- state-multi-context
+  - diegohaz/constate
+  - CharlesStover/react-multi-context
+  - dai-shi/react-context-global-state
+- state-状态管理技术选型
+  - recoil (要等到API稳定、功能齐全)
+  - constate
+  - unstated-next
+  - react-hooks-global-state
+  - [RFC: Context selectors](https://github.com/reactjs/rfcs/pull/119)
+  - [Four different approaches to non-Redux global state libraries](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
+    - whether context based or external store
+    - whether subscriptions based or context propagation
+
 ---
 
 - 精读《React Hooks 数据流》
@@ -299,6 +313,12 @@ function StateProvider({ children }) {
 
 - ref
   - [基于 React Context 的状态管理思考（一）](https://juejin.im/post/5d5ea99be51d45620064bb52)
+
+- constate
+  - With Constate, you'll have multiple contexts provided at different levels of your component tree (depending on each components use them). 
+  - Also, it's a seamlessly migration from local state (with React hooks) to shared ones, which is not supported by Redux (so easily).
+  - ref
+    - https://github.com/diegohaz/constate/issues/81
 
 - unstated-next
   - My advice is to avoid putting everything at the top-level of your app unless it actually needs to be there.

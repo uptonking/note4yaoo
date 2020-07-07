@@ -88,7 +88,7 @@ modified: '2020-06-30T08:03:40.302Z'
   <MyTextBox autocomplete={true} />
 ```
 
-	- 现有对象使用使用扩展操作符来将整个对象作为属性传递给子组件 `return <Greeting {...props} />;`
+  - 现有对象使用使用扩展操作符来将整个对象作为属性传递给子组件 `return <Greeting {...props} />;`
 - This JSX only renders a `<Header />` if showHeader is true:
 
 ``` js
