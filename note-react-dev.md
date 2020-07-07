@@ -1,12 +1,12 @@
 ---
 favorited: true
 tags: [js, react]
-title: log-deving-react
+title: note-react-dev
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-29T15:50:55.313Z'
+modified: '2020-07-07T15:27:32.079Z'
 ---
 
-# log-deving-react
+# note-react-dev
 
 ## tips
 

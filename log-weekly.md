@@ -2,12 +2,21 @@
 tags: [log/weekly]
 title: log-weekly
 created: '2019-06-17T01:29:37.793Z'
-modified: '2020-06-22T09:09:27.471Z'
+modified: '2020-07-07T15:31:47.028Z'
 ---
 
 # log-weekly
 
 # 2020
+
+
+
+## w0727-0802
+## w0720-0726
+## w0706-0712
+## w0629-0705
+
+- docs for state, redux, recoil
 
 ## w0622-0628
 

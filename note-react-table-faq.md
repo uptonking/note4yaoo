@@ -1,8 +1,8 @@
 ---
-tags: [table]
+tags: [react, table]
 title: note-react-table-faq
 created: '2020-07-07T13:48:55.448Z'
-modified: '2020-07-07T13:49:38.865Z'
+modified: '2020-07-07T15:33:11.907Z'
 ---
 
 note-react-table-faq

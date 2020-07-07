@@ -7,9 +7,7 @@ modified: '2020-06-22T08:05:05.869Z'
 
 # draft-pieces
 
-- react-dev-urgent-non-official
-  - context-selectors
-  - recoil update state outside components
+
 - state-multi-context
   - diegohaz/constate
   - CharlesStover/react-multi-context

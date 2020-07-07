@@ -1,11 +1,11 @@
 ---
 tags: [electron]
-title: log-deving-electron
+title: note-electron-dev
 created: '2020-05-18T09:49:23.005Z'
-modified: '2020-06-22T08:11:21.145Z'
+modified: '2020-07-07T15:27:01.207Z'
 ---
 
-# log-deving-electron
+# note-electron-dev
 
 ## faq
 
