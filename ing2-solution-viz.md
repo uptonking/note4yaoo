@@ -1,11 +1,11 @@
 ---
 tags: [pm, solution, viz]
-title: later-solution-viz
+title: ing2-solution-viz
 created: '2020-02-06T16:22:13.404Z'
-modified: '2020-06-22T09:04:13.144Z'
+modified: '2020-07-08T02:16:48.814Z'
 ---
 
-# later-solution-viz
+# ing2-solution-viz
 
 ## AntV
 

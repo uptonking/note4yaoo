@@ -2,14 +2,22 @@
 tags: [react, roadmap]
 title: note-react-latest-roadmap
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-05T13:52:46.297Z'
+modified: '2020-07-08T03:17:23.369Z'
 ---
 
 # note-react-latest-roadmap
 
 ## guide
-
+- React Fast Refresh: hot reloading for React
+  - https://github.com/facebook/react/issues/16604
+- React Fire: Modernizing React DOM
+- React Flare: new React Events
+  - build UIs that feel great on desktop and mobile, with mouse and touch
+- concurrent mode and suspense (stable-17)
 - ref
+  - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
+  - [React Fire](https://github.com/facebook/react/issues/13525)
+  - [React Flare](https://github.com/facebook/react/issues/15257)
   - [React 16.x Roadmap_20181127](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
   - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 
@@ -22,16 +30,6 @@ modified: '2020-07-05T13:52:46.297Z'
   - A minor 16.x release with Concurrent Mode (~Q2 2019)
   - A minor 16.x release with Suspense for Data Fetching (~mid 2019)
 
-## discussion
-
-- React Fire: Modernizing React DOM
-- React Flare: new React Events
-  - build UIs that feel great on desktop and mobile, with mouse and touch
-- concurrent mode and suspense (stable-17)
-- ref
-  - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
-  - [React Fire](https://github.com/facebook/react/issues/13525)
-  - [React Flare](https://github.com/facebook/react/issues/15257)
 
 ## rfc
 

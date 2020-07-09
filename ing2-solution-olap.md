@@ -1,11 +1,11 @@
 ---
 tags: [olap, solution]
-title: later-solution-olap
+title: ing2-solution-olap
 created: '2020-04-03T15:57:07.832Z'
-modified: '2020-06-27T11:05:47.691Z'
+modified: '2020-07-08T02:16:11.380Z'
 ---
 
-# later-solution-olap
+# ing2-solution-olap
 
 ## faq
 

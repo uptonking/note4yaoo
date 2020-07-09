@@ -1,13 +1,34 @@
 ---
 tags: [js, node]
-title: note-js-node
+title: lang-js-node
 created: '2019-09-12T02:32:06.774Z'
-modified: '2020-06-30T12:48:46.173Z'
+modified: '2020-07-08T06:38:12.643Z'
 ---
 
-# note-js-node
+# lang-js-node
 
 ## pieces
+
+- **node-path**
+- `path.join(path1，path2，path3.......)`
+  - 先解析相对路径..，再拼接返回，path片段/docs,./docs,docs三种方式处理无差别
+  - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
+  - path片段前的 `./` 可有可无，只进行路径拼接
+  - `path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');`
+    - 返回: `/foo/bar/baz/asdf`
+- `path.resolve([from...],to)`
+  - 先解析路径，再生成绝对路径返回，./docs,docs相同，/docs会作为绝对路径起点
+  - 按参数从左向右，把路径片段的序列解析为一个**绝对路径**，一定生成绝对路径
+  - `path.resolve('/foo', '/bar', 'baz')` 会返回 `/bar/baz`
+- `__dirname`
+  - Node.js中的文件路径大概有 __dirname, __filename, process.cwd(), ./ 或者 ../
+    - 前3者都是绝对路径
+  - `__dirname` ：    当前执行文件所在目录的绝对路径
+  - `__filename` ：   当前执行文件的带有完整绝对路径文件名的绝对路径
+  - `process.cwd()` ：当前执行node命令时候的文件夹目录名，绝对路径 
+  - `./` ：跟process.cwd()一样，返回node命令时所在的文件夹的绝对路径
+  - `require(./a.js)` ：当node遇到require时，会相对当前执行文件查找
+  - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
 
 ## 多线程
 

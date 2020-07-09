@@ -3,13 +3,28 @@ attachments: [hello.txt]
 tags: [log/dev]
 title: log-dev-pieces-frontend
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-07-03T09:59:57.294Z'
+modified: '2020-07-08T13:14:27.999Z'
 ---
 
 # log-dev-pieces-frontend
 
 ## logging
 
+- webpack的hmr热替换通常替换顶层App组件，子组件替换较难，因为会有状态共享、使用context等情况，并且hmr不保存状态
+  - 适合react组件的热替换要用单独的工具库如react-hot-loader
+  - 可以使用**Paint Flashing**工具高亮浏览器repaint的部分
+  - Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a page reload. 
+  - HMR is particularly useful in applications using a single state tree since components are "dumb" and will reflect the latest application state, even after their source is changed and they are replaced.
+  - ref
+    - https://apimirror.com/webpack~2/guides/hmr-react/index
+    - https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool
+- With paint flashing enabled, when you load a page, the entire screen flashes green because the browser has to paint everything. 
+  - After the page has been rendered, the work is not done because things on the page can change. 
+  - Each of these blinking animations requires the browser to paint a part of the screen, represented with a green rectangle.
+- webpack编译react代码时，首页只显示html内容，js修改毫无作用
+  - 可以通过`webpack --config ./webpack.config.js`的方式查看本次编译了哪些文件
+  - 发现只编译了`src/index.js`的内容，没有编译config文件中`entry`指定的文件
+  - 暂时的解决方法是根目录及src目录不要存放`index.js`文件，这样webpack才会编译entry配置的入口文件
 - 副作用就是和本职无关的东西，函数的本职是接收参数，并返回值，多次同参调用都是确定的。我给你举几个前端世界里的副作用例子你体会体会：调接口获取数据、注册监听函数、手动操作DOM、 访问修改全局变量、打印log，使用 setTimeout 等
 - console对象
   - 分级日志：console.log/info/debug/warn/error
@@ -391,26 +406,6 @@ if (process.env.NODE_ENV !== 'production') {
         - undleDependencies节点的功能跟dependencies节点是一样的，区别在于，当需要构建项目并发布版本时，bundleDependencies节点下的依赖会被包含在构建结果中，不需要另外npm install来安装了
     - 参考
         - https://github.com/SamHwang1990/blog/issues/7
-- node-path
-    - `path.join(path1，path2，path3.......)`
-        - 先解析相对路径..，再拼接返回，path片段/docs,./docs,docs三种方式处理无差别
-        - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
-        - path片段前的 `./` 可有可无，只进行路径拼接
-        - `path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');`
-            - 返回: '/foo/bar/baz/asdf'
-    - `path.resolve([from...],to)`
-        - 先解析路径，再生成绝对路径返回，./docs,docs相同，/docs会作为绝对路径起点
-        - 按参数从左向右，把路径片段的序列解析为一个**绝对路径**，一定生成绝对路径
-        - path.resolve('/foo', '/bar', 'baz') 会返回 /bar/baz
-    - `__dirname`
-        - Node.js中的文件路径大概有 __dirname, __filename, process.cwd(), ./ 或者 ../
-            - 前3者都是绝对路径
-        - `__dirname` ：    当前执行文件所在目录的绝对路径
-        - `__filename` ：   当前执行文件的带有完整绝对路径文件名的绝对路径
-        - `process.cwd()` ：当前执行node命令时候的文件夹目录名 
-        - `./` ：跟process.cwd()一样，返回node命令时所在的文件夹的绝对路径
-        - `require(./a.js)` ：当node遇到require时，会相对当前执行文件查找
-        - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
 - html a标签属性 rel='nofollow'
     - 告诉搜索引擎不要此网页上的链接或不要追踪此特定链接
     - 使用场景

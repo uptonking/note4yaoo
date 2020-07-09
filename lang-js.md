@@ -2,7 +2,7 @@
 tags: [lang/js]
 title: lang-js
 created: '2019-06-09T05:36:13.734Z'
-modified: '2020-07-07T08:10:05.531Z'
+modified: '2020-07-08T12:54:53.879Z'
 ---
 
 # lang-js
@@ -12,7 +12,7 @@ modified: '2020-07-07T08:10:05.531Z'
 - all in js as frontend
 
 ## js guide
-
+- js vm bytecode
 - https://github.com/airbnb/javascript
 
 ## faq
