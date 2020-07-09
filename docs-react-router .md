@@ -126,6 +126,7 @@ export default App;
 
 	  React Router pre-v4 was also static (mostly). Let's take a look at how to configure routes in express:   
 		
+
 ``` js
 		// Express Style routing:
 		app.get("/", handleIndex);

@@ -1,8 +1,8 @@
 ---
-tags: [log/weekly]
+tags: [log/weekly, yaoo]
 title: log-weekly
 created: '2019-06-17T01:29:37.793Z'
-modified: '2020-07-07T15:31:47.028Z'
+modified: '2020-07-09T10:24:19.990Z'
 ---
 
 # log-weekly
@@ -14,6 +14,13 @@ modified: '2020-07-07T15:31:47.028Z'
 ## w0720-0726
 
 ## w0706-0712
+
+- webpack 5编译js项目时，优先使用 `src/index.js` ，而不是 `entry` 配置的入口
+- webpack hmr热替换react项目通常是顶层App，不保存状态数据的hmr类似full reload
+- webapck 5移除了node兼容模块，以减小打包size
+  - 升级依赖时注意大版本可能不兼容，如namor 2缺失各种依赖
+- react DevTools，只高亮updates，不高亮remount
+- chrome paint flashing高亮所有paint，包含updates和remount
 
 ## w0629-0705
 
