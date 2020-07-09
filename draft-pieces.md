@@ -2,13 +2,29 @@
 tags: [draft, todo]
 title: draft-pieces
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-06-22T08:05:05.869Z'
+modified: '2020-07-09T11:02:05.815Z'
 ---
 
 # draft-pieces
 
- 
 ------  
+
+- webpack react fast refresh
+
+"@pmmmwh/react-refresh-webpack-plugin": "^0.4.0-beta.7", 
+"react-refresh": "^0.8.3", 
+
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'); 
+
+new ReactRefreshWebpackPlugin(), 
+
+'react-refresh/babel', 
+
+- webpack 5移除了node模块兼容
+
+"crypto-browserify": "^3.12.0", 
+"stream-browserify": "^3.0.0", 
+"vm-browserify": "^1.1.2", 
 
 - class extends
 
@@ -79,28 +95,3 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 
   return renderButton();
 ```
-
-- bootstrap 4的breakpoints
-
-``` 
-$font-size-base:  1rem !default; // Assumes the browser default, `16px`
-$font-size-lg: $font-size-base * 1.25 !default;
-$font-size-sm: $font-size-base * .875 !default;
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
-```
-
-- react-data-grid使用的className
-  - 不确定的类
-      - row-selected， has-tooltip，has-error
-  - 使用了的样式
-      - pull-right
-      - glyphicon-remove form-control-feedback
-  - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
-  - FilterableHeaderCell组件使用了form-group/control

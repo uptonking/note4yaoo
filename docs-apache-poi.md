@@ -242,6 +242,7 @@ http://poi.apache.org/components/spreadsheet/index.html
 - If you are using POI 3.13 final or newer, formula evaluation is possible with SXSSF, but with some caveats.
   - The biggest restriction is that, since evaluating a cell needs that cell in memory and any others it depends on, only pure-function formulas and formulas referencing nearby cells can be evaluated with SXSSF. If a formula references a cell that hasn't yet been written, or one which has already been flushed to disk, then it won't be possible to evaluate it.
   - it is suggested to evaluate formula cells just after writing them, or shortly after when cells they depend on are added. Just make sure that all cells needing or needed for evaluation are inside the window.
+
     
 
 ### misc

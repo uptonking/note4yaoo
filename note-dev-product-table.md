@@ -2,7 +2,7 @@
 tags: [components, dev, table]
 title: note-dev-product-table
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-06-28T01:51:24.457Z'
+modified: '2020-07-09T13:26:33.952Z'
 ---
 
 # note-dev-product-table
@@ -133,6 +133,16 @@ modified: '2020-06-28T01:51:24.457Z'
   - 201810-5.0.0-rewrite core to improve nav and scroll performance 
   - 201811-6.0.0-use react portals for cell editors & upgrade build tools
   - 201904-7.0.0-alpha.2-migrate to typescript
+- react-data-grid使用的className
+  - 不确定的类
+      - row-selected， has-tooltip，has-error
+  - 使用了的样式
+      - pull-right
+      - glyphicon-remove form-control-feedback
+  - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
+  - FilterableHeaderCell组件使用了form-group/control
+
+  
 
 ## toc-list-table
 

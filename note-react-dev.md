@@ -3,7 +3,7 @@ favorited: true
 tags: [js, react]
 title: note-react-dev
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-07-07T15:27:32.079Z'
+modified: '2020-07-09T13:06:35.495Z'
 ---
 
 # note-react-dev
@@ -13,6 +13,7 @@ modified: '2020-07-07T15:27:32.079Z'
 - react-urgent-feature
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
   - [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
+- One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. That's something classes cannot express properly.
 
 ## tips
 
@@ -21,6 +22,13 @@ modified: '2020-07-07T15:27:32.079Z'
   - 选择方式：面向star的编程、大公司支持、团队技术擅长
 - react
 
+- react 16.13.0使用后可能出现一些warning的问题
+  - I agree this warning requires some prior context. Essentially, you needed to know two things from the class era:
+    - That you shouldn’t `setState` during render. Classes always warned about this.
+    - That function component body is essentially the same thing as class component render method.
+  - The rule of thumb has always been “don’t perform side effects while rendering”. 
+    - Think of rendering as a pure computation. 
+    - Side effects go into a different place (lifecycle methods in classes, or useEffect in function components). 
 - There are three things that will cause a render method to automatically get called:
   - A prop that lives on your component gets updated
   - A state property that lives on your component gets updated
@@ -55,10 +63,10 @@ modified: '2020-07-07T15:27:32.079Z'
   - 若使用箭头函数或bind后的函数作为属性来传递，组件A的render方法每次调用都会创建一个匿名函数，会增加垃圾回收的次数
   - An arrow function does not have its own this; the this value of the enclosing execution context is used
   - 传递事件处理函数到子组件时，若要在事件处理函数中访问父组件的props/state
-      - 在constructor中bind
-      - 使用class实例属性和箭头函数
-      - 在render方法中使用箭头函数或bind，都会有问题
-          - Using Function.prototype.bind in render creates a new function each time the component renders, which may have performance implications
+    - 在constructor中bind
+    - 使用class实例属性和箭头函数
+    - 在render方法中使用箭头函数或bind，都会有问题
+      - Using Function.prototype.bind in render creates a new function each time the component renders, which may have performance implications
   - 示例
     - `<a onClick={() => this.props.handleClick(this.props.item)} />`
 
