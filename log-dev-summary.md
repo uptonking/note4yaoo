@@ -2,7 +2,7 @@
 tags: [log/dev]
 title: log-dev-summary
 created: '2019-04-22T03:42:22.447Z'
-modified: '2020-06-22T09:06:25.526Z'
+modified: '2020-07-09T15:34:18.440Z'
 ---
 
 # log-dev-summary
@@ -32,6 +32,7 @@ modified: '2020-06-22T09:06:25.526Z'
 - realtime/实时
 - dynamic/动态
 - 3d/三维
+- automation/自动化ai
 - performance/算法优化
 
 ## 开发原则

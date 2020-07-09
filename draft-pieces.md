@@ -2,11 +2,14 @@
 tags: [draft, todo]
 title: draft-pieces
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-06-22T08:05:05.869Z'
+modified: '2020-07-09T15:39:24.460Z'
 ---
 
 # draft-pieces
 
+
+
+进入存量市场后，技术大多用于维护现有用户，开拓新产品新市场价值高，难度也更高
  
 ------  
 
