@@ -2,7 +2,7 @@
 tags: [changelog, elasticsearch, search]
 title: note-search-elasticsearch
 created: '2020-03-29T15:38:04.974Z'
-modified: '2020-06-30T12:51:37.015Z'
+modified: '2020-07-10T02:27:38.041Z'
 ---
 
 # note-search-elasticsearch
@@ -23,11 +23,11 @@ modified: '2020-06-30T12:51:37.015Z'
 
 ## docs
 
-- official
-- https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 - ref
-- https://juejin.im/post/5d921442e51d4578364f6fd3#heading-4
-- changelog    
+  - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+  - https://juejin.im/post/5d921442e51d4578364f6fd3
+  
+- **changelog**    
 - 7.0.0-201904
   - 7.1开始，Security功能免费使用
   - 集群连接变化：TransportClient被废弃，es7的java代码只能使用rest client，建议采用RestHighLevelClient的方式操作ES集群

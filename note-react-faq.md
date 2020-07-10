@@ -11,6 +11,11 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq
 
+
+- 为什么不能 setState in render
+  - Calling setState in render can cause infinite loop 
+  - ref
+    - https://github.com/facebook/react/issues/5591
 - defaultProps设置默认值的方式
 - pass object literals as props create new object every render
 - If a parent component is updated, does React always update all the direct children within that component?

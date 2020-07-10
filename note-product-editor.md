@@ -1,11 +1,11 @@
 ---
-tags: [components, prototype, web]
-title: note-dev-product-editor
+tags: [components, editor, product, web]
+title: note-product-editor
 created: '2019-08-22T03:45:48.886Z'
-modified: '2020-06-30T12:44:30.516Z'
+modified: '2020-07-10T02:16:55.099Z'
 ---
 
-# note-dev-product-editor
+# note-product-editor
 
 ## tips
 

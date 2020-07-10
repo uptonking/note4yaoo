@@ -1,15 +1,15 @@
 ---
 tags: [draft, todo]
-title: draft-pieces
+title: 01-draft-pieces
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-07-09T11:02:05.815Z'
+modified: '2020-07-10T09:31:16.496Z'
 ---
 
-# draft-pieces
+# 01-draft-pieces
 
-进入存量市场后，技术大多用于维护现有用户，开拓新产品新市场价值高，难度也更高
  
- 
+ layout paint , which is more expensive ?
+
 ------  
 
 - webpack react fast refresh

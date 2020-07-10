@@ -28,7 +28,7 @@ modified: '2020-06-28T18:27:55.517Z'
 - defer vs async
   - defer与相比普通script，有两点区别：载入js文件时不阻塞HTML的解析，执行阶段被放到HTML标签解析完成之后
   - 在加载多个JS脚本的时候，async是无顺序的加载，而defer是有顺序的加载
-- reflow vs repaint
+- reflow vs repaint ? which one is more expensive ?
   - A reflow computes the layout of the page. A reflow on an element recomputes the dimensions and position of the element, and it also triggers further reflows on that element’s children, ancestors and elements that appear after it in the DOM. Then it calls a final repaint. Reflowing is very expensive.
 - reflow vs layout
   - same
@@ -359,11 +359,11 @@ modified: '2020-06-28T18:27:55.517Z'
 
 ``` css
 
-  * {
+* {
 
-    will-change: transform;
-    transform: translateZ(0);
-  }
+  will-change: transform;
+  transform: translateZ(0);
+}
 ```
 
   - This is a roundabout way of saying that you’d like to promote every single element on the page.
@@ -382,3 +382,37 @@ modified: '2020-06-28T18:27:55.517Z'
 - Avoid long-running input handlers
 - Avoid style changes in input handlers
 - Debounce your scroll handlers
+
+## Minimizing browser reflow
+
+- [Minimizing browser reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
+
+- Reflow is the name of the web browser process for re-calculating the positions and geometries of elements in the document, for the purpose of re-rendering part or all of the document. 
+- Because reflow is a user-blocking operation in the browser, it is useful for developers to understand how to improve reflow time and also to understand the effects of various document properties (DOM depth, CSS rule efficiency, different types of style changes) on reflow time. 
+- Sometimes reflowing a single element in the document may require reflowing its parent elements and also any elements which follow it.
+- Here are some easy guidelines to help you minimize reflow in your web pages:
+  - Reduce unnecessary DOM depth. 
+    - Changes at one level in the DOM tree can cause changes at every level of the tree - all the way up to the root, and all the way down into the children of the modified node. 
+    - This leads to more time being spent performing reflow.
+  - Minimize CSS rules, and remove unused CSS rules.
+  - If you make complex rendering changes such as animations, do so out of the flow. 
+    - Use position-absolute or position-fixed to accomplish this.
+  - Avoid unnecessary complex CSS selectors 
+    - descendant selectors in particular
+    - which require more CPU power to do selector matching.
+
+## REFLOWS & REPAINTS: CSS PERFORMANCE MAKING YOUR JAVASCRIPT SLOW?
+
+- [EFLOWS & REPAINTS: CSS PERFORMANCE MAKING YOUR JAVASCRIPT SLOW?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
+
+## Pixels are expensive
+
+- [Pixels are expensive](https://aerotwist.com/blog/pixels-are-expensive/)
+1. Recalculate Style
+- This is the first part that the article looked at, and it pertains(关于) to selector matching and figuring out which styles apply to which parts of the DOM.
+- Normally, however, this is super fast unless you have a DOM tree with massive elements
+- Normally, however, this is super fast unless you have a DOM tree with thousands upon thousands of elements
+
+## What Every Frontend Developer Should Know About Webpage Rendering
+
+- [What Every Frontend Developer Should Know About Webpage Rendering](http://frontendbabel.info/articles/webpage-rendering-101/)

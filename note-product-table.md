@@ -1,17 +1,18 @@
 ---
-tags: [components, dev, table]
-title: note-dev-product-table
+tags: [components, product, table]
+title: note-product-table
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-07-09T13:26:33.952Z'
+modified: '2020-07-10T02:33:31.912Z'
 ---
 
-# note-dev-product-table
+# note-product-table
 
 - A handy/efficient data table to pivot your data
 
 ## faq
 
 - 如何区分click和double click
+  - setTimeout
 - infinite scroll vs pagination
   - An infinite scroller is a modern alternative to pagination.
   - Rather than wait for the user to click 'next page', new content is automatically loaded everytime the user reaches the bottom of the page. 
@@ -53,7 +54,7 @@ modified: '2020-07-09T13:26:33.952Z'
   - 参考
     - https://addyosmani.com/blog/react-window/
 
-## react-table
+## product-react-table
 
 - a lightweight, fast and extendable datagrid built for React
 - features
@@ -103,7 +104,7 @@ modified: '2020-07-09T13:26:33.952Z'
       - react-charts(d3js)/Chartjs
       - react-move
 
-## react-data-grid
+## product-react-data-grid
 
 - Excel-like grid component built with React
 - features
@@ -135,16 +136,14 @@ modified: '2020-07-09T13:26:33.952Z'
   - 201904-7.0.0-alpha.2-migrate to typescript
 - react-data-grid使用的className
   - 不确定的类
-      - row-selected， has-tooltip，has-error
+    - row-selected， has-tooltip，has-error
   - 使用了的样式
-      - pull-right
-      - glyphicon-remove form-control-feedback
+    - pull-right
+    - glyphicon-remove form-control-feedback
   - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
   - FilterableHeaderCell组件使用了form-group/control
 
-  
-
-## toc-list-table
+## product-toc-list-table
 
 - react-window
 - react-virtualized

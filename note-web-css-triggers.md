@@ -2,10 +2,13 @@
 tags: [css, web]
 title: note-web-css-triggers
 created: '2020-06-28T16:00:42.392Z'
-modified: '2020-06-28T16:02:57.664Z'
+modified: '2020-07-10T03:06:12.433Z'
 ---
 
 # note-web-css-triggers
+
+## guide 
+- https://csstriggers.com/
 
 ## CSS Triggers
 

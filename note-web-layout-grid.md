@@ -1,11 +1,11 @@
 ---
-tags: [css, style, web]
-title: note-style-css-grid
+tags: [layout, style, web]
+title: note-web-layout-grid
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-03T09:08:53.124Z'
+modified: '2020-07-10T03:07:34.802Z'
 ---
 
-# note-style-css-grid
+# note-web-layout-grid
 
 ## guide
 

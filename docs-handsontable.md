@@ -1,8 +1,8 @@
 ---
-tags: [docs/handsontable]
+tags: [changelog, docs/handsontable]
 title: docs-handsontable
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-30T05:09:23.379Z'
+modified: '2020-07-10T02:32:14.667Z'
 ---
 
 # docs-handsontable
@@ -104,8 +104,6 @@ modified: '2020-06-30T05:09:23.379Z'
   - getCellRenderer(row, col)
   - getCellEditor(row, col)
   - getCellValidator(row, col)
-
-  
 
 - 内置9种cellTypes
 

@@ -2,7 +2,7 @@
 tags: [dom, web]
 title: note-web-dom
 created: '2019-08-01T16:03:46.398Z'
-modified: '2020-06-22T09:16:54.407Z'
+modified: '2020-07-10T02:39:51.729Z'
 ---
 
 # note-web-dom
@@ -15,6 +15,10 @@ modified: '2020-06-22T09:16:54.407Z'
 
 ## pieces
 
+- The `DocumentFragment` interface represents a minimal document object that has no parent. 
+  - It is used as a lightweight version of `Document` that stores a segment of a document structure comprised of nodes just like a standard document. 
+  - The key difference is due to the fact that the document fragment isn't part of the active document tree structure. 
+  - Changes made to the fragment don't affect the document (even on **reflow** ) or incur any performance impact when changes are made.
 - `<button>` vs `<input type=button>`
   - Unlike `<input>` tags, `<button>` 's can contain other html elements as their labels. 
   - `<button>` element accepts a wide range of uncommon but useful attributes regarding multiple forms and click actions.
@@ -22,25 +26,25 @@ modified: '2020-06-22T09:16:54.407Z'
   - `<input type="button">` can only accept a string as its label text (css styles not withstanding).
   - Input elements are considered empty or void elements (other empty elements are area , base , br , col , hr , img , input , link , meta , and param. You can also check here), meaning they cannot have any content. In addition to not having any content, empty elements cannot have any pseudo-elements like ::after and ::before, which I consider a major drawback.
   - ref
-      - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-      - https://stackoverflow.com/questions/469059/button-vs-input-type-button-which-to-use
-      - https://stackoverflow.com/questions/3543615/difference-between-input-type-submit-and-button-type-submittext-butto
+    - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+    - https://stackoverflow.com/questions/469059/button-vs-input-type-button-which-to-use
+    - https://stackoverflow.com/questions/3543615/difference-between-input-type-submit-and-button-type-submittext-butto
 - button
   - type
-      - submit: button submits the form data to the server. This is the default if the attribute is not specified, 
-      - button: button has no default behavior and does nothing when pressed. It can have client-side scripts associated with the element's events, which are triggered when the events occur.
-      - reset: resets all the controls to their initial values, like <input type="reset">.
+    - submit: button submits the form data to the server. This is the default if the attribute is not specified, 
+    - button: button has no default behavior and does nothing when pressed. It can have client-side scripts associated with the element's events, which are triggered when the events occur.
+    - reset: resets all the controls to their initial values, like <input type="reset">.
 - table标签
   - tbody标签主要定义一段表格主体（正文），使用tbody标签，可以将表格分为一个单独的部分，tbody标签可将表格中的一行或几行合成一组
-  - TBODY包含行的内容下载完优先显示，不必等待表格结束
-      - 如果table表格很长，可以用tbody分段，一部分一部分地显示，不用等整个表格都下载完成，下载一块显示一块，表格巨大时有比较好的效果
+  - tbody包含行的内容下载完优先显示，不必等待表格结束
+    - 如果table表格很长，可以用tbody分段，一部分一部分地显示，不用等整个表格都下载完成，下载一块显示一块，表格巨大时有比较好的效果
   - 表格的行本来是从上向下显示的。但是，应用了thead/tbody/tfoot以后，就“从头到脚”显示，不管你的行代码顺序如何。也就是说如果thead写在了tbody的后面，html显示时，还是以先thead后tbody显示
 - Document.defaultView(read only) Returns a reference to the window object
   - `document.defaultView === window` 返回true
   - defaultView是document关联的window对象，其用途体现在当前上下文的window不等于当前document关联的window时，比如iframe, chrome-extension, ff-addon，有时相等
   - 当使用Firefox 3.6时，其frame中需要使用document.defaultView去获取window对象，才能使用其getComputedStyle方法
   - 参考
-      - https://www.cnblogs.com/yuan-shuai/p/4125511.html
+    - https://www.cnblogs.com/yuan-shuai/p/4125511.html
 - `element.ownerDocument` read-only property of the Node interface returns the top-level document object of the node.
   - 返回值是Document类型的实例
   - If this property is used on a node that is itself a document, the value is null.
@@ -179,4 +183,4 @@ modified: '2020-06-22T09:16:54.407Z'
     - color
 - `<textarea>`
 - `<select>`
-    - `<option>`
+  - `<option>`

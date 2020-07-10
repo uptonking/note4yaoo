@@ -2,7 +2,7 @@
 tags: [browser, optimization, web]
 title: note-web-optimization-loading-performance
 created: '2020-06-28T12:12:28.341Z'
-modified: '2020-06-28T13:45:46.512Z'
+modified: '2020-07-10T07:56:45.232Z'
 ---
 
 # note-web-optimization-loading-performance
@@ -57,7 +57,7 @@ modified: '2020-06-28T13:45:46.512Z'
   - To find out how long the CSS processing takes, you can record a timeline in DevTools and look for "Recalculate Style" event
     - It captures parsing and CSSOM tree construction, plus the recursive calculation of computed styles under this one event.
 
-## Render-tree Construction, Layout, and Paint
+## Render-Tree Construction, Layout, and Paint
 
 - Tips
   - The DOM and CSSOM trees are combined to form the render tree.
@@ -171,3 +171,106 @@ modified: '2020-06-28T13:45:46.512Z'
   2. Minimize number of critical resources: eliminate them, defer their download, mark them as async, and so on.
   3. Optimize the number of critical bytes to reduce the download time (number of roundtrips).
   4. Optimize the order in which the remaining critical resources are loaded: download all critical assets as early as possible to shorten the critical path length.
+
+## PageSpeed Rules and Recommendations
+
+- ref
+  - https://developers.google.com/web/fundamentals/performance/critical-rendering-path/page-speed-rules-and-recommendations
+  - https://developers.google.com/speed/docs/insights/rules
+
+- Eliminate render-blocking JavaScript and CSS
+  - To deliver the fastest time to first render, minimize and (where possible) eliminate the number of critical resources on the page, minimize the number of downloaded critical bytes, and optimize the critical path length.
+- Optimize JavaScript use
+  - JavaScript resources are parser blocking by default unless marked as `async` or added via a special JavaScript snippet. 
+  - Parser blocking JavaScript forces the browser to wait for the CSSOM and pauses construction of the DOM, which in turn can significantly delay the time to first render.
+  - Avoid synchronous server calls
+  - Defer parsing JavaScript
+    - defer any non-essential scripts that are not critical to constructing the visible content for the initial render.
+  - Avoid long running JavaScript
+- Optimize CSS Use
+  - Put CSS in the document head
+    - Specify all CSS resources as early as possible within the HTML document so that the browser can discover the `<link>` tags and dispatch the request for the CSS as soon as possible.
+  - Avoid CSS imports
+    - The CSS import (`@import`) directive enables one stylesheet to import rules from another stylesheet file. 
+    - However, avoid these directives because they introduce additional roundtrips into the critical path: 
+    - the imported CSS resources are discovered only after the CSS stylesheet with the `@import` rule itself is received and parsed.
+  - Inline render-blocking CSS
+    - consider inlining the critical CSS directly into the HTML document. 
+    - This eliminates additional roundtrips in the critical path 
+    - and if done correctly can deliver a "one roundtrip" critical path length where only the HTML is a blocking resource.
+
+- PageSpeed Insights Rules
+  - Avoid landing page redirects
+  - Enable compression
+  - Improve server response time
+  - Leverage browser caching
+  - Minify resources
+  - Optimize images
+  - Optimize CSS Delivery
+  - Prioritize visible content
+  - Remove render-blocking JavaScript
+
+- Optimize CSS Delivery
+- If the external CSS resources are small, you can insert those directly into the HTML document, which is called inlining. 
+- Inlining small CSS in this way allows the browser to proceed with rendering the page. 
+- Keep in mind if the CSS file is large, completely inlining the CSS may cause PageSpeed Insights to warn that the above-the-fold portion of your page is too large via Prioritize Visible Content. 
+- In the case of a large CSS file, you will need to identify and inline the CSS necessary for rendering the above-the-fold content and defer loading the remaining styles until after the above-the-fold content.
+- Example of inlining a small CSS file
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="small.css">
+  </head>
+  <body>
+    <div class="blue">
+      Hello, world!
+    </div>
+  </body>
+</html>
+```
+
+``` css
+// small.css
+.yellow {background-color: yellow;}
+.blue {color: blue;}
+.big { font-size: 8em; }
+.bold { font-weight: bold; }
+```
+- inlined css
+
+``` html
+<html>
+  <head>
+    <style>
+      .blue{color:blue;}
+    </style>
+    </head>
+  <body>
+    <div class="blue">
+      Hello, world!
+    </div>
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="small.css"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+  </body>
+</html>
+```
+- Don't inline large data URIs
+  - While selective use of small data URIs in your CSS may make sense, inlining large data URIs can cause the size of your above-the-fold CSS to be larger, which will slow down page render time.
+- Don't inline CSS attributes
+  - Inlining CSS attributes on HTML elements (e.g., `<p style=...>`) should be avoided where possible, as this often leads to unnecessary code duplication. 
+  - Further, inline CSS on HTML elements is blocked by default with Content Security Policy (CSP).
+

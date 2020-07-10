@@ -2,7 +2,7 @@
 tags: [style, web]
 title: note-web-style
 created: '2019-08-05T11:51:59.761Z'
-modified: '2020-06-30T12:56:39.168Z'
+modified: '2020-07-10T02:34:04.167Z'
 ---
 
 # note-web-style
@@ -149,7 +149,6 @@ modified: '2020-06-30T12:56:39.168Z'
   ```
 
   - 定义全局变量
-
 
 ``` css
   :root {
