@@ -7,6 +7,10 @@ modified: '2020-06-28T08:30:22.942Z'
 
 # note-web-animation
 
+##  guide
+
+- [High Performance Animations](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
+
 ## summary
 
 - 根据应用场景，选择动画实现方式

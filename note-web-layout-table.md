@@ -12,6 +12,7 @@ modified: '2020-07-10T08:38:36.261Z'
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
+  - [Table Reflow Internals](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
   - [Are CSS Tables Better Than HTML Tables? _2011](https://vanseodesign.com/css/tables/)
   - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
   - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
@@ -20,6 +21,7 @@ modified: '2020-07-10T08:38:36.261Z'
   - [Are large html tables slow?](https://stackoverflow.com/questions/1364213/are-large-html-tables-slow)
 
 ## faq
+
 - When should you NOT use HTML tables?
   - HTML tables should be used for tabular data — this is what they are designed for. 
     - Unfortunately, a lot of people used to use HTML tables to lay out web pages, 
@@ -31,10 +33,29 @@ modified: '2020-07-10T08:38:36.261Z'
     - table layouts generally involve more complex markup structures than proper layout techniques. 
     - This can result in the code being harder to write, maintain, and debug.
   - Tables are not automatically responsive
-    - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>`), their width defaults to 100% of their parent element. 
+    - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>` ), their width defaults to 100% of their parent element. 
     - Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
 
+## summary 
+
+- Table reflows row groups in multiple passes
+  - Pass 1 - unconstrained width, height and requests max elem width.
+    - The table figures out the column widths (balances) given the style width constraints on the table, col groups, cols, cells the preferred and max element sizes of the cells (from the pass 1 reflow), and considers colspans
+  - Pass 2 - cell widths are constrained by the column widths (heights are only constrained in paginated mode).
+  - In each pass, row groups reflow rows which reflow cells which reflow cell blocks.
+  - The row group figures out the row heights given its style height constraints, its rows and cells, and the actual heights of its rows and cells from the pass 2 reflow.
+- Table incremental reflow
+  - In the style change cases where a target is between the table and the cell, the table is told to rebalance.
+  - When a target is the cell or below and the cell changes size, the row tells the table so it can decide if it needs to rebalance
+  - When a target is inside the cell's block, the cell requests max element, preferred sizes of its block in case they change
+  - After the table reflows the row group(s) containing the targets, if it rebalances, it then does a pass 2 reflow.
+- When there is a `%` height frame inside a cell without a computed height
+  - the frame will never get a chance to size based on the final cell height
+  - in paginated mode when there is a height on the table, the table doesn't allocate extra height to rows until after it does a pass 2 reflow and then it is too late
+  - This can be fixed by doing a special **3rd pass reflow**
+
 ## pieces
+
 - Tables have to be downloaded and render in full before they are displayed, appearing to take a longer to display. This lapse all depends on processing power. You can 
   - remove gradient backgrounds (as they are rendered by the browser)
   - paginate form data
@@ -49,9 +70,9 @@ modified: '2020-07-10T08:38:36.261Z'
 - A table allows you to quickly and easily look up values that indicate some kind of connection between different types of data
 - HTML has a method of defining styling information for an entire column of data all in one place — the `<col>` and `<colgroup>` elements.
   - These exist because it can be a bit annoying and inefficient having to specify styling on columns
-  - you generally have to specify your styling information on every `<td>` or `<th>` in the column, or use a complex selector such as `:nth-child()`.
-  - Styling columns like this is limited to a few properties: `border`, `background`, `width`, and `visibility`. 
-  - To set other properties, you'll have to either style every `<td>` or `<th>` in the column, or use a complex selector such as `:nth-child()`.
+  - you generally have to specify your styling information on every `<td>` or `<th>` in the column, or use a complex selector such as `:nth-child()` .
+  - Styling columns like this is limited to a few properties: `border` , `background` , `width` , and `visibility` . 
+  - To set other properties, you'll have to either style every `<td>` or `<th>` in the column, or use a complex selector such as `:nth-child()` .
 - Floated grid limitations
   - The biggest limitation of this system is that it is essentially one dimensional. 
     - We are dealing with columns, and spanning elements across columns, but not rows. 
@@ -74,22 +95,52 @@ modified: '2020-07-10T08:38:36.261Z'
   - If the table cannot be broken apart, use a combination of the `id` and `headers` attributes to programmatically associate each table cell with the header(s) the cell is associated with.
 
 ## Are CSS Tables Better Than HTML Tables
+
 - The css table model is based on the html4 table model and has pretty good browser support. 
 - In both table models, the table structure parallels the visual display of the table itself.
 - Rows are primary. The row is specified explicitly and columns are derived from how the rows and cells are set up.
 - Each html table element has an equivalent css display value. The only real difference is that there’s no distinction between td and th with the css variety.
 - Below are the html table elements and their corresponding css display value.
+
 ``` css
-table     { display: table }
-tr        { display: table-row }
-thead     { display: table-header-group }
-tbody     { display: table-row-group }
-tfoot     { display: table-footer-group }
-col       { display: table-column }
-colgroup  { display: table-column-group }
-td, th    { display: table-cell }
-caption   { display: table-caption }
+table {
+  display: table
+}
+
+tr {
+  display: table-row
+}
+
+thead {
+  display: table-header-group
+}
+
+tbody {
+  display: table-row-group
+}
+
+tfoot {
+  display: table-footer-group
+}
+
+col {
+  display: table-column
+}
+
+colgroup {
+  display: table-column-group
+}
+
+td,
+th {
+  display: table-cell
+}
+
+caption {
+  display: table-caption
+}
 ```
+
 - Looking at the above it shouldn’t be too hard to figure out how to set up a css table.
 
 ``` html
@@ -97,29 +148,36 @@ caption   { display: table-caption }
   <div class="row">
     <span class="cell"></span>
     <span class="cell"></span>
-     <span class="cell"></span>
+    <span class="cell"></span>
   </div>
   <div class="row">
     <span class="cell"></span>
     <span class="cell"></span>
-     <span class="cell"></span>
+    <span class="cell"></span>
   </div>
   <div class="row">
     <span class="cell"></span>
     <span class="cell"></span>
-     <span class="cell"></span>
+    <span class="cell"></span>
   </div>
 </div>
-
 ```
 
 ``` css
+#table {
+  display: table;
+}
 
-#table {display: table;}
-.row {display: table-row;}
-.cell {display: table-cell;}
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+}
 ```
-- If you look only at the html above, you can easily see the basic table structure except that I’ve used `div and span` with ids and classes instead of `table, tr, and td`.
+
+- If you look only at the html above, you can easily see the basic table structure except that I’ve used `div and span` with ids and classes instead of `table, tr, and td` .
 - Different table elements have different stacking contexts for the purpose of adding backgrounds to these different layers.
   1. table – lowest layer
   2. column group
@@ -179,9 +237,11 @@ caption   { display: table-caption }
     - Or you can split rows: for example, for very narrow devices you might want to switch the table to a single column layout simply by removing or replacing the “display: table*” style without generating different HTML for that case.
 
 ## CSS vs Tables: The Debate That Won’t Die
+
 - One of the debates that never seems to go away in the web development community is that of css vs tables and which is better to use for the layout of your site.
 - I do think css is the better option, but feel free to develop sites any way you want.
 - What the css vs tables debate is really about is whether or not to structure a web page with tables or divs. In its simplest form we’re comparing:
+
 ``` html
 <table>
   <tr>
@@ -214,9 +274,5 @@ caption   { display: table-caption }
   - Search engines don’t care one bit if the code behind your page uses tables or divs. 
   - Search engines are interested in your content, not your code. 
   - It’s true that less code means less potential for show stopping errors, but those show stoppers can exist regardless of your site’s structure.
+
   
-
-
-
-
-

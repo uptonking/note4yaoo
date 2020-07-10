@@ -66,7 +66,7 @@ modified: '2020-07-10T07:56:45.232Z'
   - The last step is paint, which takes in the final render tree and renders the pixels to the screen.
 - The CSSOM and DOM trees are combined into a render tree, which is then used to compute the layout of each visible element and serves as an input to the paint process that renders the pixels to screen
 - Optimizing each of these steps is critical to achieving optimal rendering performance.
-- First, the browser combines the DOM and CSSOM into a "render tree, " which captures all the visible DOM content on the page and all the CSSOM style information for each node.
+- First, the browser combines the DOM and CSSOM into a "render tree", which captures all the visible DOM content on the page and all the CSSOM style information for each node.
   1. Starting at the root of the DOM tree, traverse each visible node.
     - Some nodes are not visible (for example, script tags, meta tags, and so on), and are omitted since they are not reflected in the rendered output.
     - Some nodes are hidden via CSS and are also omitted from the render tree; for example, the span node---in the example above---is missing from the render tree because we have an explicit rule that sets the "display: none" property on it.
@@ -75,7 +75,7 @@ modified: '2020-07-10T07:56:45.232Z'
       - the latter ( `display: none` ) removes the element entirely from the render tree such that the element is invisible and is not part of the layout.
   2. For each visible node, find the appropriate matching CSSOM rules and apply them.
   3. Emit visible nodes with content and their computed styles.
-  - The final output is a render that contains both the content and style information of all the visible content on the screen.
+  - The final output is a render tree that contains both the content and style information of all the visible content on the screen.
   - With the render tree in place, we can proceed to the "layout" stage.
 - Up to this point we've calculated which nodes should be visible and their computed styles, but we have not calculated their exact position and size within the viewport of the device---that's the "**layout**" stage, also known as "**reflow**."
   - To figure out the exact size and position of each object on the page, the browser begins at the root of the render tree and traverses it.
@@ -84,7 +84,9 @@ modified: '2020-07-10T07:56:45.232Z'
 - Chrome DevTools can provide some insight into all three of the stages described above.
   - The "Layout" event captures the render tree construction, position, and size calculation in the Timeline.
   - When layout is complete, the browser issues "Paint Setup" and "Paint" events, which convert the render tree to pixels on the screen.
-  - The time required to perform render tree construction, layout and paint varies based on the size of the document, the applied styles, and the device it is running on
+- The time required to perform render tree construction, layout and paint varies based on the size of the document, the applied styles, and the device it is running on
+  - the larger the document, the more work the browser has; 
+  - the more complicated the styles, the more time taken for painting also (for example, a solid color is "cheap" to paint, while a drop shadow is "expensive" to compute and render).
 - Here's a quick recap of the browser's steps:
   1. Process HTML markup and build the DOM tree.
   2. Process CSS markup and build the CSSOM tree.
