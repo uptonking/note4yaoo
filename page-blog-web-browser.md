@@ -10,6 +10,7 @@ modified: '2020-07-10T09:21:54.754Z'
 ## Performance best practices for Firefox front-end engineers
 
 - [Performance best practices for Firefox front-end engineers](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Performance_best_practices_for_Firefox_fe_engineers)
+
 - Avoid the main thread where possible
   - The main thread is where we process user events and do painting. 
   - It's also important to note that most of our JavaScript runs on the main thread, so it's easy for script to cause delays in event processing or painting. 
@@ -124,7 +125,7 @@ requestAnimationFrame(() => {
   - Keep in mind that painting occurs on the main thread. 
   - Remember, too, that the goal is to have as little happen on the main thread as possible. 
     - That means that finding and removing (when possible) over-painting is a good place to start reducing your burden on the main thread, which will in turn improve performance.
-  - Consider using a different animation that can be accelerated by the GPU. 
+- Consider using a different animation that can be accelerated by the GPU. 
   - These GPU-accelerated animations occur off of the main thread, and have a much higher probability of running at 60 FPS 
   - Sometimes, our graphics layer invalidates regions in ways that might not be clear to you, and a section outside of the thing that just repainted will also repaint. 
     - Sometimes this can be addressed by ensuring that the thing changing is on its own layer (though this comes at a memory cost). 
@@ -178,3 +179,44 @@ Services.scriptloader.loadSubScriptWithOptions(myScriptURL, { async: true }).the
   console.log("Script at " + myScriptURL + " loaded asynchronously!");
 });
 ```
+
+## Tips for authoring fast-loading HTML pages
+
+- [Tips for authoring fast-loading HTML pages](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Author_fast-loading_HTML_pages)
+
+- Reduce page weight
+  - Page weight is by far the most important factor in page-load performance.
+  - Reducing page weight through the elimination of unnecessary whitespace and comments, commonly known as minimization, and by moving inline script and CSS into external files, can improve download performance with minimal need for other changes in the page structure.
+  - Tools such as HTML Tidy can automatically strip leading whitespace and extra blank lines from valid HTML source. 
+  - Other tools can "compress" JavaScript by reformatting the source or by obfuscating the source and replacing long identifiers with shorter versions.
+- Minimize the number of files
+- Use a Content Delivery Network (CDN)
+- Reduce domain lookups
+- Cache reused content
+- Optimally order the components of the page
+  - Download page content first, along with any CSS or JavaScript that may be required for its initial display, so that the user gets the quickest apparent response during the page loading. 
+- Reduce the number of inline scripts
+  - Inline scripts can be expensive for page loading since the parser must assume that an inline script could modify the page structure while parsing is in progress.
+  - reduce the use of `document.write()` to output content in particular
+  - Use modern AJAX methods to manipulate page content for modern browsers
+    - https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX
+- Use modern CSS and valid markup
+- Chunk your content
+  - Tables for layouts are a legacy method that should not be used anymore. 
+  - Layouts utilizing floats, positioning, flexbox, or grids should be used instead.
+  - Tables are still considered valid markup but should be used for displaying tabular data. 
+  - To help the browser render your page quicker, you should avoid nesting your tables.
+- Minify and compress SVG assets
+- Minify and compress your images
+- Specify sizes for images and tables
+  - If the browser can immediately determine the height and/or width of your images and tables, it will be able to display a web page without having to reflow the content. 
+  - This not only speeds the display of the page but prevents annoying changes in a page's layout when the page completes loading. 
+  - For this reason, height and width should be specified for images, whenever possible.
+  - Tables should use the CSS selector: property combination: `table-layout: fixed;`
+  - and should specify widths of columns using the `<col>` and the `<colgroup>` elements.
+- Use lazy loading for images
+- Choose your user-agent requirements wisely
+- Use async and defer, if possible
+  - Make the JavaScript scripts such that they are compatible with both the async and the defer attributes, and use async whenever possible, especially if you have multiple script tags.
+  - With that, the page can stop rendering while JavaScript is still loading. 
+  - Otherwise, the browser will not render anything that is after the script tags that do not have these attributes.

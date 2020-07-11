@@ -12,8 +12,7 @@ modified: '2020-07-10T08:38:36.261Z'
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
-  - [Table Reflow Internals](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
-  - [Are CSS Tables Better Than HTML Tables? _2011](https://vanseodesign.com/css/tables/)
+  - [**Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
   - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
   - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
   - [Why CSS Should Be Used for Layout_2009](https://www.newmediacampaigns.com/blog/why-css-should-be-used-for-layout)
@@ -96,49 +95,24 @@ modified: '2020-07-10T08:38:36.261Z'
 
 ## Are CSS Tables Better Than HTML Tables
 
+- [Are CSS Tables Better Than HTML Tables? _2011](https://vanseodesign.com/css/tables/)
+
 - The css table model is based on the html4 table model and has pretty good browser support. 
 - In both table models, the table structure parallels the visual display of the table itself.
 - Rows are primary. The row is specified explicitly and columns are derived from how the rows and cells are set up.
 - Each html table element has an equivalent css display value. The only real difference is that there’s no distinction between td and th with the css variety.
 - Below are the html table elements and their corresponding css display value.
 
-``` css
-table {
-  display: table
-}
-
-tr {
-  display: table-row
-}
-
-thead {
-  display: table-header-group
-}
-
-tbody {
-  display: table-row-group
-}
-
-tfoot {
-  display: table-footer-group
-}
-
-col {
-  display: table-column
-}
-
-colgroup {
-  display: table-column-group
-}
-
-td,
-th {
-  display: table-cell
-}
-
-caption {
-  display: table-caption
-}
+``` scss
+table     { display: table }
+tr        { display: table-row }
+thead     { display: table-header-group }
+tbody     { display: table-row-group }
+tfoot     { display: table-footer-group }
+col       { display: table-column }
+colgroup  { display: table-column-group }
+td, th    { display: table-cell }
+caption   { display: table-caption }
 ```
 
 - Looking at the above it shouldn’t be too hard to figure out how to set up a css table.
@@ -163,18 +137,11 @@ caption {
 </div>
 ```
 
-``` css
-#table {
-  display: table;
-}
+``` scss
+#table {display: table;}
+.row {display: table-row;}
+.cell {display: table-cell;}
 
-.row {
-  display: table-row;
-}
-
-.cell {
-  display: table-cell;
-}
 ```
 
 - If you look only at the html above, you can easily see the basic table structure except that I’ve used `div and span` with ids and classes instead of `table, tr, and td` .
@@ -275,4 +242,55 @@ caption {
   - Search engines are interested in your content, not your code. 
   - It’s true that less code means less potential for show stopping errors, but those show stoppers can exist regardless of your site’s structure.
 
-  
+## CSS performance test: Flexbox v CSS Table
+
+- [CSS performance test: Flexbox v CSS Table](https://benfrain.com/css-performance-test-flexbox-v-css-table-fight/)
+
+- You can see that in this incredibly limited test layout, Flex layout is slower than Table Layout on every browser tested. 
+
+## The Anti-hero of CSS Layout - "display:table"
+
+- [The Anti-hero of CSS Layout - "display:table"](https://colintoh.com/blog/display-table-anti-hero)
+
+- There are two ways that you can use table in layout - HTML Table and CSS Table.
+- HTML Table refers to the usage of table with the native `<table>` tag while CSS Table mimics the same table model as HTML Table but with CSS properties.
+
+``` scss
+table    { display: table }
+tr       { display: table-row }
+thead    { display: table-header-group }
+tbody    { display: table-row-group }
+tfoot    { display: table-footer-group }
+col      { display: table-column }
+colgroup { display: table-column-group }
+td, th   { display: table-cell }
+caption  { display: table-caption }
+```
+
+- CSS Table has a key differentiation over HTML Table. It can choose not to be a table by just adjusting its CSS properties. Something that HTML Table is incapable of.
+- A common use-case for `display:table` . With it, you can achieve a true vertical alignment (right in the middle) for elements with dynamic height
+- A new way to horizontally center-align a dynamic element with no side effects. Apply `display:table` and `margin: auto` to the dynamic element
+- CSS Table can choose not to behave like a table when it want to. By switching the element's `display` property from `table-cell` to `block` , we are able to stack the element.
+- With `display:table` , you are able to create a sticky footer with dynamic height.
+
+## Why Tables Are Bad For Layout
+
+- Tables are usually more bytes of markup.
+  - (Longer to download, and more bytes of traffic for the host.)
+- Tables usually prevent incremental rendering.
+  - (Takes longer for the user to see anything on the page.)
+- Tables may require you to chop single, logical images into multiple ones.
+  - (This makes redesigns total hell, and also increases page load time [more http requests and more total bytes].)
+- Tables break text copying on some browsers.
+  - (That's annoying to the user.)
+- Tables prevent certain layouts from working within them (like `height:100%` for child elements of `<td>` ).
+  - (They limit what you can actually do in terms of layout.)
+- Once you know CSS, table-based layouts usually take more time to implement.
+  - (A little effort up-front learning CSS pays off heavily in the end.)
+- Tables are semantically incorrect markup for layout.
+  - (They describe the presentation, not the content.)
+- Tables make life hell for those using screen readers.
+  - (Not only do you get the other benefits of CSS, you're also helping out the blind/partially-sighted. This is a Good Thing.)
+- Tables lock you into the current design and make redesigns MUCH harder than semantic HTML+CSS.
+  - (Have you seen CSS Zen Garden?)
+- Tables are 100% acceptable, appropriate, and correct for use with tabular data

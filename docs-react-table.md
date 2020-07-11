@@ -8,31 +8,39 @@ modified: '2020-07-07T13:49:30.492Z'
 # docs-react-table
 
 - Hooks for building lightweight, fast and extendable datagrids for React
+- A Table Utility, not a Table Component
 
 ## overview
-
-- React Table v7 refactors the entire library to a hooks-only UI/Style/Markup agnostic table building utility.
-- This latest version is a collection of React hooks and plugins (which are also hooks!) that help you flexibly compose logical features of the most complex data grids into a single API returned by the primary `useTable` hook. 
-- This API is performant, extensible, and unopinionated about markup, styles or rendering.
 
 - Features
   - Lightweight (small size and tree-shaking)
   - Headless (100% customizable, Bring-your-own-UI)
   - Auto out of the box, fully controllable API
   - Sorting (Multi and Stable)
-  - Filters
-  - Pivoting & Aggregation
+  - Filters(global/column)
+  - Aggregation/Pivoting
+  - Pagination
+  - Row grouping
   - Row Selection
   - Row Expansion
+  - Sub row componnets
   - Column Ordering
+  - column resizable
+  - column hiding
+  - header nested/grouped
+  - custom cell formatter
+  - footer
   - Animatable
   - Virtualizable
-  - Resizable
   - Server-side/controlled data/state
   - Extensible via hook-based plugin system
+  - Table, Flex, and Grid Helpers
 
-- ref
-  - [API](https://github.com/tannerlinsley/react-table/blob/master/docs/api/README.md)
+- React Table v7 refactors the entire library to a hooks-only UI/Style/Markup agnostic table building utility.
+- This latest version is a collection of React hooks and plugins (which are also hooks!) that help you flexibly compose logical features of the most complex data grids into a single API returned by the primary `useTable` hook. 
+- This API is performant, extensible, and unopinionated about markup, styles or rendering.
+- By acting as an ultra-smart table utility, React Table opens up the possibility for your tables to integrate into any existing theme, UI library or existing table markup. 
+  - This also means that if you don't have an existing table component or table styles, React Table will help you learn to build the table markup and styles required to display great tables.
 
 ## Concepts
 
@@ -44,7 +52,7 @@ modified: '2020-07-07T13:49:30.492Z'
   - The look, feel, and overall experience of your table is what makes your app or product great. 
   - The less React Table gets in the way of that, the better!
 - Maintenance  
-  - `By removing the massive (and seemingly endless) API surface area required to support every UI use-case, 
+  - By removing the massive (and seemingly endless) API surface area required to support every UI use-case, 
   - React Table can remain small, easy-to-use and simple to update/maintain.
 - Extensibility  
   - UI presents countless edge cases for a library simply because it's a creative medium, and one where every developer does things differently. 
@@ -64,7 +72,7 @@ modified: '2020-07-07T13:49:30.492Z'
 ## API 
 
 - The primary React Table hook
-  - [ `useTable` ](./useTable.md)
+  - [ `useTable` ](https://react-table.tanstack.com/docs/api/useTable)
 - Plugin Hooks
   - Core Plugin Hooks
     - [ `useGroupBy` ](./useGroupBy.md)
@@ -87,13 +95,27 @@ modified: '2020-07-07T13:49:30.492Z'
 - `useTable` is the primary hook used to build a React Table. 
   - It serves as the starting point for every option and every plugin hook that React Table supports. 
   - The options passed into useTable are supplied to every plugin hook after it in the order they are supplied, eventually resulting in a final `instance` object that you can use to build your table UI and interact with the table's state.
+
+``` JS
+const instance = useTable({
+    data: [...],
+    columns: [...],
+  },
+  useGroupBy,
+  useFilters,
+  useSortBy,
+  useExpanded,
+  usePagination
+)
+```
+
 - The stages of React Table and plugins
   - `useTable` is called. A table `instance` is created.
   - The `instance.state` is resolved from either a custom user state or an automatically generated one.
   - A collection of plugin points is created at `instance.hooks` .
   - Each plugin is given the opportunity to add hooks to `instance.hook` .
   - As the `useTable` logic proceeds to run, each plugin hook type is used at a specific point in time with each individual hook function being executed the order it was registered.
-  - The final instance object is returned from useTable, which the developer then uses to construct their table.
+  - The final instance object is returned from `useTable`, which the developer then uses to construct their table.
 - This multi-stage process is the secret sauce that allows React Table plugin hooks to work together and compose nicely, while not stepping on each others toes.
 - In the event that you want to programmatically enable or disable plugin hooks, most of them provide options to disable their functionality, eg. `options.disableSortBy`
 - React Table relies on memoization to determine when state and side effects should update or be calculated. 

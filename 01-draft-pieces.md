@@ -8,8 +8,6 @@ modified: '2020-07-10T09:31:16.496Z'
 # 01-draft-pieces
 
  
- layout paint , which is more expensive ?
-
 ------  
 
 - webpack react fast refresh

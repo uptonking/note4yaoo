@@ -2,7 +2,7 @@
 tags: [browser, optimization, web]
 title: note-web-optimization-render-performance
 created: '2020-06-28T06:46:35.619Z'
-modified: '2020-06-28T18:27:55.517Z'
+modified: '2020-07-11T05:12:36.280Z'
 ---
 
 # note-web-optimization-render-performance
@@ -36,12 +36,41 @@ modified: '2020-06-28T18:27:55.517Z'
   - defer与相比普通script，有两点区别：载入js文件时不阻塞HTML的解析，执行阶段被放到HTML标签解析完成之后
   - 在加载多个JS脚本的时候，async是无顺序的加载，而defer是有顺序的加载
 - reflow vs repaint ? which one is more expensive ?
-  - A reflow computes the layout of the page. A reflow on an element recomputes the dimensions and position of the element, and it also triggers further reflows on that element’s children, ancestors and elements that appear after it in the DOM. Then it calls a final repaint. Reflowing is very expensive.
+  - 哪个操作更占性能，要根据操作的类型、影响元素的范围来定
   - Paint is often the most expensive part of the pixel pipeline; avoid it where you can.
     - https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas
-
-  - 
-
+  - Painting is, in general, cheaper than both style calculation and layout calculation; 
+    - https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Performance_best_practices_for_Firefox_fe_engineers
+  - 浏览器chrome练习结果
+    - **resize**: csstrigger页面：前2组先放大再缩小，后两组先缩小再放大
+      - scripting > rendering > painting > system > idle
+        - 11 > 496  > 308 > 195 > 3771
+        - 13 > 1425 > 493 > 296 > 2056
+        - 6  > 841  > 186 > 110 > 1371
+        - 10 > 712  > 365 > 227 > 3700
+      - style > layout > paint > composite > UpdateLayerTree
+        - 6   > 127 > 278 > 31 > 366
+        - 123 > 597 > 464 > 31 > 823
+        - 126 > 420 > 172 > 16 > 418
+        - 6   > 224 > 345 > 23 > 483
+      - **modal**/collapse-expand: 知乎回答页面
+        - scripting > rendering > painting > system > idle
+          - 607 > 120 > 113 > 204 > 6144
+          - 603 > 117 > 96  > 192 > 6282
+        - style > layout > paint > composite > UpdateLayerTree
+          - 29 > 12 > 41 > 72 > 43
+          - 24 > 15 > 29 > 68 > 43
+      - **scroll**: bing国际版首页
+        - scripting > rendering > painting > system > idle
+          - 206 > 126 > 187 > 97 > 1778
+          - 83  > 79  > 105 > 51 > 1613
+        - style > layout > paint > composite > UpdateLayerTree
+          - 22 > 6 > 25 > 163 > 59
+          - 6  > 1 > 24 > 80  > 40
+  - A reflow computes the layout of the page. 
+    - A reflow on an element recomputes the dimensions and position of the element, 
+    - and it also triggers further reflows on that element’s children, ancestors and elements that appear after it in the DOM. 
+    - Then it calls a final repaint. Reflowing is very expensive.
 - reflow vs layout
   - same
   - There's always at least one initial page layout together with a paint. After that, changing the input information which was used to construct the render tree may result in one or both of these:
@@ -120,11 +149,11 @@ modified: '2020-06-28T18:27:55.517Z'
     - The drawing is typically done onto multiple surfaces, often called layers.
     - Sometimes you may hear the term "rasterize" used in conjunction with paint. 
     - This is because painting is actually two tasks: 
-      01. creating a list of draw calls 
-      02. filling in the pixels.
+      - creating a list of draw calls 
+      - filling in the pixels.
       - The latter is called "rasterization" and so whenever you see paint records in DevTools, you should think of it as including rasterization.
       - In some architectures creating the list of draw calls and rasterizing are done in different threads, but that isn't something under developer control.
-  5. Compositing(渲染层合并)
+  05. Compositing(渲染层合并)
     - Since the parts of the page were drawn into potentially multiple layers, they need to be drawn to the screen in the correct order so that the page renders correctly.
     - This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
 - Each of these parts of the pipeline represents an opportunity to introduce jank, so it's important to understand exactly what parts of the pipeline your code triggers.
@@ -203,7 +232,8 @@ modified: '2020-06-28T18:27:55.517Z'
   - Avoid forced synchronous layouts and layout thrashing; read style values then make style changes.
 - Layout is where the browser figures out the geometric information for elements: their size and location in the page.
 - Each element will have explicit or implicit sizing information based on the CSS that was used, the contents of the element, or a parent element. 
-- The process is called *Layout* in Chrome, Opera, Safari, and Internet Explorer. In Firefox it’s called *Reflow*
+- The process is called *Layout* in Chrome, Opera, Safari, and Internet Explorer. 
+  - In Firefox it’s called *Reflow*
 - Similarly to style calculations, the immediate concerns for layout cost are:
   - The number of elements that require layout.
   - The complexity of those layouts.
@@ -283,7 +313,7 @@ modified: '2020-06-28T18:27:55.517Z'
 ## Simplify Paint Complexity and Reduce Paint Areas
 
 - Tips
-  - Changing any property apart from transforms or opacity always triggers paint.
+  - Changing any property apart from transform or opacity always triggers paint.
   - Paint is often the most expensive part of the pixel pipeline; avoid it where you can.
   - Reduce paint areas through layer promotion and orchestration of animations.
   - Use the Chrome DevTools paint profiler to assess paint complexity and cost; reduce where you can.
@@ -299,7 +329,8 @@ modified: '2020-06-28T18:27:55.517Z'
   - In fact, it’s possible for the browser to paint into multiple images, or compositor layers, if necessary.
   - Elements that are regularly repainted, or are moving on screen with transforms, can be handled without affecting other elements. 
     - like Sketch, GIMP, or Photoshop, where individual layers can be handled and composited on top of each other to create the final image.
-  - The **best way to create a new layer is to use the `will-change` CSS property**. This will work in Chrome, Firefox and Opera, and, with a value of `transform` , will create a new compositor layer
+  - The **best way to create a new layer is to use the `will-change` CSS property**. 
+  - This will work in Chrome, Firefox and Opera, and, with a value of `transform` , will create a new compositor layer
   - For browsers that don’t support `will-change` , but benefit from layer creation, such as Safari and Mobile Safari, you need to (mis)use a 3D transform to force a new layer
 
 ``` css
@@ -702,5 +733,6 @@ requestAnimationFrame(() => {
   })
 })
 ```
-- The trick is to queue a `setTimeout` callback inside of a `rAF`, which ensures that the second callback happens after style and layout, regardless of whether the browser is spec-compliant or not.
+
+- The trick is to queue a `setTimeout` callback inside of a `rAF` , which ensures that the second callback happens after style and layout, regardless of whether the browser is spec-compliant or not.
 - `Promise` doesn’t work at all, because microtasks (e.g. Promises) run immediately after JavaScript execution has completed. So it doesn’t wait for style and layout at all

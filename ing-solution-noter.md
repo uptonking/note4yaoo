@@ -1,5 +1,5 @@
 ---
-tags: [solution]
+tags: [solution, note]
 title: ing-solution-noter
 created: '2020-05-10T07:13:28.652Z'
 modified: '2020-06-30T05:13:25.510Z'
@@ -30,6 +30,7 @@ modified: '2020-06-30T05:13:25.510Z'
   - markdown-editor-lite
 - 预览模块
   - toc目录设计成类似书籍目录，单行且缩进，悬停查看完整目录
+  - 文字块： Note块，warning块
 - 笔记文件管理模块
   - 按日期
   - 按标签

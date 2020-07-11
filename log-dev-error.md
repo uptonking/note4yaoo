@@ -9,6 +9,9 @@ modified: '2020-05-17T07:06:19.026Z'
 
 ## logging 
 
+- eact-dom.development.js?e444:23965 Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+  - element.type should be a string or class / function
+  - 因为忘记导出组件了 export Component
 - 'App' refers to a value, but is being used as a type here
   - 将index.ts文件名改为index.tsx
 - pentaho下载依赖慢或停止：多等等或使用mvn代理而不是terminal代理
