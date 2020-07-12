@@ -1,8 +1,8 @@
 ---
-tags: [draft, todo]
 title: 01-draft-pieces
+tags: [draft, todo]
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-07-10T09:31:16.496Z'
+modified: '2020-07-12T13:11:11.914Z'
 ---
 
 # 01-draft-pieces
@@ -10,6 +10,11 @@ modified: '2020-07-10T09:31:16.496Z'
  
 ------  
 
+
+- 知乎禁止转载的回答测试
+  - https://www.zhihu.com/question/25950466/answer/31731502
+  - 只有复制内容较长时才会提示申请转载，比如复制超过150字
+  
 - webpack react fast refresh
 
 "@pmmmwh/react-refresh-webpack-plugin": "^0.4.0-beta.7", 

@@ -1,13 +1,13 @@
 ---
+title: toc-data-open
 tags: [data, toc]
-title: toc-hub-open-data
 created: '2020-06-22T09:42:22.521Z'
-modified: '2020-06-22T09:46:24.599Z'
+modified: '2020-07-12T13:14:08.547Z'
 ---
 
-# toc-hub-open-data
+# toc-data-open
 
-### 数据类
 
+## organization
 - 北京大学开放研究数据平台
   - http://opendata.pku.edu.cn/

@@ -1,11 +1,11 @@
 ---
+title: toc-lib-top-components
 tags: [components, toc]
-title: toc-top-components-lib
 created: '2020-06-16T02:31:56.711Z'
-modified: '2020-06-16T05:20:26.146Z'
+modified: '2020-07-12T13:18:15.609Z'
 ---
 
-# toc-top-components-lib
+# toc-lib-top-components
 
 ## components-react 
 

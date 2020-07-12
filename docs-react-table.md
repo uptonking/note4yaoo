@@ -1,8 +1,8 @@
 ---
-tags: [changelog, table]
 title: docs-react-table
+tags: [changelog, table]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-07T13:49:30.492Z'
+modified: '2020-07-12T09:27:19.147Z'
 ---
 
 # docs-react-table
@@ -75,26 +75,26 @@ modified: '2020-07-07T13:49:30.492Z'
   - [ `useTable` ](https://react-table.tanstack.com/docs/api/useTable)
 - Plugin Hooks
   - Core Plugin Hooks
-    - [ `useGroupBy` ](./useGroupBy.md)
+    - [ `useSortBy` ](./useSortBy.md)
     - [ `useFilters` ](./useFilters.md)
     - [ `useGlobalFilter` ](./useGlobalFilter.md)
-    - [ `useSortBy` ](./useSortBy.md)
+    - [ `useGroupBy` ](./useGroupBy.md)
     - [ `useExpanded` ](./useExpanded.md)
     - [ `usePagination` ](./usePagination.md)
     - [ `useTokenPagination` (Coming Soon)](./useTokenPagination.md)
     - [ `useRowSelect` ](./useRowSelect.md)
     - [ `useRowState` ](./useRowState.md)
     - [ `useColumnOrder` ](./useColumnOrder.md)
+    - [ `useResizeColumns` ](./useResizeColumns.md)
   - Layout Hooks
     - [ `useBlockLayout` ](./useBlockLayout.md)
     - [ `useAbsoluteLayout` ](./useAbsoluteLayout.md)
     - [ `useFlexLayout` ](./useFlexLayout.md)
-    - [ `useResizeColumns` ](./useResizeColumns.md)
 - 3rd Party Plugin Hooks
 
 - `useTable` is the primary hook used to build a React Table. 
   - It serves as the starting point for every option and every plugin hook that React Table supports. 
-  - The options passed into useTable are supplied to every plugin hook after it in the order they are supplied, eventually resulting in a final `instance` object that you can use to build your table UI and interact with the table's state.
+  - The options passed into `useTable` are supplied to every plugin hook after it in the order they are supplied, eventually resulting in a final `instance` object that you can use to build your table UI and interact with the table's state.
 
 ``` JS
 const instance = useTable({
@@ -115,7 +115,7 @@ const instance = useTable({
   - A collection of plugin points is created at `instance.hooks` .
   - Each plugin is given the opportunity to add hooks to `instance.hook` .
   - As the `useTable` logic proceeds to run, each plugin hook type is used at a specific point in time with each individual hook function being executed the order it was registered.
-  - The final instance object is returned from `useTable`, which the developer then uses to construct their table.
+  - The final instance object is returned from `useTable` , which the developer then uses to construct their table.
 - This multi-stage process is the secret sauce that allows React Table plugin hooks to work together and compose nicely, while not stepping on each others toes.
 - In the event that you want to programmatically enable or disable plugin hooks, most of them provide options to disable their functionality, eg. `options.disableSortBy`
 - React Table relies on memoization to determine when state and side effects should update or be calculated. 

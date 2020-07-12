@@ -1,11 +1,11 @@
 ---
+title: toc-market-companies-broken-leading
 tags: [toc/market]
-title: toc-market-broken-companies
 created: '2020-03-04T17:24:52.396Z'
-modified: '2020-06-22T09:24:20.054Z'
+modified: '2020-07-12T13:17:27.189Z'
 ---
 
-# toc-market-broken-companies
+# toc-market-companies-broken-leading
 
 ## leading
 
@@ -13,6 +13,9 @@ modified: '2020-06-22T09:24:20.054Z'
   - 智能终端业务：手机、平板、笔记本
 
 ## promising
+
+- 拼多多
+  - 抓住价格敏感用户
 
 ## not good
 

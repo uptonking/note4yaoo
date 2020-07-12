@@ -1,8 +1,8 @@
 ---
-tags: [charting, js/d3, viz]
 title: note-viz-lib-d3
+tags: [charting, js/d3, viz]
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-06-22T09:15:39.540Z'
+modified: '2020-07-12T13:23:30.818Z'
 ---
 
 # note-viz-lib-d3

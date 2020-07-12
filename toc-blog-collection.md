@@ -1,8 +1,8 @@
 ---
-tags: [blog, toc]
 title: toc-blog-collection
+tags: [blog, toc]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-08T11:18:36.548Z'
+modified: '2020-07-12T13:11:41.315Z'
 ---
 
 # toc-blog-collection
@@ -18,6 +18,7 @@ modified: '2020-07-08T11:18:36.548Z'
 - [浏览器的请求与响应过程](https://muxiaobai.github.io/2018/06/07/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94%E8%BF%87%E7%A8%8B/)
 - [HEADLESS USER INTERFACE COMPONENTS](https://www.merrickchristensen.com/articles/headless-user-interface-components/)
 - [Browser painting and considerations for web performance](https://css-tricks.com/browser-painting-and-considerations-for-web-performance/)
+
 ## backend
 
 ## series

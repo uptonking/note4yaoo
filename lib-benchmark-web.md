@@ -1,11 +1,11 @@
 ---
-tags: [benchmark, toc]
-title: toc-benchmark-web
+title: lib-benchmark-web
+tags: [benchmark]
 created: '2019-12-22T12:19:22.028Z'
-modified: '2020-06-16T02:56:17.442Z'
+modified: '2020-07-12T13:06:34.575Z'
 ---
 
-# toc-benchmark-web
+# lib-benchmark-web
 
 ## style-perf
 

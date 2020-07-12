@@ -1,11 +1,11 @@
 ---
+title: pick-glossary-dev
 tags: [wiki]
-title: pick-vocabulary-dev
 created: '2019-09-02T04:34:22.505Z'
-modified: '2020-06-28T01:58:58.459Z'
+modified: '2020-07-12T13:25:46.336Z'
 ---
 
-# pick-vocabulary-dev
+# pick-glossary-dev
 
 ## coding
 
@@ -19,6 +19,8 @@ modified: '2020-06-28T01:58:58.459Z'
 
 - Pilcrow	
   - 段落符号 ¶
+- kitchen sink approach 厨房水槽法
+  - 包含你能想象出的所有特征，然后再检测到底哪个特征起作用
 
 ## pieces
 

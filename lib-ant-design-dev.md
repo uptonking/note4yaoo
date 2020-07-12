@@ -1,11 +1,11 @@
 ---
-tags: [antd, latest]
-title: note-lib-ant-design
+title: lib-ant-design-dev
+tags: [antd, lib]
 created: '2020-06-15T10:25:37.356Z'
-modified: '2020-07-07T15:25:44.373Z'
+modified: '2020-07-12T13:20:42.175Z'
 ---
 
-# note-lib-ant-design
+# lib-ant-design-dev
 
 ## pieces
 
