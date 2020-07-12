@@ -2,11 +2,26 @@
 title: toc-lib-list-table-grid-sheet
 tags: [list, table, toc]
 created: '2020-07-12T13:01:37.487Z'
-modified: '2020-07-12T13:58:15.024Z'
+modified: '2020-07-12T19:05:02.815Z'
 ---
 
 # toc-lib-list-table-grid-sheet
 
+## list-grid
+
+- ag-grid /MIT/6.4kStar/202006
+  - https://github.com/ag-grid/ag-grid
+  - http://www.ag-grid.com/
+  - Data Grid/Table supporting JS/React/Angular/Web Components
+  - ag-grid-enterprise are Commercial licensed
+- react-table /MIT/11.6kStar/202007
+  - https://github.com/tannerlinsley/react-table
+  - https://react-table.tanstack.com/
+  - Hooks for building fast and extendable tables and datagrids for React
+- react-data-grid /MIT/4kStar/202007
+  - https://github.com/adazzle/react-data-grid
+  - http://adazzle.github.io/react-data-grid/
+  - Excel-like grid component built with React, with editors, keyboard navigation, copy...
 - react-virtualized /MIT/19.5kStar/202006
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
@@ -16,19 +31,185 @@ modified: '2020-07-12T13:58:15.024Z'
   - https://react-window.now.sh/
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set (just enough to fill the viewport).
-- react-table /MIT/11.6kStar/202007
-  - https://github.com/tannerlinsley/react-table
-  - https://react-table.tanstack.com/
-  - Hooks for building fast and extendable tables and datagrids for React
-- react-datasheet /MIT/4.2kStar/202005
-  - https://github.com/nadbm/react-datasheet
-  - https://nadbm.github.io/react-datasheet/
-  - Excel-like data grid (table) component for React
-- sheetjs /Apache2.0/21.9kStar/202006
-  - https://github.com/SheetJS/sheetjs
-  - https://sheetjs.com/
-  - SheetJS Community Edition - Spreadsheet Data Toolkit
 - jexcel /MIT/4.8kStar/202007
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jexcel
   - a lightweight vanilla javascript plugin to create amazing web-based interactive tables
+- x-spreadsheet /MIT/8.8kStar/202007
+  - https://github.com/myliang/x-spreadsheet
+  - https://myliang.github.io/x-spreadsheet
+  - A web-based JavaScript（canvas） spreadsheet
+- handsontable 6.2.2 /MIT/13.8kStar/202007
+  - https://github.com/handsontable/handsontable
+  - https://handsontable.com/
+  - a JavaScript/HTML5 data grid with spreadsheet look & feel.
+  - https://github.com/handsontable/handsontable/releases/tag/7.0.0
+  - since 7.0 free for all non-commercial purposes
+- react-datasheet /MIT/4.2kStar/202005
+  - https://github.com/nadbm/react-datasheet
+  - https://nadbm.github.io/react-datasheet/
+  - Excel-like data grid (table) component for React
+- tui.grid /MIT/1.5kStar/202007 
+  - https://github.com/nhn/tui.grid
+  - http://ui.toast.com/tui-grid/
+  - Powerful Component to Display and Edit Data. Experience the Ultimate Data Transformer
+- fixed-data-table-2 /BSD/1kStar/202007
+  - https://github.com/schrodinger/fixed-data-table-2
+  - http://schrodinger.github.io/fixed-data-table-2/
+  - React table component designed to allow presenting millions of rows of data.
+  - https://github.com/facebook/fixed-data-table /4300kStar/NotMaintained
+- react-data-table-component /MIT/598Star/202007
+  - https://github.com/jbetancur/react-data-table-component
+  - https://jbetancur.github.io/react-data-table-component
+  - simple table library with built in sorting, pagination, selection, expandable rows and customizable styling.
+- SlickGrid /MIT/1.3kStar/202007
+  - https://github.com/6pac/SlickGrid
+  - https://github.com/6pac/SlickGrid/wiki
+  - https://github.com/mleibman/SlickGrid /NotMaintained/6.7kStar
+  - A lightning fast JavaScript grid/spreadsheet
+- React-Spreadsheet-Component /MIT/650Star/201811
+  - https://github.com/felixrieseberg/React-Spreadsheet-Component
+  - http://felixrieseberg.github.io/React-Spreadsheet-Component/
+  - Spreadsheet Component for ReactJS
+  - It's made with ❤️️ by Microsoft DX and released under the MIT License.
+- react-spreadsheet-grid /MIT/949Star/202004
+  - https://github.com/denisraslov/react-spreadsheet-grid
+  - https://denisraslov.github.io/grid
+  - An Excel-like grid component for React with custom cell editors, performant scroll & resizable columns
+- react-data-components /MIT/382Star/201905
+  - https://github.com/carlosrocha/react-data-components
+  - https://rocha.dev/react-data-components/
+  - React components for sorting, filtering and pagination of data.
+- react-tiny-virtual-list /MIT/1.8kStar/201910
+  - https://github.com/clauderic/react-tiny-virtual-list/
+  - https://clauderic.github.io/react-tiny-virtual-list/
+  - A tiny but mighty 3kb list virtualization library, with zero dependencies
+  - Supports variable heights/widths, sticky items, scrolling to index, and more
+- react-ws-canvas /MIT/1Star/202005
+  - https://github.com/devel0/react-ws-canvas
+  - https://codesandbox.io/s/github/devel0/react-ws-canvas/tree/master/example
+  - Spreadsheet like react canvas datagrid optimized for performance
+- window-table /MIT/143Star/202007
+  - https://github.com/pupudu/window-table
+  - https://window-table.netlify.com/
+  - Windowing Table for React
+  - Render thousands of rows in a HTML table in React
+- react-absolute-grid /MIT/906Star/202002
+  - https://github.com/jrowny/react-absolute-grid
+  - http://jrowny.github.io/react-absolute-grid/demo
+  - An absolutely positioned, animated, filterable, sortable, drag and droppable, ES6 grid for React.
+  - The idea behind AbsoluteGrid is high performance. 
+    - This is achieved by using `translate3d` to position each item in the layout. 
+    - Items are never removed from the DOM, instead they are hidden.
+- react-bolivianite-grid /MIT/85Star/201905
+  - https://github.com/papasnippy/react-bolivianite-grid
+  - https://papasnippy.github.io/react-bolivianite-grid/
+  - React grid component for virtualized rendering large tabular data.
+- cheetah-grid /MIT/337Star/202007
+  - https://github.com/future-architect/cheetah-grid
+  - https://future-architect.github.io/cheetah-grid/
+  - The fastest open-source data table for web.
+- datatable /MIT/467Star/202004
+  - https://github.com/frappe/datatable
+  - https://frappe.io/datatable
+- canvas-datagrid /BSD/636Star/202006
+  - https://github.com/TonyGermaneri/canvas-datagrid
+  - https://tonygermaneri.github.io/canvas-datagrid/tutorials/demo.html
+  - Canvas based data grid web component. 
+  - Capable of displaying millions of contiguous hierarchical rows and columns without paging or loading, on a single canvas element.
+- functional-data-grid /MIT/120Star/201907
+  - https://github.com/energydrink9/functional-data-grid
+  - https://energydrink9.github.io/functional-data-grid-examples
+  - Data grids in functional style with ReactJS
+  - This is a library made with React and React-Virtualized for creating rich data grids with filtering, sorting, grouping and aggregates computation. 
+- Rows n' Columns Grid /MIT/29Star/202007
+  - https://github.com/rowsncolumns/grid
+  - https://rowsncolumns.app/
+  - Grid - MIT Licensed Declarative Canvas Grid. Refer to Storybook for all demos.
+  - SpreadSheet - Commercially available Excel-like Grid
+  - Exporter - Excel Export plugin
+- FancyGrid /PaidLicense/153Star/202007
+  - https://github.com/FancyGrid/FancyGrid
+  - https://fancygrid.com/
+  - JavaScript grid library with charts integration and server communication.
+- react-spreadsheet /MIT/245Star/202003
+  - https://github.com/iddan/react-spreadsheet
+  - https://iddan.github.io/react-spreadsheet
+  - Simple, customizable yet performant spreadsheet for React
+- sou-react-table /MIT/184Star/201812
+  - https://github.com/miadwang/sou-react-table
+  - https://miadwang.github.io/sou-react-table/
+  - A spreadsheet component for React
+- xcell /NALicense/253Star/201807
+  - https://github.com/tomazy/xcell
+  - https://tomazy.github.io/xcell/
+  - Tiny library for building reactive, spreadsheet-like calculations in js
+- OpenWebSheet /MIT/14Star/202003
+  - https://github.com/SiamandMaroufi/OpenWebSheet
+  - https://siamandmaroufi.github.io/OpenWebSheet/
+  - OpenSource Web based spreadsheet
+- ej2-grids /Paid/39Star/201810
+  - https://github.com/syncfusion/ej2-grids
+  - https://www.syncfusion.com/javascript-ui-controls
+  - Feature-rich grid control with built-in support for data binding, filtering
+  - gross revenue of less than one million
+- use-table-tools /MIT/18Star/202006
+  - https://github.com/davidalekna/use-table-tools
+  - https://github.com/davidalekna/react-data-browser
+  - Hooks for building kickass react table components
+
+## grid-layout
+
+- react-grid-layout /MIT/11.4kStar/202004
+  - https://github.com/STRML/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - A draggable and resizable grid layout with responsive breakpoints, for React.
+- react-drag-drop-layout-builder NA-License/172Star/201904
+  - https://github.com/chriskitson/react-drag-drop-layout-builder
+  - https://medium.com/@kitson.mac/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6
+  - Drag and drop (DnD) UI layout builder using React and ImmutableJS
+
+## pivot
+
+- react-pivot /MIT/955Star/202006 
+  - https://github.com/davidguttman/react-pivot
+  - http://davidguttman.github.io/react-pivot/
+  - a data-grid component with pivot-table-like functionality for data display, filtering
+- react-pivottable /MIT/629Star/202006
+  - https://github.com/plotly/react-pivottable
+  - https://react-pivottable.js.org/
+  - React-based drag'n'drop pivot table with Plotly.js charts
+- PivotHelper /Apache2.0/19Star/202007
+  - https://github.com/BjoernKW/PivotHelper
+  - https://bjoernkw.github.io/PivotHelper/
+  - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.
+
+## olap
+
+- raw /Apache2.0/6.8kStar
+  - https://github.com/rawgraphs/raw
+  - The missing link between spreadsheets and data visualization
+
+## misc 
+
+- https://jspreadsheets.com/
+  - https://github.com/Handsoncode/JSpreadsheets.com
+- https://jsgrids.io/
+  - https://github.com/statico/jsgrids
+- sheetjs /Apache2.0/21.9kStar/202006
+  - https://github.com/SheetJS/sheetjs
+  - https://sheetjs.com/
+  - SheetJS Community Edition - Spreadsheet Data Toolkit
+- gridstudio  AGPL3.0/7.8kStar/202006/backend-go-python
+  - https://github.com/ricklamers/gridstudio
+  - https://gridstudio.io/a high-performance, spreadsheet-like calculation engine for web applications
+  - a web-based application for data science with full integration of open source data science frameworks and languages.
+- https://github.com/Mobius1/Vanilla-DataTables
+- https://github.com/appbaseio/reactivesearch
+- https://github.com/clauderic/react-sortable-hoc
+  - A set of higher-order components to turn any list into an animated, accessible and touch-friendly sortable list
+- https://github.com/juijs/jui-grid
+- https://github.com/vaadin/vaadin-grid 
+- https://github.com/vaadin/spreadsheet /CVALv3/44Star/202003
+- https://github.com/handsontable/hyperformula
+  - a high-performance, spreadsheet-like calculation engine for web applications
