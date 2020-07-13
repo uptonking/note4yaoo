@@ -22,7 +22,7 @@ modified: '2020-07-13T03:03:22.481Z'
   - https://bjoernkw.github.io/PivotHelper/
   - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.
 
-## dashboard
+## analytics-dashboard
 
 - Apache Superset /Apache2.0/29.3kStar/202007
   - https://github.com/apache/incubator-superset
@@ -33,3 +33,13 @@ modified: '2020-07-13T03:03:22.481Z'
 - raw /Apache2.0/6.8kStar
   - https://github.com/rawgraphs/raw
   - The missing link between spreadsheets and data visualization
+- cube.js /MIT/8.3kStar/202007
+  - https://github.com/cube-js/cube.js
+  - https://cube.dev/
+  -  modular framework to build analytical web applications
+
+## misc
+
+- https://github.com/altair-viz/altair
+  - Declarative statistical visualization library for Python
+  - built on top of the powerful Vega-Lite JSON specification.
