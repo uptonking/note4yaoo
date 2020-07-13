@@ -1,6 +1,6 @@
 ---
-tags: [concurrent, docs, react]
 title: docs-react-p7-concurrent-mode
+tags: [concurrent, docs, react]
 created: '2020-06-23T07:35:14.835Z'
 modified: '2020-07-05T18:55:35.555Z'
 ---
@@ -673,9 +673,7 @@ function ProfilePage({ resource }) {
 import ReactDOM from 'react-dom';
 
 // If you previously had:
-//
 // ReactDOM.render(<App />, document.getElementById('root'));
-//
 // You can opt into Concurrent Mode by writing:
 
 ReactDOM.createRoot(

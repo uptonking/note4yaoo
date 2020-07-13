@@ -1,14 +1,19 @@
 ---
+title: toc-lib-components-react
 tags: [components, lib, react, toc]
-title: toc-lib-react-components
 created: '2019-08-01T16:03:46.398Z'
-modified: '2020-06-22T09:24:13.546Z'
+modified: '2020-07-13T02:58:30.041Z'
 ---
 
-# toc-lib-react-components
+# toc-lib-components-react
 
 ## popular-components
 
+- Ant Design  /MIT/60.7kStar/202006/ts
+  - https://github.com/ant-design/ant-design
+  - https://ant.design/components/button/
+  - An enterprise-class UI design language and React UI library
+  - https://github.com/ant-design/ant-design-mobile
 - Ant Design Pro  /MIT/21kStar/201908/ts
   - https://github.com/ant-design/ant-design-pro
   - https://pro.ant.design/
@@ -17,6 +22,11 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/mui-org/material-ui
   - https://material-ui.com/
   - React components that implement Google's Material Design
+- zent  /MIT/1.9kStar/202007
+  - https://github.com/youzan/zent
+  - https://youzan.github.io/zent
+  - a collection of essential UI components and lots of useful domain specific components.
+  - https://github.com/youzan/vant
 - ring-ui  /Apache2.0/2kStar/201908
   - https://github.com/JetBrains/ring-ui
   - https://jetbrains.github.io/ring-ui/
@@ -113,10 +123,24 @@ modified: '2020-06-22T09:24:13.546Z'
   - https://github.com/ElemeFE/element-react
   - https://elemefe.github.io/element-react/index
   - Element UI for React
+  - 依赖react-transition-group, classnames, popper.js, requestAnimationFrame(raf) polyfill, async-validator(Validate form asynchronous.)
+  - table基于td
 - tinper-bee   /MIT/371Star/201908
   - https://github.com/iuap-design/tinper-bee
   - http://bee.tinper.org/
   -  一套基于react.js和iuap design设计语言实现的前端组件库
+- resuite /MIT/4.4kstar/202007
+  - https://github.com/rsuite/rsuite
+  - https://rsuitejs.com/components/overview 
+  - a set of react component libraries for enterprise system products
+  - React Suite Design Prototype and specification is released
+- uiw /MIT/465Star/202007
+  - https://github.com/uiwjs/uiw
+  - https://uiwjs.github.io/#/components
+  - A Component Library for React 16+
+- reactivebase /201802/Apache2.0/18star
+  - https://github.com/appbaseio/reactivebase 
+  - deprecated
 - misc
   - https://github.com/Yoshino-UI/Yoshino
   - https://github.com/chuchur-china/kui-react
@@ -229,8 +253,6 @@ modified: '2020-06-22T09:24:13.546Z'
 - https://haltu.github.io/muuri
   - https://github.com/haltu/muuri
 - https://github.com/DanFessler/react-panelgroup
-
-  
 
 ### modal 弹出框
 

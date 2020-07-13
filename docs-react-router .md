@@ -1,6 +1,6 @@
 ---
-tags: [docs/react]
 title: docs-react-router
+tags: [docs/react]
 created: '2019-08-01T16:03:46.390Z'
 modified: '2020-06-30T12:40:22.711Z'
 ---
@@ -12,7 +12,7 @@ modified: '2020-06-30T12:40:22.711Z'
 ## dev-tips
 
 - how to programmatically navigate using react router v4
-	- 参考 https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
+	- https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
 	- In v4, for navigating programatically you need to access the history object, which is available through React context
 	- as long as you have a `<BrowserRouter>` provider component as the top most parent in your application. 
 	- The library exposes through context the router object, that itself contains history as a property. 

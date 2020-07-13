@@ -1,6 +1,6 @@
 ---
-tags: [linkedin, toc]
 title: toc-linkedin-crreator
+tags: [linkedin, toc]
 created: '2020-02-16T14:30:18.987Z'
 modified: '2020-07-04T11:56:53.944Z'
 ---
@@ -10,6 +10,7 @@ modified: '2020-07-04T11:56:53.944Z'
 ## watchlist
 
 ## indie-dev
+
 - Dan Abramov
   - info: Co-author of Redux and Create React App
     - http://twitter.com/dan_abramov
@@ -29,6 +30,7 @@ modified: '2020-07-04T11:56:53.944Z'
     - Observable is the magic notebook for exploring data and thinking with code
     - https://observablehq.com/
     - https://github.com/observablehq
+
 - Tanner Linsley
   - info
     - https://twitter.com/tannerlinsley
@@ -40,6 +42,7 @@ modified: '2020-07-04T11:56:53.944Z'
     - Simple yet flexible js charting for designers & developers
     - https://www.chartjs.org/
     - https://github.com/chartjs/Chart.js
+
 - Chris Whong
   - info
     - https://twitter.com/chris_whong

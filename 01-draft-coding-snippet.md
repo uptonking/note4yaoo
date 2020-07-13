@@ -1,13 +1,15 @@
 ---
 title: 01-draft-coding-snippet
-tags: [coding]
+tags: [coding, draft]
 created: '2019-09-04T03:02:06.457Z'
-modified: '2020-07-12T13:10:56.143Z'
+modified: '2020-07-13T02:34:08.228Z'
 ---
 
 # 01-draft-coding-snippet
 
-
+``` JS
+// js
+```
 
 - react-jquery(plugins)-dom-ref
 

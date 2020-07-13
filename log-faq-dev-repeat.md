@@ -1,11 +1,16 @@
 ---
-tags: [dev, faq, repeat]
 title: log-faq-dev-repeat
+tags: [dev, faq, repeat]
 created: '2019-08-01T16:03:46.394Z'
 modified: '2020-07-09T13:24:25.794Z'
 ---
 
 # log-faq-dev-repeat
+
+## not-yet
+
+- Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
+- 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
 
 ## 使用js时要不要用class? Please stop using classes in JavaScript
 

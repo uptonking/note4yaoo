@@ -1,11 +1,13 @@
 ---
-tags: [products, toc]
-title: toc-software-explore
+title: toc-lib-exploring-catalog
+tags: [lib, toc]
 created: '2020-05-03T08:34:20.399Z'
-modified: '2020-06-22T09:24:25.550Z'
+modified: '2020-07-13T03:00:14.997Z'
 ---
 
-# toc-software-explore
+# toc-lib-exploring-catalog
+
+## collection
 
 ## explore
 

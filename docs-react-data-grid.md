@@ -6,5 +6,3 @@ modified: '2020-07-12T13:00:06.974Z'
 ---
 
 # docs-react-data-grid
-
-

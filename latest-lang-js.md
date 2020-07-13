@@ -1,6 +1,6 @@
 ---
-tags: [js, latest/js]
 title: latest-lang-js
+tags: [js, latest/js]
 created: '2019-10-15T12:20:05.196Z'
 modified: '2020-06-30T12:34:13.374Z'
 ---
@@ -30,8 +30,8 @@ modified: '2020-06-30T12:34:13.374Z'
   - example
 
 ``` js
-  import * as Foo from './foo';             // namespace import
-  import { bar, bar2, bar3 } from './foo';  // named import
+  import * as Foo from './foo'; // namespace import
+  import { bar, bar2, bar3 } from './foo'; // named import
 ```
 
   - with a modern webpack setup, the two will generate the same compiled/transpiled JS

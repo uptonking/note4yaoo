@@ -2,7 +2,7 @@
 title: toc-lib-list-table-grid-sheet
 tags: [list, table, toc]
 created: '2020-07-12T13:01:37.487Z'
-modified: '2020-07-12T19:05:02.815Z'
+modified: '2020-07-13T02:41:12.041Z'
 ---
 
 # toc-lib-list-table-grid-sheet
@@ -12,7 +12,10 @@ modified: '2020-07-12T19:05:02.815Z'
 - ag-grid /MIT/6.4kStar/202006
   - https://github.com/ag-grid/ag-grid
   - http://www.ag-grid.com/
-  - Data Grid/Table supporting JS/React/Angular/Web Components
+  - a fully-featured and highly customizable JavaScript data grid
+    - delivers outstanding performance 
+    - has no 3rd party dependencies 
+    - integrates smoothly with all major JavaScript frameworks
   - ag-grid-enterprise are Commercial licensed
 - react-table /MIT/11.6kStar/202007
   - https://github.com/tannerlinsley/react-table
@@ -26,6 +29,10 @@ modified: '2020-07-12T19:05:02.815Z'
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
   - React components for efficiently rendering large lists and tabular data
+- react-virtual /MIT/1.1kStar/202007
+  - https://github.com/tannerlinsley/react-virtual
+  - https://codesandbox.io/s/github/tannerlinsley/react-virtual/tree/master/examples/dynamic
+  - Hooks for virtualizing scrollable elements in React
 - react-window /MIT/8.5kStar/202001
   - https://github.com/bvaughn/react-window
   - https://react-window.now.sh/
@@ -45,6 +52,7 @@ modified: '2020-07-12T19:05:02.815Z'
   - a JavaScript/HTML5 data grid with spreadsheet look & feel.
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - since 7.0 free for all non-commercial purposes
+  - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
 - react-datasheet /MIT/4.2kStar/202005
   - https://github.com/nadbm/react-datasheet
   - https://nadbm.github.io/react-datasheet/
@@ -112,6 +120,8 @@ modified: '2020-07-12T19:05:02.815Z'
 - datatable /MIT/467Star/202004
   - https://github.com/frappe/datatable
   - https://frappe.io/datatable
+  - A simple, modern and interactive datatable for the web
+  - based on hyperlist1.0, sortablejs1.7
 - canvas-datagrid /BSD/636Star/202006
   - https://github.com/TonyGermaneri/canvas-datagrid
   - https://tonygermaneri.github.io/canvas-datagrid/tutorials/demo.html
@@ -157,6 +167,21 @@ modified: '2020-07-12T19:05:02.815Z'
   - https://github.com/davidalekna/use-table-tools
   - https://github.com/davidalekna/react-data-browser
   - Hooks for building kickass react table components
+- Simple-DataTables /LGPLv3/
+  - https://github.com/fiduswriter/Simple-DataTables
+  - https://fiduswriter.github.io/Simple-DataTables/
+  - A lightweight, extendable, dependency-free javascript HTML table plugin. 
+  - Similar to jQuery DataTables, but without the jQuery dependency.
+  - https://github.com/Mobius1/Vanilla-DataTables /NotMaintained/MIT
+- react-smart-data-table /MIT/46Star/202006
+  - https://github.com/joaocarmo/react-smart-data-table
+  - https://joaocarmo.com/react-smart-data-table/examples/bootstrap/
+  - A smart data table component for React.js meant to be configuration free
+  - https://github.com/joaocarmo/react-very-simple-data-table
+- tabler-react /MIT/1.4kStar/202005
+  - https://github.com/tabler/tabler-react
+  - http://tabler-react.com/
+  - React implementation of the Tabler Dashboard UI Kit
 
 ## grid-layout
 
@@ -169,26 +194,12 @@ modified: '2020-07-12T19:05:02.815Z'
   - https://medium.com/@kitson.mac/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6
   - Drag and drop (DnD) UI layout builder using React and ImmutableJS
 
-## pivot
+## commercial
 
-- react-pivot /MIT/955Star/202006 
-  - https://github.com/davidguttman/react-pivot
-  - http://davidguttman.github.io/react-pivot/
-  - a data-grid component with pivot-table-like functionality for data display, filtering
-- react-pivottable /MIT/629Star/202006
-  - https://github.com/plotly/react-pivottable
-  - https://react-pivottable.js.org/
-  - React-based drag'n'drop pivot table with Plotly.js charts
-- PivotHelper /Apache2.0/19Star/202007
-  - https://github.com/BjoernKW/PivotHelper
-  - https://bjoernkw.github.io/PivotHelper/
-  - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.
-
-## olap
-
-- raw /Apache2.0/6.8kStar
-  - https://github.com/rawgraphs/raw
-  - The missing link between spreadsheets and data visualization
+- https://www.fancygrid.com/
+- https://www.grapecity.com/spreadjs
+- https://devexpress.github.io/devextreme-reactive/react/grid/  /free-for-Non-Commercial
+- https://dhtmlx.com/ /GPL
 
 ## misc 
 
@@ -196,20 +207,147 @@ modified: '2020-07-12T19:05:02.815Z'
   - https://github.com/Handsoncode/JSpreadsheets.com
 - https://jsgrids.io/
   - https://github.com/statico/jsgrids
+- https://github.com/FancyGrid/awesome-grid
 - sheetjs /Apache2.0/21.9kStar/202006
   - https://github.com/SheetJS/sheetjs
   - https://sheetjs.com/
   - SheetJS Community Edition - Spreadsheet Data Toolkit
 - gridstudio  AGPL3.0/7.8kStar/202006/backend-go-python
   - https://github.com/ricklamers/gridstudio
-  - https://gridstudio.io/a high-performance, spreadsheet-like calculation engine for web applications
+  - https://gridstudio.io/
+  - a high-performance, spreadsheet-like calculation engine for web applications
   - a web-based application for data science with full integration of open source data science frameworks and languages.
-- https://github.com/Mobius1/Vanilla-DataTables
 - https://github.com/appbaseio/reactivesearch
 - https://github.com/clauderic/react-sortable-hoc
   - A set of higher-order components to turn any list into an animated, accessible and touch-friendly sortable list
 - https://github.com/juijs/jui-grid
 - https://github.com/vaadin/vaadin-grid 
 - https://github.com/vaadin/spreadsheet /CVALv3/44Star/202003
+- https://github.com/mukuljainx/smart-grid
 - https://github.com/handsontable/hyperformula
   - a high-performance, spreadsheet-like calculation engine for web applications
+- https://github.com/unosquare/tubular-react
+  - a Material-UI table (or data grid) with local or remote data-source
+- axui-datagrid /MIT/122Star/201912
+  - https://github.com/jsdevkr/axui-datagrid
+  - https://axui-datagrid.jsdev.kr/introduction
+  - DataGrid, DataSheet for React
+
+## list实现分类
+
+- js libraries of list/table/spreadsheet/grid
+
+- ### 基于table, tr, td
+  - handsontable-6.2.2 /201812/MIT/12Kstar
+      - https://github.com/handsontable/handsontable/tree/6.2.2
+      - https://handsontable.com/docs/6.2.2/tutorial-features.html  
+      - 依赖numbro,moment,pikaday 
+  - jexcel /201907/MIT/2100star
+      - https://github.com/paulhodel/jexcel
+      - https://bossanova.uk/jexcel/v3/examples/react
+      - 依赖jsuites，是vanilla js
+  - rc-table /201907/MIT/510star
+      - https://github.com/react-component/table
+      - http://react-component.github.io/table/examples/styled-components.html#
+      - 依赖react，mini-store，component-classes，lodash  
+  - react-datasheet /201905/MIT/3600star
+      - https://github.com/nadbm/react-datasheet
+      - https://nadbm.github.io/react-datasheet/
+      - 依赖react
+  - reactabular /201901/MIT/860star
+      - https://github.com/reactabular/reactabular
+      - https://reactabular.js.org/#/examples/crud
+      - 依赖react   
+  - reactable /201611/MIT/1500star  
+      - https://github.com/glittershark/reactable
+      - http://glittershark.github.io/reactable/
+      - 依赖react,table,data-tables
+  - Griddle /201907/MIT/2400star
+      - http://github.com/griddlegriddle/Griddle
+      - http://griddlegriddle.github.io/Griddle/
+      - 依赖react，lodash，redux，reselect，recompose
+
+- ### 基于div
+  - react-table /201907/MIT/6300star
+      - https://github.com/tannerlinsley/react-table/tree/v6.9.2
+      - https://codesandbox.io/s/m5lxzzpz69
+      - 依赖react，classnames    
+  - react-spreadsheet-grid /201805/MIT/879star
+      - https://github.com/denisraslov/react-spreadsheet-grid
+      - https://denisraslov.github.io/grid/
+      - 依赖react,lodash    
+  - react-data-grid /201907/MIT/3400star
+      - https://github.com/adazzle/react-data-grid
+      - https://adazzle.github.io/react-data-grid/docs/examples/simple-grid
+      - 依赖react,typescript,classnames,immutable,react-is,tslib
+      - 项目模块化，分为core和addons
+  - react-virtualized /201907/MIT/16Kstar
+      - https://github.com/bvaughn/react-virtualized
+      - https://bvaughn.github.io/react-virtualized/#/components/Grid
+      - 依赖react, dom-helpers, clsx
+  - react-tiny-virtual-list /201807/MIT/1600star
+      - https://github.com/clauderic/react-tiny-virtual-list/
+      - https://clauderic.github.io/react-tiny-virtual-list/
+      - 依赖react,typescript
+  - fixed-data-table-2 /201906/BSD/940star
+      - https://github.com/schrodinger/fixed-data-table-2
+      - http://schrodinger.github.io/fixed-data-table-2/example-resize.html
+      - 依赖react
+  - rsuite-table /201907/MIT/210star
+      - https://github.com/rsuite/rsuite-table
+      - http://rsuite.github.io/rsuite-table/
+      - 依赖react，dom-lib
+  - React-Spreadsheet-Component /201811/MIT/610star
+      - https://github.com/felixrieseberg/React-Spreadsheet-Component
+      - http://felixrieseberg.github.io/React-Spreadsheet-Component/
+      - 依赖react,jquery,mousetrap   
+  - react-list /201905/MIT/1600star
+      - https://github.com/coderiety/react-list
+      - https://coderiety.github.io/react-list/
+      - 依赖react
+      - 丑
+  - SlickGrid /201907/MIT/1100star
+      - https://github.com/6pac/SlickGrid
+      - http://slickgrid.net/
+      - http://6pac.github.io/SlickGrid/examples/example4-model.html
+      - 依赖jQuery,jQueryUI
+  - WickedGrid /201611/MIT/570star
+      - https://github.com/Spreadsheets/WickedGrid		
+      - http://spreadsheets.github.io/WickedGrid/
+      - 依赖jquery
+
+- ### 基于canvas
+  - x-spreadsheet /201907/MIT/6527star
+      - https://github.com/myliang/x-spreadsheet
+      - https://myliang.github.io/x-spreadsheet
+      - 依赖无
+
+- ### 其他list    
+  - js-xlsx Community Edition /201907/Apache2.0/17Kstar
+      - https://github.com/SheetJS/js-xlsx
+      - https://oss.sheetjs.com/
+      - 依赖cfb(Compound File Binary File Format extractor),ssf  
+      - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
+  - react-pivot 
+      - https://github.com/davidguttman/react-pivot
+      - http://davidguttman.github.io/react-pivot/
+      - 依赖react,reactify,dataframe,xtend
+      - 基于 td
+  - ag-grid-community /201907/MIT/5400star
+      - https://github.com/ag-grid/ag-grid
+      - https://www.ag-grid.com/example.php#/
+      - 依赖无
+      - 基于div，模块化
+  - FancyGrid /201907/commercial/120star
+      - https://github.com/FancyGrid/FancyGrid
+      - https://fancygrid.com/tutorials/getting-started/filtering
+      - 依赖无
+      - 基于div
+  - 更多库
+      - https://github.com/FancyGrid/awesome-grid
+      - https://github.com/TonyGermaneri/canvas-datagrid
+          - /201906/BSD/470star
+      - https://github.com/stevelacy/react-datagrid2 
+          - /201903/MIT/20star
+      - https://github.com/iddan/react-spreadsheet 
+          - /201907/MIT/130star

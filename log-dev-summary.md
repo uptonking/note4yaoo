@@ -1,6 +1,6 @@
 ---
-tags: [log/dev]
 title: log-dev-summary
+tags: [log/dev]
 created: '2019-04-22T03:42:22.447Z'
 modified: '2020-07-11T05:18:36.871Z'
 ---
@@ -102,81 +102,6 @@ modified: '2020-07-11T05:18:36.871Z'
     - It's the same concern as low-level vs high-level API.I've generally survived with being pretty restrictive for high-level components, but save myself some effort by having a handful (not many, Box & Text only usually) of low-level components that are more permissive.Users would only ever use high-level components, and have the surety they won't 'break' rules due to a restrictive styling API.
 - ref
     - https://spectrum.chat/styled-system/general/opinion-do-you-prefer-more-strict-or-more-flexible-base-components~c1299d13-241d-41ec-882a-5051e8420822
-
-## 开源协议 Open Source License
-
-### 总结
-
-- 修改后可闭源
-    - Apache2.0，BSD，MIT
-- 修改后必须同样许可
-    - GPL
-
-### Apache Licence 2.0
-
-- 允许代码修改、再发布
-- 需要给代码的用户一份Apache Licence
-- 如果你修改了代码，需要再被修改的文件中说明。
-- 在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
-- 如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。
-- 是对商业应用友好的许可
-
-### GPL (General Public License)
-
-- you have to release source code if you link against and distribute the binary, but don't if you just provide a service
-- GPL的出发点是代码的开源/免费使用和引用/修改/衍生代码的开源/免费使用，但不允许修改后和衍生的代码做为闭源的商业软件发布和销售
-- GPL规定：只要这种修改文本在整体上或者其某个部分来源于遵循GPL的程序，该修改文本的 整体就必须按照GPL流通，不仅该修改文本的源码必须向社会公开，而且对于这种修改文本的流通不准许附加修改者自己作出的限制。因此，一项遵循GPL流通的程序不能同非自由的软件合并。
-- 任何一套软件，只要其中使用了受GPL协议保护的第三方软件的源程序，并向非开发人员发布时，软件本身也就自动成为受GPL保护并且约束的实体。也就是说，此时它必须开放源代码。
-- 你可以去掉所有原作的版权信息，只要你保持开源，并且随源代码、二进制版附上GPL的许可证就行
-- 无论软件以何种形式发布，都必须同时附上源代码。例如在Web上提供下载，就必须在二进制版本下载的同一个页面提供源码下载，如果以光盘形式发布，就必须同时附上源码
-- 开发或维护遵循 GPL 协议开发的软件的公司或个人，可以对使用者收取一定的服务费用
-- GPL只是规定用户在获取你的程序的时候必须可以获得源代码，但并没有规定必须免费
-- 如果你的确需要发布你的程序，但又不想开源，规避 GPL 的方法是通过 LPC 或者 RPC 间接调用库里的接口。只要库和你的程序不运行在同一进程下，就不需要开源
-
-### LGPL (Lesser GPL)
-
-- you can link against and don't have to release source code as long as you don't modify the library itself
-- LGPL是GPL的一个为主要为类库使用设计的开源协议
-- LGPL允许商业软件通过类库引用(link)方式使用LGPL类库而不需要开源商业软件的代码。这使得采用LGPL协议的开源代码可以被商业软件作为类库引用并发布和销售。
-- 如果修改LGPL协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用LGPL协议。因此LGPL协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以LGPL协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。
-- 采用LGPL的代码，一般情况下它本身就是一个第三方库，这时候开发人员仅仅用到了它的功能，而没有对库本身进行任何修改，那么开发人员也不必公布自己的商业源代码。但是如果你修改了这个库的代码，那么你修改的代码必须全部开源，并且协议也是LGPL，但除了库源码之外的商业代码，仍不必公布
-
-### AGPL (Affero General Public License)
-
--  you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
-- GPL（2.x ~ 3.x） 协议还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。如果软件不发布，即使使用 GPL (2.x ~ 3.x) 也可以不用开源。随着以Google为代表的软件作为服务的互联网公司的兴起，它们的“不分发软件，为客户提供网络服务”的商业模式就不受GPL协议的约束
-- AGPL = GPL + 一条限制
-- 一条限制：如果使用AGPL许可的软件与用户通过网络进行交互，也需要提供源代码给用户，所有的修改也要给用户
-
-### BSD
-
-- 可以自由的使用，修改源代码，也可以将修改后的代码作为开源或者专有软件再发布
-- 如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。
-- 如果再发布的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。
-- 不可以用开源代码的作者/机构名字和原来产品的名字做市场推广
-
-### MIT
-
-- 和BSD一样宽范的许可协议, 你必须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的
-- 被授权人有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软体及软体的副本。
-- 被授权人可根据程式的需要修改授权条款为适当的内容。
-- 在软件和软件的所有副本中都必须包含版权声明和许可声明
-- 甚至可以用原作者名字来推广
-
-### MPL (Mozilla Public License)
-
-- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。但是，在MPL 许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
-- MPL许可证第三条第7款中允许被许可人将经过MPL许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
-- 要求源代码的提供者不能提供已经受专利保护的源代码
-- 要求所有再发布者都得有一个专门的文件就对源代码程序修改的时间和修改的方式有描述
-- MPL第二版与Apache许可证以及GPL第二版或更新、LGPL2.1版或更新，及AGPL第三版或更新兼容。而1.1版因为有“一些复杂的限制”造成与GPL的不兼容（从而阻止升级到MPL 2.0）
-
-### EPL
-
-- Eclipse Public License 1.0
-    - 允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布
-    - 当一个Contributors将源码的整体或部分再次开源发布的时候,必须继续遵循EPL开源协议来发布,而不能改用其他协议发布
-    - 商业软件可以使用，也可以修改EPL协议的代码，但要承担代码产生的侵权责任
 
 ## 动态链接库 dll
 

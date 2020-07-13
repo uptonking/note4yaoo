@@ -1,6 +1,6 @@
 ---
-tags: [lang/js]
 title: lang-js
+tags: [lang/js]
 created: '2019-06-09T05:36:13.734Z'
 modified: '2020-07-10T02:33:03.696Z'
 ---
@@ -12,12 +12,13 @@ modified: '2020-07-10T02:33:03.696Z'
 - all in js as frontend
 
 ## js guide
+
 - js vm bytecode
 - https://github.com/airbnb/javascript
 
 ## faq
 
-- new Date() vs performance.timing
+- `new Date()` vs `performance.timing`
   - Navigation Timing API gives us a more accurate measure  
 - eval vs template literals
   - template literals are parsed at compile time
@@ -42,9 +43,9 @@ modified: '2020-07-10T02:33:03.696Z'
   - 实例分析
 
 ``` js
-      var a = {n:1};
-      a.x = a = {n:2};   // a.x指向之前的地址是因为.运算符优先于=赋值运算符
-      console.log(a.x);  // 输出undefined 
+      var a = { n: 1 };
+      a.x = a = { n: 2 }; // a.x指向之前的地址是因为.运算符优先于=赋值运算符
+      console.log(a.x); // 输出undefined 
 ```
 
     1. 在执行前，会先将a和a.x中的a的引用地址都取出来，此值他们都指向{n:1}
@@ -361,9 +362,9 @@ Point === Point.prototype.constructor // true
       - 可以获取所有的键值，包括不可枚举的属性
 - js执行原理
   - 浏览器（或者说JS引擎）执行JS的机制是基于事件循环
-      - 由于JS是单线程，所以同一时间只能执行一个任务，其他任务就得排队，后续任务必须等到前一个任务结束才能开始执行
-      - Node的事件循环和浏览器的略有差异
-      - 有一个事件循环，但是任务队列可以有多个，整个script代码放在了macrotask queue中，setTimeout也放入macrotask queue，但promise.then放到了另一个任务队列microtask queue中
+    - 由于JS是单线程，所以同一时间只能执行一个任务，其他任务就得排队，后续任务必须等到前一个任务结束才能开始执行
+    - Node的事件循环和浏览器的略有差异
+    - 有一个事件循环，但是任务队列可以有多个，整个script代码放在了macrotask queue中，setTimeout也放入macrotask queue，但promise.then放到了另一个任务队列microtask queue中
   - 为了避免因为某些长时间任务造成的无意义等待，JS 引入了异步的概念，用另一个线程来管理异步任务
   - 同步任务直接在主线程队列中顺序执行，而异步任务会进入另一个任务队列，不会阻塞主线程。等到主线程队列空了（执行完了）的时候，就会去异步队列查询是否有可执行的异步任务了（异步任务通常进入异步队列之后还要等一些条件才能执行，如ajax请求、文件读写），如果某个异步任务可以执行了便加入主线程队列，以此循环
   - JS的定时器目前有三个：setTimeout、setInterval和setImmediate。定时器也是一种异步任务，浏览器通常有一个独立的定时器模块，定时器的延迟时间就由定时器模块来管理，当某个定时器到了可执行状态，就会被加入主线程队列
@@ -436,9 +437,7 @@ Point === Point.prototype.constructor // true
   - 能读取函数内部的变量
   - 应用场景
       - 保护函数内的变量安全：如迭代器、生成器
-
-  　　- 在内存中维持变量：如果缓存数据、柯里化
-
+      - 在内存中维持变量：如果缓存数据、柯里化
   - 闭包的特点很鲜明，闭包内，变量无法释放，无法被直接访问；闭包可以被延迟执行
 
 - 函数中的this
@@ -550,7 +549,6 @@ Point === Point.prototype.constructor // true
         last = curr
       }
     }
-
   }
 ```
 
@@ -578,14 +576,15 @@ Point === Point.prototype.constructor // true
   - 前端资源模块化管理和打包工具  
   - 通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等
   - 4个核心概念
-    - entry：webpack创建应用程序所有依赖的关系图(dependency graph)，图的起点被称之为入口起点(entry point)。入口起点告诉 webpack 从哪里开始，并根据依赖关系图确定需要打包的内容。可以将应用程序的入口起点认为是根上下文(contextual root) 或 app 第一个启动文件。
+    - entry：webpack创建应用程序所有依赖的关系图(dependency graph)，图的起点被称之为入口起点(entry point)。
+      - 入口起点告诉webpack从哪里开始，并根据依赖关系图确定需要打包的内容。
+      - 可以将应用程序的入口起点认为是根上下文(contextual root)或app第一个启动文件。
     - output：告诉 webpack 在哪里打包应用程序，webpack 的 output 属性描述了如何处理归拢在一起的代码(bundled code)。  
-
-    通过 output.filename 和 output.path 属性，来告诉 webpack bundle 的名称，以及我们想要生成(emit)到哪里。
-
-    - loader：loader用于对模块的源代码进行转换，loader可以使你在 import 或"加载"模块时预处理文件，定义 loader 时，要定义在 module.rules 中，loader 有两个目标         
-        - test: 识别出(identify)应该被对应的 loader 进行转换(transform)的那些文件 
-        - use: 转换这些文件，从而使其能够被添加到依赖图中（并且最终添加到 bundle 中）
+      - 通过 output.filename 和 output.path 属性，来告诉 webpack bundle 的名称，以及我们想要生成(emit)到哪里。
+    - loader：loader用于对模块的源代码进行转换
+      - loader可以使你在import或"加载"模块时预处理文件，定义loader时，要定义在 module.rules 中，loader 有两个目标         
+      - test: 识别出(identify)应该被对应的 loader 进行转换(transform)的那些文件 
+      - use: 转换这些文件，从而使其能够被添加到依赖图中（并且最终添加到 bundle 中）
     - plugins：插件目的在于解决loader无法实现的其他功能  
 - js模块化 CommonJS、AMD、UMD  
   - CommonJS NodeJS  
@@ -634,8 +633,6 @@ define(['jquery'], function($) { return myFunc; });
 - js自执行函数  
   - 因为JavaScript里括号()里面不能包含语句，用括号将函数括住，解析器在解析function关键字的时候，会将相应的代码解析成function表达式，而不是function声明。
 
-  
-
 ``` js
   // 下面2个括弧()都会立即执行
   (function() { /* code */ }()); // 推荐使用这个  
@@ -682,142 +679,6 @@ define(['jquery'], function($) { return myFunc; });
   - 强调只从this.props和this.state生成HTML，所以非常的functional programming
   - 脱离了Flux，在解决大规模UI的问题上React本身并没有拿出比MVVM更优的方案
   - 而结合Flux看的话，MVVM上也可以用Flux的思想，MVVM框架如果加上合适的优化，并不会比React慢，比如Vue的track by
-
-### react-list
-
-- js libraries of list/table/spreadsheet/grid
-- 基于table, tr, td
-  - handsontable-6.2.2 /201812/MIT/12Kstar
-      - https://github.com/handsontable/handsontable/tree/6.2.2
-      - https://handsontable.com/docs/6.2.2/tutorial-features.html  
-      - 依赖numbro,moment,pikaday 
-  - jexcel /201907/MIT/2100star
-      - https://github.com/paulhodel/jexcel
-      - https://bossanova.uk/jexcel/v3/examples/react
-      - 依赖jsuites，是vanilla js
-  - rc-table /201907/MIT/510star
-      - https://github.com/react-component/table
-      - http://react-component.github.io/table/examples/styled-components.html#
-      - 依赖react，mini-store，component-classes，lodash  
-  - react-datasheet /201905/MIT/3600star
-      - https://github.com/nadbm/react-datasheet
-      - https://nadbm.github.io/react-datasheet/
-      - 依赖react
-  - reactabular /201901/MIT/860star
-      - https://github.com/reactabular/reactabular
-      - https://reactabular.js.org/#/examples/crud
-      - 依赖react   
-  - reactable /201611/MIT/1500star  
-      - https://github.com/glittershark/reactable
-      - http://glittershark.github.io/reactable/
-      - 依赖react,table,data-tables
-  - Griddle /201907/MIT/2400star
-      - http://github.com/griddlegriddle/Griddle
-      - http://griddlegriddle.github.io/Griddle/
-      - 依赖react，lodash，redux，reselect，recompose
-- 基于div
-  - react-table /201907/MIT/6300star
-      - https://github.com/tannerlinsley/react-table/tree/v6.9.2
-      - https://codesandbox.io/s/m5lxzzpz69
-      - 依赖react，classnames    
-  - react-spreadsheet-grid /201805/MIT/879star
-      - https://github.com/denisraslov/react-spreadsheet-grid
-      - https://denisraslov.github.io/grid/
-      - 依赖react,lodash    
-  - react-data-grid /201907/MIT/3400star
-      - https://github.com/adazzle/react-data-grid
-      - https://adazzle.github.io/react-data-grid/docs/examples/simple-grid
-      - 依赖react,typescript,classnames,immutable,react-is,tslib
-      - 项目模块化，分为core和addons
-  - react-virtualized /201907/MIT/16Kstar
-      - https://github.com/bvaughn/react-virtualized
-      - https://bvaughn.github.io/react-virtualized/#/components/Grid
-      - 依赖react, dom-helpers, clsx
-  - react-tiny-virtual-list /201807/MIT/1600star
-      - https://github.com/clauderic/react-tiny-virtual-list/
-      - https://clauderic.github.io/react-tiny-virtual-list/
-      - 依赖react,typescript
-  - fixed-data-table-2 /201906/BSD/940star
-      - https://github.com/schrodinger/fixed-data-table-2
-      - http://schrodinger.github.io/fixed-data-table-2/example-resize.html
-      - 依赖react
-  - rsuite-table /201907/MIT/210star
-      - https://github.com/rsuite/rsuite-table
-      - http://rsuite.github.io/rsuite-table/
-      - 依赖react，dom-lib
-  - React-Spreadsheet-Component /201811/MIT/610star
-      - https://github.com/felixrieseberg/React-Spreadsheet-Component
-      - http://felixrieseberg.github.io/React-Spreadsheet-Component/
-      - 依赖react,jquery,mousetrap   
-  - react-list /201905/MIT/1600star
-      - https://github.com/coderiety/react-list
-      - https://coderiety.github.io/react-list/
-      - 依赖react
-      - 丑
-  - SlickGrid /201907/MIT/1100star
-      - https://github.com/6pac/SlickGrid
-      - http://slickgrid.net/
-      - http://6pac.github.io/SlickGrid/examples/example4-model.html
-      - 依赖jQuery,jQueryUI
-  - WickedGrid /201611/MIT/570star
-      - https://github.com/Spreadsheets/WickedGrid		
-      - http://spreadsheets.github.io/WickedGrid/
-      - 依赖jquery
-- 基于canvas
-  - x-spreadsheet /201907/MIT/6527star
-      - https://github.com/myliang/x-spreadsheet
-      - https://myliang.github.io/x-spreadsheet
-      - 依赖无
-- 其他list    
-  - js-xlsx Community Edition /201907/Apache2.0/17Kstar
-      - https://github.com/SheetJS/js-xlsx
-      - https://oss.sheetjs.com/
-      - 依赖cfb(Compound File Binary File Format extractor),ssf  
-      - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
-  - react-pivot 
-      - https://github.com/davidguttman/react-pivot
-      - http://davidguttman.github.io/react-pivot/
-      - 依赖react,reactify,dataframe,xtend
-      - 基于 td
-  - ag-grid-community /201907/MIT/5400star
-      - https://github.com/ag-grid/ag-grid
-      - https://www.ag-grid.com/example.php#/
-      - 依赖无
-      - 基于div，模块化
-  - FancyGrid /201907/commercial/120star
-      - https://github.com/FancyGrid/FancyGrid
-      - https://fancygrid.com/tutorials/getting-started/filtering
-      - 依赖无
-      - 基于div
-  - 更多库
-      - https://github.com/FancyGrid/awesome-grid
-      - https://github.com/TonyGermaneri/canvas-datagrid
-          - /201906/BSD/470star
-      - https://github.com/stevelacy/react-datagrid2 
-          - /201903/MIT/20star
-      - https://github.com/iddan/react-spreadsheet 
-          - /201907/MIT/130star
-
-### ui library
-
-### element-react 
-
-- github status: /201907/MIT/2200star
-- https://github.com/ElemeFE/element-react
-- 依赖react, react-transition-group, classnames, popper.js, requestAnimationFrame(raf) polyfill, async-validator(Validate form asynchronous.)
-- table基于td
-
-### 其他ui库
-
-- resuite /201907/MIT/2800star
-  - https://github.com/rsuite/rsuite
-  - https://rsuitejs.com/components/overview 
-- uiw
-  - https://gitee.com/uiw/uiw
-  - https://uiw.gitee.io/#/components
-- reactivebase /201802/Apache2.0/18star
-  - https://github.com/appbaseio/reactivebase 
-  - deprecated
 
 ## 样式处理
 
@@ -912,46 +773,18 @@ const Header = (props) => {
 - 90%的应用场景都不需要WebAssembly
   - https://www.infoq.cn/article/ytxfUWloi2wi00cQY-8a
   - js问题
-      - 语法太灵活导致开发大型项目困难
-      - 性能不能满足一些场景的需要
+    - 语法太灵活导致开发大型项目困难
+    - 性能不能满足一些场景的需要
   - TypeScript是JavaScript的一个严格超集，并添加了可选的静态类型和使用看起来像基于类的面向对象编程语法操作Prototype，TypeScript最终仍然是被编译成JavaScript在浏览器中执行
   - 在2008年，Google推出了JavaScript引擎V8，首次通过JIT技术提升JavaScript的执行速度，并且它真的做到了
-      - Web应用中，性能瓶颈大部分的原因已经不在JavaScript，而在于DOM。浏览器中通常会把DOM 和JavaScript独立实现，这两个模块相互访问的时候，都是通过接口访问。由于JavaScript单线程的特性，这种访问只能是单工的
-      - 为了减少js访问dom的次数，可以使用Virtual Dom，Web Worker 
-      - JIT执行时，可以根据代码编译进行优化，代码运行时，不需要每次都翻译成二进制汇编代码，V8就是这样优化JavaScript性能的
+    - Web应用中，性能瓶颈大部分的原因已经不在JavaScript，而在于DOM。浏览器中通常会把DOM 和JavaScript独立实现，这两个模块相互访问的时候，都是通过接口访问。由于JavaScript单线程的特性，这种访问只能是单工的
+    - 为了减少js访问dom的次数，可以使用Virtual Dom，Web Worker 
+    - JIT执行时，可以根据代码编译进行优化，代码运行时，不需要每次都翻译成二进制汇编代码，V8就是这样优化JavaScript性能的
   - 为了进一步提升JIT优化效率，Mozilla 推出了asm.js。asm.js也是强类型的JavaScript，但是他的语法则是JavaScript的子集，是为了JIT性能优化而专门打造的，其他大厂都觉得asm.js的思路不错，于是联合起来共建WebAssembly生态
   - WebAssembly是一份字节码标准，以字节码的形式依赖虚拟机在浏览器中运行，可以依赖Emscripten等编译器将C++/Golang/Rust/Kotlin等强类型语言编译成为WebAssembly字节码.wasm 文件。
-      - WebAssembly并不是Assembly（汇编），它只是看起来像汇编
+    - WebAssembly并不是Assembly（汇编），它只是看起来像汇编
   - 鉴于V8的强大性能，90%的应用场景下你不需要WebAssembly
   - 如何提高JS代码性能
-      - 声明变量时提供默认类型，加快JIT介入
-      - 不要轻易改变变量的类型
-      - Node.js像Java一样也存在JIT预热？
-
-## game
-
-- 主流游戏开发引擎
-  - Unity3D-免费不开源
-  - Unreal Engine 4-开源但只能学习不能再次分发
-- common
-  - https://github.com/libgdx/libgdx -  Apache 2
-    - 基于gwt，放弃
-  - https://github.com/cocos2d/cocos2d-x - MIT
-    - cocos2d-js不如-x好用
-  - https://github.com/pixijs/pixi.js - MIT
-  - https://github.com/photonstorm/phaser - MIT
-    - 从性能到底层api的易用和强大
-    - 没有做模块拆分，tween,particles等全在一个包中，release的min版本大概在2M，egret在700K左右
-    - Phaser 2一直采用开源的Pixi2版本作为2D渲染引擎，在Phaser3中已放弃Pixi
-    - Phaser 3.0.0 is released on 20180213.
-  - https://github.com/godotengine/godot - MIT
-
-- misc
-  - https://github.com/nicolodavis/boardgame.io - MIT    
-  - https://github.com/FormidableLabs/react-game-kit - MIT
-  - https://github.com/deck-of-cards/deck-of-cards - MIT
-  - https://github.com/layabox/layaair 
-    - 引擎全部开源并且全部免费使用，包括商用
-  - https://github.com/hiloteam/Hilo - MIT，阿里h5游戏解决方案，有申请专利
-  - https://github.com/egret-labs/egret-core - BSD
-    - 使用Typescript
+    - 声明变量时提供默认类型，加快JIT介入
+    - 不要轻易改变变量的类型
+    - Node.js像Java一样也存在JIT预热？

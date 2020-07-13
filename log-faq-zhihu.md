@@ -1,5 +1,5 @@
 ---
-tags: [faq]
+tags: [faq, wiki]
 title: log-faq-zhihu
 created: '2020-02-03T14:15:02.412Z'
 modified: '2020-06-22T08:12:34.293Z'

@@ -1,6 +1,6 @@
 ---
-tags: [lang/python]
 title: lang-python
+tags: [lang/python]
 created: '2019-06-09T05:36:34.221Z'
 modified: '2020-07-07T08:10:42.079Z'
 ---
@@ -27,8 +27,6 @@ modified: '2020-07-07T08:10:42.079Z'
     - PyCodeObject对象包含了源码中的字符串、常量值以及通过语法解析后编译生成的字节码指令
   - demo.py被编译后，接下来就由Python解释器来执行字节码指令了
   - Python解释器会从编译得到的PyCodeObject对象中依次读入每一条字节码指令，并在当前的上下文环境中执行这条字节码指令
-
-  
 
 - 解释器
 - gc

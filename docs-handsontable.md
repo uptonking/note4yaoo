@@ -1,6 +1,6 @@
 ---
-tags: [changelog, docs/handsontable]
 title: docs-handsontable
+tags: [changelog, docs/handsontable]
 created: '2019-08-01T16:03:46.386Z'
 modified: '2020-07-10T02:32:14.667Z'
 ---
@@ -15,13 +15,26 @@ modified: '2020-07-10T02:32:14.667Z'
   - Handsontable by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden.
   - If there are no height and width settings passed in the configuration, the table will vertically and horizontally fill the entire window (again, or any parent element with defined dimensions and overflow: hidden).
   - you can change the size dynamically any time after the initialization by using the updateSettings code to update the dimensions.
-  - 参考 https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable
+  - ref
+    - https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable
 
 ## faq
 
 - **Walkontable** is the return value of many methods but not mentioned in the docs
   - Walkontable is for internal use only. 
   - It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
+  - Walkontable table renderer was refactored on 20190705.
+    - This change introduces new files and code structures, which makes table rendering easier to maintain. 
+    - In this approach, every TABLE element which can hold children is rendered separately by an individual unit called internally `OrderView` . 
+    - A specialized renderer wraps each unit.
+    - This change helps us to implement an EcoRendering idea
+- What is eco-rendering
+  - This issue is about implementing a new feature internally called as `EcoRenderers` . 
+  - The idea of this is to increasing Handsontable performance by re-rendering cells only when their value has changed. 
+  - I assume that after implementing this feature issues related to scroll performance or refresh table lag after cell edit should recede
+  - ref
+    - https://github.com/handsontable/handsontable/issues/5769
+    - https://github.com/handsontable/handsontable/pull/6089
 - Currently the best way to style Handsontable is to use custom renderers.
 - Links/click events from custom renderers not working 
 
