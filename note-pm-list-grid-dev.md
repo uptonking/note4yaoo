@@ -9,6 +9,148 @@ modified: '2020-07-14T13:05:46.032Z'
 
 ## usage
 
+``` JS
+// demo for ag-grid
+// two essential configuration properties of the grid - the column definitions (columnDefs) and the data (rowData).
+import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columnDefs: [
+        { headerName: "Make", field: "make" },
+        { headerName: "Model", field: "model" },
+        { headerName: "Price", field: "price" }
+      ],
+      rowData: [
+        { make: "Toyota", model: "Celica", price: 35000 },
+        { make: "Ford", model: "Mondeo", price: 32000 },
+        { make: "Porsche", model: "Boxter", price: 72000 }
+      ]
+    }
+  }
+
+  render() {
+    return (
+      <div className="ag-theme-alpine" style={ {height: '200px', width: '600px'} }>
+        <AgGridReact
+            columnDefs={this.state.columnDefs}
+            rowData={this.state.rowData}>
+        </AgGridReact>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
+```
+
+``` JS
+// demo for react-virtualized
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Grid } from 'react-virtualized';
+
+// Grid data as an array of arrays
+const list = [
+  ['Brian Vaughn', 'Software Engineer', 'San Jose', 'CA', 95125],
+  // And so on...
+];
+
+function cellRenderer({ columnIndex, key, rowIndex, style }) {
+  return (
+    <div key={key} style={style}>
+      {list[rowIndex][columnIndex]}
+    </div>
+  );
+}
+// Render your grid
+ReactDOM.render(
+  <Grid
+    cellRenderer={cellRenderer}
+    columnCount={list[0].length}
+    columnWidth={100}
+    height={300}
+    rowCount={list.length}
+    rowHeight={30}
+    width={300}
+  />,
+  document.getElementById('example'),
+);
+```
+
+``` JS
+// demo for react-window
+import { FixedSizeList as List, FixedSizeGrid as Grid } from 'react-window';
+
+const Row = ({ index, style }) => (
+  <div style={style}>Row {index}</div>
+);
+
+const Example = () => (
+  <List
+    height={150}
+    itemCount={1000}
+    itemSize={35}
+    width={300}
+  >
+    {Row}
+  </List>
+);
+
+const Cell = ({ columnIndex, rowIndex, style }) => (
+  <div style={style}>
+    Item {rowIndex},{columnIndex}
+  </div>
+);
+
+const Example = () => (
+  <Grid
+    columnCount={1000}
+    columnWidth={100}
+    height={150}
+    rowCount={1000}
+    rowHeight={35}
+    width={300}
+  >
+    {Cell}
+  </Grid>
+);
+```
+
+``` JS
+// demo for handsontable
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HotTable } from '@handsontable/react';
+import Handsontable from 'handsontable';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handsontableData = Handsontable.helper.createSpreadsheetData(6, 10);
+  }
+
+  render() {
+    return (
+      <div>
+        <HotTable
+          id="hot"
+          data={this.handsontableData}
+          colHeaders={true}
+          rowHeaders={true}
+          />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('example1'));
+```
+
 ## api
 
 ## summary

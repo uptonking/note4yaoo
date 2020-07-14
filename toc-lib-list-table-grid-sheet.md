@@ -12,6 +12,7 @@ modified: '2020-07-13T02:41:12.041Z'
 - ag-grid /MIT/6.4kStar/202006
   - https://github.com/ag-grid/ag-grid
   - http://www.ag-grid.com/
+  - https://www.ag-grid.com/react-grid/
   - a fully-featured and highly customizable JavaScript data grid
     - delivers outstanding performance 
     - has no 3rd party dependencies 
@@ -28,6 +29,7 @@ modified: '2020-07-13T02:41:12.041Z'
 - react-virtualized /MIT/19.5kStar/202006
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
+  - https://github.com/bvaughn/react-virtualized/blob/master/docs/Grid.md
   - React components for efficiently rendering large lists and tabular data
 - react-virtual /MIT/1.1kStar/202007
   - https://github.com/tannerlinsley/react-virtual
@@ -51,6 +53,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://handsontable.com/
   - a JavaScript/HTML5 data grid with spreadsheet look & feel.
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
+  - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
   - since 7.0 free for all non-commercial purposes
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
 - react-datasheet /MIT/4.2kStar/202005
@@ -208,6 +211,9 @@ modified: '2020-07-13T02:41:12.041Z'
 - https://jsgrids.io/
   - https://github.com/statico/jsgrids
 - https://github.com/FancyGrid/awesome-grid
+- https://amitmy.github.io/grids/
+  - https://github.com/AmitMY/grids
+  - A grid comparison
 - sheetjs /Apache2.0/21.9kStar/202006
   - https://github.com/SheetJS/sheetjs
   - https://sheetjs.com/
@@ -233,7 +239,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://axui-datagrid.jsdev.kr/introduction
   - DataGrid, DataSheet for React
 
-## list实现分类
+## list实现原理的分类
 
 - js libraries of list/table/spreadsheet/grid
 
@@ -344,10 +350,10 @@ modified: '2020-07-13T02:41:12.041Z'
       - 依赖无
       - 基于div
   - 更多库
-      - https://github.com/FancyGrid/awesome-grid
-      - https://github.com/TonyGermaneri/canvas-datagrid
-          - /201906/BSD/470star
-      - https://github.com/stevelacy/react-datagrid2 
-          - /201903/MIT/20star
-      - https://github.com/iddan/react-spreadsheet 
-          - /201907/MIT/130star
+    - https://github.com/FancyGrid/awesome-grid
+    - https://github.com/TonyGermaneri/canvas-datagrid
+        - /201906/BSD/470star
+    - https://github.com/stevelacy/react-datagrid2 
+        - /201903/MIT/20star
+    - https://github.com/iddan/react-spreadsheet 
+        - /201907/MIT/130star
