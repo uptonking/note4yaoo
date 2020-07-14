@@ -1,8 +1,8 @@
 ---
-tags: [dom, web]
 title: note-web-dom
+tags: [dom, web]
 created: '2019-08-01T16:03:46.398Z'
-modified: '2020-07-10T02:39:51.729Z'
+modified: '2020-07-14T11:57:20.469Z'
 ---
 
 # note-web-dom
@@ -33,7 +33,7 @@ modified: '2020-07-10T02:39:51.729Z'
   - type
     - submit: button submits the form data to the server. This is the default if the attribute is not specified, 
     - button: button has no default behavior and does nothing when pressed. It can have client-side scripts associated with the element's events, which are triggered when the events occur.
-    - reset: resets all the controls to their initial values, like <input type="reset">.
+    - reset: resets all the controls to their initial values, like `<input type="reset">`.
 - table标签
   - tbody标签主要定义一段表格主体（正文），使用tbody标签，可以将表格分为一个单独的部分，tbody标签可将表格中的一行或几行合成一组
   - tbody包含行的内容下载完优先显示，不必等待表格结束

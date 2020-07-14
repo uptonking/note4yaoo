@@ -1,11 +1,11 @@
 ---
-title: note-react-dev
+title: note-react-blog-page
 tags: [blog, dev, react]
 created: '2020-06-29T08:43:56.344Z'
-modified: '2020-07-14T10:50:37.764Z'
+modified: '2020-07-14T11:51:59.253Z'
 ---
 
-# note-react-dev
+# note-react-blog-page
 
 ## When to useMemo and useCallback
 

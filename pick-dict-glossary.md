@@ -2,7 +2,7 @@
 title: pick-dict-glossary
 tags: [glossary, pick]
 created: '2019-09-02T04:34:22.505Z'
-modified: '2020-07-14T11:41:33.064Z'
+modified: '2020-07-14T12:01:33.686Z'
 ---
 
 # pick-dict-glossary

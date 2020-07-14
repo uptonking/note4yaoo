@@ -1,8 +1,8 @@
 ---
-tags: [react, rewrite]
 title: note-react-redux-rewrite
+tags: [react, redux, rewrite]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-01T06:09:16.202Z'
+modified: '2020-07-14T11:59:44.894Z'
 ---
 
 # note-react-redux-rewrite

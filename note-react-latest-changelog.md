@@ -1,8 +1,8 @@
 ---
-tags: [changelog, react]
 title: note-react-latest-changelog
+tags: [changelog, react]
 created: '2020-06-23T05:49:13.941Z'
-modified: '2020-06-30T08:41:27.194Z'
+modified: '2020-07-14T11:54:44.711Z'
 ---
 
 # note-react-latest-changelog

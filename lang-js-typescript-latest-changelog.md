@@ -1,11 +1,11 @@
 ---
-title: lang-js-typescript-changelog
+title: lang-js-typescript-latest-changelog
 tags: [changelog, lang, typescript]
 created: '2020-07-14T02:36:53.471Z'
-modified: '2020-07-14T09:27:12.330Z'
+modified: '2020-07-14T12:06:37.292Z'
 ---
 
-# lang-js-typescript-changelog
+# lang-js-typescript-latest-changelog
 
 ## guide
 

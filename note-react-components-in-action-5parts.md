@@ -1,8 +1,8 @@
 ---
 title: note-react-components-in-action-5parts
-tags: [copied, react]
+tags: [copied, optimization, react]
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-07-14T10:50:13.286Z'
+modified: '2020-07-14T11:58:20.058Z'
 ---
 
 # note-react-components-in-action-5parts

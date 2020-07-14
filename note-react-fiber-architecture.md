@@ -1,8 +1,8 @@
 ---
 title: note-react-fiber-architecture
-tags: [blog, react]
+tags: [react]
 created: '2020-06-27T05:10:19.958Z'
-modified: '2020-07-14T10:50:45.815Z'
+modified: '2020-07-14T11:58:47.593Z'
 ---
 
 # note-react-fiber-architecture

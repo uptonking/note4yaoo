@@ -1,8 +1,8 @@
 ---
 title: note-react-in-action
-tags: [blog, react]
+tags: [dev, react]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-14T10:50:58.238Z'
+modified: '2020-07-14T11:59:09.463Z'
 ---
 
 # note-react-in-action

@@ -1,11 +1,11 @@
 ---
-title: note-product-text-editor-pm
+title: note-pm-text-editor
 tags: [editor, pm, product]
 created: '2020-07-13T13:50:42.498Z'
-modified: '2020-07-14T10:38:09.936Z'
+modified: '2020-07-14T13:06:34.729Z'
 ---
 
-# note-product-text-editor-pm
+# note-pm-text-editor
 
 ## 编辑器开发体验
 

@@ -1,11 +1,11 @@
 ---
-title: note-product-list-table-dev
-tags: [dev, list, product, table]
+title: note-pm-list-grid-dev
+tags: [dev, grid, list, product, table]
 created: '2020-07-13T13:34:22.833Z'
-modified: '2020-07-14T10:37:54.277Z'
+modified: '2020-07-14T13:05:46.032Z'
 ---
 
-# note-product-list-table-dev
+# note-pm-list-grid-dev
 
 ## usage
 

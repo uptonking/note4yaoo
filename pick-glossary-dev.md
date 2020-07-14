@@ -2,7 +2,7 @@
 title: pick-glossary-dev
 tags: [glossary, pick]
 created: '2020-07-14T11:39:11.610Z'
-modified: '2020-07-14T11:40:00.737Z'
+modified: '2020-07-14T12:02:32.704Z'
 ---
 
 # pick-glossary-dev

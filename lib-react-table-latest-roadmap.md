@@ -1,11 +1,11 @@
 ---
-title: lib-react-table-roadmap
+title: lib-react-table-latest-roadmap
 tags: [react-table, roadmap]
 created: '2020-07-14T06:59:25.968Z'
-modified: '2020-07-14T06:59:49.885Z'
+modified: '2020-07-14T12:07:15.486Z'
 ---
 
-# lib-react-table-roadmap
+# lib-react-table-latest-roadmap
 
 ## work-in-progress
 

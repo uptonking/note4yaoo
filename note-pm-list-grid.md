@@ -1,11 +1,11 @@
 ---
-title: note-product-list-table-pm
-tags: [list, pm, product, table]
+title: note-pm-list-grid
+tags: [grid, list, pm, product, table]
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-07-14T10:38:05.987Z'
+modified: '2020-07-14T13:06:26.826Z'
 ---
 
-# note-product-list-table-pm
+# note-pm-list-grid
 
 - A handy/efficient data table to pivot your data
 

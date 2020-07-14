@@ -1,8 +1,8 @@
 ---
-tags: [browser, web]
 title: note-web-browser-engine
+tags: [browser, web, webkit]
 created: '2020-06-27T08:19:22.900Z'
-modified: '2020-06-28T16:47:42.223Z'
+modified: '2020-07-14T12:01:16.533Z'
 ---
 
 # note-web-browser-engine
@@ -39,10 +39,6 @@ modified: '2020-06-28T16:47:42.223Z'
 - 目前的edge，这三样大概就是edgeHTML, chakra，和win32 API包括mfc wpf这一套东西
 - Firefox的html引擎是gecko，js是spidermonkey，GUI是XUL, XUL是一个基于各平台得底层api开发的一个高层的跨平台的图形界面框架，所以还有好些软件是用XUL来做自己的界面。而且XUL和gecko spidermonkey耦合的挺深，要用基本上就都要用。
 
-## Chrome
-
-- chrome各版本特性
-  - https://www.chromestatus.com/features
 
 ## Firefox
 

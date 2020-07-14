@@ -1,11 +1,11 @@
 ---
-title: note-product-editor-for-markdown-dev
+title: note-pm-editor-for-markdown-dev
 tags: [dev, editor, markdown, product]
 created: '2020-07-13T13:39:04.621Z'
-modified: '2020-07-14T10:21:23.376Z'
+modified: '2020-07-14T13:05:58.060Z'
 ---
 
-# note-product-editor-for-markdown-dev
+# note-pm-editor-for-markdown-dev
 
 ## usage
 

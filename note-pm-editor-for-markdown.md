@@ -1,11 +1,11 @@
 ---
-title: note-product-editor-for-markdown-pm
+title: note-pm-editor-for-markdown
 tags: [editor, markdown, pm, product]
 created: '2019-08-22T03:45:48.886Z'
-modified: '2020-07-14T10:37:29.226Z'
+modified: '2020-07-14T13:06:18.368Z'
 ---
 
-# note-product-editor-for-markdown-pm
+# note-pm-editor-for-markdown
 
 ## tips
 
