@@ -1,8 +1,8 @@
 ---
-tags: [react, roadmap, state]
 title: note-recoil-latest-roadmap
+tags: [react, recoil, roadmap, state]
 created: '2020-07-06T03:26:56.138Z'
-modified: '2020-07-06T03:27:22.317Z'
+modified: '2020-07-14T10:39:53.555Z'
 ---
 
 # note-recoil-latest-roadmap

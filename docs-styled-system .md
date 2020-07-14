@@ -1,9 +1,9 @@
 ---
-favorited: true
-tags: [docs, style, ux, web]
 title: docs-styled-system
+tags: [css-in-js, docs, style, web]
+favorited: true
 created: '2019-12-17T03:13:59.953Z'
-modified: '2020-06-30T05:16:04.780Z'
+modified: '2020-07-14T11:27:52.248Z'
 ---
 
 # docs-styled-system
@@ -30,7 +30,7 @@ modified: '2020-06-30T05:16:04.780Z'
   - styles are abstracted away, sometimes it takes time to understand
   - one of the biggest appeals of styled-components is how easy & straightforward it makes "just writing CSS", without the need for a lot of abstraction to keep things maintainable.
   - ref
-      - https://spectrum.chat/styled-components/general/using-styled-system-vs-pure-styled-components~b9afb6f3-a675-4f97-bc78-66411292fab1
+    - https://spectrum.chat/styled-components/general/using-styled-system-vs-pure-styled-components~b9afb6f3-a675-4f97-bc78-66411292fab1
 - Three Tenets of Styled System
   - Style consistently with a global theme
       - Consistency is the bedrock of any constraint-based design.A hard-coded font size or color value in a code review is easy to smell, and developers naturally opt-in to keeping values stored in a globally shared theme object.

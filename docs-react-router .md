@@ -1,8 +1,8 @@
 ---
 title: docs-react-router
-tags: [docs/react]
+tags: [docs, react]
 created: '2019-08-01T16:03:46.390Z'
-modified: '2020-06-30T12:40:22.711Z'
+modified: '2020-07-14T09:23:38.988Z'
 ---
 
 # docs-react-router

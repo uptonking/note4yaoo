@@ -1,8 +1,8 @@
 ---
-tags: [log/weekly, yaoo]
 title: log-weekly
+tags: [latest, log, yaoo]
 created: '2019-06-17T01:29:37.793Z'
-modified: '2020-07-09T10:24:19.990Z'
+modified: '2020-07-14T09:30:54.711Z'
 ---
 
 # log-weekly

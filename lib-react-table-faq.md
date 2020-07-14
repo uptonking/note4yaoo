@@ -1,14 +1,14 @@
 ---
 title: lib-react-table-faq
-tags: [lib, list, react-table]
+tags: [faq, list, react-table]
 created: '2020-07-07T13:48:55.448Z'
-modified: '2020-07-13T02:33:43.941Z'
+modified: '2020-07-14T09:29:34.051Z'
 ---
 
 # lib-react-table-faq
 
 ## faq
-
+faq
 - How can I manually control the table state?
   - Occasionally, you may need to override some of the table state from a parent component or from somewhere above the usage of useTable. 
   - In this case, you can turn to `useTable` 's `useControlledState` option. 
@@ -34,8 +34,7 @@ modified: '2020-07-13T02:33:43.941Z'
   - For those situations, each plugin provides a way to disable the state from automatically resetting internally when data or other dependencies for a piece of state change. 
   - By setting any of them to false, you can stop the automatic resets from being triggered.
 
-  
-  ```js 
+```js 
  const [data, setData] = React.useState([])
  const skipPageResetRef = React.useRef()
  
@@ -53,7 +52,6 @@ modified: '2020-07-13T02:33:43.941Z'
  })
  
  useTable({
-   
    autoResetPage: !skipPageResetRef.current, 
    autoResetExpanded: !skipPageResetRef.current, 
    autoResetGroupBy: !skipPageResetRef.current, 
@@ -62,4 +60,15 @@ modified: '2020-07-13T02:33:43.941Z'
    autoResetFilters: !skipPageResetRef.current, 
    autoResetRowState: !skipPageResetRef.current, 
  })
-  ```
+```
+
+## faq-discussion
+
+- how to use React Router's `<Link />` to wrap a table row
+  - This is an HTML issue which requires `td` to be direct children of `tr`. 
+  - All other elements like `div` or `Link` should be inside `td`.
+  - But you want link the whole row. You can use the `onClick` prop on `tr` to achieve the same result. The catch is you have to use history api to manipulate your browser.
+- [Why this library so overcomplicated?](https://github.com/tannerlinsley/react-table/discussions/2147)
+  - Where v6 shipped with an opinionated UI on top of it, and buried more of the logic inside of its core, v7 instead, exposes that core logic and expects you to build your own UI on top of it.
+  - The architecture of incrementally adding hooks to the base useTable hook to extend its functionality is awesome and yes, is still a challenge with Typescript
+

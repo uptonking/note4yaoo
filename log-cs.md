@@ -1,8 +1,8 @@
 ---
-tags: [cs]
 title: log-cs
+tags: [cs, log]
 created: '2020-03-28T19:35:12.408Z'
-modified: '2020-06-30T12:42:57.640Z'
+modified: '2020-07-14T09:29:42.100Z'
 ---
 
 # log-cs

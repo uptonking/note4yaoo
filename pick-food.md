@@ -1,8 +1,8 @@
 ---
-tags: [wiki]
 title: pick-food
+tags: [food, pick, yaoo]
 created: '2020-06-08T11:42:15.449Z'
-modified: '2020-07-01T10:24:54.613Z'
+modified: '2020-07-14T10:54:23.345Z'
 ---
 
 # pick-food

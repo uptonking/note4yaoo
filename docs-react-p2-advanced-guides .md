@@ -1,9 +1,8 @@
 ---
-favorited: true
-tags: [docs, react]
 title: docs-react-p2-advanced-guides
+tags: [docs, react]
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-06-30T08:03:40.302Z'
+modified: '2020-07-14T11:27:32.700Z'
 ---
 
 # docs-react-p2-advanced-guides

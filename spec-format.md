@@ -1,8 +1,8 @@
 ---
-tags: [spec]
 title: spec-format
+tags: [format, spec]
 created: '2019-12-02T10:25:27.789Z'
-modified: '2020-06-22T09:22:13.771Z'
+modified: '2020-07-14T11:00:41.306Z'
 ---
 
 # spec-format

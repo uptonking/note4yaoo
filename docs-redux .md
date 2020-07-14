@@ -1,8 +1,8 @@
 ---
-tags: [docs/react, state]
 title: docs-redux
+tags: [docs, state]
 created: '2019-08-01T16:03:46.390Z'
-modified: '2020-07-04T18:01:53.073Z'
+modified: '2020-07-14T09:24:43.966Z'
 ---
 
 # docs-redux

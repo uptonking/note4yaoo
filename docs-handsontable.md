@@ -1,8 +1,8 @@
 ---
 title: docs-handsontable
-tags: [changelog, docs/handsontable]
+tags: [changelog, docs, list, table]
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-07-10T02:32:14.667Z'
+modified: '2020-07-14T10:22:06.873Z'
 ---
 
 # docs-handsontable

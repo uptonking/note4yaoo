@@ -1,8 +1,8 @@
 ---
-tags: [table, tool]
 title: tool-excel
+tags: [excel, table, tool]
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-06-22T09:25:21.515Z'
+modified: '2020-07-14T11:09:13.471Z'
 ---
 
 # tool-excel

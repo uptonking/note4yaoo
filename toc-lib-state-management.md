@@ -1,8 +1,8 @@
 ---
-tags: [state]
 title: toc-lib-state-management
+tags: [lib, state, toc]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-05T04:39:00.406Z'
+modified: '2020-07-14T11:03:53.196Z'
 ---
 
 # toc-lib-state-management

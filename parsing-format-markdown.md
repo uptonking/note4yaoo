@@ -1,9 +1,8 @@
 ---
-favorited: true
-tags: [format/markdown]
 title: parsing-format-markdown
+tags: [format, markdown]
 created: '2019-12-24T11:23:55.280Z'
-modified: '2020-06-22T09:18:11.400Z'
+modified: '2020-07-14T11:28:26.876Z'
 ---
 
 # parsing-format-markdown
@@ -78,6 +77,4 @@ and here
     - 侧边栏可折叠隐藏
   - math blocks
 
-## dev
 
-- 

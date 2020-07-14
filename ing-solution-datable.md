@@ -1,8 +1,8 @@
 ---
-tags: [pm, solution, table, yaoo]
 title: ing-solution-datable
+tags: [pm, solution, table]
 created: '2019-05-15T03:30:55.244Z'
-modified: '2020-07-03T10:09:06.349Z'
+modified: '2020-07-14T10:25:13.843Z'
 ---
 
 # ing-solution-datable
@@ -18,7 +18,6 @@ modified: '2020-07-03T10:09:06.349Z'
   - defaultViewMode/defaultEditMode
   - indentationSpace
 
-## ag-grid
 
 ## grape-trellis
 

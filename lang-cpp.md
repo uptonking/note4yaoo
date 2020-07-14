@@ -1,8 +1,8 @@
 ---
 title: lang-cpp
-tags: [lang/c++]
+tags: [cpp, lang]
 created: '2019-06-09T05:36:54.368Z'
-modified: '2020-07-07T08:09:16.024Z'
+modified: '2020-07-14T09:26:25.358Z'
 ---
 
 # lang-cpp

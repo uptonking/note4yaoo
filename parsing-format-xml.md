@@ -1,8 +1,8 @@
 ---
-tags: [format/xml]
 title: parsing-format-xml
+tags: [format, xml]
 created: '2019-12-24T12:58:13.163Z'
-modified: '2020-06-22T09:18:19.100Z'
+modified: '2020-07-14T10:53:07.686Z'
 ---
 
 # parsing-format-xml

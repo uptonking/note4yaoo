@@ -1,9 +1,8 @@
 ---
-favorited: true
-tags: [optimization, style, web]
 title: note-web-css
+tags: [css, optimization, style, web]
 created: '2019-12-17T04:23:15.125Z'
-modified: '2020-07-10T08:10:23.238Z'
+modified: '2020-07-14T11:27:22.474Z'
 ---
 
 # note-web-css

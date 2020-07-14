@@ -1,11 +1,11 @@
 ---
-tags: [living]
 title: view-aging
+tags: [view]
 created: '2019-11-23T06:36:02.498Z'
 modified: '2020-06-30T13:05:36.078Z'
 ---
 
-# veil-topic-aging
+# view-aging
 
 ## 老龄化概述
 

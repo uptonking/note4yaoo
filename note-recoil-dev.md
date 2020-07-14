@@ -1,8 +1,8 @@
 ---
-tags: [react, state]
 title: note-recoil-dev
+tags: [dev, react, recoil, state]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-06T03:25:42.784Z'
+modified: '2020-07-14T10:39:33.749Z'
 ---
 
 # note-recoil-dev

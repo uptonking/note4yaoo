@@ -1,8 +1,8 @@
 ---
 title: note-product-text-editor-pm
-tags: [editor, product]
+tags: [editor, pm, product]
 created: '2020-07-13T13:50:42.498Z'
-modified: '2020-07-13T13:54:55.572Z'
+modified: '2020-07-14T10:38:09.936Z'
 ---
 
 # note-product-text-editor-pm

@@ -1,8 +1,8 @@
 ---
-tags: [dev/mobile]
 title: note-dev-mobile
+tags: [dev, mobile]
 created: '2019-06-09T05:37:46.916Z'
-modified: '2020-06-28T01:51:05.930Z'
+modified: '2020-07-14T09:32:18.390Z'
 ---
 
 # note-dev-mobile

@@ -1,8 +1,8 @@
 ---
-tags: [dev]
 title: note-dev-hot-module-replacement
+tags: [dev, hmr, webpack]
 created: '2020-07-09T13:24:45.379Z'
-modified: '2020-07-09T13:35:03.567Z'
+modified: '2020-07-14T10:31:42.734Z'
 ---
 
 # note-dev-hot-module-replacement

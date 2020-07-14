@@ -1,8 +1,8 @@
 ---
-tags: [fonts, icon, lib, toc]
 title: toc-lib-icons-and-fonts
+tags: [fonts, icon, toc]
 created: '2019-09-14T03:30:03.478Z'
-modified: '2020-06-22T09:24:10.801Z'
+modified: '2020-07-14T11:03:22.097Z'
 ---
 
 # toc-lib-icons-and-fonts

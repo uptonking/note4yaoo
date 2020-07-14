@@ -1,8 +1,8 @@
 ---
 title: docs-react-table
-tags: [changelog, table]
+tags: [changelog, docs, list, react-table]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-12T09:27:19.147Z'
+modified: '2020-07-14T10:23:16.091Z'
 ---
 
 # docs-react-table

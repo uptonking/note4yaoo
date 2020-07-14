@@ -1,8 +1,8 @@
 ---
-tags: [format/json]
 title: parsing-format-json
+tags: [format, json]
 created: '2019-12-24T12:57:52.481Z'
-modified: '2020-06-22T09:18:02.247Z'
+modified: '2020-07-14T10:53:12.916Z'
 ---
 
 # parsing-format-json

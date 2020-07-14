@@ -1,8 +1,8 @@
 ---
 title: latest-lang-js
-tags: [js, latest/js]
+tags: [js, latest]
 created: '2019-10-15T12:20:05.196Z'
-modified: '2020-06-30T12:34:13.374Z'
+modified: '2020-07-14T09:27:51.314Z'
 ---
 
 # latest-lang-js

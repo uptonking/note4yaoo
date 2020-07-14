@@ -1,8 +1,8 @@
 ---
-tags: [changelog, react, state]
 title: note-recoil-latest-changelog
+tags: [changelog, react, recoil, state]
 created: '2020-07-06T03:26:13.606Z'
-modified: '2020-07-06T03:26:46.758Z'
+modified: '2020-07-14T10:39:49.095Z'
 ---
 
 # note-recoil-latest-changelog

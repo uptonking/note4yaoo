@@ -1,8 +1,8 @@
 ---
-tags: [style, web]
 title: note-web-style-attr
+tags: [css, style, web]
 created: '2019-10-09T01:32:01.391Z'
-modified: '2020-06-22T09:17:26.599Z'
+modified: '2020-07-14T10:48:18.073Z'
 ---
 
 # note-web-style-attr

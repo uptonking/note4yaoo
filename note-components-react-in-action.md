@@ -1,9 +1,9 @@
 ---
-favorited: true
-tags: [components, web]
 title: note-components-react-in-action
+tags: [components, web]
+favorited: true
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-06-29T03:06:46.372Z'
+modified: '2020-07-14T11:26:58.980Z'
 ---
 
 # note-components-react-in-action
@@ -11,7 +11,7 @@ modified: '2020-06-29T03:06:46.372Z'
 ## latest
 
 - 组件开发方向
-  - 跨框架开发ui组件库(stencil) https://zhuanlan.zhihu.com/p/41974042
+  - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
 
 ## back-garden-ui-in-action
 
@@ -40,7 +40,7 @@ modified: '2020-06-29T03:06:46.372Z'
 - dev-faq
   - 生成色板后，给各色值定义了类似blue900的名称，各组件如何使用相关颜色
     - 对于不需改变的或很少变化的颜色，直接写，对于用户可控制的颜色放到组件props中
-      - 不必像bulma-styled-components那样抽象出所有变量，如边框色、hover色、active色等
+    - 不必像bulma-styled-components那样抽象出所有变量，如边框色、hover色、active色等
 - styled-components
   - 多采用styled写法
   - 很少采用css prop写法
@@ -49,17 +49,17 @@ modified: '2020-06-29T03:06:46.372Z'
   - 更多用在底层基础组件，可以不必大量用在上层组件，如w-design 
 - theme
   - 推荐使用 `@styled-system/css` 的css方法，直接写theme.js主题对象中的值
-      - 使用 style object，而不是字符串DSL
-      - 优点是可以使用consistent的样式值，同时查看更直观，因为不是变量
-      - 缺点是引入了css方法的依赖，只支持style object形式的写法
+    - 使用style object，而不是字符串DSL
+    - 优点是可以使用consistent的样式值，同时查看更直观，因为不是变量
+    - 缺点是引入了css方法的依赖，只支持style object形式的写法
   - 通过props.theme.propName获取样式值，一般很冗长，且查看不直观
-      - w-design,looker
+    - w-design,looker
   - 自己封装类似themeGet()方法取值，使用方法取值可避免对props.theme的ts类型检查
-      - flame
-      - https://twitter.com/iamsapegin/status/1136317690149330944
-      - themeGet是封装类似style prop function的教程
+    - flame
+    - https://twitter.com/iamsapegin/status/1136317690149330944
+    - themeGet是封装类似style prop function的教程
   - 直接import theme.js然后使用
-      - smores-react,everblue-ui
+    - smores-react,everblue-ui
 - 组件形式
   - 多采用function component( + hooks)
   - 仍以class组件为主的：zent, rsuite, uiw, typeui   
@@ -73,62 +73,62 @@ modified: '2020-06-29T03:06:46.372Z'
   - 很少采用style object的写法: minerva-ui
   - 静态样式可以使用className，若要使用theme中的样式值则用内联的写法更好
   - 尽可能拆分组件而不是分离样式，也可以类似Card.tsx, Card.style.tsx分离复杂样式
-      - grommet将样式写在StyledButton，然后Button使用了它，主题样式值冗长
-      - w-design,knack-ux,Amsterdam-s-c
+    - grommet将样式写在StyledButton，然后Button使用了它，主题样式值冗长
+    - w-design,knack-ux,Amsterdam-s-c
 - defaultProps默认值的写法  
   - 推荐: 直接在函数的参数处指定，如 `const C = function(p1='1',p2...){}`
-      - polaris-react,om,kenobi,knitui,smores-react,axiomatic
-      - flame,w-design
-      - 为避免实参对象每次render都重新创建，可考虑在函数外创建复杂对象再赋值到内部
+    - polaris-react,om,kenobi,knitui,smores-react,axiomatic
+    - flame,w-design
+    - 为避免实参对象每次render都重新创建，可考虑在函数外创建复杂对象再赋值到内部
   - 在组件定义之外指定，如 `Button.defaultProps={}` , to be deprecated
-      - eact-atomicus，Amsterdam-s-c,cactus,everblue-ui
-      - flame，looker,prestyled,priceline,primer,pulse
+    - react-atomicus，Amsterdam-s-c,cactus,everblue-ui
+    - flame，looker,prestyled,priceline,primer,pulse
   - 参数写props，方法体中 `const {p1='1',p2=false,...restProps}=props;`
-      - w-design,eui,minerva-ui,xl-vision,knitui,snake-design      
+    - w-design,eui,minerva-ui,xl-vision,knitui,snake-design      
   - ref作为单独的参数，方便forwardRef
-      - polaris-react，react-ui-components，snake-design,xl-vision
-      - knitui,flame
+    - polaris-react，react-ui-components，snake-design,xl-vision
+    - knitui,flame
   - props中**可分离**出去的参数
-      - ref, children, className, theme
+    - ref, children, className, theme
 - 使用Box作为基础组件
   - chakra-ui, falme, w-design, rbx, rebass, axiomatic, marozzo-ui, prestyled
 - 使用Flex组件
   - flame, w-design    
 - 组件结构写法
   - 分类采用atom+molecule+organism
-      - primer-core-concepts,axiomatic,react-components,pulse
+    - primer-core-concepts,axiomatic,react-components,pulse
   - 一组参数采用variant属性控制，如type, size，不建议使用variant作为属性名
   - 在render方法中，调用renderComp()来生成子元素
 - design-tokens作为单独的库
   - flame-tokens:text, color, spacing, border, shadow, transition
-      - 使用了pxToRem
-      - baseTheme对象放在token包，variant对象放在component
+    - 使用了pxToRem
+    - baseTheme对象放在token包，variant对象放在component
   - looker：theme.js放在token包
   - mineral-ui
 - test
   - flame：Button.test.tsx, Button.stories.tsx, README.md
   - w-design: `__snapshots__` 文件夹，所有组件文档放在一起放在单独项目
-      - 基于@mdx-js/loader
+    - 基于@mdx-js/loader
   - looker: `__snapshots__` 文件夹和Button.test.tsx，文档单独项目
-      - 基于gatsby和gatsby-plugin-mdx
+    - 基于gatsby和gatsby-plugin-mdx
   - cactus: Button.test.tsx, Button.storybook.tsx, Button.mdx + gatsby
   - snake-design： `__tests__` 文件夹，所有组件文档放在一起放在单独项目
-      - 基于markdown-it
+    - 基于markdown-it
   - kenobi:tests文件夹，stories文件夹 + docz
 - documentation
   - storybook+mdx
-      - storybook缺少实时编辑实时显示的功能，可配合使用react-live
-      - stories的顺序，顶层目录的顺序，修改不够灵活
+    - storybook缺少实时编辑实时显示的功能，可配合使用react-live
+    - stories的顺序，顶层目录的顺序，修改不够灵活
   - docz, styleguidist
   - snake-design: 基于markdown-it自定义babel-loader处理md文件的逻辑
   - 基于md的文档里面的组件很难注释掉(现已有非正式标准)，不方便快速切换显示隐藏组件
   - 需求是编写组件文档的mdx后，既可以在storybook里面使用，也可在单独项目使用
-      - 同一个mdx，若不修改，很难在sb和单独项目同时渲染正常，import路径有问题
-      - 推荐：以sb正常显示csf story为主，若要在单独项目中使用，可通过手动读取代码并修改import路径来调整，考虑到Button.stories.mdx中依赖story组件太多
-      - 在单独的项目中使用类似Button.docs.mdx时，可统一修改 `import Button from './Button';` 的导入路径
-      - 文档中代码过多时，可将代码放在单独mdx文件或文件夹中，提高可读性(zent,rbx)
+    - 同一个mdx，若不修改，很难在sb和单独项目同时渲染正常，import路径有问题
+    - 推荐：以sb正常显示csf story为主，若要在单独项目中使用，可通过手动读取代码并修改import路径来调整，考虑到Button.stories.mdx中依赖story组件太多
+    - 在单独的项目中使用类似Button.docs.mdx时，可统一修改 `import Button from './Button';` 的导入路径
+    - 文档中代码过多时，可将代码放在单独mdx文件或文件夹中，提高可读性(zent,rbx)
   - 文档要考虑**国际化**，直接使用storybook很难实现多语言，参考ant-design, zent
-      - 推荐自己实现文档网站，可控度最高，体验最好，难点包括多语言、多版本
+    - 推荐自己实现文档网站，可控度最高，体验最好，难点包括多语言、多版本
 - 将需要的组件或功能是放在单独的folder，还是单独的package，还是单独的project
   - 个人项目开发采用monorepo，多个project需要更多的时间精力
   - 分类不同的组件或功能放在不同folder，如Box，Modal
@@ -374,7 +374,8 @@ modified: '2020-06-29T03:06:46.372Z'
   - countdown
   - qrcode
 - misc
-  - jumbotron：extend the entire viewport to showcase key content
+  - jumbotron
+    - extend the entire viewport to showcase key content
   - hero component:image preloading fade-in effect, a semi-transparent color overlay 
   - embeddable-widget
   - color-palette
@@ -386,12 +387,14 @@ modified: '2020-06-29T03:06:46.372Z'
 - connected/联系第三方应用的组件
   - douban-movie-card
   - github
-      - repo-card
-      - made-with-love
+    - repo-card
+    - made-with-love
   - sharing-to-weibo/wx/twitter/datalking
   - unsplash-image-card
 - dataset
   - TopN
-  - AlphabeticalMenu：类似win10开始菜单的首字母排序
+  - AlphabeticalMenu
+    - 类似win10开始菜单的首字母排序
 - entertainment
-  - AnimationPlayer: 类似视频播放器，点击播放动画，动画元素主要是图标，播放效果类似视频
+  - AnimationPlayer
+    - 类似视频播放器，点击播放动画，动画元素主要是图标，播放效果类似视频

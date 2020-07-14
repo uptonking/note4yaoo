@@ -1,8 +1,8 @@
 ---
-tags: [electron]
 title: note-electron-dev
+tags: [dev, electron]
 created: '2020-05-18T09:49:23.005Z'
-modified: '2020-07-07T15:27:01.207Z'
+modified: '2020-07-14T09:33:06.170Z'
 ---
 
 # note-electron-dev

@@ -1,8 +1,8 @@
 ---
-tags: [solution, note]
 title: ing-solution-noter
+tags: [note, pm, solution]
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-06-30T05:13:25.510Z'
+modified: '2020-07-14T10:24:54.328Z'
 ---
 
 # ing-solution-noter

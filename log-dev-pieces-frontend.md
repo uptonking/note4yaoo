@@ -1,15 +1,18 @@
 ---
-attachments: [hello.txt]
-tags: [log/dev]
 title: log-dev-pieces-frontend
+tags: [dev, frontend, log]
+pinned: true
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-07-09T13:35:09.566Z'
+modified: '2020-07-14T10:35:32.752Z'
 ---
 
 # log-dev-pieces-frontend
 
 ## logging
 
+- 前端兼容性处理 caniuse 
+  - 3大pc浏览器：chrome、firefox、safari
+  - mobile浏览器：3大pc对应的3大移动，Android, UC，Samsung，QQ Browser 
 - 副作用就是和本职无关的东西，函数的本职是接收参数，并返回值，多次同参调用都是确定的。
   - 举几个前端里的副作用例子：调接口获取数据、注册监听函数、手动操作DOM、 访问修改全局变量、打印log，使用 setTimeout 等
 - console对象

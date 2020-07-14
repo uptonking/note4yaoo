@@ -1,8 +1,8 @@
 ---
-tags: [format/geo]
 title: parsing-format-geo
+tags: [format, geo]
 created: '2019-12-24T12:58:14.641Z'
-modified: '2020-06-22T09:17:59.254Z'
+modified: '2020-07-14T10:52:31.323Z'
 ---
 
 # parsing-format-geo

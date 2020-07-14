@@ -1,11 +1,13 @@
 ---
 title: lib-react-table-dev
-tags: [lib, react-table]
+tags: [lib, list, react-table]
 created: '2020-07-13T02:29:20.525Z'
-modified: '2020-07-13T02:30:56.457Z'
+modified: '2020-07-14T10:27:12.335Z'
 ---
 
 # lib-react-table-dev
+
+## guide
 
 ## pieces
 

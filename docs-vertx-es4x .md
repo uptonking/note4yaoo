@@ -1,8 +1,8 @@
 ---
-tags: [java]
 title: docs-vertx-es4x
+tags: [docs, java]
 created: '2020-01-10T12:55:33.206Z'
-modified: '2020-06-30T12:42:15.032Z'
+modified: '2020-07-14T09:25:28.216Z'
 ---
 
 # docs-vertx-es4x

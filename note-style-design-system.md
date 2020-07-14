@@ -1,9 +1,9 @@
 ---
-favorited: true
-tags: [style, ui]
 title: note-style-design-system
+tags: [design-system, style, ui]
+favorited: true
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-06-30T12:52:53.658Z'
+modified: '2020-07-14T11:30:06.332Z'
 ---
 
 # note-style-design-system
@@ -16,7 +16,7 @@ modified: '2020-06-30T12:52:53.658Z'
   - A secondary color provides more ways to distinguish your product.
     - secondary color is optional, and should be applied sparingly 
     - If you don’t have a secondary color, your primary color can also be used to accent elements.
-  - Secondary colors are best for:
+  - Secondary colors are best for
     - Links and headlines
     - Highlighting selected text
     - Selection controls, like sliders and switches
@@ -33,33 +33,33 @@ modified: '2020-06-30T12:52:53.658Z'
 - 组件交互的states设计
   - hover：加深所有背景色，如antd变浅，material-ui变深, material-io变色
   - active：上边框添加内部阴影，颜色更深，模拟按下效果
-      - antd使用的是外圈波纹，material-ui使用的是内部点击处波纹
-      - 点击过程中的状态是 `:active:focus`
+    - antd使用的是外圈波纹，material-ui使用的是内部点击处波纹
+    - 点击过程中的状态是 `:active:focus`
   - focus：外圈添加阴影，颜色很浅(同hue)
-      - 点击结束后的状态是 `:focus` ，结束后bg颜色就是点击前的颜色，但有外圈阴影
-      - focus可用于多数键盘导航的元素，注意一致性，而hover和active仅用于交互类元素
+    - 点击结束后的状态是 `:focus` ，结束后bg颜色就是点击前的颜色，但有外圈阴影
+    - focus可用于多数键盘导航的元素，注意一致性，而hover和active仅用于交互类元素
   - disabled：降低不透明度
   - misc
-      - mineral-ui交互过程：hover变浅，active变深，focus不变，也能表达变化感
-      - 想要突出某些状态，还可以使用图标、文字、动画如震动
+    - mineral-ui交互过程：hover变浅，active变深，focus不变，也能表达变化感
+    - 想要突出某些状态，还可以使用图标、文字、动画如震动
 - design-tokens的创建
   - 抽象design tokens到json文件，然后基于theo自动生成样式到web或移动端格式
-      - theo研发不活跃
+    - theo研发不活跃
 - 渐变色的使用建议(个人)
   - 创建component library时尽量用palette里面的色阶，不用渐变色，可预留渐变色api
   - 基于组件库创建业务页面或主题时，可使用gradient colors增强设计感
 - 颜色使用建议(个人)
   - 颜色模式使用HSB，而不是HSL
-      - 设计类软件大多使用HSB模式，如PS,Sketch
-      - 部分软件HSL的hue最大值为255，如wps,inkscape
-      - HSB可与HSL计算转换，不用纠结
+    - 设计类软件大多使用HSB模式，如PS,Sketch
+    - 部分软件HSL的hue最大值为255，如wps,inkscape
+    - HSB可与HSL计算转换，不用纠结
 - Foundational elements, like color, are hard to change later
 - theme-paid
   - 优点
-      - 设计感强，可参考text,color,spacing,border,shadow,transition
+    - 设计感强，可参考text,color,spacing,border,shadow,transition
   - 缺点
-      - 依赖多，修改与定制难度大
-      - 与业务结合不紧密
+    - 依赖多，修改与定制难度大
+    - 与业务结合不紧密
 - green-as-primary
   - https://medium.com/
   - https://avocode.com/open-sketch-on-linux

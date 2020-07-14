@@ -1,8 +1,8 @@
 ---
-tags: [tool/iot]
 title: tool-iot
+tags: [iot, tool]
 created: '2019-08-11T07:36:17.519Z'
-modified: '2020-06-22T09:25:26.602Z'
+modified: '2020-07-14T11:19:07.949Z'
 ---
 
 # tool-iot

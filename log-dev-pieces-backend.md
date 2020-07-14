@@ -1,8 +1,8 @@
 ---
-tags: [log/dev]
 title: log-dev-pieces-backend
+tags: [backend, dev, log]
 created: '2020-02-20T10:56:13.810Z'
-modified: '2020-06-30T12:43:10.980Z'
+modified: '2020-07-14T09:29:55.789Z'
 ---
 
 # log-dev-pieces-backend

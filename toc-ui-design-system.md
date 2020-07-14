@@ -1,9 +1,8 @@
 ---
-favorited: true
-tags: [components, toc, ui]
 title: toc-ui-design-system
+tags: [components, design-system, toc, ui]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-06-22T09:25:10.670Z'
+modified: '2020-07-14T11:25:55.146Z'
 ---
 
 # toc-ui-design-system

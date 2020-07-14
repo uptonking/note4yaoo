@@ -1,8 +1,8 @@
 ---
 title: lang-python
-tags: [lang/python]
+tags: [lang, python]
 created: '2019-06-09T05:36:34.221Z'
-modified: '2020-07-07T08:10:42.079Z'
+modified: '2020-07-14T09:27:30.503Z'
 ---
 
 # lang-python

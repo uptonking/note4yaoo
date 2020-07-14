@@ -1,8 +1,8 @@
 ---
-tags: [log/news]
 title: log-news
+tags: [latest, log, news]
 created: '2019-06-24T11:19:00.127Z'
-modified: '2020-06-28T02:16:47.880Z'
+modified: '2020-07-14T10:28:34.269Z'
 ---
 
 # log-news

@@ -1,8 +1,8 @@
 ---
 title: note-product-list-table-pm
-tags: [list, product, table]
+tags: [list, pm, product, table]
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-07-13T13:46:47.691Z'
+modified: '2020-07-14T10:38:05.987Z'
 ---
 
 # note-product-list-table-pm

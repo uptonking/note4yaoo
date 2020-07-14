@@ -1,8 +1,8 @@
 ---
 title: log-dev-summary
-tags: [log/dev]
+tags: [dev, log, repeat]
 created: '2019-04-22T03:42:22.447Z'
-modified: '2020-07-11T05:18:36.871Z'
+modified: '2020-07-14T10:28:11.443Z'
 ---
 
 # log-dev-summary

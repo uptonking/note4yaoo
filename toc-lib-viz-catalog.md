@@ -1,8 +1,8 @@
 ---
 title: toc-lib-viz-catalog
-tags: [toc, ux, viz]
+tags: [olap, toc, viz]
 created: '2020-07-13T02:49:52.285Z'
-modified: '2020-07-13T02:51:37.952Z'
+modified: '2020-07-14T11:04:06.314Z'
 ---
 
 # toc-lib-viz-catalog

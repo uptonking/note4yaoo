@@ -1,8 +1,8 @@
 ---
-tags: [olap, solution]
 title: ing2-solution-olap
+tags: [olap, pm, solution]
 created: '2020-04-03T15:57:07.832Z'
-modified: '2020-07-08T02:16:11.380Z'
+modified: '2020-07-14T10:24:59.817Z'
 ---
 
 # ing2-solution-olap

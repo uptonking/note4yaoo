@@ -1,8 +1,8 @@
 ---
-tags: [docs/react]
 title: docs-redux-saga
+tags: [docs, state]
 created: '2019-08-01T16:03:46.390Z'
-modified: '2020-06-30T05:15:33.689Z'
+modified: '2020-07-14T09:24:55.191Z'
 ---
 
 # docs-redux-saga

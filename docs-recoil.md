@@ -1,8 +1,8 @@
 ---
-tags: [react, state]
 title: docs-recoil
+tags: [docs, react, recoil, state]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-04T18:09:34.650Z'
+modified: '2020-07-14T09:24:29.956Z'
 ---
 
 # docs-recoil

@@ -1,8 +1,8 @@
 ---
-tags: [docs/poi]
 title: docs-apache-poi
+tags: [apache-poi, docs]
 created: '2019-08-01T16:03:46.386Z'
-modified: '2020-06-30T12:39:24.550Z'
+modified: '2020-07-14T09:21:55.999Z'
 ---
 
 # docs-apache-poi

@@ -1,8 +1,9 @@
 ---
-tags: [log/dev]
 title: log-dev-error
+tags: [dev, log]
+pinned: true
 created: '2020-02-20T10:43:37.374Z'
-modified: '2020-05-17T07:06:19.026Z'
+modified: '2020-07-14T09:22:26.651Z'
 ---
 
 # log-dev-error

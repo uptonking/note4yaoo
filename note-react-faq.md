@@ -11,7 +11,69 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq
 
+- How to implement useState with useReducer
 
+``` JS
+// 简单版
+const stateReducer = (prevState, newState) =>
+  typeof newState === 'function' ? newState(prevState) : newState
+
+const stateInitializer = initialValue =>
+  typeof initialValue === 'function' ? initialValue() : initialValue
+
+function useState(initialValue) {
+  return React.useReducer(stateReducer, initialValue, stateInitializer)
+}
+```
+
+``` typescript
+// 完整版
+function useState<T>(initialState: T | (() => T)) {
+  const initState: T =
+    typeof initialState === 'function' ? initialState() : initialState;
+
+  const [state, dispatch] = React.useReducer(
+    (state: T, action: T | ((prev: T) => T)) => {
+      return typeof action === 'function' ? action(state) : action;
+    },
+    initState,
+  );
+
+  return [
+    state,
+    (value: T | ((prev: T) => T)) => {
+      if (value !== state) {
+        dispatch(value);
+      }
+    },
+  ];
+}
+```
+
+- ref
+  - https://kentcdodds.com/blog/how-to-implement-usestate-with-usereducer
+  - https://www.jianshu.com/p/7cbf04c6bcc6
+- useState vs useReducer
+  - useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. 
+  - useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
+  - The above statement is not trying to indicate that the setter returned by useState is being created newly on each update or render. What it means is that when you have a complex logic to update state, you simply won't use the setter directly to update state, instead you will write a complex function which in turn would call the setter with updated state
+  - Hence it is recommended to use useReducer which returns a dispatch method that doesn't change between re-renders and you can have the manipulation logic in the reducers
+    - https://stackoverflow.com/questions/54646553/usestate-vs-usereducer
+  - When it's just an independent element of state you're managing: useState
+  - When one element of your state relies on the value of another element of your state in order to update: useReducer
+  - useReducer() is preferable
+    - Next state depends on the previous
+    - Complex state shape
+      - useState不对状态做浅层合并了，而useReducer会合并，待验证？？？
+      - useReducer一次更新多个状态更方便
+    - Easy to test(Reducers are pure functions)
+  - UseReducer has a stable dispatch which is better for passing down the tree. UseState uses useReducer, but you may need to wrap your state update functions in useCallback which isn’t an issue with dispatch.
+  - ref
+    - react-table is migrating away from useReducer to useState, allowing for more imperative control over the table state
+    - https://www.robinwieruch.de/react-usereducer-vs-usestate
+    - https://dev.to/spukas/3-reasons-to-usereducer-over-usestate-43ad
+    - https://www.freecodecamp.org/news/why-you-should-choose-usestate-instead-of-usereducer-ffc80057f815/
+    - https://juejin.im/post/5df993e3e51d4558270efa4d
 - 为什么不能 setState in render
   - Calling setState in render can cause infinite loop 
   - ref
