@@ -7,18 +7,37 @@ modified: '2020-07-14T10:22:06.873Z'
 
 # docs-handsontable
 
-## dev-tips
+## summary
 
 - rowHeights/colWidths能够设置各行/各列的高度/宽度的默认值，也是最小值
 - stretchH能使表格充满容器宽度，且各列水平均分
-- handsontable大小尺寸
-  - Handsontable by default fills its nearest parent element which has a defined width, height and the CSS overflow property set to hidden.
-  - If there are no height and width settings passed in the configuration, the table will vertically and horizontally fill the entire window (again, or any parent element with defined dimensions and overflow: hidden).
-  - you can change the size dynamically any time after the initialization by using the updateSettings code to update the dimensions.
-  - ref
-    - https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable
 
-## faq
+- handsontable大小尺寸
+  - Handsontable by default fills its nearest parent element which has a defined `width` , `height` and the CSS `overflow` property set to `hidden` .
+    - Having that, you can expand your Handsontable to the window’s dimension and use the native scrollbars to navigate through the grid.
+  - If you provide height only and decide to leave the width indefinite, then the spreadsheet will expand to the window’s full width (or any parent element with defined dimensions and `overflow: hidden` )
+  - If you set only the table’s width, it won’t render properly until you use the `preventOverflow` option. 
+    - By setting it to horizontal your spreadsheet will have the width of a parent container and the height of the window. 
+    - Scrollbars will appear if needed. 
+    - Basically, the `preventOverflow` option prevents the table from overflowing the parent container in the provided dimension, in this case – horizontal.
+    - If there are no height and width settings passed in the configuration, the table will vertically and horizontally fill the entire window (again, or any parent element with defined dimensions and `overflow: hidden` ).
+    - you can change the size dynamically any time after the initialization by using the `updateSettings` code to update the dimensions.
+  - ref
+    - [A Complete Guide to Changing the Size of Handsontable](https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable)
+
+- To set up Handsontable DOM structure in your application, you have to define its container as a starting point to initialise component.
+  - Usually, the `div` element becomes this container. 
+  - This container should **have defined dimensions** as well as the rest of your layout. 
+  - If container is a block element, then its parent has to have defined height. By default block element is 0px height, so 100% from 0px is still 0px.
+  - Since v7.0.0, Handsontable supports relative units such as %, rem, em, vh, vw or as exact size in px.
+- Handsontable looks for the closest element with `overflow: auto` or `overflow: hidden` to use it as a scrollable container. 
+  - If no such element is found， a window will be used.
+- If you don't define dimensions, Handsontable will generate as many rows and columns to fill available space and will also provide full support for virtual rendering and fixed parts.
+- Since v7.0.0 we observe window resizing. 
+  - If the window's dimensions have changed, then we check if Handsontable should resize itself too. 
+  - Due to the performance issue, we use debounce method to response on window resize.
+- ref
+  - [Grid sizing](https://handsontable.com/docs/7.4.2/tutorial-grid-sizing.html)
 
 - **Walkontable** is the return value of many methods but not mentioned in the docs
   - Walkontable is for internal use only. 
@@ -43,7 +62,7 @@ modified: '2020-07-14T10:22:06.873Z'
 - docs
   - https://handsontable.com/docs
 
-## handsontable docs
+## pieces
 
 - handsontable分离了cell vaule的显示displaying和修改altering，renderer负责displaying，editor负责altering。
   - renderer是function，接受实际值，返回html
@@ -100,7 +119,7 @@ modified: '2020-07-14T10:22:06.873Z'
 - 在table渲染时，每个cell的renderer方法会被分别调用，在滚动、排序或单元格编辑时，table可能会被多次渲染，因此renderer()应使用简单方法来避免性能问题
 - 每个cell的renderer()方法可能会被调用多次，这可能导致监听事件重复
 - 当滚动或增删行列时，会重用单元格，此时可能发生事件绑定到错误的单元格
-- 推荐使用 handsontable envents system，若必须自定义事件，则将cell内容包裹在<div>中，再给div添加监听器
+- 推荐使用 handsontable envents system，若必须自定义事件，则将cell内容包裹在 `<div>` 中，再给div添加监听器
 - Handsontable renders only the visible part of the table plus a fixed amount of rows and columns. 
 
 - editor()
@@ -175,15 +194,15 @@ hot1.render();
 - 建议使用 persistentState hooks rather than a regular LocalStorage API，便于隔离同一个页面上多个handsontable的数据
 - Cascading Configuration model is based on prototypal inheritance
   - constructor
-      - columns
-      - cells
+    - columns
+    - cells
 - Constructor options -> columns -> cells -> cellProperties
 - handsontable.js 与 handsontable.full.js的区别
   - 代码压缩程度不同
 
 - demo摘要
   - select是dropdown的简化版
-  - You'll need horizontal scrollbars, so just set a container width and overflow: hidden in CSS.
+  - You'll need horizontal scrollbars, so just set a container width and `overflow: hidden` in CSS.
   - fixed指定前几行前几列，freeze手动指定某一列，且freeze要和context menu一起使用
   - 扩大列宽或行宽的方法，拖拽列的右边或行的下边，双击这些地方会自动调整size
   - Pre-populating rows 可以为行预定义数据模板
@@ -208,22 +227,23 @@ hot1.render();
 
 - 7.0.0-20190306
   - Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.
-  - Handsontable is now "source-available" instead of "open source". The MIT license has been replaced with custom, free for non-commercial license.
+  - Handsontable is now "source-available" instead of "open source". 
+  - **The MIT license has been replaced with custom, free for non-commercial license**.
   - Removed the deprecated selectCellByProp method
   - Added the possibility to declare the table’s width/height using relative values (%, vh, vw, rem, em).
-      - https://github.com/handsontable/handsontable/issues/5749
+    - https://github.com/handsontable/handsontable/issues/5749
   - Added the beforeTrimRows and beforeUntrimRows
   - Refactored the following classes to ES6 
-      - BaseEditor
-      - AutocompleteEditor
-      - HandsontableEditor
-      - SelectEditor
-      - TextEditor
-      - Walkontable -> Event
-      - EditorManager
-      - MultiMap
-      - TableView
-      - DataMap
+    - BaseEditor
+    - AutocompleteEditor
+    - HandsontableEditor
+    - SelectEditor
+    - TextEditor
+    - Walkontable -> Event
+    - EditorManager
+    - MultiMap
+    - TableView
+    - DataMap
 - 6.2.2-20181219
   - Updated babel to 7.x
   - Corrected the CSS property assignment to zero from 0 to '0'
@@ -242,13 +262,13 @@ hot1.render();
   - Added a possibility to disable the action of sorting by clicking on the headers, using the headerAction option
 - 5.0.0-20180711
   - Refactored the Custom Borders plugin
-      - added new methods such as getBorders, setBorders and clearBorders
+    - added new methods such as getBorders, setBorders and clearBorders
   - Added an ability to disable Byte Order Mark (BOM) while exporting table to the CSV file. 
 - 4.0.0-20180613
   - Changed the default values for the following configuration options
-      - autoInsertRow (was: true, is: false)
-      - autoWrapCol (was: false, is: true)
-      - autoWrapRow (was: false, is: true)
+    - autoInsertRow (was: true, is: false)
+    - autoWrapCol (was: false, is: true)
+    - autoWrapRow (was: false, is: true)
   - Updated our number-handling dependency, Numbro to the latest version
 - 3.0.0-20180516
   - Column Sorting plugin is over the first stage of refactoring
@@ -268,5 +288,3 @@ hot1.render();
 - 1.0.0-20160120
   - Backward incompatible change 
   - Prevent displaying the dropdown header buttons in higher levels of headers (for example, when using the nested headers plugin).
-
-  

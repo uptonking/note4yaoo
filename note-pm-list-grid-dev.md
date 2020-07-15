@@ -7,6 +7,46 @@ modified: '2020-07-14T13:05:46.032Z'
 
 # note-pm-list-grid-dev
 
+## api
+
+- react-table
+  - required-props: data, columns
+  - data: 必需，类型是 array of objects
+  - style: 自定义
+  - ui实现：自定义，headless
+  - note
+    - 基于react实现，react only 
+    - 用于方便实现ui的工具: useBlock/Absolute/FlexLayout
+      - 不同布局需要的条件不一样，如BlockLayout需要指定宽度
+- ag-grid
+  - required-props:rowData, columnDefs, 父元素width, height
+  - data: 必需，类型是 array of objects
+  - style: ag-grid.css, ag-theme-alpine.css
+  - ui实现：div-flex
+  - note
+    - 基于js实现，可用于react/vue/angular
+- handsontable
+  - required-props: 都是非必需，宽高也是非必需
+  - data: 非必需，类型可以是array of arrays, array of objects, 还可以将columns值设为函数再计算处理后返回列信息
+    - 不传入data时，会显示占满父元素的空格表格
+    - 可以通过columns设置处理方式，从nested object的属性中取值
+  - style: handsontable.full.css
+  - 实现： 基于table, tr, td
+  - note
+    - 从自身向父元素查找带有width,height和 `overflow:hidden` 的元素并占满
+- react-virtualized
+  - required-props: cellRenderer, width, height，rowCount, rowHeight, colCount, colWidth
+  - data: 必需，间接通过cellRenderer传入
+  - style:
+  - ui实现: div-position-absolute
+  - note
+    - a
+- react-window
+  - required-props:
+  - data:
+  - note
+    - a
+
 ## usage
 
 ``` JS
@@ -124,34 +164,29 @@ const Example = () => (
 ``` JS
 // demo for handsontable
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { HotTable } from '@handsontable/react';
-import Handsontable from 'handsontable';
+import 'handsontable/dist/handsontable.full.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handsontableData = Handsontable.helper.createSpreadsheetData(6, 10);
+    this.data = [
+      ["", "Ford", "Volvo", "Toyota", "Honda"],
+      ["2016", 10, 11, 12, 13],
+      ["2017", 20, 11, 14, 13],
+      ["2018", 30, 15, 12, 13]
+    ];
   }
 
   render() {
     return (
-      <div>
-        <HotTable
-          id="hot"
-          data={this.handsontableData}
-          colHeaders={true}
-          rowHeaders={true}
-          />
+      <div id="hot-app">
+        <HotTable data={this.data} colHeaders={true} rowHeaders={true} width="600" height="300" />
       </div>
     );
   }
 }
-
-ReactDOM.render(<App />, document.getElementById('example1'));
 ```
-
-## api
 
 ## summary
 

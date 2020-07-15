@@ -7,6 +7,8 @@ modified: '2020-07-14T10:24:54.328Z'
 
 # ing-solution-noter
 
+- local/offline first markdown-based note app
+
 ## noter-features-亮点
 
 - core

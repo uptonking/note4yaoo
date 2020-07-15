@@ -7,6 +7,9 @@ modified: '2020-07-14T10:25:13.843Z'
 
 # ing-solution-datable
 
+- A handy/efficient data table to pivot your data
+  - 用更加灵活的表格来透视数据
+
 ## table-xp
 
 - 链接预览标题、图片
@@ -18,11 +21,8 @@ modified: '2020-07-14T10:25:13.843Z'
   - defaultViewMode/defaultEditMode
   - indentationSpace
 
-
 ## grape-trellis
 
-- A handy/efficient data table to pivot data list. 用更加灵活的表格来透视数据
-- new
 - kbd键盘字母特殊显示
 
 ## Excelbox

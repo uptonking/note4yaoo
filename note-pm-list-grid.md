@@ -7,7 +7,13 @@ modified: '2020-07-14T13:06:26.826Z'
 
 # note-pm-list-grid
 
-- A handy/efficient data table to pivot your data
+## pieces
+
+- MUI tables use HTML table elements, not divs and styles. 
+- To use an absolute layout, you would need to either 
+  - use divs instead of table elements 
+  - or, switch all of your table element styles to be `display: block` ( `display: inline-block` for cells) 
+  - and last but not least, when using an absolute layout, your rows must have a predefined height, eg. 50px.
 
 ## product-react-table
 
