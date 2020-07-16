@@ -9,20 +9,25 @@ modified: '2020-06-29T13:14:27.166Z'
 
 ## faq
 
-- `useCallback` vs `useMemo`
+- ### `useCallback` vs `useMemo`
   - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
   - useMemo() makes the function run only when inputs change. 
     - Else it returns the memoized(cached) result.
   - useCallback() prevents the new instance of funtion being created on each rerender
     - thus prevents the rerendering of child components if we pass the function as props to them
+
 - react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
   - render方法的执行时机
   - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
-- `useEffect` vs `useLayoutEffect`
+
+- ### `useEffect` vs `useLayoutEffect`
   - 结论
     - useLayoutEffect总是比useEffect先执行
     - useLayoutEffect: If you need to mutate the DOM and/or do need to perform measurements
     - useEffect: If you don't need to interact with the DOM at all or your DOM changes are unobservable (seriously, most of the time you should use this). 
+    - componentDidMount and useLayoutEffect both run before paint. useEffect yields (so the browser can paint) before running.
+    - We suggest using the passive effect (useEffect) for things that don't affect display, like logging or setting timeouts etc. 
+    - Use layout effect for e.g. adjusting tooltip position or size, things you want to tweak before the user sees your component's rendered output.
   - 正常情况用默认的useEffect钩子就够了，这可以保证状态变更不阻塞渲染过程
     - 但如果effect更新（清理）中涉及DOM更新操作，用useEffect就会有意想不到的效果。
     - 比如逐帧动画 requestAnimationFrame ，要做一个 useRaf hook 就得用上后者，需要保证同步变更。
@@ -66,7 +71,8 @@ modified: '2020-06-29T13:14:27.166Z'
   - ref
     - https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
     - https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-between-usemutationeffect-and-uselayoutef
-- How to pass arguments to `onClick` events in React Hooks 
+
+- ### How to pass arguments to `onClick` events in React Hooks 
   - simple: `<Button onClick={() => handleClick(myValue)}></Button>`
     - onClick prop has new value on each render and triggers a re-render of child component - even if it's pure. 
   - If a value is static, a callback can be defined as constant function outside a component
@@ -75,7 +81,7 @@ modified: '2020-06-29T13:14:27.166Z'
     // outside function component
     const myValue = "Hello World";
     const myHandleClick = () => handleClick(myValue);
-    ...
+
     // inside function component
     <Button onClick={myHandleClick}></Button>
 ```
@@ -92,21 +98,20 @@ modified: '2020-06-29T13:14:27.166Z'
 ## pieces
 
 - ref
-  - https://reactjs.org/docs/hooks-faq.html
   - https://medium.com/@unbug/ive-completely-rewritten-two-projects-with-react-hooks-here-is-the-good-and-the-ugly-48c28a103f52
 - 考虑因素
   - 可能会使用的第三方库/组件是否提供hooks相关api
-      - react-router,redux
-      - enzyme等测试框架是否提供hooks
-      - react-motion如何实现与修改
-      - table/tree如何实现与修改
-      - 参考ant design这样的大厂大项目如何选择
+    - react-router,redux
+    - enzyme等测试框架是否提供hooks
+    - react-motion如何实现与修改
+    - table/tree如何实现与修改
+    - 参考ant design这样的大厂大项目如何选择
   - 若将来要替换react，复杂度如何
   - 自己开发组件库，要考虑提供和维护class和hooks两套api
   - class实例变量要替换为useRef hook
   - ref要替换为useImperativeHandle hook
   - 生命周期函数大多可替换，目前不支持getSnapshotBeforeUpdate
-      - getDerivedStateFromProps需要重写在函数体
+    - getDerivedStateFromProps需要重写在函数体
 - syntax
   - useState
   - useEffect

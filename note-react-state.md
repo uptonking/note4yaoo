@@ -475,3 +475,4 @@ const Counter = () => {
   - [How to Handle Async Actions for Global State With React Hooks and Context](https://blog.axlight.com/posts/how-to-handle-async-actions-for-global-state-with-react-hooks-and-context/)
   - [Unstated vs Unstated-Next](https://github.com/jamiebuilds/unstated-next/issues/20)
   - [细聊Concent&Recoil , 探索react数据流的新开发模式](https://zhuanlan.zhihu.com/p/148280552)
+  - [深入理解 react/redux 数据流并基于其优化前端性能](https://github.com/shaozj/blog/issues/36)

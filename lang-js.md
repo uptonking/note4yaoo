@@ -81,6 +81,23 @@ modified: '2020-07-14T09:26:50.808Z'
 
 ## mdn docs
 
+- 函数参数
+  - 在JavaScript高级程序设计中，第4.1.3节传递参数这一节中，作者说的是ECMAScript中所有函数的参数都是按值传递的
+  - Primitive parameters (such as a number) are passed to functions by value; 
+    - the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
+  - If you pass an object (i.e. a non-primitive value, such as Array or a user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example
+
+``` JS
+function f1(a) {
+  alert(a);
+  a = 1; //修改形参a  使用arguments[0] = 1修改效果一样
+  alert(1 === a);
+  alert(1 === arguments[0]);
+}
+f1(10);
+// 函数f1定义了参数a，调用时传参数10，先弹出10，修改a为1，弹出两次true，a和arguments[0]都为1了。
+```
+
 - window.postMessage()
   - method safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it spawned
   - Normally, scripts on different pages are allowed to access each other if and only if the pages they originate from same origin

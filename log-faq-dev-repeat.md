@@ -9,8 +9,21 @@ modified: '2020-07-09T13:24:25.794Z'
 
 ## not-yet
 
-- Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 - 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
+- Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
+
+## 对象解构时，特别地，对react函数组件的props参数解构时，是在参数处解构更好，还是在函数体内解构更好？
+
+- 在函数内解构，除了可以获得各属性prop变量外，还方便使用整体的props
+- 在参数处解构，更直观的写法，便于第三方插件如doc-gen提取参数默认值
+  - 解构多层嵌套对象的深层属性时，要考虑提取参数的意义与困难度
+- 使用 `arguments[0]` 也可以获得props对象，但箭头函数没有 `this` - `super` - `arguments` - `new.target` ，且箭头函数不能用作构造函数
+- One of the differences I can think of, and I suppose the most important, is that on the second case, while you are destructing your props object in function body, you are using `const` on declaration.
+  - In that way, you can no longer change these values on your MyComponent, while on your first case you could easily modify them.
+  - 对react组件来说，props不能改变，推荐只用const解构，但对普通函数参数解构时，要考虑用let
+- ref
+  - [Different ways of destructuring props in react](https://stackoverflow.com/questions/59586876/different-ways-of-destructuring-props-in-react)
+  - [ES6 destructuring function parameter - naming root object](https://stackoverflow.com/questions/29051011/es6-destructuring-function-parameter-naming-root-object)
 
 ## 使用js时要不要用class? Please stop using classes in JavaScript
 

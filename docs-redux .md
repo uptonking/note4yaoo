@@ -34,6 +34,12 @@ modified: '2020-07-14T09:24:43.966Z'
 
 ## react-redux 
 
+- ref
+  - [react-redux 杂谈 - 设计结构变迁](https://zhuanlan.zhihu.com/p/86336676)
+
+- 在v5中，会优先查找上一级context的subscription(parentSub)，如果垂直多个层级的组件都使用connect订阅了全局state的变化，当state更新时，消息是从 `C --> B --> A` 一层一层往下传递的，而不是统一维护在store的listeners中
+- In v6, every store update calls `setState()` at the root of the component tree in `<Provider>` , and forces React to walk the component tree to find the consumers before they can even run `mapState` . 
+- v7重新使用了多个subscription逐层通知的结构，和5.x基本一致，并且使用React Hooks对项目进行了重构，增加了对hooks的支持
 - In RRv6, there were four major issues with perf:
   - If I have N connected components, there are N wrapper components in the tree
   - If a Redux action was dispatched, we immediately put that into `setState({storeState})` in `<Provider>` at the root, 
@@ -58,7 +64,6 @@ modified: '2020-07-14T09:24:43.966Z'
 
 ### v7
 
-- react-redux@7.x 重新使用了多个subscription逐层通知的结构，和 5.x 基本一致，并且使用React Hooks对项目进行了重构，增加了对hooks的支持。
 - As with v5 and earlier, v7 wrapper components all subscribe to the store directly, and only get React involved when the selector logic determines that the wrapper component needs to re-render. This was the first key step in bringing performance back to the level of v5.
   - React has always had an API called unstable_batchedUpdates(). Internally, React wraps all your event handlers inside of that, which is what allows React to batch together multiple state updates from one event tick into a single render pass.
   - The React team urged us to use unstable_batchedUpdates() directly in React-Redux. This was tricky, because it's actually exported from renderers like ReactDOM and React Native, not the core React package. React-Redux should work with any React renderer, so we couldn't add a direct dependency on either of those. We had to write some different wrapper files so that the "react-dom" import would get loaded in a web environment, and the "react-native" import when used with RN. For apps that might be using React-Redux with an alternate renderer, we added an additional entry point that falls back to a dummy batching implementation.
