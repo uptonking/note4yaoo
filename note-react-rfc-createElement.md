@@ -44,7 +44,7 @@ function jsx(type, props, key) {
   - In createElement, children gets passed as var args. 
   - In the new transform, we'll always just add them to the props object - inline.
   - The reason we pass them as var args is to distinguish static children from dynamic ones in DEV. 
-  - We can instead pass a boolean or use two different functions to distinguish them.
+  - We can instead pass a boolean flag or use two different functions to distinguish them.
 - avoid clone props
   - `<div {...props} />` can currently be safely optimized to `createElement('div', props)`
   - That's because `createElement()` always clones the passed object. 
@@ -99,6 +99,7 @@ const Foo = (props) => {
     - and it will still create a shallow copy of props that excludes the ref in these cases. 
     - At the same time, we'll add a getter for element.ref in DEV that warns if you access it. 
   - The upgrade path is now to just access it off props if you need it from the element.
+    - 可以尝试使用callback ref代替forwardRef
 
 - I'm wondering if the jsx constructor should accept `ref` as an argument too.
   - The original plan was to pass `ref` separately too, but now I’m thinking that ref should just be a normal prop in all cases except when it is passed to a class component. 
@@ -108,3 +109,11 @@ const Foo = (props) => {
   - However if you want to attach a ref on a function component you do need to explicitly do something with the ref. like `useImperativeHandle(ref, ...);` _owner`
   - So the reason for special casing ref no longer exists in the Hooks world. 
   - Therefore I think the right call here is to stop special casing it at the element level and instead start special casing it only for classes.
+
+- The plan is to eventually get rid of the need for `forwardRef` altogether by putting it back into `props` .
+- Beware forwardRef affects reconciliation: element is always re-created on parent re-rendering.
+
+
+- ref
+  - [Hook for forwardRef](https://github.com/facebook/react/issues/15306)
+  - [Potential performance issues with using forwardRef](https://github.com/facebook/react/issues/13456)

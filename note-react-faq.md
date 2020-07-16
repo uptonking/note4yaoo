@@ -11,6 +11,13 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq
 
+- ### forwardRef vs callback ref
+  - Is there any difference between forwardRef and callbackRefs? We can access the child node's reference from parent in both of these cases.
+  - the difference between the use of forwardingRef vs callback ref is in the HOC.
+  - If you pass ref prop to HOC then inside HOC you cannot further pass it down to the enclosing component(which HOC wraps) since the props attributes does not store the ref inside it. ref is not a ptop
+  - [What is the difference between forwardingRef vs callback refs in React?](hhttps://stackoverflow.com/questions/59045294/what-is-the-difference-between-forwardingref-vs-callback-refs-in-react)
+
+
 - ### `props.children` not re-rendered on parent state change
   - When clicking on Child 'Hi' text, only Container component keeps re-rendering but Child component is not re-rendered.
   - Since the Container's render is executed, so must the components returned from it call their own render methods.
