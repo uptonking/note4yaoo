@@ -11,12 +11,103 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq
 
+- ### createRef vs useRef
+  - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verboose).
+  - useRef keeps some data before renders and changing it does not cause re-render
+  - `useRef(null)` is basically `useState(React.createRef())[0]` .
+  - A ref is a plain object `{ current:  value }` .
+  - React.createRef() creates { current: null } - no magic
+  - useRef(initialValue) creates { current: initialValue } like React.createRef(). Besides, it memoizes this ref to be useable across multiple renders in a function component
+  - In summary, use the optimized API for its intended use case:
+    - useState → immutable state/values
+    - useRef → mutable DOM node references or stored values in function components
+    - createRef → mutable DOM node references in class components; you can use instance variables for other values
+  - You can't set a new value for createRef. But you can for useRef. ??? 待验证
+  - [What's the difference between `useRef` and `createRef` ](https://stackoverflow.com/questions/54620698/whats-the-difference-between-useref-and-createref)
+
+- ### createRef vs callback ref
+  - In terms of use cases, callback refs can do anything createRef can do, but not vice versa.
+  - Things you can't do with createRef
+    - React to a ref being set or cleared
+    - Use an externally and internally provided ref on the same React element at the same time. (e.g. you need to measure a DOM element's clientHeight whilst, at the same time, allowing an externally provided ref (via forwardRef) to be attached to it.)
+  - createRef is returning either a DOM node or a mounted instance of a component, depending on where you call it. Either way, what you have in hand is indeed straightforward as you've noted. But what if you want to do something with that reference? What if you want to do it when the component mounts?
+  - Ref callbacks are great for that because they are invoked before componentDidMount and componentDidUpdate. This is how you get more fine-grained control over the ref. You are now not just grabbing DOM elements imperatively, but instead dynamically updating the DOM in the React lifecycle, but with fine-grained access to your DOM via the ref API.
+  - forwardRef lets us deprecate findDOMNode (in strict mode). And once we decide where to put ref (second arg or props object) we can deprecate forwardRef and it'll just always be passed. But often need to add before we can remove. Stepping stones.
+  - ref
+    - [React createRef() vs callback refs](https://stackoverflow.com/questions/53624712/react-createref-vs-callback-refs-is-there-any-advantage-of-using-one-over-the)
+
 - ### forwardRef vs callback ref
   - Is there any difference between forwardRef and callbackRefs? We can access the child node's reference from parent in both of these cases.
   - the difference between the use of forwardingRef vs callback ref is in the HOC.
-  - If you pass ref prop to HOC then inside HOC you cannot further pass it down to the enclosing component(which HOC wraps) since the props attributes does not store the ref inside it. ref is not a ptop
-  - [What is the difference between forwardingRef vs callback refs in React?](hhttps://stackoverflow.com/questions/59045294/what-is-the-difference-between-forwardingref-vs-callback-refs-in-react)
+  - If you pass ref prop to HOC, then inside HOC you cannot further pass it down to the enclosing component(which HOC wraps) since the props attributes does not store the ref inside it. ref is not a prop
+  - callback refs are commonly used when we need to dynamically set refs. 
+  - forwardRefs are commonly used when access to child refs are needed
+  - We already have a work-around for passing ref to child components. 
+    - The work-around is to pass the ref as some other prop. 
+    - In this case, we used `ssnRef` prop to pass the ref to a child component.
+  - Why should the React team consider adding this API? It is for third-party package developers.
+  - When we pass the ref like this, we really don’t know that it is being forwarded. By providing an explicit alternate prop, we are clear that the ref is going to be forwarded.
+  - ref
+    - [What is the difference between forwardingRef vs callback refs in React?](hhttps://stackoverflow.com/questions/59045294/what-is-the-difference-between-forwardingref-vs-callback-refs-in-react)
+    - [React forwardRef example and why it should not be part of React API](https://vijayt.com/post/react-forwardref-example-and-why-it-should-not-be-part-of-react-api/)
 
+``` JS
+// callback ref
+function CustomTextInput(props) {
+  return (
+    <div>
+      <input ref={props.inputRef} />
+    </div>
+  );
+}
+
+class Parent extends React.Component {
+  componentDidMount(props) {
+    //Here, this.inputElement in Parent will be set to the DOM node corresponding to the element in the CustomTextInput
+    console.log(this.inputElement);
+  }
+  render() {
+    return (
+      <CustomTextInput
+        inputRef={el => this.inputElement = el}
+      />
+    );
+  }
+}
+```
+
+``` JS
+// forwardRef
+const FancyButton = React.forwardRef((props, ref) => {
+  return (
+    <button ref={ref}   data-name="My button">
+      {props.children}
+    </button>
+  );
+});
+
+//Parent Component
+class FancyButtonWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+    this.buttonRef = React.createRef();
+  }
+
+  componentDidMount(props) {
+    //Here this.ref will point to button element. Because of this reason, ref.current will give the value of button.
+    console.log(this.buttonRef.current.getAttribute("data-name"));
+  }
+
+  render() {
+    return (
+      //Here we are passing the ref to the child component.
+      <FancyButton ref={this.buttonRef} data-attr="Hello">
+        Click me! 
+      </FancyButton>
+    );
+  }
+}
+```
 
 - ### `props.children` not re-rendered on parent state change
   - When clicking on Child 'Hi' text, only Container component keeps re-rendering but Child component is not re-rendered.

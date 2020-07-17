@@ -7,6 +7,13 @@ modified: '2020-07-08T03:17:23.369Z'
 
 # note-react-latest-roadmap
 
+## warning
+
+- 不建议使用defaultProps，即将deprecate
+  - 可以使用es6参数默认值
+- 不建议使用forwardRef，未来ref会作为props中的属性
+  - 可以使用callbackRef
+
 ## guide
 
 - React Fast Refresh: hot reloading for React
@@ -16,10 +23,9 @@ modified: '2020-07-08T03:17:23.369Z'
   - build UIs that feel great on desktop and mobile, with mouse and touch
 - concurrent mode and suspense (stable-17)
 - ref
+  - [react-rfc](https://github.com/reactjs/rfcs/pulls)
   - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
   - [React.js有哪些设计缺陷？](https://www.zhihu.com/question/316425133)
-  - [React Fire](https://github.com/facebook/react/issues/13525)
-  - [React Flare](https://github.com/facebook/react/issues/15257)
   - [React 16.x Roadmap_20181127](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
   - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 
@@ -32,7 +38,46 @@ modified: '2020-07-08T03:17:23.369Z'
   - A minor 16.x release with Concurrent Mode (~Q2 2019)
   - A minor 16.x release with Suspense for Data Fetching (~mid 2019)
 
-## time-slicing
+## discussion
+
+- time-slicing
+
+### React Flare 
+
+- ref
+  - [React Flare](https://github.com/facebook/react/issues/15257)
+
+- The idea is to extend React's event system to include high-level events that allow for consistent cross-device and cross-platform behavior.
+- The goal of React Flare is to make it easy to build UIs that feel great on desktop and mobile, with mouse and touch, and that are accessible. 
+- It includes declarative APIs for managing interactions like Press, Hover, and Focus. 
+- Unlike with the current React event system, the Flare design doesn't inflate the bundle for events you don't use — and it should allow to cut down the amount of code in UI libraries that deal with mouse and touch events.
+- Every user-facing event should have a timeStamp.
+- Investigate native pointer capture for retargeting events
+- Limit all event components to have a single host node as child? If not enforced for all components, we might need this for Hover/Focus/Press at least.
+- Stop propagation by default but scope to event module types.
+- Investigate ways to listen to root events without first needing to wait for a target event to be dispatched to the event component.
+- Remove listener from event object passed to callbacks like onPress
+- Ensure discrete events do not unnecessarily force flush previous non-discrete events.
+- Ensure event responder get unmounted correctly and pending events (e.g. long press) properly get removed when doing so. 
+- Create a new synthetic event and dispatch mechanism that relies on the event being generated in the event responder module, rather than from React.
+- We're not longer working on this particular approach and will be exploring other ways to work with the DOM event system in the future. 
+  - We've concluded that the "Flare" event system is too high-level an abstraction and we'd like to explore something that is a bit more familiar to developers familiar with the DOM (e.g., addEventListener) and React's existing tools (e.g., hooks). 
+  - Our goal is still to make it possible for library authors to work with passive events, capture/bubble phase, custom events, and events occurring on the document from within a React function component...while reducing the amount of event-related code needed in ReactDOM. 
+  - Ultimately building both intermediate abstractions like the Responder Event system and high-level abstractions like useTap (which we prototyped in Flare) should be possible in user-space
+
+### React Fire: Modernizing React DOM
+
+- ref
+  - [React Fire](https://github.com/facebook/react/issues/13525)
+
+- Our goal is to make React better aligned with how the DOM works, revisit some controversial past decisions that led to problems, and make React smaller and faster.
+
+- Stop reflecting input values in the `value` attribute
+  - But that's not how the DOM works.
+- Attach events at the React root rather than the document
+- Migrate from `onChange` to `onInput` and don’t polyfill it for uncontrolled components
+- Drastically simplify the event system
+- className → class
 
 ## api-experimental
 
@@ -46,45 +91,6 @@ modified: '2020-07-08T03:17:23.369Z'
 ### [react-fetch](https://github.com/facebook/react/tree/master/packages/react-fetch)
 
 - This package is meant to be used alongside yet-to-be-released
-
-### useMutableSource
-
-- This hook is primarily intended for use by libraries like Redux (and possibly Relay). 
-  - Work with the maintainers of those libraries to integrate with the hook.
-
-- `useMutableSource()` enables React components to safely and efficiently read from a mutable external source in Concurrent Mode. 
-- The API will detect mutations that occur during a render to avoid tearing and it will automatically schedule updates when the source is mutated.
-- This hook is designed to support a variety of mutable sources.
-- Redux users would likely never use the useMutableSource hook directly. 
-  - They would use a hook provided by Redux that uses useMutableSource internally.
-- The current best "alternates" to this API are the Context API and useSubscription hook
-- The Context API is not currently suited for sources that are used by many components throughout the tree, as changes to the context result in updates that are very heavy (for example, see Redux v6 performance challenges). 
-- Advantages of `useMutableSource` over `useSubscription`
-  - No temporary tearing will occur during render (even before the initial subscription).
-  - Subscriptions can be "scoped" so that updates to parts of a mutable source only impact the relevant components (and not all components reading from the source). 
-    - This means that in the common case, this hook should perform much better.
-- useMutableSource is similar to useSubscription
-  - Both require a memoized “config” object with callbacks to read values from an external “source”.
-  - Both require a way to subscribe and unsubscribe to the source.
-- There are some differences though:
-  - useMutableSource requires the source as an explicit parameter. 
-    - (React uses this value to protect against "tearing" and ensure that all components reading from a particular source render with the same version of data.)
-  - useMutableSource requires values read from the source to be immutable snapshots. 
-    - This enables values to be reused during high priority render, allowing more expensive re-renders to be deferred when needed.
-- Version number
-  - Tracking a source's version allows us to avoid tearing when reading from a source that a component has not yet subscribed to.
-- Pending update expiration times
-  - Tracking pending updates per source enables newly-mounting components to read without potentially conflicting with components that read from the same source during a previous render.
-- Scenarios to handle
-  - Reading from a source before subscribing
-  - Reading from a source after subscription
-- Unresolved questions
-  - Are there any common/important types of mutable sources that this proposal will not be able to support?
-
-- Given a parent and a child, both calling useMutableSource with the same source: when the source updates, what order will the two components try to read the values from the source?
-  - Keep in mind that `useMutableSource` is being written for concurrent mode (not legacy sync-rendering mode).
-  - So I don't think I understand why the order of subscriptions matters? The resulting React work should be batched into a single React update.
-  - If an update is scheduled for both the parent and child, React will render outside->in.
 
 ### [use-subscription](https://github.com/facebook/react/tree/master/packages/use-subscription) (since 2019)
 
@@ -135,12 +141,36 @@ modified: '2020-07-08T03:17:23.369Z'
     - [rfc text](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
   - [RFC: Speculative Mode PR](https://github.com/reactjs/rfcs/pull/150)
     - [RFC Implementation: Speculative work PR](https://github.com/facebook/react/pull/18262)
+  - [Reparenting API](https://github.com/reactjs/rfcs/pull/34)
+  - [RFC: Focus Management API](https://github.com/reactjs/rfcs/pull/109)
+  - [Introducing an RFC for isomorphic IDs](https://github.com/reactjs/rfcs/pull/32)  
+  - [RFC: Signals and Slots Hooks](https://github.com/reactjs/rfcs/pull/135)
 
 - [rfcs-merged](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Amerged)
   - [RFC: useMutableSource PR](https://github.com/reactjs/rfcs/pull/147)
     - [rfc text](https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md)
     - [rfc implementation PR](https://github.com/facebook/react/pull/18000)
   - [RFC: React Hooks PR](https://github.com/reactjs/rfcs/pull/68)
+  - [Profiler RFC](https://github.com/reactjs/rfcs/pull/51)
+    - [Profiler should measure commit phase durations](https://github.com/reactjs/rfcs/pull/139)
+  - [New commit phase lifecycle getSnapshotBeforeUpdate](https://github.com/reactjs/rfcs/pull/33)
+  - React.lazy
+  - React.memo
+  - React.createRef
+  - [ref-forwarding API](https://github.com/reactjs/rfcs/pull/30)
+  - New version of context
 
 - [rfcs-closed](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Aclosed)
   - [Add React Hooks in Classes RFC](https://github.com/reactjs/rfcs/pull/124)
+  - [RFC: suspendable subscriptions](https://github.com/reactjs/rfcs/pull/127)
+  - Fragment refs RFC
+  - Accept calculateChangedBits as a prop on Context. Providers 
+    - closed in favor of context-selectors
+
+- react-future
+  - [RFC: Plan for custom element attributes/properties in React 17](https://github.com/facebook/react/issues/11347)
+  - [Externalize the State Tree (or alternatives)](https://github.com/facebook/react/issues/4595)
+  - [Support Passive Event Listeners](https://github.com/facebook/react/issues/6436)
+  - [Play Nicely with The DOM Event System (because it's legacy anyway)](https://github.com/facebook/react/issues/4751)
+  - [Support cross-renderer portals](https://github.com/facebook/react/issues/13332)
+  - [Hibernating State (Not Necessarily Serialized)](https://github.com/facebook/react/issues/4594)

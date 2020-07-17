@@ -11,6 +11,11 @@ modified: '2020-07-07T08:10:16.774Z'
 
 - https://babeljs.io/docs/en/plugins
 
+## guide
+
+- deprecated
+  - cancellable promise
+
 ## class fields
 
 - stage 3

@@ -445,13 +445,13 @@ class FancyButton extends React.Component {
 export default logProps(FancyButton);
 ```
 
-- There is one caveat to the above example: refs will not get passed through. 
-  - That’s because `ref` is not a prop. 
+- There is one caveat to the above example: **refs will not get passed through**. 
+  - That’s because ** `ref` is not a prop**. 
   - Like `key` , it’s handled differently by React. 
 - If you add a ref to a HOC, the ref will refer to the outermost container component, not the wrapped component.
 - We can explicitly forward refs to the inner FancyButton component using the `React.forwardRef` API. 
-  - React.forwardRef accepts a render function that receives props and ref parameters and returns a React node.
-  - If you name the render function, DevTools will also include its name (e.g. ”ForwardRef(myFunction)”) 
+- `React.forwardRef` accepts a render function that receives `props` and `ref` parameters and returns a React node.
+- If you name the render function, DevTools will also include its name (e.g. ”ForwardRef(myFunction)”) 
 
 ##  Uncontrolled Components
 

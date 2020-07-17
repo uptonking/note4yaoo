@@ -9,6 +9,44 @@ modified: '2020-06-29T13:14:27.166Z'
 
 ## faq
 
+- ### useImperativeHandle vs assign ref.current directly
+  - [What benefit does useImperativeHandle provide over assigning a forwarded ref in useEffect?](https://stackoverflow.com/questions/59860956/what-benefit-does-useimperativehandle-provide-over-assigning-a-forwarded-ref-in)
+  - It's the same and useImperativeHandle just handles all of the ref cases and makes sure the passed value is a ref and not just any value. So it saves some code
+  - useImperativeHandle is almost the same as your approach with useEffect
+  - So apparently, under the hood, it's the same thing, but with when using useImperativeHandle you don't need to handle the part of `.current` , it already checks for null values, checks if it's a ref and sets in returned value in `.current`
+  - useImperativeHandle needs to have the component use forwardRef
+  - It appears that `useImperativeHandle` is simply an effect that takes care of the necessary checks, cleanups and accounting for both function and object refs, but instead of using the high level useEffect, it works directly with the low level effect lifecycle functions. I think the biggest reason that it is its own hook could be to ensure backwards compatibility with function refs
+
+``` JS
+function FancyInput(props, ref) {
+  const inputRef = useRef();
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    }
+  }));
+  return <input ref={inputRef} />;
+}
+FancyInput = forwardRef(FancyInput);
+```
+
+``` JS
+function FancyInput(props, ref) {
+  const inputRef = useRef();
+  useEffect(() => {
+    if (ref) {
+      ref.current = {
+        focus: () => {
+          inputRef.current.focus();
+        }
+      };
+    }
+  }, [ref]);
+  return <input ref={inputRef} />;
+}
+FancyInput = forwardRef(FancyInput);
+```
+
 - ### `useCallback` vs `useMemo`
   - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
   - useMemo() makes the function run only when inputs change. 
@@ -155,8 +193,8 @@ modified: '2020-06-29T13:14:27.166Z'
   - hooks无法与Class组件同时使用
   - hooks写法还是主要替换setState以及生命周期为主, useState/Effect/Context
   - 各种最佳实践社区还在探索中
-- 参考
-  - hoc转hooks https://zhuanlan.zhihu.com/p/56617944
-  - hooks使用现状  https://www.zhihu.com/question/327685582/answers
-  - hooks体验 
-    - https://zhuanlan.zhihu.com/p/62791765
+
+- ref
+  - [hoc转hooks](https://zhuanlan.zhihu.com/p/56617944)
+  - [hooks使用现状](https://www.zhihu.com/question/327685582/answers)
+  - [hooks体验](https://zhuanlan.zhihu.com/p/62791765)

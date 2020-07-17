@@ -347,7 +347,7 @@ const FunctionComponent = props => {
     - 从Suspence到Hooks，这两个API的发布确实给了我很大的震憾，而这震憾有很大一部分来自于它们居然只在一个小版本上就发布出来了，可见React原本简洁的API有着多大的包容性。
 - 正因为有这么强大的API设计能力，React在引入Fiber这种几乎破坏性的底层变化之际，几乎没有在社区掀起反对的波浪。事实上有很多对React使用不当的场合是没有办法无缝地迁移到异步Fiber之上的，而15版本的React本身是可以搞出很多使用不当的场合的。依靠着自身API强大的最佳实践引导能力，Fiber的推进到开发者的适配几乎没有出现过大的失败案例
 
-- 从HOC迁移到hooks的建议
+- ### 从HOC迁移到hooks的建议
   - 如果觉得实现hook没有思路，可以先实现HOC再翻译过来。
   - 组件的重要功能几乎都有hooks的对应，主要的setState -> useState和生命周期转为useEffect。
   - useEffect一共有3部分，即本体、返回的清理函数、依赖数组，分别对应生命周期的主要部分、componentDidUpdate和componentWillUnmount里的清理逻辑、componentDidUpdate里的if分支用到的属性。
@@ -625,7 +625,7 @@ function Counter() {
 }
 ```
 
-- 为什么 `useCallback` 比 `componentDidUpdate` 更好用
+- ### 为什么 `useCallback` 比 `componentDidUpdate` 更好用
   - 以在函数参数变化时进行重新取数为例
   - 在componentDidUpdate中，判断这两个参数发生了变化就触发重新取数，，如果某一天fetchData多依赖了paramN这个参数，下游函数将需要全部在componentDidUpdate覆盖到这个逻辑
   - 换成Function Component后，eslint-plugin-react-hooks 会自动补上更新后的依赖，而下游的代码不需要做任何改变
@@ -742,7 +742,7 @@ const Count = () => {
 };
 ```
 
-- redux的 `Connect` 与 `useMemo`
+- ### redux的 `Connect` 与 `useMemo`
   - 下面例子的功能一样，Function Component能自动进行依赖推导
   - Connect的场景：由于不知道子组件使用了哪些数据，因此需要在 mapStateToProps 提前写好，而当需要使用数据流内新变量时，组件里是无法访问的，我们要回到 mapStateToProps 加上这个依赖，再回到组件中使用它
   - useContext + useMemo 的场景：由于注入的state是全量的，Render函数中想用什么都可直接用，eslint-plugin-react-hooks会通过静态分析，在useMemo第二个参数自动补上代码里使用到的外部变量，比如state.count、dispatch。
@@ -866,7 +866,7 @@ App.defaultProps = {
 }
 ```
 
-- 为什么不用 `React.memo` ?
+- ### 为什么不用 `React.memo` ?
   - 推荐使用 `React.useMemo` 而不是 `React.memo` ，因为在组件通信时存在 `React.useContext` 的用法，这种用法会使所有用到的组件重渲染，只有 `React.useMemo` 能处理这种场景的按需渲染。
 - 没有性能问题的组件也要使用 `useMemo` 吗？
   - 要，考虑未来维护这个组件的时候，随时可能会通过 useContext 等注入一些数据，这时候谁会想起来添加 useMemo 呢？
@@ -1014,7 +1014,7 @@ useState(() => {
 });
 ```
 
-- **避免滥用refs**
+- ### 避免滥用refs
   - 当 `useEffect` 的依赖频繁变化，你可能想到把频繁变化的值用 `ref` 保存起来。
   - 然而， `useReducer` 可能是更好的解决方式：使用 `dispatch` 消除对一些状态的依赖
 - 最终可以总结出这样的实践
@@ -1134,3 +1134,4 @@ useSomething = (inputCount) => {
   - [超性感的React Hooks（六）自定义hooks的思维方式 by 波大](https://mp.weixin.qq.com/s/GPcwIPJBc9I_NtixyU-U4Q)
   - [源码分析：react hook 最佳实践](https://github.com/Godiswill/blog/issues/18)
   - [Investigate use of context + observedBits for performance optimization](https://github.com/reduxjs/react-redux/issues/1018)
+  - [React Hooks 你真的用对了吗](https://zhuanlan.zhihu.com/p/85969406)
