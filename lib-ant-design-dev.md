@@ -24,11 +24,17 @@ modified: '2020-07-14T09:28:01.400Z'
   - 部分组件提供了一种新的无边框样式
   - 引入了svg图标，支持tree shaking，打包体积更小
   - 组件重写：Form, Table, DatePicker、 TimePicker 与 Calendar
+  - 性能优化
+    - 由于存在动画效果，自定义虚拟滚动并不方便
+    - 使用更符合React的动画
+  - 使用Less3.x
+  - 停止支持IE9/10，继续支持IE11
 - 3.0.0-20171204
   - 全面支持React 16
   - 全新的色彩系统，组件主色由『#108EE9』改为『#1890FF』(『拂晓蓝』)
   - 全新的视觉样式和组件尺寸，基础字体大小由12px增大到14px
   - 新增组件：List, Divider
+  - 3.9引入svg图标
 - 2.0.0-20160928
   - 开发语言改为TypeScript，官方提供 .d.ts
   - 时间类组件 DatePicker、TimePicker、Calendar 等的底层 使用 moment 替换 gregorian-calendar

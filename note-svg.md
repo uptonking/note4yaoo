@@ -1,11 +1,11 @@
 ---
-title: note-graphics-svg-canvas
-tags: [graphics, viz, web]
+title: note-svg
+tags: [svg, viz, web]
 created: '2019-08-01T05:10:56.452Z'
-modified: '2020-07-14T11:49:23.158Z'
+modified: '2020-07-17T13:36:07.583Z'
 ---
 
-# note-graphics-svg-canvas
+# note-svg
 
 ## svg vs canvas
 

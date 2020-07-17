@@ -2,7 +2,7 @@
 title: note-web-dom
 tags: [dom, web]
 created: '2019-08-01T16:03:46.398Z'
-modified: '2020-07-14T11:57:20.469Z'
+modified: '2020-07-17T08:52:30.380Z'
 ---
 
 # note-web-dom
@@ -24,7 +24,7 @@ modified: '2020-07-14T11:57:20.469Z'
   - `<button>` element accepts a wide range of uncommon but useful attributes regarding multiple forms and click actions.
   - Without a type, button implicitly receives type of submit. It does not matter how many submit buttons or inputs there are in the form, any one of them which is explicitly or implicitly typed as submit, when clicked, will submit the form. This can cause problems if you want to use a button in a form without it submitting.
   - `<input type="button">` can only accept a string as its label text (css styles not withstanding).
-  - Input elements are considered empty or void elements (other empty elements are area , base , br , col , hr , img , input , link , meta , and param. You can also check here), meaning they cannot have any content. In addition to not having any content, empty elements cannot have any pseudo-elements like ::after and ::before, which I consider a major drawback.
+  - Input elements are considered empty or void elements (other empty elements are area , base , br , col , hr , img , input , link , meta , and param. You can also check here), meaning they cannot have any content. In addition to not having any content, empty elements cannot have any pseudo-elements like `::after` and `::before` , which I consider a major drawback.
   - ref
     - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
     - https://stackoverflow.com/questions/469059/button-vs-input-type-button-which-to-use
@@ -33,7 +33,7 @@ modified: '2020-07-14T11:57:20.469Z'
   - type
     - submit: button submits the form data to the server. This is the default if the attribute is not specified, 
     - button: button has no default behavior and does nothing when pressed. It can have client-side scripts associated with the element's events, which are triggered when the events occur.
-    - reset: resets all the controls to their initial values, like `<input type="reset">`.
+    - reset: resets all the controls to their initial values, like `<input type="reset">` .
 - table标签
   - tbody标签主要定义一段表格主体（正文），使用tbody标签，可以将表格分为一个单独的部分，tbody标签可将表格中的一行或几行合成一组
   - tbody包含行的内容下载完优先显示，不必等待表格结束

@@ -3,7 +3,7 @@ title: note-style-design-system
 tags: [design-system, style, ui]
 favorited: true
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-07-14T11:30:06.332Z'
+modified: '2020-07-17T08:47:42.407Z'
 ---
 
 # note-style-design-system
@@ -22,10 +22,10 @@ modified: '2020-07-14T11:30:06.332Z'
     - Selection controls, like sliders and switches
     - Progress bars
     - Floating action buttons
-  -  Brand colors can be used in key moments
-   - that associate those colors with specific actions and info
-   - use color in bold ways to convey a sense of energy and excitement
-   - use color in subtle ways to convey sophistication, emphasizing content, or suiting content in some other way(state changes)
+  - Brand colors can be used in key moments
+    - that associate those colors with specific actions and info
+    - use color in bold ways to convey a sense of energy and excitement
+    - use color in subtle ways to convey sophistication, emphasizing content, or suiting content in some other way(state changes)
   - ref
     - https://material.io/design/color
     - https://material.io/design/color/applying-color-to-ui.html 
@@ -103,55 +103,55 @@ modified: '2020-07-14T11:30:06.332Z'
   - Darker color variation = lower brightness + higher saturation
   - Lighter Color Variation = higher brightness + lower saturation
   - make the movement of the hue match up with the movement of the saturation and brightness    - 
-      - darken时使h靠近0(红)、120(绿)、240(蓝)，变亮时相反
+    - darken时使h靠近0(红)、120(绿)、240(蓝)，变亮时相反
 - color-palette
   - grey-colors
-      - Text, backgrounds, panels, form controls — almost everything in an interface is grey.
-      - In practice, you want 8-10 shades to choose from (more on this later). enough to make sure you don't have to compromise too much
+    - Text, backgrounds, panels, form controls — almost everything in an interface is grey.
+    - In practice, you want 8-10 shades to choose from (more on this later). enough to make sure you don't have to compromise too much
   - primary-colors
-      - Most sites need one, maybe two colors that are used for primary actions, emphasizing navigation elements, etc. 
-      - you need a variety (5-10) of lighter and darker shades to choose from.
-      - Ultra-light shades can be useful as a tinted background for things like alerts, while darker shades work great for text
+    - Most sites need one, maybe two colors that are used for primary actions, emphasizing navigation elements, etc. 
+    - you need a variety (5-10) of lighter and darker shades to choose from.
+    - Ultra-light shades can be useful as a tinted background for things like alerts, while darker shades work great for text
   - accent-colors
-      - every site needs a few accent colors for communicating different things to the user.
-      - yellow for a warning message
-      - green to highlight a positive trend
-      - You'll want multiple shades for these colors too, even though they should be used pretty sparingly throughout the UI
+    - every site needs a few accent colors for communicating different things to the user.
+    - yellow for a warning message
+    - green to highlight a positive trend
+    - You'll want multiple shades for these colors too, even though they should be used pretty sparingly throughout the UI
 - The Predix Design System uses slightly-saturated grays for backgrounds and text. 
   - Bold hues and highlight colors are intended to be used in data visualizations, call-to-actions, and alerts
 - gradient color
   - use cases
-      - Header Gradient BGs
-      - gradient effects are generally part of the overall dynamic interface
-      - Logos & Text Effects
+    - Header Gradient BGs
+    - gradient effects are generally part of the overall dynamic interface
+    - Logos & Text Effects
   - Gradients are good for highlighting extremes in a range of values.
-      - especially in charts
+    - especially in charts
   - Horizontal gradient
-      - This is a concept design of an eCommerce app, including settings, authorization, and coupons. 
-      - The designer presents the user’s coupon information by cards which use a uniform double-color horizontal gradient, highlighting the information on the card. 
-      - Overall, the interface is minimalist and elegant.
+    - This is a concept design of an eCommerce app, including settings, authorization, and coupons. 
+    - The designer presents the user’s coupon information by cards which use a uniform double-color horizontal gradient, highlighting the information on the card. 
+    - Overall, the interface is minimalist and elegant.
   - Vertical gradient
-      - How to make your weather APP stand out? 
-      - The designer uses the vertical gradient very clever to create a sophisticated evening sky background with the APP’s timeline. 
-      - The interface and function complement each other.
+    - How to make your weather APP stand out? 
+    - The designer uses the vertical gradient very clever to create a sophisticated evening sky background with the APP’s timeline. 
+    - The interface and function complement each other.
   - Diagonal gradient
-      - The designer uses the diagonal gradient as a background, the warm gradual interface makes the interface more friendly and cordial. 
-      - Besides, the diagonal gradient makes the interface more lively and rich, giving users a soft and humane AI product experience.
+    - The designer uses the diagonal gradient as a background, the warm gradual interface makes the interface more friendly and cordial. 
+    - Besides, the diagonal gradient makes the interface more lively and rich, giving users a soft and humane AI product experience.
   - Gradient overlays on the background and head image
-      - strengthen the sense of wholeness, making the user aware of other more important and crucial elements 
-      - the overall image will be more mysterious, elegant and attractive.
+    - strengthen the sense of wholeness, making the user aware of other more important and crucial elements 
+    - the overall image will be more mysterious, elegant and attractive.
   - Multi-angle multi-level overlay
   - Functional gradient effect
   - Multiple gradients are often inaccessible and are discouraged
   - Gradients should not be used to represent any meaningful progression or divergence.
   - We must go back to 2014 when it was all about flat design. 
-      - Google had introduced their ‘Material design’ and Windows had their ‘Metro’.
-      - They were great for low-resolution mobile devices where the designs looked clean, but alas, we were constrained by the variety of colors and with the advent of higher resolution mobile devices- it didn’t have the same aesthetic impact.
-      - Can you name more than 20 flat colors? I bet you can’t. Flat colors are limited.
+    - Google had introduced their ‘Material design’ and Windows had their ‘Metro’.
+    - They were great for low-resolution mobile devices where the designs looked clean, but alas, we were constrained by the variety of colors and with the advent of higher resolution mobile devices- it didn’t have the same aesthetic impact.
+    - Can you name more than 20 flat colors? I bet you can’t. Flat colors are limited.
   - when flat design rose, designers were keeping away gradient in design
   - The reason for gradient’s rise is that flat design color combinations are extremely easy to cause homogeneity
-      - Gradients let designers create something that feels new by blending colors.
-      - You see gradients everywhere in nature, every fruit, every leaf 
+    - Gradients let designers create something that feels new by blending colors.
+    - You see gradients everywhere in nature, every fruit, every leaf 
   - A gradient is the gradual blending from one color to another. It enables the designer to almost create a new color. It makes objects stand out by adding a new dimension to the design and adding realism to the object. 
   - In simple terms, **gradients add depth** 
   - a gradual blending from a color to white or black (and playing with opacity) can mimic distance from or proximity to a light source. Gradients are more faithful to the real world because real life isn’t made of flat colors.
@@ -159,42 +159,42 @@ modified: '2020-07-14T11:30:06.332Z'
   - Use a linear gradient for a square or polygonal area
   - Use a radial gradient for round areas
   - Learn basic types of gradients
-      - use the appropriate type
+    - use the appropriate type
   - Don’t choose colors randomly
-      - You can use a gradient to communicate a change, guiding their gaze.
-      - Choosing a bright color where you want your viewers to see, choosing a dark transition to create a sense of shape or maybe a dull color to reduce its visual weight
-      - keep a few things in mind when choosing colors.
+    - You can use a gradient to communicate a change, guiding their gaze.
+    - Choosing a bright color where you want your viewers to see, choosing a dark transition to create a sense of shape or maybe a dull color to reduce its visual weight
+    - keep a few things in mind when choosing colors.
   - introducing the 3-stop gradient
-      - add a third stop in the gradient at about halfway between the original two colors.
-      - When you create a gradient from a solid color to transparent color AKA a color fade effect, make sure both stops have the same color. different colors means at the midpoint you have the ‘transition phase color’ at 50% opacity instead of a visually smooth effect.
-      - It doesn’t stop at 3, you can create as many stops in the gradient to gain more control over the transition
+    - add a third stop in the gradient at about halfway between the original two colors.
+    - When you create a gradient from a solid color to transparent color AKA a color fade effect, make sure both stops have the same color. different colors means at the midpoint you have the ‘transition phase color’ at 50% opacity instead of a visually smooth effect.
+    - It doesn’t stop at 3, you can create as many stops in the gradient to gain more control over the transition
   - Create smooth transitions
-      - Ideally, the user shouldn’t notice the place where one color flows to another
+    - Ideally, the user shouldn’t notice the place where one color flows to another
   - Convey emotion or mood
   - Don’t forget about color contrast
-      - Always check the color-contrast ratio to ensure accessiblity
+    - Always check the color-contrast ratio to ensure accessiblity
   - Gradient design tools
-      - https://uigradients.com/
-      - https://github.com/webkul/coolhue
-      - https://www.grabient.com/
-      - https://github.com/itmeo/webgradients
-      - https://gradientbuttons.colorion.co/
-      - https://webgradients.com/
-      - https://gradienthunt.com/
+    - https://uigradients.com/
+    - https://github.com/webkul/coolhue
+    - https://www.grabient.com/
+    - https://github.com/itmeo/webgradients
+    - https://gradientbuttons.colorion.co/
+    - https://webgradients.com/
+    - https://gradienthunt.com/
   - ref
-      - https://www.smashingmagazine.com/2018/01/gradients-user-experience-design/
-      - https://uxplanet.org/why-gradients-are-back-to-rule-in-2018-8b36711c335f
-      - https://blog.prototypr.io/design-with-gradients-fdba5ec856d4
-      - https://uxplanet.org/gradients-in-ui-design-b97146f63df3
-      - https://designmodo.com/gradients/
-      - https://cssgradient.io/
-      - https://99designs.com/blog/trends/gradient-design-trend/
-      - https://www.awwwards.com/gradients-in-web-design-elements.html
-      - https://www.figma.com/dictionary/gradient/
-      - https://www.webdesignerdepot.com/2018/06/how-to-design-the-perfect-gradient/
-      - https://www.mockplus.com/blog/post/gradient-color-app-design
-      - https://www.mockplus.com/blog/post/flat-design-color-combinations
-      - https://ics-design-system.us-east.mybluemix.net/style/color?tab=1
+    - https://www.smashingmagazine.com/2018/01/gradients-user-experience-design/
+    - https://uxplanet.org/why-gradients-are-back-to-rule-in-2018-8b36711c335f
+    - https://blog.prototypr.io/design-with-gradients-fdba5ec856d4
+    - https://uxplanet.org/gradients-in-ui-design-b97146f63df3
+    - https://designmodo.com/gradients/
+    - https://cssgradient.io/
+    - https://99designs.com/blog/trends/gradient-design-trend/
+    - https://www.awwwards.com/gradients-in-web-design-elements.html
+    - https://www.figma.com/dictionary/gradient/
+    - https://www.webdesignerdepot.com/2018/06/how-to-design-the-perfect-gradient/
+    - https://www.mockplus.com/blog/post/gradient-color-app-design
+    - https://www.mockplus.com/blog/post/flat-design-color-combinations
+    - https://ics-design-system.us-east.mybluemix.net/style/color?tab=1
 - HSL(色相、饱和度、亮度)在概念上表示了一个双圆锥体和圆球体
   - 黑色在下顶点，白色在上顶点，最大横切面的圆心是半程灰色
   - 使用HSL的有：inkscape
@@ -204,15 +204,15 @@ modified: '2020-07-14T11:30:06.332Z'
 - HWB(Hue, Whiteness, Blackness)
 - HSB vs HSL
   - HSL is similar to HSB. The main difference is that HSL is symmetrical to lightness and darkness.  
-      - In HSL, the Saturation component always goes from fully saturated color to the equivalent gray (in HSB, with B at maximum, it goes from saturated color to white).
-      - In HSL, the Lightness always spans the entire range from black through the chosen hue to white (in HSB, the B component only goes half that way, from black to the chosen hue).
+    - In HSL, the Saturation component always goes from fully saturated color to the equivalent gray (in HSB, with B at maximum, it goes from saturated color to white).
+    - In HSL, the Lightness always spans the entire range from black through the chosen hue to white (in HSB, the B component only goes half that way, from black to the chosen hue).
   - HSL的特点
-      - 只要L为0，颜色就为黑色，只要L为100，颜色就为白色，S和L可认为没有关系
-      - 当L在0~100之间(不包含两端)时，S从0到100为灰度值到最饱和色
+    - 只要L为0，颜色就为黑色，只要L为100，颜色就为白色，S和L可认为没有关系
+    - 当L在0~100之间(不包含两端)时，S从0到100为灰度值到最饱和色
   - HSB的特点
-      - 只要B为0，颜色就为黑色，B为100时为亮度最高的色值
-      - 当B在0~100之间(不包含两端)时，S从0到100为灰度值到最饱和色
-      - 特别地，当B=100，S=0时，颜色为白色
+    - 只要B为0，颜色就为黑色，B为100时为亮度最高的色值
+    - 当B在0~100之间(不包含两端)时，S从0到100为灰度值到最饱和色
+    - 特别地，当B=100，S=0时，颜色为白色
   - 黑色产生条件相同，都为L或B为0，为0时无论怎么改变S都为纯黑色
   - 白色产生条件不同，HSL的白色需要L为100，HSB的白色需要B为100且S为0
   - 换算工具 http://colorizer.org/
@@ -256,64 +256,64 @@ modified: '2020-07-14T11:30:06.332Z'
   - on mobile devices, the events that trigger these pseudo-classes can become conflated. 
 - tips
   - hover, active, focus的书写顺序
-      - hover写在最前面(否则一直hover色)
-      - active写在最后，点击过程才反馈，否则会被hover或focus颜色挡住
+    - hover写在最前面(否则一直hover色)
+    - active写在最后，点击过程才反馈，否则会被hover或focus颜色挡住
 - states
   - default
-      - brand color
-      - One common mistake is to choose a button style that isn’t differentiated enough from input fields
+    - brand color
+    - One common mistake is to choose a button style that isn’t differentiated enough from input fields
   - disabled
-      - Disabled components are unavailable for interaction, so they don’t receive hover or focus and are not subject to WC3 contrast compliance standards
-      - For the dark themes, disabled values are two full steps lighter than their respective background. 
-      - For light themes, they are two full steps darker. 
-      - One of the most popular methods of styling disabled buttons is to lower their opacity. 
+    - Disabled components are unavailable for interaction, so they don’t receive hover or focus and are not subject to WC3 contrast compliance standards
+    - For the dark themes, disabled values are two full steps lighter than their respective background. 
+    - For light themes, they are two full steps darker. 
+    - One of the most popular methods of styling disabled buttons is to lower their opacity. 
   - hover：建议取一个步长的邻近值
-      - In the IBM default themes, these colors fall outside of the core palette steps and act as “half steps” between two adjacent colors.
-      - `:hover` triggers when a user brings their mouse over an element.
-      - Hover states are usually represented by a change in background-color (and/or color)
+    - In the IBM default themes, these colors fall outside of the core palette steps and act as “half steps” between two adjacent colors.
+    - `:hover` triggers when a user brings their mouse over an element.
+    - Hover states are usually represented by a change in background-color (and/or color)
   - active
-      - The active state is two full steps lighter for values between 100 and 70 and two full steps darker for values between 60 and 10
-      - `:active` triggers when you interact with an element.
-          - Holding down your left mouse button on an element (even non-focusable ones)
-          - Holding down the Space key (on buttons)
-      - active and focus 
-          - When you hold down the left mouse button on a focusable element, you trigger the active state. You also trigger the focus state at the same time.
-          - When you release the left mouse button, focus remains on the element
-          - Above is true for most focusable elements except links and buttons.
-          - links
-              - When you release left mouse button: :focus remains on link (if the link’s href does not match an id on the same page). On Safari, focus goes back to `<body>`
-          - buttons
-              - When you hold down left mouse button: Triggers :active and :focus state on Chrome only. Does not trigger :focus at all in Safari and Firefox (Mac).
-          - If you want clicks to focus on buttons, you need to add this JavaScript as early as you can. 
-          - Holding down Space triggers :active on buttons, but holding down Enter doesn’t.
-          - Enter triggers links but it doesn’t create create an active state. Space doesn’t trigger links at all.
-      - styling hover and active together
-          - mouse click and keyboard both get feedback
-      - These(hover & active) states will only apply to some users and input types. Not everyone uses a mouse, not everyone uses their fingers.
-      - It’s way, way more fun to design these states with awareness of everything else
+    - The active state is two full steps lighter for values between 100 and 70 and two full steps darker for values between 60 and 10
+    - `:active` triggers when you interact with an element.
+      - Holding down your left mouse button on an element (even non-focusable ones)
+      - Holding down the Space key (on buttons)
+    - active and focus 
+      - When you hold down the left mouse button on a focusable element, you trigger the active state. You also trigger the focus state at the same time.
+      - When you release the left mouse button, focus remains on the element
+      - Above is true for most focusable elements except links and buttons.
+      - links
+        - When you release left mouse button: :focus remains on link (if the link’s href does not match an id on the same page). On Safari, focus goes back to `<body>`
+      - buttons
+        - When you hold down left mouse button: Triggers :active and :focus state on Chrome only. Does not trigger :focus at all in Safari and Firefox (Mac).
+      - If you want clicks to focus on buttons, you need to add this JavaScript as early as you can. 
+      - Holding down Space triggers :active on buttons, but holding down Enter doesn’t.
+      - Enter triggers links but it doesn’t create create an active state. Space doesn’t trigger links at all.
+    - styling hover and active together
+      - mouse click and keyboard both get feedback
+    - These(hover & active) states will only apply to some users and input types. Not everyone uses a mouse, not everyone uses their fingers.
+    - It’s way, way more fun to design these states with awareness of everything else
   - focus
       - The focus state usually appears as a Blue 60 border in the light theme and as a White border in the dark theme.
       - Elements can receive focus in two ways:
-          - When users *tab* into a focusable element
-          - When users *click* on a focusable element
+        - When users *tab* into a focusable element
+        - When users *click* on a focusable element
       - Focusable elements are: 
-          - `<a>` , `<button>` , `<input>` , `<textarea>`
-          - Elements with `tabindex` attribute
-          - Users cannot tab into an element with tabindex="-1", but they can click on it. The click triggers focus.
-          - On Safari and Firefox (Mac), clicks do not focus the `<button>` element
-          - When you click on a link ( `<a>` ), focus remains on the link until you lift your finger from your mouse. When you lift your finger, the focus gets redirected elsewhere if the href points to a valid id on the same page.
+        - `<a>` , `<button>` , `<input>` , `<textarea>`
+        - Elements with `tabindex` attribute
+        - Users cannot tab into an element with tabindex="-1", but they can click on it. The click triggers focus.
+        - On Safari and Firefox (Mac), clicks do not focus the `<button>` element
+        - When you click on a link ( `<a>` ), focus remains on the link until you lift your finger from your mouse. When you lift your finger, the focus gets redirected elsewhere if the href points to a valid id on the same page.
       - When a user hits tab, they don’t know where the focus will go to. They can only guess. This is why we need a prominent change a user’s attention attention to the focused element.
-          - The default focus style of browsers is okay most of the time
-          - Adding an outline
-          - Creating animations with movement
-          - Adding box shadows
-          - Changing background-color or color (bad,confusing with hover)
+        - The default focus style of browsers is okay most of the time
+        - Adding an outline
+        - Creating animations with movement
+        - Adding box shadows
+        - Changing background-color or color (bad,confusing with hover)
       - Without it, navigation via keyboards or other directional input devices is virtually impossible
       - It should not rely entirely on color and value changes, which can be difficult for some users to identify.
   - selected
-      - The selected state is one full step lighter for values between 100 and 70, and one full step darker for values between 60 and 10
+    - The selected state is one full step lighter for values between 100 and 70, and one full step darker for values between 60 and 10
   - toggle/expanded
-      - Dropdown or expand/collapse toggles. These usually incorporate a caret, arrow or plus/minus icon as well.
+    - Dropdown or expand/collapse toggles. These usually incorporate a caret, arrow or plus/minus icon as well.
   - dragged/pressed
   - error
 - ref
@@ -362,7 +362,7 @@ modified: '2020-07-14T11:30:06.332Z'
   - shadows
   - zIndex:speedDial1000-drawer1200-modal1300-snackbar1400-tooltip1500
 
-## ant-design
+## ant-design色彩
 
 - Ant Design将色彩体系解读成两个层面：系统级色彩体系和产品级色彩体系
   - 系统级色彩体系主要定义了蚂蚁中台设计中的基础色板、中性色板和数据可视化色板
@@ -389,25 +389,8 @@ modified: '2020-07-14T11:30:06.332Z'
 - ref
   - https://ant.design/docs/spec/colors-cn
   - https://zhuanlan.zhihu.com/p/32422584
-- changelog
-      - 4.0
-          - 对标记为Deprecated的属性进行移除
-          - 使用最新版本Reat的API，拥抱React17，提供相关组件的Hooks版本
-          - 使用Less3.x
-          - 停止支持IE9/10，继续支持IE11
-          - 减小图标体积，使用svg图标
-          - 组件
-              - Mention组件移除Draft.js
-              - Form组件将默认聚合表单数据域，你不再需要通过 Form.create()
-              - DatePicker重写
-          - 性能优化
-              - 由于存在动画效果，自定义虚拟滚动并不方便
-              - 使用更符合React的动画
-          - 参考
-              - https://juejin.im/post/5cefcc906fb9a07eca696138
-              - https://github.com/ant-design/ant-design/issues/16911
-      - 3.0
-          - 3.9引入svg图标
+
+          
 
 ## Mineral UI
 
@@ -426,9 +409,7 @@ modified: '2020-07-14T11:30:06.332Z'
 - 需要注意的颜色
   -  If we edited the Lime color to be 4.5:1 contrast with white text, it no longer looked like lime anymore (more like goose poop).
   - If the color contrast ratio of yellow is more than 4.5:1, it would look like the current Bronze color
-
-  -Orange, used for the “Warning” variant in our theme, was easily confused with our “Danger” variant (Red). Bronze was born as a compliant way 
-
+  - Orange, used for the “Warning” variant in our theme, was easily confused with our “Danger” variant (Red). Bronze was born as a compliant way 
 - ref
   - https://uxplanet.org/designing-systematic-colors-b5d2605b15c
   - https://mineral-ui.netlify.com/color

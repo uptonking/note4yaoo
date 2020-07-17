@@ -3,7 +3,7 @@ title: note-web-dev-solution
 tags: [dev, solution, web]
 favorited: true
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-07-14T10:36:07.346Z'
+modified: '2020-07-17T08:52:12.776Z'
 ---
 
 # note-web-dev-solution
@@ -16,7 +16,15 @@ modified: '2020-07-14T10:36:07.346Z'
     - Tree shaking does not apply to re-exported namespace imports
     - rollup can tree-shake `import * as foo` just like other tools
 - component-to-image
-- repng
+  - repng
+- 中文字体体积大的问题
+  - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
+  - 动态中文web字体暂无解决方案
+- css模块化方案选择的问题
+  - 暂无统一标准的解决方案，可以参考ant-design等大型项目，直接使用css即可
+  - 要考虑与具体框架结合，方便实现国际化语言和样式主题切换
+  - 要考虑依赖的或将使用第三方组件的样式如何集成到现有项目
+  - 考虑在特殊情况下如何覆盖样式
 
 ## 前端基础框架开发
 

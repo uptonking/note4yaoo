@@ -1,8 +1,8 @@
 ---
-tags: [layout, style, web]
 title: note-web-layout-flexbox
+tags: [layout, style, web]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-10T03:07:15.021Z'
+modified: '2020-07-17T08:53:14.923Z'
 ---
 
 # note-web-layout-flexbox
@@ -10,7 +10,7 @@ modified: '2020-07-10T03:07:15.021Z'
 ## guide
 
 - ref
-  - [30 分钟学会 Flex 布局](https://zhuanlan.zhihu.com/p/25303493)
+  - [30分钟学会Flex布局](https://zhuanlan.zhihu.com/p/25303493)
 
  
 
