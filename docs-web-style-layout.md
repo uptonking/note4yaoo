@@ -1,12 +1,16 @@
 ---
-title: docs-web-global-layout
+title: docs-web-style-layout
 tags: [docs, layout, web]
 favorited: true
 created: '2020-07-17T09:46:19.722Z'
-modified: '2020-07-17T09:49:06.036Z'
+modified: '2020-07-18T09:32:06.258Z'
 ---
 
-# docs-web-global-layout
+# docs-web-style-layout
+
+## display
+
+## position
 
 ## float
 

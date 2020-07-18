@@ -12,6 +12,19 @@ modified: '2020-07-09T13:24:25.794Z'
 - 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
+## hide dom elements: visibility vs display
+
+- `visibility: hidden` does not cause a reflow on the document, while `display: none` does.
+- `display:none` will remove the element from the document's normal flow and set the values for position/height/width to 0 on the element and its children. 
+  - When the elements display property is changed to other value than `none` , it triggers a complete document re-flow, which can be a problem for big documents - and sometimes not-so-big documents being rendered on hardware with limited capabilities.
+- If you are adding a lot of elements to a DOM, and you add them to the container with `visibility: hidden` , then you'll provoke a reflow for each one. 
+  - On the other hand, you can add as many elements as you want with `display:none` and show them all at once provoking a single reflow. 
+  - The performance taxing action is the the reflow.
+- `visibility: hidden` acts like `opacity: 0` + `pointer-events: none` . 
+- `display: none` acts like `Element.remove()` .
+- ref
+  - [Performance differences between visibility:hidden and display:none](https://stackoverflow.com/questions/11757016/performance-differences-between-visibilityhidden-and-displaynone)
+
 ## 对象解构时，特别地，对react函数组件的props参数解构时，是在参数处解构更好，还是在函数体内解构更好？
 
 - 在函数内解构，除了可以获得各属性prop变量外，还方便使用整体的props

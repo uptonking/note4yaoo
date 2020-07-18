@@ -7,7 +7,6 @@ modified: '2020-07-14T11:27:22.474Z'
 
 # note-web-css
 
-
 ## faq
 
 - css selector的性能比较
@@ -38,12 +37,6 @@ modified: '2020-07-14T11:27:22.474Z'
   - https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/
 
 ## sumary
-- Ordering CSS Properties by type/group/importance
-  - positioning & layout: position, float, overflow, clear, display
-  - box model: width, height, margin, padding
-  - visual: color, background, border, box-shadow
-  - text: font-size/family, text-align, text-transform
-  - misc: z-index, cursor
 
 - Best practices of using efficient CSS selectors (by Google Page Speed) (已过时)
   - Avoid descendant selectors: table tbody tr td
@@ -107,16 +100,12 @@ modified: '2020-07-14T11:27:22.474Z'
     - I think that is the right way to go about this, it is easy and will lead to correct outcome.”
 - There are approaches, like BEM for example, which models the CSS as flat as possible, to minimize DOM hierarchy dependency and to decouple web components so they could be "moved" across the DOM and work regardless.
 
-
-
 ## CSS performance revisited: selectors, bloat and expensive styles
 
 - ref
   - [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)
 
-## guide
+## ref
 
-- ref
-  - https://stackoverflow.com/questions/25618138/what-happened-to-the-use-efficient-css-selectors-rule
-  - https://stackoverflow.com/questions/12279544/which-css-selectors-or-rules-can-significantly-affect-front-end-layout-renderi
-
+- https://stackoverflow.com/questions/25618138/what-happened-to-the-use-efficient-css-selectors-rule
+- https://stackoverflow.com/questions/12279544/which-css-selectors-or-rules-can-significantly-affect-front-end-layout-renderi

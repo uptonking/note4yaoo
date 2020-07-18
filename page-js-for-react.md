@@ -7,7 +7,8 @@ modified: '2020-07-14T10:49:58.315Z'
 
 # page-js-for-react
 
-> copied from [dvajs-README](https://github.com/dvajs/dva-knowledgemap/blob/master/README.md)    
+> copied from [dvajs-README](https://github.com/dvajs/dva-knowledgemap/blob/master/README.md)  
+
 > 注：如果你使用 dva@2，请先忽略这里的路由部分，待更新。
 
 不知大家学 react 或 dva 时会不会有这样的疑惑：
@@ -25,12 +26,12 @@ modified: '2020-07-14T10:49:58.315Z'
 
 ## 目录
 
-- [page-blog-js-for-react](#page-blog-js-for-react)
+- [page-js-for-react](#page-js-for-react)
   - [目录](#目录)
   - [JavaScript 语言](#javascript-语言)
     - [变量声明](#变量声明)
       - [const 和 let](#const-和-let)
-      - [模板字符串](#模板字符串)
+      - [模板字符串 template literals](#模板字符串-template-literals)
       - [默认参数](#默认参数)
     - [箭头函数](#箭头函数)
     - [模块的 Import 和 Export](#模块的-import-和-export)
@@ -103,7 +104,7 @@ let count = 0;
 count = count + 1;
 ```
 
-#### 模板字符串
+#### 模板字符串 template literals
 
 模板字符串提供了另一种做字符串组合的方法。
 

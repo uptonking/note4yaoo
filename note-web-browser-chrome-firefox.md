@@ -7,6 +7,10 @@ modified: '2020-07-14T11:56:38.652Z'
 
 # note-web-browser-chrome-firefox
 
+## browser 
+
+- [Browser usage table](https://caniuse.com/usage-table)
+
 ## chrome
 
 - https://developers.google.com/web/tools/chrome-devtools
@@ -15,6 +19,3 @@ modified: '2020-07-14T11:56:38.652Z'
   - https://www.chromestatus.com/features
 
 ## firefox-dev
-
-
-
