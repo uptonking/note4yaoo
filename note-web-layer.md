@@ -10,7 +10,7 @@ modified: '2020-07-17T11:56:26.797Z'
 ## faq
 
 - app图层设计是整体思维，是否与局部component的设计相矛盾
-  - 那就将Component从全局角度考虑，即使用context api
+  - 那就从全局角度设计Component，考虑使用context api
 
 ## solution-catalog-layers
 
