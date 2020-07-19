@@ -155,20 +155,49 @@ font-size: 15px;
   - [height 属性与 line-height 属性有什么区别](https://www.zhihu.com/question/20222907)
   - [line-height和vertical-align采坑记](https://zhuanlan.zhihu.com/p/51189193)
 
-## text-align
-
 ## vertical-align
 
-- vertical-align 指定了每个行内框的垂直对齐方式；
-- baseline（默认值）：使元素的基线与父元素的基线对齐。HTML规范没有详细说明部分可替换元素的基线，如textarea ，这意味着这些元素使用此值的表现因浏览器而异。
-- sub：使元素的基线与父元素的下标基线对齐。
-- super: 使元素的基线与父元素的上标基线对齐。
-- text-top：使元素的顶部与父元素的字体顶部对齐。
-- text-bottom：使元素的底部与父元素的字体底部对齐。
-- middle：使元素的中部与父元素的基线加上父元素- - x-height的一半对齐。
-- length：使元素的基线对齐到父元素的基线之上的给定长度。可以是负数。
-- percentage：使元素的基线对齐到父元素的基线之上的给定百分比，该百分比是line-height属性的百分比（基友关系暴露）。可以是负数。
-- top：使元素及其后代元素的顶部与整行的顶部对齐。
-- bottom：使元素及其后代元素的底部与整行的底部对齐。
+- sets vertical alignment of an inline, inline-block or table-cell box.
+- vertical-align property can be used in two contexts:
+  - To vertically align an inline element's box inside its containing line box. 
+    - For example, it could be used to vertically position an `<img>` in a line of text
+  - To vertically align the content of a cell in a table
+- vertical-align only applies to inline, inline-block and table-cell elements
+  - you can't use it to vertically align block-level elements
+- **Parent-relative values**
+- These values vertically align the element relative to its parent element
+  - baseline
+    - Aligns the baseline of the element with the baseline of its parent. 
+  - text-top/bottom
+    - Aligns the top of the element with the top of the parent element's font.
+  - middle
+    - Aligns the middle of the element with the baseline plus half the x-height of the parent.
+  - sub/super
+  - length/percentage
+- **Line-relative values**
+- These values vertically align the element relative to the entire line
+  - top/bottom
+    - Aligns the top of the element and its descendants with the top of the entire line.
+- For elements that do not have a baseline, the bottom margin edge is used instead.
+
+- vertical-align 指定了每个行内框的垂直对齐方式
+  - baseline（默认值）：使元素的基线与父元素的基线对齐。HTML规范没有详细说明部分可替换元素的基线，如textarea，这意味着这些元素使用此值的表现因浏览器而异。
+  - sub：使元素的基线与父元素的下标基线对齐。
+  - super: 使元素的基线与父元素的上标基线对齐。
+  - text-top：使元素的顶部与父元素的字体顶部对齐。
+  - text-bottom：使元素的底部与父元素的字体底部对齐。
+  - middle：使元素的中部与父元素的基线加上父元素x-height的一半对齐。
+  - length：使元素的基线对齐到父元素的基线之上的给定长度。可以是负数。
+  - percentage：使元素的基线对齐到父元素的基线之上的给定百分比，该百分比是line-height属性的百分比（基友关系暴露）。可以是负数。
+  - top：使元素及其后代元素的顶部与整行的顶部对齐。
+  - bottom：使元素及其后代元素的底部与整行的底部对齐。
 - 没有基线的元素，使用外边距的下边缘替代，
   - 且vertical-align只对行内元素、表格单元格元素生效，不能用它垂直对齐块级元素
+- ref
+  - [mdn vertical-align](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align)
+
+## text-align
+
+- sets the horizontal alignment of a block element or table-cell box. 
+- This means it works like `vertical-align` but in the horizontal direction. 
+- The standard-compatible way to center a block itself without centering its inline content is setting the left and right margin to auto, `margin: 0 auto;`
