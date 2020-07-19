@@ -2,14 +2,16 @@
 title: note-ux-style-pattern
 tags: [style, ux, web]
 created: '2019-10-10T08:40:08.927Z'
-modified: '2020-07-14T10:44:34.209Z'
+modified: '2020-07-19T12:10:16.677Z'
 ---
 
 # note-ux-style-pattern
 
 ## interaction
 
-- hightlight items on page  and block user interactions
+- 文字逐个消失，再逐个出现，可以突出重点
+  - https://airform.io
+- hightlight items on page and block user interactions
   - https://kamranahmed.info/driver.js/
 - unfold: 揭开效果，类似画皮的撕皮
   - https://aframe.io/aframe/examples/animation/unfold/

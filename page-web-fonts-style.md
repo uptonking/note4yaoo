@@ -47,9 +47,9 @@ div { font-size: 100px }
 - 用 vertical-align: middle 会不会好一点呢？读 CSS 文档你会发现，middle 的意思是「用父元素 baseline 高度加上父元素中 x-height 的一半的高度来对齐当前元素的垂直方向的中点」。
   - baseline 所处的高度跟字体有关，x-height 的高度也跟字体有关，所以 middle 对齐也不靠谱。
   - 更糟糕的是，一般来说，middle 根本就不是居中对齐！内联元素的对齐受太多因素影响，因此不可能用 CSS 实现
-- vertical-align: top / bottom，表示与 line-box 的顶部或底部对齐
-- vertical-align: text-top / text-bottom，表示与 content-area 的顶部或底部对齐
-- vertical-align 的值也可以是数字，表示根据 baseline 升高或降低，不到万不得已还是别用数字吧。
+- vertical-align: top/bottom，表示与line-box的顶部或底部对齐
+- vertical-align: text-top/text-bottom，表示与content-area的顶部或底部对齐
+- vertical-align的值也可以是数字，表示根据baseline升高或降低，不到万不得已还是别用数字吧。
 - 内联元素的对齐，首先就要分为2种，替换内联，非替换内联，
   - 替换内联对齐的是整个元素的下边缘（注: 包括margin的下边缘，如果有文字出现，那么对齐的会变为文字的baseline），
   - 非替换内联默认对齐的是文字内容的baseline，一般大多数情况下都是图片与文字的对齐，这种情况下，要么你将2者line-height设为固定值（px值），同时图片不设置任何上下的padding和margin，如果要保证2段文字对齐，尽量保证字体类型，大小相同，此时你可以设置line-height，如果不相同，那么最好不要设置line-height，寻找其他办法保证垂直居中，因为他们默认的文字基线是一样的。

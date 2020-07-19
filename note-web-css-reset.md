@@ -18,8 +18,17 @@ modified: '2020-07-18T06:07:02.461Z'
     - A modern alternative to CSS resets
     - It makes browsers render all elements more consistently and in line with modern standards. 
     - It precisely targets only the styles that need normalizing
+  - minireset.css /MIT/2kStar/201910
+    - https://github.com/jgthms/minireset.css
+    - https://jgthms.com/minireset.css/
+    - A tiny modern CSS reset
+    - preserve the inline paddings
+    - reset the font-sizes/block margins/tables
+    - set border-box, responsive media elements
 
-## normalize.css 
+## minireset.css 
+
+## normalize.css overview
 
 - 结构
   - document-body
@@ -32,7 +41,7 @@ modified: '2020-07-18T06:07:02.461Z'
   - aims to remove all built-in browser styling. 
   - Standard elements like H1-6, p, strong, em, etc. end up looking exactly alike, having no decoration at all. 
   - You're then supposed to add all decoration yourself.
-- Extended details and known issues
+- Normalize.css Extended details and known issues
   - Normally, using `sub` or `sup` affects the line-box height of text in all browsers
   - By default, Chrome on OS X and Safari on OS X allow very limited styling of `select` , unless a border property is set.
   - `[type="checkbox"]`
@@ -43,6 +52,12 @@ modified: '2020-07-18T06:07:02.461Z'
     - The search input is not fully stylable by default. 
     - In Chrome and Safari on OSX/iOS you can't control font, padding, border, or background. 
     - In Chrome and Safari on Windows you can't control border properly. 
+- Normalize.css is intended only to give all browsers the same starting point in CSS to make development easier. 
+  - If most browsers use a default line-height of 1.15, then it should be set to 1.15 here to fix the rest of the browsers to be the same. 
+  - Further changes to line-height should be made either in other libraries or your own CSS.
+  - 1.15不带单位，只是系数，方便元素自调节
+
+## normalize.css src
 
 ``` css
 /*! normalize.css v8.0.1 */
@@ -53,13 +68,13 @@ modified: '2020-07-18T06:07:02.461Z'
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
- * Desktop browsers (including Firefox) use a default value of roughly 1.2, depending on the element's font-family
+ * 浏览器默认line-height大约1.2，还与font-family相关
  */
 
 html {
   line-height: 1.15;
   /* 1 */
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
   /* 2 */
 }
 
@@ -115,14 +130,6 @@ pre {
 
 /* Text-level semantics
    ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
-
-a {
-  background-color: transparent;
-}
 
 /**
  * 1. Remove the bottom border in Chrome 57-
@@ -197,9 +204,9 @@ sup {
  * Remove the border on images inside links in IE 10.
  */
 
-img {
+/* img {
   border-style: none;
-}
+} */
 
 /* Forms
    ========================================================================== */
