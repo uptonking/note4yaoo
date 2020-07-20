@@ -38,7 +38,7 @@ modified: '2020-06-30T13:01:06.145Z'
     - 添加了媒体查询
     - 新增了选择符
   - css2.1 
-    - 所有浏览器都支持
+    - 所有浏览器都实现的这一版
   - css3 标准模块化
     - 选择器模块
     - 盒式对齐模块
@@ -56,7 +56,7 @@ modified: '2020-06-30T13:01:06.145Z'
   - 类选择器：以 `点号` 开头，类名区分大小写
   - ID选择器：以 `#号` 开头，尽量不用id选择器，用类选择器
   - 群组选择器：多个选择器用 `逗号` 分开，选择各选择器指定的元素并集，可混用多种选择器
-  - 通用选择器： `*号` 表示选择所有元素标签，也可以作为后代选择器的部分
+  - 通用选择器： `*号` 表示选择所有元素标签，也可作为后代选择器的部分
   - 后代选择器：多个选择器用 `空格` 分开，选择一个标签的所有后代，包括子代和孙代
   - 子代选择器： `el1 > el2` ，只选择直接子代，不选孙代
     - 还可以使用伪类，如:first-child，:nth-child(n)
@@ -65,12 +65,12 @@ modified: '2020-06-30T13:01:06.145Z'
   - 同级选择器
     - `+` ：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
     - `~` ：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
-    - 参考 https://blog.csdn.net/JaRiS_jade/article/details/79106406
+    - [CSS的兄弟选择器+和~的区别](https://blog.csdn.net/jarisMA/article/details/100105595)
   - 伪类 :link/visited/hover/active/focus，:first-child，:enable/checked
     - 反选伪类：用于选择不符合指定条件的标签，如el:not(.clsName),not不用连用
     - 结构性伪类:	E:root, E:nth-child(n)
     - E:target,	常用于点击后让另一个元素具有特殊的外观，依赖于id属性，功能类似js
-  - 伪元素 ::before/after, ：:：first-letter/line, ::selection
+  - 伪元素 ::before/after, ::first-letter/line, ::selection
     - 伪类和伪元素用来选择页面中不由标签表示但易于标识的部分
   - 属性选择器
     - el[attrName]，.class[attrName],可以筛选出设定了特定属性的标签 
@@ -153,7 +153,7 @@ modified: '2020-06-30T13:01:06.145Z'
   - 两个或两个以上的相邻的垂直外边距会被折叠并使用它们之间较大的那个外边距值
 - 块级元素与行内元素
   - 可用左右内外边距在行内元素的左右添加空白，但不可用上下外边距增加行内元素的高度
-  - display：inline-block，元素前后无换行，且能设置上下内外编剧和高度
+  - display：inline-block，元素前后无换行，且能设置上下内外边距和高度
   - display:none，在载入网页的时候会忽略这个元素，不会下载其内容，无宽高
   - visibility:hidden，视觉上隐藏元素，但在浏览时保留位置空间，具有宽高
 - border
@@ -222,10 +222,10 @@ modified: '2020-06-30T13:01:06.145Z'
   - 多栏布局：column-count/gap/rule
   - box-sizing能避免浮动下坠
 - position 定位
-  - absolute：脱离文档流
-  - relative：相对于文档流的当前位置
-  - fixed：将元素固定在屏幕某个位置，脱离文档流
   - static：默认显示方式
+  - relative：相对于文档流的当前位置
+  - absolute：脱离文档流
+  - fixed：将元素固定在屏幕某个位置，脱离文档流
   - 隐藏元素的3种方式:display, visibility, opacity
 - responsive 响应式设计
   - 弹性栅格布局：小屏单栏，宽屏多栏
@@ -263,7 +263,7 @@ modified: '2020-06-30T13:01:06.145Z'
 - html的闭合标签常用于显示文本，自闭合标签常用显示引用内容
   - 闭合标签包含的是会显示的实际内容，
   - 而自闭合标签只是给浏览器提供一个对要显示内容的引用 
-- css规则： `选择符 {prop: value}`
+- css规则： `选择符 { prop: value }`
 - 通用选择符 `*` 可以匹配任何元素
 - id选择器和类选择器可以不用考虑文档结构层次
 - 多类选择器 `.clsA.clsB` ，无空格，取交集，即选择同时具有clsA和clsB类名的元素
@@ -274,9 +274,9 @@ modified: '2020-06-30T13:01:06.145Z'
   - 若属性中只有一个井号 `<a href='#'>` ， 则会返回顶部
   - `href=""` reloads the page
   - `href="#"` adds an extra entry to the browser history, 多次点击后只用返回一次
-  - `href="javascript:;"` works in both Android and iOS webviews
+  - `href="javascript:;"` works in both Android and iOS webviews, 也不添加历史记录
   - [Is an empty href valid?](https://stackoverflow.com/questions/5637969/is-an-empty-href-valid)
-- pseudo-class: link, visited, hover, active, focus, fist-child
+- pseudo-class: link, visited, hover, active, focus, first-child
 - pseduo-elements: before, after, first-letter/line
 - 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）
   - 因此，不要通过伪元素添加你想让搜索引擎索引的重要内容
@@ -311,7 +311,7 @@ modified: '2020-06-30T13:01:06.145Z'
 - 盒子的width默认是content的宽度，padding、border、margin都会加宽盒子
 
 - float
-  - 浮动元素脱离了常规文档流之后，原来紧跟其后的元素就会在空间允许的情况下， 向上提升到与浮动元素并排
+  - 浮动元素脱离了常规文档流之后，原来紧跟其后的元素就会在空间允许的情况下，向上提升到与浮动元素并排
   - css设计float的目的是为了实现文本绕排图片的效果
   - 浮动非图片元素时，必须给它设定宽度，否则后果难以预料。图片本身有默认的宽度。
   - 如果几个相邻的元素都具 有设定的宽度，都是浮动的，而且水平空间也足以容纳它们，它们就会并列排在一行
