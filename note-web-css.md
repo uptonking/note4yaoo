@@ -102,10 +102,10 @@ modified: '2020-07-14T11:27:22.474Z'
 
 ## CSS performance revisited: selectors, bloat and expensive styles
 
-- ref
-  - [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)
+ 
 
 ## ref
 
-- https://stackoverflow.com/questions/25618138/what-happened-to-the-use-efficient-css-selectors-rule
-- https://stackoverflow.com/questions/12279544/which-css-selectors-or-rules-can-significantly-affect-front-end-layout-renderi
+- [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)
+- [Use efficient CSS selectors rule by Google PageSpeed](https://stackoverflow.com/questions/25618138/)what-happened-to-the-use-efficient-css-selectors-rule
+- [Which CSS selectors or rules can significantly affect layout/rendering performance](https://stackoverflow.com/questions/12279544/which-css-selectors-or-rules-can-significantly-affect-front-end-layout-renderi)

@@ -59,7 +59,7 @@ modified: '2020-07-18T06:35:10.808Z'
   - text-transform/decoration/shadow/wrap/indent/overflow
   - letter/word-spacing  
   - whitespace
-- background 背景视觉装饰
+- background visual 背景视觉装饰
   - background-color/clip/origin/size
   - color
   - visibility
@@ -80,6 +80,9 @@ modified: '2020-07-18T06:35:10.808Z'
 - Alphabetize declarations.
 - Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
 - Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. -moz prefix comes before -webkit).
+- 避免使用类型选择器，影响范围太大，为了性能应避免使用父节点做选择器
+- url()中不要使用引号
+- 避免使用css hacks
 
 ## Airbnb CSS/Sass Styleguide
 
@@ -90,6 +93,13 @@ modified: '2020-07-18T06:35:10.808Z'
   1. Property declarations
   2. `@include` declarations
   3. Nested selectors
+- 不要使用ID选择器，因为不可重用
+- 类名建议使用破折号代替驼峰法。如果你使用BEM，也可以使用下划线
+- 在一个规则声明中应用了多个选择器时，每个选择器独占一行
+- 在定义无边框样式时，使用 0 代替 none
+- sass    
+  - 推荐使用scss
+  - 应避免使用 @extend 指令，因为它并不直观，而且具有潜在风险，特别是用在嵌套选择器的时候，推荐使用mixin函数复用代码
 
 ## Mozilla Organizing your CSS
 

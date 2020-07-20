@@ -9,7 +9,7 @@ modified: '2020-06-30T13:01:06.145Z'
 
 ## book-CSS实战手册. 第4版_David McFarland_2016
 
-- 全书结构
+- toc
   - css基础：选择器+层叠规则+盒模型
   - 常用功能：文本+图片+动画
   - 页面布局：float/flexbox/css grid/响应式设计
@@ -51,7 +51,7 @@ modified: '2020-06-30T13:01:06.145Z'
   - 内部样式表：放在 `<head>` 标签内的 `<style>` 标签中
   - 行内样式：不推荐使用，可复用性差，多用于测试
 - selector 选择器
-  - http://www.ruanyifeng.com/blog/2009/03/css_selectors.html
+  - [CSS选择器笔记_阮一峰](http://www.ruanyifeng.com/blog/2009/03/css_selectors.html)
   - 元素选择器：可选取所有指定html标签，不够精细
   - 类选择器：以 `点号` 开头，类名区分大小写
   - ID选择器：以 `#号` 开头，尽量不用id选择器，用类选择器
@@ -62,22 +62,21 @@ modified: '2020-06-30T13:01:06.145Z'
     - 还可以使用伪类，如:first-child，:nth-child(n)
     - tr:nth-child(odd/even/3n+X/-n+2/9)
     - 子代类型选择器：选取的是特定类型的子代标签，如 `.sidebar p:first-of-type`
-- 同级选择器
+  - 同级选择器
     - `+` ：紧邻元素选择器，E+F选择紧随E元素之后的第一个同级元素F，只会影响后面对应标签的第一个（相邻的）兄弟节点的标签样式，若是li+li,则会影响除第一个li的所有li
     - `~` ：普通同级元素选择器，E~F选择E后的所有同级F，若是li+li则除第一个都影响
     - 参考 https://blog.csdn.net/JaRiS_jade/article/details/79106406
-  - 伪类：E:link/visited/hover/active/focus，:first-child，:enable/checked
+  - 伪类 :link/visited/hover/active/focus，:first-child，:enable/checked
     - 反选伪类：用于选择不符合指定条件的标签，如el:not(.clsName),not不用连用
     - 结构性伪类:	E:root, E:nth-child(n)
     - E:target,	常用于点击后让另一个元素具有特殊的外观，依赖于id属性，功能类似js
-  - 伪元素：:：first-letter/line, ::before/after, ::selection
+  - 伪元素 ::before/after, ：:：first-letter/line, ::selection
     - 伪类和伪元素用来选择页面中不由标签表示但易于标识的部分
   - 属性选择器
-    - el[attrName]，.class[attrName]
-        - 可以筛选出设定了特定属性的标签 
+    - el[attrName]，.class[attrName],可以筛选出设定了特定属性的标签 
     - el[attrName="value"]
     - 还可以选取属性值以特定值开头 `^=` 、结尾 `$=` 或包含指定值 `*=` 的元素
-    - E[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
+    - el[att~=val]匹配所有att属性具有多个空格分隔的值、其中一个值等于val的E元素
 - 通过css继承来简化样式表
   - 不会被继承的属性：影响元素在页面所在位置的属性，以及外边距、背景色和边框的属性
   - border
@@ -85,14 +84,14 @@ modified: '2020-06-30T13:01:06.145Z'
   - 用于控制样式之间相互作用的方式，具体通过比较样式的优先级
   - 继承时默认使用最近父辈的样式
   - 特指度specificity：样式所依赖的所有选择器得分的和
-      - 行内样式：1000
-      - id选择器：100
-      - 类选择器：10
-      - 元素选择器：1
+    - 行内样式：1000
+    - id选择器：100
+    - 类选择器：10
+    - 元素选择器：1
   - 特指度相同时，使用后声明的选择器，注意外部样式表和内部样式表的位置
-      - 最好先链接外部样式表，仅当需要在单个页面中添加样式时才使用内部样式表
+    - 最好先链接外部样式表，仅当需要在单个页面中添加样式时才使用内部样式表
   - 若要忽略特指度，只需在某个css属性之后分号前添加 `!important` ，只作用于单个属性
-      - 不推荐使用
+    - 不推荐使用
 - css reset 重置
   - 浏览器为所有html标签提供了默认样式，不同浏览器实现的默认样式会有差异
   - 清除浏览器内置样式这种行为称为css重置
@@ -136,8 +135,7 @@ modified: '2020-06-30T13:01:06.145Z'
   - text-decoration: underline/line-through/none
   - letter-spacing：0.1em; 字符间距，中文文字间距
   - word-spacing：2px/em/%    单词间距，用空格隔开的中文也是单词，若无空格则无效果
-  - text-shadow: 横偏移 纵偏移 阴影模糊度 投影颜色
-      - 为文本添加投影
+  - text-shadow: 横偏移 纵偏移 阴影模糊度 投影颜色，为文本添加投影
   - line-height: 150%； 推荐使用百分比，默认值为120%
   - text-indent： 缩进
 - list  
@@ -170,10 +168,10 @@ modified: '2020-06-30T13:01:06.145Z'
 - float
   - float把元素移到外层元素左侧或右侧，浮动元素下面的内容会上移，围绕在浮动元素周围
   - 浏览器只会让文字围绕浮动的元素显示，而不包括边框或背景，解决方法
-      - 为浮动元素下面设置了背景或边框的元素添加 `overflow:hidden`
-      - 在浮动元素的四周添加边框线，将边框颜色设为与背景色相同
+    - 为浮动元素下面设置了背景或边框的元素添加 `overflow:hidden`
+    - 在浮动元素的四周添加边框线，将边框颜色设为与背景色相同
   - clear属性告诉元素不要围着浮动的元素显示，作用是强制让元素显示在浮动的元素下面
-      - 默认值为none
+    - 默认值为none
 - box-sizing
   - 盒子模型的默认定义，对一个元素所设置的width与height只会应用到内容区
   - content-box：默认值。 设置的宽度 = contentWidth，不包含padding, border, margin
@@ -257,75 +255,120 @@ modified: '2020-06-30T13:01:06.145Z'
 
 ## book-CSS设计指南. 第3版_Charles Wyke-Smith_2013
 
+- toc
+  - 选择器
+  - 盒模型
+  - 文本
+  - 布局
 - html的闭合标签常用于显示文本，自闭合标签常用显示引用内容
-- id选择器和类选择器不用考虑文档结构层次
-- 多类选择器：.clsA.clsB，无空格，取交集，即选择同时具有clsA和clsB类名的元素
-  - 也可以是 el.clsName
-- 使用#id可以链接到同一页面的目标id元素位置，若 `<a href='#'>` 则会返回顶部
-- 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）。因此，不要通过伪元素添加你想让搜索引擎索引的重要内容。
+  - 闭合标签包含的是会显示的实际内容，
+  - 而自闭合标签只是给浏览器提供一个对要显示内容的引用 
+- css规则： `选择符 {prop: value}`
+- 通用选择符 `*` 可以匹配任何元素
+- id选择器和类选择器可以不用考虑文档结构层次
+- 多类选择器 `.clsA.clsB` ，无空格，取交集，即选择同时具有clsA和clsB类名的元素
+  - 若加了空格，则会变成后代选择器
+  - 也可以是 `el.clsName`
+- id也可以用在页内导航链接中
+  - 使用 `<a href='#id'>` 可以链接到同一页面的目标id元素位置
+  - 若属性中只有一个井号 `<a href='#'>` ， 则会返回顶部
+  - `href=""` reloads the page
+  - `href="#"` adds an extra entry to the browser history, 多次点击后只用返回一次
+  - `href="javascript:;"` works in both Android and iOS webviews
+  - [Is an empty href valid?](https://stackoverflow.com/questions/5637969/is-an-empty-href-valid)
+- pseudo-class: link, visited, hover, active, focus, fist-child
+- pseduo-elements: before, after, first-letter/line
+- 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）
+  - 因此，不要通过伪元素添加你想让搜索引擎索引的重要内容
+- css层叠规则提炼版
+  - 找到应用给每个元素和属性的所有声明
+  - 按照来源顺序排序
+  - 按特指度specificity排序
+  - 顺序决定权重：若特指度相同，则后声明的规则会生效
+- css层叠规则实践版
+  - id选择器优先于class选择器
+  - 行内样式优先于内外部样式表
+  - 设定的样式优先于继承的样式
+
 - 盒模型，就是浏览器为页面中的每个HTML元素生成的矩形盒子
-  - 默认所有盒子边框不可见，背景透明
-  - 边框属性默认值
-      - border-width:medium
-      - border-style:none，默认不显示边框
-      - border-color:black
-  - 不同浏览器默认的内外边距不同，特别是对表单和列表等复合元素，建议css重置
-  - 垂直外边距会折叠，但水平外边距正常
-  - 若不设置块级元素的width，则默认为auto，即扩展到填满父元素的宽度
-  - 盒子设置width默认是content的宽度，padding、border、margin都会加宽盒子
-- 浮动
+  - 这些盒子按照visual formatting model在页面上排布
+- visual formatting model主要与3个属性相关
+  - position控制元素间的位置关系
+  - display控制元素的堆叠、并排、隐藏
+  - float控制元素浮动
+- 每个元素都会在页面上生成一个盒子，页面由盒子组成
+  - 默认所有盒子边框不可见，背景透明，所以不能直接看到盒子结构
+  - border属性默认值
+    - border-width:medium
+    - border-style:none，默认不显示边框
+    - border-color:black
+    - border-radius不影响盒模型的定位
+  - padding包含盒子的背景
+  - 垂直方向上的外边距margin不会叠加，会使用二者的较大值
+  - 不同浏览器默认的内外边距不同，特别是对表单和列表等复合元素，建议使用css重置
+  - 垂直外边距会折叠，但水平外边距正常叠加
+- 若不设置块级元素的width，则默认值为auto，即元素宽度会扩展到填满父元素的宽度
+- 盒子的width默认是content的宽度，padding、border、margin都会加宽盒子
+
+- float
   - 浮动元素脱离了常规文档流之后，原来紧跟其后的元素就会在空间允许的情况下， 向上提升到与浮动元素并排
+  - css设计float的目的是为了实现文本绕排图片的效果
   - 浮动非图片元素时，必须给它设定宽度，否则后果难以预料。图片本身有默认的宽度。
   - 如果几个相邻的元素都具 有设定的宽度，都是浮动的，而且水平空间也足以容纳它们，它们就会并列排在一行
   - 浮动元素脱离了文档流，其父元素也看不到它了，因而也不会包围它
 - 围住浮动元素的方法
-  - 为父元素添加overflow:hidden，强迫父元素包含浮动的子元素
-  - 让父元素也浮动，同时添加width:100%
+  - 给父元素添加 `overflow:hidden` ，强迫父元素包含浮动的子元素
+    - 不能在下拉菜单的顶级元素上使用
+  - 让父元素也浮动，设置父元素width:100%，对不希望提升的元素clear
+    - 不能对已经靠外边距居中的元素使用
   - 给父元素最后添加一个非浮动的子元素，然后给子元素添加clear
-  - 通过伪类:after给父元素后面添加一个高度为0的clear:both元素
-- 定位
-  - static：每个元素都处在常规文档流，自上而下堆叠，默认方式
+    - 由于包含元素一定会包围非浮动的子元素，而且清除会 让这个子元素位于（清除一侧）浮动元素的下方，因此包含元素一定会包含这个子元素——以及前面的浮动元素
+    - 可以给父元素新添加最后一个子元素div并clear:left
+    - 还可以通过伪元素:after给父元素添加一个无高度且clear过的伪元素
+
+``` CSS
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+```
+
+- position
+  - static：默认方式，每个元素都处在常规文档流，自上而下堆叠
   - relative：相对于元素在常规文档流中的位置，距离常规文档流位置的上边/左边
-  - absolute：绝对定位的元素**脱离了文档流**，相对于定位上下文进行定位，默认定位上下文是body元素，此外会寻找最近的postion为relative的祖先元素作为定位上下文
-  - fixed：**脱离了文档流**，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动
+  - absolute：绝对定位的元素脱离了文档流，相对于定位上下文进行定位
+    - 默认定位上下文是body元素
+    - 此外会寻找最近的postion为relative的祖先元素作为定位上下文
+  - fixed：脱离了文档流，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动
+  - 在常规文档流中，若外部div没有内容，内部div就会跟它共享相同的起点。只有将元素的position属性设定为relative、absolute或fixed，这个元素的 top、right、bottom 和 left 属性才会起作用
   - 若未设置外层元素的position为relative/absolute/fixed，则内层元素的left/top等定位属性不会生效，会被忽略，默认都是static定位，内层div会和外层div同左上角起点
   - 常用的定位模式是：外层ralative，内层absolute
   - float元素也会脱离文档流
+
 - background-color会应用到内容背景和padding背景，color前景色会应用到内容和边框
+
 - 页面布局
   - 一般不应该给元素设定高度，保持height属性默认值auto
+    - 若明确设置了高度，则会根据overflow属性判定
   - auto能使元素随着自己所包含内容的增加而在垂直方向扩展，若设置了高度则会滚动条
   - 块级元素的宽度默认填满父元素宽度 
-- 在一个包含多个同辈元素的容器内，这些同辈元素都会构造一个堆叠上下文，在这个上下文中，它们的子元素会上下堆叠起来，z-index属性用于控制元素的在堆叠上下文中的次序
-- 响应式设计三要素
+- 在一个包含多个同辈元素的容器内，这些同辈元素都会构造一个堆叠上下文，
+  - 在这个上下文中，它们的子元素会上下堆叠起来，z-index属性用于控制元素的在堆叠上下文中的次序
+- 响应式设计的要点
   - 媒体查询
-  - 弹性布局
+  - 流式布局
   - 弹性图片
 - 媒体查询
   - 媒体类型：screen，print，handled，tv，tty，all，...
   - 媒体特性：min/max-device-width，min/max-width，orientation
   - 可以使用逻辑运算符 and、not、or 及关键字 all、only 组合媒体类型和媒体特性
-  - breakpoint指的是媒体查询其作用的宽度
-      - `@media screen and (max-width:640px)`
-      - 不要针对某款具体的设备设置断点，要慢慢缩小浏览器窗口，为某个宽度范围的屏幕提供样式
+- breakpoint指的是媒体查询其作用的宽度
+  - `@media screen and (max-width:640px)`
+  - 不要针对某款具体的设备设置断点，要慢慢缩小浏览器窗口，为某个宽度范围的屏幕提供样式
 - `<meta name="viewport" content="width=device-width; maximumscale=1.0" />`
   - 告诉浏览器按照屏幕宽度来显示网页，不要缩小网页
 - 支持触摸的设备会跳过:hover规则中对visibility属性的过渡
-
-## css-style-guide
-
-### airbnb guide
-
-- 不要使用ID选择器，因为不可重用
-- 类名建议使用破折号代替驼峰法。如果你使用 BEM，也可以使用下划线
-- 在一个规则声明中应用了多个选择器时，每个选择器独占一行
-- 在定义无边框样式时，使用 0 代替 none
-- sass    
-  - 推荐使用scss
-  - 应避免使用 @extend 指令，因为它并不直观，而且具有潜在风险，特别是用在嵌套选择器的时候，推荐使用mixin函数复用代码
-
-### google guide
-
-- 避免使用类型选择器，影响范围太大，为了性能应避免使用父节点做选择器
-- url()中不要使用引号
-- 避免使用css hacks
+  - 解决方案是使用modernizr检测设备是否支持触摸，若不支持，则去掉相关样式

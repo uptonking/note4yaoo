@@ -124,7 +124,6 @@ modified: '2020-07-17T08:52:30.380Z'
 
 ## element
 
-- https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 - select vs dropdown
   - select各浏览器都有实现，dropdown需要自己实现
   - select各浏览器实现的样式不统一，难以跨平台体验一致

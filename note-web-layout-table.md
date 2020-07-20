@@ -34,6 +34,25 @@ modified: '2020-07-10T08:38:36.261Z'
   - Tables are not automatically responsive
     - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>` ), their width defaults to 100% of their parent element. 
     - Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
+- Why should I use display:table instead of table?
+  - Pros of Table Element: 
+    - Most designers use table for a consistent look. 
+    - Tables are also easy to maintain. 
+    - Another advantage of table is that it is compatible with the most browsers.
+  - Cons of Table Element: 
+    - All this comes with a cost: Too many nested tables increase page size and download time. 
+    - More table elements push important content down so search spiders are less likely to add content to search engines.
+  - Pros of DIV Element: 
+    - div with CSS we can achieve the same table based page structure and reduce the number of elements on the page, which allows the page to load faster. 
+    - It also makes page more compatible with search engine spiders.
+  - Cons of DIV Element: 
+    - The major drawback of this is not all CSS elements are not browser compatible. 
+    - Because of this we have to write some custom CSS to resolve issues. 
+  - html5 have better alternates for layout
+  - ref
+    - [Why should I use display:table instead of table](https://stackoverflow.com/questions/2867476/why-should-i-use-displaytable-instead-of-table)
+    - [Actual table Vs. Div display-table](https://stackoverflow.com/questions/2617895/actual-table-vs-div-table)
+    - [Why are people making tables with divs?](https://softwareengineering.stackexchange.com/questions/277778/why-are-people-making-tables-with-divs)
 
 ## summary 
 
