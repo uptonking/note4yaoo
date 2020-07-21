@@ -7,7 +7,7 @@ modified: '2020-07-17T11:56:26.797Z'
 
 # note-web-layer
 
-## faq
+## pieces
 
 - app图层设计是整体思维，是否与局部component的设计相矛盾
   - 那就从全局角度设计Component，考虑使用context api
@@ -47,6 +47,46 @@ modified: '2020-07-17T11:56:26.797Z'
   - https://github.com/pieterv/react-layers
     - inspired by the work done on the react-bootstrap's [Overlay](https://react-bootstrap.github.io/components/overlays/)
     - Overlays rely on the third-party library Popper.js
+
+## z-index
+
+- When the `z-index` property is not specified on any element, elements are stacked in the following order ( from bottom to top )
+  - background and borders of the root element
+  - Descendant non-positioned blocks, in order of appearance in the HTML
+  - **Floating blocks**
+  - Descendant non-positioned inline elements
+  - Descendant positioned elements, in order of appearance in the HTML
+- stack tips
+  - applying a opacity value creates a new stacking context
+-  Floating blocks are placed between non-positioned blocks and positioned blocks
+  -  the background and border of non-positioned block  is completely unaffected by floating blocks，but the content is affected
+-  If you want to create a custom stacking order, you can use the z-index property on a `positioned` element. 
+  - z-index只能用在非static定位元素上，若用在static定位元素上则无效果
+- When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero)
+- when z-index value is auto, the box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent's box
+-  the rendering order of certain elements is influenced by their z-index value. This occurs because these elements have special properties which cause them to form a stacking context.
+- A stacking context is formed, anywhere in the document, by any element in the following scenarios
+  - Root element of the document ( `<html>` ).
+  - Element with a position value absolute or relative and z-index value other than auto.
+  - Element with a position value fixed or sticky 
+  - Element that is a child of a flex (flexbox) container, with z-index value other than auto.
+  - Element that is a child of a grid (grid) container, with z-index value other than auto.
+  - Element with a opacity value less than 1
+  - Element with the following properties with value other than none
+    - tranform
+    - filter
+    - clip-path
+- Within a stacking context, child elements are stacked according to the same rules previously explained. Importantly, the z-index values of its child stacking contexts only have meaning in this parent. Stacking contexts are treated atomically as a single unit in the parent stacking context.
+- Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.
+- Each stacking context is completely independent of its siblings: only descendant elements are considered when stacking is processed.
+- Each stacking context is self-contained: after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context.
+- The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context
+- ref
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index
+  - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+
+## Understanding CSS z-index
 
 ## layerJS: layer based user interfaces
 
@@ -110,43 +150,3 @@ modified: '2020-07-17T11:56:26.797Z'
 - A stage indicates to layerJS that some fragment (frame) should dynamically be fit into it. 
 - A stage can contain more than one layer to compose frames on top of each other. 
 - Within the layer we added a single frame with id home which will contain the content of the first page/screen. 
-
-## Understanding CSS z-index
-
-## z-index
-
-- When the `z-index` property is not specified on any element, elements are stacked in the following order ( from bottom to top )
-  - background and borders of the root element
-  - Descendant non-positioned blocks, in order of appearance in the HTML
-  - **Floating blocks**
-  - Descendant non-positioned inline elements
-  - Descendant positioned elements, in order of appearance in the HTML
-- stack tips
-  - applying a opacity value creates a new stacking context
--  Floating blocks are placed between non-positioned blocks and positioned blocks
-  -  the background and border of non-positioned block  is completely unaffected by floating blocks，but the content is affected
--  If you want to create a custom stacking order, you can use the z-index property on a `positioned` element. 
-  - z-index只能用在非static定位元素上，若用在static定位元素上则无效果
-- When no z-index property is specified, elements are rendered on the default rendering layer 0 (zero)
-- when z-index value is auto, the box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent's box
--  the rendering order of certain elements is influenced by their z-index value. This occurs because these elements have special properties which cause them to form a stacking context.
-- A stacking context is formed, anywhere in the document, by any element in the following scenarios
-  - Root element of the document ( `<html>` ).
-  - Element with a position value absolute or relative and z-index value other than auto.
-  - Element with a position value fixed or sticky 
-  - Element that is a child of a flex (flexbox) container, with z-index value other than auto.
-  - Element that is a child of a grid (grid) container, with z-index value other than auto.
-  - Element with a opacity value less than 1
-  - Element with the following properties with value other than none
-    - tranform
-    - filter
-    - clip-path
-- Within a stacking context, child elements are stacked according to the same rules previously explained. Importantly, the z-index values of its child stacking contexts only have meaning in this parent. Stacking contexts are treated atomically as a single unit in the parent stacking context.
-- Stacking contexts can be contained in other stacking contexts, and together create a hierarchy of stacking contexts.
-- Each stacking context is completely independent of its siblings: only descendant elements are considered when stacking is processed.
-- Each stacking context is self-contained: after the element's contents are stacked, the whole element is considered in the stacking order of the parent stacking context.
-- The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context
-- ref
-  - https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
-  - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index
-  - https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
