@@ -168,12 +168,12 @@ caption   { display: table-caption }
 
 - If you look only at the html above, you can easily see the basic table structure except that I’ve used `div and span` with ids and classes instead of `table, tr, and td` .
 - Different table elements have different stacking contexts for the purpose of adding backgrounds to these different layers.
-  1. table – lowest layer
-  2. column group
-  3. columns
-  4. row group
-  5. rows
-  6. cells – highest layer
+  01. table – lowest layer
+  02. column group
+  03. columns
+  04. row group
+  05. rows
+  06. cells – highest layer
 - The background of any layer will only be seen if all the layers above it have backgrounds set to transparent.
 - The width of css tables can be calculated using one of two algorithms. 
 
@@ -488,4 +488,44 @@ caption {
   - search
   - sort
 
+## Responsive CSS Table
+
+- [Responsive Data Tables](https://css-tricks.com/responsive-data-tables/)
+- [Responsive Tables (and a calendar demo)](https://dbushell.com/2012/01/04/responsive-calendar-demo/)
+- [Responsive Tables (2)](https://dbushell.com/2012/01/05/responsive-tables-2/)
+
+- [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
+  01.  Horizontal Minimalist
+  02.  Vertical Minimalist
+  03.  Box
+  04.  Horizontal Zebra
+  05.  Vertical Zebra Style
+  06.  One Column Emphasis
+  07.  Newspaper
+  08.  Rounded Corner
+  09.  Table Background
+  10. Cell Background
+
+- [Table Design Patterns On The Web](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
+  - invoke overflow and allowing users to scroll to see more data. 
+    - for browsers that don’t support scrolling shadows, you can still scroll the table as per normal. It doesn’t break the layout at all.
+  - transform the table’s rows into columns, scroll horizontally
+    - headers are always in view
+    - this technique results in a discrepancy of the visual and source order
+  - make use of a media query to switch the display property of the table element and its children to block on a narrow viewport.
+    - On a narrow screen, the table headers are visually hidden, but still exist in the accessibility tree. 
+    - By applying data attributes to the table cells, we can then display labels for the data via CSS, while keeping the content of the label in the HTML
+  - paginate on table rows instead of divs
+  - have some sort of indicator of which column is currently being sorted and in what order. 
+  - have each input field as part of the table in their respective columns for search
+  - Let A Library Handle It'
+    - The column toggle pattern is one whereby non-essential columns are hidden on smaller screens.
+    - https://github.com/filamentgroup/tablesaw /MIT/5.4kStar/201903
+
 ## collection of well-designed tables
+
+- [Beautiful HTML Tables](https://www.hongkiat.com/blog/html-table-building-30-beautiful-examples-and-useful-javascripts/)
+
+## ref
+
+- [HTML Table Styler - CSS Generator](https://divtable.com/table-styler/)

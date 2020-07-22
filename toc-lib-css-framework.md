@@ -17,10 +17,11 @@ modified: '2020-07-19T12:11:33.125Z'
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
+  - supported by yahoo
 - spectre /MIT/10.3kStar/202007
   - https://github.com/picturepan2/spectre
   - https://picturepan2.github.io/spectre/
-  -  a responsive CSS framework based on flexbox
+  - a responsive CSS framework based on flexbox
   - Designed and built by Yan Zhu(Microsoft MVP)
 - milligram /MIT/8.8kStar/202006
   - https://github.com/milligram/milligram

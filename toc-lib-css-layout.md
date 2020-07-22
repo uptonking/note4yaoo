@@ -26,7 +26,7 @@ modified: '2020-07-19T12:48:17.798Z'
   - https://blueprintcss.dev/
   - a modern responsive CSS layout library & grid built on top of CSS Grid and Flexbox
 
-## css grid
+## css grid layout
 
 - styled-css-grid /MIT/501Star/201905
   - https://github.com/azz/styled-css-grid
@@ -47,6 +47,8 @@ modified: '2020-07-19T12:48:17.798Z'
   - https://github.com/davidedantonio/bee-grid
   - https://davidedantonio.github.io/bee-grid
   - based on CSS Grid Layout to build various types of grids
+- react-css-grid-table /MIT/122Star/201807
+  - https://github.com/RebeccaPark/react-css-grid-table
 
 ## pieces
 
