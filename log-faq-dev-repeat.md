@@ -68,6 +68,202 @@ modified: '2020-07-09T13:24:25.794Z'
     - https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
     - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
 
+## In js, what does `this` refer to?
+
+- `this` is a property of an execution context (global, function or eval) that, in non–strict mode, is always a reference to an object 
+  - and in strict mode can be any value.
+
+- A function's `this` keyword behaves a little differently in JavaScript compared to other languages. 
+- It also has some differences between strict mode and non-strict mode.
+- In most cases, the **value of `this` is determined by how a function is called (runtime binding)**. 
+- It can't be set by assignment during execution, and it may be different each time the function is called. 
+- ES5 introduced the `bind()` method to set the value of a function's this regardless of how it's called, 
+- and ES2015 introduced arrow functions which don't provide their own this binding (it retains the this value of the enclosing lexical context).
+
+- In the global execution context (outside of any function), `this` refers to the global object( `window` ) whether in strict mode or not.
+- You can always easily get the global object using the global `globalThis` property, regardless of the current context in which your code is running.
+
+- Inside a function, the value of `this` depends on how the function is called.
+- Since the following code is not in strict mode, and because the value of `this` is not set by the call, `this` will default to the global object, which is `window` in a browser
+
+``` JS
+function f1() {
+  return this;
+}
+// In a browser:
+f1() === window; // true
+// In Node:
+f1() === globalThis; // true
+```
+
+- In strict mode, however, if the value of `this` is not set when entering an execution context, it remains as `undefined`
+- To set the value of this to a particular value when calling a function, use `call()` , or `apply()` . 
+  - The first parameter is the object to use as 'this', subsequent parameters are passed as arguments in the function call
+  - Note that in non–strict mode, with call and apply, if the value passed as this is not an object, an attempt will be made to convert it to an object. 
+  - Values null and undefined become the global object. 
+  - Primitives like 7 or 'foo' will be converted to an Object using the related constructor, so the primitive number 7 is converted to an object as if by new Number(7) and the string 'foo' to an object as if by new String('foo')
+
+- The behavior of `this` in classes and functions is similar, since classes are functions under the hood.
+- Within a class constructor, `this` is a regular object. 
+  - All non-static methods within the class are added to the prototype of `this`
+  - Static methods are not properties of this. They are properties of the class itself.
+- For derived classes, derived constructors have no initial `this` binding. 
+- Calling `super()` creates a this binding within the constructor, like evaluating `this = new Base();`
+- Referring to this before calling super() will throw an error.
+- Derived classes must not return before calling super(), unless they return an Object or have no constructor at all. 
+
+- Calling `f.bind(someObject)` creates a new function with the same body and scope as `f` , but where `this` occurs in the original function, in the new function it is permanently bound to the first argument of `bind` , regardless of how the function is being used.
+
+``` JS
+function f() {
+  return this.a;
+}
+
+var g = f.bind({ a: 'azerty' });
+console.log(g()); // azerty
+
+var h = g.bind({ a: 'yoo' }); // bind only works once!
+console.log(h()); // azerty
+
+var o = { a: 37, f: f, g: g, h: h };
+console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
+```
+
+- In arrow functions, `this` retains the value of the enclosing lexical context's `this` . In global code, it will be set to the global object
+- If `this` arg is passed to `call` , `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+  - You can still prepend arguments to the call, but the first argument (thisArg) should be set to null
+
+- **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
+  - In the following example, when `o.f()` is invoked, inside the function `this` is bound to the `o` object.
+  - Note that this behavior is not at all affected by how or where the function was defined.
+  - This demonstrates that it matters only that the function was invoked from the `f` method member of object `o` .
+  - `this` is only affected by the most immediate member reference
+
+``` JS
+var o = {
+  prop: 37,
+  f: function() {
+    return this.prop;
+  }
+};
+console.log(o.f()); // 37
+
+function independent() {
+  return this.prop;
+}
+o.f1 = independent;
+console.log(o.f1()); // 37
+
+o.b = { g: independent, prop: 42 };
+console.log(o.b.g()); // 42
+```
+
+- If the method is on an object's prototype chain, `this` refers to the object the method was called on, as if the method were on the object.
+
+``` JS
+var o = { f: function() { return this.a + this.b; } };
+var p = Object.create(o);
+p.a = 1;
+p.b = 4;
+console.log(p.f()); // 5
+```
+
+- A function used as getter or setter has its `this` bound to the object from which the property is being set or gotten.
+
+``` JS
+function sum() {
+  return this.a + this.b + this.c;
+}
+var o = {
+  a: 1,
+  b: 2,
+  c: 3,
+  get average() {
+    return (this.a + this.b + this.c) / 3;
+  }
+};
+Object.defineProperty(o, 'sum', {
+  get: sum,
+  enumerable: true,
+  configurable: true
+});
+
+console.log(o.average, o.sum); // 2, 6
+```
+
+- When a function is used as a constructor (with the `new` keyword), its `this` is bound to the new object being constructed.
+  - While the default for a constructor is to return the object referenced by `this` , it can instead return some other object 
+  - if the return value isn't an object, then the `this` object is returned
+  - If the function has a return statement that returns some other object, that object will be the result of the `new` expression. 
+
+``` JS
+function C2() {
+  this.a = 37;
+  return { a: 38 };
+}
+o = new C2();
+console.log(o.a); // 38
+```
+
+- When a function is used as an event handler, its `this` is set to the element on which the listener is placed 
+  - (some browsers do not follow this convention for listeners added dynamically with methods other than addEventListener()).
+- When the code is called from an inline `on-event` handler, its this is set to the DOM element on which the listener is placed
+  - Note however that only the outer code has its `this` set this way
+  - the inner function's `this` isn't set so it returns the global/window object (i.e. the default object in non–strict mode where `this` isn't set by the call).
+
+- this in classes
+  - Just like with regular functions, the value of `this` within methods depends on how they are called. 
+  - Sometimes it is useful to override this behavior so that `this` within classes always refers to the class instance. 
+  - To achieve this, `bind` the class methods in the constructor
+  - Classes are always strict mode code. Calling methods with an undefined `this` will throw an error.
+
+``` JS
+class Car {
+  constructor() {
+    this.sayBye = this.sayBye.bind(this);
+  }
+  sayHi() {
+    console.log( `Hello from ${this.name}` );
+  }
+  sayBye() {
+    console.log( `Bye from ${this.name}` );
+  }
+  get name() {
+    return 'Ferrari';
+  }
+}
+class Bird {
+  get name() {
+    return 'Tweety';
+  }
+}
+
+const car = new Car();
+const bird = new Bird();
+
+// The value of 'this' in methods depends on their caller
+car.sayHi(); // Hello from Ferrari
+bird.sayHi = car.sayHi;
+bird.sayHi(); // Hello from Tweety
+
+// For bound methods, 'this' doesn't depend on the caller
+bird.sayBye = car.sayBye;
+bird.sayBye(); // Bye from Ferrari
+```
+
+- tips
+  - Don't use this
+    - You actually don't want to access `this` in particular, but the object it refers to. 
+    - That's why an easy solution is to simply create a new variable that also refers to that object. 
+    - The variable can have any name, but common ones are `self` and `that` .
+  - Explicitly set this of the callback 
+    - use `bind`
+ 
+
+- ref
+  - [mdn this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+  - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
+
 ## js对象内的属性如何引用同一对象的另一个属性
 
 - 如果不介意在对象字面量外写的话
@@ -113,8 +309,7 @@ modified: '2020-07-09T13:24:25.794Z'
 - Also, the `this` value can only change as a result of a function call. 
 - If your "several more properties" are all going to depend only on slider, then you could get around with something like this:
 
-``` js 
-
+``` JS
       var slider = $('.slider');
       var carousel = {
         panes: slider.children.length(),
@@ -122,41 +317,40 @@ modified: '2020-07-09T13:24:25.794Z'
       };
       carousel.slider = slider;
 
-      var a, b; 
+      var a, b;
       var foo = {
-          a: a = 5, 
-          b: b = 6, 
-          c: a + b
-      }; 
+        a: a = 5,
+        b: b = 6,
+        c: a + b
+      };
+```
 
-``` 
 - Not with object literals (this has the same value during constructing of the literal that it did before-hand). But you can do  
 
-``` js
-      var carousel = new (function()
-        {
-              this.$slider =  $('#carousel1 .slider');
-              this.panes = this.$slider.children().length;
-        })();
-      
-      var foo = new function () {
-          this.a = 5;
-          this.b = 6;
-          this.c = this.a + this.b;
+``` JS
+      var carousel = new(function() {
+        this.$slider = $('#carousel1 .slider');
+        this.panes = this.$slider.children().length;
+      })();
+
+      var foo = new function() {
+        this.a = 5;
+        this.b = 6;
+        this.c = this.a + this.b;
       };
 
       var foo = function() {
-          var a = 5;
-          var b = 6;
-          var c = a + b;
+        var a = 5;
+        var b = 6;
+        var c = a + b;
 
-          return {
-              a,
-              b,
-              c
-          }
+        return {
+          a,
+          b,
+          c
+        }
       }();
-    ```
+```
 
 - The `get` syntax binds an object property to a function that will be called when that property is looked up.
 

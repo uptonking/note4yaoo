@@ -1,8 +1,8 @@
 ---
-tags: [layout, table, web]
 title: note-web-layout-table
+tags: [layout, table, web]
 created: '2020-07-10T02:40:36.658Z'
-modified: '2020-07-10T08:38:36.261Z'
+modified: '2020-07-22T03:12:15.082Z'
 ---
 
 # note-web-layout-table
@@ -13,11 +13,13 @@ modified: '2020-07-10T08:38:36.261Z'
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
   - [**Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
+  - [HTML Living Standard - table element](https://html.spec.whatwg.org/multipage/tables.html)
   - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
   - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
   - [Why CSS Should Be Used for Layout_2009](https://www.newmediacampaigns.com/blog/why-css-should-be-used-for-layout)
   - [Slow response when the HTML table is big](https://stackoverflow.com/questions/8640692/slow-response-when-the-html-table-is-big)
   - [Are large html tables slow?](https://stackoverflow.com/questions/1364213/are-large-html-tables-slow)
+  - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)
 
 ## faq
 
@@ -25,16 +27,17 @@ modified: '2020-07-10T08:38:36.261Z'
   - HTML tables should be used for tabular data — this is what they are designed for. 
     - Unfortunately, a lot of people used to use HTML tables to lay out web pages, 
     - e.g. one row to contain the header, one row to contain the content columns, one row to contain the footer, etc.
-  - Layout tables reduce accessibility for visually impaired users 
+  - Layout tables **reduce accessibility** for visually impaired users 
     - Screenreaders, used by blind people, interpret the tags that exist in an HTML page and read out the contents to the user. 
     - Because tables are not the right tool for layout, and the markup is more complex than with CSS layout techniques, the screenreaders' output will be confusing to their users.
   - Tables produce tag soup
     - table layouts generally involve more complex markup structures than proper layout techniques. 
     - This can result in the code being harder to write, maintain, and debug.
-  - Tables are not automatically responsive
+  - Tables are **not automatically responsive**
     - When you use proper layout containers (such as `<header>, <section>, <article>, or <div>` ), their width defaults to 100% of their parent element. 
     - Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.
-- Why should I use display:table instead of table?
+
+- Why should I use `display:table` instead of `<table>` ?
   - Pros of Table Element: 
     - Most designers use table for a consistent look. 
     - Tables are also easy to maintain. 
@@ -173,6 +176,7 @@ caption   { display: table-caption }
   6. cells – highest layer
 - The background of any layer will only be seen if all the layers above it have backgrounds set to transparent.
 - The width of css tables can be calculated using one of two algorithms. 
+
 - The `table-layout` CSS property sets the algorithm used to lay out `<table>` cells, rows, and columns.
   - `auto`
     - By default, most browsers use an automatic table layout algorithm. 
@@ -185,6 +189,7 @@ caption   { display: table-caption }
       - This can speed up rendering time over the "automatic" layout method, but subsequent cell content might not fit in the column widths provided. 
       - Cells use the overflow property to determine whether to clip any overflowing content, but only if the table has a known width; otherwise, they won't overflow the cells.
     - The width of the layout is not determined by its content, but rather by the widths set on the table, cells, borders, and/or cell spacing
+
 - The important thing to consider is that a `fixed` table-layout is a one-pass calculation and very quick. 
 - On the other hand `auto` requires the same multiple passes of html tables. It’s also the default value.
 - If you explicitly set a `width` on the table, then the fixed table layout algorithm will be used.
@@ -313,3 +318,174 @@ caption  { display: table-caption }
 - Tables lock you into the current design and make redesigns MUCH harder than semantic HTML+CSS.
   - (Have you seen CSS Zen Garden?)
 - Tables are 100% acceptable, appropriate, and correct for use with tabular data
+
+## A Complete Guide to the Table Element
+
+- [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)
+
+- The `<table>` element in HTML is used for displaying tabular data. 
+- row: description of an obj
+- column: get a sense of the variety or pattern of data
+- header: thead > tr > th
+- tbody: rows of data： tr > td
+- footer: tfoot > tr > th 
+- The individual cells of a table are always one of two elements: `<td>` or `<th>`
+- `<th>` elements are not necessarily limited to being within the `<thead>` . They simply indicate header information. So they could be used, for instance, at the start of a row in the `<tbody>`
+- By default, all table cells are spacing out from one another by 2px (via the user-agent stylesheet)
+- Notice the slight extra gap between the first row and the rest. That is caused by the default border-spacing being applied to the `<thead> ` and `<tbody>` pushing them apart a bit extra. This isn’t margins, they don’t collapse. 
+- `border-collapse: collapse;` remove the space among borders
+- There are two important attributes that can go on any table cell element ( `<th>` or `<td>` ): `colspan` and `rowspan` . 
+  - They accept any positive integer 2 or larger. 
+  - If a `td` has a `colspan` of 2 (i.e. `<td colspan="2">` ) it will still be a single cell, but it will take up the space of two cells in a row horizontally. 
+  - Likewise with rowspan, but vertically.
+- `colspan` is fairly easy. 
+
+   - Any table cell is “worth” one, unless it has a colspan attribute and then it’s worth that many. 
+   - Add up the values for each table cell in that table row to get the final value. 
+   - Each row should have exactly that value, or else you’ll get an awkward table layout that doesn’t make a rectangle (the longest row will stick out).
+
+- If a table element has a `rowspan` attribute, it spans across two rows vertically. 
+  - That means the row below it gets +1 to it’s table cell count, and needs one less table cell to complete the row.
+- The table element itself is unusual in how wide it is. 
+  - It behaves like a block-level element (e.g. `<div>` ) in that if you put one table after another, each will break down onto its own line. 
+  - But the actual width of the table is only as wide as it needs to be
+  - If the amount of text in the tables widest row only happens to be 100px wide, the table will be 100px wide. 
+  - If the amount of text (if put on one line) would be wider than the container, it will wrap.
+  - However if text is told to not wrap (i.e. `white-space: nowrap;` ), the table is happy to bust out of the container and go wider
+- Two Axis Tables 首行和首列都是表头
+
+``` HTML
+<table>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+  </tr>
+  <tr>
+    <th>2</th>
+    <td>4</td>
+    <td>6</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <th>3</th>
+    <td>6</td>
+    <td>9</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <th>4</th>
+    <td>8</td>
+    <td>12</td>
+    <td>16</td>
+  </tr>
+</table>
+```
+
+- When To Use Tables
+  - a plan/pricing/features comparison, bowling scores, an internal grid of employee data, financial data, a calendar, the nutrition facts information panel, a logic puzzle solver, etc
+- When Not To Use Tables
+  - An inappropriate use for tables is for layout 
+    - bad for accessibility
+    - source order dependency
+- CSS has properties to make any element you wish behave as if it was a table element. 
+  - You’ll need to structure them essentially as you would a table
+- A handy trick here is that you don’t even need the `table-row` element in there if you don’t want. 
+  - A bunch of `display: table-cell;` elements that are children of a `display: table;` element will behave like they are all in one row.
+- You always alter the display property of the element to get the table-style behavior.
+  - Notice there is no `<th>` alternative. That is for semantic value only. 
+  - It otherwise behaves just like a `<td>` , so, no need to replicate it in CSS.
+
+``` 
+display: table                /* <table>     */
+display: table-cell           /* <td>        */
+display: table-row            /* <tr>        */
+display: table-column         /* <col>       */
+display: table-column-group   /* <colgroup>  */
+display: table-footer-group   /* <tfoot>     */
+display: table-header-group   /* <thead>     */
+```
+
+- webkit user agent stylesheet for table 
+  - The UA stylesheet for tables differs from browser to browser. 
+  - That’s what CSS resets (and related projects) are all about: removing the differences.
+
+``` CSS
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit
+}
+
+tfoot {
+  display: table-footer-group;
+  vertical-align: middle;
+  border-color: inherit
+}
+
+table>tr {
+  vertical-align: middle;
+}
+
+col {
+  display: table-column
+}
+
+colgroup {
+  display: table-column-group
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit
+}
+
+td,
+th {
+  display: table-cell;
+  vertical-align: inherit
+}
+
+th {
+  font-weight: bold
+}
+
+caption {
+  display: table-caption;
+  text-align: -webkit-center
+}
+```
+
+- use `th,td {display: inline;}` to untable a table
+- Zebra Striping Tables
+  - `tbody tr:nth-child(odd) { background: #eee; }`
+- Hightlighting a particluar row is fairly easy.
+  -  You could add a class name to a row specifically for that
+- Highlighting a column is a bit trickier. 
+  - One possibility is to use the `<col>` element. However this is rarely useful. If you set the background of a row element or table cell element, that will always beat a background of a column element. Regardless of specificity.
+  - You’re probably better off setting a class name on each individual table cell element that happens to match that column position in the row.
+
+- highlight row, column, cell on hover
+- Tables Can Be Difficult in Fluid/Responsive Designs
+  - Turn Rows into Blocks
+- The most modern way of handling fixed headers is `position: sticky;`
+- custom implementation
+  - search
+  - sort
+
+## collection of well-designed tables
