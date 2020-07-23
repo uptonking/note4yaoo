@@ -2,7 +2,7 @@
 title: note-web-layout-table
 tags: [layout, table, web]
 created: '2020-07-10T02:40:36.658Z'
-modified: '2020-07-22T03:12:15.082Z'
+modified: '2020-07-23T05:59:56.279Z'
 ---
 
 # note-web-layout-table
@@ -12,7 +12,7 @@ modified: '2020-07-22T03:12:15.082Z'
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
-  - [**Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
+  - [**mdn Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
   - [HTML Living Standard - table element](https://html.spec.whatwg.org/multipage/tables.html)
   - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
   - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
@@ -43,7 +43,7 @@ modified: '2020-07-22T03:12:15.082Z'
     - Tables are also easy to maintain. 
     - Another advantage of table is that it is compatible with the most browsers.
   - Cons of Table Element: 
-    - All this comes with a cost: Too many nested tables increase page size and download time. 
+    - All this comes with a cost: Too many nested tables increase complexity, page size and download time. 
     - More table elements push important content down so search spiders are less likely to add content to search engines.
   - Pros of DIV Element: 
     - div with CSS we can achieve the same table based page structure and reduce the number of elements on the page, which allows the page to load faster. 
@@ -51,7 +51,7 @@ modified: '2020-07-22T03:12:15.082Z'
   - Cons of DIV Element: 
     - The major drawback of this is not all CSS elements are not browser compatible. 
     - Because of this we have to write some custom CSS to resolve issues. 
-  - html5 have better alternates for layout
+  - html5 have better alternatives for layout
   - ref
     - [Why should I use display:table instead of table](https://stackoverflow.com/questions/2867476/why-should-i-use-displaytable-instead-of-table)
     - [Actual table Vs. Div display-table](https://stackoverflow.com/questions/2617895/actual-table-vs-div-table)
@@ -490,37 +490,82 @@ caption {
 
 ## Responsive CSS Table
 
-- [Responsive Data Tables](https://css-tricks.com/responsive-data-tables/)
-- [Responsive Tables (and a calendar demo)](https://dbushell.com/2012/01/04/responsive-calendar-demo/)
-- [Responsive Tables (2)](https://dbushell.com/2012/01/05/responsive-tables-2/)
+- ### [Responsive Data Tables_2011](https://css-tricks.com/responsive-data-tables/)
+- Responsive design is all about adjusting designs to accommodate screens of different sizes. 
+- So what happens when a screen is narrower than the minimum width of a data table? 
+  - zoom out and see the whole table, but text may be too small
+  - zoom in to read, but scrolling by touch sucks
+- The biggest change is that we are going to force the table to not behave like a table by **setting every table-related element to be block-level**. 
+- Then by keeping the zebra striping we originally added, it’s kind of like each table row becomes a table in itself, but only as wide as the screen. No more horizontal scrolling! 
+- Then for each “cell”, we’ll use CSS generated content (:before) to apply the label, so we know what each bit of data means.
+- two alternative ideas that are both very cool
+  - One of them makes a pie graph from the data in the chart. On narrower screens, the pie graph shows and the table hides, otherwise only the more information-rich table shows
+  - The next idea is to turn the table into a mini graphic(like a thumbnail or placeholder image) of a table on narrow screens, rather than show the whole thing. This shows the user there is a data table here to be seen, but doesn’t interfere with the content much. Click the table, get taken to a special screen for viewing the table only, and click to get back.
 
-- [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
-  01.  Horizontal Minimalist
-  02.  Vertical Minimalist
-  03.  Box
-  04.  Horizontal Zebra
-  05.  Vertical Zebra Style
-  06.  One Column Emphasis
-  07.  Newspaper
-  08.  Rounded Corner
-  09.  Table Background
-  10. Cell Background
+- ### [CSS only Responsive Tables_2012](https://dbushell.com/2016/03/04/css-only-responsive-tables/)
+  - [Responsive Tables (and a calendar demo)](https://dbushell.com/2012/01/04/responsive-calendar-demo/)
+  - [Responsive Tables (2)_2012](https://dbushell.com/2012/01/05/responsive-tables-2/)
 
-- [Table Design Patterns On The Web](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
-  - invoke overflow and allowing users to scroll to see more data. 
-    - for browsers that don’t support scrolling shadows, you can still scroll the table as per normal. It doesn’t break the layout at all.
-  - transform the table’s rows into columns, scroll horizontally
+- Chris Coyier presented a good idea in August 2011. His solution requires hard-coded content inside CSS, not good at all for many reasons. 
+- Chris Garret has evolved the idea very recently using `data-*` attributes in HTML and the `content: attr(data-*)` technique in CSS
+- Filament Group blogged a different idea in December 2011 that maintains the table appearance by reducing the columns visible. 
+  - It relies on JavaScript for the interactive choice of visible columns (making it an acceptable use of standards), but again, only suitable for certain data.
+
+- implemented the idea that I was alluding to with horizontal scrolling
+- once you go block, you can’t go back! Changing the display of a table and its rows & cells to block level is a lot easier than re-implementing the table model with CSS. 
+- it’s commonly advised to build responsive websites from small to large 
+- I’ve found with tables it may be better to firstly have the larger traditional table version as default and use max-width media queries to scale down
+
+- When it comes to responsive tables there is no one size fits all solution. Tables are good for housing a lot of data but on small screens data comparison is difficult because the visible real estate is very limited. There will never be a single plugin that solves this problem.
+- My solution simply makes `<table>` elements scrollable and offers an optional axis flip if appropriate to the content. It doesn’t magically solve the user experience.
+- Maybe a table isn’t the answer!
+- The scrolling shadows act as a visual indicator for content overflow and invite scrolling. Nicer than a hard cut-off in my opinion.
+
+- ### [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
+01. Horizontal Minimalist
+02. Vertical Minimalist
+03. Box
+04. Horizontal Zebra
+05. Vertical Zebra Style
+06. One Column Emphasis
+07. Newspaper
+08. Rounded Corner
+09. Table Background
+10. Cell Background
+
+- ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
+- Tables are a design pattern for displaying large amounts of data in rows and columns, making them efficient for doing comparative analysis on categorical objects.
+- If your dataset isn’t that large, and features like pagination and sorting are not necessary, then consider a css-only(JavaScript-free) option. You can get some pretty nice results that work well on a whole gamut of screen sizes without the added weight of a large library.
+
+- do nothing
+  - If your data fits in a table with only a few columns and lots of rows, then such a table is pretty much mobile-ready to begin with.
+  - The issue you’d have is probably having too much room on wider screens, so it might be advisable to “cap” the maximum width of the table with a max-width while letting it shrink as necessary on a narrow screen.
+  - This sort of a pattern works best if your data itself isn’t lines and lines of text. If they are numeric, or short phrases, you can probably get away with not doing much.
+
+- David Bushell wrote up his technique for responsive tables back in 2012, which involved invoking overflow and allowing users to scroll to see more data. 
+  - One could argue that this isn’t exactly a responsive solution, but technically, the container is responding to the width of the viewport.
+  - for browsers that don’t support scrolling shadows, you can still scroll the table as per normal. It doesn’t break the layout at all.
+  - Another scrolling option would be to flip the table headers from a row configuration to a column configuration, while applying a horizontal scroll onto the `<tbody>` element’s contents. This technique leverages Flexbox behavior to transform the table’s rows into columns.
     - headers are always in view
-    - this technique results in a discrepancy of the visual and source order
-  - make use of a media query to switch the display property of the table element and its children to block on a narrow viewport.
-    - On a narrow screen, the table headers are visually hidden, but still exist in the accessibility tree. 
-    - By applying data attributes to the table cells, we can then display labels for the data via CSS, while keeping the content of the label in the HTML
-  - paginate on table rows instead of divs
-  - have some sort of indicator of which column is currently being sorted and in what order. 
-  - have each input field as part of the table in their respective columns for search
-  - Let A Library Handle It'
-    - The column toggle pattern is one whereby non-essential columns are hidden on smaller screens.
-    - https://github.com/filamentgroup/tablesaw /MIT/5.4kStar/201903
+    - this technique results in a discrepancy(不一致，差异) of the visual and source order
+
+- layout options that involving morphing the table by modifying `display` values sometimes have negative implications for accessibility, which require some minor DOM manipulation to rectify.
+- If you’re working with a relatively simpler dataset, perhaps you would like to write your own functions for some of these features.
+- make use of media query to switch the `display` property of the table element and its children to `block` on a narrow viewport.
+  - On a narrow screen, the table headers are visually hidden, but still exist in the accessibility tree. 
+  - By applying `data-` attributes to the table cells, we can then display labels for the data via CSS, while keeping the content of the label in the HTML
+  - The original method applies a width on the pseudo-element displaying the label text, but that means you’d need to know the amount of space your label needed to begin with. 
+  - The above example uses a slightly different approach, whereby the label and data are each on opposite sides of their containing block.
+  - We can achieve such an effect via auto-margins in a flex formatting context. 
+- Another approach doing the narrow viewport layout is using a combination of Grid and `display: contents` . 
+  - Please note that display: contents in supporting browsers has issues with accessibility at the moment
+
+- paginate on table rows instead of divs
+- have some sort of indicator of which column is currently being sorted and in what order. 
+- have each input field as part of the table in their respective columns for search
+- Let A Library Handle It'
+  - The column toggle pattern is one whereby non-essential columns are hidden on smaller screens.
+  - https://github.com/filamentgroup/tablesaw /MIT/5.4kStar/201903
 
 ## collection of well-designed tables
 
