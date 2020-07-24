@@ -10,6 +10,10 @@ modified: '2020-07-17T08:52:12.776Z'
 
 ## 难点
 
+- scrolling滚动时的样式
+  - 不同浏览器的滚动条样式不一致
+  - 难以实现sticky，滚动的是body还是div
+  - 移动端地址栏显示与隐藏
 - tree-shaking
   - 各工具库的编译方式不同，webpack各版本支持程度不同
   - webpack v4不支持，v5支持

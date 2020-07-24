@@ -23,6 +23,18 @@ modified: '2020-07-23T05:59:56.279Z'
 
 ## faq
 
+- table使用 `white-space: nowrap` 会增加列的宽度，如何隐藏超出列宽部分
+
+``` CSS
+td {
+  border: 1px solid black;
+  width: 100px;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+```
+
 - When should you NOT use HTML tables?
   - HTML tables should be used for tabular data — this is what they are designed for. 
     - Unfortunately, a lot of people used to use HTML tables to lay out web pages, 
@@ -535,37 +547,57 @@ caption {
 
 - ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
 - Tables are a design pattern for displaying large amounts of data in rows and columns, making them efficient for doing comparative analysis on categorical objects.
-- If your dataset isn’t that large, and features like pagination and sorting are not necessary, then consider a css-only(JavaScript-free) option. You can get some pretty nice results that work well on a whole gamut of screen sizes without the added weight of a large library.
+
+- If your dataset isn’t that large, and features like pagination and sorting are not necessary, then consider a css-only(JavaScript-free) option. 
+  - You can get some pretty nice results that work well on a whole gamut of screen sizes without the added weight of a large library.
 
 - do nothing
   - If your data fits in a table with only a few columns and lots of rows, then such a table is pretty much mobile-ready to begin with.
-  - The issue you’d have is probably having too much room on wider screens, so it might be advisable to “cap” the maximum width of the table with a max-width while letting it shrink as necessary on a narrow screen.
+  - The issue you’d have is probably having too much room on wider screens, so it might be advisable to “cap” the maximum width of the table with a `max-width` while letting it shrink as necessary on a narrow screen.
   - This sort of a pattern works best if your data itself isn’t lines and lines of text. If they are numeric, or short phrases, you can probably get away with not doing much.
 
 - David Bushell wrote up his technique for responsive tables back in 2012, which involved invoking overflow and allowing users to scroll to see more data. 
   - One could argue that this isn’t exactly a responsive solution, but technically, the container is responding to the width of the viewport.
-  - for browsers that don’t support scrolling shadows, you can still scroll the table as per normal. It doesn’t break the layout at all.
-  - Another scrolling option would be to flip the table headers from a row configuration to a column configuration, while applying a horizontal scroll onto the `<tbody>` element’s contents. This technique leverages Flexbox behavior to transform the table’s rows into columns.
-    - headers are always in view
+  - 在出现滚动条的左右两侧添加scroll shadows，指示可滚动查看数据
+    - for browsers that don’t support scrolling shadows, you can still scroll the table as per normal. 
+    - It doesn’t break the layout at all.
+    - 对于不支持scroll shadows的浏览器，就不显示阴影，仍可滚动
+  - Another scrolling option would be to flip the table headers from a row configuration to a column configuration, while applying a horizontal scroll onto the `<tbody>` element’s contents. 
+    - This technique leverages Flexbox behavior to transform the table’s rows into columns.
+    - headers are always in view, like a fixed header effect
     - this technique results in a discrepancy(不一致，差异) of the visual and source order
 
 - layout options that involving morphing the table by modifying `display` values sometimes have negative implications for accessibility, which require some minor DOM manipulation to rectify.
 - If you’re working with a relatively simpler dataset, perhaps you would like to write your own functions for some of these features.
-- make use of media query to switch the `display` property of the table element and its children to `block` on a narrow viewport.
+
+- make use of **media query** to switch the `display` property of the table element and its children to `block` on a narrow viewport.
   - On a narrow screen, the table headers are visually hidden, but still exist in the accessibility tree. 
   - By applying `data-` attributes to the table cells, we can then display labels for the data via CSS, while keeping the content of the label in the HTML
   - The original method applies a width on the pseudo-element displaying the label text, but that means you’d need to know the amount of space your label needed to begin with. 
   - The above example uses a slightly different approach, whereby the label and data are each on opposite sides of their containing block.
   - We can achieve such an effect via auto-margins in a flex formatting context. 
+
 - Another approach doing the narrow viewport layout is using a combination of Grid and `display: contents` . 
   - Please note that display: contents in supporting browsers has issues with accessibility at the moment
+  - Each `<tr>` element is set to ` display: grid` , and each `<td>` element is set to `display: contents` .
+  - What I like about this approach is the ability to use `max-content` to size the column of pseudo-elements, ensuring that the column will always be the width of the longest label, without us having to manually assign a width value for it.
+  - The downside to this approach is you do need that additional `<span>` or `<p>` around the content in your table cell if it didn’t have one already, otherwise, there’d be no way to apply styles to it.
 
-- paginate on table rows instead of divs
-- have some sort of indicator of which column is currently being sorted and in what order. 
-- have each input field as part of the table in their respective columns for search
-- Let A Library Handle It'
+- sprinkle on some javascript
+  - paginate on table rows 
+  - have some sort of indicator of which column is currently being sorted and in what order. 
+  - have each input field as part of the table in their respective columns for search
+
+- Let A Library Handle It
+  - With large datasets, it might make sense to use an existing library to manage your large tables
   - The column toggle pattern is one whereby non-essential columns are hidden on smaller screens.
+    - provide a drop-down menu which allows users to toggle the hidden columns back into view.
   - https://github.com/filamentgroup/tablesaw /MIT/5.4kStar/201903
+    - A group of plugins for responsive tables
+    - Stack Mode, Column Toggle Mode, Swipe Mode,Mode Switcher
+    - no dependencies, or with tablesaw.jquery.js plugin
+
+- which approach you pick depends heavily on the type of data you have and the target audience for that data.
 
 ## collection of well-designed tables
 

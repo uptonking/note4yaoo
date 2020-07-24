@@ -7,6 +7,33 @@ modified: '2020-07-14T10:39:39.130Z'
 
 # note-recoil-faq
 
+## faq-repeat
+
+- recoil vs mobx
+  - First of all, Recoil & MobX solve the same problem: efficient render widely shared state. 
+    - This is a problem React (Context), Redux and most state management libs don't solve.
+  - In that regard they are very similar. Hence terminology aligns: atoms, dep trees, derived data .
+    - Roughly speaking Recoil offers observable.box + computed + useObserver from MobX. 
+  - A difference is that Recoil builds on React primitives, the benefits are clear: Leaner, more easily compatible with concurrent mode, piggy back on React's batching. 
+  - MobX in contrast is more general purpose and can be used in non-React projects and is even ported to different languages (eg Flutter) & doesn't need a React context to work or organize effects
+  - MobX, like Recoil is build around atoms. But in MobX they are abstracted away in objects, maps, arrays, etc. 
+    - More magic, but makes atoms easier composable/nestable. 
+    - Concretely: no need to organize a separate atom for the collection (ids) & atoms for the individual objects
+  - In MobX that is done under the hood for you by e.g. observable.array
+  - More importantly, in MobX you always get an atom for each prop. 
+  - That means that a component rendering one field, won't respond to updates in other fields in the same object. 
+  - The same can be achieved in recoil, but you have to organize it yourself (either write a selector, or organize the state in smaller atoms). 
+  - That brings us to the last important difference: In recoiljs you explicity specify what you consume. That is clearer, but also less optimal. 
+  - Beyond being more course, due to the nature of react hooks, it has to be unconditional (or requires additional selectors). `<div>{user.loggedIn ? user.name : ""}</div>` will only subscribe to `user.name` as long as `user.loggedIn` is true in MobX. That is hard to achieve manually
+  - To summarize: Recoil & MobX are similar: many, individual subscribable atoms (Redux has always one), enabling sideways comp updates + model that favors deriving & memoizing data. 
+  - MobX offers higher level abstractions like maps and arrays based on atoms + transparent tracking
+  - Recoil integrates much more closely with React and is purer. 
+  - Disclaimer: above is based on just watching the talk, I haven't further used the project. Just want to elaborate on what looks similarly, and what differently to me. Definitely check it out!
+  - May be a point worth clarifying: **Recoil is not concurrent mode compatible in its current form**.
+  - Hopefully Recoil will soon integrate with the recent (still experimental) `useMutableSource` hook - at which point it will be concurrent mode compatible
+  - ref
+    - https://twitter.com/mweststrate/status/1261369872283467777
+
 ## faq
 
 - Suggested folder structure for atoms and selectors
@@ -96,6 +123,14 @@ const treeState = atomFamily < ID,
   - ref
     - https://github.com/facebookexperimental/Recoil/issues/179
     - https://github.com/facebookexperimental/Recoil/issues/410
+
+- How can i use atoms/selector from non-ui code ?
+  - For proper support of React Concurrent Mode, Recoil does not have "global" state, unlike many other state management systems. 
+  - With React CM, different parts of the tree may be asynchronously rendered with different versions of the state concurrently. 
+  - So, all Recoil state is derived from hooks to obtain the "current" state for that rendering. 
+  - That said, you can use those hooks, such as `useRecoilCallback()` to provide callbacks to access or set the state asynchronously.
+  - ref
+    - https://github.com/facebookexperimental/Recoil/issues/484
 
 - Should we avoid keeping default values of atoms in memory?
   - Current behaviour is to store default value in memory for every atom once atomFamily called.

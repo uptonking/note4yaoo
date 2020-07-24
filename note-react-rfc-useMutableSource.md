@@ -7,14 +7,19 @@ modified: '2020-07-17T06:01:06.359Z'
 
 # note-react-rfc-useMutableSource
 
-## guide 
+## faq 
 
-- useMutableSource is for reading from mutable sources that you either don't control (e.g. window.location) or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
-- useMutableSource has nothing to do with mutating the source. 
-- It provides a way for multiple components to read from a source without "tearing" (rendering conflicting things).
-
-- ref
-  - [merge twitter](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
+- How come this API isn't merged with useRef? (Both are used for  managing mutable, usually external data.)
+  - useRef has constraints. 
+    - Essentially (with the exception of lazy initialization) you should only mutate refs during the "commit phase" (within useEffect or useLayoutEffect).
+    - Refs are like instance fields on class components. They let you e.g. compare next and prev props
+    - They aren't meant for sharing values with other components. 
+    - Because of their constraints, they're safe to use with concurrent rendering.
+  - useMutableSource is for reading from mutable sources that you either don't control (e.g. window.location), or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
+    - useMutableSource has nothing to do with mutating the source. 
+    - It **provides a way for multiple components to read from a source without "tearing"** (rendering conflicting things).
+  - ref
+    - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
 
 ## useMutableSource
 
@@ -50,7 +55,7 @@ modified: '2020-07-17T06:01:06.359Z'
 - Unresolved questions
   - Are there any common/important types of mutable sources that this proposal will not be able to support?
 
-## faq
+## pieces
 
 - Given a parent and a child, both calling useMutableSource with the same source: when the source updates, what order will the two components try to read the values from the source?
   - Keep in mind that `useMutableSource` is being written for concurrent mode (not legacy sync-rendering mode).
@@ -65,9 +70,10 @@ modified: '2020-07-17T06:01:06.359Z'
   - If anything, I feel like we're learning that react should have more things built-in (not necessarily "in core" but within packages owned and maintained by the core team).
   - Having things spread out majority limits what we can do and how quickly we can do it.
 
-- Do DOM nodes and window. methods (eg rAF, setTimeout, etc), fall into the category of mutable external sources?
-  - Window methods like the ones you mentioned? No. DOM nodes are definitely mutable but this probably wouldn't be used for them.
-  - window.location is a mutable source though.
+- Do DOM nodes and `window.methods` (eg rAF, setTimeout, etc), fall into the category of mutable external sources?
+  - window methods like the ones you mentioned? No. 
+  - DOM nodes are definitely mutable but this probably wouldn't be used for them.
+  - `window.location` is a mutable source though.
 
-- useRef has constraints. Essentially (with the exception of lazy initialization) you should only mutate refs during the "commit phase" (within useEffect or useLayoutEffect).
-- Refs are like instance fields on class components. They let you e.g. compare next and prev props-
+- there's no mechanism for tracking selector equality between components. 
+  - Selectors will be run (and snapshots stored) per component+hook.

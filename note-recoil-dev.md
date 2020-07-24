@@ -62,7 +62,7 @@ modified: '2020-07-14T10:39:33.749Z'
   - So there is no "current state", just "the last committed state as seen by this particular component".
   - https://github.com/facebookexperimental/Recoil/issues/5
 - In Recoil, state seems React based.
--  The only thing to be aware of is that Recoil is bound to a particular React root and hence a particular renderer.   
+- The only thing to be aware of is that Recoil is bound to a particular React root and hence a particular renderer.   
   - You can use Recoil transaction observation to pass state changes between roots. 
   - React does not schedule changes across roots and I am told never plans to.
 
