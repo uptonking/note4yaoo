@@ -8,6 +8,85 @@ modified: '2020-07-18T08:40:56.062Z'
 
 # docs-web-style-box-model
 
+
+## width
+
+## height 
+
+## padding
+
+## margin
+
+
+- The `margin-right` CSS property sets the margin area on the right side of an element. 
+  - A positive value places it farther from its neighbors, while a negative value places it closer.
+- initial vaule: 0 
+- `margin-right: auto;`
+  - The right margin receives a share of the unused horizontal space, as determined mainly by the layout mode that is used. 
+  - If the values of margin-left and margin-right are both auto, the calculated space is evenly distributed.
+
+- keyword auto默认是使用所有剩余空间，所以不论left还是right定义了auto，计算值都会是包含块的剩余空间，如果左右都设置了auto，那么就会均分剩余空间
+
+- div没有设置width或height，会自动填充父容器的宽度
+- 假设外部的容器宽度大于200，则宽度原本应该自动填充，现在因为width设置200而闲置，而`margin:auto` 就是为了填充这个闲置的尺寸而设计
+- 如果一侧定值，一侧auto，则auto为剩余空间大小
+- 如果两侧均是auto，则平分剩余空间
+
+``` HTML
+.father {
+    width:400px;
+    height: 200px;
+    background: pink;
+}
+.son {
+    width: 200px;
+    height: 150px;
+    background: #ff00dd;
+    margin-left: auto; 
+}
+<div class='father'>
+  <div class='son'></div>
+
+</div>
+```
+- 对于上例，因为son元素margin-right缺省，而自动填充初始值0， `margin-left：auto`会占据所有空间，所以son元素会在右侧
+
+- ref
+  - [margin:auto与布局展示](https://zhuanlan.zhihu.com/p/57605009)
+
+## border
+
+- The border shorthand CSS property sets an element's border. 
+- It sets the values of `border-width` , `border-style` , and `border-color` .
+
+### border-width
+
+- The border-width shorthand CSS property sets the width of an element's border.
+- Each side can be set individually using border-top/right/bottom/left-width
+
+- **values**
+- initial value each defaults to `medium`
+  - 对于table cell，由于border-style默认值为none，所以不显示边框，宽度为0
+- `border-top-width` is the absolute length or 0 if `border-top-style` is none or hidden
+
+## border-style
+
+- The border-style shorthand CSS property sets the line style for all four sides of an element's border.
+
+- **values**
+- initial value each defaults to `none`
+  - Unless a `background-image` is set, the computed value of the same side's `border-width` will be `0` , even if the specified value is something else. 
+  - In the case of table cell and border collapsing, the `none` value has the **lowest** priority: if any other conflicting border is set, it will be displayed.
+  - 对于table cell，默认就不显示边框
+- `hidden`
+  - Like the `none` keyword, displays no border. 
+  - Unless a `background-image` is set, the computed value of the same side's `border-width` will be `0` , even if the specified value is something else. 
+  - In the case of table cell and border collapsing, the hidden value has the **highest** priority: if any other conflicting border is set, it won't be displayed.
+
+## border-color
+
+- The border-color shorthand CSS property sets the color of an element's border.
+
 ## font-size
 
 - sets the size of the font. 
