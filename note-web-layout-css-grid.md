@@ -9,7 +9,27 @@ modified: '2020-07-14T10:47:26.044Z'
 
 ## guide
 
+- ref
+  - [CSS Grid网格布局教程_阮一峰](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+  - [写给自己看的display: grid布局教程_张鑫旭](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
+  - [Grid 布局学习](https://juejin.im/post/5d8daa0f518825096d3b4dca)
+  - [CSS Grid 系列(上)-Grid布局完整指南](https://zhuanlan.zhihu.com/p/33030746)
+  - [[译] Grid布局完全指南](https://shanyue.tech/post/Grid-Guide/)
+
 ## pieces
+
+## Relationship of grid layout to other layout methods
+
+- The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. 
+- Grid was designed for two-dimensional layout - rows, and columns at the same time. 
+
+- Grid interacts with absolutely positioned elements, which can be useful if you want to position an item inside a grid or grid area. 
+- The specification defines the behavior when a grid container is a containing block and a parent of the absolutely positioned item.
+
+- If you set an item to `display: contents` , the box it would normally create disappears, and the boxes of the child elements appear as if they have risen up a level. 
+  - This means that children of a grid item can become grid items.
+- This can be a way to get items nested into the grid to act as if they are part of the grid, and is a way around some of the issues that would be solved by subgrids once they are implemented. 
+- You can also use `display: contents` in a similar way with flexbox to enable nested items to become flex items.
 
 ## A Complete Guide to Grid
 
