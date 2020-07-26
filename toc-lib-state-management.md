@@ -24,6 +24,12 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://recoiljs.org/
   - Recoil is an experimental set of utilities for state management with React
   - Promote an Actor model event-based architecture
+- react-sweet-state /MIT/387Star/202007
+  - https://github.com/atlassian/react-sweet-state
+  - https://atlassian.github.io/react-sweet-state/
+  - Taking the good parts of Redux and React Context to build a flexible, scalable and easy to use state management solution.
+  - This library merges ideas from redux, react-redux, redux-thunk, react-copy-write, unstated, bey, react-apollo just to name a few. 
+  - Moreover it has been the result of months of discussions with devs at Atlassian
 - bloc /MIT/4.9kStar/202007
   - https://github.com/felangel/bloc
   - https://bloclibrary.dev/
@@ -39,6 +45,10 @@ modified: '2020-07-14T11:03:53.196Z'
 - constate /MIT/2.6kStar/202002
   - https://github.com/diegohaz/constate
   - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
+- concent /MIT/626Star/202007
+  - https://github.com/concentjs/concent
+  - https://concentjs.github.io/concent-doc/
+  - 内置依赖收集，可预测、零入侵、渐进式、高性能的react开发框架
 - akita /Apache2.0/2.3kStar/202007
   - https://github.com/datorama/akita
   - https://datorama.github.io/akita/

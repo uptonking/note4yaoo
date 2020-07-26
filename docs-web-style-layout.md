@@ -97,15 +97,15 @@ modified: '2020-07-18T09:32:06.258Z'
 - Note:
   - The Level 3 specification details two values for the `display` property — enabling the specification of the outer and inner display type explicitly — but this is not yet well-supported by browsers.
 
-- display：contents 
-  - 元素本身不能生成任何盒模型，但是它的子元素或者伪元素可以正常生成。
+- `display：contents`
+  - 元素本身不能生成任何盒模型，但是它的子元素或伪元素可以正常生成。
   - 为了盒模型的生成与布局，该元素就好像在DOM树中被子元素与伪元素所替代一样
-  - 上述规范说明了我们可以在文档中添加一个HTML元素，并在该元素的选择器中添加display:contents样式，那么该元素就会像是不存在一样，它的子元素会替代它在DOM树中的位置。
-  - 如果为外层Div元素添加display:contents属性，外层Div消失了，我们看不到外层Div的背景，边框 ，甚至应用到该元素的宽度也已经失效了，内层Div元素则占据了整个视口。
+  - 上述规范说明了我们可以在文档中添加一个HTML元素，并在该元素的选择器中添加 `display:contents` 样式，那么该元素就会像是不存在一样，它的子元素会替代它在DOM树中的位置。
+  - 如果为外层Div元素添加display:contents属性，外层Div消失了，我们看不到外层Div的背景和边框，甚至应用到该元素的宽度也已经失效了，内层Div元素则占据了整个视口。
     - 内部Div元素不能继承的属性仅仅是那些与盒模型生成或布局相关的。
     - 我们可以在外层Div元素上设置font-size属性，其子元素则会继承该属性
-  - 使div不产生任何框，因此不会渲染其背景边框和内边距，但颜色/字体等继承的属性还是会对其子元素产生效果
-  - 即在盒子上添加 display: contents , 当前盒子若设置了 background border padding width height 等属性会失效
+  - 它能使div不产生任何框，因此不会渲染其背景边框和内边距，但颜色/字体等继承的属性还是会对其子元素产生效果
+    - 即在盒子上添加 `display: contents` , 当前盒子若设置了 background border padding width height 等属性会失效
 
 - ref
   - [display：contents 与消失的盒模型](https://www.zcfy.cc/article/vanishing-boxes-with-display-contents-1693.html)

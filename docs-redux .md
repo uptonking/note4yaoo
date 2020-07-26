@@ -36,6 +36,8 @@ modified: '2020-07-14T09:24:43.966Z'
 
 - ref
   - [react-redux 杂谈 - 设计结构变迁](https://zhuanlan.zhihu.com/p/86336676)
+  - [request: Allow for optionally using React Context instead of Redux under the hood](https://github.com/reduxjs/react-redux/issues/1612)
+  - [v7: setState mutations and redux mutations are not batched into a single re-render ](https://github.com/reduxjs/react-redux/issues/1298)
 
 - 在v5中，会优先查找上一级context的subscription(parentSub)，如果垂直多个层级的组件都使用connect订阅了全局state的变化，当state更新时，消息是从 `C --> B --> A` 一层一层往下传递的，而不是统一维护在store的listeners中
 - In v6, every store update calls `setState()` at the root of the component tree in `<Provider>` , and forces React to walk the component tree to find the consumers before they can even run `mapState` . 

@@ -1,11 +1,11 @@
 ---
-title: note-pm-list-grid-dev
+title: note-pm-list-grid-table-dev
 tags: [dev, grid, list, product, table]
 created: '2020-07-13T13:34:22.833Z'
-modified: '2020-07-14T13:05:46.032Z'
+modified: '2020-07-26T04:15:29.049Z'
 ---
 
-# note-pm-list-grid-dev
+# note-pm-list-grid-table-dev
 
 ## api
 

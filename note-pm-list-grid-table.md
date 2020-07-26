@@ -1,11 +1,11 @@
 ---
-title: note-pm-list-grid
+title: note-pm-list-grid-table
 tags: [grid, list, pm, product, table]
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-07-14T13:06:26.826Z'
+modified: '2020-07-26T04:15:18.011Z'
 ---
 
-# note-pm-list-grid
+# note-pm-list-grid-table
 
 ## pieces
 

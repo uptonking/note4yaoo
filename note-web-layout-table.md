@@ -12,14 +12,10 @@ modified: '2020-07-23T05:59:56.279Z'
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
   - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Legacy_Layout_Methods
-  - [**mdn Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
-  - [HTML Living Standard - table element](https://html.spec.whatwg.org/multipage/tables.html)
-  - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
-  - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
-  - [Why CSS Should Be Used for Layout_2009](https://www.newmediacampaigns.com/blog/why-css-should-be-used-for-layout)
+  - [**mdn: Table Reflow Internals**](https://developer.mozilla.org/en-US/docs/Archive/Table_Reflow_Internals)
+  - [spec: HTML Living Standard - table element](https://html.spec.whatwg.org/multipage/tables.html)
   - [Slow response when the HTML table is big](https://stackoverflow.com/questions/8640692/slow-response-when-the-html-table-is-big)
   - [Are large html tables slow?](https://stackoverflow.com/questions/1364213/are-large-html-tables-slow)
-  - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)
 
 ## faq
 
@@ -129,7 +125,7 @@ td {
 
 ## Are CSS Tables Better Than HTML Tables
 
-- [Are CSS Tables Better Than HTML Tables? _2011](https://vanseodesign.com/css/tables/)
+- [Are CSS Tables Better Than HTML Tables?_2011](https://vanseodesign.com/css/tables/)
 
 - The css table model is based on the html4 table model and has pretty good browser support. 
 - In both table models, the table structure parallels the visual display of the table itself.
@@ -241,6 +237,8 @@ caption   { display: table-caption }
 
 ## CSS vs Tables: The Debate That Won’t Die
 
+ - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
+
 - One of the debates that never seems to go away in the web development community is that of css vs tables and which is better to use for the layout of your site.
 - I do think css is the better option, but feel free to develop sites any way you want.
 - What the css vs tables debate is really about is whether or not to structure a web page with tables or divs. In its simplest form we’re comparing:
@@ -330,6 +328,9 @@ caption  { display: table-caption }
 - Tables lock you into the current design and make redesigns MUCH harder than semantic HTML+CSS.
   - (Have you seen CSS Zen Garden?)
 - Tables are 100% acceptable, appropriate, and correct for use with tabular data
+- ref
+  - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
+  - [Why CSS Should Be Used for Layout_2009](https://www.newmediacampaigns.com/blog/why-css-should-be-used-for-layout)
 
 ## A Complete Guide to the Table Element
 
@@ -351,11 +352,9 @@ caption  { display: table-caption }
   - If a `td` has a `colspan` of 2 (i.e. `<td colspan="2">` ) it will still be a single cell, but it will take up the space of two cells in a row horizontally. 
   - Likewise with rowspan, but vertically.
 - `colspan` is fairly easy. 
-
-   - Any table cell is “worth” one, unless it has a colspan attribute and then it’s worth that many. 
-   - Add up the values for each table cell in that table row to get the final value. 
-   - Each row should have exactly that value, or else you’ll get an awkward table layout that doesn’t make a rectangle (the longest row will stick out).
-
+  - Any table cell is “worth” one, unless it has a colspan attribute and then it’s worth that many. 
+  - Add up the values for each table cell in that table row to get the final value. 
+  - Each row should have exactly that value, or else you’ll get an awkward table layout that doesn’t make a rectangle (the longest row will stick out).
 - If a table element has a `rowspan` attribute, it spans across two rows vertically. 
   - That means the row below it gets +1 to it’s table cell count, and needs one less table cell to complete the row.
 - The table element itself is unusual in how wide it is. 
@@ -419,7 +418,7 @@ display: table-footer-group   /* <tfoot>     */
 display: table-header-group   /* <thead>     */
 ```
 
-- webkit user agent stylesheet for table 
+- **webkit user agent stylesheet for table** 
   - The UA stylesheet for tables differs from browser to browser. 
   - That’s what CSS resets (and related projects) are all about: removing the differences.
 
@@ -487,7 +486,7 @@ caption {
 - Zebra Striping Tables
   - `tbody tr:nth-child(odd) { background: #eee; }`
 - Hightlighting a particluar row is fairly easy.
-  -  You could add a class name to a row specifically for that
+  - You could add a class name to a row specifically for that
 - Highlighting a column is a bit trickier. 
   - One possibility is to use the `<col>` element. However this is rarely useful. If you set the background of a row element or table cell element, that will always beat a background of a column element. Regardless of specificity.
   - You’re probably better off setting a class name on each individual table cell element that happens to match that column position in the row.
@@ -534,15 +533,29 @@ caption {
 - The scrolling shadows act as a visual indicator for content overflow and invite scrolling. Nicer than a hard cut-off in my opinion.
 
 - ### [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
+- This article will show you ten most easily implemented CSS table designs
+- the general rule of thumb for styling of tables
+  - Tables love space. 
+    - Set the width of tables carefully, according to the content. 
+    - If you don’t know the perfect width, simply set the width of the table to 100%. 
+    - Tables look nicer when they have “overwidth”, and when it comes to tables too much width is definitely better than too little width.
+  - Cells need some padding. 
+    - Define some space between the cells, crammed up table cells are so much harder to read.
+  - Treat tables the way you treat content. 
+    - Tables are read similarly to the way we read text — except it’s harder and it takes more time to read a table. 
+    - So be careful with the amount of contrast you are giving to your table. 
+    - Use soft colors — it’s easier for the eyes.
+    - Don’t treat your table like it’s a graphical decoration. 
+    - Make sure that the style you apply to it makes the content more readable, not the other way around.
 01. Horizontal Minimalist
 02. Vertical Minimalist
 03. Box
 04. Horizontal Zebra
 05. Vertical Zebra Style
-06. One Column Emphasis
-07. Newspaper
+06. One Column Emphasis(强调表头列，汇总列，特殊列)
+07. Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
 08. Rounded Corner
-09. Table Background
+09. Table Background(使用图片)
 10. Cell Background
 
 - ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
@@ -575,11 +588,14 @@ caption {
   - By applying `data-` attributes to the table cells, we can then display labels for the data via CSS, while keeping the content of the label in the HTML
   - The original method applies a width on the pseudo-element displaying the label text, but that means you’d need to know the amount of space your label needed to begin with. 
   - The above example uses a slightly different approach, whereby the label and data are each on opposite sides of their containing block.
-  - We can achieve such an effect via auto-margins in a flex formatting context. 
+  - We can achieve such an effect via auto-margins in a flex formatting context.  
+    - If we set the `display` property for each `<td>` element to `flex` , because pseudo-elements generate boxes as if they were immediate children of their originating element, they become flex children of the `<td>` .
+    - After that, it’s a matter of setting `margin-right: auto` on the pseudo-element to push the cell’s content to the far end edge of the cell.
 
 - Another approach doing the narrow viewport layout is using a combination of Grid and `display: contents` . 
   - Please note that display: contents in supporting browsers has issues with accessibility at the moment
-  - Each `<tr>` element is set to ` display: grid` , and each `<td>` element is set to `display: contents` .
+  - Each `<tr>` element is set to `display: grid` , and each `<td>` element is set to `display: contents` .
+  - When `display: contents` is applied to the `<td>` , td gets “replaced” by its contents, in this case, the pseudo-element and the `<span>` within the `<td>` become the grid children instead.
   - What I like about this approach is the ability to use `max-content` to size the column of pseudo-elements, ensuring that the column will always be the width of the longest label, without us having to manually assign a width value for it.
   - The downside to this approach is you do need that additional `<span>` or `<p>` around the content in your table cell if it didn’t have one already, otherwise, there’d be no way to apply styles to it.
 

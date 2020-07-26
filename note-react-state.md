@@ -9,6 +9,10 @@ modified: '2020-07-14T10:51:06.252Z'
 
 ## pieces
 
+- I personally even think `context` is not a primary building block if we go with `useMutableSource` . 
+  - My proposal in reactive-react-redux (not react-redux) is not to use context at all
+  - ref: [Allow for optionally using React Context instead of Redux under the hood](https://github.com/reduxjs/react-redux/issues/1612)
+
 - state-multi-context
   - diegohaz/constate
   - CharlesStover/react-multi-context
@@ -18,10 +22,43 @@ modified: '2020-07-14T10:51:06.252Z'
   - constate
   - unstated-next
   - react-hooks-global-state
+  - misc
+    - concent
+  - [will-this-react-global-state-work-in-concurrent-mode](https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-mode)
+    - Check tearing in React concurrent mode
   - [RFC: Context selectors](https://github.com/reactjs/rfcs/pull/119)
-  - [Four different approaches to non-Redux global state libraries](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
+- [Four different approaches to non-Redux global state libraries_201907](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
+  - There are several implementations how to store state and notify changes.
     - whether context based or external store
-    - whether subscriptions based or context propagation
+    - whether context propagation or subscriptions based 
+  - S1: Multiple contexts
+    - One could easily implement this approach with React context and useContext.
+    - lib: constate, unstated-next
+  - S2: Select by property names (or paths)
+    - This approach is to put more values in a single store. 
+    - A single store allows to dispatch one action to change multiple values. 
+    - You specify a property name to get a corresponding value. 
+    - It’s simple to specify by a name, but somewhat limited in a complex case.
+    - lib: react-hooks-global-state, shareon
+  - S3: Select by selector functions
+    - Selector functions are more flexible than property names. So flexible that it may be misused like doing expensive computations. 
+    - Most importantly, performance optimization often requires to keep object referential equality.
+    - lib: zustand, react-sweet-state
+  - S4: State usage tracking
+    - This approach eliminates selector functions, and it’s hardly misused. One big concern is performance optimization.
+    - lib: react-tracked
+- [Four patterns for global state with React hooks: Context or Redux_201905](https://blog.axlight.com/posts/four-patterns-for-global-state-with-react-hooks-context-or-redux/)
+  - S1: the most basic pattern should still be **prop passing**
+    - alternative to Prop passing: [Component passing](https://patrickroza.com/blog/component-vs-prop-drilling-in-react/)
+  - S2: If an app needs to share state among components that are more deep than two level, it’s time to introduce **context**
+    - Note that all components with `useContext(ContextA)` will re-render if stateA is changed, even if it’s only a tiny part of the state. 
+    - Hence, it’s not recommended to use a context for multiple purpose.
+  - S3: Using **multiple contexts** is fine and rather recommended to separate concerns. 
+    - Contexts don’t have to be application-wide and they can be used for parts of component tree. 
+    - Only if your contexts can be used anywhere in your app, defining them at the root is a good reason.
+  - S4: The biggest limitation with multiple contexts is that dispatch functions are also separated. 
+    - If your app gets big and several contexts need to be updated with a single action, it’s time to introduce **Redux**. 
+    - (Or, actually you could dispatch multiple actions for a single event, I personally don’t like that pattern very much.)
 
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: note-pm-list-grid-blog
+title: note-pm-list-grid-table-blog
 tags: [blog, grid, list]
 created: '2020-07-14T13:04:22.299Z'
-modified: '2020-07-14T13:06:56.027Z'
+modified: '2020-07-26T04:15:43.741Z'
 ---
 
-# note-pm-list-grid-blog
+# note-pm-list-grid-table-blog
 
 ## Comparison: Why ag-Grid is the best when it comes to Column Pinnin
 
