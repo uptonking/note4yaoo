@@ -9,14 +9,146 @@ modified: '2020-07-14T10:47:26.044Z'
 
 ## guide
 
+- grid布局优点
+  - 固定或弹性的轨道尺寸：可以给每个轨道设置固定的尺寸，也可以设置auto | 1fr | 10% 等弹性的尺寸，实际展示的轨道大小会随着父级的宽高变化而变化
+  - 定位项目：可以给每个子项设置具体所占据的位置
+  - 创建隐式的轨道：当子项设置的定位位置超出了父级设定的轨道大小，会创建隐式的轨道
+  - 对齐控制：和flexbox一样，有多种对齐方式的控制
+  - 控制重叠内容：直接在子项上设置z-index的值即可
+- grid布局缺点
 - ref
-  - [CSS Grid网格布局教程_阮一峰](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
   - [写给自己看的display: grid布局教程_张鑫旭](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
   - [Grid 布局学习](https://juejin.im/post/5d8daa0f518825096d3b4dca)
   - [CSS Grid 系列(上)-Grid布局完整指南](https://zhuanlan.zhihu.com/p/33030746)
   - [[译] Grid布局完全指南](https://shanyue.tech/post/Grid-Guide/)
+  - [图解 Grid 布局 (非常详细)](https://lefex.github.io/wsy/2019/11/02/grid.html)
 
 ## pieces
+
+- grid布局是二维的，可以通过横轴和交叉轴来对齐grid item。
+  - 它有一条轴叫 inline axis，它与文字的书写模式（水平书写、竖直书写）有关，
+  - 由于我们通常不会涉及到文字的书写模式，暂且把 inline axis 看做是横轴，把 block axis 看做是与横轴交叉的轴
+  - justify-items是描述items在布局区域沿着 inline axis 的对齐方式
+    - In grid layouts, it aligns the items inside their grid areas on the inline axis
+  - align-items在FlexBox布局中它表示items在纵轴上的对齐方式；
+    - 在grid布局中，表示items在grid area竖直方向上对齐方式
+
+- Grid布局是微软在2010年提出来的一种新的布局方式，到2016年的时候提交了该布局的草案，经过发展，grid布局慢慢变的成熟，兼容性也越来越好
+- Grid Container : 网格容器，一个元素应用了 display: grid; 后就是一个网格容器了，它是所有网格项的父元素
+- Grid item : 网格项，grid容器的直接子元素，一个grid item可能占有多个cell
+- Grid Line : 网格线，组成网格项的分界线，虚拟的，如3×4的网格里有4条水平和5条垂直网格线
+- Grid track : 轨道，网格轨道，两个相邻的网格线之间为网格轨道，也就是列宽或行高
+- Grid Cell : 网格单元，两个相邻的列网格线和两个相邻的行网格线组成的网格单元，
+  - 网格项是HTML里的dom元素，而网格单元是定义网格容器的时候分割出来的网格单元
+- Grid area: 网格区域，四个网格线包围的总区域，与网格单元不同的是，网格单元必须是相邻的网格线
+- fr 单位：剩余空间分配数，用于在一系列长度值中分配剩余空间，按数字比例分配
+
+- 在使用Grid布局的时候始终把容器当作是一个多行多列的网格有助于更准确的实现UI效果
+- Grid属性布局分为容器属性和项目属性， 这与Flex布局的属性分类是相似的
+- 使用 `display:grid` 声明一个容器， 容器以块级元素存在， 如果需要是容器变为行级元素可以使用 `display:inline-grid`
+- 当容器的宽度不确定的时候，如果需要容器中尽可能的充满项目，使用 `auto-fill` 属性自动填充容器。
+- `minmax(min,max)` 给定项目一个长度范围，使项目的长度在这个范围当中。
+- `auto` 不设定项目的宽度， 由浏览器根据实际情况决定项目的宽
+- `fr` 是网格布局提供的一种表示比例关系的关键词
+- 容器中的子项目的分布是由无形的一条条网格线划分的，在定义行和列的时候可以同时定义网格线的名称，方面设定子项目的位置和跨度。
+- grid-template-areas：定义网格区域的名称，同网格线名称的作用相同，方便定义子项目位置，跨度的定义
+- grid-auto-flow：定义子项目的排列顺序， 默认是先列后行(row)
+- justify-items: 定义子项目在水平位置的分布
+- align-items: 定义子项目在垂直位置上面的分布
+- place-items: justify-items 和 align-items 的合并写法
+- 在之前的项目中内容默认都是在左上角，可以通过配置这三个属性来改变，和Flex布局的justify-content和align-items属性的使用是相似的。
+
+## CSS Grid网格布局教程
+
+- [CSS Grid网格布局教程_阮一峰_2019](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+
+- 对于grid布局，外层div元素是容器，内层div元素是项目
+- 项目只能是容器的顶层子元素，不包含项目的子元素，Grid布局只对项目生效
+- 容器的水平方向为row，竖直方向为column，行列交叉的区域为cell
+- grid line划分了网格区域，n行有n+1条水平网格线，m列有m+1条竖直网格线
+
+- ### 容器属性
+- `display: grid` 指定一个容器采用网格布局
+  - 默认情况下，容器元素都是块级元素，但也可以用 `display: inline-grid;` 设成行内元素
+  - 设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。
+- grid-template-columns/rows
+  - 分别定义每一列的宽度，每一行的高度，可以使用绝对值或百分比
+  - 可以定义grid布局列的分割线的名称和轨道的尺寸
+  - 可以使用方括号指定每一根网格线的名称，且允许一根网格线有多个名称 `[row-5 row5]`
+  - `repeat(count, val)` : 重复val值count次
+  - 容器大小不确定时，如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用 `auto-fill` 关键字表示自动填充
+  - `fr` 关键字表示比例关系，也可放在绝对值后分配剩余空间
+  - `minmax()` 函数产生一个长度范围，表示长度就在这个范围之中
+  - `auto` 会填满容器的剩余可用空间，由浏览器决定，默认使用最大宽度或min-width
+  - `max-content` : 内容的最大宽度，min-content 内容的最小宽度
+- grid-template-areas
+  - 定义网格区域area，一个区域由单个或多个单元格组成
+  - 如果某些区域不需要利用，则使用"点" `.` 表示空的cell
+  - 区域的命名会影响到网格线，每个区域的起始网格线，会自动命名为 区域名-start，终止网格线自动命名为 区域名-end
+- grid-template: grid-template-columns grid-template-rows grid-template-areas
+- grid-gap: row-gap col-gap 
+- grid-row/column-gap
+  - 指定行间距，列间距
+  - 最新标准，三个属性名的grid-前缀已经删除，grid-column/row-gap简写成column/row-gap，grid-gap写成gap
+- place-content: align-content justify-content 
+- justify/align-content
+  - justify-content: 设置整个内容区域在容器里水平空间的位置，类似flex
+  - align-content: 竖直空间的位置
+  - 可选值：start | end | center | stretch(项目没有指定大小时会占满) | space-around(项目间间隔比项目与容器边框间隔大一倍) | space-between(项目与容器边框无间隔) | space-evenly(项目与容器边框间隔与项目间间隔相等)
+- place-items: align-items justify-items 
+- justify/align-items
+  - justify-items：设置单元格内容的水平位置（左中右）
+  - align-items：设置单元格内容的垂直位置（上中下）
+  - 可选值：start | end | center | stretch; 
+  - 默认值：stretch，占满单元格的整个宽度
+- grid-auto-columns/rows  
+  - 设置自动创建的多余网格的列宽和行高
+    - 比如网格只有3列，但是某一个项目指定在第5列。这时，浏览器会自动生成多余的网格，以便放置项目
+  - 如果不设置值，浏览器会根据单元格内容的大小，决定新增网格的列宽和行高
+  - 网格项目多余设置的单元格，会创建隐式轨道
+- grid-auto-flow
+  - 设置没有明确指定位置的grid子项的放置方式
+    - 划分网格以后，容器的子元素会按照顺序，自动放置在每一个网格。
+    - 默认的放置顺序是"先行后列"，即先填满第一行，再开始放入第二行
+  - row/column(先列后行)
+  - 默认值: row 先行后列
+  - row dense: 先行后列，并尽可能填满，中间的小项目可能会提前
+    - 此时使用column dense可能就刚好填满了
+- grid 简写
+  - gird: grid-template-rows grid-template-columns grid-template-areas grid-auto-rows grid-auto-columns grid-auto-flow
+  - `grid: none` ：所有子属性都是初始化的值
+  - `auto-flow` ： 表示的值为 row | column，但是统一使用 auto-flow来表示，具体需要看它放置的位置在哪里，如果放置在 / 的左侧，就表示 grid-auto-flow: row， 如果放在右侧，就表示 grid-auto-flow: column
+
+- ### 项目属性
+- grid-column/row
+  - grid-column-start/end: 左/右边框所在的垂直网格线
+  - grid-row-start/end: 上/下边框所在的水平网格线
+  - 行或列边框在未定义的情况下从1开始递增
+  - 除了指定为第几个网格线，还可以指定为网格线的名字
+  - auto 全自动，包括定位和跨度
+  - 每次定义四个属性才能定义单元格的边框位置是复杂的，使用span关键词来简写
+  - span表示跨越几个网格
+    - span并不只是向后或先下跨越网格，当把 grid-row/column-start 改为 grid-row/column-end 时， span 便表示向左/上跨越
+  - 使用这四个属性，如果产生了项目的重叠，则使用z-index属性指定项目的重叠顺序
+  - 简写 grid-column: grid-column-start grid-column-end
+  - 简写 grid-row: grid-row-start grid-row-end
+- grid-area
+  - 指定项目放置的area区域名，也可以直接指定项目四边位置
+  - 在定义子元素的位置时， 可以使用已经定义好的网格区域名称快速定义子项目的分布位置。
+  - 简写 grid-area: grid-row-start grid-column-start grid-row-end grid-column-end 
+- justify/align-self
+  - justify-self: 设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目
+  - align-self: 属性设置单元格内容的垂直位置（上中下），见align-items
+  - 可选值：start | end | center | stretch
+  - 简写 place-self: align-self justify-self
+- css函数
+  - repeat(): 允许大量重复显示模式的行或列以更紧凑的方式编写
+  - fit-content()：参数是长度值或百分比
+    - 它在内容的最小值和参数中取一个最大值，然后再在内容的最大值中取一个最小值
+    - 当内容少时，它取内容的长度，
+    - 如果内容多，内容长度大于参数长度时，它取参数长度，
+    - 可以理解为它可以控制最大值是多少
+  - minmax(min, max) ：定义了长度范围区间
 
 ## Relationship of grid layout to other layout methods
 
@@ -44,7 +176,7 @@ modified: '2020-07-14T10:47:26.044Z'
 - 作者首先提出了Flex的问题，也是block float flex这三种布局模式的通病：
   - 布局结构由div层级描述，导致在div层级复杂且遇到结构变更时难以维护。
   - 定制能力弱。
-    - Flex布局有一些不受控制的智能设定，比如宽度 50% 的子元素会被同级元素挤到 50% 以下，这种智能化在某些场景是需要的，但由于没有提供像 Grid 的 min max 之类的 API，所以定制性不足。
+    - Flex布局有一些不受控制的智能设定，比如宽度 50% 的子元素会被同级元素挤到 50% 以下，这种智能化在某些场景是需要的，但由于没有提供像 Grid 的 minmax 之类的 API，所以定制性不足。
 - 使用Grid可以将UI结构与HTML结构分离，HTML结构仅描述包含关系，我们只需在样式文件中描述具体UI结构。
 - grid-template-areas是进一步抽象的语法，将页面结构通过直观的文本描述，无论是理解还是修改都更为轻松。
 - Grid通过二维结构描述，将子元素布局控制收到了父级，使布局描述更加直观。

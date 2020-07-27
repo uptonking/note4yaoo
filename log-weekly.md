@@ -13,6 +13,12 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0720-0726
 
+- css table 5 approaches
+
+## w0713-0719
+
+- react-table samples
+
 ## w0706-0712
 
 - webpack 5编译js项目时，优先使用 `src/index.js` ，而不是 `entry` 配置的入口

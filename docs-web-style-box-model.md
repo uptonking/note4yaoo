@@ -8,7 +8,6 @@ modified: '2020-07-18T08:40:56.062Z'
 
 # docs-web-style-box-model
 
-
 ## width
 
 ## height 
@@ -16,7 +15,6 @@ modified: '2020-07-18T08:40:56.062Z'
 ## padding
 
 ## margin
-
 
 - The `margin-right` CSS property sets the margin area on the right side of an element. 
   - A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -28,28 +26,29 @@ modified: '2020-07-18T08:40:56.062Z'
 - keyword auto默认是使用所有剩余空间，所以不论left还是right定义了auto，计算值都会是包含块的剩余空间，如果左右都设置了auto，那么就会均分剩余空间
 
 - div没有设置width或height，会自动填充父容器的宽度
-- 假设外部的容器宽度大于200，则宽度原本应该自动填充，现在因为width设置200而闲置，而`margin:auto` 就是为了填充这个闲置的尺寸而设计
+- 假设外部的容器宽度大于200，则宽度原本应该自动填充，现在因为width设置200而闲置，而 `margin:auto` 就是为了填充这个闲置的尺寸而设计
 - 如果一侧定值，一侧auto，则auto为剩余空间大小
 - 如果两侧均是auto，则平分剩余空间
 
 ``` HTML
 .father {
-    width:400px;
-    height: 200px;
-    background: pink;
+width:400px;
+height: 200px;
+background: pink;
 }
 .son {
-    width: 200px;
-    height: 150px;
-    background: #ff00dd;
-    margin-left: auto; 
+width: 200px;
+height: 150px;
+background: #ff00dd;
+margin-left: auto;
 }
 <div class='father'>
   <div class='son'></div>
 
 </div>
 ```
-- 对于上例，因为son元素margin-right缺省，而自动填充初始值0， `margin-left：auto`会占据所有空间，所以son元素会在右侧
+
+- 对于上例，因为son元素margin-right缺省，而自动填充初始值0， `margin-left：auto` 会占据所有空间，所以son元素会在右侧
 
 - ref
   - [margin:auto与布局展示](https://zhuanlan.zhihu.com/p/57605009)
@@ -280,3 +279,19 @@ font-size: 15px;
 - sets the horizontal alignment of a block element or table-cell box. 
 - This means it works like `vertical-align` but in the horizontal direction. 
 - The standard-compatible way to center a block itself without centering its inline content is setting the left and right margin to auto, `margin: 0 auto;`
+
+## box-shadow
+
+- The box-shadow CSS property adds shadow effects around an element's frame. 
+- You can set multiple effects separated by commas. 
+- initial vaule: none
+
+``` CSS
+div {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+```
+
+- ref
+  - [mdn: online Box-shadow generator](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator)

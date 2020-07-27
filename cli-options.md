@@ -55,6 +55,9 @@ git reset --hard origin/master
 git push origin master --force 
 ```
 
+- git status命令 
+  - Unmerged paths: 下面列出的就是全部冲突文件，挨个解决即可
+
 ## linux shell
 
 - ssh免密登录

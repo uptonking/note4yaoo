@@ -62,6 +62,7 @@ modified: '2020-07-17T08:53:14.923Z'
   - 默认值：nowrap，即当主轴尺寸固定时，若空间不足，则项目尺寸会随之调整变小，而并不会挤到下一行
 - flex-flow: flex-direction flex-wrap
   - 默认值为：row nowrap
+  - 简写不建议使用
 - justify-content: 指定项目在主轴(水平方向)的对齐方式
   - flex-start/end, center, space-between/around
   - 默认值：flex-start 左对齐
@@ -103,10 +104,11 @@ modified: '2020-07-17T08:53:14.923Z'
   - 指定弹性项目的基准宽度，可以用绝对值或百分比
   - 可理解为弹性项目的最小宽度，但具体宽度由flex属性中其他值决定
   - 当flex-basis值为0%时，是把该项目视为零尺寸的，故即使声明该尺寸为100px，也并没有什么用
-  - flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定。也就是说、弹性项目里内容的量对项目的宽度没有影响 。
+    - flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定。也就是说、弹性项目里内容的量对项目的宽度没有影响 。
   - 当flex-basis值为auto时，则跟根据尺寸的设定值(如100px)，则这100px不会纳入剩余空间
 - flex: flex-grow flex-shrink flex-basis 指定项目宽度变化方式
   - 默认值：0 1 auto，弹性项目的宽度由里面的内容自动确定
+  - 简写建议显式写出3个值
   - 快捷值：auto (1 1 auto) 和 none (0 0 auto)
   - 当flex取值为一个非负数字时，则该数字为flex-grow值，flex-shrink 取 1，flex-basis 取 0%
   - 当flex取值为0时，对应的三个值分别为 0 1 0%

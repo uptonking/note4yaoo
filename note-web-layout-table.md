@@ -19,6 +19,26 @@ modified: '2020-07-23T05:59:56.279Z'
 
 ## faq
 
+- Is there an alternative way to achieve `border-collapse:collapse` in CSS (in order to have a collapsed, rounded corner table)?
+  - table元素使用 `border-collapse: collapse;` 去除间隙后， `border-radius` 会失效
+  - use a `box-shadow` with a spread of 1px instead of a "real" border.
+    - 这种方法不完美，box-shadow会增大盒子
+
+``` CSS
+table {
+  border-collapse: collapse;
+  border-radius: 30px;
+  /* hide standard table (collapsed) border */
+  border-style: hidden;
+  /* this draws the table border  */
+  box-shadow: 0 0 0 1px #666;
+}
+
+td {
+  border: 1px solid #ccc;
+}
+```
+
 - table使用 `white-space: nowrap` 会增加列的宽度，如何隐藏超出列宽部分
 
 ``` CSS
@@ -513,6 +533,71 @@ caption {
   - One of them makes a pie graph from the data in the chart. On narrower screens, the pie graph shows and the table hides, otherwise only the more information-rich table shows
   - The next idea is to turn the table into a mini graphic(like a thumbnail or placeholder image) of a table on narrow screens, rather than show the whole thing. This shows the user there is a data table here to be seen, but doesn’t interfere with the content much. Click the table, get taken to a special screen for viewing the table only, and click to get back.
 
+- ### [Accessible, Simple, Responsive Tables_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
+
+- The tables I find most frustrating are comparison tables or normal content layout tables, there are really no comprehensive CSS based solutions for making these types of tables responsive.
+- Standard table markup seems to make semantic sense and does a pretty decent job of aligning cells. 
+  - One of my main concerns was accessibility. 
+  - Surely native table markup helps a user with a screen reader understand the order content should be read in and navigated through？
+    - Neither CromeVox or VoiceOver tells you when you are on a table heading. 
+    - The reader steps through the table via rows no matter how your content is arranged. 
+- In essence, nothing in the markup tells the screen reader user if the content should be read via rows or columns.
+  - The most meaningful markup still comes from non-tabular semantic content.
+- Approaches for Responsive Tables 
+  - Squash(挤压、挤扁): 
+    - If columns have little content they might squash horizontally with no issues on a mobile screen, so not changing the layout needs to be a valid option.
+  - Vertical scroll(水平滚动): 
+    - If the layout and content is exact and critical, a user could scroll to the left or right. 
+    - This is trivial(不重要的；琐碎的) in CSS with an `overflow: auto` wrapper.
+  - Collapse by rows(每个单元格一行，先行后列): 
+    - Split each row into its own single column mini-table on small screens. 
+    - Switching `display:table` into `display:block` will cause this with normal table markup.
+  - Collapse by columns(每个单元格一行，先列后行): 
+    - You can’t do this with normal table markup in pure CSS because the code order is by rows and the `<tr>` wrappers lock it in. 
+    - We either have to change the markup or start manipulating with JavaScript.
+
+![types of responsive tables](https://css-tricks.com/wp-content/uploads/2016/03/types-of-responsive-tables.gif)
+
+- Not recommended ways to build a responsive table
+  - Generating a second narrower table via JavaScript and hide/show alternately by breakpoint.
+    - Why? Content duplication, no better than an ‘.m’ site. 
+    - Will break any unique IDs inside a table. 
+    - Poor idea for Styleguide driven components.
+  - Using normal table markup and JavaScript at a breakpoint to rearrange the table into a responsive version.
+    - Why? Requires different markup for vertical and horizontal tables. 
+    - Will break any JS initialisation of table content. 
+    - Requires lots of JS event listeners and DOM manipulation.
+  - Keeping table markup but switch to `display:flex` for vertically aligned table content.
+    - Why? Not possible to align cells across rows with `<tr>` type wrappers and `display: table-cell` overrides the flex-item.
+
+- Responsive tables with flexbox
+  - **For row-oriented tables**
+    - Order markup exactly how a mobile or screen reader should read it, use semantic headers and content.
+    - Abandon all concept of ‘row’ wrappers.
+    - Set the width of each cell as a percentage based on number of columns or rows.
+    - Auto sizing column widths is not possible.
+  - **For column-oriented tables**
+    - Set the flex `order` by row to instantly create a vertical table. 
+      - This must be inline otherwise we would need a unique class for every row. 
+      - Fairly easy to do manually, or very easy for a CMS or JavaScript to apply.
+  - Style to help make connections
+    - Style cells individually in any pattern you require.
+    - Fix cell border duplication with negative margins.
+  - Collapse to blocks on small screens
+    - In a small-screen media query, set everything to `display: block` . That gives us responsive tables!
+  - Collapsing to Tabs or Accordions
+    - Tab and accordion markup is inside the table in a logical position
+    - Toggle either row or column depending on the cell `order`
+    - Use `display: none` to toggle for both visual users and screen readers
+  - Other enhancements
+    - Align cell content
+    - column margins
+    - zebra striping
+    - column spans: There is no way to do rowspans on a flex table.
+
+- You can use the same cell styling for other types of markup, even standard table markup
+- For older browsers, you can detect flexbox (with Modernizer) and show the mobile version, which is a good example of graceful degradation as fallback ui.
+
 - ### [CSS only Responsive Tables_2012](https://dbushell.com/2016/03/04/css-only-responsive-tables/)
   - [Responsive Tables (and a calendar demo)](https://dbushell.com/2012/01/04/responsive-calendar-demo/)
   - [Responsive Tables (2)_2012](https://dbushell.com/2012/01/05/responsive-tables-2/)
@@ -547,15 +632,15 @@ caption {
     - Use soft colors — it’s easier for the eyes.
     - Don’t treat your table like it’s a graphical decoration. 
     - Make sure that the style you apply to it makes the content more readable, not the other way around.
-01. Horizontal Minimalist
-02. Vertical Minimalist
-03. Box
-04. Horizontal Zebra
-05. Vertical Zebra Style
-06. One Column Emphasis(强调表头列，汇总列，特殊列)
-07. Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
-08. Rounded Corner
-09. Table Background(使用图片)
+1.      Horizontal Minimalist
+2.      Vertical Minimalist
+3.      Box
+4.      Horizontal Zebra
+5.      Vertical Zebra Style
+6.  One Column Emphasis(强调表头列，汇总列，特殊列)
+7.  Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
+8.      Rounded Corner
+9.  Table Background(使用图片)
 10. Cell Background
 
 - ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
@@ -622,3 +707,8 @@ caption {
 ## ref
 
 - [HTML Table Styler - CSS Generator](https://divtable.com/table-styler/)
+  - Free online interactive HTML Table and structured div grid styler and code generator.
+    - free table styles
+    - choose div or table sturcture
+    - configuration editor
+  - https://divtable.com/generator/
