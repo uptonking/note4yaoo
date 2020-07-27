@@ -632,15 +632,16 @@ caption {
     - Use soft colors — it’s easier for the eyes.
     - Don’t treat your table like it’s a graphical decoration. 
     - Make sure that the style you apply to it makes the content more readable, not the other way around.
-1.      Horizontal Minimalist
-2.      Vertical Minimalist
-3.      Box
-4.      Horizontal Zebra
-5.      Vertical Zebra Style
-6.  One Column Emphasis(强调表头列，汇总列，特殊列)
-7.  Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
-8.      Rounded Corner
-9.  Table Background(使用图片)
+
+01. Horizontal Minimalist
+02. Vertical Minimalist
+03. Box
+04. Horizontal Zebra
+05. Vertical Zebra Style
+06. One Column Emphasis(强调表头列，汇总列，特殊列)
+07. Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
+08. Rounded Corner
+09. Table Background(使用图片)
 10. Cell Background
 
 - ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
