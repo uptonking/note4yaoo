@@ -10,6 +10,8 @@ modified: '2020-07-14T10:35:32.752Z'
 
 ## logging
 
+- 在外层div将font-size设置为1.2em后，button上的文字仍然是13.33的font-size，需要设置的是 `button {font-size: 100%}`
+  - 要注意分辨文字是span，还是button
 - 前端兼容性处理 caniuse 
   - 3大pc浏览器：chrome、firefox、safari
   - mobile浏览器：3大pc对应的3大移动，Android, UC，Samsung，QQ Browser 

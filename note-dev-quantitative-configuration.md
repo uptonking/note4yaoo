@@ -9,7 +9,7 @@ modified: '2020-07-09T13:30:55.664Z'
 
 ## frontend
 
-- bootstrap 4的breakpoints
+- breakpoint for bootstrap 4
 
 ``` 
 $font-size-base:  1rem !default; // Assumes the browser default, `16px`

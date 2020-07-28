@@ -533,8 +533,25 @@ caption {
   - One of them makes a pie graph from the data in the chart. On narrower screens, the pie graph shows and the table hides, otherwise only the more information-rich table shows
   - The next idea is to turn the table into a mini graphic(like a thumbnail or placeholder image) of a table on narrow screens, rather than show the whole thing. This shows the user there is a data table here to be seen, but doesn’t interfere with the content much. Click the table, get taken to a special screen for viewing the table only, and click to get back.
 
-- ### [Accessible, Simple, Responsive Tables_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
+- ### [Responsive Data Table Roundup_2012](https://css-tricks.com/responsive-data-table-roundup/)
+- The idea of the original was to abandon the grid layout of the table and **make each cell its own line**. 
+  - Each of those lines is labeled with a pseudo element. 
+  - This creates a much taller table, requiring more vertical scrolling, but does not require horizontal scrolling. 
+  - It’s easier to browse the data without losing the context of what’s what. 
+  - The downside is that you might lose the context of data comparison since you no longer see cells of data right next to other cells of that type.
+- Mobifreaks published a very similar idea, which uses the same layout change and pseudo element labeling. 
+  - They used HTML5 `data-*` attributes for the labeling, which removes the need to have custom CSS for different tables. 
+- Stewart Curry had the idea of just hiding less important columns for smaller screens. 
+- Brad Czerniak has an idea he calls Rainbow Tables where on smaller screens the grid structure of the table is abandoned and the data cells are squished into each other as tight as they will go, while still being a “row”. 
+  - Then instead of the data be identified by which column it is in, the data is color-coded to match a key.
+- Zurb has a new technique they’ve published. 
+  - It is focused on having the left-most column be sort of the “key” column. 
+  - On wide screens, it’s just a normal column. 
+  - On small screens, it becomes fixed/sticky to the left and the rest of the columns can scroll. 
+  - This allows for row-to-row comparison.
+  - it utilizes JavaScript for a bit of DOM manipulation and screen size measurement. 
 
+- ### [Accessible, Simple, Responsive Tables_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
 - The tables I find most frustrating are comparison tables or normal content layout tables, there are really no comprehensive CSS based solutions for making these types of tables responsive.
 - Standard table markup seems to make semantic sense and does a pretty decent job of aligning cells. 
   - One of my main concerns was accessibility. 
@@ -574,11 +591,13 @@ caption {
   - **For row-oriented tables**
     - Order markup exactly how a mobile or screen reader should read it, use semantic headers and content.
     - Abandon all concept of ‘row’ wrappers.
+      - 利用的是flex-wrap和百分比宽度
+      - 如果删除一个cell的数据，下面的cell会提升，最后一行cell会变宽
     - Set the width of each cell as a percentage based on number of columns or rows.
     - Auto sizing column widths is not possible.
   - **For column-oriented tables**
     - Set the flex `order` by row to instantly create a vertical table. 
-      - This must be inline otherwise we would need a unique class for every row. 
+      - This must be inline otherwise we would need a unique class for every row.  必须使用行内样式设置order，较繁琐
       - Fairly easy to do manually, or very easy for a CMS or JavaScript to apply.
   - Style to help make connections
     - Style cells individually in any pattern you require.
@@ -593,9 +612,12 @@ caption {
     - Align cell content
     - column margins
     - zebra striping
-    - column spans: There is no way to do rowspans on a flex table.
+    - column spans
+      - There is no way to do rowspans on a flex table. ???!!!
 
-- You can use the same cell styling for other types of markup, even standard table markup
+- You can use the same cell styling for other types of markup
+  - even standard table markup
+  - for list, box, etc.
 - For older browsers, you can detect flexbox (with Modernizer) and show the mobile version, which is a good example of graceful degradation as fallback ui.
 
 - ### [CSS only Responsive Tables_2012](https://dbushell.com/2016/03/04/css-only-responsive-tables/)
@@ -633,16 +655,16 @@ caption {
     - Don’t treat your table like it’s a graphical decoration. 
     - Make sure that the style you apply to it makes the content more readable, not the other way around.
 
-01. Horizontal Minimalist
-02. Vertical Minimalist
-03. Box
-04. Horizontal Zebra
-05. Vertical Zebra Style
-06. One Column Emphasis(强调表头列，汇总列，特殊列)
-07. Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
-08. Rounded Corner
-09. Table Background(使用图片)
-10. Cell Background
+- Horizontal Minimalist
+- Vertical Minimalist
+- Box
+- Horizontal Zebra
+- Vertical Zebra Style
+- One Column Emphasis(强调表头列，汇总列，特殊列)
+- Newspaper(底边边框变浅色，其他边框用突出色或特殊样式如虚线强调阅读重点)
+- Rounded Corner
+- Table Background(使用图片)
+- Cell Background
 
 - ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
 - Tables are a design pattern for displaying large amounts of data in rows and columns, making them efficient for doing comparative analysis on categorical objects.
@@ -701,6 +723,17 @@ caption {
 
 - which approach you pick depends heavily on the type of data you have and the target audience for that data.
 
+- ### [Picking a Responsive Tables Solution](https://cloudfour.com/thinks/picking-responsive-tables-solution/)
+- Do people use the tables to compare rows? Compare columns?
+- What information is essential?
+- What information do people care about the most?
+- What is necessary to be able to differentiate one piece of information from another?
+- Is it necessary for everything to be on the same screen or can you conditionally load additional detail as needed?
+
+- But regardless of how many responsive tables solutions we have to choose from in the future, the way to select the right one for your project will remain the same.
+- Your content will dictate the best responsive table solution. 
+- You just have to ask the right questions of it.
+
 ## collection of well-designed tables
 
 - [Beautiful HTML Tables](https://www.hongkiat.com/blog/html-table-building-30-beautiful-examples-and-useful-javascripts/)
@@ -713,3 +746,4 @@ caption {
     - choose div or table sturcture
     - configuration editor
   - https://divtable.com/generator/
+- [Responsive Patterns about list, grid, layout, nav](http://bradfrost.github.io/this-is-responsive/patterns.html)
