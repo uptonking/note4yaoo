@@ -7,10 +7,29 @@ modified: '2020-07-17T11:56:26.797Z'
 
 # note-web-layer
 
-## pieces
+## guide
 
 - app图层设计是整体思维，是否与局部component的设计相矛盾
   - 那就从全局角度设计Component，考虑使用context api
+- z-index stacking context
+
+## faq
+
+- Difference between auto, 0, and no z-index?
+  - `auto` is the default `z-index` value that is initially used by the browser on all positioned elements.
+    - auto can also set a positioned child to be the same as it’s parent’s stacking level.
+  - Not specifying z-index is the same as `z-index: auto;` ; that is its initial value.
+  - `z-index: 0` creates a stacking context while `z-index: auto` do not. 
+  - auto: The box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent’s box.
+  - The big difference is that z-index:auto does not set a stacking context which means a positioned child can have a z-index take effect outside of the current context. 
+  - If the parent had a z-index of zero (anything other than auto) then it becomes ‘atomic’ and a positioned child is forever trapped at the same level as the parent ( z-index:0 in this case). 
+    - It does not matter what the child’s z-index may be because in respect of other positioned elements outside of this context it’s the parent’s z-index that will take effect if it is anything other than auto. 
+    - The child element though will honour its own z-index in respect of other positioned elements under this same parent.
+  - If the parent has z-index:auto then the positioned child’s z-index will determine if the element overlaps anything else outside this context.
+  - z-index numbers (including zero and negative numbers) are basically the same and just allow to determine if one element is above or below another in the same stacking context.
+  - ref
+    - [Difference between auto, 0, and no z-index?](https://stackoverflow.com/questions/14109862/difference-between-auto-0-and-no-z-index)
+    - [Why element with z-index 0 is shown above element with z-index 1](https://stackoverflow.com/questions/44291136/why-element-with-z-index-0-is-shown-above-element-with-z-index-1)
 
 ## z-index
 
@@ -170,19 +189,38 @@ top layer (closest to the observer)
 
 ## What No One Told You About Z-Index
 
-- [What No One Told You About Z-Index](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
+- [What No One Told You About Z-Index_2013](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
 - Every element in an HTML document can be either in front of or behind every other element in the document. This is known as the stacking order.
-- When the z-index and position properties aren’t involved, the rules are pretty simple: basically, the stacking order is the same as the order of appearance in the HTML. (OK, it’s actually a little more complicated than that, but as long as you’re not using negative margins to overlap inline elements, you probably won’t encounter the edge cases.)
-- When you introduce the position property into the mix, any positioned elements (and their children) are displayed in front of any non-positioned elements. (To say an element is “positioned” means that it has a position value other than static, e.g., relative, absolute, etc.)
+- When the z-index and position properties aren’t involved, the rules are pretty simple: basically, the stacking order is the same as the order of appearance in the HTML. 
+  - (OK, it’s actually a little more complicated than that, but as long as you’re not using negative margins to overlap inline elements, you probably won’t encounter the edge cases.)
+- When you introduce the position property into the mix, any positioned elements (and their children) are displayed in front of any non-positioned elements. 
+  - (To say an element is “positioned” means that it has a position value other than static, e.g., relative, absolute, etc.)
 - Finally, when z-index is involved, things get a little trickier. 
   - At first it’s natural to assume elements with higher z-index values are in front of elements with lower z-index values, and any element with a z-index is in front of any element without a z-index, but it’s not that simple. 
   - First of all, z-index only works on positioned elements. 
   - If you try to set a z-index on an element with no position specified, it will do nothing. 
   - Secondly, z-index values can create stacking contexts, and now suddenly what seemed simple just got a lot more complicated.
+- Groups of elements with a common parent that move forward or backward together in the stacking order make up what is known as a stacking context.
+- Every stacking context has a single HTML element as its root element. 
+- When a new stacking context is formed on an element, that stacking context confines all of its child elements to a particular place in the stacking order. 
 - New stacking contexts can be formed on an element in one of three ways:
   - When an element is the root element of a document (the `<html>` element)
-  - When an element has a `position` value other than static and a `z-index` value other than `auto`
+  - When an element has a `position` value other than `static` and a `z-index` value other than `auto`
   - When an element has an opacity value less than `1`
+  - several newer CSS properties also create stacking contexts.
+    - transforms, filters, css-regions, paged media
+
+- Stacking Order Within the Same Stacking Context
+- Here are the basic rules to determine stacking order within a single stacking context (from back to front):
+1. The stacking context’s root element
+2. Positioned elements (and their children) with negative z-index values (higher values are stacked in front of lower values; elements with the same value are stacked according to appearance in the HTML)
+3. Non-positioned elements (ordered by appearance in the HTML)
+4. Positioned elements (and their children) with a z-index value of auto (ordered by appearance in the HTML)
+5. Positioned elements (and their children) with positive z-index values (higher values are stacked in front of lower values; elements with the same value are stacked according to appearance in the HTML)
+
+- Global Stacking Order
+- The key to avoid getting tripped up is being able to spot when new stacking contexts are formed. 
+- If you’re setting a z-index of a billion on an element and it’s not moving forward in the stacking order, take a look up its ancestor tree and see if any of its parents form stacking contexts. If they do, your z-index of a billion isn’t going to do you any good.
 
 ## layerJS: layer based user interfaces
 

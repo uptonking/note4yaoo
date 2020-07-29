@@ -10,6 +10,9 @@ modified: '2020-07-14T10:35:32.752Z'
 
 ## logging
 
+- styled-components中的样式冲突要注意计算specificity
+  - `div.cls1` 的特指度高于 `.cls2` ，即使.cls2写在后面
+  - `className=cls1 cls2` 最终使用的样式取决于源码import进来后，cls1和2在源码中声明的先后顺序
 - 在外层div将font-size设置为1.2em后，button上的文字仍然是13.33的font-size，需要设置的是 `button {font-size: 100%}`
   - 要注意分辨文字是span，还是button
 - 前端兼容性处理 caniuse 
