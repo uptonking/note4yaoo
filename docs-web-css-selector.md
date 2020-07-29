@@ -7,6 +7,15 @@ modified: '2020-07-25T12:20:37.613Z'
 
 # docs-web-css-selector
 
+## `:first-of-type` pseudo-class 
+
+- represents the first element of its type among a group of sibling elements.
+- `article :first-of-type { background-color: pink; }`
+- `article *:first-of-type { background-color: pink; }`
+  - This example shows how nested elements can also be targeted. 
+  - Note that the universal selector ( `*` ) is implied when no simple selector is written.
+  - 会修改所有不同类型元素的第一个元素的样式
+
 ## `::before` pseudo-elements
 
 - In CSS, `::before` creates a pseudo-element that is the first child of the selected element. 

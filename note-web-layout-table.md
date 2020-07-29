@@ -107,7 +107,7 @@ td {
 
 ## pieces
 
-- When CSS display: block or display: grid or display: flex is set on the table element, bad things happen. 
+- When CSS `display: block` or `display: gri` d or `display: flex` is set on the table element, bad things happen. 
   - The table is no longer represented as a table in the accessibility tree, row elements/semantics are no longer represented in any form
   - He argues that the browser is making a mistake here by altering those semantics, but since they do, it’s good to know it’s fixable with (a slew of) ARIA roles.
 

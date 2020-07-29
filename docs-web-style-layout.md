@@ -112,6 +112,67 @@ modified: '2020-07-18T09:32:06.258Z'
 
 ## position
 
+- sets how an element is positioned in a document. 
+- The top, right, bottom, and left properties determine the final location of positioned elements.
+
+- **values**
+- static 
+  - 默认值
+  - The element is positioned according to the normal flow of the document. 
+  - The top, right, bottom, left, and z-index properties have no effect. 
+- relative
+  - The element is positioned according to the normal flow of the document, and then offset relative to itself based on the values of top, right, bottom, and left. 
+  - The offset does not affect the position of any other elements; thus, the space given for the element in the page layout is the same as if position were static.
+  - This value creates a new stacking context when the value of `z-index` is not `auto` . Its effect on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
+- absolute
+  - The element is removed from the normal document flow, and no space is created for the element in the page layout. 
+  - It is positioned relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block. Its final position is determined by the values of top, right, bottom, and left.
+  - This value creates a new stacking context when the value of `z-index` is not `auto` . The margins of absolutely positioned boxes do not collapse with other margins.
+  - An element that is absolutely positioned is taken out of the flow; thus, other elements are positioned as if it did not exist. 
+  - The absolutely positioned element is positioned relative to its nearest positioned ancestor (i.e., the nearest ancestor that is not static). 
+  - If a positioned ancestor doesn't exist, it is positioned relative to the ICB (initial containing block — see also the W3C definition), which is the containing block of the document's root element.
+  - If you want an element to remain in its static position (where it would normally be if it were not positioned) but simply take it out of normal flow, simply specifying position: absolute is perfectly acceptable. The behavior is as described in sections 10.3.7 and 10.6.4 of the spec, and every browser behaves correctly.
+  - the main purpose of relatively positioning some ancestor of an absolutely-positioned element is for designating its containing block. 
+- fixed
+  - The element is removed from the normal document flow, and no space is created for the element in the page layout. 
+  - It is positioned relative to the initial containing block established by the viewport, except when one of its ancestors has a `transform` , `perspective` , or `filter` property set to something other than `none` (see the CSS Transforms Spec), in which case that ancestor behaves as the containing block.
+  - Note that there are browser inconsistencies with perspective and filter contributing to containing block formation.
+  - Its final position is determined by the values of top, right, bottom, and left.
+  - This value always creates a new stacking context. In printed documents, the element is placed in the same position on every page.
+  - This can be used to create a "floating" element that stays in the same position regardless of scrolling. 
+- sticky
+  - The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. 
+  - The offset does not affect the position of any other elements.
+  - This value always creates a new stacking context. 
+  - Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor. 
+  - This effectively inhibits(阻止) any "sticky" behavior (see the GitHub issue on W3C CSSWG).
+  - Sticky positioning can be thought of as a hybrid of relative and fixed positioning. 
+  - A stickily positioned element is treated as relatively positioned until it crosses a specified threshold, at which point it is treated as fixed until it reaches the boundary of its parent.
+  - A common use for sticky positioning is for the headings in an alphabetized list. 
+  - You must specify a threshold with at least one of top, right, bottom, or left for sticky positioning to behave as expected. Otherwise, it will be indistinguishable from relative positioning.
+
+- **A positioned element** is an element whose computed position value is either relative, absolute, fixed, or sticky. 
+  - In other words, it's anything except `static` .
+- A relatively positioned element is an element whose computed position value is `relative` . 
+  - The top/b/left/r properties specify the vertical/horizontal offset from its normal position
+- An absolutely positioned element is an element whose computed position value is `absolute` or `fixed` . 
+  - The top, right, bottom, and left properties specify offsets from the edges of the element's containing block. (The containing block is the ancestor relative to which the element is positioned.) 
+  - If the element has margins, they are added to the offset. 
+  - The element establishes a new block formatting context (BFC) for its contents.
+- A stickily positioned element is an element whose computed position value is `sticky` . 
+  - It's treated as relatively positioned until its containing block crosses a specified threshold (such as setting top to value other than auto) within its flow root (or the container it scrolls within), at which point it is treated as "stuck" until meeting the opposite edge of its containing block.
+- Most of the time, absolutely positioned elements that have height and width set to `auto` are sized so as to fit their contents. 
+  - However, non-replaced, absolutely positioned elements can be made to fill the available vertical space by specifying both top and bottom and leaving height unspecified (that is, `auto` ). 
+  - They can likewise be made to fill the available horizontal space by specifying both left and right and leaving width as auto.
+
+- Scrolling elements containing `fixed` or `sticky` content can cause performance and accessibility issues. 
+  - As a user scrolls, the browser must repaint the sticky or fixed content in a new location. 
+  - Depending on the content needing to be repainted, the browser performance, and the device's processing speed, the browser may not be able to manage repaints at 60 fps, causing accessibility concerns for people with sensitivities and jank for everyone. 
+  - One solution is to add `will-change: transform` to the positioned elements to render the element in its own layer, improving repaint speed and therefore improving performance and accessibility.
+
+- ref
+  - [mdn: positon](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
 ## float
 
 - 容器并没有把浮动的子元素包围起来，俗称塌陷

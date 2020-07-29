@@ -124,6 +124,15 @@ modified: '2020-07-17T09:49:09.076Z'
     - strike: if it represents deleted content, use del instead. 
       - In all other cases use s
 
+## br: The Line Break element
+
+- The HTML `<br>` element produces a line break in text (carriage-return). 
+-  Do not use `<br>` to create margins between paragraphs; 
+  - wrap them in `<p>` elements and use the CSS `margin` property to control their size.
+- The `<br>` element has a single, well-defined purpose — to create a line break in a block of text. 
+- As such, it has no dimensions or visual output of its own
+- You can set a margin on `<br>` elements themselves to increase the spacing between the lines of text in the block, but this is a bad practice — you should use the `line-height` property that was designed for that purpose.
+
 ## `<a>` : The Anchor element
 
 - The HTML `<a>` element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. 
