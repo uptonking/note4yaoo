@@ -72,7 +72,7 @@ margin-left: auto;
 
 - The border-style shorthand CSS property sets the line style for all four sides of an element's border.
 
-- **values**
+- **values** 不可继承
 - initial value each defaults to `none`
   - Unless a `background-image` is set, the computed value of the same side's `border-width` will be `0` , even if the specified value is something else. 
   - In the case of table cell and border collapsing, the `none` value has the **lowest** priority: if any other conflicting border is set, it will be displayed.
@@ -81,6 +81,11 @@ margin-left: auto;
   - Like the `none` keyword, displays no border. 
   - Unless a `background-image` is set, the computed value of the same side's `border-width` will be `0` , even if the specified value is something else. 
   - In the case of table cell and border collapsing, the hidden value has the **highest** priority: if any other conflicting border is set, it won't be displayed.
+- dotted, dashed, solid, double
+- groove(沟槽), ridge(隆起, 山脊)
+  - Displays a border with a carved(雕刻) or extruded(挤压) appearance.
+- inset(嵌入物), outset(n, 开始)
+  - Displays a border that makes the element appear embedded(嵌入式的), or embossed(有凸起图案的)
 
 ## border-color
 
@@ -210,7 +215,7 @@ font-size: 15px;
 - line-height vertical center
   - sometimes it doesn't work
     - Depends on the line-height of the font itself. 
-    - Sone font have more blank pace under so it seems not aligned. ??? 待验证，字体到line-height的上下边不是等距？
+    - Sone font have more blank pace under so it seems not aligned. ??? 待验证，字体到line-height的上下边不是等距???
 
 - line-hight vs height
   - `height` is the vertical measurement of the container.

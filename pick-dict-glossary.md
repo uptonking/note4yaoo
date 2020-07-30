@@ -42,3 +42,10 @@ modified: '2020-07-14T12:01:33.686Z'
   - to "resolve" is more like to settle a dispute or implement an acceptable resolution to mitigate or eliminate an issue. 
     - In other words, "resolve" basically means settle or rectify an undesirable, conflict, problem or difficulty that has been encountered. 
     - For example, you can resolve a disagreement between two people through compromises, or you can resolve a computer issue **through troubleshooting**.
+
+- e.g. vs i.e.
+  - In formal contexts, I would go with "e.g." and "i.e.", with two periods and without a whitespace
+  - are both Latin abbreviations.
+  - e.g. stands for exempli gratia and means “for example.” 
+  - i.e. is the abbreviation for id est and means “in other words.”
+    - id est 意思是 that is

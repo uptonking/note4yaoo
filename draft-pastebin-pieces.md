@@ -3,10 +3,14 @@ title: draft-pastebin-pieces
 tags: [draft, todo]
 pinned: true
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-07-15T16:10:52.839Z'
+modified: '2020-07-30T13:52:49.242Z'
 ---
 
 # draft-pastebin-pieces
+
+https://medium.appbase.io/a-react-data-grid-template-powered-by-elasticsearch-a-react-data-grid-template-powered-by-10b21609b67b
+
+https://uxdesign.cc/tables-ui-design-in-figma-data-grid-by-a-single-component-5d2c76c16f8
 
 ------  
 

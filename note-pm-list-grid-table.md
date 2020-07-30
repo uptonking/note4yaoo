@@ -102,6 +102,9 @@ modified: '2020-07-26T04:15:18.011Z'
 
 ## solution-catalog-list-table
 
+- antd table
+  - https://ant.design/components/table-cn/
+
 - ag-grid
   - lack of client-side pagination
   - inconvenient to change cell renderer

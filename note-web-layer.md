@@ -11,10 +11,30 @@ modified: '2020-07-17T11:56:26.797Z'
 
 - app图层设计是整体思维，是否与局部component的设计相矛盾
   - 那就从全局角度设计Component，考虑使用context api
-- z-index stacking context
 
 ## faq
 
+- 使用z-index隐藏元素有什么缺点
+  - 要考虑用户操作是否会导致layout, repaint
+  - If an element or group of elements should only become visible after the user performed a conscious action, use `display: none; ` or `visibility: hidden;`
+  - If something should remain hidden until the user performs a conscious action, use `display: none;` . 
+  - Should something, on the other hand, become visible when navigated to via the keyboard, or be discoverable by screen reader users right away, use negative positioning.
+  - moving elements away will not affect performance at all, except for perhaps making it a drop slower due to extra calculations.
+  - ref
+    - [Is better (by a performance point of view) to stack hidden elements with z-index or to move them away 'horizontally'?](https://stackoverflow.com/questions/27122882/is-better-by-a-performance-point-of-view-to-stack-hidden-elements-with-z-index)
+- 使用z-index或z-idex的数值过大，对性能的影响大吗
+  - 视情况而定
+  - The number of layers matters, but the actual value of the z-index does not. 
+    - When rendering the page, the browser just sorts all of the absolutely-positioned elements by their z-index (ascending) and draws them in that order.
+    - Also, the performance hit from sorting only occurs when you change the z-index of the layers. 
+    - If the z-indices aren't changing often, the performance hit probably won't be noticeable at all. 
+    - Even if you are changing the z-indices a lot, sorting a list of 15 items is almost instantaneous.
+  - z-index are relative, not absolute. 
+    - An element with z-index 1,000,000 renders in front of elements with lower z-index and behind elements with higher z-index. If does not mean that the browser will create 1,000,000 layers.
+    - I think it is the number of distinct z-indexes (stacking contexts to be more precise) that matters.
+  - ref
+    - [z-index, how does it affect performance?](https://stackoverflow.com/questions/5887220/z-index-how-does-it-affect-performance)
+    - [Does the inclusion of z-index increase browser processing times?](https://stackoverflow.com/questions/13968097/does-the-inclusion-of-z-index-increase-browser-processing-times)
 - Difference between auto, 0, and no z-index?
   - `auto` is the default `z-index` value that is initially used by the browser on all positioned elements.
     - auto can also set a positioned child to be the same as it’s parent’s stacking level.
@@ -30,6 +50,10 @@ modified: '2020-07-17T11:56:26.797Z'
   - ref
     - [Difference between auto, 0, and no z-index?](https://stackoverflow.com/questions/14109862/difference-between-auto-0-and-no-z-index)
     - [Why element with z-index 0 is shown above element with z-index 1](https://stackoverflow.com/questions/44291136/why-element-with-z-index-0-is-shown-above-element-with-z-index-1)
+
+## pieces
+
+- z-index的最大值就是：2147483647
 
 ## z-index
 
@@ -152,6 +176,7 @@ top layer (closest to the observer)
   - Element with a `-webkit-overflow-scrolling` value `touch` .
   - Element with a `will-change` value specifying any property that would create a stacking context on non-initial value.
   - Element with a `contain` value of layout, or paint, or a composite value that includes either of them (i.e. `contain: strict` , `contain: content` ).
+  - Element with a `mix-blend-mode` value other than `normal` .
 
 - Within a stacking context, child elements are stacked according to the same rules previously explained. 
 - Importantly, the `z-index` values of its child stacking contexts only have meaning in this parent. 
@@ -221,6 +246,72 @@ top layer (closest to the observer)
 - Global Stacking Order
 - The key to avoid getting tripped up is being able to spot when new stacking contexts are formed. 
 - If you’re setting a z-index of a billion on an element and it’s not moving forward in the stacking order, take a look up its ancestor tree and see if any of its parents form stacking contexts. If they do, your z-index of a billion isn’t going to do you any good.
+
+## CSS stacking contexts: What they are and how they work
+
+- [CSS stacking contexts: What they are and how they work](https://tiffanybbrown.com/2015/09/css-stacking-contexts-wtf/index.html)
+
+- A stacking context is an element that contains a set of layers. 
+  - This can be a root stacking context, as created by the `html` element. 
+  - Or it can be a local stacking context, as created by specific properties and values.
+- Within a local stacking context, the z-index values of its children are set relative to that element rather than to the document root. 
+- Layers outside of that context — i.e. sibling elements of a local stacking context — can't sit between layers within it.
+- Stacking contexts — whether local or root — follow a set of rules that determine the stacking and painting order of elements. Children of a stacking context are painted from bottom to top in the following order.
+  1. Elements with a negative stack level, typically elements with z-index: -1
+  2. Elements with a position value of static.
+  3. Elements with a stack level of 0, typically positioned elements with a z-index value of auto.
+  4. Elements with positive stack levels, e.g. a positioned element with a z-index value of 1 or higher.
+- Two elements with the same stack level are layered based on their source order. 
+- Successive elements stack on top of their predecessors.
+
+## HOW THE CSS STACKING CONTEXT WORKS
+
+- [HOW THE CSS STACKING CONTEXT WORKS](https://www.theguild.nl/how-the-css-stacking-context-works/)
+
+- When stacking contexts are created on an element, that element will become a root stacking context element for its children elements. 
+  - Documents can have many stacking contexts, so it is not rare to have stacking contexts inside other stacking contexts. 
+  - The problem this creates is that children of the newly created stacking context won’t be able to render on top of an element in a different stacking context. Never ever. Even when the children will become positioned elements. Even with z-index: 999999; .
+  - To overcome this problem, you can swap out these child elements in the current DOM hierarchy and bring them to the same level of the root stacking context ( `<html>` element). 
+    - Positioned sibling elements can be ordered with the z-index property. 
+    - However in more complex DOM structures where many elements live inside each other, this may include some rework of your CSS or even JavaScript and may be more complex.
+- Most React applications can consist of those more complex DOM hierarchies, which won’t allow you to swap out elements with their own stacking context so easily. 
+  - However, React incorporated a neat addition called “Portals” in v16. Portals will allow you to mount any DOM element at any place in your DOM structure.  
+  - A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually “break out” of its container. For example, dialogs, hovercards, and tooltips
+
+## Managing Z-Index In A Component-Based Web Application
+
+- [Managing Z-Index In A Component-Based Web Application](https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/)
+
+- An element can create a stacking context which becomes the root for z-index values of its descendants. 
+- If an element is said to create a stacking context, it creates a basis for its children’s z-index values, so they’re never compared with anything outside the stacking context when determining paint order. 
+- To put it another way, when an element creating a stacking context is painted, all its children are painted right after it and before any of its siblings.
+- The main point of this article, however, is how to deal with z-index when your page is composed of dozens and hundreds of components, each potentially having children with z-index defined.
+- One of the most popular articles on z-index proposes grouping all z-index values in one place, but comparing those values doesn’t make sense if they don’t belong to the same stacking context (which might not be easy to achieve in a large application).
+- The question is, how are we supposed to come to this solution if we have components within components within components, each having elements with different z-indices? How can we be sure that changing z-index of the header won’t break anything else?
+- The answer is a convention that eliminates the need for guesswork: changing z-indices within a component should only affect that component, and nothing else. 
+- To put it differently, when dealing with z-index values in a certain CSS file, we should ideally only concern ourselves with other values in that same file.
+- Achieving it is easy. We should simply make sure that the root of every component creates a stacking context. The easiest way to do it is to give it position and z-index values other than the default ones (which are static and auto, respectively).
+
+``` CSS
+.root__container {
+  position: relative;
+  z-index: 0;
+}
+```
+
+- It uses more elements than the previous one, but computation associated with extra DOM elements is cheap whereas developer’s time (a lot of which can sometimes be spent on debugging stacking issues) is definitely not.
+- This is the biggest benefit of the proposed approach: 
+  - when looking at z-indices, it’s only the component itself that matters, not its context.
+- drawbacks
+  - you won’t be able to create such overlays inside both the header and the main section
+- To recap:
+  - Isolate components in terms of z-index values of elements by making the root of each component a stacking context; 
+  - You don’t have to do it if no element within a component needs a z-index value other than auto; 
+  - Within a component’s CSS file, maintain z-index values any way you like. 
+    - It might be consecutive values, or you could give them a step of 10, or you can use variables — it all depends on your project’s conventions and the size of the component (although making components smaller is never a bad thing). 
+    - Preferably, only assign z-index to sibling elements. 
+    - Otherwise, you may inadvertently introduce more stacking contexts within a component, and you’re faced with the same issue again, luckily on a smaller scale; 
+  - Debugging becomes easy. Find the first ancestor component of the two elements that are not stacked correctly, and change z-indices within that component as necessary.
 
 ## layerJS: layer based user interfaces
 
@@ -327,3 +418,11 @@ top layer (closest to the observer)
 
     - inspired by the work done on the react-bootstrap's [Overlay](https://react-bootstrap.github.io/components/overlays/)
     - Overlays rely on the third-party library Popper.js
+
+## ref
+
+- [zh: 前端项目中有简洁的z-index的约束规则（管理方案）吗？](https://www.zhihu.com/question/24216418)
+- [Sass管理复杂的z-index](https://www.w3cplus.com/preprocessor/sassy-z-index-management-for-complex-layouts.html)
+  - 使用臭名昭著的99999
+  - 使用两位数递增z-index的值
+  - 使用Sass管理顺序
