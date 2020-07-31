@@ -39,7 +39,7 @@ modified: '2020-07-28T16:04:53.470Z'
   - This allows for row-to-row comparison.
   - it utilizes JavaScript for a bit of DOM manipulation and screen size measurement. 
 
-- ### [Accessible, Simple, Responsive Tables_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
+- ### [Accessible, Simple, Responsive Tables with flexbox_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
 - The tables I find most frustrating are comparison tables or normal content layout tables, there are really no comprehensive CSS based solutions for making these types of tables responsive.
 - Standard table markup seems to make semantic sense and does a pretty decent job of aligning cells. 
   - One of my main concerns was accessibility. 
@@ -51,7 +51,7 @@ modified: '2020-07-28T16:04:53.470Z'
 - Approaches for Responsive Tables 
   - Squash(挤压、挤扁): 
     - If columns have little content they might squash horizontally with no issues on a mobile screen, so not changing the layout needs to be a valid option.
-  - Vertical scroll(水平滚动): 
+  - Scroll(水平滚动): 
     - If the layout and content is exact and critical, a user could scroll to the left or right. 
     - This is trivial(不重要的；琐碎的) in CSS with an `overflow: auto` wrapper.
   - Collapse by rows(每个单元格一行，先行后列): 
@@ -235,3 +235,12 @@ modified: '2020-07-28T16:04:53.470Z'
 - This `z-index` values are important here because we want the header to overlap the first left hand column that will also be sticky
 - A simple responsive spreadsheet where you can view both the heading and the first column no matter where you are in the table. 
 - `position: sticky` has relatively patchy support right now and so it’s worth thoroughly testing before you start using it
+
+## collection-blog-table
+
+- [accessible responsive table](https://www.accessibility-developer-guide.com/examples/tables/responsive/)
+- [Responsive HTML Table Techniques & Examples](https://speckyboy.com/responsive-html-table-techniques/)
+  - Horizontal Scrolling
+  - Collapsible Cells with Repositioned Table Headers
+  - Static Left Table Headers with Horizontal Scrolling
+  - Element Queries

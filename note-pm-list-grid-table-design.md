@@ -69,6 +69,23 @@ modified: '2020-07-30T16:42:38.231Z'
   - Simple tables with custom styling that don’t require many interactions for the columns other than simple popover text
 - Let’s start building a simple table UI with basic functionalities like sorting and searching using react-table
 
+## 5 Practical Solutions to Make Responsive Data Tables
+
+- [5 Practical Solutions to Make Responsive Data Tables](https://medium.com/appnroll-publication/5-practical-solutions-to-make-responsive-data-tables-ff031c48b122)
+
+- Shorten
+  - cutout unnecessary columns and keep the table concise by leaving the crucial data only
+- Moveable
+  - use swipe gestures to scroll through the whole table horizontally.
+- Collapsed
+  - everything is visible without scrolling and columns are navigated using swipe gestures
+  - The primary column (legend) can be fixed in one place so we don’t lose the context of data.
+- Transformed
+  - The main rule is a collapsing of the table rows into separate cards.
+- Comparing
+  - It’s also a similar to the Collapsed one I described above but it is ready for a larger amount of data.
+  - All we need to add is easy navigation through the whole table, displaying only two columns at a time.
+
 ## Design better data tables
 
 > The ingredients of a successful data table UI
@@ -96,9 +113,7 @@ modified: '2020-07-30T16:42:38.231Z'
 - hover actions
 - visual summary for table
 
-## How to design data tables 
-
-- the 20 rules guide
+## How to design data tables - the 20 rules guide
 
 - [How to design data tables - the 20 rules guide](https://www.mobilespoon.net/2019/11/design-ui-tables-20-rules-guide.html)
 
@@ -164,3 +179,42 @@ modified: '2020-07-30T16:42:38.231Z'
 - The use of a cell-component gives maximum flexibility in styling the table.
   - Cons: there are almost none, except that this approach requires more time and system design skills
   - Pros: maximum flexibility, ability to control the grid with a single component, adjust separators, background, nested icons and more.
+
+## Why You Will Never Give Up Spreadsheets
+
+- [Why You Will Never Give Up Spreadsheets_2016](https://handsontable.com/blog/articles/2016/7/why-you-will-never-give-up-spreadsheets)
+
+- The Positives
+  - As the tools we use to create spreadsheets evolved, they have added features that allow for more than simply working with numbers and text. 
+    - Users can now integrate charts, animation, and images, while using filtering, sorting and pivot tables to rapidly change the type of information displayed.
+  - The fact that – at entry level – it requires very little training to use.
+  - It is cost effective, with open-source and commercial versions available for all operating systems, without the need for high-end hardware.
+  - In many instances, spreadsheets created on one platform can still be opened and edited on a completely different platform.
+  - It is a very powerful tool for editing, reading, reporting and analyzing data.
+
+- The Flaws
+  - Detecting errors with strict policies in place
+    - the protection, validation and testing of formulas and macros
+    - change control
+    - version control
+  - errors will still creep in because these measures are all manual, and subject to the fallibility of man
+  - Poor – or non-existent – audit trail functionality.
+  - The inability to generate real-time reports – with read-only rights – across the organization.
+  - Producing ad-hoc reports and analysis is often difficult and onerous.
+  - Managing and sharing large files is prone to problems.
+  - They lack effective processes for enforcing data ownership.
+  - They don’t offer a system for seamless, automatic back-ups, influencing data integrity concerns.
+
+- The Outlook
+  - Is comfortably able to handle big data.
+  - Loads data dynamically, from a variety of data sources, and integrates easily with other cloud-computing solutions.
+  - Is more modular, with add-ons that extend the functionality even further.
+  - Has error checking and version control built-in.
+  - Retains the ease-of-use and intuitiveness of traditional spreadsheet software, but offers better security.
+  - Offers automated back-ups, with effortless restoration.
+  - Apply a common standard in the design and development of spreadsheets, addressing things such as cell formatting.
+  - Ensure that everyone who works with spreadsheets has had suitable training. 
+    - Although basic spreadsheet work requires minimal training, more complex operations, including how to check the results of functions, can only be properly done with appropriate training.
+  - Implement best practices for collaborative work, including a peer review system, to help minimize errors.
+  - Add an About sheet to all complex spreadsheets, documenting the author, the purpose of the document, the version number, and any formatting conventions.
+  - Ensure that everyone is always using the same software version.

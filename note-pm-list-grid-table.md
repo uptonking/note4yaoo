@@ -108,3 +108,29 @@ modified: '2020-07-26T04:15:18.011Z'
 - ag-grid
   - lack of client-side pagination
   - inconvenient to change cell renderer
+
+## product-catalog
+
+- 软件提供商
+  - 国内一线：石墨，腾讯文档，语雀，钉钉文档，金山文档
+  - 国内二线：飞书
+  - Gsuite, MS Office
+  - Canva
+
+- 文字编辑器
+  - 石墨 Quill
+  - 腾讯 Etherpad
+  - 语雀 slate转自研
+
+- 表格
+  - 石墨 spreadjs
+  - 腾讯 handsontable转自研 
+
+- 多人协作冲突解决  
+  - OT算法，石墨和腾讯文档都是
+  - [揭开在线协作的神秘面纱 – OT算法](http://www.alloyteam.com/2019/07/13659/)
+  - [实现一个多人协作在线文档有哪些技术难点?](https://www.zhihu.com/question/274573543)
+
+- 选型参考
+  - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
+  - 在线文档作为其他产品的基础功能，如网盘支持在线打开文档

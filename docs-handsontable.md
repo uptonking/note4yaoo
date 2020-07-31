@@ -47,6 +47,7 @@ modified: '2020-07-14T10:22:06.873Z'
     - In this approach, every TABLE element which can hold children is rendered separately by an individual unit called internally `OrderView` . 
     - A specialized renderer wraps each unit.
     - This change helps us to implement an EcoRendering idea
+
 - What is eco-rendering
   - This issue is about implementing a new feature internally called as `EcoRenderers` . 
   - The idea of this is to increasing Handsontable performance by re-rendering cells only when their value has changed. 
@@ -54,6 +55,7 @@ modified: '2020-07-14T10:22:06.873Z'
   - ref
     - https://github.com/handsontable/handsontable/issues/5769
     - https://github.com/handsontable/handsontable/pull/6089
+
 - Currently the best way to style Handsontable is to use custom renderers.
 - Links/click events from custom renderers not working 
 
@@ -61,6 +63,22 @@ modified: '2020-07-14T10:22:06.873Z'
 
 - docs
   - https://handsontable.com/docs
+
+## Known limitations
+
+- It uses several dependencies
+  - Our team follows the "proudly found elsewhere" principle which encourages us to make use of the great work done by other developers. 
+  - numbro.js (handles numeric data)
+  - Pikaday (displays a date picker)
+  - moment.js (parses, validates and displays dates)
+  - json-patch-duplex.js (implementation of JSON-Patch - RFC 6902)
+  - jStat (statistical library)
+  - tiny-emitter (a tiny event emitter library)
+- [github-issues-most-commented](https://github.com/handsontable/handsontable/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)
+  - [cell is focusing, when focus in another input (modal)](https://github.com/handsontable/handsontable/issues/401)
+  - [Issues with scrolling in a parent element](https://github.com/handsontable/handsontable/issues/3119)
+  - [Fixing more columns than visible in the viewport breaks scrolling](https://github.com/handsontable/handsontable/issues/4259)
+  - [Rewrite custom borders to use SVGs insead of DIVs](https://github.com/handsontable/handsontable/issues/6467)
 
 ## pieces
 

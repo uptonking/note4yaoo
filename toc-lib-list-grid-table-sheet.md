@@ -1,11 +1,11 @@
 ---
-title: toc-lib-list-table-grid-sheet
+title: toc-lib-list-grid-table-sheet
 tags: [list, table, grid, toc]
 created: '2020-07-12T13:01:37.487Z'
 modified: '2020-07-13T02:41:12.041Z'
 ---
 
-# toc-lib-list-table-grid-sheet
+# toc-lib-list-grid-table-sheet
 
 ## list-grid
 
@@ -17,7 +17,7 @@ modified: '2020-07-13T02:41:12.041Z'
     - delivers outstanding performance 
     - has no 3rd party dependencies 
     - integrates smoothly with all major JavaScript frameworks
-  - ag-grid-enterprise are Commercial licensed
+  - ag-grid-enterprise are Commercial licensed but opensourced
 - react-table /MIT/11.6kStar/202007
   - https://github.com/tannerlinsley/react-table
   - https://react-table.tanstack.com/
@@ -26,6 +26,14 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/adazzle/react-data-grid
   - http://adazzle.github.io/react-data-grid/
   - Excel-like grid component built with React, with editors, keyboard navigation, copy...
+- handsontable 6.2.2 /MIT/13.8kStar/202007
+  - https://github.com/handsontable/handsontable
+  - https://handsontable.com/
+  - a JavaScript/HTML5 data grid with spreadsheet look & feel.
+  - https://github.com/handsontable/handsontable/releases/tag/7.0.0
+  - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
+  - since 7.0 free for all non-commercial purposes
+  - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
 - react-virtualized /MIT/19.5kStar/202006
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
@@ -48,14 +56,6 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/myliang/x-spreadsheet
   - https://myliang.github.io/x-spreadsheet
   - A web-based JavaScript（canvas） spreadsheet
-- handsontable 6.2.2 /MIT/13.8kStar/202007
-  - https://github.com/handsontable/handsontable
-  - https://handsontable.com/
-  - a JavaScript/HTML5 data grid with spreadsheet look & feel.
-  - https://github.com/handsontable/handsontable/releases/tag/7.0.0
-  - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
-  - since 7.0 free for all non-commercial purposes
-  - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
 - react-datasheet /MIT/4.2kStar/202005
   - https://github.com/nadbm/react-datasheet
   - https://nadbm.github.io/react-datasheet/

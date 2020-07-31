@@ -12,8 +12,10 @@ modified: '2020-07-14T10:25:13.843Z'
 
 ## table-xp
 
-- 链接预览标题、图片
+- animation
+  - 类似包含gif图的网页，可预设数据滚动动画，非常interactive
 - features
+  - 链接预览标题、图片
   - 类似ide的同时打开多标签页并编辑
   - 记住不同tab的上次编辑位置
   - 单列选择
