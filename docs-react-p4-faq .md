@@ -75,8 +75,6 @@ modified: '2020-06-30T05:14:08.093Z'
 	- Class Properties (Stage 3 Proposal)  
     - 推荐使用这种写法，不用在render中绑定
 
-	
-
 ``` js
 	class Foo extends Component {
 	  // Note: this syntax is experimental and not standardized yet.
@@ -118,8 +116,8 @@ modified: '2020-06-30T05:14:08.093Z'
 ```
 
 - How to pass a parameter to an event handler or callback
-	- `<button onClick={() => this.handleClick(id)} />`
-	- `<button onClick={this.handleClick.bind(this, id)} />`
+  - `<button onClick={() => this.handleClick(id)} />`
+  - `<button onClick={this.handleClick.bind(this, id)} />`
   -  Passing params using the DOM API `data-*` attributes
     - Consider this approach if you need to optimize a large number of elements or have a render tree that relies on React.PureComponent equality checks.
 - How to prevent a function from being called too quickly or too many times in a row
@@ -253,7 +251,8 @@ modified: '2020-06-30T05:14:08.093Z'
 
 ## Virtual DOM and Internals
 
-- The **virtual DOM(VDOM)** is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+- The **virtual DOM(VDOM)** is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. 
+  - This process is called reconciliation.
 - VDOM is more of a pattern than a specific technology
 - In React world, the term “virtual DOM” is usually associated with React elements since they are the objects representing the user interface. 
 - React, however, also uses internal objects called “fibers” to hold additional information about the component tree. They may also be considered a part of “virtual DOM” implementation in React.

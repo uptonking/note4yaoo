@@ -10,8 +10,10 @@ modified: '2020-07-26T04:15:43.741Z'
 ## The simplest way to create a Data Grid in React
 
 - [The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)
+  - [react-tabelify](https://github.com/rishabhbits038/react-tabelify)
+    - /NoLic/28Star/201606
 
-- we finally decided to create our own library 'Tabelify' from scratch.
+- We finally decided to create our own library 'Tabelify' from scratch.
 - Tableify is a highly customisable library that can be used to display data in different formats. 
   - Tabelify is a controlled react component. 
   - Its parent has complete control over its state.
@@ -25,8 +27,8 @@ modified: '2020-07-26T04:15:43.741Z'
     - User can choose not to display the data in a tabular format as well. 
     - The user can pass a `CustomRow` as a prop to Tabelify. 
     - Tabelify renders the Custom Row instead of the default.
-    - CustomRow takes in the data as props and the value it returns is rendered in the row
-  - Similarly, user can also pass a custom header and a custom footer to the table.
+    - `CustomRow` takes in the data as props and the value it returns is rendered in the row
+  - Similarly, user can also pass a `CustomHeader` and a `CustomFooter` to the table.
   - There is also an option to enable/disable the checkbox by just passing a flag
   - There is a search box at the bottom left of the grid. It filters the data and shows only the ones which contain the text typed.
   - Tabelify also supports pagination by default. 
@@ -51,7 +53,7 @@ modified: '2020-07-26T04:15:43.741Z'
 ## React — Code Your Own DataTable Step by Step
 
 - [React — Code Your Own DataTable Step by Step (Video Tutorial by udemy)](https://codeburst.io/react-code-your-own-datatable-step-by-step-video-tutorial-34fca0ca34e7)
-  - https://github.com/rajeshpillai/udemy-react-datatable 
+  - [udemy-react-datatable](https://github.com/rajeshpillai/udemy-react-datatable)
     - /NOLic/9Star/201810
 
 ## Building a Data Table Component in React

@@ -124,6 +124,39 @@ modified: '2020-07-17T09:49:09.076Z'
     - strike: if it represents deleted content, use del instead. 
       - In all other cases use s
 
+## form-select
+
+``` HTML
+<label for="pet-select">Choose a pet:</label>
+
+<select name="pets" id="pet-select">
+  <option value="">--Please choose an option--</option>
+  <option value="dog" selected>Dog</option>
+  <option value="cat">Cat</option>
+  <option value="parrot">Parrot</option>
+  <option value="spider">Spider</option>
+</select>
+```
+
+- `<select>` is given an `id` attribute to enable it to be associated with a `<label>` for accessibility purposes, as well as a `name` attribute to represent the name of the associated data point submitted to the server
+- Each `<option>` element should have a `value` attribute containing the data value to submit to the server when that option is selected. 
+  - If no `value` attribute is included, the value defaults to the text contained inside the element. 
+  - You can include a `selected` attribute on an `<option>` element to make it selected by default when the page first loads.
+  - You can further nest `<option>` elements inside `<optgroup>` elements to create separate groups of options inside the dropdown.
+- The `<select>` element is notoriously difficult to style productively with CSS. 
+  - However, these properties don't produce a consistent result across browsers, 
+  - and it is hard to do things like line different types of form element up with one another in a column
+- The `<select>` element's internal structure is complex, and hard to control. 
+  - If you want to get full control, you should consider using a library with good facilities for styling form widgets, or try rolling your own dropdown menu using non-semantic elements, JavaScript, and WAI-ARIA to provide semantics.
+- react相关
+  - The `selected` attribute is supported by `<option>` components. 
+    - You can use it to set whether the component is selected. 
+    - This is useful for building controlled components.
+  - With a controlled component, the input’s value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+  - React, instead of using the `selected` attribute, uses a `value` attribute on the root `select` tag.
+  - Overall, this makes it so that `<input type="text">` , `<textarea>` , and `<select>` all work very similarly - they all accept `value` and `onChange` attribute that you can use to implement a controlled component.
+  - You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag
+
 ## br: The Line Break element
 
 - The HTML `<br>` element produces a line break in text (carriage-return). 

@@ -53,6 +53,66 @@ margin-left: auto;
 - ref
   - [margin:auto与布局展示](https://zhuanlan.zhihu.com/p/57605009)
 
+## overflow
+
+- The `overflow` CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
+- In order for `overflow` to have an effect, the block-level container must have either a set height ( `height` or `max-height` ) or ` white-space` set to `nowrap` .
+- Specifying a value other than `visible` (the default) creates a new block formatting context. 
+  - This is necessary for technical reasons — if a float intersected with the scrolling element it would forcibly rewrap the content after each scroll step, leading to a slow scrolling experience.
+- Setting one axis to `visible` (the default) while setting the other to a different value results in visible behaving as auto.
+- The JavaScript `Element.scrollTop` property may be used to scroll an HTML element even when `overflow` is set to `hidden` .
+
+- **values**
+
+``` 
+Initial value	visible
+Applies to	Block-containers, flex containers, and grid containers
+Inherited	no
+```
+
+- visible
+  - Content is not clipped and may be rendered outside the padding box.
+- hidden
+  - Content is clipped if necessary to fit the padding box. 
+  - No scrollbars are provided, and no support for allowing the user to scroll (such as by dragging or using a scroll wheel) is allowed. 
+  - The content can be scrolled programmatically (for example, by setting the value of a property such as offsetLeft), so the element is still a scroll container.
+- scroll
+  - Content is clipped if necessary to fit the padding box. 
+  - Browsers always display scrollbars whether or not any content is actually clipped, preventing scrollbars from appearing or disappearing as content changes. 
+  - Printers may still print overflowing content.
+- auto
+  - Depends on the user agent. 
+  - If content fits inside the padding box, it looks the same as `visible` , but still establishes a new block formatting context. 
+  - Desktop browsers provide scrollbars if content overflows.
+- clip
+  - Like for `hidden` , the content is clipped to the element's padding box. 
+  - The difference between clip and hidden is that the clip also forbids all scrolling, including programmatic scrolling. 
+  - The box is not a scroll container, and does not start a new formatting context. 
+  - If you wish to start a new formatting context, you can use display: flow-root to do so.
+
+### [Overflowing content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+
+- Everything in CSS is a box. You can constrain the size of these boxes by assigning values of width and height (or inline-size and block-size). 
+- Overflow happens when there is too much content to fit in a box. 
+- Wherever possible, CSS does not hide content. This would cause data loss. 
+- Instead, CSS overflows in visible ways. You are more likely to see there is a problem. 便于发现问题
+- The default value of `overflow` is `visible` . With this default, we can see content when it overflows.
+- If you only want scrollbars to appear when there is more content than can fit in the box, use `overflow: auto` . This allows the browser to determine if it should display scrollbars.
+- When developing a site, always keep overflow in mind. 
+  - Test designs with large and small amounts of content. 
+  - Increase the font sizes of text. Generally ensure that your CSS works in a robust way. 
+  - Changing the value of overflow to hide content, or to add scrollbars, is likely to be reserved for a few select use cases. (for example, where you intend to have a scrolling box)
+
+### [CSS Overflow Module](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Overflow)
+
+- There are two types of overflow that you might encounter in CSS.  
+- ink overflow. 
+  - This is the overflow of painting effects which do not affect layout or otherwise extend the scrollable overflow region, such as box shadows, border images, text decoration, overhanging glyphs, outlines, etc.
+- scrollable overflow
+  - The overflow that we sometimes need to manage in CSS is described as scrollable overflow. 
+  - This is the content appearing outside of the box for which scrolling mechanisms need to be provided. 
+  - The overflow properties are how we can control what happens when content overflows a box. 
+
 ## border
 
 - The border shorthand CSS property sets an element's border. 

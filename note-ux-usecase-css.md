@@ -1,11 +1,11 @@
 ---
-title: note-ux-css-usecase
+title: note-ux-usecase-css
 tags: [css, usecase, ux]
 created: '2020-07-17T13:58:14.640Z'
-modified: '2020-07-17T13:58:50.231Z'
+modified: '2020-08-01T07:13:13.830Z'
 ---
 
-# note-ux-css-usecase
+# note-ux-usecase-css
 
 ## 实现div-border-collapse效果的方法
 

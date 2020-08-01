@@ -33,6 +33,18 @@ modified: '2020-07-18T12:23:25.933Z'
   - Note that some replaced elements, but not all, have intrinsic(自身的) dimensions or a defined baseline, which is used by some CSS properties, such as vertical-align. 
   - Only replaced elements can ever have intrinsic dimensions.
 
+## User agent
+
+- A user agent is a computer program representing a person, for example, a browser in a Web context.
+- Besides a browser, a user agent could be a bot scraping webpages, a download manager, or another app accessing the Web. 
+- Along with each request they make to the server, browsers include a self-identifying `User-Agent` HTTP header called a user agent (UA) string. 
+- This string often identifies the browser, its version number, and its host operating system.
+- Spam bots, download managers, and some browsers often send a fake UA string to announce themselves as a different client. This is known as user agent spoofing.
+- The user agent string can be accessed with JavaScript on the client side using the navigator.userAgent property.
+- A typical user agent string looks like this
+  - `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+  - `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36`
+
 ## `<length>` css data type
 
 - represents a distance value. 

@@ -272,6 +272,11 @@ modified: '2020-07-13T02:41:12.041Z'
       - http://github.com/griddlegriddle/Griddle
       - http://griddlegriddle.github.io/Griddle/
       - 依赖react，lodash，redux，reselect，recompose
+      - Griddle now has a customizable architecture that allows for one-off customizations or reusable plugins.
+      - These customization options allow for overriding everything from components, to internal datagrid state management, and more
+      - [Architecture](http://griddlegriddle.github.io/Griddle/docs/architecture/)
+      - [Plugins](http://griddlegriddle.github.io/Griddle/docs/plugins/)
+      - [Customization](http://griddlegriddle.github.io/Griddle/docs/customization/)
 
 - ### 基于div
   - react-table /201907/MIT/6300star
