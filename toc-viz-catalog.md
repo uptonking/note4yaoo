@@ -1,11 +1,11 @@
 ---
-title: toc-lib-viz-catalog
+title: toc-viz-catalog
 tags: [olap, toc, viz]
 created: '2020-07-13T02:49:52.285Z'
-modified: '2020-07-14T11:04:06.314Z'
+modified: '2020-08-02T08:58:11.303Z'
 ---
 
-# toc-lib-viz-catalog
+# toc-viz-catalog
 
 ## repeat
 

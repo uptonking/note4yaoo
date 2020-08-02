@@ -1,11 +1,11 @@
 ---
-title: toc-lib-olap-dashboard
+title: toc-lib-olap-pivot
 tags: [lib, olap, toc]
 created: '2020-07-13T02:39:21.789Z'
-modified: '2020-07-14T11:03:38.031Z'
+modified: '2020-08-02T07:24:30.466Z'
 ---
 
-# toc-lib-olap-dashboard
+# toc-lib-olap-pivot
 
 ## pivot
 
@@ -21,22 +21,6 @@ modified: '2020-07-14T11:03:38.031Z'
   - https://github.com/BjoernKW/PivotHelper
   - https://bjoernkw.github.io/PivotHelper/
   - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.
-
-## analytics-dashboard
-
-- Apache Superset /Apache2.0/29.3kStar/202007
-  - https://github.com/apache/incubator-superset
-  - http://superset.apache.org/
-  - a modern, enterprise-ready business intelligence web application
-  - https://github.com/apache-superset/superset-ui
-  - https://github.com/apache-superset/examples-data
-- raw /Apache2.0/6.8kStar
-  - https://github.com/rawgraphs/raw
-  - The missing link between spreadsheets and data visualization
-- cube.js /MIT/8.3kStar/202007
-  - https://github.com/cube-js/cube.js
-  - https://cube.dev/
-  -  modular framework to build analytical web applications
 
 ## misc
 

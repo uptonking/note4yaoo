@@ -1,11 +1,11 @@
 ---
-title: note-webgl-pm
-tags: [viz, webgl]
+title: toc-viz-webgl
+tags: [lib, toc, viz, webgl]
 created: '2020-07-17T13:33:55.480Z'
-modified: '2020-07-17T13:35:18.798Z'
+modified: '2020-08-02T08:58:20.278Z'
 ---
 
-# note-webgl-pm
+# toc-viz-webgl
 
 ## solutions-catalog-webgl-viz
 

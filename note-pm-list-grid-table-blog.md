@@ -54,7 +54,7 @@ modified: '2020-07-26T04:15:43.741Z'
 
 - [React — Code Your Own DataTable Step by Step (Video Tutorial by udemy)](https://codeburst.io/react-code-your-own-datatable-step-by-step-video-tutorial-34fca0ca34e7)
   - [udemy-react-datatable](https://github.com/rajeshpillai/udemy-react-datatable)
-    - /NOLic/9Star/201810
+    - /NALic/9Star/201810
 
 ## Building a Data Table Component in React
 

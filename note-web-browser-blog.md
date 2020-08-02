@@ -1,11 +1,11 @@
 ---
-title: note-web-browser
+title: note-web-browser-blog
 tags: [blog, browser, web]
 created: '2020-07-10T08:47:31.574Z'
-modified: '2020-07-14T10:51:51.417Z'
+modified: '2020-08-02T07:44:09.095Z'
 ---
 
-# note-web-browser
+# note-web-browser-blog
 
 ## Performance best practices for Firefox front-end engineers
 

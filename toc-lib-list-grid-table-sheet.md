@@ -185,6 +185,19 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/tabler/tabler-react
   - http://tabler-react.com/
   - React implementation of the Tabler Dashboard UI Kit
+- tabulator /MIT/3.4kStar/202007
+  - https://github.com/olifolkerd/tabulator
+  - http://tabulator.info/
+  - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
+- Griddle /MIT/2400star/201907
+  - http://github.com/griddlegriddle/Griddle
+  - http://griddlegriddle.github.io/Griddle/
+  - 依赖react，lodash，redux，reselect，recompose
+  - Griddle now has a customizable architecture that allows for one-off customizations or reusable plugins.
+  - These customization options allow for overriding everything from components, to internal datagrid state management, and more
+  - [Architecture](http://griddlegriddle.github.io/Griddle/docs/architecture/)
+  - [Plugins](http://griddlegriddle.github.io/Griddle/docs/plugins/)
+  - [Customization](http://griddlegriddle.github.io/Griddle/docs/customization/)
 
 ## grid-layout
 
@@ -192,7 +205,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/STRML/react-grid-layout
   - https://strml.github.io/react-grid-layout/examples/0-showcase.html
   - A draggable and resizable grid layout with responsive breakpoints, for React.
-- react-drag-drop-layout-builder NA-License/172Star/201904
+- react-drag-drop-layout-builder /NALic/172Star/201904
   - https://github.com/chriskitson/react-drag-drop-layout-builder
   - https://medium.com/@kitson.mac/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6
   - Drag and drop (DnD) UI layout builder using React and ImmutableJS
@@ -268,15 +281,6 @@ modified: '2020-07-13T02:41:12.041Z'
       - https://github.com/glittershark/reactable
       - http://glittershark.github.io/reactable/
       - 依赖react,table,data-tables
-  - Griddle /201907/MIT/2400star
-      - http://github.com/griddlegriddle/Griddle
-      - http://griddlegriddle.github.io/Griddle/
-      - 依赖react，lodash，redux，reselect，recompose
-      - Griddle now has a customizable architecture that allows for one-off customizations or reusable plugins.
-      - These customization options allow for overriding everything from components, to internal datagrid state management, and more
-      - [Architecture](http://griddlegriddle.github.io/Griddle/docs/architecture/)
-      - [Plugins](http://griddlegriddle.github.io/Griddle/docs/plugins/)
-      - [Customization](http://griddlegriddle.github.io/Griddle/docs/customization/)
 
 - ### 基于div
   - react-table /201907/MIT/6300star
@@ -323,7 +327,7 @@ modified: '2020-07-13T02:41:12.041Z'
       - http://6pac.github.io/SlickGrid/examples/example4-model.html
       - 依赖jQuery,jQueryUI
   - WickedGrid /201611/MIT/570star
-      - https://github.com/Spreadsheets/WickedGrid		
+      - https://github.com/Spreadsheets/WickedGrid
       - http://spreadsheets.github.io/WickedGrid/
       - 依赖jquery
 

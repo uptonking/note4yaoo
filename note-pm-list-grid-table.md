@@ -111,11 +111,11 @@ modified: '2020-07-26T04:15:18.011Z'
 
 ## product-catalog
 
-- 软件提供商
+- office软件提供商
   - 国内一线：石墨，腾讯文档，语雀，钉钉文档，金山文档
   - 国内二线：飞书
-  - Gsuite, MS Office
-  - Canva
+  - 国外主流：Gsuite, MS Office
+  - 周边产品：Canva
 
 - 文字编辑器
   - 石墨 Quill

@@ -2,12 +2,12 @@
 title: toc-lib-css-layout
 tags: [css, layout, lib, toc]
 created: '2020-07-19T12:47:49.585Z'
-modified: '2020-07-19T12:48:17.798Z'
+modified: '2020-08-02T07:17:20.850Z'
 ---
 
 # toc-lib-css-layout
 
-## flexbox
+## flexbox-layout
 
 - react-grid-layout /MIT/11.5kStar/202004
   - https://github.com/STRML/react-grid-layout
@@ -26,7 +26,7 @@ modified: '2020-07-19T12:48:17.798Z'
   - https://blueprintcss.dev/
   - a modern responsive CSS layout library & grid built on top of CSS Grid and Flexbox
 
-## css grid layout
+## css-grid-layout
 
 - styled-css-grid /MIT/501Star/201905
   - https://github.com/azz/styled-css-grid
