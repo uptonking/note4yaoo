@@ -22,6 +22,9 @@ modified: '2020-07-14T10:47:26.044Z'
   - [CSS Grid 系列(上)-Grid布局完整指南](https://zhuanlan.zhihu.com/p/33030746)
   - [[译] Grid布局完全指南](https://shanyue.tech/post/Grid-Guide/)
   - [图解 Grid 布局 (非常详细)](https://lefex.github.io/wsy/2019/11/02/grid.html)
+  - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)
+    - flexbox布局非常成熟
+    - css的卖点是炫酷的design，而不是炫酷的技术
 
 ## pieces
 

@@ -2,10 +2,19 @@
 title: note-game-dev
 tags: [dev, game]
 created: '2020-07-13T13:27:14.170Z'
-modified: '2020-07-14T10:14:43.572Z'
+modified: '2020-08-03T13:29:04.709Z'
 ---
 
 # note-game-dev
+
+## guide 
+
+- 游戏引擎架构
+  - 渲染库
+  - 动作系统
+  - 物理系统
+  - 战斗回合流程
+  - 游戏编辑器
 
 ## catalog
 

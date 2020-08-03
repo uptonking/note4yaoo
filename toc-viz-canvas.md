@@ -14,3 +14,4 @@ modified: '2020-08-02T08:59:24.184Z'
   - began as a fork of ericdrowell/KineticJS
   - https://github.com/ericdrowell/KineticJS
     - /MIT/3.9kStar/201404
+- react-canvas

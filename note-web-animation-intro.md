@@ -71,37 +71,44 @@ modified: '2020-08-02T13:39:06.410Z'
 - ref
   - [requestAnimationFrame用法](https://juejin.im/post/5b6020b8e51d4535253b30d1)
 
-## animation performance
-
-- Take care that your animations don’t cause performance issues; ensure that you know the impact of animating a given CSS property.
-- Animating properties that change the geometry of the page (layout) or cause painting are particularly expensive.
-- Where you can, stick to changing transforms and opacity.
-- Use will-change to ensure that the browser knows what you plan to animate.
-- some properties are cheaper to animate than others. 
-- For example, animating the width and height of an element changes its geometry and may cause other elements on the page to move or change size. 
-- This process is called layout (or **reflow** in Gecko-based browsers like Firefox), and can be expensive if your page has a lot of elements. 
-- Whenever layout is triggered, the page or part of it will normally need to be painted, which is typically even more expensive than the layout operation itself.
-- Where you can, you should avoid animating properties that trigger layout or paint. For most modern browsers, this means limiting animations to `opacity` or `transform` , both of which the browser can highly optimize; it doesn’t matter if the animation is handled by JavaScript or CSS.
-- The general rule of thumb is that if the animation might be triggered in the next 200ms, either by a user’s interaction or because of your application’s state, then having will-change on animating elements is a good idea. For most cases, then, any element in your app’s current view that you intend to animate should have will-change enabled for whichever properties you plan to change.
-- CSS-based animations, and Web Animations where supported natively, are typically handled on a thread known as the "compositor thread". 
-- This is different from the browser's "main thread", where styling, layout, painting, and JavaScript are executed. 
-- This means that if the browser is running some expensive tasks on the main thread, these animations can keep going without being interrupted.
-- Other changes to transforms and opacity can, in many cases, also be handled by the compositor thread.
-- If any animation triggers paint, layout, or both, the "main thread" will be required to do work. This is true for both CSS- and JavaScript-based animations, and the overhead of layout or paint will likely dwarf any work associated with CSS or JavaScript execution, rendering the question moot.
-- ref
-- https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance
-- https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
-- https://css-tricks.com/myth-busting-css-animations-vs-javascript/
-
 ## css animation
 
+- CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
+  - The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
+- CSS animations make it possible to animate transitions from one CSS style configuration to another. 
 - Animations consist of two components
   - a style describing the CSS animation
   - a set of keyframes that indicate the start and end states of the animation’s style, as well as possible intermediate waypoints
-- key advantages to CSS animations over traditional script-driven animation
+- **advantages to CSS animations** over traditional script-driven animation
   - easy to use for simple animations without having to know JavaScript
-  - css animations run well, even under moderate system load
-      - The rendering engine can use frame-skipping and other techniques to keep the performance as smooth 
+  - css animations run well even under moderate system load
+    - Simple animations can often perform poorly in JavaScript (unless they’re well made).
+    - The rendering engine can use frame-skipping and other techniques to keep the performance smooth 
   - Letting the browser control the animation sequence lets the browser optimize performance and efficiency by, for example, reducing the update frequency of animations running in tabs that aren't currently visible.
-- 参考
-  - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+
+- `animation: animation-name, a-duration, a-timing-function, a-delay, a-iteration-count, a-direction, a-fill-mode, a-play-state.`
+- A description of which properties are animatable is available; it's worth noting that this description is also valid for CSS transitions.
+
+- ref
+  - [Using CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+  - [Animatable CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
+
+## css transition
+
+- CSS Transitions is a module of CSS that lets you create gradual transitions between the values of specific CSS properties. 
+  - The behavior of these transitions can be controlled by specifying their timing function, duration, and other attributes.
+- CSS transitions provide a way to control animation speed when changing CSS properties. 
+- Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time.
+- Animations that involve transitioning between two states are often called implicit transitions as the states in between the start and final states are implicitly defined by the browser.
+
+- `transition: transition-property,t-duration,t-timing-function,t-delay`
+- Transitions enable you to define the transition between two states of an element. 
+- Different states may be defined using pseudo-classes like `:hover` or `:active` or dynamically set using JavaScript.
+
+- ref
+  - [Using CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+
+## ref
+
+- [Animate Your HTML5_2013](http://animateyourhtml5.appspot.com)
+  - A tour of HTML5 animation techniques with CSS3, SVG, Canvas and WebGL
