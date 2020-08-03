@@ -14,6 +14,7 @@ modified: '2020-08-02T13:39:43.308Z'
 
 ## css vs js animation
 
+- 考虑现有库已用的动画或周边库的选择
 - 用法上最大的区别：js可控制动画更多细节
   - 动态创建动画的时机、播放流程控制、添加动画生命周期监听器
 - css animation使用更简单
@@ -278,8 +279,26 @@ modified: '2020-08-02T13:39:43.308Z'
 - The features mentioned in this article are just the beginning. 
   - The current spec and implementation look to be the start of something great.
 
-## CSS Animations vs. JavaScript 2020
+## Compare the options for Animations on the Web
 
-- [CSS Animations vs. JavaScript 2020](https://webtrainingguides.com/web-development/css-animations-vs-javascript-2020/)
+- [Compare the options for Animations on the Web](https://flaviocopes.com/animations/)
 
-- 
+- CSS Transitions
+  - It’s the simplest of the animations, and mostly used for subtle animations that integrate well with the rest of the page.
+- CSS Animations
+  - allow you to have more than just 2 states
+- SVG Animations
+  - SVG is a great vector-based format which allows to create animations using SMIL, the SVG animations “native” format.
+  - SMIL was about to be deprecated in Chrome, but the team reversed this decision for the time being due to resistance, although SMIL has cross-browser inconsistencies (and IE/Edge do not support it).
+  - They want to push CSS Animations and the Web Animations API instead of SMIL.
+- Canvas API Animations
+  - The Canvas API offers a way to paint on the screen, using rasters rather than vectors.
+  - Animations are possible although not as performant
+- Web Animations API
+  - It’s currently only working in Chrome and Firefox. Safari, IE and Edge are still considering it, 
+  - but a polyfill exists to make it work across all browsers.
+- In addition to the native APIs, there are great libraries that abstract most of the details for you:
+  - GreenSock
+  - react-motion
+  - velocity
+  - three.js

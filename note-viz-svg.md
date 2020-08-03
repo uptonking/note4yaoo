@@ -7,6 +7,20 @@ modified: '2020-08-03T09:09:48.794Z'
 
 # note-viz-svg
 
+## guide
+
+- web-animations-js 提供了支持svg元素动画的polyfill
+  - 浏览器本身支持svg使用WAAPI实现动画
+  - 但可能只支持一部分，如Edge对svg transform支持不完善
+  - [Animating strokeWidth doesn't work in Safari](https://github.com/web-animations/web-animations-js/issues/217)
+
+## pieces
+
+- Not all svg attributes can be manipulated with CSS. Only those designated as "properties" can be changed with CSS and animated.
+- Do not try manipulate the properties of SVG elements until SVG 2.0 standard release. (working only Chrome correctly)
+- ref
+  - [SVG animate Web animate API](https://stackoverflow.com/questions/51985634/svg-animate-web-animate-api)
+
 ## svg-grammar
 
 - transform  
@@ -27,6 +41,32 @@ modified: '2020-08-03T09:09:48.794Z'
 - preserveAspectRatio  
   - 属性采用由空格分割的两个值，告诉视图框如何在视口内对齐，这个值本身由两部分组成    
   - 第二个值（如果有的话）指示如何保留宽高比，可选值meet, slice, none  
+
+## Why you should use SVG images: how to animate your SVGs and make them lightning fast
+
+- [Why you should use SVG images: how to animate your SVGs and make them lightning fast](https://www.freecodecamp.org/news/a-fresh-perspective-at-why-when-and-how-to-use-svg/)
+
+- Benefits of SVG
+  - Scalable
+  - high performance with inline svg, no HTTP request
+  - small size
+
+- How to Animate SVG
+  - SMIL, which is the native SVG animation specification
+  - Web Animations API, which is a native JavaScript API allowing you to create more complex sequential animations without loading any external scripts
+  - ​WebGL
+  - CSS animation
+
+- CSS animation is used in order to avoid overloading your service with big libraries for animating icons and loaders.
+- benefits of using the CSS approach to SVG animation:
+  - You do not need an external library.
+  - Preprocessors (like Sass or Less) allow you to create variables.
+  - You can use onAnimationEnd and some other animation hooks with native JavaScript.
+  - This approach is easy to use for responsive web design development because you can modify your animation with media queries.
+- downsides of using CSS animation are the following:
+  - You cannot produce some complex physics effects, which would make the animation more realistic.
+  - A lot of recalculation needs to be done if you adjust timing.
+  - CSS and SVG graphics on mobile sometimes require strange hacks.
 
 ## Animating SVG with CSS
 
@@ -118,3 +158,8 @@ modified: '2020-08-03T09:09:48.794Z'
 - SVG accepts and responds to CSS media queries as well. 
   - You can use media queries to change the styles of an SVG at different viewport sizes.
   - note that the viewport that the SVG responds to is the viewport of the SVG itself, not the page’s viewport, unless you are embedding the SVG inline in the document (using `<svg>` ).
+
+## ref
+
+- [Appendix H: SVG Property Index](https://www.w3.org/TR/SVG/propidx.html)
+- [Appendix D: Animating SVG Documents](https://www.w3.org/TR/SVG2/animate.html)
