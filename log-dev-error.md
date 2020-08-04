@@ -3,14 +3,14 @@ title: log-dev-error
 tags: [dev, log]
 pinned: true
 created: '2020-02-20T10:43:37.374Z'
-modified: '2020-07-14T09:22:26.651Z'
+modified: '2020-08-04T12:24:45.908Z'
 ---
 
 # log-dev-error
 
 ## logging 
 
-- eact-dom.development.js?e444:23965 Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+- react-dom.development.js?e444:23965 Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
   - element.type should be a string or class / function
   - 因为忘记导出组件了 export Component
 - 'App' refers to a value, but is being used as a type here

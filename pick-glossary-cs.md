@@ -1,11 +1,14 @@
 ---
-title: pick-glossary-dev
-tags: [glossary, pick]
+title: pick-glossary-cs
+tags: [cs, glossary, pick]
 created: '2020-07-14T11:39:11.610Z'
-modified: '2020-07-14T12:02:32.704Z'
+modified: '2020-08-04T11:47:08.669Z'
 ---
 
-# pick-glossary-dev
+# pick-glossary-cs
+
+- kitchen sink approach 厨房水槽法
+  - 包含你能想象出的所有特征，然后再检测到底哪个特征起作用
 
 - monkey patching 猴子补丁    
   - 在运行时动态修改模块、类或函数，通常是添加功能或修正缺陷。

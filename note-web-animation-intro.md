@@ -7,13 +7,13 @@ modified: '2020-08-02T13:39:06.410Z'
 
 # note-web-animation-intro
 
-##  guide
-
-- [High Performance Animations](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
-
 ## summary
 
-- 根据应用场景，选择动画实现方式
+- 根据应用场景和已有实现，选择最合适的动画实现方式
+- 动画实现的类型
+  - 基于physics，如react-spring, react-motion
+  - 基于逐帧动画和时间序列，如keyframe
+  - 基于FLIP
 - 对于普通ui切换效果，使用css transition或animation
 - 对于连续执行，或依次执行，或包含3种以上效果的动画，采用js动画
 - 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式

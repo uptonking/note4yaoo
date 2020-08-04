@@ -1,39 +1,11 @@
 ---
-title: pick-dict-glossary
-tags: [glossary, pick]
-created: '2019-09-02T04:34:22.505Z'
-modified: '2020-07-14T12:01:33.686Z'
+title: pick-dict-vs-synonym
+tags: [comparison, dict]
+created: '2020-08-04T11:47:31.668Z'
+modified: '2020-08-04T11:49:02.988Z'
 ---
 
-# pick-dict-glossary
-
-## coding
-
-- arity 参数数量，参数个数，元数
-- syntactic 按句法的，按语法的
-  - Of or relating to the rules of syntax
-- lexical 属于或关于词汇的，词法的
-  - Of or relating to the vocabulary, words, or morphemes 
-
-## cs
-
-- Pilcrow	
-  - 段落符号 ¶
-- kitchen sink approach 厨房水槽法
-  - 包含你能想象出的所有特征，然后再检测到底哪个特征起作用
-
-## pieces
-
-- 黑白滤镜
-  - Mono
-  - Tonal
-  - Noir
-- 艳丽滤镜
-  - Chrome
-
-## geo
-
-## dict
+# pick-dict-vs-synonym
 
 - solve vs resolve
   - to "solve" is to find the solution or answer to a problem based on principles of logic, mathematics, and/or factual evidence.         

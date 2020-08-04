@@ -18,22 +18,26 @@ modified: '2020-07-14T11:26:58.980Z'
 - logo: green plum
 - design-system-tokens
   - text: sans serif(衬线体多用于印刷)
-  - color: mineral-ui-color-palette, primary-mediumseagreen-like
+  - color: mineral-ui-color-palette, primary-mediumseagreen
   - bezel-less
 - interaction
   - hover-color
   - click-ripple
   - loader-flower
 - animation
-  - rotate
-  - unfold
-  - point movement
+  - flip
+  - misc
+    - rotate
+    - unfold
+    - point movement
 - shape
   - point/polygon-shape-based
   - https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817
 - 公共api
   - variant
-    -  borderless: 部分组件提供无边框的版本，如modal
+    - borderless
+      - 部分组件提供无边框的版本，如modal
+      - 也可考虑实现成dark mode的形式
 
 ## react-dev-in-action
 

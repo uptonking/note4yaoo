@@ -127,6 +127,17 @@ modified: '2020-07-17T08:53:14.923Z'
 
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
+## The One Thing Flexbox Can’t Do - Row Span
+
+- [The One Thing Flexbox Can’t Do](https://dzone.com/articles/the-one-thing-flexbox-cant-do)
+  - [codepen: 6-grid flexbox with rowspan](https://codepen.io/swizec/pen/NRqGLQ/)
+
+- The only thing harder for pure CSS than vertical centering is a three-column design with equal-height columns. A good hack was never found.
+- There’s no such thing as a flexbox row span. You’ll have to suck it up and put your things into column elements.
+- Wrap each group of elements into another div, set that div to `display: flex` , tell it to `flex-direction: column` , 
+  - and make sure one of the elements contains only two elements.
+  - Give those elements different flex weights.
+
 ## Flexbox layout isn't slow
 
  - [Flexbox layout isn't slow](https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow)

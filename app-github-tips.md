@@ -1,10 +1,11 @@
 ---
-title: site-github-tips
+title: app-github-tips
+tags: [app]
 created: '2020-07-31T11:59:56.787Z'
-modified: '2020-07-31T12:12:10.130Z'
+modified: '2020-08-04T12:24:02.650Z'
 ---
 
-# site-github-tips
+# app-github-tips
 
 - 搜索
   - 搜索一个organization的仓库，可使用 `user:orgName`

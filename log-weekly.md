@@ -9,7 +9,20 @@ modified: '2020-07-14T09:30:54.711Z'
 
 # 2020
 
+## w0831-0906
+
+## w0824-0830
+
+## w0817-0823
+
+## w0810-0816
+
+## w0803-0809
+
 ## w0727-0802
+
+- grid-tabelify
+- z-index & stacking context
 
 ## w0720-0726
 
@@ -21,10 +34,11 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0706-0712
 
-- webpack 5编译js项目时，优先使用 `src/index.js` ，而不是 `entry` 配置的入口
-- webpack hmr热替换react项目通常是顶层App，不保存状态数据的hmr类似full reload
-- webapck 5移除了node兼容模块，以减小打包size
-  - 升级依赖时注意大版本可能不兼容，如namor 2缺失各种依赖
+- webpack 5编译js项目
+  - 优先使用 `src/index.js` ，而不是 `entry` 配置的入口
+  - webpack hmr热替换react项目通常是顶层App，不保存状态数据的hmr类似full reload
+  - 5移除了node兼容模块，以减小打包size
+- 升级npm依赖时注意大版本可能不兼容，如namor 2缺失各种依赖
 - react DevTools，只高亮updates，不高亮remount
 - chrome paint flashing高亮所有paint，包含updates和remount
 
@@ -38,7 +52,7 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0615-0621
 
-- react-slider
+- react-sidebar
 
 ## w0608-0614
 
@@ -109,8 +123,8 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0902-0908
 
-- [ ] shapely-theme
-- [ ] shapely-locale 
+- shapely-theme
+- shapely-locale 
 
 ## w0826-0901
 

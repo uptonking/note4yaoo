@@ -1,11 +1,11 @@
 ---
-title: topic-cs-binary-hex
-tags: [cs]
+title: topic-format-binary-hex
+tags: [format]
 created: '2020-07-28T07:13:15.690Z'
-modified: '2020-07-28T07:13:51.587Z'
+modified: '2020-08-04T06:25:33.851Z'
 ---
 
-# topic-cs-binary-hex
+# topic-format-binary-hex
 
 - RGB colors model can be expressed through both hexadecimal (prefixed with `#` ) and functional ( `rgb()` , `rgba()` ) notations.
 - Hexadecimal notation: `#RRGGBB[AA]`

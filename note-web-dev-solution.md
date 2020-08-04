@@ -65,7 +65,12 @@ modified: '2020-07-17T08:52:12.776Z'
   - css-icon:icono, cssicon
 - animation
   - pure css animation: animate.css
-  - js animation: anime.js, react-motion, react-move, react-transition-group
+  - js animation 
+    - 封装css动画
+    - 基于flip:react-flip-toolkit
+    - 基于physics:react-motion
+    - 基于frame和timeline
+    - misc: anime.js,react-move
   - svg/canvas/webgl animation
 - drag-layout-events
   - react-dnd/draggable

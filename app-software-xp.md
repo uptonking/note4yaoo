@@ -1,6 +1,6 @@
 ---
 title: app-software-xp
-tags: [pm, software, xp]
+tags: [app, pm, software, xp]
 created: '2020-03-19T10:34:14.363Z'
 modified: '2020-07-14T10:20:33.275Z'
 ---

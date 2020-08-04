@@ -198,3 +198,28 @@ modified: '2020-07-14T10:47:26.044Z'
 - 布局的发展方向：让布局与DOM分离
   - 开发UI部分时，只需关心页面由哪些模块组成，去实现这些模块就行了，而不需要关心模块之间应该如何组合(与headless ui的区别？)
   - 在描述组合时，可以通过可视化或比较抽象的字符串描述布局的结构，并对应到写好的模块上，这样的代码维护性远高于用div描述结构的方案
+
+## Things I’ve Learned About CSS Grid Layout
+
+- [Things I’ve Learned About CSS Grid Layout_2016](https://css-tricks.com/things-ive-learned-css-grid-layout/)
+
+- Don’t use flexbox for overall page layout.
+- Flexbox is for one dimensional layout (row or column).
+- CSS grid is for two dimensional layout.
+- They can be combined as well. You can turn a grid item into a flex container. You can turn a flex item into a grid.
+- Using negative line numbers can be really helpful
+  - By using -1, you can be sure your content will always reach the end column.
+- Grid areas create implicit line names
+- When you absolutely position a grid item, rather than its positioning context being its container (i.e. the entire grid), we can position it in relation to its specified grid-column and grid-row start and end lines. 
+  - As usual, `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
+  - This makes absolute positioning useful if you want to overlap grid items without disrupting the grids auto-placement algorithm. 
+  - Auto-placement goes out of its way not to overlap items unless you explicitly declare both a grid-column-start and grid-row-start value for every item.
+- All grid items have a default order value of 0. 
+  - So `order: 1;` applied to a grid item would make after everything else, not before.
+- Things are way easier if you name your grid lines
+- The `fr` unit removes the need for math
+- Twelve columns is the default of web design. 
+  - The Bootstrap grid uses 12 columns and just about every other grid framework currently out there. 
+  - There is a good reason for this: twelve is divisible by both three and four, giving more flexibility in how we can lay out content across the page. 
+  - We can divide our content evenly into 12 parts, 6 parts, 4 parts, 3 parts, or in half.
+- While some people like the familiarity that comes with consistently using the same grid for every project, there is no need to have more columns than you actually need and you should build the grid that’s right for your content and desired layout rather than a one-size-fits all set-up.
