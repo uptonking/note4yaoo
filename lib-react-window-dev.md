@@ -20,6 +20,8 @@ modified: '2020-08-05T10:10:27.845Z'
     - There is no need in storing top offsets for each row and maintaining style cache.
 
 - My answer is going to be brief: It has to do with reflow and preserving the appearance of smooth scrolling when scrolling back up past items that have changed size since they were initially rendered.
+- 在firefox中先下滑再把浏览器窗口拉宽再上滑，可以发现问题，最下方的list item向下滑动到消失前会突然向上跳，然后再一次向下滑动到隐藏。
+  - chrome中也有此问题但不明显
 
 - [Using html table element](https://github.com/bvaughn/react-window/issues/60)
   - [react-window using tr-td](https://codesandbox.io/s/rrn61wkzwm?file=/index.js)
@@ -31,6 +33,9 @@ modified: '2020-08-05T10:10:27.845Z'
 ## Infinite lists and reflow
 
 - [Infinite lists and reflow](https://gist.github.com/bvaughn/ded0061d712a30c22b0a591cec4aa576)
+  - [infinite-list-reflow-examples](https://github.com/bvaughn/infinite-list-reflow-examples)
+  - 在firefox中先下滑再把浏览器窗口拉宽再上滑，可以发现问题，最下方的list item向下滑动到消失前会突然向上跳，然后再一次向下滑动到隐藏。
+    - chrome中也有此问题但不明显
 
 - In my experience, infinite lists use two basic layout strategies. 
   - The first uses absolute positioning to control where visible items are rendered. 
