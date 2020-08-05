@@ -9,53 +9,6 @@ modified: '2020-07-26T04:15:29.049Z'
 
 ## api
 
-- ### react-table
-  - required-props: data, columns
-  - data: 必需，类型是 array of objects
-  - style: 自定义
-  - ui实现：自定义，headless
-  - note
-    - 基于react实现，react only 
-    - 用于方便实现ui的工具: useBlock/Absolute/FlexLayout
-      - 不同布局需要的条件不一样，如BlockLayout需要指定宽度
-- ### ag-grid
-  - required-props:rowData, columnDefs, 父元素width, height
-  - data: 必需，类型是 array of objects
-  - style: ag-grid.css, ag-theme-alpine.css
-  - ui实现：div-flex
-  - note
-    - 基于js实现，可用于react/vue/angular
-- ### handsontable
-  - required-props: 都是非必需，宽高也是非必需
-  - data: 非必需，类型可以是array of arrays, array of objects, 还可以将columns值设为函数再计算处理后返回列信息
-    - 不传入data时，会显示占满父元素的空格表格
-    - 可以通过columns设置处理方式，从nested object的属性中取值
-  - style: handsontable.full.css
-  - ui实现: 基于table, tr, td和display-table-cell
-  - note
-    - 从自身向父元素查找带有width,height和 `overflow:hidden` 的元素并占满
-- ### react-virtualized
-  - required-props: cellRenderer, width, height，rowCount, rowHeight, colCount, colWidth
-    - cellRenderer is responsible for rendering a single cell, given its row and column index.
-  - data: 必需，间接通过cellRenderer传入
-  - style: styles.css, ReactVirtualized__Grid
-  - ui实现: div-position-absolute
-  - note
-    - Grid row heights and column widths must be calculated ahead of time and specified as a fixed size or returned by a getter function.
-    - `List` uses a `Grid` internally to render the rows and all props are relayed to that inner `Grid`
-    - `Table` Component is created with flexbox. 
-      - This allows it to have a fixed header and scrollable body content. 
-      - It also makes use of `Grid` for windowing table content so that large lists are rendered efficiently
-- ### react-window
-  - required-props:children, width, height, rowCount, rowHeight, colCount, colWidth
-  - data: 必需，通过react component的children传入，类型自定义
-    - 要能在children中通过rowIndex,colIndex获取
-  - style: 无内置，需要自定义
-  - ui实现: div-flexbox
-  - note
-    - VariableSizeGrid的colWidth和rowHeight值类型都是函数
-- ### react-data-grid
-
 ## usage
 
 ``` JS
