@@ -7,8 +7,10 @@ modified: '2020-08-04T11:48:55.714Z'
 
 # pick-dict-common
 
-- tetris 俄罗斯方块
+ 
 
+- notorious 声名狼藉的；臭名昭著的
+- tetris 俄罗斯方块
 - 黑白滤镜
   - Mono
   - Tonal

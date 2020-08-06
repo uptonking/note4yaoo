@@ -10,6 +10,7 @@ modified: '2020-07-09T13:24:25.794Z'
 ## not-yet
 
 - 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
+  - react-virtualized: List uses a Grid internally to render the rows
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
 ## hide dom elements: visibility vs display

@@ -7,6 +7,14 @@ modified: '2020-07-14T12:07:15.486Z'
 
 # lib-react-table-latest-roadmap
 
+## ref
+
+- [[Umbrella] v7 Stable Release ](https://github.com/tannerlinsley/react-table/issues/1964)
+  - Fix row-selection bug (#1900)
+  - Consider Col/Row-span plugin requirements (not the actual plugin) (#1342, #1933) (Non v7 release, but soon after hopefully)
+  - Ensure no infiniite rendering loops like in #1911
+  - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values (#1936)
+
 ## work-in-progress
 
 - [WIP v8 pr 2335](https://github.com/tannerlinsley/react-table/pull/2335)

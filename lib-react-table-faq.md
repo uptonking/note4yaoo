@@ -9,8 +9,6 @@ modified: '2020-07-14T09:29:34.051Z'
 
 ## faq
 
-faq
-
 - How can I manually control the table state?
   - Occasionally, you may need to override some of the table state from a parent component or from somewhere above the usage of useTable. 
   - In this case, you can turn to `useTable` 's `useControlledState` option. 

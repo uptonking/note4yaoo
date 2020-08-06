@@ -7,6 +7,218 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog-page
 
+## [Four Ways to Fetch Data in React_202007](https://www.bitnative.com/2020/07/06/four-ways-to-fetch-data-in-react/)
+
+- React is a focused component library. So it has no opinion on how to request remote data.
+- If you’re requesting and sending data to web APIs via HTTP, here are four options to consider.
+
+- ### Option 1: Inline
+- This is the simplest and most obvious option.
+- Make the HTTP call in the React component and handle the response.
+
+``` JS
+// simple
+fetch("/users").then(response => response.json());
+```
+
+- Looks simple enough. But this example overlooks loading state, error handling, declaring and setting related state, and more. 
+- In the real world, HTTP calls look more like this.
+
+``` JS
+// request
+export default function InlineDemo() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch( `${process.env.REACT_APP_API_BASE_URL}users` )
+      .then(response => {
+        if (response.ok) return response.json();
+        throw response;
+      })
+      .then(json => {
+        setUsers(json);
+      })
+      .catch(err => {
+        console.error(err);
+        setError(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return "Loading...";
+  if (error) return "Oops!";
+  return users[0].username;
+}
+```
+
+- For a simple app with a few calls, this works fine. 
+- But the state declarations and useEffect above are boilerplate. 
+- If I’m making many HTTP calls, I don’t want to duplicate and maintain around 20 lines of code for each one. Inline calls get ugly fast.
+
+- ### Option 2: Centralized folder
+- What if we handled all HTTP calls in one folder? 
+- With this approach, we create a folder called services and place functions that make HTTP calls inside there. 
+- Services is the most popular term, but plenty of other good alternative names like “client”, or “api” are discussed here.
+- Point is, all HTTP calls are handled via plain ‘ol JavaScript functions, stored in one folder. 
+- The primary benefit is it enforces consistently handling HTTP calls. 
+- Here’s the idea: When related functions are handled together, it’s easier to handle them consistently. 
+- If the `userService` folder is full of functions that make HTTP calls, it’s easy for me to assure they do so consistently. 
+- Also, if the calls are reused, they’re easy to call from this centralized location.
+- However, there’s still a lot of boilerplate at the call site.
+
+- ### Option 3 – Custom Hook
+- With the magic of React Hooks, we can finally centralize repeated logic. 
+- So how about creating a custom `useFetch` hook to streamline our HTTP calls?
+
+``` JS
+// This custom hook centralizes and streamlines handling of HTTP calls
+export default function useFetch(url, init) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const prevInit = useRef();
+  const prevUrl = useRef();
+
+  useEffect(() => {
+    // Only refetch if url or init params change.
+    if (prevUrl.current === url && prevInit.current === init) return;
+    prevUrl.current = url;
+    prevInit.current = init;
+    fetch(process.env.REACT_APP_API_BASE_URL + url, init)
+      .then(response => {
+        if (response.ok) return response.json();
+        setError(response);
+      })
+      .then(data => setData(data))
+      .catch(err => {
+        console.error(err);
+        setError(err);
+      })
+      .finally(() => setLoading(false));
+  }, [init, url]);
+
+  return { data, loading, error };
+}
+```
+
+- This single hook dramatically simplifies all call sites
+
+``` JS
+export default function HookDemo() {
+  const { data, loading, error } = useFetch("users");
+  if (loading) return "Loading...";
+  if (error) return "Oops!";
+  return data[0].username;
+}
+```
+
+- But this hook is already quite complex, and it’s omitting a variety of concerns. What about caching? What about refetching if the client’s connection is unreliable? Would you like to refetch fresh data when the user refocuses the tab? What about eliminating duplicate queries?
+
+- ### react-query/swr
+- With react-query or swr, caching, retry, refetch on focus, duplicated queries, and much more are handled for me. 
+- I don’t have to maintain a custom hook. 
+- And each HTTP call requires little code:
+
+``` JS
+import React from "react";
+import { getUsers } from "./services/userService";
+import { useQuery } from "react-query";
+
+export default function ReactQueryDemo() {
+  const { data, isLoading, error } = useQuery("users", getUsers);
+  if (isLoading) return "Loading...";
+  if (error) return "Oops!";
+  return data[0].username;
+}
+```
+
+- ref
+  - I am really enjoying using redux middleware to handle fetching data and dumping it into the store. E.g. Redux Saga, Redux observable.
+    - However, for multiple requests actions dispatched I am using redux-api-middleware.
+    - It doesn’t handle the storing into state but it does a great job of allowing all your http requests to be defined in one place including the option to pass state into either the headers or the url for example.
+  - [React-query and swr, ask a bunch of questions](https://twitter.com/housecor/status/1265103048365441024)
+    1. Should I cache data on the client for a certain period?
+    2. Should I load fresh data when the tab is refocused, or the network reconnects?
+    3. Should I retry failed HTTP calls?
+    4. Should I return cached data, then fetch fresh data behind the scenes?
+    5. Should I handle server cache separately from app state?
+    6. Should I avoid refetching recently fetched data?
+    7. Should I prefetch data the user is likely to want?
+
+## [Fetching Data in React using React Async](https://css-tricks.com/fetching-data-in-react-using-react-async/)
+
+  - [Using data in React with the Fetch API and axios](https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/)
+
+## [Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a)
+
+## [Patterns for data fetching in React](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
+
+- Data fetching strategies in React
+  - Server-provided data
+  - Components fetch their own data
+  - HOCs fetch data and propagate to children
+  - Generic fetcher component
+- Ensure components render in production
+  - Fetching data with React Hooks
+  - Suspenseful data fetching
+  - Hybrid approaches
+- Data fetching tactics
+  - Using the Fetch API
+  - Using Axios
+  - Utilizing async/await
+  - REST vs. GraphQL back end
+- Conclusion
+
+## [How to fetch data with React Hooks?_201903](https://www.robinwieruch.de/react-hooks-fetch-data)
+
+- In this tutorial, I want to show you how to fetch data in React with Hooks by using the state and effect hooks. 
+- Data Fetching with React Hooks
+- How to trigger a hook programmatically / manually?
+- Loading Indicator with React Hooks
+- Error Handling with React Hooks
+- Fetching Data with Forms and React
+- Custom Data Fetching Hook
+- Reducer Hook for Data Fetching
+- Abort Data Fetching in Effect Hook
+
+## [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
+
+- The article gives you a walkthrough on how to fetch data in React. 
+- There is no external state management solution, such as Redux or MobX, involved to store your fetched data. 
+- Instead you will use React's local state management.
+- ### Where to fetch in React's component tree?
+- ### How to fetch data in React?
+- ### What about loading spinner and error handling?
+- ### How to fetch data with Axios in React
+- ### How to test data fetching in React?
+- ### How to fetch data with Async/Await in React?
+- ### How to fetch data in Higher-Order Components?
+- ### How to fetch data in Render Props?
+- ### How to fetch data from a GraphQL API in React?
+
+- ref
+  - [Example: Using AJAX results to set local state](https://reactjs.org/docs/faq-ajax.html)
+
+## [React-cache, time slicing, and fetching with a synchronous API_201901](https://www.freecodecamp.org/news/react-cache-time-slicing-and-fetching-with-a-synchronous-api-2a57dc9c2e6d/)
+
+- This article doesn’t aim at describing how to use some of the new features but rather at proving how they may have been built. Just for the sake of understanding what we are playing with.
+- This kind of modification has allowed React to split into three phases with their own advantages and particularities:
+  - The render phase is pure and deterministic. 
+    - It has no side effects and the different functions that it’s composed of can be called multiple times. 
+    - The render phase is interruptible — it’s not the render function that is in pause mode, but the whole phase
+  - The pre-commit phrase aims to provide access to the actual DOM state, 
+    - like the scrollbar positions, in read mode.
+  - The commit phase actually modifies the DOM and is not interruptible. 
+    - React can’t pause during that phase.
+- This set of three phases has introduced the Time Slicing capabilities. 
+- React is able to pause during the render phase, in between two component function calls, and to resume that phase when necessary.
+
+## [Update on Async Rendering_20180327](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+
 ## [React Hooks 你真的用对了吗？](https://zhuanlan.zhihu.com/p/85969406)
 
 - ### 问题一：我该使用单个 state 变量还是多个 state 变量？

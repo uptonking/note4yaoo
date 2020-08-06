@@ -9,3 +9,10 @@ modified: '2020-07-14T11:01:39.363Z'
 
 - https://github.com/public-apis/public-apis
 
+- the widely known Hacker News API 
+  - https://hn.algolia.com/api
+  - This API is built on top of Algolia Search's API. 
+  - It enables developers to access HN data programmatically using a REST API. 
+  - This documentation describes how to request data from the API and how to interpret the response.
+
+

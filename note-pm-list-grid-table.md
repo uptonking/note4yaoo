@@ -10,8 +10,11 @@ modified: '2020-07-26T04:15:18.011Z'
 ## summary
 
 - data-grid实现的难点
+  - col span  
+    - 实现起来较容易，参考cellRangeRenderer
   - row span  
-    - 采用z-index，合并后的对齐需要计算
+    - 难以实现
+    - 采用z-index，合并单元格后的内容对齐方式需要计算
     - 实现 `flex-direction:column` 不合适，难以同时实现row span和col span
     - ui结构采用分组，每次合并单元格需要动态修改的元素过多
   - 滚动

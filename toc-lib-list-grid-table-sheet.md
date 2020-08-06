@@ -34,15 +34,16 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
   - since 7.0 free for all non-commercial purposes
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
+  - 基于table tag实现
+- react-virtual /MIT/1.1kStar/202007
+  - https://github.com/tannerlinsley/react-virtual
+  - https://codesandbox.io/s/github/tannerlinsley/react-virtual/tree/master/examples/dynamic
+  - Hooks for virtualizing scrollable elements in React
 - react-virtualized /MIT/19.5kStar/202006
   - https://github.com/bvaughn/react-virtualized
   - http://www.reactvirtualized.com/
   - https://github.com/bvaughn/react-virtualized/blob/master/docs/Grid.md
   - React components for efficiently rendering large lists and tabular data
-- react-virtual /MIT/1.1kStar/202007
-  - https://github.com/tannerlinsley/react-virtual
-  - https://codesandbox.io/s/github/tannerlinsley/react-virtual/tree/master/examples/dynamic
-  - Hooks for virtualizing scrollable elements in React
 - react-window /MIT/8.5kStar/202001
   - https://github.com/bvaughn/react-window
   - https://react-window.now.sh/
@@ -176,6 +177,10 @@ modified: '2020-07-13T02:41:12.041Z'
   - A lightweight, extendable, dependency-free javascript HTML table plugin. 
   - Similar to jQuery DataTables, but without the jQuery dependency.
   - https://github.com/Mobius1/Vanilla-DataTables /NotMaintained/MIT
+- DataTables /MIT/6.6kStar/202005
+  - https://github.com/DataTables/DataTables
+  - http://www.datatables.net/
+  - atable enhancing plug-in for jQuery
 - react-smart-data-table /MIT/46Star/202006
   - https://github.com/joaocarmo/react-smart-data-table
   - https://joaocarmo.com/react-smart-data-table/examples/bootstrap/

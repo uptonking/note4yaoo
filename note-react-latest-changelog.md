@@ -62,7 +62,7 @@ modified: '2020-07-14T11:54:44.711Z'
   - React.forwardRef()：let components forward their refs to a child. 用于高阶组件传递ref，使包裹的无状态组件可以接收ref作为第二个参数，并且可以传递下去
   - Add a new getDerivedStateFromProps() lifecycle
   - Add a new getSnapshotBeforeUpdate() lifecycle.
-  - Add a new <React. StrictMode> wrapper to help prepare apps for async rendering. 
+  - Add a new `<React.StrictMode>` wrapper to help prepare apps for async rendering. 
   - StrictMode：用于在开发环境下提醒组件内使用不推荐写法和即将废弃的API，不会被渲染成真实DOM
   - Add support for onLoad and onError events on the `<link>` tag. 
   - Prevent an infinite loop when attempting to render portals with SSR.
