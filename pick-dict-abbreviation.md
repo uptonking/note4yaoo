@@ -7,7 +7,11 @@ modified: '2020-08-06T05:29:22.922Z'
 
 # pick-dict-abbreviation
 
-- TL; DR
+- TBH
+  - to be honest 老实说
+- BTW
+  - by the way 顺带一提 
+- TLDR
   - too long; don't read
 - WIP
   - work in progress
@@ -39,3 +43,9 @@ modified: '2020-08-06T05:29:22.922Z'
 - F. Y. I
   - For Your Imformation
   - 提供讯息给你，供你方参考，在和领导，长辈，老师沟通的时候最好不要用这个缩写
+- ttyl：talk to you later 晚点聊、稍后说
+- idk：I don’t know 我不知道
+- plz：please 拜托
+- thx：thanks 谢谢
+- tmr：tomorrow 明天
+- ppl：people 人们、大家

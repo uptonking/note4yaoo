@@ -9,6 +9,70 @@ modified: '2020-07-14T10:51:06.252Z'
 
 ## pieces
 
+- survey for state management
+  - [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
+  - [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
+    - react
+    - redux
+    - mobx
+    - other
+
+- state management
+  1. Context + useState
+  2. Context + useReducer
+  3. DispatchContext + StateContext + useReducer
+  4. Multiple Providers of #3 for state "slices"
+  - They are stages of state management complexity from simple to complex. Performance potentially increases as you go to higher stages
+  - At any stage: Profile for slow renders, then useMemo
+  - With those 4 stages and useMemo, I believe you can solve 99% of perf challenges.
+
+- if you're working with an outside REST API, and not GraphQL, what are you using for state these days? Still Redux? Big state object at the top level that you access with context? Something else?
+  - TBH I don't really build apps in the last few years (unless you count DevTools)
+  - For DevTools, I just used React's built-in state (useState) and shared via context when needed.
+  - We're in the process of replacing Redux with React Context API
+  - Global state:
+    - I'd go with context, if redux wasn't already present or needed in the app.
+    - If I need to permanently cache a few pieces of global state (e.g. theme), I may do so manually. 
+    - If I need to cache many pieces (offline app), I'd go with redux + redux-persist.
+  - Local state:
+    - If I need in-memory caching + suspense support I'd go with SWR or React Query.
+  - Background work:
+    - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
+  - https://twitter.com/cwbuecheler/status/1253711795459588097
+
+- ### [React state management in 2020](https://twitter.com/chrisachard/status/1272963243225632768)
+- React includes: local state (which nearly every app uses at some point) and Context
+- Props and State
+  - Pros: super simple; built in; nothing extra to learn
+  - Cons: "Prop Drilling" can lead to really complex data passing
+- Context
+  - Pros: built into react, simple interface, "just works"
+  - Cons: over re-rendering can lead to slow performance
+- redux
+  - Pros: Doesn't unnecessarily re-render (as long as you keep things shallow equal)
+  - Cons: Can have a huge learning curve.
+- mobx
+  - Pros: It isn't redux 🤣 (easy to learn); 2 way binding if nice if you like it
+  - Cons: observables aren't actually plain JS objects so have some quirks
+- React Apollo
+  - Pros: Automatically shares state pulled from GraphQL endpoints
+  - Cons: Only works with GraphQL Smiling face with open mouth and smiling eyes
+- Recoil
+  - Pros: Doesn't unnecessarily re-render, can create variable number of stores, simple.
+  - Cons: Brand new! Looks promising, but who knows
+- So what should you use?
+  1. Props and state at first
+  2. Context to share simple things
+  3. Then Redux if you like it
+  4. MobX if you don't like Redux
+  5. Or Apollo if you're using GraphQL
+  6. Recoil if you know that you need it and are willing to bet on an unfinished library
+- react-query or swr replace the biggest need for Redux or MobX: server cache. 
+  - Context is great for what’s left.
+
+- [I'm kind of surprised it's 2020 and nobody tried using SQL for frontend state management](https://twitter.com/lmatteis/status/1258503426817785857)
+  - I mean, indexedDB is pretty much SQL on local storage.  
+
 - To clarify slightly: I didn't say I "advise against it". I was saying that _if_ the majority of your app is just fetching server state, _and_ you are already using a purpose-built "server fetching/caching" tool, then you probably don't _need_ Redux.
   - Using Redux to cache server-side data is a valid use case.  
   - It's just that Redux isn't a *purpose-built* server cache - you end up writing your own logic to do so.
@@ -27,7 +91,6 @@ modified: '2020-07-14T10:51:06.252Z'
   - What About Frontend State
     - When the data fetching/caching part of your app is taken care of, there is very little global state for you to handle on the frontend. 
     - What little amount is left can be handled using Context or useContext + useReducer to make your own pseudo-Redux.
-
 
 - ### [survey: What is your go-to for consuming server-state in your React apps?](https://twitter.com/tannerlinsley/status/1283112469574021120)
   1. ReactQuery / SWR / Apollo
@@ -54,7 +117,6 @@ modified: '2020-07-14T10:51:06.252Z'
     - Use the hook directly or hide it behind something else. Either works.
     - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
   - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
-
 
 - I personally even think `context` is not a primary building block if we go with `useMutableSource` . 
   - My proposal in reactive-react-redux (not react-redux) is not to use context at all

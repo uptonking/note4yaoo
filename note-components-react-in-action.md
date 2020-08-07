@@ -10,8 +10,11 @@ modified: '2020-07-14T11:26:58.980Z'
 
 ## latest
 
-- 组件开发方向
+- 组件库研发方向及特色
   - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
+    - 开发者用户用起来framework-agnostic，但作者很可能要维护多个port或bridge
+  - headless ui
+    - 只适合简单组件，复杂组件如table实现功能时很可能与layout相关
 
 ## back-garden-ui-in-action
 

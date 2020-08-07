@@ -26,6 +26,7 @@ modified: '2020-08-01T07:18:35.351Z'
 - 广告字符通过动画形成名称文字的动画
   - 类似不完美的她
 - 一个文字或形状，通过动画渐变成另一个
+  - [矩形变宽动画](https://codepen.io/team/keyframers/pen/MWaoyNQ)
 
 ## static
 

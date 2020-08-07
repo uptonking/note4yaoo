@@ -11,6 +11,119 @@ modified: '2020-08-06T10:24:25.589Z'
 
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.
+
+- survey: how to fetch data
+  - [What do you use to fetch data in your web app?](https://twitter.com/kentcdodds/status/1243657342278758401)
+    - fetch/axios/other
+
+- about GraphQL
+  - A lot of apps are not as graph-like as we imagine
+  - Deep querying/transport is handy, but not worth the savings unless you have massive amounts of relationships or truly need deeply relational querying clientside.
+  - If that's the case, and waterfall-querying/transport-size becomes a problem, you can easily add relationships and field-masking to a REST api (eg. JSON schema, pre-GQL api, custom) or finally implement GQL (I wager this would never happen for a lot of apps)
+  - The benefits of GraphQL are often thought of as native to GQL itself, but most of the benefit felt comes from libraries like Apollo and Relay. I'm more of a believer in these libs (and their architecture) than I am in GQL.
+  - Subscriptions in GQL seem to be pretty wild-west still, and fall on the user (or a lib) to implement however they want. Some libs implement them very well, some don't. They also raised questions in me about what exactly subscriptions should be transporting (queries vs events)
+  - This is what initially inspired me to build React Query. I loved these tools, but ultimately we didn't go with GQL. I found that the great experience I associated with Apollo and missed had more to do with its opinions and architecture than GQL.
+  - https://twitter.com/tannerlinsley/status/1211749083863384064
+
+- move to react-query
+  1. Stop trying to cache your #react server state in {globalStateLibrary}.
+  2. Move it all to React Query
+  3. Realize your "global state" is now TINY.
+  4. Stop using {overPrescribedGlobalStateLibrary} for that TINY state and just use useState/Reducer/Machine + Context.
+- Stop using “global state” tools for Server State! 
+  - Queries
+  - Prefetching 
+  - Caching
+  - Optimistic Mutations
+  - Background Fetching
+  - Paginated/Infinite Queries
+
+- So how does react-query solve the issue of global state?
+  - It solves it by making you /not need one at all/. 
+  - Rather than keep the data in some "store", which is a representation of data from the server anyway...
+  - Just keep a cache of the query's response.
+
+- I saw a PR of yours explaining how you're not planning support websockets in RQ.
+  - Well, it's not about "support". 
+  - It's about integration, which is already there. 
+  - You can set up sockets however you'd like (I use pusher, usually), then send events to users to "invalidate" queries on the front-end. 
+  - This cuts down on message size and also let's the client be smart
+  - Bottom line is that if data is async, I'm storing it in React Query. 
+  - My recommendation for CRUD like apps that use sockets is to not transfer objects in the payload, only events. If you have a truly real-time app like chat/game, totally different.
+  - So for an app that needs real-time data, I guess the solution could be a custom hook that handles websocket events and invalidates RQ to store the most updated data in cache
+
+- Looking at @tannerlinsley's react-query, it seems nice and useful as well as @zeithq's swr. But, they are both Hooks-oriented. 
+  - My journey is to find and create a new Suspense-first API. 
+  - react-suspense-fetch is a primitive library and react-suspense-router is built with it.
+  - Could there be a non-router based API? How does it look like? That's my recent question.
+  - Also, although react-suspense-router is for Render-as-You-Fetch, initial data fetching is Fetch-on-Render. Can it be Fetch-Then-Render? I 
+  - Data fetching hooks and suspense oriented apis are definitely not mutually exclusive. Id say they are more related and synergistic than anything. The only missing piece is performing rollled-up prefetching automatically based on route which you’ll def see in the coming months.
+  - react-suspense-fetch: 
+    - it's still a fetch-as-you-render paradigm, it all just comes down to the mechanisms for discovering the data a route needs. 
+    - In this case, you use a separate route.data import which is cool.
+    - However, it's still highly opinionated and relies on an up-front routing config being declared and knowable before rendering into a routes component. I can't think of any other ways to do this yet though, so we'll see what happens there.
+    - Thanks for the comment! Yeah, this router-base approach requires route config defined in advance. That's something I'd like to tackle. No idea yet. It won't look like ordinary hook based APIs. Not even sure if such APIs are acceptable to developers. Hope to come up with something
+    - https://twitter.com/dai_shi/status/1234815419208200194
+
+- React Query Research question. If you have a `useQuery` instance rendered on the page, and you render another identical `useQuery` instance on the page, would you expect the second instance mounting to trigger a backround refetch? Or just subscribe?
+  - https://twitter.com/tannerlinsley/status/1232703154854256640
+
+- Is the approach of React Query to forgo(放弃) a global state and instead have local states for each component and its children?
+  - Not quite. React Query has its own global state internally that is built specifically for handling async resources and handling their caching/defining/invalidation/refetching lifecycles. You use it in your components much like you would local state, but much better for async data
+  - I also want to investigate if useMutableSource could make things better for react-query as well.
+  - It would probably improve some performance. Right now it just uses a pub sub setstate pattern.
+
+- Lots of what we call "Application State" is actually just a client-side cache of server state. 
+  - And just with any cache, invalidation is a hard problem.
+  - Interestingly, I don't think many apps really consider this, but it's pretty important.
+  - For example, when a user updates some data, most apps I've seen (and built) will make a request to make the update, and when it's successful, they update the state (client-side cache) as well. Sometimes the order is switched in optimistic UIs.
+  - In either case, how do you know that the rest of the data you have in your cache is still current? 
+  - Maybe another user changed data in another entity (or even a different property of the same entity).
+  - In your app, if the application state on the server got updated, how long would it take for the client to have those changes reflected in the UI?
+  - (Let's exclude your app's chat feature for this. I'm asking about regular resources here.)
+    - on browser refresh
+    - on navigation
+    - on polling interval
+    - other
+  - This is why I'm increasingly interested in simpler libraries like react-query which simply invalidate entire queries and rerequest everything on mutations (and even when the user refocuses the app) rather than libraries like Apollo which try to stitch together state changes.
+  - It's all trade-offs (consistency/correctness vs resource management). 
+  - But I think more apps could be made simpler and provide a better user experience by favoring correctness.
+  - https://twitter.com/kentcdodds/status/1228727040238473216
+
+- All apps have two types of state: UI State and Server Cache. 
+  - Put all your server cache in react-query 
+  - and the rest of your state is pretty simply managed within React state/context.
+
+- Do you have any guidance on how to integrate with websockets for realtime updates? 
+  - If you are pushing the entire payload, you can use the `queryCache.setQueryData` to update the entity anywhere it is used in your cache. 
+  - If you are pushing notifications (my recommended approach), you use those to trigger refetches for queries that use the entity.
+  - IMO unless you are 100% sure that the client needs an asset immediately, then pushing an entire payload to the browser produces a lot of waste. 
+  - With a notification and refetch, you ensure that only queries that are in use (or at least recently used) get updated.
+
+- If I throw a new error in the root of the query function, it will get stuck on "status: loading".
+  - If I return the error, the status will be "success", and the error object will become the data.
+  - Right, because:
+  - 1 - By default, react-query will retry a query by default 3 times before actually failing and going into the status === 'error' state.
+  - 2. - When you catch an error, the outer function is no longer in a throwing state. A return === success. You should rethrow
+
+- How does it replace redux state management?
+  - It replaces the management of *server state/cache*. 
+  - So if you are like a majority of app developers, a vast majority of your "global state" is server cache. 
+  - Once you put that into React Query, what you're left with is usually a tiny bit of app state that you can manage via React
+
+ 
+
+- RQ handles your server state and what’s left is usually a small bit of auth and actual UI state, both of which require nothing more than useState/Reducer + context. 
+  - There are use cases for Recoil and Redux, but they are the exception, not the norm like everyone’s been taught.
+
+- If you have a slow render, memoize the computation inside of that component.
+  - If you still have issues, then split your state/dispatch, then split contexts. 
+  - You can go soooo far with just React. 
+  - There are so very few (real) cases where I would ever suggest using Recoil or Redux.
+  - Even without memoization, this is still fast as long as your renders are fast. 
+  - I can rerender every component in a react chart instance with a single context at near 60 FPS. 
+  - Unnecessary renders are only a problem if you’re writing slow components or rendering 10000’s at once.
+
 - I feel like I need to clarify something that seems to be going around.
   - SWR did not inspire React Query. 
   - RQ was born long before SWR was publicly release or known of.
@@ -128,8 +241,6 @@ const stringAddedNum = upperCase(toString(addedNum));
 
   - Clarity > conciseness (plus this minifies well enough)
   - Also, I don't hate the builder pattern/fluent interfaces completely, I just think they're sometimes overused when more idiomatic alternatives can be used.
-  - 
-
 
 - ### [survey: Where does a majority of your app state truly live? Where is its source of truth? ](https://twitter.com/tannerlinsley/status/1282810546270597121)
   - in memory
