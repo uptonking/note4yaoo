@@ -10,11 +10,6 @@ modified: '2020-07-30T13:52:49.242Z'
 
  
 
-- survey: css in js
-- table component/app builder
-  - export html/gist
-  - export png
-
 ------  
 
 - 知乎禁止转载的回答测试

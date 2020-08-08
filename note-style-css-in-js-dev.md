@@ -9,6 +9,11 @@ modified: '2020-08-07T16:16:25.034Z'
 
 ## guide
 
+- survey: why use css in js
+  - 维护方便
+  - all-in-js的趋势
+  - 标准化theme的趋势
+
 - I feel like we’re moving out of the CSS-in-JS era into something new. We’re moving more towards:
   - Static extraction
   - Zero-runtime
