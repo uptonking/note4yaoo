@@ -18,6 +18,28 @@ modified: '2020-08-07T16:16:25.034Z'
 
 ## pieces 
 
+- The more I look at projects like tailwindcss and tachyons_css, the more I realise CSS-in-JS misses the boat(错失良机) on solving the important problems with large-scale CSS:
+  - No specificity issues
+  - No bloat(膨胀，过多)
+  - No naming wars
+  - No opinionated component-based architecture
+
+- Wholeheartedly agree, BEM + ITCSS all the way as opposed to(相对于，而不是) sprinkling(撒在，使用少量) utility classes on top of everything. 
+  - Tailwind creates a many to many maintenance problem that just makes large codebases unmaintainable. 
+    - if you apply 4-7 CSS classes to style something out of let's say 100 available classes to 1000-10 000 lines of HTML, there are too many variations. If you ever want to get rid of a class it's going to be difficult, as the combinations are practically infinite.
+    - Whereas if you scope CSS to a namespaced selector e.g. `.c-my-component-name` you will be able to see all instances of this component in use when you globally search your project and you have a clear route to refactoring
+    - So... give it a few years and lots of team will be stuck loading Tailwind's 350kb forever because they just can't get it out of their codebase.
+  - I imagine it’s popular because of CSS-in-JS.
+
+- css in js style
+  - Old way: Include this css import to get styles.
+  - New way: Styles automagically added when you use the component.
+  - Old way:
+    - you control all your styles
+  - New way:
+    - those fucking styles appearing by themselves, your application contains at least 3 css-in-js libraries, some of them duplicated, your app looses half of styles during SSR, 
+    - and you are looking at some AstroTurf, which ends as css.
+
 - With our css-in-js lib(radix) and components, we have core layers and then framework-specific layers. 
   - We can build Svelte or Vue wrappers, so we're not necessarily tied to any particular framework.
   - The design tool just maps styles to components.

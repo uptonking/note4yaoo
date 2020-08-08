@@ -1,9 +1,9 @@
 ---
 title: docs-styled-components
-tags: [docs, style, web]
+tags: [docs, style, styled-components, web]
 favorited: true
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-07-18T09:33:26.923Z'
+modified: '2020-08-08T08:07:29.139Z'
 ---
 
 # docs-styled-components

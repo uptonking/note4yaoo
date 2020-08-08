@@ -60,3 +60,62 @@ modified: '2020-08-07T17:50:44.516Z'
   - With CSS-in-JS, we are imposing a performance cost when embedding styles in our code. 
   - By extracting the values during build-time we can have the best of both worlds. 
   - We benefit from co-locating our styles with our markup and the ability to use existing JavaScript infrastructure, while also being able to generate optimal stylesheets.
+
+## Facebook's CSS-in-JS Approach - stylex
+
+- [Facebook's CSS-in-JS Approach - Frank Yan at React Conf 2019](https://www.infoq.com/news/2020/04/facebook-cssinjs-react-conf-2019/)
+
+``` typescript
+const styles = stylex.create({
+  blue: {color: 'blue'},
+  red: {color: 'red'}
+});
+
+function MyComponent(props) {
+  return (
+    <span className={styles('blue', 'red')}>
+      I'm blue
+    </span>
+  )
+}
+```
+
+## Why use css in js
+
+- ### [Write CSS in JavaScript_mxstbr_201902](https://mxstbr.com/thoughts/css-in-js)
+
+- What Does CSS-in-JS Look Like?
+
+``` typescript
+import styled from "styled-components";
+
+const Title = styled.h1`
+  color: palevioletred;
+  font-size: 18px;
+`;
+
+const App = () => <Title>Hello World!</Title>;
+```
+
+- Why I like CSS-in-JS
+- **Confidence from scoped styles**
+  - Add, change and delete CSS without any unexpected consequences and avoid dead code.
+  - Primarily, CSS-in-JS boosts my confidence. 
+  - I can add, change and delete CSS without any unexpected consequences. 
+  - My changes to the styling of a component will not affect anything else. 
+  - If I delete a component, I delete its CSS too. 
+  - No more append-only stylesheets!
+- **Painless Maintenance**
+  - Never go on a hunt for CSS affecting your components ever again.
+- **Enhanced Teamwork**
+  - Avoid common CSS frustrations to keep a neat codebase and moving quickly, regardless of experience levels.
+  - With CSS-in-JS, we automatically sidestep common CSS frustrations such as class name collisions and specificity wars. 
+- **Fast Performance**
+  - Send only the critical CSS to the user for a rapid first paint.
+  - CSS-in-JS libraries keep track of the components I use on a page and only inject their styles into the DOM. While my .js bundles are slightly heavier, my users download the smallest possible CSS payload and avoid extra network requests for .css files.
+  - This leads to a marginally slower time to interactive, but a much quicker first meaningful paint
+- **Dynamic Styling**
+  - I can also easily adjust the styles of my components based on different states or a global theme. 
+  - The component will apply the correct styles automatically when I dynamically change that context.
+- CSS-in-JS still offers **all the important features of CSS preprocessors**. 
+  - All libraries support auto-prefixing, and JavaScript offers most other features like mixins (functions) and variables natively.
