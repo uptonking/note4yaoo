@@ -38,3 +38,7 @@ modified: '2020-08-02T07:25:15.320Z'
   - https://snorkel.logv.org/
   - a realtime exploratory data analysis tool that is complementary to your monitoring software
   - built with flask, bootstrap, nvd3
+- insights
+  - https://github.com/mariusandra/insights
+  - Open Source Self-Hosted Business Intelligence Platform
+  - a tool to visually explore a PostgreSQL database, with an emphasis on generating graphs that show business performance over time.

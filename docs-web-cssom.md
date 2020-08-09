@@ -45,4 +45,3 @@ modified: '2020-08-08T17:06:31.817Z'
     3. When the js object changed, cssobj will diff CSSOM rules (add/delete/change) accordingly.
 - https://github.com/cssobj/cssobj-converter
   - Convert from normal css/LESS/SASS/SCSS to cssobj
-

@@ -9,14 +9,6 @@ modified: '2020-07-14T10:51:06.252Z'
 
 ## pieces
 
-- survey for state management
-  - [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
-  - [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
-    - react
-    - redux
-    - mobx
-    - other
-
 - state management
   1. Context + useState
   2. Context + useReducer
@@ -91,32 +83,6 @@ modified: '2020-07-14T10:51:06.252Z'
   - What About Frontend State
     - When the data fetching/caching part of your app is taken care of, there is very little global state for you to handle on the frontend. 
     - What little amount is left can be handled using Context or useContext + useReducer to make your own pseudo-Redux.
-
-- ### [survey: What is your go-to for consuming server-state in your React apps?](https://twitter.com/tannerlinsley/status/1283112469574021120)
-  1. ReactQuery / SWR / Apollo
-  2. Redux / Mobx / other "global state" manager
-  3. useState/Reducer + context / roll it myself
-  - Answered #3. 
-    - Reason being is that our server state isn't at a complexity where it would heavily benefit from an Apollo or Redux and it's easier for other engineers to understand if we all just stuck with vanilla React.
-  - Pick #3 for global stuff, like a user or a cart (in e commerce), 
-    - because I havent figured out how #1 does with a context global state. 
-    - Full ignorance on my side, but local component state, i have used swr when it needs to fetch data
-  - I've tried them all. 
-    - I think they all can have a place. Redux worked really well in the pre-hook era. 
-    - If you want to tightly control your actions, use all sorts of middleware, observables, it's the thing to use.
-    - There was an era where I was using context too as I saw it as "native redux." 
-    - It was nice to use as much boilerplate as I wanted, but really that was still too much boilerplate. 
-    - There were examples of when I had to have useCallback or complicated reducer patterns.
-    - Finally, I worked with/made with GraphQL APIs for about a year. 
-    - I loved Apollo. Really gave me it all. 
-    - Originally had it with behind context, ended up just using Apollo. 
-    - Now I'm consuming more RESTful APIs and wanted something with similar benefits. Went with react-query.
-    - I really think react-query and SWR are often the best choice for folks. 
-    - They're SIMPLE solutions to manage state globally and at a component level. 
-    - There can be as much boilerplate as you want too. 
-    - Use the hook directly or hide it behind something else. Either works.
-    - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
-  - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
 
 - I personally even think `context` is not a primary building block if we go with `useMutableSource` . 
   - My proposal in reactive-react-redux (not react-redux) is not to use context at all
@@ -352,6 +318,40 @@ function StateProvider({ children }) {
 
   - Option x1: use an unofficial workaround.
     - useContextSelector proposal and use-context-selector library in userland.
+
+## survey: state management
+
+- [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
+- [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
+  - react
+  - redux
+  - mobx
+  - other
+- ### [survey: What is your go-to for consuming server-state in your React apps?](https://twitter.com/tannerlinsley/status/1283112469574021120)
+  1. ReactQuery / SWR / Apollo
+  2. Redux / Mobx / other "global state" manager
+  3. useState/Reducer + context / roll it myself
+  - Answered #3. 
+    - Reason being is that our server state isn't at a complexity where it would heavily benefit from an Apollo or Redux and it's easier for other engineers to understand if we all just stuck with vanilla React.
+  - Pick #3 for global stuff, like a user or a cart (in e commerce), 
+    - because I havent figured out how #1 does with a context global state. 
+    - Full ignorance on my side, but local component state, i have used swr when it needs to fetch data
+  - I've tried them all. 
+    - I think they all can have a place. Redux worked really well in the pre-hook era. 
+    - If you want to tightly control your actions, use all sorts of middleware, observables, it's the thing to use.
+    - There was an era where I was using context too as I saw it as "native redux." 
+    - It was nice to use as much boilerplate as I wanted, but really that was still too much boilerplate. 
+    - There were examples of when I had to have useCallback or complicated reducer patterns.
+    - Finally, I worked with/made with GraphQL APIs for about a year. 
+    - I loved Apollo. Really gave me it all. 
+    - Originally had it with behind context, ended up just using Apollo. 
+    - Now I'm consuming more RESTful APIs and wanted something with similar benefits. Went with react-query.
+    - I really think react-query and SWR are often the best choice for folks. 
+    - They're SIMPLE solutions to manage state globally and at a component level. 
+    - There can be as much boilerplate as you want too. 
+    - Use the hook directly or hide it behind something else. Either works.
+    - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
+  - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
 
 ## context vs redux
 

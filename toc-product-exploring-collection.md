@@ -11,10 +11,6 @@ modified: '2020-07-14T11:08:53.356Z'
 
 ## explore
 
-- excalidraw  /MIT/6000Star/202005
-  - https://github.com/excalidraw/excalidraw
-  - https://excalidraw.com/
-  - Virtual whiteboard for sketching hand-drawn like diagrams
 - utterances  /MIT/2400Star/202005
   - https://github.com/utterance/utterances
   - https://utteranc.es/

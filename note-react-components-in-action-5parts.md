@@ -2,14 +2,14 @@
 title: note-react-components-in-action-5parts
 tags: [copied, optimization, react]
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-07-14T11:58:20.058Z'
+modified: '2020-08-09T08:45:04.824Z'
 ---
 
 # note-react-components-in-action-5parts
 
 ## guide
 
-- [React组件设计实践总结 by 荒山](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
+- [React组件设计实践总结_荒山_2019](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
 - [浅谈React性能优化的方向](https://juejin.im/post/5d045350f265da1b695d5bf2)
 - https://jxnblk.com/blog/defining-component-apis-in-react/
 

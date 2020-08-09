@@ -73,3 +73,25 @@ const ExtendedBox = styled(Box)(
 - It isn't super tricky to change from direct imports to using the convenience methods, but if your app grows large that will be a very annoying task to update (which can probably be automated via a codemod). 
 - So you could live 'fast and loose' and go with direct imports to start, but, its not much work to import the functions and use them in place, so its probably worth going that route to start with, even if your theme is static.
 - tldr: use the convenience methods as 'best practise' and make it a habit.
+
+- ### [Improve performances before styled-system v5](https://github.com/styled-system/styled-system/pull/470)
+  - [pr: mprove performances](https://github.com/styled-system/styled-system/pull/479)
+    - not merged
+
+- ### [possible to use styled-system with zero-runtime CSS in JS libraries?](https://github.com/styled-system/styled-system/issues/510)
+  - help wanted
+
+## linaria
+
+- ### [linaria: Styled System support](https://github.com/callstack/linaria/issues/465)
+  - Supporting this in linaria would be tricky.
+    - It would end up with support for runtime assigned styles since we cannot statically generate the output for each possible value of props.
+  - I think something effectively similar to styled-system could be built on linaria, 
+    - but styled-system (whether using styled-components or emotion) depends on passing the `theme` via React Context, so that the style-prop functions have access to it. 
+    - To do this in linaria would require fundamentally retooling the way the style-prop functions are generated AFAIK
+  - , the theme system would require context like you said, but supporting the responsive props themeless seems theoretically possible no?
+
+- ### [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409k)
+  - Is it possible to do something like the following?
+  - `${props => props.dark && ({ color: 'black', })}`
+  - This is currently not possible due to the way CSS is extracted at build time, the value of active is unknown at that time.

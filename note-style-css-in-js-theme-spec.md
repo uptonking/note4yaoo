@@ -3,7 +3,7 @@ title: note-style-css-in-js-theme-spec
 tags: [css-in-js, style, web]
 favorited: true
 created: '2019-11-30T10:00:18.020Z'
-modified: '2020-07-14T10:40:19.396Z'
+modified: '2020-08-09T05:12:23.549Z'
 ---
 
 # note-style-css-in-js-theme-spec
@@ -28,10 +28,10 @@ modified: '2020-07-14T10:40:19.396Z'
   - learning curve
   - css-in-js runtime cost in performance and size 
 - ref
-    - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
     - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
-    - https://medium.com/@lindsay_jopson/is-css-in-js-really-better-than-traditional-css-8ac5b3f7fc20
     - https://mxstbr.com/thoughts/css-in-js
+    - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
+    - https://medium.com/@lindsay_jopson/is-css-in-js-really-better-than-traditional-css-8ac5b3f7fc20
 - 为什么用emotion/styled-components
   - styles written inline, but className auto generated and added to dom
 - 为什么用styled-system

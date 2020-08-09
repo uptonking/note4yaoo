@@ -12,10 +12,6 @@ modified: '2020-08-06T10:24:25.589Z'
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.
 
-- survey: how to fetch data
-  - [What do you use to fetch data in your web app?](https://twitter.com/kentcdodds/status/1243657342278758401)
-    - fetch/axios/other
-
 - about GraphQL
   - A lot of apps are not as graph-like as we imagine
   - Deep querying/transport is handy, but not worth the savings unless you have massive amounts of relationships or truly need deeply relational querying clientside.
@@ -242,7 +238,14 @@ const stringAddedNum = upperCase(toString(addedNum));
   - Clarity > conciseness (plus this minifies well enough)
   - Also, I don't hate the builder pattern/fluent interfaces completely, I just think they're sometimes overused when more idiomatic alternatives can be used.
 
-- ### [survey: Where does a majority of your app state truly live? Where is its source of truth? ](https://twitter.com/tannerlinsley/status/1282810546270597121)
+## survey: how to fetch data
+
+- [What do you use to fetch data in your web app?](https://twitter.com/kentcdodds/status/1243657342278758401)
+  - fetch/axios/other
+
+## survey: where to put app state
+
+- [Where does a majority of your app state truly live? Where is its source of truth? ](https://twitter.com/tannerlinsley/status/1282810546270597121)
   - in memory
   - session storage
   - local storage

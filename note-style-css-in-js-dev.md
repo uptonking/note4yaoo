@@ -9,7 +9,7 @@ modified: '2020-08-07T16:16:25.034Z'
 
 ## guide
 
-- survey: why use css in js
+- why use css in js
   - 维护方便
   - all-in-js的趋势
   - 标准化theme的趋势
@@ -22,6 +22,13 @@ modified: '2020-08-07T16:16:25.034Z'
 - Something we could perhaps call “TSS” (Typed/Token Style Sheets)
 
 ## pieces 
+
+- [survey: styled-components vs SASS vs CSS which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
+  - s-c:sass:css = 2:1:5
+  - 仅8人投票
+
+- It's funny how CSS-in-JS is controversial vs. external/extracted CSS files, but web components basically require inline CSS strings in JS. 
+  - Due to the complete style isolation, you basically cannot bundle CSS to a separate file with shadow DOM in a performant way.
 
 - The more I look at projects like tailwindcss and tachyons_css, the more I realise CSS-in-JS misses the boat(错失良机) on solving the important problems with large-scale CSS:
   - No specificity issues
@@ -56,6 +63,21 @@ modified: '2020-08-07T16:16:25.034Z'
 - [Why write CSS-in-JS when vanilla CSS is just fine? ](https://twitter.com/saltnburnem/status/1290690315540717568)
   - The styling of a component is very linked to it's structure, so put them together.
   - The main element of reuse is the component. You won't ever need a .header CSS class when instead you'll reuse `<Header>`
+
+## survey: css in js vs css
+
+- ### [are there any cons to using regular CSS vs CSS-in-JS?_2018](https://twitter.com/ka11away/status/1014990019801411586)
+  - css: css-in-js = 0.557: 0.443 /79votes
+  - It’s depends on ur purposes. 
+    - If u use dynamic generated styles (in runtime) a lot — css-in-js (fe styled-components) is a nice choice. 
+    - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
+
+## solution-catalog-css-in-js
+
+- treat /MIT/960Star/202007
+  - https://github.com/seek-oss/treat
+  - https://seek-oss.github.io/treat/
+  - Themeable, statically extracted CSS‑in‑JS with near‑zero runtime.
 
 ## ref
 

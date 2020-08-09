@@ -40,12 +40,12 @@ stylesheet.cssRules[0].style.backgroundColor = "blue";
 - Note that you can also change style of an element by getting a reference to it and then use its `setAttribute` method to specify the CSS property and its value.
 - However, `setAttribute` removes all other style properties that may already have been defined in the element's `style` object
 
-
 ## [Constructable Stylesheets: seamless reusable styles](https://developers.google.com/web/updates/2019/02/constructable-stylesheets)
+
 - As of October 2019, Constructable Stylesheets are only available in Chrome (versions 73 and higher).
 - It has always been possible to create stylesheets using JavaScript. 
-- However, the process has historically been to create a `<style>` element using `document.createElement('style')`, and then access its sheet property to obtain a reference to the underlying `CSSStyleSheet` instance. 
+- However, the process has historically been to create a `<style>` element using `document.createElement('style')` , and then access its sheet property to obtain a reference to the underlying `CSSStyleSheet` instance. 
 - This method can produce duplicate CSS code and its attendant bloat, and the act of attaching leads to a flash of unstyled content whether there is bloat or not. 
-- The `CSSStyleSheet` interface is the root of a collection of CSS representation interfaces referred to as the `CSSOM`, offering a programmatic way to manipulate stylesheets as well as eliminating the problems associated with the old method.
+- The `CSSStyleSheet` interface is the root of a collection of CSS representation interfaces referred to as the `CSSOM` , offering a programmatic way to manipulate stylesheets as well as eliminating the problems associated with the old method.
 - Constructable Stylesheets make it possible to define and prepare shared CSS styles, and then apply those styles to multiple Shadow Roots or the Document easily and without duplication. 
 - Updates to a shared CSSStyleSheet are applied to all roots into which it has been adopted, and adopting a stylesheet is fast and synchronous once the sheet has been loaded.

@@ -1,8 +1,8 @@
 ---
 title: note-pm-builder
-tags: [builder, pm]
+tags: [builder, pm, product]
 created: '2020-08-08T19:39:58.351Z'
-modified: '2020-08-08T19:42:08.992Z'
+modified: '2020-08-09T08:44:31.787Z'
 ---
 
 # note-pm-builder
@@ -34,7 +34,7 @@ modified: '2020-08-08T19:42:08.992Z'
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
-- react-ui-builder-editor
+- react-ui-builder-editor /GPL
   - https://github.com/react-ui-builder/react-ui-builder-editor
   - An online editor of the Interactive Platform for React Component Libraries
   - Based on Webcodesk version 2.0.3

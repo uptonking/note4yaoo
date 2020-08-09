@@ -8,6 +8,7 @@ modified: '2020-07-25T10:02:25.426Z'
 # note-web-layout-catalog
 
 ## faq
+
 - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009/answers/updated)
   - css其实本身就是高度封装的东东了，可能有安卓iOS原生写样式，远远不像css这么好
   - 现在前端css相关的库卖点是design，而不是用的技术，企业关注的不是前端是不是用了grid
@@ -37,3 +38,20 @@ modified: '2020-07-25T10:02:25.426Z'
 - In normal flow, inline elements display in the inline direction, that is in the direction words are displayed in a sentence according to the Writing Mode of the document. 
 - Block elements display one after the other, as paragraphs do in the Writing Mode of that document. 
 - In English therefore, inline elements display one after the other, starting on the left, and block elements start at the top and move down the page.
+
+## survey: flexbox vs css grid
+
+- ### [Which one do you use more, and why?](https://twitter.com/eelisabethhv/status/1289594963152367616)
+- flexbox: grid = 0.635: 0.365
+- I love flexbox. almost use it for everything lol but yea, mostly navigation bar, mobile layout etc basically anything comes in a “strip” format.
+  - Whereas grid I’d use it for larger page layout, ie web/desktop layout, eg blogs, or gallery with photos in different sizes
+- Good thing is, you can use them both. 
+  - I like grid to establish the overall page structure. 
+    - You can do some cool responsive layouts without media queries. 
+    - CSS grid: to create layout and grids
+  - I use flex on the content elements.
+    - Flexbox: to position the elements in the cells
+
+## ref
+
+- [CSS Flex vs Grid Tutorial](https://t.co/NPuEsH0BwT?amp=1)

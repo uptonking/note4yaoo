@@ -1,8 +1,9 @@
 ---
 title: note-pm-list-grid-table
 tags: [grid, list, pm, product, table]
+favorited: true
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-07-26T04:15:18.011Z'
+modified: '2020-08-09T08:43:10.089Z'
 ---
 
 # note-pm-list-grid-table
@@ -161,7 +162,7 @@ modified: '2020-07-26T04:15:18.011Z'
   - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
   - FilterableHeaderCell组件使用了form-group/control
 
-## solution-catalog-list-table
+## solution-catalog-list-grid-table
 
 - antd table
   - https://ant.design/components/table-cn/

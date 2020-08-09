@@ -7,7 +7,7 @@ modified: '2020-08-08T11:39:55.792Z'
 
 # note-benchmark-css-in-js
 
-## popular
+## benchmarking
 
 - css-in-js benchmarks app online /202008
   - https://github.com/necolas/react-native-web/tree/master/packages/benchmarks
@@ -26,6 +26,12 @@ modified: '2020-08-08T11:39:55.792Z'
   - 14.70ms, react-jss@^10.0.4
   - 22.44ms, emotion@^10.0.27  
   - css-modules 
+
+## comparison
+
+- [styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
+  - /20191025
+  - emotion is ready for React Concurrent mode and it has a smaller bundle size
 
 ## ref
 

@@ -60,7 +60,7 @@ modified: '2020-08-07T17:50:44.516Z'
 
 ## CSS-in-JS - styled vs css prop
 
-- [CSS-in-JS - styled vs css prop](https://dev.to/a_sandrina_p/css-in-js-styled-vs-css-prop-229e)
+- ### [CSS-in-JS - styled vs css prop](https://dev.to/a_sandrina_p/css-in-js-styled-vs-css-prop-229e)
 
 - I like to use styled, since css prop depends on a bit more setup using babel or macro to reach the same result.
 
@@ -155,3 +155,43 @@ const App = () => <Title>Hello World!</Title>;
   - The component will apply the correct styles automatically when I dynamically change that context.
 - CSS-in-JS still offers **all the important features of CSS preprocessors**. 
   - All libraries support auto-prefixing, and JavaScript offers most other features like mixins (functions) and variables natively.
+
+## Styled Components vs. CSS Stylesheets
+
+- [Styled Components vs. CSS Stylesheets_202001](https://getstream.io/blog/styled-components-vs-css-stylesheets/)
+
+- s-c pros
+  - No Globally Scoped Selectors
+  - Dynamic Styling
+  - Theming
+  - Consistency
+  - Sass Syntax Out-Of-The-Box
+- s-c cons
+  - Learning Curve
+  - Integration With Legacy CSS Can Be Painful
+  - not a standard
+  - runtime cost
+  - Colocating Can Bloat Your Components
+
+- css pros
+  - Unopinionated and Universal
+  - Caching & Performance
+  - Quickly Iterate A New Design
+  - Ease of Use
+  - abundant exsiting css frameworks
+- css cons 
+  - Readability, difficult to navigate
+  - Legacy CSS Can Live On For Years
+  - Global Scope & Specificity
+  - No True Dynamic Styling
+  - Maintaining Consistency for theme, variables
+
+## ref
+
+- [CSS and JS Are at War, Here’s How to Stop It_201901](https://dev.to/evilmartians/css-and-js-are-at-war-heres-how-to-stop-it-158a)
+  - The warring factions are often labeled as:
+    - “JS-JS-JS”: Developers who create SPA with client-side JavaScript frameworks like React, Vue.js, and Angular. They are heavy users of innumerable build tools (Babel, webpack, etc.) and JS libraries.
+    - “UX developers”, “CSS developers”, “HTML-JS-CSS developers”: Developers who create static websites with vanilla JavaScript and plain CSS. Accessibility and performance are most important topics in their community.
+  - The Solution
+    - start a civilized discussion
+    - have a public forum for a conversation

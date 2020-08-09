@@ -1,11 +1,11 @@
 ---
-title: tool-software-collection
+title: tool-software-habit
 tags: [software, tool]
 created: '2019-07-08T04:10:28.254Z'
-modified: '2020-07-14T11:10:49.176Z'
+modified: '2020-08-09T11:21:58.233Z'
 ---
 
-# tool-software-collection
+# tool-software-habit
 
 ## 软件选择参考  
 

@@ -138,6 +138,10 @@ modified: '2020-07-13T02:58:30.041Z'
   - https://github.com/uiwjs/uiw
   - https://uiwjs.github.io/#/components
   - A Component Library for React 16+
+- zeit-ui/react /MIT/898Star/202008
+  - https://github.com/zeit-ui/react
+  - https://react.zeit-ui.co/
+  - Modern and minimalist React UI library, originating from Vercel's design.
 - reactivebase /201802/Apache2.0/18star
   - https://github.com/appbaseio/reactivebase 
   - deprecated
