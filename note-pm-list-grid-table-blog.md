@@ -7,11 +7,11 @@ modified: '2020-07-26T04:15:43.741Z'
 
 # note-pm-list-grid-table-blog
 
-## The simplest way to create a Data Grid in React
+## The simplest way to create a Data Grid in React - Tabelify
 
 - [The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)
   - [react-tabelify](https://github.com/rishabhbits038/react-tabelify)
-    - /NoLic/28Star/201606
+    - /NALic/28Star/201606
 
 - We finally decided to create our own library 'Tabelify' from scratch.
 - Tableify is a highly customisable library that can be used to display data in different formats. 
@@ -55,6 +55,16 @@ modified: '2020-07-26T04:15:43.741Z'
 - [React — Code Your Own DataTable Step by Step (Video Tutorial by udemy)](https://codeburst.io/react-code-your-own-datatable-step-by-step-video-tutorial-34fca0ca34e7)
   - [udemy-react-datatable](https://github.com/rajeshpillai/udemy-react-datatable)
     - /NALic/9Star/201810
+- Code a working version of a simple data table using no 3rd party library and using pure React.
+- The following features are covered in the tutorial
+  - Binding data to the datatable dynamically
+  - Sorting
+  - Searching on multiple columns/fields
+  - Pagination with customization
+  - Reorder columns by dragging and dropping
+  - Custom Cell renderer using Render prop pattern
+  - Basic CRUD template
+  - ...
 
 ## Building a Data Table Component in React
 
