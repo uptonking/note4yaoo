@@ -2,7 +2,7 @@
 title: lib-ag-grid-blog
 tags: [ag-grid, blog]
 created: '2020-07-30T13:50:07.752Z'
-modified: '2020-07-30T16:43:01.318Z'
+modified: '2020-08-10T06:01:15.443Z'
 ---
 
 # lib-ag-grid-blog
@@ -30,8 +30,6 @@ modified: '2020-07-30T16:43:01.318Z'
 - Avoid Row Order
 
 - All of the performance hacks above are the result of years of learning. 
-
-- 
 
 ## Inside ag-Grid: techniques to make the fastest JavaScript datagrid
 

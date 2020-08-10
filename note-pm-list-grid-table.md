@@ -18,7 +18,11 @@ modified: '2020-08-09T08:43:10.089Z'
     - 采用z-index，合并单元格后的内容对齐方式需要计算
     - 实现 `flex-direction:column` 不合适，难以同时实现row span和col span
     - ui结构采用分组，每次合并单元格需要动态修改的元素过多
+  - multi-row-col-span
+    - 同时合并多行多列，如相邻的两行两列合并成一个单元格
   - 滚动
+- grid实现
+  - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
 
 ## grid-implementation-vs
 
@@ -68,6 +72,8 @@ modified: '2020-08-09T08:43:10.089Z'
   - note
     - VariableSizeGrid的colWidth和rowHeight值类型都是函数
 - ### react-data-grid
+- ### react-base-table
+  - required-props
 
 ## pieces
 
@@ -161,6 +167,25 @@ modified: '2020-08-09T08:43:10.089Z'
     - glyphicon-remove form-control-feedback
   - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
   - FilterableHeaderCell组件使用了form-group/control
+
+## product-react-base-table
+
+- A react table component to display large datasets with high performance and flexibility
+- BaseTable is designed to be the base component to build your own complex table component
+- There are a lot of highly flexible props like `xxxRenderer` and `xxxProps` for you to build your own table component
+- There is a PR to add selection feature, but I don't want to merge it with good reasons
+- Inline Editing is a very common feature in a table, 
+  - but it's highly coupled with specific ui libraries, so it won't be a part of BaseTable itself.
+  - Inline Editing would be a bit tricky in BaseTable because of it's using the virtualization technology to render the rows, there is `overflow: hidden` for the table and rows and cells, 
+  - so if your editing content is larger than the cell area, the content would be cut, 
+  - you genius would find that you could override the `overflow: hidden` via style to prevent the content to be clipped, but PLEASE DON'T DO THAT, as there would be always problems with this solution, e.g. what would happens if it's in the last row?
+  - The **recommended solution** is using something like `Portal` to render the editing content out of the cell, then it won't be constrained in the cell. 
+    - As `Portal` needs a container to attach the target to, most of the custom renderers provide a param `container` to be used in this case, the `container` is the table itself.
+  - Internally we are using the `Overlay` component from `react-overlays` to do that, react-overlays is based on `Popper.js` which provides excellent positioning mechanism.
+  - If you are using fixed mode(fixed=true) with frozen columns, there will be a problem with the Popper.js.
+    - there would be three tables internal tables to implement the frozen feature, 
+    - and those tables are all scrollable, then the positioning could be not expected, 
+    - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
 
 ## solution-catalog-list-grid-table
 

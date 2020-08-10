@@ -34,7 +34,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
   - since 7.0 free for all non-commercial purposes
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
-  - 基于table tag实现
+  - handsontable基于table tag实现
 - react-virtual /MIT/1.1kStar/202007
   - https://github.com/tannerlinsley/react-virtual
   - https://codesandbox.io/s/github/tannerlinsley/react-virtual/tree/master/examples/dynamic
@@ -49,6 +49,11 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://react-window.now.sh/
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set (just enough to fill the viewport).
+- react-base-table /MIT/761Star/202007
+  - https://github.com/Autodesk/react-base-table
+  - https://autodesk.github.io/react-base-table/
+  - A react table component to display large datasets with high performance and flexibility
+  - Lack: row select(作者为组件的unopinionated而未合并pr)
 - jexcel /MIT/4.8kStar/202007
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jexcel

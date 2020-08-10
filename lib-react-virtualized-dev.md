@@ -7,15 +7,16 @@ modified: '2020-08-05T09:35:05.094Z'
 
 # lib-react-virtualized-dev
 
-## guide 
+## react-virtualized的ui结构层次
 
-- **react-virtualized的ui结构层次**
 - list
   - grid/GridReactVirtualized__List
     - Grid__innerScrollContainer
       - row
       - row
       - row
+
+## guide 
 
 - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/3)
 

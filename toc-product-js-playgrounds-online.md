@@ -9,6 +9,18 @@ modified: '2020-08-09T12:50:04.855Z'
 
 ## popular
 
+### react-playgrounds
+
+- react-live /MIT/2.5kStar/202007
+  - https://github.com/FormidableLabs/react-live
+  - https://react-live.netlify.com/
+  - render React components with editable source code and live preview.
+  - depends on react-simple-code-editor, bubble, prism
+- react-runner /MIT/25Star/201908
+  - https://github.com/nihgwu/react-runner
+  - https://nihgwu.github.io/react-runner/
+  - Run your React code on the go
+
 ### CodePen
 
 - https://codepen.io/

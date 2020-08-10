@@ -23,6 +23,7 @@ modified: '2020-08-09T05:23:47.960Z'
 - animation
 - drag
 - layer
+  - 考虑：portal的target容器默认是组件自身或document.body
 
 ## layout
 
