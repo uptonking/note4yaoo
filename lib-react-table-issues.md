@@ -39,3 +39,8 @@ modified: '2020-07-15T13:10:31.179Z'
 ## issues
 
 - [v7 Feedback & Ideas ](https://github.com/tannerlinsley/react-table/issues/1252)
+
+- [[v7] can some one explain useGetLatest(instanceRef.current)](https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546)
+  - `const getInstance = useGetLatest(instanceRef.current);`
+  - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n,杂乱，混乱)
+  - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`

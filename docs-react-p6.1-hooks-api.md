@@ -24,8 +24,9 @@ modified: '2020-07-17T04:32:12.879Z'
 - ### `const [state, setState] = useState(initialState);`
   - Returns a stateful value, and a function to update it.
   - During the initial render, the returned state ( `state` ) is the same as the value passed as the first argument ( `initialState` ).
-  - During subsequent re-renders, the first value returned by useState will always be the most recent state after applying updates.
-  - why does useState return array?
+  - During subsequent re-renders, the first value returned by `useState` will always be the most recent state after applying updates.
+  - `useState` 基于 `useReducer` 实现
+  - Why does useState return array?
     - Because compared to an object, an array is more flexible and easy to use.
     - If the method returned an object with a fixed set of properties, you wouldn’t be able to assign custom names in an easy way.
     - 若使用对象，每次都要重命名
@@ -34,13 +35,12 @@ modified: '2020-07-17T04:32:12.879Z'
     - It accepts a new state value and enqueues a re-render of the component
     - React guarantees that `setState` function identity is stable and won’t change on re-renders. 
       - This is why it’s safe to omit from the `useEffect` or `useCallback` dependency list.
-    - If the new state is computed using the previous state, you can pass a function to `setState`
-    - If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely.
-    - If you use the same value as the current state to update the state (React uses Object.is for comparing), React won’t trigger a re-render.
+
+  - If the new state is computed using the previous state, you can pass a function to `setState`
+    - **If your update function returns the exact same value as the current state, the subsequent rerender will be skipped completely**.
+    - If you use the same value as the current state to update the state (React uses `Object.is` for comparing), React won’t trigger a re-render.
   - `useState` does not automatically merge update objects. 
     - You can replicate this behavior by combining the function updater form with object spread syntax
-    - It's better to split the state into multiple state variables based on which values tend to change together.
-    - The function returned by useState does not automatically merge update objects, it **replaces** them
 
 ``` js
     setState(prevState => {
@@ -50,10 +50,14 @@ modified: '2020-07-17T04:32:12.879Z'
 ```
 
     - Another option is `useReducer` , which is more suited for managing state objects that contain multiple sub-values
+    - It's better to split the state into multiple state variables based on which values tend to change together.
+    - The function returned by `useState` does not automatically merge update objects, it **replaces** them
+
   - The `initialState` argument is the state used during the initial render. 
     - In subsequent renders, it is disregarded. 
     - If the initial state is the result of an expensive computation, you may provide a function instead, which will be executed only on the initial render
-    - 如果initialState为函数，则useState在初始化时会立刻执行该函数和获取函数的返回值，在没有任何返回值得情况下为undefined。这里需要注意的是每次组件re-render都会导致useState中的函数重新计算，这里可以使用闭包函数来解决问题。在优化后只有组件初始化时才会执行一遍loop函数。
+    - 如果initialState为函数，则useState在初始化时会立刻执行该函数和获取函数的返回值，在没有任何返回值得情况下为undefined。
+      - 这里需要注意的是每次组件re-render都会导致useState中的函数重新计算，这里可以使用闭包函数来解决问题。在优化后只有组件初始化时才会执行一遍loop函数。
     - The initial value will be assigned only on the initial render (if it’s a function, it will be executed only on the initial render).
 
 ``` JS
@@ -73,28 +77,32 @@ const loop = () => {
 };
 
 const App = () => {
-    // 这样每次render都会执行
-    // const [value, setValue] = useState(loop());
+  // 这样每次render都会执行
+  // const [value, setValue] = useState(loop());
 
-    // 这样只有首次会执行一次
-    const [value, setValue] = useState(() => {
-      return loop();
-    });
+  // 这样只有首次会执行一次
+  const [value, setValue] = useState(() => {
+    return loop();
+  });
+
+  //...
+}
 ```
 
   - If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects
+    - React uses the `Object.is` comparison algorithm
     - React may still need to render that specific component again before bailing out. 
   - In general terms, here’s an example of how this works step-by-step:
     - React initializes the list of Hooks and the variable that keeps track of the current Hook
     - React calls your component for the first time
-    - React finds a call to useState, creates a new Hook object (with the initial state), changes the current Hook variable to point to this object, adds the object to the Hooks list, and return the array with the initial state and the function to update it
-    - React finds another call to useState and repeats the actions of the previous step, storing a new Hook object and changing the current Hook variable
+    - React finds a call to `useState` , creates a new Hook object (with the initial state), changes the current Hook variable to point to this object, adds the object to the Hooks list, and return the array with the initial state and the function to update it
+    - React finds another call to `useState` and repeats the actions of the previous step, storing a new Hook object and changing the current Hook variable
     - The component state changes
-    - React sends the state update operation (performed by the function returned by useState) to a queue to be processed
+    - React sends the state update operation (performed by the function returned by `useState` ) to a queue to be processed
     - React determines it needs to re-render the component
     - React resets the current Hook variable and calls your component
-    - React finds a call to useState, but this time, since there’s already a Hook at the first position of the list of Hooks, it just changes the current Hook variable and returns the array with the current state and the function to update it
-    - React finds another call to useState and since a Hook exists in the second position, once again, it just changes the current Hook variable and returns the array with the current state and the function to update it
+    - React finds a call to `useState` , but this time, since there’s already a Hook at the first position of the list of Hooks, it just changes the current Hook variable and returns the array with the current state and the function to update it
+    - React finds another call to `useState` and since a Hook exists in the second position, once again, it just changes the current Hook variable and returns the array with the current state and the function to update it
     - If you like to read code, `ReactFiberHooks` is the class where you can learn how Hooks work under the hood.
   - ref
     - [A guide to useState in React](https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/)
@@ -132,9 +140,10 @@ const App = () => {
 - ### `useLayoutEffect`
   - The signature is identical to `useEffect` , but it fires synchronously after all DOM mutations. 
   - Use this to read layout from the DOM and synchronously re-render. 
-  - Updates scheduled inside useLayoutEffect will be flushed synchronously, before the browser has a chance to paint.
+  - Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
+  - With `useLayoutEffect` , the computation will be triggered before the browser has painted the update. 
+  - Since the computation takes some time, this eats into the browser’s paint time.
   - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
-  - With useLayoutEffect, the computation will be triggered before the browser has painted the update. Since the computation takes some time, this eats into the browser’s paint time.
   - If you rely on these refs to perform an animation as soon as the component mounts, then you’ll find an unpleasant flickering of browser paints happen before your animation kicks in. This is the case with useEffect, but not useLayoutEffect.
 
 - ### `const value = useContext(MyContext);`
@@ -153,17 +162,64 @@ const App = () => {
   - An alternative to `useState`
   - Accepts a reducer of type `(state, action) => newState`
   - Returns the current state paired with a `dispatch` method.
-  - useReducer is usually preferable to useState 
+  - `useReducer` is usually preferable to `useState`
     - when you have complex state logic that involves multiple sub-values 
     - or when the next state depends on the previous one. 
-  - useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
-  - React guarantees that `dispatch` function identity is stable and won’t change on re-renders. This is why it’s safe to omit from the useEffect or useCallback dependency list.
+  - `useReducer` also lets you optimize performance for components that trigger deep updates because you can pass `dispatch` down instead of callbacks.
+  - React guarantees that `dispatch` function identity is stable and won’t change on re-renders.
+
+  - There are two different ways to initialize `useReducer` state.
+  - The simplest way is to pass the initial state as a second argument
+    - `const [state, dispatch] = useReducer( reducer, {count: initialCount} );`
+    - The initial value sometimes needs to depend on props and so is specified from the Hook call instead. 
+    - If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior(state = initialState), but it’s not encouraged.
   - You can also create the initial state lazily.
     - To do this, you can pass an `init` function as the third argument. 
     - The initial state will be set to `init(initialState)` .
     - It lets you extract the logic for calculating the initial state outside the reducer.
+    - This is also handy for resetting the state later in response to an action
+
   - If you return the same value from a Reducer Hook as the current state, React will bail out without rendering the children or firing effects.
-  - React may still need to render that specific component again before bailing out.
+    - React uses the `Object.is` comparison algorithm.
+    - React may still need to render that specific component  again before bailing out.
+    - If you’re doing expensive calculations while rendering, you can optimize them with `useMemo` .
+
+``` typescript
+// 将状态初始化的逻辑提取到reducer函数外
+function init(initialCount) {
+  return { count: initialCount };
+}
+
+// 状态数据更新的具体计算逻辑
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return init(action.payload);
+    default:
+      throw new Error();
+  }
+}
+
+function Counter({initialCount}) {
+  // The initial state will be set to `init(initialArg)` .
+  const [state, dispatch] = useReducer(reducer, initialCount, init);
+  return (
+    <>
+      Count: {state.count}
+      <button
+        onClick={() => dispatch({type: 'reset', payload: initialCount})}>
+        Reset
+      </button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+```
 
 - ### `const memoizedCb = useCallback( () => { doSomething(a, b); }, [a, b], );`
   - Pass an inline callback and an array of dependencies. 
@@ -198,8 +254,8 @@ const App = () => {
     - If you want to run some code when React attaches or detaches a ref to a DOM node, you may want to use a callback ref instead.
 
 - ### `useImperativeHandle(ref, createHandle, [deps])`
-  - It should be used with `forwardRef`
   - It customizes the instance value that is exposed to parent components when using `ref`
+  - It should be used with `forwardRef`
   - As always, imperative code using refs should be avoided in most cases.
 
 ``` js

@@ -79,6 +79,36 @@ modified: '2020-07-14T09:26:50.808Z'
 - 跨window传递数据的方法
   - `window.opener`
 
+## data type
+
+### Boolean
+
+- The `Boolean()` constructor is used to create `Boolean` objects.
+- The Boolean object is an object wrapper for a boolean value.
+- The value passed as the first parameter is converted to a boolean value, if necessary. 
+- If the value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of `false` . 
+- All other values, including any object, an empty array ([]), or the string "false", create an object with an initial value of `true` .
+- Do not use a Boolean object to convert a non-boolean value to a boolean value. 
+  - To perform this task, instead, use Boolean as a function, or a double NOT operator
+
+``` JS
+var x = Boolean(expression); // use this...
+var x = !!(expression); // ...or this
+var x = new Boolean(expression); // don't use this!
+
+var myFalse = new Boolean(false); // initial value of false
+var g = Boolean(myFalse); // initial value of true
+var myString = new String('Hello'); // string object
+var s = Boolean(myString); // initial value of true
+```
+
+- If you specify any object, including a Boolean object whose value is `false` , as the initial value of a Boolean object, the new Boolean object has a value of `true` .
+
+- `array.filter(Boolean)` 中的Boolean的作用
+  - 这里的Boolean是一个function，最终只保存结果为true的项目
+  - `arrayOfSheeps.filter(Boolean).length`
+  - `arrayOfSheeps.filter(function(x){return Boolean(x)}).length`
+
 ## mdn docs
 
 - 函数参数

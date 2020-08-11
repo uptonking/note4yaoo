@@ -9,7 +9,31 @@ modified: '2020-06-29T13:14:27.166Z'
 
 ## faq
 
-- ### useImperativeHandle vs assign ref.current directly
+- ### React.memo vs reselect
+  - [React.memo vs Memoize: What’s the difference and when to use them](https://medium.com/better-programming/react-memo-vs-memoize-71f85eb4e1a)
+    - In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+    - This points out a fundamental rule when using the memoization function. 
+      - You should only ever use memoization with pure functions. 
+      - For our purposes, there should be no side effects in our function. 
+      - Given a set of arguments to a function, we should always expect the same result.
+    - First, `memoize-one` is an arbitrary library in this example. We could have picked any memoization library, such as `reselect` , `lodash` , or `ramda` . Memoize-one is a tiny library that only memoizes the latest arguments and results. 
+    - React.memo is intended to be wrapped around a functional component.
+    - So, `memoize-one` (in common with most memoization libraries) remembers the result of a given function with a set of arguments, despite where the last execution occurs. 
+      - `React.memo` , on the other hand, is for memoizing a single occurrence of a component when attempting to re-render, and it will not work outside of its instance.
+  - 在 reselect 中默认的 memorize 函数依靠闭包来做缓存，缺点是不能记录多次。
+
+- ### useMemo vs reselect
+  - [Will useMemo replace reselect?](https://github.com/reduxjs/reselect/issues/386)
+    - `reselect` can be used anywhere, as it has no dependencies
+    - `reselect` is indeed useful anywhere, and can be used totally independent of Redux. 
+      - Really, its competition is libs like `memoize-one` , not `useMemo()` .
+    - For Redux usage, we recommend using selectors anywhere you access the Redux state tree, not just in mapState functions. 
+    - I would assume that `useMemo` cannot replace `reselect` simply because `useMemo` is a hook and therefore will only work with functional components. While `reselect` works with any type of component.
+  - [useMemo: the most underrated Hook](https://twitter.com/dan_abramov/status/1055689046117105664)
+    - To me, it looks like reselect.
+    - Yep but tied to component
+
+- ### `useImperativeHandle` vs assign `ref.current` directly
   - [What benefit does useImperativeHandle provide over assigning a forwarded ref in useEffect?](https://stackoverflow.com/questions/59860956/what-benefit-does-useimperativehandle-provide-over-assigning-a-forwarded-ref-in)
   - It's the same and useImperativeHandle just handles all of the ref cases and makes sure the passed value is a ref and not just any value. So it saves some code
   - useImperativeHandle is almost the same as your approach with useEffect
