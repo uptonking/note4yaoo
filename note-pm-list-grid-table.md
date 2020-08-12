@@ -24,6 +24,17 @@ modified: '2020-08-09T08:43:10.089Z'
 - grid实现
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
 
+## features
+
+- Multiple Sorting
+  - The DataGrid can sort values by a single or multiple columns.
+    - Single sorting mode. 
+      - A user can click the column header to sort by this column and click it again to change the sort order (ascending or descending). 
+      - An arrow icon in the column's header indicates the sort order.
+    - Multiple sorting mode. 
+      - A user can hold the Shift key and click column headers in the order the user wants to apply sorting. 
+      - To cancel a column's sorting settings, a user should hold the Ctrl key and click the column header.
+
 ## grid-implementation-vs
 
 - ### react-table
@@ -74,6 +85,16 @@ modified: '2020-08-09T08:43:10.089Z'
 - ### react-data-grid
 - ### react-base-table
   - required-props
+
+## popular-data-grid-docs
+
+- https://www.ag-grid.com/javascript-grid-reference-overview/
+- https://handsontable.com/docs/8.0.0/tutorial-features.html
+- https://fancygrid.com/samples/
+  - https://fancygrid.com/docs/grid-concepts/understanding-fancygrid
+- https://ej2.syncfusion.com/demos/?#/material/grid/filter.html
+- https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/
+- https://www.grapecity.com/spreadjs/docs/v13/online/UsingtheSpreadSheetsElement.html
 
 ## pieces
 
