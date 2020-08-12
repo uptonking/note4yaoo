@@ -15,6 +15,8 @@ modified: '2020-07-14T09:26:50.808Z'
 
 - js vm bytecode
 - https://github.com/airbnb/javascript
+- Replace `arr.filter().map()` with `arr.reduce()`
+  - 可以减少遍历次数
 
 ## faq
 

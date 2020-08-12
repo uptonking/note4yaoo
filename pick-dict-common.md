@@ -7,6 +7,9 @@ modified: '2020-08-04T11:48:55.714Z'
 
 # pick-dict-common
 
+- loot
+  - v, （暴乱、火灾等后）打劫，抢劫 
+  - n, 赃物，战利品
 - WRT
   - With respect to 关于
 - for the record

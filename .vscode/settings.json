@@ -1,33 +1,34 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "markdownFormatter.enable": true,
+  "markdownFormatter.fullWidthTurnHalfWidth": "auto",
+  "markdownFormatter.codeAreaToBlock": "",
+  "markdownFormatter.formatCodes": true,
+  "markdownFormatter.formatULSymbol": false,
+  "markdownFormatter.formatOpt": {
+    "indent_size": 2,
+    "e4x": true,
+    "brace_style": "collapse,preserve-inline",
+    "indent_with_tabs": false,
+    "space_after_anon_function": false,
+    "space_after_named_function": false
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.renderWhitespace": "all",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
     },
-    "editor.formatOnSave": true,
-    "markdownFormatter.enable": true,
-    "markdownFormatter.fullWidthTurnHalfWidth": "auto",
-    "markdownFormatter.codeAreaToBlock": "",
-    "markdownFormatter.formatCodes": true,
-    "markdownFormatter.formatULSymbol": false,
-    "markdownFormatter.formatOpt": {
-        "indent_size": 2,
-        "e4x": true,
-        "brace_style": "collapse,preserve-inline",
-        "indent_with_tabs": false,
-        "space_after_anon_function": false,
-        "space_after_named_function": false
-    },
-    "[markdown]": {
-        "editor.formatOnSave": false,
-        "editor.renderWhitespace": "all",
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": true,
-            "strings": true
-        },
-        "editor.snippetSuggestions": "top",
-        "editor.tabCompletion": "on",
-        "editor.acceptSuggestionOnEnter": "on",
-        "editor.defaultFormatter": "mervin.markdown-formatter"
-    }
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.defaultFormatter": "mervin.markdown-formatter"
+  },
+  "bookmarks.saveBookmarksInProject": true
 }

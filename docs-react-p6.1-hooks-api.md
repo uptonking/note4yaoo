@@ -171,8 +171,33 @@ const App = () => {
   - There are two different ways to initialize `useReducer` state.
   - The simplest way is to pass the initial state as a second argument
     - `const [state, dispatch] = useReducer( reducer, {count: initialCount} );`
+    - The initial state for `useReducer` hook should be passed as a second argument to useReducer.
+    - React doesn’t use the `state = initialState` argument convention popularized by Redux. 
+      - the default state value will be returned when an invalid action is dispatched.
     - The initial value sometimes needs to depend on props and so is specified from the Hook call instead. 
-    - If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior(state = initialState), but it’s not encouraged.
+    - If you feel strongly about this, you can call `useReducer(reducer, undefined, reducer)` to emulate the Redux behavior, but it’s not encouraged.
+      - `useReducer(reducer, undefined, { type: 'INIT' })` will work as you expect. 
+      - It will execute the reducer initially, once, with a `{ type: 'INIT' }` action, thus falling through to the default case. 
+      - Because `initialState` is provided as `undefined` , it will appropriately default to `5` as specified in the reducer.
+
+``` JS
+function reducer(state = 5, { type }) {
+  switch (type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+function Counter() {
+  const [count] = useReducer(reducer)
+  return <span>{count}</span>
+}
+```
+
   - You can also create the initial state lazily.
     - To do this, you can pass an `init` function as the third argument. 
     - The initial state will be set to `init(initialState)` .
@@ -221,7 +246,7 @@ function Counter({initialCount}) {
 }
 ```
 
-- ### `const memoizedCb = useCallback( () => { doSomething(a, b); }, [a, b], );`
+- ### `const memoizedCb = useCallback( () => { doSomething(a, b); }, [a, b] );`
   - Pass an inline callback and an array of dependencies. 
   - Return a memoized version of the callback that **only changes if one of the dependencies has changed**. 
   - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
