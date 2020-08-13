@@ -39,6 +39,10 @@ modified: '2020-07-14T10:24:54.328Z'
   - 按文件夹
 - 窗口模块
 - 其他需求
+- product形式
+  - electron-app
+  - vscode-extension
+  - mobile-app
 
 ## notable
 

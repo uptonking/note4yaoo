@@ -10,6 +10,12 @@ modified: '2020-08-04T12:25:38.927Z'
 
 ## logging
 
+
+- `console.log()` is passed a reference to the object, so the value in the console changes as the object changes. 
+  - To avoid that you can:`console.log(JSON.parse(JSON.stringify(c)))`
+  - Please be warned that if you log objects in the latest versions of Chrome and Firefox what you get logged on the console is a reference to the object, which is not necessarily the 'value' of the object at the moment in time you call console.log(), but it is the value of the object at the moment you open the console.
+  - ref
+    - https://stackoverflow.com/questions/11284663/console-log-shows-the-changed-value-of-a-variable-before-the-value-actually-ch
 - styled-components中的样式冲突要注意计算specificity
   - `div.cls1` 的特指度高于 `.cls2` ，即使.cls2写在后面
   - `className=cls1 cls2` 最终使用的样式取决于源码import进来后，cls1和2在源码中声明的先后顺序

@@ -40,7 +40,18 @@ modified: '2020-07-15T13:10:31.179Z'
 
 - [v7 Feedback & Ideas ](https://github.com/tannerlinsley/react-table/issues/1252)
 
-- [[v7] can some one explain useGetLatest(instanceRef.current)](https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546)
+- `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
   - `const getInstance = useGetLatest(instanceRef.current);`
-  - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n,杂乱，混乱)
-  - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`
+  - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n, 杂乱，混乱)
+    - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`
+  - Converted almost all usages of `instanceRef.current` to use `useGetLatest(instanceRef.current)` to help with avoiding memory leaks and to be more terse.
+    - It avoids closing over stale instance properties and holding on to them in memory. 
+    - Only when they are needed, they are accessed on demand though the getter.
+    - Could you please expand on why calling a function avoids closing over state instance properties?
+    - I'm definitely not an expert, but I know that previously when we would simply close over the instance we were "snapshotting" the entire instances in a closure, and as long as that closure stuck around, that memory for the instance snapshot would be there.
+    - Some of that doesn't matter if you are actually reusing or mutating a single instance, but if you are handling computed or immutable data that is changing, then you can potentially be hanging on to a lot of unused data for no reason.
+    - By just storing a reference to a getter function, you aren't closing over the data, just the getter. 
+    - Thus, the memory of the result of that getter doesn't come into play until you use it, which in the case of all of the callbacks and API used in something like React Table is alot
+  - ref
+    - https://twitter.com/tannerlinsley/status/1257068142242656256
+    - https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546
