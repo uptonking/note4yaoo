@@ -17,7 +17,7 @@ modified: '2020-07-14T09:26:50.808Z'
 - https://github.com/airbnb/javascript
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
-
+- Object.assign修改属性值的性能
 ## faq
 
 - `new Date()` vs `performance.timing`
