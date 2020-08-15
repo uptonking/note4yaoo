@@ -55,3 +55,9 @@ modified: '2020-07-15T13:10:31.179Z'
   - ref
     - https://twitter.com/tannerlinsley/status/1257068142242656256
     - https://spectrum.chat/react-table/general/v7-can-some-one-explain-usegetlatest-instanceref-current~54763a00-66ae-4211-bb35-52ca25686546
+
+- [[v7] Table 100% width](https://github.com/tannerlinsley/react-table/issues/1639)
+  - I use useBlockLayout and I don’t understand how to make the table stretch 100% of the width of the parent. In theory, the width of the columns should be adjusted as it was at V6
+  - Out of the box, no, it does not behave like v6, since it is not using a flexbox model. 
+  - useBlockLayout uses inline-block divs with precise widths. You can stretch the table container itself to take up the full width, but in a block or absolute layout, your columns will not grow automatically. 
+  - The only way I know of to reliably do that is using the default html-table-element layout.

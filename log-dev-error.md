@@ -10,6 +10,23 @@ modified: '2020-08-04T12:24:45.908Z'
 
 ## logging 
 
+ 
+
+- 循环引用的问题
+  - It means that the object has a circular reference, something like: `var a = {}; a.b = a; ` ``
+  - `JSON.stringify` cannot convert structures like this.
+  - [How can I print a circular structure in a JSON-like format?](https://stackoverflow.com/questions/11616630/how-can-i-print-a-circular-structure-in-a-json-like-format)
+    - 使用自定义replacer函数
+    - Node.js可使用内置的 `console.log(util.inspect(myObject))`
+  - [mdn: TypeError: cyclic object value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cyclic_object_value)
+    - find and filter (thus causing data loss) a cyclic reference by using the replacer parameter of `JSON.stringify()`
+
+``` 
+TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Object'
+    |     property 'cells' -> object with constructor 'Array'
+```
+
 - react-dom.development.js?e444:23965 Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
   - element.type should be a string or class / function
   - 因为忘记导出组件了 export Component
