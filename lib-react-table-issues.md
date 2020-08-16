@@ -9,8 +9,24 @@ modified: '2020-07-15T13:10:31.179Z'
 
 ## not-yet
 
-- resizing does not follow the mouse
-  - https://github.com/tannerlinsley/react-table/issues/2185
+- [add item after sortBy](https://github.com/tannerlinsley/react-table/issues/2641)
+- [Cannot sort by Date](https://github.com/tannerlinsley/react-table/issues/2613)
+
+- [the ID passed to the filter function is not an string](https://github.com/tannerlinsley/react-table/issues/2644)
+
+- [useRowSelect relies on external state](https://github.com/tannerlinsley/react-table/issues/2171)
+  - a workaround is to
+    - avoid useRowSelect, or
+    - use it in controlled state mode (so, avoiding selection state update logic), or
+    - use selectedRowIds directly, ignoring helper methods and isSelected attribute.
+      - It is an annoyance, but at least you can use all other parts of react-table normally.
+
+- [useResizeColumns does not clean up eventlistener for touch events properly.](https://github.com/tannerlinsley/react-table/issues/2622)
+- [resizing does not follow the mouse](https://github.com/tannerlinsley/react-table/issues/2185)
+
+- [v8: useCellRangeSelection](https://github.com/tannerlinsley/react-table/issues/2476)
+
+- [no horizontal scrollbar showing up when resizing columns to be wider than the available table width](https://github.com/tannerlinsley/react-table/issues/2630)
 
 ## features
 
@@ -35,6 +51,9 @@ modified: '2020-07-15T13:10:31.179Z'
   - 1 vertical virtualizer for the rows, and another horizontal virtualizer for the entire table. 
   - This can get quite complex, and there are tons of edge cases, like handling header groupings in separate virtualizers, always showings scrollbars (which is extremely difficult). 
   - All reasons that I am building **React Table Pro** (working title) that will do all of this automatically.
+
+- ### layout
+- [pr: useGridLayout](https://github.com/tannerlinsley/react-table/pull/2525)
 
 ## issues
 
