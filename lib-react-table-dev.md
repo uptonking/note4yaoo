@@ -7,6 +7,161 @@ modified: '2020-07-14T10:27:12.335Z'
 
 # lib-react-table-dev
 
+## react-table表格实现的ui结构层次
+
+- ### useBlockLayout
+  - 必须设置cell的width，使用行内样式设置
+- div-table
+  - div-thead
+    - row/tr
+    - row/tr
+      - columnheader/th
+    - row/tr
+  - div-tbody/rowgroup
+    - row/tr
+    - row/tr
+      - cell/td
+    - row/tr
+
+``` CSS
+.table {
+  display: inline-block;
+  border-spacing: 0;
+  border: 1px solid black;
+}
+
+/* 设置表头行或数据行 */
+.row {
+  display: flex;
+  width: 710px;
+}
+
+.cell,
+.columnheader {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 150px;
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  /* font-weight: bold; */
+}
+
+.rowgroup {}
+
+.cell {}
+```
+
+- ### useAbsoluteLayout
+- div-table
+  - div-thead
+    - row-header-group
+    - row-header-group
+      - columnheader
+    - row/header-group
+  - rowgroup/rows
+    - row-body
+    - row-body
+      - cell
+    - row-body
+
+``` CSS
+.table {
+  box-sizing: border-box;
+  max-width: 700px;
+  overflow-x: auto;
+  border: 1px solid #000;
+}
+
+.row-header-group {
+  position: relative;
+  width: 710px;
+  height: 32px;
+  border-bottom: 1px solid #000;
+}
+
+.cell,
+.columnheader {
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  width: 150px;
+  height: 100%;
+  padding-left: 5px;
+  border-right: 1px solid #000;
+  line-height: 30px;
+}
+
+.rowgroup {
+  position: relative;
+  width: 710px;
+  overflow-y: auto;
+}
+
+.row-body {
+  position: relative;
+  width: 710px;
+  height: 32px;
+  border-bottom: 1px solid #000;
+}
+
+.cell {}
+```
+
+- ### useFlexLayout
+- div-table
+  - div-thead
+    - row-tr
+    - row-tr
+      - columnheader
+    - row-tr
+  - div-tbody
+    - row-tr
+    - row-tr
+      - cell
+    - row-tr
+
+``` CSS
+.table {
+  min-width: 735px;
+  border-spacing: 0;
+  border: 1px solid black;
+}
+
+/* todo flex without container 表头行和数据行的样式 */
+.row-tr {
+  flex: 1 0 auto;
+  display: flex;
+  min-width: 215px;
+  border-bottom: 1px solid black;
+}
+
+.cell,
+.columnheader {
+  position: relative;
+  flex: 150 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  width: 150px;
+  min-width: 30px;
+  padding: 0.5rem;
+  margin: 0;
+  border-right: 1px solid black;
+}
+
+.tbody {
+  display: block;
+  height: 250px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.cell {}
+```
+
 ## guide
 
 - ### [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
