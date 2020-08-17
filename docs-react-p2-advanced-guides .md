@@ -345,9 +345,11 @@ class MyComponent extends React.Component {
   - Note that this approach requires you to add some code to the child component. 
   - If you have absolutely no control over the child component implementation, your last option is to use `findDOMNode()` , but it is discouraged and deprecated in StrictMode.
 - React also supports another way to set refs called **callback refs**, which gives more fine-grain control over when refs are set and unset.
-- Instead of passing a ref attribute created by createRef(), you pass a function.
+- Instead of passing a `ref` attribute created by `createRef()` , you pass a function.
   - **The function receives the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
-- You can pass callback refs between components like you can with object refs that were created with React.createRef().
+- React will call the `ref` callback with the DOM element when the component mounts, and call it with `null` when it unmounts. 
+- Refs are guaranteed to be up-to-date before `componentDidMount` or `componentDidUpdate` fires.
+- You can pass callback refs between components like you can with object refs that were created with `React.createRef()`.
 
 ``` js
 function CustomTextInput(props) {
