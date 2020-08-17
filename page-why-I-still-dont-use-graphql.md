@@ -1,11 +1,11 @@
 ---
-title: page-why-I-still-dont-use-GraphQL
+title: page-why-I-still-dont-use-graphql
 tags: [api, page]
 created: '2020-08-06T08:48:07.770Z'
-modified: '2020-08-06T08:50:10.268Z'
+modified: '2020-08-17T07:29:23.887Z'
 ---
 
-# page-why-I-still-dont-use-GraphQL
+# page-why-I-still-dont-use-graphql
 
 - Some thoughts I've gathered over the years on what I think about GraphQL. 
   - All of this is subject to change of course, and some of it may be "hot-take"-ish, 
@@ -26,5 +26,4 @@ modified: '2020-08-06T08:50:10.268Z'
 - Relay is another tool that people swear by, but seems to have a high level of buy-in/commitment. Not only do you have to use GQL, but you have to do things in the Relay way.
 - At the end of the day, I would wager that a vast majority of apps won't benefit enough from GQL to justify the costs (opionated and relatively proprietary syntax, specialized tools/libraries for interacting with it) that it currently requires.
 - If you have a massively public API that needs to be generally queryable for general purpose things, then you may want GQL and it will likely be worth it. I think of companies like Facebook and Github here, or essentially any company that needs to have some type of ecosystem built upon it.
-- The benefit that is the most alluring of GQL is the type safety, but that is not the only way to have a type safe API. You can do this with other tools like `buf`, JSON-schema, and typescript. I think I would go after these first.
-
+- The benefit that is the most alluring of GQL is the type safety, but that is not the only way to have a type safe API. You can do this with other tools like `buf` , JSON-schema, and typescript. I think I would go after these first.

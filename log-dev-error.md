@@ -12,8 +12,25 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- error  React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead 
+  - useCallback is specifically designed for inline functions.
+
+``` JS
+// error
+const throttledMethod = React.useCallback(
+  _.throttle(abc, 500),
+  [abc],
+);
+
+// ok
+const throttledMethod = React.useMemo(
+  () => _.throttle(abc, 500),
+  [abc],
+);
+```
+
 - 循环引用的问题
-  - It means that the object has a circular reference, something like: `var a = {}; a.b = a; ` ``
+  - It means that the object has a circular reference, something like: `var a = {}; a.b = a;`
   - `JSON.stringify` cannot convert structures like this.
   - [How can I print a circular structure in a JSON-like format?](https://stackoverflow.com/questions/11616630/how-can-i-print-a-circular-structure-in-a-json-like-format)
     - 使用自定义replacer函数

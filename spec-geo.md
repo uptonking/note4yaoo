@@ -1,8 +1,8 @@
 ---
-tags: [spec]
 title: spec-geo
+tags: [geo, spec]
 created: '2019-12-12T09:07:57.883Z'
-modified: '2020-06-22T09:22:36.387Z'
+modified: '2020-08-17T06:46:09.262Z'
 ---
 
 # spec-geo

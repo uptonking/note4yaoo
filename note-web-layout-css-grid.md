@@ -25,6 +25,7 @@ modified: '2020-07-14T10:47:26.044Z'
   - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)
     - flexbox布局非常成熟
     - css的卖点是炫酷的design，而不是炫酷的技术
+  - [The Quirks of CSS Grid and Absolute Positioning](https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437)
 
 ## pieces
 

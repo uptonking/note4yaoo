@@ -84,6 +84,10 @@ modified: '2020-08-10T06:01:15.443Z'
   - Only if changes are detected or update is forced, the DOM is updated. 
   - This approach significantly reduces time required to process changes. 
 
+## JavaScript GPU Animation with Transform and Translate
+
+- [JavaScript GPU Animation with Transform and Translate](https://www.ag-grid.com/ag-grid-gpu-animation-transform-translate/)
+
 ## Comparison: Why ag-Grid is the best when it comes to Column Pinnin
 
 - ref

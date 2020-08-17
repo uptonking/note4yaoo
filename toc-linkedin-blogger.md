@@ -7,7 +7,30 @@ modified: '2020-07-03T13:17:59.764Z'
 
 # toc-linkedin-blogger  
 
+- 代码
+
 ## watchlist
+
+- 许雪里
+  - java, xxl-job, xxl-sso
+  - https://github.com/xuxueli
+- 陈梓翰
+  - cpp
+  - https://github.com/vczh
+- 阮一峰
+  - es6
+  - https://github.com/ruanyf
+- 廖雪峰
+  - https://github.com/michaelliao
+- 朴灵
+  - node
+  - https://github.com/JacksonTian
+- phodal
+  - js
+  - https://github.com/phodal
+- 雪碧
+  - react, beam
+  - https://github.com/doodlewind
 
 ## web-dev
 

@@ -7,7 +7,18 @@ modified: '2020-07-04T11:56:53.944Z'
 
 # toc-linkedin-crreator
 
+- 代码+产品
+
 ## watchlist
+
+- 尤雨溪
+  - info
+    - https://github.com/yyx990803
+    - https://www.zhihu.com/people/evanyou
+  - artwork: vuejs
+- D 
+  - https://github.com/88250
+  - artwork: b3blog, solo, symphony
 
 ## indie-dev
 

@@ -1,11 +1,11 @@
 ---
-title: page-custom-hooks-in-react
-tags: [hooks, react]
+title: page-creator-tanner-linsley-react-table-query
+tags: [creator, hooks, react]
 created: '2020-08-07T08:06:27.904Z'
-modified: '2020-08-07T08:17:32.059Z'
+modified: '2020-08-17T07:31:22.391Z'
 ---
 
-# page-react-table-query-tanner-linsley
+# page-creator-tanner-linsley-react-table-query
 
 - [Custom Hooks in React: The ultimate UI abstraction layer you're missing out on_2020](Custom Hooks in React: The ultimate UI abstraction layer you're missing out on)
   - slides for my talk at JS Conf Hawaii 2020 by tanner linsley
