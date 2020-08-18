@@ -2,12 +2,12 @@
 title: log-faq-dev-repeat
 tags: [dev, faq, repeat]
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-07-09T13:24:25.794Z'
+modified: '2020-08-18T06:14:25.248Z'
 ---
 
 # log-faq-dev-repeat
 
-## not-yet
+## faq-not-yet
 
 - 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
   - react-virtualized: List uses a Grid internally to render the rows
@@ -66,8 +66,8 @@ modified: '2020-07-09T13:24:25.794Z'
 - Before es6 class, I worked with projects that had different class implementations in them, all with their own ups and downs. Now everyone tends to use the ES2015 version and things are much clearer.
 - proposed private field in js may not be better than typescript class.
 - ref
-    - https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
-    - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
+  - https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
+  - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
 
 ## In js, what does `this` refer to?
 

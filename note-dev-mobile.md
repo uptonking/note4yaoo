@@ -7,12 +7,15 @@ modified: '2020-07-14T09:32:18.390Z'
 
 # note-dev-mobile
 
+- 跨平台技术选型参考
+  - 考虑跨平台是否需要一致的ui与功能，如ios刘海屏、支付功能
+  - 考虑同时维护多套移动端代码的成本，后台业务逻辑可通用
 - 跨平台可选技术栈
   - react-native
   - flutter
-  - hbuilder/apicloud
-  - 考虑跨平台是否需要一致的ui与功能，如ios刘海屏、支付功能
-  - 考虑同时维护多套移动端代码的成本，后台业务逻辑可通用
+  - apicloud
+  - uni-app/dcloud
+    - 开发一次，编译到10个平台
 
 ## features
 

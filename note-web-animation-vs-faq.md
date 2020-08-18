@@ -7,6 +7,33 @@ modified: '2020-08-02T13:39:43.308Z'
 
 # note-web-animation-vs-faq
 
+## faq
+
+- ### 对于list或grid中的项目，拖动A到B的位置，实现的效果可以有2种
+  1. A到B的位置，B到A的位置，其他不变
+  2. A到B的位置，然后A之后B之前的所有元素前移一位，最后B挨着A
+  - 从性能角度考虑，选第一种
+
+## translate3d vs translateZ vs rotateZ
+
+- The `translate3d()` CSS function repositions an element in 3D space. 
+  - Its result is a `<transform-function>` data type.
+- The `translateZ()` CSS function repositions an element along the z-axis in 3D space, i.e., closer to or farther away from the viewer. 
+  - Its result is a `<transform-function>` data type.
+  - `translateZ(tz)` is equivalent to `translate3d(0, 0, tz)` .
+- The ` rotateZ()` CSS function defines a transformation that rotates an element around the z-axis without deforming(v, 使变形) it. 
+  - Its result is a `<transform-function` > data type.
+  - `rotateZ(a)` is equivalent to `rotate(a)` or `rotate3d(0, 0, 1, a)` .
+- ref
+  - [CSS performance relative to translateZ(0)](https://stackoverflow.com/questions/10814178/css-performance-relative-to-translatez0)
+    - CSS transformations create a new stacking context and containing block, as described in the spec
+    - It forces the browser to use hardware acceleration to access the device’s graphical processing unit (GPU) to make pixels fly. 
+      - Web applications, on the other hand, run in the context of the browser, which lets the software do most (if not all) of the rendering, resulting in less horsepower for transitions. 
+      - But the Web has been catching up, and most browser vendors now provide graphical hardware acceleration by means of particular CSS rules.
+    - `translate3d(0,0,0)` does nothing in terms of what you see. It moves the object by 0px in x,y and z axis. It's only a technique to force the hardware acceleration.
+  - [translate3d vs translate performance](https://stackoverflow.com/questions/22111256/translate3d-vs-translate-performancek)
+    - The use of translate3d pushes CSS animations into hardware acceleration. Even if you're looking to do a basic 2d translation, use translate3d for more power
+
 ## css transition vs animation
 
 - 用法上最大的区别：animation可设置多个中间状态

@@ -17,12 +17,14 @@ modified: '2020-07-14T10:24:54.328Z'
     - full control of your note data, born to keep data private
     - online sync is optional
     - extended md support, including GFM
-- powerful markdown editor and viewer  
+- themeable markdown editor and viewer  
   - optimized table editor and viewer 
 - don't
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
   - video/audio 
   - paste html into md
+- rfc
+  - format: 一级标题的相互替换，如 `### 标题名` 与 `标题名 ---`
 
 ## noter-requirements-需求
 
@@ -46,7 +48,7 @@ modified: '2020-07-14T10:24:54.328Z'
 
 ## notable
 
-## notable-xp-todo
+### notable-xp-todo
 
 - [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`
 - [ ] fix: note file name shouldn't change when cut the most front text

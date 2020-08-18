@@ -14,6 +14,8 @@ modified: '2020-07-17T11:56:26.797Z'
 
 ## faq
 
+- [Can css3 translateZ() be used instead of z-index?](https://stackoverflow.com/questions/17977220/can-css3-translatez-be-used-instead-of-z-index)
+  - The answer now is that you can. You need to use `transform-style: preserve-3d;` on the parent
 - 使用z-index隐藏元素有什么缺点
   - 要考虑用户操作是否会导致layout, repaint
   - If an element or group of elements should only become visible after the user performed a conscious action, use `display: none; ` or `visibility: hidden;`

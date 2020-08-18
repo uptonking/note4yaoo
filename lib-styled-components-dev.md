@@ -2,14 +2,17 @@
 title: lib-styled-components-dev
 tags: [styled-components]
 created: '2020-08-08T08:07:31.739Z'
-modified: '2020-08-08T08:09:22.118Z'
+modified: '2020-08-18T06:13:52.606Z'
 ---
 
 # lib-styled-components-dev
 
-## faq
+## faq-not-yet
 
 - styled装饰过的components如何不通过 `Comp.defaultProps` 的方式设置默认值？
+  - 采用类似FunctionComponent的参数默认值的方式设置
+- 如何只添加样式到组件最外层而不引入新的div标签？
+  - `styled（'div'）''` 替换成类似 `styled(()=><></>)''` 的形式
 
 ## styled-system
 

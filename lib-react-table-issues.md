@@ -2,12 +2,12 @@
 title: lib-react-table-issues
 tags: [issues, react-table]
 created: '2020-07-15T13:08:35.143Z'
-modified: '2020-07-15T13:10:31.179Z'
+modified: '2020-08-18T06:14:37.874Z'
 ---
 
 # lib-react-table-issues
 
-## not-yet
+## faq-not-yet
 
 - [add item after sortBy](https://github.com/tannerlinsley/react-table/issues/2641)
 - [Cannot sort by Date](https://github.com/tannerlinsley/react-table/issues/2613)
