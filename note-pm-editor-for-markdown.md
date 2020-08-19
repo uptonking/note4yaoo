@@ -7,10 +7,14 @@ modified: '2020-07-14T13:06:18.368Z'
 
 # note-pm-editor-for-markdown
 
-## tips
+## summary
 
 - 与交互相关的操作非常容易与编辑器的功能产生联系
 - 可以考虑通过提供某一类的拖拽组件代替一类应用场景的editor/builder
+
+## features
+
+- table editor for markdown
 
 ## markdown-editor-as-component
 

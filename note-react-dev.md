@@ -15,6 +15,7 @@ modified: '2020-07-14T10:38:48.217Z'
   - [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
 - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. That's something classes cannot express properly.
 - ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current);`
+- 在requestAnimationFrame中setState的性能
 
 ## tips
 

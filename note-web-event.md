@@ -1,12 +1,12 @@
 ---
+title: note-web-event
+tags: [event, web]
 favorited: true
-tags: [events, web]
-title: note-web-events
 created: '2019-10-17T08:31:14.028Z'
-modified: '2020-06-21T04:10:22.007Z'
+modified: '2020-08-19T13:38:01.426Z'
 ---
 
-# note-web-events
+# note-web-event
 
 ## faq
 
@@ -150,7 +150,7 @@ modified: '2020-06-21T04:10:22.007Z'
     - 这里的考虑是针对ie浏览器的elementToDrag.attachEvent()这种方式的事件绑定，因为它将mousemove事件直接绑定在了目标元素上，那么如果鼠标移动太快，而元素没有跟上，那么mousemove事件就不会再目标元素身上发生，就触发不了处理函数
 - 元素无论自身有没有定位，offsetParent返回的是距离自己最近的有定位的祖先元素，若祖先没有定位，则返回body
 - offset值指的是元素外边到祖先元素内边的距离
-- event.page若有滚动条，要包括页面拉上面的部分，若无滚动条，则page与client一致
+- event.pageX若有滚动条，要包括页面拉上面的部分，若无滚动条，则page与client一致
 - event.offset获取鼠标在盒子内部的位置
 - event.client获取鼠标在浏览器内部的位置
 - event.screen获取鼠标在显示器屏幕的位置
@@ -168,15 +168,21 @@ modified: '2020-06-21T04:10:22.007Z'
     - returns the size of an element and its position relative to the viewport.
     - The returned value is a DOMRect object,  with read-only left, top, right, bottom, x, y, width, and height properties
     - Properties other than width and height are relative to the top-left of the viewport.
-- scrollLeft 、scrollTop：设置或获取位于对象最顶/左端和窗口中可见内容的最顶/左端之间的距离，即当前上滚或左滚的距离（针对父容器）
-- scrollHeight、scrollWidth：获取对象可滚动的总高度/宽度（针对父容器）
-- offsetLeft、offsetTop：获取当前对象与父元素之间的距离（不包含父元素的边框，父元素是porsition不为static）
+- scrollLeft 、scrollTop
+  - 设置或获取位于对象最顶/左端和窗口中可见内容的最顶/左端之间的距离，即当前上滚或左滚的距离（针对父容器）
+- scrollHeight、scrollWidth
+  - 获取对象可滚动的总高度/宽度（针对父容器）
+- offsetLeft、offsetTop
+  - 获取当前对象与父元素之间的距离（不包含父元素的边框，父元素是porsition不为static）
   - 这两个属性只能用于元素设置了overflow的css样式中，否者这两个属性没有任何意义。且overflow的值不能为visible，但可以为hidden, auto, scroll的之中，但是hidden最常见
   - scrollLeft：是该元素的显示（可见）的内容与该元素实际的内容的距离
   - 一开始scrollLeft的值为0，你就看到了你的页面最左边的内容，而不显示超过浏览器的那部分。当你向右拖动滚动条时，scrollLeft的值在增大，你就看到了右边隐藏的内容，而看不到左边隐藏的部分。就会从scrollLeft的位置开始显示，而不显示0-scrollLeft的元素内容。即：该元素的显示位置与实际内容的位置的距离变大。元素会从scrollLeft的位置显示该元素的内容
-- offsetWidth、 offsetHeight ：获取元素自身的宽度/高度（如果是标准盒模型width+padding+border；如果是IE盒模型 width）
-- clientLeft、 clientTop：效果和边框宽度相同，很少使用
-- clientWidth、 clientHeight：不含边框的元素自身的宽度/高度（如果是标准盒模型 width+padding；如果是IE盒模型 width-border）
+- offsetWidth、 offsetHeight
+  - 获取元素自身的宽度/高度（如果是标准盒模型width+padding+border；如果是IE盒模型 width）
+- clientLeft、 clientTop
+  - 效果和边框宽度相同，很少使用
+- clientWidth、 clientHeight
+  - 不含边框的元素自身的宽度/高度（如果是标准盒模型 width+padding；如果是IE盒模型 width-border）
 - Firefox的event不支持offsetX属性，兼容方法
 
 ``` js
@@ -194,35 +200,35 @@ function getOffsetX(event) {
 
 ## resize
 
-## scroll
+## scrollHeight/Top
 
 - scrollHeight
-    - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
-    - 包括content、padding，不包括margin
-    - 只有DOM元素才有，window/document没有
-    - 判断元素是否滚动到底 
-        - element.scrollHeight - element.scrollTop === element.clientHeight
+  - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
+  - 包括content、padding，不包括margin
+  - 只有DOM元素才有，window/document没有
+  - 判断元素是否滚动到底 
+    - element.scrollHeight - element.scrollTop === element.clientHeight
 - scrollTop
-    - **可读写**，其他client?和offset?都只读
-    - 设置或获取一个元素不可见部分的顶部距离盒子border-top的距离
-    - 当一个元素的容器没有产生垂直方向的滚动条,那它的scrollTop的值默认为0
-    - 设置scrollTop的值小于0，scrollTop被设为0
-    - scrollTop属性只有DOM元素才有，window/document没有
+  - **可读写**，其他client? 和offset? 都只读
+  - 设置或获取一个元素不可见部分的顶部距离盒子border-top的距离
+  - 当一个元素的容器没有产生垂直方向的滚动条, 那它的scrollTop的值默认为0
+  - 设置scrollTop的值小于0，scrollTop被设为0
+  - scrollTop属性只有DOM元素才有，window/document没有
 - scrollLeft
-    - 可读写
-    - 设置或获取位于元素左边界和目前可见内容的最左端之间的距离
+  - 可读写
+  - 设置或获取位于元素左边界和目前可见内容的最左端之间的距离
 - onscroll
-    - 当元素的滚动条滚动时触发的事件
-    - element.onscroll=function(){}，元素包括DOM元素、window、document
-    - 滚动条一定要出现，而且滚动条是属于外层元素，触发的是外层元素的onscroll事件
+  - 当元素的滚动条滚动时触发的事件
+  - element.onscroll=function(){}，元素包括DOM元素、window、document
+  - 滚动条一定要出现，而且滚动条是属于外层元素，触发的是外层元素的onscroll事件
 - window.scroll()
-    - 让window滚动条滚动到那个x,y坐标
+  - 让window滚动条滚动到那个x, y坐标
 - window.scrollTo()
-    - 等于window.scroll()
+  - 等于window.scroll()
 - window.scrollBy()
-    - 让window滚动条相对滚动x，y的距离
+  - 让window滚动条相对滚动x，y的距离
 
-### client?
+### clientHeight
 
 - clientHeight
   - 返回元素内部的高度，单位像素，只读
@@ -238,7 +244,7 @@ function getOffsetX(event) {
   - 元素的左边框的宽度，以像素表示
   - 如果元素的文本方向是从右向左RTL，并且由于内容溢出导致左边出现了一个垂直滚动条，则该属性包括滚动条的宽度
 
-### offset?
+### offsetHeight
 
 - offsetHeight
   - 包含content、padding、滚动条、border，不包括margin
@@ -350,65 +356,48 @@ function getOffsetX(event) {
 
 - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
 
-## event
+## event要点
 
-- `event.target` is a reference to the object that dispatched the event. 
-  - It identifies the element on which the event occurred and which may be its direct descendent.
-- `event.currentTarget` always refers to the element to which the event handler has been attached. 
-  - It is the element you actually bound the event to. 
-  - This will never change.
+### 元素宽高
 
-### 位置坐标计算
+- winow.outerWidth是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
+- window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框，不包括developer窗口的宽度
+  - 会导致handsontable的滚动条显示不出来  
+- document.documentElement.clientWidth：不包括滚动条，但包括边框
+- document.body.clientHeight：不包括整个文档的滚动条，也不包括 `<html>` 元素的边框，也不包括 `<body>` 的边框和滚动条
+- `documentElement` 是文档根元素，就是 `<html>` 标签，body就是 `<body>` 标签了，这两种方式兼容性较好，可以一直兼容到IE6
+- 所有DOM元素都有4个属性，只需要给它固定大小并设置 `overflow:scroll` 即可表现出来
+  - clientHeight：内部可视区域大小，不包括滚动条，包括边框
+  - offsetHeight：整个可视区域大小，包括滚动条和边框
+  - scrollHeight：元素内容的高度，包括溢出部分
+  - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0 
 
-- 元素高度
-  - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框
-      - 会导致handsontable的滚动条显示不出来  
-  - outerHeight是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
-  - document.documentElement.clientWidth：不包括滚动条，但包括边框
-  - document.body.clientHeight：不包括整个文档的滚动条，也不包括 `<html>` 元素的边框，也不包括 `<body>` 的边框和滚动条
-  - `documentElement` 是文档根元素，就是 `<html>` 标签，body就是 `<body>` 标签了，这两种方式兼容性较好，可以一直兼容到IE6
-  - 所有DOM元素都有4个属性，只需要给它固定大小并设置overflow:scroll即可表现出来
-    - offsetHeight：(IE专属)整个可视区域大小，包括滚动条和边框
-    - clientHeight：内部可视区域大小，不包括滚动条，包括边框
-    - scrollHeight：元素内容的高度，包括溢出部分
-    - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0 
-- 位置坐标
-  - ref
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX
-    - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x
-  - offsetX/Y: 指鼠标指针相对于触发事件元素的左上角的偏移
-    - 在Chrome/Safari中指外边缘，即将该元素边框的宽度计算在内，firefox/ie则不包含边框值
-  - clientX/Y是相对于浏览器可视窗口viewport左上角的距离，参照点会随滚动条滚动而移动
-    - 不包含标题栏、状态栏
-  - pageX/Y是相对文档左上角的距离，不会随滚动条移动
-    - 当可视窗口和文档重叠(即无滚动条)时，pageX和clientX相等
-    - 当缩小可视窗口viewport(即缩小浏览器窗口)致使浏览器出现滚动条时，clientX小于pageX
-  - screenX/Y: 鼠标位置相对于显示屏幕左上角的距离
-  - layerX/Y: FF特有，当触发元素没有设置绝对定位或相对定位，则以页面为参考点，如果设置了，则以触发盒子的左上角为参考点（包含border）
-  - x和y: IE特有，由于IE坐标选择十分混乱，故尽量不要使用
-    - MouseEvent.x property is an alias for the MouseEvent.clientX property.
-  - 没有标注的是各浏览器都支持的
+### 位置坐标
 
-``` 
-    e.clientX：距离浏览器可视区域X方向的距离
-    e.clientY：距离浏览器可视区域Y方向的距离
-
-    e.screenX：鼠标距离屏幕X方向的距离
-    e.screenY：鼠标距离屏幕Y方向的距离(包含浏览器的地址栏)
-
-    e.offsetX：鼠标相对于事件源的X方向的距离 
-    e.offsetY：鼠标相对于事件源的Y方向的距离 
-      
-    e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
-    e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
-  ```
-
-- `MouseEvent.clientX`
-  - return a double floating point value, as redefined by the CSSOM View Module. Originally, this property was defined as a long integer.
-  - The clientX read-only property of the MouseEvent interface provides the horizontal coordinate within the application's client area at which the event occurred (as opposed to the coordinate within the page).
-  - For example, clicking on the left edge of the client area will always result in a mouse event with a clientX value of 0, regardless of whether the page is scrolled horizontally.
-- `MouseEvent.screenX`
-  - The screenX read-only property of the MouseEvent interface provides the horizontal coordinate (offset) of the mouse pointer in global (screen) coordinates.
+- ref
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX
+  - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/x
+  - https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX
+- offsetX/Y: 指鼠标指针相对于触发事件元素的左上角的偏移
+  - 在Chrome/Safari中指外边缘，即将该元素边框的宽度计算在内，firefox/ie则不包含边框值
+- clientX/Y是相对于浏览器视口viewport左上角的距离，参照点会随滚动条滚动而移动
+  - 不包含标题栏、状态栏
+- pageX/Y是相对文档左上角的距离，不会随滚动条移动
+  - 当可视窗口和文档重叠(即无滚动条)时，pageX和clientX相等
+  - 当可视窗口viewport出现滚动条时，clientX小于pageX
+- screenX/Y: 鼠标位置相对于显示屏幕左上角的距离
+- layerX/Y: FF特有，当触发元素没有设置绝对定位或相对定位，则以页面为参考点，如果设置了，则以触发盒子的左上角为参考点（包含border）
+- x和y: IE特有，由于IE坐标选择十分混乱，故尽量不要使用
+  - MouseEvent.x property is an alias for the MouseEvent.clientX property.
+- 下面未标注的是各浏览器都支持的
+  - e.offsetX：鼠标相对于事件源的X方向的距离 
+  - e.offsetY：鼠标相对于事件源的Y方向的距离 
+  - e.clientX：距离浏览器可视区域X方向的距离
+  - e.clientY：距离浏览器可视区域Y方向的距离
+  - e.pageX：鼠标相对于文档X方向的距离( ie678 不支持)
+  - e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
+  - e.screenX：鼠标距离屏幕X方向的距离
+  - e.screenY：鼠标距离屏幕Y方向的距离 

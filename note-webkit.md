@@ -105,9 +105,8 @@ modified: '2020-06-28T17:29:32.465Z'
       - elem.scrollIntoView(), elem.scrollIntoViewIfNeeded()
       - elem.scrollWidth/scrollHeight, elem.scrollLeft/scrollTop
 
-  -焦点
-
-      - elem.focus() 可以引起两次重排
+  - 焦点
+    - elem.focus() 可以引起两次重排
   - 获取其他属性
       - elem.computedRole, elem.computedName
       - elem.innerText
