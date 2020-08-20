@@ -49,3 +49,9 @@ modified: '2020-08-06T05:29:22.922Z'
 - thx：thanks 谢谢
 - tmr：tomorrow 明天
 - ppl：people 人们、大家
+
+- FTW
+  - For The Win.
+    - An enthusiastic(热情的，热衷的) emphasis to the end of a comment, message, or post. Sometimes genuine, but often sarcastic.
+    - meaning something that you are commenting on is a good thing, although it is sometimes used sarcastically(sarcastic, 讽刺的，挖苦的，嘲讽的). 
+  - Fuck The World

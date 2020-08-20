@@ -12,6 +12,10 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- [Violation] Added non-passive event listener to a scroll-blocking `<some>` event. Consider marking event handler as 'passive' to make the page more responsive.
+  - Passive event listeners are a new feature in the DOM spec that enable developers to opt-in to better scroll performance by eliminating the need for scrolling to block on touch and wheel event listeners. 
+  - Developers can annotate touch and wheel listeners with `{passive: true}` to indicate that they will never invoke `preventDefault` . 
+  - 解决方法： `this.element.addEventListener(t, e, { passive: true} )`
 - error  React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead 
   - useCallback is specifically designed for inline functions.
 
