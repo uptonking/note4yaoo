@@ -10,6 +10,68 @@ modified: '2020-08-18T05:56:56.343Z'
 
 ## logging
 
+- typescript compile: babel-loader vs ts-loader
+  - Because Babel only does code transforms, the build step becomes incredibly fast as it skips the type-checking step and just strips out the all the TypeScript type-annotations – converting it to vanilla JS.
+  - Babel has no type-safety at build time! 
+    - to get around it: `"build": "tsc && webpack"`
+  - Why use babel-loader instead?
+    - In my case, because I wanted to take advantage of `babel-preset-env` . 
+    - You pass in a list of browsers you want to support and Babel will only compile the language features that your target browsers don’t support. 
+    - It will also make sure to include the required polyfills.
+  - 这种使用babel的方案，当 webpack 编译的时候，babel-loader 会读取 .babelrc 里的配置，不会调用 typescript（所以本地项目无需安装 typescript），不会去检查类型
+  - 配置tsconfig.json可以让ide提示编译错误
+  - 使用了 TypeScript，为什么还需要 Babel 
+    - 大部分已存项目依赖了 babel
+    - 有些需求/功能需要 babel 的插件去实现（如：按需加载）
+    - babel 有非常丰富的插件，它的生态发展得很好
+    - babel 7 之前：需要前面两种方案来转译 TS
+    - babel 7 之后：babel 直接移除 TS，转为 JS，这使得它的编译速度飞快
+  - ts-loader has Type-safety at build time! 
+    - but can be slow
+  - ts-loader has one downside: We can’t pipe the output of another loader into it; it always reads the original file. 
+  - ts-loader 支持 project references 的部分功能, 但babel不支持
+  - 默认情况下，ts-loader 会进行 转译 和 类型检查，每当文件改动时，都会重新去 转译 和 类型检查，当文件很多的时候，就会特别慢，影响开发速度。
+    - 所以需要使用 fork-ts-checker-webpack-plugin ，开辟一个单独的线程去执行类型检查的任务，这样就不会影响 webpack 重新编译的速度。
+  - ts-loader 是不会读取 .babelrc 里的配置，即无法使用 babel 系列的插件，所以直接使用 ts-loader 将 ts/tsx 转成 js ，就会出现垫片无法按需加载、antd 无法按需引入的问题。
+    - 所以需要用 ts-loader 把 ts/tsx 转成 js/jsx，然后再用 babel-loader 去调用 babel 系列插件，编译成最终的 js。
+  - ref
+    - [Webpack 转译 Typescript 现有方案](https://juejin.im/post/6844904052094926855)
+
+- [Differences in output of Typescript compiler and Babel for classes](https://kevinwil.de/differences-in-output-of-typescript-compiler-and-babel-for-classes/)
+  - Recently, I worked on switching our entire frontend codebase from using ts-loader to use babel-loader.
+  - We continued to use ts-loader for some time because it was working well for us and we didn’t have a compelling reason to use Babel instead. 
+  - That changed when I saw react-refresh. 
+  - Our existing local development experience with react-hot-loader was often frustrating and unreliable. 
+  - I realized we could drastically improve the local development experience if we could use react-refresh, but this would require us to switch to Babel. So I got to work.
+  - When Typescript compiles classes, it marks class methods enumerable. 
+    - This is not in line with the spec for ES6 classes, which says that class methods should be non-enumerable. 
+    - When compiling typescript code with Babel, class methods are marked non-enumerable. 
+    - Use class properties instead of class methods
+    - Use getOwnPropertyNames in for-in
+  - When Typescript compiles classes, it doesn’t generate any code for uninitialized class properties.
+    - This is inconsistent with the spec for ES6 classes, which says that these properties should be initialized as undefined. Babel does this correctly.
+    - Add a constructor to all subclasses
+    - Initialize properties to themselves
+    - Static create method in base class instead of constructor
+
+- [TypeScript and Babel 7](https://devblogs.microsoft.com/typescript/typescript-and-babel-7/)
+  - Babel is a fantastic tool with a vibrant ecosystem by transforming the latest JavaScript features to older runtimes and browsers; but it doesn’t do type-checking 
+  - While TypeScript itself can do both, we wanted to make it easier to get that experience without forcing users to switch from Babel.
+  - Using the TypeScript compiler is still the preferred way to build TypeScript. 
+  - While Babel can take over compiling/transpiling – doing things like erasing your types and rewriting the newest ECMAScript features to work in older runtimes – it doesn’t have type-checking built in, and still requires using TypeScript to accomplish that. 
+  - So even if Babel builds successfully, you might need to check in with TypeScript to catch type errors. 
+  - For that reason, we feel `tsc` and the tools around the compiler pipeline will still give the most integrated and consistent experience for most projects.
+  - As we mentioned above, the first thing users should be aware of is that Babel won’t perform type-checking on TypeScript code; it will only be transforming your code, and it will compile regardless of whether type errors are present. 
+  - While that means Babel is free from doing things like reading `.d.ts` files and ensuring your types are compatible, presumably you’ll want some tool to do that, and so you’ll still need TypeScript. 
+  - This can be done as a separate `tsc --watch` task in the background, or it can be part of a lint/CI step in your build. 
+  - Second, there are certain constructs that don’t currently compile in Babel 7. Specifically, 
+    - namespaces
+    - bracket style type-assertion/cast syntax regardless of when JSX is enabled (i.e. writing `<Foo>x` won’t work even in .ts files if JSX support is turned on, but you can instead write `x as Foo` ).
+    - enums that span multiple declarations (i.e. enum merging)
+    - legacy-style import/export syntax (i.e. `import foo = require(...)` and `export = foo` )
+    - babel core不支持，但社区插件可以支持
+  - These omissions are largely based technical constraints in Babel’s single-file emit architecture. 
+
 - `console.log()` is passed a reference to the object, so the value in the console changes as the object changes. 
   - To avoid that you can: `console.log(JSON.parse(JSON.stringify(obj)))`
   - Please be warned that if you log objects in the latest versions of Chrome and Firefox, what you get logged on the console is a reference to the object, which is not necessarily the 'value' of the object at the moment in time you call `console.log()` , but it is the value of the object at the moment you open the console.

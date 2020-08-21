@@ -118,6 +118,24 @@ modified: '2020-07-14T10:35:06.446Z'
     - improve Record impl, Record is no longer an Immutable Collection type
     - Flowtype and TypeScript type definitions have been completely rewritten
 
+## webpack
+
+- [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin)
+  - Use this to load modules whose location is specified in the `paths` section of `tsconfig.json` when using webpack. 
+  - This package provides the functionality of the `tsconfig-paths` package but as a webpack plug-in.
+  - Using this plugin means that you should no longer need to add `alias` entries in your `webpack.config.js` which correspond to the paths entries in your `tsconfig.json` . This plugin creates those `alias` entries for you, so you don't have to!
+- [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
+  - This plugin allows you to add new "root" directories that contain your modules. 
+  - It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
+- terser-webpack-plugin
+  - uses terser to minify your JavaScript
+
+## babel
+
+- [babel-plugin-transform-typescript-metadata](https://github.com/leonardfactory/babel-plugin-transform-typescript-metadata)
+  - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
+  - Babel plugin to emit decorator metadata like typescript compiler
+
 ## 前端工程测试工具包
 
 - rimraf
@@ -141,16 +159,3 @@ modified: '2020-07-14T10:35:06.446Z'
   - library for TeX math rendering on the web
 - tslib
   - tslib将仅用于您的编译目标不支持的功能，以便我们生出的代码更小
-- webpack
-  - terser-webpack-plugin
-    - uses terser to minify your JavaScript
-
-## static-doc-site-generator
-
-- write with markdown and then render to html
-- hexo
-- jbake(java)
-- gatsby
-- react-static
-- bisheng
-  - transform Markdown(and other static files with transformers) into static websites and blogs using React.
