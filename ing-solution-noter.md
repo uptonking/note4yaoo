@@ -25,6 +25,9 @@ modified: '2020-07-14T10:24:54.328Z'
   - paste html into md
 - rfc
   - format: 一级标题的相互替换，如 `### 标题名` 与 `标题名 ---`
+  - smart-tab
+    - small-tab,tiny-tab:: 缩短tab上的标题文字
+    - head-tail:显示标题部分开始和结尾的文字，便于区分
 
 ## noter-requirements-需求
 

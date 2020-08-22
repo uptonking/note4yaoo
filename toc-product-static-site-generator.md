@@ -9,4 +9,12 @@ modified: '2020-08-09T11:21:26.716Z'
 
 ## popular
 
+- write with markdown and then render to html
+- hexo
+- jbake(java)
+- gatsby
+- react-static
+- bisheng
+  - transform Markdown(and other static files with transformers) into static websites and blogs using React.
+
 ## awesome
