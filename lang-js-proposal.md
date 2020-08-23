@@ -10,6 +10,7 @@ modified: '2020-07-07T08:10:16.774Z'
 ## proposal-toc
 
 - https://babeljs.io/docs/en/plugins
+- https://github.com/babel/proposals
 
 ## guide
 

@@ -9,7 +9,7 @@ modified: '2020-07-14T09:26:55.226Z'
 
 ## pieces
 
-- **node-path**
+-  ### node-path
 - `path.join(path1，path2，path3.......)`
   - 先解析相对路径..，再拼接返回，path片段/docs, ./docs, docs三种方式处理无差别
   - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径

@@ -15,9 +15,16 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0817-0823
 
+- ag-grid: vanilla, react example
+- monorepo: lerna + yarn-workspace hot reloading
+
 ## w0810-0816
 
+- react-absolute-grid
+
 ## w0803-0809
+
+- react-table: useTable hook anno
 
 ## w0727-0802
 

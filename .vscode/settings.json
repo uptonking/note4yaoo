@@ -30,9 +30,5 @@
     "editor.acceptSuggestionOnEnter": "on",
     "editor.defaultFormatter": "mervin.markdown-formatter"
   },
-  "bookmarks.saveBookmarksInProject": true,
-  "cSpell.words": [
-    "Deno",
-    "antd"
-  ]
+  "bookmarks.saveBookmarksInProject": true
 }

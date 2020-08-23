@@ -18,6 +18,7 @@ modified: '2020-07-14T09:26:50.808Z'
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
 - Object.assign修改属性值的性能
+
 ## faq
 
 - `new Date()` vs `performance.timing`
@@ -350,6 +351,13 @@ Point === Point.prototype.constructor // true
 
 ## dev tips
 
+- spread operator `...` vs `Object.assign()`
+  - The main difference is that spreading defines new properties, while `Object.assign()` sets them.
+  - First, `Object.assign()` triggers setters, spread doesn’t
+  - Second, you can stop `Object.assign()` from creating own properties via inherited read-only properties, but not the spread operator
+  - Both spread and `Object.assign()` only consider own enumerable properties
+  - ref
+    - [ES2018: Rest/Spread Properties](https://2ality.com/2016/10/rest-spread-properties.html)
 - Object vs Map
   - Objects have been used as Maps historically
   - The keys of an Object are String and Symbol, whereas they can be any value for a Map, including functions, objects, and any primitive.
