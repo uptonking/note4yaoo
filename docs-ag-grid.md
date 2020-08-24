@@ -7,6 +7,20 @@ modified: '2020-08-05T04:35:33.164Z'
 
 # docs-ag-grid
 
+## Client-Side Data - Immutable Data
+
+- Under normal operation when new data is set into the grid (e.g. the `rowData` bound property is updated with new data), the grid assumes the new data is a brand new set of data. 
+  - It is common for applications to desire this behavior. 
+  - However as explained in Setting Fresh Row Data this can be undesirable as grid state (selected rows etc.) is lost.
+- In applications using immutable stores (e.g. React and Redux), it could be desirable to treat changes to the bound `rowData` as updates to the current dataset rather than a brand new dataset. 
+  - The grid has a mode of operation where it does exactly this. 
+  - It works out what rows are added, removed and updated when new row data is provided by inspecting the new row data. 
+  - This mode is called Immutable Data Mode and is enabled by setting the property `immutableData=true` .
+- When in Immutable Data Mode, the grid assumes it is fed with data from an immutable store where the following is true about the data:
+  - Changes to a single row data item results in a new row data item object instance.
+  - Any changes within the list or row data results in a new list.
+- For the Immutable Data Mode to work, you must be providing IDs for the row nodes as explained in Application Assigned IDs.
+
 ## Row Spanning
 
 - By default, each cell will take up the height of one row.   

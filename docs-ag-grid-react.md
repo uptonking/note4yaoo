@@ -15,7 +15,7 @@ modified: '2020-08-24T09:15:23.767Z'
 - Enable Sorting And Filtering
   - headerName, field, sortable, filter
 - Fetch Remote Data
-  - `componentDidMount()` or `useEffect`
+  - `componentDidMount()` or `useEffect()`
 - Enable Selection
   - headerName, field, checkboxSelection
   - rowSelection="multiple"
@@ -26,5 +26,37 @@ modified: '2020-08-24T09:15:23.767Z'
 
 - Columns can be defined in three ways: 
   - declaratively (i.e. via `<AgGridColumn>` markup), 
-  - via `GridOptions` with `columnDefs` as prop
-  - or by binding to `columnDefs` on the `AgGridReact` component.
+  - via `GridOptions` with `columnDefs` prop
+  - or by binding to `columnDefs` prop on the `AgGridReact` component.
+  - In all cases all column definition properties can be defined to make up a column definition.
+
+- By default user supplied React components will be wrapped in a div, 
+  - but it is possible to have your component wrapped in a container of your choice (i.e. a span etc), perhaps to override/control a third party component.
+  - If you wish to override the style of this div, you can either provide an implementation of the `ag-react-container` class, or via the `getReactContainerStyle` or `getReactContainerClasses` callbacks on the React component
+
+## More Control of ag-Grid with React
+
+- When the grid is initialized, it will fire the `gridReady` event. 
+  - If you want to use the API of the grid, you should put an `onGridReady(params)` callback onto the grid and grab the api from the params. 
+- React renders components asynchronously and although this is fine in the majority of use cases, 
+  - it can be the case that in certain circumstances a very slight flicker can be seen where an old component is destroyed but the new one is not yet rendered by React.
+  - In order to eliminate this behavior the Grid will "pre-render" cell components and replace them with the real component once they are ready.
+  - What this means is that the `render` method on a given `Cell` Component will be invoked twice, once for the pre-render and once for the actual component creation.
+  - Note that this pre-render only applies to Cell Components - other types of Components are unaffected.
+- By default the ag-Grid React component will check props passed in to determine if data has changed and will only re-render based on actual changes.
+  - IdentityCheck/referenceEqual
+  - DeepValueCheck/deepEqual
+  - NoCheck/AlwaysRender
+
+## Hooks for ag-grid
+
+- We can break down the type of Hooks you can use within ag-Grid into two broad categories - those that have lifecycle methods (such as Filters) and those that don't (such as Cell Renderers).
+- Hooks without Lifecycle Methods
+  - Cell Renderers, Loading Cell Renderers and Overlay Components are examples of components without lifecycle methods.
+  - For this type of Hook you don't have to do anything special and the Hook should work as expected within ag-Grid, although it would often be easier to simply use a functional component in these cases (as there won't be any state to maintain).
+- Hooks with Lifecycle Methods
+  - Filters, Cell Editors and Floating Filter Components are examples of components that have mandatory lifecycle methods.
+  - For these types of components you'll need to wrap your hook with `forwardRef` and then expose Grid related lifecycle methods `useImperativeHandle`
+- Rendering Null
+  - If you don't want to output anything on render then return an empty string rather than `null` .
+  - If you return `null` , then React simply won't render the component and the Grid is unable to determine if this is by design or an error.
