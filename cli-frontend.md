@@ -120,6 +120,11 @@ modified: '2020-07-14T10:35:06.446Z'
 
 ## webpack
 
+- 对于typescript + monorepo的hot reload热加载
+  - 基本思路是将package.json的main属性值直接配置到源码如 `src/index.tsx` ，参考例子react-workspaces-playground
+  - 对于某些特别复杂的项目，如ag-grid，由于使用的ts特性特别多，样式引用scss，编译需要的插件可能变得很复杂，热加载很可能编译不通
+    - 可以先采取过渡方案，将main属性值配置到 `dist/index.js` ，然后 `tsc --watch` 编译依赖项目，这样修改时会自动编译出新的dist/index.js
+    - 等到对项目源码思路熟练掌握时，可自定义重新构建
 - [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin)
   - Use this to load modules whose location is specified in the `paths` section of `tsconfig.json` when using webpack. 
   - This package provides the functionality of the `tsconfig-paths` package but as a webpack plug-in.

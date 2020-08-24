@@ -35,6 +35,8 @@ modified: '2020-08-10T06:07:32.071Z'
     - ag-tab-guard-bottom
   - ag-paging-panel: 默认隐藏分页组件
 
+- AgGridReact组件会在ag-root-wrapper外层添加一个div `<div style="height: 100%;">`
+
 ``` CSS
 .ag-root {
   position: relative;
