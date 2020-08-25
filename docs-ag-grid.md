@@ -7,6 +7,160 @@ modified: '2020-08-05T04:35:33.164Z'
 
 # docs-ag-grid
 
+## Row Models
+
+- The grid can be configured with different strategies for loading row data into the grid, which are encapsulated into different Row Models. 
+- Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
+- The grid comes with four row models.
+  - Client-Side
+    - This is the default. 
+    - The grid will load all of the data into the grid in one go. 
+    - The grid can then perform filtering, sorting, grouping, pivoting and aggregation all in memory.
+  - Infinite
+    - This will present the data to the user and load more data as the user scrolls down. 
+    - Use this if you want to display a large, flat (not grouped) list of data.
+  - Server-Side
+    - The Server-Side Row Model builds on the Infinite Row Model. 
+    - In addition to lazy-loading the data as the user scrolls down, it also allows lazy-loading of grouped data with server-side grouping and aggregation. 
+    - Advanced users will use Server-Side Row Model to do ad-hoc slice and dice of data with server-side aggregations.
+  - Viewport
+    - The grid will inform the server exactly what data it is displaying (first and last row) and the server will provide data for exactly those rows only. 
+    - Use this if you want the server to know exactly what the user is viewing, useful for updates in very large live datastreams where the server only sends updates to clients viewing the impacted rows.
+- The Client-Side Row Model deals with client-side data. 
+  - The Server-Side, Infinite and Viewport Row Models deal with server-side data. 
+  - Which row model you use is set as a grid property `rowModelType` . 
+  - The default is 'clientSide'.
+- Which row model you use will depend on your application. Here are some quick rules of thumb:
+  - use Client-Side Row Model if you want to load all your data into the browser, or Infinite Row Model if you want to load it in blocks.
+- Here are more detailed rules of thumb.
+  - If you are not sure, use default Client-Side. 
+    - The grid can handle massive amounts of data (100k+ rows). 
+    - The grid will only render what's visible on the screen (40 rows approximately, depending on your screen size) even if you have thousands of rows returned from your server. 
+    - You will not kill the grid with too much data - rather your browser will run out of memory before the grid gets into problems. 
+    - So if you are unsure, go with Client-Side Row Model first and only change if you need to. 
+    - With Client-Side, you get sorting, filtering, grouping, pivoting and aggregation all done for you by the grid. 
+    - All of the examples in the documentation use the Client-Side model unless specified otherwise.
+  - If you do not want to shift all the data from your server to your client, as the amount of data is too large to shift over the network or to extract from the underlying datasource, then use either Infinite, Server-Side or Viewport. 
+    - Each one takes data from the server in different ways.
+  - Use Infinite or Server-Side to bring back a list of data one block at a time from the server. 
+    - As the user scrolls, the grid will ask for more rows. 
+    - Server-Side has more features than Infinite and will allow row grouping, aggregation, lazy-loading of groups and slice and dice of data.
+  - Use Viewport if you want the server to know exactly what the user is looking at. 
+    - This is best when you have a large amount of changing data and want to push updates to the client when the server-side data changes. 
+    - Knowing exactly what the user is looking at means you only have to push updates to the relevant users. 
+    - All the row models can receive updates, but only the Viewport row model provides the server with the information of the rows the users currently sees on screen without scrolling.
+
+- Deeper Understanding of Row Models
+  - The grid follows an MVC pattern. 
+  - Each data item is wrapped in a Row Node and then stored in the Row Model. 
+  - The grid rendering engine is called Row Renderer and listens for changes to the row model and updates the DOM accordingly
+  - The grid has exactly one `RowRenderer` instance. 
+    - The RowRenderer contains a reference to the `PaginationProxy` where it asks for the rows one at a time for rendering.
+  - The grid has exactly one `PaginationProxy` instance. 
+    - The `PaginationProxy` will either a) do nothing if pagination is not active and just forward all requests to the Row Model or b) do pagination if pagination is active. 
+    - The `PaginationProxy` has exactly one `RowModel` instance.
+  - You can configure the grid to use any of the provided Row Models - that's why `RowModel` is in italics, it means it's an interface, the concrete implementation is what you decide when configuring the grid. 
+    - The `RowModel` contains a list of RowNodes. 
+    - The `RowModel` may have a list of all the RowNodes (Client-Side Row Model) or have a datasource where it can lazy-load RowNodes.
+  - A `RowNode` has a reference to exactly one row data item (the client application provides the row data items). 
+    - The `RowNode` has state information about the row item, such as whether it is selected and the height of it.
+  - When there is a change of state in the `RowNode` s, the `RowModel` fires a `modelUpdated` event which gets the `RowRenderer` to refresh. 
+    - This happens for many reasons, or example the data is sorted, filtered, a group is opened, or the underlying data has changed.
+
+- Pagination can be applied to any of the row model types. 
+  - The documentation on each row model type covers pagination for that row model type.
+
+- The Client-Side row model does not need a datasource. 
+  - Infinite, Viewport and Server-Side all use a datasource. 
+
+## Client-Side Data Overview
+
+- By default the grid expects you to provide all the data up front. 
+  - In other words, your application loads the full set of data into the client and then passes it in its entirety to the grid. 
+  - This is in contrast to Server-Side Data where the data is mostly kept on the server and loaded into the grid in parts.
+- There is only one client-side row model, aptly named the "Client-Side Row Model". 
+  - You don't need to configure the grid to use the Client-Side Row Model as it's used by default.
+
+- ### Client-Side Row Model
+- Once the grid has all of the data, it can perform many operations on it for you, such as sorting, filtering and grouping.
+- The Client-Side Row Model is responsible for working out how to display the rows inside the grid. 
+- It has a complex data structure, representing the data in different states. 
+- State 1: Row Data
+  - The data as provided by the application. 
+  - The grid never modifies this array. 
+  - It just takes the `rowData` items from it.
+  - API: There is no API to get this data. However it was provided by the application so you should already have it.
+- State 2: All Rows
+  - `allRows` is similar to `rowData` except a new array is created which contains row nodes, with each row node pointing to exactly one data item. 
+  - The length of the `allRows` array is the same as the `rowData` array.
+  - API: There is no API to get this data. However there is no benefit over the `rowsAfterGroup` data.
+- State 3: Rows After Group
+  - `rowsAfterGroup` takes `allRows` , and if grouping, groups the data. 
+  - If no grouping is done, then `rowsAfterGroup` will be identical to `allRows` . 
+  - API: Use `api.forEachNode()` to access this structure.
+- State 4: Rows After Filter
+  - `rowsAfterFilter` goes through `rowsAfterGroup` and filters the data. 
+  - API: Use `api.forEachNodeAfterFilter()` to access this structure.
+- State 5: Rows After Sort
+  - `rowsAfterSort` goes through `rowsAfterFilter` and sorts the data. 
+  - API: Use `api.forEachNodeAfterFilterAndSort()` to access this structure.
+- State 6: Rows After Map
+  - `rowsAfterMap` maps the data to what should be drawn inside the grid, taking into account what groups are open and closed. 
+  - This list is what is iterated through when the grid draws the rows.
+  - API: Use `api.getModel()` and then `model.getVirtualRowCount()` and `getVirtualRow()` to get the nodes.
+
+- Refreshing the Client-Side Model
+  - If you do want to refresh the Client-Side Row Model, call `api.refreshClientSideRowModel(startingStage)` , where `startingStage` can be one of the stages above, i.e.: group, filter, pivot, aggregate, sort, map
+  - Because each stage depends on the stage before, refreshing any particular stage means that stage executes and then all the stages after it will also execute again.
+
+## Client-Side Data - Accessing Client-Side Data
+
+- Each time you pass data to the grid, the grid wraps each data item with a Row Node object. 
+- It is handy to access these Row Nodes. 
+
+## Client-Side Data - Updating Client-Side Data
+
+- Updating data in the grid via the grid's API does not cover all the ways in which data can change inside the grid. Data can also change in the grid in the following ways:
+  - Editing data inside the grid using the grid's UI, e.g. by the user double-clicking on a cell and editing the cell's value. 
+    - When this happens, the grid is in control and there is no need to explicitly tell the grid data has changed. 
+    - See in-line editing on how to edit via the grid's UI.
+  - The grid's data is updated from elsewhere in your application. 
+    - This can happen if you pass data to the grid and then subsequently change that data outside of the grid. 
+    - This leaves the grid's view out of sync with the data that it has. 
+    - In this instance what you want to do is refresh the view to have the grid's UI redraw to display the data changes.
+- Setting Fresh Row Data
+  - The easiest way to update data inside the grid is to replace the data you gave it with a fresh set of data. 
+  - This is done by either updating the `rowData` bound property (if using a framework) or calling `api.setRowData(newData)` .
+  - Replacing the data with a fresh set means the grid will treat it as a brand new set of data and as such the following will occur:
+    - Row selection will be cleared.
+    - If grouping, the open/closed state of the groups will be cleared.
+    - The entire grid's UI will be refreshed from scratch. This has the following drawbacks:
+      - All Cell Renderers will be destroyed and re-created with no option to have them refresh, 
+        - losing out on a chance to provide custom animation between value changes (e.g. fade or slide old value out).
+      - Row Animation will not be applied. 
+        - For example, if the difference in data is one row is removed, all rows below will jump up one position rather than having a smooth transition.
+      - It is not possible to highlight data changes, e.g. to flash cells.
+    - All of the Client-Side Row Model calculations will be redone from scratch, i.e. sorting, filtering, grouping, aggregation and pivoting.
+    - Use the technique of setting new Row Data when you are dealing with a different distinct set of data e.g. loading a new report with a completely different dataset to the previous one. 
+    - This makes sure nothing is lying around from the old dataset and all data-related grid state (selection, groups etc.) is cleared.
+
+- Changes to Row Data means you want to change some of the data and have the grid keep all state that it had before the data change.
+  - Keeping all state means items such as row selection and group open/closed state will be maintained.
+- There are different ways of updating row data which are summarized as follows:
+  - Single Row/Cell
+    - Updates the value of a single row or cell. 
+    - This is done by getting a reference to the Row Node and then calling either `rowNode.setData()` or `rowNode.setDataValue()` .
+    - Use transactions for updating a small number of individual rows infrequently. There is no way to insert or remove rows with this method.
+  - Transaction
+    - The grid takes a transaction containing rows to add, remove and update. 
+    - This is done using `api.applyTransaction(transaction)` .
+    - Use transactions for doing add, remove or update operations on a large number of rows that are infrequent.
+  - High Frequency
+    - High Frequency (achieved with Async Transactions) is a mechanism of applying many transactions over a small space of time and have the grid apply all the transactions in batches. 
+    - The high frequency/batch method is for when you need the fastest possible way to process many continuous updates, such as providing a stream of updates to the grid. 
+    - This is done using the API `applyTransactionAsync(transaction)` .
+    - Use Async Transactions for doing add, remove or update operations that are frequent, e.g. for managing streaming updates into the grid of tens, hundreds or thousands of updates a second.
+
 ## Client-Side Data - Immutable Data
 
 - Under normal operation when new data is set into the grid (e.g. the `rowData` bound property is updated with new data), the grid assumes the new data is a brand new set of data. 
@@ -20,6 +174,12 @@ modified: '2020-08-05T04:35:33.164Z'
   - Changes to a single row data item results in a new row data item object instance.
   - Any changes within the list or row data results in a new list.
 - For the Immutable Data Mode to work, you must be providing IDs for the row nodes as explained in Application Assigned IDs.
+
+## Client-Side Data - Context
+
+- The context object is passed to most of the callbacks used in the grid. 
+- The purpose of the context object is to allow the client application to pass details to custom callbacks such as the Cell Renderers and Cell Editors.
+- Note that the grid does not place anything into the context and it is not used internally by the grid.
 
 ## Row Spanning
 
@@ -56,6 +216,18 @@ modified: '2020-08-05T04:35:33.164Z'
     - For example a cell may span 4 rows, however applying a filter or a sort will probably change the requirements of what rows should be spanned.
   - Range Selection will not work correctly when spanning cells. 
     - This is because it is not possible to cover all scenarios, as a range is no longer a perfect rectangle.
+
+- Comparison to Transaction Updates
+  - When in Immutable Data Mode and the grid receives new data, it creates a Transaction Update underneath the hood. 
+    - In other words, once the grid has worked out what rows have been added, updated and removed, it then creates a transaction with these details and applies it. 
+    - This means all the operational benefits to Transaction Updates equally apply to Immutable Data Mode.
+  - There are however some difference with Immutable Data Mode and Transaction Updates which are as follows:
+    - When in Immutable Data Mode, the grid stores the data in the same order as the data was provided. 
+      - For example if you provide a new list with data added in the middle of the list, the grid will also put the data into the middle of the list rather than just appending to the end. 
+      - This decides the order of data when there is no grid sort applied. 
+      - If this is not required by your application, then you can suppress this behavior for a performance boost by setting `suppressMaintainUnsortedOrder=true` .
+    - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
+      - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
 
 ## Column Spanning
 
@@ -103,3 +275,8 @@ modified: '2020-08-05T04:35:33.164Z'
   - There is no column buffer - no additional columns are rendered apart from the visible set. 
   - This is because horizontal scrolling is not as CPU intensive as vertical scrolling, thus the buffer is not needed for a good UI experience.
   - To turn column virtualisation off set the grid property `suppressColumnVirtualisation=true` .
+
+## Export
+
+- The grid provides APIs to export data to CSV and Excel. 
+- You can download a file to the user's computer or generate a string to be uploaded to a server. 

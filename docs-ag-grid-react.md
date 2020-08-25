@@ -30,14 +30,15 @@ modified: '2020-08-24T09:15:23.767Z'
   - or by binding to `columnDefs` prop on the `AgGridReact` component.
   - In all cases all column definition properties can be defined to make up a column definition.
 
-- By default user supplied React components will be wrapped in a div, 
-  - but it is possible to have your component wrapped in a container of your choice (i.e. a span etc), perhaps to override/control a third party component.
+- By default user supplied React components will be wrapped in a `div` , 
+  - but it is possible to have your component wrapped in a container of your choice (i.e. a `span` etc), perhaps to override/control a third party component.
   - If you wish to override the style of this div, you can either provide an implementation of the `ag-react-container` class, or via the `getReactContainerStyle` or `getReactContainerClasses` callbacks on the React component
 
 ## More Control of ag-Grid with React
 
 - When the grid is initialized, it will fire the `gridReady` event. 
   - If you want to use the API of the grid, you should put an `onGridReady(params)` callback onto the grid and grab the api from the params. 
+  - You can then call this api at a later stage to interact with the grid (on top of the interaction that can be done by setting and changing the props).
 - React renders components asynchronously and although this is fine in the majority of use cases, 
   - it can be the case that in certain circumstances a very slight flicker can be seen where an old component is destroyed but the new one is not yet rendered by React.
   - In order to eliminate this behavior the Grid will "pre-render" cell components and replace them with the real component once they are ready.
@@ -56,7 +57,7 @@ modified: '2020-08-24T09:15:23.767Z'
   - For this type of Hook you don't have to do anything special and the Hook should work as expected within ag-Grid, although it would often be easier to simply use a functional component in these cases (as there won't be any state to maintain).
 - Hooks with Lifecycle Methods
   - Filters, Cell Editors and Floating Filter Components are examples of components that have mandatory lifecycle methods.
-  - For these types of components you'll need to wrap your hook with `forwardRef` and then expose Grid related lifecycle methods `useImperativeHandle`
+  - For these types of components, you'll need to wrap your hook with `forwardRef` and then expose Grid related lifecycle methods `useImperativeHandle`
 - Rendering Null
   - If you don't want to output anything on render then return an empty string rather than `null` .
   - If you return `null` , then React simply won't render the component and the Grid is unable to determine if this is by design or an error.

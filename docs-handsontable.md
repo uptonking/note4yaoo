@@ -25,7 +25,7 @@ modified: '2020-07-14T10:22:06.873Z'
   - ref
     - [A Complete Guide to Changing the Size of Handsontable](https://handsontable.com/blog/articles/2016/3/a-complete-guide-to-changing-size-of-handsontable)
 
-- To set up Handsontable DOM structure in your application, you have to define its container as a starting point to initialise component.
+- To set up Handsontable DOM structure in your application, you have to define its container as a starting point to initialize component.
   - Usually, the `div` element becomes this container. 
   - This container should **have defined dimensions** as well as the rest of your layout. 
   - If container is a block element, then its parent has to have defined height. By default block element is 0px height, so 100% from 0px is still 0px.
@@ -82,7 +82,7 @@ modified: '2020-07-14T10:22:06.873Z'
 
 ## pieces
 
-- handsontable分离了cell vaule的显示displaying和修改altering，renderer负责displaying，editor负责altering。
+- handsontable分离了cell value的显示displaying和修改altering，renderer负责displaying，editor负责altering。
   - renderer是function，接受实际值，返回html
   - editor较复杂，是class，负责处理输入及数据验证
 
@@ -137,7 +137,7 @@ modified: '2020-07-14T10:22:06.873Z'
 - 在table渲染时，每个cell的renderer方法会被分别调用，在滚动、排序或单元格编辑时，table可能会被多次渲染，因此renderer()应使用简单方法来避免性能问题
 - 每个cell的renderer()方法可能会被调用多次，这可能导致监听事件重复
 - 当滚动或增删行列时，会重用单元格，此时可能发生事件绑定到错误的单元格
-- 推荐使用 handsontable envents system，若必须自定义事件，则将cell内容包裹在 `<div>` 中，再给div添加监听器
+- 推荐使用 handsontable events system，若必须自定义事件，则将cell内容包裹在 `<div>` 中，再给div添加监听器
 - Handsontable renders only the visible part of the table plus a fixed amount of rows and columns. 
 
 - editor()
