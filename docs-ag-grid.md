@@ -10,8 +10,8 @@ modified: '2020-08-05T04:35:33.164Z'
 ## Row Models
 
 - The grid can be configured with different strategies for loading row data into the grid, which are encapsulated into different Row Models. 
-- Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
-- The grid comes with four row models.
+  - Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
+- The grid comes with four row models
   - Client-Side
     - This is the default. 
     - The grid will load all of the data into the grid in one go. 
@@ -249,11 +249,11 @@ modified: '2020-08-05T04:35:33.164Z'
   - Range Selection will not work correctly when spanning cells. 
     - This is because it is not possible to cover all scenarios, as a range is no longer a perfect rectangle.
 
-## DOM Virtualisation
+## DOM Virtualization
 
 - https://www.ag-grid.com/javascript-grid-dom-virtualisation/
 
-- The grid uses DOM virtualistaion to vastly improve rendering performance.
+- The grid uses DOM virtualization to vastly improve rendering performance.
 - If you loaded 1, 000 records with 20 columns into the browser without using a datagrid (eg using 'table', 'tr' and 'td' tags), then the page would end up with a lot of rendered DOM elements. 
   - This would drastically slow down the web page. 
   - This results in either a very poor user experience, or simply crashing the browser as the browser runs out of memory.
@@ -280,3 +280,18 @@ modified: '2020-08-05T04:35:33.164Z'
 
 - The grid provides APIs to export data to CSV and Excel. 
 - You can download a file to the user's computer or generate a string to be uploaded to a server. 
+- What Gets Exported
+  - The same data that is in the grid gets exported, but none of the GUI representation of the data will be. 
+- What this means is:
+  - The raw values, and not the result of cell renderer, will get used, meaning:
+    - Cell Renderers will NOT be used.
+    - Value Getters will be used.
+    - Cell Formatters will NOT be used (use processCellCallback instead).
+  - Cell styles are not exported by default. CSV does not allow styling. 
+  - If row grouping:
+    - all data will be exported regardless of whether groups are open in the UI.
+    - by default, group names will be in the format "-> Parent Name -> Child Name" 
+    - row group footers (groupIncludeFooter=true) will NOT be exported - this is a GUI addition that happens for displaying the data in the grid.
+- It is not possible to download files directly from JavaScript to an iPad. 
+  - This is a restriction of iOS and not something wrong with ag-Grid. 
+  - For this reason, the download links in the context menu are removed when running on iPad.
