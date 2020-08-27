@@ -1,11 +1,11 @@
 ---
-title: log-news
+title: log-news-industry
 tags: [latest, log, news]
 created: '2019-06-24T11:19:00.127Z'
-modified: '2020-07-14T10:28:34.269Z'
+modified: '2020-08-27T11:52:21.241Z'
 ---
 
-# log-news
+# log-news-industry
 
 - 202008-美国300家(约1/4)必胜客计划永久关闭，并出售剩余分店
   - 互联网经济的玩法，以前是中国学习西方，现在是中国输出创新的商业模式
