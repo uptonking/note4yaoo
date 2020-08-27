@@ -23,6 +23,7 @@ modified: '2020-08-09T08:43:10.089Z'
   - 滚动
 - grid实现
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
+  - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
 
 ## features
 
@@ -34,6 +35,10 @@ modified: '2020-08-09T08:43:10.089Z'
     - Multiple sorting mode. 
       - A user can hold the Shift key and click column headers in the order the user wants to apply sorting. 
       - To cancel a column's sorting settings, a user should hold the Ctrl key and click the column header.
+
+## usecase
+
+- file-explorer
 
 ## grid-implementation-vs
 
