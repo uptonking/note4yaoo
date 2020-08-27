@@ -100,7 +100,7 @@ modified: '2020-08-09T08:43:10.089Z'
 
 - MUI tables use HTML table elements, not divs and styles. 
 - To use an absolute layout, you would need to either 
-  - use divs instead of table elements 
+  - use div instead of table element
   - or, switch all of your table element styles to be `display: block` ( `display: inline-block` for cells) 
   - and last but not least, when using an absolute layout, your rows must have a predefined height, eg. 50px.
 
@@ -146,6 +146,9 @@ modified: '2020-08-09T08:43:10.089Z'
       - infinite or virtualized scrolling was the cause of problems
       - difficult for sorting, grouping, column dragging
       - react-table styles are minimal and designed to be overridden
+    - ag-grid-xp
+      - lack of client-side pagination
+      - inconvenient to change cell renderer
     - about viz
       - 海量svg元素的动画和操作体验很不友好
       - Chart.js has support for mixing chart types, animations
@@ -193,6 +196,7 @@ modified: '2020-08-09T08:43:10.089Z'
 
 - A react table component to display large datasets with high performance and flexibility
 - BaseTable is designed to be the base component to build your own complex table component
+- dependencies: react-window, react-virtualized-auto-sizer
 - There are a lot of highly flexible props like `xxxRenderer` and `xxxProps` for you to build your own table component
 - There is a PR to add selection feature, but I don't want to merge it with good reasons
 - Inline Editing is a very common feature in a table, 
@@ -213,16 +217,42 @@ modified: '2020-08-09T08:43:10.089Z'
 - antd table
   - https://ant.design/components/table-cn/
 
-- ag-grid
-  - lack of client-side pagination
-  - inconvenient to change cell renderer
+## extension-table-grid 
+
+- https://github.com/GuillaumeJasmin/react-table-sticky
+  - Sticky hook for React Table v7
+- https://github.com/gargroh/react-table-plugins
+  - This repository contains miscellaneous react-table v7 plugins
+  - useExportData - Exporting data from table
+  - useColumnSummary - For displaying and calculating column summaries
+  - useCellRangeSelection - Allows Cell selection and Cell range selection
+- https://github.com/ggascoigne/react-table-example
+  - Demo of React Table V7 using TypeScript as well as Material UI
+
+- https://github.com/avallete/ag-grid-autocomplete-editor
+  - Quick implementation of autocompletion into ag-Grid cell using autocompleter package.
+- https://github.com/bchariot/ReactCRUD
+  - AG Grid allowing CRUD operations written in React.js
+
+- https://github.com/laomu1988/handsontable
+  - 在线表格编辑，可编辑公式、添加Object对象
+- https://github.com/handsontable/performance-lab
+  - JavaScript performance tests for Handsontable
+- https://github.com/hand-dot/table2md
+  - Convert from Excel-like table to markdown table.
+- https://github.com/orestisrodriguez/handsontable-multi-select
+  - Editor for handsontable that allows multiple select cells. Based on jshjohnson/Choices
+- https://github.com/WranglHQ/handsontable_vs_reactdatagrid
+  - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
+- https://github.com/burnash/dataimport
+  - Simple JavaScript CSV Importer
 
 ## office-online-product-catalog
 
 - office软件提供商
   - 国内一线：石墨，腾讯文档，语雀，钉钉文档，金山文档
   - 国内二线：飞书
-  - 国外主流：Gsuite, MS Office
+  - 国外主流：GSuite, MSOffice
   - 周边产品：Canva
 
 - 文字编辑器
