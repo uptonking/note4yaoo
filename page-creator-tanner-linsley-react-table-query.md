@@ -7,7 +7,7 @@ modified: '2020-08-17T07:31:22.391Z'
 
 # page-creator-tanner-linsley-react-table-query
 
-- [Custom Hooks in React: The ultimate UI abstraction layer you're missing out on_2020](Custom Hooks in React: The ultimate UI abstraction layer you're missing out on)
+- [Custom Hooks in React: The ultimate UI abstraction layer you're missing out on_2020]()
   - slides for my talk at JS Conf Hawaii 2020 by tanner linsley
 
 - react-hooks-basics

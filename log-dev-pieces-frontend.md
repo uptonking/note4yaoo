@@ -10,6 +10,82 @@ modified: '2020-08-18T05:56:56.343Z'
 
 ## logging
 
+- 根据构造函数创建对象的通用方法
+  - [Use of .apply() with 'new' operator. Is this possible?](https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible)
+  - [How can I call a javascript constructor using call or apply?](https://stackoverflow.com/questions/3362471/how-can-i-call-a-javascript-constructor-using-call-or-apply)
+
+``` JS
+// A bit of explanation:
+var f = Cls.bind(anything, arg1, arg2, ...);
+result = new f();
+
+// The anything parameter doesn't matter much, since the new keyword resets f's context.
+var f = Cls.bind.apply(Cls, [anything, arg1, arg2, ...]);
+result = new f();
+
+// Let's wrap that in a function. Cls is passed as argument 0, so it's gonna be our anything.
+
+function newCall(Cls /*, arg1, arg2, ... */ ) {
+  var f = Cls.bind.apply(Cls, arguments);
+  return new f();
+}
+
+function newCall(Cls /*, arg1, arg2, ... */ ) {
+  return new(Cls.bind.apply(Cls, arguments))();
+}
+
+// Finally, we should make sure that bind is really what we need. 
+// (Cls.bind may have been overwritten). So replace it by Function.prototype.bind, 
+// and we get the final result.
+function newCall(Cls) {
+  return new(Function.prototype.bind.apply(Cls, arguments));
+  // or even
+  // return new (Cls.bind.apply(Cls, arguments));
+  // if you know that Cls.bind has not been overwritten
+}
+```
+
+``` JS
+// 其它实现
+function conthunktor(Constructor) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  return function() {
+
+    var Temp = function() {}, // temporary constructor
+      inst, ret; // other vars
+
+    // Give the Temp constructor the Constructor's prototype
+    Temp.prototype = Constructor.prototype;
+
+    // Create a new instance
+    inst = new Temp;
+
+    // Call the original Constructor with the temp
+    // instance as its context (i.e. its 'this' value)
+    ret = Constructor.apply(inst, args);
+
+    // If an object has been returned then return it otherwise
+    // return the original instance.
+    // (consistent with behavior of the new operator)
+    return Object(ret) === ret ? ret : inst;
+
+  }
+}
+
+function applyToConstructor(constructor, argArray) {
+  var args = [null].concat(argArray);
+  var factoryFunction = constructor.bind.apply(constructor, args);
+  return new factoryFunction();
+}
+var d = applyToConstructor(Date, [2008, 10, 8, 00, 16, 34, 254]);
+
+function callConstructor(constructor) {
+  var factoryFunction = constructor.bind.apply(constructor, arguments);
+  return new factoryFunction();
+}
+var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
+```
+
 - typescript compile: babel-loader vs ts-loader
   - Because Babel only does code transforms, the build step becomes incredibly fast as it skips the type-checking step and just strips out the all the TypeScript type-annotations – converting it to vanilla JS.
   - Babel has no type-safety at build time! 
