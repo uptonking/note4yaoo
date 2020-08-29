@@ -11,6 +11,27 @@ modified: '2020-08-18T05:56:56.343Z'
 ## logging
 
 - 根据构造函数创建对象的通用方法
+  - The `new` keyword does the following things:
+    - Creates a blank, plain JavaScript object;
+    - Links (sets the constructor of) this object to another object;
+    - Passes the newly created object from Step 1 as the `this` context;
+    - Returns `this` if the function doesn't return an object.
+  - When the code `new Foo(...)` is executed, the following things happen:
+    - A new object is created, inheriting from `Foo.prototype`.
+    - The constructor function `Foo` is called with the specified arguments, and with `this` bound to the newly created object. 
+      - `new Foo` is equivalent to `new Foo()`, i.e. if no argument list is specified, `Foo` is called without arguments.
+    - The object (not null, false, 3.1415 or other primitive types) returned by the constructor function becomes the result of the whole `new` expression. 
+      - If the constructor function doesn't explicitly return an object, the object created in step 1 is used instead. 
+      - (Normally constructors don't return a value, but they can choose to do so if they want to override the normal object creation process.)
+    - You can always add a property to a previously defined object.
+    - You can add a shared property to a previously defined object type by using the `Function.prototype` property. 
+      - This defines a property that is shared by all objects created with that function, rather than by just one instance of the object type. 
+    - If you didn't write the `new` operator, the Constructor Function would be invoked like any Regular Function, without creating an Object. In this case, the value of `this` is also different.
+  - When a function is used as a constructor (with the `new` keyword), its `this` is bound to the new object being constructed
+  - While the default for a constructor is to return the object referenced by `this` , it can instead return some other object 
+    - (if the return value isn't an object, then the `this` object is returned).
+    - If the function has a return statement that returns an object, that object will be the result of the `new` expression.  
+    - Otherwise, the result of the `new` expression is the object currently bound to `this`
   - [Use of .apply() with 'new' operator. Is this possible?](https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible)
   - [How can I call a javascript constructor using call or apply?](https://stackoverflow.com/questions/3362471/how-can-i-call-a-javascript-constructor-using-call-or-apply)
 
