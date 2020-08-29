@@ -9,7 +9,7 @@ modified: '2020-08-18T06:14:25.248Z'
 
 ## faq-not-yet
 
-- 开发组件list和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
+- 开发list组件和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
   - react-virtualized: List uses a Grid internally to render the rows
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
@@ -21,6 +21,7 @@ modified: '2020-08-18T06:14:25.248Z'
 - If you are adding a lot of elements to a DOM, and you add them to the container with `visibility: hidden` , then you'll provoke a reflow for each one. 
   - On the other hand, you can add as many elements as you want with `display:none` and show them all at once provoking a single reflow. 
   - The performance taxing action is the the reflow.
+  - 这里描述的是特殊场景，动态添加隐藏的div。
 - `visibility: hidden` acts like `opacity: 0` + `pointer-events: none` . 
 - `display: none` acts like `Element.remove()` .
 - ref
@@ -28,10 +29,25 @@ modified: '2020-08-18T06:14:25.248Z'
 
 ## 对象解构时，特别地，对react函数组件的props参数解构时，是在参数处解构更好，还是在函数体内解构更好？
 
-- 在函数内解构，除了可以获得各属性prop变量外，还方便使用整体的props
+``` JS
+// 在参数处解构，变量默认是let
+function MyComponent({ name, age, height }) {
+  // do stuff here
+}
+
+function MyComponent(props) {
+  // 在函数体内解构，变量被指定为const
+  const { name, age, height } = props
+  // do stuff here
+}
+
+<MyComponent name="bob" age={25} height = {175} haspets={false}/>
+```
+
+- 在函数内解构，除了可以获取各prop参数变量外，还方便使用整体的props对象
 - 在参数处解构，更直观的写法，便于第三方插件如doc-gen提取参数默认值
   - 解构多层嵌套对象的深层属性时，要考虑提取参数的意义与困难度
-- 使用 `arguments[0]` 也可以获得props对象，但箭头函数没有 `this` - `super` - `arguments` - `new.target` ，且箭头函数不能用作构造函数
+- 使用 `arguments[0]` 也可以获取整体props对象，但箭头函数没有 `this` , `super` , `arguments` , `new.target` ，且箭头函数不能用作构造函数
 - One of the differences I can think of, and I suppose the most important, is that on the second case, while you are destructing your props object in function body, you are using `const` on declaration.
   - In that way, you can no longer change these values on your MyComponent, while on your first case you could easily modify them.
   - 对react组件来说，props不能改变，推荐只用const解构，但对普通函数参数解构时，要考虑用let
@@ -39,7 +55,24 @@ modified: '2020-08-18T06:14:25.248Z'
   - [Different ways of destructuring props in react](https://stackoverflow.com/questions/59586876/different-ways-of-destructuring-props-in-react)
   - [ES6 destructuring function parameter - naming root object](https://stackoverflow.com/questions/29051011/es6-destructuring-function-parameter-naming-root-object)
 
-## 使用js时要不要用class? Please stop using classes in JavaScript
+## when should I use class
+
+- es6的class提供了一个class实现的标准，之前无标准而较乱
+- Opinionated take: 
+  - Class inheritance, getters and setters makes your modules overly complex and hard to debug. 
+  - Should have complicated syntax to discourage use, ES6 made it too easy.
+- ref
+  - [Why use classes instead of functions?](https://stackoverflow.com/questions/6480676/why-use-classes-instead-of-functions)
+  - [5 reasons not to use ES6 classes in React](https://blog.krawaller.se/posts/5-reasons-not-to-use-es6-classes-in-react/)
+    - Inconsistent context
+    - No mixin support
+    - Inconsistent state handling
+    - Inconsistent definition
+    - Dealing with super
+  - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
+    - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
+
+## Please stop using classes in JavaScript
 
 - Binding issues. 
   - As class constructor functions deal closely with `this ` keyword, 
@@ -60,7 +93,7 @@ modified: '2020-08-18T06:14:25.248Z'
 - Using a standard function+object+prototype chain "classes" is a good way to learn how JS works, but hiding all that behind the class sugar is too much abstraction to me.
   - Main benefit I get out of ES6 classes is defining the shape of data I am dealing with, so I can talk and think about it in precise terms. 
   - When I say "Customer", I know exactly what fields and properties that entails (and IDE will help me remember it too).
-  - Member functions and inheritence are less useful for the reasons you stated in your article. 
+  - Member functions and inheritance are less useful for the reasons you stated in your article. 
   - Any kind of business code I prefer to keep in pure functions or service objects, that are given class based objects to manipulate. 
   - Code and data kept mostly separate.
 - Before es6 class, I worked with projects that had different class implementations in them, all with their own ups and downs. Now everyone tends to use the ES2015 version and things are much clearer.
