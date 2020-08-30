@@ -13,6 +13,12 @@ modified: '2020-08-18T06:14:25.248Z'
   - react-virtualized: List uses a Grid internally to render the rows
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
+## Should interface names begin with an “I” prefix?
+
+- do if you like.
+- In many ways, consistency is more important than convention. 
+- It doesn't matter as long as you pick a style and stick with it!
+
 ## hide dom elements: visibility vs display
 
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.

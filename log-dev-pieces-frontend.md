@@ -10,6 +10,55 @@ modified: '2020-08-18T05:56:56.343Z'
 
 ## logging
 
+- 函数调用拆分
+
+``` JS
+function spread(fn) {
+  return Function.apply.bind(fn, null);
+}
+
+spread(fn)
+
+// is transformed to
+
+args => fn.apply(null, args)
+```
+
+- 理解 `return new (Function.prototype.bind.apply(ctor, args))();`
+  - 分解成多步
+
+``` JS
+var func = Function.prototype.bind.apply(ctor, args);
+return new func();
+```
+
+  - Since .apply() is a function in on itself, it can be bound with .bind(), like so:
+    - `Function.prototype.apply.bind(fn, null);`
+    - Meaning that the `this` of `.apply()` would be `fn` and the first argument to `.apply()` would be `null` . Meaning that it would look like this:
+    - `fn.apply(null, args)`
+  - ref
+    - [How does function.apply.bind work in the following code?](https://stackoverflow.com/questions/39906893/how-does-function-apply-bind-work-in-the-following-code)
+
+- .apply.bind
+
+``` JS
+var sum = function(x, y) {
+  console.log(x, y);
+}
+var foo = Function.apply.bind(sum, null);
+foo([10, 20]); // 10, 20
+```
+
+  - `Function.apply.bind(sum, null)` 等价于 `sum.apply.bind(sum, null)）`
+    - 可避免sum.apply被重写引发的问题
+    - Function.apply.bind(sum, null)目的就是将sum.apply(…)的第一个参数固定为null
+    - sum.apply(null, [10, 20])这句代码将第一个参数置为null，第二个参数是一个数组，用于拆开后作为sum的最终参数。
+    - 如果将sum.apply(…)的第一个参数设置为null，那么就意味着我们并不关心sum在执行时其内部的this指向谁
+    - 所以最终我们得到的foo函数就是sum.apply(null, [10, 20]); [10,20]会拆开成10和20传递给sum(…)
+- .bind.apply
+  - 我们将orig_fn.bind.apply(orig_fn, args)拆成两部分来看：函数orig_fn.bind(…)和.apply(orig_fn, args)
+  - 在这里的关键点是：.bind(…) 函数是通过 .apply(…) 调用的，所以 .bind(…) 自身所需要的 this 对象是一个函数（函数也是对象，在这里即 origin_fn）。
+  - orig_fn.bind.apply(orig_fn, args)其实就意味着我们将orig_fn.bind(…)函数的this指向orig_fn，然后.apply(orig_fn, args)的第二个参数会将剩下的参数传递给orig_fn.bind(…)函数。
 - 根据构造函数创建对象的通用方法
   - The `new` keyword does the following things:
     - Creates a blank, plain JavaScript object;
@@ -17,9 +66,9 @@ modified: '2020-08-18T05:56:56.343Z'
     - Passes the newly created object from Step 1 as the `this` context;
     - Returns `this` if the function doesn't return an object.
   - When the code `new Foo(...)` is executed, the following things happen:
-    - A new object is created, inheriting from `Foo.prototype`.
+    - A new object is created, inheriting from `Foo.prototype` .
     - The constructor function `Foo` is called with the specified arguments, and with `this` bound to the newly created object. 
-      - `new Foo` is equivalent to `new Foo()`, i.e. if no argument list is specified, `Foo` is called without arguments.
+      - `new Foo` is equivalent to `new Foo()` , i.e. if no argument list is specified, `Foo` is called without arguments.
     - The object (not null, false, 3.1415 or other primitive types) returned by the constructor function becomes the result of the whole `new` expression. 
       - If the constructor function doesn't explicitly return an object, the object created in step 1 is used instead. 
       - (Normally constructors don't return a value, but they can choose to do so if they want to override the normal object creation process.)
@@ -110,27 +159,38 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 - typescript compile: babel-loader vs ts-loader
   - Because Babel only does code transforms, the build step becomes incredibly fast as it skips the type-checking step and just strips out the all the TypeScript type-annotations – converting it to vanilla JS.
   - Babel has no type-safety at build time! 
+
     - to get around it: `"build": "tsc && webpack"`
   - Why use babel-loader instead?
+
     - In my case, because I wanted to take advantage of `babel-preset-env` . 
     - You pass in a list of browsers you want to support and Babel will only compile the language features that your target browsers don’t support. 
     - It will also make sure to include the required polyfills.
+
   - 这种使用babel的方案，当 webpack 编译的时候，babel-loader 会读取 .babelrc 里的配置，不会调用 typescript（所以本地项目无需安装 typescript），不会去检查类型
   - 配置tsconfig.json可以让ide提示编译错误
   - 使用了 TypeScript，为什么还需要 Babel 
+
     - 大部分已存项目依赖了 babel
     - 有些需求/功能需要 babel 的插件去实现（如：按需加载）
     - babel 有非常丰富的插件，它的生态发展得很好
     - babel 7 之前：需要前面两种方案来转译 TS
     - babel 7 之后：babel 直接移除 TS，转为 JS，这使得它的编译速度飞快
+
   - ts-loader has Type-safety at build time! 
+
     - but can be slow
+
   - ts-loader has one downside: We can’t pipe the output of another loader into it; it always reads the original file. 
   - ts-loader 支持 project references 的部分功能, 但babel不支持
   - 默认情况下，ts-loader 会进行 转译 和 类型检查，每当文件改动时，都会重新去 转译 和 类型检查，当文件很多的时候，就会特别慢，影响开发速度。
+
     - 所以需要使用 fork-ts-checker-webpack-plugin ，开辟一个单独的线程去执行类型检查的任务，这样就不会影响 webpack 重新编译的速度。
+
   - ts-loader 是不会读取 .babelrc 里的配置，即无法使用 babel 系列的插件，所以直接使用 ts-loader 将 ts/tsx 转成 js ，就会出现垫片无法按需加载、antd 无法按需引入的问题。
+
     - 所以需要用 ts-loader 把 ts/tsx 转成 js/jsx，然后再用 babel-loader 去调用 babel 系列插件，编译成最终的 js。
+
   - ref
     - [Webpack 转译 Typescript 现有方案](https://juejin.im/post/6844904052094926855)
 
@@ -175,11 +235,14 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - 通过JSON.stringify(obj)序列化对象时，值类型为函数的属性会被忽略掉，数组中为函数的元素会打印成null
   - ref
     - https://stackoverflow.com/questions/11284663/console-log-shows-the-changed-value-of-a-variable-before-the-value-actually-ch
+
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
   - `undefined` , `Function` s, and `Symbol` s are not valid JSON values. 
+
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .
+
 - styled-components中的样式冲突要注意计算specificity
   - `div.cls1` 的特指度高于 `.cls2` ，即使.cls2写在后面
   - `className=cls1 cls2` 最终使用的样式取决于源码import进来后，cls1和2在源码中声明的先后顺序
@@ -204,7 +267,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - `console.clear` ：清空控制台输出
   - `console.group` ： 分组输出，便于阅读
 - 确保FMP（首次有效绘制） 尽可能的快速, 方法之一就是分阶段进行代码拆分
-  - render loding-render-analytics
+  - render loading-render-analytics
   - FMP所需的所有数据都可以在加载阶段获取其他代码的同时获取
   - http://www.alloyteam.com/2019/12/14174/
 - RESTful APIs 缺点(GraphQL的优点)
@@ -230,33 +293,43 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - FMP：首次有效绘制(First Meaningful Paint)。这是一个很主观的指标。根据业务的不同，每一个网站的有效内容都是不相同的，有效内容就是网页中"主角元素"。对于视频网站而言，主角元素就是视频。对于搜索引擎而言，主角元素就是搜索框。
   - TTI：可交互时间。用于标记应用已进行视觉渲染并能可靠响应用户输入的时间点。应用可能会因为多种原因而无法响应用户输入：①页面组件运行所需的JavaScript尚未加载完成。②耗时较长的任务阻塞主线程
   - 根据devtool时间轴的结果
+
     - 虽然CSR(客户端渲染)配合预渲染方式（loading、骨架图）可以提前FP、FCP从而减少白屏问题，但无法提前FMP
     - SSR(服务端渲染)将FMP提前至js加载前触发，提前显示网页中的"主角元素"。SSR不仅可以减少白屏时间还可以大幅减少首屏加载时间。
+
   - ref
     - https://www.zhihu.com/question/308792091
     - https://zhuanlan.zhihu.com/p/90746589
+
 - lodash引用方式
   - `import { cloneDeep } from 'lodash';`
     - 70.9KB
+
   - `import cloneDeep from 'lodash/cloneDeep';`
     - 17.8KB
+
   - `import { cloneDeep } from 'lodash-es';`
     - 14.6KB
+
   - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
+
     - Lodash is a good example of a module that looks like it has lots of side-effects, even in places that it doesn't. 
     - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'` ).
+
 - named import和namespace import都可以被webpack v5和rollup进行tree shaking
   - default import对于多属性的对象，无法进行tree shaking
   - https://blog.csdn.net/qq_34629352/article/details/104258640
   - https://webpack.js.org/guides/tree-shaking/
   - Note that any imported file is subject to tree shaking. This means if you use something like css-loader in your project and import a CSS file, it needs to be added to the side effect list so it will not be unintentionally dropped in production mode
 - `$` and `$$` will work on any web page (if jQuery is not included also) on Google Chrome, Firefox and Safari browsers where $ returns first element of selector passed.
+
     - `$` is `document.querySelector()`
     - `$$` is `document.querySelectorAll()`
     - `$x()` Returns an array of elements that match the specified XPath.
     - Warning: These functions only work when you call them from the Chrome DevTools Console. They won't work if you try to call them in your scripts.
     - They are native functions of Google Chrome and Firefox browsers, you can see $ and $$ definition in Safari as well.
     - https://developers.google.com/web/tools/chrome-devtools/console/utilities
+
 - The `get` syntax binds an object property to a function that will be called when that property is looked up.
   - 语法： `{get prop() { ... } }` 或 `{get [expression]() { ... } }`
   - prop is the name of the property to bind to the given function.
@@ -283,17 +356,24 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - [ ] [[Set]]: 默认为underfined。表示写入属性时调用的函数；
 - import lodash
   - import { has } from 'lodash-es'; 
+
       - tree shakable, but CommonJS modules are not 
+
   - import has from 'lodash/has'; 
+
       -  lodash holds all it's functions in a single file, so rather than import the whole 'lodash' library at 100k, it's better to just import lodash's has function which is maybe 2k.
       - 'lodash/has' isn't a separate package. There's a file called has.js in the root of the regular 'lodash' package, and import has from 'lodash/has' (or const has = require ('lodash/has) will load that file. 
+
   - import { has } from 'lodash'; 
 - 前端定时器
   - setTimeout()，精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大； 
   - setImmediate()，消耗的资源小，也不会造成阻塞，但效率也是最低的。
+
       - 目前只支持IE10以上, 速度比setTimeOut执行延迟快一些
+
   - process.nextTick()，效率最高，消费资源小，但会阻塞CPU的后续调用；
   - 关于Event Loop和任务队列, 除了script整体代码，micro-task的任务优先级高于macro-task
+
       - macro-task: script (整体代码)，setTimeout, setInterval, setImmediate, I/O, UI rendering.
           - script(整体代码) ，可以理解为待执行的所有代码
       - micro-task: process.nextTick, Promise(原生)，Object.observe，MutationObserver
@@ -302,6 +382,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
           - 第二步执行其他micro-task,优先级process.nextTick高于Promise
           - 第三步来执行macro-task. setTimeout的优先级高于setImmediate(一般情况,若timeout延迟大,后者可能先执行) 
           - 不同版本的node执行结果可能不同
+
   - ref https://segmentfault.com/a/1190000008595101
 - webpack module vs chunk vs bundle
   - Webpack has three closely related terms - module, chunk, and bundle. 
@@ -402,31 +483,41 @@ type TypeofBar = typeof bar; // the type {a: number}
 
 - Object.prototype.hasOwnProperty.call(obj, attrName); 
   - obj.hasOwnProperty(prop)判断一个属性是定义在对象本身而不是继承自原型链
+
     - 调用的是js中Object对象原型上的hasOwnProperty()方法
+
   - js没有将hasOwnProperty作为一个敏感词，所以我们很有可能将对象的一个属性命名为hasOwnProperty，这样一来就无法再使用对象原型的hasOwnProperty 方法来判断属性是否是来自原型链，解决方法有几种
+
     - ({}).hasOwnProperty.call(foo, 'bar'); // true
     - Object.prototype.hasOwnProperty.call(foo, 'bar');
+
 - TypeScript 3.0在JSX命名空间中引入了一个新的类型别名 `LibraryManagedAttributes`
     - 这是一个辅助类型，用于告诉TypeScript某个JSX标记可以接受哪些属性
     - TypeScript 3.0 adds support for a new type alias in the JSX namespace called LibraryManagedAttributes. 
     - This helper type defines a transformation on the component’s Props type, before using to check a JSX expression targeting it; thus allowing customization like: how conflicts between provided props and inferred props are handled, how inferences are mapped, how optionality is handled, and how inferences from differing places should be combined.
     - The default-ed properties are inferred from the defaultProps property type. If an explicit type annotation is added, e.g. static defaultProps: `Partial<Props>` ; the compiler will not be able to identify which properties have defaults
     - Use static defaultProps: `Pick<Props, "name">` as an explicit type annotation instead
+
 - As of NPM 2.0.0, importing local dependencies is supported natively.
+
     - `"bar": "file:../foo/bar"`
 - npm main vs module
   - 当我们在不同环境下 `import` 一个npm包时，到底加载的是npm包的哪个文件？
+
     - 由于我们使用的模块规范有ESM和CommonJS两种，为了能在node环境下原生执行 ESM 规范的脚本文件，.mjs文件就应运而生。当存在 index.mjs 和 index.js 这种同名不同后缀的文件时， `import './index'` 或者 `require('./index')` 是会优先加载 index.mjs 文件
     - `main` : 定义了npm包的入口文件，browser环境和node环境均可使用
     - `module` : 定义npm包的ESM规范的入口文件，browser环境和node环境均可使用
     - `browser` : 定义npm包在browser环境下的入口文件
     - 实际上的优先级是 `browser=browser+mjs > module > browser+cjs > main`
       - webpack会根据这个顺序去寻找字段指定的文件，直到找到为止
+
   - 最早的npm包都是基于CommonJS规范(name, version, main)，当require('package1')的时候，就会根据main字段去查找入口文件
+
     - ES2015后，js拥有了ES Module，相较于之前的模块化方案更优雅，并且ES模块也是官方标准（JS 规范），而CommonJS模块是一种特殊的传统格式，利用ES Module的特性可以提高打包的性能，其中提升一个便是 tree shaking
     - CommonJS规范的包都是以 `main` 字段表示入口文件了，如果使用ES Module的也用main字段，就会对使用者造成困扰
     - webpack从版本2开始也可以识别 `module` 字段。打包工具遇到 package1 的时候，如果存在 module 字段，会优先使用，如果没找到对应的文件，则会使用 main 字段，并按照 CommonJS 规范打包
     - tree-shaking的功能就是把我们JS中无用的代码给去掉，如果把打包工具通过入口文件，产生的依赖树作为tree，tree-shaking就是把依赖树中用不到的代码shaking掉
+
 - html所有元素通用的title属性，可以作为鼠标悬浮提示，可以用来作为input前类似label的提示，可以作为a11y的补充(对键盘导航影响大)
 - tsc vs babel
   - I'd probably roll plain tsc for a lib. Output the js, .d.ts and source maps into the same folder (different from source folder).

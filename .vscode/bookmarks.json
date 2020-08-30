@@ -38,5 +38,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/log-news-story.md",
+		"bookmarks": [
+			{
+				"line": 10,
+				"column": 0,
+				"label": ""
+			}
+		]
 	}
 ]
