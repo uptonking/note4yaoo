@@ -18,4 +18,4 @@ modified: '2020-08-05T09:31:14.221Z'
     - Pass nodes, and source to know where the aggregation is for 
     - (ie to Do aggregations based on other aggregations)
   - Cleanup Legacy Properties (> 1 year old)
-  - Filter: Allow set filter to be combined with other filters	
+  - Filter: Allow set filter to be combined with other filters
