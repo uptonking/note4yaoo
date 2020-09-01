@@ -10,6 +10,11 @@ modified: '2020-08-09T08:43:10.089Z'
 
 ## summary
 
+- ag-grid源码要点
+  - ioc
+  - eventService
+  - rowModel
+  - virtualize
 - data-grid实现的难点
   - col span  
     - 实现起来较容易，参考cellRangeRenderer

@@ -25,9 +25,12 @@ modified: '2020-07-14T10:24:54.328Z'
   - paste html into md
 - rfc
   - format: 一级标题的相互替换，如 `### 标题名` 与 `标题名 ---`
-  - smart-tab
+  - smart-tab-name
     - small-tab,tiny-tab:: 缩短tab上的标题文字
     - head-tail:显示标题部分开始和结尾的文字，便于区分
+  - collapse-to-level
+    - toc折叠到2级标题，方便浏览和跳转
+    - 有时候一级标题只有1个总的大标题，此时2级标题才能看到文字结构
 
 ## noter-requirements-需求
 
