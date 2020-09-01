@@ -72,7 +72,7 @@ modified: '2020-08-19T13:38:01.426Z'
   - addEventListener
     - This method allows the registration of event listeners on the event target. 
     - If an EventListener is added to an EventTarget while it is processing an event, it will not be triggered by the current actions but may be triggered during a later stage of event flow, such as the bubbling phase.
-    - If multiple identical EventListeners are registered on the same EventTarget with the same parameters the duplicate instances are discarded. 
+    - If multiple identical EventListeners are registered on the same EventTarget with the same parameters, the duplicate instances are discarded. 
     - They do not cause the EventListener to be called twice and since they are discarded they do not need to be removed with the removeEventListener method.
   - Although the inline event registration model is ancient and reliable, it has one serious drawback. 
     - It requires you to write JavaScript behavior code in your XHTML structure layer, where it doesn't belong.

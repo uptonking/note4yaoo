@@ -41,8 +41,9 @@ modified: '2020-08-24T09:15:23.767Z'
   - You can then call this api at a later stage to interact with the grid (on top of the interaction that can be done by setting and changing the props).
 - React renders components asynchronously and although this is fine in the majority of use cases, 
   - it can be the case that in certain circumstances a very slight flicker can be seen where an old component is destroyed but the new one is not yet rendered by React.
-  - In order to eliminate this behavior the Grid will "pre-render" cell components and replace them with the real component once they are ready.
+  - In order to eliminate this behavior, the Grid will "pre-render" cell components and replace them with the real component once they are ready.
   - What this means is that the `render` method on a given `Cell` Component will be invoked twice, once for the pre-render and once for the actual component creation.
+    - 注意：Cell组件的render会调用2次
   - Note that this pre-render only applies to Cell Components - other types of Components are unaffected.
 - By default the ag-Grid React component will check props passed in to determine if data has changed and will only re-render based on actual changes.
   - IdentityCheck/referenceEqual

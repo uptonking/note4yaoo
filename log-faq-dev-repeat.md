@@ -13,6 +13,31 @@ modified: '2020-08-18T06:14:25.248Z'
   - react-virtualized: List uses a Grid internally to render the rows
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
+## es6 Map vs Object
+
+- Object is similar to Map
+  - both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. 
+  - For this reason (and because there were no built-in alternatives), Object has been used as Map historically.
+- However, there are important differences that **make Map preferable in certain cases**:
+1. A Map does not contain any keys by default. It only contains what is explicitly put into it.
+  - An Object has a prototype, so it contains default keys that could collide with your own keys if you're not careful.
+  - As of ES5, this can be bypassed by using `Object.create(null)` , but this is seldom done.
+2. A Map's keys can be any value (including functions, objects, or any primitive).
+  - The keys of an Object must be either a String or a Symbol.
+3. The keys in Map are ordered. Thus, when iterating over it, a Map object returns keys in order of insertion.
+  - The keys of an Object are not ordered.
+  - Since ECMAScript 2015, objects do preserve creation order for string and Symbol keys. 
+  - In JavaScript engines that comply with the ECMAScript 2015 spec, iterating over an object with only string keys will yield the keys in order of insertion.
+4. The number of items in a Map is easily retrieved from its `size` property.
+  - The number of items in an Object must be determined manually.
+5. A Map is an iterable, so it can be directly iterated.
+  - Iterating over an Object requires obtaining its keys in some fashion and iterating over them.
+6. Performs better in scenarios involving frequent additions and removals of key-value pairs.
+  - Object is NOT optimized for frequent additions and removals of key-value pairs.
+- ref
+  - [mdn: Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+  - [Maps vs Objects in ES6, When to use?](https://stackoverflow.com/questions/32600157/maps-vs-objects-in-es6-when-to-use)
+
 ## Should interface names begin with an “I” prefix?
 
 - do if you like.

@@ -83,10 +83,10 @@ modified: '2020-06-30T05:13:55.088Z'
   - It will trigger an extra rendering, but it will happen before the browser updates the screen. 
   - This guarantees that even though the `render()` will be called twice in this case, the user won’t see the intermediate state.
   - Use this pattern with caution because it often causes performance issues. 
-  - In most cases, you should be able to assign the initial state in the constructor() instead. 
+  - In most cases, you should be able to assign the initial state in the `constructor()` instead. 
   - It can, however, be necessary for cases like modals and tooltips, when you need to measure a DOM node before rendering something that depends on its size or position.
 
-- ### `ccomponentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: SS): void`
+- ### `componentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: SS): void`
 - It is invoked immediately after updating occurs.
 - Use this as an opportunity to operate on the DOM when the component has been updated. 
 - This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
