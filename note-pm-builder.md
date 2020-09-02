@@ -2,7 +2,7 @@
 title: note-pm-builder
 tags: [builder, pm, product]
 created: '2020-08-08T19:39:58.351Z'
-modified: '2020-08-09T08:44:31.787Z'
+modified: '2020-09-02T13:05:31.001Z'
 ---
 
 # note-pm-builder
@@ -38,3 +38,6 @@ modified: '2020-08-09T08:44:31.787Z'
   - https://github.com/react-ui-builder/react-ui-builder-editor
   - An online editor of the Interactive Platform for React Component Libraries
   - Based on Webcodesk version 2.0.3
+- UI-Builder /Apache2.0/19Star/201901
+  - https://github.com/iwangbowen/UI-Builder
+  - 基于 bootstrap 4和jquery实现

@@ -11,7 +11,14 @@ modified: '2020-08-04T12:24:45.908Z'
 ## logging 
 
  
+- console.log 打印iframe的window对象会报错
 
+VM37226:1 Uncaught DOMException: Blocked a frame with origin "https://stackoverflow.com" from accessing a cross-origin frame.
+
+  - 判断一个变量或对象是否是iframe的方法
+    - iframeWindow !== window，说明不是window
+  - 其他方法参考
+    - window.parent.frames.length > 0
 - [Violation] Added non-passive event listener to a scroll-blocking `<some>` event. Consider marking event handler as 'passive' to make the page more responsive.
   - Passive event listeners are a new feature in the DOM spec that enable developers to opt-in to better scroll performance by eliminating the need for scrolling to block on touch and wheel event listeners. 
   - Developers can annotate touch and wheel listeners with `{passive: true}` to indicate that they will never invoke `preventDefault` . 

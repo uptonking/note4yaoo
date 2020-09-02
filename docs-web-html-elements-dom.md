@@ -218,6 +218,42 @@ a {
 - [guide to image formats supported by web browsers](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)
   - 支持的类型有 jpg, png, svg, gif, tif, webp
 
+## iframe
+
+- The HTML Inline Frame element ( `<iframe>` ) represents a nested browsing context, embedding another HTML page into the current one.
+- Each embedded browsing context has its own `session history` and `document` . 
+- The browsing context that embeds the others is called the parent browsing context. 
+- The topmost browsing context — the one with no parent — is usually the browser window, represented by the `Window` object.
+- Because each browsing context is a complete document environment, every `<iframe` > in a page requires increased memory and other computing resources. 
+  - While theoretically you can use as many `<iframe>` s as you like, check for performance problems.
+
+## frame
+
+- `<frame>` is an HTML element which defines a particular area in which another HTML document can be displayed. 
+- A frame should be used within a `<frameset>` .
+- Using the `<frame>` element is not encouraged because of certain disadvantages such as performance problems and lack of accessibility for users with screen readers. 
+- Instead of the `<frame>` element, `<iframe>` may be preferred.
+
+## object
+
+- The HTML `<object>` element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
+- `data`
+  - The address of the resource as a valid URL. 
+  - At least one of data and type must be defined.
+- `type`
+  - The content type of the resource specified by `data` . 
+  - At least one of data and type must be defined.
+
+``` HTML
+<!-- Embed a flash movie -->
+<object data="movie.swf" type="application/x-shockwave-flash"></object>
+
+<!-- Embed a flash movie with parameters -->
+<object data="movie.swf" type="application/x-shockwave-flash">
+  <param name="foo" value="bar">
+</object>
+```
+
 ## elements-misc
 
 - The HTML `<pre>` element represents preformatted text which is to be presented exactly as written in the HTML file. 
