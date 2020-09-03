@@ -10,6 +10,28 @@ modified: '2020-08-18T05:56:56.343Z'
 
 ## logging
 
+ 
+
+- ts: any vs Object
+
+``` typescript
+let a: any;
+let b: Object;
+let c: {};
+let d: object;
+```
+
+- `a` has no interface, it can be anything, 
+  - the compiler knows nothing about its members so no type checking is performed when accessing/assigning both to it and its members. 
+- `b` has the `Object` interface, 
+  - so ONLY the members defined in that interface are available for `b` . 
+  - It's still JavaScript, so everything extends `Object` ; 
+- `c` extends Object, like anything else in TypeScript, but adds no members. 
+  - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping, `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
+- So `Object` and `{}` are equivalents in TypeScript.
+- Typescript 2.2 added an `object` type, 
+  - which specifies that a value is a non-primitive: (i.e. not a `number` , `string` , `boolean` , `symbol` , `undefined` , or `null` ).
+
 - 函数调用拆分
 
 ``` JS

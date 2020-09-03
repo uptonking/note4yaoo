@@ -13,7 +13,93 @@ modified: '2020-08-18T06:14:25.248Z'
   - react-virtualized: List uses a Grid internally to render the rows
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
-## es6 Map vs Object
+## js: prototype vs __proto__
+
+- prototype 显式原型: explicit prototype property
+  - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
+  - 通过 `Function.prototype.bind` 方法构造出来的函数是个例外，它没有prototype属性
+  - **显式原型的作用：用来实现基于原型的继承与属性的共享**
+  - ECMAScript does not use classes such as those in C++, or Java. 
+    - Instead objects may be created in various ways including via a literal notation or via constructors which create objects and then execute code that initialises all or part of them by assigning initial values to their properties. 
+    - Each constructor is a function that has a property named `prototype` that is used to implement prototype-based inheritance and shared properties.
+    - Objects are created by using constructors in `new` expressions; for example, new Date(2009,11) creates a new Date object. ----ECMAScript Language Specification
+- __proto__ 隐式原型: implicit prototype link
+  - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
+  - 隐式原型指向创建这个对象的函数(constructor)的prototype
+  - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
+  - **隐式原型的作用：构成原型链，同样用于实现基于原型的继承**
+    - 举个例子，当我们访问obj这个对象中的x属性时，如果在obj中找不到，那么就会沿着__proto__依次查找。
+  - Every object created by a constructor has an implicit reference (called the object’s `prototype` ) to the value of its constructor’s `prototype` ----ECMAScript Language Specification
+  - The `__proto__` property of `Object.prototype` is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
+  - The `__proto__` getter function exposes the value of the internal [[Prototype]] of an object. 
+    - For objects created using an object literal, this value is `Object.prototype` .
+    - For objects created using array literals, this value is `Array.prototype` . 
+    - For functions, this value is `Function.prototype` . 
+    - For objects created using `new fun` , where `fun` is one of the built-in constructor functions provided by JavaScript (Array, Boolean, Date, Number, Object, String, and so on — including new constructors added as JavaScript evolves), this value is always `fun.prototype` .
+  - The `__proto__` setter allows the [[Prototype]] of an object to be mutated.
+    - Changing the [[Prototype]] of an object is, by the nature of how modern JavaScript engines optimize property accesses, a **very slow** operation, in every browser and JavaScript engine
+    - The effects on the performance of altering inheritance are subtle(不易察觉的，不明显的) and far-flung(广泛的), and are not limited to simply the time spent in `obj.__proto__ = ...` statements, but may extend to any code that has access to any object whose [[Prototype]] has been altered.
+    - If you care about performance you should avoid setting the [[Prototype]] of an object. 
+    - Instead, create a new object with the desired [[Prototype]] using `Object.create()` .
+- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`
+- __proto__的指向
+  - 根据ECMA定义 'to the value of its constructor’s "prototype" ' ----指向创建这个对象的函数(构造函数)的显式原型
+  - JS中对象被创建的方式，一眼看过去似乎有三种方式：（1）对象字面量 `{}` 的方式 （2） `new` 的方式 （3）ES5中的 `Object.create()`
+  - 但是我认为本质上只有一种方式，也就是通过 `new` 来创建。
+  - 首先字面量的方式是一种为了开发人员更方便创建对象的一个语法糖，本质就是 `var o = new Object(); o.xx = xx;o.yy=yy;`
+  - 再来看 `Object.create()` , 这是ES5中新增的方法，在这之前这被称为原型式继承，
+    - 从实现代码 return new F() 中我们可以看到，这依然是通过new来创建的。
+    - 不同之处在于由 Object.create() 创建出来的对象没有构造函数，其实这里说它没有构造函数是指在 Object.create() 函数外部我们不能访问到它的构造函数，然而在函数内部实现中是有的
+    - 因此由Object.create(o)创建出来的对象它的隐式原型指向o
+
+``` JS
+// 模拟object.create(o)
+function object(o) {
+  function F() {}
+  F.prototype = o;
+  return new F()
+}
+//以下是用于验证的伪代码，f就是object.create(o)创建出的对象
+var f = new F();
+//于是有
+f.__proto__ === F.prototype //true
+//又因为
+F.prototype === o; //true
+//所以
+f.__proto__ === o;
+```
+
+- `Array.prototype` 也是一个对象，对象就是由 `Object()` 这个构造函数创建的，因此 `Array.prototype.__proto__ === Object.prototype` 为true，
+  - 或者也可以这么理解，所有的内建对象都是由Object()创建而来。
+  - `Foo.prototype.__proto__ === Object.prototype` //true 理由同上
+- 如果构造函数带返回值且为对象，则该对象直接赋给变量，那么当然 `__proto__` 属性指向该对象的prototype咯。
+  - 但一般来说，当函数作为构造器使用，不应该带返回值。
+- instanceof
+  - instanceof的左值一般是一个对象，右值一般是一个构造函数，用来判断左值是否是右值的实例
+  - 它的内部实现原理是这样
+  - 也就是沿着L的__proto__一直寻找到原型链末端，直到等于R.prototype为止
+
+``` JS
+//设 L instanceof R 
+//通过判断
+L.__proto__.__proto__..... === R.prototype？
+//最终返回true or false
+Function instanceof Object // true 
+Object instanceof Function // true 
+Function instanceof Function //true
+Object instanceof Object // true
+Number instanceof Number //false
+```
+
+- misc
+  - __proto__是每个对象都有的一个属性，而prototype是函数才会有的属性。
+  - __proto__指向的是当前对象的原型对象，而prototype指向的，是以当前函数作为构造函数构造出来的对象的原型对象。
+- ref
+  - [Object.prototype.__proto__](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
+  - [Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+  - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
+
+## es6: Map vs Object
 
 - Object is similar to Map
   - both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. 
@@ -484,8 +570,12 @@ bird.sayBye(); // Bye from Ferrari
 
 ## js function declaration vs function expression(named/anonymous)
 
-- 匿名函数表达式无法递归调用自身(arguments.callee无法在严格模式)，具名可以
-- 调试时的可读性
+- namedFunc优点
+  - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
+  - 调试时的可读性更好
+- funcExpression 优点
+  - 更好的scoped，namedFunc总是提升
+  - 方便动态修改调用的函数
 - Availability (scope) of the function，函数或变量会自动提升hoist
   - one difference that concerns me is when the machine creates the function object. Which in the case of declarations is before any statement is executed but after a statement body is invoked (be that the global code body or a sub-function's), and in the case of expressions is when the statement it is in gets executed. 
 - `(function(){}).name === ""` ，匿名函数表达式会返回true
