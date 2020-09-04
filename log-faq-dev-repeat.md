@@ -95,8 +95,6 @@ Number instanceof Number //false
   - __proto__是每个对象都有的一个属性，而prototype是函数才会有的属性。
   - __proto__指向的是当前对象的原型对象，而prototype指向的，是以当前函数作为构造函数构造出来的对象的原型对象。
 - ref
-  - [Object.prototype.__proto__](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
-  - [Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
   - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
 
 ## es6: Map vs Object

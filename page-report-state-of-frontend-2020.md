@@ -1,11 +1,11 @@
 ---
-title: page-state-of-frontend-2020
-tags: [web]
+title: page-report-state-of-frontend-2020
+tags: [report, web]
 created: '2020-08-07T16:48:01.867Z'
-modified: '2020-08-07T16:48:46.091Z'
+modified: '2020-09-04T03:35:44.699Z'
 ---
 
-# page-state-of-frontend-2020
+# page-report-state-of-frontend-2020
 
 - Notable results of the State of Frontend 2020 report:
   - @reactjs is the most used framework at 74%, followed by @angular at 34%

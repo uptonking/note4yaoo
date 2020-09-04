@@ -20,8 +20,8 @@ modified: '2020-07-07T08:10:16.774Z'
 ## class fields
 
 - stage 3
-- https://github.com/tc39/proposal-class-fields
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
+  - https://github.com/tc39/proposal-class-fields
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
 - motivation
   - By declaring fields up-front, class definitions become more self-documenting; instances go through fewer state transitions, as declared fields are always present.
 - Both static and instance public fields are writable, enumerable, and configurable properties.
@@ -56,11 +56,65 @@ modified: '2020-07-07T08:10:16.774Z'
   - ref
     - https://2ality.com/2012/08/property-definition-assignment.html
 
+## decorator
+
+- stage 2
+  - https://github.com/tc39/proposal-decorators
+  - The decorators champion(支持者、拥护者) group is considering a redesign of the proposal as "static decorators".
+- motivation
+  - This decorators proposal aims to improve on past proposals by working towards twin(双重的、同时发生的) goals:
+    - It should be easy not just to use decorators, but also to write your own.
+    - Decorators should be fast, both generating good code in transpilers, and executing fast in native JS implementations.
+  - Decorators make class declarations programmable.
+  - This proposal enables the basic functionality of the JavaScript original decorators proposal (e.g., most of what is available in TypeScript decorators), 
+    - as well as two additional capabilities of the previous Stage 2 proposal which were especially important: access to private fields and methods, and registering callbacks which are called during the constructor.
+- There's a set of built-in decorators that serve as the basic building blocks.
+  - @wrap: Replace a method or the entire class with the return value of a given function
+  - @register: Call a callback after the class is created
+  - @expose: Call a callback given functions to access private fields or methods after the class is created
+  - @initialize: Run a given callback when creating an instance of the class
+- Decorators can be defined in JavaScript by composing other decorators
+  - A `decorator @foo { }` declaration defines a new decorator. 
+    - These are lexically scoped and can be imported and exported.
+  - Decorators cannot be treated as JavaScript values; 
+    - they may only be applied in classes, composed, exported, imported, etc.
+  - As part of this, decorators have `@` as part of their name; 
+    - `@decorator` names form a separate namespace.
+  - Decorators can only be composed in rather fixed ways, making them more statically analyzable.
+- Sometimes, certain code outside of a class may need to access private fields and methods.
+  - Decorators can make this possible by giving someone access to a private field or method.
+
+- A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. 
+- Decorators use the form `@expression` , where `expression` must evaluate to a function that will be called at runtime with information about the decorated declaration.
+- A Decorator Factory is simply a function that returns the expression that will be called by the decorator at runtime.
+  - 装饰器工厂是返回装饰器函数的高阶函数
+- Multiple decorators can be applied to a declaration `@f @g x`
+  - is equivalent to `f(g(x))`
+- There is a well defined order to how decorators applied to various declarations inside of a class are applied:
+  1. Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each instance member.
+  2. Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each static member.
+  3. Parameter Decorators are applied for the constructor.
+  4. Class Decorators are applied for the class
+- 5种常用装饰器
+- A **Class Decorator** is declared just before a class declaration. 
+  - The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition. 
+  - A class decorator cannot be used in a declaration file, or in any other ambient(周围的) context (such as on a `declare` class).
+  - The expression for the class decorator will be called as a function at runtime, with the constructor of the decorated class as its only argument.
+  - If the class decorator returns a value, it will replace the class declaration with the provided constructor function.
+  - NOTE: Should you choose to return a new constructor function, you must take care to maintain the original prototype. The logic that applies decorators at runtime will not do this for you.
+- A **Method Decorator** is declared just before a method declaration. 
+  - The decorator is applied to the Property Descriptor for the method, and can be used to observe, modify, or replace a method definition. 
+- An **Accessor Decorator** is declared just before an accessor declaration. 
+  - The accessor decorator is applied to the Property Descriptor for the accessor and can be used to observe, modify, or replace an accessor’s definitions. 
+- A **Property Decorator** is declared just before a property declaration. 
+- A **Parameter Decorator** is declared just before a parameter declaration. 
+  - The parameter decorator is applied to the function for a class constructor or method declaration. 
+
 ## dynamic import
 
 - stage 4
-- https://github.com/tc39/proposal-dynamic-import
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports
+  - https://github.com/tc39/proposal-dynamic-import
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports
 - motivation
   - you will need the code until a later time.
   - When the module you are importing does not exist at load time
