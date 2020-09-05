@@ -37,7 +37,7 @@ modified: '2020-08-09T05:12:23.549Z'
 - 为什么用styled-system
   - themed based component
   - consistent prop names and scalar values
-- 为什么采用styled形式的组件，而不用pi，调用该api能够传入props，然后根据props计算新样式属性再添加到组件上，只有高阶组件能做到，普通方法做不到
+- 为什么采用styled形式的组件，而不用className，调用该api能够传入props，然后根据props计算新样式属性再添加到组件上，只有高阶组件能做到，普通方法做不到
   - styled开发体验好，性能可能不是最好
 - css prop vs scss prop，不用className
   - className不能给组件动态添加样式属性
@@ -68,6 +68,7 @@ modified: '2020-08-09T05:12:23.549Z'
       - 更接近熟悉的css
       - ide的提示更容易实现
       - 动态变化的属性较少时，插值函数少，cleaner
+      - 可以直接在末尾添加重复行，方便调试
   - conclusion  
       - The more interpolations you use, the more object notation tends to win over template strings in terms of readability.
   - The interoperable `theme` object itself is an object, and keeping styles in a similar format helps reduce the API surface area. 

@@ -26,26 +26,88 @@ modified: '2020-07-07T08:10:16.774Z'
   - By declaring fields up-front, class definitions become more self-documenting; instances go through fewer state transitions, as declared fields are always present.
 - Both static and instance public fields are writable, enumerable, and configurable properties.
   - As such, unlike their private counterparts, they participate in prototype inheritance.
+  - 实践结论
+    - instance method会定义在MyClass.prototype，共享实例了方法
+    - instance field会定义在MyClass.prototype.constructor(也就是MyClass)构造方法内，实例属性不共享
+      - 如果共享实例属性，当实例属性值为数组等引用类型时，修改prototype上的属性会修改所有对象实例的属性
+      - You have to initialize arrays and objects in the constructor, so that each instance gets its own object or array instance. Some style guidelines propose that you still create the property on the prototype, but initialize it with null. This has no benefit other than adding some conceptual structure (if such a word exists) to your code.
+    - static field和method直接定义在MyClass构造函数上，直接访问
+    - 装饰器都是运行在类创建时，而实例成员是在实例化一个类的时候才会执行的，所以没有办法获取对应的descriptor
+
+``` JS
+// class示例
+class Model {
+  // 实例方法
+  method1() {}
+  // 实例属性
+  method2 = () => {}
+
+  // 静态方法
+  static method3() {}
+  // 静态属性
+  static method4 = () => {}
+}
+
+// 转译成es5版本
+function Model() {
+  // 实例属性仅在实例化时赋值
+  this.method2 = function() {}
+}
+
+// 实例方法被定义在原型链上
+Object.defineProperty(Model.prototype, 'method1', {
+  value: function() {},
+  writable: true,
+  enumerable: false, // 设置不可被枚举
+  configurable: true
+})
+
+// 静态属性被定义在构造函数上，且是默认的可被枚举
+Model.method4 = function() {}
+
+// 静态方法被定义在构造函数上
+Object.defineProperty(Model, 'method3', {
+  value: function() {},
+  writable: true,
+  enumerable: false, // 设置不可被枚举
+  configurable: true
+})
+```
+
+- A public field declarations define fields on instances with the internals of `Object.defineProperty` (which we refer to in TC39 jargon as [[Define]] semantics), rather than with `this.field = value;` (referred to as [[Set]] semantics).
+  - The choice between [[Set]] and [[Define]] is a design decision contrasting different kinds of expectations of behavior: Expectations that the field will be created as a data property regardless of what the superclass contains, vs expectations that the setter would be called. 
+  - Following a lengthy discussion, TC39 settled on [[Define]] semantics, finding that it's important to preserve the first expectation. 
+  - As a mitigation, the decorators proposal provides the tools to write a decorator to make a public field declaration use [[Set]] semantics.
+
 - Public instance fields exist on every created instance of a class. 
   - By declaring a public field, you can ensure the field is always present, and the class definition is more self-documenting.
   - Public instance fields are added with `Object.defineProperty()` either at construction time in the base class (before the constructor body runs), or just after `super()` returns in a subclass.  
-  - Fields without initializers are initialized to undefined
+  - Fields without initializers are initialized to `undefined`
   - Like properties, field names may be computed.
-  - When initializing fields this refers to the class instance under construction. 
-    - Just as in public instance methods, if you're in a subclass you can access the superclass prototype using super.
+  - When initializing fields, `this` refers to the class instance under construction. 
+    - Just as in public instance methods, if you're in a subclass you can access the superclass prototype using `super` .
+
 - Public instance methods are methods available on class instances.
   - Public instance methods are added to the class prototype at the time of class evaluation using `Object.defineProperty()` . 
   - They are writable, non-enumerable, and configurable.
   - Inside instance methods, `this` refers to the instance itself. 
-    - In subclasses, super lets you access the superclass prototype, allowing you to call methods from the superclass.
+    - In subclasses, `super` lets you access the superclass prototype, allowing you to call methods from the superclass.
   - Use the `get` and `set` syntax to declare a public instance getter or setter.
+
 - Public static fields are useful when you want a field to exist only once per class, not on every class instance you create. 
   - This is useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.
   - Public static fields are added to the class constructor at the time of class evaluation using `Object.defineProperty()` . They are accessed again from the class constructor.
-  - Fields without initializers are initialized to undefined.
+  - Fields without initializers are initialized to `undefined` .
   - Public static fields are not reinitialized on subclasses, but can be accessed via the prototype chain.
+    - `console.log(SubClassWithStaticField.baseStaticField)`
   - When initializing fields, `this` refers to the class constructor. 
     - You can also reference it by name, and use `super` to get the superclass constructor (if one exists).
+
+- Public static methods aren't called on instances of the class. Instead, they're called on the class itself. 
+  - These are often utility functions, such as functions to create or clone objects.
+  - The static methods are added to the class constructor with `Object.defineProperty()` at class evaluation time. 
+  - These methods are writable, non-enumerable, and configurable.
+  - another way to write static method: `Class.method = function () { /* code */ }`
 - Property assignment is frequently used to add new properties to an object. 
   - Definition: `Object.defineProperty(obj, propName, propDesc)`
   - Assignment: `obj.prop = value`
@@ -61,6 +123,7 @@ modified: '2020-07-07T08:10:16.774Z'
 - stage 2
   - https://github.com/tc39/proposal-decorators
   - The decorators champion(支持者、拥护者) group is considering a redesign of the proposal as "static decorators".
+  - [Javascript装饰器的妙用](https://juejin.im/post/6844903635168526343)
 - motivation
   - This decorators proposal aims to improve on past proposals by working towards twin(双重的、同时发生的) goals:
     - It should be easy not just to use decorators, but also to write your own.
@@ -109,6 +172,7 @@ modified: '2020-07-07T08:10:16.774Z'
 - A **Property Decorator** is declared just before a property declaration. 
 - A **Parameter Decorator** is declared just before a parameter declaration. 
   - The parameter decorator is applied to the function for a class constructor or method declaration. 
+  - 函数参数的装饰器也是像实例属性一样的，没有办法单独使用，毕竟函数是在运行时调用的，而无论是何种装饰器，都是在声明类时（可以认为是伪编译期）调用的。
 
 ## dynamic import
 

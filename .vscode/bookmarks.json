@@ -48,5 +48,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/log-dev-pieces-frontend.md",
+		"bookmarks": [
+			{
+				"line": 13,
+				"column": 0,
+				"label": ""
+			}
+		]
 	}
 ]
