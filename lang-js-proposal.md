@@ -153,26 +153,42 @@ Object.defineProperty(Model, 'method3', {
   - 装饰器工厂是返回装饰器函数的高阶函数
 - Multiple decorators can be applied to a declaration `@f @g x`
   - is equivalent to `f(g(x))`
+  - 装饰器是可以同时应用多个的，最内层的最先执行
 - There is a well defined order to how decorators applied to various declarations inside of a class are applied:
   1. Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each instance member.
   2. Parameter Decorators, followed by Method, Accessor, or Property Decorators are applied for each static member.
   3. Parameter Decorators are applied for the constructor.
   4. Class Decorators are applied for the class
-- 5种常用装饰器
+- **5种常用装饰器**
 - A **Class Decorator** is declared just before a class declaration. 
   - The class decorator is applied to the constructor of the class and can be used to observe, modify, or replace a class definition. 
   - A class decorator cannot be used in a declaration file, or in any other ambient(周围的) context (such as on a `declare` class).
+  - 类装饰器会在class定义前调用，如果函数有返回值，则会认为是一个新的构造函数来替代之前的构造函数。
+  - 函数接收一个参数：
+    - constructor之前的构造函数
   - The expression for the class decorator will be called as a function at runtime, with the constructor of the decorated class as its only argument.
   - If the class decorator returns a value, it will replace the class declaration with the provided constructor function.
   - NOTE: Should you choose to return a new constructor function, you must take care to maintain the original prototype. The logic that applies decorators at runtime will not do this for you.
+- A **Property Decorator** is declared just before a property declaration. 
+  - 类成员上的 @Decorator 应该是应用最为广泛的一处了，函数，属性，get、set访问器，这几处都可以认为是类成员。
+  - 在TS文档中被分为了Method Decorator、Accessor Decorator和Property Decorator，实际上使用类似。
+  - 关于这类装饰器，会接收如下三个参数：
+    - 如果装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型
+    - 装饰器挂载的成员名称
+    - 成员的描述符，也就是`Object.getOwnPropertyDescriptor`的返回值
+  - Property Decorator不会返回第三个参数，但是可以自己手动获取
+前提是静态成员，而非实例成员，因为装饰器都是运行在类创建时，而实例成员是在实例化一个类的时候才会执行的，所以没有办法获取对应的descriptor
 - A **Method Decorator** is declared just before a method declaration. 
   - The decorator is applied to the Property Descriptor for the method, and can be used to observe, modify, or replace a method definition. 
 - An **Accessor Decorator** is declared just before an accessor declaration. 
   - The accessor decorator is applied to the Property Descriptor for the accessor and can be used to observe, modify, or replace an accessor’s definitions. 
-- A **Property Decorator** is declared just before a property declaration. 
 - A **Parameter Decorator** is declared just before a parameter declaration. 
   - The parameter decorator is applied to the function for a class constructor or method declaration. 
   - 函数参数的装饰器也是像实例属性一样的，没有办法单独使用，毕竟函数是在运行时调用的，而无论是何种装饰器，都是在声明类时（可以认为是伪编译期）调用的。
+  - 函数参数装饰器会接收三个参数：
+    - 类似属性装饰器，类的原型或者类的构造函数
+    - 参数所处的函数名称
+    - 参数在函数中形参中的位置（函数签名中的第几个参数）
 
 ## dynamic import
 
