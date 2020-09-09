@@ -9,7 +9,7 @@ modified: '2020-07-30T13:52:49.242Z'
 # draft-pastebin-pieces
 
  
-
+- todo 测试ag-grid行中行嵌套的rowModel
 - import ag-grid的ts源码进行开发出现的error
   - babel class decorator  Cannot access  before initialization
 

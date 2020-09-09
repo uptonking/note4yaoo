@@ -9,9 +9,23 @@ modified: '2020-07-14T09:30:54.711Z'
 
 # 2020
 
+## w0928-1004
+
+## w0921-0927
+
+## w0914-0920
+
+## w0907-0913
+
+- ag-grid-list: ClientSideRowModel
+
 ## w0831-0906
 
+- ag-grid-list: ioc
+
 ## w0824-0830
+
+- ag-grid-list: initialization
 
 ## w0817-0823
 

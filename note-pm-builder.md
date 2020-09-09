@@ -9,7 +9,7 @@ modified: '2020-09-02T13:05:31.001Z'
 
 ## guide
 
-- 不建议做到过于通用，过于细节
+- 不建议做得过于通用，过于细节
 - 建议根据应用场景，研发一个主题的组件，然后拖拽拼装
 - table component/app builder
   - export html/gist
@@ -30,14 +30,10 @@ modified: '2020-09-02T13:05:31.001Z'
 
 ## solution-catalog-builder
 
+- VvvebJs /Apache2.0/3.3kStar/202007
 - grapesjs /BSD/11.4kStar/202008
-  - https://github.com/artf/grapesjs
-  - https://grapesjs.com/
-  - a free and open source Web Builder Framework 
-- react-ui-builder-editor /GPL
-  - https://github.com/react-ui-builder/react-ui-builder-editor
-  - An online editor of the Interactive Platform for React Component Libraries
-  - Based on Webcodesk version 2.0.3
-- UI-Builder /Apache2.0/19Star/201901
-  - https://github.com/iwangbowen/UI-Builder
-  - 基于 bootstrap 4和jquery实现
+- react-page /LGPLv3/8.2kStar/202008/ts
+
+## xp-dev-builder
+- ref
+  - [React组件可视化拖拽页面搭建，源码生成，你有什么想法？](https://www.zhihu.com/question/392818555)

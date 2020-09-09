@@ -39,8 +39,9 @@ modified: '2020-08-24T09:18:09.531Z'
 - Master Detail refers to a top level grid called a Master Grid having rows that expand. 
   - When the row is expanded, another grid is displayed with more details related to the expanded row. 
   - The grid that appears is known as the Detail Grid.
-- When using Master/Detail the Master Grid must be using either the Client-Side or Server-Side Row Models. 
+- When using Master/Detail, the Master Grid must be using either the Client-Side or Server-Side Row Models. 
   - It is not supported with the Viewport or Infinite Row Models.
+- The Detail Grid on the other hand can use any Row Model.
 
 ## Tree Data
 
