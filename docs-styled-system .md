@@ -3,7 +3,7 @@ title: docs-styled-system
 tags: [css-in-js, docs, style, web]
 favorited: true
 created: '2019-12-17T03:13:59.953Z'
-modified: '2020-07-14T11:27:52.248Z'
+modified: '2020-09-10T05:21:07.496Z'
 ---
 
 # docs-styled-system
@@ -18,6 +18,8 @@ modified: '2020-07-14T11:27:52.248Z'
     - css()方法可直接写theme中的值
 - tips
   - 可以逐步采用s-s，比如只用layout
+  - s-s由modulz研发工程师证实存在一定的性能问题，对于性能要求高的场景慎用
+  - s-s的优势与参考：api设计思路，type定义，theme-spec
 - s-s特点
   - first-class theme, with scalar values instead of remembering numbers
     - interoperable theme

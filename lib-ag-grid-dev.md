@@ -130,6 +130,10 @@ modified: '2020-08-10T06:07:32.071Z'
 
 ## 功能实现细节
 
+### 注解装饰器元数据的使用
+
+- __agComponentMetaData.constructorName.querySelectors
+
 - ### row span基于z-index实现
   - 给需要合并的单元格元素中第一个元素加上className: `cell-span ag-cell-focus`
     - 必需设置背景，如果background不设置，则默认transparent，仍可以看见下层单元格

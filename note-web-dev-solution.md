@@ -3,7 +3,7 @@ title: note-web-dev-solution
 tags: [dev, solution, web]
 favorited: true
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-07-17T08:52:12.776Z'
+modified: '2020-09-10T05:48:07.754Z'
 ---
 
 # note-web-dev-solution
@@ -45,6 +45,16 @@ modified: '2020-07-17T08:52:12.776Z'
 - ssr
 - 同构
 - ui组件库
+
+- [2020年的React Hooks生态](https://juejin.im/post/6861055676652158990)
+  - router: react-router,hookrouter
+  - state: redux, mobx, unstated-next, recoil, use-immer, dva
+  - components: antd, sunflower
+  - request: swr, react-query
+  - hooks封装: react-use, ahooks, huse, react-adaptive-hooks
+  - css-in-js: emotion, useTheme
+  - i18n: react-intl, react-i18next
+  - animation: react-spring
 
 ## 前端框架通用问题
 
