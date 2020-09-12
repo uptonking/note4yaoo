@@ -10,7 +10,11 @@ modified: '2020-08-04T12:24:45.908Z'
 
 ## logging 
 
- 
+- jest测试时： Received: serializes to the same string
+  - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
+  - 当对象属性值有函数类型时，序列化后再还原，难以比较
+  - 可以先去掉方法类型的属性值，或定制
+
 - console.log 打印iframe的window对象会报错
 
 VM37226:1 Uncaught DOMException: Blocked a frame with origin "https://stackoverflow.com" from accessing a cross-origin frame.

@@ -16,7 +16,15 @@ modified: '2020-08-05T09:30:37.370Z'
 - ClientSideRowModel作为@Bean的类中执行@PostConstruct方法时，添加事件监听器到eventService的映射表后，映射表仍为空
   - console.log(转换后的map对象)，打印出来为空
   - 其实事件监听器的映射表非空，可打印 `Array.from(listenerMap.keys())`
-  - 需要修改console.log方法，或JSON.stringify()方法来支持打印Map对象
+  - 需要修改自定义JSON.stringify()方法来支持打印Map对象
+- 进一步分析
+  - 上述观点存在部分错误
+  - 对于Map类型的对象实例mm
+    - 使用 `mm.set('k','v')` 设置值， `console.log(mm)` 能显示该kv， `JSON.stringify(mm)` 序列化为 `{}`
+    - 使用 `mm['kk']='vv'` 设置值， `console.log(mm)` 不能显示kkvv， `JSON.stringify(mm)` 序列化为 `{"kk":"vv"}`
+  - 对于Set类型的对象实例ss，特别是集合元素为函数时
+    - If the `toString()` method is called on built-in function objects or a function created by `Function.prototype.bind` , `toString()` returns a native function string which looks like `function () {\n    [native code]\n` }`
+    - Set序列化后的字符串都相同，类似 `[native code]` ，反序列化时元素会减少！！
 
 - EventService的dispatchEvent()方法为什么要调用2次dispatchToListeners，第1次异步，第2次同步
 
