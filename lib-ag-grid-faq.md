@@ -13,6 +13,8 @@ modified: '2020-08-05T09:30:37.370Z'
 
 ## dev-faq
 
+- grid的表头组件是如何渲染的，因为rowModel计算的是rowData，而不是column
+
 - ClientSideRowModel作为@Bean的类中执行@PostConstruct方法时，添加事件监听器到eventService的映射表后，映射表仍为空
   - console.log(转换后的map对象)，打印出来为空
   - 其实事件监听器的映射表非空，可打印 `Array.from(listenerMap.keys())`

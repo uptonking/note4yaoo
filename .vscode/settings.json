@@ -30,5 +30,6 @@
     "editor.acceptSuggestionOnEnter": "on",
     "editor.defaultFormatter": "mervin.markdown-formatter"
   },
-  "bookmarks.saveBookmarksInProject": true
+  "bookmarks.saveBookmarksInProject": true,
+  "cmake.configureOnOpen": true
 }
