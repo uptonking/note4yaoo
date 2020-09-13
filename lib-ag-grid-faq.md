@@ -25,6 +25,7 @@ modified: '2020-08-05T09:30:37.370Z'
   - 对于Set类型的对象实例ss，特别是集合元素为函数时
     - If the `toString()` method is called on built-in function objects or a function created by `Function.prototype.bind` , `toString()` returns a native function string which looks like `function () {\n    [native code]\n` }`
     - Set序列化后的字符串都相同，类似 `[native code]` ，反序列化时元素会减少！！
+  - jsonFnClone的部分属性值总是为空，但单独打印size/length确有长度，说明序列化的方法实现存在问题，可以先只调用jsonFnStringify打印字符串而不是对象来分析问题
 
 - EventService的dispatchEvent()方法为什么要调用2次dispatchToListeners，第1次异步，第2次同步
 

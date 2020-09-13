@@ -12,6 +12,24 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- 如何打印变量名 Variable name as a string in Javascript
+
+``` JS
+// 要实现的效果
+var myFirstName = 'John';
+alert(variablesName(myFirstName) + ":" + myFirstName); // myFirstName:John
+
+// 一种实现
+const myFirstName = 'John';
+const variableName = Object.keys({ myFirstName })[0]; // myFirstName
+// pop may be better than [0], for safety (variable might be null).
+const variableName = Object.keys({ myFirstName }).pop();
+```
+
+  - 使用映射表或对象
+    - Typically, you would use a hash table for a situation where you want to map a name to some value, and be able to retrieve both
+  - 使用Object.keys
+
 - ts: any vs Object
 
 ``` typescript
