@@ -13,6 +13,9 @@ modified: '2020-08-05T09:30:37.370Z'
 
 ## dev-faq
 
+- GridCore的基类Component的setTemplate方法中调用loadTemplate，为什么loadTemplate方法会多次执行
+  - 自己分析错了，后面打印的是由其他代码触发调用同一个方法
+
 - grid的表头组件是如何渲染的，因为rowModel计算的是rowData，而不是column
 
 - ClientSideRowModel作为@Bean的类中执行@PostConstruct方法时，添加事件监听器到eventService的映射表后，映射表仍为空

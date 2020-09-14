@@ -12,6 +12,57 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- `setAttribute` vs `dom/obj.prop`
+  - You should always use the direct `.prop` form (but see the quirksmode link below) if you want programmatic access in JavaScript. 
+  - Use `getAttribute` / `setAttribute` when you wish to deal with the DOM as it is (e.g. literal text only). Different browsers confuse the two.
+  - From Javascript: The Definitive Guide, it clarifies things. 
+    - It notes that HTMLElement objects of a HTML doc define JS properties that correspond to all standard HTML attributes.
+    - So you only need to use `setAttribute` for non-standard attributes.
+
+``` JS
+node.className = 'test'; // works
+node.frameborder = '0'; // doesn't work - non standard attribute
+node.setAttribute('frameborder', '0'); // works
+```
+
+  - ref
+    - [When to use setAttribute vs .attribute= in JavaScript?](https://stackoverflow.com/questions/3919291/when-to-use-setattribute-vs-attribute-in-javascript)
+- 利用console调试js
+  - console.debug/info/warn/error, log是info
+  - 使用console.trace()来获取堆栈调用记录
+  - 使用console.time()开始计算时间，然后使用console.timeEnd()进行打印
+  - 利用console.memory（是属性，不是函数）来检查你的堆大小状态。
+  - 使用console.profile('profileName')，然后使用console.profileEnd('profileName')，从代码中启动和结束浏览器性能工具 performance profile
+  - 使用console.count('?')来计算您的代码被读取的次数。
+  - 使用console.assert(condition, msg)在condition为假时记录某些内容，条件日志记录并没有用if-else包装
+  - console.group(‘group’) & console.groupEnd(‘group’)将控制台日志组织在一起
+  - 使用字符串替换合并变量。这些引用是（％s = string，％i = integer，％o = object，％f = float）
+  - console.clear()清理控制台
+  - console.table()打印表格，方便查看复杂对象
+- 调试js的方法
+  - 除了 `console.log` , `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+    - 执行代码后，Chrome会在执行时自动停止
+    - 你甚至可以把它封装成条件，只在需要时才运行
+  - 切换设备模式，调试不同尺寸下的ui
+  - 在Elements面板中标记一个DOM元素，并在控制台中使用它。
+    - Chrome控制台会保留选择历史的最后五个元素，最终选择的首个元素被标记为$0，第二个选择的元素为$1，依此类推。
+  - 使用 console.time() 和 console.timeEnd() 测试循环执行时间
+  - 快速查找要调试的函数，假设你要在函数中打断点，最常用的两种方式是
+    - 在控制台查找行并添加断点
+    - 在代码中添加debugger
+    - 在控制台中使用debug(funcName)，当到达传入的函数时，代码将停止。
+  - 在Chrome控制台中，可以观察特定的函数。
+    - 每次调用该函数，就会打印出传入的参数。
+    - 但不完美，没有打印形参数量
+  - 控制台中比querySelector更快的方法是使用美元符号
+    - $('css-selector')将返回CSS选择器的第一个匹配项。
+    - $$('css-selector')将返回所有匹配项。
+    - 如果多次使用一个元素，可以把它保存为一个变量。
+  - 调试时，需要查找DOM中某个元素的事件监听器时， `getEventListeners($(‘selector’))` 返回一个对象数组，其中包含绑定到该元素的所有事件
+  - monitorEvents($(‘selector’)) 将监视与选择器的元素关联的所有事件，然后在它们被触发时将它们打印到控制台。例如，monitore($(#firstName)) 将打印 ID 为 firstName元素的所有事件。
+- ref
+  - [14个你可能不知道的JavaScript调试技巧](https://www.zcfy.cc/article/the-14-javascript-debugging-tips-you-probably-didnt-know-raygun)
+
 - 如何打印变量名 Variable name as a string in Javascript
 
 ``` JS
