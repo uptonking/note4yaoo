@@ -12,6 +12,16 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- `Node.nodeName` vs `Element.tagName`
+  - The `nodeName` read-only property returns the name of the current `Node` as a string.
+  - The `tagName` read-only property of the Element interface returns the tag name of the element on which it's called.
+  - The `tagName` property is meant specifically for element nodes (type 1 nodes) to get the type of element.
+    - There are several other `nodeType` s of nodes as well (comment, attribute, text, etc.). 
+    - To get the name of any of the various node types, you can use the `nodeName` property.
+  - When using `nodeName` against an element node, you'll get its tag name, so either could really be used, 
+    - though you'll get better consistency between browsers when using `nodeName` .
+    - Bear in mind, however, that `nodeName` will return `#text` for text nodes while `tagName` will return `undefined` .
+
 - `setAttribute` vs `dom/obj.prop`
   - You should always use the direct `.prop` form (but see the quirksmode link below) if you want programmatic access in JavaScript. 
   - Use `getAttribute` / `setAttribute` when you wish to deal with the DOM as it is (e.g. literal text only). Different browsers confuse the two.
@@ -27,6 +37,7 @@ node.setAttribute('frameborder', '0'); // works
 
   - ref
     - [When to use setAttribute vs .attribute= in JavaScript?](https://stackoverflow.com/questions/3919291/when-to-use-setattribute-vs-attribute-in-javascript)
+
 - 利用console调试js
   - console.debug/info/warn/error, log是info
   - 使用console.trace()来获取堆栈调用记录
