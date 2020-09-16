@@ -16,6 +16,10 @@ modified: '2020-08-10T06:07:32.071Z'
       - ag-header
         - ag-pinned-left-header
         - ag-header-viewport: 这里是表头内容
+          - ag-header-container
+            - ag-header-row/ag-header-row-column
+              - ag-header-cell
+                - ag-header-cell-resize
         - ag-pinned-right-header
       - ag-floating-top: 所有子节点都没有text
       - ag-body-viewport
