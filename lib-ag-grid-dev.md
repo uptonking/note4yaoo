@@ -2,7 +2,7 @@
 title: lib-ag-grid-dev
 tags: [ag-grid, dev, grid, lib]
 created: '2020-08-10T06:07:14.084Z'
-modified: '2020-08-10T06:07:32.071Z'
+modified: '2020-09-17T17:17:12.914Z'
 ---
 
 # lib-ag-grid-dev
@@ -138,7 +138,8 @@ modified: '2020-08-10T06:07:32.071Z'
 
 - __agComponentMetaData.constructorName.querySelectors
 
-- ### row span基于z-index实现
+### row span基于z-index实现
+
   - 给需要合并的单元格元素中第一个元素加上className: `cell-span ag-cell-focus`
     - 必需设置背景，如果background不设置，则默认transparent，仍可以看见下层单元格
   - 同时使用行内样式控制第一个单元格的高度，主要是增加单元格的高度来模拟合并单元格的视觉效果 
@@ -169,7 +170,8 @@ modified: '2020-08-10T06:07:32.071Z'
 }
 ```
 
-- ### column span基于position-absolute实现
+### column span基于position-absolute实现
+
   - 使用行内样式控制合并后单元格的宽度
     - `style="width: 600px; left: 0px;"`
     - 合并后单元格显示的位置由行内样式left控制
