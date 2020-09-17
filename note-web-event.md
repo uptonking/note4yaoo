@@ -16,7 +16,7 @@ modified: '2020-08-19T13:38:01.426Z'
     - 通过setTimeout()设置一个延时200ms,并通过一个标志位变量count记录当前点击次数，如果在200ms内，再次点击，count++
     - 当setTimeout中的延时函数执行时，判断count值，1是单击，2是双击，然后执行对应的逻辑
   - 同时绑定单击和双击事件，在绑定的单击事件中，setTimeout设置一个延迟，双击事件中，clearTimeout这个延迟，再执行对应的方法
-  - 还可以使用lodash的debounce，区别是同时监听onCick和onDoubleClick
+  - 还可以使用lodash的debounce，区别是同时监听onClick和onDoubleClick
   - 还可以使用promise来推迟onClick的执行，这种方式也称作cancelablePromise
   - ref
     - https://medium.com/trabe/prevent-click-events-on-double-click-with-react-with-and-without-hooks-6bf3697abc40
@@ -280,6 +280,18 @@ function getOffsetX(event) {
   - Note that some implementations may fire keypress event if supported. 
   - The events will be fired repeatedly while the key is held down.
 
+## focus
+
+- focus vs selection
+  - Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). 
+  - You can get the current selection using `window.getSelection()` .
+
+- The `activeElement` read-only property of the `Document` and `ShadowRoot` interfaces returns the Element within the DOM or shadow DOM tree that currently has focus.
+  - Often `activeElement` will return a `HTMLInputElement` or `HTMLTextAreaElement` object if it has the text selection at the time
+  - Other times the focused element might be a `<select>` element (menu) or an `<input>` element, of type "button", "checkbox", or "radio".
+  - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one (that is, to press a button or toggle a radio button). 
+    - Which elements are focusable varies depending on the platform and the browser's current configuration. 
+
 ## mouse 
 
 - mousedown vs click
@@ -360,7 +372,7 @@ function getOffsetX(event) {
 
 ### 元素宽高
 
-- winow.outerWidth是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
+- window.outerWidth是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
 - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框，不包括developer窗口的宽度
   - 会导致handsontable的滚动条显示不出来  
 - document.documentElement.clientWidth：不包括滚动条，但包括边框
