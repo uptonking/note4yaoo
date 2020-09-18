@@ -398,3 +398,8 @@ modified: '2020-07-14T10:27:12.335Z'
   - apple keynote
   - mdx deck
   - slides.com
+
+- [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
+  - https://github.com/TheWidlarzGroup/RT7-example
+  - https://rt7-example.netlify.app/
+  - hooks-table-demo-with-pagination

@@ -15,6 +15,8 @@ modified: '2020-08-05T09:30:37.370Z'
 
  
 
+- 通过alert阻塞渲染时观察，此时表格组件内容并没有渲染到页面，但分析源码可知此时已通过appendChild添加页面已有元素
+
 - grid的表头组件是如何渲染的，注意rowModel计算的是rowData，而不是column
   - GridCore中会创建表头最外层的 HeaderRootComp
   - columnController中会创建每个表头行的 HeaderRowComp
