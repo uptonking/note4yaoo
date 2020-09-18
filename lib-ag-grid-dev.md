@@ -134,6 +134,16 @@ modified: '2020-09-17T17:17:12.914Z'
 
 ## 功能实现细节
 
+### 滚动条
+
+- 滚动条一直显示的问题。It's no a bug, its a feature. 
+  - A scrollbar appears if the total width count of all columns is bigger than your wrapper. 
+  - You should change minWidth/maxWidth property of columnDefs' headerFields and you will be fine.
+  - Side note: If the grid data is changed due to scope changes or not initial defined, you need to recall `sizeColumnsToFit()` in a new diggest circle like `setTimeout(() => {this.gridApi.sizeColumnsToFit();});` .
+  - The best fix I found was to call `sizeColumnsToFit` in the `onModelUpdated` event handler. 
+  - ref
+    - [unnecessary horizontal scroll bar coming in spite of using sizeColumnsToFit in ag-grid](https://stackoverflow.com/questions/47454302/unnecessary-horizontal-scroll-bar-coming-inspite-of-using-sizecolumnstofit-in-ag)
+
 ### 注解装饰器元数据的使用
 
 - __agComponentMetaData.constructorName.querySelectors
