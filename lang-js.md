@@ -21,6 +21,9 @@ modified: '2020-07-14T09:26:50.808Z'
 
 ## faq
 
+- js复制数组方法的性能比较
+  - `b = [...a]`
+  - `b = a.slice()`
 - `new Date()` vs `performance.timing`
   - Navigation Timing API gives us a more accurate measure  
 - eval vs template literals

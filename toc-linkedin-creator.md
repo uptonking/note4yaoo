@@ -1,11 +1,11 @@
 ---
-title: toc-linkedin-crreator
+title: toc-linkedin-creator
 tags: [linkedin, toc]
 created: '2020-02-16T14:30:18.987Z'
-modified: '2020-07-04T11:56:53.944Z'
+modified: '2020-09-19T12:46:00.501Z'
 ---
 
-# toc-linkedin-crreator
+# toc-linkedin-creator
 
 - 代码+产品
 
@@ -15,7 +15,7 @@ modified: '2020-07-04T11:56:53.944Z'
   - info
     - https://github.com/yyx990803
     - https://www.zhihu.com/people/evanyou
-  - artwork: vuejs
+  - artwork: vue
 - D 
   - https://github.com/88250
   - artwork: b3blog, solo, symphony
@@ -26,6 +26,7 @@ modified: '2020-07-04T11:56:53.944Z'
   - info: Co-author of Redux and Create React App
     - http://twitter.com/dan_abramov
     - https://github.com/gaearon
+  - artwork: redux
 
 ## web-dev
 

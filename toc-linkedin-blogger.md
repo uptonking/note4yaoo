@@ -9,35 +9,19 @@ modified: '2020-07-03T13:17:59.764Z'
 
 - 代码
 
-## watchlist
-
-- 许雪里
-  - java, xxl-job, xxl-sso
-  - https://github.com/xuxueli
-- 陈梓翰
-  - cpp
-  - https://github.com/vczh
-- 阮一峰
-  - es6
-  - https://github.com/ruanyf
-- 廖雪峰
-  - https://github.com/michaelliao
-- 朴灵
-  - node
-  - https://github.com/JacksonTian
-- phodal
-  - js
-  - https://github.com/phodal
-- 雪碧
-  - react, beam
-  - https://github.com/doodlewind
-
 ## web-dev
 
+- 司徒正美
+  - react，anu
+  - https://www.zhihu.com/people/si-tu-zheng-mei/posts
+  - https://github.com/RubyLouvre/anu
 - 黄子毅
   - react，阿里
   - https://www.zhihu.com/people/huang-zi-yi-83
   - https://github.com/ascoders
+- 雪碧
+  - react, beam
+  - https://github.com/doodlewind
 - 张立理
   - react，百度云上百度运营平台
   - https://www.zhihu.com/people/otakustay
@@ -60,3 +44,23 @@ modified: '2020-07-03T13:17:59.764Z'
 - 花随花心
   - 商业智能数据分析师，花随花心
   - https://www.zhihu.com/people/huagongzi-vip4/answers
+
+## watchlist
+
+- 许雪里
+  - java, xxl-job, xxl-sso
+  - https://github.com/xuxueli
+- 陈梓翰(轮子哥)
+  - cpp，GacUI
+  - https://github.com/vczh
+- 阮一峰
+  - es6
+  - https://github.com/ruanyf
+- 廖雪峰
+  - https://github.com/michaelliao
+- 朴灵
+  - node
+  - https://github.com/JacksonTian
+- phodal
+  - js
+  - https://github.com/phodal

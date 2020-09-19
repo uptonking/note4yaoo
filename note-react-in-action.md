@@ -11,6 +11,12 @@ modified: '2020-07-14T11:59:09.463Z'
 
 ## guide
 
+- 司徒正美文章
+  - [发布高性能迷你React框架anu](https://www.cnblogs.com/rubylouvre/p/6954037.html)
+  - [去哪儿网迷你React的研发心得](https://segmentfault.com/a/1190000011235844)
+  - [从Anu中探索react构建思想](https://github.com/mosikoo/blog/issues/7)
+  - [React16的组件类型](https://zhuanlan.zhihu.com/p/55000793)
+  - [React转微信小程序：从React类定义到Component调用](https://zhuanlan.zhihu.com/p/38903385)
 - ref
   - [React小技巧汇总](https://www.yuque.com/runarale/gau4ci/qhsaxk)
   - [React设计模式和最佳实践总结](https://blog.poetries.top/2019/08/10/react-good-practice/)

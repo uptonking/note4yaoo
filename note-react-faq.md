@@ -12,7 +12,7 @@ modified: '2020-06-30T12:51:08.791Z'
 ## faq
 
 - ### createRef vs useRef
-  - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verboose).
+  - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).
   - useRef keeps some data before renders and changing it does not cause re-render
   - `useRef(null)` is basically `useState(React.createRef())[0]` .
   - A ref is a plain object `{ current:  value }` .

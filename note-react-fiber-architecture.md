@@ -7,6 +7,15 @@ modified: '2020-07-14T11:58:47.593Z'
 
 # note-react-fiber-architecture
 
+## guide
+
+- 司徒正美分析fiber
+  - [React Fiber架构](https://zhuanlan.zhihu.com/p/37095662)
+  - [React Fiber在并发模式下的运行机制](https://zhuanlan.zhihu.com/p/54042084)
+  - [React Fiber的优先级调度机制与事件系统](https://zhuanlan.zhihu.com/p/95443185)
+- ref
+  - [react fiber 主流程及功能模块梳理](https://juejin.im/post/6844903781805752328)
+
 ## pieces
 
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.

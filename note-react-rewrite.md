@@ -7,6 +7,17 @@ modified: '2020-07-01T06:09:16.202Z'
 
 # note-react-rewrite
 
+## guide
+
+- [完成一个简化版的React learn-react](https://github.com/Luminqi/learn-react)
+  - [实现自定义的渲染器](https://github.com/Luminqi/learn-react/blob/master/Guide/CustomRenderer.md)
+  - [实现 Fiber 架构 I](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part1.md)
+  - [实现 Fiber 架构 II](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part2.md)
+  - [实现 React Core API](https://github.com/Luminqi/learn-react/blob/master/Guide/ReactCore.md)
+- [一个极简的React框架 simple-react](https://github.com/hujiulong/simple-react)
+- [Luy 1.0 ：一个React-like轮子的诞生](https://zhuanlan.zhihu.com/p/30073543)
+  - [「造轮子1」周末和方正一起Luy](https://zhuanlan.zhihu.com/p/30677179)
+
 ## react-core
 
 ## react-hooks
@@ -73,6 +84,7 @@ function useState<S>(initialState: S | (() => S)):
 
 - ref
   - [从零开始的 React 再造之旅](https://segmentfault.com/a/1190000021689852)
+  - [React源码系列(一): 总结看源码心得及方法感受](https://github.com/jsonz1993/react-source-learn/issues/1)
   - [React 实践揭秘之旅，中高级前端必备(上)](https://github.com/xd-tayde/blog/blob/master/ReactGL-1.md)
   - [React 实践揭秘之旅，中高级前端必备(下)](https://github.com/xd-tayde/blog/blob/master/ReactGL-2.md)
 - 框架最核心的 `JSX - Render - Diff - Update` 的渲染更新机制

@@ -21,7 +21,9 @@ Uncaught ReferenceError: Cannot access 'Component' before initialization
   at Module.../../community-modules/core/src/ts/widgets/agAbstractLabel.ts (main.js:4222)
 ```
 
-- 事件的跳转全靠搜索类似 `Events.EVENT_GRID_COLUMNS_CHANGED`
+- 事件的跳转全靠搜索类似 `Events.EVENT_GRID_COLUMNS_CHANGED` 字符串常量
+
+- validate这类方法太长，如gridOptions、checkDeprecated、module是否注册
 
 ## optimization
 
