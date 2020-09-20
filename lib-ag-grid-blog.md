@@ -7,7 +7,23 @@ modified: '2020-08-10T06:01:15.443Z'
 
 # lib-ag-grid-blog
 
-## 8 Performance Hacks for JavaScript
+## guide
+
+- [Niall Crosby articles](https://medium.com/@niall.crosby)
+  - [Why The World Needed Another Angular Grid - The Story of ag-Grid](https://medium.com/ag-grid/why-the-world-needed-another-angularjs-1-x-grid-17e522a53bc8)
+  - [8 reasons to choose ag-Grid as your JavaScript Datagrid](https://medium.com/ag-grid/8-reasons-to-choose-ag-grid-as-your-javascript-datagrid-eb4a767a351f)
+    1. The `ag` in ag-Grid stands for `AGnostic`
+    2. Enterprise Foundations
+    3. Integrating, not Wrapping
+    4. Features Above and Beyond
+    5. Open Source
+    6. Free and Commercial
+    7. Pure Open Source is Risky
+    8. You Ain't Seen Nothing Yet in the market
+  - [JavaScript Big Data in a Small Browser](https://medium.com/@niall.crosby/javascript-big-data-in-a-small-browser-3b19c01e2132)
+  - [Delivering Big Data in the Small Browser](https://medium.com/ag-grid/delivering-big-data-in-the-small-browser-41704f1058f0)
+
+## 8 Performance Hacks for JavaScript in ag-grid
 
 - [8 Performance Hacks for JavaScript_Niall Crosby_201709](https://www.ag-grid.com/ag-grid-8-performance-hacks-for-javascript/)
 

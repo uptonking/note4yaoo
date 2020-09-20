@@ -20,9 +20,11 @@ modified: '2020-08-05T09:30:37.370Z'
 - grid的表头组件是如何渲染的，注意rowModel计算的是rowData，而不是column
   - GridCore中会创建表头最外层的 HeaderRootComp
   - columnController中会创建每个表头行的 HeaderRowComp
+  - header和row都是先计算数据模型，再渲染ui
 
-- GridCore的基类Component的setTemplate方法中调用loadTemplate，为什么loadTemplate方法会多次执行
+- GridCore的基类Component的setTemplate方法中调用setTemplate/loadTemplate，为什么loadTemplate方法会多次执行
   - 自己分析错了，后面打印的是由其他代码触发调用同一个方法
+  - 一个dom元素对象创建时，会递归地创建内部dom元素对应的组件，所有会多次调用setTemplate/loadTemplate
 
 - ClientSideRowModel作为@Bean的类中执行@PostConstruct方法时，添加事件监听器到eventService的映射表后，映射表仍为空
   - console.log(转换后的map对象)，打印出来为空
@@ -53,4 +55,4 @@ public dispatchEvent(event: AgEvent): void {
   - 因为addEventListener可以对同一事件添加多个事件处理函数
 
 - GridCore中 `@Autowired('eGridDiv') private eGridDiv;` 是如何注入属性进行初始化的，因为EGridDiv类不存在
-  - 注入属性时，除了从bean对象容器映射表中查找外，还会从额外指定的映射表providedBeanInstances中查找
+  - 注入属性时，除了从Context的bean映射表容器中查找外，还会从额外指定的映射表providedBeanInstances中查找
