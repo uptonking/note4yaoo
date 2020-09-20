@@ -22,6 +22,7 @@ modified: '2020-08-10T06:01:15.443Z'
     8. You Ain't Seen Nothing Yet in the market
   - [JavaScript Big Data in a Small Browser](https://medium.com/@niall.crosby/javascript-big-data-in-a-small-browser-3b19c01e2132)
   - [Delivering Big Data in the Small Browser](https://medium.com/ag-grid/delivering-big-data-in-the-small-browser-41704f1058f0)
+- [Max Koretskyi articles](https://indepth.dev/author/maxkoretskyi/)
 
 ## 8 Performance Hacks for JavaScript in ag-grid
 
@@ -145,22 +146,26 @@ modified: '2020-08-10T06:01:15.443Z'
 
 - In just 4 years we built the best JavaScript datagrid in the world.
   - We managed to do that because we first implemented a technical foundation that helped us tackle the complexity of building such a complex widget. 
-  - We call this foundation “ag-stack”. 
+  - We call this foundation “ag-stack”.
   - This is what I want to explore in this series of articles.
+- The main idea is to review patterns and techniques that we use under the hood to build the fastest datagrid while also providing ample customization opportunities. 
+
 - The problem stems from the amount of features that a datagrid should support and the correct interoperability between them all. 
-- As we add new features, we need to ensure that all existing features continue working properly and the interoperability between them, e.g. sorting with filtering, isn’t broken. 
-  - With each new feature the complexity grows.
+  - As we add new features, we need to ensure that all existing features continue working properly and the interoperability between them, e.g. sorting with filtering, isn’t broken. 
+  - With each new feature, the complexity grows.
 - Another challenge is the customization of the grid. 
   - add their own logic and UI into many parts of the datagrid. 
   - We even allow customization using components from your favorite frontend framework (Angular, React and so on)
+  - But to make it possible, we needed to implement a lot of bridges to connect grid internals and customization layers. 
+  - It’s quite a big chunk of infrastructure code that needs to be checked every time we make changes to the architecture.
 
 - Managing complexity in ag-Grid
   - We use a lot of low-level functional programming inside classes, however we still prefer OOP design for the higher level architecture like defining modules and setting up their interaction.
   - TypeScript significantly helps with OOP programming. 
-- ag-stack describes a few pillars of grid’s internal architecture, particularly IoC Container and Component Framework, alongside some optimizations techniques that we use.
-- It’s worth pointing out that we implemented all parts of ag-stack ourselves from scratch. 
-  - That’s our philosophy, **if you need it, build it**. 
-  - That’s why ag-Grid has zero dependencies which is a huge advantage for consumers of our datagrid.
+  - ag-stack describes a few pillars of grid’s internal architecture, particularly IoC Container and Component Framework, alongside some optimizations techniques that we use.
+  - It’s worth pointing out that we implemented all parts of ag-stack ourselves from scratch. 
+    - That’s our philosophy, **if you need it, build it**. 
+    - That’s why ag-Grid has zero dependencies which is a huge advantage for consumers of our datagrid.
 
 - Row/Column virtualization
   - You can think of it as an alternative way of paging in which a datagrid gradually renders DOM nodes while a user is scrolling vertically or horizontally
@@ -191,6 +196,20 @@ modified: '2020-08-10T06:01:15.443Z'
   - So before we do the update, we first run dirty checking — each cell stores current value and compares it to the new value it gets. 
   - Only if changes are detected or update is forced, the DOM is updated. 
   - This approach significantly reduces time required to process changes. 
+
+## [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
+
+- Dependency Injection (DI) software design pattern has long been part of native client and server-side applications that use OOP languages. 
+- In essence it’s a technique for achieving Inversion of Control (IoC) between classes and their dependencies. 
+- The content mostly discusses cases related to architecture of native applications that use OOP languages like Java or C#. 
+- If you want to know the reasons for using DI in web applications, there’s almost no information available. 
+  - Most of the explanations you’d find would be about how DI makes unit-tests easier. 
+  - Yet, it’s important to realize that the purpose of DI is much broader than just enabling unit testing.
+- I’ve read many articles about DI and most of them define two major benefits of using DI: 
+  - enabling loose coupling of code (decoupling)
+  - simplifying testing setup. 
+- when two blocks of code are loosely coupled, it means that a change in one usually doesn’t require a change in the other. 
+  - advantage of loose coupling is that it increases maintainability of the overall solution.
 
 ## JavaScript GPU Animation with Transform and Translate
 

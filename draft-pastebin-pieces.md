@@ -10,23 +10,16 @@ modified: '2020-07-30T13:52:49.242Z'
 
  
 
-- import ag-grid的ts源码进行开发出现的error
-  - babel class decorator  Cannot access  before initialization
-
-``` 
-Uncaught ReferenceError: Cannot access 'Component' before initialization
-at Module.Component (component.ts:3)
-at eval (agAbstractLabel.ts?deaf:14)
-at Module .../widgets/agAbstractInputField.ts
-```
-
-- babel编译ag-grid源码中的types出现warning
-  - 这些warning相关的导出内容都是type类型定义，可忽略
-
-``` 
-WARNING in ../../community-modules/core/src/ts/main.ts 13:0-84
-export 'ColumnState' (reexported as 'ColumnState') was not found in './columnController/columnController' (possible exports: ColumnController)
-```
+- 自己人到中年的变化
+  - 习惯
+    - 音乐由偏舞曲转向偏乡村
+  - 优点
+    - 技能熟练
+    - 资源变多
+  - 缺点
+    - 脸肚发胖、四肢发胖
+    - 容易疲惫
+    - 闲话变少
 
 ------  
 
