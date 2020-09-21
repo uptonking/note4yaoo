@@ -7,6 +7,14 @@ modified: '2020-08-19T13:37:17.123Z'
 
 # docs-web-event
 
+## guide
+
+- ref
+  - [Event developer guide](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
+  - [DOM onevent handlers](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers)
+  - [Creating and triggering events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events)
+  - [Comparison of Event Targets](https://developer.mozilla.org/en-US/docs/Web/API/Event/Comparison_of_Event_Targets)
+
 ## event overview
 
 - `event.target` is a reference to the object that dispatched the event. 

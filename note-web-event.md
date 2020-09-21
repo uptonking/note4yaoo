@@ -60,7 +60,7 @@ modified: '2020-08-19T13:38:01.426Z'
   - react使用自己包装的SyntheticEvent，return false不会阻止事件传播(从v0.14起)
 - oneventtype vs addEventListener
   - onclick事件在同一时间只能指向唯一对象
-    - 若分别指定window.onresize=f1/f2时，只会生效后指定的事件
+    - 若分别指定window.onresize=f1/f2/f3时，只会生效在最后一个指定的事件
     - 若同时使用onresize和addEventListener时，会交替执行，若事件相同则重复执行!!！
     - 若使用addEventListener重复定义相同的listener事件，只会执行一次
     - 通过onxxx绑定的事件方法，只能在目标阶段和冒泡阶段执行

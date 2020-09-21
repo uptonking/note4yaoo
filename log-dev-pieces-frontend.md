@@ -12,6 +12,23 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- appendChild有时会移动元素
+  - 下面的例子执行后， `<span>` 元素会移动到b下面，并且a下没有了
+    - 若通过button触发js，多次调用appendChild最终b下也只有1个
+
+``` html
+<div class="a">
+  <span></span>
+</div>
+<div class="b"></div>
+```
+
+``` JS
+const span = document.querySelector('span');
+const divB = document.querySelector('.b');
+divB.appendChild(span);
+```
+
 - `Node.nodeName` vs `Element.tagName`
   - The `nodeName` read-only property returns the name of the current `Node` as a string.
   - The `tagName` read-only property of the Element interface returns the tag name of the element on which it's called.
