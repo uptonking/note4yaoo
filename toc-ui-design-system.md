@@ -72,7 +72,11 @@ modified: '2020-07-14T11:25:55.146Z'
   - https://github.com/pivotal-cf/pivotal-ui
   - https://styleguide.pivotal.io/
   - Pivotal's design system & component library
-- GOV. UK Design System  /MIT/290Star/201912
+- Garden /Apache2.0/794Star/202009
+  - https://github.com/zendeskgarden/react-components
+  - https://garden.zendesk.com/
+  - The source of truth for tools, standards, and best practices when building products at Zendesk.
+- gov.uk Design System  /MIT/290Star/201912
   - https://github.com/alphagov/govuk-frontend
   - https://design-system.service.gov.uk/
   - build a user interface for government platforms and services    

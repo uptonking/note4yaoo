@@ -798,33 +798,6 @@ const Header = (props) => {
 
 - https://github.com/designmodo/html-website-templates
 
-## web builder & prototype
-
-- 拖拽编辑器可用于界面设计、图表设计、产品原型设计
-- Webcodesk /201907/MIT/40star
-  - https://github.com/webcodesk/webcodesk-app
-  - https://webcodesk.com/documentation/tutorial/create_main_page
-  - 依赖electron，d3js
-  - 直接拖拽现有组件生成项目，基于 react-app-framework
-- VvvebJs /201907/Apache2.0/1200star
-  - https://github.com/givanz/VvvebJs.git
-  - http://www.vvveb.com/vvvebjs/editor.html
-  - Drag and drop website builder javascript library.
-  - 依赖jquery和bootstrap
-- grapejs /201907/BSD/8900star
-  - https://github.com/artf/grapesjs
-  - https://grapesjs.com/demo.html
-  - 依赖underscore，backbone，codemirror，
-- h5ds /201907/commercial
-- silex /201907/GPLv3/680star
-  - https://github.com/silexlabs/Silex
-  - 丑
-- 基于vue
-  - https://github.com/fireyy/vue-page-designer
-  - https://github.com/baianat/vuse
-- 其他
-  - https://github.com/chriskitson/react-drag-drop-layout-builder
-
 ## WebAssembly
 
 - 典型应用场景

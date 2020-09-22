@@ -21,7 +21,7 @@ modified: '2020-08-10T06:01:15.443Z'
     7. Pure Open Source is Risky
     8. You Ain't Seen Nothing Yet in the market
   - [JavaScript Big Data in a Small Browser](https://medium.com/@niall.crosby/javascript-big-data-in-a-small-browser-3b19c01e2132)
-  - [Delivering Big Data in the Small Browser](https://medium.com/ag-grid/delivering-big-data-in-the-small-browser-41704f1058f0)
+  - [Delivering Big Data in the Small Browser](https://blog.ag-grid.com/delivering-big-data-in-the-small-browser/)
 - [Max Koretskyi articles](https://indepth.dev/author/maxkoretskyi/)
 
 ## 8 Performance Hacks for JavaScript in ag-grid

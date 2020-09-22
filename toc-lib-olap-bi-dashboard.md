@@ -42,3 +42,7 @@ modified: '2020-08-02T07:25:15.320Z'
   - https://github.com/mariusandra/insights
   - Open Source Self-Hosted Business Intelligence Platform
   - a tool to visually explore a PostgreSQL database, with an emphasis on generating graphs that show business performance over time.
+- cube.js MIT-Apache2.0/8.7kStar/202009
+  - https://github.com/cube-js/cube.js
+  - https://cube.dev/docs/
+  - Cube.js - Open Source Analytics Framework

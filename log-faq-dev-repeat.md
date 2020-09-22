@@ -9,9 +9,36 @@ modified: '2020-08-18T06:14:25.248Z'
 
 ## faq-not-yet
 
+- 要不要用css-in-js？
+  - 优点是局部样式+type check
+  - 缺点是styled组件会带来runtime cost，做性能优化时早晚会干掉
+
+- 选用哪一个state management方案？
+  - 一个开发者开发了五六种方案，每种都有特点
+  - 直接用react context api，减少依赖
+
 - 开发list组件和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
   - react-virtualized: List uses a Grid internally to render the rows
+
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
+
+## 函数设计时，要不要统一用一个大的参数对象作为唯一参数？
+
+- 优点
+  - 无需关心参数顺序、方便加减参数数量
+  - 方便实现高阶函数
+- 缺点
+  - 需要额外步骤解构出常用变量
+  - 参数对象过多可能导致性能问题。 
+    - Not only do you mess up JIT optimization and code minimization, but your code also becomes less performant. 
+    - It makes no sense to be allocating new objects for each function invocation (or possibly mutating previous ones).
+  - The problem with multi argument function, in most cases is the fact that our function is responsible for too many things. 
+    - Creating one big object as an argument solves readability of this function call, but still keeps this function in the wrong shape.
+    - Other thing is currying and partial application which is very handy, even sometimes it is must have. And your idea blocks that fully. 
+- 总结
+  - I think we should avoid functions with many arguments. But there is no silver bullet solution, and what you are proposing is a solution only for small variety of problems.
+- ref
+  - [Always pass one argument to your JavaScript function](https://levelup.gitconnected.com/always-pass-one-argument-to-your-javascript-function-4140d909937e)
 
 ## js: prototype vs __proto__
 

@@ -13,6 +13,14 @@ modified: '2020-08-31T13:24:03.619Z'
 
 ## changelog
 
+- 24.0.0-20200909
+  - Allow more combining multiple column filters on one column (see Multi Filter)
+  - Reactive Columns - Enhancements to Column Definitions
+    - Revamped Updating Column Definitions to make it easier to make changes to columns. 
+    - Revamped Column State to allow more powerful and fine grained control of Column State without touching the Column Definitions. 
+  -  Allow aggregation without totalling on pivot column groups
+  - Add API methods indicating whether the undo/redo stack is empty
+  - Chart Themes Customization
 - 23.0.0
   - Migrate ag-grid-angular/@ag-grid-community/angular to use CLI for build
 - 22.0.0

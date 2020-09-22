@@ -1,11 +1,11 @@
 ---
-title: toc-github-repositories-exploring
+title: toc-github-repos-exploring
 tags: [github, toc]
 created: '2020-08-20T13:52:16.885Z'
-modified: '2020-08-31T11:45:05.028Z'
+modified: '2020-09-22T13:18:32.954Z'
 ---
 
-# toc-github-repositories-exploring
+# toc-github-repos-exploring
 
 ## popular
 
