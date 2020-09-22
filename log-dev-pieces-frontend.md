@@ -12,6 +12,8 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- yarn.lock中可能出现某个间接依赖下载失败
+  - 可能是不小心修改了某个位置的字符，还原最初的yarn.lock，再yarn install
 - appendChild有时会移动元素
   - 下面的例子执行后， `<span>` 元素会移动到b下面，并且a下没有了
     - 若通过button触发js，多次调用appendChild最终b下也只有1个
