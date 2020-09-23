@@ -1,11 +1,11 @@
 ---
-title: docs-ag-grid-customize
+title: docs-ag-grid-rendering-customization
 tags: [ag-grid, docs]
 created: '2020-08-26T11:00:16.149Z'
-modified: '2020-08-26T11:01:53.539Z'
+modified: '2020-09-23T09:44:55.757Z'
 ---
 
-# docs-ag-grid-customize
+# docs-ag-grid-rendering-customization
 
 ## Components
 

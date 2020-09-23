@@ -22,6 +22,7 @@ modified: '2020-08-31T13:24:03.619Z'
   - Add API methods indicating whether the undo/redo stack is empty
   - Chart Themes Customization
 - 23.0.0
+  - a major rewrite of the Sass code behind our provided themes
   - Migrate ag-grid-angular/@ag-grid-community/angular to use CLI for build
 - 22.0.0
   - introduce ag-grid modules to reduce bundle size

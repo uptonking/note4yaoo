@@ -10,11 +10,14 @@ modified: '2020-08-19T13:38:01.426Z'
 
 ## faq
 
+- click vs touch
 - 如何实现用2点触控two (simultaneous) touches事件模拟右键菜单，多点触控如何区分不同功能手势如放大缩小、
   - `UIEvent.detail`
     - The `MouseEvent` object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
-  - `TouchEvent.changedTouches`
-    - A `TouchList` of all the Touch objects representing individual points of contact whose states changed between the previous touch event and this one.
+  - `TouchEvent.targetTouches`
+    - return a `TouchList` listing all the `Touch` objects for touch points that are still in contact with the touch surface and whose `touchstart` event occurred inside the same target element as the current target element.
+    - The `TouchList` interface represents a list of contact points on a touch surface. 
+      - For example, if the user has three fingers on the touch surface (such as a screen or trackpad), the corresponding `TouchList` object would have one `Touch` object for each finger, for a total of three entries.
   - Note that the threshold for pinch and zoom movement detection is application specific (and device dependent).
 - react中分别有onClick和onDoubleClick, 但将这两个事件同时写在一个div上时，点击只会触发单击事件，应该怎么实现在一个div中同时绑定单击与双击事件？
   - This is not a limitation of React, it is a limitation of the DOM's click and dblclick events

@@ -1,11 +1,13 @@
 ---
-title: docs-ag-grid-style-layout
+title: docs-ag-grid-styling-layout
 tags: [ag-grid, docs, layout, style]
 created: '2020-08-24T09:18:14.273Z'
-modified: '2020-08-24T09:19:54.911Z'
+modified: '2020-09-23T09:45:17.667Z'
 ---
 
-# docs-ag-grid-style-layout
+# docs-ag-grid-styling-layout
+
+## pieces
 
 ## Grid Size
 

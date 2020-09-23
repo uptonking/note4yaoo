@@ -115,7 +115,7 @@ modified: '2020-08-05T04:35:33.164Z'
 
 ## Client-Side Data - Accessing Client-Side Data
 
-- Each time you pass data to the grid, the grid wraps each data item with a Row Node object. 
+- Each time you pass data to the grid, the grid wraps each data item with a RowNode object. 
 - It is handy to access these Row Nodes. 
 
 ## Client-Side Data - Updating Client-Side Data
@@ -128,6 +128,7 @@ modified: '2020-08-05T04:35:33.164Z'
     - This can happen if you pass data to the grid and then subsequently change that data outside of the grid. 
     - This leaves the grid's view out of sync with the data that it has. 
     - In this instance what you want to do is refresh the view to have the grid's UI redraw to display the data changes.
+
 - Setting Fresh Row Data
   - The easiest way to update data inside the grid is to replace the data you gave it with a fresh set of data. 
   - This is done by either updating the `rowData` bound property (if using a framework) or calling `api.setRowData(newData)` .
@@ -161,19 +162,68 @@ modified: '2020-08-05T04:35:33.164Z'
     - This is done using the API `applyTransactionAsync(transaction)` .
     - Use Async Transactions for doing add, remove or update operations that are frequent, e.g. for managing streaming updates into the grid of tens, hundreds or thousands of updates a second.
 
+### Single Row/Cell
+
+- The easiest way to update data inside the grid is to replace the data you gave it with a fresh set of data. 
+- This is done by either updating the `rowData` bound property (if using a framework) or calling `api.setRowData(newData)` .
+- Replacing the data with a fresh set means the grid will treat it as a brand new set of data and as such the following will occur:
+  - Row selection will be cleared.
+  - If grouping, the open / closed state of the groups will be cleared.
+  - The entire grid's UI will be refreshed from scratch. 
+  - All of the ClientSideRowModel calculations will be redone from scratch, i.e. sorting, filtering, grouping, aggregation and pivoting.
+
+### Transactions
+
+- Transaction Updates allow adding, removing or updating large numbers of rows inside the grid in an efficient manner.
+- Transaction Updates are excellent for applying large data changes with the following advantages:
+  - Efficient operation.
+  - Updates sort, filter, group, aggregation and pivot after changes applied.
+- A transaction object contains the details of what rows should be added, removed and updated. 
+  - The grid API applyTransaction(transaction) takes this transaction object and applies it to the grid's data.
+  - The result of the applyTransaction(transaction) is also a transaction
+- Row Data Transaction: Contains Row Data, the data that you are providing to the grid.
+- Row Node Transaction: Contains Row Nodes, the grid-created objects that wrap row data items.
+
+- Deciding what groups need to be operated on within the grid is called Changed Path Selection.
+  - After the grid applies all adds, removes and updates from a transaction, it works out what groups were impacted and only executes the required operations on those groups.
+  - The groups that were impacted include each group with data that was changed, as well as all parents of changed groups all the way up to the top level.
+
+### High Frequency
+
+- Every time you update data in the grid, the grid will rework all aggregations, sorts and filters as well as having the browser update its DOM. If you are streaming multiple updates into the grid this can be a bottleneck. 
+- High Frequency Updates are achieved in the grid using Async Transactions. Async Transactions allow for efficient high-frequency grid updates.
+- To help understand the interface for applyTransaction() and applyTransactionAsync(), here are both method signatures side by side. 
+  - The first executes immediately. 
+  - The second executes sometime later using a callback for providing a result.
+- You might ask, wouldn't using a virtual DOM like React remove the necessity of Async Transactions? 
+  - The answer is no. A virtual DOM would only batch the DOM related updates, it would not help with the batching of aggregations, sorts and filters.
+- The default wait between executing batches is 50ms. This means when an Async Transaction is provided to the grid, it can take up to 50ms for that transaction to be applied.
+- Sometimes you may want all transactions to be applied before doing something 
+  - for example you may want to select a rows in the grid but want to make sure the grid has all the latest row data before doing so.
+  - To make sure the grid has no Async Transactions pending, you can flush the Async Transaction queue. This is done by calling the API `flushAsyncTransactions` .
+
 ## Client-Side Data - Immutable Data
 
 - Under normal operation when new data is set into the grid (e.g. the `rowData` bound property is updated with new data), the grid assumes the new data is a brand new set of data. 
   - It is common for applications to desire this behavior. 
   - However as explained in Setting Fresh Row Data this can be undesirable as grid state (selected rows etc.) is lost.
+- For most applications, using grid Transaction Updates are what you should do if you want to make changes to the dataset rather than replace it. 
+  - However this is not in line with how applications based on immutable stores desire to work.
 - In applications using immutable stores (e.g. React and Redux), it could be desirable to treat changes to the bound `rowData` as updates to the current dataset rather than a brand new dataset. 
   - The grid has a mode of operation where it does exactly this. 
   - It works out what rows are added, removed and updated when new row data is provided by inspecting the new row data. 
   - This mode is called Immutable Data Mode and is enabled by setting the property `immutableData=true` .
+
 - When in Immutable Data Mode, the grid assumes it is fed with data from an immutable store where the following is true about the data:
   - Changes to a single row data item results in a new row data item object instance.
   - Any changes within the list or row data results in a new list.
-- For the Immutable Data Mode to work, you must be providing IDs for the row nodes as explained in Application Assigned IDs.
+
+- For the Immutable Data Mode to work, you must be providing IDs for the row nodes.
+- The grid works out what changes need to be applied to the grid using the following rules:
+  - 新建。IF the ID for the new item doesn't have a corresponding item already in the grid THEN it's added as a new row to the grid.
+  - 更新。IF the ID for the new item does have a corresponding item in the grid THEN compare the object references. If the object references are different, the row is updated with the new data, otherwise it's assumed the data is the same as the already present data.
+  - 移除。IF there are items in the grid for which there are no corresponding items in the new data, THEN those rows are removed.
+  - 重排序。Lastly the rows in the grid are sorted to match the order in the newly provided list.
 
 ## Client-Side Data - Context
 

@@ -34,7 +34,7 @@ modified: '2020-07-14T10:20:33.275Z'
 
 ## github
 
-- navigation within issue anwsers with shortcut J
+- navigation within issue answers with shortcut J
 - sort repos of an organization by stars
 - toggle github repo and github page
 - go to npm package page

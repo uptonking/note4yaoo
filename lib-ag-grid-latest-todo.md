@@ -15,6 +15,10 @@ modified: '2020-09-17T17:17:58.423Z'
 
 - validate这类方法太长，如gridOptions、checkDeprecated、module是否注册
 
+- Lazy Height Calculation
+  - The vertical scroll range (how much you can scroll over) will change dynamically to fit the rows. 
+  - If scrolling by dragging the scroll thumb with the mouse, the scroll thumb will not follow the mouse. 
+
 ## optimization
 
 ## extend
