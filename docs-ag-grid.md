@@ -225,6 +225,17 @@ modified: '2020-08-05T04:35:33.164Z'
   - 移除。IF there are items in the grid for which there are no corresponding items in the new data, THEN those rows are removed.
   - 重排序。Lastly the rows in the grid are sorted to match the order in the newly provided list.
 
+- When in Immutable Data Mode and the grid receives new data, it creates a Transaction Update underneath the hood. 
+  - In other words, once the grid has worked out what rows have been added, updated and removed, it then creates a transaction with these details and applies it. 
+  - This means all the operational benefits to Transaction Updates equally apply to Immutable Data Mode.
+- There are however some difference with Immutable Data Mode and Transaction Updates which are as follows:
+  - When in Immutable Data Mode, the grid stores the data in the same order as the data was provided. 
+    - For example if you provide a new list with data added in the middle of the list, the grid will also put the data into the middle of the list rather than just appending to the end. 
+    - This decides the order of data when there is no grid sort applied. 
+    - If this is not required by your application, then you can suppress this behaviour for a performance boost by setting `suppressMaintainUnsortedOrder=true` .
+  - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
+    - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
+
 ## Client-Side Data - Context
 
 - The context object is passed to most of the callbacks used in the grid. 
