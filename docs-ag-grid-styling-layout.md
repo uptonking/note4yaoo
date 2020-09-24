@@ -9,6 +9,10 @@ modified: '2020-09-23T09:45:17.667Z'
 
 ## pieces
 
+- How Flashing Works
+  - Each time the call value is changed, the grid adds the CSS class `ag-cell-data-changed` for 500ms by default, and then then CSS class `ag-cell-data-changed-animation` for 1, 000ms by default. 
+  - The grid provided themes use this to apply a background color.
+
 ## Grid Size
 
 - Under normal usage, your application should set the `width` and `height` of the grid using CSS styles. 

@@ -14,6 +14,7 @@ modified: '2020-08-31T13:24:03.619Z'
 ## changelog
 
 - 24.0.0-20200909
+  - rowDeselection is now true by default and should be suppressed by using suppressRowDeselection
   - Allow more combining multiple column filters on one column (see Multi Filter)
   - Reactive Columns - Enhancements to Column Definitions
     - Revamped Updating Column Definitions to make it easier to make changes to columns. 

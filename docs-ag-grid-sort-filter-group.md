@@ -20,12 +20,28 @@ modified: '2020-08-24T09:18:09.531Z'
 
 - different types of filtering that can be performed in the grid as follows:
   - Column Filters
-    - Column filters appear in the column menu and / or in the Filters Tool Panel. 
+    - Column filters appear in the column menu and/or in the Filters Tool Panel. 
     - A filter set on a column filters using data in that column only.
   - Quick Filter
     - Quick filter is a piece of text given to the grid (typically the user will type it in somewhere in your application) that is used to filter rows using data in all columns in the grid.
   - External Filter
     - An external filter is a mechanism for the application to filter out rows independently of any filtering done by the grid.
+
+- Column filters are accessed in the grid UI either through the Column Menu or the Tool Panel.
+- Filtering causes the following events to be emitted:
+  - Filter Changed: Filter has changed and been applied by the grid.
+  - Filter Modified: Filter UI has changed but not necessarily applied. This is useful when using an apply button if you want to know if the filter changed but was not applied.
+- Column filters work independently of Quick Filter and External Filter. 
+  - If a quick filter and/or external filter are applied along with a column filter, each filter type is considered and the row will only show if it passes all three types.
+  - Column filters are tied to a specific column. Quick filter and external filter are not tied to any particular column.  
+- builtin providedFilters
+  - agNumberColumnFilter
+  - agTextColumnFilter
+  - agDateColumnFilter
+  - agSetColumnFilter
+- Provided filters maintain a separate model representing what is shown in the UI, which might change without having yet been applied, for example when an Apply button is present and the user has made changes in the UI but not yet clicked Apply.
+
+- Floating Filters are an additional row under the column headers where the user will be able to see and optionally edit the filters associated with each column.
 
 ## Row Grouping
 
@@ -33,6 +49,9 @@ modified: '2020-08-24T09:18:09.531Z'
   - There is no limit on the number of columns that the grid can group by.
 - The grid lets you automatically create one column for each individual group. 
     - This is achieved by setting `gridOptions.groupMultiAutoColumn = true` . 
+
+- If there are rows containing `null` or `undefined` values for the column that is being grouped, then these rows will not be grouped. 
+  - We refer to this scenario as Unbalanced Groups in that there is a mix of groups and rows as siblings. 
 
 ## Master/Detail
 

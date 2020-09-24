@@ -12,8 +12,7 @@ modified: '2020-08-05T04:35:33.164Z'
 - The grid can be configured with different strategies for loading row data into the grid, which are encapsulated into different Row Models. 
   - Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
 - The grid comes with four row models
-  - Client-Side
-    - This is the default. 
+  - Client-Side (default)
     - The grid will load all of the data into the grid in one go. 
     - The grid can then perform filtering, sorting, grouping, pivoting and aggregation all in memory.
   - Infinite
@@ -32,7 +31,8 @@ modified: '2020-08-05T04:35:33.164Z'
   - The default is 'clientSide'.
 - Which row model you use will depend on your application. Here are some quick rules of thumb:
   - use Client-Side Row Model if you want to load all your data into the browser, or Infinite Row Model if you want to load it in blocks.
-- Here are more detailed rules of thumb.
+  - Server-Side Row Model is Infinite Row Model plus more for enterprise usage
+- Here are more detailed rules of thumb:
   - If you are not sure, use default Client-Side. 
     - The grid can handle massive amounts of data (100k+ rows). 
     - The grid will only render what's visible on the screen (40 rows approximately, depending on your screen size) even if you have thousands of rows returned from your server. 
@@ -53,7 +53,7 @@ modified: '2020-08-05T04:35:33.164Z'
 - Deeper Understanding of Row Models
   - The grid follows an MVC pattern. 
   - Each data item is wrapped in a Row Node and then stored in the Row Model. 
-  - The grid rendering engine is called Row Renderer and listens for changes to the row model and updates the DOM accordingly
+  - The grid rendering engine is called RowRenderer and listens for changes to the row model and updates the DOM accordingly
   - The grid has exactly one `RowRenderer` instance. 
     - The RowRenderer contains a reference to the `PaginationProxy` where it asks for the rows one at a time for rendering.
   - The grid has exactly one `PaginationProxy` instance. 
@@ -347,12 +347,12 @@ modified: '2020-08-05T04:35:33.164Z'
   - The raw values, and not the result of cell renderer, will get used, meaning:
     - Cell Renderers will NOT be used.
     - Value Getters will be used.
-    - Cell Formatters will NOT be used (use processCellCallback instead).
+    - Cell Formatters will NOT be used (use `processCellCallback` instead).
   - Cell styles are not exported by default. CSV does not allow styling. 
   - If row grouping:
     - all data will be exported regardless of whether groups are open in the UI.
     - by default, group names will be in the format "-> Parent Name -> Child Name" 
-    - row group footers (groupIncludeFooter=true) will NOT be exported - this is a GUI addition that happens for displaying the data in the grid.
+    - row group footers ( `groupIncludeFooter` =true) will NOT be exported - this is a GUI addition that happens for displaying the data in the grid.
 - It is not possible to download files directly from JavaScript to an iPad. 
   - This is a restriction of iOS and not something wrong with ag-Grid. 
   - For this reason, the download links in the context menu are removed when running on iPad.
