@@ -133,7 +133,6 @@ var gridOptions = {
   - is not impacted by pinned sections of the grid, will span left and right pinned areas regardless.
   - does not participate in the navigation, rangeSelection (ag-Grid Enterprise) or contextMenu (ag-Grid Enterprise) of the main grid.
 
-
 ## Row Spanning
 
 ## Row Pinning
@@ -158,6 +157,19 @@ var gridOptions = {
     - Use strings instead of functions for value getters and formatters.
   - Reference Data
     - Reference data is used to display alternative values rather that what is in your data, eg you data could have USA but you want to display 'America'.
+
+- value formatters are for text formatting and cell renderers are for when you want to include HTML markup and potentially functionality to the cell. 
+
+- Column Definition Expressions vs Functions
+  - The advantage of functions is that they are easier to work with for you. 
+    - Functions will be treated by your IDE as functions and thus benefit from compile time checks, debugging e.t.c.
+  - The advantage of expressions are:
+    - They keep your column definitions as simple JSON objects (just strings, no functions) which makes them candidates for saving in offline storage (eg storing a report definition in a database).
+    - They make the definitions more compact, thus may make your code more maintainable.
+
+- A shortcoming of cell expression is that the expression belongs to the column and cannot be defined as part of the data, or in other words, the expression is for the entire column, it cannot be set to a particular cell.
+
+- When you provide and expression to the grid, the grid converts the expression into a function for you and then executes the function
 
 - Rendering Flow
   - If `valueGetter` is provided, it will be used, otherwise the `field` will be used.

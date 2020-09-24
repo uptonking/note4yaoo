@@ -23,6 +23,9 @@ modified: '2020-09-17T17:17:58.423Z'
 
 ## extend
 
+- Undo/Redo feature is designed to be a recovery mechanism for user editing mistakes. 
+  - Performing grid operations that change the row/column order, e.g. sorting, filtering and grouping, will clear the undo/redo stacks.
+
 ## debug
 
 - import ag-grid的ts源码用babel转义进行开发调试时出现的error
