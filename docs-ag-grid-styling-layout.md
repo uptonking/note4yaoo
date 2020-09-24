@@ -74,26 +74,10 @@ modified: '2020-09-23T09:45:17.667Z'
     - Instead of using a parameter, create a CSS rule to apply your desired effect. 
   - Deleted placeholder selectors
 
-## Printing
+## Overlays
 
-- Keep Print Layout for Print Only
-  - When the grid is in print layout, it will be rendering all cells without using row virtualisation. 
-  - This means that the grid will be slower given the amount of DOM it is rendering. 
-  - Only use print layout when you actually want to print. 
-  - All of the functions (filtering, sorting, dragging columns etc) will work, however the performance will be impacted if the data set is large and will frustrate your users. 
-  - For this reason it's best keeping print layout for printing only and normal (or auto-height) layout at all other times.
-
-- A grid using print layout will not use any scrollbars so all rows and columns will get printed. 
-- The grid will auto-size width and height to fit all contents. 
-- This means if the grid is printed on paper, all the cells will get included, as apposed to printing a grid with scrollbars and only cells within the visible area will get printed.
-
-- The only Row Model that print layout works with is the default Client Side row model. 
-  - It will not work with the others ( Infinite, Server-Side or Viewport). 
-  - This is because the grid will render the entire data-set which goes against the philosophy of the other row models which lazy load data.
-
-- Don't Print Large Data
-  - This is not a problem with the grid, it is a limitation on browsers on how much data they can easily display in one web page. 
-  - If you try to render lots of data into the web page, the web page will create lots of DOM elements and will either slow things down or simply hang the browser. 
-  - ag-Grid gets around this problem by virtualising the rows and columns. 
-  - However if you render the whole grid, there is no possibility of virtualising the rows or columns.
-  - If you want to allow printing large datasets, it's best to get your users to export to CSV or Excel and then print from another non-web based application.
+- At present, there are two overlays for the grid:
+  - Loading: Gets displayed when the grid is loading data.
+  - No Rows: Gets displayed when loading has complete but no rows to show.
+- provide your own overlay templates with the grid properties `overlayLoadingTemplate` and `overlayNoRowsTemplate` . 
+  - These templates should be plain HTML

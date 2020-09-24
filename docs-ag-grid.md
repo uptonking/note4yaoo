@@ -356,3 +356,27 @@ modified: '2020-08-05T04:35:33.164Z'
 - It is not possible to download files directly from JavaScript to an iPad. 
   - This is a restriction of iOS and not something wrong with ag-Grid. 
   - For this reason, the download links in the context menu are removed when running on iPad.
+
+## Printing
+
+- Keep Print Layout for Print Only
+  - When the grid is in print layout, it will be rendering all cells without using row virtualisation. 
+  - This means that the grid will be slower given the amount of DOM it is rendering. 
+  - Only use print layout when you actually want to print. 
+  - All of the functions (filtering, sorting, dragging columns etc) will work, however the performance will be impacted if the data set is large and will frustrate your users. 
+  - For this reason it's best keeping print layout for printing only and normal (or auto-height) layout at all other times.
+
+- A grid using print layout will not use any scrollbars so all rows and columns will get printed. 
+- The grid will auto-size width and height to fit all contents. 
+- This means if the grid is printed on paper, all the cells will get included, as apposed to printing a grid with scrollbars and only cells within the visible area will get printed.
+
+- The only Row Model that print layout works with is the default Client Side row model. 
+  - It will not work with the others ( Infinite, Server-Side or Viewport). 
+  - This is because the grid will render the entire data-set which goes against the philosophy of the other row models which lazy load data.
+
+- Don't Print Large Data
+  - This is not a problem with the grid, it is a limitation on browsers on how much data they can easily display in one web page. 
+  - If you try to render lots of data into the web page, the web page will create lots of DOM elements and will either slow things down or simply hang the browser. 
+  - ag-Grid gets around this problem by virtualising the rows and columns. 
+  - However if you render the whole grid, there is no possibility of virtualising the rows or columns.
+  - If you want to allow printing large datasets, it's best to get your users to export to CSV or Excel and then print from another non-web based application.
