@@ -1,8 +1,8 @@
 ---
 title: docs-ag-grid-styling-layout
-tags: [ag-grid, docs, layout, style]
+tags: [ag-grid, docs, layout, styling]
 created: '2020-08-24T09:18:14.273Z'
-modified: '2020-09-23T09:45:17.667Z'
+modified: '2020-09-25T16:44:21.861Z'
 ---
 
 # docs-ag-grid-styling-layout

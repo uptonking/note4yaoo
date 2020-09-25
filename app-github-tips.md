@@ -1,8 +1,8 @@
 ---
 title: app-github-tips
-tags: [app]
+tags: [app, exploring, github]
 created: '2020-07-31T11:59:56.787Z'
-modified: '2020-08-04T12:24:02.650Z'
+modified: '2020-09-25T16:42:42.430Z'
 ---
 
 # app-github-tips
