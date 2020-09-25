@@ -2,7 +2,7 @@
 title: note-style-css-in-js-dev
 tags: [css-in-js, style]
 created: '2020-08-07T16:13:30.609Z'
-modified: '2020-08-07T16:16:25.034Z'
+modified: '2020-09-25T05:56:45.321Z'
 ---
 
 # note-style-css-in-js-dev
@@ -65,14 +65,6 @@ modified: '2020-08-07T16:16:25.034Z'
   - The main element of reuse is the component. You won't ever need a .header CSS class when instead you'll reuse `<Header>`
 
 ## css-in-js-zero-runtime
-
-### linaria
-
-### AstroTurf
-
-### treat
-
-### stitches
 
 ## survey: css in js vs css
 

@@ -1,11 +1,11 @@
 ---
-title: note-chart-category
-tags: [chart, olap, viz]
+title: note-viz-chart-category
+tags: [charting, olap, viz]
 created: '2019-08-01T14:14:51.122Z'
-modified: '2020-07-14T10:46:00.475Z'
+modified: '2020-09-25T03:51:24.352Z'
 ---
 
-# note-chart-category
+# note-viz-chart-category
 
 ## tips
 

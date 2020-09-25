@@ -1,9 +1,9 @@
 ---
 title: docs-styled-components
-tags: [docs, style, styled-components, web]
+tags: [css-in-js, docs, style, web]
 favorited: true
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-08-08T08:07:29.139Z'
+modified: '2020-09-25T05:32:19.340Z'
 ---
 
 # docs-styled-components
@@ -16,45 +16,41 @@ modified: '2020-08-08T08:07:29.139Z'
   - 直接复用组件，而不是复用样式，若必需复用样式，则提取出变量通过theme来复用
 - why you should use css-in-js
   - author CSS in JavaScript syntax
+  - Styles are "scoped" to a specific component
   - Colocate styles with components
-  - Styles are generally "scoped" to a specific component
+  - Many libraries offer support for theming
+  - Most libraries offer ways to handle dynamic styling
   - Take advantage of native JS syntax features
   - Take advantage of anything from the JS ecosystem
   - make dead code elimination easier 
   - type check and code auto suggestion with ts
-  - Many libraries offer support for theming
-  - Most libraries offer ways to handle dynamic styling
   - easier to write unit tests with CSS-in-JS
   - ref
     - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
     - https://mxstbr.com/thoughts/css-in-js
+- 使用styled-components这种css-in-js的优缺点
+  - 优点是局部样式、动态样式、主题切换
+  - 缺点是runtime cost
+    - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的
+      - 因为就算自己用js计算新的样式名本身也有一定的计算，样式变化不多的情况下对性能影响很小
 
-## docs-bulma
-
-### basic
+## bulma
 
 - https://bulma.io/documentation/overview/start/
 - https://github.com/jgthms/bulma
-
-### docs
-
 - By default, columns are only activated from tablet onwards. 
   - This means columns are stacked on top of each other on mobile.
 - Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
+- ### book-Creating Interfaces with Bulma_Jeremy Thomas_2018
+  - bulma features
+    - modern css framework with flexbox
+    - 100% responsive, designed to be both mobile and desktop friendly
+    - customizable with over 300 sass variables
+    - css only, no js
+- ### theme-for-bulma
+  - https://jenil.github.io/bulmaswatch/
 
-### book-Creating Interfaces with Bulma_Jeremy Thomas_2018
-
-- bulma features
-  - modern css framework with flexbox
-  - 100% responsive, designed to be both mobile and desktop friendly
-  - customizable with over 300 sass variables
-  - css only, no js
-
-### theme-for-bulma
-
-- https://jenil.github.io/bulmaswatch/
-
-## docs-linaria
+## linaria
 
 ### basic
 
@@ -64,7 +60,7 @@ modified: '2020-08-08T08:07:29.139Z'
 
 ### pieces
 
-## docs-emotion
+## emotion
 
 ### basic
 
@@ -83,16 +79,16 @@ modified: '2020-08-08T08:07:29.139Z'
   - 变量
   - theme
   - ref
-      - https://github.com/jsjoeio/styled-components-vs-emotion
+    - https://github.com/jsjoeio/styled-components-vs-emotion
 - s-c的问题
   - 嵌套过深，每个组件如styled.button下有StyledComp, 还有2个Context. Consumer
-      - styled-components v5已解决嵌套过深的问题
+    - styled-components v5已解决嵌套过深的问题
   - css prop需要babel插件支持 
 - emotion优势
   - framework agnostic, 框架无关的，可以额外引入与框架对应的emotion包
   - 兼容s-c的styled组件写法
   - ref
-      - https://theme-ui.com/motivation/  (why emotion part)
+    - https://theme-ui.com/motivation/  (why emotion)
 - emotion问题
   - 缺少 `.attrs()` 方法传递属性
     - https://github.com/emotion-js/emotion/issues/821
@@ -199,7 +195,7 @@ modified: '2020-08-08T08:07:29.139Z'
 - changelog
   - 10.0.0-201810-new package name, better css prop, Global comp
 
-## docs-styled-components
+## styled-components
 
 ### basic
 
@@ -209,11 +205,12 @@ modified: '2020-08-08T08:07:29.139Z'
 ### faq
 
 - 实现原理
-- https://dev.to/stereobooster/styled-components-one-more-time-5g0l
+  - https://dev.to/stereobooster/styled-components-one-more-time-5g0l
+  - https://medium.com/styled-components/how-styled-components-works-618a69970421
 - styled(MyComp)会传递所有属性，如何只传递指定属性
   - 对于styled('tag')，s-c只传递html属性
   - 手动选出不需要传递下去的属性，然后传递给底层组件restProps
-- Why write styles inline with jsxstyle?
+- Why write styles inline with jsxstyle library?
   - Naming things is hard
   - Jumping between JS and CSS in your editor wastes time
   - inline styles are easy to find styles and to delete
@@ -282,10 +279,9 @@ modified: '2020-08-08T08:07:29.139Z'
   - powerful js
   - 保持dom结构与样式分离的同时，不使用class，不需要跳转多文件，也不是内联样式
 - s-c**缺点**
-  - 每次点击会创建新class，但不会删除旧class，debug体验不好
-      - https://medium.com/styled-components/how-styled-components-works-618a69970421
+  - 每次点击会创建新class，但不会删除旧class，debug体验不好      
   - 不能用stylelint检查CSS代码，不能使用prettier来格式化css，ide语法高亮与自动提示支持不完善
-  - 父组件覆盖子组件的className较复杂，需要使用.container.container{}
+  - 父组件覆盖子组件的className较复杂，需要使用 `.container.container{}`
   - 国内关注度不高，资料不丰富
   - s-c样式组件是一层包裹，层层包裹会消耗性能
   - Biggest drawback: changes to styles require bundle re-compilation and app's state might reset
@@ -509,7 +505,7 @@ border-radius: 3px;
 
 ## bootstrap
 
-- components
+- bootstrap-components
   - bootstrap中input添加.form-control类，表示为input元素添加表单控件样式
 - faq
   - bootstrap.css vs bootstrap-theme.css
@@ -520,7 +516,7 @@ border-radius: 3px;
   - https://bootswatch.com/
   - https://themes.3rdwavemedia.com/bootstrap-templates/free/
 
-### bootswatch-themes
+### bootstrap-bootswatch-themes
 
 - default
 - 绿色系

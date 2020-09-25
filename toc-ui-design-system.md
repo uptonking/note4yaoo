@@ -2,7 +2,7 @@
 title: toc-ui-design-system
 tags: [components, design-system, toc, ui]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-07-14T11:25:55.146Z'
+modified: '2020-09-25T06:44:15.803Z'
 ---
 
 # toc-ui-design-system
@@ -138,6 +138,9 @@ modified: '2020-07-14T11:25:55.146Z'
   - https://design.lyft.com/
   - http://plasma.guide/
 - misc
+  - https://github.com/appbaseio/designkit
+    - Design kit for appbaseio ecosystem
+    - not active
   - https://github.com/alexpate/awesome-design-systems
   - https://github.com/miukimiu/design-systems
   - https://github.com/CMSgov/design-system

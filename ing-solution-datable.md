@@ -10,18 +10,46 @@ modified: '2020-07-14T10:25:13.843Z'
 - A handy/efficient data table to pivot your data
   - 用更加灵活的表格来透视数据
 
-## table-xp
+## features
+
+- theme
+- usecase-component
+  - file-explorer
+  - search-view
+
+## ideas
+
+- ui设计
+  - 表格左边放置过滤器
+  - 类似小程序的布局 layout-for-app
+  - list/grid view toggle 
 
 - animation
-  - 类似包含gif图的网页，可预设数据滚动动画，非常interactive
-- features
-  - 链接预览标题、图片
-  - 类似ide的同时打开多标签页并编辑
-  - 记住不同tab的上次编辑位置
-  - 单列选择
-- globalOptions
-  - defaultViewMode/defaultEditMode
-  - indentationSpace
+  - 显示类似gif效果，可预设数据滚动动画，非常interactive
+    - 可考虑定时更新
+- 其他特性或细节
+  - 竖向选择某列上连续的部分单元格
+
+- pivoting
+  - 在ag-grid表格ui中预设bi分析工具
+    - 可参考searchkit、dejavu、kibana、superset、tableau
+- charting
+  - 在ag-grid表格之上的新图层支持可拖拽的图表编辑器builder
+    - 支持将新图层渲染到表格容器知之外网，如渲染到document.body
+- location
+  - map layer
+- time-series
+  - autoplay
+- graph
+  - uncover the uncommonly common relationships in your data.
+- exploring
+  - explore the data properties that significantly influence them with unsupervised machine learning features.
+
+- data-mini-app小程序
+  - crud
+  - dejavu: imdb、hacker news、airbeds
+  - reactiveapps: booksearch、dashboard
+  - 结构：主页概览、数据浏览、要点分析
 
 ## grape-trellis
 

@@ -31,7 +31,7 @@ modified: '2020-07-14T11:03:41.956Z'
 - kettle /Apache2.0/4.1kStar/202007
   - https://github.com/pentaho/pentaho-kettle
   - https://community.hitachivantara.com/s/article/data-integration-kettle
-  - Pentaho Data Integration ( ETL ) a.k.a Kettle
+  - Pentaho Data Integration (ETL) a.k.a Kettle
 - pentaho-reporting /LGPLv2/196Star/202007
   - https://github.com/pentaho/pentaho-reporting
   - http://www.pentaho.com/products/reporting/

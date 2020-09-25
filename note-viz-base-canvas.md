@@ -1,11 +1,11 @@
 ---
-title: note-viz-canvas
+title: note-viz-base-canvas
 tags: [canvas, viz]
 created: '2020-07-17T13:36:32.433Z'
-modified: '2020-08-03T09:09:59.679Z'
+modified: '2020-09-25T02:48:35.568Z'
 ---
 
-# note-viz-canvas
+# note-viz-base-canvas
 
 ## 在Canvas中实现动画
 
