@@ -1,11 +1,11 @@
 ---
-title: note-viz-svg
+title: note-viz-base-svg
 tags: [svg, viz, web]
 created: '2019-08-01T05:10:56.452Z'
-modified: '2020-08-03T09:09:48.794Z'
+modified: '2020-09-25T03:45:47.992Z'
 ---
 
-# note-viz-svg
+# note-viz-base-svg
 
 ## guide
 

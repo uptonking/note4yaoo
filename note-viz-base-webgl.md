@@ -1,11 +1,11 @@
 ---
-title: note-viz-webgl
+title: note-viz-base-webgl
 tags: [viz, webgl]
 created: '2019-07-06T12:36:53.822Z'
-modified: '2020-08-03T09:11:04.320Z'
+modified: '2020-09-25T03:45:54.594Z'
 ---
 
-# note-viz-webgl
+# note-viz-base-webgl
 
 ## WebGL
 

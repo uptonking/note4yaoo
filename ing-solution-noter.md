@@ -31,6 +31,13 @@ modified: '2020-07-14T10:24:54.328Z'
   - collapse-to-level
     - toc折叠到2级标题，方便浏览和跳转
     - 有时候一级标题只有1个总的大标题，此时2级标题才能看到文字结构
+- edit
+  - 链接预览标题、图片
+  - 类似ide的同时打开多标签页并编辑
+  - 记住不同tab的上次编辑位置
+- globalOptions
+  - defaultViewMode/defaultEditMode
+  - indentationSpace
 
 ## noter-requirements-需求
 

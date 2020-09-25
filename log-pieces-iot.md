@@ -42,3 +42,8 @@ File corruption detected at /var/log/journal/8363b5e4cb2b4b959b362494307725dc/sy
 File corruption detected at /var/log/journal/8363b5e4cb2b4b959b362494307725dc/system.journal:73a9c0 (of 8388608 bytes, 90%).
 
 ```
+
+  - [三星M2 NVME每天只能在Linux上输入只读信息，而不能在Windows上输入](https://mlog.club/article/2802971)
+    - 记住发生故障的具体时间，然后查看系统日志
+      - cat /var/log/syslog
+      - 执行命令 dmesg -T，用于打印Linux系统开机启动信息，kernel会将开机信息存储在ring buffer中

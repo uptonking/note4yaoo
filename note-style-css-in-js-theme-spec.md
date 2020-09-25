@@ -3,7 +3,7 @@ title: note-style-css-in-js-theme-spec
 tags: [css-in-js, style, web]
 favorited: true
 created: '2019-11-30T10:00:18.020Z'
-modified: '2020-08-09T05:12:23.549Z'
+modified: '2020-09-25T05:54:00.765Z'
 ---
 
 # note-style-css-in-js-theme-spec
@@ -13,8 +13,8 @@ modified: '2020-08-09T05:12:23.549Z'
 - 为什么用css-in-js
 - pros
   - naming is hard
-  - simple dynamic styling adapting to its props
   - scoped styles
+  - simple dynamic styling adapting to its props
   - type check and code auto suggestion
   - better maintainability
     - easy to delete css

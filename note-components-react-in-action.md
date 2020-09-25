@@ -3,7 +3,7 @@ title: note-components-react-in-action
 tags: [components, web]
 favorited: true
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-08-09T05:26:01.708Z'
+modified: '2020-09-25T05:52:10.299Z'
 ---
 
 # note-components-react-in-action
@@ -15,7 +15,7 @@ modified: '2020-08-09T05:26:01.708Z'
     - 开发者用起来framework-agnostic，但原作者很可能要维护多个port或bridge
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
-  - opinionated: ui交互或技术选型具有明显的偏向性
+    - opinionated: ui交互或技术选型具有明显的偏向性
 
 ## opinionated
 

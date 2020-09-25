@@ -2,7 +2,7 @@
 title: log-faq-dev-repeat
 tags: [dev, faq, repeat]
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-08-18T06:14:25.248Z'
+modified: '2020-09-25T05:33:19.981Z'
 ---
 
 # log-faq-dev-repeat
@@ -10,7 +10,7 @@ modified: '2020-08-18T06:14:25.248Z'
 ## faq-not-yet
 
 - 要不要用css-in-js？
-  - 优点是局部样式+type check
+  - 优点是局部样式+type check+易于实现动动态样式和theming
   - 缺点是styled组件会带来runtime cost，做性能优化时早晚会干掉
 
 - 选用哪一个state management方案？

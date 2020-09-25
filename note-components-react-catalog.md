@@ -51,6 +51,8 @@ modified: '2020-08-09T05:23:47.960Z'
 - ComboBox
   - 可输入选择(自动完成)，可选择多个
 - Toggle
+- Search
+  - [appbaseio/reactivesearch](https://github.com/appbaseio/reactivesearch)
 
 ## display
 
@@ -171,6 +173,7 @@ modified: '2020-08-09T05:23:47.960Z'
   - date-picker
   - input-number
   - input
+  - search
   - mentions
   - rate
   - radio
