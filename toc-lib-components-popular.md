@@ -50,6 +50,10 @@ modified: '2020-07-14T11:02:59.856Z'
   - https://fomantic-ui.com/elements/button.html
   - fork of Semantic-UI
 
+## components-parts
+
+- https://github.com/codex-team/codex.tooltips
+
 ### inactive
 
 - https://github.com/Semantic-Org/Semantic-UI

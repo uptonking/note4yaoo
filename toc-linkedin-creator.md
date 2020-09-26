@@ -16,11 +16,6 @@ modified: '2020-09-19T12:46:00.501Z'
     - https://github.com/yyx990803
     - https://www.zhihu.com/people/evanyou
   - artwork: vue
-- D 
-  - https://github.com/88250
-  - artwork: b3blog, solo, symphony
-
-## indie-dev
 
 - Dan Abramov
   - info: Co-author of Redux and Create React App

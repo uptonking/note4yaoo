@@ -103,7 +103,11 @@ modified: '2020-09-09T06:27:15.100Z'
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
   - 一个页面构建平台demo，项目以展示思路为主，只有打包和预览部分运用了node，并未使用数据库
   - 当前项目中所包含的页面以及页面中的组件和组件中的状态，均以json格式存在redux store当中
-
+- amis-editor
+  - https://github.com/fex-team/amis-editor
+  - http://fex-team.github.io/amis-editor
+  - 可视化编辑器在线工具 
+  - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 ## misc
 
 - https://github.com/chriskitson/react-drag-drop-layout-builder

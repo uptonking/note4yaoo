@@ -1,11 +1,11 @@
 ---
-title: toc-presentation-ppt
+title: toc-doc-ppt
 tags: [presentation, toc]
 created: '2020-08-02T08:42:18.196Z'
-modified: '2020-08-09T11:19:48.888Z'
+modified: '2020-09-26T17:53:20.748Z'
 ---
 
-# toc-presentation-ppt
+# toc-doc-ppt
 
 - marpit /MIT/287Star/22009
   - https://github.com/marp-team/marpit

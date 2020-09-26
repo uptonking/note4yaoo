@@ -26,6 +26,8 @@ modified: '2020-09-26T12:52:33.493Z'
 
 ## engineering
 
+- 低代码平台
+  - 阿里、百度都在研发
 - vite
   - [如何看待 Web 开发构建工具 Vite？](https://www.zhihu.com/question/394062839/answers/updated)
     - vite不需要打包工具参与，利用浏览器对模块化的支持，实现vue的热更新

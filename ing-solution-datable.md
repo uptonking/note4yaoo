@@ -12,10 +12,24 @@ modified: '2020-07-14T10:25:13.843Z'
 
 ## todo
 
+- 研发参考
+  - 自研代码库的升级自己掌握，三方库如react hooks的升级影响到现有产品及周边生态
+  - 学习现有产品为何优秀的地方
+  - ts
+    - https://github.com/codex-team/editor.js
+    - https://github.com/BabylonJS/Babylon.js
+    - https://github.com/taye/interact.js
+    - https://github.com/projectstorm/react-diagrams
+
+- components
+  - headless-ui
+  - builder/high-level-editor
+  - formula for excel
+
 - create ag-list from ag-grid
   - ag-grid/react-table
 - charting
-  - d3
+  - d3/g2/recharts
 - bi/olap/search
   - superset/kibana
 

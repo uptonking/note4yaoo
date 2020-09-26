@@ -9,6 +9,20 @@ modified: '2020-07-03T13:17:59.764Z'
 
 - 代码
 
+## viz
+
+- 沈毅
+  - 百度，echarts、claygl(formerly qtek)
+  - https://github.com/pissang
+  - https://www.zhihu.com/people/chen-yi-11/answers
+- 陈屹(流形)
+  - 阿里， 深入React技术栈作者
+  - https://www.zhihu.com/people/arcthur/answers
+- 吴多益
+  - 百度，百度智能云Sugar BI
+  - https://github.com/nwind
+  - https://www.zhihu.com/people/wuduoyi/posts
+
 ## web-dev
 
 - 司徒正美
@@ -35,6 +49,14 @@ modified: '2020-07-03T13:17:59.764Z'
   - https://www.zhihu.com/people/dancerphil
   - https://github.com/dancerphil
   - https://github.com/regionjs/region-core
+- D 
+  - https://github.com/88250
+  - artwork: b3blog, solo, symphony
+- 徐飞
+  - web
+  - https://www.zhihu.com/people/sharpmaster/posts
+- 贺师俊
+  - https://www.zhihu.com/people/he-shi-jun/answers
 
 ## data-analysis
 
