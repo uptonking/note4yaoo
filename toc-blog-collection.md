@@ -19,6 +19,11 @@ modified: '2020-07-12T13:11:41.315Z'
 - [HEADLESS USER INTERFACE COMPONENTS](https://www.merrickchristensen.com/articles/headless-user-interface-components/)
 - [Browser painting and considerations for web performance](https://css-tricks.com/browser-painting-and-considerations-for-web-performance/)
 
+- [从 JS 引擎到 JS 运行时（上）](https://zhuanlan.zhihu.com/p/104333176)
+  - 集成嵌入式JS引擎、为引擎扩展原生能力、移植默认 Event Loop
+- [从 JS 引擎到 JS 运行时（下）](https://zhuanlan.zhihu.com/p/104501929)
+  - 将 Event Loop 切换到基于libuv实现、支持宏任务与微任务
+
 ## backend
 
 ## series

@@ -10,8 +10,6 @@ modified: '2020-07-30T13:52:49.242Z'
 
  
 
-- create ag-list from ag-grid
-
 ------  
 
 - 知乎禁止转载的回答测试

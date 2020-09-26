@@ -34,6 +34,15 @@ modified: '2020-08-09T08:43:10.089Z'
 
 ## features
 
+- 基础功能
+  - sort/filter/group
+    - group-header
+  - select/edit
+  - virtualize
+  - component-wrapper
+    - ag-list
+    - read-only-grid
+
 - Multiple Sorting
   - The DataGrid can sort values by a single or multiple columns.
     - Single sorting mode. 
@@ -42,10 +51,6 @@ modified: '2020-08-09T08:43:10.089Z'
     - Multiple sorting mode. 
       - A user can hold the Shift key and click column headers in the order the user wants to apply sorting. 
       - To cancel a column's sorting settings, a user should hold the Ctrl key and click the column header.
-
-## usecase
-
-- file-explorer
 
 ## grid-implementation-vs
 

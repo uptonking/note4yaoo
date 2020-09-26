@@ -7,6 +7,10 @@ modified: '2020-07-13T02:41:12.041Z'
 
 # toc-lib-list-grid-table-sheet
 
+## awesome
+
+- https://jsgrids.io/
+
 ## list-grid
 
 - ag-grid /MIT/6.4kStar/202006
@@ -26,6 +30,12 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/adazzle/react-data-grid
   - http://adazzle.github.io/react-data-grid/
   - Excel-like grid component built with React, with editors, keyboard navigation, copy...
+- tabulator /MIT/3.4kStar/202007
+  - https://github.com/olifolkerd/tabulator
+  - http://tabulator.info/
+  - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
+  - 基于div实现
+  - 无依赖
 - handsontable 6.2.2 /MIT/13.8kStar/202007
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
@@ -34,7 +44,12 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://handsontable.com/docs/7.4.2/frameworks-wrapper-for-react-simple-examples.html
   - since 7.0 free for all non-commercial purposes
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
-  - handsontable基于table tag实现
+  - 基于table标签实现
+- gridjs /MIT/2.4kStar/202009
+  - https://github.com/grid-js/gridjs
+  - https://gridjs.io/
+  - HTML table plugin written in TypeScript using vanilla js
+  - 基于table标签实现
 - react-virtual /MIT/1.1kStar/202007
   - https://github.com/tannerlinsley/react-virtual
   - https://codesandbox.io/s/github/tannerlinsley/react-virtual/tree/master/examples/dynamic
@@ -58,6 +73,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jexcel
   - a lightweight vanilla javascript plugin to create amazing web-based interactive tables
+  - 基于table标签实现
 - x-spreadsheet /MIT/8.8kStar/202007
   - https://github.com/myliang/x-spreadsheet
   - https://myliang.github.io/x-spreadsheet
@@ -70,6 +86,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/nhn/tui.grid
   - http://ui.toast.com/tui-grid/
   - Powerful Component to Display and Edit Data. Experience the Ultimate Data Transformer
+  - 基于table标签实现，支持sort, filter, 不支持group
 - fixed-data-table-2 /BSD/1kStar/202007
   - https://github.com/schrodinger/fixed-data-table-2
   - http://schrodinger.github.io/fixed-data-table-2/
@@ -87,12 +104,14 @@ modified: '2020-07-13T02:41:12.041Z'
 - React-Spreadsheet-Component /MIT/650Star/201811
   - https://github.com/felixrieseberg/React-Spreadsheet-Component
   - http://felixrieseberg.github.io/React-Spreadsheet-Component/
+  - 依赖jquery
   - Spreadsheet Component for ReactJS
   - It's made with ❤️️ by Microsoft DX and released under the MIT License.
 - react-spreadsheet-grid /MIT/949Star/202004
   - https://github.com/denisraslov/react-spreadsheet-grid
   - https://denisraslov.github.io/grid
   - An Excel-like grid component for React with custom cell editors, performant scroll & resizable columns
+  - 功能较少，not active
 - react-data-components /MIT/382Star/201905
   - https://github.com/carlosrocha/react-data-components
   - https://rocha.dev/react-data-components/
@@ -151,6 +170,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/FancyGrid/FancyGrid
   - https://fancygrid.com/
   - JavaScript grid library with charts integration and server communication.
+  - 基于div实现，实现很特别，表格ui是一列一列相邻放置构成的
 - react-spreadsheet /MIT/245Star/202003
   - https://github.com/iddan/react-spreadsheet
   - https://iddan.github.io/react-spreadsheet
@@ -195,10 +215,6 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/tabler/tabler-react
   - http://tabler-react.com/
   - React implementation of the Tabler Dashboard UI Kit
-- tabulator /MIT/3.4kStar/202007
-  - https://github.com/olifolkerd/tabulator
-  - http://tabulator.info/
-  - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
 - Griddle /MIT/2400star/201907
   - http://github.com/griddlegriddle/Griddle
   - http://griddlegriddle.github.io/Griddle/
@@ -208,6 +224,12 @@ modified: '2020-07-13T02:41:12.041Z'
   - [Architecture](http://griddlegriddle.github.io/Griddle/docs/architecture/)
   - [Plugins](http://griddlegriddle.github.io/Griddle/docs/plugins/)
   - [Customization](http://griddlegriddle.github.io/Griddle/docs/customization/)
+- rowsncolumns-grid /NALic/30Star/202009
+  - https://github.com/rowsncolumns/grid
+  - https://rowsncolumns.app/
+  - https://rowsncolumns.github.io/grid/?path=/story/grid--base-grid
+  - Canvas table grid to render large set of tabular data. 
+  - Uses virtualization similar to react-window and React-Konva for primitives such as Rect, Text, Shape etc
 
 ## grid-layout
 

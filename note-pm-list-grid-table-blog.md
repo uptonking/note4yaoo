@@ -7,6 +7,57 @@ modified: '2020-07-26T04:15:43.741Z'
 
 # note-pm-list-grid-table-blog
 
+## Five Fast JavaScript Data Grids — A Performance Review
+
+- [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)
+
+- The following popular data grids were used in this comparison:
+  - ag-grid (ag-grid.com)
+  - Bryntum Grid (bryntum.com/products/grid)
+  - DevExtreme Grid (js.devexpress.com/Overview/DataGrid)
+  - DHTMLX Grid (dhtmlx.com/docs/products/dhtmlxGrid)
+  - Ext JS Modern Grid (sencha.com/products/extjs)
+- git repo: https://github.com/bryntum/grid-performance
+- Benchmarking Methodology
+  - Two test cases were created per grid, one with locked/fixed/pinned columns and one without.
+  - The same dataset was used for all grids, consisting of 10, 000 JSON objects with ten fields each
+  - Columns were configured as similar as possible for all grids
+    - Ten columns, some with custom settings:
+      - One column with cells that has their background color set from data.
+      - One column with a custom progress bar.
+      - One date column.
+      - One boolean column displaying Yes/No.
+    - The first three columns locked/fixed/pinned in the relevant test case.
+    - For fairness, all non-essential features such as sorting, grouping, filtering and so on were turned off
+    - All grids were rendered into a 1280 x 1024 px sized container.
+    - All measurements were taken on a 2016 MacBook Pro 13" (2 GHz Intel Core i5, 8GB RAM).
+    - Scrollbars were turned on
+- Measuring
+  - JavaScripts `performance.now()` was used to measure time in the benchmarks.
+- Initial Rendering Time(ms) Result 
+  - for simple grid 
+    - dhtmlX: 55
+    - bryntum: 104
+    - ag-grid: 210
+    - devExtreme: 216
+    - extjs: 281
+  - For all practical applications though, the difference between the best and the worst, in this case, is negligible. 
+  - A real world application loading and displaying 10, 000 records will spend much more time retrieving the data from the backend than the time it takes to display it.
+  - 带有locked/pinned/fixed列的首屏渲染测试结果排名与上面相同
+- Scrolling FPS Result 肉眼更易察觉
+  - for scrolling simple grid
+    - dhtmlX: 25
+    - devExtreme: 38
+    - ag-grid: 57
+    - extjs: 59
+    - brytum: 60
+  - for scrolling grid with pinned
+    - dhtmlX: 19
+    - devExtreme: 29
+    - ag-grid: 53
+    - extjs: 54
+    - brytum: 59
+
 ## The simplest way to create a Data Grid in React - Tabelify
 
 - [The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)

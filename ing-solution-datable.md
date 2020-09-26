@@ -10,6 +10,15 @@ modified: '2020-07-14T10:25:13.843Z'
 - A handy/efficient data table to pivot your data
   - 用更加灵活的表格来透视数据
 
+## todo
+
+- create ag-list from ag-grid
+  - ag-grid/react-table
+- charting
+  - d3
+- bi/olap/search
+  - superset/kibana
+
 ## features
 
 - theme
@@ -58,8 +67,6 @@ modified: '2020-07-14T10:25:13.843Z'
 ## Excelbox
 
 - A tool for fast pivoting data list in memory. 快速进行数据分组聚合的工具库
-
-## todo
 
 ## reference
 

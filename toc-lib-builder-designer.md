@@ -93,6 +93,8 @@ modified: '2020-09-09T06:27:15.100Z'
   - https://github.com/uxbox/uxbox
   - https://github.com/elementor/elementor
     - Requires PHP: 5.6
+  - 稿定设计
+    - 在线PS、自动抠图、海量素材
 
 ## page/site/ui-builder
 
