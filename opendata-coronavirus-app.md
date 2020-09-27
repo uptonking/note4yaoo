@@ -18,3 +18,6 @@ modified: '2020-07-22T10:42:47.047Z'
   - https://about-corona.net/dashboard
   -  This Dashboard is built using React. 
   -  The API for the dashboard is provided by about-corona.net/documentation.
+
+- https://github.com/pomber/covid19
+  - JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country - updated daily

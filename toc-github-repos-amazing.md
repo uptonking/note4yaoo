@@ -19,6 +19,9 @@ modified: '2020-09-22T13:18:53.037Z'
   - 回放时，页面动态显示的是dom元素，不是图片视频
   - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
 
+- https://github.com/kamranahmedse/driver.js
+  - vanilla JavaScript engine to drive the user's focus across the page
+
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2.0/202009/ts
   - library for visualization and creative-coding.

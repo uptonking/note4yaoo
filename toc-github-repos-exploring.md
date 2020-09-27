@@ -92,17 +92,22 @@ modified: '2020-09-22T13:18:32.954Z'
   - 内置虚拟滚动，数据量较大时自动开启
 
 - ### js
+- https://github.com/bvaughn/react-window
+  - /9kStar/MIT/202001
+  - React components for efficiently rendering large lists and tabular data
 - https://github.com/olifolkerd/tabulator
+  - /3.5kStar/MIT/202009
   - interactive table generation JavaScript library
   - 无依赖
 - https://github.com/joshwcomeau/react-flip-move /inactive
   - https://github.com/aholachek/react-flip-toolkit /ts
   - https://github.com/davidkpiano/flipping
-- more
-  - https://github.com/bvaughn/react-virtualized
-  - https://github.com/javve/list.js /inactive
-    - library for adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
-    - Built to be invisible and work on existing HTML.
+- https://github.com/bvaughn/react-virtualized
+  - /20kStar/MIT/202008
+  - React components for efficiently rendering large lists and tabular data.
+- https://github.com/javve/list.js /inactive
+  - library for adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
+  - Built to be invisible and work on existing HTML.
 
 ## popular
 
@@ -292,6 +297,7 @@ modified: '2020-09-22T13:18:32.954Z'
 - https://github.com/nhn/tui.grid
   - /1.6kStar/MIT/202009
   - Plain JavaScript component implemented by NHN
+  - https://github.com/nhn/tui.chart
 - https://github.com/allegro/turnilo
   - /356Star/Apache2.0/202009
   - Business intelligence, data exploration and visualization web application for Druid
@@ -452,6 +458,17 @@ modified: '2020-09-22T13:18:32.954Z'
 - https://github.com/Leaflet/Leaflet
   - /29kStar/BSD/202009/js
   - JavaScript library for mobile-friendly interactive maps
+- https://github.com/getredash/redash
+  - /17.3kStar/BSD/202009
+  - Connect to any data source, easily visualize, dashboard and share your data.
+  - 依赖flask
+  - since 9.0.0-beta(2020-06-11)
+    - backend code was updated to support Python 3
+    - replaced Celery with RQ for background jobs processing
+    - frontend code is now 100% React and we removed all the Angular dependencies.
+
+ 
+
 - more
   - https://github.com/axios/axios
     - Promise based HTTP client for the browser and node.js
@@ -483,6 +500,124 @@ modified: '2020-09-22T13:18:32.954Z'
     - Deep Learning for humans
   - https://github.com/Semantic-Org/Semantic-UI /inactive
     - a UI framework designed for theming.
+  - https://github.com/RocketChat/Rocket.Chat
+    - Solution for team communications
+  - https://github.com/Marak/faker.js
+    - generate massive amounts of realistic fake data in Node.js and the browser
+  - https://github.com/date-fns/date-fns
+    - Modern JavaScript date utility library
+  - https://github.com/markedjs/marked
+    - A markdown parser and compiler. Built for speed.
+  - https://github.com/sequelize/sequelize
+    - An easy-to-use multi SQL dialect ORM for Node.js
+  - https://github.com/SheetJS/sheetjs
+    - Community Edition -- Spreadsheet Data Toolkit
+  - https://github.com/airbnb/lottie-web
+    - Render After Effects animations natively on Web, Android and iOS, and React Native
+  - https://github.com/pure-css/pure
+    - A set of small, responsive CSS modules
+  - https://github.com/SortableJS/sortablejs
+    - Create and reorder lists with drag-and-drop. 
+  - https://github.com/MrRio/jsPDF
+    - Client-side JavaScript PDF generation for everyone.
+  - https://github.com/jgraph/drawio
+    - Source to app.diagrams.net
+  - https://github.com/YMFE/yapi
+    - https://hellosean1025.github.io/yapi
+  - https://github.com/immerjs/immer
+    - Create the next immutable state by mutating the current one
+  - https://github.com/Popmotion/popmotion
+    - Simple animation libraries for delightful user interfaces
+  - https://github.com/fabricjs/fabric.js
+    - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
+  - https://github.com/wekan/wekan
+    - open-source kanban (built with Meteor).
+  - https://github.com/mojs/mojs
+    - motion graphics toolbelt for the web
+  - https://github.com/nuysoft/Mock
+    - a simulation data generator
+  - https://github.com/processing/p5.js
+    - p5.js has a full set of drawing functionality using the HTML5 canvas element
+  - https://github.com/frappe/charts
+    - /13.5kStar/MIT/202009
+    - modern, intuitive and responsive charts with zero dependencies
+    - https://github.com/frappe/gantt
+  - https://github.com/frappe/datatable
+    - /488Star/MIT/202009
+    - interactive datatable library for displaying tabular data
+    - 基于div实现
+    - 依赖hyperlist(实现virtualiza)、sortablejs
+  - https://github.com/adobe-webplatform/Snap.svg
+  - https://github.com/Flipboard/react-canvas
+    - High performance canvas rendering for React components
+  - https://github.com/plotly/plotly.js
+    - Open-source JavaScript charting library behind Plotly and Dash
+  - https://github.com/STRML/react-grid-layout
+    - A draggable and resizable grid layout with responsive breakpoints, for React.
+  - https://github.com/artf/grapesjs
+    - Free and Open source Web Builder Framework
+  - https://github.com/kamranahmedse/driver.js
+    - vanilla JavaScript engine to drive the user's focus across the page
+  - https://github.com/greensock/GSAP
+    - Animate CSS, SVG, canvas, React, Vue, WebGL, colors, strings, motion paths, generic objects
+  - https://github.com/Tencent/rapidjson
+    - JSON parser/generator for C++ with both SAX/DOM style API
+    - https://github.com/miloyip/json-tutorial
+    - https://github.com/miloyip/nativejson-benchmark
+  - https://github.com/krisk/Fuse
+    - Lightweight fuzzy-search, in JavaScript
+  - https://github.com/markdown-it/markdown-it
+    - Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins 
+  - https://github.com/pandao/editor.md /inactive
+    - embeddable online markdown editor (component).
+  - https://github.com/mdx-js/mdx
+    - JSX in Markdown for ambitious projects
+  - https://github.com/reactstrap/reactstrap
+    - React Bootstrap 4 components
+  - https://github.com/FormidableLabs/victory
+    - composable React components for building interactive data visualizations
+  - https://github.com/ricklamers/gridstudio
+    - a cloud based data science tool that combines a spreadsheet view with a Python scripting environment
+    - 依赖flask
+  - https://github.com/uber/react-vis
+    - react components to render common data visualization charts
+  - https://github.com/metricsgraphics/metrics-graphics
+    - a library built for visualizing and laying out time-series data
+  - https://github.com/ag-grid/ag-grid
+  - https://github.com/sghall/react-move
+  - https://github.com/frontend-collective/react-sortable-tree
+  - https://github.com/markmarkoh/datamaps
+    - Customizable SVG map visualizations for the web in a single Javascript file using D3.js
+  - https://github.com/boo1ean/casual
+    - Fake data generator for javascript
+  - https://github.com/CartoDB/cartodb
+    - Location Intelligence & Data Visualization tool
+  - https://github.com/yyhsong/iDataV
+    - 大屏数据可视化案例
+  - https://github.com/nteract/semiotic
+    - data visualization framework combining React & D3
+  - https://github.com/TargetProcess/tauCharts
+    - a data-focused JavaScript charting library based on D3 
+  - https://github.com/vitmalina/w2ui
+    - JavaScript UI library for building rich data-driven web applications. 
+    - requires only jQuery (1.9+) as a dependency
+  - https://github.com/visgl/luma.gl
+    - High-performance Toolkit for WebGL-based Data Visualization
+  - https://github.com/syt123450/giojs
+    - A Declarative 3D Globe Data Visualization Library built with Three.js
+  - https://github.com/PatMartin/Dex
+    - A data visualization tool written in Java/JavaFX
+  - https://github.com/humangeo/leaflet-dvf
+    - Leaflet Data Visualization Framework
+  - https://github.com/react-csv/react-csv
+    - React components to build CSV files on the fly 
+  - https://github.com/TerriaJS/terriajs
+    - A library for building rich, web-based geospatial data explorers.
+  - https://github.com/vega/datalib
+    - a JavaScript data utility library
+    - created to power Vega and related project
+
+ 
 
 ## collection
 

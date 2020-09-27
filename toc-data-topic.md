@@ -1,6 +1,6 @@
 ---
-tags: [data, toc]
 title: toc-data-topic
+tags: [data, toc]
 created: '2020-01-22T14:37:18.500Z'
 modified: '2020-06-22T09:23:56.117Z'
 ---

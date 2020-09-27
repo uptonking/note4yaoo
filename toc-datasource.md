@@ -13,7 +13,9 @@ modified: '2020-07-14T11:02:02.191Z'
 
 - https://github.com/awesomedata/awesome-public-datasets
 - https://github.com/jdorfman/awesome-json-datasets
-
+- https://github.com/GoogleTrends/data
+- https://github.com/openaddresses/openaddresses
+  - global open address data.
 ## img
 
 - 搜索页图标
