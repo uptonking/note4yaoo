@@ -250,6 +250,9 @@ modified: '2020-09-10T04:41:13.304Z'
 - http://react-component.github.io/badgeboard/
 - https://github.com/couds/react-bulma-components
 - https://bulma.io/extensions/
+- https://github.com/alibaba/ChatUI
+  - https://chatui.io/
+  - UI design language and React library for Conversational UI
 - [awesome-react-headless-components](https://github.com/jxom/awesome-react-headless-components)
 
 ### layout/panel 布局面板

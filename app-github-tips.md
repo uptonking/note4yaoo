@@ -10,9 +10,14 @@ modified: '2020-09-25T16:42:42.430Z'
 ## github
 
 - 搜索
-  - 搜索一个organization的仓库，可使用 `user:orgName`
+  - 搜索一个organization的仓库，可使用 `user:orgName` ，注意冒号后无空格
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
-  - 搜索标签
+  - 按标签或主题搜索
+  - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
+    - most starred
+      - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
+    - most forked
+      - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
 
 - fork
   - 查找一个仓库最活跃的fork仓库
@@ -26,6 +31,8 @@ modified: '2020-09-25T16:42:42.430Z'
 - 排行榜
   - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
   - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
+  - [GitHub star ranking for users, organizations and repositories](https://github.com/k0kubun/gitstar-ranking)
+    - https://gitstar-ranking.com/
 
 ## ecosystem
 

@@ -47,7 +47,10 @@ modified: '2020-07-14T10:24:54.328Z'
   - markdown-editor-lite
 - 预览模块
   - toc目录设计成类似书籍目录，单行且缩进，悬停查看完整目录
-  - 文字块： Note块，warning块
+  - 文字块: Note块，warning块
+- 样式
+  - link: 网址来源信赖标记，如github这类链接
+  - text: 使所有匹配的文字变暗，如链接文字只高亮最后2个单词，前面的 `https://xx.x` 变灰色
 - 笔记文件管理模块
   - 按日期
   - 按标签

@@ -224,12 +224,6 @@ modified: '2020-07-13T02:41:12.041Z'
   - [Architecture](http://griddlegriddle.github.io/Griddle/docs/architecture/)
   - [Plugins](http://griddlegriddle.github.io/Griddle/docs/plugins/)
   - [Customization](http://griddlegriddle.github.io/Griddle/docs/customization/)
-- rowsncolumns-grid /NALic/30Star/202009
-  - https://github.com/rowsncolumns/grid
-  - https://rowsncolumns.app/
-  - https://rowsncolumns.github.io/grid/?path=/story/grid--base-grid
-  - Canvas table grid to render large set of tabular data. 
-  - Uses virtualization similar to react-window and React-Konva for primitives such as Rect, Text, Shape etc
 
 ## grid-layout
 
@@ -365,12 +359,19 @@ modified: '2020-07-13T02:41:12.041Z'
 
 - ### 基于canvas
   - x-spreadsheet /201907/MIT/6527star
-      - https://github.com/myliang/x-spreadsheet
-      - https://myliang.github.io/x-spreadsheet
-      - 依赖无
+    - https://github.com/myliang/x-spreadsheet
+    - https://myliang.github.io/x-spreadsheet
+    - 无依赖，不依赖react
+  - rowsncolumns-grid /MIT/30Star/202009
+    - https://github.com/rowsncolumns/grid
+    - https://rowsncolumns.app/
+    - https://rowsncolumns.github.io/grid/?path=/story/grid--base-grid
+    - Canvas table grid to render large set of tabular data. 
+    - Uses virtualization similar to react-window and React-Konva for primitives such as Rect, Text, Shape etc
+    - 依赖react
 
 - ### 其他list    
-  - js-xlsx Community Edition /201907/Apache2.0/17Kstar
+  - js-xlsx Community Edition /201907/Apache2.0/17kStar
       - https://github.com/SheetJS/js-xlsx
       - https://oss.sheetjs.com/
       - 依赖cfb(Compound File Binary File Format extractor),ssf  

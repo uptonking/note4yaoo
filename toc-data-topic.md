@@ -11,6 +11,8 @@ modified: '2020-06-22T09:23:56.117Z'
 
 - 全球湾区
   - 粤港澳
+- https://github.com/sindresorhus/awesome
+  - Awesome lists about all kinds of interesting topics
 
 ## edu
 

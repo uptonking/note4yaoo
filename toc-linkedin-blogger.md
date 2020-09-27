@@ -1,6 +1,6 @@
 ---
-tags: [linkedin, toc]
 title: toc-linkedin-blogger
+tags: [linkedin, toc]
 created: '2019-12-29T11:49:48.192Z'
 modified: '2020-07-03T13:17:59.764Z'
 ---
@@ -34,8 +34,11 @@ modified: '2020-07-03T13:17:59.764Z'
   - https://www.zhihu.com/people/huang-zi-yi-83
   - https://github.com/ascoders
 - 雪碧
-  - react, beam
+  - react, 阿里，beam
   - https://github.com/doodlewind
+- 云谦
+  - react，阿里，umi、dva
+  - https://github.com/sorrycc
 - 张立理
   - react，百度云上百度运营平台
   - https://www.zhihu.com/people/otakustay

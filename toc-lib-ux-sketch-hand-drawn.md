@@ -11,6 +11,7 @@ modified: '2020-08-09T09:06:03.600Z'
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz
+  - https://github.com/rough-stuff/rough
   - a reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser, based on D3v5, roughjs, and handy.
 
 - excalidraw  /MIT/6000Star/202005

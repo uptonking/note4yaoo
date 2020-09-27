@@ -123,6 +123,10 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/kis/chartify
   - https://chartify-213721.web.app/
   - React.js plugin for building charts using CSS
+- apexcharts /9.4kStar/MIT/202009
+  - https://github.com/apexcharts/apexcharts.js
+  - https://apexcharts.com/
+  - Interactive JavaScript Charts built on SVG
 
 ## flow
 

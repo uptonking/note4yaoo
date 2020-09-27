@@ -7,7 +7,482 @@ modified: '2020-09-22T13:18:32.954Z'
 
 # toc-github-repos-exploring
 
+## focus
+
+- ### ts
+- https://github.com/ianstormtaylor/slate
+  - /18.6kStar/MIT/202009/ts
+  - completely customizable framework for building rich text editors.
+  - since 0.50.0(20191127), slate codebase has had a complete overhaul(彻底检修)
+    - The data model is now comprised of simple JSON objects. (old: Immutable.js data structures)
+    - The codebase now uses TypeScript. 
+    - Plugins are now plain functions that augment the Editor object they receive and return it again.
+- https://github.com/prevwong/craft.js
+  - /3kStar/MIT/202009
+  - A React Framework for building extensible drag and drop page editors
+- https://github.com/codex-team/editor.js
+  - /13.3kStar/Apache2.0/202009/ts
+  - A block-styled editor with clean JSON output 
+- https://github.com/adazzle/react-data-grid
+  - /4.1kStar/MIT/202009
+  - Excel-like grid component built with React, with editors, keyboard navigation, copy & paste
+- https://github.com/clauderic/react-tiny-virtual-list
+  - /1.8kStar/MIT/201910/inactive
+  - A tiny but mighty list virtualization library, with zero dependencies
+- https://github.com/BabylonJS/Babylon.js
+  - /12.3kStar/Apache2.0/202009/ts
+  - simple and open game and rendering engine packed into a friendly js framework.
+- https://github.com/antvis/G2
+  - /10.1kStar/MIT/202009/ts
+  - interactive data-driven visualization grammar for statistical charts.
+  - https://github.com/antvis/G2Plot: statistical charts through a few lines of code
+  - https://github.com/alibaba/BizCharts: data visualization library based on G2 and React.
+  - https://github.com/viserjs/viser: g2 charts for react/vue/angular
+- https://github.com/antvis/G6
+  - /6.9kStar/MIT/202009/ts
+  - a graph visualization engine: rendering, layout, analysis, interaction, animation
+- https://github.com/antvis/data-set
+  - /state driven all in one data process for data visualization
+- https://github.com/microsoft/chart-parts
+  - /530Star/MIT/202009
+  - The vision of chart-parts is to implement a grammar of graphics in js in a flexible, architecture-agnostic way
+  - while dovetailing nicely with frameworks application developers use such as React. 
+- https://github.com/rrweb-io/rrweb
+  - /7.6kStar/MIT/202009
+  - a tool for recording and replaying users' interactions on the web
+  - 录制回放web操作的架构：rrweb、rrweb-player、extensions
+  - 回放时，页面动态显示的是dom元素，不是图片视频
+  - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
+- https://github.com/microsoft/SandDance
+  - /4.5kStar/MIT/202009
+  - Visually explore, understand, and present your data.
+  - SandDance was created by the Microsoft Research VIDA Group
+  - 架构：sanddance, s-react/vue, s-explorer
+  - 依赖vega、deck.gl
+- https://github.com/baidu/amis
+  - /4.3kStar//Apache2.0/202009
+  - 依赖mobx、react、jquery、sortablejs、tinymce
+  - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
+  - amis-editor未开源，但可以免费使用（包括商用）
+- https://github.com/facebookresearch/hiplot
+  - /1.3kStar/MIT/202009
+  - HiPlot makes understanding high dimensional data easy
+  - 依赖python
+- https://github.com/data-forge/data-forge-ts
+  - /890Star/MIT/202009
+  - data transformation and analysis toolkit inspired by Pandas and LINQ.
+  - 依赖dayjs、json5、easy-table(text table for node)
+  - https://github.com/data-forge-notebook/plot
+- https://github.com/alibaba/alist /MIT/888Star/202009
+  - https://alist.wiki
+  - https://github.com/alibaba/alist/blob/master/packages/core/README.zh-cn.md
+  - 列表状态核心管理包(不依赖任何第三方UI框架)
+    - 管理 搜索框 Filter 状态、列表 Table 状态、分页 Pagination 状态、Filter/Table/Pagination 之间的依赖关系、列表生命周期 ListLifeCycle
+    - AList是集各方成熟方案于一体的框架
+      - 搜索区域使用UForm，Pagination，Table区域则使用Fusion-Next或Ant-Design或其他第三方组件库。 
+      - 底层通过核心层抽象列表各个维度数据，UI层则负责适配不同端的特性，顶层通过Schema协议描述快速渲染。
+- https://github.com/alibaba/formily /MIT/2.9kStar/202009
+  - https://formilyjs.org/
+  - https://github.com/alibaba/formily/blob/master/packages/core/README.zh-cn.md
+  - https://github.com/alibaba/formily-editor
+  - 表单状态核心管理包(不依赖任何第三方UI框架)
+    - 管理 Form 状态、Field 状态、Validator 状态、Form/Field/Validator 之间的依赖关系
+    - 借助首创Observable Graph，可以记录任意时刻的全量状态，也可以将状态回滚至任意时刻
+- https://github.com/alibaba/ali-react-table
+  - 内置虚拟滚动，数据量较大时自动开启
+
+- ### js
+- https://github.com/olifolkerd/tabulator
+  - interactive table generation JavaScript library
+  - 无依赖
+- https://github.com/joshwcomeau/react-flip-move /inactive
+  - https://github.com/aholachek/react-flip-toolkit /ts
+  - https://github.com/davidkpiano/flipping
+- more
+  - https://github.com/bvaughn/react-virtualized
+  - https://github.com/javve/list.js /inactive
+    - library for adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
+    - Built to be invisible and work on existing HTML.
+
 ## popular
+
+- ### most-starred typescript
+- https://github.com/formium/formik
+  - /24.7kStar/Apache2.0/202009 
+  - Build forms in React
+- https://github.com/niklasvh/html2canvas
+  - /21.7kStar/MIT/202009 
+  - Screenshots with JavaScript
+- https://github.com/typeorm/typeorm
+  - /21kStar/MIT/202009/ts
+  - ORM for TS and JS (ES7, ES6, ES5). Supports MySQL, PostgreSQL, SQLite, Oracle
+  - https://github.com/mikro-orm/mikro-orm
+- https://github.com/doczjs/docz
+  - /19.3kStar/MIT/202009 
+  - document your things
+- https://github.com/facebook/docusaurus
+  - /19.2kStar/MIT/202009 
+  - Easy to maintain open source documentation websites.
+- https://github.com/pmndrs/react-spring
+  - /18.3kStar/MIT/202009 
+  - A spring physics based React animation library
+- https://github.com/framer/motion
+  - /7.2kStar/MIT/202009
+  - production-ready animation and gesture library for React
+  - 依赖 popmotion 9，framesync，hey-listen
+- https://github.com/palantir/blueprint
+  - /16.8kStar/Apache2.0/202009 
+  - A React-based UI toolkit for the web
+- https://github.com/notable/notable
+  - /16.3kStar/MIT&AGPL&Paid/201905 
+  - The markdown-based note-taking app
+- https://github.com/elastic/kibana
+  - /14.9kStar/Apache2.0/202009/ts
+  - a browser-based analytics and search dashboard for Elasticsearch.
+- https://github.com/recharts/recharts
+  - /14.9kStar/MIT/202009 
+  - Redefined chart library built with React and D3
+- https://github.com/rough-stuff/rough
+  - /14.5kStar/MIT/202006 
+  - https://github.com/rough-stuff/wired-elements
+  - https://github.com/rough-stuff/rough-notation
+  - https://github.com/beizhedenglong/rough-charts
+  - Create graphics with a hand-drawn, sketchy, appearance
+- https://github.com/react-dnd/react-dnd
+  - /14.5kStar/MIT/202009 
+  - Drag and Drop for React
+- https://github.com/vercel/swr
+  - /13.2kStar/MIT/202009 
+  - React Hooks library for remote data fetching
+- https://github.com/tannerlinsley/react-query
+  - /13.2kStar/MIT/202009 
+  - Hooks for fetching, caching and updating asynchronous data in React
+- https://github.com/davidkpiano/xstate
+  - /13kStar/MIT/202009 
+  - State machines and statecharts for the modern web.
+- https://github.com/ustbhuangyi/better-scroll
+  - /13kStar/MIT/202009
+  - inspired by iscroll, implemented with plain JavaScript
+- https://github.com/excalidraw/excalidraw
+  - /11.6kStar/MIT/202009
+  - Virtual whiteboard for sketching hand-drawn like diagrams
+- https://github.com/chakra-ui/chakra-ui
+  - /10.7kStar/MIT/202009
+  - Modular & Accessible UI Components for your React Applications
+- https://github.com/kusti8/proton-native
+  - /10.5kStar/MIT/202009
+  - React environment for cross platform desktop apps
+- https://github.com/pmndrs/react-three-fiber
+  - /9.9kStar/MIT/202009
+  - A React renderer for Three.js (web and react-native)
+- https://github.com/danilowoz/react-content-loader
+  - /9.8kStar/MIT/202009
+  - SVG-Powered component to easily create skeleton loadings.
+- /https://github.com/highcharts/highcharts
+  - /9.7kStar/Free4FirstY/202009
+  - a js charting library based on SVG, with fallbacks to VML and canvas for old browsers.
+- https://github.com/taye/interact.js
+  - /9.7kStar/MIT/202009
+  - drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers (also IE9+).
+- https://github.com/microsoft/fluentui
+  - /9.5kStar/MIT/202009
+  - A set of React components for building Microsoft web experiences.
+  - UI Fabric is now Fluent UI 
+- UI Fabric is now Fluent UI 
+- https://github.com/Foundry376/Mailspring
+  - /9.2kStar/GPL/202008
+  - a maintained fork of @nylas Mail by one of the original authors.
+- https://github.com/styleguidist/react-styleguidist
+  - /9.2kStar/MIT/202009
+  - Isolated React component development environment with a living style guide
+- https://github.com/sindresorhus/pageres
+  - /9.1kStar/MIT/202008
+  - Capture screenshots of websites in various resolutions.
+- https://github.com/tinymce/tinymce
+  - /8.5kStar/LGPL/202009
+  - web-based WYSIWYG editor.
+- https://github.com/airbnb/visx
+  - /8.2kStar/MIT/202009/d3
+  - a collection of reusable low-level visualization components.
+- https://github.com/boardgameio/boardgame.io
+  - /8.2kStar/MIT/202009
+  - State Management for Turn-Based Games
+- https://github.com/react-page/react-page
+  - /8.2kStar/LGPL/202009
+  - customizable content editor for the browser - based on React and Redux
+- https://github.com/foambubble/foam
+  - /7kStar/MIT/202009
+  - a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+- https://github.com/thx/rap2-delos
+  - /6.3kStar/MIT/202009
+  - 阿里妈妈前端团队出品的开源接口管理工具RAP第二代
+  - rap2-delos: 后端数据API服务器，基于Koa/MySQL/Sequelize
+  - rap2-dolores: 前端静态资源
+    - 基于React/Redux/Saga/Router/Mock.js/Bootstrap4
+- https://github.com/callstack/linaria
+  - /6kStar/MIT/202009
+  - Zero-runtime CSS in JS library
+- https://github.com/projectstorm/react-diagrams
+  - /5kStar/MIT/202009
+  - no-nonsense diagramming library written in react
+- https://github.com/daybrush/moveable
+  - /4.8kStar/MIT/202009
+  - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
+- https://github.com/naver/billboard.js
+  - /4.4kStar/MIT/202009
+  - chart library based on D3.js
+- https://github.com/shoelace-style/shoelace
+  - /4.1kStar/MIT/202009
+  - components built on a framework-agnostic technology.
+  - Works with all frameworks
+  - Components are compiled by Stencil
+- https://github.com/searchkit/searchkit
+  - /3.9kStar/Apache2.0/202008
+  - React UI components to build a search experience with Elasticsearch.
+- https://github.com/meetalva/alva
+  - /3.5kStar/MIT/201907
+  - Create living prototypes with code components.
+- https://github.com/mariusandra/pigeon-maps
+  - /3kStar/MIT/202008
+  - ReactJS Maps without external dependencies
+- https://github.com/palantir/plottable
+  - /2.7kStar/MIT/202007/inactive
+  - A library of modular chart components built on D3
+- https://github.com/edp963/davinci
+  - /2.7kStar/Apache2.0/202009
+  - a DVsaaS (Data Visualization as a Service) Platform
+  - 依赖echarts4
+- https://github.com/alibaba/GGEditor
+  - /2.7kStar/MIT/202009
+  - A visual graph editor based on G6 and React
+- https://github.com/vega/vega-lite
+  - /2.7kStar/BSD/202009
+  - a higher-level grammar for visual analysis that generates complete Vega specifications.
+- https://github.com/le5le-com/topology
+  - /2kStar/MIT/202009
+  - A diagram (topology, UML) framework uses canvas and typescript.
+  - 无依赖
+- https://github.com/bokuweb/react-rnd
+  - /1.8kStar/MIT/202009
+  - A resizable and draggable component for React.
+  - 依赖 react-draggable、re-resizable
+- https://github.com/honkit/honkit
+  - /1.4kStar/Apache2.0/202009
+  - Fork of GitBook
+- https://github.com/Vanessa219/vditor
+  - /1.3kStar/MIT/202009
+  - In-browser Markdown editor, support WYSIWYG (Rich Text), Instant Rendering (Typora-like) and Split View modes.
+  - 依赖lute(go语言)、hightlight、echarts、katex、mermaid、mathjax
+- https://github.com/code-creatively/datav
+  - /1.3kStar/Apache2.0/202009
+  - platform for data monitoring and observability
+  - written in pure react and go.
+  - Datav is forked from @grafana, but changed a lot
+- https://github.com/kiswa/TaskBoard
+  - /1.1kStar/MIT/202009
+  - A Kanban-inspired app for keeping track of things that need to get done
+  - 依赖php7
+- https://github.com/wbkd/react-flow
+  - /1kStar/MIT/202009
+  - a library for building interactive node-based editors, flow charts and diagrams
+  - 依赖d3-selection/zoom、react-draggable
+- https://github.com/vega/voyager
+  - /1kStar/NALic/201809/inactive
+  - Voyager 2 is a data exploration tool that blends manual and automated chart specification. 
+- https://github.com/nhn/tui.grid
+  - /1.6kStar/MIT/202009
+  - Plain JavaScript component implemented by NHN
+- https://github.com/allegro/turnilo
+  - /356Star/Apache2.0/202009
+  - Business intelligence, data exploration and visualization web application for Druid
+  - formerly known as Swiv and Pivot
+- https://github.com/metatron-app/metatron-discovery
+  - /259Star/Apache2.0/202009/java/ts
+  - Metatron Discovery is a big data analysis platform supports overall process from data cleansing to visualization
+  - Metatron Discovery is powerd by Druid
+  - 依赖angular6、jquery、rxjs
+- https://github.com/yugasun/x-chart /inactive
+  - /362Star/MIT/201809
+  - a draggable & resizable data visualization system
+  - 依赖vue、element-ui、echarts，界面较友好
+
+- more
+  - https://github.com/julianshapiro/velocity
+    - Accelerated JavaScript animation.
+  - https://github.com/vadimdemedes/ink
+    - React for interactive command-line apps
+  - https://github.com/pubkey/rxdb
+    - A realtime Database for JavaScript Applications
+  - https://github.com/formatjs/formatjs
+    - monorepo home to all of the FormatJS related libraries, most notably react-intl.
+  - https://github.com/umijs/umi
+    - Pluggable enterprise-level react application framework.
+  - https://github.com/fkhadra/react-toastify
+    - React notification made easy，依赖react-transition-group
+  - https://github.com/rsuite/rsuite
+    - A suite of React components .
+  - https://github.com/reakit/reakit
+    - Toolkit for building accessible rich web apps with React
+  - https://github.com/seek-oss/playroom
+    - Design with JSX, powered by your own component library.
+  - https://github.com/Shopify/polaris-react
+    - Shopify’s product component library
+  - https://github.com/gridstack/gridstack.js
+    - Mobile-friendly Javascript library  dashboard layout and creation
+  - https://github.com/utterance/utterances
+    - A lightweight comments widget built on GitHub issues
+  - https://github.com/elastic/eui
+    - Elastic UI Framework
+  - https://github.com/marp-team/marp
+    - The entrance repository of Markdown presentation ecosystem
+  - https://github.com/react-monaco-editor/react-monaco-editor
+    - Monaco Editor for React.
+  - https://github.com/daybrush/scenejs
+    - an JavaScript & CSS timeline-based animation library.
+  - https://github.com/premieroctet/openchakra
+    - Full-featured visual editor and code generator for React using Chakra UI
+  - https://github.com/jabbany/CommentCoreLibrary
+    - JS弹幕模块核心，提供从基本骨架到高级弹幕的支持。
+  - https://github.com/bluebill1049/react-simple-animate
+    - React UI animation made easy
+  - https://github.com/ascoders/gaea-editor
+    - Design websites in your browser. A smart web editor
+  - https://github.com/owid/owid-grapher
+    - This is the project we use at the University of Oxford to create embeddable visualizations for Our World in Data.
+
+- ### most-starred js-ts
+- https://github.com/vuejs/vue
+  - /173kStar/MIT/202009/ts
+  - https://github.com/vuejs/vue-next
+  - a progressive, incrementally-adoptable JavaScript framework for building UI on the web
+- https://github.com/facebook/react
+  - /156kStar/MIT/202009/js
+  - A declarative, component-based JavaScript library for building user interfaces.
+- https://github.com/tensorflow/tensorflow
+  - /149kStar/Apache2.0/202009/cpp
+  - An Open Source Machine Learning Framework
+- https://github.com/twbs/bootstrap
+  - /144kStar/MIT/202009/js
+  - HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+- https://github.com/microsoft/vscode
+  - /104kStar/MIT/202009/ts
+  - Visual Studio Code IDE
+- https://github.com/d3/d3
+  - /93.8kStar/BSD/202009/js
+  - bring data to life using SVG, Canvas and HTML.
+- https://github.com/electron/electron
+  - /86kStar/MIT/202009/cpp
+  - Build cross-platform desktop apps with JavaScript, HTML, and CSS
+- https://github.com/mrdoob/three.js
+  - /63.7kStar/MIT/202009/js
+  - JavaScript 3D library.
+- https://github.com/ant-design/ant-design
+  - /63.7kStar/MIT/202009/ts
+  - https://github.com/ant-design/ant-design-mobile
+  - https://github.com/ant-design/ant-design-pro
+  - A UI Design Language and React UI library
+- https://github.com/mui-org/material-ui
+  - /61.2kStar/MIT/202009/js
+  - React components for faster web development
+- https://github.com/reduxjs/redux
+  - /54.4kStar/MIT/202009/ts
+  - Predictable state container for JavaScript apps
+- https://github.com/storybookjs/storybook
+  - /53.7kStar/MIT/202009/ts
+  - The UI component explorer
+- https://github.com/elastic/elasticsearch
+  - /51.4kStar/Apache2.0/202009/java
+  - a distributed RESTful search engine built for the cloud.
+- https://github.com/spring-projects/spring-boot
+  - /50.8kStar/Apache2.0/202009/java
+  - https://github.com/spring-projects/spring-framework
+  - create Spring-powered applications and services with absolute minimum fuss.
+- https://github.com/chartjs/Chart.js
+  - /50.4kStar/MIT/202009/js
+  - Simple HTML5 Charts using the canvas tag
+- https://github.com/ElemeFE/element
+  - /47.4kStar/MIT/202009/vue
+  - A Vue.js 2.0 UI Toolkit for Web
+- https://github.com/gatsbyjs/gatsby
+  - /47.1kStar/MIT/202009/js
+  - Build blazing fast, modern apps and websites with React
+- https://github.com/redis/redis
+  - /45.4kStar/BSD/202009/c
+  - an in-memory database that persists on disk.
+- https://github.com/ansible/ansible
+  - /44.9kStar/202009/python
+  -  IT automation platform that makes your applications and systems easier to deploy
+- https://github.com/protocolbuffers/protobuf
+  - /43.9kStar/202009/cpp
+  - Protocol Buffers - Google's data interchange format
+- https://github.com/apache/incubator-echarts
+  - /43kStar/Apache2.0/202009/js
+  - interactive charting and data visualization library for browser
+- https://github.com/jgthms/bulma
+  - /41.3kStar/MIT/202009/css
+  - Modern CSS framework based on Flexbox
+- https://github.com/square/okhttp
+  - /38.3kStar/Apache2.0/202009/java
+  - Square’s meticulous HTTP client for Java and Kotlin.
+- https://github.com/grafana/grafana
+  - /37.3kStar/Apache2.0/202009/ts
+  - tool for monitoring and metric analytics & dashboards for Graphite, InfluxDB
+- https://github.com/juliangarnier/anime
+  - /36.8kStar/MIT/202004/js
+  - works with CSS properties, SVG, DOM attributes and JavaScript Objects.
+- https://github.com/ColorlibHQ/AdminLTE
+  - /36.2kStar/MIT/202009/js
+  - Free admin dashboard template based on Bootstrap 4
+- https://github.com/apache/dubbo
+  - /33.6kStar/Apache2.0/202009/java
+  - a high-performance, java based, open source RPC framework.
+- https://github.com/mozilla/pdf.js
+  - /32.3kStar/Apache2.0/202009/js
+  - PDF Reader in JavaScript
+  - Create and modify PDF https://github.com/Hopding/pdf-lib
+- https://github.com/mermaid-js/mermaid
+  - /32.1kStar/MIT/202009/js
+  - Generation of diagram and flowchart from text in a similar manner as markdown
+- https://github.com/pixijs/pixi.js
+  - /30.7kStar/MIT/202009/ts
+  - Create digital content with the fastest 2D WebGL renderer.
+- https://github.com/apache/incubator-superset
+  - /30.2kStar/Apache2.0/202009/python
+  - a Data Visualization and Data Exploration Platform
+- https://github.com/Leaflet/Leaflet
+  - /29kStar/BSD/202009/js
+  - JavaScript library for mobile-friendly interactive maps
+- more
+  - https://github.com/axios/axios
+    - Promise based HTTP client for the browser and node.js
+  - https://github.com/animate-css/animate.css
+    - A cross-browser library of CSS animations.
+  - https://github.com/PanJiaChen/vue-element-admin
+    - vue admin
+  - https://github.com/moby/moby
+    - for the container ecosystem to assemble container-based systems
+  - https://github.com/webpack/webpack
+    - A bundler for javascript and friends. 
+  - https://github.com/jquery/jquery
+    - js library
+  - https://github.com/vercel/next.js
+    - React Framework: hybrid static & server rendering, smart bundling, route pre-fetching, and more. No config needed.
+  - https://github.com/hakimel/reveal.js
+    - The HTML Presentation Framework
+  - https://github.com/atom/atom
+    - hackable text editor
+  - https://github.com/django/django
+    - The Web framework for perfectionists with deadlines.
+  - https://github.com/pallets/flask
+    - The Python micro framework for building web applications.
+  - https://github.com/socketio/socket.io
+    - Realtime application framework (Node.JS server)
+  - https://github.com/expressjs/express
+    - Fast, unopinionated, minimalist web framework for node.
+  - https://github.com/keras-team/keras
+    - Deep Learning for humans
+  - https://github.com/Semantic-Org/Semantic-UI /inactive
+    - a UI framework designed for theming.
 
 ## collection
 
@@ -15,3 +490,5 @@ modified: '2020-09-22T13:18:32.954Z'
   - Lightweight dependency injection container for JavaScript/TypeScript
   - misc
     - https://github.com/thiagobustamante/typescript-ioc
+    - https://github.com/inversify/InversifyJS
+    - https://github.com/typestack/typedi
