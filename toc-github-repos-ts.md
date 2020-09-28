@@ -337,9 +337,7 @@ modified: '2020-09-28T02:11:24.720Z'
   - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 - https://github.com/shoelace-style/shoelace
   - /4.1kStar/MIT/202009
-  - components built on a framework-agnostic technology.
-  - Works with all frameworks
-  - Components are compiled by Stencil
+  - Components are built with Stencil, a compiler that generates standards-based web components.
 - https://github.com/searchkit/searchkit
   - /3.9kStar/Apache2.0/202008
   - React UI components to build a search experience with Elasticsearch.
