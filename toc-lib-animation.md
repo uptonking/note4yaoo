@@ -7,6 +7,30 @@ modified: '2020-08-02T07:27:59.467Z'
 
 # toc-lib-animation
 
+## animation-usecase-flip-list
+
+- flipping /MIT/1.1kStar/202006
+  - https://github.com/davidkpiano/flipping
+  - https://codepen.io/davidkpiano/pen/xLKBpM
+  - A library (and collection of adapters) for implementing FLIP transitions.
+  - [Animating Layouts with the FLIP Technique](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
+- react-flip-toolkit /MIT/2.5kStar/202007/ts
+  - https://github.com/aholachek/react-flip-toolkit
+  - https://codesandbox.io/s/list-transitions-ju549
+  - A lightweight magic-move library for configurable layout transitions
+  - depends on rematrix, to create and combine matrix transformations that work seamlessly with CSS.
+  - use transformation matrices under the hood to describe rotation, translation, scale and shear. 
+- react-overdrive /MIT/3kStar/202003
+  - https://github.com/berzniz/react-overdrive
+  - https://react-overdrive.now.sh/
+  - Super easy magic-move transitions for React apps
+- react-flip-move /MIT/3.2kStar/202003/inactive
+  - https://github.com/joshwcomeau/react-flip-move
+  - http://joshwcomeau.github.io/react-flip-move/examples
+  - Effortless animation between DOM changes (eg. list reordering) using the FLIP technique.
+  - Flip Move uses the FLIP technique to work out what such a transition would look like, and fakes it using 60+ FPS hardware-accelerated CSS transforms.
+  - Flip Move was inspired by Ryan Florence's awesome [Magic Move/2016](https://github.com/ryanflorence/react-magic-move)
+
 ## react animation
 
 - react-transition-group /BSD/7.5kStar/202005
@@ -31,6 +55,14 @@ modified: '2020-08-02T07:27:59.467Z'
   - https://github.com/sghall/react-move
   - https://react-move-docs.netlify.app/
   - data-driven animations for React
+- react-simple-animate /MIT/1.4kStar/202006
+  - https://github.com/bluebill1049/react-simple-animate
+  - https://react-simple-animate.now.sh/
+  - Follow CSS animation standard
+- use-web-animations /MIT/622Star/202007
+  - https://github.com/wellyshen/use-web-animations
+  - https://use-web-animations.netlify.app/
+  - hooks for highly-performant and manipulable animations using Web Animations API.
 - ant-motion /MIT/3.8kStar/202006
   - https://github.com/ant-design/ant-motion
   - http://motion.ant.design/
@@ -48,14 +80,6 @@ modified: '2020-08-02T07:27:59.467Z'
   - Taking influence from other popular physics-based animation libraries like react-spring and elements of framer-motion, 
   - renature focuses on using non-traditional physics primitives like gravity, friction, and fluid resistance.
   - It also provides a simple two-dimensional API for creating visual experiences similar to Processing or p5.js.
-- react-simple-animate /MIT/1.4kStar/202006
-  - https://github.com/bluebill1049/react-simple-animate
-  - https://react-simple-animate.now.sh/
-  - Follow CSS animation standard
-- use-web-animations /MIT/622Star/202007
-  - https://github.com/wellyshen/use-web-animations
-  - https://use-web-animations.netlify.app/
-  - hooks for highly-performant and manipulable animations using Web Animations API.
 - react-keyframes /NALic/535Star/202002
   - https://github.com/vercel/react-keyframes
   - https://npmjs.com/react-keyframes
@@ -74,30 +98,6 @@ modified: '2020-08-02T07:27:59.467Z'
     - collecting DOM data, enabling motion between disconnected React elements, executing motions
   - Motions 
     - animation concerns, CSS transitions/animations, JS animations, whatever you can imagine
-
-## animation-usecase-flip-list
-
-- flipping /MIT/1.1kStar/202006
-  - https://github.com/davidkpiano/flipping
-  - https://codepen.io/davidkpiano/pen/xLKBpM
-  - A library (and collection of adapters) for implementing FLIP transitions.
-  - [Animating Layouts with the FLIP Technique](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
-- react-flip-toolkit /MIT/2.5kStar/202007
-  - https://github.com/aholachek/react-flip-toolkit
-  - https://codesandbox.io/s/list-transitions-ju549
-  - A lightweight magic-move library for configurable layout transitions
-  - depends on rematrix, to create and combine matrix transformations that work seamlessly with CSS.
-  - use transformation matrices under the hood to describe rotation, translation, scale and shear. 
-- react-overdrive /MIT/3kStar/202003
-  - https://github.com/berzniz/react-overdrive
-  - https://react-overdrive.now.sh/
-  - Super easy magic-move transitions for React apps
-- react-flip-move /MIT/3.2kStar/202003/Inactive
-  - https://github.com/joshwcomeau/react-flip-move
-  - http://joshwcomeau.github.io/react-flip-move/examples
-  - Effortless animation between DOM changes (eg. list reordering) using the FLIP technique.
-  - Flip Move uses the FLIP technique to work out what such a transition would look like, and fakes it using 60+ FPS hardware-accelerated CSS transforms.
-  - Flip Move was inspired by Ryan Florence's awesome [Magic Move](https://github.com/ryanflorence/react-magic-move)
 
 ## js animation
 

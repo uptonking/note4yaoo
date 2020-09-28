@@ -12,8 +12,8 @@ modified: '2020-07-14T10:24:54.328Z'
 ## noter-features-亮点
 
 - core
-  - local/offline first markdown-based note app
-    - offline means no ad 
+  - local/offline/private/privacy first markdown-based note app
+    - offline means no ad，强调数据由用户完全掌控
     - full control of your note data, born to keep data private
     - online sync is optional
     - extended md support, including GFM

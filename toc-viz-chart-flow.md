@@ -51,6 +51,7 @@ modified: '2020-09-25T03:50:23.437Z'
   - With Vega you can describe data visualizations in a JSON format, 
   - and generate interactive views using either HTML5 Canvas or SVG.
   - https://github.com/vega/vega-lite /2.6kStar
+  - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
 - G2 /MIT/9.8kStar/202007
   - https://github.com/antvis/G2
   - https://g2.antv.vision/
@@ -78,14 +79,16 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://plotly.com/javascript/
   - JavaScript charting library behind Plotly and Dash
   - Built on top of d3.js and stack.gl
-- chartist-js /MIT/`1.2kStar/201911
+- chartist-js /MIT/1.2kStar/201911
   - https://github.com/gionkunz/chartist-js
   - http://gionkunz.github.io/chartist-js/
   - a simple responsive charting library built with SVG
 - vx /MIT/7.3kStar/202007
   - https://github.com/hshoff/vx
+  - https://github.com/airbnb/visx
   - https://vx-demo.now.sh/
   - a collection of reusable low-level visualization components
+  - vx upgrade to visx
 - react-vis /MIT/7.2kStar/202007
   - https://github.com/uber/react-vis
   - https://uber.github.io/react-vis
@@ -147,7 +150,6 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/alibaba/GGEditor
   - https://ggeditor.com/
   - A visual graph editor based on G6 and React
-- misc
 
 ## chart-builder
 

@@ -18,6 +18,7 @@ modified: '2020-07-14T10:25:13.843Z'
 
 - components
   - headless-ui
+  - framework-agnostic + wrapper
   - builder/high-level-editor
   - formula for excel
 
@@ -26,7 +27,7 @@ modified: '2020-07-14T10:25:13.843Z'
 - charting
   - d3/g2/recharts
 - bi/olap/search
-  - superset/kibana
+  - superset/kibana/turnilo
 
 ## features
 

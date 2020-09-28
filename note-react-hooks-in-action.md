@@ -9,6 +9,12 @@ modified: '2020-07-14T11:58:56.082Z'
 
 - react hooks开发实践总结
 
+- hooks-custom-rfc 
+  - usePrevious
+  - react-use: 就像是hooks界的lodash，一统api命名，提供参考实现
+  - [@huse/hookName](https://github.com/ecomfe/react-hooks): 百度研发，提供了很多不同层次的hooks，大多基础层，也有业务层
+  - [ahooks](https://github.com/ecomfe/react-hooks): 阿里研发，提供了丰富的生产环境检验过的hooks
+
 ## pieces
 
 - 闭包是一个特殊的对象，它由两部分组成，执行上下文A以及在A中创建的函数B。
@@ -1107,9 +1113,6 @@ useSomething = (inputCount) => {
 
 ## guide
 
-- hooks rfc 
-  - usePrevious
-  - react-use就像是hooks界的lodash，一统api命名，提供参考实现
 - ref
   - [React Hooks 最佳实践 by 网易云音乐前端团队](https://zh-hans.reactjs.org/blog/2020/05/22/react-hooks.html)
   - [React Hooks工程实践总结](https://github.com/forthealllight/blog/issues/49)

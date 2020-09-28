@@ -14,7 +14,7 @@ modified: '2020-09-09T06:27:15.100Z'
 - craft.js /MIT/3kStar/202009/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
-  - core依赖immer，layers依赖redux、react-contenteditable、s-c，
+  - core依赖immer，layers依赖redux、react-contenteditable、s-c
   - A React Framework for building extensible drag and drop page editors
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.

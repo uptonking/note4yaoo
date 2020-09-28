@@ -337,8 +337,8 @@ class MyComponent extends React.Component {
   - While you could add a ref to the child component, this is not an ideal solution, as you would only get a component instance rather than a DOM node. 
     - Additionally, this wouldn’t work with function components.
   - We recommend to use ref forwarding for these cases. 
-    - **Ref forwarding lets components opt into exposing any child component’s ref as their own**. 
-  - If you need more flexibility than provided by ref forwarding, you can use this alternative approach and explicitly pass a ref as a differently named prop.
+    - **Ref forwarding lets components opt into exposing any child component's ref as their own**. 
+  - If you need more flexibility than provided by ref forwarding, you can use this alternative approach and explicitly pass a ref as a differently named prop. 参考下面的例子
     - https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509
 - When possible, we advise against exposing DOM nodes
   - but it can be a useful escape hatch. 
@@ -349,7 +349,7 @@ class MyComponent extends React.Component {
   - **The function receives the React component instance or HTML DOM element as its argument**, which can be stored and accessed elsewhere.
 - React will call the `ref` callback with the DOM element when the component mounts, and call it with `null` when it unmounts. 
 - Refs are guaranteed to be up-to-date before `componentDidMount` or `componentDidUpdate` fires.
-- You can pass callback refs between components like you can with object refs that were created with `React.createRef()`.
+- You can pass callback refs between components like you can with object refs that were created with `React.createRef()` .
 
 ``` js
 function CustomTextInput(props) {

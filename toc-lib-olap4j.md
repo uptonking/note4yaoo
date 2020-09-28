@@ -7,6 +7,21 @@ modified: '2020-07-14T11:03:41.956Z'
 
 # toc-lib-olap4j
 
+## olap4j
+
+- CBoard /Apache2.0/2.5kStar/2020206
+  - https://github.com/TuiQiao/CBoard
+  - https://tuiqiao.github.io/CBoardDoc/#/
+  - An easy to use, self-service open BI reporting and BI dashboard platform
+- davinci /Apache2.0/2.5kStar/202007
+  - https://github.com/edp963/davinci
+  - https://edp963.github.io/davinci
+  - Davinci is a DVsaaS (Data Visualization as a Service) Platform
+- poli /MIT/1.7kStar/202005
+  - https://github.com/shzlw/poli
+  - https://shzlw.github.io/poli
+  - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.
+
 ## stack
 
 - elasticsearch /Apache2.0/49.9kStar/202007
@@ -37,18 +52,3 @@ modified: '2020-07-14T11:03:41.956Z'
   - http://www.pentaho.com/products/reporting/
   - Java class library for generating reports.
   - based on jfreechart
-
-## olap4j
-
-- CBoard /Apache2.0/2.5kStar/2020206
-  - https://github.com/TuiQiao/CBoard
-  - https://tuiqiao.github.io/CBoardDoc/#/
-  - An easy to use, self-service open BI reporting and BI dashboard platform
-- davinci /Apache2.0/2.5kStar/202007
-  - https://github.com/edp963/davinci
-  - https://edp963.github.io/davinci
-  - Davinci is a DVsaaS (Data Visualization as a Service) Platform
-- poli /MIT/1.7kStar/202005
-  - https://github.com/shzlw/poli
-  - https://shzlw.github.io/poli
-  - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.

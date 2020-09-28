@@ -145,7 +145,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/future-architect/cheetah-grid
   - https://future-architect.github.io/cheetah-grid/
   - The fastest open-source data table for web.
-- datatable /MIT/467Star/202004
+- frappe-datatable /MIT/467Star/202004
   - https://github.com/frappe/datatable
   - https://frappe.io/datatable
   - A simple, modern and interactive datatable for the web

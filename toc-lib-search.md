@@ -9,6 +9,11 @@ modified: '2020-09-25T09:10:35.350Z'
 
 ## popular
 
+- elasticsearch /Apache2.0/49.9kStar/202007
+  - https://github.com/elastic/elasticsearch
+  - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+  - Open Source, Distributed, RESTful Search Engine
+
 ## local-search
 
 - lunr.js /MIT/7.1kStar/202008
@@ -18,5 +23,3 @@ modified: '2020-09-25T09:10:35.350Z'
   - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
   - It saves adding extra, compacted services on the server. 
   - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
-
-

@@ -14,21 +14,16 @@ modified: '2020-08-02T07:25:15.320Z'
   - http://superset.apache.org/
   - a modern, enterprise-ready business intelligence web application
   - originally made for Druid
-  - ref
-    - https://github.com/apache-superset/superset-ui
-    - https://github.com/apache-superset/examples-data
+  - https://github.com/apache-superset/superset-ui
+  - https://github.com/apache-superset/examples-data
 - turnilo /Apache2.0/335Star/202007
   - https://github.com/allegro/turnilo
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
   - Business intelligence, data exploration and viz web application for Druid
-  - ref
-    - https://github.com/implydata/pivot
-- raw /Apache2.0/6.8kStar
-  - https://github.com/rawgraphs/raw
-  - The missing link between spreadsheets and data visualization
+  - https://github.com/implydata/pivot
 - cube.js /MIT/8.3kStar/202007
   - https://github.com/cube-js/cube.js
-  - https://cube.dev/
+  - https://cube.dev/docs/
   -  modular framework to build analytical web applications
 
 ## misc
@@ -42,7 +37,6 @@ modified: '2020-08-02T07:25:15.320Z'
   - https://github.com/mariusandra/insights
   - Open Source Self-Hosted Business Intelligence Platform
   - a tool to visually explore a PostgreSQL database, with an emphasis on generating graphs that show business performance over time.
-- cube.js MIT-Apache2.0/8.7kStar/202009
-  - https://github.com/cube-js/cube.js
-  - https://cube.dev/docs/
-  - Cube.js - Open Source Analytics Framework
+- raw /Apache2.0/6.8kStar
+  - https://github.com/rawgraphs/raw
+  - The missing link between spreadsheets and data visualization

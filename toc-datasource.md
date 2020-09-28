@@ -16,6 +16,9 @@ modified: '2020-07-14T11:02:02.191Z'
 - https://github.com/GoogleTrends/data
 - https://github.com/openaddresses/openaddresses
   - global open address data.
+- https://github.com/plotly/datasets
+  - Datasets used in Plotly examples and documentation
+
 ## img
 
 - 搜索页图标

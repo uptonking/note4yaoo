@@ -1,11 +1,11 @@
 ---
-title: toc-ui-design-system
-tags: [components, design-system, toc, ui]
+title: toc-lib-components-design-system
+tags: [components, design-system, toc]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-09-25T06:44:15.803Z'
+modified: '2020-09-28T13:39:33.266Z'
 ---
 
-# toc-ui-design-system
+# toc-lib-components-design-system
 
 ## design-system
 
@@ -42,6 +42,7 @@ modified: '2020-09-25T06:44:15.803Z'
   - carbon-custom-elements is a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
   - https://github.com/carbon-design-system/carbon/tree/master/packages/react
   - https://ics-design-system.us-east.mybluemix.net/ 
+  - carbon组件库的核心不依赖视图层框架，然后再为各种视图开发单独的组件包
 - Primer Design System  /MIT/580Star/201912/Github
   - https://github.com/primer/components
   - https://primer.style/components

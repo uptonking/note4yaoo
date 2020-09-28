@@ -115,7 +115,6 @@ modified: '2020-08-09T08:43:10.089Z'
 
 ## pieces
 
-- MUI tables use HTML table elements, not divs and styles. 
 - To use an absolute layout, you would need to either 
   - use div instead of table element
   - or, switch all of your table element styles to be `display: block` ( `display: inline-block` for cells) 
@@ -229,12 +228,8 @@ modified: '2020-08-09T08:43:10.089Z'
     - and those tables are all scrollable, then the positioning could be not expected, 
     - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
 
-## solution-catalog-list-grid-table
 
-- antd table
-  - https://ant.design/components/table-cn/
-
-## extension-table-grid 
+## extensions-for-table-grid 
 
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
@@ -267,19 +262,19 @@ modified: '2020-08-09T08:43:10.089Z'
 ## office-online-product-catalog
 
 - office软件提供商
-  - 国内一线：石墨，腾讯文档，语雀，钉钉文档，金山文档
-  - 国内二线：飞书
+  - 国内主流：石墨，腾讯文档，钉钉文档，金山文档，语雀
+  - 国内其他：飞书
   - 国外主流：GSuite, MSOffice
-  - 周边产品：Canva
+  - 周边产品：Canva、Gravit
 
 - 文字编辑器
-  - 石墨 Quill
-  - 腾讯 Etherpad
-  - 语雀 slate转自研
+  - 石墨：Quill
+  - 腾讯：Etherpad转自研
+  - 语雀：slate转自研
 
 - 表格
-  - 石墨 spreadjs
-  - 腾讯 handsontable转自研 
+  - 石墨：spreadjs
+  - 腾讯：handsontable转自研 
 
 - 多人协作冲突解决  
   - OT算法，石墨和腾讯文档都是

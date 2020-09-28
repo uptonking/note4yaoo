@@ -39,3 +39,8 @@ modified: '2020-09-25T16:42:42.430Z'
 - npm
   - 读取一个package的所有dependencies，查询下载量后排序
     - https://github.com/pkgjs/dependents
+  - [most depended upon packages](https://www.npmjs.com/browse/depended)
+    - lodash, react, chalk, request, moment, express, axios, debug, bluebird
+    - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
+    - redux, styled-components, ramda, jest, socket.io, redis, chokidar
+    - deepmerge, date-fns, marked, isomorphic-fetch
