@@ -85,6 +85,7 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/palantir/plottable
   - /2.7kStar/MIT/202007/inactive
   - A library of modular chart components built on D3
+  - 不依赖react
 - https://github.com/airbnb/visx
   - /8.2kStar/MIT/202009/d3
   - a collection of reusable low-level visualization components.
@@ -94,14 +95,32 @@ modified: '2020-09-28T02:11:24.720Z'
   - a higher-level grammar for visual analysis that generates complete Vega specifications.
 - https://github.com/microsoft/chart-parts
   - /530Star/MIT/202009
-  - The vision of chart-parts is to implement a grammar of graphics in js in a flexible, architecture-agnostic 
+  - The vision is to implement a grammar of graphics in js in a flexible, architecture-agnostic way
+  - 基于svg实现
+- https://github.com/amcharts/amcharts4
+  - /786Star/FreeWithAttribution/202009
+  - the most advanced JavaScript dataviz library ever.
+  - 产品：charts、map、timeline、editor
+  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
+  - 支持react、vue、angular
+  - https://github.com/amcharts/ammap3
+- https://github.com/amcharts/editor4
+  - /4Star/Free4dev/202009
+  - amCharts Chart Editor based on amCharts 4
+- https://github.com/kis/chartify
+  - /668Star/MIT/202004
+  - React.js plugin for building charts using CSS
+- https://github.com/carbon-design-system/carbon-charts
+  - /188Star/Apache2.0/202009
+  - A reusable framework-agnostic charting library implemented using D3 & typescript
+  - 依赖d3，支持 react/vue/angular
 - https://github.com/naver/billboard.js
   - /4.4kStar/MIT/202009
   - chart library based on D3.js
 - https://github.com/tradingview/lightweight-charts
   - /2.4kStar/Aaache2.0/MIT/202009
   - Financial lightweight charts built with HTML5 canvas
-  - 轻量版免费，高级分析版、平台版收费
+  - 基于canvas实现，轻量版免费，高级分析版、平台版收费
 - https://github.com/yugasun/x-chart /inactive
   - /362Star/MIT/201809
   - a draggable & resizable data visualization system
@@ -118,22 +137,8 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/excalidraw/excalidraw
   - /11.6kStar/MIT/202009
   - Virtual whiteboard for sketching hand-drawn like diagrams
-- https://github.com/amcharts/amcharts4
-  - /786Star/FreeWithAttribution/202009
-  - the most advanced JavaScript dataviz library ever.
-  - 产品：charts、map、timeline、editor
-  - 依赖d3、stackblur-canvas、venn.js
-  - https://github.com/amcharts/ammap3
-- https://github.com/amcharts/editor4
-  - /4Star/Free4dev/202009
-  - amCharts Chart Editor based on amCharts 4
-- https://github.com/kis/chartify
-  - /668Star/MIT/202004
-  - React.js plugin for building charts using CSS
-- https://github.com/carbon-design-system/carbon-charts
-  - Robust dataviz framework implemented using D3 & typescrip
-  - 支持 react/vue/angular
 - https://github.com/elastic/elastic-charts
+  - /156Star/Apache2.0/202009
   - Elastic Charts library
   - 依赖d3、react、redux
 

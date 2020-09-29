@@ -29,9 +29,11 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/apache/incubator-superset
   - /30.2kStar/Apache2.0/202009/python/js
   - a Data Visualization and Data Exploration Platform
+  - 依赖python、flask、react
 - https://github.com/SheetJS/sheetjs
   - /22.9kStar/Apache2.0/202009
   - Community Edition -- Spreadsheet Data Toolkit
+  - 无依赖，自己实现了办公类文档解析器 js-word、js-ppt、ssf、js-cfb
 - https://github.com/vega/datalib
   - /644Star/BSD/202009
   - a JavaScript data utility library
@@ -65,6 +67,7 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/FormidableLabs/victory
   - /8.3kStar/MIT/202009
   - composable React components for building interactive data visualizations
+  - 依赖d3
 - https://github.com/uber/react-vis
   - /7.4kStar/MIT/202007
   - react components to render common data visualization charts
@@ -221,7 +224,7 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/jquery/jquery
   - js library
 - https://github.com/vercel/next.js
-  - React Framework: hybrid static & server rendering, smart bundling, route pre-fetching, and more. No config needed.
+  - React Framework: hybrid static & server rendering, smart bundling, route pre-fetching... No config needed.
 - https://github.com/hakimel/reveal.js
   - The HTML Presentation Framework
 - https://github.com/atom/atom

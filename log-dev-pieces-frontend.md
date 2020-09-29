@@ -12,6 +12,10 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- 组件库中使用的 `.hbs`是ui模版吗
+  - Handlebars is a simple templating language.
+  - A handlebars expression is a `{{`, some contents, followed by a `}}`.
+  - When the template is executed, these expressions are replaced with values from an input object.
 - yarn.lock中可能出现某个间接依赖下载失败
   - 可能是不小心修改了某个位置的字符，还原最初的yarn.lock，再yarn install
 - appendChild有时会移动元素

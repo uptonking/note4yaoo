@@ -7,10 +7,38 @@ modified: '2020-09-28T17:05:48.422Z'
 
 # toc-github-repos-ui-components
 
+## framework-agnostic components
+
+- 通用组件库
+  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互与样式更改
+  - 组件库参考
+    - carbon-components: a collection of re-usable HTML and SCSS partials for building products
+    - carbon-components-react: A collection of Carbon Components implemented using React.
+      - 
+
+- https://github.com/jeric17/arv
+  - /18kStar/MIT/202007
+  - A custom-element(shadowdom) UI library
+  - Inspired by Material-ui library, made with Stencil
+- https://github.com/shoelace-style/shoelace
+  - /4.1kStar/MIT/202009
+  - Components are built with Stencil, a compiler that generates standards-based web components.
+- https://github.com/Tradeshift/tradeshift-ui
+  - /33Star/Free4PlatformOnly/202009  
+  - a framework-agnostic JavaScript library to provide reusable UI components.
+- https://github.com/final-form/final-form
+  - Framework agnostic, high performance, subscription-based form state management
+- more
+  - https://github.com/davatron5000/awesome-standalones
+    - A curated list of awesome framework-agnostic standalone web components
+  - https://github.com/Wildhoney/Standalone
+    - /205Star/MIT/201609
+    - using the HTML5 custom elements API to extend HTML's vocabulary.
+
 ## headless-ui
 
 - guide
-  - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，也是hooks设计的思路
+  - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
   - I wonder... should these be called ui patterns rather than components.
 
 - https://github.com/downshift-js/downshift
@@ -60,32 +88,12 @@ modified: '2020-09-28T17:05:48.422Z'
   - components for handling state with render props.
 - https://github.com/mohammedabualsoud/react-headless-table
 
-## framework-agnostic components
-
-- https://github.com/jeric17/arv
-  - /18kStar/MIT/202007
-  - A custom-element(shadowdom) UI library
-  - Inspired by Material-ui library, made with Stencil
-- https://github.com/shoelace-style/shoelace
-  - /4.1kStar/MIT/202009
-  - Components are built with Stencil, a compiler that generates standards-based web components.
-- https://github.com/Tradeshift/tradeshift-ui
-  - /33Star/Free4PlatformOnly/202009  
-  - a framework-agnostic JavaScript library to provide reusable UI components.
-- https://github.com/final-form/final-form
-  - Framework agnostic, high performance, subscription-based form state management
-- more
-  - https://github.com/davatron5000/awesome-standalones
-    - A curated list of awesome framework-agnostic standalone web components
-  - https://github.com/Wildhoney/Standalone
-    - /205Star/MIT/201609
-    - using the HTML5 custom elements API to extend HTML's vocabulary.
-
 ## web-components
 
 - https://github.com/riot/riot
   - /14.3kStar/MIT/202009/js
-  - component-based UI library
+  - component-based UI library，Riot.js is Web Components for everyone.
+  - Riot.js brings custom elements to all modern browsers without the use of any polyfill!
 - https://github.com/Tencent/omi
   - /11.4kStar/MIT/202009
   - Merge Web Components, JSX, Virtual DOM, Functional style, observe or Proxy into one framework

@@ -7,6 +7,34 @@ modified: '2020-09-28T16:29:10.801Z'
 
 # page-ui-components-design
 
+## [Why I don't use web components_2019](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
+
+- 仅供参考，，，标准实现在更新，文章中提到的部分问题已解决了
+
+- I'm mostly writing this for my future self, so that I have something to point to next time someone asks why I'm a web component skeptic(怀疑论者), and why Svelte doesn't compile to custom elements by default. 
+  - (It can compile to CEs, and it can consume CEs as evidenced by its perfect score on Custom Elements Everywhere.)
+- Progressive enhancement
+  - This may be an increasingly old-fashioned view, but I think that websites should work without JavaScript wherever possible. Web components don't.
+  - With JavaScript enabled, it（example) progressively enhances — rather than opening a new tab, it opens a small popup window instead. But without, it still works fine.
+  - By contrast, the web component HTML would look something like this.
+  - which is useless and inaccessible, if JS is disabled or somehow broken, or the user is on an older browser.
+- CSS in, err... JS
+  - If you want to use Shadow DOM for style encapsulation, you have to include your CSS in a `<style>` element. 
+  - The CSS-in-JS community in particular has been criticised for not putting CSS in .css files, and yet here we are.
+- Platform fatigue(疲劳、厌倦)
+  - more bugs on Chromium
+  - It also creates complexity for developers, who are encouraged to learn these new features
+- Polyfills
+  - a Chrome-only feature
+  - The three spec editors are all Googlers.
+- Composition
+  - slotted content renders eagerly in custom elements. 
+  - It turns out that most of the time you want slotted content to render lazily.
+- Confusion between props and attributes
+- Leaky design
+- The DOM is bad
+- Global namespace
+
 ## [Headless User Interface Components](https://www.merrickchristensen.com/articles/headless-user-interface-components/)
 
 - A headless user interface component is a component that offers maximum visual flexibility by providing no interface.

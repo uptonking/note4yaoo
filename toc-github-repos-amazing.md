@@ -10,7 +10,7 @@ modified: '2020-09-22T13:18:53.037Z'
 ## amazing
 
 - 眼前一亮的产品或设计
-  - 云端电脑，要谨慎百度网盘恶心的下载限速策略
+  - 云端电脑，要谨慎考虑百度网盘恶心的下载限速策略
 
 - https://github.com/rrweb-io/rrweb
   - /7.6kStar/MIT/202009/ts
