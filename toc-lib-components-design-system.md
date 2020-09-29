@@ -9,11 +9,18 @@ modified: '2020-09-28T13:39:33.266Z'
 
 ## design-system
 
-- Ant Design  /MIT/51kStar/201908/ts/Alibaba
+- Ant Design  /MIT/63.7kStar/202009/ts/Alibaba
   - https://github.com/ant-design/ant-design
   - https://ant.design/
-  - An enterprise-class UI design language and React implementation
-  - 主要有阿里蚂蚁金服支持，antd严重依赖自研的基础组件rc-xxx
+  - An enterprise-class UI design language and React UI library.
+  - 主要由阿里蚂蚁金服研发，antd严重依赖自研的基础组件rc-xxx
+  - https://github.com/ant-design/ant-design-mobile
+    - A configurable Mobile UI specification and React-based implementation.
+  - https://github.com/ant-design/ant-design-pro
+    - An out-of-box UI solution for applications as a React boilerplate.
+  - https://github.com/vueComponent/ant-design-vue
+  - https://github.com/NG-ZORRO/ng-zorro-antd
+  - https://github.com/taejs/ant-design-vanilla
 - Material Design  /MIT/13.6kStar/201912/Google
   - https://material.io/design/
   - https://github.com/material-components/material-components-web
@@ -36,20 +43,22 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://react.lightningdesignsystem.com/
   - Salesforce Lightning Design System
   - Component blueprints are framework agnostic, accessible HTML and CSS
-  - The SLDS is a pure CSS framework that you can use with any front-end development framework you’d like
+  - SLDS is a pure CSS framework that you can use with any front-end development framework
 - Carbon Design System  /Apache2.0/3.5kStar/201912/IBM
   - https://github.com/carbon-design-system/carbon
   - https://www.carbondesignsystem.com/
   - https://www.ibm.com/design/language/
   - http://react.carbondesignsystem.com/?path=/story/buttons--default
   - https://github.com/carbon-design-system/carbon-custom-elements
-  - carbon-custom-elements is a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
+    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
   - https://github.com/carbon-design-system/carbon/tree/master/packages/components
     - a collection of re-usable HTML and SCSS partials for building products.
   - https://github.com/carbon-design-system/carbon/tree/master/packages/react
     - A collection of Carbon Components implemented using React.
   - https://ics-design-system.us-east.mybluemix.net/ 
   - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
+  - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
+  - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
 - Primer Design System  /MIT/580Star/201912/Github
   - https://github.com/primer/components
   - https://primer.style/components
@@ -76,7 +85,7 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://storybook-design-system.netlify.com/
   - https://www.learnstorybook.com/design-systems-for-developers/
   - a reusable component library that helps Storybook build UIs faster
-- Pivotal UI   /MIT/612Star/201908
+- Pivotal UI  /MIT/612Star/201908
   - https://github.com/pivotal-cf/pivotal-ui
   - https://styleguide.pivotal.io/
   - Pivotal's design system & component library
@@ -95,8 +104,8 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://designsystem.digital.gov/
   - visual style guide for U. S. federal government websites.
   - https://design.va.gov/
-      - VA.gov is built on top of VA's design system (VADS). 
-      - VADS is based on the US Web Design System
+    - VA.gov is built on top of VA's design system (VADS). 
+    - VADS is based on the US Web Design System
 - Photon Design System  /MPL2.0/206Star/201909/Firefox
   - https://github.com/FirefoxUX/photon
   - https://design.firefox.com/photon/
@@ -109,7 +118,7 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7
   - accessible, composable
 - design-system-deprecated
-  - Mineral UI  /Apache2.0/500Star/201912/CA Technologies
+  - Mineral UI  /Apache2.0/500Star/201912/CATechnologies
       - https://github.com/mineral-ui/mineral-ui
       - https://mineral-ui.netlify.com/
   - [Nachos by Trello](https://design.trello.com/)

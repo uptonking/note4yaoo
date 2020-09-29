@@ -136,3 +136,10 @@ const Counter = (props: { children: (args: Arguments) => JSX.Element }) => {
   - Three components for the price of one. 
   - You can use each one of the above counters as preset components in your app or, 
   - if you need to, you can just use the headless base version and create your own variation.
+
+## ref
+
+- [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
+  - https://dev.to/frankdspeed/the-html-component-pattern-hcp-3pkp
+- [Moving from Vanilla JavaScript to a Reusable Vue Component](https://css-tricks.com/moving-from-vanilla-javascript-to-a-reusable-vue-component/)
+- [React vs. Plain JavaScript](https://www.framer.com/blog/posts/react-vs-vanilla-js/)

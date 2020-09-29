@@ -10,12 +10,18 @@ modified: '2020-09-28T17:05:48.422Z'
 ## framework-agnostic components
 
 - 通用组件库
-  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互与样式更改
+  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互与样式更新
   - 组件库参考
     - carbon-components: a collection of re-usable HTML and SCSS partials for building products
     - carbon-components-react: A collection of Carbon Components implemented using React.
-      - 
+      - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
+    - 只共用样式，组件分开实现，而不是简单wrapper，因为不同框架解决状态更新、数据同步、事件等的方案不同
+  - ref
+    - [Wrap a Vanilla JavaScript Package for Use in React](https://www.digitalocean.com/community/tutorials/wrap-a-vanilla-javascript-package-for-use-in-react)
 
+- https://github.com/Tradeshift/tradeshift-ui
+  - /33Star/Free4PlatformOnly/202009  
+  - a framework-agnostic JavaScript library to provide reusable UI components.
 - https://github.com/jeric17/arv
   - /18kStar/MIT/202007
   - A custom-element(shadowdom) UI library
@@ -23,9 +29,6 @@ modified: '2020-09-28T17:05:48.422Z'
 - https://github.com/shoelace-style/shoelace
   - /4.1kStar/MIT/202009
   - Components are built with Stencil, a compiler that generates standards-based web components.
-- https://github.com/Tradeshift/tradeshift-ui
-  - /33Star/Free4PlatformOnly/202009  
-  - a framework-agnostic JavaScript library to provide reusable UI components.
 - https://github.com/final-form/final-form
   - Framework agnostic, high performance, subscription-based form state management
 - more
@@ -34,6 +37,34 @@ modified: '2020-09-28T17:05:48.422Z'
   - https://github.com/Wildhoney/Standalone
     - /205Star/MIT/201609
     - using the HTML5 custom elements API to extend HTML's vocabulary.
+
+- https://github.com/firebase/firebaseui-web/
+  - /3.1kStar/Apache2.0/202007
+  - provides UI bindings on top of Firebase SDKs to eliminate boilerplate code 
+  - https://github.com/firebase/firebaseui-web-react
+    - React Wrapper for firebaseUI Web
+
+- https://github.com/material-components/material-components-web/
+  - /14.9kStar/MIT/202009
+  - Modular and customizable Material Design UI components for the web
+  - https://github.com/jamesmfriedman/rmwc
+    - a React UI Kit built on Google's official Material Components Web library v5
+
+- https://github.com/SAP/ui5-webcomponents
+  - /787Star/Apache2.0/202009
+  - the enterprise-flavored sugar on top of native APIs
+  - https://github.com/SAP/openui5
+    - based on JavaScript, using jQuery as its foundation and follows web standards
+  - https://github.com/SAP/ui5-webcomponents-react
+    - A wrapper implementation for React of the UI5 Web Components
+
+- more
+  - https://github.com/audi/audi-ui
+    - Audi UI components in CSS, Vanilla JavaScript, and HTML
+  - https://github.com/DavidVujic/vanillajs-components
+    - examples on how to create a web site with reusable building blocks (aka components)
+  - https://github.com/amazeui/amazeui
+    - https://github.com/amazeui/amazeui-react
 
 ## headless-ui
 
