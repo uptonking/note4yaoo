@@ -44,21 +44,22 @@ modified: '2020-09-28T13:39:33.266Z'
   - Salesforce Lightning Design System
   - Component blueprints are framework agnostic, accessible HTML and CSS
   - SLDS is a pure CSS framework that you can use with any front-end development framework
-- Carbon Design System  /Apache2.0/3.5kStar/201912/IBM
+- Carbon Design System  /Apache2.0/3.5kStar/202009/IBM
   - https://github.com/carbon-design-system/carbon
   - https://www.carbondesignsystem.com/
-  - https://www.ibm.com/design/language/
-  - http://react.carbondesignsystem.com/?path=/story/buttons--default
-  - https://github.com/carbon-design-system/carbon-custom-elements
-    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
   - https://github.com/carbon-design-system/carbon/tree/master/packages/components
     - a collection of re-usable HTML and SCSS partials for building products.
   - https://github.com/carbon-design-system/carbon/tree/master/packages/react
     - A collection of Carbon Components implemented using React.
-  - https://ics-design-system.us-east.mybluemix.net/ 
+  - https://github.com/carbon-design-system/carbon-custom-elements
+    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
   - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
   - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
   - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
+  - ref
+    - https://www.ibm.com/design/language/
+    - http://react.carbondesignsystem.com/?path=/story/buttons--default
+    - https://ics-design-system.us-east.mybluemix.net/ 
 - Primer Design System  /MIT/580Star/201912/Github
   - https://github.com/primer/components
   - https://primer.style/components

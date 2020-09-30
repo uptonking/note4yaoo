@@ -143,3 +143,4 @@ const Counter = (props: { children: (args: Arguments) => JSX.Element }) => {
   - https://dev.to/frankdspeed/the-html-component-pattern-hcp-3pkp
 - [Moving from Vanilla JavaScript to a Reusable Vue Component](https://css-tricks.com/moving-from-vanilla-javascript-to-a-reusable-vue-component/)
 - [React vs. Plain JavaScript](https://www.framer.com/blog/posts/react-vs-vanilla-js/)
+- [Wrap a Vanilla JavaScript Package for Use in React](https://www.digitalocean.com/community/tutorials/wrap-a-vanilla-javascript-package-for-use-in-react)

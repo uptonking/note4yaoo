@@ -27,6 +27,10 @@ modified: '2020-07-19T12:11:33.125Z'
   - https://github.com/milligram/milligram
   - https://milligram.io/
   - A minimalist CSS framework.
+- vanilla-framework /438Star/LGPLv3/202009
+  - https://github.com/canonical-web-and-design/vanilla-framework
+  - https://vanillaframework.io/
+  - a simple extensible CSS framework, built using Sass
 
 ## css-collection
 

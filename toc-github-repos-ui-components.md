@@ -10,20 +10,21 @@ modified: '2020-09-28T17:05:48.422Z'
 ## framework-agnostic components
 
 - 通用组件库
-  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互、样式更新、事件处理
+  - 组件库结构包括的通用的design tokens，通用的core，然后具体框架实现交互、样式更新、事件处理
     - core一般用来共享locale、theme、工具方法、类型定义
+    - 实现方式1：vanilla js组件加上胶水层可移植到其他库
+    - 实现方式2：各框架的组件单独实现
+    - 实现方式3：web components，或类似api的库
   - 组件库参考
-    - carbon-components: a collection of re-usable HTML and SCSS partials for building products
-    - carbon-components-react: A collection of Carbon Components implemented using React.
+    - carbon-components: a collection of reusable HTML and SCSS partials
+    - carbon-components-react: components implemented using React.
       - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
     - 只共用样式，组件分开实现，而不是简单wrapper，因为不同框架解决状态更新、数据同步、事件等的方案不同
     - 选用已有框架的重要原因是借用成熟的状态、事件、路由等解决方案
     - 最新的web components和stencil再等等看
-      - web-component本身就是一个 runtime，特别适合替代 vue/react runtime
-      - web components很可能无法替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
-
+      - web components本身就是一个runtime，特别适合替代vue/react的runtime
+      - web components难以替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
   - ref
-    - [Wrap a Vanilla JavaScript Package for Use in React](https://www.digitalocean.com/community/tutorials/wrap-a-vanilla-javascript-package-for-use-in-react)
     - https://github.com/jaywcjlove/awesome-uikit
 
 - https://github.com/winjs/winjs
@@ -39,26 +40,32 @@ modified: '2020-09-28T17:05:48.422Z'
     - 基于createReactClass批量生成，依赖jquery
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004
-  - responsive front-end framework with a focus on simplicity and flexibility in Sass and TypeScript
+  - responsive front-end framework with a focus on flexibility in Sass and TS
 - https://github.com/Tradeshift/tradeshift-ui
   - /33Star/Free4PlatformOnly/202009  
   - a framework-agnostic JavaScript library to provide reusable UI components.
 - https://github.com/ksc-fe/kpc
   - /214Star/MIT/202009
   - A UI Components Library for Intact, Vue, React and Angular.
+  - kpc是基于intact框架实现的js组件库，然后通过胶水层自动生成react/vue/angular的组件
   - https://github.com/Javey/intact /46Star/MIT/202006
     - An inheritable and strong logic template front-end mvvm framework
-    - 基于vdt
+    - 基于vdt，vdt是基于虚拟DOM实现的模板引擎，支持前后端渲染
   - https://github.com/ksc-fe/intact-react
-    - A compatibility layer for running intact component in react 
+    - A compatibility layer for running intact component in react
+    - intact提供了react、vue、angular的胶水层
   - https://github.com/Javey/vdt.js
     - A powerful template engine based on virtual dom
-    - 基于misstime
+    - 基于misstime(a virtual-dom lib forked from inferno and inspired by virtual-dom)
 - https://github.com/coreui/coreui
-  - UI Kit built on top of Bootstrap 4 and plain JS without any additional libraries like jQuery
+  - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
   - https://github.com/coreui/coreui-react
     - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
-    - 依赖popperjs、popperjs、Tippy.js(tooltip,popover)
+    - 依赖popperjs、Tippy.js(tooltip,popover)
+- https://github.com/GoldWorker/SluckyUI
+  - /16Star/Apache2.0/202001
+  - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库，如React，Angular，Vue
+
 
  
 
