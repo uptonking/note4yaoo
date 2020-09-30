@@ -10,18 +10,58 @@ modified: '2020-09-28T17:05:48.422Z'
 ## framework-agnostic components
 
 - 通用组件库
-  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互与样式更新
+  - 结构一般包括的通用的design tokens，通用的core，然后具体框架实现交互、样式更新、事件处理
+    - core一般用来共享locale、theme、工具方法、类型定义
   - 组件库参考
     - carbon-components: a collection of re-usable HTML and SCSS partials for building products
     - carbon-components-react: A collection of Carbon Components implemented using React.
       - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
     - 只共用样式，组件分开实现，而不是简单wrapper，因为不同框架解决状态更新、数据同步、事件等的方案不同
+    - 选用已有框架的重要原因是借用成熟的状态、事件、路由等解决方案
+    - 最新的web components和stencil再等等看
+      - web-component本身就是一个 runtime，特别适合替代 vue/react runtime
+      - web components很可能无法替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
+
   - ref
     - [Wrap a Vanilla JavaScript Package for Use in React](https://www.digitalocean.com/community/tutorials/wrap-a-vanilla-javascript-package-for-use-in-react)
+    - https://github.com/jaywcjlove/awesome-uikit
 
+- https://github.com/winjs/winjs
+  - build applications using HTML/JS/CSS technology
+  - /4kStar/MIT/201809
+  - https://github.com/winjs/react-winjs
+    - A React wrapper around WinJS's controls.
+- https://github.com/IgniteUI/ignite-ui
+  - /464Star/Apache2.0/202007
+  - Ignite UI for jQuery is built on jQuery and jQuery UI 
+  - https://github.com/IgniteUI/igniteui-react-wrappers
+    - ignite UI components for React. 
+    - 基于createReactClass批量生成，依赖jquery
+- https://github.com/phonon-framework/phonon
+  - /421Star/MIT/202004
+  - responsive front-end framework with a focus on simplicity and flexibility in Sass and TypeScript
 - https://github.com/Tradeshift/tradeshift-ui
   - /33Star/Free4PlatformOnly/202009  
   - a framework-agnostic JavaScript library to provide reusable UI components.
+- https://github.com/ksc-fe/kpc
+  - /214Star/MIT/202009
+  - A UI Components Library for Intact, Vue, React and Angular.
+  - https://github.com/Javey/intact /46Star/MIT/202006
+    - An inheritable and strong logic template front-end mvvm framework
+    - 基于vdt
+  - https://github.com/ksc-fe/intact-react
+    - A compatibility layer for running intact component in react 
+  - https://github.com/Javey/vdt.js
+    - A powerful template engine based on virtual dom
+    - 基于misstime
+- https://github.com/coreui/coreui
+  - UI Kit built on top of Bootstrap 4 and plain JS without any additional libraries like jQuery
+  - https://github.com/coreui/coreui-react
+    - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
+    - 依赖popperjs、popperjs、Tippy.js(tooltip,popover)
+
+ 
+
 - https://github.com/jeric17/arv
   - /18kStar/MIT/202007
   - A custom-element(shadowdom) UI library
@@ -29,27 +69,16 @@ modified: '2020-09-28T17:05:48.422Z'
 - https://github.com/shoelace-style/shoelace
   - /4.1kStar/MIT/202009
   - Components are built with Stencil, a compiler that generates standards-based web components.
-- https://github.com/final-form/final-form
-  - Framework agnostic, high performance, subscription-based form state management
-- more
-  - https://github.com/davatron5000/awesome-standalones
-    - A curated list of awesome framework-agnostic standalone web components
-  - https://github.com/Wildhoney/Standalone
-    - /205Star/MIT/201609
-    - using the HTML5 custom elements API to extend HTML's vocabulary.
-
 - https://github.com/firebase/firebaseui-web/
   - /3.1kStar/Apache2.0/202007
   - provides UI bindings on top of Firebase SDKs to eliminate boilerplate code 
   - https://github.com/firebase/firebaseui-web-react
     - React Wrapper for firebaseUI Web
-
 - https://github.com/material-components/material-components-web/
   - /14.9kStar/MIT/202009
   - Modular and customizable Material Design UI components for the web
   - https://github.com/jamesmfriedman/rmwc
     - a React UI Kit built on Google's official Material Components Web library v5
-
 - https://github.com/SAP/ui5-webcomponents
   - /787Star/Apache2.0/202009
   - the enterprise-flavored sugar on top of native APIs
@@ -57,6 +86,25 @@ modified: '2020-09-28T17:05:48.422Z'
     - based on JavaScript, using jQuery as its foundation and follows web standards
   - https://github.com/SAP/ui5-webcomponents-react
     - A wrapper implementation for React of the UI5 Web Components
+- https://github.com/vasturiano/kapsule
+  - A closure based Web Component library
+  - https://github.com/vasturiano/react-kapsule
+    - React wrapper for kapsule-style web components
+
+ 
+
+- https://github.com/shipshapecode/shepherd
+  - a JavaScript library for guiding users through your app. It uses Popper.js
+  - https://github.com/shipshapecode/react-shepherd
+  - a React wrapper for the Shepherd
+- https://github.com/usablica/intro.js
+  - Better introductions for websites and features with a step-by-step guide
+  - https://github.com/HiDeoo/intro.js-react
+  - A small React wrapper around Intro.js.
+- https://github.com/stripe/stripe-js
+  - Use Stripe.js as an ES module. JavaScript library for building payment flows.
+  - https://github.com/stripe/react-stripe-elements
+  - React components for Stripe.js and Stripe Elements
 
 - more
   - https://github.com/audi/audi-ui
@@ -65,6 +113,16 @@ modified: '2020-09-28T17:05:48.422Z'
     - examples on how to create a web site with reusable building blocks (aka components)
   - https://github.com/amazeui/amazeui
     - https://github.com/amazeui/amazeui-react
+  - https://github.com/final-form/final-form
+    - Framework agnostic, high performance, subscription-based form state management
+  - https://github.com/davatron5000/awesome-standalones
+    - A curated list of awesome framework-agnostic standalone web components
+  - https://github.com/Wildhoney/Standalone
+    - /205Star/MIT/201609
+    - using the HTML5 custom elements API to extend HTML's vocabulary.
+  - https://storybook.js.org/
+    - Interactive UI component dev & test: React, React Native, Vue, Angular
+  - https://github.com/uswds/uswds
 
 ## headless-ui
 
@@ -121,6 +179,9 @@ modified: '2020-09-28T17:05:48.422Z'
 
 ## web-components
 
+- https://github.com/microsoft/fast
+  - /4.8kStar/MIT/202009
+  - FAST is a collection of technologies built on Web Components and modern Web Standards
 - https://github.com/riot/riot
   - /14.3kStar/MIT/202009/js
   - component-based UI library，Riot.js is Web Components for everyone.
@@ -147,3 +208,7 @@ modified: '2020-09-28T17:05:48.422Z'
   - https://github.com/reactive-elements/reactive-elements
     - /700Star/MIT/201908
     - Allows to use React.js component as HTML element (web component)
+  - https://github.com/adobe/coral-spectrum
+    - A JavaScript library of Web Components following Spectrum design patterns.
+    - Coral Spectrum derives from Custom Elements v1 with native support 
+    - https://github.com/adobe/spectrum-css

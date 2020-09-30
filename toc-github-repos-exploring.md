@@ -88,3 +88,9 @@ modified: '2020-09-22T13:18:32.954Z'
     - https://github.com/thiagobustamante/typescript-ioc
     - https://github.com/inversify/InversifyJS
     - https://github.com/typestack/typedi
+
+- https://github.com/catalinmiron/react-typical
+  - Animated typing based on awesome typical library
+
+- https://github.com/Meituan-Dianping/SQLAdvisor
+  - 输入SQL，输出索引优化建议

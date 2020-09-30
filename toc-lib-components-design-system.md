@@ -165,6 +165,12 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://ether.thescenery.co/
   - https://sproutsocial.com/seeds/
   - https://palette.artsy.net/
+  - https://www.duetds.com/
+    - a set of organized tools, patterns and practices that work as the foundation
+  - https://www.predix-ui.com
+    - Our user interface components enable you to easily create Industrial web applications
+  - https://www.astrouxds.com/
+    - Astro Space UX Design System enables developers to build rich space app experiences
   - Solid  /MIT/115Star/202001/BuzzFeed
       - https://github.com/buzzfeed/solid
       - https://solid.buzzfeed.com/
