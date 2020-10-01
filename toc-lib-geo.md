@@ -31,7 +31,8 @@ modified: '2020-06-22T09:24:05.317Z'
   - https://github.com/openlayers/openlayers
   - https://openlayers.org/
   - feature-packed library for creating interactive maps on the web
-
+- harp.gl /Apache2.0/664Star/202009
+  - https://github.com/heremaps/harp.gl
 ## geoprocessing
 
 - turf /MIT/5.5kStar/202007

@@ -107,3 +107,4 @@ modified: '2020-09-22T13:18:32.954Z'
 
 - conversational-bot
   - https://github.com/microsoft/botframework-solutions
+  - https://github.com/microsoft/botbuilder-js

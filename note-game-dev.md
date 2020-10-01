@@ -45,3 +45,5 @@ modified: '2020-08-03T13:29:04.709Z'
   - https://github.com/hiloteam/Hilo  /MIT
     - 阿里h5游戏解决方案，有申请专利
   - https://github.com/egret-labs/egret-core  /BSD/ts
+  - https://github.com/excaliburjs/Excalibur
+    - A simple 2D HTML5 game engine written in TypeScript

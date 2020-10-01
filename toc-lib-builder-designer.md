@@ -115,6 +115,15 @@ modified: '2020-09-09T06:27:15.100Z'
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 
+## low-code
+
+- https://github.com/appsmithorg/appsmith
+  - /340Star/Apache2.0/202009/ts/java
+  - open source alternative to Power Apps, Salesforce Lightning
+- https://github.com/sparrow-js/sparrow
+  - /vue
+  - 场景化低代码（LowCode）搭建工作台
+
 ## misc
 
 - https://github.com/chriskitson/react-drag-drop-layout-builder

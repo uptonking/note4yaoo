@@ -273,6 +273,8 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/tinymce/tinymce
   - /8.5kStar/LGPL/202009
   - web-based WYSIWYG editor.
+- https://github.com/deckgo/deckdeckgo
+  - The open source web editor for presentations
 
 ### most-starred typescript
 

@@ -199,3 +199,5 @@ modified: '2020-09-28T13:39:33.266Z'
   - Evergreen Design System  /MIT/9000Star/202001
     - https://github.com/segmentio/evergreen
     - https://evergreen.segment.com/
+  - https://github.com/artsy/palette
+    - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level

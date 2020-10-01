@@ -12,6 +12,7 @@ modified: '2020-09-28T17:05:48.422Z'
 - 通用组件库
   - 组件库结构包括的通用的design tokens，通用的core，core可用来共享locale、theme、工具方法、类型定义
     - 具体框架会实现各自组件的生命周期、状态管理、样式交互、事件处理，这也是组件互操作的因素
+    - 最好支持切换不同css框架提供的design tokens
     - 实现方式1：vanilla js组件加上胶水层可移植到其他库
     - 实现方式2：各框架的组件单独实现
     - 实现方式3：web components，或类似api的库
@@ -38,8 +39,8 @@ modified: '2020-09-28T17:05:48.422Z'
     - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
 - https://github.com/winjs/winjs
-  - build applications using HTML/JS/CSS technology
   - /4kStar/MIT/201809
+  - build applications using HTML/JS/CSS technology
   - https://github.com/winjs/react-winjs
     - A React wrapper around WinJS's controls.
 - https://github.com/IgniteUI/ignite-ui
