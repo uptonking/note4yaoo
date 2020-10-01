@@ -29,6 +29,20 @@ modified: '2020-09-28T02:11:24.720Z'
     - The data model is now comprised of simple JSON objects. (old: Immutable.js data structures)
     - The codebase now uses TypeScript. 
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
+- https://github.com/amcharts/amcharts4
+  - /786Star/FreeWithAttribution/202009
+  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
+  - the most advanced JavaScript dataviz library ever.
+  - 产品：charts、map、timeline、editor
+  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
+  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
+  - https://github.com/amcharts/ammap3
+- https://github.com/amcharts/editor4
+  - /4Star/Free4dev/202009
+  - https://www.amcharts.com/docs/editor4/getting-started/basics/
+  - amCharts Chart Editor based on amCharts 4
+  - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
+  - 依赖react、react-router、blueprint组件、codemirror、mobx
 - https://github.com/antvis/G2
   - /10.1kStar/MIT/202009/ts
   - interactive data-driven visualization grammar for statistical charts.
@@ -97,23 +111,13 @@ modified: '2020-09-28T02:11:24.720Z'
   - /530Star/MIT/202009
   - The vision is to implement a grammar of graphics in js in a flexible, architecture-agnostic way
   - 基于svg实现
-- https://github.com/amcharts/amcharts4
-  - /786Star/FreeWithAttribution/202009
-  - the most advanced JavaScript dataviz library ever.
-  - 产品：charts、map、timeline、editor
-  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
-  - 支持react、vue、angular
-  - https://github.com/amcharts/ammap3
-- https://github.com/amcharts/editor4
-  - /4Star/Free4dev/202009
-  - amCharts Chart Editor based on amCharts 4
 - https://github.com/kis/chartify
   - /668Star/MIT/202004
   - React.js plugin for building charts using CSS
 - https://github.com/carbon-design-system/carbon-charts
   - /188Star/Apache2.0/202009
   - A reusable framework-agnostic charting library implemented using D3 & typescript
-  - 依赖d3，支持 react/vue/angular
+  - 依赖d3，为react/vue/angular开发了3个wrapper包
 - https://github.com/naver/billboard.js
   - /4.4kStar/MIT/202009
   - chart library based on D3.js
@@ -141,6 +145,10 @@ modified: '2020-09-28T02:11:24.720Z'
   - /156Star/Apache2.0/202009
   - Elastic Charts library
   - 依赖d3、react、redux
+- https://github.com/IBM/sterling-dataviz
+  - /3Star/Apache2.0/201911
+  - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
+  - 支持react、vue、angular，基于胶水层实现
 
 - https://github.com/projectstorm/react-diagrams
   - /5kStar/MIT/202009
@@ -159,6 +167,9 @@ modified: '2020-09-28T02:11:24.720Z'
   - /1kStar/MIT/202009
   - a library for building interactive node-based editors, flow charts and diagrams
   - 依赖d3-selection/zoom、react-draggable
+- https://github.com/retejs/rete
+  - /6kStar/MIT/202005
+  - framework for visual programming and creating node editor
 
 ### ts-app
 
@@ -188,6 +199,8 @@ modified: '2020-09-28T02:11:24.720Z'
   - /1.3kStar/MIT/202009
   - HiPlot makes understanding high dimensional data easy
   - 依赖python
+- https://github.com/antvis/AVA
+  - A framework for automated visual analytics.
 
 - https://github.com/thx/rap2-delos
   - /6.3kStar/MIT/202009
@@ -396,4 +409,4 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/bluebill1049/react-simple-animate
   - React UI animation made easy
 - https://github.com/owid/owid-grapher
-  - This is the project we use at the University of Oxford to create embeddable visualizations for Our World in Data.
+  - This is the project we use at University of Oxford to create embeddable visualizations for Our World in Data.

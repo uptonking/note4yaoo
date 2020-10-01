@@ -58,6 +58,12 @@ modified: '2020-09-09T06:27:15.100Z'
   - https://brick-design.github.io/react-visual-editor/
   - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
   - 基于antd
+- https://github.com/salgum1114/react-design-editor /556Star/MIT/202009
+  - https://salgum1114.github.io/react-design-editor/
+  - developed direct manipulation of editable design tools like Powerpoint
+  - We've developed it with reactjs, ant.design, fabricjs
+- https://github.com/xinyu198736/antd-visual-editor /443SStar/201904
+  - https://xinyu198736.github.io/antd-visual-editor/#/?_k=u97lci
 - pagedraw /MIT/2.8kStar/201906/CoffeeScript
   - https://github.com/Pagedraw/pagedraw
   - https://pagedraw.io/
@@ -108,6 +114,7 @@ modified: '2020-09-09T06:27:15.100Z'
   - http://fex-team.github.io/amis-editor
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
+
 ## misc
 
 - https://github.com/chriskitson/react-drag-drop-layout-builder

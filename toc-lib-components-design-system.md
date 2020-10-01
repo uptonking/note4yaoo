@@ -18,14 +18,15 @@ modified: '2020-09-28T13:39:33.266Z'
     - A configurable Mobile UI specification and React-based implementation.
   - https://github.com/ant-design/ant-design-pro
     - An out-of-box UI solution for applications as a React boilerplate.
-  - https://github.com/vueComponent/ant-design-vue
-  - https://github.com/NG-ZORRO/ng-zorro-antd
-  - https://github.com/taejs/ant-design-vanilla
+  - ref
+    - https://github.com/vueComponent/ant-design-vue
+    - https://github.com/NG-ZORRO/ng-zorro-antd
+    - https://github.com/taejs/ant-design-vanilla
 - Material Design  /MIT/13.6kStar/201912/Google
   - https://material.io/design/
   - https://github.com/material-components/material-components-web
   - https://github.com/material-components/material-components-android
-  - Material is an adaptable system of guidelines, components, and tools that support the best practices of user interface design
+  - Material is an adaptable system of guidelines, components, and tools
 - Bootstrap  /MIT/138kStar/202001/Twitter
   - https://github.com/twbs/bootstrap
   - https://getbootstrap.com/docs/4.4/getting-started/introduction/
@@ -38,10 +39,9 @@ modified: '2020-09-28T13:39:33.266Z'
   - React-based front-end framework for building experiences for Office
 - Lightning Design System  /BSD/3kStar/202009/Salesforce
   - https://github.com/salesforce-ux/design-system
-  - https://www.lightningdesignsystem.com/
   - https://www.lightningdesignsystem.com/design-tokens/
+  - https://www.lightningdesignsystem.com/
   - https://react.lightningdesignsystem.com/
-  - Salesforce Lightning Design System
   - Component blueprints are framework agnostic, accessible HTML and CSS
   - SLDS is a pure CSS framework that you can use with any front-end development framework
 - Carbon Design System  /Apache2.0/3.5kStar/202009/IBM
@@ -64,13 +64,13 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://github.com/primer/components
   - https://primer.style/components
   - React components which implement GitHub's Primer Design System    
-  - 主要有github支持
+  - 提供单独的scss样式文件
 - Base Design  /MIT/2kStar/201908/Uber
   - https://github.com/uber-web/baseui
   - https://baseweb.design/
   - A React Component library implementing the Base design language
   - 主要有uber支持，组件的第三方依赖较多
-- Atlassian Design   /Apache2.0/72Star/202001
+- Atlassian Design  /Apache2.0/72Star/202001
   - https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/
   - https://atlassian.design/
   - https://atlaskit.atlassian.com/
@@ -120,21 +120,21 @@ modified: '2020-09-28T13:39:33.266Z'
   - accessible, composable
 - design-system-deprecated
   - Mineral UI  /Apache2.0/500Star/201912/CATechnologies
-      - https://github.com/mineral-ui/mineral-ui
-      - https://mineral-ui.netlify.com/
+    - https://github.com/mineral-ui/mineral-ui
+    - https://mineral-ui.netlify.com/
   - [Nachos by Trello](https://design.trello.com/)
 - design-system-guidelines
   - Airbnb Cereal
-      - https://airbnb.design/cereal/
-      - https://airbnb.design/building-a-visual-language/
+    - https://airbnb.design/cereal/
+    - https://airbnb.design/building-a-visual-language/
   - https://spectrum.adobe.com/
   - https://styleguide.mailchimp.com/
   - https://ux.mailchimp.com/patterns/color
   - https://design.ubuntu.com/web/
   - Apple Design
-      - https://developer.apple.com/design/
-      - https://developer.apple.com/design/resources/
-      - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+    - https://developer.apple.com/design/
+    - https://developer.apple.com/design/resources/
+    - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
   - https://designsystem.quickbooks.com/
   - https://marvelapp.com/styleguide/overview/code-guidelines
   - https://www.audi.com/ci/en/intro/brand-appearance.html
@@ -143,16 +143,16 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://bradfrost.com/blog/post/atomic-web-design/
   - https://spotify.design/
   - design-style
-      - flat
-      - motion-blur
+    - flat
+    - motion-blur
   - Adele
-      - https://adele.uxpin.com/
-      - repository of publicly available design systems and pattern libraries
+    - https://adele.uxpin.com/
+    - repository of publicly available design systems and pattern libraries
   - Figma
-      - https://www.designsystems.com/
-      - A Figma publication for design systems designers and developers
+    - https://www.designsystems.com/
+    - A Figma publication for design systems designers and developers
   - uxpin
-      - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+    - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
   - https://design.lyft.com/
   - http://plasma.guide/
 - misc
@@ -172,28 +172,30 @@ modified: '2020-09-28T13:39:33.266Z'
     - Our user interface components enable you to easily create Industrial web applications
   - https://www.astrouxds.com/
     - Astro Space UX Design System enables developers to build rich space app experiences
+  - https://github.com/razvangeangu/cho-design-system
+    - design system based on stencil
   - Solid  /MIT/115Star/202001/BuzzFeed
-      - https://github.com/buzzfeed/solid
-      - https://solid.buzzfeed.com/
-      - Solid is BuzzFeed's functional CSS framework and styleguide.
-      - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
+    - https://github.com/buzzfeed/solid
+    - https://solid.buzzfeed.com/
+    - Solid is BuzzFeed's functional CSS framework and styleguide.
+    - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
   - Workday Canvas Design System  /Apache2.0/74Star/202001
-      - https://github.com/workday/canvas-kit
-      - https://design.workday.com/guidelines
+    - https://github.com/workday/canvas-kit
+    - https://design.workday.com/guidelines
   - Pluralsight Design System  /Apache2.0/158Star/202001
-      - https://github.com/pluralsight/design-system
-      - https://design-system.pluralsight.com/
+    - https://github.com/pluralsight/design-system
+    - https://design-system.pluralsight.com/
   - Predix Design System
-      - https://www.predix-ui.com/#/about/introduction
+    - https://www.predix-ui.com/#/about/introduction
   - Morningstar Design System
-      - https://designsystem.morningstar.com/
-      - v2 is using web components; v3 will use vue
+    - https://designsystem.morningstar.com/
+    - v2 is using web components; v3 will use vue
   - ServiceNow Design System
-      - http://designsystem.servicenow.com/#!/
+    - http://designsystem.servicenow.com/#!/
   - Eva Design System
-      - https://eva.design/
-      - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
-      - implemented for angular and react native
+    - https://eva.design/
+    - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
+    - implemented for angular and react native
   - Evergreen Design System  /MIT/9000Star/202001
-      - https://github.com/segmentio/evergreen
-      - https://evergreen.segment.com/
+    - https://github.com/segmentio/evergreen
+    - https://evergreen.segment.com/

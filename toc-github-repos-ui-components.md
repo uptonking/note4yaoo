@@ -10,8 +10,8 @@ modified: '2020-09-28T17:05:48.422Z'
 ## framework-agnostic components
 
 - 通用组件库
-  - 组件库结构包括的通用的design tokens，通用的core，然后具体框架实现交互、样式更新、事件处理
-    - core一般用来共享locale、theme、工具方法、类型定义
+  - 组件库结构包括的通用的design tokens，通用的core，core可用来共享locale、theme、工具方法、类型定义
+    - 具体框架会实现各自组件的生命周期、状态管理、样式交互、事件处理，这也是组件互操作的因素
     - 实现方式1：vanilla js组件加上胶水层可移植到其他库
     - 实现方式2：各框架的组件单独实现
     - 实现方式3：web components，或类似api的库
@@ -21,11 +21,21 @@ modified: '2020-09-28T17:05:48.422Z'
       - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
     - 只共用样式，组件分开实现，而不是简单wrapper，因为不同框架解决状态更新、数据同步、事件等的方案不同
     - 选用已有框架的重要原因是借用成熟的状态、事件、路由等解决方案
-    - 最新的web components和stencil再等等看
-      - web components本身就是一个runtime，特别适合替代vue/react的runtime
+    - 最新的web components和stencil再等等看，思路是framework as compiler
+      - web components本身使用浏览器标准的runtime，特别适合替代vue/react的runtime
       - web components难以替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
+      - 在其他框架中使用w-c组件，无需w-c框架层的依赖，这是通用组件重要的优势
+      - 但在w-c中使用其他框架组件，则需组件源码加上框架runtime的依赖，并且每次导入组件都会导入一次框架层的依赖
+    - stencil vs svelte
+      - stencil编译到w-c，svelte还能编译到framework-less的纯js
+      - stencil组件基于vdom，svelte组件会编译到js代码
+      - stencil的状态管理更类似react
+      - stencil的dom模版使用jsx，svelte使用的是自定义指令
+      - svelte暂不支持ts
+      - stencil的css基于shadow dom，且写在单读文件，svelte的css写在style块
   - ref
     - https://github.com/jaywcjlove/awesome-uikit
+    - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
 - https://github.com/winjs/winjs
   - build applications using HTML/JS/CSS technology
@@ -65,17 +75,27 @@ modified: '2020-09-28T17:05:48.422Z'
 - https://github.com/GoldWorker/SluckyUI
   - /16Star/Apache2.0/202001
   - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库，如React，Angular，Vue
+- https://github.com/IBM/sterling-dataviz
+  - /3Star/Apache2.0/201911/ts
+  - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
+  - 支持react、vue、angular，基于胶水层实现
 
-
- 
-
+- https://github.com/SAP/ui5-webcomponents
+  - /787Star/Apache2.0/202009
+  - the enterprise-flavored sugar on top of native APIs
+  - https://github.com/SAP/openui5
+    - based on JavaScript, using jQuery as its foundation and follows web standards
+  - https://github.com/SAP/ui5-webcomponents-react
+    - A wrapper implementation for React of the UI5 Web Components
 - https://github.com/jeric17/arv
   - /18kStar/MIT/202007
   - A custom-element(shadowdom) UI library
   - Inspired by Material-ui library, made with Stencil
 - https://github.com/shoelace-style/shoelace
   - /4.1kStar/MIT/202009
-  - Components are built with Stencil, a compiler that generates standards-based web components.
+  - built with Stencil, a compiler that generates standards-based web components.
+- https://github.com/proyecto26/ion-phaser-ce
+  - web component to use Phaser Framework Community Edition with Angular, React, Vue 
 - https://github.com/firebase/firebaseui-web/
   - /3.1kStar/Apache2.0/202007
   - provides UI bindings on top of Firebase SDKs to eliminate boilerplate code 
@@ -86,19 +106,10 @@ modified: '2020-09-28T17:05:48.422Z'
   - Modular and customizable Material Design UI components for the web
   - https://github.com/jamesmfriedman/rmwc
     - a React UI Kit built on Google's official Material Components Web library v5
-- https://github.com/SAP/ui5-webcomponents
-  - /787Star/Apache2.0/202009
-  - the enterprise-flavored sugar on top of native APIs
-  - https://github.com/SAP/openui5
-    - based on JavaScript, using jQuery as its foundation and follows web standards
-  - https://github.com/SAP/ui5-webcomponents-react
-    - A wrapper implementation for React of the UI5 Web Components
 - https://github.com/vasturiano/kapsule
   - A closure based Web Component library
   - https://github.com/vasturiano/react-kapsule
     - React wrapper for kapsule-style web components
-
- 
 
 - https://github.com/shipshapecode/shepherd
   - a JavaScript library for guiding users through your app. It uses Popper.js
@@ -114,12 +125,12 @@ modified: '2020-09-28T17:05:48.422Z'
   - React components for Stripe.js and Stripe Elements
 
 - more
+  - https://github.com/amazeui/amazeui
+    - https://github.com/amazeui/amazeui-react
   - https://github.com/audi/audi-ui
     - Audi UI components in CSS, Vanilla JavaScript, and HTML
   - https://github.com/DavidVujic/vanillajs-components
     - examples on how to create a web site with reusable building blocks (aka components)
-  - https://github.com/amazeui/amazeui
-    - https://github.com/amazeui/amazeui-react
   - https://github.com/final-form/final-form
     - Framework agnostic, high performance, subscription-based form state management
   - https://github.com/davatron5000/awesome-standalones
@@ -130,6 +141,9 @@ modified: '2020-09-28T17:05:48.422Z'
   - https://storybook.js.org/
     - Interactive UI component dev & test: React, React Native, Vue, Angular
   - https://github.com/uswds/uswds
+  - https://github.com/qlik-demo-team/qdt-components
+    - 封装一个通过ReactDOM.render渲染出DOM节点的方法，每个单独的组件都会命令式地调用此方法渲染
+    - React Components to be used with Angular 6, React 16 and Vue 2.
 
 ## headless-ui
 
@@ -219,3 +233,6 @@ modified: '2020-09-28T17:05:48.422Z'
     - A JavaScript library of Web Components following Spectrum design patterns.
     - Coral Spectrum derives from Custom Elements v1 with native support 
     - https://github.com/adobe/spectrum-css
+  - https://github.com/aws-amplify/amplify-js
+    - A declarative JavaScript library for application development using cloud services.
+    - 正在转向stencil

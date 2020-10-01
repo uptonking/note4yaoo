@@ -12,11 +12,14 @@ modified: '2020-09-22T13:18:32.954Z'
 - https://github.com/Tencent/rapidjson
   - /9.8kStar/MIT/202008
   - JSON parser/generator for C++ with both SAX/DOM style API
-  - https://github.com/miloyip/json-tutorial
-  - https://github.com/miloyip/nativejson-benchmark
+  - ref
+    - https://github.com/miloyip/json-tutorial
+    - https://github.com/miloyip/nativejson-benchmark
+    - https://github.com/open-source-parsers/jsoncpp/
+      - allows manipulating JSON values, including serialization and deserialization to and from strings.
 - https://github.com/yandex/ClickHouse
   - /12.3kStar/Apache2.0/202009
-  - an open-source column-oriented database management system that allows generating analytical data reports in real time.
+  - column-oriented database management system that allows generating analytical data reports in real time.
 - https://github.com/google/leveldb
   - /21.8kStar/BSD/202009
   - a fast key-value storage library written at Google that provides an ordered mapping
@@ -48,6 +51,9 @@ modified: '2020-09-22T13:18:32.954Z'
 
 ## c
 
+- https://github.com/DaveGamble/cJSON
+  - /4.9kStar/MIT/202009
+  - Ultralightweight JSON parser in ANSI C.
 - https://github.com/redis/redis
   - /45.4kStar/BSD/202009/c
   - an in-memory database that persists on disk.
@@ -94,3 +100,10 @@ modified: '2020-09-22T13:18:32.954Z'
 
 - https://github.com/Meituan-Dianping/SQLAdvisor
   - 输入SQL，输出索引优化建议
+
+- https://github.com/diez/diez
+  - Write & maintain deisgn token styles in one place, then compile & consume them everywhere
+  - Diez supports any UI component library or codebase written in Swift, Objective-C, Kotlin, Java, TypeScript, JavaScript/JSON, CSS, or SCSS.
+
+- conversational-bot
+  - https://github.com/microsoft/botframework-solutions

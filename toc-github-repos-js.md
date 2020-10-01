@@ -165,13 +165,13 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/vuejs/vue
   - /173kStar/MIT/202009/ts
   - https://github.com/vuejs/vue-next
-  - a progressive, incrementally-adoptable JavaScript framework for building UI on the web
+  - a progressive, incrementally-adoptable JS framework for building UI on the web
 - https://github.com/facebook/react
   - /156kStar/MIT/202009/js
-  - A declarative, component-based JavaScript library for building user interfaces.
+  - A declarative, component-based JS library for building user interfaces.
 - https://github.com/twbs/bootstrap
   - /144kStar/MIT/202009/js
-  - HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+  - HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
 - https://github.com/microsoft/vscode
   - /104kStar/MIT/202009/ts
   - Visual Studio Code IDE

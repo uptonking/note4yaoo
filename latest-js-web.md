@@ -7,7 +7,24 @@ modified: '2020-09-26T12:52:33.493Z'
 
 # latest-js-web
 
+## latest-web
+
+- [2020年前端最火的技术是什么](https://www.zhihu.com/question/365588457/answers/updated)
+
 ## ui-framework
+
+- 最新的web components和stencil再等等看，思路是framework as compiler
+  - web components本身使用浏览器标准的runtime，特别适合替代vue/react的runtime
+  - web components难以替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
+  - 在其他框架中使用w-c组件，无需w-c框架层的依赖，这是通用组件重要的优势
+  - 但在w-c中使用其他框架组件，则需组件源码加上框架runtime的依赖，并且每次导入组件都会导入一次框架层的依赖
+  - stencil vs svelte
+    - stencil编译到w-c，svelte还能编译到framework-less的纯js
+    - stencil组件基于vdom，svelte组件会编译到js代码
+    - stencil的状态管理更类似react
+    - stencil的dom模版使用jsx，svelte使用的是自定义指令
+    - svelte暂不支持ts
+    - stencil的css基于shadow dom，且写在单读文件，svelte的css写在style块
 
 ### react
 
@@ -23,10 +40,6 @@ modified: '2020-09-26T12:52:33.493Z'
 - https://github.com/sokra/rawact
   - /2.5kStar/MIT/201812
   - A babel plugin which compiles React.js components into native DOM instructions to eliminate the need for the react library at runtime.
-- webcomponents的看法
-  - web-component本身就是一个 runtime，特别适合替代 vue/react runtime
-  - web components很可能无法替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
-
 
 - htm
   - Hyperscript Tagged Markup: JSX alternative using standard tagged templates, with compiler support
@@ -41,8 +54,17 @@ modified: '2020-09-26T12:52:33.493Z'
 
 ## engineering
 
+- 微前端
+  - 阿里乾坤，目的是解决遗留应用的管理问题
+    - 基于single-spa，具备js沙箱、样式隔离、HTML Loader、预加载 等微前端系统所需的能力
+    - qiankun可以用于任意js框架，微应用接入像嵌入一个iframe系统一样简单。
+    - qiankun 2.0带来的最大变化便是定位将由 微前端框架 转变为 微应用加载器。
 - 低代码平台
-  - 阿里、百度都在研发
+  - 阿里、百度都在研发，如百度开源的AMIS、阿里formily
+- 编辑器解决方案参考
+  - 文本编辑器：slate、editor
+  - 拖拽搭建：craft.js、react-page
+  - 产品搭建：react-chart-builder、amCharts-editor、alibaba-formily-editor
 - vite
   - [如何看待 Web 开发构建工具 Vite？](https://www.zhihu.com/question/394062839/answers/updated)
     - vite不需要打包工具参与，利用浏览器对模块化的支持，实现vue的热更新

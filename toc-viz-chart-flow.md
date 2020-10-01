@@ -7,6 +7,47 @@ modified: '2020-09-25T03:50:23.437Z'
 
 # toc-viz-chart-flow
 
+## chart-builder
+
+- plotly-react-chart-editor /325Star/MIT/202009
+  - https://github.com/plotly/react-chart-editor
+  - https://plotly.github.io/react-chart-editor/
+  - React component for creating & editing D3 charts
+  - 图表的具体图形编辑粒度极细、样例丰富
+  - 依赖react、draft-js、react-resizable-rotatable-draggable/dropzone/rangeslider、styled-components
+- amcharts-editor4 /4Star/Free4dev/202009
+  - https://github.com/amcharts/editor4
+  - https://editor4.amcharts.com/am4editor/home
+  - https://www.amcharts.com/docs/editor4/getting-started/basics/
+  - amCharts Chart Editor based on amCharts 4
+  - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
+  - 依赖react、react-router、codemirror、blueprint组件、mobx
+- Chartbuilder /MIT/2.1kStar/201706
+  - https://github.com/Quartz/Chartbuilder
+  - http://quartz.github.io/Chartbuilder
+  - a front-end charting application that facilitates easy creation of simple beautiful charts
+- AnyChart-chart-editor /3Star/Apache2.0/201906
+  - https://github.com/AnyChart/chart-editor
+  - https://anychart.github.io/chart-editor/
+  - an Extension of AnyChart that allows to configure charts via UI
+  - 依赖anychart8
+- tui.editor /11.8kStar/MIT/202009
+  - https://github.com/nhn/tui.editor
+  - http://ui.toast.com/tui-editor
+  - Markdown WYSIWYG Editor. GFM Standard + Chart & UML Extensible.
+  - 通过代码块中的图表配置信息生成图表
+- more
+  - https://github.com/gezoo/sugar-chart-editor
+    - 大屏可视化编辑器
+  - https://github.com/meterXu/xsLab
+    - /7Star/MIT/202007
+    - 可视化图表编辑器，包含绘制图表、绑定数据源、在线预览、导出图表、自定义开发等功能
+    - 基于echarts、vue、iview、vue-draw-xs
+  - https://github.com/axibase/charts-editor
+    - Monaco editor for Axibase Charts: validation, syntax highlighting, docs, auto-complete
+  - https://github.com/open-chord-charts/chart-editor
+    - Chart viewer and editor (written in Elm)
+
 ## chart
 
 - d3 /BSD/92.4kStar/202007
@@ -36,6 +77,22 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/palantir/plottable
   - http://plottablejs.org/
   - A library of modular chart components built on D3
+- plotly.js /MIT/12.3kStar/202009
+  - https://github.com/plotly/plotly.js
+  - https://plotly.com/javascript/
+  - JavaScript charting library behind Plotly and Dash
+  - 依赖d3.js、stack.gl、regl、turf、alpha-shape
+- amcharts4 /786Star/FreeWithAttribution/202009
+  - https://github.com/amcharts/amcharts4
+  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
+  - the most advanced JavaScript dataviz library ever.
+  - 产品：charts、map、timeline、editor
+  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
+  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
+- AnyChart /Free4NonCommercial/266Star/202009
+  - https://github.com/AnyChart/AnyChart
+  - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
+  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形，js文件的模块基于closure库实现
 - chart-parts /MIT/500Star/202007
   - https://github.com/microsoft/chart-parts
   - https://microsoft.github.io/chart-parts/documentation/
@@ -74,11 +131,6 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://viserjs.github.io/
   - A toolkit fit for data vis engineer based on G2. 
   - Viser support React, Vue and AngularJS.
-- plotly.js /MIT/12kStar/202007
-  - https://github.com/plotly/plotly.js
-  - https://plotly.com/javascript/
-  - JavaScript charting library behind Plotly and Dash
-  - Built on top of d3.js and stack.gl
 - chartist-js /MIT/1.2kStar/201911
   - https://github.com/gionkunz/chartist-js
   - http://gionkunz.github.io/chartist-js/
@@ -150,13 +202,11 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/alibaba/GGEditor
   - https://ggeditor.com/
   - A visual graph editor based on G6 and React
-
-## chart-builder
-
-- Chartbuilder /MIT/2.1kStar/201706
-  - https://github.com/Quartz/Chartbuilder
-  - http://quartz.github.io/Chartbuilder
-  - a front-end charting application that facilitates easy creation of simple beautiful charts
+- more
+  - https://github.com/aislelabs/react-flowchart-editor
+    - http://data.aislelabs.com/demo/index.html
+    - A windowed flow chart editor in React
+    - 只依赖react
 
 ## commercial
 
