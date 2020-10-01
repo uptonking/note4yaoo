@@ -38,20 +38,21 @@ modified: '2020-09-28T17:05:48.422Z'
     - https://github.com/jaywcjlove/awesome-uikit
     - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
-- https://github.com/winjs/winjs
-  - /4kStar/MIT/201809
-  - build applications using HTML/JS/CSS technology
-  - https://github.com/winjs/react-winjs
-    - A React wrapper around WinJS's controls.
+- https://github.com/phonon-framework/phonon
+  - /421Star/MIT/202004
+  - responsive front-end framework with a focus on flexibility in Sass and TS
+  - 提供了在react/vue/angular项目中使用phonon组件的示例
 - https://github.com/IgniteUI/ignite-ui
   - /464Star/Apache2.0/202007
   - Ignite UI for jQuery is built on jQuery and jQuery UI 
   - https://github.com/IgniteUI/igniteui-react-wrappers
     - ignite UI components for React. 
     - 基于createReactClass批量生成，依赖jquery
-- https://github.com/phonon-framework/phonon
-  - /421Star/MIT/202004
-  - responsive front-end framework with a focus on flexibility in Sass and TS
+- https://github.com/winjs/winjs
+  - /4kStar/MIT/201809
+  - build applications using HTML/JS/CSS technology
+  - https://github.com/winjs/react-winjs
+    - A React wrapper around WinJS's controls.
 - https://github.com/Tradeshift/tradeshift-ui
   - /33Star/Free4PlatformOnly/202009  
   - a framework-agnostic JavaScript library to provide reusable UI components.
