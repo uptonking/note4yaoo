@@ -1,12 +1,12 @@
 ---
-title: note-components-react-catalog
+title: note-components-catalog
 tags: [components]
 favorited: true
 created: '2020-08-09T05:13:36.363Z'
-modified: '2020-08-09T05:23:47.960Z'
+modified: '2020-10-02T11:42:00.886Z'
 ---
 
-# note-components-react-catalog
+# note-components-catalog
 
 ## general 
 

@@ -30,7 +30,7 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/AnyChart/chart-editor
   - https://anychart.github.io/chart-editor/
   - an Extension of AnyChart that allows to configure charts via UI
-  - 依赖anychart8
+  - 依赖anychart8，文件模块使用的是google-closure-builder的模块系统
 - tui.editor /11.8kStar/MIT/202009
   - https://github.com/nhn/tui.editor
   - http://ui.toast.com/tui-editor
@@ -92,7 +92,8 @@ modified: '2020-09-25T03:50:23.437Z'
 - AnyChart /Free4NonCommercial/266Star/202009
   - https://github.com/AnyChart/AnyChart
   - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
-  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形，js文件的模块基于closure库实现
+  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
+  - 文件模块使用的是google-closure-builder的模块系统
 - chart-parts /MIT/500Star/202007
   - https://github.com/microsoft/chart-parts
   - https://microsoft.github.io/chart-parts/documentation/

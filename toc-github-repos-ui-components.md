@@ -38,24 +38,55 @@ modified: '2020-09-28T17:05:48.422Z'
     - https://github.com/jaywcjlove/awesome-uikit
     - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
+- https://github.com/material-components/material-components-web/
+  - /14.9kStar/MIT/202009/ts/agnostic/MDC-Web
+  - Modular and customizable Material Design UI components for the web
+  - [Integrating MDC Web into Frameworks](https://github.com/material-components/material-components-web/blob/master/docs/integrating-into-frameworks.md)
+  - https://github.com/jamesmfriedman/rmwc
+    - /1.4kStar/MIT/202009/ts/hooks
+    - a React UI Kit built on Google's official Material Components Web library v5
+  - ref
+    - https://github.com/material-components/material-components-web-react
+      - /1.9kStar/MIT/201911/ts/deprecated
+      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC),
+    - https://github.com/material-components/material-components-web-components
+      - /2.2kStar/Apache2.0/202009/ts/agnostic/MWC
+      - a collection of Web Components maintained by Google that implement Material Design
+    - https://github.com/prateekbh/preact-material-components
+      - /531Star/MIT/202007/ts/deprecated
+      - preact wrapper formaterial-components-web
+    - https://github.com/material-components/material-components-android
+      - /11.2kStar/Apache2.0/2020209/java
+      - Modular and customizable Material Design UI components for Android
 - https://github.com/phonon-framework/phonon
-  - /421Star/MIT/202004
+  - /421Star/MIT/202004/ts
   - responsive front-end framework with a focus on flexibility in Sass and TS
-  - 提供了在react/vue/angular项目中使用phonon组件的示例
+  - 提供了在react/vue(无angular)项目中使用phonon组件的示例
+- https://github.com/Tradeshift/tradeshift-ui
+  - /33Star/Free4PlatformOnly/202009/js
+  - a framework-agnostic JavaScript library to provide reusable UI components.
+  - https://github.com/Tradeshift/react-tradeshift-ui
+    - React wrappers for the Tradeshift ui components. 一层很简单的wrapper
 - https://github.com/IgniteUI/ignite-ui
-  - /464Star/Apache2.0/202007
+  - /464Star/Apache2.0/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 
   - https://github.com/IgniteUI/igniteui-react-wrappers
     - ignite UI components for React. 
     - 基于createReactClass批量生成，依赖jquery
+- https://github.com/GoldWorker/SluckyUI
+  - /16Star/Apache2.0/202001
+  - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库
+  - 提供了创建React，Angular，Vue组件的示例
+- https://github.com/coreui/coreui
+  - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
+  - https://github.com/coreui/coreui-react
+    - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
+    - 依赖popperjs、Tippy.js(tooltip,popover)
 - https://github.com/winjs/winjs
-  - /4kStar/MIT/201809
-  - build applications using HTML/JS/CSS technology
+  - /4kStar/MIT/201809/js
+  - build applications using HTML/JS/CSS technology. 文件模块使用的是google-closure-builder的模块系统
   - https://github.com/winjs/react-winjs
     - A React wrapper around WinJS's controls.
-- https://github.com/Tradeshift/tradeshift-ui
-  - /33Star/Free4PlatformOnly/202009  
-  - a framework-agnostic JavaScript library to provide reusable UI components.
 - https://github.com/ksc-fe/kpc
   - /214Star/MIT/202009
   - A UI Components Library for Intact, Vue, React and Angular.
@@ -69,45 +100,27 @@ modified: '2020-09-28T17:05:48.422Z'
   - https://github.com/Javey/vdt.js
     - A powerful template engine based on virtual dom
     - 基于misstime(a virtual-dom lib forked from inferno and inspired by virtual-dom)
-- https://github.com/coreui/coreui
-  - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
-  - https://github.com/coreui/coreui-react
-    - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
-    - 依赖popperjs、Tippy.js(tooltip,popover)
-- https://github.com/GoldWorker/SluckyUI
-  - /16Star/Apache2.0/202001
-  - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库，如React，Angular，Vue
 - https://github.com/IBM/sterling-dataviz
   - /3Star/Apache2.0/201911/ts
   - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
   - 支持react、vue、angular，基于胶水层实现
 
 - https://github.com/SAP/ui5-webcomponents
-  - /787Star/Apache2.0/202009
+  - /787Star/Apache2.0/202009/webcomp
   - the enterprise-flavored sugar on top of native APIs
   - https://github.com/SAP/openui5
     - based on JavaScript, using jQuery as its foundation and follows web standards
   - https://github.com/SAP/ui5-webcomponents-react
     - A wrapper implementation for React of the UI5 Web Components
 - https://github.com/jeric17/arv
-  - /18kStar/MIT/202007
+  - /18kStar/MIT/202007/stencil
   - A custom-element(shadowdom) UI library
   - Inspired by Material-ui library, made with Stencil
 - https://github.com/shoelace-style/shoelace
-  - /4.1kStar/MIT/202009
+  - /4.1kStar/MIT/202009/stencil
   - built with Stencil, a compiler that generates standards-based web components.
 - https://github.com/proyecto26/ion-phaser-ce
   - web component to use Phaser Framework Community Edition with Angular, React, Vue 
-- https://github.com/firebase/firebaseui-web/
-  - /3.1kStar/Apache2.0/202007
-  - provides UI bindings on top of Firebase SDKs to eliminate boilerplate code 
-  - https://github.com/firebase/firebaseui-web-react
-    - React Wrapper for firebaseUI Web
-- https://github.com/material-components/material-components-web/
-  - /14.9kStar/MIT/202009
-  - Modular and customizable Material Design UI components for the web
-  - https://github.com/jamesmfriedman/rmwc
-    - a React UI Kit built on Google's official Material Components Web library v5
 - https://github.com/vasturiano/kapsule
   - A closure based Web Component library
   - https://github.com/vasturiano/react-kapsule
@@ -154,6 +167,7 @@ modified: '2020-09-28T17:05:48.422Z'
   - I wonder... should these be called ui patterns rather than components.
 
 - https://github.com/downshift-js/downshift
+  - /8.7kStar/MIT/202009
   - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components. 
 - https://github.com/tailwindlabs/headlessui
   - /992Star/MIT/202009
@@ -202,15 +216,18 @@ modified: '2020-09-28T17:05:48.422Z'
 
 ## web-components
 
+- https://github.com/salesforce/lwc
+  - /865Star/MIT/202009/ts
+  - Lightning Web Components Engine and Compiler.
 - https://github.com/microsoft/fast
-  - /4.8kStar/MIT/202009
+  - /4.8kStar/MIT/202009/ts
   - FAST is a collection of technologies built on Web Components and modern Web Standards
 - https://github.com/riot/riot
   - /14.3kStar/MIT/202009/js
   - component-based UI library，Riot.js is Web Components for everyone.
   - Riot.js brings custom elements to all modern browsers without the use of any polyfill!
 - https://github.com/Tencent/omi
-  - /11.4kStar/MIT/202009
+  - /11.4kStar/MIT/202009/js
   - Merge Web Components, JSX, Virtual DOM, Functional style, observe or Proxy into one framework
 - https://github.com/OnsenUI/OnsenUI
   - /8.1kStar/Apache2.0/202009
@@ -220,10 +237,6 @@ modified: '2020-09-28T17:05:48.422Z'
   - An agnostic UI components library based on Web Components, made with Bulma & Stencil.
 - https://github.com/BlazeSoftware/atoms
   - a set of web components powered by Blaze CSS.
-- https://github.com/SAP/ui5-webcomponents
-  - UI5 Web Components
-- https://github.com/salesforce/lwc
-  - Enterprise-Grade Web Components Foundation
 - more
   - Vaadin components are built on the Web Components standard.
   - https://github.com/Wildhoney/ReactShadow

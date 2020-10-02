@@ -3,57 +3,10 @@ title: note-components-react-in-action
 tags: [components, web]
 favorited: true
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-09-25T05:52:10.299Z'
+modified: '2020-10-02T11:44:02.733Z'
 ---
 
 # note-components-react-in-action
-
-## latest
-
-- 组件库研发方向及特色
-  - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
-    - 开发者用起来framework-agnostic，但原作者很可能要维护多个port或bridge
-  - headless ui
-    - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
-    - opinionated: ui交互或技术选型具有明显的偏向性
-
-## opinionated
-
-- ui设计
-  - portal的target容器默认是组件自身或document.body
-  - should we show a indeterminate for the header's checkbox if partial is selected
-  - Inline Editing is a very common feature in a table, but it's highly coupled with specific ui libraries, so it won't be a part of BaseTable itself.
-- 交互设计
-  - should we select all the children if the parent is selected
-  - how to sync the staled keys if those rows are removed
-- 技术选型
-  - all in js
-
-## back-garden-design-in-action
-
-- logo: green plum
-- design-system-tokens
-  - text: sans serif(衬线体多用于印刷)
-  - color: mineral-ui-color-palette, primary-mediumseagreen
-  - bezel-less
-- interaction
-  - hover-color
-  - click-ripple
-  - loader-flower
-- animation
-  - flip
-  - misc
-    - rotate
-    - unfold
-    - point movement
-- shape
-  - point/polygon-shape-based
-  - https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817
-- 公共api
-  - variant
-    - borderless
-      - 部分组件提供无边框的版本，如modal
-      - 也可考虑实现成dark mode的形式
 
 ## react-dev-in-action
 
@@ -200,7 +153,7 @@ modified: '2020-09-25T05:52:10.299Z'
 ## pieces
 
 - [I feel like one of the hardest parts about building a component library is getting past the initial decision-making friction. There are so many decisions you need to make right off of the bat](https://twitter.com/MCapoz/status/1283398811973488640).
-  - Monorepo or multirepo? Semantic versioning? TypeScript or JavaScript? webpack or rollup? CSS-in-JS or Sass? If you use CSS-in-JS, should you use styled-components or emotion?
+  - Monorepo or multi-repo? Semantic versioning? TypeScript or JavaScript? webpack or rollup? CSS-in-JS or Sass? If you use CSS-in-JS, should you use styled-components or emotion?
   - I definitely try to mitigate risk as much as possible when making early decisions -- that's always a big part of my decision-making process.
-  - For example, when choosing between a monorepo and a multirepo approach for a component library, one reason I felt good about choosing a monorepo is that I believed it'd be an easily-reversible decision.
+  - For example, when choosing between a monorepo and a multi-repo approach for a component library, one reason I felt good about choosing a monorepo is that I believed it'd be an easily-reversible decision.
   - You can always pull packages out of the monorepo and put them in their own separate repo if you have to!

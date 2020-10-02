@@ -90,7 +90,7 @@ modified: '2020-09-22T13:18:32.954Z'
 
 - https://github.com/microsoft/tsyringe
   - Lightweight dependency injection container for JavaScript/TypeScript
-  - ioc
+  - ts-ioc
     - https://github.com/thiagobustamante/typescript-ioc
     - https://github.com/inversify/InversifyJS
     - https://github.com/typestack/typedi
