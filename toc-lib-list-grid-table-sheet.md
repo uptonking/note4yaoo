@@ -160,7 +160,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://energydrink9.github.io/functional-data-grid-examples
   - Data grids in functional style with ReactJS
   - This is a library made with React and React-Virtualized for creating rich data grids with filtering, sorting, grouping and aggregates computation. 
-- Rows n' Columns Grid /MIT/29Star/202007
+- rowsncolumns-grid /MIT/29Star/202007
   - https://github.com/rowsncolumns/grid
   - https://rowsncolumns.app/
   - Grid - MIT Licensed Declarative Canvas Grid. Refer to Storybook for all demos.
@@ -364,11 +364,6 @@ modified: '2020-07-13T02:41:12.041Z'
     - 无依赖，不依赖react
   - rowsncolumns-grid /MIT/30Star/202009
     - https://github.com/rowsncolumns/grid
-    - https://rowsncolumns.app/
-    - https://rowsncolumns.github.io/grid/?path=/story/grid--base-grid
-    - Canvas table grid to render large set of tabular data. 
-    - Uses virtualization similar to react-window and React-Konva for primitives such as Rect, Text, Shape etc
-    - 依赖react
 
 - ### 其他list    
   - js-xlsx Community Edition /201907/Apache2.0/17kStar

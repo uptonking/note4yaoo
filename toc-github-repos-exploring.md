@@ -108,3 +108,23 @@ modified: '2020-09-22T13:18:32.954Z'
 - conversational-bot
   - https://github.com/microsoft/botframework-solutions
   - https://github.com/microsoft/botbuilder-js
+  - https://github.com/slackapi/bolt-js
+    - A framework to build Slack apps using JavaScript
+
+- https://github.com/nodegui/react-nodegui
+  - React NodeGUI is powered by React and Qt5 which makes it CPU and memory efficient as compared to other chromium based solutions like electron. 
+  - React NodeGUI is essentially a React renderer for NodeGUI.
+
+- https://github.com/contiamo/restful-react
+  - A consistent, declarative way of interacting with RESTful backends, featuring code-generation from Swagger and OpenAPI specs
+  - It can be considered a thin wrapper around the fetch API in the form of React components and hooks.
+
+## app
+
+- https://github.com/Automattic/simplenote-electron
+  - /5.2kStar/GPLv2/202009
+  - A Simplenote React client packaged in Electron.
+  - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
+- https://github.com/NaoTu/DesktopNaotu
+  - /2.7kStar/GPLv2/201809
+  - 桌面版脑图 (百度脑图离线版，思维导图) 跨平台支持 Windows/Linux/Mac

@@ -23,7 +23,7 @@ modified: '2020-09-28T02:11:24.720Z'
   - The element positioning logic used in Craft.js is borrowed from Grape.js
   - Craft.js uses a slightly modified version of use-methods to better fit our API.
 - https://github.com/ianstormtaylor/slate
-  - /18.6kStar/MIT/202009/ts
+  - /18.6kStar/MIT/202009/ts/react
   - completely customizable framework for building rich text editors.
   - since 0.50.0(20191127), slate codebase has had a complete overhaul(彻底检修)
     - The data model is now comprised of simple JSON objects. (old: Immutable.js data structures)
@@ -88,6 +88,29 @@ modified: '2020-09-28T02:11:24.720Z'
     - 借助首创Observable Graph，可记录任意时刻的全量状态，也可将状态回滚至任意时刻
 - https://github.com/alibaba/ali-react-table
   - 内置虚拟滚动，数据量较大时自动开启
+- https://github.com/flatpickr/flatpickr
+  - /13kStar/MIT/202009
+  - powerful javascript datetimepicker with no dependencies
+- https://github.com/codex-team/editor.js
+  - /13.3kStar/Apache2.0/202009/ts/vanilla
+  - A block-styled editor with clean JSON output
+- https://github.com/SoftwareBrothers/admin-bro
+  - /2.2kStar/MIT/202009
+  - admin interface which can be plugged into your application
+- https://github.com/nhn/tui.grid
+  - /1.6kStar/MIT/202009/ts
+  - Plain JavaScript component implemented by NHN
+  - 无依赖，基于div实现
+- https://github.com/nhn/tui.chart
+  - /4.6kStar/MIT/202004/js
+  - Beautiful Statistical Data Visualization library
+  - 依赖raphael
+  - 基于svg实现
+- https://github.com/nhn/tui.editor
+  - /11.8kStar/MIT/202009/js
+  - Plain JavaScript component
+  - provides Markdown mode and WYSIWYG mode, GFM Standard + Chart & UML Extensible.
+  - 依赖codemirror5
 
 ## popular
 
@@ -131,7 +154,7 @@ modified: '2020-09-28T02:11:24.720Z'
   - 依赖vue、element-ui、echarts，界面较友好
 - /https://github.com/highcharts/highcharts
   - /9.7kStar/Free4FirstYear/202009
-  - a js charting library based on SVG, with fallbacks to VML and canvas for old browsers.
+  - js charting library based on SVG, with fallbacks to VML and canvas for old browsers.
 - https://github.com/rough-stuff/rough
   - /14.5kStar/MIT/202006 
   - Create graphics with a hand-drawn, sketchy, appearance
@@ -235,28 +258,11 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/elastic/eui
   - Elastic UI Framework
 
-- https://github.com/nhn/tui.grid
-  - /1.6kStar/MIT/202009/ts
-  - Plain JavaScript component implemented by NHN
-  - 无依赖，基于div实现
-- https://github.com/nhn/tui.chart
-  - /4.6kStar/MIT/202004/js
-  - Beautiful Statistical Data Visualization library
-  - 依赖raphael
-  - 基于svg实现
-- https://github.com/nhn/tui.editor
-  - /11.8kStar/MIT/202009/js
-  - Plain JavaScript component
-  - provides Markdown mode and WYSIWYG mode, GFM Standard + Chart & UML Extensible.
-  - 依赖codemirror5
 - https://github.com/plotly/dash-table
   - /352Star/MIT/202009
   - A First-Class Interactive DataTable for Dash
   - 依赖python
 
-- https://github.com/codex-team/editor.js
-  - /13.3kStar/Apache2.0/202009/ts
-  - A block-styled editor with clean JSON output 
 - https://github.com/react-page/react-page
   - /8.2kStar/LGPL/202009
   - customizable content editor for the browser - based on React and Redux
@@ -272,7 +278,7 @@ modified: '2020-09-28T02:11:24.720Z'
   - Monaco Editor for React.
 - https://github.com/tinymce/tinymce
   - /8.5kStar/LGPL/202009
-  - web-based WYSIWYG editor.
+  - web-based WYSIWYG editor. Available for React, Vue and Angular
 - https://github.com/deckgo/deckdeckgo
   - The open source web editor for presentations
 

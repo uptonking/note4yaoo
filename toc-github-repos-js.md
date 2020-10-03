@@ -38,6 +38,20 @@ modified: '2020-09-28T05:28:09.585Z'
   - /644Star/BSD/202009
   - a JavaScript data utility library
   - created to power Vega and related project
+- https://github.com/popperjs/popper-core
+  - Positioning tooltips and popovers is difficult. Popper is here to help
+- https://github.com/nhn/tui.chart
+  - /4.6kStar/MIT/202004/js
+  - 依赖raphael
+  - 基于svg实现
+- https://github.com/nhn/tui.editor
+  - /11.8kStar/MIT/202009/js
+  - 依赖codemirror5
+- https://github.com/nhn/tui.calendar
+  - A JavaScript calendar that has everything you need.
+- https://github.com/mdx-js/mdx
+  - JSX in Markdown for ambitious projects
+  - https://github.com/jxnblk/mdx-deck
 
 ## popular
 
@@ -85,12 +99,20 @@ modified: '2020-09-28T05:28:09.585Z'
   - High-performance Toolkit for WebGL-based Data Visualization
 - https://github.com/syt123450/giojs
   - A Declarative 3D Globe Data Visualization Library built with Three.js
+- https://github.com/apexcharts/apexcharts.js
+  - Interactive JavaScript Charts built on SVG
+- https://github.com/NUKnightLab/TimelineJS
+  - A Storytelling Timeline built in JavaScript.
 
 - https://github.com/mermaid-js/mermaid
   - /32.1kStar/MIT/202009/js
   - Generation of diagram and flowchart from text in a similar manner as markdown
 - https://github.com/jgraph/drawio
   - Source to app.diagrams.net
+- https://github.com/alyssaxuu/flowy
+  - minimal javascript library to create flowcharts
+- https://github.com/adrai/flowchart.js
+  - Draws simple SVG flow chart diagrams from textual representation of the diagram
 
 ### js-app
 
@@ -112,6 +134,9 @@ modified: '2020-09-28T05:28:09.585Z'
   - /18kStar/Apache2.0/202009
   - 轻松创建、发布、维护 API
   - https://hellosean1025.github.io/yapi
+- https://github.com/star7th/showdoc
+  - 一个非常适合IT团队的在线API文档、技术文档工具
+  - 依赖php
 
 ### ui-components-design
 
@@ -144,10 +169,17 @@ modified: '2020-09-28T05:28:09.585Z'
   - /1.8kStar/MIT/202009
   - JavaScript UI library for building rich data-driven web applications.  
   - requires only jQuery (1.9+) as a dependency
+- https://github.com/dcloudio/mui
+  - 最接近原生APP体验的高性能框架
 
-- https://github.com/javve/list.js /inactive
+- https://github.com/javve/list.js 
+  - /9.8kStar/MIT/201912/inactive
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
   - Built to be invisible and work on existing HTML.
+- https://github.com/SortableJS/sortablejs
+  - Create and reorder lists with drag-and-drop. 
+- https://github.com/wenzhixin/bootstrap-table
+  - An extended table to integration with some widely used CSS frameworks. (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
 
 - https://github.com/artf/grapesjs
   - /11.8kStar/BSD/202009
@@ -157,8 +189,19 @@ modified: '2020-09-28T05:28:09.585Z'
   - /3.4kStar/Apache2.0/202007
   - Drag and drop website builder
   - 依赖jquery3，bootstrap4，codemirror
-- https://github.com/pandao/editor.md /inactive
-  - embeddable online markdown editor (component).
+- https://github.com/pandao/editor.md 
+  - /10.2kStar/MIT/201905
+  - embeddable online markdown editor(component), based on CodeMirror & jQuery & Marked.
+- https://github.com/quilljs/quill
+  - a modern WYSIWYG editor built for compatibility and extensibility
+- https://github.com/codemirror/CodeMirror
+  - In-browser code editor
+- https://github.com/facebook/draft-js
+  - A React framework for building text editors.
+- https://github.com/wangeditor-team/wangEditor
+  - wangEditor 新版已启动研发
+- https://github.com/ether/etherpad-lite
+  - Etherpad: real-time collaborative document editor 
 
 ### most-starred js-ts
 
@@ -290,3 +333,13 @@ modified: '2020-09-28T05:28:09.585Z'
   - React components to build CSV files on the fly 
 - https://github.com/TerriaJS/terriajs
   - A library for building rich, web-based geospatial data explorers.
+- https://github.com/Shopify/draggable
+  - JavaScript Drag & Drop library your grandparents warned you about
+- https://github.com/airbnb/react-dates
+  - An easily internationalizable, mobile-friendly datepicker library for the web
+- https://github.com/node-red/node-red
+  - https://github.com/node-red/node-red
+- https://github.com/PrismJS/prism
+  - Lightweight, robust, elegant syntax highlighting.
+- https://github.com/mobz/elasticsearch-head
+  - A web front end for an elasticsearch cluster

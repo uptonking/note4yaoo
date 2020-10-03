@@ -35,6 +35,7 @@ modified: '2020-09-28T17:05:48.422Z'
       - svelte暂不支持ts
       - stencil的css基于shadow dom，且写在单读文件，svelte的css写在style块
   - ref
+    - 参考现有ui解决方案：dom相关事件操作、状态密集更新
     - https://github.com/jaywcjlove/awesome-uikit
     - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
