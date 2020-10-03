@@ -157,3 +157,8 @@ modified: '2020-10-02T11:44:02.733Z'
   - I definitely try to mitigate risk as much as possible when making early decisions -- that's always a big part of my decision-making process.
   - For example, when choosing between a monorepo and a multi-repo approach for a component library, one reason I felt good about choosing a monorepo is that I believed it'd be an easily-reversible decision.
   - You can always pull packages out of the monorepo and put them in their own separate repo if you have to!
+- [Stance(观点、态度) on CSS-only?](https://github.com/material-components/material-components-web/issues/293)
+  - we try to build all of our components with a CSS-fallback in mind. 
+  - For some, however - such as temporary drawers - JS is required. 
+  - We purposefully do not rely on certain CSS hacks, like the checkbox + sibling combinator for menu toggles, because this leads to brittle(易碎的、易破裂的) code, and tightly-coupled DOM. It also has disastrous implication for accessibility.
+  - We will continue to try to always provide CSS-only fallbacks/solutions where appropriate, but ruling out JS altogether is untenable(难以维持的、站不住脚的). 
