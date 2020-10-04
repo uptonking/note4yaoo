@@ -74,5 +74,15 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/cerebral/cerebral
   - https://cerebraljs.com/
   - Declarative state and side effects management for popular JavaScript frameworks
+- storeon /1.5kStar/MIT/202009
+  - https://github.com/storeon/storeon
+  - https://evilmartians.com/chronicles/storeon-redux-in-173-bytes
+  - A tiny event-based Redux-like state manager for React, Preact, Angular, Vue and Svelte.
 - misc
   - https://github.com/vuejs/vuex
+  - https://github.com/vijitail/Kel
+    - A dead simple, event driven state management library for Vanilla JS apps.
+  - https://github.com/estrattonbailey/picostate
+    - Event-based immutable state management. integrates seamlessly with React
+  - https://github.com/eserozvataf/react-eventmanager
+    - [Deprecated] Event-based simple React state management with decorators

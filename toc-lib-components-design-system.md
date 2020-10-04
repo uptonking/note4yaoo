@@ -201,3 +201,5 @@ modified: '2020-09-28T13:39:33.266Z'
     - https://evergreen.segment.com/
   - https://github.com/artsy/palette
     - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
+  - https://github.com/seek-oss/braid-design-system
+    - 基于treat这个css-in-js解决方案实现的 Themeable design system for the SEEK Group

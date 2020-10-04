@@ -30,6 +30,8 @@ modified: '2020-10-02T11:44:11.404Z'
   - how to sync the staled keys if those rows are removed
 - 技术选型
   - all in js
+- 参考现有ui解决方案：dom密集操作、状态数据频繁更新
+- 流行typescript库很多都用的class，所以是否用class可参考现有成熟方案的选择
 
 ## back-garden-design-in-action
 

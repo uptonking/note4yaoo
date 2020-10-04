@@ -20,6 +20,8 @@ modified: '2020-07-14T10:28:11.443Z'
 - 技术选型或框架选型时，对开发者友好和对用户友好的取舍
   - java的简单与功能丰富对开发者更友好，c++的高性能对用户友好
 - 对于黑盒类的技术方案，不要花过多时间，如某些css属性
+- 参考现有ui解决方案：dom密集操作、状态数据频繁更新
+- 流行typescript库很多都用的class，所以是否用class可参考现有成熟方案的选择
 
 ## dev-tricks
 
@@ -48,7 +50,7 @@ modified: '2020-07-14T10:28:11.443Z'
   - 工具只是解决问题的捷径
   - 在解决业务问题后，可以花更多时间深入工具原理与抽象自己的工具
 
-## dev-summary
+## pieces
 
 - 开发模式/dev-framework
   - Foundation Framework: build a framework first, then build app on it 
@@ -89,6 +91,14 @@ modified: '2020-07-14T10:28:11.443Z'
   - 在ice体系里，组件不受限，既可以用ice提供的组件也可以使用ant的组件，还有更多社区组件
   - 飞冰面向设计师推出iceland，能直接从设计到代码
   - 面向开发者端我们提供了iceworks工具，iceworks是与物料体系打通的关键，所有物料资源，包括iceland上设计师生产的，都会无缝打通
+- 考虑禁商用的license
+  - 策略：社区版开源且免费商用，专业版/加强版开源且免费非商用，商用收取技术服务费，参考ag-grid的模块
+  - GPL：虽然可以商用，但二次开发的源码也要开源
+  - Dual Licensing
+    - Ideally, any two open-source projects should be able to share their source code with each other. 
+    - However, if the two projects use incompatible licenses, then this may not be possible. 
+    - For example, code developed for the Linux operating system, which uses the GPL, cannot be used by the Apache web server project because the GPL specifies additional requirements that are incompatible with the Apache license. 
+    - To avoid this problem, some open-source projects have chosen to make their source code available under a dual-licensing scheme that gives developers a choice as to which license they will be bound by.
 
 ## code-engineering 
 

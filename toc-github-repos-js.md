@@ -19,7 +19,7 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/olifolkerd/tabulator
   - /3.5kStar/MIT/202009
   - interactive table generation JavaScript library
-  - 无依赖、基于div实现
+  - 无依赖，基于div实现
 - https://github.com/joshwcomeau/react-flip-move /inactive
   - https://github.com/aholachek/react-flip-toolkit /ts
   - https://github.com/davidkpiano/flipping
@@ -33,25 +33,30 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/SheetJS/sheetjs
   - /22.9kStar/Apache2.0/202009
   - Community Edition -- Spreadsheet Data Toolkit
-  - 无依赖，自己实现了办公类文档解析器 js-word、js-ppt、ssf、js-cfb
+  - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
 - https://github.com/vega/datalib
   - /644Star/BSD/202009
   - a JavaScript data utility library
   - created to power Vega and related project
 - https://github.com/popperjs/popper-core
+  - /15.8kStar/MIT/202009
   - Positioning tooltips and popovers is difficult. Popper is here to help
 - https://github.com/nhn/tui.chart
   - /4.6kStar/MIT/202004/js
-  - 依赖raphael
-  - 基于svg实现
+  - 依赖raphael，基于svg实现
 - https://github.com/nhn/tui.editor
   - /11.8kStar/MIT/202009/js
   - 依赖codemirror5
 - https://github.com/nhn/tui.calendar
+  - /8.5kStar/MIT/202009/js
   - A JavaScript calendar that has everything you need.
 - https://github.com/mdx-js/mdx
-  - JSX in Markdown for ambitious projects
-  - https://github.com/jxnblk/mdx-deck
+  - /9.7kStar/MIT/202009
+  - lets you seamlessly use JSX in your markdown documents
+- https://github.com/jxnblk/mdx-deck
+  - /9.5kStar/MIT/202009
+  - React MDX-based presentation decks
+  - 基于gatsby实现的文档展示工具有: docz, mdx-deck
 
 ## popular
 
@@ -179,7 +184,8 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/SortableJS/sortablejs
   - Create and reorder lists with drag-and-drop. 
 - https://github.com/wenzhixin/bootstrap-table
-  - An extended table to integration with some widely used CSS frameworks. (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
+  - An extended table to integration with some widely used CSS frameworks. 
+  - (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
 
 - https://github.com/artf/grapesjs
   - /11.8kStar/BSD/202009
@@ -224,9 +230,6 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/mrdoob/three.js
   - /63.7kStar/MIT/202009/js
   - JavaScript 3D library.
-- https://github.com/reduxjs/redux
-  - /54.4kStar/MIT/202009/ts
-  - Predictable state container for JavaScript apps
 - https://github.com/storybookjs/storybook
   - /53.7kStar/MIT/202009/ts
   - The UI component explorer
@@ -337,8 +340,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - JavaScript Drag & Drop library your grandparents warned you about
 - https://github.com/airbnb/react-dates
   - An easily internationalizable, mobile-friendly datepicker library for the web
-- https://github.com/node-red/node-red
-  - https://github.com/node-red/node-red
 - https://github.com/PrismJS/prism
   - Lightweight, robust, elegant syntax highlighting.
 - https://github.com/mobz/elasticsearch-head

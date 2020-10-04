@@ -13,22 +13,22 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/adazzle/react-data-grid
   - /4.1kStar/MIT/202009
   - Excel-like grid component built with React, with editors, keyboard navigation, copy & paste
+- https://github.com/nhn/tui.grid
+  - /1.6kStar/MIT/202009/ts
+  - Plain JavaScript component implemented by NHN
+  - 无依赖，基于div实现
 - https://github.com/clauderic/react-tiny-virtual-list
   - /1.8kStar/MIT/201910/inactive
   - A tiny but mighty list virtualization library, with zero dependencies
 - https://github.com/prevwong/craft.js
   - /3kStar/MIT/202009/ts
   - A React Framework for building extensible drag and drop page editors
-  - many aspects of Craft.js are written with react-dnd as a reference along with some utilities and functions being borrowed.
-  - The element positioning logic used in Craft.js is borrowed from Grape.js
-  - Craft.js uses a slightly modified version of use-methods to better fit our API.
-- https://github.com/ianstormtaylor/slate
-  - /18.6kStar/MIT/202009/ts/react
-  - completely customizable framework for building rich text editors.
-  - since 0.50.0(20191127), slate codebase has had a complete overhaul(彻底检修)
-    - The data model is now comprised of simple JSON objects. (old: Immutable.js data structures)
-    - The codebase now uses TypeScript. 
-    - Plugins are now plain functions that augment the Editor object they receive and return it again.
+  - many aspects of Craft.js are written with `react-dnd` as a reference along with some utilities and functions being borrowed.
+  - The element positioning logic used in Craft.js is borrowed from `Grape.js`
+  - Craft.js uses a slightly modified version of `use-methods` to better fit our API.
+- https://github.com/codex-team/editor.js
+  - /13.3kStar/Apache2.0/202009/ts/vanilla
+  - A block-styled editor with clean JSON output
 - https://github.com/amcharts/amcharts4
   - /786Star/FreeWithAttribution/202009
   - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
@@ -43,6 +43,13 @@ modified: '2020-09-28T02:11:24.720Z'
   - amCharts Chart Editor based on amCharts 4
   - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
   - 依赖react、react-router、blueprint组件、codemirror、mobx
+- https://github.com/ianstormtaylor/slate
+  - /18.6kStar/MIT/202009/ts/react
+  - completely customizable framework for building rich text editors.
+  - since 0.50.0(20191127), slate codebase has had a complete overhaul(彻底检修)
+    - The data model is now comprised of simple JSON objects.(old: Immutable.js data structures)
+    - The codebase now uses TypeScript. 
+    - Plugins are now plain functions that augment the Editor object they receive and return it again.
 - https://github.com/antvis/G2
   - /10.1kStar/MIT/202009/ts
   - interactive data-driven visualization grammar for statistical charts.
@@ -82,35 +89,38 @@ modified: '2020-09-28T02:11:24.720Z'
       - 底层通过核心层抽象列表各个维度数据，UI层则负责适配不同端的特性，顶层通过Schema协议描述快速渲染。
 - https://github.com/alibaba/formily 
   - /MIT/2.9kStar/202009
-  - https://github.com/alibaba/formily-editor
-  - 表单状态核心管理包(不依赖任何第三方UI框架)
+  - 表单状态核心管理包(不依赖任何第三方UI框架，但依赖immer、cool-path)
     - 管理 Form 状态、Field 状态、Validator 状态、Form/Field/Validator 之间的依赖关系
     - 借助首创Observable Graph，可记录任意时刻的全量状态，也可将状态回滚至任意时刻
+  - https://github.com/alibaba/formily-editor
 - https://github.com/alibaba/ali-react-table
   - 内置虚拟滚动，数据量较大时自动开启
+  - 依赖rxjs、styled-components
+- https://github.com/reduxjs/redux
+  - /54.4kStar/MIT/202009/ts
+  - Predictable state container for JavaScript apps
+- https://github.com/reduxjs/redux-toolkit
+  - /4.2kStar/MIT/202009/ts
+  - The official, opinionated toolset for efficient Redux development
+  - 依赖immer实现createReducer，依赖reselect，redux-thunk，不依赖react
 - https://github.com/flatpickr/flatpickr
   - /13kStar/MIT/202009
-  - powerful javascript datetimepicker with no dependencies
-- https://github.com/codex-team/editor.js
-  - /13.3kStar/Apache2.0/202009/ts/vanilla
-  - A block-styled editor with clean JSON output
-- https://github.com/SoftwareBrothers/admin-bro
+  - powerful js datetimepicker with no dependencies
   - /2.2kStar/MIT/202009
   - admin interface which can be plugged into your application
-- https://github.com/nhn/tui.grid
-  - /1.6kStar/MIT/202009/ts
-  - Plain JavaScript component implemented by NHN
-  - 无依赖，基于div实现
 - https://github.com/nhn/tui.chart
   - /4.6kStar/MIT/202004/js
   - Beautiful Statistical Data Visualization library
-  - 依赖raphael
-  - 基于svg实现
+  - 依赖raphael，基于svg实现
 - https://github.com/nhn/tui.editor
   - /11.8kStar/MIT/202009/js
   - Plain JavaScript component
-  - provides Markdown mode and WYSIWYG mode, GFM Standard + Chart & UML Extensible.
+  - provides Markdown/WYSIWYG mode, GFM Standard + Chart & UML Extensible.
   - 依赖codemirror5
+- https://github.com/SoftwareBrothers/admin-bro
+  - /2.2kStar/MIT/202009
+  - admin interface which can be plugged into your application.
+  - 依赖@admin-bro/design-system、axios、styled-components/system、react-redux
 
 ## popular
 
@@ -172,6 +182,7 @@ modified: '2020-09-28T02:11:24.720Z'
   - /3Star/Apache2.0/201911
   - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
   - 支持react、vue、angular，基于胶水层实现
+  - 依赖d3、carbon-components
 
 - https://github.com/projectstorm/react-diagrams
   - /5kStar/MIT/202009
@@ -210,6 +221,10 @@ modified: '2020-09-28T02:11:24.720Z'
   - 架构：sanddance, s-react/vue, s-explorer
   - 依赖vega、deck.gl
   - 依赖echarts4
+- https://github.com/vega/voyager
+  - /1kStar/NALic/201809/inactive
+  - Voyager 2 is a data exploration tool that blends manual and automated chart specification.
+  - 基于vega
 - https://github.com/metatron-app/metatron-discovery
   - /259Star/Apache2.0/202009/java/ts
   - Metatron Discovery is a big data analysis platform supports overall process from data cleansing to visualization
@@ -242,6 +257,7 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/chakra-ui/chakra-ui
   - /10.7kStar/MIT/202009
   - Modular & Accessible UI Components for your React Applications
+  - 依赖styled-components、styled-system
 - https://github.com/microsoft/fluentui
   - /9.5kStar/MIT/202009
   - A set of React components for building Microsoft web experiences.
@@ -256,7 +272,7 @@ modified: '2020-09-28T02:11:24.720Z'
 - https://github.com/Shopify/polaris-react
   - Shopify’s product component library
 - https://github.com/elastic/eui
-  - Elastic UI Framework
+  - a collection of React UI components for quickly building user interfaces at Elastic
 
 - https://github.com/plotly/dash-table
   - /352Star/MIT/202009
@@ -386,9 +402,6 @@ modified: '2020-09-28T02:11:24.720Z'
   - /1.1kStar/MIT/202009
   - A Kanban-inspired app for keeping track of things that need to get done
   - 依赖php7
-- https://github.com/vega/voyager
-  - /1kStar/NALic/201809/inactive
-  - Voyager 2 is a data exploration tool that blends manual and automated chart specification. 
 
 ## ts-repos
 

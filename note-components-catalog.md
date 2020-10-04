@@ -41,10 +41,23 @@ modified: '2020-10-02T11:42:00.886Z'
 
 ## input
 
-- Input
+- ### Input
   - 公式输入
   - as form control
-- Dropdown/Select
+
+
+- ### Form
+- 难点
+  - 布局
+  - 双向绑定
+  - 错误收集 & 检验显示
+  - 编辑流畅
+  - 联动
+- 参考
+  - [alibaba-formily](https://github.com/alibaba/formily)
+
+
+- ### Dropdown/Select
   - 单选
   - 手动关闭
   - 超过10个项目可显示下拉列表滚动条，超过20个项目可显示弹出菜单选择器，超过100个提示不推荐使用
@@ -72,7 +85,7 @@ modified: '2020-10-02T11:42:00.886Z'
 
 ## feedback
 
-- Modal/Dialog/弹出窗口对话框
+- ### Modal/Dialog/弹出窗口对话框
 
 -　一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
 
@@ -102,11 +115,18 @@ modified: '2020-10-02T11:42:00.886Z'
   - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
     - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件实例的setState
   - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
-- Popover/Tooltip/弹出气泡
+
+- ### Popover/Tooltip/弹出气泡
   - 要点
     - 触发方式：点击、鼠标移入、获取焦点的文本框
     - 气泡位置：中间或上下左右，箭头或三角形
     - 弹层显示控制：第几层、覆盖情况、弹层控制、元素操作
+  - [popperjs: Why not use pure CSS](https://github.com/popperjs/popper-core)
+    - CSS tooltips will not be prevented from overflowing clipping boundaries, such as the viewport. The tooltip gets partially cut off or overflows if it's near the edge since there is no dynamic positioning logic.
+    - CSS tooltips will not flip to a different placement to fit better in view if necessary.
+    - Popovers containing interactive HTML are difficult or not possible to create without UX issues using pure CSS. Popperjs positions any HTML element – no pseudo-elements are used.
+    - CSS tooltips cannot follow the mouse cursor or be used as a context menu.
+    - CSS tooltips cannot be easily extended to fit any arbitrary use case you may need to adjust for. Popper is built with extensibility in mind.
 - FloatingActionButton
 - Toast
 - Loading
@@ -114,6 +134,8 @@ modified: '2020-10-02T11:42:00.886Z'
 - Skeleton
   - bg-image-color
 - BulletComment/弹幕
+
+## incubator
 
 ## ui-components-catalog
 

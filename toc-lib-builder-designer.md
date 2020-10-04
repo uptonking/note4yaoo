@@ -123,6 +123,12 @@ modified: '2020-09-09T06:27:15.100Z'
 - https://github.com/sparrow-js/sparrow
   - /vue
   - 场景化低代码（LowCode）搭建工作台
+- https://github.com/node-red/node-red
+  - Low-code programming for event-driven applications
+- https://github.com/icodebetter/icodebetter
+  - An opinionated low code platform that helps you code business applications
+- https://github.com/appsmithorg/appsmith
+  - A low code way to build dashboards, workflows, forms, and any internal tool.
 
 ## misc
 

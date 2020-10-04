@@ -56,11 +56,13 @@ modified: '2020-07-14T10:24:54.328Z'
   - 按标签
   - 按文件夹
 - 窗口模块
-- 其他需求
 - product形式
   - electron-app
   - vscode-extension
   - mobile-app
+
+- 其他需求
+  - 打开一个文档后，标题栏中标题应显示为文档第一行的标题，而不是/path/to/README.md
 
 ## notable
 

@@ -9,14 +9,15 @@ modified: '2020-09-22T13:18:32.954Z'
 
 ## cpp
 
+- https://github.com/open-source-parsers/jsoncpp
+  - /14.9kStar/MIT/202009
+  - allows manipulating JSON values, including serialization and deserialization to and from strings.
 - https://github.com/Tencent/rapidjson
   - /9.8kStar/MIT/202008
   - JSON parser/generator for C++ with both SAX/DOM style API
   - ref
     - https://github.com/miloyip/json-tutorial
     - https://github.com/miloyip/nativejson-benchmark
-    - https://github.com/open-source-parsers/jsoncpp/
-      - allows manipulating JSON values, including serialization and deserialization to and from strings.
 - https://github.com/yandex/ClickHouse
   - /12.3kStar/Apache2.0/202009
   - column-oriented database management system that allows generating analytical data reports in real time.
@@ -125,6 +126,12 @@ modified: '2020-09-22T13:18:32.954Z'
   - /5.2kStar/GPLv2/202009
   - A Simplenote React client packaged in Electron.
   - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
+
 - https://github.com/NaoTu/DesktopNaotu
   - /2.7kStar/GPLv2/201809
   - 桌面版脑图 (百度脑图离线版，思维导图) 跨平台支持 Windows/Linux/Mac
+
+- https://github.com/man-group/dtale
+  - /1.4kStar/LGPL/202009/python/js
+  - Visualizer for pandas data structures
+  - 依赖dash、flask、pandas、scikit-learn、scipy、bootstrap4、chart.js、immutable、jquery、react-redux、styled-components

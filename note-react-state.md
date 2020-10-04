@@ -623,3 +623,4 @@ const Counter = () => {
   - [Unstated vs Unstated-Next](https://github.com/jamiebuilds/unstated-next/issues/20)
   - [细聊Concent&Recoil , 探索react数据流的新开发模式](https://zhuanlan.zhihu.com/p/148280552)
   - [深入理解 react/redux 数据流并基于其优化前端性能](https://github.com/shaozj/blog/issues/36)
+  - [`useSubscription` and `useMutableSource` tearing and deopt behavior.](https://gist.github.com/bvaughn/054b82781bec875345bd85a5b1344698)

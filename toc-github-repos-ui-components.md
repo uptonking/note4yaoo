@@ -21,7 +21,7 @@ modified: '2020-09-28T17:05:48.422Z'
     - carbon-components-react: components implemented using React.
       - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
     - 只共用样式，组件分开实现，而不是简单wrapper，因为不同框架解决状态更新、数据同步、事件等的方案不同
-    - 选用已有框架的重要原因是借用成熟的状态、事件、路由等解决方案
+    - 选用已有框架的重要原因是借鉴处理状态、事件、路由等问题较成熟的解决方案
     - 最新的web components和stencil再等等看，思路是framework as compiler
       - web components本身使用浏览器标准的runtime，特别适合替代vue/react的runtime
       - web components难以替代其他框架，因为这些框架的目标不止浏览器环境，还支持native、ssr
@@ -34,8 +34,9 @@ modified: '2020-09-28T17:05:48.422Z'
       - stencil的dom模版使用jsx，svelte使用的是自定义指令
       - svelte暂不支持ts
       - stencil的css基于shadow dom，且写在单读文件，svelte的css写在style块
+    - 参考现有ui解决方案：dom密集操作、状态数据频繁更新
+    - 流行typescript库很多都用的class，所以是否用class可参考现有成熟方案的选择
   - ref
-    - 参考现有ui解决方案：dom相关事件操作、状态密集更新
     - https://github.com/jaywcjlove/awesome-uikit
     - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
