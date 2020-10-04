@@ -135,3 +135,11 @@ modified: '2020-09-22T13:18:32.954Z'
   - /1.4kStar/LGPL/202009/python/js
   - Visualizer for pandas data structures
   - 依赖dash、flask、pandas、scikit-learn、scipy、bootstrap4、chart.js、immutable、jquery、react-redux、styled-components
+
+- https://github.com/tomazy/xcell
+  - /253Star/NALic/201807
+  - a tiny, open source (MIT) library for building reactive, spreadsheet-like calculations in JavaScript
+
+- https://github.com/IQSS/dataverse
+  - /538Star/Apache2.0/202009
+  - open source platform for sharing, finding, citing, and preserving research data 

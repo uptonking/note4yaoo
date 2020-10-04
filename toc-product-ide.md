@@ -17,6 +17,8 @@ modified: '2020-08-18T09:20:52.273Z'
 - eclipse
 - geany
 - jedit
+- qt-creator
+  - https://github.com/mervick/Qt-Creator-Darcula
 
 ## ide-cloud
 
