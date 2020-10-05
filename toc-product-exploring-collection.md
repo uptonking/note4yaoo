@@ -2,7 +2,7 @@
 title: toc-product-exploring-collection
 tags: [collection, product, toc]
 created: '2020-05-03T08:34:20.399Z'
-modified: '2020-07-14T11:08:53.356Z'
+modified: '2020-10-05T06:19:49.621Z'
 ---
 
 # toc-product-exploring-collection
@@ -10,11 +10,6 @@ modified: '2020-07-14T11:08:53.356Z'
 ## collection
 
 ## explore
-
-- utterances  /MIT/2400Star/202005
-  - https://github.com/utterance/utterances
-  - https://utteranc.es/
-  - A lightweight comments widget built on GitHub issues 
 
 - TagSpaces
   - no backend, no login, file manager, organizer and browser
@@ -33,8 +28,3 @@ modified: '2020-07-14T11:08:53.356Z'
   - https://tamlok.github.io/vnote/en_us/
   - A note-taking application that knows programmers and Markdown better. 
   - based on Qt5, turndown, markdown-it
-
-## prototyping
-
-- react-proto
-- ReacType

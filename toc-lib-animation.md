@@ -2,12 +2,12 @@
 title: toc-lib-animation
 tags: [animation, lib, toc]
 created: '2020-08-02T07:25:52.024Z'
-modified: '2020-08-02T07:27:59.467Z'
+modified: '2020-10-05T06:22:02.107Z'
 ---
 
 # toc-lib-animation
 
-## animation-usecase-flip-list
+## animation-with-flip
 
 - flipping /MIT/1.1kStar/202006
   - https://github.com/davidkpiano/flipping

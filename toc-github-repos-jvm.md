@@ -9,6 +9,8 @@ modified: '2020-09-28T09:00:03.038Z'
 
 ## apache
 
+- https://github.com/apache/commons-collections
+
 - https://github.com/apache/druid
   - /10.1kStar/Apache2.0/202009
   - a high performance real-time analytics database.
@@ -34,6 +36,13 @@ modified: '2020-09-28T09:00:03.038Z'
 - https://github.com/lionsoul2014/ip2region
   - /8.3kStar/Apache2/202009
   - a offline IP location library with accuracy rate of 99.9% and 0.0x millseconds searching performance
+
+## starred
+
+- https://github.com/code4craft/webmagic
+  - /9.3kStar/Apache2/202009
+  - A scalable crawler framework
+  - lifecycle of crawler: downloading, url management, content extraction and persistent
 
 ## popular
 

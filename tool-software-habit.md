@@ -9,7 +9,7 @@ modified: '2020-08-09T11:21:58.233Z'
 
 ## 软件选择参考  
 
-- 长期更新，维护活跃
+- 优先选择：长期更新，维护活跃，个人免费
 - 大公司支持
   - vscode和atom中选择vscode，因为github被microsoft收购了
   - 账户信息、ide配置、插件扩展的同步，一般只有大公司愿意免费提供
@@ -86,6 +86,7 @@ modified: '2020-08-09T11:21:58.233Z'
   - browser
   - email
   - im
+    - [基于rime配置的类搜狗输入法](https://github.com/fkxxyz/rime-cloverpinyin)
   - screen time    
   - contacts
   - camera
@@ -169,3 +170,9 @@ modified: '2020-08-09T11:21:58.233Z'
 ### FydeOS
 
 - 原名Flint OS，基于驱动Chrome OS及谷歌浏览器的开源项目二次开发，继承Chrome OS所有特性，适配更多硬件品类，为中国用户定制的本土化修改
+
+## more
+
+- https://github.com/coolshou/dukto
+  - /cpp
+  - Dukto LAN file transfer tool

@@ -2,7 +2,7 @@
 title: toc-product-js-playgrounds-online
 tags: [ide, online, product]
 created: '2020-08-09T11:22:45.003Z'
-modified: '2020-08-09T12:50:04.855Z'
+modified: '2020-10-05T06:16:54.934Z'
 ---
 
 # toc-product-js-playgrounds-online
@@ -70,6 +70,6 @@ modified: '2020-08-09T12:50:04.855Z'
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
 
-## awesome
+## guide
 
 - [7 JavaScript Playgrounds to Use in 2019 ― Scotch.io](https://scotch.io/tutorials/7-javascript-playgrounds-to-use-in-2019)

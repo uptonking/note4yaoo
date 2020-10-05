@@ -21,6 +21,10 @@ modified: '2020-07-14T11:03:41.956Z'
   - https://github.com/shzlw/poli
   - https://shzlw.github.io/poli
   - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.
+- https://github.com/activeviam/autopivot
+  - /19Star/Apache2/202009
+  - https://www.activeviam.com/
+  - AutoPivot is a standalone application for online analysis (OLAP) of CSV files.
 
 ## stack
 

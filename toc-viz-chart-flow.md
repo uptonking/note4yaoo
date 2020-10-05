@@ -70,6 +70,9 @@ modified: '2020-09-25T03:50:23.437Z'
     - not finished
   - https://github.com/datadotworld/chart-builder
     - interactive experience to create a vega-lite visualization
+  - https://github.com/C-JSN/D3-ID3
+    - /788Star/MIT/201709
+    - an IDE dedicated for development in D3.js
 
 ## chart
 
@@ -222,6 +225,7 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/MrBlenny/react-flow-chart
   - https://mrblenny.github.io/react-flow-chart/index.html
   - A flexible, stateless, declarative flow chart library for react
+  - 依赖react-draggable、react-zoom-pan-pinch
 - jsplumb /MIT/5.8kStar/202007
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
@@ -235,15 +239,18 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://github.com/alibaba/GGEditor
   - https://ggeditor.com/
   - A visual graph editor based on G6 and React
-- wfd /519Star/MIT/202006
+- wfd-g6 /519Star/MIT/202006
   - https://github.com/guozhaolong/wfd
   - https://guozhaolong.github.io/wfd/
-  - flowable workflow designer base on @antv/g6
+  - flowable workflow designer base on @antv/g6, react
 - more
   - https://github.com/aislelabs/react-flowchart-editor
     - http://data.aislelabs.com/demo/index.html
     - A windowed flow chart editor in React
     - 只依赖react
+- XChart /1kStar/Apache2/202009/java
+  - https://github.com/knowm/XChart
+  - XChart is a Java library for plotting data
 
 ## misc
 

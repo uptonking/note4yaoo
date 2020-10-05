@@ -38,3 +38,51 @@ modified: '2020-09-22T13:18:53.037Z'
 
 - https://github.com/victorqribeiro/isocity
   - An isometric city builder in JavaScript
+
+## geo-viz
+
+- https://github.com/darkskyapp/delaunay-fast
+  - Fast Delaunay Triangulation in JavaScript.
+- https://github.com/morganherlocker/hail-data
+  - hail analysis data generated from NOAA, using Turf and node.js.
+- https://github.com/gorhill/Javascript-Voronoi
+  - A Javascript implementation of Fortune's algorithm to compute Voronoi cells
+  - http://www.raymondhill.net/voronoi/rhill-voronoi.html
+- https://github.com/zetter/voronoi-maps
+  - Voronoi maps using D3 and Leaflet
+  - http://chriszetter.com/blog/2014/06/15/building-a-voronoi-map-with-d3-and-leaflet/
+
+## metro-subway
+
+- https://github.com/johnwalley/d3-tube-map
+  - Draw tube maps in the style of the London Underground using d3
+  - https://observablehq.com/@johnwalley/d3-tube-map
+- https://github.com/sergioedo/schematic-metro
+  - d3 schematic view of bcn metro based on johnwalley/d3-tube-map
+- https://github.com/mbtaviz/mbtaviz.github.io/
+  - Visualizing MBTA Data is a web based interactive visualization that provides a glimpse into the performance and behavior of Boston's subway system.
+  - http://mbtaviz.github.io/
+
+## poster-logo
+
+- https://github.com/faviator/faviator
+  - A simple easy favicon generator.
+  - https://www.faviator.xyz/
+- https://github.com/JeFcorp/LogoMakr
+  - A desktop version of online logo maker
+  - https://github.com/naimjeem/LogoMaker
+- https://github.com/TeamStuQ/Poster
+  - 使用 canvas 的海报生成器
+  - http://www.geekbang.org/poster
+- https://github.com/qbhy/poster-generater
+  - 海报生成器，只需要一个简单的json配置即可生成你需要的海报
+  - 基于java
+- https://github.com/fur-labo/fur
+  - Node.js module to create a text based logo quickly.
+  - https://github.com/fur-labo/fur-examples
+    - Examples for fur
+- https://github.com/egoist/logo-maker
+  - 像素风格的logo
+- https://github.com/kasuganosoras/logo-maker
+  - 轻松制作你的YouTube风格的 Logo
+  - https://logomaker.akkariin.com/

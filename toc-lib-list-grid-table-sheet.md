@@ -145,6 +145,10 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://github.com/future-architect/cheetah-grid
   - https://future-architect.github.io/cheetah-grid/
   - The fastest open-source data table for web.
+- use-table-tools /MIT/18Star/202006
+  - https://github.com/davidalekna/use-table-tools
+  - https://github.com/davidalekna/react-data-browser
+  - Hooks for building kickass react table components
 - frappe-datatable /MIT/467Star/202004
   - https://github.com/frappe/datatable
   - https://frappe.io/datatable
@@ -192,10 +196,6 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://www.syncfusion.com/javascript-ui-controls
   - Feature-rich grid control with built-in support for data binding, filtering
   - gross revenue of less than one million
-- use-table-tools /MIT/18Star/202006
-  - https://github.com/davidalekna/use-table-tools
-  - https://github.com/davidalekna/react-data-browser
-  - Hooks for building kickass react table components
 - Simple-DataTables /LGPLv3/
   - https://github.com/fiduswriter/Simple-DataTables
   - https://fiduswriter.github.io/Simple-DataTables/

@@ -1,11 +1,11 @@
 ---
-title: toc-github-repos-ts
+title: toc-github-repos-js-ts
 tags: [github, toc, typescript]
 created: '2020-09-28T02:11:01.912Z'
-modified: '2020-09-28T02:11:24.720Z'
+modified: '2020-10-05T06:10:15.909Z'
 ---
 
-# toc-github-repos-ts
+# toc-github-repos-js-ts
 
 ## focus
 

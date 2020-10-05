@@ -1,11 +1,11 @@
 ---
-title: app-software-xp
-tags: [app, pm, software, xp]
+title: tool-app-software-xp
+tags: [app, pm, software, tool, xp]
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-07-14T10:20:33.275Z'
+modified: '2020-10-05T07:52:58.416Z'
 ---
 
-# app-software-xp
+# tool-app-software-xp
 
 ## ideas-app
 

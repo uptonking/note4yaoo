@@ -2,7 +2,7 @@
 title: toc-product-static-site-generator
 tags: [product, static-site-generator]
 created: '2020-08-09T11:20:56.480Z'
-modified: '2020-08-09T11:21:26.716Z'
+modified: '2020-10-05T06:17:06.533Z'
 ---
 
 # toc-product-static-site-generator
@@ -17,4 +17,4 @@ modified: '2020-08-09T11:21:26.716Z'
 - bisheng
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
 
-## awesome
+## guide

@@ -25,6 +25,21 @@ modified: '2020-08-02T07:25:15.320Z'
   - https://github.com/cube-js/cube.js
   - https://cube.dev/docs/
   -  modular framework to build analytical web applications
+- https://github.com/march08/dashboard-ui-kit
+  - /28.2kStar/MIT/202005/ts
+  - React UI components for rapid development.
+  - https://developer.dashboard-ui.com/
+- https://github.com/DesignRevision/shards-react
+  - /562Star/MIT/201902
+  - modern React UI kit
+
+based on Shards.
+
+  - https://github.com/designrevision/shards-ui
+- https://github.com/heysafronov/square-react-dashboard
+  - /59Star/MIT/2020009
+  - React Dashboard Template built with TypeScript
+  - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components
 
 ## misc
 

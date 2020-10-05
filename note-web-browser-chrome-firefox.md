@@ -18,4 +18,12 @@ modified: '2020-07-14T11:56:38.652Z'
 - chrome各版本特性
   - https://www.chromestatus.com/features
 
-## firefox-dev
+## browser-impl
+
+- https://github.com/lobobrowser/LoboBrowser
+  - /44Star/MIT/202004
+  - Lobo is an extensible all-Java web browser and RIA platform. 
+  - It supports HTML 5, Javascript (AJAX) and CSS 3 plus direct JavaFX and Java (Swing/AWT) rendering. 
+  - Cobra is the web browser's renderer API; also a Javascript-aware HTML parser.
+- https://github.com/lobobrowser/Cobra
+  - Cobra is a rendering engine, origionally designed for LoboBrowser, the gui of LoboBrowser has been separated from it so Cobra can easily be improved by forks of LoboBrowser.

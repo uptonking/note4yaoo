@@ -14,6 +14,11 @@ modified: '2020-06-22T09:24:05.317Z'
 
 ## geomapping
 
+- green-gis /10Star/MIT/202009/ts
+  - https://github.com/shengzheng1981/green-gis-js
+  - https://green.ispongecity.com/
+  - a lite GIS JS API based on Canvas API
+  - Only Support Canvas! NO SVG!
 - leaflet /BSD/29kStar/202009
   - https://github.com/leaflet/leaflet
   - https://leafletjs.com/
@@ -33,6 +38,9 @@ modified: '2020-06-22T09:24:05.317Z'
   - feature-packed library for creating interactive maps on the web
 - harp.gl /Apache2.0/664Star/202009
   - https://github.com/heremaps/harp.gl
+  - https://harp.gl/
+  -  open-source 3D map rendering engine written in TypeScript.
+
 ## geoprocessing
 
 - turf /MIT/5.5kStar/202007
