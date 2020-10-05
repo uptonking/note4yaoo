@@ -41,6 +41,36 @@ modified: '2020-10-05T13:16:31.674Z'
   - A tiny Floating Action Button for React
 - https://github.com/fkhadra/react-toastify
   - add notifications to your app with ease
+- https://github.com/STRML/react-grid-layout
+  - 12kStar/MIT/202009
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - A draggable and resizable grid layout with responsive breakpoints, for React.
+- https://github.com/frontend-collective/react-sortable-tree
+  - /3.7kStar/MIT/202008
+  - https://frontend-collective.github.io/react-sortable-tree/
+  - Drag-and-drop sortable component for nested data and hierarchies
+  - 依赖react-dnd, react-virtualized
+- https://github.com/bokuweb/re-resizable
+  - /1.1kStar/MIT/202009
+  - https://bokuweb.github.io/re-resizable/
+  - A resizable component for React
+  - 只依赖fast-memoize
+- https://github.com/bokuweb/react-rnd
+  - /1.8kStar/MIT/202009
+  - A resizable and draggable component for React.
+  - 依赖react-draggable、re-resizable
+- https://github.com/react-dnd/react-dnd
+  - /14.5kStar/MIT/202009 
+  - Drag and Drop for React
+- https://github.com/STRML/react-draggable
+  - /6kStar/MIT/202008
+  - http://strml.github.io/react-draggable/example/
+  - React draggable component
+- https://github.com/STRML/react-resizable
+  - /1.2kStar/MIT/202009
+  - https://strml.github.io/react-resizable/examples/1.html
+  - A simple React component that is resizable with a handle.
+  - 依赖react-draggable
 
 ## datetime
 
@@ -52,6 +82,13 @@ modified: '2020-10-05T13:16:31.674Z'
   - Ultimate calendar for your React app.
 - https://github.com/gpbl/react-day-picker
   - Lightweight date picker component for React
+
+## react-rewritten
+
+- https://github.com/RubyLouvre/anu
+  - /3.1kStar/Apache2/202002
+  - https://rubylouvre.github.io/anu/
+  - React16-compat library with hooks
 
 ## pieces
 

@@ -7,6 +7,12 @@ modified: '2020-10-05T06:27:36.728Z'
 
 # toc-github-repos-starred
 
+## starred
+
+- https://github.com/eleme/duang
+  - https://eleme.github.io/duang/docs/intro/
+  - 一种基于配置自动生成 CMS 的工具
+
 ## office
 
 - https://github.com/asciidocfx/asciidocfx

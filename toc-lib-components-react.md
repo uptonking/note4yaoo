@@ -9,6 +9,11 @@ modified: '2020-09-10T04:41:13.304Z'
 
 ## popular-components
 
+- zent  /MIT/1.9kStar/202007
+  - https://github.com/youzan/zent
+  - https://youzan.github.io/zent
+  - a collection of essential UI components and lots of useful domain specific components.
+  - https://github.com/youzan/vant
 - Ant Design  /MIT/60.7kStar/202006/ts
   - https://github.com/ant-design/ant-design
   - https://ant.design/components/button/
@@ -24,11 +29,15 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/mui-org/material-ui
   - https://material-ui.com/
   - React components that implement Google's Material Design
-- zent  /MIT/1.9kStar/202007
-  - https://github.com/youzan/zent
-  - https://youzan.github.io/zent
-  - a collection of essential UI components and lots of useful domain specific components.
-  - https://github.com/youzan/vant
+- mineral-ui  /517Star/Apache2/202008
+  - https://github.com/mineral-ui/mineral-ui
+  - https://mineral-ui.netlify.com/
+  - A design system and React component library for the web
+- snake-design  /32Star/MIT/201909
+  - https://github.com/ming-cult/snake-design
+  - https://ming-cult.github.io/snake-design
+  - 基于 React hooks 开发的PC端组件库
+  - 除了特殊说明都为受控组件，基于TDD开发, 90%以上的测试覆盖率
 - ring-ui  /Apache2.0/2kStar/201908
   - https://github.com/JetBrains/ring-ui
   - https://jetbrains.github.io/ring-ui/

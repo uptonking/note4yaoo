@@ -126,6 +126,9 @@ modified: '2020-10-05T06:22:02.107Z'
   - http://web-animations.github.io/
   - JavaScript implementation of the Web Animations API
   - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+- animations.js /3Star/MIT/202006
+  - https://github.com/robertoentringer/animations.js
+  - Web Animations API based in Animate.css
 
 ## css animation
 

@@ -27,7 +27,7 @@ modified: '2020-10-05T08:14:38.689Z'
 - webpack
   - https://github.com/JinJieTan/mini-webpack
   - https://github.com/dykily/simple_webpack
-  - https://github.com/gracehui88/HMR.git
+  - https://github.com/gracehui88/HMR
   - https://github.com/pmmmwh/react-refresh-webpack-plugin
 - https://github.com/jgraph/drawio
   - online diagramming tool

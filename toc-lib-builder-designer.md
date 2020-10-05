@@ -132,6 +132,29 @@ modified: '2020-10-05T06:20:15.291Z'
 - https://github.com/appsmithorg/appsmith
   - A low code way to build dashboards, workflows, forms, and any internal tool.
 
+## h5-editor
+
+- https://github.com/lzuntalented/lz-h5-edit
+  - /289Star/NALic/202009
+  - http://show.lzuntalented.cn/
+  - react版h5微场景编辑器，一款类似【易企秀】【兔展】的H5微场景编辑器
+- https://github.com/salgum1114/react-design-editor
+  - /558Star/MIT/202009
+  - https://salgum1114.github.io/react-design-editor/
+  - direct manipulation of editable design tools like Powerpoint
+  - primarily uses the Ant Design, Fabric.js and React
+- https://github.com/react-designer/react-designer
+  - /1.6kStar/paid/201906
+  - http://react-designer.github.io/react-designer/
+  - Editable vector graphics in your react apps
+- https://github.com/fritz-c/react-shape-editor
+  - /49Star/MIT/202002
+  - Simple shape editor component with React and SVG
+- https://github.com/react-ui-builder/wcd-ant-design
+  - /4Star/MIT/202006
+  - Since React UI Builder is based on a visual Web application builder - Webcodesk
+  - we use Webcodesk to create the component library locally.
+
 ## misc
 
 - https://github.com/chriskitson/react-drag-drop-layout-builder

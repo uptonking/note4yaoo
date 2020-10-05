@@ -329,9 +329,6 @@ modified: '2020-10-05T06:10:15.909Z'
 - https://github.com/elastic/kibana
   - /14.9kStar/Apache2.0/202009/ts
   - a browser-based analytics and search dashboard for Elasticsearch.
-- https://github.com/react-dnd/react-dnd
-  - /14.5kStar/MIT/202009 
-  - Drag and Drop for React
 - https://github.com/vercel/swr
   - /13.2kStar/MIT/202009 
   - React Hooks library for remote data fetching

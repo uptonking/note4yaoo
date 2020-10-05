@@ -10,6 +10,7 @@ modified: '2020-09-28T09:00:03.038Z'
 ## apache
 
 - https://github.com/apache/commons-collections
+- https://github.com/apache/tomcat
 
 - https://github.com/apache/druid
   - /10.1kStar/Apache2.0/202009
@@ -24,6 +25,8 @@ modified: '2020-09-28T09:00:03.038Z'
   - distributed pub-sub messaging system
 - https://github.com/apache/shardingsphere-elasticjob
   - Distributed scheduled job framework
+
+- https://github.com/apache/poi 
 
 ## java-app
 
@@ -43,7 +46,39 @@ modified: '2020-09-28T09:00:03.038Z'
   - /9.3kStar/Apache2/202009
   - A scalable crawler framework
   - lifecycle of crawler: downloading, url management, content extraction and persistent
-
+- https://github.com/jtablesaw/tablesaw
+  - /2.3kStar/Apache2/202008
+  - Tablesaw includes a dataframe and a visualization library, 
+  - as well as utilities for loading, transforming, filtering, and summarizing data.
+- https://github.com/xenv/S-mall-servlet
+  - 练手JavaWEB项目，本版本为 Servlet 版（实现了SSM版85%的功能）
+  - 基于原生JDBC数据库连接，通过手动实现Filter进行URL和Servlet之间的映射
+- https://github.com/xenv/S-mall-ssm
+  - 练手 JavaWEB 项目，本版本为SSM版。
+  - 本项目实现了通用 Mapper，免写 SQL，全自动处理关联查询。通过合理配置 MyBatis Generator 和自定义插件，灵活隔离手写代码和自动生成代码。
+  - 实现了 BaseService 类对 Service 层进行抽象。
+  - 通过拦截器实现了方法级粒度的鉴权，通过AOP实现了参数校验。
+- https://github.com/xenv/S-mall-ssh
+  - 练手JavaWEB项目，本版本为SSH版（实现了SSM版95%的功能）
+  - 实现了BaseService对Service层的大部分方法的抽象，通过拦截器实现了方法级粒度的鉴权
+- https://github.com/jOOQ/jOOL
+  - /1.7kStar/Apache2/202006
+  - http://www.jooq.org/products
+  - providing some useful extensions to Java 8 lambdas
+  - adds tuple support, function support, and a lot of additional functionality around sequential Streams.
+- https://github.com/casbin/jcasbin
+  - /1.2kStar/Apache2/202009
+  - An authorization library that supports access control models like ACL, RBAC, ABAC in Java
+- https://github.com/auth0/java-jwt
+  - /3.8kStar/MIT/202009
+  - A Java implementation of JSON Web Token (JWT) - RFC 7519
+- https://github.com/FasterXML/jackson-databind
+  - /2.7kStar/Apache2/202009
+  - General data-binding package for Jackson (2.x)
+  - works on streaming API (core) implementation(s)
+- https://github.com/vsch/flexmark-java
+  - /1.4kStar/BSD/202006
+  - CommonMark/Markdown Java parser with source level AST.
 ## popular
 
 - https://github.com/elastic/elasticsearch
