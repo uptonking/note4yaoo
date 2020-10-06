@@ -24,7 +24,7 @@ modified: '2020-08-03T13:29:04.709Z'
   - Unreal Engine 4
     - 开源但只能学习不能再次分发
 - common
-  - https://github.com/libgdx/libgdx  /Apache 2
+  - https://github.com/libgdx/libgdx  /Apache2
     - 基于gwt，放弃
   - https://github.com/cocos2d/cocos2d-x  /MIT
     - cocos2d-js不如-x好用

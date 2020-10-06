@@ -2,11 +2,11 @@
 
 # opinionated
 veil-*
+yaoo-*
+wechat-*
 play-*
 pm-*
 work-*
-yaoo-*
-wechat-*
 
 # auto-generated
 *.cson

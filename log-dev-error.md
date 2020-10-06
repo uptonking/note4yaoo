@@ -10,6 +10,8 @@ modified: '2020-08-04T12:24:45.908Z'
 
 ## logging 
 
+ 
+
 - jest测试时： Received: serializes to the same string
   - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
   - 当对象属性值有函数类型时，序列化后再还原，难以比较

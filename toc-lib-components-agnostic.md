@@ -29,6 +29,11 @@ modified: '2020-10-05T06:23:07.417Z'
     - https://github.com/material-components/material-components-android
       - /11.2kStar/Apache2.0/2020209/java
       - Modular and customizable Material Design UI components for Android
+- https://github.com/carbon-design-system/carbon
+  - /3.5kStar/Apache2/202009/js
+  - carbon-components: Component styles and Vanilla JavaScript
+  - carbon-components-react: React components
+  - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts
   - responsive front-end framework with a focus on flexibility in Sass and TS
@@ -184,4 +189,3 @@ modified: '2020-10-05T06:23:07.417Z'
 - https://github.com/ianstormtaylor/react-values
   - components for handling state with render props.
 - https://github.com/mohammedabualsoud/react-headless-table
-

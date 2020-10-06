@@ -7,219 +7,7 @@ modified: '2020-09-25T03:50:23.437Z'
 
 # toc-viz-chart-flow
 
-## chart-builder
-
-- plotly-react-chart-editor /325Star/MIT/202009
-  - https://github.com/plotly/react-chart-editor
-  - https://plotly.github.io/react-chart-editor/
-  - React component for creating & editing D3 charts
-  - 图表的具体图形编辑粒度极细、样例丰富
-  - 依赖react、draft-js、react-resizable-rotatable-draggable/dropzone/rangeslider、styled-components
-  - 商业版 https://plotly.com/chart-studio/
-- amcharts-editor4 /4Star/Free4dev/202009
-  - https://github.com/amcharts/editor4
-  - https://editor4.amcharts.com/am4editor/home
-  - https://www.amcharts.com/docs/editor4/getting-started/basics/
-  - amCharts Chart Editor based on amCharts 4
-  - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
-  - 依赖react、react-router、codemirror、blueprint组件、mobx
-- AnyChart-chart-editor /3Star/Apache2.0/201906
-  - https://github.com/AnyChart/chart-editor
-  - https://anychart.github.io/chart-editor/
-  - an Extension of AnyChart that allows to configure charts via UI
-  - 依赖anychart8，文件模块使用的是google-closure-builder的模块系统
-- highcharts-editor /184Star/MIT/202001
-  - https://github.com/highcharts/highcharts-editor
-  - http://editor.highcharts.com/full.html
-  - embeddable chart editor for Highcharts
-  - 依赖express
-- Chartbuilder /MIT/2.1kStar/201706
-  - https://github.com/Quartz/Chartbuilder
-  - http://quartz.github.io/Chartbuilder
-  - a front-end charting application that facilitates easy creation of simple beautiful charts
-- tui.editor /11.8kStar/MIT/202009
-  - https://github.com/nhn/tui.editor
-  - http://ui.toast.com/tui-editor
-  - Markdown WYSIWYG Editor. GFM Standard + Chart & UML Extensible.
-  - 通过代码块中的图表配置信息生成图表
-- data-forge-plot /22Star/MIT/201910
-  - https://github.com/data-forge/data-forge-plot
-  - plotting API designed for use with Data-Forge
-- more
-  - https://github.com/KrSiddharth/React-Chart-Builder
-    - Drag-Drop-Resize Beautiful Charts 
-    - 基于redux、react-chartjs-2、react-grid-layout
-  - https://github.com/gezoo/sugar-chart-editor
-    - 大屏可视化编辑器
-  - https://github.com/meterXu/xsLab
-    - /7Star/MIT/202007
-    - 可视化图表编辑器，包含绘制图表、绑定数据源、在线预览、导出图表、自定义开发等功能
-    - 基于echarts、vue、iview、vue-draw-xs
-  - https://github.com/axibase/charts-editor
-    - Monaco editor for Axibase Charts: validation, syntax highlighting, docs, auto-complete
-  - https://github.com/open-chord-charts/chart-editor
-    - Chart viewer and editor (written in Elm)
-  - https://github.com/sjpsega/beechart-editor
-    - 基于backbone、bootstrap
-  - https://github.com/wellcometrust/chart-data-editor
-    - http://chart-data-editor.wellcome-s3.org/
-    - It allows a non-technical user to import a simple CSV data file, set the chart type, labels, ranges and colours for the final chart output, 
-    - then produces correctly formatted JSON objects to paste in to our Drupal CMS module for chart display.
-  - https://github.com/KaylaKremer/C3ChartEditor
-    - A chart editor using C3.js to generate charts from table data
-    - not finished
-  - https://github.com/datadotworld/chart-builder
-    - interactive experience to create a vega-lite visualization
-  - https://github.com/C-JSN/D3-ID3
-    - /788Star/MIT/201709
-    - an IDE dedicated for development in D3.js
-
-## chart
-
-- d3 /BSD/92.4kStar/202007
-  - https://github.com/d3/d3
-  - https://d3js.org/
-  - bring data to life using SVG, Canvas and HTML
-  - https://github.com/d3/d3-scale
-- Chart.js /MIT/49.6kStar/202007
-  - https://github.com/chartjs/Chart.js
-  - https://www.chartjs.org/
-  - Simple HTML5 Charts using the canvas tag
-  - https://github.com/SeanSobey/ChartjsNodeCanvas
-- echarts /Apache2.0/42kStar/202007
-  - https://github.com/apache/incubator-echarts
-  - http://echarts.apache.org/
-  - A powerful, interactive charting and visualization library for browser
-  - written in pure JavaScript and based on zrender, which is a whole new lightweight canvas library.
-- recharts /MIT/14.4kStar/202007
-  - https://github.com/recharts/recharts
-  - http://recharts.org/
-  - a Redefined chart library built with React and D3
-- frappe-charts /MIT/13.4kStar/202007
-  - https://github.com/frappe/charts
-  - https://frappe.io/charts
-  - Simple, responsive, modern SVG Charts with zero dependencies
-- plottable /MIT/2.7kStar/202006
-  - https://github.com/palantir/plottable
-  - http://plottablejs.org/
-  - A library of modular chart components built on D3
-- plotly.js /MIT/12.3kStar/202009
-  - https://github.com/plotly/plotly.js
-  - https://plotly.com/javascript/
-  - JavaScript charting library behind Plotly and Dash
-  - 依赖d3.js、stack.gl、regl、turf、alpha-shape
-- amcharts4 /786Star/FreeWithAttribution/202009
-  - https://github.com/amcharts/amcharts4
-  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
-  - the most advanced JavaScript dataviz library ever.
-  - 产品：charts、map、timeline、editor
-  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
-  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
-- AnyChart /Free4NonCommercial/266Star/202009
-  - https://github.com/AnyChart/AnyChart
-  - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
-  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
-  - 文件模块使用的是google-closure-builder的模块系统
-- highcharts /9.6kStar/Free4NonCommercial/202007
-  - https://github.com/highcharts/highcharts
-  - http://www.highcharts.com/
-  - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
-- lightweight-charts /2.1kStar/Apache2.0/202007
-  - https://github.com/tradingview/lightweight-charts
-  - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
-  - Financial lightweight charts built with HTML5 canvas
-  - paid: Technical Analysis Charts, Trading Platform
-- chart-parts /MIT/500Star/202007
-  - https://github.com/microsoft/chart-parts
-  - https://microsoft.github.io/chart-parts/documentation/
-  - A flexible, React-friendly, Grammar of Graphics for data visualization
-- react-charts /MIT/880Star/202007
-  - https://github.com/tannerlinsley/react-charts
-  - https://react-charts.js.org/
-  - interactive charts for React powered by D3
-- vega /BSD/8.5kStar/303006
-  - https://github.com/vega/vega
-  - https://vega.github.io/vega
-  - Vega is a visualization grammar
-  - With Vega you can describe data visualizations in a JSON format, 
-  - and generate interactive views using either HTML5 Canvas or SVG.
-  - https://github.com/vega/vega-lite /2.6kStar
-  - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
-- G2 /MIT/9.8kStar/202007
-  - https://github.com/antvis/G2
-  - https://g2.antv.vision/
-  - A highly interactive data-driven visualization grammar for statistical charts
-- G2Plot /MIT/1.4kStar/202007
-  - https://github.com/antvis/G2Plot
-  - https://g2plot.antv.vision/
-  - An interactive and responsive charting library
-- F2 /MIT/7.2kStar/202007
-  - https://github.com/antvis/F2
-  - https://f2.antv.vision/zh
-  - An elegant, interactive and flexible charting library for mobile
-  - Html5 Canvas-based
-- BizCharts /MIT/5.1kStar/202007
-  - https://github.com/alibaba/BizCharts
-  - http://bizcharts.net/products/bizCharts
-  - Powerful data visualization library based on G2 and React
-- Viser /MIT/1.3kStar/202003
-  - https://github.com/viserjs/viser
-  - https://viserjs.github.io/
-  - A toolkit fit for data vis engineer based on G2. 
-  - Viser support React, Vue and AngularJS.
-- chartist-js /MIT/1.2kStar/201911
-  - https://github.com/gionkunz/chartist-js
-  - http://gionkunz.github.io/chartist-js/
-  - a simple responsive charting library built with SVG
-- vx /MIT/7.3kStar/202007
-  - https://github.com/hshoff/vx
-  - https://github.com/airbnb/visx
-  - https://vx-demo.now.sh/
-  - a collection of reusable low-level visualization components
-  - vx upgrade to visx
-- react-vis /MIT/7.2kStar/202007
-  - https://github.com/uber/react-vis
-  - https://uber.github.io/react-vis
-  - A collection of react components to render common data visualization charts
-- c3 /MIT/8.8kStar/202006
-  - https://github.com/c3js/c3
-  - http://c3js.org/
-  - a D3-based reusable chart library
-- dc.js /Apache2.0/7.1kStar/202006
-  - https://github.com/dc-js/dc.js
-  - http://dc-js.github.com/dc.js/
-  - Dimensional charting built to work natively with crossfilter rendered using d3.js
-- nvd3 /Apache2.0/7kStar/201806
-  - https://github.com/novus/nvd3
-  - http://nvd3.org/
-  - A reusable charting library written in d3.js
-  - NVD3 is recommended to go with d3.js version 3.5.3 and later, but NOT d3 4.x yet.
-- Taco /MIT/13Star/201712
-  - https://github.com/nefe/Taco
-  - https://nefe.github.io/Taco/
-  - svg based charts
-- elastic-charts /Apache2.0/137Star/202007
-  - https://github.com/elastic/elastic-charts
-  - https://elastic.github.io/elastic-charts
-  - Elastic Charts library
-- rough-charts /MIT/1.2kStar/202005
-  - https://github.com/beizhedenglong/rough-charts
-  - https://beizhedenglong.github.io/rough-charts/?path=/docs/roughcharts--page
-  - A responsive, composable react charting library with a hand-drawn style.
-- carbon-charts /Apache2.0/156Star/202007
-  - https://github.com/carbon-design-system/carbon-charts
-  - https://carbon-design-system.github.io/carbon-charts/
-  - Robust dataviz framework implemented using D3 & typescript
-- chartify /MIT/667Star/202004
-  - https://github.com/kis/chartify
-  - https://chartify-213721.web.app/
-  - React.js plugin for building charts using CSS
-- apexcharts /9.4kStar/MIT/202009
-  - https://github.com/apexcharts/apexcharts.js
-  - https://apexcharts.com/
-  - Interactive JavaScript Charts built on SVG
-
-## flow
+## flowchart
 
 - react-flow-chart /MIT/719Star/202006
   - https://github.com/MrBlenny/react-flow-chart
@@ -231,46 +19,38 @@ modified: '2020-09-25T03:50:23.437Z'
   - https://jsplumbtoolkit.com/
   - Visual connectivity for webapps
   - dev/4.x branch is a rewrite in Typescript
-- joint /MPL2.0/3.2kStar/202007
-  - https://github.com/clientIO/joint
-  - http://www.jointjs.com/
-  - a JavaScript diagramming library
+- G6 /7kStar/MIT/202009
+  - https://github.com/antvis/g6
+  - https://g6.antv.vision/
+  - a graph visualization engine
+  - 依赖d3-force、darge有向图、ml-matrix矩阵计算、各种工具@antv/g-base
 - GGEditor /MIT/2.5kStar/202007
   - https://github.com/alibaba/GGEditor
   - https://ggeditor.com/
   - A visual graph editor based on G6 and React
+- graphin /368Star/MIT/202009
+  - https://github.com/antvis/graphin
+  - https://graphin.antv.vision/
+  - A React toolkit for graph analysis based on G6
+- X6 /288Star/MIT/202009
+  - https://github.com/antvis/X6
+  - JavaScript diagramming library
+  - core依赖jquery、mousetrap，单独提供react包
+- joint /MPL2.0/3.2kStar/202007
+  - https://github.com/clientIO/joint
+  - http://www.jointjs.com/
+  - a JavaScript diagramming library
 - wfd-g6 /519Star/MIT/202006
   - https://github.com/guozhaolong/wfd
   - https://guozhaolong.github.io/wfd/
   - flowable workflow designer base on @antv/g6, react
-- more
-  - https://github.com/aislelabs/react-flowchart-editor
-    - http://data.aislelabs.com/demo/index.html
-    - A windowed flow chart editor in React
-    - 只依赖react
 - XChart /1kStar/Apache2/202009/java
   - https://github.com/knowm/XChart
   - XChart is a Java library for plotting data
 
-## misc
+## more
 
-- https://github.com/antvis/graphin
-  - a library based on G6 and React and offers graph analysis ability out of the box. 
-- https://github.com/frappe/gantt
-  - https://frappe.io/gantt
-- xchart /MIT/352Star/201903
-  - https://github.com/yugasun/x-chart
-  - https://yugasun.github.io/x-chart/
-  - a draggable & resizable data visualization dashboard
-  - Based on Vue.js, vue-echarts and vue-grid-layout
-- https://github.com/pavelkuligin/chart
-  - Create the most popular types of charts by real or random data
-  - Chart is a plugin for Sketch, Figma, and Adobe XD
-- https://github.com/xiaolin3303/wx-charts
-  - 微信小程序图表charts组件，Charts for WeChat small app
-- https://github.com/nhn/tui.chart
-  - TOAST UI Chart is Beautiful Statistical Data Visualization library
-- https://github.com/benpickles/peity
-  - Progressive svg pie, donut, bar and line charts
-- https://github.com/ddiu8081/ChartFun
-  - 数据大屏可视化编辑器
+- https://github.com/aislelabs/react-flowchart-editor
+  - http://data.aislelabs.com/demo/index.html
+  - A windowed flow chart editor in React
+  - 只依赖react

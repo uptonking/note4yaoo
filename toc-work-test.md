@@ -32,8 +32,6 @@ modified: '2020-10-05T20:23:14.613Z'
 - https://github.com/yangshun/front-end-interview-handbook
   - answers to the famous h5bp Front-end Job Interview Questions
 
- 
-
 ## java
 
 - https://github.com/ferrari014/EasyJob

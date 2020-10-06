@@ -7,10 +7,10 @@ modified: '2020-10-05T16:24:18.663Z'
 
 # toc-lib-database
 
-## orm-java
+## orm
 
 - https://github.com/mybatis/mybatis-3
-  - /14.3kStar/Apache2.0/202009
+  - /14.3kStar/Apache2.0/202009/java
   - MyBatis SQL mapper framework for Java
   - https://github.com/pagehelper/Mybatis-PageHelper
   - https://github.com/baomidou/mybatis-plus

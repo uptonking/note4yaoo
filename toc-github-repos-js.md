@@ -38,12 +38,10 @@ modified: '2020-09-28T05:28:09.585Z'
   - /644Star/BSD/202009
   - a JavaScript data utility library
   - created to power Vega and related project
+  - 依赖d3-time/format、topojson-client
 - https://github.com/popperjs/popper-core
   - /15.8kStar/MIT/202009
   - Positioning tooltips and popovers is difficult. Popper is here to help
-- https://github.com/nhn/tui.chart
-  - /4.6kStar/MIT/202004/js
-  - 依赖raphael，基于svg实现
 - https://github.com/nhn/tui.editor
   - /11.8kStar/MIT/202009/js
   - 依赖codemirror5

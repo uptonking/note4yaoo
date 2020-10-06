@@ -16,7 +16,7 @@ modified: '2020-10-05T06:10:15.909Z'
 - https://github.com/nhn/tui.grid
   - /1.6kStar/MIT/202009/ts
   - Plain JavaScript component implemented by NHN
-  - 无依赖，基于div实现
+  - 依赖tui-date-picker、tui-pagination，基于div实现
 - https://github.com/clauderic/react-tiny-virtual-list
   - /1.8kStar/MIT/201910/inactive
   - A tiny but mighty list virtualization library, with zero dependencies
@@ -31,7 +31,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - A block-styled editor with clean JSON output
 - https://github.com/amcharts/amcharts4
   - /786Star/FreeWithAttribution/202009
-  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
+  - https://www.amcharts.com/demos/
   - the most advanced JavaScript dataviz library ever.
   - 产品：charts、map、timeline、editor
   - 依赖d3、stackblur-canvas、venn.js，基于svg实现
@@ -39,7 +39,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - https://github.com/amcharts/ammap3
 - https://github.com/amcharts/editor4
   - /4Star/Free4dev/202009
-  - https://www.amcharts.com/docs/editor4/getting-started/basics/
+  - https://editor4.amcharts.com/am4editor/#/am4editor/home
   - amCharts Chart Editor based on amCharts 4
   - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
   - 依赖react、react-router、blueprint组件、codemirror、mobx

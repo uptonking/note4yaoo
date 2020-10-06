@@ -140,7 +140,7 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/iuap-design/tinper-bee
   - http://bee.tinper.org/
   -  一套基于react.js和iuap design设计语言实现的前端组件库
-- resuite /MIT/4.4kstar/202007
+- rsuite /MIT/4.4kStar/202007
   - https://github.com/rsuite/rsuite
   - https://rsuitejs.com/components/overview 
   - a set of react component libraries for enterprise system products
@@ -153,7 +153,7 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/zeit-ui/react
   - https://react.zeit-ui.co/
   - Modern and minimalist React UI library, originating from Vercel's design.
-- reactivebase /201802/Apache2.0/18star
+- reactivebase /201802/Apache2.0/18Star
   - https://github.com/appbaseio/reactivebase 
   - deprecated
 - misc
@@ -172,7 +172,7 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/BoostIO/Boostnote
   - https://boostnote.io/
   - A markdown editor for developers on Mac, Windows and Linux. cson格式
-- Noatble /AGPLv3/12kStar/201908/ts
+- Notable /AGPLv3/12kStar/201908/ts
   - https://github.com/notable/notable
   - https://raw.githubusercontent.com/notable/notable/master/resources/comparison/table.png
   - license

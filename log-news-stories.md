@@ -1,11 +1,11 @@
 ---
-title: log-news-story
-tags: [news, story]
+title: log-news-stories
+tags: [news, stories]
 created: '2020-08-27T11:52:28.208Z'
-modified: '2020-08-27T11:55:54.353Z'
+modified: '2020-10-06T07:04:27.788Z'
 ---
 
-# log-news-story
+# log-news-stories
 
 ## 2020
 

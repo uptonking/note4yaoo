@@ -3,17 +3,7 @@
 		"path": "$ROOTPATH$/pick-dict-common.md",
 		"bookmarks": [
 			{
-				"line": 13,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/note-components-react-catalog.md",
-		"bookmarks": [
-			{
-				"line": 117,
+				"line": 10,
 				"column": 0,
 				"label": ""
 			}
@@ -33,17 +23,7 @@
 		"path": "$ROOTPATH$/log-dev-error.md",
 		"bookmarks": [
 			{
-				"line": 16,
-				"column": 1,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/log-news-story.md",
-		"bookmarks": [
-			{
-				"line": 10,
+				"line": 13,
 				"column": 0,
 				"label": ""
 			}
@@ -53,7 +33,17 @@
 		"path": "$ROOTPATH$/log-dev-pieces-frontend.md",
 		"bookmarks": [
 			{
-				"line": 106,
+				"line": 13,
+				"column": 0,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$/toc-github-repos-js-ts.md",
+		"bookmarks": [
+			{
+				"line": 7,
 				"column": 0,
 				"label": ""
 			}

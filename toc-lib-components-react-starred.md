@@ -15,7 +15,7 @@ modified: '2020-10-05T13:16:31.674Z'
   - Accessible and easy tab component for ReactJS
 - https://github.com/seriousben/embeddable-react-widget
   - https://seriousben.github.io/embeddable-react-widget
-  - Create an embbedable js widget with react
+  - Create an embedable js widget with react
 - https://github.com/wmira/react-sidenav
   - /319Star/MIT/202006
   - https://react-sidenav.now.sh/
