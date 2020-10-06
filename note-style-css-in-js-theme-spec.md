@@ -16,14 +16,15 @@ modified: '2020-09-25T05:54:00.765Z'
   - scoped styles
   - simple dynamic styling adapting to its props
   - type check and code auto suggestion
+  - support all of CSS plus nesting
   - better maintainability
     - easy to delete css
     - easy to find styles
     - css的样式层叠顺序更清晰，当很少使用全局样式时
     - 大型软件通常更重视可维护性和兼容性，性能通常不是最高
-    - support all of CSS plus nesting
   - js is the future (for its ecosystem)
     - define style helper functions in js rather than sass
+    - 技术选型时，参考知名项目或大公司项目的选择
 - cons
   - learning curve
   - css-in-js runtime cost in performance and size 

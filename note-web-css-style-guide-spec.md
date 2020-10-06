@@ -73,7 +73,7 @@ modified: '2020-07-18T06:35:10.808Z'
   - animation
 
 - tip
-  - 将layout相关的属性集中起来放在最前面，避免多次layout/relfow
+  - 将layout相关的属性集中起来放在最前面，避免多次layout/reflow
 
 ## Google CSS Style Guide
 

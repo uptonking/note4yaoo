@@ -9,6 +9,8 @@ modified: '2020-08-01T07:18:35.351Z'
 
 ## interaction
 
+- 悬浮在头像上，从头像左上角逐渐动画弹出个人信息卡牌
+  - 如stackoverflow回答者的头像
 - skew layer effect
   - 分层过渡效果
 - 卡片边框慢慢扩张到融合，形成一个大卡片

@@ -13,6 +13,8 @@ modified: '2020-09-25T05:56:45.321Z'
   - 维护方便
   - all-in-js的趋势
   - 标准化theme的趋势
+  - 局部样式、动态样式、主题切换
+  - 技术选型时，参考知名项目或大公司项目的选择
 
 - I feel like we’re moving out of the CSS-in-JS era into something new. We’re moving more towards:
   - Static extraction
@@ -23,7 +25,18 @@ modified: '2020-09-25T05:56:45.321Z'
 
 ## pieces 
 
-- [survey: styled-components vs SASS vs CSS which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
+- css-in-js vs sass
+  - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!
+  - Total styling isolation
+  - Load what you need and when you needed, kinda lazy CSS
+  - Theme provider, skins, modularity and dynamic - This can be achieved by other libs too
+  - Server side construction of your component DOM and its style.
+  - Remove the need to manually handle class names
+  - Easily use javascript variables within style
+  - colocate css with jsx/html
+  - 参考使用css-in-js的优点
+
+- [survey: styled-components vs SASS vs CSS, which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
   - s-c:sass:css = 2:1:5
   - 仅8人投票
 
@@ -38,7 +51,8 @@ modified: '2020-09-25T05:56:45.321Z'
 
 - Wholeheartedly agree, BEM + ITCSS all the way as opposed to(相对于，而不是) sprinkling(撒在，使用少量) utility classes on top of everything. 
   - Tailwind creates a many to many maintenance problem that just makes large codebases unmaintainable. 
-    - if you apply 4-7 CSS classes to style something out of let's say 100 available classes to 1000-10 000 lines of HTML, there are too many variations. If you ever want to get rid of a class it's going to be difficult, as the combinations are practically infinite.
+    - if you apply 4-7 CSS classes to style something out of let's say 100 available classes to 1000-10 000 lines of HTML, there are too many variations. 
+    - If you ever want to get rid of a class it's going to be difficult, as the combinations are practically infinite.
     - Whereas if you scope CSS to a namespaced selector e.g. `.c-my-component-name` you will be able to see all instances of this component in use when you globally search your project and you have a clear route to refactoring
     - So... give it a few years and lots of team will be stuck loading Tailwind's 350kb forever because they just can't get it out of their codebase.
   - I imagine it’s popular because of CSS-in-JS.
@@ -64,14 +78,14 @@ modified: '2020-09-25T05:56:45.321Z'
   - The styling of a component is very linked to it's structure, so put them together.
   - The main element of reuse is the component. You won't ever need a .header CSS class when instead you'll reuse `<Header>`
 
-## css-in-js-zero-runtime
+## jss
 
 ## survey: css in js vs css
 
 - ### [are there any cons to using regular CSS vs CSS-in-JS?_2018](https://twitter.com/ka11away/status/1014990019801411586)
   - css: css-in-js = 0.557: 0.443 /79votes
   - It’s depends on ur purposes. 
-    - If u use dynamic generated styles (in runtime) a lot — css-in-js (fe styled-components) is a nice choice. 
+    - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
     - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 
 ## solution-catalog-css-in-js

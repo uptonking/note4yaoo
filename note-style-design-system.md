@@ -77,7 +77,7 @@ modified: '2020-07-17T08:47:42.407Z'
   - 使用hsb颜色模式，因为设计类专业软件多是如此
   - Darker color variation = lower brightness + higher saturation
   - Lighter Color Variation = higher brightness + lower saturation
-  - make the movement of the hue match up with the movement of the saturation and brightness    - 
+  - make the movement of the hue match up with the movement of the saturation and brightness 
     - darken时使h靠近0(红)、120(绿)、240(蓝)，变亮时相反
 - color-palette
   - grey-colors

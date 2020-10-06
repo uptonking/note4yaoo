@@ -1,12 +1,12 @@
 ---
-title: docs-styled-components
-tags: [css-in-js, docs, style, web]
+title: note-style-styled-components
+tags: [css-in-js, style]
 favorited: true
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-09-25T05:32:19.340Z'
+modified: '2020-10-06T16:36:33.291Z'
 ---
 
-# docs-styled-components
+# note-style-styled-components
 
 ## dev-tips
 
@@ -15,24 +15,29 @@ modified: '2020-09-25T05:32:19.340Z'
 - 如何将本项目作为库提供给其他人使用
   - 直接复用组件，而不是复用样式，若必需复用样式，则提取出变量通过theme来复用
 - why you should use css-in-js
-  - author CSS in JavaScript syntax
+  - possible to author CSS in JS syntax
   - Styles are "scoped" to a specific component
+    - no naming collision
+    - include only the styles that are really used，like lazy-styling
+    - make dead code elimination easier
   - Colocate styles with components
   - Many libraries offer support for theming
   - Most libraries offer ways to handle dynamic styling
   - Take advantage of native JS syntax features
   - Take advantage of anything from the JS ecosystem
-  - make dead code elimination easier 
   - type check and code auto suggestion with ts
   - easier to write unit tests with CSS-in-JS
   - ref
     - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
     - https://mxstbr.com/thoughts/css-in-js
+    - 技术选型时，参考知名项目或大公司项目的选择
 - 使用styled-components这种css-in-js的优缺点
   - 优点是局部样式、动态样式、主题切换
-  - 缺点是runtime cost
-    - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的
+  - 缺点
+    - runtime cost
+      - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的
       - 因为就算自己用js计算新的样式名本身也有一定的计算，样式变化不多的情况下对性能影响可忽略
+    - 会创建重复的样式
 
 ## bulma
 

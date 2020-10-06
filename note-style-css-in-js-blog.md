@@ -9,7 +9,7 @@ modified: '2020-08-07T17:50:44.516Z'
 
 ## [CSS-in-JS：一个充满争议的技术方案](https://zhuanlan.zhihu.com/p/165089496)
 
-- CSS-in-JS （后文简称为 CIJ）在 2014 年由 Facebook 的员工 Vjeux 在 NationJS 会议上提出：可以借用 JS 解决许多 CSS 本身的一些“缺陷”，比如全局作用域、死代码移除、生效顺序依赖于样式加载顺序、常量共享等等问题。
+- CSS-in-JS（后文简称为 CIJ）在2014年由Facebook的员工Vjeux在NationJS会议上提出：可以借用 JS 解决许多 CSS 本身的一些“缺陷”，比如全局作用域、死代码移除、生效顺序依赖于样式加载顺序、常量共享等等问题。
 - CIJ 的一大特点是它的方案众多。发展初期，社区在各个方向上探索着用 JS 开发和维护 CSS 的可能性。每隔一段时间，都会有新的语法方案或实现，尝试补充、增强或是修复已有实现。
 - 随着时间流逝，他们中的大多数不是被官方宣布废弃，就是长时间不再维护
 - 争议主要集中在以下几点：
@@ -36,7 +36,7 @@ modified: '2020-08-07T17:50:44.516Z'
   - 使用原子化 CSS 有一些好处，比如：减少CSS规则冲突可能性（Specificity）；CSS 的大小恒定，不会跟随项目的增长而增长；用户可以直接修改 HTML 属性而不用修改 CSS，改变最终渲染的效果 。
   - CIJ 给 CSS 原子化带来了一些新的可能性，社区正在探索利用 CIJ 完成自动化的原子化 CSS 的可能性，比如 Styletron、Fela、Otion 等
   - 原子化 CSS 可能会给 CIJ 带来不少好处，比如CSS规则去重。CIJ 在运行时会产生许多新的CSS类，增加浏览器的负担，遗憾的是这需要框架本身支持把CSS抽离为静态文件的需求。目前流行的CSS-in-JS框架，比如Emotion，暂时还无法支持这样的特性。
-- 经过了一段时间的探索与实践，FreeWheel 最终确定使用Emotion 作为目前的 CIJ 方案，将其应用于部分前端项目
+- 经过了一段时间的探索与实践，FreeWheel最终确定使用Emotion作为目前的 CIJ 方案，将其应用于部分前端项目
 
 ## [Tip: ChromeDevTools now supports CSS-in-JS!](https://twitter.com/addyosmani/status/1289818213983883270)
 

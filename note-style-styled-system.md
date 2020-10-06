@@ -1,12 +1,11 @@
 ---
-title: docs-styled-system
-tags: [css-in-js, docs, style, web]
-favorited: true
+title: note-style-styled-system
+tags: [css-in-js, style]
 created: '2019-12-17T03:13:59.953Z'
-modified: '2020-09-10T05:21:07.496Z'
+modified: '2020-10-06T16:44:19.675Z'
 ---
 
-# docs-styled-system
+# note-style-styled-system
 
 ## summary
 
@@ -14,8 +13,8 @@ modified: '2020-09-10T05:21:07.496Z'
   - 组件样式属性值的一致性，本质通过重用预定义的工具函数
   - 解决组件临时添加样式的问题，需要新增props
     - https://medium.com/@karthikbalaji99/styled-system-for-better-styled-components-a87a5eb2059c
-  - 使用theme时需要写很长的解析表达式 props => props.theme.colors.primary 
-    - css()方法可直接写theme中的值
+  - 使用theme时需要写很长的解析表达式 `props => props.theme.colors.primary`
+    - `@styled-system/css` 的css()方法，传入的实参对象属性值可直接写theme对象中的值
 - tips
   - 可以逐步采用s-s，比如只用layout
   - s-s由modulz研发工程师证实存在一定的性能问题，对于性能要求高的场景慎用
