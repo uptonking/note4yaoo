@@ -100,5 +100,8 @@ modified: '2020-10-05T06:11:13.841Z'
   - 有少部分组件只有css，如button、card、elevation、layout、typography
   - 有少部分组件只有js，如animation、autoInit
 - material-design-web-react
+  - 每个react组件复用了material-design-web包的MDCCheckboxFoundation、MDCCheckboxAdapter、cssClasses
+  - MDCCheckboxFoundation在componentDidMount中初始化
+  - adapter对象包含各种setState逻辑
 - ref
   - [rmwc: Foundation Adapter Implementation](https://github.com/jamesmfriedman/rmwc/issues/141)
