@@ -14,3 +14,5 @@ modified: '2020-08-04T11:47:02.131Z'
   - Of or relating to the vocabulary, words, or morphemes 
 - Pilcrow	
   - 段落符号 ¶
+- alacarte
+  - 菜单编辑器，点菜

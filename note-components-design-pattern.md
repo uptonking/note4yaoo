@@ -93,5 +93,12 @@ modified: '2020-10-05T06:11:13.841Z'
 
 ### guide
 
+- material-design-web-vanilla
+  - 缺点
+    - 样式与dom结构绑定了
+  - 大部分组件都由js和css构成，如checkbox、dialog、drawer、list、textfield
+  - 有少部分组件只有css，如button、card、elevation、layout、typography
+  - 有少部分组件只有js，如animation、autoInit
+- material-design-web-react
 - ref
   - [rmwc: Foundation Adapter Implementation](https://github.com/jamesmfriedman/rmwc/issues/141)

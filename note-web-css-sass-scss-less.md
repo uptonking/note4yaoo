@@ -9,6 +9,11 @@ modified: '2020-10-06T12:05:28.935Z'
 
 ## guide
 
+- css预处理器的技术选型
+  - 参考知名项目或大公司项目的选择，如google、microsoft、alibaba
+  - 比较开发工具的下载量
+  - 比较辅助项目及应用项目的流行度
+
 - css预处理器的使用
   - 目的是提高开发者的效率
   - 定义变量: sass用 `$` , less用 `@`
@@ -16,14 +21,10 @@ modified: '2020-10-06T12:05:28.935Z'
   - sass is the older syntax， scss(sassy css) is the new syntax as of Sass 3
     - 主要区别是scss有行尾分号，有花括号包括kv
 
-- 选择css预处理器
-  - 比较开发工具的下载量
-  - 比较辅助项目及应用项目的流行度
-
 - css缺点
   - 无局部模块，命名会全局污染
   - 无嵌套书写
-  - 无变量(以前确实无)
+  - 无变量(旧版css无)
 
 ## sass
 
@@ -31,6 +32,8 @@ modified: '2020-10-06T12:05:28.935Z'
   - bootstrap 4
   - google-material-components-web
   - ibm-carbon-components
+  - github-primer-css
+  - microsoft-fluentui-react
 
 - 为什么使用Sass而不是Less
   - Sass研发有一些成熟的框架，比如说Compass，而且有很多框架也在使用Sass，比如说Foundation
@@ -103,7 +106,6 @@ modified: '2020-10-06T12:05:28.935Z'
   - Sass package authors have tried to work around the namespace issues by manually prefixing our variables and functions — but Sass modules are a much more powerful solution. 
   - In brief, `@import` is being replaced with more explicit `@use` and `@forward` rules.
   - Over the next few years Sass @import will be deprecated, and then removed. You can still use CSS imports, but they won’t be compiled by Sass. 
-
   - ` @use` is similar to `@import` . but has some notable differences
     - The file is only imported once, no matter how many times you @use it in a project.
     - Variables, mixins, and functions (what Sass calls “members”) that start with an underscore (_) or hyphen (-) are considered private, and not imported.

@@ -42,7 +42,7 @@ modified: '2020-07-14T10:24:54.328Z'
 ## noter-requirements-需求
 
 - io模块
-- 编辑器模块
+- 编辑模块
   - markdown-editor-monaco
   - markdown-editor-lite
 - 预览模块
@@ -63,6 +63,8 @@ modified: '2020-07-14T10:24:54.328Z'
 
 - 其他需求
   - 打开一个文档后，标题栏中标题应显示为文档第一行的标题，而不是/path/to/README.md
+- discuss
+  - markdown顶部元数据采用注释形式，而不是多级键值对
 
 ## notable
 

@@ -9,6 +9,56 @@ modified: '2020-10-03T15:29:07.138Z'
 
 ## material-design-components-web
 
+- ### dev
+- If you decide to add new components into the DOM after the initial `mdc.autoInit()` , you can make subsequent calls to `mdc.autoInit()` . 
+  - This will not reinitialize existing components. 
+  - This works since mdc-auto-init will add the `data-mdc-auto-init-state="initialized"` attribute, which tracks if the component has already been initialized.
+- mdc-auto-init
+  - Create a non-writable, non-enumerable property on the Node whose name is the value of `data-mdc-auto-init` and whose value is `instance` .
+  - `instance` be the result of calling `Ctor.attachTo()` and passing in the element as an argument.
+- MDC Base contains core foundation and component classes that serve as the base classes for all of MDC Web's foundation classes and components (respectively).
+  - Most of the time, you shouldn't need to depend on mdc-base directly. 
+  - It is useful however if you'd like to write custom components that follow MDC Web's pattern
+
+- MDCFoundation provides the basic mechanisms for implementing foundation classes. 
+  - Provide `init()` and `destroy()` lifecycle methods
+  - Provide implementations of the proper static getters where necessary.
+    - The static getters specify constants that can be used within the foundation class
+    - remember to always put constants into these getters. 
+    - This will ensure your component can interop in as many environments as possible, like stylesheet,i18n
+- MDCComponent provides the basic mechanisms for implementing component classes.
+  - MDCComponent calls its foundation's init() function within its constructor, and its foundation's destroy() function within its own destroy() function.
+  - `static attachTo(root)`
+    - instantiate and return an instance of the class using the root element provided.
+  - `getDefaultFoundation()`
+    - Called when no foundation instance is given within the constructor.
+  - `initialize()`
+    - Called after the root element is attached to the component, but before the foundation is instantiated.
+  - `destroy()`
+    - perform any additional cleanup work when a component is destroyed.
+  - `initialSyncWithDOM()`
+    - Called within the constructor. Subclasses may override this method if they wish to perform initial synchronization of state with the host DOM element.
+  - `listen(type: string, handler: EventListener)`
+    - this is simply a proxy to `this.root_.addEventListener` .
+  - `unlisten(type: string, handler: EventListener)`
+    - this is simply a proxy to `this.root_.removeEventListener` .
+  - `emit(type: string, data: Object, shouldBubble: boolean = false)`
+    - Dispatches a custom event of type `type` with detail `data` from the component's root node. 
+    - This is the preferred way of dispatching events within our vanilla components.
+
+- theme基于sass变量实现
+  - 定义变量 `$black: #000 !default; $border-radius: 0.25rem !default;`
+  - 覆盖样式 `@use 'library' with ( $black: #222, $border-radius: 0.1rem );`
+- To fix problems with accessibility and design, we suggest you use our Sass mixins, such as `button.filled-accessible()`
+- theme工具方法
+  - `theme.property()` mixin also accepts a custom property Map for the $value argument
+  - `theme.luminance($color)` calculates the luminance value (0 - 1) of a given color.
+  - `theme.contrast($back, $front)` calculates the contrast ratio between two colors.
+  - `theme.tone($color)` determines whether the given color is "light" or "dark".
+  - `theme.text-emphasis($emphasis)` returns opacity value for given emphasis.
+
+ 
+
 - ### components-catalog
 - typography
 - button
@@ -73,7 +123,7 @@ modified: '2020-10-03T15:29:07.138Z'
   - Any direct interactions with the host environment will need to be proxied, so that our foundations will be able to integrate into all frameworks across the web platform.
   - host environment refers to the context in which the component is used. It could be the browser, a server component is being rendered on, a Virtual DOM environment, or even a mobile application like React-Native.
   - it's easy to see all of the instances where we interact with the host environment: it occurs every place we read from or write to our `root` node.
-  - In other cases, host environment interaction may not be straightforward, such as `window.addEventListener('resize', ...)` . These are also examples of host environment interaction and must be taken into account.
+  - In other cases, host environment interaction may not be straightforward, such as `window.addEventListener('resize', ...)` .
 - Create the adapter interface
   - all of the host environment interactions have been replaced with adapter methods
   - We no longer recommend using `registerInteractionHandler` and `deregisterInteractionHandler` as adapter methods for adding/removing generic event listeners. 
@@ -248,61 +298,6 @@ packages/
   - because the Foundation needs a DOM element.
 - This tutorial highlights our decision to split MDC Web code into 3 parts, the Foundation, Adapter, and Component. 
   - This architecture allows components to share common code while working with all frameworks. 
-
-- ### [Material Design Components Web vs material-design-lite](https://github.com/material-components/material-components-web/issues/2639)
-- MDC Web tries to be framework agnostic, just like MDL. 
-  - Yes there are advantages when doing this, 
-  - but they come with this major major drawback: Developing new components is difficult, time consuming and error prone. 
-  - There is no easy way of state managements, no templating, all the advances in virtual DOM are ignored. 
-  - In our opinion, this is exactly what killed MDL and I do not see why it shouldn't kill MDC Web too.
-- We're using MDC heavily with React and I agree about the framework agnostic model sometimes being a double-edged sword. 
-  - In some cases we have opted to replace the MDC JS with pure React code to address issues and to make upgrades a little easier. 
-  - For some components it's little more than adding/removing styles or simple event handling which is easy to replace and enhance. 
-  - Other components are more problematic because there is a ton of code behind them (drawers and sliders are the big ones.) 
-  - CSS ripples are also fine for example, making button and switch components simple to implement in React, plus we get to choose which classes to implement based on our own UX guidelines (so we have limited component props in some cases.)
-  - MDC is very careful to never add or remove elements from the DOM, so it does fit well with multiple modern frameworks and libs, but I personally prefer reactive code over imperative.  
-  - I also feel that this team does a fantastic job of doing as much with CSS as possible which makes implementing pure React components so much easier. 
-  - Overall our experience with MDC has been excellent though: all that official scss alone, which is dead simple to theme, has given our web apps a modern look and feel and has saved us from spending time and money implementing our own company design language. 
-- MDC Web will continue to be framework agnostic with our Foundation/Adapter pattern. 
-  - This pattern allows us to push Material Design changes to wrapper libraries quickly.
-  - We have not been focusing on building shallow implementations of all MD components. 
-  - Instead we've focused on building a robust implementation of a few MD components. 
-  - We've found that getting just one component to work in multiple situations (multiple Web platforms, multiple browsers, RTL, accessibility, color customization, typography customization) is ... well ... tricky!
-  - But I am confident our level of attention on this smaller set of components will make MDC Web a long running and maintained product.
-  - Breaking changes will not come to some final end, because design is never done, so MDC Web is never done.
-- Material Design Lite (MDL) lets you add a Material Design look and feel to your static content websites. 
-  - It doesn't rely on any JavaScript frameworks or libraries. 
-  - Take note that Material Components for Web, which is MDL v2, is under early Alpha stages
-- Material Components for the web is the successor to Material Design Lite. 
-  - In addition to implementing the Material Design guidelines, it provides more flexible theming customization, not only in terms of color, but also typography, shape, states, and more. 
-  - It is also specifically architected for adaptability to various major web frameworks.
-- [Why was material design lite(MDL) deprecated with MDC?](https://stackoverflow.com/questions/41769959/why-was-material-design-litemdl-deprecated-with-mdc)
-  - MDC Web is built in a way that is completely framework agnostic, so the same code base can be used in idiomatic JS, React, Angular
-  - we accomplish this by splitting up concerns into two concepts: Components and Foundations. 
-  - A Component is a ready-to-use JavaScript component, while a Foundation contains all of the shared UI code. 
-  - The Foundation is useful for low-level usage by frameworks like React/Angular/Vue etc..., and more complex rendering logic.
-  - Adapter is a configuration object that gets passed to the Foundation. 
-    - This will include any logic surrounding templating， data-binding, key/input handling, etc... 
-    - What this all boils down to is a logical set of defaults which can be overridden if you're using a framework like React or SSR where those things diverge from how they are done in vanilla javascript in the browser.
-
-- ### [Migrating from Material Design Lite](https://github.com/material-components/material-components-web/blob/master/docs/migrating-from-mdl.md)
-- MDL is a singular, universal library consisting of all components and styles in one package.
-- MDC Web is designed to be modular and is subdivided into individual component packages
-- Both MDL and MDC Web require the user to provide a specific DOM structure for a component, in order for it to function correctly. 
-  - This DOM has certain requirements, such as requiring the presence of specific CSS classes, a certain hierarchy, and in some cases, specific HTML elements.
-  - In MDC Web, the DOM you specify must be complete; 
-  - unlike MDL, the library will not create any missing elements for you.
-  - This is done in order to make behavior more deterministic and give you greater freedom in customizing the non-critical parts of a component's DOM.
-- Once a DOM is available, MDL manages component lifecycles automatically, by running through the page on load, identifying DOM structures that correspond to MDL components, and automatically upgrading them.
-  - In MDC Web, however, you have the choice between managing components’ lifecycles yourself, or having them automatically initialized, similarly to MDL
-  - For every component that you want to automatically initialize, set the `data-mdc-auto-init` attribute on the root element, with the component’s class name as the value
-  - Auto-initialization needs to be triggered explicitly `mdc.autoInit();`
-  - When using autoInit, you can access a component’s JavaScript instance via its root DOM element, on a property with the same name as the value you passed to `data-mdc-auto-init`
-  - When instantiating manually, be sure to store the returned instance somewhere so that you can access it when you need to; 
-  - unlike with auto-initialization, there is no way to retrieve it later via the DOM.
-- Internally, MDL is built with Sass, but there was no effort in exposing the Sass mixins and functions to developers.
-  - MDC Web similarly involves applying CSS classes to the DOM, but it also puts much more emphasis on customization via Sass mixins and functions.
-- MDC Web also includes several new components/packages which have no MDL equivalents. 
 
 - ### [example of integrating with React without Foundation/Adapter pattern](https://github.com/material-components/material-components-web/issues/407)
 - What I see is that the foundation used in the React example mostly wires up the native components (vie this.refs). 
