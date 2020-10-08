@@ -11,6 +11,53 @@ modified: '2020-07-14T09:15:48.967Z'
 // js
 ```
 
+- js class extends
+
+``` JS
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  insMeth() {}
+
+  static staMeth() {
+    console.log('==')
+  }
+}
+Rectangle.staMeth();
+
+class AA extends Rectangle {}
+// 静态方法也会继承，这里会打印出 ==
+AA.staMeth()
+
+var Rectangle = /*#__PURE__*/ (function() {
+  function Rectangle(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+
+  var _proto = Rectangle.prototype;
+
+  _proto.insMeth = function insMeth() {};
+
+  Rectangle.staMeth = function staMeth() {
+    console.log("==");
+  };
+
+  return Rectangle;
+})();
+var AA = /*#__PURE__*/ (function(_Rectangle) {
+  _inheritsLoose(AA, _Rectangle);
+
+  function AA() {
+    return _Rectangle.apply(this, arguments) || this;
+  }
+
+  return AA;
+})(Rectangle);
+```
+
 - react-jquery(plugins)-dom-ref
 
 ``` js
