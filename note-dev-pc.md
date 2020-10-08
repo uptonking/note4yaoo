@@ -49,6 +49,28 @@ modified: '2020-07-14T09:32:35.359Z'
   - javafx prism
   - nativefx
   - efxclipse-drift
+- electron问题
+  - 包太大，因为electron会自动塞入Chromium和nodejs，一个什么也不做的electron项目压缩后也大概要50mb
+  - 内存消耗过大，因为Chromium本身就很吃内存，再加上提供操作系统访问能力的nodejs，很可观的内存消耗，对小工具类的项目不友好
+- electron替代方案
+  - [neutralinojs](https://github.com/neutralinojs/neutralinojs)
+    - 前端嵌入一个webview，后端直接实现一个c++实现的http server
+  - [Chromely](https://www.zhihu.com/question/396199869)
+    - 前端嵌入一个CEF，后端使用.net
+    - building apps based on Xilium.CefGlue, CefSharp implementations of embedded Chromium (CEF) without WinForms or WPF, but can be extended to use WinForms or WPF
+  - [electrino](https://github.com/pojala/electrino)
+    - 使用系统的webview，并实现一个后端（windows下似乎也是基于.net)。
+    - using the system's own web browser engine
+  - [tauri](https://github.com/tauri-apps/tauri)
+    - Tauri is a framework for building tiny, fast binaries for all major desktop platforms.
+    - Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. 
+    - The backend of the application is a rust-sourced binary with an API that the front-end can interact with.
+    - The user interface in Tauri apps currently leverages Cocoa/WebKit on macOS, gtk-webkit2 on Linux and MSHTML (IE10/11) or Webkit via Edge on Windows. 
+  - [go-astilectron](https://github.com/asticode/go-astilectron)
+    - 仍然基于Electron，但后端换成go语言
+    - It is the official GO bindings of astilectron and is powered by Electron.
+  - [wails](https://github.com/wailsapp/wails)
+    - provides the ability to wrap both Go code and a web frontend into a single binary.
 
 ## javafx / swing / awt
 

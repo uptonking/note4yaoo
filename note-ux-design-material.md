@@ -122,18 +122,20 @@ modified: '2020-10-03T15:29:07.138Z'
 - figure out what functionality will need to be proxied through an adapter.
   - Any direct interactions with the host environment will need to be proxied, so that our foundations will be able to integrate into all frameworks across the web platform.
   - host environment refers to the context in which the component is used. It could be the browser, a server component is being rendered on, a Virtual DOM environment, or even a mobile application like React-Native.
-  - it's easy to see all of the instances where we interact with the host environment: it occurs every place we read from or write to our `root` node.
+  - it's easy to see all of the instances where we interact with the host environment: 
+    - it occurs every place we read from or write to our `root` node.
   - In other cases, host environment interaction may not be straightforward, such as `window.addEventListener('resize', ...)` .
 - Create the adapter interface
   - all of the host environment interactions have been replaced with adapter methods
   - We no longer recommend using `registerInteractionHandler` and `deregisterInteractionHandler` as adapter methods for adding/removing generic event listeners. 
-    - Event handling varies significantly across frameworks (e.g., React Synthetic Events), so we recommend managing events in the component layer.
+  - Event handling varies significantly across frameworks(e.g., React Synthetic Events), so we recommend managing events in the component layer.
 - Refactor your existing code into a foundation class
   - As a convention in our codebase, we define a static `defaultAdapter` getter that returns an adapter with NOP signatures for each function. 
 - Build a component on top of that foundation, providing an adapter
 - Component has two main jobs:
   - Provide an idiomatic(地道的、符合习惯的) interface to the foundation's functionality within the host environment
   - Provide an adapter to the foundation that will allow it to work within the host environment
+
 - If a best practice prevents you from improving or maintaining your component, ignore it. 
   - However, justify your slight, preferably in the form of documentation or a code comment.
 - Design adapter interfaces to be simple and intuitive
@@ -250,7 +252,6 @@ packages/
 
 - ### [MDC-111 Web: Incorporating Material Components into your codebase](https://codelabs.developers.google.com/codelabs/mdc-111-web)
 - Material Components for the web (MDC Web) are framework-agnostic, built using regular JavaScript. 
-- MDC Web uses a CSS preprocessor called Sass.
 - The MDC Select component wraps a native HTML `<select>` element.
 - You've replaced some common components (text fields, select, and button) without doing a complete redesign of your app. 
 - 使用MDC Web组件的流程

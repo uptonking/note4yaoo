@@ -12,10 +12,31 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
-- 组件库中使用的 `.hbs`是ui模版吗
+- typescript class Parameter properties 构造函数中带有修饰符的参数，可自动生成赋值语句
+
+``` typescript
+class Octopus {
+  readonly name: string;
+  readonly numberOfLegs: number = 8;
+
+  constructor(theName: string) {
+    this.name = theName;
+  }
+}
+
+// We’ve consolidated the declarations and assignment into one location.
+// 可使用的修饰符包括 public、protected、private、readonly
+class Octopus {
+  readonly numberOfLegs: number = 8;
+  constructor(readonly name: string) {}
+}
+```
+
+- 组件库中使用的 `.hbs` 是ui模版吗
   - Handlebars is a simple templating language.
-  - A handlebars expression is a `{{`, some contents, followed by a `}}`.
+  - A handlebars expression is a `{{` , some contents, followed by a `}}` .
   - When the template is executed, these expressions are replaced with values from an input object.
+  - handlebars 的特点是兼容 Mustache 语法，多数情况下可以直接迁移
 - yarn.lock中可能出现某个间接依赖下载失败
   - 可能是不小心修改了某个位置的字符，还原最初的yarn.lock，再yarn install
 - appendChild有时会移动元素

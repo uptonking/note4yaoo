@@ -118,6 +118,15 @@ Object.defineProperty(Model, 'method3', {
   - ref
     - https://2ality.com/2012/08/property-definition-assignment.html
 
+## private methods
+
+- stage 3
+  - https://github.com/tc39/proposal-private-methods
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+
+- The class fields proposal provides private fields for classes and instances, and this proposal builds on that by adding private methods and accessors (getter/setters) to JavaScript. 
+- To make methods, getter/setters or fields private, just give them a name starting with `#` .
+
 ## decorator
 
 - stage 2
@@ -175,9 +184,11 @@ Object.defineProperty(Model, 'method3', {
   - 关于这类装饰器，会接收如下三个参数：
     - 如果装饰器挂载于静态成员上，则会返回构造函数，如果挂载于实例成员上则会返回类的原型
     - 装饰器挂载的成员名称
-    - 成员的描述符，也就是`Object.getOwnPropertyDescriptor`的返回值
+    - 成员的描述符，也就是 `Object.getOwnPropertyDescriptor` 的返回值
   - Property Decorator不会返回第三个参数，但是可以自己手动获取
+
 前提是静态成员，而非实例成员，因为装饰器都是运行在类创建时，而实例成员是在实例化一个类的时候才会执行的，所以没有办法获取对应的descriptor
+
 - A **Method Decorator** is declared just before a method declaration. 
   - The decorator is applied to the Property Descriptor for the method, and can be used to observe, modify, or replace a method definition. 
 - An **Accessor Decorator** is declared just before an accessor declaration. 
