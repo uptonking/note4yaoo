@@ -7,6 +7,21 @@ modified: '2020-10-07T10:54:56.196Z'
 
 # note-ux-design-material-lite
 
+## material-design-web vs material-ui
+
+- [Should material-ui integrate with material-components-web](https://github.com/mui-org/material-ui/issues/6799)
+  - [material-ui Comparison with other libraries](https://v3.material-ui.com/getting-started/comparison/)
+
+- Material-UI focuses exclusively on the React library
+  - Supporting one framework allows us to do less but do it better.
+  - Having fewer constraints, we can make trade-offs specific to our target framework. We have fewer edge-cases to take into account.
+  - We can spend more time on nailing the React use case.
+
+- MDC-web was designed from the ground up to be fully compatible with 3rd party JS frameworks and libraries. 
+
+- MDC Web was designed to be integrated as easily as possible into any and all web frameworks. 
+- MDC-Web has less components implemented
+
 ## material-design-web vs material-design-lite
 
 ### [Material Design Components Web vs material-design-lite](https://github.com/material-components/material-components-web/issues/2639)

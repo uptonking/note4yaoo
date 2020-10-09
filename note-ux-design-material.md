@@ -57,6 +57,16 @@ modified: '2020-10-03T15:29:07.138Z'
   - `theme.tone($color)` determines whether the given color is "light" or "dark".
   - `theme.text-emphasis($emphasis)` returns opacity value for given emphasis.
 
+- 使用material-design-web的示例项目
+  - https://github.com/lucka-me/mapler
+    - Web app to make map as wallpaper
+  - https://github.com/abraham/slides-today
+    - Slides.today is a site dedicated to the presentations
+    - 依赖 angular
+  - https://github.com/Growthfilev2/admin_panel
+    - Admin Panel For Growthfile
+  - https://github.com/enbock/Time-Tracker
+    - 基于react，但使用的是纯js `import * as mdc from 'material-components-web';`
  
 
 - ### components-catalog

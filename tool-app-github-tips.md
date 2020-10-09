@@ -25,8 +25,12 @@ modified: '2020-10-05T07:52:42.228Z'
     - https://techgaun.github.io/active-forks/index.html
 
 - usage
-  - 若仓库是一个library，查找依赖本仓库的仓库中star最多的
+  - TODO: 若仓库是一个library，查找依赖本仓库的仓库中star最多的
     - https://github.com/hacker-DOM/github-by-stars
+      - /inactive
+    - 变通的方法
+      - 在github直接搜索导入库 import from react，再限制语言如js
+      - 或者搜索使用库 data-mdc-auto-init 的 code，而不是repositories
 
 - 排行榜
   - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)

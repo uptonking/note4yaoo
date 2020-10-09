@@ -17,6 +17,11 @@ modified: '2020-06-22T09:23:56.117Z'
 - 大公司开源项目全家桶
 - 主流design system: 组件库框架、sketch
 
+- Stack Overflow Annual Developer Survey
+  - https://insights.stackoverflow.com/survey
+  - View Survey Results • Download Full Data Set (CSV)
+  - https://github.com/brianhuynh27/pandas_data_analysis
+
 ## edu
 
 - 高考分数线
