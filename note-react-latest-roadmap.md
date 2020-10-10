@@ -181,6 +181,8 @@ modified: '2020-07-08T03:17:23.369Z'
   - [RFC: Focus Management API](https://github.com/reactjs/rfcs/pull/109)
   - [Introducing an RFC for isomorphic IDs](https://github.com/reactjs/rfcs/pull/32)  
   - [RFC: Signals and Slots Hooks](https://github.com/reactjs/rfcs/pull/135)
+  - [RFC: Unified state](https://github.com/reactjs/rfcs/pull/179)
+    - suggest a unify API for creating a global, contextual and local states.
 
 - [rfcs-merged](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Amerged)
   - [RFC: useMutableSource PR](https://github.com/reactjs/rfcs/pull/147)

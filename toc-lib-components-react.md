@@ -150,6 +150,7 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://uiwjs.github.io/#/components
   - A Component Library for React 16+
 - zeit-ui/react /MIT/898Star/202008
+  - https://github.com/geist-org/react
   - https://github.com/zeit-ui/react
   - https://react.zeit-ui.co/
   - Modern and minimalist React UI library, originating from Vercel's design.

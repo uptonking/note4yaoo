@@ -10,11 +10,12 @@ modified: '2020-09-25T05:33:19.981Z'
 ## faq-not-yet
 
 - 要不要用css-in-js？
-  - 优点是局部样式+type check+易于实现动动态样式和theming
+  - 优点是方便实现局部样式+动态样式+theming+type check
   - 缺点是styled组件会带来runtime cost，做性能优化时早晚会干掉
+  - 技术选型时，参考知名项目或大公司项目的选择，结论是大公司大多用scss
 
 - 选用哪一个state management方案？
-  - 一个开发者开发了五六种方案，每种都有特点
+  - 一个开发者开发了五六种方案，每种都有优缺点
   - 直接用react context api，减少依赖
 
 - 开发list组件和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
@@ -22,7 +23,30 @@ modified: '2020-09-25T05:33:19.981Z'
 
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
-## 函数设计时，要不要统一用一个大的参数对象作为唯一参数？
+## 存取器getter-setter(setXxx) vs 公共变量 
+
+- A difference between using a getter or setter and using a standard function is that getters/setters are automatically invoked on assignment. 
+  - So it looks just like a normal property but behind the scenes you can have extra logic (or checks) to be run just before or after the assignment.
+  - Direct property access is a perfectly fine way to do things when you don't need getter or setter special logic.
+
+- getter-setter优点
+  - getters and setter can have validation in them, fields can't
+  - using getter you can get subclass of wanted class.
+  - getters and setters are polymorphic, fields aren't
+  - debugging can be much simpler, because breakpoint can be placed inside one method not near many references of that given field.
+  - they can hide implementation changes
+- getter usecase
+  - The value is computed. 可计算属性
+  - You are proxying a value from another object. 返回自身私有属性或封装的另一个对象的属性。
+- setter usecase
+  - You need to validate the incoming value.
+  - You need to do something every time a value changes, like trim, concat
+
+- ref
+  - [Are `getter` and `setter` necessary in JavaScript?](https://stackoverflow.com/questions/34805099/are-getter-and-setter-necessary-in-javascript)
+  - [Why use getters and setters in JavaScript?](https://stackoverflow.com/questions/42342623/why-use-getters-and-setters-in-javascript)
+
+## 设计函数时，要不要统一用一个大的参数对象作为唯一参数？
 
 - 优点
   - 无需关心参数顺序、方便加减参数数量
