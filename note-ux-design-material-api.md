@@ -318,6 +318,9 @@ modified: '2020-10-10T16:40:37.832Z'
 - trailingIconContent
 - prefixText
 - suffixText
+- 私有属性
+  - this.nativeControl_
+    - checkbox,radio,switch
 
  
 
