@@ -10,7 +10,7 @@ modified: '2020-09-25T05:33:19.981Z'
 ## faq-not-yet
 
 - 要不要用css-in-js？
-  - 优点是方便实现局部样式+动态样式+theming+type check
+  - 优点是方便实现 局部样式、动态样式、theming、type check
   - 缺点是styled组件会带来runtime cost，做性能优化时早晚会干掉
   - 技术选型时，参考知名项目或大公司项目的选择，结论是大公司大多用scss
 
@@ -23,11 +23,14 @@ modified: '2020-09-25T05:33:19.981Z'
 
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
+## 组件或应用的配置项过多时如何处理更好
+
 ## 存取器getter-setter(setXxx) vs 公共变量 
 
 - A difference between using a getter or setter and using a standard function is that getters/setters are automatically invoked on assignment. 
   - So it looks just like a normal property but behind the scenes you can have extra logic (or checks) to be run just before or after the assignment.
   - Direct property access is a perfectly fine way to do things when you don't need getter or setter special logic.
+  - 能实现相同的功能，但提供的api不同，给开发者更大的灵活性
 
 - getter-setter优点
   - getters and setter can have validation in them, fields can't

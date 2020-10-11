@@ -242,7 +242,7 @@ packages/
     - You can implement the Adapter in different frameworks such as Angular or React. 
     - **An implementation of an Adapter interacts with the DOM structure**.
   - Component has a Foundation, and its role is to
-    - Implement the Adapter, using non-framework JavaScript, and
+    - Implement the Adapter, using non-framework JavaScript
     - Provide public methods that proxy to methods in the Foundation.
 - Every package in MDC Web comes with a Component, Foundation, and Adapter. 
   - To instantiate a Component, you must pass the root element to the Component's constructor method. 
