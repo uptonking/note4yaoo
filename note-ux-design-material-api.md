@@ -7,6 +7,49 @@ modified: '2020-10-10T16:40:37.832Z'
 
 # note-ux-design-material-api
 
+## materialcomponents for react
+
+- https://github.com/material-components/material-components-web-react
+  - 常用props
+    - className,id,label,selected
+  - 常用state
+    - classList,leadingIconClassList,value
+  - 实现的简单组件示例，如Fab
+  - 在componentDidMount中创建MDCFoundation实例，并调用 `this.foundation.init();`
+  - 在componentWillUnmount中调用 `this.foundation.destroy();`
+  - adapter存取器方法的属性中很多setState
+  - 一般都有根据props计算拼接再classes的方法
+  - 组件暴露的handleChange等事件处理方法，大多都调用foundation中的方法
+  - 函数ref可作为普通属性向下多级传递
+  - foundation也可以放到state的属性中，参考Menu、select
+    - [fix(text-field): put foundation on state and do render input unless foundation is present ](https://github.com/material-components/material-components-web-react/pull/353)
+    - Well the inner components of a component will be initialized first. 
+    - In this case, text field initializes before it considers itself "mounted". 
+    - So the innerComp's componentDidMount is called before text field's componentDidMount. relies on the foundation existing, which only happens after the text field's componentDidMount.
+    - So by adding foundation to state, we can guarantee that the will always have a foundation.
+    - foundation is moved to state so that Text Field's componentDidMount will trigger a re-render through setState after initializing the foundation
+
+``` JS
+// 将复杂组件拆分成可组合的小组件
+return (
+  <div className={classes} {...otherProps}>
+      {children}
+    </div>
+);
+```
+
+- https://github.com/prateekbh/preact-material-components
+  - `abstract class MaterialComponent extends React.Component`
+    - 实例属性: MDComponent,mdcProps,mdcNotifyProps,classText,control,ripple
+    - 实例方法: render返回VNode,react生命周期，setControlRef,buildClassName,materialDom
+  - 实现简单组件如Button/Checkbox/Fab时，只需实现materialDom方法，预定义组件的dom结构
+  - 在componentDidMount中创建MDC组件实例，并注册事件监听器
+  - 在componentWillUnmount中移除监听器，再调用MDC组件实例的destroy方法
+  - 使用此方法创建react组件的优缺点
+    - 工作量较小，因为直接使用了MDC组件的class
+    - react组件的api完全自己定义，受MDC组件api变化的影响较小
+    - foundation/adapter的架构从长远看更适合与其他前端框架集成
+
 ## material-design-components-web
 
 - ### components-catalog

@@ -12,6 +12,26 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- `void expression`
+  - The `void` operator evaluates the given expression and then returns `undefined` .
+  - The `void` operator is often used merely to obtain the `undefined` primitive value, 
+    - usually using `void(0)` (which is equivalent to `void 0"). 
+    - In these cases, the global variable `undefined` can be used.
+  - 使用场景
+    - IIFE
+    - javascript:void(0)
+    - button.onclick = () => void doSomething()
+  - undefined问题
+    - The problem with using undefined was that undefined is not a reserved word
+    - That is, undefined is a permissible variable name, so you could assign a new value to it at your own caprice(变化无常，反复无常)
+    - This is no longer a problem in any environment that supports ECMAScript 5 or newer (i.e. in practice everywhere but IE 8), which defines the `undefined` property of the global object as read-only 
+  - Why void 0, specifically?
+    - Why should we use void 0? What's so special about 0? Couldn't we just as easily use 1, or 42, or 1000000 or "Hello, world!"?
+    - And the answer is, yes, we could, and it would work just as well. 
+    - The only benefit of passing in 0 instead of some other argument is that 0 is short and idiomatic.
+  - Although `undefined` can generally be trusted in modern JavaScript environments, there is one trivial advantage of `void 0` : it's shorter. 
+    - most code minifiers replace undefined with void 0 to reduce the number of bytes sent to the browser.
+
 - typescript class Parameter properties 构造函数中带有修饰符的参数，可自动生成赋值语句
 
 ``` typescript
