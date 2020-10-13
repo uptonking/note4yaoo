@@ -45,6 +45,7 @@ modified: '2020-09-10T05:48:07.754Z'
 - ssr
   - next.js
   - razzle
+  - 其他：beidou、react-server
 
 - [2020年的React Hooks生态](https://juejin.im/post/6861055676652158990)
   - router: react-router, hookrouter
