@@ -23,3 +23,6 @@ modified: '2020-09-25T09:29:12.768Z'
   - https://github.com/lmjben/cdfang-spider
   - https://cdfangyuan.cn/
   - 成都房协网爬虫，可视化数据分析
+
+- [most googled female singers](https://www.youtube.com/watch?v=xjPrfxvFEFM)
+  - 水平柱状图，最大搜索量的一直通过动画排在第一位最上方

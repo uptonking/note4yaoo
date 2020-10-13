@@ -9,8 +9,7 @@ modified: '2020-07-30T13:52:49.242Z'
 # draft-pastebin-pieces
 
  
-- [most googled female singers](https://www.youtube.com/watch?v=xjPrfxvFEFM)
-  - 水平柱状图，最大搜索量的一直通过动画排在第一位最上方				
+
 ------  
 
 - 知乎禁止转载的回答测试
