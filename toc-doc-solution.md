@@ -96,6 +96,7 @@ modified: '2020-10-13T09:17:01.472Z'
   - 依赖react-redux、react-live渲染mdx文档
 - https://github.com/youzan/zent
   - 依赖react-loadable、react-router、prismjs、react-beautiful-dnd渲染mdx文档
+  - markdown顶部存放本文档内容的元信息，包括路由
 - https://github.com/wilsson/papyrum
   - a tool that will help you document your design system or library of components based on React.
   - Zero config, MDX based, Typescript support, Syntax highlighting with Prism React Renderer

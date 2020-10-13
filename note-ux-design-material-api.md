@@ -7,7 +7,7 @@ modified: '2020-10-10T16:40:37.832Z'
 
 # note-ux-design-material-api
 
-## materialcomponents for react
+## material components for react
 
 - https://github.com/material-components/material-components-web-react
   - 常用props
@@ -22,7 +22,7 @@ modified: '2020-10-10T16:40:37.832Z'
   - 组件暴露的handleChange等事件处理方法，大多都调用foundation中的方法
   - 函数ref可作为普通属性向下多级传递
   - foundation也可以放到state的属性中，参考Menu、select
-    - [fix(text-field): put foundation on state and do render input unless foundation is present ](https://github.com/material-components/material-components-web-react/pull/353)
+    - [fix(text-field): put foundation on state and do render input unless foundation is present](https://github.com/material-components/material-components-web-react/pull/353)
     - Well the inner components of a component will be initialized first. 
     - In this case, text field initializes before it considers itself "mounted". 
     - So the innerComp's componentDidMount is called before text field's componentDidMount. relies on the foundation existing, which only happens after the text field's componentDidMount.
@@ -37,6 +37,9 @@ return (
     </div>
 );
 ```
+- https://github.com/jamesmfriedman/rmwc
+  - 
+ 
 
 - https://github.com/prateekbh/preact-material-components
   - `abstract class MaterialComponent extends React.Component`

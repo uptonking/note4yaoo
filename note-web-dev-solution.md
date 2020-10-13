@@ -17,18 +17,16 @@ modified: '2020-09-10T05:48:07.754Z'
 - tree-shaking
   - 各工具库的编译方式不同，webpack各版本支持程度不同
   - webpack v4不支持，v5支持
-    - Tree shaking does not apply to re-exported namespace imports
-    - rollup can tree-shake `import * as foo` just like other tools
 - component-to-image
   - repng
 - 中文字体体积大的问题
   - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
   - 动态中文web字体暂无解决方案
 - css模块化方案选择的问题
-  - 暂无统一标准的解决方案，可以参考ant-design等大型项目，直接使用css即可
-  - 要考虑与具体框架结合，方便实现国际化语言和样式主题切换
-  - 要考虑依赖的或将使用第三方组件的样式如何集成到现有项目
-  - 考虑在特殊情况下如何覆盖样式
+  - 暂无统一标准的解决方案，可以参考ant-design等大型项目的选择，直接使用css或scss
+  - 要考虑将依赖的第三方组件的样式如何集成到现有项目
+  - 要考虑与具体框架结合，方便实现国际化RTL、语言和样式主题切换
+  - 考虑在特殊情况下如何覆盖组件的样式
 
 ## 前端基础框架开发
 
@@ -42,12 +40,14 @@ modified: '2020-09-10T05:48:07.754Z'
 - 中间件
 - 网络请求
 - 路由跳转
-- ssr
 - 同构
 - ui组件库
+- ssr
+  - next.js
+  - razzle
 
 - [2020年的React Hooks生态](https://juejin.im/post/6861055676652158990)
-  - router: react-router,hookrouter
+  - router: react-router, hookrouter
   - state: redux, mobx, unstated-next, recoil, use-immer, dva
   - components: antd, sunflower
   - request: swr, react-query
