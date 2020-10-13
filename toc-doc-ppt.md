@@ -1,12 +1,17 @@
 ---
 title: toc-doc-ppt
-tags: [presentation, toc]
+tags: [doc, presentation, toc]
 created: '2020-08-02T08:42:18.196Z'
-modified: '2020-09-26T17:53:20.748Z'
+modified: '2020-10-13T08:57:12.264Z'
 ---
 
 # toc-doc-ppt
 
+- spectacle /8.6kStar/MIT/202006
+  - https://github.com/FormidableLabs/spectacle
+  - https://formidable.com/open-source/spectacle/docs/tutorial/
+  - ReactJS based Presentation Library
+  - 依赖history、marksy、prism-react-renderer、react-spring、styled-comp
 - marpit /MIT/287Star/22009
   - https://github.com/marp-team/marpit
   - https://marpit.marp.app/

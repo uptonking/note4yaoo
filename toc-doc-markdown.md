@@ -1,30 +1,24 @@
 ---
-title: toc-lib-office-markdown
-tags: [lib, markdown, office, toc]
+title: toc-doc-markdown
+tags: [doc, markdown, toc]
 created: '2020-10-05T09:49:50.474Z'
-modified: '2020-10-05T09:50:13.259Z'
+modified: '2020-10-13T08:54:38.720Z'
 ---
 
-# toc-lib-office-markdown
+# toc-doc-markdown
 
-## react-live
-
-- usecase
-  - https://github.com/coston/react-window-ui
-
-- alternatives
-  - 要在功能丰富和轻量方便间折中，过重的编辑器就偏向于在线ide了
-  - https://github.com/uber/react-view
-    - The first prototype of React View was even using react-live internally but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-    - We also rely on babel and babel-parser instead of buble.
-
-## markdown
+## markdown-parser-generator
 
 - https://github.com/markdown-it/markdown-it
   - /10.4kStar/MIT/202009
   - https://markdown-it.github.io/
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
+- marked
+- remark-parse
+
+## markdown-editor
+
 - https://github.com/HarryChen0506/react-markdown-editor-lite
   - /446Star/MIT/202008
   - 一款轻量的基于React的markdown编辑器

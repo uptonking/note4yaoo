@@ -22,6 +22,7 @@ modified: '2020-09-28T13:39:33.266Z'
     - https://github.com/vueComponent/ant-design-vue
     - https://github.com/NG-ZORRO/ng-zorro-antd
     - https://github.com/taejs/ant-design-vanilla
+    - https://github.com/alitajs/ant-design-plus/
 - Material Design  /MIT/13.6kStar/201912/Google
   - https://material.io/design/
   - https://github.com/material-components/material-components-web

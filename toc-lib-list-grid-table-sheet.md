@@ -205,7 +205,7 @@ modified: '2020-07-13T02:41:12.041Z'
 - DataTables /MIT/6.6kStar/202005
   - https://github.com/DataTables/DataTables
   - http://www.datatables.net/
-  - atable enhancing plug-in for jQuery
+  - datable enhancing plug-in for jQuery
 - react-smart-data-table /MIT/46Star/202006
   - https://github.com/joaocarmo/react-smart-data-table
   - https://joaocarmo.com/react-smart-data-table/examples/bootstrap/
@@ -278,7 +278,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://axui-datagrid.jsdev.kr/introduction
   - DataGrid, DataSheet for React
 
-## list实现原理的分类
+## list实现元素标签的分类
 
 - js libraries of list/table/spreadsheet/grid
 
@@ -307,6 +307,9 @@ modified: '2020-07-13T02:41:12.041Z'
       - https://github.com/glittershark/reactable
       - http://glittershark.github.io/reactable/
       - 依赖react,table,data-tables
+  - https://github.com/coston/instant-table
+
+ 
 
 - ### 基于div
   - react-table /201907/MIT/6300star
@@ -357,6 +360,8 @@ modified: '2020-07-13T02:41:12.041Z'
       - http://spreadsheets.github.io/WickedGrid/
       - 依赖jquery
 
+ 
+
 - ### 基于canvas
   - x-spreadsheet /201907/MIT/6527star
     - https://github.com/myliang/x-spreadsheet
@@ -365,32 +370,35 @@ modified: '2020-07-13T02:41:12.041Z'
   - rowsncolumns-grid /MIT/30Star/202009
     - https://github.com/rowsncolumns/grid
 
-- ### 其他list    
-  - js-xlsx Community Edition /201907/Apache2.0/17kStar
-      - https://github.com/SheetJS/js-xlsx
-      - https://oss.sheetjs.com/
-      - 依赖cfb(Compound File Binary File Format extractor),ssf  
-      - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
-  - react-pivot 
-      - https://github.com/davidguttman/react-pivot
-      - http://davidguttman.github.io/react-pivot/
-      - 依赖react,reactify,dataframe,xtend
-      - 基于 td
-  - ag-grid-community /201907/MIT/5400star
-      - https://github.com/ag-grid/ag-grid
-      - https://www.ag-grid.com/example.php#/
-      - 依赖无
-      - 基于div，模块化
-  - FancyGrid /201907/commercial/120star
-      - https://github.com/FancyGrid/FancyGrid
-      - https://fancygrid.com/tutorials/getting-started/filtering
-      - 依赖无
-      - 基于div
-  - 更多库
-    - https://github.com/FancyGrid/awesome-grid
-    - https://github.com/TonyGermaneri/canvas-datagrid
-        - /201906/BSD/470star
-    - https://github.com/stevelacy/react-datagrid2 
-        - /201903/MIT/20star
-    - https://github.com/iddan/react-spreadsheet 
-        - /201907/MIT/130star
+ 
+
+## 其他list    
+
+- js-xlsx Community Edition /201907/Apache2.0/17kStar
+    - https://github.com/SheetJS/js-xlsx
+    - https://oss.sheetjs.com/
+    - 依赖cfb(Compound File Binary File Format extractor),ssf  
+    - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
+- react-pivot 
+    - https://github.com/davidguttman/react-pivot
+    - http://davidguttman.github.io/react-pivot/
+    - 依赖react,reactify,dataframe,xtend
+    - 基于 td
+- ag-grid-community /201907/MIT/5400star
+    - https://github.com/ag-grid/ag-grid
+    - https://www.ag-grid.com/example.php#/
+    - 依赖无
+    - 基于div，模块化
+- FancyGrid /201907/commercial/120star
+    - https://github.com/FancyGrid/FancyGrid
+    - https://fancygrid.com/tutorials/getting-started/filtering
+    - 依赖无
+    - 基于div
+- 更多库
+  - https://github.com/FancyGrid/awesome-grid
+  - https://github.com/TonyGermaneri/canvas-datagrid
+      - /201906/BSD/470star
+  - https://github.com/stevelacy/react-datagrid2 
+      - /201903/MIT/20star
+  - https://github.com/iddan/react-spreadsheet 
+      - /201907/MIT/130star
