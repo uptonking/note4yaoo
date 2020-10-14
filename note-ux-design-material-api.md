@@ -45,6 +45,10 @@ return (
   - createMemoComponent会返回调用React.memo后的组件
   - FoundationElement不是React组件，此方法不依赖外部
   - useFoundation会返回 `{foundation,elements}`
+  - ripple实现
+    - mdc的ripple是以点击处为圆心向四周发散，ant-design的ripple是从元素边框向四周发散半透明
+    - 内部结构包括withDomNode、Ripple、RippleSurface、withRipple
+
  
 
 - https://github.com/prateekbh/preact-material-components

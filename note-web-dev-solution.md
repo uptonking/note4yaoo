@@ -40,9 +40,10 @@ modified: '2020-09-10T05:48:07.754Z'
 - 中间件
 - 网络请求
 - 路由跳转
-- 同构
 - ui组件库
-- ssr
+- 同构
+- ssr：
+  - 核心优势：首屏加载更快、seo友好
   - next.js
   - razzle
   - 其他：beidou、react-server

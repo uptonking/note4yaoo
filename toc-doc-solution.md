@@ -19,6 +19,12 @@ modified: '2020-10-13T09:17:01.472Z'
   - 基于react、Ant Design的静态文档生成器
   - 配置，代码模仿自VuePress
   - 依赖@hot-loader/react-dom、@loadable/babel-plugin、prism-react-renderer
+- https://github.com/palantir/documentalist
+  - /125Star/Apache2/202010
+  - A sort-of-static site generator optimized for living documentation of software projects.
+  - Documentalism is a two-step process: Get the data, Render the data.
+  - compiler is an extensible solution to step 1: get all your data in one place, in a consistent format. 
+  - 依赖kss(a documentation syntax for CSS)、marked、typedoc
 - https://github.com/styleguidist/react-styleguidist
   - /9.2kStar/MIT/202009
   - Isolated React component development environment with a living style guide

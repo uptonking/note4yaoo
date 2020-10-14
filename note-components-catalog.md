@@ -38,13 +38,14 @@ modified: '2020-10-02T11:42:00.886Z'
 - Sidebar
 - Divider
   - 空白样式的组件可代替Spacer空行
+- NavBar
+  - 下滑时显示，上滑时隐藏
 
 ## input
 
 - ### Input
   - 公式输入
   - as form control
-
 
 - ### Form
 - 难点
@@ -55,7 +56,6 @@ modified: '2020-10-02T11:42:00.886Z'
   - 联动
 - 参考
   - [alibaba-formily](https://github.com/alibaba/formily)
-
 
 - ### Dropdown/Select
   - 单选
