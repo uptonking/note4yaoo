@@ -114,6 +114,48 @@ const Foo = (props) => {
 - The plan is to eventually get rid of the need for `forwardRef` altogether by putting it back into `props` .
 - Beware forwardRef affects reconciliation: element is always re-created on parent re-rendering.
 
-- ref
-  - [Hook for forwardRef](https://github.com/facebook/react/issues/15306)
-  - [Potential performance issues with using forwardRef](https://github.com/facebook/react/issues/13456)
+- ### [value of using React.forwardRef vs custom ref prop](https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop)
+- ref常用别名：setRef, nodeRef, innerRef
+- [forwardRef to FC](https://www.reddit.com/r/reactjs/comments/dfyclo/with_introduction_of_hooks_do_we_need_to_use/f39w4tv/?context=3)
+
+``` JS
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+// You can now get a ref directly to the DOM button:
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+
+// =====================================
+
+const FancyButton = ({ innerRef }) => (
+<button ref={innerRef} className="FancyButton">
+    {props.children}
+  </button>
+));
+const ref = React.createRef();
+<FancyButton innerRef={ref}>Click me!</FancyButton>;
+```
+
+- If you use React 16.2 or lower, or if you need more flexibility than provided by ref forwarding, you can use this alternative approach and explicitly pass a ref as a differently named prop.
+  - compatible with all React versions
+  - passing refs as usual props does not cause breaking changes and is the way to go for multiple refs
+  - works for class and function components
+  - simplifies passing a ref to a nested component several layers deep
+- The only advantages of forwardRef coming to my mind are
+  - uniform access API for DOM nodes, functional and class components (you mentioned that)
+  - ref attribute does not bloat your props API, e.g. if you provide types with TypeScript
+
+ 
+
+- ### ref
+- [RFC: createElement changes and surrounding deprecations](https://github.com/reactjs/rfcs/pull/107)
+  - 大部分在讨论去掉defaultProps的决定，而未讨论去掉forwardRef的决定
+- [Hook for forwardRef](https://github.com/facebook/react/issues/15306)
+- [Potential performance issues with using forwardRef](https://github.com/facebook/react/issues/13456)
+- [React hooks and functional component ref](https://stackoverflow.com/questions/58411779/react-hooks-and-functional-component-ref)
+- [An alternative to ReactDOM.findDOMNode](https://github.com/reactjs/react-transition-group/issues/606)
+  - ref object as a 2nd argument in render prop
+  - [feat: add `nodeRef` alternative instead of internal `findDOMNode` ](https://github.com/reactjs/react-transition-group/pull/559)
