@@ -37,8 +37,14 @@ return (
     </div>
 );
 ```
+
 - https://github.com/jamesmfriedman/rmwc
-  - 
+  - Tag组件可代表普通html标签元素，在这里统一传入或设置ref
+  - createComponent方法会从传入的组件props中取出ref然后返回一个调用forwardRef生成的组件
+    - 有部分额外代码只为生成类型声明，在runtime不执行，但会增加阅读代码时的复杂度
+  - createMemoComponent会返回调用React.memo后的组件
+  - FoundationElement不是React组件，此方法不依赖外部
+  - useFoundation会返回 `{foundation,elements}`
  
 
 - https://github.com/prateekbh/preact-material-components
