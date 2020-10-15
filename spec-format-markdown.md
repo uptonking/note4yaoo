@@ -1,11 +1,11 @@
 ---
-title: parsing-format-markdown
+title: spec-format-markdown
 tags: [format, markdown]
 created: '2019-12-24T11:23:55.280Z'
-modified: '2020-07-14T11:28:26.876Z'
+modified: '2020-10-15T13:41:05.547Z'
 ---
 
-# parsing-format-markdown
+# spec-format-markdown
 
 ## spec
 

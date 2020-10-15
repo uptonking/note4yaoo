@@ -44,7 +44,9 @@ return (
     - 有部分额外代码只为生成类型声明，在runtime不执行，但会增加阅读代码时的复杂度
   - createMemoComponent会返回调用React.memo后的组件
   - FoundationElement不是React组件，此方法不依赖外部
-  - useFoundation会返回 `{foundation,elements}`
+  - useFoundation自定义hook
+    - 参数是一个大对象，属性有foundation、elements、props、api
+    - 会返回 `{foundation,elements}`
   - ripple实现
     - mdc的ripple是以点击处为圆心向四周发散，ant-design的ripple是从元素边框向四周发散半透明
     - 内部结构包括withDomNode、Ripple、RippleSurface、withRipple

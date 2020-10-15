@@ -13,3 +13,5 @@ modified: '2020-08-17T07:16:58.844Z'
   - a broadly adopted industry standard for describing modern APIs
   - http://spec.openapis.org/oas/v3.0.3
   - https://swagger.io/specification/
+- rest api
+  - [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)

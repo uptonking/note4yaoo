@@ -1,11 +1,11 @@
 ---
-title: parsing-format-xml
+title: spec-format-xml
 tags: [format, xml]
 created: '2019-12-24T12:58:13.163Z'
-modified: '2020-07-14T10:53:07.686Z'
+modified: '2020-10-15T13:41:09.651Z'
 ---
 
-# parsing-format-xml
+# spec-format-xml
 
 ## spec
 

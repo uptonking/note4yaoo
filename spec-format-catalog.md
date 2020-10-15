@@ -1,11 +1,11 @@
 ---
-title: spec-format
-tags: [format, spec]
+title: spec-format-catalog
+tags: [catalog, format, spec]
 created: '2019-12-02T10:25:27.789Z'
-modified: '2020-07-14T11:00:41.306Z'
+modified: '2020-10-15T13:42:23.746Z'
 ---
 
-# spec-format
+# spec-format-catalog
 
 - specifications about file format  
 

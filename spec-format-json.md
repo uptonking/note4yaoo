@@ -1,11 +1,11 @@
 ---
-title: parsing-format-json
+title: spec-format-json
 tags: [format, json]
 created: '2019-12-24T12:57:52.481Z'
-modified: '2020-07-14T10:53:12.916Z'
+modified: '2020-10-15T13:41:01.275Z'
 ---
 
-# parsing-format-json
+# spec-format-json
 
 ## spec
 
@@ -24,7 +24,7 @@ modified: '2020-07-14T10:53:12.916Z'
   - 地图类
   - 搜索类
 
-## geosjon
+## geojson
 
 - https://github.com/mapbox/geojson.io
 - https://github.com/topojson/topojson  

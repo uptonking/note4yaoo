@@ -1,11 +1,11 @@
 ---
-title: parsing-format-csv
+title: spec-format-csv
 tags: [csv, format]
 created: '2019-12-24T12:58:14.083Z'
-modified: '2020-07-14T10:53:20.191Z'
+modified: '2020-10-15T13:40:22.676Z'
 ---
 
-# parsing-format-csv
+# spec-format-csv
 
 ## spec
 

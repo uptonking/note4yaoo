@@ -1,11 +1,11 @@
 ---
-title: parsing-format-geo
+title: spec-format-geojson
 tags: [format, geo]
 created: '2019-12-24T12:58:14.641Z'
-modified: '2020-07-14T10:52:31.323Z'
+modified: '2020-10-15T13:42:57.541Z'
 ---
 
-# parsing-format-geo
+# spec-format-geojson
 
 ## spec
 

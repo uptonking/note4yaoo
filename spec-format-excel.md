@@ -1,11 +1,11 @@
 ---
-title: parsing-format-excel
+title: spec-format-excel
 tags: [excel, format]
 created: '2019-12-24T12:54:32.612Z'
-modified: '2020-07-14T10:52:23.064Z'
+modified: '2020-10-15T13:40:45.882Z'
 ---
 
-# parsing-format-excel
+# spec-format-excel
 
 ## spec
 
