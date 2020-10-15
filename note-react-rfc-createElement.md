@@ -114,11 +114,23 @@ const Foo = (props) => {
 - The plan is to eventually get rid of the need for `forwardRef` altogether by putting it back into `props` .
 - Beware forwardRef affects reconciliation: element is always re-created on parent re-rendering.
 
-- ### [value of using React.forwardRef vs custom ref prop](https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop)
-- ref常用别名：setRef, nodeRef, innerRef
+- ### [using React.forwardRef vs custom ref prop](https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop)
+- ref常用别名：innerRef, setRef, nodeRef, myRef
 - [forwardRef to FC](https://www.reddit.com/r/reactjs/comments/dfyclo/with_introduction_of_hooks_do_we_need_to_use/f39w4tv/?context=3)
+- [looks like forwardRef is gone](https://twitter.com/0xca0a/status/1308462975620190209)
+  - If you’re asking why we want to remove forwardRef, it’s because it is confusing and exists as an intermediate migration step towards passing it directly in props
 
 ``` JS
+function Foo({ ref }) {
+  return <mesh ref={ref} />
+}
+
+function App() {
+  const ref = useRef()
+  return <Foo ref={ref} />
+}
+
+// =====================================
 const FancyButton = React.forwardRef((props, ref) => (
   <button ref={ref} className="FancyButton">
     {props.children}
@@ -145,7 +157,7 @@ const ref = React.createRef();
   - works for class and function components
   - simplifies passing a ref to a nested component several layers deep
 - The only advantages of forwardRef coming to my mind are
-  - uniform access API for DOM nodes, functional and class components (you mentioned that)
+  - uniform access API for DOM nodes, functional and class components 
   - ref attribute does not bloat your props API, e.g. if you provide types with TypeScript
 
  
