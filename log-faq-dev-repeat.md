@@ -21,9 +21,26 @@ modified: '2020-09-25T05:33:19.981Z'
 - 开发list组件和tree组件，是先开发list然后用多个list创建tree更好，还先开发tree然后用深度为2的tree创建list更好？
   - react-virtualized: List uses a Grid internally to render the rows
 
+- list下拉刷新拉长了很多后，页面卡顿
+  - 使用virtualized显示屏幕某区域内的列表项
+
 - Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
 
 ## 组件或应用的配置项过多时如何处理更好
+
+## for-in vs for-of
+
+- Both `for...in` and `for...of` statements iterate over something. 
+  - The main difference between them is in what they iterate over.
+- The `for...in` statement iterates over the enumerable properties of an object, in an arbitrary order.
+  - for-in遍历集合的属性，在遍历数组arr时会打印0, 1, 2, prop
+- The `for...of` statement iterates over values that the iterable object defines to be iterated over.
+  - for-of遍历集合的值，在遍历数组arr时会打印arr[0], arr[1], ...
+- tips
+  - Don't use for..in for Array iteration
+
+- ref
+  - [Difference between for...of and for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 
 ## 存取器getter-setter(setXxx) vs 公共变量 
 
