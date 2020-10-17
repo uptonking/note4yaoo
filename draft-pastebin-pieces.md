@@ -10,6 +10,11 @@ modified: '2020-07-30T13:52:49.242Z'
 
  
 
+- useCompFoundation的返回值一般就是具体组件dom元素对象的引用，或setRef方法
+  - 元素引用一般有rootEl, compEl, inputEl
+  - 还会返回api方法给组件函数使用
+- 组件函数中不涉及具体状态计算，简单处理useCompFoundation返回值中属性和props属性就写到element
+
 ------  
 
 - 知乎禁止转载的回答测试
