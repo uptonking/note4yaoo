@@ -48,6 +48,10 @@ return (
   - useFoundation自定义hook，作用主要是创建MDCFoundation实例
     - 参数是一个大对象，包含属性foundation、elements、props、api
     - 会返回 `{foundation,...elements}`
+  - useCompFoundation的返回值一般就是具体组件dom元素对象的引用，或setRef方法
+    - 元素引用一般有rootEl, compEl, inputEl
+    - 还会返回api方法给组件函数使用
+    - 函数组件中不涉及具体状态计算，简单处理useCompFoundation返回值中属性和props属性就写到element
   - ripple实现
     - mdc的ripple是以点击处为圆心向四周发散，ant-design的ripple是从元素边框向四周发散半透明
     - 内部结构包括withDomNode、Ripple、RippleSurface、withRipple
@@ -56,6 +60,7 @@ return (
   - Checkbox的实现
     - dom结构：CheckboxRoot > input & CheckboxBackground & CheckboxRipple
     - useCheckboxFoundation：会传入adapter对象创建MDCCheckboxFoundation，然后调用useFoundation
+
  
 
 - https://github.com/prateekbh/preact-material-components

@@ -17,6 +17,10 @@ modified: '2020-07-14T12:07:15.486Z'
 
 ## work-in-progress
 
+- 20200923
+  - I'm currently planning React Table v8 and an entire dedicated course for it.
+  - It's possible that when v8 becomes available, I might only allow my Github Sponsors access at first and even give away free courses to all of my sponsors similar to React Query Essentials.
+
 ## react-table v8
 
 - [WIP v8 pr 2335](https://github.com/tannerlinsley/react-table/pull/2335)

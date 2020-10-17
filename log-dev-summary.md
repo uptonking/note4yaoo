@@ -35,6 +35,10 @@ modified: '2020-07-14T10:28:11.443Z'
   - 状态数据频繁更新
 - 查找使用示例或实践
   - 单元测试就提供了很详细的api使用场景，不要花费过多精力搜索
+- 对react不满意的地方
+  - forwardRef一直在等官方团队去掉，实现直接从props中取ref
+  - state管理百花齐放，官方正在推recoil
+  - css in js百花齐放，facebook自身研发的stylex未开源
 
 ## dev-tricks
 
@@ -65,11 +69,27 @@ modified: '2020-07-14T10:28:11.443Z'
 
 ## pieces
 
+- [build a plugin system with type safety in typescript ](https://twitter.com/tannerlinsley/status/1316410328763166721)
+  - In JS, you can whip together a plugin system that is very powerful and testable, but in TS?
+  - So complex and feels impossible.
+  - And this problem is why the types for react table currently use declaration merging - I’m really hoping that you get a better solution
+  - Dayjs looks nice. 
+    - Based on namespace injections. 
+    - But it treats only actual imports and not the plug-in injection point — that’s a problem.
+  - @fastifyjs its not perfect. 
+    - there are improvements we could definitely make, but I believe we've done a darn good job. 
+    - Its all based on declaration merging for us!
+  - ref
+    - [javascript-plugin-architecture-with-typescript-definitions](https://github.com/gr2m/javascript-plugin-architecture-with-typescript-definitions)
+      - The goal of this repository is to provide a template of a simple plugin Architecture which allows plugins to created and authored as separate npm modules and shared as official or 3rd party plugins.
+
 - 开发模式/dev-framework
-  - Foundation Framework: build a framework first, then build app on it 
+  - Foundation Framework
+    - build a framework first, then build app on it 
     - 已有的开发框架选择多，框架api一般更稳定，易维护
     - 需要学习，修改难度较大，实际用到的api少时会造成代码臃肿
-- Harvested Framework：start by not trying to build a framework but app, then pay attention to duplication when build other apps
+  - Harvested Framework
+    - start by not trying to build a framework but app, then pay attention to duplication when build other apps
     - 效率更低
 - 监听器的使用    
   - 将业务逻辑系统用事件驱动方式拆分，既能使代码逻辑更清晰，又能自主掌控逻辑的同步和异步执行

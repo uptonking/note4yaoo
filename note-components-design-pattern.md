@@ -15,9 +15,10 @@ modified: '2020-10-05T06:11:13.841Z'
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
-  - ui组件
-    - dom结构(非视觉结构)、样式、行为
+  - cross-framework ui
     - foundation + adapter
+  - ui组件
+    - dom结构(非视觉结构)、样式、属性、行为
 
 ## opinionated
 

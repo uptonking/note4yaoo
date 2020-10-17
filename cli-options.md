@@ -23,6 +23,8 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 
 ## git相关
 
+- clone非master分支
+  - `git checkout origin/branchName`
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
   - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
 
@@ -57,6 +59,18 @@ git push origin master --force
 
 - git status命令 
   - Unmerged paths: 下面列出的就是全部冲突文件，挨个解决即可
+
+- git 常用命令
+  - `git branch branchName` : 创建新分支
+  - `git checkout branchName startPoint` ：切换到新分支
+  - `git checkout -b bName` = `g branch bName` + `g checkout bName`
+  - `git merge b` ：将b分支合并到当前分支
+    - 执行merge之后，会产生一个新的commit
+    - `git merge master feature` ：将master分支合并到feature分支
+  - `git rebase` ：功能和 `git merge` 类似，
+    - `git checkout feature` + `git rebase master`
+    - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
+    - 不会产生新commit
 
 ## linux shell
 

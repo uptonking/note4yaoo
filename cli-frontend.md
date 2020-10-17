@@ -7,7 +7,7 @@ modified: '2020-07-14T10:35:06.446Z'
 
 # cli-frontend
 
-## 前端工程化工具
+## 前端开发工具
 
 - storybook
   - UI component dev & test: React, Vue, Angular, Web Components & more
@@ -74,26 +74,37 @@ modified: '2020-07-14T10:35:06.446Z'
       - `lerna ls` ：显示packages下的各个package的version
       - `npm link` ：可添加本地正在开发的包作为依赖
 
-## 工程化常用工具
+### webpack
 
-- git
-  - 常用命令
-  - `git branch branchName` : 创建新分支
-  - `git checkout branchName startPoint` ：切换到新分支
-  - `git checkout -b bName` = `g branch bName` + `g checkout bName`
-  - `git merge b` ：将b分支合并到当前分支
-      - 执行merge之后，会产生一个新的commit
-      - `git merge master feature` ：将master分支合并到feature分支
-  - `git rebase` ：功能和 `git merge` 类似，
-      - `git checkout feature` + `git rebase master`
-      - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
-      - 不会产生新commit
-  - Conventional Commits
-      - add human and machine readable meaning to commit messages
-      - https://www.conventionalcommits.org
-      - fix, feat, chore, docs, style, refactor, perf, test
+- 对于typescript + monorepo的hot reload热加载
+  - 基本思路是将package.json的main属性值直接配置到源码如 `src/index.tsx` ，参考例子react-workspaces-playground
+  - 对于某些特别复杂的项目，如ag-grid，由于使用的ts特性特别多，样式引用scss，编译需要的插件可能变得很复杂，热加载很可能编译不通
+    - 可以先采取过渡方案，将main属性值配置到 `dist/index.js` ，然后 `tsc --watch` 编译依赖项目，这样修改时会自动编译出新的dist/index.js
+    - 等到对项目源码思路熟练掌握时，可自定义重新构建
+- [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin)
+  - Use this to load modules whose location is specified in the `paths` section of `tsconfig.json` when using webpack. 
+  - This package provides the functionality of the `tsconfig-paths` package but as a webpack plug-in.
+  - Using this plugin means that you should no longer need to add `alias` entries in your `webpack.config.js` which correspond to the paths entries in your `tsconfig.json` . This plugin creates those `alias` entries for you, so you don't have to!
+- [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
+  - This plugin allows you to add new "root" directories that contain your modules. 
+  - It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
+- terser-webpack-plugin
+  - uses terser to minify your JavaScript
 
-## 前端高效操作工具包
+### babel
+
+- [babel-plugin-transform-typescript-metadata](https://github.com/leonardfactory/babel-plugin-transform-typescript-metadata)
+  - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
+  - Babel plugin to emit decorator metadata like typescript compiler
+
+## 开发常用工具
+
+- Conventional Commits
+  - add human and machine readable meaning to commit messages
+  - https://www.conventionalcommits.org
+  - fix, feat, chore, docs, style, refactor, perf, test
+
+## 前端依赖工具库
 
 - date-fns
   - 方便在浏览器和Node中操作时间日期
@@ -118,30 +129,7 @@ modified: '2020-07-14T10:35:06.446Z'
     - improve Record impl, Record is no longer an Immutable Collection type
     - Flowtype and TypeScript type definitions have been completely rewritten
 
-## webpack
-
-- 对于typescript + monorepo的hot reload热加载
-  - 基本思路是将package.json的main属性值直接配置到源码如 `src/index.tsx` ，参考例子react-workspaces-playground
-  - 对于某些特别复杂的项目，如ag-grid，由于使用的ts特性特别多，样式引用scss，编译需要的插件可能变得很复杂，热加载很可能编译不通
-    - 可以先采取过渡方案，将main属性值配置到 `dist/index.js` ，然后 `tsc --watch` 编译依赖项目，这样修改时会自动编译出新的dist/index.js
-    - 等到对项目源码思路熟练掌握时，可自定义重新构建
-- [tsconfig-paths-webpack-plugin](https://github.com/dividab/tsconfig-paths-webpack-plugin)
-  - Use this to load modules whose location is specified in the `paths` section of `tsconfig.json` when using webpack. 
-  - This package provides the functionality of the `tsconfig-paths` package but as a webpack plug-in.
-  - Using this plugin means that you should no longer need to add `alias` entries in your `webpack.config.js` which correspond to the paths entries in your `tsconfig.json` . This plugin creates those `alias` entries for you, so you don't have to!
-- [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
-  - This plugin allows you to add new "root" directories that contain your modules. 
-  - It also allows you to setup a custom alias for directories, specific files, or even other npm modules.
-- terser-webpack-plugin
-  - uses terser to minify your JavaScript
-
-## babel
-
-- [babel-plugin-transform-typescript-metadata](https://github.com/leonardfactory/babel-plugin-transform-typescript-metadata)
-  - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
-  - Babel plugin to emit decorator metadata like typescript compiler
-
-## 前端工程测试工具包
+## 前端工程辅助工具
 
 - rimraf
   - 作用是以包的形式封装rm -rf命令，用来删除文件和文件夹，不管文件夹是否为空，都可删

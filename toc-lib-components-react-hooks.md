@@ -7,6 +7,12 @@ modified: '2020-10-05T19:46:25.251Z'
 
 # toc-lib-components-react-hooks
 
+## typescript
+
+- https://github.com/kripod/react-polymorphic-box
+  - Building blocks for strongly typed polymorphic components in React.
+  - the `as` prop allows changing the HTML tag rendered by a component, 
+
 ## popular
 
 - https://github.com/jdthfe/eui

@@ -160,6 +160,25 @@ const ref = React.createRef();
   - uniform access API for DOM nodes, functional and class components 
   - ref attribute does not bloat your props API, e.g. if you provide types with TypeScript
 
+- [component library question: Do you wrap every reusable component in the library with a React.forwardRef?](https://twitter.com/siddharthkp/status/1250019072248614912)
+  - If the component spread its props to a DOM node, @MaterialUI will forward the ref on the same node. In 99% of the cases, the ref is forwarded to the root element.
+    - in terms of implementation, does this mean every materialUI component has a React.forwardRef wrapper?
+    - Yes.From my understanding of rfc, React.forwardRef could go away.
+  - All of them! I wish it were the default (ie. coming with props).
+  - The plan is to put it into props. forwardRef is a stepping stone to that so that we don’t need a breaking change right now.
+  - If it needs to be focusable, tooltip-able, scroll-spyable, etc and it has an obvious root node, yes (which is almost all the time)
+  - My life would be so easier if React.forwardRef() were done automatically by React for all components.
+    - I wonder why they don't. It's like 50-1 that I want to forward the ref vs access some imperative functions of a component.
+    - I'd say that it's because of the legacy context API. The second argument of a functional component is the context object. But the docs say that it's only true when "contextTypes" is defined as a property of the function. 
+
+- The thing no one tells you about using TypeScript w/ React is that React patterns like forwardRef() and memo() destroy strong types. 
+  - That's why you see a fair amount of libs (e.g. Formik) still using `innerRef` props instead of `ref` props.
+  - [Use React.forwardRef in <Formik>](https://github.com/formium/formik/issues/2208)
+
+- That’s why instead of casting I just support and innerRef prop. 
+  - Once react fixes ref I can just change the prop name
+  - https://twitter.com/HipsterSmoothie/status/1271877542761213954
+
  
 
 - ### ref
