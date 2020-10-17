@@ -10,6 +10,7 @@ modified: '2020-10-10T16:40:37.832Z'
 ## material components for react
 
 - https://github.com/material-components/material-components-web-react
+  - 未使用hooks，基于class组件实现
   - 常用props
     - className,id,label,selected
   - 常用state
@@ -39,15 +40,20 @@ return (
 ```
 
 - https://github.com/jamesmfriedman/rmwc
-  - Tag组件可代表普通html标签元素，在这里统一传入或设置ref
+  - Tag组件可通过tag属性设置html标签名或react组件，还可设置ref属性
   - createComponent方法会从传入的组件props中取出ref，然后返回一个调用forwardRef生成的组件
-    - 有部分额外代码只为生成类型声明，在runtime不执行，但会增加阅读代码时的复杂度
+    - 有部分额外代码只为生成类型声明，在runtime不存在，但会增加阅读代码时的复杂度
   - createMemoComponent会返回调用React.memo生成的组件
   - FoundationElement不是React组件，此方法不依赖外部
     - 封装了组件通用操作方法，以及类似setState强制触发render的方法
   - useFoundation自定义hook，作用主要是创建MDCFoundation实例
-    - 参数是一个大对象，包含属性foundation、elements、props、api
-    - 会返回 `{foundation,...elements}`
+    - 参数对象，包含属性
+      - foundation:foundationFactory 传入组件内部元素ref，然后包含与元素交互方法的对象
+        - adapter方法多是一行，直接操作元素ref的属性值或方法
+      - props:inputProps 某组件对应的props
+      - elements:elementsInput 某组件内部包含的最外层元素或input元素ref名称的集合
+      - api 传入此方法，在useFoundation方法内，在MDCFoundation对象创建或更新时执行
+    - 会返回 `{foundation, ...elements}`
   - useCompFoundation的返回值一般就是具体组件dom元素对象的引用，或setRef方法
     - 元素引用一般有rootEl, compEl, inputEl
     - 还会返回api方法给组件函数使用
@@ -59,7 +65,9 @@ return (
     - dom结构：Tag > ButtonRipple & ButtonIcon & span
   - Checkbox的实现
     - dom结构：CheckboxRoot > input & CheckboxBackground & CheckboxRipple
-    - useCheckboxFoundation：会传入adapter对象创建MDCCheckboxFoundation，然后调用useFoundation
+    - useCheckboxFoundation
+      - 会传入adapter对象创建MDCCheckboxFoundation
+      - 然后调用useFoundation获取返回值中的elements元素引用，再直接操作rootEl/checkboxEl
 
  
 

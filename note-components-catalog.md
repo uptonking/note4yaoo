@@ -43,9 +43,14 @@ modified: '2020-10-02T11:42:00.886Z'
 
 ## input
 
-- ### Input
-  - 公式输入
-  - as form control
+- ### InputText
+- 公式输入
+- as form control
+
+- ### checkbox
+- ref
+  - [ `<input type="checkbox">` ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+    - indeterminate: A Boolean which, if present, indicates that the value of the checkbox is indeterminate rather than true or false
 
 - ### Form
 - 难点
