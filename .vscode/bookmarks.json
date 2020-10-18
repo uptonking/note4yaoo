@@ -48,5 +48,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/note-components-catalog.md",
+		"bookmarks": [
+			{
+				"line": 79,
+				"column": 0,
+				"label": ""
+			}
+		]
 	}
 ]
