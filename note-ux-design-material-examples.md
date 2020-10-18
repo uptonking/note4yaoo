@@ -99,3 +99,46 @@ return (
     - 工作量较小，因为直接使用了MDC组件的class
     - react组件的api完全自己定义，受MDC组件api变化的影响较小
     - foundation/adapter的架构从长远看更适合与其他前端框架集成
+
+ 
+
+- ### 使用material-design-web的示例项目
+- https://github.com/lucka-me/mapler
+  - Web app to make map as wallpaper
+  - 入口组件下只有4个二级组件，个别组件实现代码较长
+  - 多次手动调用 `this.comp.init(parentNode)` 来挂载组件到parentNode下
+  - 子组件通过 `this.parent.append(Element)` 挂载
+  - 封装了创建html元素的方法 `document.createElement(tag)` ，未拼接html结构字符串
+- https://github.com/gamesminer/Spotty-Vanilla
+  - music streaming service，依赖vanilla js和firebase
+  - 顶层组件或二级组件手动调用mount方法，mount方法中会调用mountChildren来初始化子组件，而mountChildren方法中又会调用下层子组件的mount方法，会自动初始化整棵dom树
+  - mount方法中会动态创建子组件内容 `this.mountPoint.innerHTML = 'domstring'`
+  - 通过ejs-loader将import导入的.html模板文件转换成js函数，来创建对应的html字符串
+
+``` JS
+// Use the "interpolate" delimiter to create a compiled template.
+var compiled = _.template('hello <%= user %>!');
+compiled({ 'user': 'fred' });
+// => 'hello fred!'
+```
+
+- https://github.com/enbock/Time-Tracker
+  - 基于react，但使用的是纯js `import * as mdc from 'material-components-web';`
+  - 在componentDidMount中创建MDCTopAppBar对象，并添加 `listen('MDCTopAppBar:nav',handleEvent)`
+  - `new mdc.topAppBar.MDCTopAppBar(ReactDOM.findDOMNode(this))`
+- https://github.com/abraham/slides-today
+  - Slides.today is a site dedicated to the presentations
+  - 依赖 angular
+- https://github.com/Growthfilev2/admin_panel
+  - Admin Panel For Growthfile
+- https://github.com/srinathh/reactmdcweb
+- https://github.com/chrisromito/action_tracker
+- https://github.com/nadsadin/nuppi_shoping
+- https://github.com/ableron/ableron
+- https://github.com/Cuke7/material_template
+- https://github.com/jersoncarranza/sabroso
+- https://github.com/squirrel-labs/GameLobby
+  - 手动创建MDCDrawer等组件，并添加监听器
+  - 通过 `document.createElement('div')` 动态创建元素，然后再创建MDCSnackbar组件实例
+- https://github.com/ThisNameWasTaken/disaster-ready  
+- https://github.com/littleGabriel/music-chart

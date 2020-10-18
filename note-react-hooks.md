@@ -9,6 +9,15 @@ modified: '2020-06-29T13:14:27.166Z'
 
 ## faq
 
+- ### Why not just useMemo?
+  - In the future, React may choose to “forget” some previously memoized values 
+    - and recalculate them on next render, e.g. to free memory for offscreen components. 
+    - Write your code so that it still works without useMemo — and then add it to optimize performance.
+  - In cases where the value must never change, the recommended workaround is to store it with `useRef` , but refs are more awkward to initialize and don't enforce or even communicate that the value should be immutable. 
+  - An alternative workaround is `const [value] = useState(initializer)` , but this is semantically wrong and more costly under the hood.
+  - `useConst` will always return the same value
+  - https://github.com/microsoft/fluentui/blob/master/packages/react-hooks/README.md
+
 - ### React.memo vs reselect
   - [React.memo vs Memoize: What’s the difference and when to use them](https://medium.com/better-programming/react-memo-vs-memoize-71f85eb4e1a)
     - In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.

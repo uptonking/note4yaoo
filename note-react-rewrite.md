@@ -22,8 +22,36 @@ modified: '2020-07-01T06:09:16.202Z'
 
 ## react-hooks
 
-- ref
-  - [使用 React Hooks 重构你的小程序](https://aotu.io/notes/2019/07/10/taro-hooks/index.html)
+### [TinyJSX](https://github.com/stanchino/tiny-jsx)
+
+- TinyJSX is a lightweight UI JavaScript library for developing user interfaces using functional components.
+- TinyJSX exposes an API which mimics the recent React Hooks implementation but is really small.
+- TinyJSX supports only functional components.
+
+``` JS
+import TinyJSX from 'tiny-jsx';
+import { render } from 'tiny-jsx/dom';
+import useEffect from 'tiny-jsx/hooks/useEffect';
+import useState from 'tiny-jsx/hooks/useState';
+
+function Clock() {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTick(tick + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [tick]);
+
+  return (
+    <div>Seconds: {tick}</div>
+  );
+}
+
+render(<Clock />, document.body);
+```
+
+### [使用 React Hooks 重构你的小程序](https://aotu.io/notes/2019/07/10/taro-hooks/index.html)
 
 - Hooks是React函数内部的函数，要实现Hooks最关键的问题在于两个:
   - 找到正在执行的React函数

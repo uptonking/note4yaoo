@@ -71,7 +71,7 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://baseweb.design/
   - A React Component library implementing the Base design language
   - 主要有uber支持，组件的第三方依赖较多
-- Atlassian Design  /Apache2.0/72Star/202001
+- Atlassian Design  /Apache2/72Star/202001
   - https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/
   - https://atlassian.design/
   - https://atlaskit.atlassian.com/
@@ -95,6 +95,10 @@ modified: '2020-09-28T13:39:33.266Z'
   - https://github.com/zendeskgarden/react-components
   - https://garden.zendesk.com/
   - The source of truth for tools, standards, and best practices when building products at Zendesk.
+- Gestalt /Apache2/3.7kStar/202010
+  - https://github.com/pinterest/gestalt
+  - https://gestalt.netlify.app/
+  - React UI components that enforces Pinterest’s design language
 - gov.uk Design System  /MIT/290Star/201912
   - https://github.com/alphagov/govuk-frontend
   - https://design-system.service.gov.uk/

@@ -100,6 +100,9 @@ modified: '2020-10-13T09:17:01.472Z'
 
 - https://github.com/XiaoMi/hiui
   - 依赖react-redux、react-live渲染mdx文档
+  - 组件展示区的上下结构：预览块、描述块、可折叠代码块
+  - 组件文档基于react-live，在代码块外部提供了code、copy、reset这3个按钮
+  - 代码块支持高亮
 - https://github.com/youzan/zent
   - 依赖react-loadable、react-router、prismjs、react-beautiful-dnd渲染mdx文档
   - markdown顶部存放本文档内容的元信息，包括路由
@@ -110,11 +113,6 @@ modified: '2020-10-13T09:17:01.472Z'
   - 组件展示区的上下结构：预览块、代码块
   - 代码块支持高亮，代码显示支持dark模式
   - 且鼠标hover到代码块右上角时显示copy悬浮按钮(鼠标移出右上角时移除悬浮按钮)
-- https://github.com/XiaoMi/hiui
-  - docs依赖react-redux
-  - 组件展示区的上下结构：预览块、描述块、可折叠代码块
-  - 组件文档基于react-live，在代码块外部提供了code、copy、reset这3个按钮
-  - 代码块支持高亮
 - https://github.com/coralproject/mdx-book
   - a docz inspired documentation generator with a playground and without gatsby and ssr.
   - 实现结果较简单

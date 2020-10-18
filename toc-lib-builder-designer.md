@@ -154,6 +154,10 @@ modified: '2020-10-05T06:20:15.291Z'
   - /4Star/MIT/202006
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
+- https://github.com/MrXujiang/h5-Dooring
+  - /799Star/GPLv3/202010
+  - H5可视化页面配置解决方案
+  - 依赖dva、umi、antd、redux、react-dnd、koa
 
 ## misc
 

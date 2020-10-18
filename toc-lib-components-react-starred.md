@@ -9,6 +9,9 @@ modified: '2020-10-05T13:16:31.674Z'
 
 ## starred
 
+- https://github.com/kripod/react-polymorphic-box
+  - Building blocks for strongly typed polymorphic components in React.
+  - the `as` prop allows changing the HTML tag rendered by a component, 
 - https://github.com/reactjs/react-modal
   - Accessible modal dialog component for React
 - https://github.com/reactjs/react-tabs
