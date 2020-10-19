@@ -126,16 +126,21 @@ modified: '2020-10-02T11:42:00.886Z'
   - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
 
 - ### Popover/Tooltip/弹出气泡
-  - 要点
-    - 触发方式：点击、鼠标移入、获取焦点的文本框
-    - 气泡位置：中间或上下左右，箭头或三角形
-    - 弹层显示控制：第几层、覆盖情况、弹层控制、元素操作
+- 要点
+  - 触发方式：点击、鼠标移入、获取焦点的文本框
+  - 气泡位置：中间或上下左右，箭头或三角形
+  - 弹层显示控制：第几层、覆盖情况、弹层控制、元素操作
+- ref
   - [popperjs: Why not use pure CSS](https://github.com/popperjs/popper-core)
-    - CSS tooltips will not be prevented from overflowing clipping boundaries, such as the viewport. The tooltip gets partially cut off or overflows if it's near the edge since there is no dynamic positioning logic.
+    - CSS tooltips will not be prevented from overflowing clipping boundaries, such as the viewport. 
+      - The tooltip gets partially cut off or overflows if it's near the edge since there is no dynamic positioning logic.
     - CSS tooltips will not flip to a different placement to fit better in view if necessary.
-    - Popovers containing interactive HTML are difficult or not possible to create without UX issues using pure CSS. Popperjs positions any HTML element – no pseudo-elements are used.
+      - Popovers containing interactive HTML are difficult or not possible to create without UX issues using pure CSS. 
+      - Popperjs positions any HTML element – no pseudo-elements are used.
     - CSS tooltips cannot follow the mouse cursor or be used as a context menu.
-    - CSS tooltips cannot be easily extended to fit any arbitrary use case you may need to adjust for. Popper is built with extensibility in mind.
+    - CSS tooltips cannot be easily extended to fit any arbitrary use case you may need to adjust for. 
+      - Popper is built with extensibility in mind.
+  - [Tether](https://github.com/shipshapecode/tether) is a small js lib for defining and managing the position of UI elements 
 - FloatingActionButton
 - Toast
 - Loading

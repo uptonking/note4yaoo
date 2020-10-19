@@ -14,6 +14,16 @@ modified: '2020-07-14T09:27:08.258Z'
 
 ## dev-log
 
+- `!` 操作符
+  - 可定义非空类型，转义成js时会直接忽略去掉此符号
+  - 可定义非空成员字段，或强制链式调用，强调非空
+  - A new `!` post-fix expression operator may be used to assert that its operand is non-null and non-undefined in contexts where the type checker is unable to conclude that fact. 
+  - Specifically, the operation `x!` produces a value of the type of `x` with `null` and `undefined` excluded. 
+  - Similar to type assertions of the forms `<T>x` and `x as T` , the `!` non-null assertion operator is simply removed in the emitted JavaScript code.
+- `?` 操作符
+  - 可定义安全链式调用，若中间值为null或undefined，则返回undefined，若中间值非空则返回计算值
+  - 可定义可选参数、可选成员字段
+  - [对比理解Typescript中的as、问号与叹号](https://juejin.im/post/6844904068951834632)
 - 使用is操作符而不用boolean，可以帮助编译器进一步进行类型检查
   - https://stackoverflow.com/questions/40081332/what-does-the-is-keyword-do-in-typescript
   - TypeScript will narrow the type to string in any block guarded by a call to the function. 

@@ -9,6 +9,36 @@ modified: '2020-10-10T16:40:37.832Z'
 
 ## material-design-components-web
 
+- ### CompAdapter
+- interface methods for host interactions
+- 全是接口方法
+- 可分类：样式读写、属性存取器、事件发布、组件其他行为
+
+ 
+
+- ### CompFoundation
+- host-agnostic/indirect logic
+- 属性字段全部私有
+- 暴露get/setXxx方法，而不暴露属性字段
+- get/SetXxx方法大多通过调用adapter对象的方法实现
+
+ 
+
+- ### Comp
+- public api proxying to methods in foundation
+- 构造函数中暴露this.root
+- 有时会直接使用默认的MDCFoundation，而没有自己的f，如Modal
+- 暴露属性存取器，存取器方法内会
+  - 调用foundation的get/setXxx方法
+  - 或直接读写dom属性，如this.nativeControl_.checked
+- 暴露get/SetXxx方法，可以直接读写dom属性
+- 暴露操作组件的方法，大多也会调用foundation对象中的方法
+- adapter对象会在getDefaultFoundation()中创建
+  - 样式读写通过this.root.classList.add/remove实现
+  - 大多数操作都通过直接读写dom元素对象的属性实现
+
+ 
+
 - ### components-catalog
 - typography
 - button
@@ -43,7 +73,7 @@ modified: '2020-10-10T16:40:37.832Z'
 - snackbar
 - theme
 
-- ### adapter结构 methods for host interactions
+- ### adapter结构 interface methods for host interactions
 - addClass
 - removeClass
 - hasClass
@@ -183,6 +213,8 @@ modified: '2020-10-10T16:40:37.832Z'
 - isCollapsed
 - shouldFloat
 - shouldShake
+- 还有很多以存取器形式定义的属性
+  - get nativeControl_()
 
  
 

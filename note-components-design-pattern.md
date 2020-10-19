@@ -14,12 +14,12 @@ modified: '2020-10-05T06:11:13.841Z'
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
   - cross-framework ui
-    - foundation(host-agnostic) + adapter(component-powered)
+    - foundation(host-agnostic) + adapter(host-interaction)
     - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
       - Stencil is a compiler that generates Web Components (more specifically, Custom Elements) and builds high performance web apps.
     - 用户或二次开发者用起来像framework-agnostic，但原作者可能要维护多个port或bridge
-  - ui组件
-    - dom结构(非视觉结构)、样式、属性、行为
+- ui组件
+  - dom结构(非视觉结构)、样式、属性、行为
 - 组件库重点
   - 样式书写与主题切换
   - 状态数据的存储与更新

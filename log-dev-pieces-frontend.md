@@ -12,6 +12,8 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- Browsers won't render elements with the `hidden` attribute set.
+  - The `hidden` global attribute is a Boolean attribute indicating that the element is not yet, or is no longer, relevant. 
 - `void expression`
   - The `void` operator evaluates the given expression and then returns `undefined` .
   - The `void` operator is often used merely to obtain the `undefined` primitive value, 

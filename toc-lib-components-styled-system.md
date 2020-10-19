@@ -49,7 +49,7 @@ modified: '2020-10-05T13:42:12.852Z'
   - monorepo的结构：app, connect, ui, keychain, docs
   - https://github.com/blockstack/ui
   - design system using react, styled-components, and styled system for use
-  - Much of the base structure and typescript code of this package is taken from a beautifully written, open source UI library called Chakra UI.
+  - Much of the base structure and typescript code of this package is taken from a beautifully written UI library called Chakra UI.
 - https://github.com/bashleigh/everblue-ui
   - /1Star/NALic06/2019
   - UI library built with styled-components and React.

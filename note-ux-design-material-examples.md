@@ -19,7 +19,9 @@ modified: '2020-10-18T14:02:22.054Z'
   - 实现的简单组件示例，如Fab
   - 在componentDidMount中创建MDCFoundation实例，并调用 `this.foundation.init();`
   - 在componentWillUnmount中调用 `this.foundation.destroy();`
-  - adapter存取器方法的属性中很多setState
+  - adapter
+    - 存取器方法的属性中很多setState
+    - 方法中大多更新state数据，有部分方法直接操作dom对象的ref
   - 一般都有根据props计算拼接classes的方法
   - 组件暴露的handleChange等事件处理方法，大多都调用foundation中的方法
   - 函数ref可作为普通属性向下多级传递
@@ -102,7 +104,8 @@ return (
 
  
 
-- ### 使用material-design-web的示例项目
+## 使用material-design-web的示例项目
+
 - https://github.com/lucka-me/mapler
   - Web app to make map as wallpaper
   - 入口组件下只有4个二级组件，个别组件实现代码较长

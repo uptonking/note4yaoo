@@ -19,20 +19,21 @@ modified: '2020-10-05T06:23:07.417Z'
   - ref
     - https://github.com/material-components/material-components-web-react
       - /1.9kStar/MIT/201911/ts/deprecated
-      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC),
+      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
+      - 基于class组件实现
     - https://github.com/material-components/material-components-web-components
       - /2.2kStar/Apache2.0/202009/ts/agnostic/MWC
       - a collection of Web Components maintained by Google that implement Material Design
     - https://github.com/prateekbh/preact-material-components
       - /531Star/MIT/202007/ts/deprecated
-      - preact wrapper formaterial-components-web
+      - preact wrapper for material-components-web
     - https://github.com/material-components/material-components-android
       - /11.2kStar/Apache2.0/2020209/java
       - Modular and customizable Material Design UI components for Android
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
   - carbon-components: Component styles and Vanilla JavaScript
-  - carbon-components-react: React components
+  - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts
@@ -42,7 +43,8 @@ modified: '2020-10-05T06:23:07.417Z'
   - /33Star/Free4PlatformOnly/202009/js
   - a framework-agnostic JavaScript library to provide reusable UI components.
   - https://github.com/Tradeshift/react-tradeshift-ui
-    - React wrappers for the Tradeshift ui components. 一层很简单的wrapper
+    - React wrappers for the Tradeshift ui components. 
+    - 一层很简单的wrapper，基于class组件实现
 - https://github.com/IgniteUI/ignite-ui
   - /464Star/Apache2.0/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 
@@ -60,7 +62,8 @@ modified: '2020-10-05T06:23:07.417Z'
     - 依赖popperjs、Tippy.js(tooltip,popover)
 - https://github.com/winjs/winjs
   - /4kStar/MIT/201809/js
-  - build applications using HTML/JS/CSS technology. 文件模块使用的是google-closure-builder的模块系统
+  - build applications using HTML/JS/CSS technology. 
+  - 文件模块使用的是google-closure-builder的模块系统
   - https://github.com/winjs/react-winjs
     - A React wrapper around WinJS's controls.
 - https://github.com/ksc-fe/kpc
@@ -88,6 +91,8 @@ modified: '2020-10-05T06:23:07.417Z'
     - based on JavaScript, using jQuery as its foundation and follows web standards
   - https://github.com/SAP/ui5-webcomponents-react
     - A wrapper implementation for React of the UI5 Web Components
+    - 样式基于jss
+    - 基于hooks实现
 - https://github.com/jeric17/arv
   - /18kStar/MIT/202007/stencil
   - A custom-element(shadowdom) UI library

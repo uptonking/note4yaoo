@@ -25,6 +25,18 @@ modified: '2020-07-18T06:07:02.461Z'
     - preserve the inline paddings of button & input
     - reset the font-sizes/block margins/tables
     - set border-box, responsive media elements
+  - bootstrap-reboot
+    - https://v5.getbootstrap.com/docs/5.0/content/reboot/
+    - For improved cross-browser rendering, we use Reboot to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
+    - Reboot builds upon Normalize, providing many HTML elements with somewhat opinionated styles using only element selectors. 
+    - Additional styling is done only with classes. 
+    - Update some browser default values to use rems instead of ems for scalable component spacing.
+    - Avoid margin-top. 
+      - Vertical margins can collapse, yielding unexpected results. 
+      - More importantly though, a single direction of margin is a simpler mental model.
+    - For easier scaling across device sizes, block elements should use rems for margins.
+    - Keep declarations of font-related properties to a minimum, using inherit whenever possible.
+
 
 ## minireset.css 
 
