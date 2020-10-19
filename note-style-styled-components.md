@@ -3,7 +3,7 @@ title: note-style-styled-components
 tags: [css-in-js, style]
 favorited: true
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-10-06T16:36:33.291Z'
+modified: '2020-10-19T16:23:01.531Z'
 ---
 
 # note-style-styled-components
@@ -38,22 +38,6 @@ modified: '2020-10-06T16:36:33.291Z'
       - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的
       - 因为就算自己用js计算新的样式名本身也有一定的计算，样式变化不多的情况下对性能影响可忽略
     - 会创建重复的样式
-
-## bulma
-
-- https://bulma.io/documentation/overview/start/
-- https://github.com/jgthms/bulma
-- By default, columns are only activated from tablet onwards. 
-  - This means columns are stacked on top of each other on mobile.
-- Bulma is compatible with all icon font libraries: Font Awesome 5, Font Awesome 4, Material Design Icons, Open Iconic, Ionicons etc.  
-- ### book-Creating Interfaces with Bulma_Jeremy Thomas_2018
-  - bulma features
-    - modern css framework with flexbox
-    - 100% responsive, designed to be both mobile and desktop friendly
-    - customizable with over 300 sass variables
-    - css only, no js
-- ### theme-for-bulma
-  - https://jenil.github.io/bulmaswatch/
 
 ## linaria
 
@@ -145,7 +129,6 @@ modified: '2020-10-06T16:36:33.291Z'
       }
     `}
   >
-  
 ```
 
 - s-c vs emotion

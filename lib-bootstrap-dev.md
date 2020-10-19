@@ -11,6 +11,44 @@ modified: '2020-10-19T09:04:20.050Z'
 
 ### components-catalog
 
+- Buttons
+  - Close button
+- Button group
+- Breadcrumb
+- Layout
+  - Containers
+  - Grid
+  - Columns
+  - Gutters
+  - Breakpoints、Z-index、Utilities
+- NavTab
+- Navbar
+- Collapse
+- Pagination
+- Forms
+  - Form control: input, textarea
+  - Select
+  - Checks & radios
+  - File
+  - Range
+  - Input group
+  - Layout
+  - Validation
+- Dropdowns
+- Card
+- Badge
+- List group
+- Tables
+- Carousel
+- Alerts
+- Modal
+- Popovers
+- Tooltips
+- Toasts
+- Progress
+- Scrollspy
+- Spinners
+
 ### Bootstrap Optional JavaScript plugins
 
 - We provide a version of Bootstrap built as ESM (bootstrap.esm.js and bootstrap.esm.min.js) which allows you to use Bootstrap as a module in your browser

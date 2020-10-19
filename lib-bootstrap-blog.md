@@ -7,7 +7,7 @@ modified: '2020-10-19T09:06:02.037Z'
 
 # lib-bootstrap-blog
 
-## Bootstrap 5 Approach
+## Bootstrap 5 Approach Guide
 
 - We’ll dive into each of these more throughout, but at a high level, here’s what guides our approach.
   - Components should be responsive and mobile-first

@@ -13,7 +13,7 @@ modified: '2020-07-13T02:41:12.041Z'
 
 ## list-grid
 
-- ag-grid /MIT/6.4kStar/202006
+- ag-grid /MIT/6.4kStar/202006/ts
   - https://github.com/ag-grid/ag-grid
   - http://www.ag-grid.com/
   - https://www.ag-grid.com/react-grid/
@@ -22,20 +22,26 @@ modified: '2020-07-13T02:41:12.041Z'
     - has no 3rd party dependencies 
     - integrates smoothly with all major JavaScript frameworks
   - ag-grid-enterprise are Commercial licensed but opensourced
-- react-table /MIT/11.6kStar/202007
+- react-table /MIT/11.6kStar/202007/js
   - https://github.com/tannerlinsley/react-table
   - https://react-table.tanstack.com/
   - Hooks for building fast and extendable tables and datagrids for React
-- react-data-grid /MIT/4kStar/202007
+- react-data-grid /MIT/4kStar/202007/ts
   - https://github.com/adazzle/react-data-grid
   - http://adazzle.github.io/react-data-grid/
   - Excel-like grid component built with React, with editors, keyboard navigation, copy...
-- tabulator /MIT/3.4kStar/202007
+- tabulator /MIT/3.4kStar/202007/js
   - https://github.com/olifolkerd/tabulator
   - http://tabulator.info/
   - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
   - 基于div实现
   - 无依赖
+- Luckysheet /MIT/4.5kStar/202010/js
+  - https://github.com/mengshukeji/Luckysheet
+  - https://mengshukeji.github.io/LuckysheetDemo/
+  - an online spreadsheet like excel
+  - 基于div实现
+  - 依赖jspdf
 - handsontable 6.2.2 /MIT/13.8kStar/202007
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
