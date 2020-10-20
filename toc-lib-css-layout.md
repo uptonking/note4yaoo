@@ -13,10 +13,22 @@ modified: '2020-08-02T07:17:20.850Z'
   - https://github.com/STRML/react-grid-layout
   - https://strml.github.io/react-grid-layout/examples/0-showcase.html
   - A draggable and resizable grid layout with responsive breakpoints, for React
+- react-drag-drop-layout-builder /NALic/172Star/201904
+  - https://github.com/chriskitson/react-drag-drop-layout-builder
+  - https://medium.com/@kitson.mac/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6
+  - Drag and drop (DnD) UI layout builder using React and ImmutableJS
+- https://github.com/haltu/muuri
+  - https://muuri.dev/
+  - a JavaScript layout engine that allows you to build all kinds of layouts 
+  - and make them responsive, sortable, filterable, draggable and/or animated. 
 - grd /MIT/2.2kStar/202007
   - https://github.com/1000ch/grd
   - https://1000ch.github.io/grd/
   - A CSS grid framework using Flexbox. Only 321 bytes
+- https://github.com/wadackel/react-stack-grid
+  - Pinterest like layout components for React.js
+- https://github.com/sealninja/react-grid-system
+  - Bootstrap-like responsive grid system for React
 - waffle-grid /MIT/605Star/202003
   - https://github.com/pr1mer-tech/waffle-grid
   - https://waffle.pr1mer.tech/

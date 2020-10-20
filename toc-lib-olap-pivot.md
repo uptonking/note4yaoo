@@ -13,20 +13,23 @@ modified: '2020-08-02T07:24:30.466Z'
   - https://github.com/davidguttman/react-pivot
   - http://davidguttman.github.io/react-pivot/
   - a data-grid component with pivot-table-like functionality for data display, filtering
+  - 基于table标签实现
   - 典型的透视表视图
   - 依赖dataframe，wildemitter，基于react15，较旧
 - react-pivottable /MIT/629Star/202006
   - https://github.com/plotly/react-pivottable
   - https://react-pivottable.js.org/
   - React-based drag'n'drop pivot table with Plotly.js charts
+  - 基于table标签实现
   - 创建透视表后，可快速展示图表
   - 依赖react-draggable, sortablejs
 - pivottable /MIT/3.5kStar/201902/CoffeeScript
   - https://github.com/nicolaskruchten/pivottable
   - https://pivottable.js.org/examples/
-  - a Javascript Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
+  - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
+  - 基于table标签实现
   - 依赖jquery
-- PivotHelper /Apache2.0/19Star/202007
+- PivotHelper /Apache2.0/19Star/202007/angular
   - https://github.com/BjoernKW/PivotHelper
   - https://bjoernkw.github.io/PivotHelper/
   - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.

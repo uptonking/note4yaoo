@@ -44,13 +44,15 @@ modified: '2020-09-28T05:28:09.585Z'
   - Positioning tooltips and popovers is difficult. Popper is here to help
 - https://github.com/nhn/tui.editor
   - /11.8kStar/MIT/202009/js
+  - Plain JavaScript component
+  - provides Markdown/WYSIWYG mode, GFM Standard + Chart & UML Extensible.
   - 依赖codemirror5
 - https://github.com/nhn/tui.calendar
   - /8.5kStar/MIT/202009/js
   - A JavaScript calendar that has everything you need.
 - https://github.com/mdx-js/mdx
   - /9.7kStar/MIT/202009
-  - lets you seamlessly use JSX in your markdown documents
+  - let you seamlessly use JSX in your markdown documents
 - https://github.com/jxnblk/mdx-deck
   - /9.5kStar/MIT/202009
   - React MDX-based presentation decks
@@ -206,6 +208,7 @@ modified: '2020-09-28T05:28:09.585Z'
   - wangEditor 新版已启动研发
 - https://github.com/ether/etherpad-lite
   - Etherpad: real-time collaborative document editor 
+
 
 ### most-starred js-ts
 
