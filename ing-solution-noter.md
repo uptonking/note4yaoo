@@ -76,13 +76,13 @@ modified: '2020-07-14T10:24:54.328Z'
 - [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
 - [ ] edit: edit at where you click  
 - [ ] edit: collapse current node  
+- [ ] edit: insert one blank line below  
 - [ ] edit-character: special character support, like `「Microsoft Store」`
   - https://copychar.cc/symbols/
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
-- [ ] edit-list: toggle lines to list  
 - [ ] edit-list: list symbol to number  
-- [ ] edit: insert one blank line below  
-- [ ] edit: 粘贴后批量删除中文段落中英文单词两边的空格
+- [ ] edit-list: toggle lines to list  
+- [ ] edit: 粘贴后，批量删除中文段落中部分英文单词两边的空格
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`
 - [ ] keyboard: alt+arrow, move current line up/down
 - [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题

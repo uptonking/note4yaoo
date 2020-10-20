@@ -18,3 +18,13 @@ modified: '2020-07-14T09:28:32.650Z'
 
 - https://github.com/uniVocity/csv-parsers-comparison
   - Comparisons among all Java-based CSV parsers
+
+## java template engine
+
+- https://github.com/mbosecke/template-benchmark
+  - /2016
+  - JMH benchmark for popular Java template engines
+  - Freemarker Mustache Pebble Rocker Thymeleaf Trimou Velocity
+- https://github.com/greenlaw110/template-engine-benchmarks
+  - /2015
+  - a benchmark program for a collection of Java template engines

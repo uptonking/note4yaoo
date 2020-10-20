@@ -12,7 +12,7 @@ modified: '2020-10-19T16:49:51.766Z'
 - luckysheet-repos
   - https://github.com/mengshukeji/Luckysheet
     - an online spreadsheet like excel
-    - 基于div实现
+    - 基于canvas实现
     - 依赖jspdf
   - https://github.com/mengshukeji/Luckyexcel
     - an excel import and export library adapted to Luckysheet.
@@ -39,3 +39,15 @@ modified: '2020-10-19T16:49:51.766Z'
   outline: 0;
 }
 ```
+
+## pieces
+
+- [hacker news: Luckysheet, an open-source spreadsheet ](https://news.ycombinator.com/item?id=23994619)
+  - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 
+    - The tables can refer to each other. 
+    - I think it makes it easier to work with, for example, an input table and an output table because they are separate entities and not just different ranges on the same grid. 
+    - It’s similar to how some websites enable you to configure a dashboard view of multiple tables and charts.
+    - I’m wondering if the Numbers approach might work better. 
+    - In particular it might be more natural for dynamic arrays because they would not “overlay” a range of cells.
+    - They would be their own dynamically resizing table on the canvas.
+  - The main reason I tend to avoid Google Sheets is that they're slow. Slow to open, slow to update more complex sheets

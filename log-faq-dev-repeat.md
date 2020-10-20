@@ -24,9 +24,45 @@ modified: '2020-09-25T05:33:19.981Z'
 - list下拉刷新拉长了很多后，页面卡顿
   - 使用virtualized显示屏幕某区域内的列表项
 
-- Why it is important to cache DOM: http://jsperf.com/dom-caching-excercise
+- Why it is important to cache DOM
+  - http://jsperf.com/dom-caching-excercise
 
 ## 组件或应用的配置项过多时如何处理更好
+
+## 最新消息事件的实现: push vs pull/poll
+
+- 场景1：Producer速率大于Consumer速率
+  - 采取Pull的方式只需要降低Consumer的访问频率即可
+- 场景2：强调消息的实时性
+  - 采用Push的方式时，一旦消息到达，服务端即可马上将其推送给消费端，这种方式的实时性显然是非常好的
+- 场景3：Pull的长轮询
+  - Pull模式存在的问题：由于主动权在消费方，消费方无法准确地决定何时去拉取最新的消息
+  - 长轮询的优化方法，用以平衡Pull/Push模型各自的缺点。
+  - 长轮询的基本方式是：消费者如果尝试拉取失败，不是直接return，而是把连接挂在那里 wait，服务端如果有新的消息到来，把连接拉起，返回最新消息。
+- 场景4：部分或全部Consumer不在线
+  - 在消息系统中，Producer和Consumer是完全解耦的
+  - Producer发送消息时，并不要求Consumer一定要在线，对于Consumer也是同样的道理，这也是消息通信区别于RPC通信的主要特点
+
+- Advantages of SSE over Websockets:
+  - Transported over simple HTTP instead of a custom protocol
+  - Can be poly-filled with javascript to "backport" SSE to browsers that do not support it yet.
+  - Built in support for re-connection and event-id
+  - Simpler protocol
+  - No trouble with corporate firewalls doing packet inspection
+- Advantages of Websockets over SSE:
+  - Real time, two directional communication.
+  - Native support in more browsers
+- Ideal use cases of SSE:
+  - Stock ticker streaming
+  - twitter feed updating
+  - Notifications to browser
+- SSE gotchas:
+  - No binary support
+  - Maximum open connections limit
+- ref
+  - [Push 和 Pull 的区别](https://cloud.tencent.com/document/product/406/4791)
+  - [WebSockets vs. Server-Sent events/EventSource](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
+  - [Is it recommended to use Server Sent Events for pushing notifications by continuous querying of the database?](https://stackoverflow.com/questions/60156197/is-it-recomended-to-use-server-sent-events-for-pushing-notifications-by-continuo)
 
 ## for-in vs for-of
 

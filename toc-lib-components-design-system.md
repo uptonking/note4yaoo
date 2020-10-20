@@ -6,8 +6,12 @@ modified: '2020-09-28T13:39:33.266Z'
 ---
 
 # toc-lib-components-design-system
+## guide
 
-## design-system
+- ref
+  - 
+
+## popular-design-system
 
 - Ant Design  /MIT/63.7kStar/202009/ts/Alibaba
   - https://github.com/ant-design/ant-design
@@ -160,53 +164,59 @@ modified: '2020-09-28T13:39:33.266Z'
     - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
   - https://design.lyft.com/
   - http://plasma.guide/
-- misc
-  - https://github.com/appbaseio/designkit
-    - Design kit for appbaseio ecosystem
-    - not active
-  - https://github.com/alexpate/awesome-design-systems
-  - https://github.com/miukimiu/design-systems
-  - https://github.com/CMSgov/design-system
-  - https://github.com/auth0/cosmos
-  - https://ether.thescenery.co/
-  - https://sproutsocial.com/seeds/
-  - https://palette.artsy.net/
-  - https://www.duetds.com/
-    - a set of organized tools, patterns and practices that work as the foundation
-  - https://www.predix-ui.com
-    - Our user interface components enable you to easily create Industrial web applications
-  - https://www.astrouxds.com/
-    - Astro Space UX Design System enables developers to build rich space app experiences
-  - https://github.com/razvangeangu/cho-design-system
-    - design system based on stencil
-  - Solid  /MIT/115Star/202001/BuzzFeed
-    - https://github.com/buzzfeed/solid
-    - https://solid.buzzfeed.com/
-    - Solid is BuzzFeed's functional CSS framework and styleguide.
-    - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
-  - Workday Canvas Design System  /Apache2.0/74Star/202001
-    - https://github.com/workday/canvas-kit
-    - https://design.workday.com/guidelines
-  - Pluralsight Design System  /Apache2.0/158Star/202001
-    - https://github.com/pluralsight/design-system
-    - https://design-system.pluralsight.com/
-  - Predix Design System
-    - https://www.predix-ui.com/#/about/introduction
-  - Morningstar Design System
-    - https://designsystem.morningstar.com/
-    - v2 is using web components; v3 will use vue
-  - ServiceNow Design System
-    - http://designsystem.servicenow.com/#!/
-  - Eva Design System
-    - https://eva.design/
-    - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
-    - implemented for angular and react native
-  - Evergreen Design System  /MIT/9000Star/202001
-    - https://github.com/segmentio/evergreen
-    - https://evergreen.segment.com/
-  - https://github.com/artsy/palette
-    - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
-  - https://github.com/seek-oss/braid-design-system
-    - 基于treat这个css-in-js解决方案实现的 Themeable design system for the SEEK Group
-  - https://github.com/innovaccer/design-system
-    - A React-based UI-Toolkit for web
+
+## more-design-system
+
+- https://github.com/segmentio/evergreen
+  - /9000Star/MIT/202001
+  - https://evergreen.segment.com/
+- https://github.com/artsy/palette
+  - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
+- https://github.com/seek-oss/braid-design-system
+  - Themeable design system for the SEEK Group
+  - 基于treat这个css-in-js解决方案实现
+- https://github.com/innovaccer/design-system
+  - A React-based UI-Toolkit for web
+- https://github.com/appbaseio/designkit
+  - /inactive
+  - Design kit for appbaseio ecosystem
+
+## design-system-site
+
+- https://github.com/alexpate/awesome-design-systems
+- https://github.com/miukimiu/design-systems
+- https://github.com/CMSgov/design-system
+- https://github.com/auth0/cosmos
+- https://ether.thescenery.co/
+- https://sproutsocial.com/seeds/
+- https://palette.artsy.net/
+- https://www.duetds.com/
+  - a set of organized tools, patterns and practices that work as the foundation
+- https://www.predix-ui.com
+  - Our user interface components enable you to easily create Industrial web applications
+- https://www.astrouxds.com/
+  - Astro Space UX Design System enables developers to build rich space app experiences
+- https://github.com/razvangeangu/cho-design-system
+  - design system based on stencil
+- Solid  /MIT/115Star/202001/BuzzFeed
+  - https://github.com/buzzfeed/solid
+  - https://solid.buzzfeed.com/
+  - Solid is BuzzFeed's functional CSS framework and styleguide.
+  - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
+- Workday Canvas Design System  /Apache2.0/74Star/202001
+  - https://github.com/workday/canvas-kit
+  - https://design.workday.com/guidelines
+- Pluralsight Design System  /Apache2.0/158Star/202001
+  - https://github.com/pluralsight/design-system
+  - https://design-system.pluralsight.com/
+- Predix Design System
+  - https://www.predix-ui.com/#/about/introduction
+- Morningstar Design System
+  - https://designsystem.morningstar.com/
+  - v2 is using web components; v3 will use vue
+- ServiceNow Design System
+  - http://designsystem.servicenow.com/#!/
+- Eva Design System
+  - https://eva.design/
+  - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
+  - implemented for angular and react native

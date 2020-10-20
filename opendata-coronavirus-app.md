@@ -28,3 +28,4 @@ modified: '2020-07-22T10:42:47.047Z'
 - https://github.com/davidbau/covid-19-chart
   - Chart of COVID-19 time series data. 
   - Enables a variety of county- state- and nation-level comparisons and data exploration.
+

@@ -10,7 +10,9 @@ modified: '2020-10-19T17:19:45.890Z'
 ## [Luckysheet](https://github.com/mengshukeji/Luckysheet)
 
 - Luckysheet是用纯JavaScript编写的前端表格库
+- 基于canvas实现的表格
 - [在线示例](https://mengshukeji.github.io/LuckysheetDemo/)
+  - https://mengshukeji.gitee.io/luckysheetdemo/
 
 ### features
 
