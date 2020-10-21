@@ -23,7 +23,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - The element positioning logic used in Craft.js is borrowed from `Grape.js`
   - Craft.js uses a slightly modified version of `use-methods` to better fit our API.
 - https://github.com/codex-team/editor.js
-  - /13.3kStar/Apache2.0/202009/ts/vanilla
+  - /13.3kStar/Apache2.0/202009/ts/vanillajs
   - A block-styled editor with clean JSON output
 - https://github.com/amcharts/amcharts4
   - /786Star/FreeWithAttribution/202009
@@ -102,8 +102,6 @@ modified: '2020-10-05T06:10:15.909Z'
 - https://github.com/flatpickr/flatpickr
   - /13kStar/MIT/202009
   - powerful js datetimepicker with no dependencies
-  - /2.2kStar/MIT/202009
-  - admin interface which can be plugged into your application
 - https://github.com/SoftwareBrothers/admin-bro
   - /2.2kStar/MIT/202009
   - admin interface which can be plugged into your application.
@@ -241,6 +239,11 @@ modified: '2020-10-05T06:10:15.909Z'
 
 ### ui-components-design
 
+- https://github.com/ant-design/ant-design
+  - /63.7kStar/MIT/202009/ts
+  - https://github.com/ant-design/ant-design-mobile
+  - https://github.com/ant-design/ant-design-pro
+  - A UI Design Language and React UI library
 - https://github.com/chakra-ui/chakra-ui
   - /10.7kStar/MIT/202009
   - Modular & Accessible UI Components for your React Applications

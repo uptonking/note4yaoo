@@ -88,13 +88,14 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://fancygrid.com/
   - JS grid library with charts integration and server communication.
   - 基于div实现，实现很特别，表格ui是一列一列相邻放置构成的，每列对应的dom元素存在
-- functional-data-grid /MIT/120Star/201907/ts
+- functional-data-grid /MIT/120Star/201907/ts/react-comp
   - https://github.com/energydrink9/functional-data-grid
   - https://energydrink9.github.io/functional-data-grid-examples
   - 基于div实现，每行对应的dom元素存在，样式太陈旧
   - 依赖react-virtualized、emotion
   - Data grids in functional style with ReactJS
-  - made with React-Virtualized for creating rich data grids with filtering, sorting, grouping and aggregates computation.
+  - made with React-Virtualized for creating data grids with filtering, sorting, grouping and aggregates computation.
+  - written in functional programming style with ES2016 and Flow.
 - react-base-table /MIT/761Star/202007/js
   - https://github.com/Autodesk/react-base-table
   - https://autodesk.github.io/react-base-table/
@@ -102,7 +103,7 @@ modified: '2020-07-13T02:41:12.041Z'
   - 依赖react-window
   - A react table component to display large datasets with high performance and flexibility
   - 未实现row select(作者为组件unopinionated的目标而未合并pr)，但提供示例
-- react-fluid-table /26Star/MIT/202009
+- react-fluid-table /26Star/MIT/202009/ts
   - https://github.com/mckervinc/react-fluid-table
   - https://mckervinc.github.io/react-fluid-table/#/
   - 基于div实现，每行对应的dom元素存在
@@ -113,6 +114,16 @@ modified: '2020-07-13T02:41:12.041Z'
   - http://rsuite.github.io/rsuite-table/
   - 基于div实现
   - 依赖react、rsuite/dom-lib、element-resize-event、lodash
+- react-data-browser /4Star/MIT/202001/ts/NoDeps
+  - https://github.com/davidalekna/react-components/tree/master/packages/react-data-browser
+  - https://codesandbox.io/s/github/davidalekna/data-browser-examples
+  - 基于div和flexbox实现
+  - The original use case of this component is to build flexbox tables, 
+  - however the API is powerful and flexible enough to build things like grids as well.
+  - DataBrowser component will not provide any styles, only the functionality.
+  - use-table-tools /MIT/18Star/202009/ts/NoDeps
+    - https://github.com/davidalekna/use-table-tools
+    - Hooks for building kickass react table components
 
 ### div-react
 
@@ -148,15 +159,12 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://papasnippy.github.io/react-bolivianite-grid/
   - 基于div实现，每行对应的dom元素不存在
   - React grid component for virtualized rendering large tabular data.
-- use-table-tools /MIT/18Star/202006
-  - https://github.com/davidalekna/use-table-tools
-  - https://github.com/davidalekna/react-data-browser
-  - Hooks for building kickass react table components
 - reactgrid /MIT/229Star/202010/ts
   - https://github.com/silevis/reactgrid
   - https://reactgrid.com/
   - 基于div实现
   - Add spreadsheet-like behavior to your React app
+  - ReactGrid is available in two versions, MIT (this package) which serve the full interface but is limited in functionality and PRO which is fully functional version. 
   - ReactGrid is NOT 
     - Record-based data table(like ag-grid, handsontable)
     - Spreadsheet with formulas(like Telerik Kendo UI DataTable, dhtmlxSpreadsheet)
@@ -283,10 +291,10 @@ modified: '2020-07-13T02:41:12.041Z'
 - handsontable 6.2.2 /MIT/13.8kStar/202007/js
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
-  - a JS HTML5 data grid with spreadsheet look & feel.
-  - free for all non-commercial purposes since 7.0 
   - 基于table标签实现
   - 依赖numbro, moment, pikaday
+  - a JS HTML5 data grid with spreadsheet look & feel.
+  - free for all non-commercial purposes since 7.0 
   - https://github.com/handsontable/handsontable/releases/tag/7.0.0
   - [Handsontable drops open source for a non-commercial license](https://github.com/handsontable/handsontable/issues/5831)
 - tui.grid /MIT/1.5kStar/202007/ts
@@ -307,6 +315,11 @@ modified: '2020-07-13T02:41:12.041Z'
   - https://bossanova.uk/jexcel
   - 基于table标签实现
   - a lightweight vanilla js plugin to create web-based interactive tables
+- list.js /9.8kStar/MIT/201912/js/inactive
+  - https://github.com/javve/list.js 
+  - https://codepen.io/javve/pen/cLdfw
+  - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
+  - Built to be invisible and work on existing HTML.
 
 ### table-tr-td-react
 
@@ -371,8 +384,8 @@ modified: '2020-07-13T02:41:12.041Z'
 - https://github.com/komarovalexander/ka-table
   - /58Star/MIT/202010/ts
   - http://ka-table.com/
-  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
   - 基于table标签实现
+  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
 - https://github.com/erfangc/GigaGrid
   - /30Star/MIT/201703/ts
   - http://erfangc.github.io/GigaGrid/
@@ -384,6 +397,7 @@ modified: '2020-07-13T02:41:12.041Z'
 - https://github.com/bencripps/react-redux-grid
   - /453Star/MIT/202007
   - http://react-redux-grid.herokuapp.com/
+  - 依赖react-redux
   - A Grid and Tree Component written in React using the Redux Pattern
 
 ### table-tr-td-more
@@ -481,7 +495,7 @@ modified: '2020-07-13T02:41:12.041Z'
 - baserow /127Star/MIT/202010/python/vue
   - https://gitlab.com/bramw/baserow
   - Baserow is an open source online database tool and Airtable alternative.
-  - 依赖 Django、Nuxt.js、PostgreSQL
+  - 依赖Django、Nuxt.js、PostgreSQL
 - https://github.com/andmarti1424/sc-im
   - /2.4kStar/MIT/202009/c
   - An ncurses spreadsheet program for terminal

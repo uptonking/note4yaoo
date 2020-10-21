@@ -20,6 +20,15 @@ modified: '2020-09-28T05:28:09.585Z'
   - /3.5kStar/MIT/202009
   - interactive table generation JavaScript library
   - 无依赖，基于div实现
+- https://github.com/frappe/datatable
+  - /502Star/MIT/202009/js
+  - A simple, modern and interactive datatable for the web
+  - 基于div实现，每行对应的dom元素存在
+  - 依赖hyperlist、sortablejs、lodash
+  - https://github.com/tbranyen/hyperlist
+    - /MIT/291Star/202006/js/NoDeps
+    - A performant virtual scrolling list utility capable of rendering millions of rows
+    - a fork of the existing (unmaintained) project: sergi/virtual-list
 - https://github.com/joshwcomeau/react-flip-move /inactive
   - https://github.com/aholachek/react-flip-toolkit /ts
   - https://github.com/davidkpiano/flipping
@@ -57,6 +66,17 @@ modified: '2020-09-28T05:28:09.585Z'
   - /9.5kStar/MIT/202009
   - React MDX-based presentation decks
   - 基于gatsby实现的文档展示工具有: docz, mdx-deck
+- https://github.com/codemirror/CodeMirror
+  - /21.3kStar/MIT/202010/js
+  - In-browser code editor
+  - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
+  - The new system provides solid accessibility, touchscreen support, better content analysis
+  - It is not API-compatible with the old code.
+- https://github.com/SortableJS/sortablejs
+  - /21.1kStar/MIT/202010/ts/NoDeps
+  - https://sortablejs.github.io/sortablejs/
+  - a JS library for reorderable drag-and-drop lists.
+  - You can use any element for the list and its elements, not just ul/li
 
 ## popular
 
@@ -75,11 +95,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - /13.5kStar/MIT/202009
   - modern, intuitive and responsive charts with zero dependencies
   - https://github.com/frappe/gantt
-  - https://github.com/frappe/datatable
-    - /488Star/MIT/202009
-    - interactive datatable library for displaying tabular data
-    - 基于div实现
-    - 依赖hyperlist(实现virtualize)、sortablejs
 - https://github.com/plotly/plotly.js
   - /12.3kStar/MIT/202009
   - Open-source JavaScript charting library behind Plotly and Dash
@@ -155,11 +170,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - /68kStar/MIT/202009/css
   - A cross-browser library of CSS animations.
 
-- https://github.com/ant-design/ant-design
-  - /63.7kStar/MIT/202009/ts
-  - https://github.com/ant-design/ant-design-mobile
-  - https://github.com/ant-design/ant-design-pro
-  - A UI Design Language and React UI library
 - https://github.com/mui-org/material-ui
   - /61.2kStar/MIT/202009/js
   - React components for faster web development
@@ -181,11 +191,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - /9.8kStar/MIT/201912/inactive
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
   - Built to be invisible and work on existing HTML.
-- https://github.com/SortableJS/sortablejs
-  - /21.1kStar/MIT/202010/ts/NoDeps
-  - https://sortablejs.github.io/sortablejs/
-  - a JS library for reorderable drag-and-drop lists.
-  - You can use any element for the list and its elements, not just ul/li
 - https://github.com/wenzhixin/bootstrap-table
   - An extended table to integration with some widely used CSS frameworks. 
   - (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
@@ -203,15 +208,12 @@ modified: '2020-09-28T05:28:09.585Z'
   - embeddable online markdown editor(component), based on CodeMirror & jQuery & Marked.
 - https://github.com/quilljs/quill
   - a modern WYSIWYG editor built for compatibility and extensibility
-- https://github.com/codemirror/CodeMirror
-  - In-browser code editor
 - https://github.com/facebook/draft-js
   - A React framework for building text editors.
 - https://github.com/wangeditor-team/wangEditor
   - wangEditor 新版已启动研发
 - https://github.com/ether/etherpad-lite
   - Etherpad: real-time collaborative document editor 
-
 
 ### most-starred js-ts
 
