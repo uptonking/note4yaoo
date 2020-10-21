@@ -22,6 +22,13 @@ modified: '2020-06-22T09:23:56.117Z'
   - View Survey Results • Download Full Data Set (CSV)
   - https://github.com/brianhuynh27/pandas_data_analysis
 
+- country postion in the world map
+  - 查看自己国家的位置与某个其他国家的位置
+
+- 华人分布
+  - 华人最多的国家：新加坡、马来西亚、泰国、印尼、缅甸、加拿大、澳大利亚、新西兰
+  - 移民国家
+
 ## edu
 
 - 高考分数线

@@ -182,7 +182,10 @@ modified: '2020-09-28T05:28:09.585Z'
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
   - Built to be invisible and work on existing HTML.
 - https://github.com/SortableJS/sortablejs
-  - Create and reorder lists with drag-and-drop. 
+  - /21.1kStar/MIT/202010/ts/NoDeps
+  - https://sortablejs.github.io/sortablejs/
+  - a JS library for reorderable drag-and-drop lists.
+  - You can use any element for the list and its elements, not just ul/li
 - https://github.com/wenzhixin/bootstrap-table
   - An extended table to integration with some widely used CSS frameworks. 
   - (Supports Bootstrap, Semantic UI, Bulma, Material Design, Foundation, Vue.js)
@@ -292,8 +295,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - An easy-to-use multi SQL dialect ORM for Node.js
 - https://github.com/airbnb/lottie-web
   - Render After Effects animations natively on Web, Android and iOS, and React Native
-- https://github.com/SortableJS/sortablejs
-  - Create and reorder lists with drag-and-drop. 
 - https://github.com/immerjs/immer
   - Create the next immutable state by mutating the current one
 - https://github.com/Popmotion/popmotion
