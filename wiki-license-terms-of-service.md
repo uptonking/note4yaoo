@@ -1,11 +1,11 @@
 ---
-title: topic-license-terms-of-service
+title: wiki-license-terms-of-service
 tags: [law, license]
 created: '2020-07-13T04:33:04.547Z'
-modified: '2020-07-13T04:34:18.207Z'
+modified: '2020-10-22T16:01:39.757Z'
 ---
 
-# topic-license-terms-of-service
+# wiki-license-terms-of-service
 
 ## Creative Commons
 

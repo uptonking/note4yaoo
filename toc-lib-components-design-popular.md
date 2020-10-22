@@ -9,4 +9,92 @@ modified: '2020-10-22T12:52:52.985Z'
 
 ## popular
 
-## react-only
+- Ant Design /Alibaba
+  - /MIT/63.7kStar/202009/ts
+  - https://github.com/ant-design/ant-design
+  - https://ant.design/
+  - An enterprise-class UI design language and React UI library.
+  - 主要由阿里蚂蚁金服研发，antd严重依赖自研的基础组件rc-xxx
+  - https://github.com/ant-design/ant-design-mobile
+    - A configurable Mobile UI specification and React-based implementation.
+  - https://github.com/ant-design/ant-design-pro
+    - An out-of-box UI solution for applications as a React boilerplate.
+  - ref
+    - https://github.com/vueComponent/ant-design-vue
+    - https://github.com/NG-ZORRO/ng-zorro-antd
+    - https://github.com/taejs/ant-design-vanilla
+    - https://github.com/alitajs/ant-design-plus/
+- Material Design /Google
+  - /MIT/13.6kStar/201912/ts
+  - https://material.io/design/
+  - https://github.com/material-components/material-components-web
+  - https://github.com/material-components/material-components-android
+  - Material is an adaptable system of guidelines, components, and tools
+- Bootstrap /Twitter
+  - /MIT/138kStar/202001
+  - https://github.com/twbs/bootstrap
+  - https://getbootstrap.com/docs
+  - popular framework for building responsive, mobile-first sites
+- Fluent Design /Microsoft
+  - /MIT/9.5kStar/202009
+  - https://github.com/microsoft/fluentui
+    - moved from https://github.com/OfficeDev/office-ui-fabric-react
+  - https://www.microsoft.com/design/fluent/#/
+  - https://developer.microsoft.com/en-us/fabric/#/components
+  - React-based front-end framework for building experiences for Office
+- Lightning Design System /Salesforce
+  - /BSD/3kStar/202009
+  - https://github.com/salesforce-ux/design-system
+  - https://www.lightningdesignsystem.com/design-tokens/
+  - https://www.lightningdesignsystem.com/
+  - https://react.lightningdesignsystem.com/
+  - Component blueprints are framework agnostic, accessible HTML and CSS
+  - SLDS is a pure CSS framework that you can use with any front-end development framework
+- Carbon Design System /IBM
+  - /Apache2.0/3.5kStar/202009
+  - https://github.com/carbon-design-system/carbon
+  - https://www.carbondesignsystem.com/
+  - https://github.com/carbon-design-system/carbon/tree/master/packages/components
+    - a collection of re-usable HTML and SCSS partials for building products.
+  - https://github.com/carbon-design-system/carbon/tree/master/packages/react
+    - A collection of Carbon Components implemented using React.
+  - https://github.com/carbon-design-system/carbon-custom-elements
+    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
+  - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
+  - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
+  - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
+  - ref
+    - https://www.ibm.com/design/language/
+    - http://react.carbondesignsystem.com/?path=/story/buttons--default
+    - https://ics-design-system.us-east.mybluemix.net/ 
+- Primer Design System /Github
+  - /MIT/580Star/201912
+  - https://github.com/primer/components
+  - https://primer.style/components
+  - React components which implement GitHub's Primer Design System    
+  - 提供单独的scss样式文件
+- Base Design /Uber
+  - /MIT/2kStar/201908
+  - https://github.com/uber-web/baseui
+  - https://baseweb.design/
+  - A React Component library implementing the Base design language
+  - 主要有uber支持，组件的第三方依赖较多
+- Atlassian Design /Atlassian
+  - /Apache2/72Star/202001
+  - https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/
+  - https://atlassian.design/
+  - https://atlaskit.atlassian.com/
+  - https://atlaskit.atlassian.com/docs/guides/component-design
+  - Atlassian's official UI library, on the Atlassian Design Guidelines
+- Polaris Design System  /MIT/3000Star/202001
+  - https://github.com/Shopify/polaris-react
+  - https://polaris.shopify.com/components/get-started
+  - https://polaris.shopify.com/design/colors
+  - Our design system helps us work together to build a great experience for all of Shopify’s merchants
+- Clarity Design System /Vmware
+  - /MIT/5500Star/201912
+  - https://github.com/vmware/clarity/
+  - https://clarity.design/
+  - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
+
+## react

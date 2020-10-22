@@ -1,11 +1,11 @@
 ---
-title: wiki-common-sense-pickup
+title: pick-common-sense
 tags: [pick, wiki]
 created: '2019-05-30T13:45:37.931Z'
-modified: '2020-07-14T11:17:19.345Z'
+modified: '2020-10-22T15:59:57.288Z'
 ---
 
-# wiki-common-sense-pickup
+# pick-common-sense
 
 ## pieces
 

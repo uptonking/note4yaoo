@@ -1,11 +1,11 @@
 ---
-title: toc-viz-repos
-tags: [repos, toc, viz]
+title: toc-viz-examples
+tags: [examples, toc, viz]
 created: '2020-10-05T09:39:41.056Z'
-modified: '2020-10-22T10:11:59.505Z'
+modified: '2020-10-22T16:09:43.158Z'
 ---
 
-# toc-viz-repos
+# toc-viz-examples
 
 ## amazing
 

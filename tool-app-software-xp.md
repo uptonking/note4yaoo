@@ -1,8 +1,8 @@
 ---
 title: tool-app-software-xp
-tags: [app, pm, software, tool, xp]
+tags: [app, software, tool, xp]
 created: '2020-03-19T10:34:14.363Z'
-modified: '2020-10-05T07:52:58.416Z'
+modified: '2020-10-22T16:07:08.502Z'
 ---
 
 # tool-app-software-xp

@@ -1,8 +1,8 @@
 ---
 title: tool-software-saas-tips
-tags: [software, tips, tool]
+tags: [software, tool]
 created: '2020-07-12T15:27:22.003Z'
-modified: '2020-10-05T13:17:49.168Z'
+modified: '2020-10-22T16:05:00.324Z'
 ---
 
 # tool-software-saas-tips
