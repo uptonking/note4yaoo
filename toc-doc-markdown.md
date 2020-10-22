@@ -30,3 +30,21 @@ modified: '2020-10-13T08:54:38.720Z'
   - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
 - https://github.com/Microsoft/monaco-editor
   - the code editor which powers VS Code
+
+## markdown-preview
+
+- https://github.com/shd101wyy/markdown-preview-enhanced
+  - One of the 'BEST' markdown preview extensions for Atom editor
+
+## markdown-app-extension
+
+- https://github.com/foambubble/foam
+  - /7.3kStar/MIT/202010/ts
+  - Foam is a personal knowledge management and sharing system built on VSCode and GitHub.
+- https://github.com/atom-community/markdown-preview-plus
+  - a fork of Markdown Preview that provides a real-time preview of markdown documents.
+
+## more-repos
+
+- https://github.com/rstudio/rmarkdown
+  - rmarkdown package helps you create dynamic analysis documents

@@ -1,8 +1,8 @@
 ---
 title: page-why-I-still-dont-use-graphql
-tags: [api, page]
+tags: [api, graphql]
 created: '2020-08-06T08:48:07.770Z'
-modified: '2020-08-17T07:29:23.887Z'
+modified: '2020-10-22T13:44:03.426Z'
 ---
 
 # page-why-I-still-dont-use-graphql

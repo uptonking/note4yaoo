@@ -1,8 +1,8 @@
 ---
 title: toc-viz-chart-editor
-tags: [chart-editor, toc]
+tags: [chart-editor, toc, viz]
 created: '2020-10-06T07:42:29.631Z'
-modified: '2020-10-06T07:42:59.411Z'
+modified: '2020-10-22T10:22:43.618Z'
 ---
 
 # toc-viz-chart-editor

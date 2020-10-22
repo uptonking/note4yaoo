@@ -1,8 +1,8 @@
 ---
 title: toc-app-exploring
-tags: [app, exploring, toc]
+tags: [app, exploring]
 created: '2020-09-25T09:27:31.462Z'
-modified: '2020-09-25T09:29:12.768Z'
+modified: '2020-10-22T10:04:00.881Z'
 ---
 
 # toc-app-exploring

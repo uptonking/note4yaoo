@@ -1,9 +1,8 @@
 ---
 title: note-style-css-in-js-theme-spec
 tags: [css-in-js, style, web]
-favorited: true
 created: '2019-11-30T10:00:18.020Z'
-modified: '2020-09-25T05:54:00.765Z'
+modified: '2020-10-22T13:36:15.759Z'
 ---
 
 # note-style-css-in-js-theme-spec

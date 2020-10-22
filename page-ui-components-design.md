@@ -1,15 +1,15 @@
 ---
 title: page-ui-components-design
-tags: [components, ui]
+tags: [components, ux]
 created: '2020-09-28T16:28:19.740Z'
-modified: '2020-09-28T16:29:10.801Z'
+modified: '2020-10-22T13:43:11.389Z'
 ---
 
 # page-ui-components-design
 
 ## [Why I don't use web components_2019](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
 
-- 仅供参考，，，标准实现在更新，文章中提到的部分问题已解决了
+- 仅供参考，标准及实现都已更新，文章中提到的部分问题已解决了
 
 - I'm mostly writing this for my future self, so that I have something to point to next time someone asks why I'm a web component skeptic(怀疑论者), and why Svelte doesn't compile to custom elements by default. 
   - (It can compile to CEs, and it can consume CEs as evidenced by its perfect score on Custom Elements Everywhere.)

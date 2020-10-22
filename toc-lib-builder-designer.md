@@ -144,7 +144,7 @@ modified: '2020-10-05T06:20:15.291Z'
   - direct manipulation of editable design tools like Powerpoint
   - primarily uses the Ant Design, Fabric.js and React
 - https://github.com/react-designer/react-designer
-  - /1.6kStar/paid/201906
+  - /1.6kStar/BuyLic/201906
   - http://react-designer.github.io/react-designer/
   - Editable vector graphics in your react apps
 - https://github.com/fritz-c/react-shape-editor

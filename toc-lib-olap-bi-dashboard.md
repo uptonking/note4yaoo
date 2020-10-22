@@ -1,8 +1,8 @@
 ---
 title: toc-lib-olap-bi-dashboard
-tags: [bi, olap, toc]
+tags: [bi, dashboard, olap, toc]
 created: '2020-08-02T07:21:21.345Z'
-modified: '2020-08-02T07:25:15.320Z'
+modified: '2020-10-22T06:49:57.989Z'
 ---
 
 # toc-lib-olap-bi-dashboard

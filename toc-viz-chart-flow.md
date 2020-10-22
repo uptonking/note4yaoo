@@ -1,8 +1,8 @@
 ---
 title: toc-viz-chart-flow
-tags: [charting, toc]
+tags: [flowchart, toc, viz]
 created: '2020-07-13T01:43:34.873Z'
-modified: '2020-09-25T03:50:23.437Z'
+modified: '2020-10-22T10:22:55.878Z'
 ---
 
 # toc-viz-chart-flow

@@ -1,9 +1,8 @@
 ---
 title: note-style-styled-components
 tags: [css-in-js, style]
-favorited: true
 created: '2019-08-17T10:19:06.636Z'
-modified: '2020-10-19T16:23:01.531Z'
+modified: '2020-10-22T13:37:03.276Z'
 ---
 
 # note-style-styled-components

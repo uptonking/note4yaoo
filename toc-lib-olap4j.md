@@ -1,8 +1,8 @@
 ---
 title: toc-lib-olap4j
-tags: [lib, olap, toc]
+tags: [lib, olap, olap4j, toc]
 created: '2020-07-13T03:03:54.791Z'
-modified: '2020-07-14T11:03:41.956Z'
+modified: '2020-10-22T06:50:47.668Z'
 ---
 
 # toc-lib-olap4j
@@ -22,8 +22,8 @@ modified: '2020-07-14T11:03:41.956Z'
   - https://shzlw.github.io/poli
   - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.
 - https://github.com/activeviam/autopivot
-  - /19Star/Apache2/202009
   - https://www.activeviam.com/
+  - /19Star/Apache2/202009
   - AutoPivot is a standalone application for online analysis (OLAP) of CSV files.
 
 ## stack

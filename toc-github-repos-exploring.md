@@ -1,8 +1,8 @@
 ---
 title: toc-github-repos-exploring
-tags: [github, toc]
+tags: [exploring, github, repos, toc]
 created: '2020-08-20T13:52:16.885Z'
-modified: '2020-10-05T06:25:52.577Z'
+modified: '2020-10-22T10:13:20.797Z'
 ---
 
 # toc-github-repos-exploring

@@ -1,16 +1,13 @@
 ---
 title: toc-github-repos-amazing
-tags: [github, toc]
+tags: [amazing, github, toc]
 created: '2020-09-22T13:18:19.426Z'
-modified: '2020-09-22T13:18:53.037Z'
+modified: '2020-10-22T10:13:13.026Z'
 ---
 
 # toc-github-repos-amazing
 
 ## amazing
-
-- 眼前一亮的产品或设计
-  - 云端电脑，要谨慎考虑百度网盘恶心的下载限速策略
 
 - https://github.com/rrweb-io/rrweb
   - /7.6kStar/MIT/202009/ts
@@ -34,7 +31,9 @@ modified: '2020-09-22T13:18:53.037Z'
 ## cool
 
 - https://github.com/daybrush/scenejs
+  - https://daybrush.com/scenejs/
   - an JavaScript & CSS timeline-based animation library.
+  - https://codepen.io/daybrush/pen/EQPPBg
 
 - https://github.com/victorqribeiro/isocity
   - An isometric city builder in JavaScript

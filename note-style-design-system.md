@@ -1,9 +1,9 @@
 ---
 title: note-style-design-system
-tags: [design-system, style, ui]
+tags: [design-system, style]
 favorited: true
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-07-17T08:47:42.407Z'
+modified: '2020-10-22T13:36:29.774Z'
 ---
 
 # note-style-design-system

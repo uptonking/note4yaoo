@@ -1,15 +1,14 @@
 ---
 title: toc-lib-components-design-system
-tags: [components, design-system, toc]
+tags: [components, design-system, lib, toc]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-09-28T13:39:33.266Z'
+modified: '2020-10-22T10:14:24.424Z'
 ---
 
 # toc-lib-components-design-system
 ## guide
 
-- ref
-  - 
+- design-system-awesome-catalog
 
 ## popular-design-system
 

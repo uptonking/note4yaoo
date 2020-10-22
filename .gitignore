@@ -1,12 +1,11 @@
 # ignored
 
-# opinionated
 veil-*
 yaoo-*
 wechat-*
 play-*
-pm-*
 work-*
+pmgr-*
 
 # auto-generated
 *.cson

@@ -16,15 +16,15 @@ modified: '2020-10-05T06:10:15.909Z'
 - https://github.com/clauderic/react-tiny-virtual-list
   - /1.8kStar/MIT/201910/inactive
   - A tiny but mighty list virtualization library, with zero dependencies
+- https://github.com/codex-team/editor.js
+  - /13.3kStar/Apache2.0/202009/ts/vanillajs
+  - A block-styled editor with clean JSON output
 - https://github.com/prevwong/craft.js
   - /3kStar/MIT/202009/ts
   - A React Framework for building extensible drag and drop page editors
   - many aspects of Craft.js are written with `react-dnd` as a reference along with some utilities and functions being borrowed.
   - The element positioning logic used in Craft.js is borrowed from `Grape.js`
   - Craft.js uses a slightly modified version of `use-methods` to better fit our API.
-- https://github.com/codex-team/editor.js
-  - /13.3kStar/Apache2.0/202009/ts/vanillajs
-  - A block-styled editor with clean JSON output
 - https://github.com/amcharts/amcharts4
   - /786Star/FreeWithAttribution/202009
   - https://www.amcharts.com/demos/

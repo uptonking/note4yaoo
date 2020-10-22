@@ -1,8 +1,8 @@
 ---
 title: lib-d3-dev
-tags: [chart, d3, dev, viz]
+tags: [charting, d3, dev, viz]
 created: '2019-08-01T05:09:11.917Z'
-modified: '2020-07-14T10:43:33.273Z'
+modified: '2020-10-22T13:39:46.745Z'
 ---
 
 # lib-d3-dev

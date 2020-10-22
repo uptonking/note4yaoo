@@ -9,6 +9,8 @@ modified: '2020-10-15T13:41:05.547Z'
 
 ## spec
 
+- markdown
+  - https://daringfireball.net/projects/markdown/
 - GitHub Flavored Markdown Spec
   - https://github.github.com/gfm/
   - https://guides.github.com/features/mastering-markdown/
@@ -76,5 +78,3 @@ and here
     - 各级标题可以放在单独页面，类似书的目录页
     - 侧边栏可折叠隐藏
   - math blocks
-
-

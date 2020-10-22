@@ -1,8 +1,8 @@
 ---
 title: lib-luckysheet-dev
-tags: [excel, lib, luckysheet, spreadsheet]
+tags: [excel, grid, lib, luckysheet]
 created: '2020-10-19T16:48:46.206Z'
-modified: '2020-10-19T16:49:51.766Z'
+modified: '2020-10-22T13:40:33.370Z'
 ---
 
 # lib-luckysheet-dev

@@ -1,8 +1,8 @@
 ---
-tags: [blog, toc]
 title: toc-blog-repeat
+tags: [blog, repeat, toc]
 created: '2020-07-03T09:28:48.014Z'
-modified: '2020-07-03T09:40:29.986Z'
+modified: '2020-10-22T13:07:41.078Z'
 ---
 
 # toc-blog-repeat
