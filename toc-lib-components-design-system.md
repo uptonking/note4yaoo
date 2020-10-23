@@ -17,6 +17,8 @@ modified: '2020-10-22T10:14:24.424Z'
     - Adele's JSON format is pretty straight-forward
   - https://github.com/alexpate/awesome-design-systems
     - A collection of awesome design systems
+  - https://github.com/klaufel/awesome-design-systems
+    - A curated list of resources and articles about design systems focused on developers
   - https://opensourcedesign.net/projects/
     - Open Source projects and organisations with good design, a design team, and with a nice guide
   - https://design-systems.io/

@@ -64,23 +64,18 @@ modified: '2020-10-23T03:57:36.637Z'
 
 - https://github.com/amzn/style-dictionary
   - /1.3kStar/Apache2/202010
+  - 支持编译输出ios的.h文件、android的.xml文件、.scss文件
+  - 优点在于属性值能够方便地以cascade层次覆盖
   - use design tokens to define styles once and use those styles on any platform or language. 
   - A style dictionary is a collection of style properties, key/value pairs that describe stylistic attributes like colors, sizes
   - A style dictionary defines these style properties in JSON files, and can also include static assets like images and fonts.
+  - https://amzn.github.io/style-dictionary/#/architecture
+  - [feat: add support for !default in SCSS variables format](https://github.com/amzn/style-dictionary/pull/359)
 - https://github.com/salesforce-ux/theo
   - /1.5kStar/BSD/201810
+  - 支持编译输出scss, less, styl, js, html, json, xml, Custom Format (function)
   - Theo can consume the centralized Design Tokens and output files for each platform.
   - A Design Token file is written in either JSON (JSON5 supported) or YAML and should conform to the spec
-- https://github.com/airbnb/Lona
-  - /7.3kStar/MIT/202010
-  - A design system is defined in JSON as a collection of:
-    - Components (can be nested)
-    - Colors, Text Styles, Gradients, and Shadows
-    - Data Types
-- https://github.com/yarastqt/themekit
-  - /20Star/MPL2/202009
-  - This system is based on style-dictionary API and redefinition levels
-  - allows you to collect tokens for a specific platform such as desktop or touch, by default tokens included only from common platform.
 - https://github.com/diez/diez
   - /829Star/AGPLv3/202008
   - Write & maintain styles in one place, then compile & consume them everywhere
@@ -90,11 +85,36 @@ modified: '2020-10-23T03:57:36.637Z'
     - Framework — a library of common design token patterns
     - Extractors — automate the retrieval of design tokens from Figma, Sketch, Adobe XD, and InVision DSM
     - Documentation Generator — build customizable static HTML docs from any Diez project, complete with markdown-rendered code comments. 
+- https://github.com/airbnb/Lona
+  - /7.3kStar/MIT/202010
+  - Lona is a collection of tools for building design systems and using them to generate cross-platform UI code, Sketch files, and other artifacts.
+  - Lona consists primarily of 3 parts:
+    - Lona Components - A data format, .component, for cross-platform components
+    - Lona Studio - A GUI tool for designing .component files
+    - Lona Compiler - A CLI tool & API for generating UI code from .component files
+  - The Lona Compiler converts .component files to UI code for various targets.
+    - iOS / macOS (Swift); 
+    - React DOM / React Native / React Sketchapp (JavaScript)
+    - Android (Kotlin)
+  - A design system is defined in JSON as a collection of:
+    - Components (can be nested)
+    - Colors, Text Styles, Gradients, and Shadows
+    - Data Types
+  - https://github.com/airbnb/Lona/blob/master/docs/file-formats/README.md
+- https://github.com/universal-design-tokens/udt
+  - /80Star/ISC/202005
+  - an open-standard file format for expressing design token data.
+- https://github.com/yarastqt/themekit
+  - /20Star/MPL2/202009
+  - This system is based on style-dictionary API and redefinition levels
+  - allows you to collect tokens for a specific platform such as desktop or touch, by default tokens included only from common platform.
 - https://github.com/ui-js/chromatic
   - A tool to help manage design systems by generating platform-specific files from a source file describing design tokens.
   - From a single token file, generate platform specific artifacts: 
     - for the web (Sass, CSS)
     - for iOS (JSON, plist)
     - for Android (XML)
-- https://github.com/universal-design-tokens/udt
-  - an open-standard file format for expressing design token data.
+- https://github.com/mrmartineau/design-system-utils
+  - /444Star/MIT/201911
+  - a micro framework that standardises your design-system tokens & provides helpful utility functions to access the information. 
+  - It can be used with styled-components, emotion, glamorous or any other CSS-in-JS framework.
