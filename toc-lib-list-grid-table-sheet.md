@@ -14,11 +14,13 @@ modified: '2020-10-22T06:49:25.812Z'
   - 一些design system都实现了自己的list和grid组件
   - https://jspreadsheets.com/
     - https://github.com/Handsoncode/JSpreadsheets.com
+    - 点击卡片可切换查看每个项目的详情及预览图
   - https://jsgrids.io/
     - https://github.com/statico/jsgrids
+    - 卡片上列出了该项目所支持的表格特性及不支持的特性
   - https://amitmy.github.io/grids/
     - https://github.com/AmitMY/grids
-    - A grid comparison
+    - A grid comparison. 只比较特性，统计不完整。
   - https://github.com/FancyGrid/awesome-grid
 
 - sheet-test
@@ -26,7 +28,7 @@ modified: '2020-10-22T06:49:25.812Z'
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
 
-## list-grid-commercial
+## commercial-list-grid
 
 - FancyGrid /OneOffLic
   - https://www.fancygrid.com/
@@ -134,11 +136,15 @@ modified: '2020-10-22T06:49:25.812Z'
   - https://github.com/gajus/table
   - Produces a string that represents array data in a text table.
   - Formats data into a string table.
-- js-xlsx Community Edition /Apache2.0/21.9kStar/202006
-  - https://github.com/SheetJS/js-xlsx
+- SheetJS js-xlsx Community Edition /Apache2.0/21.9kStar/202006
+  - https://github.com/SheetJS/sheetjs
   - https://oss.sheetjs.com/
   - 依赖cfb(Compound File Binary File Format extractor), ssf  
   - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
+- https://github.com/protobi/js-xlsx
+  - a fork of the original (and awesome) SheetJS/sheetjs
+  - extended to enable cell formats to be read from and written to .xlsx workbooks. 
+  - The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
 - https://github.com/exceljs/exceljs
   - /6.4kStar/MIT/202010
   - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
@@ -170,3 +176,10 @@ modified: '2020-10-22T06:49:25.812Z'
   - /22Star/NALic/201802/ts
   - a data analysis toolkit that loads, transforms and writes data to different formats.
   - A typical example is loading an arbitrary csv file, converting it to sqlite, running a query and storing the result in another sqlite database. 
+- https://github.com/angular-ui/ui-grid
+  - an Angular Data Grid
+- https://github.com/webix-hub/webix
+  - JavaScript library for building mobile and desktop web apps
+  - Webix UI library is licensed under "GPL v3" licence
+  - Starting from Webix 2.4, it possible to use a FLOSS Exception to the GPL License. 
+  - This exception works only for Open Source projects. If you want to distribute Webix as a part of your commercial product, you’ll need to purchase the Webix License instead.

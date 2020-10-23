@@ -67,12 +67,23 @@ modified: '2020-10-22T12:52:52.985Z'
     - https://www.ibm.com/design/language/
     - http://react.carbondesignsystem.com/?path=/story/buttons--default
     - https://ics-design-system.us-east.mybluemix.net/ 
+- PatternFly /RedHat
+  - /259Star/MIT/202010
+  - https://github.com/patternfly/patternfly
+  - https://www.patternfly.org
+  - This repo contains core (HTML/CSS) implementation for PatternFly.
 - Primer Design System /Github
   - /MIT/580Star/201912
   - https://github.com/primer/components
   - https://primer.style/components
   - React components which implement GitHub's Primer Design System    
   - 提供单独的scss样式文件
+- Adobe Spectrum /744Star/Apache2/202010
+  - https://github.com/adobe/spectrum-css
+  - https://spectrum.adobe.com/
+  - The standard CSS implementation of the Spectrum design language.
+  - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
+  - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
 - Base Design /Uber
   - /MIT/2kStar/201908
   - https://github.com/uber-web/baseui
@@ -85,6 +96,9 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://atlassian.design/
   - https://atlaskit.atlassian.com/
   - https://atlaskit.atlassian.com/docs/guides/component-design
+  - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/
+    - This is the public mirror of Atlassian Frontend. 
+    - All publicly published packages source files will be mirrored here daily.
   - Atlassian's official UI library, on the Atlassian Design Guidelines
 - Polaris Design System  /MIT/3000Star/202001
   - https://github.com/Shopify/polaris-react
@@ -97,4 +111,3 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://clarity.design/
   - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
 
-## react

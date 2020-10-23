@@ -33,9 +33,20 @@ modified: '2020-10-22T10:03:50.526Z'
   - /7.5kStar/MIT/202009/cpp
   - 依赖Qt5, turndown, markdown-it
   - a note-taking application that knows programmers and Markdown better.
+- https://github.com/Automattic/simplenote-electron
+  - /5.2kStar/GPLv2/202009/ts
+  - A Simplenote React client packaged in Electron.
+  - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
 - https://github.com/codex-team/codex.notes
   - /79Star/MIT/202009/js
   - crossplatform desktop notes application based on Electron and Editor.js
+
+## more-note-app
+
+- https://github.com/0xGG/crossnote
+  - /404Star/AGPLv3/202009/ts
+  - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
+  - https://github.com/0xGG/vscode-crossnote
 - https://github.com/hackmdio/codimd
   - /6.4kStar/AGPLv3/202009/js
   - Realtime collaborative markdown notes on all platforms.
@@ -46,9 +57,3 @@ modified: '2020-10-22T10:03:50.526Z'
   - A free, open-source notes app for the web
   - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
   - What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
-- https://github.com/0xGG/crossnote
-  - /404Star/AGPLv3/202009/ts
-  - markdown note taking application
-  - https://github.com/0xGG/vscode-crossnote
-
-## more-note-app

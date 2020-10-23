@@ -17,10 +17,14 @@ modified: '2020-10-06T08:59:16.300Z'
 
 ## app
 
-- https://github.com/Automattic/simplenote-electron
-  - /5.2kStar/GPLv2/202009
-  - A Simplenote React client packaged in Electron.
-  - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
+- https://github.com/ohmyform/ohmyform
+  - /836Star/AGPLv3/202010/python
+  - https://ohmyform.com/
+  - Free open source alternative to TypeForm, TellForm, or Google Forms
+  - create stunning mobile-ready forms, surveys and questionnaires.
+  - a fork of https://github.com/tellform/tellform
+  - https://github.com/ohmyform/ui
+  - https://github.com/ohmyform/api
 
 - https://github.com/NaoTu/DesktopNaotu
   - /2.7kStar/GPLv2/201809

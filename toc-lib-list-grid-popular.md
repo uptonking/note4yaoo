@@ -196,6 +196,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - 多用于布局
   - This component is for building grid where elements can be expanded and collapsed. 
   - It's just like accordion. And if you set up this grid one column you get same accordion effect.
+- https://github.com/flexicious/react-datagrid
+  - /8kStar/MIT/201810/js
+  - Powerful DataGrid/DataTable/Tree Table component for React
 
 ### div-more
 
@@ -222,6 +225,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现
   - Apollo spreadsheet that supports table and grids out of the box
   - uses Material-UI, styled-components and it's fully written in Typescript!
+- https://github.com/datopian/recline
+  - /2kStar/MIT/202008/js
+  - https://datopian.github.io/recline/demos/
+  - 2020: A framework for building data driven applications in React.
+  - 2014: A simple, powerful library for building data applications in pure Javascript and HTML
 
 ## list-grid-with-canvas
 
@@ -441,7 +449,7 @@ modified: '2020-10-22T06:49:10.760Z'
 - backgrid /2kStar/MIT/201702/js/backbone
   - https://github.com/cloudflarearchive/backgrid
   - an easily stylable semantic HTML data grid
-  - Based on Backbone.js.
+  - 依赖Backbone.js
 - dgrid /627Star/BSD/202009/js/dojo
   - https://github.com/SitePen/dgrid
   - https://dgrid.io
@@ -466,3 +474,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - http://uiplay.jui.io/?p=xtable_1
   - 基于table标签实现
   - JUI grid can handle millions of data, and can display data in a hierarchical structure
+- https://github.com/NeXTs/Clusterize.js
+  - /6.8kStar/GPLv3/201901/js
+  - Tiny vanilla JS plugin to display large data sets easily
+  - 支持table标签、li标签
+- https://github.com/vitmalina/w2ui
+  - /1.8kStar/MIT/202009/js
+  - w2ui is a JavaScript UI library for building rich data-driven web applications. 
+  - 依赖jquery

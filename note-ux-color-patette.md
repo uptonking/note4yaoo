@@ -11,49 +11,52 @@ modified: '2020-07-17T10:50:09.843Z'
 
 - nice css standard color
   - Grey
-    - silver：银色，比grey浅
-    - dimgrey/lightgrey/lavender/gainsboro/whitesmoke：浅灰
+    - silver：银灰色，比grey浅
     - snow/ghostwhite：浅白
-  - Red/Warm
+    - dimgrey/grey/silver/lightgrey/lavender/gainsboro/whitesmoke：灰色，由深到浅
+  - Red/Yellow
+    - coral：珊瑚红，有点黄
+    - lightcoral：珊瑚红，艳丽
+    - lightpink: 粉红
+    - bisque：浅黄，有点红
+    - gold: 金黄色
     - lightyellow/lemonchiffon：粉黄色，有点浅
-    - bisque：橘黄偏粉
     - darkorange：深橙色
     - antiquewhite/linen/oldlace：古董白，粉红色
-    - lightcoral：珊瑚红，艳丽
-    - coral：珊瑚偏黄
     - lavenderblush：淡紫红，有点浅
     - cornsilk：玉米穗黄，极浅黄偏白，适合背景色
+    - khaki：卡其色，米黄色
   - Green/Blue
+    - mediumseagreen：海绿色，适合文字
     - beige：浅绿泛黄
-    - darkseagreen/seagreen：深海绿，都有点深
     - teal：深青色
+    - lightgreen：亮绿色，艳丽
+    - darkseagreen/seagreen：深海绿，都有点深
     - darkcyan：深青绿
+    - deepskyblue/lightskyblue: 深蓝色
     - mediumslateblue：中暗蓝，深蓝偏紫
-    - lightblue：淡蓝，有点深，有点陈旧感
     - aliceblue：浅灰蓝
+    - lightblue：淡蓝，有点深，有点陈旧感
     - azure：亮蓝色，有点浅
     - royalblue：墨蓝，又亮又深
     - lightgoldenrodyellow：浅金黄，新绿活力
-    - lightgreen：亮绿色，艳丽
-    - mediumseagreen：海绿色，适合文字
-    - lightskyblue/deepskyblue:天蓝色，有点深
 
-- bolivian beauty  偏冷小暖又干净  *
+- bolivian beauty  偏冷小暖又干净
   - https://www.color-hex.com/color-palette/25309
   - ivory/浅粉黄浅灰白
-      - #f4e8c1
+    - #f4e8c1
   - azul verde/青浅灰
-      - #a0c1b8
+    - #a0c1b8
   - bolivia/蓝深灰
-      - #709fb0
+    - #709fb0
   - jacaranda/紫浅灰
-      - #726a95
+    - #726a95
   - malbec/极紫深灰
-      - #351f39
+    - #351f39
 
 ## brand-color
 
-- google-logo
+- [google-logo-brand-color](https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/)
   - red 
     - #db3236
     - 219, 50, 54
@@ -66,7 +69,6 @@ modified: '2020-07-17T10:50:09.843Z'
   - yellow
     - #f4c20d
     - 244, 194, 13
-  - https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/
 - handsontable-blue
   - #039be5
 
