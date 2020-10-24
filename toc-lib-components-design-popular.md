@@ -147,17 +147,20 @@ modified: '2020-10-22T12:52:52.985Z'
     - /219Star/MIT/202010/ts
     - A set of React components for the PatternFly project.
 
-- ### SAP UI /SAP
+- ### SAP Fiori Design System /SAP
+  - https://experience.sap.com/fiori-design/
+  - SAP Fiori is the design language that brings great user experiences to enterprise applications.
+  - The open source version that implements SAP Fiori for Web: OpenUI5
+  - https://github.com/SAP/openui5
+    - based on JavaScript, using jQuery as its foundation and follows web standards
   - https://github.com/SAP/fundamental
   - https://sap.github.io/fundamental-styles/
-  - /230Star/Apache2/202004/js
+    - /230Star/Apache2/202004/js
   - Fiori Fundamentals is a component library and SASS toolkit for building SAP user interfaces
   - SAP Fundamentals is deprecated. Fundamental Styles is its successor
   - https://github.com/SAP/ui5-webcomponents
-    - /787Star/Apache2/202009/webcomp
+    - /787Star/Apache2/202009/web-comp
     - the enterprise-flavored sugar on top of native APIs
-  - https://github.com/SAP/openui5
-    - based on JavaScript, using jQuery as its foundation and follows web standards
   - https://github.com/SAP/ui5-webcomponents-react
     - A wrapper implementation for React of the UI5 Web Components
     - 样式基于jss

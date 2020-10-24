@@ -586,4 +586,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - The tool is built on top of Vue.js, Vue Styleguidist, Webpack, and Theo and is aimed for designers and front-end developers
   - https://vue-styleguidist.github.io/vueds/
     - Vue Design System’s demo documentation and component library. Generated with Vue Styleguidist
-
+- https://github.com/bindable-ui/bindable
+  - https://bindable-ui.com/
+  - A design system built in Aurelia JS that allows for faster and easier web development.
