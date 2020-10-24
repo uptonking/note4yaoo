@@ -7,13 +7,15 @@ modified: '2020-10-22T13:02:12.574Z'
 
 # toc-ux-theme-examples
 
-- green-theme-as-primary
-  - [medium](https://medium.com/)
+- green-as-primary-examples
+  - [medium website](https://medium.com/)
+  - [bulma docs](https://bulma.io/documentation/overview/colors)
+  - [polaris colors](https://polaris.shopify.com/design/polaris-is-changing)
   - preset
   - zendesk garden design
   - https://avocode.com/open-sketch-on-linux
-  - [bulma](https://bulma.io/documentation/overview/colors)
-- green-theme design tokens
+
+- green-theme-site
   - https://wizixo.webestica.com
     - 90/100, Wizixo – Multipurpose Corporate Theme 
     - color-palette

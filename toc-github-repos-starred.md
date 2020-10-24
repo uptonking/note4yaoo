@@ -17,6 +17,11 @@ modified: '2020-10-06T08:59:16.300Z'
 
 ## app
 
+- https://github.com/nextcloud/deck
+  - /578Star/AGPLv3/202010/php/vue
+  - https://apps.nextcloud.com/apps/deck
+  - Kanban-style project & personal management tool for Nextcloud, similar to Trello
+
 - https://github.com/ohmyform/ohmyform
   - /836Star/AGPLv3/202010/python
   - https://ohmyform.com/

@@ -31,4 +31,3 @@ modified: '2020-10-22T13:34:56.023Z'
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
   - a simple extensible CSS framework, built using Sass
-

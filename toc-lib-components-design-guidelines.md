@@ -7,20 +7,40 @@ modified: '2020-10-24T14:00:46.256Z'
 
 # toc-lib-components-design-guidelines
 
+## design-system-guide-starred
+
+- https://github.com/pattern-lab/patternlab-node
+  - /1.8kStar/MIT/202009/js
+  - https://patternlab.io/
+  - Pattern Lab is a frontend workshop environment that helps you build, view, test, and showcase your design system's UI components.
+  - At its core, Pattern Lab is a Node-powered static site generator that stitches together UI components.
+  - Use atomic design language, or don't! it's totally up to you how you name, structure, and organize your Pattern Lab project.
+- https://github.com/ardakaracizmeli/design-system-checklist
+  - https://designsystemchecklist.com/
+  - An open-source checklist to help you plan, build and grow your design system.
+- https://github.com/interactivethings/catalog/
+  - Create living style guides using Markdown or React
 ## design-system-guidelines
 
+- https://ux.mailchimp.com/patterns
+  - https://mailchimp.com/email-design-guide/
+    - help you convey your message in style
+  - https://github.com/mailchimp/content-style-guide
+    - https://styleguide.mailchimp.com/tldr/
+    - Principles,Voice and tone,Grammar and mechanics,Web elements,accessibility
 - https://ether.thescenery.co/
 - https://sproutsocial.com/seeds/
   - all the tools and resources needed to understand the Sprout brand
-- https://palette.artsy.net/
 - https://www.duetds.com/
   - https://www.duetds.com/tokens/
   - a set of organized tools, patterns and practices that work as the foundation
 - https://www.astrouxds.com/
   - Astro Space UX Design System enables developers to build rich space app experiences
-- Predix Design System
+- Predix Design System /GE Digital
+  - https://www.predix-ui.com/
+  - https://github.com/predixdesignsystem/px-vis
+    - a Predix UI data visualization framework.
   - https://github.com/predixdesignsystem/predix-design-stencil
-  - https://www.predix-ui.com/#/about/introduction
   - This repository contains files with the most current symbols library, stencils, color swatches, and fonts for your Predix UI design project.
 - Morningstar Design System
   - https://designsystem.morningstar.com/
@@ -28,10 +48,6 @@ modified: '2020-10-24T14:00:46.256Z'
   - v3 will use vue
 - ServiceNow Design System
   - http://designsystem.servicenow.com/#!/
-- Eva Design System
-  - https://eva.design/
-  - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
-  - implemented for angular and react native
 - Spark Design System /Quicken Loans
   - https://github.com/sparkdesignsystem/spark-design-system
   - /75Star/MIT/202010/js
@@ -41,9 +57,6 @@ modified: '2020-10-24T14:00:46.256Z'
 - https://github.com/backpack/backpack.github.io
   - https://backpack.github.io/
   - Backpack Design System Documentation
-- https://gitlab.com/SUSE-UIUX/eos
-  - https://www.eosdesignsystem.com/
-  - a set of components, guides
 - https://github.com/po-ui/po-style
   - https://github.com/po-ui/po-angular
 - Wonderbly Design System
@@ -98,8 +111,10 @@ modified: '2020-10-24T14:00:46.256Z'
   - Website of Lexicon Experience Language by Liferay
 - https://www.emd.design/
   - Use Liquid to make science faster, treatments more personalized, and everyday work more enjoyable
-- https://luna.sainsburys.co.uk/guidelines
-  - The Sainsbury’s design system is customer centered and inclusive, consistent across all touchpoints and unmistakably Sainsbury’s
+- Luna Design System /Sainsbury
+  - https://jsainsburyplc.github.io/luna/
+  - https://luna.sainsburys.co.uk/guidelines
+  - 源码未发布
 - http://ux.mailchimp.com/patterns/
   - MailChimp Pattern Library
 - https://ux.opower.com/opattern/
@@ -115,12 +130,14 @@ modified: '2020-10-24T14:00:46.256Z'
   - The Skyline design system helps guide Benevity's product experiences for Goodness and beyond
 - Solar design system
   - https://design.bulb.co.uk/getting-started/introduction
+  - 源码未发布
 - https://hudl.design/
   - A single design system to ensure every interface feels like Hudl.
 - https://x.biteable.com/
   - Biteable Design System
   - Our Ember UI Library is accessible only by Biteable staff.
   - https://biteable.github.io/biteable-ui/
+  - 源码未发布
 - https://www.yelp.com/styleguide
   - The styleguide is a resource for designers and developers, providing a common language around Yelp’s UI patterns. 
 - https://www.engie.design/fluid-design-system/
@@ -129,3 +146,27 @@ modified: '2020-10-24T14:00:46.256Z'
   - Our design system is made up of principles, guidelines and tools that help us design and build user-centered Co‑op services.
 - https://design.pega.com/
   - The Pega Cosmos design system helps teams quickly achieve ideal experiences in your business apps.
+- Airbnb Cereal Fonts
+  - https://airbnb.design/cereal/
+  - https://airbnb.design/building-a-visual-language/
+- https://design.ubuntu.com/web/
+  - These guidelines provide everything you need to create professional communication
+materials that will build the Ubuntu brand.
+- Apple Design
+  - https://developer.apple.com/design/
+  - https://developer.apple.com/design/resources/
+  - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+- https://design-system.futurelearn.com/
+  - We use a simplified version of the Atomic Design methodology
+  - The main difference with Atomic Design is that all modules are either an atom or a molecule, categorised by purpose. 
+  - Having organisms used to cause confusion in the team, so we removed them.
+- https://bradfrost.com/blog/post/atomic-web-design/
+- https://www.designsystems.com/
+  - A Figma publication for design systems designers and developers
+- uxpin
+  - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+- https://design.lyft.com/
+  - Lyft’s Product Design
+- https://www.starbucks.com/developer/pattern-library
+  - Centralizing these React components and CSS utilities helps us forge a consistent user experience that is always up to date with our latest brand guidelines.
+  - 源码未发布

@@ -12,26 +12,24 @@ modified: '2020-10-22T10:14:24.424Z'
 - design-system-awesome-catalog
   - https://adele.uxpin.com/
     - https://github.com/uxpin/adele
-    - repository of publicly available design systems and pattern libraries
     - Adele is on a mission to collect all the data about publicly available design systems and pattern libraries and present it to the community in human (website) and computer (JSON) readable formats.
-    - Adele's JSON format is pretty straight-forward
   - https://github.com/alexpate/awesome-design-systems
     - A collection of awesome design systems
-  - https://github.com/klaufel/awesome-design-systems
-    - A curated list of resources and articles about design systems focused on developers
-  - https://opensourcedesign.net/projects/
-    - Open Source projects and organisations with good design, a design team, and with a nice guide
-  - https://design-systems.io/
-    - Design Directory & Good Reads
-  - http://design.systems/
-    - Resources for the design systems community
-    - Clarity conference, Coalition, Handbook, Publication
+  - https://designsystemsrepo.com/design-systems/
+    - A curated list of design systems, style guides and pattern libraries
   - ref
+    - http://design.systems/
+      - Resources for design systems: Clarity conference, Coalition, Handbook, Publication
+    - https://opensourcedesign.net/projects/
+      - projects and organisations with good design, a design team, and with a nice guide
+    - https://github.com/klaufel/awesome-design-systems
+      - A curated list of resources and articles about design systems focused on developers
+    - [Good Design Directory & Good Reads](https://design-systems.io/)
     - https://github.com/miukimiu/design-systems
     - https://github.com/anubhavsrivastava/awesome-ux-design-styles
     - https://github.com/DragorWW/awesome-design-language-system
 
-- design system guide
+- design system tutorial
   - https://www.learnstorybook.com/design-systems-for-developers/
     - how to transform component libraries into design systems
 
@@ -60,11 +58,18 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://github.com/zendeskgarden/tailwindcss
     - /6Star/Apache2/202010/ts
     - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
-- orbit /723Star/MIT/202010/js
+- Orbit /723Star/MIT/202010/js
   - https://github.com/kiwicom/orbit
   - https://orbit.kiwi/
   - React components of open-source Orbit design system by Kiwi.com
-- aragon UI
+  - https://github.com/kiwicom/orbit-design-tokens
+    - /28Star/MIT/202008/js
+    - https://orbit.kiwi/design-tokens/
+    - Design tokens are atomic pieces that store visual design attributes. 
+    - They help us make our UI more consistent and support custom themes. 
+    - We use them instead of static values like HEX codes for color or sizing units.
+
+- Aragon UI /Aragon
   - /215Star/MIT/202009/js
   - https://github.com/aragon/ui
   - https://ui.aragon.org/
@@ -101,37 +106,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://github.com/mineral-ui/mineral-ui
   - https://mineral-ui.netlify.com/
   - Mineral UI is a design system and React component library for the web
-- design-system-guidelines
-  - Airbnb Cereal
-    - https://airbnb.design/cereal/
-    - https://airbnb.design/building-a-visual-language/
-  - https://styleguide.mailchimp.com/
-  - https://ux.mailchimp.com/patterns/color
-  - https://design.ubuntu.com/web/
-  - Apple Design
-    - https://developer.apple.com/design/
-    - https://developer.apple.com/design/resources/
-    - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
-  - https://designsystem.quickbooks.com/
-  - https://marvelapp.com/styleguide/overview/code-guidelines
-  - https://www.audi.com/ci/en/intro/brand-appearance.html
-  - https://feelix.myob.com/#/Design%20patterns
-  - https://design-system.futurelearn.com/
-    - We use a simplified version of the Atomic Design methodology
-    - The main difference with Atomic Design is that all modules are either an atom or a molecule, categorised by purpose. 
-    - Having organisms used to cause confusion in the team, so we removed them.
-  - https://bradfrost.com/blog/post/atomic-web-design/
-  - https://spotify.design/
-  - design-style
-    - flat
-    - motion-blur
-  - Figma
-    - https://www.designsystems.com/
-    - A Figma publication for design systems designers and developers
-  - uxpin
-    - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
-  - https://design.lyft.com/
-  - http://plasma.guide/
 
 ## more-design-system
 
@@ -158,7 +132,7 @@ modified: '2020-10-22T10:14:24.424Z'
   - Design kit for appbaseio ecosystem
 - https://github.com/razvangeangu/cho-design-system
   - design system based on stencil
-- Solid  /MIT/115Star/202001/BuzzFeed
+- Solid  /MIT/115Star/202001/css
   - https://github.com/buzzfeed/solid
   - https://solid.buzzfeed.com/
   - Solid is BuzzFeed's functional CSS framework and styleguide.
@@ -173,11 +147,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - /200Star/Apache2/202010/js
   - https://design-system.pluralsight.com/
   - The UI building blocks for creating a cohesive design across Pluralsight products
-- https://github.com/infor-design/design-system
-  - Infor Design System is a set of use-case driven design practices, development tools
-- https://github.com/at-ui/at-ui
-  - /2.2kStar/MIT/201802/js/vue2
-  - flat UI-Kit specially for desktop application
 - Audi UI /AUDI
   - /223Star/Apache2/202004/js
   - https://github.com/audi/audi-ui
@@ -193,14 +162,16 @@ modified: '2020-10-22T10:14:24.424Z'
   - http://overdrive.autoguru.io/
   - Overdrive is a product component library, and design system for AutoGuru. 
   - Built with React, TypeScript, Treat, Playroom and Storybook.
-- https://github.com/skyscanner/backpack
+- Backpack Design System /Skyscanner
   - /371Star/Apache2/202010/js
+  - https://github.com/skyscanner/backpack
   - https://backpack.github.io/
   - a collection of design resources, reusable components and guidelines for creating Skyscanner's products.
-- https://github.com/barnardos/design-system
+- Barnardo Design System /Barnardo
   - /26Star/MIT/202001/js
+  - https://github.com/barnardos/design-system
   - https://design-system.barnardos.org.uk/
-  - The website and components of the Design System
+  - Designing and developing digital products for everyone, especially children and young people
 - https://github.com/moroshko/basis
   - /33Star/MIT/202010/js
   - https://basis.now.sh/
@@ -301,22 +272,9 @@ modified: '2020-10-22T10:14:24.424Z'
   - UI library for creating interfaces in Rambler guidelines with React power
 - https://github.com/balena-io-modules/rendition/
   - A library of UI components, built using React, recompose, styled-components and styled-system.
-- https://github.com/SAP/fundamental
-  - https://sap.github.io/fundamental-styles/
-  - /230Star/Apache2/202004/js
-  - Fiori Fundamentals is a component library and SASS toolkit for building SAP user interfaces
-  - SAP Fundamentals is deprecated. Fundamental Styles is its successor
-- https://github.com/SAP/ui5-webcomponents
-  - /787Star/Apache2/202009/webcomp
-  - the enterprise-flavored sugar on top of native APIs
-- https://github.com/SAP/openui5
-  - based on JavaScript, using jQuery as its foundation and follows web standards
-- https://github.com/SAP/ui5-webcomponents-react
-  - A wrapper implementation for React of the UI5 Web Components
-  - 样式基于jss
-  - 基于hooks实现
-- https://github.com/StackExchange/Stacks
+- Stacks /Stack Overflow
   - /268Star/MIT/202010/ts
+  - https://github.com/StackExchange/Stacks
   - https://stackoverflow.design/
   - Stack Overflow’s Design System
 - https://github.com/sky-uk/toolkit
@@ -325,11 +283,6 @@ modified: '2020-10-22T10:14:24.424Z'
 - https://github.com/thumbtack/thumbprint
   - /147Star/Apache2/202010/ts
   - the design system at Thumbtack. 
-- Base Design /Uber
-  - https://github.com/uber/baseweb
-  - /5.4kStar/MIT/202010/js
-  - https://baseweb.design/
-  - A React Component library implementing the Base design language
 - vanilla-framework /438Star/LGPLv3/202009/scss
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
@@ -354,8 +307,9 @@ modified: '2020-10-22T10:14:24.424Z'
   - /210Star/MIT/202010/js
   - https://www.welcome-ui.com/
   - Customizable design system of @WTTJ with react • styled-components • styled-system • reakit
-- https://github.com/Workday/canvas-kit
+- Canvas Design System /Workday
   - /122Star/Apache2/202010/ts
+  - https://github.com/Workday/canvas-kit
   - https://design.workday.com/
   - https://workday.github.io/canvas-kit/
   - Development kits to implement UI following the Workday Canvas Design System
@@ -507,8 +461,8 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://react95.github.io/React95/
   - React95 is a React component library inspired on the Windows 95 UI design.
 - Rimble Design System /Rimble
-  - https://github.com/ConsenSysMesh/rimble-ui
   - /294Star/MIT/202003/js
+  - https://github.com/ConsenSysMesh/rimble-ui
   - https://rimble.consensys.design/
   - React components that implement Rimble's Design System.
 - Rivet Design System /Indiana University
@@ -524,12 +478,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - /42Star/ISC/201909/js
   - http://plasma.guide/
   - Plasma is a design system for creating sensible, modern interfaces.
-- https://github.com/rei/rei-cedar
-  - /86Star/MIT/202010/vue
-  - https://rei.github.io/rei-cedar-docs/
-  - REI Digital Design System presentation framework.
-  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
-  - We started this project in 2015 as a fork of Bootstrap. 
 - Thumbprint design system 
   - https://github.com/thumbtack/thumbprint
     - /147Star/Apache2/202010/ts
@@ -553,34 +501,74 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://www.creative-tim.com/product/argon-design-system
   - Argon - Design System for Bootstrap 4 by Creative Tim
 - Eva Design System /Akveo team
-  - https://eva.design/
+  - /814Star/MIT/202005/ts
   - https://github.com/eva-design/eva
-    - /814Star/MIT/202005/ts
-    - Customizable Design System easily adaptable to your Brand.
+  - https://eva.design/
+  - Customizable Design System easily adaptable to your Brand.
   - https://github.com/akveo/nebular
     - Customizable Angular UI Library based on Eva Design System
   - Available for Sketch with Mobile and Web component libraries.
-
+- https://design.pega.com/
+  - The Pega Cosmos UX framework specializes for three distinct experiences: 
+    - for developers building low-code applications, 
+    - for employees managing daily workflows, 
+    - and for customers that we directly engage with.
+- https://github.com/Bedismo/open_design_system
+  - Open Source Design System using Sketch. It's early days of my project.
+- EOS Design System /SUSE Team
+  - /16Star/MIT/202010/js
+  - https://gitlab.com/SUSE-UIUX/eos/
+  - https://www.eosdesignsystem.com/
+  - 依赖bootstrap，pug模板，express，mongodb
+  - EOS offers an easily customizable Design System for any company or project to use
+- https://github.com/proksh/atomize
+  - /904Star/MIT/202006/js
+  - https://atomizecode.com/
+  - Design System for developers build on styled-components & React JS.
+- Liquid Design System /Merck
+  - /17Star/202010/CustomLic/js
+  - https://gitlab.com/liquid-design/liquid-design-react
+  - https://www.emd.design/
+  - ref
+    - https://gitlab.com/liquid-design/liquid-design-assets
+- Decanter design system /Stanford University
+  - /24Star/MIT/202010/js/twig
+  - https://github.com/SU-SWS/decanter
+  - https://decanter.stanford.edu/
+  - Decanter is a web design and development system for Stanford University. 
+  - It includes a responsive layout system and a browsable collection of design patterns
  
 
 ## design-system-framework
 
+- Fish Tank /Bloomberg
+  - /14Star/Apache2/202007/ts/vue
+  - https://github.com/bloombergindustry/fishtank-vue
+  - http://fishtank.bna.com/
+  - Fish Tank Design and Component System - VueJS Component Library
+- https://github.com/rei/rei-cedar
+  - /86Star/MIT/202010/vue
+  - https://rei.github.io/rei-cedar-docs/
+  - REI Digital Design System presentation framework.
+  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
+  - We started this project in 2015 as a fork of Bootstrap. 
+- https://github.com/at-ui/at-ui
+  - /2.2kStar/MIT/201802/js/vue2
+  - flat UI-Kit specially for desktop application
 - Accera Design System /Accera
   - https://github.com/accera-tech/solar-components
   - /13Star/MIT/202004/ts/web-comp
   - https://design.accera.com.br/
   - This is an implementation of Accera's Design System in WebComponents.
+- Solar design system /
 - Mixpanel Design System
   - https://github.com/mixpanel/panel
   - /198Star/MIT/202009/js/web-comp
   - Web Components + Virtual DOM: web standards for powerful UIs
   - This design system website and component library are built using our library Panel. 
   - Panel is a thin layer on top of Web Components with React like virtual DOM rendering.
-- https://github.com/bloombergindustry/fishtank-vue
-  - http://fishtank.bna.com/
-  - Fish Tank Design and Component System - VueJS Component Library
 - https://github.com/boltdesignsystem/bolt
-  - /170Star/MIT/202010/web-comp
+  - /170Star/MIT/202010/js/twig/web-comp
   - https://boltdesignsystem.com/
   - Bolt Design System provides robust Twig and Web Component-powered UI components
 - https://github.com/dynatrace-oss/barista
@@ -590,41 +578,12 @@ modified: '2020-10-22T10:14:24.424Z'
 - https://github.com/fusionfabric/finastra-design-system
   - https://design.fusionfabric.cloud/
   - The Finastra Design System provided as a theme and Angular components
-- https://github.com/viljamis/vue-design-system
+- Vue Design System /Viljami Salminen
+  - https://github.com/viljamis/vue-design-system
+  - /1.9kStar/MIT/202004/js/vue
+  - https://vueds.com/
   - An open source tool for building UI Design Systems with Vue.js
+  - The tool is built on top of Vue.js, Vue Styleguidist, Webpack, and Theo and is aimed for designers and front-end developers
+  - https://vue-styleguidist.github.io/vueds/
+    - Vue Design System’s demo documentation and component library. Generated with Vue Styleguidist
 
-## design-system-gov
-
-- United States Web Design System  
-  - /CC0 1.0/5.4kStar/201912
-  - https://github.com/uswds/uswds
-  - https://designsystem.digital.gov/
-  - A design system for the federal government.
-  - we waive(放弃) copyright and related rights in the work worldwide through the CC0 1.0
-  - visual style guide for U. S. federal government websites.
-  - https://design.va.gov/
-    - VA.gov is built on top of VA's design system (VADS). 
-    - VADS is based on the US Web Design System
-- GOV. UK Design System 
-  - /168Star/MIT/202010/js
-  - https://github.com/alphagov/govuk-frontend
-  - https://design-system.service.gov.uk/
-  - One place for styles, components and patterns for designing government services. 
-- Australian Government design system
-  - https://github.com/govau/design-system-components/
-  - /672Star/MIT/202010/js
-  - https://auds.service.gov.au/
-  - Component code and tests for the Australian Government design system
-- https://github.com/USAJOBS/design-system
-  - http://usajobs.github.io/design-system/
-  - USAJOBS design system starts with the The U. S. Web Design Standards and extends them to meet the needs of the USAJOBS next generation project. 
-- https://www.digital.nsw.gov.au/digital-design-system
-  - The NSW Design System is a way for people in government to design products and services that are distinctly NSW. 
-- https://github.com/CMSgov/design-system
-  - /178Star/CC0-1.0-Universal-public/202010/js
-  - https://design.cms.gov/
-  - a set of design and front-end development resources for creating Section 508 compliant, responsive, and consistent websites. 
-  - It builds on the U. S. Web Design System and extends it to support additional CSS and React components, utility classes, and a grid framework 
-- https://github.com/codeforamerica/style-guide
-  - https://v4.style.codeforamerica.org/
-  - An updated style guide and pattern library for Code for America's website
