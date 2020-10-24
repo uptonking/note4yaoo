@@ -26,7 +26,7 @@ modified: '2020-10-22T13:33:40.533Z'
   - http://pro.ant.design/
   - An out-of-box UI solution for enterprise applications as a React boilerplate.
   - 从2017年10月29日@afc163发布第一个版本，到现在的20190531发布v4, Pro发生了很多的改变，底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TypeScript，可以说已经和当初那个Pro已经不是同一个脚手架了
-- grafana /Apache2.0/36.5kStar/202008
+- grafana /Apache2/36.5kStar/202008
   - https://github.com/grafana/grafana
   - https://grafana.com/
   - The tool for monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More
@@ -52,7 +52,7 @@ modified: '2020-10-22T13:33:40.533Z'
   - React Dashboard Template built with TypeScript
   - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components and latest industry best practices.
   - No create-react-app, classes react components, Bootstrap and jQuery.
-- react-admin /Apache2.0/151Star/2020008
+- react-admin /Apache2/151Star/2020008
   - https://github.com/javaLuo/react-admin
   - https://isluo.com/work/admin/
   - 标准后台管理系统解决方案, 动态菜单配置，权限精确到按钮

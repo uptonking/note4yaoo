@@ -9,7 +9,7 @@ modified: '2020-07-14T12:06:37.292Z'
 
 ## guide
 
-- typescript /Apache2.0/53kStar/201908
+- typescript /Apache2/53kStar/201908
   - https://www.typescriptlang.org
   - https://github.com/Microsoft/TypeScript 
 - flow /MIT/2kStar/201908

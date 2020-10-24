@@ -23,7 +23,7 @@ modified: '2020-10-05T20:00:10.594Z'
   - /11.4kStar/MIT/202009/js
   - Merge Web Components, JSX, Virtual DOM, Functional style, observe or Proxy into one framework
 - https://github.com/OnsenUI/OnsenUI
-  - /8.1kStar/Apache2.0/202009
+  - /8.1kStar/Apache2/202009
   - Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
 - https://github.com/BlazeSoftware/atoms
   - a set of web components powered by Blaze CSS.
@@ -38,7 +38,14 @@ modified: '2020-10-05T20:00:10.594Z'
     - A JavaScript library of Web Components following Spectrum design patterns.
     - Coral Spectrum derives from Custom Elements v1 with native support 
     - https://github.com/adobe/spectrum-css
-
+- Calcite Design System /Esri 
+  - https://github.com/Esri/calcite-components
+  - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
+  - https://esri.github.io/calcite-components/
+  - Web Components for the Calcite Design System. Built with Stencil JS
+- https://github.com/tenphi/numl
+  - https://numl.design/
+  - An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI
 ## compiled-to-web-components
 
 - https://github.com/Gomah/bulmil

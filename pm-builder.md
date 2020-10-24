@@ -30,7 +30,7 @@ modified: '2020-10-22T13:33:21.232Z'
 
 ## solution-catalog-builder
 
-- VvvebJs /Apache2.0/3.3kStar/202007
+- VvvebJs /Apache2/3.3kStar/202007
 - grapesjs /BSD/11.4kStar/202008
 - react-page /LGPLv3/8.2kStar/202008/ts
 

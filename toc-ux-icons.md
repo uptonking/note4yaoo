@@ -23,7 +23,7 @@ modified: '2020-07-17T10:52:17.250Z'
   - https://forkaweso.me/Fork-Awesome/icons/
   - 744 icons 
   - svg icons lie in `src/icons/svg/`
-- material-design-icons  /Apache2.0/6kStar/201908
+- material-design-icons  /Apache2/6kStar/201908
   - https://github.com/Templarian/MaterialDesign
   - https://materialdesignicons.com/
   - converted icons from Google's official icon set

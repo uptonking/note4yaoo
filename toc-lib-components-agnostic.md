@@ -22,13 +22,13 @@ modified: '2020-10-05T06:23:07.417Z'
       - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
       - 基于class组件实现
     - https://github.com/material-components/material-components-web-components
-      - /2.2kStar/Apache2.0/202009/ts/agnostic/MWC
+      - /2.2kStar/Apache2/202009/ts/agnostic/MWC
       - a collection of Web Components maintained by Google that implement Material Design
     - https://github.com/prateekbh/preact-material-components
       - /531Star/MIT/202007/ts/deprecated
       - preact wrapper for material-components-web
     - https://github.com/material-components/material-components-android
-      - /11.2kStar/Apache2.0/2020209/java
+      - /11.2kStar/Apache2/2020209/java
       - Modular and customizable Material Design UI components for Android
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
@@ -46,13 +46,13 @@ modified: '2020-10-05T06:23:07.417Z'
     - React wrappers for the Tradeshift ui components. 
     - 一层很简单的wrapper，基于class组件实现
 - https://github.com/IgniteUI/ignite-ui
-  - /464Star/Apache2.0/202007/js
+  - /464Star/Apache2/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 
   - https://github.com/IgniteUI/igniteui-react-wrappers
     - ignite UI components for React. 
     - 基于createReactClass批量生成，依赖jquery
 - https://github.com/GoldWorker/SluckyUI
-  - /16Star/Apache2.0/202001
+  - /16Star/Apache2/202001
   - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库
   - 提供了创建React，Angular，Vue组件的示例
 - https://github.com/coreui/coreui
@@ -80,12 +80,12 @@ modified: '2020-10-05T06:23:07.417Z'
     - A powerful template engine based on virtual dom
     - 基于misstime(a virtual-dom lib forked from inferno and inspired by virtual-dom)
 - https://github.com/IBM/sterling-dataviz
-  - /3Star/Apache2.0/201911/ts
+  - /3Star/Apache2/201911/ts
   - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
   - 支持react、vue、angular，基于胶水层实现
 
 - https://github.com/SAP/ui5-webcomponents
-  - /787Star/Apache2.0/202009/webcomp
+  - /787Star/Apache2/202009/webcomp
   - the enterprise-flavored sugar on top of native APIs
   - https://github.com/SAP/openui5
     - based on JavaScript, using jQuery as its foundation and follows web standards

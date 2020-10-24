@@ -19,7 +19,7 @@ modified: '2020-10-22T10:13:47.161Z'
     - https://github.com/miloyip/json-tutorial
     - https://github.com/miloyip/nativejson-benchmark
 - https://github.com/yandex/ClickHouse
-  - /12.3kStar/Apache2.0/202009
+  - /12.3kStar/Apache2/202009
   - column-oriented database management system that allows generating analytical data reports in real time.
 - https://github.com/google/leveldb
   - /21.8kStar/BSD/202009
@@ -28,13 +28,13 @@ modified: '2020-10-22T10:13:47.161Z'
   - /43.9kStar/202009/cpp
   - Protocol Buffers - Google's data interchange format
 - https://github.com/grpc/grpc
-  - /27.7kStar/Apache2.0/202009
+  - /27.7kStar/Apache2/202009
   - The C based gRPC (C++, Python, Objective-C, PHP, C#)
 - https://github.com/electron/electron
   - /86kStar/MIT/202009/cpp
   - Build cross-platform desktop apps with JavaScript, HTML, and CSS
 - https://github.com/tensorflow/tensorflow
-  - /149kStar/Apache2.0/202009/cpp
+  - /149kStar/Apache2/202009/cpp
   - An Open Source Machine Learning Framework
 - https://github.com/pytorch/pytorch
   - /42.8kStar/BSD-style/202009

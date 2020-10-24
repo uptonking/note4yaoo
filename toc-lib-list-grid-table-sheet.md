@@ -136,7 +136,7 @@ modified: '2020-10-22T06:49:25.812Z'
   - https://github.com/gajus/table
   - Produces a string that represents array data in a text table.
   - Formats data into a string table.
-- SheetJS js-xlsx Community Edition /Apache2.0/21.9kStar/202006
+- SheetJS js-xlsx Community Edition /Apache2/21.9kStar/202006
   - https://github.com/SheetJS/sheetjs
   - https://oss.sheetjs.com/
   - 依赖cfb(Compound File Binary File Format extractor), ssf  

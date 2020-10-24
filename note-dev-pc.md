@@ -106,7 +106,7 @@ modified: '2020-07-14T09:32:35.359Z'
 - JavaFX 13提供了节点使用native（eg opengl，qt，vulkan）渲染功能
 - javafx以后可以跟其他任何一个渲染工具集成了，它提供一个内存块（writable image），然后你可以用任何一个你会的渲染工具，无论这个渲染的工具是opengl，vulkan还是d3d，metal或者是webgl 等等，来渲染这一个内存块，然后再将这个image交给javafx，剩下的就是javafx的日常代码了，就跟普通的image一样用
 - 当然它这里还只是writable image，还要给集成到node上去，node就是javafx的最基础组件，那要集成到node上去，有两个项目提供了选择
-- NativeFX /Apache2.0/201908
+- NativeFX /Apache2/201908
   - https://github.com/miho/NativeFX
   - 用native api来渲染node的例子，javafx 13之后，渲染效率会提升50%
 - efxclipse-drift  /EPL1.0/201908

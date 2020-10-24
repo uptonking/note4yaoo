@@ -23,7 +23,7 @@ modified: '2020-07-14T11:02:59.856Z'
   - https://material.io/develop/web/components/buttons/
   - https://material.io/components/buttons
 - https://github.com/palantir/blueprint
-  - /Apache2.0/16.3kStar/202006
+  - /Apache2/16.3kStar/202006
   - https://blueprintjs.com/
   - https://blueprintjs.com/docs/#core/components/button
 - https://github.com/salesforce-ux/design-system

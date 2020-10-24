@@ -59,6 +59,9 @@ modified: '2020-10-23T03:57:36.637Z'
   - The "single source of truth" for design tokens and assets used throughout Buildit's Gravity design system
 - https://github.com/rei/rei-cedar-tokens
   - Tokens for cedar design system
+- https://github.com/sproutsocial/seeds-packets
+  - https://seeds.sproutsocial.com/resources/tokens/
+  - the design tokens that power Sprout Social's design system
 
 ## design-tokens-tools
 

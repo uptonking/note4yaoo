@@ -14,7 +14,7 @@ modified: '2020-10-22T13:02:56.929Z'
 - elasticsearch
   - [search ui](https://search-ui-stable.netlify.app)
     - https://github.com/elastic/search-ui
-    - /1.2kStar/Apache2.0/202008
+    - /1.2kStar/Apache2/202008
     - A React library that allows you to quickly implement search experiences
 - [searchkit imdb demo](http://demo.searchkit.co/)
 - [dejavu datasets: movies, hacker news, airbeds](https://opensource.appbase.io/dejavu/)

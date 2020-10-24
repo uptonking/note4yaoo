@@ -26,8 +26,12 @@ modified: '2020-10-22T10:14:24.424Z'
   - http://design.systems/
     - Resources for the design systems community
     - Clarity conference, Coalition, Handbook, Publication
+  - ref
+    - https://github.com/miukimiu/design-systems
+    - https://github.com/anubhavsrivastava/awesome-ux-design-styles
+    - https://github.com/DragorWW/awesome-design-language-system
 
-- ref
+- design system guide
   - https://www.learnstorybook.com/design-systems-for-developers/
     - how to transform component libraries into design systems
 
@@ -39,51 +43,61 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://www.learnstorybook.com/design-systems-for-developers/
   - a reusable component library that helps Storybook build UIs faster
 - Gestalt  /Pinterest
-  - /Apache2/3.7kStar/202010
+  - /Apache2/3.7kStar/202010/js
   - https://github.com/pinterest/gestalt
   - https://gestalt.netlify.app/
   - React UI components that enforces Pinterest’s design language
-- Garden  /Apache2.0/794Star/202009
+- Garden /Zendesk
+  - Garden is the design system by Zendesk.
+  - https://github.com/zendeskgarden/css-components
+    - /95Star/Apache2/202010/css
+    - https://zendeskgarden.github.io/css-components/
+    - Garden CSS provides consistent styling for Garden components. 
   - https://github.com/zendeskgarden/react-components
+    - /Apache2/794Star/202009
   - https://garden.zendesk.com/
-  - The source of truth for tools, standards, and best practices when building products at Zendesk.
+  - Garden React provides consistent styling and behavior for Garden components. 
+  - https://github.com/zendeskgarden/tailwindcss
+    - /6Star/Apache2/202010/ts
+    - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
 - orbit /723Star/MIT/202010/js
   - https://github.com/kiwicom/orbit
   - https://orbit.kiwi/
   - React components of open-source Orbit design system by Kiwi.com
-
- 
-
 - aragon UI
   - /215Star/MIT/202009/js
   - https://github.com/aragon/ui
   - https://ui.aragon.org/
   - React library used to build user interfaces for Aragon
-- https://github.com/appearhere/bloom
+- Bloom /Appear Here
+  - https://github.com/appearhere/bloom
   - https://bloom-seven-gules.now.sh/
   - reuseable React components and common styles to promote consistency across various projects at Appear Here.
-  - It's been bootstrapped with create-react-app, and has a number of additional features to make development easier.
+  - It's been bootstrapped with create-react-app
 - Alfa-Bank UI Library 
   - /553Star/MPL2/202010/ts
   - https://github.com/alfa-laboratory/arui-feather
   - https://digital.alfabank.ru/
   - arui-feather is a React component library for building web interfaces.
   - 大多是俄语
-- Pivotal UI  /MIT/612Star/201908
+- Pivotal Design System /Pivotal 
+  - /MIT/636Star/202010/js
   - https://github.com/pivotal-cf/pivotal-ui
   - https://styleguide.pivotal.io/
   - Pivotal's design system & component library
-- Photon Design System  /MPL2.0/206Star/201909/Firefox
+- Photon Design System  /Firefox
+  - /MPL2.0/225Star/202007/js
   - https://github.com/FirefoxUX/photon
   - https://design.firefox.com/photon/
   - build modern, intuitive, delightful experiences
-- Protocal /155Star/MIT/202009
+- Protocal /Mozilla
+  - /155Star/MIT/202009/js
   - https://github.com/mozilla/protocol
   - A design system for Mozilla websites.
 - Reach UI Philosophy
   - https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7
   - accessible, composable
-- Mineral UI  /Apache2.0/500Star/201912/CATechnologies
+- Mineral UI  /Apache2/500Star/201912/CATechnologies
   - https://github.com/mineral-ui/mineral-ui
   - https://mineral-ui.netlify.com/
   - Mineral UI is a design system and React component library for the web
@@ -103,6 +117,9 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://www.audi.com/ci/en/intro/brand-appearance.html
   - https://feelix.myob.com/#/Design%20patterns
   - https://design-system.futurelearn.com/
+    - We use a simplified version of the Atomic Design methodology
+    - The main difference with Atomic Design is that all modules are either an atom or a molecule, categorised by purpose. 
+    - Having organisms used to cause confusion in the team, so we removed them.
   - https://bradfrost.com/blog/post/atomic-web-design/
   - https://spotify.design/
   - design-style
@@ -127,9 +144,11 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://github.com/artsy/palette
   - https://palette.artsy.net/
   - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
-- https://github.com/seek-oss/braid-design-system
+- Braid Design System /SEEK
+  - https://github.com/seek-oss/braid-design-system
   - /743Star/MIT/202010/ts
   - https://seek-oss.github.io/braid-design-system
+  - https://seek-oss.github.io/seek-style-guide/
   - Themeable design system for the SEEK Group
   - 基于treat这个css-in-js解决方案实现
 - https://github.com/innovaccer/design-system
@@ -144,10 +163,12 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://solid.buzzfeed.com/
   - Solid is BuzzFeed's functional CSS framework and styleguide.
   - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
-- Workday Canvas Design System  /Apache2.0/74Star/202001
+- Canvas Design System  /Workday
+  - /Apache2/74Star/202010/ts
   - https://github.com/workday/canvas-kit
   - https://design.workday.com/guidelines
-- Pluralsight Design System  /Apache2.0/158Star/202001
+- Pluralsight Design System /Pluralsight  
+  - /Apache2/200Star/202010/js
 - https://github.com/pluralsight/design-system
   - /200Star/Apache2/202010/js
   - https://design-system.pluralsight.com/
@@ -157,11 +178,12 @@ modified: '2020-10-22T10:14:24.424Z'
 - https://github.com/at-ui/at-ui
   - /2.2kStar/MIT/201802/js/vue2
   - flat UI-Kit specially for desktop application
-- audi-ui
-  - /223Star/NALic/202004/js
+- Audi UI /AUDI
+  - /223Star/Apache2/202004/js
   - https://github.com/audi/audi-ui
   - http://www.audi.com/ci
-  - An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML. 
+  - An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML.
+  - Our current build workflow requires Gulp v4
 - https://github.com/gctools-outilsgc/aurora-design-system
   - /71Star/MIT/201906/css
   - https://design.gccollab.ca/
@@ -209,19 +231,15 @@ modified: '2020-10-22T10:14:24.424Z'
   - /111Star/MIT/202010/css
   - https://ebay.github.io/skin/
   - Pure CSS framework designed & developed by eBay for a branded, e-commerce marketplace.
-- https://github.com/rei/rei-cedar
-  - https://rei.github.io/rei-cedar-docs/
-  - REI Digital Design System presentation framework.
-  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
-  - We started this project in 2015 as a fork of Bootstrap. 
 - https://github.com/cloudflare/cf-ui
-  - /1.3kStar/BSD/201709/js
+  - /1.3kStar/BSD/201709/js/deprecated
   - Cloudflare UI Framework(not maintained)
 - https://github.com/contentful/forma-36
   - /105Star/MIT/202010/ts
   - https://f36.contentful.com/
   - This is the monorepo for the Forma 36 design system by Contentful.
-- Elastic UI  /Apache2.0/2.3kStar/202010/ts
+- Elastic UI  /Elastic
+  - /Apache2/2.3kStar/202010/ts
   - https://github.com/elastic/eui
   - https://elastic.github.io/eui/#/
   - a collection of React UI components for quickly building user interfaces at Elastic
@@ -231,9 +249,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - An unofficial set of Figma UI components for creating plugins and other purposes. 
   - Based on Tom Lowry's Figma UI JS/CSS files.
   - Uses React, styled-components, TypeScript.
-- https://github.com/fusionfabric/finastra-design-system
-  - https://design.fusionfabric.cloud/
-  - The Finastra Design System provided as a theme and Angular components
 - https://gitlab.com/gitlab-org/gitlab-ui
   - https://gitlab-org.gitlab.io/gitlab-ui/
   - https://gitlab.com/gitlab-org/gitlab-services/design.gitlab.com
@@ -247,31 +262,40 @@ modified: '2020-10-22T10:14:24.424Z'
   - Seed: A component-first CSS design system.
   - JS is powered by Bootstrap.js
 - grommet /Hewlett Packard
-  - /Apache2.0/6.7kStar/202010/js
+  - /Apache2/6.7kStar/202010/js
   - https://github.com/grommet/grommet
   - https://v2.grommet.io/
   - a react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
-- ring-ui  /Apache2.0/2kStar/201908/js
+- ring-ui  /JetBrains
+  - /Apache2/2kStar/201908/js
   - https://github.com/JetBrains/ring-ui
   - https://jetbrains.github.io/ring-ui/
   - A collection of JetBrains Web UI components 
 - https://github.com/kalohq/ui
   - https://kalo.design/
   - Design system for building user interfaces at Kalo.
-- https://github.com/mongodb/design
-  - A repository for design resources at MongoDB
+- MongoDB Design System /MongoDB
+  - https://github.com/mongodb/leafygreen-ui
+    - /54Star/Apache2/202010/ts
+    - https://mongodb.github.io/leafygreen-ui/
+    - A set of CSS styles and React components
   - http://mongodb.design/
-  - https://github.com/leafygreen/sketchUILibrary
+  - https://github.com/mongodb/design
+    - A repository for design resources at MongoDB
 - NASA Web Design System
   - https://github.com/bruffridge/nasawds
   - The same USWDS you know and love, with NASA theming!
-- https://github.com/priceline/design-system
+- Priceline Design System /Priceline
+  - https://github.com/priceline/design-system
   - /570Star/MIT/202010/js
   - https://priceline.github.io/design-system/
   - Priceline.com Design System
 - https://github.com/pusher/chameleon
+  - /36Star/MIT/202006/js
+  - https://pusher.github.io/chameleon
   - a library of front-end assets that can be used across Pusher
-- https://github.com/rambler-digital-solutions/rambler-ui
+- Ratio Design System /Rambler
+  - https://github.com/rambler-digital-solutions/rambler-ui
   - /173Star/MIT/202010/js
   - https://ui-kit.rambler.ru/
   - UI library for creating interfaces in Rambler guidelines with React power
@@ -283,7 +307,7 @@ modified: '2020-10-22T10:14:24.424Z'
   - Fiori Fundamentals is a component library and SASS toolkit for building SAP user interfaces
   - SAP Fundamentals is deprecated. Fundamental Styles is its successor
 - https://github.com/SAP/ui5-webcomponents
-  - /787Star/Apache2.0/202009/webcomp
+  - /787Star/Apache2/202009/webcomp
   - the enterprise-flavored sugar on top of native APIs
 - https://github.com/SAP/openui5
   - based on JavaScript, using jQuery as its foundation and follows web standards
@@ -298,22 +322,281 @@ modified: '2020-10-22T10:14:24.424Z'
 - https://github.com/sky-uk/toolkit
   - http://www.sky.com/toolkit
   - Sky's CSS Toolkit
+- https://github.com/thumbtack/thumbprint
+  - /147Star/Apache2/202010/ts
+  - the design system at Thumbtack. 
+- Base Design /Uber
+  - https://github.com/uber/baseweb
+  - /5.4kStar/MIT/202010/js
+  - https://baseweb.design/
+  - A React Component library implementing the Base design language
+- vanilla-framework /438Star/LGPLv3/202009/scss
+  - https://github.com/canonical-web-and-design/vanilla-framework
+  - https://vanillaframework.io/
+  - a simple extensible CSS framework, built using Sass
+- https://github.com/USPTO/USPTO-DS-Theme
+  - /1Star/NALic/202010/css
+  - USPTO's next-gen open source Design System theme, based on the USWDS and Boostrap. Version 2.x (Alpha)
+- https://github.com/uswitch/ustyle
+  - https://ustyle.guide/
+  - A living styleguide and pattern library by uSwitch.
+  - If using Rails and Sass, just import the base uSwitch styles at the start of your file
+  - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
+- https://github.com/vtex/styleguide
+  - /130Star/NALic/202010/ts
+  - https://styleguide.vtex.com/
+  - The VTEX Design System and React component library.
+- https://github.com/wework/ray
+  - /48Star/Apache2/202005/js
+  - https://ray.wework.com/
+  - Resources for building interfaces with WeWork's design system
+- https://github.com/WTTJ/welcome-ui
+  - /210Star/MIT/202010/js
+  - https://www.welcome-ui.com/
+  - Customizable design system of @WTTJ with react • styled-components • styled-system • reakit
+- https://github.com/Workday/canvas-kit
+  - /122Star/Apache2/202010/ts
+  - https://design.workday.com/
+  - https://workday.github.io/canvas-kit/
+  - Development kits to implement UI following the Workday Canvas Design System
+- https://github.com/dropbox/scooter
+  - /795Star/Apache2/201506/scss/deprecated
+  - http://dropbox.github.io/scooter
+  - SCSS framework & UI library for Dropbox Web.
+- https://github.com/Altinn/DesignSystem
+  - /36Star/MIT/202010/js
+  - https://altinn.github.io/DesignSystem
+  - This design system is based on Pattern Lab code and atomic design principles. 
+- Cosmos Design System /Auth0
+  - https://github.com/auth0/cosmos
+  - /498Star/MIT/202010/ts
+  - https://auth0-cosmos.now.sh/
+  - Auth0 Design System
+- https://github.com/Automattic/wp-calypso
+  - /11.6kStar/GPLv2/202010/js
+  - Calypso is the new WordPress.com front-end
+    - a beautiful redesign of the WordPress dashboard using a single-page web application,
+    - powered by the WordPress.com REST API.
+  - built with JavaScript – a very light node plus express server, React.js, Redux, wpcom.js, and many other wonderful libraries on the front-end.
+- GEL(Global Experience Language) /BBC
+  - https://www.bbc.co.uk/gel
+  - https://github.com/bbc/psammead
+    - /195Star/Apache2/202010/js
+    - React component library for BBC World Service and more
+  - https://github.com/bbc/gel
+    - https://bbc.github.io/gel/
+    - This repository holds the documentation for the BBC GEL Technical Guides.
+- https://github.com/brainly/style-guide
+  - /136Star/GPLv3/202010/js
+  - https://styleguide.brainly.com/
+  - This project is a living style guide of all basic front-end components used at Brainly.
+- https://github.com/bring/hedwig
+  - /27Star/BSD/202010/js
+  - https://hedwig-docs.herokuapp.com/
+  - Hedwig is Bring and Postens Design System.
+- https://github.com/cfpb/design-system
+  - /15Star/CC0-1.0/202010/js
+  - https://cfpb.github.io/design-system
+  - The Consumer Financial Protection Bureau's user interface framework and documentation
+- https://github.com/fs-webdev/fs-styles
+  - Global styles for the FamilySearch.org website. 
+  - Based on the principles of Atomic Design.
+  - FS-styles provides both a CSS stylesheet (dist/familysearch-styles.css) and a Polymer style module (fs-styles.html)
+- Aurora design system
+  - https://github.com/gctools-outilsgc/aurora-website
+  - /15Star/MIT/202001/js
+  - https://design.gccollab.ca/
+  - We created Aurora design system to standardize the visual language and user experience of the Digital Enablement Division’s (GCTools) online applications and tools.
+- https://github.com/instacart/Snacks
+  - https://instacart.github.io/Snacks/
+  - JavaScript Component Library by Instacart
+- Pebble Design System /13Star/Apache2/202010/js
+  - https://github.com/istreamlabs/pebble
+  - https://pebble.istreamplanet.net/
+  - A react-based design system built by iStreamPlanet
+- Calcite Design System /Esri 
+  - https://github.com/Esri/calcite-base
+    - /6Star/EsriMasterLic/202007/js
+    - https://esri.github.io/calcite-base/
+    - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
+  - https://github.com/Esri/calcite-components
+    - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
+    - https://esri.github.io/calcite-components/
+    - Web Components for the Calcite Design System. Built with Stencil JS
+  - https://github.com/Esri/calcite-web
+    - /96Star/Apache2/201902/js
+    - Calcite Web is a web design framework that implements the Esri Brand Guidelines
+    - Calcite Web is written in Sass
+    - The project also includes a dependency-free JavaScript library for use with interactive patterns.
+  - https://github.com/Esri/calcite-react
+    - /42Star/Apache2/202010/js
+    - Calcite components, built in React
+  - https://github.com/Esri/calcite-ui-icons
+    - /39Star/EsriMasterLic/202010/js
+    - UI icons built by Esri
+  - https://github.com/Esri/calcite-colors
+    - /16Star/EsriMasterLic/202010/ts
+    - Esri's official color documentation repository that is leveraged by Calcite
+  - https://github.com/Esri/calcite-sketch-libraries
+  - https://github.com/Esri/calcite-maps
+    - A Bootstrap theme for designing, styling and creating modern map apps.
+- Assembly /Mapbox
+  - https://github.com/mapbox/assembly
+  - https://labs.mapbox.com/assembly/
+  - A CSS framework that makes the hard parts of building anything on the web easy. 
+- https://github.com/meetup/swarm-design-system
+  - https://meetup.github.io/swarm-design-system/
+  - Swarm Design System by Meetup
+- Fuse Design System /National Instruments Software
+  - /5Star/MIT/202010/js
+  - https://github.com/ni/design-system
+  - https://ni.github.io/design-system/
+  - A system for designing and developing National Instruments Software
+- Nulogy Design System
+  - https://github.com/nulogy/design-system
+  - /33Star/MIT/202010/ts
+  - http://nulogy.design/
+  - Built with React
+  - components make it easy to create interfaces that conform to the principles of the Nulogy Design System.
+- https://github.com/thelando618/royal-canin-design-language
+  - http://developer.royalcanin.com/
+  - This repository contains the development files used to generate the Royal Canin Design Language Assets (2017)
+- https://github.com/SpareBank1/designsystem
+  - /84Star/MIT/202010/js
+  - https://design.sparebank1.no/
+  - SpareBank 1's design system and component library.
+- Italia design system
+  - https://designers.italia.it/
+  - https://github.com/italia/design-react-kit
+    - /76Star/BSD/202010/react
+    - https://italia.github.io/design-react-kit/
+    - A React toolkit that implements the Italia design system
+  - https://github.com/italia/bootstrap-italia
+    - Bootstrap Italia is a Bootstrap 4 theme 
+  - https://github.com/italia/designers.italia.it
+- https://github.com/biings/biings-ds
+  - /17Star/CC-BY-SA-4.0/202010/Sass
+  - https://biings.design/
+  - BDS is a series of assets and guidelines for building consistent user experiences at Biings.
+- Heroku Design /Heroku
+  - https://design.herokai.com/
+  - https://github.com/heroku/react-hk-components
+    - https://react-hk-components.herokuapp.com/
+    - Basic web components styled with purple3 in React
+- Infor Design System /Infor
+  - https://design.infor.com/
+  - https://github.com/infor-design/enterprise
+    - a framework-independent UI library consisting of CSS and JS
+  - https://github.com/infor-design/design-system
+    - Design Tokens, Assets, and Planning for the Infor Design System
+  - https://github.com/infor-design/enterprise-wc
+    - Infor Design System (IDS) Web Components is an Infor project that creates high quality web components
+    - We built these in such a way that they could be used by any application in a variety of popular frameworks (Angular, React Vue).
+  - https://github.com/infor-design/enterprise-ng
+    - Angular wrappers for IDS Enterprise components
+- https://github.com/instructure/instructure-ui
+  - https://instructure.design/
+  - To build an accessible application using the React components, themes, and utilities provided by instructure-ui
+- https://github.com/marvelapp/devices.css
+  - Pure CSS phones and tablets
+  - https://marvelapp.com/styleguide/overview/introduction
+- https://github.com/catho/quantum
+  - https://catho.github.io/quantum
+  - CSS in JS based reusable components, are the core of Quantum design-system: a library for developing consistent UI/UX at Catho.
+- https://github.com/react95/react95
+  - https://react95.github.io/React95/
+  - React95 is a React component library inspired on the Windows 95 UI design.
+- Rimble Design System /Rimble
+  - https://github.com/ConsenSysMesh/rimble-ui
+  - /294Star/MIT/202003/js
+  - https://rimble.consensys.design/
+  - React components that implement Rimble's Design System.
+- Rivet Design System /Indiana University
+  - https://github.com/indiana-university/rivet-source
+  - /28Star/BSD/202001/js
+  - https://rivet.iu.edu/
+  - A collection of code and visual assets used to create patterns across software titles
+- https://github.com/lonelyplanet/rizzo
+  - /732Star/MIT/202010/js
+  - Rizzo is the UI layer for lonelyplanet.com
+  - https://rizzo.lonelyplanet.com/styleguide/
+- https://github.com/wework/plasma
+  - /42Star/ISC/201909/js
+  - http://plasma.guide/
+  - Plasma is a design system for creating sensible, modern interfaces.
+- https://github.com/rei/rei-cedar
+  - /86Star/MIT/202010/vue
+  - https://rei.github.io/rei-cedar-docs/
+  - REI Digital Design System presentation framework.
+  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
+  - We started this project in 2015 as a fork of Bootstrap. 
+- Thumbprint design system 
+  - https://github.com/thumbtack/thumbprint
+    - /147Star/Apache2/202010/ts
+    - https://thumbprint.design/
+    - Thumbprint is the design system at Thumbtack.
+  - https://github.com/thumbtack/thumbprint-tokens
+    - https://thumbprint.design/tokens/
+    - Design variables that power Thumbtack’s UI.
+- Geist /Vercel
+  - /MIT/1.2kStar/202010/ts
+  - htps://github.com/geist-org/react
+  - https://github.com/zeit-ui/react
+  - https://react.geist-ui.dev/
+  - Modern and minimalist React UI library, originating from Vercel's design.
+- Yoga design system /Gympass
+  - https://github.com/gympass/yoga
+  - /110Star/MIT/202010/js
+  - https://gympass.github.io/yoga/
+  - a scientific system of practices made to help us achieve our highest potential and experience.
+- https://github.com/creativetimofficial/argon-design-system
+  - https://www.creative-tim.com/product/argon-design-system
+  - Argon - Design System for Bootstrap 4 by Creative Tim
+- Eva Design System /Akveo team
+  - https://eva.design/
+  - https://github.com/eva-design/eva
+    - /814Star/MIT/202005/ts
+    - Customizable Design System easily adaptable to your Brand.
+  - https://github.com/akveo/nebular
+    - Customizable Angular UI Library based on Eva Design System
+  - Available for Sketch with Mobile and Web component libraries.
 
  
 
+## design-system-framework
+
+- Accera Design System /Accera
+  - https://github.com/accera-tech/solar-components
+  - /13Star/MIT/202004/ts/web-comp
+  - https://design.accera.com.br/
+  - This is an implementation of Accera's Design System in WebComponents.
+- Mixpanel Design System
+  - https://github.com/mixpanel/panel
+  - /198Star/MIT/202009/js/web-comp
+  - Web Components + Virtual DOM: web standards for powerful UIs
+  - This design system website and component library are built using our library Panel. 
+  - Panel is a thin layer on top of Web Components with React like virtual DOM rendering.
+- https://github.com/bloombergindustry/fishtank-vue
+  - http://fishtank.bna.com/
+  - Fish Tank Design and Component System - VueJS Component Library
+- https://github.com/boltdesignsystem/bolt
+  - /170Star/MIT/202010/web-comp
+  - https://boltdesignsystem.com/
+  - Bolt Design System provides robust Twig and Web Component-powered UI components
+- https://github.com/dynatrace-oss/barista
+  - /83Star/Apache2/202010/ts/angular
+  - https://barista.dynatrace.com/
+  - Barista - the Dynatrace design system. Tailored to scale.
+- https://github.com/fusionfabric/finastra-design-system
+  - https://design.fusionfabric.cloud/
+  - The Finastra Design System provided as a theme and Angular components
+- https://github.com/viljamis/vue-design-system
+  - An open source tool for building UI Design Systems with Vue.js
+
 ## design-system-gov
 
-- https://github.com/govau/design-system-components/
-  - /672Star/MIT/202010/js
-  - https://auds.service.gov.au/
-  - Component code and tests for the Australian Government design system
-- GOV. UK Design System  /MIT/290Star/201912
-  - https://github.com/alphagov/govuk-frontend
-  - https://design-system.service.gov.uk/
-  - build a user interface for government platforms and services    
-  - https://github.com/govau/design-system-components
-  - https://github.com/alphagov/govuk-design-system
-- United States Web Design System  /CC0 1.0/5400Star/201912
+- United States Web Design System  
+  - /CC0 1.0/5.4kStar/201912
   - https://github.com/uswds/uswds
   - https://designsystem.digital.gov/
   - A design system for the federal government.
@@ -322,28 +605,26 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://design.va.gov/
     - VA.gov is built on top of VA's design system (VADS). 
     - VADS is based on the US Web Design System
-
-## design-system-site
-
-- https://github.com/miukimiu/design-systems
+- GOV. UK Design System 
+  - /168Star/MIT/202010/js
+  - https://github.com/alphagov/govuk-frontend
+  - https://design-system.service.gov.uk/
+  - One place for styles, components and patterns for designing government services. 
+- Australian Government design system
+  - https://github.com/govau/design-system-components/
+  - /672Star/MIT/202010/js
+  - https://auds.service.gov.au/
+  - Component code and tests for the Australian Government design system
+- https://github.com/USAJOBS/design-system
+  - http://usajobs.github.io/design-system/
+  - USAJOBS design system starts with the The U. S. Web Design Standards and extends them to meet the needs of the USAJOBS next generation project. 
+- https://www.digital.nsw.gov.au/digital-design-system
+  - The NSW Design System is a way for people in government to design products and services that are distinctly NSW. 
 - https://github.com/CMSgov/design-system
-- https://github.com/auth0/cosmos
-- https://ether.thescenery.co/
-- https://sproutsocial.com/seeds/
-- https://palette.artsy.net/
-- https://www.duetds.com/
-  - https://www.duetds.com/tokens/
-  - a set of organized tools, patterns and practices that work as the foundation
-- https://www.astrouxds.com/
-  - Astro Space UX Design System enables developers to build rich space app experiences
-- Predix Design System
-  - https://www.predix-ui.com/#/about/introduction
-- Morningstar Design System
-  - https://designsystem.morningstar.com/
-  - v2 is using web components; v3 will use vue
-- ServiceNow Design System
-  - http://designsystem.servicenow.com/#!/
-- Eva Design System
-  - https://eva.design/
-  - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
-  - implemented for angular and react native
+  - /178Star/CC0-1.0-Universal-public/202010/js
+  - https://design.cms.gov/
+  - a set of design and front-end development resources for creating Section 508 compliant, responsive, and consistent websites. 
+  - It builds on the U. S. Web Design System and extends it to support additional CSS and React components, utility classes, and a grid framework 
+- https://github.com/codeforamerica/style-guide
+  - https://v4.style.codeforamerica.org/
+  - An updated style guide and pattern library for Code for America's website

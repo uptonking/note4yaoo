@@ -11,7 +11,7 @@ modified: '2020-10-22T10:04:00.881Z'
 
 ## apps
 
-- earthdata-search /Apache2.0/540Star/202009
+- earthdata-search /Apache2/540Star/202009
   - https://github.com/nasa/earthdata-search
   - https://search.earthdata.nasa.gov/
   - Earthdata Search is a web application developed by NASA EOSDIS to enable data discovery, search, comparison, visualization, and access across EOSDIS' Earth Science data holdings.

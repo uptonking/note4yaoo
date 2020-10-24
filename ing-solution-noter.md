@@ -65,6 +65,7 @@ modified: '2020-07-14T10:24:54.328Z'
   - 打开一个文档后，标题栏中标题应显示为文档第一行的标题，而不是/path/to/README.md
 - discuss
   - markdown顶部元数据采用注释形式，而不是多级键值对
+  - 添加快捷键：复制文字的链接url
 
 ## notable
 

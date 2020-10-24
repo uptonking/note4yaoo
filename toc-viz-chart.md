@@ -37,12 +37,19 @@ modified: '2020-10-22T10:22:33.292Z'
   - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
   - 依赖svg2pdf.js、jspdf-yworks
   - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
-- carbon-charts /Apache2.0/156Star/202007
+- carbon-charts /Apache2/156Star/202007
   - https://github.com/carbon-design-system/carbon-charts
   - https://carbon-design-system.github.io/carbon-charts/
   - Robust dataviz framework implemented using D3 & typescript
   - 依赖d3、date-fns、@carbon/utils-position
   - 提供react/vue/angular/svelte的wrapper
+
+## geo-charts
+
+- https://github.com/Esri/cedar
+  - /227Star/Apache2/201905/ts
+  - https://esri.github.io/cedar
+  - JavaScript Charts for ArcGIS
 
 ## popular
 
@@ -51,7 +58,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.chartjs.org/
   - Simple HTML5 Charts using the canvas tag
   - https://github.com/SeanSobey/ChartjsNodeCanvas
-- echarts /Apache2.0/42kStar/202007
+- echarts /Apache2/42kStar/202007
   - https://github.com/apache/incubator-echarts
   - http://echarts.apache.org/
   - A powerful, interactive charting and visualization library for browser
@@ -68,7 +75,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/palantir/plottable
   - http://plottablejs.org/
   - A library of modular chart components built on D3
-- lightweight-charts /2.1kStar/Apache2.0/202007
+- lightweight-charts /2.1kStar/Apache2/202007
   - https://github.com/tradingview/lightweight-charts
   - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
   - Financial lightweight charts built with HTML5 canvas
@@ -129,11 +136,11 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/c3js/c3
   - http://c3js.org/
   - a D3-based reusable chart library
-- dc.js /Apache2.0/7.1kStar/202009
+- dc.js /Apache2/7.1kStar/202009
   - https://github.com/dc-js/dc.js
   - http://dc-js.github.com/dc.js/
   - Dimensional charting built to work natively with crossfilter rendered using d3.js
-- nvd3 /Apache2.0/7kStar/201806
+- nvd3 /Apache2/7kStar/201806
   - https://github.com/novus/nvd3
   - http://nvd3.org/
   - A reusable charting library written in d3.js
@@ -143,7 +150,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://nefe.github.io/Taco/
   - svg based charts
   - 无依赖
-- elastic-charts /Apache2.0/137Star/202007
+- elastic-charts /Apache2/137Star/202007
   - https://github.com/elastic/elastic-charts
   - https://elastic.github.io/elastic-charts
   - Elastic Charts library

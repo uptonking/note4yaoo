@@ -36,11 +36,19 @@ modified: '2020-06-22T09:24:05.317Z'
   - https://github.com/openlayers/openlayers
   - https://openlayers.org/
   - feature-packed library for creating interactive maps on the web
-- harp.gl /Apache2.0/664Star/202009
+- harp.gl /Apache2/664Star/202009
   - https://github.com/heremaps/harp.gl
   - https://harp.gl/
   -  open-source 3D map rendering engine written in TypeScript.
-
+- carto /598Star/Apache2/202010/js
+  - https://github.com/mapbox/carto
+  - https://cartocss.readthedocs.io/
+  - CartoCSS (short: Carto) is a language for map design.
+  - It is similar in syntax to CSS, but builds upon it with specific abilities to filter map data and by providing things like variables.
+  - It targets the Mapnik renderer and is able to generate Mapnik XML and a JSON variant of Mapnik XML. 
+  - It can run from the command line or in the browser.
+- https://github.com/Esri/calcite-maps
+  - A Bootstrap theme for designing, styling and creating modern map apps.
 ## 3d
 
 - cesium /6.2kStar/Apache2/202009/js

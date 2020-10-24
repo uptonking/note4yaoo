@@ -27,7 +27,7 @@ modified: '2020-10-05T06:20:15.291Z'
   - https://github.com/premieroctet/openchakra
   - https://openchakra.app/
   - visual editor and code generator for React using Chakra UI
-- VvvebJs /Apache2.0/3.3kStar/202007
+- VvvebJs /Apache2/3.3kStar/202007
   - https://github.com/givanz/VvvebJs
   - http://www.vvveb.com/vvvebjs/editor.html
   - Drag and drop website builder javascript library.
@@ -50,7 +50,7 @@ modified: '2020-10-05T06:20:15.291Z'
   - https://webcodesk.com/documentation/tutorial/create_main_page
   - 依赖electron，d3js
   - 直接拖拽现有组件生成项目，基于 react-app-framework
-- UI-Builder /Apache2.0/19Star/201901
+- UI-Builder /Apache2/19Star/201901
   - https://github.com/iwangbowen/UI-Builder
   - 基于 bootstrap 4和jquery实现
 - react-visual-editor /MIT/2.3kStar/202008
@@ -120,7 +120,7 @@ modified: '2020-10-05T06:20:15.291Z'
 ## low-code
 
 - https://github.com/appsmithorg/appsmith
-  - /340Star/Apache2.0/202009/ts/java
+  - /340Star/Apache2/202009/ts/java
   - open source alternative to Power Apps, Salesforce Lightning
 - https://github.com/sparrow-js/sparrow
   - /vue

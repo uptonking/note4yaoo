@@ -9,7 +9,7 @@ modified: '2020-10-22T11:12:16.497Z'
 
 ## popular
 
-- poi /1kStar/Apache2.0/202009/java
+- poi /1kStar/Apache2/202009/java
   - https://github.com/apache/poi
   - https://poi.apache.org/
   - A Java library for reading and writing Microsoft Office binary and OOXML file formats.

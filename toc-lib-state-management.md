@@ -89,7 +89,7 @@ modified: '2020-07-14T11:03:53.196Z'
 - constate /MIT/2.6kStar/202002
   - https://github.com/diegohaz/constate
   - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
-- akita /Apache2.0/2.3kStar/202007
+- akita /Apache2/2.3kStar/202007
   - https://github.com/datorama/akita
   - https://datorama.github.io/akita/
   - Akita is a state management pattern, built on top of RxJS, 

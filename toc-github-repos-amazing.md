@@ -21,13 +21,17 @@ modified: '2020-10-22T10:13:13.026Z'
   - vanilla JavaScript engine to drive the user's focus across the page
 
 - https://github.com/williamngan/pts
-  - /3.9kStar/Apache2.0/202009/ts
+  - /3.9kStar/Apache2/202009/ts
   - library for visualization and creative-coding.
 
 - https://github.com/wenyan-lang/wenyan
   - https://wy-lang.org/
   - 文言文編程語言 A programming language for the ancient Chinese.
 
+- https://github.com/Esri/wind-js
+  - http://esri.github.io/wind-js/
+  - An demo animation of wind on a Canvas layer in the JSAPI
+  - The code for this project uses nothing but an HTML5 Canvas element and pure Javascript.
 ## cool
 
 - https://github.com/daybrush/scenejs

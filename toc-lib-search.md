@@ -9,13 +9,13 @@ modified: '2020-10-22T06:51:07.421Z'
 
 ## popular
 
-- elasticsearch /49.9kStar/Apache2.0/202007
+- elasticsearch /49.9kStar/Apache2/202007
   - https://github.com/elastic/elasticsearch
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
   - Open Source, Distributed, RESTful Search Engine
   - elasticsearch-6.7.0-java11-201903
   - elasticsearch-6.7.1-java12
-- lucene-solr /3.8kStar/Apache2.0/202009
+- lucene-solr /3.8kStar/Apache2/202009
   - https://github.com/apache/lucene-solr
   - https://lucene.apache.org/
   - Apache Lucene is a high-performance, full featured text search engine library written in Java.

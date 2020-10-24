@@ -50,7 +50,7 @@ modified: '2020-08-04T04:47:53.115Z'
 
 - [FLIP Your Animations_2015](https://aerotwist.com/blog/flip-your-animations/)
   - [github: flipjs](https://github.com/googlearchive/flipjs)
-    - /Apache2.0/1.3kStar/201601
+    - /Apache2/1.3kStar/201601
 - Animations in your web app should run at 60fps. 
 - Not always easy to achieve that, and it really depends on what you're trying to do, but I'm here to help. With FLIP.
 - What we’re trying and do is to turn animations on their head (flip, see? Gosh darnit, I’m so funneh) and, instead of animating “straight ahead” and potentially doing expensive calculations on every single frame we precalculate the animation dynamically and let it play out cheaply.

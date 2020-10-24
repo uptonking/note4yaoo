@@ -38,12 +38,12 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://ming-cult.github.io/snake-design
   - 基于 React hooks 开发的PC端组件库
   - 除了特殊说明都为受控组件，基于TDD开发, 90%以上的测试覆盖率
-- ring-ui  /Apache2.0/2kStar/201908
+- ring-ui  /Apache2/2kStar/201908
   - https://github.com/JetBrains/ring-ui
   - https://jetbrains.github.io/ring-ui/
   - A collection of JetBrains Web UI components 
   - 主要有jetbrains支持
-- Elastic UI  /Apache2.0/1400Star/201912
+- Elastic UI  /Apache2/1400Star/201912
   - https://github.com/elastic/eui
   - https://elastic.github.io/eui/#/
   - Alongside the React components is a SASS/CSS layer 
@@ -59,10 +59,10 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/Tencent/weui
   - https://weui.io/
   - an WeChat-like UI framework officially designed by the WeChat Team
-- Blueprint /Apache2.0/15kStar/201908/ts
+- Blueprint /Apache2/15kStar/201908/ts
   - https://github.com/palantir/blueprint
   - A React-based UI toolkit for the web
-- grommet /Apache2.0/5700Star/201912
+- grommet /Apache2/5700Star/201912
   - https://github.com/grommet/grommet
   - https://v2.grommet.io/
   - build responsive and accessible mobile-first projects for the web
@@ -126,7 +126,7 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/myxvisual/react-uwp
   - https://www.react-uwp.com/
   -  Components implement Microsoft's UWP Design & Fluent Design
-- reaviz /Apache2.0/797Star/201908/ts
+- reaviz /Apache2/797Star/201908/ts
   - https://github.com/jask-oss/reaviz.git
   - https://jask-oss.github.io/reaviz/
   - Data visualization library for React based on D3
@@ -157,7 +157,7 @@ modified: '2020-09-10T04:41:13.304Z'
 - Forge UI
   - https://bitbucket.org/atlassian/aux
   - https://developer.atlassian.com/platform/forge/ui-components/
-- reactivebase /201802/Apache2.0/18Star
+- reactivebase /201802/Apache2/18Star
   - https://github.com/appbaseio/reactivebase 
   - deprecated
 - tenon-ui /58Star/MIT/201812

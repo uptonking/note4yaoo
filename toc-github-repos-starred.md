@@ -40,7 +40,7 @@ modified: '2020-10-06T08:59:16.300Z'
   - a tiny, open source (MIT) library for building reactive, spreadsheet-like calculations in JavaScript
 
 - https://github.com/IQSS/dataverse
-  - /538Star/Apache2.0/202009
+  - /538Star/Apache2/202009
   - open source platform for sharing, finding, citing, and preserving research data 
   - 依赖glassfish、postgresql、smtp、solr、DOI/Handle.net
 

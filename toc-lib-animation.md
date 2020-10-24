@@ -121,7 +121,7 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://github.com/daybrush/scenejs
   - https://daybrush.com/scenejs
   - a JavaScript & CSS timeline-based animation library.
-- web-animations-js /Apache2.0/3.4kStar/201906
+- web-animations-js /Apache2/3.4kStar/201906
   - https://github.com/web-animations/web-animations-js
   - http://web-animations.github.io/
   - JavaScript implementation of the Web Animations API

@@ -10,7 +10,7 @@ modified: '2020-10-22T13:11:04.726Z'
 ## orm
 
 - https://github.com/mybatis/mybatis-3
-  - /14.3kStar/Apache2.0/202009/java
+  - /14.3kStar/Apache2/202009/java
   - MyBatis SQL mapper framework for Java
   - https://github.com/pagehelper/Mybatis-PageHelper
   - https://github.com/baomidou/mybatis-plus

@@ -23,7 +23,7 @@ modified: '2020-10-22T10:22:43.618Z'
   - amCharts Chart Editor based on amCharts 4
   - The core purpose of the amCharts 4 Editor aligns with the JSON-first approach
   - 依赖react、react-router、mobx、codemirror、blueprint组件
-- AnyChart-chart-editor /3Star/Apache2.0/201906/js
+- AnyChart-chart-editor /3Star/Apache2/201906/js
   - https://github.com/AnyChart/chart-editor
   - https://anychart.github.io/chart-editor/
   - an Extension of AnyChart that allows to configure charts via UI

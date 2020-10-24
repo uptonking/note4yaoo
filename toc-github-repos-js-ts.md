@@ -17,7 +17,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - /1.8kStar/MIT/201910/inactive
   - A tiny but mighty list virtualization library, with zero dependencies
 - https://github.com/codex-team/editor.js
-  - /13.3kStar/Apache2.0/202009/ts/vanillajs
+  - /13.3kStar/Apache2/202009/ts/vanillajs
   - A block-styled editor with clean JSON output
 - https://github.com/prevwong/craft.js
   - /3kStar/MIT/202009/ts
@@ -58,7 +58,7 @@ modified: '2020-10-05T06:10:15.909Z'
 - https://github.com/antvis/data-set
   - /state driven all in one data process for data visualization
 - https://github.com/BabylonJS/Babylon.js
-  - /12.3kStar/Apache2.0/202009/ts
+  - /12.3kStar/Apache2/202009/ts
   - simple and open game and rendering engine packed into a friendly js framework.
 - https://github.com/rrweb-io/rrweb
   - /7.6kStar/MIT/202009
@@ -67,7 +67,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - 回放时，页面动态显示的是dom元素，不是图片视频
   - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
 - https://github.com/baidu/amis
-  - /4.3kStar//Apache2.0/202009
+  - /4.3kStar//Apache2/202009
   - 依赖mobx、react、jquery、sortablejs、tinymce
   - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
   - amis-editor未开源，但可以免费使用（包括商用）
@@ -133,7 +133,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - /668Star/MIT/202004
   - React.js plugin for building charts using CSS
 - https://github.com/carbon-design-system/carbon-charts
-  - /188Star/Apache2.0/202009
+  - /188Star/Apache2/202009
   - A reusable framework-agnostic charting library implemented using D3 & typescript
   - 依赖d3，为react/vue/angular开发了3个wrapper包
 - https://github.com/naver/billboard.js
@@ -160,11 +160,11 @@ modified: '2020-10-05T06:10:15.909Z'
   - /11.6kStar/MIT/202009
   - Virtual whiteboard for sketching hand-drawn like diagrams
 - https://github.com/elastic/elastic-charts
-  - /156Star/Apache2.0/202009
+  - /156Star/Apache2/202009
   - Elastic Charts library
   - 依赖d3、react、redux
 - https://github.com/IBM/sterling-dataviz
-  - /3Star/Apache2.0/201911
+  - /3Star/Apache2/201911
   - A reusable framework-agnostic dataviz lib implemented using D3 & typescript
   - 支持react、vue、angular，基于胶水层实现
   - 依赖d3、carbon-components
@@ -193,11 +193,11 @@ modified: '2020-10-05T06:10:15.909Z'
 ### ts-app
 
 - https://github.com/allegro/turnilo
-  - /356Star/Apache2.0/202009
+  - /356Star/Apache2/202009
   - Business intelligence, data exploration and visualization web application for Druid
   - formerly known as Swiv and Pivot
 - https://github.com/edp963/davinci
-  - /2.7kStar/Apache2.0/202009
+  - /2.7kStar/Apache2/202009
   - a DVsaaS (Data Visualization as a Service) Platform
 - https://github.com/microsoft/SandDance
   - /4.5kStar/MIT/202009
@@ -211,12 +211,12 @@ modified: '2020-10-05T06:10:15.909Z'
   - Voyager 2 is a data exploration tool that blends manual and automated chart specification.
   - 基于vega
 - https://github.com/metatron-app/metatron-discovery
-  - /259Star/Apache2.0/202009/java/ts
+  - /259Star/Apache2/202009/java/ts
   - Metatron Discovery is a big data analysis platform supports overall process from data cleansing to visualization
   - Metatron Discovery is powerd by Druid
   - 依赖angular6、jquery、rxjs
 - https://github.com/grafana/grafana
-  - /37.3kStar/Apache2.0/202009/ts/go
+  - /37.3kStar/Apache2/202009/ts/go
   - tool for monitoring and metric analytics & dashboards for Graphite, InfluxDB
 - https://github.com/facebookresearch/hiplot
   - /1.3kStar/MIT/202009
@@ -232,7 +232,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - rap2-dolores: 前端静态资源
     - 基于React/Redux/Saga/Router/Mock.js/Bootstrap4
 - https://github.com/honkit/honkit
-  - /1.4kStar/Apache2.0/202009
+  - /1.4kStar/Apache2/202009
   - Fork of GitBook
 - https://github.com/utterance/utterances
   - A lightweight comments widget built on GitHub issues
@@ -253,7 +253,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - A set of React components for building Microsoft web experiences.
   - UI Fabric is now Fluent UI 
 - https://github.com/palantir/blueprint
-  - /16.8kStar/Apache2.0/202009 
+  - /16.8kStar/Apache2/202009 
   - A React-based UI toolkit for the web
 - https://github.com/rsuite/rsuite
   - A suite of React components .
@@ -294,7 +294,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - /21.7kStar/MIT/202009 
   - Screenshots with JavaScript
 - https://github.com/formium/formik
-  - /24.7kStar/Apache2.0/202009 
+  - /24.7kStar/Apache2/202009 
   - Build forms in React
 - https://github.com/typeorm/typeorm
   - /21kStar/MIT/202009/ts
@@ -317,7 +317,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - /16.3kStar/MIT&AGPL&Paid/201905 
   - The markdown-based note-taking app
 - https://github.com/elastic/kibana
-  - /14.9kStar/Apache2.0/202009/ts
+  - /14.9kStar/Apache2/202009/ts
   - a browser-based analytics and search dashboard for Elasticsearch.
 - https://github.com/vercel/swr
   - /13.2kStar/MIT/202009 
@@ -368,7 +368,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - /4.1kStar/MIT/202009
   - Components are built with Stencil, a compiler that generates standards-based web components.
 - https://github.com/searchkit/searchkit
-  - /3.9kStar/Apache2.0/202008
+  - /3.9kStar/Apache2/202008
   - React UI components to build a search experience with Elasticsearch.
 - https://github.com/meetalva/alva
   - /3.5kStar/MIT/201907
@@ -381,7 +381,7 @@ modified: '2020-10-05T06:10:15.909Z'
   - A resizable and draggable component for React.
   - 依赖 react-draggable、re-resizable
 - https://github.com/code-creatively/datav
-  - /1.3kStar/Apache2.0/202009
+  - /1.3kStar/Apache2/202009
   - platform for data monitoring and observability
   - written in pure react and go.
   - Datav is forked from @grafana, but changed a lot

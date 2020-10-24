@@ -49,7 +49,7 @@ modified: '2020-09-25T05:56:32.022Z'
 - stitches /1.3kStar/MIT/202009
   - https://github.com/modulz/stitches
   - Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience.
-- compiled /797Star/Apache2.0/202009
+- compiled /797Star/Apache2/202009
   - https://github.com/atlassian-labs/compiled
   - Build time atomic CSS in JS without the runtime cost.
 - otion /437Star/MIT/202009

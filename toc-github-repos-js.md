@@ -36,11 +36,11 @@ modified: '2020-09-28T05:28:09.585Z'
   - /325Star/MIT/202009
   - React component for creating & editing D3 charts
 - https://github.com/apache/incubator-superset
-  - /30.2kStar/Apache2.0/202009/python/js
+  - /30.2kStar/Apache2/202009/python/js
   - a Data Visualization and Data Exploration Platform
   - 依赖python、flask、react
 - https://github.com/SheetJS/sheetjs
-  - /22.9kStar/Apache2.0/202009
+  - /22.9kStar/Apache2/202009
   - Community Edition -- Spreadsheet Data Toolkit
   - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
 - https://github.com/vega/datalib
@@ -86,7 +86,7 @@ modified: '2020-09-28T05:28:09.585Z'
   - /50.4kStar/MIT/202009/js
   - Simple HTML5 Charts using the canvas tag
 - https://github.com/apache/incubator-echarts
-  - /43kStar/Apache2.0/202009/js
+  - /43kStar/Apache2/202009/js
   - interactive charting and data visualization library for browser
 - https://github.com/processing/p5.js
   - /13.9kStar/LGPL/202009
@@ -113,7 +113,7 @@ modified: '2020-09-28T05:28:09.585Z'
 - https://github.com/nteract/semiotic
   - data visualization framework combining React & D3
 - https://github.com/TargetProcess/tauCharts
-  - /1.9kStar/Apache2.0/202007
+  - /1.9kStar/Apache2/202007
   - a data-focused JavaScript charting library based on D3 
 - https://github.com/visgl/luma.gl
   - High-performance Toolkit for WebGL-based Data Visualization
@@ -151,7 +151,7 @@ modified: '2020-09-28T05:28:09.585Z'
   - 依赖flask
 
 - https://github.com/YMFE/yapi
-  - /18kStar/Apache2.0/202009
+  - /18kStar/Apache2/202009
   - 轻松创建、发布、维护 API
   - https://hellosean1025.github.io/yapi
 - https://github.com/star7th/showdoc
@@ -200,7 +200,7 @@ modified: '2020-09-28T05:28:09.585Z'
   - Free and Open source Web Builder Framework
   - 依赖backbone、cash-dom、codemirror、underscore
 - https://github.com/givanz/VvvebJs
-  - /3.4kStar/Apache2.0/202007
+  - /3.4kStar/Apache2/202007
   - Drag and drop website builder
   - 依赖jquery3，bootstrap4，codemirror
 - https://github.com/pandao/editor.md 
@@ -249,7 +249,7 @@ modified: '2020-09-28T05:28:09.585Z'
   - /36.2kStar/MIT/202009/js
   - Free admin dashboard template based on Bootstrap 4
 - https://github.com/mozilla/pdf.js
-  - /32.3kStar/Apache2.0/202009/js
+  - /32.3kStar/Apache2/202009/js
   - PDF Reader in JavaScript
   - Create and modify PDF 
   - https://github.com/Hopding/pdf-lib

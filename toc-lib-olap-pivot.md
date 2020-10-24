@@ -29,7 +29,7 @@ modified: '2020-10-22T06:50:36.740Z'
   - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
   - 基于table标签实现
   - 依赖jquery
-- PivotHelper /Apache2.0/19Star/202007/angular
+- PivotHelper /Apache2/19Star/202007/angular
   - https://github.com/BjoernKW/PivotHelper
   - https://bjoernkw.github.io/PivotHelper/
   - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.

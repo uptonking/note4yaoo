@@ -51,7 +51,7 @@ modified: '2020-10-22T12:52:52.985Z'
   - Component blueprints are framework agnostic, accessible HTML and CSS
   - SLDS is a pure CSS framework that you can use with any front-end development framework
 - Carbon Design System /IBM
-  - /Apache2.0/3.5kStar/202009
+  - /Apache2/3.5kStar/202009
   - https://github.com/carbon-design-system/carbon
   - https://www.carbondesignsystem.com/
   - https://github.com/carbon-design-system/carbon/tree/master/packages/components
@@ -68,10 +68,13 @@ modified: '2020-10-22T12:52:52.985Z'
     - http://react.carbondesignsystem.com/?path=/story/buttons--default
     - https://ics-design-system.us-east.mybluemix.net/ 
 - PatternFly /RedHat
-  - /259Star/MIT/202010
+  - https://patternfly.org/
   - https://github.com/patternfly/patternfly
-  - https://www.patternfly.org
-  - This repo contains core (HTML/CSS) implementation for PatternFly.
+    - /259Star/MIT/202010/scss
+    - This repo contains core (HTML/CSS) implementation for PatternFly.
+  - https://github.com/patternfly/patternfly-react
+    - /219Star/MIT/202010/ts
+    - A set of React components for the PatternFly project.
 - Primer Design System /Github
   - /MIT/580Star/201912
   - https://github.com/primer/components
@@ -106,8 +109,12 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://polaris.shopify.com/design/colors
   - Our design system helps us work together to build a great experience for all of Shopify’s merchants
 - Clarity Design System /Vmware
-  - /MIT/5500Star/201912
+  - /MIT/6.1kStar/202010/ts/angular
   - https://github.com/vmware/clarity/
   - https://clarity.design/
   - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
-
+- https://design.pega.com/
+  - The Pega Cosmos UX framework specializes for three distinct experiences: 
+    - for developers building low-code applications, 
+    - for employees managing daily workflows, 
+    - and for customers that we directly engage with.

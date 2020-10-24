@@ -1,0 +1,131 @@
+---
+title: toc-lib-components-design-guidelines
+tags: [design-system]
+created: '2020-10-24T13:59:53.069Z'
+modified: '2020-10-24T14:00:46.256Z'
+---
+
+# toc-lib-components-design-guidelines
+
+## design-system-guidelines
+
+- https://ether.thescenery.co/
+- https://sproutsocial.com/seeds/
+  - all the tools and resources needed to understand the Sprout brand
+- https://palette.artsy.net/
+- https://www.duetds.com/
+  - https://www.duetds.com/tokens/
+  - a set of organized tools, patterns and practices that work as the foundation
+- https://www.astrouxds.com/
+  - Astro Space UX Design System enables developers to build rich space app experiences
+- Predix Design System
+  - https://github.com/predixdesignsystem/predix-design-stencil
+  - https://www.predix-ui.com/#/about/introduction
+  - This repository contains files with the most current symbols library, stencils, color swatches, and fonts for your Predix UI design project.
+- Morningstar Design System
+  - https://designsystem.morningstar.com/
+  - v2 is using web components; 
+  - v3 will use vue
+- ServiceNow Design System
+  - http://designsystem.servicenow.com/#!/
+- Eva Design System
+  - https://eva.design/
+  - https://akveo.github.io/nebular/docs/design-system/eva-design-system-intro
+  - implemented for angular and react native
+- Spark Design System /Quicken Loans
+  - https://github.com/sparkdesignsystem/spark-design-system
+  - /75Star/MIT/202010/js
+  - https://sparkdesignsystem.com/
+  - Spark contains the basic patterns and components that make up the visual and interaction design of the Quicken Loans family of Fintech products.
+  - Spark assumes your project is using Sass for styling
+- https://github.com/backpack/backpack.github.io
+  - https://backpack.github.io/
+  - Backpack Design System Documentation
+- https://gitlab.com/SUSE-UIUX/eos
+  - https://www.eosdesignsystem.com/
+  - a set of components, guides
+- https://github.com/po-ui/po-style
+  - https://github.com/po-ui/po-angular
+- Wonderbly Design System
+  - http://design-system.lostmy.name/
+  - The front end team have worked to abstract the view layer out of Rails over to React enabling us to be much more component oriented in the code. 
+- https://pulse.heartbeat.ua/
+  - https://github.com/heartbeatua/Pulse-Boilerplate
+  - React based boilerplate for creating scalable and well documented Design Systems.
+  - Focused on Atomic Design methodology and naming convention
+- https://design.axa.com/
+  - Principles, tools, templates, components, advice – the one stop shop to create state of the art digital assets
+- Oracle Alta UI system
+  - https://www.oracle.com/webfolder/ux/middleware/alta/index.html
+- https://anvil.servicetitan.com/
+  - Design guidelines and development tools for building products at ServiceTitan.
+- https://asphalt.gojek.io/
+  - Asphalt is Gojek's very own design language system. 
+  - This is a collection of guidelines and components which can be used to create amazing user experiences
+- https://blocks.cbrebuild.com/
+  - Blocks Design System
+- https://canvas.hubspot.com/
+  - HubSpot Canvas is the design system that we at HubSpot use to build our products. 
+- https://comet.discoveryeducation.com/
+  - Comet is a scalable design system of visual language, components, and design assets encoded as and extensible from HTML & CSS starting points for use
+- http://beelinedesignsystem.com/
+  - The Beeline Design System is a library of design standards and patterns that can be used to design and build any number of Beeline products
+- http://design.mutualofomaha.com/digital/
+  - The Digital Design System is a central repository where we house:
+    - Reusable UI elements
+    - High-quality, tested code
+    - Guidelines and UX patterns for a consistent user experience
+- https://etrade.design/
+  - design components (symbols and patterns); 
+  - CSS styling; 
+  - a React component library; 
+  - and documentation
+- https://elementary.io/en/docs/human-interface-guidelines
+  - These guidelines are designed to help developers and designers create a beautifully consistent experience on the elementary OS desktop.
+- http://feelix.myob.com/
+  - Feelix is our system for enabling teams to deliver better and consistent MYOB Experiences
+- https://github.com/WestpacCXTeam/Sketch-UI-Kit
+  - https://gel.westpacgroup.com.au/
+  - A library of assets for designing responsive, multi-brand applications using the GEL design system.
+  - Every element in the UI Kit corresponds exactly to the element found in the GUIs.
+- https://style.helpscout.com/
+  - Everything at Help Scout starts with values.
+- https://www.flexport.com/design
+  - Design guidelines, component documentation, and resources for building interfaces with Flexport’s design system
+- https://github.com/liferay/lexicon-site
+  - http://lexicondesign.io/
+  - https://liferay.design/lexicon/
+  - Website of Lexicon Experience Language by Liferay
+- https://www.emd.design/
+  - Use Liquid to make science faster, treatments more personalized, and everyday work more enjoyable
+- https://luna.sainsburys.co.uk/guidelines
+  - The Sainsbury’s design system is customer centered and inclusive, consistent across all touchpoints and unmistakably Sainsbury’s
+- http://ux.mailchimp.com/patterns/
+  - MailChimp Pattern Library
+- https://ux.opower.com/opattern/
+  - Opattern is a design system and style guide for Opower products.
+- https://designsystem.quickbooks.com/
+  - Visual elements like colors, icons, photography, and typography are essential in every experience we build.
+- http://styleguide.sendgrid.com/
+  - a library for developing consistent UI/UX at SendGrid.
+  - It is made up of modular, reusable components based on OOCSS and SMACSS principles.
+  - https://github.com/sendgrid/design-primitives
+    - https://sendgrid.design/
+- https://skyline.benevity.org/
+  - The Skyline design system helps guide Benevity's product experiences for Goodness and beyond
+- Solar design system
+  - https://design.bulb.co.uk/getting-started/introduction
+- https://hudl.design/
+  - A single design system to ensure every interface feels like Hudl.
+- https://x.biteable.com/
+  - Biteable Design System
+  - Our Ember UI Library is accessible only by Biteable staff.
+  - https://biteable.github.io/biteable-ui/
+- https://www.yelp.com/styleguide
+  - The styleguide is a resource for designers and developers, providing a common language around Yelp’s UI patterns. 
+- https://www.engie.design/fluid-design-system/
+  - The Fluid Design System was created for designers and developers.
+- https://coop-design-system.herokuapp.com//
+  - Our design system is made up of principles, guidelines and tools that help us design and build user-centered Co‑op services.
+- https://design.pega.com/
+  - The Pega Cosmos design system helps teams quickly achieve ideal experiences in your business apps.
