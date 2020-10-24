@@ -35,11 +35,12 @@ modified: '2020-10-22T10:14:24.424Z'
 
 ## design-system-released
 
-- Storybook Design System  /MIT/456Star/201912
+- Storybook Design System  /Storybook
+  - /MIT/890Star/202010/ts
   - https://github.com/storybookjs/design-system
   - https://storybook-design-system.netlify.com/
-  - https://www.learnstorybook.com/design-systems-for-developers/
   - a reusable component library that helps Storybook build UIs faster
+  - 依赖styled-components、prismjs
 - Gestalt  /Pinterest
   - /Apache2/3.7kStar/202010/js
   - https://github.com/pinterest/gestalt
@@ -537,55 +538,29 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://decanter.stanford.edu/
   - Decanter is a web design and development system for Stanford University. 
   - It includes a responsive layout system and a browsable collection of design patterns
- 
-
-## design-system-framework
-
-- Fish Tank /Bloomberg
-  - /14Star/Apache2/202007/ts/vue
-  - https://github.com/bloombergindustry/fishtank-vue
-  - http://fishtank.bna.com/
-  - Fish Tank Design and Component System - VueJS Component Library
-- https://github.com/rei/rei-cedar
-  - /86Star/MIT/202010/vue
-  - https://rei.github.io/rei-cedar-docs/
-  - REI Digital Design System presentation framework.
-  - The overall goals of this project are to provide a common scaffolding for UI elements, and a set of themes that build on this scaffolding.
-  - We started this project in 2015 as a fork of Bootstrap. 
-- https://github.com/at-ui/at-ui
-  - /2.2kStar/MIT/201802/js/vue2
-  - flat UI-Kit specially for desktop application
-- Accera Design System /Accera
-  - https://github.com/accera-tech/solar-components
-  - /13Star/MIT/202004/ts/web-comp
-  - https://design.accera.com.br/
-  - This is an implementation of Accera's Design System in WebComponents.
-- Solar design system /
-- Mixpanel Design System
-  - https://github.com/mixpanel/panel
-  - /198Star/MIT/202009/js/web-comp
-  - Web Components + Virtual DOM: web standards for powerful UIs
-  - This design system website and component library are built using our library Panel. 
-  - Panel is a thin layer on top of Web Components with React like virtual DOM rendering.
-- https://github.com/boltdesignsystem/bolt
-  - /170Star/MIT/202010/js/twig/web-comp
-  - https://boltdesignsystem.com/
-  - Bolt Design System provides robust Twig and Web Component-powered UI components
-- https://github.com/dynatrace-oss/barista
-  - /83Star/Apache2/202010/ts/angular
-  - https://barista.dynatrace.com/
-  - Barista - the Dynatrace design system. Tailored to scale.
-- https://github.com/fusionfabric/finastra-design-system
-  - https://design.fusionfabric.cloud/
-  - The Finastra Design System provided as a theme and Angular components
-- Vue Design System /Viljami Salminen
-  - https://github.com/viljamis/vue-design-system
-  - /1.9kStar/MIT/202004/js/vue
-  - https://vueds.com/
-  - An open source tool for building UI Design Systems with Vue.js
-  - The tool is built on top of Vue.js, Vue Styleguidist, Webpack, and Theo and is aimed for designers and front-end developers
-  - https://vue-styleguidist.github.io/vueds/
-    - Vue Design System’s demo documentation and component library. Generated with Vue Styleguidist
-- https://github.com/bindable-ui/bindable
-  - https://bindable-ui.com/
-  - A design system built in Aurelia JS that allows for faster and easier web development.
+- DHIS2 Design System /DHIS2
+  - https://github.com/dhis2/design-system
+  - https://github.com/dhis2/ui
+  - /6Star/BSD/202010/js
+  - Components and related resources for the DHIS2 design system
+- https://github.com/modulz/design-system
+  - /57Star/NALic/202010/ts
+  - https://design-system.modulz-deploys.com/
+  - This is the design system for Modulz. Built with Stitches.
+- https://github.com/hackclub/design-system
+  - https://design.hackclub.com/
+  - Hack Club's design system
+  - This project is heavily inspired by Priceline.com’s design system.
+- https://github.com/wix/wix-style-react
+  - https://wix-style-react.com/
+  - A collection of React components that conform to Wix Style.
+- Spark Design System /Quicken Loans
+  - https://github.com/sparkdesignsystem/spark-design-system
+  - /75Star/MIT/202010/js
+  - https://sparkdesignsystem.com/
+  - Spark contains the basic patterns and components that make up the visual and interaction design of the Quicken Loans family of Fintech products.
+  - Spark assumes your project is using Sass for styling
+- https://github.com/puppetlabs/design-system
+  - https://puppet.style/
+  - https://puppetlabs.github.io/design-system
+  - provide consistency, efficiency, and quality experiences to our customers
