@@ -67,3 +67,12 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/johanholmerin/style9
   - CSS-in-JS compiler inspired by Facebook's stylex
   - Compiles to atomic CSS
+
+## more-css-in-js
+
+- https://github.com/aesthetic-suite/framework
+  - Aesthetic is an end-to-end multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet specification (SSS), a low-runtime solution
+  - 
+- https://github.com/segmentio/ui-box
+  - ui-box is a low level CSS-in-JS solution that focuses on being simple, fast and extensible. 
+  - All CSS properties are set using simple React props, which allows you to easily create reusable components that can be enhanced with additional CSS properties. 

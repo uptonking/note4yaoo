@@ -49,6 +49,7 @@ modified: '2020-06-22T09:24:05.317Z'
   - It can run from the command line or in the browser.
 - https://github.com/Esri/calcite-maps
   - A Bootstrap theme for designing, styling and creating modern map apps.
+
 ## 3d
 
 - cesium /6.2kStar/Apache2/202009/js
@@ -120,3 +121,13 @@ modified: '2020-06-22T09:24:05.317Z'
   - https://github.com/libgeos/geos 
   - https://trac.osgeo.org/geos
   - port from jts
+
+## map-app
+
+- https://github.com/mapbox/storytelling
+  - This template is designed to accelerate building out a "scrollytelling" map story.
+    - The output is an HTML and JavaScript file. 
+    - These outputs can be hosted on any web-accessible location, with no extra code or infrastructure required. 
+    - Note that embedding the output as an iFrame in another page will not work as expected. The scroll-driven interface requires the full page.
+  - The template does not rely on any particular CSS framework, fonts, or images. 
+    - There are some basic styles in the head of the HTML file that can be changed

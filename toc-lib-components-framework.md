@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-popular
+title: toc-lib-components-framework
 tags: [components, lib, toc]
 created: '2020-06-16T02:31:56.711Z'
-modified: '2020-07-14T11:02:59.856Z'
+modified: '2020-10-25T05:13:44.139Z'
 ---
 
-# toc-lib-components-popular
+# toc-lib-components-framework
 
 ## components-react 
 
@@ -22,10 +22,6 @@ modified: '2020-07-14T11:02:59.856Z'
   - https://material.io/develop/web/
   - https://material.io/develop/web/components/buttons/
   - https://material.io/components/buttons
-- https://github.com/palantir/blueprint
-  - /Apache2/16.3kStar/202006
-  - https://blueprintjs.com/
-  - https://blueprintjs.com/docs/#core/components/button
 - https://github.com/salesforce-ux/design-system
   - /BSD/2900Star/202006
   - https://www.lightningdesignsystem.com/
@@ -41,18 +37,6 @@ modified: '2020-07-14T11:02:59.856Z'
   - /MIT/45.8kStar/202006
   - https://element.eleme.io
   - https://element.eleme.io/#/en-US/component/button
-
-## components-lib
-
-- https://github.com/fomantic/Fomantic-UI
-  - /MIT/1828Star/202006
-  - https://fomantic-ui.com/
-  - https://fomantic-ui.com/elements/button.html
-  - fork of Semantic-UI
-
-## components-parts
-
-- https://github.com/codex-team/codex.tooltips
 
 ### inactive
 

@@ -7,6 +7,20 @@ modified: '2020-10-05T13:16:31.674Z'
 
 # toc-lib-components-react-starred
 
+## accessible-components
+
+- Reach UI /React Training team
+  - /3.6kStar/MIT/202010/ts
+  - https://github.com/reach/reach-ui
+  - https://reach.tech/
+  - The Accessible Foundation for React Apps and Design Systems
+  - [Reach UI Philosophy](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7)
+- Reakit /Diego Haz
+  - /4.4kStar/MIT/202010/ts
+  - https://github.com/reakit/reakit
+  - https://reakit.io/
+  - Toolkit for building accessible rich web apps with React.
+
 ## starred
 
 - https://github.com/kripod/react-polymorphic-box

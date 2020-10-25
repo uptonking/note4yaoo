@@ -10,10 +10,10 @@ modified: '2020-10-24T18:22:55.257Z'
 ## amazing
 
 - Denali Design /Verizon Media
+  - /48Star/MIT/202010/scss
   - https://denali.design/
   - A themeable design system built for teams at scale.
   - https://github.com/denali-design/denali-css
-    - /48Star/MIT/202010/scss
     - https://denali-design.github.io/denali-css/docs/
     - Themeable CSS framework of Denali Ui components
   - https://github.com/denali-design/denali-ember

@@ -1,13 +1,19 @@
 ---
 title: toc-lib-components-design-tokens
-tags: [design-tokens]
+tags: [design-system, design-tokens]
 created: '2020-10-23T03:56:35.731Z'
-modified: '2020-10-23T03:57:36.637Z'
+modified: '2020-10-25T05:11:07.208Z'
 ---
 
 # toc-lib-components-design-tokens
 
 ## guide
+
+- https://github.com/design-tokens/community-group
+  - The DTCG was founded in June 2019. 
+  - The DTCG’s goal is to provide standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
+  - [[RFC] Format specification](https://github.com/design-tokens/community-group/issues/1)
+  - [[RFC] Theming](https://github.com/design-tokens/community-group/issues/2)
 
 - design-tokens-awesome-catalog
   - 主流token工具及标准参考
@@ -19,19 +25,13 @@ modified: '2020-10-23T03:57:36.637Z'
   - https://github.com/sturobson/Awesome-Design-Tokens
     - A list of repos that contain a companies' Design Tokens
 
-- https://github.com/design-tokens/community-group
-  - The DTCG was founded in June 2019. 
-  - Design tokens are indivisible pieces of a design system such as colors, spacing, typography scale.
-  - The DTCG’s goal is to provide standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
-  - [[RFC] Format specification](https://github.com/design-tokens/community-group/issues/1)
-  - [[RFC] Theming](https://github.com/design-tokens/community-group/issues/2)
-
 - https://github.com/system-ui/theme-specification
   - The theme object is intended to be a general purpose format for storing design system style values, scales, and/or design tokens.
 
 - design-tokens-spec
-  - https://github.com/airbnb/Lona/blob/master/docs/file-formats/README.md
-  - https://github.com/airbnb/Lona/blob/master/docs/file-formats/component.md
+  - [Airbnb Lona Component Definition](https://github.com/airbnb/Lona/blob/master/docs/file-formats/component.md)
+    - Currently component data is encoded in JSON.
+    - JSON is problematic because it's not easily mergeable or human-editable. 
 
 ## design-tokens-examples
 

@@ -41,6 +41,8 @@ modified: '2020-10-13T09:17:01.472Z'
   - /15.3kStar/MIT/202010
   - A magical documentation site generator.
   - 依赖marked、prismjs
+  - https://github.com/jhildenbiddle/docsify-themeable
+    - simple theme system for docsify.js
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
   - Docusaurus 1 used to be a pure documentation site generator. 

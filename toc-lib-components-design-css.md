@@ -13,11 +13,10 @@ modified: '2020-10-22T13:34:56.023Z'
   - https://github.com/jgthms/bulma
   - https://bulma.io/
   - Modern CSS framework based on Flexbox
-- pure-css /BSD/21kStar/202007
+- pure-css /BSD/21kStar/202007/Yahoo
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
-  - supported by yahoo
 - spectre /MIT/10.3kStar/202007
   - https://github.com/picturepan2/spectre
   - https://picturepan2.github.io/spectre/
@@ -27,7 +26,35 @@ modified: '2020-10-22T13:34:56.023Z'
   - https://github.com/milligram/milligram
   - https://milligram.io/
   - A minimalist CSS framework.
-- vanilla-framework /438Star/LGPLv3/202009
+
+## css-design-system
+
+- vanilla-framework /438Star/LGPLv3/202009/scss
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
   - a simple extensible CSS framework, built using Sass
+- https://github.com/magnetis/astro
+  - /89Star/Apache2/202008/css
+  - https://astro.magnetis.com.br/
+  - An open source design system by Magnetis
+  - Astro is built based on Atomic Design
+- https://github.com/sky-uk/toolkit
+  - http://www.sky.com/toolkit
+  - Sky's CSS Toolkit
+- https://github.com/uswitch/ustyle
+  - https://ustyle.guide/
+  - A living styleguide and pattern library by uSwitch.
+  - just import the base uSwitch styles at the start of your file
+  - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
+
+## atomic-css
+
+- https://github.com/stowball/hucssley
+  - a full-featured, consistent, atomic utility class library for rapidly building performant UI
+
+## css-tools
+
+- https://github.com/zicht/zss
+  - Sass for design systems
+
+## more-css-repos

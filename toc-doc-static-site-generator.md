@@ -15,3 +15,10 @@ modified: '2020-10-13T09:21:27.098Z'
 - bisheng
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
 - jbake(java)
+
+## more-ssg
+
+- https://github.com/usebedrock/bedrock
+  - https://bedrockapp.org/
+  - a static site generator to create large-scale HTML prototypes and document design systems
+  - 内置bootstrap4和material design主题

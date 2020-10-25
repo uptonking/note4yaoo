@@ -7,7 +7,7 @@ modified: '2020-10-24T14:00:46.256Z'
 
 # toc-lib-components-design-guidelines
 
-## design-system-guide-starred
+## design-system-guide-tools
 
 - https://github.com/pattern-lab/patternlab-node
   - /1.8kStar/MIT/202009/js
@@ -20,14 +20,45 @@ modified: '2020-10-24T14:00:46.256Z'
   - An open-source checklist to help you plan, build and grow your design system.
 - https://github.com/interactivethings/catalog/
   - Create living style guides using Markdown or React
-## design-system-guidelines
+- https://github.com/intuit/design-systems-cli
+  - A CLI toolbox for creating design systems in minutes
+  - Uses: Typescript, CSS, styled-components support
+  - Design-systems-cli is basically a Create React App for design systems.
 
+## popular-guidelines
+
+- Apple Human Interface Guidelines
+  - https://developer.apple.com/design/
+  - https://developer.apple.com/design/resources/
+  - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
 - https://ux.mailchimp.com/patterns
   - https://mailchimp.com/email-design-guide/
     - help you convey your message in style
   - https://github.com/mailchimp/content-style-guide
     - https://styleguide.mailchimp.com/tldr/
     - Principles,Voice and tone,Grammar and mechanics,Web elements,accessibility
+- https://www.yelp.com/styleguide
+  - The styleguide is a resource for designers and developers, providing a common language around Yelp’s UI patterns. 
+- https://github.com/liferay-design/liferay.design
+  - https://github.com/liferay/lexicon-site
+  - http://lexicondesign.io/
+  - https://liferay.design/lexicon/
+  - Website of Lexicon Experience Language by Liferay
+- http://styleguide.sendgrid.com/
+  - https://github.com/sendgrid/design-primitives
+  - a library for developing consistent UI/UX at SendGrid.
+  - It is made up of modular, reusable components based on OOCSS and SMACSS principles.
+- Atomic Design
+  - https://atomicdesign.bradfrost.com/
+  - https://bradfrost.com/blog/post/atomic-web-design/
+- Marvel Styleguide
+  - /3.4kStar/MIT/201712/css/inactive
+  - https://github.com/marvelapp/devices.css
+  - Pure CSS phones and tablets
+  - https://marvelapp.com/styleguide/overview/introduction
+
+## more-guidelines
+
 - https://ether.thescenery.co/
 - https://sproutsocial.com/seeds/
   - all the tools and resources needed to understand the Sprout brand
@@ -51,8 +82,6 @@ modified: '2020-10-24T14:00:46.256Z'
 - https://github.com/backpack/backpack.github.io
   - https://backpack.github.io/
   - Backpack Design System Documentation
-- https://github.com/po-ui/po-style
-  - https://github.com/po-ui/po-angular
 - Wonderbly Design System
   - http://design-system.lostmy.name/
   - The front end team have worked to abstract the view layer out of Rails over to React enabling us to be much more component oriented in the code. 
@@ -71,8 +100,6 @@ modified: '2020-10-24T14:00:46.256Z'
   - This is a collection of guidelines and components which can be used to create amazing user experiences
 - https://blocks.cbrebuild.com/
   - Blocks Design System
-- https://canvas.hubspot.com/
-  - HubSpot Canvas is the design system that we at HubSpot use to build our products. 
 - https://comet.discoveryeducation.com/
   - Comet is a scalable design system of visual language, components, and design assets encoded as and extensible from HTML & CSS starting points for use
 - http://beelinedesignsystem.com/
@@ -99,27 +126,14 @@ modified: '2020-10-24T14:00:46.256Z'
   - Everything at Help Scout starts with values.
 - https://www.flexport.com/design
   - Design guidelines, component documentation, and resources for building interfaces with Flexport’s design system
-- https://github.com/liferay/lexicon-site
-  - http://lexicondesign.io/
-  - https://liferay.design/lexicon/
-  - Website of Lexicon Experience Language by Liferay
-- https://www.emd.design/
-  - Use Liquid to make science faster, treatments more personalized, and everyday work more enjoyable
 - Luna Design System /Sainsbury
   - https://jsainsburyplc.github.io/luna/
   - https://luna.sainsburys.co.uk/guidelines
   - 源码未发布
-- http://ux.mailchimp.com/patterns/
-  - MailChimp Pattern Library
 - https://ux.opower.com/opattern/
   - Opattern is a design system and style guide for Opower products.
 - https://designsystem.quickbooks.com/
   - Visual elements like colors, icons, photography, and typography are essential in every experience we build.
-- http://styleguide.sendgrid.com/
-  - a library for developing consistent UI/UX at SendGrid.
-  - It is made up of modular, reusable components based on OOCSS and SMACSS principles.
-  - https://github.com/sendgrid/design-primitives
-    - https://sendgrid.design/
 - https://skyline.benevity.org/
   - The Skyline design system helps guide Benevity's product experiences for Goodness and beyond
 - Solar design system
@@ -132,35 +146,47 @@ modified: '2020-10-24T14:00:46.256Z'
   - Our Ember UI Library is accessible only by Biteable staff.
   - https://biteable.github.io/biteable-ui/
   - 源码未发布
-- https://www.yelp.com/styleguide
-  - The styleguide is a resource for designers and developers, providing a common language around Yelp’s UI patterns. 
 - https://www.engie.design/fluid-design-system/
   - The Fluid Design System was created for designers and developers.
 - https://coop-design-system.herokuapp.com//
   - Our design system is made up of principles, guidelines and tools that help us design and build user-centered Co‑op services.
 - https://design.pega.com/
   - The Pega Cosmos design system helps teams quickly achieve ideal experiences in your business apps.
-- Airbnb Cereal Fonts
-  - https://airbnb.design/cereal/
-  - https://airbnb.design/building-a-visual-language/
 - https://design.ubuntu.com/web/
-  - These guidelines provide everything you need to create professional communication
-materials that will build the Ubuntu brand.
-- Apple Design
-  - https://developer.apple.com/design/
-  - https://developer.apple.com/design/resources/
-  - https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+  - These guidelines provide everything you need to create professional communication materials that will build the Ubuntu brand.
 - https://design-system.futurelearn.com/
   - We use a simplified version of the Atomic Design methodology
   - The main difference with Atomic Design is that all modules are either an atom or a molecule, categorised by purpose. 
   - Having organisms used to cause confusion in the team, so we removed them.
-- https://bradfrost.com/blog/post/atomic-web-design/
 - https://www.designsystems.com/
   - A Figma publication for design systems designers and developers
-- uxpin
-  - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
 - https://design.lyft.com/
   - Lyft’s Product Design
 - https://www.starbucks.com/developer/pattern-library
   - Centralizing these React components and CSS utilities helps us forge a consistent user experience that is always up to date with our latest brand guidelines.
   - 源码未发布
+- Cabana Design System
+  - https://cabanadesignsystem.com/
+  - https://lucastobrazil.github.io/cabana-react-docs-gh/#/
+  - Powered by React, styled-components and styled-system
+  - 源码未发布
+- https://github.com/razvangeangu/cho-design-system
+  - design system based on stencil
+  - 源码未发布
+
+## design system tutorials
+
+- https://www.learnstorybook.com/design-systems-for-developers/
+  - how to transform component libraries into design systems
+- https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+- [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
+  01. Google Material Design System
+  02. Apple Human Interface Guidelines
+  03. Microsoft Fluent Design System
+  04. Atlassian Design System
+  05. Uber Design System
+  06. Shopify Design System
+  07. IBM Carbon Design System
+  08. Mailchimp Design System
+  09. Salesforce Lightning Design System
+  10. Helpscout Design System

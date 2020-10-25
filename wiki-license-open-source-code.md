@@ -18,10 +18,12 @@ modified: '2020-10-22T16:01:46.021Z'
   - Mozilla
 - ref
   - https://tldrlegal.com/
+  - https://choosealicense.com/licenses/
 
 ## Apache Licence 2.0(ASLv2)
 
 - ref
+  - https://choosealicense.com/licenses/apache-2.0/
   - https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)
 
 - You can do what you like with the software, as long as you include the required notices. 
@@ -120,7 +122,7 @@ modified: '2020-10-22T16:01:46.021Z'
   - https://tldrlegal.com/license/bsd-2-clause-license-(freebsd)
 
 - BSD 2/3-clause license allows you almost unlimited freedom with the software so long as you include the BSD copyright and license notice in it (found in Fulltext). 
-- inclue copyright/license
+- include copyright/license
 
 - 特点
   - 非版权
@@ -140,6 +142,8 @@ modified: '2020-10-22T16:01:46.021Z'
 - 如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。
 - 如果再发布的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。
 - 不可以用开源代码的作者/机构名字和原来产品的名字做市场推广
+
+- BSD 3-Clause License is a permissive license similar to the BSD 2-Clause License, but with a 3rd clause that prohibits others from using the name of the project or its contributors to promote derived products without written consent(允许、批准).
 
 ## MIT
 
@@ -168,6 +172,19 @@ modified: '2020-10-22T16:01:46.021Z'
 - 被授权人可根据程式的需要修改授权条款为适当的内容。
 - 在软件和软件的所有副本中都必须包含版权声明和许可声明
 - 甚至可以用原作者名字来推广
+
+## ISC License
+
+- ref
+  - https://tldrlegal.com/license/-isc-license
+  - https://choosealicense.com/licenses/isc/
+
+- A short, permissive software license. 
+  - Basically, you can do whatever you want as long as you include the original copyright. 
+  - This license is functionally identical to the MIT/Expat and the Simplified BSD licenses, discarding some language that was made unnecessary by the Berne convention.
+- must include copyright/license
+
+- The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.
 
 ## MPL (Mozilla Public License)
 
@@ -235,16 +252,6 @@ modified: '2020-10-22T16:01:46.021Z'
   - The difference from GPL is that it's a commercial-friendly copyleft, requiring you only to make those changes available and only if you distribute your commercial app. 
   - And if you made no changes, no source code to release
 
-## ISC License
-
-- ref
-  - https://tldrlegal.com/license/-isc-license
-
-- A short, permissive software license. 
-  - Basically, you can do whatever you want as long as you include the original copyright. 
-  - This license is functionally identical to the MIT/Expat and the Simplified BSD licenses, discarding some language that was made unnecessary by the Berne convention.
-- must include copyright/license
-
 ## Microsoft Public License (Ms-PL)
 
 - ref
@@ -276,3 +283,11 @@ modified: '2020-10-22T16:01:46.021Z'
   - https://opensource.org/licenses/MulanPSL-2.0
 
 - Apache License要求列出每个修改文件，其实很多项目做不到这一点，所以MulanPSL直接取消了这项要求
+
+## The Unlicense
+
+- ref
+  - https://choosealicense.com/licenses/unlicense/
+
+- A license with no conditions whatsoever which dedicates works to the public domain. 
+- Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.

@@ -61,3 +61,6 @@ modified: '2020-10-22T10:14:57.336Z'
 - https://github.com/system-ui/theme-ui
   - /3kStar/MIT/202009
   - Build consistent, themeable React apps based on constraint-based design principles
+- https://github.com/trendmicro-frontend/styled-ui
+  - /46Star/MIT/202010/js
+  - A themeable UI component library built with Emotion and Styled System

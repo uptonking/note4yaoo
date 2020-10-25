@@ -59,9 +59,11 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/Tencent/weui
   - https://weui.io/
   - an WeChat-like UI framework officially designed by the WeChat Team
-- Blueprint /Apache2/15kStar/201908/ts
+- Blueprint /16.9kStar/Apache2/202010/ts
   - https://github.com/palantir/blueprint
-  - A React-based UI toolkit for the web
+  - https://blueprintjs.com/
+  - a React-based UI toolkit for the web.
+  - This is not a mobile-first UI toolkit.
 - grommet /Apache2/5700Star/201912
   - https://github.com/grommet/grommet
   - https://v2.grommet.io/
