@@ -89,9 +89,8 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://mineral-ui.netlify.com/
   - Mineral UI is a design system and React component library for the web
 - Pluralsight Design System /Pluralsight  
-  - /Apache2/200Star/202010/js
-  - https://github.com/pluralsight/design-system
   - /200Star/Apache2/202010/js
+  - https://github.com/pluralsight/design-system
   - https://design-system.pluralsight.com/
   - The UI building blocks for creating a cohesive design across Pluralsight products
 - Solid  /MIT/115Star/202001/css

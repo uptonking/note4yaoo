@@ -14,6 +14,7 @@ modified: '2020-10-05T20:00:10.594Z'
   - Lightning Web Components Engine and Compiler.
 - https://github.com/microsoft/fast
   - /4.8kStar/MIT/202009/ts
+  - https://www.fast.design/
   - FAST is a collection of technologies built on Web Components and modern Web Standards
 - https://github.com/riot/riot
   - /14.3kStar/MIT/202009/js
