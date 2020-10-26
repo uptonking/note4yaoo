@@ -9,6 +9,23 @@ modified: '2020-10-25T05:36:11.888Z'
 
 ## design-examples
 
+- Eva Design System /Akveo team
+  - /815Star/MIT/202005/ts
+  - https://github.com/eva-design/eva
+  - https://eva.design/
+  - Customizable Design System easily adaptable to your Brand.
+  - 开源了angular版本、react-native版本、eva-icons
+  - https://github.com/akveo/react-native-ui-kitten
+    - /7.4kStar/MIT/202009/ts
+    - https://akveo.github.io/react-native-ui-kitten/
+    - the themes can be changed in the runtime, with no need to reload the application.
+  - https://github.com/akveo/nebular
+    - /6.6kStar/MIT/202010/ts
+    - https://akveo.github.io/nebular
+    - Customizable Angular UI Library based on Eva Design System
+  - ref
+    - [Eva Icons - UI Icon Set](https://akveo.github.io/eva-icons)
+    - [Eva Sketch File - UI Library, UI Kits & etc.](https://gumroad.com/akveo)
 - Argon Design System /Creative Tim
   - /2kStar/MIT/202006/js
   - https://github.com/creativetimofficial/argon-design-system

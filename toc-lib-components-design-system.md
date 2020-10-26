@@ -29,7 +29,7 @@ modified: '2020-10-22T10:14:24.424Z'
     - https://github.com/anubhavsrivastava/awesome-ux-design-styles
     - https://github.com/DragorWW/awesome-design-language-system
 
-## design-system-released
+## design-system-catalog
 
 - Clarity Design System /VMware
   - /MIT/6.1kStar/202010/ts/angular
@@ -42,12 +42,27 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://storybook-design-system.netlify.com/
   - a reusable component library that helps Storybook build UIs faster
   - 依赖styled-components、prismjs
+- Stacks /Stack Overflow
+  - /268Star/MIT/202010/ts/less
+  - https://github.com/StackExchange/Stacks
+  - https://stackoverflow.design/
+  - While Stacks is first and foremost a CSS library, it also provides commonly used functionality for some components via JavaScript. 
+    - If you only need the styling parts of Stack, you’re free to ignore the provided JavaScript. 
+  - The Stacks JavaScript components are provided as Stimulus controllers.
+    - Stimulus is a JavaScript framework designed to augment your HTML 
+    - 这是Ruby社区给多页面应用设计的框架。
+    - 解决了取元素和绑事件的问题，用MutationObserver监控元素的变化, 补绑事件或者修改元素的引用
+- Cosmos Design System /Auth0
+  - /498Star/MIT/202010/ts
+  - https://github.com/auth0/cosmos
+  - https://auth0-cosmos.now.sh/
+  - 依赖react-popper、react-select、react-sortable-hoc、styled-components
 - HIG /Autodesk
   - /130Star/Apache2/202010/js
   - https://github.com/Autodesk/hig
   - Autodesk's unified design design system
 - Palette Design System /Artsy
-  - /155Star/MIT/202010/ts
+  - /155Star/MIT/202010/ts/styled
   - https://github.com/artsy/palette
   - https://palette.artsy.net/
   - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
@@ -58,6 +73,31 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://seek-oss.github.io/seek-style-guide/
   - Themeable design system for the SEEK Group
   - 基于treat这个css-in-js解决方案实现
+- GEL(Global Experience Language) /BBC
+  - /195Star/Apache2/202010/js
+  - https://github.com/bbc/psammead
+  - https://bbc.github.io/psammead/
+  - https://www.bbc.co.uk/gel
+  - React component library for BBC World Service and more
+  - https://github.com/bbc/gel
+    - https://bbc.github.io/gel/
+    - The purpose of the code in this project is to compile and generate the website
+    - Notice that there is no library or framework here, we're just about documentation.
+- Audi UI /AUDI
+  - /223Star/Apache2/202004/js
+  - https://github.com/audi/audi-ui
+  - http://www.audi.com/ci
+  - An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML.
+  - Our current build workflow requires Gulp v4
+- Geist /Vercel
+  - /1.2kStar/MIT/202010/ts
+  - https://github.com/geist-org/react
+  - https://react.geist-ui.dev/
+  - Modern and minimalist React UI library, originating from Vercel's design.
+  - 采用自定义的css-in-js样式 [styled-jsx](https://github.com/vercel/styled-jsx)
+  - ref
+    - https://github.com/zeit-ui/react
+    - https://github.com/geist-org/vue
 - Aragon UI /Aragon
   - /215Star/MIT/202009/js
   - https://github.com/aragon/ui
@@ -68,7 +108,7 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://bloom-seven-gules.now.sh/
   - reuseable React components and common styles to promote consistency across various projects at Appear Here.
   - It's been bootstrapped with create-react-app
-- Alfa-Bank UI Library 
+- Alfa-Bank UI Library /Alfa-Bank
   - /553Star/MPL2/202010/ts
   - https://github.com/alfa-laboratory/arui-feather
   - https://digital.alfabank.ru/
@@ -93,7 +133,7 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://github.com/pluralsight/design-system
   - https://design-system.pluralsight.com/
   - The UI building blocks for creating a cohesive design across Pluralsight products
-- Solid  /MIT/115Star/202001/css
+- Solid /MIT/115Star/202001/css
   - https://github.com/buzzfeed/solid
   - https://solid.buzzfeed.com/
   - Solid is BuzzFeed's functional CSS framework and styleguide.
@@ -244,7 +284,6 @@ modified: '2020-10-22T10:14:24.424Z'
   - /27Star/MIT/201802/js/archived
   - https://github.com/HubSpot/canvas
   - https://canvas.hubspot.com/
-  - HubSpot Canvas is the design system that we at HubSpot use to build our products. 
   - This library showcases the building blocks that make up our design system, from colors and typography to React-based components and data visualization tools. 
 - Buffer /Buffer
   - /29Star/MIT/202009/js

@@ -9,38 +9,76 @@ modified: '2020-10-22T12:52:52.985Z'
 
 ## popular-design-system
 
-- ### Ant Design /Alibaba
-  - /MIT/63.7kStar/202009/ts
+- ### Ant Design /Alibaba/*
+  - /63.7kStar/MIT/202009/ts
   - https://github.com/ant-design/ant-design
+    - 依赖很多自研的基础组件rc-xxx
+    - 样式基于classnames
   - https://ant.design/
   - An enterprise-class UI design language and React UI library.
-  - 主要由阿里蚂蚁金服研发，antd严重依赖自研的基础组件rc-xxx
+  - https://github.com/taejs/ant-design-vanilla
+    - /2Star/MIT/202003/ts
+    - 基于foundation/adapter架构实现
   - https://github.com/ant-design/ant-design-mobile
     - A configurable Mobile UI specification and React-based implementation.
   - https://github.com/ant-design/ant-design-pro
     - An out-of-box UI solution for applications as a React boilerplate.
+  - theme
+    - https://github.com/ant-design/ant-design-aliyun-theme
+    - https://github.com/ant-design-colorful/ant-design-colorful
+      - 以原生ant-design为基础，通过自定义css或引入其他插件，实现组件的多彩化
+    - https://github.com/intoli/antd-scss-theme-plugin
+      - Customize Ant Design by specifying theme variable overrides through a single theme.scss file
+    - https://github.com/luffyZh/dynamic-antd-theme
   - ref
+    - https://github.com/websemantics/awesome-ant-design
     - https://github.com/vueComponent/ant-design-vue
     - https://github.com/NG-ZORRO/ng-zorro-antd
-    - https://github.com/taejs/ant-design-vanilla
     - https://github.com/alitajs/ant-design-plus/
+    - https://github.com/ant-design/ant-design-charts
 
-- ### Polaris Design System /Shopify
-  - /MIT/3000Star/202001
+- ### Polaris /Shopify/*
+  - /3.6kStar/MITWithRestrictions/202010/ts
   - https://github.com/Shopify/polaris-react
+    - 依赖react-transition-group、classnames
+    - 组件基于hooks实现
   - https://polaris.shopify.com/
   - Our design system helps to build a great experience for all of Shopify’s merchants.
+  - ref
+    - https://github.com/Shopify/polaris-tokens
+    - https://github.com/Shopify/javascript-utilities
+    - https://github.com/Shopify/draggable
+      - The JavaScript Drag & Drop library
 
-- ### Material Design /Google
-  - /MIT/13.6kStar/201912/ts
-  - https://material.io/design/
-  - https://github.com/material-components/material-components-web
-  - https://github.com/material-components/material-components-android
-  - Material is an adaptable system of guidelines, components, and tools
+- ### Material Design /Google/***
+  - /14.9kStar/MIT/202009/ts
+  - https://github.com/material-components/material-components-web/
+  - https://material.io/develop/web/components/buttons
+  - Modular and customizable Material Design UI components for the web
+  - 组件基于foundation/adapter架构实现
+  - https://github.com/jamesmfriedman/rmwc
+    - /1.4kStar/MIT/202009/ts/hooks
+    - a React UI Kit built on Google's official Material Components Web library v5
+  - ref
+    - https://github.com/material-components/material-components-web-react
+      - /1.9kStar/MIT/201911/ts/deprecated
+      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
+      - 组件基于class实现
+    - https://github.com/material-components/material-components-web-components
+      - /2.2kStar/Apache2/202009/ts/agnostic/MWC
+      - a collection of Web Components maintained by Google that implement Material Design
+    - https://github.com/prateekbh/preact-material-components
+      - /531Star/MIT/202007/ts/deprecated
+      - preact wrapper for material-components-web
+    - https://github.com/material-components/material-components-android
+      - /11.2kStar/Apache2/2020209/java
+      - Modular and customizable Material Design UI components for Android
 
 - ### Fluent Design /Microsoft
-  - /MIT/9.5kStar/202009/ts
+  - /9.5kStar/MIT/202009/ts
   - https://github.com/microsoft/fluentui
+    - 组件基于hooks实现
+    - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
   - https://www.microsoft.com/design/fluent/
   - Fluent is a cross-platform design system to create engaging product experiences — accessibility, internationalization, and performance included. 
   - ref
@@ -48,158 +86,191 @@ modified: '2020-10-22T12:52:52.985Z'
       - UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences
     - https://developer.microsoft.com/en-us/fabric/#/components
 
-- ### Lightning Design System /Salesforce
-  - /BSD/3kStar/202009
+- ### Lightning Design System /Salesforce/*
+  - /3kStar/BSD/202009/js
   - https://github.com/salesforce-ux/design-system
-  - https://www.lightningdesignsystem.com/design-tokens/
   - https://www.lightningdesignsystem.com/
-  - https://github.com/salesforce/design-system-react
-    - /622Star/BSD/202010/js
-    - https://react.lightningdesignsystem.com/
-  - Component blueprints are framework agnostic, accessible HTML and CSS
   - SLDS is a pure CSS framework that you can use with any front-end development framework
+  - Component blueprints are framework agnostic, accessible HTML and CSS
+  - https://github.com/salesforce/design-system-react
+    - https://react.lightningdesignsystem.com/
+    - /622Star/BSD/202010/js
+    - 依赖popper.js、react-contenteditable/onclickoutside、classnames
+    - 组件基于class实现
+    - 样式使用className设置预定义的样式名
   - ref
+    - https://www.lightningdesignsystem.com/design-tokens/
     - https://github.com/salesforce-ux/design-system-ui-kit
       - Sketch UI Kit
     - https://github.com/mashmatrix/react-lightning-design-system
 
-- ### Carbon Design System /IBM
-  - /Apache2/3.5kStar/202009
+- ### Carbon Design System /IBM/**
+  - /3.5kStar/Apache2/202009/js
   - https://github.com/carbon-design-system/carbon
   - https://www.carbondesignsystem.com/
-  - https://github.com/carbon-design-system/carbon/tree/master/packages/components
+  - carbon-components
     - a collection of re-usable HTML and SCSS partials for building products.
-  - https://github.com/carbon-design-system/carbon/tree/master/packages/react
+  - carbon-components-react
     - A collection of Carbon Components implemented using React.
-  - https://github.com/carbon-design-system/carbon-custom-elements
+    - 组件基于hooks实现
+  - @carbon/elements
+    - IBM Design Language elements like colors, type, iconography, and more
     - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
   - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
   - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
   - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
   - ref
+    - https://github.com/carbon-design-system/carbon-charts
     - https://www.ibm.com/design/language/
-    - http://react.carbondesignsystem.com/?path=/story/buttons--default
+    - http://react.carbondesignsystem.com/
     - https://ics-design-system.us-east.mybluemix.net/
     - https://github.com/carbon-design-system/carbon-design-kit
       - visual assets (components, iconography, color palettes...)
     - https://github.com/IBM/design-kit
+    - https://github.com/carbon-design-system/carbon-components-vue
+    - https://github.com/carbon-design-system/carbon-web-components
+    - https://github.com/carbon-design-system/okrs
+      - Objectives and key results for the Carbon team.
 
 - ### Spectrum /Adobe
-  - /744Star/Apache2/202010
-  - https://github.com/adobe/spectrum-css
-  - https://spectrum.adobe.com/
-  - The standard CSS implementation of the Spectrum design language.
-  - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
-  - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
+  - /3.kStar/Apache2/202010/ts
   - https://github.com/adobe/react-spectrum
+    - https://react-spectrum.adobe.com/
+    - 组件基于hooks实现
     - A React implementation of Spectrum
     - react-aria
       - Hooks that provides accessible UI primitives
     - react-stately
       - Hooks that provides cross-platform state management
+  - https://spectrum.adobe.com/
+  - https://github.com/adobe/spectrum-css
+    - /744Star/Apache2/202010
+    - The standard CSS implementation of the Spectrum design language.
+    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
+    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
 
-- ### Atlassian Design System /Atlassian
-  - /Apache2/72Star/202001
-  - https://atlassian.design/
-  - https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/
-    - Atlassian's official UI library, on the Atlassian Design Guidelines
-  - https://atlaskit.atlassian.com/docs/guides/component-design
-  - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/
-    - This is the public mirror of Atlassian Frontend. 
-    - All publicly published packages source files will be mirrored here daily.
-
-- ### Primer Design System /Github
-  - /MIT/580Star/201912
-  - https://github.com/primer/components
-  - https://primer.style/components
-  - React components which implement GitHub's Primer Design System    
-  - 提供单独的scss样式文件
-
-- ### Pajamas Design System /GitLab
-  - /104Star/MIT/202010/vue
-  - https://gitlab.com/gitlab-org/gitlab-ui
-  - https://gitlab-org.gitlab.io/gitlab-ui/
-  - https://design.gitlab.com/
-  - 依赖bootstrap4, Bootstrap-vue, markdown-it, nuxt
-  - GitLab's open source Design System. 
-  - Contains brand and product design guidelines and UI components
-  - https://gitlab.com/gitlab-org/gitlab-services/design.gitlab.com
-    - /113Star/MIT/202010/js/vue
-  - https://gitlab.com/gitlab-org/gitlab-design
-    - /279Star/MIT/202010/html
-    - The repository contains GitLab’s prototypes and work-in-progress files.
-
-- ### Airbnb Design /Airbnb
-  - /335Star/MIT/202010/ts
-  - https://github.com/airbnb/lunar
-  - https://airbnb.design/
-  - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
-  - React toolkit and design language for Airbnb open source and internal projects.
-  - Lunar is built for Airbnb projects and not the general public.
-  - https://github.com/airbnb/Lona
-    - A tool for defining design systems and using them to generate cross-platform UI code, Sketch files
+- ### Elastic UI  /Elastic/*
+  - /2.3kStar/Apache2/202010/ts
+  - https://github.com/elastic/eui
+    - 依赖classnames
+    - 组件基于hooks实现
+  - https://elastic.github.io/eui/#/
+  - a collection of React UI components for quickly building user interfaces at Elastic
+  - Alongside the React components is a SASS/CSS layer 
   - ref
-    - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
+    - https://github.com/elastic/elastic-charts
+    - https://github.com/elastic/search-ui
+    - https://github.com/elastic/app-search-reference-ui-react
 
 - ### Base Design /Uber
   - /5.4kStar/MIT/202010/js
   - https://github.com/uber/baseweb
+    - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
+    - 基于class组件实现
   - https://baseweb.design/
   - A React Component library implementing the Base design language
-  - 组件的第三方依赖较多
+  - ref
+    - https://github.com/uber/hubble.gl
 
-- ### Elastic UI  /Elastic
-  - /Apache2/2.3kStar/202010/ts
-  - https://github.com/elastic/eui
-  - https://elastic.github.io/eui/#/
-  - a collection of React UI components for quickly building user interfaces at Elastic
-  - Alongside the React components is a SASS/CSS layer 
+- ### Atlassian Design System /Atlassian
+  - /72Star/Apache2/202010/ts
+  - https://bitbucket.org/atlassian/atlassian-frontend-mirror
+    - 依赖styled-components、react-intl
+    - 组件基于class实现
+  - https://atlassian.design/
+    - This is the public mirror of Atlassian Frontend. 
+    - All publicly published packages source files will be mirrored here daily.
+  - ref
+    - https://atlaskit.atlassian.com/docs/guides/component-design
+    - https://bitbucket.org/atlassian/atlaskit-mk-2
+      - old repo
 
-- ### SAP Fiori Design System /SAP
-  - https://experience.sap.com/fiori-design/
-  - SAP Fiori is the design language that brings great user experiences to enterprise applications.
-  - The open source version that implements SAP Fiori for Web: OpenUI5
+- ### Primer Design System /Github
+  - /969Star/MIT/202019/js
+  - https://github.com/primer/components
+    - 依赖styled-components、styled-system
+  - https://primer.style/components
+  - React components for the Primer Design System
+  - https://github.com/primer/css
+    - https://primer.style/css
+    - /9.7kStar/MIT/202010/scss
+  - ref
+    - https://github.com/primer/octicons
+    - https://github.com/primer/design
+    - https://github.com/primer/presentations
+      - Slide deck templates and asset
+
+- ### Pajamas Design System /GitLab
+  - /104Star/MIT/202010/vue
+  - https://gitlab.com/gitlab-org/gitlab-ui
+    - 依赖vue, bootstrap4, Bootstrap-vue, markdown-it, nuxt
+  - https://gitlab-org.gitlab.io/gitlab-ui/
+  - https://design.gitlab.com/
+  - https://gitlab.com/gitlab-org/gitlab-services/design.gitlab.com
+    - /113Star/MIT/202010/js/vue
+    - Contains product design guidelines and UI components
+  - ref
+    - https://gitlab.com/gitlab-org/gitlab-design
+      - /279Star/MIT/202010/html
+      - The repository contains GitLab’s prototypes and work-in-progress files.
+
+- ### SAP Fiori /SAP
+  - /2.3kStar/Apache2/202010/js/less
   - https://github.com/SAP/openui5
-    - based on JavaScript, using jQuery as its foundation and follows web standards
-  - https://github.com/SAP/fundamental
-  - https://sap.github.io/fundamental-styles/
-    - /230Star/Apache2/202004/js
-  - Fiori Fundamentals is a component library and SASS toolkit for building SAP user interfaces
-  - SAP Fundamentals is deprecated. Fundamental Styles is its successor
+  - http://openui5.org/
+  - based on JavaScript, using jQuery as its foundation and follows web standards
+  - The open source version that implements SAP Fiori for Web: OpenUI5
+  - https://github.com/SAP/ui5-webcomponents-react
+    - https://sap.github.io/ui5-webcomponents-react/
+    - /192Star/Apache2/202010/ts
+    - A wrapper implementation for React of the UI5 Web Components
+    - you can use UI5 Web Components as if they were native React components. 
+    - 依赖react-jss、react-content-loader、react-table7、react-virtual
+    - 依赖@ui5/webcomponents、@ui5/webcomponents-base
+    - 组件基于hooks实现
   - https://github.com/SAP/ui5-webcomponents
     - /787Star/Apache2/202009/web-comp
-    - the enterprise-flavored sugar on top of native APIs
-  - https://github.com/SAP/ui5-webcomponents-react
-    - A wrapper implementation for React of the UI5 Web Components
-    - 样式基于jss
-    - 基于hooks实现
+    - not built on top of UI5, but rather independent UI elements
+  - https://sap.github.io/fundamental-styles/
+    - /230Star/Apache2/202004/js
+    - Fiori Fundamentals is a component library and SASS toolkit for building SAP user interfaces
+    - https://github.com/SAP/fundamental
+      - SAP Fundamentals is deprecated. Fundamental Styles is its successor
+  - ref
+    - https://experience.sap.com/fiori-design/
+      - SAP Fiori is the design language that brings great user experiences to enterprise applications.
+    - OpenUI5 is the open source version of SAPUI5, a JavaScript UI library maintained by SAP. 
+      - Since OpenUI5 shares the same core as SAPUI5, we often refer to both simply as "UI5".
 
-- ### Calcite Design System /Esri 
-  - https://github.com/Esri/calcite-base
-    - /6Star/EsriMasterLic/202007/js
-    - https://esri.github.io/calcite-base/
-    - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
-  - https://github.com/Esri/calcite-components
-    - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
-    - https://esri.github.io/calcite-components/
-    - Web Components for the Calcite Design System. Built with Stencil JS
-  - https://github.com/Esri/calcite-web
-    - /96Star/Apache2/201902/js
-    - Calcite Web is a web design framework that implements the Esri Brand Guidelines
-    - Calcite Web is written in Sass
-    - The project also includes a dependency-free JavaScript library for use with interactive patterns.
+- ### Calcite Design /Esri 
+  - /42Star/Apache2/202010/js
   - https://github.com/Esri/calcite-react
-    - /42Star/Apache2/202010/js
-    - Calcite components, built in React
-  - https://github.com/Esri/calcite-ui-icons
-    - /39Star/EsriMasterLic/202010/js
-    - UI icons built by Esri
-  - https://github.com/Esri/calcite-colors
-    - /16Star/EsriMasterLic/202010/ts
-    - Esri's official color documentation repository that is leveraged by Calcite
-  - https://github.com/Esri/calcite-sketch-libraries
-  - https://github.com/Esri/calcite-maps
-    - A Bootstrap theme for designing, styling and creating modern map apps.
+    - 依赖styled-components、downshift、react-modal、react-popper、react-toastify、react-virtualized
+    - 基于hooks实现
+  - https://calcite-react.netlify.com/
+  - Calcite components, built in React
+  - https://github.com/Esri/calcite-base
+    - https://esri.github.io/calcite-base/
+    - /6Star/EsriMasterLic/202007/js
+    - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
+  - https://github.com/Esri/calcite-web
+    - https://esri.github.io/calcite-web/
+    - /96Star/Apache2/201902/js
+    - Calcite Web is a web framework that implements the Esri Brand Guidelines written in Sass
+    - The project also includes a dependency-free JavaScript library for use with interactive patterns.
+  - ref
+    - https://github.com/Esri/calcite-components
+      - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
+      - Web Components for the Calcite Design System. Built with Stencil JS
+    - https://github.com/Esri/calcite-ui-icons
+      - /39Star/EsriMasterLic/202010/js
+      - UI icons built by Esri
+    - https://github.com/Esri/calcite-colors
+      - /16Star/EsriMasterLic/202010/ts
+      - Esri's official color documentation repository that is leveraged by Calcite
+    - https://github.com/Esri/calcite-sketch-libraries
+    - https://github.com/Esri/calcite-maps
+      - A Bootstrap theme for designing, styling and creating modern map apps.
 
 - ### Assembly /Mapbox
   - /106Star/ISC/202010/css
@@ -209,6 +280,18 @@ modified: '2020-10-22T12:52:52.985Z'
   - 依赖cp-file、csso(CSS minifier)、postcss
   - 依赖svgo、svgstore(Combines multiple SVG files into one using symbol elements)
 
+- ### Airbnb Design /Airbnb
+  - /335Star/MIT/202010/ts
+  - https://github.com/airbnb/lunar
+  - https://airbnb.design/
+  - React toolkit and design language for Airbnb open source and internal projects.
+  - Lunar is built for Airbnb projects and not the general public.
+  - https://github.com/airbnb/Lona
+    - A tool for defining design systems and using them to generate cross-platform UI code, Sketch files
+  - ref
+    - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
+    - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
+
 ## known-design-system
 
 - Bootstrap /Twitter
@@ -217,120 +300,98 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://getbootstrap.com/docs
   - popular framework for building responsive, mobile-first sites
 - PatternFly /RedHat
+  - /219Star/MIT/202010/ts
+  - https://github.com/patternfly/patternfly-react
+    - 依赖tippy.js
+    - 组件基于class实现
+    - 样式基于classnames魔改实现
+    - 单独的组件包，如react-charts,react-datetime,react-table
   - https://www.patternfly.org/
-  - PatternFly is an open source design system built to drive consistency and unify teams.
+  - https://patternfly-react.surge.sh/
+  - A set of React components for the PatternFly project.
   - https://github.com/patternfly/patternfly
     - /259Star/MIT/202010/scss
     - This repo contains core (HTML/CSS) implementation for PatternFly.
-  - https://github.com/patternfly/patternfly-react
-    - /219Star/MIT/202010/ts
-    - A set of React components for the PatternFly project.
+- HPE Design System /Hewlett Packard
+  - /Apache2/6.7kStar/202010/js
+  - https://github.com/grommet/grommet
+    - 依赖styled-components、markdown-to-jsx、react-desc
+    - 基于hooks实现
+  - https://v2.grommet.io/
+  - react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
+  - https://github.com/grommet/hpe-design-system
+    - https://design-system.hpe.design/
+    - HPE Design System Site
+  - [grommet-designer](https://github.com/grommet/grommet-designer)
+  - [grommet-theme-designer](https://github.com/grommet/grommet-theme-designer)
 - Help Scout Design System(HSDS) /Help Scout
   - /54Star/MIT/202010/js
   - https://github.com/helpscout/hsds-react
+    - 依赖@tippyjs/react、prismjs、classnames
+    - 基于class组件实现
   - https://hsds.helpscout.com/
   - React components for Help Scout's Design System
-  - [Help Scout Style Handbook](https://style.helpscout.com/)
   - https://github.com/helpscout/seed
     - /8Star/MIT/201906/css
-    - Seed: A component-first CSS design system.
     - https://developer.helpscout.com/seed/
-    - Seed is available as a complete CSS framework
-  - https://github.com/helpscout/seed-framework
-    - /36Star/MIT/201711/js
-    - Seed CSS Framework! JS is powered by Bootstrap.js
-- Stacks /Stack Overflow
-  - /268Star/MIT/202010/ts/less
-  - https://github.com/StackExchange/Stacks
-  - https://stackoverflow.design/
-  - Stack Overflow’s Design System
-- Audi UI /AUDI
-  - /223Star/Apache2/202004/js
-  - https://github.com/audi/audi-ui
-  - http://www.audi.com/ci
-  - An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML.
-  - Our current build workflow requires Gulp v4
-- grommet /Hewlett Packard
-  - /Apache2/6.7kStar/202010/js
-  - https://github.com/grommet/grommet
-  - https://v2.grommet.io/
-  - a react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
-- ring-ui  /JetBrains
-  - /Apache2/2kStar/201908/js
-  - https://github.com/JetBrains/ring-ui
-  - https://jetbrains.github.io/ring-ui/
-  - A collection of JetBrains Web UI components 
+    - Seed: A component-first CSS design system.
+  - ref
+    - [Help Scout Style Handbook](https://style.helpscout.com/)
 - Garden /Zendesk
-  - Garden is the design system by Zendesk.
+  - /Apache2/794Star/202009/ts
+  - https://github.com/zendeskgarden/react-components
+    - 依赖styled-components
+    - 组件基于hooks实现
+  - https://garden.zendesk.com/
+  - Garden React provides consistent styling and behavior for Garden components. 
   - https://github.com/zendeskgarden/css-components
     - /95Star/Apache2/202010/css
     - https://zendeskgarden.github.io/css-components/
     - Garden CSS provides consistent styling for Garden components. 
-  - https://github.com/zendeskgarden/react-components
-    - /Apache2/794Star/202009
-  - https://garden.zendesk.com/
-  - Garden React provides consistent styling and behavior for Garden components. 
-  - https://github.com/zendeskgarden/tailwindcss
-    - /6Star/Apache2/202010/ts
-    - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
+  - ref
+    - https://github.com/zendeskgarden/react-containers
+      - Garden React (no-UI) Containers provide an accessible foundation to start building a11y, keyboard navigable and RTL aware components.
+    - https://github.com/zendeskgarden/tailwindcss
+      - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
 - Gestalt /Pinterest
-  - /Apache2/3.7kStar/202010/js
+  - /3.7kStar/Apache2/202010/js
   - https://github.com/pinterest/gestalt
+    - 依赖classnames
+    - 组件基于hooks实现
   - https://gestalt.netlify.app/
   - React UI components that enforces Pinterest’s design language
-- GEL(Global Experience Language) /BBC
-  - /195Star/Apache2/202010/js
-  - https://github.com/bbc/psammead
-  - https://www.bbc.co.uk/gel
-  - React component library for BBC World Service and more
-  - https://github.com/bbc/gel
-    - https://bbc.github.io/gel/
-    - This repository holds the documentation for the BBC GEL Technical Guides.
-- Cosmos Design System /Auth0
-  - https://github.com/auth0/cosmos
-  - /498Star/MIT/202010/ts
-  - https://auth0-cosmos.now.sh/
-  - Auth0 Design System
-- Orbit /723Star/MIT/202010/js
+- Ring UI /JetBrains
+  - /2.5kStar/Apache2/202010/js
+  - https://github.com/JetBrains/ring-ui
+    - 依赖classnames
+    - 组件基于class实现
+  - https://jetbrains.github.io/ring-ui/
+  - A collection of JetBrains Web UI components
+- Orbit /Kiwi.com
+  - /723Star/MIT/202010/js
   - https://github.com/kiwicom/orbit
+    - 组件基于hooks实现
+    - 依赖styled-Components
   - https://orbit.kiwi/
   - React components of open-source Orbit design system by Kiwi.com
-  - https://github.com/kiwicom/orbit-design-tokens
-    - /28Star/MIT/202008/js
-    - https://orbit.kiwi/design-tokens/
-    - Design tokens are atomic pieces that store visual design attributes. 
-    - They help us make our UI more consistent and support custom themes. 
-    - We use them instead of static values like HEX codes for color or sizing units.
+  - ref
+    - https://github.com/kiwicom/orbit-design-tokens
 - Pivotal Design System /Pivotal 
-  - /MIT/636Star/202010/js
+  - /636Star/MIT/202010/js
   - https://github.com/pivotal-cf/pivotal-ui
+    - 依赖tether、smoothscroll-polyfill、trie-search、classnames
+    - 组件基于class实现
   - https://styleguide.pivotal.io/
-  - Pivotal's design system & component library
-- Skin /eBay
-  - /111Star/MIT/202010/css
-  - https://github.com/eBay/skin
-  - https://ebay.github.io/skin/
-  - Pure CSS framework designed & developed by eBay for a branded, e-commerce marketplace.
-  - Skin follows the BEM methodology of "Block, Element and Modifier" to ensure our HTML class name and structure is human readable and understandable.
+  - The system is implemented as a Figma library, React components, and CSS styles 
 - MongoDB Design System /MongoDB
+  - /54Star/Apache2/202010/ts
   - https://github.com/mongodb/leafygreen-ui
-    - /54Star/Apache2/202010/ts
-    - https://mongodb.github.io/leafygreen-ui/
-    - A set of CSS styles and React components
+    - 依赖emotion、react-transition-group、facepaint
+    - 组件基于hooks实现
+    - 样式基于className属性，使用的是emotion的css方法而不是styled
+  - https://mongodb.github.io/leafygreen-ui/
+  - A set of CSS styles and React components
   - http://mongodb.design/
-  - https://github.com/mongodb/design
-    - A repository for design resources at MongoDB
-- Geist /Vercel
-  - /MIT/1.2kStar/202010/ts
-  - htps://github.com/geist-org/react
-  - https://github.com/zeit-ui/react
-  - https://react.geist-ui.dev/
-  - Modern and minimalist React UI library, originating from Vercel's design.
-- Eva Design System /Akveo team
-  - /814Star/MIT/202005/ts
-  - https://github.com/eva-design/eva
-  - https://eva.design/
-  - Customizable Design System easily adaptable to your Brand.
-  - https://github.com/akveo/nebular
-    - Customizable Angular UI Library based on Eva Design System
-  - Available for Sketch with Mobile and Web component libraries.
+  - ref
+    - https://github.com/mongodb/design
+      - A repository for design resources at MongoDB

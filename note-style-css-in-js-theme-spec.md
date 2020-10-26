@@ -23,7 +23,7 @@ modified: '2020-10-22T13:36:15.759Z'
     - 大型软件通常更重视可维护性和兼容性，性能通常不是最高
   - js is the future (for its ecosystem)
     - define style helper functions in js rather than sass
-    - 技术选型时，参考知名项目或大公司项目的选择
+    - 技术选型时，参考知名项目或大公司项目的选择，但结论是大公司都没选css-in-js
 - cons
   - learning curve
   - css-in-js runtime cost in performance and size 
@@ -32,11 +32,21 @@ modified: '2020-10-22T13:36:15.759Z'
     - https://mxstbr.com/thoughts/css-in-js
     - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
     - https://medium.com/@lindsay_jopson/is-css-in-js-really-better-than-traditional-css-8ac5b3f7fc20
+- css-in-js热门项目
+  - Microsoft Fluent Design 自己实现了styled方法
+  - Uber Base Design用的是styletron-react
+  - 使用styled-components或emotion的项目
+    - Atlassian Design, Github Primer Design, SAP Fiori(react-jss)
+    - Esri Calcite Design, HP grommet, Zendesk Garden, Kiwi.com Orbit design
 - 为什么用emotion/styled-components
   - styles written inline, but className auto generated and added to dom
 - 为什么用styled-system
   - themed based component
   - consistent prop names and scalar values
+- 为什么用glaze
+  - Near-zero runtime, made possible by treat, Theming support, Static style extraction
+  - Constraint-based layouts, popularized by Theme UI
+  - Utility-first CSS, as implemented by Tailwind CSS
 - 为什么采用styled形式的组件，而不用className，调用该api能够传入props，然后根据props计算新样式属性再添加到组件上，只有高阶组件能做到，普通方法做不到
   - styled开发体验好，性能可能不是最好
 - css prop vs scss prop，不用className
@@ -64,6 +74,7 @@ modified: '2020-10-22T13:36:15.759Z'
   - style object
       - 当需要动态变化的样式属性有很多时，使用对象cleaner
       - 样式对象更方便计算及复用，如spread operator和destructuring
+      - 对象更容易进行类行检查，字符串css可能后面难以检查
   - TTLs
       - 更接近熟悉的css
       - ide的提示更容易实现

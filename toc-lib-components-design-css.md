@@ -33,6 +33,12 @@ modified: '2020-10-22T13:34:56.023Z'
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
   - a simple extensible CSS framework, built using Sass
+- Skin /eBay
+  - /111Star/MIT/202010/less
+  - https://github.com/eBay/skin
+  - https://ebay.github.io/skin/
+  - Pure CSS framework designed & developed by eBay for e-commerce marketplace.
+  - Skin follows the BEM methodology of "Block, Element and Modifier" to ensure our HTML class name and structure is human readable and understandable.
 - https://github.com/magnetis/astro
   - /89Star/Apache2/202008/css
   - https://astro.magnetis.com.br/

@@ -160,9 +160,6 @@ modified: '2020-10-25T13:51:36.099Z'
 - https://github.com/equinor/design-system
   - https://eds.equinor.com/
   - Core React、Tokens
-- https://github.com/grommet/hpe-design-system
-  - https://design-system.hpe.design/
-  - HPE Design System Site
 - https://github.com/ONSdigital/design-system
   - https://ons-design-system.netlify.app/
   - ONS Design System

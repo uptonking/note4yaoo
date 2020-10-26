@@ -27,9 +27,9 @@ modified: '2020-10-25T05:09:53.421Z'
   - https://catho.github.io/quantum
   - CSS in JS based reusable components, are the core of Quantum design-system
 - Sancho UI /Ben McMahen
+  - /352Star/MIT/202001/ts
   - https://github.com/bmcmahen/sancho
   - https://sancho-ui.com/
-  - /352Star/MIT/202001/ts
   - Sancho is a responsive and accessible design system built with React, Typescript and Emotion.
   - Sancho originally started as a fork of Evergreen but has since evolved to incorporate ideas from Bootstrap and Material-UI. 
   - We make substantial use of Reach-UI where possible to ensure proper accessibility.
@@ -45,6 +45,7 @@ modified: '2020-10-25T05:09:53.421Z'
   - https://arwes.dev/
   - Arwes is a web framework to build user interfaces for web applications
   - It is built on top of React, JSS, Anime, and Howler.
+
 ## design-system-edu
 
 - Decanter design system /Stanford University

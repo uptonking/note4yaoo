@@ -37,6 +37,18 @@ modified: '2020-09-25T05:56:32.022Z'
 - glaze /375Star/MIT/202006
   - https://github.com/kripod/glaze
   - the theme-ui API with almost zero runtime 
+  - This project was born to combine the best of its predecessors into a single solution
+  - Utility-first CSS, as implemented by Tailwind CSS
+    - Fully static, but customizable upfront
+    - Embraces reusability with no duplicated rules
+  - Constraint-based layouts, popularized by Theme UI
+    - Highly dynamic, thankfully to Emotion
+    - One-off styles can be defined naturally
+  - Near-zero runtime, made possible by treat
+    - Theming support with legacy browsers in mind
+    - Static style extraction while retaining type safety
+  - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
+  - [Production ready? no. 主程已转向研发otion](https://github.com/kripod/glaze/issues/37)
 - trousers /284Star/MIT/202007
   - https://github.com/danieldelcore/trousers
   - hooks-first CSS-in-JS library, focused on semantics and runtime performance
@@ -56,10 +68,8 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/kripod/otion
   - Atomic CSS-in-JS with a featherweight runtime
   - Negligible runtime footprint, Works without a framework
+  - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
   - https://sebastienlorber.com/atomic-css-in-js
-- aesthetic-suite-framework /163Star/MIT/202009
-  - https://github.com/aesthetic-suite/framework
-    -  multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet specification (SSS), a low-runtime solution
 - style-sheet /220Star/MIT/202008
   - https://github.com/giuseppeg/style-sheet
   - compiling rules to atomic CSS that can then be extracted to .css file with a Babel plugin.
@@ -70,9 +80,9 @@ modified: '2020-09-25T05:56:32.022Z'
 
 ## more-css-in-js
 
-- https://github.com/aesthetic-suite/framework
-  - Aesthetic is an end-to-end multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet specification (SSS), a low-runtime solution
-  - 
+- aesthetic-suite-framework /163Star/MIT/202009
+  - https://github.com/aesthetic-suite/framework
+  - multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet specification (SSS), a low-runtime solution
 - https://github.com/segmentio/ui-box
   - ui-box is a low level CSS-in-JS solution that focuses on being simple, fast and extensible. 
   - All CSS properties are set using simple React props, which allows you to easily create reusable components that can be enhanced with additional CSS properties. 
