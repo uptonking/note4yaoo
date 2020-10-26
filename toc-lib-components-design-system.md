@@ -37,8 +37,9 @@ modified: '2020-10-22T10:14:24.424Z'
   - https://clarity.design/
   - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
 - Storybook Design System /Storybook
-  - /MIT/890Star/202010/ts
+  - /MIT/890Star/202010/ts/css-in-js
   - https://github.com/storybookjs/design-system
+    - 组件基于函数组件，但未用hooks
   - https://storybook-design-system.netlify.com/
   - a reusable component library that helps Storybook build UIs faster
   - 依赖styled-components、prismjs
@@ -53,22 +54,24 @@ modified: '2020-10-22T10:14:24.424Z'
     - 这是Ruby社区给多页面应用设计的框架。
     - 解决了取元素和绑事件的问题，用MutationObserver监控元素的变化, 补绑事件或者修改元素的引用
 - Cosmos Design System /Auth0
-  - /498Star/MIT/202010/ts
+  - /498Star/MIT/202010/ts/css-in-js
   - https://github.com/auth0/cosmos
   - https://auth0-cosmos.now.sh/
   - 依赖react-popper、react-select、react-sortable-hoc、styled-components
 - HIG /Autodesk
   - /130Star/Apache2/202010/js
   - https://github.com/Autodesk/hig
+    - 组件基于class实现
+    - 基于emotion的cx
   - Autodesk's unified design design system
 - Palette Design System /Artsy
-  - /155Star/MIT/202010/ts/styled
+  - /155Star/MIT/202010/ts/css-in-js
   - https://github.com/artsy/palette
   - https://palette.artsy.net/
-  - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel at base level
+  - a collection of primitive, product-agnostic elements that help encapsulate Artsy's look and feel
 - Braid Design System /SEEK
+  - /743Star/MIT/202010/ts/css-in-js
   - https://github.com/seek-oss/braid-design-system
-  - /743Star/MIT/202010/ts
   - https://seek-oss.github.io/braid-design-system
   - https://seek-oss.github.io/seek-style-guide/
   - Themeable design system for the SEEK Group
@@ -90,7 +93,7 @@ modified: '2020-10-22T10:14:24.424Z'
   - An implementation of Audi UI components in CSS, Vanilla JavaScript, and HTML.
   - Our current build workflow requires Gulp v4
 - Geist /Vercel
-  - /1.2kStar/MIT/202010/ts
+  - /1.2kStar/MIT/202010/ts/css-in-js
   - https://github.com/geist-org/react
   - https://react.geist-ui.dev/
   - Modern and minimalist React UI library, originating from Vercel's design.
@@ -106,7 +109,7 @@ modified: '2020-10-22T10:14:24.424Z'
 - Bloom /Appear Here
   - https://github.com/appearhere/bloom
   - https://bloom-seven-gules.now.sh/
-  - reuseable React components and common styles to promote consistency across various projects at Appear Here.
+  - reuseable React components and common styles to promote consistency across various projects
   - It's been bootstrapped with create-react-app
 - Alfa-Bank UI Library /Alfa-Bank
   - /553Star/MPL2/202010/ts
@@ -139,12 +142,14 @@ modified: '2020-10-22T10:14:24.424Z'
   - Solid is BuzzFeed's functional CSS framework and styleguide.
   - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
 - Liquid Design System /Merck
-  - /17Star/202010/CustomLic/js
+  - /17Star/202010/CustomLic/js/css-in-js
   - https://gitlab.com/liquid-design/liquid-design-react
   - https://www.emd.design/
+  - 依赖styled-components、classnames、react-modal
+  - 组件基于class组件和函数组件
   - ref
     - https://gitlab.com/liquid-design/liquid-design-assets
-- Modulz Design System /Modulz
+- Modulz Design System /Modulz/css-in-js
   - https://github.com/modulz/design-system
   - /57Star/NALic/202010/ts
   - https://design-system.modulz-deploys.com/

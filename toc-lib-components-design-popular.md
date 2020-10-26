@@ -13,6 +13,7 @@ modified: '2020-10-22T12:52:52.985Z'
   - /63.7kStar/MIT/202009/ts
   - https://github.com/ant-design/ant-design
     - 依赖很多自研的基础组件rc-xxx
+    - 组件基于class实现
     - 样式基于classnames
   - https://ant.design/
   - An enterprise-class UI design language and React UI library.
@@ -40,8 +41,9 @@ modified: '2020-10-22T12:52:52.985Z'
 - ### Polaris /Shopify/*
   - /3.6kStar/MITWithRestrictions/202010/ts
   - https://github.com/Shopify/polaris-react
-    - 依赖react-transition-group、classnames
+    - 依赖react-transition-group
     - 组件基于hooks实现
+    - 样式基于classnames
   - https://polaris.shopify.com/
   - Our design system helps to build a great experience for all of Shopify’s merchants.
   - ref
@@ -64,6 +66,7 @@ modified: '2020-10-22T12:52:52.985Z'
       - /1.9kStar/MIT/201911/ts/deprecated
       - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
       - 组件基于class实现
+      - 样式基于classnames
     - https://github.com/material-components/material-components-web-components
       - /2.2kStar/Apache2/202009/ts/agnostic/MWC
       - a collection of Web Components maintained by Google that implement Material Design
@@ -75,7 +78,7 @@ modified: '2020-10-22T12:52:52.985Z'
       - Modular and customizable Material Design UI components for Android
 
 - ### Fluent Design /Microsoft
-  - /9.5kStar/MIT/202009/ts
+  - /9.5kStar/MIT/202009/ts/css-in-js
   - https://github.com/microsoft/fluentui
     - 组件基于hooks实现
     - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
@@ -97,7 +100,7 @@ modified: '2020-10-22T12:52:52.985Z'
     - /622Star/BSD/202010/js
     - 依赖popper.js、react-contenteditable/onclickoutside、classnames
     - 组件基于class实现
-    - 样式使用className设置预定义的样式名
+    - 样式使用className直接设置预定义的样式名
   - ref
     - https://www.lightningdesignsystem.com/design-tokens/
     - https://github.com/salesforce-ux/design-system-ui-kit
@@ -113,6 +116,7 @@ modified: '2020-10-22T12:52:52.985Z'
   - carbon-components-react
     - A collection of Carbon Components implemented using React.
     - 组件基于hooks实现
+    - 样式直接操作classList.add/remove
   - @carbon/elements
     - IBM Design Language elements like colors, type, iconography, and more
     - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
@@ -137,6 +141,7 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://github.com/adobe/react-spectrum
     - https://react-spectrum.adobe.com/
     - 组件基于hooks实现
+    - 样式基于classnames优化版clsx
     - A React implementation of Spectrum
     - react-aria
       - Hooks that provides accessible UI primitives
@@ -152,8 +157,8 @@ modified: '2020-10-22T12:52:52.985Z'
 - ### Elastic UI  /Elastic/*
   - /2.3kStar/Apache2/202010/ts
   - https://github.com/elastic/eui
-    - 依赖classnames
     - 组件基于hooks实现
+    - 样式基于classnames
   - https://elastic.github.io/eui/#/
   - a collection of React UI components for quickly building user interfaces at Elastic
   - Alongside the React components is a SASS/CSS layer 
@@ -163,20 +168,22 @@ modified: '2020-10-22T12:52:52.985Z'
     - https://github.com/elastic/app-search-reference-ui-react
 
 - ### Base Design /Uber
-  - /5.4kStar/MIT/202010/js
+  - /5.4kStar/MIT/202010/js/css-in-js
   - https://github.com/uber/baseweb
     - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
-    - 基于class组件实现
+    - 组件基于class实现
+    - 样式基于css-in-js
   - https://baseweb.design/
   - A React Component library implementing the Base design language
   - ref
     - https://github.com/uber/hubble.gl
 
 - ### Atlassian Design System /Atlassian
-  - /72Star/Apache2/202010/ts
+  - /72Star/Apache2/202010/ts/css-in-js
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror
     - 依赖styled-components、react-intl
     - 组件基于class实现
+    - 样式基于css-in-js
   - https://atlassian.design/
     - This is the public mirror of Atlassian Frontend. 
     - All publicly published packages source files will be mirrored here daily.
@@ -186,9 +193,12 @@ modified: '2020-10-22T12:52:52.985Z'
       - old repo
 
 - ### Primer Design System /Github
-  - /969Star/MIT/202019/js
+  - /969Star/MIT/202019/js/css-in-js
   - https://github.com/primer/components
     - 依赖styled-components、styled-system
+    - 组件基于hooks实现
+    - 样式基于css-in-js，也有用classnames
+    - 每个组件的默认值都有导入的theme对象
   - https://primer.style/components
   - React components for the Primer Design System
   - https://github.com/primer/css
@@ -215,7 +225,7 @@ modified: '2020-10-22T12:52:52.985Z'
       - The repository contains GitLab’s prototypes and work-in-progress files.
 
 - ### SAP Fiori /SAP
-  - /2.3kStar/Apache2/202010/js/less
+  - /2.3kStar/Apache2/202010/js/less/css-in-js
   - https://github.com/SAP/openui5
   - http://openui5.org/
   - based on JavaScript, using jQuery as its foundation and follows web standards
@@ -228,6 +238,7 @@ modified: '2020-10-22T12:52:52.985Z'
     - 依赖react-jss、react-content-loader、react-table7、react-virtual
     - 依赖@ui5/webcomponents、@ui5/webcomponents-base
     - 组件基于hooks实现
+    - 样式基于react-jss
   - https://github.com/SAP/ui5-webcomponents
     - /787Star/Apache2/202009/web-comp
     - not built on top of UI5, but rather independent UI elements
@@ -243,10 +254,11 @@ modified: '2020-10-22T12:52:52.985Z'
       - Since OpenUI5 shares the same core as SAPUI5, we often refer to both simply as "UI5".
 
 - ### Calcite Design /Esri 
-  - /42Star/Apache2/202010/js
+  - /42Star/Apache2/202010/js/css-in-js
   - https://github.com/Esri/calcite-react
     - 依赖styled-components、downshift、react-modal、react-popper、react-toastify、react-virtualized
-    - 基于hooks实现
+    - 组件基于hooks实现
+    - 样式基于css-in-js
   - https://calcite-react.netlify.com/
   - Calcite components, built in React
   - https://github.com/Esri/calcite-base
@@ -312,36 +324,19 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://github.com/patternfly/patternfly
     - /259Star/MIT/202010/scss
     - This repo contains core (HTML/CSS) implementation for PatternFly.
-- HPE Design System /Hewlett Packard
-  - /Apache2/6.7kStar/202010/js
-  - https://github.com/grommet/grommet
-    - 依赖styled-components、markdown-to-jsx、react-desc
-    - 基于hooks实现
-  - https://v2.grommet.io/
-  - react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
-  - https://github.com/grommet/hpe-design-system
-    - https://design-system.hpe.design/
-    - HPE Design System Site
-  - [grommet-designer](https://github.com/grommet/grommet-designer)
-  - [grommet-theme-designer](https://github.com/grommet/grommet-theme-designer)
-- Help Scout Design System(HSDS) /Help Scout
-  - /54Star/MIT/202010/js
-  - https://github.com/helpscout/hsds-react
-    - 依赖@tippyjs/react、prismjs、classnames
-    - 基于class组件实现
-  - https://hsds.helpscout.com/
-  - React components for Help Scout's Design System
-  - https://github.com/helpscout/seed
-    - /8Star/MIT/201906/css
-    - https://developer.helpscout.com/seed/
-    - Seed: A component-first CSS design system.
-  - ref
-    - [Help Scout Style Handbook](https://style.helpscout.com/)
+- Gestalt /Pinterest
+  - /3.7kStar/Apache2/202010/js
+  - https://github.com/pinterest/gestalt
+    - 组件基于hooks实现
+    - 样式基于classnames
+  - https://gestalt.netlify.app/
+  - React UI components that enforces Pinterest’s design language
 - Garden /Zendesk
-  - /Apache2/794Star/202009/ts
+  - /Apache2/794Star/202009/ts/css-in-js
   - https://github.com/zendeskgarden/react-components
     - 依赖styled-components
     - 组件基于hooks实现
+    - 样式基于css-in-js
   - https://garden.zendesk.com/
   - Garden React provides consistent styling and behavior for Garden components. 
   - https://github.com/zendeskgarden/css-components
@@ -353,38 +348,18 @@ modified: '2020-10-22T12:52:52.985Z'
       - Garden React (no-UI) Containers provide an accessible foundation to start building a11y, keyboard navigable and RTL aware components.
     - https://github.com/zendeskgarden/tailwindcss
       - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
-- Gestalt /Pinterest
-  - /3.7kStar/Apache2/202010/js
-  - https://github.com/pinterest/gestalt
-    - 依赖classnames
-    - 组件基于hooks实现
-  - https://gestalt.netlify.app/
-  - React UI components that enforces Pinterest’s design language
-- Ring UI /JetBrains
-  - /2.5kStar/Apache2/202010/js
-  - https://github.com/JetBrains/ring-ui
-    - 依赖classnames
-    - 组件基于class实现
-  - https://jetbrains.github.io/ring-ui/
-  - A collection of JetBrains Web UI components
 - Orbit /Kiwi.com
-  - /723Star/MIT/202010/js
+  - /723Star/MIT/202010/js/css-in-js
   - https://github.com/kiwicom/orbit
-    - 组件基于hooks实现
     - 依赖styled-Components
+    - 组件基于hooks实现
+    - 样式基于css-in-js
   - https://orbit.kiwi/
   - React components of open-source Orbit design system by Kiwi.com
   - ref
     - https://github.com/kiwicom/orbit-design-tokens
-- Pivotal Design System /Pivotal 
-  - /636Star/MIT/202010/js
-  - https://github.com/pivotal-cf/pivotal-ui
-    - 依赖tether、smoothscroll-polyfill、trie-search、classnames
-    - 组件基于class实现
-  - https://styleguide.pivotal.io/
-  - The system is implemented as a Figma library, React components, and CSS styles 
 - MongoDB Design System /MongoDB
-  - /54Star/Apache2/202010/ts
+  - /54Star/Apache2/202010/ts/css-in-js
   - https://github.com/mongodb/leafygreen-ui
     - 依赖emotion、react-transition-group、facepaint
     - 组件基于hooks实现
@@ -395,3 +370,48 @@ modified: '2020-10-22T12:52:52.985Z'
   - ref
     - https://github.com/mongodb/design
       - A repository for design resources at MongoDB
+
+ 
+
+- HPE Design System /Hewlett Packard
+  - /Apache2/6.7kStar/202010/js/css-in-js
+  - https://github.com/grommet/grommet
+    - 依赖styled-components、markdown-to-jsx、react-desc
+    - 组件基于hooks实现
+    - 样式基于css-in-js
+  - https://v2.grommet.io/
+  - react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
+  - https://github.com/grommet/hpe-design-system
+    - https://design-system.hpe.design/
+    - HPE Design System Site
+  - [grommet-designer](https://github.com/grommet/grommet-designer)
+  - [grommet-theme-designer](https://github.com/grommet/grommet-theme-designer)
+- Help Scout Design System(HSDS) /Help Scout
+  - /54Star/MIT/202010/js
+  - https://github.com/helpscout/hsds-react
+    - 依赖@tippyjs/react、prismjs
+    - 组件基于class组件实现
+    - 样式基于classnames
+  - https://hsds.helpscout.com/
+  - React components for Help Scout's Design System
+  - https://github.com/helpscout/seed
+    - /8Star/MIT/201906/css
+    - https://developer.helpscout.com/seed/
+    - Seed: A component-first CSS design system.
+  - ref
+    - [Help Scout Style Handbook](https://style.helpscout.com/)
+- Ring UI /JetBrains
+  - /2.5kStar/Apache2/202010/js
+  - https://github.com/JetBrains/ring-ui
+    - 组件基于class实现
+    - 样式基于classnames
+  - https://jetbrains.github.io/ring-ui/
+  - A collection of JetBrains Web UI components
+- Pivotal Design System /Pivotal 
+  - /636Star/MIT/202010/js
+  - https://github.com/pivotal-cf/pivotal-ui
+    - 依赖tether、smoothscroll-polyfill、trie-search
+    - 组件基于class实现
+    - 样式基于classnames
+  - https://styleguide.pivotal.io/
+  - The system is implemented as a Figma library, React components, and CSS styles 
