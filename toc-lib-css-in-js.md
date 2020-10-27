@@ -38,17 +38,29 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/kripod/glaze
   - the theme-ui API with almost zero runtime 
   - This project was born to combine the best of its predecessors into a single solution
+  - Near-zero runtime, made possible by treat
+    - Theming support with legacy browsers in mind
+    - Static style extraction while retaining type safety
   - Utility-first CSS, as implemented by Tailwind CSS
     - Fully static, but customizable upfront
     - Embraces reusability with no duplicated rules
   - Constraint-based layouts, popularized by Theme UI
     - Highly dynamic, thankfully to Emotion
     - One-off styles can be defined naturally
-  - Near-zero runtime, made possible by treat
-    - Theming support with legacy browsers in mind
-    - Static style extraction while retaining type safety
   - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
   - [Production ready? no. 主程已转向研发otion](https://github.com/kripod/glaze/issues/37)
+- https://github.com/WalltoWall/calico
+  - Calico is a customizable styling library that maps React props to statically generated class names.
+  - 缺点是组件必须使用提供的Box组件创建
+  - Very light runtime made possible by the treat library.
+    - Static style extraction with full type safety.
+    - Dynamic styles via swapping classNames.
+  - Atomic CSS as inspired by libraries like Tailwind CSS
+    - Encourages reusabilty with a finite set of generated classNames.
+  - Developer-centric as inspired by styled-system and theme-ui.
+    - Define responsive styles via arrays.
+    - Namespaced styles to ease type-extensibility.
+    - One-off styles can be defined in .treat files with additional responsive helpers added onto your theme.
 - trousers /284Star/MIT/202007
   - https://github.com/danieldelcore/trousers
   - hooks-first CSS-in-JS library, focused on semantics and runtime performance

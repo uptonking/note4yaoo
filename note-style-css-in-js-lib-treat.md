@@ -15,6 +15,9 @@ modified: '2020-10-27T06:49:02.544Z'
     - This is because all CSS is is created at build time. 
     - You can create multiple themes and swap them out at runtime (e.g. switch from dark to light theme) but you cannot create a new theme with new values.
     - If you need truly dynamic theme values then you'll need a CSS-in-JS library that creates CSS client side, like emotion or styled-components.
+    - 无法实现手动选择任意颜色，实时切换主题
+      - 选择任意颜色的需求并不频繁，易与其他组件原有设计冲突，如冷暖色背景、对比度
+      - 主流设计系统都是提供多套预定义的主题供选择切换
 - glaze
 - otion
 
@@ -68,3 +71,11 @@ modified: '2020-10-27T06:49:02.544Z'
   - To avoid this issue, it’s recommended that you try not to rely on style overrides across multiple classes.
 - If you’re not using themed styles, the runtime is not required.
   - The treat runtime is extremely lightweight, only needing to perform a simple lookup to figure out which pre-generated CSS class belongs to which theme
+
+## treat-repos
+
+- https://github.com/seek-oss/braid-design-system
+  - Themeable design system for the SEEK Group
+- https://github.com/autoguru-au/overdrive
+  - Overdrive is a product component library, and design system for AutoGuru. 
+  - Built with React, TypeScript, Treat, Playroom and Storybook.

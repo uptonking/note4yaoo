@@ -52,22 +52,24 @@ modified: '2020-09-10T05:48:07.754Z'
   - router: react-router, hookrouter
   - state: redux, mobx, unstated-next, recoil, use-immer, dva
   - components: antd, sunflower
-  - request: swr, react-query
   - hooks封装: react-use, ahooks, huse, react-adaptive-hooks
   - css-in-js: emotion, useTheme
   - i18n: react-intl, react-i18next
   - animation: react-spring
+  - request: swr, react-query
 
 ## 前端框架通用问题
 
 - 解决方案的选择
-  - 不要浪费过多时间选择，简单采取面向star的编程，方便搜索文档和开发问题
+  - 技术选型时，参考知名项目或大公司项目的选择
+    - 不要浪费过多时间选择，可先采取面向star的编程，方便搜索文档和开发问题
   - 集中时间和精力解决具体一类问题
 - locale: 多语言日期/国际化
   - 解决方案大多与框架相关，如react-intl，要考虑兼容性
-- theme: 多主题样式
+- theme: 动态主题
   - 解决方案大多与框架相关，如styled-components，也可以基于css变量
   - 实现theme的方法: css变量、带theme名称的子选择器、react-context consumer
+  - 可提供几套预定义的精美主题，手动选择任意颜色做主题不推荐，易于某些组件冲突、对比度降低
 - css样式及布局
   - 趋势：静态提取、主题切换、无重复原子类、带约束的属性
   - 必备：局部样式、动态样式、主题切换
@@ -75,6 +77,7 @@ modified: '2020-09-10T05:48:07.754Z'
   - css-modules:with css preprocessor
   - layout:flexbox
   - 实现动态样式的方法：css变量层叠、inline、data-属性
+  - 大公司开始选择css in js的方法了，但css in js易与框架耦合，不方便切换框架
 - icon
   - font-icon:fork-awesome
   - svg-icon:feather is a collection of SVG files

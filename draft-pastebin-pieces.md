@@ -10,6 +10,9 @@ modified: '2020-07-30T13:52:49.242Z'
 
  
 
+- 不要花费过多时间搜索Google镜像，因为镜像网站三天两头被和谐，不如花钱买梯子
+- project-naming: 大观园, park
+
 ------  
 
 - TODO: components、datable、charts、builder
