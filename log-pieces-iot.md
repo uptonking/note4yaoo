@@ -7,6 +7,12 @@ modified: '2020-09-18T09:32:05.147Z'
 
 # log-pieces-iot
 
+## ubuntu
+
+- [tracker-store and tracker-miner-fs eating up my CPU on every startup](https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup)
+
+  - 
+
 ## hp-envy-15
 
 - 无法开机

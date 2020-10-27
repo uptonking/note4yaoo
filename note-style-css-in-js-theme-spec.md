@@ -2,18 +2,19 @@
 title: note-style-css-in-js-theme-spec
 tags: [css-in-js, style, web]
 created: '2019-11-30T10:00:18.020Z'
-modified: '2020-10-22T13:36:15.759Z'
+modified: '2020-10-27T05:27:35.596Z'
 ---
 
 # note-style-css-in-js-theme-spec
 
 ## faq
 
-- 为什么用css-in-js
+- ### 为什么用css-in-js
 - pros
   - naming is hard
-  - scoped styles
-  - simple dynamic styling adapting to its props
+  - scoped styles 局部样式
+  - simple dynamic styling adapting to its props 动态样式
+  - easy to create themeable components 切换主题
   - type check and code auto suggestion
   - support all of CSS plus nesting
   - better maintainability
@@ -23,11 +24,12 @@ modified: '2020-10-22T13:36:15.759Z'
     - 大型软件通常更重视可维护性和兼容性，性能通常不是最高
   - js is the future (for its ecosystem)
     - define style helper functions in js rather than sass
-    - 技术选型时，参考知名项目或大公司项目的选择，但结论是大公司都没选css-in-js
 - cons
   - learning curve
   - css-in-js runtime cost in performance and size 
+  - 技术选型时，参考知名项目或大公司项目的选择，但结论是大公司都没选css-in-js
 - ref
+    - css-in-js趋势：静态提取、theming支持、constraint-based props、atomic css-in-js
     - https://jxnblk.com/blog/why-you-should-learn-css-in-js/
     - https://mxstbr.com/thoughts/css-in-js
     - https://spin.atomicobject.com/2018/12/28/css-in-javascript-benefits/
@@ -35,9 +37,11 @@ modified: '2020-10-22T13:36:15.759Z'
 - css-in-js热门项目
   - Microsoft Fluent Design 自己实现了styled方法
   - Uber Base Design用的是styletron-react
+  - SAP Fiori(react-jss)
   - 使用styled-components或emotion的项目
-    - Atlassian Design, Github Primer Design, SAP Fiori(react-jss)
-    - Esri Calcite Design, HP grommet, Zendesk Garden, Kiwi.com Orbit design
+    - Atlassian Design, Github Primer Design
+    - HP grommet, Zendesk Garden
+    - Kiwi.com Orbit design, Esri Calcite Design
 - 为什么用emotion/styled-components
   - styles written inline, but className auto generated and added to dom
 - 为什么用styled-system
@@ -47,11 +51,12 @@ modified: '2020-10-22T13:36:15.759Z'
   - Near-zero runtime, made possible by treat, Theming support, Static style extraction
   - Constraint-based layouts, popularized by Theme UI
   - Utility-first CSS, as implemented by Tailwind CSS
-- 为什么采用styled形式的组件，而不用className，调用该api能够传入props，然后根据props计算新样式属性再添加到组件上，只有高阶组件能做到，普通方法做不到
+- 为什么采用styled形式的组件，而不用className，调用该api能够传入props，然后根据props计算新样式属性再添加到组件上
+  - 只有高阶组件能做到，普通方法做不到
   - styled开发体验好，性能可能不是最好
 - css prop vs scss prop，不用className
   - className不能给组件动态添加样式属性
-      - 因为需要一个styled
+    - 因为需要一个styled
   - 样式写法上，差别不大
   - debug时，emotion的styled比styled-components的组件少一层styled.button
   - css prop的组件有时比styled的少一层Context. Consumer
@@ -63,37 +68,37 @@ modified: '2020-10-22T13:36:15.759Z'
 - css prop可以类似styled，给组件添加样式属性吗
   - @emotion/core的css()方法中可以类似styled-system给组件添加样式属性吗
   - css prop的原理是通过babel插件调用库相关的jsx函数而不是React.createElement来创建组件，这个过程会通过高阶函数给组件添加样式属性
-      - https://www.felixjung.io/posts/the-css-prop-in-emotion-10/
-      - Babel’s React JSX plugin has an option to specify the function it uses to transpile JSX expressions. The plugin defaults to using React.createElement. But by relying on React.createElement, you can only use syntax, such as props, supported by React.createElement. So, if you provide a different function to transpile JSX, you can support a different syntax.
-      - we use the jsx pragma (/** @jsx jsx */) to tell Babel it should use the jsx function imported from @emotion/core to transpile JSX. And that is all you need to do to use the css prop. You do not need Emotion’s Babel plugin.
-      - Importing React in a component is not an actual module import. It merely tells Babel that your JavaScript module contains JSX, which should be transpired using the React JSX plugin (i.e., with React.createElement). Using the jsx pragma allows you to opt into the css prop on a per component basis, by changing the way that component’s file is transpiled by Babel. You only need to specify the pragma, if you use the css prop in your component’s JSX.
-      - The styles will be evaluated and stored in Emotion’s cache under a class name. The class name is passed down to the React element through the className property.
-      - you now have direct access to the theme context created by a ThemeProvider
+    - https://www.felixjung.io/posts/the-css-prop-in-emotion-10/
+    - Babel’s React JSX plugin has an option to specify the function it uses to transpile JSX expressions. The plugin defaults to using React.createElement. But by relying on React.createElement, you can only use syntax, such as props, supported by React.createElement. So, if you provide a different function to transpile JSX, you can support a different syntax.
+    - we use the jsx pragma (/** @jsx jsx */) to tell Babel it should use the jsx function imported from @emotion/core to transpile JSX. And that is all you need to do to use the css prop. You do not need Emotion’s Babel plugin.
+    - Importing React in a component is not an actual module import. It merely tells Babel that your JavaScript module contains JSX, which should be transpired using the React JSX plugin (i.e., with React.createElement). Using the jsx pragma allows you to opt into the css prop on a per component basis, by changing the way that component’s file is transpiled by Babel. You only need to specify the pragma, if you use the css prop in your component’s JSX.
+    - The styles will be evaluated and stored in Emotion’s cache under a class name. The class name is passed down to the React element through the className property.
+    - you now have direct access to the theme context created by a ThemeProvider
   - css prop和styled最终生成组件的结构非常相似
-- style object vs template literals(TTLs) 表示样式，使用模板字符串，还是对象
+- ### style object vs template literals(TTLs) 书写样式，使用模板字符串，还是对象
   - style object
-      - 当需要动态变化的样式属性有很多时，使用对象cleaner
-      - 样式对象更方便计算及复用，如spread operator和destructuring
-      - 对象更容易进行类行检查，字符串css可能后面难以检查
+    - 当需要动态变化的样式属性有很多时，使用对象cleaner
+    - 样式对象更方便计算及复用，如spread operator和destructuring
+    - 对象更容易进行类行检查，字符串css可能后面难以检查
   - TTLs
-      - 更接近熟悉的css
-      - ide的提示更容易实现
-      - 动态变化的属性较少时，插值函数少，cleaner
-      - 可以直接在末尾添加重复行，方便调试
+    - 更接近熟悉的css
+    - ide的提示更容易实现
+    - 动态变化的属性较少时，插值函数少，cleaner
+    - 可以直接在末尾添加重复行，方便调试
   - conclusion  
-      - The more interpolations you use, the more object notation tends to win over template strings in terms of readability.
+    - The more interpolations you use, the more object notation tends to win over template strings in terms of readability.
   - The interoperable `theme` object itself is an object, and keeping styles in a similar format helps reduce the API surface area. 
   - Using and parsing strings that represent embedded DSLs introduces overhead when mapping over key-value pairs.
-      - Theme UI avoids this overhead for reasons related to performance, testing, and overall bundle size. 
-      - For some of the same reasons that React itself uses JSX (i.e. function calls) instead of tagged template literals
+    - Theme UI avoids this overhead for reasons related to performance, testing, and overall bundle size. 
+    - For some of the same reasons that React itself uses JSX (i.e. function calls) instead of tagged template literals
   - ref
-      - https://theme-ui.com/motivation/ 
-      - 要考虑熟练度、提示需求(对象比str适合)、复用现有样式等
-      - 还可以使用分散写的单独的属性，类似 `<Box color="primary" size="lg" />`
-      - https://levelup.gitconnected.com/react-css-in-js-es6-objects-vs-tagged-template-literals-71670e78995f
-      - https://medium.com/@oleg008/template-strings-vs-objects-in-cssinjs-4028ecc420b2
-      - https://spectrum.chat/styled-components/general/style-object-vs-template-literalls~789509f2-7460-4b4c-84bc-b169c2230132
-      - https://www.christopherbiscardi.com/post/composition-of-styles-strings-vs-objects/
+    - https://theme-ui.com/motivation/ 
+    - 要考虑熟练度、提示需求(对象比str适合)、复用现有样式等
+    - 还可以使用分散写的单独的属性，类似 `<Box color="primary" size="lg" />`
+    - https://levelup.gitconnected.com/react-css-in-js-es6-objects-vs-tagged-template-literals-71670e78995f
+    - https://medium.com/@oleg008/template-strings-vs-objects-in-cssinjs-4028ecc420b2
+    - https://spectrum.chat/styled-components/general/style-object-vs-template-literalls~789509f2-7460-4b4c-84bc-b169c2230132
+    - https://www.christopherbiscardi.com/post/composition-of-styles-strings-vs-objects/
 - pros for style object
   - css within component 
   - better type checking
@@ -136,19 +141,6 @@ modified: '2020-10-22T13:36:15.759Z'
 
 ## pieces
 
-- zero-runtime-css-in-js
-  - https://github.com/callstack/linaria
-      - /MIT/5500Star/202006/ts
-  - https://github.com/4Catalyzer/astroturf
-      - MIT/1700Star/202006
-  - https://github.com/lttb/reshadow
-      - MIT/296Star/202006
-  - https://github.com/CraigCav/css-zero
-      - MIT/141Star/202006
-      - 参考facebook的stylex
-      - https://www.youtube.com/watch?v=9JZHodNR184
-- stylex
-  - https://github.com/johanholmerin/style9
 - https://calendar.perfplanet.com/2019/the-unseen-performance-costs-of-css-in-js-in-react-apps/
   - Don’t over-compose styled components
   - Prefer “static” components

@@ -67,10 +67,14 @@ modified: '2020-09-10T05:48:07.754Z'
   - 解决方案大多与框架相关，如react-intl，要考虑兼容性
 - theme: 多主题样式
   - 解决方案大多与框架相关，如styled-components，也可以基于css变量
+  - 实现theme的方法: css变量、带theme名称的子选择器、react-context consumer
 - css样式及布局
-  - css-in-js: styled-coponents, emotion
+  - 趋势：静态提取、主题切换、无重复原子类、带约束的属性
+  - 必备：局部样式、动态样式、主题切换
+  - css-in-js: styled-components, emotion
   - css-modules:with css preprocessor
   - layout:flexbox
+  - 实现动态样式的方法：css变量层叠、inline、data-属性
 - icon
   - font-icon:fork-awesome
   - svg-icon:feather is a collection of SVG files

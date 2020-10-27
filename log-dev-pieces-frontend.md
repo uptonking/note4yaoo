@@ -12,6 +12,12 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- js中对象的创建 `var thing=Object(stuff);`
+  - The Object constructor returns its argument when the argument is already an object. 
+  - If it's not an object, it returns the "objectified" version of the argument: a String instance if it's a string, a Number instance if it's a number, etc.
+  - if `stuff` is object , `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
+  - [Object Construct with object parameter](https://stackoverflow.com/questions/47483438/javascript-object-construct-with-object-parameter)
+
 - Browsers won't render elements with the `hidden` attribute set.
   - The `hidden` global attribute is a Boolean attribute indicating that the element is not yet, or is no longer, relevant. 
 - `void expression`

@@ -71,6 +71,8 @@ modified: '2020-07-17T10:50:09.843Z'
     - 244, 194, 13
 - handsontable-blue
   - #039be5
+- linaria-red 洋红
+  - #f15f79
 
 ## [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
 

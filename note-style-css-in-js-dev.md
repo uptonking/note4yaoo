@@ -88,13 +88,6 @@ modified: '2020-09-25T05:56:45.321Z'
     - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
     - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 
-## solution-catalog-css-in-js
-
-- treat /MIT/960Star/202007
-  - https://github.com/seek-oss/treat
-  - https://seek-oss.github.io/treat/
-  - Themeable, statically extracted CSS‑in‑JS with near‑zero runtime.
-
 ## ref
 
 - [The Next Era of CSS in JavaScript - From CSS-in-JS to TSS_202008](https://joebell.co.uk/blog/the-next-era-of-css-in-js)

@@ -2,7 +2,7 @@
 title: note-style-styled-system
 tags: [css-in-js, style]
 created: '2019-12-17T03:13:59.953Z'
-modified: '2020-10-06T16:44:19.675Z'
+modified: '2020-10-27T05:45:35.929Z'
 ---
 
 # note-style-styled-system
@@ -132,8 +132,8 @@ modified: '2020-10-06T16:44:19.675Z'
   }
 ```
 
-  - 要改成 `content: JSON.stringify("")` 或 `content: ` ""` 或 '""'
-- Styling: Object Styles vs String Styles
+  - 要改成 `content: JSON.stringify("")` 或  content: `""` 或 '""'
+- Styling: Object Styles vs Strng Styles
   - 涉及到pseudo-class/elements或选择器时，字符串形式更方便，也更易读
   - JS objects are based on types within the language itself, making transformations easier and avoids having to parse CSS syntax – it's similar to how JSX represents function calls vs using template literals and parsing HTML out with other approaches
   - https://spectrum.chat/styled-system/general/styling-object-styles-string-styles~b58a5b23-6981-4944-87ed-48d8d27601f8

@@ -55,12 +55,11 @@ modified: '2020-09-25T05:56:32.022Z'
 - css-zero /179Star/MIT/201912
   - https://github.com/CraigCav/css-zero
   - All of the benefits of writing CSS-in-JS, but with zero runtime code
+  - Works without JavaScript, as styles are extracted at build-time.
+  - 参考facebook的stylex
 
 ## atomic css in js
 
-- stitches /1.3kStar/MIT/202009
-  - https://github.com/modulz/stitches
-  - Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience.
 - compiled /797Star/Apache2/202009
   - https://github.com/atlassian-labs/compiled
   - Build time atomic CSS in JS without the runtime cost.
@@ -70,6 +69,9 @@ modified: '2020-09-25T05:56:32.022Z'
   - Negligible runtime footprint, Works without a framework
   - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
   - https://sebastienlorber.com/atomic-css-in-js
+- stitches /1.3kStar/MIT/202009
+  - https://github.com/modulz/stitches
+  - Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience.
 - style-sheet /220Star/MIT/202008
   - https://github.com/giuseppeg/style-sheet
   - compiling rules to atomic CSS that can then be extracted to .css file with a Babel plugin.
@@ -86,3 +88,5 @@ modified: '2020-09-25T05:56:32.022Z'
 - https://github.com/segmentio/ui-box
   - ui-box is a low level CSS-in-JS solution that focuses on being simple, fast and extensible. 
   - All CSS properties are set using simple React props, which allows you to easily create reusable components that can be enhanced with additional CSS properties. 
+- https://github.com/lttb/reshadow
+  - MIT/296Star/202006
