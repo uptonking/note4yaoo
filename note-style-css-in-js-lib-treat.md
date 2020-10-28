@@ -9,7 +9,24 @@ modified: '2020-10-27T06:49:02.544Z'
 
 ## faq
 
-- 当有多个theme时，如何提高首屏加载速度，如先加载默认theme，渲染后再下载其他theme的css
+- 当有多个theme时，如何提高首屏加载速度，如先加载默认theme，再下载其他theme的css
+  - [使用dynamic import进行split your themes into separate CSS files.](https://seek-oss.github.io/treat/setup#bundle-splitting)
+  - This is achieved by dynamic importing your treat files that call createTheme.
+  - You can then dynamically load the desired theme and use it to resolve styles.
+
+``` JS
+import { resolveStyles } from 'treat';
+import styleRefs from './styles.treat';
+
+// Inject the theme name somehow:
+const themeName = getThemeName();
+
+import( `../themes/${themeName}.treat` ).then(theme => {
+  const styles = resolveStyles(theme.default, styleRefs);
+  // You now have access to themed styles!
+});
+```
+
 - treat doesn't do any class optimization as it could introduce specificity issues
 
 ## guide
@@ -22,6 +39,7 @@ modified: '2020-10-27T06:49:02.544Z'
 - treat缺点或局限
   - 样式书写只支持style object的形式，不支持css字符串TTLs
   - 样式文件要写在单独的文件，如Button.treat.js，较繁琐
+  - 未实现基于styleMap API的atomic CSS patterns，只提供了简单示例
   - [Webpack 5` support not yet](https://github.com/seek-oss/treat/issues/139)
 - theming
   - Themes must be statically known at build time. 
@@ -106,5 +124,3 @@ modified: '2020-10-27T06:49:02.544Z'
 - https://github.com/autoguru-au/overdrive
   - Overdrive is a product component library, and design system for AutoGuru. 
   - Built with React, TypeScript, Treat, Playroom and Storybook.
-
-
