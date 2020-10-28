@@ -36,17 +36,10 @@ modified: '2020-09-25T05:56:32.022Z'
   - lets you write CSS in your JavaScript files without adding any runtime layer
 - glaze /375Star/MIT/202006
   - https://github.com/kripod/glaze
-  - the theme-ui API with almost zero runtime 
   - This project was born to combine the best of its predecessors into a single solution
-  - Near-zero runtime, made possible by treat
-    - Theming support with legacy browsers in mind
-    - Static style extraction while retaining type safety
-  - Utility-first CSS, as implemented by Tailwind CSS
-    - Fully static, but customizable upfront
-    - Embraces reusability with no duplicated rules
+  - Near-zero runtime, made possible by treat: Theming support, Static style extraction
+  - Utility-first CSS, as implemented by Tailwind CSS: no duplicated rules
   - Constraint-based layouts, popularized by Theme UI
-    - Highly dynamic, thankfully to Emotion
-    - One-off styles can be defined naturally
   - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
   - [Production ready? no. 主程已转向研发otion](https://github.com/kripod/glaze/issues/37)
 - https://github.com/WalltoWall/calico
@@ -56,7 +49,7 @@ modified: '2020-09-25T05:56:32.022Z'
     - Static style extraction with full type safety.
     - Dynamic styles via swapping classNames.
   - Atomic CSS as inspired by libraries like Tailwind CSS
-    - Encourages reusabilty with a finite set of generated classNames.
+    - Encourages reusability with a finite set of generated classNames.
   - Developer-centric as inspired by styled-system and theme-ui.
     - Define responsive styles via arrays.
     - Namespaced styles to ease type-extensibility.

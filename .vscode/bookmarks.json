@@ -10,16 +10,6 @@
 		]
 	},
 	{
-		"path": "$ROOTPATH$/draft-pastebin-pieces.md",
-		"bookmarks": [
-			{
-				"line": 13,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
 		"path": "$ROOTPATH$/log-dev-error.md",
 		"bookmarks": [
 			{
@@ -33,7 +23,7 @@
 		"path": "$ROOTPATH$/log-dev-pieces-frontend.md",
 		"bookmarks": [
 			{
-				"line": 51,
+				"line": 11,
 				"column": 0,
 				"label": ""
 			}

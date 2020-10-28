@@ -18,9 +18,9 @@ modified: '2020-10-27T06:50:32.735Z'
   - styled本身是一个代表高阶组件的方法，会导致每个styled组件都会多一层额外计算
     - styled的css字符串TTLs就算不使用props中的theme或其他变量属性，也会有这层额外计算
     - 若要实现theme切换，需要自己再加一层高阶组件来传入props.theme或context.value.theme，会增加额外计算
-  - 支持css字符串样式，但不直接支持object style syntax
+  - 样式书写只支持css字符串样式，不直接支持object style syntax
     - It might be tricky to introduce this syntax to linaria since we are strongly basing on TaggedTemplateExpressions
-    - 代码实现紧密依赖css字符串字面量的处理逻辑
+    - 代码实现紧密依赖css字符串字面量的处理逻辑，实现style object难度较大
 
 ## docs
 

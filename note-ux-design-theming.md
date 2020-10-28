@@ -7,13 +7,18 @@ modified: '2020-10-27T15:10:47.179Z'
 
 # note-ux-design-theming
 
+## faq
+
+- 切换主题的方案比较
+  - 使用sass预编译多套主题然后动态加载 vs 使用treat预编译并加载多套主题然后动态切换类名
+  - 加载和重渲染 vs 切换类名和重渲染, 哪个对性能影响更大
+
 ## guide
 
 ## pieces
 
 - 用js动态生成style节点。document.createElement('style')
 - 一般不都是在最外层加上主题类名，里面的颜色都用颜色变量么
-
 
 - 实现页面皮肤切换，常见的方案有几种：替换css链接、替换className、改变css原生变量值、使用 less.modifyVars、props参数下发等
 

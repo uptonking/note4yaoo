@@ -185,13 +185,19 @@ modified: '2020-09-10T04:41:13.304Z'
   - https://github.com/notable/notable
   - https://raw.githubusercontent.com/notable/notable/master/resources/comparison/table.png
   - license
-      - `<= v1.3.0` : MIT 
-      - `<= v1.5.1` : AGPLv3
-      - `>= v1.6.0` : Not open-source, trying to make it sustainable
+    - `<= v1.3.0` : MIT 
+    - `<= v1.5.1` : AGPLv3
+    - `>= v1.6.0` : Not open-source, trying to make it sustainable
 - Reactide /MIT/95kStar/201908
   - https://github.com/reactide/reactide
   - https://reactide.io/
   - The first dedicated IDE for React web application development
+- Simple/Partial GitHub Issues Clone
+  - https://github.com/denniscual/simple-mock-github
+  - 缺点：正在fetch新数据时可以和变灰状态的ui组件交互
+  - This client-side app demonstrates the features of the experimental React in the context of the real app with the help of Experimental React Router v6 and React Query with Suspense enabled.
+  - Implementing the render-as-you-fetch pattern. During route transitions the app is configured to load the code and data for new routes in parallel. 
+  - Using Concurrent Mode and Suspense to improve the loading sequence, including useTransition() for route transitions in order to continue showing the previous route for a brief period while the next route is prepared/rendered.
 
 ## popular-tools
 

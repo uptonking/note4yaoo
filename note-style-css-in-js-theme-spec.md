@@ -91,6 +91,8 @@ modified: '2020-10-27T05:27:35.596Z'
   - Using and parsing strings that represent embedded DSLs introduces overhead when mapping over key-value pairs.
     - Theme UI avoids this overhead for reasons related to performance, testing, and overall bundle size. 
     - For some of the same reasons that React itself uses JSX (i.e. function calls) instead of tagged template literals
+  - In Stitches, you write CSS using the object style syntax. 
+    - The reasons for this are: performance, bundle size and developer experience (type checks and autocomplete suggestions for both properties and values)
   - ref
     - https://theme-ui.com/motivation/ 
     - 要考虑熟练度、提示需求(对象比str适合)、复用现有样式等

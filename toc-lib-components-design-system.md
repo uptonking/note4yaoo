@@ -73,9 +73,11 @@ modified: '2020-10-22T10:14:24.424Z'
   - /743Star/MIT/202010/ts/css-in-js
   - https://github.com/seek-oss/braid-design-system
   - https://seek-oss.github.io/braid-design-system
-  - https://seek-oss.github.io/seek-style-guide/
   - Themeable design system for the SEEK Group
   - 基于treat这个css-in-js解决方案实现
+  - ref
+    - https://github.com/seek-oss/seek-style-guide
+      - This project has been deprecated in favour of Braid Design System.
 - GEL(Global Experience Language) /BBC
   - /195Star/Apache2/202010/js
   - https://github.com/bbc/psammead

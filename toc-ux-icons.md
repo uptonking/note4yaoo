@@ -36,6 +36,10 @@ modified: '2020-07-17T10:52:17.250Z'
   - https://github.com/ionic-team/ionicons
   - https://ionicons.com/
   -  icon font for Ionic Framework and web apps everywhere
+- https://github.com/twitter/twemoji
+  - https://twemoji.twitter.com/
+  - /11.8kStar/CC-BY 4.0/202010
+  - The Twemoji library offers support for 3304 emojis.
 
 ## font icons
 

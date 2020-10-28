@@ -29,6 +29,7 @@ modified: '2020-08-08T11:39:55.792Z'
 
 ## comparison
 
+- [Stitches Benchmarks](https://github.com/modulz/stitches-benchmark)
 - [styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
   - /20191025
   - emotion is ready for React Concurrent mode and it has a smaller bundle size

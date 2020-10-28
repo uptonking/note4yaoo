@@ -36,6 +36,17 @@ modified: '2020-09-25T05:56:45.321Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 
+- Right now our design system is a monolith with a global CSS file and a bunch of React components. 
+  - While it is versioned, there’s not a safe way for a project to use multiple versions of the system (think micro-frontends).
+  - Thinking again about how to break up into smaller packages that can truly be independent. 
+  - Splitting React code out isn’t too complicated. 
+  - What is complicated us how to handle the styling.
+  - CSS Modules was surprisingly easy, once I got the tooling working. That was the hardest part.
+  - Emotion was really not hard either. Took a bit of back and forth on using emotion/core vs emotion. 
+    - Ended up with standard emotion because it takes less setup (didn't need babel junk) and was still able to use `cx` which is their fancy `classnames` package.
+    - What sucked with Emotion was I was never able to figure out how set up a complex amount of variations for my button example. Multiple color, fill, and size options and all of them have unique CSS. 
+  - Stitches was great to install. Almost zero config changes. The built-in theming and variables are super nice. I came up with an interesting way of composing the component that I was starting to like.
+
 - [survey: styled-components vs SASS vs CSS, which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
   - s-c:sass:css = 2:1:5
   - 仅8人投票
