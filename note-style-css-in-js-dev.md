@@ -15,6 +15,8 @@ modified: '2020-09-25T05:56:45.321Z'
   - 标准化theme的趋势
   - 局部样式、动态样式、主题切换
   - 技术选型时，参考知名项目或大公司项目的选择
+  - 灵活性：书写的样式可编译成极短的唯一名，也可以编译成开发调试时的长样式名
+
 
 - I feel like we’re moving out of the CSS-in-JS era into something new. We’re moving more towards:
   - Static extraction
@@ -24,6 +26,7 @@ modified: '2020-09-25T05:56:45.321Z'
 - Something we could perhaps call “TSS” (Typed/Token Style Sheets)
 
 ## pieces 
+
 
 - css-in-js vs sass
   - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!
@@ -35,6 +38,8 @@ modified: '2020-09-25T05:56:45.321Z'
   - Easily use javascript variables within style
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
+
+- [Why Don’t I Sell the Idea of Static Extraction with CSS-in-JS?](https://medium.com/@tkh44/why-dont-i-sell-the-idea-of-static-extraction-with-css-in-js-df21f571503b)
 
 - CSS has a dynamic nature, with one-off rules applicable to only a few pages per site. 
   - I think we should address this need first, and then generate a bundle of common styles upfront. 

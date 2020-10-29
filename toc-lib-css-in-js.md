@@ -19,7 +19,6 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/cssinjs/jss
   - https://cssinjs.org/features
   - A lib for generating Style Sheets with JavaScrip
-  - JSS generates CSS without inline style
   - Is it possible to fully extract CSS and use it with link tag?
     - Yes. The easiest way to do so is to export styles from modules.
 
@@ -28,21 +27,24 @@ modified: '2020-09-25T05:56:32.022Z'
 - linaria /6kStar/MIT/202009
   - https://github.com/callstack/linaria
   - Write CSS in JS, but with zero runtime, CSS is extracted to CSS files during build
+  - 基于css variables实现
 - treat /975Star/MIT/202009
   - https://github.com/seek-oss/treat
   - Themeable, statically extracted CSS‑in‑JS with near‑zero runtime.
+  - 类似sass的预编译，不能在runtime生成新样式
 - astroturf /1.8kStar/MIT/202004
   - https://github.com/4Catalyzer/astroturf
   - lets you write CSS in your JavaScript files without adding any runtime layer
+  - 生成css，需要单独考虑css文件，额外使用autoprefix插件
 - glaze /375Star/MIT/202006
   - https://github.com/kripod/glaze
   - Glaze, the theme-ui API with almost zero runtime based on treat
   - This project was born to combine the best of its predecessors into a single solution
-  - Near-zero runtime, made possible by treat: Theming support, Static style extraction
-  - Utility-first CSS, as implemented by Tailwind CSS: no duplicated rules
-  - Constraint-based layouts, popularized by Theme UI
-  - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
+    - Near-zero runtime, made possible by treat: Theming support, Static style extraction
+    - Utility-first CSS, as implemented by Tailwind CSS: no duplicated rules
+    - Constraint-based layouts, popularized by Theme UI
   - [Production ready? no. 主程已转向研发otion](https://github.com/kripod/glaze/issues/37)
+    - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
 - https://github.com/WalltoWall/calico
   - Calico is a customizable styling library that maps React props to statically generated class names.
   - 缺点是组件必须使用提供的Box组件创建
