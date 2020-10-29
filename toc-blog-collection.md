@@ -23,6 +23,7 @@ modified: '2020-07-12T13:11:41.315Z'
 - [从 JS 引擎到 JS 运行时（下）](https://zhuanlan.zhihu.com/p/104501929)
   - 将 Event Loop 切换到基于libuv实现、支持宏任务与微任务
 - [Leaving Scribe Text Editor](https://www.theguardian.com/info/2019/jan/24/leaving-scribe)
+- [What does % mean in CSS?](https://wattenberger.com/blog/css-percents)
 
 ## backend
 

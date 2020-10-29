@@ -12,10 +12,40 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- If you write "export default () => { ... }" to declare components, they:
+  - will show up as Anonymous in stack traces
+  - will show up as Unknown in DevTools
+  - won't be checked by React-specific lint rules
+  - won't work with some features like Fast Refresh
+  - Give components names!
+
+- What does % mean in CSS?
+
+height
+parent’s height
+width
+parent’s width
+top
+parent’s height
+left
+parent’s width
+margin-top
+parent’s width
+margin-left
+parent’s width
+padding-top
+parent’s width
+padding-left
+parent’s width
+translate-top
+self’s height
+translate-left
+self’s width
+
 - js中对象的创建 `var thing=Object(stuff);`
   - The Object constructor returns its argument when the argument is already an object. 
   - If it's not an object, it returns the "objectified" version of the argument: a String instance if it's a string, a Number instance if it's a number, etc.
-  - if `stuff` is object , `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
+  - if `stuff` is object ,  `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
   - [Object Construct with object parameter](https://stackoverflow.com/questions/47483438/javascript-object-construct-with-object-parameter)
 
 - Browsers won't render elements with the `hidden` attribute set.
@@ -123,7 +153,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` , `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,    `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -179,10 +209,10 @@ let d: object;
   - so ONLY the members defined in that interface are available for `b` . 
   - It's still JavaScript, so everything extends `Object` ; 
 - `c` extends Object, like anything else in TypeScript, but adds no members. 
-  - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping, `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
+  - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` , `string` , `boolean` , `symbol` , `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,    `string` ,    `boolean` ,    `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -412,7 +442,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` , `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,    `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .
@@ -650,6 +680,7 @@ if (process.env.NODE_ENV !== 'production') {
 - typescript typeof
 
 ``` 
+
 let bar = {a: 0};
 let TypeofBar = typeof bar;  // the value "object"
 type TypeofBar = typeof bar; // the type {a: number}

@@ -36,6 +36,13 @@ modified: '2020-09-25T05:56:45.321Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 
+- CSS has a dynamic nature, with one-off rules applicable to only a few pages per site. 
+  - I think we should address this need first, and then generate a bundle of common styles upfront. 
+  - Add the latter as a static `<link>`, based on spacing/color/etc. scales of a design system.
+  - Utility CSS libs like tailwindcss do a marvelous job at defining classes upfront.
+  - However, issues may arise after purging unused class names, especially when generating those dynamically.
+  - I propose dynamic-first styling, replacing css(…) calls with static classes in a 2nd pass
+
 - Right now our design system is a monolith with a global CSS file and a bunch of React components. 
   - While it is versioned, there’s not a safe way for a project to use multiple versions of the system (think micro-frontends).
   - Thinking again about how to break up into smaller packages that can truly be independent. 

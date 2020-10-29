@@ -289,8 +289,7 @@ modified: '2020-10-22T12:52:52.985Z'
   - https://github.com/mapbox/assembly
   - https://labs.mapbox.com/assembly/
   - A CSS framework that makes the hard parts of building anything on the web easy. 
-  - 依赖cp-file、csso(CSS minifier)、postcss
-  - 依赖svgo、svgstore(Combines multiple SVG files into one using symbol elements)
+  - 依赖cp-file、csso(CSS minifier)、postcss、svgo、svgstore(Combines multiple SVG files into one using symbol elements)
 
 - ### Airbnb Design /Airbnb
   - /335Star/MIT/202010/ts
@@ -370,9 +369,14 @@ modified: '2020-10-22T12:52:52.985Z'
   - ref
     - https://github.com/mongodb/design
       - A repository for design resources at MongoDB
-
- 
-
+- Bumbag /Bumbag
+  - /698Star/MIT/202010/ts/css-in-js
+  - https://github.com/bumbag/bumbag-ui
+  - https://bumbag.style/
+  - Build accessible & themeable React applications with your Bumbag
+  - 依赖emotion、emotion-theming、reakit
+  - 组件基于hooks实现
+  - 样式基于className属性，使用的是emotion的css方法而不是styled
 - HPE Design System /Hewlett Packard
   - /Apache2/6.7kStar/202010/js/css-in-js
   - https://github.com/grommet/grommet
@@ -386,6 +390,9 @@ modified: '2020-10-22T12:52:52.985Z'
     - HPE Design System Site
   - [grommet-designer](https://github.com/grommet/grommet-designer)
   - [grommet-theme-designer](https://github.com/grommet/grommet-theme-designer)
+
+ 
+
 - Help Scout Design System(HSDS) /Help Scout
   - /54Star/MIT/202010/js
   - https://github.com/helpscout/hsds-react
@@ -415,3 +422,12 @@ modified: '2020-10-22T12:52:52.985Z'
     - 样式基于classnames
   - https://styleguide.pivotal.io/
   - The system is implemented as a Figma library, React components, and CSS styles 
+- Reach UI /siddharthkp
+  - /336Star/MIT/202009/js
+  - https://github.com/siddharthkp/react-ui
+  - https://react-ui.dev/
+  - Customisable components and primitives based on design tokens. 提供了多套theme object
+  - [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
+  - 依赖emotion-theming、facepaint
+  - 组件基于hooks实现，每个组件都基于Element基础组件实现，类似Box
+  - 样式基于css prop实现，样式都是style object，且样式都存放在单独的`.styles.js`文件

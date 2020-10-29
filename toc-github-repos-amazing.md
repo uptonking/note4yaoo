@@ -32,6 +32,17 @@ modified: '2020-10-22T10:13:13.026Z'
   - http://esri.github.io/wind-js/
   - An demo animation of wind on a Canvas layer in the JSAPI
   - The code for this project uses nothing but an HTML5 Canvas element and pure Javascript.
+
+- UI Playbook /507Star/MIT/202010/ts
+  - https://github.com/raunofreiberg/ui-playbook
+  - https://uiplaybook.dev/
+  - document common UI components, their functionality, best practices, accessibility requirements, and examples.
+
+- https://github.com/sindresorhus/css-in-readme-like-wat
+  - Style your readme using CSS with this simple trick
+  - https://github.com/nearbycoder
+  - https://github.com/timoschwarzer
+
 ## cool
 
 - https://github.com/daybrush/scenejs

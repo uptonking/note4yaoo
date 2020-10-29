@@ -36,6 +36,7 @@ modified: '2020-09-25T05:56:32.022Z'
   - lets you write CSS in your JavaScript files without adding any runtime layer
 - glaze /375Star/MIT/202006
   - https://github.com/kripod/glaze
+  - Glaze, the theme-ui API with almost zero runtime based on treat
   - This project was born to combine the best of its predecessors into a single solution
   - Near-zero runtime, made possible by treat: Theming support, Static style extraction
   - Utility-first CSS, as implemented by Tailwind CSS: no duplicated rules
@@ -68,12 +69,13 @@ modified: '2020-09-25T05:56:32.022Z'
 - compiled /797Star/Apache2/202009
   - https://github.com/atlassian-labs/compiled
   - Build time atomic CSS in JS without the runtime cost.
+  - Compiled, styled and css prop with a tiny runtime
 - otion /437Star/MIT/202009
   - https://github.com/kripod/otion
   - Atomic CSS-in-JS with a featherweight runtime
   - Negligible runtime footprint, Works without a framework
   - The otion project will provide the foundation to build glaze upon. Eventually, it will replace treat for static style management.
-  - https://sebastienlorber.com/atomic-css-in-js
+  - [Atomic CSS-in-JS](https://sebastienlorber.com/atomic-css-in-js)
 - stitches /1.3kStar/MIT/202009
   - https://github.com/modulz/stitches
   - Near-zero runtime, server-side rendering, multi-variant support, and best-in-class developer experience.
@@ -95,3 +97,8 @@ modified: '2020-09-25T05:56:32.022Z'
   - All CSS properties are set using simple React props, which allows you to easily create reusable components that can be enhanced with additional CSS properties. 
 - https://github.com/lttb/reshadow
   - MIT/296Star/202006
+- https://github.com/lukejacksonn/csz
+  - Runtime CSS modules with SASS like preprocessing
+  - A framework agnostic css-in-js solution that uses stylis to parse styles from tagged template literals and append them to the head of the document at runtime. 
+  - Loading in stylesheets dynamically – from .css files – is supported out of the box, 
+  - so you can write your styles in .css files and import them via url without having to worry about flashes of unstyled content.

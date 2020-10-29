@@ -7,6 +7,21 @@ modified: '2020-10-18T14:02:22.054Z'
 
 # note-ux-design-material-examples
 
+## material-components-guide
+
+- material-components-web
+  - 缺点
+    - 样式与dom结构绑定了，这也是大多数组件库采取的方式，可不处理
+  - 大部分组件都由js和css构成，如checkbox、dialog、drawer、list、textfield
+  - 有少部分组件只有css，如button、card、elevation、layout、typography
+  - 有少部分组件只有js，如animation、autoInit
+- material-components-web-react
+  - 每个react组件复用了material-design-web包的MDCCheckboxFoundation、MDCCheckboxAdapter、cssClasses
+  - MDCCheckboxFoundation在componentDidMount中初始化
+  - adapter对象包含各种setState逻辑
+- ref
+  - [rmwc: Foundation Adapter Implementation](https://github.com/jamesmfriedman/rmwc/issues/141)
+
 ## material components for react
 
 - ### material-components-web-react
@@ -87,6 +102,7 @@ return (
     - 内部被Checkbox、Radio、Switch组件使用
     - id通过调用useId计算得到
     - 返回值 `return { id, renderToggle, toggleRootProps };`
+
  
 
 - ### preact-material-components

@@ -10,7 +10,9 @@ modified: '2020-09-26T12:52:33.493Z'
 ## latest-web
 
 - [2020年前端最火的技术是什么](https://www.zhihu.com/question/365588457/answers/updated)
-
+- As browsers are adding support for debugging the CSSOM, there should be no need to resort to slower DOM-based solutions.
+- Right now, bundling JS is required for loading performance, but practically kills caching...
+  - WebBundles will enable us to have both!! 
 ## ui-framework
 
 - 最新的web components和stencil再等等看，思路是framework as compiler

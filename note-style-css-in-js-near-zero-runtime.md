@@ -143,42 +143,17 @@ export const Dynamic = ({ children, color }) => (
   - I would rather support ordinary CSS (e.g. flexbox layout) than custom logic (e.g. a stack with non-standard attributes). 
   - For the latter, components could be defined in libraries like React. 
   - Frameworks like glaze could also build upon otion to bring more customizability out of the box.
+- [Ahead of time style processing with static CSS extraction and a Babel or webpack plugin](https://github.com/kripod/otion/issues/37)
+  - The styling code shown on the previous image can be split into two parts, possibly with a Babel plugin
+  - The static part may be replaced with its corresponding hashed class name string ahead of time.
 
-## [glaze](https://glaze.js.org/docs/introduction/)
-
-- guide
-  - To enable client-side injection of styles, wrap the entry point of your application with `StyleInjectorProvider`
-    - 使用glaze能利用design tokens好处，却无法提取静态css了
-  - https://twitter.com/kripod97/status/1241524939473248256
-  - https://twitter.com/kripod97/status/1266401730297806850
-
-- This project was born to combine the best of its predecessors into a single solution:
-- Near-zero runtime, made possible by treat
-  - Theming support with legacy browsers in mind
-  - Static style extraction while retaining type safety
-- Utility-first CSS, as implemented by Tailwind CSS
-  - Fully static, but customizable upfront
-  - Embraces reusability with no duplicated rules
-- Constraint-based layouts, popularized by Theme UI
-  - Highly dynamic, thankfully to Emotion
-  - One-off styles can be defined naturally
-
-- An element's appearance can be customized through objects. 
-  - Similarly to `style` attributes in React, properties are camelCased. 
-  - Aliases and shorthands may also be used (and even defined)
-
-- Firstly, define a theme, preferably by overriding the default tokens
-- Keeping the runtime as small as possible, 
-  - only a few tokens (breakpoints, shorthands and aliases) are embedded into production JS bundles. 
-  - Other values can only be accessed exclusively for styling, as shown in usage.
-- Apply the theme through `<ThemeProvider>` , by wrapping the component tree
-- A single-purpose CSS class needs to be generated for each design token at build time. 
-- Afterwards, selector-based CSS rules may be created with globalStyle() in *.treat.{js|ts} files.  
-  - They have to be applied as a side effect, e.g. from a top-level layout component
-
-### How it works
-
-- At first, `sx` tries mapping themed values to statically generated CSS class names. 
-  - Unresolved rules are injected at runtime and detached when no components reference them anymore.
-- Transform each alias to its corresponding CSS property name or custom shorthand.
-- Resolve values from a scale if available.
+- The CSS-in-JS lib I’m working on will only allow object styles, embracing type safety and simplifying atomic decomposition.
+  - **Static extraction has a lot of caveats and inconveniences, so I prefer a featherweight runtime solution with near-zero overhead instead.**
+- I think the `css({…})` API provided by Emotion and Styled Components are by far the most convenient way to do styling in JS. 
+  - I’m proposing that API with atomic constraints (e.g. no descendant selectors) and deterministic class names as output.
+- While this may seem to be ridiculous at the first glance, here's how I'm managing rule specificities with runtime-instantiated atomic CSS classes. 
+  - Even though `:hover` is declared after `:focus`, the former takes precedence as recommended by @tailwindcss
+  - A pre-defined pseudoselector order is required so that subsequent rule injections cannot void the effects of each other.
+  - In my library I use this ordered stylesheet that Nicolas Gallagher came up with. Your idea of bumping the specificity by repeating selectors is not bad. Do you know if it can have an impact on perf (matching)?
+  - It surely has an impact, as no sorting (taking n * log n steps on average) is necessary. My rule insertion algorithm runs in constant time and now uses an even more compact lookup table, about which I'm about to tweet.
+  - However, I would recommend this approach only when using atomic CSS with a constrained list of selectors (e.g. simple pseudos only). Anything more complicated is pretty hard to execute properly, especially when allowing custom combinations of selectors.

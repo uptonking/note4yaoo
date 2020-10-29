@@ -18,6 +18,7 @@ modified: '2020-07-18T06:07:02.461Z'
     - A modern alternative to CSS resets
     - It makes browsers render all elements more consistently and in line with modern standards. 
     - It precisely targets only the styles that need normalizing
+    - [modern-normalize includes only normalizations for the latest Chrome, Firefox, and Safari](https://github.com/sindresorhus/modern-normalize)
   - minireset.css /MIT/2kStar/201910
     - https://github.com/jgthms/minireset.css
     - https://jgthms.com/minireset.css/

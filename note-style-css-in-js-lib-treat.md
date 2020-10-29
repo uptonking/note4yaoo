@@ -21,13 +21,14 @@ import styleRefs from './styles.treat';
 // Inject the theme name somehow:
 const themeName = getThemeName();
 
-import( `../themes/${themeName}.treat` ).then(theme => {
+import(`../themes/${themeName}.treat`).then(theme => {
   const styles = resolveStyles(theme.default, styleRefs);
   // You now have access to themed styles!
 });
 ```
 
 - treat doesn't do any class optimization as it could introduce specificity issues
+- 作为类sass预处理器的js版，应该提供编译出多套css的功能
 
 ## guide
 
@@ -36,11 +37,13 @@ import( `../themes/${themeName}.treat` ).then(theme => {
     - 目的是在runtime根据当前theme对象选择对应的class名称
     - the treat runtime caches the resolved styles object in memory
 
+- treat优点
+  - 作为类css预处理器极其灵活，一个style object样式对象既可以编译为一个类名，也可以编译为atomic形式的多个类名
 - treat缺点或局限
   - 样式书写只支持style object的形式，不支持css字符串TTLs
   - 样式文件要写在单独的文件，如Button.treat.js，较繁琐
   - 未实现基于styleMap API的atomic CSS patterns，只提供了简单示例
-  - [Webpack 5` support not yet](https://github.com/seek-oss/treat/issues/139)
+  - [Webpack 5 support not yet](https://github.com/seek-oss/treat/issues/139)
 - theming
   - Themes must be statically known at build time. 
     - This is because all CSS is is created at build time. 
@@ -50,9 +53,6 @@ import( `../themes/${themeName}.treat` ).then(theme => {
   - 无法实现手动选择任意颜色，实时切换主题
     - 选择任意颜色的需求并不频繁，易与其他组件原有设计冲突，如冷暖色背景、对比度
     - 主流设计系统都是提供多套预定义的主题供选择切换
-
-- glaze
-- otion
 
 ## docs
 
@@ -116,6 +116,8 @@ import( `../themes/${themeName}.treat` ).then(theme => {
   - In this case, the styles object is a deep clone of the styleRefs object, with all themed classes resolved relative to greenTheme
   - Because module exports are static, the treat runtime caches the resolved styles object in memory, which means that this cloning and class resolution process only happens once per treat file and theme, for the lifetime of your application.
   - It’s important to note that this resolved styles object has the same type signature as the original styleRefs object, which means that themed styles remain type safe.
+
+## pieces
 
 ## treat-repos
 

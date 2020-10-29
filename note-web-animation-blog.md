@@ -280,3 +280,7 @@ modified: '2020-08-04T04:47:53.115Z'
   - Overall, I think I will be using JS style animations for basic animations, and React Motion for anything crazy on the web. 
   - And for React Native, I will be sticking to Animated. 
   - Once Animated is more mature, I will also probably switch to it as well on the web, though I am starting to enjoy using React Motion!
+
+## ref
+
+- [A method for animating browser layouts at 60fps](https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps)

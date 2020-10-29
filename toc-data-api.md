@@ -15,4 +15,6 @@ modified: '2020-07-14T11:01:39.363Z'
   - It enables developers to access HN data programmatically using a REST API. 
   - This documentation describes how to request data from the API and how to interpret the response.
 
-
+- https://github.com/mdn/data
+  - There's a top-level directory for each broad area covered: for example, "api", "css", "svg". 
+  - Inside each of these directories is one or more JSON files containing the data.

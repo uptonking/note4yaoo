@@ -69,6 +69,15 @@ modified: '2020-07-14T10:28:11.443Z'
 
 ## pieces
 
+- dev cycle
+
+  1) Create an open source library that is 3 KB
+  2) Library slowly becomes popular
+  3) Progressively fix bugs and edge cases
+  4) Library is now 100 KB
+  5) People don't realize why so they make a new library
+  6) goto 2
+
 - [build a plugin system with type safety in typescript ](https://twitter.com/tannerlinsley/status/1316410328763166721)
   - In JS, you can whip together a plugin system that is very powerful and testable, but in TS?
   - So complex and feels impossible.

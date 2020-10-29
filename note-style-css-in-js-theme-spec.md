@@ -79,7 +79,8 @@ modified: '2020-10-27T05:27:35.596Z'
   - style object
     - 当需要动态变化的样式属性有很多时，使用对象cleaner
     - 样式对象更方便计算及复用，如spread operator和destructuring
-    - 对象更容易进行类行检查，字符串css可能后面难以检查
+    - 对象更容易进行类行检查，字符串css可能后面赋值错误
+    - 更容易调试，通过ide跳转到定义，而不是手动搜索字符串
   - TTLs
     - 更接近熟悉的css
     - ide的提示更容易实现

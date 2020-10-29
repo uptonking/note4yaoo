@@ -40,6 +40,12 @@ modified: '2020-07-17T10:52:17.250Z'
   - https://twemoji.twitter.com/
   - /11.8kStar/CC-BY 4.0/202010
   - The Twemoji library offers support for 3304 emojis.
+- https://github.com/CoreyGinnivan/system-uicons
+  - https://systemuicons.com/
+  - /384Star/Unlicense/202008
+  - System UIcons is a collection of icons designed for products and systems in mind. 
+  - Each icon is on a 21x21 grid.
+  - Use the icons how you want, for free, and without any attribution.
 
 ## font icons
 
