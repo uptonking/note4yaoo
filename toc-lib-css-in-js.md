@@ -22,7 +22,7 @@ modified: '2020-09-25T05:56:32.022Z'
   - Is it possible to fully extract CSS and use it with link tag?
     - Yes. The easiest way to do so is to export styles from modules.
 
-## zero-runtime css in js
+## near-zero-runtime css in js
 
 - linaria /6kStar/MIT/202009
   - https://github.com/callstack/linaria
@@ -57,13 +57,13 @@ modified: '2020-09-25T05:56:32.022Z'
     - Define responsive styles via arrays.
     - Namespaced styles to ease type-extensibility.
     - One-off styles can be defined in .treat files with additional responsive helpers added onto your theme.
-- trousers /284Star/MIT/202007
-  - https://github.com/danieldelcore/trousers
-  - hooks-first CSS-in-JS library, focused on semantics and runtime performance
 - css-zero /179Star/MIT/201912
   - https://github.com/CraigCav/css-zero
   - All of the benefits of writing CSS-in-JS, but with zero runtime code
   - Works without JavaScript, as styles are extracted at build-time.
+  - Generates optimized, atomic CSS with no duplicated style rules
+  - Theme support via CSS variables, allowing the cost of theming to be proportional to the size of the color palette
+  - This repo was heavily inspired by linaria. The biggest behavioral difference is that linaria doesn't generate atomic CSS.
   - 参考facebook的stylex
 
 ## atomic css in js
@@ -88,9 +88,13 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/johanholmerin/style9
   - CSS-in-JS compiler inspired by Facebook's stylex
   - Compiles to atomic CSS
+  - issues未开
 
 ## more-css-in-js
 
+- trousers /284Star/MIT/202007
+  - https://github.com/danieldelcore/trousers
+  - hooks-first CSS-in-JS library, focused on semantics and runtime performance
 - aesthetic-suite-framework /163Star/MIT/202009
   - https://github.com/aesthetic-suite/framework
   - multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet specification (SSS), a low-runtime solution

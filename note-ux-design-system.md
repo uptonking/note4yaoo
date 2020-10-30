@@ -78,3 +78,16 @@ modified: '2020-10-03T15:33:01.333Z'
 - [Atomic Design: Blowing Up What You Thought You Knew About Web Design](https://www.elegantthemes.com/blog/design/atomic-design)
   - interfaces are made up of components that can be categorized into building blocks
   - Atoms, Molecules, Organisms, Templates, Pages
+
+## pieces
+- In our design system, we have 2 different space scales:
+  - https://twitter.com/markdalgleish/status/1280029511807983617
+  - Between UI elements (e.g. within a` <Stack>`)
+  - Between wrapping lines of text (implicit in the relationship between font size and line height)
+- I've found the best way to handle it is to set both based on the same baseline value. So like, 4dp, 5dp or 8dp.
+  - The scales can have different values, but it works if they're all based off the same baseline value.
+  - Or polyfill line-height-step (and send me the link if you do!)
+  - my hunch is that you should have a single space scale that's derived from your typographical scale. The space between lines and the space between UI elements both come from a single design decision.
+  - What I'm aiming for is a component system that follows the baseline grid for you automatically, and we're having a lot of success with it.
+  - Material UI uses a gutterBottom prop to add same space below an typography element element.  Don't know if that would be better than adding Stack between multiple texts
+

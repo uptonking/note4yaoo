@@ -33,4 +33,18 @@ modified: '2020-10-29T17:37:53.948Z'
   - During the build process, import those modules and use JSS to convert the styles to CSS. 
   - After that, you can save CSS to a file and bundle it up.
 
+- To optimize time to first paint, you can use server-side rendering and extract critical CSS. 
+  - You can couple the rendering of CSS with the rendering of HTML so that no unused CSS gets generated. 
+  - It will result in a minimal critical CSS extracted during server-side rendering and allow you to inline it.
+- The React-JSS package provides some additional features:
+  - Dynamic Theming - allows context based theme propagation and runtime updates.
+  - Critical CSS extraction - only CSS from rendered components gets extracted.
+  - Lazy evaluation - Style Sheets get created when a component gets mounted.
+  - The static part of a Style Sheet gets shared between all elements.
+  - Function values and rules are updated automatically with props as an argument.
+
+- SheetsRegistry
+  - When rendering on the server, you will need to get all rendered styles as a CSS string. 
+  - The `SheetsRegistry` class allows you to aggregate and stringify them.
+
 ## pieces

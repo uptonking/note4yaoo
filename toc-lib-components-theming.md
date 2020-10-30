@@ -51,3 +51,11 @@ modified: '2020-10-25T09:56:46.611Z'
 - https://github.com/themeable-ui/themeable-css
 - https://github.com/FrontendRangers/platoon
   - A themeable UI kit for React & Svelte
+- https://github.com/KyleAMathews/typography.js
+  - http://kyleamathews.github.io/typography.js/
+  - /3.5kStar/MIT/202008/js
+  - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
+  - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
+  - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+
+

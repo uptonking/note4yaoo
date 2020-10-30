@@ -46,6 +46,15 @@ modified: '2020-10-29T10:46:59.315Z'
 
 ## pieces
 
+- I’m planning on migration glaze to use otion instead of treat as the underlying CSS-in-JS library 
+  - and thus, critical CSS will by inlined to documents. 
+  - The change comes at a runtime cost of ~2kB, but unlocks way more possibilities.
+  - The API is very similar and was heavily influenced by glamor. 
+    - Scoped CSS rules work out of the box, including support for pseudos, @​media, @​supports and even custom selectors like "& > *". 
+    - Everything is decomposed to atomic rules and the specificities are managed automatically.
+  - 
+  - https://twitter.com/kripod97/status/1271881199615688705
+
 - Recently, I've been working on a CSS-in-JS library built upon treat
   - https://twitter.com/kripod97/status/1241524939473248256
   - It works by picking atomic CSS classes on the fly, generated from a theme. 
@@ -64,6 +73,8 @@ modified: '2020-10-29T10:46:59.315Z'
   - Static extraction is brought to glaze by the underlying CSS-in-JS library called treat. 
   - On the long term, it will be replaced with otion. 
   - With atomic CSS, the overhead of inlined critical styled is manageable. Especially with HTTP 1, the overall cost is less with inlining.
+- The otion project will provide the foundation to build glaze upon. 
+  - Eventually, it will replace treat for static style management.
 
 - Based upon my recent(202004) experiences with glaze, I'm building a lightweight CSS-in-JS runtime as a tiny wrapper around Stylis v4. 
   - It will encourage the use of a `css` prop, but a separate package for a `styled` API could also be provided later.
