@@ -65,6 +65,10 @@ modified: '2020-09-25T05:56:32.022Z'
   - Theme support via CSS variables, allowing the cost of theming to be proportional to the size of the color palette
   - This repo was heavily inspired by linaria. The biggest behavioral difference is that linaria doesn't generate atomic CSS.
   - 参考facebook的stylex
+- stylemug /51Star/MIT/202006/js
+  - https://github.com/matvp91/stylemug
+  - A fast css-in-js library that extracts atomic CSS rules to a .css file.
+  - The stylesheet code in your bundle is replaced (no CSS in your JS) with a hash map for classnames lookup at runtime.
 
 ## atomic css in js
 
