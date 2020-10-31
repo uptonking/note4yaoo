@@ -29,8 +29,12 @@ import(`../themes/${themeName}.treat`).then(theme => {
 });
 ```
 
+## roadmap
+
 - treat doesn't do any class optimization as it could introduce specificity issues
 - 作为类sass预处理器的js版，应该提供编译出多套css的功能
+- 静态提取
+  - 为加快首屏渲染，编译出首屏相关的关键路径样式和其他样式
 
 ## guide
 
