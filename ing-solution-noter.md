@@ -48,6 +48,7 @@ modified: '2020-07-14T10:24:54.328Z'
 - 预览模块
   - toc目录设计成类似书籍目录，单行且缩进，悬停查看完整目录
   - 文字块: Note块，warning块
+  - frontmatter: 默认不显示，可选择显示成内容为tag的表格
 - 样式
   - link: 网址来源信赖标记，如github这类链接
   - text: 使所有匹配的文字变暗，如链接文字只高亮最后2个单词，前面的 `https://xx.x` 变灰色
@@ -127,7 +128,7 @@ modified: '2020-07-14T10:24:54.328Z'
 - Shortcuts
   - NoteApp/Editor/Nav/Other
 - Importing
-  - Markdown files: `md` , `mkd` , `mdwn` , `mdown` , `markdown` , `markdn` , `mdtxt` , `mdtext` or `txt`
+  - Markdown files: `md` ,  `mkd` ,  `mdwn` ,  `mdown` ,  `markdown` ,  `markdn` ,  `mdtxt` ,  `mdtext` or `txt`
   - Evernotes' exports with extension: `enex`
   - Alternatively you could also just put your Markdown notes into the `notes` sub-directory 
   - Newly imported tags will be tagged with a special `Import-XXXX` tag

@@ -24,6 +24,7 @@ modified: '2020-10-27T17:38:36.040Z'
   - 霍译本主要使用了“归化”的策略，而杨译本主要使用了“异化”的策略
 
 - glossary(霍译本; 杨译本)
+  - 红楼梦 The Story of the Stone; A Dream of Red Mansions
   - 大观园 Prospect Garden; Grand View Garden
   - 怡红院 House of Green Delights; Happy Red Court
   - 蘅芜院 All-spice Court; Alpinia Park

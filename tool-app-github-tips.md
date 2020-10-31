@@ -38,6 +38,11 @@ modified: '2020-10-05T07:52:42.228Z'
   - [GitHub star ranking for users, organizations and repositories](https://github.com/k0kubun/gitstar-ranking)
     - https://gitstar-ranking.com/
 
+- license
+  - 先检查确保只存在一个文件，其名称中包含license单词，可以是license.txt/md，不能是wiki-license.md
+  - 若要给没有license文件的repo添加license，直接本地上传一个即可
+  - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
+
 ## ecosystem
 
 - npm

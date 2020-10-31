@@ -422,7 +422,7 @@ modified: '2020-10-22T12:52:52.985Z'
     - 样式基于classnames
   - https://styleguide.pivotal.io/
   - The system is implemented as a Figma library, React components, and CSS styles 
-- Reach UI /siddharthkp
+- React UI /siddharthkp
   - /336Star/MIT/202009/js
   - https://github.com/siddharthkp/react-ui
   - https://react-ui.dev/
