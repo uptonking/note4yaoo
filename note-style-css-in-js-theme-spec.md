@@ -75,6 +75,7 @@ modified: '2020-10-27T05:27:35.596Z'
     - The styles will be evaluated and stored in Emotion’s cache under a class name. The class name is passed down to the React element through the className property.
     - you now have direct access to the theme context created by a ThemeProvider
   - css prop和styled最终生成组件的结构非常相似
+
 - ### style object vs template literals(TTLs) 书写样式，使用模板字符串，还是对象
   - style object
     - 当需要动态变化的样式属性有很多时，使用对象cleaner
@@ -119,7 +120,8 @@ modified: '2020-10-27T05:27:35.596Z'
   - https://github.com/styled-system/styled-system/issues/562 (Style functions exposing extra props)
 - 是否使用box based component
   - reflexbox is a ergonomic, responsive React layout and grid system. The original Box component™ since 2015
-- 是否需要提取使用css-in-js创建的样式到单独的文件
+
+- ### 是否需要静态提取使用css-in-js创建的样式到单独的css文件
   - 有利有弊
   - https://github.com/emotion-js/emotion/blob/master/docs/extract-static.mdx
     - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.

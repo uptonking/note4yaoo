@@ -33,6 +33,84 @@ function loadCSS(url) {
   - Then we iterate over each theme, substitute the dynamic properties into the auto generated theme class, and you're off to the races
   - 写theme样式时多用scss变量，然后通过循环逻辑编译出不同theme的样式类
 
+- 基于scss变量和mixin编译出themes
+
+``` SCSS
+$themes: (
+  darkTheme: (
+    'text-color': white,
+    'bg-color': #424242
+  ),
+  lightTheme: (
+    'text-color': black,
+    'bg-color': #f5f5f5
+  )
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    // $theme: darkTheme, lightTheme
+    // $map: ('text-color': ..., 'bg-color': ...)
+
+    // make the $map globally accessible, so that theme-get() can access it
+    $theme-map: $map !global;
+
+    // make a class for each theme using interpolation -> #{}
+    // use & for making the theme class ancestor of the class
+    // from which you use @include theme() {...}
+    .#{$theme} & {
+      @content;    // the content inside @include theme() {...}
+    }
+  }
+  // no use of the variable $theme-map now
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+```
+
+``` CSS
+.content {
+  padding: 32px;
+}
+
+.darkTheme .content {
+  color: white;
+  background-color: #424242;
+}
+
+.lightTheme .content {
+  color: black;
+  background-color: #f5f5f5;
+}
+```
+
+## Theming with CSS Variables
+
+- [CodePen demo，这个示例样式过多](https://codepen.io/BarthyB/pen/EBzxje)
+- I define the color variables depending on the app container's class (.light or .dark). 
+- Simply toggling those classes will then change the site's theme.
+
+``` JS
+document.addEventListener("DOMContentLoaded", function() {
+  const app = document.querySelector(".app");
+  const themeName = document.querySelector(".theme-name");
+  const button = document.querySelector(".btn-switch");
+  let currentTheme = app.classList.contains("light") ? "light" : "dark";
+
+  button.addEventListener("click", function() {
+    app.classList.remove(currentTheme);
+    currentTheme = currentTheme === "light" ? "dark" : "light";
+    app.classList.add(currentTheme);
+
+    themeName.innerText = currentTheme;
+  });
+});
+```
+
 ## theming-examples 切换主题方案示例
 
 - ### 若多个theme所有样式在同一css文件中(都预加载也行)
@@ -200,3 +278,4 @@ document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
 - [User theme switching with SASS - Ruby on Rails](https://stackoverflow.com/questions/8744941/user-theme-switching-with-sass-ruby-on-rails)
 - [Switchable custom bootstrap themes with sass](https://stackoverflow.com/questions/54252245/switchable-custom-bootstrap-themes-with-sass)
 - [Bootstrap 4 Sass - changing theme dynamically](https://stackoverflow.com/questions/45486572/bootstrap-4-sass-changing-theme-dynamically)
+- [Is there a way to add dark mode to my application with SCSS?](https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss)
