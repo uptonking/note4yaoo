@@ -9,11 +9,11 @@ modified: '2020-07-14T11:03:53.196Z'
 
 ## agnostic
 
-- redux /MIT/53.7kStar/202005/
+- redux /MIT/53.7kStar/202005/ts
   - https://github.com/reduxjs/redux
   - https://redux.js.org/
   - Predictable state container for JavaScript apps
-- mobx /MIT/22.1kStar/202007
+- mobx /MIT/22.1kStar/202007/ts
   - https://github.com/mobxjs/mobx
   - https://mobx.js.org/README.html
   - Simple, scalable state management
@@ -21,25 +21,37 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/davidkpiano/xstate
   - https://xstate.js.org/docs/
   - JS and TypeScript finite state machines and statecharts for the modern web.
+- storeon /1.5kStar/MIT/202009/js
+  - https://github.com/storeon/storeon
+  - A tiny event-based Redux-like state manager for React, Preact, Angular, Vue and Svelte.
+- Kel /12Star/MIT/202005/js
+  - https://github.com/vijitail/Kel
+  - A dead simple, event driven state management library for Vanilla JS apps.
+- https://github.com/estrattonbailey/picostate
+  - Event-based immutable state management. 
+  - integrates seamlessly with React
+- akita /Apache2/2.3kStar/202007
+  - https://github.com/datorama/akita
+  - https://datorama.github.io/akita/
+  - Akita is a state management pattern, built on top of RxJS, 
+    - which takes the idea of multiple data stores from Flux and the immutable updates from Redux, 
+    - along with the concept of streaming data, to create the Observable Data Stores model.
+- cerebral /MIT/1.9kStar/202005/js
+  - https://github.com/cerebral/cerebral
+  - https://cerebraljs.com/
+  - Declarative state and side effects management for popular JavaScript frameworks
+  - To handle everything(updating state) from a simple toggle to very complex operations, Cerebral has the concept of sequences. 
+    - Sequences allows you to compose functions together into a flow. 
+    - sequences are based on function-tree, a project that came out of the initial experimentations in the first version of Cerebral.
+- effector /2.8kStar/MIT/202010/ts
+  - https://github.com/effector/effector
+  - Effector is an effective multi-store state manager for Javascript apps (React/Vue/Node.js)
 - store /187Star/MIT/202010
   - https://github.com/fabiospampinato/store
   - simple framework-agnostic modern state management library.
   - Thanks to usage of `Proxy` s you just have to wrap your state with store, 
   - mutate it and retrieve values from it just like if it was a regular object, 
   - and listen to changes via onChange or useStore.
-- cerebral /MIT/1.9kStar/202005
-  - https://github.com/cerebral/cerebral
-  - https://cerebraljs.com/
-  - Declarative state and side effects management for popular JavaScript frameworks
-- storeon /1.5kStar/MIT/202009
-  - https://github.com/storeon/storeon
-  - https://evilmartians.com/chronicles/storeon-redux-in-173-bytes
-  - A tiny event-based Redux-like state manager for React, Preact, Angular, Vue and Svelte.
-- https://github.com/vijitail/Kel
-  - A dead simple, event driven state management library for Vanilla JS apps.
-- https://github.com/estrattonbailey/picostate
-  - Event-based immutable state management. 
-  - integrates seamlessly with React
 
 ## react
 
@@ -89,12 +101,6 @@ modified: '2020-07-14T11:03:53.196Z'
 - constate /MIT/2.6kStar/202002
   - https://github.com/diegohaz/constate
   - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
-- akita /Apache2/2.3kStar/202007
-  - https://github.com/datorama/akita
-  - https://datorama.github.io/akita/
-  - Akita is a state management pattern, built on top of RxJS, 
-    - which takes the idea of multiple data stores from Flux and the immutable updates from Redux, 
-    - along with the concept of streaming data, to create the Observable Data Stores model.
 - react-easy-state /MIT/2.1kStar/202004
   - https://github.com/RisingStack/react-easy-state
   - Simple React state management with ES6 Proxies
@@ -105,6 +111,9 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/eserozvataf/react-eventmanager
   - /16Star/Apache2/201908/ts/deprecated
   - Event-based simple React state management with decorators
+- https://github.com/aweary/react-copy-write
+  - An immutable React state management library with a simple mutable API, memoized selectors, and structural sharing. 
+  - Powered by Immer.
 
 ## more-state
 
