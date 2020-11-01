@@ -106,6 +106,9 @@ modified: '2020-10-05T06:10:15.909Z'
   - /2.2kStar/MIT/202009
   - admin interface which can be plugged into your application.
   - 依赖@admin-bro/design-system、axios、styled-components/system、react-redux
+- https://github.com/immerjs/immer
+  - /18.3kStar/MIT/202010/ts
+  - Create the next immutable state by mutating the current one
 
 ## popular
 

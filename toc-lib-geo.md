@@ -56,6 +56,9 @@ modified: '2020-06-22T09:24:05.317Z'
   - https://github.com/CesiumGS/cesium
   - https://cesium.com/cesiumjs/
   - JS library for world-class 3D globes and maps
+- ViziCities /2.7kStar/BSD/201610/js
+  - https://github.com/UDST/vizicities
+  - A framework for 3D geospatial visualization in the browser
 
 ## geoprocessing
 

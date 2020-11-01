@@ -108,9 +108,11 @@ modified: '2020-07-14T11:03:53.196Z'
 
 ## more-state
 
-- bloc /MIT/4.9kStar/202007
+- bloc /MIT/4.9kStar/202007/dart
   - https://github.com/felangel/bloc
   - https://bloclibrary.dev/
   - A predictable state management library that helps implement the BLoC design pattern
   - for flutter and dart
 - https://github.com/vuejs/vuex
+- Valoo: just the bare necessities of state management.
+  - https://gist.github.com/developit/a0430c500f5559b715c2dddf9c40948d

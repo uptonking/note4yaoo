@@ -9,13 +9,6 @@ modified: '2020-09-25T05:56:45.321Z'
 
 ## guide
 
-- 使用css variables
-  - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便
-  - To use the values of custom properties in JavaScript, it is just like standard properties.
-    - `element.style.getPropertyValue("--my-var");`
-
-
-
 - why use css in js
   - 维护方便
   - all-in-js的趋势
@@ -25,7 +18,7 @@ modified: '2020-09-25T05:56:45.321Z'
   - 灵活性
     - 书写的样式可编译成极短的唯一名，也可以编译成开发调试时的长样式名
     - 调试时编译成类似bootstrap的唯一类名，发布时编译成atomic css
-    - ！！！ 甚至可以在发布时编译出使用css vars实现theme
+    - ！！！ 甚至可以在发布时编译出使用css vars实现的theme
 
 - I feel like we’re moving out of the CSS-in-JS era into something new. We’re moving more towards:
   - Static extraction

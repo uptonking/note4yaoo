@@ -8,68 +8,18 @@ modified: '2020-09-10T05:48:07.754Z'
 
 # note-web-dev-solution
 
-## 难点
-
-- scrolling滚动时的样式
-  - 不同浏览器的滚动条样式不一致
-  - 难以实现sticky，滚动的是body还是div
-  - 移动端地址栏显示与隐藏
-- tree-shaking
-  - 各工具库的编译方式不同，webpack各版本支持程度不同
-  - webpack v4不支持，v5支持
-- component-to-image
-  - repng
-- 中文字体体积大的问题
-  - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
-  - 动态中文web字体暂无解决方案
-- css模块化方案选择的问题
-  - 暂无统一标准的解决方案，可以参考ant-design等大型项目的选择，直接使用css或scss
-  - 要考虑将依赖的第三方组件的样式如何集成到现有项目
-  - 要考虑与具体框架结合，方便实现国际化RTL、语言和样式主题切换
-  - 考虑在特殊情况下如何覆盖组件的样式
-
-## 前端基础框架开发
-
-- 视图渲染
-  - MVC/MVVM
-  - VDOM结构
-  - DOM更新及操作
-  - 生命周期
-- 状态管理
-  - 拆分合并, 子树更新
-- 中间件
-- 网络请求
-- 路由跳转
-- ui组件库
-- 同构
-- ssr：
-  - 核心优势：首屏加载更快、seo友好
-  - next.js
-  - razzle
-  - 其他：beidou、react-server
-
-- [2020年的React Hooks生态](https://juejin.im/post/6861055676652158990)
-  - router: react-router, hookrouter
-  - state: redux, mobx, unstated-next, recoil, use-immer, dva
-  - components: antd, sunflower
-  - hooks封装: react-use, ahooks, huse, react-adaptive-hooks
-  - css-in-js: emotion, useTheme
-  - i18n: react-intl, react-i18next
-  - animation: react-spring
-  - request: swr, react-query
-
-## 前端框架通用问题
+## 前端框架经典问题
 
 - 解决方案的选择
   - 技术选型时，参考知名项目或大公司项目的选择
     - 不要浪费过多时间选择，可先采取面向star的编程，方便搜索文档和开发问题
-  - 集中时间和精力解决具体一类问题
+  - 集中时间和精力解决具体一类业务问题
 - locale: 多语言日期/国际化
   - 解决方案大多与框架相关，如react-intl，要考虑兼容性
 - theme: 动态主题
   - 解决方案大多与框架相关，如styled-components，也可以基于css变量
   - 实现theme的方法: css变量、带theme名称的子选择器、react-context consumer
-  - 可提供几套预定义的精美主题，手动选择任意颜色做主题不推荐，易于某些组件冲突、对比度降低
+  - 可提供几套预定义的精美主题，手动选择任意颜色做主题不推荐，荣易造成视觉冲突、对比度降低
 - css样式及布局
   - 趋势：静态提取、主题切换、无重复原子类、带约束的属性
   - 必备：局部样式、动态样式、主题切换
@@ -106,71 +56,6 @@ modified: '2020-09-10T05:48:07.754Z'
     - throttle和debounce
     - tooltip提示鼠标处内容信息
 
-## faq
-
-- 弹性布局 vs 响应式布局
-  - rem是弹性布局的一种实现方式，弹性布局可以算作响应式布局的一种，但响应式布局不是弹性布局
-    - 弹性布局强调等比缩放，100%还原
-    - 响应式布局强调不同屏幕要有不同的显示，比如媒体查询
-  - 只用css，无需js，就可以实现元素大小随着屏幕宽度的变化而变化
-- 如何根据不同的屏幕尺寸去动态设置html的font-size呢
-  - 利用css的media query来设置，单位是px
-  - 利用js动态计算并修改，可能会有闪烁问题
-  - rem布局在加载的时候会出现元素一开始很小，闪烁一下恢复正常大小的问题
-      - JS动态计算并修改字体大小和媒体查询，只要选择一套方案就可以了，推荐媒体查询
-      - 外部css会阻塞DOM渲染，并不阻塞js解析，外部js既阻塞渲染，也阻塞解析
-  - 部分安卓手机或者webview调整了系统默认字体大小
-- 如何实现1px
-  - 将border设置为1px, 然后将也页面的整体根据页面的dpr缩小相应的倍数，接着将rem补偿相应的倍数，这样页面中只有1px的边框缩小了，而其他内容经过缩小和扩大，还是原来的状态
-  - var fontSize = width/10*(window.devicePixelRatio) + 'px'
-- rem vs px
-  - 结论
-      - 考虑3类设备上的展示：手机、平板、pc、横竖屏
-      - 考虑系统默认字体、浏览器默认字体
-      - 在视觉稿要求固定尺寸的元素上使用px，比如1px线、4px的圆角边框
-      - 在字号、（大多数）间距上使用rem
-      - 不用em，因为会根据当前元素的字号按比例计算尺寸，若当前元素无字号则查找父元素
-      - 推荐：用户业务样式代码以 px 为单位，并且以 iPhone6 屏幕 “物理像素” 宽度 750 为基准 (即普通 “逻辑像素” 值的 2 倍大小)， 使用 postcss-pxtorem 把 px 转成 rem 单位，转换基准为1rem=100px (使用 rem 实现不同设备等比缩放效果)。对于使用 webpack 的项目，在 webpack.config.js 里新增 pxtorem 配置
-      - 将html元素的font-size设为62.5%(或10px)是为了方便计算，可以设置为625%
-      - 当使用小于12px的字体时，chrome只会渲染12px大小的字
-      - 若通过浏览器设置或系统设置或辅助功能设置了大字号，则内容及间隔都会变大，字号变大后，屏幕显示的内容会变少   
-      - 类似这样的适配在pad横屏展示超级大，所以还是要根据业务需求设置临界值
-      - 如果让html元素的font-size等于屏幕宽度的1/100，那1rem和1x就等价了，此时宽度为100rem
-          - 如何让html字体大小一直等于屏幕宽度的百分之一呢？ 可以通过js来设置
-          - 注意dom在ready,resize,rotate时更新宽度值
-          - 那么如何把设计图中的获取的像素单位的值，转换为已rem为单位的值呢？
-              - 375px/100rem = 48px/uNeedrem
-      - css3带来了rem的同时，也带来了vw和vh，vw为视口宽度的1/100，vh为视口高度的 1/100
-          - vw的兼容性不如rem好，android和ios的支持情况不同
-          - 若要限制最大宽度，vw
-      - 三方组件库是大家公用的，如果每个组件库的rem拆分不一致就会有很多问题，若一个库100rem就是100vw，有的是20rem是100vw，引入几个三放库中间大小肯定就不兼容了
-      - rem基于html的font-size，所有元素都受影响，引入三方库修改成本要尽量低
-      - 使用px的组件库，会利用js控制内联style进行适应屏幕
-      - ref
-        - https://www.zhihu.com/question/309599529
-        - https://zhuanlan.zhihu.com/p/30413803
-        - https://segmentfault.com/a/1190000014502172
-        - https://github.com/ant-design/ant-design-mobile/wiki/HD
-  - rem的特点是根据根元素按比例计算尺寸
-      - 优点是使用rem时，若修改了根元素的字体大小，就可以自动显示相应的尺寸
-      - 实现1px的border不精确，计算时常产生小数
-      - 横竖屏切换时，可能需要动态计算并设置根html的大小
-
- `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px";`
-
-      - 最近在做开发的时候遇到rem的一个大坑，就是如果用户改变了手机的字体大小，而且我们的页面样式的宽用了rem,比如{width:1rem},那么页面的宽就会成倍增长，导致页面乱掉。。。还没找到办法解决，宽度还是先避免使用rem的好。
-      - 字体的大小和字体宽度，并不成线性关系，所以字体大小不能使用rem；由于设置了根元素字体的大小，会影响所有没有设置字体大小的元素。可以在body上做字体修正
-      - 如果用户在PC端浏览，页面过宽怎么办？一般我们都会设置一个最大宽度，大于这个宽度的话页面居中，两边留白 `body { margin: auto; width: 100rem }`
-  - px的特点是固定尺寸
-      - 浏览器的pixel是css pixel
-      - 当用图片或一些不能缩放的展示时，必须要使用固定的px值，因为缩放可能导致变形
-      - px是一直是浏览器厂商以及标准的推荐单位，是未来的主流
-  - bootstrap的选择
-      - While Bootstrap uses ems or rems for defining most sizes, pxs are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the font size.
-- 骨架屏生成方案
-  - https://github.com/Jocs/jocs.github.io/issues/22
-- 支持web sockets的tomcat服务器7和8有何区别
-
 ## solution-locale
 
 - 需要国际化的组件
@@ -179,13 +64,16 @@ modified: '2020-09-10T05:48:07.754Z'
   - table选择、过滤、折叠、展开, pagination分页的上一页、下一页
 - 流程
   - 先选择语言，然后选择要翻译的组件，再选择要替换的文本
-- react-intl
-  - https://github.com/formatjs/react-intl
+- [react-intl](https://github.com/formatjs/react-intl)
   - 国际化类型：string, number, datetime, (相对时间转换)
-- localizify
-  - https://github.com/noveogroup-amorgunov/localizify
-  - no dependencies
-  - imperative api
+- [localizify](https://github.com/noveogroup-amorgunov/localizify)
+  - 无依赖，imperative api
+
+## solution-theme
+
+- 与选择的css方案紧密相关
+- 传统css/sass/postcss
+- css-in-js
 
 ## solution-css
 
@@ -220,13 +108,13 @@ modified: '2020-09-10T05:48:07.754Z'
 - 使用图标库
   - feather/react-feather
   - fork-awesome
-  - ionicons
 
 ## solution-animation
 
+- FLIP
 - React Transition Group 
-- It is not an animation library like React-Motion, it does not animate styles by itself. 
-- Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
+  - It is not an animation library like React-Motion, it does not animate styles by itself. 
+  - Instead it exposes transition stages, manages classes and group elements and manipulates the DOM in useful ways, making the implementation of actual visual transitions much easier.
 
 ## solution-drag-layout-events
 
@@ -386,70 +274,6 @@ modified: '2020-09-10T05:48:07.754Z'
 - trigger的位置和大小
   - 点击trigger组件时，会触发弹出组件overlay的开关
   - trigger和弹出overlay的大小都会变化，每次dom update后要检测大小，若需要则重新定位 
-
-### modal
-
-- usecase
-  - 弹出菜单
-  - user guide tour
-- modal的位置
-  - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
-  - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
-  - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
-- 支持同时显示多个modal
-  - 类似地图上显示多个poi的overlay信息
-  - modal下层无mask
-  - modal不重叠，若重叠，则先显示的在下层
-- modal的开闭控制，放在props还是state
-  - 示例多放在state
-  - antd
-- modal嵌套后的数据传递
-  - 如modal重视form，点击form的field会再弹出modal来选择，点击下层弹层组件，可关闭上一层弹层，点击mask，可关闭所有
-  - 弹层组件在react DOM树中的位置跟它们实际的层次以及包含关系是没有必然联系的，如果两个弹层是body下面的两个兄弟节点，但从弹层的使用角度看它们是有层次关系的，并不是并列的
-- 弹层的层次关系数据是多叉树的结构
-- 关闭modal是否应该移除该modal原本挂载的目标节点呢
-  - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
-  - react-modal(Basic Example)关闭modal后，目标节点保持、不移除
-    - 可以在body元素上动态添加和删除弹窗是否打开的属性
-  - react-bootstrap中的modal对目标节点，关闭modal后即移除
-  - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
-  - 隐藏弹窗时，先执行动画，再unmount弹窗组件
-- modal状态恢复
-  - 如关闭弹窗查找信息，再恢复弹窗继续填写
-- modal变成悬浮按钮fab
-  - 显示和隐藏的动画
-- ref
-  - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
-    - 嵌套modal的结构
-  - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
-    - 进出场动画
-  - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
-    - modal的位置应该放在body下的第一层、传递context到modal
-  - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
-    - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
-  - http://limoer.cc/2019/12/19/global-component/
-    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法， `ReactDOM.render(element, container[, callback])`
-    - the preferred solution is to attach a callback ref to the root element.
-    - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
-  - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
-    - 通过 `ReactDOM.render` 直接实现 `<button onClick={() => alert('1')}>alert</button>`
-    - 在onClick方法内直接关闭modal，通过React.cloneElement传入 `{visible: false}`
-    - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
-  - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
-  - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
-
-### sidebar
-
-- usecase
-- 兼容移动浏览器
-  - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
-  - When viewing a web page on a smartphone browser, the browser will typically remove the URL and menu bars from the screen when the user scrolls down the page.
-  - For some reason react-sidebar breaks this behavior, leaving the browser UI in place even when the page is scrolled.
-  - Mobile Chrome's autohide works by listening for scroll events on the body element. 
-    - As far as I can see this plugin wraps your whole app in an absolutely positioned div with an `overflow-y: auto`
-    - as a result, scroll events never trigger on body and the browser chrome does not get hidden. 
-- multi-sidebar: 使用多个sidebar用于导航
-  - https://github.com/balloob/react-sidebar/issues/65
 
 ### 组件分层实现
 

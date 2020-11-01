@@ -297,8 +297,6 @@ modified: '2020-09-28T05:28:09.585Z'
   - An easy-to-use multi SQL dialect ORM for Node.js
 - https://github.com/airbnb/lottie-web
   - Render After Effects animations natively on Web, Android and iOS, and React Native
-- https://github.com/immerjs/immer
-  - Create the next immutable state by mutating the current one
 - https://github.com/Popmotion/popmotion
   - Simple animation libraries for delightful user interfaces
 - https://github.com/fabricjs/fabric.js

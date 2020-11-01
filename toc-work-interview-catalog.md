@@ -31,6 +31,8 @@ modified: '2020-10-22T13:53:16.204Z'
   - 收集的前端面试题和答案
 - https://github.com/yangshun/front-end-interview-handbook
   - answers to the famous h5bp Front-end Job Interview Questions
+- https://github.com/getify/You-Dont-Know-JS
+  - a series of books diving deep into the core mechanisms of the JS language
 
 ## java
 

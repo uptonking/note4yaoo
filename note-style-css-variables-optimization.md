@@ -1,19 +1,22 @@
 ---
-title: note-web-css-variables
-tags: [css, style]
+title: note-style-css-variables-optimization
+tags: [css, css-variables, optimization, style]
 created: '2020-10-27T16:03:13.703Z'
-modified: '2020-10-27T16:04:02.295Z'
+modified: '2020-11-01T11:13:54.783Z'
 ---
 
-# note-web-css-variables
+# note-style-css-variables-optimization
 
 ## pieces
+
+- [CSS Custom Properties and Theming](https://css-tricks.com/css-custom-properties-theming/)
+  - Using custom properties to set a single property is ALWAYS going to be faster than manipulating styles on each individual DOM node that needs the custom styles.
+  - Like, nearly 100x faster: https://jsperf.com/css-variables-vs-inline-styles
 
 - Custom properties are ordinary properties, so they can be declared on any element, are resolved with the normal inheritance and cascade rules ref 
   - so I don't think that performance will change based on where you declare the property. 
   - The performance will depend on the HTML used with your CSS.
   - A CSS definition has no meaning without a DOM where it's applied.
-
 
 - ### [CSS Custom Properties performance in 2018](https://blog.jiayihu.net/css-custom-properties-performance-in-2018/)
 - So it's still clear that we must be careful with container custom properties because it affects children nodes and recalculation becomes expensive. 
@@ -53,5 +56,3 @@ modified: '2020-10-27T16:04:02.295Z'
   - nodes with variables referencing the same custom property will produce cache hits in the MPC, even though other properties don’t match.
   - The preliminary approach I’ve been implementing consists on a new matching function, specific for custom properties, and a mechanism to transfer/copy the property’s data to avoid resolving the variable again, since the property’s declaration hasn’t change. 
   - We would need to apply the css cascade again, but at least we could save the cost of the variable resolution.
-
-

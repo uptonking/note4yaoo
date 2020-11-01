@@ -15,6 +15,8 @@ modified: '2020-10-27T06:49:02.544Z'
   - [使用dynamic import进行split your themes into separate CSS files.](https://seek-oss.github.io/treat/setup#bundle-splitting)
   - This is achieved by dynamic importing your treat files that call createTheme.
   - You can then dynamically load the desired theme and use it to resolve styles.
+- 一套主题包含所有组件 vs 一个组件的样式包含多套主题
+  - theme-ui给出的方案是前者，使用带约束的样式值
 
 ``` JS
 import { resolveStyles } from 'treat';
@@ -32,7 +34,9 @@ import(`../themes/${themeName}.treat`).then(theme => {
 ## roadmap
 
 - treat doesn't do any class optimization as it could introduce specificity issues
-- 作为类sass预处理器的js版，应该提供编译出多套css的功能
+- 作为类sass预处理器的js版
+  - 考虑提供编译出多套css的功能，或按组件编译出css
+  - 编译出带有css variables的版本和不带css variables的版本(参考post-preset-env)
 - 静态提取
   - 为加快首屏渲染，编译出首屏相关的关键路径样式和其他样式
 

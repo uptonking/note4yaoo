@@ -7,109 +7,34 @@ modified: '2020-10-31T06:57:33.840Z'
 
 # note-style-css-sass
 
-## sass-theming
+## guide
 
-- 3 easy steps:
-  - Compile all themes into different files upon deploy. This will take care of timestamping, zipping, etc.
-  - Render page with default theme.
-  - Use javascript to load alternate theme CSS.
-- No need to mess with dynamic compilation and all that.
-- To load a CSS dynamically you can use something like this:
+- SASS variables are replaced with their values as the preprocessor produces its CSS output long before the browser interprets the code, 
+  - while CSS custom properties are evaluated by the browser at runtime.
 
-``` JS
-function loadCSS(url) {
-  var cssfile = document.createElement("link");
-  cssfile.setAttribute("rel", "stylesheet");
-  cssfile.setAttribute("type", "text/css");
-  cssfile.setAttribute("href", url);
-}
-```
+- sass vs css variables
+  - sass优点
+    - There are no inherit browser support considerations. They compile down into normal CSS.
+    - Little stuff: Like you can strip units from a value if you had to.
+    - sass除了提供变量，还提供了样式值计算工具函数
+  - sass缺点
+    - 难以实现让用户随意修改变量值来更新样式，因为预编译了
+    - node-sass下载安装对墙内不友好
+  - css变量优点
+    - 易于实现让用户随意修改变量值来更新样式
+  - css变量缺点
+    - 兼容性不够完美
+    - 样式计算工具函数不多，暂时只有calc，标准还在制定
 
-- Unless you're trying to do something extreme like CSSZenGarden with hundreds of themes, or each theme is thousands of lines, I'd recommend setting each theme as it's own CSS class rather than it's own file.
-  - It's straightforward to switch theme classes with JQuery
-  - you will have to tag the elements you want the update with the ThemedElement class
-- If you think you can manage your themes with classes rather than files, here's how we generate them with SASS. 
-  - SASS doesn't support json style objects, so we have to reach way back and set up a bunch of parallel arrays with the theme properties. 
-  - Then we iterate over each theme, substitute the dynamic properties into the auto generated theme class, and you're off to the races
-  - 写theme样式时多用scss变量，然后通过循环逻辑编译出不同theme的样式类
+- [SASS VARIABLES VS. CSS CUSTOM PROPERTIES](https://intu.io/blog/sass-css-custom-properties/)
+  - If your project requires dynamic theming, CSS custom properties will be the way to go very shortly. 
+  - Otherwise, SASS variables are still a good choice, because they give you access to the power of a wide range of SASS functions. 
 
-- 基于scss变量和mixin编译出themes
-
-``` SCSS
-$themes: (
-  darkTheme: (
-    'text-color': white,
-    'bg-color': #424242
-  ),
-  lightTheme: (
-    'text-color': black,
-    'bg-color': #f5f5f5
-  )
-);
-
-@mixin theme() {
-  @each $theme, $map in $themes {
-    // $theme: darkTheme, lightTheme
-    // $map: ('text-color': ..., 'bg-color': ...)
-
-    // make the $map globally accessible, so that theme-get() can access it
-    $theme-map: $map !global;
-
-    // make a class for each theme using interpolation -> #{}
-    // use & for making the theme class ancestor of the class
-    // from which you use @include theme() {...}
-    .#{$theme} & {
-      @content;    // the content inside @include theme() {...}
-    }
-  }
-  // no use of the variable $theme-map now
-  $theme-map: null !global;
-}
-
-@function theme-get($key) {
-  @return map-get($theme-map, $key);
-}
-
-```
-
-``` CSS
-.content {
-  padding: 32px;
-}
-
-.darkTheme .content {
-  color: white;
-  background-color: #424242;
-}
-
-.lightTheme .content {
-  color: black;
-  background-color: #f5f5f5;
-}
-```
-
-## Theming with CSS Variables
-
-- [CodePen demo，这个示例样式过多](https://codepen.io/BarthyB/pen/EBzxje)
-- I define the color variables depending on the app container's class (.light or .dark). 
-- Simply toggling those classes will then change the site's theme.
-
-``` JS
-document.addEventListener("DOMContentLoaded", function() {
-  const app = document.querySelector(".app");
-  const themeName = document.querySelector(".theme-name");
-  const button = document.querySelector(".btn-switch");
-  let currentTheme = app.classList.contains("light") ? "light" : "dark";
-
-  button.addEventListener("click", function() {
-    app.classList.remove(currentTheme);
-    currentTheme = currentTheme === "light" ? "dark" : "light";
-    app.classList.add(currentTheme);
-
-    themeName.innerText = currentTheme;
-  });
-});
-```
+- sass vs postcss
+  - postcss优点
+    - 插件非常丰富
+  - postcss缺点
+    - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
 
 ## theming-examples 切换主题方案示例
 
@@ -275,7 +200,8 @@ document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
 
 - [switch theme in javascript](https://stackoverflow.com/questions/26304798/switch-theme-in-javascript)
 - [Replacing css file on the fly (and apply the new style to the page)](https://stackoverflow.com/questions/19844545/replacing-css-file-on-the-fly-and-apply-the-new-style-to-the-page)
-- [User theme switching with SASS - Ruby on Rails](https://stackoverflow.com/questions/8744941/user-theme-switching-with-sass-ruby-on-rails)
+
 - [Switchable custom bootstrap themes with sass](https://stackoverflow.com/questions/54252245/switchable-custom-bootstrap-themes-with-sass)
 - [Bootstrap 4 Sass - changing theme dynamically](https://stackoverflow.com/questions/45486572/bootstrap-4-sass-changing-theme-dynamically)
-- [Is there a way to add dark mode to my application with SCSS?](https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss)
+
+- [Is Sass Worth Learning In 2020?](https://scalablecss.com/sass-in-2020/)

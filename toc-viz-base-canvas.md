@@ -17,3 +17,9 @@ modified: '2020-10-05T06:17:42.467Z'
 - react-canvas /12.5kStar/BSD/201703
   - https://github.com/Flipboard/react-canvas
   - High performance canvas rendering for React components
+- https://github.com/Gitjinfeiyang/easy-canvas
+  - https://github.com/Gitjinfeiyang/easy-canvas
+  - /106Star/MIT/202010/js
+  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
+  - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
+  - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊

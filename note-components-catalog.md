@@ -96,8 +96,7 @@ modified: '2020-10-02T11:42:00.886Z'
 
 - ### Modal/Dialog/弹出窗口对话框
 
--　一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
-
+- 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
   - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
   - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
 - 支持同时显示多个modal
@@ -117,13 +116,71 @@ modified: '2020-10-02T11:42:00.886Z'
 - 显示和隐藏的动画
   - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
   - 隐藏弹窗时，先执行动画，再unmount弹窗组件
+
+- usecase
+  - 弹出菜单
+  - user guide tour
+- modal的位置
+  - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
+  - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
+  - 根据z-index的规则，这样的情况很难完成模态框凌驾于页面整体而出现的，遮罩也无法覆盖整个页面
+- 支持同时显示多个modal
+  - 类似地图上显示多个poi的overlay信息
+  - modal下层无mask
+  - modal不重叠，若重叠，则先显示的在下层
+- modal的开闭控制，放在props还是state
+  - 示例多放在state
+  - antd
+- modal嵌套后的数据传递
+  - 如modal重视form，点击form的field会再弹出modal来选择，点击下层弹层组件，可关闭上一层弹层，点击mask，可关闭所有
+  - 弹层组件在react DOM树中的位置跟它们实际的层次以及包含关系是没有必然联系的，如果两个弹层是body下面的两个兄弟节点，但从弹层的使用角度看它们是有层次关系的，并不是并列的
+- 弹层的层次关系数据是多叉树的结构
+- 关闭modal是否应该移除该modal原本挂载的目标节点呢
+  - 此处的目标节点是指 `ReactDOM.unstable_renderSubtreeIntoContainer(this, component, containerNode)` 中的containerNode
+  - react-modal(Basic Example)关闭modal后，目标节点保持、不移除
+    - 可以在body元素上动态添加和删除弹窗是否打开的属性
+  - react-bootstrap中的modal对目标节点，关闭modal后即移除
+  - 如果根节点删除，动画不好处理。根节点不删除，还是有动画方面的考虑复用根节点也麻烦
+  - 隐藏弹窗时，先执行动画，再unmount弹窗组件
+- modal状态恢复
+  - 如关闭弹窗查找信息，再恢复弹窗继续填写
+- modal变成悬浮按钮fab
+  - 显示和隐藏的动画
 - ref
   - [有赞：多层嵌套弹层组件](https://juejin.im/post/59a02c38518825244b068486)
+    - 嵌套modal的结构
   - [一步一步带你封装基于react的modal组件](https://juejin.im/post/5ba5ab61e51d450e9162c4ae)
+    - 进出场动画
   - [React模态框秘密和“轮子”渐进设计](https://zhuanlan.zhihu.com/p/30271961)
+    - modal的位置应该放在body下的第一层、传递context到modal
   - [React实现动态调用的弹框组件](https://blog.csdn.net/qq_35757537/article/details/90322144)
-    - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件实例的setState
+    - 直接在组件外调用组件内的自定义方法传入自定义参数，来改变触发组件状态改变的setState
+  - http://limoer.cc/2019/12/19/global-component/
+    - 在不暴露组件实例对象的前提下，暴露修改组件内部状态的方法， `ReactDOM.render(element, container[, callback])`
+    - the preferred solution is to attach a callback ref to the root element.
+    - 通过高阶方法，提前在callback ref方法中调用参数方法，并传入可修改state的方法的对象
   - [React造轮系列：对话框组件 - Dialog思路](https://juejin.im/post/5cea293ef265da1bc07e15cc)
+    - 通过 `ReactDOM.render` 直接实现 `<button onClick={() => alert('1')}>alert</button>`
+    - 在onClick方法内直接关闭modal，通过React.cloneElement传入 `{visible: false}`
+    - 还可以在ReactDOM.render完成后，返回一个包含操作modal状态方法的对象
+  - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
+  - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
+
+- ### sidebar
+
+- usecase
+  - dockable
+  - 多个sidebar
+  - 非边缘的容器上，效果类似sidebar的组件
+- 兼容移动浏览器
+  - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
+  - When viewing a web page on a smartphone browser, the browser will typically remove the URL and menu bars from the screen when the user scrolls down the page.
+  - For some reason react-sidebar breaks this behavior, leaving the browser UI in place even when the page is scrolled.
+  - Mobile Chrome's autohide works by listening for scroll events on the body element. 
+    - As far as I can see this plugin wraps your whole app in an absolutely positioned div with an `overflow-y: auto`
+    - as a result, scroll events never trigger on body and the browser chrome does not get hidden. 
+- multi-sidebar: 使用多个sidebar用于导航
+  - https://github.com/balloob/react-sidebar/issues/65
 
 - ### Popover/Tooltip/弹出气泡
 - 要点
@@ -145,8 +202,9 @@ modified: '2020-10-02T11:42:00.886Z'
 - Toast
 - Loading
   - flower-loader
-- Skeleton
+- ### Skeleton 骨架屏
   - bg-image-color
+  - [一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
 - BulletComment/弹幕
 
 ## incubator

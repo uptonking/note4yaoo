@@ -69,6 +69,42 @@ modified: '2020-07-14T10:28:11.443Z'
 
 ## pieces
 
+- 支持web sockets的tomcat服务器7和8有何区别
+
+- ### [为什么有的后端接口会使用二维数组输出表格数据](https://www.v2ex.com/t/720241)
+  - 性能好、省带宽、数据量越大越明显，至于index定义可以单独一个接口
+  - 抖音接口视频数组里，每个视频100多个json字段，然而接口响应速度爆阿里 10 倍
+  - 这样做的场景很多, protobuf 序列化之后也是没有 key 的, 数据库存每一行也不是存 key 的.
+    - 知道 schema 的情况下, 少传 key 性能当然更好.
+    - 性能不是问题的情况下, 用带 schema 和 type system 的写前端当然爽.
+  - 上面怀疑有没有这个必要的人，对于某些人某些场景来说，能省一点流量，内存，就多省一点。
+    - 当数据量级，访问量级，以及客户端的响应时间要求(ms 级的考虑）都是问题是，能省一点都是好的。
+    - 比如说电商平台，比如说上面说到的 GPS
+    - 再举个例子，假设你现在有个新的业务，规定要用 JSON 上传数据 ，你的客户端是 物联网设备，你有几万这样的设备，要求每设备 5 秒上报一次数据，每次上报有几百条数据，在这种比较极端的场景，你是考虑这种 JSON OBJECT 数组，还是 JSON 对象数组？
+
+``` JS
+let user_table = {
+  "columns": [
+    { "column_name": "user_name", "data_type": "string" },
+    { "column_name": "age", "data_type": "int" },
+    { "column_name": "sex", "data_type": "int" },
+  ],
+  "rows": [
+    ["张三", 20, 1],
+    ["李四", 20, 0],
+    ["王五", 20, 1],
+  ]
+};
+
+let client_user_table = [
+  { "user_name": "张三 ", "age": 20, "sex": 1 },
+  { "user_name": "李四", "age": 20, "sex": 0 },
+  { "user_name": "王五 ", "age": 20, "sex": 1 }
+];
+
+// 这种做法，在几行数据，几十行数据时效果不明显，几百行，几千行甚至更多时，收益就多了
+```
+
 - dev cycle
 
   1) Create an open source library that is 3 KB
