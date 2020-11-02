@@ -12,6 +12,42 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- `element.innerHTML` vs `node.innerText`
+  - innerText retrieves and sets the content of the tag as plain text, 
+    - whereas innerHTML retrieves and sets the content in HTML format.
+    - This only applies when SETTING a value. When you're GETTING the value HTML tags are simply stripped and you get the plain text.
+  - element.innerHTML只去除标签，换行会打印出来
+    - Sets or gets the HTML syntax describing the element's descendants
+  - node.innerText会去除换行和首尾空格
+    - Sets or gets the text between the start and end tags of the object
+    - innerText gives you a style-aware, representation of the text that tries to match what's rendered in by the browser this means:
+      - innerText applies text-transform and white-space rules
+      - innerText trims white space between lines and adds line breaks between items
+      - innerText will not return text for invisible items
+      - innerText will return textContent for elements that are never rendered like `<style />`
+  - node.textContent
+    - Gets or sets the text content of a node and its descendants.
+    - Is not aware of styling and will therefore return content hidden by CSS
+    - **Does not trigger a reflow** (therefore more performant)
+  - node.value
+    - This one depends on the element that you've targeted.
+    - For the above example, `x` returns an HTMLDivElement object, which does not have a `value` property defined.
+    - Input tags, for example, do define a `value` property, which refers to the "current value in the control".
+    - for certain input types the returned value might not match the value the user has entered. For example, if the user enters a non-numeric value into an `<input type="number">`, the returned value might be an empty string instead.
+  - ref
+    - [Difference between innerText, innerHTML, and childNodes[].value?](https://stackoverflow.com/questions/19030742/difference-between-innertext-innerhtml-and-childnodes-value)
+
+- tree-shaking
+  -  we can help terser by using the `/*#__PURE__*/` annotation
+  - It flags a statement as side effect free. 
+  - So it would make it possible to tree-shake the code
+  - `var Button$1 = /*#__PURE__*/ withAppProvider()(Button);`
+  - This would allow to remove this piece of code. 
+  - But there are still questions with the imports which need to be included/evaluated because they could contain side effects.
+  - To tackle this, we use the `sideEffects` property in package.json.
+  - It's similar to `/*#__PURE__*/` but on a module level instead of a statement level. 
+  - ("sideEffects" property): "If no direct export from a module flagged with no-sideEffects is used, the bundler can skip evaluating the module for side effects.".
+
 - 弹性布局 vs 响应式布局
   - rem是弹性布局的一种实现方式，弹性布局可以算作响应式布局的一种，但响应式布局不是弹性布局
     - 弹性布局强调等比缩放，100%还原
@@ -218,7 +254,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,          `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                    `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -277,7 +313,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,          `string` ,          `boolean` ,          `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                    `string` ,                    `boolean` ,                    `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -507,7 +543,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,          `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                    `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .

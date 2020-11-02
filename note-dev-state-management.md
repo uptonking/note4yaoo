@@ -7,7 +7,13 @@ modified: '2020-10-31T19:11:26.567Z'
 
 # note-dev-state-management
 
+## faq
+
+- 组件内的state如何管理
+
 ## guide
+
+- SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级
 
 ## pieces
 
@@ -28,38 +34,27 @@ modified: '2020-10-31T19:11:26.567Z'
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
 
-- ### [Build a state management system with vanilla JavaScript_2018](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/)
-  - https://github.com/hankchizljaw/vanilla-js-state-management
-  - Traditionally, we’d keep state within the DOM itself or even assign it to a global object in the window
-  - Libraries like Redux, MobX and Vuex make managing cross-component state almost trivial(微不足道的，不重要的)
-  - We’re creating the functionality that allows other parts of our application to subscribe to named events.
-  - Another part of the application can then publish those events, often with some sort of relevant payload.
-  - The PubSub pattern loops through all of the subscriptions and fires their callbacks with that payload.
-  - Let’s take a look at how our Store object keeps track of all of the changes. We’re going to use a Proxy to do this
-  - Usage of DOM Api will prevent possible SSR
+- ### [redux 有什么缺点？](https://www.zhihu.com/question/263928256)
+- 需要写大量的 Action Creator 代码
+- 需要写大量 switch case 分支判断
+- Action 和 Reducer 分开书写，维护起来麻烦
+- 异步操作，通常可以使用 thunk 中间件来做异步
+- store里面的数据必须都是可以序列化的，比如普通文本，数组，不支持Map，Set等数据结构
 
-- ### [State-based components with vanilla JS](https://gomakethings.com/state-based-components-with-vanilla-js/)
-- State is data at a particular moment in time. It’s the present “state” of your data.
-- If you’ve done simple DOM manipulation before, you’ve probably gone through the task of:
-  - Getting an element from the DOM (using `querySelector()` or something similar), and then…
-  - Adding content with `innerHTML`, or…
-  - Using `classList` to add or remove classses, or…
-  - Using `style` to update some styles.
-- This works, but as your apps grow, it can be tedious to manage.
-- Today’s more popular JavaScript frameworks, including React and Vue, use state and components to make managing the UI easier.
-- With this approach, instead of targeting specific elements in the DOM and adjusting a class here or a style there, you treat your data, or state, as the single source of truth.
-- Updated your state, render a fresh copy of the UI based on the new data, and move on. 
-- You never have to think about which element in the DOM to target or how it needs to change.
-- In the previous example, the state was a global object that any function can access.
-- To give your code more structure, you might instead scope state to your component. 
-  - This is how React, Vue, and other popular frameworks do things.
-- The nice thing about scoping state to a component like this is that you get out of the business of targeting individual elements and manipulating specific things within them.
-- With a scoped component, you update your state and then render your template. You don’t need to hunt for individual items.
-- Your data is the single source of truth, and it makes updating the UI easier and more consistent.
+- 模板代码太多，使用不方便，属性要一个一个 pick，对 ts 也不友好
+- 触发更新的效率也比较差，connect 的组件的 listener 必须一个一个遍历，再靠浅比较去拦截不必要的更新
+- store 的推荐数据结构是 json object
+  - 这对于我们的业务来说也不太合适，我们的数据结构是图状，互相有复杂的关联关系
+  - 适合用面向对象来描述模型，描述切面，需要多实例隔离，显然用 json 或者 normalizr 强行做只会增加复杂度，和已有的代码也完全无法小成本适配
+- 基于 snapshot 的 time travel 内存占用高，性能差，并且没有配套的暂停、重启、切换、清空、事务等机制
+- 无法做关联更新，每一次的所有变更必须由用户触发，既是优点又是缺点
+- 非class的设计在ts下得主动写interface并在调用方声明，而 class 的好处是在于本身就能作为 type，并且可以利用 IDE做反向依赖查找
+  - 在复杂业务中，函数式很难落地，包括类似游戏开发中的ECS架构，其实都很难实践，那一点点利用分级缓存提升的性能远远不如面向对象带来的优势更多，还是看业务场景和团队成员的。
+- 对于自定义的class实例、引用类型、各个不同命名空间属性之间的互相引用似乎是不支持的，仍然需要设计成扁平化，通过 id 来关联，查找的时候显然是不如链式结构快的，并且很难用
 
 ## ref
 
-- [A Very Basic State Management Library In Under 100 Lines Of JavaScript](https://vijitail.dev/blog/basic-state-management-library-using-vanilla-javascript)
+- [A Very Basic State Management Library In Under 100 Lines Of JavaScript_2020](https://vijitail.dev/blog/basic-state-management-library-using-vanilla-javascript)
   - https://github.com/vijitail/Kel
   - This library is going to make use of the Pub/Sub pattern like most of the other libraries, so all the data will be passed around using events
 - https://github.com/maiavictor/purestate
@@ -68,3 +63,6 @@ modified: '2020-10-31T19:11:26.567Z'
 - https://github.com/Anekenonso/Vanillajs-state-magement
   - a Vanillajs state management app with no library or framework.
 - [More than 100 different counter applications](https://gist.github.com/srdjan/1d10cbd42a2d695f696dee6b47fdc5e0)
+- [Binding User Interfaces and Application State with Vanilla JavaScript](https://matswainson.com/binding-user-interfaces-application-state-with-vanilla-javascript)
+  - https://github.com/matswainson/todo-list-application-state-example
+  - https://codepen.io/matswainson/pen/RMoGmj

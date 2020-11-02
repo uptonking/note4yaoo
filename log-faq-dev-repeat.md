@@ -31,6 +31,18 @@ modified: '2020-09-25T05:33:19.981Z'
 
 ## 组件或应用的配置项过多时如何处理更好
 
+## 函数式 vs 面向对象 (FP vs OOP)
+
+- FP优点
+  - 逻辑复用简单
+  - 方便测试
+  - 编译体积小，一般无需polyfill
+- FP缺点
+- FP案例
+  - lodash/fp
+- OOP优点
+- OOP缺点
+
 ## 最新消息事件的实现: push vs pull/poll
 
 - 场景1：Producer速率大于Consumer速率
@@ -271,7 +283,7 @@ function MyComponent(props) {
 - 在函数内解构，除了可以获取各prop参数变量外，还方便使用整体的props对象
 - 在参数处解构，更直观的写法，便于第三方插件如doc-gen提取参数默认值
   - 解构多层嵌套对象的深层属性时，要考虑提取参数的意义与困难度
-- 使用 `arguments[0]` 也可以获取整体props对象，但箭头函数没有 `this` , `super` , `arguments` , `new.target` ，且箭头函数不能用作构造函数
+- 使用 `arguments[0]` 也可以获取整体props对象，但箭头函数没有 `this` ,       `super` ,       `arguments` ,       `new.target` ，且箭头函数不能用作构造函数
 - One of the differences I can think of, and I suppose the most important, is that on the second case, while you are destructing your props object in function body, you are using `const` on declaration.
   - In that way, you can no longer change these values on your MyComponent, while on your first case you could easily modify them.
   - 对react组件来说，props不能改变，推荐只用const解构，但对普通函数参数解构时，要考虑用let
@@ -338,11 +350,11 @@ function MyComponent(props) {
 - ES5 introduced the `bind()` method to set the value of a function's this regardless of how it's called, 
 - and ES2015 introduced arrow functions which don't provide their own this binding (it retains the this value of the enclosing lexical context).
 
-- In the global execution context (outside of any function), `this` refers to the global object( `window` ) whether in strict mode or not.
+- In the global execution context (outside of any function),  `this` refers to the global object( `window` ) whether in strict mode or not.
 - You can always easily get the global object using the global `globalThis` property, regardless of the current context in which your code is running.
 
 - Inside a function, the value of `this` depends on how the function is called.
-- Since the following code is not in strict mode, and because the value of `this` is not set by the call, `this` will default to the global object, which is `window` in a browser
+- Since the following code is not in strict mode, and because the value of `this` is not set by the call,  `this` will default to the global object, which is `window` in a browser
 
 ``` JS
 function f1() {
@@ -362,7 +374,7 @@ f1() === globalThis; // true
   - Primitives like 7 or 'foo' will be converted to an Object using the related constructor, so the primitive number 7 is converted to an object as if by new Number(7) and the string 'foo' to an object as if by new String('foo')
 
 - The behavior of `this` in classes and functions is similar, since classes are functions under the hood.
-- Within a class constructor, `this` is a regular object. 
+- Within a class constructor,  `this` is a regular object. 
   - All non-static methods within the class are added to the prototype of `this`
   - Static methods are not properties of this. They are properties of the class itself.
 - For derived classes, derived constructors have no initial `this` binding. 
@@ -387,8 +399,8 @@ var o = { a: 37, f: f, g: g, h: h };
 console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 ```
 
-- In arrow functions, `this` retains the value of the enclosing lexical context's `this` . In global code, it will be set to the global object
-- If `this` arg is passed to `call` , `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+- In arrow functions,  `this` retains the value of the enclosing lexical context's `this` . In global code, it will be set to the global object
+- If `this` arg is passed to `call` ,       `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to null
 
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
@@ -416,7 +428,7 @@ o.b = { g: independent, prop: 42 };
 console.log(o.b.g()); // 42
 ```
 
-- If the method is on an object's prototype chain, `this` refers to the object the method was called on, as if the method were on the object.
+- If the method is on an object's prototype chain,  `this` refers to the object the method was called on, as if the method were on the object.
 
 ``` JS
 var o = { f: function() { return this.a + this.b; } };
@@ -472,7 +484,7 @@ console.log(o.a); // 38
 - this in classes
   - Just like with regular functions, the value of `this` within methods depends on how they are called. 
   - Sometimes it is useful to override this behavior so that `this` within classes always refers to the class instance. 
-  - To achieve this, `bind` the class methods in the constructor
+  - To achieve this,  `bind` the class methods in the constructor
   - Classes are always strict mode code. Calling methods with an undefined `this` will throw an error.
 
 ``` JS
@@ -481,10 +493,10 @@ class Car {
     this.sayBye = this.sayBye.bind(this);
   }
   sayHi() {
-    console.log( `Hello from ${this.name}` );
+    console.log(`Hello from ${this.name}`);
   }
   sayBye() {
-    console.log( `Bye from ${this.name}` );
+    console.log(`Bye from ${this.name}`);
   }
   get name() {
     return 'Ferrari';
@@ -516,6 +528,7 @@ bird.sayBye(); // Bye from Ferrari
     - The variable can have any name, but common ones are `self` and `that` .
   - Explicitly set this of the callback 
     - use `bind`
+
  
 
 - ref
@@ -725,7 +738,7 @@ bird.sayBye(); // Bye from Ferrari
 
     return strings.map(
         (str, i) =>
- `${str}${values[i] !== undefined ? values[i] : ''}`
+        `${str}${values[i] !== undefined ? values[i] : ''}`
       )
       .join('')
       .replace(pattern, '');
