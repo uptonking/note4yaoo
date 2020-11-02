@@ -67,6 +67,14 @@ modified: '2020-07-14T11:03:53.196Z'
     - I'd recommend putting your events in their own class
   - Chances are, your application is going to be even more complicated than even a list of counters grin. 
     - You're going to need more model classes, and you're going to want to scope events to particular child models. 
+- pulse /225Star/MIT/202010/ts
+  - https://github.com/pulse-framework/pulse
+  - Global state and logic for reactive JavaScript applications. 
+  - Supports frameworks like React, Vue, and React Native.
+  - Replaces Redux, Vuex, and MobX for state; and for API requests, replaces Axios and fetch.
+
+
+
 
 ## react
 

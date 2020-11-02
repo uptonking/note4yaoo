@@ -83,6 +83,9 @@ modified: '2020-11-02T06:05:38.780Z'
     - 具体来说提供了 createAction()用户方便的生成 action creator，createSlice() 让用户可以集中声明一个分割的子 state 的初始 state，reducers，同时 reducers 的函数名和 name 属性会自动合并成 action type，
     - 正是由于 createSlice 我们就可以只在一个文件 UserSlice 编写以前得在三个分离的文件 reducers/user，actions/user, constants/user 的代码。
 
+- [用redux-toolkit 改造你的redux](https://juejin.im/post/6844904129178009613)
+  - https://github.com/acivan/react-rtk-ts
+
 ## redux-blog
 
 ### [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)

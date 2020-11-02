@@ -7,9 +7,54 @@ modified: '2020-11-01T18:30:30.758Z'
 
 # note-dev-state-storeon
 
+- event-based Redux-like state manager for React, Vue, Angular and Svelte.
+  - The same Redux reducers.
+
 ## guide
 
 ## docs
+
+- ### [storeon-counter](https://github.com/storeon/storeon)
+
+``` JS
+import { createStoreon } from 'storeon'
+
+// Initial state, reducers and business logic are packed in independent modules
+let count = store => {
+  // Initial state
+  store.on('@init', () => ({ count: 0 }))
+  // Reducers returns only changed part of the state
+  store.on('inc', ({ count }) => ({ count: count + 1 }))
+}
+
+export const store = createStoreon([count])
+
+import { useStoreon } from 'storeon/react'
+
+export const Counter = () => {
+  // Counter will be re-render only on `state.count` changes
+  const { dispatch, count } = useStoreon('count')
+  return <button onClick={() => dispatch('inc')}>{count}</button>
+}
+
+import { StoreContext } from 'storeon/react'
+
+render(
+  <StoreContext.Provider value={store}>
+    <Counter />
+  </StoreContext.Provider>,
+  document.body
+)
+```
+
+- ### api
+- `export const store = createStoreon([projects, users])`
+  - store.get() 
+    - will return current state. The state is always an object.
+  - store.on(event, callback) 
+    - will add an event listener.
+  - store.dispatch(event, data) 
+    - will emit an event with optional data.
 
 - ### [Storeon: “Redux” in 173 bytes](https://evilmartians.com/chronicles/storeon-redux-in-173-bytes)
 - fully compatible with Redux DevTools.
@@ -22,3 +67,18 @@ modified: '2020-11-01T18:30:30.758Z'
   - state in Storeon must always be represented by a JavaScript object ({}) with no restrictions on data types for its keys. 
     - This assumption allows to track state changes directly and to avoid Redux-style selector functions altogether. 
     - In my experience, non-object state stores are rare anyway.
+
+## storeon-repos
+
+- https://github.com/sovaai/chatKit-lib
+  - react components that allows you to create dialog interface that interacts with a third-party service that provides the ability to interact with chat
+  - Implemented with Storeon. You can see all content information in react dev tools.
+- https://github.com/mariosant/storeon-streams
+  - Side effects management library for storeon
+  - 依赖kefir
+- https://github.com/logux/state
+  - Tiny state manager with CRDT, cross-tab, and Logux support
+  - Logux is a new way to connect client and server. 
+  - Instead of sending HTTP requests (e.g., AJAX and GraphQL) it synchronizes log of operations between client, server, and other clients.
+- https://github.com/octav47/storeonize
+  - migrate from Redux to Storeon

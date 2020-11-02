@@ -22,6 +22,9 @@ modified: '2020-07-14T10:38:48.217Z'
 - react开放的生态
   - 状态管理、路由管理、取数、不可变数据结构、服务端渲染
   - 选择方式：面向star的编程、大公司支持、团队技术擅长
+  - Reach Router and it’s sibling project React Router are merging as React Router v6. 
+    - In other words, Reach Router v2 and React Router v6 are the same
+    - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
 - react
 
 - react 16.13.0使用后可能出现一些warning的问题
@@ -236,6 +239,7 @@ React.cloneElement(
   - 多个hoc嵌套的执行顺序 
 
  `withDefaultProps(withCalSize(withAccessor(withTooltip(PiePlot))));`
+
   属性从外层向里传，越来越多  
 
   - 使用  

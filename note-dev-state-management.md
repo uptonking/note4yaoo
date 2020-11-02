@@ -9,7 +9,7 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## faq
 
-- 组件内的state如何管理
+- 组件内的state如何管理，component state
 
 ## guide
 
