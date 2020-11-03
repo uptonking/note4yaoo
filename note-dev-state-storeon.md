@@ -14,22 +14,22 @@ modified: '2020-11-01T18:30:30.758Z'
 
 ## docs
 
-- ### [storeon-counter](https://github.com/storeon/storeon)
+- ### [storeon-counter-app-demo](https://github.com/storeon/storeon)
 
 ``` JS
-import { createStoreon } from 'storeon'
+import { createStoreon } from 'storeon';
 
 // Initial state, reducers and business logic are packed in independent modules
 let count = store => {
   // Initial state
-  store.on('@init', () => ({ count: 0 }))
+  store.on('@init', () => ({ count: 0 }));
   // Reducers returns only changed part of the state
-  store.on('inc', ({ count }) => ({ count: count + 1 }))
+  store.on('inc', ({ count }) => ({ count: count + 1 }));
 }
 
-export const store = createStoreon([count])
+export const store = createStoreon([count]);
 
-import { useStoreon } from 'storeon/react'
+import { useStoreon } from 'storeon/react';
 
 export const Counter = () => {
   // Counter will be re-render only on `state.count` changes
@@ -37,7 +37,7 @@ export const Counter = () => {
   return <button onClick={() => dispatch('inc')}>{count}</button>
 }
 
-import { StoreContext } from 'storeon/react'
+import { StoreContext } from 'storeon/react';
 
 render(
   <StoreContext.Provider value={store}>

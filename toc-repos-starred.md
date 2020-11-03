@@ -1,11 +1,11 @@
 ---
-title: toc-github-repos-starred
-tags: [github, repos, toc]
+title: toc-repos-starred
+tags: [repos, toc]
 created: '2020-10-05T09:22:55.948Z'
-modified: '2020-10-06T08:59:16.300Z'
+modified: '2020-11-03T06:56:53.961Z'
 ---
 
-# toc-github-repos-starred
+# toc-repos-starred
 
 ## quickstart
 

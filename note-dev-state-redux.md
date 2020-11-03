@@ -8,18 +8,62 @@ modified: '2020-11-02T06:05:38.780Z'
 # note-dev-state-redux
 
 - Redux is a predictable state container for JavaScript apps.
+- redux vs pub sub
 
 ## faq
 
 - 为什么很多人将fetch请求和redux绑定在一起使用
   - 因为不管是改全局state还是fetch什么的，在我的组件内部都是副作用，副作用的东西之后，它还要改一层全局状态，如果你的场景是请求了改这个组件，那没啥问题，但如果你请求了数据，这个数据在多层次都要用到，你得放全局，这个fetch得副作用你觉得放哪能解决你的问题？既然redux那块有一层改全局state的功能划分，再加一层副作用异步改全局state的能力，redux-thunk提供了，所以effects这种副作用理应靠在redux那边。这个你用一下dva+umi的方式可能更好理解。
 
-- redux vs event pub
+- ### [redux有什么缺点？](https://www.zhihu.com/question/263928256)
+  - 需要写大量的 Action Creator 代码
+  - 需要写大量 switch case 分支判断
+  - Action 和 Reducer 分开书写，维护起来麻烦
+  - 模板代码太多，使用不方便，属性要一个一个 pick，对 ts 也不友好
+  - 触发更新的效率也比较差，connect 的组件的 listener 必须一个一个遍历，再靠浅比较去拦截不必要的更新
+  - 异步操作，通常可以使用 thunk 中间件来做异步
+  - store里面的数据必须都是可以序列化的，比如普通文本，数组，不支持Map，Set等数据结构
+  - store 的推荐数据结构是 json object
+    - 这对于我们的业务来说也不太合适，我们的数据结构是图状，互相有复杂的关联关系
+    - 适合用面向对象来描述模型，描述切面，需要多实例隔离，显然用 json 或者 normalizr 强行做只会增加复杂度，和已有的代码也完全无法小成本适配
+  - 基于 snapshot 的 time travel 内存占用高，性能差，并且没有配套的暂停、重启、切换、清空、事务等机制
+  - 无法做关联更新，每一次的所有变更必须由用户触发，既是优点又是缺点
+  - 非class的设计在ts下得主动写interface并在调用方声明，而 class 的好处是在于本身就能作为 type，并且可以利用 IDE做反向依赖查找
+    - 在复杂业务中，函数式很难落地，包括类似游戏开发中的ECS架构，其实都很难实践，那一点点利用分级缓存提升的性能远远不如面向对象带来的优势更多，还是看业务场景和团队成员的。
+  - 对于自定义的class实例、引用类型、各个不同命名空间属性之间的互相引用似乎是不支持的，仍然需要设计成扁平化，通过 id 来关联，查找的时候显然是不如链式结构快的，并且很难用
+
+- [Redux vs Simple Pub Sub](https://spectrum.chat/react/general/redux-vs-simple-pub-sub~818edeff-0616-4462-9743-71c2678795a5)
+  - I developed a project which is using redux to send messages to a component that is residing in another parent component 
+    - but the same problem was resolved using a simple ES6 pub sub library. 
+    - This raised my curiosity whether to use Redux or a simple Pub Sub would be enough?
+  - It probably depends on the long term roadmap for this project.
+    - For example, if you expect to store system wide internal state that's shared by many components in many routes, then Redux store should help avoid refetching the same resources over and over again.
+    - But if you don't see the project to grow too much in complexity, then keeping the app light and simple seems perfect!
+  - **one thing that Pub/Sub doesn't solve** is 
+    - if components rendered later require the same resources, you'd need to fetch again, 
+    - since a basic Pub/Sub is stateless in the sense that it doesn't store messages. 
+    - React Context and Redux are stateful, which solves the problem
+  - I use react context for small light weight stuff. Works great.
+  - A redux action triggers the change in the store (computed via reducer), 
+    - and then each component [subsctibed to the store via connect/useSelector] can read the store values and re-render. 
+    - This is idiomatic in react-redux world.
+  - If your problem is solved with pubsub lib, great for you. 
+    - But if you keep on adding features the following might happen: 
+      - (a) you need to access the data from a new component on the page, 
+      - (b) you need to access the data from another page in the app or 
+      - (c) you need to save the data across app reloads (as with redux-persist). 
+    - And now, since you're using a custom solution, you'll need to find or invent a solution that fits, whereas in redux these problems are already taken care of.
+  - The idea of pub/sub and listeners caching data reminds me of FLUX pattern with multiple stores, 
+    - which lead to the creation of Redux with one store, 
+    - because people were struggling with syncing data across multiple stores and not having a single source of truth
+    - Personally my take on React Context is that it could be used for storing local app state that doesn't need to live in a global store and also prevent prop drilling. 
+    - So, sort of a complement to Redux IF you expect to build a large app. 
+    - Otherwise we could also possibly just use React Context as a global store instead of Redux for smaller apps?
 
 ## pieces
 
 - Redux is not supposed to "replace the initial idea of react.js", 
-  - think of it more like a library to managed shared state between components and to coordinate state mutations. 
+  - think of it more like a library to manage shared state between components and to coordinate state mutations. 
   - Redux does use a pub/sub pattern indeed
 
 - redux适合管理全局app状态，局部component的状态无需额外状态管理或过重的状态管理
@@ -86,102 +130,16 @@ modified: '2020-11-02T06:05:38.780Z'
 - [用redux-toolkit 改造你的redux](https://juejin.im/post/6844904129178009613)
   - https://github.com/acivan/react-rtk-ts
 
-## redux-blog
+## ref
 
-### [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
-
-- https://github.com/morkro/tetrys
-
-- What makes Redux great is that it forces you to think ahead and get an early picture of your application design. 
-  - You start to define what should actually be stored, which data can and should change, and which components can access the store.
-- I decided to adopt a file structure commonly found in Redux and React projects. 
-  - store, actions, reducers
-  - components
-  - constants, utils
-  - It’s a logical structure and is applicable to many different setups. 
-  - There are many variations on this theme, and most projects do things a little differently, but the overall structure is the same.
-- To access the store, it needs to be created once and passed down to all instances of an application. 
-  - Most frameworks work with some sort of dependency injection container, so we as a user of the framework don’t have to come up with our own solution. 
-
-- Originally I put the store in its own module (`scripts/store/index.js`), which could then be imported by other parts of my application. 
-  - I ended up regretting this and dealing with circular dependencies real quick. 
-  - The issue was that the store didn’t get properly initialized when a component tried to access it.
-  - The application entry point was initializing all the components, which then made internal use of the store directly or via helper functions (called `connect` here). 
-  - But since the store wasn’t explicitly created, but only as a side effect in its own module, components ended up using the store before it has been created.
-  - There was no way to control when a component or a helper function called the store for the first time. It was chaotic.
-
-``` JS
-// scripts/store/index.js (☓ bad)
-import { createStore } from 'redux'
-import reducers from '../reducers'
-
-const store = createStore(reducers)
-
-export default store
-export { getItemList } from './connect'
-
-// scripts/store/connect.js (☓ bad)
-import store from './'
-
-export function getItemList() {
-  return store.getState().items.all
-}
-```
-
-- This is the exact moment when my components ended up being mutually recursive. 
-  - The helper functions require the store to function, 
-  - and are at the same time exported from within store initialization file to make them accessible to other parts of my application.
-
-- I solved this problem by moving the initialization to my application entry point (`scripts/index.js`) , and passing it down to all required components instead.
-  - this is very similar to how React actually makes the store accessible
-- The application entry point creates the store first of all, then passes it down to all the components. 
-- Then, a component can connect with the store and dispatch actions, subscribe to changes or get specific data.
-
-``` JS
-// scripts/store/configureStore.js (✓ good)
-import { createStore } from 'redux'
-import reducers from '../reducers'
-
-export default function configureStore() {
-  return createStore(reducers)
-}
-
-// scripts/store/connect.js (✓ good)
-export function getItemList(store) {
-  return store.getState().items.all
-}
-
-// scripts/index.js
-import configureStore from './store'
-import { PageControls, TetrisGame } from './components'
-
-const store = configureStore()
-const pageControls = new PageControls(store)
-const tetrisGame = new TetrisGame(store)
-```
-
-- Presentational components do nothing else besides pure DOM handling; they aren’t aware of the store. 
-- Container components on the other hand can dispatch actions or subscribe for changes.
-- For me there are exceptions though. 
-  - Sometimes a component is really minimal and only does one thing. 
-  - I didn’t want to split them up into one of the aforementioned patterns, so I decided to mix them. 
-  - If the component grows and gets more logic, I will separate it.
-
-- One of the bigger questions I had, when starting the project, was how to actually update the DOM. 
-  - React uses a fast in-memory representation of the DOM called Virtual DOM to keep DOM updates to a minimum.
-  - I could well switch to Virtual DOM, if my application should grow bigger and more DOM heavy, 
-  - but for now I do classic DOM manipulation and that works fine with Redux.
-- The basic flow is as follows:
-  - A new instance of a container component is initialized and passed the store for internal use
-  - The component subscribes to changes in the store
-  - And uses a different presentational component to render updates in the DOM
-
-- Another important point is to implement a use case driven store. 
-  - In my opinion it’s important to only store what is essential for the application. 
-  - At the very beginning I stored almost everything: current active view, game settings, scores, hover effects, the user’s breathing pattern, and so on.
-
-- I have worked on Redux projects with and without React and my main take-away is, that huge differences in application design aren’t necessary. 
-  - Most methodologies used in React can actually be adapted to any other view handling setup. 
-  - I took me a while to realize this, as I started off thinking I have to do things differently, but eventually I figured this is not necessary.
-- What is different however, is the way you initialize your modules, your store, and how much awareness a component can have of the overall application state. 
-  - The concepts stay the same, but the implementation and amount of code is suited to exactly your needs.
+- [Why you should NEVER use Redux with Angular](https://morioh.com/p/548aad273e3e)
+  - Angular is a highly opinionated framework around dependency injection (DI). 
+    - This makes it easy to share state out of the box. 
+    - Services can easily be shared across different component classes
+  - While you can achieve something similar with React, the easier option is to use Redux.
+  - This is why Redux became so popular with React. 
+  - It's the same way other third party libraries (like Axios) became popular with React. 
+  - These libraries are necessary because React is simply a UI component library.
+  - And just like Angular doesn't need Axios because of it's own httpClientModule, it doesn't need Redux because of things like DI, services, and RxJS
+  - RxJS is a library for making async requests. It leverages the observable design pattern to bring a reactive pub/sub functionality to Angular.
+  - you can argue that Redux is a redundant addition to Angular because Angular achieves the same behavior using RxJS.

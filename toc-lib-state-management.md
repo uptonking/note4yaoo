@@ -34,6 +34,12 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/estrattonbailey/picostate
   - Event-based immutable state management. 源码非常简单
   - integrates seamlessly with React
+- substate /11Star/MIT/202009/ts
+  - https://github.com/tamb/substate
+  - pub/sub state management with optional deep cloning
+  - To manage state with a simple pub/sub pattern and unidirectional data flow
+  - [SubState: I abandoned Redux for a Flux/Pub-Sub hybrid](https://medium.com/@t.saporito/substate-why-i-abandoned-redux-26d01419d74b)
+
 - akita /Apache2/2.3kStar/202007/ts
   - https://github.com/datorama/akita
   - https://datorama.github.io/akita/
@@ -72,9 +78,23 @@ modified: '2020-07-14T11:03:53.196Z'
   - Global state and logic for reactive JavaScript applications. 
   - Supports frameworks like React, Vue, and React Native.
   - Replaces Redux, Vuex, and MobX for state; and for API requests, replaces Axios and fetch.
+- suber /22Star/MIT/201703/js/NoDeps
+  - https://github.com/oskarhane/suber
+  - An eventbus/pubsub compatible with Redux middlewares
+  - Works with popular side effects handling middlewares like redux-saga and redux-observable
 
+## event pub/sub
 
-
+- EventEmitter /3kStar/Unlicense/202001/js/NoDeps
+  - https://github.com/Olical/EventEmitter
+  - brings the power of events from platforms such as node.js to your browser
+  - 对应npm包 https://www.npmjs.com/package/wolfy87-eventemitter
+- PubSubJS /3.3kStar/MIT/202008/js
+  - https://github.com/mroderick/PubSubJS
+  - Dependency free topic-based publish/subscribe library written in JavaScript
+  - PubSubJS has synchronisation decoupling, so topics are published asynchronously.
+  - PubSubJS is designed to be used within a single process, and is not a good candidate for multi-process applications (like Node.js – Cluster with many sub-processes).
+  - Use "constants" for topics and not string literals. PubSubJS uses strings as topics
 
 ## react
 
@@ -210,3 +230,6 @@ modified: '2020-07-14T11:03:53.196Z'
   - Taking inspiration from the Flux Architecture pattern and Redux
 - https://github.com/yottaawesome/brainlet
   - A simple state and event engine for JS web apps.
+- https://github.com/troch/reinspect
+  - Use redux devtools to inspect useState and useReducer 
+  - API: StateInspector, useState(initialState, id?), useReducer(reducer, initialState, initializer?, id?)

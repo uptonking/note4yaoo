@@ -1,11 +1,11 @@
 ---
-title: toc-doc-office-repos
-tags: [doc, office, repos, toc]
+title: toc-doc-office-exploring
+tags: [doc, exploring, office, toc]
 created: '2020-10-05T06:27:18.506Z'
-modified: '2020-10-22T10:11:10.072Z'
+modified: '2020-11-03T06:53:14.931Z'
 ---
 
-# toc-doc-office-repos
+# toc-doc-office-exploring
 
 ## office4j
 

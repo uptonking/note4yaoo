@@ -1,11 +1,11 @@
 ---
-title: toc-github-repos-jvm
-tags: [github, java, toc]
+title: toc-repos-jvm
+tags: [java, repos, toc]
 created: '2020-09-28T08:59:32.864Z'
-modified: '2020-09-28T09:00:03.038Z'
+modified: '2020-11-03T06:55:45.420Z'
 ---
 
-# toc-github-repos-jvm
+# toc-repos-jvm
 
 ## apache
 

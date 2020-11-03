@@ -17,6 +17,57 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## pieces
 
+- browser event vs pub/sub
+  - 目前CustomEvent的支持率达到了99.38%，几乎所有浏览器都支持，IE9-11部分支持
+
+- redux vs pub/sub
+  - pub/sub没有直接考虑数据缓存
+- [Is there a React (state related) event pub sub pattern when replacing Redux?](https://stackoverflow.com/questions/61533575/is-there-a-react-state-related-event-pub-sub-pattern-when-replacing-redux)
+  - Redux is "an event pub/sub at the root level", and can specifically be beneficial in cases where widely separated components need to make use of the same data.
+- [Explain Redux like I'm five](https://dev.to/hemanth/explain-redux-like-im-five)
+  - Redux is a silly concept. Combination pubsub and global variable. 
+  - But the author take it very seriously. 
+  - Build as framework, has ability to customize and plug in. 
+  - And also great tooling such as time travel.
+  - In the end, the author prove good insight. Global variable is good for client application
+  - My suggestion is use redux if you need time travel. If not, event emitter is much simpler
+  - action creators with state objects do help time travel debug but they prevent proper typechecking, to get around JS problems. if using typescript they get in the way.
+  - I also prefer event emitter because the pub/sub API is so much clearer.
+    - but redux connect() does automate some processes you'd have to setup yourself otherwise
+    - and mapStateToProps to filter which events you want to sub to.
+  - All this could be done with a much simpler event emitter module though.
+  - Usually when i adopt redux I'll wrap in my own TS code to hide the boilerplate in a single place.
+- [React Application and Global Event Bus](https://www.reddit.com/r/reactjs/comments/7o6gz7/react_application_and_global_event_bus/)
+  - I have a side project React application that exists alongside other javascript applications. 
+    - I would like to have a two way communication pattern between "external" javascript and internal React events. 
+    - An example of this might be passing "state" data between outside applications to the React app, 
+    - or triggering specific behavior on the React application (or vice versa).
+    - For example, it would be cool if the external JS could mount/unmount the application as needed, or "reset" the application state.
+  - I have a few options:
+    - Use custom browser window events. 
+      - This is basically already supported, but worried I might run into browser specific issues or odd handling of events. 
+      - It does seem well suited to this.
+    - Some kind of pub sub library attached to the window, either something I write or an existing lib. 
+      - This is more work, but might be a better long term solution. 
+      - Thinking of this as housing or controlling callback functions.
+    - Some kind of functional promise/callback system, maybe overlapping with #2. 
+      - I've seen some interesting things related to Redux pub/sub
+  - I dealt with something very similar recently. 
+    - I work with a legacy codebase, and am developing a react codebase along-side it. 
+    - Essentially the legacy codebase takes care of the site furniture, 
+    - and react takes care of the core rendering of the page.
+    - we already have a pub/sub AMD module in the legacy codebase, 
+      - so I went with something similar to option #2 - 
+      - Though the pub-sub module was re-written.
+  - From a high level, the solution was to extract the pub-sub module into a shared resources area of the codebase, and code them with no dependencies (raw basic JS).
+    - From there, update the legacy require config to alias the old location of the pub-sub module, to avoid reworking where it was previously used.
+    - In React, I wrote a redux enhancer to listen to the pub-sub channel, and ingest the data object that was passed through as if it were a redux action.
+  - I'm having a hard time understanding why you would roll your own pubsub system when the browser gives it to you for free. 
+    - Overhead maybe? I've heard DOM events can be a performance drag.
+    - A combination of cross-browser support and legacy layover.
+      - We support IE9, which uses attachEvent instead of addEventListener. 
+      - It would be silly to make that check every time you want to pub/sub, so a local module can just alias that and standardise it.
+
 - ### [How do you manage 'state' with vanilla js?_2018](https://www.reddit.com/r/javascript/comments/9cdxwt/how_do_you_manage_state_with_vanilla_js/)
 - Variables are not managed, nor trigger updates on changes. 
   - State management can be done with variables if you proxy them or overwrite object properties with getter/setters.
@@ -33,24 +84,6 @@ modified: '2020-10-31T19:11:26.567Z'
   - flux
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
-
-- ### [redux 有什么缺点？](https://www.zhihu.com/question/263928256)
-- 需要写大量的 Action Creator 代码
-- 需要写大量 switch case 分支判断
-- Action 和 Reducer 分开书写，维护起来麻烦
-- 异步操作，通常可以使用 thunk 中间件来做异步
-- store里面的数据必须都是可以序列化的，比如普通文本，数组，不支持Map，Set等数据结构
-
-- 模板代码太多，使用不方便，属性要一个一个 pick，对 ts 也不友好
-- 触发更新的效率也比较差，connect 的组件的 listener 必须一个一个遍历，再靠浅比较去拦截不必要的更新
-- store 的推荐数据结构是 json object
-  - 这对于我们的业务来说也不太合适，我们的数据结构是图状，互相有复杂的关联关系
-  - 适合用面向对象来描述模型，描述切面，需要多实例隔离，显然用 json 或者 normalizr 强行做只会增加复杂度，和已有的代码也完全无法小成本适配
-- 基于 snapshot 的 time travel 内存占用高，性能差，并且没有配套的暂停、重启、切换、清空、事务等机制
-- 无法做关联更新，每一次的所有变更必须由用户触发，既是优点又是缺点
-- 非class的设计在ts下得主动写interface并在调用方声明，而 class 的好处是在于本身就能作为 type，并且可以利用 IDE做反向依赖查找
-  - 在复杂业务中，函数式很难落地，包括类似游戏开发中的ECS架构，其实都很难实践，那一点点利用分级缓存提升的性能远远不如面向对象带来的优势更多，还是看业务场景和团队成员的。
-- 对于自定义的class实例、引用类型、各个不同命名空间属性之间的互相引用似乎是不支持的，仍然需要设计成扁平化，通过 id 来关联，查找的时候显然是不如链式结构快的，并且很难用
 
 ## ref
 

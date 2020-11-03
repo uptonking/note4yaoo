@@ -1,11 +1,11 @@
 ---
-title: toc-app-pdf
-tags: [app, pdf]
+title: tool-app-pdf
+tags: [app, pdf, tool]
 created: '2020-09-23T03:00:38.971Z'
-modified: '2020-10-22T10:17:10.460Z'
+modified: '2020-11-03T06:51:56.337Z'
 ---
 
-# toc-app-pdf
+# tool-app-pdf
 
 ## pdf-studio
 

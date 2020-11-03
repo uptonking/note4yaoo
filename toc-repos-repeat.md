@@ -1,11 +1,11 @@
 ---
-title: toc-github-repos-repeat
-tags: [github, toc, repeat, rewrite]
+title: toc-repos-repeat
+tags: [repeat, repos, rewrite, toc]
 created: '2020-10-11T09:40:20.215Z'
-modified: '2020-10-11T09:44:57.668Z'
+modified: '2020-11-03T06:56:31.090Z'
 ---
 
-# toc-github-repos-repeat
+# toc-repos-repeat
 
 ## repos
 

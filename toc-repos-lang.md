@@ -1,11 +1,11 @@
 ---
-title: toc-github-repos-lang
-tags: [github, lang, repos, toc]
+title: toc-repos-lang
+tags: [lang, repos, toc]
 created: '2020-10-05T06:25:05.942Z'
-modified: '2020-10-22T10:13:47.161Z'
+modified: '2020-11-03T06:56:19.448Z'
 ---
 
-# toc-github-repos-lang
+# toc-repos-lang
 
 ## cpp
 
