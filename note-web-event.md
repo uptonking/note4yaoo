@@ -93,6 +93,26 @@ modified: '2020-08-19T13:38:01.426Z'
     - onkeypress与onkeydown一样，也是先处理事件，再显示文本
   - onchange：当对象或选中区的内容改变且失去焦点时触发
 
+## guide
+
+- Events can be created with the `Event` constructor
+  - This constructor is supported in most modern browsers (with Internet Explorer being the exception)
+- To add more data to the event object, the `CustomEvent` interface exists and the `detail` property can be used to pass custom data
+- The older approach to creating events uses APIs inspired by Java
+  - `const event = document.createEvent('Event');`
+- Elements can listen for events that haven't been created yet by eventName
+
+- `EventTarget` is a DOM interface implemented by objects that can receive events and may have listeners for them.
+  - `Element`, Document, and `Window` are the most common event targets, but other objects can be event targets, too. 
+  - For example `XMLHttpRequest`, AudioNode, AudioContext, and others.
+  - Many event targets (including elements, documents, and windows) also support setting event handlers via `onevent` properties and attributes
+- `eventTarget.addEventListener(type, listener [, options])`
+- `eventTarget.removeEventListener()`
+- `eventTarget.dispatchEvent(event)`
+  - Unlike "native" events, which are fired by the DOM and invoke event handlers asynchronously via the event loop, dispatchEvent() invokes event handlers synchronously. 
+  - All applicable event handlers will execute and return before the code continues on after the call to dispatchEvent().
+  - dispatchEvent() is the last step of the create-init-dispatch process, which is used for dispatching events into the implementation's event model. The event can be created using Event constructor.
+
 ## Web-API-GlobalEventHandlers
 
 - `onchange`
@@ -111,7 +131,7 @@ modified: '2020-08-19T13:38:01.426Z'
     - React attaches listeners for Component.onChange to the DOM element.oninput event. 
       - https://github.com/facebook/react/issues/3964
 - `oninput`
-  - input event fires when the value of an `<input>` , `<select>` , or `<textarea>` element has been changed
+  - input event fires when the value of an `<input>` ,  `<select>` , or `<textarea>` element has been changed
   - oninput event occurs when the text content of an element is changed through the user interface.
   - The event also applies to elements with contenteditable enabled, and to any element when designMode is turned on.
   - input event is fired every time the value of the element changes. 

@@ -17,8 +17,30 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## pieces
 
-- browser event vs pub/sub
+- event-pub/sub vs browser event
   - 目前CustomEvent的支持率达到了99.38%，几乎所有浏览器都支持，IE9-11部分支持
+  - What your describing is the difference between
+    - A custom event based message passing system
+    - manually firing DOM events.
+  - The former is a way to use events for message passing. 
+    - An example would be creating an `EventEmitter`
+  - The latter is simply a way to use the browsers built-in DOM event system manually. 
+    - This is basically using the DOM 3 Event API which natively exists in (competent/modern) browsers.
+  - Benchmark showing DOM 3 custom events is 98% slower
+  - The DOM appears to have a huge overhead(管理费用). 
+    - It does so because it supports event propagation and bubbling. 
+    - It does because it supports binding events to a DOMElement.
+  - If you do not need any of the features of DOM3 events, then use a pub/sub library of choice.
+  - The most obvious "con" to using the DOM methods is that 
+    - they're tied to browser-based deployments and involve the DOM in things even if it doesn't really make sense (e.g., the messaging isn't related to DOM objects), 
+    - whereas a standard Observer-style implementation can be used in any environment, not just web browsers, and with any generic object you like.
+  - The most obvious "con" to doing your own Observer implementation is that
+    - you've done your own Observer implementation, 
+    - rather than reusing something already present (tested, debugged, optimised, etc.) in the environment.
+  - ref
+    - [What is the difference between different ways of Custom event handling in JavaScript?](https://stackoverflow.com/questions/6570523/what-is-the-difference-between-different-ways-of-custom-event-handling-in-javasc)
+    - [Custom Event emitter/consumers in Browser Javascript outside DOM](https://stackoverflow.com/questions/51110935/custom-event-emitter-consumers-in-browser-javascript-outside-dom)
+      - 借助DOM通过自定义事件传递数据时，事件属性会继承所有基类属性，如bubble、detail等，而这些属性可能与业务数据无关
 
 - redux vs pub/sub
   - pub/sub没有直接考虑数据缓存
