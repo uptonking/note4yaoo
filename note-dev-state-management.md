@@ -13,6 +13,10 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## guide
 
+- 对象间数据(消息)的传递，可以通过pub/sub event实现，很适合component内状态管理
+  - 简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
+  - 不支持跨page传递数据
+  - 不支持数据持久化
 - SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级
 
 ## pieces
@@ -41,6 +45,26 @@ modified: '2020-10-31T19:11:26.567Z'
     - [What is the difference between different ways of Custom event handling in JavaScript?](https://stackoverflow.com/questions/6570523/what-is-the-difference-between-different-ways-of-custom-event-handling-in-javasc)
     - [Custom Event emitter/consumers in Browser Javascript outside DOM](https://stackoverflow.com/questions/51110935/custom-event-emitter-consumers-in-browser-javascript-outside-dom)
       - 借助DOM通过自定义事件传递数据时，事件属性会继承所有基类属性，如bubble、detail等，而这些属性可能与业务数据无关
+
+``` JS
+// 提供一个示例元素
+let obj = document.body;
+// add an appropriate event listener
+obj.addEventListener("cat", function(e) { console.log('detail, ', e.detail) });
+
+// create and dispatch the event
+var event = new CustomEvent("cat", {
+  detail: {
+    evtContent: 'true'
+  },
+  // 默认值
+  bubbles: false,
+  cancelable: false,
+  composed: false
+});
+// 本对象触发的事件，可以触发注册在本对象上的方法，这里提供了一种传递数据的新思路
+obj.dispatchEvent(event);
+```
 
 - redux vs pub/sub
   - pub/sub没有直接考虑数据缓存
@@ -95,13 +119,7 @@ modified: '2020-10-31T19:11:26.567Z'
   - State management can be done with variables if you proxy them or overwrite object properties with getter/setters.
   - Everything else resorts to polling or updaters, which will turn your app upside down if it functions asynchronously.
 - Hopefully you're using es6 at least so you have classes which can store their own state, 
-  - then it's a matter of making the class objects talk to each other in a parent class as necessary
-- Honestly, something like redux is already far more basic than what you're going for here. 
-  - State is the single most important aspect of the application and hard to get right, if there's any place to use a well-established and tested lib it's for state. 
-  - Doing this with a OO monstrosity(巨大而丑陋之物) with setter/getters and event subscriptions will work, 
-  - but it'll grow, it'll be messy unless you add actions, demands will increase, you'll want to log, send error reports to a remote, etc. 
-  - Like always when people are trying to avoid libs for no reason, in the end they'll write a bad one themselves with little to no benefit.
-- What does vanilla mean to you? Are you rolling everything yourself? A couple patterns are:
+  - then it's a matter of making the class objects talk to each other in a parent class as necessary的传递，可以通过pub
   - pub/sub
   - flux
   - observables(Observer pattern)

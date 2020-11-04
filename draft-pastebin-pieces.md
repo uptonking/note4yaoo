@@ -9,9 +9,7 @@ modified: '2020-07-30T13:52:49.242Z'
 # draft-pastebin-pieces
 
  
-- 趋势预测
-  - 高利贷业务：持续剥削底层及中层劳动人民
-  - 内斗的转折点：斗争双方中一方高层利益大受损，如广电扼杀了电视台的收入，那会由受损方倒逼改革
+
 ------  
 
 - TODO: components、datable、charts、builder
@@ -65,6 +63,7 @@ d.__proto__.print()
 - musicbrainz-rename
 
 ``` 
+
 $if2(%albumartist%,%artist%)/
 $if(%albumartist%,%album%/,)
 $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$num(%tracknumber%,2) ,)$if(%_multiartist%,%artist% - ,)%title%
@@ -74,6 +73,7 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 - emotion的button
 
 ``` 
+
  const renderButton = (Root: React.ElementType<any> = 'button') => (
     <Root
       ref={forwardRef}

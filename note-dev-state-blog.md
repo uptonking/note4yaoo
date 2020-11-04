@@ -74,6 +74,73 @@ window.setInterval(function() {
 }, 1000);
 ```
 
+### [How to create a state-based UI component with vanilla JS_202005](https://gomakethings.com/how-to-create-a-state-based-ui-component-with-vanilla-js/)
+
+- With State-based UI, you use your state or data to create your UI.
+- Rather than trying to target and manipulate elements in the DOM when the user does things, you update your data object. 
+  - Then, in a template, you say, “If the data looks like this, do this. If it looks like that, do that instead.”
+  - Then, you can render the HTML string into the UI using the innerHTML property.
+
+``` JS
+var template = function(props) {
+  return `
+		<h1>${props.heading}</h1>
+		<ul>
+			${props.todos.map(function (todo) {
+				return `<li>${todo}</li>`;
+			}).join('')}
+		</ul>`;
+};
+
+var app = document.querySelector('#app');
+// Returns an HTML string
+app.innerHTML = template(data);
+```
+
+- The approach above works, but it would be nice to have a component we can use over-and-over again with different elements, data, and templates.
+- Let’s start by creating a new component using a constructor pattern
+- In our constructor function, we’ll accept a selector for the element to render our template into, our data, and our template.
+
+``` JS
+var Rue = function(options) {
+  this.elem = document.querySelector(options.selector);
+  this.data = options.data;
+  this.template = options.template;
+};
+Rue.prototype.render = function() {
+  this.elem.innerHTML = this.template(this.data);
+};
+
+var app = new Rue({
+  selector: '#app',
+  data: {
+    heading: 'My Todos',
+    todos: ['Swim', 'Climb', 'Jump', 'Play']
+  },
+  template: function(props) {
+    return `
+			<h1>${props.heading}</h1>
+			<ul>
+				${props.todos.map(function (todo) {
+					return `<li>${todo}</li>`;
+				}).join('')}
+			</ul>`;
+  }
+});
+app.render();
+
+// Add a new item to the data
+app.data.todos.push('Take a nap... zzzzz');
+// Render an updated UI
+app.render();
+```
+
+### [State based UI vs. manual DOM manipulation_201901](https://gomakethings.com/state-based-ui-vs.-manual-dom-manipulation/)
+
+- State is data at a particular moment in time. 
+  - It’s the present “state” of your data.
+- What’s wrong with manual DOM manipulation?
+
 ### [Build a state management system with vanilla JavaScript_2018](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/)
 
 - https://github.com/hankchizljaw/vanilla-js-state-management
