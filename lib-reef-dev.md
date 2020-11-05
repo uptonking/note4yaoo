@@ -7,6 +7,8 @@ modified: '2020-11-04T17:53:06.883Z'
 
 # lib-reef-dev
 
+- To make vanillajs great again
+
 - Reef /631Star/MIT/202010/js/NoDeps
   - https://github.com/cferdinandi/reef
   - https://reefjs.com/
@@ -34,8 +36,17 @@ modified: '2020-11-04T17:53:06.883Z'
     - But Reef only updates things that have changed instead clobbering the DOM and removing focus from your form fields. 
     - It also automatically renders a new UI when your data updates, and helps protect you from XSS attacks.
 
-## ref
+## reef-repos
 
 - https://github.com/sreekotay/reefer
   - Lightweight Vanilla JS HTML/JS UI Library
   - declarative reef
+- https://github.com/MathiasWP/TeroyJS
+  - TeroyJS is a state-based component UI renderer library made up of 100 lines of code; 
+  - Create components with states, and watch how they automatically are updated in your GUI whenever they are changed.
+  - TeroyJS focuses mainly on one thing: size. A minified TeroyJS takes only 2.75kb(1.36kb gzip)
+  - TeroyJS works silently behind the scenes with the power of JavaScript Proxies 
+    - and will only update the necessary DOM-components on state changes. 
+  - There's no virtual DOM (like in React), and the speed of TeroyJS is not limited by thousands of line with code.
+- https://github.com/kieranbarker/guess-the-color
+  - This project was inspired by @clairy_charles' color game.

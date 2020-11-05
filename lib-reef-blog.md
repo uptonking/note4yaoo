@@ -7,6 +7,40 @@ modified: '2020-11-04T18:13:03.558Z'
 
 # lib-reef-blog
 
+## reef-blog
+
+### [Why I wrote my own vanilla JS alternative to Vue and React_201807](https://gomakethings.com/why-i-wrote-my-own-vanilla-js-alternative-to-vue-and-react/)
+- simplicity
+  - I find React confusing. 
+    - It has a lot of moving parts and custom methods.
+  - I like Vue’s simplicity
+    - create a template, attach some data, and render
+    - but don’t like how it mixes JS into the DOM with custom `v-` attributes that do things like loop through items and run conditionals. 
+    - I’d rather that stuff happen in my JavaScript.
+- Both React and Vue are pretty large at around 30kb minified and gzipped, 
+  - and lock you in with a maze of proprietary methods.
+  - I don’t want to transpile my code. I don’t want to use weird custom DOM attributes.
+  - I just want to write clean markup, simple JavaScript, and build cool stuff.
+- Reef does less
+  - Reef is an anti-framework. It does a lot less than the big guys like React and Vue.
+  - It doesn’t have a Virtual DOM.
+  - It doesn’t automagically update the UI when state changes.
+  - It doesn’t provide a bunch of custom methods.
+- Reef does just one thing: render UI.
+- Couldn’t you just use some template strings and innerHTML? Sure. 
+  - But Reef sanitizes your data before rendering to minimize the risk of XSS scripting attacks. 
+  - It also only updates things that have changed instead clobbering the DOM and removing focus from your form fields.
+- How Reef.js works
+  - Reef.js is used to create templates, attach data to them, and then use that data to render them into the DOM. 
+  - You can update the data (or state), and update the template in the DOM to match.
+
+
+
+
+
+- [Why do people choose frameworks over vanilla JS?(podcast audio)_201909](https://vanillajspodcast.com/why-do-people-choose-frameworks-over-vanilla-js/)
+  - reefjs, sveltejs, Vanilla JS Toolkit
+
 ## state-ui-blog
 
 ### [How I built my own vanilla JS alternative to Vue and React](https://gomakethings.com/how-i-built-my-own-vanilla-js-alternative-to-vue-and-react/)

@@ -7,6 +7,8 @@ modified: '2020-09-26T12:52:33.493Z'
 
 # latest-js-web
 
+- To make vanillajs great again
+
 ## dilemma
 
 - [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)

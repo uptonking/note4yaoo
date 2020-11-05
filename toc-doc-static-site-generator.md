@@ -34,3 +34,6 @@ modified: '2020-10-13T09:21:27.098Z'
   - Differences with storybook
     - No addons, if you want more features open a pull request here
     - Many features inherited from next.js like Incremental compilation
+- https://github.com/make-my/makemy
+  - makemy is a tool that parses your text-posts and creates beautiful webpages out of them 
+  - Powered entirely in NodeJS 

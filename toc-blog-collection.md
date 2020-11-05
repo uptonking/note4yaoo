@@ -24,6 +24,7 @@ modified: '2020-07-12T13:11:41.315Z'
   - 将 Event Loop 切换到基于libuv实现、支持宏任务与微任务
 - [Leaving Scribe Text Editor](https://www.theguardian.com/info/2019/jan/24/leaving-scribe)
 - [What does % mean in CSS?](https://wattenberger.com/blog/css-percents)
+- [make vanillajs great again](https://github.com/krausest/js-framework-benchmark/issues/403)
 
 ## backend
 

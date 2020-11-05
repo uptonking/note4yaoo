@@ -36,7 +36,7 @@ modified: '2020-07-14T11:27:22.474Z'
   - https://ecss.io/appendix1.html (chrome34/firefox29/ie9/android4)
   - https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/
 
-## sumary
+## summary
 
 - Best practices of using efficient CSS selectors (by Google Page Speed) (已过时)
   - Avoid descendant selectors: table tbody tr td
@@ -50,7 +50,7 @@ modified: '2020-07-14T11:27:22.474Z'
     - https://stackoverflow.com/questions/8640692/slow-response-when-the-html-table-is-big?
     - https://stackoverflow.com/questions/25618138/what-happened-to-the-use-efficient-css-selectors-rule
 
-- CSS Selector Performance has changed! (For the better)
+- [CSS Selector Performance has changed! (For the better)](https://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/)
   - My view is that authors should not need to worry about optimizing selectors (and from what I see, they generally don’t), that should be the job of the engine
   - Style sharing allows the browser to figure out that one element in the style tree has the same styles as something it has already figured out.
   - The browser matches styles from right to left, so the rightmost selector is really important. 
@@ -76,8 +76,19 @@ modified: '2020-07-14T11:27:22.474Z'
   - What is still slow?
     - direct and indirect adjacent combinators can still be slow, however, ancestor filters and rule hashes can lower the impact as those selectors will only rarely be matched. 
     - there is still a lot of room for webkit to optimize pseudo classes and elements, but regardless they are much faster than trying to do the same thing with JavaScript and DOM manipulations
-  - ref
-    - https://calendar.perfplanet.com/2011/css-selector-performance-has-changed-for-the-better/
+
+- [JavaScript Selector Performance_201703](https://gomakethings.com/javascript-selector-performance/)
+  - Specifically, `getElementById()` and `getElementsByClassName()` are more than twice as fast as `querySelector()` and `querySelectorAll()`.
+  - So, that’s bad, right? I honestly don’t think it matters.
+  - Yes, `getElementById()` and `getElementsByClassName()` are faster. 
+  - But the flexibility and consistency of `querySelector()` make the obvious muscle-memory choice for my projects.
+  - And it’s not slow. It’s just not as fast.
+  - getElementById() can run about 15 million operations a second, 
+    - compared to just 7 million per second for querySelector() in the latest version of Chrome. 
+    - But that also means that querySelector() runs 7,000 operations a millisecond. 
+    - 虽然慢一点，但也足够快，性能的主要问题不在这里
+
+
 
 ## pieces
 
