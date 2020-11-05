@@ -25,6 +25,84 @@ modified: '2020-11-02T05:19:40.469Z'
 - Let’s take a look at how our Store object keeps track of all of the changes. We’re going to use a Proxy to do this
 - Usage of DOM Api will prevent possible SSR
 
+### [Stateful Components in Vanilla JS](https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/)
+
+- Today I’d like to show you how to create stateful components with vanilla JavaScript, and demonstrate 
+  - You don’t need to download any library to apply the amazing concepts used by React.js in your JavaScript programming.
+- Even though we can’t benefit from React’s virtual DOM or setState({}) method, this is a powerful way to think and program — and there is no external dependency to worry about!
+- What are the benefits?
+  - Write organized, reactive code without the increased bundle size
+  - Simplify DOM manipulations and state logic
+  - Improve the versatility and strength of your standard JavaScript coding!
+
+- [demo on jsfiddle](https://jsfiddle.net/jzft0o7r/)
+
+``` HTML
+<div class="App__container" id="app">
+  <div>Count: <span id="display">0</span></div>
+
+  <button onclick="incCountUp()">+Count</button>
+</div>
+```
+
+``` CSS
+.App__container {
+  padding: 15px;
+}
+
+.Score {
+  font-size: 28px;
+}
+
+.text-error {
+  color: red;
+}
+
+.text-success {
+  color: green;
+  font-size: 40px;
+}
+```
+
+``` JS
+const display = document.getElementById("display");
+
+const state = {
+  count: 0,
+}
+
+// Components
+
+const counter = count => {
+  let classname = "text-error";
+
+  if (count > 10) {
+    classname = "text-success";
+  }
+
+  return (
+    `<p class="Counter">Count: <span class="${classname}">${count}</span></p>`
+  );
+};
+
+// Render Methods
+
+function renderCount() {
+  display.innerHTML = counter(state.count);
+}
+
+// Update methods
+
+function incCountUp() {
+  let newCount = state.count + 1;
+  state.count = newCount;
+
+  renderCount();
+}
+
+renderCount();
+```
+
 ### [Observer vs Pub-Sub pattern](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c)
 
 - The `observer pattern` is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.

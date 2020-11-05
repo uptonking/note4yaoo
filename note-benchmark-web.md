@@ -49,6 +49,10 @@ modified: '2020-07-14T09:28:43.976Z'
   - so they're not suitable for anything that might get deployed with a content security policy
   - Yes, it was acceptable as proof-of-concept. 
 
-## style-perf
+- [radEventListener: a Tale of Client-side Framework Performance_202008](https://css-tricks.com/radeventlistener-a-tale-of-client-side-framework-performance/)
+  - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
+  - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
 
-## table-perf
+## vanillajs
+
+- [textJust how much faster is vanilla JS than frameworks?_202008](https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/)

@@ -9,10 +9,21 @@ modified: '2020-06-22T09:23:56.117Z'
 
 ## topic 
 
+### wiki
+
 - 全球湾区
   - 粤港澳
 - https://github.com/sindresorhus/awesome
   - Awesome lists about all kinds of interesting topics
+
+- country postion in the world map
+  - 查看自己国家的位置与某个其他国家的位置
+
+- 华人分布
+  - 华人最多的国家：新加坡、马来西亚、泰国、印尼、缅甸、加拿大、澳大利亚、新西兰
+  - 移民国家
+
+### dev
 
 - 大公司开源项目全家桶
 - 主流design system: 组件库框架、sketch
@@ -22,12 +33,9 @@ modified: '2020-06-22T09:23:56.117Z'
   - View Survey Results • Download Full Data Set (CSV)
   - https://github.com/brianhuynh27/pandas_data_analysis
 
-- country postion in the world map
-  - 查看自己国家的位置与某个其他国家的位置
+### marketing
 
-- 华人分布
-  - 华人最多的国家：新加坡、马来西亚、泰国、印尼、缅甸、加拿大、澳大利亚、新西兰
-  - 移民国家
+- 胡润百富 Under30s创业领袖 2020
 
 ## edu
 
