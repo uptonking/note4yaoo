@@ -143,3 +143,5 @@ modified: '2020-11-02T06:05:38.780Z'
   - And just like Angular doesn't need Axios because of it's own httpClientModule, it doesn't need Redux because of things like DI, services, and RxJS
   - RxJS is a library for making async requests. It leverages the observable design pattern to bring a reactive pub/sub functionality to Angular.
   - you can argue that Redux is a redundant addition to Angular because Angular achieves the same behavior using RxJS.
+- [6 things I wished I knew about state management when I started writing React apps](https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb)
+  - [reddit discussion](https://www.reddit.com/r/javascript/comments/f1jop9/6_things_i_wished_i_knew_about_state_management/)

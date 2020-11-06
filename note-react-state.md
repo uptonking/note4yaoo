@@ -414,23 +414,6 @@ function StateProvider({ children }) {
   - No. Singletons are a code-smell that could indicate shared mutable state, which is the real anti-pattern. 
   - Redux prevents shared mutable state via encapsulation (you should not be mutating app state directly outside of reducers, instead, Redux handles state updates) and message passing (only dispatched action objects can trigger state updates).
 
-- Redux offers a tradeoff. It asks you to:
-  - Describe application state as plain objects and arrays.[state]
-  - Describe changes in the system as plain objects.[action]
-  - Describe the logic for handling changes as pure functions.[reducer]
-- None of these limitations are required to build an app, with or without React. In fact these are pretty strong constraints, and you should think carefully before adopting them even in parts of your app.
-- These limitations are appealing to me because they help to
-  - Persist state to a local storage 
-  - Pre-fill state on the server, send it to the client in HTML 
-  - Serialize user actions and attach them, together with a state snapshot, to automated bug reports, so that the product developers can replay them to reproduce the errors.
-  - Pass action objects over the network to implement collaborative environments without dramatic changes to how the code is written.
-  - Maintain an undo history or implement optimistic mutations without dramatic changes to how the code is written.
-  - Travel between the state history in development, and re-evaluate the current state from the action history when the code changes, a la TDD.
-  - Provide full inspection and control capabilities to the development tooling so that product developers can build custom tools for their apps.
-  - Provide alternative UIs while reusing most of the business logic.
-- However, if you’re just learning React, don’t make Redux your first choice. Instead learn to think in React. Come back to Redux if you find a real need for it, or if you want to try something new.
-- Finally, don’t forget that you can apply ideas from Redux without using Redux.
-
 - Is Redux dead, dying, deprecated, or about to be replaced?
   - No
 - Like any tool, it's important to understand the tradeoffs and benefits before deciding to use something.
@@ -450,7 +433,6 @@ function StateProvider({ children }) {
   - Depending on your app's setup, much better performance than working with just Context
 
 - ref
-  - [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
   - [Redux - Not Dead Yet!](https://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/)
   - [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
 

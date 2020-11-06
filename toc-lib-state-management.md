@@ -20,7 +20,7 @@ modified: '2020-07-14T11:03:53.196Z'
   - MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
   - Mobx implements TFRP in a glitch-free, synchronous, predictable and efficient manner.
   - mobx isn't pubsub. It doesn't do change detection
-- xstate /MIT/12.2kStar/202007
+- xstate /MIT/12.2kStar/202007/状态机
   - https://github.com/davidkpiano/xstate
   - https://xstate.js.org/docs/
   - JS and TS finite state machines and statecharts for the modern web.

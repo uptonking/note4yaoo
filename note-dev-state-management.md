@@ -130,9 +130,15 @@ obj.dispatchEvent(event);
 - [A Very Basic State Management Library In Under 100 Lines Of JavaScript_2020](https://vijitail.dev/blog/basic-state-management-library-using-vanilla-javascript)
   - https://github.com/vijitail/Kel
   - This library is going to make use of the Pub/Sub pattern like most of the other libraries, so all the data will be passed around using events
+  - [reddit discussion](https://www.reddit.com/r/javascript/comments/gbj8qm/i_created_a_very_simple_state_management_library/)
+    - My thought process behind this was that the store should be the single point of truth for all the global data. 
+    - Having multiple instances of the store would make it difficult for the consumer to keep track of the data.
+    - On the other hand, having multiple stores will give the user liberty to manage data for each component independently.
+    - both of those things make sense. It doesnt seem like the library should make that decision for the code consuming the library tho.
 - https://github.com/maiavictor/purestate
   - small state management library that is supposed to cover every use case of complex solutions such as Flux/Reflux/etc without the overengineering. 
-  - The 1% that isn't pure should be written as if it was. Then, when you do need to mutate that 1% - just do it. Not indirectly like you do.
+  - The 1% that isn't pure should be written as if it was. 
+  - Then, when you do need to mutate that 1% - just do it. Not indirectly like you do.
 - https://github.com/Anekenonso/Vanillajs-state-magement
   - a Vanillajs state management app with no library or framework.
 - [More than 100 different counter applications](https://gist.github.com/srdjan/1d10cbd42a2d695f696dee6b47fdc5e0)
@@ -142,3 +148,6 @@ obj.dispatchEvent(event);
   - In this article I would like to explain and show an example of how creating a centralised application state can help you handle and manage your application's User Interface.
   - For this example, we will be storing the data using localStorage.
   - The Store class will be used to save and load list items to localStorage when needed
+- [What problems are state management libs solving? Can't you just create a singleton/static class and be done with it?](https://www.reddit.com/r/javascript/comments/d6lw4c/askjs_what_problems_are_state_management_libs/)
+  - I think if you come from React, state management is ingrained(根深蒂固的；日久难改的) into you. 
+    - I come from Angular, and I just use a service to hold an application-wide data model. Works great.
