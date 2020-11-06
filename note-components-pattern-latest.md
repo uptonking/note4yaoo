@@ -28,6 +28,10 @@ modified: '2020-10-29T12:52:12.025Z'
 
 ## ideas
 
+- ComponentPreview
+  - 组件的快速预览图，不需要交互事件
+  - 可参考SkeletonLoader
+
 ### [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
 
 - Design Tokens

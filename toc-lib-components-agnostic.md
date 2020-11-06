@@ -106,6 +106,11 @@ modified: '2020-10-05T06:23:07.417Z'
   - A closure based Web Component library
   - https://github.com/vasturiano/react-kapsule
     - React wrapper for kapsule-style web components
+- https://github.com/krakenjs/zoid
+  - Render an iframe or popup on a different domain, and pass down props
+  - Call callbacks natively from the child window without worrying about post-messaging or cross-domain restrictions
+  - Create and expose components to share functionality from your site to others!
+  - zoid is framework agnostic.
 
 - https://github.com/shipshapecode/shepherd
   - a JavaScript library for guiding users through your app. It uses Popper.js

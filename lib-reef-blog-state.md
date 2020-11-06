@@ -7,7 +7,7 @@ modified: '2020-11-04T18:12:59.308Z'
 
 # lib-reef-blog-state
 
-## [State-Based UI](https://gomakethings.com/series/state-based-ui/)
+## [State-Based UI series](https://gomakethings.com/series/state-based-ui/)
 
 - Here’s my complete series on building a reactive state-based UI library. 
 - It gets into how today’s most popular frameworks work under-the-hood.
@@ -36,6 +36,7 @@ app.innerHTML = template(data);
 ```
 
 - The approach above works, but it would be nice to have a component we can use over-and-over again with different elements, data, and templates.
+  - 将状态数据、dom模版封装在一个组件模块中更容易复用
 - Let’s start by creating a new component using a constructor pattern
 - In our constructor function, we’ll accept a selector for the element to render our template into, our data, and our template.
 

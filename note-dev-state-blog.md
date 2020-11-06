@@ -22,7 +22,13 @@ modified: '2020-11-02T05:19:40.469Z'
 - We’re creating the functionality that allows other parts of our application to subscribe to named events.
 - Another part of the application can then publish those events, often with some sort of relevant payload.
 - The PubSub pattern loops through all of the subscriptions and fires their callbacks with that payload.
-- Let’s take a look at how our Store object keeps track of all of the changes. We’re going to use a Proxy to do this
+- The Store is our central object.
+- Let’s take a look at how our Store object keeps track of all of the changes. 
+  - We’re going to use a Proxy to do this
+  - If we add a `get` trap, we can monitor every time that the object is asked for data. 
+  - Similarly with a `set` trap, we can keep an eye on changes that are made to the object.
+  - when a mutation runs something like `state.name = 'Foo'` , this trap catches it before it can be set and provides us an opportunity to work with the change or even reject it completely. 
+- There’s a lot going on there, but I hope you’re starting to see how this is all coming together and importantly, how we’re able to maintain state centrally, thanks to Proxy and Pub/Sub.
 - Usage of DOM Api will prevent possible SSR
 
 ### [Stateful Components in Vanilla JS](https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/)
@@ -67,12 +73,12 @@ modified: '2020-11-02T05:19:40.469Z'
 ``` JS
 const display = document.getElementById("display");
 
+//  start with a simple object, which will represent the initial state of our data
 const state = {
   count: 0,
 }
 
 // Components
-
 const counter = count => {
   let classname = "text-error";
 
@@ -85,14 +91,12 @@ const counter = count => {
   );
 };
 
-// Render Methods
-
+// Render Function
 function renderCount() {
   display.innerHTML = counter(state.count);
 }
 
 // Update methods
-
 function incCountUp() {
   let newCount = state.count + 1;
   state.count = newCount;
@@ -103,30 +107,3 @@ function incCountUp() {
 renderCount();
 ```
 
-### [Observer vs Pub-Sub pattern](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c)
-
-- The `observer pattern` is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
-- The Subject in the Observer Pattern is like a Publisher and the Observer can totally be related to a Subscriber 
-- and Yes, the Subject notifies the Observers like how a Publisher generally notify his subscribers. 
-- That’s why most of the Design Pattern books or articles use ‘Publisher-Subscriber’ notion to explain Observer Design Pattern. 
-- But there is another popular Pattern called ‘Publisher-Subscriber’ and it is conceptually very similar to the Observer pattern. 
-- In `Publisher-Subscriber` pattern, senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers.
-- This means that the publisher and subscriber don’t know about the existence of one another. 
-- There is a third component, called broker or message broker or `event bus`, 
-  - which is known by both the publisher and subscriber, 
-  - which filters all incoming messages and distributes them accordingly.
-- In other words, pub-sub is a pattern used to communicate messages between different system components without these components knowing anything about each other’s identity. 
-- how does the broker filter all the messages?  
-  - Most popular methods are: Topic-based and Content-based
-
-- Let’s list out the differences as a quick Summary:
-  - In the Observer pattern, the Observers are aware of the Subject, also the Subject maintains a record of the Observers. 
-    - Whereas, in Publisher/Subscriber, publishers and subscribers don’t need to know each other. 
-    - They simply communicate with the help of message queues or broker.
-  - In Publisher/Subscriber pattern, components are loosely coupled as opposed to Observer pattern.
-  - Observer pattern is mostly implemented in a synchronous way, i.e. the Subject calls the appropriate method of all its observers when some event occurs. 
-    - The Publisher/Subscriber pattern is mostly implemented in an asynchronous way (using message queue).
-  - Observer pattern needs to be implemented in a single application address space. 
-    - On the other hand, the Publisher/Subscriber pattern is more of a cross-application pattern.
-
-- Despite the differences between these patterns, some might say that Publisher-Subscriber pattern is a variation of Observer pattern because of the conceptual similarity between them. And it won’t be wrong at all. Don’t need to take the differences religiously. 

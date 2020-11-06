@@ -139,3 +139,6 @@ obj.dispatchEvent(event);
 - [Binding User Interfaces and Application State with Vanilla JavaScript](https://matswainson.com/binding-user-interfaces-application-state-with-vanilla-javascript)
   - https://github.com/matswainson/todo-list-application-state-example
   - https://codepen.io/matswainson/pen/RMoGmj
+  - In this article I would like to explain and show an example of how creating a centralised application state can help you handle and manage your application's User Interface.
+  - For this example, we will be storing the data using localStorage.
+  - The Store class will be used to save and load list items to localStorage when needed

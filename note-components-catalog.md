@@ -202,12 +202,16 @@ modified: '2020-10-02T11:42:00.886Z'
 - Toast
 - Loading
   - flower-loader
+
 - ### Skeleton 骨架屏
   - bg-image-color
   - [一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
 - BulletComment/弹幕
 
 ## incubator
+
+- CodeCard
+  - 显示源码的卡片，类似源码截图，左上角有类似macOS的三点菜单
 
 ## ui-components-catalog
 
@@ -314,7 +318,7 @@ modified: '2020-10-02T11:42:00.886Z'
   - captcha
   - countdown
   - qrcode
-- misc
+- incubator
   - jumbotron
     - extend the entire viewport to showcase key content
   - hero component:image preloading fade-in effect, a semi-transparent color overlay 
@@ -325,6 +329,7 @@ modified: '2020-10-02T11:42:00.886Z'
   - 图章：如封禁
   - subtle-ui: tab notification
   - link-image: 文字链接有时太单调，内容预览可信度更高
+  - CodeCard
 - connected/联系第三方应用的组件
   - douban-movie-card
   - github

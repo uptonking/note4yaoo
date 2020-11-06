@@ -109,3 +109,6 @@ html `
 - [Vanilla JS Plugins](https://vanillajstoolkit.com/plugins/)
   - These are hand-selected plugins that I would actually use or have used on a project.
   - 大多数framework agnostic，质量高
+- [Building State management system like react from scratch with VanillaJS.](https://dev.to/logeekal/building-state-management-system-like-react-from-scratch-with-vanillajs-3eon)
+  - I want to build a state Management system similar to React but very bare-bones. 
+  - But it should follow one-way data flow. 
