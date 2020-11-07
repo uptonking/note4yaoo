@@ -27,6 +27,13 @@ modified: '2020-07-14T11:03:53.196Z'
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
+- reatom /504Star/MIT/202006/ts
+  - https://github.com/artalar/reatom
+  - Reatom is a blend of the one-way data flow (by flux and global store) and decentralized atoms for deterministic and flexible description of state and its changes
+  - Inspired by redux, kefir, effector
+  - framework-agnostic: independent and self-sufficient
+  - debugging: immutable data, devtools (redux ecosystem support by adapter)
+  - synchronous glitch free: resolve diamond problem
 - Kel /12Star/MIT/202005/js
   - https://github.com/vijitail/Kel
   - A dead simple, event driven state management library for Vanilla JS apps.
@@ -56,8 +63,6 @@ modified: '2020-07-14T11:03:53.196Z'
 - effector /2.8kStar/MIT/202010/ts
   - https://github.com/effector/effector
   - Effector is an effective multi-store state manager for Javascript apps (React/Vue/Node.js)
-- https://github.com/artalar/reatom
-  - Reatom is a blend of the one-way data flow (by flux and global store) and decentralized atoms for deterministic and flexible description of state and its changes
 - store /187Star/MIT/202010
   - https://github.com/fabiospampinato/store
   - simple framework-agnostic modern state management library.
@@ -82,6 +87,9 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/oskarhane/suber
   - An eventbus/pubsub compatible with Redux middlewares
   - Works with popular side effects handling middlewares like redux-saga and redux-observable
+- https://github.com/ForsakenHarmony/parket
+  - A library to manage application state, heavily inspired by mobx-state-tree
+  - This library uses Proxies and Symbols
 
 ## event pub/sub
 
@@ -98,7 +106,7 @@ modified: '2020-07-14T11:03:53.196Z'
 
 ## react
 
-- recoil /MIT/7.9kStar/202007
+- recoil /MIT/7.9kStar/202007/js
   - https://github.com/facebookexperimental/Recoil
   - https://recoiljs.org/
   - Recoil is an experimental set of utilities for state management with React

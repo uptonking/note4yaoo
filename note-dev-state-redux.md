@@ -68,27 +68,31 @@ modified: '2020-11-02T06:05:38.780Z'
 
 - redux适合管理全局app状态，局部component的状态无需额外状态管理或过重的状态管理
 
-- create-react-app creates apps with one command and no build config
-  - React, JSX, ES6(最新语法), TypeScript and Flow syntax support.
-  - Autoprefixed CSS
-  - A fast interactive unit test runner 
-  - A live development server(使用的是webpack-dev-server)
-  - A build script to bundle JS, CSS, and images for production
-  - An offline-first service worker and a web app manifest for PWA
-- dva是基于redux、redux-saga和react-router的轻量级前端框架，偏数据流
-  - dva: react + redux + redux-saga + react-router + 其他
-  - 相比于cra多了内置的redux、redux-saga、react-router
-  - 仅有6个api(但有很多约定)
-  - app = dva(opts)
-  - app.use(hooks)
-  - app.model(model)
-  - app.unmodel(namespace)
-  - app.replaceModel(model)
-  - app.router(({ history, app }) => RouterConfig)
-  - app.start(selector?)
-- umi是插件化的企业级前端应用框架，偏构建工具，但支持很多插件引入框架
-  - umi: react-router + webpack + babel
-  - 内置了路由、构建、部署、测试等
+- Redux is global state, which is fine as long as only genuinely global stuff goes in there, 
+  - like current user profile or basket contents. 
+  - Where redux becomes a problem is when people try to use it for everything instead of just using React state
+  - Some of that advice could be outdated - before Context, 
+    - redux was one of very few ways to avoid heavy prop drilling. 
+    - Now that context is here as a non-global option, I'd recommend keeping redux to pure globals
+  - But to add to that, now that context is here you don't really need to use redux at all. 
+    - However, I like it because as well as being a global store it's also pub/sub
+  - You can use redux for everything but that's often overkill. 
+    - Sometimes local component state is all you need. 
+    - If you're making async calls to a backend definitely use redux.
+  - I use react state all the time with backend calls, 
+    - but I you mean really long-running tasks where app receives status messages over web sockets right? 
+    - In which case yeah redux would be nice. 
+    - Could wire the socket handler to redux actions, and present progress anywhere in the UI
+  - I was going to say that I would do all calls async off the bat(off the bat, 立即，立刻) anyway wherever possible.
+    - Same idea with the websockets as server-sent events which are very easy to work with. 
+    - I can see a global being useful there as it literally is global - anywhere in the SPA.
+
+- The drawbacks of using 1 context wrapping a useReducer is your components will re-render each time any property changes. 
+  - Redux implements a pub/sub pattern, where you retrieve the part of the store you want outside of your component, so only re-render for that part.
+
+- Pub/sub implementations such as redux exist largely to decouple publishers and subscribers. 
+  - Thus we should not name actions in a way that describes how the reducer will handle them. 
+  - Action names should indicate what happened, not what needs to happen
 
 ## redux-toolkit
 

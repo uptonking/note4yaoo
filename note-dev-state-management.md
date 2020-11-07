@@ -9,16 +9,18 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## faq
 
-- 组件内的state如何管理，component state
+- 组件内的state如何管理，component/local state vs global state
 
 ## guide
 
-- 状态管理需要解决的问题
-  - get/set/read/update
+- 状态管理的主要任务
+  - 读写状态，主要是更新：get/set/read/update
+  - 状态变化后，通知应用程序变化的数据，通常会执行变化相关的回调函数
   - sharing：不同层级的组件如何共享状态
-    - react采用的方式是状态提升，提升到最近公共祖先
+    - react采用的方式是状态提升，提升到最近公共祖先组件
   - persist
   - hot-reload, time-travel
+  - 非UI类型State的处理，如身份验证、预设类型
 
 - 对象间数据(消息)的传递，可以通过pub/sub event实现，很适合component内状态管理
   - 缺点：简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
@@ -120,6 +122,20 @@ obj.dispatchEvent(event);
     - A combination of cross-browser support and legacy layover.
       - We support IE9, which uses attachEvent instead of addEventListener. 
       - It would be silly to make that check every time you want to pub/sub, so a local module can just alias that and standardise it.
+
+- [I was asked today if it is OK for an action to trigger multiple effects.](https://twitter.com/MikeRyanDev/status/1003737879930130435)
+  - The answer is YES. 
+    - That is why there is indirection between actions, reducers, and effects: 
+    - actions may be the inputs to multiple state changes and side effects.
+  - Why don't we just stick to Pub Sub design pattern
+    - Pub Sub is too generic. Redux/flux is kind of a specialized form of pub sub. 
+    - In JavaScript, we’ve been using pub sub since forever, but it was a mess usually.
+    - Redux added structure to it.
+  - Everywhere it's like use setState for local state and lift state if you want to share state. 
+    - If lifting has to be done too much, then consider redux or mobx
+- Does Redux follow the pub/sub pattern?
+  - yeah. Each connected component subscribes to the store
+  - any changes reach state and are mapped to props. The reducer handles all message traffic.
 
 - ### [How do you manage 'state' with vanilla js?_2018](https://www.reddit.com/r/javascript/comments/9cdxwt/how_do_you_manage_state_with_vanilla_js/)
 - Variables are not managed, nor trigger updates on changes. 

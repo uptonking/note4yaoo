@@ -82,3 +82,7 @@ render(
   - Instead of sending HTTP requests (e.g., AJAX and GraphQL) it synchronizes log of operations between client, server, and other clients.
 - https://github.com/octav47/storeonize
   - migrate from Redux to Storeon
+
+## ref
+- [Event-driven state management in React using Storeon - note app_202006](https://blog.logrocket.com/event-driven-state-management-in-react-using-storeon/)
+  - https://github.com/Youngestdev/storeon-app

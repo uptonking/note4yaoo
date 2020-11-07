@@ -51,6 +51,20 @@ modified: '2020-11-07T13:15:20.165Z'
   - These aren’t special keywords; they could instead be called publish and subscribe (pub-sub), send and receive, speak and listen, egg and mango, etc. 
   - It is important to note that more actions can be defined and used, such as unsubscribe (which would be important in non-trivial applications).
 
+``` JS
+export const EventEmitter = {
+  events: {},
+  dispatch: function(event, data) {
+    if (!this.events[event]) return
+    this.events[event].forEach(callback => callback(data))
+  },
+  subscribe: function(event, callback) {
+    if (!this.events[event]) this.events[event] = []
+    this.events[event].push(callback)
+  }
+}
+```
+
 - First, I need to define the event emitter, which is simply an object that we can import to other components as needed.
 - Next, I want to import EventEmitter to components that will be subscribing to an event and then set up the subscribe functionality. 
 - Finally, I will repeat those same steps for the dispatch: import EventEmitter and set up the dispatch functionality.
@@ -196,3 +210,7 @@ class Sidebar extends React.Component {
 
 export default Sidebar
 ```
+
+## ref
+
+- [One way to manage React global state with EventEmitters](https://gist.github.com/mhart/6ca15a54541caae04a075db76b68c06c)
