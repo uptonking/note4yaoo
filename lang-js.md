@@ -14,10 +14,10 @@ modified: '2020-07-14T09:26:50.808Z'
 ## js guide
 
 - js vm bytecode
-- https://github.com/airbnb/javascript
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
 - Object.assign修改属性值的性能
+- https://github.com/airbnb/javascript
 
 ## faq
 
@@ -30,7 +30,6 @@ modified: '2020-07-14T09:26:50.808Z'
   - template literals are parsed at compile time
   - the argument to eval only gets parsed at runtime, when eval is executed.
   - eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable. A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
-- 如何导出组件到图片png/pdf
 - setTimeout添加的异步任务队列和requestAnimationFrame每帧执行的任务队列是一个吗
   - ？？？
   - 参考 https://stackoverflow.com/questions/43050448/when-will-requestanimationframe-be-executed
@@ -117,11 +116,12 @@ var s = Boolean(myString); // initial value of true
 
 ## mdn docs
 
-- 函数参数
-  - 在JavaScript高级程序设计中，第4.1.3节传递参数这一节中，作者说的是ECMAScript中所有函数的参数都是按值传递的
-  - Primitive parameters (such as a number) are passed to functions by value; 
-    - the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
-  - If you pass an object (i.e. a non-primitive value, such as Array or a user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example
+### 函数参数
+
+- 在JavaScript高级程序设计中，第4.1.3节传递参数这一节中，作者说的是ECMAScript中所有函数的参数都是按值传递的
+- Primitive parameters (such as a number) are passed to functions by value; 
+  - the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
+- If you pass an object (i.e. a non-primitive value, such as Array/user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example
 
 ``` JS
 function f1(a) {
@@ -134,37 +134,35 @@ f1(10);
 // 函数f1定义了参数a，调用时传参数10，先弹出10，修改a为1，弹出两次true，a和arguments[0]都为1了。
 ```
 
-- window.postMessage()
-  - method safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it spawned
-  - Normally, scripts on different pages are allowed to access each other if and only if the pages they originate from same origin
-  - window.postMessage() provides a controlled mechanism to securely circumvent this restriction
-  - Broadly, one window may obtain a reference to another (e.g., via targetWindow = window.opener), and then dispatch a MessageEvent on it with targetWindow.postMessage(). 
-  - The receiving window is then free to handle this event as needed. 
-  - The arguments passed to window.postMessage() (i.e., the “message”) are exposed to the receiving window through the event object.
-- this
-  - A property of an execution context (global, function or eval) that, in non–strict mode, is always a reference to an object and in strict mode can be any value.
-    - In the global execution context(outside of any function), `this` refers to the global object whether in strict mode or not.
-      - You can always easily get the global object using the global globalThis property, regardless of the current context in which your code is running.
-    - Inside a function, the value of `this` depends on how the function is called.
-      - e.g.
+### window.postMessage()
 
-``` js
-          function f1() {
-            return this;
-          }
-```
+- method safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it spawned
+- Normally, scripts on different pages are allowed to access each other if and only if the pages they originate from same origin
+- window.postMessage() provides a controlled mechanism to securely circumvent this restriction
+- Broadly, one window may obtain a reference to another (e.g., via targetWindow = window.opener), and then dispatch a MessageEvent on it with targetWindow.postMessage(). 
+- The receiving window is then free to handle this event as needed. 
+- The arguments passed to window.postMessage() (i.e., the “message”) are exposed to the receiving window through the event object.
 
-        - in non-strict mode, because the value of this is not set by the call, this will default to the global object, which is window in a browser.
-        - In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined
-      - To set the value of this to a particular value when calling a function, use call(), or apply()
-        - es5 introduces `bind()`
-        - In arrow functions, this retains the value of the enclosing lexical context's this
-      - When the code is called from an inline on-event handler, its this is set to the DOM element on which the listener is placed
-  - In most cases, the value of `this` is determined by how a function is called (runtime binding). 
+### this
+
+- `this` is a property of an execution context (global, function or eval) that, 
+  - in non–strict mode, is always a reference to an object 
+  - and in strict mode can be any value.
+- In the global execution context(outside of any function),  `this` refers to the global object whether in strict mode or not.
+  - You can always easily get the global object using the global globalThis property, regardless of the current context in which your code is running.
+- Inside a function, the value of `this` depends on how the function is called.
+- in non-strict mode, because the value of this is not set by the call, this will default to the global object, which is window in a browser.
+- In strict mode, however, if the value of this is not set when entering an execution context, it remains as undefined
+- To set the value of this to a particular value when calling a function, use call(), or apply()
+  - es5 introduces `bind()`
+  - In arrow functions, this retains the value of the enclosing lexical context's this
+- In most cases, the value of `this` is determined by how a function is called (runtime binding). 
   - It can't be set by assignment during execution, and it may be different each time the function is called.
+- **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
+
 - globalThis
   - Historically, accessing the global object has required different syntax in different JavaScript environments. 
-  - On the web you can use `window` , `self` , or `frames` - but in Web Workers only self will work. 
+  - On the web you can use `window`,  `self` , or `frames` - but in Web Workers only self will work. 
   - In Node.js none of these work, and you must instead use `global`
   - The `this` keyword could be used inside functions running in non–strict mode, but `this` will be `undefined` in Modules and inside functions running in strict mode. 
   - The `globalThis` property provides a standard way of accessing the global this value (and hence the global object itself) across environments. 
@@ -173,6 +171,7 @@ f1(10);
     - In many engines globalThis will be a reference to the actual global object
     - but in web browsers, due to iframe and cross-window security considerations, it references a Proxy around the actual global object (which you can't directly access). 
     - This distinction is rarely relevant in common usage, but important to be aware of.
+
 - `Object()`
   - The Object constructor creates an object wrapper for the given value
   - If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value.
@@ -211,7 +210,7 @@ f1(10);
       - 真正何时执行代码的时间是不能保证的，取决于何时被主线程的事件循环取到并执行
 - 使用动画方面
   - setInterval只执行一次，并且定时器的ID始终不变，setTimeout需要执行多次，并且每次执行都会生成新的ID
-  - setTimemout迭代式方法的调用方式，压栈、出栈都不是轻量级的任务
+  - setTimeout迭代式方法的调用方式，压栈、出栈都不是轻量级的任务
   - setTimeout自身消耗了部分性能
 - setInterval受单线程影响可能出现时间不精确现象，如果函数的执行时间超过设置的间隔时间，会出现函数小于间隔时间而执行或无间隔执行的情况
 - 如果用setTimeout来模拟setInterval，这样函数执行的间隔时间就会保证（>=设置时间）
@@ -356,7 +355,7 @@ Point === Point.prototype.constructor // true
 
 - spread operator `...` vs `Object.assign()`
   - The main difference is that spreading defines new properties, while `Object.assign()` sets them.
-  - First, `Object.assign()` triggers setters, spread doesn’t
+  - First,  `Object.assign()` triggers setters, spread doesn’t
   - Second, you can stop `Object.assign()` from creating own properties via inherited read-only properties, but not the spread operator
   - Both spread and `Object.assign()` only consider own enumerable properties
   - ref
@@ -785,14 +784,6 @@ const Header = (props) => {
 
 // 链接：https://www.zhihu.com/question/266625289/answer/321576411
 ```
-
-## js ecosystem
-
-- codesanbox vs react-storybook  
-  - codesandbox类似于codepen  
-  - storybook只是测试工具  
-
-## JS Ecosystem
 
 ## resources
 

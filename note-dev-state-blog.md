@@ -107,3 +107,43 @@ function incCountUp() {
 renderCount();
 ```
 
+### [What is state? Why do I need to manage it?](https://egghead.io/articles/what-is-state-why-do-i-need-to-manage-it)
+
+- When it comes to client-side JavaScript applications, I like to think of state as “the outcome of all of the actions that the user has taken since the page loaded”.
+- This isn’t an all-encompassing way of thinking about state, 
+  - as other agents might affect state — the server might set some variables, a service worker might do something in the background, etc. 
+  - However, I found it a useful place to start when I was building my understanding.
+- when we manage our state, we create an explicit data structure (in my case, an object with a key named ‘errors’) to record the outcomes of the user’s actions.
+- State management libraries provide us with tools for creating these data structures, and updating them when new actions occur. 
+  - For example, with Redux, your state is stored as a JavaScript object. 
+  - With MobX, it’s stored as an Observable. 
+  - If you use React’s component state, your state could be a string, or a number, or anything you like.
+
+- Without a state management system, how do we know what the state of our application is? 
+  - We look at the DOM. We can check DOM elements to see if they have certain classes (‘active’, ‘error’), or to check whether certain elements exist.
+- With a state management system, to find out what the state of our application is, 
+  - we check our state data structure. 
+  - The DOM should reflect the data, but the data is the Source Of Truth.
+
+- **Why would I want to use state management tools?**
+  - For me, the key to understanding state management was when I realised that there is always state. 
+  - Whether or not I’m managing it, with an interactive web application, there is always state — users perform actions, and things change in response to those actions.
+  - State management makes the state of your app tangible(可触摸到的，可感知的，具体的) in the form of a data structure that you can read from and write to. 
+  - It makes your ‘invisible’ state clearly visible for you to work with.
+  - Rather than looking at the DOM and deducing(推断、追溯) state based on what is there and what is not, an explicit data structure is much easier to understand.
+  - When you’re creating larger and more complex JavaScript applications, having explicit data to work with in a predictable way is a huge boon to developers. 
+  - It’s much easier to reason about and manipulate, and it’s less bug-prone (though of course, you can still create a lot of bugs with any code you write with a state management system).
+
+- Some bonus benefits to understanding state management
+  - Before working with JavaScript frameworks, I had never thought of the actions that a user makes as a holistic(整体的，全面的) group of causes and effects. 
+    - The way I had written JavaScript before, it was just a bunch of one-off operations that manipulated the DOM and may or may not have had any relation to each other.
+  - I also never saw ‘state’ and the DOM as separate entities from each other — to me, they were the same thing. 
+    - In the DOM, there is an error message, so the state is that there is an error message.
+  - By separating out the data (there is an error message) from the effects (an error message is displayed on the screen), I found myself thinking about my code in a much more declarative way, which was extremely powerful as I learned more and took a a dive into functional programming.
+
+
+## ref
+
+- [Simple State Management With Vanilla JS](https://viktorfejes.com/article/simple-state-management-with-vanilla-js)
+  - The most important part is that the state shouldn't be updated through its properties but rather using the state.setState() method. 
+  - This way it's easy to know using the stateChange() function when the state updates.

@@ -32,7 +32,7 @@ modified: '2020-11-02T06:05:38.780Z'
     - 在复杂业务中，函数式很难落地，包括类似游戏开发中的ECS架构，其实都很难实践，那一点点利用分级缓存提升的性能远远不如面向对象带来的优势更多，还是看业务场景和团队成员的。
   - 对于自定义的class实例、引用类型、各个不同命名空间属性之间的互相引用似乎是不支持的，仍然需要设计成扁平化，通过 id 来关联，查找的时候显然是不如链式结构快的，并且很难用
 
-- [Redux vs Simple Pub Sub](https://spectrum.chat/react/general/redux-vs-simple-pub-sub~818edeff-0616-4462-9743-71c2678795a5)
+- ### [Redux vs Simple Pub Sub](https://spectrum.chat/react/general/redux-vs-simple-pub-sub~818edeff-0616-4462-9743-71c2678795a5)
   - I developed a project which is using redux to send messages to a component that is residing in another parent component 
     - but the same problem was resolved using a simple ES6 pub sub library. 
     - This raised my curiosity whether to use Redux or a simple Pub Sub would be enough?
@@ -45,7 +45,7 @@ modified: '2020-11-02T06:05:38.780Z'
     - React Context and Redux are stateful, which solves the problem
   - I use react context for small light weight stuff. Works great.
   - A redux action triggers the change in the store (computed via reducer), 
-    - and then each component [subsctibed to the store via connect/useSelector] can read the store values and re-render. 
+    - and then each component [subscribed to the store via connect/useSelector] can read the store values and re-render. 
     - This is idiomatic in react-redux world.
   - If your problem is solved with pubsub lib, great for you. 
     - But if you keep on adding features the following might happen: 
@@ -87,7 +87,7 @@ modified: '2020-11-02T06:05:38.780Z'
   - app.router(({ history, app }) => RouterConfig)
   - app.start(selector?)
 - umi是插件化的企业级前端应用框架，偏构建工具，但支持很多插件引入框架
-  - umi: react-router + webpack + babel；
+  - umi: react-router + webpack + babel
   - 内置了路由、构建、部署、测试等
 
 ## redux-toolkit

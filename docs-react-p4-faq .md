@@ -42,8 +42,8 @@ modified: '2020-06-30T05:14:08.093Z'
     }
 ```
 
-    - In Non-strict mode, this will default to the global object, which is `window` in a browser
-    - In strict mode, however, if the value of this is not set when entering an execution context, it remains as `undefined`
+    - In Non-strict mode, `this` will default to the global object, which is `window` in a browser
+    - In strict mode, however, if the value of `this` is not set when entering an execution context, it remains as `undefined`
     - To set the value of this to a particular value when calling a function, use `call()` , or `apply()`
     - When a function is used as a constructor (with the `new` keyword), its `this` is bound to the new object being constructed.
   - The behavior of `this` in classes and functions is similar, since classes are functions under the hood.

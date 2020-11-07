@@ -14,6 +14,40 @@ modified: '2020-06-30T12:51:08.791Z'
 - ### faq-not-yet
 - `React.forwardRef()` 是高阶组件吗
 
+- ### [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
+  - We want to fix the “deep update propagation” problem. 
+    - But we don’t want to pay the memory and initialization time cost for every single component that consumes context. 
+    - Many context values change very rarely! 
+    - It’s wasteful to subscribe all those callbacks.
+  - The new context API has zero cost for the initial rendering. 
+    - It doesn’t perform any subscriptions. 
+    - Even if you read the context in many components (e.g. for passing a theme), React doesn’t need to collect all those subscriptions in a giant array.
+  - When there *is* an update, React walks the tree and marks matching nodes as dirty. 
+    - The nodes are monomorphic(单一形态的), so traversal is very fast. 
+    - `<Consumer>` is a special type known to React, so a single field comparison is enough to detect and mark it. 
+    - And the marking can be time-sliced!
+  - It’s plausible that we can add some caching for a list of subscribed components in the future,
+    - but for now we don’t think it’s necessary in practice. We’ll see. 
+    - But importantly, you only “pay” for context updates when you actually use them. Static values are free.
+  - Another interesting about this approach is that this traversal is completely integrated with React, 
+    - and thus works with async features (time slicing and suspense). 
+    - You can switch a UI theme even while suspense waits for a page to load. 
+    - Can’t do this with a custom event emitter.
+  - Whats the meaning by “user land with an event emitter?”? They mean adding event emitter to new react context api?
+    - Using old context API to pass an event emitter, subscribe() on mount, and then setState() in individual component on change
+  - I suppose suspense’d component trees would not rerender context change (i.e. delayed theme change) until their promises resolve?
+    - If data for theme change is available immediately (and doesn’t suspend itself), no, React can apply it to the “previous” screen while the new screen is being loaded. No need to wait.
+  - If there is a simple answer. Could context api replace the need for Redux in most cases?
+    - It can replace react redux for simplest cases, but react redux does some caching work.
+    - react-redux(v6), which uses context internally to fight props (actually, data from the store) passing issue.
+    - The purpose of Redux is NOT to facilitate passing props to deeply nested children. 
+      - Redux is meant to provide a predictable state tree, even as our app grows and our data becomes more dynamic. 
+      - Context does NOT solve those problems.
+    - Therefore, no, context is not a replacement for Redux, as it does not solve the problems Redux does. 
+      - If you were just using Redux to avoid passing props, then you probably never really needed Redux in the first place. 
+
+
+
 - ### createRef vs useRef
   - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).
   - useRef keeps some data before renders and changing it does not cause re-render

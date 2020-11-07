@@ -13,8 +13,15 @@ modified: '2020-10-31T19:11:26.567Z'
 
 ## guide
 
+- 状态管理需要解决的问题
+  - get/set/read/update
+  - sharing：不同层级的组件如何共享状态
+    - react采用的方式是状态提升，提升到最近公共祖先
+  - persist
+  - hot-reload, time-travel
+
 - 对象间数据(消息)的传递，可以通过pub/sub event实现，很适合component内状态管理
-  - 简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
+  - 缺点：简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
   - 不支持跨page传递数据
   - 不支持数据持久化
 - SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级

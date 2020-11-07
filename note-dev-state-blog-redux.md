@@ -1,11 +1,11 @@
 ---
-title: note-dev-state-redux-blog
+title: note-dev-state-blog-redux
 tags: [blog, redux, state]
 created: '2020-11-03T13:12:54.267Z'
-modified: '2020-11-03T13:13:40.177Z'
+modified: '2020-11-07T13:15:50.830Z'
 ---
 
-# note-dev-state-redux-blog
+# note-dev-state-blog-redux
 
 ## [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
 
