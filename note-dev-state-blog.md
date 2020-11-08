@@ -148,7 +148,7 @@ store.setState({ b: 1 });
   - So we’ll try to make another type of implementation. 
   - where subscribers have to inform in which part of the state they’re interested in.
 - In the available solutions in the market, there’s one that implements this kind of solution the most easy way (IMHO): React-redux `connect` method.
-  - the connect method first parameter,   `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
+  - the connect method first parameter,    `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
   - This way the connect method knows if it must update the component’s props or not.
 - We can do the same in our little state management library. 
   - Whenever someone wants to subscribe to the state changes, it will pass the callback function and other function similar to the mapStateToProps. 
@@ -267,17 +267,32 @@ store.setState({ b: 2 });
 
 - Traditionally, we’d keep state within the DOM itself or even assign it to a global object in the window
 - Libraries like Redux, MobX and Vuex make managing cross-component state almost trivial(微不足道的，不重要的)
+  - This is great for an application’s resilience and it works really well with a state-first, reactive framework such as React or Vue.
+- Take a look at what we’re building. It’s a "done list"
+
+- Pub/Sub
 - We’re creating the functionality that allows other parts of our application to subscribe to named events.
 - Another part of the application can then publish those events, often with some sort of relevant payload.
 - The PubSub pattern loops through all of the subscriptions and fires their callbacks with that payload.
+- It’s a great way of creating a pretty elegant reactive flow for your app
+
+- The core Store object
 - The Store is our central object.
-- Let’s take a look at how our Store object keeps track of all of the changes. 
+- Each time you see `import store from '../lib/store.js`, you’ll be pulling in the object that we’re going to write. 
+  - It’ll contain a `state` object that, in turn, contains our application state, 
+  - a `commit` method that will call our >mutations, 
+  - and lastly, a `dispatch` function that will call our actions. 
+  - Amongst this and core to the Store object, there will be a Proxy-based system that will monitor and broadcast state changes with our PubSub module.
+- Let’s take a look at how our `Store` object keeps track of all of the changes. 
   - We’re going to use a Proxy to do this
   - If we add a `get` trap, we can monitor every time that the object is asked for data. 
   - Similarly with a `set` trap, we can keep an eye on changes that are made to the object.
   - when a mutation runs something like `state.name = 'Foo'` , this trap catches it before it can be set and provides us an opportunity to work with the change or even reject it completely. 
-- There’s a lot going on there, but I hope you’re starting to see how this is all coming together and importantly, how we’re able to maintain state centrally, thanks to Proxy and Pub/Sub.
-- Usage of DOM Api will prevent possible SSR
+- There’s a lot going on there, but I hope you’re starting to see 
+  - how this is all coming together and importantly, 
+  - how we’re able to maintain state centrally, thanks to Proxy and Pub/Sub.
+
+- Now that we’ve got our front-end components(Counter) and our main Store, all we’ve got to do is wire it all up.
 
 ### [Stateful Components in Vanilla JS](https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/)
 

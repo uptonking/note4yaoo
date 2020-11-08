@@ -29,6 +29,11 @@ modified: '2020-11-02T19:15:09.298Z'
 - https://github.com/hufeng/iflux
   - iflux = immer.js + react.js
 
+- https://github.com/choojs/choo
+  - /6.5kStar/MIT/202001/js
+  - A 4kb framework for creating sturdy frontend applications
+  - At the core of Choo is an event emitter, which is used for both application logic but also to interface with the framework itself. The package we use for this is nanobus.
+  - Choo uses nanomorph, which diffs real DOM nodes instead of virtual nodes
 - https://github.com/kbrsh/moon
   - /6kStar/MIT/202003/js
   - https://moonjs.org/

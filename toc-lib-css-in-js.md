@@ -69,6 +69,11 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/matvp91/stylemug
   - A fast css-in-js library that extracts atomic CSS rules to a .css file.
   - The stylesheet code in your bundle is replaced (no CSS in your JS) with a hash map for classnames lookup at runtime.
+- reshadow /332Star/MIT/202006/js
+  - https://github.com/lttb/reshadow
+  - Combine the css-in-js and css-modules approaches or choose which fits you better
+  - Compile-time styles processing and efficient runtime
+  - 静态样式支持静态提取，动态样式基于styled，书写样式使用css字符串
 
 ## atomic css in js
 

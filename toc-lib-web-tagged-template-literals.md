@@ -1,11 +1,11 @@
 ---
-title: lib-tagged-template-literals-intro
-tags: [es6, javascript, tagged-template-literals]
+title: toc-lib-web-tagged-template-literals
+tags: [es6, javascript, repos, tagged-template-literals]
 created: '2020-11-05T09:27:49.883Z'
-modified: '2020-11-05T09:40:59.816Z'
+modified: '2020-11-08T09:04:28.216Z'
 ---
 
-# lib-tagged-template-literals-intro
+# toc-lib-web-tagged-template-literals
 
 ## packages
 
@@ -40,32 +40,41 @@ modified: '2020-11-05T09:40:59.816Z'
   - [µland](https://github.com/WebReflection/uland) (_µhtml_ + _dom-augmentor_)
   - [heresy](https://github.com/WebReflection/heresy) and [heresy-ssr](https://github.com/WebReflection/heresy-ssr) (_lighterhtml_ + _augmentor_ + Custom Elements)
 
-- ### Minimalistic Combo
-- you choose what to use
+- ### choose what to use
   - _wickedElements_ & _µhtml_ or _lighterhtml_ (easy)
   - _hookedElements_ & _µhtml_ or _lighterhtml_ (even easier)
   - _dom-augmentor_ & _µhtml_ or _lighterhtml_ (not easy at all, try _µland_ or _neverland_ instead)
   - native Custom Elements and _µhtml_ or _lighterhtml_ [are an option too](https://webcomponents.dev/edit/EZjX0ZIN0nnESD0PjQPh)
 
+- ### more-packages
 - https://github.com/WebReflection/hyperHTML
   - /2.7kStar/ISC/202006/js
   - A Fast & Light Virtual DOM Alternative available for Node.js and NativeScript too
   - https://github.com/WebReflection/hyperHTML-Element
     - An extensible class to define hyperHTML based Custom Elements.
-- https://github.com/WebReflection/neverland
-  - React like Hooks for lighterhtml
-- https://github.com/WebReflection/viperHTML
-  - /216Star/ISC/201811/js
-  - Isomorphic hyperHTML
-  - hyperHTML lightness, ease, and performance, for the server.
-  - Similar to its browser side counterpart, viperHTML parses the template string once, decides what is an attribute, what is a callback, what is text and what is HTML, and any future call to the same render will only update parts of that string.
-  - The result is a blazing fast template engine that makes templates and renders shareable between the client and the server.
 - https://github.com/WebReflection/lighterhtml
   - The hyperHTML strength & experience without its complexity
   - faster than hyperHTML
   - simpler than lit-html
   - fueling both neverland and heresy
-  - If you want 90% of functionalities offered by lightetrhtml for 2/3rd of its size, check µhtml
+  - If you want 90% of functionalities offered by lighterhtml for 2/3rd of its size, check µhtml
+- https://github.com/WebReflection/uhtml
+  - micro html is a ~2.5K lighterhtml subset to build declarative and reactive UI via template literals tags.
+- https://github.com/WebReflection/neverland
+  - React like Hooks for lighterhtml
+  - As React Hooks were born to simplify some framework pattern, 
+    - Neverland goal is to simplify lighterhtml usage, in a virtual component way, through the mighty dom-augmentor.
+  - This library simulates Custom Elements, without needing polyfills, simply by passing zero, one, or more arguments to every desired components in each template literal hole
+  - All hooks are provided by augmentor, via dom-augmentor that takes care or injecting life-cycle DOM events when useEffect is used.
+- https://github.com/WebReflection/uland
+  - micro land, or unicorn land, is a µhtml take at neverland.
+  - Same API, except the exports are {Component, render, html, svg}
+- https://github.com/WebReflection/viperHTML
+  - /216Star/ISC/201811/js/deprecated
+  - Isomorphic hyperHTML
+  - hyperHTML lightness, ease, and performance, for the server.
+  - Similar to its browser side counterpart, viperHTML parses the template string once, decides what is an attribute, what is a callback, what is text and what is HTML, and any future call to the same render will only update parts of that string.
+  - The result is a blazing fast template engine that makes templates and renders shareable between the client and the server.
 
 - https://github.com/polymer/lit-html
   - /6.8kStar/BSD/202009/ts
@@ -104,11 +113,8 @@ html `
 `
 ```
 
-## ref
+## more-web-framework
 
-- [Vanilla JS Plugins](https://vanillajstoolkit.com/plugins/)
-  - These are hand-selected plugins that I would actually use or have used on a project.
-  - 大多数framework agnostic，质量高
-- [Building State management system like react from scratch with VanillaJS.](https://dev.to/logeekal/building-state-management-system-like-react-from-scratch-with-vanillajs-3eon)
-  - I want to build a state Management system similar to React but very bare-bones. 
-  - But it should follow one-way data flow. 
+- https://github.com/corpusculejs/corpuscule
+  - a set of libraries built on top of Web Components standard. 
+  - It provides all necessary tools to built whole application from scratch including redux connector, router and form utils.

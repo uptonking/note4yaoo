@@ -11,6 +11,8 @@ modified: '2020-10-31T19:11:26.567Z'
 
 - 组件内的state如何管理，component/local state vs global state
 
+- action或event如何设计能让debug更方便
+
 ## guide
 
 - 状态管理的主要任务

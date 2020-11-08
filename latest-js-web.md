@@ -26,6 +26,26 @@ modified: '2020-09-26T12:52:33.493Z'
 
 ## latest-web
 
+- jspm
+  - jspm provides a module CDN allowing any package from npm to be directly loaded in the browser and other JS environments as a fully optimized native JavaScript module.
+  - esm是未来的趋势，随着http3（quic）普及，或许web应用将脱离打包工具和node_modules ”黑洞“。
+    - Vite 以及 snowpack 在开发者模式是用的就是浏览器原生ESM语法，体验相当的棒。
+    - 以及之前大家喊“学不动”的 Deno 也表示拥抱 ESMA，这是前端开发者对统一标准的需要。
+    - jspm.io 试图将npm的生态搬到浏览器环境，类似的还有 skypack.dev 以及 esm.sh ，以及unpkg也在实验性提供对esm的支持。
+
+``` html
+<script type="module">
+  // Statically:
+  import babel from 'https://jspm.dev/@babel/core';
+  console.log(babel);
+
+  // Dynamically:
+  (async () => {
+    console.log(await import('//jspm.dev/lodash@4/clone'));
+  })();
+</script>
+```
+
 - [2020年前端最火的技术是什么](https://www.zhihu.com/question/365588457/answers/updated)
 - As browsers are adding support for debugging the CSSOM, there should be no need to resort to slower DOM-based solutions.
 - Right now, bundling JS is required for loading performance, but practically kills caching...

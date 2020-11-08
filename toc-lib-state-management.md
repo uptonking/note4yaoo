@@ -103,6 +103,10 @@ modified: '2020-07-14T11:03:53.196Z'
   - PubSubJS has synchronisation decoupling, so topics are published asynchronously.
   - PubSubJS is designed to be used within a single process, and is not a good candidate for multi-process applications (like Node.js – Cluster with many sub-processes).
   - Use "constants" for topics and not string literals. PubSubJS uses strings as topics
+- https://github.com/choojs/nanobus
+  - We had the requirement for a * event to catch all calls, and figured we could improve the file size at the same time. 
+  - This library is about 1/3rd the size of Node's version.
+  - Are these emitters asynchronous? No.
 
 ## react
 

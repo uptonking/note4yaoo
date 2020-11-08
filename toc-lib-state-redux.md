@@ -22,8 +22,6 @@ modified: '2020-11-02T19:13:04.103Z'
 - https://github.com/react-designer/react-designer
   - Editable vector graphics in your react apps
 - https://github.com/schrodinger/fixed-data-table-2
-- https://github.com/funkia/list
-  - leopard An immutable list with unmatched performance and a comprehensive functional API.
 - https://github.com/dvajs/dva
   - React and redux based, lightweight and elm-style framework.
 
