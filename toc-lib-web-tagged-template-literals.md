@@ -118,3 +118,10 @@ html `
 - https://github.com/corpusculejs/corpuscule
   - a set of libraries built on top of Web Components standard. 
   - It provides all necessary tools to built whole application from scratch including redux connector, router and form utils.
+- https://github.com/ryansolid/solid
+  - Solid is a declarative JavaScript library for creating user interfaces. 
+  - It does not use a Virtual DOM. 
+  - Instead it opts to compile its templates down to real DOM nodes and wrap updates in fine grained reactions. 
+  - This way when your state updates only the code that depends on it runs.
+
+

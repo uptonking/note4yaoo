@@ -34,6 +34,10 @@ modified: '2020-07-14T11:03:53.196Z'
   - framework-agnostic: independent and self-sufficient
   - debugging: immutable data, devtools (redux ecosystem support by adapter)
   - synchronous glitch free: resolve diamond problem
+  - Why is API so strange, can't it be simpler? to support type check
+  - Reatom is built on top of SSoT(single source of truth) idea and attempts to strictly follow it to ensure reliability. 
+  - Therefore it prefers immutable global state and other limitations
+    - impossible to create cyclic dependencies
 - Kel /12Star/MIT/202005/js
   - https://github.com/vijitail/Kel
   - A dead simple, event driven state management library for Vanilla JS apps.

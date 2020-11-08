@@ -49,6 +49,19 @@ render(
 )
 ```
 
+- ### [Example with remote data fetching](https://github.com/storeon/storeon/issues/113)
+
+``` JS
+store.on('@users/load', async () => {
+  let users = await fetch('/users/')
+  store.dispatch('@users/set', { users })
+})
+
+store.on('@users/set', async (state, users) => {
+  return { users }
+})
+```
+
 - ### api
 - `export const store = createStoreon([projects, users])`
   - store.get() 
