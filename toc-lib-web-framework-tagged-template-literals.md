@@ -66,6 +66,7 @@ modified: '2020-11-09T09:03:49.112Z'
     - Neverland goal is to simplify lighterhtml usage, in a virtual component way, through the mighty dom-augmentor.
   - This library simulates Custom Elements, without needing polyfills, simply by passing zero, one, or more arguments to every desired components in each template literal hole
   - All hooks are provided by augmentor, via dom-augmentor that takes care or injecting life-cycle DOM events when useEffect is used.
+  - if you're looking for something even smaller than neverland, don't miss µland!
 - https://github.com/WebReflection/uland
   - micro land, or unicorn land, is a µhtml take at neverland.
   - Same API, except the exports are {Component, render, html, svg}
@@ -92,10 +93,6 @@ modified: '2020-11-09T09:03:49.112Z'
   - JSX alternative using standard tagged templates, with compiler support.
   - HTM (Hyperscript Tagged Markup)
   - Develop with React/Preact directly in the browser, then compile htm away for production.
-
-- https://github.com/Festify/fit-html
-  - fit-html is a combination of lit-html, web components and redux, bringing efficient rendering and a functional application architecture together.
-- https://github.com/toddpress/lit-html-redux-experiment
 
 ## more-ttls
 

@@ -21,6 +21,24 @@ modified: '2020-11-08T10:40:45.221Z'
     - so you don't have to spend half your time on the boilerplate Webpack/build setup before you actually code. 
     - It's just plain JS. 
 
+## lit-repos
+
+- https://github.com/jmas/lit-redux
+  - lit-redux is implementation of react-redux API for lit-html library.
+- https://github.com/Festify/fit-html
+  - fit-html is a combination of lit-html, web components and redux
+- https://github.com/toddpress/lit-html-redux-experiment
+- https://github.com/thepassle/create-lit-app
+  - Create LitHTML apps with no build configuration. (LitHTML/Redux/Webpack/Express)
+
+- https://github.com/Spectory/lithtml-todomvc
+  - TodoMVC app using lit-html and Redux
+- https://github.com/jmas/lit-todo-example
+- https://github.com/toddpress/lit-html-redux-experiment
+- https://github.com/jmas/foocart
+  - 只依赖lit-html
+
 ## ref
 
 - [The history of hyperHTML followed by lit-html](https://gist.github.com/WebReflection/ab43649d9e4a53ac900b5924c77a310e)
+- [Easy apps with hyperHTML — 1, wire/bind_201809](https://dev.to/pinguxx/easy-apps-with-hyperhtml-1-31cc)

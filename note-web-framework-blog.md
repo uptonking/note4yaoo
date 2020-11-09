@@ -134,4 +134,4 @@ modified: '2020-11-08T10:02:00.337Z'
 - [Building State management system like react from scratch with VanillaJS.](https://dev.to/logeekal/building-state-management-system-like-react-from-scratch-with-vanillajs-3eon)
   - I want to build a state Management system similar to React but very bare-bones. 
   - But it should follow one-way data flow. 
-- [Compares React and Lit implementations of the React homepage demos.](https://pinkhominid.github.io/react-v-lit/)
+- [React vs Lit implementations of the React homepage demos.](https://pinkhominid.github.io/react-v-lit/)

@@ -127,6 +127,9 @@ modified: '2020-10-25T05:09:53.421Z'
 
 ### web-components
 
+- ref
+  - https://open-wc.org/guides/community/component-libraries/
+
 - Mixpanel Design System /Mixpanel
   - /198Star/MIT/202009/js/web-comp
   - https://github.com/mixpanel/panel
