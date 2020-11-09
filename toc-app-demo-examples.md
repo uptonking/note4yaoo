@@ -41,3 +41,9 @@ modified: '2020-10-22T13:02:56.929Z'
   - [imdb](https://community.algolia.com/instantsearch.js/v1/examples/media/)
   - [ecommerce amazon](https://community.algolia.com/instantsearch.js/v1/examples/e-commerce/)
   - [airbnb](https://community.algolia.com/instantsearch.js/v1/examples/tourism/)
+
+## dashboard
+
+- https://github.com/jetlinks/jetlinks-ui-antd
+  - 演示地址：http://demo.jetlinks.cn
+  - 项目多处采用了SSE接口交互，开发需要使用dev环境变量（生产环境使用nginx代理了EventSource接口）

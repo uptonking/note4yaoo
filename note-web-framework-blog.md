@@ -7,7 +7,7 @@ modified: '2020-11-08T10:02:00.337Z'
 
 # note-web-framework-blog
 
-## web-framework
+## web-framework-comparison
 
 ### [lit-html vs hyperHTML vs lighterhtml_201902](https://webreflection.medium.com/lit-html-vs-hyperhtml-vs-lighterhtml-c084abfe1285)
 
@@ -78,6 +78,54 @@ modified: '2020-11-08T10:02:00.337Z'
   - blazing fast compared to any bigger framework
   - it always wins in terms of memory consumption
 
+### [Web Component Solutions: A Comparison](https://levelup.gitconnected.com/web-component-solutions-a-comparison-e2fa25c34730)
+
+- LitElement seems like an excellent choice, unless you are concerned about the BSD-3-Clause license
+- Stencil seems on par with LitElement, but without the license concerns, and would be a great choice, especially if you’re already using Stencil for design or enjoy working with TypeScript
+- if you are using, or might use, Salesforce in the future, LWC is the obvious choice because of its easy integration with other Salesforce workflows
+  - You might also consider LWC if you enjoy being an early adopter of new web component technology trends, don’t like JSX syntax, or have a preference for keeping your HTML, CSS, and JavaScript code in separate files.
+
+### [discussion: I think rewriting UI systems every few years and reimplementing in various JS frameworks that come and go is a serious waste of manpower.](https://news.ycombinator.com/item?id=18237757)
+
+- I'd so wish people would embrace web components properly once and for all, with LitElement, Svelte or Stencil. 
+- If I had to guess, I would guess that React will still be around in 5 years, but I'm not sure web components will. 
+  - Sure, they may still be a part of the standard, 
+  - but they might be so obscure(无名的；鲜为人知的) that there isn't enough of a community around them to be a feasible option. 
+- I agree, and this is why I use React (or rather Preact) for both apps and interactive elements on the page. 
+  - The big caveat is that in practice it's really easy to end up with a React project that is much more difficult to maintain compared to a monolithic(统一整体的) framework (Ember, Angular, Vue, even), 
+  - because of all the other crap(质量差的东西；蹩脚货) that might be used to take care of all the stuff React doesn't do.
+  - For example, I recently took on a React project that used a whole bunch of other packages for state management, routing, etc., 
+    - and a number of those packages were no longer supported (or outright compromised). 
+    - While it's nice that React is still React, a lot of these other packages are tightly woven into the whole 'fabric' (react-swipeable-redux-router type stuff).
+  - For my part, when I start a React project I try to minimize these problems by generally avoiding react-specific packages. 
+    - So instead of react-router, I'll just use page.js for routing. 
+    - In some cases I might use the reactified version (Redux comes to mind, but I avoid that most of the time for smaller stuff).
+  - This still isn't a panacea(万灵药；万能之计), 
+    - and as a result I've been moving more and more stuff to a more 'vanilla' Railsy backend (Elixir/Phoenix, specifically). 
+    - While the ecosystem does seem to be stabilizing a bit, it's still insane, 
+    - and thankfully there are or will be ways to still add a bunch of 'dynamic' shit to the front-end without drowning in this insanity
+- I think UI framework switches happen for two reasons:
+  - They've accumulated so much technical debt with their existing solution that progress has slowed to a crawl, developer morale is really low, etc. 
+    - A migration strategy can be found that doesn't have such an upfront cost, and will dramatically improve velocity as features are converted.
+  - The design is totally changing, or the product is being rethought, and so it's not an invisible code rewrite, it's essentially building a new product.
+- You named Web Components, I've been embracing them for a while, 
+  - but if you tried to switch from Google's Polymer to LitElement, it wouldn't go smooth as you could have imagined. 
+  - Both Polymer and LitElement are based on Shadow Dom and WC features curated by Google, but are not 100% backward compatible. 
+  - That is to say, Web Components have been divided from within the same tech. 
+  - No need to mention the rival concepts of "everything HTML" of Polymer 2.0 and fixing it to be "all JS and webpack-ready" in 3.0, and consequential deprecation of Bower.
+- Svelte and Stencil compile your code into web components 
+  - different approach than polymer that is a suite of quite a few higher-level abstractions that you might not want to pay for (20kb of js).
+- 不同ui库的性能不好比较，库会更新，js-frameworks-benchmark也会更新
+- React and similar frameworks optimise performance by batching DOM updates in one big read-compute-write cycle. 
+  - With web components that don't share centralised DOM manipulation code its hard to see how that would work, and this can be a big performance problem.
+
+## more-web-framework
+
+- lit-html is not a new framework, but simply a template library
+  - lit-html has no component model, so by using it to implement WCs, you get a component model.
+  - A template library is not in direct competition with Web Component base classes/frameworks(polymer, svelte, stencil, skate), but can be used by them. 
+    - It's already integrated with Skate, will be integrated with Polymer soon, and Stencil is looking into using it too.
+
 ## ref
 
 - [Vanilla JS Plugins](https://vanillajstoolkit.com/plugins/)
@@ -86,3 +134,4 @@ modified: '2020-11-08T10:02:00.337Z'
 - [Building State management system like react from scratch with VanillaJS.](https://dev.to/logeekal/building-state-management-system-like-react-from-scratch-with-vanillajs-3eon)
   - I want to build a state Management system similar to React but very bare-bones. 
   - But it should follow one-way data flow. 
+- [Compares React and Lit implementations of the React homepage demos.](https://pinkhominid.github.io/react-v-lit/)

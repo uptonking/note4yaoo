@@ -1,13 +1,13 @@
 ---
-title: toc-lib-web-tagged-template-literals
+title: toc-lib-web-framework-tagged-template-literals
 tags: [es6, javascript, repos, tagged-template-literals]
 created: '2020-11-05T09:27:49.883Z'
-modified: '2020-11-08T09:04:28.216Z'
+modified: '2020-11-09T09:03:49.112Z'
 ---
 
-# toc-lib-web-tagged-template-literals
+# toc-lib-web-framework-tagged-template-literals
 
-## packages
+## lit-html-uhtml
 
 - [A recap of WebReflection's FE/DOM related libraries](https://gist.github.com/WebReflection/761052d6dae7c8207d2fcba7cdede295)
 - Minimalistic Libraries(do one thing only and do it well)
@@ -93,6 +93,10 @@ modified: '2020-11-08T09:04:28.216Z'
   - HTM (Hyperscript Tagged Markup)
   - Develop with React/Preact directly in the browser, then compile htm away for production.
 
+- https://github.com/Festify/fit-html
+  - fit-html is a combination of lit-html, web components and redux, bringing efficient rendering and a functional application architecture together.
+- https://github.com/toddpress/lit-html-redux-experiment
+
 ## more-ttls
 
 - https://github.com/zspecza/common-tags
@@ -112,16 +116,3 @@ html `
   </div>
 `
 ```
-
-## more-web-framework
-
-- https://github.com/corpusculejs/corpuscule
-  - a set of libraries built on top of Web Components standard. 
-  - It provides all necessary tools to built whole application from scratch including redux connector, router and form utils.
-- https://github.com/ryansolid/solid
-  - Solid is a declarative JavaScript library for creating user interfaces. 
-  - It does not use a Virtual DOM. 
-  - Instead it opts to compile its templates down to real DOM nodes and wrap updates in fine grained reactions. 
-  - This way when your state updates only the code that depends on it runs.
-
-
