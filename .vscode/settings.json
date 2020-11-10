@@ -1,4 +1,5 @@
 {
+  "search.useIgnoreFiles": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -33,7 +34,6 @@
   "bookmarks.saveBookmarksInProject": true,
   "cmake.configureOnOpen": true,
   "better-comments.tags": [
-
     {
       "tag": "!",
       "color": "#FF2D00",

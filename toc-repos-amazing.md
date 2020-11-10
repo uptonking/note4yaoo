@@ -43,6 +43,10 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://github.com/nearbycoder
   - https://github.com/timoschwarzer
 
+- https://github.com/zerosoul/chinese-colors
+  - https://colors.ichuantong.cn/
+  - 中国传统颜色在线手册
+
 ## cool
 
 - https://github.com/daybrush/scenejs

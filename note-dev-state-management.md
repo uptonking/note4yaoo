@@ -30,6 +30,17 @@ modified: '2020-10-31T19:11:26.567Z'
   - 不支持数据持久化
 - SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级
 
+- [Communicate Between Components](https://react-cn.github.io/react/tips/communicate-between-components.html)
+  - For parent-child communication, simply pass props.
+  - For child-parent communication: 
+    - Say your GroceryList component has a list of items generated through an array
+    - we're simply passing more arguments to `handleClick`. 
+    - This is not a new React concept; it's just JavaScript.
+  - For communication between two components that don't have a parent-child relationship, you can set up your own global event system. 
+    - Subscribe to events in `componentDidMount()`, unsubscribe in `componentWillUnmount()`, 
+    - and call `setState()` when you receive an event. 
+    - Flux pattern is one of the possible ways to arrange this.
+
 ## pieces
 
 - event-pub/sub vs browser event
@@ -149,6 +160,7 @@ obj.dispatchEvent(event);
   - flux
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
+
 
 ## ref
 

@@ -125,6 +125,14 @@ modified: '2020-11-08T10:02:00.337Z'
   - lit-html has no component model, so by using it to implement WCs, you get a component model.
   - A template library is not in direct competition with Web Component base classes/frameworks(polymer, svelte, stencil, skate), but can be used by them. 
     - It's already integrated with Skate, will be integrated with Polymer soon, and Stencil is looking into using it too.
+- some folks will avoid lit-HTML in favor of Stencil's JSX approach, 
+  - or in favor of Svelte's Vue-alike HTML components, 
+  - or more generally to decide whether to observe changes and respond to them or whether to regenerate the UI as a function of state.
+- I think you mis/underestimate the extent to which you have a component model already. 
+  - What you already have is the equivalent of React's "functional components", where the component is nothing but its render method.
+  - When we (Polymer folks) think of a component model, we think of a lifecycle. 
+    - Being notified when you boot up, when you're activated, when you're deactivated, and when the state you care about changes. 
+    - React has that, Web Components have that, lit doesn't.
 
 ## ref
 

@@ -9,6 +9,8 @@ modified: '2020-11-09T13:56:38.975Z'
 
 ## web-components-framework
 
+## web-components-extensions
+
 - https://github.com/wtnbass/fuco
   - Functional Component like React, but for Web Components.
 

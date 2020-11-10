@@ -30,6 +30,16 @@ modified: '2020-07-14T09:26:55.226Z'
   - `require(./a.js)` ：当node遇到require时，会相对当前执行文件查找
   - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
 
+### events
+
+- Much of the Node.js core API is built around an idiomatic asynchronous event-driven architecture 
+  - in which certain kinds of objects (called "emitters") emit named events that cause Function objects ("listeners") to be called.
+  - For instance: 
+    - a net.Server object emits an event each time a peer connects to it; 
+    - a fs.ReadStream emits an event when the file is opened; 
+    - a stream emits an event whenever data is available to be read.
+- All objects that emit events are instances of the `EventEmitter` class. 
+
 ## 多线程
 
 - Node.js保持了JavaScript在浏览器中单线程的特点

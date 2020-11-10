@@ -9,6 +9,19 @@ modified: '2020-11-09T09:04:58.539Z'
 
 ## trending
 
+### DataFormsJS
+
+- DataFormsJS /80Star/MIT/202011/js
+  - https://github.com/dataformsjs/dataformsjs
+  - https://www.dataformsjs.com
+  - A minimal JS Framework and standalone components for rapid development of single page applications.
+  - 支持react, vue, handlebars, graphql
+  - A few of the reasons for fast development include displaying JSON services using only Markup and Templating (Handlebars, Underscore, etc.) and defining App and Site features using HTML attributes and small JavaScript Plugins.
+  - Now that both React and Vue have become very popular. 
+    - separate React Components have been developed to help with React Development 
+    - and the Framework has been expanded to support Vue. 
+    - Additionally separate Web Components have been developed to allow for similar functionality in modern browsers without using a JavaScript framework.
+
 ### SolidJS
 
 - solid /4.4kStar/MIT/202011/ts
