@@ -10,8 +10,15 @@ modified: '2020-10-31T19:11:26.567Z'
 ## faq
 
 - 组件内的state如何管理，component/local state vs global state
+  - 可以模糊组件状态和全局状态的界限
+  - 对于复杂的state，组件内的state也可以使用单例的global state来管理，因为具体业务组件的数据是不同的，state的变化完全由开发者控制
 
 - action或event如何设计能让debug更方便
+  - 可以通过第三方日志工具打印出event信息
+  - [Step over EventEmitter to the listeners in debugger](https://stackoverflow.com/questions/40469119/step-over-eventemitter-to-the-listeners-in-debugger)
+    - 可以在浏览器控制台中设置blackboxing为事件源码文件，然后就可以调试跟踪到listener了
+  - https://github.com/watson/event-debug
+    - Log all events emitted by a Node.js EventEmitter object.
 
 ## guide
 
@@ -160,7 +167,6 @@ obj.dispatchEvent(event);
   - flux
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
-
 
 ## ref
 

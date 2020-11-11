@@ -8,11 +8,15 @@ modified: '2020-11-01T18:30:30.758Z'
 # note-dev-state-storeon
 
 - event-based Redux-like state manager for React, Vue, Angular and Svelte.
-  - The same Redux reducers.
-  - 通过扩展可支持undo/redo
-  - 不支持hot reload
 
 ## guide
+
+- 优点
+  - The same Redux reducers.
+  - 通过扩展可支持undo/redo
+
+- 缺点
+  - 不支持hot reload
 
 ## docs
 

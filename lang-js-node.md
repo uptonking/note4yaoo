@@ -32,13 +32,95 @@ modified: '2020-07-14T09:26:55.226Z'
 
 ### events
 
-- Much of the Node.js core API is built around an idiomatic asynchronous event-driven architecture 
+- Much of the Node.js core API is built around an idiomatic(地道的，符合习惯的，独特的) asynchronous event-driven architecture 
   - in which certain kinds of objects (called "emitters") emit named events that cause Function objects ("listeners") to be called.
   - For instance: 
-    - a net.Server object emits an event each time a peer connects to it; 
-    - a fs.ReadStream emits an event when the file is opened; 
-    - a stream emits an event whenever data is available to be read.
+    - a `net.Server` object emits an event each time a peer connects to it; 
+    - a `fs.ReadStream` emits an event when the file is opened; 
+    - a `stream` emits an event whenever data is available to be read.
 - All objects that emit events are instances of the `EventEmitter` class. 
+  - These objects expose an `eventEmitter.on()` function that allows one or more functions to be attached to named events emitted by the object. 
+- When the `EventEmitter` object emits an event, all of the functions attached to that specific event are called **synchronously**. 
+  - Any values returned by the called listeners are ignored and discarded.
+- The `EventEmitter` calls all listeners synchronously in the order in which they were registered. 
+  - This ensures the proper sequencing of events and helps avoid race conditions and logic errors. 
+  - When appropriate, listener functions can switch to an asynchronous mode of operation using the `setImmediate()` or `process.nextTick()` methods
+
+``` JS
+const myEmitter = new MyEmitter();
+myEmitter.on('event', (a, b) => {
+  setImmediate(() => {
+    console.log('this happens asynchronously');
+  });
+});
+myEmitter.emit('event', 'a', 'b');
+```
+
+- The `EventEmitter` class is defined and exposed by the `events` module
+  - All EventEmitters emit the event `'newListener'` when new listeners are added and `'removeListener'` when existing listeners are removed.
+  - The `EventEmitter` instance will emit its own '`newListener'` event before a listener is added to its internal array of listeners.
+
+- `emitter.emit(eventName[, ...args])` (v0.1.26)
+  - Synchronously calls each of the listeners registered for the event named `eventName`, 
+    - in the order they were registered, passing the supplied arguments to each.
+
+- `emitter.addListener(eventName, listener)` (v0.1.26)
+  - Alias for `emitter.on(eventName, listener)` (v0.1.101)
+  - Adds the `listener` function to the end of the listeners array for the event named `eventName`. 
+  - No checks are made to see if the listener has already been added. 
+  - Multiple calls passing the same combination of eventName and listener will result in the listener being added, and called, multiple times.
+  - By default, event listeners are invoked in the order they are added. 
+  - The `emitter.prependListener()` method can be used as an alternative to add the event listener to the beginning of the listeners array.
+
+- `emitter.once(eventName, listener)`
+  - Adds a one-time `listener` function for the event named `eventName`. 
+  - The next time `eventName` is triggered, this listener is removed and then invoked.
+
+- `emitter.off(eventName, listener)` (v10.0.0)
+  - Alias for `emitter.removeListener(eventName, listener)` (v0.1.26)
+  - Removes the specified `listener` from the listener array for the event named `eventName`.
+  - removeListener() will remove, at most, one instance of a listener from the listener array. 
+  - If any single listener has been added multiple times to the listener array for the specified eventName, then removeListener() must be called multiple times to remove each instance.
+  - Once an event is emitted, all listeners attached to it at the time of emitting are called in order. 
+    - This implies that any removeListener() or removeAllListeners() calls after emitting and before the last listener finishes execution will not remove them from emit() in progress. 
+    - Subsequent events behave as expected.
+
+``` JS
+const myEmitter = new MyEmitter();
+
+const callbackA = () => {
+  console.log('A');
+  myEmitter.removeListener('event', callbackB);
+};
+const callbackB = () => {
+  console.log('B');
+};
+
+myEmitter.on('event', callbackA);
+myEmitter.on('event', callbackB);
+
+// callbackA removes listener callbackB but it will still be called.
+// Internal listener array at time of emit is[callbackA, callbackB]
+myEmitter.emit('event');
+// Prints:
+//   A
+//   B
+
+// callbackB is now removed.
+// Internal listener array is [callbackA]
+myEmitter.emit('event');
+// Prints:
+//   A
+```
+
+  - Because listeners are managed using an internal array, calling this will change the position indices of any listener registered after the listener being removed. 
+  - This will not impact the order in which listeners are called, but it means that any copies of the listener array as returned by the emitter.listeners() method will need to be recreated.
+  - When a single function has been added as a handler multiple times for a single event, removeListener() will remove the most recently added instance. 
+
+- **NodeEventTarget vs. EventEmitter**
+- A NodeEventTarget is not an instance of EventEmitter and cannot be used in place of an EventEmitter in most cases.
+  - Unlike EventEmitter, any given listener can be registered at most once per event type. Attempts to register a listener multiple times are ignored.
+  - The NodeEventTarget does not implement any special default behavior for events with type 'error'.
 
 ## 多线程
 

@@ -1,11 +1,11 @@
 ---
-title: opendata-coronavirus-world
-tags: [coronavirus, opendata, world]
+title: toc-data-topic-coronavirus-world
+tags: [coronavirus, data, world]
 created: '2020-07-21T13:03:01.952Z'
-modified: '2020-07-22T09:49:41.217Z'
+modified: '2020-11-11T13:16:42.423Z'
 ---
 
-# opendata-coronavirus-world
+# toc-data-topic-coronavirus-world
 
 ## popular
 

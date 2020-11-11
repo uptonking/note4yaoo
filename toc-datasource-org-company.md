@@ -1,11 +1,11 @@
 ---
-title: opendata-source-org-company
-tags: [opendata]
+title: toc-datasource-org-company
+tags: [datasource]
 created: '2020-07-21T13:30:54.061Z'
-modified: '2020-07-22T10:42:02.575Z'
+modified: '2020-11-11T13:15:43.417Z'
 ---
 
-# opendata-source-org-company
+# toc-datasource-org-company
 
 - Microsoft Azure 开放数据集
   - https://azure.microsoft.com/zh-cn/services/open-datasets/catalog/

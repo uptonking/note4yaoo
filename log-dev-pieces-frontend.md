@@ -254,7 +254,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                        `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                               `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -313,7 +313,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                        `string` ,                        `boolean` ,                        `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                               `string` ,                               `boolean` ,                               `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -543,7 +543,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                        `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                               `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .
@@ -659,34 +659,34 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - [ ] [[Enumerable]]: 默认为true。表示能否通过for-in 循环返回属性；
   - [ ] [[Get]]: 默认为underfined。表示读取属性时调用的函数；
   - [ ] [[Set]]: 默认为underfined。表示写入属性时调用的函数；
-- import lodash
-  - import { has } from 'lodash-es'; 
+- `import lodash`
+  - `import { has } from 'lodash-es';`  
+  - tree shakable, but CommonJS modules are not 
 
-      - tree shakable, but CommonJS modules are not 
+- `import has from 'lodash/has';`
+    - lodash holds all it's functions in a single file, so rather than import the whole 'lodash' library at 100k, it's better to just import lodash's has function which is maybe 2k.
+    - 'lodash/has' isn't a separate package. There's a file called has.js in the root of the regular 'lodash' package, and import has from 'lodash/has' (or const has = require ('lodash/has) will load that file. 
 
-  - import has from 'lodash/has'; 
+- `import { has } from 'lodash';`
 
-      -  lodash holds all it's functions in a single file, so rather than import the whole 'lodash' library at 100k, it's better to just import lodash's has function which is maybe 2k.
-      - 'lodash/has' isn't a separate package. There's a file called has.js in the root of the regular 'lodash' package, and import has from 'lodash/has' (or const has = require ('lodash/has) will load that file. 
-
-  - import { has } from 'lodash'; 
 - 前端定时器
-  - setTimeout()，精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大； 
-  - setImmediate()，消耗的资源小，也不会造成阻塞，但效率也是最低的。
+  - `setTimeout()`
+    - 精确度不高，可能有延迟执行的情况发生，且因为动用了红黑树，所以消耗资源大； 
+  - `setImmediate()`
+    - 消耗的资源小，也不会造成阻塞，但效率也是最低的。
+    - 目前只支持IE10以上, 速度比setTimeOut执行延迟快一些
+  - `process.nextTick()`
+    - 效率最高，消费资源小，但会阻塞CPU的后续调用；
 
-      - 目前只支持IE10以上, 速度比setTimeOut执行延迟快一些
-
-  - process.nextTick()，效率最高，消费资源小，但会阻塞CPU的后续调用；
-  - 关于Event Loop和任务队列, 除了script整体代码，micro-task的任务优先级高于macro-task
-
-      - macro-task: script (整体代码)，setTimeout, setInterval, setImmediate, I/O, UI rendering.
-          - script(整体代码) ，可以理解为待执行的所有代码
-      - micro-task: process.nextTick, Promise(原生)，Object.observe，MutationObserver
-      - 执行过程
-          - 第一步script整体代码被执行，创建各种macro-task,执行micro-task的部分
-          - 第二步执行其他micro-task,优先级process.nextTick高于Promise
-          - 第三步来执行macro-task. setTimeout的优先级高于setImmediate(一般情况,若timeout延迟大,后者可能先执行) 
-          - 不同版本的node执行结果可能不同
+- 关于Event Loop和任务队列, 除了script整体代码，micro-task的任务优先级高于macro-task
+  - macro-task: script (整体代码)，setTimeout, setInterval, setImmediate, I/O, UI rendering.
+      - script(整体代码) ，可以理解为待执行的所有代码
+  - micro-task: process.nextTick, Promise(原生)，Object.observe，MutationObserver
+  - 执行过程
+      - 第一步script整体代码被执行，创建各种macro-task,执行micro-task的部分
+      - 第二步执行其他micro-task,优先级process.nextTick高于Promise
+      - 第三步来执行macro-task. setTimeout的优先级高于setImmediate(一般情况,若timeout延迟大,后者可能先执行) 
+      - 不同版本的node执行结果可能不同
 
   - ref https://segmentfault.com/a/1190000008595101
 - webpack module vs chunk vs bundle

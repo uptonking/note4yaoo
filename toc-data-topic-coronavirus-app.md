@@ -1,11 +1,11 @@
 ---
-title: opendata-coronavirus-app
-tags: [app, coronavirus, opendata]
+title: toc-data-topic-coronavirus-app
+tags: [app, coronavirus, data]
 created: '2020-07-21T13:03:01.952Z'
-modified: '2020-07-22T10:42:47.047Z'
+modified: '2020-11-11T13:16:34.742Z'
 ---
 
-# opendata-coronavirus-app
+# toc-data-topic-coronavirus-app
 
 ## popular
 
@@ -28,4 +28,3 @@ modified: '2020-07-22T10:42:47.047Z'
 - https://github.com/davidbau/covid-19-chart
   - Chart of COVID-19 time series data. 
   - Enables a variety of county- state- and nation-level comparisons and data exploration.
-

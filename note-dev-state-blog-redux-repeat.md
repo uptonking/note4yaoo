@@ -1,11 +1,11 @@
 ---
-title: note-dev-state-redux-repeat
-tags: [redux, state, repeat]
+title: note-dev-state-blog-redux-repeat
+tags: [blog, redux, repeat, state]
 created: '2020-11-06T18:08:44.624Z'
-modified: '2020-11-06T18:09:07.513Z'
+modified: '2020-11-11T14:00:47.647Z'
 ---
 
-# note-dev-state-redux-repeat
+# note-dev-state-blog-redux-repeat
 
 ## [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 

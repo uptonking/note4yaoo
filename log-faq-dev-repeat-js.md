@@ -85,9 +85,9 @@ var o = { a: 37, f: f, g: g, h: h };
 console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 ```
 
-- In arrow functions, `this` retains the value of the enclosing lexical context's `this` .
+- In arrow functions,  `this` retains the value of the enclosing lexical context's `this` .
   -  In global code, it will be set to the global object
-- If `this` arg is passed to `call` , `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+- If `this` arg is passed to `call` ,       `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to `null`
 
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
@@ -304,6 +304,18 @@ Number instanceof Number //false
   - __proto__指向的是当前对象的原型对象，而prototype指向的，是以当前函数作为构造函数构造出来的对象的原型对象。
 - ref
   - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
+
+## es6 class extends vs node util.inherits
+
+- Since the class and extends keywords are only syntactic sugar on top of prototypal inheritance, 
+  - the answer simply is: Yes, you can replace `util.inherits` by `extends` and keep the same behavior.
+- Of course, there are minor things to watch out for, 
+  - e.g. you need to make sure to call the `super` constructor in your derived class's constructor, 
+  - whereas with `util.inherits` you had to call the constructor function and `apply` it to `this`. 
+  - But effectively, these things are only other syntactic constructs, semantically, they are equivalent.
+
+- ref
+  - [Can i replace util.inherits with es6's extend keyword?](https://stackoverflow.com/questions/44226524/can-i-replace-util-inherits-with-es6s-extend-keyword)
 
 ## when should I use es6 class
 

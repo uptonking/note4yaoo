@@ -7,8 +7,6 @@ modified: '2020-11-07T16:22:57.121Z'
 
 # note-dev-state-blog-event-pubsub
 
-## guide
-
 ## event-emitter
 
 ### [Understanding Event Emitters](https://css-tricks.com/understanding-event-emitters/)
