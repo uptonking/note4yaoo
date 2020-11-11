@@ -111,6 +111,19 @@ modified: '2020-07-14T11:03:53.196Z'
   - We had the requirement for a * event to catch all calls, and figured we could improve the file size at the same time. 
   - This library is about 1/3rd the size of Node's version.
   - Are these emitters asynchronous? No.
+- https://github.com/faye/faye
+  - /4.3kStar/Apache2/202008/js
+  - Faye is a publish-subscribe messaging system based on the Bayeux protocol. 
+    - Bayeux协议目的是使用ajax实现客户端和服务器的双向通信
+  - It provides message servers for Node.js and Ruby, and clients for use on the server and in all major web browsers.
+
+- https://github.com/ganapativs/pure-cache
+  - tiny in-memory JavaScript cache with near realtime cache expiry feature
+- https://github.com/bpmn-io/scroll-tabs
+  - ScrollTabs adds scroll buttons on the left and right side of the tabs container if not all tabs are visible. 
+  - It also adds a mouse wheel listener on the container.
+- https://github.com/elninotech/uppload
+  - image uploader with 30+ plugins
 
 ## react
 

@@ -168,6 +168,9 @@ modified: '2020-10-05T06:20:15.291Z'
 - https://www.plasmic.app/
 - https://visly.app/
 
+- https://github.com/swagger-api/swagger-editor
+  - Swagger Editor lets you edit Swagger API specifications in YAML inside your browser and to preview documentations in real time. 
+
 ## discussion
 
 - [List of drag & drop React UI builders_202003](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)

@@ -24,6 +24,9 @@ modified: '2020-11-02T19:13:04.103Z'
 - https://github.com/schrodinger/fixed-data-table-2
 - https://github.com/dvajs/dva
   - React and redux based, lightweight and elm-style framework.
+- https://github.com/jshjohnson/Choices
+  - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
+  - 依赖redux、fuse.js(fuzzy-search in js)
 
 ## redux-repos
 
