@@ -1,11 +1,11 @@
 ---
-title: cli-frontend
-tags: [engineering, web]
+title: cli-engineering-frontend
+tags: [cli, engineering]
 created: '2020-06-19T04:40:23.543Z'
-modified: '2020-07-14T10:35:06.446Z'
+modified: '2020-11-13T13:09:36.645Z'
 ---
 
-# cli-frontend
+# cli-engineering-frontend
 
 ## 前端开发工具
 

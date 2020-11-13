@@ -1,23 +1,25 @@
 ---
-title: cli-options
-tags: [engineering]
+title: cli-collection
+tags: [cli]
 created: '2019-10-06T10:29:08.772Z'
-modified: '2020-10-05T07:53:30.341Z'
+modified: '2020-11-13T13:10:20.322Z'
 ---
 
-# cli-options
+# cli-collection
 
 ## 前端工程化工具相关命令
 
 - prettier格式化所有文件
 
 ``` 
+
 prettier --config ./.prettierrc.js --write \"**/*.*\" --ignore-path=./.prettierignore"
 ```
 
 - changelog
 
 ``` 
+
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
@@ -29,6 +31,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
 
 ``` 
+
 git rm --cached 文件（夹）名，此时只删除了仓库中的缓存，实际文件不会删除
 git commit -m '备注'
 git push origin 分支
@@ -37,6 +40,7 @@ git push origin 分支
 - 删除本地和远程两份文件
 
 ``` 
+
 git rm 文件名       // 删除文件
 git rm -r 文件夹名   // 删除文件夹 
 git add .
@@ -47,6 +51,7 @@ git push origin 分支
 - 放弃本地修改，用远程覆盖本地
 
 ``` 
+
 git fetch --all
 git reset --hard origin/master
 ```
@@ -54,6 +59,7 @@ git reset --hard origin/master
 - 用本地覆盖远程
 
 ``` 
+
 git push origin master --force 
 ```
 
@@ -72,22 +78,6 @@ git push origin master --force
     - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
     - 不会产生新commit
 
-## linux shell
-
-- ssh免密登录
-
-``` 
-ssh-copy-id [-f] [-n] [-i identity file] [-p port] [-o ssh_option] [user@]hostname
-```
-
-- `ln -s fileOrFolder softLinkName`
-- 打开目录路径
-  - nautilus .
-  - xdg-open 直接参数传入要打开的文件，系统会根据文件类型自动调用对应的程序
-    - xdg-open a.png/pdf/doc 
-    - xdg-open . 会调用nautilus
-    - xdg-open https://www.baidu.com 会打开默认浏览器，其中https不可省略
-
 ## java相关
 
 - maven编译
@@ -99,12 +89,14 @@ ssh-copy-id [-f] [-n] [-i identity file] [-p port] [-o ssh_option] [user@]hostna
   
 
 ``` 
+
    mvn install:install-file -Dfile=/path/to/local.jar -DgroupId=a.b -DartifactId=name -Dversion=1.0.0 -Dpackaging=jar
   ```
 
 - 切换java版本-基于jenv
 
 ``` 
+
   jenv add /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
   使用alias添加同一版本的不同jvm：jenv add dcevm11 /path/to/jdk
   jenv global 11
