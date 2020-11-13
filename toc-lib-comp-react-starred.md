@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-react-starred
+title: toc-lib-comp-react-starred
 tags: [components, lib, react, toc]
 created: '2020-10-05T13:03:01.440Z'
-modified: '2020-10-05T13:16:31.674Z'
+modified: '2020-11-13T07:31:27.113Z'
 ---
 
-# toc-lib-components-react-starred
+# toc-lib-comp-react-starred
 
 ## accessible-components
 

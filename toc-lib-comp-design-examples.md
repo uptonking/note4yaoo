@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-examples
+title: toc-lib-comp-design-examples
 tags: [design-system, example]
 created: '2020-10-25T05:35:44.837Z'
-modified: '2020-10-25T05:36:11.888Z'
+modified: '2020-11-13T07:28:56.663Z'
 ---
 
-# toc-lib-components-design-examples
+# toc-lib-comp-design-examples
 
 ## design-examples
 

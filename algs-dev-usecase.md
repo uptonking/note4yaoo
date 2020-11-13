@@ -1,8 +1,8 @@
 ---
 title: algs-dev-usecase
-tags: [algs, usecase]
+tags: [algorithms, usecase]
 created: '2020-09-12T13:41:54.393Z'
-modified: '2020-09-12T13:46:26.980Z'
+modified: '2020-11-13T10:20:57.697Z'
 ---
 
 # algs-dev-usecase

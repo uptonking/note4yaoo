@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-bulma
-tags: [bulma, components, lib]
+title: toc-lib-css-comp-bulma
+tags: [bulma, components, css, lib]
 created: '2020-10-05T13:46:32.360Z'
-modified: '2020-10-05T13:46:48.231Z'
+modified: '2020-11-13T07:32:14.241Z'
 ---
 
-# toc-lib-components-bulma
+# toc-lib-css-comp-bulma
 
 ## bulma-components
 

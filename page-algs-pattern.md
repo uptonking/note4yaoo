@@ -1,8 +1,8 @@
 ---
 title: page-algs-pattern
-tags: [algs]
+tags: [algorithms, pattern]
 created: '2020-08-28T07:37:32.196Z'
-modified: '2020-08-28T07:39:19.663Z'
+modified: '2020-11-13T10:21:10.242Z'
 ---
 
 # page-algs-pattern

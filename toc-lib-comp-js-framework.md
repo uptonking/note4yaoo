@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-framework
+title: toc-lib-comp-js-framework
 tags: [components, lib, toc]
 created: '2020-06-16T02:31:56.711Z'
-modified: '2020-10-25T05:13:44.139Z'
+modified: '2020-11-13T07:31:04.038Z'
 ---
 
-# toc-lib-components-framework
+# toc-lib-comp-js-framework
 
 ## components-react 
 

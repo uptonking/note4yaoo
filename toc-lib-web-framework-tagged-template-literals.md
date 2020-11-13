@@ -1,8 +1,8 @@
 ---
 title: toc-lib-web-framework-tagged-template-literals
-tags: [es6, javascript, repos, tagged-template-literals]
+tags: [es6, js, tagged-template-literals]
 created: '2020-11-05T09:27:49.883Z'
-modified: '2020-11-09T09:03:49.112Z'
+modified: '2020-11-13T07:34:39.349Z'
 ---
 
 # toc-lib-web-framework-tagged-template-literals

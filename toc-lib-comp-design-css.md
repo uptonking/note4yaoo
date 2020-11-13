@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-css
+title: toc-lib-comp-design-css
 tags: [components, css, lib, toc]
 created: '2020-10-22T12:57:49.045Z'
-modified: '2020-10-22T13:34:56.023Z'
+modified: '2020-11-13T07:28:50.844Z'
 ---
 
-# toc-lib-components-design-css
+# toc-lib-comp-design-css
 ## guide
 - top-css-lib
   - bootstrap, bulma, materialize, amazeui, spectre, primer,milligram

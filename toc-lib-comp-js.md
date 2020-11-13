@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-js
+title: toc-lib-comp-js
 tags: [components, lib, toc]
 created: '2020-10-05T13:16:58.750Z'
-modified: '2020-10-05T13:17:18.964Z'
+modified: '2020-11-13T07:30:32.219Z'
 ---
 
-# toc-lib-components-js
+# toc-lib-comp-js
 
 ## starred
 

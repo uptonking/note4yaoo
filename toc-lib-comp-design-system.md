@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-system
+title: toc-lib-comp-design-system
 tags: [components, design-system, lib, toc]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-10-22T10:14:24.424Z'
+modified: '2020-11-13T07:30:03.110Z'
 ---
 
-# toc-lib-components-design-system
+# toc-lib-comp-design-system
 
 ## guide
 

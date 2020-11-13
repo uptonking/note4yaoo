@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-tokens
+title: toc-lib-comp-design-tokens
 tags: [design-system, design-tokens]
 created: '2020-10-23T03:56:35.731Z'
-modified: '2020-10-25T05:11:07.208Z'
+modified: '2020-11-13T07:30:23.361Z'
 ---
 
-# toc-lib-components-design-tokens
+# toc-lib-comp-design-tokens
 
 ## guide
 

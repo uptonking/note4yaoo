@@ -1,9 +1,8 @@
 ---
 title: docs-web-style-box-model
 tags: [docs, web]
-favorited: true
 created: '2020-07-18T08:40:00.797Z'
-modified: '2020-07-18T08:40:56.062Z'
+modified: '2020-11-13T10:19:26.532Z'
 ---
 
 # docs-web-style-box-model

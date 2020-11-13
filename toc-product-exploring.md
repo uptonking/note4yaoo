@@ -1,8 +1,8 @@
 ---
 title: toc-product-exploring
-tags: [exploring, product, toc]
+tags: [exploring, pm, product, toc]
 created: '2020-05-03T08:34:20.399Z'
-modified: '2020-10-22T13:51:17.827Z'
+modified: '2020-11-13T07:36:50.247Z'
 ---
 
 # toc-product-exploring

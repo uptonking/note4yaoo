@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-agnostic
+title: toc-lib-comp-agnostic
 tags: [components, lib, toc]
 created: '2020-09-28T17:05:16.252Z'
-modified: '2020-10-05T06:23:07.417Z'
+modified: '2020-11-13T07:28:27.824Z'
 ---
 
-# toc-lib-components-agnostic
+# toc-lib-comp-agnostic
 
 ## framework-agnostic components
 

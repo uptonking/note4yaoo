@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-theming
+title: toc-lib-comp-theming
 tags: [theming]
 created: '2020-10-23T17:21:21.861Z'
-modified: '2020-10-25T09:56:46.611Z'
+modified: '2020-11-13T07:31:38.730Z'
 ---
 
-# toc-lib-components-theming
+# toc-lib-comp-theming
 
 ## guide
 

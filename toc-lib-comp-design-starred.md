@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-starred
+title: toc-lib-comp-design-starred
 tags: [design-system]
 created: '2020-10-24T18:21:09.519Z'
-modified: '2020-10-24T18:22:55.257Z'
+modified: '2020-11-13T07:29:59.314Z'
 ---
 
-# toc-lib-components-design-starred
+# toc-lib-comp-design-starred
 
 ## amazing
 

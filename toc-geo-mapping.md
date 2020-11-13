@@ -1,11 +1,11 @@
 ---
-title: toc-lib-geo
-tags: [geo, toc]
+title: toc-geo-mapping
+tags: [geo, mapping, toc]
 created: '2019-12-22T12:22:13.746Z'
-modified: '2020-06-22T09:24:05.317Z'
+modified: '2020-11-13T07:57:35.718Z'
 ---
 
-# toc-lib-geo
+# toc-geo-mapping
 
 ## awesome
 

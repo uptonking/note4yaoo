@@ -1,8 +1,8 @@
 ---
 title: toc-repos-pattern-functional-programming
-tags: [functional-programming, pattern, toc]
+tags: [functional-programming, pattern, repos, toc]
 created: '2020-11-02T19:13:11.667Z'
-modified: '2020-11-02T19:15:09.298Z'
+modified: '2020-11-13T07:37:47.171Z'
 ---
 
 # toc-repos-pattern-functional-programming

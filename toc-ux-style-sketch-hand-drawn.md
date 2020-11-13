@@ -1,11 +1,11 @@
 ---
-title: toc-lib-ux-sketch-hand-drawn
-tags: [lib, sketch, toc]
+title: toc-ux-style-sketch-hand-drawn
+tags: [sketch, style, toc, ux]
 created: '2020-08-09T09:04:58.352Z'
-modified: '2020-08-09T09:06:03.600Z'
+modified: '2020-11-13T07:56:05.749Z'
 ---
 
-# toc-lib-ux-sketch-hand-drawn
+# toc-ux-style-sketch-hand-drawn
 
 ## popular
 

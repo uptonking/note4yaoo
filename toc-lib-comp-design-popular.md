@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-popular
+title: toc-lib-comp-design-popular
 tags: [components, design-system, lib, toc]
 created: '2020-10-22T12:51:37.045Z'
-modified: '2020-10-22T12:52:52.985Z'
+modified: '2020-11-13T07:29:55.201Z'
 ---
 
-# toc-lib-components-design-popular
+# toc-lib-comp-design-popular
 
 ## popular-design-system
 

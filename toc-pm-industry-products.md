@@ -1,11 +1,11 @@
 ---
-title: toc-industry-products
-tags: [industry, product, toc]
+title: toc-pm-industry-products
+tags: [industry, pm, product, toc]
 created: '2020-03-04T17:31:03.525Z'
-modified: '2020-07-14T11:07:43.798Z'
+modified: '2020-11-13T07:36:37.825Z'
 ---
 
-# toc-industry-products
+# toc-pm-industry-products
 
 ## promising
 

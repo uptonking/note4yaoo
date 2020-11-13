@@ -1,11 +1,11 @@
 ---
-title: toc-industry-companies-broken-leading
-tags: [industry, product, toc]
+title: toc-pm-companies-broken-leading
+tags: [industry, pm, product, toc]
 created: '2020-03-04T17:24:52.396Z'
-modified: '2020-07-14T11:07:22.829Z'
+modified: '2020-11-13T07:36:34.635Z'
 ---
 
-# toc-industry-companies-broken-leading
+# toc-pm-companies-broken-leading
 
 ## leading
 

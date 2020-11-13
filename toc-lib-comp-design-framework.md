@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-framework
+title: toc-lib-comp-design-framework
 tags: [design-system]
 created: '2020-10-24T19:43:53.135Z'
-modified: '2020-10-25T05:09:53.421Z'
+modified: '2020-11-13T07:29:05.145Z'
 ---
 
-# toc-lib-components-design-framework
+# toc-lib-comp-design-framework
 
 ## design-css-in-js
 

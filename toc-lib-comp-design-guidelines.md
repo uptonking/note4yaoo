@@ -1,11 +1,11 @@
 ---
-title: toc-lib-components-design-guidelines
+title: toc-lib-comp-design-guidelines
 tags: [design-system]
 created: '2020-10-24T13:59:53.069Z'
-modified: '2020-10-24T14:00:46.256Z'
+modified: '2020-11-13T07:29:51.963Z'
 ---
 
-# toc-lib-components-design-guidelines
+# toc-lib-comp-design-guidelines
 
 ## design-system-guide-tools
 
