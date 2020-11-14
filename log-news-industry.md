@@ -7,12 +7,16 @@ modified: '2020-08-27T11:52:21.241Z'
 
 # log-news-industry
 
+- 202011-market-大厂双十一购物节总成交额：阿里4982亿/多天，京东2715亿/多天
+- 202011-software-JetBrains发布了Kotlin桌面UI框架Jetpack Compose for Desktop（compose-jb）
+  - 可开发Windows、macOS、Linux/x86的应用
 - 202008-美国300家(约1/4)必胜客计划永久关闭，并出售剩余分店
   - 互联网经济的玩法，以前是中国学习西方，现在是中国输出创新的商业模式
 - 202006-world-美国宣布取消香港特殊相关待遇，包括暂停出口许可证豁免
 - 202006-market-6月26日，微软宣布，将永久关闭其Microsoft Store实体零售店
   - 本不想搞个大新闻，因为Microsoft Store实体店全球都不到100家店
   - 黑人暴乱零元购的风险
+- 202003-market-美团公有云将于2020年5月31日关闭服务
 - 202003-market-国外疫情严重，口罩需求大，国内各种小作坊疯狂生产制作口罩用熔喷布，一家利润5万/天
 - 202003-market-npm, Inc., is being purchased by GitHub_20200316
 - 202002-market-腾讯成为B站最大股东

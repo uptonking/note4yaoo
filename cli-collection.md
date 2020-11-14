@@ -1,13 +1,13 @@
 ---
 title: cli-collection
-tags: [cli]
+tags: [cli, collection]
 created: '2019-10-06T10:29:08.772Z'
-modified: '2020-11-13T13:10:20.322Z'
+modified: '2020-11-14T09:38:09.918Z'
 ---
 
 # cli-collection
 
-## 前端工程化工具相关命令
+## 前端工程化工具相关
 
 - prettier格式化所有文件
 
@@ -85,8 +85,6 @@ git push origin master --force
   - mvn使用proxy下载依赖： ` mvn clean install -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080`
       - 注意验证，saiku下载的jar全是7.8k无效jar
   - 安装本地jar
-
-  
 
 ``` 
 

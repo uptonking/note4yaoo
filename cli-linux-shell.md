@@ -55,17 +55,24 @@ tar -cvzf - ./picture | split -d -b 10m - picture
 - 最后解压大压缩包
 - ### file-zip
 - 分卷压缩时，先压缩成大压缩包，再分卷
+  - 分卷文件的名称为a.zip, a.z01, a.z02
 
 ``` shell
-zip myzip.zip file
-zip -s 4m myzip.zip --out zip
+zip a.zip file
+zip -r a.zip folder
+zip -s 4m a.zip --out a  # 分割现有zip压缩包
+
+# 直接创建分卷压缩文件
+zip -s 100m -r a.zip foo/
+
 ```
 
 - 分卷解压时，先合并分卷成大压缩包，再解压
 
 ``` shell
-cat zip.z* > myzip.zip
-unzip myzip.zip
+zip -F a.zip --out b.zip # b.zip无法通过unzip命令解压，但可通过文件管理器gui解压
+# cat a.z* > b.zip # 这样得到的大压缩文件b.zip无法解压
+unzip -v b.zip
 ```
 
 - ### file-cli

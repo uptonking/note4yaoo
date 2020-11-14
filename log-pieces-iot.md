@@ -9,15 +9,29 @@ modified: '2020-09-18T09:32:05.147Z'
 
 ## ubuntu
 
-- [tracker-store and tracker-miner-fs eating up my CPU on every startup](https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup)
+- zip分卷压缩
+  - 使用zip -s可创建a.z01等分卷文件
+  - 如何合并这些分卷文件更好，cat命令创建的大压缩包无法解压，只能通过zip -F创建
+  - 小分卷文件合并得到的大压缩文件，无法通过unzip命令解压，却可以通过文件管理器gui解压
 
-  - 
+``` 
+
+Archive:  b.zip
+   creating: pet/
+  inflating: pet/回家的诱惑-猫咪版.mp4  
+  error:  invalid compressed data to inflate
+error: invalid zip file with overlapped components (possible zip bomb)
+
+```
+
+- [tracker-store and tracker-miner-fs eating up my CPU on every startup](https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup)
 
 ## hp-envy-15
 
 - 无法开机
 
 ``` 
+
 boot device not found
 
 ```
@@ -29,6 +43,7 @@ boot device not found
     - GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvme_core.default_ps_max_latency_us=5500"
 
 ``` 
+
 ext4-fs error (device nvme0n1p6): __ext4_find_entry: inode: reading directory lblock 0
 systemd-journald: failed to write entry ( items,  bytes), ignoring: read-only file system 
 
@@ -39,6 +54,7 @@ nvme0 failed to set APST feature blocks
     - 通过 journalctl --verify 命令找到损坏的journal文件，然后删除或者mv移动它，再重启systemd-journald服务即可
 
 ``` 
+
 // 执行 journalctl --verify
 f9deb8: Invalid entry item (17/23 offset: 000000                                
 f9deb8: Invalid object contents: Bad message                                    

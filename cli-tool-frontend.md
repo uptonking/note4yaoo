@@ -1,23 +1,23 @@
 ---
-title: cli-engineering-frontend
-tags: [cli, engineering]
+title: cli-tool-frontend
+tags: [cli, frontend]
 created: '2020-06-19T04:40:23.543Z'
-modified: '2020-11-13T13:09:36.645Z'
+modified: '2020-11-14T09:39:11.615Z'
 ---
 
-# cli-engineering-frontend
+# cli-tool-frontend
 
 ## 前端开发工具
 
 - storybook
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - addon
-    - Knobs: edit props dynamically using the Storybook UI
 - codesandbox
   - Online Code Editor Tailored for Web Application
-- eslint/tslint
-- jest
-- enzyme
+- lint: eslint
+- tes
+  - tjest
+  - enzyme
 - webpack
   - entry
   - output
