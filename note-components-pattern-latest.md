@@ -10,6 +10,9 @@ modified: '2020-10-29T12:52:12.025Z'
 ## latest
 
 - 组件库研发方向及特色
+  - 每个大公司都有自己的设计系统与组件库
+    - 可参考实现细节:ui渲染、css、状态
+    - 既要突出特色与众不同，也要考虑互操作标准化，如theme共享
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
@@ -17,7 +20,8 @@ modified: '2020-10-29T12:52:12.025Z'
     - foundation(host-agnostic) + adapter(host-interaction)
     - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
     - 用户或二次开发者用起来像framework-agnostic，但原作者可能要维护多个port或bridge
-  - 每个大公司都有自己的设计系统与组件库，既要突出特色与众不同，也要考虑互操作标准化，如theme共享
+  - reactive/functional ui
+    - state-based components
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为
 - 组件库重点

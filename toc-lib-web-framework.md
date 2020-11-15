@@ -65,3 +65,6 @@ const CountingComponent = () => {
 - https://github.com/corpusculejs/corpuscule
   - a set of libraries built on top of Web Components standard. 
   - It provides all necessary tools to built whole application from scratch including redux connector, router and form utils.
+- https://github.com/fanduel-oss/refract
+  - Handle your component effects and side-effects in a clear and declarative fashion by using asynchronous data streams (reactive programming).
+  - Refract makes reactive programming possible in React, React Native, Preact and Inferno, with only a single higher-order component or a single hook

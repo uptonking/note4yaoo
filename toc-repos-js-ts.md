@@ -109,6 +109,9 @@ modified: '2020-11-03T06:55:35.048Z'
 - https://github.com/immerjs/immer
   - /18.3kStar/MIT/202010/ts
   - Create the next immutable state by mutating the current one
+- https://github.com/reactivex/rxjs
+  - /23.3kStar/Apache2/202011/ts
+  - A reactive programming library for JavaScript
 
 ## popular
 
