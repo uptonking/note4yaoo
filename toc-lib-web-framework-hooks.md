@@ -25,3 +25,5 @@ modified: '2020-11-14T19:04:33.095Z'
   - VanillaJS useState Hook
 - https://github.com/victorpotasso/hooks
   - Collection of vanilla hooks
+- https://github.com/jonathantneal/usestate-js
+  - zero-dependency module that recreates React useState in vanilla JavaScript.

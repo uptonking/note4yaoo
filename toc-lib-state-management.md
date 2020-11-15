@@ -199,6 +199,10 @@ modified: '2020-07-14T11:03:53.196Z'
   - Bind events to state. Works with Preact and React.
 - https://github.com/fabien-h/acta
   - simple state manager and event dispatcher for react.
+- https://github.com/yamalight/outstated
+  - Simple hooks-based state management for React
+  - Like unstated but with hooks
+
 
 ## redux-like
 

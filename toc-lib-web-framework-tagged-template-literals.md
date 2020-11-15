@@ -96,6 +96,11 @@ modified: '2020-11-13T07:34:39.349Z'
 
 ## more-ttls
 
+- https://github.com/choojs/nanohtml
+  - HTML template strings for the Browser with support for Server Side Rendering in Node.
+- https://github.com/shama/yo-yoify
+  - Transform choo, yo-yo, or bel template strings into pure and fast document calls.
+
 - https://github.com/zspecza/common-tags
   - A set of well-tested, commonly used template literal tag functions for use in ES2015+
   - common-tags initially started out as two template tags I'd always find myself writing - one for stripping indents, and one for trimming multiline strings down to a single line.

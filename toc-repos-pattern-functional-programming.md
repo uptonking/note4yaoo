@@ -54,12 +54,19 @@ modified: '2020-11-13T07:37:47.171Z'
   - A 4kb framework for creating sturdy frontend applications
   - At the core of Choo is an event emitter, which is used for both application logic but also to interface with the framework itself. The package we use for this is nanobus.
   - Choo uses nanomorph, which diffs real DOM nodes instead of virtual nodes
+  - https://github.com/choojs/nanocomponent
+    - Isolate native DOM libraries from DOM diffing algorithms
+    - Class based components offering a familiar component structure
+  - https://github.com/tornqvist/fun-component
+    - Syntactic sugar on top of nanocomponent.
 - https://github.com/kbrsh/moon
   - /6kStar/MIT/202003/js
   - https://moonjs.org/
   - The minimal & fast library for functional user interfaces
 - https://github.com/hybridsjs/hybrids
   - The simplest way to create web components from plain objects and pure functions! 
+- https://github.com/wtnbass/fuco
+  - Functional Component like React, but for Web Components.
 
 - https://github.com/funkia/list
   - An immutable list with unmatched performance and a comprehensive functional API.

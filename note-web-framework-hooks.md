@@ -14,6 +14,35 @@ modified: '2020-11-14T18:59:17.911Z'
 
 ## hooks-blog
 
+### [TinyJSX](https://github.com/stanchino/tiny-jsx)
+
+- TinyJSX is a lightweight UI JavaScript library for developing user interfaces using functional components.
+- TinyJSX exposes an API which mimics the recent React Hooks implementation but is really small.
+- TinyJSX supports only functional components.
+
+``` JS
+import TinyJSX from 'tiny-jsx';
+import { render } from 'tiny-jsx/dom';
+import useEffect from 'tiny-jsx/hooks/useEffect';
+import useState from 'tiny-jsx/hooks/useState';
+
+function Clock() {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTick(tick + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [tick]);
+
+  return (
+    <div>Seconds: {tick}</div>
+  );
+}
+
+render(<Clock />, document.body);
+```
+
 ### [A Critique of React Hooks_202004](https://dillonshook.com/a-critique-of-react-hooks/)
 
 1. More Stuff to Learn

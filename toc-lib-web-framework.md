@@ -9,6 +9,16 @@ modified: '2020-11-09T09:04:58.539Z'
 
 ## trending
 
+### Crank.js
+
+- crank /2.2kStar/MIT/202011/ts/NoDeps
+- https://github.com/bikeshaving/crank
+- Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.
+- All components in Crank are just functions or generator functions. 
+- No classes, hooks, proxies or template languages are needed.
+- Crank provides first-class support for promises. 
+- The core renderer can be extended to target alternative environments such as WebGL libraries, terminals, smartphones or smart TVs.
+
 ### DataFormsJS
 
 - DataFormsJS /80Star/MIT/202011/js
@@ -50,6 +60,11 @@ const CountingComponent = () => {
 ```
 
 ## web-ui-framework
+
+- https://github.com/standard-components/standard-components
+  - /inactive
+  - A specification for functional UI components
+  - This specification is intended as a way to standardize naming conventions and props APIs in order to create an ecosystem of interchangeable UI components
 
 - https://github.com/flowxjs/typeclient
   - https://flowxjs.github.io/TypeClient/

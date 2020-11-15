@@ -32,12 +32,17 @@ modified: '2020-10-22T16:07:08.502Z'
 - browser extensions
   - chrome助手：过滤google搜索结果到中文，mozilla-mdn文档语言切换
 
-## github
+## site-github
 
 - navigation within issue answers with shortcut J
 - sort repos of an organization by stars
 - toggle github repo and github page
 - go to npm package page
+
+## site-zhihu
+
+- [知乎怎么查看自己评论过的问题？](https://www.zhihu.com/question/35126639/answers/updated)
+  - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 ## app-win10
 

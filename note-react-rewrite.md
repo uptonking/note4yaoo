@@ -22,33 +22,42 @@ modified: '2020-07-01T06:09:16.202Z'
 
 ## react-hooks
 
-### [TinyJSX](https://github.com/stanchino/tiny-jsx)
+### [How to replicate useState with vanilla JS](https://stackoverflow.com/questions/64744252/how-to-replicate-usestate-with-vanilla-js)
 
-- TinyJSX is a lightweight UI JavaScript library for developing user interfaces using functional components.
-- TinyJSX exposes an API which mimics the recent React Hooks implementation but is really small.
-- TinyJSX supports only functional components.
+- all react hooks use something "backing" them which allows you to provide what are effectively instance variables when you don't have an instance, you only have a function.
+- This thing in React is called a fiber 
+  - and it effectively represents the lifecycle of a React component - 
+  - it's not tied to the function itself, per se, it's tied to the component react is rendering (and re-rendering).
+  - Which is why you can have one functional component declaration, render that same function multiple times, and each of those will be able to maintain their own state - 
+  - the state isn't part of the function, the state is part of the React fiber.
 
 ``` JS
-import TinyJSX from 'tiny-jsx';
-import { render } from 'tiny-jsx/dom';
-import useEffect from 'tiny-jsx/hooks/useEffect';
-import useState from 'tiny-jsx/hooks/useState';
+// this line is example only so we can access the stateSetter external to the function
+let stateSetter;
 
-function Clock() {
-  const [tick, setTick] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTick(tick + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [tick]);
+const states = new Map();
 
-  return (
-    <div>Seconds: {tick}</div>
-  );
+const useState = (value, context) => {
+  const current = states.get(context.callee) || [value, v => {
+    const currentState = states.get(context.callee);
+    currentState[0] = typeof v === 'function' ? v(currentState[0]) : v
+    // we recall the function with the same arguments it was originally called with - "re-rendering it" of sorts...
+    context.callee.call(context);
+  }];
+  states.set(context.callee, current);
+  return current;
+
 }
 
-render(<Clock />, document.body);
+const MyFunction = function(value) {
+  const [state, setState] = useState(value, arguments)
+  stateSetter = setState;
+  console.log('current value of state is: ', state)
+}
+
+MyFunction(10);
+MyFunction(20); // state hasn't changed
+stateSetter('new state'); // state has been updated!
 ```
 
 ### [使用 React Hooks 重构你的小程序](https://aotu.io/notes/2019/07/10/taro-hooks/index.html)
@@ -129,3 +138,4 @@ function useState<S>(initialState: S | (() => S)):
   - setState异步化，避免阻塞主进程
   - setState合并，多次连续调用会被最终合并成一次
 - 为了让业务方能够编写业务逻辑插入组件的渲染工作流中，可以为组件设计添加生命周期方法
+- [A journey through the implementation of the useState hook](https://www.newline.co/@CarlMungazi/a-journey-through-the-usestate-hook--a4983397)
