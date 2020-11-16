@@ -39,6 +39,38 @@ modified: '2020-11-16T13:20:48.869Z'
   - All main functional units of the editor — Blocks, Inline Formatting Tools, Block Tunes — are provided by external plugins that use Editor's API.
   - Any challenges and tasks you are facing can be implemented by your own plugins using the API. 
 
+- each Block in Editor.js is provided by a Plugin. 
+  - There are simple external scripts with their own logic.
+  - There is the only Paragraph block already included in Editor.js. 
+  - Probably you want to use several Block Tools that should be installed and connected.
+  - [Link Tool for Editor.js](https://github.com/editor-js/link)
+
+- Editor.js needs a bit time to initialize. 
+  - It is an asynchronous action so it won't block execution of your main script.
+  - If you need to know when editor instance is ready, you can pass `onReady` property to the configuration object
+  - Similar to onReady callback, you can use the `onChange` callback to handle any modifications inside the Editor
+  - Since the 2.19.0 version, Editor.js can be initialized in the read-only mode. 
+    - That means that users won't have the ability to change the document content.
+
+- You can specify the common order of Inline tools using the `inlineToolbar` property.
+
+- A blocks property contains an array of objects with `type` and `data` of Editor Blocks. 
+  - The values of this fields are depend on the Tools you use
+  - Note that `type` field in Block data is the key of object of Editor config's `tools` property. 
+  - In other words, it can be changed by you own.
+
 ## Creating a Block Tool
 
+- In this series of articles, we will learn how to create a full-featured Block Tool step-by-step.
+- We need at least of two methods to create a Block Tool for Editor.js — `render` and `save`.
+- The first method,    `render`, will create a UI of a Block that will be appended when our Tool will be selected from the Toolbox. 
+- The second method,  `save` — will extract the Block's data from that UI.
+- Our Block Plugin is almost done. To make that appear at the Toolbox, we should provide an icon and a title with a static getter toolbox.
+
 ## Creating an Inline Tool
+
+- Inline Tools allow you to make your text more informative. 
+- The simplest examples of them are bold, italic, and underline modifiers which are commonly used.
+- Every Inline Tool must provide a button — HTML element with icon or some layout — for Inline Toolbar of the Editor. 
+  - When button is pressed Inline Tool receives selected text range as JavaScript Range object references to TextNode on the page. 
+  - Some Tools may also provide actions for additional interactions with the user.
