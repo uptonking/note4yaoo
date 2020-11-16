@@ -1,12 +1,12 @@
 ---
-title: note-web-dev-solution
-tags: [dev, solution, web]
+title: note-web-dev-solutions
+tags: [dev, solutions, web]
 favorited: true
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-09-10T05:48:07.754Z'
+modified: '2020-11-16T12:40:13.553Z'
 ---
 
-# note-web-dev-solution
+# note-web-dev-solutions
 
 ## 前端框架经典问题
 

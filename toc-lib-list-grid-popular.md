@@ -31,6 +31,8 @@ modified: '2020-10-22T06:49:10.760Z'
 - tabulator /MIT/3.4kStar/202007/js/NoDeps
   - https://github.com/olifolkerd/tabulator
   - http://tabulator.info/
+  - https://github.com/ngduc/react-tabulator
+    - a JS table library with many advanced features based on tabulator
   - 基于div实现，每行对应的dom元素存在，未实现column span
   - Interactive Tables and Data Grids for JavaScript supporting react, angular, vue
 - react-table /MIT/11.6kStar/202007/js
@@ -482,3 +484,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - /1.8kStar/MIT/202009/js
   - w2ui is a JavaScript UI library for building rich data-driven web applications. 
   - 依赖jquery
+- https://github.com/webismymind/editablegrid
+  - /765Star/MIT/201811/js
+  - aimed at turning HTML tables into advanced editable components

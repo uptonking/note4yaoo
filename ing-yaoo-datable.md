@@ -1,11 +1,11 @@
 ---
-title: ing-solution-datable
+title: ing-yaoo-datable
 tags: [pm, solution, table]
 created: '2019-05-15T03:30:55.244Z'
-modified: '2020-07-14T10:25:13.843Z'
+modified: '2020-11-16T12:39:40.957Z'
 ---
 
-# ing-solution-datable
+# ing-yaoo-datable
 
 - A handy/efficient data table to pivot your data
   - 用更加灵活的表格来透视数据

@@ -1,8 +1,8 @@
 ---
 title: lib-styled-components-dev
-tags: [styled-components]
+tags: [lib, styled-components]
 created: '2020-08-08T08:07:31.739Z'
-modified: '2020-08-18T06:13:52.606Z'
+modified: '2020-11-16T13:25:13.879Z'
 ---
 
 # lib-styled-components-dev

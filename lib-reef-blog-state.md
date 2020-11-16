@@ -1,8 +1,8 @@
 ---
 title: lib-reef-blog-state
-tags: [blog, lib, reef, state]
+tags: [blog, reef, state]
 created: '2020-11-04T17:58:48.042Z'
-modified: '2020-11-04T18:12:59.308Z'
+modified: '2020-11-16T13:24:58.537Z'
 ---
 
 # lib-reef-blog-state

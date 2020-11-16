@@ -29,7 +29,7 @@ modified: '2020-10-22T13:34:23.200Z'
   - https://www.zhihu.com/question/24328297
   - https://www.oschina.net/translate/why-contenteditable-is-terrible
 
-## solution-catalog-text-editor 
+## text-editor-solution-catalog
 
 - react-page
   - renderer package基于slate实现

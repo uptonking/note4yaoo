@@ -1,11 +1,11 @@
 ---
-title: lib-ag-grid-codebase-design
+title: lib-ag-grid-codebase
 tags: [ag-grid, codebase, lib]
 created: '2020-08-21T09:00:56.176Z'
-modified: '2020-08-21T09:01:26.000Z'
+modified: '2020-11-16T13:22:44.726Z'
 ---
 
-# lib-ag-grid-codebase-design
+# lib-ag-grid-codebase
 
 ## overview
 

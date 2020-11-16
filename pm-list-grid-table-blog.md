@@ -2,7 +2,7 @@
 title: pm-list-grid-table-blog
 tags: [blog, grid, list]
 created: '2020-07-14T13:04:22.299Z'
-modified: '2020-10-22T13:33:58.781Z'
+modified: '2020-11-16T12:42:45.751Z'
 ---
 
 # pm-list-grid-table-blog
@@ -179,7 +179,7 @@ modified: '2020-10-22T13:33:58.781Z'
   - Add a `caption` that a screen reader will read and a `scope` tag for each cell. 
   - For more details, the a11y project has an article about how to create accessible data tables.
 
-## collection-list-grid-blog
+## ref
 
 - [A React Data Grid Template Powered By ElasticSearch](https://medium.appbase.io/a-react-data-grid-template-powered-by-elasticsearch-a-react-data-grid-template-powered-by-10b21609b67b)
   - build a data grid app from ground up using ReactiveSearch, react-virtualized, and ElasticSearch.

@@ -9,12 +9,12 @@ modified: '2020-10-22T10:22:33.292Z'
 
 ## focus
 
-- d3 /BSD/92.4kStar/202007
+- d3 /92.4kStar/BSD/202007
   - https://github.com/d3/d3
   - https://d3js.org/
   - bring data to life using SVG, Canvas and HTML
   - https://github.com/d3/d3-scale
-- plotly.js /MIT/12.3kStar/202009/js
+- plotly.js /12.3kStar/MIT/202009/js
   - https://github.com/plotly/plotly.js
   - https://plotly.com/javascript/
   - JavaScript charting library behind Plotly and Dash
@@ -26,7 +26,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - 产品：charts、map、timeline、editor
   - 依赖d3、stackblur-canvas、venn.js，基于svg实现
   - 支持react、vue、angular，集成时需要手动管理挂载与卸载
-- AnyChart /Free4NonCommercial/266Star/202009
+- AnyChart /266Star/Free4NonCommercial/202009
   - https://github.com/AnyChart/AnyChart
   - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
   - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
@@ -43,6 +43,10 @@ modified: '2020-10-22T10:22:33.292Z'
   - Robust dataviz framework implemented using D3 & typescript
   - 依赖d3、date-fns、@carbon/utils-position
   - 提供react/vue/angular/svelte的wrapper
+- ag-charts /6.7kStar/MIT/202010/ts
+  - https://github.com/ag-grid/ag-grid
+  - https://www.ag-grid.com/javascript-charts-api-explorer/
+  - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
 
 ## geo-charts
 

@@ -1,8 +1,8 @@
 ---
 title: lib-ag-grid-dev
-tags: [ag-grid, dev, grid, lib]
+tags: [ag-grid, grid, lib]
 created: '2020-08-10T06:07:14.084Z'
-modified: '2020-09-17T17:17:12.914Z'
+modified: '2020-11-16T13:22:24.433Z'
 ---
 
 # lib-ag-grid-dev

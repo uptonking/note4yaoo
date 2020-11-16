@@ -1,10 +1,10 @@
 ---
-title: ing2-solution-search
+title: ing2-yaoo-search
 tags: [pm, search, solution]
 created: '2019-11-10T08:17:17.002Z'
-modified: '2020-07-08T02:16:33.122Z'
+modified: '2020-11-16T12:39:54.878Z'
 ---
 
-# ing2-solution-search
+# ing2-yaoo-search
 
 ## elasticsearch

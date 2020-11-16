@@ -20,6 +20,10 @@ modified: '2020-10-22T13:16:54.433Z'
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
   - Run your React code on the go
+  - 被Autodesk/react-base-table用来展示示例
+  - react-runner is inspired by react-live heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
+  - use Sucrase instead of Bublé to transpile the code.
+  - If you are using react-live in your project and want a smooth transition, react-live-runner is there for you which provide the identical way
 
 ### CodePen
 
@@ -70,6 +74,6 @@ modified: '2020-10-22T13:16:54.433Z'
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
 
-## guide
+## ref
 
 - [7 JavaScript Playgrounds to Use in 2019 ― Scotch.io](https://scotch.io/tutorials/7-javascript-playgrounds-to-use-in-2019)

@@ -65,6 +65,10 @@ modified: '2020-10-22T06:49:25.812Z'
   - https://github.com/DHTMLX/gantt
   - To use dhtmlxSuite in non-GPL projects (and get Pro version), please obtain Commercial/Enterprise License
   - 只开源了源码编译后的bundle，不友好
+- Sencha /Free4FiveDev
+  - https://www.sencha.com/
+  - 基于Ext JS实现
+  - 基于div实现表格，单元格中可包含canvas图表
 
 ## list-grid-app
 

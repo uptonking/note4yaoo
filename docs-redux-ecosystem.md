@@ -1,11 +1,17 @@
 ---
-title: docs-redux-saga
-tags: [docs, state]
+title: docs-redux-ecosystem
+tags: [docs, ecosystem, redux]
 created: '2019-08-01T16:03:46.390Z'
-modified: '2020-07-14T09:24:55.191Z'
+modified: '2020-11-16T13:09:37.544Z'
 ---
 
-# docs-redux-saga
+# docs-redux-ecosystem
+
+## redux-saga
+
+- reosurces
+  - https://redux-saga.js.org
+  - https://redux-saga-in-chinese.js.org
 
 - redux-saga is a library that aims to make application side effects (i.e. asynchronous things like data fetching and impure things like accessing the browser cache)
 - advantages
@@ -14,12 +20,4 @@ modified: '2020-07-14T09:24:55.191Z'
   - simple to test
   - better at handling failures
 
-## dev-tips
-
-## resources
-
-- docs
-  - https://redux-saga.js.org
-  - https://redux-saga-in-chinese.js.org
-
-## redux-saga docs 
+- redux-saga docs

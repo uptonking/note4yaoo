@@ -1,11 +1,11 @@
 ---
-title: ing2-solution-olap
+title: ing2-yaoo-olap
 tags: [olap, pm, solution]
 created: '2020-04-03T15:57:07.832Z'
-modified: '2020-07-14T10:24:59.817Z'
+modified: '2020-11-16T12:39:50.753Z'
 ---
 
-# ing2-solution-olap
+# ing2-yaoo-olap
 
 ## faq
 

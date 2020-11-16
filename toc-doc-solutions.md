@@ -1,11 +1,11 @@
 ---
-title: toc-doc-solution
-tags: [doc, solution, toc]
+title: toc-doc-solutions
+tags: [doc, solutions, toc]
 created: '2020-10-13T09:15:27.625Z'
-modified: '2020-10-13T09:17:01.472Z'
+modified: '2020-11-16T12:40:33.516Z'
 ---
 
-# toc-doc-solution
+# toc-doc-solutions
 
 ## guide
 
@@ -29,8 +29,8 @@ modified: '2020-10-13T09:17:01.472Z'
   - /9.2kStar/MIT/202009
   - Isolated React component development environment with a living style guide
 - https://github.com/interactivethings/catalog
-  - /1.4kStar/BSD/202010
-  - Create living style guides using Markdown or React
+  - /1.4kStar/BSD/202010/js
+  - create beautiful living and fully interactive style guides using Markdown and React components.
   - 使用代码块里的预定义结构来渲染table，将会list形式的文字渲染成table
   - 依赖react-router、marked、prismjs
 - https://github.com/jxnblk/mdx-deck
@@ -68,6 +68,20 @@ modified: '2020-10-13T09:17:01.472Z'
   - /47.4kStar/MIT/202010
   - Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps
   - GraphQL is also pretty core to Gatsby, although you don't necessarily need GraphQL to build a Gatsby site
+- https://github.com/react-cosmos/react-cosmos
+  - /6.5kStar/MIT/202010/ts
+  - An isolated component environment
+  - Simple, detail-oriented and battle-tested
+  - React Cosmos is not a style guide generator
+- https://github.com/sourcejs/Source
+  - /inactive
+  - Living Style Guides Engine and Maintenance Environment for Front-end Components.
+  - Today, the ideas SourceJS surfaced are evolving in other open source projects, like styleguidist and storybook.
+- Storybook /MIT/40kStar/201908/ts
+  - https://github.com/storybookjs/storybook
+  - https://storybook.js.org/
+  - UI component dev & test: React, Vue, Angular, Web Components & more
+
 - solution-catalog
   - VuePress
 
@@ -171,3 +185,16 @@ modified: '2020-10-13T09:17:01.472Z'
   - 代码块背景透明，显得很随意
 - https://github.com/mbrn/libzy
   - a boilerplate that makes documentation faster. It uses material-ui UI components.
+
+## ref
+
+- [Storybook vs Styleguidist_201805](https://www.chromatic.com/blog/storybook-vs-styleguidist/)
+- [What’s the difference between Styleguidist and Storybook?](https://react-styleguidist.js.org/docs/cookbook/#are-there-any-other-projects-like-this)
+  - For me, the biggest distinction is how you describe component variations.
+    - With Storybook you write stories in JavaScript files
+    - with Styleguidist you write examples in Markdown files
+  - Another important distinction is that Storybook shows only one variation of one component at a time 
+    - but Styleguidist can show all variations of all components, all variations of a single component or one variation. 
+  - It’s easier to create a style guide with Styleguidist 
+    - but Storybook has more tools to develop components
+- [Alternatives to storybook/styleguidist?](https://www.reddit.com/r/reactjs/comments/80lkz0/alternatives_to_storybookstyleguidist/)
