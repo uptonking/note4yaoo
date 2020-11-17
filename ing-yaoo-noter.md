@@ -17,24 +17,30 @@ modified: '2020-11-16T12:39:46.218Z'
     - full control of your note data, born to keep data private
     - online sync is optional
     - extended md support, including GFM
+- toc
+  - toc优先采用docked/sticky的设计
+    - 因为文章内容较长时，对于随页面滚动的toc会滚动到页面顶部然后消失
 - themeable markdown editor and viewer  
   - optimized table editor and viewer 
 - don't
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
   - video/audio 
   - paste html into md
-- rfc
-  - format: 一级标题的相互替换，如 `### 标题名` 与 `标题名 ---`
-  - smart-tab-name
-    - small-tab,tiny-tab:: 缩短tab上的标题文字
-    - head-tail:显示标题部分开始和结尾的文字，便于区分
-  - collapse-to-level
-    - toc折叠到2级标题，方便浏览和跳转
-    - 有时候一级标题只有1个总的大标题，此时2级标题才能看到文字结构
+- format
+  - 一级标题的相互替换，如 `### 标题名` 与 `标题名 ---`
+  - 当逗号后紧跟`符号时，每次格式化都会加一个空格
+- smart-tab-name
+  - small-tab, tiny-tab:: 缩短tab上的标题文字
+  - head-tail: 显示标题部分开始和结尾的文字，便于区分
+- collapse-to-level
+  - toc折叠到2级标题，方便浏览和跳转
+  - 有时候一级标题只有1个总的大标题，此时2级标题才能看到文字结构
 - edit
   - 链接预览标题、图片
   - 类似ide的同时打开多标签页并编辑
   - 记住不同tab的上次编辑位置
+- copy
+  - 复制包含代码的文字时，代码自动加上`符号
 - globalOptions
   - defaultViewMode/defaultEditMode
   - indentationSpace
@@ -128,7 +134,7 @@ modified: '2020-11-16T12:39:46.218Z'
 - Shortcuts
   - NoteApp/Editor/Nav/Other
 - Importing
-  - Markdown files: `md` ,  `mkd` ,  `mdwn` ,  `mdown` ,  `markdown` ,  `markdn` ,  `mdtxt` ,  `mdtext` or `txt`
+  - Markdown files: `md`/`mkd`/`mdwn`/`mdown` /`markdown`/`markdn`/`mdtxt`/`mdtext`/`txt`
   - Evernotes' exports with extension: `enex`
   - Alternatively you could also just put your Markdown notes into the `notes` sub-directory 
   - Newly imported tags will be tagged with a special `Import-XXXX` tag

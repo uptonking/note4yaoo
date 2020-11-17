@@ -1,11 +1,11 @@
 ---
-title: toc-lib-builder-designer
-tags: [builder, lib, toc]
+title: toc-lib-editor-builder-designer
+tags: [builder, editor, lib, toc]
 created: '2020-09-09T06:26:47.069Z'
-modified: '2020-10-05T06:20:15.291Z'
+modified: '2020-11-17T13:38:19.107Z'
 ---
 
-# toc-lib-builder-designer
+# toc-lib-editor-builder-designer
 
 - 拖拽编辑器可用于界面设计、图表设计、产品原型设计
 

@@ -20,8 +20,12 @@ modified: '2020-10-02T11:42:00.886Z'
 
 ## foundation
 
+- 大多数组件通用的非dom元素或操作
+
+- component-theme
 - animation
 - drag
+- resize
 - layer
   - 考虑：portal的target容器默认是组件自身或document.body
 
