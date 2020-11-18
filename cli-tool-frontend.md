@@ -7,6 +7,16 @@ modified: '2020-11-14T09:39:11.615Z'
 
 # cli-tool-frontend
 
+## nvm
+
+- To set a default Node version to be used in any new shell, use the alias 'default':
+  - Use `nvm alias default node` to make the "latest" the default.
+  - `nvm alias default 6.11.5` if you want it pegged to that specific version.
+  - You can also do `nvm alias default 6`.
+  - alias works as long as you're not installing new versions. 
+    - After installing a new node the node will be your current node to use. 
+    - So if you want to prevent this behavior, you have to explicitly set up nvm alias default desiredVersionOfNode after each installation or just reopen a terminal
+
 ## 前端开发工具
 
 - storybook
