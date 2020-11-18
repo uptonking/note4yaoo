@@ -7,6 +7,13 @@ modified: '2020-11-14T09:39:11.615Z'
 
 # cli-tool-frontend
 
+## npm
+
+- config-settings
+  - prefix
+    - The location to install global items. 
+    - If set on the command line, then it forces non-global commands to run in the specified folder.
+
 ## nvm
 
 - To set a default Node version to be used in any new shell, use the alias 'default':
