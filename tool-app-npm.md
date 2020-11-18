@@ -19,6 +19,47 @@ modified: '2020-11-18T10:18:33.526Z'
   - We also refer to these packages being auto-symlinked during `npm install` as a single workspace, 
   - meaning it's a nested package within the current local file system that is explicitly defined in the `package.json` `workspaces` configuration.
 
+- Managing individual versions in a monorepo is really hard. 
+  - https://twitter.com/devongovett/status/1294367192754950144
+  - Even tools like lerna basically assume you bump all changed packages in lock-step.
+  - Feels like a case where an actual UI is better than a CLI. Started building a basic one for our needs.
+- Have a look at Microsoft Rush. It has versioning, changelogs and monorepos absolutely nailed. I've completely dropped lerna.
+  - How much does it require you to buy into their way of doing things? Would it be difficult to move over from yarn workspaces/lerna?
+  - It depends how complex your setup with lerna is. It supports pnpm, yarn and npm. I would say that it's fairly opinionated, but the opinions are quite in line with lerna's usage patterns. The docs focus on a migration making testing it out with minimal work easy
+  - What is a bit different is the publish steps. Open a PR, make changes 'rush change' to generate diff and change log + define versions.
+    - Then you publish and it makes changelogs, tags, merges... So smooth and robust.
+    - Doing the same with lerna always felt like fingers crossed!
+- Combination of commitizen and conventional commits allowed my last team to determine versions automatically, 
+  - it actually worked really well - but you have to be a stickler about commit messages
+- If modules leave in a single repo, they are probably very coupled and it makes sense to release them all together.
+  - If that's not the case, should they move into separate repos?
+- I ended up ditching lerna for a custom publish script that determines the changed package from the changed directory, 
+  - and the semver bump based on the commit message. 
+  - Works pretty well because each version is an aggregate of many commits, I just don't need to think about it.
+
+- pnpm has built-in support for monorepos (a.k.a. multi-package repositories, multi-project repositories, or monolithic repositories). 
+  - You can create a workspace to unite multiple projects inside a single repository.
+  - A workspace must have a pnpm-workspace.yaml file in its root.
+
+### lerna
+
+- 优点
+  - 提升依赖
+  - bump version：若package A变了，依赖A的其他package也会变
+  - publish：可配置registry
+    - I'd like to use conventional commits for changelogs, not atlassian/changesets
+  - 批量执行命令，如build
+
+- 缺点
+  - monorepo难以利用tsc的增量编译
+  - babel
+
+- Ah I'd very  much encourage you to move from having lerna manage the monorepo to having yarn workspaces do it. 
+  - You can still use all the other lerna helpers, but yarn handles the inter-package links way better. 
+  - I almost never have to delete node_modules any more.
+
+- I'm using Lerna  currently, but the way its change detection works results in lots of unnecessary publishes.
+
 ## npm-blog
 
 - ### [Presenting v7.0.0 of the npm CLI](https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/)
