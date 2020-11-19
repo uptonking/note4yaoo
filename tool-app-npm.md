@@ -7,6 +7,13 @@ modified: '2020-11-18T10:18:33.526Z'
 
 # tool-app-npm
 
+## roadmap
+
+- [Today(20201119)'s npm OpenRFC recap](https://twitter.com/ruyadorno/status/1329164549140996100)
+  - Workspaces noHoist option
+  - Configurable cli default-command
+  - Registry dependency specifier
+
 ## workspace
 
 - ref
@@ -44,15 +51,24 @@ modified: '2020-11-18T10:18:33.526Z'
 ### lerna
 
 - 优点
-  - 提升依赖
+  - 安装依赖时自动link
+    - workspace也可以实现，扁平化依赖减少重复下载和体积
   - bump version：若package A变了，依赖A的其他package也会变
+    - independent的版本需要额外说明兼容范围
+    - fixed的版本经常加入不必要的升级
   - publish：可配置registry
     - I'd like to use conventional commits for changelogs, not atlassian/changesets
-  - 批量执行命令，如build
+  - 批量执行命令
+    - build
+  - 统一团队工作流
+    - version bump -> changelog -> git release -> npm publish
+    - 统一依赖版本
+    - 统一更新项目版本、commit规范，但可能不会每步都需要
 
 - 缺点
   - monorepo难以利用tsc的增量编译
-  - babel
+  - 非父子结构文件夹时难以共享babel配置
+  - apply `nohoist` to all modules that contain native code (ios & android code)
 
 - Ah I'd very  much encourage you to move from having lerna manage the monorepo to having yarn workspaces do it. 
   - You can still use all the other lerna helpers, but yarn handles the inter-package links way better. 
@@ -89,3 +105,44 @@ modified: '2020-11-18T10:18:33.526Z'
 ## ref
 
 - [npm v7 Series - Beta Release!](https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major)
+- [Simplify your monorepo with npm 7 workspaces](https://dev.to/limal/simplify-your-monorepo-with-npm-7-workspaces-5gmj)
+  - The most common reason to set up a monorepo is to streamline work within a dev team that maintains multiple apps that are using a shared piece of code, for example a common User Interface library.
+  - Just remember that npm has a different philosophy than yarn. 
+    - For example you cannot run a script inside a workspace from the monorepo's root folder.
+- [pounchdb Remove Lerna](https://github.com/pouchdb/pouchdb/issues/5545)
+  - we can remove our Lerna dependency and vastly speed up our build times by avoiding lerna bootstrap.
+  - We already don't use Lerna for building (because lerna run is slow due to running multiple processes, so I wrote one big top-level build script) 
+  - or for publishing (because I didn't take enough time to grok the Lerna docs on this, we're not using version: independent, and I found a bash loop with npm publish to be simpler)
+- [Why we dropped Lerna from PouchDB](https://gist.github.com/nolanlawson/457cdb309c9ec5b39f0d420266a9faa4)
+  - We dropped Lerna from our monorepo architecture in PouchDB 6.0.0
+  - `lerna bootstrap`, which links all of your sub-packages together so you can easily test them without a lot of `npm link`ing.
+  - For `lerna boostrap`, we were actually using this in PouchDB, and this was the main benefit we were getting out of Lerna.
+  - For `lerna run`, we were originally using it to run Rollup in each sub-package, 
+    - but quickly realized that with ~30 packages, running 30 Node processes for each one (i.e. doing npm run build 30 times) was too slow. 
+    - It made more sense to just write one big build.js script that built each sub-package inside of a single Node process.
+  - For `lerna publish`, we actually don't use Lerna's "independent" mode (which is what Babel uses. correction: Babel uses "locked" mode).
+    - Independent mode would mean that every sub-package would have its own semver and would get updated accordingly when its dependencies got updated, 
+    - but we figured this would be way too complicated for PouchDB users, 
+    - and it was simpler to just lock everything to a single version. 
+    - Therefore we didn't really need `lerna publish`
+    - we could just run `npm publish` in a loop, and that was good enough (along with a script to update the version number in every `package.json`, which is equally easy to write).
+  - we could avoid `lerna bootstrap` entirely by simply renaming the `packages/` folder to `packages/node_modules`. 
+    - Because of how the `require()` algorithm works, any reference to e.g. `require('pouchdb-ajax')` from within `packages/node_modules/pouchdb` will resolve to `packages/node_modules/pouchdb-ajax`, 
+    - because `require()` just walks up the file tree until it finds a `node_modules` folder with a sub-folder that matches the package name. 
+    - This cuts out the lerna boostrap step, which shaved about 30 seconds off of our npm install time(which is huge when we have dozens of Travis builds).
+  - Using the "Alle" model also allowed us to move all of the sub-package's dependencies up to the top-level package.json
+  - We actually don't use `lerna run` either in Babel. You can just build with your own script/gulp task on a glob.
+  - I like this idea but wonder if it can be easily extended to use yarn workspaces to do the linking for you
+- [The highs and lows of using Lerna to manage your JavaScript projects_201709](https://hackernoon.com/the-highs-and-lows-of-using-lerna-to-manage-your-javascript-projects-ff5c5cd82a99)
+  - Why it can be annoying
+    - If you have a lot of dependencies in each application, bootstrapping can take a very long time.
+    - Tests take a long time to run and lose syntax highlighting.
+    - Ways of working with one gigantic repo.
+- [Why you should switch from Lerna to Nx_201909](https://blog.nrwl.io/why-you-should-switch-from-lerna-to-nx-463bcaf6821)
+  - Babel, Angular, React, Jest and many other open source projects switched to using monorepos. Many of them use Lerna
+  - We built Nx based on our experience of working at Google. I like to think of it as the Webpack of monorepo tools.
+  - Monorepos are useful for both open source projects and companies building applications.
+  - A monorepo for an open source project can consist of a dozen similar packages, built by a single team using similar tools.
+  - A monorepo for an organization can consist of hundreds of packages, many of them are applications, built by multiple independent team using different tools.
+  - Lerna is optimized for the former. Nx is optimized for the latter.
+- [团队工程实践 - 基于lerna打造monorepo工作流](https://juejin.im/post/6894434733355188232)

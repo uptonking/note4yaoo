@@ -7,6 +7,10 @@ modified: '2020-11-14T09:39:11.615Z'
 
 # cli-tool-frontend
 
+## guide
+
+- 常用工作流：version bump -> changelog -> git release -> npm publish
+
 ## npm
 
 - config-settings

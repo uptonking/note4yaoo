@@ -1,11 +1,11 @@
 ---
-title: note-react-extension
-tags: [extension, react]
+title: note-react-extensions
+tags: [extensions, react]
 created: '2020-11-07T17:57:09.108Z'
-modified: '2020-11-07T17:58:08.215Z'
+modified: '2020-11-19T12:44:05.442Z'
 ---
 
-# note-react-extension
+# note-react-extensions
 
 ## quick-dev
 

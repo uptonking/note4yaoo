@@ -7,6 +7,8 @@ modified: '2020-10-13T08:57:12.264Z'
 
 # toc-doc-ppt
 
+## page-viewer 偏向页面展示
+
 - spectacle /8.6kStar/MIT/202006
   - https://github.com/FormidableLabs/spectacle
   - https://formidable.com/open-source/spectacle/docs/tutorial/
@@ -24,3 +26,5 @@ modified: '2020-10-13T08:57:12.264Z'
   - https://nodeppt.js.org/
   - probably the best web presentation tool 
   - built with webslides, markdown-it, posthtml
+
+## graphic-editor 偏向图形编辑

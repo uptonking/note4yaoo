@@ -52,6 +52,9 @@ modified: '2020-10-22T13:33:54.313Z'
       - A user can hold the Shift key and click column headers in the order the user wants to apply sorting. 
       - To cancel a column's sorting settings, a user should hold the Ctrl key and click the column header.
 
+- keyboard-shortcuts
+  - 列表使用jk键导航
+
 ## grid-implementation-vs
 
 - ### react-table
@@ -227,7 +230,6 @@ modified: '2020-10-22T13:33:54.313Z'
     - there would be three tables internal tables to implement the frozen feature, 
     - and those tables are all scrollable, then the positioning could be not expected, 
     - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
-
 
 ## extensions-for-table-grid 
 

@@ -1,8 +1,8 @@
 ---
 title: docs-ag-grid-features-extensions
-tags: [ag-grid, docs]
+tags: [ag-grid, docs, extensions]
 created: '2020-08-25T13:52:05.478Z'
-modified: '2020-09-23T05:47:02.075Z'
+modified: '2020-11-19T12:43:37.292Z'
 ---
 
 # docs-ag-grid-features-extensions
