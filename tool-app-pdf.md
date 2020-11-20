@@ -1,8 +1,8 @@
 ---
 title: tool-app-pdf
-tags: [app, pdf, tool]
+tags: [pdf, tool]
 created: '2020-09-23T03:00:38.971Z'
-modified: '2020-11-03T06:51:56.337Z'
+modified: '2020-11-20T19:29:17.229Z'
 ---
 
 # tool-app-pdf

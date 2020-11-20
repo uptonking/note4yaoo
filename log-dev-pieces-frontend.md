@@ -12,6 +12,22 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- TypeScript 3.4 Faster subsequent builds with the `--incremental` flag
+  - flag `--incremental` which tells TypeScript to save information about the project graph from the last compilation. 
+  - The next time TypeScript is invoked with --incremental, it will use that information to detect the least costly way to type-check and emit changes to your project.
+  - By default with these settings, when we run tsc, TypeScript will look for a file called `.tsbuildinfo` in the output directory (./lib). 
+  - If `./lib/.tsbuildinfo`doesn’t exist, it’ll be generated. 
+  - But if it does, tsc will try to use that file to incrementally type-check and update our output files.
+  - These .tsbuildinfo files can be safely deleted and don’t have any impact on our code at runtime - they’re purely used to make compilations faster. We can also name them anything that we want, and place them anywhere we want using the --tsBuildInfoFile flag.
+- [TypeScript-Babel-Starter: How would this work with project references?](https://github.com/microsoft/TypeScript-Babel-Starter/issues/35)
+  - babel simply strips off all types and doesn't even read tsconfig.json for that purpose
+    - that means it does not know of typescript project references. 
+    - Maybe you can use the --watch option from babel cli to rebuild automatically?
+    - Project references do not make sense, if used in combination with @babel/preset-typescript and should be replaced by a custom build step - would be happy to to be corrected by someone, if there is still a reason left.
+  - the main benefit of project references in a pure tsc-built project is that you get up-to-date type checking against the public API of any referenced projects when you build an individual project. 
+    - @babel/preset-typescript does zero type checking, it knows nothing about your types, so building the types of referenced projects before the babel build gets you nowhere.
+    - I would have thought the correct approach surely is to build your @babel/preset-typescript as per normal in isolation, and then if you want to ensure you have no type errors then do a separate type-check step with tsc --noEmit afterwards?
+
 - [How can i use es6 modules in node.js](https://stackoverflow.com/questions/57932008/how-can-i-use-es6-modules-in-node-js)
   - Node.js treats JavaScript code as CommonJS modules by default. 
     - Authors can tell Node.js to treat JavaScript code as ECMAScript modules via the `.mjs` file extension, the package.json `type` field, or the `--input-type` flag
@@ -266,7 +282,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                                 `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                                   `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -325,7 +341,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                 `string` ,                                 `boolean` ,                                 `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                   `string` ,                                   `boolean` ,                                   `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -555,7 +571,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                                 `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                                   `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .

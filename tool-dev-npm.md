@@ -1,11 +1,11 @@
 ---
-title: tool-app-npm
+title: tool-dev-npm
 tags: [npm, tool]
 created: '2020-11-18T10:18:22.406Z'
-modified: '2020-11-18T10:18:33.526Z'
+modified: '2020-11-20T19:29:00.179Z'
 ---
 
-# tool-app-npm
+# tool-dev-npm
 
 ## roadmap
 
@@ -13,6 +13,21 @@ modified: '2020-11-18T10:18:33.526Z'
   - Workspaces noHoist option
   - Configurable cli default-command
   - Registry dependency specifier
+
+## npm-cli
+
+- `npm run-script <command> [--silent] [-- <args>...]`
+  - This runs an arbitrary command from a package's "scripts" object.
+  - The `env` script is a special built-in command that can be used to list environment variables that will be available to the script at runtime.
+  - In addition to the shell's pre-existing PATH, npm run adds `node_modules/.bin` to the PATH provided to scripts. 
+    - Any binaries provided by locally-installed dependencies can be used without the `node_modules/.bin` prefix.
+  - Scripts are run from the root of the module, regardless of what your current working directory is when you call `npm run`. 
+    - If you want your script to use different behavior based on what subdirectory you're in, you can use the `INIT_CWD` environment variable, which holds the full path you were in when you ran `npm run`.
+  - "scripts": {
+    - "test": "node test/test.js"
+    - If I change directory to /dir1/dir2 and execute `npm test`
+    - and the script I wrote on test property is executed properly without the use of ./ 
+  - We can reference the root directory of the project through the environment variable `INIT_CWD` that npm set for us!
 
 ## workspace
 
