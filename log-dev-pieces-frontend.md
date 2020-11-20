@@ -12,6 +12,18 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- [How can i use es6 modules in node.js](https://stackoverflow.com/questions/57932008/how-can-i-use-es6-modules-in-node-js)
+  - Node.js treats JavaScript code as CommonJS modules by default. 
+    - Authors can tell Node.js to treat JavaScript code as ECMAScript modules via the `.mjs` file extension, the package.json `type` field, or the `--input-type` flag
+  - import/export statements are supported in node v12. 
+    - Right now behind the `--experimental-modules` flag
+    - Since Node v12, support for ES modules is enabled by default
+    - Files including node modules must either end in .mjs or the nearest package.json file must contain `"type": "module"`
+  - You need Babel transpiler to do this, as Node.js doesn't support es6.
+  - most compatible way to resolve was to:
+    - `npm install esm`
+    - ensure that the script is run by node with the `-r esm` option.
+
 - `element.innerHTML` vs `node.innerText`
   - innerText retrieves and sets the content of the tag as plain text, 
     - whereas innerHTML retrieves and sets the content in HTML format.
@@ -254,7 +266,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                               `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                                 `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -313,7 +325,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                               `string` ,                               `boolean` ,                               `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                 `string` ,                                 `boolean` ,                                 `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -543,7 +555,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                               `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                                 `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .

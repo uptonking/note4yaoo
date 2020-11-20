@@ -13,7 +13,9 @@ modified: '2020-11-14T09:38:09.918Z'
 
 ``` 
 
-prettier --config ./.prettierrc.js --write \"**/*.*\" --ignore-path=./.prettierignore"
+prettier --write '**/*.*'
+
+prettier --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore
 ```
 
 - changelog

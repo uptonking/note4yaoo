@@ -34,6 +34,9 @@ modified: '2020-11-11T13:16:42.423Z'
 - 美国各州各城市2019新型冠状病毒COVID19数据
   - https://www.kesci.com/home/dataset/5e844c33246a590036b97646
 
+- 卫健委：疫情风险等级查询
+  - http://bmfw.www.gov.cn/yqfxdjcx/index.html
+
 ## org
 
 - 新冠肺炎（COVID-19）开放数据源

@@ -23,6 +23,12 @@ modified: '2020-10-27T15:10:47.179Z'
 
 ## guide
 
+- 实现主流设计系统的theme
+  - material-design
+  - apple-design
+  - facebook-design
+  - ant-design
+
 ## pieces
 
 - 用js动态生成style节点`document.createElement('style')`
