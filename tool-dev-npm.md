@@ -13,6 +13,8 @@ modified: '2020-11-20T19:29:00.179Z'
   - Workspaces noHoist option
   - Configurable cli default-command
   - Registry dependency specifier
+- private-npm-registry
+  - https://github.com/verdaccio/verdaccio
 
 ## npm-cli
 

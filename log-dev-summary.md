@@ -78,6 +78,16 @@ modified: '2020-07-14T10:28:11.443Z'
 
 ## pieces
 
+- 名称标识符identifier的特殊前缀选择
+  - 考虑使用场景，如markdown中不要选用`
+  - 设计前缀、后缀、分隔符、特殊符号、预定义编码的结构
+  - 推荐使用
+    - 斜杠 /
+    - 常用符号 `<>`, [], \|\,^
+  - ref
+    - [syntax for a DOI® name](https://www.doi.org/doi_handbook/2_Numbering.html)
+    - [A notion that might be added to any WikiServerEngine to treat SpecialCharacterPrefixAssociation notations](https://wiki.c2.com/?SpecialCharacterPrefixAssociation)
+
 - 支持web sockets的tomcat服务器7和8有何区别
 
 - ### [为什么有的后端接口会使用二维数组输出表格数据](https://www.v2ex.com/t/720241)
