@@ -29,6 +29,11 @@ modified: '2020-08-09T11:21:58.233Z'
   - MYSQL：3306
 - 可用ping检测ip，用telnet检测端口
 
+## pc-dir
+
+- 音乐
+  - /home/yaoo/.cache/netease-cloud-music/CachedSongs
+
 ## software
 
 - video

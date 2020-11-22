@@ -21,6 +21,16 @@ modified: '2020-07-17T06:01:06.359Z'
   - ref
     - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
 
+## guide
+
+- [pr: useMutableSource (不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
+  - useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
+    - However it will still deopt all concurrent mode features when it happens. 
+    - So it’s not compatible with new features.
+    - It’s not recommended for new tooling that wants to be concurrent mode compatible. It’s for legacy compatibility.
+    - We have some other ideas for mutable multi-version stores that might prove useful for systems that want to provide full future compatibility 
+    - but in the current experimental releases the only way to be fully compatible is by using immutable data.
+
 ## useMutableSource
 
 - This hook is primarily intended for use by libraries like Redux (and possibly Relay). 

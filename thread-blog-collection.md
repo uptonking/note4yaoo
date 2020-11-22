@@ -1,11 +1,11 @@
 ---
-title: toc-blog-collection
-tags: [blog, toc]
+title: thread-blog-collection
+tags: [blog]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-12T13:11:41.315Z'
+modified: '2020-11-22T12:09:23.041Z'
 ---
 
-# toc-blog-collection
+# thread-blog-collection
 
 ## pieces
 

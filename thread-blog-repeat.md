@@ -1,11 +1,11 @@
 ---
-title: toc-blog-repeat
+title: thread-blog-repeat
 tags: [blog, repeat, toc]
 created: '2020-07-03T09:28:48.014Z'
-modified: '2020-10-22T13:07:41.078Z'
+modified: '2020-11-22T12:09:46.188Z'
 ---
 
-# toc-blog-repeat
+# thread-blog-repeat
 
 ## pieces
 

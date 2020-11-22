@@ -49,6 +49,8 @@ modified: '2020-11-20T19:30:56.804Z'
   - /ts/基于babel
 - https://github.com/Hy-Vee/lerna-yarn-workspaces-monorepo
   - /js/
+- https://github.com/shnydercom/lerna-typescript-cra-uilib-starter
+  - /ts/基于cra
 
 ## ref
 
