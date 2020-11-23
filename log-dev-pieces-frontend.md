@@ -12,6 +12,11 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- jest测试时： Received: serializes to the same string
+  - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
+  - 当对象属性值有函数类型时，序列化后再还原，难以比较
+  - 可以先去掉方法类型的属性值，或定制
+
 - TypeScript 3.4 Faster subsequent builds with the `--incremental` flag
   - flag `--incremental` which tells TypeScript to save information about the project graph from the last compilation. 
   - The next time TypeScript is invoked with --incremental, it will use that information to detect the least costly way to type-check and emit changes to your project.
@@ -282,7 +287,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                                   `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                                    `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -341,7 +346,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                   `string` ,                                   `boolean` ,                                   `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                    `string` ,                                    `boolean` ,                                    `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -571,7 +576,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                                   `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                                    `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .

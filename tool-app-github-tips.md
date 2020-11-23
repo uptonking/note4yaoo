@@ -10,6 +10,8 @@ modified: '2020-10-05T07:52:42.228Z'
 ## github
 
 - 搜索
+  - TODO
+    - 搜索使用js或ts的项目
   - 搜索一个organization的仓库，可使用 `user:orgName` ，注意冒号后无空格
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
   - 按标签或主题搜索
@@ -53,3 +55,5 @@ modified: '2020-10-05T07:52:42.228Z'
     - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
     - redux, styled-components, ramda, jest, socket.io, redis, chokidar
     - deepmerge, date-fns, marked, isomorphic-fetch
+  - 查看依赖某个package的包
+    - https://www.npmjs.com/browse/depended/redux

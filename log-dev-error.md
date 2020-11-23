@@ -12,10 +12,23 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
-- jest测试时： Received: serializes to the same string
-  - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
-  - 当对象属性值有函数类型时，序列化后再还原，难以比较
-  - 可以先去掉方法类型的属性值，或定制
+- create-react-app 初次创建示例项目时异常
+  - 原因是缺少编译node-canvas的环境
+
+``` 
+
+Downloads/react-cra-es6/node_modules/canvas
+npm ERR! command failed
+npm ERR! command sh -c node-gyp rebuild
+npm ERR! make: Entering directory '/home
+
+../src/backend/../closure.h:6:10: fatal error: jpeglib.h: No such file or directory
+npm ERR!     6 | #include <jpeglib.h>
+
+../src/Image.h:18:10: fatal error: gif_lib.h: No such file or directory
+npm ERR!    18 | #include <gif_lib.h>
+
+```
 
 - console.log 打印iframe的window对象会报错
 
@@ -25,6 +38,7 @@ VM37226:1 Uncaught DOMException: Blocked a frame with origin "https://stackoverf
     - iframeWindow !== window，说明不是window
   - 其他方法参考
     - window.parent.frames.length > 0
+
 - [Violation] Added non-passive event listener to a scroll-blocking `<some>` event. Consider marking event handler as 'passive' to make the page more responsive.
   - Passive event listeners are a new feature in the DOM spec that enable developers to opt-in to better scroll performance by eliminating the need for scrolling to block on touch and wheel event listeners. 
   - Developers can annotate touch and wheel listeners with `{passive: true}` to indicate that they will never invoke `preventDefault` . 
@@ -56,6 +70,7 @@ const throttledMethod = React.useMemo(
     - find and filter (thus causing data loss) a cyclic reference by using the replacer parameter of `JSON.stringify()`
 
 ``` 
+
 TypeError: Converting circular structure to JSON
     --> starting at object with constructor 'Object'
     |     property 'cells' -> object with constructor 'Array'
@@ -69,6 +84,7 @@ TypeError: Converting circular structure to JSON
 - pentaho下载依赖慢或停止：多等等或使用mvn代理而不是terminal代理
 
 ``` 
+
 Downloading from Twitter: http://maven.twttr.com/org/pentaho/pentaho-ce-jar-parent-pom/9.1.0.0-SNAPSHOT/maven-metadata.xml
 [WARNING] Could not transfer metadata org.pentaho:pentaho-ce-jar-parent-pom:9.1.0.0-SNAPSHOT/maven-metadata.xml from/to Twitter (http://maven.twttr.com/): Transfer failed for http://maven.twttr.com/org/pentaho/pentaho-ce-jar-parent-pom/9.1.0.0-SNAPSHOT/maven-metadata.xml
 Downloading from Twitter: http://maven.twttr.com/org/pentaho/pentaho-ce-parent-pom/9.1.0.0-SNAPSHOT/maven-metadata.xml
@@ -87,6 +103,7 @@ Downloading from Twitter: http://maven.twttr.com/org/pentaho/pentaho-ce-parent-p
     -  remove the partial download: rm -R /var/lib/update-notifier/package-data-downloads/partial/
 
 ``` 
+
 Failure to download extra data files
 The following packages requested additional data downloads after package installation, but the data could not be downloaded or could not be processed.
 ttf-mscorefonts-installer
@@ -99,6 +116,7 @@ The download will be attempted again later, or you can try the download again no
     - 要多与官方文档示例对比，不要忽视细节，自我猜测
 
 ``` 
+
 RROR in ./src/components/general/Button/__stories__/Button1.docs.mdx
 Module build failed (from **/babel-loader/lib/index.js):
 SyntaxError: __stories__/Button1.docs.mdx: Unexpected token (10:9)
@@ -118,6 +136,7 @@ SyntaxError: __stories__/Button1.docs.mdx: Unexpected token (10:9)
 - ts编译问题  
 
 ``` 
+
 Option 'allowJs' cannot be specified with option 'declaration'.
 "declaration": true
 ```  
@@ -136,6 +155,7 @@ Option 'allowJs' cannot be specified with option 'declaration'.
 <button οnclick="handleClick1()">单击或双击我</button>
 
 ``` 
+
 - Warning: React.createElement: type is invalid -- expected a string Check the render method of
     - refer to react conditional rendering
 - react-data-grid
@@ -163,6 +183,7 @@ No constituent of type 'ReactNode' is callable.
 Cannot invoke an expression whose type lacks a call signature. Type 'ReactNode' has no compatible call signatures.ts(2349)
 
 ``` 
+
 类似的，下面也会异常
 ```
 
@@ -181,6 +202,7 @@ function f2 (f: F) {
 // Cannot invoke an expression whose type lacks a call signature. Type 'F' has no compatible call signatures.
 
 ``` 
+
 - 当children类型声明为 `children?: ((props: T) => React.ReactNode) | React.ReactNode;` 时，会异常，解决方法有2个
     - `(children as ((props: T) => React.ReactNode))(renderRest);`
     - use type guard
@@ -193,6 +215,7 @@ function f2 (f: F) {
     
 
 ``` 
+
     
 
 - 参考
@@ -212,6 +235,7 @@ function f2 (f: F) {
   
 
 ``` 
+
     - 异常的位置是  
 
         ```
@@ -223,6 +247,7 @@ function f2 (f: F) {
         
 
 ``` 
+
     - 删除注释 ` {/* 这个是绿色 */}` 就没问题了
 - `Uncaught Invariant Violation: Target container is not a DOM element.`
     - render的DOM用的是id还是class，别写错了
@@ -254,6 +279,7 @@ function f2 (f: F) {
     
 
 ``` 
+
     maven打包后的main class是 example.simple.CefFrameExample  
     报错原因可能是cef不同版本的方法不一样  
     ```
@@ -262,6 +288,7 @@ function f2 (f: F) {
     
 
 ``` 
+
 - jcef-quickstart
     - 运行成功，在任意目录
 
@@ -271,6 +298,7 @@ function f2 (f: F) {
     
 
 ``` 
+
     - 运行成功，在maven项目根目录
 
     ```
@@ -279,12 +307,14 @@ function f2 (f: F) {
     
 
 ``` 
+
     ```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:lib/jogamp/jar/*:target/*  tests.simple. MainFrame
     
 
 ``` 
+
     - 运行失败，core dumped
 
     ```
@@ -293,6 +323,7 @@ function f2 (f: F) {
     
 
 ``` 
+
     - jcef自带示例，运行成功，在任意目录均可
 
     ```
@@ -301,6 +332,7 @@ function f2 (f: F) {
     
 
 ``` 
+
 - jcef build
 - error1
 
@@ -318,6 +350,7 @@ function f2 (f: F) {
     
 
 ``` 
+
     - sudo apt-get install libx11-dev -y
 - error2    
 

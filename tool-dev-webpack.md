@@ -23,6 +23,48 @@ modified: '2020-11-20T19:30:56.804Z'
 
 ## webpack-dev-server
 
+- webpack
+  - https://github.com/webpack/webpack
+  - a module bundler
+  - it bundles various module formats primarily so they can be run in a browser. 
+  - It offers both a CLI and Node API.
+
+- webpack-dev-server
+  - https://github.com/webpack/webpack-dev-server
+  - 命令行会执行 `bin/webpack-dev-server.js` 的startDevServer()方法
+  - Webpack Dev Server is itself an express server which uses `webpack-dev-middleware` to serve the latest bundle and additionally handles hot module replacement (HMR) requests for live module updates in the client.
+
+- webpack-dev-middleware
+  - https://github.com/webpack/webpack-dev-middleware
+  - Webpack Dev Middleware is middleware which can be mounted in an express server to serve the latest compilation of your bundle during development. 
+  - This uses webpack's Node API in watch mode and instead of outputting to the file system it outputs to memory.
+  - For comparison, you might use something like express.static instead of this middleware in production.
+  - webpack-dev-middleware is a wrapper that will emit files processed by webpack to a server. 
+  - This is used in webpack-dev-server internally, however it's available as a separate package to allow more custom setups if desired.
+  - No files are written to disk, rather it handles files in memory
+  - If files changed in watch mode, the middleware delays requests until compiling has completed
+
+- webpack-hot-middleware
+  - https://github.com/webpack-contrib/webpack-hot-middleware
+  - Actually making your application capable of using hot reloading to make seamless changes is out of scope, and usually handled by another library. 
+  - This allows you to add hot reloading into an existing server without webpack-dev-server.
+  - This module is only concerned with the mechanisms to connect a browser client to a webpack server & receive updates. 
+  - It will subscribe to changes from the server and execute those changes using webpack's HMR API.
+  - Actually making your application capable of using hot reloading to make seamless changes is out of scope, and usually handled by another library. 
+
+- webpack-hot-server-middleware
+  - https://github.com/60frames/webpack-hot-server-middleware
+  - designed to be used alongside webpack-dev-middleware and webpack-hot-middleware to handle hot module replacement of server rendered apps.
+
+- koa-webpack
+  - https://github.com/shellscape/koa-webpack
+  - Development and Hot Module Reload Middleware for Koa2, in a single middleware module.
+  - This module wraps and composes webpack-dev-middleware and webpack-hot-client into a single middleware module, allowing for quick and concise implementation.
+  - it'll also use the installed webpack module from your project, and the webpack.config.js file in the root of your project
+  - 作者会等webpack 5稳定后才会升级到webpack 5
+  - webpack-dev-server基于express，非常受欢迎
+  - 还要考虑是否支持框架层的插件，如react-fast-refresh
+
 ## webpack-extensions
 
 - https://github.com/etsy/kevin-middleware
@@ -34,8 +76,11 @@ modified: '2020-11-20T19:30:56.804Z'
 
 ## repos-monorepo
 
+- https://github.com/Quramy/lerna-yarn-workspaces-example
+  - /ts/基于tsc
+  - https://github.com/Quramy/npm-ts-workspaces-example
 - https://github.com/carlosnakane/monorepo-react-webpack
-  - /ts/基于tsc且无babel
+  - /ts/基于tsc
   - configure a monorepo for a modular React App and use webpack to generate a single chunk for each package and lazy load them.
   - React, Webpack 4, yarn workspaces, Styled Components, TS
 - https://github.com/dan-kez/lerna-webpack-example
@@ -52,8 +97,18 @@ modified: '2020-11-20T19:30:56.804Z'
 - https://github.com/shnydercom/lerna-typescript-cra-uilib-starter
   - /ts/基于cra
 
+- https://github.com/react-workspaces/react-workspaces-playground
+  - /js/基于cra
+  - 依赖Create React App 3(React 16.8)，Storybook 5，Yarn Workspaces，Host Multiple CRA Apps，Hot Reload all Apps
+
+- more-monorepos
+  - https://github.com/korfuri/awesome-monorepo
+  - https://github.com/Thinkmill/monorepo
+    - Thinkmill's Monorepo Style Guide
+
 ## ref
 
+- [webpack: Choosing a Development Tool](https://webpack.js.org/guides/development/ )
 - [Cutting our webpack build times in half_201905](https://www.cargurus.dev/Cutting-our-webpack-build-time-in-half/)
   - We use yarn workspaces, and whats known as a mono-repo. 
   - Essentially our entire codebase is in one git repo, divided into npm packages that all resolve in a single filesystem. 
@@ -63,3 +118,4 @@ modified: '2020-11-20T19:30:56.804Z'
   - By detecting what has changed, and only recompiling the changed files, we cut many of our builds from 7+ minutes to 30 seconds.
 - [Developing in a Monorepo While Still Using Webpack: kevin-middleware_202004](https://codeascraft.com/2020/04/06/developing-in-a-monorepo-while-still-using-webpack/)
 - [webpack扩展插件](https://www.timsrc.com/article/45/extending-with-plugins)
+- [Webpack vs webpack-dev-server vs webpack-dev-middleware vs webpack-hot-middleware](https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar)

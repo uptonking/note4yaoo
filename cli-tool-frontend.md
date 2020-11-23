@@ -11,6 +11,10 @@ modified: '2020-11-14T09:39:11.615Z'
 
 - 常用工作流：version bump -> changelog -> git release -> npm publish
 
+## react
+
+- npm x -- create-react-app react-cra-ts --template typescript --use-npm
+
 ## npm
 
 - config-settings

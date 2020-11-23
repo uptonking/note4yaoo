@@ -16,6 +16,12 @@ modified: '2020-11-20T19:29:00.179Z'
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
 
+## faq
+
+- 如何执行某个workspace子包的package.json中预定义的命令
+  - [[BUG] npm 7 workspace package script execution](https://github.com/npm/cli/issues/1904)
+  - npm run --prefix applications/app1 build
+
 ## npm-cli
 
 - `npm run-script <command> [--silent] [-- <args>...]`
@@ -106,7 +112,6 @@ modified: '2020-11-20T19:29:00.179Z'
   - Automatically installing peer dependencies 
   - `npx` has been completely rewritten to use the `npm exec` command
   - npm uses the `package.exports` field making it no longer possible to require() npm’s internal modules.
-
 - ### [npm v7 Series - Introduction](https://blog.npmjs.org/post/617484925547986944/npm-v7-series-introduction)
 - Vision
   - Reduce noise that is not actionable.
@@ -116,8 +121,6 @@ modified: '2020-11-20T19:29:00.179Z'
     - npm CLI itself is becoming strictly the user-interface layer, 
     - and we’ve moved out all complex tree management and registry interactions to @npmcli/arborist, pacote, and the various libnpm* modules.
   - Be as fast as possible while behaving correctly.
-- Coming Attractions
-- RFC Process
 
 ## ref
 
