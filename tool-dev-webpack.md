@@ -19,6 +19,12 @@ modified: '2020-11-20T19:30:56.804Z'
   - The following utilities improve performance by compiling and serving assets in memory rather than writing to disk:
     - webpack-dev-server/webpack-hot-middleware/webpack-dev-middleware
 
+## Module Federation
+
+- [Module Federation原理剖析](https://zhuanlan.zhihu.com/p/296233114)
+  - https://github.com/efoxTeam/emp
+    - [基于Webpack 5 & Module Federation的微前端解决方案](https://github.com/efoxTeam/emp/blob/main/README-zh_CN.md)
+
 ## webpack-config
 
 ## webpack-dev-server
@@ -105,6 +111,16 @@ modified: '2020-11-20T19:30:56.804Z'
   - https://github.com/korfuri/awesome-monorepo
   - https://github.com/Thinkmill/monorepo
     - Thinkmill's Monorepo Style Guide
+  - https://github.com/LukasBombach/webpack5-monorepo-test
+    - 依赖next
+  - https://github.com/jimmy-james/fm-monorepo-poc
+    - PoC in js, ts, react, redux for Webpack Federated Modules and monorepo project structure
+    - https://github.com/carlosnakane/webpack-module-federation-typescript
+  - https://github.com/jeremy-coleman/monorepo-starterkit
+    - use rollup for bundles and webpack for apps, hmr works
+  - https://github.com/flegall/monopack
+    - A JavaScript bundler for node.js monorepo-codebased applications.
+  - https://github.com/lucasgdb/monorepo-react-node-postgres-ts
 
 ## ref
 

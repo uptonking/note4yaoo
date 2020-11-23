@@ -75,6 +75,11 @@ modified: '2020-11-16T12:39:46.218Z'
   - markdown顶部元数据采用注释形式，而不是多级键值对
   - 添加快捷键：复制文字的链接url
 
+## noter-experimental
+
+- [interactive notebooks](https://nteract.io/)
+  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
+
 ## notable
 
 ### notable-xp-todo

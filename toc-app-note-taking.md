@@ -7,6 +7,12 @@ modified: '2020-10-22T10:03:50.526Z'
 
 # toc-app-note-taking
 
+## note-experimental
+
+- [interactive notebooks](https://nteract.io/)
+  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
+  - nteract provides a client-side SDK for integrating notebook and REPL UIs into your software. 
+
 ## popular
 
 - https://github.com/notable/notable

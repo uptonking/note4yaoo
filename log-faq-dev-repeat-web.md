@@ -19,6 +19,12 @@ modified: '2020-11-07T12:27:02.613Z'
 - Why it is important to cache DOM
   - http://jsperf.com/dom-caching-excercise
 
+- [微前端的公共依赖是如何解决的?](https://www.zhihu.com/question/419239113)
+  - 现在不管什么框架, 都存在一个问题. 就是build后摇树, aot等优化操作, 这么一来, 一些公共依赖就不好抽出来了.
+  - 如果先打出来dll, 然后再搞微前端, 确实也行, 但是没有优化
+  - Currently, I mark the module as usedInUnknownWays to prevent tree shaking the exports on exposed moduled/files
+    - 这里是折中方案，只摇树去掉无关exports
+
 ## hide dom elements: visibility vs display
 
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.
