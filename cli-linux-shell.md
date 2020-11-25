@@ -9,6 +9,10 @@ modified: '2020-11-13T13:08:39.052Z'
 
 ## linux-os
 
+- 系统变量或环境
+  - env: 打印所有环境变量
+  - locale: 打印各种LANG, LC_TIME
+
 - ### file-tar
 
 - 普通压缩解压缩
@@ -90,3 +94,88 @@ unzip -v b.zip
 - ### ssh
 - ssh免密登录
   - `ssh-copy-id [-f] [-n] [-i identity file] [-p port] [-o ssh_option] [user@]hostname`
+
+## linux-hardware
+
+- sudo lshw
+
+``` 
+
+yaoohpu18                   
+    description: Notebook
+    product: HP ENVY Notebook (Y8H74PA#AB2)
+    vendor: HP
+    version: Type1ProductConfigId
+    serial: 5CG6404VT0
+    width: 64 bits
+    configuration: administrator_password=disabled boot=normal chassis=notebook ...
+  *-core
+    description: Motherboard
+    product: 81D1
+    vendor: HP
+    physical id: 0
+    version: KBC Version 87.13
+    serial: PFXGH00WB453FZ
+    slot: Type2 - Board Chassis Location
+  *-firmware
+      description: BIOS
+      vendor: Insyde
+      physical id: 0
+      version: F.21
+      date: 07/08/2016
+      size: 128KiB
+      capacity: 6MiB
+  *-cpu
+    description: CPU
+    product: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+    vendor: Intel Corp.
+    physical id: 4
+    bus info: cpu@0
+    version: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+    serial: To Be Filled By O.E.M.
+    slot: U3E1
+    size: 3345MHz
+    capacity: 4005MHz
+    width: 64 bits
+    clock: 100MHz
+  *-memory
+    description: System Memory
+    physical id: 26
+    slot: System board or motherboard
+    size: 32GiB
+    *-bank:0
+        description: SODIMM DDR4 Synchronous 2133 MHz (0.5 ns)
+        product: KHX2133C13S4/16G
+        vendor: Kingston
+        physical id: 0
+        serial: 6C3B6634
+        slot: Bottom-Slot 1(left)
+        size: 16GiB
+        width: 64 bits
+        clock: 2133MHz (0.5ns)
+  *-storage
+    description: Non-Volatile memory controller
+    product: NVMe SSD Controller SM951/PM951
+    vendor: Samsung Electronics Co Ltd
+    physical id: 0
+    bus info: pci@0000:03:00.0
+    version: 01
+    width: 64 bits
+    clock: 33MHz
+    capabilities: storage pm msi pciexpress msix nvm_express bus_master cap_list
+    configuration: driver=nvme latency=0
+  *-sata
+    description: SATA controller
+    product: Sunrise Point-LP SATA Controller [AHCI mode]
+    vendor: Intel Corporation
+    physical id: 17
+    bus info: pci@0000:00:17.0
+    version: 21
+    width: 32 bits
+    clock: 66MHz
+    capabilities: sata msi pm ahci_1.0 bus_master cap_list
+    configuration: driver=ahci latency=0
+```
+
+- lscpu
+- lsblk

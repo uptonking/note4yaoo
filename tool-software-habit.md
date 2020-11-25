@@ -111,6 +111,13 @@ modified: '2020-08-09T11:21:58.233Z'
   - 收趣云书签，开始做资讯与头条了
   - 简悦SimpleRead
 
+- 科学上网解决方案
+  - 自用vps
+    - 太容易被wall
+  - 可更换ip的shadowsocks服务
+    - 网速不稳定
+    - ios商店无法下载proxy
+
 ## toolkit
 
 - browser

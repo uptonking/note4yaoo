@@ -29,10 +29,13 @@ error: invalid zip file with overlapped components (possible zip bomb)
 ## hp-envy-15
 
 - 无法开机
+  - 变通的方案是使用win 10的wsl子系统
 
 ``` 
 
-boot device not found
+boot device not found 找不到启动设备
+
+hard disk 3F0
 
 ```
 
