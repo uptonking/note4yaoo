@@ -82,6 +82,8 @@ modified: '2020-11-20T19:30:56.804Z'
 
 ## repos-monorepo
 
+- 如何在子repo中共用webpack配置？
+
 - https://github.com/Quramy/lerna-yarn-workspaces-example
   - /ts/基于tsc
   - https://github.com/Quramy/npm-ts-workspaces-example

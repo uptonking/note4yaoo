@@ -23,10 +23,14 @@ modified: '2020-11-24T10:42:33.622Z'
   - 基于workspace、lerna、nx
 
 - build
-  - tsc
+  - tsc:适合单独库
   - babel
+    - babel-cli适合单独库，支持watch目录
+    - 不适合后面扩展到ts,css
   - webpack/webpack-dev-server
+    - 适合复杂应用，支持各种文件格式
   - rollup
+  - 不需单独编译的库可不编译
 
 - test
   - jest
