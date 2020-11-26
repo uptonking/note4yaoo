@@ -7,6 +7,29 @@ modified: '2020-10-22T06:49:10.760Z'
 
 # toc-lib-list-grid-popular
 
+## focus
+
+- src-react-list-grid-ts
+  - react-data-grid
+  - react-tiny-virtual-list
+
+- src-list-grid-ts
+  - **ag-grid**
+
+- src-react-list-grid-es6
+  - **react-table**
+  - **react-window**
+  - react-virtualized
+
+- src-list-grid-es6
+  - **tabulator**
+  - frappe-datatable
+
+- src-list-grid-canvas
+  - **luckysheet**
+  - **x-spreadsheet**
+  - cheetah-grid(ts)
+
 ## list-grid-with-div
 
 - ag-grid /MIT/6.4kStar/202006/ts/NoDeps
@@ -201,10 +224,20 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/flexicious/react-datagrid
   - /8kStar/MIT/201810/js
   - Powerful DataGrid/DataTable/Tree Table component for React
+- smart-grid /3Star/NALic/202006/ts/NoDeps
+  - https://github.com/mukuljainx/smart-grid
+  - https://mukuljainx.github.io/smart-grid/
+  - highly customizable with css.
+  - 基于div实现，无依赖，功能较少
+- https://github.com/underfisk/apollo-spreadsheet
+  - https://xenodochial-brahmagupta-15bc2b.netlify.app/
+  - 基于div实现
+  - Apollo spreadsheet that supports table and grids out of the box
+  - uses Material-UI, React hooks, styled-components and it's fully written in Typescript
 
 ### div-more
 
-- SlickGrid /MIT/1.3kStar/202007/js
+- SlickGrid /MIT/1.3kStar/202007/js/jquery
   - https://github.com/6pac/SlickGrid
   - http://6pac.github.io/SlickGrid/examples/example4-model.html
   - 基于div实现，每行对应的dom元素存在
@@ -217,21 +250,15 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现
   - Powerful data grid component built on top of StencilJS.
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
-- smart-grid /3Star/NALic/202006/ts/NoDeps
-  - https://github.com/mukuljainx/smart-grid
-  - https://mukuljainx.github.io/smart-grid/
-  - highly customizable with css.
-  - 基于div实现，无依赖，功能较少
-- https://github.com/underfisk/apollo-spreadsheet
-  - https://xenodochial-brahmagupta-15bc2b.netlify.app/
-  - 基于div实现
-  - Apollo spreadsheet that supports table and grids out of the box
-  - uses Material-UI, styled-components and it's fully written in Typescript!
 - https://github.com/datopian/recline
   - /2kStar/MIT/202008/js
   - https://datopian.github.io/recline/demos/
   - 2020: A framework for building data driven applications in React.
   - 2014: A simple, powerful library for building data applications in pure Javascript and HTML
+- zinggrid /js/web-comp
+  - https://github.com/ZingGrid/zinggrid
+  - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components. 
+  - Our goal is to solve the problem of creating a CRUD grid in under five minutes. 
 
 ## list-grid-with-canvas
 
@@ -277,6 +304,8 @@ modified: '2020-10-22T06:49:10.760Z'
   - Supports both browser HTML5 canvas and node-canvas
 - https://github.com/bojue/canvas-excel
   - 基于Canvas开发Excel的技术预研项目
+- https://github.com/Harlock123/LCTDataGrid
+  - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
 
 ## list-grid-with-table-tr-td
 
@@ -391,6 +420,10 @@ modified: '2020-10-22T06:49:10.760Z'
   - http://react-redux-grid.herokuapp.com/
   - 依赖react-redux
   - A Grid and Tree Component written in React using the Redux Pattern
+- https://github.com/nowaalex/af-virtual-scroll
+  - React components for rendering large scrollable data
+- https://github.com/qimus/semantic-ui-grid
+  - Extended grid for data
 
 ### table-tr-td-more
 
@@ -487,3 +520,24 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/webismymind/editablegrid
   - /765Star/MIT/201811/js
   - aimed at turning HTML tables into advanced editable components
+- https://github.com/tim-band/js-dataentrygrid
+  - Featherweight Excel-like grid for data entry
+
+## ui-components-grid
+
+- bootstrap
+- DevExtreme
+- https://github.com/sushruth/fluent-list
+
+## grid-utils
+
+- https://github.com/unosquare/tubular-common
+  - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
+  - https://github.com/unosquare/tubular-react
+  - https://github.com/unosquare/tubular-nodejs
+- https://github.com/jammeryhq/gridsome-source-mock-data
+  - Simple gridsome source plugin which uses danibram/mocker-data-generator to generate your mock data.
+- excelexportjs /88Star/MIT/201909/ts/NoDeps
+  - https://github.com/tarunbatta/excelexportjs
+  - Various server-side binaries and support libraries are present to help us export grids/tables data to excel sheets, but the same export handling at client side is a tough nut to crack. 
+  - This plugin helps you achieve that, thereby providing advance features as well.

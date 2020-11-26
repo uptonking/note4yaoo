@@ -24,6 +24,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
   - the most advanced JavaScript dataviz library ever.
   - 产品：charts、map、timeline、editor
+    - ammap3在单独旧仓库，ammap4在amcharts4的仓库，map还是自己实现最灵活
   - 依赖d3、stackblur-canvas、venn.js，基于svg实现
   - 支持react、vue、angular，集成时需要手动管理挂载与卸载
 - AnyChart /266Star/Free4NonCommercial/202009

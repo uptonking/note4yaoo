@@ -51,7 +51,7 @@ modified: '2020-11-24T10:42:33.622Z'
   - ts-jest
 
 - hot-reload
-  - 不是简单的watch增量编译，而是修改后自动编译且组件状态数据保持
+  - 不是简单的watch增量编译，而是修改后自动编译且应用状态数据保持
 
 - lint
   - eslint: tslint已废弃
