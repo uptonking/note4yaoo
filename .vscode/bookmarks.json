@@ -58,5 +58,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/log-faq-zhihu.md",
+		"bookmarks": [
+			{
+				"line": 14,
+				"column": 0,
+				"label": ""
+			}
+		]
 	}
 ]

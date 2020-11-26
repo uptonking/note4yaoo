@@ -12,6 +12,16 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- koa vs express
+  - 光看在前端工具中的应用比如webpack等，express就占了压倒性优势
+  - webpack-dev-server功能中的dev和hot的确可以改成koa版本的，
+    - 不过在实际的使用中，有可能用到的不止这两个中间件，
+    - 比如有的团队会配合使用一些mock中间件或者http请求转发中间件等，
+    - 就我看到的目前大部分还都是express，如果要替换，是这些一整套都要进行替换，成本还是比较大的~
+    - 而且作为前端工具来讲，在express生态比较成熟的情况下，硬要替换成koa感觉也没啥收益~
+  - 知道callback的人async await的人多多了
+  - express有着比koa2更多的中间件、社区资源
+
 - jest测试时： Received: serializes to the same string
   - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
   - 当对象属性值有函数类型时，序列化后再还原，难以比较
@@ -287,7 +297,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                                    `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` ,                                        `debugger` 是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -346,7 +356,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                    `string` ,                                    `boolean` ,                                    `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                        `string` ,                                        `boolean` ,                                        `symbol` ,  `undefined` , or `null` ).
 
 - 函数调用拆分
 
@@ -576,7 +586,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                                    `Function` s, and `Symbol` s are not valid JSON values. 
+  - `undefined` ,                                        `Function` s, and `Symbol` s are not valid JSON values. 
 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .

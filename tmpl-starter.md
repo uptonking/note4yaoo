@@ -21,20 +21,37 @@ modified: '2020-11-24T10:42:33.622Z'
 
 - monorepo
   - 基于workspace、lerna、nx
+  - 优点
+    - 统一管理版本、构建流程
+    - 统一devDependencies，减少开发工具的体积
+  - 缺点
+    - 各子项目的issues会杂糅在论坛
+
+- dependencies
+  - 对于大多数重复的devDependencies，提升到顶层
+  - npm 7过渡阶段，使用npm install --legacy-peer-deps避免冲突
+  - 对于依赖冲突的版本
+    - 采用类似yarn的Selective dependency resolutions指定具体版本，npm对应的非官方实现是pm-force-resolutions(不支持npm7)
+    - [npm equivalent of yarn resolutions?](https://stackoverflow.com/questions/52416312/npm-equivalent-of-yarn-resolutions) (提供了自定义脚本)
 
 - build
-  - tsc:适合单独库
+  - tsc: 适合单独库
   - babel
     - babel-cli适合单独库，支持watch目录
     - 不适合后面扩展到ts,css
+    - 共享的babel配置文件建议放在顶层
   - webpack/webpack-dev-server
-    - 适合复杂应用，支持各种文件格式
+    - 适合复杂应用，支持各种文件格式，易于实现基于module federation的微服务
+    - 共享的webpack配置文件建议放在顶层，可在子项目中直接通过require相对路径读取
   - rollup
   - 不需单独编译的库可不编译
 
 - test
   - jest
   - ts-jest
+
+- hot-reload
+  - 不是简单的watch增量编译，而是修改后自动编译且组件状态数据保持
 
 - lint
   - eslint: tslint已废弃
