@@ -27,6 +27,10 @@ modified: '2020-11-24T10:42:33.622Z'
   - 缺点
     - 各子项目的issues会杂糅在论坛
 
+- todo
+  - npm workspaces暂不支持使用`.`添加顶层包作为workspace
+    - 临时方案：直接在顶层加代码
+
 - dependencies
   - 对于大多数重复的devDependencies，提升到顶层
   - npm 7过渡阶段，使用npm install --legacy-peer-deps避免冲突

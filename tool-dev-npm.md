@@ -32,6 +32,22 @@ modified: '2020-11-20T19:29:00.179Z'
       - but rather it's a signal that arborist is not properly handling symlinks in some cases and that warrants a more elaborate inspection/refactor of that part of the code.
       - the good news is that this use case is supported! the not so great news is that it might take a little bit more time until we get to the proper refactor and make sure that works
 
+## package.json
+
+- main
+  - The `main` field is a module ID that is the primary entry point to your program. 
+  - That is, if your package is named `foo`, and a user installs it, and then does `require("foo")`, then your main module's exports object will be returned.
+  - The key `main` refers to the standard from package.json, and `module` to a proposal to allow the JavaScript ecosystem upgrade to use ES2015 modules without breaking backwards compatibility.
+- browser
+  - If your module is meant to be used client-side, the `browser` field should be used instead of the `main` field. 
+  - This is helpful to hint users that it might rely on primitives that aren't available in Node.js modules
+- module
+  - This is used by bundler tools for ESM (ECMAScript Module) detection. 
+  - The `main` field makes sure that Node users using require will be served the UMD version. 
+  - The `module` field is not an official npm feature but a common convention among bundlers to designate how to import an ESM version of our library.
+  - The `module` property should point to a script that utilizes ES2015 module syntax but no other syntax features that aren't yet supported by browsers or node. 
+  - This enables webpack to parse the module syntax itself, allowing for lighter bundles via tree shaking if users are only consuming certain parts of the library.
+
 ## npm-cli
 
 - `npm run-script <command> [--silent] [-- <args>...]`

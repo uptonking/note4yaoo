@@ -19,6 +19,13 @@ modified: '2020-11-20T19:30:56.804Z'
   - The following utilities improve performance by compiling and serving assets in memory rather than writing to disk:
     - webpack-dev-server/webpack-hot-middleware/webpack-dev-middleware
 
+- [How Webpack decides what entry to load from a package.json](https://www.jonathancreamer.com/how-webpack-decides-what-entry-to-load-from-a-package-json/)
+  - If the `target` of your app is `web` or a few others (which is default). 
+  - It will look first at the `browser` field, and if it doesn't exist, it'll look for the `module`, and lastly `main`.
+  - 可查看源码 WebpackOptionsDefaulter.js
+  - if your Webpack target is `node`, it looks at the `module` and `main` for entry. Otherwise, it goes to the `browser`, then `module`, then `main`.
+  - 技巧：module可指向源码，main指向转义后的es5代码
+
 ## Module Federation
 
 - [Module Federation原理剖析](https://zhuanlan.zhihu.com/p/296233114)
