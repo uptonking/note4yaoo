@@ -11,7 +11,7 @@ modified: '2020-10-22T06:49:25.812Z'
 
 - keyword: data list/grid/table/excel/spreadsheet
 - list-grid-awesome-catalog
-  - 一些design system都实现了自己的list和grid组件
+  - 很多design system都实现了自己的list和grid组件
   - https://jspreadsheets.com/
     - https://github.com/Handsoncode/JSpreadsheets.com
     - 点击卡片可切换查看每个项目的详情及预览图

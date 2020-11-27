@@ -19,8 +19,18 @@ modified: '2020-11-20T19:29:00.179Z'
 ## faq
 
 - 如何执行某个workspace子包的package.json中预定义的命令
+  - (~~暂不支持~~)现已支持
   - [[BUG] npm 7 workspace package script execution](https://github.com/npm/cli/issues/1904)
-  - npm run --prefix applications/app1 build
+    - 临时方案：npm run --prefix applications/app1 build
+
+- 是否支持将root目录也作为一个代表workspace的package
+  - 暂不支持
+  - [package-lock` not generating properly when using "." as a workspace](https://github.com/npm/cli/issues/2233)
+    - 临时方案：手动在顶层node_modules创建根项目的symlink
+    - I had a chat with the @npm/cli team yesterday and the conclusion is that 
+      - this is not something we want to just quickly patch 
+      - but rather it's a signal that arborist is not properly handling symlinks in some cases and that warrants a more elaborate inspection/refactor of that part of the code.
+      - the good news is that this use case is supported! the not so great news is that it might take a little bit more time until we get to the proper refactor and make sure that works
 
 ## npm-cli
 

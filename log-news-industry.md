@@ -8,6 +8,8 @@ modified: '2020-08-27T11:52:21.241Z'
 # log-news-industry
 
 - 202011-market-大厂双十一购物节总成交额：阿里4982亿/多天，京东2715亿/多天
+- 202011-11月2日，中共央行、银保监会、证监会、国家外汇管理局四大监管部门紧急约谈马云。
+  - 11月3日晚，上交所和港交所宣布：暂缓蚂蚁集团原定11月5日上市
 - 202011-software-JetBrains发布了Kotlin桌面UI框架Jetpack Compose for Desktop（compose-jb）
   - 可开发Windows、macOS、Linux/x86的应用
 - 202008-美国300家(约1/4)必胜客计划永久关闭，并出售剩余分店

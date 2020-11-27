@@ -10,7 +10,7 @@ modified: '2020-10-22T06:49:10.760Z'
 ## focus
 
 - src-react-list-grid-ts
-  - react-data-grid
+  - **react-data-grid**
   - react-tiny-virtual-list
 
 - src-list-grid-ts
@@ -255,7 +255,7 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://datopian.github.io/recline/demos/
   - 2020: A framework for building data driven applications in React.
   - 2014: A simple, powerful library for building data applications in pure Javascript and HTML
-- zinggrid /js/web-comp
+- zinggrid /38Star/Free4NonCommercial/202008/js/web-comp
   - https://github.com/ZingGrid/zinggrid
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components. 
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes. 
