@@ -1,6 +1,6 @@
 ---
 title: tmpl-starter
-tags: [template]
+tags: [template, quickstart, engineering]
 created: '2020-11-24T10:42:09.474Z'
 modified: '2020-11-24T10:42:33.622Z'
 ---
@@ -35,20 +35,31 @@ modified: '2020-11-24T10:42:33.622Z'
   - 对于大多数重复的devDependencies，提升到顶层
   - npm 7过渡阶段，使用npm install --legacy-peer-deps避免冲突
   - 对于依赖冲突的版本
+    - npm shrinkwrap
     - 采用类似yarn的Selective dependency resolutions指定具体版本，npm对应的非官方实现是pm-force-resolutions(不支持npm7)
     - [npm equivalent of yarn resolutions?](https://stackoverflow.com/questions/52416312/npm-equivalent-of-yarn-resolutions) (提供了自定义脚本)
 
 - build
-  - tsc: 适合单独库
+  - 编译tips
+    - 不需单独编译的库可不编译
+  - node
+    - 使用ts-node时，main字段必须是.ts文件
+  - tsc
+    - 适合单独库
   - babel
     - babel-cli适合单独库，支持watch目录
     - 不适合后面扩展到ts,css
     - 共享的babel配置文件建议放在顶层
+    - 所有简单包的编译命令可相似甚至相同，`babel --root-mode upward src -d lib`
+      - lerna-yarn-workspaces-monorepo-js
+      - monorepo-babel-ts-lerna-starter
+      - `BABEL_ENV=build babel src --root-mode upward --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments`
   - webpack/webpack-dev-server
     - 适合复杂应用，支持各种文件格式，易于实现基于module federation的微服务
     - 共享的webpack配置文件建议放在顶层，可在子项目中直接通过require相对路径读取
   - rollup
-  - 不需单独编译的库可不编译
+  - 编译参考
+    - 还可以利用现有脚本如react-scripts-ts编译，但不直观
 
 - test
   - jest

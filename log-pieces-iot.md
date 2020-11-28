@@ -29,7 +29,8 @@ error: invalid zip file with overlapped components (possible zip bomb)
 ## hp-envy-15
 
 - 无法开机
-  - 变通的方案是使用win 10的wsl子系统
+  - 变通方案：使用win 10的wsl子系统
+  - 魔法方案：可能是硬盘松动了，尝试拍几下笔记本底座面，拍几下键盘面
 
 ``` 
 

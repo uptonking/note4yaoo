@@ -23,6 +23,8 @@ modified: '2020-11-13T07:31:27.113Z'
 
 ## starred
 
+- https://github.com/projectstorm/react-workspaces
+  - help you build super-modern desktop-grade applications that have window management similar to Adobe / Jetbrains and Netbeans
 - https://github.com/kripod/react-polymorphic-box
   - Building blocks for strongly typed polymorphic components in React.
   - the `as` prop allows changing the HTML tag rendered by a component, 
@@ -91,7 +93,6 @@ modified: '2020-11-13T07:31:27.113Z'
 
 - https://github.com/civiccc/react-waypoint
   - A React component to execute a function whenever you scroll to an element.
-
 
 ## datetime
 
