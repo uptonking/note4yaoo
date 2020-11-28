@@ -29,7 +29,10 @@ modified: '2020-11-24T10:42:33.622Z'
 
 - todo
   - npm workspaces暂不支持使用`.`添加顶层包作为workspace
-    - 临时方案：直接在顶层加代码
+    - 临时方案：直接在顶层加代码，或在packages/*子目录再复制一份源码
+  - jest测试中import三方包时优先根据main，可自定义defaultResolver and packageFilter设置优先使用module
+    - jest-module-field-resolver使用module后react导入出现问题
+    - 不能轻易改
 
 - dependencies
   - 对于大多数重复的devDependencies，提升到顶层
@@ -63,7 +66,7 @@ modified: '2020-11-24T10:42:33.622Z'
 
 - test
   - jest
-  - ts-jest
+    - 测试monorepo时，import子目录包的main默认指向dist，不方便
 
 - hot-reload
   - 不是简单的watch增量编译，而是修改后自动编译且应用状态数据保持
