@@ -32,7 +32,20 @@ modified: '2020-11-20T19:29:00.179Z'
       - but rather it's a signal that arborist is not properly handling symlinks in some cases and that warrants a more elaborate inspection/refactor of that part of the code.
       - the good news is that this use case is supported! the not so great news is that it might take a little bit more time until we get to the proper refactor and make sure that works
 
+- package.json中scripts的循环命令如`"dev": "npm run dev"`会如何执行
+  - 控制台不停打印npm run dev，然后陷入死循环
+
 ## package.json
+
+- 关于main-module
+  - 测试使用的是main
+  - ide跳转使用的时main
+  - 解决方案
+    - 若main指向src，则可直接测试/跳转，方便了开发
+    - 若main指向dist，必须先build，再测试/跳转
+    - 将编译后的文件放在相同目录，只发布js，开发时用ts
+  - webpack先检查module，再检查main
+  - babel-cli只是转译，并不关心从哪里import
 
 - main
   - The `main` field is a module ID that is the primary entry point to your program. 

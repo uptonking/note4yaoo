@@ -49,10 +49,13 @@ modified: '2020-11-24T10:42:33.622Z'
     - 使用ts-node时，main字段必须是.ts文件
   - tsc
     - 适合单独库
+    - `tsc -p tsconfig.json --traceResolution`打印日志
   - babel
-    - babel-cli适合单独库，支持watch目录
     - 不适合后面扩展到ts,css
     - 共享的babel配置文件建议放在顶层
+    - babel-cli适合单独库，支持watch目录
+    - babel-node is a CLI that works exactly the same as the Node.js CLI, with the added benefit of compiling with Babel presets and plugins before running it.
+      - Due to technical limitations, ES6-style module-loading is not fully supported in a babel-node REPL.
     - 所有简单包的编译命令可相似甚至相同，`babel --root-mode upward src -d lib`
       - lerna-yarn-workspaces-monorepo-js
       - monorepo-babel-ts-lerna-starter

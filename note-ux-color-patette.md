@@ -54,6 +54,15 @@ modified: '2020-07-17T10:50:09.843Z'
   - malbec/极紫深灰
     - #351f39
 
+- 莫兰迪色
+  - 高级灰色调，饱和度低，不鲜亮
+
+- 色彩参考
+  - 马蒂斯
+  - 夏加尔
+  - 德加
+  - 梵高
+
 ## brand-color
 
 - [google-logo-brand-color](https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/)

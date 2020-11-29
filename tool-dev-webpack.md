@@ -89,7 +89,15 @@ modified: '2020-11-20T19:30:56.804Z'
 
 ## repos-monorepo
 
-- 如何在子repo中共用webpack配置？
+- 在子repo中共用webpack配置的示例
+  - monorepo-react-webpack-ts
+    - 创建了一个单独的dev-tools包
+    - 基于webpack-merge根据common创建dev、prod、server的配置
+  - monorepo-webpack-babel-example-js
+    - 创建了单独的文件webpack.shared.js
+    - 但未使用webpack-dev-server
+  - https://github.com/DoSomething/webpack-config
+    - 自己封装了createConfig方法，需要查阅api
 
 - https://github.com/Quramy/lerna-yarn-workspaces-example
   - /ts/基于tsc
