@@ -34,7 +34,7 @@ modified: '2020-10-22T13:33:54.313Z'
 
 ## features
 
-- 基础功能
+- core
   - sort/filter/group
     - group-header
   - select/edit
@@ -42,6 +42,9 @@ modified: '2020-10-22T13:33:54.313Z'
   - component-wrapper
     - ag-list
     - read-only-grid
+
+- extensions
+  - grid-config(defaults+utils)
 
 - Multiple Sorting
   - The DataGrid can sort values by a single or multiple columns.

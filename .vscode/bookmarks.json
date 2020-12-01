@@ -68,5 +68,15 @@
 				"label": ""
 			}
 		]
+	},
+	{
+		"path": "$ROOTPATH$/pick-wiki.md",
+		"bookmarks": [
+			{
+				"line": 12,
+				"column": 0,
+				"label": ""
+			}
+		]
 	}
 ]
