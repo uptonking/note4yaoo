@@ -63,7 +63,7 @@
 		"path": "$ROOTPATH$/log-faq-zhihu.md",
 		"bookmarks": [
 			{
-				"line": 14,
+				"line": 46,
 				"column": 0,
 				"label": ""
 			}
@@ -73,8 +73,8 @@
 		"path": "$ROOTPATH$/pick-wiki.md",
 		"bookmarks": [
 			{
-				"line": 12,
-				"column": 0,
+				"line": 17,
+				"column": 1,
 				"label": ""
 			}
 		]

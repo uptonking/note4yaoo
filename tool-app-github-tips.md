@@ -23,6 +23,7 @@ modified: '2020-10-05T07:52:42.228Z'
       - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
     - most forked
       - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
+  - 可利用高级搜索，搜索最新的fork仓库
 
 - fork
   - 查找一个仓库最活跃的fork仓库
@@ -48,15 +49,14 @@ modified: '2020-10-05T07:52:42.228Z'
   - 若要给没有license文件的repo添加license，直接本地上传一个即可
   - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
 
-## ecosystem
+## npm-tips
 
-- npm
-  - 读取一个package的所有dependencies，查询下载量后排序
-    - https://github.com/pkgjs/dependents
-  - [most depended upon packages](https://www.npmjs.com/browse/depended)
-    - lodash, react, chalk, request, moment, express, axios, debug, bluebird
-    - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
-    - redux, styled-components, ramda, jest, socket.io, redis, chokidar
-    - deepmerge, date-fns, marked, isomorphic-fetch
-  - 查看依赖某个package的包
-    - https://www.npmjs.com/browse/depended/redux
+- 读取一个package的所有dependencies，查询下载量后排序
+  - https://github.com/pkgjs/dependents
+- 查看依赖某个package的包
+  - https://www.npmjs.com/browse/depended/redux
+- [most depended upon packages](https://www.npmjs.com/browse/depended)
+  - lodash, react, chalk, request, moment, express, axios, debug, bluebird
+  - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
+  - redux, styled-components, ramda, jest, socket.io, redis, chokidar
+  - deepmerge, date-fns, marked, isomorphic-fetch

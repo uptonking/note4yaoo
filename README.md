@@ -1,8 +1,8 @@
 ---
-tags: [wiki]
 title: README
+tags: [wiki]
 created: '2019-06-19T09:12:15.964Z'
-modified: '2020-06-22T09:22:08.212Z'
+modified: '2020-12-03T07:59:25.187Z'
 ---
 
 # README
@@ -11,17 +11,19 @@ modified: '2020-06-22T09:22:08.212Z'
 
 ## note-categories
 
-- `note-` : dev and learning notes, mostly about js, web, list, java, geospatial
-- `docs-` : docs of library or framework
-- `page-` : guide from blogs
-- `read-` : reading books
-- `topic-` : contents about one topic 
-- `toc-` : list of data
+- `note-` : dev and learning notes about js, web, list, viz, java, geospatial
+- `docs-` : docs of good libraries or frameworks
+- `lib-`: usage of excellent libs of frameworks I loved
+- `tech-`： classic topics about technology and cs
 - `log-` : long term logging
+- `page-` : excerpt from blogs
+- `wiki-` : excerpt about geo, history, law, fintech, etc.
+- `topic-` : contents about general topics
+- `read-` : reading books
+- `spec-` : specifications about dev
+- `toc-` : list of data
 - `latest-` : interesting news 
 - `tool-` : xp of using devices and software
-- `spec-` : specifications about dev
-- `wiki-` : abstract about geo, history, law, fintech, etc.
 - other tags
   - all, draft...
-  - app, cli, coding, play, pm, work...
+  - cli, coding, lang, play, pm, pick... 

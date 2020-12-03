@@ -259,6 +259,10 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://github.com/ZingGrid/zinggrid
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components. 
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes. 
+- react-virtuoso /876Star/MIT/202011/ts/list
+  - https://github.com/petyosi/react-virtuoso
+  - virtual list component for React
+  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces. 
 
 ## list-grid-with-canvas
 
