@@ -12,6 +12,13 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- ag-grid使用@babel/preset-typescript编译源码时多次碰到的异常
+
+``` 
+agAbstractLabel.ts:48 Uncaught TypeError: Super expression must either be null or a function
+    at _inherits (agAbstractLabel.ts:48)
+```
+
 - create-react-app 初次创建示例项目时异常
   - 原因是缺少编译node-canvas的环境
 

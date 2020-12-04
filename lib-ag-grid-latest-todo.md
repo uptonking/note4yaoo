@@ -33,6 +33,7 @@ modified: '2020-09-17T17:17:58.423Z'
   - `"main": "./dist/es6/main.js"` 使用编译后的js文件则能正常编译，以此可作为临时过渡方案
 
 ``` 
+
 Uncaught ReferenceError: Cannot access 'Component' before initialization
   at Module.Component (component.ts:3)
   at eval (agAbstractLabel.ts?deaf:14)
@@ -40,9 +41,10 @@ Uncaught ReferenceError: Cannot access 'Component' before initialization
 ```
 
 - babel编译ag-grid源码中的types出现warning
-  - 这些warning相关的导出内容都是type类型定义，可忽略
+  - 这些warning相关的导出内容都是type类型定义，可忽略，或export type=`TypeDeclaration`
 
 ``` 
+
 WARNING in ../../community-modules/core/src/ts/main.ts 13:0-84
 export 'ColumnState' (reexported as 'ColumnState') was not found in './columnController/columnController' (possible exports: ColumnController)
 ```
