@@ -143,4 +143,4 @@ modified: '2020-11-08T10:02:00.337Z'
   - I want to build a state Management system similar to React but very bare-bones. 
   - But it should follow one-way data flow. 
 - [React vs Lit implementations of the React homepage demos.](https://pinkhominid.github.io/react-v-lit/)
-- [Maybe you don’t need that SPA](https://t.co/W50JnRYsll?amp=1)
+- [Comparing reactivity models - React vs Vue vs Svelte vs MobX vs Solid vs Redux](https://dev.to/lloyds-digital/comparing-reactivity-models-react-vs-vue-vs-svelte-vs-mobx-vs-solid-29m8)

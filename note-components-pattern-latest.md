@@ -30,6 +30,7 @@ modified: '2020-10-29T12:52:12.025Z'
     - 基于模板字符串的视图模板
   - jsx
     - 基于jsx的通用视图，参考jsx-lite/solid/vue
+  - hooks pattern
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为
