@@ -51,4 +51,10 @@ modified: '2020-11-19T12:43:25.788Z'
 
 ## build-babel-webpack
 
+## react-fwk-conversion
+
+- https://github.com/bitovi/react-to-webcomponent
+  - converts React components to custom elements
+  - The custom element acts as a wrapper for the underlying react component.
+
 ## more-react

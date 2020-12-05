@@ -12,9 +12,18 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- npm install时的异常
+  - did you edit package.json only? if npm-shrinkwrap.json is still there, please remove it or try `npm i -f`
+  - https://github.com/angular/angular/issues/13935
+
+``` 
+Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin"} (current: {"os":"linux","arch":"x64"})
+```
+
 - ag-grid使用@babel/preset-typescript编译源码时多次碰到的异常
 
 ``` 
+
 agAbstractLabel.ts:48 Uncaught TypeError: Super expression must either be null or a function
     at _inherits (agAbstractLabel.ts:48)
 ```

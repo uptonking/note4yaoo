@@ -40,7 +40,8 @@ modified: '2020-11-09T09:04:58.539Z'
   - It does not use a Virtual DOM. 
   - Instead it opts to compile its templates down to real DOM nodes and wrap updates in fine grained reactions. 
   - This way when your state updates only the code that depends on it runs.
-  - [Introducing the SolidJS UI Library_202003](https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck)
+
+ 
 
 ``` JS
 import { createState, onCleanup } from "solid-js";

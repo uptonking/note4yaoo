@@ -26,6 +26,10 @@ modified: '2020-10-29T12:52:12.025Z'
     - 用户或二次开发者用起来像framework-agnostic，但原作者可能要维护多个port或bridge
   - reactive/functional ui
     - state-based components
+  - tagged template literals
+    - 基于模板字符串的视图模板
+  - jsx
+    - 基于jsx的通用视图，参考jsx-lite/solid/vue
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为
