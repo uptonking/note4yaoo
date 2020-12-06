@@ -12,11 +12,19 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- git push
+
+``` 
+error: src refspec main does not match any
+error: failed to push some refs to 'git@github.com:
+```
+
 - npm install时的异常
   - did you edit package.json only? if npm-shrinkwrap.json is still there, please remove it or try `npm i -f`
   - https://github.com/angular/angular/issues/13935
 
 ``` 
+
 Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin"} (current: {"os":"linux","arch":"x64"})
 ```
 

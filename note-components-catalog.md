@@ -39,7 +39,9 @@ modified: '2020-10-02T11:42:00.886Z'
 ## navigation
 
 - FloatingActionButton
-- Sidebar
+- ### Sidebar
+  - variant: window-manager
+    - 可显示或隐藏侧边栏的容器组件
 - Divider
   - 空白样式的组件可代替Spacer空行
 - NavBar
@@ -74,6 +76,8 @@ modified: '2020-10-02T11:42:00.886Z'
   - 单选
   - 手动关闭
   - 超过10个项目可显示下拉列表滚动条，超过20个项目可显示弹出菜单选择器，超过100个提示不推荐使用
+  - variant: ScalableDropdown
+    - 选项少时显示下拉列表，选项多时显示modal
 - ComboBox
   - 可输入选择(自动完成)，可选择多个
 - Toggle

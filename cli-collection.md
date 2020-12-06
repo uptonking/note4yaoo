@@ -15,7 +15,7 @@ modified: '2020-11-14T09:38:09.918Z'
 
 prettier --write '**/*.*'
 
-prettier --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore
+prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore
 ```
 
 - changelog

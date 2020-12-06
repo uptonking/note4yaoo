@@ -9,7 +9,8 @@ modified: '2020-11-14T09:39:11.615Z'
 
 ## guide
 
-- 常用工作流：version bump -> changelog -> git release -> npm publish
+- 发包工作流：version bump -> changelog -> git release -> npm publish
+  - lerna提供了主流的解决方案，但并不是每步都必须执行
 
 ## react
 

@@ -13,7 +13,7 @@
 		"path": "$ROOTPATH$/log-dev-error.md",
 		"bookmarks": [
 			{
-				"line": 46,
+				"line": 53,
 				"column": 0,
 				"label": ""
 			}
@@ -43,7 +43,7 @@
 		"path": "$ROOTPATH$/note-components-catalog.md",
 		"bookmarks": [
 			{
-				"line": 83,
+				"line": 87,
 				"column": 0,
 				"label": ""
 			}
@@ -74,16 +74,6 @@
 		"bookmarks": [
 			{
 				"line": 17,
-				"column": 1,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/pick-zhihu-pieces.md",
-		"bookmarks": [
-			{
-				"line": 12,
 				"column": 1,
 				"label": ""
 			}

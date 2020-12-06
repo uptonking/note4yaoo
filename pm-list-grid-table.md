@@ -32,6 +32,17 @@ modified: '2020-10-22T13:33:54.313Z'
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
   - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
 
+## why-datable
+
+- very few options for a data table with all the following 
+  - typescript
+  - div-based css table, not html table element
+  - framework agnostic
+  - fully featured
+
+- ag-grid缺点
+  - group功能在企业版，需付费
+
 ## features
 
 - core

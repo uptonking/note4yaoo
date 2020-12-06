@@ -9,6 +9,12 @@ modified: '2020-10-29T12:52:31.904Z'
 
 ## grand-garden-design-in-action
 
+- 公共api/variant
+  - borderless
+    - 部分组件提供无边框的版本，如modal
+  - 也可考虑实现成dark mode的形式
+  - scalable
+
 - logo: green plum
 - design-system-tokens
   - text: sans serif(衬线体多用于印刷)
@@ -27,11 +33,6 @@ modified: '2020-10-29T12:52:31.904Z'
 - shape
   - point/polygon-shape-based
   - https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817
-- 公共api
-  - variant
-    - borderless
-      - 部分组件提供无边框的版本，如modal
-      - 也可考虑实现成dark mode的形式
 
 ## opinionated
 

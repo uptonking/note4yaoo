@@ -195,12 +195,16 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现，特别的是，每行的源码顺序从上到下显示出来的单元格dom元素是从右到左排列
   - 依赖element-resize-detector、iscroll、react-proptypes
   - a low level component for building fast tables
+- react-datasheet-grid 
+  - https://github.com/Equify/react-datasheet-grid
+  - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, 
+  - and each column is responsible for a single property of each row
 - rc-virtual-list /172Star/MIT/202010/ts
   - https://github.com/react-component/virtual-list
   - https://rc-virtual-list.react-component.now.sh/
   - 依赖rc-util、rc-resize-observer
   - React Virtual List Component which worked with animation
-- react-absolute-grid /MIT/906Star/202002
+- react-absolute-grid /MIT/906Star/202002/layout
   - https://github.com/jrowny/react-absolute-grid
   - http://jrowny.github.io/react-absolute-grid/demo
   - 多用于布局，不用于数据操作，按字段过滤未实现
@@ -208,13 +212,13 @@ modified: '2020-10-22T06:49:10.760Z'
   - The idea behind AbsoluteGrid is high performance. 
     - This is achieved by using `translate3d` to position each item in the layout. 
     - Items are never removed from the DOM, instead they are hidden.
-- react-list /MIT/1.8kStar/202009
+- react-list /MIT/1.8kStar/202009/layout
   - https://github.com/caseywebdev/react-list
   - https://ca.sey.me/react-list/
   - 基于div实现，样式太陈旧
   - 多用于布局
   - A versatile infinite scroll React component.
-- expandable-grid /1Star/MIT/202009/ts
+- expandable-grid /1Star/MIT/202009/ts/layout
   - https://github.com/MiDovaah/expandable-grid
   - https://codesandbox.io/s/expandable-grid-cw8zx
   - 自身依赖react hooks，示例依赖@reduxjs/toolkit、react-router、material-ui，示例效果好
@@ -247,6 +251,7 @@ modified: '2020-10-22T06:49:10.760Z'
 - revogrid /MIT/58Star/202010/ts/web-comp/stencil
   - https://github.com/revolist/revogrid
   - https://revolist.github.io/revogrid
+  - https://github.com/revolist/revogrid-react
   - 基于div实现
   - Powerful data grid component built on top of StencilJS.
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
@@ -340,6 +345,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://bossanova.uk/jexcel
   - 基于table标签实现
   - a lightweight vanilla js plugin to create web-based interactive tables
+- FathGrid /12Star/MIT/202011/js/NoDeps
+  - https://github.com/admirhodzic/FathGrid
+  - 源码是传统的单文件
+  - frontend data table/grid with paging, sorting, filtering, grouping, sub-grids, exporting and editing. 
+  - Can be used with any framework.
 - list.js /9.8kStar/MIT/201912/js/inactive
   - https://github.com/javve/list.js 
   - https://codepen.io/javve/pen/cLdfw
@@ -538,6 +548,7 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/unosquare/tubular-common
   - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
   - https://github.com/unosquare/tubular-react
+    - a Material-UI table (or data grid) with local or remote data-source
   - https://github.com/unosquare/tubular-nodejs
 - https://github.com/jammeryhq/gridsome-source-mock-data
   - Simple gridsome source plugin which uses danibram/mocker-data-generator to generate your mock data.
