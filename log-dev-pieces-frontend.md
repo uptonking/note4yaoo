@@ -307,7 +307,7 @@ node.setAttribute('frameborder', '0'); // works
   - console.clear()清理控制台
   - console.table()打印表格，方便查看复杂对象
 - 调试js的方法
-  - 除了 `console.log` ,                                             `debugger` 是我们最喜欢、快速且肮脏的调试工具。
+  - 除了 `console.log` , debugger是我们最喜欢、快速且肮脏的调试工具。
     - 执行代码后，Chrome会在执行时自动停止
     - 你甚至可以把它封装成条件，只在需要时才运行
   - 切换设备模式，调试不同尺寸下的ui
@@ -366,7 +366,7 @@ let d: object;
   - Since type compatibility in TypeScript is based on structural subtyping, not nominal subtyping,  `c` ends up being the same as `b` because they have the same interface: the `Object` interface.
 - So `Object` and `{}` are equivalents in TypeScript.
 - Typescript 2.2 added an `object` type, 
-  - which specifies that a value is a non-primitive: (i.e. not a `number` ,                                             `string` ,                                             `boolean` ,                                             `symbol` ,  `undefined` , or `null` ).
+  - which specifies that a value is a non-primitive: (i.e. not a number, string, boolean, symbol, undefined , or null ).
 
 - 函数调用拆分
 
@@ -596,8 +596,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - `JSON.stringify()` converts a value to JSON notation representing it:
   - If the value has a `toJSON()` method, it's responsible to define what data will be serialized.
-  - `undefined` ,                                             `Function` s, and `Symbol` s are not valid JSON values. 
-
+  - undefined, Function, and Symbol are not valid JSON values. 
     - If any such values are encountered during conversion, they are either omitted (when found in an object) or changed to `null` (when found in an array). 
     - JSON.stringify() can return `undefined` when passing in "pure" values like `JSON.stringify(function(){})` or `JSON.stringify(undefined)` .
 
@@ -651,7 +650,6 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - FMP：首次有效绘制(First Meaningful Paint)。这是一个很主观的指标。根据业务的不同，每一个网站的有效内容都是不相同的，有效内容就是网页中"主角元素"。对于视频网站而言，主角元素就是视频。对于搜索引擎而言，主角元素就是搜索框。
   - TTI：可交互时间。用于标记应用已进行视觉渲染并能可靠响应用户输入的时间点。应用可能会因为多种原因而无法响应用户输入：①页面组件运行所需的JavaScript尚未加载完成。②耗时较长的任务阻塞主线程
   - 根据devtool时间轴的结果
-
     - 虽然CSR(客户端渲染)配合预渲染方式（loading、骨架图）可以提前FP、FCP从而减少白屏问题，但无法提前FMP
     - SSR(服务端渲染)将FMP提前至js加载前触发，提前显示网页中的"主角元素"。SSR不仅可以减少白屏时间还可以大幅减少首屏加载时间。
 
@@ -660,19 +658,38 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
     - https://zhuanlan.zhihu.com/p/90746589
 
 - lodash引用方式
-  - `import { cloneDeep } from 'lodash';`
+  - `import _ from 'lodash';`
+    - Pros:
+      - Only one import line
+    - Cons:
+      - It seems like the import of a whole library will lead to the largest bundle size
+      - Less readable usage in the javascript code like `_.map()`
+
+  - `import { map, tail, times, uniq } from 'lodash';`
     - 70.9KB
+    - Pros:
+      - Only one import line (for a decent amount of functions)
+      - More readable usage: map() instead of _.map() later in the javascript code
+    - Cons:
+      - Every time we want use a new function or stop using another - it needs to be maintained and managed
 
   - `import cloneDeep from 'lodash/cloneDeep';`
     - 17.8KB
+    - Pros:
+      - Seems to be the smallest bundle size.
+      - More readable usage: map() instead of _.map()
+    - Cons:
+      - The import maintenance is much more complicated than the previous options
+      - Lots of import lines in the head of the file don’t look nice and readable.
 
   - `import { cloneDeep } from 'lodash-es';`
     - 14.6KB
 
   - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
-
     - Lodash is a good example of a module that looks like it has lots of side-effects, even in places that it doesn't. 
     - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'` ).
+  - ref
+    - https://www.blazemeter.com/blog/the-correct-way-to-import-lodash-libraries-a-benchmark
 
 - named import和namespace import都可以被webpack v5和rollup进行tree shaking
   - default import对于多属性的对象，无法进行tree shaking
@@ -786,25 +803,27 @@ if (process.env.NODE_ENV !== 'production') {
     - 这也意味着，如果这个新页面有任何性能上的问题，比如有一个很高的加载时间，这也将会影响到原始页面的表现。
     - 如果你打开的是一个同域的页面，那么你将可以在新页面访问到原始页面的所有内容，包括document对象(window.opener.document)。
     - 如果你打开的是一个跨域的页面，你虽然无法访问到document，但是你依然可以访问到location对象。
+
 - node依赖
-    - dependencies
-        - 是最常用普通业务依赖
-    - devDependencies
-        - 开发环境依赖，常用来指定打包、测试工具
-    - peerDependencies
-        - 比较适合插件库来声明所依赖的核心库，将依赖提升到根目录避免重复下载
-        - 指定当前包（也就是你写的包）兼容的宿主版本
-        - 可以避免类依赖库被重复下载
-            - 如果用户显式依赖了核心库，则可以忽略各插件的peerDependency声明
-            - 如果用户没有显式依赖核心库，则按照插件peerDependencies中声明的版本将库安装到项目根目录中
-            - 当用户依赖的版本、各插件依赖的版本之间不相互兼容，貌似会报错让用户自行修复
-    - optionalDependencies
-        - 可选依赖，它们即使安装失败，npm仍然继续运行
-    - bundleDependencies
-        - 在发布时会将指定的包打包到最终的发布包里
-        - undleDependencies节点的功能跟dependencies节点是一样的，区别在于，当需要构建项目并发布版本时，bundleDependencies节点下的依赖会被包含在构建结果中，不需要另外npm install来安装了
-    - 参考
-        - https://github.com/SamHwang1990/blog/issues/7
+  - dependencies
+    - 是最常用普通业务依赖
+  - devDependencies
+    - 开发环境依赖，常用来指定打包、测试工具
+  - peerDependencies
+    - 比较适合插件库来声明所依赖的核心库，将依赖提升到根目录避免重复下载
+    - 指定当前包（也就是你写的包）兼容的宿主版本
+    - 可以避免类依赖库被重复下载
+      - 如果用户显式依赖了核心库，则可以忽略各插件的peerDependency声明
+      - 如果用户没有显式依赖核心库，则按照插件peerDependencies中声明的版本将库安装到项目根目录中
+      - 当用户依赖的版本、各插件依赖的版本之间不相互兼容，貌似会报错让用户自行修复
+  - optionalDependencies
+    - 可选依赖，它们即使安装失败，npm仍然继续运行
+  - bundleDependencies
+    - 在发布时会将指定的包打包到最终的发布包里
+    - bundleDependencies节点的功能跟dependencies节点是一样的，区别在于，当需要构建项目并发布版本时，bundleDependencies节点下的依赖会被包含在构建结果中，不需要另外npm install来安装了
+  - ref
+    - https://github.com/SamHwang1990/blog/issues/7
+
 - html a标签属性 rel='nofollow'
     - 告诉搜索引擎不要此网页上的链接或不要追踪此特定链接
     - 使用场景

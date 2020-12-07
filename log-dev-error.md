@@ -12,7 +12,8 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
-- git push
+- git push error
+  - git push origin HEAD:main
 
 ``` 
 error: src refspec main does not match any

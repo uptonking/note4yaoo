@@ -17,6 +17,17 @@ modified: '2020-10-22T16:07:08.502Z'
 - color-mode-converter
   - rgb-hsl-hsv/b-contrast
 
+## my-pick
+
+- ASCII Generator
+  - https://www.snapfiles.com/screenshots/asciigenerator.htm
+  - convert images into ASCII text art - an image that is entirely made of text characters.
+
+## effect-playground
+
+- 文字不可选择、不可复制
+  - https://www.mingyantong.com/ju/5704496
+
 ## markdown-formatter
 
 - [sumnow/markdown-formatter](https://github.com/sumnow/markdown-formatter)
