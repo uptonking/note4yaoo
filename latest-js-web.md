@@ -46,6 +46,9 @@ modified: '2020-09-26T12:52:33.493Z'
 </script>
 ```
 
+- jsx-lite
+  - compiles jsx to React, Vue, Angular, Svelte, Solid, web component, vanillajs
+
 - [2020年前端最火的技术是什么](https://www.zhihu.com/question/365588457/answers/updated)
 - As browsers are adding support for debugging the CSSOM, there should be no need to resort to slower DOM-based solutions.
 - Right now, bundling JS is required for loading performance, but practically kills caching...

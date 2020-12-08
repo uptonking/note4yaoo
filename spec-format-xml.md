@@ -2,7 +2,7 @@
 title: spec-format-xml
 tags: [format, xml]
 created: '2019-12-24T12:58:13.163Z'
-modified: '2020-10-15T13:41:09.651Z'
+modified: '2020-12-08T13:52:49.103Z'
 ---
 
 # spec-format-xml
@@ -17,11 +17,7 @@ modified: '2020-10-15T13:41:09.651Z'
 
 ## summary
 
-- 列表插件设计
-  - 列表类
-  - 图表类
-  - 地图类
-  - 搜索类
+- 
 
 ## dev
 

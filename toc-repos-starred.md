@@ -59,3 +59,6 @@ modified: '2020-11-03T06:56:53.961Z'
   - 参照知乎网做的一个简易版问答网站，
   - 后台采用Spring，SpringMVC，MyBatis等框架，模版引擎使用FreeMarker。
   - 数据库用到MySQL，Redis。
+
+- https://github.com/AlexGustafsson/threes
+  - Easily create avatars from a username - Avatar as a Service

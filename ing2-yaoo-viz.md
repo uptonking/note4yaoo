@@ -1,8 +1,8 @@
 ---
 title: ing2-yaoo-viz
-tags: [pm, solution, viz]
+tags: [pm, viz]
 created: '2020-02-06T16:22:13.404Z'
-modified: '2020-11-16T12:39:59.862Z'
+modified: '2020-12-08T14:40:22.180Z'
 ---
 
 # ing2-yaoo-viz

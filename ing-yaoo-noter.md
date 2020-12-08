@@ -1,8 +1,8 @@
 ---
 title: ing-yaoo-noter
-tags: [note-taking, pm, solution]
+tags: [note-taking, pm, yaoo]
 created: '2020-05-10T07:13:28.652Z'
-modified: '2020-11-16T12:39:46.218Z'
+modified: '2020-12-08T13:17:30.798Z'
 ---
 
 # ing-yaoo-noter

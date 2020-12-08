@@ -22,16 +22,6 @@ modified: '2020-08-18T05:56:56.343Z'
   - I'd think filter(x=>x) would work, right? Since filter() just cares about truthiness?
   - if you don't like `.map().filter(Boolean)`, you can always do `.flatMap()` and return an empty array for "falsy" cases
 
-- koa vs express
-  - 光看在前端工具中的应用比如webpack等，express就占了压倒性优势
-  - webpack-dev-server功能中的dev和hot的确可以改成koa版本的，
-    - 不过在实际的使用中，有可能用到的不止这两个中间件，
-    - 比如有的团队会配合使用一些mock中间件或者http请求转发中间件等，
-    - 就我看到的目前大部分还都是express，如果要替换，是这些一整套都要进行替换，成本还是比较大的~
-    - 而且作为前端工具来讲，在express生态比较成熟的情况下，硬要替换成koa感觉也没啥收益~
-  - 知道callback的人async await的人多多了
-  - express有着比koa2更多的中间件、社区资源
-
 - jest测试时： Received: serializes to the same string
   - 当值是函数时，尽管函数源码打印出来相同，但不能认为函数一定相等
   - 当对象属性值有函数类型时，序列化后再还原，难以比较
@@ -644,6 +634,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - 遇到script标签，如果是普通JS标签则同步加载并执行，阻塞页面渲染，如果标签上有defer/async属性则异步加载JS资源
   - 将dom树和CSS DOM树构造成render树
   - 渲染render树
+
 - 浏览器加载与渲染的时间概念 
   - P：首次绘制。用于标记导航之后浏览器在屏幕上渲染像素的时间点。这个不难理解，就是浏览器开始请求网页到网页首帧绘制的时间点。这个指标表明了网页请求是否成功。
   - FCP：首次内容绘制。FCP标记的是浏览器渲染来自DOM第一位内容的时间点，该内容可能是文本、图像、SVG甚至canvas元素。
@@ -652,7 +643,6 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - 根据devtool时间轴的结果
     - 虽然CSR(客户端渲染)配合预渲染方式（loading、骨架图）可以提前FP、FCP从而减少白屏问题，但无法提前FMP
     - SSR(服务端渲染)将FMP提前至js加载前触发，提前显示网页中的"主角元素"。SSR不仅可以减少白屏时间还可以大幅减少首屏加载时间。
-
   - ref
     - https://www.zhihu.com/question/308792091
     - https://zhuanlan.zhihu.com/p/90746589

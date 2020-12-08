@@ -1,8 +1,8 @@
 ---
 title: wiki-spoken-chinese
-tags: [Chinese-lang, spoken, 汉语]
+tags: [Chinese, spoken, 汉语]
 created: '2020-11-21T15:13:05.890Z'
-modified: '2020-11-21T15:19:00.140Z'
+modified: '2020-12-08T14:48:18.717Z'
 ---
 
 # wiki-spoken-chinese

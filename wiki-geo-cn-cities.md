@@ -1,8 +1,8 @@
 ---
 title: wiki-geo-cn-cities
-tags: [cities, geo]
+tags: [cities, cn, geo]
 created: '2020-11-21T16:09:16.039Z'
-modified: '2020-11-25T08:20:08.041Z'
+modified: '2020-12-08T14:36:22.672Z'
 ---
 
 # wiki-geo-cn-cities

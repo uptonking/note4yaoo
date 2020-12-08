@@ -1,8 +1,8 @@
 ---
 title: wiki-history-cn-bc-770-221-spring-autumn-warring
-tags: [history, 春秋战国]
+tags: [cn, date-bc-7xx, history, 春秋战国]
 created: '2020-12-02T07:09:41.212Z'
-modified: '2020-12-02T07:22:20.161Z'
+modified: '2020-12-08T14:29:39.610Z'
 ---
 
 # wiki-history-cn-bc-770-221-spring-autumn-warring

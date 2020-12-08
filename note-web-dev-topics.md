@@ -1,8 +1,8 @@
 ---
 title: note-web-dev-topics
-tags: [dev, summary, web]
+tags: [dev, web]
 created: '2020-11-01T09:48:26.955Z'
-modified: '2020-11-01T09:50:16.286Z'
+modified: '2020-12-08T14:40:01.285Z'
 ---
 
 # note-web-dev-topics

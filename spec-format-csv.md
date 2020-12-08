@@ -2,7 +2,7 @@
 title: spec-format-csv
 tags: [csv, format]
 created: '2019-12-24T12:58:14.083Z'
-modified: '2020-10-15T13:40:22.676Z'
+modified: '2020-12-08T13:52:12.853Z'
 ---
 
 # spec-format-csv
@@ -17,12 +17,7 @@ modified: '2020-10-15T13:40:22.676Z'
 
 ## summary
 
-- 列表插件设计
-  - 列表类
-  - 图表类
-  - 地图类
-  - 搜索类
-
+- 
 ## dev
 
 - 

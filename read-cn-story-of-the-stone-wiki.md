@@ -1,8 +1,8 @@
 ---
 title: read-cn-story-of-the-stone-wiki
-tags: [read, 红楼梦]
+tags: [book, read, story-of-the-stone, 红楼梦]
 created: '2020-10-27T17:34:47.574Z'
-modified: '2020-10-27T17:38:36.040Z'
+modified: '2020-12-08T14:45:31.008Z'
 ---
 
 # read-cn-story-of-the-stone-wiki

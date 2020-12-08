@@ -1,8 +1,8 @@
 ---
 title: tool-dev-engineering
-tags: [engineering, tool]
+tags: [devtools, engineering, tool]
 created: '2020-10-05T08:14:22.192Z'
-modified: '2020-11-20T19:28:36.771Z'
+modified: '2020-12-08T14:06:06.985Z'
 ---
 
 # tool-dev-engineering
@@ -14,7 +14,7 @@ modified: '2020-11-20T19:28:36.771Z'
 - https://github.com/YMFE/yapi
   - /18.1kStar/Apache2/202010
   - 依赖mongodb、axios、json5、jsonwebtoken、koa、markdown-it、mockjs
-  - YApi是一个可本地部署的、打通前后端及QA的可视化接口管理平台
+  - YApi是dd一个可本地部署的、打通前后端及QA的可视化接口管理平台
   - features
     - 基于 Json5 和 Mockjs 定义接口返回数据的结构和文档
     - 扁平化权限设计

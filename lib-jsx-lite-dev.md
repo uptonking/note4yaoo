@@ -13,7 +13,7 @@ modified: '2020-12-05T07:57:08.525Z'
   - https://github.com/BuilderIO/jsx-lite
   - https://jsx-lite.builder.io/
   - Write components once, run everywhere. 
-  - Compiles jsx to Vue, React, Solid, Angular, Svelte, and Liquid. 
+  - compiles jsx to React, Vue, Angular, Svelte, Solid, web components, vanillajs
   - With JSX lite, you can import designs from Figma or Sketch and convert it to clean code for the framework of your choice. 
 
 - How does it work

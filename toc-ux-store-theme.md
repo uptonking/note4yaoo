@@ -1,8 +1,8 @@
 ---
 title: toc-ux-store-theme
-tags: [store, ux]
+tags: [app-store, ux]
 created: '2020-09-25T06:34:40.556Z'
-modified: '2020-10-22T13:03:57.454Z'
+modified: '2020-12-08T14:40:56.007Z'
 ---
 
 # toc-ux-store-theme
