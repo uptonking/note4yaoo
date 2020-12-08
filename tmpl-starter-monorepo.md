@@ -1,6 +1,6 @@
 ---
 title: tmpl-starter-monorepo
-tags: [engineering, quickstart, template]
+tags: [engineering, starter]
 created: '2020-11-24T10:42:09.474Z'
 modified: '2020-12-08T13:53:36.730Z'
 ---

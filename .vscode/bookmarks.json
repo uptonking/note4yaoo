@@ -40,25 +40,15 @@
 		]
 	},
 	{
-		"path": "$ROOTPATH$/note-components-catalog.md",
-		"bookmarks": [
-			{
-				"line": 87,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/draft-pastebin-pieces.md",
-		"bookmarks": [
-			{
-				"line": 11,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
+    "path": "$ROOTPATH$/draft-pastebin-pieces.md",
+    "bookmarks": [
+      {
+        "line": 11,
+        "column": 0,
+        "label": ""
+      }
+    ]
+  },
 	{
 		"path": "$ROOTPATH$/log-faq-zhihu.md",
 		"bookmarks": [

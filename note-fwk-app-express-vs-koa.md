@@ -17,6 +17,24 @@ modified: '2020-12-08T13:29:27.651Z'
 
 ## koa vs express
 
+- [多维度分析 Express、Koa 之间的区别](https://zhuanlan.zhihu.com/p/115339314)
+  - 本文从 Handler 处理方式、中间件执行机制的实现、响应机制三个维度来对 Express、Koa 做了比较，
+    - 通常都会说 Koa 是洋葱模型，这重点在于中间件的设计。
+    - 但是按照上面的分析，会发现 Express 也是类似的，
+    - 不同的是Express 中间件机制使用了 Callback 实现，这样如果出现异步则可能会使你在执行顺序上感到困惑，因此如果我们想做接口耗时统计、错误处理 Koa 的这种中间件模式处理起来更方便些。
+  - 最后一点响应机制也很重要，Koa 不是立即响应，是整个中间件处理完成在最外层进行了响应，而 Express 则是立即响应。
+
+- [Express和Koa2的区别](https://segmentfault.com/a/1190000022536921)
+- 用法的区别
+  - Express是基于回调，也是node中最常见的Error-First的模式（第一个参数是error对象）
+  - Koa是使用的号称异步终极解决方案的Async/Await，也就是基于Promise，使用Try-Catch来捕获错误
+- 中间件的区别
+  - Express的中间件是线性模型
+  - Koa的中间件是洋葱模型（聊一聊KOA的洋葱模型）
+- 集成度
+  - Express自带了Router和Static的中间件
+  - Koa需要自行安装Router和Static的中间件
+
 - koa-pros
   - Generator Support
     - This makes the code more manageable
@@ -93,6 +111,36 @@ modified: '2020-12-08T13:29:27.651Z'
  - Either is fine. Express is still more popular. 
    - Use koa if you like writing “onion” style middleware
 
+- [reddit: Koa vs Express](https://www.reddit.com/r/node/comments/f7da6o/koa_vs_express_without_the_bs/)
+- I use Koa on a side projects and I ran into issues in three areas:
+  - Piping binary content through a response (generated PDF created by an external process, got it working just was a bit complicated and way more examples for Express).
+  - Using existing admin modules that plug into Express but are not easy or but possible to get working on Koa. Example is say Arena queue admin UI (**). Ended up spinning up a separate admin Express instance on another port as a quick workaround.
+  - Not really Koa but made a choice on one of the router modules for it and got burned for a while (had to lock version) when that project changed their implantation breaking the way many had been hooking up routes. And that change was not on a major version bump 
+
+## thread-express-koa
+
+- What's your favourite framework for creating APIs in Node
+  - https://twitter.com/mrflamez_/status/1299852011513565186
+  - for JS it has to be adonis or nest. for setting up a quick POC though it's always express or koa
+
+- Which is the Optimal Node Framework: Express.js, Koa.js or Sails.js?
+  - https://twitter.com/JavaScriptDaily/status/908639055163912192
+  - I love KoaJs, but I admit I lack experience with any of the others
+
+- why are you still using express instead of Koa?(201911)
+  - https://twitter.com/sseraphini/status/1200161578701803520
+  - Express has a larger ecosystem
+    - Many libs build on top of express (graphql-yoga, apollo-server, etc)
+  - i use both, sometimes i only need a sequential middleware stack, sometimes i need to crawl back up the stack. I’d say express is simpler especially for new devs
+  - I recently migrated all my services from Koa back to express.js. 
+    - As others have pointed out: community size. 
+    - Koa itself might be maintained, but there are a lot of poorly supported packages at the edges of the dependency tree/ plugins.
+
 ## ref
 
+- [Bulletproof node.js project architecture ](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
+  - https://github.com/santiq/bulletproof-nodejs
+  - Express.js is great frameworks for making a node.js REST APIs however it doesn't give you any clue on how to organizing your node.js project.
+  - 3 Layer architecture: controller, service, dao
 - [What's the Node framework landscape like?](https://dev.to/ben/what-s-the-node-framework-landscape-like-5d5f/comments)
+- [Hapi vs Koa vs Express](https://www.section.io/engineering-education/hapi-vs-koa-vs-express/)

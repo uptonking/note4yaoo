@@ -1,6 +1,6 @@
 ---
 title: toc-app-demo-examples
-tags: [app, examples]
+tags: [app, examples, starter]
 created: '2020-09-25T07:50:19.733Z'
 modified: '2020-10-22T13:02:56.929Z'
 ---
