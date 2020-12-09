@@ -1,8 +1,8 @@
 ---
 title: note-fwk-app-node
-tags: [framework]
+tags: [framework, node]
 created: '2020-12-08T18:43:22.473Z'
-modified: '2020-12-08T18:43:59.247Z'
+modified: '2020-12-09T13:51:38.769Z'
 ---
 
 # note-fwk-app-node
@@ -10,7 +10,7 @@ modified: '2020-12-08T18:43:59.247Z'
 ## guide
 
 - node在js体系下标准和新技术发展非常快，框架的周期大多不长
-  - 可选框架太多express, koa, nestjs, egg.js, hapi, fastify
+  - 可选框架太多express, koa, nestjs, egg.js, midway, hapi, fastify
   - node的挑战者deno也在快速发展
 - java spring成熟稳定，从200210维护至今，适合计划长期运行的企业级项目
   - spring几乎一家独大，不用纠结选择其他框架
@@ -40,3 +40,17 @@ modified: '2020-12-08T18:43:59.247Z'
     - 阿里的egg.js则是在koa的基础上做了一层很好的面向大型企业级应用的框架封装，现在也有了非常好的TS特性支持。
     - egg.js更多的是按照洋葱模型的开发方式，和AOP编程还是有点区别的。
     - 中小型项目推荐egg.js，上手快，概念易懂；大型项目不妨试试NEST.js+typeorm
+
+## ref
+
+- [NestJS is unnecessarily complex](https://www.reddit.com/r/node/comments/bmfvf6/nestjs_is_unnecessarily_complex/)
+  - Nest is an opinionated framework, Just like angular
+- [Future proof service with Express or Nestjs?](https://www.reddit.com/r/node/comments/cejxyn/future_proof_service_with_express_or_nestjs/)
+  - If you're coming from the Java world, Nest will feel very at home with how it uses DI and IoC principles similar to Spring; 
+  - after all, Nest was inspired by Angular and Angular was inspired by Java. 
+  - Nest uses Express under the hood by default, but it can be set up to use Fastify instead 
+  - all Express middleware is compatible with Nest 
+  - Nest is just a collection of package (express, passport, typeORM, and others...) tied up with a non standard syntax.
+- [nestjs vs plain express performance](https://stackoverflow.com/questions/47733390/nestjs-vs-plain-express-performance)
+  - At 20200317, Nest + FastifyAdapter is now almost 2 times faster than express.
+- [NestJS - The missing piece to easily develop full-stack TypeScript web applications](https://dev.to/mokkapps/nestjs-the-missing-piece-to-easily-develop-full-stack-typescript-web-applications-34ga)

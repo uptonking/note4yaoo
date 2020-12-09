@@ -1,6 +1,6 @@
 ---
 title: note-fwk-app-express-vs-koa
-tags: [express, framework, koa]
+tags: [comparison, express, framework, koa]
 created: '2020-12-08T09:38:21.479Z'
 modified: '2020-12-08T13:29:27.651Z'
 ---
