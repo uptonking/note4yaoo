@@ -62,3 +62,7 @@ modified: '2020-11-03T06:56:53.961Z'
 
 - https://github.com/AlexGustafsson/threes
   - Easily create avatars from a username - Avatar as a Service
+
+- https://github.com/moroshko/rxviz
+  - RxViz simply visualizes a given Observable. Your JavaScript code will be evaluated, and, if the last expression is an Observable, a nice animated visualization will appear.
+  - RxViz doesn't rely on the internals of RxJS

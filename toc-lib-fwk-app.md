@@ -92,6 +92,9 @@ modified: '2020-12-09T09:35:54.987Z'
 
 ## more-app-framework
 
+- https://github.com/marblejs/marble
+  - functional reactive Node.js framework for building server-side applications, based on TypeScript and RxJS.
+
 - https://github.com/reframejs/wildcard-api
   - Wildcard is a JavaScript library to create an API between your Node.js backend and your browser frontend.
   - With Wildcard, creating an API endpoint is as easy as creating a JavaScript function.

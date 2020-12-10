@@ -27,6 +27,10 @@ modified: '2020-11-02T19:13:04.103Z'
 - https://github.com/jshjohnson/Choices
   - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
   - 依赖redux、fuse.js(fuzzy-search in js)
+- https://github.com/redux-observable/redux-observable
+  - RxJS-based middleware for Redux. 
+  - Compose and cancel async actions to create side effects and more.
+
 
 ## redux-repos
 

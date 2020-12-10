@@ -23,6 +23,7 @@ modified: '2020-11-13T07:37:47.171Z'
 - https://github.com/cyclejs/cyclejs
   - /9.8kStar/MIT/202009/ts
   - A functional and reactive JavaScript framework for predictable code
+  - @cycle/state依赖rxjs
 - https://github.com/staltz/xstream
   - /2.2kStar/MIT/202010/ts
   - An extremely intuitive, small, and fast functional reactive stream library for JavaScript
