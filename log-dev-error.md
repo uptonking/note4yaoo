@@ -12,10 +12,17 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- ide不停的提示异常
+  - Definition for rule '@typescript-eslint/interface-name-prefix' was not found
+  - Definition for rule '@typescript-eslint/no-duplicate-imports' was not found.
+  - 重启ide后，魔法般地消失了
+  - 注意检查rule是否已经deprecate
+
 - git push error
   - git push origin HEAD:main
 
 ``` 
+
 error: src refspec main does not match any
 error: failed to push some refs to 'git@github.com:
 ```

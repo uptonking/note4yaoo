@@ -16,7 +16,7 @@ modified: '2020-11-02T08:29:11.847Z'
   - **单一数据源**
     - The global state of your application is stored in an object tree within a single store.
     - state可序列化、易调试、易实现redo/undo
-  - **只读状态**
+  - **只读状态，更新发action**
     - The only way to change the read-only state is to emit an action, an object describing what happened.
     - 视图交互和网络io的数据都只能发出更新状态的指令
     - Because all changes are centralized and happen one by one in a strict order, there are no subtle race conditions to watch out for.

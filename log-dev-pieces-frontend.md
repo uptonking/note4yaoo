@@ -12,11 +12,13 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
-- ide不停的提示异常
-  - Definition for rule '@typescript-eslint/interface-name-prefix' was not found
-  - Definition for rule '@typescript-eslint/no-duplicate-imports' was not found.
-  - 重启ide后，魔法般地消失了
-  - 注意检查rule是否已经deprecate
+- A "side effect" is anything that affects something outside the scope of the function being executed. 
+  - Examples of side effects in react are
+    - Data Fetching
+    - Updating the DOM (Document Object Model)
+    - Registering/Deregistering event listeners
+  - ref
+    - [react useEffect usage](https://twitter.com/_estheragbaje/status/1334937303442202628)
 
 - So many `.filter(Boolean)`'s, one of my favorite JS hacks. Surely there's a better minification of that.
   - I'd think filter(x=>x) would work, right? Since filter() just cares about truthiness?

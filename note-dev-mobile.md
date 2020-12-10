@@ -16,6 +16,8 @@ modified: '2020-07-14T09:32:18.390Z'
   - apicloud
   - uni-app/dcloud
     - 开发一次，编译到10个平台
+- 小程序
+  - mpvue(deprecated)
 
 ## features
 

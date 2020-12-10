@@ -43,6 +43,35 @@ modified: '2020-11-02T05:19:40.469Z'
     - In the DOM, there is an error message, so the state is that there is an error message.
   - By separating out the data (there is an error message) from the effects (an error message is displayed on the screen), I found myself thinking about my code in a much more declarative way, which was extremely powerful as I learned more and took a a dive into functional programming.
 
+### [为什么要做状态管理](https://zhuanlan.zhihu.com/p/140073055)
+
+- 近年来，随着单页面应用的兴起，JavaScript 需要管理比任何时候都要多的状态，或者可以说是数据，这些状态可能包括服务器响应、缓存数据、本地生成尚未持久化到服务器的数据，也包括 UI 状态，如激活的路由，被选中的标签，是否显示加载动效或者分页器等等
+- 就是把业务的信息渲染出来，并进行人机交互，返回给服务端，这是前端技术解决的核心问题
+- 几乎所有的 web 系统都不会把用户的一些数据和系统的状态维护在客户端，例如用户的会员信息
+- 现在的状态管理已经成为了前端开发技术栈的一个主题
+  - 数据流的方向性管理，如 Flux
+  - 系统状态的框架性工具管理，例如 Redux，Mobx
+  - 组件生命周期内的状态管理，例如在 React 中使用 setState 或者 hooks
+- 现在前端开发谈及状态管理，其实就是指的是像 Redux 这样的东西，用单一数据流的思想指导整个系统，并把状态存储到特定的地方，在 UI 组件层通过一些选择器把需要组件取出，渲染到 UI 上。
+- 状态管理的工具库并不仅仅有 Redux，像 Mobx，Vuex 等，都是十分优秀的库，思想也大抵相似。
+  - 像 Angular 技术栈，有人会通过 Angular Service 这个载体，利用 Rxjs 做简单的状态管理，也有亮点
+  - 状态管理设计这个事情并不需要囿于框架和工具库，甚至在工具库中也可以有自己的玩法。
+- 好的状态管理应该做到 UI 层独立，并让状态管理的逻辑尽量少侵入到 UI 层
+  - 除了 UI 层，也应该对那些核心逻辑进行建模和分层，维护双核心。
+  - 不过，除了一些富应用（例如思维导图应用，drawio 一样的工具），我十分不建议在前端放过多的领域/业务逻辑。
+- 单一数据源要求客户端应用的关键数据都要从同一个地方获取，而单向数据流要求应用内状态管理的参与者都要按照一条流向来获取数据和发出动作，不允许双向交换数据
+  - 单一数据源保证了 UI 渲染的单纯性和可预测性，只需要对单一来源的数据做出响应，来什么样的数据就通过可以预测的数据来转换 UI
+  - 单向数据流通过限制数据和动作的流向令数据可以进行追溯，可以实现一些日志打印，热加载，时间旅行，同构应用等功能，另一个作用是在 UI 层对状态变更进行控制反转(Inversion of Control)，从而实现解耦的目的。
+- 状态管理的好处
+  - 能有效分离 UI 层和数据处理层
+  - 帮助前端应用结构化数据
+  - 有效控制状态的变化
+  - 处理同步与异步
+  - 实现一些日志打印，热加载，时间旅行，同构应用等功能
+- 状态管理也有缺点
+  - 就是代码会变得更复杂
+    - 这一点并不完全是缺点，当一个应用业务用例和代码量不断上升的时候，代码不可能维持简单
+
 ### [Write your own javascript state management library](https://medium.com/swlh/write-your-own-javascript-state-management-library-3687d3c09aae)
 
 - State management is basically a two-way path management: 
@@ -148,7 +177,7 @@ store.setState({ b: 1 });
   - So we’ll try to make another type of implementation. 
   - where subscribers have to inform in which part of the state they’re interested in.
 - In the available solutions in the market, there’s one that implements this kind of solution the most easy way (IMHO): React-redux `connect` method.
-  - the connect method first parameter,    `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
+  - the connect method first parameter,       `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
   - This way the connect method knows if it must update the component’s props or not.
 - We can do the same in our little state management library. 
   - Whenever someone wants to subscribe to the state changes, it will pass the callback function and other function similar to the mapStateToProps. 

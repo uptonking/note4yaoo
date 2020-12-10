@@ -49,5 +49,7 @@ modified: '2020-12-08T13:33:48.900Z'
   - TeroyJS works silently behind the scenes with the power of JavaScript Proxies 
     - and will only update the necessary DOM-components on state changes. 
   - There's no virtual DOM (like in React), and the speed of TeroyJS is not limited by thousands of line with code.
+  - https://www.reddit.com/r/javascript/comments/gaiqpb/ive_tried_to_create_the_tiniest_statebased/
+    - it looks like it overwrites the old HTML entirely on an update? That might problematic once you get into forms (e.g. toggling a class on the input as the user types).
 - https://github.com/kieranbarker/guess-the-color
   - This project was inspired by @clairy_charles' color game.

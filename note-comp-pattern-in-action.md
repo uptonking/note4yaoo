@@ -12,8 +12,8 @@ modified: '2020-12-08T13:35:53.678Z'
 - 公共api/variant
   - borderless
     - 部分组件提供无边框的版本，如modal
-  - 也可考虑实现成dark mode的形式
-  - scalable
+  - dark mode形式的组件
+  - scalable，如列表变modal
 
 - logo: green plum
 - design-system-tokens

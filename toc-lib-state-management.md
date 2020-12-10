@@ -14,7 +14,7 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://redux.js.org/
   - Predictable state container for JavaScript apps.
   - 源码简单，插件丰富，插件有时会导致状态管理变得复杂
-- mobx /MIT/22.1kStar/202007/ts/响应式数据流
+- mobx /MIT/22.1kStar/202007/ts/响应式数据流/NoDeps
   - https://github.com/mobxjs/mobx
   - https://mobx.js.org/README.html
   - MobX is a battle tested library that makes state management simple and scalable by transparently applying functional reactive programming (TFRP).
