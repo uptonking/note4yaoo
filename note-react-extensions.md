@@ -7,7 +7,7 @@ modified: '2020-11-19T12:44:05.442Z'
 
 # note-react-extensions
 
-## quick-dev
+## starter-boilerplate
 
 - create-react-app creates apps with one command and no build config
   - React, JSX, ES6(最新语法), TypeScript and Flow syntax support.

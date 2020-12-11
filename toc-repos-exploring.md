@@ -9,12 +9,15 @@ modified: '2020-11-03T06:55:09.225Z'
 
 ## collection
 
-- https://github.com/microsoft/tsyringe
-  - Lightweight dependency injection container for JavaScript/TypeScript
-  - ts-ioc
-    - https://github.com/thiagobustamante/typescript-ioc
-    - https://github.com/inversify/InversifyJS
-    - https://github.com/typestack/typedi
+- ts-ioc
+  - https://github.com/microsoft/tsyringe
+    - Lightweight dependency injection container for JavaScript/TypeScript
+  - https://github.com/inversify/InversifyJS
+    - ioc container for JavaScript & Node.js apps powered by TypeScript.
+    - An IoC container uses a class constructor to identify and inject its dependencies. 
+    - InversifyJS has a friendly API and encourages the usage of the best OOP and IoC practices.
+  - https://github.com/thiagobustamante/typescript-ioc
+  - https://github.com/typestack/typedi
 
 - https://github.com/catalinmiron/react-typical
   - Animated typing based on awesome typical library

@@ -319,7 +319,7 @@ modified: '2020-11-03T06:55:24.180Z'
   - /11.4kStar/NoChargeLic/202008
   - Animate CSS, SVG, canvas, React, Vue, WebGL, colors, strings, motion paths, generic objects
 - https://github.com/krisk/Fuse
-  - Lightweight fuzzy-search, in JavaScript
+  - a lightweight fuzzy-search, in JS, with zero dependencies.
 - https://github.com/markdown-it/markdown-it
   - Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins 
 - https://github.com/mdx-js/mdx

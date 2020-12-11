@@ -36,7 +36,7 @@ modified: '2020-10-22T06:51:07.421Z'
   - /7kStar/MIT/202008
   - The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters
 
-## local-search
+## search-js
 
 - lunr.js /MIT/7.1kStar/202008
   - https://github.com/olivernn/lunr.js
@@ -45,3 +45,9 @@ modified: '2020-10-22T06:51:07.421Z'
   - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
   - It saves adding extra, compacted services on the server. 
   - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
+
+- https://github.com/krisk/Fuse
+  - a lightweight fuzzy-search, in JS, with zero dependencies.
+- https://github.com/lucaong/minisearch
+  - a tiny but powerful in-memory fulltext search engine written in JavaScript. 
+  - It is respectful of resources, and it can comfortably run both in Node and in the browser.

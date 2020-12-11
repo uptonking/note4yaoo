@@ -21,3 +21,9 @@ modified: '2020-10-22T13:11:04.726Z'
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
+
+## more-database
+
+- https://github.com/lealone/Lealone
+  - /1.6kStar/Apache2+H2MPL2/202012/java
+  - 兼具RDBMS、NoSQL优点的面向OLTP场景的异步化NewSQL单机与分布式关系数据库

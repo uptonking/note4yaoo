@@ -18,6 +18,13 @@ modified: '2020-12-08T14:07:22.783Z'
 - No classes, hooks, proxies or template languages are needed.
 - Crank provides first-class support for promises. 
 - The core renderer can be extended to target alternative environments such as WebGL libraries, terminals, smartphones or smart TVs.
+- [如何看待 Crank 这个前端框架？](https://www.zhihu.com/question/388457689)
+  - 这个框架的源码实现，很一般，基本的更新算法都木有
+  - 组件的异步处理方式，无论是 react 的 Suspense 还是 crank 的 async generator，甚至是 vue3 的 suspense（async setup）
+    - 都是对异步组件的处理方式，Suspense 之所以更加讨人欢喜不是因为它找到了一个安全的异步处理方式，而是它带来的一种【调度理念】
+  - generator 是不好的异步方案
+  - 违背了不可变和纯函数的原则
+
 
 ### DataFormsJS
 
