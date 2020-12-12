@@ -11,6 +11,10 @@ modified: '2020-09-26T12:52:33.493Z'
 
 ## dilemma
 
+- 哪些业务计算相关的代码适合放在前端，哪些适合放在服务端
+  - 读写文件：文本、图片、文档doc、表格
+  - 图表绘制
+
 - [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
   - decorator提案到现在为止已有三版草案，尤其第三版是对前两版的推倒重来
   - 前两版是类似于 python decorator 的语义，第三版是静态语义，类似于弱化的宏
@@ -25,6 +29,9 @@ modified: '2020-09-26T12:52:33.493Z'
     - Angular是通过装饰器来模拟了注解的功能
 
 ## latest-web
+
+- jsx-lite
+  - compiles jsx to React, Vue, Angular, Svelte, Solid, web component, vanillajs
 
 - jspm
   - jspm provides a module CDN allowing any package from npm to be directly loaded in the browser and other JS environments as a fully optimized native JavaScript module.
@@ -45,14 +52,6 @@ modified: '2020-09-26T12:52:33.493Z'
   })();
 </script>
 ```
-
-- jsx-lite
-  - compiles jsx to React, Vue, Angular, Svelte, Solid, web component, vanillajs
-
-- [2020年前端最火的技术是什么](https://www.zhihu.com/question/365588457/answers/updated)
-- As browsers are adding support for debugging the CSSOM, there should be no need to resort to slower DOM-based solutions.
-- Right now, bundling JS is required for loading performance, but practically kills caching...
-  - WebBundles will enable us to have both!! 
 
 ## ui-framework
 

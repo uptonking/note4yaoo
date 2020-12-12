@@ -16,6 +16,10 @@ modified: '2020-11-03T06:56:31.090Z'
   - Programming Language, Operating System, Search Engine
   - Text Editor(c/cpp/python/ruby)
 
+- https://github.com/iampava/steal-like-a-dev
+  - Tutorial series focused on implementing from scratch popular packages/libraries.
+  - create-react-app, react-router, react-redux, redux-thunk, styled-components
+
 ## web
 
 - ### [simple-virtual-dom](https://github.com/livoras/simple-virtual-dom)

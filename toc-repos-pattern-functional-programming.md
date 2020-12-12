@@ -68,6 +68,8 @@ modified: '2020-11-13T07:37:47.171Z'
   - The simplest way to create web components from plain objects and pure functions! 
 - https://github.com/wtnbass/fuco
   - Functional Component like React, but for Web Components.
+- https://github.com/clebert/batis
+  - A JavaScript library for reactive programming using React-like Hooks
 
 - https://github.com/funkia/list
   - An immutable list with unmatched performance and a comprehensive functional API.

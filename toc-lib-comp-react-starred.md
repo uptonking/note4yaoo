@@ -94,6 +94,9 @@ modified: '2020-11-13T07:31:27.113Z'
 - https://github.com/civiccc/react-waypoint
   - A React component to execute a function whenever you scroll to an element.
 
+- https://github.com/seeden/react-facebook
+  - Facebook components like a Login button, Like, Share, Chat, Comments, Page or Embedded Post
+
 ## datetime
 
 - https://github.com/wojtekmaj/react-date-picker

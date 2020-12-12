@@ -49,6 +49,10 @@ modified: '2020-11-19T12:43:25.788Z'
     - and generates a plain JavaScript code that should have the same DOM result as the equivalent React code. 
     - Note that all of this is done in build time
 
+- https://github.com/acornjs/acorn-jsx
+  - It was created as an experimental alternative, faster React.js JSX parser. 
+  - This is plugin for Acorn - a tiny, fast JavaScript parser, written completely in JavaScript
+
 ## build-babel-webpack
 
 ## react-fwk-conversion

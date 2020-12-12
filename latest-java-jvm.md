@@ -7,6 +7,10 @@ modified: '2020-09-26T12:52:47.994Z'
 
 # latest-java-jvm
 
+## latest-jvm
+
+- [JetBrains 将 Skia 接入 Java 的 Skija 项目](https://www.zhihu.com/question/430884791/answers/updated)
+
 ## openjdk
 
 - 201909-jdk 13 is released
@@ -49,3 +53,12 @@ modified: '2020-09-26T12:52:47.994Z'
 
 </html>
 ```
+
+## JVM alternatives to JS
+
+- [JVM alternatives to JS](https://github.com/renatoathaydes/jvm-alternatives-to-js)
+  - CheerpJ
+  - GWT
+  - JSweet
+  - TeaVM
+  - Vaadin Flow

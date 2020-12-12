@@ -75,6 +75,7 @@ modified: '2020-12-09T09:35:54.987Z'
   - Egg.js 是一个基于 JavaScript 开发的框架，没有原生提供 TypeScript 的支持
   - 即便是使用了 egg-ts-helper 能够写出 ts 代码，各种三方库的支持也不受控制
   - [从 Egg.js 到 NestJS，爱码客后端选型之路](https://zhuanlan.zhihu.com/p/268159450)
+
 - https://github.com/midwayjs/midway
   - 依赖egg2
   - Midway是一个适用于构建 Serverless 服务，传统应用、微服务，小程序后端的 Node.js 框架。
@@ -107,10 +108,11 @@ modified: '2020-12-09T09:35:54.987Z'
   - 开启装饰器配置，ts 环境下引入即用
 
 - https://github.com/blitz-js/blitz
-  - 依赖react、nextjs、
+  - 依赖react、nextjs、passport、react-query、jsonwebtoken
   - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
   - “Zero-API” data layer lets you import server code directly into your React components instead of having to manually add API endpoints and do client-side fetching and caching.
   - Client-side rendering, Server-side rendering, and fully static pages all in the same app
+  - Database/ORM agnostic, but Prisma 2 is default
   - 架构设计
     - 前端next(react)，后端prisma2，没有中间的graphql！！
     - 作者自己实现了两个神奇的 useQuery useMutation函数，作为前后端的桥梁。
@@ -121,6 +123,7 @@ modified: '2020-12-09T09:35:54.987Z'
     - 也提供了一套开箱即用的auth功能，以及自动给你配好了eslint prettier husky jest tsconfig等等这些每个项目都要重复搞一遍的东西。
   - 缺点
     - 一个不能算缺点的缺点，就是它是基于next/react的
+    - 后端api不方便扩展到其他端，如android、ios
   - 结论是，期待大佬，把blitz这个思路放到vue生态里来做个新全栈框架
 
 - https://github.com/redwoodjs/redwood

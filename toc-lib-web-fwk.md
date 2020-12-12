@@ -25,7 +25,6 @@ modified: '2020-12-08T14:07:22.783Z'
   - generator 是不好的异步方案
   - 违背了不可变和纯函数的原则
 
-
 ### DataFormsJS
 
 - DataFormsJS /80Star/MIT/202011/js
@@ -67,7 +66,16 @@ const CountingComponent = () => {
 };
 ```
 
+### Hyperapp
+
+- https://github.com/jorgebucaran/hyperapp
+  - /18.2kStar/MIT/202012/js
+  - The tiny framework for building hypertext applications
+
 ## web-ui-framework
+
+- https://github.com/jaredpalmer/after.js
+  - Next.js-like framework for server-rendered React apps built with React Router
 
 - https://github.com/standard-components/standard-components
   - /inactive

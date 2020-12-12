@@ -14,8 +14,10 @@ modified: '2020-10-05T07:52:42.228Z'
 
 - 搜索
   - TODO
-    - 搜索使用js或ts的项目
-  - 搜索一个organization的仓库，可使用 `user:orgName` ，注意冒号后无空格
+  - 搜索使用js或ts的项目
+    - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
+    - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
+  - 搜索一个organization的仓库，可使用 `user/org:orgName` ，注意冒号后无空格
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
   - 按标签或主题搜索
   - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序

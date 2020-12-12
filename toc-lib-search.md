@@ -45,6 +45,11 @@ modified: '2020-10-22T06:51:07.421Z'
   - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
   - It saves adding extra, compacted services on the server. 
   - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
+- https://github.com/bvaughn/js-search
+  - /1.6kStar/MIT/202007/js/NoDeps
+  - Js Search began as a lightweight implementation of Lunr JS, offering runtime performance improvements and a smaller file size. 
+  - It has since expanded to include a rich feature set- supporting stemming, stop-words, and TF-IDF ranking.
+  - Js Search enables efficient client-side searches of JavaScript and JSON objects
 
 - https://github.com/krisk/Fuse
   - a lightweight fuzzy-search, in JS, with zero dependencies.

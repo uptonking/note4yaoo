@@ -198,6 +198,11 @@ modified: '2020-07-14T09:32:35.359Z'
   - Compatible with all normal Node.js packages
   - 基于Libui-node，Creates the native widgets using GTK3, Cocoa, or Windows API
 
+## kotlin
+
+- [如何看待Kotlin 桌面 UI Jetpack Compose for Desktop？](https://www.zhihu.com/question/430328747/answers/updated)
+  - JetBrains在Kotlin生态的推进上，经常东一榔头西一棒子。Kotlin for JVM, Javascript, Native 四面开花，很多开源项目做个demo或alpha版，就渐渐搁置了。
+
 ## qt
 
 ## native
