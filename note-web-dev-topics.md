@@ -51,6 +51,11 @@ modified: '2020-12-08T14:40:01.285Z'
   - next.js、razzle
   - 其他：beidou、react-server
 
+- JAMStack
+  - 最适合一些内容更新不太频繁的网站（比如新闻、电商、文档）
+  - 不适合Feeds流、聊天室、论坛、个性化推荐这样高度动态化的网站，以及邮箱、编辑器这样偏重型的Web应用。
+  - 是类似WordPress建站
+
 - [2020年的React Hooks生态](https://juejin.im/post/6861055676652158990)
   - router: react-router, hookrouter
   - state: redux, mobx, unstated-next, recoil, use-immer, dva

@@ -1,11 +1,11 @@
 ---
-title: toc-lib-router
-tags: [router, toc]
+title: toc-lib-web-router
+tags: [router, toc, web]
 created: '2020-12-10T20:41:35.691Z'
-modified: '2020-12-10T20:47:52.120Z'
+modified: '2020-12-12T18:59:54.950Z'
 ---
 
-# toc-lib-router
+# toc-lib-web-router
 
 - https://github.com/router5/router5
   - router5 is a framework and view library agnostic router.

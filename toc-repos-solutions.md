@@ -1,11 +1,11 @@
 ---
-title: toc-repos-solution
-tags: [repos, toc]
+title: toc-repos-solutions
+tags: [repos, solutions, toc]
 created: '2020-10-05T08:55:29.692Z'
-modified: '2020-12-08T14:40:34.621Z'
+modified: '2020-12-12T19:32:36.255Z'
 ---
 
-# toc-repos-solution
+# toc-repos-solutions
 
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询

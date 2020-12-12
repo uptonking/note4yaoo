@@ -1,14 +1,15 @@
 ---
-title: toc-lib-fwk-app
-tags: [framework, lib, toc]
+title: toc-lib-fwk-node
+tags: [framework, lib, node, toc]
 favorited: true
 created: '2020-12-08T17:47:09.255Z'
-modified: '2020-12-09T09:35:54.987Z'
+modified: '2020-12-12T19:00:53.053Z'
 ---
 
-# toc-lib-fwk-app
+# toc-lib-fwk-node
 
 - 公司里面的技术选型很难由自己决定
+- keyword: backend-for-frontend, spring-like, restful-api, node-framework
 
 ## spring-like
 
@@ -54,7 +55,7 @@ modified: '2020-12-09T09:35:54.987Z'
   - Managing Status with rxjs
   - 它是为了函数计算而生，但并非是一个函数计算的简单应用框架，它可以用来实现一个web服务器，也可以用来写写spa，甚至用来开发一个CLI
 - https://github.com/Odi-ts/Odi
-  - Based on declarative and imperative programming, inspired by ASP. NET / Spring
+  - Based on declarative and imperative programming, inspired by ASP/Spring (deprecated)
 
 - https://github.com/singhfulda/loopback4
   - nodejs spring like typescript to do project
@@ -64,12 +65,17 @@ modified: '2020-12-09T09:35:54.987Z'
 - https://github.com/linweiwei123/spring.js
   - deno framework like spring boot
 
-## popular
+## popular-node-framework
 
-- nest /32.4kStar/MIT/202012/ts
+- https://github.com/socketio/socket.io
+  - Realtime application framework (Node. JS server)
+
+- nestjs /32.4kStar/MIT/202012/ts
   - https://github.com/nestjs/nest
+  - core依赖reflect-metadata、rxjs6、websockets、express、axios
   - A progressive Node.js framework for building efficient and scalable server-side applications.
   - The architecture is heavily inspired by Angular.
+  - Under the hood, Nest makes use of Express, but also, provides compatibility with a wide range of other libraries, like e.g. Fastify, 
 
 - https://github.com/eggjs/egg
   - Egg.js 是一个基于 JavaScript 开发的框架，没有原生提供 TypeScript 的支持
@@ -108,7 +114,7 @@ modified: '2020-12-09T09:35:54.987Z'
   - 开启装饰器配置，ts 环境下引入即用
 
 - https://github.com/blitz-js/blitz
-  - 依赖react、nextjs、passport、react-query、jsonwebtoken
+  - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
   - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
   - “Zero-API” data layer lets you import server code directly into your React components instead of having to manually add API endpoints and do client-side fetching and caching.
   - Client-side rendering, Server-side rendering, and fully static pages all in the same app
@@ -156,7 +162,72 @@ modified: '2020-12-09T09:35:54.987Z'
     - 另外最重要的，目前还没有好的ts支持，前后端自动类型安全上暂时还是白瞎。
   - 结论是：不痛不痒，额外好处不大。
 
+- https://github.com/adonisjs/core
+  - Fullstack MVC framework for Node.js
+  - It takes care of much of the Web development hassles, offering you a clean and stable API to build Web apps and micro services.
+  - adonisjs是后端框架，和vue，angular等前端框架没有冲突，就是说，使用adonisjs做数据api，把json格式的数据发送给vue、angular等前端框架，或者小程序等，非常便捷。
+  - node版本的laravel，laravel中让人喜欢的orm的Eloquent ，在adonisjs中叫lucid，比laravel的代码量还少
+  - adonisjs默认返回json格式
+- https://github.com/varaljs/varal
+  - 在node上实现Laravel的编程思想与代码风格
+
+- https://github.com/TypedProject/tsed
+  - Ts. ED is a framework on top of Express/Koa to write your application with TypeScript (or ES6).
+  - It provides a lot of decorators and guideline to make your code more readable and less error-prone.
+- https://github.com/FoalTS/foal
+  - a Node.js framework for building HTTP APIs and Web applications with a rich interface (Angular/React/Vue).
+
+- https://github.com/xiongwilee/Gracejs
+  - A Nodejs BFF framework, build with koa2（基于koa2的标准前后端分离框架）
+- https://github.com/ablestack/nestjs-bff
+  - A full-stack TypeScript solution, and starter project. 
+  - Includes an API, CLI, and example client webapp.
+
+## rest-api
+
+- https://github.com/restify/node-restify
+  - 依赖mime、qs、http-signature、send(for streaming files)
+  - restify is a framework, utilizing connect style middleware for building REST APIs.
+  - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
+  - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
+
+- https://github.com/developit/express-es6-rest-api
+  - boilerplate for building REST APIs with ES6 and Express.
+- https://github.com/w3tecch/express-typescript-boilerplate
+  - RESTful API with NodeJs & TypeScript 
+- https://github.com/contiamo/restful-react
+  - declarative way of interacting with RESTful backends, featuring code-generation from Swagger and OpenAPI spec
+
+- https://github.com/parse-community/parse-server
+  - API server module for Node/Express
+  - an open source backend that can be deployed to any infrastructure that can run Node.js.
+- https://github.com/r-spacex/SpaceX-API
+  - Open Source REST API for rocket, core, capsule, pad, and launch data
+
+- https://github.com/nestjsx/crud
+  - RESTful APIs built with NestJs
+
 ## more-app-framework
+
+- https://github.com/strongloop/loopback
+  - Create dynamic end-to-end REST APIs with little or no coding.
+  - Access data from Oracle, MySQL, PostgreSQL, MS SQL Server, MongoDB, SOAP and other REST APIs.
+  - Easily create client apps using Android, iOS, and JavaScript SDKs.
+- https://github.com/strongloop/loopback-next
+  - LoopBack makes it easy to build modern applications that require complex integrations.
+  - loopback是三个功能的集合
+    - 基于Express 的web架构
+    - 结合Express提供便捷的RESTFul接入
+    - 提供一套ORM解决方案
+  - 优点
+    - 集成了 swagger，ORM，auth验证
+    - 接口自动生成。可以定制。
+  - 缺点
+    - 缺乏灵活性。针对性的业务逻辑难以改动。
+
+- https://github.com/ladjs/lad
+  - Lad is the best Node.js framework. 可替代express或koa
+  - Made by a former Express TC and Koa team member.
 
 - https://github.com/marblejs/marble
   - functional reactive Node.js framework for building server-side applications, based on TypeScript and RxJS.

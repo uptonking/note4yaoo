@@ -1,11 +1,11 @@
 ---
-title: toc-lib-comp-js-fwks
-tags: [components, lib, toc]
+title: toc-lib-comp-js-fwk
+tags: [components, framework, lib, toc]
 created: '2020-06-16T02:31:56.711Z'
-modified: '2020-12-08T14:07:14.802Z'
+modified: '2020-12-12T19:28:42.894Z'
 ---
 
-# toc-lib-comp-js-fwks
+# toc-lib-comp-js-fwk
 
 ## components-react 
 

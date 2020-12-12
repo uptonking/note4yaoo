@@ -74,8 +74,10 @@ const CountingComponent = () => {
 
 ## web-ui-framework
 
-- https://github.com/jaredpalmer/after.js
-  - Next.js-like framework for server-rendered React apps built with React Router
+- https://github.com/marko-js/marko
+  - A declarative, HTML-based language that makes building web apps fun
+  - Marko extends the HTML language to allow building modern applications in a declarative way.
+  - Among these extensions are conditionals, lists, state, and components
 
 - https://github.com/standard-components/standard-components
   - /inactive

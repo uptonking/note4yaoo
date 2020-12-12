@@ -81,6 +81,11 @@ modified: '2020-12-12T09:11:07.197Z'
   - /1.5kStar/MIT/202010/ts
   - Tiny React-like framework with Time slicing and Algebraic effects.
   - currently no support for the class-based Component API
+  - preact准确来说是 react15-like，你可以用它代替react来用，但是不存在【通过preact源码看react源码】
+    - preact的hooks实现，是借助数组实现的，而 react 是链表
+    - diff算法，preact 是 vdom 树，react 是 fiber 链，遍历不同，比对思路不同，effects 和 cleanups 都是不一样的
+    - concurrent 和 suspense这俩在 preact 里完全没有，他们通过 ric 和自己实现的 suspense，完全不是一个层面哈
+  - fre在源码层面，是可以和react对等的，包括我上面说的几个方面（链表，算法，concurrent，suspense），更适合作为【从fre源码看react源码】的样本
 
 - https://github.com/RubyLouvre/anu
   - /3.1kStar/MIT/202002/js
@@ -126,6 +131,9 @@ modified: '2020-12-12T09:11:07.197Z'
 - https://github.com/jussi-kalliokoski/react-no-jsx
   - react-no-jsx is a pure JS DSL to be used instead of JSX
   - It allows you to define your virtual DOM trees using a square bracket based syntax
+
+- https://github.com/alephjs/aleph.js
+  - The React Framework in Deno.
 
 ## ref
 

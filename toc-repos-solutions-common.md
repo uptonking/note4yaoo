@@ -1,11 +1,11 @@
 ---
-title: toc-lib-platform-common
-tags: [lib, platform, toc]
+title: toc-repos-solutions-common
+tags: [repos, solutions, toc]
 created: '2020-10-05T11:00:14.905Z'
-modified: '2020-10-22T06:51:01.018Z'
+modified: '2020-12-12T19:01:56.749Z'
 ---
 
-# toc-lib-platform-common
+# toc-repos-solutions-common
 
 ## devops
 
