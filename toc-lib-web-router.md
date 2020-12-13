@@ -9,6 +9,8 @@ modified: '2020-12-12T18:59:54.950Z'
 
 - https://github.com/router5/router5
   - router5 is a framework and view library agnostic router.
+  - view/state separation: router5 processes routing instructions and outputs state updates.
+  - universal: works client-side and server-side
 - https://github.com/visionmedia/page.js
   - Tiny Express-inspired client-side router.
 - https://github.com/kriasoft/universal-router

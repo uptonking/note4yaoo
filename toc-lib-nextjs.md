@@ -33,7 +33,7 @@ modified: '2020-12-12T19:29:51.981Z'
   - The TypeScript-ready, minimal router and middleware layer for Next.js
   - The smol method routing and middleware for Next.js (also works in micro or Node.js HTTP Server). Powered by trouter.
 
-## nextjs-examples4
+## nextjs-examples
 
 - https://github.com/vercel/commerce
   - The all-in-one starter kit for high-performance e-commerce sites. 
@@ -68,6 +68,7 @@ modified: '2020-12-12T19:29:51.981Z'
   - Next.js + Redux + styled-components + Express
 - https://github.com/pacocoursey/next-themes
   - Perfect Next.js dark mode in 2 lines of code.
+
 ## nextjs-extensions
 
 - https://github.com/nextauthjs/next-auth
@@ -78,4 +79,5 @@ modified: '2020-12-12T19:29:51.981Z'
   - automatically optimizes images used in next.js projects (jpeg, png, svg, webp and gif).
 - https://github.com/illinois/next-page-transitions
   - customizable page transitions for Next.js apps
+
 ## nextjs-repos

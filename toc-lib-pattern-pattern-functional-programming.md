@@ -1,11 +1,11 @@
 ---
-title: toc-repos-pattern-functional-programming
-tags: [functional-programming, pattern, repos, toc]
+title: toc-lib-pattern-pattern-functional-programming
+tags: [functional-programming, pattern, toc]
 created: '2020-11-02T19:13:11.667Z'
-modified: '2020-11-13T07:37:47.171Z'
+modified: '2020-12-13T14:37:27.760Z'
 ---
 
-# toc-repos-pattern-functional-programming
+# toc-lib-pattern-pattern-functional-programming
 
 ## popular
 
@@ -29,6 +29,8 @@ modified: '2020-11-13T07:37:47.171Z'
   - An extremely intuitive, small, and fast functional reactive stream library for JavaScript
   - Only 26 core operators and factories
   - Tailored for Cycle.js, or applications with limited use of subscribe
+- https://github.com/baconjs/bacon.js
+  - Functional reactive programming library for TypeScript and JavaScript
 
 - https://github.com/ramda/ramda
   - /19.7kStar/MIT/202010/js

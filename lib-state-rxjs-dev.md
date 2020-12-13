@@ -7,6 +7,15 @@ modified: '2020-12-10T10:03:14.191Z'
 
 # lib-state-rxjs-dev
 
+## guide
+
+- rxjs-usecase
+  - 实现观察者模式
+  - 状态管理，参考redux-observable
+  - libs
+    - angular2
+    - nestjs
+
 ## rxjs 7
 
 - RxJS 7 is based on callbags

@@ -14,3 +14,6 @@ modified: '2020-12-12T19:32:36.255Z'
 - https://github.com/wzhe06/ipdatabase
   - 二叉树快速搜索IP地址数据库
   - 数据源采用2015年广告协会制定的IP地址标准数据库，中国互联网广告行业统一采用的标准IP库。
+- https://github.com/soffchen/GeoIP2-CN
+  - 更小巧、更实时的中国大陆 GeoIP2 数据库及 IP 地址段，基于 chnroutes2
+  - 提供下载txt、mmdb

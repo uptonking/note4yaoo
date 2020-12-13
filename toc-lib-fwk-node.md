@@ -11,64 +11,7 @@ modified: '2020-12-12T19:00:53.053Z'
 - 公司里面的技术选型很难由自己决定
 - keyword: backend-for-frontend, spring-like, restful-api, node-framework
 
-## spring-like
-
-- rester-core /2Star/MIT/202012/ts/commits-700
-  - https://github.com/DevinDon/rester-core
-  - A TypeScript framework, like Spring Boot.
-  - 依赖reflect-metadata、typerom、mongodb、logger
-  - 示例服务使用的是node http模块
-- node-web-mvc /2Star/MIT/202011/ts/commits-200
-  - https://github.com/Beven91/node-web-mvc
-  - spring style web mvc framework for node
-  - 依赖reflect-metadata、nodejs-hmr
-  - node-web-mvc 默认支持三种启动模式
-    - node 通过http模块来启动服务
-    - express 通过express的中间件来附加服务
-    - koa 通过koa的中间件类附加服务
-  - 支持Controller 控制器、Route 路由映射、Arguments 参数提取、Response 返回内容、View 视图、Interceptor 拦截器、HttpMessageConverter 内容转换、热更新
-- easy-node-ioc /11Star/ISC/202010/ts
-  - https://github.com/chenkang084/easy-node-ioc
-  - Use Typescript's decorator implement auto injection just like Spring MVC.
-  - 用 Typescript 的装饰器实现依赖注入，就像我们使用 Spring MVC 框架一样，web 框架使用的是 Express。
-- https://github.com/AsherWang/koa-springboot
-  - springboot-like koa
-- https://github.com/naoki-tomita/summer
-  - A web framework like spring framework.
-- https://github.com/loon-project/loon
-  - Spring like framework build with Typescript
-  - https://github.com/bpcloud/bpframework
-  - /1Star/MIT/202011/ts
-  - Web framework like java springboot
-- https://github.com/t2ee/vader
-  - Koa Router in Typescript, Servlet-Like API
-
-- malagu /116Star/MIT/202012/ts
-  - https://github.com/cellbang/malagu
-  - core依赖reflect-metadata、inversify、rxjs、jexl、traverse
-  - a Serverless First, component-based, platform-independent, progressive application framework based on TypeScript.
-  - Spring Boot for TypeScript，可以认为是一个nodejs版本的spring boot
-  - Convention over configuration, zero configuration, out of the box
-  - Dependency injection
-  - Facet-oriented programming (AOP)
-  - Integrates with the popular ORM framework for declarative transaction
-  - Managing Status with rxjs
-  - 它是为了函数计算而生，但并非是一个函数计算的简单应用框架，它可以用来实现一个web服务器，也可以用来写写spa，甚至用来开发一个CLI
-- https://github.com/Odi-ts/Odi
-  - Based on declarative and imperative programming, inspired by ASP/Spring (deprecated)
-
-- https://github.com/singhfulda/loopback4
-  - nodejs spring like typescript to do project
-- https://github.com/webstyle/express-starter
-  - Express.js, TypeScript web application starter Like Spring Boot(Java)
-
-- https://github.com/linweiwei123/spring.js
-  - deno framework like spring boot
-
 ## popular-node-framework
-
-- https://github.com/socketio/socket.io
-  - Realtime application framework (Node. JS server)
 
 - nestjs /32.4kStar/MIT/202012/ts
   - https://github.com/nestjs/nest
@@ -77,12 +20,14 @@ modified: '2020-12-12T19:00:53.053Z'
   - The architecture is heavily inspired by Angular.
   - Under the hood, Nest makes use of Express, but also, provides compatibility with a wide range of other libraries, like e.g. Fastify, 
 
-- https://github.com/eggjs/egg
-  - Egg.js 是一个基于 JavaScript 开发的框架，没有原生提供 TypeScript 的支持
+- egg /16.5kStar/MIT/202011/js
+  - https://github.com/eggjs/egg
+  - https://github.com/eggjs/egg-core
+  - 是一个基于JavaScript开发的框架，没有原生提供 TypeScript 的支持
   - 即便是使用了 egg-ts-helper 能够写出 ts 代码，各种三方库的支持也不受控制
   - [从 Egg.js 到 NestJS，爱码客后端选型之路](https://zhuanlan.zhihu.com/p/268159450)
-
-- https://github.com/midwayjs/midway
+- midway /3.4kStar/MIT/202012/ts
+  - https://github.com/midwayjs/midway
   - 依赖egg2
   - Midway是一个适用于构建 Serverless 服务，传统应用、微服务，小程序后端的 Node.js 框架。
   - 当前的函数，可以当做一个小容器，原来我们要写一个完整的应用来承载能力，现在只需要写中间的逻辑部分，以及考虑输入和输出的数据。
@@ -104,14 +49,23 @@ modified: '2020-12-12T19:00:53.053Z'
     - js本身就提供了原生的object，typescript也提供了很好的对原生object（的各种变形）进行各种typing的能力，
     - 所以实在是没必要在后端和数据库接口的地方搞出一堆数据model的class来。对比一下typeorm，prisma实现自动类型化的方式堪称js典范
 
+- https://github.com/FoalTS/foal
+  - a Node.js framework for building HTTP APIs and Web applications with a rich interface(Angular/React/Vue).
+  - The authorization system, database migrations, development tools or even hashing of passwords are just the tip of the iceberg. 
+  - But FoalTS does not pretend to be a closed framework. 
+  - You can still import and use your favorite libraries from the rich ecosystem of Node.js.
+- https://github.com/TypedProject/tsed
+  - a framework on top of Express/Koa to write your application with TypeScript
+  - It provides a lot of decorators and guideline to make your code more readable and less error-prone.
+- https://github.com/socketio/socket.io
+  - Realtime application framework (Node. JS server)
 - https://github.com/fastify/fastify
   - Fast and low overhead web framework, for Node.js
   - inspired by Hapi and Express
-
 - https://github.com/darukjs/daruk
-  - 基于 Koa2，使用 Typescript 开发的轻量级 web 框架
+  - 基于Koa2，使用Typescript开发的轻量级web框架
   - 使用 inversifyjs 的IoC容器管理依赖，让开发者享受最佳的OOP和IoC的编程体验。
-  - 开启装饰器配置，ts 环境下引入即用
+  - 开启装饰器配置，ts环境下引入即用
 
 - https://github.com/blitz-js/blitz
   - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
@@ -121,7 +75,7 @@ modified: '2020-12-12T19:00:53.053Z'
   - Database/ORM agnostic, but Prisma 2 is default
   - 架构设计
     - 前端next(react)，后端prisma2，没有中间的graphql！！
-    - 作者自己实现了两个神奇的 useQuery useMutation函数，作为前后端的桥梁。
+    - 作者自己实现了两个神奇的useQuery useMutation函数，作为前后端的桥梁
     - 构建时，把应该属于后端的代码抽取到后端；
     - 开发时，则视为一个整体，整个app的最终类型定义来源就是prisma的schema，利用prisma自动生成的typscript类型定义，一路从后端代码到前端代码，共享这些类型定义。
   - 优点
@@ -171,41 +125,9 @@ modified: '2020-12-12T19:00:53.053Z'
 - https://github.com/varaljs/varal
   - 在node上实现Laravel的编程思想与代码风格
 
-- https://github.com/TypedProject/tsed
-  - Ts. ED is a framework on top of Express/Koa to write your application with TypeScript (or ES6).
-  - It provides a lot of decorators and guideline to make your code more readable and less error-prone.
-- https://github.com/FoalTS/foal
-  - a Node.js framework for building HTTP APIs and Web applications with a rich interface (Angular/React/Vue).
-
 - https://github.com/xiongwilee/Gracejs
   - A Nodejs BFF framework, build with koa2（基于koa2的标准前后端分离框架）
-- https://github.com/ablestack/nestjs-bff
-  - A full-stack TypeScript solution, and starter project. 
-  - Includes an API, CLI, and example client webapp.
 
-## rest-api
-
-- https://github.com/restify/node-restify
-  - 依赖mime、qs、http-signature、send(for streaming files)
-  - restify is a framework, utilizing connect style middleware for building REST APIs.
-  - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
-  - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
-
-- https://github.com/developit/express-es6-rest-api
-  - boilerplate for building REST APIs with ES6 and Express.
-- https://github.com/w3tecch/express-typescript-boilerplate
-  - RESTful API with NodeJs & TypeScript 
-- https://github.com/contiamo/restful-react
-  - declarative way of interacting with RESTful backends, featuring code-generation from Swagger and OpenAPI spec
-
-- https://github.com/parse-community/parse-server
-  - API server module for Node/Express
-  - an open source backend that can be deployed to any infrastructure that can run Node.js.
-- https://github.com/r-spacex/SpaceX-API
-  - Open Source REST API for rocket, core, capsule, pad, and launch data
-
-- https://github.com/nestjsx/crud
-  - RESTful APIs built with NestJs
 
 ## more-app-framework
 
