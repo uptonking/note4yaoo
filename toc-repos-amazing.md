@@ -9,16 +9,15 @@ modified: '2020-11-03T06:54:59.051Z'
 
 ## amazing
 
+- https://apocalyptic.netlify.app/
+  - js实现边下雨、边电闪雷鸣的效果
+
 - https://github.com/rrweb-io/rrweb
   - /7.6kStar/MIT/202009/ts
   - a tool for recording and replaying users' interactions on the web
   - 录制回放web操作的架构：rrweb、rrweb-player、extensions
   - 回放时，页面动态显示的是dom元素，不是图片视频
   - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
-
-- https://github.com/kamranahmedse/driver.js
-  - /11.7kStar/MIT/202003
-  - vanilla JavaScript engine to drive the user's focus across the page
 
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
@@ -48,6 +47,10 @@ modified: '2020-11-03T06:54:59.051Z'
   - 中国传统颜色在线手册
 
 ## cool
+
+- https://github.com/kamranahmedse/driver.js
+  - /11.7kStar/MIT/202003
+  - vanilla JavaScript engine to drive the user's focus across the page
 
 - https://github.com/daybrush/scenejs
   - https://daybrush.com/scenejs/

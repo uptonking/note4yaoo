@@ -10,6 +10,8 @@ modified: '2020-10-22T13:01:59.546Z'
 ## site
 - https://templated.co/
 - https://html5up.net/
+- https://www.free-css.com/free-css-templates
+- https://graygrids.com/templates/category/free-html-templates/
 
 
 ## css-snippet

@@ -11,10 +11,17 @@ modified: '2020-07-07T08:10:16.774Z'
 
 - https://babeljs.io/docs/en/plugins
 - https://github.com/babel/proposals
+- [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)
+  - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
+  - [tc39 proposals stages](https://github.com/tc39/proposals)
 
 ## guide
 
-- deprecated
+- es6-features
+  - rest-spread-operator
+  - promise
+  - generator
+- esX-deprecated
   - cancellable promise
 
 ## class fields
@@ -84,13 +91,13 @@ Object.defineProperty(Model, 'method3', {
   - Public instance fields are added with `Object.defineProperty()` either at construction time in the base class (before the constructor body runs), or just after `super()` returns in a subclass.  
   - Fields without initializers are initialized to `undefined`
   - Like properties, field names may be computed.
-  - When initializing fields, `this` refers to the class instance under construction. 
+  - When initializing fields `this` refers to the class instance under construction. 
     - Just as in public instance methods, if you're in a subclass you can access the superclass prototype using `super` .
 
 - Public instance methods are methods available on class instances.
   - Public instance methods are added to the class prototype at the time of class evaluation using `Object.defineProperty()` . 
   - They are writable, non-enumerable, and configurable.
-  - Inside instance methods, `this` refers to the instance itself. 
+  - Inside instance methods `this` refers to the instance itself. 
     - In subclasses, `super` lets you access the superclass prototype, allowing you to call methods from the superclass.
   - Use the `get` and `set` syntax to declare a public instance getter or setter.
 
@@ -100,7 +107,7 @@ Object.defineProperty(Model, 'method3', {
   - Fields without initializers are initialized to `undefined` .
   - Public static fields are not reinitialized on subclasses, but can be accessed via the prototype chain.
     - `console.log(SubClassWithStaticField.baseStaticField)`
-  - When initializing fields, `this` refers to the class constructor. 
+  - When initializing fields `this` refers to the class constructor. 
     - You can also reference it by name, and use `super` to get the superclass constructor (if one exists).
 
 - Public static methods aren't called on instances of the class. Instead, they're called on the class itself. 

@@ -1,11 +1,18 @@
 ---
-title: lib-state-rxjs-blog
-tags: [blog, rxjs]
-created: '2020-12-10T10:07:47.193Z'
-modified: '2020-12-10T10:10:33.437Z'
+title: Untitled
+deleted: true
+created: '1970-01-01T00:00:00.000Z'
+modified: '2020-12-14T14:41:32.837Z'
 ---
 
-# lib-state-rxjs-blog
+---
+title: lib-pattern-rxjs-blog
+tags: [blog, pattern, rxjs]
+created: '2020-12-10T10:07:47.193Z'
+modified: '2020-12-14T11:23:05.184Z'
+---
+
+# lib-pattern-rxjs-blog
 
 ## rxjs-7
 

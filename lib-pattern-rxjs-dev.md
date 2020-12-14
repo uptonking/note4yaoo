@@ -1,16 +1,20 @@
 ---
-title: lib-state-rxjs-dev
-tags: [rxjs]
+title: lib-pattern-rxjs-dev
+tags: [pattern, rxjs]
 created: '2020-12-10T10:02:32.636Z'
-modified: '2020-12-10T10:03:14.191Z'
+modified: '2020-12-14T11:23:17.570Z'
 ---
 
-# lib-state-rxjs-dev
+# lib-pattern-rxjs-dev
 
 ## guide
 
+- rxjs-features
+  - observer pattern
+  - pure functions
+
 - rxjs-usecase
-  - 实现观察者模式
+  - 作为观察者模式的一种实现
   - 状态管理，参考redux-observable
   - libs
     - angular2
@@ -24,8 +28,8 @@ modified: '2020-12-10T10:03:14.191Z'
 
 - [RxJS/Cycle.js 与 React/Vue 相比更适用于什么样的应用场景？](https://www.zhihu.com/question/40195289)
   - Cycle本身定位是框架，定义了整个应用的代码组织方式和开发范式，那就是无论是用户事件处理还是服务端数据同步，统统用 Rx 来做，
-    - Cycle 自己也提供了偏好的 view layer（基于 virtual-dom 的 DOM driver）。
-    - 总的来说 Cycle 的范式侵入性很强，属于要么不用要用就得全盘接受 Rx for everything 的理念
+    - Cycle自己也提供了偏好的 view layer（基 virtual-dom的DOM driver）。
+    - 总的来说Cycle的范式侵入性很强，属于要么不用要用就得全盘接受 Rx for everything 的理念
     - 目前还没有看到过大型 Cycle 应用的例子
   - 在 React/Vue 应用中部分使用 Rx 是完全没有问题的。
     - 思路上来说就是把 React/Vue 组件的 local state 当做一个『中介』，在一个 Rx Observable 的 subscribe 回调里面更新组件状态。

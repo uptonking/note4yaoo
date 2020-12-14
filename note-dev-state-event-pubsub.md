@@ -239,3 +239,4 @@ setInterval(function() {
 
 - [Why use Node.js EventEmitter instead of just a plain function?](https://stackoverflow.com/questions/39305354/why-use-node-js-eventemitter-instead-of-just-a-plain-function)
   - another code snippet for EventEmitter vs callback
+- [Let’s Create a Lightweight Native Event Bus in JavaScript](https://css-tricks.com/lets-create-a-lightweight-native-event-bus-in-javascript/)
