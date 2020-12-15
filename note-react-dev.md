@@ -53,11 +53,11 @@ modified: '2020-07-14T10:38:48.217Z'
   - 当请求存在依赖关系时，一个请求结束，才开始下一个请求，等待的时间过长
 - 请求相关问题-race conditions 
   - 当请求过快(如快速点击)时，后发的请求结果先到达，最后显示的数据是先前请求的数据
-- how to resue ref passed from forwardRef()
-  - 使用自定义hooks `useCombinedRefs`
-      - https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
+  - [race condition with Promise](https://twitter.com/LaraNerdsom/status/1219825132702785537)
+- how to reuse ref passed from forwardRef()
+  - [使用自定义hooks `useCombinedRefs`](https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd)
   - 使用useImperativeHandle
-      -  imperative code using refs should be avoided in most cases. 
+    - imperative code using refs should be avoided in most cases. 
 - An idiomatic React application consists mostly of function components. Function components have several key advantages:
   - They help prevent abuse of `setState()` API, favoring props instead.
   - They encourage the "smart" vs "dumb" component pattern.

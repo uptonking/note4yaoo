@@ -15,17 +15,24 @@ modified: '2020-09-25T05:33:19.981Z'
 
 ### 组件或应用的配置项过多时如何处理更好
 
-## 函数式 vs 面向对象 (FP vs OOP)
+## 函数式编程 vs 面向对象的编程 (FP vs OOP)
 
 - FP优点
-  - 逻辑复用简单
+  - 方便复用
   - 方便测试
   - 编译体积小，一般无需polyfill
 - FP缺点
 - FP案例
   - lodash/fp
+
 - OOP优点
 - OOP缺点
+
+- ref
+  - [为什么这两年函数式编程又火起来了？](https://www.zhihu.com/question/30190384/answers/updated)
+    - 可以把oo语言加入lambda map folder reduce...
+    - 函数式和过程式的区别是思维方式，而不在于语法。
+    - 函数式的思维在于抽象流程，过程式的思维在于抽象主体。
 
 ## 最新消息事件的实现: push vs pull/poll
 
@@ -131,7 +138,7 @@ function MyComponent(props) {
 - 在函数内解构，除了可以获取各prop参数变量外，还方便使用整体的props对象
 - 在参数处解构，更直观的写法，便于第三方插件如doc-gen提取参数默认值
   - 解构多层嵌套对象的深层属性时，要考虑提取参数的意义与困难度
-- 使用 `arguments[0]` 也可以获取整体props对象，但箭头函数没有 `this` ,                           `super` ,                           `arguments` ,                           `new.target` ，且箭头函数不能用作构造函数
+- 使用 `arguments[0]` 也可以获取整体props对象，但箭头函数没有 `this/super/arguments/new.target` ，且箭头函数不能用作构造函数
 - One of the differences I can think of, and I suppose the most important, is that on the second case, while you are destructing your props object in function body, you are using `const` on declaration.
   - In that way, you can no longer change these values on your MyComponent, while on your first case you could easily modify them.
   - 对react组件来说，props不能改变，推荐只用const解构，但对普通函数参数解构时，要考虑用let

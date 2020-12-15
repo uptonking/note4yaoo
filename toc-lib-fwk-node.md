@@ -128,6 +128,10 @@ modified: '2020-12-12T19:00:53.053Z'
 - https://github.com/xiongwilee/Gracejs
   - A Nodejs BFF framework, build with koa2（基于koa2的标准前后端分离框架）
 
+- https://github.com/marblejs/marble
+  - functional reactive Node.js framework for building server-side applications, based on TypeScript and RxJS.
+  - Marble wraps native HTTP server with the RxJS, giving a pretty straightforward way to treat incoming requests like streams, in a very reactive manner. 
+  - It won't bring any value to Nestjs though since we completely encapsulate server behind provided architecture's building blocks. What sits underneath doesn't matter
 
 ## more-app-framework
 
@@ -150,9 +154,6 @@ modified: '2020-12-12T19:00:53.053Z'
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa
   - Made by a former Express TC and Koa team member.
-
-- https://github.com/marblejs/marble
-  - functional reactive Node.js framework for building server-side applications, based on TypeScript and RxJS.
 
 - https://github.com/reframejs/wildcard-api
   - Wildcard is a JavaScript library to create an API between your Node.js backend and your browser frontend.

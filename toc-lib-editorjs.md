@@ -11,6 +11,7 @@ modified: '2020-11-17T13:38:27.686Z'
 
 - https://github.com/tbhuabi/textbus
   - /150Star/GPL/202011/ts
+  - 依赖prismjs、rxjs、reflect-metadata、@tanbo/di, @tanbo/css-themes, @tanbo/color
   - 基于数据驱动的富文本编辑器
   - 为什么我还要另起炉灶呢？
     - 目前大多数富文本内容都太脏了，比如，加粗一段文字，可能是一个 strong 标签，也有可能是多个，如果这段文字同时还有其它格式，那么就更热闹了

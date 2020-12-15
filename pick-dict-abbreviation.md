@@ -11,7 +11,7 @@ modified: '2020-08-06T05:29:22.922Z'
   - to be honest 老实说
 - BTW
   - by the way 顺带一提 
-- TLDR
+- TLDR(tl; dr)
   - too long; don't read
 - WIP
   - work in progress
@@ -40,6 +40,9 @@ modified: '2020-08-06T05:29:22.922Z'
   - Laughing Out Loudly 大声地笑
   - Laugh My Ass Off 笑死我了
   - Rolling On The Floor Laughing 笑到滚地
+- LMAO
+  - Laughing My Ass Off 
+  - 笑得屁股掉了，笑得不行了
 - F. Y. I
   - For Your Imformation
   - 提供讯息给你，供你方参考，在和领导，长辈，老师沟通的时候最好不要用这个缩写

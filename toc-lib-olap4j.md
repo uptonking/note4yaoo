@@ -21,6 +21,11 @@ modified: '2020-10-22T06:50:47.668Z'
   - https://github.com/shzlw/poli
   - https://shzlw.github.io/poli
   - An easy-to-use BI server built for SQL lovers. Power data analysis in SQL and gain faster business insights.
+- datagear /166Star/LGPLv3/202012
+  - https://github.com/datageartech/datagear
+  - http://www.datagear.tech/
+  - 源免费的数据可视化分析平台，使用Java语言开发，采用浏览器/服务器架构，支持SQL、CSV、Excel、HTTP接口、JSON等多种数据源， 
+  - 主要功能包括数据管理、SQL工作台、数据导入/导出、数据集管理、图表管理、看板管理等。
 - https://github.com/activeviam/autopivot
   - https://www.activeviam.com/
   - /19Star/Apache2/202009

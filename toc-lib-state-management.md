@@ -124,6 +124,15 @@ modified: '2020-07-14T11:03:53.196Z'
   - It also adds a mouse wheel listener on the container.
 - https://github.com/elninotech/uppload
   - image uploader with 30+ plugins
+- https://github.com/garronej/evt
+  - EventEmitter's typesafe replacement
+  - Why would someone pick EVT over RxJS:
+    - RxJS introduces a lot of abstractions. It's a big jump from EventEmitter.
+    - RxJS tends to be quite verbose.
+    - With RxJS It is often needed to resort to custom type guards, the filter operator breaks the type inference.
+    - It could be months before RxJS it eventually supports Deno.
+    - No official guideline on how to integrate RxJS with React.
+  - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
 
 ## react
 
@@ -202,8 +211,8 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/yamalight/outstated
   - Simple hooks-based state management for React
   - Like unstated but with hooks
-
-
+- https://github.com/jamesknelson/govern
+  - Component-based state management for JavaScript.
 ## redux-like
 
 - easy-peasy /MIT/3.6kStar/202006

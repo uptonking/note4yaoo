@@ -55,8 +55,8 @@ modified: '2020-12-14T11:22:48.700Z'
 
 | title  | single   | multiple |
 |--------|-----------|-----------|
-| pull   | Function(fetch) | Iterator |
-| push   | Promise        | Observable |
+| pull   | Function(fetch)   | Iterator |
+| push   | Promise           | Observable |
 
 - **pull vs push**
 - Pull and Push are two different protocols that describe how a data Producer can communicate with a data Consumer.

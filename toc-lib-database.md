@@ -65,7 +65,24 @@ modified: '2020-10-22T13:11:04.726Z'
   - https://github.com/baomidou/mybatis-plus
   - https://github.com/abel533/Mapper
 
-## popular
+## database
+
+- https://github.com/pubkey/rxdb
+  - A realtime Database for JavaScript Applications
+  - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
+  - Reactive means that you can not only query the current state, but subscribe to all state changes like the result of a query or even a single field of a document.
+  - RxDB implements rxjs to make your data reactive. 
+    - This makes it easy to always show the real-time database-state in the dom without manually re-submitting your queries.
+- https://github.com/Nozbe/WatermelonDB
+  - Reactive & asynchronous database for powerful React and React Native apps
+
+- https://github.com/google/lovefield
+  - Lovefield is a relational database for web apps. 
+  - Written in JavaScript, works cross-browser. 
+  - Provides SQL-like APIs that are fast, safe, and easy to use.
+  - https://github.com/teambition/ReactiveDB
+    - Reactive ORM for Lovefield
+    - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究

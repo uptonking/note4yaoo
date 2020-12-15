@@ -25,9 +25,9 @@ modified: '2020-10-05T07:52:42.228Z'
       - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
     - most forked
       - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
-  - 可利用高级搜索，搜索最新的fork仓库
 
 - fork
+  - 可利用高级搜索，搜索fork仓库中最新被fork的 `fork:only`
   - 查找一个仓库最活跃的fork仓库
     - https://github.com/techgaun/active-forks
     - https://techgaun.github.io/active-forks/index.html
@@ -36,9 +36,9 @@ modified: '2020-10-05T07:52:42.228Z'
   - TODO: 若仓库是一个library，查找依赖本仓库的仓库中star最多的
     - https://github.com/hacker-DOM/github-by-stars
       - /inactive
-    - 变通的方法
-      - 在github直接搜索导入库 import from react，再限制语言如js
-      - 或者搜索使用库 data-mdc-auto-init 的 code，而不是repositories
+  - 搜索时变通的方法
+    - 在github直接搜索导入库 import from react，再限制语言如js
+    - 或者搜索关键词 data-mdc-auto-init 的 code，而不是repositories
 
 - 排行榜
   - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
@@ -50,6 +50,12 @@ modified: '2020-10-05T07:52:42.228Z'
   - 先检查确保只存在一个文件，其名称中包含license单词，可以是license.txt/md，不能是wiki-license.md
   - 若要给没有license文件的repo添加license，直接本地上传一个即可
   - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
+
+- github proxy(解决下载慢的问题)
+  - http://g.widyun.com/
+  - https://d.serctl.com/
+- github mirror
+  - https://github.wuyanzheshui.workers.dev/
 
 ## npm-tips
 

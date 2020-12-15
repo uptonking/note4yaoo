@@ -9,6 +9,9 @@ modified: '2020-12-14T14:44:23.079Z'
 
 ## guide
 
+- ref
+  - [CHANGELOG of 5.0.0-7.0.0+ ](https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md)
+
 - [RxJS v5.x to v6 Update Guide](https://rxjs.dev/guide/v6/migration)
   - A backward-compatibility layer eases the update process, allowing you to keep your apps working while you address most code changes at your own pace.
 - Before RxJS releases v7, you will need to remove and replace all use of deprecated functionality.
@@ -34,3 +37,28 @@ modified: '2020-12-14T14:44:23.079Z'
     - You don't need to extend Observable or override lift anymore.
 
 ## changelog
+
+- 7.0.0-201909
+  - RxJS now supports first-class interop with AsyncIterables
+  - Observable: Remove async iteration
+  - animationFrames: Adds an observable of animationFrames
+  - concat: can infer N types
+  - of: Update of typings
+  - ajax: Drop support for IE10 and lower
+  - ajax: Use simple Observable
+  - ajax: now supports passing custom XSRF cookies in a custom header 
+  - support emoji in marble diagrams
+  - combineLatest: add N-args signature for observable inputs 
+  - tap: reduce the size of the implementation
+- 6.0.0-201801
+  - Refactoring
+    - Remove setImmediate/Set/Map polyfill
+  - internal utils hidden
+  - export the `pipe` utility function from rxjs
+  - move Rx.ts to internal
+- 5.0.0-201509
+  - config: add global configuration of Promise capability
+  - combineLatest, zip, inspectTime
+- 0.0.0-201509
+  - observable: add Observable.all (forkJoin) 
+  - new operators

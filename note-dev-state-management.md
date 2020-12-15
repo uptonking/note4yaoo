@@ -31,6 +31,12 @@ modified: '2020-10-31T19:11:26.567Z'
   - hot-reload, time-travel
   - 非UI类型State的处理，如身份验证、预设类型
 
+- state分类
+  - global/local: 根据状态的位置和影响范围
+  - server-state: 与网络io相关的
+  - router-state: 浏览器url相关的
+  - style-state: 主题相关的
+
 - 对象间数据(消息)的传递，可以通过pub/sub event实现，很适合component内状态管理
   - 缺点：简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
   - 不支持跨page传递数据

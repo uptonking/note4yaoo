@@ -31,18 +31,22 @@ modified: '2020-12-13T14:37:27.760Z'
   - Tailored for Cycle.js, or applications with limited use of subscribe
 - https://github.com/baconjs/bacon.js
   - Functional reactive programming library for TypeScript and JavaScript
+- https://github.com/kefirjs/kefir
+  - A Reactive Programming library for JavaScript
+  - inspired by Bacon.js and RxJS with focus on high performance and low memory usage.
 
 - https://github.com/ramda/ramda
   - /19.7kStar/MIT/202010/js
   - Practical functional Javascript
 - https://github.com/getify/Functional-Light-JS
   - Pragmatic, balanced FP in JavaScript.
-- https://github.com/kefirjs/kefir
-  - A Reactive Programming library for JavaScript
-  - inspired by Bacon.js and RxJS with focus on high performance and low memory usage.
 - https://github.com/gcanti/fp-ts
   - /5kStar/MIT/202010/ts
   - Functional programming in TypeScript
+- https://github.com/fluture-js/Fluture
+  - Fantasy Land compliant (monadic) alternative to Promises
+  - Much like Promises, Futures represent the value arising from the success or failure of an asynchronous operation (I/O). 
+  - Though unlike Promises, Futures are lazy and adhere to the monadic(单元的，单体的) interface.
 - https://github.com/SodiumFRP/sodium-typescript
   - Typescript/Javascript implementation of Sodium FRP (Functional Reactive Programming) library
 - https://github.com/cyclejs/cyclejs
@@ -72,6 +76,11 @@ modified: '2020-12-13T14:37:27.760Z'
   - Functional Component like React, but for Web Components.
 - https://github.com/clebert/batis
   - A JavaScript library for reactive programming using React-like Hooks
+- https://github.com/CONNECT-platform/connective
+  - https://github.com/CONNECT-platform/connective-html
+  - agent-based reactive programming library for typescript
+  - CONNECTIVE is a thin layer on top of RxJS, so it provides all the toolset of rxjs by proxy. 
+  - However, while RxJS's API is better suited for short-lived and small flows, CONNECTIVE adds tools better suiting long-living and large/complex flows.
 
 - https://github.com/funkia/list
   - An immutable list with unmatched performance and a comprehensive functional API.

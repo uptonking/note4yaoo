@@ -83,14 +83,14 @@ modified: '2020-07-05T18:55:35.555Z'
 - Although it’s technically doable, Suspense is not currently intended as a way to start fetching data when a component renders. 
 - Rather, it lets components express that they’re “waiting” for data that is already being fetched.
 - Unless you have a solution that helps prevent waterfalls, we suggest to prefer APIs that favor or enforce fetching before render.
-- **Fetch-on-render** (for example, `fetch` in `useEffect` )
+- **Fetch-on-render** (for example,  `fetch` in `useEffect` )
   - Start rendering components. Each of these components may trigger data fetching in their effects and lifecycle methods. 
   - This approach often leads to **waterfalls**.
-- **Fetch-then-render** (for example, `Relay` without `Suspense` ) 
+- **Fetch-then-render** (for example,  `Relay` without `Suspense` ) 
   - Start fetching all the data for the next screen as early as possible. 
   - When the data is ready, render the new screen. 
   - We can’t do anything until the data arrives.
-- **Render-as-you-fetch** (for example, `Relay` with `Suspense` ) 
+- **Render-as-you-fetch** (for example,  `Relay` with `Suspense` ) 
   - Start fetching all the required data for the next screen as early as possible, and start rendering the new screen immediately — before we get a network response. 
   - As data streams in, React retries rendering components that still need data until they’re all ready.
 - This is a bit simplified, and in practice solutions tend to use a mix of different approaches. Still, we will look at them in isolation to better contrast their tradeoffs.
@@ -135,6 +135,7 @@ function ProfileTimeline() {
   - If you run this code and watch the console logs, you’ll notice the sequence is:
 
 ``` 
+
 We start fetching user details
 We wait…
 We finish fetching user details
@@ -190,6 +191,7 @@ function ProfileTimeline({ posts }) {
   - The event sequence now becomes like this:
 
 ``` 
+
 We start fetching user details
 We start fetching posts
 We wait…
@@ -798,6 +800,6 @@ function App() {
 ```
 
 - This allows us to start showing the new text for the `input` immediately, which allows the webpage to feel responsive. 
-  - Meanwhile, `MySlowList` “lags behind” for up to 2 seconds according to the `timeoutMs` before updating, allowing it to render with the current text in the background.
+  - Meanwhile,  `MySlowList` “lags behind” for up to 2 seconds according to the `timeoutMs` before updating, allowing it to render with the current text in the background.
 - `timeoutMs` tells React how long the deferred value is allowed to lag behind.
 - React will always try to use a shorter lag when network and device allows it.

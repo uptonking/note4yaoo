@@ -67,6 +67,7 @@ modified: '2020-11-02T06:05:38.780Z'
   - Redux does use a pub/sub pattern indeed
 
 - redux适合管理全局app状态，局部component的状态无需额外状态管理或过重的状态管理
+- redux自身的300行代码只处理简单的同步数据流，把脏活、累活比如异步数据流全扔给各种适配和插件处理了。
 
 - Redux is global state, which is fine as long as only genuinely global stuff goes in there, 
   - like current user profile or basket contents. 

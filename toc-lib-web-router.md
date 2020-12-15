@@ -13,6 +13,9 @@ modified: '2020-12-12T18:59:54.950Z'
   - universal: works client-side and server-side
 - https://github.com/visionmedia/page.js
   - Tiny Express-inspired client-side router.
+- https://github.com/alshdavid/crayon
+  - Simple framework agnostic UI router for SPAs
+  - Clientside Router with express like syntax, no dependencies
 - https://github.com/kriasoft/universal-router
   - A simple middleware-style router that can be used in both client-side and server-side applications
   - It has simple code with only single path-to-regexp dependency.

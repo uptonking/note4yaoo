@@ -45,8 +45,42 @@ modified: '2020-12-14T11:23:05.184Z'
   - we will see the deprecations where the team was able to add ESLint code transformations removed.
   - This is to ensure that developers have an uncomplicated way of replacing deprecated APIs and are following the best practices. 
   - smaller bundle size
-
+### [RxJS 7 and Beyond: What to Expect and Prepare For_202012](https://labs.thisdot.co/blog/rxjs-7-and-beyond-what-to-expect-and-prepare-for)
+- we interviewed Ben Lesh, the author of RxJS, on the most recent updates for RxJS 7 and its targeted release date.
+- Better TypeScript typings
+  - RxJS implementation is using all of the stricter settings for TypeScript, We're trying to be strict as possible and I recommend that too by the way.
+- .toPromise operator will be deprecated in RxJS 7 and it will be removed by RxJS 8
+  - In its place, you'll find firstValueFrom() and lastValueFrom().
+- RxJS is smaller
+  - it's now almost 50% smaller.
+  - The original code was written 6 years ago and there have been about four rewrites 
+- RxJS 7 and Beyond
+  - It looks like, at this point, version 8 will not need to be a complete rewrite. 
+  - RxJS 8 will just go through the pending deprecations and finally get rid of them, 
+  - mainly because a lot of them were sitting there for about 2 years. 
+- What about RxJS 9 or even future versions?
+  - Ben explained that some libraries and APIs started using the `AbortSignal` interface
+  - It can be used currently with fetch as a cancellation primitive
+  - This API exists in the browser, and will be available in Node.js. 
+  - RxJS would probably want to use the same cancellation mechanism. 
 ## rxjs-blog
+
+### [使用RxJS管理React应用状态的实践分享](https://zhuanlan.zhihu.com/p/63587161)
+
+- https://github.com/shayeLee/floway
+
+- 我们认为应用的数据大体上可以分为四类：
+  - 状态：随着时间空间变化的数据，始终会存储一个当前值/最新值。
+  - 事件：瞬间产生的数据，数据被消费后立即销毁，不存储。
+  - 异步：异步获取的数据；类似于事件，是瞬间数据，不存储。
+  - 常量：固定不变的数据。
+- 使用RxJS越久，越令人受益匪浅。
+  - 因为它基于observable序列提供了较高层次的抽象，并且是观察者模式，可以尽可能地减少各组件各模块之间的耦合度
+  - 因为是基于observable序列来编写代码的，所以遇到复杂的业务场景，总能按照一定的顺序使用observable描述出来，代码的可读性很强。
+    - 并且当需求变动时，我可能只需要调整下observable的顺序，或者加个操作符就行了。再也不必因为一个复杂的业务流程改动了，需要去改好几个地方的代码
+
+- 小程序上我实践过这种方案，不好的地方在于订阅方压根不知道这个流发出空值时是没初始化、还是他是请求返回一个空列表，直接的表现就是进入页面之前都会闪一下空页面。还没初始化之前不想触发某些动作，这个也有点麻烦
+  - 我的解决方案是自己封装了一个Subject来代替原生的BehaviorSubject
 
 ### [如何用Rxjs做状态管理](https://zhuanlan.zhihu.com/p/140352608 )
 

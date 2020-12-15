@@ -98,7 +98,7 @@ async fetchData3() {
 
 - race conditions问题
   - Race conditions are bugs that happen due to incorrect assumptions about the order in which our code may run
-  - Race Condition 是开发中经常遇到的问题，比如查询天气的时候，先输入“北京”，再输入“深圳”，这时将发起 2 个请求。很可第一个请求花的时间比第二个请求长，如果不做处理，最终看到的是北京的天气，而不是深圳
+  - Race Condition是开发中经常遇到的问题，比如查询天气的时候，先输入“北京”，再输入“深圳”，这时将发起 2 个请求。很可第一个请求花的时间比第二个请求长，如果不做处理，最终看到的是北京的天气，而不是深圳
   - 即前面请求的响应结果，在靠后的时机返回，后面请求结果先返回
   - 竞态条件出现的原因是无法保证异步操作的完成会按照他们开始时同样的顺序
   - 解决方式很简单，在useEffect返回的cleanup函数中清理数据或设置失效标记，然后在更新数据前根据标记判断其有效性
@@ -111,6 +111,7 @@ async fetchData3() {
     - [Race conditions in React and beyond](https://wanago.io/2020/03/02/race-conditions-in-react-and-beyond-a-race-condition-guard-with-typescript/)
     - [化解使用 Promise 时的竞态条件](https://efe.baidu.com/blog/defusing-race-conditions-when-using-promises/)
     - [How to fetch data with React Hooks?](https://www.robinwieruch.de/react-hooks-fetch-data)
+  - [race condition with Promise](https://twitter.com/LaraNerdsom/status/1219825132702785537)
 
 ---
 
