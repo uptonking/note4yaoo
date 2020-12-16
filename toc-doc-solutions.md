@@ -9,11 +9,28 @@ modified: '2020-11-16T12:40:33.516Z'
 
 ## guide
 
+- ref
+  - [top documentation-tool](https://github.com/topics/documentation-tool?o=desc&s=stars)
+
 - 要在功能丰富和轻量方便间折中，过重的编辑器就偏向于在线ide了
-- write with markdown and then render to html
+- write with markdown, and then render to html
 
 ## doc-solution-catalog
 
+- https://github.com/docsifyjs/docsify
+  - /15.3kStar/MIT/202010
+  - 依赖marked、prismjs
+  - A magical documentation site generator.
+  - No statically built html files, Support SSR, Support embedded files
+    - there is literally no build step
+    -  unlike many static generators no HTML static site is created... update the Markdown and the site immediately shows those changes.
+  - Useful plugin API, Smart full-text search plugin
+  - Docsify is way way easier, probably because all the “build” stuff is happening via the javascript in realtime. 
+  - https://github.com/jhildenbiddle/docsify-themeable
+    - simple theme system for docsify.js
+  - who-uses
+    - https://shoelace.style/
+    - https://imdone.io/docs/
 - https://github.com/YvesCoding/rcpress
   - /160Star/MIT/202008
   - 基于react、Ant Design的静态文档生成器
@@ -21,49 +38,52 @@ modified: '2020-11-16T12:40:33.516Z'
   - 依赖@hot-loader/react-dom、@loadable/babel-plugin、prism-react-renderer
 - https://github.com/palantir/documentalist
   - /125Star/Apache2/202010
+  - 依赖kss(a documentation syntax for CSS)、marked、typedoc
   - A sort-of-static site generator optimized for living documentation of software projects.
   - Documentalism is a two-step process: Get the data, Render the data.
   - compiler is an extensible solution to step 1: get all your data in one place, in a consistent format. 
-  - 依赖kss(a documentation syntax for CSS)、marked、typedoc
 - https://github.com/styleguidist/react-styleguidist
   - /9.2kStar/MIT/202009
   - Isolated React component development environment with a living style guide
 - https://github.com/interactivethings/catalog
   - /1.4kStar/BSD/202010/js
+  - 依赖react-router、marked、prismjs
   - create beautiful living and fully interactive style guides using Markdown and React components.
   - 使用代码块里的预定义结构来渲染table，将会list形式的文字渲染成table
-  - 依赖react-router、marked、prismjs
-- https://github.com/jxnblk/mdx-deck
-  - /9.6kStar/MIT/202004
-  - React MDX-based presentation decks
-  - 依赖gatsby
-- https://github.com/docsifyjs/docsify/
-  - /15.3kStar/MIT/202010
-  - A magical documentation site generator.
-  - 依赖marked、prismjs
-  - https://github.com/jhildenbiddle/docsify-themeable
-    - simple theme system for docsify.js
+- https://github.com/Redocly/redoc
+  - /11.7kStar/MIT/202012/ts
+  - OpenAPI/Swagger-generated API Reference Documentation
+- https://github.com/benjycui/bisheng
+  - /2.5kStar/MIT/202012/js
+  - 依赖mark-twain、react-router、webpack、prismjs
+  - transform Markdown(and other static files with transformers) into static websites and blogs using React.
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
   - Docusaurus 1 used to be a pure documentation site generator. 
   - In Docusaurus 2, we rebuilt it from the ground up, allowing for more customizability 
-  - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n
-  - While our main focus will still be helping you get your documentations right and well, 
+    - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n
+    - While our main focus will still be helping you get your documentations right and well, 
     - it is possible to build any kind of website using Docusaurus 2 as it is just a React application. 
     - Docusaurus can now be used to build any website, not just documentation websites.
+    - [Docusaurus 2 design](https://github.com/facebook/docusaurus/issues/789)
   - Gatsby does many things well and is suitable for building many types of websites. 
+    - GraphQL is also pretty core to Gatsby
   - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
   - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
-  - Using modern JavaScript ecosystem tooling, we hope to set new standards on doc sites performance, asset build pipeline and optimizations, and ease to setup.
 - https://github.com/honkit/honkit
-  - /1.4kStar/Apache2/202009
+  - /1.4kStar/Apache2/202009/gitbook
   - HonKit is building beautiful books using Markdown - Fork of GitBook
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8
   - GitBook is only free for open-source and non-profit teams.
-- https://github.com/doczjs/docz/
+- https://github.com/jxnblk/mdx-deck
+  - /9.6kStar/MIT/202004
+  - 依赖gatsby
+  - React MDX-based presentation decks
+- https://github.com/doczjs/docz
   - /19.4kStar/MIT/202005
   - 依赖gatsby、marksy、@mdx-js/react
+  - quickly create live-reloading, seo-friendly, production-ready documentation sites with MDX and customize the look, feel and behavior by leveraging GatsbyJS and Gatsby theme shadowing.
 - https://github.com/gatsbyjs/gatsby
   - /47.4kStar/MIT/202010
   - Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps
@@ -81,9 +101,34 @@ modified: '2020-11-16T12:40:33.516Z'
   - https://github.com/storybookjs/storybook
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
+  - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
 
-- solution-catalog
+- more-docs
   - VuePress
+  - https://github.com/phenomic/phenomic
+    - DEPRECATED. Please use Next.js instead.
+  - https://github.com/egoist/docute
+    - Leveraging the power of Markdown and Vue.
+    - No build process, website is generated on the fly.
+  - https://github.com/mkdocs/mkdocs
+    - Project documentation with Markdown built with python
+  - https://github.com/star7th/showdoc
+    - 适合IT团队的在线API文档、技术文档工具
+  - https://github.com/remorses/dokz
+    - https://dokz.site/
+    - /283Star/ISC/202010/ts
+    - Effortless documentation with Next.js and MDX
+    - File based routing
+  - https://github.com/remorses/vitro
+    - https://vitro.now.sh/
+    - /151Star/ISC/202010/ts
+    - Build and showcase your react components in isolation
+    - Differences with storybook
+      - No addons, if you want more features open a pull request here
+      - Many features inherited from next.js like Incremental compilation
+- hosting-docs
+  - https://zeroheight.com/
+    - Create beautiful living styleguides and document all your design system resources in one place
 
 ## markdown-live
 

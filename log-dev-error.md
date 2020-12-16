@@ -12,7 +12,10 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
-- ide不停的提示异常
+- ENOENT: no such file or directory, scandir '**/node_modules/node-sass/vendor'
+  - npm rebuild node-sass
+
+- ide不停的提示
   - Definition for rule '@typescript-eslint/interface-name-prefix' was not found
   - Definition for rule '@typescript-eslint/no-duplicate-imports' was not found.
   - 重启ide后，魔法般地消失了

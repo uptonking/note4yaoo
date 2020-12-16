@@ -12,3 +12,6 @@ modified: '2020-11-24T07:46:00.967Z'
 - 如何不使用图床而将图片直接嵌入到笔记生成的html中
 
 ## pieces
+
+- 功能点
+  - 生成openapi/swagger ui风格的文档

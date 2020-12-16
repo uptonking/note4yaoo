@@ -21,7 +21,7 @@ modified: '2020-12-13T13:14:40.141Z'
   - Includes an API, CLI, and example client webapp.
   - The frontend example is in Angular, although any client-side Javascript framework can easily be used, including React, or Vue js.
 - https://github.com/notadd/notadd
-  - 基于 Nest.js 的微服务开发架构
+  - 基于Nest.js的微服务开发架构
 - https://github.com/kyle-mccarthy/nest-next
   - it allows the rendering of next.js pages via nestjs controllers and providing initial props to the page as well.
 

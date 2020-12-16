@@ -13,28 +13,18 @@ modified: '2020-10-15T13:42:23.746Z'
 
 - csf (Component Story Format)
   - title, component, parameters, decrators
-- mdx
-  - 优点
-    - 支持markdown+jsx
-    - 支持直接引入a.mdx作为一个组件
-    - 支持定义和导出variable
-  - 问题
-    - code block的语法高亮不可更改样式
-    - 不支持live editor
-- jsx
-  - https://facebook.github.io/jsx/
-  - Why not Template Literals
-    - ES6 introduces template literals which are intended to be used for embedding DSL in ECMAScript.
-    - Template literals work well for long embedded DSLs.
-      - Unfortunately the syntax noise is substantial when you exit in and out of embedded arbitrary ECMAScript expressions with identifiers in scope.
-    - It would be possible to use template literals as a syntactic entry point and change the semantics inside the template literal to allow embedded scripts that can be evaluated in scope
-    - However, this would lead to further divergence. 
-      - Tooling that is built around the assumptions imposed by template literals wouldn't work. 
-      - It would undermine the meaning of template literals. 
-      - It would be necessary to define how JSX behaves within the rest of the ECMAScript grammar within the template literal anyway.
-    - Therefore it's better to introduce JSX as an entirely new type of PrimaryExpression
-  - JXON (lossless JavaScript XML Object Notation) is a generic name by which is defined the representation of JavaScript Objects using XML
-    - Unfortunately, balanced braces `{}` do not give great syntactic hints for where an element starts and ends in large trees. 
-    - **Balanced named tags** `<Comp>` is a critical syntactic feature of the XML-style notation.
-  - JSX syntax is similar to the E4X Specification
-    - E4X is a deprecated specification with deep reaching semantic meaning. JSX partially overlaps with a tiny subset of the E4X syntax. However, JSX has no relation to the E4X specification.
+
+## ref
+
+- [Understand how structured data works](https://developers.google.com/search/docs/guides/intro-structured-data)
+  - Structured data is a standardized format for providing information about a page and classifying the page content
+  - Most Search structured data uses schema.org vocabulary, but you should rely on the documentation on developers.google.com as definitive for Google Search behavior
+  - [JSON-LD](http://json-ld.org/)
+    - A JavaScript notation embedded in a `<script>` tag in the page head or body. 
+    - Google can read JSON-LD data when it is dynamically injected into the page's contents
+  - [RDFa](https://rdfa.info/)
+    - An HTML5 extension that supports linked data by introducing HTML tag attributes that correspond to the user-visible content that you want to describe for search engines. 
+    - RDFa is commonly used in both the head and body sections of the HTML page.
+  - [Microdata](https://www.w3.org/TR/microdata/)
+    - An open-community HTML specification used to nest structured data within HTML content. 
+    - It is typically used in the page body, but can be used in the head.

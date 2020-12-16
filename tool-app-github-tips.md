@@ -9,11 +9,11 @@ modified: '2020-10-05T07:52:42.228Z'
 
 ## github
 
-- xp-bad
+- TODO
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看
+  - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
 
 - 搜索
-  - TODO
   - 搜索使用js或ts的项目
     - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
     - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`

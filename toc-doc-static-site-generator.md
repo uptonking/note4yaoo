@@ -7,14 +7,56 @@ modified: '2020-10-13T09:21:27.098Z'
 
 # toc-doc-static-site-generator
 
+## guide
+
+- ref
+  - [top static-site-generator](https://github.com/topics/static-site-generator)
+
 ## popular
 
-- hexo
-- gatsby
-- react-static
-- bisheng
-  - transform Markdown(and other static files with transformers) into static websites and blogs using React.
-- jbake(java)
+- https://github.com/vercel/next.js
+  - /58.5kStar/MIT/202012/ts
+  - React Framework: hybrid static & server rendering, smart bundling, route pre-fetching... No config needed.
+- https://github.com/gohugoio/hugo
+  - /48.8kStar/Apache2/202012/go
+  - a static HTML and CSS website generator written in Go. 
+  - Hugo takes a directory with content and templates and renders them into a full HTML website.
+  - Hugo relies on Markdown files with front matter for metadata
+- https://github.com/gatsbyjs/gatsby
+  - /48.2kStar/MIT/202012/ts
+  - a framework based on React that helps developers build blazing fast websites and apps
+- https://github.com/jekyll/jekyll
+  - /41.8kStar/MIT/202012/ruby
+  - a blog-aware static site generator in Ruby
+  - Jekyll is the engine behind GitHub Pages
+- https://github.com/hexojs/hexo
+  - /31.8kStar/MIT/202010/js
+  - simple & powerful blog framework, powered by Node.js
+  - Hundreds of themes & plugins
+- https://github.com/vuejs/vuepress
+  - /18kStar/MIT/202012/js
+  - Minimalistic Vue-powered static site generator
+- https://github.com/netlify/netlify-cms
+  - /13.1kStar/MIT/202012/js
+  - A Git-based CMS for Static Site Generators
+  - Netlify CMS is a single-page app that you pull into the /admin part of your site.
+- https://github.com/getpelican/pelican
+  - /10.1kStar/AGPLv3/202012/python
+  - Static site generator that supports Markdown and reST syntax. Powered by Python.
+- https://github.com/react-static/react-static
+  - /9.2kStar/MIT/202011/js
+  - 原作者已转向next.js
+  - A progressive static site is a website where every statically exported HTML page is an entry point to a fully-featured automatically-code-split React application.
+  - Just like a normal static site, static progressive websites are capable of loading initial landing pages very quickly, but then extend the user experience by transforming invisibly into a single-page React application.
+- https://github.com/11ty/eleventy
+  - /8kStar/MIT/202011/js
+  - A simpler static site generator. An alternative to Jekyll.
+  - ransforms a directory of templates (of varying types) into HTML.
+  - Works with HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, and JavaScript Template Literals.
+- https://github.com/segmentio/metalsmith
+  - /7.6kStar/MIT/201912/js
+  - pluggable static site generator.
+  - all of the logic is handled by plugins. 
 
 ## more-ssg
 
@@ -22,18 +64,7 @@ modified: '2020-10-13T09:21:27.098Z'
   - https://bedrockapp.org/
   - a static site generator to create large-scale HTML prototypes and document design systems
   - 内置bootstrap4和material design主题
-- https://github.com/remorses/dokz
-  - https://dokz.site/
-  - /283Star/ISC/202010/ts
-  - Effortless documentation with Next.js and MDX
-  - File based routing
-- https://github.com/remorses/vitro
-  - https://vitro.now.sh/
-  - /151Star/ISC/202010/ts
-  - Build and showcase your react components in isolation
-  - Differences with storybook
-    - No addons, if you want more features open a pull request here
-    - Many features inherited from next.js like Incremental compilation
 - https://github.com/make-my/makemy
   - makemy is a tool that parses your text-posts and creates beautiful webpages out of them 
   - Powered entirely in NodeJS 
+- jbake(java)

@@ -38,10 +38,6 @@ modified: '2020-12-08T14:06:06.985Z'
 
 - https://github.com/jbake-org/jbake
   - Java based open source static site/blog generator
-- https://github.com/react-static/react-static
-  - A progressive static site is a website where every statically exported HTML page is an entry point to a fully-featured automatically-code-split React application.
-  - Just like a normal static site, static progressive websites are capable of loading initial landing pages very quickly, but then extend the user experience by transforming invisibly into a single-page React application.
-  - 原作者已转向next.js
 
 ## frontend
 

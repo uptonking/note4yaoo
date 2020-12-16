@@ -15,15 +15,15 @@ modified: '2020-12-14T11:23:17.570Z'
 
 - rxjs-usecase
   - 作为观察者模式的一种实现
-  - 代替使用Promise
+  - 代替Promise异步操作
   - 状态管理
     - rxjs适合管理组件的局部状态，要注意引入rxjs的花费
     - 参考redux-observable
   - 事件处理
-    - 用户输入
+    - 用户输入事件
     - 拖拽
     - 滚动
-  - 服务端请求数据
+  - 服务端请求的数据流
   - libs
     - angular2用在httpclient,router
     - nestjs

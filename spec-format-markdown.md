@@ -17,6 +17,15 @@ modified: '2020-10-15T13:41:05.547Z'
 - mdx
   - https://mdxjs.com/getting-started
 
+- mdx
+  - 优点
+    - 支持markdown+jsx
+    - 支持直接引入a.mdx作为一个组件
+    - 支持定义和导出variable
+  - 问题
+    - code block的语法高亮不可更改样式
+    - 不支持live editor
+
 ## faq
 
 - mdx和react-live实现组件文档在线编辑时，为什么组件预览有时会消失

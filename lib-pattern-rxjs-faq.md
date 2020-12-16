@@ -11,11 +11,81 @@ modified: '2020-12-14T14:42:11.433Z'
 
 ### rxjs架构调试困难，如何调试
 
+- [HOW TO DEBUG RXJS CODE_201512](https://staltz.com/how-to-debug-rxjs-code.html)
+  - The short answer is: you have to depend mostly on drawing diagrams on paper and adding `.do(x => console.log(x))` after operators, 
+  - there are 3 techniques you can use today to debug RxJS:
+    - Adding `.do(x => console.log(x))` to trace to the console
+    - Drawing a dependency graph and following the flow
+    - Drawing a marble diagram
+  - The goal of debugging is simply to help you get an accurate mental model of the execution of your code. 
+  - This is the most rudimentary(基本的；根本的) technique: to just “console.log” events happening on the streams.
+  - We can add `.do(x => console.log(x))` between operators
+
+- [How to debug rxjs5?](https://stackoverflow.com/questions/38590346/how-to-debug-rxjs5)
+  - Ultimately, any kind of async programming is going to be harder to debug. 
+  - a quick search will reveal plenty of debugging concerns for redux-saga too.
+  - It turns out that redux-thunk is the best solution for a vast majority of applications built because a majority of them do not have complex side effect concerns that justify(使齐行) something like redux-observable or redux-saga. 
+
 ## faq-repeat
 
 ### 如何优化性能，对于rxjs架构的程序
 
+- [RxJS: Don't Unsubscribe](https://medium.com/@benlesh/rxjs-dont-unsubscribe-6753ed4fda87)
+  - [[译] RxJS: 别取消订阅](https://zhuanlan.zhihu.com/p/27903919)
+  - 不要过多地使用取消订阅操作
+    - 如果在程序中出现过多的订阅对象，那就意味着你命令式地管理了你的 subscriptions ，并且没有利用Rx的强大之处
+  - 你应该尽可能的使用像 `takeUntil` 这样的操作符来管理你的 RxJS subscriptions 。
+  - 作为经验法则，如果你在一个组件中管理发现2个或2个以上的subscriptions，你应该问自己是否能将它们组合的更好。
+
+- [Observables and performance](https://www.reddit.com/r/Angular2/comments/avpag5/observables_and_performance/)
+  - General purpose libraries are not meant to be efficient at run-time. 
+    - From my own experience when you need high frame rate, you just dump(扔掉；抛弃) all these nice tools and make your own, profiling every line of code. 
+    - A few tips
+      - don't create objects, don't create other things in run-time (lambdas), make everything as static as possible, use only primitives whenever possible. 
+      - And don't use Angular, lol.
+  - Use rx-spy to see if you have a subscription leak somewhere. 
+    - For example, if your component has a getter that returns an observable, and you bind to that getter in your html with the async pipe, you're gonna have a bad time.
+    - Try to use an OnPush change detection strategy everywhere possible
+    - if you are smart about how your app handles change detection, you'll be able to do a lot more with very minimal performance issues. Updating the DOM is expensive.
+    - Consider looking into web workers if your app is doing anything computationally expensive.
+  - I'm not an expert by any means on animation but with games there's generally what's called a game loop. A constantly running update -> draw cycle. 
+    - For web that's typically done with the requestAnimationFrame function. 
+    - You schedule work for each frame at a more optimal time for the browser. 
+    - Without rxjs, normally you invoke rAF manually to start the loop and at the end of your draw logic, you call rAF again and start the loop.
+    - With rxjs there's a concept of schedulers, one of which is for animation frames. 
+    - I'd imagine you could use this to create a stream of frames, on each from frame, get the latest value from your store and update if necessary.
+    - This is all guesswork on my part but hopefully it leads you down a path to the right answer.
+
+- ref
+  - [RxJS best practices in Angular](https://blog.strongbrew.io/rxjs-best-practices-in-angular/)
+    - The first best practice is the use of pipeable operators.
+    - Avoiding nested subscribes
+    - A Subject is both a hot observable and an observer at the same time. 
+      - Only use them when really needed, for instance:
+        - When mocking streams in tests
+        - When we want to create streams from outputs in Angular
+        - When handling circular references
+      - For most other cases an operator or Observable.create might be enough.
+      - A BehaviorSubject is commonly used because it has a getValue() function.
+
 ### rxjs的引入，对程序的性能影响如何
+
+- I won't choose RxJs for performance reason because any library will add overheads. 
+  - However it can boost your productivity if you use it correctly. 
+
+### Cold vs Hot Observables
+
+- Cold observables start running upon subscription, 
+  - i.e., the observable sequence only starts pushing values to the observers when Subscribe is called
+  - Values are also not shared among subscribers. T
+- hot observables such as mouse move events or stock tickers 
+  - which are already producing values even before a subscription is active. 
+  - When an observer subscribes to a hot observable sequence, it will get all values in the stream that are emitted after it subscribes. 
+  - The hot observable sequence is shared among all subscribers, and each subscriber is pushed the next value in the sequence
+- Analogies
+  - Cold Observables: movies.
+  - Hot Observables: live performances.
+  - Hot Observables replayed: live performances recorded on video.
 
 ### [What are real world examples of RxJS?](https://stackoverflow.com/questions/56311808/what-are-real-world-examples-of-rxjs)
 

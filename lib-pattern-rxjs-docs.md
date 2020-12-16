@@ -402,7 +402,6 @@ multicasted.connect();
   - Creation operators will be discussed in more detail in a later section.
 
 - Pipeable operators are functions, so they could be used like ordinary functions: `op()(obs)`
-
   - but in practice, there tend to be many of them convolved together, and quickly become unreadable: op4()(op3()(op2()(op1()(obs)))). 
   - For that reason, Observables have a method called `.pipe()` that accomplishes the same thing while being much easier to read
 

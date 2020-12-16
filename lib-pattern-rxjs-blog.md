@@ -45,25 +45,85 @@ modified: '2020-12-14T11:23:05.184Z'
   - we will see the deprecations where the team was able to add ESLint code transformations removed.
   - This is to ensure that developers have an uncomplicated way of replacing deprecated APIs and are following the best practices. 
   - smaller bundle size
-### [RxJS 7 and Beyond: What to Expect and Prepare For_202012](https://labs.thisdot.co/blog/rxjs-7-and-beyond-what-to-expect-and-prepare-for)
-- we interviewed Ben Lesh, the author of RxJS, on the most recent updates for RxJS 7 and its targeted release date.
-- Better TypeScript typings
-  - RxJS implementation is using all of the stricter settings for TypeScript, We're trying to be strict as possible and I recommend that too by the way.
-- .toPromise operator will be deprecated in RxJS 7 and it will be removed by RxJS 8
-  - In its place, you'll find firstValueFrom() and lastValueFrom().
-- RxJS is smaller
-  - it's now almost 50% smaller.
-  - The original code was written 6 years ago and there have been about four rewrites 
-- RxJS 7 and Beyond
-  - It looks like, at this point, version 8 will not need to be a complete rewrite. 
-  - RxJS 8 will just go through the pending deprecations and finally get rid of them, 
-  - mainly because a lot of them were sitting there for about 2 years. 
-- What about RxJS 9 or even future versions?
-  - Ben explained that some libraries and APIs started using the `AbortSignal` interface
-  - It can be used currently with fetch as a cancellation primitive
-  - This API exists in the browser, and will be available in Node.js. 
-  - RxJS would probably want to use the same cancellation mechanism. 
+
 ## rxjs-blog
+
+### [Optimizing Batch Processing Jobs with RxJS_201904](https://medium.com/@ravishivt/batch-processing-with-rxjs-6408b0761f39)
+
+- Batch processing may not appear too exciting. 
+  - Retrieve some data, do some operations on that data, repeat. 
+  - They do their job silently and take minimal input params to run with no fancy UIs. 
+  - But finding ways to optimize a batch processing job can be a very rewarding process. 
+- The optimization technique is always the same: maximize concurrency without overloading our resources. 
+  - Balancing the two can be a challenge.
+  - One such candidate is RxJS.
+- In this article, we’ll approach a common batch processing pattern in a reactive way using RxJS.
+- tl; dr
+  - Observables are awesome and can be used to really ramp up efficiency of a batch processing job. 
+  - The tradeoff is some additional complexity to think about the problem in a reactive way 
+  - but it would be much more complex (i.e. impossible) to achieve the same level of efficiency and flexibility with other approaches.
+- Some examples of batch processing jobs include:
+  - Traverse an API’s paginated list of data, fetch each record’s details, and index it in ElasticSearch.
+  - Fetch data from a database, aggregate with additional data, generate HTML reports, and email them out.
+  - Read database and generate sitemap.xml for search crawlers.
+  - Initialize a database with randomized seed data while satisfying all DB relations.
+- Note that converting a batch job to Observables and RxJS won’t automatically improve its efficiency. 
+  - It’s up to us to design a chain of observable operators that maximizes overall efficiency. 
+  - This design is dependent on the task at hand. 
+- Approach 1 — Sequential with Async/Wait
+- Approach 2 — Adding concurrency with Promise.all()
+- Approach 3 — Converting approach 2 to observables
+- Approach 4 — Optimizing observable concurrency
+- One hard part we haven’t yet solved is how to optimize the constraints to create a perfect balance between efficiency and resource consumption. 
+  - We’ve seen how to easily set higher-limit constraints in RxJS 
+  - but we have no guarantee that the observable pipeline we craft will maximize the data flow and come close to those limits. 
+  - we might be able to leverage tools like rxjs-spy to accomplish it.
+
+### [HOW TO DEBUG RXJS CODE_201512](https://staltz.com/how-to-debug-rxjs-code.html)
+
+- The short answer is: you have to depend mostly on drawing diagrams on paper and adding `.do(x => console.log(x))` after operators, 
+  - but it will get a lot better with the arrival of RxJS 5.
+- Once you have Observables everywhere and RxJS is taking over control flow, the traditional debugger stops being useful. 
+- The conventional debugger was engineered for procedural programming, not for any programming paradigm. 
+- Code built with RxJS Observables live in a higher level of abstraction than plain procedural JavaScript code.
+- Using the procedural debugger will reveal lower-level details that do not usually help to solve our bugs. 
+- The same applies to debugging Promises or callback-based code. 
+- Instead of blaming Promises as “not debuggable”, we need Promise-specific debugging tools, such as Chrome’s Promise Tab in DevTools.
+  - Warning: Support for the Promise inspector has been removed.
+  - [How to step through your code](https://developers.google.com/web/tools/chrome-devtools/javascript/step-code#enable_the_async_call_stack)
+- there are 3 techniques you can use today to debug RxJS:
+  - Adding `.do(x => console.log(x))` to trace to the console
+  - Drawing a dependency graph and following the flow
+  - Drawing a marble diagram
+- The goal of debugging is simply to help you get an accurate mental model of the execution of your code. 
+- This is the most rudimentary technique: to just “console.log” events happening on the streams.
+- We can add `.do(x => console.log(x))` between operators
+- Because Observables are lazy until you subscribe, a subscription triggers the operator chain to execute. 
+  - If you have the `console.log` inside a `do` and no subscription, the `console.log` will not happen at all.
+  - So `.do(x => console.log(x))` is a non-intrusive tracing technique that does not change the behavior of your program
+  - A subscription is intrusive(侵入的；闯入的) because it requests the operator chain to execute, changing the behavior of your program
+- If you follow the dependencies (e.g. shortLowerCaseName$ depends on name$) and build the dependency graph
+  - This can be easily drawn just by statically analyzing your code. 
+  - Each circle is an Observable, and each declaration var b$ = a$.flatMap(...) represents an arrow a$ --> b$.
+  - Observable dependency graphs should be the first tool you use to detect where does a bug live. 
+  - Once you have the dependency graph drawn on paper, you can add .do(x => console.log(x)) on key locations, for instance after every Observable declaration.
+  - Then, when executing code you will get a log that tells you how code flowed through the dependency graph
+  - Always be aware that Observables in the dependency graph are either cold or hot
+- Usually the dependency graph is enough to point out which part of the dataflow is not working as you expected it to. 
+  - Then, you can zoom into a specific Observable and use a marble diagram to debug it.
+- Most basic RxJS operators have marble diagrams
+  - A marble diagram expresses how an operator works by displaying its input Observable (an arrow with dots, at the top) and output Observable (an arrow with dots, at the bottom) behaving over time. 
+  - you can draw marble diagrams for any function you write which takes Observables as input and outputs Observables.
+  - If you are unsure how an operator (or a sequence of operators) works, add .do(x => console.log(x)) before and after the operator
+- the procedural debugger is rather useless for debugging RxJS code, 
+  - and you might have seen huge stack traces full of functions from the RxJS library.
+- The new Lift-based architecture in RxJS 5 makes it possible and easy to inject behaviors into all observers in an operator chain. 
+  - Ben Lesh at Netflix has mentioned future plans for building a debugging tool for Observables based on lift().
+- In the near future, we may see real-time rendering of the dependency graph or real-time rendering of marble diagrams. 
+  - The former is made possible with static analysis or the Lift architecture.
+- Marble diagrams (in text format) are used extensively in RxJS 5 for unit tests
+  - These text-based marble diagrams can already be used by RxJS 5 users. 
+  - Also, their correspondent PNG diagrams can be automatically generated too
 
 ### [使用RxJS管理React应用状态的实践分享](https://zhuanlan.zhihu.com/p/63587161)
 

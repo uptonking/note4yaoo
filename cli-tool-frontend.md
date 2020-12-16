@@ -16,12 +16,34 @@ modified: '2020-11-14T09:39:11.615Z'
 
 - npm x -- create-react-app react-cra-ts --template typescript --use-npm
 
-## npm
+## npm-cli
 
 - config-settings
   - prefix
     - The location to install global items. 
     - If set on the command line, then it forces non-global commands to run in the specified folder.
+
+- `npm install --legacy-peer-deps --ignore-scripts`
+  - --ignore-scripts: do not execute any scripts defined in the package.json.
+  - ref
+    - [npm install 之 gRPC](hhttps://www.jianshu.com/p/61e3cfb9c623)
+      - `npm install grpc --ignore-scripts`
+      - 进入node_modules目录。进入grpc的项目。修改相关源码文件：c++源码在deps/grpc/src/core/lib中。
+      - 重新build grpc：npm run-script install grpc --fallback-to-build --library=static_library 或者 `npm rebuild`
+    - [–ignore-scripts ignores *all* scripts](https://npm.community/t/ignore-scripts-ignores-all-scripts/1403)
+      - to allow only specific preinstall and postinstall scripts to run, I have used a strategy similar to this one:
+      - `npm install --ignore-scripts && ( cd ./node_modules/nose-sass && npm run install )`
+      - in order to not have to remember and type the exact invocation every time, I added it into my package.json's scripts section
+      - You can do `npm rebuild node-sass`. 
+        - This will leave your package.json/package-lock.json files intact but still make sure you get your native dep built.
+      - `npm rebuild` looks like the best solution for now.running `npm install node-sass` will modify package.json.
+
+- `npm build [<package-folder>]`
+  - This is the plumbing(管道系统；管道安装及修理) command called by `npm link` and `npm install`.
+
+- `npm rebuild`
+  - This command runs the `npm build` command on the matched folders. 
+  - This is useful when you install a new version of node, and must recompile all your C++ addons with the new binary.
 
 ## nvm
 

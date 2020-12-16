@@ -34,7 +34,7 @@ modified: '2020-12-13T14:36:15.618Z'
 - https://github.com/tbhuabi/textbus
   - 依赖prismjs、rxjs、reflect-metadata、@tanbo/di, @tanbo/css-themes, @tanbo/color
   - 基于数据驱动的富文本编辑器
-- https://github.com/musicq/vist
+- https://github.com/musicq/vist /2019
   - Virtual-list component build with react and rxjs
 - https://github.com/cellbang/malagu
   - core依赖reflect-metadata、inversify、rxjs、jexl、traverse
@@ -54,8 +54,8 @@ modified: '2020-12-13T14:36:15.618Z'
   - The RxPlayer is a library implementing a DASH and Microsoft Smooth Streaming video player directly on the browser, without plugins. 
   - It relies on HTML5 Media Source Extensions and Encrypted Media extensions and is written in TypeScript
   - The abstractions provided by rxjs and the inclusion of cancellation mechanisms (unlike say, ES6 Promises) were perfectly adapted to some of our IO-heavy code.
-- https://github.com/ahomu/Talkie
-  - /deprecated
+- https://github.com/ahomu/Talkie /201805
+  - 依赖rxjs、markdown-it、lit-html
   - Simple slide presentation library. 
 - https://github.com/microsoft/paris
   - Paris is a data management library for webapps, using TypeScript and RxJS to implement Domain-Driven Design.
@@ -82,16 +82,15 @@ modified: '2020-12-13T14:36:15.618Z'
 
 ## rxjs-state
 
-- https://github.com/TalkingData/rxloop
-  - 基于RxJS的可预测状态管理容器，超轻量级的 “redux + redux-observable” 架构
+- https://github.com/TalkingData/rxloop /201910
+  - 基于RxJS的可预测状态管理容器，redux + redux-observable架构(Inspired by dva)
   - redux自身的300行代码只处理简单的同步数据流，把脏活、累活比如异步数据流全扔给各种适配和插件处理了。
-- https://github.com/reobservable/reobservable
+- https://github.com/reobservable/reobservable /201903
   - Redux + rxjs + redux-obersvable best practice. Inspired by dva, rematch.
-- https://github.com/Dynalon/reactive-state
+- https://github.com/Dynalon/reactive-state /202010
   - Redux-clone build with strict typing and RxJS down to its core. 
   - A typed, wrist-friendly state container aimed as an alternative to Redux when using RxJS. 
-- https://github.com/jas-chen/rx-redux
-  - /2015
+- https://github.com/jas-chen/rx-redux /201508
   - A reimplementation of redux using RxJS.
 - https://github.com/LeetCode-OpenSource/ayanami
   - A better way to react with state. Inspired by redux-epics-decorator
@@ -120,14 +119,15 @@ modified: '2020-12-13T14:36:15.618Z'
 ## examples
 
 - https://github.com/baadal/starter-web
+  - 依赖@motion/styled、express、react-router-dom、rxjs6
   - React Starter Kit for building API-driven Modern Web Apps.
   - Server-side rendering (SSR)
   - CSS Modules, CSS-in-JS
   - Server-driven UI
 - https://github.com/oh-my-c0de/oh-my-fullstack
-  - Full stack web application skeleton (Next.js, Redux, RxJS, Immutable, Express)
-- https://github.com/fdecampredon/react-rxjs-todomvc
-  - /2017
+  - Full stack web application skeleton 
+  - 依赖Next9, Redux4, RxJS6, redux-observable, Immutable4, Express, antd3
+- https://github.com/fdecampredon/react-rxjs-todomvc /2017
   - TodoMVC implementation with React and RxJS
 
 - https://github.com/atfzl/ReactUI
@@ -148,6 +148,11 @@ modified: '2020-12-13T14:36:15.618Z'
 
 - https://github.com/cartant/rxjs-spy
   - A debugging library for RxJS
+  - The engineers at Slack have adopted rxjs-spy
+  - rxjs-spy introduces a tag operator that can be used to identify observables. It attaches a string tag to an observable
+  - it performs no additional processing and does not alter the observable's behaviour or value in any way.
+  - The API's methods are tag-based and tags can be matched using explicit literals, regular expressions or function predicates. 
+  - rxjs-spy exposes a module API intended to be called from code and a console API - via the spy global 
 - https://github.com/tomyitav/redis-messaging-manager
   - Pubsub messaging library, using redis and rxjs
 - https://github.com/kosich/rxjs-autorun

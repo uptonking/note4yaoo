@@ -2,7 +2,7 @@
 title: page-web-ajax
 tags: [ajax, web]
 created: '2020-08-07T04:37:22.307Z'
-modified: '2020-08-07T04:37:36.644Z'
+modified: '2020-12-16T09:31:18.867Z'
 ---
 
 # page-web-ajax
@@ -15,9 +15,9 @@ modified: '2020-08-07T04:37:36.644Z'
 - Comet则不同，客户端与服务器端保持一个长连接，只有客户端需要的数据更新时，服务器才主动将数据推送给客户端。
 - Comet的实现主要有两种方式，基于Ajax的长轮询（long-polling）方式和基于Iframe及htmlfile的流（http streaming）方式。
 - 在第一种方式中，浏览器在收到数据后会直接调用JS回调函数，但是这种方式该如何响应数据呢？
-  - 可以通过在返回数据中嵌入JS脚本的方式，如`<script type="text/javascript">js_func(“data from server ”)</script>`
+  - 可以通过在返回数据中嵌入JS脚本的方式，如`<script type="text/javascript">js_func("data from server")</script>`
   - 服务器端将返回的数据作为回调函数的参数，浏览器在收到数据后就会执行这段JS脚本。
-  - 但是这种方式有一个明显的不足之处：IE、Morzilla Firefox 下端的进度栏都会显示加载没有完成，而且IE上方的图标会不停的转动，表示加载正在进行。
+  - 但是这种方式有一个明显的不足之处：IE、Mozilla Firefox 下端的进度栏都会显示加载没有完成，而且IE上方的图标会不停的转动，表示加载正在进行。
   - Google 的天才们使用一个称为“htmlfile”的 ActiveX 解决了在 IE 中的加载显示问题，并将这种方法应用到了 gmail+gtalk 产品中。
 
 ### Websocket：未来的解决方案1
