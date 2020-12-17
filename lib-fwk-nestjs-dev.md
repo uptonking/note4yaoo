@@ -7,11 +7,20 @@ modified: '2020-12-12T19:22:59.759Z'
 
 # lib-fwk-nestjs-dev
 
+- Node.js framework for building scalable server-side applications.
+
 ## guide
 
-## docs
+- features
+  - scalable architecture server-side applications
 
-- Nest aims to provide an application architecture out of the box which allows for effortless creation of highly testable, scalable, loosely coupled and easily maintainable applications. 
-- The architecture is heavily inspired by Angular.
+- usecase
+  - libs
+
+- who-is-using
+
+- tips
+
+## pieces
 
 ## ref

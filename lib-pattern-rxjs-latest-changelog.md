@@ -59,6 +59,3 @@ modified: '2020-12-14T14:44:23.079Z'
 - 5.0.0-201509
   - config: add global configuration of Promise capability
   - combineLatest, zip, inspectTime
-- 0.0.0-201509
-  - observable: add Observable.all (forkJoin) 
-  - new operators

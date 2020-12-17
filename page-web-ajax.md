@@ -20,6 +20,13 @@ modified: '2020-12-16T09:31:18.867Z'
   - 但是这种方式有一个明显的不足之处：IE、Mozilla Firefox 下端的进度栏都会显示加载没有完成，而且IE上方的图标会不停的转动，表示加载正在进行。
   - Google 的天才们使用一个称为“htmlfile”的 ActiveX 解决了在 IE 中的加载显示问题，并将这种方法应用到了 gmail+gtalk 产品中。
 
+- #### [有人研究过cometd的Bayeux协议吗？进来一起研究](https://www.iteye.com/topic/142310)
+  - 最近在研究comet的相关技术，希望实现一个WebIM。
+    - 比较看好DOJO下的Bayeux，抛开DOJO自身存在的问题而言，Bayeux确实是第一个比较全面的实现comet的协议。
+    - 特别是对long-polling，callback-polling，iframe这几种comet的实现手段都能支持，
+    - 我现在手头只有jetty中自带的一个demo实现了Bayeux，不知道还有没有其他的具体例子？
+  - 除了jetty，还有glassfish也可以。好像是只有dojo实现了Bayeux协议。
+
 ### Websocket：未来的解决方案1
 
 - 如果说Ajax的出现是互联网发展的必然，那么Comet技术的出现则更多透露出一种无奈，仅仅作为一种hack技术，因为没有更好的解决方案。
@@ -37,11 +44,14 @@ modified: '2020-12-16T09:31:18.867Z'
 - 与WebSocket相比，它也能从服务端向客户端推送数据。那如何决定你是用SSE还是WebSocket呢？
 - 概括来说，WebSocket能做的，SSE也能做，反之亦然，但在完成某些任务方面，它们各有千秋。
 - 个人认为SSE最大的优势就是便利：不需要添加任何新组件，用任何你习惯的后端语言和框架就能继续使用。
-- 你不用为新建虚拟机、弄一个新的IP或新的端口号而劳神，就像在现有网站中新增一个页面那样简单。我喜欢把这称为既存基础设施优势。
-- SSE的第二个优势是服务端的简洁。相对而言，WebSocket则很复杂，不借助辅助类库基本搞不定（我试过，令人痛苦）。
-- 因为SSE能在现有的HTTP/HTTPS协议上运作，所以它能直接运行于现有的代理服务器和认证技术。而对WebSocket而言，代理服务器需要做一些开发（或其他工作）才能支持
+  - 你不用为新建虚拟机、弄一个新的IP或新的端口号而劳神，就像在现有网站中新增一个页面那样简单。我喜欢把这称为既存基础设施优势。
+- SSE的第二个优势是服务端的简洁。
+  - 相对而言，WebSocket则很复杂，不借助辅助类库基本搞不定（我试过，令人痛苦）。
+- 因为SSE能在现有的HTTP/HTTPS协议上运作，所以它能直接运行于现有的代理服务器和认证技术。
+  - 而对WebSocket而言，代理服务器需要做一些开发（或其他工作）才能支持
 - SSE还有一个优势：它是一种文本协议，脚本调试非常容易。
-- WebSocket相较SSE的一个潜在优势：WebSocket是二进制协议，而SSE是文本协议（通常使用UTF-8编码）。
+- WebSocket相较SSE的一个潜在优势：
+  - WebSocket是二进制协议，而SSE是文本协议（通常使用UTF-8编码）。
   - 当然，我们可以通过SSE连接传输二进制数据
   - 但用SSE传输二进制数据时数据会变大，如果需要从服务端到客户端传输大量的二进制数据，最好还是用WebSocket。
 - WebSocket相较SSE最大的优势在于它是双向交流的，这意味向服务端发送数据就像从服务端接收数据一样简单。
@@ -52,13 +62,8 @@ modified: '2020-12-16T09:31:18.867Z'
   - Apache和PHP会使用大量的内存，这会限制服务器所能支持的并行连接数。
   - 所以，要做到用SSE在数据传输性能上和WebSocket完全一样，需要写一个自己的后端服务器
 
-- ### [有人研究过cometd的Bayeux协议吗？进来一起研究](https://www.iteye.com/topic/142310)
-- 最近在研究comet的相关技术，希望实现一个WebIM。
-  - 比较看好DOJO下的Bayeux，抛开DOJO自身存在的问题而言，Bayeux确实是第一个比较全面的实现comet的协议。
-  - 特别是对long-polling，callback-polling，iframe这几种comet的实现手段都能支持，
-  - 我现在手头只有jetty中自带的一个demo实现了Bayeux，不知道还有没有其他的具体例子？
-- 除了jetty，还有glassfish也可以。好像是只有dojo实现了Bayeux协议。
-- [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
+- ref
+  - [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
 
 ## Why I still use XHR instead of the Fetch API
 

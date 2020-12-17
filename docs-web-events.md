@@ -47,7 +47,7 @@ modified: '2020-12-08T14:15:41.392Z'
   - returns the number of pixels that the document is currently scrolled horizontally. 
   - In practice, the returned value is a double-precision floating-point value indicating the number of pixels the document is currently scrolled horizontally from the origin, where a positive value means the content is scrolled to the left.
   - If the document isn't scrolled at all left or right, then `scrollX` is `0` .
-  - In more technical terms, `scrollX` returns the X coordinate of the left edge of the current viewport. If there is no viewport, the returned value is 0.
+  - In more technical terms,  `scrollX` returns the X coordinate of the left edge of the current viewport. If there is no viewport, the returned value is 0.
 
 - `MouseEvent.button`
   - The `MouseEvent.button` read-only property indicates which button was pressed on the mouse to trigger the event.
@@ -62,3 +62,21 @@ modified: '2020-12-08T14:15:41.392Z'
   - Users may change the configuration of buttons on their pointing device so that if an event's button property is zero, it may not have been caused by the button that is physically left–most on the pointing device; however, it should behave as if the left button was clicked in the standard button layout.
 
   - 
+
+## EventSource
+
+- The EventSource interface is web content's interface to server-sent events. 
+  - An EventSource instance opens a persistent connection to an HTTP server, which sends events in `text/event-stream` format. 
+  - The connection remains open until closed by calling `EventSource.close()`.
+- Once the connection is opened, incoming messages from the server are delivered to your code in the form of events. 
+  - If there is an event field in the incoming message, the triggered event is the same as the event field value. 
+  - If no event field is present, then a generic `message` event is fired.
+- Unlike WebSockets, server-sent events are unidirectional; 
+  - that is, data messages are delivered in one direction, from the server to the client (such as a user's web browser). 
+  - EventSource的浏览器支持度很高，IE除外
+- For example, EventSource is a useful approach for handling things like social media status updates, news feeds, or delivering data into a client-side storage mechanism like IndexedDB or web storage.
+- When not used over HTTP/2, SSE suffers from a limitation to the maximum number of open connections, 
+  - which can be specially painful when opening various tabs as the limit is per browser and set to a very low number (6). 
+  - The issue has been marked as "Won't fix" in Chrome and Firefox. 
+  - This limit is per browser + domain, so that means that you can open 6 SSE connections across all of the tabs to www.example1.com and another 6 SSE connections to www.example2.com. 
+- When using HTTP/2, the maximum number of simultaneous HTTP streams is negotiated between the server and the client (defaults to 100).
