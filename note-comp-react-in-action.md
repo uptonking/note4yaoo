@@ -124,7 +124,7 @@ modified: '2020-12-08T13:36:12.443Z'
     - counter
     - todo-app(crud)
     - data-fetching-app(github api)
-    - realworld-app: https://github.com/gothinkster/realworld
+    - [realworld-app](https://github.com/gothinkster/realworld)
   - admin-dashboard
   - doc-site-generator(component-preview)
   - theme-designer(grommet/UI Fabric Theme Designer)

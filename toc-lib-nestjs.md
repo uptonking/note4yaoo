@@ -20,7 +20,7 @@ modified: '2020-12-13T13:14:40.141Z'
   - A full-stack TypeScript solution, and starter project. 
   - Includes an API, CLI, and example client webapp.
   - The frontend example is in Angular, although any client-side Javascript framework can easily be used, including React, or Vue js.
-- https://github.com/notadd/notadd
+- https://github.com/notadd/notadd /201901
   - 基于Nest.js的微服务开发架构
 - https://github.com/kyle-mccarthy/nest-next
   - it allows the rendering of next.js pages via nestjs controllers and providing initial props to the page as well.
@@ -30,12 +30,16 @@ modified: '2020-12-13T13:14:40.141Z'
 
 ## nestjs-examples
 
+- https://github.com/Vivify-Ideas/nestjs-boilerplate
+  - Authentication, TypeORM, Configuration, Swagger
+- https://github.com/bradtraversy/nestjs_rest_api
+  - A CRUD REST API using the NestJS framework and MongoDB/Mongoose.
+- https://github.com/ibrahimjelliti/BookStore
+  - 简单服务器，无数据库，使用json对象模拟crud
 - https://github.com/lujakob/nestjs-realworld-example-app
   - real world backend API built with NestJS + TypeORM / Prisma
 - https://github.com/NarHakobyan/awesome-nest-boilerplate
   - nestjs, Typescript, Postgres, TypeORM
-- https://github.com/Vivify-Ideas/nestjs-boilerplate
-  - Authentication, TypeORM, Configuration, Swagger
 - https://github.com/squareboat/nestjs-boilerplate
   - A production ready scalable NestJS boilerplate with batteries included. 
   - Objection.js is a SQL-friendly ORM for Node.js
@@ -80,6 +84,9 @@ modified: '2020-12-13T13:14:40.141Z'
   - 开源的社区系统, nestjs+vue
 
 ## nestjs-extensions
+
+- https://github.com/sergey-telpuk/nestjs-rbac
+  - rbac module for Nest.
 
 - https://github.com/nest-cloud/nestcloud
   - A NodeJS micro-service solution, writing by Typescript language and NestJS framework.

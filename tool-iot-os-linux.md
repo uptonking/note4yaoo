@@ -11,6 +11,13 @@ modified: '2020-11-25T08:35:35.990Z'
 
 ## ubuntu
 
+- 系统升级的困扰
+  - 可能变化的ui：系统图标、字体
+  - ubuntu18版的postgresql-10数据库会保留到u20
+    - u20再安装数据库的扩展时会安装postgresql-12，但不会启动!!!
+    - 变通方法
+      - 备份p-10数据库数据，卸载原数据库，升级到u20，再安装p-12，然后导入备份数据
+
 - ubuntu发行版的软件生态较为丰富
 - 根据UnitsPolicy，文件管理器显示文件的大小基于1KB=1000bytes(SI standard)
   - 而终端`ls -lh`显示大小基于1KiB=1024bytes(IEC standard)

@@ -12,12 +12,17 @@ modified: '2020-12-12T19:22:59.759Z'
 ## guide
 
 - features
-  - scalable architecture server-side applications
+  - scalable architecture for server-side applications
+  - ioc container
 
 - usecase
   - libs
 
 - who-is-using
+
+- examples
+  - [nestjs-template](https://github.com/Saluki/nestjs-template)
+  - goal of this project is to provide a clean and up-to-date "starter pack" for REST API projects
 
 - tips
 
