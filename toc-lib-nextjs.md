@@ -13,6 +13,7 @@ modified: '2020-12-12T19:29:51.981Z'
   - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
   - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
 - https://github.com/shuding/nextra
+  - 依赖next、nextra-core、react
   - The Next.js Static Site Generator
   - Nextra is a Next.js and MDX based site generator. 
   - 0 line of code needed to setup, just write pure Markdown.
@@ -20,18 +21,17 @@ modified: '2020-12-12T19:29:51.981Z'
   - A static site generator with markdown + react for Next.js
 - https://github.com/saltyshiomix/nextron
   - NEXT.js + Electron
-- https://github.com/dunglas/react-esi
-  - React ESI is a super powerful cache library for vanilla React and Next.js applications, that can make highly dynamic applications as fast as static sites
 - https://github.com/jxnblk/mdx-docs
   - Document and develop React components with MDX and Next.js
 - https://github.com/domitriusclark/mdnext
+  - 依赖@chakra-ui/core
   - The opinionated ecosystem for MDX powered NextJS apps for blogs, documentation, and more.
 - https://github.com/kyle-mccarthy/nest-next
   - nest-next provides a nestjs module to integrate next.js into a nest.js application
   - it allows the rendering of next.js pages via nestjs controllers and providing initial props to the page as well.
-- https://github.com/hoangvvo/next-connect
-  - The TypeScript-ready, minimal router and middleware layer for Next.js
-  - The smol method routing and middleware for Next.js (also works in micro or Node.js HTTP Server). Powered by trouter.
+- https://github.com/danielbayerlein/dashboard
+  - Create your own team dashboard with custom widgets. 
+  - Built with Next.js, React, styled-components and polished.
 
 ## nextjs-examples
 
@@ -79,5 +79,11 @@ modified: '2020-12-12T19:29:51.981Z'
   - automatically optimizes images used in next.js projects (jpeg, png, svg, webp and gif).
 - https://github.com/illinois/next-page-transitions
   - customizable page transitions for Next.js apps
+- https://github.com/hoangvvo/next-connect
+  - The TypeScript-ready, minimal router and middleware layer for Next.js
+  - The smol method routing and middleware for Next.js (also works in micro or Node.js HTTP Server). Powered by trouter.
+- https://github.com/dunglas/react-esi
+  - React ESI is a super powerful cache library for vanilla React and Next.js applications, that can make highly dynamic applications as fast as static sites
+  - by storing fragments of server-side rendered pages in edge cache servers
 
-## nextjs-repos
+## more-repos

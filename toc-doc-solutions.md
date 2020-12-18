@@ -117,6 +117,7 @@ modified: '2020-11-16T12:40:33.516Z'
   - https://github.com/remorses/dokz
     - https://dokz.site/
     - /283Star/ISC/202010/ts
+    - 依赖@chakra-ui/core、@emotion/core、prism-react-renderer
     - Effortless documentation with Next.js and MDX
     - File based routing
   - https://github.com/remorses/vitro
@@ -212,8 +213,6 @@ modified: '2020-11-16T12:40:33.516Z'
   - 组件展示区上下结构，按钮有copy、reset、format、api、openWithCodePen/sandbox
 - https://github.com/auth0/cosmos
   - 将 `import { Button } from '@auth0/cosmos';` 写在页面最上方，而不是写在组件展示块
-- https://github.com/remorses/dokz
-  - 基于Next.js和MDX的文档工具
 
 ## more-repos
 

@@ -56,3 +56,7 @@ modified: '2020-10-22T06:51:07.421Z'
 - https://github.com/lucaong/minisearch
   - a tiny but powerful in-memory fulltext search engine written in JavaScript. 
   - It is respectful of resources, and it can comfortably run both in Node and in the browser.
+
+- https://github.com/nextapps-de/flexsearch
+  - /6.7kStar/Apache2/201911/js
+  - Next-Generation full text search library for Browser and Node.js

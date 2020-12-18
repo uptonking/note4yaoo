@@ -29,7 +29,7 @@ modified: '2020-12-14T11:23:17.570Z'
     - nestjs
 
 - who-is-using
-  - google: angular
+  - google/angular
 
 - rxjs-tips
   - 若将rxjs引入框架，会在很大程度上增加复杂度

@@ -19,6 +19,8 @@ modified: '2020-12-12T19:22:59.759Z'
   - libs
 
 - who-is-using
+  - [Who is using Nest in production?](https://github.com/nestjs/nest/issues/1006)
+  - adidas: as our backend to retrieve GitHub metadata and contents from our CMS.
 
 - examples
   - [nestjs-template](https://github.com/Saluki/nestjs-template)
