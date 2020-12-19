@@ -29,6 +29,8 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 
 - clone非master分支
   - `git checkout origin/branchName`
+  - `git clone -b dev <仓库地址>`
+
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
   - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
 

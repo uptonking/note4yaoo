@@ -1,11 +1,11 @@
 ---
-title: toc-lib-web-fwk-tagged-template-literals
+title: toc-lib-fwk-tagged-template-literals
 tags: [js, tagged-template-literals]
 created: '2020-11-05T09:27:49.883Z'
-modified: '2020-12-08T14:22:08.336Z'
+modified: '2020-12-19T13:03:37.613Z'
 ---
 
-# toc-lib-web-fwk-tagged-template-literals
+# toc-lib-fwk-tagged-template-literals
 
 ## lit-html-uhtml
 

@@ -7,16 +7,18 @@ modified: '2020-12-08T13:17:30.798Z'
 
 # ing-yaoo-noter
 
-- local/offline first markdown-based note app
+- local/offline first markdown-based note-taking app
 
-## noter-features-亮点
+## features
 
 - core
   - local/offline/private/privacy first markdown-based note app
-    - offline means no ad，强调数据由用户完全掌控
-    - full control of your note data, born to keep data private
-    - online sync is optional
-    - extended md support, including GFM
+    - local means personal,born to keep data private,强调数据由用户掌控
+    - offline means no ad，强调可通用易移植
+    - full control of your data, free for sharing and exporting
+- online sync is optional
+- extended markdown support, including GFM/MDX
+
 - toc
   - toc优先采用docked/sticky的设计
     - 因为文章内容较长时，对于随页面滚动的toc会滚动到页面顶部然后消失
@@ -45,7 +47,7 @@ modified: '2020-12-08T13:17:30.798Z'
   - defaultViewMode/defaultEditMode
   - indentationSpace
 
-## noter-requirements-需求
+## requirements
 
 - io模块
 - 编辑模块
@@ -75,10 +77,10 @@ modified: '2020-12-08T13:17:30.798Z'
   - markdown顶部元数据采用注释形式，而不是多级键值对
   - 添加快捷键：复制文字的链接url
 
-## noter-experimental
+## experimental
 
 - [interactive notebooks](https://nteract.io/)
-  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
+  - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPL.
 
 ## notable
 

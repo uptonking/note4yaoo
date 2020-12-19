@@ -23,12 +23,12 @@ modified: '2020-11-16T12:40:33.516Z'
   - A magical documentation site generator.
   - No statically built html files, Support SSR, Support embedded files
     - there is literally no build step
-    -  unlike many static generators no HTML static site is created... update the Markdown and the site immediately shows those changes.
+    - unlike many static generators no HTML static site is created... update the Markdown and the site immediately shows those changes.
   - Useful plugin API, Smart full-text search plugin
   - Docsify is way way easier, probably because all the “build” stuff is happening via the javascript in realtime. 
   - https://github.com/jhildenbiddle/docsify-themeable
     - simple theme system for docsify.js
-  - who-uses
+  - who is using
     - https://shoelace.style/
     - https://imdone.io/docs/
 - https://github.com/YvesCoding/rcpress
@@ -65,7 +65,6 @@ modified: '2020-11-16T12:40:33.516Z'
     - While our main focus will still be helping you get your documentations right and well, 
     - it is possible to build any kind of website using Docusaurus 2 as it is just a React application. 
     - Docusaurus can now be used to build any website, not just documentation websites.
-    - [Docusaurus 2 design](https://github.com/facebook/docusaurus/issues/789)
   - Gatsby does many things well and is suitable for building many types of websites. 
     - GraphQL is also pretty core to Gatsby
   - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.

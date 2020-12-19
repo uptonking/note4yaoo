@@ -74,6 +74,16 @@ const CountingComponent = () => {
 
 ## web-ui-framework
 
+- https://github.com/hyperhype/hyperscript /201901
+  - Create HyperText with JavaScript, on client or server.
+  - https://github.com/Raynos/mercury
+    - a modular ui framework influenced by hyperscript but much more heavily optimized.
+    - mercury has some interesting ideas but they are not very practical at scale.
+
+- https://github.com/optoolco/tonic
+  - A Low Profile Component Framework. Minimal, Auditable, and Build-Tool-Free.
+  - Tonic is a thin wrapper around web components
+
 - https://github.com/marko-js/marko
   - A declarative, HTML-based language that makes building web apps fun
   - Marko extends the HTML language to allow building modern applications in a declarative way.

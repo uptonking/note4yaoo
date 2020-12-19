@@ -7,10 +7,17 @@ modified: '2020-12-08T14:40:19.377Z'
 
 # ing1-yaoo-datable
 
-- A handy/efficient data table to pivot your data
-  - 用更加灵活的表格来透视数据
+- A handy data table solution focused on data pivoting
 
-## todo
+## features
+
+- core
+  - flexible data pivoting like excel
+  - common formulas and functions support
+- all in js, react for frontend, nodejs for backend
+- support data in markdown table and list
+
+## ideas
 
 - 研发参考
   - 自研代码库的升级自己掌握，三方库如react hooks的升级影响到现有产品及周边生态
@@ -28,15 +35,6 @@ modified: '2020-12-08T14:40:19.377Z'
   - d3/g2/recharts
 - bi/olap/search
   - superset/kibana/turnilo
-
-## features
-
-- theme
-- usecase-component
-  - file-explorer
-  - search-view
-
-## ideas
 
 - ui设计
   - 表格左边放置过滤器

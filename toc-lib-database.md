@@ -67,6 +67,10 @@ modified: '2020-10-22T13:11:04.726Z'
 
 ## database
 
+- https://github.com/typicode/lowdb
+  - a small local JSON database powered by Lodash 
+  - supports Node, Electron and the browser
+
 - https://github.com/pubkey/rxdb
   - A realtime Database for JavaScript Applications
   - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
@@ -83,6 +87,13 @@ modified: '2020-10-22T13:11:04.726Z'
   - https://github.com/teambition/ReactiveDB
     - Reactive ORM for Lovefield
     - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
+
+- https://github.com/techfort/LokiJS
+  - /5.6kStar/MIT/202012/js
+  - javascript embeddable/in-memory database
+  - The super fast in-memory javascript document oriented database.
+  - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
+  - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
 
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究

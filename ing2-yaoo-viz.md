@@ -7,7 +7,14 @@ modified: '2020-12-08T14:40:22.180Z'
 
 # ing2-yaoo-viz
 
-## guide
+- modular framework dedicated to embedding viz widget in markdown, supporting chart, map, editor
+
+## features
+
+- core
+  - the best integration of chart and markdown document
+
+## requirements
 
 ## usecase
 

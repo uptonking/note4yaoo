@@ -60,6 +60,13 @@ modified: '2020-11-13T07:28:27.824Z'
   - https://github.com/coreui/coreui-react
     - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
     - 依赖popperjs、Tippy.js(tooltip,popover)
+- https://github.com/luwes/sinuous
+  - /710Star/MIT/202010/js
+  - no compile step needed, choose your view syntax.
+  - A goal Sinuous strives for is to have good interoperability. 
+  - Sinuous creates DOM elements via hyperscript `h` calls. 
+  - This allows the developer more freedom in the choice of the view syntax.
+  - The Sinuous `observable` module provides a mechanism to store and update the application state in a reactive way. 
 - https://github.com/winjs/winjs
   - /4kStar/MIT/201809/js
   - build applications using HTML/JS/CSS technology. 

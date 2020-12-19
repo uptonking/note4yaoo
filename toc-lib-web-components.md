@@ -9,6 +9,9 @@ modified: '2020-11-13T07:33:43.521Z'
 
 ## web-components-framework
 
+- https://github.com/ampproject/amphtml
+  - AMP is a web component framework for easily creating user-first websites, stories, ads, emails and more.
+
 ## web-components-extensions
 
 - https://github.com/wtnbass/fuco

@@ -32,9 +32,6 @@ modified: '2020-11-13T07:31:27.113Z'
   - Accessible modal dialog component for React
 - https://github.com/reactjs/react-tabs
   - Accessible and easy tab component for ReactJS
-- https://github.com/seriousben/embeddable-react-widget
-  - https://seriousben.github.io/embeddable-react-widget
-  - Create an embedable js widget with react
 - https://github.com/wmira/react-sidenav
   - /319Star/MIT/202006
   - https://react-sidenav.now.sh/

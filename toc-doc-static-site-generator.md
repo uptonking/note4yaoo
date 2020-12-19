@@ -8,6 +8,7 @@ modified: '2020-10-13T09:21:27.098Z'
 # toc-doc-static-site-generator
 
 ## guide
+- 
 
 - ref
   - [top static-site-generator](https://github.com/topics/static-site-generator)
@@ -31,6 +32,7 @@ modified: '2020-10-13T09:21:27.098Z'
   - Jekyll is the engine behind GitHub Pages
 - https://github.com/hexojs/hexo
   - /31.8kStar/MIT/202010/js
+  - 依赖bluebird、moment、warehouse(A JSON database with Models, Schemas, and a flexible querying interface)
   - simple & powerful blog framework, powered by Node.js
   - Hundreds of themes & plugins
 - https://github.com/vuejs/vuepress
@@ -40,6 +42,7 @@ modified: '2020-10-13T09:21:27.098Z'
   - /13.1kStar/MIT/202012/js
   - A Git-based CMS for Static Site Generators
   - Netlify CMS is a single-page app that you pull into the /admin part of your site.
+    - It presents a clean UI for editing content stored in a Git repository.
 - https://github.com/getpelican/pelican
   - /10.1kStar/AGPLv3/202012/python
   - Static site generator that supports Markdown and reST syntax. Powered by Python.
@@ -60,6 +63,9 @@ modified: '2020-10-13T09:21:27.098Z'
 
 ## more-ssg
 
+- https://github.com/eleme/duang
+  - https://eleme.github.io/duang/docs/intro/
+  - 一种基于配置自动生成CMS的工具
 - https://github.com/usebedrock/bedrock
   - https://bedrockapp.org/
   - a static site generator to create large-scale HTML prototypes and document design systems

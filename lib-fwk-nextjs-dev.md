@@ -10,20 +10,30 @@ modified: '2020-12-12T19:22:00.735Z'
 ## guide
 
 - features
-  - seo搜索引擎优化
-  - 加快首屏渲染
+  - ssr support
+    - seo搜索引擎优化、加快首屏显示
+  - hybrid static & server rendering
+    - Pre-render pages at build time (SSG) or request time (SSR) in a single project
+  - Zero config
+  - route pre-fetching
+  - Incremental Static Regeneration
 
 - usecase
-  - libs
+  - 针对重消费者业务的seo
+  - 博客页面(Blog posts)
+  - 营销页面、产品介绍页面(Marketing pages)
+  - 帮助文档(help and documentation)
 
-- who-is-using
+- who is using
   - vercel/nextjs
-  - [Companies/Sites using Next.js](https://github.com/vercel/next.js/discussions/10640)
+  - more
+    - [Companies/Sites using Next.js](https://github.com/vercel/next.js/discussions/10640)
 
 - examples
+  - libs
 
 - tips
-  - 考虑开发的是库还是应用，引入nextjs的收益是否够高
+  - 考虑引入nextjs的收益是否够高，适合开发应用而不适合库
 
 ## pieces
 

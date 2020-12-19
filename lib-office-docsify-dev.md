@@ -7,21 +7,45 @@ modified: '2020-12-16T11:18:30.262Z'
 
 # lib-office-docsify-dev
 
+- A magical documentation site generator.
+
 ## guide
 
-- https://github.com/docsifyjs/docsify
-  - 依赖marked、prismjs
-  - A magical documentation site generator.
-  - No statically built html files, Support SSR, Support embedded files
-    - there is literally no build step
-    -  unlike many static generators no HTML static site is created... update the Markdown and the site immediately shows those changes.
-  - Useful plugin API, Smart full-text search plugin
-  - Docsify is way way easier, probably because all the “build” stuff is happening via the javascript in realtime. 
-  - https://github.com/jhildenbiddle/docsify-themeable
-    - simple theme system for docsify.js
+- features
+  - No statically built html files
+  - Support SSR
+  - Support embedded files
+  - Smart full-text search plugin
+  - Useful plugin API
+  - Multiple themes
 
-- who-uses
+- usecase
+  - md文档
+  - libs
+
+- who is using
   - https://shoelace.style/
   - https://imdone.io/docs/
 
+- examples
+
+- tips
+
 ## pieces
+
+- docsify依赖marked、prismjs
+
+## docs
+
+- 不同于 GitBook、Hexo 的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。
+  - 无需构建，写完文档直接发布
+
+- 全文搜索插件
+  - 会根据当前页面上的超链接获取文档内容，在localStorage内建立文档索引。
+  - 默认过期时间为一天
+- 评论插件
+  - Disqus、Gitalk
+
+- 服务端渲染（SSR）
+  - 你可以直接在你的 Node 服务器上执行 docsify start 
+  - docsify start 其实是依赖了 docsify-server-renderer 模块，你完全可以用它自己实现一个 server，可以加入缓存等功能
