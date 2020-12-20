@@ -10,16 +10,20 @@ modified: '2020-12-12T19:22:00.735Z'
 ## guide
 
 - features
+  - opinionated react framework with features for production out of the box
   - ssr support
     - seo搜索引擎优化、加快首屏显示
-  - hybrid static & server rendering
+    - hybrid static & server rendering
     - Pre-render pages at build time (SSG) or request time (SSR) in a single project
-  - Zero config
-  - route pre-fetching
+  - Zero config with flexible customization
+  - file-system based routing
+    - route pre-fetching
   - Incremental Static Regeneration
+    - Add and update statically pre-rendered pages incrementally after build time.
 
 - usecase
   - 针对重消费者业务的seo
+  - 落地页(Landing page)
   - 博客页面(Blog posts)
   - 营销页面、产品介绍页面(Marketing pages)
   - 帮助文档(help and documentation)

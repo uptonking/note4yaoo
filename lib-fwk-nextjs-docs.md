@@ -338,6 +338,12 @@ function Profile() {
   - Place any server-only runtime config under `serverRuntimeConfig`.
   - Anything accessible to both client and server-side code should be under `publicRuntimeConfig`.
 
+- To start, you only need to define a `.babelrc` file at the top of your app. 
+  - If such a file is found, it will be considered as the source of truth, 
+  - and therefore it needs to define what Next.js needs as well, which is the `next/babel` preset.
+  - Next.js uses the current Node.js version for server-side compilations.
+  - The modules option on "preset-env" should be kept to false, otherwise webpack code splitting is turned off.
+
 ## Styling 
 
 - Next.js allows you to import CSS files from a JavaScript file. 
@@ -525,11 +531,21 @@ function Profile() {
 
 ## Dynamic Import
 
+- Next.js supports ES2020 dynamic `import()` for JavaScript. 
+  - With it you can import JavaScript modules dynamically and work with them. 
+  - They also work with SSR.
+- You can think of dynamic imports as another way to split your code into manageable chunks.
+- React components can also be imported using dynamic imports, 
+  - but in this case we use it in conjunction with `next/dynamic` to make sure it works just like any other React Component. 
+
 ## Static HTML Export
 
 ## Absolute Imports and Module path aliases
 
 ## Automatic Static Optimization
+
+- If `getServerSideProps` or `getInitialProps` is present in a page, Next.js will switch to render the page on-demand, per-request (meaning Server-Side Rendering).
+- If the above is not the case, Next.js will statically optimize your page automatically by prerendering the page to static HTML.
 
 ## Measuring performance
 

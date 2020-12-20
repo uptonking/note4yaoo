@@ -144,3 +144,19 @@ modified: '2020-12-08T13:29:35.248Z'
   - But it should follow one-way data flow. 
 - [React vs Lit implementations of the React homepage demos.](https://pinkhominid.github.io/react-v-lit/)
 - [Comparing reactivity models - React vs Vue vs Svelte vs MobX vs Solid vs Redux](https://dev.to/lloyds-digital/comparing-reactivity-models-react-vs-vue-vs-svelte-vs-mobx-vs-solid-29m8)
+- [What's the deal with SvelteKit?](https://svelte.dev/blog/whats-the-deal-with-sveltekit)
+  - Sapper is an app framework (or 'metaframework') built on top of Svelte (which is a component framework). 
+    - Its job is to make it easy to build Svelte apps with all the modern best practices like server-side rendering (SSR) and code-splitting, and to provide a project structure that makes development productive
+    - It uses filesystem-based routing (as popularised by  Nextjs)
+    - your project's file structure mirrors the structure of the app itself.
+  - The first of those foundational assumptions is that you need to use a module bundler like  or  to build apps. 
+    - SvelteKit uses Rollup to make your apps fast
+  - The other foundational assumption is that a server-rendered app needs, well, a server. 
+    - Sapper effectively has two modes 
+      - `sapper build`, which creates a standalone app that has to run on a Node server, 
+      - and `sapper export` which bakes your app out as a collection of static files suitable for hosting on services like GitHub Pages.
+    - Static files can go pretty much anywhere, but running a Node server (and monitoring/scaling it etc) is less straightforward. 
+    - Nowadays we're witnessing a shift towards serverless platforms, in which you as the app author don't need to think about the server your code is running on, with all the attendant(伴随的；在场的) complexity. 
+    - SvelteKit fully embraces the serverless paradigm, and will launch with support for all the major serverless providers, 
+      - with an 'adapter' API for targeting any platforms that we don't officially cater to. 
+      - In addition, we'll be able to do partial pre-rendering, which means that static pages can be generated at build time but dynamic ones get rendered on-demand.

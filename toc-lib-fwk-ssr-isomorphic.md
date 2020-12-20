@@ -37,6 +37,18 @@ modified: '2020-12-19T13:04:40.865Z'
   - Rendertron runs as a standalone HTTP server. 
   - Rendertron renders requested pages using Headless Chrome
 
+- https://github.com/prerender/prerender
+  - Prerender is a node server that uses Headless Chrome to render HTML, screenshots, PDFs, and HAR files out of any web page. 
+  - The Prerender server listens for an http request, takes the URL and loads it in Headless Chrome, waits for the page to finish loading by waiting for the network to be idle, and then returns your content.
+  - The Prerender server can be used in conjunction with our Prerender.io middleware in order to serve the prerendered HTML of your js website to search engines (Google, Bing, etc) and social networks (Facebook, Twitter, etc) for SEO.
+  - Prerender differs from Google Puppeteer in that Prerender is a web server that takes in URLs and loads them in parallel in a new tab in Headless Chrome. 
+    - Puppeteer is an API for interacting with Chrome, but you still have to write that interaction yourself. 
+    - With Prerender, you don't have to write any code to launch Chrome, load pages, wait for the page to load, or pull the content off of the page. 
+    - The Prerender server handles all of that for you so you can focus on more important things!
+  - Prerender solves SEO by serving prerendered HTML to Google and other search engines. It's easy:
+    - Just install the appropriate middleware for your app (or check out the source code and build your own)
+    - Make sure search engines have a way of discovering your pages (e.g. `sitemap.xml` and links from other parts of your site or from around the web)
+
 - https://github.com/stereobooster/react-snap
   - /4kStar/MIT/201910/js
   - Pre-renders a web app into static HTML. 

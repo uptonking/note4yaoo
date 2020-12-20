@@ -1,12 +1,13 @@
 ---
-title: toc-lib-commenting
+title: toc-lib-comment
+tags: [comment, toc]
 created: '2020-12-19T11:41:56.538Z'
-modified: '2020-12-19T11:43:11.821Z'
+modified: '2020-12-20T08:23:22.808Z'
 ---
 
-# toc-lib-commenting
+# toc-lib-comment
 
-## commenting-github
+## comment-github
 
 - https://github.com/utterance/utterances /202012
   - A lightweight comments widget built on GitHub issues.
@@ -18,7 +19,7 @@ modified: '2020-12-19T11:43:11.821Z'
 - https://github.com/imsun/gitment /201804
   - a comment system based on GitHub Issues, which can be used in the frontend without any server-side implementation.
 
-## commenting-js
+## comment-js
 
 ## more-repos-commnet
 
