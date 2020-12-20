@@ -1,11 +1,11 @@
 ---
-title: algs-dev-usecase
+title: algs-usecase
 tags: [algorithms, usecase]
 created: '2020-09-12T13:41:54.393Z'
-modified: '2020-11-13T10:20:57.697Z'
+modified: '2020-12-20T15:24:16.216Z'
 ---
 
-# algs-dev-usecase
+# algs-usecase
 
 ## sort
 

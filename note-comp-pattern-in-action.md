@@ -40,9 +40,10 @@ modified: '2020-12-08T13:35:53.678Z'
   - all in js
 - ui设计
   - portal的target容器默认是组件自身或document.body
-  - should we show a indeterminate for the header's checkbox if partial is selected
-  - Inline Editing is a very common feature in a table, but it's highly coupled with specific ui libraries, so it won't be a part of BaseTable itself.
+  - Inline Editing is a very common feature in a table, 
+    - but it's highly coupled with specific ui libraries, so it won't be a part of BaseTable itself.
 - 交互设计
+  - should we show a indeterminate for the header's checkbox if partial is selected
   - should we select all the children if the parent is selected
   - how to sync the staled keys if those rows are removed
 - 参考现有ui解决方案：dom密集操作、状态数据频繁更新

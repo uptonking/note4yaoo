@@ -1,11 +1,11 @@
 ---
-title: page-algs-design-pattern
+title: pattern-gof-blog-design-pattern
 tags: [design-pattern]
 created: '2020-11-06T13:31:45.556Z'
-modified: '2020-11-06T13:32:07.601Z'
+modified: '2020-12-20T15:43:51.808Z'
 ---
 
-# page-algs-design-pattern
+# pattern-gof-blog-design-pattern
 
 ## summary
 

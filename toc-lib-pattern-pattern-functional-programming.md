@@ -1,8 +1,8 @@
 ---
 title: toc-lib-pattern-pattern-functional-programming
-tags: [functional-programming, pattern, toc]
+tags: [functional, pattern, toc]
 created: '2020-11-02T19:13:11.667Z'
-modified: '2020-12-13T14:37:27.760Z'
+modified: '2020-12-20T15:47:26.038Z'
 ---
 
 # toc-lib-pattern-pattern-functional-programming
@@ -74,8 +74,7 @@ modified: '2020-12-13T14:37:27.760Z'
   - The simplest way to create web components from plain objects and pure functions! 
 - https://github.com/wtnbass/fuco
   - Functional Component like React, but for Web Components.
-- https://github.com/clebert/batis
-  - A JavaScript library for reactive programming using React-like Hooks
+
 - https://github.com/CONNECT-platform/connective
   - https://github.com/CONNECT-platform/connective-html
   - agent-based reactive programming library for typescript
@@ -93,6 +92,18 @@ modified: '2020-12-13T14:37:27.760Z'
 
 - https://github.com/nickslevine/zebras
   - Data analysis library for JavaScript built with Ramda
+
+## hooks
+
+- https://github.com/clebert/batis
+  - A JS library for reactive programming using React-like Hooks
+  - Even though Hooks are actually a constrained solution for modeling states in actually stateless functional components, they have proven to be very elegant in their design. 
+  - In my opinion, they are particularly suitable for modeling finite-state automata.
+  - I wanted to use this kind of reactive programming in other areas as well, such as programming web workers or even JS-controlled robots. 
+    - Therefore I wrote Batis
+- https://github.com/michael-klein/hookuspocus
+  - allow you to add hooks to any function.
+  - Internally, hookuspocus uses WeakMaps if possible to keep states between runs (and falls back to simple Maps).
 
 ## more-fp
 

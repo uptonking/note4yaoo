@@ -1,11 +1,11 @@
 ---
-title: page-algs-pattern
-tags: [algorithms, pattern]
+title: pattern-dev-functional
+tags: [functional, pattern]
 created: '2020-08-28T07:37:32.196Z'
-modified: '2020-11-13T10:21:10.242Z'
+modified: '2020-12-20T16:01:15.556Z'
 ---
 
-# page-algs-pattern
+# pattern-dev-functional
 
 ## A Simple, Functional Module Pattern for TypeScript
 

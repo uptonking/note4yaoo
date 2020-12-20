@@ -17,6 +17,7 @@ modified: '2020-12-20T08:20:38.440Z'
   - 最大的区别在于普通纯react应用渲染在client side客户端浏览器，而nextjs的ssr需要在服务端将数据和组件渲染出html字符串
     - nextjs的ssr渲染计算需要占用服务器资源
     - ssr的主要目的是为了seo
+  - nextjs可结合使用多种开箱即用的策略，如首屏用ssr，之后用client side render
   - nextjs可配置性更强，定制更灵活
 
 - [What is the difference between NextJs and Create React App](https://stackoverflow.com/questions/62967958/what-is-the-difference-between-nextjs-and-create-react-app)

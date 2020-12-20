@@ -2,7 +2,7 @@
 title: page-web-what-forces-layout-reflow
 tags: [copied, css, layout, web]
 created: '2020-07-18T07:38:50.923Z'
-modified: '2020-07-18T07:40:16.951Z'
+modified: '2020-12-20T15:56:25.573Z'
 ---
 
 # page-web-what-forces-layout-reflow

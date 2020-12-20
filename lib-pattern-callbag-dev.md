@@ -2,7 +2,7 @@
 title: lib-pattern-callbag-dev
 tags: [callbag, pattern]
 created: '2020-12-15T09:40:19.722Z'
-modified: '2020-12-15T09:41:16.325Z'
+modified: '2020-12-20T15:41:43.270Z'
 ---
 
 # lib-pattern-callbag-dev
@@ -38,7 +38,7 @@ modified: '2020-12-15T09:41:16.325Z'
 
 ## callbag-pieces
 
-- How to visual debug callbag ? 
+- How to visual debug callbag? 
   - RxJS, xstream and others have visual debugging tools, 
   - but callbag are just a function message passing convention, so, how can we debug them?
   - 寻找第三方实现的调试工具

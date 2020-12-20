@@ -11,7 +11,7 @@ modified: '2020-12-08T13:36:04.435Z'
 
 - 组件库研发方向及特色
   - 每个大公司都有自己的设计系统与组件库
-    - 可参考实现细节:ui渲染、css、状态
+    - 可参考实现细节:ui组件结构、css、状态
     - 既要突出特色与众不同，也要考虑互操作标准化，如theme共享
   - themeable
     - 全局theme及组件级theme
@@ -32,6 +32,7 @@ modified: '2020-12-08T13:36:04.435Z'
     - 基于jsx的通用视图，参考jsx-lite/solid/vue
     - jsx-lite compiles jsx to React, Vue, Angular, Svelte, Solid, web components, vanillajs
   - hooks pattern
+    - plugin system
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为

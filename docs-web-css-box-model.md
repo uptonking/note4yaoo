@@ -1,8 +1,8 @@
 ---
 title: docs-web-css-box-model
-tags: [css-box-model, docs, web]
+tags: [box-model, docs, web]
 created: '2020-07-18T08:40:00.797Z'
-modified: '2020-12-08T13:15:23.491Z'
+modified: '2020-12-20T15:56:41.956Z'
 ---
 
 # docs-web-css-box-model

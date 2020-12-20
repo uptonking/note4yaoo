@@ -1,6 +1,6 @@
 ---
 title: tmpl-redux
-tags: [redux, starter]
+tags: [redux, starter, template]
 created: '2020-11-02T08:27:42.124Z'
 modified: '2020-11-02T08:29:11.847Z'
 ---
