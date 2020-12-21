@@ -7,7 +7,7 @@ modified: '2020-10-05T06:18:29.671Z'
 
 # toc-viz-base-webgl
 
-## solutions-catalog-webgl-viz
+## popular
 
 - luma.gl /1.7kStar/MIT/202009
   - https://github.com/visgl/luma.gl
@@ -29,6 +29,13 @@ modified: '2020-10-05T06:18:29.671Z'
   - a toolkit for visualizing autonomous and robotics data in the XVIZ protocol. 
   - built on top of React and Uber’s WebGL-powered visualization frameworks
 - https://github.com/Harmoware/Harmoware-VIS
-  - Spatial-Temporal Visualization Library using Deck.GL
+  - Spatial-Temporal Visualization Library using Deck. GL
 
+## webgl-animation
 
+- https://github.com/scottstensland/webgl-3d-animation
+  - An interactive 3D animation using WebGL to depict a 2D predator prey ecology on a grid real-time mapped onto the surface of a 3D torus. 
+
+## examples
+
+## more-repos

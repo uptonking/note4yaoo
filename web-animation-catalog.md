@@ -108,6 +108,52 @@ modified: '2020-12-21T07:44:20.078Z'
 - ref
   - [Using CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
+## animation-library-comparison
+
+- ### [Comparing JavaScript animation libraries_202004](https://blog.logrocket.com/comparing-javascript-animation-libraries/)
+- Anime.js
+- Pros
+  - Super easy to set up
+  - Fairly intuitive, Lots of good examples
+  - Compatible with modern browsers
+- Cons
+  - The information on CSS properties is not super easy to understand
+  - Easing is cool, but the custom patterns took a second to read
+  - Using selectors was good, but required a coordinated effort between styling and animation definitions
+    - since the animations required selectors, it made it a little difficult at times to translate elements styling to what I wanted animated.
+
+- p5.js
+- Pros
+  - Ability to scope animation and behavior to the initial setup and refresh of canvas elements
+  - Good documentation with lots of examples
+- Cons
+  - Difficulty in having to create “sketch” objects to actually perform animations and behavior
+  - Connection between DOM elements and rendered canvas requires custom references
+
+- Green Sock Animation Platform (GSAP)
+- Pros
+  - Very robust APIs with lots of possible animations
+  - Very good documentation with examples
+- Cons
+  - Specific applications might have special cases. 
+    - I didn’t really cover this, but GSAP also includes instructions around Angular, React, etc.
+  - Large amount of API options can be daunting(使气馁；使胆怯) to beginners
+
+- Three.js
+  - Up until this point, all of the animations have either interacted directly with DOM elements or added custom elements. 
+  - The Three.js library uses WebGL to render animations.
+  - WebGL does use the canvas element, but rather than generating a canvas and writing on top of it, as we saw with p5.js, WebGL allows you to call APIs to do the rendering for you.
+- Pros
+  - You get to leverage an API for interacting with WebGL, making it easier to work with the APIs
+  - You can leverage Three.js for creating graphics
+- Cons
+  - It requires manually appending an element to the DOM
+  - There is a learning curve associated with the library and WebGL concepts
+
+- Closing thoughts
+  - With Anime.js and GSAP, they both accomplished animations by importing a global object, identifying elements to apply animations to, and then defining the animation, 
+  - With p5.js and Three.js, custom elements were created and appended to the DOM. Both leveraged an HTML canvas to generate the associated animation
+
 ## ref
 
 - [Animate Your HTML5_2013](http://animateyourhtml5.appspot.com)

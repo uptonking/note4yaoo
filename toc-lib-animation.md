@@ -142,14 +142,32 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://www.minimamente.com/project/magic/
   - CSS3 Animations with special effects
 
+
+## canvas animation
+
+- https://github.com/shzlw/zeu
+  - /1.7kStar/MIT/201811/js/作者poli
+  - a collection of prebuilt visualization components for building real-time TV dashboard, monitoring UI and IoT web interface.
+
+- https://github.com/spite/ccapture.js
+  - a library to help capturing animations created with HTML5 canvas at a fixed framerate.
+
 ## interactive-ui-components
 
 - scrollreveal /GPLv3/18.9kStar/202007
   - https://github.com/jlmakes/scrollreveal
   - https://scrollrevealjs.org/
   - Animate elements as they scroll into view.
-- more-components
-  - https://github.com/ConnorAtherton/loaders.css
+- https://github.com/ai/easings.net
+  - Easing Functions Cheat Sheet to help developers pick the right easing function.
+
+- https://github.com/ConnorAtherton/loaders.css
+
+## animation-examples
+
+- https://github.com/ozrenkosi/flow
+  - Animation inspired by @sasj, made with p5.js
+  - 斑点上下移动
 
 ## misc
 

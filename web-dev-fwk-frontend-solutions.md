@@ -1,11 +1,13 @@
 ---
-title: web-dev-fwk-solutions
-tags: [framework, solutions, web]
+title: web-dev-fwk-frontend-solutions
+tags: [framework, frontend, solutions, web]
 created: '2020-11-01T09:48:26.955Z'
-modified: '2020-12-21T08:10:07.800Z'
+modified: '2020-12-21T14:53:44.945Z'
 ---
 
-# web-dev-fwk-solutions
+# web-dev-fwk-frontend-solutions
+
+- 技术选型时，参考知名项目或大公司项目的选择
 
 ## faq-not-yet
 
@@ -13,7 +15,7 @@ modified: '2020-12-21T08:10:07.800Z'
   - 不同浏览器的滚动条样式不一致
   - 难以实现sticky，滚动的是body还是div
   - 移动端地址栏显示与隐藏
-- component-to-image
+- component-to-thumbnail-image
   - repng
 - 中文字体体积大的问题
   - 静态网页可通过腾讯开源的font-spider删除字体库中未使用的字符数据
@@ -21,55 +23,128 @@ modified: '2020-12-21T08:10:07.800Z'
 - css模块化方案选择的问题
   - 基于Shadow DOM标准的局部css尚未流行
   - 可以参考ant-design等大型项目的选择，直接使用css或scss
-  - 要考虑将依赖的第三方组件的样式如何集成到现有项目
-  - 要考虑与具体框架结合，方便实现国际化RTL、语言和样式主题切换
+  - 要考虑如何将依赖的第三方样式集成到本项目，如何将本项目的样式提供给第三方用
+  - 要考虑如何与具体框架结合，更方便实现国际化RTL、语言和样式主题切换
   - 考虑在特殊情况下如何覆盖组件的样式
 
-## 前端框架开发模式
+## guide
+
+- 选用现有框架，还是自己实现框架
+  - 现有框架的生态系统若十分丰富，则就用现有框架
+    - 如koa的架构虽比express更好，但用户太少，插件没有express丰富，恶性循环
+    - 优秀的第三方库如redux会帮你处理伴随依赖的更新和休bug，不用自己花精力兼容concurrent mode
+  - 自己的时间和精力有限
+  - 知名框架一般有大公司或商业公司推广，小项目资源有限
+
+## frontend-solutions
+
+- 组件层 components
+  - 要素：dom、样式、交互
+  - i18n
+  - theming
+  - css样式及布局
+  - icon
+  - animation
+  - drag-layout-events
+  - layer
+  - more
+    - design-tokens
+    - live-playground
+    - starter
 
 - 视图层 view layer
   - MVC/MVVM
   - VDOM结构
   - DOM更新及操作
-
-- 组件 components
-  - dom、样式、交互
   - 生命周期
 
 - 状态管理 state management
-  - 拆分合并, 子树更新
+  - single vs multi store
+  - 发布订阅模式 vs 观察者模式
+  - 优化：拆分合并，子树更新
 
 - 路由管理 routing
-  - dynamic
+  - dynamic routing
+  - file based routing
 
 - 网络请求
   - fetch
   - observable
 
-- ssr：
-  - 核心优势：首屏加载更快、seo友好
-  - next.js、razzle
-  - 其他：beidou、react-server
-  - 同构
-
 - io
   - file-uploader
+  - image-optimization
+
+- ssr/universal/isomorphic
+  - 核心优势：加快首屏显示、seo友好
+  - 实例：next.js、razzle、beidou、react-server
 
 - functional
   - React tries/trying to move towards functional programming more these days with the advent of hooks etc 
   - angular doesn't by default having components as classes. 
 
-- scaffolder
-  - create-react-app
-  - counter, todo, data-fetching, realworld
-
-- 中间件 middleware
+- extensions/middleware
   - log
   - cache
+  - graphics
+  - immutable
+  - geo
 
-- frontend-dev
+- packages
+  - ui
+  - form
+  - grid
+
+- scaffolder
+  - create-react-app
+  - tutorials: counter, todo, data-fetching, realworld
+  - books/online courses
+  - showcase(made with fwk)
+  - storybook, online demo
+
+- tooling
+  - devtools: hmr，flash-updates
+  - ide: react-ide, spring-tools
+  - cli
+    - easy to create and develop starter project
+  - framework playground
+  - doc
+  - testing
+
+- integration/wrapper
+  - baas: firebase、LeanCloud、bomb
+  - animations
+  - charts
+  - maps
+  - material components
+  - framework implementation of X/Carbon/Ant Design System
+  - graph
+
+- cross-platform/devices
+  - deno
+  - renderer for terminal/repl
+  - react-native
+  - electron
+  - ar/vr
+
+- community
+  - site + github repo
+  - official blog
+  - documentation
+  - catalog-list
+  - experts on Twitter
+  - changelog, roadmap
+  - forum discussion posts, github issues, discord chats
+  - meetup, conference, youtube  series
+
+- more-frontend-dev
   - type safety
-  - template: html模版, js in html element
+  - AOT编译
+  - template
+    - html模版, js in html element
+  - 静态资源处理
+    - webpack-loader
+  - keyboard shortcuts
 
 - 前后端一体化
   - 优点

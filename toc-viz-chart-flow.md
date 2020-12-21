@@ -50,6 +50,10 @@ modified: '2020-10-22T10:22:55.878Z'
 
 ## more
 
+- mermaid /32.1kStar/MIT/202009/js
+  - https://github.com/mermaid-js/mermaid
+  - Generation of diagram and flowchart from text in a similar manner as markdown
+
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html
   - A windowed flow chart editor in React

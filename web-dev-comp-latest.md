@@ -15,6 +15,8 @@ modified: '2020-12-21T08:07:46.880Z'
     - 既要突出特色与众不同，也要考虑互操作标准化，如theme共享
   - themeable
     - 全局theme及组件级theme
+  - anchor based  animation
+    - 动画
   - near-zero config
     - 提供合理默认值，尽可能减少必需配置项
   - headless ui

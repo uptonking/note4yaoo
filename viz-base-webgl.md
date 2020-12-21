@@ -111,3 +111,7 @@ modified: '2020-12-21T07:47:02.451Z'
   - https://libgdx.badlogicgames.com/
   - libGDX is licensed under the Apache 2 License.
   - source code based on GWT
+
+## ref
+
+- [How to animate WebGL with GSAP](https://www.reddit.com/r/webdev/comments/j7t271/best_way_how_to_animate_webgl_with_gsap/)

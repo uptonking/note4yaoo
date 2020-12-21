@@ -29,9 +29,35 @@ modified: '2020-12-09T13:51:38.769Z'
   - 两个框架的方向类似，都是走类似 Spring 那样的依赖注入路线的
   - Midway.js 背后是阿里的团队，而 Nest.js 背后是国外的 Trilon 团队
 
+- ### [Five Node.js web frameworks you could use to build your next API!](https://twitter.com/oliverjumpertz/status/1339616560147820546)
+- express
+  - It's the classic and by far the most popular Node.js web framework
+  - It's fast, has a minimalistic approach, and doesn't get in your way
+- koa
+  - similar to express, but tries to give you more freedom and less complexity.
+  - It has a middleware stack that flows in a stack-like manner, allowing you to perform actions downstream then filter and manipulate the response upstream.
+- sails
+  - aims to resemble an MVC-like architecture pattern known from frameworks like Rails.
+  - It provides support for modernized and data-oriented development.
+- nestjs
+  - aims at being the enterprise-grade Node.js web framework.
+  - If you ever took a look at Spring in the Java ecosystem, you'll notice at least some similarities.
+  - It is a framework that sits on top of express or fastify.
+- fastify
+  - aims to provide performance. 
+  - And all that without sacrificing developer experience or productivity.
+  - It comes with schema validation, is really fast and extendable.
+- I've use Nest in production, 
+  - and to be honest, it's better for simple APIs. 
+  - If you need to do anything more complex than a CRUD, the thing gets complicated quickly
+  - It has a lot of boilerplate that helps you to deliver faster, and it works on top of express or fastify
+- I prefer a lightweight framework to have the liberty to extend it as I please
+  - If I need to build something for the long term, I'll go with express or fastify 
+  - If I need something quick and more straightforward, then I will go with nest
+
 ## nestjs
 
-- 项目的组织规范官方已经给了，还配套有 CLI，你不用再到处去找 best practice 了
+- 项目的组织规范官方已经给了，还配套有CLI，你不用再到处去找 best practice 了
   - passport、config 等一些常用的工具，Nest 有自己的实现
   - 以前用 express 这样传统的 node 框架，总感觉很累，主要工作就是写一个 route，再加个 handler，其它功能东拼西凑弄出来交差了事，总感觉像是在写脚本。。。而 Nest 在 OOP、TS、Decorator 的加持下，编码体验提升成不是一点半点
 - Nest受到Angular的启发，在服务器端提供开箱即用的应用架构，

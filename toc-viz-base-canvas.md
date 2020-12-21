@@ -7,6 +7,8 @@ modified: '2020-10-05T06:17:42.467Z'
 
 # toc-viz-base-canvas
 
+## popular
+
 - konva /5.3kStar/MIT/202007
   - https://github.com/konvajs/konva
   - http://konvajs.org/
@@ -23,3 +25,30 @@ modified: '2020-10-05T06:17:42.467Z'
   - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
   - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
   - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
+
+## canvas-animation
+
+- https://github.com/CreateJS/EaselJS
+  - /7.7kStar/MIT/202010/js
+  - a library for building high-performance interactive 2D content in HTML5
+  - It provides a feature-rich display list to allow you to manipulate and animate graphics. 
+  - It also provides a robust interactive model for mouse and touch interactions.
+
+## examples
+
+
+- https://github.com/doodlewind/freecube
+  - Freecube renders and animates Rubik's Cube with raw WebGL, plus a tiny rule-based solver showing how CFOP works.
+  - 魔方打乱还原动画
+- https://github.com/datavized/morph /201809
+  - 5 steps to create generative art from tabular data (e.g. spreadsheets and comma-separated values).
+
+## more-repos
+
+- https://github.com/c-zhuo/easycanvas /2019
+  - 一个同时支持2D和3D渲染、轻量、高效、MVVM模式的渐进式canvas渲染库
+
+## ref
+
+- [Best low level canvas library for making interactive animations?](https://stackoverflow.com/questions/24468958/best-low-level-canvas-library-for-making-interactive-animations)
+  - KineticJS, Greensock

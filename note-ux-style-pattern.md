@@ -7,7 +7,7 @@ modified: '2020-08-01T07:18:35.351Z'
 
 # note-ux-style-pattern
 
-## interaction
+## interaction-animation
 
 - 悬浮在头像上，从头像左上角逐渐动画弹出个人信息卡牌
   - 如stackoverflow回答者的头像

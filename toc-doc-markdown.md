@@ -11,7 +11,6 @@ modified: '2020-10-13T08:54:38.720Z'
 
 - https://github.com/markdown-it/markdown-it
   - /10.4kStar/MIT/202009
-  - https://markdown-it.github.io/
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
 - https://github.com/markedjs/marked

@@ -66,3 +66,7 @@ modified: '2020-11-03T06:56:53.961Z'
 - https://github.com/moroshko/rxviz
   - RxViz simply visualizes a given Observable. Your JavaScript code will be evaluated, and, if the last expression is an Observable, a nice animated visualization will appear.
   - RxViz doesn't rely on the internals of RxJS
+
+- https://github.com/pschroen/alien.js
+  - Alien.js is a design pattern and project structure for building SPA websites with ES modules and GSAP.
+  - 提供了很多动画示例

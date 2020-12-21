@@ -100,6 +100,17 @@ modified: '2020-07-14T10:28:11.443Z'
   - 参考 知名项目 或 大公司项目 的选择
   - 最小化依赖，便于维护
 
+- 先做design-system，还是先做list-grid的模块
+  - design-system是底层模块，list-grid是上层组件，两者都无第三方依赖，关系不大
+    - 相似点可在于采用相同布局方式、动画模式、视觉效果，可方便集成
+  - design-system准备采用foundation/adapter的架构
+  - list-grid的架构暂不明确，ag-grid的依赖注入写得繁琐
+    - 不是library，sort/filter/group的功能支持公式，可抽取到单独库
+    - 可作为framework，若选用三大框架则可移植性太差，选择直接用vanillajs
+    - 目标是参考现有grid，实现精简的插件架构的data grid
+  - 目标都是用到app(noter/datable)中
+    - 要支持在markdown编辑器中实时编辑和预览list/grid、chart、map
+
 ## dev-tricks
 
 - 少用if-else，多用卫语句

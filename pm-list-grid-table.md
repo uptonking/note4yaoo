@@ -53,6 +53,8 @@ modified: '2020-10-22T13:33:54.313Z'
   - component-wrapper
     - ag-list
     - read-only-grid
+- list as doc
+  - 默认显示成没有分行样式的整篇文档，鼠标悬浮时该行浮起提升
 
 - extensions
   - grid-config(defaults+utils)

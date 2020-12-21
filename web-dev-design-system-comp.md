@@ -8,15 +8,15 @@ modified: '2020-12-21T08:09:09.954Z'
 
 # web-dev-design-system-comp
 
-## 设计系统及组件开发经典问题
+## 设计系统及组件开发解决方案
 
 - 解决方案的选择参考
   - 技术选型时，参考知名项目或大公司项目的选择
     - 若有标准，先看兼容性
-    - 不要浪费过多时间选择，可先采取面向star的编程，方便搜索文档和开发问题
+    - 不要浪费过多时间选择，可先采取面向star的编程，容易搜索文档和开发问题
   - 集中时间和精力解决具体一类业务问题
 
-- locale: 多语言日期/国际化
+- i18n: 国际化locale多语言、日期、RTL
   - 解决方案大多与框架相关，如react-intl，要考虑兼容性
 
 - theming: 动态主题
@@ -30,8 +30,8 @@ modified: '2020-12-21T08:09:09.954Z'
   - 推荐使用css in js作为预处理器
     - 这样自动生成的类名既可以是单个普通类名，又可以是多个原子类空格拼接而成的类名，更灵活
   - css-in-js: styled-components, emotion
-  - css-modules:with css preprocessor
-  - layout:flexbox
+  - css-modules: with css preprocessor
+  - layout: flexbox
   - 实现动态样式的方法：css变量层叠、inline、data-属性
   - 大公司开始选择css in js的方法了，但css in js易与框架耦合，不方便切换框架
 
@@ -42,21 +42,22 @@ modified: '2020-12-21T08:09:09.954Z'
 
 - animation
   - pure css animation: animate.css
+  - svg/canvas/webgl animation
   - js animation 
     - 封装css动画
     - 基于flip:react-flip-toolkit
-    - 基于physics:react-motion
-    - 基于frame和timeline
-    - misc: anime.js,react-move
-  - svg/canvas/webgl animation
+    - 基于physics:react-motion,react-spring
+    - 基于frame和timeline: react-move
+    - misc: anime.js
 
 - drag-layout-events
   - react-dnd/draggable
   - react-resizable/re-resizable 
 
 - layer多层内容
+  - 基于z-index
   - 基于iframe，三国杀十周年新服游戏的处理方式
-  - 基于float
+  - 基于window，即网页内的窗口系统
 
 - design-tokens
   - fonts, color, spacing, border, shadow, transition
@@ -66,13 +67,11 @@ modified: '2020-12-21T08:09:09.954Z'
   - live-docs
 
 - 其他
-  - 静态资源处理
-    - webpack-loader
   - 鼠标键盘事件
     - throttle和debounce
     - tooltip提示鼠标处内容信息
 
-## solution-locale
+## solution-i18n
 
 - 需要国际化的组件
   - popover信息提示
