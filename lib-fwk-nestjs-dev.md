@@ -16,6 +16,10 @@ modified: '2020-12-12T19:22:59.759Z'
   - ioc container
 
 - usecase
+  - crud
+  - rest api
+  - architecture and platform
+    - microservice
 
 - who is using
   - adidas: as our backend to retrieve GitHub metadata and contents from our CMS.
@@ -25,7 +29,7 @@ modified: '2020-12-12T19:22:59.759Z'
 - examples
   - libs
   - [nestjs-template](https://github.com/Saluki/nestjs-template)
-  - goal of this project is to provide a clean and up-to-date "starter pack" for REST API projects
+    - goal of this project is to provide a clean and up-to-date "starter pack" for REST API projects
 
 - tips
 

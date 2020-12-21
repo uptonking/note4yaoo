@@ -7,6 +7,8 @@ modified: '2020-12-12T19:22:00.735Z'
 
 # lib-fwk-nextjs-dev
 
+- The React Framework with all the features you need for production
+
 ## guide
 
 - features
@@ -25,8 +27,8 @@ modified: '2020-12-12T19:22:00.735Z'
   - 针对重消费者业务的seo
   - 落地页(Landing page)
   - 博客页面(Blog posts)
-  - 营销页面、产品介绍页面(Marketing pages)
   - 帮助文档(help and documentation)
+  - 营销页面、产品介绍页面(Marketing pages)
 
 - who is using
   - vercel/nextjs

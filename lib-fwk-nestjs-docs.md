@@ -7,6 +7,8 @@ modified: '2020-12-17T09:11:31.952Z'
 
 # lib-fwk-nestjs-docs
 
+- Node.js framework for building scalable server-side applications.
+
 ## guide
 
 ## Overview

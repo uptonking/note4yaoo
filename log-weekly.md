@@ -9,6 +9,14 @@ modified: '2020-07-14T09:30:54.711Z'
 
 # 2020
 
+## w1221-1227
+
+## w1214-1220
+
+- rxjs docs
+- nestjs docs
+- nextjs docs
+
 ## w0928-1004
 
 - cactus-list

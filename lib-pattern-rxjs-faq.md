@@ -146,6 +146,64 @@ modified: '2020-12-14T14:42:11.433Z'
 
  
 
+### `ajax()` vs `fromFetch()`
+
+- fromFetch is only a thin wrapper around fetch() and accepts the same options, instead of the ajax wrapper around xhr.
+- This would allow us to polyfill fetch() in tests and reuse requestGraphQL functions instead of having to use a full JSDOM environment, with emulated CORS restrictions etc
+
+### [Why to use observables instead of Ajax?](https://stackoverflow.com/questions/47571880/why-to-use-observables-instead-of-ajax)
+
+``` JS
+// use observable
+this.http.get("MyURL")
+  .subscribe(
+    (_url: any) => {
+      //TODO My job
+    },
+    (error: any) => {
+      //TODO My job
+    },
+    () => {
+      //TODO My job
+    });
+
+// use ajax
+$.ajax({
+  url: "MyURL",
+  success: function(result) {
+    //TODO My job
+  },
+  error: function() {
+    //TODO My job
+  }
+});
+```
+
+- TLDR
+  - You can write cleaner asynchronous code and do more things with less code.
+- I have had the same question when I started with angular, 
+  - but after working with angular for over a year and having worked a lot with observables and rxjs over that period of time
+  - I have learned the following
+    - You cannot cancel promises
+    - Native promises have 2 methods, rxjs has many more operators
+
+- different usage
+  - Observables (which generally refer to the "RxJS" library, though not always) generally have a `subscribe()` method which lets them listen for changes, 
+    - and have hooks for onNext() , onError(), and onComplete()
+  - jQuery's AJAX syntax is a more "classic" callback structure, 
+    - where you call the function and provide it with callbacks directly. 
+    - It also has another syntax which allows you to add them as subsequent functions (.done() and the like).
+  - nowadays I would argue that the Promise syntax is the most popular
+    - `fetch()` is a native implementation of doing AJAX requests with Promise syntax.
+  - Out of the three, only the Promise one has any real advantage, which is that it is natively supported by modern browsers (whereas the other two require a third-party library). 
+    - But if you're already using a third-party library for something else, that's not a huge benefit.
+
+- Observables vs Promises
+  - Observables can define both the setup and teardown aspects of asynchronous behavior.
+  - Observables are cancellable.
+  - Observables can be retried using one of the retry operators provided by the API, such as `retry` and `retryWhen`.
+    - Promises require the caller to have access to the original function that returned the promise in order to have a retry capability.
+
 ### [Mobx 与 rxjs 在用法和本质上有何异同?](https://www.zhihu.com/question/283589041)
 
 - 相同的地方大概就是用到了观察者模式，不同的地方是很多的。

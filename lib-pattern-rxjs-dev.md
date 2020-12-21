@@ -7,6 +7,8 @@ modified: '2020-12-14T11:23:17.570Z'
 
 # lib-pattern-rxjs-dev
 
+- A reactive programming library for JavaScript
+
 ## guide
 
 - rxjs-features
@@ -21,6 +23,7 @@ modified: '2020-12-14T11:23:17.570Z'
     - 拖拽
     - 滚动
   - 网络请求的数据流
+    - 支持fetch、ajax、websocket
   - 状态管理
     - rxjs适合管理组件的局部状态，要注意引入rxjs的花费
     - 参考redux-observable

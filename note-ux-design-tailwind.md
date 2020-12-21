@@ -33,4 +33,3 @@ modified: '2020-10-03T15:30:10.070Z'
 - Tailwind (like Tachyons before it) takes advantage of atomic styles.
 - The idea, generally, is that instead of using class names like btn-primary which might add a multitude of style rules to a given element, we'd use more granular class names like, for example p-10 bg-blue border-1 font-bold which are often more self explanatory and usually map to a single CSS rule.
 - Tailwind will swap these directives out at build time with all of its generated CSS. 
-- 

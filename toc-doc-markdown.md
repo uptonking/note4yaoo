@@ -14,8 +14,16 @@ modified: '2020-10-13T08:54:38.720Z'
   - https://markdown-it.github.io/
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
-- marked
-- remark-parse
+- https://github.com/markedjs/marked
+  - /24kStar/MIT/202012/js
+  - A markdown parser and compiler. Built for speed.
+  - light-weight while implementing all markdown features from the supported flavors & specification
+- https://github.com/remarkjs/remark/tree/main/packages/remark-parse
+  - Parses Markdown to mdast syntax trees. 
+  - Built on micromark and mdast-util-from-markdown
+- https://github.com/eczn/down-parse
+  - /ts/2019
+  - markdown parser with a wonderful plugin system
 
 ## markdown-editor
 

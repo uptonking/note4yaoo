@@ -7,6 +7,21 @@ modified: '2020-12-08T13:28:14.387Z'
 
 # lib-fwk-spring-dev
 
+## guide
+
+- features
+
+- usecase
+  - ioc
+
+- who is using
+  - more
+
+- examples
+  - libs
+
+- tips
+
 ## dev-tips
 
 - WebMvcConfigurationSupport精简了5个方法
@@ -339,11 +354,13 @@ modified: '2020-12-08T13:28:14.387Z'
 
       - 激活各种BeanFactory处理器
       - 扫描 `@Configuration` 和 `@Bean`
+
   6) registerBeanPostProcessors(beanFactory); 
 
       - 拦截bean创建的bean处理器，这里只是注册，真正的调用是在getBean时候
       - 将各种BeanDefnition转换成RootBeanDefinition，如Annotated, Scanned
       - 扫描 `@Bean` ，将各种BeanDefnition转换成RootBeanDefinition，包括 `ConfigurationClassBeanDefinition`
+
   7) initMessageSource(); 
 
       - 为上下文初始化Message源，即对不同语言的消息体进行国际化处理

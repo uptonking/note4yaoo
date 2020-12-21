@@ -23,6 +23,10 @@ modified: '2020-11-13T07:31:27.113Z'
 
 ## starred
 
+- https://github.com/GeekyAnts/react-pluggable
+  - With React Pluggable, we can think of our app as a set of features instead of a set of components
+  - A plugin can be added or removed by a single line (which is perfect for A/B testing)
+
 - https://github.com/projectstorm/react-workspaces
   - help you build super-modern desktop-grade applications that have window management similar to Adobe / Jetbrains and Netbeans
 - https://github.com/kripod/react-polymorphic-box
