@@ -1,11 +1,11 @@
 ---
-title: tool-iot-os-windows
+title: tool-os-windows
 tags: [iot, operating-system, windows]
 created: '2020-11-25T08:20:44.670Z'
-modified: '2020-11-25T08:35:20.526Z'
+modified: '2020-12-22T12:42:18.585Z'
 ---
 
-# tool-iot-os-windows
+# tool-os-windows
 
 ## pieces
 

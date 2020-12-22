@@ -1,11 +1,11 @@
 ---
-title: tool-iot-win-wsl
+title: tool-os-win-wsl
 tags: [windows, windows-subsystem-linux, wsl]
 created: '2020-11-25T11:03:58.894Z'
-modified: '2020-12-08T14:32:40.332Z'
+modified: '2020-12-22T12:41:57.687Z'
 ---
 
-# tool-iot-win-wsl
+# tool-os-win-wsl
 
 ## guide
 

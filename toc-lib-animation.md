@@ -43,6 +43,7 @@ modified: '2020-10-05T06:22:02.107Z'
   - production-ready animation and gesture library for React
   - based on popmotion9, @popmotion/popcorn, @popmotion/easing
   - Framer Motion is the successor to the Pose animation library
+  - 
 - react-motion /MIT/18.6kStar/201911
   - https://github.com/chenglou/react-motion  
   - http://chenglou.github.io/react-motion/demos/demo0-simple-transition/
@@ -142,7 +143,6 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://www.minimamente.com/project/magic/
   - CSS3 Animations with special effects
 
-
 ## canvas animation
 
 - https://github.com/shzlw/zeu
@@ -182,8 +182,11 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/mattboldt/typed.js
   - Enter in any string, and watch it type at the speed you've set
 - https://github.com/Popmotion/popmotion
+  - /ts
   - Simple animation libraries for delightful user interfaces
-  - deprecated for framer-motion
+  - It supports keyframe and spring animations for numbers, colors and complex strings.
+  - designed to be composable and portable into any JavaScript environment, with an eye on worklets in the future.
+  - react-pose is deprecated for framer-motion
 - https://github.com/kimmobrunfeldt/progressbar.js
   - Responsive and slick progress bars
 - https://github.com/alexfoxy/lax.js

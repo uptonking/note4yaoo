@@ -11,7 +11,10 @@ modified: '2020-09-25T05:33:19.981Z'
 
 - 选用哪种state management方案更好？
   - 考虑直接用react context api，减少依赖
-  - 一个开发者开发了五六种方案(如jotai, zustand, react-tracked)，每种都有优缺点
+  - 一个开发者开发了多种方案(如jotai/zustand/react-tracked)，每种都有优缺点
+
+- 哪些计算适合放在服务端，哪些计算适合放在客户端？
+  - 行业案例: ssr, react-server-components
 
 ### 组件或应用的配置项过多时如何处理更好
 

@@ -24,3 +24,5 @@ modified: '2020-12-01T14:24:22.252Z'
   - Noir
 - 艳丽滤镜
   - Chrome
+- Capital Projects
+  - 基建项目，如修路、桥梁、下水道、卫生设备

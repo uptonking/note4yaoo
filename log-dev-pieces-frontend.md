@@ -12,6 +12,13 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- Automated end-to-end (E2E) tests tend to be brittle. Why? 
+  - Because the data returned tends to change over time. 
+  - My technique: Create test data as part of the test suite. 
+    - Then I test the GET calls against the data I just created
+  - However, sometimes test data can’t be easily generated because an API is read only. 
+  - Anyone have techniques for reliable E2E testing on read only APIs?
+
 - A "side effect" is anything that affects something outside the scope of the function being executed. 
   - Examples of side effects in react are
     - Data Fetching

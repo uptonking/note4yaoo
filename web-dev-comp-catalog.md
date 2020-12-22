@@ -89,13 +89,20 @@ modified: '2020-12-21T08:03:35.993Z'
 - Collapsible: 默认显示前16个字符串，也可显示单独设置的，点击时展开显示原内容
 - collapsible text   
 - collapsible banner
-- Card
-- PinnableCard: 类似支付宝首页可固定的菜单
-- List
+
+- ### Card
+- CodeCard
+  - 显示源码的卡片，类似源码截图，左上角有类似macOS的三点菜单
+  - examples
+
+- PinnableCard
+  - 类似支付宝首页可固定的菜单
+
+- ### List
   - collapsible
   - 评分表情包
-- Grid
-- Tree
+- ### Grid
+- ### Tree
 - Timeline
 - DiffViewer
 - Comparator
@@ -217,9 +224,6 @@ modified: '2020-12-21T08:03:35.993Z'
 - BulletComment/弹幕
 
 ## incubator
-
-- CodeCard
-  - 显示源码的卡片，类似源码截图，左上角有类似macOS的三点菜单
 
 ## ui-components-catalog
 

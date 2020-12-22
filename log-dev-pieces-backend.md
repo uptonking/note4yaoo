@@ -9,6 +9,10 @@ modified: '2020-07-14T09:29:55.789Z'
 
 ## logging
 
+- [The Dhall configuration language](https://dhall-lang.org/)
+  - Dhall is a programmable configuration language that you can think of as: 
+    - JSON + functions + types + imports
+
 - CQRS系统
   - 简单的说，CQRS（Command Query Responsibility Segration）就是一个系统，从架构上把 CRUD 系统拆分为两部分：命令（Command）处理和查询（Query）处理。
     - CQRS即读与写的职责分离。CQRS将读取和写入分离到不同的模型中，使用命令更新数据，查询用于读取数据。

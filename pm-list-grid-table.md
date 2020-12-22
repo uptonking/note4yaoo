@@ -71,6 +71,11 @@ modified: '2020-10-22T13:33:54.313Z'
 - keyboard-shortcuts
   - 列表使用jk键导航
 
+- 细节
+  - 搜索结果
+    - 快速跳转到第1个、最后一个、第N个
+    - 随着浏览位置的变化，显示当前显示的是第几个，如11/28
+
 ## grid-implementation-vs
 
 - ### react-table

@@ -20,6 +20,7 @@ modified: '2020-07-14T10:28:11.443Z'
     - make it work: 用脏乱差的方式实现功能
     - make it right: 吸收现有方案的优点
     - make it fast: 在局部功能点尝试新算法
+  - 产品卖给谁，卖点(features)是什么
 - 现在写的代码能够稳定执行至少6个月吗
   - 若不能，则设计有问题，或技术选型有问题
   - 原则
@@ -102,7 +103,7 @@ modified: '2020-07-14T10:28:11.443Z'
 
 - 先做design-system，还是先做list-grid的模块
   - design-system是底层模块，list-grid是上层组件，两者都无第三方依赖，关系不大
-    - 相似点可在于采用相同布局方式、动画模式、视觉效果，可方便集成
+    - 可采用相同布局方式、动画模式、视觉效果，方便集成到现有框架
   - design-system准备采用foundation/adapter的架构
   - list-grid的架构暂不明确，ag-grid的依赖注入写得繁琐
     - 不是library，sort/filter/group的功能支持公式，可抽取到单独库

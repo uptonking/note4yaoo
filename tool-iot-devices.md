@@ -1,11 +1,11 @@
 ---
-title: tool-iot
+title: tool-iot-devices
 tags: [iot, tool]
 created: '2019-08-11T07:36:17.519Z'
-modified: '2020-07-14T11:19:07.949Z'
+modified: '2020-12-22T12:42:44.995Z'
 ---
 
-# tool-iot
+# tool-iot-devices
 
 ## 设备使用问题
 

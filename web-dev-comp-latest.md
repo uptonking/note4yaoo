@@ -35,6 +35,8 @@ modified: '2020-12-21T08:07:46.880Z'
     - jsx-lite compiles jsx to React, Vue, Angular, Svelte, Solid, web components, vanillajs
   - hooks pattern
     - plugin system
+  - 特色参考点
+    - block style editor
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为
