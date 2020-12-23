@@ -1,6 +1,6 @@
 ---
 title: web-dev-comp-latest
-tags: [components, latest]
+tags: [components, frontend, latest]
 created: '2020-10-29T12:46:59.023Z'
 modified: '2020-12-21T08:07:46.880Z'
 ---
@@ -15,8 +15,11 @@ modified: '2020-12-21T08:07:46.880Z'
     - 既要突出特色与众不同，也要考虑互操作标准化，如theme共享
   - themeable
     - 全局theme及组件级theme
-  - anchor based  animation
-    - 动画
+  - interactive animation
+    - anchor based flowing animation 基于某一起点开始的变形动画，多是流动线型
+    - auto animation by default 首次渲染完成后，组件的某部分会自动开始动起来
+      - 如文字从0开始增加
+      - 如输入框的边框开始闪烁
   - near-zero config
     - 提供合理默认值，尽可能减少必需配置项
   - headless ui

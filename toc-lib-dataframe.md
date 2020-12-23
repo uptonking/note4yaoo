@@ -7,6 +7,18 @@ modified: '2020-12-07T10:41:47.651Z'
 
 # toc-lib-dataframe
 
+## data-notebook
+
+- https://github.com/jupyter/jupyter
+  - /11.4kStar/BSD/202012/python
+  - https://github.com/jupyter/notebook
+    - Jupyter notebook is a web-based notebook environment for interactive computing.
+- https://github.com/CartoDB/cartoframes
+  - A Python package for integrating CARTO maps, analysis, and data services into data science workflows.
+  - Python data analysis workflows often rely on the de facto standards pandas and Jupyter notebooks.
+  - CARTOframes give the ability to communicate reproducible analysis while providing t
+  - he ability to gain from CARTO's services like hosted, dynamic or static maps and Data Observatory augmentation.
+
 ## python
 
 - https://github.com/pandas-dev/pandas

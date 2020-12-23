@@ -1,11 +1,11 @@
 ---
-title: log-faq-dev-repeat-js
-tags: [faq, js, repeat]
+title: log-faq-dev-js
+tags: [faq, js]
 created: '2020-11-07T11:48:30.544Z'
-modified: '2020-11-07T11:48:49.321Z'
+modified: '2020-12-23T09:52:21.060Z'
 ---
 
-# log-faq-dev-repeat-js
+# log-faq-dev-js
 
 ## faq-not-yet
 

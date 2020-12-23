@@ -181,6 +181,10 @@ modified: '2020-12-21T08:03:35.993Z'
   - [用react做一个跟随组件的 tooltip](https://zhuanlan.zhihu.com/p/143093317)
   - [侧边栏设计](https://zhuanlan.zhihu.com/p/28465951)
 
+- ready-modal
+  - chatting-modal
+    - 用于在线客服咨询的聊天窗口
+
 - ### sidebar
 
 - usecase

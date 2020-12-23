@@ -9,6 +9,13 @@ modified: '2020-07-14T09:29:55.789Z'
 
 ## logging
 
+ 
+
+- A lot of folks think serving JSON is more efficient than HTML, but once gzipped they're often the same. Sometimes HTML is smaller.
+  - https://twitter.com/jaffathecake/status/930836616779878401
+  - Important benefit of JSON over HTML
+    - for SPAs that reside for a long time in a browser tomorrow's JSON is much more likely to still work with the loaded page than tomorrow's HTML.
+
 - [The Dhall configuration language](https://dhall-lang.org/)
   - Dhall is a programmable configuration language that you can think of as: 
     - JSON + functions + types + imports

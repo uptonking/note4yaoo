@@ -22,7 +22,7 @@ modified: '2020-09-04T03:35:44.699Z'
   - For hosting: self hosted is the most popular, followed by @awscloud (38.7%) and then @Netlify (23.3%)
   - For CI: @gitlab is the most popular (34.9%), followed by @github actions (34.7%), followed by @jenkinsci (33.7%)
 
-- ## [State of Frontend 2020 Report](https://tsh.io/state-of-frontend/#ebook)
+## [State of Frontend 2020 Report](https://tsh.io/state-of-frontend/)
 
 - Which of these frameworks have you used during the last year?
   - react: 3337 

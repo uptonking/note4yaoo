@@ -23,6 +23,13 @@ modified: '2020-10-22T16:10:59.589Z'
   - https://github.com/nwind
   - https://www.zhihu.com/people/wuduoyi/posts
 
+## geo
+
+- 彭金金
+  - 天地图，iview，mapbox
+  - https://github.com/jingsam
+  - https://jingsam.github.io/archives/
+
 ## web-dev
 
 - 司徒正美

@@ -9,12 +9,192 @@ modified: '2020-12-22T14:08:27.952Z'
 
 ## react server components
 
+### guide
+
+- RSC优点
+  - 自动代码分割
+
+- RSC缺点
+  - 若组件使用RSC的形式，会与具体后台服务耦合，复用性变得极低
+
+- RSC usecase
+  - Suspense组件的另一种形式
+
+- tips
+  - 分析具体项目组件的输入输出，估算引入rsc的成本
+
+- rsc vs nextjs
+  - rsc设计目标是兼容多个框架
+
+### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
+
+- 业务开发中需要权衡三个点：体验（user experience）、可维护性（maintenance）、性能（performance）
+  - 这是一个很常见的组件化组合的场景，问题在于每个组件都需要不同的数据，
+    - 但是就体验而言我们更希望这些组件的渲染尽量同时，而且如果关注性能的话，我们也会考虑并行的去fetch数据，
+    - 于是我们通常会fetch逻辑放到顶层，然后通过 Props 或者 Context 传递下去。
+    - 这样会把可维护性变差，每个组件从逻辑上就不那么解耦了，我们于是会考虑每个组件自己处理 fetch 逻辑。
+    - 这又会让体验变差，因为浏览器从服务端 fetch 数据是比较贵的 IO
+    - 我们之所以需要从服务端 fetch 数据，是因为我们把所有渲染操作放到了客户端，那如果我们把部分渲染逻辑放服务端呢
+    - 于是就有了 React Server Components
+  - 不是ssr
+    - 框架启动了后端服务，通过 /react 异步地输出页面内容，
+    - 只是这个页面内容不是HTML，是一个自定义的结构。
+    - 之所以不是直接输出HTML猜测是因为需要做些高级的事，比如维持组件状态。
+- 最常和Server Components对比的就是传统的PHP/ASP技术和为框架而生的SSR技术
+  - 听起来和 SSR 很像，而代码看起来则和 PHP 很像，很多人认为这是一种倒退
+  - 用一种“和现有技术类似的”方式来解决某个痛点的做法，正是一种先进而优雅的方式
+    - jsx 和 html 很相似，vue template 和 mustache 很相似
+- 在PHP/ASP时代，页面都是由服务器来渲染。
+  - 服务器接到请求后，查询数据库然后把数据“塞”到页面里面，最后把生成好的 html 发送给客户端。
+  - 当用户点击链接后，继续重复上面的步骤。
+  - 这样用户体验不好，每个操作几乎都要刷新页面，服务器处理完之后再返回新的页面
+- 我们可以概括为：
+  - 痛点：用户体验太差（user experience）
+  - 原因：页面总是刷新
+  - 解决：让页面别刷新
+  - 方案：使用 ajax
+- Angular/Vue/React这种单页应用(SPA)则主要是客户端渲染。
+  - 服务器接到请求后，把 index.html 以及 js/css/img 等发送给浏览器，浏览器负责渲染整个页面。
+  - 后续用户操作和前面的 php/jquery 一样，通过 ajax 和后端交互。
+  - 但和php相比，第一次访问时只返回了什么内容都没有的index.html空页面，没法做SEO
+  - 另一点是页面需要等到js/css和接口都返回之后才能显示出来，首次访问会有白屏。
+- 概括
+  - 痛点：首次访问白屏
+  - 原因：首次访问只返回了 index.html 页面
+  - 解决：首次访问时返回渲染完的页面
+  - 方案：SSR
+- SSR的方式是
+  - 首次访问的时候由服务器（通常是Node.js）来渲染页面，
+  - 然后把已经渲染好的html发送给浏览器。
+  - 后续的用户操作依然通过ajax获取数据，
+  - 然后在浏览器端渲染组件和页面。
+- 能不能让首屏的体验更好呢？
+  - 痛点：SSR首屏还是太慢
+  - 原因：服务端渲染是请求的接口太多，导致响应时间太长
+  - 解决：分块渲染，把已经渲染好的部分尽早的发送到浏览器
+  - 方案：bigPipe
+- 根据这种思路重新审视一下 React Server Components 解决了什么问题。
+- 例子很简单，页面中的三个组件应该如何请求数据？
+  - 顶层组件通过1个接口fetch所有数据，这样请求的时候会变长。
+    - 用户体验v 可维护性x 性能x 
+  - 顶层组件通过3个接口并行fetch所有数据
+    - 用户体验v 可维护性x 性能v 
+  - 每个组件自行fetch数据
+    - 用户体验x 可维护性v 性能v
+- 面对种种痛点，我们也都有自己的方案。
+  - 解决思路是让接口响应变快。可通过增加服务器配置来解决，或优化后端代码来解决。
+  - 使用graphql按需查询后端数据。
+- React团队分析了导致痛点的原因：**组件需要反复从服务器请求数据**
+- React团队给出的解决方案是：
+  - 把组件放到服务器端，这样客户端和服务器端只需要往返一次。
+  - 和graphql的思路很像，但是更加贴近react生态，也更加 frontend style。
+- graphql落地的最大障碍就是 “明明是解决的前端痛点，却非要改造后端”。
+  - 而把 graphql 做 BFF 来用坑也不少。
+- React Server Components则完全是按React的思维来解决这个问题。
+  - 甚至可以说是按前端组件化的思维来解决这个问题，这种思想Vue也可以实现。
+  - 前端发起请求，服务器端组件可以查询 db，可以访问接口 api
+  - 而且和 SSR 不同，服务器响应的不是 html，而是一个序列化的“指令”。
+  - 客户端根据此“指令”集来渲染组件和页面。
+- 服务器直接返回 html 片段的技术也有了，叫 pjax/turbolinks。
+  - 我去年和一个团队交流，说他们在做基于 React 组件的 pjax，后来放弃了
+- Server Components的这种思路还有很大的挖掘空间。
+  - 比如可以开发 WebSocket Components，通过WebSocket向浏览器主动的实时推送“指令”。
+  - 再比如可以开发 Native Components，在 App 内嵌的 H5 页面中向原生代码发请求，原生代码完成业务处理后返回给 H5 序列化的“指令”。
+  - 这种序列化的指令还可以被存储，可以被回放，可以被 mock，调试起来应该可以像 redux 一样具有时间旅行功能。
+- 跟SSR完全不是一个东西，大概说一下整体流程：
+  - Server先启动一个express服务，同时执行webpack编译，把src目录的组件编译成静态资源，
+    - 但是稍有不同的是，因为会用到react-server-dom-webpack这个库，所以只会编译属于Client的组件
+  - 打开Client（浏览器），输入Server提供的"Server组件"地址，回车
+  - Server接收到请求，去拿对应的Server组件，并将该Server组件和所有Client组件，使用react-server-dom-webpack这个库组合在一起序列化一个特殊的格式，并返回给Client
+  - Client拿到返回的Response，也是用react-server-dom-webpack这个库，去解析这个特殊的格式，
+    - 如果遇到J那就反序列化JSON得到一个真正的组件，如果遇到M那就在运行时执行__webpack_require__来引用静态资源
+    - J是Server组件实体，就是在Server执行React.createElement(Server组件)的JSON序列化结果
+    - M是Client组件引用路径，仅仅是引用信息
+    - J的反序列化直接在内存里执行，没有任何网络请求；
+    - M的引用就相当于“webpack动态import”，因此体现为Network里的一个请求；
+  - 得到一个完整的组件，包含反序列化的Server组件和动态import进来的Server组件，在Client进行渲染
+    - 因为涉及到JSON序列化，Server组件必须足够简单，才能在序列化反序列化的过程中不丢失信息
+- 跟SSR的区别是什么？
+  - SSR是在Server进行渲染，然后把渲染得到的HTML返回给Client；
+    - 而这个Server Component，所有组件，不管Server组件还是Client组件，都是在Client进行渲染。
+    - 只不过Server组件会自带一些在Server端获取的数据放在props里，这样就不用在Client再进行请求了。
+  - SSR因为每个请求都是一个新的HTML，就相当于两个应用，你的应用都变了，那你原来应用里的状态肯定都丢了；
+    - 但是Server Component不管你向Server请求多少次，都是同一个HTML，同一个应用，你的状态不会丢。
+- 使用Server Component是完全没法SEO的，因为Server返回的不是HTML。其实官方也提过，我们可以结合起来用：
+  - 我们的首页请求Server的/路径，这个路径对应的是SSR渲染
+  - Client拿到SSR返回HTML后，后续的组件，请求Server的/component路径，这个路径对应的是Server Component
+- 如何评价这个东西？
+  - 它必须要有Server支持，幻想着让一个纯CSR应用去接入一个Server组件是不现实的（云组件没那么容易）。
+  - 它应该是渐进式的，可以在一个纯CSR应用之上，很快的叠加上Server组件的功能。
+  - React越来越像Framework了。
+- 跟SSR的区别
+  - SSR 输出的是 HTML，Server Components 输出的是 chunks。
+  - Server Components 跟过去的SSR相比，你在拉取后不会丢失客户端的状态；
+- Server Components 的思路很有意思，把前端往业务层又推进了一步。
+  - 如果整个后端做数据仓储提供中台支持的话，那么前端开发者是否可尝试独立支撑业务开发？
+  - 我觉得相比 GraphQL 提供了更为统一的解决方案 —— **组件即服务**。
+- 快速捋一下这项服务端渲染partial页面更新技术的发展脉络
+  - innerHTML
+    - DOM 提供了渲染后更新的能力。甚至可以直接替换一部分 html。
+    - 这是一切 partial update 的起点。在小程序上做就非常困难。
+  - ajax + innerHTML
+    - 客户端就只需写非常少量的 html 替换代码，而复用绝大多数的服务端渲染逻辑。
+    - 这个做法非常流行于 ruby on rails 这样的服务端渲染的社区。
+  - 缺点
+    - 需要先用 id 等方式定位到要刷新的区块，然后再去请求刷新。
+    - 用户体验不佳：在服务端返回，html 被替换之前是没法看到进展的。如果网络慢了，用户就可能会焦虑。如果立即出 loading，用户也焦虑。
+    - 纯客户端的交互没法搞：这种替换 html 的做法适合表单提交这样的场景。但是客户端搞个 tree 组件，accordian 组件就没法这么弄了。
+  - 引用“组件”的 html
+    - 既然可以动态替换 html，例如 `<div>hello</div>`。那么为什么不能把 `<div>` 换成 `<UserNote>` 这样的自定义组件呢?
+    - 这种做法就是 wordpress 等 rich text editor 的做法。可以服务端渲染，也可以是用户编辑的内容。然后到客户端再做二次渲染。
+  - 把 html 增强为组件
+    - 这个是 HTML Over The Wire 中 stimulus 做的事情。
+    - 把客户端已有的 html，通过 css selector 就地重建 dom 元素和 js object 的映射关系。
+    - 和 react 先有 js object，再渲染 dom 元素正好反过来。
+    - 解决的就是服务端渲染出来的html是死的，缺乏客户端交互能力的问题。
+  - React Server Components的解决方案
+    - 不需要你手工用id找到DOM元素，然后去刷新。比turbo frame的做法高明
+    - 用户体验不佳：
+      - 用 comet long polling 技术，让服务端分次推送给客户端内容。
+      - 服务端推一点，客户端就立马渲染一点。
+      - 和浏览器渲染html一样，这样就缓解了用户焦虑。
+      - 还可以让服务端推个 `<suspense>` 过来，让客户端出 loading indicator
+    - 纯客户端的交互没法搞
+      - 服务端推过来的更新不仅仅引用 `<div>` 这样的原生组件，也可以引用 `<UserNote>` 这样的 react 客户端组件
+- 在这条主发展路径上，也绕过两个弯路。特点就是都想要“保持”state。
+  - rehydration
+    - 就是传统的 SSR 指代的 rehydration
+    - Dan 明确指出了这次的 React Server Component 的特点是 Server Component 仅仅运行在服务端。
+    - 而 SSR 的“同一个”组件，既要考虑自己运行客户端，又要运行在服务端。这就给组件造成了很大的复杂度。
+    - 只有当“同一个”组件需要同时运行时在服务端，又要在客户端复活，才会有复杂的 state rehydration 问题。
+    - 如果只是在服务端运行，state 用完了就扔了。
+    - 而服务端即便在服务端渲染出了客户端组件，也只是给了客户端组件的 props，这个时候客户端组件仍然未开始执行，自然没有 state 需要从服务端搬迁到客户端去。
+  - stateful connection
+    - 不是说 server 是 stateful，谁的 server 都是 stateful 的。
+    - 而是说是不是有 websocket 连接来保持一个 stateful 的服务端状态。
+    - elixir 的 LiveView 就是这样的技术（对比：Hotwire by Basecamp）。Meteor / Blazor 也是这样的技术
+    - 这种技术的缺点是连接断开，状态就丢失了，业务只能完全刷新才能恢复正常。
+    - 除非服务端做非常复杂的连接保持技术（欢迎打脸，这块确实不确信是不是有黑魔法）。在移动端网络下应用 stateful connection 就要三思了。
+- 现在的 RSC 产出物是序列化的 JSON 字符串，需要反序列化后解析出组件，再生成HTML，是一种中间态。
+  - 而 SSR 的产出物就是 HTML，不存在中间态，
+  - 所以本质上 React Server Component 还是属于 CSR，而非 SSR。
+  - 利用这种中间态，可以想象到很多有意思的玩法，云组件是其中一种，
+  - 主要还是受限于JSON没办法搞更多的魔法，所以可以用这个技术来优化的场景限制蛮多的，虽然很期待但暂时感觉实战上没有那么好用。
+- 看起来比较类似Blazor Server，但也不完全一样，Blazor Server还是让服务器来处理所有状态了。
+  - Blazor Server的做法可以写起来很爽，完全没有fetch数据等操作，但是对服务器和网络状态要求比较大，比较适合自己搞一些用户量不太大的东西用。
+  - React这个只让服务端渲染部分东西，应该最后是会更加实用的。
+- 感觉能替代部分微前端的功能。
+  - 颗粒度是到组件级别了，比微前端这种页面级的（或者系统级的）感觉更好点，复用性能大大提高。
+  - 我认为，把复用的组件提到服务端反而降低可维护性。
+- 感觉就是Suspense和lazyload的云端实现，
+  - lazy load 已经是lazy了，那这个component 是从本地引入的还是云端的，就没有什么太大的区别了。
+
 ### [faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
 
 - Does this replace SSR?
   - No, they’re complementary. 
   - SSR is primarily a technique to quickly display a non-interactive version of client components. 
-  - You still need to pay the cost of downloading, parsing, and executing those Client Components after the initial HTML is loaded.
+    - You still need to pay the cost of downloading, parsing, and executing those Client Components after the initial HTML is loaded.
   - You can combine Server Components and SSR, where Server Components render first, with Client Components rendering into HTML for fast non-interactive display while they are hydrated. 
   - When combined in this way you still get fast startup, but you also dramatically reduce the amount of JS that needs to be downloaded on the client.
 
@@ -40,7 +220,7 @@ modified: '2020-12-22T14:08:27.952Z'
   - with encouraging results (already ~30% product code size reduction). 
   - We expect more savings in an app designed with Server Components for the start.
 
-- Is this specific to Next.js?
+- Is this specific to Nextjs?
   - No. We are partnering with Next.js to build out an initial integration. 
   - However, Server Components are designed from the beginning to be used with any framework or integrated into custom application setups. 
   - Given the scope of Server Components — including router, bundler, and server/client coordination aspects
@@ -115,6 +295,10 @@ modified: '2020-12-22T14:08:27.952Z'
 
 ### [pr: React Server Components](https://github.com/reactjs/rfcs/pull/188)
 
+- One of the reason I loved hooks is that it solved REAL problems for us that were currently preventing scale in our React applications, 
+  - where-as I feel like for me personally this doesn't solve real problems I'm currently facing in my React projects.
+  - For me personally, I wouldn't trade a fractional increase in performance for the complexity this brings to a project, especially when I have many other levers I can pull before pulling this one.
+
 ### [RFC: React Server Components](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md)
 
 - Server Components allow developers to build apps that span the server and client, 
@@ -135,6 +319,8 @@ modified: '2020-12-22T14:08:27.952Z'
 - Developers can also share code between the server and client, 
   - allowing a single component to be used to render a static version of some content on the server on one route
   - and an editable version of that content on the client in a different route.
+
+- Basic Example
 
 ``` JS
 // Note.server.js - Server Component
@@ -162,17 +348,53 @@ function Note(props) {
 }
 ```
 
+- This is “just” a React component: 
+  - it takes in props and renders a view. 
+  - There are some constraints of Server Components - they can’t use state or effects
+- Server Components can directly access server data sources such as a database
+
 - **Motivation**
+  - Server Components address a number of challenges in React that we’ve seen across a wide range of apps.
+  - These challenges fall into two main buckets. 
+  - First, we wanted to make it easier for developers to fall into the “pit of success” and achieve good performance by default. 
+  - Second, we wanted to make it easier to fetch data in React apps.
 - Zero-Bundle-Size Components
+  - Developers constantly have to make choices about using third-party packages.
+  - While advanced features such as tree-shaking can help somewhat, we still end up having to ship some extra code to the user.
+  - Server Components allow developers to render static content on the server, taking full advantage of React’s component-oriented model and freely using third-party packages while incurring zero impact on bundle size.
 - Full Access to the Backend
+  - There are many great approaches to data-fetching with React, and many great databases and data stores to choose from.
+  - We wanted a solution that would both make it easier for anyone to get started and that could tame(易于控制；驯服) complexity in larger apps too.
+  - RSC能提供切换后台数据存储访问方式的灵活性
 - Automatic Code Splitting
+  - Common approaches are lazily loading a bundle per route and/or lazily loading different modules based on some criteria at runtime.
+  - there are two main limitations to existing code-splitting approaches. 
+  - First, developers have to remember to do it at all, replacing regular import statements with `React.lazy` and dynamic imports. 
+  - Second, this approach delays the point at which the application can start loading the selected component, offsetting some of the benefit of loading less code!
+  - Server Components address these limitations in two ways. 
+    - First, they make code splitting automatic: Server Components treat all imports of Client Components as potential code-split points. 
+    - Second, they allow developers to make the choice of which component to use much earlier, on the server, so that the client can download it earlier in the rendering process. 
 - No Waterfalls
-  - The problem isn’t really the round trips, 
+  - A common cause of poor performance occurs when applications make sequential requests to fetch data.
+  - one pattern for data fetching is to initially render a placeholder and then fetch data in a useEffect() hook
+    - When both a parent and child component use this approach, however, the child can’t start loading any data until the parent component finishes loading its data. 
+    - One upside of fetching data in individual components is that it allows an application to fetch exactly the data it needs
+    - We wanted to find a way to avoid sequential round trips from the client while still avoiding over-fetching of data that wouldn’t be used.
+  - Server Components allow applications to achieve this goal by moving sequential round trips to the server.
+    - The problem isn’t really the round trips, 
     - it’s that they are from client to server. 
     - By moving this logic to the server, we reduce the request latency and improve performance. 
-    - Even better, Server Components allow developers to continue fetching the minimal data they need directly from within their components
+  - Even better, Server Components allow developers to continue fetching the minimal data they need directly from within their components
 - Avoiding the Abstraction Tax
+  - UI frameworks in “static“ languages can exploit ahead-of-time compilation to compile away some of these abstractions, but this option isn’t available in JavaScript.
+  - we initially experimented with one approach to ahead-of-time (AOT) optimization — Prepack — but ultimately that direction did not pan out. 
+  - Specifically, we realized that many AOT optimizations don’t work because they either don’t have enough global knowledge or they have too little
+  - Server components help to address this by removing the abstraction cost on the server.
 - Distinct Challenges, Unified Solution
+  - a theme of these challenges was that React was primarily client-centric
+  - Ultimately, we realized that neither pure server rendering or pure client rendering were sufficient. 
+  - Server rendering allows applications to easily access server-side data sources and to quickly show static content, 
+  - while client rendering is critical for rich, interactive features where users expect immediate feedback. 
 
 - **Detailed Design**
 - Simplified Loading Sequence
@@ -221,6 +443,27 @@ function Note(props) {
   - you won't be able to execute SQL queries (but fetch should still work).
 
 ## pieces
+
+- Can someone help me understand who React Server components are for?
+  - https://twitter.com/RyanCarniato/status/1341485603695730688
+  - I get what they do. I get how they work. 
+    - But you could clearly fetch/stream data isomorphically. 
+    - Partial hydration can be accomplished other ways. 
+    - Why render the component on the server after the fact? 
+  - So layout components driven by readonly data can be excluded from the client bundle
+  - It is good to a lot of hight conditional (i18n, AB, theme) read-only data, like newsfeed
+  - It’s good for the cloud providers who will now make more money from all the compute associated with the Server side Components rendering
+
+- evan you
+  - https://twitter.com/youyuxi/status/1341124009858052104
+  - React server components are very interesting, but the coupling to a specific server setup seems quite a cost to pay. 
+    - Incidentally I've also been doing some research on more aggressive elimination of bundle/hydration cost, but with the goal of being applicable to both SSR/SSG.
+
+- our research into zero-bundle-size React Server Components
+  - https://twitter.com/reactjs/status/1341072021099327489
+  - The difference with LiveView is we refetch more coarsely — not sending updates, but the result. 
+    - (We need to add granular refetching, but it would be based on subtrees rather than diffs.) 
+    - The upside is that the server is fully stateless.
 
 - Sharing app views between server and client is magical:
   - https://twitter.com/DavidKPiano/status/1341391171176816644

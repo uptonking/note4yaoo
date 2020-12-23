@@ -1,11 +1,11 @@
 ---
-title: log-faq-dev-repeat-list-grid
-tags: [dev, grid, list, repeat]
+title: log-faq-dev-list-grid
+tags: [faq, grid, list]
 created: '2020-11-05T08:16:43.492Z'
-modified: '2020-11-05T08:19:21.899Z'
+modified: '2020-12-23T09:54:05.607Z'
 ---
 
-# log-faq-dev-repeat-list-grid
+# log-faq-dev-list-grid
 
 ## faq-not-yet
 

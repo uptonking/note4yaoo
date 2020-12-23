@@ -1,6 +1,6 @@
 ---
 title: web-dev-fwk-backend-solutions
-tags: [backend, framework, solutions]
+tags: [backend, framework, nestjs, solutions, spring]
 created: '2020-12-21T14:53:47.792Z'
 modified: '2020-12-21T14:54:14.916Z'
 ---
