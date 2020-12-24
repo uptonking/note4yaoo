@@ -20,6 +20,8 @@ modified: '2020-12-21T08:07:46.880Z'
     - auto animation by default 首次渲染完成后，组件的某部分会自动开始动起来
       - 如文字从0开始增加
       - 如输入框的边框开始闪烁
+  - block-style component
+    - 方便实现 collapsible content
   - near-zero config
     - 提供合理默认值，尽可能减少必需配置项
   - headless ui
@@ -38,8 +40,7 @@ modified: '2020-12-21T08:07:46.880Z'
     - jsx-lite compiles jsx to React, Vue, Angular, Svelte, Solid, web components, vanillajs
   - hooks pattern
     - plugin system
-  - 特色参考点
-    - block style editor
+  - 其他特色参考点
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为

@@ -83,7 +83,8 @@ git push origin master --force
     - 不会产生新commit
 
 - commit 相关
-  - git commit --amend 'new msg'
+  - 修改最新的提交描述信息
+    - git commit --amend -m 'new msg'
 
 ## java相关
 
