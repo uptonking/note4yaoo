@@ -10,6 +10,7 @@ modified: '2020-12-13T14:36:15.618Z'
 ## popular
 
 - awesome-rxjs
+  - 使用rxjs的代表：nestjs, angular, redux-observable, textbus
   - https://github.com/ichpuchtli/awesome-rxjs
   - https://github.com/RxJS-CN/rxjs-articles-translation
   - https://github.com/Widdershin/rxjs-ecosystem

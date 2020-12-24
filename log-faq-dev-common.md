@@ -9,6 +9,8 @@ modified: '2020-12-23T09:52:52.428Z'
 
 ## faq-not-yet
 
+- 没有电脑、没有网络、没有电的时候，你能做什么？
+
 - 选用哪种state management方案更好？
   - 考虑直接用react context api，减少依赖
   - 一个开发者开发了多种方案(如jotai/zustand/react-tracked)，每种都有优缺点

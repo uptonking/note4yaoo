@@ -28,6 +28,16 @@ modified: '2020-12-19T13:04:40.865Z'
 
 - https://github.com/ykfe/egg-react-ssr
   - 小而美的Egg + React + SSR 服务端渲染应用骨架，同时支持JS和TS
+  - 实现方式简洁，生产环境构建出来的bundle为同等复杂度的 next.js 项目的 0.7 倍，生成文件数量相比于 next.js 减少非常多
+  - 支持 HMR，支持本地开发以及生产环境 CSR/SSR 两种渲染模式无缝切换
+  - [与next.js实现方案的对比](https://github.com/ykfe/egg-react-ssr/wiki/%E4%B8%8Enext.js%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88%E7%9A%84%E5%AF%B9%E6%AF%94)
+    - next.js本地开发读取服务端bundle采用的方式是
+      - 将bundle以开发环境的模式构建到本地，
+      - 在每次源码有变动时在本地生成新的服务端bundle，
+      - 使用hot-middleware + dev-middleware + fs 实现。
+    - 本应用是直接采用webpack --watch + inline-sourcemap 的方式将文件写到本地，实现更加简洁。
+    - next.js hmr采用hot-middleware + webpackHotDevClient.js实现
+    - 本应用hmr直接用社区的热门库webpack-dev-server实现
 
 ## ssr-solutions
 

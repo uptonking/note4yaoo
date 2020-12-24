@@ -27,6 +27,11 @@ modified: '2020-09-25T05:56:45.321Z'
   - Platform-agnostic: atomic/tailwind output, native
 - Something we could perhaps call “TSS” (Typed/Token Style Sheets)
 
+- [How to increase CSS-in-JS performance by 175x](https://itnext.io/how-to-increase-css-in-js-performance-by-175x-f30ddeac6bce)
+  - Keep your CSS as static as possible for variations (the most important optimization)
+  - Consider compile time libs like linaria, compiled
+  - Use CSS Variables for theming
+
 ## theming
 
 - While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 

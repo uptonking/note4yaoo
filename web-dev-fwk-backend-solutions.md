@@ -11,6 +11,40 @@ modified: '2020-12-21T14:54:14.916Z'
 
 ## backend-solutions
 
+- http-io
+  - express
+  - koa
+  - fastify
+- database
+  - orm
+  - seeding
+- auth
+  - passport
+  - oauth
+  - crypt
+- test(和前端相同)
+  - mocha
+- cache
+  - redis
+- workflow
+  - 基于BPMN2.0的工作流: activiti, BPMN是BPM及workflow的建模语言标准之一
+- scheduler
+  - task queue
+  - cron jobs
+- notification
+- rule engine
+- search
+- storage
+- validate/verification
+- admin
+- mailing
+- ssr
+- more
+  - configuration: dotenv
+  - api docs: swagger
+  - logger
+  - sentry error reporting
+
 - ### nestjs ecosystem
 - core
   - nest

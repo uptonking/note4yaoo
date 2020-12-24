@@ -27,4 +27,13 @@ modified: '2020-10-13T08:57:12.264Z'
   - probably the best web presentation tool 
   - built with webslides, markdown-it, posthtml
 
+- deckdeckgo /1kStar/AGPLv3+MIT/202012/ts/web-comp/stencil
+  - https://github.com/deckgo/deckdeckgo
+  - 基于stencil和web components
+  - The web open source editor for presentations
+  - Search Unsplash and Tenor GIFs
+  - Integrate easily Youtube video
+  - The platform and its applications are licensed under the AGPL v3 (or later) licence. 
+    - Several separate components are licensed under MIT licence. 
+
 ## graphic-editor 偏向图形编辑

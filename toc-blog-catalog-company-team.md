@@ -7,6 +7,45 @@ modified: '2020-10-22T13:06:52.353Z'
 
 # toc-blog-catalog-company-team
 
+## 技术周刊
+
+- 科技爱好者周刊 by 阮一峰
+  - https://github.com/ruanyf/weekly
+  - 记录每周值得分享的科技内容，周五发布
+  - 形式
+    - 每周一片文章，列出科技相关各类别的最新消息
+- TNT-Weekly by 腾讯新闻前端团队-TNT
+  - https://github.com/tnfe/TNT-Weekly
+  - 坚持每周为你提供高质量的关于小程序、h5 等前端领域的文章和项目
+  - 形式
+    - 直接列出8篇精选文章的链接
+- JELLY技术周刊 by 京东凹凸实验室
+  - https://juejin.cn/user/1134351699149854/posts?sort=newest
+  - 周刊和周报
+  - 形式
+    - 每周一篇，等高远眺介绍新技术，沧海拾遗回顾技术或算法发展历史
+- 奇舞周刊 by 360大前端团队奇舞团
+  - https://weekly.75.team/
+  - 形式
+    - 每周一篇，奇舞推荐，技术实践，成长思考
+- Web技术周刊 by 由语雀研发团队联合百度FEX共同整理
+  - https://www.yuque.com/awesome/fe_weekly
+  - 平时看到的优秀文章，前端为主，兼含其它技术及少量产品、设计、管理内容
+  - 形式
+    - 直接列出很多文章链接，以英文为主
+- 老司机iOS周报 by 工程师们
+  - https://github.com/SwiftOldDriver/iOS-Weekly/releases
+  - 分享一些 iOS 相关的技术资讯、开发工具、开源项目等内容。
+- more
+  - reddit js weekly
+  - 开发者头条
+    - https://toutiao.io/
+- inactive
+  - 百度FEX技术周刊
+    - http://fex.baidu.com/weekly/
+  - 腾讯IVWEB团队
+    - https://ivweb.io/weekly.html
+
 ## 技术团队
 
 - 参考

@@ -9,8 +9,10 @@ modified: '2020-12-13T13:14:40.141Z'
 
 ## nestjs-popular
 
-- https://github.com/juliandavidmr/awesome-nestjs
-- https://github.com/dzzzzzy/Nestjs-Learning
+- awesome-nestjs
+  - 使用nestjs的代表：nodepress, leaa-cms, nestjsx/crud, realworld-eg
+  - https://github.com/juliandavidmr/awesome-nestjs
+  - https://github.com/dzzzzzy/Nestjs-Learning
 
 - https://github.com/nestjsx/crud
   - RESTful APIs built with NestJs
@@ -24,9 +26,15 @@ modified: '2020-12-13T13:14:40.141Z'
   - 基于Nest.js的微服务开发架构
 - https://github.com/kyle-mccarthy/nest-next
   - it allows the rendering of next.js pages via nestjs controllers and providing initial props to the page as well.
-
+- https://github.com/nerfdev/nest-rest-framework
+  - toolkit for creating full-featured APIs using Nest framework. 
+  - Inspired by Django REST Framework.
 - https://github.com/surmon-china/nodepress
   - RESTful API service for Blog/CMS, powered by @nestjs
+  - 适用于 surmon.me博客 的 RESTful API 服务；
+  - 基于 nestjs； 需安装 mongoDB 和 Redis 方可完整运行。
+- https://github.com/ZhiXiao-Lin/nestify
+  - An enterprise web fullstack framework based on Nest.js
 
 ## nestjs-examples
 
@@ -34,6 +42,10 @@ modified: '2020-12-13T13:14:40.141Z'
   - Authentication, TypeORM, Configuration, Swagger
 - https://github.com/bradtraversy/nestjs_rest_api
   - A CRUD REST API using the NestJS framework and MongoDB/Mongoose.
+- https://github.com/kuangshp/nestjs-mysql-api
+  - nestjs+mysql+typeorm+jwt+swagger企业项目中的RBAC权限管理
+  - 采用java的MVC的经典开发模型(在nestjs开发中也可以使用基于angular方式的模块化开发模式, 看个人喜好), 来构建项目结构
+  - 使用jwt的方式进行登录鉴权(颗粒度仅到菜单权限)
 - https://github.com/ibrahimjelliti/BookStore
   - 简单服务器，无数据库，使用json对象模拟crud
 - https://github.com/lujakob/nestjs-realworld-example-app
@@ -43,10 +55,6 @@ modified: '2020-12-13T13:14:40.141Z'
 - https://github.com/squareboat/nestjs-boilerplate
   - A production ready scalable NestJS boilerplate with batteries included. 
   - Objection.js is a SQL-friendly ORM for Node.js
-- https://github.com/kuangshp/nestjs-mysql-api
-  - nestjs+mysql+typeorm+jwt+swagger企业项目中的RBAC权限管理
-  - 采用java的MVC的经典开发模型(在nestjs开发中也可以使用基于angular方式的模块化开发模式, 看个人喜好), 来构建项目结构
-  - 使用jwt的方式进行登录鉴权(颗粒度仅到菜单权限)
 - https://github.com/fivethree-team/nestjs-prisma-starter
   - GraphQL with Prisma Client, Passport-JWT authentication, Swagger Api and Docker
 - https://github.com/staart/api

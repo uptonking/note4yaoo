@@ -7,6 +7,18 @@ modified: '2020-11-16T12:42:45.751Z'
 
 # pm-list-grid-table-blog
 
+## [在线Excel项目到底有多刺激](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
+
+- 冲突处理
+- 版本管理
+- 房间管理
+- 多种通信方式
+- 每个格子都是一个富文本编辑器
+- 富文本
+- 复制粘贴
+- 表格渲染有多复杂
+- 数据管理的难题
+
 ## Five Fast JavaScript Data Grids — A Performance Review
 
 - [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)

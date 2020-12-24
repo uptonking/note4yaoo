@@ -104,7 +104,7 @@ modified: '2020-12-21T07:45:45.366Z'
     - Everything is in the global namespace, including third-party packages – so my color() function might override your existing color() function, or vice versa.
     - When you use a function like color(). it’s impossible to know exactly where it was defined. Which @import does it come from?
   - Sass package authors have tried to work around the namespace issues by manually prefixing our variables and functions — but Sass modules are a much more powerful solution. 
-  - In brief, `@import` is being replaced with more explicit `@use` and `@forward` rules.
+  - In brief `@import` is being replaced with more explicit `@use` and `@forward` rules.
   - Over the next few years Sass @import will be deprecated, and then removed. You can still use CSS imports, but they won’t be compiled by Sass. 
   - ` @use` is similar to `@import` . but has some notable differences
     - The file is only imported once, no matter how many times you @use it in a project.

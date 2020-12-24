@@ -9,6 +9,9 @@ modified: '2020-12-12T19:29:51.981Z'
 
 ## nextjs-popular
 
+- awesome-nextjs
+  - 使用nextjs的代表：blitz, commerce, nextra-ssg, notion-clone
+
 - https://github.com/blitz-js/blitz
   - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
   - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
@@ -32,23 +35,28 @@ modified: '2020-12-12T19:29:51.981Z'
 - https://github.com/danielbayerlein/dashboard
   - Create your own team dashboard with custom widgets. 
   - Built with Next.js, React, styled-components and polished.
+- https://github.com/konstantinmuenster/notion-clone
+  - This clone tries to replicate some of the great note-taking features Notion has.
+  - The frontend is built with Next.js and fully server-side rendered. 
+    - Next.js · React.js · SCSS/SASS
+  - On the backend, a REST API handles saving user content and user management.
+    - Express.js · MongoDB with Mongoose · Nodemailer · JWT (Cookie-based)
 
 ## nextjs-examples
 
 - https://github.com/vercel/commerce
   - The all-in-one starter kit for high-performance e-commerce sites. 
+  - https://github.com/vercel/commerce-framework
+    - This serves as a model to build your own hooks for Next.js Commerce.
+    - We encourage teams to build their own hooks under a separate package with the corresponding configuration like BigCommerce
+    - https://github.com/bigcommerce/storefront-data-hooks
+- https://github.com/vercel/next-learn-starter
+  - This repository contains starter templates for Learn Next.js.
 - https://github.com/chec/commercejs-nextjs-demo-store
   - Commerce demo store built for the Jamstack. 
   - Built with Commerce.js, Next.js, and can be one-click deployed to Netlify
 - https://github.com/hoangvvo/nextjs-mongodb-app
   - A Next.js and MongoDB web application, designed with simplicity for learning and real-world applicability in mind.
-- https://github.com/konstantinmuenster/notion-clone
-  - This clone tries to replicate some of the great note-taking features Notion has.
-  - Full-Stack App using React/Express.
-  - The frontend is built with Next.js and fully server-side rendered. 
-    - Next.js · React.js · SCSS/SASS
-  - On the backend, a REST API handles saving user content and user management.
-    - Express.js · MongoDB with Mongoose · Nodemailer · JWT (Cookie-based)
 - https://github.com/sedgwickz/new_v2ex
   - Nextjs 仿 v2ex
 - https://github.com/tinacms/tinacms

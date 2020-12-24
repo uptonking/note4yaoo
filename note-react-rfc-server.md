@@ -12,19 +12,23 @@ modified: '2020-12-22T14:08:27.952Z'
 ### guide
 
 - RSC优点
-  - 自动代码分割
+  - 将数据请求频繁的代码放在服务端，减轻客户端压力
+  - 将部分代码放在服务端，可视为一种代码分割方式，可以减小传输量加快显示
 
 - RSC缺点
-  - 若组件使用RSC的形式，会与具体后台服务耦合，复用性变得极低
+  - 致命：若组件使用RSC的形式，会与具体后台服务耦合，复用性变得极低
 
 - RSC usecase
   - Suspense组件的另一种形式
 
 - tips
   - 分析具体项目组件的输入输出，估算引入rsc的成本
+  - 我认为是玩具，但可推动指定云端组件的标准
 
 - rsc vs nextjs
   - rsc设计目标是兼容多个框架
+  - nextjs的ssr，所有组件的js bundle会发送到客户端
+    - rsc只发送你需要的bundle，能加快显示
 
 ### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
 
@@ -190,6 +194,9 @@ modified: '2020-12-22T14:08:27.952Z'
   - lazy load 已经是lazy了，那这个component 是从本地引入的还是云端的，就没有什么太大的区别了。
 
 ### [faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
+
+- not-yet
+  - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender的性能如何
 
 - Does this replace SSR?
   - No, they’re complementary. 
@@ -443,6 +450,50 @@ function Note(props) {
   - you won't be able to execute SQL queries (but fetch should still work).
 
 ## pieces
+
+- What do React Server Components mean for the ecosystem and frameworks like Next.js?(from vercel dev)
+  - https://twitter.com/leeerob/status/1341818958794657795
+  - Server Components reduce client bundle size and improve startup time. 
+    - Since they run on the server, you can access data sources like databases and file systems directly.
+    - This will simplify data fetching and enable future performance improvements (e.g. Concurrent Mode, Streaming SSR).
+  - You will no longer need to choose client or server-rendering on a per-app basis. 
+    - Server Components will unlock this at the *per-component level.*
+    - For example, Next.js can only access the backend on a per-page level (e.g. `getServerSideProps`).
+  - How will you share state between the client and the server?
+    - The server is stateless. 
+    - However, the React team intends to add something similar to the Context API. 
+    - This state would be passed between the client and the server.
+  - What does this mean for hosting?
+    - It's still early. Obviously, you will need a server. 
+    - Since React components are JS, initial backend support would also be JS. 
+    - That doesn't necessarily mean Node, but something similar.
+  - How will this improve Next.js?
+    - Any pages that use SSR will have smaller bundles and faster response times. 
+    - Using Server Components will be incrementally adoptable with newer versions of Next.js.
+  - How is this different from SSR in Next.js?
+    - With SSR in Next.js, all component code is sent to the client in the JS bundle. 
+    - Server Components will allow you to choose "zero-bundle" or "whatever bundle you need".
+    - This will improve performance and startup times.
+    - My understanding is startup time(initial render) won’t be improved by server components because server components is just a different implementation of SSR which Next is already doing. 
+      - I can see time to interactive to improve because of smaller bundle size
+
+- If you don’t care about perf, you don’t have to bother with either Server Components nor SSR. 
+  - https://twitter.com/sebmarkbage/status/1341768759585943552
+  - If you do, it’s probably worth investing in either SSG CLI or a JavaScript server infra. 
+  - I suspect Server Components will be the first thing you’ll want to adopt and close second SSR.
+
+- CSR is not going away! Server components aren’t totally changing how we build React apps. 
+  - They are an optimization you can use for better UX.
+  - https://twitter.com/flybayer/status/1341465457799344136
+
+- one thing I personally find cool about Server Components is that their output is jumped over while diffing / “re-rendering” when re-rendering due to a state change above. Because it couldn’t have possibly changed — it comes from the server!
+  - https://twitter.com/dan_abramov/status/1342130504464666625
+  - Now if only we had an auto-memoizing compiler for the parts that *do* have to stay on the client... that would be rad(棒的).
+  - In other words reconciliation also becomes faster?
+    - Yes because the code in between doesn’t need to rerun (it’s on the server) and the props to native elements have not changed.
+  - It’s not the main objective of RSC but in this it is more performant than React.memo 
+    - because React.memo still needs to do a diff of the component’s props 
+    - and it’s gonna be re-rendered if there’s a change in its state or context.
 
 - Can someone help me understand who React Server components are for?
   - https://twitter.com/RyanCarniato/status/1341485603695730688

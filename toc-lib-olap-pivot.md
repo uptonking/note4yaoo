@@ -9,6 +9,22 @@ modified: '2020-10-22T06:50:36.740Z'
 
 ## pivot
 
+- pivottable /3.5kStar/MIT/201902/CoffeeScript
+  - https://github.com/nicolaskruchten/pivottable
+  - https://pivottable.js.org/examples/
+  - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
+- react-pivottable /629Star/MIT/202006
+  - https://github.com/plotly/react-pivottable
+  - https://react-pivottable.js.org/
+  - React-based drag'n'drop pivot table with Plotly.js charts
+  - 基于table标签实现
+  - 创建透视表后，可快速展示图表
+  - 依赖react-draggable, sortablejs
+  - 基于table标签实现
+  - 依赖jquery
+- pivot.js /753Star/BSD/201706/js
+  - https://github.com/rwjblue/pivot.js
+  - Build Pivot Tables from CSV/JSON Data
 - react-pivot /MIT/955Star/202006 
   - https://github.com/davidguttman/react-pivot
   - http://davidguttman.github.io/react-pivot/
@@ -16,24 +32,20 @@ modified: '2020-10-22T06:50:36.740Z'
   - 基于table标签实现
   - 典型的透视表视图
   - 依赖dataframe，wildemitter，基于react15，较旧
-- react-pivottable /MIT/629Star/202006
-  - https://github.com/plotly/react-pivottable
-  - https://react-pivottable.js.org/
-  - React-based drag'n'drop pivot table with Plotly.js charts
-  - 基于table标签实现
-  - 创建透视表后，可快速展示图表
-  - 依赖react-draggable, sortablejs
-- pivottable /MIT/3.5kStar/201902/CoffeeScript
-  - https://github.com/nicolaskruchten/pivottable
-  - https://pivottable.js.org/examples/
-  - a JS Pivot Table library with drag'n'drop functionality built on top of jQuery/jQueryUI
-  - 基于table标签实现
-  - 依赖jquery
+- quick-pivot /49Star/MIT/201812/js
+  - https://github.com/pat310/quick-pivot
+  - Quickly format data to create a pivot table
+  - https://github.com/turnerniles/react-virtualized-pivot
 - PivotHelper /Apache2/19Star/202007/angular
   - https://github.com/BjoernKW/PivotHelper
   - https://bjoernkw.github.io/PivotHelper/
   - a utility web app that generates Pivot tables and charts from CSV files and Microsoft Excel spreadsheets.
   - 基于angular10实现
+
+- more-pivot
+  - [How to Use Excel Pivot Tables to Organize Data](https://www.timeatlas.com/excel-pivot-tables/)
+  - Excel_notes 教學檔案
+    - https://github.com/jeanetsai/Excel_notes
 
 ## more-olap
 

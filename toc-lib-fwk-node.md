@@ -28,7 +28,11 @@ modified: '2020-12-12T19:00:53.053Z'
   - [从 Egg.js 到 NestJS，爱码客后端选型之路](https://zhuanlan.zhihu.com/p/268159450)
 - midway /3.4kStar/MIT/202012/ts
   - https://github.com/midwayjs/midway
-  - 依赖egg2
+    - 依赖egg2
+    - https://github.com/ykfe/ssr
+      - fullstack framework based on midway-faas that implemented serverless-side render specification for faas.
+      - ssr is serverless-side render specification implementation.
+      - Serverless让端开发者更好地开发各种端上应用，不需要投入太多精力关注于后端服务的实现
   - Midway是一个适用于构建 Serverless 服务，传统应用、微服务，小程序后端的 Node.js 框架。
   - 当前的函数，可以当做一个小容器，原来我们要写一个完整的应用来承载能力，现在只需要写中间的逻辑部分，以及考虑输入和输出的数据。
   - Midway 2.0 集成了 Serverless 能力，同时扩展了 RPC、Socket、微服务等场景，并在其中提供和前端一体化研发的能力
@@ -85,6 +89,16 @@ modified: '2020-12-12T19:00:53.053Z'
     - 一个不能算缺点的缺点，就是它是基于next/react的
     - 后端api不方便扩展到其他端，如android、ios
   - 结论是，期待大佬，把blitz这个思路放到vue生态里来做个新全栈框架
+  - Introducing Blitz, a Ruby on Rails equivalent for monolithic fullstack React apps!
+    - https://twitter.com/flybayer/status/1229425878481793024
+    - At build time we swap out that import with a API call. The server code stays on the server. 
+    - This is a huge DX boost since you don’t have to muck with all the API stuff yourself.
+  - Adonis uses SSR templates instead of React, so it's in its own category, imo
+    - That leaves Redwood & Blitz. We have a core difference at our data layer, but I could see a future where we merge together.
+    - For now, we are both testing our hypothesis to see what people really want 
+  - Blitz/Redwood are providing an all-in-one Rails-like DX with CLI, code scaffolding, etc, 
+    - where Remix is just the react framework part.
+    - You could totally build a Blitz/Redwood type thing on top of Remix.
 
 - https://github.com/redwoodjs/redwood
   - 依赖react、prisma、apollo-graphql、jest、babel、webpack、storybook
