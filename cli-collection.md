@@ -82,6 +82,9 @@ git push origin master --force
     - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
     - 不会产生新commit
 
+- commit 相关
+  - git commit --amend 'new msg'
+
 ## java相关
 
 - maven编译
