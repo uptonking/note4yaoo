@@ -8,7 +8,13 @@ modified: '2020-11-02T06:05:38.780Z'
 # note-dev-state-redux
 
 - Redux is a predictable state container for JavaScript apps.
+
+## guide
+
 - redux vs pub sub
+- redux原则
+  - 架构设计：single store, read only state, reducer as pure function
+  - 要让状态的变化可追踪，可重复，可维护
 
 ## faq
 

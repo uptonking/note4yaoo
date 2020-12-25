@@ -7,7 +7,92 @@ modified: '2020-06-30T12:51:08.791Z'
 
 # note-react-faq
 
-## pieces
+## faq-not-yet
+
+## faq-repeat
+
+- ### Why did react decides not to support components as classes that don’t extend `React.Component`?_2015
+- https://github.com/facebook/react/issues/4599
+- To support arrow functions and plain functions as "components" we need to know if we can call `new` on them. 
+- We need to detect if a component is a "function" or a "class" before calling `new` on it.
+- We can call new on everything if they're plain functions as long as they return a ReactElement. 
+  - However, that won't work for null/false/string return values 
+  - and we want to support those too. 
+  - We also can't call `new` on arrow functions. 
+  - Likewise, we can't NOT call `new` on classes.
+- Unfortunately ECMAScript doesn't have a way to detect if something is `new`able or not.
+- The current plan is to add our own static flag to `React.Component` so that we can detect if something is a class.
+
+- ### [我们为什么需要 React？](hhttps://www.zhihu.com/question/47161776/answers/updated)
+- 我们需要技术栈
+  - 需要技术栈提供好用的模块化方式，一次构建，多处复用的能力
+  - 需要数据绑定，不用重复手写本质上并不依赖场景的从视图到数据从数据到视图的更新
+    - 否则我们就得自己操作DOM，优化DOM操作，还要自己维护状态
+  - 需要技术栈隐藏掉平台的微妙差异
+  - 需要库或者框架好学好用，能快速开发
+  - 希望技术栈有非常好的性能，性能的水平和垂直扩展性都很好
+  - 需要使用的工具有专业的团队或者社区持续地跟进
+- 你需要React，是因为
+  - 你充分评估了你的项目需求，理解你要解决的问题是什么，是快速开发，性能，团队的ergonomics，多数情况下要解决的问题是多个要素的平衡
+  - 你充分评估了React技术栈，理解它是解决你的具体问题的最佳工具，你真的理解了自己的场景中非用React不可的那些事情
+
+- [Why use react and not jquery? ](https://twitter.com/paulhtrott/status/982373883402752001)
+  - What makes a component-based library better than a non-component-based is the ability to wrap specific functionalities and UI inside components. 
+  - You get a lot of reusability
+    - React's specialty is how it controls functionality and UI inside and between  components
+    - In jQuery you loose capacity to orchestrate your code, and your application.
+  - The bottleneck of most applications is the frontend.
+    - The goal is to let the application go faster and better, and allow it to grow when required, an option more aligned to the new requirements of the web can be better.
+    - jQuery is so heavy for small requirements, and falls short for biggers.
+    - Depends on what you define as your bottleneck metric here, I’d argue if you’re referring to performance it’s very rarely the front end that’s the bottle neck. 
+      - If you meant feature scalability then you’d have my vote.
+  - Why I love React:
+    - Quality of solutions in the ecosystem are top notch. 
+    - Component model is readily applicable to a surprising number of web's needs (render props amirite)
+    - Functional views are way easier.
+    - I don't have to think about DOM manipulation anymore.
+
+- [For those of you who use React: why do you use React?_201707](https://twitter.com/kentcdodds/status/884583205692612608)
+  - First time we had a sensible model for server rendering single page apps—harnessing it well is a competitive advantage.
+  - It gives me the clearest, easiest to use abstraction for composable components, with no template-specific DSL to learn.
+  - Simplest way to build view as declarative function of state that I know of. Simple API, huge community.
+  - Components, all rendered output as a function of props + state ONLY, no need for bespoke DOM updates, JSX
+  - no templating language gotchas (for loops, if else, etc...).
+  - Because it is just JavaScript (save time and pain since no need to spend hours on documentation) and it gives the expected results
+  - primarily because it has very well-established patterns that solve a lot of problems before you run into them.
+
+- [Don't build your portfolio with just React](https://dev.to/flexdinesh/dont-build-your-portfolio-with-just-react-11a9)
+  - Why you should use React
+    - Component based
+    - Pre-configured (for most part) starter with create-react-app
+    - Faster development
+  - Why you shouldn't use just React
+    - DOM is constructed in the browser (client-side)
+    - SEO implications
+    - Higher Time to Interactive (TTI)
+
+- ref
+  - [The deepest reason why modern JavaScript frameworks exist_201803](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+
+- ### why use react for threejs?
+- https://twitter.com/0xca0a/status/1282999626782650368
+- same reason you use it for the dom. 
+- this is not a dig at the dom or three. 
+  - these are imperative systems and i'm glad they don't add high level features, because that's not their domain. 
+  - react simply expresses sth imperative in a declarative way with a common ground that makes management and sharing much easier.
+- threejs
+  - cube affects *every* aspect of the app: setup, state, view, resize, events and render, 
+  - it is not re-usable at that point. 32 hits. 
+- react
+  - a re-usable self-contained self-cleaning component and one invocation.
+- r3f does the same for three that react-dom does for the dom, updates or not. 
+  - you can write small-ish vanilla dom apps relatively clean, in three that is less likely bc a "thing" always has to reach everywhere to function.
+- RTF is great for adding scalability to any threejs project. 
+  - For small projects it might be overkill depending on the scope, 
+  - but as soon as it evolves to a medium to large scale project, this cube problem becomes so much worse.
+- I'm not saying use React because everyone else does.
+  - I'm saying use React because their resources and constraints are way bigger than yours (and everyone else), 
+  - and they're giving it to you for free.
 
 ## faq
 
@@ -26,7 +111,7 @@ modified: '2020-06-30T12:51:08.791Z'
     - The nodes are monomorphic(单一形态的), so traversal is very fast. 
     - `<Consumer>` is a special type known to React, so a single field comparison is enough to detect and mark it. 
     - And the marking can be time-sliced!
-  - It’s plausible that we can add some caching for a list of subscribed components in the future,
+  - It’s plausible that we can add some caching for a list of subscribed components in the future, 
     - but for now we don’t think it’s necessary in practice. We’ll see. 
     - But importantly, you only “pay” for context updates when you actually use them. Static values are free.
   - Another interesting about this approach is that this traversal is completely integrated with React, 
@@ -45,8 +130,6 @@ modified: '2020-06-30T12:51:08.791Z'
       - Context does NOT solve those problems.
     - Therefore, no, context is not a replacement for Redux, as it does not solve the problems Redux does. 
       - If you were just using Redux to avoid passing props, then you probably never really needed Redux in the first place. 
-
-
 
 - ### createRef vs useRef
   - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).

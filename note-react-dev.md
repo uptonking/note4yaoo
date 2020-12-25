@@ -8,12 +8,37 @@ modified: '2020-07-14T10:38:48.217Z'
 
 # note-react-dev
 
-## summary
+## guide
 
-- react-urgent-feature
+- react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
-  - [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
-- One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. That's something classes cannot express properly.
+  - 发展方向：jquery > querySelector, react > web components
+- react features
+  - 函数式的组件思维，复用组件模块更简单，写法上只需一个jsx
+    - 传统组件需要先写html元素标签，再引入js操作元素
+    - 组件间关注点分离
+    - 组件可组合，更适合扩展到更多规模
+  - 声明式的组件
+    - 隐藏底层细节，降低开发复杂度
+    - 由框架操作底层dom更新，组件代码更关注业务操作，更简单清晰
+
+- why react components
+  - 核心优点：非常丰富的生态与扩展，同时具有良好的性能
+    - 其他框架就算在框架层能胜出性能，也无时间精力推出快速开发的生态
+  - 最顶级公司的支持与推广
+  - 最优秀的开发者主导的项目，修bug、制定方向与计划
+
+- react优点
+  - 核心优点：可复用的组件架构
+  - 声明式组件，简单清晰
+
+- react缺点
+  - 不利于seo
+
+- why hooks
+  - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. 
+
+  - That's something classes cannot express properly.
 - ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current);`
 - 在requestAnimationFrame中setState的性能
 
@@ -27,6 +52,10 @@ modified: '2020-07-14T10:38:48.217Z'
     - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
 - react
 
+- I avoid declaring React components via the concise arrow syntax. 
+  - Instead, I prefer to use plain old function declarations. Here's why:
+    1. I can set a debugger inside a function declaration.
+    2. I can export default on the same line as the declaration. 
 - react 16.13.0使用后可能出现一些warning的问题
   - I agree this warning requires some prior context. Essentially, you needed to know two things from the class era:
     - That you shouldn’t `setState` during render. Classes always warned about this.

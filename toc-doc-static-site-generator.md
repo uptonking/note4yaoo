@@ -8,7 +8,10 @@ modified: '2020-10-13T09:21:27.098Z'
 # toc-doc-static-site-generator
 
 ## guide
-- 
+
+- Why use React or JS, HTML-only static sites are faster
+  - try to browse it a little bit. 
+  - It feels faster than a static HTML-only site thanks to preloading and only downloading what’s necessary for next pages.
 
 - ref
   - [top static-site-generator](https://github.com/topics/static-site-generator)

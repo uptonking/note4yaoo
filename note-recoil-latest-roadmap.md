@@ -11,6 +11,7 @@ modified: '2020-07-14T10:39:53.555Z'
 
 - render twice on component mount (useRecoilValue, useRecoilState) in non-StrictMode
   - https://github.com/facebookexperimental/Recoil/issues/307
+- [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
 
 ## guide
 

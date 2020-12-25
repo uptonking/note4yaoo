@@ -12,11 +12,19 @@ modified: '2020-12-22T14:08:27.952Z'
 ### guide
 
 - RSC优点
-  - 将数据请求频繁的代码放在服务端，减轻客户端压力
-  - 将部分代码放在服务端，可视为一种代码分割方式，可以减小传输量加快显示
+  - 将数据请求频繁的组件和计算仅放在服务端执行，减轻客户端压力
+  - 将部分代码放在服务端，可作为一种代码分割方式，可减小传输量加快显示
+  - 定制的格式能使refetch时客户端状态不丢失，流式传输能边下载边渲染
 
 - RSC缺点
-  - 致命：若组件使用RSC的形式，会与具体后台服务耦合，复用性变得极低
+  - 致命：若组件使用RSC的形式，会与具体后台服务耦合，可复用性变得极低
+    - 参考graphql难以推广的原因，因为需要服务端的配合，甚至重写服务端
+  - rsc组件请求数据的逻辑部分不能通用到移动端和其他设备，它们仍需实现单独的api
+    - 虽然工作量未减少，但能加快react前后端一体化应用的开发
+  - 会消耗服务端资源，请求过多时要考虑服务端计算优化
+  - 传输的是自定义格式，不是html
+  - 其他限制
+    - rsc不能使用state和effect
 
 - RSC usecase
   - Suspense组件的另一种形式
@@ -25,10 +33,67 @@ modified: '2020-12-22T14:08:27.952Z'
   - 分析具体项目组件的输入输出，估算引入rsc的成本
   - 我认为是玩具，但可推动指定云端组件的标准
 
-- rsc vs nextjs
+- rsc vs ssr/nextjs
   - rsc设计目标是兼容多个框架
   - nextjs的ssr，所有组件的js bundle会发送到客户端
     - rsc只发送你需要的bundle，能加快显示
+  - 传统ssr可以提前渲染出html，能加快显示，但若要支持交互，仍要下载所有js构建
+    - rsc只发送所需的bundle
+  - rsc发送的不是html，定制的格式能使refetch时客户端状态不丢失
+  - ssr渲染到html是同步的，渲染时不能取数
+    - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
+
+- I want to recap a few points from our talk about the different kinds of components.
+  - https://twitter.com/dan_abramov/status/1342260256638951425
+  - Server Components are the new proposed kind of components. 
+    - They execute on the server, and on the server only. 
+    - They have the `.server.js` extension. 
+    - They can access the backend resources directly (e.g. database, filesystem, internal API services). 
+    - They cannot use state or effects.
+  - Client Components are the regular components you’re already familiar with. 
+    - They primarily execute on the client (but also during first render to HTML). 
+    - They have the `.client.js` extension. 
+    - They may use state or effects, but cannot access the backend resources (e.g. databases etc).
+  - We’ve found that many components only contain some logic to transform data, and don’t actually use either state/effects or backend resources. 
+    - This means they could run anywhere — server or client. 
+    - We’re calling them Shared Components, 
+    - and they stay as regular `.js` files.
+    - You can think of a Shared Component as being in a different role depending on what imports it. 
+      - If it’s imported from a Server Component, it acts as a Server Component itself. 
+      - If it’s imported from a Client Component, then that’s the role that it takes. 
+      - You can use it either way.
+  - There are no limitations on the props of Server Components or props of Client Components per se(本身, itself). 
+    - In both cases we’re dealing with regular React top-down data flow, and we can pass anything. 
+    - But props passed *from Server to Client* must be serializable. They cross the network.
+  - There are also no limitations on what can be nested inside of what. 
+    - Both types can be interleaved as much as you want. 
+    - The limitation is only on *imports*:
+    1. Server can import either Server or Client components.
+    2. Client can only import other Client components.
+    - Server importing Server, and Client importing Client are regular imports that work as you’d expect. Nothing special about them.
+    - Server importing Client is the special one. 
+      - Under the hood, the bundling integration turns that import into an instruction to load that Client module.
+    - Although Client Components can’t import Server ones, they can still be composed together from a *parent* Server one. Because Server can import both types.
+  - You can read it in detail in the RFC. 
+    - All of this will make it into the docs when the feature is stable
+  - let me also briefly summarize the difference between Server Components and traditional SSR (“server rendering” — might have to refer to it differently in the future to help prevent this confusion).
+    - In React, traditional SSR only produces an initial HTML snapshot of the page. 
+      - If you use it, it only runs once before the page loads, and then you still have to download all the JS code before your app can respond to interactions.
+    - Server Components, by contrast, use a richer format than HTML which can (and should — for the first render!) be translated to HTML, 
+      - but can *also* be refetched. 
+      - This format lets us avoid destroying client state on refetch, as would happen if you replace HTML in a running app.
+    - Also, with traditional React SSR, the rendering to HTML is synchronous. 
+      - This means your components cannot load data on the server. 
+      - There are various workarounds (such as a “prepass” that tries to render components once before the SSR) but they’re not ideal or idiomatic
+    - By contrast, Server Components have built-in support for asynchronous data fetching.
+      - This means that you can fetch data inside of them, on the server, and not just at the top level of the tree, but at any depth. 
+      - And thanks to streaming, you don’t have to wait for the whole tree.
+    - Now, I’m comparing them but really they’re complementary. 
+      - Server Components are the mechanism that lets you do data fetching and run some logic without shipping it to the client at all. 
+      - Rendering to HTML is still a useful optimization on top for the first render before JS loads!
+  - discussion
+    - It's hot module replacement, but in production.
+      - And it's not a dev triggering the reload but a machine, the server.
 
 ### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
 
@@ -196,7 +261,7 @@ modified: '2020-12-22T14:08:27.952Z'
 ### [faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
 
 - not-yet
-  - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender的性能如何
+  - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender如何实现，性能如何
 
 - Does this replace SSR?
   - No, they’re complementary. 
@@ -495,7 +560,7 @@ function Note(props) {
     - because React.memo still needs to do a diff of the component’s props 
     - and it’s gonna be re-rendered if there’s a change in its state or context.
 
-- Can someone help me understand who React Server components are for?
+- ### Can someone help me understand who React Server components are for?
   - https://twitter.com/RyanCarniato/status/1341485603695730688
   - I get what they do. I get how they work. 
     - But you could clearly fetch/stream data isomorphically. 

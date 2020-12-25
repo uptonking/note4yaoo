@@ -18,10 +18,14 @@ modified: '2020-12-21T14:54:14.916Z'
 - database
   - orm
   - seeding
+  - migration
 - auth
+  - authentication
+  - authorization
+  - crypt/encryption
+  - password reset
   - passport
   - oauth
-  - crypt
 - test(和前端相同)
   - mocha
 - cache
@@ -31,13 +35,18 @@ modified: '2020-12-21T14:54:14.916Z'
 - scheduler
   - task queue
   - cron jobs
+- validate/verification
+  - request
+  - password
+- security
+  - csrf
+  - xss
 - notification
 - rule engine
 - search
 - storage
-- validate/verification
 - admin
-- mailing
+- mailing/email
 - ssr
 - more
   - configuration: dotenv

@@ -19,7 +19,19 @@ modified: '2020-12-22T12:42:14.745Z'
       - 备份p-10数据库数据，卸载原数据库，升级到u20，再安装p-12，然后导入备份数据
 
 - ubuntu发行版的软件生态较为丰富
-- 根据UnitsPolicy，文件管理器显示文件的大小基于1KB=1000bytes(SI standard)
+
+- [Ubuntu UnitsPolicy](https://wiki.ubuntu.com/UnitsPolicy)
+  - Applications must use IEC standard for base-2 units:
+    - 1 KiB = 1,024 bytes (Note: big k)
+    - 1 MiB = 1,024 KiB = 1,048,576 bytes
+  - Applications must use SI standard for base-10 units:
+    - 1 kB = 1,000 bytes (Note: small k)
+    - 1 MB = 1,000 kB = 1,000,000 bytes
+  - It is not allowed to use the SI standard for base-2 units:
+    - 1 kB != 1,024 bytes
+    - KB (with a big k) does not exist
+- 单位
+  - 文件管理器显示文件的大小基于1KB=1000bytes(SI standard)
   - 而终端`ls -lh`显示大小基于1KiB=1024bytes(IEC standard)
 
 ## centos
