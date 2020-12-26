@@ -25,7 +25,19 @@ modified: '2020-10-27T15:10:47.179Z'
 
 ## guide
 
-- 实现主流设计系统的theme
+- 基于css vars实现theming的示例
+  - carbon design system
+  - denali-css
+  - spectrum-css
+  - polaris
+  - Assembly
+  - PatternFly
+  - Fomantic-UI/Semantic-UI
+  - Gestalt
+  - 部分使用css vars
+    - material components web
+
+- 实现主流设计系统的高仿
   - material-design
   - apple-design
   - facebook-design

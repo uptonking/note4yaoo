@@ -9,12 +9,140 @@ modified: '2020-11-13T07:29:55.201Z'
 
 ## popular-design-system
 
+- ### Material Design /Google/***
+  - /14.9kStar/MIT/202009/ts
+  - https://github.com/material-components/material-components-web/
+  - https://material.io/develop/web/components/buttons
+  - Modular and customizable Material Design UI components for the web
+  - 组件基于foundation/adapter架构实现
+  - theming基于全局级sass vars，组件级基于css vars
+  - https://github.com/jamesmfriedman/rmwc
+    - /1.4kStar/MIT/202009/ts/hooks
+    - a React UI Kit built on Google's official Material Components Web library v5
+  - ref
+    - https://github.com/material-components/material-components-web-react
+      - /1.9kStar/MIT/201911/ts/deprecated
+      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
+      - 组件基于class实现
+      - 样式基于classnames
+    - https://github.com/material-components/material-components-web-components
+      - /2.2kStar/Apache2/202009/ts/agnostic/MWC
+      - a collection of Web Components maintained by Google that implement Material Design
+    - https://github.com/prateekbh/preact-material-components
+      - /531Star/MIT/202007/ts/deprecated
+      - preact wrapper for material-components-web
+    - https://github.com/material-components/material-components-android
+      - /11.2kStar/Apache2/2020209/java
+      - Modular and customizable Material Design UI components for Android
+
+- ### Fluent Design /Microsoft
+  - /9.5kStar/MIT/202009/ts/css-in-js
+  - https://github.com/microsoft/fluentui
+    - 组件基于hooks实现
+    - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
+    - This repo is home to 3 separate projects today.
+      - @fluentui/react, @/react-northstar, @/web-components
+      - Mixing components between projects is not currently supported. 
+      - The goal of these projects is to dedupe functionality and enable interoperability over time. 
+  - https://www.microsoft.com/design/fluent/
+  - Fluent is a cross-platform design system to create engaging product experiences — accessibility, internationalization, and performance included. 
+  - ref
+    - https://github.com/OfficeDev/office-ui-fabric-react
+      - UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences
+    - https://developer.microsoft.com/en-us/fabric/#/components
+
+- ### Lightning Design System /Salesforce/*
+  - /3kStar/BSD/202009/js
+  - https://github.com/salesforce-ux/design-system
+  - https://www.lightningdesignsystem.com/
+  - SLDS is a pure CSS framework that you can use with any front-end development framework
+  - Component blueprints are framework agnostic, accessible HTML and CSS
+  - theming基于sass vars
+  - https://github.com/salesforce/design-system-react
+    - https://react.lightningdesignsystem.com/
+    - /622Star/BSD/202010/js
+    - 依赖popper.js、react-contenteditable/onclickoutside、classnames
+    - 组件基于class实现
+    - 样式使用className直接设置预定义的样式名
+  - ref
+    - https://www.lightningdesignsystem.com/design-tokens/
+    - https://github.com/salesforce-ux/design-system-ui-kit
+      - Sketch UI Kit
+    - https://github.com/mashmatrix/react-lightning-design-system
+
+- ### Carbon Design System /IBM/***
+  - /3.5kStar/Apache2/202009/js
+  - https://github.com/carbon-design-system/carbon
+  - https://www.carbondesignsystem.com/
+  - carbon-components
+    - a collection of re-usable HTML and SCSS partials for building products.
+  - carbon-components-react
+    - A collection of Carbon Components implemented using React.
+    - 组件基于hooks实现
+    - 样式直接操作classList.add/remove
+  - theming基于sass或css vars，按需选择编译输出
+    - sass变量可被编译输出css vars, `emit-css-custom-properties`
+      - [Create CSS Custom Properties feature flag](https://github.com/carbon-design-system/carbon/issues/4033)
+      - [feat: support CSS custom property theme maps behind feature flag](https://github.com/carbon-design-system/carbon/pull/4100)
+  - @carbon/elements
+    - IBM Design Language elements like colors, type, iconography, and more
+    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
+  - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
+  - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
+  - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
+  - ref
+    - https://github.com/carbon-design-system/carbon-charts
+    - https://www.ibm.com/design/language/
+    - http://react.carbondesignsystem.com/
+    - https://ics-design-system.us-east.mybluemix.net/
+    - https://github.com/carbon-design-system/carbon-design-kit
+      - visual assets (components, iconography, color palettes...)
+    - https://github.com/IBM/design-kit
+    - https://github.com/carbon-design-system/carbon-components-vue
+    - https://github.com/carbon-design-system/carbon-web-components
+    - https://github.com/carbon-design-system/okrs
+      - Objectives and key results for the Carbon team.
+
+- ### Spectrum /Adobe/*
+  - /3.kStar/Apache2/202010/ts
+  - https://github.com/adobe/react-spectrum
+    - https://react-spectrum.adobe.com/
+    - 组件基于hooks实现
+    - 样式基于classnames优化版clsx
+    - theming基于css vars
+    - A React implementation of Spectrum
+    - react-aria
+      - Hooks that provides accessible UI primitives
+    - react-stately
+      - Hooks that provides cross-platform state management
+  - https://spectrum.adobe.com/
+  - https://github.com/adobe/spectrum-css
+    - /744Star/Apache2/202010
+    - The standard CSS implementation of the Spectrum design language.
+    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
+    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
+
+- ### Elastic UI  /Elastic/*
+  - /2.3kStar/Apache2/202010/ts
+  - https://github.com/elastic/eui
+    - 组件基于hooks实现
+    - 样式基于classnames
+    - theming基于sass vars
+  - https://elastic.github.io/eui/#/
+  - a collection of React UI components for quickly building user interfaces at Elastic
+  - Alongside the React components is a SASS/CSS layer 
+  - ref
+    - https://github.com/elastic/elastic-charts
+    - https://github.com/elastic/search-ui
+    - https://github.com/elastic/app-search-reference-ui-react
+
 - ### Ant Design /Alibaba/*
   - /63.7kStar/MIT/202009/ts
   - https://github.com/ant-design/ant-design
     - 依赖很多自研的基础组件rc-xxx
     - 组件基于class实现
     - 样式基于classnames
+    - theming基于less vars
   - https://ant.design/
   - An enterprise-class UI design language and React UI library.
   - https://github.com/taejs/ant-design-vanilla
@@ -44,6 +172,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - 依赖react-transition-group
     - 组件基于hooks实现
     - 样式基于classnames
+    - theming基于css vars
   - https://polaris.shopify.com/
   - Our design system helps to build a great experience for all of Shopify’s merchants.
   - ref
@@ -51,121 +180,6 @@ modified: '2020-11-13T07:29:55.201Z'
     - https://github.com/Shopify/javascript-utilities
     - https://github.com/Shopify/draggable
       - The JavaScript Drag & Drop library
-
-- ### Material Design /Google/***
-  - /14.9kStar/MIT/202009/ts
-  - https://github.com/material-components/material-components-web/
-  - https://material.io/develop/web/components/buttons
-  - Modular and customizable Material Design UI components for the web
-  - 组件基于foundation/adapter架构实现
-  - https://github.com/jamesmfriedman/rmwc
-    - /1.4kStar/MIT/202009/ts/hooks
-    - a React UI Kit built on Google's official Material Components Web library v5
-  - ref
-    - https://github.com/material-components/material-components-web-react
-      - /1.9kStar/MIT/201911/ts/deprecated
-      - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
-      - 组件基于class实现
-      - 样式基于classnames
-    - https://github.com/material-components/material-components-web-components
-      - /2.2kStar/Apache2/202009/ts/agnostic/MWC
-      - a collection of Web Components maintained by Google that implement Material Design
-    - https://github.com/prateekbh/preact-material-components
-      - /531Star/MIT/202007/ts/deprecated
-      - preact wrapper for material-components-web
-    - https://github.com/material-components/material-components-android
-      - /11.2kStar/Apache2/2020209/java
-      - Modular and customizable Material Design UI components for Android
-
-- ### Fluent Design /Microsoft
-  - /9.5kStar/MIT/202009/ts/css-in-js
-  - https://github.com/microsoft/fluentui
-    - 组件基于hooks实现
-    - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
-  - https://www.microsoft.com/design/fluent/
-  - Fluent is a cross-platform design system to create engaging product experiences — accessibility, internationalization, and performance included. 
-  - ref
-    - https://github.com/OfficeDev/office-ui-fabric-react
-      - UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences
-    - https://developer.microsoft.com/en-us/fabric/#/components
-
-- ### Lightning Design System /Salesforce/*
-  - /3kStar/BSD/202009/js
-  - https://github.com/salesforce-ux/design-system
-  - https://www.lightningdesignsystem.com/
-  - SLDS is a pure CSS framework that you can use with any front-end development framework
-  - Component blueprints are framework agnostic, accessible HTML and CSS
-  - https://github.com/salesforce/design-system-react
-    - https://react.lightningdesignsystem.com/
-    - /622Star/BSD/202010/js
-    - 依赖popper.js、react-contenteditable/onclickoutside、classnames
-    - 组件基于class实现
-    - 样式使用className直接设置预定义的样式名
-  - ref
-    - https://www.lightningdesignsystem.com/design-tokens/
-    - https://github.com/salesforce-ux/design-system-ui-kit
-      - Sketch UI Kit
-    - https://github.com/mashmatrix/react-lightning-design-system
-
-- ### Carbon Design System /IBM/**
-  - /3.5kStar/Apache2/202009/js
-  - https://github.com/carbon-design-system/carbon
-  - https://www.carbondesignsystem.com/
-  - carbon-components
-    - a collection of re-usable HTML and SCSS partials for building products.
-  - carbon-components-react
-    - A collection of Carbon Components implemented using React.
-    - 组件基于hooks实现
-    - 样式直接操作classList.add/remove
-  - @carbon/elements
-    - IBM Design Language elements like colors, type, iconography, and more
-    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
-  - carbon组件库的核心core不依赖视图层框架，然后再为各种视图开发单独的组件包，core使用了handlebars模版引擎来生成组件html
-  - The design system is built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
-  - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
-  - ref
-    - https://github.com/carbon-design-system/carbon-charts
-    - https://www.ibm.com/design/language/
-    - http://react.carbondesignsystem.com/
-    - https://ics-design-system.us-east.mybluemix.net/
-    - https://github.com/carbon-design-system/carbon-design-kit
-      - visual assets (components, iconography, color palettes...)
-    - https://github.com/IBM/design-kit
-    - https://github.com/carbon-design-system/carbon-components-vue
-    - https://github.com/carbon-design-system/carbon-web-components
-    - https://github.com/carbon-design-system/okrs
-      - Objectives and key results for the Carbon team.
-
-- ### Spectrum /Adobe
-  - /3.kStar/Apache2/202010/ts
-  - https://github.com/adobe/react-spectrum
-    - https://react-spectrum.adobe.com/
-    - 组件基于hooks实现
-    - 样式基于classnames优化版clsx
-    - A React implementation of Spectrum
-    - react-aria
-      - Hooks that provides accessible UI primitives
-    - react-stately
-      - Hooks that provides cross-platform state management
-  - https://spectrum.adobe.com/
-  - https://github.com/adobe/spectrum-css
-    - /744Star/Apache2/202010
-    - The standard CSS implementation of the Spectrum design language.
-    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
-    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
-
-- ### Elastic UI  /Elastic/*
-  - /2.3kStar/Apache2/202010/ts
-  - https://github.com/elastic/eui
-    - 组件基于hooks实现
-    - 样式基于classnames
-  - https://elastic.github.io/eui/#/
-  - a collection of React UI components for quickly building user interfaces at Elastic
-  - Alongside the React components is a SASS/CSS layer 
-  - ref
-    - https://github.com/elastic/elastic-charts
-    - https://github.com/elastic/search-ui
-    - https://github.com/elastic/app-search-reference-ui-react
 
 - ### Base Design /Uber
   - /5.4kStar/MIT/202010/js/css-in-js
@@ -204,6 +218,7 @@ modified: '2020-11-13T07:29:55.201Z'
   - https://github.com/primer/css
     - https://primer.style/css
     - /9.7kStar/MIT/202010/scss
+    - theming基于sass vars
   - ref
     - https://github.com/primer/octicons
     - https://github.com/primer/design
@@ -261,16 +276,16 @@ modified: '2020-11-13T07:29:55.201Z'
     - 样式基于css-in-js
   - https://calcite-react.netlify.com/
   - Calcite components, built in React
-  - https://github.com/Esri/calcite-base
-    - https://esri.github.io/calcite-base/
-    - /6Star/EsriMasterLic/202007/js
-    - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
-  - https://github.com/Esri/calcite-web
-    - https://esri.github.io/calcite-web/
-    - /96Star/Apache2/201902/js
-    - Calcite Web is a web framework that implements the Esri Brand Guidelines written in Sass
-    - The project also includes a dependency-free JavaScript library for use with interactive patterns.
   - ref
+    - https://github.com/Esri/calcite-base
+      - https://esri.github.io/calcite-base/
+      - /6Star/EsriMasterLic/202007/js
+      - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
+    - https://github.com/Esri/calcite-web
+      - https://esri.github.io/calcite-web/
+      - /96Star/Apache2/201902/js
+      - Calcite Web is a web framework that implements the Esri Brand Guidelines written in Sass
+      - The project also includes a dependency-free JavaScript library for use with interactive patterns.
     - https://github.com/Esri/calcite-components
       - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
       - Web Components for the Calcite Design System. Built with Stencil JS
@@ -290,6 +305,7 @@ modified: '2020-11-13T07:29:55.201Z'
   - https://labs.mapbox.com/assembly/
   - A CSS framework that makes the hard parts of building anything on the web easy. 
   - 依赖cp-file、csso(CSS minifier)、postcss、svgo、svgstore(Combines multiple SVG files into one using symbol elements)
+  - theming基于css vars
 
 - ### Airbnb Design /Airbnb
   - /335Star/MIT/202010/ts
@@ -303,14 +319,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
     - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
 
-## known-design-system
-
-- Bootstrap /Twitter
-  - /MIT/138kStar/202001
-  - https://github.com/twbs/bootstrap
-  - https://getbootstrap.com/docs
-  - popular framework for building responsive, mobile-first sites
-- PatternFly /RedHat
+- ### PatternFly /RedHat
   - /219Star/MIT/202010/ts
   - https://github.com/patternfly/patternfly-react
     - 依赖tippy.js
@@ -322,12 +331,25 @@ modified: '2020-11-13T07:29:55.201Z'
   - A set of React components for the PatternFly project.
   - https://github.com/patternfly/patternfly
     - /259Star/MIT/202010/scss
+    - theming基于css vars
     - This repo contains core (HTML/CSS) implementation for PatternFly.
+    - PatternFly follows a two-layer theming system where global variables always inform component variables. 
+    - The main reason to have global variables is to maintain consistency
+    - The second layer is scoped to themeable component custom properties
+
+## known-design-system
+
+- Bootstrap /Twitter
+  - /MIT/138kStar/202001
+  - https://github.com/twbs/bootstrap
+  - https://getbootstrap.com/docs
+  - popular framework for building responsive, mobile-first sites
 - Gestalt /Pinterest
   - /3.7kStar/Apache2/202010/js
   - https://github.com/pinterest/gestalt
     - 组件基于hooks实现
     - 样式基于classnames
+    - theming基于css vars
   - https://gestalt.netlify.app/
   - React UI components that enforces Pinterest’s design language
 - Garden /Zendesk

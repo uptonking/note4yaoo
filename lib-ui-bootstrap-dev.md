@@ -9,6 +9,14 @@ modified: '2020-12-08T13:33:11.249Z'
 
 ## bootstrap5
 
+### Theming
+
+- Bootstrap 5 includes around two dozen CSS custom properties (variables) in its compiled CSS, with dozens more on the way for improved customization on a per-component basis. 
+- We’re also beginning to make use of custom properties as local variables for various components. 
+  - This way we can reduce our compiled CSS, ensure styles aren’t inherited in places like nested tables, 
+  - and allow some basic restyling and extending of Bootstrap components after Sass compilation.
+- We’re also using CSS variables across our grids—primarily for gutters—with more component usage coming in the future.
+
 ### components-catalog
 
 - Buttons
@@ -68,7 +76,7 @@ modified: '2020-12-08T13:33:11.249Z'
   - and its past participle form (ex. `shown` ) is triggered on the completion of an action.
 - Bootstrap will detect jQuery if `jQuery` is present in the `window` object and there is no `data-no-jquery` attribute set on `<body>` . 
   - If `jQuery` is found, Bootstrap will emit events thanks to jQuery’s event system. 
-  - So if you want to listen to Bootstrap’s events, you’ll have to use the jQuery methods ( `.on` , `.one` ) instead of `addEventListener` .
+  - So if you want to listen to Bootstrap’s events, you’ll have to use the jQuery methods ( `.on` ,   `.one` ) instead of `addEventListener` .
 - All constructors accept an optional options object or nothing (which initiates a plugin with its default behavior)
 - If you’d like to get a particular plugin instance, each plugin exposes a `getInstance` method. 
   - In order to retrieve it directly from an element, do this: `bootstrap.Popover.getInstance(myPopoverEl)` .
@@ -109,6 +117,24 @@ $zindex-tooltip:                    1070;
   - On hover/focus/active, we bring a particular element to the forefront with a higher `z-index` value to show their border over the sibling elements.
 
 ## bootstrap4
+
+### Theming
+
+- In Bootstrap 3, theming was largely driven by variable overrides in LESS, custom CSS, and a separate theme stylesheet that we included in our dist files. 
+  - With some effort, one could completely redesign the look of Bootstrap 3 without touching the core files. 
+  - Bootstrap 4 provides a familiar, but slightly different approach.
+- Now, theming is accomplished by Sass variables, Sass maps, and custom CSS. 
+  - There’s no more dedicated theme stylesheet; 
+  - instead, you can enable the built-in theme to add gradients, shadows, and more.
+- Utilize our source Sass files to take advantage of variables, maps, mixins, and more.
+- Every Sass variable in Bootstrap 4 includes the `!default` flag allowing you to override the variable’s default value in your own Sass without modifying Bootstrap’s source code. 
+- Many of Bootstrap’s components and utilities are built with `@each` loops that iterate over a Sass map. 
+  - This is especially helpful for generating variants of a component by our `$theme-colors` and creating responsive variants for each breakpoint. 
+  - As you customize these Sass maps and recompile, you’ll automatically see your changes reflected in these loops.
+
+- Bootstrap 4 includes around two dozen CSS custom properties (variables) in its compiled CSS. 
+  - These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser’s Inspector, a code sandbox, or general prototyping.
+  - CSS variables offer similar flexibility to Sass’s variables, but without the need for compilation before being served to the browser
 
 ## bootstrap-ecosystem
 

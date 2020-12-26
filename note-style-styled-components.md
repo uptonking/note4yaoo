@@ -12,7 +12,8 @@ modified: '2020-10-22T13:37:03.276Z'
 - 如何复用现有项目的样式和第三方库的样式
   - 必需支持class或className
 - 如何将本项目作为库提供给其他人使用
-  - 直接复用组件，而不是复用样式，若必需复用样式，则提取出变量通过theme来复用
+  - 直接复用组件，而不是复用样式，
+  - 若必须复用样式，则提取出变量通过theme来复用
 - why you should use css-in-js
   - possible to author CSS in JS syntax
   - Styles are "scoped" to a specific component
