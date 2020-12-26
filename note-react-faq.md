@@ -9,19 +9,9 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq-not-yet
 
-## faq-repeat
+- `React.forwardRef()` 是高阶组件吗
 
-- ### Why did react decides not to support components as classes that don’t extend `React.Component`?_2015
-- https://github.com/facebook/react/issues/4599
-- To support arrow functions and plain functions as "components" we need to know if we can call `new` on them. 
-- We need to detect if a component is a "function" or a "class" before calling `new` on it.
-- We can call new on everything if they're plain functions as long as they return a ReactElement. 
-  - However, that won't work for null/false/string return values 
-  - and we want to support those too. 
-  - We also can't call `new` on arrow functions. 
-  - Likewise, we can't NOT call `new` on classes.
-- Unfortunately ECMAScript doesn't have a way to detect if something is `new`able or not.
-- The current plan is to add our own static flag to `React.Component` so that we can detect if something is a class.
+## faq-repeat
 
 - ### [我们为什么需要 React？](hhttps://www.zhihu.com/question/47161776/answers/updated)
 - 我们需要技术栈
@@ -36,7 +26,7 @@ modified: '2020-06-30T12:51:08.791Z'
   - 你充分评估了你的项目需求，理解你要解决的问题是什么，是快速开发，性能，团队的ergonomics，多数情况下要解决的问题是多个要素的平衡
   - 你充分评估了React技术栈，理解它是解决你的具体问题的最佳工具，你真的理解了自己的场景中非用React不可的那些事情
 
-- [Why use react and not jquery? ](https://twitter.com/paulhtrott/status/982373883402752001)
+- ### [Why use react and not jquery?_201804](https://twitter.com/paulhtrott/status/982373883402752001)
   - What makes a component-based library better than a non-component-based is the ability to wrap specific functionalities and UI inside components. 
   - You get a lot of reusability
     - React's specialty is how it controls functionality and UI inside and between  components
@@ -47,10 +37,50 @@ modified: '2020-06-30T12:51:08.791Z'
     - Depends on what you define as your bottleneck metric here, I’d argue if you’re referring to performance it’s very rarely the front end that’s the bottle neck. 
       - If you meant feature scalability then you’d have my vote.
   - Why I love React:
-    - Quality of solutions in the ecosystem are top notch. 
+    - Quality of solutions in the ecosystem are top notch(等级；档次) 
     - Component model is readily applicable to a surprising number of web's needs (render props amirite)
     - Functional views are way easier.
     - I don't have to think about DOM manipulation anymore.
+  - Using React, the different parts of your app stay in sync. 
+    - Using jQuery, you basically have to reimplement a crappy version of React, 
+    - telling this script to re-run after that script does something, and so on.
+  - The most important thing that React brings to the table for me is the change in the mindset. 
+    - Instead of "DOM is your state", now it is "Your state creates the DOM".
+    - There's no element selector.
+    - And you'll be much more confident that your state is correctly reflected. 
+    - Think about those time when a data change and you have to make multiple updates in the DOM. It's prone to error and messy.
+    - That being said, there's right tool for the right job. If you're building a simple info page or a classic CRUD app. React might be an overkill.
+  - At a larger scale, it becomes very difficult to maintain the state of many little bits of UI like “unread message count”, online indicators, etc. 
+    - In jQuery you’d end up with more and more `$()` calls for each datapoint and bit of view. 
+    - React‘s structure solves this more efficiently
+  - I learned React last summer for kicks, but am using jQuery to build UI for a medium sized app. 
+    - I’m writing handlers to update the DOM, directly, based on user input and AJAX and doing A LOT of thinking about how updates affect which handlers, 
+    - wishing I had all the niceties of a virtual DOM that handled its own re-rendering upon receiving new props. 
+  - For me it’s that it shifts the focus of web app development 
+    - from “how do I manipulate the DOM based on app logic and user actions” 
+    - to “how do I change app state based on user actions”, 
+    - which is a much cleaner problem to work on.
+  - One major reason for me: where I work the back end DB spits the HTML out to the page. 
+    - We on the front end have control over the css and js. 
+    - With React, we get control over the HTML back. 
+    - Now we just pass data via JSON. 
+    - Other tools like Handlebars can achieve this too.
+  - After I started my first full-time job, another dev and I spent 6 months migrating some jQuery/nunjucks apps to @reactjs.
+    - The old jQuery apps were unwieldy, hard to extend, hard to maintain as people just added things everywhere (not really jQuery's fault though
+    - We switched to @reactjs cause it gave us clear, maintainable & extendable component based state management (rather than global's and callbacks) + heaps of reusable pieces of UI that only needed to be written once rather than copy pasted between new apps or files.
+    - It also placed the HTML (JSX) in the Javascript so there was no more always needing at least 2+ files open to make a UI change
+    - Overall, I wasn't convinced at the time - I always thought React was just a 'fad' but after using it for the last year and building 2 more apps with, I'll never go back!
+  - I currently only use React with Redux, 
+    - and one of the things I like the most, is the unidirectional data flow. 
+    - This makes extremely easy to create and maintain generic modules, 
+    - because I always know what will be affected by my changes. 
+    - This also means that testing is pretty easy.
+  - Most other frameworks (and web components) take an HTML-centric approach to building Web UIs.  
+    - React takes a JavaScript-centric approach.  
+  - In the jQ era of libs, doing DOM related things, esp events was always a mess. 
+    - JSX and the "reactive flow" aspects of React are what makes it great for me
+    - To add to that, I think the post-jQuery era (backbone, Angular, Ember) tried to MVC-ize the front-end, the FE is a different animal than the back-end. 
+    - MVC works there, but doesn't work out as well in the FE because 1. JS isn't OOP, and 2, it's not request/response oriented
 
 - [For those of you who use React: why do you use React?_201707](https://twitter.com/kentcdodds/status/884583205692612608)
   - First time we had a sensible model for server rendering single page apps—harnessing it well is a competitive advantage.
@@ -60,6 +90,31 @@ modified: '2020-06-30T12:51:08.791Z'
   - no templating language gotchas (for loops, if else, etc...).
   - Because it is just JavaScript (save time and pain since no need to spend hours on documentation) and it gives the expected results
   - primarily because it has very well-established patterns that solve a lot of problems before you run into them.
+
+- [The most striking benefit of dev in React/Angular/Vue vs jQuery: ](https://twitter.com/housecor/status/1047298692091404288)
+  - Components free our minds.
+    - We can create portions of the UI in complete isolation, 
+    - so we only need to load one component into our brain at a time. 
+    - The result: High reliability, more reuse, and low cognitive load.
+  - For me it's top-down data flow. 
+    - Older frameworks had components but really what sells the new ones to me is not being based on firing off an event and having who knows what other component(s) do something in response. 
+    - Custom events are the gotos of frontend.
+  - Like jquery components never existed? Bootstrap was just a mirage?
+    -  jQuery plugins wired up to global event handlers instead of enforcing clear top down data flows for nested components. 
+    - So even with jQuery plugins, the resulting cognitive load was higher.
+    - I agree it was less robust and clean
+  - For me it was also the DOM manipulation for so many states spread across functions. 
+    - It is difficult to visualize what the DOM will look like after bunch of events. 
+    - Way easier to visualize it as templates/JSX with conditional statements and manipulating the states instead.
+
+- [I never had difficulties integrating a jQuery widget into a React app.](https://twitter.com/dan_abramov/status/717448496064888832) 
+  - There were many *other reasons* why I usually made it from scratch.
+  - Examples: I wanted to override some parts of UI in a declarative way, wanted a different way to style it, have it keep state elsewhere, etc
+    - None of these problems, as far as I see, would be solved by adding a blessed imperative layer. But that’s just my personal experience
+  - Exactly! That's why I said WC don't solve real problems. 
+    - There are almost no cases where you reuse high level components.
+    - Two exceptions are maybe maps and video players.
+    - And even in those two cases the completeness bites you back, when styling is pain and it's hard to fit into UI.
 
 - [Don't build your portfolio with just React](https://dev.to/flexdinesh/dont-build-your-portfolio-with-just-react-11a9)
   - Why you should use React
@@ -71,8 +126,28 @@ modified: '2020-06-30T12:51:08.791Z'
     - SEO implications
     - Higher Time to Interactive (TTI)
 
-- ref
-  - [The deepest reason why modern JavaScript frameworks exist_201803](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+- ### [The deepest reason why modern JavaScript frameworks exist_201803](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+- Conclusion
+  - The main problem modern JavaScript frameworks solve is keeping the UI in sync with the state.
+  - It is not possible to write complex, efficient and easy to maintain UIs with Vanilla JavaScript.
+  - Web components do not provide a solution to this problem.
+  - It’s not that hard to make your own framework using an existing Virtual DOM library. But I’m not suggesting you to do that!
+- the biggest benefit these frameworks provide: keeping the UI in sync with the state.
+  - the framework automatically updates it after the state changes.
+- How does it work? There are two basic strategies:
+  - Re-render the whole component: React. 
+    - When the state of a component changes it renders a DOM in memory and compares it with the existing DOM. 
+    - Actually since that would be very expensive it renders a Virtual DOM and compares it with the previous Virtual DOM snapshot. 
+    - Then it calculates the changes and performs the same changes to the real DOM. 
+    - This process is called reconciliation.
+  - Watch for changes using observers: Angular and Vue.js. 
+    - Your state variables are observed 
+    - and when they change only the DOM elements where those values are/were involved in the rendering are updated.
+- web components doesn’t provide anything for that. 
+  - They just provide a `<template>` tag but it doesn’t provide any reconciliation mechanism. 
+  - If you want to use web components and have the UI in sync with the internal state of your app you have to do it by hand, 
+  - or you can use something like Stencil.js (which internally uses a Virtual DOM, like React).
+
 
 - ### why use react for threejs?
 - https://twitter.com/0xca0a/status/1282999626782650368
@@ -96,8 +171,17 @@ modified: '2020-06-30T12:51:08.791Z'
 
 ## faq
 
-- ### faq-not-yet
-- `React.forwardRef()` 是高阶组件吗
+- ### Why did react decides not to support components as classes that don’t extend `React.Component`?_2015
+- https://github.com/facebook/react/issues/4599
+- To support arrow functions and plain functions as "components" we need to know if we can call `new` on them. 
+- We need to detect if a component is a "function" or a "class" before calling `new` on it.
+- We can call new on everything if they're plain functions as long as they return a ReactElement. 
+  - However, that won't work for null/false/string return values 
+  - and we want to support those too. 
+  - We also can't call `new` on arrow functions. 
+  - Likewise, we can't NOT call `new` on classes.
+- Unfortunately ECMAScript doesn't have a way to detect if something is `new`able or not.
+- The current plan is to add our own static flag to `React.Component` so that we can detect if something is a class.
 
 - ### [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
   - We want to fix the “deep update propagation” problem. 

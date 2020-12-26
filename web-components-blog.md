@@ -9,6 +9,45 @@ modified: '2020-12-21T08:04:19.490Z'
 
 ## web-components-blog
 
+## [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
+
+- 仅供参考，标准及实现都已更新，文章中提到的部分问题已解决了
+
+- I'm mostly writing this for my future self, so that I have something to point to next time someone asks why I'm a web component skeptic(怀疑论者), and why Svelte doesn't compile to custom elements by default. 
+  - (It can compile to CEs, and it can consume CEs as evidenced by its perfect score on Custom Elements Everywhere.)
+- Progressive enhancement
+  - This may be an increasingly old-fashioned view, but I think that websites should work without JavaScript wherever possible. Web components don't.
+  - With JavaScript enabled, it（example) progressively enhances — rather than opening a new tab, it opens a small popup window instead. But without, it still works fine.
+  - By contrast, the web component HTML would look something like this.
+  - which is useless and inaccessible, if JS is disabled or somehow broken, or the user is on an older browser.
+- CSS in, err... JS
+  - If you want to use Shadow DOM for style encapsulation, you have to include your CSS in a `<style>` element. 
+  - The CSS-in-JS community in particular has been criticised for not putting CSS in .css files, and yet here we are.
+- Platform fatigue(疲劳、厌倦)
+  - more bugs on Chromium
+  - It also creates complexity for developers, who are encouraged to learn these new features
+- Polyfills
+  - a Chrome-only feature
+  - The three spec editors are all Googlers.
+- Composition
+  - slotted content renders eagerly in custom elements. 
+  - It turns out that most of the time you want slotted content to render lazily.
+- Confusion between props and attributes
+- Leaky design
+- The DOM is bad
+- Global namespace
+- These are all solved problems
+  - The biggest frustration of all is that we already have really good component models. 
+  - We're still learning, but the basic problem — keep the view in sync with some state by manipulating the DOM in a component-oriented fashion — has been solved for years.
+  - Yet we're adding new features to the platform just to bring web components to parity with what we can already do in userland.
+
+- discussion
+
+- Web components are not React, Vue or Svelte components, they are not logical containers, 
+  - they are true html elements that live in the document and they should be used like any other html element. 
+  - Taking a web component and comparing it to an abstracted svelte component is totally misleading. 
+  - They do different things.
+
 ## ref
 
 - [google-dev: Building Web Components](https://developers.google.com/web/fundamentals/web-components)

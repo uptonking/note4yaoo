@@ -51,7 +51,7 @@ modified: '2020-11-13T07:30:03.110Z'
     - If you only need the styling parts of Stack, you’re free to ignore the provided JavaScript. 
   - The Stacks JavaScript components are provided as Stimulus controllers.
     - Stimulus is a JavaScript framework designed to augment your HTML 
-    - 这是Ruby社区给多页面应用设计的框架。
+    - Stimulus是Ruby社区给多页面应用设计的框架。
     - 解决了取元素和绑事件的问题，用MutationObserver监控元素的变化, 补绑事件或者修改元素的引用
 - Cosmos Design System /Auth0
   - /498Star/MIT/202010/ts/css-in-js
@@ -77,7 +77,7 @@ modified: '2020-11-13T07:30:03.110Z'
   - 基于treat这个css-in-js解决方案实现
   - ref
     - https://github.com/seek-oss/seek-style-guide
-      - This project has been deprecated in favour of Braid Design System.
+      - deprecated in favour of Braid Design System.
 - GEL(Global Experience Language) /BBC
   - /195Star/Apache2/202010/js
   - https://github.com/bbc/psammead

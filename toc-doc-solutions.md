@@ -13,7 +13,8 @@ modified: '2020-11-16T12:40:33.516Z'
   - [top documentation-tool](https://github.com/topics/documentation-tool?o=desc&s=stars)
 
 - 要在功能丰富和轻量方便间折中，过重的编辑器就偏向于在线ide了
-- write with markdown, and then render to html
+- write with markdown
+- render to html
 
 ## doc-solution-catalog
 

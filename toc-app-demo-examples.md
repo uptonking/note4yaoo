@@ -9,6 +9,9 @@ modified: '2020-10-22T13:02:56.929Z'
 
 ## common-examples
 
+- counter
+  - https://github.com/kentcdodds/dom-testing-library-with-anything
+    - This repo is a bunch of simple examples of using DOM Testing Library to test a Counter component in various frameworks
 - todomvc
   - https://github.com/tastejs/todomvc
 - realword

@@ -28,7 +28,8 @@ modified: '2020-10-07T10:54:56.196Z'
 
 - MDC Web tries to be framework agnostic, just like MDL. 
   - Yes there are advantages when doing this, 
-  - but they come with this major major drawback: Developing new components is difficult, time consuming and error prone. 
+  - but they come with this major major drawback: 
+    - Developing new components is difficult, time consuming and error prone. 
   - There is no easy way of state managements, no templating, all the advances in virtual DOM are ignored. 
   - In our opinion, this is exactly what killed MDL and I do not see why it shouldn't kill MDC Web too.
 - We're using MDC heavily with React and I agree about the framework agnostic model sometimes being a double-edged sword. 
@@ -36,7 +37,9 @@ modified: '2020-10-07T10:54:56.196Z'
   - For some components it's little more than adding/removing styles or simple event handling which is easy to replace and enhance. 
   - Other components are more problematic because there is a ton of code behind them (drawers and sliders are the big ones.) 
   - CSS ripples are also fine for example, making button and switch components simple to implement in React, plus we get to choose which classes to implement based on our own UX guidelines (so we have limited component props in some cases.)
-  - MDC is very careful to never add or remove elements from the DOM, so it does fit well with multiple modern frameworks and libs, but I personally prefer reactive code over imperative.  
+  - MDC is very careful to never add or remove elements from the DOM, 
+    - so it does fit well with multiple modern frameworks and libs, 
+    - but I personally prefer reactive code over imperative.  
   - I also feel that this team does a fantastic job of doing as much with CSS as possible which makes implementing pure React components so much easier. 
   - Overall our experience with MDC has been excellent though: all that official scss alone, which is dead simple to theme, has given our web apps a modern look and feel and has saved us from spending time and money implementing our own company design language. 
 - MDC Web will continue to be framework agnostic with our Foundation/Adapter pattern. 
@@ -71,9 +74,12 @@ modified: '2020-10-07T10:54:56.196Z'
   - This DOM has certain requirements, such as requiring the presence of specific CSS classes, a certain hierarchy, and in some cases, specific HTML elements.
   - In MDC Web, the DOM you specify must be complete; 
   - unlike MDL, the library will not create any missing elements for you.
-  - This is done in order to make behavior more deterministic and give you greater freedom in customizing the non-critical parts of a component's DOM.
-- Once a DOM is available, MDL manages component lifecycles automatically, by running through the page on load, identifying DOM structures that correspond to MDL components, and automatically upgrading them.
-  - In MDC Web, however, you have the choice between managing components’ lifecycles yourself, or having them automatically initialized, similarly to MDL
+  - This is done in order to make behavior more deterministic 
+    - and give you greater freedom in customizing the non-critical parts of a component's DOM.
+- Once a DOM is available, MDL manages component lifecycles automatically, 
+  - by running through the page on load, 
+  - identifying DOM structures that correspond to MDL components, and automatically upgrading them.
+- In MDC Web, however, you have the choice between managing components’ lifecycles yourself, or having them automatically initialized, similarly to MDL
   - For every component that you want to automatically initialize, set the `data-mdc-auto-init` attribute on the root element, with the component’s class name as the value
   - Auto-initialization needs to be triggered explicitly `mdc.autoInit();`
   - When using autoInit, you can access a component’s JavaScript instance via its root DOM element, on a property with the same name as the value you passed to `data-mdc-auto-init`

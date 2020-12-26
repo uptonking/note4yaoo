@@ -9,9 +9,9 @@ modified: '2020-11-01T11:13:54.783Z'
 
 ## pieces
 
-- [CSS Custom Properties and Theming](https://css-tricks.com/css-custom-properties-theming/)
-  - Using custom properties to set a single property is ALWAYS going to be faster than manipulating styles on each individual DOM node that needs the custom styles.
-  - Like, nearly 100x faster: https://jsperf.com/css-variables-vs-inline-styles
+- ### [CSS Custom Properties and Theming](https://css-tricks.com/css-custom-properties-theming/)
+- Using custom properties to set a single property is ALWAYS going to be faster than manipulating styles on each individual DOM node that needs the custom styles.
+- Like, nearly 100x faster: https://jsperf.com/css-variables-vs-inline-styles
 
 - Custom properties are ordinary properties, so they can be declared on any element, are resolved with the normal inheritance and cascade rules ref 
   - so I don't think that performance will change based on where you declare the property. 

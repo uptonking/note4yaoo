@@ -10,10 +10,13 @@ modified: '2020-11-13T07:29:59.314Z'
 ## amazing
 
 - Denali Design /Verizon Media
-  - /48Star/MIT/202010/scss
+  - /69Star/MIT/202012/scss
   - https://github.com/denali-design/denali-css
   - https://denali.design/
   - Themeable CSS framework of Denali Ui components
+  - supports theming through custom variables 
+    - which means the appearance of Denali’s components can be easily adapted to fit the visual style of any brand.
+  - components are framework independent allowing you to take what you need and leave the rest
   - ref
     - https://denali-design.github.io/denali-css/docs/
     - https://denali.design/docs/2/guides/themeable

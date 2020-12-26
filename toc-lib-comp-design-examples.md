@@ -20,9 +20,10 @@ modified: '2020-12-08T14:24:07.931Z'
     - https://akveo.github.io/react-native-ui-kitten/
     - the themes can be changed in the runtime, with no need to reload the application.
   - https://github.com/akveo/nebular
-    - /6.6kStar/MIT/202010/ts
+    - /6.6kStar/MIT/202010/ts/angular
     - https://akveo.github.io/nebular
     - Customizable Angular UI Library based on Eva Design System
+    - Nebular is a customizable Angular 10 UI Library with a focus on beautiful design
   - ref
     - [Eva Icons - UI Icon Set](https://akveo.github.io/eva-icons)
     - [Eva Sketch File - UI Library, UI Kits & etc.](https://gumroad.com/akveo)

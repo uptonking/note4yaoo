@@ -9,14 +9,38 @@ modified: '2020-11-01T06:32:38.093Z'
 
 ## guide
 
-- 使用css variables
-  - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便
-  - To use the values of custom properties in JavaScript, it is just like standard properties.
-    - `element.style.getPropertyValue("--my-var");`
-    - `element.style.setProperty("--my-var", jsVar + 4);`
+- faq-not-yet
+  - inline样式的css vars的性能
 
-- css vars的值也才用css样式值的层叠规则
+- css vars优点
+  - 浏览器直接支持
+  - 实现简单theme切换非常方便，不用下载额外css文件，相关计算交给浏览器
+
+- css vars缺点
+  - css变量值必须是any valid CSS value
+  - css内置的计算函数不够丰富
+
+- css vars的值也采用css属性值的层叠规则
   - 据此可基于css变量实现theme
+    - 要考虑代码清晰、明确
+    - 要考虑包含css变量的读写操作多不多，性能影响
+
+- tips
+  - 若var()函数的fallback值包含大量计算，会导致性能问题
+  - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便
+
+``` JS
+// To use the values of custom properties in JavaScript, it is just like standard properties.
+
+// get variable from inline style
+element.style.getPropertyValue("--my-var");
+
+// get variable from wherever
+getComputedStyle(element).getPropertyValue("--my-var");
+
+// set variable on inline style
+element.style.setProperty("--my-var", jsVar + 4);
+```
 
 ## theming-examples
 
@@ -137,6 +161,96 @@ document.addEventListener("DOMContentLoaded", function() {
 - Theming, the vast majority of the time, is a complete nice-to-have. 
   - It is not business critical or usually even important. 
   - If you are asked to provide such theming, do not do so at the expense of performance or code quality.
+
+- ### [Using CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- Declaring a custom property is done using a custom property name that begins with a double hyphen (`--`), and a property value that can be any valid CSS value.
+  - Custom property names are case sensitive
+- Note that the selector given to the ruleset defines the scope that the custom property can be used in. 
+  - A common best practice is to define custom properties on the `:root` pseudo-class, so that it can be applied globally across your HTML document
+  - you maybe have a good reason for limiting the scope of your custom properties.
+- Custom properties do inherit. 
+  - This means that if no value is set for a custom property on a given element, the value of its parent is used. 
+  - Custom properties are scoped to the element(s) they are declared on, and participate in the cascade: 
+    - the value of such a custom property is that from the declaration decided by the cascading algorithm.
+- Keep in mind that these are custom properties, not actual variables like you might find in other programming languages. 
+  - The value is computed where it is needed, not stored for use in other rules. 
+  - For instance, you cannot set a property for an element and expect to retrieve it in a sibling's descendant's rule. 
+  - **The property is only set for the matching selector and its descendants**, like any normal CSS.
+- Using the `var()` function, you can define multiple fallback values when the given variable is not yet defined; 
+  - this can be useful when working with Custom Elements and Shadow DOM.
+  - The function only accepts two parameters, assigning everything following the first comma as the second parameter. 
+  - If that second parameter is invalid, such as if a comma-separated list is provided, the fallback will fail.
+  - The technique has been seen to cause performance issues as it takes more time to parse through the variables.
+  - The syntax of the fallback, like that of custom properties, allows commas. 
+
+``` CSS
+.two {
+  /* Red if --my-var is not defined */
+  color: var(--my-var, red);
+}
+
+.three {
+  /* pink if --my-var and --my-background are not defined */
+  color: var(--my-var, var(--my-background, pink));
+}
+
+.three {
+  /* Invalid: "--my-background, pink" */
+  color: var(--my-var, --my-background, pink);
+}
+
+.four {
+  /* defines a fallback of red, blue */
+  color: var(--foo, red, blue);
+}
+```
+
+- The classical CSS concept of validity, tied to each property, is not very useful in regard to custom properties. 
+  - When the values of the custom properties are parsed, the browser doesn't know where they will be used, 
+  - so must, therefore, consider nearly all values as valid.
+
+- When the browser encounters an invalid `var()` substitution, the initial or inherited value of the property is used.
+  - Check if the property color is inheritable.
+- While a syntax error in a CSS property/value pair will lead to the line being ignored, using a cascaded value, invalid substitution -- using a custom property value that is invalid -- is not ignored, leading to the value to be inherited.
+  - 无效的css变量值，也会被继承，参与层叠规则
+
+- ### [CSS Variables: Why Should You Care?](https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care)
+- CSS variables, more accurately known as CSS custom properties, are landing in Chrome 49.
+  - Currently Chrome 49, Firefox 42, Safari 9.1, and iOS Safari 9.3 support custom properties.
+- They can be useful for reducing repetition in CSS, and also for powerful runtime effects like theme switching and potentially extending/polyfilling future CSS features.
+- While tools like SASS or LESS have boosted developer productivity immensely, the preprocessor variables that they use suffer from a major drawback, 
+  - which is that they’re static and can’t be changed at runtime. 
+  - Adding the ability to change variables at runtime not only opens the door to things like dynamic application theming, 
+  - but also has major ramifications for responsive design and the potential to polyfill future CSS features.
+- `var(<custom-property-name> [, <declaration-value> ]? )`
+  - Fallback values can be a comma separated list, which will be combined into a single value. 
+  - For example `var(--font-stack, "Roboto", "Helvetica");` defines a fallback of `"Roboto", "Helvetica"`. 
+  - Keep in mind that shorthand values, like those used for margin and padding, are not comma separated
+- This technique is especially useful for theming Web Components that use Shadow DOM, as custom properties can traverse shadow boundaries. 
+  - A Web Component author can create an initial design using fallback values, and expose theming “hooks” in the form of custom properties.
+- Working with custom properties in JavaScript
+
+``` 
+
+/* CSS */
+:root {
+  --primary-color: red;
+}
+
+p {
+  color: var(--primary-color);
+}
+
+<!-- HTML -->
+<p>I’m a red paragraph!</p>
+
+/* JS */
+var styles = getComputedStyle(document.documentElement);
+var value = String(styles.getPropertyValue('--primary-color')).trim();
+// value = 'red'
+document.documentElement.style.setProperty('--primary-color', 'green');
+
+```
 
 ## ref
 

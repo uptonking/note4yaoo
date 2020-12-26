@@ -112,7 +112,7 @@ modified: '2020-10-03T15:29:07.138Z'
 - setStyle
 - Do not reference host objects within foundation code
   - To ensure your foundation is as compatible with as many frameworks as possible, avoid directly referencing host objects within them. 
-  - This includes `window` , `document` , `console` , and others. 
+  - This includes `window/document/console` , and others. 
   - Only reference global objects defined within the ECMAScript specification within your foundations
   - We make an exception for this rule for `requestAnimationFrame` , but in the future we may refactor that out as well. 
   - In addition, a workaround to working with host objects in a foundation is to ask for them via the adapter.
@@ -121,6 +121,7 @@ modified: '2020-10-03T15:29:07.138Z'
   - A typical component within our codebase looks like so:
 
 ``` 
+
 packages/
   ├── mdc-component/
       ├── test/
@@ -159,19 +160,73 @@ packages/
 -  Before a test ends, ensure that any elements attached to the DOM have been removed.
 - how to create a component instance for a single element
   - `const comp = new MDCFoo(document.querySelector('.mdc-foo'));`
+
  
 
 - ### [Theming Guide](https://github.com/material-components/material-components-web/blob/master/docs/theming.md)
+- tips
+  - 全局级theme基于sass变量，组件级theme基于css vars
+
 - MDC Web includes a theming system designed to make it easy to change your application's colors.
-- MDC Web supports theming with Sass and with CSS Custom Property, with plans for CDN support as well, once that service is available.
+- At the moment, MDC Web supports theming with Sass and with CSS Custom Property, with plans for CDN support as well, once that service is available.
 - MDC Web theming, like Material Design theming, uses two main colors: primary and secondary.
-- The secondary color is used for floating action buttons and other interactive elements, serving as visual contrast to the primary.
-- MDC Web also defines a surface color, which is used as a background in components.
-- MDC Web provides a number of CSS classes as part of the `mdc-theme` module to help you tackle this problem in a more maintainable way.
-- Changing the theme with Sass variables affects the whole application, 
-- Changing the theme with CSS Custom Properties  by simply redefining the custom property at some level.
-- Ideally, we should set all of the text colors on primary, since we never know which one an MDC Web component might use. 
-- Most MDC Web components provide a set of Sass mixins to customize their appearance, such as changing the fill color, ink color, stroke width, etc. T
+  - The primary color is used throughout most of the application and components, as the main color for your application. 
+  - The secondary color is used for floating action buttons and other interactive elements, serving as visual contrast to the primary.
+  - MDC Web also defines a surface color, which is used as a background in components.
+  - Finally, MDC Web has a number of text colors, 
+    - which are used for rendering text and other shapes on top of the primary, secondary and background colors
+    - These are specified as either dark or light, in order to provide sufficient contrast to what's behind them
+- color-usage
+  - Primary, used for most text.
+  - Secondary, used for text which is lower in the visual hierarchy.
+  - Hint, used for text hints 
+    - (such as those in text fields and labels).
+  - Disabled, used for text in disabled components and content.
+  - Icon, used for icons.
+  - On-surface, used for text that is on top of a surface background.
+  - On-secondary, used for text that is on top of a secondary - background.
+  - On-primary, used for text that is on top of a primary background.
+
+- Building a themed application
+  - each card to have a color scheme that matches its category
+- Step 1: No theming
+- Step 2: Use the MDC Web colors in your own markup
+  - Not everything has a `--primary` option, though, particularly where it comes to your own markup
+  - Bad approach: write your own custom CSS rules
+  - that would not take advantage of MDC Web's theming and would thus be brittle(脆弱的；易碎的)
+  - MDC Web provides a number of CSS classes as part of the `mdc-theme` module to help you tackle this problem in a more maintainable way.
+  - `mdc-theme--primary-bg, mdc-theme--on-primary`
+- Step 3: Changing the theme with Sass
+  - The application-wide theme colors that are used as the default across your entire application can be set in Sass.
+  - This is as easy as defining three variables (`$primary/$secondary/$background`) in your Sass file, before importing any MDC Web modules.
+  - These definitions will override the defaults included in the mdc-theme module, which every themeable component depends on.
+  - As for the text colors, these will all be automatically calculated from the primary, secondary and background you provide, as part of the Sass definitions in mdc-theme
+- Step 4: Changing the theme with CSS Custom Properties
+  - Changing the theme with Sass variables affects the whole application
+  - The generated MDC Web CSS uses CSS Custom Properties with hardcoded fallbacks, 
+    - which are set to the colors provided in Sass. 
+    - This means that you can define your default theme in Sass (like we did above), 
+    - but override it in CSS, dependent on context or user preference.
+  - you can easily override the colors that get used in MDC Web components by simply redefining the custom property at some level.
+  - The custom properties used by MDC Web follow a similar naming convention to the Sass variables and CSS classes
+  - The problem is that we only set the `--mdc-theme-primary` custom property.
+    - Whereas setting `$mdc-theme-primary` in Sass allows for calculating all the related text colors, it's currently not possible to perform those complex contrast calculations in CSS.
+    - This means you'll also have to set all the related text colors
+  - Ideally, we should set all of the text colors on primary, since we never know which one an MDC Web component might use. 
+
+- Most MDC Web components provide a set of Sass mixins to customize their appearance, such as changing the fill color, ink color, stroke width, etc.
+
+- Color Theming
+  - You can define the theme color sass variables before importing any MDC Web components
+  - Inevitably there will be some components that do not work "out of the box". 
+    - To fix problems with accessibility and design, we suggest you use our Sass mixins, such as `button.filled-accessible()`
+  - Only a very limited number of Material Design color customization features are supported for non-Sass clients. 
+    - They are a set of CSS custom properties, and a set of CSS classes.
+
+- Shape Theming
+  - Currently shape system for web only supports rounded corners.
+  - Only rounded shape designs are currently supported to be customized with sass variables
+  - Do not use percentage values with custom properties, since they cannot be resolved by `shape.radius()` at runtime.
 
 - ### [Integrating MDC Web into Frameworks](https://github.com/material-components/material-components-web/blob/master/docs/integrating-into-frameworks.md)
 - MDC Web was designed to be integrated as easily as possible into any and all web frameworks. 
@@ -210,7 +265,7 @@ packages/
 
 - ### [MDC-103 Web: Material Theming with Color, Shape, Elevation and Type](https://codelabs.developers.google.com/codelabs/mdc-103-web/)
 - Any global variables you wish to override (e.g. `$mdc-theme-primary` ) must be declared before importing the components' styles into your *.scss files. 
-- In this case, `_common.scss` is a partial that is imported before anything else in `login.scss` and `home.scss` , so it will apply to both pages' styles.
+- In this case `_common.scss` is a partial that is imported before anything else in `login.scss` and `home.scss` , so it will apply to both pages' styles.
 - Typography can be set either by using the Sass mixin, or by including the specific type class (e.g. `class="mdc-typography--headline6"` ) on your element.
 - Elevation is applied by invoking the `mdc-elevation` Sass mixin within a selector representing the elements you want elevated.
 - change layout by update `mdc-image-list-standard-columns(4)` to `mdc-image-list-masonry-columns(4)`
