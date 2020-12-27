@@ -1,13 +1,22 @@
 ---
-title: web-dev-comp-shared
+title: web-dev-comp-tokens-common
 tags: [components]
 created: '2020-10-02T11:42:34.698Z'
-modified: '2020-12-21T08:08:38.189Z'
+modified: '2020-12-27T21:16:14.941Z'
 ---
 
-# web-dev-comp-shared
+# web-dev-comp-tokens-common
 
 ## grand-garden-design-in-action
+
+- features
+  - framework agnostic
+  - themeable components following the Theme Specification
+  - better consistency with constraint-based design
+
+- dev
+  - 主题样式实现一套css，再实现一套css in js
+    - primer-components
 
 - 公共api/variant
   - borderless

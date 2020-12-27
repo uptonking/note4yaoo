@@ -10,6 +10,11 @@ modified: '2020-12-19T13:03:37.613Z'
 ## lit-html-uhtml
 
 - [A recap of WebReflection's FE/DOM related libraries](https://gist.github.com/WebReflection/761052d6dae7c8207d2fcba7cdede295)
+  - Vue => uce-template
+  - React => uland/uhooks/kaboobie
+  - Svelte => heresy/-ssr
+  - template-literal => uhtml/-ssr
+  - Custom Elements => polyfill with built in extends
 - Minimalistic Libraries(do one thing only and do it well)
 - ### Minimalistic Libraries
 - do one thing only and do it well

@@ -32,10 +32,16 @@ modified: '2020-11-13T07:30:03.110Z'
 ## design-system-catalog
 
 - Clarity Design System /VMware
-  - /MIT/6.1kStar/202010/ts/angular
-  - https://github.com/vmware/clarity/
+  - /MIT/6.1kStar/202010/ts/angular/web-comp
+  - https://github.com/vmware/clarity
+    - core依赖lit-html,lit-element
   - https://clarity.design/
   - UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences
+  - https://clarity.design/documentation/themes
+    - SASS-based theming is deprecated in Clarity 3.0 and will no longer work when Clarity 4.0 is released. 
+    - It is recommended that you convert your themes to use CSS custom properties for the 4.0 release in Spring of 2020.
+    - The Clarity Core web components are encapsulated within the shadow DOM. 
+      - Changes to the CSS at the global level will not be able to affect shadow DOM encapsulated web components through any means outside of CSS custom properties.
 - Storybook Design System /Storybook
   - /MIT/890Star/202010/ts/css-in-js
   - https://github.com/storybookjs/design-system
@@ -362,3 +368,11 @@ modified: '2020-11-13T07:30:03.110Z'
   - https://github.com/istreamlabs/pebble
   - https://pebble.istreamplanet.net/
   - A react-based design system built by iStreamPlanet
+
+- https://github.com/rockcontent/rock-ui
+  - Rock Content Design System component kit in React
+  - Based on Chakra-UI.
+- https://github.com/Malvid/Malvid
+  - Malvid helps you to build, document and visualise components by turning a directory into an interactive UI.
+  - Malvid scans the folder you've specified and generates a static HTML output
+  - 偏向于ui组件的生成工具

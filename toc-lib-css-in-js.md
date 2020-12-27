@@ -38,6 +38,9 @@ modified: '2020-09-25T05:56:32.022Z'
   - 生成css，需要单独考虑css文件，额外使用autoprefix插件
 - glaze /375Star/MIT/202006
   - https://github.com/kripod/glaze
+  - 缺点是部分样式是动态生成的
+  - 支持treat file形式的静态样式，也支持在sx方法中书写带theme约束的样式值，但这部分样式会动态生成
+  - 要使用glaze的ThemeProvider传入theme，不能使用react-treat的TreatProvider传入theme
   - Glaze, the theme-ui API with almost zero runtime based on treat
   - This project was born to combine the best of its predecessors into a single solution
     - Near-zero runtime, made possible by treat: Theming support, Static style extraction
@@ -48,6 +51,9 @@ modified: '2020-09-25T05:56:32.022Z'
 - https://github.com/WalltoWall/calico
   - Calico is a customizable styling library that maps React props to statically generated class names.
   - 缺点是组件必须使用提供的Box组件创建
+  - 优点是预先生成所有css，使用原子类的形式，生成的样式名超级多，适合大规模应用，不适合小规模应用
+  - 基于treat和react-treat，所有主题的样式均可静态提取
+  - 通过styles属性直接书写theme对象中的属性值，通过类似`Button.treat.js`的treat file添加一次性的样式
   - Very light runtime made possible by the treat library.
     - Static style extraction with full type safety.
     - Dynamic styles via swapping classNames.

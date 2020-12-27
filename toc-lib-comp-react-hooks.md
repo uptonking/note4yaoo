@@ -57,7 +57,7 @@ modified: '2020-11-13T07:31:23.527Z'
   - https://mongodb.github.io/leafygreen-ui/
   - A set of CSS styles and React components 
   - 基于hooks实现
-  - 基于styled-components的css方法实现样式
+  - 基emotion的css方法实现样式
 - https://github.com/skyverge/kodiak-ui
   - /10Star/MIT/202010/ts
   - React hook and component library for SkyVerge

@@ -25,6 +25,11 @@ modified: '2020-10-22T16:10:59.589Z'
 
 ## geo
 
+- 盛政
+  - 中国农大，greengis
+  - https://github.com/shengzheng1981
+  - [GIS之闲谈（四）——明年三件事+GIS学习路线+择业_202012](https://www.zhihu.com/zvideo/1326297199974490112)
+    - pr优化教学视频 + gis常用库讲座 + 智慧水务
 - 彭金金
   - 天地图，iview，mapbox
   - https://github.com/jingsam

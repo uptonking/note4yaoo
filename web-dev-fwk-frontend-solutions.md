@@ -101,6 +101,7 @@ modified: '2020-12-21T14:53:44.945Z'
   - books/online courses
   - showcase(made with fwk)
   - storybook, online demo
+  - live docs
 
 - tooling
   - devtools: hmr，flash-updates
@@ -108,7 +109,6 @@ modified: '2020-12-21T14:53:44.945Z'
   - cli
     - easy to create and develop starter project
   - framework playground
-  - doc
   - testing
 
 - integration/wrapper

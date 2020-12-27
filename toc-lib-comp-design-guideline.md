@@ -69,6 +69,8 @@ modified: '2020-12-20T15:47:13.585Z'
 - https://www.duetds.com/
   - https://www.duetds.com/tokens/
   - a set of organized tools, patterns and practices that work as the foundation
+  - https://www.duetds.com/tokens/
+    - Design tokens are a tech-agnostic way to store variables
 - https://www.astrouxds.com/
   - Astro Space UX Design System enables developers to build rich space app experiences
 - Predix Design System /GE Digital

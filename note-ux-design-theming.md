@@ -22,20 +22,42 @@ modified: '2020-10-27T15:10:47.179Z'
 
 - 编译出多套全局主题的css(一套主题包含所有组件) vs 编译出一个组件的多套主题(易拆分代码)
   - theme-ui给出的方案是前者，使用带约束的样式值
+  - 使用css vars可以方便低成本实现theming
 
 ## guide
 
 - 基于css vars实现theming的示例
   - carbon design system
-  - denali-css
   - spectrum-css
+  - denali-css
   - polaris
   - Assembly
   - PatternFly
   - Fomantic-UI/Semantic-UI
   - Gestalt
+  - clarity design system v4
+  - 更多css vars
+    - vaadin
+      - uses CSS Vars for customizing fonts, colors, border radius, and spacing.
+    - MindSphere CSS 
+      - built-in theming capabilities are based upon CSS variables
+    - Chakra UI
+      - stores the color mode in localStorage and uses CSS variables to ensure the color mode is persistent.
   - 部分使用css vars
     - material components web
+
+- 基于sass vars实现theming的示例
+  - bootstarp v4, v5
+  - bulma
+  - primer design
+  - lightning design system
+  - elastic ui
+  - 基于less vars
+    - ant-design
+
+- 基于css-in-js/styled实现theming的示例
+  - theme-ui
+  - base design
 
 - 实现主流设计系统的高仿
   - material-design

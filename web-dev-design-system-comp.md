@@ -21,18 +21,21 @@ modified: '2020-12-21T08:09:09.954Z'
 
 - theming: 动态主题
   - 解决方案大多与框架相关，如styled-components，也可以基于css变量
-  - 实现theme的方法: css变量、带theme名称的子选择器、react-context consumer
-  - 可提供几套预定义的精美主题，手动选择任意颜色做主题不推荐，荣易造成视觉冲突、对比度降低
+  - 实现theme的方法
+    - css变量、带theme名称的子选择器、react-context consumer
+  - 可提供几套预定义的主题，手动选择任意颜色做主题不推荐，容易造成视觉冲突、对比度降低
+  - 开始流行基于css vars实现theming，使用css vars控制colors, fonts, spacing
+  - 优先考虑框架无关/支持多个框架的css in js
 
 - css样式及布局
   - 趋势：静态提取、主题切换、无重复原子类、带约束的属性
   - 必备：局部样式、动态样式、主题切换
   - 推荐使用css in js作为预处理器
-    - 这样自动生成的类名既可以是单个普通类名，又可以是多个原子类空格拼接而成的类名，更灵活
+    - 这样自动生成的类名既可以是单个普通类名，也可是多个原子类空格拼接而成的类名，更灵活
   - css-in-js: styled-components, emotion
   - css-modules: with css preprocessor
   - layout: flexbox
-  - 实现动态样式的方法：css变量层叠、inline、data-属性
+  - 实现动态样式的方法：css vars层叠、inline、data-属性
   - 大公司开始选择css in js的方法了，但css in js易与框架耦合，不方便切换框架
 
 - icon

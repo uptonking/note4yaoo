@@ -14,6 +14,7 @@ modified: '2020-10-22T13:37:03.276Z'
 - 如何将本项目作为库提供给其他人使用
   - 直接复用组件，而不是复用样式，
   - 若必须复用样式，则提取出变量通过theme来复用
+  - 还可考虑实现一套css，再另外实现一套css in js
 - why you should use css-in-js
   - possible to author CSS in JS syntax
   - Styles are "scoped" to a specific component
@@ -33,6 +34,8 @@ modified: '2020-10-22T13:37:03.276Z'
     - 技术选型时，参考知名项目或大公司项目的选择
 - 使用styled-components这种css-in-js的优缺点
   - 优点是局部样式、动态样式、主题切换
+    - 基于css in js实现theming复杂度更低
+      - 因为基于css vars实现theming需要考虑变量值层叠
   - 缺点
     - runtime cost
       - 对于交互不频繁、性能要求不极限的场景，使用styled组件时可行的

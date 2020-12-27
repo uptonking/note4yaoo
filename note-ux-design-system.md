@@ -43,20 +43,23 @@ modified: '2020-10-03T15:33:01.333Z'
 
 ## design system tutorials
 
-- https://www.learnstorybook.com/design-systems-for-developers/
-  - how to transform component libraries into design systems
-- https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+- ref
+  - https://www.learnstorybook.com/design-systems-for-developers/
+    - how to transform component libraries into design systems
+  - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
+
 - [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
-  01. Google Material Design System
-  02. Apple Human Interface Guidelines
-  03. Microsoft Fluent Design System
-  04. Atlassian Design System
-  05. Uber Design System
-  06. Shopify Design System
-  07. IBM Carbon Design System
-  08. Mailchimp Design System
-  09. Salesforce Lightning Design System
+  01.  Google Material Design System
+  02.  Apple Human Interface Guidelines
+  03.  Microsoft Fluent Design System
+  04.  Atlassian Design System
+  05.  Uber Design System
+  06.  Shopify Design System
+  07.  IBM Carbon Design System
+  08.  Mailchimp Design System
+  09.  Salesforce Lightning Design System
   10. Helpscout Design System
+
 - [creating themeable design systems_2018_Brad Frost](https://bradfrost.com/blog/post/creating-themeable-design-systems/)
   - TL; DR: Design systems + CSS Zen Garden = Awesome.
   - Each component in a design system contains its own structure, style, and behavior.
@@ -75,11 +78,13 @@ modified: '2020-10-03T15:33:01.333Z'
   - Using the variable system described above, we can define the button atom‘s visual styles for 5 unique brands.
   - A molecule is a component made up of a handful of atoms. A card molecule is a common component that can house all sorts of different content.
   - An organism is a complex component that’s made up of atoms, molecules, or other organisms.
+
 - [Atomic Design: Blowing Up What You Thought You Knew About Web Design](https://www.elegantthemes.com/blog/design/atomic-design)
   - interfaces are made up of components that can be categorized into building blocks
   - Atoms, Molecules, Organisms, Templates, Pages
 
 ## pieces
+
 - In our design system, we have 2 different space scales:
   - https://twitter.com/markdalgleish/status/1280029511807983617
   - Between UI elements (e.g. within a` <Stack>`)
@@ -90,4 +95,3 @@ modified: '2020-10-03T15:33:01.333Z'
   - my hunch is that you should have a single space scale that's derived from your typographical scale. The space between lines and the space between UI elements both come from a single design decision.
   - What I'm aiming for is a component system that follows the baseline grid for you automatically, and we're having a lot of success with it.
   - Material UI uses a gutterBottom prop to add same space below an typography element element.  Don't know if that would be better than adding Stack between multiple texts
-

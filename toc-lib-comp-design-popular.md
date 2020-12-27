@@ -77,9 +77,10 @@ modified: '2020-11-13T07:29:55.201Z'
   - carbon-components
     - a collection of re-usable HTML and SCSS partials for building products.
   - carbon-components-react
-    - A collection of Carbon Components implemented using React.
+    - A collection of Carbon Components implemented using React
     - 组件基于hooks实现
-    - 样式直接操作classList.add/remove
+    - 样式基于classnames，极少部分样式直接操作classList.add/remove
+    - react组件依赖纯css框架里面的scss
   - theming基于sass或css vars，按需选择编译输出
     - sass变量可被编译输出css vars, `emit-css-custom-properties`
       - [Create CSS Custom Properties feature flag](https://github.com/carbon-design-system/carbon/issues/4033)
@@ -187,6 +188,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
     - 组件基于class实现
     - 样式基于css-in-js
+    - theming基于styled-ThemeProvider
   - https://baseweb.design/
   - A React Component library implementing the Base design language
   - ref
@@ -209,16 +211,22 @@ modified: '2020-11-13T07:29:55.201Z'
 - ### Primer Design System /Github
   - /969Star/MIT/202019/js/css-in-js
   - https://github.com/primer/components
+    - https://primer.style/components
+    - React implementation of GitHub's Primer Design System
+    - react components和css是两套相互不依赖的实现，css的价值偏低
     - 依赖styled-components、styled-system
     - 组件基于hooks实现
     - 样式基于css-in-js，也有用classnames
-    - 每个组件的默认值都有导入的theme对象
-  - https://primer.style/components
-  - React components for the Primer Design System
+    - theming基于styled-ThemeProvider
+      - 每个组件的defaultProps都包含直接导入的全局级theme对象
+    - Primer Components come with all the necessary CSS built-in, so you don't need to worry about including [Primer CSS].
   - https://github.com/primer/css
     - https://primer.style/css
     - /9.7kStar/MIT/202010/scss
-    - theming基于sass vars
+    - The CSS implementation of GitHub's Primer Design System
+    - theming未实现，draft基于css vars
+    - Our goal is to create a system that enables us to build consistent user experiences
+    - Our approach to CSS is influenced by OOCSS, functional CSS, and BEM architecture.
   - ref
     - https://github.com/primer/octicons
     - https://github.com/primer/design

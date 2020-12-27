@@ -21,7 +21,8 @@ modified: '2020-09-25T05:56:45.321Z'
     - ！！！ 甚至可以在发布时编译出使用css vars实现的theme
 
 - 缺点
-  - styled形式的css in js，跨项目复用css难，不方便将一套css用在多个项目
+  - styled形式的css in js，跨项目复用css难
+    - 不方便将一套css用在多个项目，可考虑实现一套css和一套css in js
 
 - I feel like we’re moving out of the CSS-in-JS era into something new. We’re moving more towards:
   - Static extraction

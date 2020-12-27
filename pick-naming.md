@@ -7,6 +7,12 @@ modified: '2020-12-06T13:05:51.375Z'
 
 # pick-naming
 
+## variables
+
+- boolean
+  - 前缀：is, has, should, enable, does
+  - 示例：isDisabled, isLoading
+
 ## words
 
 - clip art

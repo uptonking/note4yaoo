@@ -1,11 +1,11 @@
 ---
-title: web-dev-comp-vanillajs-blog
-tags: [components, vanillajs]
+title: web-dev-fwk-vanillajs-comp
+tags: [components, vanillajs, web]
 created: '2020-11-06T13:55:26.840Z'
-modified: '2020-12-21T08:11:32.046Z'
+modified: '2020-12-27T20:28:20.539Z'
 ---
 
-# web-dev-comp-vanillajs-blog
+# web-dev-fwk-vanillajs-comp
 
 ## react-like
 

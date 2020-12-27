@@ -8,7 +8,7 @@ modified: '2020-12-21T08:03:56.709Z'
 
 # web-dev-comp-react-in-action
 
-## react-dweb-ev-in-action
+## react-comp-in-action
 
 - dev-faq
   - 生成色板后，给各色值定义了类似blue900的名称，各组件如何使用相关颜色
