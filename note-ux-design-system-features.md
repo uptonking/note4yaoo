@@ -20,6 +20,20 @@ modified: '2020-12-27T10:46:16.801Z'
   - Motion provides meaning
     - Motion focuses attention and maintains continuity through subtle feedback and transitions
 
+### Carbon Design System
+
+- Guiding principles
+  - open
+  - inclusive
+    - designed and built to be accessible to all, regardless of ability or situation.
+  - modular and flexible
+    - modularity ensures maximum flexibility in execution. 
+    - Its components are designed to work seamlessly with each other
+  - puts the user first
+    - Using rigorous research into users’ needs and desires
+  - consistency
+    - Based on the IBM Design Language, every element and component of Carbon was designed from the ground up to work elegantly together to ensure consistent, cohesive user experiences.
+
 ### Salesforce Lightning Design System
 
 - Flexible
@@ -35,20 +49,6 @@ modified: '2020-12-27T10:46:16.801Z'
   - Our UX team rolls out new UI updates with every release
 - Platform Agnostic
   - Use the SLDS CSS framework with any tech stack
-
-### Carbon Design System
-
-- Guiding principles
-  - open
-  - inclusive
-    - designed and built to be accessible to all, regardless of ability or situation.
-  - modular and flexible
-    - modularity ensures maximum flexibility in execution. 
-    - Its components are designed to work seamlessly with each other
-  - puts the user first
-    - Using rigorous research into users’ needs and desires
-  - consistency
-    - Based on the IBM Design Language, every element and component of Carbon was designed from the ground up to work elegantly together to ensure consistent, cohesive user experiences.
 
 ### Spectrum
 

@@ -7,6 +7,25 @@ modified: '2020-11-19T12:43:25.788Z'
 
 # toc-lib-react-extensions
 
+## react-extensions
+
+- https://github.com/GeekyAnts/react-pluggable
+  - With the help of React Pluggable, we can think of our app as a set of features instead of a set of components.
+  - A plugin can be added or removed by a single line (which is perfect for A/B testing)
+
+- https://github.com/yahoo/react-i13n
+  - A performant, scalable and pluggable approach to instrumenting your React application.
+  - Typically, you have to manually add instrumentation code throughout your application, e.g., hooking up onClick handlers to the links you want to track. 
+  - react-i13n provides a simplified approach by letting you define the data model you want to track and handling the beaconing for you.
+  - react-i13n does this by building an instrumentation tree that mirrors your applications React component hierarchy.
+- https://github.com/renatorib/react-powerplug
+  - It is a set of pluggable renderless components and helpers that provides different types of state and logic utilities that you can use with your dumb components. 
+  - It creates state and passes down the logic to the children, so you can handle your data. Read about the Render Props pattern.
+  - Dependency free
+  - 提供了很多render props形式的高阶组件，如`<State>/<Toggle>`
+  - https://github.com/kalcifer/react-powerhooks
+    - Hooks api for react-powerplug components
+
 ## experimental-react
 
 - https://github.com/sokra/rawact

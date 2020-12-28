@@ -14,28 +14,27 @@ modified: '2020-10-27T15:10:47.179Z'
   - 网络io的性能消耗最大
   - 所以推荐使用初始预加载或闲时预加载css的策略，
     - 这样在点击按钮切换theme时，性能消耗较小
-  - 也可以尝试使用css variables，利用浏览器作为runtime，无需io
+  - 也可以尝试使用css variables，利用浏览器作为runtime，无需下载io消耗
 
 - 使用sass预编译多套主题 vs 使用treat预编译并加载多套主题
   - scss的灵活性不如基于js的treat，因为js可控制编译出类名的逻辑
     - 可控制编译出极短类名、原子类名
 
-- 编译出多套全局主题的css(一套主题包含所有组件) vs 编译出一个组件的多套主题(易拆分代码)
+- 多套主题的css(一套主题包含所有组件) vs 一个组件的多套主题(易拆分代码)
   - theme-ui给出的方案是前者，使用带约束的样式值
-  - 使用css vars可以方便低成本实现theming
+  - 使用css vars可以方便低成本实现theming，同时支持全局级和组件级的theming
 
 ## guide
 
 - 基于css vars实现theming的示例
-  - carbon design system
   - spectrum-css
-  - denali-css
   - polaris
-  - Assembly
-  - PatternFly
-  - Fomantic-UI/Semantic-UI
+  - patternfly
+  - carbon design system测试中
   - Gestalt
-  - clarity design system v4
+  - Assembly
+  - Fomantic-UI/Semantic-UI
+  - clarity design system v4+
   - 更多css vars
     - vaadin
       - uses CSS Vars for customizing fonts, colors, border radius, and spacing.
@@ -45,19 +44,23 @@ modified: '2020-10-27T15:10:47.179Z'
       - stores the color mode in localStorage and uses CSS variables to ensure the color mode is persistent.
   - 部分使用css vars
     - material components web
+    - lightning design system，组件级使用css vars，全局级theming暂未实现
 
 - 基于sass vars实现theming的示例
   - bootstarp v4, v5
   - bulma
-  - primer design
-  - lightning design system
-  - elastic ui
+  - denali-css
+  - primer-css
+  - elastic-eui
   - 基于less vars
     - ant-design
 
 - 基于css-in-js/styled实现theming的示例
   - theme-ui
-  - base design
+  - primer-components
+  - uber-base-design
+  - airbnb-lunar
+  - calcite
 
 - 实现主流设计系统的高仿
   - material-design
@@ -76,6 +79,15 @@ modified: '2020-10-27T15:10:47.179Z'
   - different color palettes are stored in the `theme.colors` object.
   - By default the base colors are picked up by other components using Styled System.
   - The root layout component uses React state to cycle through the different color modes and creates a new theme object based on state. 
+
+- ### [Theming with CSS variables](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
+- **Two layers theming**
+- Global variables are generic variables that will be used to keep the consistency between all our components
+  - Some examples of global variables are font, default font-size and color palette. 
+  - It's super simple to define global variables on CSS, we use the `:root` selector 
+- Modules Variables
+  - Every module variable MUST be defined using the value from a global variable 
+  - and we also need to provide a fallback value for the case that the module will be used in an environment that doesn't provide global variables
 
 - ### [UI 框架的主题色一般怎么实现的？](https://www.zhihu.com/question/66734943)
   - 要在客户端动态切换主题颜色，要做的无非是两点：

@@ -1,11 +1,11 @@
 ---
-title: tool-software-saas-tips
+title: tool-saas-tips
 tags: [saas, software, tool]
 created: '2020-07-12T15:27:22.003Z'
-modified: '2020-12-08T14:32:21.175Z'
+modified: '2020-12-28T10:41:53.768Z'
 ---
 
-# tool-software-saas-tips
+# tool-saas-tips
 
 ## zhihu
 

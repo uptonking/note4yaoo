@@ -117,21 +117,6 @@ modified: '2020-11-17T13:38:19.107Z'
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 
-## low-code
-
-- https://github.com/appsmithorg/appsmith
-  - /340Star/Apache2/202009/ts/java
-  - open source alternative to Power Apps, Salesforce Lightning
-- https://github.com/sparrow-js/sparrow
-  - /vue
-  - 场景化低代码（LowCode）搭建工作台
-- https://github.com/node-red/node-red
-  - Low-code programming for event-driven applications
-- https://github.com/icodebetter/icodebetter
-  - An opinionated low code platform that helps you code business applications
-- https://github.com/appsmithorg/appsmith
-  - A low code way to build dashboards, workflows, forms, and any internal tool.
-
 ## h5-editor
 
 - https://github.com/lzuntalented/lz-h5-edit

@@ -12,6 +12,17 @@ modified: '2020-08-04T12:24:45.908Z'
 
  
 
+- npm err Unsupported platform for fsevents@2.1.3: wanted {"os"
+  - [linux下fsevents模块引起的npm ls报错解决办法](https://segmentfault.com/a/1190000018759308)
+    - fsevents只能在macOS下安装，无法在linux系统安装。
+    - linux下会跳过fsevents模块，也不会安装fsevents依赖的模块。
+    - 这其实算是npm的一个bug，npm i时报Warn，npm ls又报Err，前后不一致，容易有误解。
+      - 目前无论用哪个版本的npm都会有这个问题，npm i --no-optional也不能解决这个问题。
+      - 这些报错不影响项目的正常运行，因为linux不需要fsevents。
+    - 如果不希望看到npm Err，可以用`npm i -f`强制安装，
+      - 安装过程没有warn，安装完后npm ls可以看到在node_modules目录下了
+    - chokidar这个模块依赖了fsevents，chokidar又是browser-sync、webpack等依赖的。
+
 - ENOENT: no such file or directory, scandir '**/node_modules/node-sass/vendor'
   - npm rebuild node-sass
 

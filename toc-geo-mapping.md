@@ -27,6 +27,9 @@ modified: '2020-11-13T07:57:35.718Z'
   - https://github.com/mapbox/mapbox-gl-js
   - https://docs.mapbox.com/mapbox-gl-js/
   - https://docs.mapbox.com/help/troubleshooting/transition-from-mapbox-js-to-mapbox-gl-js/
+- maptalks.js /3kStar/BSD/202012/js
+  - https://github.com/maptalks/maptalks.js
+  - A light JavaScript library to create integrated 2D/3D maps.
 - deck.gl /MIT/8kStar/202009
   - https://github.com/visgl/deck.gl
   - https://deck.gl/
@@ -59,7 +62,6 @@ modified: '2020-11-13T07:57:35.718Z'
 - ViziCities /2.7kStar/BSD/201610/js
   - https://github.com/UDST/vizicities
   - A framework for 3D geospatial visualization in the browser
-
 
 ## map-app
 

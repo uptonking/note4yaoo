@@ -152,8 +152,6 @@ modified: '2020-12-20T15:47:13.585Z'
   - Our Ember UI Library is accessible only by Biteable staff.
   - https://biteable.github.io/biteable-ui/
   - 源码未发布
-- https://www.engie.design/fluid-design-system/
-  - The Fluid Design System was created for designers and developers.
 - https://coop-design-system.herokuapp.com//
   - Our design system is made up of principles, guidelines and tools that help us design and build user-centered Co‑op services.
 - https://design.pega.com/

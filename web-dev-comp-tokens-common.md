@@ -12,7 +12,8 @@ modified: '2020-12-27T21:16:14.941Z'
 - features
   - framework agnostic
   - themeable components following the Theme Specification
-  - better consistency with constraint-based design
+    - better consistency with constraint-based design
+  - playful with pluggable extensions
 
 - dev
   - 主题样式实现一套css，再实现一套css in js

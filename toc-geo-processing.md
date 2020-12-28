@@ -13,7 +13,16 @@ modified: '2020-11-13T07:58:09.203Z'
   - https://github.com/Turfjs/turf
   - http://turfjs.org/
   - a library for spatial analysis. 
-  - It includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools. 
+  - It includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools.
+- h3-js /400kStar/Apache2/202012/js
+  - https://github.com/uber/h3-js
+    - provides a pure-JavaScript version of the H3 Core Library, a hexagon-based geographic grid system.
+    - The H3 geospatial indexing system is a multi-precision hexagonal tiling of the sphere indexed with hierarchical linear indexes. 
+  - https://github.com/uber/h3
+    - /2.5kStar/Apache2/202011/c
+  - ref
+    - [Use cases](https://h3geo.org/docs/usecases)
+      - Comparisons: geohash, h3, s2
 
 ## opengis
 

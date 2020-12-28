@@ -13,11 +13,12 @@ modified: '2020-12-27T20:29:55.568Z'
   - 每个大公司都有自己的设计系统与组件库
     - 可参考实现细节:ui组件结构、css、状态
     - 既要突出特色与众不同，也要考虑互操作标准化，如theme共享
-  - **architected to be adaptable to major web frameworks**
+  - **framework agnostic**
+    - architected to be adaptable to major web frameworks
     - foundation(host-agnostic) + adapter(host-interaction) architecture
     - [跨框架开发ui组件库(stencil)](https://zhuanlan.zhihu.com/p/41974042)
     - 开发者用户可在不同框架的项目中使用组件，因为原作者维护了多个port/bridge
-      - 最理想的状态是framework agnostic
+      - 最理想的状态是
   - **themeable**
     - follow the [Theme Specification](https://system-ui.com/theme)
     - 全局theme，组件级theme
@@ -28,15 +29,22 @@ modified: '2020-12-27T20:29:55.568Z'
       - js工具方便计算css样式值，还能使用array-based values
       - css的复用性和灵活性不如js，可以用js生成css
     - css vars和css in js实现theming都很方便
-  - **constraint-based design**
-    - better consistency with constraint-based design
-    - 直接从theme中取值，不必花费过多精力选择数值大小、名称，节省时间精力
-    - 使用一套设计约束，能更好地保持视觉和交互的一致性
-    - allow the flexibility to write one-off styles
-      - 一般通过className或style属性实现
-    - 基于css-in-js的形式，更容易实现约束和theming
-      - 组件只暴露必要接口，接口属性名统一，要依赖css in js才方便实现
-      - 只用css vars不方便实现组件级的带约束的api接口
+    - constraint-based design
+      - better consistency with constraint-based design
+      - themeable主要预定义颜色，constraint约束几乎所有属性名和属性值
+      - 直接从theme中取值，不必花费过多精力选择数值大小、名称，节省时间精力
+      - 使用一套设计约束，能更好地保持视觉和交互的一致性
+      - allow the flexibility to write one-off styles
+        - 一般通过className或style属性实现
+      - 基于css-in-js的形式，更容易实现约束和theming
+        - 组件只暴露必要接口，接口属性名统一，要依赖css in js才方便实现
+        - 只用css vars不方便实现组件级的带约束的api接口
+  - **playful**
+    - pluggable extensions
+      - collapsible
+      - ui shell
+      - configurable
+    - interactive animations
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
@@ -48,6 +56,10 @@ modified: '2020-12-27T20:29:55.568Z'
       - 如文字从0开始增加
       - 如输入框的边框开始闪烁
     - 组件的动画不是必需项，nice to have
+  - ui shell
+    - 开箱即用的dashboard模版
+    - 单个小组件的示例
+    - 支持 ui shell theming
   - near-zero config
     - 提供合理默认值，尽可能减少必需配置项
   - reactive/functional ui

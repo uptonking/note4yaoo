@@ -43,7 +43,9 @@ modified: '2020-10-05T06:22:02.107Z'
   - production-ready animation and gesture library for React
   - based on popmotion9, @popmotion/popcorn, @popmotion/easing
   - Framer Motion is the successor to the Pose animation library
+
   - 
+
 - react-motion /MIT/18.6kStar/201911
   - https://github.com/chenglou/react-motion  
   - http://chenglou.github.io/react-motion/demos/demo0-simple-transition/
@@ -130,6 +132,10 @@ modified: '2020-10-05T06:22:02.107Z'
 - animations.js /3Star/MIT/202006
   - https://github.com/robertoentringer/animations.js
   - Web Animations API based in Animate.css
+
+- https://github.com/uber/hubble.gl
+    - Hubble.gl is a JS library for animating data visualizations.
+    - Render within the browser without a backend. 
 
 ## css animation
 

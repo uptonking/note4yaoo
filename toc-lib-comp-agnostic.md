@@ -38,35 +38,41 @@ modified: '2020-11-13T07:28:27.824Z'
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts
   - responsive front-end framework with a focus on flexibility in Sass and TS
+  - theming基于sass vars
   - 提供了在react/vue(无angular)项目中使用phonon组件的示例
+    - 可以使用css和dom标签，重新实现react组件，与js组件无关
+    - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
+  - Phonon uses a DOM MutationObserver which enables to react to DOM changes
+    -  This explains the ease of use of Phonon with Angular, React and Vue, etc
 - https://github.com/Tradeshift/tradeshift-ui
   - /33Star/Free4PlatformOnly/202009/js
   - a framework-agnostic JavaScript library to provide reusable UI components.
   - https://github.com/Tradeshift/react-tradeshift-ui
-    - React wrappers for the Tradeshift ui components. 
-    - 一层很简单的wrapper，基于class组件实现
+    - React wrappers for the Tradeshift ui components.
+    - class组件的render方法都是`return null`，完全通过js操作dom
+    - 将tradeshift对象添加到window，然后在didUpdate方法中操作dom
 - https://github.com/IgniteUI/ignite-ui
   - /464Star/Apache2/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 
   - https://github.com/IgniteUI/igniteui-react-wrappers
     - ignite UI components for React. 
     - 基于createReactClass批量生成，依赖jquery
+- https://github.com/coreui/coreui
+  - 依赖perfect-scrollbar, @popperjs/core
+  - 提供了部分组件交互对应的js
+  - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
+  - CoreUI is the fastest way to build modern dashboard
+  - https://github.com/coreui/coreui-react
+    - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
+    - 从头用js框架单独实现组件，只复用css
+    - CoreUI for React.js replaces and extends the Bootstrap javascript.
+    - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
+    - Components are styled using @coreui/coreui CSS, but you can use them also with bootstrap CSS
 - https://github.com/GoldWorker/SluckyUI
   - /16Star/Apache2/202001
-  - 所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库
+  - 理念是所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库
+    - 但作者但实现，源码只是普通的react class组件
   - 提供了创建React，Angular，Vue组件的示例
-- https://github.com/coreui/coreui
-  - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
-  - https://github.com/coreui/coreui-react
-    - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
-    - 依赖popperjs、Tippy.js(tooltip,popover)
-- https://github.com/luwes/sinuous
-  - /710Star/MIT/202010/js
-  - no compile step needed, choose your view syntax.
-  - A goal Sinuous strives for is to have good interoperability. 
-  - Sinuous creates DOM elements via hyperscript `h` calls. 
-  - This allows the developer more freedom in the choice of the view syntax.
-  - The Sinuous `observable` module provides a mechanism to store and update the application state in a reactive way. 
 - https://github.com/winjs/winjs
   - /4kStar/MIT/201809/js
   - build applications using HTML/JS/CSS technology. 

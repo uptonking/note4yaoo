@@ -33,6 +33,7 @@ modified: '2020-12-08T14:24:07.931Z'
   - https://www.creative-tim.com/product/argon-design-system
   - Argon - Design System for Bootstrap 4 by Creative Tim
   - https://github.com/creativetimofficial/argon-design-system-react
+    - 依赖bootstrap4,Reactstrap
   - https://github.com/creativetimofficial/argon-dashboard
     - Argon Dashboard for Bootstrap 4
 - Impact Design System /Creative Tim

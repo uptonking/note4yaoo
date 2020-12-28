@@ -438,6 +438,8 @@ modified: '2020-10-22T06:49:10.760Z'
   - React components for rendering large scrollable data
 - https://github.com/qimus/semantic-ui-grid
   - Extended grid for data
+- https://github.com/GigaTables/reactables
+  - a ReactJS plug-in to help web-developers process table-data
 
 ### table-tr-td-more
 

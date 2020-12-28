@@ -83,7 +83,50 @@ modified: '2020-10-03T15:33:01.333Z'
   - interfaces are made up of components that can be categorized into building blocks
   - Atoms, Molecules, Organisms, Templates, Pages
 
+## blog
+
+- ### [Design Systems Should be JavaScript Framework Agnostic_201809](https://medium.com/hackernoon/design-systems-should-be-javascript-framework-agnostic-2a0c47129ec8)
+- An emerging trend in design systems is the idea of separating your core HTML & CSS from the current JavaScript framework. 
+  - There’s clearly a difference between presentational JavaScript, and the JavaScript used in modern frontend frameworks like React, Angular and Vue
+- It would seem at first glance that our HTML & CSS are destined to be eternally coupled with their JavaScript at the component level.
+- So why would you want to separate core HTML & CSS in your design system? The way I see it, there are three potential driving factors:
+  - Product Variety
+  - JavaScript Framework Churn
+  - Predicting the Future
+- Salesforce Lightning Design System
+  - Is any JavaScript included as part of the framework?
+    - No. The Salesforce Lightning Design System is a pure CSS framework that you can use with any front-end development framework you’d like, 
+    - including Salesforce-specific technologies such as Visualforce and Lightning, as well as third-party frameworks like React or Angular.
+    - The Salesforce team is able to take the core HTML & CSS Lightning components and create a separate React-based project from them
+  - we do not have any JavaScript in our Open Source Design System 
+    - and that is because once you introduce that, it is really difficult to stay agnostic; 
+    - you basically introduce opinion into the stack.
+- Microsoft Fabric Design System
+  - Micah Godbolt wrote the fantastic Frontend Architecture for Design Systems, which included some very neat ideas for abstracting parts of your design system into JSON, what he referred to as “schema-driven design”. 
+  - Since publication of the book, Micah has been working for Microsoft, on the Fabric design system.
+  - The Fabric design system is built to support core web, React, Angular and iOS. 
+  - The Fabric core contains very low-level CSS and design elements that are easily shared cross-project
+  - What I’m really excited about is the “theme generator” in Fabric’s core
+- Github Primer Design System
+  - Primer is very well fleshed out, containing core principles (color, layout, typography, etc.), utility classes, and a very well documented component library.
+  - a HTML/CSS framework as the foundation for your design system.
+- The Nutshell
+  - Its clear that there’s value in separating your HTML & CSS from your JavaScript at the design system level.
+    - We ended up here because when MVC-style JS frameworks were introduced, they were treated as another dependency, when they are patently a fundamental shift in the role JavaScript plays. 
+    - jQuery was the last popular “presentational” JavaScript library, which could be added as a dependency and used whenever functionality was required
+  - MVC-style JavaScript frameworks are so different from layering in presentational JavaScript that we needed to change how we think about writing code for the web. 
+  - In the above examples, we’ve seen how the emerging trend is to also change how we think about our design systems at the core level. 
+    - React and Angular are treated as more similar to iOS in Fabric because they are just that: vastly different from the low-level pieces provided in Fabric’s core.
+- I can envision a core HTML/CSS design system which 
+  - not only contains all the low-level elements (colors, typography, etc.), and components built in vanilla HTML/CSS, 
+  - but additionally examples of the components in the different templating languages or JS frameworks used in products the system supports. 
+
 ## pieces
+
+- [Pattern Lab](https://patternlab.io/) /inactive
+  - Pattern Lab is a frontend workshop environment that helps you build, view, test, and showcase your design system's UI components.
+  - https://github.com/pattern-lab/patternlab-node
+    - The Node version of Pattern Lab
 
 - In our design system, we have 2 different space scales:
   - https://twitter.com/markdalgleish/status/1280029511807983617

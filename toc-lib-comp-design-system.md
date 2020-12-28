@@ -9,7 +9,7 @@ modified: '2020-11-13T07:30:03.110Z'
 
 ## guide
 
-- design-system-awesome-catalog
+- awesome-catalog
   - https://adele.uxpin.com/
     - https://github.com/uxpin/adele
     - Adele is on a mission to collect all the data about publicly available design systems and pattern libraries and present it to the community in human (website) and computer (JSON) readable formats.
@@ -58,7 +58,7 @@ modified: '2020-11-13T07:30:03.110Z'
   - The Stacks JavaScript components are provided as Stimulus controllers.
     - Stimulus is a JavaScript framework designed to augment your HTML 
     - Stimulus是Ruby社区给多页面应用设计的框架。
-    - 解决了取元素和绑事件的问题，用MutationObserver监控元素的变化, 补绑事件或者修改元素的引用
+    - 解决取元素和绑事件的问题，用MutationObserver监控元素的变化, 补绑事件或者修改元素的引用
 - Cosmos Design System /Auth0
   - /498Star/MIT/202010/ts/css-in-js
   - https://github.com/auth0/cosmos

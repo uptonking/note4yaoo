@@ -12,6 +12,11 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- The current version of React (react 16) has some shortcomings when it comes to handling Custom Elements, 
+  - namely the binding of `boolean` attributes as well as adding event listeners to custom event names like `selection-change`. 
+  - With the help of UI5 Web Components for React, you can use the UI5 Web Components in React as if they were native React components. 
+  - In addition to that, this library is also offering TypeScript definitions for all components, some complex layout components built on top of UI5 Web Components as well as Charting Components.
+
 - Automated end-to-end (E2E) tests tend to be brittle. Why? 
   - Because the data returned tends to change over time. 
   - My technique: Create test data as part of the test suite. 

@@ -59,6 +59,7 @@ modified: '2020-12-08T14:07:08.978Z'
   - /28Star/BSD/202001/js
   - https://rivet.iu.edu/
   - A collection of code and visual assets used to create patterns across software titles
+  - [v2 rfcs](https://v2.rivet.iu.edu/rfcs/)
 - WSU Web Design System
   - https://github.com/washingtonstateuniversity/wsu-web-design-system
   - https://washingtonstateuniversity.github.io/wsu-web-design-system/storybook/public/
