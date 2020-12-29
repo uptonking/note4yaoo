@@ -11,6 +11,26 @@ modified: '2020-12-05T07:44:12.022Z'
 
  
 
+- ### What advice were you given for your career that turned out to be a complete waste of time and effort?
+  - https://twitter.com/buildsghost/status/1343650869904986112
+  - I was told to go take a bunch of night classes on computer science by two MIT grads if I ever wanted to be "serious" about programming.
+    - I took some free student-taught classes, 
+    - and we spent months learning languages I have not used since.
+  - This isn't about tech, but when I was in school to be a licensed massage therapist.
+    - I had a teacher tell us that we should work our first year *for free* in order to build a client base.
+    - Thankfully, I didn't, but I am sure some folks listened.
+  - You *need* to be good in math
+  - Go to conferences.
+  - I was told that how people feel in a moment is more important than the outcome of the work. 
+    - Now, I couldn't be happier to work somewhere frank, timely, respectful feedback is foundational to the culture. 
+    - Spoiler alert: great work outcomes _make people feel good_
+  - Was also told "PHP is dead, JSP is the future" in around 2006. They were very wrong.
+
+- ### I want to *scale* a div and all of its contents to fully fit wall-to-wall inside its container div. 
+  - https://twitter.com/erikras/status/1343480294654046209
+  - Similar to what `background-size: contain;` can do for images. Possible in CSS only? JS ok, too.
+  - I think scaling is the wrong thing for my use case.
+
 - ### A year ago I made a bet on full-stack JS and switched my focus from @laravelphp to Node.js. A year later, I found that Node mostly just slowed me down.
 - https://twitter.com/tylerlwsmith/status/1341557868571422722
 - Server-rendered React components look really exciting. 

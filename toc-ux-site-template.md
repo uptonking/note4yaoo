@@ -12,7 +12,8 @@ modified: '2020-10-22T13:01:59.546Z'
 - https://html5up.net/
 - https://www.free-css.com/free-css-templates
 - https://graygrids.com/templates/category/free-html-templates/
-
+- https://www.w3schools.com/w3css/w3css_templates.asp
+  - Store,CV,
 
 ## css-snippet
 - https://css-tricks.com/snippets/css/

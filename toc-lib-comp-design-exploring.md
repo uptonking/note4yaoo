@@ -54,9 +54,12 @@ modified: '2020-11-13T07:29:00.948Z'
   - An unofficial set of Figma UI components for creating plugins and other purposes. 
   - Based on Tom Lowry's Figma UI JS/CSS files.
   - Uses React, styled-components, TypeScript.
-- https://github.com/kalohq/ui
+- https://github.com/kalohq/ui /201906
   - https://kalo.design/
   - Design system for building user interfaces at Kalo.
+  - https://github.com/kalohq/ui/tree/master/src/design-tokens
+    - 基于theo自动生成tokens
+    - The design tokens are transformed in to several different formats, including css variables, JS variable, and as a theme via the Emotion ThemeProvider.
 - https://github.com/pusher/chameleon
   - /36Star/MIT/202006/js
   - https://pusher.github.io/chameleon

@@ -1,10 +1,10 @@
 ---
-title: ing3-yaoo-search
+title: ing-yaoo-search
 tags: [pm, search]
 created: '2019-11-10T08:17:17.002Z'
-modified: '2020-12-08T14:40:29.185Z'
+modified: '2020-12-29T18:09:12.346Z'
 ---
 
-# ing3-yaoo-search
+# ing-yaoo-search
 
 ## elasticsearch

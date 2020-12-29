@@ -114,6 +114,16 @@ var s = Boolean(myString); // initial value of true
   - `arrayOfSheeps.filter(Boolean).length`
   - `arrayOfSheeps.filter(function(x){return Boolean(x)}).length`
 
+### WeakMap
+
+- WeakMap is a collection of key/value pairs where the keys are weakly referenced
+  - fast keyed access to value
+  - not prevent keys from garbage collection
+  - keys are not enumerable
+  - keys must be objects
+- WeakMaps are ideal for preventing memory leaks when keeping DOM nodes as keys
+- There are various use cases when you don't control the keys' garbage collection, and WeakMaps are the way to ensure you're not leaking memory. 
+
 ## mdn docs
 
 ### 函数参数
@@ -162,7 +172,7 @@ f1(10);
 
 - globalThis
   - Historically, accessing the global object has required different syntax in different JavaScript environments. 
-  - On the web you can use `window`,  `self` , or `frames` - but in Web Workers only self will work. 
+  - On the web you can use `window/self/frames` - but in Web Workers only `self` will work. 
   - In Node.js none of these work, and you must instead use `global`
   - The `this` keyword could be used inside functions running in non–strict mode, but `this` will be `undefined` in Modules and inside functions running in strict mode. 
   - The `globalThis` property provides a standard way of accessing the global this value (and hence the global object itself) across environments. 

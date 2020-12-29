@@ -1,11 +1,11 @@
 ---
-title: ing2-yaoo-viz
+title: ing-yaoo-viz
 tags: [pm, viz]
 created: '2020-02-06T16:22:13.404Z'
-modified: '2020-12-08T14:40:22.180Z'
+modified: '2020-12-29T18:09:08.803Z'
 ---
 
-# ing2-yaoo-viz
+# ing-yaoo-viz
 
 - modular framework dedicated to embedding viz widget in markdown, supporting chart, map, editor
 

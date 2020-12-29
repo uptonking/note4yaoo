@@ -12,7 +12,10 @@ modified: '2020-12-27T19:32:34.787Z'
 - 开始出现挑战用theme对象实现theming的思路
   - css vars
 
-## faq
+## discuss
+
+- ### [Expose theme values as CSS Variables](https://github.com/system-ui/theme-ui/issues/979)
+- @theme-ui/custom-properties: Generate CSS custom properties for use with Theme UI.
 
 - ### [Can Theme-UI be statically extracted somehow?](https://github.com/system-ui/theme-ui/discussions/1051)
 - Theme UI is built on top of Emotion, and AFAIK it can't be statically extracted.

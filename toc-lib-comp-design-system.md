@@ -109,6 +109,14 @@ modified: '2020-11-13T07:30:03.110Z'
   - ref
     - https://github.com/zeit-ui/react
     - https://github.com/geist-org/vue
+- Liquid Design System /Merck
+  - /17Star/202010/CustomLic/js/css-in-js
+  - https://gitlab.com/liquid-design/liquid-design-react
+  - https://liquid.emd.design/
+  - 依赖styled-components、classnames、react-modal
+  - 组件基于class组件和函数组件
+  - ref
+    - https://gitlab.com/liquid-design/liquid-design-assets
 - Aragon UI /Aragon
   - /215Star/MIT/202009/js
   - https://github.com/aragon/ui
@@ -149,14 +157,6 @@ modified: '2020-11-13T07:30:03.110Z'
   - https://solid.buzzfeed.com/
   - Solid is BuzzFeed's functional CSS framework and styleguide.
   - Solid uses immutable, atomic CSS classes to rapidly prototype and develop features
-- Liquid Design System /Merck
-  - /17Star/202010/CustomLic/js/css-in-js
-  - https://gitlab.com/liquid-design/liquid-design-react
-  - https://www.emd.design/
-  - 依赖styled-components、classnames、react-modal
-  - 组件基于class组件和函数组件
-  - ref
-    - https://gitlab.com/liquid-design/liquid-design-assets
 - Modulz Design System /Modulz/css-in-js
   - https://github.com/modulz/design-system
   - /57Star/NALic/202010/ts
@@ -376,3 +376,8 @@ modified: '2020-11-13T07:30:03.110Z'
   - Malvid helps you to build, document and visualise components by turning a directory into an interactive UI.
   - Malvid scans the folder you've specified and generates a static HTML output
   - 偏向于ui组件的生成工具
+- DNB Design System /20Star/CCv1/202012/js
+  - https://github.com/dnbexperience/eufemia
+  - Elements are built based on React
+  - To make the HTML Elements work in other environments like Vue or Angular, You can use the built-in web components support
+  - All the components internal states are handled with React to only keep the most necessary in the DOM (HTML elements and event bindings).

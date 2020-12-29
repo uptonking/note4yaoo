@@ -43,7 +43,13 @@ modified: '2020-10-13T08:54:38.720Z'
 - https://github.com/shd101wyy/markdown-preview-enhanced
   - One of the 'BEST' markdown preview extensions for Atom editor
 
-## markdown-app-extension
+## mdx
+
+- https://github.com/PaulieScanlon/mdx-embed
+  - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
+  - 支持codepen, codesandbox, flickr
+
+## markdown-app-extensions
 
 - https://github.com/foambubble/foam
   - /7.3kStar/MIT/202010/ts

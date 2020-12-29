@@ -43,6 +43,8 @@ modified: '2020-12-22T14:08:27.952Z'
   - ssr渲染到html是同步的，渲染时不能取数
     - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
 
+### discuss
+
 - I want to recap a few points from our talk about the different kinds of components.
   - https://twitter.com/dan_abramov/status/1342260256638951425
   - Server Components are the new proposed kind of components. 
@@ -612,4 +614,4 @@ function Note(props) {
 - As noted in RFC, frameworks such as Rails were one of many inspirations for React Server Components. 
   - We’re not swinging the pendulum(钟摆；摇摆) fully to the server: 
   - we’re acknowledging that neither server- or client-rendering are ideal for all cases. 
-  - Choose *per component* not per app.
+  - Choose *per component*, not per app.

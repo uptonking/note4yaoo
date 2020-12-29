@@ -1,11 +1,11 @@
 ---
-title: ing1-yaoo-datable
+title: ing-yaoo-datable
 tags: [pm, table]
 created: '2019-05-15T03:30:55.244Z'
-modified: '2020-12-08T14:40:19.377Z'
+modified: '2020-12-29T18:09:04.990Z'
 ---
 
-# ing1-yaoo-datable
+# ing-yaoo-datable
 
 - A handy data table solution focused on data pivoting
 

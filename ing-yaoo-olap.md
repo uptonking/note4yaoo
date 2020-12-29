@@ -1,11 +1,11 @@
 ---
-title: ing4-yaoo-olap
+title: ing-yaoo-olap
 tags: [olap, pm]
 created: '2020-04-03T15:57:07.832Z'
-modified: '2020-12-08T14:40:32.208Z'
+modified: '2020-12-29T18:09:16.295Z'
 ---
 
-# ing4-yaoo-olap
+# ing-yaoo-olap
 
 ## faq
 

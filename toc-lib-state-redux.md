@@ -74,7 +74,6 @@ modified: '2020-11-02T19:13:04.103Z'
   - Pluggable micro frontends in React+Redux apps
 
 - more-redux
-  - https://github.com/coreui/coreui-free-react-admin-template
   - https://github.com/swagger-api/swagger-ui
     - https://github.com/swagger-api/swagger-ui-react
   - https://github.com/boardgameio/boardgame.io

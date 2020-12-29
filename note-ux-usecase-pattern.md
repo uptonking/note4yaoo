@@ -1,11 +1,11 @@
 ---
-title: note-ux-usecase-xp
-tags: [pm, ux, xp]
+title: note-ux-usecase-pattern
+tags: [pattern, pm, usecase, ux]
 created: '2019-11-18T12:37:41.447Z'
-modified: '2020-07-14T11:30:51.404Z'
+modified: '2020-12-29T18:20:19.558Z'
 ---
 
-# note-ux-usecase-xp
+# note-ux-usecase-pattern
 
 ## 界面类
 

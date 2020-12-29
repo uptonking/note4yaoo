@@ -23,7 +23,18 @@ modified: '2020-12-08T14:43:00.091Z'
   - 被Autodesk/react-base-table用来展示示例
   - react-runner is inspired by react-live heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
   - use Sucrase instead of Bublé to transpile the code.
-  - If you are using react-live in your project and want a smooth transition, react-live-runner is there for you which provide the identical way
+  - If you are using react-live and want a smooth transition, react-live-runner is there for you which provide the identical way
+- react-view /438Star/MIT/202009
+  - https://github.com/uber/react-view
+  - The first prototype of React View was even using react-live internally 
+  - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
+  - We also rely on babel and babel-parser instead of buble.
+
+## vscode-powered
+
+- https://github.com/cdr/code-server
+  - Run VS Code on any machine anywhere and access it in the browser.
+  - all intensive tasks run on your server
 
 ### CodePen
 

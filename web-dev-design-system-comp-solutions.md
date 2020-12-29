@@ -1,12 +1,12 @@
 ---
-title: web-dev-design-system-comp
+title: web-dev-design-system-comp-solutions
 tags: [components, design-system, solutions, web]
 favorited: true
 created: '2019-06-09T05:38:07.927Z'
-modified: '2020-12-21T08:09:09.954Z'
+modified: '2020-12-29T16:16:11.624Z'
 ---
 
-# web-dev-design-system-comp
+# web-dev-design-system-comp-solutions
 
 ## 设计系统及组件开发解决方案
 

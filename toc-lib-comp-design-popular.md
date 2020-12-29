@@ -12,8 +12,9 @@ modified: '2020-11-13T07:29:55.201Z'
 - guide
   - css vars实现theming
     - spectrum-css,polaris,patternfly,gestalt
+    - 切换theme基于修改同名css vars的值，具体实现可以是添加包含这些css vars的类名
   - vanillajs组件的实现(大多单独实现为一个包)
-    - material,carbon,antd,calcite-web,bootstrap,fluid,phonon,tradeshift,coreui
+    - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
   - react组件的实现
     - carbon,material,polaris,gestalt,elastic-eui,rmwc,antd,zent,xiaomi-hiui
 
@@ -117,42 +118,6 @@ modified: '2020-11-13T07:29:55.201Z'
       - Sketch UI Kit
     - https://github.com/mashmatrix/react-lightning-design-system
 
-- ### Spectrum /Adobe
-  - /4.1kStar/Apache2/202012/ts/css-vars/themed
-  - https://github.com/adobe/react-spectrum
-    - https://react-spectrum.adobe.com/
-    - https://spectrum.adobe.com/
-    - A React implementation of Spectrum
-    - 组件基于hooks实现
-    - 样式基于classnames优化版clsx
-    - react-aria
-      - Hooks that provides accessible UI primitives
-    - react-stately
-      - Hooks that provides cross-platform state management
-  - https://github.com/adobe/spectrum-css
-    - /744Star/Apache2/202010
-    - theming基于css vars
-      - 提供了多套主题lightest/darkest/midlight/middark
-      - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
-    - The standard CSS implementation of the Spectrum design language.
-    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS.
-    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
-    - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
-
-- ### Elastic UI /Elastic
-  - /2.3kStar/Apache2/202010/ts/scss/themed
-  - https://github.com/elastic/eui
-    - https://elastic.github.io/eui/#/
-    - a collection of React UI components for building user interfaces
-    - React components remove CSS from the process of building UIs
-    - 组件基于hooks实现
-    - 样式基于classnames
-    - theming基于sass vars
-  - ref
-    - https://github.com/elastic/elastic-charts
-    - https://github.com/elastic/search-ui
-    - https://github.com/elastic/app-search-reference-ui-react
-
 - ### Ant Design /Alibaba
   - /63.7kStar/MIT/202009/ts/less/themed
   - https://github.com/ant-design/ant-design
@@ -192,8 +157,13 @@ modified: '2020-11-13T07:29:55.201Z'
     - 组件基于hooks实现
     - 样式基于classnames
     - theming基于css vars
+      - theme只支持简单换颜色，button的css中使用了css vars
+      - ThemeProvider的render返回`<div style={style}>{children}</div>`
+      - `style = customProperties;或 {...customProperties, ...{color}};`
+      - ThemeProvider component uses CSS custom properties to share color values with components
   - ref
     - https://github.com/Shopify/polaris-tokens
+      - 基于theo生成
     - https://github.com/Shopify/javascript-utilities
     - https://github.com/Shopify/draggable
       - The JavaScript Drag & Drop library
@@ -249,6 +219,47 @@ modified: '2020-11-13T07:29:55.201Z'
       - /279Star/MIT/202010/html
       - The repository contains GitLab’s prototypes and work-in-progress files.
 
+- ### Spectrum /Adobe
+  - /4.1kStar/Apache2/202012/ts/css-vars/themed
+  - https://github.com/adobe/react-spectrum
+    - https://react-spectrum.adobe.com/
+    - https://spectrum.adobe.com/
+    - A React implementation of Spectrum
+    - 组件基于hooks实现
+      - 每个组件的交互state通过react-stately实现为单独的包
+    - 样式基于classnames高仿版，源码中为`className={css(`
+    - react-aria
+      - Hooks that provides accessible UI primitives
+    - react-stately
+      - Hooks that provides cross-platform state management
+  - https://github.com/adobe/spectrum-css
+    - /744Star/Apache2/202010
+    - theming基于css vars，能覆盖color和size
+      - 预置了多套主题lightest/darkest/midlight/middark
+      - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
+    - The standard CSS implementation of the Spectrum design language.
+    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
+    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
+    - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
+    - ref
+      - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
+        - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
+        - React Spectrum splits each component into three parts: state, behavior, and the rendered component.
+
+- ### Elastic UI /Elastic
+  - /2.3kStar/Apache2/202010/ts/scss/themed
+  - https://github.com/elastic/eui
+    - https://elastic.github.io/eui/#/
+    - a collection of React UI components for building user interfaces
+    - remove CSS from the process of building UIs
+    - 组件基于hooks实现
+    - 样式基于classnames
+    - theming基于sass vars
+  - ref
+    - https://github.com/elastic/elastic-charts
+    - https://github.com/elastic/search-ui
+    - https://github.com/elastic/app-search-reference-ui-react
+
 - ### SAP Fiori Design /SAP
   - /2.3kStar/Apache2/202010/js/less/css-in-js/react-jss
   - https://github.com/SAP/openui5
@@ -298,6 +309,7 @@ modified: '2020-11-13T07:29:55.201Z'
   - https://github.com/patternfly/patternfly
     - /259Star/MIT/202010/scss
     - theming基于css vars
+      - 可覆盖的变量包括color,spacer,font
     - This repo contains core (HTML/CSS) implementation for PatternFly.
     - PatternFly follows a two-layer theming system where global variables always inform component variables. 
     - The main reason to have global variables is to maintain consistency
@@ -380,7 +392,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - A React Component library implementing the Base design language
     - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
     - 组件基于class实现
-    - 样式基于css-in-js
+    - 样式基于css-in-js/styletron
     - theming基于styled-ThemeProvider
   - ref
     - https://github.com/uber/react-vis
@@ -440,6 +452,11 @@ modified: '2020-11-13T07:29:55.201Z'
     - 组件基于hooks实现
     - 样式基于classnames
     - theming基于css vars
+      - css文件中使用了自定义导入`composes: small from "./Layout.css";`
+      - 只用了全局级变量，未定义组件级变量
+  - ref
+    - https://github.com/geist-org/themes
+      - CSS Variables of Geist Themes
 - Garden /Zendesk
   - /Apache2/794Star/202009/ts/css-in-js
   - https://github.com/zendeskgarden/react-components

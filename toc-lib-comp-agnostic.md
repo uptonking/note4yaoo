@@ -43,7 +43,7 @@ modified: '2020-11-13T07:28:27.824Z'
     - 可以使用css和dom标签，重新实现react组件，与js组件无关
     - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
   - Phonon uses a DOM MutationObserver which enables to react to DOM changes
-    -  This explains the ease of use of Phonon with Angular, React and Vue, etc
+    - This explains the ease of use of Phonon with Angular, React and Vue, etc
 - https://github.com/Tradeshift/tradeshift-ui
   - /33Star/Free4PlatformOnly/202009/js
   - a framework-agnostic JavaScript library to provide reusable UI components.
@@ -57,17 +57,19 @@ modified: '2020-11-13T07:28:27.824Z'
   - https://github.com/IgniteUI/igniteui-react-wrappers
     - ignite UI components for React. 
     - 基于createReactClass批量生成，依赖jquery
-- https://github.com/coreui/coreui
+- https://github.com/coreui/coreui /MIT
   - 依赖perfect-scrollbar, @popperjs/core
   - 提供了部分组件交互对应的js
   - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
   - CoreUI is the fastest way to build modern dashboard
-  - https://github.com/coreui/coreui-react
+  - https://github.com/coreui/coreui-react /MIT
     - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
-    - 从头用js框架单独实现组件，只复用css
+    - 用react hooks重写实现组件，只复用css
     - CoreUI for React.js replaces and extends the Bootstrap javascript.
     - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
     - Components are styled using @coreui/coreui CSS, but you can use them also with bootstrap CSS
+  - ref
+    - https://github.com/coreui/coreui-free-react-admin-template
 - https://github.com/GoldWorker/SluckyUI
   - /16Star/Apache2/202001
   - 理念是所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库

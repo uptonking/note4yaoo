@@ -1,11 +1,11 @@
 ---
-title: tool-software-habit
-tags: [software, tool]
+title: tool-app-common-habit
+tags: [app, software, tool]
 created: '2019-07-08T04:10:28.254Z'
-modified: '2020-08-09T11:21:58.233Z'
+modified: '2020-12-29T17:53:03.684Z'
 ---
 
-# tool-software-habit
+# tool-app-common-habit
 
 ## 软件选择参考  
 

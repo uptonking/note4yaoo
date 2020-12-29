@@ -13,9 +13,9 @@ modified: '2020-11-14T09:38:09.918Z'
 
 ``` 
 
-prettier --write '**/*.*'
+prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 
-prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore
+prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown
 ```
 
 - changelog
@@ -26,6 +26,14 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 ## git相关
+
+- commit相关
+  - 修改最新的提交描述信息
+    - git commit --amend -m 'new msg'
+  - 撤销上次commit，不回滚修改
+    - git reset HEAD~
+    - 能保证原本的修改还在，也能撤销本次提交失误，只撤销提交
+  - 撤销上次commit的修改，回滚到上次修改前
 
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName`
@@ -82,10 +90,6 @@ git push origin master --force
     - `git checkout feature` + `git rebase master`
     - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
     - 不会产生新commit
-
-- commit 相关
-  - 修改最新的提交描述信息
-    - git commit --amend -m 'new msg'
 
 ## java相关
 

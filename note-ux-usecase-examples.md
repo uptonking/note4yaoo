@@ -1,11 +1,11 @@
 ---
-title: note-ux-usecase
-tags: [usecase]
+title: note-ux-usecase-examples
+tags: [examples, usecase]
 created: '2020-11-06T08:42:13.756Z'
-modified: '2020-12-08T14:04:21.171Z'
+modified: '2020-12-29T18:20:41.090Z'
 ---
 
-# note-ux-usecase
+# note-ux-usecase-examples
 
 ## popular
 

@@ -36,4 +36,14 @@ modified: '2020-10-13T08:57:12.264Z'
   - The platform and its applications are licensed under the AGPL v3 (or later) licence. 
     - Several separate components are licensed under MIT licence. 
 
+- impress.js 
+  - https://github.com/impress/impress.js
+  - https://impress.js.org/#/bored
+  - a presentation framework based on the power of CSS3 transforms and transitions in modern browsers 
+  - inspired by the idea behind prezi.com
+- scrollreveal
+  - https://github.com/scrollreveal/scrollreveal
+  - https://scrollrevealjs.org/
+  - Animate elements as they scroll into view.
+
 ## graphic-editor 偏向图形编辑

@@ -1,17 +1,16 @@
 ---
-title: tool-app-github-tips
-tags: [app, github, tool]
+title: tool-app-github-xp
+tags: [github, tool, xp]
 created: '2020-07-31T11:59:56.787Z'
-modified: '2020-10-05T07:52:42.228Z'
+modified: '2020-12-29T17:45:15.518Z'
 ---
 
-# tool-app-github-tips
+# tool-app-github-xp
 
-## github
+## github-usage
 
-- TODO
+- nice-to-have
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看
-  - ctrl+p: 搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
 
 - 搜索
   - 搜索使用js或ts的项目
@@ -57,7 +56,7 @@ modified: '2020-10-05T07:52:42.228Z'
 - github mirror
   - https://github.wuyanzheshui.workers.dev/
 
-## npm-tips
+## github-pkg-npm
 
 - 读取一个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
@@ -68,3 +67,8 @@ modified: '2020-10-05T07:52:42.228Z'
   - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
   - redux, styled-components, ramda, jest, socket.io, redis, chokidar
   - deepmerge, date-fns, marked, isomorphic-fetch
+
+## github-powered-apps
+
+- https://githubwrapped.tech/
+  - take a look at all the contributions you as an individual made to the open-source community

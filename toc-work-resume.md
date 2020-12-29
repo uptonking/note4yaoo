@@ -14,7 +14,7 @@ modified: '2020-10-22T13:53:19.625Z'
 
 ## resume-banner
 
-- - https://github.com/sindresorhus/css-in-readme-like-wat
+- https://github.com/sindresorhus/css-in-readme-like-wat
   - Style your readme using CSS with this simple trick
 
 ## portfolio

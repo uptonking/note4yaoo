@@ -1,12 +1,12 @@
 ---
-title: note-style-design-system
-tags: [design-system, style]
+title: note-ux-design-tokens-color
+tags: [color, design-tokens]
 favorited: true
 created: '2019-12-29T12:47:41.725Z'
-modified: '2020-10-22T13:36:29.774Z'
+modified: '2020-12-29T16:19:36.339Z'
 ---
 
-# note-style-design-system
+# note-ux-design-tokens-color
 
 ## tips
 

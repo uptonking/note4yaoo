@@ -144,7 +144,7 @@ modified: '2020-12-08T14:07:08.978Z'
   - This is an implementation of Accera's Design System in WebComponents.
 - https://github.com/boltdesignsystem/bolt
   - /170Star/MIT/202010/js/twig/web-comp
-  - https://boltdesignsystem.com/
+  - https://bolt-design-system.com/
   - Bolt Design System provides robust Twig and Web Component-powered UI components
 - https://github.com/ZanichelliEditore/design-system
   - Zanichelli - Web Components Library

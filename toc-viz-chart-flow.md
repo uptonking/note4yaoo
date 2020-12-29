@@ -48,6 +48,12 @@ modified: '2020-10-22T10:22:55.878Z'
   - https://github.com/knowm/XChart
   - XChart is a Java library for plotting data
 
+## node-graph
+
+- https://github.com/reaviz/reaflow
+  - Node-based Visualizations for React
+  - REAFLOW is a modular diagram engine for build static or interactive editors. 
+
 ## more
 
 - mermaid /32.1kStar/MIT/202009/js

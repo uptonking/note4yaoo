@@ -41,10 +41,12 @@ modified: '2020-12-27T20:29:55.568Z'
         - 只用css vars不方便实现组件级的带约束的api接口
   - **playful**
     - pluggable extensions
+      - loading skeleton
       - collapsible
       - ui shell
       - configurable
     - interactive animations
+    - 此处的features都是nice to have，非必需
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性

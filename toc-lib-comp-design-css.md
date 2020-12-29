@@ -18,6 +18,9 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/jgthms/bulma
   - https://bulma.io/
   - Modern CSS framework based on Flexbox
+  - https://github.com/wtho/bulma-css-vars
+    - Bulma CSS Vars extends Bulma to use CSS variables, 
+    - that can be set to arbitrary values at runtime on the website and installs fallbacks for browsers without CSS variables capabilities.
 - pure-css /BSD/21kStar/202007/Yahoo
   - https://github.com/pure-css/pure
   - http://purecss.io/

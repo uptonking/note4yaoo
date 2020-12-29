@@ -16,6 +16,9 @@ modified: '2020-09-19T12:46:00.501Z'
     - https://github.com/yyx990803
     - https://www.zhihu.com/people/evanyou
   - artwork: vue
+  - 2020
+    - 12-vite2: library mode
+    - 9-vue3: release
 
 - Dan Abramov
   - info: Co-author of Redux and Create React App

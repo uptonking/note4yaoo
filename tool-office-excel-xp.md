@@ -1,11 +1,11 @@
 ---
-title: tool-excel
-tags: [excel, table, tool]
+title: tool-office-excel-xp
+tags: [excel, office, table, tool, xp]
 created: '2019-08-01T16:03:46.394Z'
-modified: '2020-07-14T11:09:13.471Z'
+modified: '2020-12-29T17:52:42.667Z'
 ---
 
-# tool-excel
+# tool-office-excel-xp
 
 ## 问题
 

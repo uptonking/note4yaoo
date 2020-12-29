@@ -78,7 +78,9 @@ modified: '2020-12-20T15:47:13.585Z'
   - https://github.com/predixdesignsystem/px-vis
     - a Predix UI data visualization framework.
   - https://github.com/predixdesignsystem/predix-design-stencil
-  - This repository contains files with the most current symbols library, stencils, color swatches, and fonts for your Predix UI design project.
+    - This repository contains files with the most current symbols library, stencils, color swatches, and fonts for your Predix UI design project.
+  - https://github.com/jonniespratley/predix-ui
+    - Un-official Predix Design System React Components
 - Morningstar Design System
   - https://designsystem.morningstar.com/
   - v2 is using web components; 
