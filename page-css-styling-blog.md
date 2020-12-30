@@ -7,7 +7,9 @@ modified: '2020-12-26T20:35:48.013Z'
 
 # page-css-styling-blog
 
-## [Why We Don't Use a CSS Framework](https://www.infoq.com/news/2020/06/css-variables-design-systems/)
+## css-styling
+
+### [Why We Don't Use a CSS Framework](https://www.infoq.com/news/2020/06/css-variables-design-systems/)
 
 - Tolinski demonstrated how developers who do not need to support IE11 can leverage CSS variables to implement a custom design system with characteristically less overhead than a framework.
 - The variable can be updated either via CSS or JavaScript. 

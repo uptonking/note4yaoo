@@ -29,7 +29,7 @@ modified: '2020-10-15T13:41:05.547Z'
 ## faq
 
 - mdx和react-live实现组件文档在线编辑时，为什么组件预览有时会消失
-  - 由于 `@mdx/js-loader` 解析规则的限制，两行export const之间必须有空行
+  - 由于 `@mdx/js-loader` 解析的限制，两行export const之间必须有空行
 - markdown-comment-below-is-not-displayed (4 patterns)
 
 [//]: # (This may be the most platform independent comment)
@@ -43,7 +43,10 @@ your comment goes here
 and here
 -->
 
-## summary
+## guide
+
+- features
+  - mdx based doc, 简单读写无需借助专业软件
 
 - md插件设计
   - 列表类

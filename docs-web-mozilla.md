@@ -8,6 +8,51 @@ modified: '2020-07-18T12:23:25.933Z'
 
 # docs-web-mozilla
 
+## Preloading content with `rel="preload"`
+
+- The preload value of the `<link>` element's `rel` attribute lets you declare fetch requests in the HTML's `<head>`, specifying resources that your page will need very soon, 
+  - which you want to start loading early in the page lifecycle, 
+  - before browsers' main rendering machinery kicks in. 
+  - This ensures they are available earlier and are less likely to block the page's render, improving performance.
+
+``` html
+<head>
+  <meta charset="utf-8">
+  <title>JS and CSS preload example</title>
+
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="main.js" as="script">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>bouncing balls</h1>
+  <canvas></canvas>
+
+  <script src="main.js" defer></script>
+</body>
+```
+
+- Here we preload our CSS and JavaScript files, so they will be available as soon as they are required for the rendering of the page later on.
+- This example is trivial, as the browser probably discovers the `<link rel="stylesheet">` and `<script>` elements in the same chunk of HTML as the preloads, 
+  - but the benefits can be seen much more clearly the later resources are discovered and the larger they are. 
+  - For example:
+    - Resources that are pointed to from inside CSS, like fonts or images.
+    - Resources that JavaScript can request, like JSON, imported scripts, or web workers.
+    - Larger images and video files.
+- preload has other advantages too. 
+- Using `as` to specify the type of content to be preloaded allows the browser to
+  - Prioritize resource loading more accurately.
+  - Store in the cache for future requests, reusing the resource if appropriate.
+  - Apply the correct content security policy to the resource.
+  - Set the correct `Accept` request headers for it.
+- Many different content types can be preloaded.
+
+- Other preloading features exist, but none are quite as fit for purpose as `<link rel="preload">`
+  - In it's most basic form it sets the link that has `rel="preload"` to a high priority, 
+  - Unlike prefetching, which the browser can decide whether it's a good idea or not, preload will force the browser to do so.
+
 ## Replaced elements
 
 - In CSS, a replaced element is an element whose representation is outside the scope of CSS; they're external objects whose representation is independent of the CSS formatting model.

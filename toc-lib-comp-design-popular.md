@@ -11,7 +11,7 @@ modified: '2020-11-13T07:29:55.201Z'
 
 - guide
   - css vars实现theming
-    - spectrum-css,polaris,patternfly,gestalt
+    - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
     - 切换theme基于修改同名css vars的值，具体实现可以是添加包含这些css vars的类名
   - vanillajs组件的实现(大多单独实现为一个包)
     - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
@@ -157,10 +157,11 @@ modified: '2020-11-13T07:29:55.201Z'
     - 组件基于hooks实现
     - 样式基于classnames
     - theming基于css vars
-      - theme只支持简单换颜色，button的css中使用了css vars
+      - theme只支持简单换颜色
+      - 提供了组件级的变量，如button的css中使用了css vars
       - ThemeProvider的render返回`<div style={style}>{children}</div>`
-      - `style = customProperties;或 {...customProperties, ...{color}};`
-      - ThemeProvider component uses CSS custom properties to share color values with components
+        - `style = customProperties;或 {...customProperties, ...{color}};`
+        - ThemeProvider component uses CSS custom properties to share color values with components
   - ref
     - https://github.com/Shopify/polaris-tokens
       - 基于theo生成
@@ -236,12 +237,14 @@ modified: '2020-11-13T07:29:55.201Z'
     - /744Star/Apache2/202010
     - theming基于css vars，能覆盖color和size
       - 预置了多套主题lightest/darkest/midlight/middark
+        - 每个主题css文件内容全是颜色变量，但其他文件也涉及尺寸变量
       - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
     - The standard CSS implementation of the Spectrum design language.
     - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
     - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
     - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
     - ref
+      - https://github.com/adobe/spectrum-web-components
       - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
         - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
         - React Spectrum splits each component into three parts: state, behavior, and the rendered component.
@@ -310,10 +313,13 @@ modified: '2020-11-13T07:29:55.201Z'
     - /259Star/MIT/202010/scss
     - theming基于css vars
       - 可覆盖的变量包括color,spacer,font
+      - 未提供预置主题
+      - [chore(dark-theme): dark theme POC](https://github.com/patternfly/patternfly/pull/3686)
+        - [old dark theme poc](https://github.com/patternfly/patternfly/pull/3298)
     - This repo contains core (HTML/CSS) implementation for PatternFly.
     - PatternFly follows a two-layer theming system where global variables always inform component variables. 
-    - The main reason to have global variables is to maintain consistency
-    - The second layer is scoped to themeable component custom properties
+      - The main reason to have global variables is to maintain consistency
+      - The second layer is scoped to themeable component custom properties
   - ref
     - https://github.com/patternfly/patternfly-elements
       - community-created web components based on PatternFly design.

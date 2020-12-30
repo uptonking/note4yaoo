@@ -17,7 +17,7 @@ modified: '2020-09-25T05:56:45.321Z'
   - 技术选型时，参考知名项目或大公司项目的选择
   - 灵活性
     - 书写的样式可编译成极短的唯一名，也可以编译成开发调试时的长样式名
-    - 调试时编译成类似bootstrap的唯一类名，发布时编译成atomic css
+    - 开发调试时编译成类似bootstrap的唯一类名，发布时编译成atomic css
     - ！！！ 甚至可以在发布时编译出使用css vars实现的theme
 
 - 缺点
@@ -38,7 +38,7 @@ modified: '2020-09-25T05:56:45.321Z'
 
 ## theming
 
-- While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 
+- ### While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 
   - https://twitter.com/jaredpalmer/status/1271482711132254210
   - Hooking every single component into that theme and calculating runtime styles is death by 1000 cuts. 
   - You pay a price for every single `<Box>`
@@ -61,7 +61,7 @@ modified: '2020-09-25T05:56:45.321Z'
     - If you want a component like this `<button color="blue">` to render `<button class="text-blue-500 hover:text-blue-700 focus:text-blue-800">`, there's no guarantee that those classes will exist because they may be purged.
     - All this to say, I totally agree that 90% of CSS can be static, but that 10% is a real problem that has to be dealt with.
 
-- Is static extraction seems realistic?
+- ### Is static extraction seems realistic?
   - Static extraction is realistic, at work we created library (something like Chakra but with some special features) and we try to generate theme for components to CSS and it looks promising
   - Static extraction is definitely realistic and something I plan on digging into in the near future.
     - Theme UI definitely can be improved performance-wise, we just wanted to make sure we nailed down a solid DX before investing time on optimization.
@@ -69,40 +69,58 @@ modified: '2020-09-25T05:56:45.321Z'
   - I agree it should be static, and with the current API I think it can eventually be transitioned to static calls. 
     - There's some current work glaze in this space 
 
-- We really should stop using React Context for theming libraries when CSS Variables:
+- ### We really should stop using React Context for theming libraries when CSS Variables:
   - https://twitter.com/buildsghost/status/1251569049940537345
-  - Are capable of everything you need for theming purposes
-  - Can just as easily be the underlying implementation detail of these libraries instead of React Context
-  - Are measurably more performant
-- CSS-in-JS libraries have become Very Fast (enough at least). 
-  - But the CSS-in-JS theming libraries that everyone is using have not.
-  - And the performance problems they (eventually) cause are going to be much harder to refactor your way out of.
-- I am very much with you on this. 
-  - In fact I had a wip thing for my CSS in JS library style-sheet to add support for theme-ui via custom properties and extract em to static.
-  - That said I think React Context shines when you want to subscribe selectively i.e. just a portion of the subtree or a few components. 
-  - In that case you automatically get encapsulation i.e. upper and (important) lower boundaries without having to reset theme.
-- Does reading from a theme file in context have a noticeable performance impact? 
-  - I always assumed it’s pretty cheap as long as it’s not changed.
-  - Using context thousands of times will eventually start having a performance impact. To be fair you can get away with it for a long time. But once you can't, now you have thousands of things to update
-- Unfortunately that won't work if you need to make your lib cross platform with RNW. RN does not have css vars.
-  - Context theming and core React code is more portable.
-  - it's possible to compile to 2 targets - web & RN, which could use different theming solutions, or just have 2 flavors of the lib, depends on how do you author ur cross-platform code
-  - it wouldn’t be that hard to build for the app level, slightly trickier when preparing such universal library but totally doable thanks to pkgJson["react-native"] support. All boils down to how you want to consume theme exactly and some work on top of that
-- It'd be pretty easy to use progressive enhancement in those cases. 
-  - Make every property: `background: ${theme.pageBackground};` to 
+    - Are capable of everything you need for theming purposes
+    - Can just as easily be the underlying implementation detail of these libraries instead of React Context
+    - Are measurably more performant
+  - CSS-in-JS libraries have become Very Fast (enough at least). 
+    - But the CSS-in-JS theming libraries that everyone is using have not.
+    - And the performance problems they (eventually) cause are going to be much harder to refactor your way out of.
+  - Everyone talks about css in js perfs lately, but no one provides any actual number so it means nothing.
+  - Unfortunately when you have to support IE, you're out of luck with CSS variables. 
+    - CSS-in-JS solutions can be better polyfilled for older browsers in my experience.
+  - It'd be pretty easy to use progressive enhancement in those cases. 
+    - Make every property: `background: ${theme.pageBackground};` to `background: #eee; background: var(--pageBackground);`
+    - This is a pretty simple build-time transform, or at runtime with a stylis plugin using emotion
+  - I am very much with you on this. 
+    - In fact I had a wip thing for my CSS in JS library style-sheet to add support for theme-ui via custom properties and extract em to static.
+    - That said I think React Context shines when you want to subscribe selectively i.e. just a portion of the subtree or a few components. 
+    - In that case you automatically get encapsulation i.e. upper and (important) lower boundaries without having to reset theme.
+  - Does reading from a theme file in context have a noticeable performance impact? 
+    - I always assumed it’s pretty cheap as long as it’s not changed.
+    - Using context thousands of times will eventually start having a performance impact. To be fair you can get away with it for a long time. But once you can't, now you have thousands of things to update
+  - Unfortunately that won't work if you need to make your lib cross platform with RNW. RN does not have css vars.
+    - Context theming and core React code is more portable.
+    - it's possible to compile to 2 targets - web & RN, which could use different theming solutions, or just have 2 flavors of the lib, depends on how do you author ur cross-platform code
+    - it wouldn’t be that hard to build for the app level, slightly trickier when preparing such universal library but totally doable thanks to pkgJson["react-native"] support.
+      - All boils down to how you want to consume theme exactly and some work on top of that
+  - Context is type safe and testable. CSS variables are not.
+    - How do you prevent typos or name conflict with this?
+      - Also, Context works on all browsers and doesn't need the browser to be tested (since it works with React-native too after-all)
+    - There are polyfills that you can use and yes it is still experimental, 
+      - however, there are benefits to using a future standardized API (i.e. eventually you'll end up shipping no code for that feature)
+      - About the typos and name conflicts, take a look at the solution used in Linaria
+      - Specifically `stylelint` lets you statically analyze your CSS-in-JS (zero runtime and built on CSS variables)
+  - Ionic uses css3 variables to handling themes for android, ios devices with dark, light theme.
+  - I think many people are using css in js not realising that plain css can do much of what they want, without runtime burden. It’s become the default.
+    - That said, custom properties aren’t supported by IE, so that’s a thing.
 
-`background: #eee; 
-background: var(--pageBackground); `
+- ### Use CSS Variables instead of React Context: How and why you should use CSS variables (custom properties) for theming instead of React context.
+  - https://twitter.com/kentcdodds/status/1324026743099781120
+  - We took a similar approach with @stitchesjs
+    - Tokens are converted to CSS Custom Properties
+    - Reference token in CSS value without prop-interpolation
+    - Support nested and/or multiple themes on the same page
+  - The one thing I'm missing from CSS variables is to be able to use them in media queries
+    - I guess there's no way around JS for now (if they depend on the theme).
+  - My favorite is both. 
+    - Favor CSS variables but still update a context so that you can switch out the components for advanced use cases that have different rendering. 
+      - Also update the CSS variables in `useLayoutEffect` so it happens at the same time as the context change.
+    - And the more you use the CSS Vars for everything else, the fewer context consumers you'll have, 
+      - so the only ones that consume the context are the ones that need to swap the implementation
 
-  - This is a pretty simple build-time transform, or at runtime with a stylis plugin using emotion
-- Context is type safe and testable. CSS variables are not.
-  - How do you prevent typos or name conflict with this?
-  - Also, Context works on all browsers and doesn't need the browser to be tested (since it works with React-native too after-all)
-  - There are polyfills that you can use and yes it is still experimental, however, there are benefits to using a future standardized API (i.e. eventually you'll end up shipping no code for that feature)
-  - About the typos and name conflicts, take a look at the solution used in Linaria
-  - Specifically `stylelint` lets you statically analyze your CSS-in-JS (zero runtime and built on CSS variables)
-
-## pieces 
+  ## pieces 
 
 - css-in-js vs sass
   - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!

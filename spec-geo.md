@@ -9,6 +9,11 @@ modified: '2020-08-17T06:46:09.262Z'
 
 - specifications about geospatial dev
 
+## guide
+
+- features
+  - mdx based map-doc, 简单读写无需借助专业软件
+
 ## popular-formats-about-mapping
 
 - Mapbox Vector Tile specification

@@ -11,6 +11,8 @@ modified: '2020-12-29T18:01:11.468Z'
 
 ### [Theming With Variables: Globals and Locals_201803](https://css-tricks.com/theming-with-variables-globals-and-locals/)
 
+- https://codepen.io/andresgalante/project/editor/DKPzvL
+
 - Setting CSS variables to theme a design system can be tricky: 
   - if they are too scoped, the system will lose consistency. 
   - If they are too global, you lose granularity(细粒度).
@@ -102,6 +104,7 @@ modified: '2020-12-29T18:01:11.468Z'
 ### [Theming with CSS variables_201904](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
 
 - **Two layers theming**
+  - https://codepen.io/WendellAdriel/pen/QPxRjN
 - Global variables are generic variables that will be used to keep the consistency between all our components
   - Some examples of global variables are font, default font-size and color palette. 
   - It's super simple to define global variables on CSS, we use the `:root` selector 
@@ -109,4 +112,106 @@ modified: '2020-12-29T18:01:11.468Z'
   - Every module variable MUST be defined using the value from a global variable 
   - and we also need to provide a fallback value for the case that the module will be used in an environment that doesn't provide global variables
 
+- **Working with multiple CSS themes**
+  - https://codesandbox.io/s/working-with-multiple-css-themes-03-forked-0wxui
+- the `:root` selector can be used to store the global variables of our themes. 
+- To create a default theme for our app, we will define some variables in this selector that will be used by our elements
+- Now that we already have our default theme, we can work in a new theme for our app. 
+  - There are some ways of working with themes, but my favorite is to use the `data-` attributes on `<HTML>` element. 
+  - These `data-` attributes are a convention used to define custom attributes for tags and to identify which theme we're using we will create a `data-theme` attribute. 
+  - All the elements with this attribute and their children will be modified. 
+- Letting the user switch themes
+  - First, let's remove the `data-theme="dark"` attribute from our `<html>` tag and create the element that will let the user switch themes when clicked.
+
+``` JS
+document
+  .getElementById("theme-toggle")
+  .addEventListener("click", toggleTheme);
+
+function toggleTheme() {
+  const htmlTag = document.getElementsByTagName("html")[0]
+  if (htmlTag.hasAttribute("data-theme")) {
+    htmlTag.removeAttribute("data-theme")
+    return
+  }
+
+  htmlTag.setAttribute("data-theme", "dark")
+}
+```
+
+### [ionic Dark Mode CodePen](https://ionicframework.com/docs/theming/dark-mode)
+
+- 基于css vars实现theming的示例
+  - https://codepen.io/uptonking/pen/YzGewVQ
+
+``` JS
+// ====== 根据media query自动切换theme ======
+// Use matchMedia to check the user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+toggleDarkTheme(prefersDark.matches);
+
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+
+// Add or remove the "dark" class based on if the media query matches
+function toggleDarkTheme(shouldAdd) {
+  document.body.classList.toggle('dark', shouldAdd);
+}
+
+// ====== 手动切换theme ======
+// Query for the toggle that is used to change between themes
+const toggle = document.querySelector('#themeToggle');
+
+// Listen for the toggle check/uncheck to toggle the dark class on the <body>
+toggle.addEventListener('ionChange', (ev) => {
+  document.body.classList.toggle('dark', ev.detail.checked);
+});
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addListener((e) => checkToggle(e.matches));
+
+// Called when the app loads
+function loadApp() {
+  checkToggle(prefersDark.matches);
+}
+
+// Called by the media query to check/uncheck the toggle
+function checkToggle(shouldCheck) {
+  toggle.checked = shouldCheck;
+}
+```
+
 ## more-theming
+
+## ref
+
+- [Theming with CSS Custom Properties_201706](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
+  - https://codepen.io/uptonking/pen/yLavavm
+  - Please feel free to play around with the Slack demo codepen
+  - 本示例通过js直接修改css变量的值
+  - `element.style.setProperty(`--${this.id}`, this.value);`更新css变量
+  - store the new theme string in LocalStorage with a specific keyname
+    - whenever the app loads, we get that theme from LocalStorage
+- [Flash of Unstyled Dark Theme](https://webcloud.se/blog/2020-04-06-flash-of-unstyled-dark-theme/)
+  - Naive Implementation
+    - Statically generated sites are "pre-rendered" HTML files usually served from CDN
+    - As part of pre-rendering CSS is also applied, usually with some CSS-in-JS framework involved. 
+      - On first paint, the user will see a pre-rendered page. 
+      - Once client-side JS runs and detects the users preferred theme, the page will re-render.
+      - If the users preferred theme is different from the default theme, the page re-render will be perceived as a "flash" between the two.
+      - On a slow connection it can be very distracting and confusing as it takes a longer time for client-side JavaScript to execute.
+      - On a slow connection it can be very distracting and confusing as it takes a longer time for client-side JavaScript to execute.
+  - Improved implementation
+    - avoidable with usage of CSS media queries and global CSS custom properties (commonly referred to as CSS variables)
+    - If you're just rendering the page based on user OS theme preference, this problem can and should be solved in CSS, not in JavaScript. 
+      - Use the `prefers-color-scheme` media query in the `<head>` section of your HTML.
+  - Allow users to switch themes
+  - Persist user theme preference
+  - Listen to thematic changes in user OS
+- [Theming With CSS Variables](https://dev.to/idoshamun/theming-with-css-variables-322f)
+  - https://codepen.io/idoshamun/pen/moKZBN
+  - 非常简单的示例，不依赖js文件，使用css vars切换主题
+  - `onclick="document.documentElement.classList.toggle('theme-1')">`

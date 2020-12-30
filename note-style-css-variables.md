@@ -42,6 +42,9 @@ getComputedStyle(element).getPropertyValue("--my-var");
 element.style.setProperty("--my-var", jsVar + 4);
 ```
 
+- css-vars-tools
+  - CSS variables (Custom Properties) polyfill for IE11
+    - https://github.com/nuxodin/ie11CustomProperties
 ## theming-examples
 
 - Themes becomes easier with css custom properties (css variables). 
@@ -255,9 +258,10 @@ document.documentElement.style.setProperty('--primary-color', 'green');
 ## ref
 
 - [Theming with CSS Custom Properties](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
+  - https://codepen.io/uptonking/pen/yLavavm
   - Please feel free to play around with the Slack demo codepen
   - 本示例通过js直接修改css变量的值
-  - 使用`element.style.setProperty(`--${this.id}`, this.value);`更新css变量
+  - `element.style.setProperty(`--${this.id}`, this.value);`更新css变量
   - store the new theme string in LocalStorage with a specific keyname
     - whenever the app loads, we get that theme from LocalStorage
 - [How To Create a Dark-Mode Theme Using CSS Variables](https://www.digitalocean.com/community/tutorials/css-theming-custom-properties)

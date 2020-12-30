@@ -10,7 +10,7 @@ modified: '2020-11-13T07:28:50.844Z'
 ## guide
 
 - top-css-lib
-  - bootstrap, bulma, materialize, amazeui, spectre, primer, milligram
+  - bootstrap, bulma, materialize, spectre, primer
 
 ## popular
 
@@ -18,6 +18,20 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/jgthms/bulma
   - https://bulma.io/
   - Modern CSS framework based on Flexbox
+  - https://github.com/jgthms/bulma/tree/css-variables-with-fallback
+    - I've been working on this CSS Variables + HSL version of Bulma.
+      - The idea is to provide each value as a separate variable, so you can tweak the H, S or L independently. 
+      - That way you can theme a whole page dynamically.
+    - The main issue is that it requires close to 100 CSS Variables to be applied to `:root`. 
+      - While this is done automatically, it might be considered noisy and verbose. 
+      - It is however the most flexible approach for theming a CSS framework.
+      - [Support for css variables_202007](https://github.com/jgthms/bulma/issues/3028)
+        - I have a few branches working on it. I only need to find the best way to implement it.
+      - [Optional CSS Variables and multi-theme ability_202006](https://github.com/jgthms/bulma/pull/2981)
+        - This PR does this successfully with a lot of ingeniosity by maximizing backward compatibility, the framework can be compiled exactly like before with no css variables, it can be compiled with all the css variables for outside theming or it can be compiled with a set of themes for bundled theming
+        - The only tradeoff of this solution is that because of the wrapping of each variable, the git diff is large
+        - will require future PR to follow the new syntax (though it's not a hard syntax, just slightly repetitive)
+        - I also think it’s not necessary to transform all Bulma variables into CSS variables. For theming purposes and dark mode support, colors would largely suffice.
   - https://github.com/wtho/bulma-css-vars
     - Bulma CSS Vars extends Bulma to use CSS variables, 
     - that can be set to arbitrary values at runtime on the website and installs fallbacks for browsers without CSS variables capabilities.
@@ -25,6 +39,22 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
+- pico.css /65Star/MIT/202010/scss/文档优秀
+  - https://github.com/picocss/pico
+  - https://picocss.com/
+  - theming通过添加`data-theme`+css vars到html标签实现
+    - theming只处理了颜色
+  - Graceful & Minimal CSS design system in pure semantic HTML
+  - use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+  - No dependencies, package manager, external files or JavaScript.
+  - Responsive everything: Elegant and consistent adaptatives spacings and typography on all devices.
+  - Shipped with two beautiful color themes, automatically enabled according to the user preference.
+  - Pico provide a .classless version ([Example](https://picocss.com/examples/classless/)).
+    - `<header>/<main>/<footer>` as direct childs of `<body>` provide a responsive vertical `padding`
+    - act as containers to define a centered or a fluid viewport.
+- water.css /5.7kStar/MIT/202010/css/classless
+  - https://github.com/kognise/water.css
+  - a CSS framework that doesn't require any classes. 
 - spectre /MIT/10.3kStar/202007
   - https://github.com/picturepan2/spectre
   - https://picturepan2.github.io/spectre/

@@ -35,6 +35,7 @@ modified: '2020-10-27T15:10:47.179Z'
   - Assembly
   - Fomantic-UI/Semantic-UI
   - clarity design system v4+
+  - [Ionic components are built with CSS Variables](https://ionicframework.com/docs/theming/css-variables)
   - 更多css vars
     - vaadin
       - uses CSS Vars for customizing fonts, colors, border radius, and spacing.
@@ -42,7 +43,6 @@ modified: '2020-10-27T15:10:47.179Z'
       - built-in theming capabilities are based upon CSS variables
     - Chakra UI
       - stores the color mode in localStorage and uses CSS variables to ensure the color mode is persistent.
-    - Ionic components are built with CSS Variables
   - 部分使用css vars
     - material components web
     - lightning design system，组件级使用css vars，全局级theming暂未实现
@@ -90,7 +90,7 @@ modified: '2020-10-27T15:10:47.179Z'
 - 建立映射
   - 预处理器的色彩变量或函数（编译时），可以灵活定义映射关系
   - 用CSS变量（运行时），可以使用多个变量，不依赖 color，但需要枚举值
-  - color-mod() 函数（运行时），可以像预处理器一样灵活定义映射关系
+  - `color-mod()` 函数（运行时），可以像预处理器一样灵活定义映射关系
     - 但是这还只存在于CSS Color Module Level 4这份草案中，并没有浏览器实现。
     - 可结合 CSS 变量
   - currentColor（运行时），只能表达直接使用 color 属性值
@@ -135,3 +135,35 @@ dynamicLoadCss(type) {
   }
 }
 ```
+
+- ### We really should stop using React Context for theming libraries when CSS Variables:
+  - https://twitter.com/buildsghost/status/1251569049940537345
+    - Are capable of everything you need for theming purposes
+    - Can just as easily be the underlying implementation detail of these libraries instead of React Context
+    - Are measurably more performant
+  - CSS-in-JS libraries have become Very Fast (enough at least). 
+    - But the CSS-in-JS theming libraries that everyone is using have not.
+
+- ### Who's using css variables for theming (like for dark mode) in your app? 
+  - https://twitter.com/kentcdodds/status/1321884235527942144
+    - I'm interested in seeing different approaches to this. 
+    - Changing a class on body seems like the "obvious" solution, but I'm curious if anyone's doing anything different.
+  - `prefers-color-scheme` media query, which I override with a data attribute on the `<body>` tag if the user changes it. 
+    - `[data-theme="light"]` selector in CSS points generic variables to respective light/dark versions (`--component-background: var(--component-background-light`).
+  - I went with CSS variables for theming (dark and light mode) combined with both CSS media queries and classes applied to the `body` element for overriding the media query preference.
+  - Css variables + class on body + local-storage
+
+- ### Note that GitHub is taking the same path we did at Stack Overflow, the theming is using CSS 3 variables.
+  - https://twitter.com/Nick_Craver/status/1336373328613879810
+    - So overall, it's not light/dark mode...but VERY easy to theme in general now. T
+    - his allows for high contrast, etc. themes far, far easier.
+  - You can see the difference is entirely at the top level with the `data-color-mode` attribute. 
+    - We're doing similar, just down on the `body` element. 
+    - For anyone considering this - it is a very good path, IMO. 
+    - It's 1 style sheet, many themes, and very compact
+  - Once you have everything you need theme-able, then you've got an interface: those color variables. 
+    - It can also be shadows sizes, widths, radiuses, padding, etc. 
+    - Whatever you want to make...well, variable. 
+    - Then, themes are just a collection of variable overrides. Super clean.
+  - I noticed the same pattern in the lightweight Pico.css framework 
+    - which I started using for a project a few weeks ago (toggles between dark/light/auto as well).

@@ -227,11 +227,11 @@ modified: '2020-12-21T08:03:35.993Z'
   - [一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
 - BulletComment/弹幕
 
-## incubator
+## experimental
 
 ## ui-components-catalog
 
-- summary
+- 组件类别summary
   - 作为单独库实现的组件
     - list
     - tree
@@ -253,7 +253,7 @@ modified: '2020-12-21T08:03:35.993Z'
     5. input：数据输入类组件，表单组件
     6. display：展示类组件
     7. feedback：反馈通知信息类组件
-    8. incubator：实验新组件，也为experimental,addon,extension
+    8. experimental：实验新组件，也为experimental,addon,extension
 - general/通用组件
   - button
   - icon
@@ -334,11 +334,12 @@ modified: '2020-12-21T08:03:35.993Z'
   - captcha
   - countdown
   - qrcode
-- incubator
+- experimental/incubator
   - jumbotron
     - extend the entire viewport to showcase key content
   - hero component:image preloading fade-in effect, a semi-transparent color overlay 
   - embeddable-widget
+  - url-viewer: card形式、tab形式，类似无标题栏的浏览器
   - color-palette
   - lucky-draw/抽奖转盘
   - bullet-comments
@@ -346,17 +347,16 @@ modified: '2020-12-21T08:03:35.993Z'
   - subtle-ui: tab notification
   - link-image: 文字链接有时太单调，内容预览可信度更高
   - CodeCard
-- connected/联系第三方应用的组件
+  - AnimationPlayer
+    - 类似视频播放器，点击播放动画，动画元素主要是图标，播放效果类似视频
+- integrated/connected/联系第三方应用的组件
   - douban-movie-card
   - github
     - repo-card
     - made-with-love
   - sharing-to-weibo/wx/twitter/datalking
   - unsplash-image-card
-- dataset
+- data-oriented
   - TopN
   - AlphabeticalMenu
     - 类似win10开始菜单的首字母排序
-- entertainment
-  - AnimationPlayer
-    - 类似视频播放器，点击播放动画，动画元素主要是图标，播放效果类似视频
