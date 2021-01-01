@@ -113,3 +113,13 @@ modified: '2020-12-27T20:29:55.568Z'
 - Components in themes
 - Variants
 - Extending the library
+
+## discuss
+
+- ### techs to look out for in the javascript world in 2021
+  - https://twitter.com/KerryRitter/status/1344039489123934209
+    - @stenciljs - web components compiler
+    - @tailwindcss - design system toolkit
+    - @rustlang - language for wasm
+    - @nestframework - 2020s fastest rising framework
+    - @deno_land - new JS/TS runtime

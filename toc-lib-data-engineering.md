@@ -1,13 +1,13 @@
 ---
-title: toc-lib-data-processing
-tags: [data, lib, toc]
+title: toc-lib-data-engineering
+tags: [data, engineering, lib, toc]
 created: '2020-10-05T09:34:33.467Z'
-modified: '2020-10-05T09:35:11.107Z'
+modified: '2020-12-31T15:32:40.135Z'
 ---
 
-# toc-lib-data-processing
+# toc-lib-data-engineering
 
-## data-engineering
+## popular
 
 - https://github.com/alibaba/DataX
   - /7.3kStar/Apache2/202009
@@ -28,13 +28,4 @@ modified: '2020-10-05T09:35:11.107Z'
   - https://github.com/xresloader/xresconv-cli
     - 跨平台命令行工具，兼容python2和python3
 
-## python-data
-
-- https://github.com/pandas-dev/pandas
-  - /26.8kStar/BSD/202009
-  - powerful data analysis/manipulation library for Python
-  - similar to R data.frame objects, statistical functions, and much more
-- https://github.com/numpy/numpy
-  - /15kStar/BSD/202009
-  - https://www.numpy.org/
-  - fundamental package for scientific computing with Python.
+## more-tools

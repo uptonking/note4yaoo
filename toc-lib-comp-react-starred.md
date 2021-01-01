@@ -7,7 +7,7 @@ modified: '2020-11-13T07:31:27.113Z'
 
 # toc-lib-comp-react-starred
 
-## accessible-components
+## accessible
 
 - Reach UI /React Training team
   - /3.6kStar/MIT/202010/ts

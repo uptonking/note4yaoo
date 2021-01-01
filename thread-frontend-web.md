@@ -11,25 +11,42 @@ modified: '2020-12-05T07:44:12.022Z'
 
  
 
+- ### State machines are great, so why aren’t we rewriting all of our async/await code to them?
+- https://twitter.com/dan_abramov/status/1344502932704788480
+- the simple answer: async/await is easier. 
+  - It leaves out edge cases. When you include the edge cases, async/await is more complex... So developers just hope for the best.
+- state machines are great at representing systems that have cycles & many possible transitions between each state, 
+  - async await is better for relatively linear paths with limited branching
+  - its a little bit like how regular expressions work well for the state machines that represent string matching, since those also tend to have lots of sequential states with no branches
+  - Indeed. And regexes are generally convertible to pointer bumping string scanning code, with loops replacing eager Kleene star. 
+  - See how hand-written lexers implement regex matching in code where lex would use a state machine. Instruction pointer replaces state code.
+  - Regexes and automata are isomorphic, a regex is literally a state machine
+- This made me think of XHR’s `onreadystatechange` event and how devs were really really happy to use `$.get` instead of considering all of the possible ready states. 
+- Babel rewrites your async/await code into small state machines
+  - As well as any of your code is executed on hardware state machines
+  - So here you go, exactly as you asked
+- I'd much rather go the other way and remove state machines and caching layers from async/await
+  - [callback based, simplified async/await](https://es.discourse.group/t/callback-based-simplified-async-await/343)
+
 - ### What advice were you given for your career that turned out to be a complete waste of time and effort?
-  - https://twitter.com/buildsghost/status/1343650869904986112
-  - I was told to go take a bunch of night classes on computer science by two MIT grads if I ever wanted to be "serious" about programming.
-    - I took some free student-taught classes, 
-    - and we spent months learning languages I have not used since.
-  - This isn't about tech, but when I was in school to be a licensed massage therapist.
-    - I had a teacher tell us that we should work our first year *for free* in order to build a client base.
-    - Thankfully, I didn't, but I am sure some folks listened.
-  - You *need* to be good in math
-  - Go to conferences.
-  - I was told that how people feel in a moment is more important than the outcome of the work. 
-    - Now, I couldn't be happier to work somewhere frank, timely, respectful feedback is foundational to the culture. 
-    - Spoiler alert: great work outcomes _make people feel good_
-  - Was also told "PHP is dead, JSP is the future" in around 2006. They were very wrong.
+- https://twitter.com/buildsghost/status/1343650869904986112
+- I was told to go take a bunch of night classes on computer science by two MIT grads if I ever wanted to be "serious" about programming.
+  - I took some free student-taught classes, 
+  - and we spent months learning languages I have not used since.
+- This isn't about tech, but when I was in school to be a licensed massage therapist.
+  - I had a teacher tell us that we should work our first year *for free* in order to build a client base.
+  - Thankfully, I didn't, but I am sure some folks listened.
+- You *need* to be good in math
+- Go to conferences.
+- I was told that how people feel in a moment is more important than the outcome of the work. 
+  - Now, I couldn't be happier to work somewhere frank, timely, respectful feedback is foundational to the culture. 
+  - Spoiler alert: great work outcomes _make people feel good_
+- Was also told "PHP is dead, JSP is the future" in around 2006. They were very wrong.
 
 - ### I want to *scale* a div and all of its contents to fully fit wall-to-wall inside its container div. 
-  - https://twitter.com/erikras/status/1343480294654046209
-  - Similar to what `background-size: contain;` can do for images. Possible in CSS only? JS ok, too.
-  - I think scaling is the wrong thing for my use case.
+- https://twitter.com/erikras/status/1343480294654046209
+- Similar to what `background-size: contain;` can do for images. Possible in CSS only? JS ok, too.
+- I think scaling is the wrong thing for my use case.
 
 - ### A year ago I made a bet on full-stack JS and switched my focus from @laravelphp to Node.js. A year later, I found that Node mostly just slowed me down.
 - https://twitter.com/tylerlwsmith/status/1341557868571422722
@@ -60,18 +77,19 @@ modified: '2020-12-05T07:44:12.022Z'
 - I prefer Laravel over Node.js because it lets me move fast.
 
 - discussion
+
 - I like Adonis. And Sails.js. And Nest.js. Loopback also looks cool.
   - I've never adopted any of them for a few reasons though:
-    - 总结：支持node的大公司少了，工具不多
-    - Lack of adoption. 
-      - None of the batteries-included Node.js frameworks have major adoption, so I have to figure out how to integrate other tools myself.
-      - It also means if I run into a problem, there are far fewer resources available than Laravel.
-    - Uncertain future. 
-      - Adonis is mostly carried by one person. Sails is maintained by a company out of Texas. 
-      - For long term projects, using Adonis feels like a risk.
-    - Lack of first-party integrations
-      - Laravel kills it with the amount of first party integrations they have. 
-      - It's a compelling reason to choose Laravel over Node
+  - 总结：支持node的大公司少了，工具不多
+  - Lack of adoption. 
+    - None of the batteries-included Node.js frameworks have major adoption, so I have to figure out how to integrate other tools myself.
+    - It also means if I run into a problem, there are far fewer resources available than Laravel.
+  - Uncertain future. 
+    - Adonis is mostly carried by one person. Sails is maintained by a company out of Texas. 
+    - For long term projects, using Adonis feels like a risk.
+  - Lack of first-party integrations
+    - Laravel kills it with the amount of first party integrations they have. 
+    - It's a compelling reason to choose Laravel over Node
 
 - ### if I was building a CMS using MongoDB would you tell me to stop immediately? If so, why?
 - https://twitter.com/JakeDohm/status/1341892219511459842

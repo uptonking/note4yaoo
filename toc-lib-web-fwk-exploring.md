@@ -1,11 +1,11 @@
 ---
-title: toc-lib-web-fwk
-tags: [framework, lib, web]
+title: toc-lib-web-fwk-exploring
+tags: [exploring, framework, lib, web]
 created: '2020-11-09T09:04:03.243Z'
-modified: '2020-12-08T14:07:22.783Z'
+modified: '2020-12-31T17:05:37.410Z'
 ---
 
-# toc-lib-web-fwk
+# toc-lib-web-fwk-exploring
 
 ## trending
 

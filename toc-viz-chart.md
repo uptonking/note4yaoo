@@ -101,6 +101,10 @@ modified: '2020-10-22T10:22:33.292Z'
   - and generate interactive views using either HTML5 Canvas or SVG.
   - https://github.com/vega/vega-lite /2.6kStar
   - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
+- D3FC /860Star/MIT/202011/js
+  - https://github.com/d3fc/d3fc
+  - Components to rapidly build fast, highly customisable, interactive charts with D3
+  - The Decorate Pattern, resulting in charting components that are both simple and flexible.
 - G2 /MIT/9.8kStar/202007
   - https://github.com/antvis/G2
   - https://g2.antv.vision/

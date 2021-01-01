@@ -26,8 +26,11 @@ modified: '2020-11-13T07:31:42.369Z'
 - https://github.com/OnsenUI/OnsenUI
   - /8.1kStar/Apache2/202009
   - Based on Web Components, and provides bindings for Angular 1, 2, React and Vue.js.
+- https://github.com/ing-bank/lion /lit-html
+  - performant, accessible and flexible Web Components
 - https://github.com/BlazeSoftware/atoms
   - a set of web components powered by Blaze CSS.
+
 - more
   - Vaadin components are built on the Web Components standard.
   - https://github.com/Wildhoney/ReactShadow
@@ -47,6 +50,7 @@ modified: '2020-11-13T07:31:42.369Z'
 - https://github.com/tenphi/numl
   - https://numl.design/
   - An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI
+
 ## compiled-to-web-components
 
 - https://github.com/Gomah/bulmil

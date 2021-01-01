@@ -23,8 +23,8 @@ modified: '2020-12-19T13:05:23.294Z'
   - 针对重消费者业务的seo，偏离市场主流业务
   - 落地页(Landing page)
   - 博客页面(Blog posts)
-  - 营销页面、产品介绍页面(Marketing pages)
   - 帮助文档(help and documentation)
+  - 营销页面、产品介绍页面(Marketing pages)
 
 - ### [用了react 或者 vue，如何做SEO优化呢？](https://www.zhihu.com/question/51949678/answers/updated)
 - 用 Vue 不代表你一定要做成 SPA
@@ -67,6 +67,8 @@ modified: '2020-12-19T13:05:23.294Z'
 - 此外，像Gatsby这样的静态网站生成器会在其产品中添加增量构建。
 - ref
   - https://www.zhihu.com/question/433673833/answer/1622039165
+  - 我认为，ssg适合中小型应用，不适合超大型应用，
+    - 问题在于若内容超级多，则增量构建也会花费大量时间，同时动态交互的计算量也很大
 
 - ### [有必要使用服务器端渲染(SSR)吗？](https://www.zhihu.com/question/308792091/answers/updated)
 - 现代框架的服务端渲染和 jsp、php 这些还是有不少区别的。

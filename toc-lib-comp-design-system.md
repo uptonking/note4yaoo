@@ -381,3 +381,8 @@ modified: '2020-11-13T07:30:03.110Z'
   - Elements are built based on React
   - To make the HTML Elements work in other environments like Vue or Angular, You can use the built-in web components support
   - All the components internal states are handled with React to only keep the most necessary in the DOM (HTML elements and event bindings).
+- Lighthouse Design System /14Star/MIT/202012/ts
+  - https://github.com/harbor-school/lighthouse
+  - a continuous design system for integrating design with development workflows.
+
+

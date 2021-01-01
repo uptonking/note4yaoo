@@ -18,6 +18,9 @@ modified: '2020-12-21T08:03:35.993Z'
 - Headline
   - animated
 
+- Box
+  - flexible one-off component that can live outside the design system constraints
+
 ## foundation
 
 - 大多数组件通用的非dom元素或操作

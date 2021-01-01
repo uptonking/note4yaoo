@@ -32,6 +32,8 @@ modified: '2020-09-25T05:56:32.022Z'
   - https://github.com/seek-oss/treat
   - Themeable, statically extracted CSS‑in‑JS with near‑zero runtime.
   - 类似sass的预编译，不能在runtime生成新样式
+  - 很可能针对同一样式名生成以不同主题作为前缀的多个类，若如此，则样式爆炸
+    - 可考虑在生产环境生成atomic css，而不是原有类名
 - astroturf /1.8kStar/MIT/202004
   - https://github.com/4Catalyzer/astroturf
   - lets you write CSS in your JavaScript files without adding any runtime layer

@@ -81,7 +81,12 @@ modified: '2020-10-22T13:33:54.313Z'
     - 快速跳转到第1个、最后一个、第N个
     - 随着浏览位置的变化，显示当前显示的是第几个，如11/28
 
-## grid-implementation-vs
+- experimental
+  - web worker
+  - apache arrow columnar format
+  - wasm vs webgpu
+
+## grid-implementation
 
 - ### react-table
   - required-props: data, columns

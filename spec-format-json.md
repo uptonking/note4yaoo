@@ -12,6 +12,15 @@ modified: '2020-10-15T13:41:01.275Z'
 - https://www.json.org/json-en.html
 - https://json5.org
 
+## guide
+
+- json-ext
+  - json5
+  - [Amazon Ion](https://amzn.github.io/ion-docs/)
+  - geo
+    - geojson
+    - topojson
+
 ## faq
 
 - 

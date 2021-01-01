@@ -26,6 +26,13 @@ modified: '2020-10-27T15:10:47.179Z'
 
 ## guide
 
+- 切换不同主题名的实现
+  - 添加到`<body>`上，因为第3方工具库经常添加到`<html>`
+  - 用class，不用id，因为一个元素不能有多个id，而测试和发布时常需要不同id
+  - 使用class名切换主题的优点是浏览器直接提供了classList.toggle的api
+  - 使用data-*切换主题的优点是，方便修改属性值，方便添加主题相关的其他配置
+    - 缺点是多一步，先改属性值，再更新class名
+
 - 基于css vars实现theming的示例
   - spectrum-css
   - polaris

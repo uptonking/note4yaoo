@@ -10,12 +10,14 @@ modified: '2020-11-13T07:29:55.201Z'
 ## popular-design-system
 
 - guide
-  - css vars实现theming
+  - design-tokens(推荐styled-dictionary)
+    - polaris,fluid
+  - theming(推荐css vars)
     - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
     - 切换theme基于修改同名css vars的值，具体实现可以是添加包含这些css vars的类名
-  - vanillajs组件的实现(大多单独实现为一个包)
+  - vanillajs组件的实现(推荐实现为一个单独的包)
     - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
-  - react组件的实现
+  - react组件(推荐hooks)
     - carbon,material,polaris,gestalt,elastic-eui,rmwc,antd,zent,xiaomi-hiui
 
 - ### Material Design /Google
@@ -231,6 +233,8 @@ modified: '2020-11-13T07:29:55.201Z'
     - 样式基于classnames高仿版，源码中为`className={css(`
     - react-aria
       - Hooks that provides accessible UI primitives
+      - React Aria is intentionally very low level. It’s designed to allow building higher level UI libraries on top, so it provides small building blocks that you can compose yourself.
+      - Hooks being just functions enables a huge amount of flexibility. Customizability is natural via composition, and you can map just about any component API you want to them.
     - react-stately
       - Hooks that provides cross-platform state management
   - https://github.com/adobe/spectrum-css
@@ -566,7 +570,7 @@ modified: '2020-11-13T07:29:55.201Z'
       - there is no need to install dependencies.
         - Import @engie-group/fluid-design-system in your project or via script tag. 
       - auto-init.js can initiate components without additional code
-      - We introduce tokens thanks to [style dictionary](https://amzn.github.io/style-dictionary/#/version_3)
+      - We introduce tokens thanks to [style-dictionary](https://amzn.github.io/style-dictionary/#/version_3)
       - We introduce CSS 4 variable tokens: `:root`, `--nj-color-base-x-hover`
   - [start with React framework](https://www.engie.design/fluid-design-system/getting-started/developers/react/)
     - Set an id attribute named `root` on a global container from where components will be watched for initialization.
@@ -574,5 +578,5 @@ modified: '2020-11-13T07:29:55.201Z'
     - [Design Tokens](https://www.engie.design/fluid-design-system/design-tokens/)
       - Design tokens are a tech-agnostic way to store variables.
       - Variable naming convention follows CTI (Category / Type / Item) structure.
-      - We introduce Design Tokens thanks to style dictionary.
+      - We introduce Design Tokens thanks to style-dictionary.
       - CSS4 variable tokens, JSON tokens, CSS4 variable SASS support, FIGMA tokens

@@ -315,6 +315,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
+- https://grid.glideapps.com/
+  - /16Star/MIT/202012/ts
+  - high-performance React grid component, with rich rendering
 
 ## list-grid-with-table-tr-td
 
