@@ -7,11 +7,11 @@ modified: '2021-01-01T22:09:59.545Z'
 
 # toc-lib-comp-design-tokens
 
-## style-dictionary
+## style-dictionary-tools
 
 - https://github.com/amzn/style-dictionary
   - /1.3kStar/Apache2/202010
-  - 支持编译输出ios的.h文件、android的.xml文件、.scss文件
+  - 支持编译输出ios的.h文件、android的.xml文件、web的.scss文件
   - 优点在于属性值能够方便地以cascade层次覆盖
   - use design tokens to define styles once and use those styles on any platform or language. 
   - A style dictionary is a collection of style properties, key/value pairs that describe stylistic attributes like colors, sizes
@@ -23,7 +23,7 @@ modified: '2021-01-01T22:09:59.545Z'
     - Because of the way Style Dictionary works, by merging all source token files together first, there is no easy way to have a 1-to-1 mapping of source token file to build artifact. 
     - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
       - example of automatically generating 1:1 token files based on a custom filter.
-  - [Get ready for v3](https://amzn.github.io/style-dictionary/#/version_3)
+  - [Get ready for v3](https://amzn.github.io/  style-dictionary/#/version_3)
     - Transitive transforms is the big one that required a big re-architecture of how the Style Dictionary build process works.
       - The new build process is similar, except that it recursively transforms and resolves aliases, only deferring a transform to the next cycle if the token has an unresolved alias. 
       - **Use cases this change opens up**:
@@ -38,8 +38,7 @@ modified: '2021-01-01T22:09:59.545Z'
       - Adding javascript/module-flat format that's just like the json/flat format, but exported as a cjs module
     - todo
       - Use ES6 where possible, Better log levels
-
- 
+  - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
 
 - https://github.com/bem/themekit
   - /42Star/MPL2/202011
@@ -55,9 +54,12 @@ modified: '2021-01-01T22:09:59.545Z'
   - Please use the Adobe XD extension for VS Code to open this and other DSP
 - https://github.com/lukasoppermann/design-tokens
   - Figma plugin to export design tokens to json in an amazon style dictionary compatible format.
+  - https://github.com/lukasoppermann/design-token-transformer
 
- 
+## style-dictionary-examples
 
+- https://github.com/infor-design/design-system/tree/master/design-tokens
+  - Design tokens are metadata about a visual design system.
 - https://github.com/AlaskaAirlines/AuroDesignTokens
   - Abstract UI atomic values to support the Auro Design System.
   - 未实现theming
@@ -75,6 +77,11 @@ modified: '2021-01-01T22:09:59.545Z'
   - This example code is bare-bones to show you what this framework can do.
 - https://github.com/ivandata/another-way-to-create-themes
   - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
+- https://github.com/lyne-design-system/lyne-design-tokens
+  - Design Tokens for Lyne Design System
+  - 样式编译根据模版文件 web-scss.template, commonjs.template
+  - https://github.com/lyne-design-system/lyne-components
+    - based on standard compliant Web Components compiled by StencilJS
 
 - more-tokens-repos
   - https://github.com/natura-cosmeticos/natds-commons/tree/master/packages/natds-themes
