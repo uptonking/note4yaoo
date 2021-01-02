@@ -126,3 +126,11 @@ const CountingComponent = () => {
   - Unicycle is an Electron application built using TypeScript, React and ant.design. 
   - Its purpose is to unify the design/development cycle.
   - Unicycle allows you to create, live edit and test presentational components and export them to different frameworks (React and Vue.js by now). 
+- https://github.com/MithrilJS/mithril.js
+  - client-side JS framework for building Single Page Applications. 
+  - It's small (9.79 KB gzipped), fast and provides routing and XHR utilities out of the box.
+  - used by companies like Vimeo and Nike
+  - [Framework comparison](https://mithril.js.org/framework-comparison.html)
+    - Why use Mithril? In one sentence: because Mithril is pragmatic
+      - Mithril is all about getting meaningful work done efficiently. 
+      - No extra libraries, no magic.

@@ -46,7 +46,7 @@ modified: '2020-12-27T20:29:55.568Z'
       - ui shell
       - configurable
     - interactive animations
-    - 此处的features都是nice to have，非必需
+    - 此处的features都是nice-to-have，非必需
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
@@ -57,7 +57,7 @@ modified: '2020-12-27T20:29:55.568Z'
     - auto animation by default 首次渲染完成后，组件的某部分会自动开始动起来
       - 如文字从0开始增加
       - 如输入框的边框开始闪烁
-    - 组件的动画不是必需项，nice to have
+    - 组件的动画不是必需项
   - ui shell
     - 开箱即用的dashboard模版
     - 单个小组件的示例
@@ -115,11 +115,3 @@ modified: '2020-12-27T20:29:55.568Z'
 - Extending the library
 
 ## discuss
-
-- ### techs to look out for in the javascript world in 2021
-  - https://twitter.com/KerryRitter/status/1344039489123934209
-    - @stenciljs - web components compiler
-    - @tailwindcss - design system toolkit
-    - @rustlang - language for wasm
-    - @nestframework - 2020s fastest rising framework
-    - @deno_land - new JS/TS runtime

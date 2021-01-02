@@ -8,6 +8,8 @@ modified: '2020-08-18T05:56:56.343Z'
 
 # log-dev-pieces-frontend
 
+- about web, state, routing
+
 ## logging
 
  

@@ -9,6 +9,21 @@ modified: '2020-12-23T09:52:21.060Z'
 
 ## faq-not-yet
 
+制
+
+- [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
+  - decorator提案到现在为止已有三版草案，尤其第三版是对前两版的推倒重来
+  - 前两版是类似于 python decorator 的语义，第三版是静态语义，类似于弱化的宏
+  - 但是这三版都无法推进到 stage 3（主要的障碍来自于引擎厂商）
+  - 现在TypeScript所实现的 decorator，基于第一版的草案
+    - 现在TS团队拒绝投入精力到与 decorator 相关的任何改进。
+    - Vue 3放弃了class component而转向 composition API，也有部分原因源于 decorator 前景不明
+  - [TypeScript装饰器(Decorators)具体做了什么工作）](https://www.zhihu.com/question/68257128)
+    - Angular使用的根本不是装饰器（Decorator），而是注解（Annotation）
+    - 装饰器的定位是通过对应的装饰函数，修改内容本身的定义，从而实现不同的行为。
+    - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
+    - Angular是通过装饰器来模拟了注解的功能
+
 ## In js, what does `this` refer to?
 
 - tips
@@ -87,7 +102,7 @@ console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 
 - In arrow functions,  `this` retains the value of the enclosing lexical context's `this` .
   -  In global code, it will be set to the global object
-- If `this` arg is passed to `call` ,       `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+- If `this` arg is passed to `call` ,           `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to `null`
 
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.

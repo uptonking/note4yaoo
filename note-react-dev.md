@@ -14,9 +14,14 @@ modified: '2020-07-14T10:38:48.217Z'
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
   - 发展方向：jquery > querySelector, react > web components
 
+- react-competitors
+  - vue/angular/web-components
+  - react-like/alternatives: preact, inferno, rewrite
+  - lit-html/hyperhtml
+
 - react features
   - 函数式的组件架构
-    - 在组件层解决更新dom与状态数据一致的问题(keep dom in sync with state)
+    - 在组件层解决更I新dom与状态数据一致的问题(keep dom in sync with state)
       - 这是前端框架都需考虑的问题，web components标准没有涉及，需自己实现
     - 复用组件模块更简单，写法上只需一个jsx
       - 传统组件需要先写html元素标签，再引入js操作元素

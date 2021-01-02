@@ -2,7 +2,7 @@
 title: web-dev-fwk-frontend-solutions
 tags: [framework, frontend, solutions, web]
 created: '2020-11-01T09:48:26.955Z'
-modified: '2020-12-21T14:53:44.945Z'
+modified: '2021-01-01T20:15:45.650Z'
 ---
 
 # web-dev-fwk-frontend-solutions
@@ -32,9 +32,10 @@ modified: '2020-12-21T14:53:44.945Z'
 - 选用现有框架，还是自己实现框架
   - 现有框架的生态系统若十分丰富，则就用现有框架
     - 如koa的架构虽比express更好，但用户太少，插件没有express丰富，恶性循环
-    - 优秀的第三方库如redux会帮你处理伴随依赖的更新和休bug，不用自己花精力兼容concurrent mode
+    - 优秀的第三方库如redux会帮你处理伴随依赖的更新和修bug，不用自己花精力兼容concurrent mode
   - 自己的时间和精力有限
   - 知名框架一般有大公司或商业公司推广，小项目资源有限
+  - react的挑战者需要：丰富功能、生态、大公司支持
 
 ## frontend-solutions
 

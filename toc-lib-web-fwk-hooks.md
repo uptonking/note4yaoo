@@ -19,6 +19,11 @@ modified: '2020-12-08T14:07:28.333Z'
   - Unlike a normal pure function, which takes all its inputs and computes output(s) without producing any side-effects, 
     - the most straightforward way to think about an Articulated Function is that it is stateful (maintains its own state) and effectful (spins off side-effects).
 
+- https://github.com/matthewp/haunted
+  - React's Hooks API but for standard web components and lit-html or hyperHTML.
+- https://github.com/wtnbass/fuco
+  - Functional Component like React, but for Web Components.
+
 ## more-hooks
 
 - https://github.com/danialdezfouli/vanilla-hooks
@@ -27,3 +32,5 @@ modified: '2020-12-08T14:07:28.333Z'
   - Collection of vanilla hooks
 - https://github.com/jonathantneal/usestate-js
   - zero-dependency module that recreates React useState in vanilla JavaScript.
+- https://github.com/Swiip/compo
+  - Compo is a JavaScript Web UI tiny library powering Web Components with a functional API and a Virtual DOM rendering.

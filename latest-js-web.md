@@ -9,25 +9,6 @@ modified: '2020-09-26T12:52:33.493Z'
 
 - To make vanillajs great again
 
-## dilemma
-
-- 哪些业务计算相关的代码适合放在前端，哪些适合放在服务端
-  - 读写文件：文本、图片、文档doc、表格
-  - 图表绘制
-
-- [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
-  - decorator提案到现在为止已有三版草案，尤其第三版是对前两版的推倒重来
-  - 前两版是类似于 python decorator 的语义，第三版是静态语义，类似于弱化的宏
-  - 但是这三版都无法推进到 stage 3（主要的障碍来自于引擎厂商）
-  - 现在TypeScript所实现的 decorator，基于第一版的草案
-    - 现在TS团队拒绝投入精力到与 decorator 相关的任何改进。
-    - Vue 3放弃了class component而转向 composition API，也有部分原因源于 decorator 前景不明
-  - [TypeScript装饰器(Decorators)具体做了什么工作）](https://www.zhihu.com/question/68257128)
-    - Angular使用的根本不是装饰器（Decorator），而是注解（Annotation）
-    - 装饰器的定位是通过对应的装饰函数，修改内容本身的定义，从而实现不同的行为。
-    - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
-    - Angular是通过装饰器来模拟了注解的功能
-
 ## latest-web
 
  

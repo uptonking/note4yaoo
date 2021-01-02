@@ -1,68 +1,11 @@
 ---
 title: toc-lib-comp-design-tokens
-tags: [design-system, design-tokens]
+tags: [design-system, design-tokens, toc]
 created: '2020-10-23T03:56:35.731Z'
-modified: '2020-11-13T07:30:23.361Z'
+modified: '2021-01-01T22:09:59.545Z'
 ---
 
 # toc-lib-comp-design-tokens
-
-## design-tokens-popular
-
-- https://github.com/Shopify/polaris-tokens
-  - /150Star/MIT/202012/theo
-  - https://polaris-tokens.herokuapp.com/
-  - Design tokens for Polaris, Shopify’s design system
-- https://github.com/salesforce-ux/design-system/tree/master/design-tokens
-  - https://www.lightningdesignsystem.com/design-tokens/
-  - Using the Lightning Design System markup and CSS framework results in UIs that reflect the Salesforce Lightning look and feel.
-- https://github.com/opentable/design-tokens
-  - https://opentable.github.io/design-tokens/
-  - A place where OpenTable engineers and designers openly work together
-  - store shared design attributes such as colors, fonts, widths, animations, etc.
-- https://github.com/kiwicom/orbit-design-tokens
-  - We use design tokens instead of static values like HEX codes for color or sizing units.
-- https://github.com/mineral-ui/mineral-ui/tree/master/packages/mineral-ui-tokens
-  - This package uses Theo to generate output in a variety of formats.
-- https://github.com/FirefoxUX/design-tokens
-  - A design token is an abstraction of a visual property such as color, font, width, animation, etc. 
-  - These raw values are language application agnostic and once transformed and formatted can be used on any platform.
-- https://github.com/infor-design/design-system/tree/master/design-tokens
-  - Design tokens are metadata about a visual design system.
-- https://github.com/envato/foundation-design-system-tokens
-  - Design Tokens for the Foundation Design System
-- https://github.com/Skyscanner/backpack/tree/master/packages/bpk-tokens
-  - Design tokens for colours, spacing, font, etc.
-- https://github.com/buildit/gravity-particles
-  - The "single source of truth" for design tokens and assets used throughout Buildit's Gravity design system
-- https://github.com/rei/rei-cedar-tokens
-  - https://rei.github.io/rei-cedar-docs/tokens/all-tokens/
-  - Tokens for cedar design system
-  - We follow the basic structure of style-dictionary with the exception being that our tokens don't follow the implicit `category-type-item` structure 
-    - and we abstract that into a separate `category` key
-- https://github.com/sproutsocial/seeds-packets
-  - https://seeds.sproutsocial.com/resources/tokens/
-  - the design tokens that power Sprout Social's design system
-- https://github.com/thumbtack/thumbprint-tokens
-  - https://thumbprint.design/tokens/scss/
-  - Thumbprint Tokens are published as JavaScript, SCSS, Swift, and Kotlin.
-
-## design-tokens-examples
-
-- https://github.com/kaelig/google-spreadsheets-theo-demo
-  - Design tokens, managed via Google Spreadsheets, generated using Theo
-  - todo 使用腾讯文档管理design tokens
-- https://github.com/dbanksdesign/style-dictionary-google-sheets
-  - This example is based on the google-spreadsheet-theo example
-  - You write your design tokens in a Google spreadsheet and then this will take that it and put it into Style Dictionary 
-
- 
-
-- https://github.com/component-driven/react-design-tokens
-  - React components to document design tokens in a styleguide
-
-- more
-  - [Figmagic — Design System template 4.0](https://www.figma.com/community/file/821094451476848226)
 
 ## style-dictionary
 
@@ -74,9 +17,27 @@ modified: '2020-11-13T07:30:23.361Z'
   - A style dictionary is a collection of style properties, key/value pairs that describe stylistic attributes like colors, sizes
   - A style dictionary defines these style properties in JSON files, and can also include static assets like images and fonts.
   - https://amzn.github.io/style-dictionary/#/architecture
-  - [feat: add support for !default in SCSS variables format](https://github.com/amzn/style-dictionary/pull/359)
   - [can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
     - You could write a custom format that does this too if you can't wait for that change to be made into the core library
+  - [Discussion: outputting files 1:1](https://github.com/amzn/style-dictionary/issues/251)
+    - Because of the way Style Dictionary works, by merging all source token files together first, there is no easy way to have a 1-to-1 mapping of source token file to build artifact. 
+    - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
+      - example of automatically generating 1:1 token files based on a custom filter.
+  - [Get ready for v3](https://amzn.github.io/style-dictionary/#/version_3)
+    - Transitive transforms is the big one that required a big re-architecture of how the Style Dictionary build process works.
+      - The new build process is similar, except that it recursively transforms and resolves aliases, only deferring a transform to the next cycle if the token has an unresolved alias. 
+      - **Use cases this change opens up**:
+      - Having variable references in outputs
+      - Combining values like using HSL for colors
+      - Modifying aliases like making a color lighter or darker
+    - Custom parser support
+      - The addition of custom parser support allows you to define your tokens in any language you like
+    - Adding filePath and isSource entries on tokens (help with debugging.)
+    - Typescript typings
+    - Formats
+      - Adding javascript/module-flat format that's just like the json/flat format, but exported as a cjs module
+    - todo
+      - Use ES6 where possible, Better log levels
 
  
 

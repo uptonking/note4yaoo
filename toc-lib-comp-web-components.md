@@ -41,7 +41,6 @@ modified: '2020-11-13T07:31:42.369Z'
   - https://github.com/adobe/coral-spectrum
     - A JavaScript library of Web Components following Spectrum design patterns.
     - Coral Spectrum derives from Custom Elements v1 with native support 
-    - https://github.com/adobe/spectrum-css
 - Calcite Design System /Esri 
   - https://github.com/Esri/calcite-components
   - /73Star/EsriMasterLic/202010/ts/web-comp/stencil

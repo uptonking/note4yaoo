@@ -78,6 +78,11 @@ modified: '2020-10-22T16:10:59.589Z'
 - 空白白白白
   - 数据分析专家，pointer创始人
   - https://www.zhihu.com/people/jiafeimao/activities
+- 张宏伦
+  - 数据分析与深度学习，腾讯算法研究员
+  - https://www.zhihu.com/people/zhang-hong-lun/posts
+  - https://github.com/Honlan
+  - 全栈数据工程师养成攻略、深度有趣
 - 花随花心
   - 商业智能数据分析师，花随花心
   - https://www.zhihu.com/people/huagongzi-vip4/answers

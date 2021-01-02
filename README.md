@@ -9,24 +9,25 @@ modified: '2020-12-21T08:01:27.245Z'
 
 - my daily notes and pieces  
 
-## note-categories
+## tags
 
-- `note-` : dev and learning notes about js, web, list, viz, java, geospatial
-- `web-`: notes dedicated to web dev
-- `viz-`: data viz notes
+- `note-` : dev and learning notes about libraries, frameworks, web, list, viz, java, geospatial...
+- `web-`: about web dev, layout, css-in-js...
+- `ux-`: design system and pattern
+- `viz-`: data viz
 - `docs-` : docs of good libraries or frameworks
-- `lib-`: usage of excellent libs or frameworks I loved
+- `lib-`: usage of excellent libraries and frameworks I loved
 - `tech-`： topics about technology and cs
 - `topic-` : topics about general topics
-- `wiki-` : about geo, history, law, fintech, etc.
+- `wiki-` : about geo, history, law, fintech...
 - `log-` : long term logging
 - `pick-`: dictionaries, posts, comments...
 - `page-` : excerpt from blogs
 - `read-` : reading books
 - `spec-` : specifications and formats
-- `toc-` : list of ...
-- `latest-` : interesting news 
+- `toc-` : list of libs, repos, examples...
+- `latest-` : news about dev and industry
 - `tool-` : xp of software, devices
-- other tags
-  - all, draft...
-  - cli, coding, lang, play, pm... 
+- more
+  - draft, tmpl, thread...
+  - cli, coding, lang, pm... 

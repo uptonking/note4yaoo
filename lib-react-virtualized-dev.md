@@ -22,7 +22,7 @@ modified: '2020-08-05T09:35:05.094Z'
 
 ## issues
 
-- [FlexTable - rowspan would be a nice to have feature](https://github.com/bvaughn/react-virtualized/issues/245)
+- [FlexTable - rowspan would be a nice-to-have feature](https://github.com/bvaughn/react-virtualized/issues/245)
   - I don't think the FlexTable interface has a meaningful way to accommodate a rowSpan attribute. 
   - With HTML tables, rowSpan and colSpan are specified on a `<td>` , but with react-virtualized, cell-rendering is managed by FlexTable itself in order to simplify the flexbox display properties. (That's actually the primary function of FlexTable - you could just use VirtualScroll if you want to manage the flexbox properties manually.)
   - Api aside, there are some additional complexities:

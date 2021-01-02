@@ -7,9 +7,8 @@ modified: '2020-12-21T07:44:14.728Z'
 
 # web-animation-blog
 
-## Animating Layouts with the FLIP Technique
+## [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
 
-- [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
 - Animation brings user interfaces to life. 
 - However, adding meaningful transitions and micro-interactions is often an afterthought, or something that is “nice to have” if time permits. 
 - All too often, we experience web apps that simply “jump” from view to view without giving the user time to process what just happened in the current context.

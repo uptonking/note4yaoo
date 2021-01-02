@@ -53,6 +53,12 @@ modified: '2020-07-14T09:28:43.976Z'
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
 
-## vanillajs
+## more-benchmarks
 
 - [textJust how much faster is vanilla JS than frameworks?_202008](https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/)
+
+- https://github.com/Polymer/benchmarks
+  - A collection of benchmarks related to Polymer Project libraries.
+  - For the runner used by these benchmarks, see tachometer
+  - Shack is a simplified subset of the Polymer Shop demo app, implemented for benchmarking purposes using lit-html, LitElement, and Polymer 3. 
+  - To compare the first-contentful-paint time for each of these implementations, 

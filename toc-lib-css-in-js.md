@@ -53,7 +53,8 @@ modified: '2020-09-25T05:56:32.022Z'
 - https://github.com/WalltoWall/calico
   - Calico is a customizable styling library that maps React props to statically generated class names.
   - 缺点是组件必须使用提供的Box组件创建
-  - 优点是预先生成所有css，使用原子类的形式，生成的样式名超级多，适合大规模应用，不适合小规模应用
+  - 优点是支持预先编译出所有css，使用原子类的形式，
+    - 但生成的样式名超级多，适合大规模应用，不适合小应用
   - 基于treat和react-treat，所有主题的样式均可静态提取
   - 通过styles属性直接书写theme对象中的属性值，通过类似`Button.treat.js`的treat file添加一次性的样式
   - Very light runtime made possible by the treat library.

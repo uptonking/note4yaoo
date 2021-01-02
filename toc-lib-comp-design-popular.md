@@ -39,7 +39,8 @@ modified: '2020-11-13T07:29:55.201Z'
     - 用了很多renderContainer的方法
   - https://github.com/material-components/material-components-web-components
     - /2.2kStar/Apache2/202009/ts/web-comp
-    - a collection of Web Components maintained by Google that implement Material Design
+    - a collection of Material Web Components maintained by Google
+    - 基于lit-element、lit-html实现
   - ref
     - https://github.com/prateekbh/preact-material-components
       - /531Star/MIT/202007/ts/deprecated

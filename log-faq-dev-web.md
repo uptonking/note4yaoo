@@ -29,6 +29,10 @@ modified: '2020-12-23T09:54:10.963Z'
 
 - bootstrap component vs react component
 
+- 哪些业务计算相关的代码适合放在前端，哪些适合放在服务端
+  - 读写文件：文本、图片、文档doc、表格
+  - 图表绘
+
 ## hide dom elements: visibility vs display
 
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.

@@ -24,3 +24,9 @@ modified: '2020-11-13T07:33:43.521Z'
   - 1.8kStar/BSD/202010/ts
   - React's Hooks API but for standard web components and lit-html or hyperHTML.
   - If you are using lighterhtml or hyperHTML then instead import haunted/core
+  - Haunted is all about writing plain functions that can contain their own state.
+    - creating components (the functions) and using hooks to manage state.
+
+- https://github.com/reactive-elements/reactive-elements
+  - /700Star/MIT/201908
+  - Allows to use React.js component as HTML element (web component)

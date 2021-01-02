@@ -24,3 +24,5 @@ modified: '2020-12-29T11:27:41.474Z'
   - /商务风格/theming-蓝白色
 - https://www.emd.design/
   - /theming-绿色+紫色
+- https://opendata.swiss/en/
+  - /theming-绿色+黑白

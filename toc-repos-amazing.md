@@ -7,17 +7,21 @@ modified: '2020-11-03T06:54:59.051Z'
 
 # toc-repos-amazing
 
-## amazing
+## amazing-ux-viz
+
+- https://github.com/zerosoul/chinese-colors
+  - https://colors.ichuantong.cn/
+  - 中国传统颜色在线手册
 
 - https://apocalyptic.netlify.app/
   - js实现边下雨、边电闪雷鸣的效果
 
-- https://github.com/rrweb-io/rrweb
-  - /7.6kStar/MIT/202009/ts
-  - a tool for recording and replaying users' interactions on the web
-  - 录制回放web操作的架构：rrweb、rrweb-player、extensions
-  - 回放时，页面动态显示的是dom元素，不是图片视频
-  - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
+- https://github.com/zumbov2/votemapswitzerland
+  - a version of the famous visualization, 'Land doesn't vote, people do.'
+  - 使用R实现，效果像分级统计地图通过颗粒动画变成散点图的形式
+  - https://twitter.com/DavidZumbach/status/1344547411985911808
+
+## amazing-tools
 
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
@@ -27,26 +31,24 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://wy-lang.org/
   - 文言文編程語言 A programming language for the ancient Chinese.
 
-- https://github.com/Esri/wind-js
-  - http://esri.github.io/wind-js/
-  - An demo animation of wind on a Canvas layer in the JSAPI
-  - The code for this project uses nothing but an HTML5 Canvas element and pure Javascript.
-
 - UI Playbook /507Star/MIT/202010/ts
   - https://github.com/raunofreiberg/ui-playbook
   - https://uiplaybook.dev/
   - document common UI components, their functionality, best practices, accessibility requirements, and examples.
 
 - https://github.com/sindresorhus/css-in-readme-like-wat
-  - Style your readme using CSS with this simple trick
+  - Style your readme using CSS trick, 一行文字会以中点为中心上下摇晃
   - https://github.com/nearbycoder
   - https://github.com/timoschwarzer
 
-- https://github.com/zerosoul/chinese-colors
-  - https://colors.ichuantong.cn/
-  - 中国传统颜色在线手册
+- https://github.com/rrweb-io/rrweb
+  - /7.6kStar/MIT/202009/ts
+  - a tool for recording and replaying users' interactions on the web
+  - 录制回放web操作的架构：rrweb、rrweb-player、extensions
+  - 回放时，页面动态显示的是dom元素，不是图片视频
+  - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
 
-## cool
+## nice
 
 - https://github.com/kamranahmedse/driver.js
   - /11.7kStar/MIT/202003
@@ -61,6 +63,11 @@ modified: '2020-11-03T06:54:59.051Z'
   - An isometric city builder in JavaScript
 
 ## geo-viz
+
+- https://github.com/Esri/wind-js
+  - http://esri.github.io/wind-js/
+  - An demo animation of wind on a Canvas layer in the JSAPI
+  - The code for this project uses nothing but an HTML5 Canvas element and pure Javascript.
 
 - https://github.com/darkskyapp/delaunay-fast
   - Fast Delaunay Triangulation in JavaScript.

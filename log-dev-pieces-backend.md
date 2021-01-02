@@ -7,6 +7,8 @@ modified: '2020-07-14T09:29:55.789Z'
 
 # log-dev-pieces-backend
 
+- about crud, rpc, database
+
 ## logging
 
  
