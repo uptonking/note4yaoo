@@ -47,6 +47,12 @@ modified: '2020-12-08T13:17:30.798Z'
   - defaultViewMode/defaultEditMode
   - indentationSpace
 
+## xp
+
+- nice-to-have
+  - 该多用一级标题`#`来减少嵌套，与最顶部一级标题作为文档标题并不冲突
+    - 可能不符合阅读习惯，比如word中顶部一级标题常用最大号，此处渲染可用代码修改
+
 ## requirements
 
 - io模块

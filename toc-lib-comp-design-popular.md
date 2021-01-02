@@ -11,10 +11,10 @@ modified: '2020-11-13T07:29:55.201Z'
 
 - guide
   - design-tokens(推荐styled-dictionary)
-    - polaris,fluid
+    - polaris,fluid,官方examples
   - theming(推荐css vars)
     - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
-    - 切换theme基于修改同名css vars的值，具体实现可以是添加包含这些css vars的类名
+    - 切换theme基于修改同名css vars的值，具体可以是切换包含这些css vars的类名
   - vanillajs组件的实现(推荐实现为一个单独的包)
     - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
   - react组件(推荐hooks)
@@ -240,7 +240,7 @@ modified: '2020-11-13T07:29:55.201Z'
       - Hooks that provides cross-platform state management
   - https://github.com/adobe/spectrum-css
     - /744Star/Apache2/202010
-    - theming基于css vars，能覆盖color和size
+    - theming基于css vars，能覆盖color和size，支持全局级和组件级
       - 预置了多套主题lightest/darkest/midlight/middark
         - 每个主题css文件内容全是颜色变量，但其他文件也涉及尺寸变量
       - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高

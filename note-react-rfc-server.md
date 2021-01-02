@@ -9,7 +9,7 @@ modified: '2020-12-22T14:08:27.952Z'
 
 ## react server components
 
-### guide
+## guide
 
 - RSC优点
   - 将数据请求频繁的组件和计算仅放在服务端执行，减轻客户端压力
@@ -43,61 +43,69 @@ modified: '2020-12-22T14:08:27.952Z'
   - ssr渲染到html是同步的，渲染时不能取数
     - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
 
-### discuss
+## discuss
 
-- I want to recap a few points from our talk about the different kinds of components.
-  - https://twitter.com/dan_abramov/status/1342260256638951425
-  - Server Components are the new proposed kind of components. 
-    - They execute on the server, and on the server only. 
-    - They have the `.server.js` extension. 
-    - They can access the backend resources directly (e.g. database, filesystem, internal API services). 
-    - They cannot use state or effects.
-  - Client Components are the regular components you’re already familiar with. 
-    - They primarily execute on the client (but also during first render to HTML). 
-    - They have the `.client.js` extension. 
-    - They may use state or effects, but cannot access the backend resources (e.g. databases etc).
-  - We’ve found that many components only contain some logic to transform data, and don’t actually use either state/effects or backend resources. 
-    - This means they could run anywhere — server or client. 
-    - We’re calling them Shared Components, 
-    - and they stay as regular `.js` files.
-    - You can think of a Shared Component as being in a different role depending on what imports it. 
-      - If it’s imported from a Server Component, it acts as a Server Component itself. 
-      - If it’s imported from a Client Component, then that’s the role that it takes. 
-      - You can use it either way.
-  - There are no limitations on the props of Server Components or props of Client Components per se(本身, itself). 
-    - In both cases we’re dealing with regular React top-down data flow, and we can pass anything. 
-    - But props passed *from Server to Client* must be serializable. They cross the network.
-  - There are also no limitations on what can be nested inside of what. 
-    - Both types can be interleaved as much as you want. 
-    - The limitation is only on *imports*:
-    1. Server can import either Server or Client components.
-    2. Client can only import other Client components.
-    - Server importing Server, and Client importing Client are regular imports that work as you’d expect. Nothing special about them.
-    - Server importing Client is the special one. 
-      - Under the hood, the bundling integration turns that import into an instruction to load that Client module.
-    - Although Client Components can’t import Server ones, they can still be composed together from a *parent* Server one. Because Server can import both types.
-  - You can read it in detail in the RFC. 
-    - All of this will make it into the docs when the feature is stable
-  - let me also briefly summarize the difference between Server Components and traditional SSR (“server rendering” — might have to refer to it differently in the future to help prevent this confusion).
-    - In React, traditional SSR only produces an initial HTML snapshot of the page. 
-      - If you use it, it only runs once before the page loads, and then you still have to download all the JS code before your app can respond to interactions.
-    - Server Components, by contrast, use a richer format than HTML which can (and should — for the first render!) be translated to HTML, 
-      - but can *also* be refetched. 
-      - This format lets us avoid destroying client state on refetch, as would happen if you replace HTML in a running app.
-    - Also, with traditional React SSR, the rendering to HTML is synchronous. 
-      - This means your components cannot load data on the server. 
-      - There are various workarounds (such as a “prepass” that tries to render components once before the SSR) but they’re not ideal or idiomatic
-    - By contrast, Server Components have built-in support for asynchronous data fetching.
-      - This means that you can fetch data inside of them, on the server, and not just at the top level of the tree, but at any depth. 
-      - And thanks to streaming, you don’t have to wait for the whole tree.
-    - Now, I’m comparing them but really they’re complementary. 
-      - Server Components are the mechanism that lets you do data fetching and run some logic without shipping it to the client at all. 
-      - Rendering to HTML is still a useful optimization on top for the first render before JS loads!
-  - discussion
-    - It's hot module replacement, but in production.
-      - And it's not a dev triggering the reload but a machine, the server.
+- ### I want to recap a few points from our talk about the different kinds of components.
+- https://twitter.com/dan_abramov/status/1342260256638951425
+- Server Components are the new proposed kind of components. 
+  - They execute on the server, and on the server only. 
+  - They have the `.server.js` extension. 
+  - They can access the backend resources directly (e.g. database, filesystem, internal API services). 
+  - They cannot use state or effects.
+- Client Components are the regular components you’re already familiar with. 
+  - They primarily execute on the client (but also during first render to HTML). 
+  - They have the `.client.js` extension. 
+  - They may use state or effects, but cannot access the backend resources (e.g. databases etc).
+- We’ve found that many components only contain some logic to transform data, and don’t actually use either state/effects or backend resources. 
+  - This means they could run anywhere — server or client. 
+  - We’re calling them Shared Components, 
+  - and they stay as regular `.js` files.
+  - You can think of a Shared Component as being in a different role depending on what imports it. 
+    - If it’s imported from a Server Component, it acts as a Server Component itself. 
+    - If it’s imported from a Client Component, then that’s the role that it takes. 
+    - You can use it either way.
+- There are no limitations on the props of Server Components or props of Client Components per se(本身, itself). 
+  - In both cases we’re dealing with regular React top-down data flow, and we can pass anything. 
+  - But props passed *from Server to Client* must be serializable. They cross the network.
+- There are also no limitations on what can be nested inside of what. 
+  - Both types can be interleaved as much as you want. 
+  - The limitation is only on *imports*:
+  1. Server can import either Server or Client components.
+  2. Client can only import other Client components.
+  - Server importing Server, and Client importing Client are regular imports that work as you’d expect. Nothing special about them.
+  - Server importing Client is the special one. 
+    - Under the hood, the bundling integration turns that import into an instruction to load that Client module.
+  - Although Client Components can’t import Server ones, they can still be composed together from a *parent* Server one. Because Server can import both types.
+- You can read it in detail in the RFC. 
+  - All of this will make it into the docs when the feature is stable
+- let me also briefly summarize the difference between Server Components and traditional SSR (“server rendering” — might have to refer to it differently in the future to help prevent this confusion).
+  - In React, traditional SSR only produces an initial HTML snapshot of the page. 
+    - If you use it, it only runs once before the page loads, and then you still have to download all the JS code before your app can respond to interactions.
+  - Server Components, by contrast, use a richer format than HTML which can (and should — for the first render!) be translated to HTML, 
+    - but can *also* be refetched. 
+    - This format lets us avoid destroying client state on refetch, as would happen if you replace HTML in a running app.
+  - Also, with traditional React SSR, the rendering to HTML is synchronous. 
+    - This means your components cannot load data on the server. 
+    - There are various workarounds (such as a “prepass” that tries to render components once before the SSR) but they’re not ideal or idiomatic
+  - By contrast, Server Components have built-in support for asynchronous data fetching.
+    - This means that you can fetch data inside of them, on the server, and not just at the top level of the tree, but at any depth. 
+    - And thanks to streaming, you don’t have to wait for the whole tree.
+  - Now, I’m comparing them but really they’re complementary. 
+    - Server Components are the mechanism that lets you do data fetching and run some logic without shipping it to the client at all. 
+    - Rendering to HTML is still a useful optimization on top for the first render before JS loads!
+- discussion
+  - It's hot module replacement, but in production.
+    - And it's not a dev triggering the reload but a machine, the server.
 
-### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
+- ### New video: React Server Components(with Next.js Demo)
+- https://twitter.com/leeerob/status/1344741266135912458
+  - https://github.com/vercel/next-server-components
+  - How is this different from PHP/Rails?
+  - How is this different from SSR?
+  - Why Hybrid Applications?
+  - React Suspense and Concurrent Mode
+
+- ### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
 
 - 业务开发中需要权衡三个点：体验（user experience）、可维护性（maintenance）、性能（performance）
   - 这是一个很常见的组件化组合的场景，问题在于每个组件都需要不同的数据，
@@ -260,7 +268,7 @@ modified: '2020-12-22T14:08:27.952Z'
 - 感觉就是Suspense和lazyload的云端实现，
   - lazy load 已经是lazy了，那这个component 是从本地引入的还是云端的，就没有什么太大的区别了。
 
-### [faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
+## [rsc faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
 
 - not-yet
   - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender如何实现，性能如何
@@ -518,7 +526,12 @@ function Note(props) {
 
 ## pieces
 
-- What do React Server Components mean for the ecosystem and frameworks like Next.js?(from vercel dev)
+- Cool, React can now do what PHP has been able to for decades.
+  - PHP is definitely an inspiration, but there are a few different nuances:
+    - Being able to *refetch* a Server tree without blowing away the Client state inside of it.
+    - Being able to choose to run the same component on the server *or* on the client (for fast interactions).
+
+- ### What do React Server Components mean for the ecosystem and frameworks like Next.js?(from vercel dev)
   - https://twitter.com/leeerob/status/1341818958794657795
   - Server Components reduce client bundle size and improve startup time. 
     - Since they run on the server, you can access data sources like databases and file systems directly.

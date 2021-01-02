@@ -81,3 +81,27 @@ modified: '2020-11-19T12:43:25.788Z'
   - The custom element acts as a wrapper for the underlying react component.
 
 ## more-react
+
+- https://github.com/lelandrichardson/react-primitives
+  - This library attempts to propose an ideal set of primitives around building React applications, regardless of Platform. 
+  - 我认为吧，具体框架的组件模型不同，样式书写方式也不相同，
+    - 此种形式虽然书写样式值简单了，但样式编译输出的耦合度过高，复用性不高
+
+``` JS
+import React from "react";
+import { View, Text, Image, StyleSheet } from "react-primitives";
+
+class Foo extends React.Component {
+  render() {
+    return <View style={styles.foo}>{this.props.children}</View>;
+  }
+}
+
+const styles = StyleSheet.create({
+  foo: {
+    width: 100,
+    height: 100,
+    backgroundColor: "#ff00ff"
+  }
+});
+```

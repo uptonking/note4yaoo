@@ -26,11 +26,23 @@ modified: '2021-01-01T20:09:10.218Z'
   - https://github.com/sturobson/Awesome-Design-Tokens
     - A list of repos that contain a companies' Design Tokens
 
-- design-tools
+- 常用设计工具 design-tools
   - Figma
   - AdobeXD
+  - Sketch
   - Canva
   - 稿定设计
+- 使用设计工具生成design tokens的优点
+  - 不用写代码，拖拽设计即可完成
+  - 方便测试与分享
+- 使用设计工具生成design tokens的缺点
+  - 没有统一标准，经常面临选择问题
+  - 有的插件只生成一个大tokens文件，有的可按自己分类生成多个
+  - 用什么属性名，用什么属性值类型，该支持哪些类别的属性
+  - 结论是**不推荐**使用拖拽搭建工具生成项目要用的中间配置属性数据
+    - 具体业务场景对灵活性要求过高，频繁修改自动生成的代码太繁琐
+    - 若工具生成的代码是最终要用的，则可考虑使用工具
+    - 若工具生成的代码是中间代码，之后会基于中间代码解析转换，则慎用，多考虑
 
 - https://github.com/system-ui/theme-specification
   - The theme object is intended to be a general purpose format for storing design system style values, scales, and/or design tokens.

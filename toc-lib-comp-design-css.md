@@ -42,12 +42,13 @@ modified: '2020-11-13T07:28:50.844Z'
 - pico.css /65Star/MIT/202010/scss/文档优秀
   - https://github.com/picocss/pico
   - https://picocss.com/
-  - theming通过添加`data-theme`+css vars到html标签实现
+  - theming通过添加`data-theme` + css vars到html标签实现
     - theming只处理了颜色
+    - 最顶层处理了 `prefers-color-scheme: dark`
   - Graceful & Minimal CSS design system in pure semantic HTML
   - use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
   - No dependencies, package manager, external files or JavaScript.
-  - Responsive everything: Elegant and consistent adaptatives spacings and typography on all devices.
+  - Responsive everything: Elegant and consistent adaptative spacings and typography on all devices.
   - Shipped with two beautiful color themes, automatically enabled according to the user preference.
   - Pico provide a .classless version ([Example](https://picocss.com/examples/classless/)).
     - `<header>/<main>/<footer>` as direct childs of `<body>` provide a responsive vertical `padding`

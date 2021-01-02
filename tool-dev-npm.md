@@ -35,6 +35,35 @@ modified: '2020-12-08T14:05:52.048Z'
 - package.json中scripts的循环命令如`"dev": "npm run dev"`会如何执行
   - 控制台不停打印npm run dev，然后陷入死循环
 
+- [如何在本地调试npm包](https://github.com/allenGKC/Blog/issues/13)
+  - 示例： 在 my-project 项目中测试本地的 allen-npm-util 包
+
+``` 
+
+|-- project
+    |-- my-project
+        | -- package.json
+    |-- test-npm-util
+
+方法1: 使用相对路径安装test-npm-util测试
+
+cd my-project
+npm install ../test-npm-util
+
+方法2: 使用 npm link 连接到全局测试
+
+cd test-npm-util
+npm link
+
+cd my-project
+npm link test-npm-util
+
+测试完取消
+cd test-npm-util
+npm unlink
+
+```
+
 ## package.json
 
 - 关于main-module

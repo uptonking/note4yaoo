@@ -7,6 +7,25 @@ modified: '2020-07-14T09:30:54.711Z'
 
 # log-weekly
 
+# 2021
+
+## w0125-0131
+
+## w0118-0124
+
+## w0111-0117
+
+## w0104-0110
+
+## w1228-0103
+
+- dev: grand garden css fast and dirty
+- eg: style-dictionary features
+  - css vars
+  - theming
+- eg: figma plugin for style-dictionary
+- eg: theming with css
+
 # 2020
 
 ## w1221-1227

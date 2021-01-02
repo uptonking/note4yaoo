@@ -58,15 +58,21 @@ modified: '2020-12-29T17:45:15.518Z'
 
 ## github-pkg-npm
 
-- 读取一个package的所有dependencies，查询下载量后排序
-  - https://github.com/pkgjs/dependents
-- 查看依赖某个package的包
+- 查看依赖某个package的所有包
   - https://www.npmjs.com/browse/depended/redux
 - [most depended upon packages](https://www.npmjs.com/browse/depended)
   - lodash, react, chalk, request, moment, express, axios, debug, bluebird
   - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
   - redux, styled-components, ramda, jest, socket.io, redis, chokidar
   - deepmerge, date-fns, marked, isomorphic-fetch
+
+- 查看某个作者的所有包
+  - https://www.npmjs.com/~tannerlinsley
+- 查看某个组织的所有包
+  - https://www.npmjs.com/org/spectrum-css
+
+- 读取某个package的所有dependencies，查询下载量后排序
+  - https://github.com/pkgjs/dependents
 
 ## github-powered-apps
 

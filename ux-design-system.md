@@ -53,8 +53,7 @@ modified: '2021-01-01T20:08:28.033Z'
 
 ## ref
 
-- https://www.learnstorybook.com/design-systems-for-developers/
-  - how to transform component libraries into design systems
+- [storybook tutorial: how to transform component libraries into design systems](https://www.learnstorybook.com/design-systems-for-developers/)
 - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system
 - [Pattern Lab](https://patternlab.io/) /inactive
   - Pattern Lab is a frontend workshop environment that helps you build, view, test, and showcase your design system's UI components.

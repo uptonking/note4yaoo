@@ -7,6 +7,38 @@ modified: '2021-01-01T22:09:59.545Z'
 
 # toc-lib-comp-design-tokens
 
+## style-dictionary-examples
+
+- [Fluid Design System Design Tokens Intro](https://www.engie.design/fluid-design-system/design-tokens/)
+  - We introduce Design Tokens thanks to style-dictionary.
+  - Variable naming convention follows CTI (Category/Type/Item) structure.
+  - CSS4 variable tokens, 
+  - JSON tokens, CSS4 variable SASS support, FIGMA tokens
+- https://github.com/infor-design/design-system
+  - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
+  - 实现了theming，一个主题最后输出成1个大文件，全是css变量
+- https://github.com/AlaskaAirlines/AuroDesignTokens
+  - Abstract UI atomic values to support the Auro Design System.
+  - 未实现theming
+- https://github.com/didoo/style-dictionary-demo
+  - demonstration of a (possible) setup of Style Dictionary for the generation of design tokens. 
+  - It's been created as a companion to a Medium article that I have written to share my experience in setting up Style Dictionary for our Cosmos Design System in Badoo.
+- https://github.com/ivandata/another-way-to-create-themes
+  - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
+- https://github.com/lyne-design-system/lyne-design-tokens
+  - Design Tokens for Lyne Design System
+  - 样式编译根据模版文件 web-scss.template, commonjs.template
+  - https://github.com/lyne-design-system/lyne-components
+    - based on standard compliant Web Components compiled by StencilJS
+
+- more-tokens-repos
+  - https://github.com/natura-cosmeticos/natds-commons/tree/master/packages/natds-themes
+
+- more-tokens-npm
+  - https://www.npmjs.com/package/@mozaic-ds/tokens
+  - https://www.npmjs.com/package/@inmotionnow/momentum-tokens
+  - https://www.npmjs.com/package/@tiendanube/design-tokens-nimbus
+
 ## style-dictionary-tools
 
 - https://github.com/amzn/style-dictionary
@@ -14,31 +46,6 @@ modified: '2021-01-01T22:09:59.545Z'
   - 支持编译输出ios的.h文件、android的.xml文件、web的.scss文件
   - 优点在于属性值能够方便地以cascade层次覆盖
   - use design tokens to define styles once and use those styles on any platform or language. 
-  - A style dictionary is a collection of style properties, key/value pairs that describe stylistic attributes like colors, sizes
-  - A style dictionary defines these style properties in JSON files, and can also include static assets like images and fonts.
-  - https://amzn.github.io/style-dictionary/#/architecture
-  - [can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
-    - You could write a custom format that does this too if you can't wait for that change to be made into the core library
-  - [Discussion: outputting files 1:1](https://github.com/amzn/style-dictionary/issues/251)
-    - Because of the way Style Dictionary works, by merging all source token files together first, there is no easy way to have a 1-to-1 mapping of source token file to build artifact. 
-    - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
-      - example of automatically generating 1:1 token files based on a custom filter.
-  - [Get ready for v3](https://amzn.github.io/  style-dictionary/#/version_3)
-    - Transitive transforms is the big one that required a big re-architecture of how the Style Dictionary build process works.
-      - The new build process is similar, except that it recursively transforms and resolves aliases, only deferring a transform to the next cycle if the token has an unresolved alias. 
-      - **Use cases this change opens up**:
-      - Having variable references in outputs
-      - Combining values like using HSL for colors
-      - Modifying aliases like making a color lighter or darker
-    - Custom parser support
-      - The addition of custom parser support allows you to define your tokens in any language you like
-    - Adding filePath and isSource entries on tokens (help with debugging.)
-    - Typescript typings
-    - Formats
-      - Adding javascript/module-flat format that's just like the json/flat format, but exported as a cjs module
-    - todo
-      - Use ES6 where possible, Better log levels
-  - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
 
 - https://github.com/bem/themekit
   - /42Star/MPL2/202011
@@ -55,41 +62,6 @@ modified: '2021-01-01T22:09:59.545Z'
 - https://github.com/lukasoppermann/design-tokens
   - Figma plugin to export design tokens to json in an amazon style dictionary compatible format.
   - https://github.com/lukasoppermann/design-token-transformer
-
-## style-dictionary-examples
-
-- https://github.com/infor-design/design-system/tree/master/design-tokens
-  - Design tokens are metadata about a visual design system.
-- https://github.com/AlaskaAirlines/AuroDesignTokens
-  - Abstract UI atomic values to support the Auro Design System.
-  - 未实现theming
-- [Fluid Design System Design Tokens](https://www.engie.design/fluid-design-system/design-tokens/)
-  - We introduce Design Tokens thanks to style-dictionary.
-  - Variable naming convention follows CTI (Category / Type / Item) structure.
-  - CSS4 variable tokens, 
-  - JSON tokens, CSS4 variable SASS support, FIGMA tokens
-- https://github.com/didoo/style-dictionary-demo
-  - demonstration of a (possible) setup of Style Dictionary for the generation of design tokens. 
-  - It's been created as a companion to a Medium article that I have written to share my experience in setting up Style Dictionary for our Cosmos Design System in Badoo.
-  - https://github.com/exanic/cosmos-style-dictionary
-    - This example code is bare-bones to show you what this framework can do. 
-- https://github.com/karlyanelson/style-dictionary-demo
-  - This example code is bare-bones to show you what this framework can do.
-- https://github.com/ivandata/another-way-to-create-themes
-  - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
-- https://github.com/lyne-design-system/lyne-design-tokens
-  - Design Tokens for Lyne Design System
-  - 样式编译根据模版文件 web-scss.template, commonjs.template
-  - https://github.com/lyne-design-system/lyne-components
-    - based on standard compliant Web Components compiled by StencilJS
-
-- more-tokens-repos
-  - https://github.com/natura-cosmeticos/natds-commons/tree/master/packages/natds-themes
-
-- more-tokens-npm
-  - https://www.npmjs.com/package/@mozaic-ds/tokens
-  - https://www.npmjs.com/package/@inmotionnow/momentum-tokens
-  - https://www.npmjs.com/package/@tiendanube/design-tokens-nimbus
 
 ## design-tokens-tools
 
