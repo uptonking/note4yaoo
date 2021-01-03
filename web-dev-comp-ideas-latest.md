@@ -7,7 +7,7 @@ modified: '2020-12-27T20:29:55.568Z'
 
 # web-dev-comp-ideas-latest
 
-## latest
+# latest
 
 - 组件库研发方向及特色
   - 每个大公司都有自己的设计系统与组件库
@@ -20,7 +20,7 @@ modified: '2020-12-27T20:29:55.568Z'
     - 开发者用户可在不同框架的项目中使用组件，因为原作者维护了多个port/bridge
       - 最理想的状态是
   - **themeable**
-    - follow the [Theme Specification](https://system-ui.com/theme)
+    - follow the [Theme Specification](https://system-ui.com/theme/)
     - 全局theme，组件级theme
     - dark mode
     - 基于css vars实现theming，因为修改外层css无法影响shadow dom内的样式
@@ -88,7 +88,7 @@ modified: '2020-12-27T20:29:55.568Z'
   - 状态数据的存储与更新
   - 事件发布与订阅
 
-## ideas
+# ideas
 
 - ComponentPreview
   - 组件的快速预览图，不需要交互事件
@@ -96,7 +96,7 @@ modified: '2020-12-27T20:29:55.568Z'
 
 - [UI Component Best Practices](https://github.com/chris-pearce/ui-component-best-practices)
 
-### [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
+## [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
 
 - Design Tokens
 - Modular Scales
@@ -114,4 +114,4 @@ modified: '2020-12-27T20:29:55.568Z'
 - Variants
 - Extending the library
 
-## discuss
+# discuss

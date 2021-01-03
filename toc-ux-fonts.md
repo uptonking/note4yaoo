@@ -7,18 +7,37 @@ modified: '2020-07-17T10:54:16.341Z'
 
 # toc-ux-fonts
 
+## discuss
+
+- ### How to get the fastest web fonts (Updated 2021)
+- https://twitter.com/leeerob/status/1345554813375938561
+  - Use a variable font 
+    - Variable fonts allow you to combine multiple styles and weights (e.g. bold, italic) into a single font file.
+  - Preload your font file
+    - The browser assigns loading priorities to different types of resources. 
+    - You can influence which resources are most important by preloading critical assets.
+    - `<link rel="preload" href="fonts/inter-var.woff2" />`
+  - Self-host instead of Google Fonts
+    - Since 202010, Chrome no longer allows a shared cache across sites (Safari has worked this way since 2013).
+    - Then, you can control caching and add `immutable`.
+    - e.g. `Cache-Control: immutable, max-age=31536000`
+  - Use `font-display: optional` to prevent layout shift
+    - Most browsers have a default strategy similar to `font-display: block`. 
+    - The only option that prevents layout shift is `optional` (including FOUT and FOIT).
+    - Supported by all modern browsers.
+
 ## fonts
 
 - free
   - catalog
-      - http://zenozeng.github.io/Free-Chinese-Fonts/
-      - https://www.zhihu.com/question/19727859
+    - http://zenozeng.github.io/Free-Chinese-Fonts/
+    - https://www.zhihu.com/question/19727859
   - Source Han Sans
-      - https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese
-          - https://github.com/adobe-fonts/source-han-sans
-      - SIL Open Font License
-      - the Source Han Sans and Noto Sans CJK typeface families are mechanically identical
-          - https://github.com/adobe-fonts/source-han-sans/issues/122
+    - https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese
+      - https://github.com/adobe-fonts/source-han-sans
+    - SIL Open Font License
+    - the Source Han Sans and Noto Sans CJK typeface families are mechanically identical
+      - https://github.com/adobe-fonts/source-han-sans/issues/122
   - Adobe's open source family
       - source code pro
       - source sans pro

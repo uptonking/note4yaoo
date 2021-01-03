@@ -7,7 +7,13 @@ modified: '2021-01-01T20:08:55.833Z'
 
 # ux-design-theming
 
-## faq
+# faq
+
+- 是否该用工具除了自动生成design tokens外，还要自动生成所有组件的样式？
+  - 若自动生成组件样式
+    - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
+  - 若手写各个组件的样式
+    - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
 
 - 切换theme的方案：下载和重渲染 vs 切换类名和重渲染
   - 动态下载css + 解析成CSSOM + 渲染 vs 切换类名 + 渲染
@@ -24,7 +30,7 @@ modified: '2021-01-01T20:08:55.833Z'
   - theme-ui给出的方案是前者，使用带约束的样式值
   - 使用css vars可以方便低成本实现theming，同时支持全局级和组件级的theming
 
-## guide
+# guide
 
 - 切换不同主题名的实现
   - 添加到`<body>`上，因为第3方工具库经常添加到`<html>`
@@ -75,7 +81,11 @@ modified: '2021-01-01T20:08:55.833Z'
   - facebook-design
   - ant-design
 
-## pieces
+- theming的约束值与灵活性
+  - 要折中考虑
+  - 不让用户选择任意颜色，因为难以保持良好的文字对比度、代码高亮自动切换
+
+# pieces
 
 - 用js动态生成style节点`document.createElement('style')`
 - 一般不都是在最外层加上主题类名，里面的颜色都用颜色变量么
@@ -88,7 +98,7 @@ modified: '2021-01-01T20:08:55.833Z'
   - By default the base colors are picked up by other components using Styled System.
   - The root layout component uses React state to cycle through the different color modes and creates a new theme object based on state. 
 
-## discuss
+# discuss
 
 - ### [UI 框架的主题色一般怎么实现的？](https://www.zhihu.com/question/66734943)
 - 要在客户端动态切换主题颜色，要做的无非是两点：
@@ -118,7 +128,7 @@ modified: '2021-01-01T20:08:55.833Z'
   - 我们依然保持在样式文件中建立映射，但将不同颜色的关系定义进行外置，移到客户端进行计算。
   - 使用类似 Less.js 在浏览器动态生成 CSS 的方式进行切换，但将代价最小化，保持整体逻辑的简单、加载时间不会太久。
 
-- ### [HeyUI组件库 | 如何实现在线切换主题](https://zhuanlan.zhihu.com/p/48733695)
+- ## [HeyUI组件库 | 如何实现在线切换主题](https://zhuanlan.zhihu.com/p/48733695)
 - 吐槽antd，随便切换什么颜色都很卡，因为没有确认按钮，所以随便调一个小颜色，也会重新渲染
   - antd的换主题比较卡，是因为在线编译 less，所以速度很慢很卡，而且 antd 是不要服务端的
 - HEYUI固定4个主题方案，这样就可以免了后端的服务以及前端渲染的卡顿。
@@ -143,7 +153,7 @@ dynamicLoadCss(type) {
 }
 ```
 
-- ### We really should stop using React Context for theming libraries when CSS Variables:
+- ## We really should stop using React Context for theming libraries when CSS Variables:
   - https://twitter.com/buildsghost/status/1251569049940537345
     - Are capable of everything you need for theming purposes
     - Can just as easily be the underlying implementation detail of these libraries instead of React Context
@@ -151,7 +161,7 @@ dynamicLoadCss(type) {
   - CSS-in-JS libraries have become Very Fast (enough at least). 
     - But the CSS-in-JS theming libraries that everyone is using have not.
 
-- ### Who's using css variables for theming (like for dark mode) in your app? 
+- ## Who's using css variables for theming (like for dark mode) in your app? 
   - https://twitter.com/kentcdodds/status/1321884235527942144
     - I'm interested in seeing different approaches to this. 
     - Changing a class on body seems like the "obvious" solution, but I'm curious if anyone's doing anything different.
@@ -160,7 +170,7 @@ dynamicLoadCss(type) {
   - I went with CSS variables for theming (dark and light mode) combined with both CSS media queries and classes applied to the `body` element for overriding the media query preference.
   - Css variables + class on body + local-storage
 
-- ### Note that GitHub is taking the same path we did at Stack Overflow, the theming is using CSS 3 variables.
+- ## Note that GitHub is taking the same path we did at Stack Overflow, the theming is using CSS 3 variables.
   - https://twitter.com/Nick_Craver/status/1336373328613879810
     - So overall, it's not light/dark mode...but VERY easy to theme in general now. T
     - his allows for high contrast, etc. themes far, far easier.

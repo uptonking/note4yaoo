@@ -1,11 +1,11 @@
 ---
-title: ux-design-system-popular
-tags: [design-system, ux]
+title: ux-design-system-codebase
+tags: [codebase, design-system, ux]
 created: '2021-01-02T22:26:48.350Z'
-modified: '2021-01-02T22:27:01.320Z'
+modified: '2021-01-03T17:11:03.150Z'
 ---
 
-# ux-design-system-popular
+# ux-design-system-codebase
 
 # adobe spectrum
 
@@ -34,7 +34,7 @@ modified: '2021-01-02T22:27:01.320Z'
   - Use of these props should be considered a last resort.
   - They can be used to work around bugs or limitations in React Spectrum
 
-### theming
+## theming
 
 - Colors, sizing, and spacing options can be customized through the use of CSS variables which are defined using the `Provider` component. 
   - Themes consist of variable definitions for light and dark color schemes, along with medium and large platform scales. 
@@ -50,7 +50,7 @@ modified: '2021-01-02T22:27:01.320Z'
   - The darkTheme uses the Spectrum dark and darkest color themes
   - The lightTheme uses the Spectrum lightest and darkest color themes
 
-### layout
+## layout
 
 - The Flex and Grid components are containers, which are responsible for the layout of their children. 
   - Flex follows the CSS flexbox algorithm, while Grid implements CSS grid
@@ -62,7 +62,7 @@ modified: '2021-01-02T22:27:01.320Z'
   - Slots are named areas in a component that receive children and provide style and layout for them. 
   - This often occurs automatically through the use of semantic elements like Header, Content, and Footer, which include default slots out of the box.
 
-### discuss
+## discuss
 
 - [Implementing Spectrum: Getting Organizational Buy-In on Design Systems_201809](https://xd.adobe.com/ideas/principles/design-systems/implementing-spectrum-how-adobe-is-coming-together-to-build-a-new-design-system/)
   - When design values aren’t connected to a single source of truth, implementations quickly become misaligned.

@@ -7,7 +7,7 @@ modified: '2021-01-01T22:06:57.471Z'
 
 # toc-lib-comp-design-tokens-popular
 
-## popular-tokens
+# tokens-popular
 
 - https://github.com/Shopify/polaris-tokens
   - /150Star/MIT/202012/theo
@@ -45,7 +45,7 @@ modified: '2021-01-01T22:06:57.471Z'
   - https://thumbprint.design/tokens/scss/
   - Thumbprint Tokens are published as JavaScript, SCSS, Swift, and Kotlin.
 
-## tokens-integration
+# tokens-integration
 
 - https://github.com/kaelig/google-spreadsheets-theo-demo
   - Design tokens, managed via Google Spreadsheets, generated using Theo
@@ -62,4 +62,4 @@ modified: '2021-01-01T22:06:57.471Z'
 - more
   - [Figmagic — Design System template 4.0](https://www.figma.com/community/file/821094451476848226)
 
-## more-tokens
+# more-tokens

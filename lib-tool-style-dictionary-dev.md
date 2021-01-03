@@ -7,15 +7,18 @@ modified: '2021-01-02T18:08:07.806Z'
 
 # lib-tool-style-dictionary-dev
 
-## guide
+# guide
 
 - s-d优点
   - 方便将design tokens输出到各个平台
 
 - s-d缺点
-  - 不支持输出文件的值中包含`var(--name)`形式的css变量
+  - 暂不支持输出文件的值中包含`var(--name)`形式的css变量
+  - 不直接支持pseudo class的类，需要自己实现
 
 - tips
+  - 先基于theme specification定义输出design
+    - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
   - 可以将每个组件的design tokens输出到单独的文件，利用自定义filter
   - 可以输出扁平化无嵌套的样式变量，
     - 也可以输出时设置最外层的选择器名，如:root{}`, 或 `.dark-theme{}`
@@ -24,11 +27,18 @@ modified: '2021-01-02T18:08:07.806Z'
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
 
-## faq
+# faq
 
 - 用style-dictionary来写所有组件的样式，还是只书写通用变量
   - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
   - 若书写tokens，则需要再用sass来书写组件样式
+
+- 是否该用工具除了自动生成design tokens外，还要自动生成所有组件的样式？
+  - 若自动生成组件样式
+    - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
+    - 不支持 伪类
+  - 若手写各个组件的样式
+    - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
 
 - output css vars
   - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
@@ -46,11 +56,11 @@ modified: '2021-01-02T18:08:07.806Z'
   - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
     - example of automatically generating 1:1 token files based on a custom filter.
 
-## pieces
+# pieces
 
-## docs
+# docs
 
-### [Overview](https://amzn.github.io/style-dictionary/#/README)
+## [Overview](https://amzn.github.io/style-dictionary/#/README)
 
 - A Style Dictionary is a system that allows you to define styles once, in a way for any platform or language to consume. 
 - A single place to create and edit your styles, 
@@ -84,7 +94,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - You can create any type of file from a style dictionary. 
   - If there is a new language, platform, or file type you need, you can easily extend the style dictionary framework to create the necessary files.
 
-### [Configuration](https://amzn.github.io/style-dictionary/#/config)
+## [Configuration](https://amzn.github.io/style-dictionary/#/config)
 
 - Style dictionaries are configuration driven. 
 - Your config file defines what executes and what to output when the style dictionary builds.
@@ -128,7 +138,7 @@ modified: '2021-01-02T18:08:07.806Z'
     - android/copyImages
       - Action to copy images into appropriate android directories.
 
-### [Style properties](https://amzn.github.io/style-dictionary/#/properties)
+## [Style properties](https://amzn.github.io/style-dictionary/#/properties)
 
 - Synonyms: design tokens, design variables, design constants, atoms
 
@@ -159,7 +169,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - All of the transforms provided by the framework use the CTI structure to know if it should be applied. 
   - For instance, the `color/hex` transform only applies to properties of the category 'color'.
 
-### [API & Extending](https://amzn.github.io/style-dictionary/#/extending)
+## [API & Extending](https://amzn.github.io/style-dictionary/#/extending)
 
 - buildAllPlatforms
 - buildPlatform
@@ -199,7 +209,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - Templates are deprecated in favor of Formats
   - Anything you could do in a Template you can do in a Format. 
 
-### [Architecture](https://amzn.github.io/style-dictionary/#/architecture)
+## [Architecture](https://amzn.github.io/style-dictionary/#/architecture)
 
 - Parse the config
   - Style Dictionary is a configuration based framework, you tell it what to do in a configuration file.
@@ -239,7 +249,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - Builds all files defined in the files array
   - Performs any actions defined in the actions attribute
 
-### [Transforms & Transform Groups](https://amzn.github.io/style-dictionary/#/transforms)
+## [Transforms & Transform Groups](https://amzn.github.io/style-dictionary/#/transforms)
 
 - Transforms are functions that transform a property
   - this enables each platform to consume the property in different ways. 
@@ -278,7 +288,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - attribute/cti name/cti/kebab size/px color/css
   - attribute/cti name/cti/pascal size/rem color/hex
 
-### [Formats & Filter](https://amzn.github.io/style-dictionary/#/formats)
+## [Formats & Filter](https://amzn.github.io/style-dictionary/#/formats)
 
 - Formats define the output of your created files. 
   - For example, to use your styles in CSS you use the `css/variables` format. 
@@ -299,7 +309,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - json/flat
   - sketch/palette
 
-### [Get ready for v3](https://amzn.github.io/style-dictionary/#/version_3)
+## [Get ready for v3](https://amzn.github.io/style-dictionary/#/version_3)
 
 - Transitive transforms is the big one that required a big re-architecture of how the Style Dictionary build process works.
   - The new build process is similar, except that it recursively transforms and resolves aliases, only deferring a transform to the next cycle if the token has an unresolved alias. 

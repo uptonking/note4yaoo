@@ -2,12 +2,22 @@
 title: ux-design-tailwind
 tags: [design, ux]
 created: '2020-10-03T15:29:12.552Z'
-modified: '2021-01-01T20:08:46.797Z'
+modified: '2021-01-03T17:11:47.916Z'
 ---
 
 # ux-design-tailwind
 
-## guide
+# guide
+
+# pieces
+
+- ## [Tailwind the switch statement](https://lukejacksonn.github.io/blog/oceanwind)
+- Oceanwind is my very own runtime implementation of Tailwind.
+- Tailwind (like Tachyons before it) takes advantage of atomic styles.
+- The idea, generally, is that instead of using class names like btn-primary which might add a multitude of style rules to a given element, we'd use more granular class names like, for example p-10 bg-blue border-1 font-bold which are often more self explanatory and usually map to a single CSS rule.
+- Tailwind will swap these directives out at build time with all of its generated CSS. 
+
+# tailwind-examples
 
 - https://github.com/tailwindlabs/tailwindcss
   - /28kStar/MIT/202009
@@ -25,11 +35,3 @@ modified: '2021-01-01T20:08:46.797Z'
 - ref
   - https://tailwindui.com/
     - Fully responsive HTML components
-
-## pieces
-
-- ### [Tailwind the switch statement](https://lukejacksonn.github.io/blog/oceanwind)
-- Oceanwind is my very own runtime implementation of Tailwind.
-- Tailwind (like Tachyons before it) takes advantage of atomic styles.
-- The idea, generally, is that instead of using class names like btn-primary which might add a multitude of style rules to a given element, we'd use more granular class names like, for example p-10 bg-blue border-1 font-bold which are often more self explanatory and usually map to a single CSS rule.
-- Tailwind will swap these directives out at build time with all of its generated CSS. 

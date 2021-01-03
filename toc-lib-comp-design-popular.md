@@ -248,6 +248,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
     - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
     - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
+    - Each component has a `dist/vars.css` file that contains declarations for each component-level variable
     - ref
       - https://github.com/adobe/spectrum-web-components
       - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)

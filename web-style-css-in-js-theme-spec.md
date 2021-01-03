@@ -7,9 +7,9 @@ modified: '2021-01-01T20:06:50.117Z'
 
 # web-style-css-in-js-theme-spec
 
-## faq
+# faq
 
-- ### 为什么用css-in-js
+- ## 为什么用css-in-js
 - pros
   - naming is hard
   - scoped styles 局部样式
@@ -76,7 +76,7 @@ modified: '2021-01-01T20:06:50.117Z'
     - you now have direct access to the theme context created by a ThemeProvider
   - css prop和styled最终生成组件的结构非常相似
 
-- ### style object vs template literals(TTLs) 书写样式，使用模板字符串，还是对象
+- ## style object vs template literals(TTLs) 书写样式，使用模板字符串，还是对象
   - style object
     - 当需要动态变化的样式属性有很多时，使用对象cleaner
     - 样式对象更方便计算及复用，如spread operator和destructuring
@@ -121,7 +121,7 @@ modified: '2021-01-01T20:06:50.117Z'
 - 是否使用box based component
   - reflexbox is a ergonomic, responsive React layout and grid system. The original Box component™ since 2015
 
-- ### 是否需要静态提取使用css-in-js创建的样式到单独的css文件
+- ## 是否需要静态提取使用css-in-js创建的样式到单独的css文件
   - 有利有弊
   - https://github.com/emotion-js/emotion/blob/master/docs/extract-static.mdx
     - extractStatic is not recommended because it breaks composition and other powerful patterns from libraries like facepaint.
@@ -139,12 +139,12 @@ modified: '2021-01-01T20:06:50.117Z'
     - https://github.com/styled-system/styled-system/pull/868
     - In terms of dynamic style from props, Linaria only accepts function interpolations on the value side of CSS property, and it must return the correct value. Neither accept style objects nor dynamic CSS string.
 
-## css-in-js-spec
+# css-in-js-spec
 
 - Interoperable Style Transfer Format
   - https://github.com/cssinjs/istf-spec
 
-## pieces
+# pieces
 
 - https://calendar.perfplanet.com/2019/the-unseen-performance-costs-of-css-in-js-in-react-apps/
   - Don’t over-compose styled components
@@ -162,28 +162,3 @@ modified: '2021-01-01T20:06:50.117Z'
 - https://dev.to/macsikora/css-in-js-did-we-do-something-wrong-l1j
 - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
 - https://itnext.io/css-in-js-vs-pre-post-processors-in-2019-8b1e20c066ed
-
-## theme-specification
-
-- https://github.com/system-ui/theme-specification
-- use case:styled-system, theme-ui, rebass, xstyled, onno
-- 对样式主题的需求
-  - If you’ve ever worked on a large application that has been worked on by many different people over time, you know that consistency can be hard to maintain. The amount of different colors, spacing, font-sizes and media queries can easily get out of control. 
-  - Having a style guide combats that by providing a set of constraints that your application’s UI should adhere to, helping to maintain a consistent look and feel.
-  - Having a style guide also leads to a more enjoyable developer experience. There’s less time spent worrying about the precision values, such as a specific padding value
-  - common style such as UI Theme Spec makes themes portable between libraries
-- 样式的写法
-  - 写法上采用类似内联样式的style对象更方便查看，但采用类似className性能更高
-  - css属性名编写时的代码提示，可在样式库解决，也可在ide解决，也可借助typescript
-    - 只需要代码提示，没必要用typestyle库
-    - csstype provides autocompletion and type checking for CSS properties and values
-    - styled-system让组件上的css属性有提示且有限制，但要使用styled组件写法
-    - typestyle书写样式对象返回className，和emotion类似，但写样式有提示，样式对象要作为参数传入style()，类似于emotion的css()
-    - typestyle基于free-style，两者都存在一个问题，嵌套时内层逗号分隔的选择器只在最后一个选择器元素处生效
-    - https://github.com/blakeembrey/free-style/issues/69
-- ref
-  - System UI is an open source organization that houses a Theme Specification for creating interoperable UI components.
-  - https://mitchgavan.com/styleguide-driven-development/
-  - https://github.com/primer/components/blob/master/src/theme.js
-
-  

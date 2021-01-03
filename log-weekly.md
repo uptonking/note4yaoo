@@ -17,9 +17,10 @@ modified: '2020-07-14T09:30:54.711Z'
 
 ## w0104-0110
 
+- dev: grand garden css fast and dirty
+
 ## w1228-0103
 
-- dev: grand garden css fast and dirty
 - eg: style-dictionary features
   - css vars
   - theming

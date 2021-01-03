@@ -1,13 +1,13 @@
 ---
-title: tool-ux-design-prototyping
+title: ux-design-prototyping-tool
 tags: [design, prototyping, tool, ux]
 created: '2021-01-02T12:24:49.293Z'
-modified: '2021-01-02T12:26:32.961Z'
+modified: '2021-01-03T17:10:26.463Z'
 ---
 
-# tool-ux-design-prototyping
+# ux-design-prototyping-tool
 
-## guide
+# guide
 
 - 使用设计工具生成design system的优点
   - 不用写代码，拖拽设计即可完成
@@ -19,7 +19,16 @@ modified: '2021-01-02T12:26:32.961Z'
   - 结论是**不推荐**使用拖拽搭建工具生成项目中间要用的配置属性数据
     - 具体业务场景对灵活性要求过高，要修改自动生成的代码太繁琐
 
-## figma
+- 常用设计工具 design-tools
+  - Figma
+  - Adobe XD
+    - Adobe XD extension for Visual Studio Code
+      - allows developers to visually map design sources, created in XD,  to platform-specific code using design tokens. 
+  - Sketch
+  - Canva
+  - 稿定设计
+
+# figma
 
 - 使用设计工具的2种思路
   - 以设计工具作为样式数据源 make figma your source of truth
@@ -32,8 +41,8 @@ modified: '2021-01-02T12:26:32.961Z'
     - https://github.com/airbnb/react-sketchapp
       - render React components to Sketch 
 
-## 稿定设计
+# 稿定设计
 
-## more-design-tools
+# more-design-tools
 
 - canva

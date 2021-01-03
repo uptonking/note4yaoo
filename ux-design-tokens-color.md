@@ -8,7 +8,7 @@ modified: '2021-01-01T20:09:05.570Z'
 
 # ux-design-tokens-color
 
-## tips
+# guide
 
 - 使用primary/brand color的场景
   - displayed most frequently across your app’s screens and components.
@@ -61,13 +61,13 @@ modified: '2021-01-01T20:09:05.570Z'
     - 依赖多，修改与定制难度大
     - 与业务结合不紧密
 
-## open-color
+# open-color
 
 - https://github.com/yeun/open-color
 - https://yeun.github.io/open-color/
 - open-source color scheme optimized for UI like font, background, border, etc.
 
-## color
+# color
 
 - requirements
   - themable: consistent and distinct look and feel
@@ -222,7 +222,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - https://uxpro.cc/toolbox/visual-design/colors/
   - https://www.dute.org/color-converter
 
-## interaction
+# interaction
 
 - choices
   - mouse
@@ -295,7 +295,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - https://material.io/design/interaction/states.html
   - https://polaris.shopify.com/design/interaction-states
 
-## typography
+# typography
 
 - contrast 对比度
   - 文本色与背景色的“对比度”不足会导致美感不足，甚至视觉不适
@@ -319,7 +319,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - https://zhuanlan.zhihu.com/p/45424881
   - https://usecontrast.com/guide
 
-## material-design
+# material-design
 
 - ref
   - https://material.io/design/introduction/
@@ -337,7 +337,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - shadows
   - zIndex:speedDial1000-drawer1200-modal1300-snackbar1400-tooltip1500
 
-## ant-design色彩
+# ant-design色彩
 
 - Ant Design将色彩体系解读成两个层面：系统级色彩体系和产品级色彩体系
   - 系统级色彩体系主要定义了蚂蚁中台设计中的基础色板、中性色板和数据可视化色板
@@ -367,7 +367,7 @@ modified: '2021-01-01T20:09:05.570Z'
 
           
 
-## Mineral UI
+# Mineral UI
 
 - Mineral ui system contains a gray ramp that is used across themes, and several theme ramps.
 - Base color swatch
@@ -389,7 +389,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - https://uxplanet.org/designing-systematic-colors-b5d2605b15c
   - https://mineral-ui.netlify.com/color
 
-## build-design-system
+# how-to-build-design-system
 
 - Design tokens are the atomic elements we use to store design related variables that describe things like colour, animation, spacing, fonts, shadows etc.
   - text, color, spacing, border
@@ -406,12 +406,7 @@ modified: '2021-01-01T20:09:05.570Z'
   - https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421
   - https://bradfrost.com/blog/post/interface-inventory/
 
-## design-tokens
-
-- design-tokens-in-action
-  - https://sproutsocial.com/seeds/resources/tokens/
-
-## components-examples
+# components-examples
 
 - button
   - With buttons, interaction springs to life.

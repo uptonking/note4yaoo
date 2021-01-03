@@ -7,7 +7,15 @@ modified: '2021-01-01T20:09:10.218Z'
 
 # ux-design-tokens-dev
 
-## guide
+# faq
+
+- 是否该用工具除了自动生成design tokens外，还要自动生成所有组件的样式？
+  - 若自动生成组件样式
+    - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
+  - 若手写各个组件的样式
+    - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
+
+# guide
 
 - https://github.com/design-tokens/community-group
   - https://twitter.com/DesignTokens
@@ -17,7 +25,7 @@ modified: '2021-01-01T20:09:10.218Z'
   - [[RFC] Theming](https://github.com/design-tokens/community-group/issues/2)
 
 - design-tokens-awesome-catalog
-  - 主流token工具及标准参考
+  - 主流tokens工具及标准参考
     - system-ui-theme-specification
     - salesforce-theo-spec
     - style-dictionary-properties
@@ -26,12 +34,6 @@ modified: '2021-01-01T20:09:10.218Z'
   - https://github.com/sturobson/Awesome-Design-Tokens
     - A list of repos that contain a companies' Design Tokens
 
-- 常用设计工具 design-tools
-  - Figma
-  - AdobeXD
-  - Sketch
-  - Canva
-  - 稿定设计
 - 使用设计工具生成design tokens的优点
   - 不用写代码，拖拽设计即可完成
   - 方便测试与分享
@@ -52,7 +54,7 @@ modified: '2021-01-01T20:09:10.218Z'
     - Currently component data is encoded in JSON.
     - JSON is problematic because it's not easily mergeable or human-editable. 
 
-## pieces
+# pieces
 
 - Should I use theo or style dictionary?
   - 结论是，推荐使用json格式来描述design tokens
@@ -66,11 +68,11 @@ modified: '2021-01-01T20:09:10.218Z'
 - I figure a way to implement design tokens on @framer X using style-dictionary.
   - The output is a collection of CSS Variables and I was able to use them on CSS objects, with Styled components, and with Emotion.
 
-## discuss
+# discuss
 
  
 
-- ### Why is a design system conflated by so many with code components, where it can be actually expressed as lower level tokens?
+- ## Why is a design system conflated by so many with code components, where it can be actually expressed as lower level tokens?
 - https://twitter.com/oleg008/status/1095652075705434112
   - Why would you want to make the source of truth so much more complex than identifiers of a color or a behavior?
   - Is it basically bc naming things is hard?
@@ -81,7 +83,7 @@ modified: '2021-01-01T20:09:10.218Z'
   - we will have tools for shadow, spacing, type scale etc.
   - Export JSON and the engineers take it from here.
 
-- ### You are a web developer. You get handed a design for a Website
+- ## You are a web developer. You get handed a design for a Website
 - https://twitter.com/elibelly/status/1214591804034764801
   - For simplicity's sake, let's say it's a one-pager with all the trimmings (nav, footer, menu, content, a form, etc)
   - What are the first three things you do?
@@ -98,6 +100,7 @@ modified: '2021-01-01T20:09:10.218Z'
   5. Make a judgment whether anything about this is going to require anything more than plain html/css/js 
   6. Make a time/effort estimate 
 
-## ref
+# ref
 
 - [Documenting Design Tokens](https://dbanks.design/blog/documenting-design-tokens/)
+- [design-tokens-in-action](https://sproutsocial.com/seeds/resources/tokens/)

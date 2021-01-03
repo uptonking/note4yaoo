@@ -12,7 +12,7 @@ modified: '2020-07-18T12:23:25.933Z'
 
 - The preload value of the `<link>` element's `rel` attribute lets you declare fetch requests in the HTML's `<head>`, specifying resources that your page will need very soon, 
   - which you want to start loading early in the page lifecycle, 
-  - before browsers' main rendering machinery kicks in. 
+  - **before browsers' main rendering machinery kicks in**. 
   - This ensures they are available earlier and are less likely to block the page's render, improving performance.
 
 ``` html
@@ -53,9 +53,23 @@ modified: '2020-07-18T12:23:25.933Z'
   - In it's most basic form it sets the link that has `rel="preload"` to a high priority, 
   - Unlike prefetching, which the browser can decide whether it's a good idea or not, preload will force the browser to do so.
 
+- `<link rel="preload" href="main.js" as="script">`
+  - preload提供了一种声明式的命令，让浏览器提前加载指定资源(加载后并不执行)，在需要执行的时候再执行
+  - 将加载和执行分离开，可不阻塞渲染和 document 的 onload 事件
+  - 提前加载指定资源，不再出现依赖的font字体隔了一段时间才刷出
+  - 在不支持 preload 的浏览器环境中，会忽略对应的 link 标签
+  - preload 是告诉浏览器页面必定需要的资源，浏览器一定会加载这些资源；
+  - prefetch 是告诉浏览器页面可能需要的资源，浏览器不一定会加载这些资源。
+  - preload 和 prefetch 混用的话，并不会复用资源，而是会重复加载。
+
+- ref
+  - [用 preload 预加载页面资源](https://juejin.cn/post/6844903562070196237)
+  - [HTML - Why is my preloaded resource loading again?](https://stackoverflow.com/questions/59353686/html-why-is-my-preloaded-resource-loading-again)
+
 ## Replaced elements
 
-- In CSS, a replaced element is an element whose representation is outside the scope of CSS; they're external objects whose representation is independent of the CSS formatting model.
+- In CSS, a replaced element is an element whose representation is outside the scope of CSS; 
+  - they're external objects whose representation is independent of the CSS formatting model.
 - Put in simpler terms, they're elements whose contents are not affected by the current document's styles. 
   - The position of the replaced element can be affected using CSS, but not the contents of the replaced element itself. 
   - Some replaced elements, such as `<iframe>` elements, may have stylesheets of their own, but they don't inherit the styles of the parent document.

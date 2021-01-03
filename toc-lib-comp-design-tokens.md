@@ -7,16 +7,16 @@ modified: '2021-01-01T22:09:59.545Z'
 
 # toc-lib-comp-design-tokens
 
-## style-dictionary-examples
+# style-dictionary-examples
 
+- https://github.com/infor-design/design-system
+  - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
+  - 实现了theming，一个主题最后输出成1个大文件，全是css变量
 - [Fluid Design System Design Tokens Intro](https://www.engie.design/fluid-design-system/design-tokens/)
   - We introduce Design Tokens thanks to style-dictionary.
   - Variable naming convention follows CTI (Category/Type/Item) structure.
   - CSS4 variable tokens, 
   - JSON tokens, CSS4 variable SASS support, FIGMA tokens
-- https://github.com/infor-design/design-system
-  - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
-  - 实现了theming，一个主题最后输出成1个大文件，全是css变量
 - https://github.com/AlaskaAirlines/AuroDesignTokens
   - Abstract UI atomic values to support the Auro Design System.
   - 未实现theming
@@ -39,7 +39,7 @@ modified: '2021-01-01T22:09:59.545Z'
   - https://www.npmjs.com/package/@inmotionnow/momentum-tokens
   - https://www.npmjs.com/package/@tiendanube/design-tokens-nimbus
 
-## style-dictionary-tools
+# style-dictionary-tools
 
 - https://github.com/amzn/style-dictionary
   - /1.3kStar/Apache2/202010
@@ -63,7 +63,7 @@ modified: '2021-01-01T22:09:59.545Z'
   - Figma plugin to export design tokens to json in an amazon style dictionary compatible format.
   - https://github.com/lukasoppermann/design-token-transformer
 
-## design-tokens-tools
+# design-tokens-tools
 
 - https://github.com/salesforce-ux/theo
   - /1.5kStar/BSD/201810
