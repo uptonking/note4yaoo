@@ -7,12 +7,12 @@ modified: '2020-12-27T21:16:14.941Z'
 
 # web-dev-comp-tokens-common
 
-## grand-garden-design-in-action
+# prospect-garden-design-in-action
 
 - features
   - framework agnostic
   - themeable components following the Theme Specification
-    - better consistency with constraint-based design
+    - maintain consistency with constraint-based design
   - playful with pluggable extensions
 
 - dev
@@ -44,7 +44,7 @@ modified: '2020-12-27T21:16:14.941Z'
   - point/polygon-shape-based
   - https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817
 
-## opinionated
+# opinionated
 
 - 技术选型
   - all in js
@@ -66,7 +66,7 @@ modified: '2020-12-27T21:16:14.941Z'
     - 实现方式2：各框架的组件单独实现
     - 实现方式3：web components，或类似api的库
 
-## 现有组件库参考
+# 现有组件库参考
 
 - carbon-components: a collection of reusable HTML and SCSS partials
 - carbon-components-react: components implemented using React.

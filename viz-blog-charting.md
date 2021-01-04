@@ -7,7 +7,7 @@ modified: '2020-12-21T07:47:05.982Z'
 
 # viz-blog-charting
 
-## gitlab: why we chose echarts for data visualizations from d3.js
+# gitlab: why we chose echarts for data visualizations from d3.js
 
 - [GitLab: Why we chose ECharts for data visualizations_201909](https://about.gitlab.com/blog/2019/09/30/why-we-chose-echarts/)
 

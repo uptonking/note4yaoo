@@ -7,15 +7,15 @@ modified: '2020-12-08T13:29:27.651Z'
 
 # note-fwk-app-express-vs-koa
 
-## faq
+# faq
 
 - Why isn't Koa just Express 4.0?
   - Koa is a pretty large departure from what people know about Express, the design is fundamentally much different, 
   - so the migration from Express 3.0 to this Express 4.0 would effectively mean rewriting the entire application, so we thought it would be more appropriate to create a new library.
 
-## guide
+# guide
 
-## koa vs express
+# koa vs express
 
 - [多维度分析 Express、Koa 之间的区别](https://zhuanlan.zhihu.com/p/115339314)
   - 本文从 Handler 处理方式、中间件执行机制的实现、响应机制三个维度来对 Express、Koa 做了比较，
@@ -117,7 +117,7 @@ modified: '2020-12-08T13:29:27.651Z'
   - Using existing admin modules that plug into Express but are not easy or but possible to get working on Koa. Example is say Arena queue admin UI (**). Ended up spinning up a separate admin Express instance on another port as a quick workaround.
   - Not really Koa but made a choice on one of the router modules for it and got burned for a while (had to lock version) when that project changed their implantation breaking the way many had been hooking up routes. And that change was not on a major version bump 
 
-## thread-express-koa
+# thread-express-koa
 
 - What's your favourite framework for creating APIs in Node
   - https://twitter.com/mrflamez_/status/1299852011513565186
@@ -136,7 +136,7 @@ modified: '2020-12-08T13:29:27.651Z'
     - As others have pointed out: community size. 
     - Koa itself might be maintained, but there are a lot of poorly supported packages at the edges of the dependency tree/ plugins.
 
-## ref
+# ref
 
 - [Bulletproof node.js project architecture ](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
   - https://github.com/santiq/bulletproof-nodejs

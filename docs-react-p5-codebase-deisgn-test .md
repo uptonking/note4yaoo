@@ -7,11 +7,11 @@ modified: '2020-06-30T05:14:25.332Z'
 
 # docs-react-p5-codebase-deisgn-test
 
-## How to Contribute
+# How to Contribute
 
 - https://reactjs.org/docs/how-to-contribute.html
 
-## Codebase Overview
+# Codebase Overview
 
 - We don’t necessarily recommend any of these conventions in React apps.
   - Many of them exist for historical reasons and might change with time.
@@ -68,7 +68,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - `packages/legacy-events`
   - React implements a synthetic event system which is agnostic of the renderers and works both with React DOM and React Native.
 
-## Implementation Notes for Stack Reconciler
+# Implementation Notes for Stack Reconciler
 
 - https://reactjs.org/docs/implementation-notes.html
 - It is very technical and assumes a strong understanding of React public API as well as how it’s divided into core, renderers, and the reconciler. 
@@ -147,7 +147,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - Stack reconciler has inherent limitations such as being synchronous and unable to interrupt the work or split it in chunks. 
 - The new Fiber reconciler comes with a completely different architecture.
 
-## Design Principles
+# Design Principles
 
 - We wrote this document so that you have a better idea of how we decide what React does and what React doesn’t do, and what our development philosophy is like
   - This document assumes a strong understanding of React.
@@ -194,7 +194,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - Dogfooding
 	- Dogfooding it means that our vision stays sharp and we have a focused direction going forward.
 
-## Testing Overview
+# Testing Overview
 
 - There are a few ways to test React components. Broadly, they divide into two categories:
   - Rendering component trees in a simplified test environment and asserting on their output.
@@ -207,7 +207,7 @@ modified: '2020-06-30T05:14:25.332Z'
 - Jest is a JavaScript test runner that lets you access the DOM via jsdom. 
 - React Testing Library is a set of helpers that let you test React components without relying on their implementation details.
 
-## Testing Recipes
+# Testing Recipes
 
 - Setup/Teardown
   - For each test, we usually want to render our React tree to a DOM element that’s attached to document. 
@@ -247,7 +247,7 @@ modified: '2020-06-30T05:14:25.332Z'
   - For example, you may be running snapshot tests on a component with `react-test-renderer` , that internally uses `ReactDOM.render` inside a child component to render some content. 
   - In this scenario, you can wrap updates with `act()` s corresponding to their renderers
 
-## Testing Environments
+# Testing Environments
 
 - This document goes through the factors that can affect your environment and recommendations for some scenarios.
 - Jest is widely compatible with React projects, supporting features like mocked modules and timers, and jsdom support. 

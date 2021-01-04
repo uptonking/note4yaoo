@@ -7,9 +7,9 @@ modified: '2021-01-01T20:18:17.114Z'
 
 # web-css-variables-optimization
 
-## pieces
+# pieces
 
-- ### [CSS Custom Properties and Theming](https://css-tricks.com/css-custom-properties-theming/)
+- ## [CSS Custom Properties and Theming](https://css-tricks.com/css-custom-properties-theming/)
 - Using custom properties to set a single property is ALWAYS going to be faster than manipulating styles on each individual DOM node that needs the custom styles.
 - Like, nearly 100x faster: https://jsperf.com/css-variables-vs-inline-styles
 
@@ -18,7 +18,7 @@ modified: '2021-01-01T20:18:17.114Z'
   - The performance will depend on the HTML used with your CSS.
   - A CSS definition has no meaning without a DOM where it's applied.
 
-- ### [CSS Custom Properties performance in 2018](https://blog.jiayihu.net/css-custom-properties-performance-in-2018/)
+- ## [CSS Custom Properties performance in 2018](https://blog.jiayihu.net/css-custom-properties-performance-in-2018/)
 - So it's still clear that we must be careful with container custom properties because it affects children nodes and recalculation becomes expensive. 
 - If you use Custom Properties throughout your application and by defining them at the root element, you'll incur significant performance issues.
 - We can conclude that `el.setProperty('color', 'green')` is still the fastest option, but surprisingly `el.setProperty('--color', 'green')` is faster than `el.style = "color: green"`, 
@@ -29,14 +29,14 @@ modified: '2021-01-01T20:18:17.114Z'
   - You might prefer to avoid shipping custom properties if you don't need to change them at runtime. 
   - postcss-custom-properties supports the option preserve: false to remove custom properties in compilation.
 
-- ### [Performance of CSS Variables_2017](https://lisilinhart.info/posts/css-variables-performance/)
+- ## [Performance of CSS Variables_2017](https://lisilinhart.info/posts/css-variables-performance/)
 - be aware of style recalculations, since CSS Variables are inheritable — changing a variable on a parent can affect many children
   - So the more children a parent element has using this variable, the more expensive setting a CSS variable on this element gets.
 - prefer using single classes for elements to make style calculations easier for the browser
 - `calc()` has good performance with variables, but still has problems with browser support with certain units like deg or ms
 - prefer using `setProperty` rather than inline styles to set CSS variables in Javascript
 
-- ### [Improving CSS Custom Properties performance](https://blogs.igalia.com/jfernandez/2020/08/13/improving-css-custom-properties-performance/)
+- ## [Improving CSS Custom Properties performance](https://blogs.igalia.com/jfernandez/2020/08/13/improving-css-custom-properties-performance/)
 - The design of CSS, in general, takes great care in considering how features are designed with respect to making it possible for them to perform well. 
   - However, implementations may not perform as well as they could, 
   - and it takes a considerable amount of time to understand how authors use the features and which cases are more relevant for them.

@@ -7,7 +7,7 @@ modified: '2020-12-20T16:01:15.556Z'
 
 # pattern-dev-functional
 
-## A Simple, Functional Module Pattern for TypeScript
+# A Simple, Functional Module Pattern for TypeScript
 
 - [A Simple, Functional Module Pattern for TypeScript](https://spin.atomicobject.com/2017/10/26/typescript-functional-module-pattern/)
 

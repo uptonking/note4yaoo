@@ -7,7 +7,7 @@ modified: '2020-07-14T10:28:11.443Z'
 
 # log-dev-summary
 
-## dev-summary
+# dev-summary
 
 - 研发工作经常是用同一语言的不同框架，或用不同语言，在不同的平台重复实现相同的功能
   - 静下心来深入一个主题，总结现有方案的优点和缺点
@@ -134,7 +134,7 @@ modified: '2020-07-14T10:28:11.443Z'
   - 目标都是用到app(noter/datable)中
     - 要支持在markdown编辑器中实时编辑和预览list/grid、chart、map
 
-## dev-tricks
+# dev-tricks
 
 - 少用if-else，多用卫语句
   - 先对可能的条件进行检验，程序的主逻辑在验证之后才开始运行
@@ -146,7 +146,7 @@ modified: '2020-07-14T10:28:11.443Z'
 - debug时尽量使用单元测试或实现单独功能的页面，在原来复杂的源码中不便于分析生命周期顺序
   - 准备好单独的boilerplate项目或单独的unit test文件
 
-## 技术前景与趋势
+# 技术前景与趋势
 
 - realtime/实时
 - dynamic/动态
@@ -154,14 +154,14 @@ modified: '2020-07-14T10:28:11.443Z'
 - automation/自动化ai
 - performance/算法优化
 
-## 开发原则
+# 开发原则
 
 - learn by practice/实用为先/使用为先
 - 不要花费过多时间进行工具选择
   - 工具只是解决问题的捷径
   - 在解决业务问题后，可以花更多时间深入工具原理与抽象自己的工具
 
-## pieces
+# pieces
 
 - 名称标识符identifier的特殊前缀选择
   - 考虑使用场景，如markdown中不要选用`
@@ -175,7 +175,7 @@ modified: '2020-07-14T10:28:11.443Z'
 
 - 支持web sockets的tomcat服务器7和8有何区别
 
-- ### [为什么有的后端接口会使用二维数组输出表格数据](https://www.v2ex.com/t/720241)
+- ## [为什么有的后端接口会使用二维数组输出表格数据](https://www.v2ex.com/t/720241)
   - 性能好、省带宽、数据量越大越明显，至于index定义可以单独一个接口
   - 抖音接口视频数组里，每个视频100多个json字段，然而接口响应速度爆阿里 10 倍
   - 这样做的场景很多, protobuf 序列化之后也是没有 key 的, 数据库存每一行也不是存 key 的.
@@ -282,7 +282,7 @@ let client_user_table = [
     - For example, code developed for the Linux operating system, which uses the GPL, cannot be used by the Apache web server project because the GPL specifies additional requirements that are incompatible with the Apache license. 
     - To avoid this problem, some open-source projects have chosen to make their source code available under a dual-licensing scheme that gives developers a choice as to which license they will be bound by.
 
-## code-engineering 
+# code-engineering 
 
 - It’s contradictory to design a component with the intention of reusing it globally, then modify that component in just one specific part of the product.
 - `AnotherBodyOne > SomeNewBodyOne > BodyOne > Text`
@@ -295,7 +295,7 @@ let client_user_table = [
 - ref
     - https://spectrum.chat/styled-system/general/opinion-do-you-prefer-more-strict-or-more-flexible-base-components~c1299d13-241d-41ec-882a-5051e8420822
 
-## 动态链接库 dll
+# 动态链接库 dll
 
 - 大多数操作系统将解析外部引用（比如库）作为加载过程的一部分，可执行文件包含一个叫做import directory的表，该表的每一项包含一个库的名字。根据表中记录的名字，装载程序在硬盘上搜索需要的库，然后将其加载到内存中预先不确定的位置，之后根据加载库后确定的库的地址更新可执行程序。可执行程序根据更新后的库信息调用库中的函数或引用库中的数据。这种类型的动态加载称为装载时加载，被包括Windows和Linux的大多数系统采用，最复杂的工作之一就是 **加载时链接**。
 - 有些操作系统可能在运行时解析引用。在这些系统上，可执行程序调用操作系统API，将库的名字，函数在库中的编号和函数参数一同传递。操作系统负责立即解析然后代表应用调用合适的函数。这种动态链接叫做 **运行时链接** 。因为每个调用都会有系统开销，运行时链接要慢得多，对应用的性能有负面影响。
@@ -315,7 +315,7 @@ let client_user_table = [
 - DLL 事实上和 EXE 文件一样，同属 PE 格式的执行文件。对于隐式的引用外部符号，需要把外部符号所在的位置写在 PE 头上。PE 加载器将从 PE 头上找到依赖的符号表，并加载依赖的其它 DLL 文件。
 - so 文件大多为 elf 执行文件格式。当它们需要的外部符号，可以不写明这些符号所在的位置。也就是说，通常 so 文件本身并不知道它依赖的那些符号在哪些 so 里面。这些符号是由调用 dlopen 的进程运行时提供的。而 unix 下的执行文件本身会暴露自己静态链接的符号，（可以是自己本身实现的，或者是从静态库 .a 文件里链入的）。dlopen 将把这些符号通报给 dlopen 加载的 .so 文件，最终完成动态链接。
 
-## JavaFX 框架 前景 观点
+# JavaFX 框架 前景 观点
 
 - 参考
   - https://www.zhihu.com/question/305434657
@@ -342,7 +342,7 @@ let client_user_table = [
   - wps office 2019 addons文件夹包含软件各个组件，几乎都是html实现的，.kuip文件包含主题样式
   - wps未使用qml
 
-## jackson-core源码结构
+# jackson-core源码结构
 
 - JsonParser、JsonGenerator提供顶层读写抽象类、JsonFactory提供工厂方法
 - io包提供输入输出方法：跳过特殊字符、encode/decode、mergedStream、utf8->utf32
@@ -354,7 +354,7 @@ let client_user_table = [
 - type包提供泛型处理方法
 - util包提供各种工具类
 
-### jackson-core处理json
+## jackson-core处理json
 
 - ObjectMapper提供解析器和生成器的入口
 - JsonParser提供底层json解析器
@@ -364,7 +364,7 @@ let client_user_table = [
 - 如果token指向的是字段名称，JsonParser的getCurrentName()方法返回当前字段的名称。
 - 如果token指向的是字符串字段值，getValueAsString()方法以字符串的形式返回当前token的值，JsonParser还有更多相似的方法，如getText()
 
-## easyexcel 源码结构
+# easyexcel 源码结构
 
 - ExcelReader、ExcelWriter、ExcelFactory提供顶层读写具体类
 - analysis包提供解析03、07格式excel的方法
@@ -379,7 +379,7 @@ let client_user_table = [
 - util提供各种工具类
 - constant提供常量
 
-## SAX解析XML方法执行顺序
+# SAX解析XML方法执行顺序
 
 1. startDocument()：开始处理文档；
 2. startElement(String uri, String localName, String qName, Attributes attributes)：处理元素的开始；
@@ -390,7 +390,7 @@ let client_user_table = [
   - 在开始处理标签后，如 `<books>` 或 `</title>` 后，会立即调用一次characters()方法，并且在ide里面debug时无法直接追踪  
   - 若两个xml标签之间无间隔，则不会调用characters()方法，如 `<title>aa</title><author>bb</author>`
 
-### jdk xml解析 sax方式 方法顺序
+## jdk xml解析 sax方式 方法顺序
 
 - sax中DefaultHandler解析XML的总体过程   
 
@@ -405,7 +405,7 @@ startElement --> characters --> endElement --> characters
 
 startElement --> characters --> endElement  
 
-## XML的生成
+# XML的生成
 
 - SAX parsing is for reading documents, not writing them. You can write XML with the XMLStreamWriter.
 - Generating XML via Java (https://www.techrepublic.com/article/generating-xml-via-java/)
@@ -414,7 +414,7 @@ startElement --> characters --> endElement
 - Using SAX
 - Using a custom XmlWriter class
 
-## xlsx Excel2007 常用标签结构
+# xlsx Excel2007 常用标签结构
 
 - sheet1.xml 
   - worksheet
@@ -429,7 +429,7 @@ startElement --> characters --> endElement
       - pageMargins
       - headerFooter
 
-## xlsx Excel2007 格式解析 
+# xlsx Excel2007 格式解析 
 
 - Excel2007是使用XML格式来存储的，把一个excel文件(test.xlsx)后缀改为.zip，解压后的结构
 - [Content_Types].xml：列出Excel解压后各个XML文件名及其类型
@@ -449,7 +449,7 @@ startElement --> characters --> endElement
   - core.xml：描述文件的创建时间、修改时间、创建者、修改者、主题
   - app.xml ：描述文档的其他属性如文档类型、版本、是否只读、是否共享、安全属性，还包括创建该文档的软件
 
-## apache poi
+# apache poi
 
 - poi Class SharedStringsTable
   - Table of strings shared across all sheets in a workbook.
@@ -460,7 +460,7 @@ startElement --> characters --> endElement
   - poi-ooxml-version.jar、poi-ooxml-schemas-version.jar：用于操作.xlsx、.pptx、docx文件；依赖于poi, dom4j，xmlbeans, stax-api-1.0.1；
   - 操作Excel主要是指ss包、xssf包；
 
-## xml的解析方式
+# xml的解析方式
 
 - 基于dom
   - 将整个xml加载到内存中，形成文档对象，所有对xml操作都对内存中文档对象进行，几乎所有开发语言都支持

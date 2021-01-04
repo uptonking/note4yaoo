@@ -7,9 +7,9 @@ modified: '2021-01-01T20:09:00.055Z'
 
 # ux-design-theming-blog
 
-## theming with css vars
+# theming with css vars
 
-### [Theming With Variables: Globals and Locals_201803](https://css-tricks.com/theming-with-variables-globals-and-locals/)
+## [Theming With Variables: Globals and Locals_201803](https://css-tricks.com/theming-with-variables-globals-and-locals/)
 
 - https://codepen.io/andresgalante/project/editor/DKPzvL
 
@@ -101,7 +101,7 @@ modified: '2021-01-01T20:09:00.055Z'
     - While the exception, there are cases where a local variable can just be a direct value in our system, and I’d imagine that’s a shared need.
   - I love this concept of CSS variables and theming but is there any way to use this or something similar or will I have to have fallbacks for IE 11 thereby defeating the purpose.
 
-### [Theming with CSS variables_201904](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
+## [Theming with CSS variables_201904](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
 
 - **Two layers theming**
   - https://codepen.io/WendellAdriel/pen/QPxRjN
@@ -139,7 +139,7 @@ function toggleTheme() {
 }
 ```
 
-### [ionic Dark Mode CodePen](https://ionicframework.com/docs/theming/dark-mode)
+## [ionic Dark Mode CodePen](https://ionicframework.com/docs/theming/dark-mode)
 
 - 基于css vars实现theming的示例
   - https://codepen.io/uptonking/pen/YzGewVQ
@@ -184,9 +184,9 @@ function checkToggle(shouldCheck) {
 }
 ```
 
-## more-theming
+# more-theming
 
-## ref
+# ref
 
 - [Theming with CSS Custom Properties_201706](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
   - https://codepen.io/uptonking/pen/yLavavm

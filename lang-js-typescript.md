@@ -7,12 +7,12 @@ modified: '2020-07-14T09:27:08.258Z'
 
 # lang-js-typescript
 
-## tips
+# tips
 
 - ts vs flow
   - ts特性 > 静态类型检查(flow) + ES新语法(babel) + ide支持(vscode)
 
-## dev-log
+# dev-log
 
 - `!` 操作符
   - 可定义非空类型，转义成js时会直接忽略去掉此符号
@@ -28,7 +28,7 @@ modified: '2020-07-14T09:27:08.258Z'
   - https://stackoverflow.com/questions/40081332/what-does-the-is-keyword-do-in-typescript
   - TypeScript will narrow the type to string in any block guarded by a call to the function. 
 
-## faq
+# faq
 
 - typescript generic type with equal operator means?
   - TypeScript 2.3 adds support for declaring defaults for generic type parameters.
@@ -55,7 +55,7 @@ modified: '2020-07-14T09:27:08.258Z'
     - interface... extends operands must be concrete types.
     - https://stackoverflow.com/questions/42735611/why-can-intersection-types-contain-conflicting-types
 
-## ts-react
+# ts-react
 
 - 所有用到jsx语法的文件都需要以 `tsx` 后缀命名
 - 组件声明时使用 `Component<P, S>` 泛型参数来代替PropTypes
@@ -66,7 +66,7 @@ modified: '2020-07-14T09:27:08.258Z'
   - 而我们在高阶组件中一般都会返回新的组件，并且对被作用的组件的props进行修改，这些会导致签名一致性校验失败，TS会给出错误提示
   - https://juejin.im/post/5bed5f03e51d453c9515e69b
 
-## summary
+# summary
 
 - 获取数组中元素类型的方法，使用 indexed access operator `T[K]`
 
@@ -175,7 +175,7 @@ b.nomethod(); // Error: Property 'nomethod' not exist on type 'Object'
     - 用于修改预定义好的逻辑，或给各种结构添加元数据，还可用于实现aop
     - ts的装饰器还可以装饰参数
 
-## pieces
+# pieces
 
 - Null- and undefined-aware types 
   - TypeScript originally started out with the idea that types were always nullable. 
@@ -184,7 +184,7 @@ b.nomethod(); // Error: Property 'nomethod' not exist on type 'Object'
   - In TypeScript 2.0, null and undefined have their own types which allows developers to explicitly express when null/undefined values are acceptable. 
   - Now, when something can be either a number or null, you can describe it with the union type `number | null` (which reads as “number or null”).
 
-## book-Learning TypeScript_Remo H. Jansen_2016
+# book-Learning TypeScript_Remo H. Jansen_2016
 
 - ts基本数据类型
   - string

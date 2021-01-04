@@ -7,7 +7,7 @@ modified: '2020-07-09T13:30:55.664Z'
 
 # note-dev-quantitative-configuration
 
-## frontend
+# frontend
 
 - breakpoint for bootstrap 4
 

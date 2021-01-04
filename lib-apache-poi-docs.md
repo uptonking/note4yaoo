@@ -7,7 +7,7 @@ modified: '2020-12-08T13:05:30.616Z'
 
 # lib-apache-poi-docs
 
-## dev-tips
+# dev-tips
 
 - SS Usermodel同时支持HSSF和XSSF，老的HSSF Usermodel不推荐使用，org.apache.poi.ss.usermodel 基于 x.poi.hssf.usermodel
 - Sheet.getLastRowNum(): 获取sheet中最后一行数据的索引，包含，基于0开始，一般是行数-1
@@ -76,7 +76,7 @@ System.out.println("单元格内容为:"+cell.getStringCellValue());
     - 对图形、图像的支持不如poi
   - In Apache Cocoon, there is the HSSF Serializer, which takes in XML (in the gnumeric format), and outputs an XLS file for you.
 
-## faq
+# faq
 
 - CTWorkbook?
 
@@ -86,7 +86,7 @@ System.out.println("单元格内容为:"+cell.getStringCellValue());
   - Excel stores dates as numbers therefore the only way to determine if a cell is actually stored as a date is to look at the formatting. There is a helper method in HSSFDateUtil that checks for this.
   - http://poi.apache.org/help/faq.html. 8th
 
-## poi dev
+# poi dev
 
 - 使用poi的XSSFWorkbook来生成excel很占内存，当数据量很大的时候，直接导致了频繁的Full GC，最终会导致OOM。 即使最终的成功下载excel，耗时也比较高，20W行的excel大约需要18s，40w行的时候OOM
   - 解决方案是用SXSSFWorkbook
@@ -143,7 +143,7 @@ System.out.println("单元格内容为:"+cell.getStringCellValue());
 
       
 
-## Apache POI - HSSF and XSSF Limitations  
+# Apache POI - HSSF and XSSF Limitations  
 
 - known limitations of the POI HSSF and XSSF APIs:    
 
@@ -184,11 +184,11 @@ System.out.println("单元格内容为:"+cell.getStringCellValue());
   - HSSF doesn't have support for reading or creating Pivot tables. 
   - XSSF has limited support for creating Pivot Tables, and very limited read/change support.
 
-## poi docs
+# poi docs
 
 http://poi.apache.org/components/spreadsheet/index.html  
 
-### overview
+## overview
 
 - HSSF is the POI Project's pure Java implementation of the Excel '97(-2007) file format. 
 - XSSF is the POI Project's pure Java implementation of the Excel 2007 OOXML (.xlsx) file format.
@@ -208,7 +208,7 @@ http://poi.apache.org/components/spreadsheet/index.html
     - Formula evaluation is not supported
     - SXSSF flushes sheet data in temporary files (a temp file per sheet) and the size of these temporary files can grow to a very large value. For example, for a 20 MB csv data the size of the temp xml becomes more than a gigabyte
 
-### formula support
+## formula support
 
 - poi aims to support the complete excel grammar for formulas. Thus, the string that you pass in to the setCellFormula call should be what you expect to type into excel. Also, note that you should NOT add a "=" to the front of the string.
 - localized versions of Excel allow to enter localized function-names. 
@@ -233,7 +233,7 @@ http://poi.apache.org/components/spreadsheet/index.html
 - Formulas in Excel are stored as sequences of tokens in Reverse Polish Notation order. (逆波兰表示法，简写为RPN)
 - Formula tokens in Excel are stored in one of three possible operand classes : Reference, Value and Array. 
 
-### Formula Evaluation
+## Formula Evaluation
 
 - The Excel file format (both .xls and .xlsx) stores a "cached" result for every formula along with the formula itself. This means that when the file is opened, it can be quickly displayed, without needing to spend a long time calculating all of the formula results. 
 - Generally you should have to create only one FormulaEvaluator instance per Workbook.
@@ -245,7 +245,7 @@ http://poi.apache.org/components/spreadsheet/index.html
 
     
 
-### misc
+## misc
 
 - User defined functions allow you to take code that is written in VBA and re-write in Java and use within POI.
 - Record Generator was born from frustration with translating the Excel records to Java classes
@@ -257,7 +257,7 @@ http://poi.apache.org/components/spreadsheet/index.html
   - The record generator does not handle all possible record types and goes not intend to perform this function.
   - When dealing with a non-standard record sometimes the cost-benefit of coding the record by hand will be greater than attempting modify the generator
 
-### poi components
+## poi components
 
 - POIFS is the oldest and most stable part of POI. All of our components for the binary (non-XML) Microsoft Office formats ultimately rely on it by definition.
 - HSSF and XSSF for Excel Documents
@@ -269,13 +269,13 @@ http://poi.apache.org/components/spreadsheet/index.html
 - HMEF is our port of the Microsoft TNEF (Transport Neutral Encoding Format) file format to pure Java. TNEF is sometimes used by Outlook for encoding the message
 - HSMF for Outlook Messages
 
-### Quick Guide
+## Quick Guide
 
 - Files vs InputStreams
   - When opening a workbook, either a .xls HSSFWorkbook, or a .xlsx XSSFWorkbook, the Workbook can be loaded from either a File or an InputStream. 
   - Using a File object allows for lower memory consumption, while an InputStream requires more memory as it has to buffer the whole file.
 
-## changelog
+# changelog
 
 - ref
   - http://poi.apache.org/changes.html  

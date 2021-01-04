@@ -7,7 +7,7 @@ modified: '2020-11-07T13:15:50.830Z'
 
 # note-dev-state-blog-redux
 
-## [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
+# [Redux without React — State Management in Vanilla JavaScript](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
 
 - https://github.com/morkro/tetrys
 
@@ -105,7 +105,7 @@ const tetrisGame = new TetrisGame(store)
 - What is different however, is the way you initialize your modules, your store, and how much awareness a component can have of the overall application state. 
   - The concepts stay the same, but the implementation and amount of code is suited to exactly your needs.
 
-## [Life after Redux: React’s new APIs can provide pause as to whether or not it is a necessity in your next app](https://itnext.io/life-after-redux-21f33b7f189e)
+# [Life after Redux: React’s new APIs can provide pause as to whether or not it is a necessity in your next app](https://itnext.io/life-after-redux-21f33b7f189e)
 
 - There are many benefits to using Redux.
   - It allows developers to easily share state data between different components throughout an application via the use of helper libs such as react-redux.

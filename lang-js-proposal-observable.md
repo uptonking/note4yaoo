@@ -7,7 +7,7 @@ modified: '2020-12-14T11:29:00.678Z'
 
 # lang-js-proposal-observable
 
-## es-observable
+# es-observable
 
 - https://github.com/tc39/proposal-observable
 

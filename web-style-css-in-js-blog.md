@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:12.929Z'
 
 # web-style-css-in-js-blog
 
-## [CSS-in-JS：一个充满争议的技术方案](https://zhuanlan.zhihu.com/p/165089496)
+# [CSS-in-JS：一个充满争议的技术方案](https://zhuanlan.zhihu.com/p/165089496)
 
 - CSS-in-JS（后文简称为 CIJ）在2014年由Facebook的员工Vjeux在NationJS会议上提出：可以借用 JS 解决许多 CSS 本身的一些“缺陷”，比如全局作用域、死代码移除、生效顺序依赖于样式加载顺序、常量共享等等问题。
 - CIJ 的一大特点是它的方案众多。发展初期，社区在各个方向上探索着用 JS 开发和维护 CSS 的可能性。每隔一段时间，都会有新的语法方案或实现，尝试补充、增强或是修复已有实现。
@@ -38,7 +38,7 @@ modified: '2021-01-01T20:06:12.929Z'
   - 原子化 CSS 可能会给 CIJ 带来不少好处，比如CSS规则去重。CIJ 在运行时会产生许多新的CSS类，增加浏览器的负担，遗憾的是这需要框架本身支持把CSS抽离为静态文件的需求。目前流行的CSS-in-JS框架，比如Emotion，暂时还无法支持这样的特性。
 - 经过了一段时间的探索与实践，FreeWheel最终确定使用Emotion作为目前的 CIJ 方案，将其应用于部分前端项目
 
-## [Tip: ChromeDevTools now supports CSS-in-JS!](https://twitter.com/addyosmani/status/1289818213983883270)
+# [Tip: ChromeDevTools now supports CSS-in-JS!](https://twitter.com/addyosmani/status/1289818213983883270)
 
 - This should be a standard for all other browsers. They should help  Frontend Developers' lives and make life easy. 
 - Thanks for the tip! Can you recommend us posts about performance comparison of css in js vs CSS modules? Seems like CSS in JS always will be slower because it's overloading the JS main thread.
@@ -58,13 +58,13 @@ modified: '2021-01-01T20:06:12.929Z'
 
   - [Firefox 79: Better source map references for SCSS and CSS-in-JS](https://hacks.mozilla.org/2020/07/firefox-79/)
 
-## CSS-in-JS - styled vs css prop
+# CSS-in-JS - styled vs css prop
 
-- ### [CSS-in-JS - styled vs css prop](https://dev.to/a_sandrina_p/css-in-js-styled-vs-css-prop-229e)
+- ## [CSS-in-JS - styled vs css prop](https://dev.to/a_sandrina_p/css-in-js-styled-vs-css-prop-229e)
 
 - I like to use styled, since css prop depends on a bit more setup using babel or macro to reach the same result.
 
-## style9: build-time CSS-in-JS
+# style9: build-time CSS-in-JS
 
 - [style9: build-time CSS-in-JS_202007](https://css-tricks.com/style9-build-time-css-in-js/)
 
@@ -97,7 +97,7 @@ modified: '2021-01-01T20:06:12.929Z'
   - By extracting the values during build-time we can have the best of both worlds. 
   - We benefit from co-locating our styles with our markup and the ability to use existing JavaScript infrastructure, while also being able to generate optimal stylesheets.
 
-## Facebook's CSS-in-JS Approach - stylex
+# Facebook's CSS-in-JS Approach - stylex
 
 - [Facebook's CSS-in-JS Approach - Frank Yan at React Conf 2019](https://www.infoq.com/news/2020/04/facebook-cssinjs-react-conf-2019/)
 
@@ -116,9 +116,9 @@ function MyComponent(props) {
 }
 ```
 
-## Why use css in js
+# Why use css in js
 
-- ### [Write CSS in JavaScript_mxstbr_201902](https://mxstbr.com/thoughts/css-in-js)
+- ## [Write CSS in JavaScript_mxstbr_201902](https://mxstbr.com/thoughts/css-in-js)
 
 - What Does CSS-in-JS Look Like?
 
@@ -156,7 +156,7 @@ const App = () => <Title>Hello World!</Title>;
 - CSS-in-JS still offers **all the important features of CSS preprocessors**. 
   - All libraries support auto-prefixing, and JavaScript offers most other features like mixins (functions) and variables natively.
 
-## Styled Components vs. CSS Stylesheets
+# Styled Components vs. CSS Stylesheets
 
 - [Styled Components vs. CSS Stylesheets_202001](https://getstream.io/blog/styled-components-vs-css-stylesheets/)
 
@@ -186,7 +186,7 @@ const App = () => <Title>Hello World!</Title>;
   - No True Dynamic Styling
   - Maintaining Consistency for theme, variables
 
-## ref
+# ref
 
 - [CSS and JS Are at War, Here’s How to Stop It_201901](https://dev.to/evilmartians/css-and-js-are-at-war-heres-how-to-stop-it-158a)
   - The warring factions are often labeled as:

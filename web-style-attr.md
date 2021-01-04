@@ -7,7 +7,7 @@ modified: '2020-12-21T07:46:42.687Z'
 
 # web-style-attr
 
-## pieces
+# pieces
 
 - width
   - `width: auto;`

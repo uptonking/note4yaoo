@@ -8,19 +8,19 @@ modified: '2020-12-21T07:46:38.612Z'
 
 # web-style
 
-## summary
+# summary
 
 - css要点
   - 各类选择器
   - 样式层叠规则
   - 盒模型与元素定位
-  - 动画与变换
   - 布局
     - 基于float
     - 基于flexbox
     - 基于css grid
+  - 动画与变换
 
-## pieces
+# pieces
 
 - 全局基础样式的内容(类似styled-system提供的)
   - text, color, space, layout, border 
@@ -86,7 +86,7 @@ modified: '2020-12-21T07:46:38.612Z'
   - 参考 https://weui.io/#layers
 - css原来的作用是复用class，现在复用组件就相当于复用了class
 
-## css变量
+# css变量
 
 - 除IE外的浏览器都已支持
 - 定义局部变量 
@@ -115,7 +115,7 @@ element {
 
 - 变量值只能用作属性值，不能用作属性名
 
-## 大型项目参考
+# 大型项目参考
 
 - ant-design 
   - 每个组件都有单独样式文件，如alert/index.tsx, alert/style/index.tsx(.less)
@@ -145,7 +145,7 @@ element {
   - react-bootstrap
     - 每个组件都使用className指定类，样式由props传入
 
-## faq
+# faq
 
 - 怎么让触摸设备支持下拉菜单
   - 解决方案是使用Modernizr检测设备是否支持触摸，如果支持再去掉对visibilit 属性的过渡。如果设备支持触摸，Modernizr会给根元素html添加一个touch类，我们就可以针对触摸设备编写规则
@@ -156,7 +156,7 @@ element {
   - 不可以
   - 内联样式与规则集中的选择器参与同一级联，并且在级联中采用最高优先级(！重要)。因此，它们甚至优先于伪类状态。允许内嵌样式中的伪类或任何其他选择器可能会引入新的级联级别，并带来新的问题
 
-## BFC(Block formatting contexts)
+# BFC(Block formatting contexts)
 
 - `Formatting context` 是CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用
   - 最常见的Formatting context有Block fomatting context (简称BFC)和Inline formatting context(简称IFC)
@@ -194,7 +194,7 @@ element {
   - https://github.com/zuopf769/notebook/blob/master/fe/BFC%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/README.md
   - https://github.com/zuopf769/notebook/blob/master/fe/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E5%92%8CBFC/README.md
 
-## css style guide  
+# css style guide  
 
 - https://github.com/airbnb/css
 - https://github.com/airbnb/javascript/tree/master/css-in-javascript
@@ -206,7 +206,7 @@ element {
 - w3c标准相关
   - https://github.com/w3c/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md
 
-## web组件设计
+# web组件设计
 
 - Ant Design
   - https://ant.design/
@@ -215,9 +215,9 @@ element {
   - 同微信原生视觉体验一致的基础样式库
   - css命名基于BEM
 
-### color-palettes
+## color-palettes
 
-## dev-tips
+# dev-tips
 
 - 行内元素同样具有盒子模型
   - 行内元素的padding-top/bottom、margin-top/bottom属性设置是无效的
@@ -252,9 +252,9 @@ element {
   - ：first-child
 - `.styl` 样式文件是stylus扩展css语法的一种格式，stylus is similar to sass/less, except that it's based on nodejs.
 
-## CSS模块化解决方案
+# CSS模块化解决方案
 
-### 为什么需要CSS模块化
+## 为什么需要CSS模块化
 
 - 命名冲突，任何一个组件的样式规则，都对整个页面有效
 - css和js无法共享变量
@@ -264,7 +264,7 @@ element {
   - https://github.com/streamich/freestyler/blob/master/docs/en/generations.md
   - https://medium.com/@piggyslasher/the-state-of-css-css-in-js-how-styled-components-is-solving-the-problems-weve-had-for-decades-d8abbc8bc148
 
-### 使用CSS命名规则进行模块化
+## 使用CSS命名规则进行模块化
 
 - 典型代表
   - BEM： `block__element_modifier`
@@ -274,7 +274,7 @@ element {
 - 原生css的问题
   - 缺少变量、嵌套支持、样式文件合并 > sass解决
 
-### css-in-js  
+## css-in-js  
 
 - 典型代表
   - https://github.com/styled-components/styled-components
@@ -306,7 +306,7 @@ element {
   - https://robinchen.me/tech/2016/08/09/tech-Refactor-CSS-into-JS.html
   - http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
 
-### 使用JS管理CSS样式模块  
+## 使用JS管理CSS样式模块  
 
 - 典型代表
   - CSS Modules
@@ -345,7 +345,7 @@ element {
   - https://glenmaddern.com/articles/css-modules
     - 作者之一Glen Maddern已转向styled-components
 
-### CSS命名
+## CSS命名
 
 - BEM
   - 命名规则： `block__element_modifier`
@@ -410,7 +410,7 @@ element {
 - 其他命名方案
   - SUITCSS
 
-### 有缺陷的CSS最佳实践
+## 有缺陷的CSS最佳实践
 
 - 不要使用过多的类？
   - 大多数情况下类选择器的副作用会比id选择器和元素选择器小
@@ -424,7 +424,7 @@ element {
 - 页面要在各种设备上外观一致？
   - 没必要，根据实际用途来增减功能，特别是针对移动端
 
-### React开发中的CSS问题
+## React开发中的CSS问题
 
 - 全局命名冲突
   - CSS使用全局选择器机制来设置样式，优点是方便重写样式，缺点是所有的样式都是全局生效，样式可能被错误覆盖
@@ -445,7 +445,7 @@ element {
   - Facebook工程师Vjeux给出的解决方案是完全的 CSS in JS
   - 完全抛弃CSS，在JS中以Object语法来写CSS
 
-### react-css-in-js
+## react-css-in-js
 
 - 可以通过在目标元素前后放置占位元素，再通过js操作，实现伪元素的::before, ::after
 - w3c标准不支持在行内样式中使用伪类，如:hover, :first-child
@@ -473,11 +473,11 @@ element {
     - example: freestyler, jsxstyle, style-it, superstyle
     - you can use JavaScript variables from component's `.render()` function scope.
 
-## animation
+# animation
 
 - https://github.com/ConnorAtherton/loaders.css
 
-## css预处理器
+# css预处理器
 
 - 都提供了语法糖，最终经过预处理工具转换成css
 - sass

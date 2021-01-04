@@ -23,12 +23,12 @@ modified: '2020-12-08T13:27:02.442Z'
     - undo 
     - implemented by observing all state changes across your app, without impairing code-splitting.
 
-## resources
+# resources
 
 - https://recoiljs.org/docs/introduction/getting-started
 - https://github.com/facebookexperimental/Recoil
 
-## Getting Started
+# Getting Started
 
 - Components that use recoil state need `RecoilRoot` to appear somewhere in the parent tree. 
   - A good place to put this is in your root component
@@ -105,7 +105,7 @@ function CharacterCount() {
 }
 ```
 
-## Motivation
+# Motivation
 
 - For reasons of compatibility and simplicity, it's best to use React's built-in state management capabilities rather than external global state. 
 - But React has certain limitations:
@@ -122,7 +122,7 @@ function CharacterCount() {
   - We can treat navigation as a first-class concept, even encoding state transitions in links.
   - It's easy to persist the entire application state in a way that is backwards-compatible, so persisted states can survive application changes.
 
-## Core Concepts
+# Core Concepts
 
 - Recoil lets you create a data-flow graph that flows from atoms (shared state) through selectors (pure functions) and down into your React components. 
 - Atoms are units of state that components can subscribe to. 
@@ -172,7 +172,7 @@ const fontSizeLabelState = selector({
   - This is intended to standardize the API for observing, inspecting, and managing global Recoil state and derived state. 
   - It’s useful for dev tools, global state synchronization, history, and navigation.
 
-## Tutorial
+# Tutorial
 
 - Atoms contain the source of truth for our application state. 
 - In our todo-list, the source of truth will be an array of objects, with each object representing a todo item.
@@ -186,7 +186,7 @@ const fontSizeLabelState = selector({
   - However it's important to note that certain hooks only work with writable state (i.e useRecoilState()).
   - All atoms are writable state, but only some selectors are considered writable state (selectors that have both a `get` and `set` property)
 
-## Asynchronous Data Queries
+# Asynchronous Data Queries
 
 - Recoil provides a way to map state and derived state to React components via a data-flow graph. 
   - What's really powerful is that the functions in the graph can also be asynchronous. 
@@ -217,7 +217,7 @@ const fontSizeLabelState = selector({
   - The React docs give some examples. This pattern works with Recoil as well.
 - It is not necessary to use React `Suspense` for handling pending asynchronous selectors. You can also use the `useRecoilValueLoadable()` hook to determine the status during rendering
 
-## Asynchronous State Sync
+# Asynchronous State Sync
 
 - Recoil atoms represent local application state.
 - Your application may have remote or server-side state as well, such as via a RESTful API. 
@@ -226,7 +226,7 @@ const fontSizeLabelState = selector({
 - If you're looking to query a database or server for read-only data, consider using asynchronous selectors.
 - An advantage of using atoms to represent remote state is that you can use it as input for other derived state. 
 
-## State Persistence
+# State Persistence
 
 - Recoil allows you to persist application state using atoms.
 - To save state, subscribe to atom changes and record the new state. 

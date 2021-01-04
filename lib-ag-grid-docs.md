@@ -7,7 +7,7 @@ modified: '2020-12-08T13:03:51.077Z'
 
 # lib-ag-grid-docs
 
-## Row Models
+# Row Models
 
 - The grid can be configured with different strategies for loading row data into the grid, which are encapsulated into different Row Models. 
   - Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
@@ -73,7 +73,7 @@ modified: '2020-12-08T13:03:51.077Z'
 - The Client-Side row model does not need a datasource. 
   - Infinite, Viewport and Server-Side all use a datasource. 
 
-## Client-Side Data Overview
+# Client-Side Data Overview
 
 - By default the grid expects you to provide all the data up front. 
   - In other words, your application loads the full set of data into the client and then passes it in its entirety to the grid. 
@@ -81,7 +81,7 @@ modified: '2020-12-08T13:03:51.077Z'
 - There is only one client-side row model, aptly named the "Client-Side Row Model". 
   - You don't need to configure the grid to use the Client-Side Row Model as it's used by default.
 
-- ### Client-Side Row Model
+- ## Client-Side Row Model
 - Once the grid has all of the data, it can perform many operations on it for you, such as sorting, filtering and grouping.
 - The Client-Side Row Model is responsible for working out how to display the rows inside the grid. 
 - It has a complex data structure, representing the data in different states. 
@@ -113,12 +113,12 @@ modified: '2020-12-08T13:03:51.077Z'
   - If you do want to refresh the Client-Side Row Model, call `api.refreshClientSideRowModel(startingStage)` , where `startingStage` can be one of the stages above, i.e.: group, filter, pivot, aggregate, sort, map
   - Because each stage depends on the stage before, refreshing any particular stage means that stage executes and then all the stages after it will also execute again.
 
-## Client-Side Data - Accessing Client-Side Data
+# Client-Side Data - Accessing Client-Side Data
 
 - Each time you pass data to the grid, the grid wraps each data item with a RowNode object. 
 - It is handy to access these Row Nodes. 
 
-## Client-Side Data - Updating Client-Side Data
+# Client-Side Data - Updating Client-Side Data
 
 - Updating data in the grid via the grid's API does not cover all the ways in which data can change inside the grid. Data can also change in the grid in the following ways:
   - Editing data inside the grid using the grid's UI, e.g. by the user double-clicking on a cell and editing the cell's value. 
@@ -162,7 +162,7 @@ modified: '2020-12-08T13:03:51.077Z'
     - This is done using the API `applyTransactionAsync(transaction)` .
     - Use Async Transactions for doing add, remove or update operations that are frequent, e.g. for managing streaming updates into the grid of tens, hundreds or thousands of updates a second.
 
-### Single Row/Cell
+## Single Row/Cell
 
 - The easiest way to update data inside the grid is to replace the data you gave it with a fresh set of data. 
 - This is done by either updating the `rowData` bound property (if using a framework) or calling `api.setRowData(newData)` .
@@ -172,7 +172,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - The entire grid's UI will be refreshed from scratch. 
   - All of the ClientSideRowModel calculations will be redone from scratch, i.e. sorting, filtering, grouping, aggregation and pivoting.
 
-### Transactions
+## Transactions
 
 - Transaction Updates allow adding, removing or updating large numbers of rows inside the grid in an efficient manner.
 - Transaction Updates are excellent for applying large data changes with the following advantages:
@@ -188,7 +188,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - After the grid applies all adds, removes and updates from a transaction, it works out what groups were impacted and only executes the required operations on those groups.
   - The groups that were impacted include each group with data that was changed, as well as all parents of changed groups all the way up to the top level.
 
-### High Frequency
+## High Frequency
 
 - Every time you update data in the grid, the grid will rework all aggregations, sorts and filters as well as having the browser update its DOM. If you are streaming multiple updates into the grid this can be a bottleneck. 
 - High Frequency Updates are achieved in the grid using Async Transactions. Async Transactions allow for efficient high-frequency grid updates.
@@ -202,7 +202,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - for example you may want to select a rows in the grid but want to make sure the grid has all the latest row data before doing so.
   - To make sure the grid has no Async Transactions pending, you can flush the Async Transaction queue. This is done by calling the API `flushAsyncTransactions` .
 
-## Client-Side Data - Immutable Data
+# Client-Side Data - Immutable Data
 
 - Under normal operation when new data is set into the grid (e.g. the `rowData` bound property is updated with new data), the grid assumes the new data is a brand new set of data. 
   - It is common for applications to desire this behavior. 
@@ -236,13 +236,13 @@ modified: '2020-12-08T13:03:51.077Z'
   - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
     - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
 
-## Client-Side Data - Context
+# Client-Side Data - Context
 
 - The context object is passed to most of the callbacks used in the grid. 
 - The purpose of the context object is to allow the client application to pass details to custom callbacks such as the Cell Renderers and Cell Editors.
 - Note that the grid does not place anything into the context and it is not used internally by the grid.
 
-## Row Spanning
+# Row Spanning
 
 - By default, each cell will take up the height of one row.   
   - You can change this behaviour to allow cells to span multiple rows. 
@@ -262,7 +262,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - Column Show uses CSS class rules to specify background and border.
   - Column Show has a custom cell renderer to make use of the extra space.
 
-- ### Constraints with Row Spanning
+- ## Constraints with Row Spanning
 - Row Spanning breaks out of the row/cell calculations that a lot of features in the grid are based on. 
 - If using Row Spanning, be aware of the following:
   - Responsibility is with the developer to not span past the last row. 
@@ -290,7 +290,7 @@ modified: '2020-12-08T13:03:51.077Z'
     - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
       - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
 
-## Column Spanning
+# Column Spanning
 
 - By default, each cell will take up the width of one column. 
   - You can change this behaviour to allow cells to span multiple columns. 
@@ -306,11 +306,11 @@ modified: '2020-12-08T13:03:51.077Z'
   - The data is formatted in a certain way, it is not intended for the user to sort this data or reorder the columns.
   - The dataset has meta-data inside it, the `data.section` attribute. 
   - This meta-data, provided by the application, is used in the grid configuration in order to set the column spans and the background colours.
-- ### Column Spanning Constraints
+- ## Column Spanning Constraints
   - Range Selection will not work correctly when spanning cells. 
     - This is because it is not possible to cover all scenarios, as a range is no longer a perfect rectangle.
 
-## DOM Virtualization
+# DOM Virtualization
 
 - https://www.ag-grid.com/javascript-grid-dom-virtualisation/
 
@@ -337,7 +337,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - This is because horizontal scrolling is not as CPU intensive as vertical scrolling, thus the buffer is not needed for a good UI experience.
   - To turn column virtualisation off set the grid property `suppressColumnVirtualisation=true` .
 
-## Export
+# Export
 
 - The grid provides APIs to export data to CSV and Excel. 
 - You can download a file to the user's computer or generate a string to be uploaded to a server. 
@@ -357,7 +357,7 @@ modified: '2020-12-08T13:03:51.077Z'
   - This is a restriction of iOS and not something wrong with ag-Grid. 
   - For this reason, the download links in the context menu are removed when running on iPad.
 
-## Printing
+# Printing
 
 - Keep Print Layout for Print Only
   - When the grid is in print layout, it will be rendering all cells without using row virtualisation. 

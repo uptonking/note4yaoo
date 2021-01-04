@@ -8,7 +8,7 @@ modified: '2020-12-21T07:46:05.492Z'
 
 # web-events
 
-## faq
+# faq
 
 - click vs touch
 - 如何实现用2点触控two (simultaneous) touches事件模拟右键菜单，多点触控如何区分不同功能手势如放大缩小、
@@ -54,7 +54,7 @@ modified: '2020-12-21T07:46:05.492Z'
   }
 ```
 
-## summary
+# summary
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
@@ -93,7 +93,7 @@ modified: '2020-12-21T07:46:05.492Z'
     - onkeypress与onkeydown一样，也是先处理事件，再显示文本
   - onchange：当对象或选中区的内容改变且失去焦点时触发
 
-## guide
+# guide
 
 - Events can be created with the `Event` constructor
   - This constructor is supported in most modern browsers (with Internet Explorer being the exception)
@@ -113,7 +113,7 @@ modified: '2020-12-21T07:46:05.492Z'
   - All applicable event handlers will execute and return before the code continues on after the call to dispatchEvent().
   - dispatchEvent() is the last step of the create-init-dispatch process, which is used for dispatching events into the implementation's event model. The event can be created using Event constructor.
 
-## Web-API-GlobalEventHandlers
+# Web-API-GlobalEventHandlers
 
 - `onchange`
     - ref
@@ -155,7 +155,7 @@ modified: '2020-12-21T07:46:05.492Z'
 - `ontransitionstart`
     - called when a transitionstart event is sent, indicating that a CSS transition has started transitioning.
 
-## drag
+# drag
 
 - HTML drag-and-drop uses `DOM event model` and `drag events` inherited from mouse events.
 - ondrag/start/enter/over/exit/leave/end
@@ -227,9 +227,9 @@ function getOffsetX(event) {
   }
 ```
 
-## resize
+# resize
 
-## scrollHeight/Top
+# scrollHeight/Top
 
 - scrollHeight
   - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
@@ -257,7 +257,7 @@ function getOffsetX(event) {
 - window.scrollBy()
   - 让window滚动条相对滚动x，y的距离
 
-### clientHeight
+## clientHeight
 
 - clientHeight
   - 返回元素内部的高度，单位像素，只读
@@ -273,7 +273,7 @@ function getOffsetX(event) {
   - 元素的左边框的宽度，以像素表示
   - 如果元素的文本方向是从右向左RTL，并且由于内容溢出导致左边出现了一个垂直滚动条，则该属性包括滚动条的宽度
 
-### offsetHeight
+## offsetHeight
 
 - offsetHeight
   - 包含content、padding、滚动条、border，不包括margin
@@ -284,20 +284,20 @@ function getOffsetX(event) {
 - offsetTop
   - 当前元素相对于其offsetParent元素的顶部的距离，即子边框外侧到父边框的内侧的距离
 
-### window
+## window
 
 - window.innerHeight 
   - DOM视口的大小，包括滚动条
 - window.outerHeight
   - 整个浏览器窗口的大小，还包括标题栏、工具栏、状态栏等
 
-### limitations
+## limitations
 
 - In iOS UIWebViews, scroll events are not fired while scrolling is taking place; 
   - they are only fired after the scrolling has completed. 
   - See Bootstrap issue #16202. Safari and WKWebViews are not affected by this bug.
 
-## keyboard 
+# keyboard 
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
@@ -309,7 +309,7 @@ function getOffsetX(event) {
   - Note that some implementations may fire keypress event if supported. 
   - The events will be fired repeatedly while the key is held down.
 
-## focus
+# focus
 
 - focus vs selection
   - Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). 
@@ -321,7 +321,7 @@ function getOffsetX(event) {
   - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one (that is, to press a button or toggle a radio button). 
     - Which elements are focusable varies depending on the platform and the browser's current configuration. 
 
-## mouse 
+# mouse 
 
 - mousedown vs click
   - click is fired after a full click action occurs:
@@ -379,7 +379,7 @@ function getOffsetX(event) {
   - mouseover支持事件冒泡，mouseenter不支持事件冒泡 
     - mouseover从子元素进入父元素的时候，会触发父元素的mouseover事件，而mouseenter并不会
 
-## CompositionEvent
+# CompositionEvent
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
@@ -397,9 +397,9 @@ function getOffsetX(event) {
 
 - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
 
-## event要点
+# event要点
 
-### 元素宽高
+## 元素宽高
 
 - window.outerWidth是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
 - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框，不包括developer窗口的宽度
@@ -413,7 +413,7 @@ function getOffsetX(event) {
   - scrollHeight：元素内容的高度，包括溢出部分
   - scrollTop：元素内容向上滚动了多少像素，如果没有滚动则为0 
 
-### 位置坐标
+## 位置坐标
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX

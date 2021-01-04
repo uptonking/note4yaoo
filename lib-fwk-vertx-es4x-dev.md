@@ -7,7 +7,7 @@ modified: '2020-12-08T13:28:50.105Z'
 
 # lib-fwk-vertx-es4x-dev
 
-## Vert.x
+# Vert.x
 
 - vert.x vs spring+tomcat
   - Vert.x是面向IO的，而Spring是面向Web的。或许Vert.x Web无法撼动Spring的地位，但是其他领域呢？比如mqtt和其他非http领域，Vert.x仍然是JVM最具竞争力的IO框架
@@ -42,7 +42,7 @@ modified: '2020-12-08T13:28:50.105Z'
     - vert.x还提出了polyglot的概念，就能使用其他语言的特性
     - nosql解决了rdbms的吞吐太小的问题，现在分布式技术的nosql正在替换rdbms，对于db的改造没有完成之前，netty，vert.x这种技术还谈不上大规模的推广，不过现在pg，mysql也都有了自己的异步api，尤其是pg，上升势头跟mongo不相上下
 
-## Vert.x docs
+# Vert.x docs
 
 - Vert.x is a toolkit for building reactive applications on the JVM
 - https://vertx.io/docs/
@@ -84,9 +84,9 @@ modified: '2020-12-08T13:28:50.105Z'
   - Vert.x provides a few different asynchronous clients for accessing various data stores from your application.
   - you could also use clients direct from the vendor if you prefer 
 
-## ES4X 
+# ES4X 
 
-## ES4X docs
+# ES4X docs
 
 - A Modern JavaScript runtime for Vert.x
 - https://reactiverse.io/es4x/

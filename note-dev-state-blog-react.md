@@ -7,9 +7,9 @@ modified: '2020-11-07T13:15:20.165Z'
 
 # note-dev-state-blog-react
 
-## react-state-blog
+# react-state-blog
 
-### [React: Event Emitter](https://medium.com/@lolahef/react-event-emitter-9a3bb0c719)
+## [React: Event Emitter](https://medium.com/@lolahef/react-event-emitter-9a3bb0c719)
 
 - https://github.com/lolax/React-Insta-Clone
 
@@ -121,7 +121,7 @@ export const EventEmitter = {
   - (For ex: If a developer is debugging some part of the app, they might not find where the event is firing from so it would consume time and confusion in terms of developer experience)
   - If we can find a way to localize these parent events, then it will become trivial during the debug where the or how the data is manipulated and flowing. And we can prevent unexpected bugs.
 
-### [Event Emitter instead of lifting state up in React](https://medium.com/@krzakmarek88/eventemitter-instead-of-lifting-state-up-f5f105054a5)
+## [Event Emitter instead of lifting state up in React](https://medium.com/@krzakmarek88/eventemitter-instead-of-lifting-state-up-f5f105054a5)
 
 - https://github.com/krzaku281/react-event-emitter
 
@@ -211,6 +211,6 @@ class Sidebar extends React.Component {
 export default Sidebar
 ```
 
-## ref
+# ref
 
 - [One way to manage React global state with EventEmitters](https://gist.github.com/mhart/6ca15a54541caae04a075db76b68c06c)

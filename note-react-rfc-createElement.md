@@ -7,7 +7,7 @@ modified: '2020-07-17T06:01:14.632Z'
 
 # note-react-rfc-createElement
 
-## React createElement changes and surrounding deprecations
+# React createElement changes and surrounding deprecations
 
 - The goal is to bring element creation down to this logic:
 
@@ -53,7 +53,7 @@ function jsx(type, props, key) {
   - his would be a breaking change, but we could always clone in the call in a minor and then make the breaking change later in a major. 
   - The new semantics would be that the passed in object gets frozen (in DEV).
 
-- ### Deprecate "module pattern" components.
+- ## Deprecate "module pattern" components.
 
 ``` JS
 // It causes some implementation complexity just by existing.
@@ -69,26 +69,26 @@ const Foo = (props) => {
 };
 ```
 
-- ### Deprecate `defaultProps` on function components.
+- ## Deprecate `defaultProps` on function components.
   - defaultProps is very useful on classes because the props object gets passed to many different methods. Life-cycles, callbacks etc.
   - This makes it hard to use JS default arguments because you'd have to replicate the same defaults in each function.
   - However, in function components there really isn't much need for this pattern since you can just use JS default arguments and all the places where you typically use these values are within the same scope.
 
-- ### Move `defaultProps` resolution to class render time.
+- ## Move `defaultProps` resolution to class render time.
   - The upgrade path here, is to just avoid reading from `element.props` or move away from relying on `defaultProps` and passing them in explicitly or resolving them in the class.
   - In the next major, we'd stop resolving defaultProps during element creation and instead, we'd only resolve it right before we pass them into class components.
 
-- ### Deprecate spreading `key` from objects.
+- ## Deprecate spreading `key` from objects.
   - The problem with this is that we can't statically know if this object is going to pass a `key` or not.
   - So for every set of props, we have to do an expensive dynamic property check to see if there is a key prop in there.
   - To minimize churn and open up a larger discussion about this syntax, we'd instead treat `key` as a keyword in JSX and pass it separately.
   - An unresolved issue is how we distinguish `<div key="Hi" {...props} />` from `<div {...props} key="Hi" />` which currently have different semantics depending on if props has a `key` .
   - In a later major, we'd stop extracting key from props and therefore props is now just passthrough.
 
-- ### Deprecate string refs 
+- ## Deprecate string refs 
   - We'll remove string refs and that will let us get rid of the `_owner` field from elements.
 
-- ### Move `ref` extraction to class render time and `forwardRef` render time.
+- ## Move `ref` extraction to class render time and `forwardRef` render time.
   - In a minor, we'll add an enumerable getter in DEV for `props.ref` if a ref is defined on its element. This will warn if you try to access it. 
     - However, in class components, we'll detect this and create a copy of the props before passing it into the class. 
     - The same thing applies to `forwardRef` .
@@ -114,7 +114,7 @@ const Foo = (props) => {
 - The plan is to eventually get rid of the need for `forwardRef` altogether by putting it back into `props` .
 - Beware forwardRef affects reconciliation: element is always re-created on parent re-rendering.
 
-- ### [using React.forwardRef vs custom ref prop](https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop)
+- ## [using React.forwardRef vs custom ref prop](https://stackoverflow.com/questions/58578570/value-of-using-react-forwardref-vs-custom-ref-prop)
 - ref常用别名：innerRef, setRef, nodeRef, myRef
 - [forwardRef to FC](https://www.reddit.com/r/reactjs/comments/dfyclo/with_introduction_of_hooks_do_we_need_to_use/f39w4tv/?context=3)
 - [looks like forwardRef is gone](https://twitter.com/0xca0a/status/1308462975620190209)
@@ -181,7 +181,7 @@ const ref = React.createRef();
 
  
 
-- ### ref
+- ## ref
 - [RFC: createElement changes and surrounding deprecations](https://github.com/reactjs/rfcs/pull/107)
   - 大部分在讨论去掉defaultProps的决定，而未讨论去掉forwardRef的决定
 - [Hook for forwardRef](https://github.com/facebook/react/issues/15306)

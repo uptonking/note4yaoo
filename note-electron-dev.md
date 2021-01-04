@@ -7,7 +7,7 @@ modified: '2020-07-14T09:33:06.170Z'
 
 # note-electron-dev
 
-## faq
+# faq
 
 - electron vs cef
   - The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. Very early versions of Atom editor and NW.js used CEF.
@@ -28,7 +28,7 @@ modified: '2020-07-14T09:33:06.170Z'
   - ref
     - https://www.electronjs.org/docs/tutorial/multithreading
 
-## pieces
+# pieces
 
 - Electron运行package.json中的main脚本中的进程被称为主进程，该进程在应用整个生命周期只会存在唯一一个，负责面窗口的创建、控制、销毁等管理行为，同时也能控制整个应用的生命周期。
   - 主进程本质上是一个 Node.js 进程，该进程充分利用了 Node.js 的跨平台特性，在其 API 的底层，抹掉了不同操作系统中的差异
@@ -47,7 +47,7 @@ modified: '2020-07-14T09:33:06.170Z'
   - BrowserWindow提供的preload的配置是为了在页面第一次加载文档之前预先加载js脚本文件,preload配置的脚本文件路径，只能为本地文件，其协议必须是file:、asar:二者之一
   - preload脚本仍然有能力去访问所有的 Node APIs, 即使配置 `nodeIntegration: false` 。但是当这个脚本执行执行完成之后，通过Node 注入的全局对象（global objects）将会被删除
 
-## 进程通信
+# 进程通信
 
 - 不同于一般的原生应用开发，Electron的渲染进程与主进程分别属于独立的进程中
 - Electron官方提供的进程间通讯方式
@@ -103,7 +103,7 @@ modified: '2020-07-14T09:33:06.170Z'
 - ref 
   - https://www.iguan7u.cn/2019/06/30/Electron-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E8%AF%A6%E8%A7%A3/
 
-## Electron开发总结
+# Electron开发总结
 
 - 主进程任务
   - 窗口管理及生命周期控制

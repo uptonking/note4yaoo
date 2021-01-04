@@ -9,7 +9,7 @@ modified: '2020-12-08T13:08:02.973Z'
 
 - React Router is a collection of navigational components that compose declaratively with your application. 
 
-## dev-tips
+# dev-tips
 
 - how to programmatically navigate using react router v4
 	- https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
@@ -30,14 +30,14 @@ modified: '2020-12-08T13:08:02.973Z'
 - how to scroll to top
 	- https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top
 
-## resources
+# resources
 
 - docs 
   - https://reacttraining.com/react-router/web/guides/basic-components
 
-## react-router docs
+# react-router docs
 
-### Quick Start
+## Quick Start
 
 ``` js
 import React from "react";
@@ -96,7 +96,7 @@ const Header = () => (
 export default App;
 ```
 
-### Basic Components
+## Basic Components
 
 - There are three types of components in React Router: router components, route matching components, and navigation components.
 - Routers
@@ -119,7 +119,7 @@ export default App;
 	- The <NavLink> is a special type of <Link> that can style itself as "active" when its `to` prop matches the current location.
 	- Any time that you want to force navigation, you can render a `<Redirect>` . When a `<Redirect>` renders, it will navigate using its to prop.
 
-### Philosophy  
+## Philosophy  
 
 - Static Routing
 	- In these frameworks, you declare your routes as part of your app's initialization before any rendering takes place. 
@@ -213,7 +213,7 @@ export default App;
 	);
 ```
 
-### Redux Integration
+## Redux Integration
 
 - example
 
@@ -238,7 +238,7 @@ export default withRouter(connect(mapStateToProps)(Something))
 - But if you feel strongly about synchronizing your routes with your store, you may want to try Connected React Router
 - https://github.com/supasate/connected-react-router
 
-### Dealing with Update Blocking
+## Dealing with Update Blocking
 
 - React Router has a number of location-aware components that use the current location object to determine what they render. 
 - By default, the current location is passed implicitly to components using React's context model. 
@@ -317,13 +317,13 @@ const Parent = props => {
 	);
 ```
 
-##  API Reference
+#  API Reference
 
 - `<StaticRouter>`
 	- it is a Router that never changes location.
 	- useful in server-side rendering scenarios
 
-## changelog
+# changelog
 
 - 4.4.0-2019
 	- Removed the single-child restriction in `<Router>` so you can have multiple children, provided you're using React 16

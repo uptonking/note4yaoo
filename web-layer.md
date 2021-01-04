@@ -7,12 +7,12 @@ modified: '2020-12-21T07:46:08.324Z'
 
 # web-layer
 
-## guide
+# guide
 
 - app图层设计是整体思维，是否与局部component的设计相矛盾
   - 那就从全局角度设计Component，考虑使用context api
 
-## faq
+# faq
 
 - [Can css3 translateZ() be used instead of z-index?](https://stackoverflow.com/questions/17977220/can-css3-translatez-be-used-instead-of-z-index)
   - The answer now is that you can. You need to use `transform-style: preserve-3d;` on the parent
@@ -53,11 +53,11 @@ modified: '2020-12-21T07:46:08.324Z'
     - [Difference between auto, 0, and no z-index?](https://stackoverflow.com/questions/14109862/difference-between-auto-0-and-no-z-index)
     - [Why element with z-index 0 is shown above element with z-index 1](https://stackoverflow.com/questions/44291136/why-element-with-z-index-0-is-shown-above-element-with-z-index-1)
 
-## pieces
+# pieces
 
 - z-index的最大值就是：2147483647
 
-## z-index
+# z-index
 
 - The `z-index` CSS property sets the z-order of a positioned element and its descendants or flex items. 
 - Overlapping elements with a larger `z-index` cover those with a smaller one.
@@ -88,7 +88,7 @@ Creates stacking context	yes
 - ref
   - [mdn: z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
-## Understanding CSS z-index
+# Understanding CSS z-index
 
 - [mdn: Understanding z-index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
   - [Stacking without the z-index property](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/Stacking_without_z-index)
@@ -106,7 +106,7 @@ Creates stacking context	yes
 - However, when `z-index` is applied to complex hierarchies of HTML elements, its behaviour can be hard to understand or predict. This is due to complex stacking rules.
 - This tutorial will try to explain those rules, with some simplification and several examples.
 
-### Stacking without the z-index property
+## Stacking without the z-index property
 
 > The stacking rules that apply when z-index is not used.
 
@@ -118,7 +118,7 @@ Creates stacking context	yes
 - When the `order` property alters rendering from the "order of appearance in the HTML" within `flex` containers, it similarly affects the order for stacking context.
 - static元素即使在html标签中的顺序在后面，也可能显示在positioned elements的下层、下面
 
-### Stacking with floated blocks
+## Stacking with floated blocks
 
 - Floating blocks are placed between non-positioned blocks and positioned blocks:
   1. The background and borders of the root element
@@ -131,7 +131,7 @@ Creates stacking context	yes
 - If an `opacity` value is applied to the non-positioned block (DIV #4), then something strange happens: the background and border of that block pops up above the floating blocks and the positioned blocks. 
 - This is due to a peculiar part of the specification: applying a `opacity` value creates a new stacking context
 
-### Using z-index
+## Using z-index
 
 > How to use z-index to change default stacking.
 
@@ -155,7 +155,7 @@ top layer (closest to the observer)
 - When no `z-index` property is specified, elements are rendered on the default rendering layer 0 (zero)
 - If several elements share the same `z-index` value (i.e., they are placed on the same layer), stacking rules explained in the section Stacking without z-index apply.
 
-### The stacking context 
+## The stacking context 
 
 - The stacking context is a three-dimensional conceptualization of HTML elements along an imaginary z-axis relative to the user, who is assumed to be facing the viewport or the webpage. 
 - HTML elements occupy this space in priority order based on element attributes.
@@ -194,7 +194,7 @@ top layer (closest to the observer)
 
 - An easy way to figure out the rendering order of stacked elements along the Z axis is to think of it as a "version number" of sorts, where child elements are minor version numbers underneath their parent's major version numbers.
 
-### Stacking context example
+## Stacking context example
 
 - example 1: 2-level HTML hierarchy, z-index on the last level
   - The only stacking context is the root context.
@@ -214,7 +214,7 @@ top layer (closest to the observer)
   - The problem is that for each second-level menu, a stacking context is created and each third-level menu belongs to the context of its parent. So a third-level menu will be stacked under the following second-level menus
   - This problem can be avoided by removing overlapping between different level menus, or by using individual (and different) z-index values assigned through the id selector instead of class selector, or by flattening the HTML hierarchy.
 
-## What No One Told You About Z-Index
+# What No One Told You About Z-Index
 
 - [What No One Told You About Z-Index_2013](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
 - Every element in an HTML document can be either in front of or behind every other element in the document. This is known as the stacking order.
@@ -249,7 +249,7 @@ top layer (closest to the observer)
 - The key to avoid getting tripped up is being able to spot when new stacking contexts are formed. 
 - If you’re setting a z-index of a billion on an element and it’s not moving forward in the stacking order, take a look up its ancestor tree and see if any of its parents form stacking contexts. If they do, your z-index of a billion isn’t going to do you any good.
 
-## CSS stacking contexts: What they are and how they work
+# CSS stacking contexts: What they are and how they work
 
 - [CSS stacking contexts: What they are and how they work](https://tiffanybbrown.com/2015/09/css-stacking-contexts-wtf/index.html)
 
@@ -266,7 +266,7 @@ top layer (closest to the observer)
 - Two elements with the same stack level are layered based on their source order. 
 - Successive elements stack on top of their predecessors.
 
-## HOW THE CSS STACKING CONTEXT WORKS
+# HOW THE CSS STACKING CONTEXT WORKS
 
 - [HOW THE CSS STACKING CONTEXT WORKS](https://www.theguild.nl/how-the-css-stacking-context-works/)
 
@@ -280,7 +280,7 @@ top layer (closest to the observer)
   - However, React incorporated a neat addition called “Portals” in v16. Portals will allow you to mount any DOM element at any place in your DOM structure.  
   - A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually “break out” of its container. For example, dialogs, hovercards, and tooltips
 
-## Managing Z-Index In A Component-Based Web Application
+# Managing Z-Index In A Component-Based Web Application
 
 - [Managing Z-Index In A Component-Based Web Application](https://www.smashingmagazine.com/2019/04/z-index-component-based-web-application/)
 
@@ -315,7 +315,7 @@ top layer (closest to the observer)
     - Otherwise, you may inadvertently introduce more stacking contexts within a component, and you’re faced with the same issue again, luckily on a smaller scale; 
   - Debugging becomes easy. Find the first ancestor component of the two elements that are not stacked correctly, and change z-indices within that component as necessary.
 
-## layerJS: layer based user interfaces
+# layerJS: layer based user interfaces
 
 - [layerJS: layer based user interfaces](https://medium.com/layerjs/layerjs-declaring-layer-based-user-interfaces-14a4f9c5db89)
 - [Getting started with layerJS](https://medium.com/layerjs/getting-started-with-layerjs-17f679452c8d)
@@ -382,7 +382,7 @@ top layer (closest to the observer)
 - A stage can contain more than one layer to compose frames on top of each other. 
 - Within the layer we added a single frame with id home which will contain the content of the first page/screen. 
 
-## solution-catalog-layers
+# solution-catalog-layers
 
 - popper.js /MIT/15.4kStar/202007
   - https://github.com/popperjs/popper-core
@@ -421,7 +421,7 @@ top layer (closest to the observer)
     - inspired by the work done on the react-bootstrap's [Overlay](https://react-bootstrap.github.io/components/overlays/)
     - Overlays rely on the third-party library Popper.js
 
-## ref
+# ref
 
 - [zh: 前端项目中有简洁的z-index的约束规则（管理方案）吗？](https://www.zhihu.com/question/24216418)
 - [Sass管理复杂的z-index](https://www.w3cplus.com/preprocessor/sassy-z-index-management-for-complex-layouts.html)

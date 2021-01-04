@@ -7,7 +7,7 @@ modified: '2020-12-08T13:04:51.511Z'
 
 # lib-ag-grid-docs-sort-filter-group
 
-## Row Sorting
+# Row Sorting
 
 - Enable sorting for columns by setting the `sortable` column definition attribute. 
   - You can then sort a column by clicking on the column header.
@@ -16,7 +16,7 @@ modified: '2020-12-08T13:04:51.511Z'
 - To change the row height for the whole grid, set the property `gridOptions.rowHeight` to a positive number. 
 - To change the row height so that each row can have a different height, implement the `getRowHeight()` callback.
 
-## Filtering Overview
+# Filtering Overview
 
 - different types of filtering that can be performed in the grid as follows:
   - Column Filters
@@ -43,7 +43,7 @@ modified: '2020-12-08T13:04:51.511Z'
 
 - Floating Filters are an additional row under the column headers where the user will be able to see and optionally edit the filters associated with each column.
 
-## Row Grouping
+# Row Grouping
 
 - To group rows by a particular column, mark the column you want to group with `rowGroup=true` . 
   - There is no limit on the number of columns that the grid can group by.
@@ -53,7 +53,7 @@ modified: '2020-12-08T13:04:51.511Z'
 - If there are rows containing `null` or `undefined` values for the column that is being grouped, then these rows will not be grouped. 
   - We refer to this scenario as Unbalanced Groups in that there is a mix of groups and rows as siblings. 
 
-## Master/Detail
+# Master/Detail
 
 - Master Detail refers to a top level grid called a Master Grid having rows that expand. 
   - When the row is expanded, another grid is displayed with more details related to the expanded row. 
@@ -62,7 +62,7 @@ modified: '2020-12-08T13:04:51.511Z'
   - It is not supported with the Viewport or Infinite Row Models.
 - The Detail Grid on the other hand can use any Row Model.
 
-## Tree Data
+# Tree Data
 
 - Use Tree Data to display data that has parent/child relationships where the parent/child relationships are provided as part of the data. 
   - For example, a folder can contain zero or more files and other folders.
@@ -73,7 +73,7 @@ modified: '2020-12-08T13:04:51.511Z'
   - This means any supplied group data will be ignored in favour of the aggregated values.
   - However if there are no child nodes to aggregate it will default to the provided value in the row data.
 
-## Aggregation
+# Aggregation
 
 - When grouping, you can apply an aggregation function to any column to populate the group row with values. 
 - You can pick from the grid's built in aggregation functions or provide your own.
@@ -90,7 +90,7 @@ modified: '2020-12-08T13:04:51.511Z'
 - Using a function directly will not work with column state, like Saving and Restoring Column State. 
   - If you require state management with custom aggregation, use `addAggFunc` to register it.
 
-## Pivoting
+# Pivoting
 
 - Pivoting allows you to take a columns values and turn them into columns. 
   - For example you can pivot on Country to make columns for Ireland, United Kingdom, USA etc.
@@ -101,7 +101,7 @@ modified: '2020-12-08T13:04:51.511Z'
   - If you turn a column into a pivot column, you must have at least one aggregation (value) active for the configuration to make sense. 
   - For example, if pivoting by country, you must provide something you are measuring such as 'gold medals per country'.
 
-## Selection Overview
+# Selection Overview
 
 - Row Selection selects rows, i.e. data entries from the provided data set.
 - Range Selection selects ranges of cells, i.e. a rectangular block of cells.

@@ -7,6 +7,6 @@ modified: '2020-12-08T13:37:58.315Z'
 
 # note-olap-apache-druid
 
-## faq
+# faq
 
 - druid vs pinot vs clickhouse

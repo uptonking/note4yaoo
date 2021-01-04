@@ -9,7 +9,7 @@ modified: '2020-06-30T05:11:03.190Z'
 
 - React is a javaScript library for building user interfaces.
 
-## resources 
+# resources 
 
 - docs
   - https://reactjs.org/docs/hello-world.html
@@ -28,7 +28,7 @@ modified: '2020-06-30T05:11:03.190Z'
   - https://github.com/react-component/upload
   - https://github.com/react-component/form
 
-## installation
+# installation
 
 - react for developer/designer
 - https://unpkg.com/react@16/umd/react.development.js
@@ -37,7 +37,7 @@ modified: '2020-06-30T05:11:03.190Z'
 - unpkg.com/react@16.8.0/umd/react.production.min.js  
 - https://cdn.bootcdn.net/ajax/libs/react/16.13.1/umd/react.development.js
 
-## 1.hello world     
+# 1.hello world     
 
 - examine the building blocks of React apps: elements and components.
 - The smallest React example looks like this
@@ -49,7 +49,7 @@ modified: '2020-06-30T05:11:03.190Z'
   );
 ```
 
-## 2.jsx
+# 2.jsx
 
 - `const element = <h1>Hello, world!</h1>;`
   - This funny tag syntax is neither a string nor HTML.
@@ -105,7 +105,7 @@ modified: '2020-06-30T05:11:03.190Z'
     - You can think of them as descriptions of what you want to see on the screen. 
     - React reads these objects and uses them to construct the DOM and keep it up to date.
 
-## 3.rendering elements    
+# 3.rendering elements    
 
 - Elements are the smallest building blocks of React apps.
   - An element describes what you want to see on the screen
@@ -122,7 +122,7 @@ modified: '2020-06-30T05:11:03.190Z'
 - Even though we create an element describing the whole UI tree on every tick, *only the text node whose contents have changed gets updated* by React DOM
 - In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
 
-## 4.components & props    
+# 4.components & props    
 
 - Components let you split the UI into independent, reusable pieces, and think about each piece in isolation
   - Conceptually, components are like JavaScript functions. 
@@ -141,7 +141,7 @@ modified: '2020-06-30T05:11:03.190Z'
 
    
 
-## 5.state & lifecycle     
+# 5.state & lifecycle     
 
 - State is similar to props, but it is private and fully controlled by the component.
 - React then calls the Clock component’s `render()` method.
@@ -183,7 +183,7 @@ modified: '2020-06-30T05:11:03.190Z'
 
 	- setState()会将你提供的对象合并到当前状态，是浅合并
 
-## 6.handling events      
+# 6.handling events      
 
 - Handling events with React elements is very similar to handling events on DOM elements. 
 - There are some syntax **differences**:
@@ -214,7 +214,7 @@ modified: '2020-06-30T05:11:03.190Z'
   - 但是通过bind的方式，事件对象以及更多的参数将会被隐式的进行传递
   - 通过bind方式向监听函数传参，在类组件中定义的监听函数，事件对象e要排在所传递参数的后面
 
-## 7.conditional rendering   
+# 7.conditional rendering   
 
 - In React, you can create distinct components that encapsulate behavior you need. 
   - Then, you can render only some of them, depending on the state of your application.
@@ -235,7 +235,7 @@ modified: '2020-06-30T05:11:03.190Z'
   - If a component `return null` in its render function, why componentDidMount is triggered?
     - componentDidMount() will fire exactly after render()! so you're saying that your render function returns null, which means render function executes
 
-## 8.lists & keys   
+# 8.lists & keys   
 
 - You can build collections of elements and include them in JSX using curly braces `{}`
 - you’ll be given a warning that a key should be provided for list items. 
@@ -261,7 +261,7 @@ modified: '2020-06-30T05:11:03.190Z'
 - key会作为给React的提示，但不会传递给你的组件，如果您的组件中需要使用和key相同的值，请将其作为属性传递
 	- 不能使用props.key来获取key
 
-## 9.forms   
+# 9.forms   
 
 - HTML form elements work a little bit differently from other DOM elements in React
   - because **form elements naturally keep some internal state**.   
@@ -328,7 +328,7 @@ modified: '2020-06-30T05:11:03.190Z'
 - 有时使用受控组件可能很繁琐，因为要为数据可能发生变化的每一种方式都编写一个事件处理程序，并通过一个组件来管理全部的状态。
 - 过于繁琐时，考虑使用非受控组件
 
-## 10.lifting state up    
+# 10.lifting state up    
 
 - Often, several components need to reflect the same changing data. 
   - We recommend **lifting the shared state up to their closest common ancestor**.
@@ -351,7 +351,7 @@ modified: '2020-06-30T05:11:03.190Z'
   - Additionally, you can implement any custom logic to reject or transform user input.
 - If something can be derived from either props or state, it probably shouldn’t be in the state.
 
-## 11.composition vs inheritance
+# 11.composition vs inheritance
 
 - we recommend using composition instead of inheritance to reuse code between components.
 - **Containment** 使用组合处理组件间的包含关系
@@ -418,7 +418,7 @@ function WelcomeDialog() {
 
 - 如果要在组件之间复用UI无关的功能，建议将其提取到单独的JavaScript模块中
 
-## 12.thinking in react    
+# 12.thinking in react    
 
 - **Start With A Mock**
   - Imagine that we already have a JSON API and a mock from our designer.

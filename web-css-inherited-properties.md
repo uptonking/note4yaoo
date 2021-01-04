@@ -7,11 +7,11 @@ modified: '2020-12-21T07:45:31.968Z'
 
 # web-css-inherited-properties
 
-## guide
+# guide
 
 - [css 2.1 Appendix F. Full property table](https://www.w3.org/TR/CSS21/propidx.html)
 
-## ineritance
+# inheritance
 
 - In CSS, inheritance controls what happens when no value is specified for a property on an element.
 - CSS properties can be categorized in two types:
@@ -21,7 +21,7 @@ modified: '2020-12-21T07:45:31.968Z'
   - It works on both inherited and non-inherited properties.
   - `revert` keyword revert property to the user agent's default unless a user stylesheet exists
 
-## non-inherited
+# non-inherited
 
 - display
 
@@ -36,7 +36,7 @@ modified: '2020-12-21T07:45:31.968Z'
 - background
 - background-color
 
-## inherited
+# inherited
 
 azimuth
 border-collapse

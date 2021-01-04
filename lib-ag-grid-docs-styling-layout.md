@@ -7,13 +7,13 @@ modified: '2020-12-08T13:05:21.307Z'
 
 # lib-ag-grid-docs-styling-layout
 
-## pieces
+# pieces
 
 - How Flashing Works
   - Each time the call value is changed, the grid adds the CSS class `ag-cell-data-changed` for 500ms by default, and then then CSS class `ag-cell-data-changed-animation` for 1, 000ms by default. 
   - The grid provided themes use this to apply a background color.
 
-## Grid Size
+# Grid Size
 
 - Under normal usage, your application should set the `width` and `height` of the grid using CSS styles. 
   - The grid will then fit the width you provide and use scrolling inside the grid to allowing viewing all rows and columns.
@@ -50,19 +50,19 @@ modified: '2020-12-08T13:05:21.307Z'
   - It is not possible to specify a max height when using auto-height.
   - If using auto-height, the grid is set up to work in a different way. It is not possible to switch. If you do need to switch, you will need to turn auto-height off.
 
-## Styling Rows
+# Styling Rows
 
 - style object inline
 - row className
 - If you refresh a row, or a cell is updated due to editing, the rowStyle, rowClass and rowClassRules are all applied again. 
 
-## Styling Cells
+# Styling Cells
 
 - style object inline
 - cell className
 - If you refresh a cell, or a cell is updated due to editing, the cellStyle, cellClass and cellClassRules are all applied again. 
 
-## Themes
+# Themes
 
 - The grid is styled using CSS, and a theme is a set of CSS rules styling the grid. 
 - The grid comes bundled with Provided Themes, or you can create your own.
@@ -78,7 +78,7 @@ modified: '2020-12-08T13:05:21.307Z'
     - Instead of using a parameter, create a CSS rule to apply your desired effect. 
   - Deleted placeholder selectors
 
-## Overlays
+# Overlays
 
 - At present, there are two overlays for the grid:
   - Loading: Gets displayed when the grid is loading data.

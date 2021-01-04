@@ -7,16 +7,16 @@ modified: '2021-01-01T20:08:12.231Z'
 
 # ux-design-material-api
 
-## material-design-components-web
+# material-design-components-web
 
-- ### CompAdapter
+- ## CompAdapter
 - interface methods for host interactions
 - 全是接口方法
 - 可分类：样式读写、属性存取器、事件发布、组件其他行为
 
  
 
-- ### CompFoundation
+- ## CompFoundation
 - host-agnostic/indirect logic
 - 属性字段全部私有
 - 暴露get/setXxx方法，而不暴露属性字段
@@ -24,7 +24,7 @@ modified: '2021-01-01T20:08:12.231Z'
 
  
 
-- ### Comp
+- ## Comp
 - public api proxying to methods in foundation
 - 构造函数中暴露this.root
 - 有时会直接使用默认的MDCFoundation，而没有自己的f，如Modal
@@ -39,7 +39,7 @@ modified: '2021-01-01T20:08:12.231Z'
 
  
 
-- ### components-catalog
+- ## components-catalog
 - typography
 - button
   - Icon, Disabled
@@ -73,7 +73,7 @@ modified: '2021-01-01T20:08:12.231Z'
 - snackbar
 - theme
 
-- ### adapter结构 interface methods for host interactions
+- ## adapter结构 interface methods for host interactions
 - addClass
 - removeClass
 - hasClass
@@ -205,7 +205,7 @@ modified: '2021-01-01T20:08:12.231Z'
 
  
 
-- ### foundation结构 host-agnostic/indirect logic
+- ## foundation结构 host-agnostic/indirect logic
 - adapter
 - defaultAdapter
 - animationFrame
@@ -300,7 +300,7 @@ modified: '2021-01-01T20:08:12.231Z'
 
  
 
-- ### component结构 public api proxying to methods in foundation
+- ## component结构 public api proxying to methods in foundation
 - foundation
 - root
 - getDefaultFoundation

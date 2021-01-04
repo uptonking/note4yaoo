@@ -8,7 +8,7 @@ modified: '2020-12-21T08:03:56.709Z'
 
 # web-dev-comp-react-in-action
 
-## react-comp-in-action
+# react-comp-in-action
 
 - dev-faq
   - 生成色板后，给各色值定义了类似blue900的名称，各组件如何使用相关颜色
@@ -154,7 +154,7 @@ modified: '2020-12-21T08:03:56.709Z'
     - commonjs/cjs1种import和export: require, module.exports
     - antd开发了专用babel插件将import转换成多个named import
 
-## pieces
+# pieces
 
 - [I feel like one of the hardest parts about building a component library is getting past the initial decision-making friction. There are so many decisions you need to make right off of the bat](https://twitter.com/MCapoz/status/1283398811973488640).
   - Monorepo or multi-repo? Semantic versioning? TypeScript or JavaScript? webpack or rollup? CSS-in-JS or Sass? If you use CSS-in-JS, should you use styled-components or emotion?

@@ -7,9 +7,9 @@ modified: '2020-07-14T09:26:55.226Z'
 
 # lang-js-node
 
-## pieces
+# pieces
 
--  ### node-path
+-  ## node-path
 - `path.join(path1，path2，path3.......)`
   - 用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径
   - 先解析相对路径..，再拼接返回，path片段/docs, ./docs, docs三种方式处理无差别
@@ -31,7 +31,7 @@ modified: '2020-07-14T09:26:55.226Z'
   - `require(./a.js)` ：当node遇到require时，会相对当前执行文件查找
   - 建议：只在require()中才使用相对路径(./, ../)的写法，其他地方一律绝对路径
 
-### events
+## events
 
 - Much of the Node.js core API is built around an idiomatic(地道的，符合习惯的，独特的) asynchronous event-driven architecture 
   - in which certain kinds of objects (called "emitters") emit named events that cause Function objects ("listeners") to be called.
@@ -123,7 +123,7 @@ myEmitter.emit('event');
   - Unlike EventEmitter, any given listener can be registered at most once per event type. Attempts to register a listener multiple times are ignored.
   - The NodeEventTarget does not implement any special default behavior for events with type 'error'.
 
-## 多线程
+# 多线程
 
 - Node.js保持了JavaScript在浏览器中单线程的特点
   - 它的优势是没有线程间数据同步的性能消耗也不会出现死锁的情况

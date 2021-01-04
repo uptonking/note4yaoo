@@ -7,14 +7,14 @@ modified: '2020-11-10T12:00:13.284Z'
 
 # note-dev-state-event-pubsub
 
-## faq
+# faq
 
 - 监听事件的执行顺序如何控制
   - node默认使用队列形式的链表
 
-## guide
+# guide
 
-## EventEmitter
+# EventEmitter
 
 - 优点
   - 可用来替换包含多个callback的场景
@@ -67,9 +67,9 @@ modified: '2020-11-10T12:00:13.284Z'
 - more-event-emitter-impl
   - https://github.com/facebookarchive/emitter
 
-## pieces
+# pieces
 
-- ### [When should I use EventEmitter?](https://stackoverflow.com/questions/38881170/when-should-i-use-eventemitter)
+- ## [When should I use EventEmitter?](https://stackoverflow.com/questions/38881170/when-should-i-use-eventemitter)
 - Whenever it makes sense for code to SUBSCRIBE to something rather than get a callback from something. 
 - The **typical use case** would be that there's multiple blocks of code in your application that may need to do something when an event happens.
 - For example, let's say you are creating a ticketing system. 
@@ -129,7 +129,7 @@ TicketEvent.on('inserted', function(ticket) {
 });
 ```
 
-- ### code-snippet: EventEmitter vs callback
+- ## code-snippet: EventEmitter vs callback
 
 ``` JS
 let events = require("events");
@@ -188,7 +188,7 @@ student_lenny.score('scored', 95);
   - It's a pre-built system for that and is often better than inventing your own callback notification scheme. 
   - And sometimes, it is useful even for your own implementation when you aren't trying to enable outside interactions.
 
-- ### [How to make an EventEmitter listen to another EventEmitter in Node.js?](https://stackoverflow.com/questions/26465358/how-to-make-an-eventemitter-listen-to-another-eventemitter-in-node-js)
+- ## [How to make an EventEmitter listen to another EventEmitter in Node.js?](https://stackoverflow.com/questions/26465358/how-to-make-an-eventemitter-listen-to-another-eventemitter-in-node-js)
 - EventEmitters are kind of sole-source in javascript. 
   - They are not system-wide events that everyone can listen to. 
   - They are objects that can emit events to support the asynchronous patterns. 
@@ -235,7 +235,7 @@ setInterval(function() {
   - Just remember that an EventEmitter is a sole-source thing though, not Publish-Subscribe. 
   - For that you would need some extra stuff or find a library, or even use redis. 
 
-## ref
+# ref
 
 - [Why use Node.js EventEmitter instead of just a plain function?](https://stackoverflow.com/questions/39305354/why-use-node-js-eventemitter-instead-of-just-a-plain-function)
   - another code snippet for EventEmitter vs callback

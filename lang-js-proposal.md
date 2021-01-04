@@ -7,7 +7,7 @@ modified: '2020-07-07T08:10:16.774Z'
 
 # lang-js-proposal
 
-## proposal-toc
+# proposal-toc
 
 - https://babeljs.io/docs/en/plugins
 - https://github.com/babel/proposals
@@ -15,7 +15,7 @@ modified: '2020-07-07T08:10:16.774Z'
   - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
   - [tc39 proposals stages](https://github.com/tc39/proposals)
 
-## guide
+# guide
 
 - es6-features
   - rest-spread-operator
@@ -24,7 +24,7 @@ modified: '2020-07-07T08:10:16.774Z'
 - esX-deprecated
   - cancellable promise
 
-## class fields
+# class fields
 
 - stage 3
   - https://github.com/tc39/proposal-class-fields
@@ -125,7 +125,7 @@ Object.defineProperty(Model, 'method3', {
   - ref
     - https://2ality.com/2012/08/property-definition-assignment.html
 
-## private methods
+# private methods
 
 - stage 3
   - https://github.com/tc39/proposal-private-methods
@@ -134,7 +134,7 @@ Object.defineProperty(Model, 'method3', {
 - The class fields proposal provides private fields for classes and instances, and this proposal builds on that by adding private methods and accessors (getter/setters) to JavaScript. 
 - To make methods, getter/setters or fields private, just give them a name starting with `#` .
 
-## decorator
+# decorator
 
 - stage 2
   - https://github.com/tc39/proposal-decorators
@@ -208,7 +208,7 @@ Object.defineProperty(Model, 'method3', {
     - 参数所处的函数名称
     - 参数在函数中形参中的位置（函数签名中的第几个参数）
 
-## dynamic import
+# dynamic import
 
 - stage 4
   - https://github.com/tc39/proposal-dynamic-import

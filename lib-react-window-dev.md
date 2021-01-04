@@ -7,16 +7,16 @@ modified: '2020-08-05T10:10:27.845Z'
 
 # lib-react-window-dev
 
-## issues
+# issues
 
-- ### [Adds range rendering](https://github.com/bvaughn/react-window/pull/218)
+- ## [Adds range rendering](https://github.com/bvaughn/react-window/pull/218)
   - Getting rid of the range renderer prop felt like a nice change from react-virtualized to react-window. 
   - Re-adding it would add extra function calls to relatively hot code.
 
-- ### [Feature Request: How can we handle rowspan and colspan](https://github.com/pupudu/window-table/issues/21)
+- ## [Feature Request: How can we handle rowspan and colspan](https://github.com/pupudu/window-table/issues/21)
 - Unfortunately, there's no easy and trivial way to do that yet.
 
-- ### [Why items are absolutely positioned?](https://github.com/bvaughn/react-window/issues/133)
+- ## [Why items are absolutely positioned?](https://github.com/bvaughn/react-window/issues/133)
 - In both react-virtualized and react-window cells are absolutely positioned. Why?
 - I have made react-virtualized work with statically positioned items, by inserting a "spacer" div before rows via `cellRangeRenderer` . 
   - That spacer div has margin-top set to the `style.top` of first rendered row.
@@ -30,14 +30,14 @@ modified: '2020-08-05T10:10:27.845Z'
 - 在firefox中先下滑再把浏览器窗口拉宽再上滑，可以发现问题，最下方的list item向下滑动到消失前会突然向上跳，然后再一次向下滑动到隐藏。
   - chrome中也有此问题但不明显
 
-- ### [Using html table element](https://github.com/bvaughn/react-window/issues/60)
+- ## [Using html table element](https://github.com/bvaughn/react-window/issues/60)
   - [react-window using tr-td](https://codesandbox.io/s/rrn61wkzwm?file=/index.js)
 - Idon't think table-tr-td will really work. 
 - To my knowledge, `HTMLTableElement` doesn't really support overflow in the way a windowing component would need. 
 - You could change the style to `display: block` but I still don't think it would quite work right
 - Why do you need a table? I think you can achieve the same column layout with inline blocks or flex layouts
 
-## Infinite lists and reflow
+# Infinite lists and reflow
 
 - [Infinite lists and reflow](https://gist.github.com/bvaughn/ded0061d712a30c22b0a591cec4aa576)
   - [infinite-list-reflow-examples](https://github.com/bvaughn/infinite-list-reflow-examples)

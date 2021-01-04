@@ -7,7 +7,7 @@ modified: '2020-12-08T13:22:03.435Z'
 
 # lib-ag-grid-events
 
-## EventService
+# EventService
 
 - 全局单例的事件中心
 
@@ -16,7 +16,7 @@ modified: '2020-12-08T13:22:03.435Z'
   - dispatched from
   - add listeners
 
-## 重要事件
+# 重要事件
 
 - `Events.EVENT_GRID_COLUMNS_CHANGED`
   - gridColumnsChanged 事件会触发创建或重渲染所有表头行，并给单元格列添加事件监听器函数

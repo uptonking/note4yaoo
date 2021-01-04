@@ -7,7 +7,7 @@ modified: '2020-06-30T05:17:43.290Z'
 
 # coding-style
 
-## js
+# js
 
 - export 导出
   - 结论是使用命名导出，少用default
@@ -26,9 +26,9 @@ modified: '2020-06-30T05:17:43.290Z'
     - https://github.com/airbnb/javascript/issues/710
     - https://juejin.im/post/5b2b2d8de51d4558ba1a64e0
 
-## java
+# java
 
-## git
+# git
 
 - Conventional Commits (8种)
   - `<type>[(optional scope)]: <description>`

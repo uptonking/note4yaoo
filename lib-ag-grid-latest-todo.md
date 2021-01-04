@@ -7,7 +7,7 @@ modified: '2020-09-17T17:17:58.423Z'
 
 # lib-ag-grid-latest-todo
 
-## discuss
+# discuss
 
 - 考虑移除部分事件监听器，或延迟添加事件监听器，监听器加早了数据未装载会执行无效事件，但似乎对性能影响不大
 
@@ -19,14 +19,14 @@ modified: '2020-09-17T17:17:58.423Z'
   - The vertical scroll range (how much you can scroll over) will change dynamically to fit the rows. 
   - If scrolling by dragging the scroll thumb with the mouse, the scroll thumb will not follow the mouse. 
 
-## optimization
+# optimization
 
-## extend
+# extend
 
 - Undo/Redo feature is designed to be a recovery mechanism for user editing mistakes. 
   - Performing grid operations that change the row/column order, e.g. sorting, filtering and grouping, will clear the undo/redo stacks.
 
-## debug
+# debug
 
 - import ag-grid的ts源码用babel转义进行开发调试时出现的error
   - `"main": "./src/ts/main.ts"` ，直接使用@ag-grid-community/core的源码编译会抛出异常

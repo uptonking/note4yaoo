@@ -7,7 +7,7 @@ modified: '2020-12-21T07:45:49.032Z'
 
 # web-css-style-guide-spec
 
-## style-guide-catalog
+# style-guide-catalog
 
 - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
 - [Airbnb CSS/Sass Styleguide](https://github.com/airbnb/css)
@@ -35,7 +35,7 @@ modified: '2020-12-21T07:45:49.032Z'
   - [CSS书写规范和顺序](https://juejin.im/post/5d552252f265da03a14852cc)
   - [CSS 属性排序千千万，我只爱那一种](https://zhuanlan.zhihu.com/p/32905439)
 
-## css书写顺序建议
+# css书写顺序建议
 
 - layout 位置布局，影响文档流
   - display
@@ -75,7 +75,7 @@ modified: '2020-12-21T07:45:49.032Z'
 - tip
   - 将layout相关的属性集中起来放在最前面，避免多次layout/reflow
 
-## Google CSS Style Guide
+# Google CSS Style Guide
 
 - Alphabetize declarations.
 - Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
@@ -84,7 +84,7 @@ modified: '2020-12-21T07:45:49.032Z'
 - url()中不要使用引号
 - 避免使用css hacks
 
-## Airbnb CSS/Sass Styleguide
+# Airbnb CSS/Sass Styleguide
 
 - Prefer dashes over camelCasing in class names.
   - Underscores and PascalCasing are okay if you are using BEM (see OOCSS and BEM below).
@@ -101,7 +101,7 @@ modified: '2020-12-21T07:45:49.032Z'
   - 推荐使用scss
   - 应避免使用 @extend 指令，因为它并不直观，而且具有潜在风险，特别是用在嵌套选择器的时候，推荐使用mixin函数复用代码
 
-## Mozilla Organizing your CSS
+# Mozilla Organizing your CSS
 
 - Does your project have a coding style guide?
   - CSS guidelines for MDN
@@ -120,36 +120,36 @@ modified: '2020-12-21T07:45:49.032Z'
   - ITCSS
   - Atomic CSS
 
-##  CSS guidelines for MDN code examples
+#  CSS guidelines for MDN code examples
 
 - The following guidelines cover how to write CSS for MDN code examples.
 
-- ### High-level guidelines
+- ## High-level guidelines
   - Don't use preprocessors
   - Don't use specific CSS methodologies
   - Use flexible/relative units
   - Don't use resets
   - Plan your CSS — avoid overriding
-- ### General CSS coding style
+- ## General CSS coding style
   - Use expanded syntax
   - Favor longhand rules over terse shorthand
   - Use double quotes around values
   - Spacing around function parameters
   - CSS comments
   - Don't use `!important`
-- ### Specific CSS syntax points
+- ## Specific CSS syntax points
   - Turning off borders and other properties
     - When turning off borders (and any other properties that can take `0` or `none` as values), use `0` rather than `none`
   - Use "mobile first" media queries
     - make the default styling before any media queries have been applied to the document the narrow screen/mobile styling, 
     - and then override this for wider viewports inside successive media queries.
-- ### Selectors
+- ## Selectors
   - Don't use ID selectors
     - harder to override if needed
     - less flexible
   - Put multiple selectors on separate lines
 
-## pieces
+# pieces
 
 - 长名称或词组可以使用中横线来为选择器命名，不建议使用下划线来命名CSS选择器
   - 输入的时候少按一个shift键； 

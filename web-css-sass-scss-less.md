@@ -7,7 +7,7 @@ modified: '2020-12-21T07:45:45.366Z'
 
 # web-css-sass-scss-less
 
-## guide
+# guide
 
 - css预处理器的技术选型
   - 参考知名项目或大公司项目的选择，如google、microsoft、alibaba
@@ -26,7 +26,7 @@ modified: '2020-12-21T07:45:45.366Z'
   - 无嵌套书写
   - 无变量(旧版css无)
 
-## sass
+# sass
 
 - sass使用代表
   - bootstrap 4
@@ -43,13 +43,13 @@ modified: '2020-12-21T07:45:45.366Z'
   - Scss对sass语法进行了改良，Sass 3就变成了Scss(sassy css)。与原来的语法兼容，只是用{}取代了原来的缩进。
   - bootstrap 4的版本，使用的就是Scss，而之前的3使用的是less
 
-## less
+# less
 
 - less使用代表
   - ant-design 4
   - bootstrap 3
 
-- ### [An Introduction To LESS, And LESS Vs Sass]https://www.smashingmagazine.com/2011/09/an-introduction-to-less-and-comparison-to-sass/)
+- ## [An Introduction To LESS, And LESS Vs Sass]https://www.smashingmagazine.com/2011/09/an-introduction-to-less-and-comparison-to-sass/)
 - LESS and Sass share a lot of similarities in syntax, including the following:
   - Mixins -. Classes for classes.
   - Parametric mixins -. Classes to which you can pass parameters, like functions.
@@ -69,7 +69,7 @@ modified: '2020-12-21T07:45:45.366Z'
   - Both options will minimize the footprint of your styles, as well as avoid any problems that might result from the client’s browser not running JavaScript. 
 - Maybe when LESS has a companion like Compass for Sass, it will become as powerful as Sass.
 
-- ### less vs sass
+- ## less vs sass
 - Less will work on both client side and Server side. SCSS will only work on Server side.
   - less是通过客户端处理的，sass是通过服务端处理，相比较之下前者解析会比后者慢一点
 - Less环境较Sass简单
@@ -81,7 +81,7 @@ modified: '2020-12-21T07:45:45.366Z'
   - 逻辑控制，if，while，for
   - 数据结构，list，map
 
-## ref
+# ref
 
 - [Bootstrap 4 alpha release blog](https://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/)
   - Moved from Less to Sass. 

@@ -7,10 +7,10 @@ modified: '2020-12-21T07:45:52.317Z'
 
 # web-css-triggers
 
-## guide 
+# guide 
 - https://csstriggers.com/
 
-## CSS Triggers
+# CSS Triggers
 
 - transform
   - Changing `transform` does not trigger any geometry changes or painting, which is very good. 

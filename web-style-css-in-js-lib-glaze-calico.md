@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:24.571Z'
 
 # web-style-css-in-js-lib-glaze-calico
 
-## guide
+# guide
 
 - glaze优点
   - 支持使用约束限制的值
@@ -32,7 +32,7 @@ modified: '2021-01-01T20:06:24.571Z'
 - To enable client-side injection of styles, wrap the entry point of your application with `StyleInjectorProvider`
   - 使用glaze能利用design tokens好处，却无法提取静态css了，glaze本身的设计原则就是结合动态css的灵活性和静态css的高性能
 
-## glaze-docs
+# glaze-docs
 
 - This project was born to combine the best of its predecessors into a single solution:
 - Near-zero runtime, made possible by treat
@@ -64,7 +64,7 @@ modified: '2021-01-01T20:06:24.571Z'
   - Transform each alias to its corresponding CSS property name or custom shorthand.
   - Resolve values from a scale if available.
 
-## pieces
+# pieces
 
 - I’m planning on migration glaze to use otion instead of treat as the underlying CSS-in-JS library 
   - and thus, critical CSS will by inlined to documents. 

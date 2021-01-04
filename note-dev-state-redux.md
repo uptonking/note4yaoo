@@ -9,19 +9,19 @@ modified: '2020-11-02T06:05:38.780Z'
 
 - Redux is a predictable state container for JavaScript apps.
 
-## guide
+# guide
 
 - redux vs pub sub
 - redux原则
   - 架构设计：single store, read only state, reducer as pure function
   - 要让状态的变化可追踪，可重复，可维护
 
-## faq
+# faq
 
 - 为什么很多人将fetch请求和redux绑定在一起使用
   - 因为不管是改全局state还是fetch什么的，在我的组件内部都是副作用，副作用的东西之后，它还要改一层全局状态，如果你的场景是请求了改这个组件，那没啥问题，但如果你请求了数据，这个数据在多层次都要用到，你得放全局，这个fetch得副作用你觉得放哪能解决你的问题？既然redux那块有一层改全局state的功能划分，再加一层副作用异步改全局state的能力，redux-thunk提供了，所以effects这种副作用理应靠在redux那边。这个你用一下dva+umi的方式可能更好理解。
 
-- ### [redux有什么缺点？](https://www.zhihu.com/question/263928256)
+- ## [redux有什么缺点？](https://www.zhihu.com/question/263928256)
   - 需要写大量的 Action Creator 代码
   - 需要写大量 switch case 分支判断
   - Action 和 Reducer 分开书写，维护起来麻烦
@@ -38,7 +38,7 @@ modified: '2020-11-02T06:05:38.780Z'
     - 在复杂业务中，函数式很难落地，包括类似游戏开发中的ECS架构，其实都很难实践，那一点点利用分级缓存提升的性能远远不如面向对象带来的优势更多，还是看业务场景和团队成员的。
   - 对于自定义的class实例、引用类型、各个不同命名空间属性之间的互相引用似乎是不支持的，仍然需要设计成扁平化，通过 id 来关联，查找的时候显然是不如链式结构快的，并且很难用
 
-- ### [Redux vs Simple Pub Sub](https://spectrum.chat/react/general/redux-vs-simple-pub-sub~818edeff-0616-4462-9743-71c2678795a5)
+- ## [Redux vs Simple Pub Sub](https://spectrum.chat/react/general/redux-vs-simple-pub-sub~818edeff-0616-4462-9743-71c2678795a5)
   - I developed a project which is using redux to send messages to a component that is residing in another parent component 
     - but the same problem was resolved using a simple ES6 pub sub library. 
     - This raised my curiosity whether to use Redux or a simple Pub Sub would be enough?
@@ -66,7 +66,7 @@ modified: '2020-11-02T06:05:38.780Z'
     - So, sort of a complement to Redux IF you expect to build a large app. 
     - Otherwise we could also possibly just use React Context as a global store instead of Redux for smaller apps?
 
-## pieces
+# pieces
 
 - Redux is not supposed to "replace the initial idea of react.js", 
   - think of it more like a library to manage shared state between components and to coordinate state mutations. 
@@ -101,7 +101,7 @@ modified: '2020-11-02T06:05:38.780Z'
   - Thus we should not name actions in a way that describes how the reducer will handle them. 
   - Action names should indicate what happened, not what needs to happen
 
-## redux-toolkit
+# redux-toolkit
 
 - The official, opinionated, batteries-included toolset for efficient Redux development
 
@@ -141,7 +141,7 @@ modified: '2020-11-02T06:05:38.780Z'
 - [用redux-toolkit 改造你的redux](https://juejin.im/post/6844904129178009613)
   - https://github.com/acivan/react-rtk-ts
 
-## ref
+# ref
 
 - [Why you should NEVER use Redux with Angular](https://morioh.com/p/548aad273e3e)
   - Angular is a highly opinionated framework around dependency injection (DI). 

@@ -7,9 +7,9 @@ modified: '2020-12-28T10:07:53.428Z'
 
 # web-dev-ui-shell
 
-## Overview
+# Overview
 
-- ### [UI shell carbon-v9](https://v9.carbondesignsystem.com/experimental/ui-shell/usage)
+- ## [UI shell carbon-v9](https://v9.carbondesignsystem.com/experimental/ui-shell/usage)
 - The UI shell is the top level in a product's UI. 
   - The UI shell consists of the primary header and footer, as well as header panels that are used for navigation and global UI services.
 - The shell is divided into 3 distinct "zones" which establish purpose and level of control.
@@ -31,7 +31,7 @@ modified: '2020-12-28T10:07:53.428Z'
 - Side-nav panels
   - These panels contain product-level navigation and can be either fixed-width or flexible
 
-- ### [UI shell carbon-v10](https://www.carbondesignsystem.com/components/UI-shell-header/usage)
+- ## [UI shell carbon-v10](https://www.carbondesignsystem.com/components/UI-shell-header/usage)
 - A shell is a collection of components shared by all products within a platform. 
   - It provides a common set of interaction patterns that persist between and across products.
 - The UI shell is made up of three components—the header, the left panel, and the right panel.

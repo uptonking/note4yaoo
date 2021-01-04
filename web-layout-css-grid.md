@@ -7,7 +7,7 @@ modified: '2020-12-21T07:46:14.237Z'
 
 # web-layout-css-grid
 
-## guide
+# guide
 
 - grid布局优点
   - 固定或弹性的轨道尺寸：可以给每个轨道设置固定的尺寸，也可以设置auto | 1fr | 10% 等弹性的尺寸，实际展示的轨道大小会随着父级的宽高变化而变化
@@ -27,7 +27,7 @@ modified: '2020-12-21T07:46:14.237Z'
     - css的卖点是炫酷的design，而不是炫酷的技术
   - [The Quirks of CSS Grid and Absolute Positioning](https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437)
 
-## pieces
+# pieces
 
 - grid布局是二维的，可以通过横轴和交叉轴来对齐grid item。
   - 它有一条轴叫 inline axis，它与文字的书写模式（水平书写、竖直书写）有关，
@@ -62,7 +62,7 @@ modified: '2020-12-21T07:46:14.237Z'
 - place-items: justify-items 和 align-items 的合并写法
 - 在之前的项目中内容默认都是在左上角，可以通过配置这三个属性来改变，和Flex布局的justify-content和align-items属性的使用是相似的。
 
-## CSS Grid网格布局教程
+# CSS Grid网格布局教程
 
 - [CSS Grid网格布局教程_阮一峰_2019](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
@@ -71,7 +71,7 @@ modified: '2020-12-21T07:46:14.237Z'
 - 容器的水平方向为row，竖直方向为column，行列交叉的区域为cell
 - grid line划分了网格区域，n行有n+1条水平网格线，m列有m+1条竖直网格线
 
-- ### 容器属性
+- ## 容器属性
 - `display: grid` 指定一个容器采用网格布局
   - 默认情况下，容器元素都是块级元素，但也可以用 `display: inline-grid;` 设成行内元素
   - 设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。
@@ -123,7 +123,7 @@ modified: '2020-12-21T07:46:14.237Z'
   - `grid: none` ：所有子属性都是初始化的值
   - `auto-flow` ： 表示的值为 row | column，但是统一使用 auto-flow来表示，具体需要看它放置的位置在哪里，如果放置在 / 的左侧，就表示 grid-auto-flow: row， 如果放在右侧，就表示 grid-auto-flow: column
 
-- ### 项目属性
+- ## 项目属性
 - grid-column/row
   - grid-column-start/end: 左/右边框所在的垂直网格线
   - grid-row-start/end: 上/下边框所在的水平网格线
@@ -154,7 +154,7 @@ modified: '2020-12-21T07:46:14.237Z'
     - 可以理解为它可以控制最大值是多少
   - minmax(min, max) ：定义了长度范围区间
 
-## Relationship of grid layout to other layout methods
+# Relationship of grid layout to other layout methods
 
 - The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. 
 - Grid was designed for two-dimensional layout - rows, and columns at the same time. 
@@ -167,11 +167,11 @@ modified: '2020-12-21T07:46:14.237Z'
 - This can be a way to get items nested into the grid to act as if they are part of the grid, and is a way around some of the issues that would be solved by subgrids once they are implemented. 
 - You can also use `display: contents` in a similar way with flexbox to enable nested items to become flex items.
 
-## A Complete Guide to Grid
+# A Complete Guide to Grid
 
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-## 精读《用 css grid 重新思考布局》
+# 精读《用 css grid 重新思考布局》
 
 - [精读《用 css grid 重新思考布局》](https://zhuanlan.zhihu.com/p/86519309)
 
@@ -200,7 +200,7 @@ modified: '2020-12-21T07:46:14.237Z'
   - 开发UI部分时，只需关心页面由哪些模块组成，去实现这些模块就行了，而不需要关心模块之间应该如何组合(与headless ui的区别？)
   - 在描述组合时，可以通过可视化或比较抽象的字符串描述布局的结构，并对应到写好的模块上，这样的代码维护性远高于用div描述结构的方案
 
-## Things I’ve Learned About CSS Grid Layout
+# Things I’ve Learned About CSS Grid Layout
 
 - [Things I’ve Learned About CSS Grid Layout_2016](https://css-tricks.com/things-ive-learned-css-grid-layout/)
 

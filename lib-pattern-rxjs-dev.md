@@ -9,7 +9,7 @@ modified: '2020-12-14T11:23:17.570Z'
 
 - A reactive programming library for JavaScript
 
-## guide
+# guide
 
 - rxjs-features
   - follow the Observable Spec Proposal
@@ -44,7 +44,7 @@ modified: '2020-12-14T11:23:17.570Z'
 - redux-observable
   - An Epic is a function which takes a stream of actions and returns a stream of actions. Actions in, actions out.
 
-## pieces
+# pieces
 
 - The most obvious streams in a front end app are streams of user inputs, and streams of data from a server. 
 
@@ -217,7 +217,7 @@ useEffect(() => {
     - They give the syntax benefits of async/await coupled with the power of rxjs (e.g. cancellation). 
     - We use Redux Saga to run all our async generators and it is great!
 
-## ref
+# ref
 
 - [响应式编程与实时数据处理：从 RxJS 到 Flink（一）](https://zhuanlan.zhihu.com/p/335227503)
 - [Is there any good reason to NOT use RxJS and Observables in Node.js for a highly event-based system – instead of native EventEmitters? ](https://twitter.com/fmalcher01/status/1317393487025868800)

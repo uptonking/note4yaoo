@@ -7,18 +7,18 @@ modified: '2020-12-21T07:46:17.578Z'
 
 # web-layout-flexbox
 
-## guide
+# guide
 
 - ref
   - [30分钟学会Flex布局](https://zhuanlan.zhihu.com/p/25303493)
 
  
 
-## pieces
+# pieces
 
-## summary
+# summary
 
-- ### 弹性容器
+- ## 弹性容器
 - flex-direction: 指定主轴上项目排列的方向
   - row/column/-reverse
   - 默认值：row，主轴为水平方向，起点在左端
@@ -43,7 +43,7 @@ modified: '2020-12-21T07:46:17.578Z'
     - 拉伸各个项目，让一行里的项目具有相同的高度。
     - 若项目里的内容不一样多，则各行的高度可能不同
 
-- ### 弹性项目
+- ## 弹性项目
 - order: 指定项目在行中排列的位置顺序
   - 默认值：0，数值越小，排列越靠左或上，可为负，可不连续
   - 让元素显示顺序与html源码中的顺序无关
@@ -81,18 +81,18 @@ modified: '2020-12-21T07:46:17.578Z'
   - 当flex取值为两个非负数字，则分别视为flex-grow和flex-shrink的值，flex-basis 取 0%
   - 当flex取值为一个非负数字和一个长度或百分比，则分别视为flex-grow和flex-basis的值，flex-shrink 取 1
 
-- ### grow和shrink的关系
+- ## grow和shrink的关系
 - 当 flex-wrap 为 wrap/-reverse，且子项宽度和不及父容器宽度时，flex-grow 会起作用，子项会根据 flex-grow 设定的值放大（为0的项不放大）
 - 当 flex-wrap 为 wrap/-reverse，且子项宽度和超过父容器宽度时，首先一定会换行，换行后，每一行的右端都可能会有剩余空间（最后一行包含的子项可能比前几行少，所以剩余空间可能会更大），这时 flex-grow 会起作用，若当前行所有子项的 flex-grow 都为0，则剩余空间保留，若当前行存在一个子项的 flex-grow 不为0，则剩余空间会被 flex-grow 不为0的子项占据
 - 当 flex-wrap 为 nowrap，且子项宽度和不及父容器宽度时，flex-grow 会起作用，子项会根据 flex-grow 设定的值放大（为0的项不放大）
 - 当 flex-wrap 为 nowrap，且子项宽度和超过父容器宽度时，flex-shrink 会起作用，子项会根据 flex-shrink 设定的值进行缩小（为0的项不缩小）。但这里有一个较为特殊情况，就是当这一行所有子项 flex-shrink 都为0时，也就是说所有的子项都不能缩小，就会出现讨厌的横向滚动条
 - 总结上面四点，可以看出不管在什么情况下，**在同一时间flex-shrink和flex-grow只有一个能起作用**，这其中的道理细想起来也很浅显：空间足够时，flex-grow 就有发挥的余地，而空间不足时，flex-shrink 就能起作用。当然，flex-wrap 的值为 wrap | wrap-reverse 时，表明可以换行，既然可以换行，一般情况下空间就总是足够的，flex-shrink 当然就不会起作用
 
-## A Complete Guide to Flexbox
+# A Complete Guide to Flexbox
 
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-## The One Thing Flexbox Can’t Do - Row Span
+# The One Thing Flexbox Can’t Do - Row Span
 
 - [The One Thing Flexbox Can’t Do](https://dzone.com/articles/the-one-thing-flexbox-cant-do)
   - [codepen: 6-grid flexbox with rowspan](https://codepen.io/swizec/pen/NRqGLQ/)
@@ -103,7 +103,7 @@ modified: '2020-12-21T07:46:17.578Z'
   - and make sure one of the elements contains only two elements.
   - Give those elements different flex weights.
 
-## Flexbox layout isn't slow
+# Flexbox layout isn't slow
 
  - [Flexbox layout isn't slow](https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow)
 
@@ -120,6 +120,6 @@ modified: '2020-12-21T07:46:17.578Z'
   - I also ran the benchmark using `display:table-cell` and it hit 30ms, right between the two flexbox implementations.
   - The benchmarks above only represent the Blink & WebKit side of things. Due to the time of implementation, flexbox is nearly identical across Safari, Chrome & Android.
 
-## Flexbox and absolute positioning
+# Flexbox and absolute positioning
 
 - [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)

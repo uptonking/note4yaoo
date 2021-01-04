@@ -9,7 +9,7 @@ modified: '2020-12-14T11:22:48.700Z'
 
 - A reactive programming library for JavaScript
 
-## guide
+# guide
 
 - Goals
   - Provide better performance than preceding versions of RxJS
@@ -17,7 +17,7 @@ modified: '2020-12-14T11:22:48.700Z'
     - This proposal introduces an `Observable` type to the ECMAScript standard library.
   - Provide more debuggable call stacks than preceding versions of RxJS
 
-## Overview
+# Overview
 
 - RxJS is a library for composing asynchronous and event-based programs by using observable sequences.
 - It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) 
@@ -49,7 +49,7 @@ modified: '2020-12-14T11:22:48.700Z'
 - RxJS has a whole range of operators that helps you control how the events flow through your observables.
 - You can transform the values passed through your observables.
 
-## Observables
+# Observables
 
 - Observables are lazy Push collections of multiple values.
 
@@ -235,7 +235,7 @@ unsubscribe(); // dispose the resources
 
 - The reason why we use Rx types like Observable, Observer, and Subscription is to get safety (such as the Observable Contract) and composability with Operators.
 
-## Observer
+# Observer
 
 - An Observer is a consumer of values delivered by an Observable.
 - Observers are simply a set of callbacks, one for each type of notification delivered by the Observable: `next/error/complete`.
@@ -265,14 +265,14 @@ observable.subscribe(
   - Internally in `observable.subscribe`, it will create an Observer object using the first callback argument as the `next` handler. 
   - All three types of callbacks may be provided as arguments
 
-## Subscription
+# Subscription
 
 - A Subscription is an object that represents a disposable resource, usually the execution of an Observable. 
 - A Subscription has one important method `unsubscribe`, that takes no argument and just disposes the resource held by the subscription.
 - A Subscription essentially just has an `unsubscribe()` function to release resources or cancel Observable executions.
 - Subscriptions can also be put together, so that a call to an unsubscribe() of one Subscription may unsubscribe multiple Subscriptions. 
 
-## Subjects
+# Subjects
 
 - An RxJS Subject is a special type of Observable that allows values to be multicasted to many Observers. 
 - While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.
@@ -386,7 +386,7 @@ multicasted.connect();
 - `AsyncSubject` is a variant where only the last value of the Observable execution is sent to its observers, and only when the execution completes.
   - `AsyncSubject` is similar to the `last()` operator, in that it waits for the complete notification in order to deliver a single value.
 
-## Operators
+# Operators
 
 - Operators are the essential pieces that allow complex asynchronous code to be easily composed in a declarative manner.
 - Operators are functions.
@@ -422,7 +422,7 @@ multicasted.connect();
   - Even if a sequence is not that common, breaking it out into a single operator can improve readability.
 - You can write an custom new operator from scratch using the Observable constructor
 
-## Schedulers
+# Schedulers
 
 - A scheduler controls when a subscription starts and when notifications are delivered. 
 - A Scheduler lets you define in what execution context will an Observable deliver notifications to its Observer.

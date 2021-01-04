@@ -16,7 +16,7 @@ modified: '2020-12-08T13:33:48.900Z'
   - Reef is a simpler alternative to React, Vue, and other large frameworks.
   - [Changelog](https://reefjs.com/about/#changelog)
 
-## docs
+# docs
 
 - Features
   - Simple templating with JavaScript strings or template literals.
@@ -36,7 +36,7 @@ modified: '2020-12-08T13:33:48.900Z'
     - But Reef only updates things that have changed instead clobbering the DOM and removing focus from your form fields. 
     - It also automatically renders a new UI when your data updates, and helps protect you from XSS attacks.
 
-## reef-repos
+# reef-repos
 
 - https://github.com/sreekotay/reefer
   - Lightweight Vanilla JS HTML/JS UI Library

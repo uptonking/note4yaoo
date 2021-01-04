@@ -7,7 +7,7 @@ modified: '2020-12-21T07:46:29.597Z'
 
 # web-mobile
 
-## features-for-mobile
+# features-for-mobile
 
 - 手机端的事件特点
   - touch事件
@@ -18,7 +18,7 @@ modified: '2020-12-21T07:46:29.597Z'
 - 导航菜单项较多时，竖向放置更友好
 - 移动端浏览器，向上滑时会隐藏上面的url地址栏和下面的导航菜单，来增大显示空间
 
-## faq
+# faq
 
 - 移动设备上的web网页是有300ms延迟的，往往会造成按钮点击延迟甚至是点击失效
   - 这是由于区分单机事件和双击屏幕缩放的历史原因造成的
@@ -30,7 +30,7 @@ modified: '2020-12-21T07:46:29.597Z'
   - android下fixed表现要比iOS更好，软键盘弹出时，不会影响fixed元素定位
   - 解决方案： 可用iScroll插件解决这个问题
 
-## pieces
+# pieces
 
 - 一些情况下对非可点击元素（label，span）监听click事件，ios下不会触发，css增加 `cursor：pointer` 就搞定了
 - 防止手机中网页放大和缩小

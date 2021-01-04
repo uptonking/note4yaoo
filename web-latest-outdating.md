@@ -7,9 +7,9 @@ modified: '2020-12-23T16:19:25.169Z'
 
 # web-latest-outdating
 
-## outdating
+# outdating
 
-### [前端哪些技术优化方案已经过时了？](https://www.zhihu.com/question/385397882/answers/updated)
+## [前端哪些技术优化方案已经过时了？](https://www.zhihu.com/question/385397882/answers/updated)
 
 - activex，flash，sliverlight
   - 随着js逐渐强大，一些嵌入网页的第三方脚本方案逐渐废弃

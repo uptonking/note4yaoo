@@ -7,9 +7,9 @@ modified: '2020-12-21T07:46:26.570Z'
 
 # web-layout-table-blog
 
-## Responsive CSS Table
+# Responsive CSS Table
 
-- ### [Responsive Data Tables_2011](https://css-tricks.com/responsive-data-tables/)
+- ## [Responsive Data Tables_2011](https://css-tricks.com/responsive-data-tables/)
 - Responsive design is all about adjusting designs to accommodate screens of different sizes. 
 - So what happens when a screen is narrower than the minimum width of a data table? 
   - zoom out and see the whole table, but text may be too small
@@ -21,7 +21,7 @@ modified: '2020-12-21T07:46:26.570Z'
   - One of them makes a pie graph from the data in the chart. On narrower screens, the pie graph shows and the table hides, otherwise only the more information-rich table shows
   - The next idea is to turn the table into a mini graphic(like a thumbnail or placeholder image) of a table on narrow screens, rather than show the whole thing. This shows the user there is a data table here to be seen, but doesn’t interfere with the content much. Click the table, get taken to a special screen for viewing the table only, and click to get back.
 
-- ### [Responsive Data Table Roundup_2012](https://css-tricks.com/responsive-data-table-roundup/)
+- ## [Responsive Data Table Roundup_2012](https://css-tricks.com/responsive-data-table-roundup/)
 - The idea of the original was to abandon the grid layout of the table and **make each cell its own line**. 
   - Each of those lines is labeled with a pseudo element. 
   - This creates a much taller table, requiring more vertical scrolling, but does not require horizontal scrolling. 
@@ -39,7 +39,7 @@ modified: '2020-12-21T07:46:26.570Z'
   - This allows for row-to-row comparison.
   - it utilizes JavaScript for a bit of DOM manipulation and screen size measurement. 
 
-- ### [Accessible, Simple, Responsive Tables with flexbox_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
+- ## [Accessible, Simple, Responsive Tables with flexbox_2017](https://css-tricks.com/accessible-simple-responsive-tables/)
 - The tables I find most frustrating are comparison tables or normal content layout tables, there are really no comprehensive CSS based solutions for making these types of tables responsive.
 - Standard table markup seems to make semantic sense and does a pretty decent job of aligning cells. 
   - One of my main concerns was accessibility. 
@@ -108,7 +108,7 @@ modified: '2020-12-21T07:46:26.570Z'
   - for list, box, etc.
 - For older browsers, you can detect flexbox (with Modernizer) and show the mobile version, which is a good example of graceful degradation as fallback ui.
 
-- ### [CSS only Responsive Tables_2012](https://dbushell.com/2016/03/04/css-only-responsive-tables/)
+- ## [CSS only Responsive Tables_2012](https://dbushell.com/2016/03/04/css-only-responsive-tables/)
   - [Responsive Tables (and a calendar demo)](https://dbushell.com/2012/01/04/responsive-calendar-demo/)
   - [Responsive Tables (2)_2012](https://dbushell.com/2012/01/05/responsive-tables-2/)
 
@@ -127,7 +127,7 @@ modified: '2020-12-21T07:46:26.570Z'
 - Maybe a table isn’t the answer!
 - The scrolling shadows act as a visual indicator for content overflow and invite scrolling. Nicer than a hard cut-off in my opinion.
 
-- ### [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
+- ## [Top 10 CSS Table Designs_2008](https://www.smashingmagazine.com/2008/08/top-10-css-table-designs/)
 - This article will show you ten most easily implemented CSS table designs
 - the general rule of thumb for styling of tables
   - Tables love space. 
@@ -154,7 +154,7 @@ modified: '2020-12-21T07:46:26.570Z'
 - Table Background(使用图片)
 - Cell Background
 
-- ### [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
+- ## [Table Design Patterns On The Web_2019](https://www.smashingmagazine.com/2019/01/table-design-patterns-web/)
 - Tables are a design pattern for displaying large amounts of data in rows and columns, making them efficient for doing comparative analysis on categorical objects.
 
 - If your dataset isn’t that large, and features like pagination and sorting are not necessary, then consider a css-only(JavaScript-free) option. 
@@ -211,7 +211,7 @@ modified: '2020-12-21T07:46:26.570Z'
 
 - which approach you pick depends heavily on the type of data you have and the target audience for that data.
 
-- ### [Picking a Responsive Tables Solution](https://cloudfour.com/thinks/picking-responsive-tables-solution/)
+- ## [Picking a Responsive Tables Solution](https://cloudfour.com/thinks/picking-responsive-tables-solution/)
 - Do people use the tables to compare rows? Compare columns?
 - What information is essential?
 - What information do people care about the most?
@@ -222,7 +222,7 @@ modified: '2020-12-21T07:46:26.570Z'
 - Your content will dictate the best responsive table solution. 
 - You just have to ask the right questions of it.
 
-- ### [An Idea for a Simple Responsive Spreadsheet](https://css-tricks.com/idea-simple-responsive-spreadsheet/)
+- ## [An Idea for a Simple Responsive Spreadsheet](https://css-tricks.com/idea-simple-responsive-spreadsheet/)
 - How do you make a spreadsheet-like interface responsive without the use of any JavaScript?
 - First we need to add our markup for the table
   - We just have a regular ol’ table with a `<thead>` and a `<tbody>` , but we do wrap the whole table in the `table-wrapper` div
@@ -236,7 +236,7 @@ modified: '2020-12-21T07:46:26.570Z'
 - A simple responsive spreadsheet where you can view both the heading and the first column no matter where you are in the table. 
 - `position: sticky` has relatively patchy support right now and so it’s worth thoroughly testing before you start using it
 
-## collection-blog-table
+# collection-blog-table
 
 - [accessible responsive table](https://www.accessibility-developer-guide.com/examples/tables/responsive/)
 - [Responsive HTML Table Techniques & Examples](https://speckyboy.com/responsive-html-table-techniques/)

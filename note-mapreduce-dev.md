@@ -7,7 +7,7 @@ modified: '2020-09-27T03:58:20.682Z'
 
 # note-mapreduce-dev
 
-## pieces
+# pieces
 
 - MapReduce框架其实包含5个步骤：Map、Sort、Combine、Shuffle、Reduce
   - 这5个步骤中最重要的就是Map和Reduce，这也是Spark中非常重要的两步

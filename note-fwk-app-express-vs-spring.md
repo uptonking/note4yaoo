@@ -7,9 +7,9 @@ modified: '2020-12-09T13:51:24.279Z'
 
 # note-fwk-app-express-vs-spring
 
-## guide
+# guide
 
-## pieces
+# pieces
 
 - [Why do big companies still write in Java (Spring Boot) when Node.js is faster (and uses less resources) for the job](https://www.quora.com/Why-do-big-companies-still-write-in-Java-Spring-Boot-when-Node-js-is-faster-and-uses-less-resources-for-the-job-that-they-do)
   - Node.js being faster than most other languages is a common misconception. 
@@ -67,4 +67,4 @@ modified: '2020-12-09T13:51:24.279Z'
     - although I have a strong perception that there is a lack of stability and maturity in respect to the libraries offered in Java
   - Another perception is that the JavaScript development cycle is about 20% faster. 
 
-## ref
+# ref

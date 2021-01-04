@@ -7,9 +7,7 @@ modified: '2020-12-23T09:52:21.060Z'
 
 # log-faq-dev-js
 
-## faq-not-yet
-
-制
+# faq-not-yet
 
 - [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
   - decorator提案到现在为止已有三版草案，尤其第三版是对前两版的推倒重来
@@ -24,7 +22,7 @@ modified: '2020-12-23T09:52:21.060Z'
     - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
     - Angular是通过装饰器来模拟了注解的功能
 
-## In js, what does `this` refer to?
+# In js, what does `this` refer to?
 
 - tips
   - Don't use this
@@ -102,7 +100,7 @@ console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 
 - In arrow functions,  `this` retains the value of the enclosing lexical context's `this` .
   -  In global code, it will be set to the global object
-- If `this` arg is passed to `call` ,           `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+- If `this` arg is passed to `call` ,            `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to `null`
 
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
@@ -233,7 +231,7 @@ bird.sayBye(); // Bye from Ferrari
   - [mdn this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
   - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
 
-## js: prototype vs __proto__
+# js: prototype vs __proto__
 
 - prototype 显式原型: explicit prototype property
   - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
@@ -320,7 +318,7 @@ Number instanceof Number //false
 - ref
   - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
 
-## es6 class extends vs node util.inherits
+# es6 class extends vs node util.inherits
 
 - Since the class and extends keywords are only syntactic sugar on top of prototypal inheritance, 
   - the answer simply is: Yes, you can replace `util.inherits` by `extends` and keep the same behavior.
@@ -332,7 +330,7 @@ Number instanceof Number //false
 - ref
   - [Can i replace util.inherits with es6's extend keyword?](https://stackoverflow.com/questions/44226524/can-i-replace-util-inherits-with-es6s-extend-keyword)
 
-## when should I use es6 class
+# when should I use es6 class
 
 - es6的class提供了一个class实现的标准，之前无标准而较乱
 - Opinionated take: 
@@ -349,7 +347,7 @@ Number instanceof Number //false
   - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
     - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
 
-### Please stop using classes in JavaScript
+## Please stop using classes in JavaScript
 
 - Binding issues. 
   - As class constructor functions deal closely with `this ` keyword, 
@@ -379,7 +377,7 @@ Number instanceof Number //false
   - https://everyday.codes/javascript/please-stop-using-classes-in-javascript/
   - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
 
-## function declaration vs function expression(named vs anonymous)
+# function declaration vs function expression(named vs anonymous)
 
 - namedFunc优点
   - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
@@ -402,9 +400,9 @@ Number instanceof Number //false
   - http://kangax.github.io/nfe/
   - https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname
 
-## essentials
+# essentials
 
-### Map vs Object
+## Map vs Object
 
 - Object is similar to Map
   - both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. 
@@ -429,7 +427,7 @@ Number instanceof Number //false
   - [mdn: Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
   - [Maps vs Objects in ES6, When to use?](https://stackoverflow.com/questions/32600157/maps-vs-objects-in-es6-when-to-use)
 
-### for-in vs for-of
+## for-in vs for-of
 
 - Both `for...in` and `for...of` statements iterate over something. 
   - The main difference between them is in what they iterate over.

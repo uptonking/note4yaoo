@@ -7,9 +7,9 @@ modified: '2020-12-21T08:04:19.490Z'
 
 # web-components-blog
 
-## web-components-blog
+# web-components-blog
 
-## [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
+# [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
 
 - 仅供参考，标准及实现都已更新，文章中提到的部分问题已解决了
 
@@ -48,7 +48,7 @@ modified: '2020-12-21T08:04:19.490Z'
   - Taking a web component and comparing it to an abstracted svelte component is totally misleading. 
   - They do different things.
 
-## ref
+# ref
 
 - [google-dev: Building Web Components](https://developers.google.com/web/fundamentals/web-components)
 - [How searching for a bundle-free React led me to web components_202008](https://www.bryanbraun.com/2020/08/31/how-searching-for-a-bundle-free-react-led-me-to-web-components/)

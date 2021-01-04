@@ -7,11 +7,19 @@ modified: '2020-12-05T07:44:12.022Z'
 
 # thread-frontend-web
 
-## pieces
+# pieces
 
  
 
-- ### State machines are great, so why aren’t we rewriting all of our async/await code to them?
+- ## To help me decide exactly what my media query tweak points should be.
+- https://twitter.com/Malarkey/status/1345873190380253187
+- If I had to print something for debug purpose, I'd prefer to show a different content, with the information of the media applied, on a `body::before` pseudo element absolutely positioned.
+- I went with a `content:"XS";` `content: "S"`,  `"M" `and so on. 
+  - I've got this `debug.sass` file damn full of ways to figure out common gotchas behind html classes like debug_viewport debug_grids and so on. 
+  - It's annoying to maintain but it has saved me tons of time @ the job at least twice
+- [Custom properties for breakpoint debugging_201802](https://thatemil.com/blog/2018/02/23/custom-properties-breakpoint-debugging/)
+
+- ## State machines are great, so why aren’t we rewriting all of our async/await code to them?
 - https://twitter.com/dan_abramov/status/1344502932704788480
 - the simple answer: async/await is easier. 
   - It leaves out edge cases. When you include the edge cases, async/await is more complex... So developers just hope for the best.
@@ -28,7 +36,7 @@ modified: '2020-12-05T07:44:12.022Z'
 - I'd much rather go the other way and remove state machines and caching layers from async/await
   - [callback based, simplified async/await](https://es.discourse.group/t/callback-based-simplified-async-await/343)
 
-- ### What advice were you given for your career that turned out to be a complete waste of time and effort?
+- ## What advice were you given for your career that turned out to be a complete waste of time and effort?
 - https://twitter.com/buildsghost/status/1343650869904986112
 - I was told to go take a bunch of night classes on computer science by two MIT grads if I ever wanted to be "serious" about programming.
   - I took some free student-taught classes, 
@@ -43,12 +51,12 @@ modified: '2020-12-05T07:44:12.022Z'
   - Spoiler alert: great work outcomes _make people feel good_
 - Was also told "PHP is dead, JSP is the future" in around 2006. They were very wrong.
 
-- ### I want to *scale* a div and all of its contents to fully fit wall-to-wall inside its container div. 
+- ## I want to *scale* a div and all of its contents to fully fit wall-to-wall inside its container div. 
 - https://twitter.com/erikras/status/1343480294654046209
 - Similar to what `background-size: contain;` can do for images. Possible in CSS only? JS ok, too.
 - I think scaling is the wrong thing for my use case.
 
-- ### A year ago I made a bet on full-stack JS and switched my focus from @laravelphp to Node.js. A year later, I found that Node mostly just slowed me down.
+- ## A year ago I made a bet on full-stack JS and switched my focus from @laravelphp to Node.js. A year later, I found that Node mostly just slowed me down.
 - https://twitter.com/tylerlwsmith/status/1341557868571422722
 - Server-rendered React components look really exciting. 
   - I just wish the Node ecosystem was less fragmented and more productive so it would be easier to take full advantage of it.
@@ -57,7 +65,7 @@ modified: '2020-12-05T07:44:12.022Z'
   - It also has the most innovative front-end libraries, and the front-end is the part that users interact with. 
   - React also works great with extremely complicated state management.
 
-- ### [Reflecting on a year with Node.js and why I should have stuck with Laravel_202012](https://dev.to/tylerlwsmith/reflecting-on-a-year-with-node-js-and-why-i-should-have-stuck-with-laravel-e5a)
+- ## [Reflecting on a year with Node.js and why I should have stuck with Laravel_202012](https://dev.to/tylerlwsmith/reflecting-on-a-year-with-node-js-and-why-i-should-have-stuck-with-laravel-e5a)
 - Earlier this year, I was two months into building a full-stack JavaScript app. 
   - I used an Express server, set up Next.js for server-side rendering, added Chokidar for instant server reloading, used Next.js's Webpack config to compile my server's TypeScript code, hooked up cookie authentication with Argon2 encryption, found the perfect Node ORM, and had the app running in separate containers for Node, PostgreSQL and Redis.
 - After two months of hard work, all I had built was a mediocre server-rendered CRUD app hacked together with two-dozen NPM libraries. 
@@ -91,7 +99,7 @@ modified: '2020-12-05T07:44:12.022Z'
     - Laravel kills it with the amount of first party integrations they have. 
     - It's a compelling reason to choose Laravel over Node
 
-- ### if I was building a CMS using MongoDB would you tell me to stop immediately? If so, why?
+- ## if I was building a CMS using MongoDB would you tell me to stop immediately? If so, why?
 - https://twitter.com/JakeDohm/status/1341892219511459842
 - Every developer build a CMS at some point in their career. 
   - Might as well check it off of your bucket list.

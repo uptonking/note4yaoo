@@ -7,16 +7,16 @@ modified: '2020-10-22T13:33:45.146Z'
 
 # pm-editor-for-markdown
 
-## summary
+# summary
 
 - 与交互相关的操作非常容易与编辑器的功能产生联系
 - 可以考虑通过提供某一类的拖拽组件代替一类应用场景的editor/builder
 
-## features
+# features
 
 - table editor for markdown
 
-## markdown-editor-as-component
+# markdown-editor-as-component
 
 - editor-plugins
   - keyboard-shortcuts:preview, bold, checkbox, newLine
@@ -49,7 +49,7 @@ modified: '2020-10-22T13:33:45.146Z'
   - mathTeX: formula
   - flowChart
 
-## solution-catalog-editor-for-markdown
+# solution-catalog-editor-for-markdown
 
 - https://github.com/kkfor/for-editor
 - https://github.com/uiwjs/react-md-editor

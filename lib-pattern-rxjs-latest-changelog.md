@@ -7,7 +7,7 @@ modified: '2020-12-14T14:44:23.079Z'
 
 # lib-pattern-rxjs-latest-changelog
 
-## guide
+# guide
 
 - ref
   - [CHANGELOG of 5.0.0-7.0.0+ ](https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md)
@@ -36,7 +36,7 @@ modified: '2020-12-14T14:44:23.079Z'
     - Building your own custom operators becomes much easier, and now they work and look just like all other operators in rxjs. 
     - You don't need to extend Observable or override lift anymore.
 
-## changelog
+# changelog
 
 - 7.0.0-201909
   - RxJS now supports first-class interop with AsyncIterables

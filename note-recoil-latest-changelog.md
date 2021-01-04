@@ -7,13 +7,13 @@ modified: '2020-07-14T10:39:49.095Z'
 
 # note-recoil-latest-changelog
 
-## guide
+# guide
 
 - ref
   - https://github.com/facebookexperimental/Recoil/blob/master/CHANGELOG.md
   - https://recoiljs.org/blog
 
-## changelog
+# changelog
 
 - 0.0.10-20200618
   - Fix exports for snapshot hooks

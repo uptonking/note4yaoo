@@ -7,9 +7,9 @@ modified: '2020-12-21T07:44:38.205Z'
 
 # web-animations-api-docs
 
-## pieces
+# pieces
 
-## Web Animations API (WAAPI)
+# Web Animations API (WAAPI)
 
 - The Web Animations API allows for synchronizing and timing changes to the presentation of a Web page, i.e. animation of DOM elements. 
   - It does so by combining two models: the Timing Model and the Animation Model.
@@ -30,7 +30,7 @@ modified: '2020-12-21T07:44:38.205Z'
 - The Animation Model determines what the animated object should look like at any given time.
 - Web animations consist of Timeline Objects, Animation Objects, and Animation Effect Objects working together. By assembling these disparate objects, we can create animations of our own.
 
-## ref
+# ref
 
 - [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)
 - [Using the Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API)

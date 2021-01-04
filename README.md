@@ -9,7 +9,7 @@ modified: '2020-12-21T08:01:27.245Z'
 
 - my daily notes and pieces  
 
-## tags
+# tags
 
 - `note-` : dev and learning notes about libraries, frameworks, web, list, viz, java, geospatial...
 - `web-`: about web dev, layout, css-in-js...

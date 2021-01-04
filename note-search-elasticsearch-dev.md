@@ -7,7 +7,7 @@ modified: '2021-01-01T20:11:51.298Z'
 
 # note-search-elasticsearch-dev
 
-## faq
+# faq
 
 - elasticsearch vs solr
   - 当实时建立索引的时候，solr会产生IO阻塞，而es则不会，所以es查询性能要高于solr
@@ -21,7 +21,7 @@ modified: '2021-01-01T20:11:51.298Z'
   - ref
     - https://zhuanlan.zhihu.com/p/61257030
 
-## docs
+# docs
 
 - ref
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html

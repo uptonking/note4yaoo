@@ -7,9 +7,9 @@ modified: '2020-12-08T13:27:35.701Z'
 
 # lib-fwk-solidjs-blog
 
-## blog-solidjs
+# blog-solidjs
 
-### [Introducing the SolidJS UI Library_202003](https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck)
+## [Introducing the SolidJS UI Library_202003](https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck)
 
 - SolidJS is a declarative UI library for building web applications, much like React, Angular, or Vue. 
   - It is built using brutally efficient fine-grained reactivity(No Virtual DOM), an ephemeral(短暂的、只流行一时的) component model, and the full expressiveness of JavaScript(TypeScript) and JSX.
@@ -58,7 +58,7 @@ modified: '2020-12-08T13:27:35.701Z'
   - lit-html is a library designed to handle rendering and doesn't worry about components and state management so feature sets are not equivalent. 
   - Lit-html has close relationship with Polymer and supported by Google so already a huge leg up
 
-### [Why SolidJS: Do we need another JS UI Library?_202006](https://dev.to/ryansolid/why-solidjs-do-we-need-another-js-ui-library-1mdc)
+## [Why SolidJS: Do we need another JS UI Library?_202006](https://dev.to/ryansolid/why-solidjs-do-we-need-another-js-ui-library-1mdc)
 
 - The number of times I've asked myself that over the years is staggering(大得惊人的; 令人吃惊的; ).
 - I only started promoting it because it had already achieved the goals I had set out for it. 
@@ -118,7 +118,7 @@ modified: '2020-12-08T13:27:35.701Z'
 - Vue is a large library that has to cater to people of all backgrounds.
 - If you are interested in a library that has the discipline of React, transparent implementation that doesn't cut corners for easiness, and all the performance to back it up, maybe SolidJS is the library for you.
 
-## ref
+# ref
 
 - [Designing SolidJS: Components](https://t.co/JBBZSaanu1?amp=1)
 - [Designing SolidJS: JSX](https://t.co/Y3MQ34um1R?amp=1)

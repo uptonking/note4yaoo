@@ -7,9 +7,11 @@ modified: '2020-10-29T13:48:47.020Z'
 
 # note-react-rfc-single-file-format
 
-## guide
+# guide
 
-- [twitter discussion: React Single File Components Are Here](https://twitter.com/dan_abramov/status/1238810260082745344)
+# discuss
+
+- ## [React Single File Components Are Here](https://twitter.com/dan_abramov/status/1238810260082745344)
   - Dan Abramov: Not this particular format but it’s something that’s been on our mind a lot recently. The split we are interested in unifying though is more about server/client. (We use Suspense and error boundaries for visual states.) Watch out for Flight and Blocks work in React repo.
   - Blocks are generalization of “colocating the query without waterfalls” pattern from Relay, but without being tied to GraphQL. Instead of a query you have a function that runs on the server.
   - Hydration boundaries are `<Suspense>` components so nothing new there. Same place we already handle loading states.
@@ -19,7 +21,7 @@ modified: '2020-10-29T13:48:47.020Z'
 - ref
   - [old proposal](https://github.com/react-sfc/react-sfc-proposal)
 
-## [React Single File Components Are Here](https://www.swyx.io/react-sfcs-here/)
+# [React Single File Components Are Here](https://www.swyx.io/react-sfcs-here/)
 
 - The launch of RedwoodJS today marks a first: it is the first time React components are being expressed in a single file format with explicit conventions.
 - For styling, we might use anything from Tailwind to Styled-JSX to Styled-Components/Emotion to Linaria/Astroturf to CSS Modules/PostCSS/SASS/etc and it is a confusing exhausting random eclectic mix of stuff that makes many experts happy and many beginners lost. 
@@ -81,7 +83,8 @@ export const withEmoji = () => (
 ```
 
 - you can consume these files in a lot more different ways by different toolchains (including by design tools!) and none of them have to use Storybook's code, 
-- because all they need to know is the spec of the format and how to parse JavaScript. (yes, JSX compiles to React.createElement, but that is easily mockable).
+- because all they need to know is the spec of the format and how to parse JavaScript. 
+  - (yes, JSX compiles to React.createElement, but that is easily mockable).
 
 - Merging CSF and SFCs
 
@@ -168,13 +171,16 @@ export const Success = ({ posts }) => {
 };
 ```
 
-- Dan Abramov replied with something I missed - the server/client split. There is ongoing work with React Flight (to do with streaming SSR) and Blocks (to do with blocking rendering without being tied to Relay/GraphQL) that I'm basically completely ignorant about.
+- Dan Abramov replied with something I missed - the server/client split. 
+  - There is ongoing work with React Flight (to do with streaming SSR) and Blocks (to do with blocking rendering without being tied to Relay/GraphQL) that I'm basically completely ignorant about.
 
 - While Redwood uses exports to declare loading and error states, Suspense uses `<Suspense>` and error boundaries. 
   - It's possible to compile from the former to the latter but not the other way, 
   - which is a key point of the "formats over functions" idea - things are more consumable that way.
 
-- It also brings to mind the work that Next.js has done with getStaticProps, getStaticPaths and getServerSideProps - as the first hybrid framework, it is nice to use static exports to let the framework pick from data requirements, as well as to not tie yourself so tightly to GraphQL. getStaticPaths in particular is very elegant - moving page creation inside components themselves.
+- It also brings to mind the work that Next.js has done with getStaticProps, getStaticPaths and getServerSideProps - as the first hybrid framework, 
+  - it is nice to use static exports to let the framework pick from data requirements, as well as to not tie yourself so tightly to GraphQL. 
+  - getStaticPaths in particular is very elegant - moving page creation inside components themselves.
 
 - Conclusion - Ending with Why
   - It's reasonable to question why we want everything-in-one file rather than everything-in-a-folder. 

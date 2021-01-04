@@ -7,7 +7,7 @@ modified: '2020-07-05T18:55:35.555Z'
 
 # docs-react-p7-concurrent-mode
 
-## Introducing Concurrent Mode
+# Introducing Concurrent Mode
 
 - Concurrent Mode is a set of new features that help React apps stay responsive and gracefully adjust to the user’s device capabilities and network speed.
 - This illustrates how UI libraries, including React, typically work today. 
@@ -53,7 +53,7 @@ modified: '2020-07-05T18:55:35.555Z'
 - Similarly, we know from research that interactions like hover and text input need to be handled within a very short period of time, while clicks and page transitions can wait a little longer without feeling laggy. 
 - The different “priorities” that Concurrent Mode uses internally roughly correspond to the interaction categories in the human perception research.
 
-## Suspense for Data Fetching
+# Suspense for Data Fetching
 
 - React 16.6 added a ` <Suspense>` component that lets you “wait” for some code to load and declaratively specify a loading state indicator (like a spinner) while we’re waiting
 - Suspense for Data Fetching is a new feature that lets you also use `<Suspense>` to declaratively “wait” for anything else, including data. 
@@ -458,7 +458,7 @@ function ProfileTimeline({ resource }) {
   - Instead of showing a spinner, can we add a visual effect like “greying out” the current screen?
   - Why does our last Suspense example log a warning when clicking the “Next” button?
 
-## Concurrent UI Patterns
+# Concurrent UI Patterns
 
 - Usually, when we update the state, we expect to see changes on the screen immediately. 
   - This makes sense because we want to keep our app responsive to user input. 
@@ -660,7 +660,7 @@ function ProfilePage({ resource }) {
   - Keep in mind that `<SuspenseList>` is composable, like anything in React. 
     - For example, you can create a grid by putting several `<SuspenseList>` rows inside a `<SuspenseList>` table.
 
-## Adopting Concurrent Mode
+# Adopting Concurrent Mode
 
 - Normally, when we add features to React, you can start using them immediately. 
   - Fragments, Context, and even Hooks are examples of such features. 
@@ -708,7 +708,7 @@ ReactDOM.createRoot(
   - Non-React events must opt-in using `unstable_batchedUpdates` . 
   - In Blocking Mode and Concurrent Mode, all `setState` s are batched by default.
 
-## Concurrent Mode API Reference
+# Concurrent Mode API Reference
 
 - Enabling Concurrent Mode
   - createRoot
@@ -719,16 +719,16 @@ ReactDOM.createRoot(
   - useTransition
   - useDeferredValue
 
-### `ReactDOM.createRoot(rootNode).render(<App />);`
+## `ReactDOM.createRoot(rootNode).render(<App />);`
 
 - Replaces `ReactDOM.render(<App />, rootNode)` and enables Concurrent Mode.
 
-### `ReactDOM.createBlockingRoot(rootNode).render(<App />)`
+## `ReactDOM.createBlockingRoot(rootNode).render(<App />)`
 
 - Replaces `ReactDOM.render(<App />, rootNode)` and enables Blocking Mode.
 - Blocking Mode only contains a small subset of Concurrent Mode features and is intended as an intermediary migration step for apps that are unable to migrate directly.
 
-### Suspense
+## Suspense
 
 ``` JS
 <Suspense fallback={<h1>Loading...</h1>}>
@@ -746,7 +746,7 @@ ReactDOM.createRoot(
     - It tells React whether to “skip” revealing this boundary during the initial load. 
     - This API will likely be removed in a future release.
 
-### SuspenseList
+## SuspenseList
 
 ``` JS
 <SuspenseList revealOrder="forwards">
@@ -770,14 +770,14 @@ ReactDOM.createRoot(
   - It does not search for boundaries deeper than one level. 
   - However, it is possible to nest multiple `SuspenseList` components in each other to build grids.
 
-### `useTransition(SUSPENSE_CONFIG);`
+## `useTransition(SUSPENSE_CONFIG);`
 
 - `useTransition` allows components to avoid undesirable loading states by waiting for content to load before transitioning to the next screen. 
 - It also allows components to defer slower, data fetching updates until subsequent renders so that more crucial updates can be rendered immediately.
 - If some state update causes a component to suspend, that state update should be wrapped in a transition.
 - We recommend that you share Suspense Config between different modules.
 
-### `useDeferredValue(value, { timeoutMs: 2000 });`
+## `useDeferredValue(value, { timeoutMs: 2000 });`
 
 - Returns a deferred version of the value that may “lag behind” it for at most `timeoutMs` .
 - This is commonly used to keep the interface responsive when you have something that renders immediately based on user input and something that needs to wait for a data fetch.

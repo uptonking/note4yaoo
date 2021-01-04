@@ -7,7 +7,7 @@ modified: '2021-01-01T20:12:36.651Z'
 
 # web-animation-dev
 
-## summary
+# summary
 
 - 根据应用场景和已有实现，选择最合适的动画实现方式
 - 动画实现的类型
@@ -19,13 +19,13 @@ modified: '2021-01-01T20:12:36.651Z'
 - 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式
 - 具体实现方式在github上的热度
 
-## faq
+# faq
 
 - 组件的hover effect如何实现
 - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形
 - 类似卡片变大
 
-## js animation
+# js animation
 
 - 动画原理
   - 当页面最小化或被切换成后台标签页时，页面为不可见，浏览器会触发visibilitychange事件, 并设置document.hidden属性为true
@@ -71,7 +71,7 @@ modified: '2021-01-01T20:12:36.651Z'
 - ref
   - [requestAnimationFrame用法](https://juejin.im/post/5b6020b8e51d4535253b30d1)
 
-## css animation
+# css animation
 
 - CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
   - The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
@@ -93,7 +93,7 @@ modified: '2021-01-01T20:12:36.651Z'
   - [Using CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
   - [Animatable CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 
-## css transition
+# css transition
 
 - CSS Transitions is a module of CSS that lets you create gradual transitions between the values of specific CSS properties. 
   - The behavior of these transitions can be controlled by specifying their timing function, duration, and other attributes.
@@ -108,9 +108,9 @@ modified: '2021-01-01T20:12:36.651Z'
 - ref
   - [Using CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
-## animation-library-comparison
+# animation-library-comparison
 
-- ### [Comparing JavaScript animation libraries_202004](https://blog.logrocket.com/comparing-javascript-animation-libraries/)
+- ## [Comparing JavaScript animation libraries_202004](https://blog.logrocket.com/comparing-javascript-animation-libraries/)
 - Anime.js
 - Pros
   - Super easy to set up
@@ -154,7 +154,7 @@ modified: '2021-01-01T20:12:36.651Z'
   - With Anime.js and GSAP, they both accomplished animations by importing a global object, identifying elements to apply animations to, and then defining the animation, 
   - With p5.js and Three.js, custom elements were created and appended to the DOM. Both leveraged an HTML canvas to generate the associated animation
 
-## ref
+# ref
 
 - [Animate Your HTML5_2013](http://animateyourhtml5.appspot.com)
   - A tour of HTML5 animation techniques with CSS3, SVG, Canvas and WebGL

@@ -7,14 +7,14 @@ modified: '2020-12-08T13:20:20.680Z'
 
 # lang-jvm-kotlin
 
-## basis
+# basis
 
 - Kotlin是在Java虚拟机（JVM）上运行的静态类型编程语言。
   - 它的开发始于2010年的JetBrains，但是直到2016年，才发布了第一个稳定版本（Kotlin v1.0）
   - JetBrains的负责人Dmitry Jemerov表示Scala接近但编译速度较慢。
 - Kotlin旨在像Java一样快地进行编译，但是比Java具有更简洁，更实用的语法
 
-## kotlin-extensions
+# kotlin-extensions
 
 - Kotlin还可以编译为JavaScript，并且可以创建在启用了JavaScript的浏览器中运行的应用程序。
   - 可以直接在Intellij IDEA中编写JavaScript代码，然后使用Maven或使用命令行进行编译。
@@ -24,7 +24,7 @@ modified: '2020-12-08T13:20:20.680Z'
 - [如何评价 Kotlin Native?](https://www.zhihu.com/question/58044077/answers/updated)
   - kotlin野心很大啊， 底层直通C， 中间层vm，高层脚本。
 
-## kotlin vs java
+# kotlin vs java
 
 - [Kotlin会取代java吗？](https://www.zhihu.com/question/299244850/answers/updated)
   - Kotlin编译是在JVM之上执行的字节码，因此Java是运行Kotlin所必需的。
@@ -45,7 +45,7 @@ modified: '2020-12-08T13:20:20.680Z'
   - Google在2019年已经确立了Kotlin在Android开发中的官方地位
   - Android到2020年了还没有彻底支持Java8, 而kotlin支持全系Android
 
-## ref
+# ref
 
 - [谈编程语言互操作-Java/Kotlin互操作机制](https://zhuanlan.zhihu.com/p/299669161)
   - kotlin语言可以被编译成多种形态，如kotlin-native, kotlin-jvm, kotlin-js

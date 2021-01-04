@@ -7,7 +7,7 @@ modified: '2021-01-01T20:08:01.651Z'
 
 # ux-color-patette
 
-## guide
+# guide
 
 - nice css standard color
   - Grey
@@ -63,7 +63,7 @@ modified: '2021-01-01T20:08:01.651Z'
   - 德加
   - 梵高
 
-## brand-color
+# brand-color
 
 - [google-logo-brand-color](https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/)
   - red 
@@ -83,7 +83,7 @@ modified: '2021-01-01T20:08:01.651Z'
 - linaria-red 洋红
   - #f15f79
 
-## [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
+# [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
 
 - 01. Rich and Adventurous  温暖饱和感
     - sheer/浅蓝灰           #c5d2db

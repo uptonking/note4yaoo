@@ -7,9 +7,9 @@ modified: '2020-12-08T13:33:11.249Z'
 
 # lib-ui-bootstrap-dev
 
-## bootstrap5
+# bootstrap5
 
-### Theming
+## Theming
 
 - Bootstrap 5 includes around two dozen CSS custom properties (variables) in its compiled CSS, with dozens more on the way for improved customization on a per-component basis. 
 - We’re also beginning to make use of custom properties as local variables for various components. 
@@ -17,7 +17,7 @@ modified: '2020-12-08T13:33:11.249Z'
   - and allow some basic restyling and extending of Bootstrap components after Sass compilation.
 - We’re also using CSS variables across our grids—primarily for gutters—with more component usage coming in the future.
 
-### components-catalog
+## components-catalog
 
 - Buttons
   - Close button
@@ -57,7 +57,7 @@ modified: '2020-12-08T13:33:11.249Z'
 - Scrollspy
 - Spinners
 
-### Bootstrap Optional JavaScript plugins
+## Bootstrap Optional JavaScript plugins
 
 - We provide a version of Bootstrap built as ESM (bootstrap.esm.js and bootstrap.esm.min.js) which allows you to use Bootstrap as a module in your browser
   - some of our plugins, namely Dropdown, Tooltip and Popover plugins, cannot be used in a `<script>` tag with `module` type because they depend on Popper.js. 
@@ -116,9 +116,9 @@ $zindex-tooltip:                    1070;
   - we use low single digit `z-index` values of 1, 2, and 3 for default, hover, and active states. 
   - On hover/focus/active, we bring a particular element to the forefront with a higher `z-index` value to show their border over the sibling elements.
 
-## bootstrap4
+# bootstrap4
 
-### Theming
+## Theming
 
 - In Bootstrap 3, theming was largely driven by variable overrides in LESS, custom CSS, and a separate theme stylesheet that we included in our dist files. 
   - With some effort, one could completely redesign the look of Bootstrap 3 without touching the core files. 
@@ -136,7 +136,7 @@ $zindex-tooltip:                    1070;
   - These provide easy access to commonly used values like our theme colors, breakpoints, and primary font stacks when working in your browser’s Inspector, a code sandbox, or general prototyping.
   - CSS variables offer similar flexibility to Sass’s variables, but without the need for compilation before being served to the browser
 
-## bootstrap-ecosystem
+# bootstrap-ecosystem
 
 - https://github.com/easysoft/zui
   - /2.4kStar/MIT/202010/js/less

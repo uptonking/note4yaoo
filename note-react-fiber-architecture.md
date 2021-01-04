@@ -7,7 +7,7 @@ modified: '2020-07-14T11:58:47.593Z'
 
 # note-react-fiber-architecture
 
-## guide
+# guide
 
 - 司徒正美分析fiber
   - [React Fiber架构](https://zhuanlan.zhihu.com/p/37095662)
@@ -16,9 +16,9 @@ modified: '2020-07-14T11:58:47.593Z'
 - ref
   - [react fiber 主流程及功能模块梳理](https://juejin.im/post/6844903781805752328)
 
-## blog
+# blog
 
-### [React Hooks(三): concurrency](https://zhuanlan.zhihu.com/p/99977314)
+## [React Hooks(三): concurrency](https://zhuanlan.zhihu.com/p/99977314)
 
 - Javascript 虽然是单线程语言，但是其仍然可以进行并发，比如 node.js 里日常使用的各种异步 api，都能帮我们编写并发的代码。
 - 除了宿主环境提供的异步 IO，Javascript 还提供了一个另一个常被忽略的并发原语： 协程(Coroutine)
@@ -72,7 +72,7 @@ modified: '2020-07-14T11:58:47.593Z'
   - 主要的区别在于 fiber 更多的是系统级别的，而 coroutine 则更多的是 userland 级别的
   - 由于 React 并没有直接暴露操作 suspend 和 resume 的操作，更多的是在框架级别进行 coroutine 的调度，因此叫 fiber 可能更为合理
 
-### [React Fiber架构如何从JS引擎手中“夺回”调度权](https://segmentfault.com/a/1190000020110045)
+## [React Fiber架构如何从JS引擎手中“夺回”调度权](https://segmentfault.com/a/1190000020110045)
 
 - React 16采用新的Fiber架构对React进行完全重写，同时保持向后兼容。
 - concurrent rendering 又叫 async rendering，主要包含2个特性
@@ -150,7 +150,7 @@ modified: '2020-07-14T11:58:47.593Z'
   - 而Fiber是链表上的节点，组件可以记录当前执行位置用于后续返回。
   - React保持组件纯度和副作用隔离一部分原因是为了SSR。
 
-## pieces
+# pieces
 
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.
   - Phase 1 is called Render/Reconciliation.

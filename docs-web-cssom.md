@@ -7,7 +7,7 @@ modified: '2020-08-08T17:06:31.817Z'
 
 # docs-web-cssom
 
-## CSS Object Model (CSSOM)
+# CSS Object Model (CSSOM)
 
 - The CSS Object Model is a set of APIs allowing the manipulation of CSS from JavaScript. 
 - It is much like the DOM, but for the CSS rather than the HTML. 
@@ -28,7 +28,7 @@ modified: '2020-08-08T17:06:31.817Z'
   - CSSValueList
   - CSSPrimitiveValue 
 
-## ref
+# ref
 
 - [mdn: CSS Object Model (CSSOM)](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model)
 - https://github.com/jsdom/cssstyle

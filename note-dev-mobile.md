@@ -26,13 +26,13 @@ modified: '2020-07-14T09:32:18.390Z'
 - 小程序
   - mpvue(deprecated)
 
-## features
+# features
 
 - 跨平台一致的ui体验
 - 动画支持
 - 调用摄像头扫码
 
-## react-native
+# react-native
 
 - 优点
   - 大公司支持
@@ -61,14 +61,14 @@ modified: '2020-07-14T09:32:18.390Z'
 - ref
 - [为什么说现在 React Native 凉了？](https://www.zhihu.com/question/266630840/answers/updated)
 
-## kotlin-native
+# kotlin-native
 
 - 优点
   - google正大力支持kotlin
 - 缺点
   - 正在研发期，不稳定
 
-## flutter
+# flutter
 
 - 优点
   - google支持
@@ -105,7 +105,7 @@ modified: '2020-07-14T09:32:18.390Z'
   - [flutter凉了吗?](https://www.zhihu.com/question/374113031/answers/updated)
   - [为何有人会喜欢Flutter？](https://www.zhihu.com/question/427198090/answers/updated)
 
-## android
+# android
 
 - 开发因素
   - android设备过于碎片化，不同尺寸不同分辨率的设备ui体验很难一致
@@ -136,4 +136,4 @@ modified: '2020-07-14T09:32:18.390Z'
     - JB推出的Compose Jetpack对于桌面和移动端对Flutter应该是有相当层面上的借鉴。
     - 放弃Native API使用Skia作为图形后端会不会有些大胆？不会的，人家说了：Google Chrome, Android, Flutter, Firefox Canvas, Xamarin, LibreOffice 都有在用，我用怎么了？
 
-## ios
+# ios

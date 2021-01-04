@@ -7,7 +7,7 @@ modified: '2020-10-22T14:01:26.404Z'
 
 # tech-cs-computer-organization
 
-## summary
+# summary
 
 - topics
   - 计算机系统的硬件结构
@@ -16,9 +16,9 @@ modified: '2020-10-22T14:01:26.404Z'
   - 存储器层次结构
   - 并行处理程序
 
-## hardware
+# hardware
 
-## cpu
+# cpu
 
 - Meltdown 熔断
   - 正式名称为“Rogue Data Cache Load”，常译为恶意数据缓存加载

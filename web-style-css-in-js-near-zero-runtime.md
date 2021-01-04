@@ -7,11 +7,11 @@ modified: '2021-01-01T20:06:44.439Z'
 
 # web-style-css-in-js-near-zero-runtime
 
-## solutions
+# solutions
 
 - 技术选型时，参考知名项目或大公司项目的选择
 
-## [astroturf](https://github.com/4Catalyzer/astroturf)
+# [astroturf](https://github.com/4Catalyzer/astroturf)
 
 - keep your CSS fully static with no runtime style parsing.
 - Use your existing tools – Sass, PostCSS, Less – but still write your style definitions in your JavaScript files
@@ -32,7 +32,7 @@ modified: '2021-01-01T20:06:44.439Z'
   - Dynamism in sharing values between js and css
   - A unified JS-only headspace, you still need to think in terms of JS and CSS
 
-## [stitches](https://stitches.dev/docs/introduction)
+# [stitches](https://stitches.dev/docs/introduction)
 
 - styled返回的是一个高阶组件，Button组件编译后的代码如下
   - styled高阶函数参数传入了整体theme tokens的信息，被复用
@@ -82,7 +82,7 @@ return (React.createElement(Base, __assign({}, variants, attrs),
   - It creates a single CSS rule for every property. 
   - Each property is given its own selector, and they're added as class names to the element.
 
-## [compiled](https://compiledcssinjs.com/docs/how-it-works)
+# [compiled](https://compiledcssinjs.com/docs/how-it-works)
 
 - Compiled compiles your CSS in JS at build time by statically analyzing your code and then transforming it into Compiled Components. 
 - Everything we need to use the component is included along side it in the JavaScript bundle.
@@ -120,7 +120,7 @@ export const Dynamic = ({ children, color }) => (
 );
 ```
 
-## [StyleSheet](https://github.com/giuseppeg/style-sheet)
+# [StyleSheet](https://github.com/giuseppeg/style-sheet)
 
 - StyleSheet is a library to author styles in JavaScript.
 - It is fast and generates optimized, tiny bundles by compiling rules to atomic CSS that can then be extracted to .css file with a Babel plugin.

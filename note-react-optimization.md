@@ -7,11 +7,11 @@ modified: '2020-12-08T13:38:59.914Z'
 
 # note-react-optimization
 
-## yet
+# yet
 
 - 只渲染指定或默认范围内visible的元素
 
-## summary
+# summary
 
 - Stop worrying if rerenders happen and instead start worrying about how fast your renders are
   - Slow could mean a lot of things.

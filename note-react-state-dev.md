@@ -7,7 +7,7 @@ modified: '2020-12-08T13:40:02.577Z'
 
 # note-react-state-dev
 
-## pieces
+# pieces
 
 - state management
   1. Context + useState
@@ -32,7 +32,7 @@ modified: '2020-12-08T13:40:02.577Z'
     - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
   - https://twitter.com/cwbuecheler/status/1253711795459588097
 
-- ### [React state management in 2020](https://twitter.com/chrisachard/status/1272963243225632768)
+- ## [React state management in 2020](https://twitter.com/chrisachard/status/1272963243225632768)
 - React includes: local state (which nearly every app uses at some point) and Context
 - Props and State
   - Pros: super simple; built in; nothing extra to learn
@@ -72,7 +72,7 @@ modified: '2020-12-08T13:40:02.577Z'
   - ref
     - https://twitter.com/tannerlinsley/status/1283467225677000706
 
-- ### [Why I Stopped Using Redux](https://dev.to/g_abud/why-i-quit-redux-1knl)
+- ## [Why I Stopped Using Redux](https://dev.to/g_abud/why-i-quit-redux-1knl)
   - The Problem with Single Page Applications
     - A big part of frontend development now becomes burdened with how to maintain our global store without suffering from state bugs, data denormalization, and stale data.
   - Redux is not a Cache
@@ -103,7 +103,7 @@ modified: '2020-12-08T13:40:02.577Z'
     - Check tearing in React concurrent mode
   - [RFC: Context selectors](https://github.com/reactjs/rfcs/pull/119)
 
-- ### [Four different approaches to non-Redux global state libraries_201907](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
+- ## [Four different approaches to non-Redux global state libraries_201907](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
   - There are several implementations how to store state and notify changes.
     - whether context based or external store
     - whether context propagation or subscriptions based 
@@ -319,7 +319,7 @@ function StateProvider({ children }) {
   - Option x1: use an unofficial workaround.
     - useContextSelector proposal and use-context-selector library in userland.
 
-## survey: state management
+# survey: state management
 
 - [How are you currently managing your state? Redux/hooks/MobX/something else?](https://twitter.com/kefimochi/status/1248006010972692481)
 - [How are you handling React state today?](https://twitter.com/housecor/status/1252306374375149568)
@@ -327,7 +327,7 @@ function StateProvider({ children }) {
   - redux
   - mobx
   - other
-- ### [survey: What is your go-to for consuming server-state in your React apps?](https://twitter.com/tannerlinsley/status/1283112469574021120)
+- ## [survey: What is your go-to for consuming server-state in your React apps?](https://twitter.com/tannerlinsley/status/1283112469574021120)
   1. ReactQuery / SWR / Apollo
   2. Redux / Mobx / other "global state" manager
   3. useState/Reducer + context / roll it myself
@@ -353,7 +353,7 @@ function StateProvider({ children }) {
     - I went with react-query because of the quality of it's docs too. Redux and Apollo have had GREAT docs for a long time. As long as I have used react-query, it has too. TypeScript support was also a must for me. Even though swr has better ts support, React-query's was good enough.
   - With Firestore I’m using Redux + Redux-observable as middleware. Next time I’ll go with react query but I should pay attention to the number of reads/writes because u pay for those with Firebase
 
-## context vs redux
+# context vs redux
 
 - viewpoint
   - My personal summary is that new context is ready to be used for low frequency unlikely updates (like locale/theme). It's also good to use it in the same way as old context was used. I.e. for static values and then propagate updates through subscriptions. It's not ready to be used as a replacement for all Flux-like state propagation.
@@ -436,9 +436,9 @@ function StateProvider({ children }) {
   - [Redux - Not Dead Yet!](https://blog.isquaredsoftware.com/2018/03/redux-not-dead-yet/)
   - [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
 
-## fetchData
+# fetchData
 
-## 基于context
+# 基于context
 
 - ref
   - [基于 React Context 的状态管理思考（一）](https://juejin.im/post/5d5ea99be51d45620064bb52)
@@ -461,7 +461,7 @@ function StateProvider({ children }) {
 - 全局变量共享是一个复杂的问题，在并发访问时尤为突出。不过只要保证组件足够纯，再隔离副作用就好了。纯函数的优势就是并发，副作用IO可以交给异步任务队列执行，或者是用Monad来处理IO，保证IO操作次序，IO操作是需要保证先后顺序的，纯函数不需要
 - react的useEffect就是pure操作，将副作用包裹在了Monad里（可以理解为外面又包了一层函数），react调度机制会在一轮渲染之后执行这些副作用操作，保证了副作用与函数组件主体的充分隔离。也就是目前的react已经实现了部分Monad机制。（说是部分因为现在还没有join运算，没办法把一个IO操作映射为另一个IO操作，即(a -> b) -> IO a -> IO b，也就是Functor，可以将Monad解包运算后再封包，，好吧其实这个理解了之后可以自己实现，封包就是f变成()=>f()，解包就是执行封包后的函数即(()=>f())()，解包运算之后再包一层函数纯化返回到Monad即可。）
 
-## recoil
+# recoil
 
 - ref
   - [Recoil - Facebook官方React状态管理器](https://juejin.im/post/5ec0f5905188256d8c4a99b8)
@@ -476,7 +476,7 @@ function StateProvider({ children }) {
   - 消费状态需要import多项，useRecoilState, store
   - 没有足够的亮点吸引用户
 
-## state management using subscription
+# state management using subscription
 
 - ref 
   - [使用React Hooks进行状态管理 - 无Redux和Context](https://juejin.im/post/5d783fca6fb9a06af50ff577)
@@ -587,7 +587,7 @@ const Counter = () => {
       - So, react-hooks-global-state won't get benefits from that feature. 
       - react-hooks-global-state should still be CM-safe though.
 
-## guide
+# guide
 
 - ref
   - [精读《React Hooks 数据流》](https://zhuanlan.zhihu.com/p/126476910)

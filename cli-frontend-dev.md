@@ -7,16 +7,16 @@ modified: '2021-01-01T22:14:19.469Z'
 
 # cli-frontend-dev
 
-## guide
+# guide
 
 - 发包工作流：version bump -> changelog -> git release -> npm publish
   - lerna提供了主流的解决方案，但并不是每步都必须执行
 
-## react
+# react
 
 - npm x -- create-react-app react-cra-ts --template typescript --use-npm
 
-## npm-cli
+# npm-cli
 
 - config-settings
   - prefix
@@ -45,7 +45,7 @@ modified: '2021-01-01T22:14:19.469Z'
   - This command runs the `npm build` command on the matched folders. 
   - This is useful when you install a new version of node, and must recompile all your C++ addons with the new binary.
 
-## nvm
+# nvm
 
 - To set a default Node version to be used in any new shell, use the alias 'default':
   - Use `nvm alias default node` to make the "latest" the default.
@@ -55,7 +55,7 @@ modified: '2021-01-01T22:14:19.469Z'
     - After installing a new node the node will be your current node to use. 
     - So if you want to prevent this behavior, you have to explicitly set up nvm alias default desiredVersionOfNode after each installation or just reopen a terminal
 
-## 前端开发工具
+# 前端开发工具
 
 - storybook
   - UI component dev & test: React, Vue, Angular, Web Components & more
@@ -122,7 +122,7 @@ modified: '2021-01-01T22:14:19.469Z'
       - `lerna ls` ：显示packages下的各个package的version
       - `npm link` ：可添加本地正在开发的包作为依赖
 
-### webpack
+## webpack
 
 - 对于typescript + monorepo的hot reload热加载
   - 基本思路是将package.json的main属性值直接配置到源码如 `src/index.tsx` ，参考例子react-workspaces-playground
@@ -139,20 +139,20 @@ modified: '2021-01-01T22:14:19.469Z'
 - terser-webpack-plugin
   - uses terser to minify your JavaScript
 
-### babel
+## babel
 
 - [babel-plugin-transform-typescript-metadata](https://github.com/leonardfactory/babel-plugin-transform-typescript-metadata)
   - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
   - Babel plugin to emit decorator metadata like typescript compiler
 
-## 开发常用工具
+# 开发常用工具
 
 - Conventional Commits
   - add human and machine readable meaning to commit messages
   - https://www.conventionalcommits.org
   - fix, feat, chore, docs, style, refactor, perf, test
 
-## 前端依赖工具库
+# 前端依赖工具库
 
 - date-fns
   - 方便在浏览器和Node中操作时间日期
@@ -177,7 +177,7 @@ modified: '2021-01-01T22:14:19.469Z'
     - improve Record impl, Record is no longer an Immutable Collection type
     - Flowtype and TypeScript type definitions have been completely rewritten
 
-## 前端工程辅助工具
+# 前端工程辅助工具
 
 - rimraf
   - 作用是以包的形式封装rm -rf命令，用来删除文件和文件夹，不管文件夹是否为空，都可删

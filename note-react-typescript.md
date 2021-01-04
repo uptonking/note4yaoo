@@ -7,7 +7,7 @@ modified: '2020-06-24T08:40:39.069Z'
 
 # note-react-typescript
 
-## guide
+# guide
 
 - `ReactElement` and `JSX.Element` are the result of invoking `React.createElement` directly or via JSX transpilation. 
   - It is an object with `type` , `props` and `key` . 
@@ -27,7 +27,7 @@ modified: '2020-06-24T08:40:39.069Z'
 - ref
   - [精读《@types react 值得注意的TS技巧》](https://zhuanlan.zhihu.com/p/129632306)
 
-- ### hooks相关类型
+- ## hooks相关类型
 
 ``` typescript
 type SetStateAction<S> = S | ((prevState: S) => S);
@@ -71,7 +71,7 @@ function useCallback<T extends (...args: any[]) => any>(callback: T, deps: Depen
 function useDebugValue<T>(value: T, format?: (value: T) => any): void;
 ```
 
-- ### react组件及api相关类型
+- ## react组件及api相关类型
 - `type ComponentType<P = {}> = ComponentClass<P> | FunctionComponent<P>;`
   - `type FC<P = {}> = FunctionComponent<P>;` SFC is deprecated for FC
   - `type ComponentState = any;`
@@ -207,7 +207,7 @@ interface BaseSyntheticEvent<E = object, C = any, T = any> {
 interface SyntheticEvent<T = Element, E = Event> extends BaseSyntheticEvent<E, EventTarget & T, EventTarget> {}
 ```
 
-- ### 函数组件
+- ## 函数组件
 
 ``` typescript
 interface FunctionComponent<P = {}> {
@@ -221,7 +221,7 @@ interface FunctionComponent<P = {}> {
 type FC<P = {}> = FunctionComponent<P>;
 ```
 
-- ### 类组件
+- ## 类组件
 
 ``` typescript
 class Component<P, S> {
@@ -289,7 +289,7 @@ interface ClassicComponentClass<P = {}> extends ComponentClass<P> {
 }
 ```
 
-- ### 元素相关
+- ## 元素相关
 
 ``` typescript
 // ReactType is deprecated for ElementType
@@ -341,7 +341,7 @@ declare global {
 }
 ```
 
-- ### Node相关
+- ## Node相关
 
 ``` typescript
 type ReactText = string | number;
@@ -354,7 +354,7 @@ type ReactFragment = {} | ReactNodeArray;
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
 ```
 
-## 类型示例examples
+# 类型示例examples
 
 ``` typescript
 // Use type inference; inferred return type is `JSX.Element | null`

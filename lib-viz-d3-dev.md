@@ -7,12 +7,12 @@ modified: '2020-12-08T13:32:22.331Z'
 
 # lib-viz-d3-dev
 
-## tip
+# tip
 
 - Mike Bostock的外边距约定 http://bl.ocks.org/mbostock/3019563
 - 剪切路径clip-path会将svg边界上和边界外的元素超出svg矩形的部分隐藏
 
-## summary
+# summary
 
 - d3.svg.arc()
   - disk 圆形

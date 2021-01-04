@@ -7,7 +7,7 @@ modified: '2020-12-08T13:25:59.562Z'
 
 # lib-fwk-reef-issues
 
-## more-issues
+# more-issues
 - [Does Reef remove element event listeners?](https://github.com/cferdinandi/reef/issues/68)
   - When Reef removes elements from the DOM, does it make sure that all its event listeners are removed as well?
     - Just a small concern about memory leaks and was wondering what Reef is doing to help prevent them.

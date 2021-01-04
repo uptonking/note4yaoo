@@ -7,7 +7,7 @@ modified: '2021-01-01T20:52:42.088Z'
 
 # web-latest-industry
 
-## guide
+# guide
 
 - watching
   - render
@@ -49,9 +49,9 @@ modified: '2021-01-01T20:52:42.088Z'
     - puppeteer
   - compiler
 
-## discuss
+# discuss
 
-- ### techs to look out for in the javascript world in 2021
+- ## techs to look out for in the javascript world in 2021
 - https://twitter.com/KerryRitter/status/1344039489123934209
   - @stenciljs - web components compiler
   - @tailwindcss - design system toolkit
@@ -72,7 +72,7 @@ modified: '2021-01-01T20:52:42.088Z'
     - and a slightly smaller chance that React Charts goes away all together.
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
 
-- ### [Serverless 能取代微服务吗？](https://www.zhihu.com/question/335301678/answers/updated)
+- ## [Serverless 能取代微服务吗？](https://www.zhihu.com/question/335301678/answers/updated)
 - serverless是一种概念，serverless的目的是让开发者能更专注于逻辑的开发。
   - 云函数是一种可以直接使用的工具。也可以说是 serverless 的一种实现方式（虽然并不完美）
   - 云函数可以用来直接跑主要业务服务吗？看云商的支持力度。
@@ -82,7 +82,7 @@ modified: '2021-01-01T20:52:42.088Z'
   - 应用领域有很多复杂的状态问题, 应用冷启动, jit, 状态迁移, 缓存, session , 都制约了应用的弹性
   - serverless目前是云厂商售卖的概念。需要解决的体验问题很多。
 
-- ### [2020 国内公司前端团队都在搞些什么?](https://www.zhihu.com/question/398940598/answers/updated)
+- ## [2020 国内公司前端团队都在搞些什么?](https://www.zhihu.com/question/398940598/answers/updated)
 - 我的前端工程化突破点是 webpack5 的 module federation
 - 得物作为最近两年的黑马，前端团队也在不断探索新的技术疆域：
   - “no code”、“low code”、“数据可视化”、“前端微服务”、“设计素材中心”、“性能异常监控”、“动画库”、“可视化埋点”、“一站式服务”、“组件 Hub”、“H5 游戏”、“Mock Server”、“前端质量诊断系统”、“BFF”、“前端行为回放”

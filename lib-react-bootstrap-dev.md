@@ -7,7 +7,7 @@ modified: '2020-12-25T12:10:07.972Z'
 
 # lib-react-bootstrap-dev
 
-## guide
+# guide
 
 - features
   - Rebuilt with React
@@ -31,7 +31,7 @@ modified: '2020-12-25T12:10:07.972Z'
   - Since React-Bootstrap is built with React Javascript, state can be passed within React-Bootstrap components as a prop. 
     - It also makes it easier to manage the state as updates are made using React’s state instead of directly manipulating the state of the DOM. 
 
-## Overview
+# Overview
 
 - You should import individual components like: `react-bootstrap/Button` rather than the entire library. 
   - Doing so pulls in only the specific components that you use, 
@@ -58,4 +58,4 @@ modified: '2020-12-25T12:10:07.972Z'
   - React-Bootstrap only contains components that are present in vanilla Bootstrap. 
     - If functionality was removed from Bootstrap, then it was also removed from React-Bootstrap. 
 
-## pieces
+# pieces

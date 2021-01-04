@@ -8,7 +8,7 @@ modified: '2020-10-22T13:33:54.313Z'
 
 # pm-list-grid-table
 
-## summary
+# summary
 
 - ag-grid源码要点
   - ioc
@@ -32,7 +32,7 @@ modified: '2020-10-22T13:33:54.313Z'
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
   - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
 
-## why-datable
+# why-datable
 
 - very few options for a data table with all the following 
   - typescript
@@ -43,7 +43,7 @@ modified: '2020-10-22T13:33:54.313Z'
 - ag-grid缺点
   - group功能在企业版，需付费
 
-## features
+# features
 
 - core
   - sort/filter/group
@@ -86,9 +86,9 @@ modified: '2020-10-22T13:33:54.313Z'
   - apache arrow columnar format
   - wasm vs webgpu
 
-## grid-implementation
+# grid-implementation
 
-- ### react-table
+- ## react-table
   - required-props: data, columns
   - data: 必需，类型是 array of objects
   - style: 自定义
@@ -97,14 +97,14 @@ modified: '2020-10-22T13:33:54.313Z'
     - 基于react实现，react only 
     - 用于方便实现ui的工具: useBlock/Absolute/FlexLayout
       - 不同布局需要的条件不一样，如BlockLayout需要指定宽度
-- ### ag-grid
+- ## ag-grid
   - required-props:rowData, columnDefs, 父元素width, height
   - data: 必需，类型是 array of objects
   - style: ag-grid.css, ag-theme-alpine.css
   - ui实现：行列部分基于position-absolute，整体结构基于div-flex
   - note
     - 基于js实现，可用于react/vue/angular
-- ### handsontable
+- ## handsontable
   - required-props: 都是非必需，宽高也是非必需
   - data: 非必需，类型可以是array of arrays, array of objects, 还可以将columns值设为函数再计算处理后返回列信息
     - 不传入data时，会显示占满父元素的空格表格
@@ -113,7 +113,7 @@ modified: '2020-10-22T13:33:54.313Z'
   - ui实现: 基于table, tr, td和display-table-cell
   - note
     - 从自身向父元素查找带有width,height和 `overflow:hidden` 的元素并占满
-- ### react-virtualized
+- ## react-virtualized
   - required-props: cellRenderer, width, height，rowCount, rowHeight, colCount, colWidth
     - cellRenderer is responsible for rendering a single cell, given its row and column index.
   - data: 必需，间接通过cellRenderer传入
@@ -125,7 +125,7 @@ modified: '2020-10-22T13:33:54.313Z'
     - `Table` Component is created with flexbox. 
       - This allows it to have a fixed header and scrollable body content. 
       - It also makes use of `Grid` for windowing table content so that large lists are rendered efficiently
-- ### react-window
+- ## react-window
   - required-props:children, width, height, rowCount, rowHeight, colCount, colWidth
   - data: 必需，通过react component的children传入，类型自定义
     - 要能在children中通过rowIndex,colIndex获取
@@ -133,11 +133,11 @@ modified: '2020-10-22T13:33:54.313Z'
   - ui实现: div-flexbox
   - note
     - VariableSizeGrid的colWidth和rowHeight值类型都是函数
-- ### react-data-grid
-- ### react-base-table
+- ## react-data-grid
+- ## react-base-table
   - required-props
 
-## popular-data-grid-docs
+# popular-data-grid-docs
 
 - https://www.ag-grid.com/javascript-grid-reference-overview/
 - https://handsontable.com/docs/8.0.0/tutorial-features.html
@@ -147,14 +147,14 @@ modified: '2020-10-22T13:33:54.313Z'
 - https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/
 - https://www.grapecity.com/spreadjs/docs/v13/online/UsingtheSpreadSheetsElement.html
 
-## pieces
+# pieces
 
 - To use an absolute layout, you would need to either 
   - use div instead of table element
   - or, switch all of your table element styles to be `display: block` ( `display: inline-block` for cells) 
   - and last but not least, when using an absolute layout, your rows must have a predefined height, eg. 50px.
 
-## product-react-table
+# product-react-table
 
 - a lightweight, fast and extendable datagrid built for React
 - features
@@ -203,7 +203,7 @@ modified: '2020-10-22T13:33:54.313Z'
       - 海量svg元素的动画和操作体验很不友好
       - Chart.js has support for mixing chart types, animations
 
-## product-react-data-grid
+# product-react-data-grid
 
 - Excel-like grid component built with React
 - features
@@ -242,7 +242,7 @@ modified: '2020-10-22T13:33:54.313Z'
   - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
   - FilterableHeaderCell组件使用了form-group/control
 
-## product-react-base-table
+# product-react-base-table
 
 - A react table component to display large datasets with high performance and flexibility
 - BaseTable is designed to be the base component to build your own complex table component
@@ -262,7 +262,7 @@ modified: '2020-10-22T13:33:54.313Z'
     - and those tables are all scrollable, then the positioning could be not expected, 
     - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
 
-## extensions-for-table-grid 
+# extensions-for-table-grid 
 
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
@@ -292,7 +292,7 @@ modified: '2020-10-22T13:33:54.313Z'
 - https://github.com/burnash/dataimport
   - Simple JavaScript CSV Importer
 
-## office-online-product-catalog
+# office-online-product-catalog
 
 - office软件提供商
   - 国内主流：石墨，腾讯文档，钉钉文档，金山文档，语雀

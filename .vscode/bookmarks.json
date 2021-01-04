@@ -1,70 +1,10 @@
 [
 	{
-		"path": "$ROOTPATH$/pick-dict-common.md",
-		"bookmarks": [
-			{
-				"line": 10,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/log-dev-error.md",
-		"bookmarks": [
-			{
-				"line": 75,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
 		"path": "$ROOTPATH$/log-dev-pieces-frontend.md",
 		"bookmarks": [
 			{
 				"line": 11,
 				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/toc-github-repos-js-ts.md",
-		"bookmarks": [
-			{
-				"line": 7,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/draft-pastebin-pieces.md",
-		"bookmarks": [
-			{
-				"line": 11,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/log-faq-zhihu.md",
-		"bookmarks": [
-			{
-				"line": 12,
-				"column": 0,
-				"label": ""
-			}
-		]
-	},
-	{
-		"path": "$ROOTPATH$/pick-wiki.md",
-		"bookmarks": [
-			{
-				"line": 29,
-				"column": 1,
 				"label": ""
 			}
 		]

@@ -7,7 +7,7 @@ modified: '2020-08-18T06:14:37.874Z'
 
 # lib-react-table-issues
 
-## faq-not-yet
+# faq-not-yet
 
 - [add item after sortBy](https://github.com/tannerlinsley/react-table/issues/2641)
 - [Cannot sort by Date](https://github.com/tannerlinsley/react-table/issues/2613)
@@ -28,19 +28,19 @@ modified: '2020-08-18T06:14:37.874Z'
 
 - [no horizontal scrollbar showing up when resizing columns to be wider than the available table width](https://github.com/tannerlinsley/react-table/issues/2630)
 
-## features
+# features
 
-- ### row span /WIP
+- ## row span /WIP
 - [cell-level rowspan/colspan](https://github.com/tannerlinsley/react-table/issues/1933)
 - [How to use rowSpan](https://github.com/tannerlinsley/react-table/discussions/2233)
 - [pr: Add useRowSpan plugin](https://github.com/tannerlinsley/react-table/pull/2534)
   - this comes to a need having virtualization with row spans, now i can't use row span html attribute because my HoCs are divs and React naturally can't handle that nested DOM validation.
 
-- ### column pin 
+- ## column pin 
 - [pr: useColumnPin](https://github.com/tannerlinsley/react-table/pull/1962)
   - This plugin is already implemented on v8
 
-- ### virtualized
+- ## virtualized
 - [react-table supports infinite scrolling?](https://github.com/tannerlinsley/react-table/issues/1735)
   - When implementing virtual scrolling, you cannot use traditional table elements because:
     - To virtualize, you must nest a few divs and create a scrollable overflow container, which you cannot do with table elements
@@ -62,10 +62,10 @@ modified: '2020-08-18T06:14:37.874Z'
   - 100% flawless alignment
   - grid-area x/y Positioning (positioning without the all the css `position: absolute` crap)
 
-- ### layout
+- ## layout
 - [pr: useGridLayout](https://github.com/tannerlinsley/react-table/pull/2525)
 
-## issues
+# issues
 
 - [v7 Feedback & Ideas](https://github.com/tannerlinsley/react-table/issues/1252)
 

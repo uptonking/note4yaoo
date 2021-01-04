@@ -7,9 +7,9 @@ modified: '2020-12-21T07:47:02.451Z'
 
 # viz-base-webgl
 
-## WebGL
+# WebGL
 
-### overview
+## overview
 
 - WebGL is a cross-platform, royalty-free web standard for a low-level 3D graphics API based on OpenGL ES, exposed to ECMAScript via the HTML5 Canvas element. 
 - Developers familiar with OpenGL ES 2.0 will recognize WebGL as a Shader-based API using GLSL, with constructs that are semantically similar to those of the underlying OpenGL ES API. It stays very close to the OpenGL ES specification, with some concessions made for what developers expect out of memory-managed languages such as JavaScript.
@@ -19,7 +19,7 @@ modified: '2020-12-21T07:47:02.451Z'
 - Major browser vendors Apple (Safari), Google (Chrome), Microsoft (Edge), and Mozilla (Firefox) are members of the WebGL Working Group.
 - https://www.khronos.org/webgl/
 
-### tips
+## tips
 
 - WebGL 1.0是基于OpenGL ES 2.0的API
 - WebGL 2.0是基于OpenGL ES 3.0的API
@@ -50,7 +50,7 @@ modified: '2020-12-21T07:47:02.451Z'
   - Sadly, iOS Safari decided not to implement WebGL 3.0, effectively killing it.
   - vulkan设计的时候并没有把javascript考虑进来，例如一个command queue，javascript就找不到很好的数据结构来支持，而且javascript本身也是单进程的，所以多个command queue也不能很好的发挥作用。什么？你说有webworker，可是webworker thread之间的数据交互似乎也不像c里面的共享内存那么方便。此外，从我维护的一个WebGL的产品的用户来看，大多数是在Intel的集成显卡上跑(很多Mac用户)，程序的瓶颈是在GPU，而不是在于CPU。所以Javascript虽然慢，driver stack虽然厚，但是现在优化这些(Vulkan的主要提升点）并没有太多好处。不过我希望vulkan的stateless还是可以引入到webGL 3.0中。很多state management的事情引擎会作，就不需要driver再去做。
 
-### 其他方案
+## 其他方案
 
 - Vulkan
   - Vulkan最早是2015年由Khronos Group发布的一个低负载、多平台3D图形和运算API接口，当时被称为下一代OpenGL项目GLNext，但在这一名字发布后项目就被中止
@@ -82,7 +82,7 @@ modified: '2020-12-21T07:47:02.451Z'
   - Unlike WebGL, WebGPU is not a direct port of any existing native API. 
   - It is based on concepts in Vulkan, Metal, and Direct3D 12 and is intended to provide high performance on these modern graphics APIs across mobile and desktop platforms
 
-## 计算机图形学
+# 计算机图形学
 
 - 选择参考
   - DX用作Windows平台的底层支持，最好能上个DX12
@@ -102,9 +102,9 @@ modified: '2020-12-21T07:47:02.451Z'
   - You may use OpenGL to solve some problems you usually solve with OpenCL but you will have to map your problem to the graphics context in order to get your computation going.
   - I think the main reason for you to pick OpenGL for non-rendering tasks is to support older hardware that can't run OpenCL.
 
-## game
+# game
 
-### libgdx
+## libgdx
 
 - libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, Mac OS X, Android, your WebGL enabled browser and iOS.
   - https://github.com/libgdx/libgdx
@@ -112,6 +112,6 @@ modified: '2020-12-21T07:47:02.451Z'
   - libGDX is licensed under the Apache 2 License.
   - source code based on GWT
 
-## ref
+# ref
 
 - [How to animate WebGL with GSAP](https://www.reddit.com/r/webdev/comments/j7t271/best_way_how_to_animate_webgl_with_gsap/)

@@ -7,12 +7,12 @@ modified: '2020-11-13T13:08:39.052Z'
 
 # cli-linux-shell
 
-## ubuntu
+# ubuntu
 
 - apt remove 会删除软件包而保留软件的配置文件
 - apt purge 会同时清除软件包和软件的配置文件
 
-## linux-commands
+# linux-commands
 
 - sudo vs su
   - `sudo`
@@ -46,7 +46,7 @@ modified: '2020-11-13T13:08:39.052Z'
   - 当然 su 在很多情况下是不建议使用的, 或者说是相当危险的. 
     - 因为这会给非root用户更改系统文件或数据的权限
 
-## linux-os
+# linux-os
 
 - 系统变量或环境
   - env: 打印所有环境变量
@@ -71,7 +71,7 @@ modified: '2020-11-13T13:08:39.052Z'
   - groupadd testgroup    组的添加
   - groupdel testgroup    组的删除
 
-- ### file-tar
+- ## file-tar
 
 - 普通压缩解压缩
 
@@ -115,7 +115,7 @@ tar -cvzf - ./picture | split -d -b 10m - picture
 - 压缩小文件合并
   - `cat picture* > my.tgz`
 - 最后解压大压缩包
-- ### file-zip
+- ## file-zip
 - 分卷压缩时，先压缩成大压缩包，再分卷
   - 分卷文件的名称为a.zip, a.z01, a.z02
 
@@ -137,7 +137,7 @@ zip -F a.zip --out b.zip # b.zip无法通过unzip命令解压，但可通过文�
 unzip -v b.zip
 ```
 
-- ### file-cli
+- ## file-cli
 
 - `ln -s fileOrFolder softLinkName`
 - 打开目录路径
@@ -147,13 +147,13 @@ unzip -v b.zip
     - xdg-open . 会调用nautilus
     - xdg-open https://www.baidu.com 会打开默认浏览器，其中https不可省略
 
-## linux-remote
+# linux-remote
 
-- ### ssh
+- ## ssh
 - ssh免密登录
   - `ssh-copy-id [-f] [-n] [-i identity file] [-p port] [-o ssh_option] [user@]hostname`
 
-## linux-hardware
+# linux-hardware
 
 - sudo lshw
 

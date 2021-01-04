@@ -7,7 +7,7 @@ modified: '2021-01-01T20:18:56.579Z'
 
 # web-style-styled-system
 
-## summary
+# summary
 
 - styled-system解决的问题
   - 组件样式属性值webweb的一致性，本质通过重用预定义的工具函数
@@ -63,7 +63,7 @@ modified: '2021-01-01T20:18:56.579Z'
   - s-c的as prop和styled-system的color, width等一起出现时，as会失效
   - s-c编写的svg属性可能会失效
 
-## faq
+# faq
 
 - s-s迁移到ts的开发计划
   - https://github.com/styled-system/styled-system/issues/464

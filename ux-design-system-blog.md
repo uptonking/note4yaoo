@@ -7,9 +7,9 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # ux-design-system-blog
 
-## blog
+# blog
 
-### [Design Systems Should be JavaScript Framework Agnostic_201809](https://medium.com/hackernoon/design-systems-should-be-javascript-framework-agnostic-2a0c47129ec8)
+## [Design Systems Should be JavaScript Framework Agnostic_201809](https://medium.com/hackernoon/design-systems-should-be-javascript-framework-agnostic-2a0c47129ec8)
 
 - An emerging trend in design systems is the idea of separating your core HTML & CSS from the current JavaScript framework. 
   - There’s clearly a difference between presentational JavaScript, and the JavaScript used in modern frontend frameworks like React, Angular and Vue
@@ -46,7 +46,7 @@ modified: '2021-01-01T20:08:32.485Z'
   - not only contains all the low-level elements (colors, typography, etc.), and components built in vanilla HTML/CSS, 
   - but additionally examples of the components in the different templating languages or JS frameworks used in products the system supports. 
 
-### [creating themeable design systems_2018_Brad Frost](https://bradfrost.com/blog/post/creating-themeable-design-systems/)
+## [creating themeable design systems_2018_Brad Frost](https://bradfrost.com/blog/post/creating-themeable-design-systems/)
 
 - TL; DR: Design systems + CSS Zen Garden = Awesome.
 - Each component in a design system contains its own structure, style, and behavior.
@@ -66,14 +66,14 @@ modified: '2021-01-01T20:08:32.485Z'
 - A molecule is a component made up of a handful of atoms. A card molecule is a common component that can house all sorts of different content.
 - An organism is a complex component that’s made up of atoms, molecules, or other organisms.
 
-### [Atomic Design: Blowing Up What You Thought You Knew About Web Design](https://www.elegantthemes.com/blog/design/atomic-design)
+## [Atomic Design: Blowing Up What You Thought You Knew About Web Design](https://www.elegantthemes.com/blog/design/atomic-design)
 
 - interfaces are made up of components that can be categorized into building blocks
 - Atoms, Molecules, Organisms, Templates, Pages
 
-## top design system
+# top design system
 
-### [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
+## [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
 
 01.  Google Material Design System
 02.  Apple Human Interface Guidelines

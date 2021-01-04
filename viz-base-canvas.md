@@ -7,9 +7,9 @@ modified: '2020-12-21T07:46:54.190Z'
 
 # viz-base-canvas
 
-## 在Canvas中实现动画
+# 在Canvas中实现动画
 
-- ### [实战：在 Canvas 中实现动画](https://www.zhihu.com/market/pub/119647264/manuscript/1182364509212303360)
+- ## [实战：在 Canvas 中实现动画](https://www.zhihu.com/market/pub/119647264/manuscript/1182364509212303360)
 
 - 在Canvas中，动画是通过一系列连续的画面按顺序呈现的。
 - 而这些连续的画面是即时绘制出来的，为了让动画更加流畅，可能需要在很短的时间内重新绘制动画很多次。
@@ -21,11 +21,11 @@ modified: '2020-12-21T07:46:54.190Z'
 - 在上面几个步骤的轮回中，需要将绘制动作放在一个定时器里。JavaScript提供了两个定时器方法，分别是 `setInterval` 和 `setTimeout`
 - 为了方便绘制图像，可能需要频繁修改绘图的状态，及时保存和恢复状态可以让你方便许多。
 
-- ### [Canvas 动画简介](https://www.zhihu.com/pub/reader/119583977/chapter/1058119929794027520)
+- ## [Canvas 动画简介](https://www.zhihu.com/pub/reader/119583977/chapter/1058119929794027520)
 
 - Canvas 动画实际上就是一个「不断清除、重绘、清除、重绘的过程」。也就是说，想要实现 Canvas 动画，也就只有两步。
 
-## ref
+# ref
 
 - [canvas动画](https://zhuanlan.zhihu.com/p/73561191)
   - canvas动画原理：快速切换的静态画面

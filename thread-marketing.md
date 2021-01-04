@@ -7,7 +7,7 @@ modified: '2020-12-07T06:10:37.743Z'
 
 # thread-marketing
 
-## pieces
+# pieces
 
 - Today I'm open sourcing the code that I've made $500K off of
   - https://twitter.com/_rchase_/status/1334619345935355905

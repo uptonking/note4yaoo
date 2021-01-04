@@ -1,13 +1,13 @@
 ---
 title: note-react-rfc-useMutableSource
-tags: [react, rfc, roadmap]
+tags: [react, rfc]
 created: '2020-07-17T06:00:22.244Z'
-modified: '2020-07-17T06:01:06.359Z'
+modified: '2021-01-04T17:05:20.422Z'
 ---
 
 # note-react-rfc-useMutableSource
 
-## faq 
+# faq 
 
 - How come this API isn't merged with useRef? (Both are used for  managing mutable, usually external data.)
   - useRef has constraints. 
@@ -21,7 +21,7 @@ modified: '2020-07-17T06:01:06.359Z'
   - ref
     - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
 
-## guide
+# guide
 
 - [pr: useMutableSource (不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
   - useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
@@ -31,7 +31,7 @@ modified: '2020-07-17T06:01:06.359Z'
     - We have some other ideas for mutable multi-version stores that might prove useful for systems that want to provide full future compatibility 
     - but in the current experimental releases the only way to be fully compatible is by using immutable data.
 
-## useMutableSource
+# useMutableSource
 
 - This hook is primarily intended for use by libraries like Redux (and possibly Relay). 
   - Work with the maintainers of those libraries to integrate with the hook.
@@ -65,7 +65,7 @@ modified: '2020-07-17T06:01:06.359Z'
 - Unresolved questions
   - Are there any common/important types of mutable sources that this proposal will not be able to support?
 
-## pieces
+# pieces
 
 - Given a parent and a child, both calling useMutableSource with the same source: when the source updates, what order will the two components try to read the values from the source?
   - Keep in mind that `useMutableSource` is being written for concurrent mode (not legacy sync-rendering mode).

@@ -7,7 +7,7 @@ modified: '2020-11-16T12:43:51.117Z'
 
 # pm-list-vs-grid
 
-## summary
+# summary
 
 - 使用场景
   - 要显示的内容中图片、图表多吗，grid更适合显示图片
@@ -43,9 +43,9 @@ modified: '2020-11-16T12:43:51.117Z'
   - Opinionated data arrangement (that’s what I call your lists) establishes a hierarchy of data and makes more flexible use of space. What we now widely refer to as “cards”
     - In this case, users are looking for a known structure and priority of information and the presentation can aid their evaluation.
 
-## list vs grid (Card vs Tabular)
+# list vs grid (Card vs Tabular)
 
-- ### [UI cheat sheet: list vs grids](https://uxdesign.cc/ui-cheat-sheet-list-vs-grids-48151a7262a7)
+- ## [UI cheat sheet: list vs grids](https://uxdesign.cc/ui-cheat-sheet-list-vs-grids-48151a7262a7)
 - Grid is usually (but not always) better for desktop, while list is better for mobile.
 - If your user is in browse mode, they are there for entertainment so will probably be focused on images (Instagram, Pinterest or meme sites), on headlines/statuses (Twitter, news sites) or perhaps a combination of both (Facebook). 
   - If this is the case, bring what they are looking at to the forefront.
@@ -171,7 +171,7 @@ modified: '2020-11-16T12:43:51.117Z'
     - Because grids are pretty. Because images are pretty. Because text is ugly.
     - And then I walked in, guns blazing, saying that for online courses, a description is more important than having a big image (unless it is like, art classes or something) hence we needed to use a list layout. 
 
-- ### [Tabular vs Card-based presentation, which is better for lots of data?](https://ux.stackexchange.com/questions/98167/tabular-vs-card-based-presentation-which-is-better-for-lots-of-data)
+- ## [Tabular vs Card-based presentation, which is better for lots of data?](https://ux.stackexchange.com/questions/98167/tabular-vs-card-based-presentation-which-is-better-for-lots-of-data)
 - Comparison is very easy in the tabular format because it enables vertical scanning (i.e. find the lowest price). 
   - In the card format comparison requires more effort, because data are mixed.
 - Long free text is very difficult to read in the tabular format and also increases the row width. 
@@ -191,7 +191,7 @@ modified: '2020-11-16T12:43:51.117Z'
 - Real Estate Availability: Business consideration to show X number of records in one screen will also impact the choice of metaphor
 - Impact: A direct visual impact for each record can be achieved in cards with thumbnails or specific formatting to certain parameters of the record. That is harder to do in grid.
 
-- ### [Grid View vs List View for products](https://ux.stackexchange.com/questions/60412/grid-view-vs-list-view-for-products)
+- ## [Grid View vs List View for products](https://ux.stackexchange.com/questions/60412/grid-view-vs-list-view-for-products)
 - In conclusion, Grid view for similar products (where you make your decision by the appearance of the product). 
 - List view for products with different (and important) information and/or specifications.
 
@@ -200,7 +200,7 @@ modified: '2020-11-16T12:43:51.117Z'
   - If your customers prefer to quickly swipe and see as many options at a glance as possible, you should go with the grid view.
   - The key is providing optimized mobile experiences that meet your mobile customers’ unique needs.
 
-- ### [List or Grid, It Is Not Important](https://uxplanet.org/listview-or-gridview-it-is-not-important-b767d20ec05e)
+- ## [List or Grid, It Is Not Important](https://uxplanet.org/listview-or-gridview-it-is-not-important-b767d20ec05e)
 - List view has space for many textual elements such as title, description and reviews. It helps users make a decision based on detailed information.
   - Put the most important element on the left and vice versa.
 - Grid view is about images. Try to limit the textual elements along with the images.
@@ -222,7 +222,7 @@ modified: '2020-11-16T12:43:51.117Z'
   - It's all about discovery and just seeing everything.
 - As usual, it all comes down to "content is king."
 
-- ### [List vs grid: which one is right for your mobile design](https://www.justinmind.com/blog/how-to-prototype-mobile-ui-patterns-for-real-users-part-2/)
+- ## [List vs grid: which one is right for your mobile design](https://www.justinmind.com/blog/how-to-prototype-mobile-ui-patterns-for-real-users-part-2/)
 - The grid. It’s characterized by a set of cells. 
   - Those cells are divided by columns and gutters. 
   - Typically, the grid is used to divide the screen space into equally-sized cells which makes navigation easier to understand. 

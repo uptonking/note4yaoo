@@ -7,7 +7,7 @@ modified: '2021-01-01T20:18:11.427Z'
 
 # web-css-variables
 
-## guide
+# guide
 
 - faq-not-yet
   - inline样式的css vars的性能
@@ -45,7 +45,7 @@ element.style.setProperty("--my-var", jsVar + 4);
 - css-vars-tools
   - CSS variables (Custom Properties) polyfill for IE11
     - https://github.com/nuxodin/ie11CustomProperties
-## theming-examples
+# theming-examples
 
 - Themes becomes easier with css custom properties (css variables). 
 - The basic idea is that you have your variables, and on theme change you change the color of the variables.
@@ -138,9 +138,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 
-## css-variables-blog
+# css-variables-blog
 
-- ### [Pragmatic, Practical, and Progressive Theming with Custom Properties](https://csswizardry.com/2016/10/pragmatic-practical-progressive-theming-with-custom-properties/)
+- ## [Pragmatic, Practical, and Progressive Theming with Custom Properties](https://csswizardry.com/2016/10/pragmatic-practical-progressive-theming-with-custom-properties/)
 - My usual advice to companies and clients who want to implement theming in their UIs is simply don’t.
 - There are very few specific cases where theming will provide business value, but for the most part, it is a lot more hassle(困难，麻烦；争论，分歧) than it’s worth. Theming
   - increases the complexity of your code; 
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
   - It is not business critical or usually even important. 
   - If you are asked to provide such theming, do not do so at the expense of performance or code quality.
 
-- ### [Using CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- ## [Using CSS custom properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - Declaring a custom property is done using a custom property name that begins with a double hyphen (`--`), and a property value that can be any valid CSS value.
   - Custom property names are case sensitive
 - Note that the selector given to the ruleset defines the scope that the custom property can be used in. 
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
 - While a syntax error in a CSS property/value pair will lead to the line being ignored, using a cascaded value, invalid substitution -- using a custom property value that is invalid -- is not ignored, leading to the value to be inherited.
   - 无效的css变量值，也会被继承，参与层叠规则
 
-- ### [CSS Variables: Why Should You Care?](https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care)
+- ## [CSS Variables: Why Should You Care?](https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care)
 - CSS variables, more accurately known as CSS custom properties, are landing in Chrome 49.
   - Currently Chrome 49, Firefox 42, Safari 9.1, and iOS Safari 9.3 support custom properties.
 - They can be useful for reducing repetition in CSS, and also for powerful runtime effects like theme switching and potentially extending/polyfilling future CSS features.
@@ -255,7 +255,7 @@ document.documentElement.style.setProperty('--primary-color', 'green');
 
 ```
 
-## ref
+# ref
 
 - [Theming with CSS Custom Properties](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
   - https://codepen.io/uptonking/pen/yLavavm

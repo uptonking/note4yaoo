@@ -7,7 +7,7 @@ modified: '2020-08-08T11:39:55.792Z'
 
 # note-benchmark-css-in-js
 
-## benchmarking
+# benchmarking
 
 - css-in-js benchmarks app online /202008
   - https://github.com/necolas/react-native-web/tree/master/packages/benchmarks
@@ -27,14 +27,14 @@ modified: '2020-08-08T11:39:55.792Z'
   - 22.44ms, emotion@^10.0.27  
   - css-modules 
 
-## comparison
+# comparison
 
 - [Stitches Benchmarks](https://github.com/modulz/stitches-benchmark)
 - [styled-components-vs-emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
   - /20191025
   - emotion is ready for React Concurrent mode and it has a smaller bundle size
 
-## ref
+# ref
 
 - MicheleBertoli/css-in-js /201809
   - https://github.com/MicheleBertoli/css-in-js

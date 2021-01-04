@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:31.225Z'
 
 # web-style-css-in-js-lib-jss
 
-## faq
+# faq
 
 - [[Question] Advantage over One Class One Property](https://github.com/cssinjs/jss/issues/536)
   - Whats the profit of this method compared to used in Fela and Styleron (single class per property.)?
@@ -19,9 +19,9 @@ modified: '2021-01-01T20:06:31.225Z'
   - I didn't see enough benefit though so far to do this myself. You are free to try though.
 - [Full static extraction to CSS file while keeping all dynamic parts intact.](https://github.com/cssinjs/jss/issues/579)
 
-## guide
+# guide
 
-## docs
+# docs
 
 - JSS is an authoring tool for CSS which allows you to use JavaScript to describe styles in a declarative, conflict-free and reusable way. 
   - It can compile in the browser, server-side or at build time in Node.
@@ -47,4 +47,4 @@ modified: '2021-01-01T20:06:31.225Z'
   - When rendering on the server, you will need to get all rendered styles as a CSS string. 
   - The `SheetsRegistry` class allows you to aggregate and stringify them.
 
-## pieces
+# pieces

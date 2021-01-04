@@ -7,6 +7,6 @@ modified: '2021-01-02T10:42:26.068Z'
 
 # algs-sort-dev
 
-## guide
+# guide
 
-## pieces
+# pieces

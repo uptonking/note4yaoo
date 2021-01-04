@@ -7,16 +7,16 @@ modified: '2020-11-17T09:39:37.776Z'
 
 # lib-editorjs-issues
 
-## faq-not-yet
+# faq-not-yet
 
-## faq
+# faq
 
-- ### [Is there a "view" mode vs "edit" mode?](https://github.com/codex-team/editor.js/issues/914)
+- ## [Is there a "view" mode vs "edit" mode?](https://github.com/codex-team/editor.js/issues/914)
 - Looks like we need to render the HTML ourselves with the clean data, which editor js provides. 
 - [JSON to back to html, How?](https://github.com/codex-team/editor.js/issues/676)
   - I've created a editorjs-parser package for this purpose. 
 
-- ### [Paste from Microsoft Word](https://github.com/codex-team/editor.js/issues/729)
+- ## [Paste from Microsoft Word](https://github.com/codex-team/editor.js/issues/729)
 - The problem is that Editor.js is not actually WYSIWYG.
 - Surely some plugins might look like WYSIWYG components 
   - but the way of rendering is up to you 

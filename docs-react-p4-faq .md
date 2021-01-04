@@ -7,7 +7,7 @@ modified: '2020-06-30T05:14:08.093Z'
 
 # docs-react-p4-faq
 
-## AJAX and APIs
+# AJAX and APIs
 
 - how to make an ajax call
   - Some popular ones are Axios, jQuery AJAX, and the browser built-in `window.fetch` .
@@ -15,12 +15,12 @@ modified: '2020-06-30T05:14:08.093Z'
 	- componentDidMount()
   - This is so you can use `setState` to update your component when the data is retrieved.
 
-## Babel, JSX, and Build Steps
+# Babel, JSX, and Build Steps
 
 - react without es6
 - react without jsx
 
-## Passing Functions to Components
+# Passing Functions to Components
 
 - How to pass an event handler (like `onClick` ) to a component
 	- Pass event handlers and other functions as props to child components:
@@ -138,7 +138,7 @@ modified: '2020-06-30T05:14:08.093Z'
 - When testing your rate limiting code works correctly it is helpful to have the ability to fast forward time. 
   - If you are using jest then you can use mock timers to fast forward time.
 
-## Component State
+# Component State
 
 - props vs state
   - `props` and `state` are both plain JavaScript objects
@@ -211,7 +211,7 @@ modified: '2020-06-30T05:14:08.093Z'
   - This would make some of the new features(Concurrent Updates) we’re working on impossible to implement.
     - React could assign different priorities to setState() calls depending on where they’re coming from: an event handler, a network response, an animation, etc.
 
-## Styling and CSS
+# Styling and CSS
 
 - className
 - Are inline styles bad?
@@ -220,7 +220,7 @@ modified: '2020-06-30T05:14:08.093Z'
 - React does not have an opinion about how styles are defined; if in doubt, a good starting point is to define your styles in a separate `*.css` file as usual and refer to them using `className` .
 - React can be used to power animations. See React Transition Group and React Motion
 
-## File Structure
+# File Structure
 
 - Grouping by features or routes
   - locate CSS, JS, and tests together inside folders 
@@ -235,7 +235,7 @@ modified: '2020-06-30T05:14:08.093Z'
   - As projects grow larger, they often use a mix of both of the above approaches in practice. 
   - So choosing the “right” one in the beginning isn’t very important.
 
-## Versioning Policy
+# Versioning Policy
 
 - React follows semantic versioning (semver) principles with a version number x.y.z:
 	- When releasing breaking changes, we make a major release by changing the x number (ex: 15.6.2 to 16.0.0).
@@ -249,7 +249,7 @@ modified: '2020-06-30T05:14:08.093Z'
   - Alpha and canary versions of React
   - Undocumented APIs and internal data structures
 
-## Virtual DOM and Internals
+# Virtual DOM and Internals
 
 - The **virtual DOM(VDOM)** is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. 
   - This process is called reconciliation.

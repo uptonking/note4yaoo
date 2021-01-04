@@ -8,7 +8,7 @@ modified: '2020-12-21T08:03:35.993Z'
 
 # web-dev-comp-catalog
 
-## general 
+# general 
 
 - Button
   - gradient
@@ -21,7 +21,7 @@ modified: '2020-12-21T08:03:35.993Z'
 - Box
   - flexible one-off component that can live outside the design system constraints
 
-## foundation
+# foundation
 
 - 大多数组件通用的非dom元素或操作
 
@@ -32,17 +32,17 @@ modified: '2020-12-21T08:03:35.993Z'
 - layer
   - 考虑：portal的target容器默认是组件自身或document.body
 
-## layout
+# layout
 
 - Flex
 - Box vs Container vs Grid
   - https://spectrum.chat/styled-system/general/whats-in-your-box~6f41c990-f49f-4063-ba64-fcea702014f9
   - https://spectrum.chat/material-ui/help/grid-vs-box-and-now-vs-container~73cef09f-1eb9-4d0f-a3a3-d46c44232524
 
-## navigation
+# navigation
 
 - FloatingActionButton
-- ### Sidebar
+- ## Sidebar
   - variant: window-manager
     - 可显示或隐藏侧边栏的容器组件
 - Divider
@@ -50,13 +50,13 @@ modified: '2020-12-21T08:03:35.993Z'
 - NavBar
   - 下滑时显示，上滑时隐藏
 
-## input
+# input
 
-- ### InputText
+- ## InputText
 - 公式输入
 - as form control
 
-- ### checkbox
+- ## checkbox
 - props
 - props-discuss
   - checkgroup
@@ -65,7 +65,7 @@ modified: '2020-12-21T08:03:35.993Z'
   - [ `<input type="checkbox">` ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
     - indeterminate: A Boolean which, if present, indicates that the value of the checkbox is indeterminate rather than true or false
 
-- ### Form
+- ## Form
 - 难点
   - 布局
   - 双向绑定
@@ -75,7 +75,7 @@ modified: '2020-12-21T08:03:35.993Z'
 - 参考
   - [alibaba-formily](https://github.com/alibaba/formily)
 
-- ### Dropdown/Select
+- ## Dropdown/Select
   - 单选
   - 手动关闭
   - 超过10个项目可显示下拉列表滚动条，超过20个项目可显示弹出菜单选择器，超过100个提示不推荐使用
@@ -87,13 +87,13 @@ modified: '2020-12-21T08:03:35.993Z'
 - Search
   - [appbaseio/reactivesearch](https://github.com/appbaseio/reactivesearch)
 
-## display
+# display
 
 - Collapsible: 默认显示前16个字符串，也可显示单独设置的，点击时展开显示原内容
 - collapsible text   
 - collapsible banner
 
-- ### Card
+- ## Card
 - CodeCard
   - 显示源码的卡片，类似源码截图，左上角有类似macOS的三点菜单
   - examples
@@ -101,18 +101,18 @@ modified: '2020-12-21T08:03:35.993Z'
 - PinnableCard
   - 类似支付宝首页可固定的菜单
 
-- ### List
+- ## List
   - collapsible
   - 评分表情包
-- ### Grid
-- ### Tree
+- ## Grid
+- ## Tree
 - Timeline
 - DiffViewer
 - Comparator
 
-## feedback
+# feedback
 
-- ### Modal/Dialog/弹出窗口对话框
+- ## Modal/Dialog/弹出窗口对话框
 
 - 一般情况，模态框和遮罩总是作为在body下的第一层子节点出现
   - 因为如果很深层次的子孙组件触发模态框，而使得该组件内的模态框组件层级较深
@@ -188,7 +188,7 @@ modified: '2020-12-21T08:03:35.993Z'
   - chatting-modal
     - 用于在线客服咨询的聊天窗口
 
-- ### sidebar
+- ## sidebar
 
 - usecase
   - dockable
@@ -204,7 +204,7 @@ modified: '2020-12-21T08:03:35.993Z'
 - multi-sidebar: 使用多个sidebar用于导航
   - https://github.com/balloob/react-sidebar/issues/65
 
-- ### Popover/Tooltip/弹出气泡
+- ## Popover/Tooltip/弹出气泡
 - 要点
   - 触发方式：点击、鼠标移入、获取焦点的文本框
   - 气泡位置：中间或上下左右，箭头或三角形
@@ -225,14 +225,14 @@ modified: '2020-12-21T08:03:35.993Z'
 - Loading
   - flower-loader
 
-- ### Skeleton 骨架屏
+- ## Skeleton 骨架屏
   - bg-image-color
   - [一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
 - BulletComment/弹幕
 
-## experimental
+# experimental
 
-## ui-components-catalog
+# ui-components-catalog
 
 - 组件类别summary
   - 作为单独库实现的组件

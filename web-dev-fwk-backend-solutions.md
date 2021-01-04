@@ -7,9 +7,9 @@ modified: '2020-12-21T14:54:14.916Z'
 
 # web-dev-fwk-backend-solutions
 
-## guide
+# guide
 
-## backend-solutions
+# backend-solutions
 
 - http-io
   - express
@@ -54,7 +54,8 @@ modified: '2020-12-21T14:54:14.916Z'
   - logger
   - sentry error reporting
 
-- ### nestjs ecosystem
+## nestjs ecosystem
+
 - core
   - nest
   - config
@@ -101,7 +102,8 @@ modified: '2020-12-21T14:54:14.916Z'
   - nest-cli
   - typescript-starter
 
-- ### java spring ecosystem
+## java spring ecosystem
+
 - core
   - spring-framework
     - core support for dependency injection, transaction management, web apps, data access, messaging, and more

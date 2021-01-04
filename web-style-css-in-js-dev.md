@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:19.327Z'
 
 # web-style-css-in-js-dev
 
-## guide
+# guide
 
 - why use css in js
   - 维护方便
@@ -36,9 +36,9 @@ modified: '2021-01-01T20:06:19.327Z'
   - Consider compile time libs like linaria, compiled
   - Use CSS Variables for theming
 
-## theming
+# theming
 
-- ### While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 
+- ## While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 
   - https://twitter.com/jaredpalmer/status/1271482711132254210
   - Hooking every single component into that theme and calculating runtime styles is death by 1000 cuts. 
   - You pay a price for every single `<Box>`
@@ -61,7 +61,7 @@ modified: '2021-01-01T20:06:19.327Z'
     - If you want a component like this `<button color="blue">` to render `<button class="text-blue-500 hover:text-blue-700 focus:text-blue-800">`, there's no guarantee that those classes will exist because they may be purged.
     - All this to say, I totally agree that 90% of CSS can be static, but that 10% is a real problem that has to be dealt with.
 
-- ### Is static extraction seems realistic?
+- ## Is static extraction seems realistic?
   - Static extraction is realistic, at work we created library (something like Chakra but with some special features) and we try to generate theme for components to CSS and it looks promising
   - Static extraction is definitely realistic and something I plan on digging into in the near future.
     - Theme UI definitely can be improved performance-wise, we just wanted to make sure we nailed down a solid DX before investing time on optimization.
@@ -69,7 +69,7 @@ modified: '2021-01-01T20:06:19.327Z'
   - I agree it should be static, and with the current API I think it can eventually be transitioned to static calls. 
     - There's some current work glaze in this space 
 
-- ### We really should stop using React Context for theming libraries when CSS Variables:
+- ## We really should stop using React Context for theming libraries when CSS Variables:
   - https://twitter.com/buildsghost/status/1251569049940537345
     - Are capable of everything you need for theming purposes
     - Can just as easily be the underlying implementation detail of these libraries instead of React Context
@@ -106,7 +106,7 @@ modified: '2021-01-01T20:06:19.327Z'
   - I think many people are using css in js not realising that plain css can do much of what they want, without runtime burden. It’s become the default.
     - That said, custom properties aren’t supported by IE, so that’s a thing.
 
-- ### Use CSS Variables instead of React Context: How and why you should use CSS variables (custom properties) for theming instead of React context.
+- ## Use CSS Variables instead of React Context: How and why you should use CSS variables (custom properties) for theming instead of React context.
   - https://twitter.com/kentcdodds/status/1324026743099781120
   - We took a similar approach with @stitchesjs
     - Tokens are converted to CSS Custom Properties
@@ -120,7 +120,7 @@ modified: '2021-01-01T20:06:19.327Z'
     - And the more you use the CSS Vars for everything else, the fewer context consumers you'll have, 
       - so the only ones that consume the context are the ones that need to swap the implementation
 
-  ## pieces 
+  # pieces 
 
 - css-in-js vs sass
   - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!
@@ -195,17 +195,17 @@ modified: '2021-01-01T20:06:19.327Z'
   - The styling of a component is very linked to it's structure, so put them together.
   - The main element of reuse is the component. You won't ever need a .header CSS class when instead you'll reuse `<Header>`
 
-## jss
+# jss
 
-## survey: css in js vs css
+# survey: css in js vs css
 
-- ### [are there any cons to using regular CSS vs CSS-in-JS?_2018](https://twitter.com/ka11away/status/1014990019801411586)
+- ## [are there any cons to using regular CSS vs CSS-in-JS?_2018](https://twitter.com/ka11away/status/1014990019801411586)
   - css: css-in-js = 0.557: 0.443 /79votes
   - It’s depends on ur purposes. 
     - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
     - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 
-## ref
+# ref
 
 - [The Next Era of CSS in JavaScript - From CSS-in-JS to TSS_202008](https://joebell.co.uk/blog/the-next-era-of-css-in-js)
   - More and more libraries are choosing to focus on features such as:

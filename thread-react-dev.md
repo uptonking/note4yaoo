@@ -7,13 +7,13 @@ modified: '2020-12-25T15:22:49.750Z'
 
 # thread-react-dev
 
-## guide
+# guide
 
-## pieces
+# pieces
 
  
 
-- ### Unit testing a react component is a waste of time in 99% 
+- ## Unit testing a react component is a waste of time in 99% 
 - https://twitter.com/oleg008/status/1235358013495676928
 - here is why
   - React components are useless without React or a compatible runtime. 

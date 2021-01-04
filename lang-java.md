@@ -7,25 +7,25 @@ modified: '2020-07-14T09:26:35.281Z'
 
 # lang-java
 
-## 开发通用问题
+# 开发通用问题
 
 - 搜索
 - 缓存
 - 消息
 - 日志
 
-## tips
+# tips
 
 - all in java as backend 
 - 若要专注于提高渲染、存储、计算等方面的性能，请参考cpp
 - java的优势是既简单又高性能(相对于其他语言)
 
-## java-next
+# java-next
 
 - java panama
   - 项目的目的是让java更加方便滴集成native的类库，比如各种用c/c++提供的api，以前都是使用jni，有一定的局限性，比如需要用户同时了解java和c/c++，巴拿马项目可以根据c的头文件自动生成java的interface，并接入jit，这样用户就可以完全不碰c/c++代码而使用native类库了，应用的经典例子就是opengl
 
-## dev
+# dev
 
 - 枚举类以后增加枚举值的方式
   - 枚举类只适合做数量确定的元素的事情, 不确定的还是另外设计方法来做吧
@@ -44,9 +44,9 @@ modified: '2020-07-14T09:26:35.281Z'
 - 使用java命令执行jar包时，不能同时使用 -cp 和 -jar
   - `-jar` the JAR file is the source of all user classes, and other user class path settings are ignored.
 
-## java basics
+# java basics
 
-### oop
+## oop
 
 - java创建对象的方式
   - new ClassConstructor()
@@ -55,13 +55,13 @@ modified: '2020-07-14T09:26:35.281Z'
   - obj.clone()
   - Deserialization: objectInputStream.readObject()
 
-### java 集合
+## java 集合
 
-### java 并发
+## java 并发
 
-### jvm
+## jvm
 
-### java 反射
+## java 反射
 
 - java反射作用
   - 在运行时检测或修改程序行为
@@ -79,7 +79,7 @@ modified: '2020-07-14T09:26:35.281Z'
   - 因此我们无法给一个 Integer 类型的变量赋整型值，必须给它赋一个 Integer 对象才可以。
   - 应该使用 `f.set(obj, new Integer(43));`
 
-### java 泛型
+## java 泛型
 
 - `List<?>` 和 `List<T>` 的区别
   - 类型参数“<T>”主要用于声明泛型类或泛型方法
@@ -89,13 +89,13 @@ modified: '2020-07-14T09:26:35.281Z'
 
   
 
-### java 注解
+## java 注解
 
-### java 网络
+## java 网络
 
-### java io
+## java io
 
-## maven
+# maven
 
 - jar包MANIFEST. MF文件内容与maven坐标GAV的队友关系
   - Implementation-Vendor-Id = groupId
@@ -109,7 +109,7 @@ modified: '2020-07-14T09:26:35.281Z'
   - ${maven.build.timestamp}表示项目构件开始时间; 
   - ${maven.build.timestamp.format}表示属性${maven.build.timestamp}的展示格式, 默认值为yyyyMMdd-HHmm
 
-### maven plugins
+## maven plugins
 
 - maven-compiler-plugin
   - 编译java源码，可指定javac参数
@@ -123,15 +123,15 @@ modified: '2020-07-14T09:26:35.281Z'
   - 不仅会将 Dependency 中的 Class 文件打入最终的 Jar 包，还会将 Dependency 中的资源文件，诸如 properties 文件打入最终的 Jar 包，同名资源会冲突
 - maven-dependency-plugin 
 
-## Java Specification
+# Java Specification
 
-### JVM
+## JVM
 
-### Java Language
+## Java Language
 
-## Java Ecosystem
+# Java Ecosystem
 
-### web
+## web
 
 - 过滤器和拦截器的执行顺序  
 
@@ -145,9 +145,9 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 
 过滤器通常用在设定字符编码之类的，设置请求的默认值，监听器用来监听控制器情况
 
-### spring framework
+## spring framework
 
-#### filter, interceptor & listener
+### filter, interceptor & listener
 
 - https://my.oschina.net/zdtdtel/blog/3025880
 - filter 过滤器(实现 javax.servlet. Filter 接口)
@@ -163,7 +163,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - 监听器应用场景：监听对象的创建与销毁, 比如session, request, ServletContext
   - Listener是Servlet规范的一部分
 
-### objenesis 可以不使用构造方法创建Java对象
+## objenesis 可以不使用构造方法创建Java对象
 
 - https://blog.csdn.net/codershamo/article/details/52015206
 - Objenesis是一个Java类库，用来实例化一个特定class的对象
@@ -171,7 +171,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 - 在类库中经常会有类必须拥有一个默认构造器的限制。Objenesis通过绕开对象实例构造器来克服这个限制。
 - 实例化一个对象而不调用构造器是一个特殊的任务，然而在一些特定的场合是有用的，如：序列化，远程调用和持久化、代理，AOP库和Mock对象、容器框架
 
-### game
+## game
 
 - java游戏开发依赖于图形库
 - common
@@ -190,48 +190,48 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - https://github.com/LWJGL/lwjgl3
   - xmage 万智牌，类似 magic duels
 
-### 图形开发
+## 图形开发
 
 - JFC（全称为Java Foundation Classes，中文译为Java基础类）是一个图形框架
 - JFC主要是由Abstract Window Toolkit（AWT）、Swing以及Java 2D三者所构成，若将这些一同搭配运用，则用Java程式语言撰写开发成的使用者介面，无论转移到Windows、Mac OS X或Linux等各种不同的作业平台上，都能保有一致性的图像呈现。
 
-## JDK
+# JDK
 
-### New Features Of JDK 
+## New Features Of JDK 
 
-#### JDK 1.0 - 19960123
+### JDK 1.0 - 19960123
 
-#### JDK 1.1 - 19970219
+### JDK 1.1 - 19970219
 
-#### J2SE 1.2 - 19981208
+### J2SE 1.2 - 19981208
 
-#### J2SE 1.3 - 20000508
+### J2SE 1.3 - 20000508
 
-#### J2SE 1.4 - 20020206
+### J2SE 1.4 - 20020206
 
-#### J2SE 5.0 - 20040930
+### J2SE 5.0 - 20040930
 
-#### Java SE 6 - 20061211
+### Java SE 6 - 20061211
 
-#### Java SE 7 - 20110728
+### Java SE 7 - 20110728
 
-#### Java SE 8 - 20140318
+### Java SE 8 - 20140318
 
-#### Java SE 9 - 20170921
+### Java SE 9 - 20170921
 
-#### Java SE 10 - 20180320
+### Java SE 10 - 20180320
 
-#### Java SE 11 - 20180925
+### Java SE 11 - 20180925
 
-#### Java SE 12 - 20190319
+### Java SE 12 - 20190319
 
-### Alibaba Dragonwell JDK
+## Alibaba Dragonwell JDK
 
 - Dragonwell是阿里巴巴公司发布并长期支持的一款JDK发行版，它基于OpenJDK项目，通过Java TCK测试，并包含了一些在阿里内部广泛使用的附加特性
 - 目前Dragonwell仅支持Linux x86-64操作系统(201907)
 - 目前Dragonwell仅支持JDK8版本
 
-#### 定制特性
+### 定制特性
 
 - JWarmup
   - 根据前一次程序运行的情况，记录下热点方法、类编译顺序等信息，在应用下一次启动的时候积极加载相关的类，并积极编译相关的方法，进而应用启动后可以直接运行编译好的Java代码(C2编译）。
@@ -248,16 +248,16 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - `-XX:+PrintYoungGenHistoAfterParNewGC` 这个参数会打印在一次ParNew GC之后的young区对象的histogram。
   - `-XX:+PrintGCRootsTraceTime` 这个参数会打印一次ParNew GC的具体耗时，类似于G1的gclog显示，这个参数主要用于用户排查时间较长的gc暂停时间
 
-### OpenJDK
+## OpenJDK
 
-#### Download
+### Download
 
 - Archived OpenJDK Releases 9-12
   - http://jdk.java.net/archive/
 
-### Oracle JDK
+## Oracle JDK
 
-#### Download
+### Download
 
 - Oracle Java Archive 1-12
 - https://www.oracle.com/technetwork/java/archive-139210.html
@@ -269,12 +269,12 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - 6u45
       - https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html
 
-#### JDK Release Notes 
+### JDK Release Notes 
 
 - https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html
 - https://www.oracle.com/technetwork/java/javase/cpu-psu-explained-2331472.html
 
-#### Oracle Java SE Support Roadmap
+### Oracle Java SE Support Roadmap
 
 - java 11 is a LTS version. 2018-2026.
 - https://www.oracle.com/technetwork/java/java-se-support-roadmap.html
@@ -287,7 +287,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
       - Rhino没有包含在OpenJDK里纯粹是因为license不兼容
       - OpenJDK8有新JS引擎Nashorn
 
-### License  
+## License  
 
 - The Oracle JDK License has changed for releases starting April 16, 2019.
 - The previous Oracle Java SE license - Binary Code License (**BCL**)
@@ -300,7 +300,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
   - http://openjdk.java.net/faq/
   - http://aleung.github.io/blog/2017/01/06/Use-OpenJDK-in-proprietary-software/
 
-### 其他JDK
+## 其他JDK
 
 - IBM J9 JDK, for AIX, Linux, Windows, MVS, OS/400, Pocket PC, z/OS
   - IBM于201709开源OpenJ9并托管给Eclipse基金会

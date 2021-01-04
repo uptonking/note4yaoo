@@ -7,7 +7,7 @@ modified: '2020-10-22T13:40:33.370Z'
 
 # lib-luckysheet-dev
 
-## guide
+# guide
 
 - luckysheet-repos
   - https://github.com/mengshukeji/Luckysheet
@@ -20,7 +20,7 @@ modified: '2020-10-22T13:40:33.370Z'
   - https://github.com/mengshukeji/luckysheet-react
     - a simple project that shows the use of luckysheet in a React project
 
-## ui结构层次
+# ui结构层次
 
 - `<div id="luckysheet" style="margin:0px;padding:0px;position:absolute;width:100%;height:100%;left: 0px;top: 0px;"></div>`
 - `<div id="luckysheet-sheettable_0" class="luckysheet-cell-sheettable" style="height: 936px; width: 2072px; cursor: default;"></div>`
@@ -40,7 +40,7 @@ modified: '2020-10-22T13:40:33.370Z'
 }
 ```
 
-## pieces
+# pieces
 
 - [hacker news: Luckysheet, an open-source spreadsheet ](https://news.ycombinator.com/item?id=23994619)
   - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 

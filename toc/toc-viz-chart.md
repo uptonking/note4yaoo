@@ -1,0 +1,203 @@
+---
+title: toc-viz-chart
+tags: [charting, toc, viz]
+created: '2020-10-06T07:42:03.630Z'
+modified: '2020-10-22T10:22:33.292Z'
+---
+
+# toc-viz-chart
+
+# focus
+
+- d3 /92.4kStar/BSD/202007
+  - https://github.com/d3/d3
+  - https://d3js.org/
+  - bring data to life using SVG, Canvas and HTML
+  - https://github.com/d3/d3-scale
+- plotly.js /12.3kStar/MIT/202009/js
+  - https://github.com/plotly/plotly.js
+  - https://plotly.com/javascript/
+  - JavaScript charting library behind Plotly and Dash
+  - 依赖d3.js、stack.gl、regl、turf、alpha-shape
+- amcharts4 /786Star/FreeWithAttribution/202009
+  - https://github.com/amcharts/amcharts4
+  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
+  - the most advanced JavaScript dataviz library ever.
+  - 产品：charts、map、timeline、editor
+    - ammap3在单独旧仓库，ammap4在amcharts4的仓库，map还是自己实现最灵活
+  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
+  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
+- AnyChart /266Star/Free4NonCommercial/202009
+  - https://github.com/AnyChart/AnyChart
+  - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
+  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
+  - 文件模块使用的是google-closure-builder的模块系统
+- highcharts /9.6kStar/Free4NonCommercial/202007
+  - https://github.com/highcharts/highcharts
+  - http://www.highcharts.com/
+  - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
+  - 依赖svg2pdf.js、jspdf-yworks
+  - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
+- carbon-charts /Apache2/156Star/202007
+  - https://github.com/carbon-design-system/carbon-charts
+  - https://carbon-design-system.github.io/carbon-charts/
+  - Robust dataviz framework implemented using D3 & typescript
+  - 依赖d3、date-fns、@carbon/utils-position
+  - 提供react/vue/angular/svelte的wrapper
+- ag-charts /6.7kStar/MIT/202010/ts
+  - https://github.com/ag-grid/ag-grid
+  - https://www.ag-grid.com/javascript-charts-api-explorer/
+  - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
+
+# geo-charts
+
+- https://github.com/Esri/cedar
+  - /227Star/Apache2/201905/ts
+  - https://esri.github.io/cedar
+  - JavaScript Charts for ArcGIS
+
+# popular
+
+- Chart.js /MIT/49.6kStar/202007
+  - https://github.com/chartjs/Chart.js
+  - https://www.chartjs.org/
+  - Simple HTML5 Charts using the canvas tag
+  - https://github.com/SeanSobey/ChartjsNodeCanvas
+- echarts /Apache2/42kStar/202007
+  - https://github.com/apache/incubator-echarts
+  - http://echarts.apache.org/
+  - A powerful, interactive charting and visualization library for browser
+  - written in pure JavaScript and based on zrender, which is a whole new lightweight canvas library.
+- recharts /MIT/14.4kStar/202007
+  - https://github.com/recharts/recharts
+  - http://recharts.org/
+  - a Redefined chart library built with React and D3
+- frappe-charts /MIT/13.4kStar/202007
+  - https://github.com/frappe/charts
+  - https://frappe.io/charts
+  - Simple, responsive, modern SVG Charts with zero dependencies
+- plottable /MIT/2.7kStar/202006
+  - https://github.com/palantir/plottable
+  - http://plottablejs.org/
+  - A library of modular chart components built on D3
+- lightweight-charts /2.1kStar/Apache2/202007
+  - https://github.com/tradingview/lightweight-charts
+  - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
+  - Financial lightweight charts built with HTML5 canvas
+  - paid: Technical Analysis Charts, Trading Platform
+- chart-parts /MIT/500Star/202007
+  - https://github.com/microsoft/chart-parts
+  - https://microsoft.github.io/chart-parts/documentation/
+  - A flexible, React-friendly, Grammar of Graphics for data visualization
+- react-charts /MIT/880Star/202007
+  - https://github.com/tannerlinsley/react-charts
+  - https://react-charts.js.org/
+  - interactive charts for React powered by D3
+- vega /BSD/8.5kStar/303006
+  - https://github.com/vega/vega
+  - https://vega.github.io/vega
+  - Vega is a visualization grammar
+  - With Vega you can describe data visualizations in a JSON format, 
+  - and generate interactive views using either HTML5 Canvas or SVG.
+  - https://github.com/vega/vega-lite /2.6kStar
+  - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
+- D3FC /860Star/MIT/202011/js
+  - https://github.com/d3fc/d3fc
+  - Components to rapidly build fast, highly customisable, interactive charts with D3
+  - The Decorate Pattern, resulting in charting components that are both simple and flexible.
+- G2 /MIT/9.8kStar/202007
+  - https://github.com/antvis/G2
+  - https://g2.antv.vision/
+  - A highly interactive data-driven visualization grammar for statistical charts
+- G2Plot /MIT/1.4kStar/202007
+  - https://github.com/antvis/G2Plot
+  - https://g2plot.antv.vision/
+  - An interactive and responsive charting library
+- F2 /MIT/7.2kStar/202007
+  - https://github.com/antvis/F2
+  - https://f2.antv.vision/zh
+  - An elegant, interactive and flexible charting library for mobile
+  - Html5 Canvas-based
+- BizCharts /MIT/5.1kStar/202007
+  - https://github.com/alibaba/BizCharts
+  - http://bizcharts.net/products/bizCharts
+  - Powerful data visualization library based on G2 and React
+- Viser /MIT/1.3kStar/202003
+  - https://github.com/viserjs/viser
+  - https://viserjs.github.io/
+  - A toolkit fit for data vis engineer based on G2. 
+  - Viser support React, Vue and AngularJS.
+- chartist-js /MIT/1.2kStar/201911
+  - https://github.com/gionkunz/chartist-js
+  - http://gionkunz.github.io/chartist-js/
+  - a simple responsive charting library built with SVG
+- vx /MIT/7.3kStar/202007
+  - https://github.com/hshoff/vx
+  - https://github.com/airbnb/visx
+  - https://vx-demo.now.sh/
+  - a collection of reusable low-level visualization components
+  - vx upgrade to visx
+- react-vis /MIT/7.2kStar/202007
+  - https://github.com/uber/react-vis
+  - https://uber.github.io/react-vis
+  - A collection of react components to render common data visualization charts
+- c3 /MIT/8.9kStar/202008
+  - https://github.com/c3js/c3
+  - http://c3js.org/
+  - a D3-based reusable chart library
+- dc.js /Apache2/7.1kStar/202009
+  - https://github.com/dc-js/dc.js
+  - http://dc-js.github.com/dc.js/
+  - Dimensional charting built to work natively with crossfilter rendered using d3.js
+- nvd3 /Apache2/7kStar/201806
+  - https://github.com/novus/nvd3
+  - http://nvd3.org/
+  - A reusable charting library written in d3.js
+  - NVD3 is recommended to go with d3.js version 3.5.3 and later, but NOT d3 4.x yet.
+- Taco /MIT/13Star/201712
+  - https://github.com/nefe/Taco
+  - https://nefe.github.io/Taco/
+  - svg based charts
+  - 无依赖
+- elastic-charts /Apache2/137Star/202007
+  - https://github.com/elastic/elastic-charts
+  - https://elastic.github.io/elastic-charts
+  - Elastic Charts library
+  - 依赖d3、popperjs、react-redux、reselect
+- apexcharts /9.4kStar/MIT/202009
+  - https://github.com/apexcharts/apexcharts.js
+  - https://apexcharts.com/
+  - Interactive JavaScript Charts built on SVG
+  - 依赖各种svg工具库 svg.pathmorphing/filter/draggable/easing/resize/select.js
+- chartify /MIT/667Star/202004
+  - https://github.com/kis/chartify
+  - https://chartify-213721.web.app/
+  - React.js plugin for building charts using CSS
+- rough-charts /MIT/1.2kStar/202005
+  - https://github.com/beizhedenglong/rough-charts
+  - https://beizhedenglong.github.io/rough-charts/?path=/docs/roughcharts--page
+  - A responsive, composable react charting library with a hand-drawn style.
+- data-forge-plot /22Star/MIT/201910
+  - https://github.com/data-forge/data-forge-plot
+  - plotting API designed for use with Data-Forge
+- https://github.com/nhn/tui.chart
+  - /4.6kStar/MIT/202004/js
+  - 依赖raphael，基于svg实现
+  - Beautiful Statistical Data Visualization library
+
+# more
+
+- https://github.com/frappe/gantt
+  - https://frappe.io/gantt
+- xchart /MIT/352Star/201903
+  - https://github.com/yugasun/x-chart
+  - https://yugasun.github.io/x-chart/
+  - a draggable & resizable data visualization dashboard
+  - Based on Vue.js, vue-echarts and vue-grid-layout
+- https://github.com/pavelkuligin/chart
+  - Create the most popular types of charts by real or random data
+  - Chart is a plugin for Sketch, Figma, and Adobe XD
+- https://github.com/xiaolin3303/wx-charts
+  - 微信小程序图表charts组件，Charts for WeChat small app
+- https://github.com/benpickles/peity
+  - Progressive svg pie, donut, bar and line charts

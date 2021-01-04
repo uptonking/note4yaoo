@@ -7,7 +7,7 @@ modified: '2020-12-08T13:04:34.691Z'
 
 # lib-ag-grid-docs-rendering-customization
 
-## Components
+# Components
 
 - You can create your own custom components to customize the behavior of the grid. 
 - The full list of component types you can provide in ag-Grid are as follows:

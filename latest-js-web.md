@@ -9,7 +9,7 @@ modified: '2020-09-26T12:52:33.493Z'
 
 - To make vanillajs great again
 
-## latest-web
+# latest-web
 
  
 
@@ -38,7 +38,7 @@ modified: '2020-09-26T12:52:33.493Z'
 </script>
 ```
 
-## ui-framework
+# ui-framework
 
 - 最新的web components和stencil再等等看，思路是framework as compiler
   - web components本身使用浏览器标准的runtime，特别适合替代vue/react的runtime
@@ -53,7 +53,7 @@ modified: '2020-09-26T12:52:33.493Z'
     - svelte暂不支持ts
     - stencil的css基于shadow dom，且写在单读文件，svelte的css写在style块
 
-### react
+## react
 
 - defaultProps可能废除 https://github.com/reactjs/rfcs/pull/107
 - swr基于hooks的请求库，设计思想是stale-while-revalidate，先用缓存再请求
@@ -79,7 +79,7 @@ modified: '2020-09-26T12:52:33.493Z'
   - Hermes现在并没有JIT编译器
   - Hermes编译的字节码文件比纯文本js文件增大100%
 
-## engineering
+# engineering
 
 - 微前端
   - 阿里乾坤，目的是解决遗留应用的管理问题

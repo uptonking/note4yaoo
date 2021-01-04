@@ -7,12 +7,12 @@ modified: '2020-12-08T13:03:34.005Z'
 
 # lib-ag-grid-docs-features-extensions
 
-## features
+# features
 
 - [Features Overview](https://www.ag-grid.com/javascript-grid-features/)
 - [Community and Enterprise Feature Comparison](https://www.ag-grid.com/javascript-grid-set-license/)
 
-### Enterprise Only
+## Enterprise Only
 
 - Filtering
   - Set Filter
@@ -42,7 +42,7 @@ modified: '2020-12-08T13:03:34.005Z'
   - Pivot Chart
   - Chart Toolbar
 
-### Community Features
+## Community Features
 
 - Row
   - Row Sorting
@@ -101,7 +101,7 @@ modified: '2020-12-08T13:03:34.005Z'
   - Pie/Line/Bar/Histogram/Area/Scatter
   - layout/axes/legend/theme/tooltip
 
-### Styling
+## Styling
 
 - Styling Rows/Cells
 - Theming
@@ -114,7 +114,7 @@ modified: '2020-12-08T13:03:34.005Z'
 - Column Spanning
 - Overlays
 
-### Working with Data
+## Working with Data
 
 - Row Models
   - ClientSideRowModel
@@ -139,22 +139,22 @@ modified: '2020-12-08T13:03:34.005Z'
   - export csv
   - Printing
 
-## Tool Panels - Side Bar
+# Tool Panels - Side Bar
 
 - Tool Panels are panels that sit in the Side Bar to the right of the grid. 
 - The Side Bar allows access to the tool panels via buttons that work like tabs. 
 
-## Tool Panels - Columns Panel
+# Tool Panels - Columns Panel
 
-## Tool Panels - Filters Panel
+# Tool Panels - Filters Panel
 
-## Context Menu
+# Context Menu
 
-## Column Menu
+# Column Menu
 
-## Status Bar
+# Status Bar
 
-## Overlays
+# Overlays
 
 - At present, there are two overlays for the grid:
   - Loading: Gets displayed when the grid is loading data.

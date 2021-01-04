@@ -45,6 +45,7 @@ modified: '2020-12-27T20:29:55.568Z'
       - collapsible
       - ui shell
       - configurable
+      - highlight code
     - interactive animations
     - 此处的features都是nice-to-have，非必需
   - headless ui

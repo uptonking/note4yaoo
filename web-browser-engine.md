@@ -7,12 +7,12 @@ modified: '2020-12-21T07:44:53.873Z'
 
 # web-browser-engine
 
-## pieces
+# pieces
 
 - 苹果曾经使用Gecko，嫌弃Gecko曾经有段时间太臃肿，就把KDE的HTML引擎KHTML、JavaScript引擎KJS加工过来，发布了WebCore+JavaScriptCore的WebKit并开源。
 - 后来Google加入使用WebCore引擎，再后来Chromium又分支出去Blink引擎，JavaScript引擎是Google开源的V8。
 
-## summary
+# summary
 
 - 浏览器的主要结构
   - 用户界面 
@@ -44,7 +44,7 @@ modified: '2020-12-21T07:44:53.873Z'
   - JavaScript引擎：Mocha -> SpiderMonkey
   - JIT即时编译器: TraceMonkey -> JaegerMonkey -> IonMonkey+OdinMonkey
 
-## ref
+# ref
 
 - [五大主流浏览器及四大内核](https://zhuanlan.zhihu.com/p/99777087)
 

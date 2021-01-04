@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:36.094Z'
 
 # web-style-css-in-js-lib-linaria
 
-## guide
+# guide
 
 - linaria缺点或局限
   - No IE11 support when using dynamic styles in components with styled, since it uses CSS custom properties
@@ -22,9 +22,9 @@ modified: '2021-01-01T20:06:36.094Z'
     - It might be tricky to introduce this syntax to linaria since we are strongly basing on TaggedTemplateExpressions
     - 代码实现紧密依赖css字符串字面量的处理逻辑，实现style object难度较大
 
-## docs
+# docs
 
-- ### [Why use Linaria](https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md)
+- ## [Why use Linaria](https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md)
 - Advantages over regular CSS
   1. Selectors are scoped
   2. Styles are in same file as the component
@@ -47,13 +47,13 @@ modified: '2021-01-01T20:06:36.094Z'
   5. Familiar CSS syntax
   6. Works without JavaScript
 
-- ### [How it works](https://github.com/callstack/linaria/blob/master/docs/HOW_IT_WORKS.md)
+- ## [How it works](https://github.com/callstack/linaria/blob/master/docs/HOW_IT_WORKS.md)
 - The Babel plugin will look for css and styled tags in your code, extract the CSS out and return it in the file's metadata. It will also generate unique class names based on the hash of the filename
 - When using the styled tag, dynamic interpolations will be replaced with CSS custom properties.
 - Plugins for bundlers such as webpack and Rollup use the Babel plugin internally and write the CSS text along with the sourcemap to a CSS file. 
 - The CSS file is then picked up and processed by the bundler (e.g. css-loader in case of webpack) to generate the final CSS.
 
-- ### [Theming](https://github.com/callstack/linaria/blob/master/docs/THEMING.md)
+- ## [Theming](https://github.com/callstack/linaria/blob/master/docs/THEMING.md)
 - CSS custom properties(CSS variables)
   - The basic concept is that we add a className to represent the theme to our root element, 
   - and use different values for our CSS variables based on the theme
@@ -134,7 +134,7 @@ const Button = withTheme(styled.button`
 `);
 ```
 
-- ### [Dynamic styling](https://github.com/callstack/linaria/blob/master/docs/DYNAMIC_STYLES.md)
+- ## [Dynamic styling](https://github.com/callstack/linaria/blob/master/docs/DYNAMIC_STYLES.md)
 - Sometimes we have some styles based on component's props or state, or dynamic in some way. 
   - If you use the `styled` helper with React, this is automatically handled using CSS custom properties. 
   - But we cannot do the same for `css` tags since they aren't linked to any component, and so we don't have access to state and props.
@@ -202,7 +202,7 @@ export function Box({ color, valid }) {
 }
 ```
 
-## faq
+# faq
 
 - 如何使用object style形式的样式
   - https://github.com/callstack/linaria/issues/464

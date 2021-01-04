@@ -7,9 +7,9 @@ modified: '2020-11-22T12:09:23.041Z'
 
 # thread-blog-collection
 
-## pieces
+# pieces
 
-## frontend
+# frontend
 
 - [精读《react-intersection-observer 源码》](https://zhuanlan.zhihu.com/p/149926289)
 - [精读《用 React 做按需渲染》](https://zhuanlan.zhihu.com/p/146588607)
@@ -26,8 +26,8 @@ modified: '2020-11-22T12:09:23.041Z'
 - [What does % mean in CSS?](https://wattenberger.com/blog/css-percents)
 - [make vanillajs great again](https://github.com/krausest/js-framework-benchmark/issues/403)
 
-## backend
+# backend
 
-## series
+# series
 
 - [Michael Jean的数据分析之路](https://zhuanlan.zhihu.com/c_1190937767960715264)

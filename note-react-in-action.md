@@ -9,7 +9,7 @@ modified: '2020-07-14T11:59:09.463Z'
 
 - react开发实践总结
 
-## guide
+# guide
 
 - 司徒正美文章
   - [发布高性能迷你React框架anu](https://www.cnblogs.com/rubylouvre/p/6954037.html)
@@ -27,7 +27,7 @@ modified: '2020-07-14T11:59:09.463Z'
   - [精读《Scheduling in React》](https://zhuanlan.zhihu.com/p/62428928)
   - [11 lessons react](https://hackernoon.com/11-lessons-learned-as-a-react-contractor-f515cd0491cf)
 
-## pieces
+# pieces
 
 - JSX is transpiled to function calls: `<Log /> -> createElement(Log, {})` . 
   - So if you put the JSX in your render you're calling a function and getting a new return value each time.

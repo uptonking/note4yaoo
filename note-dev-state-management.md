@@ -7,7 +7,7 @@ modified: '2020-10-31T19:11:26.567Z'
 
 # note-dev-state-management
 
-## faq
+# faq
 
 - 组件内的state如何管理，component/local state vs global state
   - 可以模糊组件状态和全局状态的界限
@@ -20,7 +20,7 @@ modified: '2020-10-31T19:11:26.567Z'
   - https://github.com/watson/event-debug
     - Log all events emitted by a Node.js EventEmitter object.
 
-## guide
+# guide
 
 - 状态管理的主要任务
   - 读写状态，主要是更新：get/set/read/update
@@ -54,7 +54,7 @@ modified: '2020-10-31T19:11:26.567Z'
     - and call `setState()` when you receive an event. 
     - Flux pattern is one of the possible ways to arrange this.
 
-## pieces
+# pieces
 
 - event-pub/sub vs browser event
   - 目前CustomEvent的支持率达到了99.38%，几乎所有浏览器都支持，IE9-11部分支持
@@ -163,7 +163,7 @@ obj.dispatchEvent(event);
   - yeah. Each connected component subscribes to the store
   - any changes reach state and are mapped to props. The reducer handles all message traffic.
 
-- ### [How do you manage 'state' with vanilla js?_2018](https://www.reddit.com/r/javascript/comments/9cdxwt/how_do_you_manage_state_with_vanilla_js/)
+- ## [How do you manage 'state' with vanilla js?_2018](https://www.reddit.com/r/javascript/comments/9cdxwt/how_do_you_manage_state_with_vanilla_js/)
 - Variables are not managed, nor trigger updates on changes. 
   - State management can be done with variables if you proxy them or overwrite object properties with getter/setters.
   - Everything else resorts to polling or updaters, which will turn your app upside down if it functions asynchronously.
@@ -174,7 +174,7 @@ obj.dispatchEvent(event);
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
 
-## ref
+# ref
 
 - [A Very Basic State Management Library In Under 100 Lines Of JavaScript_2020](https://vijitail.dev/blog/basic-state-management-library-using-vanilla-javascript)
   - https://github.com/vijitail/Kel

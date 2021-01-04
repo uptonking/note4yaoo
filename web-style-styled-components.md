@@ -7,7 +7,7 @@ modified: '2021-01-01T20:07:20.702Z'
 
 # web-style-styled-components
 
-## dev-tips
+# dev-tips
 
 - 如何复用现有项目的样式和第三方库的样式
   - 必需支持class或className
@@ -42,25 +42,25 @@ modified: '2021-01-01T20:07:20.702Z'
       - 因为就算自己用js计算新的样式名本身也有一定的计算，样式变化不多的情况下对性能影响可忽略
     - 会创建重复的样式
 
-## linaria
+# linaria
 
-### basic
+## basic
 
 - https://github.com/callstack/linaria
 - https://linaria.now.sh/
 - https://github.com/callstack/linaria/blob/master/docs/BENEFITS.md
 
-### pieces
+## pieces
 
-## emotion
+# emotion
 
-### basic
+## basic
 
 - https://emotion.sh/
 - https://github.com/emotion-js/emotion
 - Emotion is a library designed for writing css styles with JavaScript
 
-### faq
+## faq
 
 - emotion创建样式的组件，可以提取成单独的css吗
   - 旧版本可以，v10新版本不行
@@ -140,7 +140,7 @@ modified: '2021-01-01T20:07:20.702Z'
   - https://material-ui.com/zh/guides/interoperability/
   - https://spectrum.chat/styled-components/general/styled-components-vs-emotion~47206c1b-a688-424e-9e96-6f265993587e
 
-### emotion-docs
+## emotion-docs
 
 - emotion - framework agnostic
   -  use `css` function to generate class names and `cx` to compose them
@@ -186,14 +186,14 @@ modified: '2021-01-01T20:07:20.702Z'
 - changelog
   - 10.0.0-201810-new package name, better css prop, Global comp
 
-## styled-components
+# styled-components
 
-### basic
+## basic
 
 - https://www.styled-components.com/docs/basics
 - https://github.com/styled-components/styled-components
 
-### faq
+## faq
 
 - 实现原理
   - https://dev.to/stereobooster/styled-components-one-more-time-5g0l
@@ -326,7 +326,7 @@ modified: '2021-01-01T20:07:20.702Z'
       - https://blog.logrocket.com/8-reasons-to-use-styled-components-cf3788f0bb4d/
       - https://dev.to/christopherkade/styled-component-what-why-and-how-5gh3
 
-### summary
+## summary
 
 - s-c是典型的css-in-js样式解决方案
 - s-c使用ES6的字符串模板方式来定义css样式，这样使得css的写法与原生的css写法基本一致，不用按照react的camelCase写样式
@@ -369,7 +369,7 @@ modified: '2021-01-01T20:07:20.702Z'
   - The ampersand(&) can be used to refer back to the main component
   - The ampersand(&) can be used to increase the specificity of rules on the component
 
-### styled-components-docs
+## styled-components-docs
 
 - The rule of thumb is to use `attrs` when you want every instance of a styled component to have that prop, and pass `props` directly when every instance needs a different one
   - you can set a property on attrs to a function that computes that prop based on other props.
@@ -385,7 +385,7 @@ modified: '2021-01-01T20:07:20.702Z'
   - 4.1.2-201811-native support for the css prop
   - 5.0.0-2019-alpha-no breaking, rewrite with hooks to no wrapper hell
 
-### qucikstart
+## qucikstart
 
 - demo
 
@@ -428,7 +428,7 @@ const StyledButton = styled(Button)
 `
 ```
 
-### styled under the hood
+## styled under the hood
 
 - ref
     - https://medium.com/styled-components/how-styled-components-works-618a69970421
@@ -494,7 +494,7 @@ border-radius: 3px;
 `;
 ```
 
-## bootstrap
+# bootstrap
 
 - bootstrap-components
   - bootstrap中input添加.form-control类，表示为input元素添加表单控件样式
@@ -507,7 +507,7 @@ border-radius: 3px;
   - https://bootswatch.com/
   - https://themes.3rdwavemedia.com/bootstrap-templates/free/
 
-### bootstrap-bootswatch-themes
+## bootstrap-bootswatch-themes
 
 - default
 - 绿色系

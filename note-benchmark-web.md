@@ -7,7 +7,7 @@ modified: '2020-07-14T09:28:43.976Z'
 
 # note-benchmark-web
 
-## frontend-framework
+# frontend-framework
 
 - [前端框架基准测试最新结果：18个框架当中有13个达到顶级](https://www.infoq.cn/article/UHsl0gogHtL2BM*vJIOs)
   - https://www.infoq.com/news/2019/04/real-world-framework-benchmark
@@ -53,7 +53,7 @@ modified: '2020-07-14T09:28:43.976Z'
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
 
-## more-benchmarks
+# more-benchmarks
 
 - [textJust how much faster is vanilla JS than frameworks?_202008](https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/)
 

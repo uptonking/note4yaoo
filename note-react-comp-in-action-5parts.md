@@ -7,13 +7,13 @@ modified: '2020-12-08T13:30:39.499Z'
 
 # note-react-comp-in-action-5parts
 
-## guide
+# guide
 
 - [React组件设计实践总结_荒山_2019](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
 - [浅谈React性能优化的方向](https://juejin.im/post/5d045350f265da1b695d5bf2)
 - https://jxnblk.com/blog/defining-component-apis-in-react/
 
-## React应用性能优化
+# React应用性能优化
 
 - **性能优化通用方向**
 - 减少计算量
@@ -40,7 +40,7 @@ modified: '2020-12-08T13:30:39.499Z'
     - 明确状态作用域, Context只放置必要关键的，被大多数组件所共享的状态，比较典型的是鉴权状态
     - 一般都不会直接使用Context.Provider, 而是封装为独立的Provider组件
 
-## React组件设计实践总结01-类型检查
+# React组件设计实践总结01-类型检查
 
 - 静态类型检查的作用
   - 可以在开发时就避免许多类型问题, 减少低级错误
@@ -97,7 +97,7 @@ modified: '2020-12-08T13:30:39.499Z'
 - 组件相关问题
   - 所有原生元素props都继承了 `React.HTMLAttributes` , 某些特殊元素也会扩展了自己的属性, 例如InputHTMLAttributes
 
-## 组件设计02-组件组织
+# 组件设计02-组件组织
 
 - 组件设计的基本原则：单一职责(Single Responsibility Principle)
 - 组件设计基础
@@ -141,7 +141,7 @@ modified: '2020-12-08T13:30:39.499Z'
   - 可以用于组件测试. 支持组件结构测试, 交互测试, 可视化测试, 可访问性或者手动测试
   - 丰富的插件生态
 
-## 组件设计03-样式的管理
+# 组件设计03-样式的管理
 
 - **CSS的问题**
 - Global Namespace
@@ -212,7 +212,7 @@ modified: '2020-12-08T13:30:39.499Z'
   - 可以和CSS proprocessor配合使用
   - 支持非标准的语法, 例如:global, :local, :export, compose
 
-## 组件设计04-组件的思维
+# 组件设计04-组件的思维
 
 - 高阶组件的作用
   - 高阶组件是函数，它接收原始组件并返回原始组件的增强版本
@@ -288,7 +288,7 @@ modified: '2020-12-08T13:30:39.499Z'
   - React Bits
   - react-in-patterns
 
-## 组件设计05-状态管理
+# 组件设计05-状态管理
 
 - 现在的前端框架(包括React)的一个核心思想就是数据驱动视图, 即 `UI = f(state)`
   - 这种开发方式的变化其实得益于Virtual-DOM，它使得我们不需要关心浏览器底层DOM的操作细节，只需关心状态(state)和映射关系(f)

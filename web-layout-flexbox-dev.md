@@ -7,9 +7,9 @@ modified: '2020-12-21T07:46:20.408Z'
 
 # web-layout-flexbox-dev
 
-## faq
+# faq
 
-- ### `margin:auto` vs justify-content/align-items center
+- ## `margin:auto` vs justify-content/align-items center
 
 ``` CSS
 /* 第一种 */
@@ -42,4 +42,4 @@ modified: '2020-12-21T07:46:20.408Z'
 - ref
   - [What's the difference between margin:auto and justify-content/align-items center?](https://stackoverflow.com/questions/44244549/whats-the-difference-between-marginauto-and-justify-content-align-items-cent)
 
-## pieces
+# pieces

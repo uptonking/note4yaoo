@@ -7,7 +7,7 @@ modified: '2020-12-05T07:57:08.525Z'
 
 # lib-jsx-lite-dev
 
-## guide
+# guide
 
 - jsx-lite /674Star/MIT/202012/ts
   - https://github.com/BuilderIO/jsx-lite
@@ -21,4 +21,4 @@ modified: '2020-12-05T07:57:08.525Z'
   - This means we can parse it to a simple JSON structure that it is easy easy to build stringifers off of for various frameworks and implementations
   - JSX Lite's static JSON format also enables no-code tooling for visual code editing and importing, for instance with Builder.io or Figma
 
-## pieces
+# pieces

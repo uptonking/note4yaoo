@@ -7,7 +7,7 @@ modified: '2020-12-21T07:45:28.814Z'
 
 # web-css
 
-## faq
+# faq
 
 - css selector的性能比较
   - Sweating over the selectors used in modern browsers is futile; most selection methods are now so fast it's really not worth spending much time over. 
@@ -36,7 +36,7 @@ modified: '2020-12-21T07:45:28.814Z'
   - https://ecss.io/appendix1.html (chrome34/firefox29/ie9/android4)
   - https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/
 
-## summary
+# summary
 
 - Best practices of using efficient CSS selectors (by Google Page Speed) (已过时)
   - Avoid descendant selectors: table tbody tr td
@@ -90,7 +90,7 @@ modified: '2020-12-21T07:45:28.814Z'
 
 
 
-## pieces
+# pieces
 
 - I am quoting Benjamin Poulain, a WebKit Engineer who had a lot to say about the CSS selectors performance test:
   - ~10% of the time is spent in the rasterizer. 
@@ -111,11 +111,11 @@ modified: '2020-12-21T07:45:28.814Z'
     - I think that is the right way to go about this, it is easy and will lead to correct outcome.”
 - There are approaches, like BEM for example, which models the CSS as flat as possible, to minimize DOM hierarchy dependency and to decouple web components so they could be "moved" across the DOM and work regardless.
 
-## CSS performance revisited: selectors, bloat and expensive styles
+# CSS performance revisited: selectors, bloat and expensive styles
 
  
 
-## ref
+# ref
 
 - [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)
 - [Use efficient CSS selectors rule by Google PageSpeed](https://stackoverflow.com/questions/25618138/)what-happened-to-the-use-efficient-css-selectors-rule

@@ -7,11 +7,11 @@ modified: '2020-07-14T09:26:50.808Z'
 
 # lang-js
 
-## tips
+# tips
 
 - all in js as frontend
 
-## js guide
+# js guide
 
 - js vm bytecode
 - Replace `arr.filter().map()` with `arr.reduce()`
@@ -19,7 +19,7 @@ modified: '2020-07-14T09:26:50.808Z'
 - Object.assign修改属性值的性能
 - https://github.com/airbnb/javascript
 
-## faq
+# faq
 
 - js复制数组方法的性能比较
   - `b = [...a]`
@@ -84,9 +84,9 @@ modified: '2020-07-14T09:26:50.808Z'
 - 跨window传递数据的方法
   - `window.opener`
 
-## data type
+# data type
 
-### Boolean
+## Boolean
 
 - The `Boolean()` constructor is used to create `Boolean` objects.
 - The Boolean object is an object wrapper for a boolean value.
@@ -114,7 +114,7 @@ var s = Boolean(myString); // initial value of true
   - `arrayOfSheeps.filter(Boolean).length`
   - `arrayOfSheeps.filter(function(x){return Boolean(x)}).length`
 
-### WeakMap
+## WeakMap
 
 - WeakMap is a collection of key/value pairs where the keys are weakly referenced
   - fast keyed access to value
@@ -124,9 +124,9 @@ var s = Boolean(myString); // initial value of true
 - WeakMaps are ideal for preventing memory leaks when keeping DOM nodes as keys
 - There are various use cases when you don't control the keys' garbage collection, and WeakMaps are the way to ensure you're not leaking memory. 
 
-## mdn docs
+# mdn docs
 
-### 函数参数
+## 函数参数
 
 - 在JavaScript高级程序设计中，第4.1.3节传递参数这一节中，作者说的是ECMAScript中所有函数的参数都是按值传递的
 - Primitive parameters (such as a number) are passed to functions by value; 
@@ -144,7 +144,7 @@ f1(10);
 // 函数f1定义了参数a，调用时传参数10，先弹出10，修改a为1，弹出两次true，a和arguments[0]都为1了。
 ```
 
-### window.postMessage()
+## window.postMessage()
 
 - method safely enables cross-origin communication between Window objects; e.g., between a page and a pop-up that it spawned
 - Normally, scripts on different pages are allowed to access each other if and only if the pages they originate from same origin
@@ -153,7 +153,7 @@ f1(10);
 - The receiving window is then free to handle this event as needed. 
 - The arguments passed to window.postMessage() (i.e., the “message”) are exposed to the receiving window through the event object.
 
-### this
+## this
 
 - `this` is a property of an execution context (global, function or eval) that, 
   - in non–strict mode, is always a reference to an object 
@@ -212,7 +212,7 @@ f1(10);
   - method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
   - shallow copies property values. If the source value is a reference to an object, it only copies that reference value.
 
-### setTimeout vs setInterval
+## setTimeout vs setInterval
 
 - 相同点
   - setTimeout和setInterval的回调函数，都是经过n毫秒后被添加到队列中，而不是过n毫秒后立即执行
@@ -225,7 +225,7 @@ f1(10);
 - setInterval受单线程影响可能出现时间不精确现象，如果函数的执行时间超过设置的间隔时间，会出现函数小于间隔时间而执行或无间隔执行的情况
 - 如果用setTimeout来模拟setInterval，这样函数执行的间隔时间就会保证（>=设置时间）
 
-### setTimeout
+## setTimeout
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
@@ -270,7 +270,7 @@ f1(10);
 - setTimeout、setInternal、setImmediate这些方法在浏览器内一般是由浏览器内部实现，而Node.js中，这些方法都是由Timers模块提供的
   - 在Node.js里，这些定时器相关的函数是由基础库实现的，底层通过 C++ 在 libuv 的基础上包裹了一个 timer_wrap 模块，这个模块提供了 Timer 对象，实现了在 runtime 层面的定时功能
 
-### setInterval
+## setInterval
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
@@ -294,7 +294,7 @@ f1(10);
   - 每个setTimeout都由定时触发器线程负责计时，计时完毕后，添加到事件队列中(即：事件触发线程)，等待JS引擎线程空闲后，再来依次执行
   - 首先JS引擎线程要运行for循环，在每次循环中都会调用一个setTimeout函数，每个setTimeout计时结束后都会将其回调函数添加到事件队列中。等for循环结束后（即JS引擎线程空闲后），才开始按顺序执行事件队列中的函数。每次循环都会在一秒后将回调函数添加到事件队列中，但由于两次相邻的循环时间是短到可以忽略不计的，所以表面看上去一秒后立即执行了5次回调函数
 
-### requestAnimationFrame
+## requestAnimationFrame
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame
@@ -306,7 +306,7 @@ f1(10);
 - requestAnimationFrame() calls are paused in most browsers when running in background tabs or hidden <iframe>s in order to improve performance and battery life
 - The callback method is passed a single argument, a `DOMHighResTimeStamp` , which indicates the current time (based on the number of milliseconds since time origin)
 
-### es6的class
+## es6的class
 
 - js生成对象的传统方法是通过构造函数
 
@@ -361,7 +361,7 @@ Point === Point.prototype.constructor // true
 - ES6继承
   - 实质是先创造父类的实例对象this(所以必须先调用super)， 然后再用子类的构造函数修改this 
 
-## dev tips
+# dev tips
 
 - spread operator `...` vs `Object.assign()`
   - The main difference is that spreading defines new properties, while `Object.assign()` sets them.
@@ -629,7 +629,7 @@ Point === Point.prototype.constructor // true
   - 在处理一些高频率触发的DOM事件的时候，它们都能极大提高用户体验
   - throttle和debounce均是通过减少实际逻辑处理过程的执行，来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数
 
-## ECMAScript
+# ECMAScript
 
 - 函数绑定运算符 两个冒号 ::  [doc](http://es6.ruanyifeng.com/#docs/function)
   - 双冒号左边是一个对象，右边是一个函数，该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。
@@ -640,7 +640,7 @@ Point === Point.prototype.constructor // true
   - 单参数也可以调用 f1(c)  
 - 模块化开发不推荐使用css和html，可以都写在js中
 
-## tool
+# tool
 
 - webpack
   - 前端资源模块化管理和打包工具  
@@ -730,7 +730,7 @@ define(['jquery'], function($) { return myFunc; });
 
 - core-js：为es5、es6提供polyfill   
 
-## react
+# react
 
 - 优点
   - React的理念是界面**组件化**，在桌面开发中叫控件，可复用性强，开发效率高
@@ -750,13 +750,13 @@ define(['jquery'], function($) { return myFunc; });
   - 脱离了Flux，在解决大规模UI的问题上React本身并没有拿出比MVVM更优的方案
   - 而结合Flux看的话，MVVM上也可以用Flux的思想，MVVM框架如果加上合适的优化，并不会比React慢，比如Vue的track by
 
-## 样式处理
+# 样式处理
 
-### css modules
+## css modules
 
-### css in js
+## css in js
 
-#### styled-components
+### styled-components
 
 - 使用模板字符串
 - 样式写在js文件里，可以使用变量，更加灵活
@@ -796,11 +796,11 @@ const Header = (props) => {
 // 链接：https://www.zhihu.com/question/266625289/answer/321576411
 ```
 
-## resources
+# resources
 
 - https://github.com/designmodo/html-website-templates
 
-## WebAssembly
+# WebAssembly
 
 - 典型应用场景
   - 扩展浏览器端视音频处理能力

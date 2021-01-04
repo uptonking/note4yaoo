@@ -7,28 +7,28 @@ modified: '2021-01-01T20:08:51.345Z'
 
 # ux-design-theme-ui
 
-## guide
+# guide
 
 - 开始出现挑战用theme对象实现theming的思路
   - css vars
 
-## discuss
+# discuss
 
-- ### [Expose theme values as CSS Variables](https://github.com/system-ui/theme-ui/issues/979)
+- ## [Expose theme values as CSS Variables](https://github.com/system-ui/theme-ui/issues/979)
 - @theme-ui/custom-properties: Generate CSS custom properties for use with Theme UI.
 
-- ### [Can Theme-UI be statically extracted somehow?](https://github.com/system-ui/theme-ui/discussions/1051)
+- ## [Can Theme-UI be statically extracted somehow?](https://github.com/system-ui/theme-ui/discussions/1051)
 - Theme UI is built on top of Emotion, and AFAIK it can't be statically extracted.
   - JSX pragma transforms `sx` props into `className` at runtime.
   - Similarly, themes are passed through React context.
 - @compiled/css-in-js has statically extracted CSS prop. 
   - If you knew the theme statically, it would possible to write a TS transform/babel plugin to compile `sx` prop into `css` prop and then run @compiled/css-in-js, but this is honestly a big undertaking.
 
-## pieces
+# pieces
 
 - One of the primary motivations behind Theme UI is to make building themeable, constraint-based user interfaces in React as simple and as interoperable as possible.
 
-## chakra-ui
+# chakra-ui
 
 - [RFC: Static CSS Extraction](https://github.com/chakra-ui/chakra-ui/issues/859)
   - One of the downsides of CSS-in-JS, particularly the styled-system approach is the runtime performance issues.

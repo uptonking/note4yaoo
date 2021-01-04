@@ -7,7 +7,7 @@ modified: '2020-11-16T12:43:01.532Z'
 
 # pm-list-grid-table-ux
 
-## The complete guide to building a smart data table in React
+# The complete guide to building a smart data table in React
 
 - [The complete guide to building a smart data table in React_201911](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)
 
@@ -69,7 +69,7 @@ modified: '2020-11-16T12:43:01.532Z'
   - Simple tables with custom styling that don’t require many interactions for the columns other than simple popover text
 - Let’s start building a simple table UI with basic functionalities like sorting and searching using react-table
 
-## 5 Practical Solutions to Make Responsive Data Tables
+# 5 Practical Solutions to Make Responsive Data Tables
 
 - [5 Practical Solutions to Make Responsive Data Tables](https://medium.com/appnroll-publication/5-practical-solutions-to-make-responsive-data-tables-ff031c48b122)
 
@@ -86,7 +86,7 @@ modified: '2020-11-16T12:43:01.532Z'
   - It’s also a similar to the Collapsed one I described above but it is ready for a larger amount of data.
   - All we need to add is easy navigation through the whole table, displaying only two columns at a time.
 
-## Design better data tables
+# Design better data tables
 
 > The ingredients of a successful data table UI
 
@@ -113,7 +113,7 @@ modified: '2020-11-16T12:43:01.532Z'
 - hover actions
 - visual summary for table
 
-## How to design data tables - the 20 rules guide
+# How to design data tables - the 20 rules guide
 
 - [How to design data tables - the 20 rules guide](https://www.mobilespoon.net/2019/11/design-ui-tables-20-rules-guide.html)
 
@@ -156,7 +156,7 @@ modified: '2020-11-16T12:43:01.532Z'
 - **Bonus Tip**
   - I recommend having an “export to CSV” button that will allow users to manipulate the data in Microsoft Excel or Google Sheets (I, for one, care deeply about pivots).
 
-## Tables UI design in Figma: data grid by a single component
+# Tables UI design in Figma: data grid by a single component
 
 - [Tables UI design in Figma](https://uxdesign.cc/tables-ui-design-in-figma-data-grid-by-a-single-component-5d2c76c16f8)
 
@@ -180,7 +180,7 @@ modified: '2020-11-16T12:43:01.532Z'
   - Cons: there are almost none, except that this approach requires more time and system design skills
   - Pros: maximum flexibility, ability to control the grid with a single component, adjust separators, background, nested icons and more.
 
-## Why You Will Never Give Up Spreadsheets
+# Why You Will Never Give Up Spreadsheets
 
 - [Why You Will Never Give Up Spreadsheets_2016](https://handsontable.com/blog/articles/2016/7/why-you-will-never-give-up-spreadsheets)
 

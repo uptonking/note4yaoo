@@ -7,7 +7,7 @@ modified: '2020-10-22T13:33:21.232Z'
 
 # pm-builder
 
-## guide
+# guide
 
 - 不建议做得过于通用，过于细节
 - 建议根据应用场景，研发一个主题的组件，然后拖拽拼装
@@ -15,7 +15,7 @@ modified: '2020-10-22T13:33:21.232Z'
   - export html/gist
   - export png
 
-## product-blocks
+# product-blocks
 
 - blocks /MIT/3.5kStar/202006
   - https://github.com/blocks/blocks
@@ -28,12 +28,12 @@ modified: '2020-10-22T13:33:21.232Z'
   - It uses Babel and its plugin API for parsing and transforming. 
   - Events that happen in the canvas are emitted and run corresponding plugins on the source code.
 
-## solution-catalog-builder
+# solution-catalog-builder
 
 - VvvebJs /Apache2/3.3kStar/202007
 - grapesjs /BSD/11.4kStar/202008
 - react-page /LGPLv3/8.2kStar/202008/ts
 
-## xp-dev-builder
+# xp-dev-builder
 - ref
   - [React组件可视化拖拽页面搭建，源码生成，你有什么想法？](https://www.zhihu.com/question/392818555)

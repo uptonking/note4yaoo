@@ -7,13 +7,13 @@ modified: '2020-06-30T12:51:08.791Z'
 
 # note-react-faq
 
-## faq-not-yet
+# faq-not-yet
 
 - `React.forwardRef()` 是高阶组件吗
 
-## faq-repeat
+# faq-repeat
 
-- ### [我们为什么需要 React？](hhttps://www.zhihu.com/question/47161776/answers/updated)
+- ## [我们为什么需要 React？](hhttps://www.zhihu.com/question/47161776/answers/updated)
 - 我们需要技术栈
   - 需要技术栈提供好用的模块化方式，一次构建，多处复用的能力
   - 需要数据绑定，不用重复手写本质上并不依赖场景的从视图到数据从数据到视图的更新
@@ -26,7 +26,7 @@ modified: '2020-06-30T12:51:08.791Z'
   - 你充分评估了你的项目需求，理解你要解决的问题是什么，是快速开发，性能，团队的ergonomics，多数情况下要解决的问题是多个要素的平衡
   - 你充分评估了React技术栈，理解它是解决你的具体问题的最佳工具，你真的理解了自己的场景中非用React不可的那些事情
 
-- ### [Why use react and not jquery?_201804](https://twitter.com/paulhtrott/status/982373883402752001)
+- ## [Why use react and not jquery?_201804](https://twitter.com/paulhtrott/status/982373883402752001)
   - What makes a component-based library better than a non-component-based is the ability to wrap specific functionalities and UI inside components. 
   - You get a lot of reusability
     - React's specialty is how it controls functionality and UI inside and between  components
@@ -126,7 +126,7 @@ modified: '2020-06-30T12:51:08.791Z'
     - SEO implications
     - Higher Time to Interactive (TTI)
 
-- ### [The deepest reason why modern JavaScript frameworks exist_201803](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
+- ## [The deepest reason why modern JavaScript frameworks exist_201803](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445)
 - Conclusion
   - The main problem modern JavaScript frameworks solve is keeping the UI in sync with the state.
   - It is not possible to write complex, efficient and easy to maintain UIs with Vanilla JavaScript.
@@ -149,7 +149,7 @@ modified: '2020-06-30T12:51:08.791Z'
   - or you can use something like Stencil.js (which internally uses a Virtual DOM, like React).
 
 
-- ### why use react for threejs?
+- ## why use react for threejs?
 - https://twitter.com/0xca0a/status/1282999626782650368
 - same reason you use it for the dom. 
 - this is not a dig at the dom or three. 
@@ -169,9 +169,9 @@ modified: '2020-06-30T12:51:08.791Z'
   - I'm saying use React because their resources and constraints are way bigger than yours (and everyone else), 
   - and they're giving it to you for free.
 
-## faq
+# faq
 
-- ### Why did react decides not to support components as classes that don’t extend `React.Component`?_2015
+- ## Why did react decides not to support components as classes that don’t extend `React.Component`?_2015
 - https://github.com/facebook/react/issues/4599
 - To support arrow functions and plain functions as "components" we need to know if we can call `new` on them. 
 - We need to detect if a component is a "function" or a "class" before calling `new` on it.
@@ -183,7 +183,7 @@ modified: '2020-06-30T12:51:08.791Z'
 - Unfortunately ECMAScript doesn't have a way to detect if something is `new`able or not.
 - The current plan is to add our own static flag to `React.Component` so that we can detect if something is a class.
 
-- ### [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
+- ## [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
   - We want to fix the “deep update propagation” problem. 
     - But we don’t want to pay the memory and initialization time cost for every single component that consumes context. 
     - Many context values change very rarely! 
@@ -215,7 +215,7 @@ modified: '2020-06-30T12:51:08.791Z'
     - Therefore, no, context is not a replacement for Redux, as it does not solve the problems Redux does. 
       - If you were just using Redux to avoid passing props, then you probably never really needed Redux in the first place. 
 
-- ### createRef vs useRef
+- ## createRef vs useRef
   - createRef is as simple as return {current: null}. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).
   - useRef keeps some data before renders and changing it does not cause re-render
   - `useRef(null)` is basically `useState(React.createRef())[0]` .
@@ -229,7 +229,7 @@ modified: '2020-06-30T12:51:08.791Z'
   - You can't set a new value for createRef. But you can for useRef. ??? 待验证
   - [What's the difference between `useRef` and `createRef` ](https://stackoverflow.com/questions/54620698/whats-the-difference-between-useref-and-createref)
 
-- ### createRef vs callback ref
+- ## createRef vs callback ref
   - In terms of use cases, callback refs can do anything createRef can do, but not vice versa.
   - Things you can't do with createRef
     - React to a ref being set or cleared
@@ -240,7 +240,7 @@ modified: '2020-06-30T12:51:08.791Z'
   - ref
     - [React createRef() vs callback refs](https://stackoverflow.com/questions/53624712/react-createref-vs-callback-refs-is-there-any-advantage-of-using-one-over-the)
 
-- ### forwardRef vs callback ref
+- ## forwardRef vs callback ref
   - Is there any difference between forwardRef and callbackRefs? We can access the child node's reference from parent in both of these cases.
   - the difference between the use of forwardingRef vs callback ref is in the HOC.
   - If you pass ref prop to HOC, then inside HOC you cannot further pass it down to the enclosing component(which HOC wraps) since the props attributes does not store the ref inside it. ref is not a prop
@@ -313,7 +313,7 @@ class FancyButtonWrapper extends React.Component {
 }
 ```
 
-- ### `props.children` not re-rendered on parent state change
+- ## `props.children` not re-rendered on parent state change
   - When clicking on Child 'Hi' text, only Container component keeps re-rendering but Child component is not re-rendered.
   - Since the Container's render is executed, so must the components returned from it call their own render methods.
   - No matter how many times Container get's re-rendered, since its children are always referentially the same thing between renders (**because that React Element was created in the App level** and it has no reason to change), they don't get re-rendered.
@@ -375,7 +375,7 @@ React.createElement(
 )
 ```
 
-- ### How to implement useState with useReducer
+- ## How to implement useState with useReducer
 
 ``` JS
 // 简单版
@@ -418,7 +418,7 @@ function useState<T>(initialState: T | (() => T)) {
   - https://kentcdodds.com/blog/how-to-implement-usestate-with-usereducer
   - https://www.jianshu.com/p/7cbf04c6bcc6
 
-- ### useState vs useReducer
+- ## useState vs useReducer
   - useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. 
   - useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
   - The above statement is not trying to indicate that the setter returned by useState is being created newly on each update or render. What it means is that when you have a complex logic to update state, you simply won't use the setter directly to update state, instead you will write a complex function which in turn would call the setter with updated state
@@ -440,12 +440,12 @@ function useState<T>(initialState: T | (() => T)) {
     - https://www.freecodecamp.org/news/why-you-should-choose-usestate-instead-of-usereducer-ffc80057f815/
     - https://juejin.im/post/5df993e3e51d4558270efa4d
 
-- ### 为什么不能 setState in render
+- ## 为什么不能 setState in render
   - Calling setState in render can cause infinite loop 
   - ref
     - https://github.com/facebook/react/issues/5591
 
-- ### defaultProps设置默认值的方式
+- ## defaultProps设置默认值的方式
   - 推荐只使用解构的方式，带来的问题是如何在函数体内获取到props对象
   - 在参数处解构，则难以获得props，在函数内解构，则可以获得props
   - One of the differences I can think of, and I suppose the most important, is that on the second case, while you are destructing your props object in function body, you are using `const` on declaration.
@@ -490,7 +490,7 @@ MyComponent.defaultProps = { x: 0 };
   - 接着调用最下层组件的didMount，依次向上调用didMount，最后调用顶层父组件的didMount
 - 使用context作为全局唯一store和redux的区别
 
-- ### How does React know the component is removed from the DOM?
+- ## How does React know the component is removed from the DOM?
   - There is no watcher on the actual DOM. 
   - Everytime the render function of a component gets called, the Virtual DOM gets re-build. 
   - If a component is no longer necessary, it gets removed from the virtual DOM.
@@ -518,13 +518,13 @@ MyComponent.defaultProps = { x: 0 };
   - React. Children提供了直接访问黑盒props.children数据结构的能力；
   - React.cloneElement接收一个React element并支持往其中浅层合并props，替换旧children；笔者看来该API可以从一定程度上减少代码的重复书写，使组件标签表达更加清晰
 
-- ### Is setting state with `this.setState` inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
+- ## Is setting state with `this.setState` inside the render method of a class component, the same as setting state inside the function body of a function component with hooks?
   - Techincally yes.
   - setting a state directly in render method will cause the function to trigger re-render in case of class component causing an infinite loop which is the case for functional components provided the state values are different. 
   - Regardless of that, it will still cause an issue because any other state update will be reverted back due to functional component calling state update directly 
   - In a class component, if we set state in the render method an infinite loop will occur. This is because the class component does not care that the new state is the same as the previous state. It just keeps re-rendering on every this.setState. Yes, hence its recommended not to call setState directly in render
 
-- ### react中setState是同步的还是异步？
+- ## react中setState是同步的还是异步？
   - 合成事件中的setState是异步的
     - 合成事件是react为了解决跨平台封装的一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件
   - 生命周期钩子函数中的setState是异步的
@@ -550,7 +550,7 @@ MyComponent.defaultProps = { x: 0 };
     - It is called before render(), therefore setting state in this method will not trigger a re-render.
     - Avoid introducing any side-effects or subscriptions in this method. in componentDidMount instead.
 
-- ### Does render get called any time setState is called?
+- ## Does render get called any time setState is called?
   - By default - yes
   - By default, shouldComponentUpdate always returns true to prevent subtle bugs when the state is mutated in place
   - Virtual DOM renders: when render method is called it returns a new virtual dom structure of the component. As I mentioned before, this render method is called always when you call setState(), because shouldComponentUpdate always returns true by default. So, by default, there is no optimization here in React.
@@ -566,7 +566,7 @@ MyComponent.defaultProps = { x: 0 };
   - ref
     - https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
 
-- ### 给React组件的状态每次设置相同的值，如 `setState({count: 1})` ，React组件是否会发生渲染？ 
+- ## 给React组件的状态每次设置相同的值，如 `setState({count: 1})` ，React组件是否会发生渲染？ 
   - 会重复渲染. 可利用PureComponent组件来减少重复渲染。
   - 利用PureComponent组件可减少组件的重复渲染，那么是否代表组件的状态没有发生变化呢？即引用地址是否依旧是上次地址呢？
   - 虽然PureComponent组件减少了组件的重复渲染，但是组件状态的引用地址却发生了变化.
@@ -585,7 +585,7 @@ MyComponent.defaultProps = { x: 0 };
     - [浅谈setState的更新机制] https://zhuanlan.zhihu.com/p/95865701
     - [PureComponent与memo] https://juejin.im/post/5de364a4f265da05be3e5af3
 
-- ### useMemo vs React.memo
+- ## useMemo vs React.memo
   - useMemo is a function as a hook that returns a memoized value.
       - useMemo will only recompute the memoized value when one of the dependencies (either a or b) has changed
       - hooks should be used only at the top level from react functions
@@ -637,7 +637,7 @@ MyComponent.defaultProps = { x: 0 };
   - react.cloneElement
   - hoc高阶组件
 
-- ### redux vs useReducer
+- ## redux vs useReducer
   - useReducer+useContext优点
     - 减少依赖和复杂度，减少样板代码，减少组件的wrapper hell
     - 缺点
@@ -659,7 +659,7 @@ MyComponent.defaultProps = { x: 0 };
   - useReducer's state is local to a single component - if you wanted to use this state throughout your app, you'd need to pass it (and/or the dispatch function) down via the props. It's effectively just a more structured version of useState - in fact, useState is implemented using useReducer under the hood!
   - Redux, on the other hand, does a bit more - among other things, it makes the state available to the entire app via a Context, and then provides APIs to connect your deeply nested components to this state without passing props down.
 
-- ### context vs redux
+- ## context vs redux
   - Redux解决了，Context API没有解决的问题
     - 逻辑/数据/视图分离的代码结构（reducer/store/component），很好地划分了代码职责
     - 在不同项目之间通用的存储和事件机制，从而允许redux-devtools和time travel这种通用的开发工具、以及类似redux-observable这种强大中间件的存在（store/action）
@@ -674,7 +674,7 @@ MyComponent.defaultProps = { x: 0 };
     - 和旧的Context API相比，新API解决了旧API无法处理“两个互相嵌套的组件提供的两个Context中，key相同的部分会冲突”的问题
     - 考虑：共享的业务数据，非UI数据，如登录信息、操作进度信息，应该存放在哪里
 
-- ### state vs redux
+- ## state vs redux
   - 当你想一定要把一个状态放在Redux Store上，先问自己两个问题：
     - 这个状态是否需要其他组件访问？（例如，一个“关注”按钮，是否要让其他组件也知道是否正在关注某人）
     - 当组件unmount之后重新mount，状态是否要保存？（例如，一个对话框打开，输入一些内容，关闭对话框，重新打开对话框，要不要看见刚才输入的内容？）
@@ -700,7 +700,7 @@ MyComponent.defaultProps = { x: 0 };
   - ReactElement is a stateless, immutable, virtual representation of a DOM Element
   - React Element does not have any methods and nothing on the prototype, making it fast
 
-- ### componentWillReceiveProps vs getDerivedStateFromProps 
+- ## componentWillReceiveProps vs getDerivedStateFromProps 
   - componentWillReceiveProps在每次rerender时都会调用，无论props变了没
       - 死循环的出现场景：在componentWillReceiveProps中不加条件限制地调用回调函数修改父组件state，父组件在state变化后rerender
   - getDerivedStateFromProps是用来替代componentWillReceiveProps的，即允许props变化引发state变化（称之为derived state，即派生state）
@@ -744,7 +744,7 @@ MyComponent.defaultProps = { x: 0 };
     - locale
     - getPopupContainer：弹出框（Select, Tooltip, Menu等）渲染父节点，默认渲染到body上
 
-- ### hoc vs render props
+- ## hoc vs render props
   - hoc优点
     - 复用方式简单
     - HOC是一个函数，返回值为组件，可以多层嵌套，但看起来不直观，还要自己看内部实现

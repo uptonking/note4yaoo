@@ -7,8 +7,8 @@ modified: '2020-12-20T15:26:02.491Z'
 
 # algs-algorithms-catalog
 
-## sort
+# sort
 
-## search
+# search
 
-## more-algorithms
+# more-algorithms

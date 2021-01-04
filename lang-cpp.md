@@ -7,7 +7,7 @@ modified: '2020-07-14T09:26:25.358Z'
 
 # lang-cpp
 
-## dev
+# dev
 
 - make用来执行Makefile
   - make工具可以看成是一个智能的批处理工具，它本身并没有编译和链接的功能，而是用类似于批处理的方式，通过调用makefile文件中用户指定的命令来进行编译和链接的
@@ -41,24 +41,24 @@ modified: '2020-07-14T09:26:25.358Z'
   - 它具有现代化内存分配器的基本特征：对抗内存碎片、在多核处理器能够scale
   - 据称，它的内存分配速度是glibc2.3中实现的malloc的数倍
 
-## C
+# C
 
-## C++
+# C++
 
-### STL
+## STL
 
-### Boost
+## Boost
 
 - boost就是STL以后的样子
 
-### compiler 编译器
+## compiler 编译器
 
 - 传统编译器的工作原理基本上都是三段式的，可以分为
   - 前端（Frontend）：前端负责解析源代码，检查语法错误，并将其翻译为抽象的语法树（Abstract Syntax Tree）
   - 优化器（Optimizer）：优化器对这一中间代码进行优化，试图使代码更高效
   - 后端（Backend）：后端则负责将优化器优化后的中间代码转换为目标机器的代码，这一过程后端会最大化的利用目标机器的特殊指令，以提高代码的性能
 
-#### LLVM - Apache 2.0
+### LLVM - Apache 2.0
 
 - The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.
 - 从字面上来讲，LLVM(Low Level Virtual Machine)是一个底层虚拟机，LLVM曾经有一部分功能对虚拟机有所帮助。但现在，LLVM所代表的基本和虚拟机没有关系了，而是直接作为一个项目名字使用
@@ -73,7 +73,7 @@ modified: '2020-07-14T09:26:25.358Z'
   - 基于LLVM来做调试器，也没问题。
   - 拿LLVM IR当跨平台汇编用也很有趣
 
-#### GCC - GPL
+### GCC - GPL
 
 - The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++, ...).
 - GCC was originally written as the compiler for the GNU operating system
@@ -84,7 +84,7 @@ modified: '2020-07-14T09:26:25.358Z'
   - 汇编 （Assembling）
   - 链接 （Linking）
 
-#### Clang - Apache 2.0
+### Clang - Apache 2.0
 
 - Clang 是一个 C++编写、基于LLVM、发布的 C/C++/Objective C/Objective C++ 编译器，其目标（之一）就是超越GCC。
 - Clang只支持C，C++和Objective-C三种C家族语言

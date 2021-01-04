@@ -7,7 +7,7 @@ modified: '2021-01-01T20:06:59.601Z'
 
 # web-style-css-sass
 
-## guide
+# guide
 
 - SASS variables are replaced with their values as the preprocessor produces its CSS output long before the browser interprets the code, 
   - while CSS custom properties are evaluated by the browser at runtime.
@@ -36,9 +36,9 @@ modified: '2021-01-01T20:06:59.601Z'
   - postcss缺点
     - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
 
-## theming-examples 切换主题方案示例
+# theming-examples 切换主题方案示例
 
-- ### 若多个theme所有样式在同一css文件中(都预加载也行)
+- ## 若多个theme所有样式在同一css文件中(都预加载也行)
   - 检查body或最外层元素样式名是否等于themeName
     - `element.classList.contains('themeName')`
     - 若不等于，则添加themeName到样式名
@@ -82,7 +82,7 @@ $("#changetheme").click(function() {
 });
 ```
 
-- ### 若每个theme的样式书写在单独的css文件
+- ## 若每个theme的样式书写在单独的css文件
   - 通过事件修改head部分link节点的href
   - 优点
     - 组件上的类名不必修改
@@ -173,7 +173,7 @@ function changeCSS(cssFile, cssLinkIndex) {
 document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
 ```
 
-- ### alternative style sheets(incompatible)
+- ## alternative style sheets(incompatible)
   - You can include all the stylesheets in the document and then activate/deactivate them as needed.
   - you should be able to activate an `alternate` stylesheet by changing its `disabled` property from true to false, 
   - but only Firefox seems to do this correctly.
@@ -184,7 +184,7 @@ document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
     - (rel="alternate stylesheet", title="..." must be specified): disabled by default, can be selected.
     - The alternate stylesheets are commonly specified using a `<link>` element with `rel="alternate stylesheet"` and `title="..."` attributes.
 
-## pieces
+# pieces
 
 - I'd suggest you to generate multiple CSS files based on the _variables.scss file. 
   - All you have to do is build new theme with different variable file.
@@ -196,7 +196,7 @@ document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
   - Anytime you load a css file or change properties on elements, the css is parsed and re-renders the necessary styling.
   - NOTE: I feel obligated to make sure you take order of selectivity into account when bundling your css files.
 
-## ref
+# ref
 
 - [switch theme in javascript](https://stackoverflow.com/questions/26304798/switch-theme-in-javascript)
 - [Replacing css file on the fly (and apply the new style to the page)](https://stackoverflow.com/questions/19844545/replacing-css-file-on-the-fly-and-apply-the-new-style-to-the-page)

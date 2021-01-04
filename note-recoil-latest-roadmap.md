@@ -7,13 +7,13 @@ modified: '2020-07-14T10:39:53.555Z'
 
 # note-recoil-latest-roadmap
 
-## limitations
+# limitations
 
 - render twice on component mount (useRecoilValue, useRecoilState) in non-StrictMode
   - https://github.com/facebookexperimental/Recoil/issues/307
 - [recoil change state outside of components](https://github.com/facebookexperimental/Recoil/issues/410)
 
-## guide
+# guide
 
 - We have an internal roadmap that we can publish soon. 
   - It's mostly about making the implementation more efficient and making the APIs more flexible to work with a wider range of apps.
@@ -24,7 +24,7 @@ modified: '2020-07-14T10:39:53.555Z'
   - https://recoiljs.org/blog
   - https://github.com/facebookexperimental/Recoil/issues/428
 
-## roadmap
+# roadmap
 
 - unofficial
   - Internal cleanup (ongoing)

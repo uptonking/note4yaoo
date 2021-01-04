@@ -7,7 +7,7 @@ modified: '2020-07-14T12:07:15.486Z'
 
 # lib-react-table-latest-roadmap
 
-## ref
+# ref
 
 - [[Umbrella] v7 Stable Release ](https://github.com/tannerlinsley/react-table/issues/1964)
   - Fix row-selection bug (#1900)
@@ -15,13 +15,13 @@ modified: '2020-07-14T12:07:15.486Z'
   - Ensure no infinite rendering loops like in #1911
   - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values (#1936)
 
-## work-in-progress
+# work-in-progress
 
 - 20200923
   - I'm currently planning React Table v8 and an entire dedicated course for it.
   - It's possible that when v8 becomes available, I might only allow my Github Sponsors access at first and even give away free courses to all of my sponsors similar to React Query Essentials.
 
-## react-table v8
+# react-table v8
 
 - [WIP v8 pr 2335](https://github.com/tannerlinsley/react-table/pull/2335)
 - The external API in v8 will be almost identical (with breaking changes for only a couple of apis, mostly around controlled state).  

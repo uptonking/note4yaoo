@@ -7,14 +7,14 @@ modified: '2020-07-08T03:17:23.369Z'
 
 # note-react-latest-roadmap
 
-## warning
+# warning
 
 - 不建议使用defaultProps，即将deprecate
   - 可以使用es6参数默认值
 - 不建议使用forwardRef，未来ref会作为props中的属性
   - 可以使用callbackRef
 
-## guide
+# guide
 
 - React Fast Refresh: hot reloading for React
   - https://github.com/facebook/react/issues/16604
@@ -28,9 +28,9 @@ modified: '2020-07-08T03:17:23.369Z'
   - [React.js有哪些设计缺陷？](https://www.zhihu.com/question/316425133)
   - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 
-## roadmap
+# roadmap
 
-- ### [React v16.9.0 and the Roadmap Update](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
+- ## [React v16.9.0 and the Roadmap Update](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 - Here’s what we plan to do next
 - One Release Instead of Two
   - Concurrent Mode and Suspense power the new Facebook website that’s in active development, so we are confident that they’re close to a stable state technically.
@@ -41,7 +41,7 @@ modified: '2020-07-08T03:17:23.369Z'
 - An Update on Server Rendering
   - We have started the work on the new Suspense-capable server renderer
 
-- ### [React 16.x Roadmap_20181127](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
+- ## [React 16.x Roadmap_20181127](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
 
 - We shipped Hooks on time, but we’re regrouping Concurrent Mode and Suspense for Data Fetching into a single release that we intend to release later 
 - We (2018) plan to split the rollout of new React features into the following milestones:
@@ -74,11 +74,11 @@ modified: '2020-07-08T03:17:23.369Z'
   - Modernizing React DOM
   - Suspense for Server Rendering
 
-## discussion
+# discussion
 
 - time-slicing
 
-### React Flare 
+## React Flare 
 
 - ref
   - [React Flare](https://github.com/facebook/react/issues/15257)
@@ -101,7 +101,7 @@ modified: '2020-07-08T03:17:23.369Z'
   - Our goal is still to make it possible for library authors to work with passive events, capture/bubble phase, custom events, and events occurring on the document from within a React function component...while reducing the amount of event-related code needed in ReactDOM. 
   - Ultimately building both intermediate abstractions like the Responder Event system and high-level abstractions like useTap (which we prototyped in Flare) should be possible in user-space
 
-### React Fire: Modernizing React DOM
+## React Fire: Modernizing React DOM
 
 - ref
   - [React Fire](https://github.com/facebook/react/issues/13525)
@@ -115,20 +115,20 @@ modified: '2020-07-08T03:17:23.369Z'
 - Drastically simplify the event system
 - className → class
 
-## api-experimental
+# api-experimental
 
-### [react-cache](https://github.com/facebook/react/tree/master/packages/react-cache)
+## [react-cache](https://github.com/facebook/react/tree/master/packages/react-cache)
 
 - This package is meant to be used alongside yet-to-be-released
 
 - A basic cache for React applications. 
 - It also serves as a reference for more advanced caching implementations.
 
-### [react-fetch](https://github.com/facebook/react/tree/master/packages/react-fetch)
+## [react-fetch](https://github.com/facebook/react/tree/master/packages/react-fetch)
 
 - This package is meant to be used alongside yet-to-be-released
 
-### [use-subscription](https://github.com/facebook/react/tree/master/packages/use-subscription) (since 2019)
+## [use-subscription](https://github.com/facebook/react/tree/master/packages/use-subscription) (since 2019)
 
 - [useSubscription hook PR](https://github.com/facebook/react/pull/15022)
 
@@ -149,7 +149,7 @@ modified: '2020-07-08T03:17:23.369Z'
 - Just ignore the "change frequently" bit in my previous message. 
 - I didn't mean to focus on that aspect so much as the fact that using this approach for Redux would likely cause a lot of the de-optimized, sync re-renders for your app since Redux apps generally have a lot of components listening to the Redux store. (How much you care about this depends on whether you're using concurrent mode in the first place, but it would be sad if that turned out to be the only thing preventing you from using it down the road.)
 
-### [create-subscription](https://github.com/facebook/react/tree/master/packages/create-subscription) (since 2018)
+## [create-subscription](https://github.com/facebook/react/tree/master/packages/create-subscription) (since 2018)
 
 - This is a utility for subscribing to external data sources inside React components. 
 - It is officially supported and maintained by the React team.

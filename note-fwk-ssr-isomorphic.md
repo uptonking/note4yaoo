@@ -7,7 +7,7 @@ modified: '2020-12-19T13:05:23.294Z'
 
 # note-fwk-ssr-isomorphic
 
-## guide
+# guide
 
 - ssr的优点
   - seo搜索引擎优化
@@ -26,7 +26,7 @@ modified: '2020-12-19T13:05:23.294Z'
   - 帮助文档(help and documentation)
   - 营销页面、产品介绍页面(Marketing pages)
 
-- ### [用了react 或者 vue，如何做SEO优化呢？](https://www.zhihu.com/question/51949678/answers/updated)
+- ## [用了react 或者 vue，如何做SEO优化呢？](https://www.zhihu.com/question/51949678/answers/updated)
 - 用 Vue 不代表你一定要做成 SPA
   - 对于真正适合做成 SPA 的应用，SEO 反而通常不是问题。
   - 你针对 marketing 的页面应该是静态分开部署的，app 本身则要登陆才能用，SEO 没有什么意义。
@@ -55,7 +55,7 @@ modified: '2020-12-19T13:05:23.294Z'
   - 路由交给 react-router，用 redux 的 store 处理 SSR 中的前后数据交换。
   - 如果不用 redux，也有办法实现前后数据交换。原理是把数据拼成一个 JSON 字符串给前端去解析。
 
-- ### SSR vs SSG
+- ## SSR vs SSG
 - 单页应用不容易实现SEO，近年业界针对此问题提供了两种解决方案：服务器端渲染（SSR）和静态站点生成（SSG）。
 - 使用SSR，我们可以在服务器上运行应用程序，它创建由前端获取的HTML。
 - 而使用SSG，我们可以在构建时创建应用程序的所有页面，由此，存储在服务器上的文件是静态的，并像标准的非SPA应用程序一样由浏览器获取。
@@ -70,7 +70,7 @@ modified: '2020-12-19T13:05:23.294Z'
   - 我认为，ssg适合中小型应用，不适合超大型应用，
     - 问题在于若内容超级多，则增量构建也会花费大量时间，同时动态交互的计算量也很大
 
-- ### [有必要使用服务器端渲染(SSR)吗？](https://www.zhihu.com/question/308792091/answers/updated)
+- ## [有必要使用服务器端渲染(SSR)吗？](https://www.zhihu.com/question/308792091/answers/updated)
 - 现代框架的服务端渲染和 jsp、php 这些还是有不少区别的。
   - 因为 nextjs 和 nuxtjs 这种不仅仅是服务端渲染，它们还是同构框架。
   - 什么是同构呢？就是一份代码既可以跑在浏览器端，也可以跑在服务端。这得益于 NodeJS 在服务端的流行。
@@ -80,7 +80,7 @@ modified: '2020-12-19T13:05:23.294Z'
 - 服务端渲染也不应该滥用。
   - 比如我们的内部后台管理系统就上了Nuxt，现在每次本地构建要花10分钟，非常影响开发效率。
 
-- ### [为什么现在又流行服务端渲染html？](https://www.zhihu.com/question/59578433/answers/updated)
+- ## [为什么现在又流行服务端渲染html？](https://www.zhihu.com/question/59578433/answers/updated)
 - 互联网市场像知乎、淘宝、视频等toC直接面向用户的站点 占据整体市场的份额并不多。
 - 未来，更多的业务还是在于toB端服务型业务建设。
   - toB型业务不需要seo，不需要首屏渲染。要的是低成本开发ios、小程序多端并用
@@ -113,7 +113,7 @@ modified: '2020-12-19T13:05:23.294Z'
     - 但如果是爬虫发送的，那就把渲染好的html发回去
     - 另外一个用服务端渲染的页面叫做"我支持的浏览器"，顾名思义，你用的浏览器太破了，无法支持浏览器渲染，请下载Chrome
 
-- ### [“Single-page” JS websites and SEO](https://stackoverflow.com/questions/7549306/single-page-js-websites-and-seo)
+- ## [“Single-page” JS websites and SEO](https://stackoverflow.com/questions/7549306/single-page-js-websites-and-seo)
 - In my opinion, SPA is done right by letting the server act as an API (and nothing more) and letting the client handle all of the HTML generation stuff. 
   - The problem with this "pattern" is the lack of search engine support. I can think of two solutions:
     - When the user enters the website, let the server render the page exactly as the client would upon navigation. 
@@ -132,7 +132,7 @@ modified: '2020-12-19T13:05:23.294Z'
 - ref
   - [SEO with single page application](https://stackoverflow.com/questions/30789799/seo-with-single-page-application)
 
-- ### [google: Implement dynamic rendering for SEO](https://developers.google.com/search/docs/guides/dynamic-rendering)
+- ## [google: Implement dynamic rendering for SEO](https://developers.google.com/search/docs/guides/dynamic-rendering)
   - Currently, it's difficult to process JS and not all search engine crawlers are able to process it successfully or immediately. 
   - we recommend dynamic rendering as a workaround solution to this problem.
   - **Dynamic rendering means switching between client-side rendered and pre-rendered content for specific user agents**.
@@ -171,7 +171,7 @@ modified: '2020-12-19T13:05:23.294Z'
     - Serve static content from a pre-rendering service to crawlers.
     - Use a middleware for your server 
 
-## ref
+# ref
 
 - [google: Deprecating our AJAX crawling scheme_201510](https://developers.google.com/search/blog/2015/10/deprecating-our-ajax-crawling-scheme)
   - We are no longer recommending the AJAX crawling proposal we made back in 2009.

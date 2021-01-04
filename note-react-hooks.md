@@ -7,9 +7,9 @@ modified: '2020-06-29T13:14:27.166Z'
 
 # note-react-hooks
 
-## faq
+# faq
 
-- ### Why not just useMemo?
+- ## Why not just useMemo?
   - In the future, React may choose to “forget” some previously memoized values 
     - and recalculate them on next render, e.g. to free memory for offscreen components. 
     - Write your code so that it still works without useMemo — and then add it to optimize performance.
@@ -18,7 +18,7 @@ modified: '2020-06-29T13:14:27.166Z'
   - `useConst` will always return the same value
   - https://github.com/microsoft/fluentui/blob/master/packages/react-hooks/README.md
 
-- ### React.memo vs reselect
+- ## React.memo vs reselect
   - [React.memo vs Memoize: What’s the difference and when to use them](https://medium.com/better-programming/react-memo-vs-memoize-71f85eb4e1a)
     - In computing, memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
     - This points out a fundamental rule when using the memoization function. 
@@ -31,7 +31,7 @@ modified: '2020-06-29T13:14:27.166Z'
       - `React.memo` , on the other hand, is for memoizing a single occurrence of a component when attempting to re-render, and it will not work outside of its instance.
   - 在 reselect 中默认的 memorize 函数依靠闭包来做缓存，缺点是不能记录多次。
 
-- ### useMemo vs reselect
+- ## useMemo vs reselect
   - [Will useMemo replace reselect?](https://github.com/reduxjs/reselect/issues/386)
     - `reselect` can be used anywhere, as it has no dependencies
     - `reselect` is indeed useful anywhere, and can be used totally independent of Redux. 
@@ -42,7 +42,7 @@ modified: '2020-06-29T13:14:27.166Z'
     - To me, it looks like reselect.
     - Yep but tied to component
 
-- ### `useImperativeHandle` vs assign `ref.current` directly
+- ## `useImperativeHandle` vs assign `ref.current` directly
   - [What benefit does useImperativeHandle provide over assigning a forwarded ref in useEffect?](https://stackoverflow.com/questions/59860956/what-benefit-does-useimperativehandle-provide-over-assigning-a-forwarded-ref-in)
   - It's the same and useImperativeHandle just handles all of the ref cases and makes sure the passed value is a ref and not just any value. So it saves some code
   - useImperativeHandle is almost the same as your approach with useEffect
@@ -80,7 +80,7 @@ function FancyInput(props, ref) {
 FancyInput = forwardRef(FancyInput);
 ```
 
-- ### `useCallback` vs `useMemo`
+- ## `useCallback` vs `useMemo`
   - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
   - useMemo() makes the function run only when inputs change. 
     - Else it returns the memoized(cached) result.
@@ -91,7 +91,7 @@ FancyInput = forwardRef(FancyInput);
   - render方法的执行时机
   - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
 
-- ### `useEffect` vs `useLayoutEffect`
+- ## `useEffect` vs `useLayoutEffect`
   - 结论
     - useLayoutEffect总是比useEffect先执行
     - useLayoutEffect: If you need to mutate the DOM and/or do need to perform measurements
@@ -143,7 +143,7 @@ FancyInput = forwardRef(FancyInput);
     - https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
     - https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-between-usemutationeffect-and-uselayoutef
 
-- ### How to pass arguments to `onClick` events in React Hooks 
+- ## How to pass arguments to `onClick` events in React Hooks 
   - simple: `<Button onClick={() => handleClick(myValue)}></Button>`
     - onClick prop has new value on each render and triggers a re-render of child component - even if it's pure. 
   - If a value is static, a callback can be defined as constant function outside a component
@@ -166,7 +166,7 @@ FancyInput = forwardRef(FancyInput);
     <Button onClick={myHandleClick}></Button>
 ```
 
-## pieces
+# pieces
 
 - ref
   - https://medium.com/@unbug/ive-completely-rewritten-two-projects-with-react-hooks-here-is-the-good-and-the-ugly-48c28a103f52

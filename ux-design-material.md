@@ -7,11 +7,11 @@ modified: '2021-01-01T20:08:06.371Z'
 
 # ux-design-material
 
-## material-design
+# material-design
 
-## material-design-components-web
+# material-design-components-web
 
-- ### dev
+- ## dev
 - If you decide to add new components into the DOM after the initial `mdc.autoInit()` , you can make subsequent calls to `mdc.autoInit()` . 
   - This will not reinitialize existing components. 
   - This works since mdc-auto-init will add the `data-mdc-auto-init-state="initialized"` attribute, which tracks if the component has already been initialized.
@@ -59,7 +59,7 @@ modified: '2021-01-01T20:08:06.371Z'
   - `theme.tone($color)` determines whether the given color is "light" or "dark".
   - `theme.text-emphasis($emphasis)` returns opacity value for given emphasis.
 
-- ### [Architecture](https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md)
+- ## [Architecture](https://github.com/material-components/material-components-web/blob/master/docs/code/architecture.md)
 - MDC Web is split into packages. Each package is either a Subsystem or a Component. 
   - Subsystems apply to many components. They generally describe style (e.g.: color) or motion (e.g.: animation). 
   - Component packages tend to rely on many subsystem packages. 
@@ -85,7 +85,7 @@ modified: '2021-01-01T20:08:06.371Z'
   - The Vanilla Component also exposes proxy methods for any Foundation methods a developer needs to access.
   - Developers who are simply interested in consuming MDC Web (i.e. not providing a wrapper library) should only need to interact with the Component. They should not need to directly access Foundation or Adapter APIs.
 
-- ### [Authoring Components](https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md)
+- ## [Authoring Components](https://github.com/material-components/material-components-web/blob/master/docs/authoring-components.md)
 - Starting out from nothing and going straight to a component/adapter/foundation implementation can be at the best daunting(令人气馁的，吓人的), at worst completely impossible from a productivity and experimentation standpoint. 
 - Often times, you'll want to build a prototype component in the most straightforward way possible, and then work your way back towards a foundation and adapter. 
 - start by building a prototype using vanilla HTML/CSS/Javascript, without worrying about any foundations or adapters. 
@@ -165,7 +165,7 @@ packages/
 
  
 
-- ### [Theming Guide](https://github.com/material-components/material-components-web/blob/master/docs/theming.md)
+- ## [Theming Guide](https://github.com/material-components/material-components-web/blob/master/docs/theming.md)
 - tips
   - 全局级theme基于sass变量，组件级theme基于css vars
 
@@ -230,7 +230,7 @@ packages/
   - Only rounded shape designs are currently supported to be customized with sass variables
   - Do not use percentage values with custom properties, since they cannot be resolved by `shape.radius()` at runtime.
 
-- ### [Integrating MDC Web into Frameworks](https://github.com/material-components/material-components-web/blob/master/docs/integrating-into-frameworks.md)
+- ## [Integrating MDC Web into Frameworks](https://github.com/material-components/material-components-web/blob/master/docs/integrating-into-frameworks.md)
 - MDC Web was designed to be integrated as easily as possible into any and all web frameworks. 
 - There are two approaches you can take for integrating our components into frameworks
 - The **Simple Approach**: Wrapping MDC Web vanilla components.
@@ -254,18 +254,18 @@ packages/
   - Most adapter methods are one-liners, and for those that aren't, we provide util objects which implement those methods.
   - We try and provide guidance on different ways to implement certain adapter methods that may seem ambiguous
 
-- ### [MDC-101 Web: Material Components (MDC) Basics](https://codelabs.developers.google.com/codelabs/mdc-101-web/)
+- ## [MDC-101 Web: Material Components (MDC) Basics](https://codelabs.developers.google.com/codelabs/mdc-101-web/)
 - By uniting style, branding, interaction, and motion under a consistent set of principles and components, product teams can realize their greatest design potential.
 - When the user touches or clicks a button, it should display feedback in the form of an ink ripple(波纹). 
   - The ink ripple component requires JavaScript, 
 - Using basic HTML markup and just a few lines of CSS and JavaScript, the Material Components for the web library has helped you create a beautiful login page
 
-- ### [MDC-102 Web: Material Structure and Layout](https://codelabs.developers.google.com/codelabs/mdc-102-web/)
+- ## [MDC-102 Web: Material Structure and Layout](https://codelabs.developers.google.com/codelabs/mdc-102-web/)
 - We use the standard Navigation Drawer variant in this codelab. 
   - The standard variant has no drawer-specific logic, so we instantiate the MDCList inside of it directly. 
   - Dismissible and modal variants also exist, which use a dedicated MDCDrawer component for additional features.
 
-- ### [MDC-103 Web: Material Theming with Color, Shape, Elevation and Type](https://codelabs.developers.google.com/codelabs/mdc-103-web/)
+- ## [MDC-103 Web: Material Theming with Color, Shape, Elevation and Type](https://codelabs.developers.google.com/codelabs/mdc-103-web/)
 - Any global variables you wish to override (e.g. `$mdc-theme-primary` ) must be declared before importing the components' styles into your *.scss files. 
 - In this case `_common.scss` is a partial that is imported before anything else in `login.scss` and `home.scss` , so it will apply to both pages' styles.
 - Typography can be set either by using the Sass mixin, or by including the specific type class (e.g. `class="mdc-typography--headline6"` ) on your element.
@@ -275,7 +275,7 @@ packages/
 - you can replace the variables you declared for the primary theme
   - $mdc-theme-primary/surface/background, $mdc-theme-on-primary/xxx
 
-- ### [MDC-111 Web: Incorporating Material Components into your codebase](https://codelabs.developers.google.com/codelabs/mdc-111-web)
+- ## [MDC-111 Web: Incorporating Material Components into your codebase](https://codelabs.developers.google.com/codelabs/mdc-111-web)
 - Material Components for the web (MDC Web) are framework-agnostic, built using regular JavaScript. 
 - The MDC Select component wraps a native HTML `<select>` element.
 - You've replaced some common components (text fields, select, and button) without doing a complete redesign of your app. 
@@ -284,7 +284,7 @@ packages/
   - update markup: 注意标签的结构顺序限制、class类名顺序限制
   - import js and instantiate component
 
-- ### [MDC-112 Web: Integrating MDC with Web Frameworks](https://codelabs.developers.google.com/codelabs/mdc-112-web/)
+- ## [MDC-112 Web: Integrating MDC with Web Frameworks](https://codelabs.developers.google.com/codelabs/mdc-112-web/)
 - MDC Web is engineered to integrate into any front end framework while upholding the principles of Material Design. 
   - The following codelab guides you through building a React Component, which uses MDC Web as a foundation. 
   - The principles learned in this codelab can be applied to any JavaScript framework.
@@ -325,7 +325,7 @@ packages/
 - This tutorial highlights our decision to split MDC Web code into 3 parts, the Foundation, Adapter, and Component. 
   - This architecture allows components to share common code while working with all frameworks. 
 
-- ### [example of integrating with React without Foundation/Adapter pattern](https://github.com/material-components/material-components-web/issues/407)
+- ## [example of integrating with React without Foundation/Adapter pattern](https://github.com/material-components/material-components-web/issues/407)
 - What I see is that the foundation used in the React example mostly wires up the native components (vie this.refs). 
 - The beauty part is that you are still actually using the Foundation/Adapter pattern, you just don't have to think about it. 
   - If you choose to not interact with the foundation by passing a custom adapter, the component creates one for you with the proper shape, using the element you pass the component.

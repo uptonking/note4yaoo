@@ -7,7 +7,7 @@ modified: '2021-01-01T20:09:35.330Z'
 
 # ux-interaction-pattern
 
-## interaction-animation
+# interaction-animation
 
 - 悬浮在头像上，从头像左上角逐渐动画弹出个人信息卡牌
   - 如stackoverflow回答者的头像
@@ -21,7 +21,7 @@ modified: '2021-01-01T20:09:35.330Z'
   - https://aframe.io/aframe/examples/animation/unfold/
 - 骨架屏加载提示
 
-## animation-text
+# animation-text
 
 - 文字逐个消失，再逐个出现，可以突出重点
   - https://airform.io
@@ -32,6 +32,6 @@ modified: '2021-01-01T20:09:35.330Z'
   - 背景由全宽变卡片
   - 矩形上一部分变形，如高度的一部分向矩形中线平移会形成卧倒L型
 
-## static
+# static
 
 - handwritten：素描风格，线框图风格

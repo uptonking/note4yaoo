@@ -7,7 +7,7 @@ modified: '2020-12-08T13:14:07.354Z'
 
 # docs-web-html-elements-common
 
-## guide
+# guide
 
 - [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
   - list all the HTML elements, which are created using tags
@@ -123,7 +123,7 @@ modified: '2020-12-08T13:14:07.354Z'
     - strike: if it represents deleted content, use del instead. 
       - In all other cases use s
 
-## form-select
+# form-select
 
 ``` HTML
 <label for="pet-select">Choose a pet:</label>
@@ -156,7 +156,7 @@ modified: '2020-12-08T13:14:07.354Z'
   - Overall, this makes it so that `<input type="text">` , `<textarea>` , and `<select>` all work very similarly - they all accept `value` and `onChange` attribute that you can use to implement a controlled component.
   - You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag
 
-## br: The Line Break element
+# br: The Line Break element
 
 - The HTML `<br>` element produces a line break in text (carriage-return). 
 -  Do not use `<br>` to create margins between paragraphs; 
@@ -165,7 +165,7 @@ modified: '2020-12-08T13:14:07.354Z'
 - As such, it has no dimensions or visual output of its own
 - You can set a margin on `<br>` elements themselves to increase the spacing between the lines of text in the block, but this is a bad practice — you should use the `line-height` property that was designed for that purpose.
 
-## `<a>` : The Anchor element
+# `<a>` : The Anchor element
 
 - The HTML `<a>` element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. 
 - Content within each `<a>` should indicate the link's destination.
@@ -180,7 +180,7 @@ a {
 }
 ```
 
-## details
+# details
 
 - The HTML Details Element ( `<details>` ) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. 
 - A summary or label can be provided using the `<summary>` element.
@@ -196,7 +196,7 @@ a {
 - A `<summary>` element may only be used as the first child of a `<details>` element. 
   - When the user clicks on the summary, the parent `<details>` element is toggled open or closed, and then a toggle event is sent to the `<details>` element, which can be used to let you know when this state change occurs.
 
-## time
+# time
 
 - represents a specific period in time. 
 - It may include the `datetime` attribute to translate dates into machine-readable format, allowing for better search engine results or custom features such as reminders.
@@ -205,19 +205,19 @@ a {
   - A precise date (with optional time and timezone info).
   - A valid time duration.
 
-## blockquote
+# blockquote
 
 - cite属性
   - 该属性可能会对搜索引擎有用
   - 也可以便于其他应用程序获取引用文本内容的来源信息；
 
-## img
+# img
 
 - The HTML `<img>` element embeds an image into the document.
 - [guide to image formats supported by web browsers](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)
   - 支持的类型有 jpg, png, svg, gif, tif, webp
 
-## iframe
+# iframe
 
 - The HTML Inline Frame element ( `<iframe>` ) represents a nested browsing context, embedding another HTML page into the current one.
 - Each embedded browsing context has its own `session history` and `document` . 
@@ -226,14 +226,14 @@ a {
 - Because each browsing context is a complete document environment, every `<iframe` > in a page requires increased memory and other computing resources. 
   - While theoretically you can use as many `<iframe>` s as you like, check for performance problems.
 
-## frame
+# frame
 
 - `<frame>` is an HTML element which defines a particular area in which another HTML document can be displayed. 
 - A frame should be used within a `<frameset>` .
 - Using the `<frame>` element is not encouraged because of certain disadvantages such as performance problems and lack of accessibility for users with screen readers. 
 - Instead of the `<frame>` element, `<iframe>` may be preferred.
 
-## object
+# object
 
 - The HTML `<object>` element represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin.
 - `data`
@@ -253,7 +253,7 @@ a {
 </object>
 ```
 
-## elements-misc
+# elements-misc
 
 - The HTML `<pre>` element represents preformatted text which is to be presented exactly as written in the HTML file. 
 - The text is typically rendered using a non-proportional ("monospace") font. 

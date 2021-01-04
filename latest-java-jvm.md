@@ -7,11 +7,11 @@ modified: '2020-09-26T12:52:47.994Z'
 
 # latest-java-jvm
 
-## latest-jvm
+# latest-jvm
 
 - [JetBrains 将 Skia 接入 Java 的 Skija 项目](https://www.zhihu.com/question/430884791/answers/updated)
 
-## openjdk
+# openjdk
 
 - 201909-jdk 13 is released
   - ZGC：Uncommit Unused Memory
@@ -20,7 +20,7 @@ modified: '2020-09-26T12:52:47.994Z'
   - Text Blocks
   - Dynamic CDS Archives
 
-## js-jvm
+# js-jvm
 
 - http://git.javadeploy.net/jimsproch/JavaPoly
   - /15Star/MIT/2017
@@ -54,7 +54,7 @@ modified: '2020-09-26T12:52:47.994Z'
 </html>
 ```
 
-## JVM alternatives to JS
+# JVM alternatives to JS
 
 - [JVM alternatives to JS](https://github.com/renatoathaydes/jvm-alternatives-to-js)
   - CheerpJ

@@ -7,7 +7,7 @@ modified: '2020-12-23T09:54:10.963Z'
 
 # log-faq-dev-web
 
-## faq-not-yet
+# faq-not-yet
 
 - 要不要用css-in-js？
   - 优点是方便实现 局部样式、动态样式、theming、type check
@@ -33,7 +33,7 @@ modified: '2020-12-23T09:54:10.963Z'
   - 读写文件：文本、图片、文档doc、表格
   - 图表绘
 
-## hide dom elements: visibility vs display
+# hide dom elements: visibility vs display
 
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.
 - `display:none` will remove the element from the document's normal flow and set the values for position/height/width to 0 on the element and its children. 
@@ -47,7 +47,7 @@ modified: '2020-12-23T09:54:10.963Z'
 - ref
   - [Performance differences between visibility:hidden and display:none](https://stackoverflow.com/questions/11757016/performance-differences-between-visibilityhidden-and-displaynone)
 
-## firefox与chrome滚动条样式不一致，应该如何处理
+# firefox与chrome滚动条样式不一致，应该如何处理
 
 - 结论
   - 选择1：放弃自定义滚动条，使用系统默认的，各操作系统实现的滚动条不一致

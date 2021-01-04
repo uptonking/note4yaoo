@@ -7,7 +7,7 @@ modified: '2020-08-05T09:35:05.094Z'
 
 # lib-react-virtualized-dev
 
-## react-virtualized的ui结构层次
+# react-virtualized的ui结构层次
 
 - list
   - grid/GridReactVirtualized__List
@@ -16,11 +16,11 @@ modified: '2020-08-05T09:35:05.094Z'
       - row
       - row
 
-## guide 
+# guide 
 
 - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/3)
 
-## issues
+# issues
 
 - [FlexTable - rowspan would be a nice-to-have feature](https://github.com/bvaughn/react-virtualized/issues/245)
   - I don't think the FlexTable interface has a meaningful way to accommodate a rowSpan attribute. 
@@ -40,7 +40,7 @@ modified: '2020-08-05T09:35:05.094Z'
   - In my use case we intent to implement a nested header structure using `<table>` markup like this
   - It's a bit hacky, but I believe you can accomplish the layout (or a similar one) to what you're describing using the existing `headerRowRenderer` prop 
 
-## Rendering large lists with React Virtualized
+# Rendering large lists with React Virtualized
 
 - [Rendering large lists with React Virtualized_201805](https://blog.logrocket.com/rendering-large-lists-with-react-virtualized-82741907a6b3/)
   - [Rendering Lists Using React Virtualized](https://css-tricks.com/rendering-lists-using-react-virtualized/)
@@ -57,7 +57,7 @@ modified: '2020-08-05T09:35:05.094Z'
   - Scroll through the list one more time.
   - In my case, the frames went from 60 to around 38 frames per second
 
-- ### How does react-virtualized work?
+- ## How does react-virtualized work?
   - The main concept behind virtual rendering is rendering only what is visible.
   - There are one thousand comment items in the app, but it only shows around ten at any moment (the ones that fit on the screen), until you scroll to show more.
   - So it makes sense to load only the elements that are visible and unload them when they are not by replacing them with new ones.

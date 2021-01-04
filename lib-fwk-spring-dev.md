@@ -7,7 +7,7 @@ modified: '2020-12-08T13:28:14.387Z'
 
 # lib-fwk-spring-dev
 
-## guide
+# guide
 
 - features
 
@@ -22,7 +22,7 @@ modified: '2020-12-08T13:28:14.387Z'
 
 - tips
 
-## dev-tips
+# dev-tips
 
 - WebMvcConfigurationSupport精简了5个方法
   - beanNameHandlerMapping()
@@ -35,20 +35,20 @@ modified: '2020-12-08T13:28:14.387Z'
 - play-mvc处理带有@Configuration注解的类时，只处理子类，以及子类继承的带有@Bean注解标注的方法
 - AnnotationConfigUtils.attributesForRepeatable() 获取注解的所有属性
 
-## faq
+# faq
 
 - SqlSessionTemplate何时实例化的
 - @Bean标注的方法如何注入参数
 - properties属性文件何时读取的
 - sqlSessionFactory如何autowire到sqlSessionFactoryBean
 
-#### spring 常用注解
+### spring 常用注解
 
 - @ResponseBody表示该方法的返回结果直接写入HTTP response body中  
   - @ResponseBody and ContentNegotiatingViewResolver are two alternatives for the same thing. 
 - @RequestBody
 
-#### spring mvc
+### spring mvc
 
 - ssm实例化时的连续依赖： bookServiceImpl -> bookDao -> sqlSessionFactoryBean -> DaoConfig
 - SqlSessionFactory注入的过程中，使用了SqlSessionFactoryBean
@@ -225,7 +225,7 @@ modified: '2020-12-08T13:28:14.387Z'
   - http请求参数绑定
   - http响应输出
 
-#### spring
+### spring
 
 - EventListenerMethodProcessor这个beanPostProcessor较特殊
   - 初始化了AspectJExpressionPointcut类的shadowMatchCache
@@ -491,7 +491,7 @@ modified: '2020-12-08T13:28:14.387Z'
       - 代理，AOP库和Mock对象 -类可以被子类继承而子类不用担心父类的构造器
       - 容器框架 -对象可以以非标准的方式被动态实例化。
 
-## spring boot
+# spring boot
 
 - 常用特有注解
   - @SpringBootApplication

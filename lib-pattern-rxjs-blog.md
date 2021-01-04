@@ -7,9 +7,9 @@ modified: '2020-12-14T11:23:05.184Z'
 
 # lib-pattern-rxjs-blog
 
-## rxjs-7
+# rxjs-7
 
-### [The State of RxJS. RxJS 7 and Beyond_202010](https://indepth.dev/posts/1353/the-state-of-rxjs-rxjs-7-and-beyond)
+## [The State of RxJS. RxJS 7 and Beyond_202010](https://indepth.dev/posts/1353/the-state-of-rxjs-rxjs-7-and-beyond)
 
 - Improved Stability
   - The RxJS team is partnering with Google, thus ensuring smooth and stable releases. 
@@ -39,9 +39,9 @@ modified: '2020-12-14T11:23:05.184Z'
   - This is to ensure that developers have an uncomplicated way of replacing deprecated APIs and are following the best practices. 
   - smaller bundle size
 
-## rxjs-blog
+# rxjs-blog
 
-### [Optimizing Batch Processing Jobs with RxJS_201904](https://medium.com/@ravishivt/batch-processing-with-rxjs-6408b0761f39)
+## [Optimizing Batch Processing Jobs with RxJS_201904](https://medium.com/@ravishivt/batch-processing-with-rxjs-6408b0761f39)
 
 - Batch processing may not appear too exciting. 
   - Retrieve some data, do some operations on that data, repeat. 
@@ -72,7 +72,7 @@ modified: '2020-12-14T11:23:05.184Z'
   - but we have no guarantee that the observable pipeline we craft will maximize the data flow and come close to those limits. 
   - we might be able to leverage tools like rxjs-spy to accomplish it.
 
-### [HOW TO DEBUG RXJS CODE_201512](https://staltz.com/how-to-debug-rxjs-code.html)
+## [HOW TO DEBUG RXJS CODE_201512](https://staltz.com/how-to-debug-rxjs-code.html)
 
 - The short answer is: you have to depend mostly on drawing diagrams on paper and adding `.do(x => console.log(x))` after operators, 
   - but it will get a lot better with the arrival of RxJS 5.
@@ -118,7 +118,7 @@ modified: '2020-12-14T11:23:05.184Z'
   - These text-based marble diagrams can already be used by RxJS 5 users. 
   - Also, their correspondent PNG diagrams can be automatically generated too
 
-### [使用RxJS管理React应用状态的实践分享](https://zhuanlan.zhihu.com/p/63587161)
+## [使用RxJS管理React应用状态的实践分享](https://zhuanlan.zhihu.com/p/63587161)
 
 - https://github.com/shayeLee/floway
 
@@ -135,7 +135,7 @@ modified: '2020-12-14T11:23:05.184Z'
 - 小程序上我实践过这种方案，不好的地方在于订阅方压根不知道这个流发出空值时是没初始化、还是他是请求返回一个空列表，直接的表现就是进入页面之前都会闪一下空页面。还没初始化之前不想触发某些动作，这个也有点麻烦
   - 我的解决方案是自己封装了一个Subject来代替原生的BehaviorSubject
 
-### [如何用Rxjs做状态管理](https://zhuanlan.zhihu.com/p/140352608 )
+## [如何用Rxjs做状态管理](https://zhuanlan.zhihu.com/p/140352608 )
 
 - Rxjs是Javascript响应式编程的工具，采用非阻塞的事件驱动模型，并有流处理的特点
 - 简单假设一个小的业务场景，我们在做一个书籍贩卖的网站Demo
@@ -149,7 +149,7 @@ modified: '2020-12-14T11:23:05.184Z'
   - 当一个页面全部都是纯组件，可以有一些“组件”承担着业务逻辑，所以，我们大可放心地把一些耦合性强地依赖放在业务组件上，也就是所谓地智能组件，容器组件，
   - 而把可以复用地组件移除依赖，只传入相应地数据，不要在里面管理业务状态，这就是所谓的哑组件。
 
-## ref
+# ref
 
 - [聊一聊Observable和RxJS](https://juejin.cn/post/6844904145854398471)
 - [RxJS 系列之二 - Observable 详解](https://juejin.cn/post/6844903472509222925)

@@ -7,12 +7,12 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog-page
 
-## [Four Ways to Fetch Data in React_202007](https://www.bitnative.com/2020/07/06/four-ways-to-fetch-data-in-react/)
+# [Four Ways to Fetch Data in React_202007](https://www.bitnative.com/2020/07/06/four-ways-to-fetch-data-in-react/)
 
 - React is a focused component library. So it has no opinion on how to request remote data.
 - If you’re requesting and sending data to web APIs via HTTP, here are four options to consider.
 
-- ### Option 1: Inline
+- ## Option 1: Inline
 - This is the simplest and most obvious option.
 - Make the HTTP call in the React component and handle the response.
 
@@ -59,7 +59,7 @@ export default function InlineDemo() {
 - But the state declarations and useEffect above are boilerplate. 
 - If I’m making many HTTP calls, I don’t want to duplicate and maintain around 20 lines of code for each one. Inline calls get ugly fast.
 
-- ### Option 2: Centralized folder
+- ## Option 2: Centralized folder
 - What if we handled all HTTP calls in one folder? 
 - With this approach, we create a folder called services and place functions that make HTTP calls inside there. 
 - Services is the most popular term, but plenty of other good alternative names like “client”, or “api” are discussed here.
@@ -70,7 +70,7 @@ export default function InlineDemo() {
 - Also, if the calls are reused, they’re easy to call from this centralized location.
 - However, there’s still a lot of boilerplate at the call site.
 
-- ### Option 3 – Custom Hook
+- ## Option 3 – Custom Hook
 - With the magic of React Hooks, we can finally centralize repeated logic. 
 - So how about creating a custom `useFetch` hook to streamline our HTTP calls?
 
@@ -118,7 +118,7 @@ export default function HookDemo() {
 
 - But this hook is already quite complex, and it’s omitting a variety of concerns. What about caching? What about refetching if the client’s connection is unreliable? Would you like to refetch fresh data when the user refocuses the tab? What about eliminating duplicate queries?
 
-- ### react-query/swr
+- ## react-query/swr
 - With react-query or swr, caching, retry, refetch on focus, duplicated queries, and much more are handled for me. 
 - I don’t have to maintain a custom hook. 
 - And each HTTP call requires little code:
@@ -149,13 +149,13 @@ export default function ReactQueryDemo() {
     6. Should I avoid refetching recently fetched data?
     7. Should I prefetch data the user is likely to want?
 
-## [Fetching Data in React using React Async](https://css-tricks.com/fetching-data-in-react-using-react-async/)
+# [Fetching Data in React using React Async](https://css-tricks.com/fetching-data-in-react-using-react-async/)
 
   - [Using data in React with the Fetch API and axios](https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/)
 
-## [Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a)
+# [Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a)
 
-## [Patterns for data fetching in React](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
+# [Patterns for data fetching in React](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
 
 - Data fetching strategies in React
   - Server-provided data
@@ -173,7 +173,7 @@ export default function ReactQueryDemo() {
   - REST vs. GraphQL back end
 - Conclusion
 
-## [How to fetch data with React Hooks?_201903](https://www.robinwieruch.de/react-hooks-fetch-data)
+# [How to fetch data with React Hooks?_201903](https://www.robinwieruch.de/react-hooks-fetch-data)
 
 - In this tutorial, I want to show you how to fetch data in React with Hooks by using the state and effect hooks. 
 - Data Fetching with React Hooks
@@ -185,25 +185,25 @@ export default function ReactQueryDemo() {
 - Reducer Hook for Data Fetching
 - Abort Data Fetching in Effect Hook
 
-## [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
+# [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
 
 - The article gives you a walkthrough on how to fetch data in React. 
 - There is no external state management solution, such as Redux or MobX, involved to store your fetched data. 
 - Instead you will use React's local state management.
-- ### Where to fetch in React's component tree?
-- ### How to fetch data in React?
-- ### What about loading spinner and error handling?
-- ### How to fetch data with Axios in React
-- ### How to test data fetching in React?
-- ### How to fetch data with Async/Await in React?
-- ### How to fetch data in Higher-Order Components?
-- ### How to fetch data in Render Props?
-- ### How to fetch data from a GraphQL API in React?
+- ## Where to fetch in React's component tree?
+- ## How to fetch data in React?
+- ## What about loading spinner and error handling?
+- ## How to fetch data with Axios in React
+- ## How to test data fetching in React?
+- ## How to fetch data with Async/Await in React?
+- ## How to fetch data in Higher-Order Components?
+- ## How to fetch data in Render Props?
+- ## How to fetch data from a GraphQL API in React?
 
 - ref
   - [Example: Using AJAX results to set local state](https://reactjs.org/docs/faq-ajax.html)
 
-## [React-cache, time slicing, and fetching with a synchronous API_201901](https://www.freecodecamp.org/news/react-cache-time-slicing-and-fetching-with-a-synchronous-api-2a57dc9c2e6d/)
+# [React-cache, time slicing, and fetching with a synchronous API_201901](https://www.freecodecamp.org/news/react-cache-time-slicing-and-fetching-with-a-synchronous-api-2a57dc9c2e6d/)
 
 - This article doesn’t aim at describing how to use some of the new features but rather at proving how they may have been built. Just for the sake of understanding what we are playing with.
 - This kind of modification has allowed React to split into three phases with their own advantages and particularities:
@@ -217,11 +217,11 @@ export default function ReactQueryDemo() {
 - This set of three phases has introduced the Time Slicing capabilities. 
 - React is able to pause during the render phase, in between two component function calls, and to resume that phase when necessary.
 
-## [Update on Async Rendering_20180327](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+# [Update on Async Rendering_20180327](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 
-## [React Hooks 你真的用对了吗？](https://zhuanlan.zhihu.com/p/85969406)
+# [React Hooks 你真的用对了吗？](https://zhuanlan.zhihu.com/p/85969406)
 
-- ### 问题一：我该使用单个 state 变量还是多个 state 变量？
+- ## 问题一：我该使用单个 state 变量还是多个 state 变量？
 - 如果使用单个 state 变量，每次更新 state 时需要合并之前的 state
 - 使用多个 state 变量可以让 state 的粒度更细，更易于逻辑的拆分和组合
 - 在使用 state 之前，我们需要考虑状态拆分的「粒度」问题。
@@ -231,7 +231,7 @@ export default function ReactQueryDemo() {
   - 将完全不相关的 state 拆分为多组 state。比如 size 和 position。
   - 如果某些 state 是相互关联的，或者需要一起发生改变，就可以把它们合并为一组 state。比如 left 和 top。
 
-- ### 问题二：deps 依赖过多，导致 Hooks 难以维护？
+- ## 问题二：deps 依赖过多，导致 Hooks 难以维护？
 - 使用 useEffect hook 时，为了避免每次 render 都去执行它的 callback，我们通常会传入第二个参数「dependency array」（下面统称为依赖数组）。这样，只有当依赖数组发生变化时，才会执行 useEffect 的回调函数
 - 依赖数组中必须包含在 callback 内部用到的所有参与 React 数据流的值，比如 state、props 以及它们的衍生物
 - 依赖数组中千万不要遗漏回调函数内部依赖的值。但是，如果依赖数组依赖了过多东西，可能导致代码难以维护
@@ -243,7 +243,7 @@ export default function ReactQueryDemo() {
   - 通过 setState 回调函数获取最新的 state，以减少外部依赖。
   - 通过 ref 来读取可变变量的值，不过需要注意控制修改它的途径。
 
-- ### 问题三：该不该使用 useMemo？
+- ## 问题三：该不该使用 useMemo？
 - useMemo本身也有开销。useMemo 会「记住」一些值，同时在后续 render 时，将依赖数组中的值取出来和上一次记录的值进行比较，如果不相等才会重新执行回调函数，否则直接返回「记住」的值。
 - 这个过程本身就会消耗一定的内存和计算资源。因此，过度使用 useMemo 可能会影响程序的性能。
 - useMemo适用的场景：
@@ -264,7 +264,7 @@ export default function ReactQueryDemo() {
   - 如果返回的值是原始值： string, boolean, null, undefined, number, symbol（不包括动态声明的 Symbol），一般不需要使用 useMemo。
   - 仅在组件内部用到的 object、array、函数等（没有作为 props 传递给子组件），且没有用到其他 Hook 的依赖数组中，一般不需要使用 useMemo。
 
-- ### 问题四：Hooks 能替代高阶组件和 Render Props 吗？
+- ## 问题四：Hooks 能替代高阶组件和 Render Props 吗？
 - 官方给出的回答是，在高阶组件或者 Render Props 只渲染一个子组件时，Hook 提供了一种更简单的方式
 - 高阶组件采用了装饰器模式，让我们可以增强原有组件的功能，并且不破坏它原有的特性
 - Render Props 通过父组件将可复用逻辑封装起来，并把数据提供给子组件。至于子组件拿到数据之后要怎么渲染，完全由子组件自己决定，灵活性非常高。而高阶组件中，渲染结果是由父组件决定的。Render Props 不会产生新的组件，而且更加直观的体现了「父子关系」。
@@ -277,7 +277,7 @@ export default function ReactQueryDemo() {
 - Render Props：在组件渲染上拥有更高的自由度，可以根据父组件提供的数据进行动态渲染。适合有明确父子关系的场景。
 - 高阶组件：适合用来做注入，并且生成一个新的可复用组件。适合用来写插件。复用最简单。
 
-- ### 问题五： 使用 Hooks 时还有哪些好的实践？
+- ## 问题五： 使用 Hooks 时还有哪些好的实践？
 - 若 Hook 类型相同，且依赖数组一致时，应该合并成一个 Hook。否则会产生更多开销
 - 参考原生 Hooks 的设计，自定义 Hooks 的返回值可以使用 Tuple 类型，更易于在外部重命名。但如果返回值的数量超过三个，还是建议返回一个对象
 - ref 不要直接暴露给外部使用，而是提供一个修改值的方法
@@ -286,7 +286,7 @@ export default function ReactQueryDemo() {
   - 通过使用setState回调函数的方式，让函数不依赖外部变量
   - 通过 ref 来保存可变变量
 
-- ### 实践总结
+- ## 实践总结
 - 将完全不相关的 state 拆分为多组 state。
 - 如果某些 state 是相互关联的，或者需要一起发生改变，就可以把它们合并为一组 state。
 - 依赖数组依赖的值最好不要超过 3 个，否则会导致代码会难以维护。
@@ -308,7 +308,7 @@ export default function ReactQueryDemo() {
 - ref 不要直接暴露给外部使用，而是提供一个修改值的方法。
 - 在使用 useMemo 或者 useCallback 时，可以借助 ref 或者 setState callback，确保返回的函数只创建一次。也就是说，函数不会根据依赖数组的变化而二次创建。
 
-## When to useMemo and useCallback
+# When to useMemo and useCallback
 
 - ref
   - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
@@ -454,7 +454,7 @@ class FavoriteNumbers extends React.Component {
 }
 ```
 
-## You Probably Don't Need Derived State
+# You Probably Don't Need Derived State
 
 - ref
   - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
@@ -484,7 +484,7 @@ class FavoriteNumbers extends React.Component {
   - Sometimes it might make more sense to put a key on the whole form instead. Every time the key changes, all components within the form will be recreated with a freshly initialized state.
   - While this may sound slow, the performance difference is usually insignificant. Using a key can even be faster if the components have heavy logic that runs on updates since diffing gets bypassed for that subtree.
 
-## react component vs element vs instance
+# react component vs element vs instance
 
 - ref
   - [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)
@@ -507,7 +507,7 @@ class FavoriteNumbers extends React.Component {
   - React takes care of creating an instance for every class component, so you can write components in an object-oriented way with methods and local state, but other than that, instances are not very important in the React’s programming model and are managed by React itself.
   - Function components don’t have instances at all.
 
-## A Complete Guide to useEffect
+# A Complete Guide to useEffect
 
 - ref
   - [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)

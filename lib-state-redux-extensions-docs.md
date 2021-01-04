@@ -7,9 +7,9 @@ modified: '2020-12-08T13:27:29.659Z'
 
 # lib-state-redux-extensions-docs
 
-## redux-saga
+# redux-saga
 
-- reosurces
+- resources
   - https://redux-saga.js.org
   - https://redux-saga-in-chinese.js.org
 

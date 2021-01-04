@@ -7,15 +7,15 @@ modified: '2020-12-19T08:52:02.671Z'
 
 # lib-office-docusaurus-dev
 
-## guide
+# guide
 
-## pieces
+# pieces
 
-## docs
+# docs
 
-## docusaurus v2
+# docusaurus v2
 
-- ### [Docusaurus 2019 Recap_201912](https://v2.docusaurus.io/blog/2019/12/30/docusaurus-2019-recap/)
+- ## [Docusaurus 2019 Recap_201912](https://v2.docusaurus.io/blog/2019/12/30/docusaurus-2019-recap/)
 - In 2018, we proposed to rebuild Docusaurus from the ground up.
   - a content-centric CSS framework from scratch, a plugins system, and moved from static HTML pages to be a single page-app with prerendered routes.
 - Since 2.0.0-alpha40, all features in Docusaurus 1 except for translations have been ported over.
@@ -23,7 +23,7 @@ modified: '2020-12-19T08:52:02.671Z'
 - we implemented a plugins architecture and turned the repo into a Lerna monorepo. 
 - In 2020, we want to achieve full feature parity with D1 by the first half and help the remaining Facebook projects on D1 move to D2
 
-- ### [Towards Docusaurus 2_201809](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2)
+- ## [Towards Docusaurus 2_201809](https://docusaurus.io/blog/2018/09/11/Towards-Docusaurus-2)
 - I will provide details on some of issues in Docusaurus 1 and how we are going to address them in Docusaurus 2.
 - A Docusaurus 1 website is, in fact, built into a bunch of static HTML pages. 
   - Despite using React, we were not fully utilizing the features React offered, such as component state, which allows for dynamic and interactive pages. 
@@ -53,7 +53,7 @@ modified: '2020-12-19T08:52:02.671Z'
 - Docusaurus' mission has always been to make it really easy for you to get a website with documentation up and running out of the box. 
   - That mission does not change with Docusaurus 2.
 
-- ### [Docusaurus 2 Design_201806](https://github.com/facebook/docusaurus/issues/789)
+- ## [Docusaurus 2 Design_201806](https://github.com/facebook/docusaurus/issues/789)
 - v1 problems
   - Current architecture is a bit tangled and makes it hard to introduce plugins.
   - Does not allow adding local vendor CSS and JS

@@ -7,7 +7,7 @@ modified: '2020-11-11T14:00:47.647Z'
 
 # note-dev-state-blog-redux-repeat
 
-## [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+# [You Might Not Need Redux_2016](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
 
 - Redux offers a tradeoff. It asks you to:
   - Describe application state as plain objects and arrays.[state]

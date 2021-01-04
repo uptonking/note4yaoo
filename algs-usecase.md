@@ -7,13 +7,13 @@ modified: '2020-12-20T15:24:16.216Z'
 
 # algs-usecase
 
-## sort
+# sort
 
-## search
+# search
 
 - 将arr创建成set时，数组中重复元素会被清理掉，但有时需要数组与set长度相等，如何查找数组中的重复元素并合理处理
 
-## dev
+# dev
 
 - 递归 vs 循环
   - 如果是用c/c++/java这一类的常规的语言来开发的话，递归很难调试。
@@ -31,6 +31,6 @@ modified: '2020-12-20T15:24:16.216Z'
   - ref
     - https://www.zhihu.com/question/20418254
 
-## ref
+# ref
 
 - [世界上有哪些代码量很少，但很牛逼很经典的算法或项目案例？](https://www.zhihu.com/question/358255792)

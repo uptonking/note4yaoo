@@ -9,7 +9,7 @@ modified: '2021-01-01T20:08:28.033Z'
 
 - A design system is a collection of documentation on principles and best practices, that helps guide a team to build digital products.
 
-## guide
+# guide
 
 - design system properties
   - design tokens
@@ -49,9 +49,9 @@ modified: '2021-01-01T20:08:28.033Z'
     - cli
       - create-design-app
 
-## pieces
+# pieces
 
-## ref
+# ref
 
 - [storybook tutorial: how to transform component libraries into design systems](https://www.learnstorybook.com/design-systems-for-developers/)
 - https://www.uxpin.com/create-design-system-guide/create-ui-inventory-for-design-system

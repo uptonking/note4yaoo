@@ -7,7 +7,7 @@ modified: '2020-12-08T13:04:43.261Z'
 
 # lib-ag-grid-docs-row-column-cell
 
-## Column Definitions
+# Column Definitions
 
 - Each column in the grid is defined using a column definition. 
 - Columns are positioned in the grid according to the order the `ColDefs` are specified in the grid options.
@@ -62,11 +62,11 @@ var gridOptions = {
     - Pinned (colDef.pinned)
   - This is done on purpose to avoid unexpected behavior for the application user.
 
-## Column Headers
+# Column Headers
 
 - Each column has a header at the top that typically displays the column name and has access to column features, such as sorting, filtering and a column menu. 
 
-## Column Groups
+# Column Groups
 
 - Grouping columns allows you to have multiple levels of columns in your header and the ability, if you want, to 'open and close' column groups to show and hide additional columns.
   - Grouping columns is done by providing the columns in a tree hierarchy to the grid. 
@@ -80,15 +80,15 @@ var gridOptions = {
 - Pinned columns break groups. 
   - So if you have a group with 10 columns, 4 of which are inside the pinned area, two groups will be created, one with 4 (pinned) and one with 6 (not pinned).
 
-## Column Sizing
+# Column Sizing
 
-## Column Moving
+# Column Moving
 
-## Column Pinning
+# Column Pinning
 
-## Column Spanning
+# Column Spanning
 
-## Row Height
+# Row Height
 
 - By default, the grid will display rows with a height of 25px. 
 - You can change this for each row individually to give each row a different height.
@@ -118,7 +118,7 @@ var gridOptions = {
   - However this is easily solved by just setting the pinned row data again which resets the row heights. 
   - Setting the data again is not a problem for pinned rows as it doesn't impact scroll position, filtering, sorting or group open/closed positions as it would with normal rows if the data was reset.
 
-## Full Width Rows
+# Full Width Rows
 
 - Under normal operation, ag-Grid will render each row as a horizontal list of cells. 
   - Each cell in the row will correspond to one column definition. 
@@ -133,19 +133,19 @@ var gridOptions = {
   - is not impacted by pinned sections of the grid, will span left and right pinned areas regardless.
   - does not participate in the navigation, rangeSelection (ag-Grid Enterprise) or contextMenu (ag-Grid Enterprise) of the main grid.
 
-## Row Spanning
+# Row Spanning
 
-## Row Pinning
+# Row Pinning
 
-## Row Animation
+# Row Animation
 
 - Row animations occur after sorting, filtering, resizing height and expanding/collapsing a row group. 
   - Each of these animations is turned OFF by default.
   - They are all turned on using the property `animateRows=true` .
 
-## Row Dragging
+# Row Dragging
 
-## Cell Content
+# Cell Content
 
 - Cell content with regards how values are provided into the cells.
   - Value Getter
@@ -177,7 +177,7 @@ var gridOptions = {
   - The `cellRenderer` , if provided, gets the result of the above.
     - The grid then either appends the HTML from the `cellRenderer` , or it just sets the cells `textContent` to the value.
 
-## Cell Rendering
+# Cell Rendering
 
 - By default the grid renders values into the cells as strings. 
 - If you want something more complex, you use a cell renderer.
@@ -194,7 +194,7 @@ var gridOptions = {
   - Typically an application might check the rows contents and choose a renderer accordingly.
   - To configure this, set `colDef.cellRendererSelector` to a function that returns the name of the component to be used as a renderer and optionally the custom params to be passed into it
 
-## Flashing Cells
+# Flashing Cells
 
 - The grid can flash cells to highlight data changes.
 - Flashing Cells vs Custom Cell Renderers
@@ -202,7 +202,7 @@ var gridOptions = {
   - It is also possible to have more intelligent animations by putting animations into custom Cell Renderers. 
   - Cell Renderers have a refresh method that gets called when data changes, allowing custom animations to highlight data changes.
 
-## Cell Editing
+# Cell Editing
 
 - You configure cell editors as part of the column definition and can be one of the following:
   - undefined/null: The grid uses the default text cell editor.
@@ -234,7 +234,7 @@ var gridOptions = {
   - Typically an application might check the rows contents and choose an editor accordingly. 
   - To configure this set `colDef.cellEditorSelector` to a function that returns the name of the component to be used as an editor and optionally the custom params to be passed into it.
 
-## Undo/Redo Edits
+# Undo/Redo Edits
 
 - Users can change the contents of cells through the following grid features:
   - Cell Editing

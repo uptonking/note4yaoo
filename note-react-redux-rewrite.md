@@ -7,7 +7,7 @@ modified: '2020-07-14T11:59:44.894Z'
 
 # note-react-redux-rewrite
 
-## State Management with React Hooks and Context in 10 lines of code
+# State Management with React Hooks and Context in 10 lines of code
 
 - ref
   - [State Management with React Hooks and Context API in 10 lines of code](https://medium.com/simply/state-management-with-react-hooks-and-context-api-at-10-lines-of-code-baf6be8302c)
@@ -27,7 +27,7 @@ export const StateProvider = ({ reducer, initialState, children }) => (
 export const useStateValue = () => useContext(StateContext);
 ```
 
-## Use Hooks + Context, not React + Redux
+# Use Hooks + Context, not React + Redux
 
 - ref
   - [Use Hooks + Context, not React + Redux](https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/)

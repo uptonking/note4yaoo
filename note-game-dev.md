@@ -7,7 +7,7 @@ modified: '2020-08-03T13:29:04.709Z'
 
 # note-game-dev
 
-## guide 
+# guide 
 
 - 游戏引擎架构
   - 渲染库
@@ -16,7 +16,7 @@ modified: '2020-08-03T13:29:04.709Z'
   - 战斗回合流程
   - 游戏编辑器
 
-## catalog
+# catalog
 
 - 主流游戏开发引擎
   - Unity3D

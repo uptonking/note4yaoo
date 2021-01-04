@@ -7,7 +7,7 @@ modified: '2020-12-21T07:44:14.728Z'
 
 # web-animation-blog
 
-## [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
+# [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
 
 - Animation brings user interfaces to life. 
 - However, adding meaningful transitions and micro-interactions is often an afterthought, or something that is “nice to have” if time permits. 
@@ -45,7 +45,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - flipping.js: tiny and low-level; only emits events when element bounds change
   - flipping.web.js: uses WAAPI to animate transitions
 
-## FLIP Your Animations
+# FLIP Your Animations
 
 - [FLIP Your Animations_2015](https://aerotwist.com/blog/flip-your-animations/)
   - [github: flipjs](https://github.com/googlearchive/flipjs)
@@ -90,7 +90,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - You don’t have to use CSS to do the animations, though, you could just as easily use the Web Animations API or JavaScript itself, whatever’s easiest. 
   - The main point is that you’re reducing the per-frame complexity and cost (which normally means transform and opacity) to try and give the user the best possible experience.
 
-## history of web animations
+# history of web animations
 
 - [Navigating the sadistic world of web animations_2019](https://weareferal.com/blog/navigating-the-sadistic-world-of-web-animations)
 
@@ -141,7 +141,7 @@ modified: '2020-12-21T07:44:14.728Z'
 - With the Web Ani­ma­tions API still in the works, for com­plex ani­ma­tion we may want to fall back to tried-and-test­ed 3rd par­ty libraries
 - The impor­tant thing to note is that all these libraries use one or more of the approach­es we’ve men­tioned: ful­ly cus­tom JavaScript, CSS transitions/​animations, WAAPI or a mix of all three.
 
-## Tips for Writing Animation Code Efficiently
+# Tips for Writing Animation Code Efficiently
 
 - [Tips for Writing Animation Code Efficiently](https://css-tricks.com/tips-for-writing-animation-code-efficiently/)
 
@@ -185,7 +185,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Use case: Animating based on the scroll position
 - Bonus tip: Use GSAP’s plugins, utility methods, and helper functions
 
-## High Performance Animations
+# High Performance Animations
 
 - [High Performance Animations_2013](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
@@ -246,7 +246,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Declarative CSS animations are preferable to imperative since the browser has the opportunity to optimize ahead of time.
   - Today transforms are the best properties to animate because the GPU can assist with the heavy lifting
 
-## React Web动画的5种创建方式 
+# React Web动画的5种创建方式 
 
 - [React Web 动画的 5 种创建方式，每一种都不简单](https://zhuanlan.zhihu.com/p/28500217)
   - [React Animations in Depth_2017](https://medium.com/react-native-training/react-animations-in-depth-433e2b3f0e8e)
@@ -280,6 +280,6 @@ modified: '2020-12-21T07:44:14.728Z'
   - And for React Native, I will be sticking to Animated. 
   - Once Animated is more mature, I will also probably switch to it as well on the web, though I am starting to enjoy using React Motion!
 
-## ref
+# ref
 
 - [A method for animating browser layouts at 60fps](https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps)

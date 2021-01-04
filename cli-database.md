@@ -7,7 +7,7 @@ modified: '2020-12-18T04:28:56.828Z'
 
 # cli-database
 
-## mysql
+# mysql
 
 - 操作tips
   - 导入数据库
@@ -168,7 +168,7 @@ GRANT ALL ON *.* TO 'testuser'@'%' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY '111111';
 ```
 
-## postgresql
+# postgresql
 
 - 操作tips
   - 备份单个数据库

@@ -7,7 +7,7 @@ modified: '2020-12-18T13:23:43.939Z'
 
 # lib-db-mysql-vs-postgresql
 
-## guide
+# guide
 
 - mysql特点
   - 支持修改更新索引
@@ -40,8 +40,8 @@ modified: '2020-12-18T13:23:43.939Z'
 - [PostgreSQL 与 MySQL 相比，优势何在？](https://www.zhihu.com/question/20010554/answers/updated)
   - pg有很多数据库的新特性，很多学术的都会用postgresql
 
-## pieces
+# pieces
 
-## ref
+# ref
 
 - [postgresql也很强大，为何在中国大陆，mysql成为主流](https://www.zhihu.com/question/31955622/answers/updated)

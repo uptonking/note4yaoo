@@ -7,7 +7,7 @@ modified: '2020-12-08T13:37:10.163Z'
 
 # note-dev-hot-reloading
 
-## webpack
+# webpack
 
 - `module.hot.accept('./App',callback)` vs `module.hot.accept()`
   - The former: only accepted callback will be executed on each hot loading.

@@ -1,14 +1,13 @@
 ---
 title: docs-web-mozilla
 tags: [docs, web]
-favorited: true
 created: '2020-07-18T12:22:41.248Z'
-modified: '2020-07-18T12:23:25.933Z'
+modified: '2021-01-04T16:19:02.355Z'
 ---
 
 # docs-web-mozilla
 
-## Preloading content with `rel="preload"`
+# Preloading content with `rel="preload"`
 
 - The preload value of the `<link>` element's `rel` attribute lets you declare fetch requests in the HTML's `<head>`, specifying resources that your page will need very soon, 
   - which you want to start loading early in the page lifecycle, 
@@ -66,7 +65,7 @@ modified: '2020-07-18T12:23:25.933Z'
   - [用 preload 预加载页面资源](https://juejin.cn/post/6844903562070196237)
   - [HTML - Why is my preloaded resource loading again?](https://stackoverflow.com/questions/59353686/html-why-is-my-preloaded-resource-loading-again)
 
-## Replaced elements
+# Replaced elements
 
 - In CSS, a replaced element is an element whose representation is outside the scope of CSS; 
   - they're external objects whose representation is independent of the CSS formatting model.
@@ -92,7 +91,7 @@ modified: '2020-07-18T12:23:25.933Z'
   - Note that some replaced elements, but not all, have intrinsic(自身的) dimensions or a defined baseline, which is used by some CSS properties, such as vertical-align. 
   - Only replaced elements can ever have intrinsic dimensions.
 
-## User agent
+# User agent
 
 - A user agent is a computer program representing a person, for example, a browser in a Web context.
 - Besides a browser, a user agent could be a bot scraping webpages, a download manager, or another app accessing the Web. 
@@ -104,7 +103,7 @@ modified: '2020-07-18T12:23:25.933Z'
   - `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
   - `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36`
 
-## `<length>` css data type
+# `<length>` css data type
 
 - represents a distance value. 
 - Lengths can be used in numerous CSS properties, such as width, height, margin, padding, border-width, font-size, and text-shadow.
@@ -158,7 +157,7 @@ modified: '2020-07-18T12:23:25.933Z'
   - [length CSS data type](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
   - [CSS像素、物理像素、逻辑像素、设备像素比、PPI、Viewport](https://zhuanlan.zhihu.com/p/91636704)
 
-## `<number>` css data type 
+# `<number>` css data type 
 
 - represents a number, being either an integer or a number with a fractional component.
 - The syntax of `<number>` extends the syntax of `<integer>` . 

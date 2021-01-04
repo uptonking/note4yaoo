@@ -7,12 +7,12 @@ modified: '2020-12-20T15:46:29.566Z'
 
 # pattern-arch-plugin-system
 
-## guide
+# guide
 
 - 很多成熟优秀的系统都是插件式架构
   - react
 
-## plugin-system-repos
+# plugin-system-repos
 
 - https://github.com/Webpack/tapable /js/202012
   - The tapable package expose many Hook classes, which can be used to create hooks for plugins.
@@ -36,6 +36,6 @@ modified: '2020-12-20T15:46:29.566Z'
   - With React Pluggable, we can think of our app as a set of features instead of a set of components
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)
 
-## ref
+# ref
 
 - [如何设计一个JavaScript插件系统，编程思维比死磕API更重要](https://zhuanlan.zhihu.com/p/211072788)

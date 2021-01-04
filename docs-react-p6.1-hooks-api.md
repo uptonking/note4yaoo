@@ -7,7 +7,7 @@ modified: '2020-07-17T04:32:12.879Z'
 
 # docs-react-p6.1-hooks-api
 
-## Hooks API Reference
+# Hooks API Reference
 
 - built-in hooks(10 api)
   - useState
@@ -21,7 +21,7 @@ modified: '2020-07-17T04:32:12.879Z'
   - useImperativeHandle
   - useDebugValue
 
-- ### `const [state, setState] = useState(initialState);`
+- ## `const [state, setState] = useState(initialState);`
   - Returns a stateful value, and a function to update it.
   - During the initial render, the returned state ( `state` ) is the same as the value passed as the first argument ( `initialState` ).
   - During subsequent re-renders, the first value returned by `useState` will always be the most recent state after applying updates.
@@ -107,7 +107,7 @@ const App = () => {
   - ref
     - [A guide to useState in React](https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/)
 
-- ### `useEffect(didUpdate);`
+- ## `useEffect(didUpdate);`
   - Accepts a function that contains imperative, possibly effectful code.
   - Mutations, subscriptions, timers, logging, and other side effects are not allowed inside the main body of a function component (referred to as React’s render phase). 
     - Doing so will lead to confusing bugs and inconsistencies in the UI.
@@ -137,7 +137,7 @@ const App = () => {
     - useEffect will be a no-op for server side rendering.
     - Set the initial state to all items and in useEffect (which is only run client side after hydration) check the url and update state
 
-- ### `useLayoutEffect`
+- ## `useLayoutEffect`
   - The signature is identical to `useEffect` , but it fires synchronously after all DOM mutations. 
   - Use this to read layout from the DOM and synchronously re-render. 
   - Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
@@ -146,7 +146,7 @@ const App = () => {
   - Prefer the standard `useEffect` when possible to avoid blocking visual updates.
   - If you rely on these refs to perform an animation as soon as the component mounts, then you’ll find an unpleasant flickering of browser paints happen before your animation kicks in. This is the case with useEffect, but not useLayoutEffect.
 
-- ### `const value = useContext(MyContext);`
+- ## `const value = useContext(MyContext);`
   - Accepts a context object(the value returned from `React.createContext` ) 
   - Returns the current context value for that context.
     - The current context value is determined by the `value` prop of the **nearest** `<MyContext.Provider>` above the calling component in the tree.
@@ -158,7 +158,7 @@ const App = () => {
   - A component calling `useContext` will always re-render when the context value changes. 
   - If re-rendering the component is expensive, you can optimize it by using memoization.
 
-- ### `const [state, dispatch] = useReducer(reducer, initialState, init);`
+- ## `const [state, dispatch] = useReducer(reducer, initialState, init);`
   - An alternative to `useState`
   - Accepts a reducer of type `(state, action) => newState`
   - Returns the current state paired with a `dispatch` method.
@@ -246,14 +246,14 @@ function Counter({initialCount}) {
 }
 ```
 
-- ### `const memoizedCb = useCallback( () => { doSomething(a, b); }, [a, b] );`
+- ## `const memoizedCb = useCallback( () => { doSomething(a, b); }, [a, b] );`
   - Pass an inline callback and an array of dependencies. 
   - Return a memoized version of the callback that **only changes if one of the dependencies has changed**. 
   - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
   - This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (e.g. shouldComponentUpdate).
   - The array of dependencies is not passed as arguments to the callback. 
 
-- ### `const memoizedVal = useMemo(() => computeExpensiveValue(a, b), [a, b]);`
+- ## `const memoizedVal = useMemo(() => computeExpensiveValue(a, b), [a, b]);`
   - Pass a “create” function and an array of dependencies. 
   - Returns a memoized value.
   - `useMemo` will only recompute the memoized value when one of the dependencies has changed.
@@ -266,7 +266,7 @@ function Counter({initialCount}) {
   - In the future, React may choose to “forget” some previously memoized values and recalculate them on next render, e.g. to free memory for offscreen components.
   - Write your code so that it still works without useMemo — and then add it to optimize performance.
 
-- ### `const refContainer = useRef(initialValue);`
+- ## `const refContainer = useRef(initialValue);`
   - `useRef` returns a mutable ref object whose `.current` property is initialized to the passed argument ( `initialValue` ).
   - The **returned object will persist for the full lifetime** of the component.
   - A common use case is to access a child imperatively
@@ -278,7 +278,7 @@ function Counter({initialCount}) {
     - Mutating the `.current` property doesn’t cause a re-render.
     - If you want to run some code when React attaches or detaches a ref to a DOM node, you may want to use a callback ref instead.
 
-- ### `useImperativeHandle(ref, createHandle, [deps])`
+- ## `useImperativeHandle(ref, createHandle, [deps])`
   - It customizes the instance value that is exposed to parent components when using `ref`
   - It should be used with `forwardRef`
   - As always, imperative code using refs should be avoided in most cases.
@@ -304,7 +304,7 @@ function Counter({initialCount}) {
   - ref
     - [When to use useImperativeHandle](https://stackoverflow.com/questions/57005663/when-to-use-useimperativehandle-uselayouteffect-and-usedebugvalue)
 
-- ### `useDebugValue(value)`
+- ## `useDebugValue(value)`
   - It can be used to display a label for custom hooks in React DevTools.
   - We don’t recommend adding debug values to every custom Hook. 
   - It’s most valuable for custom Hooks that are part of shared libraries.

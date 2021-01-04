@@ -7,7 +7,7 @@ modified: '2020-07-14T12:06:37.292Z'
 
 # lang-js-typescript-latest-changelog
 
-## guide
+# guide
 
 - typescript /Apache2/53kStar/201908
   - https://www.typescriptlang.org
@@ -20,7 +20,7 @@ modified: '2020-07-14T12:06:37.292Z'
   - https://devblogs.microsoft.com/typescript/announcing-typescript-3-0/
   - https://devblogs.microsoft.com/typescript/announcing-typescript-2-0/
 
-## changelog-overview
+# changelog-overview
 
 - Between TypeScript 1.0 and up until 2.0, the language added union types, type guards, modern ECMAScript support, type aliases, JSX support, literal types, and polymorphic this types. 
 - If we include TypeScript 2.0 with its introduction of non-nullable types, control flow analysis, tagged union support, this-types, and a simplified model around .d.ts file acquisition, that era truly defined the fundamentals of using TypeScript.
@@ -29,7 +29,7 @@ modified: '2020-07-14T12:06:37.292Z'
 - TypeScript 2.4 and 2.6 tightened up the story for strict checking on function types
 - TypeScript 2.8 introduced conditional types, a powerful tool for statically expressing decisions based on types, and 2.9 generalized keyof and provided easier imports for types.
 
-## changelog
+# changelog
 
 - 4.0.0-beta-202006
   - Variadic Tuple Types 可变元组类型

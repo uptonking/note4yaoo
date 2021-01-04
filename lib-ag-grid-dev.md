@@ -7,7 +7,7 @@ modified: '2020-11-16T13:22:24.433Z'
 
 # lib-ag-grid-dev
 
-## ag-grid表格组件ui结构层次
+# ag-grid表格组件ui结构层次
 
 - ag-root-wrapper: 最顶层容器，ref是eRootWrapper
   - ag-root-wrapper-body
@@ -132,9 +132,9 @@ modified: '2020-11-16T13:22:24.433Z'
 }
 ```
 
-## 功能实现细节
+# 功能实现细节
 
-### 滚动条
+## 滚动条
 
 - 滚动条一直显示的问题。It's no a bug, its a feature. 
   - A scrollbar appears if the total width count of all columns is bigger than your wrapper. 
@@ -144,11 +144,11 @@ modified: '2020-11-16T13:22:24.433Z'
   - ref
     - [unnecessary horizontal scroll bar coming in spite of using sizeColumnsToFit in ag-grid](https://stackoverflow.com/questions/47454302/unnecessary-horizontal-scroll-bar-coming-inspite-of-using-sizecolumnstofit-in-ag)
 
-### 注解装饰器元数据的使用
+## 注解装饰器元数据的使用
 
 - __agComponentMetaData.constructorName.querySelectors
 
-### row span基于z-index实现
+## row span基于z-index实现
 
   - 给需要合并的单元格元素中第一个元素加上className: `cell-span ag-cell-focus`
     - 必需设置背景，如果background不设置，则默认transparent，仍可以看见下层单元格
@@ -180,7 +180,7 @@ modified: '2020-11-16T13:22:24.433Z'
 }
 ```
 
-### column span基于position-absolute实现
+## column span基于position-absolute实现
 
   - 使用行内样式控制合并后单元格的宽度
     - `style="width: 600px; left: 0px;"`

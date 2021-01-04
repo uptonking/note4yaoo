@@ -7,7 +7,7 @@ modified: '2020-12-21T07:47:15.858Z'
 
 # viz-graphics
 
-## pieces
+# pieces
 
 - 用matplotlib.pyplot绘图需要知道以下几个概念：
   - 画布/画板

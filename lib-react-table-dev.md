@@ -7,9 +7,9 @@ modified: '2020-07-14T10:27:12.335Z'
 
 # lib-react-table-dev
 
-## react-table表格实现的ui结构层次
+# react-table表格实现的ui结构层次
 
-- ### useBlockLayout
+- ## useBlockLayout
   - 必须设置cell的width，使用行内样式设置
 - div-table
   - div-thead
@@ -53,7 +53,7 @@ modified: '2020-07-14T10:27:12.335Z'
 .cell {}
 ```
 
-- ### useAbsoluteLayout
+- ## useAbsoluteLayout
 - div-table
   - div-thead
     - row-header-group
@@ -109,7 +109,7 @@ modified: '2020-07-14T10:27:12.335Z'
 .cell {}
 ```
 
-- ### useFlexLayout
+- ## useFlexLayout
 - div-table
   - div-thead
     - row-tr
@@ -162,13 +162,13 @@ modified: '2020-07-14T10:27:12.335Z'
 .cell {}
 ```
 
-## guide
+# guide
 
-- ### [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
+- ## [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
   - [Data Grid (Table) Framer package](https://packages.framer.com/package/lintonye/data-grid-table)
   - https://github.com/lintonye/tables
 
-- ### [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
+- ## [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
   - I would say that in 5 years, we'll see:
     - a few more nice syntax improvements
     - improvements around package management
@@ -178,7 +178,7 @@ modified: '2020-07-14T10:27:12.335Z'
     - ++ Patterns
   - I think there's a good chance that some of the more CPU-intensive parts of our current build tools (like Terser/Uglify) will be replaced by WASM equivalents (maybe written in Rust?).  SWC is already trying to do this for Babel.
 
-- ### [table vs div](https://twitter.com/tannerlinsley/status/1254534413741780992)
+- ## [table vs div](https://twitter.com/tannerlinsley/status/1254534413741780992)
 - `<table>` Table
   - Auto col width
   - Native aria/structure
@@ -208,7 +208,7 @@ modified: '2020-07-14T10:27:12.335Z'
   - Sticker headers lets the user quickly be able to refer to what a cell represents in large tables. Resizing also helps expand/collapse columns that are more/less important or have dynamic contents. Default column widths can optimize for less text overflow.
     - [not ssr friendly yet](https://ministrycentered.github.io/ui-kit/datatable)
 
-## pieces
+# pieces
 
 - `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
   - `const getInstance = useGetLatest(instanceRef.current);`

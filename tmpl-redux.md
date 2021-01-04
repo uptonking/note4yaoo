@@ -7,9 +7,9 @@ modified: '2020-11-02T08:29:11.847Z'
 
 # tmpl-redux
 
-## demo
+# demo
 
-- ### [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
+- ## [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
 - Following in the steps of Flux, CQRS, and Event Sourcing, 
   - Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen.
 - Redux can be described in [three fundamental principles](https://redux.js.org/understanding/thinking-in-redux/three-principles):
@@ -53,7 +53,7 @@ store.subscribe(() => console.log(store.getState()))
 store.dispatch({ type: 'counter/incremented' })
 ```
 
-- ### [Redux Toolkit Example](https://redux.js.org/introduction/getting-started)
+- ## [Redux Toolkit Example](https://redux.js.org/introduction/getting-started)
   - redux-toolkit依赖redux, redux-thunk, immer, reselect
   - Redux Toolkit allows us to write shorter logic that's easier to read, while still following the same Redux behavior and data flow.
 

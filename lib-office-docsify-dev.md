@@ -9,7 +9,7 @@ modified: '2020-12-16T11:18:30.262Z'
 
 - A magical documentation site generator.
 
-## guide
+# guide
 
 - features
   - No statically built html files
@@ -31,11 +31,11 @@ modified: '2020-12-16T11:18:30.262Z'
 
 - tips
 
-## pieces
+# pieces
 
 - docsify依赖marked、prismjs
 
-## docs
+# docs
 
 - 不同于 GitBook、Hexo 的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。
   - 无需构建，写完文档直接发布

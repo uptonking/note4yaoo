@@ -7,7 +7,7 @@ modified: '2020-06-30T05:14:35.291Z'
 
 # docs-react-p6-hooks
 
-## Introducing Hooks
+# Introducing Hooks
 
 - Hooks are JavaScript functions letting you use state and other React features without writing a class. 
   - React 16.8.0 is the first release to support Hooks
@@ -47,7 +47,7 @@ modified: '2020-06-30T05:14:35.291Z'
 	- We intend for Hooks to cover all existing use cases for classes
 	- we will keep supporting class components for the foreseeable future.
 
-## Hooks at a Glance
+# Hooks at a Glance
 
 ``` js
 import React, { useState } from 'react';
@@ -101,7 +101,7 @@ function Example() {
 	- useContext
 	- useReducer
 
-## Using the State Hook
+# Using the State Hook
 
 - A Hook is a special function that lets you “hook into” React features. 
 - For example, `useState` is a Hook that lets you add React state to function components. 
@@ -129,7 +129,7 @@ function Example() {
 - State variables can hold objects and arrays just fine, so you can still group related data together. 
 - Unlike `this.setState` in a class, **updating a state variable always replaces it** instead of merging it.
 
-## Using the Effect Hook
+# Using the Effect Hook
 
 - `useEffect` Hook lets you perform side effects in function components
   - Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects (or just “effects”). 
@@ -200,7 +200,7 @@ function Example() {
     - there are usually better solutions to avoid re-running effects too often. 
     - React defers running useEffect until after the browser has painted, so doing extra work is less of a problem.
 
-## Rules of Hooks
+# Rules of Hooks
 
 - Only call Hooks at the top level
   - Don't call Hooks inside conditions, loops, or nested functions.
@@ -219,7 +219,7 @@ function Example() {
   - This is why Hooks must be called on the top level of our components.
   - If we want to run an effect conditionally, we can put that condition inside our Hook function
 
-## Building Your Own Hooks
+# Building Your Own Hooks
 
 - Building your own Hooks lets you extract component logic into reusable functions.
 - When we want to share logic between two JavaScript functions, we extract it to a third function. 
@@ -250,7 +250,7 @@ function Example() {
     - You can further break them apart into smaller reducers if necessary. 
     - However, you might also enjoy the benefits of using React local state, or might not want to install another library.
 
-## Hooks FAQ
+# Hooks FAQ
 
 - **Adoption Strategy**
 - Starting with 16.8.0, React includes a stable implementation of React Hooks for:

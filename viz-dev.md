@@ -7,7 +7,7 @@ modified: '2021-01-01T20:21:10.887Z'
 
 # viz-dev
 
-## 三种绘图技术比较 SVG、Canvas、WebGL 
+# 三种绘图技术比较 SVG、Canvas、WebGL 
 
 - [三种绘图技术SVG、Canvas、WebGL 3D比较](https://zhuanlan.zhihu.com/p/81226852)
 
@@ -27,7 +27,7 @@ modified: '2021-01-01T20:21:10.887Z'
   - 基于Canvas的3D框架
   - 主要用来做 3D 展示、动画、游戏
 
-## svg vs canvas
+# svg vs canvas
 
 - overview
   - SVG is vector based and Canvas is a bitmap you draw on. Scaling with SVG is natural and with Canvas it requires a redraw.

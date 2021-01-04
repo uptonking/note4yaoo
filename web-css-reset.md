@@ -7,7 +7,7 @@ modified: '2020-12-21T07:45:40.012Z'
 
 # web-css-reset
 
-## guide
+# guide
 
 - ref
   - normalize.css  /MIT/39.7kStar/201811
@@ -39,7 +39,7 @@ modified: '2020-12-21T07:45:40.012Z'
     - Keep declarations of font-related properties to a minimum, using inherit whenever possible.
 
 
-## minireset.css 
+# minireset.css 
 
 ``` CSS
 /*! minireset.css v0.0.6 */
@@ -127,7 +127,7 @@ th:not([align]) {
 }
 ```
 
-## normalize.css overview
+# normalize.css overview
 
 - 结构
   - document-body
@@ -158,7 +158,7 @@ th:not([align]) {
   - Further changes to line-height should be made either in other libraries or your own CSS.
   - 1.15不带单位，只是系数，方便元素自调节
 
-## normalize.css src
+# normalize.css src
 
 ``` css
 /*! normalize.css v8.0.1 */

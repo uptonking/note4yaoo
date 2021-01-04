@@ -7,7 +7,7 @@ modified: '2020-07-01T06:09:16.202Z'
 
 # note-react-rewrite
 
-## guide
+# guide
 
 - [完成一个简化版的React learn-react](https://github.com/Luminqi/learn-react)
   - [实现自定义的渲染器](https://github.com/Luminqi/learn-react/blob/master/Guide/CustomRenderer.md)
@@ -18,11 +18,11 @@ modified: '2020-07-01T06:09:16.202Z'
 - [Luy 1.0 ：一个React-like轮子的诞生](https://zhuanlan.zhihu.com/p/30073543)
   - [「造轮子1」周末和方正一起Luy](https://zhuanlan.zhihu.com/p/30677179)
 
-## react-core
+# react-core
 
-## react-hooks
+# react-hooks
 
-### [How to replicate useState with vanilla JS](https://stackoverflow.com/questions/64744252/how-to-replicate-usestate-with-vanilla-js)
+## [How to replicate useState with vanilla JS](https://stackoverflow.com/questions/64744252/how-to-replicate-usestate-with-vanilla-js)
 
 - all react hooks use something "backing" them which allows you to provide what are effectively instance variables when you don't have an instance, you only have a function.
 - This thing in React is called a fiber 
@@ -60,7 +60,7 @@ MyFunction(20); // state hasn't changed
 stateSetter('new state'); // state has been updated!
 ```
 
-### [使用 React Hooks 重构你的小程序](https://aotu.io/notes/2019/07/10/taro-hooks/index.html)
+## [使用 React Hooks 重构你的小程序](https://aotu.io/notes/2019/07/10/taro-hooks/index.html)
 
 - Hooks是React函数内部的函数，要实现Hooks最关键的问题在于两个:
   - 找到正在执行的React函数
@@ -117,7 +117,7 @@ function useState<S>(initialState: S | (() => S)):
 }
 ```
 
-## reinvent the wheel
+# reinvent the wheel
 
 - ref
   - [从零开始的 React 再造之旅](https://segmentfault.com/a/1190000021689852)

@@ -9,14 +9,14 @@ modified: '2021-01-03T17:11:03.150Z'
 
 # adobe spectrum
 
-## pieces
+# pieces
 
 - `@spectrum/spectrum-dna` has been updated to `@spectrum-css/vars`
   - The vars component contains all the variables that drive the presentation of a component.
 
-## components
+# components
 
-## styling
+# styling
 
 - React Spectrum components are designed to be consistent across all Adobe applications. 
   - They include built-in styling that has been considered carefully, and extensively tested. 
@@ -34,7 +34,7 @@ modified: '2021-01-03T17:11:03.150Z'
   - Use of these props should be considered a last resort.
   - They can be used to work around bugs or limitations in React Spectrum
 
-## theming
+# theming
 
 - Colors, sizing, and spacing options can be customized through the use of CSS variables which are defined using the `Provider` component. 
   - Themes consist of variable definitions for light and dark color schemes, along with medium and large platform scales. 
@@ -50,7 +50,7 @@ modified: '2021-01-03T17:11:03.150Z'
   - The darkTheme uses the Spectrum dark and darkest color themes
   - The lightTheme uses the Spectrum lightest and darkest color themes
 
-## layout
+# layout
 
 - The Flex and Grid components are containers, which are responsible for the layout of their children. 
   - Flex follows the CSS flexbox algorithm, while Grid implements CSS grid
@@ -62,7 +62,7 @@ modified: '2021-01-03T17:11:03.150Z'
   - Slots are named areas in a component that receive children and provide style and layout for them. 
   - This often occurs automatically through the use of semantic elements like Header, Content, and Footer, which include default slots out of the box.
 
-## discuss
+# discuss
 
 - [Implementing Spectrum: Getting Organizational Buy-In on Design Systems_201809](https://xd.adobe.com/ideas/principles/design-systems/implementing-spectrum-how-adobe-is-coming-together-to-build-a-new-design-system/)
   - When design values aren’t connected to a single source of truth, implementations quickly become misaligned.

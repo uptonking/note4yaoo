@@ -7,14 +7,14 @@ modified: '2020-12-21T07:44:26.399Z'
 
 # web-animation-vs-transition
 
-## faq
+# faq
 
-- ### 对于list或grid中的项目，拖动A到B的位置，实现的效果可以有2种
+- ## 对于list或grid中的项目，拖动A到B的位置，实现的效果可以有2种
   1. A到B的位置，B到A的位置，其他不变
   2. A到B的位置，然后A之后B之前的所有元素前移一位，最后B挨着A
   - 从性能角度考虑，选第一种
 
-## translate3d vs translateZ vs rotateZ
+# translate3d vs translateZ vs rotateZ
 
 - The `translate3d()` CSS function repositions an element in 3D space. 
   - Its result is a `<transform-function>` data type.
@@ -34,12 +34,12 @@ modified: '2020-12-21T07:44:26.399Z'
   - [translate3d vs translate performance](https://stackoverflow.com/questions/22111256/translate3d-vs-translate-performancek)
     - The use of translate3d pushes CSS animations into hardware acceleration. Even if you're looking to do a basic 2d translation, use translate3d for more power
 
-## css transition vs animation
+# css transition vs animation
 
 - 用法上最大的区别：animation可设置多个中间状态
 - 性能上几乎无差别，都基于web animations api的engine
 
-## css vs js animation
+# css vs js animation
 
 - 考虑现有库已用的动画或周边库的选择
 - 用法上最大的区别：js可控制动画更多细节
@@ -51,9 +51,9 @@ modified: '2020-12-21T07:44:26.399Z'
 - 考虑对svg、canvas的支持
   - svg支持使用css transition和css animation
 
-## requestAnimationFrame vs waapi
+# requestAnimationFrame vs waapi
 
-## 聊一聊CSS动画
+# 聊一聊CSS动画
 
 - [聊一聊CSS动画](https://juejin.im/post/6844903909710888967)
 
@@ -66,7 +66,7 @@ modified: '2020-12-21T07:44:26.399Z'
 - css animation不足
   - 如果需要多个动画需要随时的暂停，播放，反向播放，动态改变播放速率，监听到动画的完成和取消，需要用js来为css animation增加不同的样式从而改变动画，会让css文件和js文件太过于“笨重”
 
-## CSS3 animation vs CSS3 transition
+# CSS3 animation vs CSS3 transition
 
 - [CSS3 animation vs CSS3 transition_201506](https://www.pixelstech.net/article/1434375977-CSS3-animation-vs-CSS3-transition)
 
@@ -90,7 +90,7 @@ modified: '2020-12-21T07:44:26.399Z'
   - CSS3 transition is more simpler to use, it doesn't require you to create your own keyframes. There are a predefined set of animations which can be used. And there are a set of effects you can use to transition an element.
   - Animation takes a lot more code
 
-## CSS and JavaScript animation performance
+# CSS and JavaScript animation performance
 
 - [mdn: CSS and JavaScript animation performance](https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance)
 
@@ -162,7 +162,7 @@ modified: '2020-12-21T07:44:26.399Z'
 - EDIT 2020: 
   - Now Brian Birtles is the only one working on WAAPI and he does so on a volunteer basis, so further development of WAAPI has understandably slowed down in recent times.
 
-## Myth Busting: CSS Animations vs. JavaScript
+# Myth Busting: CSS Animations vs. JavaScript
 
 - [Myth Busting: CSS Animations vs. JavaScript_201704](https://css-tricks.com/myth-busting-css-animations-vs-javascript/)
 
@@ -215,7 +215,7 @@ modified: '2020-12-21T07:44:26.399Z'
 - The W3C is working on a new spec called Web Animations that aims to solve a lot of the deficiencies in CSS Animations and CSS Transitions, providing better runtime controls and extra features. 
   - It certainly seems like a step forward in many ways, but it still has shortcomings (some of which are probably impossible to overcome due to the need for legacy support of existing CSS specifications, so for example, independent transform component control is unlikely). 
 
-## CSS VS JavaScript Animations
+# CSS VS JavaScript Animations
 
 - [google: CSS Versus JavaScript Animations](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript)
 
@@ -259,7 +259,7 @@ modified: '2020-12-21T07:44:26.399Z'
   - This means you can slow down animations, pause them, stop them, reverse them, and manipulate elements as you see fit. 
   - This is especially useful if you're building complex, object-oriented applications, because you can properly encapsulate your behavior.
 
-## Animations and Performance
+# Animations and Performance
 
 - [google: Animations and Performance](https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance#css-vs-javascript-performance)
 
@@ -290,7 +290,7 @@ modified: '2020-12-21T07:44:26.399Z'
   - If any animation triggers paint, layout, or both, the "main thread" will be required to do work. 
     - This is true for both CSS- and JavaScript-based animations, and the overhead of layout or paint will likely dwarf(使显得矮小) any work associated with CSS or JavaScript execution, rendering the question moot(悬而未决的事；有争议的问题).
 
-## CSS Animations vs Web Animations API
+# CSS Animations vs Web Animations API
 
 - [CSS Animations vs Web Animations API_201808](https://css-tricks.com/css-animations-vs-web-animations-api/)
   - [CSS Animation 与 Web Animation API 之争](https://zhuanlan.zhihu.com/p/27867539)
@@ -306,7 +306,7 @@ modified: '2020-12-21T07:44:26.399Z'
 - The features mentioned in this article are just the beginning. 
   - The current spec and implementation look to be the start of something great.
 
-## Compare the options for Animations on the Web
+# Compare the options for Animations on the Web
 
 - [Compare the options for Animations on the Web](https://flaviocopes.com/animations/)
 

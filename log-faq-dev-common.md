@@ -7,7 +7,7 @@ modified: '2020-12-23T09:52:52.428Z'
 
 # log-faq-dev-common
 
-## faq-not-yet
+# faq-not-yet
 
 - 没有电脑、没有网络、没有电的时候，你能做什么？
 
@@ -18,9 +18,9 @@ modified: '2020-12-23T09:52:52.428Z'
 - 哪些计算适合放在服务端，哪些计算适合放在客户端？
   - 行业案例: ssr, react-server-components
 
-### 组件或应用的配置项过多时如何处理更好
+## 组件或应用的配置项过多时如何处理更好
 
-## 函数式编程 vs 面向对象的编程 (FP vs OOP)
+# 函数式编程 vs 面向对象的编程 (FP vs OOP)
 
 - FP优点
   - 方便复用
@@ -39,7 +39,7 @@ modified: '2020-12-23T09:52:52.428Z'
     - 函数式和过程式的区别是思维方式，而不在于语法。
     - 函数式的思维在于抽象流程，过程式的思维在于抽象主体。
 
-## 最新消息事件的实现: push vs pull/poll
+# 最新消息事件的实现: push vs pull/poll
 
 - 场景1：Producer速率大于Consumer速率
   - 采取Pull的方式只需要降低Consumer的访问频率即可
@@ -74,7 +74,7 @@ modified: '2020-12-23T09:52:52.428Z'
   - [WebSockets vs. Server-Sent events/EventSource](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
   - [Is it recommended to use Server Sent Events for pushing notifications by continuous querying of the database?](https://stackoverflow.com/questions/60156197/is-it-recomended-to-use-server-sent-events-for-pushing-notifications-by-continuo)
 
-## 存取器getter-setter(setXxx) vs 公共变量 
+# 存取器getter-setter(setXxx) vs 公共变量 
 
 - A difference between using a getter or setter and using a standard function is that getters/setters are automatically invoked on assignment. 
   - So it looks just like a normal property but behind the scenes you can have extra logic (or checks) to be run just before or after the assignment.
@@ -98,7 +98,7 @@ modified: '2020-12-23T09:52:52.428Z'
   - [Are `getter` and `setter` necessary in JavaScript?](https://stackoverflow.com/questions/34805099/are-getter-and-setter-necessary-in-javascript)
   - [Why use getters and setters in JavaScript?](https://stackoverflow.com/questions/42342623/why-use-getters-and-setters-in-javascript)
 
-## 设计函数时，要不要统一用一个大的参数对象作为唯一参数？
+# 设计函数时，要不要统一用一个大的参数对象作为唯一参数？
 
 - 优点
   - 无需关心参数顺序、方便加减参数数量
@@ -117,13 +117,13 @@ modified: '2020-12-23T09:52:52.428Z'
 - ref
   - [Always pass one argument to your JavaScript function](https://levelup.gitconnected.com/always-pass-one-argument-to-your-javascript-function-4140d909937e)
 
-## Should interface names begin with an “I” prefix?
+# Should interface names begin with an “I” prefix?
 
 - do if you like.
 - In many ways, consistency is more important than convention. 
 - It doesn't matter as long as you pick a style and stick with it!
 
-## 对象解构时，特别地，对react函数组件的props参数解构时，是在参数处解构更好，还是在函数体内解构更好？
+# 对象解构时，特别地，对react函数组件的props参数解构时，是在参数处解构更好，还是在函数体内解构更好？
 
 ``` JS
 // 在参数处解构，变量默认是let
@@ -151,7 +151,7 @@ function MyComponent(props) {
   - [Different ways of destructuring props in react](https://stackoverflow.com/questions/59586876/different-ways-of-destructuring-props-in-react)
   - [ES6 destructuring function parameter - naming root object](https://stackoverflow.com/questions/29051011/es6-destructuring-function-parameter-naming-root-object)
 
-## js对象内的属性如何引用同一对象的另一个属性
+# js对象内的属性如何引用同一对象的另一个属性
 
 - 如果不介意在对象字面量外写的话
 
@@ -189,7 +189,7 @@ function MyComponent(props) {
     a.p2 //111
 ```
 
-### Can a JavaScript object property refer to another property of the same object?
+## Can a JavaScript object property refer to another property of the same object?
 
 - Unfortunately, no. 
 - The `{}` syntax initiates creation of a new object, but until the object is created, it isn't assigned to the carousel variable. 
@@ -304,14 +304,14 @@ function MyComponent(props) {
       const foo = new Foo();
 ```
 
-## js数组对象能添加自定义属性吗？ 可以
+# js数组对象能添加自定义属性吗？ 可以
 
 - `var arr=[1,2,3]; arr.count=3;`
 - console.log(arr)得到 `[1, 2, 3, b: 33]`
 - arr.length得到3
 - 可以借助此方法对数组插值，参考styled-system的responsive array prop value
 
-## Is it possible to have a comment inside a es6 template string?
+# Is it possible to have a comment inside a es6 template string?
 
 - 需要自己规定注释格式及解析方式
 - comment in expression interpolation  
@@ -350,7 +350,7 @@ function MyComponent(props) {
   `;
 ```
 
-## session vs jwt(json web token)
+# session vs jwt(json web token)
 
 - 前后端分离导致的单点登录不可用如何解决
 

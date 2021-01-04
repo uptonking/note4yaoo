@@ -7,11 +7,11 @@ modified: '2020-12-20T08:20:38.440Z'
 
 # lib-fwk-nextjs-faq
 
-## faq-not-yet
+# faq-not-yet
 
-## faq-repeat
+# faq-repeat
 
-### nextjs vs react
+## nextjs vs react
 
 - 主要区别
   - 最大的区别在于普通纯react应用渲染在client side客户端浏览器，而nextjs的ssr需要在服务端将数据和组件渲染出html字符串
@@ -85,4 +85,4 @@ modified: '2020-12-20T08:20:38.440Z'
         - They are generally used by reoccurring users, 
         - and we can use caching to give them lightning-fast load times without the cost or hassle of SSR.
 
-## faq
+# faq

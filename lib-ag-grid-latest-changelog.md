@@ -7,11 +7,11 @@ modified: '2020-08-31T13:24:03.619Z'
 
 # lib-ag-grid-latest-changelog
 
-## guide
+# guide
 
 - [ag-Grid Changelog](https://www.ag-grid.com/ag-grid-changelog/)
 
-## changelog
+# changelog
 
 - 24.0.0-20200909
   - rowDeselection is now true by default and should be suppressed by using suppressRowDeselection

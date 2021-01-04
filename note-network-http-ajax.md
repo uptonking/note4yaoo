@@ -7,7 +7,7 @@ modified: '2020-12-21T06:03:02.191Z'
 
 # note-network-http-ajax
 
-## guide
+# guide
 
 - xhr优点
   - 支持广泛，兼容性强
@@ -26,14 +26,14 @@ modified: '2020-12-21T06:03:02.191Z'
 - observable缺点
   - 需要引入第三方实现库，增加项目复杂度和体积
 
-## xhr/ajax
+# xhr/ajax
 
 - 基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案。
 - 本身是针对MVC的编程, 不符合现在前端MVVM的浪潮。
 - JQuery整个项目太大，单纯使用ajax却要引入整个JQuery非常的不合理
   - （采取个性化打包的方案又不能享受CDN服务）。
 
-## fetch/promise
+# fetch/promise
 
 - Fetch是基于promise设计的，Fetch的代码结构比起ajax简单多了
 - fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象
@@ -60,11 +60,11 @@ modified: '2020-12-21T06:03:02.191Z'
   - 客户端支持防止CSRF。
   - 客户端支持防御 XSRF。
 
-## observable
+# observable
 
-## [Web端即时通讯技术盘点：短轮询、Comet、Websocket、SSE](https://zhuanlan.zhihu.com/p/21595082)
+# [Web端即时通讯技术盘点：短轮询、Comet、Websocket、SSE](https://zhuanlan.zhihu.com/p/21595082)
 
-### Comet：一种hack技术
+## Comet：一种hack技术
 
 - 典型的Ajax通信方式也是http协议的经典使用方式，要想取得数据，必须首先发送请求。在Low Latency要求比较高的web应用中，只能增加服务器请求的频率。
 - Comet则不同，客户端与服务器端保持一个长连接，只有客户端需要的数据更新时，服务器才主动将数据推送给客户端。
@@ -75,14 +75,14 @@ modified: '2020-12-21T06:03:02.191Z'
   - 但是这种方式有一个明显的不足之处：IE、Mozilla Firefox 下端的进度栏都会显示加载没有完成，而且IE上方的图标会不停的转动，表示加载正在进行。
   - Google 的天才们使用一个称为“htmlfile”的 ActiveX 解决了在 IE 中的加载显示问题，并将这种方法应用到了 gmail+gtalk 产品中。
 
-- #### [有人研究过cometd的Bayeux协议吗？进来一起研究](https://www.iteye.com/topic/142310)
+- ### [有人研究过cometd的Bayeux协议吗？进来一起研究](https://www.iteye.com/topic/142310)
   - 最近在研究comet的相关技术，希望实现一个WebIM。
     - 比较看好DOJO下的Bayeux，抛开DOJO自身存在的问题而言，Bayeux确实是第一个比较全面的实现comet的协议。
     - 特别是对long-polling，callback-polling，iframe这几种comet的实现手段都能支持，
     - 我现在手头只有jetty中自带的一个demo实现了Bayeux，不知道还有没有其他的具体例子？
   - 除了jetty，还有glassfish也可以。好像是只有dojo实现了Bayeux协议。
 
-### Websocket：未来的解决方案1
+## Websocket：未来的解决方案1
 
 - 如果说Ajax的出现是互联网发展的必然，那么Comet技术的出现则更多透露出一种无奈，仅仅作为一种hack技术，因为没有更好的解决方案。
 - Comet解决的问题应该由谁来解决才是合理的呢？浏览器，html标准，还是http标准？
@@ -92,7 +92,7 @@ modified: '2020-12-21T06:03:02.191Z'
 - 于是乎脚本又被赋予了另一种能力：发起websocket请求。
 - 这种方式我们应该很熟悉，因为Ajax就是这么做的，所不同的是，Ajax发起的是http请求而已。
 
-### SSE：未来的解决方案2
+## SSE：未来的解决方案2
 
 - SSE（Server-Sent Event，服务端推送事件）是一种允许服务端向客户端推送新数据的HTML5技术。
 - 与由客户端每隔几秒从服务端轮询拉取新数据相比，这是一种更优的解决方案。
@@ -120,17 +120,17 @@ modified: '2020-12-21T06:03:02.191Z'
 - ref
   - [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
 
-## Why I still use XHR instead of the Fetch API
+# Why I still use XHR instead of the Fetch API
 
 - [Why I still use XHR instead of the Fetch API_2018](https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/)
 
 - UPDATE: I’ve completely changed my mind on this. I’m now all-in on fetch()
 
-## How to use the Fetch API with vanilla JS
+# How to use the Fetch API with vanilla JS
 
 - [How to use the Fetch API with vanilla JS](https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/)
 
-## [The Bayeux Protocol Specification 1.0](https://docs.cometd.org/current/reference/index.html#_bayeux)
+# [The Bayeux Protocol Specification 1.0](https://docs.cometd.org/current/reference/index.html#_bayeux)
 
 - Bayeux is a protocol for transporting asynchronous messages (primarily over web protocols such as HTTP and WebSocket), with low latency between a web server and web clients.
 - The primary purpose of Bayeux is to support responsive bidirectional interactions between web clients, for example using using AJAX, and the web server.

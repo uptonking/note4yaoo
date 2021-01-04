@@ -7,16 +7,16 @@ modified: '2020-11-16T13:25:13.879Z'
 
 # lib-styled-components-dev
 
-## faq-not-yet
+# faq-not-yet
 
 - styled装饰过的components如何不通过 `Comp.defaultProps` 的方式设置默认值？
   - 如何采用类似FunctionComponent的参数默认值的方式设置
 - 如何只添加样式到组件最外层而不引入新的div标签？
   - `styled（'div'）''` 替换成类似 `styled(()=><></>)''` 的形式
 
-## styled-system
+# styled-system
 
-- ### [Unable to extend styled-system components with styled-components](https://spectrum.chat/styled-system/general/unable-to-extend-styled-system-components-with-styled-components-as-in-the-docs~6d82a0b9-a453-4202-b4bb-a1b2f4d2dbfc)
+- ## [Unable to extend styled-system components with styled-components](https://spectrum.chat/styled-system/general/unable-to-extend-styled-system-components-with-styled-components-as-in-the-docs~6d82a0b9-a453-4202-b4bb-a1b2f4d2dbfc)
 
 ``` typescript
 const Box = styled('div')(color)
@@ -69,7 +69,7 @@ const ExtendedBox = styled(Box)(
 
 - This function returns another function which, when evaluated, will attempt to convert values to their theme counterparts.
 
-- ### What still I am missing is what are the advantage of accessing theme file values through styled system `css` or `themeGet` functions, compared to import the theme file and access those values directly in style components instead, like: `color: ${theme.colors.primary}`
+- ## What still I am missing is what are the advantage of accessing theme file values through styled system `css` or `themeGet` functions, compared to import the theme file and access those values directly in style components instead, like: `color: ${theme.colors.primary}`
 - Evaluating from theme using `themeGet` or `css` is effectively lazy, it happens only when it needs to. Contrast this with directly importing from `theme.js` which is static.
 - If you know your theme never ever changes for the lifetime of your application (which is true in many cases) then you're ok to statically include the theme (which may have some advantages in terms of less calculations, but I doubt there is any significant difference here).
 - If you think your theme might change, or might change in a later iteration of your application, then use the convenience methods to pull from `context.theme` and perform lazy evaluation.
@@ -77,16 +77,16 @@ const ExtendedBox = styled(Box)(
 - So you could live 'fast and loose' and go with direct imports to start, but, its not much work to import the functions and use them in place, so its probably worth going that route to start with, even if your theme is static.
 - tldr: use the convenience methods as 'best practise' and make it a habit.
 
-- ### [Improve performances before styled-system v5](https://github.com/styled-system/styled-system/pull/470)
+- ## [Improve performances before styled-system v5](https://github.com/styled-system/styled-system/pull/470)
   - [pr: mprove performances](https://github.com/styled-system/styled-system/pull/479)
     - not merged
 
-- ### [possible to use styled-system with zero-runtime CSS in JS libraries?](https://github.com/styled-system/styled-system/issues/510)
+- ## [possible to use styled-system with zero-runtime CSS in JS libraries?](https://github.com/styled-system/styled-system/issues/510)
   - help wanted
 
-## linaria
+# linaria
 
-- ### [linaria: Styled System support](https://github.com/callstack/linaria/issues/465)
+- ## [linaria: Styled System support](https://github.com/callstack/linaria/issues/465)
   - Supporting this in linaria would be tricky.
     - It would end up with support for runtime assigned styles since we cannot statically generate the output for each possible value of props.
   - I think something effectively similar to styled-system could be built on linaria, 
@@ -94,7 +94,7 @@ const ExtendedBox = styled(Box)(
     - To do this in linaria would require fundamentally retooling the way the style-prop functions are generated AFAIK
   - , the theme system would require context like you said, but supporting the responsive props themeless seems theoretically possible no?
 
-- ### [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409k)
+- ## [Conditional CSS with styled tag](https://github.com/callstack/linaria/issues/409k)
   - Is it possible to do something like the following?
   - `${props => props.dark && ({ color: 'black', })}`
   - This is currently not possible due to the way CSS is extracted at build time, the value of active is unknown at that time.

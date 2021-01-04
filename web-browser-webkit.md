@@ -7,7 +7,7 @@ modified: '2021-01-01T20:11:00.889Z'
 
 # web-browser-webkit
 
-## 浏览器的渲染过程
+# 浏览器的渲染过程
 
 - 浏览器将HTML，CSS，JavaScript代码转换成屏幕上所能呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径（Critical Rendering Path）
 1. DOM Tree的构建
@@ -62,7 +62,7 @@ modified: '2021-01-01T20:11:00.889Z'
 - 现在GPU需要对多层纹理进行合成(composite)，同时GPU在纹理合成时对于每一层纹理都可以指定不同的合成参数，从而实现对纹理进行transform、mask、opacity等等操作之后再合成，而且GPU对于这个过程是底层硬件加速的，性能很好。最终，纹理合成为一幅内容最终draw到屏幕上。
 - 所以在元素存在transform、opacity等属性的css animation或者css transition时，动画处理会很高效，这些属性在动画中不需要重绘，只需要重新合成即可。
 
-## 浏览器的渲染过程 - Composite
+# 浏览器的渲染过程 - Composite
 
 - DOM Tree：浏览器将HTML解析成树形的数据结构。
 - Style Rules：浏览器将CSS解析成树形的数据结构，对应我们的CSSOM。
@@ -85,7 +85,7 @@ modified: '2021-01-01T20:11:00.889Z'
 - 当需要repaint的时候可以只repaint本身，不影响其他层，但是paint之前还有style， layout, 那就意味着即使合成层只是repaint了自己，但style和layout本身就很占用时间。
 - 仅仅是transform和opacity不会引发layout和paint，那么其他的属性不确定。
 
-## reflow
+# reflow
 
 - reflow
   - 如果引起reflow，样式首先必须重新计算，因此重排会触发两种操作

@@ -9,7 +9,7 @@ modified: '2020-12-17T09:11:52.546Z'
 
 - The React Framework with all the features you need for production
 
-## Overview
+# Overview
 
 - Next.js is built around the concept of pages. 
 - A page is a React Component exported from a `.js, .jsx, .ts, or .tsx` file in the `pages` directory.
@@ -17,7 +17,7 @@ modified: '2020-12-17T09:11:52.546Z'
   - For example `pages/about.js` is mapped to `/about`. 
   - You can even add dynamic route parameters with the filename.
 
-## Pages
+# Pages
 
 - Static Generation (Recommended)
   - The HTML is generated at build time and will be reused on each request. 
@@ -102,9 +102,9 @@ modified: '2020-12-17T09:11:52.546Z'
   - `getServerSideProps` is similar to `getStaticProps`, 
   - but the difference is that `getServerSideProps` is run on every request instead of on build time.
 
-## Data Fetching
+# Data Fetching
 
-### `getStaticProps` (Static Generation): Fetch data at build time.
+## `getStaticProps` (Static Generation): Fetch data at build time.
 
 - You should use `getStaticProps` if:
   - The **data required to render the page is available at build time** ahead of a user’s request.
@@ -183,7 +183,7 @@ export async function getStaticProps() {
   - For example, you might be using a headless CMS and want to preview drafts before they're published.
   - This use case is supported by Next.js by the feature called Preview Mode. 
 
-### `getStaticPaths` (Static Generation): Specify dynamic routes to pre-render based on data.
+## `getStaticPaths` (Static Generation): Specify dynamic routes to pre-render based on data.
 
 - You should use `getStaticPaths` if you’re statically pre-rendering pages that use dynamic routes.
 
@@ -252,7 +252,7 @@ export async function getStaticPaths() {
   - You can’t export it from non-page files.
 - In development (`next dev`), getStaticPaths will be called on every request.
 
-### `getServerSideProps` (Server-side Rendering): Fetch data on each request.
+## `getServerSideProps` (Server-side Rendering): Fetch data on each request.
 
 - You should use `getServerSideProps` only if you need to pre-render a page whose data must be fetched at request time.
   - Time to first byte (TTFB) will be slower than `getStaticProps`
@@ -291,7 +291,7 @@ export async function getServerSideProps() {
 - `getServerSideProps` can only be exported from a page. 
   - You can’t export it from non-page files.
 
-### Fetching data on the client side
+## Fetching data on the client side
 
 - If your **page contains frequently updating data**, and you don’t need to pre-render the data, you can fetch the data on the client side.
   - An example of this is user-specific data. 
@@ -319,7 +319,7 @@ function Profile() {
 }
 ```
 
-## Configuration
+# Configuration
 
 - you can create a `next.config.js` in the root of your project directory
   - It is a regular Node.js module, not a JSON file. 
@@ -344,7 +344,7 @@ function Profile() {
   - Next.js uses the current Node.js version for server-side compilations.
   - The modules option on "preset-env" should be kept to false, otherwise webpack code splitting is turned off.
 
-## Styling 
+# Styling 
 
 - Next.js allows you to import CSS files from a JavaScript file. 
 - These styles (`styles.css`) will apply to all pages and components in your application. 
@@ -375,7 +375,7 @@ function Profile() {
 - We bundle `styled-jsx` to provide support for isolated scoped CSS. 
   - The aim is to support "shadow CSS" similar to Web Components, which unfortunately do not support server-rendering and are JS-only.
 
-## Image Component
+# Image Component
 
 - Since version 10.0.0, Next.js has a built-in Image Component and Automatic Image Optimization.
 - The Next.js Image Component `next/image`, is an extension of the HTML `<img>` element, evolved for the modern web.
@@ -396,7 +396,7 @@ function Profile() {
   - The optimized image file will be served for subsequent requests until the expiration is reached. 
   - When a request is made that matches a cached but expired file, the cached file is deleted before generating a new optimized image and caching the new file.
 
-## Static File Serving
+# Static File Serving
 
 - Next.js can serve static files, like images, under a folder called `public` in the root directory. 
   - Files inside `public` can then be referenced by your code starting from the base URL (`/`).
@@ -406,7 +406,7 @@ function Profile() {
   - Files added at runtime won't be available. 
   - We recommend using a third party service like AWS S3 for persistent file storage.
 
-## Fast Refresh
+# Fast Refresh
 
 - Fast Refresh is enabled by default in all Next.js applications on 9.4 or newer. 
 - With Next.js Fast Refresh enabled, most edits should be visible within a second, without losing component state.
@@ -445,14 +445,14 @@ function Profile() {
   - It will make it easier for you to introduce new dependencies to it later on 
   - and it's enforced by React Strict Mode, which we highly recommend enabling.
 
-## TypeScript
+# TypeScript
 
 - Next.js uses Babel to handle TypeScript, which has some caveats, and some compiler options are handled differently.
 - The file `next-env.d.ts` ensures Next.js types are picked up by the TypeScript compiler. 
 - TypeScript `strict` mode is turned off by default
 - By default, Next.js will do type checking as part of `next build`.
 
-## Supported Browsers and Features
+# Supported Browsers and Features
 
 - Next.js supports IE11 and all modern browsers (Edge, Firefox, Chrome, Safari, Opera, et al) with no required configuration.
 - We transparently inject polyfills required for IE11 compatibility. 
@@ -478,7 +478,7 @@ function Profile() {
   - Class Fields and Static Properties (part of stage 3 proposal)
   - and more!
 
-## Routing
+# Routing
 
 - Next.js has a file-system based router built on the concept of pages.
 - When a file is added to the `pages` directory, it's automatically available as a route.
@@ -508,7 +508,7 @@ function Profile() {
 
 - Next.js has built-in support for internationalized (i18n) routing since v10.0.0. 
 
-## API Routes
+# API Routes
 
 - API routes provide a straightforward solution to build your API with Next.js.
 - Any file inside the folder `pages/api` is mapped to `/api/*` and will be treated as an API endpoint instead of a page. 
@@ -527,9 +527,9 @@ function Profile() {
 
 - The response (`res`) includes a set of Express.js-like methods to increase the speed of creating new API endpoints
 
-## Preview Mode
+# Preview Mode
 
-## Dynamic Import
+# Dynamic Import
 
 - Next.js supports ES2020 dynamic `import()` for JavaScript. 
   - With it you can import JavaScript modules dynamically and work with them. 
@@ -538,36 +538,36 @@ function Profile() {
 - React components can also be imported using dynamic imports, 
   - but in this case we use it in conjunction with `next/dynamic` to make sure it works just like any other React Component. 
 
-## Static HTML Export
+# Static HTML Export
 
-## Absolute Imports and Module path aliases
+# Absolute Imports and Module path aliases
 
-## Automatic Static Optimization
+# Automatic Static Optimization
 
 - If `getServerSideProps` or `getInitialProps` is present in a page, Next.js will switch to render the page on-demand, per-request (meaning Server-Side Rendering).
 - If the above is not the case, Next.js will statically optimize your page automatically by prerendering the page to static HTML.
 
-## Measuring performance
+# Measuring performance
 
 - Next.js has a built-in relayer that allows you to analyze and measure the performance of pages using different metrics.
 
-## AMP Support
+# AMP Support
 
 - With Next.js you can turn any React page into an AMP page, with minimal config, and without leaving React.
 
-## Customization
+# Customization
 
 - Pages can also be added under `src/pages` as an alternative to the root `pages` directory.
   - `src/pages` will be ignored if `pages` is present in the root directory
   - Config files like `next.config.js` and `tsconfig.json` should be inside the root directory, moving them to `src` won't work
     - Same goes for the `public` directory
 
-## Debugging
+# Debugging
 
 - It requires you to first launch your Next.js application in debug mode in one terminal 
   - and then connect an inspector (Chrome DevTools or VS Code) to it.
 
-## Deploy
+# Deploy
 
 - A zone is a single deployment of a Next.js app. 
   - You can have multiple zones and merge them as a single app.

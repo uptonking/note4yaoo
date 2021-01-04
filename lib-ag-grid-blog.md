@@ -7,7 +7,7 @@ modified: '2020-08-10T06:01:15.443Z'
 
 # lib-ag-grid-blog
 
-## guide
+# guide
 
 - [Niall Crosby articles](https://medium.com/@niall.crosby)
   - [Why The World Needed Another Angular Grid - The Story of ag-Grid](https://medium.com/ag-grid/why-the-world-needed-another-angularjs-1-x-grid-17e522a53bc8)
@@ -24,13 +24,13 @@ modified: '2020-08-10T06:01:15.443Z'
   - [Delivering Big Data in the Small Browser](https://blog.ag-grid.com/delivering-big-data-in-the-small-browser/)
 - [Max Koretskyi articles](https://indepth.dev/author/maxkoretskyi/)
 
-## 8 Performance Hacks for JavaScript in ag-grid
+# 8 Performance Hacks for JavaScript in ag-grid
 
 - [8 Performance Hacks for JavaScript_Niall Crosby_201709](https://www.ag-grid.com/ag-grid-8-performance-hacks-for-javascript/)
 
 - This blog presents performance patterns, or performance hacks, that we used to put our grid on steroids.
 
-- ### Row virtualization
+- ## Row virtualization
   - Row virtualisation means that we only render rows that are visible on the screen. 
   - For example, if the grid has 10, 000 rows but only 40 can fit inside the screen, the grid will only render 40 rows (each row represented by a DIV element). 
   - As the user scrolls up and down, the grid will create new DIV elements for the newly visible rows on the fly.
@@ -40,10 +40,10 @@ modified: '2020-08-10T06:01:15.443Z'
     - no, the data is all present in the browser, it only renders what it needs due to scrolling position. 
     - lazy loading in ag-grid is achieved using either pagination, or the additional row models (viewport, infinite scrolling or enterprise row model) - which you can read about in the ag-grid docs.
 
-- ### Column virtualization
+- ## Column virtualization
   - Column virtualisation does for columns what row virtualisation does for rows.
 
-- ### Exploit Event Propagation
+- ## Exploit Event Propagation
   - The grid needs to have mouse and keyboard listeners on all the cells so that the grid can fire events such as 'cellClicked' and so that the grid can perform grid operations such as selection, range selection, keyboard navigation etc. 
   - In all there are 8 events that the grid requires at the cell level which are click, dblclick, mousedown, mouseover, mouseout, mouseenter, mouseleave, contextmenu.
   - Adding event listeners to the DOM results in a performance hit. 
@@ -59,7 +59,7 @@ modified: '2020-08-10T06:01:15.443Z'
     - React keeps track of which rendered nodes have listeners. 
     - The synthetic event system implements its own bubbling and calls the appropriate handlers.
 
-- ### Throw Away DOM
+- ## Throw Away DOM
   - Good programming sense tells you to de-construct everything you construct. 
   - In the context of your framework, it means removing components from their parents when the component is disposed.
   - This hack goes as follows: 
@@ -67,7 +67,7 @@ modified: '2020-08-10T06:01:15.443Z'
   - So in ag-Grid, as rows are created, we use composition to build the complex structure into the DOM. 
     - However when removing the rows, we do not remove the cells individually from the DOM, instead we remove the entire row in one quick DOM hit.
 
-- ### innerHTML where possible
+- ## innerHTML where possible
   - What is the fastest way to populate lots of cells and rows into the browser? 
     - Should you use JavaScript (i.e. `document.createElement()` ) to create each element, update the attributes of each element and use `appendChild()` to plug all the elements together? 
     - Or should you work off document fragments? 
@@ -87,12 +87,12 @@ modified: '2020-08-10T06:01:15.443Z'
     - So the hack is to add to the DOM using HTML strings, not by creating new DOM elements. And it doesn't matter much if one uses innerHTML or insertAdjacentHTML(), as long as they don't do something like `innerHTML += myHtml` . Is that correct?
     - yes, that's correct. however be aware, this worked for ag-Grid, in your application, do your own performance tests to see if worth it. in IE we found 50% improvement. in chrome it was more marginal (if the world was on chrome, we wouldn't of not bothered with this bit, however lots of our customers work in banks which implies IE a lot of the time).
 
-- ### Debouncing Scroll Events
+- ## Debouncing Scroll Events
   - When you scroll in ag-Grid, the grid is doing row and column virtualisation, which means the DOM is getting trashed. 
   - This trashing is time consuming and if processed within the event listener will make the scroll experience 'rough'.
   - To get around this, the grid uses debouncing of scroll events with animation frames.
 
-- ### Animation Frames
+- ## Animation Frames
   - The next performance hack was to break the rendering of the rows into different tasks using animation frames. 
   - When the user scrolls vertically to show different rows, the following tasks are set up in a task queue:
     - 1 task, if pinning then scroll the pinned panels.
@@ -123,7 +123,7 @@ modified: '2020-08-10T06:01:15.443Z'
   - When the user scrolls to show more columns, the header gets scrolled first and the cells are updated next. 
   - This is all done using the same task queue and animation frames.
 
-- ### Avoid Row Order
+- ## Avoid Row Order
   - By default, the DOM created by the grid will have the rows appear in the order they were created. 
   - This can get out of sync with the rows on the screen as the user scrolls, sorts and filters. 
   - The row virtualisation trashing adds and removes rows as the user scrolls.
@@ -134,13 +134,13 @@ modified: '2020-08-10T06:01:15.443Z'
     - If the user wants the row order, they can use the property `ensureDomOrder=true` . 
     - The grid works a bit slower but is compatible with screen readers.
 
-- ### Summary
+- ## Summary
   - All of the performance hacks above are the result of years of learning.
   - They are tried and tested approaches for squeezing performance out of the browser. 
   - One lasting note - these are performance hacks that worked for us in ag-Grid. 
   - They may not be suitable to your application (an application has different concerns to a data grid).
 
-## Inside ag-Grid: techniques to make the fastest JavaScript datagrid
+# Inside ag-Grid: techniques to make the fastest JavaScript datagrid
 
 - [Inside ag-Grid: techniques to make the fastest JavaScript datagrid_201910](https://indepth.dev/inside-ag-grid-techniques-to-make-the-fastest-javascript-datagrid-in-the-world-2/)
 
@@ -197,7 +197,7 @@ modified: '2020-08-10T06:01:15.443Z'
   - Only if changes are detected or update is forced, the DOM is updated. 
   - This approach significantly reduces time required to process changes. 
 
-## [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
+# [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
 
 - Dependency Injection (DI) software design pattern has long been part of native client and server-side applications that use OOP languages. 
 - In essence it’s a technique for achieving Inversion of Control (IoC) between classes and their dependencies. 
@@ -211,11 +211,11 @@ modified: '2020-08-10T06:01:15.443Z'
 - when two blocks of code are loosely coupled, it means that a change in one usually doesn’t require a change in the other. 
   - advantage of loose coupling is that it increases maintainability of the overall solution.
 
-## JavaScript GPU Animation with Transform and Translate
+# JavaScript GPU Animation with Transform and Translate
 
 - [JavaScript GPU Animation with Transform and Translate](https://www.ag-grid.com/ag-grid-gpu-animation-transform-translate/)
 
-## Comparison: Why ag-Grid is the best when it comes to Column Pinning
+# Comparison: Why ag-Grid is the best when it comes to Column Pinning
 
 - ref
   - [Comparison: Why ag-Grid is the best when it comes to Column Pinning](https://blog.ag-grid.com/javascript-grid-comparison-column-pinning-ag-grid/)
@@ -238,7 +238,7 @@ modified: '2020-08-10T06:01:15.443Z'
   - This can all be done after the grid is initialized
   - All other React datagrids either require at least one pinned column all the time or limit you by specifying the number of pinned columns in advance.
 
-## ref
+# ref
 
 - [Testing with Jest & Enzyme - querying JSDOM vs ag-Grid API](https://blog.ag-grid.com/testing-ag-grid-react-jest-enzyme/)
   - jsdom: test user behavior

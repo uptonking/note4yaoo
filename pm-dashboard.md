@@ -7,14 +7,14 @@ modified: '2020-10-22T13:33:40.533Z'
 
 # pm-dashboard
 
-## dashboard-style-css
+# dashboard-style-css
 
-- ### [Building a Dashboard Layout With CSS and a Touch of JavaScript](https://webdesign.tutsplus.com/tutorials/building-an-admin-dashboard-layout-with-css-and-a-touch-of-javascript--cms-33964)
+- ## [Building a Dashboard Layout With CSS and a Touch of JavaScript](https://webdesign.tutsplus.com/tutorials/building-an-admin-dashboard-layout-with-css-and-a-touch-of-javascript--cms-33964)
   - [codepen](https://codepen.io/uptonking/pen/gOrpLyV)
 
 - To build it, we’ll borrow some ideas from the WordPress dashboard, such as its collapsible sidebar menu.
 
-## solution-catalog-dashboard
+# solution-catalog-dashboard
 
 - vue-element-admin /MIT/58.3kStar/202007
   - https://github.com/PanJiaChen/vue-element-admin

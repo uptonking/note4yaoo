@@ -10,7 +10,7 @@ modified: '2020-08-18T05:56:56.343Z'
 
 - about web, state, routing
 
-## logging
+# logging
 
  
 
@@ -125,7 +125,7 @@ modified: '2020-08-18T05:56:56.343Z'
     - 外部css会阻塞DOM渲染，并不阻塞js解析，外部js既阻塞渲染，也阻塞解析
   - 部分安卓手机或者webview调整了系统默认字体大小
 
-- ### rem vs px
+- ## rem vs px
   - 结论
     - 考虑3类设备上的展示：手机、平板、pc、横竖屏
     - 考虑系统默认字体、浏览器默认字体

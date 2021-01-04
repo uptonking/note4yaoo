@@ -7,13 +7,13 @@ modified: '2020-10-22T13:33:49.505Z'
 
 # pm-editor-for-markdown-dev
 
-## usage
+# usage
 
-``` js
+``` typescript
 <Editor value={value} onChange={() => this.handleChange()} />
 ```
 
-## api 
+# api 
 
 - api-props-common
   - value:str, 输入框内容

@@ -9,7 +9,7 @@ modified: '2021-01-01T20:06:40.149Z'
 
 - Themeable, Statically Extracted CSS-in-JS
 
-## guide
+# guide
 
 - treat-dev-tips
   - useStyles/useClassName，底层会调用resolveStyles/ClassName(themeObj, treatStyles)
@@ -35,7 +35,7 @@ modified: '2021-01-01T20:06:40.149Z'
     - 选择任意颜色的需求并不频繁，易与其他组件原有设计冲突，如冷暖色背景、对比度
     - 主流设计系统都是提供多套预定义的主题供选择切换
 
-## faq
+# faq
 
 - 当有多个theme时，如何提高首屏加载速度，如先加载默认theme，再下载其他theme的css
   - [使用dynamic import进行split your themes into separate CSS files.](https://seek-oss.github.io/treat/setup#bundle-splitting)
@@ -57,7 +57,7 @@ import(`../themes/${themeName}.treat`).then(theme => {
 });
 ```
 
-## roadmap
+# roadmap
 
 - treat doesn't do any class optimization as it could introduce specificity issues
 - 作为类sass预处理器的js版
@@ -66,16 +66,16 @@ import(`../themes/${themeName}.treat`).then(theme => {
 - 静态提取
   - 为加快首屏渲染，编译出首屏相关的关键路径样式和其他样式
 
-## docs
+# docs
 
-- ### [introduction](https://seek-oss.github.io/treat/)
+- ## [introduction](https://seek-oss.github.io/treat/)
 - Write your styles in js/ts within treat files (e.g. Button.treat.js) that get executed at build time.
 - All CSS rules are created ahead of time, so the runtime is very lightweight — only needing to swap out pre-existing classes. 
 - In fact, if your application doesn’t use theming, you don’t even need the runtime at all.
   - Because theming is achieved by generating multiple classes, legacy browsers are supported.
 - Your project must be using webpack with the supplied webpack plugin
 
-- ### [background](https://seek-oss.github.io/treat/background)
+- ## [background](https://seek-oss.github.io/treat/background)
 - Tradeoffs
   - The primary goals of treat are full static extraction, minimal runtime code, type safety and legacy browser support. 
     - While a great developer experience is important to us, it will never come at the cost of these goals.
@@ -105,7 +105,7 @@ import(`../themes/${themeName}.treat`).then(theme => {
 - Potential solution: Something new?
   - Early API designs looked promising, and initial prototypes proved that the concept could be supported by webpack.
 
-- ### [How it works](https://seek-oss.github.io/treat/how-it-works)
+- ## [How it works](https://seek-oss.github.io/treat/how-it-works)
 - In order to support static extraction of CSS from JavaScript code, styles are authored in JavaScript files with a special extension (.treat.js / .treat.ts by default). We refer to these files as treat files.
   - Conceptually, this is no different to preprocessors like Sass and Less. 
   - The difference is that, rather than using a custom domain-specific language, treat lets you use JavaScript as your preprocessor.
@@ -129,7 +129,7 @@ import(`../themes/${themeName}.treat`).then(theme => {
   - Because module exports are static, the treat runtime caches the resolved styles object in memory, which means that this cloning and class resolution process only happens once per treat file and theme, for the lifetime of your application.
   - It’s important to note that this resolved styles object has the same type signature as the original styleRefs object, which means that themed styles remain type safe.
 
-## treat-repos
+# treat-repos
 
 - https://github.com/seek-oss/braid-design-system
   - Themeable design system for the SEEK Group
@@ -137,7 +137,7 @@ import(`../themes/${themeName}.treat`).then(theme => {
   - Overdrive is a product component library, and design system for AutoGuru. 
   - Built with React, TypeScript, Treat, Playroom and Storybook.
 
-## pieces
+# pieces
 
 - If you're interested in CSS-in-JS, but can't get yourself to drop CSS Modules due to its lean(瘦小的，精干的，高效的) bundle size and performance footprint, you really need to have a look at treat.
   - https://twitter.com/markdalgleish/status/1154530205215518720
@@ -163,7 +163,7 @@ import(`../themes/${themeName}.treat`).then(theme => {
   - Also, you can't reliably nest themes as the closest theme isn't what's applied, it's actually applied based on CSS rule order precedence.
   - 后期研发组件层次的theme和库层次的theme，不一定能选中元素了
 
-## [otion](https://github.com/kripod/otion/tree/main/packages/otion)
+# [otion](https://github.com/kripod/otion/tree/main/packages/otion)
 
 - Atomic CSS-in-JS with a featherweight runtime
 - Design systems embrace a component-oriented mindset. 

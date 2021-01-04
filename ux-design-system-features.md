@@ -7,9 +7,9 @@ modified: '2021-01-01T20:08:42.719Z'
 
 # ux-design-system-features
 
-## popular
+# popular
 
-### Material Design
+## Material Design
 
 - Principles
   - Material is the metaphor
@@ -20,7 +20,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - Motion provides meaning
     - Motion focuses attention and maintains continuity through subtle feedback and transitions
 
-### Carbon Design System
+## Carbon Design System
 
 - Guiding principles
   - open
@@ -34,7 +34,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - consistency
     - Based on the IBM Design Language, every element and component of Carbon was designed from the ground up to work elegantly together to ensure consistent, cohesive user experiences.
 
-### Salesforce Lightning Design System
+## Salesforce Lightning Design System
 
 - Flexible
   - Start building immediately, without worrying about detailed specs. 
@@ -50,7 +50,7 @@ modified: '2021-01-01T20:08:42.719Z'
 - Platform Agnostic
   - Use the SLDS CSS framework with any tech stack
 
-### Spectrum
+## Spectrum
 
 - Rational
   - Spectrum is based on real-world situations. 
@@ -61,7 +61,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - Spectrum strives to deliver what’s needed, when it’s needed. 
   - No unnecessary decoration or irrelevant content.
 
-### Elastic UI
+## Elastic UI
 
 - Design goals
   - accessible to everyone
@@ -73,7 +73,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - playful
     - Simple and consistent use of animation brings life
 
-### Ant design
+## Ant design
 
 - 自然
   - 界面设计中最重要的视觉要素，包括布局、色彩、插画、图标等，应充分汲取自然界规律
@@ -88,14 +88,14 @@ modified: '2021-01-01T20:08:42.719Z'
   - 提升功能、价值的可发现性。
   - 用发展的眼光做设计，充分考虑人、机两端的共同生长。
 
-## Element
+# Element
 
 - 一致性 Consistency
 - 反馈 Feedback
 - 效率 Efficiency
 - 可控 Controllability
 
-### Polaris
+## Polaris
 
 - Shopify experience values
   - CONSIDERATE
@@ -111,7 +111,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - Purposeful brand presence
   - Familiarity across experiences
 
-### Base Design
+## Base Design
 
 - Extensibility
   - Through the Overrides API and configurable Themes, Base Web provides you with an extreme level of customization. 
@@ -120,7 +120,7 @@ modified: '2021-01-01T20:08:42.719Z'
 - Performance 
   - Styletron is the CSS-in-JS engine powering Base Web
 
-### OpenUI5
+## OpenUI5
 
 - Enterprise-Grade
   - follows open standards and includes powerful development concepts
@@ -128,7 +128,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - UI5 apps and controls run on smartphones, tablets and desktop browsers.
 - Free and Open Source
 
-### PatternFly
+## PatternFly
 
 - Make it flexible.
   - Our components can be arranged in any number of ways, 
@@ -140,7 +140,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - Our components are designed for enterprise IT applications used in businesses of all sizes.
 - Make it open.
 
-### Theme UI
+## Theme UI
 
 - Ergonomic
   - Best-in-class developer ergonomics let you style your application quickly and consistently based on your theme
@@ -149,7 +149,7 @@ modified: '2021-01-01T20:08:42.719Z'
 - Constraint-based
   - Use color, typography, and layout scales rooted in constraint-based design principles
 
-### Chakra UI 
+## Chakra UI 
 
 - Themeable
   - Customize any part of our components to match your design needs.
@@ -160,7 +160,7 @@ modified: '2021-01-01T20:08:42.719Z'
 - Accessible
   - Chakra UI strictly follows WAI-ARIA standards for all components.
 
-## more design system
+# more design system
 
 - Semantic UI
   - Concise HTML

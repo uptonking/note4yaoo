@@ -7,7 +7,7 @@ modified: '2021-01-02T13:05:43.529Z'
 
 # note-react-rfc-catalog
 
-## rfc-discuss
+# rfc-discuss
 
 - [RFC: Plan for custom element attributes/properties in React 18](https://github.com/facebook/react/issues/11347)
 - [Externalize the State Tree (or alternatives)](https://github.com/facebook/react/issues/4595)
@@ -16,7 +16,7 @@ modified: '2021-01-02T13:05:43.529Z'
 - [Support cross-renderer portals](https://github.com/facebook/react/issues/13332)
 - [Hibernating State (Not Necessarily Serialized)](https://github.com/facebook/react/issues/4594)
 
-## [rfcs-open](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
+# [rfcs-open](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
 
 - [RFC: createElement changes PR](https://github.com/reactjs/rfcs/pull/107)
   - [rfc text](https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md)
@@ -31,7 +31,7 @@ modified: '2021-01-02T13:05:43.529Z'
 - [RFC: Unified state](https://github.com/reactjs/rfcs/pull/179)
   - suggest a unify API for creating a global, contextual and local states.
 
-## [rfcs-merged](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Amerged)
+# [rfcs-merged](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Amerged)
 
 - [RFC: useMutableSource PR](https://github.com/reactjs/rfcs/pull/147)
   - [rfc text](https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md)
@@ -46,7 +46,7 @@ modified: '2021-01-02T13:05:43.529Z'
 - [ref-forwarding API](https://github.com/reactjs/rfcs/pull/30)
 - New version of context
 
-## [rfcs-closed](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Aclosed)
+# [rfcs-closed](https://github.com/reactjs/rfcs/pulls?q=is%3Apr+sort%3Aupdated-desc+is%3Aclosed)
 
 - [Add React Hooks in Classes RFC](https://github.com/reactjs/rfcs/pull/124)
 - [RFC: suspendable subscriptions](https://github.com/reactjs/rfcs/pull/127)

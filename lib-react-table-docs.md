@@ -10,7 +10,7 @@ modified: '2020-12-08T13:08:10.747Z'
 - Hooks for building lightweight, fast and extendable datagrids for React
 - A Table Utility, not a Table Component
 
-## overview
+# overview
 
 - Features
   - Lightweight (small size and tree-shaking)
@@ -42,7 +42,7 @@ modified: '2020-12-08T13:08:10.747Z'
 - By acting as an ultra-smart table utility, React Table opens up the possibility for your tables to integrate into any existing theme, UI library or existing table markup. 
   - This also means that if you don't have an existing table component or table styles, React Table will help you learn to build the table markup and styles required to display great tables.
 
-## Concepts
+# Concepts
 
 - React Table v7 is a headless utility, 
   - which means out of the box, it doesn't render or supply any actual UI elements.
@@ -69,7 +69,7 @@ modified: '2020-12-08T13:08:10.747Z'
   - Expanded State
   - Any functionality provided by custom plugin hooks, too!
 
-## API 
+# API 
 
 - The primary React Table hook
   - [ `useTable` ](https://react-table.tanstack.com/docs/api/useTable)
@@ -121,7 +121,7 @@ const instance = useTable({
 - React Table relies on memoization to determine when state and side effects should update or be calculated. 
   - This means that every option you pass to useTable should be memoized either via `React.useMemo` (for objects) or `React.useCallback` (for functions).
 
-## changelog
+# changelog
 
 - ref
   - https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md

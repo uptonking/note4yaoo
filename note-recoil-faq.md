@@ -7,7 +7,7 @@ modified: '2020-07-14T10:39:39.130Z'
 
 # note-recoil-faq
 
-## faq-repeat
+# faq-repeat
 
 - recoil vs mobx
   - First of all, Recoil & MobX solve the same problem: efficient render widely shared state. 
@@ -34,7 +34,7 @@ modified: '2020-07-14T10:39:39.130Z'
   - ref
     - https://twitter.com/mweststrate/status/1261369872283467777
 
-## faq
+# faq
 
 - Suggested folder structure for atoms and selectors
   - I think keeping state closer to where it is getting used is always more readable. 

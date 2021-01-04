@@ -9,7 +9,7 @@ modified: '2020-07-14T10:39:33.749Z'
 
 - recoil git repo is open sourced at 2020-05-04
 
-## pieces
+# pieces
 
 - It's not an error to store an atom in an atom. 
   - It doesn't do anything special, though.
@@ -76,7 +76,7 @@ modified: '2020-07-14T10:39:33.749Z'
   - ref
     - https://github.com/facebookexperimental/Recoil/issues/12
 
-## guide
+# guide
 
 - ref
   - It appears recoil project has reinvented an idea that has existed for five years in a ClojureScript framework called re-frame. 

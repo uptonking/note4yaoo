@@ -7,11 +7,11 @@ modified: '2020-08-06T05:48:56.811Z'
 
 # lib-handsontable-dev
 
-## pieces
+# pieces
 
-## table vs div
+# table vs div
 
-- ### [Tabulator – Easy-to-use JavaScript library for interactive tables_2018](https://news.ycombinator.com/item?id=18568072)
+- ## [Tabulator – Easy-to-use JavaScript library for interactive tables_2018](https://news.ycombinator.com/item?id=18568072)
 
 - It seems standard that all of these JS table libraries are rendering using `<div>` elements instead of a `<table>` element. Why?
   - As far as I can tell, all of the features could be implemented using the correct HTML element rather than using `<div>` to mimic a table.

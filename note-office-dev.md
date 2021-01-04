@@ -7,14 +7,14 @@ modified: '2020-07-14T10:32:07.321Z'
 
 # note-office-dev
 
-## tips
+# tips
 
 - excel阅读器/编辑器可以自己动手实现，基本数据格式比较固定
 - pdf阅读器/编辑器可参考已有解决方案
 
-## discuss
+# discuss
 
-- ### I'm super done with SSG and think it's bad for most (maybe all?) use cases.
+- ## I'm super done with SSG and think it's bad for most (maybe all?) use cases.
 - https://twitter.com/tannerlinsley/status/1344356848397209602
 - A silly amount of work has been put in place to make SSG attempt to do what the HTTP caching specification has had for decades (reduce unnecessary server load).
   - Everyone's making trade-offs without knowing about the standards-based alternative implemented by CDNs.

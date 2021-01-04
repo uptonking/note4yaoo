@@ -7,9 +7,9 @@ modified: '2020-11-02T05:19:40.469Z'
 
 # note-dev-state-blog
 
-## state-blog
+# state-blog
 
-### [What is state? Why do I need to manage it?](https://egghead.io/articles/what-is-state-why-do-i-need-to-manage-it)
+## [What is state? Why do I need to manage it?](https://egghead.io/articles/what-is-state-why-do-i-need-to-manage-it)
 
 - When it comes to client-side JavaScript applications, I like to think of state as “the outcome of all of the actions that the user has taken since the page loaded”.
 - This isn’t an all-encompassing way of thinking about state, 
@@ -43,7 +43,7 @@ modified: '2020-11-02T05:19:40.469Z'
     - In the DOM, there is an error message, so the state is that there is an error message.
   - By separating out the data (there is an error message) from the effects (an error message is displayed on the screen), I found myself thinking about my code in a much more declarative way, which was extremely powerful as I learned more and took a a dive into functional programming.
 
-### [为什么要做状态管理](https://zhuanlan.zhihu.com/p/140073055)
+## [为什么要做状态管理](https://zhuanlan.zhihu.com/p/140073055)
 
 - 近年来，随着单页面应用的兴起，JavaScript 需要管理比任何时候都要多的状态，或者可以说是数据，这些状态可能包括服务器响应、缓存数据、本地生成尚未持久化到服务器的数据，也包括 UI 状态，如激活的路由，被选中的标签，是否显示加载动效或者分页器等等
 - 就是把业务的信息渲染出来，并进行人机交互，返回给服务端，这是前端技术解决的核心问题
@@ -72,7 +72,7 @@ modified: '2020-11-02T05:19:40.469Z'
   - 就是代码会变得更复杂
     - 这一点并不完全是缺点，当一个应用业务用例和代码量不断上升的时候，代码不可能维持简单
 
-### [Write your own javascript state management library](https://medium.com/swlh/write-your-own-javascript-state-management-library-3687d3c09aae)
+## [Write your own javascript state management library](https://medium.com/swlh/write-your-own-javascript-state-management-library-3687d3c09aae)
 
 - State management is basically a two-way path management: 
   - you should let your application update the state 
@@ -286,7 +286,7 @@ store.setState({ b: 2 });
   - Then the second callback is called twice, logging only b value, first 1 then 2. 
   - The a value is not logged because it’s not defined in the second config function.
 
-### [Build a state management system with vanilla JavaScript_2018](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/)
+## [Build a state management system with vanilla JavaScript_2018](https://css-tricks.com/build-a-state-management-system-with-vanilla-javascript/)
 
 - https://github.com/hankchizljaw/vanilla-js-state-management
 - https://github.com/hankchizljaw/beedle
@@ -323,7 +323,7 @@ store.setState({ b: 2 });
 
 - Now that we’ve got our front-end components(Counter) and our main Store, all we’ve got to do is wire it all up.
 
-### [Stateful Components in Vanilla JS](https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/)
+## [Stateful Components in Vanilla JS](https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/)
 
 - Today I’d like to show you how to create stateful components with vanilla JavaScript, and demonstrate 
   - You don’t need to download any library to apply the amazing concepts used by React.js in your JavaScript programming.
@@ -399,7 +399,7 @@ function incCountUp() {
 renderCount();
 ```
 
-## ref
+# ref
 
 - [Simple State Management With Vanilla JS](https://viktorfejes.com/article/simple-state-management-with-vanilla-js)
   - The most important part is that the state shouldn't be updated through its properties but rather using the state.setState() method. 

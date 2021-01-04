@@ -7,7 +7,7 @@ modified: '2021-01-01T20:09:44.971Z'
 
 # ux-usecase-css
 
-## 实现div-border-collapse效果的方法
+# 实现div-border-collapse效果的方法
 
 - ref
   - https://stackoverflow.com/questions/17915865/how-to-make-borders-collapse-on-a-div

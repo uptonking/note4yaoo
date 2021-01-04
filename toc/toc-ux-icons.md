@@ -1,0 +1,206 @@
+---
+title: toc-ux-icons
+tags: [icon, toc]
+created: '2019-09-14T03:30:03.478Z'
+modified: '2020-07-17T10:52:17.250Z'
+---
+
+# toc-ux-icons
+
+# icons
+
+- feather  /MIT/16kStar/201908
+  - https://github.com/feathericons/feather
+  - https://feathericons.com/
+  - At its core, Feather is a collection of SVG files. Each icon is designed on a 24x24 grid with an emphasis on simplicity
+  - https://github.com/feathericons/react-feather
+- font-awesome  /MIT/60kStar/201610
+  - https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0
+  - https://fontawesome.com/v4.7.0/
+  - 675 pictographic icons
+- fork-awesome  /MIT/619Star/201907
+  - https://github.com/ForkAwesome/Fork-Awesome
+  - https://forkaweso.me/Fork-Awesome/icons/
+  - 744 icons 
+  - svg icons lie in `src/icons/svg/`
+- material-design-icons  /Apache2/6kStar/201908
+  - https://github.com/Templarian/MaterialDesign
+  - https://materialdesignicons.com/
+  - converted icons from Google's official icon set
+  - available via Webfont/SCSS, JavaScript/TypeScript, SVG/Meta.json, react
+- react-icons  /MIT/3kStar/201905
+  - https://github.com/react-icons/react-icons
+  - https://react-icons.netlify.com/
+  - svg react icons of popular icon packs, including fa, md 
+- ionicons   /MIT/13kStar/201908
+  - https://github.com/ionic-team/ionicons
+  - https://ionicons.com/
+  -  icon font for Ionic Framework and web apps everywhere
+- https://github.com/twitter/twemoji
+  - https://twemoji.twitter.com/
+  - /11.8kStar/CC-BY 4.0/202010
+  - The Twemoji library offers support for 3304 emojis.
+- https://github.com/CoreyGinnivan/system-uicons
+  - https://systemuicons.com/
+  - /384Star/Unlicense/202008
+  - System UIcons is a collection of icons designed for products and systems in mind. 
+  - Each icon is on a 21x21 grid.
+  - Use the icons how you want, for free, and without any attribution.
+
+# font icons
+
+- catalog
+  - https://getbootstrap.com/docs/4.0/extend/icons/
+  - http://iconfont.cn/ 
+      - iconfont的版权说明包括：官方图标库若无书面授权不得用于商业
+- free
+  - Fork Awesome
+      - A fork of the Font-Awesome 4.7
+      - https://forkawesome.github.io/Fork-Awesome/
+          - https://github.com/ForkAwesome/Fork-Awesome
+      - MIT
+      - 733 icons
+  - feather icons
+      - beautiful open source icons. Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistency and readability.
+      - https://feathericons.com
+          - https://github.com/feathericons/feather
+          - https://github.com/carmelopullara/react-feather
+      - MIT
+      - 271 icons
+  - font awesome 4.7
+      - gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+      - https://fontawesome.com/v4.7.0/
+          - https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0
+          - https://github.com/AndreLZGava/font-awesome-extension
+      - CC BY 4.0
+      - 675 icons
+  - ionicons
+      - open-source icon set with 700+ icons crafted for web, iOS, Android, and desktop apps. Ionicons was built for Ionic Framework
+      - https://ionicons.com/
+          - https://github.com/ionic-team/ionicons
+      - MIT
+      - 700+ icons
+      - 图标数量较少
+  - icono
+      - One tag One icon, no font or svg, Pure CSS
+      - https://saeedalipoor.github.io/icono/
+      - https://github.com/saeedalipoor/icono
+      - MIT
+      - 130+ icons
+      - 纯css实现的icon set，自己制作和添加图标不方便，css在不同浏览器渲染效果可能不同
+          - https://github.com/wentin/cssicon
+              - Creative Commons Zero v1.0 Universal
+              - 512+ icons
+  - line awesome
+      - Replace Font Awesome with modern line icons
+      - https://icons8.com/line-awesome
+      - https://github.com/icons8/line-awesome
+      - MIT/GBL GOOD BOY LICENSE
+      - 674 icons
+      - more icons
+          - https://github.com/icons8/flat-color-icons
+          - https://github.com/icons8/webicon
+          - https://icons8.com/
+          - animated: https://github.com/icons8/titanic
+  - jam icons
+      - icons shipped in JavaScript, font & SVG versions
+      - https://jam-icons.com/
+      - https://github.com/michaelampr/jam
+      - MIT
+      - 896 icons
+  - open-iconic
+      - the open source sibling of Iconic. It is a hyper-legible collection of 223 icons with a tiny footprint—ready to use with Bootstrap and Foundation
+      - https://useiconic.com/open/
+          - https://github.com/iconic/open-iconic
+      - MIT
+      - 223 icons 
+      - dead project
+  - google material design icons
+      - Each symbol is available in five themes and a range of downloadable sizes and densities.
+      - https://material.io/tools/icons/?style=outline
+          - https://github.com/google/material-design-icons
+      - Apache 2.0
+      - 1k+ icons
+  - bytesize icons
+      - Tiny style-controlled SVG iconset
+      - https://danklammer.com/bytesize-icons/
+          - https://github.com/danklammer/bytesize-icons
+      - MIT
+      - 94 icons, 10kb
+  - octicons
+      - Octicons are a set of SVG icons built by GitHub for GitHub.
+      - https://octicons.github.com/
+        - https://github.com/primer/octicons/
+      - MIT
+      - 150+ icons
+  - glyph
+      - a semantic and versatile SVG icon set designed for customization.Glyph is 16x16, but because it's SVG, it can be any size you want.
+      - http://glyph.smarticons.co/
+          - https://github.com/frexy/glyph-iconset/
+      - Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) 署名-相同方式共享
+      - 800+ icons
+  - IKONS
+      - Hand crafted, scalable vector icons，with 300 custom icons in SVG, AI, ESP, PSD, CSH and PNG format.
+      - http://ikons.piotrkwiatkowski.co.uk/index.html
+      - free to use these icons for personal and commercial work without obligation of payment or attribution.You may not redistribute or sell these icons
+      - 300+ icons
+  - dripicons
+      - free vector line iconset by Amit Jakhu.
+      - http://demo.amitjakhu.com/gg/
+          - https://github.com/amitjakhu/dripicons
+      - Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+      - 150+ icons
+  - nerd fonts
+      - Nerd Fonts is a project that patches developer targeted fonts with a high number of glyphs (icons). 
+      - https://nerdfonts.com/
+          - https://github.com/ryanoasis/nerd-fonts#tldr
+      - MIT
+  -  Seti-UI
+- paid
+  - font awesome 5
+      - Version 5 has been re-written and re-designed completely from scratch. 
+      - https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4
+      - https://github.com/FortAwesome/Font-Awesome
+      - CC BY 4.0.  
+          - free: solid, brands
+          - paid: regular, light
+      - 414 brand icons: weixin, qq, alipay, zhihu
+- icons for industry
+  - https://konpa.github.io/devicon/
+      - icons representing programming languages, designing & development tools
+      - v2: https://github.com/konpa/devicon
+      - v1: https://github.com/vorillaz/devicons/
+      - 78 icons and 200+ versions
+  - https://github.com/simple-icons/simple-icons
+      - SVG icons for popular brands
+      - Creative Commons Zero v1.0 Universal 无著作权，可商用
+      - 500+ icons
+  - http://labs.mapbox.com/maki-icons/
+      - poi icon set made for cartographers
+      - https://github.com/mapbox/maki
+  - https://erikflowers.github.io/weather-icons/
+      - weather themed icons
+      - https://github.com/erikflowers/weather-icons
+- other font icons
+  - https://github.com/snwh/paper-icon-theme
+  - https://github.com/stark/siji
+  - https://materialdesignicons.com/
+  - font-family: Wingdings
+- tools for icons
+  - https://icomoon.io
+  - http://fontastic.me
+  - Typefont
+      - The first open-source library that detects the font of a text in a image.
+      - https://github.com/Vasile-Peste/Typefont
+- tips
+  - Moving Away From Font Icons
+      - https://blog.ionicframework.com/announcing-ionicons-v4/
+      - When we originally released Ionicons, we went the route of making an icon font. At the time, this made a lot of sense: 
+          - Icon fonts are vector-based, 
+          - scalable to any physical size without pixelation, 
+          - able to be styled with CSS,  
+          - come from a single resource (which means fewer HTTP requests).
+      - they also have a cost that can flip their advantage into a disadvantage: all of the icons are bundled in one file. And in previous versions of Ionicons, we were packing nearly 700 icons into one large file!
+          - Large font files have a negative impact on a webpage or app’s Time to First Paint, which makes for a subpar user experience and has been known to lower PWA Lighthouse scores. 
+          - On top of that, adding any custom icons to a font icon is far from easy.
+      - All of the benefits of font icons (vector-based and styling with CSS) can be achieved just as easily with SVGs, but without all the baggage.

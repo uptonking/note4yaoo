@@ -7,11 +7,11 @@ modified: '2020-12-29T14:18:03.808Z'
 
 # note-react-hooks-blog
 
-## guide
+# guide
 
-## hooks-usage
+# hooks-usage
 
-### [Conditional React Hooks](https://www.benmvp.com/blog/conditional-react-hooks/)
+## [Conditional React Hooks](https://www.benmvp.com/blog/conditional-react-hooks/)
 
 - Hooks enable us to use state and other React features without writing a class. 
 - We can’t call Hooks inside of conditionals, loops, or nested functions 

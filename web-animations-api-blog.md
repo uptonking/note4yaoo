@@ -7,9 +7,9 @@ modified: '2020-12-21T07:44:33.306Z'
 
 # web-animations-api-blog
 
-## Web Animations API Tutorial Series
+# Web Animations API Tutorial Series
 
-- ### [Let’s talk about the Web Animations API_Dan Wilson](http://danielcwilson.com/blog/2015/07/animations-intro/)
+- ## [Let’s talk about the Web Animations API_Dan Wilson](http://danielcwilson.com/blog/2015/07/animations-intro/)
   - This is an introduction to a tutorial series on the Web Animations API coming to browsers. 
   - That wasn’t implemented yet (you’ll find out what happened in Part 5), but its goal of providing a way to unite the CSS, JS, and SVG ways to animate kept me interested. 
   - CSS has hardware acceleration for smooth transitions and support is built into the browser, 
@@ -31,16 +31,16 @@ modified: '2020-12-21T07:44:33.306Z'
     - It aims to bring the power of CSS performance, add the benefits and flexibility of JavaScript (and SVG animation, which we will talk about in a future post), and leave it to the browsers to make it work well.
     - The syntax is similar to CSS but adds the options of variables, controls, and finish callbacks.
 
-- ### [Web Animations API Tutorial Part 1: Creating a Basic Animation](http://danielcwilson.com/blog/2015/07/animations-part-1/)
-- ### [Web Animations API Tutorial Part 2: The Animation & Timeline Controls](http://danielcwilson.com/blog/2015/07/animations-part-2/)
-- ### [Web Animations API Tutorial Part 3: Multiple Animations](http://danielcwilson.com/blog/2015/08/animations-part-3/)
-- ### [Web Animations API Tutorial Part 4: GroupEffects & SequenceEffects](http://danielcwilson.com/blog/2015/09/animations-part-4/)
-- ### [Web Animations API Tutorial Part 5: The Loveable Motion Path](http://danielcwilson.com/blog/2015/09/animations-part-5/)
+- ## [Web Animations API Tutorial Part 1: Creating a Basic Animation](http://danielcwilson.com/blog/2015/07/animations-part-1/)
+- ## [Web Animations API Tutorial Part 2: The Animation & Timeline Controls](http://danielcwilson.com/blog/2015/07/animations-part-2/)
+- ## [Web Animations API Tutorial Part 3: Multiple Animations](http://danielcwilson.com/blog/2015/08/animations-part-3/)
+- ## [Web Animations API Tutorial Part 4: GroupEffects & SequenceEffects](http://danielcwilson.com/blog/2015/09/animations-part-4/)
+- ## [Web Animations API Tutorial Part 5: The Loveable Motion Path](http://danielcwilson.com/blog/2015/09/animations-part-5/)
 
-- ### [Web Animations API Tutorial Conclusion](http://danielcwilson.com/blog/2015/09/animations-conclusion/)
+- ## [Web Animations API Tutorial Conclusion](http://danielcwilson.com/blog/2015/09/animations-conclusion/)
   - The spec, browser implementations, and polyfill have been going on for a while, and they are ready to examine closely.
 
-- ### [When to Use the Web Animations API_201608](http://danielcwilson.com/blog/2016/08/why-waapi/)
+- ## [When to Use the Web Animations API_201608](http://danielcwilson.com/blog/2016/08/why-waapi/)
   - I still typically prefer CSS for animating. 
     - You state an animation once, and all matching selectors will pick up on it without you having to iterate through them all. 
     - There’s a reason over time we’ve seen things move from JS to CSS, and for me it’s hard to beat declaring some rules in CSS and calling it a day.
@@ -51,10 +51,10 @@ modified: '2020-12-21T07:44:33.306Z'
     - Chaining Multiple Animations
   - The Web Animations spec that underlies the Web Animations API is all about uniting JS and CSS methods.
 
-- ### [3 Ways to Use Independent Transform Properties](http://danielcwilson.com/blog/2017/10/all-the-transform-ways/)
-- ### [Additive Animation with the Web Animations API](http://danielcwilson.com/blog/2018/01/additive-animation/)
+- ## [3 Ways to Use Independent Transform Properties](http://danielcwilson.com/blog/2017/10/all-the-transform-ways/)
+- ## [Additive Animation with the Web Animations API](http://danielcwilson.com/blog/2018/01/additive-animation/)
 
-- ### [CSS + the Web Animations API_202004](http://danielcwilson.com/blog/2020/04/css-in-the-waapi/)
+- ## [CSS + the Web Animations API_202004](http://danielcwilson.com/blog/2020/04/css-in-the-waapi/)
   - While the Web Animations API initially brought a similar mechanism as CSS animations to JavaScript, it also added a few additional features like modifying playback rate and jumping to different points in an animation’s timeline. 
   - As the final pieces of the Web Animations Level 1 specification roll out to browsers, it’s not just JavaScript that gets extra features.
   - Getting all Web Animations with the API
@@ -71,7 +71,7 @@ modified: '2020-12-21T07:44:33.306Z'
     - Since all these animations share a common interface and have the same underlying engine behind them (one of the main goals of the Web Animations specification), we can now use the API to interact with our CSS animations.
   - CSS animations and transitions have long had solid JavaScript event listeners for `animationend` , `transitionstart` , and others, so the Web Animations API does not bring much new here. That said, the WAAPI offers comparable callbacks and Promises if those are preferred.
 
-## Web Animations in Safari 13.1
+# Web Animations in Safari 13.1
 
 - [webkit: Web Animations in Safari 13.1_202004](https://webkit.org/blog/10266/web-animations-in-safari-13-1/)
 
@@ -129,7 +129,7 @@ element.style.transform = "translateX(100px)";
 - Shipping support for Web Animations is an important milestone for animations in WebKit. 
   - Our new animation engine provides a more spec-compliant and forward-looking codebase to improve on. 
 
-## Web Animations in WebKit
+# Web Animations in WebKit
 
 - [Web Animations in WebKit_201806](https://webkit.org/blog/8343/web-animations-in-webkit/)
 
@@ -146,7 +146,7 @@ element.style.transform = "translateX(100px)";
   - Then you can seek or pause a CSS transition running on an element just like we did above with an animation created using `element.animate()` . 
   - As a developer, you can think of CSS Transitions and Animations as a declarative layer above Web Animations.
 
-## Web Animations API improvements in Chromium 84
+# Web Animations API improvements in Chromium 84
 
 - [Web Animations API improvements in Chromium 84_202005](https://web.dev/web-animations/)
 
@@ -163,7 +163,7 @@ element.style.transform = "translateX(100px)";
 - When creating animations based on events, such as on `mousemove` , a new animation is created each time, which can quickly consume memory and degrade performance. 
   - To address this problem, **replaceable animations** were introduced in Chromium 83, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. 
 
-## Web Animations API Now Supported in All Evergreen Browsers
+# Web Animations API Now Supported in All Evergreen Browsers
 
 - [Web Animations API Now Supported in All Evergreen Browsers](https://www.infoq.com/news/2020/06/web-animations-evergreen-browser/)
 
@@ -176,7 +176,7 @@ element.style.transform = "translateX(100px)";
 - The Web Animations API introduces a solution that gives the optimization power of CSS animations and transitions, but the flexibility of earlier JavaScript-based APIs. 
 - The Web Animations specification provides a shared model for animations on the web. CSS Transitions and CSS Animations exist as layers above that shared foundational model.
 
-## ref
+# ref
 
 - [Exploring the Web Animations API_202001](https://www.javascriptjanuary.com/blog/exploring-web-animations-api)
   - In terms of performance, I haven't been able to see much difference between using CSS animations and the Web Animations API but that could be because my example is pretty small.

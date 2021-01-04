@@ -7,19 +7,19 @@ modified: '2020-07-14T09:28:32.650Z'
 
 # note-benchmark-java
 
-## json
+# json
 
 - https://github.com/fabienrenaud/java-json-benchmark
   - Performance testing of serialization and deserialization of Java JSON libraries
 - https://github.com/FasterXML/jackson-benchmarks
   - JMH-based micro-benchmarks to help with optimizations
 
-## csv
+# csv
 
 - https://github.com/uniVocity/csv-parsers-comparison
   - Comparisons among all Java-based CSV parsers
 
-## java template engine
+# java template engine
 
 - https://github.com/mbosecke/template-benchmark
   - /2016

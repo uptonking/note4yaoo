@@ -7,12 +7,12 @@ modified: '2020-12-08T13:26:42.816Z'
 
 # lib-fwk-reef-blog-state
 
-## [State-Based UI series](https://gomakethings.com/series/state-based-ui/)
+# [State-Based UI series](https://gomakethings.com/series/state-based-ui/)
 
 - Here’s my complete series on building a reactive state-based UI library. 
 - It gets into how today’s most popular frameworks work under-the-hood.
 
-### [How to create a state-based UI component with vanilla JS_202005](https://gomakethings.com/how-to-create-a-state-based-ui-component-with-vanilla-js/)
+## [How to create a state-based UI component with vanilla JS_202005](https://gomakethings.com/how-to-create-a-state-based-ui-component-with-vanilla-js/)
 
 - With State-based UI, you use your state or data to create your UI.
 - Rather than trying to target and manipulate elements in the DOM when the user does things, you update your data object. 
@@ -74,13 +74,13 @@ app.data.todos.push('Take a nap... zzzzz');
 app.render();
 ```
 
-### [How to create a reactive state-based UI component with vanilla JS Proxies_202005](https://gomakethings.com/how-to-create-a-reactive-state-based-ui-component-with-vanilla-js-proxies/)
+## [How to create a reactive state-based UI component with vanilla JS Proxies_202005](https://gomakethings.com/how-to-create-a-reactive-state-based-ui-component-with-vanilla-js-proxies/)
 
-### [How to batch UI rendering for better performance_202005](https://gomakethings.com/how-to-batch-ui-rendering-in-a-reactive-state-based-ui-component-with-vanilla-js/)
+## [How to batch UI rendering for better performance_202005](https://gomakethings.com/how-to-batch-ui-rendering-in-a-reactive-state-based-ui-component-with-vanilla-js/)
 
-### [DOM diffing with vanilla JS_202005](https://gomakethings.com/dom-diffing-with-vanilla-js/)
+## [DOM diffing with vanilla JS_202005](https://gomakethings.com/dom-diffing-with-vanilla-js/)
 
-### [State-based components with vanilla JS_201807](https://gomakethings.com/state-based-components-with-vanilla-js/)
+## [State-based components with vanilla JS_201807](https://gomakethings.com/state-based-components-with-vanilla-js/)
 
 - State is data at a particular moment in time. 
   - It’s the present “state” of your data.
@@ -145,7 +145,7 @@ window.setInterval(function() {
 }, 1000);
 ```
 
-### [State based UI vs Manual DOM Manipulation_201901](https://gomakethings.com/state-based-ui-vs.-manual-dom-manipulation/)
+## [State based UI vs Manual DOM Manipulation_201901](https://gomakethings.com/state-based-ui-vs.-manual-dom-manipulation/)
 
 - State is data at a particular moment in time. 
   - It’s the present “state” of your data.
@@ -202,7 +202,7 @@ document.addEventListener('submit', function(event) {
   - Then you render an updated layout.
   - This is how frameworks like React and Vue work. But you don’t need a 30kb framework to do this.
 
-### [State-based UI with vanilla JS_201902](https://gomakethings.com/state-based-ui-with-vanilla-js/)
+## [State-based UI with vanilla JS_201902](https://gomakethings.com/state-based-ui-with-vanilla-js/)
 
 - To make state-based ui, we need three things:
   - A data object.

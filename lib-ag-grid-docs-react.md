@@ -7,7 +7,7 @@ modified: '2020-12-08T13:04:24.759Z'
 
 # lib-ag-grid-docs-react
 
-## Get Started with ag-Grid and React
+# Get Started with ag-Grid and React
 
 - AgGridReact
   - rowData
@@ -34,7 +34,7 @@ modified: '2020-12-08T13:04:24.759Z'
   - but it is possible to have your component wrapped in a container of your choice (i.e. a `span` etc), perhaps to override/control a third party component.
   - If you wish to override the style of this div, you can either provide an implementation of the `ag-react-container` class, or via the `getReactContainerStyle` or `getReactContainerClasses` callbacks on the React component
 
-## More Control of ag-Grid with React
+# More Control of ag-Grid with React
 
 - When the grid is initialized, it will fire the `gridReady` event. 
   - If you want to use the API of the grid, you should put an `onGridReady(params)` callback onto the grid and grab the api from the params. 
@@ -50,7 +50,7 @@ modified: '2020-12-08T13:04:24.759Z'
   - DeepValueCheck/deepEqual
   - NoCheck/AlwaysRender
 
-## Hooks for ag-grid
+# Hooks for ag-grid
 
 - We can break down the type of Hooks you can use within ag-Grid into two broad categories - those that have lifecycle methods (such as Filters) and those that don't (such as Cell Renderers).
 - Hooks without Lifecycle Methods

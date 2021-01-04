@@ -7,7 +7,7 @@ modified: '2020-12-21T07:46:23.299Z'
 
 # web-layout-table
 
-## guide
+# guide
 
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
@@ -19,7 +19,7 @@ modified: '2020-12-21T07:46:23.299Z'
   - [css-tricks tag responsive-tables](https://css-tricks.com/tag/responsive-tables/)
   - [Short note on what CSS display properties do to table semantics](https://developer.paciellogroup.com/blog/2018/03/short-note-on-what-css-display-properties-do-to-table-semantics/)
 
-## faq
+# faq
 
 - Is there an alternative way to achieve `border-collapse:collapse` in CSS (in order to have a collapsed, rounded corner table)?
   - table元素使用 `border-collapse: collapse;` 去除间隙后， `border-radius` 会失效
@@ -87,7 +87,7 @@ td {
     - [Actual table Vs. Div display-table](https://stackoverflow.com/questions/2617895/actual-table-vs-div-table)
     - [Why are people making tables with divs?](https://softwareengineering.stackexchange.com/questions/277778/why-are-people-making-tables-with-divs)
 
-## summary 
+# summary 
 
 - Table reflows row groups in multiple passes
   - Pass 1 - unconstrained width, height and requests max elem width.
@@ -105,7 +105,7 @@ td {
   - in paginated mode when there is a height on the table, the table doesn't allocate extra height to rows until after it does a pass 2 reflow and then it is too late
   - This can be fixed by doing a special **3rd pass reflow**
 
-## pieces
+# pieces
 
 - When CSS `display: block` or `display: gri` d or `display: flex` is set on the table element, bad things happen. 
   - The table is no longer represented as a table in the accessibility tree, row elements/semantics are no longer represented in any form
@@ -149,7 +149,7 @@ td {
   - Ideally, consider alternate ways to present the table's content, including breaking it apart into a collection of smaller, related tables that don't have to rely on using the `colspan` and `rowspan` attributes.
   - If the table cannot be broken apart, use a combination of the `id` and `headers` attributes to programmatically associate each table cell with the header(s) the cell is associated with.
 
-## Are CSS Tables Better Than HTML Tables
+# Are CSS Tables Better Than HTML Tables
 
 - [Are CSS Tables Better Than HTML Tables?_2011](https://vanseodesign.com/css/tables/)
 
@@ -261,7 +261,7 @@ caption   { display: table-caption }
   - You can create a responsive layout without needing Javascript and e.g. resize or hide columns depending on the device size.
     - Or you can split rows: for example, for very narrow devices you might want to switch the table to a single column layout simply by removing or replacing the “display: table*” style without generating different HTML for that case.
 
-## CSS vs Tables: The Debate That Won’t Die
+# CSS vs Tables: The Debate That Won’t Die
 
  - [CSS vs Tables: The Debate That Won’t Die_2009](http://vanseodesign.com/css/css-divs-vs-tables/)
 
@@ -302,13 +302,13 @@ caption   { display: table-caption }
   - Search engines are interested in your content, not your code. 
   - It’s true that less code means less potential for show stopping errors, but those show stoppers can exist regardless of your site’s structure.
 
-## CSS performance test: Flexbox v CSS Table
+# CSS performance test: Flexbox v CSS Table
 
 - [CSS performance test: Flexbox v CSS Table](https://benfrain.com/css-performance-test-flexbox-v-css-table-fight/)
 
 - You can see that in this incredibly limited test layout, Flex layout is slower than Table Layout on every browser tested. 
 
-## The Anti-hero of CSS Layout - "display:table"
+# The Anti-hero of CSS Layout - "display:table"
 
 - [The Anti-hero of CSS Layout - "display:table"](https://colintoh.com/blog/display-table-anti-hero)
 
@@ -333,7 +333,7 @@ caption  { display: table-caption }
 - CSS Table can choose not to behave like a table when it want to. By switching the element's `display` property from `table-cell` to `block` , we are able to stack the element.
 - With `display:table` , you are able to create a sticky footer with dynamic height.
 
-## Why Tables Are Bad For Layout
+# Why Tables Are Bad For Layout
 
 - Tables are usually more bytes of markup.
   - (Longer to download, and more bytes of traffic for the host.)
@@ -358,7 +358,7 @@ caption  { display: table-caption }
   - [Why CSS should not be used for layout_2009](http://www.flownet.com/ron/css-rant.html)
   - [Why CSS Should Be Used for Layout_2009](https://www.newmediacampaigns.com/blog/why-css-should-be-used-for-layout)
 
-## A Complete Guide to the Table Element
+# A Complete Guide to the Table Element
 
 - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/)
 
@@ -525,11 +525,11 @@ caption {
   - search
   - sort
 
-## collection of well-designed tables
+# collection of well-designed tables
 
 - [Beautiful HTML Tables](https://www.hongkiat.com/blog/html-table-building-30-beautiful-examples-and-useful-javascripts/)
 
-## ref
+# ref
 
 - [HTML Table Styler - CSS Generator](https://divtable.com/table-styler/)
   - Free online interactive HTML Table and structured div grid styler and code generator.

@@ -8,7 +8,7 @@ modified: '2020-07-14T10:38:48.217Z'
 
 # note-react-dev
 
-## guide
+# guide
 
 - react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
@@ -59,7 +59,7 @@ modified: '2020-07-14T10:38:48.217Z'
 - ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current);`
 - 在requestAnimationFrame中setState的性能
 
-## tips
+# tips
 
 - react开放的生态
   - 状态管理、路由管理、取数、不可变数据结构、服务端渲染
@@ -256,7 +256,7 @@ React.cloneElement(
 - fiber是React 16中新的和解引擎，它的主要目的是使虚拟DOM能够进行增量渲染   
 - vdom虚拟的视图被保存在内存中，并通过诸如ReactDOM这样的库与真实的DOM保持同步
 
-## react-basis
+# react-basis
 
 - react要点
   - 组件的设计：jsx、生命周期、高阶组件、容器组件、非受控组件
@@ -324,7 +324,7 @@ React.cloneElement(
   - 组件声明周期
   - 单向数据流
 
-## react events
+# react events
 
 - SyntheticEvent是支持跨览器原生事件接口的跨浏览器实现
 - The SyntheticEvent is pooled

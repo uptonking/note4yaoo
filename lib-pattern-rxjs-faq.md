@@ -7,9 +7,9 @@ modified: '2020-12-14T14:42:11.433Z'
 
 # lib-pattern-rxjs-faq
 
-## faq-not-yet
+# faq-not-yet
 
-### rxjs架构调试困难，如何调试
+## rxjs架构调试困难，如何调试
 
 - [HOW TO DEBUG RXJS CODE_201512](https://staltz.com/how-to-debug-rxjs-code.html)
   - The short answer is: you have to depend mostly on drawing diagrams on paper and adding `.do(x => console.log(x))` after operators, 
@@ -26,9 +26,9 @@ modified: '2020-12-14T14:42:11.433Z'
   - a quick search will reveal plenty of debugging concerns for redux-saga too.
   - It turns out that redux-thunk is the best solution for a vast majority of applications built because a majority of them do not have complex side effect concerns that justify(使齐行) something like redux-observable or redux-saga. 
 
-## faq-repeat
+# faq-repeat
 
-### 如何优化性能，对于rxjs架构的程序
+## 如何优化性能，对于rxjs架构的程序
 
 - [RxJS: Don't Unsubscribe](https://medium.com/@benlesh/rxjs-dont-unsubscribe-6753ed4fda87)
   - [[译] RxJS: 别取消订阅](https://zhuanlan.zhihu.com/p/27903919)
@@ -68,12 +68,12 @@ modified: '2020-12-14T14:42:11.433Z'
       - For most other cases an operator or Observable.create might be enough.
       - A BehaviorSubject is commonly used because it has a getValue() function.
 
-### rxjs的引入，对程序的性能影响如何
+## rxjs的引入，对程序的性能影响如何
 
 - I won't choose RxJs for performance reason because any library will add overheads. 
   - However it can boost your productivity if you use it correctly. 
 
-### Cold vs Hot Observables
+## Cold vs Hot Observables
 
 - Cold observables start running upon subscription, 
   - i.e., the observable sequence only starts pushing values to the observers when Subscribe is called
@@ -87,7 +87,7 @@ modified: '2020-12-14T14:42:11.433Z'
   - Hot Observables: live performances.
   - Hot Observables replayed: live performances recorded on video.
 
-### [What are real world examples of RxJS?](https://stackoverflow.com/questions/56311808/what-are-real-world-examples-of-rxjs)
+## [What are real world examples of RxJS?](https://stackoverflow.com/questions/56311808/what-are-real-world-examples-of-rxjs)
 
 - You use Rx when you need to track a value of a variable over time. 
   - If you just `var x = getVariableValue()` somewhere, and that function return changes after a minute, the `x` will still be the old value. 
@@ -142,16 +142,16 @@ modified: '2020-12-14T14:42:11.433Z'
   - [Should I always use Observables where a promise can be used?](https://stackoverflow.com/questions/58319625/should-i-always-use-observables-where-a-promise-can-be-used)
     - Using a single async style is more consistent that a mix and match style and it also lets you refactor at a later date when your http request becomes a stream.
 
-## faq
+# faq
 
  
 
-### `ajax()` vs `fromFetch()`
+## `ajax()` vs `fromFetch()`
 
 - fromFetch is only a thin wrapper around fetch() and accepts the same options, instead of the ajax wrapper around xhr.
 - This would allow us to polyfill fetch() in tests and reuse requestGraphQL functions instead of having to use a full JSDOM environment, with emulated CORS restrictions etc
 
-### [Why to use observables instead of Ajax?](https://stackoverflow.com/questions/47571880/why-to-use-observables-instead-of-ajax)
+## [Why to use observables instead of Ajax?](https://stackoverflow.com/questions/47571880/why-to-use-observables-instead-of-ajax)
 
 ``` JS
 // use observable
@@ -204,7 +204,7 @@ $.ajax({
   - Observables can be retried using one of the retry operators provided by the API, such as `retry` and `retryWhen`.
     - Promises require the caller to have access to the original function that returned the promise in order to have a retry capability.
 
-### [Mobx 与 rxjs 在用法和本质上有何异同?](https://www.zhihu.com/question/283589041)
+## [Mobx 与 rxjs 在用法和本质上有何异同?](https://www.zhihu.com/question/283589041)
 
 - 相同的地方大概就是用到了观察者模式，不同的地方是很多的。
 - 首先Mobx主要作用是做状态管理，给框架做model层，
@@ -247,7 +247,7 @@ $.ajax({
   - Instead of directly changing objects imperatively, a "LINQ-ish" language, made up of pipeable operators, is used to express execution flows. 
   - In many ways, RxJS can be seen as an language extension for JavaScript to enable Reactive programming as defined in the Observable contract.
 
-### [Will callback architecture from Andre be adopted to RxJS? What's difference between each RxJS architecture?_202011](https://twitter.com/BenLesh/status/1328449063910596613)
+## [Will callback architecture from Andre be adopted to RxJS? What's difference between each RxJS architecture?_202011](https://twitter.com/BenLesh/status/1328449063910596613)
 
 - At this point, I think it's unlikely. 
 - One of the goals of using that architecture was to get the library to be smaller. 

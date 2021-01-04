@@ -7,9 +7,9 @@ modified: '2020-11-07T16:22:57.121Z'
 
 # note-dev-state-blog-event-pubsub
 
-## event-emitter
+# event-emitter
 
-### [Understanding Event Emitters](https://css-tricks.com/understanding-event-emitters/)
+## [Understanding Event Emitters](https://css-tricks.com/understanding-event-emitters/)
 
 - https://github.com/charliewilco/cyclops
 
@@ -62,7 +62,7 @@ function emitter(e?: Events) {
 }
 ```
 
-### [Using an Event Emitter — Common Use and Edge Cases](https://www.yld.io/blog/using-an-event-emitter-common-use-and-edge-cases/)
+## [Using an Event Emitter — Common Use and Edge Cases](https://www.yld.io/blog/using-an-event-emitter-common-use-and-edge-cases/)
 
 - The callback pattern works well for simple operations that have a start and an end state; 
   - but if you’re interested in state changes, a callback is not enough. 
@@ -96,7 +96,7 @@ console.log('after emit');
 // after emit
 ```
 
-### [From Pub-Sub pattern to Observer pattern](https://medium.com/@huytrongnguyen1985/from-pub-sub-pattern-to-observer-pattern-f4ae1e425cc9)
+## [From Pub-Sub pattern to Observer pattern](https://medium.com/@huytrongnguyen1985/from-pub-sub-pattern-to-observer-pattern-f4ae1e425cc9)
 
 - There are two major differences between Observer pattern and Pub-Sub pattern:
   - Observer pattern is mostly implemented in a synchronous way, 
@@ -136,4 +136,4 @@ export default new PubSub();
   - Pull behaviour — when an event happens Observable object will notify all Observers and each Observer will pull the information it needs from the Observable
 - The most popular library for Observer pattern is RxJS with those concepts
 
-## ref
+# ref

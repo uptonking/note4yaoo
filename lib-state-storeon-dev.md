@@ -9,7 +9,7 @@ modified: '2020-12-10T10:04:50.952Z'
 
 - event-based Redux-like state manager for React, Vue, Angular and Svelte.
 
-## guide
+# guide
 
 - 优点
   - The same Redux reducers.
@@ -18,9 +18,9 @@ modified: '2020-12-10T10:04:50.952Z'
 - 缺点
   - 不支持hot reload
 
-## docs
+# docs
 
-- ### [storeon-counter-app-demo](https://github.com/storeon/storeon)
+- ## [storeon-counter-app-demo](https://github.com/storeon/storeon)
 
 ``` JS
 import { createStoreon } from 'storeon';
@@ -53,7 +53,7 @@ render(
 )
 ```
 
-- ### [Example with remote data fetching](https://github.com/storeon/storeon/issues/113)
+- ## [Example with remote data fetching](https://github.com/storeon/storeon/issues/113)
 
 ``` JS
 store.on('@users/load', async () => {
@@ -66,7 +66,7 @@ store.on('@users/set', async (state, users) => {
 })
 ```
 
-- ### api
+- ## api
 - `export const store = createStoreon([projects, users])`
   - store.get() 
     - will return current state. The state is always an object.
@@ -75,7 +75,7 @@ store.on('@users/set', async (state, users) => {
   - store.dispatch(event, data) 
     - will emit an event with optional data.
 
-- ### [Storeon: “Redux” in 173 bytes](https://evilmartians.com/chronicles/storeon-redux-in-173-bytes)
+- ## [Storeon: “Redux” in 173 bytes](https://evilmartians.com/chronicles/storeon-redux-in-173-bytes)
 - fully compatible with Redux DevTools.
 - No one prevents you from placing your initial state, reducers, and business logic in a single module.
 - Storeon checks which parts of the state were changed and re-renders only components subscribed to those changes.
@@ -87,7 +87,7 @@ store.on('@users/set', async (state, users) => {
     - This assumption allows to track state changes directly and to avoid Redux-style selector functions altogether. 
     - In my experience, non-object state stores are rare anyway.
 
-## storeon-extension
+# storeon-extension
 
 - https://github.com/storeon/router
 - https://github.com/storeon/undo
@@ -99,7 +99,7 @@ store.on('@users/set', async (state, users) => {
   - Side effects management library for storeon
   - 依赖kefir
 
-## storeon-repos
+# storeon-repos
 
 - https://github.com/andersonAncilon/storeon-to-do
 - https://github.com/Youngestdev/storeon-app

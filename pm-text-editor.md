@@ -7,7 +7,7 @@ modified: '2020-10-22T13:34:23.200Z'
 
 # pm-text-editor
 
-## 编辑器开发体验
+# 编辑器开发体验
 
 - 编辑器大致分为两种: 源代码编辑器和富文本编辑器，可以基于富文本实现源代码编辑器
 - 基于HTML DOM的Contenteditable属性来实现(传统方式)
@@ -29,7 +29,7 @@ modified: '2020-10-22T13:34:23.200Z'
   - https://www.zhihu.com/question/24328297
   - https://www.oschina.net/translate/why-contenteditable-is-terrible
 
-## text-editor-solution-catalog
+# text-editor-solution-catalog
 
 - react-page
   - renderer package基于slate实现

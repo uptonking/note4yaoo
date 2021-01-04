@@ -9,7 +9,7 @@ modified: '2021-01-01T20:15:45.650Z'
 
 - 技术选型时，参考知名项目或大公司项目的选择
 
-## faq-not-yet
+# faq-not-yet
 
 - scrolling滚动时的样式
   - 不同浏览器的滚动条样式不一致
@@ -27,7 +27,7 @@ modified: '2021-01-01T20:15:45.650Z'
   - 要考虑如何与具体框架结合，更方便实现国际化RTL、语言和样式主题切换
   - 考虑在特殊情况下如何覆盖组件的样式
 
-## guide
+# guide
 
 - 选用现有框架，还是自己实现框架
   - 现有框架的生态系统若十分丰富，则就用现有框架
@@ -37,7 +37,7 @@ modified: '2021-01-01T20:15:45.650Z'
   - 知名框架一般有大公司或商业公司推广，小项目资源有限
   - react的挑战者需要：丰富功能、生态、大公司支持
 
-## frontend-solutions
+# frontend-solutions
 
 - 组件层 components
   - 要素：dom、样式、交互
@@ -176,7 +176,7 @@ modified: '2021-01-01T20:15:45.650Z'
   - Right now, bundling JS is required for loading performance, but practically kills caching...
     - WebBundles will enable us to have both!! 
 
-### [下一代前端框架会去解决什么问题？](https://www.zhihu.com/question/433673833)
+## [下一代前端框架会去解决什么问题？](https://www.zhihu.com/question/433673833)
 
 - 试图小结已有框架解决的问题：
   - jQuery解决DOM操作，浏览器兼容性
@@ -185,8 +185,8 @@ modified: '2021-01-01T20:15:45.650Z'
   - Apollo/Relay 解决API与数据的割据
   - RN/Flutter/Taro/Uniapp 解决安卓苹果小程序的分裂
 
-- 个人认为，前端~api~后端~数据库，这个链条上的类型安全，是个发展方向
-  - 这条路要把现在很多curd后端的饭碗抢一半
+- 个人认为，前端~api~后端~数据库，这个链条上的类型安全，是个方向
+  - 这条路要把现在很多crud后端的饭碗抢一半
   - 这很重要但我并不觉得这是前端框架该做的。
     - 后端重要的还是接口，后端应该通过标准化的方式向前端发布带类型的接口，而后端到数据
     - 类型在兼容不同语言的接口这个问题实在太必要了

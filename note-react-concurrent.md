@@ -7,7 +7,7 @@ modified: '2020-07-14T10:50:30.695Z'
 
 # note-react-concurrent
 
-## summary 
+# summary 
 
 - react-concurrent-mode新特性
   - Suspense/SuspenseList
@@ -22,7 +22,7 @@ modified: '2020-07-14T10:50:30.695Z'
   - 将需要立刻渲染的 `setState` 放在 `startTransition` 外，将占性能的操作及计算放在 `startTransition` 内
   - [Splitting High and Low Priority State](https://reactjs.org/docs/concurrent-mode-patterns.html#splitting-high-and-low-priority-state)
 
-## pieces
+# pieces
 
 - concurrent mode重点关注的是UX，之前的feature如hooks大多关注的的是DX
   - 国内对于使用concurrent mode并不热情，因为用户体验难以量化
@@ -144,7 +144,7 @@ async fetchData3() {
   - 把在这些生命周期执行的逻辑放到commit phase执行，如果能完全做到，这里可以直接将组件改成React hook的形式。
   - 保证render phase执行的逻辑是幂等的 (idempotent)
 
-## Building Great User Experiences with Concurrent Mode and Suspense
+# Building Great User Experiences with Concurrent Mode and Suspense
 
 - This post will be most relevant to people working on data fetching libraries for React.
 - It shows how to best integrate them with Concurrent Mode and Suspense. 
@@ -229,7 +229,7 @@ function Post(props) {
   - Loading data incrementally allows us to load important data earlier without delaying the fetching of less important data. 
   - And treating code as data — and preloading it with similar APIs — allows us to load it earlier too.
 
-## guide
+# guide
 
 - ref
   - [精读《Suspense 改变开发方式》](https://zhuanlan.zhihu.com/p/113463166)

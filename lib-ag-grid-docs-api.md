@@ -7,7 +7,7 @@ modified: '2020-12-08T13:04:00.893Z'
 
 # lib-ag-grid-docs-api
 
-## Grid Interface
+# Grid Interface
 
 - The grid interface is the combination of the following items:
 - Grid Properties
@@ -23,7 +23,7 @@ modified: '2020-12-08T13:04:00.893Z'
   - The Row Node wraps the row data item. 
   - The Row Node has attributes, methods and events for interacting with the specific row e.g. `rowNode.setSelected(true)` .
 
-### Grid Options
+## Grid Options
 
 - `gridOptions` object is a 'one stop shop' for the entire interface into the grid. 
   - The grid options can be used regardless of the framework you are using, 
@@ -39,7 +39,7 @@ gridOptions.api.refreshView();
 gridOptions.columnApi.sizeColumnsToFit();
 ```
 
-### Listening to Events
+## Listening to Events
 
 - In addition to adding event listeners directly via the `onXxx` prop of `gridOptions` object, it is possible to register for events using `addEventListener` , similar to registering for events on native DOM elements. 
   - This means there are two ways to listen for events: either to use the `onXXX(` ) method on the API, or to register for the event. 
@@ -60,7 +60,7 @@ gridOptions.api.addEventListener('rowClicked', myRowClickedHandler);
 
 - Grid events are asynchronous so that the state of the grid will be settled by the time your event callback gets invoked.
 
-### more about ag-grid api
+## more about ag-grid api
 
 - Where the property is a boolean ( `true` or `false` ), then `false` (or left blank) is the default value. 
   - For this reason, on/off items are presented in a way that causes the most common behavior to be used when the value is `false` . 
@@ -74,7 +74,7 @@ gridOptions.api.addEventListener('rowClicked', myRowClickedHandler);
     - The APIs are also accessible through the component ref itself. 
 - So in summary, in React, everything is done via React Props.
 
-## Column interface
+# Column interface
 
 - The column interface is the combination of the following items:
   - Column Properties
@@ -87,7 +87,7 @@ gridOptions.api.addEventListener('rowClicked', myRowClickedHandler);
     - The Column wraps the Column Definition. 
     - The Column object has attributes, methods and events for interacting with the specific column e.g. `column.isVisible()` .
 
-## Grid Properties
+# Grid Properties
 
 - All of these grid properties are available through the GridOptions interface.
 - Columns
@@ -184,7 +184,7 @@ gridOptions.api.addEventListener('rowClicked', myRowClickedHandler);
   - domLayout
   - rowBuffer
 
-## Grid API
+# Grid API
 
 Columns
 Data
@@ -211,7 +211,7 @@ Status Bar
 Charts
 Miscellaneous
 
-## Grid Events
+# Grid Events
 
 - This is a list of the events that the grid raises. 
   - You can register callbacks for these events through the `GridOptions` interface.
@@ -259,14 +259,14 @@ Miscellaneous
         - CellKeyDown
         - CellValueChangedEvent
 
-## Grid Callbacks
+# Grid Callbacks
 
 - All of these grid callbacks are available through the `GridOptions` interface.
 - getRowHeight(params): 
 - headerCellRenderer(params): 
 - groupRowAggNodes(nodes): 
 
-## Row Node Object
+# Row Node Object
 
 - A Row Node represents one row of data. 
   - The Row Node will contain a reference to the data item your application provided as well as other runtime information about the row. 
@@ -324,7 +324,7 @@ Miscellaneous
     - IDs must be unique
     - IDs must not change
 
-## Column Properties
+# Column Properties
 
 - For column groups, the property `children` is mandatory. When the grid sees `children` it knows it's a column group.
 - Columns and Column Groups
@@ -354,7 +354,7 @@ Miscellaneous
   - headerGroupComponent: Component to use header group.
   - headerGroupComponentParams: Params for the header group component.
 
-## Column API
+# Column API
 
 - Some of the API methods take Column Key (named `colKey` ) which has type `Column | string` . 
   - This means you can pass either a `Column` object (that you receive from calling one of the other methods) or you pass in the Column ID (which is a `string` ). 
@@ -364,7 +364,7 @@ Miscellaneous
 - getColumnGroup(name)
 - getColumn(colKey)
 
-## Column object
+# Column object
 
 - A `Column` object represents a column in the grid. 
   - The `Column` will contain a reference to the column definition your application provided as well as other column runtime information. 

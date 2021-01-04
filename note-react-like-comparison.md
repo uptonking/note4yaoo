@@ -7,9 +7,9 @@ modified: '2020-12-08T14:23:03.540Z'
 
 # note-react-like-comparison
 
-## guide
+# guide
 
-- ### [React vs Preact vs Inferno_202004](https://dev.to/tamb/react-vs-preact-vs-inferno-15go)
+- ## [React vs Preact vs Inferno_202004](https://dev.to/tamb/react-vs-preact-vs-inferno-15go)
 - Preact differs from React in a few ways:
   - There is no synthetic event system. 
     - React ships its own (very heavy) Synthetic Event system that offers a host of benefits but comes with a larger size and slower performance. 
@@ -69,4 +69,4 @@ modified: '2020-12-08T14:23:03.540Z'
     - But Preact is pretty close behind. 
     - The added benefit a larger Preact ecosystem and community makes me prefer Preact over Inferno.  
 
-## pieces
+# pieces

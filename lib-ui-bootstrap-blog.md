@@ -7,7 +7,7 @@ modified: '2020-12-08T13:33:04.764Z'
 
 # lib-ui-bootstrap-blog
 
-## Bootstrap 5 Approach Guide
+# Bootstrap 5 Approach Guide
 
 - We’ll dive into each of these more throughout, but at a high level, here’s what guides our approach.
   - Components should be responsive and mobile-first
@@ -57,7 +57,7 @@ modified: '2020-12-08T13:33:04.764Z'
   - Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors ( `>` ). 
   - This gives you more flexibility in your implementation and helps keep our CSS simpler and less specific.
 
-## [Bootstrap 5 alpha!](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/)
+# [Bootstrap 5 alpha!](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/)
 
 - New look and feel
   - Our docs pages are no longer full-width to improve readability and make our site feel less app-like and more content-like.

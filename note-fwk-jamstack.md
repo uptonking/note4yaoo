@@ -7,7 +7,7 @@ modified: '2020-12-19T18:46:26.818Z'
 
 # note-fwk-jamstack
 
-## guide
+# guide
 
 - usecase
   - static-site-generator
@@ -26,4 +26,4 @@ modified: '2020-12-19T18:46:26.818Z'
   - Cheaper, Easier Scaling
   - Better Developer Experience
 
-## pieces
+# pieces

@@ -7,7 +7,7 @@ modified: '2020-06-30T05:13:55.088Z'
 
 # docs-react-p3-api
 
-## API for React Component Class Definition
+# API for React Component Class Definition
 
 - React lets you define components as classes or functions. 
 - Components defined as classes currently provide more features
@@ -41,7 +41,7 @@ modified: '2020-06-30T05:13:55.088Z'
 	- props
 	- state
 
-- ### `render(): ReactNode`
+- ## `render(): ReactNode`
 - When called, it should examine `this.props` and `this.state` and return one of the following types
   - React elements. 
     - Typically created via JSX. 
@@ -59,7 +59,7 @@ modified: '2020-06-30T05:13:55.088Z'
 - If you need to interact with the browser, perform your work in `componentDidMount()` or the other lifecycle methods instead.
 - Keeping render() pure makes components easier to think about
 
-- ### `constructor(props: Readonly<P>);`
+- ## `constructor(props: Readonly<P>);`
 - It is called before it is mounted.
 - If you don’t initialize state and you don’t bind methods, you don’t need to implement a constructor for your React component.
 - You should not call `setState()` in the `constructor()` . 
@@ -72,7 +72,7 @@ modified: '2020-06-30T05:13:55.088Z'
   - updates to the color prop won’t be reflected in the state
   - Only use this pattern if you intentionally want to ignore prop updates. In that case, it makes sense to rename the prop to be called initialColor or defaultColor
 
-- ### `componentDidMount?(): void`
+- ## `componentDidMount?(): void`
 - It is invoked immediately after a component is mounted (inserted into the tree). 
   - reading `clientHeight` from within componentDidMount should force the browser to do a *sync* layout (not great but sometimes necessary) and return a valid clientHeight.
 - Initialization that requires DOM nodes should go here. 
@@ -86,7 +86,7 @@ modified: '2020-06-30T05:13:55.088Z'
   - In most cases, you should be able to assign the initial state in the `constructor()` instead. 
   - It can, however, be necessary for cases like modals and tooltips, when you need to measure a DOM node before rendering something that depends on its size or position.
 
-- ### `componentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: SS): void`
+- ## `componentDidUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot?: SS): void`
 - It is invoked immediately after updating occurs.
 - Use this as an opportunity to operate on the DOM when the component has been updated. 
 - This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
@@ -95,13 +95,13 @@ modified: '2020-06-30T05:13:55.088Z'
   - If you’re trying to “mirror” some state to a prop coming from above, consider using the prop directly instead.
 - If your component implements the `getSnapshotBeforeUpdate()` lifecycle (which is rare), the value it returns will be passed as a third “snapshot” parameter to `componentDidUpdate()` . Otherwise this parameter will be undefined.
 
-- ### `componentWillUnmount?(): void`
+- ## `componentWillUnmount?(): void`
 - It is invoked immediately before a component is unmounted and destroyed. 
 - Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in `componentDidMount()` .
 - You **should not call `setState()` in `componentWillUnmount()` ** because the component will never be re-rendered. 
 - Once a component instance is unmounted, it will never be mounted again.
 
-- ### `shouldComponentUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean`
+- ## `shouldComponentUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean`
 - It is invoked before rendering when new props or state are being received. 
 - Defaults to `true` . 
 - The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
@@ -114,7 +114,7 @@ modified: '2020-06-30T05:13:55.088Z'
 - Currently, if shouldComponentUpdate() returns false, then componentWillUpdate(), render(), and componentDidUpdate() will not be invoked. 
 - In the future React may treat shouldComponentUpdate() as a hint rather than a strict directive, and returning false may still result in a re-rendering of the component.
 
-- ### `static getDerivedStateFromProps(nextProps, prevState)`
+- ## `static getDerivedStateFromProps(nextProps, prevState)`
 - It is invoked right **before calling the render method**, both on the initial mount and on subsequent updates. 
   - Its presence prevents any of the deprecated lifecycle methods from being invoked
 - It should **return an object to update the state**, or null to update nothing.
@@ -143,20 +143,20 @@ modified: '2020-06-30T05:13:55.088Z'
   - https://tech.youzan.com/getderivedstatefromprops/
   - http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-- ### `getSnapshotBeforeUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>): SS | null`
+- ## `getSnapshotBeforeUpdate?(prevProps: Readonly<P>, prevState: Readonly<S>): SS | null`
 - It is invoked right before the most recently rendered output is committed to e.g. the DOM. 
 - It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. 
 - Any value returned by this lifecycle will be passed as a parameter to `componentDidUpdate()` .
   - A snapshot value (or null) should be returned.
 - It may occur in UIs like a chat thread that need to handle scroll position in a special way
 
-- ### `static getDerivedStateFromError(error)`
+- ## `static getDerivedStateFromError(error)`
 - It is invoked after an error has been thrown by a descendant component. 
 - It receives the error that was thrown as a parameter and should return a value to update state
 - `getDerivedStateFromError()` is called during the “render” phase, so side-effects are not permitted.
 - For those use cases, use componentDidCatch() instead.
 
-- ### `componentDidCatch(error, info)`
+- ## `componentDidCatch(error, info)`
 - It is invoked after an error has been thrown by a descendant component.
 - It receives two parameters:
   - error - The error that was thrown.
@@ -171,21 +171,21 @@ modified: '2020-06-30T05:13:55.088Z'
 - Avoid introducing any side-effects or subscriptions in this method.
   -  For those use cases, use `componentDidMount()` instead.
 
-- ### `componentWillReceiveProps(nextProps)`
+- ## `componentWillReceiveProps(nextProps)`
 - It is invoked before a mounted component receives new props. 
 - If you need to update the state in response to prop changes (for example, to reset it), you may compare this.props and nextProps and perform state transitions using `this.setState()` in this method.
 - Note that if a parent component causes your component to re-render, this method will be called even if props have not changed. 
 - Make sure to compare the current and next values if you only want to handle changes.
 - React only calls this method if some of component’s props may update. Calling this.setState() generally doesn’t trigger this method.
 
-- ### `componentWillUpdate(nextProps, nextState)`
+- ## `componentWillUpdate(nextProps, nextState)`
 - It is invoked just before rendering when new props or state are being received. 
 - Use this as an opportunity to perform preparation before an update occurs. 
 - Note that you cannot call this.setState() here; nor should you do anything else (e.g. dispatch a Redux action) that would trigger an update to a React component before UNSAFE_componentWillUpdate() returns
 - Typically, this method can be replaced by `componentDidUpdate()` . 
 - If you were reading from the DOM in this method (e.g. to save a scroll position), you can move that logic to `getSnapshotBeforeUpdate()` .
 
-- ### `setState(updaterFunc, [callback])`
+- ## `setState(updaterFunc, [callback])`
   - updaterFunc: `(state, props) => stateChange`
 - `setState()` enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. 
 - This is the primary method you use to update the user interface in response to event handlers and server responses.
@@ -211,7 +211,7 @@ this.setState((state) => {
 });
 ```
 
-- ### `component.forceUpdate(callback)`
+- ## `component.forceUpdate(callback)`
 - By default, when your component’s state or props change, your component will re-render. 
 - If your render() method depends on some other data, you can tell React that the component needs re-rendering by calling forceUpdate()
 - Calling forceUpdate() will cause render() to be called on the component, skipping shouldComponentUpdate(). 
@@ -227,11 +227,11 @@ this.setState((state) => {
 - Usually, you don’t need to set it explicitly because it’s inferred from the name of the function or class that defines the component. 
 - You might want to set it explicitly if you want to display a different name for debugging purposes or when you create a higher-order component
 
-- ### `props`
+- ## `props`
 - `this.props` contains the props that were defined by the caller of this component. 
 - `this.props.children` is a special prop, typically defined by the child tags in the JSX expression rather than in the tag itself.
 
-- ### `state`
+- ## `state`
 - `this.state` contains data specific to this component that may change over time. 
 - The state is user-defined, and it should be a plain JavaScript object.
 - If some value isn’t used for rendering or data flow (for example, a timer ID), you don’t have to put it in the state. 
@@ -239,7 +239,7 @@ this.setState((state) => {
 - Never mutate this.state directly, as calling setState() afterwards may replace the mutation you made. 
 - Treat this.state as if it were immutable.
 
-## React Top-Level API
+# React Top-Level API
 
 - Components
   - React. Component
@@ -271,7 +271,7 @@ this.setState((state) => {
   - useLayoutEffect
   - useDebugValue
 
-- ### `React.PureComponent`
+- ## `React.PureComponent`
 - `React.Component` doesn’t implement `shouldComponentUpdate()` , but `React.PureComponent` implements it with a shallow prop and state comparison.
   - src `!shallowEqual(oldProps,newProps) || !shallowEqual(oldState,newState) `
   - Performs equality by iterating through keys on an object
@@ -307,7 +307,7 @@ class App extends React.PureComponent {
 }
 ```
 
-- ### `React.memo`
+- ## `React.memo`
 - React.memo is a higher order component. 
 - It’s similar to `React.PureComponent` but for function components instead of classes.
 - React.memo **only checks for prop changes**. 
@@ -317,10 +317,10 @@ class App extends React.PureComponent {
   - return true if props are equal, false if not equal
 - This method only exists as a performance optimization. Do not rely on it to “prevent” a render, as this can lead to bugs.
 
-- ### `React.createElement(type,[props],[...children])`
+- ## `React.createElement(type,[props],[...children])`
 - Code written with JSX will be converted to use React.createElement().
 
-- ### `React.cloneElement(element,[props],[...children])`
+- ## `React.cloneElement(element,[props],[...children])`
 - Clone and return a new React element using element as the starting point. 
 - The resulting element will have the original element’s props with the new props merged in shallowly. 
 - New children will replace existing children. 
@@ -333,7 +333,7 @@ class App extends React.PureComponent {
 - `React.isValidElement(object)`
 - Verifies the object is a React element.
 
-- ### `React.Children`
+- ## `React.Children`
 - `React.Children.map(children, function[(thisArg)])`
   - If children is a `Fragment` , it will be treated as a single child and not traversed.
 - `React.Children.forEach(children, function[(thisArg)])`
@@ -347,13 +347,13 @@ class App extends React.PureComponent {
   - React. Children.toArray() changes keys to preserve the semantics of nested arrays when flattening lists of children. 
   - That is, toArray prefixes each key in the returned array so that each element’s key is scoped to the input array containing it.
 
-- ### `React.Fragment`
+- ## `React.Fragment`
 - return multiple elements in a render() method without creating an additional DOM element
 
-- ### `React.createRef`
+- ## `React.createRef`
 - creates a ref that can be attached to React elements via the `ref` attribute
 
-- ### `React.forwardRef`
+- ## `React.forwardRef`
 - creates a React component that forwards the ref attribute it receives to another component below in the tree
 - Forwarding refs to DOM components
 - Forwarding refs in higher-order-components
@@ -362,20 +362,20 @@ class App extends React.PureComponent {
   - This function should return a React node.
 - forwardRef lets us deprecate `findDOMNode` (in strict mode). And once we decide where to put ref (second arg or props object) we can deprecate forwardRef and it'll just always be passed. But often need to add before we can remove. Stepping stones.
 
-- ### `const MyComponent = React.lazy(() => import('./MyComponent'));`
+- ## `const MyComponent = React.lazy(() => import('./MyComponent'));`
 - define a component that is loaded dynamically. 
 - This helps reduce the bundle size to delay loading components that aren’t used during the initial render.
 - use it for code splitting 
 - Rendering lazy components requires that there’s a `<React.Suspense>` component higher in the rendering tree
 - Using React.lazy with dynamic import requires Promises to be available in the JS environment. 
 
-- ### `React.Suspense`
+- ## `React.Suspense`
 - specify the loading indicator in case some components in the tree below it are not yet ready to render. 
 - Today, lazy loading components is **the only use case** supported by `<React.Suspense>`
 - The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
 - While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching.
 
-## ReactDOM
+# ReactDOM
 
 - The `react-dom` package provides DOM-specific methods that can be used at the top level of your app and as an escape hatch to get outside of the React model if you need to. 
 - Most of your components should not need to use this module
@@ -385,7 +385,7 @@ class App extends React.PureComponent {
   - findDOMNode()
   - createPortal()
 
-- ### `ReactDOM.render(element, container[, callback])`
+- ## `ReactDOM.render(element, container[, callback])`
 - Render a React element into the DOM in the supplied `container` and return a reference to the component (or returns null for stateless components).
 - If the React element was previously rendered into container, this will perform an update on it 
   - and only mutate the DOM as necessary to reflect the latest React element.
@@ -399,7 +399,7 @@ class App extends React.PureComponent {
   - ou need a reference to the root ReactComponent instance, the preferred solution is to attach a callback ref to the root element.
 - Using ReactDOM.render() to hydrate a server-rendered container is deprecated and will be removed in React 17. Use hydrate() instead
 
-- ### `ReactDOM.hydrate(element, container[, callback])`
+- ## `ReactDOM.hydrate(element, container[, callback])`
 - Same as `ReactDOM.render()` , but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer. 
 - React will attempt to attach event listeners to the existing markup.
 - React expects that the rendered content is identical between the server and the client.
@@ -410,12 +410,12 @@ class App extends React.PureComponent {
 - If you intentionally need to render something different on the server and the client, you can do a two-pass rendering. 
   - this approach will make your components slower because they have to render twice, so use it with caution
 
-- ### `ReactDOM.unmountComponentAtNode(container)`
+- ## `ReactDOM.unmountComponentAtNode(container)`
 - Remove a mounted React component from the DOM and clean up its event handlers and state. 
 - If no component was mounted in the container, calling this function does nothing. 
 - Returns `true` if a component was unmounted and `false` if there was no component to unmount.
 
-- ### `ReactDOM.findDOMNode(component)`
+- ## `ReactDOM.findDOMNode(component)`
 - It is an escape hatch used to access the underlying DOM node. 
 - In most cases, use of this escape hatch is discouraged because it pierces the component abstraction. 
 - It has been deprecated in StrictMode.
@@ -429,10 +429,10 @@ class App extends React.PureComponent {
 - If you try to call this on a component that has not been mounted yet (like calling `findDOMNode()` in `render()` on a component that has yet to be created), an exception will be thrown.
 - findDOMNode cannot be used on function components.
 
-- ### `ReactDOM.createPortal(child, container)`
+- ## `ReactDOM.createPortal(child, container)`
 - Portals provide a way to render children into a DOM node that exists outside the hierarchy of the DOM component.
 
-## ReactDOMServer
+# ReactDOMServer
 
 - ReactDOMServer enables you to render components to static markup.
 	- Typically, it's used on a Node server
@@ -443,13 +443,13 @@ class App extends React.PureComponent {
 	- renderToNodeStream()
 	- renderToStaticNodeStream()
 
-- ### `ReactDOMServer.renderToString(element)`
+- ## `ReactDOMServer.renderToString(element)`
 - Render a React element to its initial HTML. 
 - Return an HTML string. 
 - You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
 - If you call ReactDOM.hydrate() on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
 
-- ### `ReactDOMServer.renderToStaticMarkup(element)`
+- ## `ReactDOMServer.renderToStaticMarkup(element)`
 - Similar to `renderToString` , except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot.`
 - This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.  
 - If you plan to use React on the client to make the markup interactive, do not use this method. 
@@ -466,7 +466,7 @@ class App extends React.PureComponent {
 - `ReactDOMServer.renderToStaticNodeStream(element)`
 - Similar to `renderToNodeStream` , except this doesn’t create extra DOM attributes that React uses internally
 
-## DOM Elements
+# DOM Elements
 
 - React implements a browser-independent DOM system for performance and cross-browser compatibility. 
 - In React, all DOM properties and attributes (including event handlers) should be camelCased.
@@ -512,7 +512,7 @@ class App extends React.PureComponent {
 - Similarly, all SVG attributes are fully supported
 - You may also use custom attributes as long as they’re fully lowercase.
 
-## SyntheticEvent
+# SyntheticEvent
 
 - Your event handlers will be passed instances of `SyntheticEvent` , a cross-browser wrapper around the browser's native event. 
 - It has the same interface as the browser's native event, including stopPropagation() and preventDefault(), except the **events work identically across all browsers**.
@@ -564,7 +564,7 @@ class App extends React.PureComponent {
 	- Transition Events
 	- Other Events
 
-## Test Utilities
+# Test Utilities
 
 - `import ReactTestUtils from 'react-dom/test-utils';`
 - At Facebook we use Jest for painless JavaScript testing.
@@ -627,7 +627,7 @@ expect(result.props.children).toEqual([
 - `shallowRenderer.getRenderOutput()`
 	- get the shallowly rendered output.
 
-## Test Renderer
+# Test Renderer
 
 - `import TestRenderer from 'react-test-renderer';`
 - This package provides a React renderer that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment.
@@ -687,12 +687,12 @@ expect(testInstance.findByProps({ className: "sub" }).children).toEqual(['Sub'])
 - The component type corresponding to this test instance. 
 - For example, a `<Button />` component has a type of `Button` .
 
-## JavaScript Environment Requirements
+# JavaScript Environment Requirements
 
 - React 16 depends on the collection types `Map` and `Set` .
 - React also depends on `requestAnimationFrame` (even in test environments).
 
-## Glossary of React Terms
+# Glossary of React Terms
 
 - Single-page Application
   - Any interactions with the page or subsequent pages do not require a round trip to the server which means the page is not reloaded

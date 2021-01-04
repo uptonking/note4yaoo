@@ -7,7 +7,7 @@ modified: '2020-07-20T03:11:44.525Z'
 
 # docs-web-html-global-attr
 
-## guide
+# guide
 
 - [Global attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
   - Global attributes are attributes common to all HTML elements; 

@@ -7,11 +7,11 @@ modified: '2020-12-27T20:28:20.539Z'
 
 # web-dev-fwk-vanillajs-comp
 
-## react-like
+# react-like
 
-## more-vanillajs-components
+# more-vanillajs-components
 
-### [Vanilla Components Draft](https://github.com/websdk/vanilla)
+## [Vanilla Components Draft](https://github.com/websdk/vanilla)
 
 - The primary design goals are to refine the boundaries/seams of components, and maximise the ergonomics of authoring components. 
 - This is to separate out the concerns of and enable further customisations and innovations to take place orthogonal to the implementation of components. 
@@ -45,7 +45,7 @@ component.call(node, data)
   - pemrouz/d3-chosen
   - https://github.com/vanillacomponents/ux-input
 
-## ref
+# ref
 
 - [Vanilla JavaScript Components](https://medium.com/bunnyllc/vanilla-js-components-8d20c58b69f4)
 - [To people who work in JS, how often do you use vanilla vs a framework or library?](https://www.reddit.com/r/javascript/comments/7y4r4u/to_people_who_work_in_js_how_often_do_you_use/)

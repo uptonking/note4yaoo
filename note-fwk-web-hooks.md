@@ -7,14 +7,14 @@ modified: '2020-12-08T13:29:40.625Z'
 
 # note-fwk-web-hooks
 
-## guide
+# guide
 
 - hooks的js实现
   - lighterhtml和neverland
 
-## hooks-blog
+# hooks-blog
 
-### [TinyJSX](https://github.com/stanchino/tiny-jsx)
+## [TinyJSX](https://github.com/stanchino/tiny-jsx)
 
 - TinyJSX is a lightweight UI JavaScript library for developing user interfaces using functional components.
 - TinyJSX exposes an API which mimics the recent React Hooks implementation but is really small.
@@ -43,7 +43,7 @@ function Clock() {
 render(<Clock />, document.body);
 ```
 
-### [A Critique of React Hooks_202004](https://dillonshook.com/a-critique-of-react-hooks/)
+## [A Critique of React Hooks_202004](https://dillonshook.com/a-critique-of-react-hooks/)
 
 1. More Stuff to Learn
   - The problem with learning about hooks is that they're not generally applicable knowledge about computing or programming. 
@@ -97,7 +97,7 @@ render(<Clock />, document.body);
   - It very much brings to mind object/class-system implementations.
 - I don't think FP purity is the point of hooks, the advantage is the ability to compose them, more easily than HOCs.
 
-### [How to Create Hooks In Javascript – A Beginner’s Guide_202009](https://code-boxx.com/create-javascript-hooks/)
+## [How to Create Hooks In Javascript – A Beginner’s Guide_202009](https://code-boxx.com/create-javascript-hooks/)
 
 - Hooks are usually used to intercept(拦截；阻拦) procedures, and possibly change the way they act. 
 - But hooks are not natively supported in Javascript, we can only simulate hooks using functions and events
@@ -258,7 +258,7 @@ doAJAX("1b-dummy.html");
     - They interrupt the normal process 
     - and we usually place them before the function starts, or just before the function ends
 
-### [Javascript Hook System](https://coderwall.com/p/tfmxya/javascript-hook-system)
+## [Javascript Hook System](https://coderwall.com/p/tfmxya/javascript-hook-system)
 
 - I have written a little hook/plugin system for Javascript 
   - as I needed to have a base class which other developers could then hook their functions into prior to other functionality running.
@@ -314,7 +314,7 @@ ClassName.prototype.myMethod = function() {
 }
 ```
 
-### [Reactive UI’s with VanillaJS – Part 1: Pure Functional Style](https://css-tricks.com/reactive-uis-vanillajs-part-1-pure-functional-style/)
+## [Reactive UI’s with VanillaJS – Part 1: Pure Functional Style](https://css-tricks.com/reactive-uis-vanillajs-part-1-pure-functional-style/)
 
 - Part1: Pure Functional Style
 - Part2: [Class Based Components](https://css-tricks.com/reactive-uis-vanillajs-part-2-class-based-components/)
@@ -324,7 +324,7 @@ ClassName.prototype.myMethod = function() {
 - If you’ve ever used a templating engine like Handlebars or Swig, their syntax looks pretty similar to function-style React code.
 - In this pair of posts, our target use case is websites that might otherwise be static, but would benefit from JavaScript-based rendering were it not for the overhead of setting up a framework like React. Blogs, forums, etc.
 
-## ref
+# ref
 
 - [Emulating React and JSX in Vanilla JS](https://www.toptal.com/javascript/emulating-react-jsx-in-vanilla-javascript)
   - Working directly with the DOM works and gets the job done, 

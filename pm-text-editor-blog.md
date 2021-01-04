@@ -7,7 +7,7 @@ modified: '2020-12-24T18:18:19.568Z'
 
 # pm-text-editor-blog
 
-## [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
+# [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
 
 - https://github.com/psyhyde/domino-editor
   - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher

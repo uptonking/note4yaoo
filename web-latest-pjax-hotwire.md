@@ -1,13 +1,13 @@
 ---
 title: web-latest-pjax-hotwire
-tags: [framework, frontend, hotwire, latest, pjax, web]
+tags: [frontend, hotwire, latest, pjax, web]
 created: '2020-12-23T15:36:47.371Z'
-modified: '2020-12-23T16:36:17.373Z'
+modified: '2021-01-04T16:06:29.569Z'
 ---
 
 # web-latest-pjax-hotwire
 
-## pjax
+# pjax
 
 - https://github.com/MoOx/pjax
   - /1.1kStar/MIT/201910/js
@@ -29,7 +29,7 @@ modified: '2020-12-23T16:36:17.373Z'
   - If the server is configured for pjax, it can render only partial page contents and thus avoid the potentially costly full layout render.
 - No more full page reloads. No more multiple HTTP requests.
 
-## Hotwire
+# Hotwire
 
 - https://github.com/hotwired/hotwire-rails
   - /141Star/MIT/202012/ruby
@@ -59,7 +59,7 @@ modified: '2020-12-23T16:36:17.373Z'
 - it’s not concerned with rendering HTML at all. 
 - Instead, it’s designed to augment your HTML with just enough behavior to make it shine. - Stimulus pairs beautifully with Turbo to provide a complete solution for fast applications with a minimal amount of effort.
 
-## BigPipe
+# BigPipe
 
 - https://github.com/bigpipe/bigpipe
   - /1.2kStar/MIT/201510/js

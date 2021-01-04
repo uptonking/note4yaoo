@@ -7,14 +7,14 @@ modified: '2020-11-08T10:40:45.221Z'
 
 # lib-lit-html-dev
 
-## guide
+# guide
 
 - lit-html特点
   - standard js, no compiler needed
   - no vdom
 - lit-element特点
 
-- ### Since lit-html uses web components, how is it different from React components ?
+- ## Since lit-html uses web components, how is it different from React components ?
 - https://twitter.com/h4rishabh/status/1280178522062012417
 - To clarify, lit-html doesn't require web components
   - it just renders standard HTML which includes web components. 
@@ -42,17 +42,17 @@ modified: '2020-11-08T10:40:45.221Z'
     - removing attributes if data is missing 
     - and diffing against live property values.
 
-## pieces
+# pieces
 
 - The primary drawback of lit-html to me is that it doesn't seem to work with Typescript as well as JSX does (specifically for custom component props)
   - This is the territory of linting/IDE plugins, as popularity picks up these things will come as well. But you're right today there is more for JSX.
   - I usually only create a web component for the view and then create functions that return a template for the components
 
-## discuss
+# discuss
 
  
 
-- ### I was bit confused about using lit-html over React 
+- ## I was bit confused about using lit-html over React 
 - https://twitter.com/h4rishabh/status/1280185672632958977
 - I would kind of think of `lit-html` like everything that happens when React renders. 
   - Or put another way: lit-html isn't a complete replacement for React. 
@@ -72,7 +72,7 @@ modified: '2020-11-08T10:40:45.221Z'
 - Aside from the natural interoperability of web components, low-lock-in is one of our goals with LitElement. 
   - It shouldn't do so much that you can't easily migrate away from it.
 
-- ### use lit-html with polymer components?
+- ## use lit-html with polymer components?
 - https://twitter.com/aboodman/status/1306299867757641728
 - Material Web Components are made with LitElement and lit-html 
 - Inputs are a special case because they maintain their own state. There are two ways to handle that:
@@ -86,7 +86,7 @@ modified: '2020-11-08T10:40:45.221Z'
 - I'm not sure I understand the issue.
   - Just like stateful built-in elements, a stateful web component can be used in a "controlled" way with some fairly simple event handling and state management.
 
-- ### What's the purpose of lit-html and hyperhtml?
+- ## What's the purpose of lit-html and hyperhtml?
 - https://www.reddit.com/r/javascript/comments/8iydo2/whats_the_purpose_of_lithtml_and_hyperhtml/
 - lit-html is a replacement for vdom, and is a little lower level than what something like react does. 
   - It may someday be the basis for a framework like react though.
@@ -98,7 +98,7 @@ modified: '2020-11-08T10:40:45.221Z'
   - so you don't have to spend half your time on the boilerplate Webpack/build setup before you actually code. 
   - It's just plain JS. 
 
-## ref
+# ref
 
 - [The history of hyperHTML followed by lit-html](https://gist.github.com/WebReflection/ab43649d9e4a53ac900b5924c77a310e)
 - [Easy apps with hyperHTML — 1, wire/bind_201809](https://dev.to/pinguxx/easy-apps-with-hyperhtml-1-31cc)

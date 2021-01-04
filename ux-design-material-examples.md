@@ -7,7 +7,7 @@ modified: '2021-01-01T20:08:16.810Z'
 
 # ux-design-material-examples
 
-## material-components-guide
+# material-components-guide
 
 - material-components-web
   - 缺点
@@ -22,9 +22,9 @@ modified: '2021-01-01T20:08:16.810Z'
 - ref
   - [rmwc: Foundation Adapter Implementation](https://github.com/jamesmfriedman/rmwc/issues/141)
 
-## material components for react
+# material components for react
 
-- ### material-components-web-react
+- ## material-components-web-react
 - https://github.com/material-components/material-components-web-react
   - 未使用hooks，基于class组件实现
   - 常用props
@@ -59,7 +59,7 @@ return (
 
  
 
-- ### rmwc
+- ## rmwc
 - https://github.com/jamesmfriedman/rmwc
   - Tag组件可通过tag属性设置html标签名或react组件，还可设置ref属性
   - createComponent方法会获取传入的组件，返回一个调用forwardRef生成的组件
@@ -105,7 +105,7 @@ return (
 
  
 
-- ### preact-material-components
+- ## preact-material-components
 - https://github.com/prateekbh/preact-material-components
   - `abstract class MaterialComponent extends React.Component`
     - 实例属性: MDComponent,mdcProps,mdcNotifyProps,classText,control,ripple
@@ -120,7 +120,7 @@ return (
 
  
 
-## 使用material-design-web的示例项目
+# 使用material-design-web的示例项目
 
 - https://github.com/lucka-me/mapler
   - Web app to make map as wallpaper

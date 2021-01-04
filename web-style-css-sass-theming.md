@@ -7,7 +7,7 @@ modified: '2021-01-01T20:07:04.485Z'
 
 # web-style-css-sass-theming
 
-## guide
+# guide
 
 - 切换主题的重点
   - 如何生成多套主题：主题公共部分拆分，基于scss变量、css vars
@@ -15,9 +15,9 @@ modified: '2021-01-01T20:07:04.485Z'
 - 一套主题包含所有组件 vs 一个组件的样式包含多套主题
   - theme-ui给出的方案是前者，使用带约束的样式值
 
-## sass-theming
+# sass-theming
 
-- ### [SCSS Theming with Dynamic Variables](https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables)
+- ## [SCSS Theming with Dynamic Variables](https://stackoverflow.com/questions/57815278/scss-theming-with-dynamic-variables)
 - 使用scss变量和mixin生成多套theme
   - The problem about this approach (apart from being tedious to maintain) is that it will bloat your CSS with things that are not related to theming – in the example above border will be repeated.
 
@@ -114,7 +114,7 @@ div {
 }
 ```
 
-- ### [Sass Theming: The Neverending Story_2015](https://www.sitepoint.com/sass-theming-neverending-story/)
+- ## [Sass Theming: The Neverending Story_2015](https://www.sitepoint.com/sass-theming-neverending-story/)
 - **The individual mixins approach**
 - Thanks to property-named mixins, the API is both clean and clear, even to a non-experienced developer.
 - This approach involves several mixins instead of one which might or might not be considered as extra complexity, even if most of them are just clones.
@@ -258,7 +258,7 @@ div {
 }
 ```
 
-- ### [Is there a way to add dark mode to my application with SCSS?](https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss)
+- ## [Is there a way to add dark mode to my application with SCSS?](https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss)
 - 基于scss变量和mixin编译出多主题的样式到同一个文件
   - Javascript is only used to toggle the class of your root element.
   - You don't have to define separate classes of themes for each element.
@@ -330,7 +330,7 @@ $themes: (
 }
 ```
 
-## pieces
+# pieces
 
 - 3 easy steps:
   - Compile all themes into different files upon deploy. This will take care of timestamping, zipping, etc.
@@ -356,7 +356,7 @@ function loadCSS(url) {
   - Then we iterate over each theme, substitute the dynamic properties into the auto generated theme class, and you're off to the races
   - 写theme样式时多用scss变量，然后通过循环逻辑编译出不同theme的样式类
 
-## ref
+# ref
 
 - [Theming Web Apps with SASS_2017](https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1)
 - [User theme switching with SASS - Ruby on Rails](https://stackoverflow.com/questions/8744941/user-theme-switching-with-sass-ruby-on-rails)

@@ -7,7 +7,7 @@ modified: '2020-12-21T07:44:45.828Z'
 
 # web-browser-blog
 
-## Performance best practices for Firefox front-end engineers
+# Performance best practices for Firefox front-end engineers
 
 - [Performance best practices for Firefox front-end engineers](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Performance_best_practices_for_Firefox_fe_engineers)
 
@@ -180,7 +180,7 @@ Services.scriptloader.loadSubScriptWithOptions(myScriptURL, { async: true }).the
 });
 ```
 
-## Tips for authoring fast-loading HTML pages
+# Tips for authoring fast-loading HTML pages
 
 - [Tips for authoring fast-loading HTML pages](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Author_fast-loading_HTML_pages)
 

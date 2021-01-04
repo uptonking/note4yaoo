@@ -7,7 +7,7 @@ modified: '2020-12-08T13:06:30.259Z'
 
 # lib-editorjs-docs
 
-## editorjs-intro
+# editorjs-intro
 
 - features
   - block-styled editor 较少了复杂度
@@ -66,7 +66,7 @@ modified: '2020-12-08T13:06:30.259Z'
   - Note that `type` field in Block data is the key of object of Editor config's `tools` property. 
     - In other words, it can be changed by you own.
 
-## Creating a Block Tool
+# Creating a Block Tool
 
 - In this series of articles, we will learn how to create a full-featured Block Tool step-by-step.
 
@@ -123,7 +123,7 @@ class SimpleImage {
   - It's good to be sure that saved HTML content includes only allowed tags and attributes — only created by Inline Toolbar in our case.
   - Editor.js has a build-in Sanitizer module. 
 
-## Creating an Inline Tool
+# Creating an Inline Tool
 
 - Inline Tools allow you to make your text more informative. 
   - The simplest examples of them are bold, italic, and underline modifiers which are commonly used.

@@ -7,11 +7,11 @@ modified: '2020-12-24T17:16:40.241Z'
 
 # web-styling-css-tips
 
-## guide
+# guide
 
-## blog
+# blog
 
-### [Debugging CSS: Some Tips and Tricks](https://dev.to/sheelah_b/debugging-css-some-tips-and-tricks-bek)
+## [Debugging CSS: Some Tips and Tricks](https://dev.to/sheelah_b/debugging-css-some-tips-and-tricks-bek)
 
 - In this article I'll provide some strategies I've used for troubleshooting CSS when things are not working as expected
 - **Generic Layout Issues**

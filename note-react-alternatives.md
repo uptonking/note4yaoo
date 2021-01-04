@@ -7,9 +7,9 @@ modified: '2020-12-12T09:11:07.197Z'
 
 # note-react-alternatives
 
-## react-alternatives
+# react-alternatives
 
-### preact
+## preact
 
 - https://github.com/preactjs/preact
   - /27.8kStar/MIT/202011/js
@@ -40,7 +40,7 @@ modified: '2020-12-12T09:11:07.197Z'
   - The community size is yet to reach the competition with React. 
   - Preact lacks innovation and mostly mimics React.
 
-### Inferno
+## Inferno
 
 - https://github.com/infernojs/inferno
   - /14.6kStar/MIT/202011/ts
@@ -65,7 +65,7 @@ modified: '2020-12-12T09:11:07.197Z'
   - The setState works synchronously. 
   - To use any of the React components, you first need to write and use a React component.
 
-## react-like-repos
+# react-like-repos
 
 - https://github.com/NervJS/nerv
   - /5.3kStar/MIT/202006/ts
@@ -102,7 +102,7 @@ modified: '2020-12-12T09:11:07.197Z'
 - https://github.com/z81/kekjs
   - React like UI library
 
-### react-api-like
+## react-api-like
 
 - Crank
   - Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.
@@ -135,7 +135,7 @@ modified: '2020-12-12T09:11:07.197Z'
 - https://github.com/alephjs/aleph.js
   - The React Framework in Deno.
 
-## ref
+# ref
 
 - [Best React-like JSX UI libraries in 2020_202007](https://areknawo.com/best-react-like-jsx-ui-libraries-in-2020/)
 - [6 Best Alternatives to ReactJS_202007](https://www.bacancytechnology.com/blog/best-react-js-alternatives)

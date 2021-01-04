@@ -7,7 +7,7 @@ modified: '2020-12-21T08:06:27.126Z'
 
 # web-css-tips
 
-## solutions-catalog-css
+# solutions-catalog-css
 
 - bulma
 

@@ -7,13 +7,13 @@ modified: '2020-12-21T07:46:02.608Z'
 
 # web-dom
 
-## repeat
+# repeat
 
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
   - class, contenteditable, data-*, draggable, dropzone, hidden, id, style
   - tabindex, title
 
-## pieces
+# pieces
 
 - The `DocumentFragment` interface represents a minimal document object that has no parent. 
   - It is used as a lightweight version of `Document` that stores a segment of a document structure comprised of nodes just like a standard document. 
@@ -122,7 +122,7 @@ modified: '2020-12-21T07:46:02.608Z'
   - 可以用meta标签把viewport的宽度设为那个理想的宽度，如果不知道这个设备的理想宽度是多少，那么用device-width这个特殊值就行了，同时initial-scale=1也有把viewport的宽度设为理想宽度的作用
   - 为什么分辨率大的这个手机的理想宽度要跟分辨率小的那个手机的理想宽度一样呢？只有这样才能保证同样的网站在不同分辨率的设备上看起来差不多
 
-## element
+# element
 
 - select vs dropdown
   - select各浏览器都有实现，dropdown需要自己实现

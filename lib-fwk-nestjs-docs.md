@@ -9,9 +9,9 @@ modified: '2020-12-17T09:11:31.952Z'
 
 - Node.js framework for building scalable server-side applications.
 
-## guide
+# guide
 
-## Overview
+# Overview
 
 - Nestjs uses progressive JavaScript, is built with and fully supports TypeScript (yet still enables developers to code in pure JavaScript) 
   - and combines elements of OOP (Object Oriented Programming), FP (Functional Programming), and FRP (Functional Reactive Programming).
@@ -43,7 +43,7 @@ modified: '2020-12-17T09:11:31.952Z'
   - Whichever platform is used, it exposes its own application interface. 
   - These are seen respectively as `NestExpressApplication` and `NestFastifyApplication`.
 
-## Controllers
+# Controllers
 
 - A controller's purpose is to receive specific requests for the application. 
 - Controllers are responsible for handling incoming requests and returning responses to the client.
@@ -169,7 +169,7 @@ export class CatsController {
 }
 ```
 
-## Providers
+# Providers
 
 - Providers are a fundamental concept in Nest. 
   - Many of the basic Nest classes may be treated as a provider – services, repositories, factories, helpers, and so on. 
@@ -206,7 +206,7 @@ export class CatsController {
 - we need to register the service with Nest so that it can perform the injection
   - We do this by editing our module file (`app.module.ts`) and adding the service to the providers array of the `@Module()` decorator.
 
-## Modules
+# Modules
 
 - A module is a class annotated with a `@Module()` decorator. 
 -  The `@Module()` decorator provides metadata that Nest makes use of to organize the application structure.
@@ -243,7 +243,7 @@ export class CatsController {
 - dynamic modules feature enables you to easily create customizable modules that can register and configure providers dynamically
 - Note that the properties returned by the dynamic module extend (rather than override) the base module metadata defined in the `@Module()` decorator. 
 
-## Middleware
+# Middleware
 
 - Middleware is a function which is called before the route handler. 
   - Middleware functions have access to the request and response objects, and the `next()` middleware function in the application’s request-response cycle. 
@@ -274,7 +274,7 @@ export class CatsController {
 - in order to bind multiple middleware that are executed sequentially, simply provide a comma separated list inside the `apply()` method
 - If we want to bind middleware to every registered route at once, we can use the `use()` method that is supplied by the `INestApplication` instance
 
-## Exception filters
+# Exception filters
 
 - Nest comes with a built-in exceptions layer which is responsible for processing all unhandled exceptions across an application
 - When an exception is not handled by your application code, it is caught by this layer, which then automatically sends an appropriate user-friendly response.
@@ -294,7 +294,7 @@ export class CatsController {
   - Exception filters are designed for exactly this purpose. 
   - They let you control the exact flow of control and the content of the response sent back to the client.
 
-## Pipes
+# Pipes
 
 - A pipe is a class annotated with the `@Injectable()` decorator. 
 - Pipes should implement the `PipeTransform` interface.
@@ -324,7 +324,7 @@ export class CatsController {
   - The `DefaultValuePipe` serves that purpose. 
   - Simply instantiate a `DefaultValuePipe` in the `@Query()` decorator before the relevant Parse* pipe
 
-## Guards
+# Guards
 
 - A guard is a class annotated with the `@Injectable()` decorator. 
 - Guards should implement the `CanActivate` interface.
@@ -352,7 +352,7 @@ export class CatsController {
   - if it returns true, the request will be processed.
   - if it returns false, Nest will deny the request.
 
-## Interceptors
+# Interceptors
 
 - An interceptor is a class annotated with the `@Injectable()` decorator. 
 - Interceptors should implement the `NestInterceptor` interface.
@@ -381,7 +381,7 @@ export class CatsController {
 - There are several reasons why we may sometimes want to completely prevent calling the handler and return a different value instead. 
   - An obvious example is to implement a cache to improve response time.
 
-## Request lifecycle
+# Request lifecycle
 
 - Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.
 - With the use of middleware, pipes, guards, and interceptors, it can be challenging to track down where a particular piece of code executes during the request lifecycle, especially as global, controller level, and route level components come into play. 
@@ -432,7 +432,7 @@ export class CatsController {
   - Exception filters (route, then controller, then global)
   - Server response
 
-## Custom route decorators
+# Custom route decorators
 
 - Nest is built around a language feature called decorators.
 - An ES2016 decorator is an expression which returns a function and can take a target, name and property descriptor as arguments. 
@@ -444,7 +444,7 @@ export class CatsController {
 - Working with pipes
 - Decorator composition#
 
-## Custom providers
+# Custom providers
 
 - Dependency Injection is built in to the Nest core in a fundamental way. 
 - Dependency injection is an inversion of control (IoC) technique wherein you delegate instantiation of dependencies to the IoC container (in our case, the NestJS runtime system), instead of doing it in your own code imperatively
@@ -465,7 +465,7 @@ export class CatsController {
   - **A provider can supply any value**.
   - For example, a provider may supply an array of configuration objects based on the current environment, 
 
-## Asynchronous providers
+# Asynchronous providers
 
 - At times, the application start should be delayed until one or more asynchronous tasks are completed. 
   -  For example, you may not want to start accepting requests until the connection with the database has been established. 
@@ -475,7 +475,7 @@ export class CatsController {
   - Nest will await resolution of the promise before instantiating any class that depends on (injects) such a provider.
 - Asynchronous providers are injected to other components by their tokens, like any other provider. 
 
-## Dynamic modules
+# Dynamic modules
 
 - Modules define groups of components like providers and controllers that fit together as a modular part of an overall application. 
   - They provide an execution context, or scope, for these components. 
@@ -495,7 +495,7 @@ export class CatsController {
 - dynamic modules provide an API for importing one module into another, and customizing the properties and behavior of that module when it is imported, 
   - as opposed to using the static bindings we've seen so far.
 
-## Injection scopes
+# Injection scopes
 
 - Remember that Node.js doesn't follow the request/response Multi-Threaded Stateless Model in which every request is processed by a separate thread. 
 - Hence, using singleton instances is fully safe for our applications.
@@ -508,7 +508,7 @@ export class CatsController {
   - Hence, it will slow down your average response time and overall benchmarking result. 
   - Unless a provider must be request-scoped, it is strongly recommended that you use the default singleton scope.
 
-## Circular dependency
+# Circular dependency
 
 - A circular dependency occurs when two classes depend on each other. 
 - Circular dependencies can arise in Nest between modules and between providers.
@@ -525,7 +525,7 @@ export class CatsController {
 - An alternative to using `forwardRef()` is to refactor your code 
   - and use the `ModuleRef` class to retrieve a provider on one side of the (otherwise) circular relationship
 
-## Module reference
+# Module reference
 
 - Nest provides the `ModuleRef` class to navigate the internal list of providers and obtain a reference to any provider using its injection token as a lookup key. 
   - The `ModuleRef` class also provides a way to dynamically instantiate both static and scoped providers. 
@@ -538,7 +538,7 @@ export class CatsController {
 - To dynamically instantiate a class that wasn't previously registered as a provider, use the module reference's `create()` method.
   - This technique enables you to conditionally instantiate different classes outside of the framework container.
 
-## Execution context
+# Execution context
 
 - Nest provides several utility classes that help make it easy to write applications that function across multiple application contexts (e.g., Nest HTTP server-based, microservices and WebSockets application contexts). 
 - These utilities provide information about the current execution context which can be used to build generic guards, filters, and interceptors that can work across a broad set of controllers, methods, and execution contexts.
@@ -567,7 +567,7 @@ export class CatsController {
   - Reflector can be injected into a class in the normal way
   - The Reflector#get method allows us to easily access the metadata by passing in two arguments: a `metadata` key and a `context` (decorator target) to retrieve the metadata from. 
 
-## Lifecycle events
+# Lifecycle events
 
 - A Nest application, as well as every application element, has a lifecycle managed by Nest. 
 - Nest provides lifecycle hooks that give visibility into key lifecycle events, and the ability to act (run registered code on your module, injectable or controller) when they occur.
@@ -577,7 +577,7 @@ export class CatsController {
 - Nest calls registered lifecycle hook methods on modules, injectables and controllers at each of the following lifecycle events 
 - Nest also calls the appropriate underlying methods to begin listening for connections, and to stop listening for connections.
 
-## Platform agnosticism
+# Platform agnosticism
 
 - Nest is a platform-agnostic framework. 
 - This means you can develop reusable logical parts that can be used across different types of applications.
@@ -592,7 +592,7 @@ export class CatsController {
 - Fastify is much faster than Express, achieving almost two times better benchmarks results.
 - Express is widely-used, well-known, and has an enormous set of compatible middleware, which is available to Nest users out-of-the-box.
 
-## Standalone applications
+# Standalone applications
 
 - There are several ways of mounting a Nest application. 
   - You can create a web app, a microservice or just a bare Nest standalone application (without any network listeners). 
@@ -603,7 +603,7 @@ export class CatsController {
 
 - The standalone application object allows you to obtain a reference to any instance registered within the Nest application
 
-## Database
+# Database
 
 - Nest is database agnostic, allowing you to easily integrate with any SQL or NoSQL database. 
 - At the most general level, connecting Nest to a database is simply a matter of loading an appropriate Node.js driver for the database, just as you would with Express or Fastify.
@@ -612,7 +612,7 @@ export class CatsController {
 - For integrating with SQL and NoSQL databases, Nest provides the `@nestjs/typeorm` package.
   - Nest uses TypeORM because it's the most mature Object Relational Mapper (ORM) available for TypeScript
 
-## Configuration
+# Configuration
 
 - Applications often run in different environments. 
 - Depending on the environment, different configuration settings should be used. 
@@ -624,7 +624,7 @@ export class CatsController {
 - A good approach for using this technique in Nest is to create a `ConfigModule` that exposes a `ConfigService` which loads the appropriate `.env` file. 
   - While you may choose to write such a module yourself, for convenience Nest provides the `@nestjs/config` package out-of-the box. 
 
-## HTTP module
+# HTTP module
 
 - Axios is richly featured HTTP client package that is widely used.
 - Nest wraps Axios and exposes it via the built-in `HttpModule`.
@@ -634,7 +634,7 @@ export class CatsController {
   - All `HttpService` methods return an `AxiosResponse` wrapped in an Observable object.
   - Axios can be configured with a variety of options to customize the behavior of the `HttpService`.
 
-## Caching
+# Caching
 
 - Caching is a great and simple technique that helps improve your app's performance. 
 - It acts as a temporary data store providing high performance data access.
@@ -647,48 +647,48 @@ export class CatsController {
 - You may want to asynchronously pass in module options instead of passing them statically at compile time. 
   - In this case, use the `registerAsync()` method, which provides several ways to deal with async configuration.
 
-## Serialization
+# Serialization
 
 - Serialization is a process that happens before objects are returned in a network response. 
 - This is an appropriate place to provide rules for transforming and sanitizing the data to be returned to the client.
 - Nest provides a built-in capability to help ensure that these operations can be performed in a straightforward way.
 - While this chapter shows examples using HTTP style applications (e.g., Express or Fastify), the `ClassSerializerInterceptor` works the same for WebSockets and Microservices, regardless of the transport method that is used.
 
-## Cookies
+# Cookies
 
 - An HTTP cookie is a small piece of data stored by the user's browser. 
   - Cookies were designed to be a reliable mechanism for websites to remember stateful information. 
   - When the user visits the website again, the cookie is automatically sent with the request.
 - The middleware will parse the `Cookie` header on the request and expose the cookie data as the property `req.cookies`
 
-## Session
+# Session
 
 - HTTP sessions provide a way to store information about the user across multiple requests, which is particularly useful for MVC applications.
 - apply the `express-session` middleware as global middleware
   - The default server-side session storage is purposely not designed for a production environment. 
   - It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
 
-## Compression
+# Compression
 
 - Compression can greatly decrease the size of the response body, thereby increasing the speed of a web app.
   - For high-traffic websites in production, it is strongly recommended to offload(卸载；清除) compression from the application server - typically in a reverse proxy (e.g., Nginx). 
   - In that case, you should not use compression middleware.
 - Use the express compression middleware package to enable gzip compression.
 
-## File upload
+# File upload
 
 - To handle file uploading, Nest provides a built-in module based on the multer middleware package for Express. 
 - Multer handles data posted in the `multipart/form-data` format, which is primarily used for uploading files via an HTTP POST request.
   - Multer cannot process data which is not in the `multipart/form-data` format
 
-## Task Scheduling
+# Task Scheduling
 
 - Task scheduling allows you to schedule arbitrary code (methods/functions) to execute at a fixed date/time, at recurring intervals, or once after a specified interval. 
   - In the Linux world, this is often handled by packages like `cron` at the OS level. 
   - For Node.js apps, there are several packages that emulate cron-like functionality. 
   - Nest provides the `@nestjs/schedule` package, which integrates with the popular Node.js `node-cron` package.
 
-## Queues
+# Queues
 
 - Queues are a powerful design pattern that help you deal with common application scaling and performance challenges. 
 - Some examples of problems that Queues can help you solve are:
@@ -703,13 +703,13 @@ export class CatsController {
   - Bull uses Redis to persist job data, so you'll need to have Redis installed on your system. 
   - Because it is Redis-backed, your Queue architecture can be completely distributed and platform-independent
 
-## Events
+# Events
 
 - `@nestjs/event-emitter` provides a simple observer implementation, allowing you to subscribe and listen for various events that occur in your application. 
 - Events serve as a great way to decouple various aspects of your application, since a single event can have multiple listeners that do not depend on each other.
 - `EventEmitterModule` internally uses the `eventemitter2` package.
 
-## Model-View-Controller
+# Model-View-Controller
 
 - Nest, by default, makes use of the Express library under the hood. 
 - Hence, every technique for using the MVC (Model-View-Controller) pattern in Express applies to Nest as well
@@ -718,7 +718,7 @@ export class CatsController {
   - When Nest detects the `@Res()` decorator, it injects the library-specific `response` object. 
   - We can use this object to dynamically render the template.
 
-## Server-Sent Events
+# Server-Sent Events
 
 - Server-Sent Events (SSE) is a server push technology enabling a client to receive automatic updates from a server via HTTP connection. 
 - Each notification is sent as a block of text terminated by a pair of newlines
@@ -749,7 +749,7 @@ eventSource.onmessage = ({ data }) => {
 };
 ```
 
-## Authentication
+# Authentication
 
 - Passport is the most popular node.js authentication library, 
 - At a high level, Passport executes a series of steps to:
@@ -763,7 +763,7 @@ eventSource.onmessage = ({ data }) => {
   - Once authenticated, the server will issue a JWT that can be sent as a bearer token in an authorization header on subsequent requests to prove authentication. 
   - We'll also create a protected route that is accessible only to requests that contain a valid JWT.
 
-## Authorization
+# Authorization
 
 - Authorization refers to the process that determines what a user is able to do. 
 - Authorization is orthogonal and independent from authentication.
@@ -782,13 +782,13 @@ eventSource.onmessage = ({ data }) => {
 - CASL is an isomorphic authorization library which restricts what resources a given client is allowed to access. 
   - It's designed to be incrementally adoptable and can easily scale between a simple claim based and fully featured subject and attribute based authorization.
 
-## Rate limiting
+# Rate limiting
 
 - A common technique to protect applications from brute-force attacks is rate-limiting. 
 - Many Express packages exist to provide a rate-limiting feature. 
 - A popular one is express-rate-limit.
 
-## WebSockets
+# WebSockets
 
 - In Nest, a gateway is simply a class annotated with` @WebSocketGateway()` decorator. 
 - Technically, gateways are platform-agnostic which makes them compatible with any WebSockets library once an adapter is created. 
@@ -809,7 +809,7 @@ eventSource.onmessage = ({ data }) => {
 - The WebSockets module is platform-agnostic, 
   - hence, you can bring your own library (or even a native implementation) by making use of `WebSocketAdapter` interface. 
 
-## Microservice
+# Microservice
 
 - In addition to traditional (sometimes called monolithic) application architectures, Nest natively supports the microservice architectural style of development
 - Wherever possible, Nest abstracts implementation details so that the same components can run across HTTP-based platforms, WebSockets, and Microservices.

@@ -7,7 +7,7 @@ modified: '2020-12-08T14:15:41.392Z'
 
 # docs-web-events
 
-## guide
+# guide
 
 - ref
   - [Event developer guide](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
@@ -15,7 +15,7 @@ modified: '2020-12-08T14:15:41.392Z'
   - [Creating and triggering events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events)
   - [Comparison of Event Targets](https://developer.mozilla.org/en-US/docs/Web/API/Event/Comparison_of_Event_Targets)
 
-## event overview
+# event overview
 
 - `event.target` is a reference to the object that dispatched the event. 
   - It identifies the element on which the event occurred and which may be its direct descendent.
@@ -23,7 +23,7 @@ modified: '2020-12-08T14:15:41.392Z'
   - It is the element you actually bound the event to. 
   - This will never change.
 
-## MouseEvent
+# MouseEvent
 
 - `MouseEvent.offsetX`
   - The offsetX read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse pointer between that event and the padding edge of the target node. 
@@ -63,7 +63,7 @@ modified: '2020-12-08T14:15:41.392Z'
 
   - 
 
-## EventSource
+# EventSource
 
 - The EventSource interface is web content's interface to server-sent events. 
   - An EventSource instance opens a persistent connection to an HTTP server, which sends events in `text/event-stream` format. 

@@ -7,15 +7,15 @@ modified: '2021-01-01T20:08:38.154Z'
 
 # ux-design-system-dev
 
-## guide
+# guide
 
-## pieces
+# pieces
 
-## discuss
+# discuss
 
  
 
-- ### In our design system, we have 2 different space scales:
+- ## In our design system, we have 2 different space scales:
 - https://twitter.com/markdalgleish/status/1280029511807983617
   - Between UI elements (e.g. within a `<Stack>`)
   - Between wrapping lines of text (implicit in the relationship between font size and line height)
@@ -42,13 +42,13 @@ modified: '2021-01-01T20:08:38.154Z'
 - Material UI uses a `gutterBottom` prop to add same space below an typography element element.  
   - Don't know if that would be better than adding Stack between multiple texts
 
-- ### When I look back at old design system components I made that have surrounding white space.
+- ## When I look back at old design system components I made that have surrounding white space.
 - https://twitter.com/markdalgleish/status/1222710937167118336
 - Putting responsibilities in the right place is IMO the hardest thing to get right in software. 
   - When you do get it right, the solution seems so simple and lots of code tends to just melt away. 
   - But it takes years of practice and diligence to get there.
 
-- ### avoid adding default spacing (margin/padding) in your design system components
+- ## avoid adding default spacing (margin/padding) in your design system components
 - https://twitter.com/sseraphini/status/1286756399268192256
 - Padding yes, margin no.
   - Padding is essential for some components that need to keep a certain aspect. 
@@ -56,7 +56,7 @@ modified: '2021-01-01T20:08:38.154Z'
   - They need to be self contained, so adding margin would demand extra work from outside to get it placed.
 - I think it's ok to use padding, but margin breaks component encapsulation bringing worst side effects.
 
-- ### What's your preferred style of controlling margins for components?
+- ## What's your preferred style of controlling margins for components?
 - https://twitter.com/siddharthkp/status/1042780297744539649
   1. Bake them in the components
   2. Let the app take care of it with utilities
@@ -83,7 +83,7 @@ modified: '2021-01-01T20:08:38.154Z'
     - Simple example: add spacing between chips but not after the last one. 
     - Not possible with margin in a clean way but it’s very simple using stack abstraction.
 
-- ### Exposing the internal DOM structure of the components in your design system is very dangerous
+- ## Exposing the internal DOM structure of the components in your design system is very dangerous
 - https://twitter.com/devongovett/status/1197945884455030784
   - and you're probably doing it unintentionally.
     * className/style
@@ -111,7 +111,7 @@ modified: '2021-01-01T20:08:38.154Z'
   - but now I am in a position where we ship a library that exposes a few public class names for customization.
   - I haven't thought of a better solution except "render props" to offer customizability.
 
-- ### Do you use layout components in your React app? What do their APIs look like?
+- ## Do you use layout components in your React app? What do their APIs look like?
 - https://twitter.com/mxstbr/status/1235354464975904768
   - (for example, Seek's design system has `<Stack />, <Columns />` etc)
 - For a tiny app of mine I use three spacing components vertical, horizontal, around
@@ -124,7 +124,7 @@ modified: '2021-01-01T20:08:38.154Z'
   - where the item-related props determine the column span. 
   - Also `<Stack />, <Tiles />, <Spacer />` etc.
 
-- ### The difference between a component library and a design system is whether or not your components have 'className' and 'style' props.
+- ## The difference between a component library and a design system is whether or not your components have 'className' and 'style' props.
 - https://twitter.com/markdalgleish/status/1308330959973027846
 - me using the `sx` prop
 - I thought the difference was calling it a design system when you're trying to impress people.

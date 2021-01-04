@@ -7,11 +7,11 @@ modified: '2020-07-14T09:26:44.529Z'
 
 # lang-java-jvm
 
-## classloader
+# classloader
 
-## gc
+# gc
 
-## GraalVM
+# GraalVM
 
 - GraalVM is a universal virtual machine for running applications written in JavaScript, Python, Ruby, R, JVM-based languages like Java, Scala, Groovy, Kotlin, Clojure, and LLVM-based languages such as C and C++.
 - 支持多语言编程的通用虚拟机

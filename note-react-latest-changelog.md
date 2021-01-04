@@ -7,14 +7,14 @@ modified: '2020-07-14T11:54:44.711Z'
 
 # note-react-latest-changelog
 
-## features
+# features
 
 - 16.8-hooks
 - 16.6-lazy loading with Suspense
 - 16.3-new context api
 - 16.0-fiber reconciliation
 
-## changelog
+# changelog
 
 - ref
   - https://github.com/facebook/react/blob/master/CHANGELOG.md       

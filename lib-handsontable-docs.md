@@ -7,7 +7,7 @@ modified: '2020-12-08T13:07:05.202Z'
 
 # lib-handsontable-docs
 
-## summary
+# summary
 
 - rowHeights/colWidths能够设置各行/各列的高度/宽度的默认值，也是最小值
 - stretchH能使表格充满容器宽度，且各列水平均分
@@ -59,12 +59,12 @@ modified: '2020-12-08T13:07:05.202Z'
 - Currently the best way to style Handsontable is to use custom renderers.
 - Links/click events from custom renderers not working 
 
-## resources
+# resources
 
 - docs
   - https://handsontable.com/docs
 
-## Known limitations
+# Known limitations
 
 - It uses several dependencies
   - Our team follows the "proudly found elsewhere" principle which encourages us to make use of the great work done by other developers. 
@@ -80,7 +80,7 @@ modified: '2020-12-08T13:07:05.202Z'
   - [Fixing more columns than visible in the viewport breaks scrolling](https://github.com/handsontable/handsontable/issues/4259)
   - [Rewrite custom borders to use SVGs insead of DIVs](https://github.com/handsontable/handsontable/issues/6467)
 
-## pieces
+# pieces
 
 - handsontable分离了cell value的显示displaying和修改altering，renderer负责displaying，editor负责altering。
   - renderer是function，接受实际值，返回html
@@ -241,7 +241,7 @@ hot1.render();
   - checkbox copy之后是true
   - linux 不能使用ctrl多选
 
-## changelog
+# changelog
 
 - 7.0.0-20190306
   - Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.

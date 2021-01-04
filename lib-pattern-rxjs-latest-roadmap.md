@@ -7,14 +7,14 @@ modified: '2020-12-14T14:44:16.570Z'
 
 # lib-pattern-rxjs-latest-roadmap
 
-## guide
+# guide
 
 - ref
   - [[WIP] Roadmap V7](https://github.com/ReactiveX/rxjs/issues/5795)
 
-## latest
+# latest
 
-### [RxJS 7 and Beyond: What to Expect and Prepare For_202012](https://labs.thisdot.co/blog/rxjs-7-and-beyond-what-to-expect-and-prepare-for)
+## [RxJS 7 and Beyond: What to Expect and Prepare For_202012](https://labs.thisdot.co/blog/rxjs-7-and-beyond-what-to-expect-and-prepare-for)
 
 - we interviewed Ben Lesh, the author of RxJS, on the most recent updates for RxJS 7 and its targeted release date.
 - Better TypeScript typings

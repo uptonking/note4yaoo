@@ -8,7 +8,7 @@ modified: '2020-12-08T13:16:16.666Z'
 
 # docs-web-css-layout
 
-## display
+# display
 
 - The display CSS property sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex.
 - `display` property sets an element's inner and outer display types. 
@@ -110,7 +110,7 @@ modified: '2020-12-08T13:16:16.666Z'
 - ref
   - [display：contents 与消失的盒模型](https://www.zcfy.cc/article/vanishing-boxes-with-display-contents-1693.html)
 
-## position
+# position
 
 - sets how an element is positioned in a document. 
 - The top, right, bottom, and left properties determine the final location of positioned elements.
@@ -173,7 +173,7 @@ modified: '2020-12-08T13:16:16.666Z'
 - ref
   - [mdn: positon](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
-## float
+# float
 
 - 容器并没有把浮动的子元素包围起来，俗称塌陷
 - 如果父元素只包含浮动元素，且父元素未设置高度和宽度的时候，那么它的高度就会塌缩为零，也就是所谓的**高度塌陷**

@@ -76,7 +76,7 @@ modified: '2021-01-01T20:06:50.117Z'
     - you now have direct access to the theme context created by a ThemeProvider
   - css prop和styled最终生成组件的结构非常相似
 
-- ## style object vs template literals(TTLs) 书写样式，使用模板字符串，还是对象
+- ## style object vs template literals(TTLs) 关于样式书写，使用模板字符串，还是对象
   - style object
     - 当需要动态变化的样式属性有很多时，使用对象cleaner
     - 样式对象更方便计算及复用，如spread operator和destructuring

@@ -7,9 +7,9 @@ modified: '2020-12-22T14:08:27.952Z'
 
 # note-react-rfc-server
 
-## react server components
+# react server components
 
-## guide
+# guide
 
 - RSC优点
   - 将数据请求频繁的组件和计算仅放在服务端执行，减轻客户端压力
@@ -43,9 +43,9 @@ modified: '2020-12-22T14:08:27.952Z'
   - ssr渲染到html是同步的，渲染时不能取数
     - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
 
-## discuss
+# discuss
 
-- ### I want to recap a few points from our talk about the different kinds of components.
+- ## I want to recap a few points from our talk about the different kinds of components.
 - https://twitter.com/dan_abramov/status/1342260256638951425
 - Server Components are the new proposed kind of components. 
   - They execute on the server, and on the server only. 
@@ -97,7 +97,7 @@ modified: '2020-12-22T14:08:27.952Z'
   - It's hot module replacement, but in production.
     - And it's not a dev triggering the reload but a machine, the server.
 
-- ### New video: React Server Components(with Next.js Demo)
+- ## New video: React Server Components(with Next.js Demo)
 - https://twitter.com/leeerob/status/1344741266135912458
   - https://github.com/vercel/next-server-components
   - How is this different from PHP/Rails?
@@ -105,7 +105,7 @@ modified: '2020-12-22T14:08:27.952Z'
   - Why Hybrid Applications?
   - React Suspense and Concurrent Mode
 
-- ### [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
+- ## [如何看待 React Server Components？](https://www.zhihu.com/question/435921124/answers/updated)
 
 - 业务开发中需要权衡三个点：体验（user experience）、可维护性（maintenance）、性能（performance）
   - 这是一个很常见的组件化组合的场景，问题在于每个组件都需要不同的数据，
@@ -268,7 +268,7 @@ modified: '2020-12-22T14:08:27.952Z'
 - 感觉就是Suspense和lazyload的云端实现，
   - lazy load 已经是lazy了，那这个component 是从本地引入的还是云端的，就没有什么太大的区别了。
 
-## [rsc faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
+# [rsc faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
 
 - not-yet
   - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender如何实现，性能如何
@@ -375,13 +375,13 @@ modified: '2020-12-22T14:08:27.952Z'
   - Rx is a great solution for managing streams of data. 
   - Rx is a good fit for implementing a transport layer to receive the stream of rendered UI chunks that React creates on the server and stream them to the client.
 
-### [pr: React Server Components](https://github.com/reactjs/rfcs/pull/188)
+## [pr: React Server Components](https://github.com/reactjs/rfcs/pull/188)
 
 - One of the reason I loved hooks is that it solved REAL problems for us that were currently preventing scale in our React applications, 
   - where-as I feel like for me personally this doesn't solve real problems I'm currently facing in my React projects.
   - For me personally, I wouldn't trade a fractional increase in performance for the complexity this brings to a project, especially when I have many other levers I can pull before pulling this one.
 
-### [RFC: React Server Components](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md)
+## [RFC: React Server Components](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md)
 
 - Server Components allow developers to build apps that span the server and client, 
   - combining the rich interactivity of client-side apps with the improved performance of traditional server rendering
@@ -524,14 +524,14 @@ function Note(props) {
   - you can run the demo app without needing a database.
   - you won't be able to execute SQL queries (but fetch should still work).
 
-## pieces
+# pieces
 
 - Cool, React can now do what PHP has been able to for decades.
   - PHP is definitely an inspiration, but there are a few different nuances:
     - Being able to *refetch* a Server tree without blowing away the Client state inside of it.
     - Being able to choose to run the same component on the server *or* on the client (for fast interactions).
 
-- ### What do React Server Components mean for the ecosystem and frameworks like Next.js?(from vercel dev)
+- ## What do React Server Components mean for the ecosystem and frameworks like Next.js?(from vercel dev)
   - https://twitter.com/leeerob/status/1341818958794657795
   - Server Components reduce client bundle size and improve startup time. 
     - Since they run on the server, you can access data sources like databases and file systems directly.
@@ -575,7 +575,7 @@ function Note(props) {
     - because React.memo still needs to do a diff of the component’s props 
     - and it’s gonna be re-rendered if there’s a change in its state or context.
 
-- ### Can someone help me understand who React Server components are for?
+- ## Can someone help me understand who React Server components are for?
   - https://twitter.com/RyanCarniato/status/1341485603695730688
   - I get what they do. I get how they work. 
     - But you could clearly fetch/stream data isomorphically. 

@@ -9,7 +9,7 @@ modified: '2020-12-08T13:27:16.321Z'
 
 - Redux is a predictable state container for JavaScript apps.
 
-## dev-tips
+# dev-tips
 
 - we ultimately wound up shipping three hooks:
   - `useSelector` : subscribes to the store and returns the selected value
@@ -19,7 +19,7 @@ modified: '2020-12-08T13:27:16.321Z'
 - 通过redux的combineReducers可以很好的扁平化数据
 - compose：作用是从右到左来组合多个函数，其实就是让你少写几个函数嵌套， `compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`
 
-## resources
+# resources
 
 - redux api docs
 	- https://cn.redux.js.org/docs/api/
@@ -32,7 +32,7 @@ modified: '2020-12-08T13:27:16.321Z'
 - examples
 	- https://redux.js.org/introduction/examples
 
-## react-redux 
+# react-redux 
 
 - ref
   - [react-redux 杂谈 - 设计结构变迁](https://zhuanlan.zhihu.com/p/86336676)
@@ -64,7 +64,7 @@ modified: '2020-12-08T13:27:16.321Z'
   - In v5, connected components re-ran `mapState` immediately in the subscribe callbacks, and only called `setState()` once they knew they needed to re-render. 
   - In v6, every store update calls `setState()` at the root of the component tree in `<Provider>` , and forces React to walk the component tree to find the consumers before they can even run `mapState` . That's a very meaningful difference.
 
-### v7
+## v7
 
 - As with v5 and earlier, v7 wrapper components all subscribe to the store directly, and only get React involved when the selector logic determines that the wrapper component needs to re-render. This was the first key step in bringing performance back to the level of v5.
   - React has always had an API called unstable_batchedUpdates(). Internally, React wraps all your event handlers inside of that, which is what allows React to batch together multiple state updates from one event tick into a single render pass.
@@ -91,9 +91,9 @@ modified: '2020-12-08T13:27:16.321Z'
   - React already uses this internally for its own event handler callbacks. 
   - This API is actually part of the renderer packages like ReactDOM and React Native, not the React core itself.
 
-## redux docs
+# redux docs
 
-### Getting Started with Redux
+## Getting Started with Redux
 
 - The whole state of your app is stored in an object tree inside a single store.  
 - The only way to change the state tree is to emit an action, an object describing what happened.
@@ -132,7 +132,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- You need a single source of truth for your state
 	- You find that keeping all your state in a top-level component is no longer sufficient
 
-### Motivation
+## Motivation
 
 - 随着单页应用开发日趋复杂，JavaScript需要管理比任何时候都要多的state 
 	- 这些 state 可能包括服务器响应、缓存数据、本地生成尚未持久化到服务器的数据
@@ -143,7 +143,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- However, managing the state of your data is left up to you. This is where Redux enters.
 - Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. 
 
-### Core Concepts
+## Core Concepts
 
 - your app's state is described as a plain object
 	- This object is like a “model” except that there are no setters. 
@@ -152,14 +152,14 @@ store.dispatch({ type: 'INCREMENT' })
 	-  to tie state and actions together, we write a function called a reducer
 - Reducer is a function that takes state and action as arguments, and returns the next state of the app.
 
-### Three Principles
+## Three Principles
 
 - Redux can be described in three fundamental principles:
 - The state of your whole application is stored in an object tree within a single store.
 - The only way to change the state is to emit an action, an object describing what happened.
 - To specify how the state tree is transformed by actions, you write pure reducers.
 
-### Prior Art 先前技术
+## Prior Art 先前技术
 
 - Flux
 	- store, action, dispatcher, view
@@ -167,7 +167,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- Elm is a functional programming language inspired by Haskell
 - Immutable js
 
-### Ecosystem
+## Ecosystem
 
 - Library Integration and Bindings
 	- react-redux
@@ -218,7 +218,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- redux-subspace
 	- redux-doghouse
 
-### Actions
+## Actions
 
 - Actions are plain JavaScript objects. 
 	- Actions must have a type property that indicates the type of action being performed. Types should typically be defined as string constants.
@@ -236,7 +236,7 @@ store.dispatch({ type: 'INCREMENT' })
 	- You can use `bindActionCreators()` to automatically bind many action creators to a dispatch() function.
 - Action creators can also be asynchronous and have side-effects.
 
-### Reducers
+## Reducers
 
 - Reducers specify how the application's state changes in response to actions sent to the store. 
 	- actions only describe what happened, but don't describe how the application's state changes.
@@ -255,7 +255,7 @@ store.dispatch({ type: 'INCREMENT' })
 - each of these reducers is managing its own part of the global state. The state parameter is different for every reducer, and corresponds to the part of the state it manages.
 - like other reducers, combineReducers() does not create a new object if all of the reducers provided to it do not change state.
 
-### Store
+## Store
 
 - The store has the following responsibilities:
 	- Holds application state;
@@ -272,7 +272,7 @@ store.dispatch({ type: 'INCREMENT' })
 
 	  - Returns: `(Function)` : A function that unsubscribes the change listener.
 
-### Data flow
+## Data flow
 
 - Redux architecture revolves around a strict unidirectional data flow
 	- 严格的单向数据流是Redux架构的核心
@@ -287,13 +287,13 @@ store.dispatch({ type: 'INCREMENT' })
 	- Now, the UI can be updated to reflect the new state. 
 		- If you use bindings like React Redux, this is the point at which component.setState(newState) is called.
 
-### Redux used with React
+## Redux used with React
 
 - Designing Presentational Components
 - Designing Container Components
 - Passing the Store
 
-### Async Actions
+## Async Actions
 
 - When you call an asynchronous API, there are two crucial moments in time:
 	- the moment you start the call
@@ -330,13 +330,13 @@ store.dispatch({ type: 'INCREMENT' })
 	- This function doesn't need to be pure;
 - Async action creators are especially convenient for server rendering. 
 
-### Async Flow
+## Async Flow
 
 - Without middleware, Redux store only supports synchronous data flow. This is what you get by default with createStore().
 - Asynchronous middleware like redux-thunk or redux-promise wraps the store's dispatch() method and allows you to dispatch something other than actions, for example, functions or Promises. 
 	- When the last middleware in the chain dispatches an action, it has to be a plain object. This is when the synchronous Redux data flow takes place.
 
-### Middleware
+## Middleware
 
 - Redux middleware provides a third-party extension point between dispatching an action, and the moment it reaches the reducer. 
 	- Redux middleware can be used for logging, crash reporting, talking to an asynchronous API, routing, and more.
@@ -366,7 +366,7 @@ const logger = store => next => action => {
 }
 ```
 
-### Usage with React Router
+## Usage with React Router
 
 <Provider /> is the higher-order component provided by React Redux that lets you bind Redux to React
 
@@ -376,7 +376,7 @@ const logger = store => next => action => {
 - React Router Redux 将你的 redux 应用和 react-router 绑定在一起，并且使它们保持同步
 	- 如果没有这层绑定，你将不能通过时光旅行来回放 action，除非你需要这个，不然 React-router 和 Redux 完全可以分开操作
 
-## Redux Tips
+# Redux Tips
 
 - we have to consider several things before we start coding, 
 	- such as: how to configure a store, store size, data structure, state model, middlewares, environment, async transactions, immutability, etc..
@@ -389,7 +389,7 @@ const logger = store => next => action => {
 - redux comes with Scalability
 -  the best practice is to keep coding and learning
 
-### Configuring Your Store
+## Configuring Your Store
 
 - Most apps extend the functionality of their Redux store by adding middleware or store enhancers
 	- middleware adds extra functionality to the Redux dispatch function
@@ -397,7 +397,7 @@ const logger = store => next => action => {
 - 可以将所有配置 store 相关的逻辑（包括引入 reducer、middleware、enhancer）都放置于一个单独用于处理它们的文件中
 - middlwares 和 enhancers 都被定义为数组，与实际使用它们的函数分离开来，这样可以很容易地为不同情况添加更多的 middleware 或 enhancer
 
-### Implementing Undo History
+## Implementing Undo History
 
 - 撤销历史也是应用 state 的一部分，无论 state 如何随着时间不断变化，你都需要追踪 state 在不同时刻的历史记录
 - state设计
@@ -419,7 +419,7 @@ const logger = store => next => action => {
 
 - 参考 https://cn.redux.js.org/docs/recipes/ImplementingUndoHistory.html
 
-### Isolating Redux Sub-Apps
+## Isolating Redux Sub-Apps
 
 - 假设一个大应用（对应 <BigApp> 组件）包含了很多小的子应用（对应<SubApp />)
 	- 这些 <SubApp> 是完全独立的，并不共享数据或 action，也互不可见且不需要通信
@@ -428,7 +428,7 @@ const logger = store => next => action => {
 - 为了使用 React API 来隐藏 Redux 的痕迹，可以在组件的构造方法里初始化 store 并把它包到一个特殊的组件中
 - 如果应用间需要共享数据，不 推荐使用这个模式
 
-### Redux FAQ
+## Redux FAQ
 
 https://cn.redux.js.org/docs/FAQ.html  
 
@@ -601,9 +601,9 @@ https://cn.redux.js.org/docs/FAQ.html
 	- Second, cache an abbreviated form of a record when possible. 
 	- Third, only cache a single copy of a record. T
 
-##  API Reference
+#  API Reference
 
-## changelog
+# changelog
 
 - 4.0.1-20181013
 	- Use same return type for both StoreCreator signatures
@@ -648,11 +648,11 @@ https://cn.redux.js.org/docs/FAQ.html
 - react-redux is the official React binding for Redux.      
 - It lets your React components read data from a Redux store, and dispatch actions to the store to update data.
 
-## dev-tips
+# dev-tips
 
-## resources
+# resources
 
 - docs
     - https://react-redux.js.org/introduction/quick-start
 
-## react-redux docs 
+# react-redux docs 

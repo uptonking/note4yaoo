@@ -7,7 +7,7 @@ modified: '2020-08-10T05:59:44.535Z'
 
 # lib-react-base-table-dev
 
-## BaseTable表格组件ui结构层次
+# BaseTable表格组件ui结构层次
 
 - BaseTable/--fixed
   - BaseTable__table/-main
@@ -74,7 +74,7 @@ modified: '2020-08-10T05:59:44.535Z'
 }
 ```
 
-## 功能实现细节
+# 功能实现细节
 
 - row是flex container
 - col span
@@ -100,7 +100,7 @@ modified: '2020-08-10T05:59:44.535Z'
 }
 ```
 
-## issues
+# issues
 
 - [pr: Row select and customized row select with prop feature](https://github.com/Autodesk/react-base-table/pull/39)
   - I'd say I didn't include selection feature to BaseTable on purpose, as there are different behaviors for that, and I want to keep BaseTable unopinionated
@@ -109,9 +109,9 @@ modified: '2020-08-10T05:59:44.535Z'
   - 因为merged cell width是直接根据 `style.width` 来的，对于 `fixed={false}` 的情况，width其实并不是真实的宽度，因为是flex布局，是个好问题，之前从来没考虑过这种情况，我们内部是必须 `fixed={true}` 的时候才能用column groups， `fixed && columnGroups && !Array.isArray(headerHeight) && !headerRenderer && headerGroupHeight` ; 
   - 感觉想不到比较好的解决办法，因为在flex布局下，每个cell的宽度都是自动计算的，里面还涉及flexGrow/flexShrink/flexBasis的情况，唯一能想到的方法就是去取渲染后每个cell的真实宽度，然后再render group cell，这里就必须用 `flex: 0 0 widthpx` 了，不过还是感觉有点复杂
 
-## roadmap
+# roadmap
 
-- ### [Roadmap for V2.0](https://github.com/Autodesk/react-base-table/issues/3)
+- ## [Roadmap for V2.0](https://github.com/Autodesk/react-base-table/issues/3)
   - Don't use Grid for table header
   - Replace react-virtualized with react-window 
   - remove deprecated lifecycles #10

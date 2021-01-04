@@ -7,7 +7,7 @@ modified: '2020-07-14T11:27:32.700Z'
 
 # docs-react-p2-advanced-guides
 
-## JSX In Depth
+# JSX In Depth
 
 - JSX just provides syntactic sugar for the `React.createElement(componentType, props, ...children)` function
   - Create and return a new React element of the given type. 
@@ -99,7 +99,7 @@ modified: '2020-07-14T11:27:32.700Z'
 
 	
 
-## React Without ES6
+# React Without ES6
 
 - 声明类
   - 使用class `class Greeting extends React.Component{}`
@@ -128,7 +128,7 @@ var Greeting = createReactClass({
 	- createReactClass()作为一个属性 `mixins: [SetIntervalMixin]`
 	
 
-## React Without JSX
+# React Without JSX
 
 - Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)` . 
   - So, anything you can do with JSX can also be done with just plain JavaScript.
@@ -143,7 +143,7 @@ ReactDOM.render(
 );
 ```
 
-## Fragments
+# Fragments
 
 - A common pattern in React is for a component to *return multiple elements*. 
   - A common pattern is for a component to return a list of children. 
@@ -153,7 +153,7 @@ ReactDOM.render(
 - In the future, we may add support for additional attributes, such as event handlers.
 - You can use `<></>` the same way you’d use any other element except that it doesn’t support keys or attributes.
 
-## Context
+# Context
 
 - Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 - In a typical React application, data is passed top-down (parent to child) via props
@@ -245,7 +245,7 @@ ReactDOM.render(
 - 因为context使用reference相等来确定何时重新渲染，每当Provider重新渲染时，Consumer子组件也会渲染
   - 解决方法是将Provider的value属性值放在state中初始化
 
-## Context API (Legacy)
+# Context API (Legacy)
 
 ``` js
 const PropTypes = require('prop-types');
@@ -293,7 +293,7 @@ MessageList.childContextTypes = {
 };
 ```
 
-## Refs and the DOM
+# Refs and the DOM
 
 - Refs provide a way to access DOM nodes or React elements created in the render method.
 - In the typical React dataflow, props are the only way that parent components interact with their children.
@@ -400,7 +400,7 @@ class Parent extends React.Component {
 - 不建议在父组件中直接访问子组件的实例方法来完成某些逻辑，在大部分情况下请使用标准的react数据流的方式来代替则更为清晰；
 - 不要在组件的render方法中访问ref引用，render方法只是返回一个虚拟dom，这时组件不一定挂载到dom中或者render返回的虚拟dom不一定会更新到dom中。
 
-## Forwarding Refs
+# Forwarding Refs
 
 - Ref forwarding is a technique for automatically passing a ref through a component to one of its children
 - Forwarding refs to DOM components
@@ -455,7 +455,7 @@ export default logProps(FancyButton);
 - `React.forwardRef` accepts a render function that receives `props` and `ref` parameters and returns a React node.
 - If you name the render function, DevTools will also include its name (e.g. ”ForwardRef(myFunction)”) 
 
-##  Uncontrolled Components
+#  Uncontrolled Components
 
 - In a controlled component, form data is handled by a React component. 
 - The alternative is **uncontrolled components, where form data is handled by the DOM itself**.
@@ -469,7 +469,7 @@ export default logProps(FancyButton);
   - You should use the File API to interact with the files. 
   - `this.fileInput.current.files[0].name`
 
-## Higher-Order Components
+# Higher-Order Components
 
 - A higher-order component(HOC) is an advanced technique in React for reusing component logic
 - **A higher-order component is a function that takes a component and returns a new component**.
@@ -604,7 +604,7 @@ function getDisplayName(WrappedComponent) {
 
   - 这需要清楚的知道有哪些静态方法需要拷贝，可以使用hoist-non-react-statics来自动处理，它会自动拷贝所有非React的静态方法
 
-## Render Props
+# Render Props
 
 - render prop refers to a technique for sharing code between React components using a prop whose value is a function.
   - function as prop
@@ -741,7 +741,7 @@ return <Bar value = "ghi" / > // still renders "abcdef"
 // It 's a pretty subtle mistake, which is why I think it's dangerous / incorrect to suggest binding as a solution, especially when the binding isn 't even necessary in the particular example.
 ```
 
-## Portals
+# Portals
 
 - Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
 - `ReactDOM.createPortal(child, container)`
@@ -759,7 +759,7 @@ return <Bar value = "ghi" / > // still renders "abcdef"
 - If a child component requires to be attached to the DOM tree immediately when mounted, for example to measure a DOM node, or uses 'autoFocus' in a descendant, *add state to Modal* and only render the children when Modal is inserted in the DOM tree.
 - Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals.
 
-## Optimizing Performance
+# Optimizing Performance
 
 - Use the Production Build
 - Profiling Components with the Chrome Performance Tab: 使用Chrome性能分析工具分析组件性能
@@ -822,7 +822,7 @@ return <Bar value = "ghi" / > // still renders "abcdef"
     - It is equivalent to implementing shouldComponentUpdate() with a shallow comparison of current and previous props and state.
 - shouldComponentUpdate原理示意图
 
-## Profiler
+# Profiler
 
 - Profiler measures how often a React application renders and what the “cost” of rendering is. 
   - Its purpose is to help identify parts of an application that are slow and may benefit from optimizations such as memoization.
@@ -832,7 +832,7 @@ return <Bar value = "ghi" / > // still renders "abcdef"
 - Profiler components can also be nested to measure different components within the same subtree
 - onRender Callback receives parameters describing what was rendered and how long it took.
 
-## Reconciliation 协调
+# Reconciliation 协调
 
 - https://reactjs.org/docs/reconciliation.html  
 - When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. 
@@ -948,7 +948,7 @@ return <Bar value = "ghi" / > // still renders "abcdef"
 		- 当索引用作key时，组件状态在重新排序时也会有问题。
 		- 组件实例基于key进行更新和重用。如果key是索引，则item的顺序变化会改变key值。这将导致非受控组件的状态可能会以意想不到的方式混淆和更新。
 
-## Code-Splitting
+# Code-Splitting
 
 - Most React apps will have their files “bundled” using tools like Webpack, Rollup. 
   - Bundling is the process of following imported files and merging them into a single file: a “bundle”.
@@ -1023,7 +1023,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - 如果要在服务器渲染的应用程序中进行代码拆分，建议使用Loadable Components
   - https://github.com/gregberge/loadable-components
 
-## Static Type Checking
+# Static Type Checking
 
 - Static type checkers like Flow and TypeScript identify certain types of problems before you even run your code. 
 - They can also improve developer workflow by adding features like auto-completion. 
@@ -1043,7 +1043,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - 对于复杂的代码库，建议使用Flow或者TypeScript来替代PropTypes
 - Reason是一门基于OCaml的语言，既可以通过BuckleScript被编译为JavaScript，也支持直接编译为原生的二进制汇编
 
-## Strict Mode
+# Strict Mode
 
 - `StrictMode` is a tool for highlighting potential problems in an application. 
   - Like `Fragment` , `StrictMode` does not render any visible UI. 
@@ -1102,7 +1102,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
     - 如在constructor中调用非幂等的方法 `SharedApplicationState.recordEvent('ExampleComponent');`
     - instantiating this component multiple times could lead to invalid application state. 
 
-## Error Boundaries
+# Error Boundaries
 
 - A JavaScript error in a part of the UI shouldn’t break the whole app. 
   - To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
@@ -1140,7 +1140,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - So if they throw, React still knows what to display on the screen.
 - If you need to catch an error inside event handler, use the regular JavaScript `try/catch` statement
 
-## Integrating with Other Libraries
+# Integrating with Other Libraries
 
 - Integrating with DOM Manipulation Plugins
 - **React is unaware of changes made to the DOM outside of React**. It determines updates based on its own internal representation, and if the same DOM nodes are manipulated by another library, React gets confused and has no way to recover.
@@ -1204,7 +1204,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 - While it is generally recommended to use unidirectional data flow such as React state, Flux, or Redux, React components can use a model layer from other frameworks and libraries.
 - You can use React with any model library by subscribing to its changes in the lifecycle methods and, optionally, copying the data into the local React state.
 
-## Accessibility
+# Accessibility
 
 - Web accessibility (also referred to as `a11y` ) is the design and creation of websites that can be used by everyone.  
 - WCAG: The Web Content Accessibility Guidelines provides guidelines for creating accessible websites.
@@ -1222,7 +1222,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
   - Setting the document title
   - Ensure that all readable text on your website has sufficient color contrast to remain maximally readable by users with low vision
 
-## Web Components
+# Web Components
 
 - React and Web Components are built to solve different problems. 
 - Web Components provide strong encapsulation for reusable components

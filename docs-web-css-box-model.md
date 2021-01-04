@@ -7,13 +7,13 @@ modified: '2020-12-20T15:56:41.956Z'
 
 # docs-web-css-box-model
 
-## width
+# width
 
-## height 
+# height 
 
-## padding
+# padding
 
-## margin
+# margin
 
 - The `margin-right` CSS property sets the margin area on the right side of an element. 
   - A positive value places it farther from its neighbors, while a negative value places it closer.
@@ -52,7 +52,7 @@ margin-left: auto;
 - ref
   - [margin:auto与布局展示](https://zhuanlan.zhihu.com/p/57605009)
 
-## overflow
+# overflow
 
 - The `overflow` CSS shorthand property sets the desired behavior for an element's overflow — i.e. when an element's content is too big to fit in its block formatting context — in both directions.
 - In order for `overflow` to have an effect, the block-level container must have either a set height ( `height` or `max-height` ) or ` white-space` set to `nowrap` .
@@ -89,7 +89,7 @@ Inherited	no
   - The box is not a scroll container, and does not start a new formatting context. 
   - If you wish to start a new formatting context, you can use display: flow-root to do so.
 
-### [Overflowing content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+## [Overflowing content](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
 
 - Everything in CSS is a box. You can constrain the size of these boxes by assigning values of width and height (or inline-size and block-size). 
 - Overflow happens when there is too much content to fit in a box. 
@@ -102,7 +102,7 @@ Inherited	no
   - Increase the font sizes of text. Generally ensure that your CSS works in a robust way. 
   - Changing the value of overflow to hide content, or to add scrollbars, is likely to be reserved for a few select use cases. (for example, where you intend to have a scrolling box)
 
-### [CSS Overflow Module](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Overflow)
+## [CSS Overflow Module](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Overflow)
 
 - There are two types of overflow that you might encounter in CSS.  
 - ink overflow. 
@@ -112,12 +112,12 @@ Inherited	no
   - This is the content appearing outside of the box for which scrolling mechanisms need to be provided. 
   - The overflow properties are how we can control what happens when content overflows a box. 
 
-## border
+# border
 
 - The border shorthand CSS property sets an element's border. 
 - It sets the values of `border-width` , `border-style` , and `border-color` .
 
-### border-width
+## border-width
 
 - The border-width shorthand CSS property sets the width of an element's border.
 - Each side can be set individually using border-top/right/bottom/left-width
@@ -127,7 +127,7 @@ Inherited	no
   - 对于table cell，由于border-style默认值为none，所以不显示边框，宽度为0
 - `border-top-width` is the absolute length or 0 if `border-top-style` is none or hidden
 
-## border-style
+# border-style
 
 - The border-style shorthand CSS property sets the line style for all four sides of an element's border.
 
@@ -146,11 +146,11 @@ Inherited	no
 - inset(嵌入物), outset(n, 开始)
   - Displays a border that makes the element appear embedded(嵌入式的), or embossed(有凸起图案的)
 
-## border-color
+# border-color
 
 - The border-color shorthand CSS property sets the color of an element's border.
 
-## font-size
+# font-size
 
 - sets the size of the font. 
 - Changing the font size also updates the sizes of the font size-relative length units, such as em, ex, and so forth
@@ -192,7 +192,7 @@ Inherited	no
 - ref
   - [mdn font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
 
-## line-height
+# line-height
 
 - sets the height of a line box. 
 - Desktop browsers (including Firefox) use a default value of roughly `1.2` , depending on the element's `font-family` .
@@ -297,7 +297,7 @@ font-size: 15px;
   - [height 属性与 line-height 属性有什么区别](https://www.zhihu.com/question/20222907)
   - [line-height和vertical-align采坑记](https://zhuanlan.zhihu.com/p/51189193)
 
-## vertical-align
+# vertical-align
 
 - sets vertical alignment of an inline, inline-block or table-cell box.
 - vertical-align property can be used in two contexts:
@@ -338,13 +338,13 @@ font-size: 15px;
 - ref
   - [mdn vertical-align](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align)
 
-## text-align
+# text-align
 
 - sets the horizontal alignment of a block element or table-cell box. 
 - This means it works like `vertical-align` but in the horizontal direction. 
 - The standard-compatible way to center a block itself without centering its inline content is setting the left and right margin to auto, `margin: 0 auto;`
 
-## box-shadow
+# box-shadow
 
 - The box-shadow CSS property adds shadow effects around an element's frame. 
 - You can set multiple effects separated by commas. 

@@ -7,9 +7,9 @@ modified: '2020-12-08T13:29:35.248Z'
 
 # note-fwk-web-blog
 
-## web-framework-comparison
+# web-framework-comparison
 
-### [lit-html vs hyperHTML vs lighterhtml_201902](https://webreflection.medium.com/lit-html-vs-hyperhtml-vs-lighterhtml-c084abfe1285)
+## [lit-html vs hyperHTML vs lighterhtml_201902](https://webreflection.medium.com/lit-html-vs-hyperhtml-vs-lighterhtml-c084abfe1285)
 
 - When `lit-html` released at the end of July 2017 as an experimental, not production ready, library, 
   - I’ve created few days after a huge gist comparing it with what was, at that time, the already production ready `hyperHTML`.
@@ -78,14 +78,14 @@ modified: '2020-12-08T13:29:35.248Z'
   - blazing fast compared to any bigger framework
   - it always wins in terms of memory consumption
 
-### [Web Component Solutions: A Comparison](https://levelup.gitconnected.com/web-component-solutions-a-comparison-e2fa25c34730)
+## [Web Component Solutions: A Comparison](https://levelup.gitconnected.com/web-component-solutions-a-comparison-e2fa25c34730)
 
 - LitElement seems like an excellent choice, unless you are concerned about the BSD-3-Clause license
 - Stencil seems on par with LitElement, but without the license concerns, and would be a great choice, especially if you’re already using Stencil for design or enjoy working with TypeScript
 - if you are using, or might use, Salesforce in the future, LWC is the obvious choice because of its easy integration with other Salesforce workflows
   - You might also consider LWC if you enjoy being an early adopter of new web component technology trends, don’t like JSX syntax, or have a preference for keeping your HTML, CSS, and JavaScript code in separate files.
 
-### [discussion: I think rewriting UI systems every few years and reimplementing in various JS frameworks that come and go is a serious waste of manpower.](https://news.ycombinator.com/item?id=18237757)
+## [discussion: I think rewriting UI systems every few years and reimplementing in various JS frameworks that come and go is a serious waste of manpower.](https://news.ycombinator.com/item?id=18237757)
 
 - I'd so wish people would embrace web components properly once and for all, with LitElement, Svelte or Stencil. 
 - If I had to guess, I would guess that React will still be around in 5 years, but I'm not sure web components will. 
@@ -119,7 +119,7 @@ modified: '2020-12-08T13:29:35.248Z'
 - React and similar frameworks optimise performance by batching DOM updates in one big read-compute-write cycle. 
   - With web components that don't share centralised DOM manipulation code its hard to see how that would work, and this can be a big performance problem.
 
-## more-web-framework
+# more-web-framework
 
 - lit-html is not a new framework, but simply a template library
   - lit-html has no component model, so by using it to implement WCs, you get a component model.
@@ -134,7 +134,7 @@ modified: '2020-12-08T13:29:35.248Z'
     - Being notified when you boot up, when you're activated, when you're deactivated, and when the state you care about changes. 
     - React has that, Web Components have that, lit doesn't.
 
-## ref
+# ref
 
 - [Vanilla JS Plugins](https://vanillajstoolkit.com/plugins/)
   - These are hand-selected plugins that I would actually use or have used on a project.

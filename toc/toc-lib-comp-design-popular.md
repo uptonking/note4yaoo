@@ -1,0 +1,584 @@
+---
+title: toc-lib-comp-design-popular
+tags: [components, design-system, lib, toc]
+created: '2020-10-22T12:51:37.045Z'
+modified: '2020-11-13T07:29:55.201Z'
+---
+
+# toc-lib-comp-design-popular
+
+# popular-design-system
+
+- guide
+  - design-tokens(推荐styled-dictionary)
+    - polaris,fluid,官方examples
+  - theming(推荐css vars)
+    - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
+    - 切换theme基于修改同名css vars的值，具体可以是切换包含这些css vars的类名
+  - vanillajs组件的实现(推荐实现为一个单独的包)
+    - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
+  - react组件(推荐hooks)
+    - carbon,material,polaris,gestalt,elastic-eui,rmwc,antd,zent,xiaomi-hiui
+
+- ## Material Design /Google
+  - /14.9kStar/MIT/202009/ts/css-vars/themed
+  - https://github.com/material-components/material-components-web
+    - https://material.io/develop/web/components/buttons
+    - Modular and customizable Material Design UI components for the web
+    - 组件基于foundation/adapter架构实现
+    - theming基于全局级sass vars，组件级基于css vars
+      - 组件的sass源码导入很多，核心样式core-styles的@mixin很复杂
+  - https://github.com/jamesmfriedman/rmwc
+    - /1.4kStar/MIT/202009/ts/hooks
+    - React UI Kit built on Google's Material Components Web v5
+  - https://github.com/material-components/material-components-web-react
+    - /1.9kStar/MIT/201911/ts/deprecated
+    - deprecated in order to increase our focus on implementing the core, framework-independent libraries (MDC-Web and MWC)
+    - 组件基于class实现
+    - 样式基于classnames
+    - 用了很多renderContainer的方法
+  - https://github.com/material-components/material-components-web-components
+    - /2.2kStar/Apache2/202009/ts/web-comp
+    - a collection of Material Web Components maintained by Google
+    - 基于lit-element、lit-html实现
+  - ref
+    - https://github.com/prateekbh/preact-material-components
+      - /531Star/MIT/202007/ts/deprecated
+      - preact wrapper for material-components-web
+    - https://github.com/material-components/material-components-android
+      - /11.2kStar/Apache2/2020209/java
+      - Modular and customizable Material Design UI components for Android
+
+- ## Fluent Design /Microsoft
+  - /9.5kStar/MIT/202009/ts/css-in-js
+  - https://github.com/microsoft/fluentui
+    - https://www.microsoft.com/design/fluent/
+    - Fluent is a cross-platform design system to create engaging product experiences — accessibility, internationalization, and performance included. 
+    - 组件基于hooks实现
+    - 样式全是style object，自定义实现styled高阶组件，动态生成并缓存className
+    - This repo is home to 3 separate projects today.
+      - @fluentui/react, @/react-northstar, @/web-components
+      - Mixing components between projects is not currently supported. 
+      - The goal of these projects is to dedupe functionality and enable interoperability over time. 
+  - ref
+    - https://github.com/OfficeDev/office-ui-fabric-react
+      - UI Fabric is now Fluent UI - A set of React components for building Microsoft web experiences
+    - https://developer.microsoft.com/en-us/fabric/#/components
+
+- ## Carbon Design System /IBM
+  - /3.5kStar/Apache2/202009/js/css-vars/themed
+  - https://github.com/carbon-design-system/carbon
+    - https://www.carbondesignsystem.com/
+    - The design system is built React first. 
+      - We also support core parts of the system in vanilla JS, Angular, and Vue. 
+  - carbon-components
+    - a collection of re-usable HTML and SCSS partials
+    - 不依赖框架，为各种框架开发单独的组件，core使用了handlebars模版引擎来生成组件html
+    - theming基于sass或css vars，按需选择编译输出，css vars方案未正式发布
+      - 可编译输出css vars, `enable-css-custom-properties`
+      - 支持 component-level theming
+  - carbon-components-react
+    - A collection of Carbon Components implemented using React
+    - 组件基于hooks实现
+    - 样式基于classnames，极少部分样式直接操作classList.add/remove
+    - react组件依赖纯css框架里面的scss
+    - js组件和react组件只共用 `settings.prefix` 及css样式文件，此外不相关
+  - @carbon/elements
+    - IBM Design Language elements like colors, type, iconography...
+    - a variant of Carbon Design System with Custom Elements v1 and Shadow DOM v1 specs.
+  - ref
+    - https://github.com/carbon-design-system/carbon-web-components
+    - https://github.com/carbon-design-system/carbon-components-vue
+    - https://github.com/carbon-design-system/carbon-charts
+    - https://www.ibm.com/design/language/
+    - http://react.carbondesignsystem.com/
+    - https://ics-design-system.us-east.mybluemix.net/
+    - https://github.com/carbon-design-system/carbon-design-kit
+      - visual assets (components, iconography, color palettes...)
+    - https://github.com/IBM/design-kit
+    - https://github.com/carbon-design-system/okrs
+      - Objectives and key results for the Carbon team.
+
+- ## Lightning Design System /Salesforce
+  - /3kStar/BSD/202009/js/css-vars/themed/无vanillajs组件
+  - https://github.com/salesforce-ux/design-system
+    - https://www.lightningdesignsystem.com/
+    - SLDS is a pure CSS framework that you can use with any front-end development framework
+    - Component blueprints are framework agnostic, accessible HTML/CSS
+    - theming未实现，基于css vars的styling hooks可以定制组件样式，正在测试
+      - 全局级的theming暂未实现，但不会有非兼容变化
+      - https://www.lightningdesignsystem.com/platforms/lightning/styling-hooks/
+  - https://github.com/salesforce/design-system-react
+    - https://react.lightningdesignsystem.com/
+    - /622Star/BSD/202010/js
+    - 依赖popper.js、react-contenteditable/onclickoutside、classnames
+    - 组件基于class实现
+    - 样式使用className直接设置预定义的样式名
+    - theming未实现
+  - ref
+    - https://www.lightningdesignsystem.com/design-tokens/
+    - https://github.com/salesforce-ux/design-system-ui-kit
+      - Sketch UI Kit
+    - https://github.com/mashmatrix/react-lightning-design-system
+
+- ## Ant Design /Alibaba
+  - /63.7kStar/MIT/202009/ts/less/themed
+  - https://github.com/ant-design/ant-design
+    - https://ant.design/
+    - An enterprise-class UI design language and React UI library.
+    - 依赖很多自研的基础组件rc-xxx
+    - 组件基于class实现
+    - 样式基于classnames
+    - theming基于less vars
+  - https://github.com/taejs/ant-design-vanilla
+    - /2Star/MIT/202003/ts
+    - 基于foundation/adapter架构实现
+  - https://github.com/ant-design/ant-design-mobile
+    - A configurable Mobile UI specification and React-based implementation.
+  - https://github.com/ant-design/ant-design-pro
+    - An out-of-box UI solution for applications as a React boilerplate.
+  - theming
+    - https://github.com/ant-design/ant-design-aliyun-theme
+    - https://github.com/ant-design-colorful/ant-design-colorful
+      - 以原生ant-design为基础，通过自定义css或引入其他插件，实现组件的多彩化
+    - https://github.com/intoli/antd-scss-theme-plugin
+      - Customize Ant Design by specifying theme variable overrides through a single theme.scss file
+    - https://github.com/luffyZh/dynamic-antd-theme
+  - ref
+    - https://github.com/websemantics/awesome-ant-design
+    - https://github.com/vueComponent/ant-design-vue
+    - https://github.com/NG-ZORRO/ng-zorro-antd
+    - https://github.com/alitajs/ant-design-plus/
+    - https://github.com/ant-design/ant-design-charts
+
+- ## Polaris /Shopify
+  - /3.6kStar/MIT/202010/ts/css-vars/themed
+  - https://github.com/Shopify/polaris-react
+    - https://polaris.shopify.com/
+    - design system to build a great experience for all of Shopify’s merchants.
+    - 依赖react-transition-group
+    - 组件基于hooks实现
+    - 样式基于classnames
+    - theming基于css vars
+      - theme只支持简单换颜色
+      - 提供了组件级的变量，如button的css中使用了css vars
+      - ThemeProvider的render返回`<div style={style}>{children}</div>`
+        - `style = customProperties;或 {...customProperties, ...{color}};`
+        - ThemeProvider component uses CSS custom properties to share color values with components
+  - ref
+    - https://github.com/Shopify/polaris-tokens
+      - 基于theo生成
+    - https://github.com/Shopify/javascript-utilities
+    - https://github.com/Shopify/draggable
+      - The JavaScript Drag & Drop library
+
+- ## Primer Design System /Github
+  - /969Star/MIT/202019/js/css-in-js
+  - https://github.com/primer/components
+    - https://primer.style/components
+    - React implementation of GitHub's Primer Design System
+    - react components和css是两套相互不依赖的实现，css的价值偏低
+    - 依赖styled-components、styled-system
+    - 组件基于hooks实现
+    - 样式基于css-in-js，也有用classnames
+    - theming基于styled-ThemeProvider
+      - 每个组件的defaultProps都包含直接导入的全局级theme对象
+    - Primer Components come with all the necessary CSS built-in, so you don't need to worry about including [Primer CSS].
+  - https://github.com/primer/css
+    - https://primer.style/css
+    - /9.7kStar/MIT/202010/scss
+    - The CSS implementation of GitHub's Primer Design System
+    - theming未实现，draft基于css vars
+    - Our goal is to create a system that enables us to build consistent user experiences
+    - Our approach to CSS is influenced by OOCSS, functional CSS, and BEM architecture.
+  - ref
+    - https://github.com/primer/octicons
+    - https://github.com/primer/design
+    - https://github.com/primer/presentations
+      - Slide deck templates and asset
+
+- ## Atlassian Design System /Atlassian
+  - /72Star/Apache2/202010/ts/css-in-js
+  - https://bitbucket.org/atlassian/atlassian-frontend-mirror
+    - https://atlassian.design/
+      - This is the public mirror of Atlassian Frontend. 
+      - All publicly published packages source files will be mirrored here daily.
+    - 依赖styled-components、react-intl
+    - 组件基于class实现
+    - 样式基于css-in-js
+  - ref
+    - https://atlaskit.atlassian.com/docs/guides/component-design
+    - https://bitbucket.org/atlassian/atlaskit-mk-2 /deprecated
+- Pajamas Design System /GitLab
+  - /104Star/MIT/202010/vue
+  - https://gitlab.com/gitlab-org/gitlab-ui
+    - https://gitlab-org.gitlab.io/gitlab-ui/
+    - https://design.gitlab.com/
+    - 依赖vue, bootstrap4, Bootstrap-vue, markdown-it, nuxt
+  - https://gitlab.com/gitlab-org/gitlab-services/design.gitlab.com
+    - /113Star/MIT/202010/js/vue
+    - Contains product design guidelines and UI components
+  - ref
+    - https://gitlab.com/gitlab-org/gitlab-design
+      - /279Star/MIT/202010/html
+      - The repository contains GitLab’s prototypes and work-in-progress files.
+
+- ## Spectrum /Adobe
+  - /4.1kStar/Apache2/202012/ts/css-vars/themed
+  - https://github.com/adobe/react-spectrum
+    - https://react-spectrum.adobe.com/
+    - https://spectrum.adobe.com/
+    - A React implementation of Spectrum
+    - 组件基于hooks实现
+      - 每个组件的交互state通过react-stately实现为单独的包
+    - 样式基于classnames高仿版，源码中为`className={css(`
+    - react-aria
+      - Hooks that provides accessible UI primitives
+      - React Aria is intentionally very low level. It’s designed to allow building higher level UI libraries on top, so it provides small building blocks that you can compose yourself.
+      - Hooks being just functions enables a huge amount of flexibility. Customizability is natural via composition, and you can map just about any component API you want to them.
+    - react-stately
+      - Hooks that provides cross-platform state management
+  - https://github.com/adobe/spectrum-css
+    - /744Star/Apache2/202010
+    - theming基于css vars，能覆盖color和size，支持全局级和组件级
+      - 预置了多套主题lightest/darkest/midlight/middark
+        - 每个主题css文件内容全是颜色变量，但其他文件也涉及尺寸变量
+      - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
+    - The standard CSS implementation of the Spectrum design language.
+    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
+    - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
+    - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
+    - Each component has a `dist/vars.css` file that contains declarations for each component-level variable
+    - ref
+      - https://github.com/adobe/spectrum-web-components
+      - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
+        - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
+        - React Spectrum splits each component into three parts: state, behavior, and the rendered component.
+
+- ## Elastic UI /Elastic
+  - /2.3kStar/Apache2/202010/ts/scss/themed
+  - https://github.com/elastic/eui
+    - https://elastic.github.io/eui/#/
+    - a collection of React UI components for building user interfaces
+    - remove CSS from the process of building UIs
+    - 组件基于hooks实现
+    - 样式基于classnames
+    - theming基于sass vars
+  - ref
+    - https://github.com/elastic/elastic-charts
+    - https://github.com/elastic/search-ui
+    - https://github.com/elastic/app-search-reference-ui-react
+
+- ## SAP Fiori Design /SAP
+  - /2.3kStar/Apache2/202010/js/less/css-in-js/react-jss
+  - https://github.com/SAP/openui5
+    - http://openui5.org/
+    - 架构非常复杂
+    - based on JS, using jQuery as its foundation and follows web standards
+    - It eases your development with a client-side HTML5 rendering library including a rich set of controls and supports data binding to different data models (JSON, XML and OData).
+    - open source version that implements SAP Fiori for Web: OpenUI5
+    - Technically, you can switch between OpenUI5 and SAPUI5
+      - Since OpenUI5 shares the same core as SAPUI5, we often refer to both simply as "UI5".
+    - SAPUI5 is not a separate SAP product with a separate license. 
+      - It's integrated in SAP HANA/Cloud/NetWeaver
+  - https://github.com/SAP/ui5-webcomponents
+    - /787Star/Apache2/202009/web-comp
+    - not built on top of UI5, but rather independent UI elements
+    - not a successor of UI5, but rather a complementary offering
+  - https://github.com/SAP/ui5-webcomponents-react
+    - https://sap.github.io/ui5-webcomponents-react/
+    - /192Star/Apache2/202010/ts
+    - A wrapper implementation for React of the UI5 Web Components
+    - 依赖react-jss、react-content-loader、react-table7、react-virtual
+    - 依赖@ui5/webcomponents、@ui5/webcomponents-base
+    - 组件基于hooks实现
+    - 样式基于react-jss
+  - https://github.com/SAP/fundamental-styles
+    - /99Star/Apache2/202012/js
+    - Theme-able components built on top of SAP Theming Base Content by consuming the CSS Custom Properties delivered by the theming library
+    - We are also working on Angular, React and Vue implementations.
+    - https://github.com/SAP/theming-base-content
+      - color, font and metric definitions of SAP themes to be used by application UIs and UI frameworks.
+    - https://github.com/SAP/fundamental
+      - SAP Fundamentals is deprecated. Fundamental Styles is its successor
+  - ref
+    - https://experience.sap.com/fiori-design/
+      - SAP Fiori is the design language that brings great user experiences to enterprise applications.
+
+- ## PatternFly /RedHat
+  - /219Star/MIT/202010/ts/css-vars/themed/无vanillajs组件
+  - https://github.com/patternfly/patternfly-react
+    - https://www.patternfly.org/
+    - https://patternfly-react.surge.sh/
+    - A set of React components for the PatternFly project.
+    - 依赖tippy.js
+    - 组件基于class实现
+    - 样式基于classnames魔改实现
+    - 单独的组件包，如react-charts,react-datetime,react-table
+  - https://github.com/patternfly/patternfly
+    - /259Star/MIT/202010/scss
+    - theming基于css vars
+      - 可覆盖的变量包括color,spacer,font
+      - 未提供预置主题
+      - [chore(dark-theme): dark theme POC](https://github.com/patternfly/patternfly/pull/3686)
+        - [old dark theme poc](https://github.com/patternfly/patternfly/pull/3298)
+    - This repo contains core (HTML/CSS) implementation for PatternFly.
+    - PatternFly follows a two-layer theming system where global variables always inform component variables. 
+      - The main reason to have global variables is to maintain consistency
+      - The second layer is scoped to themeable component custom properties
+  - ref
+    - https://github.com/patternfly/patternfly-elements
+      - community-created web components based on PatternFly design.
+    - https://github.com/patternfly/patternfly-3
+      - This repo contains the HTML, CSS, and JQuery for PatternFly 3
+      - This reference implementation of PatternFly is based on Bootstrap v3.
+      - Think of PatternFly as a "skinned" version of Bootstrap with additional components and customizations.
+
+- ## Calcite Design /Esri 
+  - /42Star/Apache2/202010/js/css-in-js
+  - https://github.com/Esri/calcite-react
+    - https://calcite-react.netlify.com/
+    - Calcite components, built in React
+    - 依赖styled-comp、downshift、react-modal/popper/toastify/virtualized
+    - 组件基于hooks实现
+    - 样式基于css-in-js/styled
+    - 直接import了theme object
+  - https://github.com/Esri/calcite-components
+    - /73Star/EsriMasterLic/202010/ts/web-comp/stencil
+    - Web Components for the Calcite Design System. 
+    - Built with Stencil JS
+    - theming基于css vars，自己单独实现了一套scss
+  - ref
+    - https://github.com/Esri/calcite-web
+      - https://esri.github.io/calcite-web/
+      - /96Star/Apache2/201902/js/deprecated
+      - 没有提供每个组件交互对应的js，提供了处理交互的整体js
+      - It is a web framework that implements Esri Brand Guidelines 
+      - written in Sass
+      - A dependency-free JS library for use with interactive patterns like tabs and modals is also included.
+      - a modular and efficient framework for ArcGIS properties.
+    - https://github.com/Esri/calcite-base
+      - https://esri.github.io/calcite-base/
+      - /6Star/EsriMasterLic/202007/scss
+      - Tokens, mixins, and other Sass utilities for Esri's Calcite Design System
+      - Variables are available in several formats including SASS, CSS Vars, TypeScript, JavaScript, and JSON.
+    - https://github.com/Esri/calcite-ui-icons
+      - /39Star/EsriMasterLic/202010/js
+      - UI icons built by Esri
+    - https://github.com/Esri/calcite-colors
+      - /16Star/EsriMasterLic/202010/ts
+      - Esri's official color documentation repository that is leveraged by Calcite
+    - https://github.com/Esri/calcite-sketch-libraries
+    - https://github.com/Esri/calcite-maps /deprecated
+      - A Bootstrap theme for styling and creating modern map apps.
+
+- ## Assembly /Mapbox
+  - /106Star/ISC/202010/css
+  - https://github.com/mapbox/assembly
+    - https://labs.mapbox.com/assembly/
+    - A CSS framework that makes the hard parts of building anything on the web easy. 
+    - managing class specificity, maintaining a baseline grid, and keeping responsive designs simple
+    - theming基于css vars
+    - 缺点：css源码里面太多的 `!important`
+    - features
+      - Every element in Assembly is designed according to a 6 pixel baseline grid, even buttons and form components.
+      - No default styling for semantic elements
+      - Media queries are mobile-first
+      - Utility classes have maximum specificity
+        - Assembly uses `!important` on declarations whose effect directly corresponds to a class name. 大缺点
+      - Assembly turns off focus outlines when you mousedown and turns them back on, universally, when you hit Tab
+  - https://github.com/mapbox/mr-ui
+    - UI components for Mapbox projects，提供的react组件更偏向基础小组件
+    - 组件基于class实现
+    - 样式使用className直接设置预定义的样式名
+    - On Mapbox projects, pair these components with version 0.26.0+ of Mapbox's custom Assembly build.
+  - https://github.com/mapbox/dr-ui
+    - 依赖mr-ui，提供的react组件更偏向业务层，如demo-iframe/phone/search
+    - Frontend tools for Mapbox documentation websites.
+    - On Mapbox projects, pair these components with version 0.26.0 of Mapbox's custom Assembly build.
+
+- ## Base Design /Uber
+  - /5.4kStar/MIT/202010/js/css-in-js
+  - https://github.com/uber/baseweb
+    - https://baseweb.design/
+    - A React Component library implementing the Base design language
+    - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
+    - 组件基于class实现
+    - 样式基于css-in-js/styletron
+    - theming基于styled-ThemeProvider
+  - ref
+    - https://github.com/uber/react-vis
+      - react components to render common data visualization charts
+    - https://github.com/uber/react-view
+      - The first prototype of React View was even using react-live internally 
+      - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
+      - We also rely on babel and babel-parser instead of buble.
+
+- ## Airbnb Design /Airbnb
+  - /335Star/MIT/202010/ts/css-in-js
+  - https://github.com/airbnb/lunar
+    - https://airbnb.design/
+    - React toolkit and design language for Airbnb internal projects.
+  - ref
+    - https://github.com/airbnb/Lona
+      - A tool for defining design systems and using them to generate cross-platform UI code, Sketch files
+    - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
+    - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
+    - https://github.com/airbnb/lottie-web
+      - Render After Effects animations natively on Web, Android and iOS, and React Native
+    - https://github.com/airbnb/react-with-styles
+      - Use CSS-in-JavaScript with themes for React without being tightly coupled to one implementation
+    - https://github.com/airbnb/visx
+      - visualization components
+    - components
+      - https://github.com/airbnb/react-outside-click-handler
+      - https://github.com/airbnb/react-dates
+
+# known-design-system
+
+- Bootstrap /Twitter
+  - /138kStar/MIT/202001/js/scss
+  - https://github.com/twbs/bootstrap
+    - https://getbootstrap.com/docs
+    - popular framework for building responsive, mobile-first sites
+    - theming基于sass
+- HPE Design System /Hewlett Packard
+  - /Apache2/6.7kStar/202010/js/css-in-js
+  - https://github.com/grommet/grommet
+    - https://v2.grommet.io/
+    - react-based framework that provides accessibility, modularity, responsiveness, and theming in a tidy package
+    - 依赖styled-components、markdown-to-jsx、react-desc
+    - 组件基于hooks实现
+    - 样式基于css-in-js
+  - https://github.com/grommet/hpe-design-system
+    - https://design-system.hpe.design/
+    - HPE Design System Site
+  - ref
+    - [grommet-designer](https://github.com/grommet/grommet-designer)
+    - [grommet-theme-designer](https://github.com/grommet/grommet-theme-designer)
+- Gestalt /Pinterest
+  - /3.7kStar/Apache2/202012/js
+  - https://github.com/pinterest/gestalt
+    - https://gestalt.netlify.app/
+    - React UI components that enforces Pinterest’s design language
+    - 组件基于hooks实现
+    - 样式基于classnames
+    - theming基于css vars
+      - css文件中使用了自定义导入`composes: small from "./Layout.css";`
+      - 只用了全局级变量，未定义组件级变量
+  - ref
+    - https://github.com/geist-org/themes
+      - CSS Variables of Geist Themes
+- Garden /Zendesk
+  - /Apache2/794Star/202009/ts/css-in-js
+  - https://github.com/zendeskgarden/react-components
+    - https://garden.zendesk.com/
+    - Garden React provides consistent styling and behavior for Garden components. 
+    - 依赖styled-components
+    - 组件基于hooks实现
+    - 样式基于css-in-js
+  - https://github.com/zendeskgarden/css-components
+    - /95Star/Apache2/202010/css
+    - https://zendeskgarden.github.io/css-components/
+    - Garden CSS provides consistent styling for Garden components. 
+  - ref
+    - https://github.com/zendeskgarden/react-containers
+      - React (no-UI) Containers provide an accessible foundation to start building a11y, keyboard navigable and RTL aware components.
+    - https://github.com/zendeskgarden/tailwindcss
+      - A Tailwind CSS plugin for generating CSS based on Garden design primitives.
+- MongoDB Design System /MongoDB
+  - /54Star/Apache2/202010/ts/css-in-js
+  - https://github.com/mongodb/leafygreen-ui
+    - https://mongodb.github.io/leafygreen-ui/
+    - A set of CSS styles and React components
+    - http://mongodb.design/
+    - 依赖emotion、react-transition-group、facepaint
+    - 组件基于hooks实现
+    - 样式基于className属性，使用的是emotion的css方法而不是styled
+  - ref
+    - https://github.com/mongodb/design
+      - A repository for design resources at MongoDB
+- Orbit /Kiwi.com
+  - /723Star/MIT/202010/js/css-in-js
+  - https://github.com/kiwicom/orbit
+    - https://orbit.kiwi/
+    - React components of open-source Orbit design system by Kiwi.com
+    - 依赖styled-Components
+    - 组件基于hooks实现
+    - 样式基于css-in-js
+  - ref
+    - https://github.com/kiwicom/orbit-design-tokens
+- Bumbag /Bumbag
+  - /698Star/MIT/202010/ts/css-in-js
+  - https://github.com/bumbag/bumbag-ui
+    - https://bumbag.style/
+    - Build accessible & themeable React applications with your Bumbag
+    - 依赖emotion、emotion-theming、reakit
+    - 组件基于hooks实现
+    - 样式基于className属性，使用的是emotion的css方法而不是styled
+
+ 
+
+- Help Scout Design System(HSDS) /Help Scout
+  - /54Star/MIT/202010/js
+  - https://github.com/helpscout/hsds-react
+    - https://hsds.helpscout.com/
+    - React components for Help Scout's Design System
+    - 依赖@tippyjs/react、prismjs
+    - 组件基于class组件实现
+    - 样式基于classnames
+  - https://github.com/helpscout/seed
+    - /8Star/MIT/201906/css
+    - https://developer.helpscout.com/seed/
+    - Seed: A component-first CSS design system.
+  - ref
+    - [Help Scout Style Handbook](https://style.helpscout.com/)
+- Ring UI /JetBrains
+  - /2.5kStar/Apache2/202010/js
+  - https://github.com/JetBrains/ring-ui
+    - https://jetbrains.github.io/ring-ui/
+    - A collection of JetBrains Web UI components
+    - 组件基于class实现
+    - 样式基于classnames
+- Pivotal Design System /Pivotal 
+  - /636Star/MIT/202010/js
+  - https://github.com/pivotal-cf/pivotal-ui
+    - https://styleguide.pivotal.io/
+    - The system is implemented as a Figma library, React components, and CSS styles 
+    - 依赖tether、smoothscroll-polyfill、trie-search
+    - 组件基于class实现
+    - 样式基于classnames
+
+- React UI /siddharthkp
+  - /336Star/MIT/202009/js
+  - https://github.com/siddharthkp/react-ui
+    - https://react-ui.dev/
+    - Customisable components and primitives based on design tokens. 提供了多套theme object
+    - [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
+    - 依赖emotion-theming、facepaint
+    - 组件基于hooks实现，每个组件都基于Element基础组件实现，类似Box
+    - 样式基于css prop实现，样式都是style object，且样式都存放在单独的`.styles.js`文件
+- Fluid Design System /ENGIE
+  - https://www.engie.design/fluid-design-system/
+  - A design system must also be both consistent and flexible. The name Fluid resumes this balance.
+  - Fluid Design System by ENGIE is a library of UI components written in HTML/CSS/Vanilla JS. 
+  - theming基于css vars
+  - [start with Vanilla JS](https://www.engie.design/fluid-design-system/getting-started/developers/vanilla-js/)
+    - Automatic component initialization
+      - Set an id attribute named `root` on a global container from where components will be watched for initialization.
+    - Initialization for a single component import
+      - `Collapse.init();`
+    - How to migrate from v3 to v4
+      - there is no need to install dependencies.
+        - Import @engie-group/fluid-design-system in your project or via script tag. 
+      - auto-init.js can initiate components without additional code
+      - We introduce tokens thanks to [style-dictionary](https://amzn.github.io/style-dictionary/#/version_3)
+      - We introduce CSS 4 variable tokens: `:root`, `--nj-color-base-x-hover`
+  - [start with React framework](https://www.engie.design/fluid-design-system/getting-started/developers/react/)
+    - Set an id attribute named `root` on a global container from where components will be watched for initialization.
+  - ref
+    - [Design Tokens](https://www.engie.design/fluid-design-system/design-tokens/)
+      - Design tokens are a tech-agnostic way to store variables.
+      - Variable naming convention follows CTI (Category / Type / Item) structure.
+      - We introduce Design Tokens thanks to style-dictionary.
+      - CSS4 variable tokens, JSON tokens, CSS4 variable SASS support, FIGMA tokens
