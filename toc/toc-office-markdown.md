@@ -61,3 +61,6 @@ modified: '2021-01-04T17:26:25.032Z'
 
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents
+- https://github.com/picturepan2/markdown.css
+  - An elegant stylesheet for rendered Markdown contents
+  - Markdown.css only includes CSS styles for headings, paragraphs, text elements, lists, images, blockquote, tables, and code.

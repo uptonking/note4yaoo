@@ -18,6 +18,8 @@ modified: '2020-12-29T17:45:15.518Z'
     - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
   - 搜索一个organization的仓库，可使用 `user/org:orgName` ，注意冒号后无空格
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
+  - 搜索org，可用`type:org`
+    - `https://github.com/search?q=design+type%3Aorg&type=users`
   - 按标签或主题搜索
   - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
     - most starred

@@ -14,7 +14,7 @@ modified: '2020-12-05T07:44:12.022Z'
 - ## To help me decide exactly what my media query tweak points should be.
 - https://twitter.com/Malarkey/status/1345873190380253187
 - If I had to print something for debug purpose, I'd prefer to show a different content, with the information of the media applied, on a `body::before` pseudo element absolutely positioned.
-- I went with a `content:"XS";` `content: "S"`,  `"M" `and so on. 
+- I went with a `content:"XS";` `content: "S"`,   `"M" `and so on. 
   - I've got this `debug.sass` file damn full of ways to figure out common gotchas behind html classes like debug_viewport debug_grids and so on. 
   - It's annoying to maintain but it has saved me tons of time @ the job at least twice
 - [Custom properties for breakpoint debugging_201802](https://thatemil.com/blog/2018/02/23/custom-properties-breakpoint-debugging/)
@@ -109,3 +109,7 @@ modified: '2020-12-05T07:44:12.022Z'
 - Maker me: Build whatever you want with whatever tools you want.
 - Developer me: Don't use MongoDB, most of your stuff with be relational, 
   - and in the event you cannot use relational, use JSONB data type in PostgreSQL.
+
+# ref
+
+- [Custom Properties as State](https://css-tricks.com/custom-properties-as-state/)

@@ -113,6 +113,65 @@ modified: '2020-12-19T13:05:23.294Z'
     - 但如果是爬虫发送的，那就把渲染好的html发回去
     - 另外一个用服务端渲染的页面叫做"我支持的浏览器"，顾名思义，你用的浏览器太破了，无法支持浏览器渲染，请下载Chrome
 
+- ## [Server Rendering in JavaScript: Why SSR?](https://dev.to/ryansolid/server-rendering-in-javascript-why-ssr-3i94)
+- Next, Nuxt, Gatsby, Sapper have all been really popular the last few years along with the rise of JAMStack which promotes the use of Static Site Generation.
+- But the thing you probably should be paying attention to is that the frameworks themselves have been investing heavily into this area for the past 2 years. 
+  - There is a reason why we've been waiting for Suspense in React, or we see blog stories about Island's Architecture. 
+  - Why Svelte and Vue have been pulling meta-framework type projects under their core's umbrella.
+
+- **Why Server Rendering?**
+- I mean there are plenty of ways to mitigate the initial performance costs of JavaScript. 
+  - I had even made it my personal mission to show people that a well-tuned client only Single Page App(SPA) could outperform a typical Server Rendered SPA in pretty much every metric (even First Paint). 
+  - And crawlers now can crawl dynamic JavaScript pages for SEO. 
+- So what's the point?
+  - Well even with crawlers now being fully capable to crawl these JavaScript-heavy sites, they do get bumped to a second-tier that takes them longer to be indexed. 
+  - This might not be a deal-breaker for everyone but it is a consideration. 
+  - And meta tags rendered on the page are often used for social sharing links. 
+  - These scrapers are often not as sophisticated, so you only get the tags initially present which would be the same on every page losing the ability to provide more specific content.
+  - But these are not new.
+- So, let's take a look at what I believe are the bigger motivators for the current conversation.
+
+- **Don't Go Chasing Waterfalls**
+  - For dynamic client JavaScript pages like a SPA or even the dynamic parts of a static generated site, as you might create with a Gatsby or Next, often this means at least 3 cascading round trips before the page is settled.
+  - The thing to note is this isn't only a network bottleneck. 
+  - Everything here is on the critical path from parsing the various assets, to executing the JavaScript to make the async data request. 
+  - None of this gets to be parallelized.
+  - This is further compounded by the desire to keep the bundle size small. 
+  - Code splitting is incredibly powerful and easy to do on route boundaries, but a naive implementation ends up like this:
+    - Four consecutive round trips! 
+    - The main bundle doesn't know what page chunk to request until it executes, 
+    - and it takes loading and executing that chunk before it knows what async data to request.
+- How does Server Rendering address this?
+  - Knowing the route you are on lets the server render right into the page the assets you will need even if code split. 
+  - You can add `<link rel="modulepreload" />` tags or headers that will start loading your modules before the initial bundle even parses and executes.
+  - Additionally, it can start the async data loading immediately on receiving the request on the server and serialize the data back into the page. 
+  - So while we can't completely remove the browser waterfalls we can reduce them to 1. 
+- After Initial Load
+  - Assets can be preloaded/cached with a service worker. 
+  - JavaScript is even stored as bytecode so there is no parsing cost. 
+  - Everything except the async data request is static and can already be present in the browser. 
+  - There are no waterfalls, which is even better than the best case from server rendering.
+- So the takeaway on this whole topic of performance/size is that the client alone has many techniques to mitigate most things other than that first load of fresh content.
+  - That will always be constrained by the speed of the network.
+  - But as our applications scale, without due consideration, it is easy for our SPA performance to degrade and a naive application of best practices only introduces other potential performance bottlenecks.
+
+- **Modern Tools for Everyone**
+- It's just JavaScript frameworks see this as a unique opportunity to create a completely isomorphic experience. 
+- The fundamental thing client-side libraries have been solving is state management. 
+  - It's the whole reason MVC architectures have not been the right match for the client. 
+  - Something needs to be maintaining the state. 
+  - MVC with its singleton controllers is wonderful for stateless things like RESTful APIs but needs special mechanisms to handle the persistence of non-model data. 
+  - Stateful clients and stateless servers mean reloading the page is not acceptable.
+- The challenge for server frameworks is even with mechanisms like Hotwire for partial updates, it alone doesn't make the client part of the equation any less complicated.
+  - You can ignore it is a thing, and if your needs are meager this can suffice. 
+  - Otherwise, you end up doing a lot of the same work anyway. 
+  - This leads to essentially maintaining two applications.
+  - This is why the JavaScript frameworks are uniquely positioned to provide this single universal experience. 
+  - And why it is so attractive to framework authors.
+
+- Server rendering in JavaScript is the next big race for these frameworks. 
+  - But it's still up to you whether you choose to use it.
+
 - ## [“Single-page” JS websites and SEO](https://stackoverflow.com/questions/7549306/single-page-js-websites-and-seo)
 - In my opinion, SPA is done right by letting the server act as an API (and nothing more) and letting the client handle all of the HTML generation stuff. 
   - The problem with this "pattern" is the lack of search engine support. I can think of two solutions:

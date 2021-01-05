@@ -442,7 +442,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - https://getbootstrap.com/docs
     - popular framework for building responsive, mobile-first sites
     - theming基于sass
-- HPE Design System /Hewlett Packard
+- HPE Design System Grommet /Hewlett Packard
   - /Apache2/6.7kStar/202010/js/css-in-js
   - https://github.com/grommet/grommet
     - https://v2.grommet.io/

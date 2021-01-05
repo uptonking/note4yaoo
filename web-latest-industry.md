@@ -71,6 +71,28 @@ modified: '2021-01-01T20:52:42.088Z'
   - There's a good chance this year that I will reimplement React-Charts with airbnb/visx
     - and a slightly smaller chance that React Charts goes away all together.
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
+- [My bold two-year prediction](https://twitter.com/tylerlwsmith/status/1346282659484323841): 
+  - 2021 will be the peak of JavaScript frameworks & compilers. 
+  - In 2022, tools like Turbo, Laravel Livewire, .NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.
+  - Developers gravitate towards tools that let them build things fast, even if it means letting go of some control. 
+    - Bootstrap and Tailwind caught on because they let developers build real apps without tediously writing their own CSS.
+    - The same thing will happen to JavaScript.
+  - Modern JavaScript is complicated. 
+    - Webpack is a challenge for even experienced JS developers.
+    - Tools like Create React App ease this pain, but they can force you to put your JS app in a different repo & on a different server, complicating development & deployment.
+  - JavaScript is a challenging language. 
+    - The "this" keyword, functions vs arrow functions, prototypical inheritance, bind vs call, and immediately-invoked function expressions can be hard to understand.
+    - Developers coming from other languages would often rather not learn these.
+  - JavaScript's ecosystem has an overwhelming number of choices.
+    - React? Vue? Ember? Angular? Svelte?
+    - Styled Components? CSS Modules? Emotion?
+    - Redux? MobX? XState?
+    - JavaScript fatigue can kick in before you write a single line of code. This slows down development.
+  - I believe developers will begin to recognize the productivity benefits of writing less custom JavaScript, 
+    - and developers with no JavaScript experience will be able to create meaningful interactive/real time web applications.
+  - If you are a JavaScript developer and this sounds scary, let me reassure you: there will always be work for JavaScript developers. 
+    - However, the tent of web development will become much bigger.
+    - Here's to a democratized web
 
 - ## [Serverless 能取代微服务吗？](https://www.zhihu.com/question/335301678/answers/updated)
 - serverless是一种概念，serverless的目的是让开发者能更专注于逻辑的开发。

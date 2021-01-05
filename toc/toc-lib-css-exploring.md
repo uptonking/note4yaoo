@@ -30,6 +30,9 @@ modified: '2020-10-22T13:09:57.085Z'
   - https://nostalgic-css.github.io/NES.css/
   - a NES-style(8bit-like) CSS Framework
   - 像素风格的文字和组件
+- https://www.getpapercss.com/
+  - https://getpapercss.com/
+  - The less formal CSS framework, with a quick and easy integration.
 - primer-css /MIT/9.4kStar/202007
   - https://github.com/primer/css
   - https://primer.style/css
@@ -39,6 +42,10 @@ modified: '2020-10-22T13:09:57.085Z'
   - Hand-coded entirely in HTML & CSS.
 - [css-loaders](https://github.com/lukehaas/css-loaders)
   - A collection of loading spinners animated with CSS
+
+- https://github.com/BafS/Gutenberg
+  - Modern framework to print web pages correctly
+  - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
 
 # css-pieces
 

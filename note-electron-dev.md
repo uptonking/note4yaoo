@@ -44,7 +44,7 @@ modified: '2020-07-14T09:33:06.170Z'
   - preload环境是一个既能用Node API，又能访问DOM、BOM的特殊环境，我们熟悉的另一个类似环境是renderer
   - preload属性的特点是只在第一次加载页面时执行，后续加载新页不会再执行preload脚本
 - Setting `nodeIntegration` to `false` will disable node.js in the renderer process - i.e. your app can only do what a web browser will do.
-  - BrowserWindow提供的preload的配置是为了在页面第一次加载文档之前预先加载js脚本文件,preload配置的脚本文件路径，只能为本地文件，其协议必须是file:、asar:二者之一
+  - BrowserWindow提供的preload的配置是为了在页面第一次加载文档之前预先加载js脚本文件, preload配置的脚本文件路径，只能为本地文件，其协议必须是file:、asar: 二者之一
   - preload脚本仍然有能力去访问所有的 Node APIs, 即使配置 `nodeIntegration: false` 。但是当这个脚本执行执行完成之后，通过Node 注入的全局对象（global objects）将会被删除
 
 # 进程通信
@@ -160,3 +160,13 @@ modified: '2020-07-14T09:33:06.170Z'
       - 通讯传递数据的过程中，由于不是共享内存（因为 IPC 是基于 Socket 的），导致出现多份数据副本
 - ref
   - https://juejin.im/post/5e0010866fb9a015fd69c645
+
+# ref
+
+- https://github.com/GoogleChromeLabs/carlo /deprecated
+  - Carlo provides Node applications with Google Chrome rendering capabilities, 
+    - communicates with the locally-installed browser instance using the Puppeteer project, 
+    - and implements a remote call infrastructure for communication between Node and the browser.
+  - What was the motivation when we already have Electron and NW.js?
+    - One of the motivations of this project is to demonstrate how browsers that are installed locally can be used with Node out of the box.
+    - Node v8 and Chrome v8 engines are decoupled in Carlo
