@@ -1,8 +1,8 @@
 ---
 title: thread-database
-tags: [database]
+tags: [database, thread]
 created: '2020-11-22T12:10:09.397Z'
-modified: '2020-11-22T12:18:03.660Z'
+modified: '2021-01-06T14:39:56.358Z'
 ---
 
 # thread-database

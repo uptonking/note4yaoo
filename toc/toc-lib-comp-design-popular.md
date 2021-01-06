@@ -269,6 +269,43 @@ modified: '2020-11-13T07:29:55.201Z'
     - https://github.com/elastic/search-ui
     - https://github.com/elastic/app-search-reference-ui-react
 
+- ## Base Design /Uber
+  - /5.4kStar/MIT/202010/js/css-in-js
+  - https://github.com/uber/baseweb
+    - https://baseweb.design/
+    - A React Component library implementing the Base design language
+    - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
+    - 组件基于class实现
+    - 样式基于css-in-js/styletron
+    - theming基于styled-ThemeProvider
+  - ref
+    - https://github.com/uber/react-vis
+      - react components to render common data visualization charts
+    - https://github.com/uber/react-view
+      - The first prototype of React View was even using react-live internally 
+      - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
+      - We also rely on babel and babel-parser instead of buble.
+
+- ## Airbnb Design /Airbnb
+  - /335Star/MIT/202010/ts/css-in-js
+  - https://github.com/airbnb/lunar
+    - https://airbnb.design/
+    - React toolkit and design language for Airbnb internal projects.
+  - ref
+    - https://github.com/airbnb/Lona
+      - A tool for defining design systems and using them to generate cross-platform UI code, Sketch files
+    - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
+    - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
+    - https://github.com/airbnb/lottie-web
+      - Render After Effects animations natively on Web, Android and iOS, and React Native
+    - https://github.com/airbnb/react-with-styles
+      - Use CSS-in-JavaScript with themes for React without being tightly coupled to one implementation
+    - https://github.com/airbnb/visx
+      - visualization components
+    - components
+      - https://github.com/airbnb/react-outside-click-handler
+      - https://github.com/airbnb/react-dates
+
 - ## SAP Fiori Design /SAP
   - /2.3kStar/Apache2/202010/js/less/css-in-js/react-jss
   - https://github.com/SAP/openui5
@@ -396,43 +433,6 @@ modified: '2020-11-13T07:29:55.201Z'
     - 依赖mr-ui，提供的react组件更偏向业务层，如demo-iframe/phone/search
     - Frontend tools for Mapbox documentation websites.
     - On Mapbox projects, pair these components with version 0.26.0 of Mapbox's custom Assembly build.
-
-- ## Base Design /Uber
-  - /5.4kStar/MIT/202010/js/css-in-js
-  - https://github.com/uber/baseweb
-    - https://baseweb.design/
-    - A React Component library implementing the Base design language
-    - 依赖styletron-react、popper.js、react-dropzone、react-movable、react-virtualized
-    - 组件基于class实现
-    - 样式基于css-in-js/styletron
-    - theming基于styled-ThemeProvider
-  - ref
-    - https://github.com/uber/react-vis
-      - react components to render common data visualization charts
-    - https://github.com/uber/react-view
-      - The first prototype of React View was even using react-live internally 
-      - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-      - We also rely on babel and babel-parser instead of buble.
-
-- ## Airbnb Design /Airbnb
-  - /335Star/MIT/202010/ts/css-in-js
-  - https://github.com/airbnb/lunar
-    - https://airbnb.design/
-    - React toolkit and design language for Airbnb internal projects.
-  - ref
-    - https://github.com/airbnb/Lona
-      - A tool for defining design systems and using them to generate cross-platform UI code, Sketch files
-    - [Building a Visual Language](https://airbnb.design/building-a-visual-language/)
-    - [Airbnb Cereal Fonts](https://airbnb.design/cereal/)
-    - https://github.com/airbnb/lottie-web
-      - Render After Effects animations natively on Web, Android and iOS, and React Native
-    - https://github.com/airbnb/react-with-styles
-      - Use CSS-in-JavaScript with themes for React without being tightly coupled to one implementation
-    - https://github.com/airbnb/visx
-      - visualization components
-    - components
-      - https://github.com/airbnb/react-outside-click-handler
-      - https://github.com/airbnb/react-dates
 
 # known-design-system
 

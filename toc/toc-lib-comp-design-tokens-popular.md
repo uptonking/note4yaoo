@@ -21,7 +21,7 @@ modified: '2021-01-01T22:06:57.471Z'
   - A place where OpenTable engineers and designers openly work together
   - store shared design attributes such as colors, fonts, widths, animations, etc.
 - https://github.com/kiwicom/orbit-design-tokens
-  - We use design tokens instead of static values like HEX codes for color or sizing units.
+  - We use pdesign tokens instead of static values like HEX codes for color or sizing units.
 - https://github.com/mineral-ui/mineral-ui/tree/master/packages/mineral-ui-tokens
   - This package uses Theo to generate output in a variety of formats.
 - https://github.com/FirefoxUX/design-tokens

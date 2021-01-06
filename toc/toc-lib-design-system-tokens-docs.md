@@ -7,20 +7,26 @@ modified: '2021-01-05T17:35:49.470Z'
 
 # toc-lib-design-system-tokens-docs
 
+# guide
+
+- style guide 文档该设计成单页，还是多页？
+  - 前期可设计成单页，快速修改 + 方便查看
+  - 后期可扩展成多页或SPA，丰富内容
+
 # themeable design
 
-- looker
-  - https://components.looker.com/system/typography/
-- mineral ui
+- looker /gatsby
+  - https://components.looker.com/system/spacing/
+- mineral ui /react
   - https://mineral-ui.netlify.app/tokens
   - https://mineral-ui.netlify.app/color
-- theme-ui
+- theme-ui /gatsby
   - https://theme-ui.com/demo
-- priceline
+- priceline /next
   - https://priceline.github.io/design-system/palette
-- chakra-ui
+- chakra-ui /next
   - https://chakra-ui.com/docs/features/text-and-layer-styles
-- flame
+- flame /storybook
   - https://lightspeed-flame.netlify.app/?path=/story/theme-tokens--colors
 
 # popular
@@ -62,7 +68,8 @@ modified: '2021-01-05T17:35:49.470Z'
   - https://spectrum.adobe.com/page/platform-scale/
 
 - elastic ui
-  - https://opensource.adobe.com/spectrum-css/typography.html
+  - https://elastic.github.io/eui/#/utilities/color-palettes
+  - https://elastic.github.io/eui/#/guidelines/colors
 
 - patternfly
   - https://www.patternfly.org/v4/guidelines/colors
@@ -85,6 +92,10 @@ modified: '2021-01-05T17:35:49.470Z'
   - https://garden.zendesk.com/design/color
 - grommet
   - https://v2.grommet.io/color
+- fluid
+  - https://www.engie.design/fluid-design-system/design-tokens/
+- spectre
+  - https://picturepan2.github.io/spectre/elements/typography.html
 
 - gov
   - https://designsystem.digital.gov/design-tokens/
@@ -139,11 +150,45 @@ modified: '2021-01-05T17:35:49.470Z'
 - vue design
   - https://vueds.com/example/#!/Design%20Tokens
 
+- https://styleguide.pivotal.io/modifiers/colors/
+- http://mongodb.design/#/ui-design-system/base-styles/colors
+- https://seek-oss.github.io/seek-style-guide/typography
+
+# living style guide tools
+
+- https://github.com/straker/livingcss
+  - Parse comments in your CSS to generate a living style guide using Markdown, Handlebars, Polymer, and Prism syntax highlighter
+  - http://straker.github.io/livingcss/
+  - https://www.familysearch.org/frontier/styleguide/
+- https://github.com/styleguidist/react-styleguidist
+  - https://react-styleguidist.js.org/
+  - https://bokuweb.github.io/re-bulma/
+  - https://dialogs.github.io/dialog-web-components/
+
+- https://github.com/AljanScholtens/taiga-boilerplate
+  - 使用了nunjucks模版
+- https://github.com/bjankord/Style-Guide-Boilerplate
+  - 大量空白，弱依赖php
+
 # more-docs-for-design-system
 
 - gatsby
   - https://aha.got-it.ai/2.0.1/foundations/colors/
   - https://amar-ui.tunaiku.com/foundations/color-system
+  - https://xstyled.dev/docs/colors/
+  - https://bumbag.style/palette/
+
+- next
+  - https://www.welcome-ui.com/theming/colors
+  - https://trendmicro-frontend.github.io/styled-ui/colors
 
 - https://github.com/morganfeeney/interior
   - 文档很简洁
+- https://qian-dao-zhen-yi.gitbook.io/rspec-style-guide/
+  - gitbook
+
+- https://github.com/anges244/evie
+  - https://evie.undraw.co/docs
+  - 基于ejs
+
+- https://github.com/freeCodeCamp/design-style-guide

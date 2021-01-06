@@ -54,8 +54,11 @@ modified: '2020-12-27T20:29:55.568Z'
   - block-style component
     - 方便实现 collapsible content
   - interactive animation
-    - anchor based flowing animation 基于某起点开始的变形动画，多是流动线型
-    - auto animation by default 首次渲染完成后，组件的某部分会自动开始动起来
+    - anchor based flowing animation 
+      - 基于某起点开始的变形动画，多是流动线型
+      - 多是flow down的模式，坚持竖直滚动，取消水平滚动，水平滚动用下拉/分页
+    - auto animation by default 
+      - 首次渲染完成后，组件的某部分会自动开始动起来
       - 如文字从0开始增加
       - 如输入框的边框开始闪烁
     - 组件的动画不是必需项

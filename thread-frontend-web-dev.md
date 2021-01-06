@@ -1,11 +1,11 @@
 ---
-title: thread-frontend-web
-tags: [frontend, web]
+title: thread-frontend-web-dev
+tags: [frontend, thread, web]
 created: '2020-12-05T07:43:47.005Z'
-modified: '2020-12-05T07:44:12.022Z'
+modified: '2021-01-06T14:40:37.677Z'
 ---
 
-# thread-frontend-web
+# thread-frontend-web-dev
 
 # pieces
 

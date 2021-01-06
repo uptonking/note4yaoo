@@ -78,17 +78,15 @@ modified: '2020-12-21T07:45:28.814Z'
     - there is still a lot of room for webkit to optimize pseudo classes and elements, but regardless they are much faster than trying to do the same thing with JavaScript and DOM manipulations
 
 - [JavaScript Selector Performance_201703](https://gomakethings.com/javascript-selector-performance/)
-  - Specifically, `getElementById()` and `getElementsByClassName()` are more than twice as fast as `querySelector()` and `querySelectorAll()`.
+  - Specifically getElementById()` and `getElementsByClassName()` are more than twice as fast as `querySelector()` and `querySelectorAll()`.
   - So, that’s bad, right? I honestly don’t think it matters.
-  - Yes, `getElementById()` and `getElementsByClassName()` are faster. 
+  - Yes `getElementById()` and `getElementsByClassName()` are faster. 
   - But the flexibility and consistency of `querySelector()` make the obvious muscle-memory choice for my projects.
   - And it’s not slow. It’s just not as fast.
   - getElementById() can run about 15 million operations a second, 
     - compared to just 7 million per second for querySelector() in the latest version of Chrome. 
     - But that also means that querySelector() runs 7,000 operations a millisecond. 
     - 虽然慢一点，但也足够快，性能的主要问题不在这里
-
-
 
 # pieces
 
@@ -120,3 +118,13 @@ modified: '2020-12-21T07:45:28.814Z'
 - [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)
 - [Use efficient CSS selectors rule by Google PageSpeed](https://stackoverflow.com/questions/25618138/)what-happened-to-the-use-efficient-css-selectors-rule
 - [Which CSS selectors or rules can significantly affect layout/rendering performance](https://stackoverflow.com/questions/12279544/which-css-selectors-or-rules-can-significantly-affect-front-end-layout-renderi)
+- [CSS进阶系列](https://github.com/chokcoco/iCSS)
+- [30-seconds-of-css](https://github.com/30-seconds/30-seconds-of-css)
+  - Short CSS code snippets for all your development needs
+- [You-Dont-Need-JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript)
+  - CSS is powerful, you can do a lot of things without JS.
+- [solved-by-flexbox](https://github.com/philipwalton/solved-by-flexbox)
+  - https://philipwalton.github.io/solved-by-flexbox/
+  - problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox.
+- [css.gg](https://github.com/astrit/css.gg)
+  - 700+ Pure CSS, SVG & Figma UI Icons Available in SVG Sprite, styled-components, NPM & API

@@ -1,8 +1,8 @@
 ---
 title: thread-blog-collection
-tags: [blog]
+tags: [blog, thread]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-11-22T12:09:23.041Z'
+modified: '2021-01-06T14:39:45.119Z'
 ---
 
 # thread-blog-collection

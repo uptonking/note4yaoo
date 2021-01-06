@@ -37,6 +37,12 @@ modified: '2020-11-11T13:16:42.423Z'
 - 卫健委：疫情风险等级查询
   - http://bmfw.www.gov.cn/yqfxdjcx/index.html
 
+# vaccine
+
+- [Coronavirus (COVID-19) Vaccinations](https://ourworldindata.org/covid-vaccinations)
+  - Our World in Data will be tracking recent announcements on the first countries to administer these vaccinations. 
+  - Our sources for the data presented here are listed at the bottom of this page.
+
 # org
 
 - 新冠肺炎（COVID-19）开放数据源

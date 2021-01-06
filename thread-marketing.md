@@ -1,8 +1,8 @@
 ---
 title: thread-marketing
-tags: [marketing]
+tags: [marketing, thread]
 created: '2020-12-07T06:07:44.432Z'
-modified: '2020-12-07T06:10:37.743Z'
+modified: '2021-01-06T14:40:06.842Z'
 ---
 
 # thread-marketing

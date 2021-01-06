@@ -68,6 +68,7 @@ modified: '2020-12-21T07:46:08.324Z'
 - **values**
 
 ``` 
+
 Initial value	auto
 Applies to	positioned elements
 Inherited	no
@@ -139,6 +140,7 @@ Creates stacking context	yes
   - z-index只能用在非static定位元素上，若用在static定位元素上则无效果
 
 ``` 
+
 bottom layer (farthest from the observer)
 ...
 Layer -3
@@ -177,7 +179,7 @@ top layer (closest to the observer)
   - Element with a `isolation` value `isolate` .
   - Element with a `-webkit-overflow-scrolling` value `touch` .
   - Element with a `will-change` value specifying any property that would create a stacking context on non-initial value.
-  - Element with a `contain` value of layout, or paint, or a composite value that includes either of them (i.e. `contain: strict` , `contain: content` ).
+  - Element with a `contain` value of layout, or paint, or a composite value that includes either of them (i.e. `contain: strict/content` ).
   - Element with a `mix-blend-mode` value other than `normal` .
 
 - Within a stacking context, child elements are stacked according to the same rules previously explained. 

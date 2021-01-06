@@ -58,6 +58,8 @@ modified: '2021-01-01T20:15:45.650Z'
   - VDOM结构
   - DOM更新及操作
   - 生命周期
+  - 模版
+    - ejs, pug, nunjucks, mustache, handlebars, swig, art, lodash template
 
 - 状态管理 state management
   - single vs multi store
