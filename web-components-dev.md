@@ -9,6 +9,13 @@ modified: '2021-01-01T18:24:23.850Z'
 
 # guide
 
+- web components pros
+  - 标准方案，浏览器提供实现的runtime
+
+- web components cons
+  - 只提供了组件组成的结构，没有解决前端经典问题 keep dom in sync with state/data，需自己实现
+  - 提供的template, slot功能不够强，没有传统template engine的变量替换和控制流
+
 # pieces
 
 - 不太看好web components，

@@ -14,6 +14,18 @@ modified: '2020-11-08T10:40:45.221Z'
   - no vdom
 - lit-element特点
 
+- ## [How it Works](https://github.com/Polymer/lit-html/wiki/How-it-Works)
+- This is a deep-dive into how lit-html works, what makes it fast, how the code is organized, and what could be improved. 
+- lit-html is an HTML templating library. 
+  - Templates are written in JavaScript by mixing static HTML strings and dynamic JavaScript values using template literals. 
+  - lit-html enables a functional/UI-as-data programming model, fast initial rendering, and fast updates that minimally update DOM when state changes.
+  - The key that enables this is separating static parts of templates from the dynamic parts with template literals, and never traversing or updating the static parts after the initial render.
+- Phases of Template Rendering
+  1. Define
+  2. Prepare
+  3. Create
+  4. Update
+
 - ## Since lit-html uses web components, how is it different from React components ?
 - https://twitter.com/h4rishabh/status/1280178522062012417
 - To clarify, lit-html doesn't require web components
@@ -42,6 +54,13 @@ modified: '2020-11-08T10:40:45.221Z'
     - removing attributes if data is missing 
     - and diffing against live property values.
 
+- ## [How is lit-html efficient without template compilation?](https://github.com/Polymer/lit-html/issues/944)
+- Really enjoying this lib and it's simplicity and use of JS for logic.
+  - Handlebars has `compile()`, JSX has build time compilation to functions, many others have build compilation. 
+  - I'm wondering how, since we don't pre-compile lit templates, are they still efficient? 
+- lit-html prepares templates the first time they're rendered, not every execution. 
+  - The preparation step records where the expressions are in the DOM so that on the changing expressions are ever updated.
+
 # pieces
 
 - The primary drawback of lit-html to me is that it doesn't seem to work with Typescript as well as JSX does (specifically for custom component props)
@@ -51,6 +70,14 @@ modified: '2020-11-08T10:40:45.221Z'
 # discuss
 
  
+
+- ## [怎么评价 lit-html ?](https://www.zhihu.com/question/269188214/answers/updated)
+- 先说结论：不考虑在工程中使用
+  - 快速渲染DOM
+  - 很容易接入状态管理工具
+  - 不需要构建工具（评：意味着不高的浏览器兼容性）
+  - 很小的体积（评：更适合C端）
+  - 支持promise注入（评：鸡肋，直接在view层调promise，只适合小应用。api复用怎么办？状态管理怎么办？）
 
 - ## I was bit confused about using lit-html over React 
 - https://twitter.com/h4rishabh/status/1280185672632958977

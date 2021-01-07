@@ -33,6 +33,32 @@ modified: '2020-12-23T09:54:10.963Z'
   - 读写文件：文本、图片、文档doc、表格
   - 图表绘
 
+# 是否要用前端模版引擎
+
+- 根据团队的技术方案
+
+# how to split large html
+
+- 单页拆多页
+  - 最简单的方式是通过`<a>`标签跳转
+- 使用传统(后端)html模板在编译期合并
+  - 如handlebars、ejs、pug
+- 使用jsx-like的模板在运行期执行
+  - lit-html
+- 基于web components的template slot
+  - 注意template slot并没有提供插入变量占位符、控制流等方法，需自己实现
+- 直接使用js读取和插入html元素
+  - `querySelector('s').innerHTML=元素`
+  - `$("#includedContent").load("list.html");`
+
+- ref
+  - [Splitting large html file in several files](https://stackoverflow.com/questions/43153049/splitting-large-html-file-in-several-files)
+    - HTML Imports 已废弃
+  - [How to separate web components to individual files and load them?](https://stackoverflow.com/questions/55080103/how-to-separate-web-components-to-individual-files-and-load-them)
+  - [写组件的时候是写好html结构还是在js里拼接好？](https://www.zhihu.com/question/40993912/answers/updated)
+  - [Chrome 为何 deprecated HTML Imports？](https://www.zhihu.com/question/310628534)
+    - 因为推出了更新的web components标准
+
 # hide dom elements: visibility vs display
 
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.

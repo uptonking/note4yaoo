@@ -17,12 +17,6 @@ modified: '2020-11-11T13:19:48.284Z'
 - https://github.com/plotly/datasets
   - Datasets used in Plotly examples and documentation
 
-# img
-
-- 搜索页图标
-  - https://www.baidu.com/img/bd_logo1.png
-  - https://www.sogou.com/web/index/images/logo_440x140.v.4.png
-
 # 语言文字类
 
 - 中国程序员容易发音错误的单词    

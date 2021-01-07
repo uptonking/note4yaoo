@@ -7,6 +7,23 @@ modified: '2020-12-21T07:44:48.911Z'
 
 # web-browser-chrome-firefox
 
+# browser-versions
+
+- ref
+  - [Chrome version history](https://en.wikipedia.org/wiki/Google_Chrome_version_history)
+  - [Firefox version history](https://en.wikipedia.org/wiki/Firefox_version_history)
+  - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history)
+
+- 202101
+  - chrome
+    - stable(20201112) 87.0.4280, blink 87, v8 8.7
+    - canary(20201114) 89.0, blink 89, v8 8.9
+  - firefox
+    - stable(20201222) 84.0.1
+    - future(20210126) 85.0
+  - safari
+    - stable(20201214) 14.0.2，webkit 610.3.7.1.9, macOS 10.14-11
+
 # browser 
 
 - [Browser usage table](https://caniuse.com/usage-table)
