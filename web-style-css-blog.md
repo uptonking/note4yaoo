@@ -1,11 +1,11 @@
 ---
-title: web-styling-css-tips
-tags: [css, styling, tips, web]
+title: web-style-css-blog
+tags: [blog, css, styling, web]
 created: '2020-12-24T17:15:58.938Z'
-modified: '2020-12-24T17:16:40.241Z'
+modified: '2021-01-07T16:44:56.296Z'
 ---
 
-# web-styling-css-tips
+# web-style-css-blog
 
 # guide
 

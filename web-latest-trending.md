@@ -1,11 +1,11 @@
 ---
-title: web-latest-industry
+title: web-latest-trending
 tags: [latest, web]
 created: '2021-01-01T20:52:04.258Z'
 modified: '2021-01-01T20:52:42.088Z'
 ---
 
-# web-latest-industry
+# web-latest-trending
 
 # guide
 
@@ -18,6 +18,7 @@ modified: '2021-01-01T20:52:42.088Z'
   - lowcode/nocode
   - webpack module federation
   - faas
+  - component story format
 
 - still
   - 小程序
@@ -73,7 +74,7 @@ modified: '2021-01-01T20:52:42.088Z'
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
 - [My bold two-year prediction](https://twitter.com/tylerlwsmith/status/1346282659484323841): 
   - 2021 will be the peak of JavaScript frameworks & compilers. 
-  - In 2022, tools like Turbo, Laravel Livewire, .NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.
+  - In 2022, tools like Turbo, Laravel Livewire, . NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.
   - Developers gravitate towards tools that let them build things fast, even if it means letting go of some control. 
     - Bootstrap and Tailwind caught on because they let developers build real apps without tediously writing their own CSS.
     - The same thing will happen to JavaScript.

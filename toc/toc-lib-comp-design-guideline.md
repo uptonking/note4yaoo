@@ -18,7 +18,7 @@ modified: '2020-12-20T15:47:13.585Z'
 - https://github.com/ardakaracizmeli/design-system-checklist
   - https://designsystemchecklist.com/
   - An open-source checklist to help you plan, build and grow your design system.
-- https://github.com/interactivethings/catalog/
+- https://github.com/interactivethings/catalog
   - Create living style guides using Markdown or React
 - https://github.com/intuit/design-systems-cli
   - A CLI toolbox for creating design systems in minutes

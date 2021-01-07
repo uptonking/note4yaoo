@@ -156,10 +156,18 @@ modified: '2021-01-05T17:35:49.470Z'
 
 # living style guide tools
 
-- https://github.com/straker/livingcss
+- https://github.com/SassDoc/sassdoc
+  - SassDoc is to Sass what JSDoc is to JavaScript
+  - SassDoc parses your source folder to grab documentation-specific comments. 
+  - From there, it builds a data tree, that gets enhanced and filtered before being passed to the view.
+- https://github.com/straker/livingcss /201912
   - Parse comments in your CSS to generate a living style guide using Markdown, Handlebars, Polymer, and Prism syntax highlighter
-  - http://straker.github.io/livingcss/
-  - https://www.familysearch.org/frontier/styleguide/
+  - who is using
+    - http://straker.github.io/livingcss/
+    - https://www.familysearch.org/frontier/styleguide/
+- https://github.com/hugeinc/styleguide
+  - A tool to make creating and maintaining styleguides easy
+  - 
 - https://github.com/styleguidist/react-styleguidist
   - https://react-styleguidist.js.org/
   - https://bokuweb.github.io/re-bulma/
