@@ -35,3 +35,10 @@ modified: '2020-12-19T10:12:43.028Z'
 
 - https://github.com/timekit-io/booking-js
   - version 2 of booking.js that supports the new projects model and uses App Widget Key for authentication
+
+# editor
+
+- https://github.com/matteobruni/object-gui
+  - https://codepen.io/matteobruni/pen/oNxNvja
+  - Object GUI is your fully customizable Javascript Object GUI Editor
+  - 内置多种主题theming

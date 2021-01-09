@@ -3,7 +3,7 @@ title: log-repeat-solutions
 tags: [repeat, solutions]
 favorited: true
 created: '2021-01-08T00:10:18.987Z'
-modified: '2021-01-09T02:48:12.856Z'
+modified: '2021-01-09T16:13:07.758Z'
 ---
 
 # log-repeat-solutions
@@ -63,6 +63,7 @@ modified: '2021-01-09T02:48:12.856Z'
 
 - dashboard
   - core-ui
+  - creativetim
 
 - window-manager
   - golden-layout: 场景功能非常丰富的window

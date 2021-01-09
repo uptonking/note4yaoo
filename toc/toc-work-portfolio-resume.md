@@ -1,11 +1,11 @@
 ---
-title: toc-work-resume
-tags: [interview, resume, work]
+title: toc-work-portfolio-resume
+tags: [interview, portfolio, resume, work]
 created: '2020-09-22T12:18:43.931Z'
-modified: '2020-10-22T13:53:19.625Z'
+modified: '2021-01-09T16:56:35.339Z'
 ---
 
-# toc-work-resume
+# toc-work-portfolio-resume
 
 # resume-popular
 
@@ -19,6 +19,10 @@ modified: '2020-10-22T13:53:19.625Z'
 
 # portfolio
 
+- https://github.com/khang-nd/khang-nd.github.io
+  - https://khang-nd.github.io/
+  - A window-styled portfolio (hence the name Winport) built with ReactJS, fully responsive, mobile first
+  - multiple themes are integrated: classic, flat, neumorphism
 - https://github.com/LekoArts/portfolio
   - My personal portfolio & blog. Built with Gatsby.js.
 

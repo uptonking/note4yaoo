@@ -11,6 +11,22 @@ modified: '2021-01-06T14:40:11.360Z'
 
  
 
+- ## How do you manage API calls in react
+- https://twitter.com/_Adyasha8105_/status/1347978564251963392
+  - Using a library like react-query 
+  - or your own custom hooks 
+  - or just plain fetch/Axios calls in components or inactions? 
+  - What's the best way to go forward
+- Short answer: react-query
+  - Long answer: Axios was my base. 
+  - I found state is kinda tricky when there’s too many request or components with CRUD operations (introduced xstate). 
+  - then I realized a cache could help to improve UX (added react-query) 🙃. 
+  - Start simple then build up
+- I also created my own generic http class wrapper so if I want to swap between fetch, axios or something else, I won’t have to change in multiple places. 
+  - have not tried React Query but it looks cool...
+  - I just always am cautious of abstraction lib dependencies.
+- I have not worked much in React But Axios did the work I needed
+
 - ## JSX is an abomination(令人厌恶的事物).
 - https://twitter.com/justinfagnani/status/1246514699341983744
   - You can't write a literal <, because that opens a tag, 

@@ -116,6 +116,17 @@ modified: '2021-01-01T20:52:42.088Z'
   - There's a good chance this year that I will reimplement React-Charts with airbnb/visx
     - and a slightly smaller chance that React Charts goes away all together.
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
+- [Web development and designing trends in 2021](https://twitter.com/Prathkum/status/1347779080259715073)
+  - Progressive Web Apps
+  - Single Page Websites
+  - Accelerated Mobile Pages
+  - Voice-Enabled eCommerce apps
+  - API-first development
+  - Parallax animation
+  - Glass and Neumorphism
+    - 也称为soft ui，是一种类似于浮雕的效果，有的人说这是新的拟物风格（New Skeuomorphism）
+  - Abstract art compositions
+  - 3D visuals
 - [My bold two-year prediction](https://twitter.com/tylerlwsmith/status/1346282659484323841): 
   - 2021 will be the peak of JavaScript frameworks & compilers. 
   - In 2022, tools like Turbo, Laravel Livewire, . NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.

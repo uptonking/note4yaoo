@@ -32,6 +32,16 @@ modified: '2021-01-01T20:09:35.330Z'
   - 背景由全宽变卡片
   - 矩形上一部分变形，如高度的一部分向矩形中线平移会形成卧倒L型
 
-# static
+# design-style
 
-- handwritten：素描风格，线框图风格
+- flat/metro design
+- material design
+
+ 
+
+- handwritten
+  - 素描风格，线框图风格
+- 使用矩形色块作为背景，但四边不是直线
+  - https://twitter.com/SaraSoueidan/status/1347241987364294660
+- neomorphism
+  - 浮雕风格
