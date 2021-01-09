@@ -32,7 +32,13 @@ modified: '2021-01-01T20:52:42.088Z'
 - engineering
   - 前后端一体化/BFF：blitz, redwood
 
+- animation
+  - web animations api
+
 - css
+  - CSS Painting API／CSS Layout API／CSS Typed OM
+  - css typed om
+    - firefox和safari均不支持(202001)
   - css in js依然活跃
 
 - js
@@ -49,6 +55,44 @@ modified: '2021-01-01T20:52:42.088Z'
   - auto testing/monitoring
     - puppeteer
   - compiler
+
+- more
+  - WebGL 2
+  - Push Notifications
+  - anything based on Worklets
+  - WebRTC
+  - WebP/VP8/VP9
+  - WebXR
+  - CSS Typed OM
+  - Offscreen Canvas
+  - ImageBitmap (quickly draw programmatically created images)
+  - CSS Typed OM (fast CSS updates from JS)
+  - requestIdleCallback
+  - ResizeObserver
+  - scroll-snap
+  - :focus-within
+  - new media query options (OS settings personalization)
+  - logical properties (block & inline)
+  - Sticky Situations
+  - backdrop-filter
+  - :is()
+  - FlexBox gap
+  - Houdini
+  - Custom properties
+  - Paint API
+  - Animation Worklet
+
+- ios-missing
+  - No Service Worker
+  - Can't print or save as PDF
+  - No support for GetUserMedia
+  - Web Push Notifications (ZOMFG)
+  - Audio Worklet
+  - Custom Paint
+  - Web Animations API
+  - Pointer Events
+  - CSS Typed OM
+  - Web Bluetooth
 
 # discuss
 

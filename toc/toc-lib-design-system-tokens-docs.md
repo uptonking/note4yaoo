@@ -153,6 +153,7 @@ modified: '2021-01-05T17:35:49.470Z'
 - https://styleguide.pivotal.io/modifiers/colors/
 - http://mongodb.design/#/ui-design-system/base-styles/colors
 - https://seek-oss.github.io/seek-style-guide/typography
+- https://seeds.sproutsocial.com/visual/color
 
 # living style guide tools
 
@@ -167,7 +168,7 @@ modified: '2021-01-05T17:35:49.470Z'
     - https://www.familysearch.org/frontier/styleguide/
 - https://github.com/hugeinc/styleguide
   - A tool to make creating and maintaining styleguides easy
-  - 
+
 - https://github.com/styleguidist/react-styleguidist
   - https://react-styleguidist.js.org/
   - https://bokuweb.github.io/re-bulma/
@@ -177,6 +178,8 @@ modified: '2021-01-05T17:35:49.470Z'
   - 使用了nunjucks模版
 - https://github.com/bjankord/Style-Guide-Boilerplate
   - 大量空白，弱依赖php
+- https://github.com/pure-css/pure-site
+  - 使用了handlebars
 
 # more-docs-for-design-system
 

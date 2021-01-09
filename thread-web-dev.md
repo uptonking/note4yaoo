@@ -1,20 +1,35 @@
 ---
-title: thread-frontend-web-dev
+title: thread-web-dev
 tags: [frontend, thread, web]
 created: '2020-12-05T07:43:47.005Z'
-modified: '2021-01-06T14:40:37.677Z'
+modified: '2021-01-08T17:13:43.392Z'
 ---
 
-# thread-frontend-web-dev
+# thread-web-dev
 
 # pieces
 
  
 
+- ## Quiz time! for histroy back
+- https://twitter.com/ryanflorence/status/1346562678869790720
+  - No JavaScript on the page, normal document requests:
+    - You land at http://example.com
+    - You click a link to /page.html
+    - Again, you click a link to /page.html
+    - You click the browser back button
+- Turns out when you go to the same URL, the browser still makes a document request to the server, still gets the a fresh page, 
+  - but it *does not* push a new entry into the stack, it *replaces* the current one!
+  - It's the same as clicking "refresh", and that makes sense.
+  - 结果是回到example.com
+- 实践测试
+  - 在空标签页打开 a.html，然后按返回键，会回到空标签页
+  - 在空标签页打开 a.html，再点刷新按钮，然后按返回键，也会回到空标签页
+
 - ## To help me decide exactly what my media query tweak points should be.
 - https://twitter.com/Malarkey/status/1345873190380253187
 - If I had to print something for debug purpose, I'd prefer to show a different content, with the information of the media applied, on a `body::before` pseudo element absolutely positioned.
-- I went with a `content:"XS";` `content: "S"`,   `"M" `and so on. 
+- I went with a `content:"XS";` `content: "S"/"M" `and so on. 
   - I've got this `debug.sass` file damn full of ways to figure out common gotchas behind html classes like debug_viewport debug_grids and so on. 
   - It's annoying to maintain but it has saved me tons of time @ the job at least twice
 - [Custom properties for breakpoint debugging_201802](https://thatemil.com/blog/2018/02/23/custom-properties-breakpoint-debugging/)

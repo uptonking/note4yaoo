@@ -21,21 +21,42 @@ modified: '2020-12-09T09:30:24.694Z'
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
-- https://github.com/march08/dashboard-ui-kit
-  - /28.2kStar/MIT/202005/ts
-  - React UI components for rapid development.
-  - https://developer.dashboard-ui.com/
-- https://github.com/DesignRevision/shards-react
-  - /562Star/MIT/201902
-  - modern React UI kit
 
-based on Shards.
+- countly /4.7kStar/AGPLv3/202101/js
+  - https://github.com/Countly/countly-server
+  - built with mongodb, express
+  - Countly is a product analytics solution that helps teams track product performance and customer journey and behavior across mobile, web, and desktop applications. 
+  - Countly relies on a wide diversity of SDKs for deployment 
+- grafana /Apache2/36.5kStar/202008/go
+  - https://github.com/grafana/grafana
+  - https://grafana.com/
+  - The tool for monitoring and metric analytics & dashboards for Graphite, InfluxDB & Prometheus & More
+- https://github.com/tabixio/tabix /1.1kStar/2011903
+  - simple business intelligence application and sql editor tool for Clickhouse.
+- https://github.com/saasforge/open-source-saas-boilerpate
+  - Free SaaS boilerplate (Python/PostgreSQL/ReactJS/Webpack)
+- https://github.com/keen/dashboards /10.8kStar/201911
+  - CSS Grid-based templates
+  - All examples have been updated to use keen-dataviz.js and keen-analysis.js
 
-  - https://github.com/designrevision/shards-ui
-- https://github.com/heysafronov/square-react-dashboard
-  - /59Star/MIT/2020009
-  - React Dashboard Template built with TypeScript
-  - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components
+# viz-dashboard
+
+- https://github.com/kantord/just-dashboard /1.5kStar/201907
+  - https://kantord.github.io/just-dashboard/
+  - Dashboards using YAML or JSON files
+- https://github.com/plouc/mozaik /3.5kStar/201905
+  - http://mozaik.rocks/
+  - http://mozaik.herokuapp.com/
+  - a tool based on react/redux/d3 to easily craft dashboards.
+
+# examples
+
+- https://github.com/amcharts/covid-charts
+  - A collection of JS-based data visualization tools and data for depicting spread of the COVID-19
+- https://github.com/covid19cubadata/covid19cubadata.github.io
+  - Covid19 - Dashboard for Cuba
+- https://github.com/stevenliuyi/covid19
+  - an interactive, animated COVID-19 coronavirus map to track the outbreak over time by country and by region
 
 # misc
 

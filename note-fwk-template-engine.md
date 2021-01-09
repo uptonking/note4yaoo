@@ -21,7 +21,7 @@ modified: '2020-12-08T13:29:35.248Z'
   1. 能极大提升首渲速度
   2. SEO
 - 需要秒开首屏以及对seo有高要求的应用场景，前端渲染还有下面几个地方，不能完成，只能后端渲染：
-  - 导出为.doc .docx  .xls .xlsx，pdf
+  - 导出为.doc .docx .xls .xlsx .pdf
   - 自定义纸张的打印
   - 前端导出PDF是可以做到的 只是代码量....amcharts里看到导出PDF的js，真的是大。
 
@@ -107,3 +107,23 @@ modified: '2020-12-08T13:29:35.248Z'
 - [用20行代码带你了解模板引擎实现原理](https://zhuanlan.zhihu.com/p/267830144)
   - 模板引擎就是将数据（data）和模板（template）合并然后生成 HTML 文本。
   - 使用 ejs 的语法来实现一个模板引擎，整个代码实现只有 20 行。
+
+# discuss
+
+- ## [differences between handlebars.java and handlebars.js](https://github.com/jknack/handlebars.java/issues/346)
+- handlebars.java is a server side template engine (like freemarker, velocity, etc..)
+- That's all handlebars.java is about, just a template engine for Java.
+- Now, if your app does a lot of JavaScript or MVC on the browser... people usually choose a template engine for the browser: handlebars.js (mustache.js, jade, haml, etc...)
+- On such apps, handlebars.java let's you use/reuse templates in the server and browser. 
+- This is the main goal of handlebars.java: "reuse the templates". 
+- Here there aren't so much difference the same template works at server side (handlebars.java) and/or client side (handlebars.js). 
+- Another issue that people want to solved too "is to reuse the helpers" again at server and client sides. 
+  - This one is more tricky and handlebars.java does something on this point but it not always work.
+  - What does it? It let you define your helpers in javascript and being executed in Java through Rhino.
+  - This feature works good most of the times, but not always.
+- Handlebars.js doesn't look in the context stack for missing attributes in the current scope (this is consistent with the Mustache Spec).
+  - Hopefully, you can turn-off the context stack lookup in Handlebars.java by qualifying the attribute with this.
+
+# ref
+
+- [Comparison of web template engines](https://en.wikipedia.org/wiki/Comparison_of_web_template_engines)

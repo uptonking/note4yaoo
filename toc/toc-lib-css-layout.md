@@ -9,6 +9,9 @@ modified: '2020-08-02T07:17:20.850Z'
 
 # flexbox-layout
 
+- ref
+  - https://github.com/afonsopacifer/awesome-flexbox
+
 - react-grid-layout /MIT/11.5kStar/202004
   - https://github.com/STRML/react-grid-layout
   - https://strml.github.io/react-grid-layout/examples/0-showcase.html

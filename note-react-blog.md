@@ -1,11 +1,44 @@
 ---
-title: note-react-blog-page
+title: note-react-blog
 tags: [blog, dev, react]
 created: '2020-06-29T08:43:56.344Z'
 modified: '2020-07-14T11:51:59.253Z'
 ---
 
-# note-react-blog-page
+# note-react-blog
+
+# [JSX Gotchas](https://shripadk.github.io/react/docs/jsx-gotchas.html)
+
+- JSX looks like HTML but there are some important differences you may run into.
+  - For DOM differences, such as the inline `style` attribute, see DOM Differences
+- You can insert HTML entities within literal text in JSX
+  - `<div>First &middot; Second</div>`
+  - If you want to display an HTML entity within dynamic content, you will run into double escaping issues as React escapes all the strings you are displaying in order to prevent a wide range of XSS attacks by default.
+  - The easiest way is to write unicode character directly in Javascript. 
+    - `<div>{'First · Second'}</div>`
+  - A safer alternative is to find the unicode number corresponding to the entity and use it inside of a JavaScript string. 
+    - `\u00b7` 或者 `String.fromCharCode(183)`
+  - You can use mixed arrays with strings and JSX elements.
+    - `<div>{['First ', <span>&middot;</span>, ' Second']}</div>`
+  - As a last resort, you always have the ability to insert raw HTML.
+    - `<div dangerouslySetInnerHTML={{__html: 'First &middot; Second'}} />`
+- If you pass properties to native HTML elements that do not exist in the HTML specification, React will not render them. 
+  - If you want to use a custom attribute, you should prefix it with `data-`.
+- Web Accessibility attributes starting with `aria-` will be rendered properly.
+
+- [DOM Differences](https://shripadk.github.io/react/docs/dom-differences.html)
+- React has implemented a browser-independent events and DOM system for performance and cross-browser compatibility reasons. 
+- We took the opportunity to clean up a few rough edges in browser DOM implementations.
+  - All DOM properties and attributes (including event handlers) should be camelCased to be consistent with standard JavaScript style. 
+    - We intentionally break with the spec here since the spec is inconsistent. 
+    - However, `data-*` and `aria-*` attributes conform to the specs and should be lower-cased only.
+  - The `style` attribute accepts a JavaScript object with camelCased properties rather than a CSS string. 
+    - This is consistent with the DOM style JavaScript property, is more efficient, and prevents XSS security holes.
+  - All event objects conform to the W3C spec, and all events (including submit) bubble correctly per the W3C spec.
+  - The `onChange` event behaves as you would expect it to: 
+    - whenever a form field is changed this event is fired rather than inconsistently on blur. 
+    - We intentionally break from existing browser behavior because onChange is a misnomer for its behavior and React relies on this event to react to user input in real time.
+  - Form input attributes such as `value` and `checked`, as well as `textarea`.
 
 # [Four Ways to Fetch Data in React_202007](https://www.bitnative.com/2020/07/06/four-ways-to-fetch-data-in-react/)
 
@@ -32,7 +65,7 @@ export default function InlineDemo() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch( `${process.env.REACT_APP_API_BASE_URL}users` )
+    fetch(`${process.env.REACT_APP_API_BASE_URL}users`)
       .then(response => {
         if (response.ok) return response.json();
         throw response;
@@ -338,7 +371,7 @@ function Blub() {
 ```
 
 - The reason this is problematic is because `useEffect` is going to do a referential equality check on options between every render, 
-  - and thanks to the way JavaScript works, `options` will be new every time 
+  - and thanks to the way JavaScript works options` will be new every time 
   - so when React tests, whether `options` changed between renders, it'll always evaluate to `true` , 
   - meaning the `useEffect` callback will be called after every render rather than only when `bar` and `baz` change.
 
@@ -371,7 +404,7 @@ function Blub() {
 ```
 
 - This is precisely the reason why `useCallback` and `useMemo` exist. So here's how you'd fix that (all together now)
-- Note that this same thing applies for the dependencies array passed to `useEffect` , `useLayoutEffect` , `useCallback` , and `useMemo` .
+- Note that this same thing applies for the dependencies array passed to `useEffect/useLayoutEffect/useCallback` , and `useMemo` .
 
 ``` typescript
 function CountButton({onClick, count}) {

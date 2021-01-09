@@ -7,8 +7,10 @@ modified: '2021-01-07T19:37:16.414Z'
 
 # thread-fwk-lit-html-element
 
-## lit-html vs handlebars
+# pieces
+ 
 
+- ## lit-html vs handlebars
 - lit-html approach is very similar to what handlebars template do. Perhaps with nicer syntax and dev experience
   - Much more than that. 
   - Using platform caching mechanism for speed.
@@ -25,6 +27,5 @@ modified: '2021-01-07T19:37:16.414Z'
   - lit-html is easier to debug than JSX because it's plain, standard, JavaScript and doesn't get transformed by a build step. 
   - You debug the actual source.
 
-# pieces
 
  

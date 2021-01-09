@@ -8,8 +8,9 @@ modified: '2021-01-06T14:40:06.842Z'
 # thread-marketing
 
 # pieces
+ 
 
-- Today I'm open sourcing the code that I've made $500K off of
+- ## Today I'm open sourcing the code that I've made $500K off of
   - https://twitter.com/_rchase_/status/1334619345935355905
   - I want everyone to see how bad it is, 
     - and I hope it inspires someone out there who is worried that they're not a good enough programmer to be able to start a SaaS business.

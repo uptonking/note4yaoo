@@ -28,7 +28,8 @@ modified: '2020-11-13T07:31:27.113Z'
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)
 
 - https://github.com/projectstorm/react-workspaces
-  - help you build super-modern desktop-grade applications that have window management similar to Adobe / Jetbrains and Netbeans
+  - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
+
 - https://github.com/kripod/react-polymorphic-box
   - Building blocks for strongly typed polymorphic components in React.
   - the `as` prop allows changing the HTML tag rendered by a component, 

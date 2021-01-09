@@ -43,9 +43,6 @@ modified: '2020-10-05T06:22:02.107Z'
   - production-ready animation and gesture library for React
   - based on popmotion9, @popmotion/popcorn, @popmotion/easing
   - Framer Motion is the successor to the Pose animation library
-
-  - 
-
 - react-motion /MIT/18.6kStar/201911
   - https://github.com/chenglou/react-motion  
   - http://chenglou.github.io/react-motion/demos/demo0-simple-transition/
@@ -62,10 +59,6 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://github.com/bluebill1049/react-simple-animate
   - https://react-simple-animate.now.sh/
   - Follow CSS animation standard
-- use-web-animations /MIT/622Star/202007
-  - https://github.com/wellyshen/use-web-animations
-  - https://use-web-animations.netlify.app/
-  - hooks for highly-performant and manipulable animations using Web Animations API.
 - ant-motion /MIT/3.8kStar/202006
   - https://github.com/ant-design/ant-motion
   - http://motion.ant.design/
@@ -102,6 +95,26 @@ modified: '2020-10-05T06:22:02.107Z'
   - Motions 
     - animation concerns, CSS transitions/animations, JS animations, whatever you can imagine
 
+# web animations api
+
+- use-web-animations /MIT/622Star/202007
+  - https://github.com/wellyshen/use-web-animations
+  - https://use-web-animations.netlify.app/
+  - hooks for highly-performant and manipulable animations using Web Animations API.
+- https://github.com/shoelace-style/animations
+  - Your favorite animate.css effects available as ES modules for use with the Web Animations API.
+  - This module was built for Shoelace, but it works well as a stand-alone library too!
+  - This script parses all animation stylesheets found in node_modules/animate.css and generates keyframe objects that you can use with the Web Animations API.
+  - As animations are tweaked and added to animate.css, the keyframes herein will be kept in sync when rerunning the script.
+- web-animations-js /Apache2/3.4kStar/201906
+  - https://github.com/web-animations/web-animations-js
+  - http://web-animations.github.io/
+  - JavaScript implementation of the Web Animations API
+  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+- animations.js /3Star/MIT/202006
+  - https://github.com/robertoentringer/animations.js
+  - Web Animations API based in Animate.css
+
 # js animation
 
 - anime /MIT/36.3kStar/202004
@@ -124,14 +137,6 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://github.com/daybrush/scenejs
   - https://daybrush.com/scenejs
   - a JavaScript & CSS timeline-based animation library.
-- web-animations-js /Apache2/3.4kStar/201906
-  - https://github.com/web-animations/web-animations-js
-  - http://web-animations.github.io/
-  - JavaScript implementation of the Web Animations API
-  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
-- animations.js /3Star/MIT/202006
-  - https://github.com/robertoentringer/animations.js
-  - Web Animations API based in Animate.css
 
 - https://github.com/uber/hubble.gl
     - Hubble.gl is a JS library for animating data visualizations.

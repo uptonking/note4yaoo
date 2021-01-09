@@ -42,7 +42,7 @@ modified: '2020-12-27T20:29:55.568Z'
   - **playful**
     - pluggable extensions
       - loading skeleton
-      - collapsible
+      - collapsible card/panel/window
       - ui shell
       - configurable
       - highlight code

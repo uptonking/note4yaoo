@@ -7,11 +7,30 @@ modified: '2021-01-06T14:40:11.360Z'
 
 # thread-react-dev
 
-# guide
-
 # pieces
 
  
+
+- ## JSX is an abomination(令人厌恶的事物).
+- https://twitter.com/justinfagnani/status/1246514699341983744
+  - You can't write a literal <, because that opens a tag, 
+  - but you can't write &lt; either because JSX isn't HTML and doesn't support entities. 
+  - You also can't write HTML comments, or use `<template>`.
+  - JSX is clearly unsuitable as a general way to write HTML in JS.
+- You can't event put a < inside of a string inside a JSX expression
+- There are alternative ways of expressing DOM in JS though. For example: domz
+- Recently ran into not being able to use `<template>` in React/Angular. 
+  - Workaround is to use `dangerouslySetInnerHtml/[innerHTML]`. 
+  - After that make sure that the sanitizer does not strip your Custom Elements
+- JSX isn’t even made to “write HTML in JS”
+
+- [My 5 Tips in Building a Design System](https://twitter.com/frostyweather/status/1087380930417840128):
+  1. Build components without business logic, but hooks for data.
+  2. Build UI components for/from products, not in the abstract
+  3. Should be easy to onboard/understand
+  4. Create code guidelines early on
+  5. Strong processes involved = strong DS
+  - I would add early and often 'collaboration' with the dev team to stay aligned.
 
 - ## Unit testing a react component is a waste of time in 99% 
 - https://twitter.com/oleg008/status/1235358013495676928

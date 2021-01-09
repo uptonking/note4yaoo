@@ -1,8 +1,9 @@
 ---
 title: log-repeat-solutions
 tags: [repeat, solutions]
+favorited: true
 created: '2021-01-08T00:10:18.987Z'
-modified: '2021-01-08T00:20:18.987Z'
+modified: '2021-01-09T02:48:12.856Z'
 ---
 
 # log-repeat-solutions
@@ -58,6 +59,14 @@ modified: '2021-01-08T00:20:18.987Z'
   - editorjs
 
 - design-system
-  - themeable ui
+  - theme-ui
+
+- dashboard
+  - core-ui
+
+- window-manager
+  - golden-layout: 场景功能非常丰富的window
+  - Ventus: 快速切换到窗口平铺预览
+  - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
 
 # solutions-collection

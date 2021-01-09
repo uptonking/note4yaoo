@@ -11,6 +11,10 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - top-css-lib
   - bootstrap, bulma, materialize, spectre, primer
+- ref
+  - search: pure css, css only
+  - https://github.com/topics/css-framework?o=desc&s=updated
+  - https://github.com/troxler/awesome-css-frameworks
 
 # popular
 
@@ -44,14 +48,6 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://picturepan2.github.io/spectre/
   - a responsive CSS framework based on flexbox
   - Designed and built by Yan Zhu(Microsoft MVP)
-- primer-css /MIT/9.7kStar/202010/scss
-  - https://github.com/primer/css
-  - https://primer.style/css
-  - The CSS implementation of GitHub's Primer Design System
-- pure-css /BSD/21kStar/202007/Yahoo
-  - https://github.com/pure-css/pure
-  - http://purecss.io/
-  - A set of small, responsive CSS modules
 - pico.css /65Star/MIT/202010/scss/文档优秀
   - https://github.com/picocss/pico
   - https://picocss.com/
@@ -66,9 +62,28 @@ modified: '2020-11-13T07:28:50.844Z'
   - Pico provide a .classless version ([Example](https://picocss.com/examples/classless/)).
     - `<header>/<main>/<footer>` as direct childs of `<body>` provide a responsive vertical `padding`
     - act as containers to define a centered or a fluid viewport.
-- water.css /5.7kStar/MIT/202010/css/classless
-  - https://github.com/kognise/water.css
-  - a CSS framework that doesn't require any classes. 
+- primer-css /MIT/9.7kStar/202010/scss
+  - https://github.com/primer/css
+  - https://primer.style/css
+  - The CSS implementation of GitHub's Primer Design System
+- pure-css /BSD/21kStar/202007/Yahoo
+  - https://github.com/pure-css/pure
+  - http://purecss.io/
+  - A set of small, responsive CSS modules
+- https://github.com/finnhvman/matter
+  - Material Design Components in Pure CSS
+  - Materializing HTML at just one class per component
+  - The purpose of Matter is to provide the most easy-to-use but accurate implementation of Material Design Components.
+  - Matter is built with theming in mind
+  - more-material
+    - https://github.com/mildrenben/surface
+- https://github.com/tylerchilds/cutestrap
+  - A strong, independent CSS Framework. Only 2.7KB gzipped.
+  - The two constraints for browser support are Custom Properties and CSS Grid.
+- https://github.com/alphardex/aqua.css
+  - https://aquacss.netlify.com/
+  - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
+  - [dashboard demo](https://codepen.io/alphardex/full/yLNwKqx)
 
 # css framework
 
@@ -82,10 +97,17 @@ modified: '2020-11-13T07:28:50.844Z'
   - A minimalist CSS framework.
 - Skin /eBay
   - /111Star/MIT/202010/less
-  - https://github.com/eBay/skin
+  - https://github.com/eB ay/skin
   - https://ebay.github.io/skin/
   - Pure CSS framework designed & developed by eBay for e-commerce marketplace.
   - Skin follows the BEM methodology of "Block, Element and Modifier" to ensure our HTML class name and structure is human readable and understandable.
+- https://github.com/Dogfalo/materialize /38.3kStar/MIT/202006
+  - https://materializecss.com/
+  - a CSS Framework based on material design
+- https://github.com/muicss/mui /4.5kStar/MIT/202006
+  - https://www.muicss.com/
+  - lightweight CSS framework that follows Google's Material Design guidelines.
+  - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K (gzipped)
 - https://github.com/magnetis/astro
   - /89Star/Apache2/202008/css
   - https://astro.magnetis.com.br/
@@ -100,5 +122,19 @@ modified: '2020-11-13T07:28:50.844Z'
   - just import the base uSwitch styles at the start of your file
   - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
 
+# classless
+
+- https://github.com/xz/new.css
+  - A classless CSS framework to write modern websites using only HTML.
+- water.css /5.7kStar/MIT/202010/css/classless
+  - https://github.com/kognise/water.css
+  - a CSS framework that doesn't require any classes. 
+
 # more-css-framework
 
+- https://github.com/sitetent/tentcss
+  - Includes only the essentials to make camp.
+  - not currently receiving updates.
+- https://github.com/AliBahaari/Jikan
+  - https://alibahaari.github.io/Jikan/
+  - CSS framework for better, faster and more beautiful UIs.

@@ -9,6 +9,11 @@ modified: '2020-12-21T07:47:02.451Z'
 
 # WebGL
 
+- ref
+  - [caniuse webgl2](https://caniuse.com/webgl2)
+    - 不支持：ie 11
+    - 支持：safari preview-only
+
 ## overview
 
 - WebGL is a cross-platform, royalty-free web standard for a low-level 3D graphics API based on OpenGL ES, exposed to ECMAScript via the HTML5 Canvas element. 

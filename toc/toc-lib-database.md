@@ -47,6 +47,10 @@ modified: '2020-10-22T13:11:04.726Z'
       - 数据库和数据模型来自同一个地方
       - 控制力高于SQL构造器，低于手写SQL； 但生产力最高
 
+- https://github.com/orbitjs/orbit
+  - Orbit is a composable data framework for managing the complex needs of today's web applications.
+  - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
+
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
   - MyBatisNodeJs understands the same xml files as input like MyBatis Java.

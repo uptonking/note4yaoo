@@ -1,0 +1,243 @@
+---
+title: toc-lib-editor-builder-dashboard
+tags: [builder, dashboard, toc, ux]
+created: '2021-01-08T10:48:16.590Z'
+modified: '2021-01-08T11:48:16.590Z'
+---
+
+# toc-lib-editor-builder-dashboard
+
+- ref
+  - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
+  - [search: dashboard css](https://github.com/search?o=desc&p=1&q=dashboard+language%3Acss+language%3Ahtml+language%3Ascss&s=stars&type=Repositories)
+  - [search: pure css dashboard](https://github.com/search?o=desc&p=1&q=pure+css+dashboard+&s=stars&type=Repositories)
+    - css only dashboard
+
+# css dashboard lite
+
+- CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
+  - https://github.com/coreui/coreui-free-bootstrap-admin-template
+  - free bootstrap admin template
+- Shards Dashboard UI Kit /1.1kStar/MIT/201809
+  - https://github.com/DesignRevision/shards-dashboard
+  - Bootstrap 4 admin dashboard templates pack.
+- AdminLTE /35.8kStar/MIT/202008
+  - https://github.com/ColorlibHQ/AdminLTE
+  - https://adminlte.io/
+  - a fully responsive administration template
+  - Based on Bootstrap 4.5 framework and also the JS/jQuery plugin. 
+  - AdminLTE.io just opened a new premium templates page
+- https://github.com/CoCreate-app/CoCreate-dashboard
+  - A simple HTML5, CSS and pure javascript component. 
+  - Easy configuration using data-attributes and highly styleable.
+- https://github.com/creativetimofficial/material-dashboard
+  - Bootstrap 4 Material Design Admin
+  - This product came as a result after we released our successful Material Kit
+- tabler /212.6kStar/MIT/202101
+  - https://github.com/tabler/tabler
+  - https://tabler.io/
+  - free and open-source HTML Dashboard UI Kit built on Bootstrap 4
+- https://github.com/ColorlibHQ/gentelella /19.8kStar/MIT/202008
+  - built with bootstrap 4 and jquery plugins
+- https://github.com/tafcoder/sleek-dashboard
+  - Free Bootstrap 4 Admin Template and UI Kit
+- https://github.com/puikinsh/Adminator-admin-dashboard
+  - Bootstrap 4 Admin Template
+
+- https://github.com/ReeganR/Pure-Html-Css-Dashboard
+  - Dashboard UI with Html and CSS
+- https://github.com/DanielSilvado/financial-dashboard
+  - Pure CSS Financial Dashboard
+- https://github.com/anmoljain10/userinterface
+  - dashboard using pure css
+- https://github.com/vatsal999/Dashboard
+  - dashboard webpage made with pure html/css
+- https://github.com/GustavoHolanda/purecssdashboard
+  - Pure Dashboard with CSS Flexbox and HTML (Boxes and Chart)
+- https://github.com/marianzburlea/movie-dashboard
+  - https://marianzburlea.github.io/movie-dashboard/
+  - Pure CSS and HTML, no JavaScript
+- https://github.com/RubenGarcia7/material-dashboard
+  - modern material design app dashboard built with pure HTML and CSS+SASS, no frameworks
+- https://github.com/vpdinh/Web_CSS
+  - https://vpdinh.github.io/Web_CSS/
+  - Web Visualization Dashboard used pure HTML CSS
+- https://github.com/lennorrodriguez08/MyAdminDashboard
+  - https://lennorrodriguez08.github.io/MyAdminDashboard/
+  - Pure HTML5 CSS and Vanilla Javascript (DOM Manipulation) No Framework Applied.
+- https://github.com/LanreSam/admin-dashboard
+  - https://lanresam.github.io/admin-dashboard/
+  - An admin dashboard using HTML, CSS, BOOTSTRAP only
+- https://github.com/codingWithElias/css-dashboard
+  - Sidebar Menu Dashboard Template UI | Side Navigation Bar - Only Using CSS and HTML
+- https://github.com/tahmid-ni7/A-full-responsive-admin-dashboard-page
+  - dashboard templete, build by HTML, CSS, Bootstrap - 4 and font-awesome. 
+- https://github.com/mafda/dashboard.git
+  - http://mafda-dashboard.herokuapp.com/
+  - Responsive single page dashboard with sliding side nav in pure HTML + CSS + JS (without using any development framework/library).
+- https://github.com/erickarugu32/Covid-Data
+  - https://covidash.now.sh/
+  - one-page Covid-19 data live dashboard. 
+  - Created using Vanilla Javascript and pure CSS. 
+- https://github.com/myowinthein/codash
+  - https://myowinthein.github.io/codash/
+  - COVID-19 table dashboard built by pure HTML, CSS & JavaScript.
+- https://github.com/whitebearcoder/DashboardWithPureHtmlCSSJavascript
+  - Admin Page with only Pure Html/CSS/Javascript except any online plugins
+
+- creativetim
+  - https://github.com/creativetimofficial/argon-dashboard
+    - Dashboard for Bootstrap 4.
+    - https://github.com/creativetimofficial/argon-dashboard-react
+  - https://github.com/creativetimofficial/now-ui-dashboard-react
+
+# admin dashboard
+
+- CoreUI Free React Admin /3.1kStar/MIT/202012/js
+  - https://github.com/coreui/coreui-free-react-admin-template
+  - http://coreui.io/react/
+  - React admin template based on Bootstrap 4
+  - https://github.com/coreui/coreui-react
+    - CoreUI for React.js replaces and extends the Bootstrap javascript. 
+    - Components have been built from scratch as true React.js hook components, without jQuery and unneeded dependencies.
+- Shards React /562Star/MIT/201902
+  - https://github.com/DesignRevision/shards-react
+    - https://designrevision.com/downloads/shards-react/
+    - modern React UI kit based on Shards.
+  - https://github.com/designrevision/shards-ui /1.7kStar/201907
+    - https://designrevision.com/downloads/shards/
+    - Bootstrap 4 UI kit packed with extra templates and components
+- Dashboard UI kit /28.2kStar/MIT/202005/ts/react
+  - https://github.com/march08/dashboard-ui-kit
+  - https://developer.dashboard-ui.com/
+  - https://preview.dashboard-ui.com/docs/react
+  - React UI components for rapid development.
+  - The components are developed with Bootstrap in mind 
+    - this doesn't mean that you need bootstrap to run the application, 
+    - but if you are used to bootstrap, you can freely use it 
+    - (however it's not recommended to use the JS part of the Bootstrap).
+- Square React Dashboard /59Star/MIT/2020009
+  - https://github.com/heysafronov/square-react-dashboard
+  - https://heysafronov.github.io/square-react-dashboard/dist/#/login/
+  - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components
+  - No create-react-app, classes react components, Bootstrap and jQuery.
+  - use React Hooks, Redux Thunk, axios
+- https://github.com/0wczar/airframe-react /3.4kStar/202002
+  - http://dashboards.webkom.co/react/airframe/dashboards/projects
+  - Dashboard based on Bootstrap 4 & React 16
+- https://github.com/devias-io/material-kit-react
+  - https://material-kit-react.devias.io/app/dashboard
+  - Dashboard made with Material UI's components, create-react-app
+  - We also have a pro version
+  - more-material
+    - https://github.com/creativetimofficial/material-dashboard-react
+- https://github.com/Raathigesh/dazzle
+  - http://raathigesh.com/dazzle
+  - a library for building dashboards with React JS. 
+  - Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them.
+  - Dazzle uses react-dnd.
+- https://github.com/codaxy/cxjs
+  - https://cxjs.io/
+  - JS UI framework for admin and dashboard applications with ready to use grid, form and chart components.
+  - CxJS uses React for DOM manipulation 
+- react-admin /Apache2/151Star/2020008
+  - https://github.com/javaLuo/react-admin
+  - https://isluo.com/work/admin/
+  - 标准后台管理系统解决方案, 动态菜单配置，权限精确到按钮
+  - 仿antd-pro外观，但没有使用dva和roadhog
+  - React+Redux架构，react16、router4、antd4、webpack4、ES6+
+  - 依赖@rematch/core，antd4
+
+# draggable layout
+
+- gridstack.js /3.6kStar/MIT/202101/ts
+  - https://github.com/gridstack/gridstack.js
+  - https://gridstackjs.com/
+  - create draggable, resizable, responsive bootstrap-friendly layouts with a few lines of code.
+  - GridStack no longer requires external dependencies as of v1.0.0
+- react-grid-layout /12.6kStar/MIT/202011/js
+  - https://github.com/STRML/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - a grid layout system much like Packery or Gridster, for React.
+- https://github.com/dsmorse/gridster.js /670Star/202009
+  - http://dsmorse.github.io/gridster.js/
+  - Gridster is a jQuery plugin that makes building intuitive draggable layouts from elements spanning multiple columns. 
+  - You can even dynamically add and remove elements from the grid.
+- https://github.com/metafizzy/packery /3.7kStar/201810
+  - https://packery.metafizzy.co/
+  - Gapless, draggable grid layouts 
+
+# kanban
+
+- https://github.com/riktar/jkanban /630Star/202012
+  - https://www.riccardotartaglia.it/jkanban/
+  - Vanilla Javascript plugin for manage kanban boards
+- https://github.com/rcdexta/react-trello /1.5kStar/202012
+  - https://rcdexta.com/react-trello/
+  - Pluggable components to add a kanban board to your application
+- https://github.com/wekan/wekan
+  - https://wekan.github.io/
+  - The open-source kanban (built with Meteor).
+- https://github.com/markusenglund/react-kanban /1.6kStar/201901
+  - https://www.reactkanban.com/b/SyfPfO8CP/tutorial-board
+  - React, Redux, React-beautiful-dnd, Express, MongoDB, Passport
+- https://github.com/plankanban/planka
+  - https://plankanban.github.io/planka/#/
+  - The realtime kanban board for workgroups built with React and Redux.
+  - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
+    - 前端单独分离出来了
+  - Sails.js, Knex.js
+  - PostgreSQL
+- https://github.com/lourenci/react-kanban /样式较简单
+  - https://nvjp3.csb.app/
+  - Yet another Kanban/Trello board lib for React.
+- https://github.com/lxerxa/actionview-fe
+  - ActionView front-end source code, based on Reactjs＋Redux.
+  - https://github.com/lxerxa/actionview /50Star/202101
+  - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
+
+# more-dashboard
+
+- list-antd
+  - https://github.com/yezihaohao/react-admin
+  - https://github.com/landluck/react-ant-admin
+  - https://github.com/WinmezzZ/react-antd-admin
+- list-react-dashboard
+  - https://github.com/flatlogic/light-blue-react-template
+    - admin dashboard template built with React and Bootstrap 4
+  - https://github.com/flatlogic/one-react-template
+    - admin dashboard template built with React and Bootstrap 4.
+  - https://github.com/flatlogic/react-dashboard
+    - isomorphic admin dashboard template (React.js, Bootstrap, Node.js, GraphQL, React Router, Babel, Webpack, Browsersync)
+  - https://github.com/DesignRevision/shards-dashboard-react
+    - Built using Shards React Chart.js Flux No UI Slider React Datepicker Quill
+  - https://github.com/zuiidea/antd-admin
+  - https://github.com/darekkay/dashboard
+  - https://github.com/ofekashery/vercel-dashboard-template
+    - based on zeit-ui, jss
+- list-bootstrap-dashboard
+  - https://github.com/ColorlibHQ/gentelella
+  - https://github.com/0wczar/airframe-react
+  - https://github.com/coreui/coreui-free-react-admin-template
+  - https://github.com/wrappixel/xtreme-admin-lite
+
+- vue-element-admin /MIT/58.3kStar/202007
+  - https://github.com/PanJiaChen/vue-element-admin
+  - https://panjiachen.github.io/vue-element-admin
+  - a production-ready front-end solution for admin interfaces
+  - It is based on vue and uses the UI Toolkit element-ui.
+- ant-design-pro /MIT/26.1kStar/202008
+  - https://github.com/ant-design/ant-design-pro
+  - http://pro.ant.design/
+  - http://preview.pro.ant.design/
+  - An out-of-box UI solution for enterprise applications as a React boilerplate.
+  - 2017年10月发布第一个版本，到现在的201905发布v4, Pro发生了很多的改变，
+    - 底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TS，可以说已经和当初那个Pro已经不是同一个脚手架了
+  - 区块可以类比为一个组件，而模板代表一个页面
+  - 当前的区块都是页面级别的区块，你可以理解为它是一些项目中经常会用到的典型页面的模板，使用区块其实相当于从已有的项目中复制一些页面的代码到你当前的项目中。
+- https://github.com/zuiidea/antd-admin
+  - http://antd-admin.zuiidea.com/
+  - frontend solution for enterprise applications built upon Ant Design and UmiJS
+  - Mock 数据，本地数据调试
+- https://github.com/yaronn/blessed-contrib
+  - Build terminal dashboards using ascii/ansi art and javascript

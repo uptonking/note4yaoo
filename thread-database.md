@@ -7,9 +7,10 @@ modified: '2021-01-06T14:39:56.358Z'
 
 # thread-database
 
-## pieces
+# pieces
+ 
 
-- ### [Geode 和 redis 两个分布式内存数据库的对比，优缺点？](https://www.zhihu.com/question/31699176/answers/updated)
+- ## [Geode 和 redis 两个分布式内存数据库的对比，优缺点？](https://www.zhihu.com/question/31699176/answers/updated)
   - Geode是分布式内存数据库，提供了可配置的一致性保证，能够保证数据不丢失，更符合数据库的定位。
   - 而Redis的定位本身就是缓存，采用的最终一致性和周期性持久化策略，在单服务进程模型下，提供了高性能缓存服务
   - Geode是java生态圈，有多种运行模式，可以lib方式运行在client端，其支持的客户端语言有限。
@@ -23,7 +24,7 @@ modified: '2021-01-06T14:39:56.358Z'
     - 而Redis是不保证一致性的，因此即使Redis集群，也只能是AP型产品。
     - 另外Geode还有内置的pub/sub，逻辑分组和管理监控等一系列企业级产品功能，因为Geode项目本身就是Pivotal公司把十几年历史的及其成熟的GemFire开源贡献给Apache的顶级项目。
 
-- ### [ObjectiveSQL: 让Java更像SQL](https://www.v2ex.com/t/727939)
+- ## [ObjectiveSQL: 让Java更像SQL](https://www.v2ex.com/t/727939)
 - 到底是让Java像SQL一样编程，还是让SQL像Java一样编程，纠结了很久，还是让Java更像SQL，
   - Java的语法表现力不够，只能扩展Javac，实现了算法运算，比较运算，逻辑运算符重载，并封装了常用数据的的函数，抽象了Expression，使Java非常接近SQL，
   - 同时也实现了简单SQL编程的代码生成，基本不需要写代码，也不需要配置就能实现简单SQL的编程
@@ -33,6 +34,6 @@ modified: '2021-01-06T14:39:56.358Z'
   3. 我封装了常用数据库的常用函数，例如：count, sum等有上千个的，这样就不会出现字符
   - 上述做法的好处是，最大程度的避免的SQL的语法错误，动态代码提示和单元测试。
 
-## ref
+# ref
 
 - [OceanBase的一致性协议为什么选择paxos而不是raft?](https://www.zhihu.com/question/52337912/answers/updated)

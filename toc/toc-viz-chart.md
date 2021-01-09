@@ -185,6 +185,11 @@ modified: '2020-10-22T10:22:33.292Z'
   - 依赖raphael，基于svg实现
   - Beautiful Statistical Data Visualization library
 
+# css chart
+
+- https://github.com/asciimoo/cssplot
+  - Simple, css-only plotting.
+
 # more
 
 - https://github.com/frappe/gantt
