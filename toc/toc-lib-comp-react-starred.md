@@ -23,6 +23,13 @@ modified: '2020-11-13T07:31:27.113Z'
 
 # starred
 
+- https://github.com/kunukn/react-collapse
+  - https://kunukn.github.io/react-collapse
+  - Component-wrapper for collapse animation with CSS for elements with variable and dynamic height
+  - toggle, multiple, accordion
+- https://github.com/SparebankenVest/react-css-collapse
+  - Collapse component with css transition for elements with variable and dynamic height.
+
 - https://github.com/GeekyAnts/react-pluggable
   - With React Pluggable, we can think of our app as a set of features instead of a set of components
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)

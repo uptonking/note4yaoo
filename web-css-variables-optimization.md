@@ -1,6 +1,6 @@
 ---
 title: web-css-variables-optimization
-tags: [css, css-variables, optimization, style]
+tags: [css, css-vars, optimization, style]
 created: '2020-10-27T16:03:13.703Z'
 modified: '2021-01-01T20:18:17.114Z'
 ---

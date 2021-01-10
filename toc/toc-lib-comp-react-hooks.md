@@ -50,8 +50,7 @@ modified: '2020-11-13T07:31:23.527Z'
     - CSS implementation of the Spectrum design language.
 - https://github.com/coreui/coreui-react
   - /172Star/MIT/202010/js
-  - Components built from scratch as true React hook components
-  - without jQuery and unneeded dependencies.
+  - Components built from scratch as React hook components without jQuery and unneeded dependencies.
 - https://github.com/mongodb/leafygreen-ui
   - /52Star/Apache2/202009
   - https://mongodb.github.io/leafygreen-ui/

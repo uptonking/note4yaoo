@@ -1,11 +1,11 @@
 ---
-title: toc-lib-css-comp-bulma
-tags: [bulma, components, css, lib]
+title: toc-lib-ux-bulma
+tags: [bulma, components, lib, toc, ux]
 created: '2020-10-05T13:46:32.360Z'
-modified: '2020-11-13T07:32:14.241Z'
+modified: '2021-01-10T22:19:27.519Z'
 ---
 
-# toc-lib-css-comp-bulma
+# toc-lib-ux-bulma
 
 # bulma-components
 
@@ -34,7 +34,7 @@ modified: '2020-11-13T07:32:14.241Z'
 - https://github.com/hungry-consulting/bulma-element
   - Typescript version of bulma elements for react.
 
-# bulma-theme
+# bulma-themes
 
 - https://github.com/BulmaTemplates/bulma-templates
   - https://bulmatemplates.github.io/bulma-templates/
@@ -66,3 +66,5 @@ modified: '2020-11-13T07:32:14.241Z'
   - extension to display a QuickView component
 - https://github.com/Wikiki/bulma-calendar
   - extension to display a calendar
+
+# more-bulma

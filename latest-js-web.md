@@ -22,7 +22,7 @@ modified: '2020-09-26T12:52:33.493Z'
 - jspm
   - jspm provides a module CDN allowing any package from npm to be directly loaded in the browser and other JS environments as a fully optimized native JavaScript module.
   - esm是未来的趋势，随着http3（quic）普及，或许web应用将脱离打包工具和node_modules ”黑洞“。
-    - Vite 以及 snowpack 在开发者模式是用的就是浏览器原生ESM语法，体验相当的棒。
+    - vite和snowpack在开发者模式是用的就是浏览器原生ESM语法，体验相当的棒。
     - 以及之前大家喊“学不动”的 Deno 也表示拥抱 ESM，这是前端开发者对统一标准的需要。
     - jspm.io 试图将npm的生态搬到浏览器环境，类似的还有 skypack.dev 以及 esm.sh ，以及unpkg也在实验性提供对esm的支持。
 
@@ -93,14 +93,8 @@ modified: '2020-09-26T12:52:33.493Z'
   - 文本编辑器：slate、editor
   - 拖拽搭建：craft.js、react-page
   - 产品搭建：react-chart-builder、amCharts-editor、alibaba-formily-editor
-- vite
-  - [如何看待 Web 开发构建工具 Vite？](https://www.zhihu.com/question/394062839/answers/updated)
-    - vite不需要打包工具参与，利用浏览器对模块化的支持，实现vue的热更新
-    - 利用 `<script type='module'>`
-    - vite vs snowpack
-      - Vite handles both dev and bundle in the same package, using Rollup. 
-      - Snowpack delegates to plugins using webpack/parcel.
-      - The advantage is that Vite produces smaller bundles and makes it easier for plugins to tweak dev and build at the same time.
+
+
 
 - tree shaking
   - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 

@@ -7,6 +7,10 @@ modified: '2020-10-31T06:37:03.268Z'
 
 # wiki-auth-terms-of-service
 
+# guide
+
+- [Creative Commons Licenses](https://creativecommons.org/licenses/)
+
 # Creative Commons
 
 - 开源项目不是代码，建议使用： Creative Commons
@@ -33,3 +37,13 @@ modified: '2020-10-31T06:37:03.268Z'
 - Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
   - https://tldrlegal.com/license/creative-commons-attribution-noncommercial-4.0-international-(cc-by-nc-4.0)
   - cannot commercial use, sublicense
+
+# ref
+
+- [Unsplash photos can be used freely for both commercial and non-commercial](https://unsplash.com/license)
+
+- [How to use Creative Commons images](https://www.pixsy.com/academy/image-user/use-creative-commons-images/)
+  - There are seven types of CC license
+  - Creative Commons 4.0 states that image attributions must link to an external page and to the original URL wherever possible.
+  - When attributing an image, we recommend the TASL model:
+    - title, author, source, license

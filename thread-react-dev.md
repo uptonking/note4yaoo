@@ -26,6 +26,10 @@ modified: '2021-01-06T14:40:11.360Z'
   - have not tried React Query but it looks cool...
   - I just always am cautious of abstraction lib dependencies.
 - I have not worked much in React But Axios did the work I needed
+- I build a gateway per api 
+  - so that all calls to the api go through one entity (in case the contract changes) and it extends a class that makes the actual calls with fetch. 
+  - I use redux actions to call the gateway method. Will look at react-query though!
+
 
 - ## JSX is an abomination(令人厌恶的事物).
 - https://twitter.com/justinfagnani/status/1246514699341983744

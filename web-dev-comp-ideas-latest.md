@@ -52,7 +52,7 @@ modified: '2020-12-27T20:29:55.568Z'
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性
   - block-style component
-    - 方便实现 collapsible content
+    - 方便实现 collapsible content/card
   - interactive animation
     - anchor based flowing animation 
       - 基于某起点开始的变形动画，多是流动线型

@@ -63,13 +63,11 @@ modified: '2020-11-13T07:28:27.824Z'
   - built on top of Bootstrap 4 and plain JS without any additional libs like jQuery
   - CoreUI is the fastest way to build modern dashboard
   - https://github.com/coreui/coreui-react /MIT
-    - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
+    - 依赖coreui的css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
     - 用react hooks重写实现组件，只复用css
     - CoreUI for React.js replaces and extends the Bootstrap javascript.
     - Components built from scratch as true React hook components, without jQuery and unneeded dependencies.
     - Components are styled using @coreui/coreui CSS, but you can use them also with bootstrap CSS
-  - ref
-    - https://github.com/coreui/coreui-free-react-admin-template
 - https://github.com/GoldWorker/SluckyUI
   - /16Star/Apache2/202001
   - 理念是所有组件使用纯css去实现，以最小代价进行二次开发成各个框架的组件库

@@ -7,47 +7,110 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-dashboard
 
+- guide
+  - 流行的dashboard全是基于bootstrap
+  - 推荐深入一个静态的css dashboard
+  - 实际的dashboard与业务场景紧密相关，通常基于layout及drag实现
+
 - ref
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
   - [search: dashboard css](https://github.com/search?o=desc&p=1&q=dashboard+language%3Acss+language%3Ahtml+language%3Ascss&s=stars&type=Repositories)
   - [search: pure css dashboard](https://github.com/search?o=desc&p=1&q=pure+css+dashboard+&s=stars&type=Repositories)
     - css only dashboard
+    - dashboard ui
 
 # css dashboard lite
 
 - CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
   - https://github.com/coreui/coreui-free-bootstrap-admin-template
-  - free bootstrap admin template
+    - https://coreui.io/demo/free/
+    - free bootstrap admin template
+  - https://github.com/coreui/coreui
+    - https://coreui.io/docs/getting-started/theming/
+    - 依赖perfect-scrollbar, @popperjs/core，免费版未提供其他theme
+    - UI Kit built on top of Bootstrap 4 and plain JavaScript without any additional libraries like jQuery
+    - CoreUI is the fastest way to build modern dashboard
+    - Several of our components need the use of JavaScript to function. 
+      - Specifically, they need our JavaScript plugins and Popper.js
+  - more
+    - CoreUI offers 6 versions: Bootstrap, Angular, Laravel, React.js, Vue.js, and Vue.js + Laravel.
+    - CoreUI PRO Bootstrap Admin Templates
+      - dark layout
+      - Gradients, and Elevation System available only in CoreUI PRO
+    - https://github.com/coreui/coreui-free-vue-admin-template
+    - https://github.com/coreui/coreui-free-angular-admin-template
+    - https://github.com/coreui/coreui-icons /CC-BY-4.0
+- CoreUI Free React Admin /3.1kStar/MIT/202012/js
+  - https://github.com/coreui/coreui-free-react-admin-template
+    - http://coreui.io/react/
+    - React admin template based on Bootstrap 4
+  - https://github.com/coreui/coreui-react
+    - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
+    - 用react hooks重写实现组件，只复用css
+    - CoreUI for React.js replaces and extends the Bootstrap javascript. 
+    - Components have been built from scratch as true React hook components, without jQuery and unneeded dependencies.
+- tabler /22.6kStar/MIT/202101
+  - https://github.com/tabler/tabler
+  - https://tabler.io/
+  - free HTML Dashboard UI Kit built on Bootstrap 4
+  - more-tabler
+    - https://github.com/tabler/tabler-react
+    - https://github.com/tabler/tabler-angular
+    - https://github.com/tabler/tabler-icons
 - Shards Dashboard UI Kit /1.1kStar/MIT/201809
   - https://github.com/DesignRevision/shards-dashboard
   - Bootstrap 4 admin dashboard templates pack.
+- Shards React /562Star/MIT/201902
+  - https://github.com/DesignRevision/shards-react
+    - https://designrevision.com/downloads/shards-react/
+    - modern React UI kit based on Shards.
+  - https://github.com/designrevision/shards-ui /1.7kStar/201907
+    - https://designrevision.com/downloads/shards/
+    - Bootstrap 4 UI kit packed with extra templates and components
 - AdminLTE /35.8kStar/MIT/202008
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/
   - a fully responsive administration template
   - Based on Bootstrap 4.5 framework and also the JS/jQuery plugin. 
   - AdminLTE.io just opened a new premium templates page
+  - https://github.com/ColorlibHQ/gentelella /19.8kStar/MIT/202008
+    - built with bootstrap 4 and jquery plugins
 - https://github.com/CoCreate-app/CoCreate-dashboard
   - A simple HTML5, CSS and pure javascript component. 
   - Easy configuration using data-attributes and highly styleable.
 - https://github.com/creativetimofficial/material-dashboard
   - Bootstrap 4 Material Design Admin
   - This product came as a result after we released our successful Material Kit
-- tabler /212.6kStar/MIT/202101
-  - https://github.com/tabler/tabler
-  - https://tabler.io/
-  - free and open-source HTML Dashboard UI Kit built on Bootstrap 4
-- https://github.com/ColorlibHQ/gentelella /19.8kStar/MIT/202008
-  - built with bootstrap 4 and jquery plugins
 - https://github.com/tafcoder/sleek-dashboard
   - Free Bootstrap 4 Admin Template and UI Kit
 - https://github.com/puikinsh/Adminator-admin-dashboard
   - Bootstrap 4 Admin Template
+- https://github.com/modularcode/modular-admin-html
+  - https://modularcode.io/modular-admin-html/
+  - Free Bootstrap 4 Dashboard Theme HTML version
+  - Each non-underscored folder represents a single component module.
+  - wrap each component's script in jQuery `$(function() { })`
+  - 使用了handlebars模版
+  - https://github.com/modularcode/modular-admin-react
+- https://github.com/flatlogic/sing-app
+  - https://demo.flatlogic.com/sing-app/documentation/
+  - high quality UI built with Bootstrap 4.5
+  - 提供了多个版本，但收费处也多
 
 - https://github.com/ReeganR/Pure-Html-Css-Dashboard
   - Dashboard UI with Html and CSS
 - https://github.com/DanielSilvado/financial-dashboard
   - Pure CSS Financial Dashboard
+- https://github.com/adeleke5140/ui-dashboard
+  - https://ui-dashboard-1.netlify.app/
+  - I used CSS Grid and flexbox to style the layout
+  - It isn't mobile responsive because the design files only had the desktop version.
+- https://github.com/Elao/elao-admin
+  - https://elao.github.io/elao-admin/
+  - 从头开始实现，基于fontello，未实现responsive
+- https://github.com/KamilRybacki/DuoThemeSocialDashboard
+  - https://duo-theme-social-dashboard.kamilrybacki.vercel.app/
+  - Social media dashboard with theme switcher
 - https://github.com/anmoljain10/userinterface
   - dashboard using pure css
 - https://github.com/vatsal999/Dashboard
@@ -84,6 +147,8 @@ modified: '2021-01-08T11:48:16.590Z'
   - COVID-19 table dashboard built by pure HTML, CSS & JavaScript.
 - https://github.com/whitebearcoder/DashboardWithPureHtmlCSSJavascript
   - Admin Page with only Pure Html/CSS/Javascript except any online plugins
+- https://github.com/Ahadul360/Admin-Panel-Template
+  - 过于简单
 
 - creativetim
   - https://github.com/creativetimofficial/argon-dashboard
@@ -93,20 +158,6 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # admin dashboard
 
-- CoreUI Free React Admin /3.1kStar/MIT/202012/js
-  - https://github.com/coreui/coreui-free-react-admin-template
-  - http://coreui.io/react/
-  - React admin template based on Bootstrap 4
-  - https://github.com/coreui/coreui-react
-    - CoreUI for React.js replaces and extends the Bootstrap javascript. 
-    - Components have been built from scratch as true React.js hook components, without jQuery and unneeded dependencies.
-- Shards React /562Star/MIT/201902
-  - https://github.com/DesignRevision/shards-react
-    - https://designrevision.com/downloads/shards-react/
-    - modern React UI kit based on Shards.
-  - https://github.com/designrevision/shards-ui /1.7kStar/201907
-    - https://designrevision.com/downloads/shards/
-    - Bootstrap 4 UI kit packed with extra templates and components
 - Dashboard UI kit /28.2kStar/MIT/202005/ts/react
   - https://github.com/march08/dashboard-ui-kit
   - https://developer.dashboard-ui.com/
@@ -147,25 +198,8 @@ modified: '2021-01-08T11:48:16.590Z'
   - 仿antd-pro外观，但没有使用dva和roadhog
   - React+Redux架构，react16、router4、antd4、webpack4、ES6+
   - 依赖@rematch/core，antd4
-
-# draggable layout
-
-- gridstack.js /3.6kStar/MIT/202101/ts
-  - https://github.com/gridstack/gridstack.js
-  - https://gridstackjs.com/
-  - create draggable, resizable, responsive bootstrap-friendly layouts with a few lines of code.
-  - GridStack no longer requires external dependencies as of v1.0.0
-- react-grid-layout /12.6kStar/MIT/202011/js
-  - https://github.com/STRML/react-grid-layout
-  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
-  - a grid layout system much like Packery or Gridster, for React.
-- https://github.com/dsmorse/gridster.js /670Star/202009
-  - http://dsmorse.github.io/gridster.js/
-  - Gridster is a jQuery plugin that makes building intuitive draggable layouts from elements spanning multiple columns. 
-  - You can even dynamically add and remove elements from the grid.
-- https://github.com/metafizzy/packery /3.7kStar/201810
-  - https://packery.metafizzy.co/
-  - Gapless, draggable grid layouts 
+- https://github.com/borakilicoglu/nucleo
+  - Admin template and Starter project for React
 
 # kanban
 
@@ -195,6 +229,44 @@ modified: '2021-01-08T11:48:16.590Z'
   - ActionView front-end source code, based on Reactjs＋Redux.
   - https://github.com/lxerxa/actionview /50Star/202101
   - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
+
+# draggable layout
+
+- gridstack.js /3.6kStar/MIT/202101/ts
+  - https://github.com/gridstack/gridstack.js
+  - https://gridstackjs.com/
+  - create draggable, resizable, responsive bootstrap-friendly layouts with a few lines of code.
+  - GridStack no longer requires external dependencies as of v1.0.0
+- react-grid-layout /12.6kStar/MIT/202011/js
+  - https://github.com/STRML/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - a grid layout system much like Packery or Gridster, for React.
+- https://github.com/dsmorse/gridster.js /670Star/202009
+  - http://dsmorse.github.io/gridster.js/
+  - Gridster is a jQuery plugin that makes building intuitive draggable layouts from elements spanning multiple columns. 
+  - You can even dynamically add and remove elements from the grid.
+- https://github.com/metafizzy/packery /3.7kStar/201810
+  - https://packery.metafizzy.co/
+  - Gapless, draggable grid layouts 
+
+# coreui  
+
+- https://github.com/GiuseppeVigliaturo/Node-coreui-crud
+  - Simple Nodejs crud application using core-ui for the frontend
+- https://github.com/kdcio/admin
+  - frontend framework for building admin interface using React, CoreUI 
+  - inspired by react-admin.
+- https://github.com/policumbent/marta-ui
+  - https://policumbent.github.io/marta-ui/
+  - Marta dashboard 过于简单
+- https://github.com/coreui/coreui-website
+  - CoreUI website
+- https://github.com/sourcewerk/dash-coreui-components
+  - CoreUI components for Plotly Dash
+- https://github.com/InfyOmLabs/coreui-templates
+  - Core UI templates for InfyOm Laravel Generator
+- https://github.com/app-generator/flask-dashboard-coreui
+  - Admin dashboard generated by AppSeed in Flask Framework.
 
 # more-dashboard
 
@@ -241,3 +313,11 @@ modified: '2021-01-08T11:48:16.590Z'
   - Mock 数据，本地数据调试
 - https://github.com/yaronn/blessed-contrib
   - Build terminal dashboards using ascii/ansi art and javascript
+
+- https://github.com/o2bomb/a-bank-dashboard
+  - https://o2bomb.github.io/a-bank-dashboard/
+  - Recreating the A-bank Dashboard Dribbble with threejs
+- https://github.com/LighteningCode/pay
+  - https://pay-0.herokuapp.com/
+  - Dribbble design built in ReactJS.
+  - 样式基于tailwindcss

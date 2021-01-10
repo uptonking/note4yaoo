@@ -204,3 +204,10 @@ modified: '2020-07-17T10:52:17.250Z'
           - Large font files have a negative impact on a webpage or app’s Time to First Paint, which makes for a subpar user experience and has been known to lower PWA Lighthouse scores. 
           - On top of that, adding any custom icons to a font icon is far from easy.
       - All of the benefits of font icons (vector-based and styling with CSS) can be achieved just as easily with SVGs, but without all the baggage.
+
+# ref
+
+- https://github.com/fontello/fontello
+  - This tool lets you combine icon webfonts
+  - shrink glyph collections, minimizing font size
+  - merge symbols from several fonts into a single file

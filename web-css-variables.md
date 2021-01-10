@@ -1,6 +1,6 @@
 ---
 title: web-css-variables
-tags: [css, css-variables, style]
+tags: [css, css-vars, style]
 created: '2020-11-01T06:32:11.038Z'
 modified: '2021-01-01T20:18:11.427Z'
 ---
@@ -43,8 +43,9 @@ element.style.setProperty("--my-var", jsVar + 4);
 ```
 
 - css-vars-tools
-  - CSS variables (Custom Properties) polyfill for IE11
-    - https://github.com/nuxodin/ie11CustomProperties
+  - [CSS variables (Custom Properties) polyfill for IE11](https://github.com/nuxodin/ie11CustomProperties)
+  - https://github.com/notoriousb1t/awesome-css-variables
+
 # theming-examples
 
 - Themes becomes easier with css custom properties (css variables). 

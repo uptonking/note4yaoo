@@ -7,6 +7,12 @@ modified: '2020-08-06T05:29:22.922Z'
 
 # pick-dict-abbreviation
 
+- 缩略词
+
+# pieces
+
+ 
+
 - TBH
   - to be honest 老实说
 - BTW
@@ -55,6 +61,11 @@ modified: '2020-08-06T05:29:22.922Z'
 
 - FTW
   - For The Win.
-    - An enthusiastic(热情的，热衷的) emphasis to the end of a comment, message, or post. Sometimes genuine, but often sarcastic.
-    - meaning something that you are commenting on is a good thing, although it is sometimes used sarcastically(sarcastic, 讽刺的，挖苦的，嘲讽的). 
+    - An enthusiastic(热情的，热衷的) emphasis to the end of a comment, message, or post. Sometimes genuine, but often sarcastic(讽刺的，挖苦的，嘲讽的).
+    - meaning something that you are commenting on is a good thing, although it is sometimes used sarcastically. 
   - Fuck The World
+
+- ngl
+  - Not Gonna Lie 
+  - Indicating you are admitting something that may be considered strange 
+  - Could be deemed the equivalent of 'just saying' or 'no offence' in the sense that it makes your statement more valid/less offensive

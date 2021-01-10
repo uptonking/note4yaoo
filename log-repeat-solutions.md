@@ -19,6 +19,8 @@ modified: '2021-01-09T16:13:07.758Z'
 
 # list
 
+- tips
+
 ## ag-grid /ag-grid
 
 ## react-table/virtualized/window /indie
@@ -30,8 +32,11 @@ modified: '2021-01-09T16:13:07.758Z'
 ## more-list-grid
 
 - x-spreadsheet /indie
+- frappe-datatable
 
 # chart
+
+- tips
 
 ## d3
 
@@ -45,6 +50,8 @@ modified: '2021-01-09T16:13:07.758Z'
 
 # map
 
+- tips
+
 ## leaflet
 
 ## mapbox-gl-js
@@ -56,18 +63,26 @@ modified: '2021-01-09T16:13:07.758Z'
 # faves
 
 - editor
+  - tips
   - editorjs
+  - craftjs
 
 - design-system
+  - tips
+  - material
+  - carbon
   - theme-ui
 
 - dashboard
-  - core-ui
+  - tips
+    - 实际仪表板常与业务紧密相关，建议结合window-layout和drag实现
+  - coreui
   - creativetim
 
 - window-manager
+  - tips
   - golden-layout: 场景功能非常丰富的window
   - Ventus: 快速切换到窗口平铺预览
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
 
-# solutions-collection
+# solutions

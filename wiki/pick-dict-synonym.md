@@ -10,7 +10,7 @@ modified: '2020-12-20T15:54:18.590Z'
 # synonym
 
 - solve vs resolve
-  - to "solve" is to find the solution or answer to a problem based on principles of logic, mathematics, and/or factual evidence.         
+  - to "solve" is to find the solution or answer to a problem based on principles of logic, mathematics, and/or factual evidence.
     - In other words, "solve" basically means find the solution to a factual problem or challenge **through knowledge and reasoning**.
     - For example, you "solve" a puzzle, and police investigators "solve" criminal cases. 
   - to "resolve" is more like to settle a dispute or implement an acceptable resolution to mitigate or eliminate an issue. 

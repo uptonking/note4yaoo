@@ -7,6 +7,8 @@ modified: '2020-12-20T15:54:58.679Z'
 
 # pick-dict-antonym
 
+- 反义词
+
 # antonym
 
 - blacklist-whitelist
@@ -40,4 +42,3 @@ modified: '2020-12-20T15:54:58.679Z'
     - minion(下属；马屁精)
     - standby
     - client
-

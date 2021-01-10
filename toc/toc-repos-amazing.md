@@ -21,6 +21,9 @@ modified: '2020-11-03T06:54:59.051Z'
   - 使用R实现，效果像分级统计地图通过颗粒动画变成散点图的形式
   - https://twitter.com/DavidZumbach/status/1344547411985911808
 
+- Off the Presses 类似白纸设计稿的ui从打印机主动送出来的效果
+  - https://codepen.io/uptonking/pen/ZEpMQXX
+
 # amazing-tools
 
 - https://github.com/williamngan/pts
