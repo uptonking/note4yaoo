@@ -22,6 +22,13 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/snapappointments/bootstrap-select
   - jQuery plugin that brings select elements. 
   - Now with Bootstrap 4 support.
+- https://github.com/azouaoui-med/pro-sidebar-template
+  - https://azouaoui-med.github.io/pro-sidebar-template/src
+  - Responsive sidebar template with dropdown menu based on bootstrap
+  - toggable, pinnable
+
+ 
+
 - https://github.com/designmodo/Flat-UI
   - Flat UI Free - Design Framework (html/css3/less/js)
   - Flat UI is based on Bootstrap

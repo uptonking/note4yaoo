@@ -52,6 +52,16 @@ modified: '2020-11-13T07:28:50.844Z'
   - Pico provide a .classless version ([Example](https://picocss.com/examples/classless/)).
     - `<header>/<main>/<footer>` as direct childs of `<body>` provide a responsive vertical `padding`
     - act as containers to define a centered or a fluid viewport.
+- skeleton /18kStar/MIT/201412/css
+  - https://github.com/dhg/Skeleton
+    - http://www.getskeleton.com/
+    - A Dead Simple, Responsive Boilerplate
+  - https://github.com/atomicpages/skeleton-sass
+    - https://atomicpages.github.io/skeleton-sass/
+    - Skeleton Sass is a highly modular version of Skeleton CSS
+    - 提供了themes
+  - https://github.com/WhatsNewSaes/Skeleton-Sass
+    - Sass Version of Skeleton (2.0.4)
 - primer-css /MIT/9.7kStar/202010/scss
   - https://github.com/primer/css
   - https://primer.style/css
@@ -114,11 +124,13 @@ modified: '2020-11-13T07:28:50.844Z'
 
 # classless
 
-- https://github.com/xz/new.css
-  - A classless CSS framework to write modern websites using only HTML.
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
   - a CSS framework that doesn't require any classes. 
+- https://github.com/xz/new.css
+  - A classless CSS framework to write modern websites using only HTML.
+- https://github.com/kevquirk/simple.css
+  - a classless CSS template that allows you to make a good looking website really quickly.
 
 # more-css-framework
 

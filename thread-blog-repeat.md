@@ -10,6 +10,17 @@ modified: '2021-01-06T14:39:51.714Z'
 # pieces
 
 - [精读《手写 JSON Parser》](https://zhuanlan.zhihu.com/p/107344979)
+- [JSON Parser with JavaScript](https://lihautan.com/json-parser-with-javascript/)
+  - Understand the grammar
+  - Implementing the parser
+  - Handling the unexpected input
+    - Unexpected token
+    - Unexpected end of string
+  - Going the extra mile
+    - Error code and standard error message
+    - A better view of what went wrong
+    - Suggestions for error recovery
+  - Summary
 
 # frontend
 

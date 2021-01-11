@@ -134,7 +134,7 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/codingWithElias/css-dashboard
   - Sidebar Menu Dashboard Template UI | Side Navigation Bar - Only Using CSS and HTML
 - https://github.com/tahmid-ni7/A-full-responsive-admin-dashboard-page
-  - dashboard templete, build by HTML, CSS, Bootstrap - 4 and font-awesome. 
+  - dashboard template, build by HTML, CSS, Bootstrap - 4 and font-awesome. 
 - https://github.com/mafda/dashboard.git
   - http://mafda-dashboard.herokuapp.com/
   - Responsive single page dashboard with sliding side nav in pure HTML + CSS + JS (without using any development framework/library).

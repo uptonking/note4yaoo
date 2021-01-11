@@ -11,6 +11,26 @@ modified: '2021-01-08T17:13:43.392Z'
 
  
 
+- ## Let's Bring Spacer GIFs Back!
+- https://www.joshwcomeau.com/react/modern-spacer-gif/
+- Instead of using margin, I create a new element explicitly to add some space between the icon and text!
+- In the late 90s, if you were to pop open the source of a typical website, you'd likely encounter this curious fella
+  - `<img alt="" src="spacer.gif" width="1" height="1" />`
+- CSS didn't exist yet, and web layouts were built using HTML tables. 
+  - GIFs were used because GIFs were the only image format that supported transparency (this is pre-PNG). 
+  - Our spacer friend consisted of a single transparent pixel, a completely empty image.
+- CSS was added to the browser to offer an alternative to styling. 
+  - The language wasn't originally designed with layout in mind, 
+  - but developers quickly realized that — through the use of some clever float hacks — it could entirely replace table layouts!
+- By separating our concerns
+  - HTML for structure, CSS for layout and presentation, JS for behaviour
+  - we had a convention that would help us keep complexity down, ultimately making it easier to maintain things.
+- In the original Jambalaya table-layout days, the spacer GIF was a tasty complementary ingredient. 
+  - It didn't taste so good when we switched to making deconstructed sandwiches. 
+  - But now that many of us are working with component-driven architectures, our code might benefit from a pinch of spacer GIF.
+- Originally, my `<Spacer>` component rendered a `div` instead of a `span`, but I found it was a little limiting. 
+  - According to the HTML spec `div`s aren't supposed to be put within certain elements, like `p` and `button`.
+
 - ## Quiz time! for histroy back
 - https://twitter.com/ryanflorence/status/1346562678869790720
   - No JavaScript on the page, normal document requests:

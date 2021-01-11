@@ -10,18 +10,19 @@ modified: '2021-01-01T22:06:57.471Z'
 # tokens-popular
 
 - https://github.com/Shopify/polaris-tokens
-  - /150Star/MIT/202012/theo
   - https://polaris-tokens.herokuapp.com/
+  - /150Star/MIT/202012/theo
   - Design tokens for Polaris, Shopify’s design system
 - https://github.com/salesforce-ux/design-system/tree/master/design-tokens
   - https://www.lightningdesignsystem.com/design-tokens/
-  - Using the Lightning Design System markup and CSS framework results in UIs that reflect the Salesforce Lightning look and feel.
+  - Using the SLDS markup and CSS framework results in UIs that reflect the Salesforce Lightning look and feel.
+- https://github.com/kiwicom/orbit-design-tokens
+  - https://github.com/kiwicom/orbit/tree/master/packages/orbit-design-tokens
+  - We use pdesign tokens instead of static values like HEX codes for color or sizing units.
 - https://github.com/opentable/design-tokens
   - https://opentable.github.io/design-tokens/
   - A place where OpenTable engineers and designers openly work together
   - store shared design attributes such as colors, fonts, widths, animations, etc.
-- https://github.com/kiwicom/orbit-design-tokens
-  - We use pdesign tokens instead of static values like HEX codes for color or sizing units.
 - https://github.com/mineral-ui/mineral-ui/tree/master/packages/mineral-ui-tokens
   - This package uses Theo to generate output in a variety of formats.
 - https://github.com/FirefoxUX/design-tokens

@@ -1,11 +1,11 @@
 ---
-title: toc-office-documentation-site
-tags: [documentation, examples, toc]
+title: toc-office-documentation-site-template
+tags: [documentation, examples, template, toc]
 created: '2020-12-29T22:04:49.931Z'
 modified: '2021-01-04T17:32:23.752Z'
 ---
 
-# toc-office-documentation-site
+# toc-office-documentation-site-template
 
 # guide
 
@@ -40,4 +40,4 @@ modified: '2021-01-04T17:32:23.752Z'
 # more-docs
 
 - https://github.com/jhildenbiddle/docsify-themeable
-  - simple theme system for docsify.js. 
+  - simple theme system for docsify.js

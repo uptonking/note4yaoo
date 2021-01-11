@@ -1,11 +1,11 @@
 ---
-title: toc-lib-design-system-tokens-docs
+title: toc-lib-comp-design-tokens-docs
 tags: [design-system, design-tokens, docs, toc]
 created: '2021-01-05T01:10:28.172Z'
-modified: '2021-01-05T17:35:49.470Z'
+modified: '2021-01-11T18:34:20.713Z'
 ---
 
-# toc-lib-design-system-tokens-docs
+# toc-lib-comp-design-tokens-docs
 
 # guide
 
@@ -79,6 +79,17 @@ modified: '2021-01-05T17:35:49.470Z'
 - bootstrap
   - https://getbootstrap.com/docs/5.0/utilities/colors/
   - https://github.com/twbs/bootstrap/tree/main/site
+- primitive/skeleton-css
+  - https://github.com/taniarascia/primitive
+  - https://taniarascia.github.io/primitive/
+  - /760Star/MIT/202010/scss/css-only
+  - 提供了基础页面模版
+  - 提供了通过改变link的href属性值来切换theming的示例
+  - A front-end design toolkit built with Sass for developing responsive web apps.
+  - Skeleton CSS, the original inspiration
+- pico
+  - https://github.com/picocss/pico
+  - https://picocss.com/
 - infor
   - https://design.infor.com/resources/design-tokens
   - https://github.com/infor-design/design-system/tree/master/design-tokens
