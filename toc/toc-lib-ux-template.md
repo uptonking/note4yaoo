@@ -73,9 +73,9 @@ modified: '2021-01-11T22:19:27.519Z'
   - https://sanographix.github.io/rin
   - A lean HTML & SASS boilerplate for better front-end coding
   - Rin supports EJS template.
-- https://github.com/leemunroe/motherplate
+- https://github.com/leemunroe/motherplate /201801/过于简单
   - https://leemunroe.github.io/motherplate/example.html
-  - A bare bones responsive SCSS boilerplate
+  - A bare bones responsive SCSS boilerplate 
   - It is not as in depth as something like HTML5 Boilerplate and doesn't include styled components like Bootstrap.
 - https://github.com/susam/spcss /NoDeps
   - https://susam.github.io/spcss/

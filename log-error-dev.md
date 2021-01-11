@@ -12,6 +12,16 @@ modified: '2021-01-04T15:50:21.746Z'
 
  
 
+- Errorr: ENOENT: no such file or directory, open 'build/scripts.js'
+  - 若uglify输出的目录不存在，则需要开发者提前手动创建，否则会抛出异常
+    - 系统依赖本身也会有依赖，有时难以分析出到底缺哪个包
+  - 开发调试时，可将图片优化处理替换为copy
+  - [Create output directory](https://github.com/mishoo/UglifyJS/issues/1278)
+- 使用jpegtran优化jpg图片的示例
+  - `find src/ -name "*.jpg" -type f -exec  jpegtran -copy none -optimize -outfile {} {} \;`
+  - `find src/ -type f -exec  jpegtran -copy none -optimize -outfile {} {} \;`
+  - 注意，上述命令会原地优化，立即覆盖图片，记得先备份；图片优化后体积可能会变大
+
 - npm err Unsupported platform for fsevents@2.1.3: wanted {"os"
   - [linux下fsevents模块引起的npm ls报错解决办法](https://segmentfault.com/a/1190000018759308)
     - fsevents只能在macOS下安装，无法在linux系统安装。

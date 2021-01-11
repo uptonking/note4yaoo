@@ -134,6 +134,12 @@ modified: '2020-07-14T10:28:11.443Z'
   - 目标都是用到app(noter/datable)中
     - 要支持在markdown编辑器中实时编辑和预览list/grid、chart、map
 
+- build-src-xp
+  - 使用现有示例项目的优点是加快开发，缺点是编译流程冗长，难以阅读和修改
+    - 可以先分析出大概编译流程，然后替换其中的非必要项
+      - 去掉minify
+      - 将图片的optimization替换为copy，因为图片优化处理常依赖系统环境的包，如jpegtran
+
 # dev-tricks
 
 - 少用if-else，多用卫语句
