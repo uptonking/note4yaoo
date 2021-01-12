@@ -9,30 +9,10 @@ modified: '2021-01-11T22:19:27.519Z'
 
 - guide
   - [search: template css](https://github.com/search?o=desc&p=1&q=template+language%3Acss+language%3Ascss&s=stars&type=Repositories)
-    - boilerplate css/site
+    - boilerplate css
     - design template
   - ref
     - https://github.com/bradtraversy/design-resources-for-developers
-
-# landing
-
-- https://github.com/xxidbr9/web-design-boilerplate
-  - https://xxidbr9.github.io/web-design-boilerplate/
-  - theming-粉色，依赖滚动工具
-
- 
-
-- https://github.com/ant-design/ant-design-landing
-  - Landing Pages of Ant Design System
-  - https://github.com/ant-design/ant-ux
-    - A sitemap template for ux design
-
-# design-site
-
-- https://github.com/flexdinesh/dev-landing-page
-  - https://portfoliov1.dineshpandiyan.com/
-  - Dev Landing Page comes in 9 material themes.
-  - 过于简单
 
 # portfolio
 
@@ -80,6 +60,9 @@ modified: '2021-01-11T22:19:27.519Z'
 - https://github.com/susam/spcss /NoDeps
   - https://susam.github.io/spcss/
   - A minimal, classless CSS for simple text-based HTML pages
+- https://github.com/minimill/project-template
+  - The best way to build static sites fast. 
+  - Gulp + Browsersync + Handlebars.js + SCSS + more.
 
  
 
