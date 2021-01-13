@@ -107,8 +107,9 @@ modified: '2021-01-09T16:13:07.758Z'
   - Ventus: 快速切换到窗口平铺预览
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
 
-- loved
+- lts
   - markdown
   - pdf
+  - excel/office open xml
 
 # solutions

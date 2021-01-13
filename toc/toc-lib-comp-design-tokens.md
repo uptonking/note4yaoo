@@ -7,6 +7,9 @@ modified: '2021-01-01T22:09:59.545Z'
 
 # toc-lib-comp-design-tokens
 
+- 设计样式时theming可参考
+  - material, bootstrap, flat/metro, neumorphism, monochrome
+
 # style-dictionary-examples
 
 - https://github.com/infor-design/design-system

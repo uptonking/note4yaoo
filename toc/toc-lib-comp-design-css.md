@@ -11,10 +11,52 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - top-css-lib
   - bootstrap, bulma, materialize, spectre, primer
+
+- 设计样式时theming可参考
+  - material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
+
 - ref
   - search: pure css, css only
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
+
+# css-themes-popular
+
+## material
+
+- https://github.com/Dogfalo/materialize
+  - https://materializecss.com/
+  - a CSS Framework based on Material Design
+
+## flat/metro
+
+- https://github.com/daniruiz/flat-remix-css
+  - http://drasite.com/flat-remix-css
+  - CSS library that provides a set of predesigned elements
+  - It follows a modern flat design using a colorful palette
+- https://github.com/codyogden/press-css
+  - https://press-css.io/
+  - A flat, material, no bullshit, highly extensible CSS button library.
+
+## neomorphism
+
+- https://github.com/ismail9k/neomorphism
+  - https://ismail9k.github.io/neomorphism/
+  - UI components library in the new neomorphism design style
+
+## monochrome
+
+- https://github.com/kokushin/mono.css
+  - https://kokushin.github.io/mono.css/
+  - Minimal design based on black and white.
+
+## hand-drawn
+
+- https://github.com/fxaeberhard/handdrawn.css
+  - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
+- https://github.com/papercss/papercss
+  - https://getpapercss.com/
+  - The Less Formal CSS Framework
 
 # popular
 
@@ -62,6 +104,9 @@ modified: '2020-11-13T07:28:50.844Z'
     - 提供了themes
   - https://github.com/WhatsNewSaes/Skeleton-Sass
     - Sass Version of Skeleton (2.0.4)
+  - https://github.com/ajusa/lit
+    - a ridiculously small responsive css framework.
+    - preserve everything Skeleton, Milligram, and other micro frameworks have to offer.
 - primer-css /MIT/9.7kStar/202010/scss
   - https://github.com/primer/css
   - https://primer.style/css

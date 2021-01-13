@@ -29,9 +29,6 @@ modified: '2021-01-10T22:18:36.696Z'
 
  
 
-- https://github.com/designmodo/Flat-UI
-  - Flat UI Free - Design Framework (html/css3/less/js)
-  - Flat UI is based on Bootstrap
 - https://github.com/froala/design-blocks
   - Over 170 responsive design blocks ready to be used
   - All blocks are based on the Bootstrap Library
@@ -55,8 +52,13 @@ modified: '2021-01-10T22:18:36.696Z'
 
  
 
-- https://github.com/ColorlibHQ/AdminLTE
-  - Free admin dashboard template based on Bootstrap 4
+- https://github.com/designmodo/Flat-UI
+  - https://designmodo.com/flat-free/
+  - Flat UI Free - Design Framework (html/css3/less/js)
+  - Flat UI is a beautiful theme for Bootstrap. 
+    - We have redesigned many of its components to look flat in every pixel.
+- https://github.com/bootflat/bootflat.github.io
+  - an open source Flat UI KIT based on Bootstrap 3.3 css
 
 # bs-css-vars
 

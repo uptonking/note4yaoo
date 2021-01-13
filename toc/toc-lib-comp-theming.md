@@ -15,6 +15,9 @@ modified: '2020-11-13T07:31:38.730Z'
   - 普通组件要切换class
   - 参考主流组件库的实现
 
+- 设计样式时theming可参考
+  - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss)
+
 # popular
 
 - https://github.com/denali-design/denali-css

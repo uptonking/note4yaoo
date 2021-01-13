@@ -12,6 +12,8 @@ modified: '2021-01-11T18:34:20.713Z'
 - style guide 文档该设计成单页，还是多页？
   - 前期可设计成单页，快速修改 + 方便查看
   - 后期可扩展成多页或SPA，丰富内容
+- 设计样式时theming可参考
+  - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
 - 根据style-dictionary的输出，自动生成简单的单页文档
 
