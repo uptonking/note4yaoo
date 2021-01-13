@@ -97,6 +97,10 @@ modified: '2021-01-08T11:48:16.590Z'
   - high quality UI built with Bootstrap 4.5
   - 提供了多个版本，但收费处也多
 
+- https://codepen.io/TurkAysenur/pen/ZEpxeYm
+  - theming-黑色，可切换明暗主题的dashboard
+  - 依赖jquery，不依赖bootstrap
+
 - https://github.com/ReeganR/Pure-Html-Css-Dashboard
   - Dashboard UI with Html and CSS
 - https://github.com/DanielSilvado/financial-dashboard

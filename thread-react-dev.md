@@ -11,7 +11,7 @@ modified: '2021-01-06T14:40:11.360Z'
 
  
 
-- ## list: How do you manage API calls in react
+- ## list: How do you manage API calls in react_202101
 - https://twitter.com/_Adyasha8105_/status/1347978564251963392
   - Using a library like react-query 
   - or your own custom hooks 

@@ -153,7 +153,7 @@ modified: '2020-12-08T13:14:07.354Z'
     - This is useful for building controlled components.
   - With a controlled component, the input’s value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
   - React, instead of using the `selected` attribute, uses a `value` attribute on the root `select` tag.
-  - Overall, this makes it so that `<input type="text">` , `<textarea>` , and `<select>` all work very similarly - they all accept `value` and `onChange` attribute that you can use to implement a controlled component.
+  - Overall, this makes it so that `<input type="text">` `<textarea>` , and `<select>` all work very similarly - they all accept `value` and `onChange` attribute that you can use to implement a controlled component.
   - You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag
 
 # br: The Line Break element
@@ -223,15 +223,23 @@ a {
 - Each embedded browsing context has its own `session history` and `document` . 
 - The browsing context that embeds the others is called the parent browsing context. 
 - The topmost browsing context — the one with no parent — is usually the browser window, represented by the `Window` object.
-- Because each browsing context is a complete document environment, every `<iframe` > in a page requires increased memory and other computing resources. 
+- Because each browsing context is a complete document environment, every `<iframe>` in a page requires increased memory and other computing resources. 
   - While theoretically you can use as many `<iframe>` s as you like, check for performance problems.
+
+- Inline frames, like `<frame>` elements, are included in the `window.frames` pseudo-array.
+- With the DOM `HTMLIFrameElement` object, scripts can access the `window` object of the framed resource via the `contentWindow` property. 
+  - The `contentDocument` property refers to the document inside the `<iframe>`, same as `contentWindow.document`.
+  - From the inside of a frame, a script can get a reference to its parent window with `window.parent`
+- Script access to a frame's content is subject to the same-origin policy. 
+- Cross-origin communication can be achieved using `Window.postMessage()`.
+- As a replaced element, the position, alignment, and scaling of the embedded document within the `<iframe>` element's box, can be adjusted with the `object-position` and `object-fit` properties.
 
 # frame
 
 - `<frame>` is an HTML element which defines a particular area in which another HTML document can be displayed. 
 - A frame should be used within a `<frameset>` .
 - Using the `<frame>` element is not encouraged because of certain disadvantages such as performance problems and lack of accessibility for users with screen readers. 
-- Instead of the `<frame>` element, `<iframe>` may be preferred.
+- Instead of the `<frame>` element,  `<iframe>` may be preferred.
 
 # object
 

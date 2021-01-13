@@ -42,6 +42,7 @@ modified: '2020-11-11T13:16:42.423Z'
 - [Coronavirus (COVID-19) Vaccinations](https://ourworldindata.org/covid-vaccinations)
   - Our World in Data will be tracking recent announcements on the first countries to administer these vaccinations. 
   - Our sources for the data presented here are listed at the bottom of this page.
+- [巴西公布科兴新冠疫苗临床试验结果，总保护效力 50.4％，预防轻症有效率78%](https://www.zhihu.com/question/438378660)
 
 # org
 

@@ -1,11 +1,11 @@
 ---
-title: web-dev-comp-tokens-common
-tags: [components]
+title: web-dev-comp-tokens-garden
+tags: [components, design-tokens]
 created: '2020-10-02T11:42:34.698Z'
-modified: '2020-12-27T21:16:14.941Z'
+modified: '2021-01-13T17:12:25.854Z'
 ---
 
-# web-dev-comp-tokens-common
+# web-dev-comp-tokens-garden
 
 # prospect-garden-design-in-action
 

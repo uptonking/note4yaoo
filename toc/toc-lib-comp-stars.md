@@ -7,6 +7,14 @@ modified: '2021-01-12T18:49:07.422Z'
 
 # toc-lib-comp-stars
 
+# img
+
+- https://github.com/ailon/markerjs2
+  - https://markerjs.com/
+  - Add image annotation to your web apps.
+  - Linkware license for v2; MIT for v1
+  - https://github.com/ailon/markerjs
+
 # embeddable-widget
 
 - https://github.com/shobhitsharma/embedo

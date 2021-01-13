@@ -11,6 +11,49 @@ modified: '2021-01-08T17:13:43.392Z'
 
  
 
+- ## Two of my most- and first-used checks when doing a performance audit are surprisingly old school:
+- https://twitter.com/csswizardry/status/1349400099647090694
+  - Validate HTML 
+  - Disable JS.
+
+- ## Pages opened with `target="_blank"` allow the new page to access the original's `window.opener`. 
+- https://twitter.com/denicmarko/status/1349247474083508224
+  - This can have security and performance implications. 
+  - Include `rel="noopener"` or `rel="noreferrer"` to prevent this.
+  - `noopener` sets `window.opener` to `null` on the new page, so it's good for the security and performance. 
+  - `noreferrer` does the same but also omit the `Referer` header, which can have SEO implications, because all traffic to the targeted website will be registered as direct clicks.
+- One of the obvious issues is that the original page can be redirected.
+
+- ## Google's Web Vitals site doesn't pass Google's Core Web Vitals assessment 🤔 irony?
+- https://twitter.com/toddmotto/status/1349128843928477704
+- I get a different view. 
+  - Tried in incognito mode in order to not run extensions.
+- That looks like Desktop, try mobile over [here](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fweb.dev%2Fvitals%2F&tab=mobile)
+
+- ## Avoid layout shifts on long pages by adding a scrollbar
+- https://twitter.com/JoshWComeau/status/1349374805418635264
+  - `overflow-y: scroll;`
+  - Improves CLS score
+- this is indeed annoying.
+  - what's your solution for modals opening and hiding that scrollbar, producing a content shift on opening?
+
+- ## url state
+- https://twitter.com/kentcdodds/status/1349173470567964673
+  - If you find yourself synchronizing some local component state with the URL (for example, query parameters), you'd be better off treating the URL as the source of truth 
+    - and ditching your local state in favor of getting the value from the URL (or your router) and updating the URL.
+- Agreed almost always. 
+  - There are a few cases where you want to sync state though, like an autocomplete that goes up to the url search params, you’ll want to throttle that user interaction (maybe not with CM though!)
+  - Although you can also navigate inside of a throttle ... so maybe you’re right always.
+- I’ve said same thing before 
+  - but I’ve since changed my mind because of performance issues it causes in many cases. 
+  - Instead I suggest making an abstraction that mirrors the state using what ever throttling or debouncing mechanism you need, and ideally testing that error-prone code.
+  - Imagine a search component. 
+    - Updating the url on each keypress is not awesome anyway because it fills the history with crap (ignoring replace here). 
+    - Updating it if you click a button to run the new search is fine though.
+- Unfortunately updating the URL is throttled by browsers, 
+  - so this doesn't work for state that is updated a lot, 
+  - e.g. a search query that updates as you type 
+
 - ## A downside of modern SSG's (e.g. Next.js getStaticProps or Gatsby) is that builds are dirty.
 - https://twitter.com/jaredpalmer/status/1349060733837963265
   - Same input != same output. 

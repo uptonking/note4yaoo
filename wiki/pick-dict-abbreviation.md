@@ -15,6 +15,8 @@ modified: '2020-08-06T05:29:22.922Z'
 
 - TBH
   - to be honest 老实说
+- tbf
+  - to be fair
 - BTW
   - by the way 顺带一提 
 - TLDR(tl; dr)
