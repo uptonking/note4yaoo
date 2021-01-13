@@ -13,7 +13,9 @@ modified: '2021-01-11T18:34:20.713Z'
   - 前期可设计成单页，快速修改 + 方便查看
   - 后期可扩展成多页或SPA，丰富内容
 
-# themeable design
+- 根据style-dictionary的输出，自动生成简单的单页文档
+
+# themeable design docs
 
 - looker /gatsby
   - https://components.looker.com/system/spacing/
@@ -29,48 +31,46 @@ modified: '2021-01-11T18:34:20.713Z'
 - flame /storybook
   - https://lightspeed-flame.netlify.app/?path=/story/theme-tokens--colors
 
-# popular
+- primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
+  - https://github.com/taniarascia/primitive
+  - https://taniarascia.github.io/primitive/
+  - 提供了基础页面模版
+  - 提供了通过改变link的href属性值来切换theming的示例
+  - A front-end design toolkit built with Sass for developing responsive web apps.
+  - Skeleton CSS, the original inspiration
+
+# popular docs
 
 - material
   - https://material.io/design/color/the-color-system.html
-
 - fluent
   - https://developer.microsoft.com/en-us/fluentui#/styles/web/typography
-
 - carbon
   - https://www.carbondesignsystem.com/guidelines/color/overview
-
 - lightning
   - https://www.lightningdesignsystem.com/design-tokens/
     - colors,font,opacity,line height,spacing,radius,sizing
     - time,touch,media query,z-index
   - https://www.lightningdesignsystem.com/guidelines/layout/
-
 - ant-design
   - https://ant.design/docs/spec/colors-cn
-
 - polaris
   - https://polaris-tokens.herokuapp.com/
   - https://polaris.shopify.com/design/colors
   - https://github.com/Shopify/polaris-tokens
-
 - primer-css /gatsby
   - https://primer.style/css
   - https://github.com/primer/css/tree/master/docs
-
 - atlassian
   - https://atlassian.design/foundations/color/color-palette/
-
 - spectrum
   - https://spectrum.adobe.com/page/design-tokens/
     - color,font,icon,motion,layout
   - https://opensource.adobe.com/spectrum-css/typography.html
   - https://spectrum.adobe.com/page/platform-scale/
-
 - elastic ui
   - https://elastic.github.io/eui/#/utilities/color-palettes
   - https://elastic.github.io/eui/#/guidelines/colors
-
 - patternfly
   - https://www.patternfly.org/v4/guidelines/colors
 
@@ -79,14 +79,6 @@ modified: '2021-01-11T18:34:20.713Z'
 - bootstrap
   - https://getbootstrap.com/docs/5.0/utilities/colors/
   - https://github.com/twbs/bootstrap/tree/main/site
-- primitive/skeleton-css
-  - https://github.com/taniarascia/primitive
-  - https://taniarascia.github.io/primitive/
-  - /760Star/MIT/202010/scss/css-only
-  - 提供了基础页面模版
-  - 提供了通过改变link的href属性值来切换theming的示例
-  - A front-end design toolkit built with Sass for developing responsive web apps.
-  - Skeleton CSS, the original inspiration
 - pico
   - https://github.com/picocss/pico
   - https://picocss.com/
@@ -113,20 +105,17 @@ modified: '2021-01-11T18:34:20.713Z'
     - color,typesetting,flex,opacity,order,shadow,spacing units,z-index
   - https://design.cms.gov/styles/color/
 
-# css framework
+# css framework docs
 
 - Spectre.css /cssonly
   - https://picturepan2.github.io/spectre/utilities/colors.html
   - https://github.com/picturepan2/spectre/tree/master/docs
-
 - Auro Design System
   - https://auro.alaskaair.com/color/core-digital-palette-usage
   - 开源的是api网页源码，设计网页源码未找到
-
 - bulma /jekyll
   - https://bulma.io/documentation/overview/colors/
   - https://github.com/jgthms/bulma/tree/master/docs
-
 - materialize /cssonly
   - https://materializecss.com/color.html
   - https://github.com/Dogfalo/materialize/tree/gh-pages
@@ -166,24 +155,15 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://seek-oss.github.io/seek-style-guide/typography
 - https://seeds.sproutsocial.com/visual/color
 
-# living style guide tools
+# docs for living/ui style guide
 
-- https://github.com/SassDoc/sassdoc
-  - SassDoc is to Sass what JSDoc is to JavaScript
-  - SassDoc parses your source folder to grab documentation-specific comments. 
-  - From there, it builds a data tree, that gets enhanced and filtered before being passed to the view.
-- https://github.com/straker/livingcss /201912
-  - Parse comments in your CSS to generate a living style guide using Markdown, Handlebars, Polymer, and Prism syntax highlighter
-  - who is using
-    - http://straker.github.io/livingcss/
-    - https://www.familysearch.org/frontier/styleguide/
-- https://github.com/hugeinc/styleguide
-  - A tool to make creating and maintaining styleguides easy
+- https://github.com/wikimedia/WikimediaUI-Style-Guide
+  - https://design.wikimedia.org/style-guide/
+  - Wikimedia Design Style Guide with user interface focus
 
-- https://github.com/styleguidist/react-styleguidist
-  - https://react-styleguidist.js.org/
-  - https://bokuweb.github.io/re-bulma/
-  - https://dialogs.github.io/dialog-web-components/
+ - https://github.com/adjust/design-tokens
+   - https://design-tokens.now.sh/
+   - show off the new UI design in a centralized and easy-to-consume way
 
 - https://github.com/AljanScholtens/taiga-boilerplate
   - 使用了nunjucks模版

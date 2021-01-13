@@ -224,8 +224,8 @@ modified: '2020-11-13T07:30:03.110Z'
   - A system for designing and developing National Instruments Software
 - Nulogy Design System /Nulogy
   - https://github.com/nulogy/design-system
-  - /33Star/MIT/202010/ts
   - http://nulogy.design/
+  - /33Star/MIT/202010/ts
   - Built with React
   - components make it easy to create interfaces that conform to the principles of the Nulogy Design System.
 - Italia design system

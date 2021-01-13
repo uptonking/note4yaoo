@@ -11,6 +11,130 @@ modified: '2021-01-08T17:13:43.392Z'
 
  
 
+- ## A downside of modern SSG's (e.g. Next.js getStaticProps or Gatsby) is that builds are dirty.
+- https://twitter.com/jaredpalmer/status/1349060733837963265
+  - Same input != same output. 
+  - Even with @turborepo cache, we need better incremental bundler caching + hosting providers (like @vercel ISSG/revalidate) to handle last mile for SSG workflow
+- It's so, so hard. 
+  - Most tools are just not designed for caching at all. 
+  - We've had to do so much work in Parcel 2 to properly track all possible changes that could invalidate the cache. 
+  - And in some cases we still have to bail
+- In what scenario would the same input would give different outputs?
+  - When you fetch blog posts from an external CMS at build time and then use that to generate a page for each post
+- SSG could be pure if all you used was the filesystem data as a source. Same for Next.js. 
+  - However, that's not guaranteed at all. 
+  - Anything can be placed onto gatsby's graphql graph and any code can run in getStaticProps
+
+- ## The three features of React that we are going to rely on most in Remix are (probably):
+- https://twitter.com/mjackson/status/1348816271933014021
+  - renderToString
+  - error boundaries
+  - react-refresh
+  - I would have said `Suspense` a few months ago, but we are targeting stable React so Suspense is out for now.
+- We actually have our own mini suspense inside Remix itself, built on top of current stable React and React Router
+  -  It includes:
+
+     - async data fetching (that works during server rendering too!)
+     - dynamic code loading (both styles and components)
+     - a “pending transition” hook
+
+  - I’m particularly excited about the error handling work we are doing. You’ve never seen anything like it before, I promise
+  - Remix error boundaries work both for render errors *and* errors that occur during data fetching. Handling errors has never been easier.
+- `Suspense` does make some things nicer, like image pre-loading, 
+  - but I'm increasingly doubtful it's worth the added complexity and CM breakage.
+
+- ## Do any of you create raw web components? e.g. custom elements without Stencil, lit, or any other tooling?
+- https://twitter.com/claviska/status/1348797980854378496
+- Any convenience utilities you’ve created/are using for data binding and similar things?
+  - I’m weird I guess but I like to use jQuery it already supports scope `$(this, ’.element’)`
+  - The util functions I often end up using is a function to `queryselector(all)` in the shadowDOM; 
+    - and a function to fire a custom event - that automatically sets `composed:true` etc as default
+- Yes! I love to build #webcomponents from scratch and I used to do that quite often to learn the in’s and out’s of the API. 
+  - I won’t recommend it for production apps though since libs like #stenciljs have a great set of build tools, linters and optimizers in place.
+- Oh yes. Occasionally bring in lit-html when I need data binding in a performant manner. 
+  - Outside of that though, the DOM has everything I need!
+  - Things like a static getter for ‘tagName’ and also one called ‘register’ that contains the call to `customElements.define()`.
+  - The tagName allows use in templates of other components, and the register helps with testability.
+- Not anymore. Created myself a base class when I did, plus a few small utilities for creating DOM from template strings.
+  - This is where I’d ended up too (more or less). 
+    - I still use my own lil toolkit for side project stuff, but for work I use Lit now.
+    - Every so often I do still write something for work that doesn’t use anything external, but those are unusual cases.
+- Absolutely! For me one of the best features for raw web components is extending native HTML elements
+
+- ## list: Data fetching in #reactjs
+- https://twitter.com/cse_as/status/1349025492389613570
+  - There are a lot of strong opinions about this in the community about what's the best method. 
+  - Here's an overview of all the different methods available with pros and cons
+- axios
+  - In a small application with no routes, if you want to quickly put together something, 
+    - you can use a regular fetch/axios inside a `useEffect()` hook and store the response in a `useState()` variable.
+  - Pro: Quick setup
+  - Con: No caching, your data disappears on new routes
+- react-query
+  - With this, you can stick your async API calling function inside a hook, 
+    - give the API call a name and global caching will be automatically handled for you.
+  - Pro: Beginner-friendly, each component can handle data on it's own
+  - Con: Relatively new library
+- redux-saga
+  - This middleware helps you push your API call response to the redux store for storing into global state. 
+    - You control everything from fetching the data to how it is stored & retrieved.
+  - Pro: You'll find this used in many large applications
+  - Con: Lot of boilerplate
+- redux-thunk
+  - Another redux middleware that can be used to perform async tasks.
+  - Pro: Slightly easier to understand than redux-saga, great for new applications, built into ReduxToolkit
+  - Con: Existing applications might've already setup redux-saga so you'll need to learn that too
+-  Apollo Client
+  - This is the go-to library if you've already decided that you want a GraphQL backend.
+  - Pro: Has built-in caching, can be used for global state management, very popular
+  - Con: You'll need to convert all your APIs to GraphQL
+- Personal opinion:
+  - Use react-query for handling all data coming from an API. 
+  - Use ReduxToolkit for anything left needed in global state.
+  - This setup is easy to learn & understand, scales well, minimises the code you need to write & you don't need to learn sagas, thunks or GraphQL.
+
+- ## We can use the `unknown` type in TypeScript when we don't know the type of a variable. 
+- https://twitter.com/benmvp/status/1348784718808899586
+  - I've found it most useful for functions that are passing thru data to another function
+- `unknown` is likely preferable to `any` cuz we can't reassign it, manipulate it or pass it to a function
+  - it says to me: "this type is unknown"
+  - `any` (which allows anything) says "I was unable/unwilling to determine the type"
+  - Type narrowing does make `unknown` usable tho
+  - Generics are another good alternative to `any` but that's a whole other topic  
+
+- ## list: what's your favorite transactional email API and why?
+- https://twitter.com/swyx/status/1349028510786994176
+  - for nice-looking, simple, reliable, API-sent email for customer fulfilment. I've really only used nodemailer before!
+- AWS SES - I wrote a blog post about using it
+- @SendGrid *was* great, but recently their support has been absolutely non-existent since acquisition by @twilio
+- I'm using @Mail_Gun . 
+  - Affordable and reliable. 
+  - You can send mails via SMTP and their API. 
+  - For legal reasons it's also important for me that you can select EU (European Union) as a region.
+  - I'm from Germany and it's about GDPR. Also, depending on your product and industry, customers expect you to use services with servers in Europe.
+- Sendgrid API, at least from Python, is really simple. I prefer it to using SMTP directly.
+- i think the IH favorite is @postmarkapp. they also recently added broadcasts. 
+  - i use sendgrid and it's also fine for transactional emails, but i do not recommend their marketing email product.
+- +1 for postmark. 
+  - I've found it has significantly faster and better delivery than mailgun. 
+  - This is super important if you're doing passwordless auth
+
+- ## dilemma: 1.0 is pretty much beta but everyone jumps on the new hotness anyway. 
+- https://twitter.com/devongovett/status/1349015005371506696
+  - But no one will try 2.0 beta even if it’s more stable than 1.x because it says “beta”. 
+  - Version numbers are hard
+- A major version bump tells me things that were working before can stop working. 
+  - If a release is only making things more stable why would you bump the version by a major version number?
+- I didn't know at about Parcel 2 initially because the tooling in VSCode/CodeSandbox on hover only showed 1.x. 
+  - A blind npm install gets you the same. 
+  - When it isn't on the latest tag the numbers of people using will always be significantly smaller.
+  - Would it be weird for the default installed tag to be a beta?
+    - That's what vite does I think, although they never reach v1... They went from v1 alpha to v2 beta.
+- If there are any breaking changes that will impact many users and/or are hard to migrate prioritize them in 2.0. 
+  - Otherwise, they can be deferred to Parcel 3 ~1 year after Parcel 2.0 stable.
+  - We are trying to do this for Babel 8, to avoid the Babel 7 situation.
+  - If you manage to only defer small breaking changes to 3.0, there is nothing wrong with not waiting years before a new major since for most users it will be easy to upgrade anyway.
+
 - ## Let's Bring Spacer GIFs Back!
 - https://www.joshwcomeau.com/react/modern-spacer-gif/
 - Instead of using margin, I create a new element explicitly to add some space between the icon and text!

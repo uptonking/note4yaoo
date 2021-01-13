@@ -1,11 +1,11 @@
 ---
-title: toc-lib-comp-starred
+title: toc-lib-comp-stars
 tags: [components, toc, widget]
 created: '2020-12-19T10:12:11.212Z'
-modified: '2020-12-19T10:12:43.028Z'
+modified: '2021-01-12T18:49:07.422Z'
 ---
 
-# toc-lib-comp-starred
+# toc-lib-comp-stars
 
 # embeddable-widget
 

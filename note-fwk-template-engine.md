@@ -9,6 +9,9 @@ modified: '2020-12-08T13:29:35.248Z'
 
 # guide
 
+- 常用模版引擎
+  - handlebars、ejs、lit-html
+
 # faq
 
 ## [随着前端 MVC， MVVM 框架的壮大，后端模版引擎是否可以退出历史舞台了？(https://www.zhihu.com/question/47189015)](https://www.zhihu.com/question/47189015)
@@ -101,6 +104,23 @@ modified: '2020-12-08T13:29:35.248Z'
 - 相比之下dom-based模板引擎可以实现像Matt-Esch/virtual-dom 这类的东西，
   - 在数据更新的时候实现最小操作，并不像string-based模板引擎那样，可能改了一个值就要重新生成巨大的一部分字符串。
 - 个人认为，在浏览器端，string-based模板引擎的应用场景越来越有限，string-based模板引擎对现在提倡的组件化开发其实是挺不友好的。
+
+# popular
+
+- https://github.com/mde/ejs
+  - http://ejs.co/
+  - /5.1kStar/Apache2/202009/js
+  - Embedded JavaScript templates
+  - Client-side support
+    - When `true`, compiles a function that can be rendered in the browser without needing to load the EJS Runtime (ejs.min.js).
+    - includes do not work unless you use an include callback
+  - Complies with the Express view system
+- https://github.com/handlebars-lang/handlebars.js
+  - https://handlebarsjs.com/guide/
+  - /15.8kStar/MIT/202011/js
+  - Handlebars let you build semantic templates effectively
+  - Handlebars is largely compatible with Mustache templates.
+  - syntax of Handlebars.js templates is a superset of Mustache templates.
 
 # pieces
 

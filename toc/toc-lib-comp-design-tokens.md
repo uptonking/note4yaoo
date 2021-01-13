@@ -10,6 +10,7 @@ modified: '2021-01-01T22:09:59.545Z'
 # style-dictionary-examples
 
 - https://github.com/infor-design/design-system
+  - https://design.infor.com/code/ids-enterprise/latest
   - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
   - 实现了theming，一个主题最后输出成1个大文件，全是css变量
 - [Fluid Design System Design Tokens Intro](https://www.engie.design/fluid-design-system/design-tokens/)
@@ -18,18 +19,28 @@ modified: '2021-01-01T22:09:59.545Z'
   - CSS4 variable tokens, 
   - JSON tokens, CSS4 variable SASS support, FIGMA tokens
 - https://github.com/AlaskaAirlines/AuroDesignTokens
+  - https://auro.alaskaair.com/getting-started/developers/design-tokens
   - Abstract UI atomic values to support the Auro Design System.
   - 未实现theming
-- https://github.com/didoo/style-dictionary-demo
-  - demonstration of a (possible) setup of Style Dictionary for the generation of design tokens. 
-  - It's been created as a companion to a Medium article that I have written to share my experience in setting up Style Dictionary for our Cosmos Design System in Badoo.
-- https://github.com/ivandata/another-way-to-create-themes
-  - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
+- https://github.com/rei/rei-cedar-tokens
+  - https://rei.github.io/rei-cedar-tokens/
+  - https://rei.github.io/rei-cedar-docs/tokens/all-tokens/
+  - Tokens for cedar design system
+  - We follow the basic structure of style-dictionary with the exception being that our tokens don't follow the implicit `category-type-item` structure
+    - and we abstract that into a separate `category` key
 - https://github.com/lyne-design-system/lyne-design-tokens
   - Design Tokens for Lyne Design System
   - 样式编译根据模版文件 web-scss.template, commonjs.template
   - https://github.com/lyne-design-system/lyne-components
     - based on standard compliant Web Components compiled by StencilJS
+- https://github.com/didoo/style-dictionary-demo
+  - demonstration of a (possible) setup of Style Dictionary for the generation of design tokens. 
+  - It's been created as a companion to a Medium article that I have written to share my experience in setting up Style Dictionary for our Cosmos Design System in Badoo.
+- https://github.com/ivandata/another-way-to-create-themes
+  - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
+- https://github.com/growingio/gio-design-tokens
+  - https://gio-design-tokens.vercel.app/
+  - GrowingIO Design Tokens， 文档基于storybook
 
 - more-tokens-repos
   - https://github.com/natura-cosmeticos/natds-commons/tree/master/packages/natds-themes
@@ -39,7 +50,7 @@ modified: '2021-01-01T22:09:59.545Z'
   - https://www.npmjs.com/package/@inmotionnow/momentum-tokens
   - https://www.npmjs.com/package/@tiendanube/design-tokens-nimbus
 
-# style-dictionary-tools
+## style-dictionary-tools
 
 - https://github.com/amzn/style-dictionary
   - /1.3kStar/Apache2/202010
@@ -62,6 +73,20 @@ modified: '2021-01-01T22:09:59.545Z'
 - https://github.com/lukasoppermann/design-tokens
   - Figma plugin to export design tokens to json in an amazon style dictionary compatible format.
   - https://github.com/lukasoppermann/design-token-transformer
+
+# theo-examples
+
+- https://github.com/spartanbio/schedio-tokens
+  - https://spartanbio.github.io/schedio-tokens/
+  - https://polaris-tokens.herokuapp.com/
+- https://github.com/Pagnet/design-tokens
+  - https://pagnet.github.io/design-tokens/
+  - Design tokens for the Blu design system
+- https://github.com/kiwicom/orbit-design-tokens
+  - Design tokens store visual design attributes.
+  - https://github.com/kiwicom/orbit/tree/master/packages/orbit-design-tokens
+- https://github.com/guigonzalez/designtokens
+  - Design Tokens utilize o Theo
 
 # design-tokens-tools
 

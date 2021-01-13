@@ -2,7 +2,7 @@
 title: toc-repos-js
 tags: [js, repos, toc]
 created: '2020-09-28T05:27:32.927Z'
-modified: '2020-11-03T06:55:24.180Z'
+modified: '2021-01-12T18:49:48.157Z'
 ---
 
 # toc-repos-js
@@ -215,7 +215,7 @@ modified: '2020-11-03T06:55:24.180Z'
 - https://github.com/ether/etherpad-lite
   - Etherpad: real-time collaborative document editor 
 
-## most-starred js-ts
+## most-stars js-ts
 
 - https://github.com/vuejs/vue
   - /173kStar/MIT/202009/ts

@@ -11,6 +11,8 @@ modified: '2020-12-29T17:52:31.539Z'
 
 - 有时候评论的内容比回答的内容更有意思
 
+- [知乎违规记录](https://www.zhihu.com/community/reported)
+
 # twitter
 
 - search

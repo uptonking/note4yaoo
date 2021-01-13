@@ -2,7 +2,7 @@
 title: toc-repos-js-ts
 tags: [repos, toc, typescript]
 created: '2020-09-28T02:11:01.912Z'
-modified: '2020-11-03T06:55:35.048Z'
+modified: '2021-01-12T18:50:09.195Z'
 ---
 
 # toc-repos-js-ts
@@ -294,7 +294,7 @@ modified: '2020-11-03T06:55:35.048Z'
 - https://github.com/deckgo/deckdeckgo
   - The open source web editor for presentations
 
-## most-starred typescript
+## most-stars typescript
 
 - https://github.com/niklasvh/html2canvas
   - /21.7kStar/MIT/202009 

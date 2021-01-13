@@ -7,8 +7,6 @@ modified: '2020-12-22T12:40:40.412Z'
 
 # tool-iot-mobile-phone
 
-
-
 # top cellphone sales
 
 - samsung
@@ -18,6 +16,7 @@ modified: '2020-12-22T12:40:40.412Z'
 - oppo/vivo
 
 # 非主流手机
+
 - 三防/户外
   - AGM X5
     - 耐低温到-30°

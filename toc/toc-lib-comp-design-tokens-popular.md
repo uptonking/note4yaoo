@@ -34,17 +34,16 @@ modified: '2021-01-01T22:06:57.471Z'
   - Design tokens for colours, spacing, font, etc.
 - https://github.com/buildit/gravity-particles
   - The "single source of truth" for design tokens and assets used throughout Buildit's Gravity design system
-- https://github.com/rei/rei-cedar-tokens
-  - https://rei.github.io/rei-cedar-docs/tokens/all-tokens/
-  - Tokens for cedar design system
-  - We follow the basic structure of style-dictionary with the exception being that our tokens don't follow the implicit `category-type-item` structure 
-    - and we abstract that into a separate `category` key
 - https://github.com/sproutsocial/seeds-packets
   - https://seeds.sproutsocial.com/resources/tokens/
   - the design tokens that power Sprout Social's design system
 - https://github.com/thumbtack/thumbprint-tokens
   - https://thumbprint.design/tokens/scss/
   - Thumbprint Tokens are published as JavaScript, SCSS, Swift, and Kotlin.
+
+- https://github.com/ExcitedSpider/adui-design-token
+  - 适用于 ADUI 规范的 design token; 提供 cjs, esm, css, scss, wxss 的引用方式
+  - 无依赖，自己实现输出到各种格式
 
 # tokens-integration
 
