@@ -49,7 +49,9 @@ modified: '2021-01-04T17:26:25.032Z'
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr
 
-# markdown-app-extensions
+# markdown-extensions
+
+# markdown-examples
 
 - https://github.com/foambubble/foam
   - /7.3kStar/MIT/202010/ts

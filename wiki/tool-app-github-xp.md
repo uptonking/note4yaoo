@@ -58,10 +58,18 @@ modified: '2020-12-29T17:45:15.518Z'
 - github mirror
   - https://github.wuyanzheshui.workers.dev/
 
+- ref
+  - [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
+    - https://github.com/sw-yx/gh-action-data-scraping
+
 # github-pkg-npm
 
 - 查看依赖某个package的所有包
   - https://www.npmjs.com/browse/depended/redux
+  - [Allow dependents to be sorted by stars](https://github.com/isaacs/github/issues/1537)
+    - ghtopdep
+    - source-reader
+
 - [most depended upon packages](https://www.npmjs.com/browse/depended)
   - lodash, react, chalk, request, moment, express, axios, debug, bluebird
   - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch

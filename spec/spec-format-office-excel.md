@@ -1,11 +1,11 @@
 ---
-title: spec-format-excel
-tags: [excel, format]
+title: spec-format-office-excel
+tags: [excel, format, office]
 created: '2019-12-24T12:54:32.612Z'
-modified: '2020-12-08T13:52:17.875Z'
+modified: '2021-01-14T13:20:11.998Z'
 ---
 
-# spec-format-excel
+# spec-format-office-excel
 
 # spec
 

@@ -161,11 +161,16 @@ modified: '2020-11-13T07:28:50.844Z'
 - https://github.com/sky-uk/toolkit
   - http://www.sky.com/toolkit
   - Sky's CSS Toolkit
-- https://github.com/uswitch/ustyle
-  - https://ustyle.guide/
-  - A living styleguide and pattern library by uSwitch.
-  - just import the base uSwitch styles at the start of your file
-  - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
+
+ 
+- https://github.com/zaydek/duomo
+  - https://codepen.io/zaydek/pen/vYXjBra
+  - Stackable, themeable CSS library
+  - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
+  - Duomo is a spiritual successor of Tailwind CSS.
+  - Uses HStack and VStack instead of Flexbox for rows and columns
+  - Uses ZStack to layer along the z-axis
+
 
 # classless
 

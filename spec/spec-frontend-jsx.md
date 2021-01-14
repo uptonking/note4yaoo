@@ -1,11 +1,11 @@
 ---
-title: spec-format-jsx
+title: spec-frontend-jsx
 tags: [format, jsx, spec]
 created: '2020-12-16T12:40:54.817Z'
-modified: '2020-12-16T12:41:10.305Z'
+modified: '2021-01-14T13:21:33.678Z'
 ---
 
-# spec-format-jsx
+# spec-frontend-jsx
 
 # [facebook jsx](https://facebook.github.io/jsx/)
 

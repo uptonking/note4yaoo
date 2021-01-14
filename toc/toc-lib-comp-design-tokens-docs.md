@@ -174,6 +174,12 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://github.com/pure-css/pure-site
   - 使用了handlebars
 
+- https://github.com/uswitch/ustyle
+  - https://ustyle.guide/
+  - uStyle, aptly named, is the styleguide gem for uSwitch. 
+  - Include it in your Rails/Sinatra/Anything project as a gem to apply consistent styles according the uSwitch styleguide.
+  - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
+
 # more-docs-for-design-system
 
 - gatsby

@@ -7,6 +7,9 @@ modified: '2021-01-13T19:30:59.508Z'
 
 # toc-lib-ux-style-sketch-hand-drawn
 
+- search
+  - paper, reading, reader, document
+
 # popular
 
 - excalidraw /15.3kStar/MIT/202101/ts

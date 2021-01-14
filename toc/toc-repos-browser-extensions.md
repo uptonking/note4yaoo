@@ -35,3 +35,7 @@ modified: '2020-11-19T12:44:36.463Z'
   - Google chrome extension which helps you to copy from Wikipedia.
 - https://github.com/gambolputty/wikitable2csv
   - A web tool to convert Wiki tables to CSV
+
+# local-files
+
+# more-extensions

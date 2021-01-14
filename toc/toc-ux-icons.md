@@ -7,6 +7,12 @@ modified: '2020-07-17T10:52:17.250Z'
 
 # toc-ux-icons
 
+# icons-css
+
+- https://github.com/erikflowers/weather-icons
+  - https://erikflowers.github.io/weather-icons/
+  - Weather Icons is the only icon font and CSS with 222 weather themed icons
+
 # icons
 
 - feather  /MIT/16kStar/201908

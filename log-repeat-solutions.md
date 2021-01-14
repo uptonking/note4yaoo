@@ -80,6 +80,13 @@ modified: '2021-01-09T16:13:07.758Z'
   - editorjs
   - craftjs
 
+- dashboard
+  - tips
+    - 实际仪表板常与业务紧密相关，建议结合window-layout和drag实现
+  - coreui
+  - creativetim
+  - olap(js intensive)
+
 - design-system
   - tips
   - material
@@ -92,13 +99,6 @@ modified: '2021-01-09T16:13:07.758Z'
   - doc-site
     - sass-primitive
     - pico
-
-- dashboard
-  - tips
-    - 实际仪表板常与业务紧密相关，建议结合window-layout和drag实现
-  - coreui
-  - creativetim
-  - olap(js intensive)
 
 - window-layout-manager
   - tips
