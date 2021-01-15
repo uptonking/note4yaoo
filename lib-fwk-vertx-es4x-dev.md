@@ -7,12 +7,40 @@ modified: '2020-12-08T13:28:50.105Z'
 
 # lib-fwk-vertx-es4x-dev
 
+# guide
+
+# discuss
+
+- ## [Vert.x 与 Node.js 有哪些区别？](https://www.zhihu.com/question/22021343/answers/updated)
+- vert.x实在是太好用了，根本不需要rxjava，promise这些，自带扁平化callback hell的工具
+
+- ## [Vert.x未来会取代tomcat和现在流行的spring全家桶吗？](https://www.zhihu.com/question/302482388/answers/updated)
+- vert.x说简单点就是一个evenloop模型的实现，用来取代传统的同步多线程编程模式。
+  - 拿它作为基础库，实现事件驱动，提高应用的并发能力还是很好用的
+- Spring是传统Servlet WEB framework的杰出代表，事件驱动方面也有 spring flux
+  - 在纯异步编程这块，我个人还是倾向于使用vert.x 简单小巧。
+
+- ## [vert.x相比spring全家桶系列, 除了性能外, 还有什么优势?](https://www.zhihu.com/question/277219881/answers/updated)
+- 这两个名词不太适合直接比较，Spring Boot 显然是很成熟的业务框架。
+  - Vert.x可以当成一个封装了 IO 设施与常用协议(File/HTTP/TCP/UDP/Buffer)的 lib
+  - 工程上面想做到类似 Spring Boot 的程度，需要组装一些脚手架设施，推荐Quarkus
+- Vert.x相对于Spring系的优势，整体还是不小的。
+  - 性能、低内存占用、冷启动速度(如果连接的中间件不多或者启动时候没有很重的初始化任务，可以轻松压到 2s 以内，
+  - 在容器平台里 rolling upgrade/scale up 时候简直不要太开心
+
+- ## [国内有用 Vert.x 作为开发框架的公司么？](https://www.zhihu.com/question/33038931/answers/updated)
+- 总体感觉很棒，异步模型性能杠杠的，直接支持分布式开发
+  - 缺点就是异步回调hell
+
 # Vert.x
 
 - vert.x vs spring+tomcat
   - Vert.x是面向IO的，而Spring是面向Web的。或许Vert.x Web无法撼动Spring的地位，但是其他领域呢？比如mqtt和其他非http领域，Vert.x仍然是JVM最具竞争力的IO框架
-  - Spring可以跟Vert.x结合使用，比如可以在一个Spring3的旧项目中，引入Vert.x集群，用Vert.x的集群下EventBus替换其他RPC解决方案。使得在不同Tomcat实例下的Web项目可以互相通信。同样在这个项目里，面向浏览器的Websocket消息推送，用Vert.x来做非常方便
+  - Spring可以跟Vert.x结合使用，比如可以在一个Spring3的旧项目中，引入Vert.x集群，用Vert.x的集群下EventBus替换其他RPC解决方案。
+    - 使得在不同Tomcat实例下的Web项目可以互相通信。
+    - 同样在这个项目里，面向浏览器的Websocket消息推送，用Vert.x来做非常方便
   - spring的生态基础摆在那里，最主要的spring也在不断进步，也支持异步功能
+
 - vert.x简介
   - vert.x说简单点就是一个evenloop模型的实现，用来取代传统的同步多线程编程模式。拿它作为基础库，实现事件驱动，提高应用的并发能力还是很好用的
   - Spring是传统Servlet WEB framework的代表，事件驱动方面也有 spring flux
@@ -29,6 +57,7 @@ modified: '2020-12-08T13:28:50.105Z'
     - 所以vert.x优先解决跟nosql以及json等半结构或者无结构数据格式的交互问题，提供能够跟json，文件系统的api，而不是去适应传统的rdbms，那个是落后产能
     - 如果你还在用rdbms，意味着数据持久化本身成为瓶颈，用不用vert.x都改变不了这个瓶颈的存在，比如tomcat吞吐是2000，但是rdbms是1000，你换成vert.x，把appserver的吞吐提高到40*2000=80000，但是rdbms怎样都只能吞吐1000，你的系统最终的吞吐也还是只有1000，vert.x跑得再快又怎样？
     - 所以用vert.x是跟整个系统发展趋势相符的，光换vert.x可能并不能整体提升系统性能，还需要其他部分整体配合才行
+
 - 使用vert.x的知名公司或项目(大多不活跃)
   - https://github.com/Knotx/knotx
 - 背景
@@ -96,7 +125,9 @@ modified: '2020-12-08T13:28:50.105Z'
   - Use Vert.x components in js, and develop with js or TypeScript
   - ES4X runs on top of GraalVM offering a great performance for JavaScript applications on par or better than Java.
   - ES4X requires GraalVM or Java >= 8.
-- ES4X is small runtime for EcmaScript >=5 applications that runs on graaljs with the help of vert.x. JavaScript is the runtime language but it does not use nodejs
-- ES4X makes use of GraalVM which is a polyglot runtime on the JVM. This means it is possible to use any JVM language as well as JavaScript in applications
+- ES4X is small runtime for EcmaScript >=5 applications that runs on graaljs with the help of vert.x. 
+  - JavaScript is the runtime language but it does not use nodejs
+- ES4X makes use of GraalVM which is a polyglot runtime on the JVM. 
+  - This means it is possible to use any JVM language as well as JavaScript in applications
 - Vert.x is used by ES4X in order to provide an optimized event loop and high performance IO library
 - ES4X is the fastest on all tests when compared to JavaScript frameworks

@@ -7,7 +7,10 @@ modified: '2020-12-20T15:43:51.808Z'
 
 # pattern-gof-design-pattern
 
-# summary
+# guide
+
+- Observer 观察者模式
+  - MutationObserver
 
 # design-patterns
 

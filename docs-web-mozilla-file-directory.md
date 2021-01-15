@@ -1,11 +1,29 @@
 ---
-title: docs-web-mozilla-file
+title: docs-web-mozilla-file-directory
 tags: [docs, file, web]
 created: '2021-01-14T16:28:19.728Z'
-modified: '2021-01-14T16:29:09.017Z'
+modified: '2021-01-15T01:29:18.204Z'
 ---
 
-# docs-web-mozilla-file
+# docs-web-mozilla-file-directory
+
+# guide
+
+- tips
+  - 使用浏览器js操作文件的缺点
+    - [filesystem api](https://caniuse.com/filesystem)主要由chrome推动开发，firefox和safari支持度都不好
+      - 对api的支持度也不够，如firefox和safari都不支持createWriter
+    - 需要用户主动使用`<input>`元素选择文件或文件夹，或拖拽指定文件/文件夹
+      - `<input type="file">` webkitdirectory设置只能选择文件夹，但目前未进入标准，除ie外都支持
+    - 由于浏览器安全性的限制，每次都需要选择文件路径，无法自动读取路径字符串的目录文件
+      - 所以chrome extension扩展操作本地文件大多只作为编辑器和预览器
+      - 如果要开发类似ide的应用，要随意读写本地文件，推荐用nodejs的api
+
+# discuss
+
+- ## [Local file access with JavaScript](https://stackoverflow.com/questions/371875/local-file-access-with-javascript)
+- If the user selects a file via `<input type="file">`, you can read and process that file using the File API.
+- Reading or writing arbitrary files is not allowed by design. It's a violation of the sandbox.
 
 # [Introduction to the File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API/Introduction)
 
@@ -62,6 +80,37 @@ modified: '2021-01-14T16:29:09.017Z'
     - You also cannot read or write files to an arbitrary folder (for example, My Pictures and My Documents) on the user's hard drive.
   - You cannot run your app from `file://`
     - This restriction also applies to many of the file APIs, including BlobBuilder and FileReader.
+
+# [File and Directory Entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)
+
+- Two very similar APIs exist depending on whether you desire asynchronous or synchronous behavior. 
+  - The synchronous API is intended to be used inside a Worker and will return the values you desire. 
+  - The asynchronous API will not block and functions and the API will not return values; 
+    - instead, you will need to supply a callback function to handle the response whenever it arrives.
+
+- The Firefox implementation of the File and Directory Entries API is very limited; 
+  - there is no support for creating files. 
+    - Content scripts can't create file systems or initiate access to a file system. 
+    - There are only two ways to get access to file system entries at this time
+      - Only for accessing files which are selected by the user in a file `<input>` element 
+      - or when a file or directory is provided to the Web site or app using drag and drop.
+  - Firefox does not implement the synchronous API. 
+    - Any interfaces with names that end in `Sync` aren't available.
+  - Firefox only supports reading from files in the file system. 
+    - **You can't write to them**. 
+    - In particular, the `FileSystemFileEntry.createWriter()` method, used to create a `FileWriter` to handle writing to a file, is not implemented and will just treturn an error.
+
+- There are two ways to get access to file systems defined in the current specification draft:
+  - When handling a `drop` event for drag and drop, you can call `DataTransferItem.webkitGetAsEntry()` to get the `FileSystemEntry` for a dropped item. 
+    - If the result isn't `null`, then it's a dropped file or directory, 
+    - and you can use file system calls to work with it.
+  - The `HTMLInputElement.webkitEntries` property lets you access the `FileSystemFileEntry` objects for the currently selected files, 
+    - but only if they are dragged-and-dropped onto the file chooser. 
+    - If `HTMLInputElement.webkitdirectory` is true, the `<input>` element is instead a directory picker, 
+    - and you get `FileSystemDirectoryEntry` objects for each selected directory.
+
+- The asynchronous API should be used for most operations, 
+  - to prevent file system accesses from blocking the entire browser if used on the main thread. 
 
 # [FileSystem](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem)
 

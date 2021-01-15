@@ -18,7 +18,26 @@ modified: '2020-12-23T09:52:52.428Z'
 - 哪些计算适合放在服务端，哪些计算适合放在客户端？
   - 行业案例: ssr, react-server-components
 
-## 组件或应用的配置项过多时如何处理更好
+- 组件或应用的配置项过多时如何处理更好
+
+# [event-loop异步模型为什么比多线程模型在IO密集场景中更高效？](https://www.zhihu.com/question/67751355/answers/updated)
+
+- 因为event loop模型可以不使用IO线程，而是使用操作系统提供的IO复用/异步IO/事件驱动IO
+  - 就比如ngx，在linux上，ngx用的是边沿触发的epoll，这是典型的IO复用，ngx是没有专门的IO线程的。
+  - 所以并不是event loop模型更高效，而是异步IO复用比多线程同步IO额外开销更低。
+- event loop模型的优点是，
+  - event loop更贴近异步IO复用的模型，因此开发效率更高。
+  - 单线程模型能够避免多线程带来的同步问题，既提高了开发效率，又避免了同步开销
+- 最著名的event-loop的程序莫过于redis和nginx ，而两个恰好都是 single-threaded，一个进程占满一个核。
+  - 有些应用中请求处理可能需要一定的 CPU 时间，那么可能会分到另外的线程去计算，为的也是保证 I/O 这一个线程能够不被阻塞。
+- 用更轻量的用户级线程替换OS线程，然而根据资料，JVM最初就是LWT，但后来却改为了OS线程
+  - 用户线程的问题主要在于操作系统无法提供足够的支持，
+  - 因为从操作系统的角度来看，一个时间只有一个线程在运行而已。
+  - Linux 以线程为调度单位，不管多少个用户线程都在这一个核上运行；
+  - 一旦这个OS线程被抢占或挂起了（比如 blocking syscall），所有的用户线程都被一起挂起。
+  - 这也回到了为什么在处理 I/O 的时候，用 event-loop + non-blocking I/O 要好过 multi-threading + blocking I/O 的原因：防止OS线程被 blocking I/O强制挂起。
+- vert.x也面临着一个选择问题，是继续reactive呢，还是coroutine方向
+  - 有一个问题就是问你是继续坚持reactive(rxjava2)的方向呢，还是走向coroutine(kotlin)方向
 
 # 函数式编程 vs 面向对象的编程 (FP vs OOP)
 

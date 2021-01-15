@@ -44,6 +44,17 @@ modified: '2020-07-14T09:26:35.281Z'
 - 使用java命令执行jar包时，不能同时使用 -cp 和 -jar
   - `-jar` the JAR file is the source of all user classes, and other user class path settings are ignored.
 
+- java version manager
+  - [jabba](https://github.com/shyiko/jabba) /1.7kStar
+    - Java Version Manager inspired by nvm (Node.js). Written in Go.
+    - The goal is to provide unified pain-free experience of installing (and switching between different versions of) JDK regardless of the OS
+  - [jenv](https://github.com/jenv/jenv) /3.5kStar
+    - It lets you switch between java versions.
+    - It sets JAVA_HOME inside your shell, in a way that can be set globally, local to the current working directory or per shell.
+    - However, this project does not install java for you.
+  - [sdkman](https://github.com/sdkman/sdkman-cli) /3.8kStar
+    - Formerly known as GVM the Groovy enVironment Manager, it was inspired by the very useful RVM and rbenv tools
+
 # java basics
 
 ## oop
@@ -252,8 +263,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 
 ### Download
 
-- Archived OpenJDK Releases 9-12
-  - http://jdk.java.net/archive/
+- [Archived OpenJDK Releases 9-12](http://jdk.java.net/archive/)
 
 ## Oracle JDK
 
@@ -271,6 +281,7 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 
 ### JDK Release Notes 
 
+- [Java version history](https://en.wikipedia.org/wiki/Java_version_history)
 - https://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html
 - https://www.oracle.com/technetwork/java/javase/cpu-psu-explained-2331472.html
 
@@ -282,10 +293,10 @@ AOP也是拦截器的一种，通常用在维护数据操作层，拦截器多�
 - OpenJDK vs Oracle JDK
   - 授权协议不同 GPLv2+CPE vs BCL
   - 代码完整性不同
-      - 从Oracle JDK7 / OpenJDK7开始，闭源和开源版的实质差异实在是非常小
-      - Oracle JDK7在OpenJDK7的基础上带了一些value-add，其中很多还没啥用（例如browser plugin）
-      - Rhino没有包含在OpenJDK里纯粹是因为license不兼容
-      - OpenJDK8有新JS引擎Nashorn
+    - 从Oracle JDK7/OpenJDK7开始，闭源和开源版的实质差异实在是非常小
+    - Oracle JDK7在OpenJDK7的基础上带了一些value-add，其中很多还没啥用（例如browser plugin）
+    - Rhino没有包含在OpenJDK里纯粹是因为license不兼容
+    - OpenJDK8有新JS引擎Nashorn
 
 ## License  
 

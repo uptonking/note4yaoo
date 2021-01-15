@@ -7,18 +7,25 @@ modified: '2020-10-31T06:36:49.770Z'
 
 # wiki-auth-open-source-code
 
-# summary
+# guide
 
 - 修改后可闭源
-  - Apache2.0，BSD，MIT
+  - Apache，BSD，MIT
 - 修改后必须同样许可
   - GPL
 - 修改后不能闭源
   - GPL/LGPL
-  - Mozilla
+  - MPL
+
 - ref
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
+
+# pieces
+
+- Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
+- 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
+  - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
 
 # Apache Licence 2.0(ASLv2)
 
@@ -51,6 +58,8 @@ modified: '2020-10-31T06:36:49.770Z'
 # GPL (General Public License)
 
 - ref
+  - https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)
+
 - GPLv3
   - You may copy, distribute and modify the software as long as you track changes/dates in source files. 
   - Any modifications to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build & install instructions.
@@ -291,3 +300,37 @@ modified: '2020-10-31T06:36:49.770Z'
 
 - A license with no conditions whatsoever which dedicates works to the public domain. 
 - Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.
+
+# Universal Permissive License (UPL) 
+
+- ref
+  - https://oss.oracle.com/licenses/upl/
+  - https://tldrlegal.com/license/universal-permissive-license-1.0-(upl-1.0)
+
+- A highly permissive license similar to the MIT License 
+  - with added features including an explicit patent grant, clear ability to relicense (to commercial, proprietary, copyleft or etc...) and usable as a CLA.  
+  - It is compatible with most commercial and copyleft (GPL-family) licenses.
+
+- The UPL is a highly permissive license, including both copyright and patent licenses, 
+  - which permits use and relicensing under both copyleft and commercial terms, and also facilitates use as a contributor license agreement.
+- The most important problem the UPL solves is the inclusion of an express patent license in a license 
+  - that is both broadly agreed to be uniformly copyleft compatible and also permits the software to be freely used in commercially licensed software (i.e., without concerns about reciprocal license obligations).
+  - The MIT and BSD licenses do not include express patent licenses
+- Another problem solved with the UPL, is that licensors and distributors are expressly permitted to reference the UPL rather than including a complete copy of the text in each item. 
+  - The MIT and BSD licenses expressly require that you include a complete copy of the license in each piece of source code. 
+- Finally, the inclusion of the Larger Works concept facilitates use as a contributor license agreement (CLA), 
+  - with contributors granting a patent license to the works to which they're contributing, 
+  - and therefore creating a common & safe platform for collaboration where no one is going to assert infringement by the same project in which they're an active participant.
+
+- [What is a Universal Permissive License?](https://www.quora.com/What-is-a-Universal-Permissive-License)
+  - A Universal Permissive License or UPL is used in software 
+    - when you want to release it for free use most of the time you are given up all rights to the software that you developed. 
+    - It can be modified to state something like your name must be included as the original developer of the software.
+
+- [Guest View: Use Oracle’s UPL, abandon your intellectual property](https://sdtimes.com/guest-view-use-oracles-upl-abandon-intellectual-property/)
+  - (201406)Recently, Oracle submitted the new Universal Permissive License (UPL) for approval to the Open Source Initiative (OSI), claiming the UPL filled the need for 
+    - a permissive, MIT-style open-source license with explicit patent grants.
+    - Oracle drafted the UPL to address concerns it had with proposed changes to the Java Community Process (JCP), specifically with regard to license rights in others’ reference implementation technology of Java specifications. 
+    - Oracle expressed concerns with using other open-source licenses for reference implementation technology due to its need to license this technology under both proprietary licenses (with patent grants) and the GPLv2.
+  - At a high level, the UPL copyright and patent licenses are overly broad. 
+    - They extend to current and future versions of both the UPL-licensed code as well as any software or hardware identified in a file included with the UPL-licensed code. 
