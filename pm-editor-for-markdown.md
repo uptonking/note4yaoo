@@ -23,7 +23,11 @@ modified: '2020-10-22T13:33:45.146Z'
 - later
   - pdf studio阅读的文字是正常的，但复制文字粘贴下来却很多乱码，，，很安全
 
-# markdown-editor-as-component
+# md-extensions
+
+- `<table src=data.csv></table>`
+
+# md-editor-as-component
 
 - editor-plugins
   - keyboard-shortcuts:preview, bold, checkbox, newLine
@@ -63,7 +67,6 @@ modified: '2020-10-22T13:33:45.146Z'
 - https://nhn.github.io/tui.editor/latest/ToastUIEditor
 - https://github.com/RIP21/react-simplemde-editor
 - https://github.com/sparksuite/simplemde-markdown-editor
-- https://github.com/pandao/editor.md
 - https://github.com/tuture-dev/editure
 - https://github.com/andrerpena/react-mde
 - https://github.com/HarryChen0506/react-markdown-editor-lite

@@ -10,6 +10,7 @@ modified: '2021-01-04T17:26:25.032Z'
 # markdown-parser-generator
 
 - https://github.com/markdown-it/markdown-it
+  - https://markdown-it.github.io/
   - /10.4kStar/MIT/202009
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
@@ -37,22 +38,15 @@ modified: '2021-01-04T17:26:25.032Z'
   - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
 - https://github.com/Microsoft/monaco-editor
   - the code editor which powers VS Code
+- https://github.com/benweet/stackedit
+  - In-browser Markdown editor
+- https://github.com/pandao/editor.md
+  - The open source embeddable online markdown editor (component).
 
-# markdown-preview
+# markdown-viewer
 
 - https://github.com/shd101wyy/markdown-preview-enhanced
   - One of the 'BEST' markdown preview extensions for Atom editor
-
-# mdx
-
-- https://github.com/PaulieScanlon/mdx-embed
-  - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
-  - 支持codepen, codesandbox, flickr
-
-# markdown-extensions
-
-- https://github.com/wallapatta/wallapatta
-  - Wallapatta is like Markdown, but has a layout inspired by handouts of Edward R. Tufte
 
 # markdown-examples
 

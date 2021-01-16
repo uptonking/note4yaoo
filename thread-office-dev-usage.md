@@ -10,6 +10,18 @@ modified: '2021-01-14T13:17:38.972Z'
 # pieces
  
 
+- ## After 6 years of writing in markdown, I've finally mastered the basic markdown table syntax
+- I was recently exposed to AsciiDoc table syntax.  It’s…exotic.
+- this is why I use HTML for everything. I already know it!
+
+- ## No matter how many times I've written a markdown table, I still have to look it up literally *every* time
+- https://twitter.com/Una/status/816511597355077632
+- I see it as a failing of HTML that we can't just write `<table src=data.csv></table>` natively.
+- no idea what editor you use, 
+  - but if it's @code, use markdown-shortcuts ext <-- Tables, fenced codeblocks, nested lists, oh my.
+- Save yourself the trouble! I found `csvtomd` on GitHub
+  - Never used tablesgenerator ever since.
+
 - ## Read file from local directory in Javascript
 - https://stackoverflow.com/questions/19842314/read-file-from-local-directory-in-javascript
 - as far as I know this is not possible in JavaScript due to security concerns.
