@@ -39,12 +39,14 @@ modified: '2020-10-22T13:09:57.085Z'
 # css-tools
 
 - https://github.com/BafS/Gutenberg
+  - https://bafs.github.io/Gutenberg
   - Modern framework to print web pages correctly
   - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
-- https://github.com/papercss/papercss
-  - The less formal CSS framework, with a quick and easy integration.
 
-- https://github.com/zicht/zss
+- https://github.com/zicht/zss /无组件，提供了很多工具类
   - Sass for design systems
+  - ZSS is a Sass framework that helps you build design systems with configurable design scales.
+  - Provides abstractions of common UI patterns, so you can focus on the specific design details.
+  - Unlike Bootstrap, ZSS does not contain pre-made components or JavaScript.
 
 # more-css-repos

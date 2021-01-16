@@ -111,7 +111,7 @@ modified: '2020-12-21T07:44:53.873Z'
   - firefox使用spidermonkey系列引擎
   - safari使用的JavaScriptCore(aka. SquirrelFish)系列引擎
   - Opera使用Carakan引擎
-  - chrome使用V8引擎。nodeJs其实就是封装了V8引擎
+  - chrome使用V8引擎，node封装了V8引擎
 
 # ref
 

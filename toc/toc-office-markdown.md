@@ -51,6 +51,9 @@ modified: '2021-01-04T17:26:25.032Z'
 
 # markdown-extensions
 
+- https://github.com/wallapatta/wallapatta
+  - Wallapatta is like Markdown, but has a layout inspired by handouts of Edward R. Tufte
+
 # markdown-examples
 
 - https://github.com/foambubble/foam

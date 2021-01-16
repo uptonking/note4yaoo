@@ -27,6 +27,12 @@ modified: '2020-11-13T07:28:50.844Z'
 - https://github.com/Dogfalo/materialize
   - https://materializecss.com/
   - a CSS Framework based on Material Design
+- https://github.com/maxsite/berry
+  - https://maxsite.org/berry
+  - A utility-first CSS framework with full support Material Design.
+- https://github.com/ManuTheCoder/material-design-pro
+  - https://material-design-pro.hostman.site/
+  - a responsive front end framework based on Material Design
 
 ## flat/metro
 
@@ -54,7 +60,7 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - https://github.com/fxaeberhard/handdrawn.css
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
-- https://github.com/papercss/papercss
+- https://github.com/papercss/papercss /字体变成手写体
   - https://getpapercss.com/
   - The Less Formal CSS Framework
 
@@ -163,6 +169,7 @@ modified: '2020-11-13T07:28:50.844Z'
   - Sky's CSS Toolkit
 
  
+
 - https://github.com/zaydek/duomo
   - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
   - Stackable, themeable CSS library
@@ -170,7 +177,6 @@ modified: '2020-11-13T07:28:50.844Z'
   - Duomo is a spiritual successor of Tailwind CSS.
   - Uses HStack and VStack instead of Flexbox for rows and columns
   - Uses ZStack to layer along the z-axis
-
 
 # classless
 
