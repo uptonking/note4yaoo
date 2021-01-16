@@ -15,6 +15,15 @@ modified: '2021-01-13T17:12:25.854Z'
     - maintain consistency with constraint-based design
   - playful with pluggable extensions
 
+- packages
+  - @pgd/design-tokens
+  - @pgd/components(css)
+  - @pgd/react
+  - @pgd/react-lab
+  - more
+    - @pgd/design-system-site
+    - @pgd/web-components
+
 - dev
   - 主题样式实现一套css，再实现一套css in js
     - primer-components

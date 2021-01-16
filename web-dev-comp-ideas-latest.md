@@ -47,7 +47,8 @@ modified: '2020-12-27T20:29:55.568Z'
       - configurable
       - highlight code
     - interactive animations
-    - 此处的features都是nice-to-have，非必需
+    - lab-features
+      - 都是nice-to-have，非必需
   - headless ui
     - 只适合简单组件，复杂组件如table实现功能时很可能与layout密切相关
     - opinionated: ui交互或技术选型具有明显的偏向性

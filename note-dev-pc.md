@@ -72,7 +72,7 @@ modified: '2020-07-14T09:32:35.359Z'
   - [wails](https://github.com/wailsapp/wails)
     - provides the ability to wrap both Go code and a web frontend into a single binary.
 
-# javafx / swing / awt
+# javafx/swing/awt
 
 - AWT/Swing are used for desktop Java apps or applets. They both require JVM to run.
 - GWT is used to translate Java code to Javascript. This only runs on Javascript engines, i.e. browser.
@@ -164,15 +164,15 @@ modified: '2020-07-14T09:32:35.359Z'
 
 ## electron vs cef
 
-- The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. Very early versions of Atom editor and NW.js used CEF.
-- To maintain a stable API, CEF hides all the details of Chromium and wraps Chromium's APIs with its own interface. So when we needed to access underlying Chromium APIs, like integrating Node.js into web pages, the advantages of CEF became blockers.
-- So in the end both Electron and NW.js switched to using Chromium's APIs **directly**.
-- Even though Chromium does not officially support outside projects, the codebase is modular and it is easy to build a minimal browser based on Chromium. The core module providing the browser interface is called **Content Module**.
+- The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. 
+  - Very early versions of Atom editor and NW.js used CEF.
+- To maintain a stable API, CEF hides all the details of Chromium and wraps Chromium's APIs with its own interface. 
+- So when we needed to access underlying Chromium APIs, like integrating Node.js into web pages, the advantages of CEF became blockers.
+- So in the end **both Electron and NW.js switched to using Chromium's APIs directly**.
+- Even though Chromium does not officially support outside projects, the codebase is modular and it is easy to build a minimal browser based on Chromium. The core module providing the browser interface is called Content Module.
 - As a user of Content Module, Electron does not need to modify Chromium's code under most cases, so an obvious way to improve the building of Electron is to build Chromium as a shared library, and then link with it in Electron. In this way developers no longer need to build all off Chromium when contributing to Electron.
 - reference
   - https://electronjs.org/blog/electron-internals-building-chromium-as-a-library
-
-- 
 
 ## electron vs nw.js
 
@@ -197,6 +197,15 @@ modified: '2020-07-14T09:32:35.359Z'
   - Native components. No more Electron
   - Compatible with all normal Node.js packages
   - 基于Libui-node，Creates the native widgets using GTK3, Cocoa, or Windows API
+
+# Chromium Embedded Framework(CEF)
+
+- ## [使用Chromium Embed Framework做桌面程序开发前景如何？](https://www.zhihu.com/question/46946853)
+- 其实就现在的带宽和存储来说，尺寸并不是太大的问题，别人的app5-10m，你的app 50m，并无影响。
+- 开发效率和开发体验非常重要。
+- 如果nwjs和electron可以无缝集成很多系统特有的功能，相信会有更多的人用这个来开发。
+  - 毕竟css的布局能力远远快于cocoa的autolayout和windows的wpf，而且还能跨平台，开发体验配合hotreload，好的掉渣，开发效率提升n倍。
+  - 唯一的缺点就是集成很多系统特有功能的时候，如果框架本身没有实现，就比较麻烦。但大多数app应该都用不到。
 
 # kotlin
 

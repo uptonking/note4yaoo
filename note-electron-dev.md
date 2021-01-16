@@ -10,7 +10,8 @@ modified: '2020-07-14T09:33:06.170Z'
 # faq
 
 - electron vs cef
-  - The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. Very early versions of Atom editor and NW.js used CEF.
+  - The Chromium Embedded Framework (CEF) is a project that turns Chromium into a library, and provides stable APIs based on Chromium's codebase. 
+    - Very early versions of Atom editor and NW.js used CEF.
   - To maintain a stable API, **CEF hides all the details of Chromium and wraps Chromium's APIs with its own interface**. 
   - So when we needed to access underlying Chromium APIs, like integrating Node.js into web pages, the advantages of CEF became blockers.
   - So in the end both Electron and NW.js switched to using Chromium's APIs directly.

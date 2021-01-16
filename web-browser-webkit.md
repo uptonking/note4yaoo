@@ -7,6 +7,62 @@ modified: '2021-01-01T20:11:00.889Z'
 
 # web-browser-webkit
 
+# read: WebKit技术内幕_2014
+
+- 浏览器的功能越来越丰富，包括网页浏览、网络请求、资源管理、多页面管理、插件和扩展、书签管理、历史记录管理、设置、下载、账户同步、安全隐私、外观主题、开发者工具等
+- html5的标准包含10个大的类别
+  - offline、storage、connectivity、file access、semantics、audio/video、3d/graphics、presentation、performance、nuts and bolts(其他)
+- 浏览器的内核，也被称为渲染引擎
+  - 浏览器的渲染引擎就是能够将HTML/CSS/JavaScript文本及其相应的资源文件转换成图像结果的模块
+  - 主流的渲染引擎包括 Trident、 Gecko 和 WebKit
+- 渲染引擎模块
+  - html解释器
+  - css解释器
+  - layout布局信息计算
+  - js引擎更新渲染结果
+  - paint
+- 渲染引擎还包括如何使用依赖模块的部分，如网络、存储、2d/3d等
+- 渲染引擎的渲染过程
+  - 构建DOM树
+  - CSSOM
+  - 内部表示
+  - layout + paint
+  - rerender重复渲染过程来更新
+- 苹果fork了KHTML源码，成立了新项目WebKit，2005年开源
+  - 狭义的webkit指的是在WebCore(包含html解释器、css解释器、layout模块)和js引擎之上的一层绑定和嵌入式编程接口，可以被各种浏览器调用
+  - WebCore 部分包含了目前被各个浏览器所使用的 WebKit 共享部分
+- webkit2不是webkit的简单修改版，苹果抽象出了一组新的编程接口
+  - 该接口和调用者代码与网页的渲染工作不在统一进程
+- googlefork了webkit，独立运作blink项目
+- JavaScriptCore 引擎是 WebKit 中的默认 JavaScript 引擎
+  - WebKit 中对 JavaScript 引擎的调用是独立于引擎的
+  - Chromium 开源项目中，它被替换为 V8 引擎
+- WebKit Ports 指的是 WebKit 中的非共享部分
+  - 包括硬件加速架构、网络栈、 视频解码、图片解码等
+- 在 WebKit 内核之上，Chromium 率先在 WebKit 之外引入了多进程模型。
+  - 避免因单个页面的不响应或者崩溃而影响整个浏览器的稳定性
+  - 第三方插件崩溃时不会影响页面或者浏览器的稳定性，因为第三方插件也被使 用单独的进程來运行
+  - 方便了安全模型的实施，也就是说沙箱模型是基于多进程架构的
+- Chromium的多进程模型
+  - Browser进程和页面的渲染是分开的，这保证了页面的渲染导致的崩溃不会导致浏览器主界面的崩溃
+  - 每个网页的渲染进程是独立的进程，这保证了页面之间相互不影响
+    - Renderer进程的数量是否同用户打开的网页数量一致呢？
+    - 答案是不一定。Chromium 设计了灵活的机制，允许用户配置
+  - 插件进程也是独立的，插件本身的问题不会影响浏览器主界面和网页
+  - GPU 硬件加速进程也是独立的
+- Browser进程和Renderer进程都是在WebKit的接口之外由Chromium引入
+  - Renderer, 它主要处理进程间通信，接受来自 Browser 进程的请求， 并调用相应的 WebKit 接口层。同时，将 WebKit 的处理结果发送回去
+- Web Contents 表示的就是网页的内容
+- 每个进程内部，都有很多的线程
+  - 多线程的主要目的就是为了保持用户界面的高响应度，保证 UI 线程（Browser 进程中的主线程）不会被任何其他费时的操作阻碍从而影响了对用户操作的响应。
+  - 为了利用多核的优势，Chromium将渲染过程管线化，这样可以让渲染的不同阶段在不同的线程执行
+- WebKit2 是一套全新的结构和接口
+  - 它的主要目的和思想同 Chromium 类似，就是将渲染过程放在单独的进程中来完成，独立于用户界面
+  - WebKit提供嵌入式接口，该接口表示其他程序可以将网页渲染嵌入在程序中作为其中的一部分，或者用户界面的一部分
+  - WebKit2 接口不同于 WebKit 的接口，它们是不兼容的，但目的却是差不多 的，都是提供嵌入式的应用接口。
+- Chromium 使用的仍然是 WebKit 接口，而不是 WebKit2 接口，也就是说 Chromium 是在 WebKit 接口之上构建的多进程架构
+- Chromium 中每个进程都是从相同的二进制可执行文件启动，而基于WebKit2 的进程则未必如此
+
 # 浏览器的渲染过程
 
 - 浏览器将HTML，CSS，JavaScript代码转换成屏幕上所能呈现的实际像素，这期间所经历的一系列步骤，叫做关键渲染路径（Critical Rendering Path）
@@ -21,12 +77,12 @@ modified: '2021-01-01T20:11:00.889Z'
   - CSSOM的生成过程和DOM十分相似，也是：1. 解析，2. Token化，3. 生成Nodes并构建Tree
 3. Render Tree的构建
   - Render Tree上的每一个节点被称为：RenderObject。
-  - RenderObject跟DOM节点几乎是一一对应的，当一个可见的DOM节点被添加到DOM树上时，内核就会为它生成对应的RenderOject添加到Render Tree上。
+  - RenderObject跟DOM节点几乎是一一对应的，当一个可见的DOM节点被添加到DOM树上时，内核就会为它生成对应的RenderObject添加到Render Tree上。
   - 其中，可见的DOM节点不包括：
     - 一些不会体现在渲染输出中的节点（如 `<html><script><link>…` ），会直接被忽略掉。
     - 通过CSS隐藏的节点。例如上图中的span节点，因为有一个CSS显式规则在该节点上设置了 `display:none` 属性，那么它在生成RenderObject时会被直接忽略掉。
   - Render Tree是衔接浏览器排版引擎和渲染引擎之间的桥梁，它是排版引擎的输出，渲染引擎的输入
-  - 浏览器渲染引擎并不是直接使用Render树进行绘制，为了方便处理Positioning, Clipping, Overflow-scroll, CSS Transfrom/Opacrity/Animation/Filter, Mask or Reflection, Z-indexing等属性，浏览器需要生成另外一棵树：RenderLayer
+  - 浏览器渲染引擎并不是直接使用Render树进行绘制，为了方便处理Positioning, Clipping, Overflow-scroll, CSS Transfrom/Opacity/Animation/Filter, Mask or Reflection, Z-indexing等属性，浏览器需要生成另外一棵树：RenderLayer
   - 浏览器会为一些特定的RenderObject生成对应的RenderLayer，其中的规则是：
     - 是否是页面的根节点 It’s the root object for the page
     - 是否有css的一些布局属性（relative absolute or a transform) It has explicit CSS position properties (relative, absolute or a transform)
@@ -35,11 +91,11 @@ modified: '2021-01-01T20:11:00.889Z'
     - 是否有css滤镜 Has a CSS filter
     - 是否包含一个canvas元素使得节点拥有视图上下文 Corresponds to canvas element that has a 3D (WebGL) context or an accelerated 2D context
     - 是否包含一个video元素 Corresponds to a video element
-  - 当满足上面其中一个条件时，这个RrenderObject就会被浏览器选中生成对应的RenderLayer。
-  - 至于那些没有被命运选中的RrenderObject，会从属与父节点的RenderLayer。
-  - 最终，每个RrenderObject都会直接或者间接的属于一个RenderLayer。
-  - 浏览器渲染引擎在布局和渲染时会遍历整个Layer树，访问每一个RenderLayer，再遍历从属于这个RenderLayer的 RrenderObject，将每一个RenderObject绘制出来。
-  - 可以理解为：RenderLayer树决定了网页绘制的层次顺序，而从属于RenderLayer的 RrenderObject决定了这个Layer的内容，所有的RenderLayer和RrenderObject一起就决定了网页在屏幕上最终呈现出来的内容。
+  - 当满足上面其中一个条件时，这个RenderObject就会被浏览器选中生成对应的RenderLayer。
+  - 至于那些没有被命运选中的RenderObject，会从属与父节点的RenderLayer。
+  - 最终，每个RenderObject都会直接或者间接的属于一个RenderLayer。
+  - 浏览器渲染引擎在布局和渲染时会遍历整个Layer树，访问每一个RenderLayer，再遍历从属于这个RenderLayer的 RenderObject，将每一个RenderObject绘制出来。
+  - 可以理解为：RenderLayer树决定了网页绘制的层次顺序，而从属于RenderLayer的 RenderObject决定了这个Layer的内容，所有的RenderLayer和RenderObject一起就决定了网页在屏幕上最终呈现出来的内容。
 4. Layout
   - 布局最后的输出是一个“盒模型”：将所有相对测量值都转换成屏幕上的绝对像素
 5. Paint

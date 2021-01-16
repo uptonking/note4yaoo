@@ -9,6 +9,11 @@ modified: '2020-12-08T14:06:06.985Z'
 
 # dev
 
+# compile
+
+- https://github.com/nodejs/node-gyp
+  - node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js
+
 # test
 
 - https://github.com/YMFE/yapi

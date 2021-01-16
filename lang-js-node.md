@@ -135,6 +135,15 @@ modified: '2020-07-14T09:26:55.226Z'
 
 ## node environment vs browser environment
 
+- ### [Differences between Node.js and the Browser](https://nodejs.dev/learn/differences-between-nodejs-and-the-browser)
+- In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies. 
+  - Those do not exist in Node.js, of course. 
+  - You don't have the document, window and all the other objects that are provided by the browser.
+  - And in the browser, we don't have all the nice APIs that Node.js provides through its modules, like the filesystem access functionality.
+- Another big difference is that in Node.js you control the environment. 
+  - you know which version of Node.js you will run the application on
+- Another difference is that Node.js uses the CommonJS module system, while in the browser we are starting to see the ES Modules standard being implemented.
+
 - ### [Differences between Node environment and browser javascript environment](https://stackoverflow.com/questions/23959868/differences-between-node-environment-and-browser-javascript-environment)
 - Code that runs on the client usually have very different goals from the code that runs on the server. 
   - However when it makes sense to use some library's features in both environments, there are a lot of them that are defined using a universal AMD form which makes them platform independent
@@ -433,3 +442,151 @@ myEmitter.emit('event');
 - 基于此，Node.js提供了worker_threads，它比child_process或cluster更轻量
   - 与child_process或cluster不同，worker_threads可以有效地共享内存，通过传输ArrayBuffer实例或共享SharedArrayBuffer实例来实现
   - JavaScript和Node.js没有线程，只有基于Node.js架构的多工作线程
+
+# discuss
+
+- ## [Node.js架构剖析](http://www.ayqy.net/blog/node-js-architecture-overview/)
+- nodejs架构图
+  - 最重要的部分是v8和libuv
+  - JS代码跑在V8引擎上，node内置的fs、http等核心模块通过C++ Bindings调用libuv、c-ares、llhttp等C/C++类库，从而接入操作系统提供的平台能力
+- v8 
+  - V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. 
+  - It is used in Chrome and in Node.js, among others.
+- libuv
+  - libuv is cross-platform support library which was originally written for Node.js. 
+  - It’s designed around the event-driven asynchronous I/O model.
+  - 为node设计的，用C写的跨平台异步I/O库，提供了非阻塞的文件系统、DNS、网络、子进程、管道、信号、轮询和流式处理机制
+  - 对于无法在操作系统层面异步去做的工作，通过线程池来完成，如文件 I/O、DNS 查询等
+  - 线程池的容量可以配置，默认是 4 个线程
+  - Libuv provides the entire event loop functionality to NodeJS including the event queuing mechanism.
+- 像浏览器提供的DOM/BOM API一样，Node.js不仅提供了js运行时环境，还扩展出了一系列平台API，这些内置模块称为核心模块
+  - 文件系统相关：对应fs模块
+  - HTTP通信：对应http模块
+  - 操作系统相关：对应os模块
+  - 多进程：对应child_process、cluster模块
+- 在核心模块之下，有一中间层C++ Bindings，将上层js代码与下层C/C++类库桥接起来
+  - 底层模块为了更好的性能，采用C/C++实现，而上层的js代码无法直接与C/C++通信，因而需要一个桥梁（即 Binding）
+  - 在node中，binding所做的就是把node那些用C/C++写的库接口暴露给JS环境。
+  - Binding是一些胶水代码，能够把不同语言绑定在一起使其能够互相沟通。
+  - 通过 Bindings 也可以复用可靠的老牌开源类库，而不必手搓所有底层模块
+  - 以文件 I/O 为例，读取当前 JS 文件内容并输出到标准输出
+    - 其中用到的fs.readFile接口既不是 V8 提供的，也不是 JS 自带的，而是由 Node.js 以 C++ Binding 的形式借助 libuv 实现的
+- 中间层中，除了Binding，还有 Addon。
+  - Binding 仅桥接 Node.js 核心库的一些依赖，如果你想在应用程序中包含其他第三方或者你自己的 C/C++ 库的话，需要自己完成这部分胶水代码。你写的这部分胶水代码就称为 Addon。
+  - 本质上都是完成桥接的作用，使得应用与底层库能够互通有无。
+- nodejs代码运行原理
+  - 首先，编写的js代码由V8引擎来运行，运行中注册的事件监听会被保留下来，在对应的事件发生时收到通知
+  - 网络、文件I/O等事件产生时，已注册的回调函数将排到事件队列中，接着被事件循环取出放到调用栈上，回调函数执行完（调用栈清空）之后，事件循环再取一个放上去
+  - 执行过程中遇到I/O操作就交给libuv线程池中的某个woker来处理，结束之后 libuv 产生一个事件放入事件队列。
+  - 事件循环处理到返回事件时，对应的回调函数才在主线程开始执行，主线程在此期间继续其它工作，而不阻塞等待
+
+- ## [Node.js 基本原理](https://bingoootang.github.io/blog/2017/04/16/node-intro/)
+- 一个node应用启动时，会先启动事件循环，V8引擎会执行应用代码，
+  - 在这个过程中，应用代码可能发起异步API请求、设置定时器或者直接调用 process.nextTick() 方法，在执行完应用代码（main module）后，Node.js 开始事件循环。
+- 事件循环的每个阶段都有一个FIFO队列来执行回调。
+  - 当事件循环进入给定的阶段时，它将执行特定于该阶段的任何操作，
+  - 然后在该阶段的队列中执行回调，直到队列中的所有回调都已经执行完或者达到了每轮可执行的最大回调数。
+  - 当该队列已用尽或达到回调限制，事件循环将移动到下一阶段，如此往复。
+- 要想实现非阻塞的I/O，仅仅靠事件循环并不能完成，还需要搭配工作线程池。
+  - 换句话说，Node.js通过事件循环机制（初始化和回调）的方式运行JavaScript代码，并且提供了一个线程池处理诸如文件I/O等高成本的任务。
+  - node有一个事件轮询线程负责任务编排，和一个专门处理繁重任务的工作线程池。
+- Node的工作线程池通过libuv来实现，它对外提供了一个通用的任务处理API。
+  - 工作线程池处理的都是“高成本”任务，比如 I/O 密集型任务，CPU 密集型任务等。
+  - 比如，当应用需要读取一个文件时，如果在事件循环线程中直接读取会阻塞后续的事件处理，饿死事件循环，导致程序性能下降。
+  - 如果放到工作线程池里，由工作线程来完成，在文件读取完成时通知事件循环进行处理，则会大大提高程序处理效率和性能。
+- 事件轮询线程会持有一堆文件描述符，
+  - 当操作系统确定某个文件描述符发生变化，事件轮询线程将把它转换成合适的事件，然后出发该事件对应的回调。
+  - 当遇到高成本任务时，事件循环线程会通过 C++ binding 向工作线程池提交一个任务。
+  - 而工作线程使用任务队列来管理要被处理的任务。
+    - 一个工作线程从这个队列中取出一个任务，开始处理它。
+    - 当完成之后这个工作线程向事件循环线程中发出一个“至少有一个任务完成了”的消息。
+- 理解了事件循环和工作线程池的工作原理后，就不难发现node轻量级和高效的原因。
+  - 相对于类似Apache这种“一个客户端连接一个线程”的系统来说，Node.js 只使用少量的线程处理大量的客户端请求，减少了线程切换的开销，使用非阻塞 I/O 极大的提高了应用的运行效率（吞吐率）。
+  - 需要注意的是，使用 Node.js 并不能保证应用就一定高效，应用仍然需要合理的设计，不同任务之间公平合理的调度，才能保证应用的高效。
+
+- ## [Node底层原理简介](http://gewuang.cn/2019/08/22/node_introduce/)
+- Nodejs的单线程是相对而言的，我们可以理解为一个主线程，多个从线程。
+  - 主线程主要执行代码逻辑，完成程序的运行，
+  - 而较为缓慢的IO操作则交给从线程完成，这里的操作是异步的，
+  - 也就是主线程注册了任务继续处理后面的任务，等到注册的这个任务完成后主线程才开始执行
+- 一个node应用启动时，V8引擎会执行你写的应用代码，保持一份观察者列表（注册在事件上的回调函数）。
+  - 当事件发生时，它的回调函数会被加进一个事件队列。
+  - 只要这个队列还有等待执行的回调函数，事件循环就会持续把回调函数从队列中拿出并执行。
+  - 在回调函数执行过程中，所有的 I/O 请求都会转发给工作线程处理。
+  - libuv 维持着一个线程池，包含四个工作线程（默认值，可配置）。
+  - 文件系统 I/O 请求和 DNS 相关请求都会放进这个线程池处理；
+  - 其他的请求，如网络、平台特性相关的请求会分发给相应的系统处理单元进行处理。
+  - 安排给线程池的这些 I/O 操作由 Node.js 的底层库执行，完成之后触发相应事件，对应的事件回调函数会被放入事件队列，等待执行后续操作。
+  - 这就是一个事件在 Node.js 中执行的整个生命周期。
+
+- ## [浅谈NodeJS多进程服务架构基本原理](https://my.oschina.net/u/4403195/blog/3474517)
+- NodeJS是基于V8引擎构建的，它是单线程单进程模式，
+  - nodeJS的单线程指js的引擎只有一个实列。且是在主线程执行的，这样的
+  - 单线程优点是降低复杂度(无死锁、同步问题)，减少了线程切换的开销
+- 严格的来讲，node存在着多种线程。
+  - 比如包括：js引擎执行的线程、定时器线程、异步http线程等等这样的。
+- nodejs是在主线程执行的，其他的异步IO和事件驱动相关的线程是通过libuv来实现内部的线程池和线程调度的。
+  - libuv存在着一个Event Loop, 通过Event Loop来切换实现类似多线程的效果。
+  - Event Loop 是维持一个执行栈和一个事件队列，在执行栈中，如果有异步IO及定时器等函数的话，就把这些异步回调函数放入到事件队列中。
+  - 等执行栈执行完成后，会从事件队列中，按照一定的顺序执行事件队列中的异步回调函数。
+- nodeJS中的单线程是指js引擎只在唯一的主线程上运行的。
+  - 其他的异步操作是有独立的线程去执行。
+  - 通过libuv的Event Loop实现了类似多线程的上下文切换以及线程池的调度。
+  - 线程是最小的进程，因此node也是单进程的。
+- 单进程单线程基于事件驱动的模式
+  - 所有的请求都在单线程上执行的，其他的异步IO和事件驱动相关的线程是通过libuv中的事件循环来实现内部的线程池和线程调度的。
+  - 可伸缩性比之前的都好，但是影响事件驱动服务模型性能的只有CPU的计算能力，但是只能使用单核的CPU来处理事件驱动，但是我们的计算机目前都是多核的，我们要如何使用多核CPU呢？
+- NodeJS的实现多进程架构
+  - 面对单线程单进程对多核使用率不好的问题，因此我们使用多进程，每个进程使用一个cpu，因此我们就可以实现多核cpu的利用
+  - Node提供了child_process模块和cluster模块来实现多进程以及进程的管理。也就是我们常说的Master-Worker模式。
+  - 进程分为Master(主)进程 和 worker（工作）进程。
+  - master进程负责调度或管理worker进程，那么worker进程负责具体的业务处理。
+  - 在服务器层面来讲，worker可以是一个服务进程，负责出来自于客户端的请求，多个worker就相当于多个服务器，因此就构成了一个服务器群。
+  - master进程则负责创建worker，接收客户端的请求，然后分配到各个服务器上去处理，并且监控worker进程的运行状态及进行管理操作。
+- node中child_process模块实现多进程
+  - 通过child_process模块，可以实现一个主进程，多个子进程模式，主进程叫做master进程，子进程叫做worker(工作)进程，
+  - 在子进程中不仅可以调用其他node程序，我们还可以调用非node程序及shell命令等。
+  - 执行完子进程后，我们可以以流或回调形式返回给主进程。
+- child_process
+  - spawn:
+    - 子进程中执行的是非node程序，提供一组参数后，执行的结果以流的形式返回。
+  - execFile
+    - 子进程中执行的是非node程序, 提供一组参数后，执行的结果以回调的形式返回
+  - exec
+    - 子进程执行的是非node程序，提供一串shell命令，执行结果后以回调的形式返回，它与 execFile不同的是，exec可以直接执行一串shell命令
+  - fork
+    - 子进程执行的是node程序，提供一组参数后，执行的结果以流的形式返回，它与spawn不同的是，fork生成的子进程只能执行node应用。
+- 父子进程间如何通信？
+  - 父子进程之间通信可以通过 on('message') 和 send()方法来实现通信
+- 使用cluster模块实现多进程服务充分利用我们的cpu资源以外，还能够帮我们更好地进行进程管理
+
+- ## [node.js的单线程异步是什么意思呢？](https://www.zhihu.com/question/322951504)
+- 开发者所编写的JavaScript代码都是运行在JavaScript脚本引擎v8上的。
+- 浏览器的主要结构就包括渲染引擎（也称浏览器内核，比如常听说的webkit、blink）和JavaScript脚本引擎。
+  - JavaScript引擎的一个重要作用就是为了操作DOM，如果采用多线程的结构的话很容易导致冲突，比如多段代码在操作同一个的DOM元素的时候会因为执行时间先后导致执行结果难以预测。
+  - 所以采用了单线程的形式简化问题，同时还让渲染引擎和JavaScript引擎互斥的方式执行，也就是相互阻塞，渲染的页面的时候不执行脚本，执行脚本的时候不渲染页面。
+  - js还有发送网络请求的作用，继续用单线程的方式会阻塞整个页面。但是又要支持这种异步的操作，怎么办呢？
+  - JavaScript引擎于是采用回调的形式来处理异步问题。
+    - 当进行可能产生阻塞的IO操作时（比如网络请求、文件读写），那么交给底层的线程来处理，
+    - 同时JavaScript引擎内部维护一个执行队列，轮询底层线程的执行结果，当某个执行完成时，调用对应的回调函数返回结果。
+- JavaScript引擎作为Node.js的一部分，也将这种特性带入了Node.js。
+  - 但是与浏览器环境不同的是，Node.js没有了渲染引擎，同时内部还有一些其他的C++库来处理IO操作。所以常说的单线程异步特性指的是JavaScript引擎的特性。
+- Node.js和Java在线程最大的区别应该是。
+  - Node.js的子线程是底层控制的，对于开发者而言是不可见的（Node.js 10 以后的版本添加了实验性功能，支持多线程处理CPU密集型问题。），好处就是开发者不再需要关注线程的管理，只需要写好异步代码就行，
+  - 而Java提供了多线程的API，需要开发者手动管理。就像C++对内存操作开放给了开发者，但是Java的内存由jvm管理。
+- JS是一门单线程的语言，在Node里只控制主线程。当异步的时候，是有Node里其他线程参与的。
+
+# ref
+
+- [Relationship between event loop, libuv and v8 engine](https://stackoverflow.com/questions/49811043/relationship-between-event-loop-libuv-and-v8-engine)
+  - Go through these points:
+    - V8 engine is the engine for coaches of train. It has certain responsibilites including providing event loop to run asynchronous task.
+    - Event loop is the core to perform async tasks. 
+      - As soon as,C++ Web APIs finish a function(task) , callback is called.
+      - It is moved to event queue and waits until stack becomes empty. 
+      - Thus, event queue is part of event loop and are generated by event loop.
+    - V8 engine is used to execute the javascript code we write 
+      - and libuv is a library used to provide multi threading feature in Nodejs to execute long running processes.
+    - Event loop is single threaded 
+      - but Nodejs is not single threaded as it has a libuv threadpool in its runtime which is responsible for multi threading.
+    - Browsers APIs also provide event loop.

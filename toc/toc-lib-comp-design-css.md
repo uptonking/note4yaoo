@@ -164,7 +164,7 @@ modified: '2020-11-13T07:28:50.844Z'
 
  
 - https://github.com/zaydek/duomo
-  - https://codepen.io/zaydek/pen/vYXjBra
+  - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
   - Stackable, themeable CSS library
   - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
   - Duomo is a spiritual successor of Tailwind CSS.
