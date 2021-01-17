@@ -23,6 +23,10 @@ modified: '2021-01-01T18:24:23.850Z'
   - 只说web开发最大的魅力就在于web能够很方便地实现任何你想要的UI画面，而不是做好一个元件能够被全世界使用，
   - 想想现在还有多少人在使用原生的select，radio, checkbox, fieldset.
 
+- Never used ShadowDOM and hopefully never will. 
+  - It simply doesn’t work as nicely as built in extends, 
+  - and it offers less than regular custom elements, where you can share, and reuse, CSS like we’ve been doing for 20+ years
+
 # discuss
 
 - ## Why aren't web components fully supported yet? I remember hearing about them in 2015 and still I'm using React.

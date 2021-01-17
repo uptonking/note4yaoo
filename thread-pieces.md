@@ -7,7 +7,17 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # thread-pieces
 
+# guide
+
 # pieces
+
+ 
+
+- ## I don't know how I've managed to debug anything in NodeJS before NiM existed.
+- https://twitter.com/WebReflection/status/1350801038270488579
+  - `node --inspect-brk folder/file.js`
+  - today I've fixed a Custom Elements rabbit hole coming from basicHTML in heresy-ssr
+- With lots of console logs
 
 - ## Which country has made the most successful use of the @Apple  and @Google COVID Contact Tracing APIs?
 - https://twitter.com/mpjme/status/1348536712893489153

@@ -47,6 +47,12 @@ modified: '2020-10-22T10:22:55.878Z'
 - XChart /1kStar/Apache2/202009/java
   - https://github.com/knowm/XChart
   - XChart is a Java library for plotting data
+- imove /943Star/MIT/202101/ts
+  - https://github.com/imgcook/imove
+  - https://www.yuque.com/imove/docs/hvu0md
+  - iMove 是一个逻辑可复用的，面向函数的，流程可视化的 JavaScript 工具库。
+  - 感谢 蚂蚁 X6 团队 提供的绘图引擎
+
 
 # node-graph
 

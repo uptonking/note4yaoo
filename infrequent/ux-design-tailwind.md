@@ -19,6 +19,16 @@ modified: '2021-01-03T17:11:47.916Z'
 
 # discuss
 
+- ## [Why Tailwind Isn't for Me](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)
+- The problem I keep running into however is this increasing popular sentiment that Tailwind is the future (man). It's the way things should be done.
+- Reason 1: Tailwind promotes ugly-ass HTML.
+- Reason 2: @apply is fundamentally incompatible and non-standard (and largely unnecessary).
+- Reason 3: Tailwind's focus on design systems and tokens could mostly be replaced by CSS Custom Properties (aka variables)—which IS a standard.
+- Reason 4: Tailwind forgets that web components exist.
+- Reason 5: Finally, Tailwind encourages div/span-tag soup.
+  - custom elements are fully supported and enabled by modern browsers.
+- Conclusion: If you like Tailwind, use it! But don't try to convince me it's the future.
+
 - ## [如何评价CSS框架TailwindCSS？](https://www.zhihu.com/question/337939566/answers/updated)
 - 优点就不说了，简单说一下缺点。
   - 在平时的项目中完全用Tailwind会让模板看起来冗长且支离破碎。

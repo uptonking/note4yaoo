@@ -121,4 +121,83 @@ and here
     - 侧边栏可折叠隐藏
   - math blocks
 
+# blog
+
+## [6 Things Markdown Got Wrong_202003](https://www.swyx.io/markdown-mistakes/)
+
+- Markdown is almost a perfect content authoring format
+
+1. Lazy List Numbering
+- we read markdown more than we write it - even as the people writing it! 
+- It is a design philosophy of Markdown. 
+- In practice, more people will reorder their numbered lists just to make it look right in markdown (either manually, or with tooling).
+- 现在不支持部分乱序，不支持删掉某个序号
+- allow * for unordered lists instead of the pretty-much-universally-used - (and the never-used +)
+-  it's common for lexers to recognize sets of two characters (*.) over one (*).
+
+2. code blocks (4 spaces) over code fences (```)
+- Just to be clear what we're talking about
+  - Code Blocks are how you indicate code (with 4 spaces), 
+  - whereas Code Fences are the thing more people probably use today (with triple backticks).
+- Code Blocks probably aren't necessary, and overlap with 2 important commonly used (but not headline) Markdown syntax features.
+- To produce a code block in Markdown, simply indent every line of the block by at least 4 spaces or 1 tab. 
+- The problem with Code Blocks is twofold. 
+  - First, they weren't designed with developer tooling in mind. 
+    - Code fences have room to let you indicate the language of the code content, and have even been extended to offer other metadata
+    - code fences are more extensible than code blocks,and, it turns out - useful for readers of the unprocessed markdown too
+  - another smaller problem - they coincide with hanging list indents.
+
+3. can't nest Markdown in HTML in Markdown
+- A genius decision by Gruber was to have Markdown be a superset of HTML
+- you can remember it as HTML-in-Markdown
+- sometimes you just want to define some wrapper components, and then use Markdown for the rest
+  - In other words, we want Markdown in HTML in Markdown.
+
+4. No Syntax for Adding Classes
+- It isn't a design goal of Markdown to let you do everything you can do with HTML, 
+  - but still it is essentially a language that compiles down to HTML.
+- normally everything Markdown does is visible to the end user - it doesn't even have comments!
+- Using wrapper divs is often a great way to manage layout and spacing and other important design considerations.
+- offer Pandoc's format - as a Markdown flavor
+
+5. No ID's in Headers
+- This is important for URL accessibility.
+- This lets GitHub offer its nice hover effect to remind you you can copy anchor links
+- offering ID's for headers would also mean taking a stance on how to slug-case content.
+- 能方便创建锚点url地址链接
+
+6. No Option for Metadata
+- This is related to the "no way to specify non-visible things" complaint above, 
+  - but on a whole-document level instead of a per-element level.
+- Sometimes you want to offer Markdown processors some extra data about how this specific Markdown document
+- 存放文档数据相关而不是显示相关的内容，如布局、标签、类别
+- Instead of having to specify this data in a separate file, it'd be nice to colocate this metadata alongside the content.
+- why not offered by md? it involves another language that isn't Markdown and isn't HTML.
+- it seems like Jekyll was the first to introduce Front Matter as the widely accepted Markdown metadata format 
+  - and it uses YAML, which predates Markdown, but only by 3 years.
+  - YAML itself has plenty of vocal detractors, so it isn't perfect.
+  - But something for Metadata would have been really, really nice.
+
+- Other small gripes
+  - I wish Markdown had a distinction between an `<aside>` and a `<blockquote>` as I use both often.
+
+- Conclusion
+  - I don't even want to know all the competing alternatives present at the time and have to pick between them. 
+  - Sometimes, Worse is Better.
+  - And in the end, Markdown was successful enough.
+
+- discussion
+
+- [Design Mistakes in @gruber's Markdown (imo)](https://twitter.com/swyx/status/1240719259505963010)
+- you missed what I consider the single biggest mistake in Markdown’s syntax: the syntax for images completely sucks. 
+  - Unintuitive, the `!` seems arbitrary, and looks way too much like the syntax for links.
+- Markdown doesnt have `<figcaptions>`, but this is a GREAT "hack" around it using CSS sibling selectors!!
+  - too awesome not to share.
+  - I use the syntax for title tags as an alternative to captions
+    - `![alt text](./image.png "caption here")`
+
+
+
+- [Things Markdown got wrong](https://news.ycombinator.com/item?id=22776108)
+
 # ref

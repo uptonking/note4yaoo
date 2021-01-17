@@ -106,13 +106,13 @@ modified: '2020-11-13T07:31:23.527Z'
 - https://github.com/alibaba/hooks
   - /4.5kStar/MIT/202010/ts
   - React Hooks Library.
-- https://github.com/ecomfe/react-hooks
-  - /333Star/MIT/202010/ts
-  - react hooks to support development within baidu
 - https://github.com/kripod/react-hooks
   - /479Star/MIT/202009/ts
   - Essential set of React Hooks for Web API consumption and state management
-  - 很多react core team参与
+  - react core team成员参与的
+- https://github.com/ecomfe/react-hooks
+  - /333Star/MIT/202010/ts
+  - react hooks to support development within baidu
 - https://github.com/beautifulinteractions/beautiful-react-hooks
   - /3.6kStar/MIT/202010/js
   - useful React hooks to speed-up your components

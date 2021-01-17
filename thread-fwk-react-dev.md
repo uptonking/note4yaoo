@@ -10,6 +10,21 @@ modified: '2021-01-06T14:40:03.364Z'
 # pieces
  
 
+- ## new trend in react: there's a sizeable community within react that fears state managers, and they go through hot hell to avoid one.
+- https://twitter.com/0xca0a/status/1350731142480146435
+  - 批判使用多个context造成wrapper hell，而不使用类似redux管理状态
+- the root cause was most likely redux 
+  - people think dealing with state is complex because they're facing volumes and volumes of information. 
+  - and it sure piled on when they went the "zen of state" route.
+- to make it clear, this isn't about libraries giving you a provider for theming and so on. 
+  - they're using context as it should be used. 
+  - this is merely about app-state and splitting up what normally would be fields in your state model into multiple providers to avoid re-render.
+- Struggling to see what's materially wrong with this pattern? Other than deeply nested things looking unsightly. I think calling this out as a mistake is incorrect.
+  - split state up, app becomes slow, rigid, hard to refactor, once state A relies on state B you get into real trouble, if B also relies on A you face an impossibility. 
+- Yeah I got pretty frustrated with using context for sharing state in a performant way. Pretty happy with Zustand.
+  - I just use context for delivering non-changing instances which I guess what libraries are doing too.
+- Though Provider is helpful for implementing server side rendering, where it makes sense to have a store per request, rather than a singleton store
+
 - ## But first be able to explain why you don't like passing props multiple levels
 - https://twitter.com/markdalgleish/status/888213730265153538
 - Also, explain why you're creating so many component layers when a single component will do just fine.

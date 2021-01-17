@@ -8,7 +8,7 @@ modified: '2021-01-16T20:24:48.984Z'
 # toc-office-markdown-mdx-extensions
 
 - ref
-  - search: markdown plugin, md table, md electron
+  - search: markdown plugin, md table, md electron, 缺点/mistakes
   - mdx: live edit, md in js, md superset
     - web components in md, mdx web components
   - 推广mdx的公司：gatsby、nextjs
@@ -47,6 +47,7 @@ modified: '2021-01-16T20:24:48.984Z'
 
 - https://github.com/Matsuuu/stoxy
   - Stoxy is a state management API equipped with Web Components for ease of use.
+  - Stoxy is a Web Component based storage/state management tool
   - Stoxy allows you to easily handle, persist and update data in your DOM without the weight of a framework.
   - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
   - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
@@ -65,6 +66,7 @@ modified: '2021-01-16T20:24:48.984Z'
 - https://github.com/storybookjs/marksy
   - A markdown to custom components library. 
   - Supports any virtual DOM library.
+
  
 
 - https://github.com/michael-klein/htmdx

@@ -27,6 +27,9 @@ modified: '2020-12-06T13:05:51.375Z'
 - experimental
 - lab
 
+- flavor
+- like
+
 # zoo
 
 # garden

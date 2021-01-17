@@ -22,6 +22,7 @@ modified: '2020-10-22T13:33:45.146Z'
 
 - later
   - pdf studio阅读的文字是正常的，但复制文字粘贴下来却很多乱码，，，很安全
+  - mobile reponsive editor
 
 # md-extensions
 
