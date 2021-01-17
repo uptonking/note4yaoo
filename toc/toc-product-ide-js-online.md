@@ -7,29 +7,6 @@ modified: '2020-12-08T14:43:00.091Z'
 
 # toc-product-ide-js-online
 
-# popular
-
-## react-playgrounds
-
-- react-live /MIT/2.5kStar/202007
-  - https://github.com/FormidableLabs/react-live
-  - https://react-live.netlify.com/
-  - render React components with editable source code and live preview.
-  - depends on react-simple-code-editor, bubble, prism
-- react-runner /MIT/25Star/201908
-  - https://github.com/nihgwu/react-runner
-  - https://nihgwu.github.io/react-runner/
-  - Run your React code on the go
-  - 被Autodesk/react-base-table用来展示示例
-  - react-runner is inspired by react-live heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
-  - use Sucrase instead of Bublé to transpile the code.
-  - If you are using react-live and want a smooth transition, react-live-runner is there for you which provide the identical way
-- react-view /438Star/MIT/202009
-  - https://github.com/uber/react-view
-  - The first prototype of React View was even using react-live internally 
-  - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-  - We also rely on babel and babel-parser instead of buble.
-
 # vscode-powered
 
 - https://github.com/cdr/code-server

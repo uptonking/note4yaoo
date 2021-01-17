@@ -15,8 +15,35 @@ modified: '2020-10-15T13:41:05.547Z'
   - https://github.github.com/gfm/
   - https://guides.github.com/features/mastering-markdown/
 
-- mdx
-  - https://mdxjs.com/getting-started
+# [mdx](https://mdxjs.com/getting-started/)
+
+- ref
+  - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.
+
+- MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents.
+- MDX syntax can be boiled down to being JSX in Markdown. 
+- It’s a superset of Markdown syntax that also supports importing, exporting, and JSX.
+- Markdown is good for content. 
+- JSX is good for components.
+  - It makes repeating things more clear and allows for separation of concerns. 
+  - MDX fully supports JSX syntax. Any line that start with the < character starts a JSX block.
+
+# [mdjs](https://rocket.modern-web.dev/docs/markdown-javascript/overview/)
+
+- ref
+  - https://open-wc.org/docs/experimental/mdjs/
+
+- Markdown JavaScript (Mdjs) is a format that allows you to use JavaScript with Markdown, to create interactive demos. 
+- It does so by "annotating" JavaScript that should be executed in Markdown.
+  - To annotate we use a code block with `js script`.
+- One very good use case for that can be web components. 
+  - HTML already works in markdown so all you need is to load a web components definition file.
+- mdjs comes with some additional helpers you can choose to import
+  - mdjs-story.js
+  - mdjs-preview.js
+- Supported Systems
+  - es-dev-server
+  - storybook-addon-markdown-docs uses mdjs under the hood.
 
 # faq
 

@@ -26,6 +26,9 @@ modified: '2020-10-22T13:33:45.146Z'
 # md-extensions
 
 - `<table src=data.csv></table>`
+  - 可以考虑使用mdx中支持的自定义组件的标签
+  - 甚至可以直接在markdown中书写web components组件的标签
+  - 还计划在markdown中实现类似react-live的编辑效果
 
 # md-editor-as-component
 

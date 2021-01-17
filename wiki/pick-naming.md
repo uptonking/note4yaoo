@@ -9,8 +9,9 @@ modified: '2020-12-06T13:05:51.375Z'
 
 # variables
 
-- boolean
-  - 前缀：is, has, should, enable, does
+- prefix
+  - is, has, should, min/max, prev/next
+    - ~~enable~~, ~~does~~
   - 示例：isDisabled, isLoading
 
 # words
@@ -39,3 +40,8 @@ modified: '2020-12-06T13:05:51.375Z'
   - bamboo shoots 竹笋
 - cactus
   - 仙人掌
+
+# ref
+
+- https://github.com/kettanaito/naming-cheatsheet
+  - Comprehensive language-agnostic guidelines on variables naming.

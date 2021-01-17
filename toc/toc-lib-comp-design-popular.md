@@ -582,3 +582,8 @@ modified: '2020-11-13T07:29:55.201Z'
       - Variable naming convention follows CTI (Category / Type / Item) structure.
       - We introduce Design Tokens thanks to style-dictionary.
       - CSS4 variable tokens, JSON tokens, CSS4 variable SASS support, FIGMA tokens
+- Forma 36 /125Star/MIT/202101/ts
+  - https://f36.contentful.com/
+  - A design system by Contentful
+  - 标准的design system，包括tokens、css、react、site
+  - https://github.com/hazel-ui/hazel-ui

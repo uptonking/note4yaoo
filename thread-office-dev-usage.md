@@ -10,6 +10,95 @@ modified: '2021-01-14T13:17:38.972Z'
 # pieces
  
 
+- ## Storybook 5.3 is here. Write stories & docs in MDX
+- https://twitter.com/GHengeveld/status/1217152300130717696
+- Use CSF. Optionally add MDX for docs pages where necessary (typically intro pages and longer written docs). 
+  - It depends on what your component users need. 
+  - Comprehensive design systems often have more written docs, while component libraries have very little (and that's fine).
+- Best bet is to do CSF always and import those into any MDX files. That way you have both. 
+  - Remember that most tools don't support MDX. 
+  - CSF is so simple by design, to enable integrations with other tools. MDX isn't really reusable.
+
+- ## We definitely plan on supporting web components natively in MDX
+- https://twitter.com/4lpine/status/1253075231620526085
+  - however it won't be a focus in the near future.
+  - That said, you can wrap up web components with React to render web components in MDX today.
+- [Web components + React + MDX codesandbox](https://github.com/mdx-js/mdx/tree/master/examples/react-web-components)
+
+- ## Stoxy is something I've been working on lately
+- https://twitter.com/jaredcwhite/status/1323321554093006848
+  - I'm trying to come up with a nice way to handle mutable data like translations and session data with the DX of Web Components.
+- Maybe the interpolated values inside text could use a familiar syntax like `{{ key.value }}`
+- I was considering using some kind of a templating syntax, 
+  - but a big motivator here was to make the markdown as clean and fluent to write as possible, so I opted out of it
+  - I might reconsider it at some point though! 
+  - With the prefix you could make your own templating tho
+- I wish all the folks getting excited about MDX etc would come to realize that writing Markdown with embedded web components is…Markdown. 
+  - Because it's just HTML
+
+- ## By the way, you know MDX, where you transpile markdown in such a way it can include JSX components? 
+- https://twitter.com/heydonworks/status/1297443487701520389
+  - You can do this with web components without any transpilation because they are HTML, and Markdown allows HTML.
+- markdown -> html is still compilation/transpilation
+- You don't have any bundling, compiling, or minification of javascript at all, while using web components, and while compiling your content from markdown to markup?
+- Retweet this when web components are accessible.
+  - MDX can be compiled down to pure HTML, that is more likely to be accessible than a web component (that also requires runtime Javascript to load) . I'm sorry, but web components are mostly trash.
+- Markdown always requires some processing (be it server or client side) as it's not html
+  - Also separating usage and import can be confusing. it works but where/how my-component is defined?
+  - 因为react组件需要显式import，而web-comp可直接写标签，查找声明定义就不方便
+    - 这也是字符串相对于js变量的缺点
+
+- 
+
+- ## One thing I really really dislike about mdx is that it’s completely unreadable on github.
+- https://twitter.com/jxnblk/status/1046921094295429121
+- If user-generated web components *could* render on gitHub.com, wouldn't that be a huge security issue?? 
+  - I guess generally I wouldn't recommend MDX as a replacement for MD on GitHub, but would be cool if GFM were more extensible somehow
+- Before MDX, we had a rough spec that was fully backwards compatible with standard markdown (which is still possible with MDX and fenced code blocks), 
+  - but I think opting into the more custom MDX spec sometimes is useful
+  - I think the authoring mindset of markdown puts code blocks secondary, and the mindset of MDX puts components and markdown at equal footing
+  - but it doesn’t mean we can’t dream about it
+    - Why dream when you can embed CodeSandboxes all over the place?
+
+- ## Web components might be great in 5 years, but it's simply too early to adopt them today. Too many major issues.
+- https://twitter.com/justinfagnani/status/1198378310356520962
+- One of the many reasons cited by WC advocates is usually about "reducing JS framework bloat". 
+  - But if you used only the actual native APIs, it would be like writing an app with raw DOM. 
+  - Polymer/lit-element is still a framework just like React/Vue.
+- Polymer and LitElement are absolutely, in no way, frameworks.
+  - They do not define their own component model, and do not invoke the lifecycle callbacks: the browser does that.
+  - You don't create components with LitElement: you create them with document.createElement(), etc
+  - In React, React defines the component model.
+    -  It creates the components. 
+    -  It can't create components from other frameworks.
+  - With WCs, the spec defines the component model, browsers implement it. The browser creates components. You can mix and match
+  - The documentation for how you instantiate a LitElement is the same as for Polymer or Stencil: document.createElement(), innerHTML, etc. 
+    - You can switch the implementation of a component to vanilla, or another base class. 
+    - These things are not possible with frameworks.
+- For a concrete example of how this ripples out into various facets of web dev, see regular Markdown vs MDX.
+  - Markdown supports HTML, so it already supports web components.
+  - Web components don't require that we re-invent things to play nicely with them.
+
+- ## I'm so glad I used MDX for my blog. 
+- https://twitter.com/JoshWComeau/status/1243136771652751360
+  - It enables things that otherwise would not be possible with Markdown or a CMS, while still being a consumable data source (unlike having the posts be all-JSX)
+  - For tangential(离题的，不相关的) information, I have a `Sidenote` component.
+  - For code snippets, I built a little playground component on top of react-live.
+  - I use "video GIFs", similar to social media platforms. 
+  - Important addendum: MDX is a wonderful tool for developer blogs, but it sucks for non-developers. 
+- Not saying mdx isn't powerful, but CMS with good structured content can achieve it too
+- Because HTML is valid Markdown. I like using Web Components to do the same thing
+  - This way I get to have all my custom interactive components in plain .md files without the weight of React. 
+  - No JSX or MDX required. 
+  - It even feels familiar to React devs using lit-html + haunted.
+
+- ## Unpopular opinion: MDX isn't suitable for anything other than one-column block content.
+- https://twitter.com/hasparus/status/1350227713211166727
+- My point is, if you craft a good environment to write slides in React with close to same effort as you do in MDX, you'd notice you don't take much advantage from MDX really.
+- I’d rather write Markdown and then add interactive elements instead of authoring in JSX.
+  - Especially since my notes are in Markdown already.
+  - However, slide decks could be classified as "one column block content" — That’s what you get when you print them / remove presentation logic.
+
 - ## After 6 years of writing in markdown, I've finally mastered the basic markdown table syntax
 - I was recently exposed to AsciiDoc table syntax.  It’s…exotic.
 - this is why I use HTML for everything. I already know it!

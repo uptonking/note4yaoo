@@ -1,11 +1,11 @@
 ---
-title: toc-office-documentation-static-site-generator
+title: toc-office-doc-static-site-generator
 tags: [documentation, markdown, static-site-generator, toc]
 created: '2020-08-09T11:20:56.480Z'
-modified: '2021-01-04T17:32:48.078Z'
+modified: '2021-01-17T09:26:53.093Z'
 ---
 
-# toc-office-documentation-static-site-generator
+# toc-office-doc-static-site-generator
 
 # guide
 
@@ -63,6 +63,10 @@ modified: '2021-01-04T17:32:48.078Z'
   - /7.6kStar/MIT/201912/js
   - pluggable static site generator.
   - all of the logic is handled by plugins. 
+- https://github.com/natemoo-re/microsite
+  - https://github.com/natemoo-re/microsite/tree/main/docs
+  - /524Star/MIT/202012/ts
+  - a fast, opinionated static-site generator (SSG) built on top of Snowpack.
 
 # more-ssg
 

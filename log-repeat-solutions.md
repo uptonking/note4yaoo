@@ -14,6 +14,10 @@ modified: '2021-01-09T16:13:07.758Z'
   - 借鉴各种解决方案的优点，积累框架/应用
 
 - apps
+  - datable
+    - pivot table
+  - noter
+    - live edit
 
 - integrations
 

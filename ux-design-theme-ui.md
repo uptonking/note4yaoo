@@ -46,3 +46,9 @@ modified: '2021-01-01T20:08:51.345Z'
   - After some research, Compiled CSS-in-JS by the Atlassian team seems to be an amazing solution.
   - there could be something interesting looking into seek-oss/treat, they seem have a good solution in how they use it for their Braid design system
   - why not using CSS variables from the start 
+
+# ref
+
+- https://github.com/PaulieScanlon/skin-ui /202004
+  - https://www.skin-ui.com/
+  - A Theme UI Live Preview and Code Editor

@@ -159,9 +159,12 @@ modified: '2020-11-13T07:31:20.012Z'
 - Forge UI
   - https://bitbucket.org/atlassian/aux
   - https://developer.atlassian.com/platform/forge/ui-components/
-- reactivebase /201802/Apache2/18Star
+- reactivebase /201802/Apache2/18Star/deprecated
   - https://github.com/appbaseio/reactivebase 
-  - deprecated
+- hazel-ui /4Star/MIT/202101/ts
+  - https://github.com/hazel-ui/hazel-ui
+  - https://hazel-ui.github.io/hazel-ui/
+  - It is built with the goal to allow maximum possible customization and speed of development.
 - tenon-ui /58Star/MIT/201812
   - https://github.com/tenon-io/tenon-ui
   - Tenon accessible ui component library

@@ -1,11 +1,11 @@
 ---
-title: toc-office-documentation-site-template
+title: toc-office-doc-site-template
 tags: [documentation, examples, template, toc]
 created: '2020-12-29T22:04:49.931Z'
-modified: '2021-01-04T17:32:23.752Z'
+modified: '2021-01-17T09:26:32.783Z'
 ---
 
-# toc-office-documentation-site-template
+# toc-office-doc-site-template
 
 # guide
 
