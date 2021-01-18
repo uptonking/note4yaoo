@@ -12,11 +12,15 @@ modified: '2020-10-29T13:48:47.020Z'
 # discuss
 
 - ## [React Single File Components Are Here](https://twitter.com/dan_abramov/status/1238810260082745344)
-  - Dan Abramov: Not this particular format but it’s something that’s been on our mind a lot recently. The split we are interested in unifying though is more about server/client. (We use Suspense and error boundaries for visual states.) Watch out for Flight and Blocks work in React repo.
-  - Blocks are generalization of “colocating the query without waterfalls” pattern from Relay, but without being tied to GraphQL. Instead of a query you have a function that runs on the server.
+  - Dan Abramov: Not this particular format but it’s something that’s been on our mind a lot recently. 
+    - The split we are interested in unifying though is more about server/client. 
+    - (We use Suspense and error boundaries for visual states.) 
+    - Watch out for Flight and Blocks work in React repo.
+  - Blocks are generalization of “colocating the query without waterfalls” pattern from Relay, but without being tied to GraphQL. 
+    - Instead of a query you have a function that runs on the server.
   - Hydration boundaries are `<Suspense>` components so nothing new there. Same place we already handle loading states.
   - Why is there no directives in reactjs? 引入新用法或DSL
-  - We don’t like having a special way of doing things when you already have to learn JS constructs to do the same in other parts of your codebase.
+    - We don’t like having a special way of doing things when you already have to learn JS constructs to do the same in other parts of your codebase.
 
 - ref
   - [old proposal](https://github.com/react-sfc/react-sfc-proposal)

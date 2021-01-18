@@ -123,3 +123,10 @@ modified: '2021-01-01T19:16:38.879Z'
   - [uce vs lit-element](https://gist.github.com/WebReflection/ae3451c17c5e882bbc7f0714c14eefcd)
 
 # more
+
+- https://github.com/claviska/sushi-element
+  - an expressive way to create standards-based web components that work with (and without) your favorite framework. 
+  - At the core of Sushi Element is a class factory called `createElement()` that accepts an object and returns a custom element. 
+  - You can use the resulting element in your HTML or with your favorite framework.
+  - Sushi Element is designed to be lightweight and stick to the platform as closely as possible. 
+  - It uses template literals powered by `lit-html` for fast, efficient rendering with no virtual DOM requirement.

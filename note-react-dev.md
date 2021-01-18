@@ -44,13 +44,18 @@ modified: '2020-07-14T10:38:48.217Z'
   - 最优秀的开发者主导的项目，修bug、制定方向与计划
 
 - react优点
-  - 核心优点：可复用的组件架构
+  - 核心优点：可复用的组件模型
   - 声明式组件，简单清晰
   - 单向数据流
-  - 只是js，没有引入模版和新语法(后面hooks引入了部分限制)
+  - 只是js，没有引入模版和新语法(后面hooks引入了对js功能的部分限制)
 
 - react缺点
   - 不利于seo
+
+- vdom优点
+  - 方便跨平台
+  - 方便实现更多ui操作
+    - 如storybook跨框架的组件模型，能够编辑
 
 - why hooks
   - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. 

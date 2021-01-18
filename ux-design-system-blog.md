@@ -71,7 +71,7 @@ modified: '2021-01-01T20:08:32.485Z'
 - interfaces are made up of components that can be categorized into building blocks
 - Atoms, Molecules, Organisms, Templates, Pages
 
-# top design system
+# top design systems
 
 ## [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
 
@@ -85,3 +85,13 @@ modified: '2021-01-01T20:08:32.485Z'
 08.  Mailchimp Design System
 09.  Salesforce Lightning Design System
 10.  Helpscout Design System
+
+# ref
+
+- [Web Design Trends in 2021](https://www.editorx.com/prowebsites/web-design-trends)
+  - The screen will surpass our real-world expectations by creating stimulating, immersive experiences that make up for what we’ve lost in real life. 
+    - Robust platforms will blur the boundaries between real and virtual 
+    - by creating practical experiences—like attending a concert or lecture—that are spatial and rich with elaborate visual effects.
+  - Web designers will focus on human identity as they create experiences that not only appeal to end users, but also feature them. 用户画像
+  - This will result in interfaces that are singular to each user, reflecting their taste, style and identity. 
+    - Users will be able tweak interfaces to match their varying needs, from enlarging typefaces to choosing a high-contrast palette for better legibility.

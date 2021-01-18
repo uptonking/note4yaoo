@@ -11,7 +11,7 @@ modified: '2021-01-16T20:24:48.984Z'
   - search: markdown plugin, md table, md electron, 缺点/mistakes
   - mdx: live edit, md in js, md superset
     - web components in md, mdx web components
-  - 推广mdx的公司：gatsby、nextjs
+  - 推广mdx的公司：gatsby、nextjs、storybook
   - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.
 
 # mdx

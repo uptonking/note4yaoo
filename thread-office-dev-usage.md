@@ -10,6 +10,38 @@ modified: '2021-01-14T13:17:38.972Z'
 # pieces
  
 
+- ## Excited by @swyx‘s React SFC piece, which fuses the new @redwoodjs “cells” and @storybookjs Component Story Format (CSF).
+- https://twitter.com/mshilman/status/1237789461166977029
+  - Perfect timing as we put the first features of CSF 2.0 in place!
+- The gist is we want to export data objects (props) and have Storybook automatically render a story for each data export. 
+  - That way you can focus on writing the data instead of the render function.
+- CSF 2.0. That’s the long view. 
+  - More immediately in SB6.0: auto-generated docs/controls/actions etc for your stories/“cells” with a natural, portable syntax.
+
+- ## I think having a storybook/component library alongside the main app is a good idea, but it needs to use the exact same toolchain.
+- https://twitter.com/swyx/status/1246316914306977792
+- Tools like Jest and Storybook are great for how flexible and featureful they are, 
+  - but I feel like this trend of everything having its own webpack config that can't be shared with other tools just makes the configuration way more complex.
+  - webpack 5 solves this lol ??
+- I’ve experienced the same pain with adding Storybook to a Gatsby project. 
+  - Not sure about your setup but for me Storybook needed all the same providers, TypeScript loaders etc that were part of the build setup for the Gatsby site. 
+  - Storybook is its only build if that makes sense
+- developers from ant design have had blamed the idea of storybook is awesome, but in practice they still have to deal with some sharp edges. 
+  - Instead of storybook adoption, they just developed their own storybook, or doc toolchain for UI components.
+- If only we had a native module system and components model for the browser.
+
+- ## @storybookjs decision to introduce Component Story Format was a genius move
+- https://twitter.com/aarongarciah/status/1286223740058185729
+  - Opened the door to have a simpler (and beautiful) API
+  - Portable code since it's plain JS modules, reuse it in other testing frameworks!
+  - Simpler story looks like this in SB 6 (RC)
+- By introducing CSF, @storybookjs had the ability to add new amazing stuff
+  - csf enabled args
+  - args enabled auto-generated controls/actions
+- I love that note about Portable code. 
+  - importing and using the stories for the various states you want to test has been such a huge win. 
+  - Test fails? Instead of `debug` or whatever, run through the same steps in storybook.
+
 - ## Storybook 5.3 is here. Write stories & docs in MDX
 - https://twitter.com/GHengeveld/status/1217152300130717696
 - Use CSF. Optionally add MDX for docs pages where necessary (typically intro pages and longer written docs). 

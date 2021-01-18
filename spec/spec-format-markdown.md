@@ -7,6 +7,12 @@ modified: '2020-10-15T13:41:05.547Z'
 
 # spec-format-markdown
 
+# guide
+
+- 关于组件与文档设计
+  - 复用文本过于灵活，需要各种解析器
+  - 复用js函数则设计更清晰、复用更简单(特别是纯函数)
+
 # spec
 
 - markdown
@@ -19,6 +25,7 @@ modified: '2020-10-15T13:41:05.547Z'
 
 - ref
   - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.
+  - mdx可作为csf的完全替代，但mdx中需要显式import Story/Canvas/Meta
 
 - MDX is an authorable format that lets you seamlessly write JSX in your Markdown documents.
 - MDX syntax can be boiled down to being JSX in Markdown. 
@@ -194,9 +201,11 @@ and here
 - Markdown doesnt have `<figcaptions>`, but this is a GREAT "hack" around it using CSS sibling selectors!!
   - too awesome not to share.
   - I use the syntax for title tags as an alternative to captions
-    - `![alt text](./image.png "caption here")`
+    - `
 
+![alt text](./image.png "caption here")
 
+`
 
 - [Things Markdown got wrong](https://news.ycombinator.com/item?id=22776108)
 
