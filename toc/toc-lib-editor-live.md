@@ -7,7 +7,10 @@ modified: '2021-01-17T07:14:21.293Z'
 
 # toc-lib-editor-live
 
-# live-editing
+- guide
+  - react组件的实现偏向all in js，所以实现在线编辑只需一个编辑器
+  - 传统ui组件如bootstrap/web-comp，需要考虑html, css, js三部分，所以实现在线编辑需要多个编辑器，类似codepen
+  - react-live进一步的研发方向应该考虑类似storybook的controls
 
 # markdown-live-doc
 
@@ -16,6 +19,8 @@ modified: '2021-01-17T07:14:21.293Z'
   - https://react-live.netlify.com/
   - render React components with editable source code and live preview.
   - 依赖react-simple-code-editor, bubble, prism
+  - https://github.com/FormidableLabs/component-playground
+    - A component for rendering React components with editable source and live preview
   - https://github.com/uber/react-view
     - /438Star/MIT/202009
     - The first prototype of React View was even using react-live internally 
@@ -92,7 +97,7 @@ modified: '2021-01-17T07:14:21.293Z'
 - https://github.com/auth0/cosmos
   - 将 `import { Button } from '@auth0/cosmos';` 写在页面最上方，而不是写在组件展示块
 
-## react-playgrounds
+# react-playgrounds
 
 - react-live /2.5kStar/MIT/202007
   - https://github.com/FormidableLabs/react-live
@@ -113,4 +118,18 @@ modified: '2021-01-17T07:14:21.293Z'
   - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
   - We also rely on babel and babel-parser instead of buble.
 
+# live-editing
+
+- https://github.com/Khan/live-editor /202009/inactive
+  - http://khan.github.io/live-editor/demos/simple/
+  - This is the live coding environment developed for the Khan Academy Computer Programming curriculum. 
+  - It gives learners an editor on the left (either ACE or our Blocks-based drag-and-drop editor) and an output on the right (either JS+ProcessingJS, HTML, or SQL).
+- https://github.com/sofish/pen /201809
+  - https://sofish.github.io/pen
+  - enjoy live editing (+markdown)
+- https://github.com/milankinen/livereactload /201904
+  - Live code editing with Browserify and React
+
 # more
+- https://github.com/sueddeutsche/editron
+  - Editron is a JSON-Editor, which takes a JSON-Schema to generate an HTML form for user input and live validation

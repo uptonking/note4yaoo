@@ -11,6 +11,12 @@ modified: '2021-01-08T17:13:43.392Z'
 
  
 
+- ## I was going to work on removing the outlines around buttons when you click on them but I'm having trouble focusing.
+- https://twitter.com/markdalgleish/status/1350999134631768069
+- No outlines? You know I care deeply about a11y. Seems like you guys are just pressing my buttons.
+- Bug Report: Can't focus while PMs are hovering
+  - `.markDalgleish:not(:focus) { }`
+
 - ## Two of my most- and first-used checks when doing a performance audit are surprisingly old school:
 - https://twitter.com/csswizardry/status/1349400099647090694
   - Validate HTML 

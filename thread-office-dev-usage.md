@@ -10,6 +10,11 @@ modified: '2021-01-14T13:17:38.972Z'
 # pieces
  
 
+- ## Live Edit "playground" type component using @Alpine_JS and some @tailwindcss
+- https://twitter.com/kevinbatdorf/status/1287783480567271429
+  - it's almost like codepen-ception
+- [codepen demo](https://codepen.io/KevinBatdorf/pen/rNxbbaJ)
+
 - ## Excited by @swyx‘s React SFC piece, which fuses the new @redwoodjs “cells” and @storybookjs Component Story Format (CSF).
 - https://twitter.com/mshilman/status/1237789461166977029
   - Perfect timing as we put the first features of CSF 2.0 in place!

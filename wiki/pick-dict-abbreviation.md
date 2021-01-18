@@ -17,6 +17,9 @@ modified: '2020-08-06T05:29:22.922Z'
   - to be honest 老实说
 - tbf
   - to be fair
+- TIL
+  - 作为until的简写
+  - 代表 today I learned
 - BTW
   - by the way 顺带一提 
 - TLDR(tl; dr)

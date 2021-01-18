@@ -7,6 +7,24 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog
 
+# [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://blog.isquaredsoftware.com/2021/01/blogged-answers-why-react-context-is-not-a-state-management-tool-and-why-it-doesnt-replace-redux/)
+
+- Is Context a "state management" tool?
+  - No. Context is a form of Dependency Injection. 
+  - It is a transport mechanism - it doesn't "manage" anything. 
+  - Any "state management" is done by you and your own code, typically via useState/useReducer.
+- Are Context and useReducer a replacement for Redux?
+  - No. They have some similarities and overlap, but there are major differences in their capabilities.
+- When should I use Context?
+  - Any time you have some value that you want to make accessible to a portion of your React component tree, without passing that value down as props through each level of components.
+- When should I use Context and useReducer?
+  - When you have moderately complex React component state management needs within a specific section of your application.
+- When should I use Redux instead?
+  - Redux is most useful in cases when:
+    - You have larger amounts of application state that are needed in many places in the app
+    - The app state is updated frequently over time
+    - You need more powerful capabilities for managing side effects, persistence, and data serialization
+
 # [JSX Gotchas](https://shripadk.github.io/react/docs/jsx-gotchas.html)
 
 - JSX looks like HTML but there are some important differences you may run into.

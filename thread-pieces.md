@@ -13,6 +13,19 @@ modified: '2021-01-11T12:10:50.900Z'
 
  
 
+- ## I’m surprised that iOS still has the “back button” in the top left corner for most apps. 
+- https://twitter.com/mjackson/status/1351203275949940744
+  - It’s the wrong spot for one-handed usage. 
+  - It should be the opposite, in the lower right.
+  - Some apps support swiping right to go back, but it’s not consistent.
+- On Android, the global back button is on the bottom bar, on the left. 
+  - Always accessible, no matter what app you’re in. It’s a great accessibility feature. 
+  - It’s another one of those small design decisions that has a huge impact on usability.
+- Apple's UX/UI innovation has been deteriorating for years...
+  - I'm still trying to understand what's the difference in UX/UI between iPhone 12 & iPhone 6
+- Gmail supports swiping right to go back, but they also support swiping right to delete emails and those are very different things
+  - the browsers also support swiping...though I hate this...
+
 - ## I don't know how I've managed to debug anything in NodeJS before NiM existed.
 - https://twitter.com/WebReflection/status/1350801038270488579
   - `node --inspect-brk folder/file.js`

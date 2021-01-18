@@ -36,7 +36,7 @@ modified: '2020-12-21T08:03:56.709Z'
 - 组件形式
   - 多采用function component( + hooks)
   - 仍以class组件为主的：zent, rsuite, uiw, typeui   
-  - 以单文件的形式创建组件，如flame、cactus、radix
+  - **实现采用的是单文件形式的组件**，如flame、cactus、radix
   - 少部分组件库导出组件时，最外层是styled包裹的，如primer、priceline
 - 类型写法
   - 不使用react提供的propTypes，使用ts

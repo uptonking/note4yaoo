@@ -9,6 +9,9 @@ modified: '2020-12-08T14:06:06.985Z'
 
 # dev
 
+- https://github.com/preactjs/wmr
+  - The tiny all-in-one development tool for modern web apps, in a single 2mb file with no dependencies.
+
 # compile
 
 - https://github.com/nodejs/node-gyp

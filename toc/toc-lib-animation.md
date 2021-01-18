@@ -144,6 +144,11 @@ modified: '2020-10-05T06:22:02.107Z'
 
 # css animation
 
+- transition.css /13Star/Apache2/202010/css
+  - https://github.com/argyleink/transition.css
+  - https://transition.style/
+  - 46 pre-built transitions! Drop-in CSS transitions
+  - 偏向形状渐变的动画效果
 - animate.css /MIT/67.5kStar/202007
   - https://github.com/animate-css/animate.css
   - https://animate.style/

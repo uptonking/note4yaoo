@@ -78,12 +78,13 @@ modified: '2020-12-27T20:29:55.568Z'
     - jsx-lite compiles jsx to React, Vue, Angular, Svelte, Solid, web components, vanillajs
   - hooks pattern
     - plugin system
+  - experimental
+    - 基于css vars实现constraint-based design
   - 其他特色参考点
     - openapi spec
     - 兼容性，高仿现有系统的设计、优点、api
     - responsive & mobile first
-  - experimental
-    - 基于css vars实现constraint-based design
+    - 实现采用的是单文件形式的组件**，如flame、cactus、radix
 
 - ui组件构成
   - dom结构(非视觉结构)、样式、属性、行为

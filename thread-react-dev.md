@@ -11,6 +11,44 @@ modified: '2021-01-06T14:40:11.360Z'
 
  
 
+- ## the React model of All-in-JS components where HTML and CSS live inside your JavaScript module.
+- https://twitter.com/horse_js/status/959908677074513921
+- HTML is okay... but CSS should not be inside JS
+
+- ## browser's built-in form validation features are surprisingly robust. 
+- https://twitter.com/housecor/status/1330871889867264004
+  - Declare attributes like required, min, max, minLength, maxLength, and pattern (regex) on fields.
+  - Call checkValidity() to validate. 
+- indeed! React devs may forget that you don't have to do this all in JS. 
+  - and it turns out that it can be quite a lot less code as well!
+
+- ## Frontend Devs, if you were writing a new UI from scratch, would you use @reactjs or @vuejs  and why?
+- https://twitter.com/SENDYYeah/status/1247568314492018688
+- I'm not saying @reactjs is the best, but more to personal preference. 
+  - After tried both of them for some projects, I feel react project is easier to read and to maintain.
+  - JSX force us to put everything in a single language, JS, CSS, HTML all in JS, the thing that scares newcomers
+  - After months of grieve for the lost of directives in ReactJS, I tried vuejs and maintenance a project
+  - I understand that JSX fits me better than Vue approach, 
+    - JSX makes me able to read logic easier, 
+    - you put everything **explicitly**, any logic, even for CSS styling on your components.
+  - With ReactJS, you have to read everything in JS (or TS), no directives, no binding, nothing to hide
+  - some vue solutions makes us easier, but sometimes it took longer to code
+    - react be like "tell your JS to return a component with this"
+    - vue "tell your component to do a JS work and return a new component with this"
+
+- ## I almost get the perception on here that react it's like the new "jQuery" now._202008
+- https://twitter.com/CerovacBogdan/status/1299308881521377280
+  - Is it assumed that most FE devs know a bit?
+- I was on and off and now again a bit on, 
+  - but I would not dare to say that it is the new jQuery as it requires much more specific knowledge (JSX one of them). 
+  - But yes - Wordpress does use it - and with it's market share - it has the potential to become new jQuery
+- When I was starting out, it was the go-to once you knew some fundamentals. 
+  - But, it seems people don't spend as much time with libraries now and jump straight into frameworks like React
+  - Did JSX pose a hurdle(障碍；栏杆)?
+    - Agree :) I try to be vanilla now, jQuery was golden for cross-browser DOM mngmt. and abundance of plugins. 
+    - Maybe if we look at React in that light... I see the benefits of ALL-in-JS in complex context that needs code-reusing etc. 
+    - but for simpler "doc's" I still prefer raw HTML+JS
+
 - ## list: How do you manage API calls in react_202101
 - https://twitter.com/_Adyasha8105_/status/1347978564251963392
   - Using a library like react-query 
@@ -29,7 +67,6 @@ modified: '2021-01-06T14:40:11.360Z'
 - I build a gateway per api 
   - so that all calls to the api go through one entity (in case the contract changes) and it extends a class that makes the actual calls with fetch. 
   - I use redux actions to call the gateway method. Will look at react-query though!
-
 
 - ## JSX is an abomination(令人厌恶的事物).
 - https://twitter.com/justinfagnani/status/1246514699341983744

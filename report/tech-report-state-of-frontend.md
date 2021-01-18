@@ -1,11 +1,13 @@
 ---
-title: tech-report-state-of-frontend-2020
+title: tech-report-state-of-frontend
 tags: [frontend, report, web]
 created: '2020-08-07T16:48:01.867Z'
 modified: '2021-01-04T16:00:05.478Z'
 ---
 
-# tech-report-state-of-frontend-2020
+# tech-report-state-of-frontend
+
+# [State of Frontend 2020 Report_2020](https://tsh.io/state-of-frontend/)
 
 - Notable results of the State of Frontend 2020 report:
   - @reactjs is the most used framework at 74%, followed by @angular at 34%
@@ -21,8 +23,6 @@ modified: '2021-01-04T16:00:05.478Z'
   - @zeplin & @InVisionApp are leading design hand off tools
   - For hosting: self hosted is the most popular, followed by @awscloud (38.7%) and then @Netlify (23.3%)
   - For CI: @gitlab is the most popular (34.9%), followed by @github actions (34.7%), followed by @jenkinsci (33.7%)
-
-# [State of Frontend 2020 Report](https://tsh.io/state-of-frontend/)
 
 - Which of these frameworks have you used during the last year?
   - react: 3337 
@@ -40,3 +40,8 @@ modified: '2021-01-04T16:00:05.478Z'
   - ngrx: 472
   - mobx: 364
   - event bus: 189
+
+# ref
+
+- [State of JavaScript 2020 overview](https://css-tricks.com/state-of-javascript-2020/)
+  - https://2020.stateofjs.com/en-us/
