@@ -9,7 +9,37 @@ modified: '2021-01-08T17:13:43.392Z'
 
 # pieces
 
- 
+- ## 
+
+- ## Just learned about how @excalidraw implements encryption by encrypting the data 
+- https://twitter.com/christoomey/status/1351234746139947013
+  - and then putting the key in the hash of the URL (which browsers don't send with the request). 
+  - Self-contained security via browser features, so neat!
+- Interesting, I didn’t think about adding it to the payload. 
+  - That would solve the problem I was trying to avoid: increasing the length of the url. Thanks! Would you be interested in implementing it?
+
+- ## It might be a "Hot take". But. You need a really good reason to be mocking API requests in @storybookjs
+- https://twitter.com/jh3yy/status/1351288120881385479
+  - It's a tool for building UI components in ISOLATION 
+  - If your UI components are coupled to API requests, something can likely be designed better 
+- There's usually a way to design and architect your UI in a way that gets around this
+  - The ideal scenario is that you're able to drop in as out components without things falling apart 
+  - Only place I can see where this can be tricky is things like widgets
+- Mocks can be useful for page-level components and side-loaded data. 
+  - In these cases, a components inherent complexity can be more awkward to abstract away.
+  - Even if it's more verbose to create "container" components for pages it challenges the design process
+  - That's one thing I really appreciate about Storybook. 
+  - Especially when you develop Storybook first
+- Thinking more on it. 
+  - I guess this comes more from a "Because you can, doesn't mean you necessarily should" mindset.
+  - Where I've used this in the bigger projects. 
+  - The joy has been where things are kept "simple". 
+  - Purely presentational. Because coupling isn't fun to maintain.
+  - For sure, that's how we build UIs internally. 
+  - Presentational all the way to the page and then hydrate data down
+- I don't like seeing nested arrays or objects in storybook at all if I can help it!
+  - Often that means there's something else to extract, which can then be imported into the parent test.
+  - (Obviously this isn't a hard rule, sometimes they're needed)
 
 - ## I was going to work on removing the outlines around buttons when you click on them but I'm having trouble focusing.
 - https://twitter.com/markdalgleish/status/1350999134631768069
@@ -22,7 +52,7 @@ modified: '2021-01-08T17:13:43.392Z'
   - Validate HTML 
   - Disable JS.
 
-- ## Pages opened with `target="_blank"` allow the new page to access the original's `window.opener`. 
+- ## Pages opened with `target="_blank"` allow the new page to access the original's `window.opener` . 
 - https://twitter.com/denicmarko/status/1349247474083508224
   - This can have security and performance implications. 
   - Include `rel="noopener"` or `rel="noreferrer"` to prevent this.
@@ -39,6 +69,7 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## Avoid layout shifts on long pages by adding a scrollbar
 - https://twitter.com/JoshWComeau/status/1349374805418635264
   - `overflow-y: scroll;`
+
   - Improves CLS score
 - this is indeed annoying.
   - what's your solution for modals opening and hiding that scrollbar, producing a content shift on opening?
@@ -46,7 +77,9 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## url state
 - https://twitter.com/kentcdodds/status/1349173470567964673
   - If you find yourself synchronizing some local component state with the URL (for example, query parameters), you'd be better off treating the URL as the source of truth 
+
     - and ditching your local state in favor of getting the value from the URL (or your router) and updating the URL.
+
 - Agreed almost always. 
   - There are a few cases where you want to sync state though, like an autocomplete that goes up to the url search params, you’ll want to throttle that user interaction (maybe not with CM though!)
   - Although you can also navigate inside of a throttle ... so maybe you’re right always.
@@ -54,8 +87,10 @@ modified: '2021-01-08T17:13:43.392Z'
   - but I’ve since changed my mind because of performance issues it causes in many cases. 
   - Instead I suggest making an abstraction that mirrors the state using what ever throttling or debouncing mechanism you need, and ideally testing that error-prone code.
   - Imagine a search component. 
+
     - Updating the url on each keypress is not awesome anyway because it fills the history with crap (ignoring replace here). 
     - Updating it if you click a button to run the new search is fine though.
+
 - Unfortunately updating the URL is throttled by browsers, 
   - so this doesn't work for state that is updated a lot, 
   - e.g. a search query that updates as you type 
@@ -96,18 +131,23 @@ modified: '2021-01-08T17:13:43.392Z'
 - https://twitter.com/claviska/status/1348797980854378496
 - Any convenience utilities you’ve created/are using for data binding and similar things?
   - I’m weird I guess but I like to use jQuery it already supports scope `$(this, ’.element’)`
+
   - The util functions I often end up using is a function to `queryselector(all)` in the shadowDOM; 
+
     - and a function to fire a custom event - that automatically sets `composed:true` etc as default
+
 - Yes! I love to build #webcomponents from scratch and I used to do that quite often to learn the in’s and out’s of the API. 
   - I won’t recommend it for production apps though since libs like #stenciljs have a great set of build tools, linters and optimizers in place.
 - Oh yes. Occasionally bring in lit-html when I need data binding in a performant manner. 
   - Outside of that though, the DOM has everything I need!
-  - Things like a static getter for ‘tagName’ and also one called ‘register’ that contains the call to `customElements.define()`.
+  - Things like a static getter for ‘tagName’ and also one called ‘register’ that contains the call to `customElements.define()` .
   - The tagName allows use in templates of other components, and the register helps with testability.
 - Not anymore. Created myself a base class when I did, plus a few small utilities for creating DOM from template strings.
   - This is where I’d ended up too (more or less). 
+
     - I still use my own lil toolkit for side project stuff, but for work I use Lit now.
     - Every so often I do still write something for work that doesn’t use anything external, but those are unusual cases.
+
 - Absolutely! For me one of the best features for raw web components is extending native HTML elements
 
 - ## list: Data fetching in #reactjs
@@ -116,17 +156,23 @@ modified: '2021-01-08T17:13:43.392Z'
   - Here's an overview of all the different methods available with pros and cons
 - axios
   - In a small application with no routes, if you want to quickly put together something, 
+
     - you can use a regular fetch/axios inside a `useEffect()` hook and store the response in a `useState()` variable.
+
   - Pro: Quick setup
   - Con: No caching, your data disappears on new routes
 - react-query
   - With this, you can stick your async API calling function inside a hook, 
+
     - give the API call a name and global caching will be automatically handled for you.
+
   - Pro: Beginner-friendly, each component can handle data on it's own
   - Con: Relatively new library
 - redux-saga
   - This middleware helps you push your API call response to the redux store for storing into global state. 
+
     - You control everything from fetching the data to how it is stored & retrieved.
+
   - Pro: You'll find this used in many large applications
   - Con: Lot of boilerplate
 - redux-thunk
@@ -178,7 +224,9 @@ modified: '2021-01-08T17:13:43.392Z'
   - A blind npm install gets you the same. 
   - When it isn't on the latest tag the numbers of people using will always be significantly smaller.
   - Would it be weird for the default installed tag to be a beta?
+
     - That's what vite does I think, although they never reach v1... They went from v1 alpha to v2 beta.
+
 - If there are any breaking changes that will impact many users and/or are hard to migrate prioritize them in 2.0. 
   - Otherwise, they can be deferred to Parcel 3 ~1 year after Parcel 2.0 stable.
   - We are trying to do this for Babel 8, to avoid the Babel 7 situation.
@@ -189,6 +237,7 @@ modified: '2021-01-08T17:13:43.392Z'
 - Instead of using margin, I create a new element explicitly to add some space between the icon and text!
 - In the late 90s, if you were to pop open the source of a typical website, you'd likely encounter this curious fella
   - `<img alt="" src="spacer.gif" width="1" height="1" />`
+
 - CSS didn't exist yet, and web layouts were built using HTML tables. 
   - GIFs were used because GIFs were the only image format that supported transparency (this is pre-PNG). 
   - Our spacer friend consisted of a single transparent pixel, a completely empty image.
@@ -201,16 +250,18 @@ modified: '2021-01-08T17:13:43.392Z'
 - In the original Jambalaya table-layout days, the spacer GIF was a tasty complementary ingredient. 
   - It didn't taste so good when we switched to making deconstructed sandwiches. 
   - But now that many of us are working with component-driven architectures, our code might benefit from a pinch of spacer GIF.
-- Originally, my `<Spacer>` component rendered a `div` instead of a `span`, but I found it was a little limiting. 
-  - According to the HTML spec `div`s aren't supposed to be put within certain elements, like `p` and `button`.
+- Originally, my `<Spacer>` component rendered a `div` instead of a `span` , but I found it was a little limiting. 
+  - According to the HTML spec `div` s aren't supposed to be put within certain elements, like `p` and `button` .
 
 - ## Quiz time! for histroy back
 - https://twitter.com/ryanflorence/status/1346562678869790720
   - No JavaScript on the page, normal document requests:
+
     - You land at http://example.com
     - You click a link to /page.html
     - Again, you click a link to /page.html
     - You click the browser back button
+
 - Turns out when you go to the same URL, the browser still makes a document request to the server, still gets the a fresh page, 
   - but it *does not* push a new entry into the stack, it *replaces* the current one!
   - It's the same as clicking "refresh", and that makes sense.
@@ -222,7 +273,7 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## To help me decide exactly what my media query tweak points should be.
 - https://twitter.com/Malarkey/status/1345873190380253187
 - If I had to print something for debug purpose, I'd prefer to show a different content, with the information of the media applied, on a `body::before` pseudo element absolutely positioned.
-- I went with a `content:"XS";` `content: "S"/"M" `and so on. 
+- I went with a `content:"XS";`  `content: "S"/"M" ` and so on. 
   - I've got this `debug.sass` file damn full of ways to figure out common gotchas behind html classes like debug_viewport debug_grids and so on. 
   - It's annoying to maintain but it has saved me tons of time @ the job at least twice
 - [Custom properties for breakpoint debugging_201802](https://thatemil.com/blog/2018/02/23/custom-properties-breakpoint-debugging/)
@@ -280,7 +331,9 @@ modified: '2021-01-08T17:13:43.392Z'
   - If I had used Laravel and jQuery, I could have built this all in a weekend.
 - After a year of building Node.js apps, I discovered I was spending more time piecing together tools than writing application code. 
   - 这是因为基于php的传统web开发框架laravel已经非常成熟，工具丰富
+
     - 基于nodejs作为服务端的web开发框架，还处于快速发展阶段，可选工具不够多，并且功能不够丰富
+
   - Laravel gives me 80% of my tooling out-of-the-box for 20% of the work. 
   - If moving fast is important to you, you should consider batteries-included frameworks like Laravel and Rails first.
 - What I've learned is if you want to develop applications quickly, it isn't about staying in one language: 

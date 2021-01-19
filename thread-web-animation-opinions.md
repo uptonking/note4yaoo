@@ -11,7 +11,7 @@ modified: '2021-01-08T19:16:04.471Z'
 
 # pieces
 
- 
+ - ## 
 
 - CSS animation and Web Animation API won't be stalled by CPU intensive JavaScript, whereas other libs will start getting janky.
 

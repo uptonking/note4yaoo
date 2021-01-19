@@ -8,7 +8,8 @@ modified: '2021-01-14T13:17:38.972Z'
 # thread-office-dev-usage
 
 # pieces
- 
+
+- ## 
 
 - ## Live Edit "playground" type component using @Alpine_JS and some @tailwindcss
 - https://twitter.com/kevinbatdorf/status/1287783480567271429
@@ -66,6 +67,7 @@ modified: '2021-01-14T13:17:38.972Z'
 - https://twitter.com/jaredcwhite/status/1323321554093006848
   - I'm trying to come up with a nice way to handle mutable data like translations and session data with the DX of Web Components.
 - Maybe the interpolated values inside text could use a familiar syntax like `{{ key.value }}`
+
 - I was considering using some kind of a templating syntax, 
   - but a big motivator here was to make the markdown as clean and fluent to write as possible, so I opted out of it
   - I might reconsider it at some point though! 
@@ -83,6 +85,7 @@ modified: '2021-01-14T13:17:38.972Z'
 - Markdown always requires some processing (be it server or client side) as it's not html
   - Also separating usage and import can be confusing. it works but where/how my-component is defined?
   - 因为react组件需要显式import，而web-comp可直接写标签，查找声明定义就不方便
+
     - 这也是字符串相对于js变量的缺点
 
 - 
@@ -95,6 +98,7 @@ modified: '2021-01-14T13:17:38.972Z'
   - but I think opting into the more custom MDX spec sometimes is useful
   - I think the authoring mindset of markdown puts code blocks secondary, and the mindset of MDX puts components and markdown at equal footing
   - but it doesn’t mean we can’t dream about it
+
     - Why dream when you can embed CodeSandboxes all over the place?
 
 - ## Web components might be great in 5 years, but it's simply too early to adopt them today. Too many major issues.
@@ -106,12 +110,16 @@ modified: '2021-01-14T13:17:38.972Z'
   - They do not define their own component model, and do not invoke the lifecycle callbacks: the browser does that.
   - You don't create components with LitElement: you create them with document.createElement(), etc
   - In React, React defines the component model.
+
     -  It creates the components. 
     -  It can't create components from other frameworks.
+
   - With WCs, the spec defines the component model, browsers implement it. The browser creates components. You can mix and match
   - The documentation for how you instantiate a LitElement is the same as for Polymer or Stencil: document.createElement(), innerHTML, etc. 
+
     - You can switch the implementation of a component to vanilla, or another base class. 
     - These things are not possible with frameworks.
+
 - For a concrete example of how this ripples out into various facets of web dev, see regular Markdown vs MDX.
   - Markdown supports HTML, so it already supports web components.
   - Web components don't require that we re-invent things to play nicely with them.
@@ -156,6 +164,7 @@ modified: '2021-01-14T13:17:38.972Z'
 - This is not really possible or recommended for security reasons.
   - If this is only being used on your personal computer or for testing reasons, you can add an option for your browser to allow file access, 
   - `--allow-file-access-from-files`
+
 - It is not possible to access the users file system.
   - However with the `FileSystem` API you can get a temporary or persistent private file system where you can store stuff for you application (cached images for example). 
   - You can then combine this API with the `File` API to allow the user to drag and drop files to your application from the users files.
@@ -163,8 +172,8 @@ modified: '2021-01-14T13:17:38.972Z'
 - ## Do not use FileReader to show local file during uploading it to the server. 
 - https://twitter.com/sitnikcode/status/1060157747038208000
 - FileReader will copy the whole file to JS memory as a string.
-- Use `URL.createObjectURL()`. 
-  - It will return short blob: URL with a link, which you can use in `<img>`.
+- Use `URL.createObjectURL()` . 
+  - It will return short blob: URL with a link, which you can use in `<img>` .
 
 - ## For self-publishing eBooks from Markdown - are there nice alternatives to using a complex LeX toolchain?
 - https://twitter.com/alexellisuk/status/1349693214782074882
@@ -174,9 +183,13 @@ modified: '2021-01-14T13:17:38.972Z'
 - If just starting, you could check out AsciiDoc. 
   - Similar-ish to Markdown but has nice support for exporting to PDF, EPUB, MOBI, etc.
   - I'm pretty fluent in markdown - what toolchain do you use to get the AsciiDoc to PDF? And how good is it for eBooks?
+
     - I used AsciiDoc and pandoc. Worked pretty well, but O'Reilly took care of all the formatting etc. Pandoc also handles markdown.
+
   - I have been using Pandoc, which is where all the issues are because the MD to PDF uses Lex to convert/generate. Did you ever do any local preview/generation?
+
     - Sometimes, but to get it to look right I had to run it through the O'Reilly webapp. I assumed with the right templates I could local generation to look as good.
+
 - Ugh, that's exactly the problem I've been having lately. 
   - I resorted to just paying for Leanpub Premium for now. 
   - I write everything in Markdown, then just add the Markua extensions on top. 

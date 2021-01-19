@@ -1,11 +1,11 @@
 ---
-title: page-js-proto-prototype
+title: page-lang-js-proto-prototype
 tags: [js, lang]
 created: '2020-09-04T03:36:05.137Z'
-modified: '2020-09-04T03:36:47.938Z'
+modified: '2021-01-19T10:55:44.176Z'
 ---
 
-# page-js-proto-prototype
+# page-lang-js-proto-prototype
 
 # guide 
 

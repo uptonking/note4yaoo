@@ -1,11 +1,11 @@
 ---
-title: page-why-I-still-dont-use-graphql
+title: page-frontend-why-I-still-dont-use-graphql
 tags: [api, graphql]
 created: '2020-08-06T08:48:07.770Z'
-modified: '2020-10-22T13:44:03.426Z'
+modified: '2021-01-19T10:57:46.316Z'
 ---
 
-# page-why-I-still-dont-use-graphql
+# page-frontend-why-I-still-dont-use-graphql
 
 # Why I Still Don't Use GraphQL
 

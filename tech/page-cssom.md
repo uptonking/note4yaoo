@@ -1,11 +1,11 @@
 ---
-title: page-cssom-blog
-tags: [cssom, style]
+title: page-cssom
+tags: [css, cssom, web]
 created: '2020-08-08T17:40:23.318Z'
-modified: '2020-08-08T17:40:43.088Z'
+modified: '2021-01-19T11:00:12.052Z'
 ---
 
-# page-cssom-blog
+# page-cssom
 
 # cssom
 

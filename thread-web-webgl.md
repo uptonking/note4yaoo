@@ -8,7 +8,8 @@ modified: '2021-01-08T18:53:25.244Z'
 # thread-web-webgl
 
 # pieces
- 
+
+- ## 
 
 - ## Apple is proposing a new schema for USD(Universal Scene Description)
 - https://twitter.com/donrmccurdy/status/1275186885346746368
@@ -18,7 +19,9 @@ modified: '2021-01-08T18:53:25.244Z'
   - And their “closed” tailor made experiences. 
   - Unfortunately open sourced often comes at the cost of quality.
   - It doesn't have to, it just requires a positive feedback loop that circumstances haven't allowed. 
+
     - Given XR is so new we have a chance to establish quality open XR systems.
+
 - AR should fundamentally be about how the virtual interactes WITH the physical environment. The only interaction your video example shows of this is plane detection haha
   - that's a good example, the reflections and diffuse lighting look great. Getting that kind of lighting information from the scene is (as far as I know?) not yet available from the WebXR APIs, and I hope it's added! But it has nothing to do with glTF or USDZ. 
   - It'sthe advantage of having a renderer in a sandbox, and not having to deal with the privacy implications of giving camera information to a website (which WebXR has to be very careful about)

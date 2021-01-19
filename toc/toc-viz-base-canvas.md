@@ -26,6 +26,13 @@ modified: '2020-10-05T06:17:42.467Z'
   - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
   - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
 
+- paper.js /12.2kStar/MIT/202006/js
+  - https://github.com/paperjs/paper.js
+  - http://paperjs.org/
+  - Scriptographer ported to JavaScript and the browser, using HTML5 Canvas.
+  - paper-full.js – The full version for the browser, including PaperScript support and Acorn.js
+  - paper-core.js – The core version for the browser, without PaperScript support nor Acorn.js. 
+
 # canvas-animation
 
 - https://github.com/CreateJS/EaselJS
@@ -35,7 +42,6 @@ modified: '2020-10-05T06:17:42.467Z'
   - It also provides a robust interactive model for mouse and touch interactions.
 
 # examples
-
 
 - https://github.com/doodlewind/freecube
   - Freecube renders and animates Rubik's Cube with raw WebGL, plus a tiny rule-based solver showing how CFOP works.

@@ -1,11 +1,11 @@
 ---
-title: viz-blog-charting
+title: viz-chart-blog
 tags: [blog, charting, viz]
 created: '2020-08-08T11:30:42.489Z'
-modified: '2020-12-21T07:47:05.982Z'
+modified: '2021-01-19T12:47:29.048Z'
 ---
 
-# viz-blog-charting
+# viz-chart-blog
 
 # gitlab: why we chose echarts for data visualizations from d3.js
 

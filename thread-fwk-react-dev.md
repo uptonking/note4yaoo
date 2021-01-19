@@ -8,7 +8,16 @@ modified: '2021-01-06T14:40:03.364Z'
 # thread-fwk-react-dev
 
 # pieces
- 
+
+- ## 
+
+- ## re: context vs redux debate
+- https://twitter.com/dai_shi/status/1351351537751126018
+  - If one would compare useReducer+useContextSelector vs React-Redux, it would clarify what Redux and its family offer.
+  - Note use-context-selector no longer depends on any hacks, it just uses ref+subscription, like react-redux.
+- By the way, we could use Redux in React without Context.
+  - Just like zustand, a react hook could subscribe to a Redux store directly.
+  - My reactive-react-redux v5-alpha follows this pattern with experimental useMutableSource.
 
 - ## new trend in react: there's a sizeable community within react that fears state managers, and they go through hot hell to avoid one.
 - https://twitter.com/0xca0a/status/1350731142480146435
@@ -32,9 +41,11 @@ modified: '2021-01-06T14:40:03.364Z'
   - I think it has to do with your approach. I fell into the trap at first of trying to make a neat little component for every box on the page
   - Nowadays I always start with a single component and take the top-down approach. Don't create a new component until I absolutely need to
   - Having lots of small components for page layout is amazingly expressive, they just need to be composable, accepting children as props.
+
     - Building out a living style guide of React components is a great way to force this architecture.
     - I've been working on something like this these last of couple months and it is an amazing workflow.
     - With well thought out component APIs, updates are a breeze. I absolutely love it.
+
 - This is why I love the render prop on Route so much. No need for extra components just for URLs
   - I've been thinking on this angle for glamor/ the css prop/ programming workflow in general. when it's make it work -> make it right.
   - I tend to get to prod faster, but if I try to make my abstractions before making *something* work, I tend to have a bad time. 

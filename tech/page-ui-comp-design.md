@@ -1,11 +1,11 @@
 ---
-title: page-ux-comp-design
-tags: [components, ux]
+title: page-ui-comp-design
+tags: [components, ui]
 created: '2020-09-28T16:28:19.740Z'
-modified: '2020-12-08T14:08:26.480Z'
+modified: '2021-01-19T10:51:22.355Z'
 ---
 
-# page-ux-comp-design
+# page-ui-comp-design
 
 # [Headless User Interface Components](https://www.merrickchristensen.com/articles/headless-user-interface-components/)
 

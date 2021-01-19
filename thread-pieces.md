@@ -11,7 +11,15 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
- 
+- ## 
+
+- ## Google is indexing some random person's copypaste of my blog first, and my actual blog isn't even on the first page.
+- https://twitter.com/dan_abramov/status/1351551717683453956
+- Thanks to all for diagnosing! 
+  - It seems like my website sends a 'noindex' header but I have no idea why. 
+  - Maybe I messed up some setting, or the host has a bug. Contacted support.
+- there is so much reposting going on. 
+  - i think the fix is to aggressively use first person “I” a lot and link back to your own content in the text so its super obvious that its copied.
 
 - ## I’m surprised that iOS still has the “back button” in the top left corner for most apps. 
 - https://twitter.com/mjackson/status/1351203275949940744
@@ -29,6 +37,7 @@ modified: '2021-01-11T12:10:50.900Z'
 - ## I don't know how I've managed to debug anything in NodeJS before NiM existed.
 - https://twitter.com/WebReflection/status/1350801038270488579
   - `node --inspect-brk folder/file.js`
+
   - today I've fixed a Custom Elements rabbit hole coming from basicHTML in heresy-ssr
 - With lots of console logs
 
@@ -38,3 +47,7 @@ modified: '2021-01-11T12:10:50.900Z'
   - It is also fully open source and has been developed by a consortium of Estonian software companies completely free-of-charge
 - Norther Ireland and the Republic of Ireland use it
   - https://github.com/HSCNI-GITHUB/stopcovid-ni-app
+
+# ref
+
+- [Determine font color based on background color](https://stackoverflow.com/questions/1855884/determine-font-color-based-on-background-color)

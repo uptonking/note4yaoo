@@ -9,7 +9,7 @@ modified: '2021-01-08T17:14:34.841Z'
 
 # pieces
 
- 
+- ## 
 
 - ## If I am let down by any Web API, it's gotta be the Web Animations API._201906
 - https://twitter.com/maxlynch/status/1138501067451355138
@@ -64,4 +64,5 @@ modified: '2021-01-08T17:14:34.841Z'
   - In heavy load situations, probably.
   - 9 is designed to be portable to a worklet architecture, so this won't be true forever. 
   - 9 is also far more flexible than WAAPI, which is bound to the DOM. 
+
     - Can't use it with Three, or innerHTML, or XR devices etc, no springs either

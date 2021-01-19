@@ -16,7 +16,7 @@ modified: '2020-11-13T07:31:38.730Z'
   - 参考主流组件库的实现
 
 - 设计样式时theming可参考
-  - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss)
+  - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss), glass-ui
 
 # popular
 

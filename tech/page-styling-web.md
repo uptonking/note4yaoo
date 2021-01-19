@@ -1,8 +1,8 @@
 ---
 title: page-styling-web
-tags: [css, styling]
+tags: [css, styling, web]
 created: '2020-12-30T11:52:13.417Z'
-modified: '2020-12-30T11:53:19.791Z'
+modified: '2021-01-19T11:00:41.227Z'
 ---
 
 # page-styling-web

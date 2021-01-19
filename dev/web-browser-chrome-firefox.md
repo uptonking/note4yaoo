@@ -14,6 +14,8 @@ modified: '2020-12-21T07:44:48.911Z'
   - [Firefox version history](https://en.wikipedia.org/wiki/Firefox_version_history)
   - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history)
 
+
+
 - 202101
   - chrome
     - stable(20201112) 87.0.4280, blink 87, v8 8.7
@@ -31,6 +33,16 @@ modified: '2020-12-21T07:44:48.911Z'
 # chrome
 
 - https://developers.google.com/web/tools/chrome-devtools
+
+- [What's New In DevTools (Chrome 89)](https://developers.google.com/web/updates/2021/01/devtools)
+  - Capture node screenshot beyond viewport
+    - You can now capture node screenshots for a full node, including content below the fold. 
+    - Previously, the screenshot was cut off for content not visible in the viewport. 
+    - The full-page screenshots are precise now as well.
+    - In the Elements panel, right click on an element and select Capture node screenshot.
+  - Lighthouse 7 in the Lighthouse panel
+  - Support forcing the CSS :target state
+  - Emulate foldable and dual-screen in Device Mode
 
 - chrome各版本特性
   - https://www.chromestatus.com/features

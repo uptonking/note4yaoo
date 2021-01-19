@@ -26,6 +26,8 @@ modified: '2020-12-19T13:05:23.294Z'
   - 帮助文档(help and documentation)
   - 营销页面、产品介绍页面(Marketing pages)
 
+# discuss
+
 - ## [用了react 或者 vue，如何做SEO优化呢？](https://www.zhihu.com/question/51949678/answers/updated)
 - 用 Vue 不代表你一定要做成 SPA
   - 对于真正适合做成 SPA 的应用，SEO 反而通常不是问题。
@@ -172,6 +174,18 @@ modified: '2020-12-19T13:05:23.294Z'
 - Server rendering in JavaScript is the next big race for these frameworks. 
   - But it's still up to you whether you choose to use it.
 
+- ## [Server Rendering in JavaScript: Optimizing for Size_202101](https://dev.to/ryansolid/server-rendering-in-javascript-optimizing-for-size-3518)
+- In this article, we will cover all things related to size. 
+  - The amount of JavaScript you ship to the client can be heavy on the network, 
+  - and it can be heavy on the CPU when you consider both parsing and execution.
+- Conclusion
+  - The thing to remember about size is, with pretty much every technique your mileage(好处，利益) will vary based on the nature of pages you have and the scale of the project. 
+  - There are plenty of applications where these techniques are not worth the effort. 
+  - Sometimes due to the framework. Sometimes due to a highly dynamic nature so there are minimal gains. 
+  - Sometimes a different architecture is more beneficial and is simpler.
+  - This is a pretty tricky thing to test/benchmark independently.
+  -  So it might be best to look at examples holistically(整体的，全面的).
+
 - ## [“Single-page” JS websites and SEO](https://stackoverflow.com/questions/7549306/single-page-js-websites-and-seo)
 - In my opinion, SPA is done right by letting the server act as an API (and nothing more) and letting the client handle all of the HTML generation stuff. 
   - The problem with this "pattern" is the lack of search engine support. I can think of two solutions:
@@ -195,25 +209,18 @@ modified: '2020-12-19T13:05:23.294Z'
   - Currently, it's difficult to process JS and not all search engine crawlers are able to process it successfully or immediately. 
   - we recommend dynamic rendering as a workaround solution to this problem.
   - **Dynamic rendering means switching between client-side rendered and pre-rendered content for specific user agents**.
-
     - Dynamic rendering is good for indexable, public JS-generated content that changes rapidly, or content that uses JS features that aren't supported by the crawlers you care about. 
     - Not all sites need to use dynamic rendering, and it's worth noting that dynamic rendering is a workaround for crawlers.
-
   - Dynamic rendering requires your web server to detect crawlers (for example, by checking the user agent).
-
     - Requests from crawlers are routed to a renderer, requests from users are served normally
     - Where needed, the dynamic renderer serves a version of the content that's suitable to the crawler, for example, it may serve a static HTML version. 
     - You can choose to enable the dynamic renderer for all pages or on a per-page basis.
-
   - Googlebot generally doesn't consider dynamic rendering as cloaking
-
     - As long as your dynamic rendering produces similar content, Googlebot won't view dynamic rendering as cloaking.
     - When you're setting up dynamic rendering, your site may produce error pages. 
     - Googlebot doesn't consider these error pages as cloaking and treats the error as any other error page.
-
   - Using dynamic rendering to serve completely different content to users and crawlers can be considered cloaking
   - To setup dynamic rendering for your content, follow our general guidelines. 
-
     - You will need to refer to your specific configuration details, as they vary greatly between implementations.
     - For a hands on approach, try our new Implement dynamic rendering with Rendertron codelab.
     - Install and configure a dynamic renderer to transform your content into static HTML that's easier for crawlers to consume. 
@@ -221,14 +228,60 @@ modified: '2020-12-19T13:05:23.294Z'
       - Rendertron  is an open source solution based on headless Chromium.
     - Choose the user agents that you think should receive your static HTML and refer to your specific configuration details on how to update or add user agents.
     - If pre-rendering slows down your server or you see a high number of pre-rendering requests, consider implementing a cache for pre-rendered content, or verifying that requests are from legitimate crawlers.
-
   - Configure your server to deliver the static HTML to the crawlers that you selected. 
   - There are several ways you can do this depending on your technology; 
-
     - Proxy requests coming from crawlers to the dynamic renderer.
     - Pre-render as part of your deployment process and make your server serve the static HTML to crawlers.
     - Serve static content from a pre-rendering service to crawlers.
     - Use a middleware for your server 
+
+- ## [Choosing between client-side rendering, server-side rendering and static site generation for React apps_202101](https://blog.whereisthemouse.com/choosing-between-client-side-rendering-server-side-rendering-and-static-site-generation-for-react-apps)
+- CSR vs SSR vs SSG
+- CSR simply means that we are using Javascript to render the contents of our app in the browser.
+  - Whenever someone visits our app in their browser, they would be able to only see the contents of the (almost empty) index.html file until the necessary Javascript is downloaded and executed. 
+  - Afterwards, users will be able to both view and interact with the contents of our app.
+- SSR means that we are using a server to render the contents of our HTML files and serve them to the client when requested. 
+  - As with SSG, the user does not have to wait for the Javascript to be downloaded and executed before being able to view the page initially.
+  - An important difference is that instead of having already generated static files, we are able to dynamically determine the content what is being served to the client. 
+  - No rebuilds necessary. 
+  - The trade-off is that what we gain in flexibility comes at the cost of an additional server and very possibly some added complexity compared to the other options.
+- SSG. when we are creating a static site, we need all the contents and data of our app to be available upfront. 
+  - The reason is that using SSG means we generate full-fledged HTML files already during the build step.
+  - What we gain with this approach is that the user doesn't have to wait for any Javascript to download and execute before being able to see the initial content
+  - On the flip side, needing all the data upfront also means that whenever a change is needed, we have to recreate and redeploy the entire build. 
+  - This can quickly become cumbersome if frequent updates are needed.
+- Decision time
+- **SEO**
+  - with CSR the initial HTML file is very minimal and Javascript is needed to render the app. This is bad for SEO.
+  - By contrast, with both SSR and SSG, the initial HTML files already contain meaningful content. 
+  - This makes them easily crawlable and indexable by search engines. 
+  - In addition, creating page-specific link previews when sharing links on social platforms, for example, is trivial with SSR and SSG while downright impossible with CSR (unless we use a service like prerender.io to generate them).
+  - Is SEO always a must? Not every app needs to be search engine optimized. 
+- **Initial load time**
+  - With both SSG and SSR we are able to show initial meaningful HTML on the screen.
+    - Even though users cannot immediately interact with it (we need Javascript for that), the perception is that the app loads quickly
+    - with the use of a CDN, statically generated sites would probably perform better than SSR since the content is already generated and cached. 
+    - However, we also run the risk of it being stale at request time.
+  - using CSR means that all the users see is the empty HTML file (or, at best, a loading screen) until the necessary Javascript is downloaded, executed and able to render the content of the app. 
+    - This might give users the initial impression that the app is too slow.
+- **Dynamic content**
+  - how dynamic is the content of the website we are building
+  - One of the main drawbacks of the SSG approach is that in order to update the content of the app, we need to rebuild it.
+    - This might be perfectly fine if the app consists of mostly static content and is not frequently updated. 
+    - A good use case for SSG would be a personal blog or a marketing website
+  - With CSR, we are able to fetch the necessary data for the specific user on the client, display it and seamlessly keep it up to date.
+  - What if we are building a news site, where the content is both public and constantly updated. 
+    - What if, in addition, there is some user generated content involved like comments under the articles, for example? 
+    - It would be much preferable to take advantage of SSR instead, with its ability to serve dynamic, non-stale, search engine optimized HTML files and easily reflect updates upon each request.
+- **Infrastructure**
+  - Probably the simplest approach to deployment is if our app build consists of static files. 
+    - This means we could directly deploy it on a CDN service and our website would be live. 
+    - With both CSR and SSG this is exactly the case.
+  - Using SSR paradigm means we need a server to pre-render the page into HTML on every request. 
+    - it is important to keep in mind that as the number of users for our app increases, the infrastructure cost might increase with it.
+- As usual, there is no one size fits all solution. 
+  - The choice should always be determined by our particular use case.
+  - There is also the possibility to mix and match these approaches for different parts of our app
 
 # ref
 

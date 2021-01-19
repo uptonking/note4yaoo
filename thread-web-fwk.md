@@ -9,7 +9,25 @@ modified: '2021-01-08T17:13:53.965Z'
 
 # pieces
 
- 
+- ## 
+
+- ## My Monday off has primarily gone towards a Babel/Webpack upgrade on a public sector code-base 
+- https://twitter.com/slightlylate/status/1351346159869050880
+  - and my prior that all of this is suspect and complexity-for-promotion's sake has never been more strongly reinforced.
+- Finally upgraded a legacy react app to webpack v4 over the summer, not fun researching every new plugin and config option.
+  - 6 months later I go to spin up a new project and now here’s v5 and everything I thought I knew is a lie
+- If your tool comes with a transpiler in the default toolchain, it's a distributed liability whose costs you are externalizing onto unsuspecting teams that probably can't afford it.
+  - this is why I think Lit should always have CDN-loadable binaries, whatever else is possible. The common path shouldn't require any of this.
+- As a once-and-likely-future vendor of transpilers, I think about this a lot. 
+  - The TypeScript's and JSX's of the world are not chained to the back-compat firmaments the way languages and platforms are, 
+  - and taking bets on them is something we should _culturally_ discourage.
+  - The ethical thing for transpiler vendors to do is to work themselves out of a job; 
+  - to find the standard or platform vendor they can influence and get their improvements written into the system such that they can fade away.  
+  - It's a dual failure when those bodies don't listen.
+- I think Babel has done better than most here. 
+  - It's hewing a close line to the spec...the problem is its prevalence, rather than its qualities.
+- After almost a decade of using various js frameworks and acquiring transient knowledge that's superseded in a few years by whatever n framework(s), I've come to appreciate the value of learning standardised APIs. 
+  - They won't last forever, but they will last much longer.
 
 - ## Maybe you don’t need that SPA
 - https://twitter.com/RyanCarniato/status/1334732629808009216

@@ -7,9 +7,10 @@ modified: '2021-01-06T14:39:51.714Z'
 
 # thread-blog-repeat
 
-# pieces
+# repeat
 
 - [精读《手写 JSON Parser》](https://zhuanlan.zhihu.com/p/107344979)
+
 - [JSON Parser with JavaScript](https://lihautan.com/json-parser-with-javascript/)
   - Understand the grammar
   - Implementing the parser

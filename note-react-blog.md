@@ -25,6 +25,12 @@ modified: '2020-07-14T11:51:59.253Z'
     - The app state is updated frequently over time
     - You need more powerful capabilities for managing side effects, persistence, and data serialization
 
+- discussion
+
+- There are _multiple_ differences in behavior and functionality between Context+useReducer and React-Redux
+  - The "boilerplate" concerns have been eliminated by Redux Toolkit
+  - While Redux isn't always the right choice, there are many reasons to choose it over Context+useReducer
+
 # [JSX Gotchas](https://shripadk.github.io/react/docs/jsx-gotchas.html)
 
 - JSX looks like HTML but there are some important differences you may run into.

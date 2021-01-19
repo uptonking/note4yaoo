@@ -1,11 +1,11 @@
 ---
-title: page-css-custom-properties
-tags: [css]
+title: page-css-vars
+tags: [css, css-vars]
 created: '2020-10-31T19:48:24.822Z'
-modified: '2020-10-31T19:50:54.156Z'
+modified: '2021-01-19T10:53:20.381Z'
 ---
 
-# page-css-custom-properties
+# page-css-vars
 
 # [Why we prefer CSS Custom Properties to SASS variables](https://codyhouse.co/blog/post/css-custom-properties-vs-sass-variables)
 

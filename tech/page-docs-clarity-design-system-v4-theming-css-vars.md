@@ -1,12 +1,12 @@
 ---
-title: page-clarity-design-system-v4-theming-css-vars
-tags: [copied, design-system, theming]
+title: page-docs-clarity-design-system-v4-theming-css-vars
+tags: [copied, design-system, docs, theming]
 created: '2019-12-12T13:39:25.692Z'
-modified: '2020-12-27T08:33:25.223Z'
+modified: '2021-01-19T10:58:31.310Z'
 toc: true
 ---
 
-# page-clarity-design-system-v4-theming-css-vars
+# page-docs-clarity-design-system-v4-theming-css-vars
 
 Themes help you customize the look and feel of your application.
 

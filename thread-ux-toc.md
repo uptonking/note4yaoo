@@ -9,7 +9,7 @@ modified: '2021-01-13T08:27:13.961Z'
 
 # toc
 
- 
+- ## 
 
 - ## report: Svelte took the #1 spot on satisfaction in the 2020 State of JS survey, and nearly doubled in usage!
 - https://twitter.com/SvelteSociety/status/1349248808585056257

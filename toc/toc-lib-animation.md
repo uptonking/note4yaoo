@@ -220,3 +220,8 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://github.com/sergey-pimenov/awesome-web-animation
   - https://awesome-web-animation.netlify.com/
     - 可按标签查看
+
+- https://github.com/software-mansion/react-native-reanimated
+  - https://docs.swmansion.com/react-native-reanimated/
+  - React Native's Animated library reimplemented
+  - Reanimated 2 is here! 

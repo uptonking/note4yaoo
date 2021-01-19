@@ -14,7 +14,8 @@ modified: '2021-01-01T22:14:19.469Z'
 
 # react
 
-- npm x -- create-react-app react-cra-ts --template typescript --use-npm
+- cra
+  - `npm x -- create-react-app react-cra-ts --template typescript --use-npm`
 
 # npm-cli
 

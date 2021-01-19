@@ -75,11 +75,14 @@ modified: '2021-01-01T20:08:55.833Z'
   - airbnb-lunar
   - calcite
 
-- 实现主流设计系统的高仿
-  - material-design
-  - apple-design
-  - facebook-design
-  - ant-design
+- 主流设计系统
+  - 主题风格
+    - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss),glass-ui
+  - 尝试实现高仿
+    - material-design
+    - apple-design
+    - facebook-design
+    - ant-design
 
 - theming的约束值与灵活性
   - 要折中考虑

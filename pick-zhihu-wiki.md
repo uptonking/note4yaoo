@@ -11,17 +11,7 @@ modified: '2020-12-22T09:57:22.239Z'
 
 # faq-pieces
 
-- Type-C的类型
-  1. 根本不用Type-C，
-  2. 一个非全功能Type-C（暗示某厂），
-  3. 一个全功能Type-C，
-  4. 传统充电口和Type-C同时存在，
-  5. 多个Type-C，
-  6. Type-C不能充电
-
- 
-
-
+##
 
 ## [宁夏银川一10岁男孩往窨井扔鞭炮被炸身亡](https://www.zhihu.com/question/439028513)
 

@@ -54,6 +54,7 @@ modified: '2020-12-27T20:29:55.568Z'
     - opinionated: ui交互或技术选型具有明显的偏向性
   - block-style component
     - 方便实现 collapsible content/card
+    - try: 使用collapsible而不是modal，来引导用户聚焦，而不是打断流程
   - interactive animation
     - anchor based flowing animation 
       - 基于某起点开始的变形动画，多是流动线型
@@ -100,10 +101,9 @@ modified: '2020-12-27T20:29:55.568Z'
   - 组件的快速预览图，不需要交互事件
   - 可参考SkeletonLoader
 
-- [UI Component Best Practices](https://github.com/chris-pearce/ui-component-best-practices)
+# discuss
 
-## [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
-
+- ## [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)
 - Design Tokens
 - Modular Scales
 - Theme specification
@@ -120,4 +120,42 @@ modified: '2020-12-27T20:29:55.568Z'
 - Variants
 - Extending the library
 
-# discuss
+- ## [Layout-isolated components](https://visly.app/blogposts/layout-isolated-components)
+- The move to component-based development has enabled a large number of really incredible improvements to tools and the front-end ecosystem as a whole. 
+- Remember when we were building our apps as a set of screens and pages instead of thinking in components?
+- The component model has changed this entirely - now, we think of pages as a composition of reusable components.
+- This modular approach to UI is vital to us at Visly since it's what enables our product to work with any app right away. 
+  - In the pre-component era, we would have probably required you to build your whole app inside of Visly from scratch.
+- Essentially, we want to avoid any properties on the root element of a component that affect, or are affected by, elements outside of the bounds of that component.
+- I would discourage properties like `margin`, because they act on elements outside of the component's scope; 
+  - the same goes for properties like `align-self`, as it will stretch the width or height of the component depending on the flex-direction of its parent. 
+  - In contrast, properties like `padding` are fine, as they are confined to the scope of the component. 
+  - Basically, if a property depends on, or impacts, other components outside of its scope, I would discourage using it.
+- Layout-isolated component
+  - A component that is unaffected by the parent it is placed within, and does not itself affect the size and position of its siblings.
+  - Something I think worth reiterating is that this only applies to the root element of a reusable component. 
+- What properties make a component break layout isolation?
+  - Any property which affects, or is affected by, elements outside a component scope are not layout isolated properties 
+  - and should be avoided on the root layer of your component. 
+- **align-self**
+- **Flex properties**
+  - Just like with `align-self`, the solution is to move flex out of the component 
+  - and into a prop that can be controlled by the wrapping component.
+- **Percentages**
+- **Margins**
+- **Tab index**
+- **Absolute positioning**
+  - This one is not as bad as the others, as it typically doesn't break anything; 
+  - it may just make your component unusable in certain situations
+  - Like all the previous examples, you can fix this by passing these styles in from above! 
+- In conclusion
+  - Build your components to be reusable; you never know where you'll end up needing them.
+  - Add a `style` prop to your components so that layout responsibility is shifted to the parent.
+  - Update your global CSS and disable default flex shrink `{ flex-shrink: 0; }`.
+  - Use `<Spacer/> `components or stack spacing instead of margin to make code easer to move around.
+- The idea for this post came out of a twitter discussion with Max Stoiber who shares a lot of my thoughts on this 
+  - you should check out his thoughts on `margin`.
+
+# ref
+
+- [UI Component Best Practices](https://github.com/chris-pearce/ui-component-best-practices)

@@ -84,6 +84,10 @@ modified: '2020-11-13T07:30:03.110Z'
   - ref
     - https://github.com/seek-oss/seek-style-guide
       - deprecated in favour of Braid Design System.
+- AWS UI
+  - not yet
+  - design-tokens, global-styles, components-react, collection-hooks, test-utils-core
+  - A React UI lib  makes sense for AWS, React Server Components == 💰💰💰
 - GEL(Global Experience Language) /BBC
   - /195Star/Apache2/202010/js
   - https://github.com/bbc/psammead
@@ -384,5 +388,3 @@ modified: '2020-11-13T07:30:03.110Z'
 - Lighthouse Design System /14Star/MIT/202012/ts
   - https://github.com/harbor-school/lighthouse
   - a continuous design system for integrating design with development workflows.
-
-

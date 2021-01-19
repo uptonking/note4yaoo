@@ -1,13 +1,11 @@
 ---
-title: thread-blog-collection
+title: thread-blog-stars
 tags: [blog, thread]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-01-06T14:39:45.119Z'
+modified: '2021-01-19T10:44:12.205Z'
 ---
 
-# thread-blog-collection
-
-# pieces
+# thread-blog-stars
 
 # frontend
 

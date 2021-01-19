@@ -81,6 +81,8 @@ modified: '2021-01-09T16:13:07.758Z'
 
 - editor
   - tips
+    - live edit
+    - 搭建ui需求过于灵活，实现基于controls的在线配置编辑更实用
   - editorjs
   - craftjs
 

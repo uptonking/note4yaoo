@@ -26,7 +26,21 @@ modified: '2021-01-01T20:11:51.298Z'
 - ref
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
   - https://juejin.im/post/5d921442e51d4578364f6fd3
-  
+
+# changelog
+
+- [license change in 202101](https://www.elastic.co/blog/licensing-change)
+  - 7.10及以前采用Apache2, 7.11及以后采用SSPL or ElasticLic
+  - We are moving our Apache 2.0-licensed source code in Elasticsearch and Kibana to be dual licensed under Server Side Public License (SSPL) and the Elastic License, giving users the choice of which license to apply.
+  - It is similar to those made by many other open source companies over these years, including MongoDB, which developed the SSPL. 
+    - The SSPL allows free and unrestricted use, as well as modification, 
+    - with the simple requirement that if you provide the product as a service, you must also publicly release any modifications as well as the source code of your management layers under SSPL.
+  - ref
+    - Our license change is aimed at preventing companies from taking our Elasticsearch and Kibana products and providing them directly as a service without collaborating with us.
+    - [license faq](https://www.elastic.co/pricing/faq/licensing)
+    - [License Change Clarification](https://www.elastic.co/blog/license-change-clarification)
+    - [license change tweet](https://twitter.com/kimchy/status/1351534442993446917)
+
 - **changelog**    
 - 7.0.0-201904
   - 7.1开始，Security功能免费使用

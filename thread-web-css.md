@@ -24,7 +24,11 @@ modified: '2021-01-08T17:15:13.906Z'
 
 # pieces
 
- 
+- ## 
+- ## Did you know that you can make any element resizable, just like `<textarea>`?
+- https://twitter.com/denicmarko/status/1351431494733062145
+- it won't work without `p {overflow: auto;}`
+
 
 - ## I remember hearing that it was safer to use numbered font-weights (eg. font-weight: 700 instead of font-weight: bold) because of a browser rendering bug.
 - https://twitter.com/JoshWComeau/status/1351179391938813963

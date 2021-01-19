@@ -1,11 +1,11 @@
 ---
-title: lib-gis-carto-pm
-tags: [carto, gis, lib, pm, product, solutions]
+title: note-gis-mapping-carto-solutions
+tags: [carto, gis, mapping, solutions]
 created: '2020-12-23T10:02:55.947Z'
 modified: '2021-01-04T16:27:19.903Z'
 ---
 
-# lib-gis-carto-pm
+# note-gis-mapping-carto-solutions
 
 # Carto Platform
 
