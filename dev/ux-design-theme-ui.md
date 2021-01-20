@@ -12,6 +12,12 @@ modified: '2021-01-01T20:08:51.345Z'
 - 开始出现挑战用theme对象实现theming的思路
   - css vars
 
+- theme-ui demo themes
+  - theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
+
+- 其他参考
+  - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
+
 # discuss
 
 - ## [Expose theme values as CSS Variables](https://github.com/system-ui/theme-ui/issues/979)

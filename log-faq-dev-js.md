@@ -100,7 +100,7 @@ console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
 
 - In arrow functions,  `this` retains the value of the enclosing lexical context's `this` .
   -  In global code, it will be set to the global object
-- If `this` arg is passed to `call` ,            `apply` , or `bind` on invocation of an arrow function, it will be ignored. 
+- If `this` arg is passed to `call/apply` , or `bind` on invocation of an arrow function, it will be ignored. 
   - You can still prepend arguments to the call, but the first argument (thisArg) should be set to `null`
 
 - **When a function is called as a method of an object, its `this` is set to the object the method is called on**.
@@ -347,6 +347,112 @@ Number instanceof Number //false
   - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
     - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
 
+## [Built in Constructor functions in Javascript (可以省略new)](https://stackoverflow.com/questions/9745729/built-in-constructor-functions-in-javascript)
+
+- Because some built-in functions are just defined to act this way. 
+- For example see ES5 15.2.1.1 for `Object`:
+  - When the `Object` function is called with no arguments or with one argument value, the following steps are taken:
+    - If value is `null/undefined` or not supplied, create and return a new Object object exactly as if the standard built-in Object constructor had been called with the same arguments (15.2.2.1).
+    - Return `ToObject(value)`.
+  - They test whether they have been called with `new` or not and if not act like they'd have been called with `new`.
+  - You can implement this yourself:
+    - `Foo()` and `new Foo()` will act the same way
+
+``` JS
+function Foo() {
+  if (!(this instanceof Foo)) {
+    return new Foo();
+  }
+  // do other init stuff
+}
+```
+
+- Since your example is an Object type of built-in function, as it is answered above it is the same for this type, it does not work the same way for most of the other built-in functions such as `Number()`. 
+  - You should be very careful when invoking them with the `new` keyword or not. 
+  - Because by default the `new` keyword with a function constructor returns an object, not a primitive type directly. 
+  - So you can not, for example, check strict equality on two variables that one of them is declared and assigned using `new Number()` , and the other is with `Number()`
+
+``` JS
+var num1 = Number(26);
+var num2 = new Number(26);
+
+num1 == num2; // returns true
+num1 === num2; // returns false
+```
+
+- The `Object()` constructor behaves identically with and without the `new` keyword. That's just how it works.
+  - Note that `Array()` and `new Array()` work the same way too
+  - Doing some more testing I see that behavior happens with all factory constructors (String, Date, RegExp, etc.) 
+  - Every factory constructor has its own behavior when it's called as a function. 
+    - For instance, the `Date` constructor returns the date as a string (and not a `Date` object) when called as a function.
+  - Precisely. The only way to know what happens is to read the spec (or a derivative work that tries to be more accessible :-). 
+    - And again, most constructors in the wild (not part of the spec) probably don't implement specific non-construction behaviors (unless they say they do!).
+
+- ref
+  - [JavaScript: using constructor without operator 'new'](https://stackoverflow.com/questions/1928342/javascript-using-constructor-without-operator-new)
+## call constructor function without new keyword. 使用构造函数代替类
+
+- Here's a pattern I've come across that really helps me.
+- It doesn't use a `class`, but it doesn't require the use of `new` either.
+
+``` JS
+const Foo = x => ({
+  x,
+  hello: () => `hello ${x}`,
+  increment: () => Foo(x + 1),
+  add: ({ x: y }) => Foo(x + y)
+})
+
+console.log(Foo(1).x) // 1
+console.log(Foo(1).hello()) // hello 1
+console.log(Foo(1).increment().hello()) // hello 2
+console.log(Foo(1).add(Foo(2)).hello()) // hello 3
+```
+
+- This deserves points. 
+  - I really wonder whether adding `class` to JS was an improvement. This shows what JS code should look like. 
+  - For people wondering why there is no `this` anywhere, the created object is just using the `x` that was passed in to the 'constructor' (arrow function). 
+  - Whenever it needs to be mutated, it returns a new object. The objects are immutable. 
+- The problem with technique is that each time `Foo` is invoked, it has to create all methods again. 
+  - With classes, the `prototype` methods are efficiently shared between instances without having to re-create then per instance. 
+  - Because the methods are re-created, you use up more memory as well. 
+  - For production purposes, it is better to use something similar to the answer by Tim and use a method to create a new class.
+- my answer is similar to the one here except it doesn't create new functions each time.
+
+``` JS
+const assoc = (prop, value, obj) =>
+  Object.assign({}, obj, {
+    [prop]: value
+  })
+
+const reducer = ($values, accumulate, [key, val]) => assoc(key, val.bind(undefined, ...$values), accumulate)
+
+const bindValuesToMethods = ($methods, ...$values) =>
+  Object.entries($methods).reduce(reducer.bind(undefined, ...$values), {})
+
+const prepareInstance = (instanceMethods, staticMethods = ({})) => Object.assign(
+  bindValuesToMethods.bind(undefined, instanceMethods),
+  staticMethods
+)
+
+// Let's make our class-like function
+const Right = prepareInstance(RightInstanceMethods, RightStaticMethods)
+
+const RightInstanceMethods = ({
+  chain: (x, f) => f(x),
+  map: (x, f) => Right(f(x)),
+  fold: (x, l, r) => r(x),
+  inspect: (x) => `Right(${x})`
+})
+
+const RightStaticMethods = ({
+  of: x => Right(x)
+})
+```
+
+- ref
+  - [ES6: call class constructor without new keyword](https://stackoverflow.com/questions/30689817/es6-call-class-constructor-without-new-keyword)
+
 ## Please stop using classes in JavaScript
 
 - Binding issues. 
@@ -390,7 +496,7 @@ Number instanceof Number //false
 - `(function(){}).name === ""` ，匿名函数表达式会返回true
   - Both have a name property
 - In Google's V8 and Firefox's Spidermonkey there might be a few microsecond JIST compilation difference, but ultimately the result is the exact same.
-- If we declare the variable as function funcName(){}, then the immutability of the variable is the same as declaring it with var。
+- If we declare the variable as `function funcName(){}`, then the immutability of the variable is the same as declaring it with var。
   - function expression can be const
   - function declaration name can be reassigned, too
 - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block ( `{ ... }` ) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 

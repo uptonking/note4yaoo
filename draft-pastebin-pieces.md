@@ -12,13 +12,15 @@ modified: '2020-07-30T13:52:49.242Z'
 
 ------  
 
-- TODO: components、datable、charts、builder
+- TODO: components、datable、chart
 
 - 知乎禁止转载的回答测试
   - https://www.zhihu.com/question/25950466/answer/31731502
   - 只有复制内容较长时才会提示申请转载，比如复制超过150字
 
 - webpack react fast refresh
+
+``` 
 
 "@pmmmwh/react-refresh-webpack-plugin": "^0.4.0-beta.7", 
 "react-refresh": "^0.8.3", 
@@ -28,12 +30,16 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 new ReactRefreshWebpackPlugin(), 
 
 'react-refresh/babel', 
+```
 
 - webpack 5移除了node模块兼容
+
+``` 
 
 "crypto-browserify": "^3.12.0", 
 "stream-browserify": "^3.0.0", 
 "vm-browserify": "^1.1.2", 
+```
 
 - class extends
 

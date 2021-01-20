@@ -11,6 +11,18 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## I’ve seen React libraries that return elements as objects with $$typeof, while others return them with React.createElement. 
+- https://twitter.com/jon_neal/status/1351512951337967619
+  - Are there performance considerations?
+- If you want to be compatible with React and Preact, publish it as JSX and let people transpile your library with their JSX pragma.
+- I would be wary(谨慎的，小心的) of both approaches here. 
+  - The $$typeof check will fail in environments without Symbol (react uses a numeric constant), 
+  - and both could change in a minor version (they're not part of the public API).
+- Though I'll say, if you genuinely need to produce cross-compatible VNodes, your codepen is pretty clever. 
+  - It will have a potentially large performance impact though, since property access into Virtual DOM elements will become polymorphic instead of monomorphic.
+  - Another option would be for the community to standardize on a "vdom provider" package that libraries could import, which users of a library would be required to alias to their desired implementation. 
+  - All of these solutions get more difficult when you factor in state/hooks/etc.
+
 - ## Underrated JSX feature; text interpolations without any extra syntax/quotes/whatever. So good.
 - https://twitter.com/threepointone/status/1350174511883300876
 - I used to hate this, but looking at it from a design perspective, 

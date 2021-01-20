@@ -182,10 +182,13 @@ f1(10);
     - but in web browsers, due to iframe and cross-window security considerations, it references a Proxy around the actual global object (which you can't directly access). 
     - This distinction is rarely relevant in common usage, but important to be aware of.
 
-- `Object()`
-  - The Object constructor creates an object wrapper for the given value
-  - If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value.
-  - If the **value is an object already**, it will return the value.
+## `Object()`
+
+- The Object constructor creates an object wrapper for the given value
+- If the value is `null` or `undefined`, it will create and return an empty object
+- Otherwise, it will return an object of a Type that corresponds to the given value.
+- If the **value is an object already**, it will return the value.
+- When called in a non-constructor context `Object` behaves identically to `new Object()`.
 
 ``` js
   const a = { aa: 1 };
@@ -193,6 +196,12 @@ f1(10);
   Object('a') === 'a' //false
   Object(1) === 1 //false
 ```
+
+- `Object.assign(target, ...sources)`
+  - method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
+  - shallow copies property values. If the source value is a reference to an object, it only copies that reference value.
+
+## array
 
 - `arr.slice()`
   - arr.slice(); // [0, end]
@@ -208,9 +217,6 @@ f1(10);
   - splice()与slice()的作用是不同的，splice()会直接对数组进行修改
 - `arr.reverse()`
   - reverse 方法颠倒数组中元素的位置，并返回该数组的引用
-- `Object.assign(target, ...sources)`
-  - method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
-  - shallow copies property values. If the source value is a reference to an object, it only copies that reference value.
 
 ## setTimeout vs setInterval
 

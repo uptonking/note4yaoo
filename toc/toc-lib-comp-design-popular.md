@@ -251,6 +251,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - Each component has a `dist/vars.css` file that contains declarations for each component-level variable
     - ref
       - https://github.com/adobe/spectrum-web-components
+        - 基于lit-element实现
       - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
         - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
         - React Spectrum splits each component into three parts: state, behavior, and the rendered component.

@@ -33,6 +33,7 @@ modified: '2021-01-01T20:09:10.218Z'
     - universal-design-tokens-schemas
   - https://github.com/sturobson/Awesome-Design-Tokens
     - A list of repos that contain a companies' Design Tokens
+  - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
 
 - 使用设计工具生成design tokens的优点
   - 不用写代码，拖拽设计即可完成

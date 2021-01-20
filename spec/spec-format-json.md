@@ -16,10 +16,15 @@ modified: '2020-10-15T13:41:01.275Z'
 
 - json-ext
   - json5
+    - Main JSON5 features: comments, trailing commas.
+  - json-more: dson, cson
   - [Amazon Ion](https://amzn.github.io/ion-docs/)
   - geo
     - geojson
     - topojson
+
+- 类json格式的操作
+  - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号
 
 # faq
 

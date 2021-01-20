@@ -11,6 +11,24 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## The JavaScript story for protobufs is SO painful.
+- https://twitter.com/BenLesh/status/1351618444286976000
+- I gave up on protobufs long time ago for the same reasons. 
+  - For me the most productive way to do that is to wrap/augment my transportable objects with a discriminator using `.toJSON` impl and revive them upon reception with `JSON.parse`. 
+  - This does not cover binary data use case though
+- Going from "I have a .proto file" to "I have a client that can communicate with a server" or "I have a Node.js server" is, frankly, an awful experience. 
+  - Nothing is straightforward, there's a lot of half-baked libraries that try to help, but aren't well supported.
+  - When you do finally generate JavaScript via the blessed libraries, what you end up with looks like something dreamed up by Java developers in 1999, rather than anything resembling what you could do with plain HTTP or WebSockets given modern JS and Node.
+  - There's so much more. Network tab debuggability, etc. etc.
+  - That one is definitely true, but isn't that a general problem with protobuffs, not limited to JavaScript implementation per se?
+- Not just painfully. 
+  - If you want to use it from browser there is no good option. 
+  - Large amount of code is generated if you went the grpc-web route. 
+  - I find ts-proto and grpc-gateway a middle ground. 
+  - But with this client deals with json not protos, but no extra client side code.
+- I'd thought that TypedArrays and DataViews made it simpler. 
+  - Support for binary data on the web is quite solid by now.
+
 - ## Just learned about how @excalidraw implements encryption by encrypting the data 
 - https://twitter.com/christoomey/status/1351234746139947013
   - and then putting the key in the hash of the URL (which browsers don't send with the request). 

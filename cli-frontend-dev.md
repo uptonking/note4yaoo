@@ -146,6 +146,19 @@ modified: '2021-01-01T22:14:19.469Z'
   - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
   - Babel plugin to emit decorator metadata like typescript compiler
 
+# postcss
+
+- PostCSS是CSS的处理器。
+  - 如果你以前使用过CSS的预处理器的话，比如Sass、LESS或者说Stylus。这几个是使用预编码来处理CSS，然后编译成线上需要使用的CSS。
+  - 而PostCSS刚好相反，他是处理你写好的CSS，让你的CSS更健康。
+  - 你可以使用JavaScript基于PostCSS核心的Core上编写任何你想要的一款功能的插件
+- PostCSS就是一个脚手架，基于这个脚手架，你可以更轻松的开发出各种编译css的工具。
+  - 而针对普通用户而言，可以自己选择各种PostCSS插件，来搭建自己的css编译流程。
+  - 比如我所习惯的CSS编译流程是这样的：
+    - CSS语法风格检查>CSS next语法兼容>添加私有属性前缀>添加IE的HACK>压缩
+  - 这个流程对应的PostCSS插件插件就是：
+    - stylelint>cssnext>autoprefixer>cssgrace>cssnano
+
 # 开发常用工具
 
 - Conventional Commits

@@ -7,7 +7,30 @@ modified: '2020-12-21T08:04:19.490Z'
 
 # web-components-blog
 
-# web-components-blog
+# [Declarative Shadow DOM_202009](https://web.dev/declarative-shadow-dom/)
+
+- Shadow DOM is one of the three Web Components standards, rounded out by HTML templates and Custom Elements. 
+  - These features combined enable a system for building self-contained, reusable components that integrate seamlessly into existing applications just like a built-in HTML element.
+  - Shadow DOM provides a way to scope CSS styles to a specific DOM subtree and isolate that subtree from the rest of the document
+- Until now, the only way to use Shadow DOM was to construct a shadow root using JavaScript
+  - An imperative API like this works fine for client-side rendering
+  - However, many web applications need to render content server-side or to static HTML at build time. 
+  - This can be an important part of delivering a reasonable experience to visitors who may not be capable of running JavaScript.
+- The justifications(解释；正当理由) for Server-Side Rendering (SSR) vary from project to project. 
+  - Some websites must provide fully functional server-rendered HTML in order to meet accessibility guidelines, 
+  - others choose to deliver a baseline no-JavaScript experience as a way to guarantee good performance on slow connections or devices.
+- Historically, it has been difficult to use Shadow DOM in combination with Server-Side Rendering because there was no built-in way to express Shadow Roots in the server-generated HTML. 
+  - There are also performance implications when attaching Shadow Roots to DOM elements that have already been rendered without them. 
+  - This can cause layout shifting after the page has loaded, or temporarily show a flash of unstyled content ("FOUC") while loading the Shadow Root's stylesheets.
+- Declarative Shadow DOM (DSD) removes this limitation, bringing Shadow DOM to the server.
+- A Declarative Shadow Root is a `<template>` element with a `shadowroot` attribute
+  - A template element with the `shadowroot` attribute is detected by the HTML parser and immediately applied as the shadow root of its parent element. 
+  - This gives us the benefits of Shadow DOM's encapsulation and slot projection in static HTML. 
+  - No JavaScript is needed to produce the entire tree, including the Shadow Root.
+- Declarative Shadow Dom also includes a new API for getting the HTML contents of an element. 
+  - The new `getInnerHTML()` method works like `.innerHTML`, but provides an option to control whether shadow roots should be included in the returned HTML
+- Components built using Custom Elements get automatically upgraded from static HTML. 
+  - With the introduction of Declarative Shadow DOM, it's now possible for a Custom Element to have a shadow root before it gets upgraded.
 
 # [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
 

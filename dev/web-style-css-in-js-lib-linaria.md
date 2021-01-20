@@ -9,18 +9,65 @@ modified: '2021-01-01T20:06:36.094Z'
 
 # guide
 
-- linaria缺点或局限
-  - No IE11 support when using dynamic styles in components with styled, since it uses CSS custom properties
-  - Dynamic styles are not supported with css tag. 
-  - Modules used in the CSS rules cannot have side-effects.
-    - css ` color: ${colors.text}; ` ;
-    - We recommend to move helpers and shared configuration to files without any side-effects.
-  - styled本身是一个代表高阶组件的方法，会导致每个styled组件都会多一层额外计算
+- linaria pros
+  - 基于css vars实现，现代浏览器的选择
+  - 支持styled和css两种方式
+
+- linaria cons
+  - 只支持react
+  - 不直接支持动态样式
+  - styled自身就是一个wrapper，引入了额外的计算
+    - styled本身是一个代表高阶组件的方法，会导致每个styled组件都会多一层额外计算
     - styled的css字符串TTLs就算不使用props中的theme或其他变量属性，也会有这层额外计算
     - 若要实现theme切换，需要自己再加一层高阶组件来传入props.theme或context.value.theme，会增加额外计算
   - 样式书写只支持css字符串样式，不直接支持object style syntax
     - It might be tricky to introduce this syntax to linaria since we are strongly basing on TaggedTemplateExpressions
     - 代码实现紧密依赖css字符串字面量的处理逻辑，实现style object难度较大
+  - No IE11 support when using dynamic styles in components with styled, since it uses CSS custom properties
+  - Dynamic styles are not supported with css tag. 
+  - Modules used in the CSS rules cannot have side-effects.
+    - css `color: ${colors.text};`.
+    - We recommend to move helpers and shared configuration to files without any side-effects.
+
+- **linaria生成样式的原理解析**
+- `styled`纯静态样式
+
+``` JS
+// 组件源码
+const MyLinariaTitle = styled.h1 `
+    color: teal;
+`;
+<MyLinariaTitle>Hello Linaria 202010</MyLinariaTitle>
+
+// bundle后
+var MyLinariaTitle =
+  /*#__PURE__*/
+  // 打包后也会存在执行styled函数计算样式的runtime，虽然runtime很小
+  // 注意这里会返回react组件，这里包含创建组件的过程，后面还有一次创建组件的过程
+  Object(linaria_react__WEBPACK_IMPORTED_MODULE_1__["styled"])("h1")({
+    name: "MyLinariaTitle",
+    class: "mm0as6w"
+  });
+
+react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(MyLinariaTitle, null, "Hello Linaria 202010");
+```
+
+- `css()`工具方法编写静态样式不存在runtime，比styled方式少了一层react组件
+
+``` JS
+// 组件源码
+const myH2class = css `
+    color: lightcoral;
+`;
+
+<h2 className={myH2class}>h2标题</h2>
+
+// bundle后
+var myH2class = "m13mnax5";
+react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
+  className: myH2class
+}, "h2\u6807\u9898");
+```
 
 # docs
 

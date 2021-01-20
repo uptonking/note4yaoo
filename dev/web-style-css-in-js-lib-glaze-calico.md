@@ -9,28 +9,71 @@ modified: '2021-01-01T20:06:24.571Z'
 
 # guide
 
-- glaze优点
+- glaze pros
   - 支持使用约束限制的值
   - 能编译出atomic css
 
-- glaze缺点
-  - 部分样式是动态生成的
+- glaze cons
+  - 设置样式通过类似style属性的sx
+  - 部分样式是动态生成的，这部分不支持静态提取
     - 支持treat file形式的静态样式，
     - 也支持在sx方法中书写带theme约束的样式值，但这部分样式会动态生成
-  - 要使用glaze的ThemeProvider传入theme，不能使用react-treat的TreatProvider传入theme
+    - To enable client-side injection of styles, wrap the entry point of your application with `StyleInjectorProvider`
+    - 使用glaze能利用design tokens好处，却无法提取静态css了，glaze本身的设计原则就是结合动态css的灵活性和静态css的高性能
+  - 要使用glaze定制的ThemeProvider传入theme
+    - 不能使用react-treat的TreatProvider传入theme
 
-- calico优点
+- calico pros
   - 支持直接使用约束限制的值，书写一次性样式也方便
-  - 支持预先编译出所有css，使用原子类的形式
-  - 基于treat和react-treat，所有主题的样式均可静态提取
+  - 支持预先静态提取出所有css，使用atomic css的形式
+  - 直接基于treat和react-treat，所有主题的样式均可静态提取
+    - theming不依赖css vars
 
-- calico缺点
-  - 必须使用提供的Box组件创建
-  - 以原子类的形式，预先静态提取所有样式时，经常生成的样式名超级多，适合大规模应用，不适合小应用
+- calico cons
+  - 依赖react-polymorphic-box，clsx，fp-ts
+  - 只支持react组件
+  - 必须使用提供的Box组件创建，这里实现了属性别名的解析，
+    - 设置样式使用类似style属性的styles属性
+    - Box组件基于react-polymorphic-box的Box，封装层次有点多
+  - 以原子类的形式，预先静态提取所有样式时，经常生成的样式名超级多，
+    - 适合大规模应用，不适合小应用
   - 实现层没有考虑使用css vars
 
-- To enable client-side injection of styles, wrap the entry point of your application with `StyleInjectorProvider`
-  - 使用glaze能利用design tokens好处，却无法提取静态css了，glaze本身的设计原则就是结合动态css的灵活性和静态css的高性能
+- **calico生成样式的原理解析**
+
+``` JS
+// 组件源码
+import { TreatProvider, useStyles } from 'react-treat';
+import { theme } from './theme1.treat';
+import * as styles from './MyTreatTitle.treat';
+import { Box } from './calico';
+
+export const CalicoBox = (props) => (
+  <Box
+      styles={{
+        color: 'red5',
+        margin: [1, 0],
+      }}
+    >
+        {props.children}
+    </Box>
+);
+
+<TreatProvider theme={theme}>
+  <CalicoBox>calico box 组件</CalicoBox>
+</TreatProvider>
+
+// 打包后
+var CalicoBox = function CalicoBox(props) {
+  return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _calico__WEBPACK_IMPORTED_MODULE_4__["Box"], {
+      styles: {
+        color: 'red5',
+        margin: [1, 0]
+      }
+    }, props.children);
+};
+```
 
 # glaze-docs
 
@@ -59,7 +102,7 @@ modified: '2021-01-01T20:06:24.571Z'
   - They have to be applied as a side effect, e.g. from a top-level layout component
 
 - How it works
-  - At first,              `sx` tries mapping themed values to statically generated CSS class names. 
+  - At first,                          `sx` tries mapping themed values to statically generated CSS class names. 
     - Unresolved rules are injected at runtime and detached when no components reference them anymore.
   - Transform each alias to its corresponding CSS property name or custom shorthand.
   - Resolve values from a scale if available.

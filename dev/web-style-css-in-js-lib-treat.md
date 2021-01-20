@@ -11,16 +11,14 @@ modified: '2021-01-01T20:06:40.149Z'
 
 # guide
 
-- treat-dev-tips
-  - useStyles/useClassName，底层会调用resolveStyles/ClassName(themeObj, treatStyles)
-    - 目的是在runtime根据当前theme对象选择对应的class名称
-    - the treat runtime caches the resolved styles object in memory
-
-- treat优点
+- treat pros
+  - 框架无关
+  - 内置支持theming，theming的实现不依赖css vars
+    - theme的定义使用js对象，复用十分简单方便
   - 可代替的传统css预处理器，极其灵活
-    - 一个style object样式对象既可以编译为一个类名，也可以编译为atomic形式的多个类名
+    - 一个style object样式对象既可以打包为一个类名，也可以打包为atomic形式的多个类名
 
-- treat缺点或局限
+- treat cons
   - 样式书写只支持style object的形式，不支持css字符串TTLs
   - 样式文件要写在单独的文件，如Button.treat.js，较繁琐
   - 未实现基于styleMap API的atomic CSS patterns，只提供了简单示例
@@ -34,6 +32,59 @@ modified: '2021-01-01T20:06:40.149Z'
   - 无法实现手动选择任意颜色，实时切换主题
     - 选择任意颜色的需求并不频繁，易与其他组件原有设计冲突，如冷暖色背景、对比度
     - 主流设计系统都是提供多套预定义的主题供选择切换
+
+- treat-dev-tips
+  - useStyles/useClassName，底层会调用resolveStyles/ClassName(themeObj, treatStyles)
+    - 目的是在runtime根据当前theme对象选择对应的class名称
+    - the treat runtime caches the resolved styles object in memory
+
+- **treat生成样式的原理解析**
+- 不包含theme的样式
+
+``` JS
+// 组件源码
+import * as styles from './MyTreatTitle.treat';
+const UnThemedTitle = (props) => <h2 className={styles.sBtn}>{props.children}</h2>;
+
+// bundle后
+var UnThemedTitle = function UnThemedTitle(props) {
+  return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    // sBtn在打包后的文件中是一个字符串变量
+    className: _MyTreatTitle_treat__WEBPACK_IMPORTED_MODULE_3__["sBtn"]
+  }, props.children);
+};
+```
+
+- 包含theme的样式
+
+``` JS
+// 组件源码
+import { TreatProvider, useStyles } from 'react-treat';
+import theme from './theme1.treat';
+import * as styles from './MyTreatTitle.treat';
+
+export const ThemedTitle = (props) => {
+  const styles1 = useStyles(styles);
+
+  return (
+    <h2 {...props} className={styles1.tBtn}>
+            {props.children}
+        </h2>
+  );
+};
+<TreatProvider theme={theme}>
+  <ThemedTitle>brand 主题 style</ThemedTitle>
+</TreatProvider>
+
+// 打包后
+var ThemedTitle = function ThemedTitle(props) {
+  // 这里已经是字符串了，这里会通过useTheme从context中取theme名称
+  var styles1 = Object(react_treat__WEBPACK_IMPORTED_MODULE_1__["useStyles"])(_MyTreatTitle_treat__WEBPACK_IMPORTED_MODULE_3__);
+  return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", _extends({}, props, {
+    className: styles1.tBtn // 这里只是从map中根据key取value的简单计算
+  }), props.children);
+};
+```
 
 # faq
 

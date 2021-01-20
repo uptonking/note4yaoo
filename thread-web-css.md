@@ -23,8 +23,14 @@ modified: '2021-01-08T17:15:13.906Z'
 - bitmaprenderer, feature policy, & web locks experimental
 
 # pieces
-
 - ## 
+
+
+- ## CSS conic-gradient borders 
+- https://twitter.com/argyleink/status/1282889809782927360
+- https://codepen.io/argyleink/pen/pogZxaZ
+
+
 - ## Did you know that you can make any element resizable, just like `<textarea>`?
 - https://twitter.com/denicmarko/status/1351431494733062145
 - it won't work without `p {overflow: auto;}`

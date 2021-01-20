@@ -8,6 +8,9 @@ modified: '2021-01-03T17:11:47.916Z'
 # ux-design-tailwind
 
 # guide
+- ref
+  - [Theme Configuration](https://tailwindcss.com/docs/theme)
+  - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
 
 # pieces
 
@@ -19,7 +22,7 @@ modified: '2021-01-03T17:11:47.916Z'
 
 # discuss
 
-- ## [Why Tailwind Isn't for Me](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)
+- ## [Why Tailwind Isn't for Me_202101](https://dev.to/jaredcwhite/why-tailwind-isn-t-for-me-5c90)
 - The problem I keep running into however is this increasing popular sentiment that Tailwind is the future (man). It's the way things should be done.
 - Reason 1: Tailwind promotes ugly-ass HTML.
 - Reason 2: @apply is fundamentally incompatible and non-standard (and largely unnecessary).
@@ -28,6 +31,60 @@ modified: '2021-01-03T17:11:47.916Z'
 - Reason 5: Finally, Tailwind encourages div/span-tag soup.
   - custom elements are fully supported and enabled by modern browsers.
 - Conclusion: If you like Tailwind, use it! But don't try to convince me it's the future.
+
+- ## [Why I Love Tailwind_202012](https://mxstbr.com/thoughts/tailwind/)
+- We have had atomic CSS frameworks for almost a decade but none of them have been as critically acclaimed as Tailwind. 
+- What makes it different?
+- The key to Tailwind's popularity is the painstakingly constructed system of design tokens at the core of the framework
+  - The system's carefully selected constraints give developers just the right guardrails(护栏，扶栏). 
+  - They make it obvious whether a choice is good or bad by offering only discrete steps.
+- However, we have learned over the past decade that atomic CSS has downsides:
+  - Users still have to add a separate setup for the custom CSS they inevitably need (coined "bailwind"). 
+    - You cannot get by on just Tailwind in the real world. 
+    - Not having a dedicated place for custom styles in the same system can cause maintenance issues down the line.
+  - Due to file-size considerations, Tailwind does not include all variants (e.g. hover:, sm:) for all utilities by default. 
+    - It leaves it to you to manually configure which ones you need for every single CSS property.
+  - Atomic CSS is not ideal for performance. 
+    - No tooling can extract the per-page critical CSS, so you end up shipping more CSS to the browser than necessary. 
+    - The bigger and more dynamic the app, the more unnecessary code you will ship.
+- Atomic css was created before React was released and was intended for use in template-based user interfaces, including Rails and PHP. 
+  - It was never designed for functional component-based UI and doesn't take advantage of this new paradigm.
+- Tailwind without the downsides
+  - You can use Tailwind's marvelous system and fantastic developer experience without the downsides of atomic CSS.
+  - How? twin.macro.
+- You get to use Tailwind's system and developer experience and take advantage of all the benefits of CSS-in-JS
+  - Extending your elements with custom styles is as simple as using the css prop, no extra separate setup required to "bailwind"
+  - You can use all variants in all combinations with all utilities allowing for even more expression within the system.
+  - You get fully automatic critical CSS extraction and code splitting.
+    - Users will only load exactly the styles they need for the page they requested — nothing more and nothing less! 
+    - CSS performance does not get better
+
+- ## [Why Tailwind CSS_202010](https://dev.to/swyx/why-tailwind-css-2o8f)
+- I once complained to @samselikoff that Tailwind caused ugly unreadable classname soup and said zero-runtime CSS-in-JS could do more with a lower learning curve.
+  - I was wrong on 2 counts: Tailwind is easier to learn than I thought, and CSSinJS's flexibility can be a negative.
+- "System" Values reduce Magic Numbers: 
+  - Decrease hardcoded values, Increase consistency.
+- Responsive Design in the Browser: 
+  - Prototype in browser, copy and paste to codebase, using consistent system values.
+- Inlining Styles Optimizes for Change: 
+  - Make code easy to delete and move, by eliminating all reliance on the cascade.
+- Inlining Styles reduces Naming: 
+  - Ship faster by solving one of the known hard problems in Computer Science!
+- Zero JS & Sublinear Scaling of CSS: 
+  - Scale at O(log N), not O(N).
+- Utility-First, not Utility-Only: 
+  - Respect the Principle of Least Power, use CSS-in-JS only when warranted.
+- The Bad Parts
+- Is Tailwind perfect? No, of course not. But the good outweighs the bad
+  - Setting up Tailwind means fiddling with build tooling.
+  - The Tailwind API surface area is big and constantly growing.
+  - The classnames do get rather verbose. 
+  - CSS abstraction leak 
+    - Tailwind let's you use classes like inline styles, but they are NOT inline styles in one critical respect - what happens when they clash
+    - The order of classes generated by Tailwind matters, even though it is invisible to you. This is an abstraction leak.
+
+- discussion
+  - https://twitter.com/swyx/status/1312603851581652994
 
 - ## [如何评价CSS框架TailwindCSS？](https://www.zhihu.com/question/337939566/answers/updated)
 - 优点就不说了，简单说一下缺点。

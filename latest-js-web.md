@@ -12,6 +12,7 @@ modified: '2020-09-26T12:52:33.493Z'
 # latest-web
 
  
+
 - server rendering/isomorphic
 
 - wasm vs webgpu
@@ -94,18 +95,10 @@ modified: '2020-09-26T12:52:33.493Z'
   - 拖拽搭建：craft.js、react-page
   - 产品搭建：react-chart-builder、amCharts-editor、alibaba-formily-editor
 
-
-
 - tree shaking
   - Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. 
   - It relies on the static structure of ES2015 module syntax, i.e. import and export
-  - example
-
-``` js
-  import * as Foo from './foo'; // namespace import
-  import { bar, bar2, bar3 } from './foo'; // named import
-```
-
-  - with a modern webpack setup, the two will generate the same compiled/transpiled JS
-  - ref
-    - https://medium.com/unsplash/named-namespace-imports-7345212bbffb
+  - [example](https://medium.com/unsplash/named-namespace-imports-7345212bbffb)
+    - `import * as Foo from './foo';` // namespace import
+    - `import { bar, bar2, bar3 } from './foo';` // named import
+    - with a modern webpack setup, the two will generate the same compiled/transpiled JS

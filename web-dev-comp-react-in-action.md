@@ -146,13 +146,22 @@ modified: '2020-12-21T08:03:56.709Z'
     - 最好提供 cjs/esm/umd 等三种形式的模块供不同使用情景使用
   - ref
     - https://jxnblk.com/blog/patterns-for-style-composition-in-react/
-- tips
-  - 为了tree-shaking和明确语义，多使用named import/export，同时支持default
-    - 不使用dynamic import，不方便tree-shaking
-    - esm3种import:named,namespace,default
-    - esm2种export:named,default
-    - commonjs/cjs1种import和export: require, module.exports
-    - antd开发了专用babel插件将import转换成多个named import
+
+# tips
+
+- 为了tree-shaking和明确语义，多使用named import/export，同时支持default
+  - 不使用dynamic import，不方便tree-shaking
+  - esm支持3种import:named, namespace, default
+  - esm支持2种export:named, default
+  - commonjs/cjs支持1种import和export: require, module.exports
+  - antd开发了专用babel插件将import转换成多个named import
+- [Consider banning default exports._201711](https://twitter.com/housecor/status/935182336085430275)
+  - Consider banning default exports. Why? 
+    1. Fights tree shaking
+    2. Inhibits refactoring. default as name is less clear
+    3. IDEs can automatically add import statements for named imports.
+  - ref
+    - [JavaScript debate : named imports VS default imports](https://mindsers.blog/en/javascript-named-imports-vs-default-imports/)
 
 # pieces
 

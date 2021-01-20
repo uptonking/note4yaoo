@@ -7,6 +7,21 @@ modified: '2021-01-13T08:27:13.961Z'
 
 # thread-ux-toc
 
+# themes-in-colors
+
+- blue
+  - https://www.artstation.com/artwork/g2J64x
+    - 深黑蓝，暗黑科技感
+
+- green
+  - https://sktthemesdemo.net/natureone/
+    - https://www.sktthemes.org/shop/nature-wordpress-theme/
+    - 森林绿
+- green-sites
+  - https://www.spotify.com/us/
+  - https://emuiers.blogspot.com/2020/08/emui-10-themes.html
+    - 华为202008
+
 # toc
 
 - ## 

@@ -25,8 +25,6 @@ modified: '2020-12-23T09:54:10.963Z'
   - Currently, I mark the module as usedInUnknownWays to prevent tree shaking the exports on exposed moduled/files
     - 这里是折中方案，只摇树去掉无关exports
 
-- 前后端一体化方案
-
 - bootstrap component vs react component
 
 - 哪些业务计算相关的代码适合放在前端，哪些适合放在服务端
