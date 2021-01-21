@@ -11,6 +11,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## How to get the best image performance (Updated 2021)
+- https://twitter.com/leeerob/status/1352264153411497993
+1. Use `width` and `height` to prevent layout shift
+2. Lazy-load images as they enter the viewport
+3. Use modern image formats (WebP, AVIF)
+4. Serve correctly sized images using `srcset` .
+5. Provide blur-up placeholders
 
 - ## using Intersection Observer on a handful of elements on a page
 - https://twitter.com/ChrisFerdinandi/status/1352040366548135937
@@ -24,7 +31,7 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## The JavaScript story for protobufs is SO painful.
 - https://twitter.com/BenLesh/status/1351618444286976000
 - I gave up on protobufs long time ago for the same reasons. 
-  - For me the most productive way to do that is to wrap/augment my transportable objects with a discriminator using `.toJSON` impl and revive them upon reception with `JSON.parse`. 
+  - For me the most productive way to do that is to wrap/augment my transportable objects with a discriminator using `.toJSON` impl and revive them upon reception with `JSON.parse` . 
   - This does not cover binary data use case though
 - Going from "I have a .proto file" to "I have a client that can communicate with a server" or "I have a Node.js server" is, frankly, an awful experience. 
   - Nothing is straightforward, there's a lot of half-baked libraries that try to help, but aren't well supported.

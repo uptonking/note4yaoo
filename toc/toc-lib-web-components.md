@@ -9,6 +9,11 @@ modified: '2020-11-13T07:33:43.521Z'
 
 # web-components-framework
 
+- https://github.com/atomicojs/atomico
+  - https://atomicojs.github.io/
+  - /463Star/MIT/202101/js
+  - a micro-library for creating webcomponents using only functions, hooks and virtual-dom.
+
 - https://github.com/ampproject/amphtml
   - AMP is a web component framework for easily creating user-first websites, stories, ads, emails and more.
 

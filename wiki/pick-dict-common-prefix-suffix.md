@@ -11,7 +11,9 @@ modified: '2020-11-05T14:00:53.352Z'
 
 - -esque/-like
   - 似的，类... 风格的
-
+- -itis
+  - 过度的，沉迷于；…病
+  - televisionitis 电视迷
 # prefix
 
 - octo-

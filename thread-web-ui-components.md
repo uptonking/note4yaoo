@@ -13,6 +13,10 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## I've been experimenting a lot with "pure CSS theming" and composition with CSS variables
+- https://twitter.com/MaximeHeckel/status/1352289351024181250
+- One of the cool things I did [here](https://twitter.com/MaximeHeckel/status/1343589258859319298) was to base this system solely on CSS variables: bye-bye ThemeProvider!
+
 - ## High compatability and longevity pattern libraries shouldn’t include JavaScript, just document the states JavaScript can affect. 
 - https://twitter.com/heydonworks/status/1351478317183074304
   - Document the toggle button pressed and unpressed, and what HTML/CSS these states need.

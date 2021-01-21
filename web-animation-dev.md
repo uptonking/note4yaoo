@@ -9,15 +9,20 @@ modified: '2021-01-01T20:12:36.651Z'
 
 # guide
 
+- 动画风格
+  - 偏重形状渐变
+  - 偏重进出场的切换效果
+  - 偏重线划勾勒，如逐字书写效果、[形状勾勒效果](https://dai-shi.github.io/excalidraw-animate/#library=https://libraries.excalidraw.com/libraries/pclainchard/it-logos.excalidrawlib)
+
 - 根据应用场景和已有实现，选择最合适的动画实现方式
+  - 对于普通ui切换效果，使用css transition或animation
+  - 对于连续执行，或依次执行，或包含3种以上效果的动画，采用js动画
+  - 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式
+  - 具体实现方式在github上的热度
 - 动画实现的类型
   - 基于physics，如react-spring, react-motion
   - 基于逐帧动画和时间序列，如keyframe
   - 基于FLIP
-- 对于普通ui切换效果，使用css transition或animation
-- 对于连续执行，或依次执行，或包含3种以上效果的动画，采用js动画
-- 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式
-- 具体实现方式在github上的热度
 
 - all in js
   - 灵活性更强，控制力更多

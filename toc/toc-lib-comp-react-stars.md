@@ -21,6 +21,12 @@ modified: '2021-01-12T18:49:02.623Z'
   - https://reakit.io/
   - Toolkit for building accessible rich web apps with React.
 
+- ref
+  - [Nutrition Cards for Accessible Components](https://davatron5000.github.io/a11y-nutrition-cards/)
+  - A11Y Nutrition Cards is an attempt to digest and simplify the accessibility expectations when it comes to component authoring. 
+  - Based on the WAI ARIA Authoring Practices Guide.
+  - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
+
 # starred
 
 - https://github.com/kunukn/react-collapse
