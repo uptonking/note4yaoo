@@ -10,6 +10,10 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 
 - ## 
+- ## Am I right in thinking StrictMode’s second render swallows console.logs?
+- https://twitter.com/mattgperry/status/1352000290241859590
+- Yeah, I believe they added this to not pollute the console.
+- Ye, this is imho actively harmful - duplicated console.logs might be confusing at first but they dont lie and actually incentivize people to think about purity, concurrent mode etc
 
 - ## I’ve seen React libraries that return elements as objects with $$typeof, while others return them with React.createElement. 
 - https://twitter.com/jon_neal/status/1351512951337967619

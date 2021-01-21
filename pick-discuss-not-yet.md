@@ -1,11 +1,11 @@
 ---
-title: pick-zhihu-not-yet
-tags: [faq, zhihu]
+title: pick-discuss-not-yet
+tags: [discuss, faq, zhihu]
 created: '2020-12-06T10:05:39.143Z'
-modified: '2021-01-06T09:23:53.911Z'
+modified: '2021-01-21T04:10:30.614Z'
 ---
 
-# pick-zhihu-not-yet
+# pick-discuss-not-yet
 
 # faq-not-yet
 

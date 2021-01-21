@@ -1,23 +1,23 @@
 ---
-title: pick-zhihu-cost-most
-tags: [housing, zhihu]
+title: pick-discuss-cost-most
+tags: [car, discuss, housing, zhihu]
 created: '2021-01-06T02:15:12.675Z'
-modified: '2021-01-06T18:58:49.483Z'
+modified: '2021-01-21T04:08:42.358Z'
 ---
 
-# pick-zhihu-cost-most
+# pick-discuss-cost-most
 
 # faq-not-yet
 
 # faq
 
-##
+## 
 
 ## [如何看待链家删掉上海12月份各小区成交记录?](https://www.zhihu.com/question/438436352)
 
 - 不止12月份的，从7月份开始很多成交就不在APP里显示了，我之前看了好几个小区都是房源很快被链家卖掉但是APP里查不到。
-  - 其实你如果用的久的话还能发现最近很多降价了的房源也被链家下了，留着的都是微涨或大涨的
-- 链家/贝壳受到国家强管控，很多时候，页面上能展示什么，不能展示什么，都不是自己说了算的。
+  - 你如果用的久还能发现最近很多降价了的房源也被链家下了，留着的都是微涨或大涨的
+- 链家/贝壳受到国家强管控，很多时候，页面上能展示不能展示什么，都不是自己说了算的。
   - 利益相关：链家/贝壳后端工程师
 - zf已经连续n年出台措施啦，再涨别怪zf，怪就怪境外势力吧
 

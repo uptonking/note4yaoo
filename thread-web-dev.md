@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+
+- ## using Intersection Observer on a handful of elements on a page
+- https://twitter.com/ChrisFerdinandi/status/1352040366548135937
+  - is it better to create a new observer for each one, or use the observer.observe() method to attach multiple elements to one observer?
+- Group by callback.
+  - If your callback will include a bunch of if else matches to parse through  the results each time to filter which elements intersectionality to act on, you better have different observers.
+- Also note that the callback is called immediately on the observer being instantiated, with initial status on all matching elements
+
+- [Should IntersectionObserver represent the observation of a single target Element?](https://github.com/w3c/IntersectionObserver/issues/81)
+
 - ## The JavaScript story for protobufs is SO painful.
 - https://twitter.com/BenLesh/status/1351618444286976000
 - I gave up on protobufs long time ago for the same reasons. 

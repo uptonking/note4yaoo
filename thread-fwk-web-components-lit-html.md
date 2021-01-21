@@ -11,6 +11,15 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## Element Worklet is my proposal for threaded DOM: Custom Elements in threads for performance isolation.
+- https://twitter.com/_developit/status/1351953283447984131
+  - I built a prototype using worker-dom
+  - https://glitch.com/edit/#!/element-worklet
+- Very interesting. What would be the resource cost of spinning up an Element Worklet? Unlike iframes, devs might be tempted to make very liberal use of such a feature
+  - This is actually something that is already nicely accounted for by the Worklets spec: 
+  - addModule() doesn't instantiate a thread, it only creates one or more Realms in which the given worklet will be executed. 
+  - An implementation can choose to pool or share a single thread, etc.
+
 - ## Web Components people know that you can use semantic HTML5 with JS frameworks right? 
 - https://twitter.com/swyx/status/1351432826751651849
   - I hear a lot of disingenuous strawman arguments against "div-itis".

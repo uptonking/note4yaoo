@@ -14,6 +14,7 @@ modified: '2021-01-01T20:09:10.218Z'
     - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
   - 若手写各个组件的样式
     - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
+    - 很多现有的设计系统采用这种方式
 
 # guide
 
@@ -46,6 +47,13 @@ modified: '2021-01-01T20:09:10.218Z'
     - 具体业务场景对灵活性要求过高，频繁修改自动生成的代码太繁琐
     - 若工具生成的代码是最终要用的，则可考虑使用工具
     - 若工具生成的代码是中间代码，之后会基于中间代码解析转换，则慎用，多考虑
+
+- design-tokens-doc设计
+  - 变量名称和描述，可选实现预览
+  - 重要tokens的独立文档
+  - design tokens editor
+    - [效果类似在线编辑预览](https://twitter.com/Una/status/1352109495565090817)
+
 
 - https://github.com/system-ui/theme-specification
   - The theme object is intended to be a general purpose format for storing design system style values, scales, and/or design tokens.

@@ -1,13 +1,15 @@
 ---
-title: pick-zhihu-world-countries-regions
-tags: [countries, world, zhihu]
+title: pick-discuss-world-countries-regions
+tags: [countries, discuss, world, zhihu]
 created: '2021-01-19T12:18:15.152Z'
-modified: '2021-01-19T16:21:06.411Z'
+modified: '2021-01-21T04:10:47.801Z'
 ---
 
-# pick-zhihu-world-countries-regions
+# pick-discuss-world-countries-regions
 
-##
+# faq
+
+## 
 
 ## [美国穷人大量病死对美国富人真的有好处吗？](https://www.zhihu.com/question/433727511)
 

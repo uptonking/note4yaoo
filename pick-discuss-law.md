@@ -1,14 +1,15 @@
 ---
-title: pick-zhihu-law
-tags: [law, zhihu]
+title: pick-discuss-law
+tags: [discuss, law, zhihu]
 created: '2020-12-23T08:47:42.063Z'
-modified: '2020-12-23T08:49:02.458Z'
+modified: '2021-01-21T04:10:21.278Z'
 ---
 
-# pick-zhihu-law
+# pick-discuss-law
 
 # faq
-##
+
+## 
 
 ## [一个诉讼案件，A律师收费5000元， B律师收费20000元，你会选择哪个律师呢？](https://www.zhihu.com/question/437770327)
 

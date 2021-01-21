@@ -23,18 +23,23 @@ modified: '2021-01-08T17:15:13.906Z'
 - bitmaprenderer, feature policy, & web locks experimental
 
 # pieces
+
 - ## 
 
+- ##  `--bg: ; /* with a space */` vs `--bg:; /* no space */` .
+- https://twitter.com/MiriSuzanne/status/1352055999771787264
+  - for `body { background: var(—bg, green); }` .
+  1. A value of ‘ ‘ is valid but not a color, no background
+  2. No value (eg ‘guaranteed-invalid’), fallback to green
+- `--bg:;` is not a valid declaration, and is *ignored*
 
 - ## CSS conic-gradient borders 
 - https://twitter.com/argyleink/status/1282889809782927360
 - https://codepen.io/argyleink/pen/pogZxaZ
 
-
-- ## Did you know that you can make any element resizable, just like `<textarea>`?
+- ## Did you know that you can make any element resizable, just like `<textarea>` ?
 - https://twitter.com/denicmarko/status/1351431494733062145
 - it won't work without `p {overflow: auto;}`
-
 
 - ## I remember hearing that it was safer to use numbered font-weights (eg. font-weight: 700 instead of font-weight: bold) because of a browser rendering bug.
 - https://twitter.com/JoshWComeau/status/1351179391938813963

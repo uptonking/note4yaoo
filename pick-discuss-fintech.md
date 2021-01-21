@@ -1,15 +1,22 @@
 ---
-title: pick-zhihu-fintech
-tags: [fintech, zhihu]
+title: pick-discuss-fintech
+tags: [discuss, fintech, zhihu]
 created: '2021-01-06T02:15:12.675Z'
-modified: '2021-01-06T18:58:49.483Z'
+modified: '2021-01-21T04:10:15.256Z'
 ---
 
-# pick-zhihu-fintech
+# pick-discuss-fintech
 
 # pieces
  
-##
+## 
+
+## [股票涨跌的原理是什么？](https://www.zhihu.com/question/32023399)
+
+- 股票并不是经济学上所说的商品，它只是一种有价证券，但是仍然适用供给、需求理论。
+- 股票价格涨跌的核心原因就是：股票的供给与需求的变化。
+  - 在股票市场上，某个时间流通股的数量是一定的，也就是在某个时间股票的供给数量是一定的。
+  - 那么，股票市场上买一只股票的人越多，对这只股票的需求量越大，那么股票的价格就会上涨；反之，股票的价格下降。
 
 ## [同一个名字基金的后缀A和C有什么差别吗?](https://www.zhihu.com/question/374874658)
 
