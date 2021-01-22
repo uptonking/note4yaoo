@@ -11,6 +11,17 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## CE v1 is not a spec without a way to extend existing HTML elements
+- https://twitter.com/Rich_Harris/status/1352327436512485377
+- To be fair it's really only a more specific version of an issue Seb Markbåge identified long ago
+  - because of WCs we're no longer able to change HTMLElement without risking breaking the web
+- With is=, the issue extends to every subclass of HTMLElement. We need to worry about what scripts with is= might be defining or responding on each element.
+- looking forward to have *any* way to extend builtins via the platform, meanwhile I've done that for years and never, *ever*, had an issue in doing so.
+  - if a new attribute lands on the root prototype, in case it collides with *my* prototype, it'd be *my duty* to fix *my class*
+  - what bugs me, is that HTMLElement is exactly on the same boat: if *anything* new lands on its prototype, or any of its ancestors prototypes, non builtin Custom Elements are *as broken*, and hazardous, as anything else.
+  - Events, Node accessors, and so on + HTML5 changes rarely.
+  - meanwhile, the Web is extensible (hence broken?) by default, and all frameworks to date trashed here and there attributes without data- prefixes; Custom Elements v1 is 75% fully supported, and WebKit needs a polyfill (luckily small enough), and no progress is happening => FWs win
+
 - ## Element Worklet is my proposal for threaded DOM: Custom Elements in threads for performance isolation.
 - https://twitter.com/_developit/status/1351953283447984131
   - I built a prototype using worker-dom

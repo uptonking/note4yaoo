@@ -9,19 +9,19 @@ modified: '2021-01-02T18:08:07.806Z'
 
 # guide
 
-- s-d优点
+- s-d pros
   - 方便将design tokens输出到各个平台
 
-- s-d缺点
-  - 暂不支持输出文件的值中包含`var(--name)`形式的css变量
-  - 不直接支持pseudo class的类，需要自己实现
+- s-d cons
+  - 暂不支持输出文件的值中包含`var(--name)`形式的css变量，可自己实现
+  - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
 
 - tips
-  - 先基于theme specification定义输出design
+  - 先基于theme specification定义输出design tokens的类别和名称
     - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
   - 可以将每个组件的design tokens输出到单独的文件，利用自定义filter
   - 可以输出扁平化无嵌套的样式变量，
-    - 也可以输出时设置最外层的选择器名，如:root{}`, 或 `.dark-theme{}`
+    - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
   - 输出的值也可以使用 css vars
 
 - roadmap
@@ -29,11 +29,16 @@ modified: '2021-01-02T18:08:07.806Z'
 
 # faq
 
+- s-d vs theo
+  - Theo uses json or yaml and takes a file-in file-out strategy. 
+  - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
+  - 考虑集成：theming, css in js
+
 - 用style-dictionary来写所有组件的样式，还是只书写通用变量
   - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
-  - 若书写tokens，则需要再用sass来书写组件样式
+  - 若只书写tokens，则需要再用sass来书写组件样式
 
-- 是否该用工具除了自动生成design tokens外，还要自动生成所有组件的样式？
+- 是否该用工具生成design tokens外，还生成所有组件的样式？
   - 若自动生成组件样式
     - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
     - 不支持 伪类
@@ -47,14 +52,17 @@ modified: '2021-01-02T18:08:07.806Z'
   - [Feature/css var deep_202008](https://github.com/amzn/style-dictionary/pull/428)
     - This one also currently supports CSS variables flat, split out dark tokens
 
-- 是否要在输出样式的顶层，再加上一层`:root{}`, 或 `.dark-theme{}`
-  - tokens一般要在具体组件的scss中使用，
+- 是否要在输出样式的顶层，再加上一层`:root{}`或 `.dark-theme{}`
+  - tokens一般要在具体组件的scss中使用
   - [can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
     - You could write a custom format that does this too if you can't wait for that change to be made into the core library
 
 - 不是输出一个大文件，而是输出各小文件
   - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
     - example of automatically generating 1:1 token files based on a custom filter.
+
+- 如何生成tokens的简单说明文档，类似theo输出html format
+  - [Style guide? ](https://github.com/amzn/style-dictionary/issues/477)
 
 # pieces
 

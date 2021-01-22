@@ -11,6 +11,7 @@ modified: '2021-01-17T07:14:21.293Z'
   - react组件的实现偏向all in js，所以实现在线编辑只需一个编辑器
   - 传统ui组件如bootstrap/web-comp，需要考虑html, css, js三部分，所以实现在线编辑需要多个编辑器，类似codepen
   - react-live进一步的研发方向应该考虑类似storybook的controls
+  - 考虑支持多种实现的切换，如react/vue/vanillajs，此时可考虑仅展示不编辑
 
 # markdown-live-doc
 
@@ -131,5 +132,6 @@ modified: '2021-01-17T07:14:21.293Z'
   - Live code editing with Browserify and React
 
 # more
+
 - https://github.com/sueddeutsche/editron
   - Editron is a JSON-Editor, which takes a JSON-Schema to generate an HTML form for user input and live validation

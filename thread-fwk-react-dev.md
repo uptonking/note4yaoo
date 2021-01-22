@@ -11,6 +11,37 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Use `React.useMemo` instead of multiple `React.useCallback` s to create an object of handler functions in a custom hook. 
+- https://twitter.com/kyleshevlin/status/1352639659147456512
+  - [memoizedHandlers.js](https://gist.github.com/kyleshevlin/08a2deb904b79077e46966567ccabf06)
+  - Makes it super simple to make a whole bunch of methods stable, preventing unnecessary rerenders
+
+``` JS
+function useBool(initialState = false) {
+  const [state, setState] = React.useState(initialState)
+
+  // Instead of individual React.useCallbacks gathered into an object.
+  // Let's memoize the whole object. Then, we can destructure the
+  // methods we need in our consuming component.
+  const handlers = React.useMemo(() => ({
+    setTrue: () => { setState(true) },
+    setFalse: () => { setState(false) },
+    toggle: () => { setState(s => !s) },
+    reset: () => { setState(initialState) },
+  }), [initialState])
+
+  return [state, handlers]
+}
+```
+
+- But why not just call setState? It's not normally getting redefined, is it?
+  - The purpose of the hook is to expose an API.
+  - We don’t want the consumer to be able to do just anything with setState, such as pass it a non-Boolean value in this case.
+- Definitely really nice. It’s type safe and prevents inline functions to be used. I just replaced every bool state in our new project at work with that pattern 
+- Nice little pattern right here, never thought about callbacks this way before. Not even sure why `useCallback` is favored over `useMemo(() => …)`. The former seems to cause more confusion than the problems it solves.
+- Neat. I'd still `useCallback` for functions with non-overlapping dependencies. 
+  - Otherwise, other callbacks would get recomputed unnecessarily.
+
 - ## re: context vs redux debate
 - https://twitter.com/dai_shi/status/1351351537751126018
   - If one would compare useReducer+useContextSelector vs React-Redux, it would clarify what Redux and its family offer.

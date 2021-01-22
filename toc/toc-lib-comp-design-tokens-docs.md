@@ -15,12 +15,12 @@ modified: '2021-01-11T18:34:20.713Z'
 - 设计样式时theming可参考
   - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
-- 根据style-dictionary的输出，自动生成简单的单页文档
+- 根据style-dictionary的输出，自动生成简单的单页文档，类似theo输出html
 
 # themeable design docs
 
 - looker /gatsby
-  - https://components.looker.com/system/spacing/
+  - https://components.looker.com/foundations/spacing
 - mineral ui /react
   - https://mineral-ui.netlify.app/tokens
   - https://mineral-ui.netlify.app/color
@@ -84,23 +84,23 @@ modified: '2021-01-11T18:34:20.713Z'
 - pico
   - https://github.com/picocss/pico
   - https://picocss.com/
+- fluid
+  - https://www.engie.design/fluid-design-system/design-tokens/
+- spectre
 - infor
   - https://design.infor.com/resources/design-tokens
   - https://github.com/infor-design/design-system/tree/master/design-tokens
-- backpack
-  - https://backpack.github.io/tokens/animation/
-  - https://github.com/Skyscanner/backpack
 - opentable
   - https://opentable.github.io/design-tokens/
-  - Colors Typography Grids Spacing Borders Breakpoints Shadows Icons Icons (theme)
+  - Colors Typography Grids Spacing Borders Breakpoints Shadows Icons Icons(theme)
 - garden
   - https://garden.zendesk.com/design/color
 - grommet
   - https://v2.grommet.io/color
-- fluid
-  - https://www.engie.design/fluid-design-system/design-tokens/
-- spectre
   - https://picturepan2.github.io/spectre/elements/typography.html
+- backpack
+  - https://backpack.github.io/tokens/spacing
+  - https://github.com/Skyscanner/backpack
 
 - gov
   - https://designsystem.digital.gov/design-tokens/
@@ -114,7 +114,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://github.com/picturepan2/spectre/tree/master/docs
 - Auro Design System
   - https://auro.alaskaair.com/color/core-digital-palette-usage
-  - 开源的是api网页源码，设计网页源码未找到
+  - 开源的是api doc源码，设计网页源码未找到
 - bulma /jekyll
   - https://bulma.io/documentation/overview/colors/
   - https://github.com/jgthms/bulma/tree/master/docs

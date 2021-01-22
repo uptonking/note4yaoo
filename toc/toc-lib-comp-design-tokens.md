@@ -79,17 +79,40 @@ modified: '2021-01-01T22:09:59.545Z'
 
 # theo-examples
 
+- theo tokens文档展示的模版
+  - 最新文档：polaris、schedio
+  - 旧版文档：localiza、orbit、pagnet、siku、sparkpost-matchbox
+
 - https://github.com/spartanbio/schedio-tokens
   - https://spartanbio.github.io/schedio-tokens/
   - https://polaris-tokens.herokuapp.com/
+- https://github.com/SparkPost/design-tokens
+  - https://sparkpost.github.io/design-tokens/
+  - https://design.sparkpost.com/design/tokens/
+  - https://github.com/SparkPost/matchbox/tree/main/packages/design-tokens
+  - SparkPost's design system tokens
+  - 新版和旧版实现，都使用了theo
 - https://github.com/Pagnet/design-tokens
   - https://pagnet.github.io/design-tokens/
   - Design tokens for the Blu design system
+
+ 
+
 - https://github.com/kiwicom/orbit-design-tokens
-  - Design tokens store visual design attributes.
   - https://github.com/kiwicom/orbit/tree/master/packages/orbit-design-tokens
-- https://github.com/guigonzalez/designtokens
-  - Design Tokens utilize o Theo
+  - https://orbit.kiwi/design-tokens/
+  - Design tokens store visual design attributes.
+  - 属性名使用的是camelCase
+- https://github.com/sikucss/siku
+  - Siku’s CSS
+
+- more-theo
+  - https://github.com/guigonzalez/designtokens
+  - https://github.com/voorhoede/deltares-design-tokens
+  - https://github.com/inspark/inspark-design-system-web
+  - https://github.com/ubergrape/grape-ds
+  - https://github.com/wuerthcs/aurora-design-token
+  - https://github.com/alanfernandesti/localiza-designtokens
 
 # design-tokens-tools
 
@@ -146,3 +169,7 @@ modified: '2021-01-01T22:09:59.545Z'
     - A cli tool makes your Figma and local design token stay in sync
   - https://github.com/mikaelvesavuori/figmagic-example
     - Using Figmagic with Webpack 4, React 16, Styled Components.
+
+- https://github.com/amzn/sketch-constructor
+  - Read/write/manipulate Sketch files in Node without Sketch plugins!
+  - 提供了示例 you can generate a Sketch file from a Style Dictionary. 
