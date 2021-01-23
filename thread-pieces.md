@@ -13,6 +13,13 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## Starting to wonder if public school is even a good thing for my kids. 
+- https://twitter.com/mjackson/status/1352744738957316096
+  - Each one who is being home schooled this year is already doing work in the next grade level in math. 
+  - My 7th grader is doing high school math.
+- I've been experiencing something similar with my 2nd grader.  We started homeschooling this year when we couldn't stand the zoom school anymore.  So far its been going really well.
+- I’ve a theory: Public schools sucks for teachers and thats why it sucks for kids. .... but as always its much more diverse 
+
 - ## Google is indexing some random person's copypaste of my blog first, and my actual blog isn't even on the first page.
 - https://twitter.com/dan_abramov/status/1351551717683453956
 - Thanks to all for diagnosing! 

@@ -7,6 +7,141 @@ modified: '2020-12-08T13:40:02.577Z'
 
 # note-react-state-dev
 
+# guide
+
+- ## [Implement naive version of context selectors](https://github.com/facebook/react/pull/20646)
+- `const selection = useSelectedContext(Context, c => select(c));`
+- For internal experimentation only.
+- This implements `unstable_useSelectedContext` behind a feature flag.
+- The key feature is that if the selected value does not change between renders, the component will bail out of rendering its children, a la memo, PureComponent, or the useState bailout mechanism. 
+  - (Unless some other state, props, or context was updated in the same render.)
+- I also added an optional third argument `isSelectionEqual`. 
+  - If defined, it will override the default comparison function used to check if the selected value has changed (`Object.is`).
+- However, I have not implemented the RFC's proposed optimizations to context propagation. 
+  - We would like to land those eventually, but doing so will require a refactor that we don't currently have the bandwidth to complete. 
+  - It will need to wait until after React 18.
+- In the meantime though, we believe there may be value in landing this more naive implementation. 
+  - It's designed to be API-compatible with the full proposal, so we have the option to make those optimizations in a non-breaking release. 
+  - However, since it's still behind a flag, this currently has no impact on the stable release channel. 
+  - We reserve the right to change or remove it, as we conduct internal testing.
+
+- ref
+  - [RFC: Context selectors](https://github.com/reactjs/rfcs/pull/119)
+
+- ## [Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)
+
+- 状态管理要解决的问题是跨组件状态共享
+  - state声明、读取、修改
+- `useState` doesn't offer a way to bail out of rendering once an update is being processed. 
+  - This gets a bit weird because we actually process updates during the rendering phase. So we're already rendering. 
+  - But we could offer a way to bail on children. 
+  - Edit: we now do bail out on rendering children if the next state is identical.
+- `useContext` doesn't let you subscribe to *a part of the context value* (or some memoized selector) without fully re-rendering.
+
+- `React.memo` cannot prevent rerender caused by high-frequency updates of context value
+  - Let's say for some reason you have `AppContext` whose value has a theme property, and you want to only re-render some `ExpensiveTree` on `appContextValue.theme` changes.
+  - note that option 1 is preferable — if some context changes too often, consider splitting it out.
+
+- ### Option 1(Preferred): Split contexts that don't change together
+  - If we just need `appContextValue.theme` in many components but `appContextValue` itself changes too often, we could split `ThemeContext` from `AppContext` .
+  - Now any change of `AppContext` won't re-render `ThemeContext` consumers.
+  - This is the preferred fix. Then you don't need any special bailout.
+
+``` JS
+  function Button() {
+    let theme = useContext(ThemeContext);
+    // The rest of your rendering logic
+    return <ExpensiveTree className={theme} />;
+  }
+```
+
+- ### Option 2: Split your component in two, put `memo` in between
+  - If for some reason you can't split out contexts, you can still optimize rendering by splitting a component in two, and passing more specific props to the inner one.
+  - You'd still render the outer one, but it should be cheap since it doesn't do anything.
+
+``` JS
+function Button() {
+  let appContextValue = useContext(AppContext);
+  let theme = appContextValue.theme; // Your "selector"
+  return <ThemedButton theme={theme} />
+}
+
+const ThemedButton = memo(({ theme }) => {
+  // The rest of your rendering logic
+  return <ExpensiveTree className={theme} />;
+});
+```
+
+- ### Option 3: One component with `useMemo` inside
+  - Finally, we could make our code a bit more verbose but keep it in a single component by wrapping return value in `useMemo` and specifying its dependencies. 
+  - Our component would still re-execute, but React wouldn't re-render the child tree if all `useMemo` inputs are the same.
+
+``` JS
+function Button() {
+  let appContextValue = useContext(AppContext);
+  let theme = appContextValue.theme; // Your "selector"
+
+  return useMemo(() => {
+    // The rest of your rendering logic
+    return <ExpensiveTree className={theme} />;
+  }, [theme])
+}
+```
+
+- ### Option 4: Pass a subscribe function as context value, just like in legacy context era
+  - It might be the only option if you don't control the usages (needed for options 2-3) and can't enumerate all the possible selectors (needed for option 1), but still want to expose a Hooks API
+  - This is basically what react-redux does internally
+  - To implement subscribe function, you can use something like Observables or EventEmitter, or just write a basic subscription logic yourself
+  - we stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
+
+``` JS
+const MyContext = createContext();
+export const Provider = ({ children }) => (
+  <MyContext.provider value={{subscribe: listener => ..., getValue: () => ...}}>
+    {children}
+  </MyContext.provider>
+)
+
+export const useSelector = (selector, equalityFunction = (a, b) => a === b) => {
+    const { subscribe, getValue } = useContext(MyContext)
+    const [value, setValue] = useState(getValue())
+    useEffect(() => subscribe(state => {
+        const newValue = selector(state)
+        if (!equalityFunction(newValue, value) {
+            setValue(newValue)
+          }
+        }), [selector, equalityFunction])
+    }
+```
+
+``` JS
+function StateProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const listeners = useRef([]);
+  // custom subscription
+  const subscribe = listener => {
+    listeners.current.push(listener)
+  }
+  useEffect(() => {
+    listeners.current.forEach(listener => listener(state)
+    }, [state]))
+
+  return (
+    <DispatchContext.Provider value={dispatch}>
+      <SubscribeContext.Provider value={{subscribe, getValue: () => state}}>
+          {children}      
+      </SubscribeContext.Provider>
+    </DispatchContext.Provider>
+  );
+}
+```
+
+- ### Option 5: Do not use context for data propagation but data subscription
+  - Use useSubscription (because it's hard to write to cover all cases).
+
+- ### Option x1: use an unofficial workaround.
+  - useContextSelector proposal and use-context-selector library in userland.
+
 # pieces
 
 - state management
@@ -17,6 +152,22 @@ modified: '2020-12-08T13:40:02.577Z'
   - They are stages of state management complexity from simple to complex. Performance potentially increases as you go to higher stages
   - At any stage: Profile for slow renders, then useMemo
   - With those 4 stages and useMemo, I believe you can solve 99% of perf challenges.
+
+- state-multi-context
+  - diegohaz/constate
+  - CharlesStover/react-multi-context
+  - dai-shi/react-context-global-state
+
+- state-状态管理技术选型
+  - recoil (要等到API稳定、功能齐全)
+  - constate
+  - unstated-next
+  - react-hooks-global-state
+  - misc
+    - concent
+
+- [will-this-react-global-state-work-in-concurrent-mode](https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-mode)
+  - Check tearing in React concurrent mode
 
 - if you're working with an outside REST API, and not GraphQL, what are you using for state these days? Still Redux? Big state object at the top level that you access with context? Something else?
   - TBH I don't really build apps in the last few years (unless you count DevTools)
@@ -31,6 +182,8 @@ modified: '2020-12-08T13:40:02.577Z'
   - Background work:
     - If I have long running API calls/processing that would be complex to manage, I'd use redux-observable
   - https://twitter.com/cwbuecheler/status/1253711795459588097
+
+# discuss
 
 - ## [React state management in 2020](https://twitter.com/chrisachard/status/1272963243225632768)
 - React includes: local state (which nearly every app uses at some point) and Context
@@ -62,9 +215,8 @@ modified: '2020-12-08T13:40:02.577Z'
 - react-query or swr replace the biggest need for Redux or MobX: server cache. 
   - Context is great for what’s left.
 
-- [I'm kind of surprised it's 2020 and nobody tried using SQL for frontend state management](https://twitter.com/lmatteis/status/1258503426817785857)
+- ## [I'm kind of surprised it's 2020 and nobody tried using SQL for frontend state management](https://twitter.com/lmatteis/status/1258503426817785857)
   - I mean, indexedDB is pretty much SQL on local storage.  
-
 - To clarify slightly: I didn't say I "advise against it". I was saying that _if_ the majority of your app is just fetching server state, _and_ you are already using a purpose-built "server fetching/caching" tool, then you probably don't _need_ Redux.
   - Using Redux to cache server-side data is a valid use case.  
   - It's just that Redux isn't a *purpose-built* server cache - you end up writing your own logic to do so.
@@ -73,35 +225,20 @@ modified: '2020-12-08T13:40:02.577Z'
     - https://twitter.com/tannerlinsley/status/1283467225677000706
 
 - ## [Why I Stopped Using Redux](https://dev.to/g_abud/why-i-quit-redux-1knl)
-  - The Problem with Single Page Applications
-    - A big part of frontend development now becomes burdened with how to maintain our global store without suffering from state bugs, data denormalization, and stale data.
-  - Redux is not a Cache
-  - A Simpler Approach to Backend State
-    - react-query
-    - swr
-    - apollo-client
-  - What About Frontend State
-    - When the data fetching/caching part of your app is taken care of, there is very little global state for you to handle on the frontend. 
-    - What little amount is left can be handled using Context or useContext + useReducer to make your own pseudo-Redux.
+- The Problem with Single Page Applications
+  - A big part of frontend development now becomes burdened with how to maintain our global store without suffering from state bugs, data denormalization, and stale data.
+- Redux is not a Cache
+- A Simpler Approach to Backend State
+  - react-query
+  - swr
+  - apollo-client
+- What About Frontend State
+  - When the data fetching/caching part of your app is taken care of, there is very little global state for you to handle on the frontend. 
+  - What little amount is left can be handled using Context or useContext + useReducer to make your own pseudo-Redux.
 
 - I personally even think `context` is not a primary building block if we go with `useMutableSource` . 
   - My proposal in reactive-react-redux (not react-redux) is not to use context at all
   - ref: [Allow for optionally using React Context instead of Redux under the hood](https://github.com/reduxjs/react-redux/issues/1612)
-
-- state-multi-context
-  - diegohaz/constate
-  - CharlesStover/react-multi-context
-  - dai-shi/react-context-global-state
-- state-状态管理技术选型
-  - recoil (要等到API稳定、功能齐全)
-  - constate
-  - unstated-next
-  - react-hooks-global-state
-  - misc
-    - concent
-  - [will-this-react-global-state-work-in-concurrent-mode](https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-mode)
-    - Check tearing in React concurrent mode
-  - [RFC: Context selectors](https://github.com/reactjs/rfcs/pull/119)
 
 - ## [Four different approaches to non-Redux global state libraries_201907](https://blog.axlight.com/posts/four-different-approaches-to-non-redux-global-state-libraries/)
   - There are several implementations how to store state and notify changes.
@@ -123,7 +260,8 @@ modified: '2020-12-08T13:40:02.577Z'
   - S4: State usage tracking
     - This approach eliminates selector functions, and it’s hardly misused. One big concern is performance optimization.
     - lib: react-tracked
-- [Four patterns for global state with React hooks: Context or Redux_201905](https://blog.axlight.com/posts/four-patterns-for-global-state-with-react-hooks-context-or-redux/)
+
+- ## [Four patterns for global state with React hooks: Context or Redux_201905](https://blog.axlight.com/posts/four-patterns-for-global-state-with-react-hooks-context-or-redux/)
   - S1: the most basic pattern should still be **prop passing**
     - alternative to Prop passing: [Component passing](https://patrickroza.com/blog/component-vs-prop-drilling-in-react/)
   - S2: If an app needs to share state among components that are more deep than two level, it’s time to introduce **context**
@@ -136,9 +274,7 @@ modified: '2020-12-08T13:40:02.577Z'
     - If your app gets big and several contexts need to be updated with a single action, it’s time to introduce **Redux**. 
     - (Or, actually you could dispatch multiple actions for a single event, I personally don’t like that pattern very much.)
 
----
-
-- 精读《React Hooks 数据流》
+- ## 精读《React Hooks 数据流》
 - 单组件最简单的数据流一定是 `useState`
 - 组件间共享数据流最简单的方案就是 `useContext`
   - 问题是数据与UI不解耦，这个问题 `unstated-next` 可以作为解决方案
@@ -193,9 +329,7 @@ function Child() {
 }
 ```
 
----
-
-- 针对conetxt的value频繁更新导致重复渲染性能降低的问题
+- ## 针对context的value频繁更新导致重复渲染性能降低的问题
   - [RFC: Context selectors](https://github.com/gnoff/rfcs/blob/context-selectors/text/0000-context-selectors.md)
     - https://github.com/reactjs/rfcs/pull/119
   - [RFC: useMutableSource](https://github.com/reactjs/rfcs/blob/master/text/0147-use-mutable-source.md)
@@ -207,117 +341,6 @@ function Child() {
   - 定义了一个Provider组件，但是它的 value 是一个通过 useRef 创建的值。
   - 只有触发 forceUpdate 才会更新组件
   - 总不能每次改变应用状态的时候，都要调用一次 forceupdate 吧，再对上面的示例做一次优化，请看这个优化版本 ，在这个版本中，我们实现一个简单的发布订阅库，在 useStore 方法中订阅子组件的 forceUpdate 到 subscribers 中 ，在 Provider 组件 render 的时候，调用 notify 方法依次调用 subscribers 中的所有 foreUpdate，以此来触发子组件rerender。
-
-- 状态管理要解决的问题是跨组件状态共享
-  - state声明、读取、修改
-- `useState` doesn't offer a way to bail out of rendering once an update is being processed. 
-  - This gets a bit weird because we actually process updates during the rendering phase. So we're already rendering. 
-  - But we could offer a way to bail on children. 
-  - Edit: we now do bail out on rendering children if the next state is identical.
-- `useContext` doesn't let you subscribe to *a part of the context value* (or some memoized selector) without fully re-rendering.
-
-- `React.memo` cannot prevent rerender caused by high-frequency updates of context value
-  - Let's say for some reason you have `AppContext` whose value has a theme property, and you want to only re-render some `ExpensiveTree` on `appContextValue.theme` changes.
-  - note that option 1 is preferable — if some context changes too often, consider splitting it out.
-  - **Option 1 (Preferred): Split contexts that don't change together**
-    - If we just need `appContextValue.theme` in many components but `appContextValue` itself changes too often, we could split `ThemeContext` from `AppContext` .
-    - Now any change of `AppContext` won't re-render `ThemeContext` consumers.
-    - This is the preferred fix. Then you don't need any special bailout.
-
-``` JS
-  function Button() {
-    let theme = useContext(ThemeContext);
-    // The rest of your rendering logic
-    return <ExpensiveTree className={theme} />;
-  }
-```
-
-  - **Option 2: Split your component in two, put `memo` in between**
-    - If for some reason you can't split out contexts, you can still optimize rendering by splitting a component in two, and passing more specific props to the inner one.
-    - You'd still render the outer one, but it should be cheap since it doesn't do anything.
-
-``` JS
-function Button() {
-  let appContextValue = useContext(AppContext);
-  let theme = appContextValue.theme; // Your "selector"
-  return <ThemedButton theme={theme} />
-}
-
-const ThemedButton = memo(({ theme }) => {
-  // The rest of your rendering logic
-  return <ExpensiveTree className={theme} />;
-});
-```
-
-  - **Option 3: One component with `useMemo` inside**
-    - Finally, we could make our code a bit more verbose but keep it in a single component by wrapping return value in `useMemo` and specifying its dependencies. 
-    - Our component would still re-execute, but React wouldn't re-render the child tree if all `useMemo` inputs are the same.
-
-``` JS
-function Button() {
-  let appContextValue = useContext(AppContext);
-  let theme = appContextValue.theme; // Your "selector"
-
-  return useMemo(() => {
-    // The rest of your rendering logic
-    return <ExpensiveTree className={theme} />;
-  }, [theme])
-}
-```
-
-  - **Option 4: Pass a subscribe function as context value**, just like in legacy context era
-    - It might be the only option if you don't control the usages (needed for options 2-3) and can't enumerate all the possible selectors (needed for option 1), but still want to expose a Hooks API
-    - This is basically what react-redux does internally
-    - To implement subscribe function, you can use something like Observables or EventEmitter, or just write a basic subscription logic yourself
-    - we stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
-
-``` JS
-  const MyContext = createContext();
-  export const Provider = ({ children }) => (
-    <MyContext.provider value={{subscribe: listener => ..., getValue: () => ...}}>
-      {children}
-    </MyContext.provider>
-  )
-
-  export const useSelector = (selector, equalityFunction = (a, b) => a === b) => {
-      const { subscribe, getValue } = useContext(MyContext)
-      const [value, setValue] = useState(getValue())
-      useEffect(() => subscribe(state => {
-          const newValue = selector(state)
-          if (!equalityFunction(newValue, value) {
-              setValue(newValue)
-            }
-          }), [selector, equalityFunction])
-      }
-```
-
-``` JS
-function StateProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const listeners = useRef([]);
-  // custom subscription
-  const subscribe = listener => {
-    listeners.current.push(listener)
-  }
-  useEffect(() => {
-    listeners.current.forEach(listener => listener(state)
-    }, [state]))
-
-  return (
-    <DispatchContext.Provider value={dispatch}>
-      <SubscribeContext.Provider value={{subscribe, getValue: () => state}}>
-          {children}      
-      </SubscribeContext.Provider>
-    </DispatchContext.Provider>
-  );
-}
-```
-
-  - **Option 5: Do not use context for data propagation but data subscription**  
-    - Use useSubscription (because it's hard to write to cover all cases).
-
-  - Option x1: use an unofficial workaround.
-    - useContextSelector proposal and use-context-selector library in userland.
 
 # survey: state management
 
@@ -483,6 +506,7 @@ function StateProvider({ children }) {
   - [State Management with React Hooks — No Redux or Context API](https://medium.com/javascript-in-plain-english/state-management-with-react-hooks-no-redux-or-context-api-8b3035ceecf8)
   - 实现时只用到了 `useState` 返回值的第2个变量，用来触发内部state更新
   - If you ever worked with complex state management library, you know that it is not the best idea to manipulate global state directly from the components
+
     - The best way is to separate the business logic by creating actions which manipulate the state.
 
 ``` JS
@@ -587,22 +611,20 @@ const Counter = () => {
       - So, react-hooks-global-state won't get benefits from that feature. 
       - react-hooks-global-state should still be CM-safe though.
 
-# guide
+# ref
 
-- ref
-  - [精读《React Hooks 数据流》](https://zhuanlan.zhihu.com/p/126476910)
-  - [精读《Hooks 取数 - swr 源码》](https://zhuanlan.zhihu.com/p/91228591)
-  - [精读《recoil》](https://zhuanlan.zhihu.com/p/143335599)
-  - [编写一个管理异步的React Hook](https://zhuanlan.zhihu.com/p/58840809)
-  - [Provide more ways to bail out inside Hooks](https://github.com/facebook/react/issues/14110)
-  - [Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)
-  - [XState状态管理 - 基于Actor模式](https://blog.zfanw.com/xstate-state-management/)
-  - [说说react hooks做状态管理这件事-hooks+Context篇](https://webfe.kujiale.com/yong-hooks/)
-  - [The Problem with React's Context API](https://leewarrick.com/blog/the-problem-with-context/)
-  - [Steps to Develop Global State for React With Hooks Without Context](https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/)
-  - [useReducer + useContext vs react-hooks-global-state](https://blog.axlight.com/posts/react-hooks-tutorial-for-pure-usereducer-usecontext-for-global-state-like-redux-and-comparison/)
-  - [How to Handle Async Actions for Global State With React Hooks and Context](https://blog.axlight.com/posts/how-to-handle-async-actions-for-global-state-with-react-hooks-and-context/)
-  - [Unstated vs Unstated-Next](https://github.com/jamiebuilds/unstated-next/issues/20)
-  - [细聊Concent&Recoil , 探索react数据流的新开发模式](https://zhuanlan.zhihu.com/p/148280552)
-  - [深入理解 react/redux 数据流并基于其优化前端性能](https://github.com/shaozj/blog/issues/36)
-  - [`useSubscription` and `useMutableSource` tearing and deopt behavior.](https://gist.github.com/bvaughn/054b82781bec875345bd85a5b1344698)
+- [精读《React Hooks 数据流》](https://zhuanlan.zhihu.com/p/126476910)
+- [精读《Hooks 取数 - swr 源码》](https://zhuanlan.zhihu.com/p/91228591)
+- [精读《recoil》](https://zhuanlan.zhihu.com/p/143335599)
+- [编写一个管理异步的React Hook](https://zhuanlan.zhihu.com/p/58840809)
+- [Provide more ways to bail out inside Hooks](https://github.com/facebook/react/issues/14110)
+- [XState状态管理 - 基于Actor模式](https://blog.zfanw.com/xstate-state-management/)
+- [说说react hooks做状态管理这件事-hooks+Context篇](https://webfe.kujiale.com/yong-hooks/)
+- [The Problem with React's Context API](https://leewarrick.com/blog/the-problem-with-context/)
+- [Steps to Develop Global State for React With Hooks Without Context](https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/)
+- [useReducer + useContext vs react-hooks-global-state](https://blog.axlight.com/posts/react-hooks-tutorial-for-pure-usereducer-usecontext-for-global-state-like-redux-and-comparison/)
+- [How to Handle Async Actions for Global State With React Hooks and Context](https://blog.axlight.com/posts/how-to-handle-async-actions-for-global-state-with-react-hooks-and-context/)
+- [Unstated vs Unstated-Next](https://github.com/jamiebuilds/unstated-next/issues/20)
+- [细聊Concent&Recoil , 探索react数据流的新开发模式](https://zhuanlan.zhihu.com/p/148280552)
+- [深入理解 react/redux 数据流并基于其优化前端性能](https://github.com/shaozj/blog/issues/36)
+- [`useSubscription` and `useMutableSource` tearing and deopt behavior.](https://gist.github.com/bvaughn/054b82781bec875345bd85a5b1344698)

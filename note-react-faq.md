@@ -619,7 +619,6 @@ MyComponent.defaultProps = { x: 0 };
     - This would kinda be a big deal for react-redux, actually, because we're trying to switch to using `createContext` in version 6 instead of having all connected components be separate subscribers.
     - we(react-redux) stopped passing the store state in context (the v6 implementation) and switched back to direct store subscriptions (the v7 implementation) due to a combination of performance problems and the inability to bail out of updates caused by context (which made it impossible to create a React-Redux hooks API based on the v6 approach).
   - ref
-    - https://github.com/facebook/react/issues/15156
     - https://github.com/facebook/react/issues/13739
     - https://frontarm.com/james-k-nelson/react-context-performance/
     - https://frontarm.com/james-k-nelson/when-context-replaces-redux/

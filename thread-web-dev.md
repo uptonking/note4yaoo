@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## The "hidden" cost of webfonts: you need to test everything twice. 
+- https://twitter.com/rauchg/status/1352730054950703104
+  - Blocking webfonts are a no-go, so you need to consider every page in 2 dimensions (font-display: optional).
+  - Similar problem as light/dark mode. Not bad per se, but you need to be aware of the complexity space.
+- Yup, dark mode isn’t just swapping color and background color. 
+  - It’s an entire new color scheme, basically double the work in terms of color styles on the website.
+- CSS is NP-Hard Problem. 
+  - That's why it's so hard to automatize it. 
+  - But there are ways to get optimal enough solutions. If I understand it correctly
+
 - ## How to get the best image performance (Updated 2021)
 - https://twitter.com/leeerob/status/1352264153411497993
 1. Use `width` and `height` to prevent layout shift

@@ -14,3 +14,6 @@ modified: '2020-08-17T07:50:37.963Z'
 - a-la-carte
   - 按需引入
   - material-design-lite failed at being easily consumable in an a-la-carte fashion.
+- a la
+  - in the same style as sb/ sth else 按照…方式；仿照
+  - a new band that sings a la Beatles 模仿披头士乐队唱歌的一支新乐队

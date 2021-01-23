@@ -334,3 +334,16 @@ modified: '2020-10-31T06:36:49.770Z'
     - Oracle expressed concerns with using other open-source licenses for reference implementation technology due to its need to license this technology under both proprietary licenses (with patent grants) and the GPLv2.
   - At a high level, the UPL copyright and patent licenses are overly broad. 
     - They extend to current and future versions of both the UPL-licensed code as well as any software or hardware identified in a file included with the UPL-licensed code. 
+
+# linkware
+
+- ref
+  - [wiki: linkware](https://en.wiktionary.org/wiki/linkware)
+
+- who is using
+  - https://github.com/amcharts/amcharts4
+    - https://www.amcharts.com/online-store/
+    - https://www.amcharts.com/online-store/licenses-explained/
+  - https://github.com/DataGridXL/DataGridXL
+  - https://github.com/ailon/markerjs2
+  - https://icons8.com/license

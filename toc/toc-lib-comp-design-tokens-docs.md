@@ -11,11 +11,15 @@ modified: '2021-01-11T18:34:20.713Z'
 
 - style guide 文档该设计成单页，还是多页？
   - 前期可设计成单页，快速修改 + 方便查看
+    - 单页文档参考theo html format
   - 后期可扩展成多页或SPA，丰富内容
+
 - 设计样式时theming可参考
   - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
-- 根据style-dictionary的输出，自动生成简单的单页文档，类似theo输出html
+- style-guide-docs
+  - 不要直接提供复制按钮，因为使用场景非常灵活
+  - 提供多种格式的颜色值供复制
 
 # themeable design docs
 
@@ -23,13 +27,14 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://components.looker.com/foundations/spacing
 - mineral ui /react
   - https://mineral-ui.netlify.app/tokens
-  - https://mineral-ui.netlify.app/color
+  - https://mineral-ui.netlify.app/color  /计算了对比度
+  - tokens的命名如 `backgroundColor_brandPrimary_hover`
 - theme-ui /gatsby
   - https://theme-ui.com/demo
 - priceline /next
   - https://priceline.github.io/design-system/palette
 - chakra-ui /next
-  - https://chakra-ui.com/docs/features/text-and-layer-styles
+  - https://chakra-ui.com/docs/theming/theme
 - flame /storybook
   - https://lightspeed-flame.netlify.app/?path=/story/theme-tokens--colors
 
@@ -48,12 +53,12 @@ modified: '2021-01-11T18:34:20.713Z'
 - fluent
   - https://developer.microsoft.com/en-us/fluentui#/styles/web/typography
 - carbon
-  - https://www.carbondesignsystem.com/guidelines/color/overview
+  - https://www.carbondesignsystem.com/guidelines/color/overview /计算了对比度
 - lightning
   - https://www.lightningdesignsystem.com/design-tokens/
     - colors,font,opacity,line height,spacing,radius,sizing
     - time,touch,media query,z-index
-  - https://www.lightningdesignsystem.com/guidelines/layout/
+  - 命名混乱 $button-color-border-primary, $color-text-tab-label-disabled
 - ant-design
   - https://ant.design/docs/spec/colors-cn
 - polaris
@@ -61,15 +66,14 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://polaris.shopify.com/design/colors
   - https://github.com/Shopify/polaris-tokens
 - primer-css /gatsby
-  - https://primer.style/css
-  - https://github.com/primer/css/tree/master/docs
+  - https://primer.style/css/support/variables
 - atlassian
+  - https://atlassian.design/foundations/color/  /计算了对比度
   - https://atlassian.design/foundations/color/color-palette/
 - spectrum
   - https://spectrum.adobe.com/page/design-tokens/
     - color,font,icon,motion,layout
   - https://opensource.adobe.com/spectrum-css/typography.html
-  - https://spectrum.adobe.com/page/platform-scale/
 - elastic ui
   - https://elastic.github.io/eui/#/utilities/color-palettes
   - https://elastic.github.io/eui/#/guidelines/colors
@@ -86,7 +90,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://picocss.com/
 - fluid
   - https://www.engie.design/fluid-design-system/design-tokens/
-- spectre
 - infor
   - https://design.infor.com/resources/design-tokens
   - https://github.com/infor-design/design-system/tree/master/design-tokens
@@ -97,7 +100,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://garden.zendesk.com/design/color
 - grommet
   - https://v2.grommet.io/color
-  - https://picturepan2.github.io/spectre/elements/typography.html
 - backpack
   - https://backpack.github.io/tokens/spacing
   - https://github.com/Skyscanner/backpack
@@ -117,7 +119,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - 开源的是api doc源码，设计网页源码未找到
 - bulma /jekyll
   - https://bulma.io/documentation/overview/colors/
-  - https://github.com/jgthms/bulma/tree/master/docs
 - materialize /cssonly
   - https://materializecss.com/color.html
   - https://github.com/Dogfalo/materialize/tree/gh-pages
@@ -127,12 +128,12 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://www.formstack.com/brand
   - Messaging, Attributes, Logos, Colors, Typography, Photography
   - illustration, iconography, shapes
-- https://comet.discoveryeducation.com/visual-language/tokens.html
-  - Font, Size, Space, Shadow, Border, Animation, Breakpoints, Themes
 - https://orbit.kiwi/design-tokens/
   - use tokens instead of static values (like HEX codes) for color or sizing units.
 - https://kalo.design/foundations/design-tokens/
   - Colors, type scales, spacing units, and transitions 
+- https://comet.discoveryeducation.com/visual-language/tokens.html
+  - Font, Size, Space, Shadow, Border, Animation, Breakpoints, Themes
 - https://design.bitnami.com/category/Design-Tokens/
   - store visual attributes.
 - https://protocol.mozilla.org/fundamentals/tokens.html
@@ -148,7 +149,8 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://nulogy.design/style/typography/ /react/styled-comp
   - https://nulogy.design/style/spacing/
 - Norton Design
-  - https://wwnorton.github.io/design-system/docs/design-tokens
+  - https://wwnorton.github.io/design-system/docs/foundations/design-tokens
+  - https://wwnorton.github.io/design-system/docs/foundations/color
 - vue design
   - https://vueds.com/example/#!/Design%20Tokens
 
@@ -161,6 +163,7 @@ modified: '2021-01-11T18:34:20.713Z'
 
 - https://github.com/wikimedia/WikimediaUI-Style-Guide
   - https://design.wikimedia.org/style-guide/
+  - https://design.wikimedia.org/style-guide/visual-style_colors.html
   - Wikimedia Design Style Guide with user interface focus
 
  - https://github.com/adjust/design-tokens
@@ -172,7 +175,7 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://github.com/bjankord/Style-Guide-Boilerplate
   - 大量空白，弱依赖php
 - https://github.com/pure-css/pure-site
-  - 使用了handlebars
+  - 使用了handlebars，旧版文档
 
 - https://github.com/uswitch/ustyle
   - https://ustyle.guide/
@@ -180,7 +183,16 @@ modified: '2021-01-11T18:34:20.713Z'
   - Include it in your Rails/Sinatra/Anything project as a gem to apply consistent styles according the uSwitch styleguide.
   - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
 
-# more-docs-for-design-system
+- https://qian-dao-zhen-yi.gitbook.io/rspec-style-guide/
+  - gitbook
+
+- https://github.com/anges244/evie
+  - https://evie.undraw.co/docs
+  - 基于ejs
+
+- https://github.com/freeCodeCamp/design-style-guide
+
+# more-docs
 
 - gatsby
   - https://aha.got-it.ai/2.0.1/foundations/colors/
@@ -191,14 +203,3 @@ modified: '2021-01-11T18:34:20.713Z'
 - next
   - https://www.welcome-ui.com/theming/colors
   - https://trendmicro-frontend.github.io/styled-ui/colors
-
-- https://github.com/morganfeeney/interior
-  - 文档很简洁
-- https://qian-dao-zhen-yi.gitbook.io/rspec-style-guide/
-  - gitbook
-
-- https://github.com/anges244/evie
-  - https://evie.undraw.co/docs
-  - 基于ejs
-
-- https://github.com/freeCodeCamp/design-style-guide

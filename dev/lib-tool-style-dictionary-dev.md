@@ -16,6 +16,9 @@ modified: '2021-01-02T18:08:07.806Z'
   - 暂不支持输出文件的值中包含`var(--name)`形式的css变量，可自己实现
   - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
 
+- extensions
+  - 扩展输出的format，自动生成简单的单页文档，类似theo输出html
+
 - tips
   - 先基于theme specification定义输出design tokens的类别和名称
     - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
@@ -32,18 +35,17 @@ modified: '2021-01-02T18:08:07.806Z'
 - s-d vs theo
   - Theo uses json or yaml and takes a file-in file-out strategy. 
   - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
-  - 考虑集成：theming, css in js
-
-- 用style-dictionary来写所有组件的样式，还是只书写通用变量
-  - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
-  - 若只书写tokens，则需要再用sass来书写组件样式
+  - 工具要考虑后期集成：theming, css in js
 
 - 是否该用工具生成design tokens外，还生成所有组件的样式？
-  - 若自动生成组件样式
+  - 若自动生成所有组件样式
     - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
     - 不支持 伪类
   - 若手写各个组件的样式
     - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
+  - 用style-dictionary来写所有组件的样式，还是只书写通用变量
+    - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
+    - 若只书写tokens，则需要再用sass来书写组件样式
 
 - output css vars
   - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)

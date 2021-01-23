@@ -9,27 +9,30 @@ modified: '2021-01-04T17:05:20.422Z'
 
 # faq 
 
-- How come this API isn't merged with useRef? (Both are used for  managing mutable, usually external data.)
-  - useRef has constraints. 
-    - Essentially (with the exception of lazy initialization) you should only mutate refs during the "commit phase" (within useEffect or useLayoutEffect).
-    - Refs are like instance fields on class components. They let you e.g. compare next and prev props
-    - They aren't meant for sharing values with other components. 
-    - Because of their constraints, they're safe to use with concurrent rendering.
-  - useMutableSource is for reading from mutable sources that you either don't control (e.g. window.location), or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
-    - useMutableSource has nothing to do with mutating the source. 
-    - It **provides a way for multiple components to read from a source without "tearing"** (rendering conflicting things).
-  - ref
-    - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
+## How come this API isn't merged with useRef? (Both are used for  managing mutable, usually external data.)
+
+- useRef has constraints. 
+  - Essentially (with the exception of lazy initialization) you should only mutate refs during the "commit phase" (within useEffect or useLayoutEffect).
+  - Refs are like instance fields on class components. They let you e.g. compare next and prev props
+  - They aren't meant for sharing values with other components. 
+  - Because of their constraints, they're safe to use with concurrent rendering.
+- useMutableSource is for reading from mutable sources that you either don't control (e.g. window.location), or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
+  - useMutableSource has nothing to do with mutating the source. 
+  - It **provides a way for multiple components to read from a source without "tearing"** (rendering conflicting things).
+- ref
+  - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
 
 # guide
 
-- [pr: useMutableSource (不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
-  - useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
-    - However it will still deopt all concurrent mode features when it happens. 
-    - So it’s not compatible with new features.
-    - It’s not recommended for new tooling that wants to be concurrent mode compatible. It’s for legacy compatibility.
-    - We have some other ideas for mutable multi-version stores that might prove useful for systems that want to provide full future compatibility 
-    - but in the current experimental releases the only way to be fully compatible is by using immutable data.
+- ## [pr: useMutableSource (merged但不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
+- useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
+  - However it will still deopt all concurrent mode features when it happens. 
+  - So it’s not compatible with new features.
+  - It’s not recommended for new tooling that wants to be concurrent mode compatible. It’s for legacy compatibility.
+  - We have some other ideas for mutable multi-version stores that might prove useful for systems that want to provide full future compatibility 
+  - but in the current experimental releases the only way to be fully compatible is by using immutable data.
+- useMutableSource if you have either mutable data structures or if you have mutable atom where that atom lives outside React.
+- If you have immutable data, storing it in useState or useReducer is preferable because it will just work with everything.
 
 # useMutableSource
 
