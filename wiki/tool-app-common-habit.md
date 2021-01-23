@@ -9,7 +9,7 @@ modified: '2020-12-29T17:53:03.684Z'
 
 # 软件选择参考  
 
-- 优先选择：长期更新，维护活跃，个人免费
+- 优先选择：长期更新，活跃维护，免费自用
 - 大公司支持
   - vscode和atom中选择vscode，因为github被microsoft收购了
   - 账户信息、ide配置、插件扩展的同步，一般只有大公司愿意免费提供
@@ -31,33 +31,57 @@ modified: '2020-12-29T17:53:03.684Z'
 
 # pc-dir
 
-- 音乐
+- 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs
 
 # software
 
 - video
   - vlc
-      - 3.0.7 - 201907
-      - win/linux/mac/android/ios
-      - http://www.videolan.org/vlc/
-          - https://github.com/videolan/vlc
-          - GPLv2
+    - 3.0.7 - 201907
+    - win/linux/mac/android/ios
+    - http://www.videolan.org/vlc/
+        - https://github.com/videolan/vlc
+        - GPLv2
   - splayerX
-      - 4.1.16 - 201907
-      - win only
-      - https://www.splayer.org/
-          - https://github.com/chiflix/splayerx
+    - 4.1.16 - 201907
+    - win only
+    - https://www.splayer.org/
+        - https://github.com/chiflix/splayerx
           - GPLv3
 - music
-  - clementie 
-      - 1.31 - 201907
-      - win/linu  -x/mac
-      - https://www.clementine-player.org/
-          - https://github.com/clementine-player/clementine
-          - GPLv3
-
-  - netease cloud music
+  - local: clementine 
+    - 1.31 - 201907
+    - win/linux/mac
+    - 支持last.fm，支持播放列表保存到本地
+    - 可手动添加歌词并显示在左侧面板
+    - https://www.clementine-player.org/
+        - https://github.com/clementine-player/clementine
+        - GPLv3
+  - local-more
+    - Tauon Music Box: linux only
+      - 可显示滚动歌词
+  - online: 洛雪音乐助手
+    - 整合第3方音乐搜索与下载
+    - 可选择同时下载歌词
+  - online-more
+    - netease cloud music
+    - spotify
+    - apple music 资源较全，元数据较全
+  - music-tag-id3
+    - last.fm: 记录听歌信息
+    - kid3 支持编辑各种标签，缺点是year属性格式只能到年，不能到月日(月份前是否有0)
+    - mp3tag: win only
+  - lyric
+    - 歌词要考虑
+      - 歌词自身格式：lrc，txt，每行是否带有时间戳，时间戳毫秒支持几位
+      - id3版本，很多itunes下载的音乐是mp4标签
+      - 读写id3的播放器
+      - 推荐方案：单文件包含所有信息，附加歌词用于滚动显示
+    - https://www.22lrc.com/ 爱歌词
+    - https://www.azlyrics.com/
+    - https://mojim.com/ 魔镜歌词网
+    - 木兰词
 - learning
   - goldendict
       - 1.5.0-RC2 - 201907

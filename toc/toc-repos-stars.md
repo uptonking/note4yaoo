@@ -70,3 +70,7 @@ modified: '2021-01-12T18:49:13.490Z'
 - https://github.com/pschroen/alien.js
   - Alien.js is a design pattern and project structure for building SPA websites with ES modules and GSAP.
   - 提供了很多动画示例
+
+- ASCII Generator
+  - https://www.snapfiles.com/screenshots/asciigenerator.htm
+  - convert images into ASCII text art - an image that is entirely made of text characters.

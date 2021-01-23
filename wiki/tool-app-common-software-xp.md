@@ -17,12 +17,6 @@ modified: '2020-12-29T17:52:23.312Z'
 - color-mode-converter
   - rgb-hsl-hsv/b-contrast
 
-# my-pick
-
-- ASCII Generator
-  - https://www.snapfiles.com/screenshots/asciigenerator.htm
-  - convert images into ASCII text art - an image that is entirely made of text characters.
-
 # effect-playground
 
 - 文字不可选择、不可复制
