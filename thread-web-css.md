@@ -26,6 +26,16 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## I'm working on a UI for a client project and wanted to share some CSS and SVG goodness.
+- https://twitter.com/shadeed9/status/1353047713256882177
+  - The requirement is to implement a dynamic tape element that can be colored, rotated, and sized. 
+  - This is a very good use case for CSS and SVG. Isn't it?
+  - https://codepen.io/shadeed/pen/OJRYaZK
+- (1) I used Adobe Illustrator to group the tape into three layers. The base, white areas, and black areas. All of the layers have a semi-transparent background. This will help in making them *blend* with elements underneath them.
+- (2) Then, I exported the SVG and placed the content within an `<def>` . This will help me in reusing the SVG in other pages without duplicating the code each time. Also, I used `fill: currentColor` to pass a custom color to each tape.
+- (3) To make it easy to customize the tapes, I will use CSS variables as inline styles.
+- (4) That's it. We created a dynamic tape that can be colored, sized, and rotated very easily. Thanks to CSS and SVG!
+
 - ##  `--bg: ; /* with a space */` vs `--bg:; /* no space */` .
 - https://twitter.com/MiriSuzanne/status/1352055999771787264
   - for `body { background: var(—bg, green); }` .

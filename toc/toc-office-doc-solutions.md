@@ -102,6 +102,13 @@ modified: '2021-01-17T09:26:42.467Z'
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
+- storycruise /6Star/MIT/202101/ts
+  - https://github.com/itaditya/storycruise
+  - https://storycruise.vercel.app/stories/button
+  - An experiment to render stories (from Storybook) with Snowpack.
+  - Storybook is a great tool but it takes ages to load.
+  - Snowpack opens pretty fast.
+  - What if it could read Component Story Format and show them on a page like Storybook?
 
 - more-docs
   - VuePress

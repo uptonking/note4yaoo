@@ -13,6 +13,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ##  what are your team’s package.json script naming conventions for development mode, your build stage, and potentially running the built thing?
+- https://twitter.com/jaredpalmer/status/1353083840424763392
+  - I used to be in the ‘start, build, start:prod’ team 
+  - but now I’m actually leaning toward ‘dev, build, start’
+
 - ## A little technique we use all the time to audit the layout shifts and avoid performance issues.
 - https://twitter.com/smashingmag/status/1352185650091581441
 1. Add * { outline: 3px solid red } to your CSS.

@@ -225,3 +225,6 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://docs.swmansion.com/react-native-reanimated/
   - React Native's Animated library reimplemented
   - Reanimated 2 is here! 
+- https://github.com/IanLunn/Sequence
+  - http://sequencejs.com/
+  - responsive CSS animation framework for creating unique sliders, presentations, banners, and other step-based applications.

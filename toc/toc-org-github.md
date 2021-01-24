@@ -49,6 +49,10 @@ modified: '2020-11-03T06:58:11.159Z'
 
 ## facebook
 
+## amazon
+
+- [Open Source at AWS: Featured Projects](https://aws.github.io/)
+
 # big-organization
 
 ## apache

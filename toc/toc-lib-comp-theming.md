@@ -84,7 +84,10 @@ modified: '2020-11-13T07:31:38.730Z'
   - Make Bootstrap customizable with CSS variables only
   - You can already customize Bootstrap. But only at build time.
   - With Bluce you can use CSS Variables to change color settings.
-- https://github.com/halfmoonui/halfmoon
+
+- halfmoon /2.1kStar/MIT/202010/js
+  - https://github.com/halfmoonui/halfmoon
+  - https://www.gethalfmoon.com/
   - 未模块化，一个css文件一万多行
     - [More modular approach in the roadmap](https://github.com/halfmoonui/halfmoon/issues/78)
   - Front-end framework with a built-in dark mode and full customizability using CSS variables
@@ -123,9 +126,9 @@ modified: '2020-11-13T07:31:38.730Z'
 
 - https://github.com/FrontendRangers/platoon
   - A themeable UI kit for React & Svelte
-- https://github.com/KyleAMathews/typography.js
-  - http://kyleamathews.github.io/typography.js/
-  - /3.5kStar/MIT/202008/js
-  - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
-  - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
-  - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+
+- https://github.com/ash-rocks/ash-css
+  - http://ashcss.rocks/
+  - 基于less变量实现
+  - Modern CSS-only semantic framework with a built-in dark mode. 
+  - No JavaScript required!

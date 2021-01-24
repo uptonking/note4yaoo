@@ -51,6 +51,13 @@ modified: '2020-11-13T07:28:27.824Z'
     - React wrappers for the Tradeshift ui components.
     - class组件的render方法都是`return null`，完全通过js操作dom
     - 将tradeshift对象添加到window，然后在didUpdate方法中操作dom
+- https://github.com/AgnosticUI/agnosticui
+  - https://agnosticui.github.io/agnosticui
+  - /3Star/Apache2/202101/js
+  - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
+  - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
+    - This is done via a simple Node script which literally copies the CSS over.
+
 - https://github.com/IgniteUI/ignite-ui
   - /464Star/Apache2/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 

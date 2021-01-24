@@ -15,6 +15,8 @@ modified: '2021-01-12T18:48:52.713Z'
   - https://denali.design/
   - Themeable CSS framework of Denali Ui components
   - theming基于scss vars，代码十分清晰，未使用css vars
+    - [v1版本的global variables](https://denali.design/docs/1.0.3/guides/global-variables)用的是css vars
+    - v2版本统一使用scss vars
   - 支持创建自定义theme
     - 预置的dark theme是通过覆盖sass vars实现
   - It supports theming through custom variables which means the visual appearance of Denali’s components can be easily adapted to fit the visual style of any brand. 

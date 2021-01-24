@@ -9,14 +9,6 @@ modified: '2020-10-22T13:09:57.085Z'
 
 # css-examples
 
-- NES.css /MIT/15kStar/202006
-  - https://github.com/nostalgic-css/NES.css
-  - https://nostalgic-css.github.io/NES.css/
-  - a NES-style(8bit-like) CSS Framework
-  - 像素风格的文字和组件
-- https://www.getpapercss.com/
-  - https://getpapercss.com/
-  - The less formal CSS framework, with a quick and easy integration.
 - [purecss-francine](https://github.com/cyanharlow/purecss-francine)
   - CSS drawing in the style of an 18th-century oil painting. 
   - Hand-coded entirely in HTML & CSS.
@@ -38,15 +30,33 @@ modified: '2020-10-22T13:09:57.085Z'
 
 # css-tools
 
-- https://github.com/BafS/Gutenberg
-  - https://bafs.github.io/Gutenberg
-  - Modern framework to print web pages correctly
-  - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
-
 - https://github.com/zicht/zss /无组件，提供了很多工具类
   - Sass for design systems
   - ZSS is a Sass framework that helps you build design systems with configurable design scales.
   - Provides abstractions of common UI patterns, so you can focus on the specific design details.
   - Unlike Bootstrap, ZSS does not contain pre-made components or JavaScript.
 
+- https://github.com/CodyHouse/codyhouse-framework
+  - https://codyhouse.co/
+  - A lightweight front-end framework for building accessible, bespoke interfaces.
+  - 提供了ui组件的在线编辑器示例
+  - 使用了css vars
+
+- https://github.com/dohliam/dropin-minimal-css
+  - https://dohliam.github.io/dropin-minimal-css
+  - This is a quick drop-in CSS switcher to allow for previewing some of the many minimal CSS-only frameworks that are available.
+
+- https://github.com/HeflerDev/CSStack
+  - CSStack is a tiny CSS Grid framework built in SASS focused on the construction of the page structure. 
+  - It is simple and easy-to-use, aiming to keep the CSS only for styling(fonts, colors...) and polluting it with less lines.
+
+- https://github.com/HarwinBorger/SpaceFramework
+  - https://docs.spaceframework.dev/
+  - The framework helps you with centralizing typography and the preserving of equivalent spaces between elements.
+  - Most front-end frameworks like Bootstrap and ZURB Foundation focus mostly on the horizontal grid, instead the SpaceFramework does focus on the vertical grid and the vertical rhythms. 
+
 # more-css-repos
+
+- https://github.com/marcop135/bullframe.css
+  - https://marcop135.github.io/bullframe.css/
+  - Solid, fluid, IE-friendly (S)CSS framework

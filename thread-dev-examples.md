@@ -13,6 +13,12 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+- ## React Three Fiber and Three.js make stuff like this so accessible to front-end devs.
+- https://twitter.com/JoshWComeau/status/1353084920504197120
+  - this still requires a lot of knowledge when it comes to both trigonometry and 3D concepts.
+  - https://codesandbox.io/s/9cenu?file=/src/App.js
+- I did a bit of 3D with ThreeJS before but the light was always challenging to me.
+
 - ## I made a new piece with just #css & html - Ring Doorbell. 
 - https://twitter.com/KassandraSanch/status/1336789953821478913
   - Can you tell which one is code and which one is an image?

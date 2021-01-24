@@ -60,7 +60,7 @@ modified: '2020-12-29T17:53:03.684Z'
         - GPLv3
   - local-more
     - Tauon Music Box: linux only
-      - 可显示滚动歌词
+      - 可显示滚动歌词/synced lyrics
   - online: 洛雪音乐助手
     - 整合第3方音乐搜索与下载
     - 可选择同时下载歌词
@@ -74,14 +74,16 @@ modified: '2020-12-29T17:53:03.684Z'
     - mp3tag: win only
   - lyric
     - 歌词要考虑
-      - 歌词自身格式：lrc，txt，每行是否带有时间戳，时间戳毫秒支持几位
-      - id3版本，很多itunes下载的音乐是mp4标签
+      - 歌词自身格式：lrc，txt，每行是否带有时间戳，时间戳毫秒支持几位，是否要去头无效行
+      - id3版本，很多itunes下载的音乐是mp4标签，mp4标签难修改
       - 读写id3的播放器
       - 推荐方案：单文件包含所有信息，附加歌词用于滚动显示
-    - https://www.22lrc.com/ 爱歌词
-    - https://www.azlyrics.com/
-    - https://mojim.com/ 魔镜歌词网
-    - 木兰词
+    - 歌词搜索
+      - 直接搜索歌词lrc文件，国外歌词很少有带时间戳的lrc
+      - https://www.azlyrics.com/
+      - https://www.22lrc.com/ 爱歌词
+      - https://mojim.com/ 魔镜歌词网
+      - 木兰词
 - learning
   - goldendict
       - 1.5.0-RC2 - 201907

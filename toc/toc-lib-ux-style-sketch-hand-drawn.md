@@ -46,4 +46,31 @@ modified: '2021-01-13T19:30:59.508Z'
   - Declarative wireframes for programmers
   - http://rawgit.com/tsx/shireframe/master/examples/doodle.html
 
+# paper
+
+- https://github.com/papercss/papercss /字体变成手写体
+  - https://www.getpapercss.com/
+  - The Less Formal CSS Framework
+- NES.css /MIT/15kStar/202006
+  - https://github.com/nostalgic-css/NES.css
+  - https://nostalgic-css.github.io/NES.css/
+  - a NES-style(8bit-like) CSS Framework
+  - 像素风格的文字和组件
+
+- https://github.com/BafS/Gutenberg
+  - https://bafs.github.io/Gutenberg
+  - Modern framework to print web pages correctly
+  - Gutenberg.css is the base stylesheet but there are themes available in the themes folder.
+- https://github.com/ethantw/Han /2kStar/MIT/201903/js
+  - https://hanzi.pro/
+  - Han.css: the CSS typography framework optimised for Hanzi.
+  - 「汉字标准格式」是一套支援各种印刷效果的Sass + JavaScript排版框架
+  - 集成「语意样式标准化」「文字设计」「高级排版功能」三大模组，并为繁体中文、简体中文及日文配置的本地化设计
+- https://github.com/KyleAMathews/typography.js
+  - http://kyleamathews.github.io/typography.js/
+  - /3.5kStar/MIT/202008/js
+  - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
+  - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
+  - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+
 # more
