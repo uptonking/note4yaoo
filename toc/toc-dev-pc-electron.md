@@ -100,3 +100,8 @@ modified: '2021-01-16T20:50:23.893Z'
   - Sticky notes with Markdown and Tabs. All in one .txt file.
 
 # more
+
+- https://github.com/uptick/react-keyed-file-browser
+  - https://uptick.github.io/react-keyed-file-browser/
+  - Folder based file browser given a flat keyed list of objects, powered by React.
+  - 文件浏览器的ui

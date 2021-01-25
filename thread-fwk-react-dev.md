@@ -11,6 +11,39 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## How do you decide when to split up a component? 
+- https://twitter.com/MichaelThiessen/status/1165241262494167043
+- TL; DR: when you need to, but not before.
+- I generally split into list and listItem components so every v-for iterates over listItem components. Because there is always this moment when you need a computed value for these list items.
+- When I feel a component does more things than it should, when a component gets too big (200+ lines), when a component has too many props
+
+- ## What are some React anti-patterns that you encounter often? Why are they dangerous?
+- https://twitter.com/TejasKumar_/status/1214259916376027137
+  - Code mutates props.
+  - Code modifies state directly.
+  - props.key is read inside a component.
+  - Keys duplicated among siblings.
+  - Event handler returns false to prevent default.
+- Putting too much logic in event handlers. This goes for any framework, though.
+- Putting too many responsibilities on a single component. This is often represented by too many states, too many props, large render function, or too many instance functions.
+
+- ## why use react for threejs?
+- https://twitter.com/0xca0a/status/1282999626782650368
+  - same reason you use it for the dom.
+  - three arguably is even more unruly than the dom as every "thing" is wired into everything. 
+  - the snapshot is from my react-europe talk, a simple search for "cube" (yellow) reveals the difference  
+- threejs: cube affects *every* aspect of the app: setup, state, view, resize, events and render, it is not re-usable at that point. 32 hits. 
+- react: a re-usable self-contained self-cleaning component and one invocation.
+- this is not a dig at the dom or three. these are imperative systems and im glad they don't add high level features, because that's not their domain. react simply expresses sth imperative in a declarative way with a common ground that makes management and sharing much easier.
+- r3f does the same for three that react-dom does for the dom, updates or not. you can write small-ish vanilla dom apps relatively clean, in three that is less likely bc a "thing" always has to reach everywhere to function.
+
+- ## the magic of react has always been that
+- https://twitter.com/0xca0a/status/1353659846202159109
+  - if you eliminate the technical hinderances, then you can transfer an idea to the screen directly, you can worry about the things that actually matter, be it design or otherwise.
+  - https://codesandbox.io/s/cell-fracture-forked-3rjsl
+- https://twitter.com/0xca0a/status/1341811710081044483
+  - a tutorial on working with @glTF3D in @threejs_org & React.
+
 - ## Use `React.useMemo` instead of multiple `React.useCallback` s to create an object of handler functions in a custom hook. 
 - https://twitter.com/kyleshevlin/status/1352639659147456512
   - [memoizedHandlers.js](https://gist.github.com/kyleshevlin/08a2deb904b79077e46966567ccabf06)

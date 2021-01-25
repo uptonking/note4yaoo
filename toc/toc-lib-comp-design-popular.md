@@ -285,7 +285,6 @@ modified: '2020-11-13T07:29:55.201Z'
     - https://github.com/uber/react-view
       - The first prototype of React View was even using react-live internally 
       - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-      - We also rely on babel and babel-parser instead of buble.
 
 - ## Airbnb Design /Airbnb
   - /335Star/MIT/202010/ts/css-in-js

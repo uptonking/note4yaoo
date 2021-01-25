@@ -7,6 +7,116 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog
 
+# [7 code smells in your React components_202011](https://dev.to/awnton/7-code-smells-in-react-components-5f66)
+
+## Too many props
+
+- Passing too many props into a single component may be a sign that the component should be split up.
+
+- Is this component doing multiple things?
+  - Like functions, components should do one thing well
+  - check if it's possible to split the component into multiple smaller components.
+  - For example if the component has incompatible props or returns JSX from functions.
+
+- Could I use composition?
+  - A pattern that is very good but often overlooked is to compose components instead of handling all logic inside just one. 
+  - This is also a great opportunity to use React Context for the communication between the children and their parent.
+
+- Am I passing down many 'configuration'-props?
+  - In some cases, it's a good idea to group together props into an options object, for example to make it easier to swap this configuration. 
+  - In cases like this it's sometimes a good idea to change the `Grid` so that it accepts an `options` prop instead.
+  - This also means that it's easier to exclude configuration options we don't want to use if we're swapping between different `options`.
+
+## Incompatible props
+
+- Avoid passing props that are incompatible with each other.
+- The problem with this example is that the props `isPhoneNumberInput` and `autoCapitalize` don't make sense together. 
+  - In this case the solution is probably to break the component up into multiple smaller components. 
+  - If we still have some logic we want to share between them, we can move it to a custom hook
+- While this example is a bit contrived, finding props that are incompatible with each other is usually a good indication that you should check if the component needs to be broken apart.
+
+## Copying props into state
+
+- Don't stop the data flow by copying props into state.
+- A more practical example of this happening is when we want to derive some new value from a prop and especially if this requires some slow calculation.
+- By putting it into state we've solved the issue that it will rerun unnecessarily but like above we've also stopped the component from updating. 
+- A better way to solving this issue is using the `useMemo` hook to memoize the result
+
+``` JS
+function Button({ text }) {
+  const [formattedText] = useState(() => slowlyFormatText(text))
+
+  return <button>{formattedText}</button>
+}
+
+function Button({ text }) {
+  const formattedText = useMemo(() => slowlyFormatText(text), [text])
+
+  return <button>{formattedText}</button>
+}
+```
+
+- Sometimes we do need a prop where all updates to it are ignored, e.g. a color picker where we need the option to set an initially picked color but when the user has picked a color we don't want an update to override the users choice. 
+  - In this case it's totally fine to copy the prop into state, but to indicate this behavior to the user most developers prefix the prop with either initial or default (`initialColor/defaultColor`)
+
+## Returning JSX from functions
+
+- Don't return JSX from functions inside a component.
+- This is a pattern that has largely disappeared when function components became more popular, but I still run into it from time to time. 
+- To solve it I either inline the JSX because a large return isn't that big of a problem, but more often this is a reason to break these sections into separate components instead.
+- Remember that just because you create a new component you don't have to move it to a new file as well. 
+  - Sometimes it makes sense to keep multiple components in the same file if they are tightly coupled.
+
+- That is essentially the definition of a React component, i.e. "function-returning-JSX", which should be a clue to abstract it outside the parent.
+
+## Multiple booleans for state
+
+- Avoid using multiple booleans to represent a components state.
+- When writing a component and subsequently extending the functionality of the component, it's easy to end up in a situation where you have multiple booleans to indicate which state the component is in. 
+- While this technically works fine it's hard to reason about what state the component is in and it's more error-prone than alternatives. 
+  - We could also end up in an "impossible state", such as if we accidentally set both `isLoading` and `isFinished` to true at the same time.
+- A better way to handle this is to manage the state with an "enum" instead. 
+  - In other languages enums are a way to define a variable that is only allowed to be set to a predefined collection of constant values, 
+  - and while enums don't technically exist in Javascript we can use a string as an enum and still get a lot of benefits
+- By doing it this way we've removed the possibility for impossible states and made it much easier to reason about this component. 
+- Finally, if you're using some sort of type system like TypeScript, it's even better since you can specify the possible states
+
+## Too many useState in a component
+
+- Avoid using too many useState hooks in the same component.
+- A component with many useState hooks is likely doing Too Many Things™️ and probably a good candidate for breaking into multiple components, 
+  - but there are also some complex cases where we need to manage some complex state in a single component.
+- In these cases it can be beneficial to manage our state with a useReducer hook instead
+- By using a reducer we've encapsulated the logic for managing our state and moved the complexity out of our component. 
+  - This makes it much easier to understand what is going on now that we can think about our state and our component separately.
+
+## Large useEffect
+
+- Avoid large useEffects that do multiple things. 
+  - They make your code error-prone and harder to reason about.
+- Breaking this effect up into two effects instead
+- By doing this we've reduced the complexity of our component, made it easier to reason about and lowered the risk of creating bugs.
+
+- discussion
+
+- There is one I haven't quite made up my mind about, and that's something like this:
+
+``` JS
+function SomeComponent(props) {
+  const someMoreProp = // calculate some extra stuff
+    return <>
+          ....
+         <OtherComponent {...props} moreProp={someMoreProp}/>
+      ...
+      <
+      />;
+}
+```
+
+  - I do find this pattern quite useful when I've got different variants of a component (for example a text and a number input component), but I want to expose it as just a single GenericInput component. But it doesn't feel right.
+  - Your example is close to writing a Higher-order component but it depends on the use case. 
+    - A lot of HOCs use cases however (just as render props) have been replaced by hooks instead, and should probably be the default moving forward unless you have a special use case 
+
 # [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://blog.isquaredsoftware.com/2021/01/blogged-answers-why-react-context-is-not-a-state-management-tool-and-why-it-doesnt-replace-redux/)
 
 - Is Context a "state management" tool?

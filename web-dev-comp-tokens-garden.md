@@ -32,7 +32,8 @@ modified: '2021-01-13T17:12:25.854Z'
   - borderless
     - 部分组件提供无边框的版本，如modal
   - dark mode形式的组件
-  - scalable，如列表变modal
+  - disable mode形式的组件，组件变灰色，常作为背景
+  - scalable，如下拉列表列表选项变多时会变modal
 
 - logo: green plum
 - design-system-tokens

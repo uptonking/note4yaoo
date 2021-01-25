@@ -15,18 +15,22 @@ modified: '2021-01-17T07:14:21.293Z'
 
 # markdown-live-doc
 
+- react-view /438Star/MIT/202009
+  - https://github.com/uber/react-view
+  - https://react-view.netlify.com/
+  - 优点是除了支持直接编辑源码，还支持类似storybook的knobs，通过复选框直接设置属性值，甚至能直接输入函数形式的字符串作为属性值
+  - The first prototype of React View was even using react-live internally 
+  - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
+  - We also rely on babel and babel-parser instead of buble.
+  - React View aims to make documentation more interactive and useful.
 - react-live /2.5kStar/MIT/202007
   - https://github.com/FormidableLabs/react-live
   - https://react-live.netlify.com/
-  - render React components with editable source code and live preview.
   - 依赖react-simple-code-editor, bubble, prism
+  - 只支持直接编辑源码
+  - render React components with editable source code and live preview.
   - https://github.com/FormidableLabs/component-playground
     - A component for rendering React components with editable source and live preview
-  - https://github.com/uber/react-view
-    - /438Star/MIT/202009
-    - The first prototype of React View was even using react-live internally 
-    - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-    - We also rely on babel and babel-parser instead of buble.
 - https://github.com/axe312ger/mdx-live-editor
   - mdx editor to edit mdx and preview live in your browser.
   - Based on EasyMDE and MDX Runtime
@@ -98,13 +102,24 @@ modified: '2021-01-17T07:14:21.293Z'
 - https://github.com/auth0/cosmos
   - 将 `import { Button } from '@auth0/cosmos';` 写在页面最上方，而不是写在组件展示块
 
-# react-playgrounds
+# react-live-code
 
-- react-live /2.5kStar/MIT/202007
-  - https://github.com/FormidableLabs/react-live
-  - https://react-live.netlify.com/
-  - render React components with editable source code and live preview.
-  - depends on react-simple-code-editor, bubble, prism
+- https://github.com/malerba118/react-handoff
+  - https://codesandbox.io/s/async-night-7kyrq?file=/src/App.tsx
+  - 依赖chakra-ui, emotion
+  - aimed to turn any react app into a visual editor where you can visually tweak and persist props from the browser.
+  - enables designers and developers to work in parallel
+  - 修改后组件的配置可以导出为json，而组件的默认值从json初始化
+
+- live-example /4Star/MIT/202012/js
+  - https://github.com/mytecor/live-example
+  - https://mytecor.github.io/live-example/
+  - 依赖sucrase-browser
+  - Like react-live, but much faster, smaller and customizable
+- react-simple-code-editor /691Star/MIT/202001/js
+  - https://github.com/satya164/react-simple-code-editor
+  - http://satya164.xyz/react-simple-code-editor/
+  - Simple code editor with syntax highlighting
 - react-runner /25Star/MIT/201908
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
@@ -113,11 +128,14 @@ modified: '2021-01-17T07:14:21.293Z'
   - react-runner is inspired by react-live heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
   - use Sucrase instead of Bublé to transpile the code.
   - If you are using react-live and want a smooth transition, react-live-runner is there for you which provide the identical way
-- react-view /438Star/MIT/202009
-  - https://github.com/uber/react-view
-  - The first prototype of React View was even using react-live internally 
-  - but eventually we needed a finer-grained control over the compilation process and a more flexible API. 
-  - We also rely on babel and babel-parser instead of buble.
+- https://github.com/jeremyckahn/props-editor
+  - https://jeremyckahn.github.io/props-editor/
+  - A UI for modifying React component props
+  - 直接在json中编辑
+
+- https://github.com/styleguidist/react-styleguidist
+  - /9.2kStar/MIT/202009
+  - Isolated React component development environment with a living style guide
 
 # live-editing
 
@@ -135,3 +153,12 @@ modified: '2021-01-17T07:14:21.293Z'
 
 - https://github.com/sueddeutsche/editron
   - Editron is a JSON-Editor, which takes a JSON-Schema to generate an HTML form for user input and live validation
+
+- https://github.com/one-gourd/ide-props-editor
+  - https://one-gourd.github.io/ide-props-editor/
+  - 可以根据实际业务场景定制任何类型的属性编辑器，输出json
+
+- openchakra /MIT/1.6kStar/202008
+  - https://github.com/premieroctet/openchakra
+  - https://openchakra.app/
+  - visual editor and code generator for React using Chakra UI

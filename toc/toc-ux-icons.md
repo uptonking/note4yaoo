@@ -7,11 +7,16 @@ modified: '2020-07-17T10:52:17.250Z'
 
 # toc-ux-icons
 
-# icons-css
+# icons-css-svg
 
 - https://github.com/erikflowers/weather-icons
   - https://erikflowers.github.io/weather-icons/
   - Weather Icons is the only icon font and CSS with 222 weather themed icons
+
+- https://github.com/mono-company/mono-icons
+  - https://icons.mono.company/
+  - The Mono icon font is a simple, consistent open-source icon set
+  - You can download the whole set of SVG icons or selected items
 
 # icons
 

@@ -28,6 +28,9 @@ modified: '2020-10-22T13:33:45.146Z'
   - mobile reponsive editor
   - 代码块支持高亮mdx的内容
   - 支持html，但不支持web components组件的标签
+  - lint markdown format
+    - 检查重要区块的语法、自定义语法
+    - 检查头部元数据格式
 
 - 细节设计
 

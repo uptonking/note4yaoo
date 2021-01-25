@@ -17,14 +17,6 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # popular
 
-- https://github.com/zaydek/duomo
-  - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
-  - Stackable, themeable CSS library
-  - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
-  - Duomo is a spiritual successor of Tailwind CSS.
-  - Uses HStack and VStack instead of Flexbox for rows and columns
-  - Uses ZStack to layer along the z-axis
-
 - https://github.com/bansal-io/pattern.css
   - https://bansal.io/pattern-css#cross-dots
   - CSS only library to fill empty background with beautiful patterns.

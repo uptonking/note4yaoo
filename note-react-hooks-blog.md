@@ -9,9 +9,24 @@ modified: '2020-12-29T14:18:03.808Z'
 
 # guide
 
-# hooks-usage
+# [The State Reducer Pattern with React Hooks](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
 
-## [Conditional React Hooks](https://www.benmvp.com/blog/conditional-react-hooks/)
+- As a reminder, the benefit of the state reducer pattern is in the fact that it allows "inversion of control" which is basically a mechanism for the author of the API to allow the user of the API to control how things work internally.
+- Ok, so the concept goes like this:
+  - End user does an action
+  - Dev calls dispatch
+  - Hook determines the necessary changes
+  - Hook calls dev's code for further changes (this is the inversion of control part)
+  - Hook makes the state changes
+
+- Remember, what we've done here is enable users to hook into every state update of our reducer to make changes to it. 
+  - This makes our hook WAY more flexible, but it also means that the way we update state is now part of the API and if we make changes to how that happens, then it could be a breaking change for users. 
+  - It's totally worth the trade-off for complex hooks/components, but it's just good to keep that in mind.
+
+- Great talk by @kentcdodds on why having too many props in a component can hurt performance and add unnecessary complexity, followed by a practical approach on how to avoid apropcalypse by using the state-reducer pattern with hooks!
+- https://twitter.com/kentcdodds/status/1256265379648700416
+
+# [Conditional React Hooks](https://www.benmvp.com/blog/conditional-react-hooks/)
 
 - Hooks enable us to use state and other React features without writing a class. 
 - We can’t call Hooks inside of conditionals, loops, or nested functions 
@@ -137,7 +152,7 @@ const Overlay = ({ show, children, onClose }) => {
 ```
 
 - Now, instead of trying to conditionally call the `useClickAway` Hook, we’re conditionally rendering the `<ClickAway>` component, and there is no rule against that. 
-  - since `ClickAway` is being conditionally rendered within `Overlay`, `useClickAway` is indirectly conditionally called!
+  - since `ClickAway` is being conditionally rendered within `Overlay`,  `useClickAway` is indirectly conditionally called!
   - `ClickAway` component’s props match the arguments that the `useClickAway` Hook accepts.
 
 ``` JS
@@ -193,6 +208,7 @@ const Page = ({ showBackToTop }) => {
 )
 }
 ```
+
 - If the Hook you wanna conditionally render returns data, your component wrapper needs a render prop
 - Instead of returning `null` to be “renderless”, it renders the UI returned by the children render prop. 
   - In this example, that UI is the “back to top” button. 
@@ -207,5 +223,6 @@ const Page = ({ showBackToTop }) => {
     - Hooks will run every time, but what they do depends on the arguments.
 - Why not just pass an extra argument to hook to tell the hook to not do anything when it runs?
 - Hooks can be called or used conditionally mostly by passing a method as 2nd argument. 
-  - For example `useMyHook("value", ()=>{doSomethingWithValue})` 
+  - For example `useMyHook("value", ()=>{doSomethingWithValue})`
+
   - this way you don't have to directly hack through "rendering".

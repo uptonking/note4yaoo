@@ -9,9 +9,6 @@ modified: '2020-11-13T07:28:50.844Z'
 
 # guide
 
-- top-css-lib
-  - bootstrap, bulma, materialize, spectre, primer
-
 - 设计样式时theming可参考
   - material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
@@ -24,15 +21,24 @@ modified: '2020-11-13T07:28:50.844Z'
 
 ## material
 
-- https://github.com/Dogfalo/materialize
+- materialize /38.3kStar/MIT/202006
+  - https://github.com/Dogfalo/materialize
   - https://materializecss.com/
-  - a CSS Framework based on Material Design
+  - a CSS Framework based on material design
+  - 视觉上边框线不明显，大量运用色块
 - https://github.com/maxsite/berry
   - https://maxsite.org/berry
   - A utility-first CSS framework with full support Material Design.
 - https://github.com/ManuTheCoder/material-design-pro
   - https://material-design-pro.hostman.site/
   - a responsive front end framework based on Material Design
+- https://github.com/finnhvman/matter /870Star/MIT/201907/js
+  - Material Design Components in Pure CSS
+  - Materializing HTML at just one class per component
+  - The purpose of Matter is to provide the most easy-to-use but accurate implementation of Material Design Components.
+  - Matter is built with theming in mind
+- more-material
+  - https://github.com/mildrenben/surface
 
 ## flat/metro
 
@@ -40,12 +46,24 @@ modified: '2020-11-13T07:28:50.844Z'
   - http://drasite.com/flat-remix-css
   - CSS library that provides a set of predesigned elements
   - It follows a modern flat design using a colorful palette
+  - 视觉上，边框线特别明显，轮廓分明
+- https://github.com/olton/Metro-UI-CSS
+  - https://metroui.org.ua/
+  - Build responsive projects on the web in Metro Style
 - https://github.com/codyogden/press-css
   - https://press-css.io/
   - A flat, material, no bullshit, highly extensible CSS button library.
 - https://github.com/Tropix126/wincss
   - https://tropix126.github.io/wincss
   - WinCSS is SASS framework which emulates the styles of Fluent Design applications as seen in WinUI 2.4.
+- https://github.com/ajusa/lit
+  - https://ajusa.github.io/lit
+  - a ridiculously small responsive css framework.
+  - preserve everything Skeleton, Milligram, and other micro frameworks have to offer.
+- https://github.com/siimple/siimple
+  - https://docs.siimple.xyz/examples/index.html
+  - The minimal CSS toolkit for flat and clean designs
+  - started as a small css framework with basic UI elements.
 
 ## neomorphism
 
@@ -55,17 +73,25 @@ modified: '2020-11-13T07:28:50.844Z'
 
 ## monochrome
 
+- https://github.com/asvvvad1/mono-color
+  - https://asvvvad1.github.io/mono-color/
+  - /57Star/MIT/202008
+  - CSS-only framework built with responsivity, readability, modularity, and a dual-theme in mind.
 - https://github.com/kokushin/mono.css
   - https://kokushin.github.io/mono.css/
+  - /8Star/MIT/201707/css
   - Minimal design based on black and white.
 
 ## hand-drawn
 
-- https://github.com/fxaeberhard/handdrawn.css
-  - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 - https://github.com/papercss/papercss /字体变成手写体
   - https://www.getpapercss.com/
+  - /3.2kStar/ISC/202011/scss
   - The Less Formal CSS Framework
+- https://github.com/fxaeberhard/handdrawn.css
+  - http://fxaeberhard.github.io/handdrawn.css/
+  - /61Star/CC0-1.0/201606/css
+  - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 
 # css-framework-popular
 
@@ -129,13 +155,6 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
-- https://github.com/finnhvman/matter /870Star/MIT/201907/js
-  - Material Design Components in Pure CSS
-  - Materializing HTML at just one class per component
-  - The purpose of Matter is to provide the most easy-to-use but accurate implementation of Material Design Components.
-  - Matter is built with theming in mind
-  - more-material
-    - https://github.com/mildrenben/surface
 
 # css vars
 
@@ -200,31 +219,25 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://ebay.github.io/skin/
   - Pure CSS framework designed & developed by eBay for e-commerce marketplace.
   - Skin follows the BEM methodology of "Block, Element and Modifier" to ensure our HTML class name and structure is human readable and understandable.
-- https://github.com/Dogfalo/materialize /38.3kStar/MIT/202006
+- materialize /38.3kStar/MIT/202006
+  - https://github.com/Dogfalo/materialize
   - https://materializecss.com/
   - a CSS Framework based on material design
-- https://github.com/muicss/mui 
+- mui /4.5kStar/MIT/202006
+  - https://github.com/muicss/mui 
   - https://www.muicss.com/
-  - /4.5kStar/MIT/202006
   - lightweight CSS framework that follows Google's Material Design guidelines.
-  - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K (gzipped)
-- https://github.com/magnetis/astro
-  - /89Star/Apache2/202008/css
-  - https://astro.magnetis.com.br/
-  - An open source design system by Magnetis
-  - Astro is built based on Atomic Design
+  - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K
+
 - https://github.com/sky-uk/toolkit
   - http://www.sky.com/toolkit
   - Sky's CSS Toolkit
+  - https://github.com/sky-uk/toolkit-react
 - https://github.com/OfficeDev/office-ui-fabric-core
   - Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
  
 
-- https://github.com/ajusa/lit
-  - https://ajusa.github.io/lit
-  - a ridiculously small responsive css framework.
-  - preserve everything Skeleton, Milligram, and other micro frameworks have to offer.
 - https://github.com/andrearufo/nova.css
   - https://andrearufo.github.io/nova.css/
   - minimalistic CSS framework for your webpages.
