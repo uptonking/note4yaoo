@@ -38,4 +38,8 @@ modified: '2020-10-05T06:18:29.671Z'
 
 # examples
 
+- https://github.com/swift502/Sketchbook
+  - https://jblaha.art/sketchbook/latest
+  - 3D playground built on three.js and cannon.js
+
 # more-repos

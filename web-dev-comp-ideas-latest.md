@@ -41,7 +41,7 @@ modified: '2020-12-27T20:29:55.568Z'
       - 只用css vars不方便实现组件级的带约束的api接口
 - **playful**
   - 都是nice-to-have，非必需
-  - configurable
+  - configurable-knobs
   - pluggable extensions
     - loading skeleton
     - collapsible card/panel/window
@@ -53,7 +53,7 @@ modified: '2020-12-27T20:29:55.568Z'
   - 只适合简单组件，复杂组件如table实现功能时很可能与layout紧密相关
   - opinionated: ui交互或技术选型具有明显的偏向性
   - 使用headless ui时，组件配置项容易多到爆炸，如downshift
-- configurable
+- configurable-knobs
   - 所有组件共有的部分公共api
   - borderless
     - 部分组件提供无边框的版本，如modal
