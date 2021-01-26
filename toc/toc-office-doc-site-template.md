@@ -38,6 +38,3 @@ modified: '2021-01-17T09:26:32.783Z'
   - A template for JSDoc3 based on Bootstrap and themed by Bootswatch
 
 # more-docs
-
-- https://github.com/jhildenbiddle/docsify-themeable
-  - simple theme system for docsify.js

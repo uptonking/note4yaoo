@@ -78,15 +78,5 @@ modified: '2021-01-11T22:19:27.519Z'
 
  
 
-- https://github.com/robinsloan/perfect-edition
-  - https://robinsloan.github.io/perfect-edition/build/web/index.html
-  - responsive web e-book template
-- https://github.com/mraible/infoq-mini-book
-  - Template project for creating an InfoQ Mini-Book with Asciidoctor
-- https://github.com/surjithctly/documentation-html-template
-  - http://surjithctly.github.io/documentation-html-template/
-  - A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. 
-  - Built with Bootstrap 3.
-
 - https://github.com/delprzemo/react-admin-template
   - Simple React admin template - Hooks, Redux, Bootstrap

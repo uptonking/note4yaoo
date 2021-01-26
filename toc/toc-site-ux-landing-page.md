@@ -18,6 +18,10 @@ modified: '2020-12-29T11:27:41.474Z'
 - https://tailwindcss.com/
   - 首页的动画设计感极强
 
+- https://music.qier222.com/#/
+  - 第三方网易云音乐界面，大量运用圆角正方形，加上纯白背景，显得干净整洁
+  - 完爆官方界面
+
 # 产品开发
 
 - https://www.app.co/

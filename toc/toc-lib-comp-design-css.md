@@ -133,6 +133,8 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/halfmoonui/halfmoon
   - https://www.gethalfmoon.com/
   - 未模块化，一个css文件一万多行
+  - Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools.
+  - Halfmoon is designed to have classes very similar to the ones found in Bootstrap
 - skeleton /18kStar/MIT/201412/css
   - https://github.com/dhg/Skeleton
     - http://www.getskeleton.com/

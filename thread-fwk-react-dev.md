@@ -11,6 +11,18 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## One interesting thing we found when researching my last article is that every framework's version of this React code logs different things when you click the button
+- https://twitter.com/RyanCarniato/status/1353801009844240389
+  - Which are more correct
+  - React: "0 0 0"
+  - Vue 3: "1 2 0"
+  - Svelte: "1 0 0"
+  - Solid: "1 2 2"
+  - [5 Ways SolidJS Differs from Other JS Frameworks](https://dev.to/ryansolid/5-ways-solidjs-differs-from-other-js-frameworks-1g63)
+- well a major difference between the svelte version and the react one is that with the react code everything has to pass through the whole update cycle, whereas in svelte count is just a variable and ++ mutates it in place, or rather at the next ; 
+- Imho, react has made the best decision here because it takes care of the worst case scenario(Multiple state changes are batched into one state change preventing multiple rerenders).
+  - Also, This behaviour is noted well in the docs and is mostly associated with event handlers.
+
 - ## How do you decide when to split up a component? 
 - https://twitter.com/MichaelThiessen/status/1165241262494167043
 - TL; DR: when you need to, but not before.
@@ -43,6 +55,9 @@ modified: '2021-01-06T14:40:03.364Z'
   - https://codesandbox.io/s/cell-fracture-forked-3rjsl
 - https://twitter.com/0xca0a/status/1341811710081044483
   - a tutorial on working with @glTF3D in @threejs_org & React.
+- vue/svelte/ng were made for the document object model. 
+  - vue now has renderers, svelte, i don't ... think so? 
+  - react saw it coming and anticipated for a future where renderers transcend(超出；胜过) platforms many years ago.
 
 - ## Use `React.useMemo` instead of multiple `React.useCallback` s to create an object of handler functions in a custom hook. 
 - https://twitter.com/kyleshevlin/status/1352639659147456512

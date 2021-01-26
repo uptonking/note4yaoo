@@ -60,7 +60,8 @@ modified: '2020-12-29T17:53:03.684Z'
         - GPLv3
   - local-more
     - Tauon Music Box: linux only
-      - 可显示滚动歌词/synced lyrics
+      - 可显示滚动歌词/synced lyrics，但歌词的时间戳毫秒位不能是3位
+    - quodlibet 显示歌词的界面较简单
   - online: 洛雪音乐助手
     - 整合第3方音乐搜索与下载
     - 可选择同时下载歌词
@@ -80,9 +81,10 @@ modified: '2020-12-29T17:53:03.684Z'
       - 推荐方案：单文件包含所有信息，附加歌词用于滚动显示
     - 歌词搜索
       - 直接搜索歌词lrc文件，国外歌词很少有带时间戳的lrc
+      - 类似洛雪音乐助手可直接下载音乐文件及歌词，但很多都有版权问题
       - https://www.azlyrics.com/
-      - https://www.22lrc.com/ 爱歌词
       - https://mojim.com/ 魔镜歌词网
+      - https://www.kugeci.com 酷歌词，带时间戳
       - 木兰词
 - learning
   - goldendict

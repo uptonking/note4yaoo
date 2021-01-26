@@ -1,14 +1,14 @@
 ---
-title: toc-office-style-theme
+title: toc-office-doc-style-theme
 tags: [doc, style, themes, toc]
 created: '2020-10-05T09:49:50.474Z'
 modified: '2021-01-04T17:26:25.032Z'
 ---
 
-# toc-office-style-theme
+# toc-office-doc-style-theme
 
 - search
-  - paper, reading, reader, document
+  - paper, reading, reader, book, document
   - markdown theme, toc
 
 # doc-styling
@@ -126,6 +126,30 @@ modified: '2021-01-04T17:26:25.032Z'
   - https://yogurtcss.netlify.app/
   - The official documentation for Yogurt CSS
 
+# reader-books
+
+- https://github.com/readium/readium-css
+  - https://readium.org/readium-css/docs/
+  - stylesheets for EPUB Reading Systems, starting with Readium 2.
+- https://github.com/robinsloan/perfect-edition
+  - https://robinsloan.github.io/perfect-edition/build/web/index.html
+  - responsive web e-book template
+- https://github.com/mraible/infoq-mini-book
+  - Template project for creating an InfoQ Mini-Book with Asciidoctor
+- https://github.com/surjithctly/documentation-html-template
+  - http://surjithctly.github.io/documentation-html-template/
+  - A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. 
+  - Built with Bootstrap 3.
+
+# typography
+
+- https://github.com/boriskirov/fluiditype
+  - https://www.fluiditype.com/
+  - 文字会随视口变大而变大
+  - Fluiditype is a typography css framework
+  - The magic is behind the calculations done while incorporate the vw which stands for viewport-width 
+    - and it is fully responsive and fluid to the size of the viewport.
+
 # more
 
 - https://github.com/wecatch/markdown-css
@@ -138,12 +162,10 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/sun11/hexo-theme-paperbox
   - https://sun11.me/
   - A responsive paper-like theme for hexo blog.
-- https://github.com/boriskirov/fluiditype
-  - https://www.fluiditype.com/
-  - 文字会随视口变大而变大
-  - Fluiditype is a typography css framework
-  - The magic is behind the calculations done while incorporate the vw which stands for viewport-width 
-    - and it is fully responsive and fluid to the size of the viewport.
 - https://github.com/Kirilllive/tuesday-js
   - https://kirilllive.github.io/tuesday-js/
   - a free open source engine for creating visual novels, interactive stories and text-based adventure games. 
+
+- https://github.com/luin/readability
+  - Turn any web page into a clean view
+  - This module is based on arc90's readability project.

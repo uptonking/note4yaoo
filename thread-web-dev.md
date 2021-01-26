@@ -11,6 +11,24 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## If you ever looked inside a non-minified bundle, you might’ve seen a lot of automatically generated comments that look like this `/*#​__PURE__*/ `
+
+- https://twitter.com/iamakulov/status/1353650608750825472
+- In 2016, folks noticed that when you transpile a JS class with Babel, the class isn’t removed during tree-shaking. 
+  - Even if it’s not used anywhere.
+  - React was heavily relying on classes back then, so this was a pretty huge deal for React apps.
+- Back then, classes were just a syntactic sugar around functions. 
+  - So, to transpile a class, Babel was converting it into a function – and wrapping that function into an IIFE (immediately invoked function expression)
+  - a problem with an IIFE is that UglifyJS (which did tree shaking in webpack back then) doesn’t know whether it’s safe to remove it.
+  - An IIFE may simply create a class and do nothing else, like above. But it also may send a request to the server. UglifyJS doesn’t know
+  - To solve this `/*#​__PURE__*/` was born.
+  - Babel started to add /*#​__PURE__*/ comments in front of IIFEs it generates (as it knows they don’t have any side effects).
+  - And UglifyJS started to recognize these comments – and dropping pure function calls if their result isn’t used.
+- Fast forward to 2021:
+  - Terser replaced UglifyJS in webpack (and is still responsible for most of tree shaking)
+  - A lot of other tools adopted /*#​__PURE__*/ comments (eg babel-preset-react – for React.createElement – or babel-plugin-styled-components – for styled.whatever)
+  - /*#​__PURE__*/ annotations were documented on the Terser website, along with a couple others
+
 - ## The "hidden" cost of webfonts: you need to test everything twice. 
 - https://twitter.com/rauchg/status/1352730054950703104
   - Blocking webfonts are a no-go, so you need to consider every page in 2 dimensions (font-display: optional).

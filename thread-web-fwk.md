@@ -11,6 +11,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Does any Node.js serverless function providers optimize cold start time with V8 heap snapshots?
+- https://twitter.com/youyuxi/status/1353853045520674817
+- Don’t think so, 
+  - because node itself doesn’t support v8 snapshotting, even for node’s internals. 
+  - There’s some scary blockers still remaining, so unless the clouds figured them out but didn’t tell anyone we’re all waiting for that! Docker snapshots though maybe
+- Cloudflare workers are your best bet if you want to minimize cold start (was they don’t have any) but they don’t run Node.js. 
+  - They have a custom runtime that’s a thin layer atop v8.
+- Cloudflare is closest.
+
 - ## My Monday off has primarily gone towards a Babel/Webpack upgrade on a public sector code-base 
 - https://twitter.com/slightlylate/status/1351346159869050880
   - and my prior that all of this is suspect and complexity-for-promotion's sake has never been more strongly reinforced.
