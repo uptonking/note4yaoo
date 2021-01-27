@@ -45,6 +45,8 @@ modified: '2021-01-11T18:34:20.713Z'
   - 提供了通过改变link的href属性值来切换theming的示例
   - A front-end design toolkit built with Sass for developing responsive web apps.
   - Skeleton CSS, the original inspiration
+  - ref
+    - http://getskeleton.com/
 
 # popular docs
 
@@ -195,6 +197,33 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://github.com/kylelogue/mustard-ui
   - https://kylelogue.github.io/mustard-ui
   - A starter CSS framework that actually looks good.
+  - 文档是纯client js，但组件示例用的是codesandbox
+
+## 单页文档
+
+- https://github.com/agileleague/thimblecss
+  - https://thimblecss.com/
+  - A nimble CSS framework built with Flex Box for the modern web
+  - 单页文档，类似pico的文档
+- https://github.com/Jaspero/pix
+  - https://pix-css.firebaseapp.com/
+  - A modern css/scss boilerplate framework. simple and modular
+- https://github.com/Ferror/grave
+  - https://grave.malcherczyk.com/
+- https://github.com/dgrammatiko/naf-css
+  - https://dgrammatiko.github.io/naf-css/
+  - 单页文档，样式过于简单，示例很典型
+- https://github.com/milligram/milligram
+  - https://milligram.io/
+
+## 多页文档
+
+- https://github.com/codeforms/Punica-CSS-Framework
+  - https://codeforms.github.io/Punica-CSS-Framework/base/colors.html
+- https://github.com/pepabo/nachiguro
+  - https://pepabo.github.io/nachiguro/color.html
+- https://github.com/halibegic/coco-css
+  - https://github.com/halibegic/coco-css
 
 # more-docs
 
@@ -209,3 +238,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://trendmicro-frontend.github.io/styled-ui/colors
 
 - https://turretcss.com/demo/
+
+- https://github.com/ciucacristi/elementric.git
+  - minimal HTML + CSS + JS base front-end framework for simple web site projects.

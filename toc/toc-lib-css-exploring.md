@@ -59,6 +59,7 @@ modified: '2020-10-22T13:09:57.085Z'
   - https://astro.magnetis.com.br/
   - An open source design system by Magnetis
   - Astro is built based on Atomic Design
+
 # css-tools
 
 - https://github.com/zicht/zss /无组件，提供了很多工具类
@@ -66,16 +67,6 @@ modified: '2020-10-22T13:09:57.085Z'
   - ZSS is a Sass framework that helps you build design systems with configurable design scales.
   - Provides abstractions of common UI patterns, so you can focus on the specific design details.
   - Unlike Bootstrap, ZSS does not contain pre-made components or JavaScript.
-
-- https://github.com/CodyHouse/codyhouse-framework
-  - https://codyhouse.co/
-  - A lightweight front-end framework for building accessible, bespoke interfaces.
-  - 提供了ui组件的在线编辑器示例
-  - 使用了css vars
-
-- https://github.com/dohliam/dropin-minimal-css
-  - https://dohliam.github.io/dropin-minimal-css
-  - This is a quick drop-in CSS switcher to allow for previewing some of the many minimal CSS-only frameworks that are available.
 
 # more-css-repos
 

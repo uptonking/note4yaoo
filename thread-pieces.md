@@ -11,7 +11,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
-- ## 
+
+- ## I have to admit that "frameworkless" is a better buzzword than "framework agnostic", even if it’s *less* accurate.
 
 - ## Starting to wonder if public school is even a good thing for my kids. 
 - https://twitter.com/mjackson/status/1352744738957316096

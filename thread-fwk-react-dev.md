@@ -22,6 +22,11 @@ modified: '2021-01-06T14:40:03.364Z'
 - well a major difference between the svelte version and the react one is that with the react code everything has to pass through the whole update cycle, whereas in svelte count is just a variable and ++ mutates it in place, or rather at the next ; 
 - Imho, react has made the best decision here because it takes care of the worst case scenario(Multiple state changes are batched into one state change preventing multiple rerenders).
   - Also, This behaviour is noted well in the docs and is mostly associated with event handlers.
+- I work in React almost exclusively now, but I have to admit that classes add a lot of clarity to state in components.
+  - *However* having worked on the Angular team, particularly in the engine/compiler, I can tell you that classes are a double-edged sword because of inheritance.
+  - People subclassing subclassed components. 
+  - Class-based components in web frameworks tend to have some static traits. 
+  - There's a lot of dancing around how to propagate that through inheritance in a way that makes sense.
 
 - ## How do you decide when to split up a component? 
 - https://twitter.com/MichaelThiessen/status/1165241262494167043

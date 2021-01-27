@@ -31,6 +31,22 @@ modified: '2020-11-13T07:31:38.730Z'
   - It's written in LESS, because of nesting and other neat features
   - It is designed to replace Bootstrap and to be used with CSS variables.
 
+## switch-themes
+
+- https://github.com/CodyHouse/codyhouse-framework
+  - https://codyhouse.co/
+  - A lightweight front-end framework for building accessible, bespoke interfaces.
+  - 提供了ui组件的在线编辑器示例
+  - 使用了css vars
+
+- https://github.com/dohliam/dropin-minimal-css
+  - https://dohliam.github.io/dropin-minimal-css
+  - This is a quick drop-in CSS switcher to allow for previewing some of the many minimal CSS-only frameworks that are available.
+
+- https://github.com/kemar/html-elements
+  - https://kemar.github.io/html-elements/
+  - This repo contains an HTML page with all HTML5 elements and a style switcher (like it's 2001) for previewing various CSS frameworks.
+
 # react-theming
 
 - https://github.com/seek-oss/braid-design-system

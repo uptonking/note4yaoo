@@ -187,3 +187,8 @@ dynamicLoadCss(type) {
     - Then, themes are just a collection of variable overrides. Super clean.
   - I noticed the same pattern in the lightweight Pico.css framework 
     - which I started using for a project a few weeks ago (toggles between dark/light/auto as well).
+
+# ref
+
+- [Creating a Simple Yet Complicated Dark Mode Animation](https://celikk.me/blog/darkModeAnimation/)
+  - https://github.com/celikkoseoglu/celikk-personal-website

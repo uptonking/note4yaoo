@@ -13,6 +13,12 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+- ## Digging this dark/light toggle effect 
+- https://twitter.com/JoshWComeau/status/1354119661516943360
+  - Wonderful in-depth writeup that teaches a bunch of nifty animation fundamentals as well
+- [Creating a Simple Yet Complicated Dark Mode Animation](https://celikk.me/blog/darkModeAnimation/)
+  - https://github.com/celikkoseoglu/celikk-personal-website
+
 - ## React Three Fiber and Three.js make stuff like this so accessible to front-end devs.
 - https://twitter.com/JoshWComeau/status/1353084920504197120
   - this still requires a lot of knowledge when it comes to both trigonometry and 3D concepts.
