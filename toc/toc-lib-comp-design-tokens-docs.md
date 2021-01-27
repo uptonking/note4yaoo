@@ -17,9 +17,36 @@ modified: '2021-01-11T18:34:20.713Z'
 - 设计样式时theming可参考
   - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
-- style-guide-docs
+- style-guide-docs-tips
   - 不要直接提供复制按钮，因为使用场景非常灵活
   - 提供多种格式的颜色值供复制
+
+# style-docs-template
+
+- tips
+  - 不必搜索所有最新样式项目的仓库
+    - 深入理解流行的css framework的文档实现就好，大多都是多页文档
+
+- primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
+  - https://github.com/taniarascia/primitive
+  - https://taniarascia.github.io/primitive/
+  - 提供了基础页面模版
+  - 提供了通过改变link的href属性值来切换theming的示例
+  - A front-end design toolkit built with Sass for developing responsive web apps.
+  - Skeleton CSS, the original inspiration
+  - ref
+    - http://getskeleton.com/
+
+- 单页文档示例
+  - primitive, pico
+  - https://oxal.org/projects/sakura/demo/ (classless)
+  - https://ajusa.github.io/lit/docs/lit.html
+  - https://jenil.github.io/chota/
+
+- 多页文档示例
+  - https://newcss.net/usage/elements/ (classless)
+  - https://picturepan2.github.io/spectre/utilities/colors.html
+  - https://mildrenben.github.io/surface/
 
 # themeable design docs
 
@@ -37,16 +64,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://chakra-ui.com/docs/theming/theme
 - flame /storybook
   - https://lightspeed-flame.netlify.app/?path=/story/theme-tokens--colors
-
-- primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
-  - https://github.com/taniarascia/primitive
-  - https://taniarascia.github.io/primitive/
-  - 提供了基础页面模版
-  - 提供了通过改变link的href属性值来切换theming的示例
-  - A front-end design toolkit built with Sass for developing responsive web apps.
-  - Skeleton CSS, the original inspiration
-  - ref
-    - http://getskeleton.com/
 
 # popular docs
 
@@ -199,12 +216,12 @@ modified: '2021-01-11T18:34:20.713Z'
   - A starter CSS framework that actually looks good.
   - 文档是纯client js，但组件示例用的是codesandbox
 
-## 单页文档
+## 文档单页
 
 - https://github.com/agileleague/thimblecss
   - https://thimblecss.com/
   - A nimble CSS framework built with Flex Box for the modern web
-  - 单页文档，类似pico的文档
+  - 类似pico的文档
 - https://github.com/Jaspero/pix
   - https://pix-css.firebaseapp.com/
   - A modern css/scss boilerplate framework. simple and modular
@@ -212,9 +229,14 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://grave.malcherczyk.com/
 - https://github.com/dgrammatiko/naf-css
   - https://dgrammatiko.github.io/naf-css/
-  - 单页文档，样式过于简单，示例很典型
+  - 样式过于简单，示例很典型
 - https://github.com/milligram/milligram
   - https://milligram.io/
+- https://github.com/Spiderpig86/Cirrus
+  - https://cirrus-ui.netlify.app/
+  - 样式非常友好
+- https://github.com/kbrsh/wing
+  - https://kbrsh.github.io/wing
 
 ## 多页文档
 

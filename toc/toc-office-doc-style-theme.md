@@ -150,6 +150,11 @@ modified: '2021-01-04T17:26:25.032Z'
   - The magic is behind the calculations done while incorporate the vw which stands for viewport-width 
     - and it is fully responsive and fluid to the size of the viewport.
 
+- https://github.com/marcomattes/eink-css-ui-framework
+  - 样式过于简单，组件很少
+  - ePaperCSS: The ePaper CSS UI framework for e-ink and ePaper displays. Optimized for grayscale & accessibility
+  - this framework follows an animation-free, minimalist approach.
+
 # more
 
 - https://github.com/wecatch/markdown-css

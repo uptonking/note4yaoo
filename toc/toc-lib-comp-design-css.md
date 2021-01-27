@@ -13,7 +13,7 @@ modified: '2020-11-13T07:28:50.844Z'
   - material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
 
 - ref
-  - search: pure css, css only
+  - search: pure css, css only, css framework, css vars
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
 
@@ -24,21 +24,31 @@ modified: '2020-11-13T07:28:50.844Z'
 - materialize /38.3kStar/MIT/202006
   - https://github.com/Dogfalo/materialize
   - https://materializecss.com/
+  - 文档多页，基于jade
   - a CSS Framework based on material design
   - 视觉上边框线不明显，大量运用色块
+- https://github.com/mildrenben/surface
+  - https://mildrenben.github.io/surface/
+  - /345Star/MIT/201709/css/inactive/文档多页
+  - A Material Design CSS only framework
 - https://github.com/maxsite/berry
   - https://maxsite.org/berry
   - A utility-first CSS framework with full support Material Design.
 - https://github.com/ManuTheCoder/material-design-pro
   - https://material-design-pro.hostman.site/
   - a responsive front end framework based on Material Design
-- https://github.com/finnhvman/matter /870Star/MIT/201907/js
+- https://github.com/finnhvman/matter
+  - /870Star/MIT/201907/js
   - Material Design Components in Pure CSS
   - Materializing HTML at just one class per component
   - The purpose of Matter is to provide the most easy-to-use but accurate implementation of Material Design Components.
   - Matter is built with theming in mind
 - more-material
-  - https://github.com/mildrenben/surface
+  - mui /4.5kStar/MIT/202006
+    - https://github.com/muicss/mui 
+    - https://www.muicss.com/
+    - lightweight CSS framework that follows Google's Material Design guidelines.
+    - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K
 
 ## flat/metro
 
@@ -47,6 +57,11 @@ modified: '2020-11-13T07:28:50.844Z'
   - CSS library that provides a set of predesigned elements
   - It follows a modern flat design using a colorful palette
   - 视觉上，边框线特别明显，轮廓分明
+- https://github.com/ajusa/lit
+  - https://ajusa.github.io/lit
+  - 单页文档
+  - a ridiculously small responsive css framework.
+  - preserve everything Skeleton, Milligram, and other micro frameworks have to offer.
 - https://github.com/olton/Metro-UI-CSS
   - https://metroui.org.ua/
   - Build responsive projects on the web in Metro Style
@@ -56,10 +71,6 @@ modified: '2020-11-13T07:28:50.844Z'
 - https://github.com/Tropix126/wincss
   - https://tropix126.github.io/wincss
   - WinCSS is SASS framework which emulates the styles of Fluent Design applications as seen in WinUI 2.4.
-- https://github.com/ajusa/lit
-  - https://ajusa.github.io/lit
-  - a ridiculously small responsive css framework.
-  - preserve everything Skeleton, Milligram, and other micro frameworks have to offer.
 - https://github.com/siimple/siimple
   - https://docs.siimple.xyz/examples/index.html
   - The minimal CSS toolkit for flat and clean designs
@@ -110,9 +121,10 @@ modified: '2020-11-13T07:28:50.844Z'
     - The main issue is that it requires close to 100 CSS Variables to be applied to `:root`. 
       - While this is done automatically, it might be considered noisy and verbose. 
       - It is however the most flexible approach for theming a CSS framework.
-- spectre /MIT/10.3kStar/202007/文档多页
+- spectre /MIT/10.3kStar/202007
   - https://github.com/picturepan2/spectre
   - https://picturepan2.github.io/spectre/
+  - 文档多页，文档基于pug实现
   - a responsive CSS framework based on flexbox
   - Designed and built by Yan Zhu(Microsoft MVP)
 - pico.css /65Star/MIT/202010/scss/文档优秀
@@ -157,15 +169,31 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
+- cirrus /694Star/MIT/202101/scss
+  - https://github.com/Spiderpig86/Cirrus
+  - https://cirrus-ui.netlify.app/
+  - 文档单页，文档样式非常友好
+  - A fully responsive CSS framework with beautiful controls and simplistic structure. 
+  - Cirrus is designed to be adaptable to existing themes or when starting fresh.
+  - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
+
+ 
+
+- https://github.com/ciucacristi/elementric
+  - https://ciucacristi.github.io/elementric/
+  - Elementric is a free front-end package of UI element
+  - 样式设计基于白底的圆角方形，设计感很强
 
 # css vars
 
 - https://github.com/alphardex/aqua.css
   - https://aquacss.netlify.com/
   - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
+  - 文档基于vue，仓库中提供了很多纯html demo示例
   - [dashboard demo](https://codepen.io/alphardex/full/yLNwKqx)
 - https://github.com/zaydek/duomo
   - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
+  - 无docs网站
   - Stackable, themeable CSS library
   - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
   - Duomo is a spiritual successor of Tailwind CSS.
@@ -176,7 +204,7 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - https://github.com/elishaterada/feathercss /设计简洁干净
   - https://feathercss.makerkits.co/
-  - 文档单页，每个组件并排显示明暗两种样式
+  - 文档单页，文档基于next，每个组件并排显示明暗两种样式
   - FeatherCSS is a Dark Mode ready minimalist CSS Framework with support for RTL and Accessibility
   - It purposefully excludes features like grid layout, media queries, or icons which tends to require per-project customization.
   - It’s Just CSS™ with CSS variables. Bring your own LESS/SaaS/CSS-in-JS solution
@@ -185,54 +213,61 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - https://github.com/jenil/chota
   - https://jenil.github.io/chota/
+  - 文档单页，纯html
   - Easy to extend with CSS variables
   - Easy dark mode switch
-
-- https://github.com/johannschopplich/buldy
-  - Modern CSS framework distilled from the best of larger frameworks
-  - Easily editable and extendable CSS variables
 
 - https://github.com/tylerchilds/cutestrap
   - http://www.cutestrap.com/features/themes
   - A strong, independent CSS Framework. Only 2.7KB gzipped.
   - The two constraints for browser support are Custom Properties and CSS Grid.
+  - 样式源码基于css，默认首页文档是多个html，另外的css文档使用了kss生成
+
+- https://github.com/lnolte/und-css
+  - https://css.und-pohlen.de/tokens/
+  - 文档单页，样式过于简单，不推荐
+  - Custom Property based CSS Framework fully configurable using SASS
+  - und CSS aims to make working with CSS easier by providing robust compositions and tools to flexibly set up visual languages fast.
+  - und CSS consists of three parts: Tokens, Objects and Utilities
 - https://github.com/fortrabbit/teutonic-css
   - https://teutonic.co/
+  - 样式很不美观
   - A modern CSS framework — versatile, well documented.
   - It's based on CSS Variables for easy customization and extension. 
   - It features cool tech like CSS Grid. 
   - The source is a collection of SCSS modules
-- https://github.com/lnolte/und-css
-  - https://css.und-pohlen.de/tokens/
-  - 文档单页，样式过于简单
-  - Custom Property based CSS Framework fully configurable using SASS
-  - und CSS aims to make working with CSS easier by providing robust compositions and tools to flexibly set up visual languages fast.
-  - und CSS consists of three parts: Tokens, Objects and Utilities
+
+- https://github.com/johannschopplich/buldy
+  - 无docs网站
+  - Modern CSS framework distilled from the best of larger frameworks
+  - Easily editable and extendable CSS variables
 
 # css-framework
 
+- milligram /8.8kStar/MIT/202006
+  - https://github.com/milligram/milligram
+  - https://milligram.io/
+  - /9.2kStar/MIT/202006/css
+  - 文档单页，文档也支持多页，基于pug实现
+  - A minimalist CSS framework.
+- chipolette /5Star/MIT/202008/css
+  - https://github.com/Marcisbee/chipolette
+  - http://marcisbee.com/chipolette/
+  - 单页文档，但根据多个html通过innerHTML实现
+  - It is designed to replace Bootstrap and to be used with CSS variables.
+  - Chipolette is a tiny CSS framework/Starter kit.
+  - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
+  - It's written in LESS, because of nesting and other neat features
+  - It is designed to replace Bootstrap and to be used with CSS variables.
 - vanilla-framework /438Star/LGPLv3/202009/scss
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
   - a simple extensible CSS framework, built using Sass
-- milligram /MIT/8.8kStar/202006/文档单页
-  - https://github.com/milligram/milligram
-  - https://milligram.io/
-  - A minimalist CSS framework.
 - Skin /111Star/MIT/202010/less/ebay
   - https://github.com/eBay/skin
   - https://ebay.github.io/skin/
   - Pure CSS framework designed & developed by eBay for e-commerce marketplace.
   - Skin follows the BEM methodology of "Block, Element and Modifier" to ensure our HTML class name and structure is human readable and understandable.
-- materialize /38.3kStar/MIT/202006
-  - https://github.com/Dogfalo/materialize
-  - https://materializecss.com/
-  - a CSS Framework based on material design
-- mui /4.5kStar/MIT/202006
-  - https://github.com/muicss/mui 
-  - https://www.muicss.com/
-  - lightweight CSS framework that follows Google's Material Design guidelines.
-  - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K
 
 - https://github.com/sky-uk/toolkit
   - http://www.sky.com/toolkit
@@ -257,23 +292,24 @@ modified: '2020-11-13T07:28:50.844Z'
 
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
-  - a CSS framework that doesn't require any classes. 
-- https://github.com/xz/new.css
+  - https://watercss.kognise.dev/
+  - I commonly make quick demo pages or websites with simple content. 
+    - For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
+  - Water.css is a CSS framework that doesn't require any classes. 
+- new.css /3.2kStar/MIT/202009/css
+  - https://github.com/xz/new.css
+  - https://newcss.net/
   - A classless CSS framework to write modern websites using only HTML.
-- https://github.com/kevquirk/simple.css
-  - a classless CSS template that allows you to make a good looking website really quickly.
-- https://github.com/oxalorg/sakura
+- sakura /2.9kStar/MIT/202012/scss
+  - https://github.com/oxalorg/sakura
+  - https://oxal.org/projects/sakura/demo/
   - a minimal classless css framework/theme
 - https://github.com/yegor256/tacit
+  - http://yegor256.github.io/tacit/
   - Tacit's goal is to be super simple and always with the same look-and-feel.
   - Here are some frameworks built on top of Tacit: kacit, Bahunya
-
-# ui-components
-
-- https://github.com/ciucacristi/elementric
-  - https://ciucacristi.github.io/elementric/
-  - Elementric is a free, open source, front-end package of UI element
-  - 样式设计基于白底的圆角方形，设计感很强
+- https://github.com/kevquirk/simple.css
+  - a classless CSS template that allows you to make a good looking website really quickly.
 
 # more-css-framework
 

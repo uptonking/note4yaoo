@@ -5,7 +5,7 @@ created: '2020-10-23T17:21:21.861Z'
 modified: '2020-11-13T07:31:38.730Z'
 ---
 
-# toc-lib-comp-theming-css-vars
+# toc-lib-comp-theming
 
 # guide
 

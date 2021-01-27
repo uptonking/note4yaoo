@@ -8,6 +8,7 @@ modified: '2020-07-14T11:19:00.521Z'
 # tool-iot-keyboard-symbols
 
 ``` 
+
 ` -- Back quote
 ~ -- Tilde
 
@@ -19,7 +20,7 @@ $ -- Dollar
 ^ -- Caret
 & -- Ampersand
 
-* -- Star /asterisk / splat
+* -- Star/asterisk/splat
 
 ( -- Open Parenthesis
 ) -- Closed Parenthesis
@@ -45,7 +46,7 @@ _ -- Underscore
 
 , -- Comma
 < -- Less than
-. -- Dot / period
+. -- Dot/period
 > -- Greater than
 / -- Slash
 ? -- Question mark
