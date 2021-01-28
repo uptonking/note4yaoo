@@ -1,11 +1,11 @@
 ---
-title: toc-lib-css-layout
-tags: [css, layout, lib, toc]
+title: toc-lib-css-flexbox-grid-layout
+tags: [css, css-grid, flexbox, layout, lib, toc]
 created: '2020-07-19T12:47:49.585Z'
-modified: '2020-08-02T07:17:20.850Z'
+modified: '2021-01-28T21:31:18.697Z'
 ---
 
-# toc-lib-css-layout
+# toc-lib-css-flexbox-grid-layout
 
 # flexbox-layout
 
@@ -65,12 +65,15 @@ modified: '2020-08-02T07:17:20.850Z'
 - react-css-grid-table /MIT/122Star/201807
   - https://github.com/RebeccaPark/react-css-grid-table
 
-# pieces
+# more
 
 - animate-css-grid /NALicense/909Star/201912
   - https://github.com/aholachek/animate-css-grid
   - https://codepen.io/aholachek/pen/VXjOPB
   - Painless transitions for CSS Grid
+
+# ref
+
 - [csslayout](https://github.com/phuoc-ng/csslayout)
   - https://csslayout.io/
   - A collection of popular layouts and patterns made with CSS

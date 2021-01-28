@@ -325,3 +325,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://pay-0.herokuapp.com/
   - Dribbble design built in ReactJS.
   - 样式基于tailwindcss
+
+- https://github.com/ercumentlacin/Social-media-dashboard-with-theme-switcher
+  - 基于react实现Social media dashboard with theme switcher 
