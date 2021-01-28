@@ -40,6 +40,10 @@ modified: '2021-01-11T22:19:27.519Z'
   - Built with only HTML, CSS and a bit of JavaScript
   - Uses No CSS or JavaScript Frameworks or libraries as dependencies.
 
+- https://github.com/chetanverma16/react-portfolio-template
+  - https://react-portfolio-template.netlify.com/
+  - 基于gatsby
+
 # tools
 
 - https://github.com/taniarascia/primitive /NoDeps

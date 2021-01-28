@@ -92,6 +92,8 @@ modified: '2020-11-13T07:28:50.844Z'
   - https://kokushin.github.io/mono.css/
   - /8Star/MIT/201707/css
   - Minimal design based on black and white.
+- https://github.com/cihankoseoglu/shades
+  - A Sass/CSS framework for minimalist websites that use black, white and shades of gray as a design choice
 
 ## hand-drawn
 
@@ -319,3 +321,6 @@ modified: '2020-11-13T07:28:50.844Z'
 - https://github.com/AliBahaari/Jikan
   - https://alibahaari.github.io/Jikan/
   - CSS framework for better, faster and more beautiful UIs.
+
+- https://github.com/yashdiniz/FRUI
+  - Flat & Round User Interface, is a minimalistic and professional UI framework 

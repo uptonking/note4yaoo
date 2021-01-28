@@ -19,8 +19,12 @@ modified: '2020-12-29T11:27:41.474Z'
   - 首页的动画设计感极强
 
 - https://music.qier222.com/#/
-  - 第三方网易云音乐界面，大量运用圆角正方形，加上纯白背景，显得干净整洁
-  - 完爆官方界面
+  - 第三方网易云音乐界面，大量运用圆角方形，加上纯白背景，显得干净整洁
+  - 完爆官方界面，高颜值的第三方网易云播放器，支持 Win/macOS/Linux
+
+- https://fariasmateuss.github.io/product/
+  - https://github.com/fariasmateuss/product
+  - Responsive and animated product card using HTML, CSS and JavaScript
 
 # 产品开发
 

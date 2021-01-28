@@ -11,6 +11,8 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## 
+
 - ## CE v1 is not a spec without a way to extend existing HTML elements
 - https://twitter.com/Rich_Harris/status/1352327436512485377
 - To be fair it's really only a more specific version of an issue Seb Markbåge identified long ago

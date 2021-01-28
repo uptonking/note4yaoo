@@ -13,6 +13,22 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Will Vite replace vue-cli? 
+- https://twitter.com/youyuxi/status/1354584410482499585
+  - Initially I wasn't sure, but at this stage I believe it will eventually be the case.
+  - The main disparity(不同；差异，悬殊) now is just test runner integrations.
+- Check out uvu by @lukeed05 . 
+  - Native ESM support, very much in the spirit of Vite. 
+  - No test compilation step by default, no special integration needed.
+  -  When I need to test in the browser, I just start my Vite dev server and use puppeteer in uvu tests. It's refreshingly simple
+- We could make a plugin for web test runner
+  - It should be relatively straightforward if we can proxy browser requests to some transform API or middleware. 
+  - We already have a plugin for snowpack
+- There was discussion in vue-cli about letting plugins replace webpack as the builder
+- after a few years of running large enterprise apps on vue-cli, I've had to break out of the test runner integrations to avoid the lag time between test runner updates, and vue-cli updates. 
+  - vue-cli is still a great tool... 
+  - But would love to see a more decoupled approach in vite
+
 - ##  what are your team’s package.json script naming conventions for development mode, your build stage, and potentially running the built thing?
 - https://twitter.com/jaredpalmer/status/1353083840424763392
   - I used to be in the ‘start, build, start:prod’ team 

@@ -174,3 +174,8 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/luin/readability
   - Turn any web page into a clean view
   - This module is based on arc90's readability project.
+
+- https://github.com/vinitkumar/white-paper
+  - http://vinitkumar.github.io/white-paper/
+  - clean jekyll theme.
+  - It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.

@@ -11,6 +11,24 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+
+- ##  you no longer have to write <a target=“_blank” rel=“noopener”> to make external links secure!
+- https://twitter.com/swyx/status/1354743782701375488
+  - The HTML standard was changed in 2019 so that `rel=“noopener”` is always implied
+- also worth noting that we cant drop rel=noopener right this second, bc this change only JUST landed (Chrome 88) and will take time to roll out. but will be soon!
+
+- ## The MS-Edge/Blink folks are working on adding a <popup> HTML element, for tooltips/menus
+- https://twitter.com/JoshWComeau/status/1354529361031024640
+  - Handles all the hard stuff (layering, positioning, focus management, accessibility)
+  - Built-in “light dismiss”
+  - Can be fully styled
+- This is super exciting! We've all spent too many hours fussing with popovers
+- That would be really nice. No more Popper.js or libraries for custom dropdowns, date pickers, tooltips and menus.
+- How is this different from `<dialog>` ?
+  - I see it can be directly tied to a parent element.
+- Nice but that means the popup will be native and different across browsers
+- That smells of new IE6 in the making.
+
 - ## If you ever looked inside a non-minified bundle, you might’ve seen a lot of automatically generated comments that look like this `/*#​__PURE__*/ `
 
 - https://twitter.com/iamakulov/status/1353650608750825472

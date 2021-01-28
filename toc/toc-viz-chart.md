@@ -185,6 +185,11 @@ modified: '2020-10-22T10:22:33.292Z'
   - 依赖raphael，基于svg实现
   - Beautiful Statistical Data Visualization library
 
+- https://github.com/Rich-Harris/pancake
+  - https://pancake-charts.surge.sh/
+  - Pancake is a charting library for Svelte applications that allows you to visualize data with a combination of HTML, SVG and (soon) canvas/WebGL.
+  - Unlike most charting libraries, Pancake is designed with server-side rendering in mind, meaning you can create beautiful responsive charts that may not even need JavaScript to render. 
+
 # css chart
 
 - https://github.com/asciimoo/cssplot
