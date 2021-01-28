@@ -11,6 +11,7 @@ modified: '2021-01-28T21:35:00.167Z'
 
 - 设计样式时theming可参考
   - dark/darcula, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss), glass-ui
+  - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
 
 - ref
   - search: pure css, css only, css framework, css vars
@@ -21,12 +22,16 @@ modified: '2021-01-28T21:35:00.167Z'
 
 ## material
 
-- materialize /38.3kStar/MIT/202006
+- https://github.com/material-components/material-components-web
+  - 现在的theming功能主要通过sass实现，只有极少数变量可以通过css vars配置
+    - 没有直接提供dark theme，但有提供sass实现的示例
+    - [roadmap: Add Dark Mode support](https://github.com/material-components/material-components-web/issues/5253)
+- materialize /38.3kStar/MIT/202006/scss
   - https://github.com/Dogfalo/materialize
   - https://materializecss.com/
+  - 视觉上边框线不明显，大量运用色块
   - 文档多页，基于jade
   - a CSS Framework based on material design
-  - 视觉上边框线不明显，大量运用色块
 - https://github.com/mildrenben/surface
   - https://mildrenben.github.io/surface/
   - /345Star/MIT/201709/css/inactive/文档多页
@@ -52,12 +57,12 @@ modified: '2021-01-28T21:35:00.167Z'
 
 ## flat/metro
 
-- https://github.com/daniruiz/flat-remix-css
+- https://github.com/daniruiz/flat-remix-css /202008/css
   - http://drasite.com/flat-remix-css
+  - 视觉上，边框线特别明显，轮廓分明
   - CSS library that provides a set of predesigned elements
   - It follows a modern flat design using a colorful palette
-  - 视觉上，边框线特别明显，轮廓分明
-- https://github.com/ajusa/lit
+- https://github.com/ajusa/lit /202005/css
   - https://ajusa.github.io/lit
   - 单页文档
   - a ridiculously small responsive css framework.
@@ -76,6 +81,12 @@ modified: '2021-01-28T21:35:00.167Z'
   - The minimal CSS toolkit for flat and clean designs
   - started as a small css framework with basic UI elements.
 
+- https://github.com/designmodo/Flat-UI
+  - https://designmodo.github.io/Flat-UI/
+  - Flat UI Free - Design Framework (html/css3/less/js)
+  - Flat UI is a beautiful theme for Bootstrap. 
+    - We have redesigned many of its components to look flat in every pixel.
+
 ## neomorphism
 
 - https://github.com/ismail9k/neomorphism
@@ -87,6 +98,7 @@ modified: '2021-01-28T21:35:00.167Z'
 - https://github.com/asvvvad1/mono-color
   - https://asvvvad1.github.io/mono-color/
   - /57Star/MIT/202008
+  - 提供了dark主题demo
   - CSS-only framework built with responsivity, readability, modularity, and a dual-theme in mind.
 - https://github.com/kokushin/mono.css
   - https://kokushin.github.io/mono.css/
@@ -110,8 +122,8 @@ modified: '2021-01-28T21:35:00.167Z'
 
 - https://github.com/ciucacristi/elementric
   - https://ciucacristi.github.io/elementric/
-  - Elementric is a free front-end package of UI element
   - 样式设计基于白底的圆角方形，设计感很强
+  - Elementric is a free front-end package of UI element
 
 # css-vars
 

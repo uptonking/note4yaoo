@@ -238,7 +238,7 @@ modified: '2021-01-11T18:34:20.713Z'
 - https://github.com/kbrsh/wing
   - https://kbrsh.github.io/wing
 
-## 多页文档
+## 文档多页
 
 - https://github.com/codeforms/Punica-CSS-Framework
   - https://codeforms.github.io/Punica-CSS-Framework/base/colors.html
