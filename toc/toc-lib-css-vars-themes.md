@@ -55,6 +55,16 @@ modified: '2021-01-29T18:54:36.865Z'
     - lightweight CSS framework that follows Google's Material Design guidelines.
     - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K
 
+## bootstrap-like
+
+- chipolette /5Star/MIT/202008/css
+  - https://github.com/Marcisbee/chipolette
+  - http://marcisbee.com/chipolette/
+  - 单页文档，但根据多个html通过innerHTML实现，使用了css vars
+  - It is designed to replace Bootstrap and to be used with CSS variables.
+  - Chipolette is a tiny CSS framework/Starter kit.
+  - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
+
 ## flat/metro
 
 - https://github.com/daniruiz/flat-remix-css /202008/css
@@ -70,6 +80,9 @@ modified: '2021-01-29T18:54:36.865Z'
 - https://github.com/olton/Metro-UI-CSS
   - https://metroui.org.ua/
   - Build responsive projects on the web in Metro Style
+  - https://github.com/TalksLab/metro-bootstrap
+    - http://talkslab.github.com/metro-bootstrap
+    - Simple bootstrap from Twitter with Metro style.
 - https://github.com/codyogden/press-css
   - https://press-css.io/
   - A flat, material, no bullshit, highly extensible CSS button library.
@@ -87,12 +100,6 @@ modified: '2021-01-29T18:54:36.865Z'
   - Flat UI is a beautiful theme for Bootstrap. 
     - We have redesigned many of its components to look flat in every pixel.
 
-## neomorphism
-
-- https://github.com/ismail9k/neomorphism
-  - https://ismail9k.github.io/neomorphism/
-  - UI components library in the new neomorphism design style
-
 ## monochrome
 
 - https://github.com/asvvvad1/mono-color
@@ -106,6 +113,12 @@ modified: '2021-01-29T18:54:36.865Z'
   - Minimal design based on black and white.
 - https://github.com/cihankoseoglu/shades
   - A Sass/CSS framework for minimalist websites that use black, white and shades of gray as a design choice
+
+## neomorphism
+
+- https://github.com/ismail9k/neomorphism
+  - https://ismail9k.github.io/neomorphism/
+  - UI components library in the new neomorphism design style
 
 ## hand-drawn
 

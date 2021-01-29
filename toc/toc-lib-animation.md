@@ -159,6 +159,9 @@ modified: '2020-10-05T06:22:02.107Z'
   - https://www.minimamente.com/project/magic/
   - CSS3 Animations with special effects
 
+- https://github.com/sanjayaharshana/AnimTrap
+  - AnimTrap is a CSS Framework for animations. 
+
 # canvas animation
 
 - https://github.com/shzlw/zeu

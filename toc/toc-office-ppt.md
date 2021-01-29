@@ -46,4 +46,10 @@ modified: '2021-01-04T17:26:47.608Z'
   - https://scrollrevealjs.org/
   - Animate elements as they scroll into view.
 
+- https://github.com/Simonwep/presentr
+  - https://simonwep.github.io/presentr/
+  - Minimalistic javascript presentation-library. 
+  - Zero dependencies. 
+  - Can be used in combination with frameworks like Bootstrap, Materialize, Vue etc.
+
 # graphic-editor 偏向图形编辑

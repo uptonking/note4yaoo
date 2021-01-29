@@ -60,6 +60,19 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/bootflat/bootflat.github.io
   - an open source Flat UI KIT based on Bootstrap 3.3 css
 
+# bs-like
+
+- https://github.com/alphasights/paint
+  - http://alphasights.github.io/paint/
+  - CSS framework like Bootstrap but more modern and delivered through SCSS mixins
+- https://github.com/tiagoit/mv-htmlcss-08-framework
+  - CSS framework like Bootstrap built from the ground with SASS.
+  - part of a series of projects to be completed by students of Microverse.
+- https://github.com/Appixroid/Drawers
+  - Drawers is a light weight and modulable web framework to replace Bootstrap or JQuery for my personal usage
+- https://github.com/jere-mie/bornais-css
+  - A CSS framework I am making in my free time to replace Bootstrap
+
 # bs-css-vars
 
 - https://github.com/Marcisbee/chipolette

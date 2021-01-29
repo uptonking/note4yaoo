@@ -100,12 +100,11 @@ modified: '2021-01-28T21:14:14.667Z'
 - chipolette /5Star/MIT/202008/css
   - https://github.com/Marcisbee/chipolette
   - http://marcisbee.com/chipolette/
-  - It is designed to replace Bootstrap and to be used with CSS variables.
   - 单页文档，但根据多个html通过innerHTML实现，使用了css vars
+  - It is designed to replace Bootstrap and to be used with CSS variables.
   - Chipolette is a tiny CSS framework/Starter kit.
   - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
-  - It is designed to replace Bootstrap and to be used with CSS variables.
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram
   - https://milligram.io/
