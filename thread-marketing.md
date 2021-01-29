@@ -11,6 +11,16 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## Singapore is pretty great¹ for indie hackers
+- https://twitter.com/swyx/status/1355099275252785153
+  - No corporate tax up to $100k/yr
+  - No sales tax on Int'l Services (incl digital goods)
+  - No auditor needed <$1m
+  - Took 30 mins and $300 to register co and open bank account!
+- Estonia is pretty damn good too and no local residency requirement (I think you can get around it in Singapore, but they're obviously not as keen as Estonia)
+- i dont think CXO title is meaningful for companies under 50 people
+- Singapore corporate tax exemption is for new companies. Your first 3 years of business only. Still, it’s a nice perk.
+
 - ## Today I'm open sourcing the code that I've made $500K off of
   - https://twitter.com/_rchase_/status/1334619345935355905
   - I want everyone to see how bad it is, 

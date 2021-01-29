@@ -77,7 +77,7 @@ modified: '2021-01-01T20:08:55.833Z'
 
 - 主流设计系统
   - 主题风格
-    - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss),glass-ui
+    - dark, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss),glass-ui
   - 尝试实现高仿
     - material-design
     - apple-design

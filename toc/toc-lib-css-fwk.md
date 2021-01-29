@@ -101,7 +101,7 @@ modified: '2021-01-28T21:14:14.667Z'
   - https://github.com/Marcisbee/chipolette
   - http://marcisbee.com/chipolette/
   - It is designed to replace Bootstrap and to be used with CSS variables.
-  - 单页文档，但根据多个html通过innerHTML实现
+  - 单页文档，但根据多个html通过innerHTML实现，使用了css vars
   - Chipolette is a tiny CSS framework/Starter kit.
   - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
@@ -146,19 +146,23 @@ modified: '2021-01-28T21:14:14.667Z'
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
   - https://watercss.kognise.dev/
+  - theming基于css vars实现，文档单页比较简单
   - I commonly make quick demo pages or websites with simple content. 
     - For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
   - Water.css is a CSS framework that doesn't require any classes. 
 - new.css /3.2kStar/MIT/202009/css
   - https://github.com/xz/new.css
-  - https://newcss.net/
-  - A classless CSS framework to write modern websites using only HTML.
+  - https://newcss.net/demo/
+  - theming基于css vars实现，文档单页很标准
+  - A classless CSS framework to write modern site using only HTML.
 - sakura /2.9kStar/MIT/202012/scss
   - https://github.com/oxalorg/sakura
   - https://oxal.org/projects/sakura/demo/
+  - theming基于scss vars实现，文档单页比较简单
   - a minimal classless css framework/theme
 - https://github.com/yegor256/tacit
   - http://yegor256.github.io/tacit/
+  - No classes, no layouts. Just design plain and simple web pages compliant with HTML5
   - Tacit's goal is to be super simple and always with the same look-and-feel.
   - Here are some frameworks built on top of Tacit: kacit, Bahunya
 - https://github.com/kevquirk/simple.css

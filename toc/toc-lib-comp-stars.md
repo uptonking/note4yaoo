@@ -7,13 +7,20 @@ modified: '2021-01-12T18:49:07.422Z'
 
 # toc-lib-comp-stars
 
-# img
+# img-capture
 
 - https://github.com/ailon/markerjs2
   - https://markerjs.com/
   - Add image annotation to your web apps.
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
+
+- https://github.com/nikersify/pico
+  - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
+  - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the screenshot taking happens entirely client side.
+  - how it works
+    - This program renders whatever is displayed in the given Window into an image, thanks to svg's `<foreignObject>`.
+    - No server side code is required to produce the screenshot.
 
 # embeddable-widget
 

@@ -11,6 +11,77 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Don't use functions as callbacks unless they're designed for it
+- https://twitter.com/jaffathecake/status/1355188620932608006
+- [Don't use functions as callbacks unless they're designed for it](https://jakearchibald.com/2021/function-callback-risks/)
+- Here's the problem:
+
+``` JS
+// Convert some numbers into human-readable strings:
+import { toReadableNumber } from 'some-library';
+
+// We think of:
+const readableNumbers = someNumbers.map(toReadableNumber);
+// …as being like:
+const readableNumbers = someNumbers.map((n) => toReadableNumber(n));
+// …but it's more like:
+const readableNumbers = someNumbers.map((item, index, arr) =>
+  toReadableNumber(item, index, arr),
+);
+```
+
+- Everything works great until `some-library` is updated, then everything breaks.
+- `toReadableNumber` wasn't designed to be a callback to `array.map`, so the safe thing to do is create your own function that is designed to work with `array.map`
+- **The same issue, but with web platform functions**
+
+``` JS
+// A promise for the next frame:
+const nextFrame = () => new Promise(requestAnimationFrame);
+
+// this is equivalent to:
+const nextFrame = () =>
+  new Promise((resolve, reject) => requestAnimationFrame(resolve, reject));
+```
+
+- **Option objects can have the same gotcha**
+
+``` JS
+const controller = new AbortController();
+const { signal } = controller;
+
+// it's best to create an object that's designed to be addEventListener options:
+el.addEventListener('mousemove', callback, { signal });
+el.addEventListener('pointermove', callback, { signal });
+el.addEventListener('touchmove', callback, { signal });
+// el.addEventListener(name, callback, options);
+
+// Later, remove all three listeners:
+controller.abort();
+
+// code below works today, but it might break in future.
+const controller = new AbortController();
+el.addEventListener(name, callback, controller);
+```
+
+- Watch out for functions being used as callbacks, and objects being used as options, unless they were designed for those purposes. 
+  - Unfortunately it isn't something TypeScript warns about
+
+- I guess that's probably more relevant when passing your own class functions as callbacks. Anyway, great advice!
+  - yes that's a gotcha too, but thankfully it tends to obviously fail straight away
+
+- ## Don't destructure deep properties. Put more on the right side. Use dot notation.
+- https://twitter.com/tannerlinsley/status/1354948274281566208
+  - Reserve it for smaller functions and variable namespaces.
+  - It can *feel* like a productivity hack, but time and experience have taught me the opposite.
+  - If you do too much of it unnecessarily, you might find yourself *re*structuring a lot, eg. Taking those same variables and reforming them into functions or other structures. 
+  - It's much easier to spread an object than it is to type it all out again.
+- I'm saying this because I am literally in the middle of a painful refactor caused mostly by this issue. I only have my yester-self to blame, too. Live and learn, right?
+  - I'd add that when you destructure too much - especially down into primitives - then you discard your data model and pass props 1 by 1. When the structure changes, there'd be multiple places to change. If you keep your data model and pass it down, refactors will be cheaper.
+- I dislike destructuring because ts won't narrow down the type.
+- Destructuring also makes project wide search harder.
+  - I want to find if user dot id is used. If I search for the whole term, destructured cases will be missed. If I search only for id, the search will have lot of other results like post id, item id.
+  - You can destructure and alias
+
 - ## Using TypeScript without classes feels suboptimal, like I'm using it for something it wasn't designed for. TypeScript really shines with classes and static methods.
 - https://twitter.com/BenLesh/status/1354541556234137600
 - [To clarify: I'm not advocating programming with classes. ](https://twitter.com/mjackson/status/1354524449706414080)

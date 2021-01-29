@@ -1,11 +1,11 @@
 ---
-title: web-css-variables
+title: web-css-vars
 tags: [css, css-vars, style]
 created: '2020-11-01T06:32:11.038Z'
-modified: '2021-01-01T20:18:11.427Z'
+modified: '2021-01-29T18:55:16.043Z'
 ---
 
-# web-css-variables
+# web-css-vars
 
 # guide
 

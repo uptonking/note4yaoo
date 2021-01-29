@@ -13,6 +13,11 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+- ## an interactive CSS box model experience
+- https://twitter.com/argyleink/status/1355161023221813250
+  - 显示box model的三维效果
+  - https://codepen.io/argyleink/pen/BaLedvd
+
 - ## Digging this dark/light toggle effect 
 - https://twitter.com/JoshWComeau/status/1354119661516943360
   - Wonderful in-depth writeup that teaches a bunch of nifty animation fundamentals as well

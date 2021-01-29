@@ -1,16 +1,16 @@
 ---
-title: toc-lib-css-themes
+title: toc-lib-css-vars-themes
 tags: [css, css-vars, themes, theming, toc]
 created: '2021-01-28T21:12:30.674Z'
-modified: '2021-01-28T21:35:00.167Z'
+modified: '2021-01-29T18:54:36.865Z'
 ---
 
-# toc-lib-css-themes
+# toc-lib-css-vars-themes
 
 # guide
 
 - 设计样式时theming可参考
-  - dark/darcula, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn(papercss), glass-ui
+  - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
 
 - ref
@@ -118,7 +118,7 @@ modified: '2021-01-28T21:35:00.167Z'
   - /61Star/CC0-1.0/201606/css
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 
-# themes-ui
+# themes-ui-design
 
 - https://github.com/ciucacristi/elementric
   - https://ciucacristi.github.io/elementric/
@@ -143,25 +143,25 @@ modified: '2021-01-28T21:35:00.167Z'
   - Introspection via CSS variables; Duomo tokens can be overridden without Sass
   - Small JavaScript runtime for toggling dark mode, etc.
 
-- https://github.com/tylerchilds/cutestrap
+- https://github.com/tylerchilds/cutestrap /1.6kStar
   - http://www.cutestrap.com/features/themes
   - 样式源码基于css，文档是多个html，但默认首页的html可单独使用
   - 提供了dark主题demo，另外的css文档使用了kss生成
   - A strong, independent CSS Framework. Only 2.7KB gzipped.
   - The two constraints for browser support are Custom Properties and CSS Grid.
 
-- https://github.com/elishaterada/feathercss /设计简洁干净
+- https://github.com/elishaterada/feathercss /2Star
   - https://feathercss.makerkits.co/
-  - 文档单页，文档基于next，每个组件并排显示明暗两种样式
+  - 文档单页，文档基于next，每个组件并排显示明暗两种样式，设计简洁干净
   - FeatherCSS is a Dark Mode ready minimalist CSS Framework with support for RTL and Accessibility
   - It purposefully excludes features like grid layout, media queries, or icons which tends to require per-project customization.
   - It’s Just CSS™ with CSS variables. Bring your own LESS/SaaS/CSS-in-JS solution
   - How Dark Mode works
-    - In order to provide maximum flexibility of turning it on, off, or automatically switch based on user display settings, you can toggle `data-theme="dark"` attribute to your markup with a minimal JavaScript code (consult your framework specific solutions).
+    - In order to provide maximum flexibility of turning it on, off, or automatically switch based on user display settings, you can toggle `data-theme="dark"` attribute to your markup with a minimal JavaScript code
 
 - https://github.com/jenil/chota
   - https://jenil.github.io/chota/
-  - 文档单页，纯html，
+  - 文档单页，纯html
   - Easy to extend with CSS variables
   - Easy dark mode switch，虽然支持，但未提供主题demo
 

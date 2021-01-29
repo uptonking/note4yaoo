@@ -79,7 +79,7 @@ modified: '2021-01-10T22:18:36.696Z'
   - Extends Bootstrap with Material and CSS3 Variables
   - The Boostrap components are rewritten from scratch and are built as Web Components by using the Smart Framework.
 
-# bootstrap 5
+# bootstrap5
 
 - https://github.com/yanchokraev/grayshift
   - https://grayshift.io/docs/getting-started/introduction/

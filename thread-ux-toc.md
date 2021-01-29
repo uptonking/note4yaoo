@@ -22,7 +22,7 @@ modified: '2021-01-13T08:27:13.961Z'
   - https://emuiers.blogspot.com/2020/08/emui-10-themes.html
     - 华为202008
 
-# toc
+# ux-guide
 
 - ## 
 
@@ -42,3 +42,9 @@ modified: '2021-01-13T08:27:13.961Z'
   - https://ishaan28malik.github.io/champion-runner-home/
   - https://divymr.tech/
   - https://abdulsalam.netlify.app/
+
+# ux-pieces
+
+- my Twitter experience vastly improved when I realized I could zoom in enough that the sidebar disappears
+- https://twitter.com/jlengstorf/status/1355236444780937217
+  - twitter是三列布局，当放大到一定比例，最右边的第三列会消失

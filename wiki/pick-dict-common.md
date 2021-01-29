@@ -9,6 +9,9 @@ modified: '2020-12-01T14:24:22.252Z'
 
  
 
+- stonks
+  - In internet slang, stonks is a deliberate misspelling of stocks, as traded in the stock market. 
+  - It is often used to refer to such stocks—and finance more generally—in a humorous or ironic way, especially to comment on financial losses.
 - paywall
   - 收费墙(阻止非付费用户浏览网页内容的屏蔽系统)
 - insulin

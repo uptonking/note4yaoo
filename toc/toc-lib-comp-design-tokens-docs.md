@@ -15,7 +15,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - 后期可扩展成多页或SPA，丰富内容
 
 - 设计样式时theming可参考
-  - dark, material, bootstrap, flat/metro, neumorphism, monochrome, hand-drawn
+  - dark, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn
 
 - style-guide-docs-tips
   - 不要直接提供复制按钮，因为使用场景非常灵活

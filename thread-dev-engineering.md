@@ -13,6 +13,24 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Software tradeoffs
+- https://twitter.com/housecor/status/1355144710185230336
+  - Build vs Buy
+  - Reuse vs Copy
+  - Sync vs Async
+  - Serial vs Parallel
+  - Dynamic vs Static
+  - Concise vs Explicit
+  - Unified vs Separate
+  - Secure vs Convenient
+  - Simple vs Configurable
+  - Centralized vs Distributed
+  - Convention vs Configuration
+  - **Avoid picking sides. Think tradeoffs.**
+- I am not sure you want to trade off security for convenient
+  - Perhaps, but companies do so everyday. 
+  - Using other people’s software is convenient, but adds security risk by trusting other people’s code.
+
 - ## Will Vite replace vue-cli? 
 - https://twitter.com/youyuxi/status/1354584410482499585
   - Initially I wasn't sure, but at this stage I believe it will eventually be the case.
