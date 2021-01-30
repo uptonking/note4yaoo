@@ -131,6 +131,10 @@ modified: '2021-01-29T18:54:36.865Z'
   - /61Star/CC0-1.0/201606/css
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 
+- https://github.com/saurabhdaware/text-to-handwriting
+  - https://saurabhdaware.github.io/text-to-handwriting/
+  - converts text to an image that looks like handwriting
+
 # themes-ui-design
 
 - https://github.com/ciucacristi/elementric

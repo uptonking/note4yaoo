@@ -155,6 +155,10 @@ modified: '2021-01-04T17:26:25.032Z'
   - ePaperCSS: The ePaper CSS UI framework for e-ink and ePaper displays. Optimized for grayscale & accessibility
   - this framework follows an animation-free, minimalist approach.
 
+- https://github.com/saurabhdaware/text-to-handwriting
+  - https://saurabhdaware.github.io/text-to-handwriting/
+  - converts text to an image that looks like handwriting
+
 # more
 
 - https://github.com/wecatch/markdown-css

@@ -11,6 +11,14 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## In JavaScript, there are no classes.
+- https://twitter.com/SimonHoiberg/status/1355453046617108484
+  - t’s syntactical sugar added to please developers from other languages such as Java or C#.
+  - Most of the time, they don’t serve a good purpose, and are not really useful.
+  - Instead, use modules.
+- don’t you think classes help maintain order and principles of programming that have been established over a longer period of time?
+- The singleton pattern would like to have a word with you.
+
 - ## Don't use functions as callbacks unless they're designed for it
 - https://twitter.com/jaffathecake/status/1355188620932608006
 - [Don't use functions as callbacks unless they're designed for it](https://jakearchibald.com/2021/function-callback-risks/)

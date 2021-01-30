@@ -29,6 +29,20 @@ modified: '2021-01-12T18:49:02.623Z'
 
 # starred
 
+- https://github.com/sergiodxa/flagged
+  - Feature Flags for React made easy with hooks, HOC and Render Props
+- https://github.com/garbles/flag
+  - Feature flagging for React and Redux with strong TypeScript support
+  - Feature flagging is necessary for large client-side applications. 
+- https://github.com/FredKSchott/fflip
+  - fflip gives you complete control over releasing new functionality to your users based on their user id, join date, membership status, and whatever else you can think of. 
+
+
+- https://github.com/salman-monetate/react-component-export-image
+  - https://codesandbox.io/s/nostalgic-poincare-7xfrl?file=/src/App.js
+  - Export component as jpeg, png or pdf
+  - 依赖html2Canvas、jspdf
+
 - https://github.com/kunukn/react-collapse
   - https://kunukn.github.io/react-collapse
   - Component-wrapper for collapse animation with CSS for elements with variable and dynamic height

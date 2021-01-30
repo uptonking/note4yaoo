@@ -54,10 +54,15 @@ modified: '2020-12-27T20:29:55.568Z'
   - opinionated: ui交互或技术选型具有明显的偏向性
   - 使用headless ui时，组件配置项容易多到爆炸，如downshift
 - configurable-knobs
+  - convention over configuration
+    - 所有组件的所有props都有合适的默认值，这样能更快的开始测试
+    - 尽量实现不需要 required props
   - 所有组件共有的部分公共api
   - borderless
     - 部分组件提供无边框的版本，如modal
   - dark mode形式的组件
+  - export default component screenshot image, not source code
+    - 参考use-screenshot-hook，每个组件内置截图功能，截图时组件会动画变小
   - disable mode形式的组件，组件变灰色，常作为背景
   - scalable，如下拉列表列表选项变多时会变modal
 - block-style component

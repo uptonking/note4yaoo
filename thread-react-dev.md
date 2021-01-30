@@ -10,6 +10,22 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 
 - ## 
+
+- ## Do you push a new history entry onto the stack? Replace it?
+- https://twitter.com/tannerlinsley/status/1355570411803602946
+  - And on top of all of this, provide an API that feels like setState, a reducer or state machine?
+  - I realize that very few apps actually ever deal with this type of router state… But still, why is it so hard.
+  - Which brings me to another point, after dealing with dashboard state for a very very long time now, I am very convinced that it most closely resembles a massive tree of deterministic State machines.
+  - This begs the question: should the state live in a machine and get synchronized? Or should it live in the URL?
+  - From experience, when the state actually lives in the URL, it becomes very difficult to rely on read and write consistency. Then add a router abstraction in the middle?
+  - 描述了很多urlstate处理的经典问题，并且没有标准答案
+
+- ## I recently had to implement a feature where the user could download a png of a div. I came across html2canvas which did the trick perfectly
+- https://twitter.com/bmullan91/status/1220659214848229378
+- We did something similar to download a chart back in 2015, the result was almost the same but It did broke css a bit. 
+  - At the end we preserved that approved because it was way easier to do it in the frontend than moving the logic to the backend. I recommended it.
+- I did something like this but for code screenshots before I know carbon existed 
+
 - ## Am I right in thinking StrictMode’s second render swallows console.logs?
 - https://twitter.com/mattgperry/status/1352000290241859590
 - Yeah, I believe they added this to not pollute the console.

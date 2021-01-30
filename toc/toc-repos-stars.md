@@ -15,6 +15,20 @@ modified: '2021-01-12T18:49:13.490Z'
 - https://github.com/zchuanzhao/jeesns
   - 基于JAVA研发的社交管理系统
 
+# fundamentals
+
+- https://github.com/jsdom/jsdom
+  - jsdom is a pure-JavaScript implementation of many web standards, notably the WHATWG DOM and HTML Standards, for use with Node.js. 
+  - the goal of the project is to emulate enough of a subset of a web browser to be useful for testing and scraping real-world web applications.
+  - [What are the use cases of jsdom](https://stackoverflow.com/questions/6101673/what-are-the-use-cases-of-jsdom)
+    - Sharing views/controllers between server and browser
+    - Data mining / crawling / processing
+    - Transformation for fragments of HTML used in AJAX/realtime stuff
+    - Absolute separation of logic and content by avoiding template tags
+  - alternatives
+    - https://github.com/WebReflection/linkedom
+
+
 # app
 
 - https://github.com/nextcloud/deck

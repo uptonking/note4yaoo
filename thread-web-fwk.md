@@ -11,6 +11,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## What are folks using to split their CSS bundles to only load the CSS used by the current page?
+- https://twitter.com/rob_dodson/status/1355575341696204801
+- is there some system that creates shared chunks for css files? 
+  - globally (80%+ pages) shared styles as a file
+  - inlined page specific styles above the fold 
+  - page specific styles as a file
+- MiniCssExtractPlugin seems to work OOTB if you lazyload / import() page JS, though that assumes your pages have JS
+  - I use that for all my apps but only lazyload pages in big apps
+
 - ## Does any Node.js serverless function providers optimize cold start time with V8 heap snapshots?
 - https://twitter.com/youyuxi/status/1353853045520674817
 - Don’t think so, 

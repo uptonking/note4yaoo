@@ -13,6 +13,15 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## The web is definitely not a great application platform currently, but there’s no reason why it can’t be! 
+- https://twitter.com/devongovett/status/1355557264631988229
+  - The fundamentals are there. 
+  - The DOM is a UI tree just like any native UI framework. 
+  - We just need better built in UI controls. 
+  - Instant delivery is the web’s killer feature.
+- I believe it’s the best app delivery platform. It not the best UI platform though.
+- And no gate keeper
+
 - ## CE v1 is not a spec without a way to extend existing HTML elements
 - https://twitter.com/Rich_Harris/status/1352327436512485377
 - To be fair it's really only a more specific version of an issue Seb Markbåge identified long ago
