@@ -7,6 +7,31 @@ modified: '2020-12-08T13:33:04.764Z'
 
 # lib-ui-bootstrap-blog
 
+# [Bootstrap 5 Beta 1_202012](https://blog.getbootstrap.com/2020/12/07/bootstrap-5-beta-1/)
+
+- RTL has been added in this release, and they’ve come with some important changes. 
+- Our biggest addition to the project in years, we’ve finally added RTL support to Bootstrap!
+  - Our approach is built on RTLCSS
+  - New RTL versions of our CSS dist file, which includes our grid, Reboot, utilities, and standard bundles.
+  - Part of our approach to adding RTL to Bootstrap was to add it in a way that felt future-friendly to ourselves and the web at large. 
+    - As such, we’ve embraced the spirit of CSS logical properties and have renamed several classes and variables.
+    - For example, in a LTR context, instead of .ml-3 for margin-left, use .ms-3. 
+- We’ve upgraded Popper.js from v1.x to v2.x
+  - Removed offset option from our Tooltip/Popover and Dropdown plugins; 
+  - The fallbackPlacement option has become fallbackPlacements.
+- We’ve renamed all our `data` attributes to include `bs` as an infix, thereby namespacing all the HTML attributes that enable JavaScript behaviors from our plugins.
+  - Making this change is a tad annoying, but easy enough to remedy with a find and replace. 
+- After dabbling in some JavaScript solutions to positioning toasts, we’ve landed on a new CSS-only approach thanks to our new positioning utilities. 
+  - This comes with some minor breaking changes—namely some changes to exact CSS properties and how we toggle visibility of the toasts
+- JS enhancements
+  - Created a new base component to share logic across our components. 
+  - Migrate to more modern APIs across our plugins.
+  - Tooltips and popovers can now have custom classes. 
+  - Don’t hide modal when config.keyboard is false
+- One of the biggest new features of Bootstrap 5 is our utilities API, an extensible way to customize, add, or remove Bootstrap utilities.
+  - Use the `state` option to generate pseudo-class variations.
+  - Need multiple pseudo-classes? Use a space-separated list: `state: hover focus`.
+
 # Bootstrap 5 Approach Guide
 
 - We’ll dive into each of these more throughout, but at a high level, here’s what guides our approach.
@@ -22,10 +47,10 @@ modified: '2020-12-08T13:33:04.764Z'
   - For example, a `.d-none` applies from `min-width: 0` to infinity. 
   - On the other hand, a `.d-md-none` applies from the medium breakpoint and up.
 - Aside from our Reboot, a cross-browser normalization stylesheet, all our styles aim to use classes as selectors. 
-  - This means steering(操纵、引导、驾驶) clear of type selectors (e.g., `input[type="text"]` ) and extraneous(外面的；无关的) parent classes (e.g., `.parent .child` ) that make styles too specific to easily override.
+  - This means steering(操纵、引导、驾驶) clear of type selectors (e.g. `input[type="text"]` ) and extraneous(外面的；无关的) parent classes (e.g. `.parent .child` ) that make styles too specific to easily override.
   - As such, components should be built with a base class that houses common, not-to-be overridden property-value pairs. 
-  - For example, we use `.btn` for all the common styles like `display` , `padding` , and `border-width` . 
-  - We then use modifiers like `.btn-primary` to add the `color` , `background-color` , `border-color` , etc.
+  - For example, we use `.btn` for all the common styles like `display`  `padding` , and `border-width` . 
+  - We then use modifiers like `.btn-primary` to add the `color`  `background-color`  `border-color` , etc.
 - Modifier classes should only be used when there are multiple properties or values to be changed across multiple variants. 
   - Modifiers are not always necessary
   - Good examples of modifiers are our theme color classes and size variants.
@@ -51,7 +76,7 @@ modified: '2020-12-08T13:33:04.764Z'
   - The same goes for more complex components. 
   - While we could write our own form validation plugin to add classes to a parent element based on an input’s state, thereby allowing us to style the text say red, we prefer using the `:valid/:invalid` pseudo-elements every browser provides us.
 - Utility classes—formerly helpers in Bootstrap 3—are a powerful ally in combatting CSS bloat and poor page performance. 
-  - A utility class is typically a single, immutable property-value pairing expressed as a class (e.g., `.d-block` represents `display: block;` ). 
+  - A utility class is typically a single, immutable property-value pairing expressed as a class (e.g. `.d-block` represents `display: block;` ). 
   - Their primary appeal is speed of use while writing HTML and limiting the amount of custom CSS you have to write.
 - While not always possible, we strive to avoid being overly dogmatic(自以为是的；教条的；武断的) in our HTML requirements for components. 
   - Thus, we focus on single classes in our CSS selectors and try to avoid immediate children selectors ( `>` ). 

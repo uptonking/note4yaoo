@@ -12,13 +12,17 @@ modified: '2021-01-29T18:55:16.043Z'
 - faq-not-yet
   - inline样式的css vars的性能
 
-- css vars优点
-  - 浏览器直接支持
+- css-vars pros
+  - 浏览器直接支持，浏览器内置，符合标准
   - 实现简单theme切换非常方便，不用下载额外css文件，相关计算交给浏览器
 
-- css vars缺点
+- css-vars cons
+  - 依赖浏览器，直接使用css variables的组件很难跨平台
+  - 修改任何值时都会执行层叠覆盖，类似react context影响所有后代
+    - 所以不适合用来实现通用的状态管理
   - css变量值必须是any valid CSS value
-  - css内置的计算函数不够丰富
+    - css的值的数据类型太单一，js的值可以函数、Map等，js更灵活
+  - css内置的计算函数不够丰富，如比不过polish
 
 - css vars的值也采用css属性值的层叠规则
   - 据此可基于css变量实现theme

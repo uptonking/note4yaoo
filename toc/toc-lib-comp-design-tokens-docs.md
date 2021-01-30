@@ -30,12 +30,11 @@ modified: '2021-01-11T18:34:20.713Z'
 - primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
   - https://github.com/taniarascia/primitive
   - https://taniarascia.github.io/primitive/
+  - https://taniarascia.github.io/primitive/test.html
   - 提供了基础页面模版
   - 提供了通过改变link的href属性值来切换theming的示例
   - A front-end design toolkit built with Sass for developing responsive web apps.
-  - Skeleton CSS, the original inspiration
-  - ref
-    - http://getskeleton.com/
+  - [Skeleton CSS](http://getskeleton.com/), the original inspiration
 
 - 单页文档示例
   - primitive, pico

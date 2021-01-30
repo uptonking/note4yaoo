@@ -30,6 +30,15 @@ modified: '2021-01-28T21:34:18.645Z'
 
 ## switch-themes
 
+- primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
+  - https://github.com/taniarascia/primitive
+  - https://taniarascia.github.io/primitive/
+  - https://taniarascia.github.io/primitive/test.html
+  - 提供了基础页面模版
+  - 提供了通过改变link的href属性值来切换theming的示例
+  - A front-end design toolkit built with Sass for developing responsive web apps.
+  - [Skeleton CSS](http://getskeleton.com/), the original inspiration
+
 - https://github.com/alexandersandberg/theme-switcher
   - https://alexandersandberg.github.io/theme-switcher/unlimited.html
   - A website theme switcher using CSS only
@@ -37,6 +46,7 @@ modified: '2021-01-28T21:34:18.645Z'
 
 - https://github.com/kemar/html-elements
   - https://kemar.github.io/html-elements/
+  - 通过下拉列表选择主题名
   - This repo contains an HTML page with all HTML5 elements and a style switcher (like it's 2001) for previewing various CSS frameworks.
 
 - https://github.com/dohliam/dropin-minimal-css
@@ -85,6 +95,10 @@ modified: '2021-01-28T21:34:18.645Z'
   - https://nickdeny.github.io/darkmode-js/
   - auto detect user's time and switch theme to darkside.
   - Pure Javascript, without any plugins and jQuery
+- https://github.com/coliff/dark-mode-switch
+  - https://coliff.github.io/dark-mode-switch/index.html
+  - Add a dark-mode theme toggle with a Bootstrap Custom Switch.
+  - Turning dark mode on will add `data-theme="dark"` to the `body` tag
 
 - https://github.com/donavon/use-dark-mode
   - A custom React Hook to help you implement a "dark mode" component.

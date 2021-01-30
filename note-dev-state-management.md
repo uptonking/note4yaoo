@@ -37,22 +37,59 @@ modified: '2020-10-31T19:11:26.567Z'
   - router-state: 浏览器url相关的
   - style-state: 主题相关的
 
+- 状态管理实验方案
+  - 基于`data-`属性
+  - 基于css variables
+
+- css-vars pros
+  - 浏览器直接支持，浏览器内置，符合标准
+  - 实现简单theme切换非常方便，不用下载额外css文件，相关计算交给浏览器
+
+- css-vars cons
+  - 依赖浏览器，直接使用css variables的组件很难跨平台
+  - 修改任何值时都会执行层叠覆盖，类似react context影响所有后代
+    - 所以不适合用来实现通用的状态管理
+  - css变量值必须是any valid CSS value
+    - css的值的数据类型太单一，js的值可以函数、Map等，js更灵活
+  - css内置的计算函数不够丰富，如比不过polish
+
 - 对象间数据(消息)的传递，可以通过pub/sub event实现，很适合component内状态管理
   - 缺点：简单的pub/sub没有考虑缓存数据，每次要使用数据都必须发送事件再次传递数据
   - 不支持跨page传递数据
   - 不支持数据持久化
 - SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级
 
-- [Communicate Between Components](https://react-cn.github.io/react/tips/communicate-between-components.html)
-  - For parent-child communication, simply pass props.
-  - For child-parent communication: 
-    - Say your GroceryList component has a list of items generated through an array
-    - we're simply passing more arguments to `handleClick`. 
-    - This is not a new React concept; it's just JavaScript.
-  - For communication between two components that don't have a parent-child relationship, you can set up your own global event system. 
-    - Subscribe to events in `componentDidMount()`, unsubscribe in `componentWillUnmount()`, 
-    - and call `setState()` when you receive an event. 
-    - Flux pattern is one of the possible ways to arrange this.
+- ## [Communicate Between Components](https://react-cn.github.io/react/tips/communicate-between-components.html)
+- For parent-child communication, simply pass props.
+- For child-parent communication: 
+  - Say your GroceryList component has a list of items generated through an array
+  - we're simply passing more arguments to `handleClick`. 
+  - This is not a new React concept; it's just JavaScript.
+- For communication between two components that don't have a parent-child relationship, you can set up your own global event system. 
+  - Subscribe to events in `componentDidMount()`, unsubscribe in `componentWillUnmount()`, 
+  - and call `setState()` when you receive an event. 
+  - Flux pattern is one of the possible ways to arrange this.
+- How about doing this so we can keep the benefit of type-safety?
+- Works great for transitioning legacy non-React code. Another downside: we can't manipulate colors with polished.
+- The only thing I don't like about CSS variables is that they are global, and we know what happens in large codebases with global stuff... Other than that, I too believe the Theme is perhaps more verbose and causes many rerenders, not an issue as long as they're cheap tho.
+  - They're only as global as your scope for them (just like context).
+- CSS variables are ultimate compilation target for CSS-in-JS!
+  - It doesn't apply only to the theme, it applies to dynamic properties too.
+- My only problem with css variables is that it makes sharing with react native more difficult. 
+  - Still seems like the right workflow for 95% of use-cases
+- I agree, especially the point about sharing CSS variables via a JS theme for static typing is really useful. 
+  - The one thing I'm missing from CSS variables is to be able to use them in media queries
+  - I guess there's no way around JS for now (if they depend on the theme).
+
+- ## [Use CSS Variables instead of React Context_202011](https://twitter.com/kentcdodds/status/1324026743099781120?lang=en)
+- U[se CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+- We took a similar approach with @stitchesjs
+  - Tokens are converted to CSS Custom Properties
+  - Reference token in CSS value without prop-interpolation
+  - Support nested and/or multiple themes on the same page
+- My favorite is both. 
+  - Favor CSS variables but still update a context so that you can switch out the components **for advanced use cases that have different rendering**.
+  - Also update the CSS variables in useLayoutEffect so it happens at the same time as the context change.
 
 # pieces
 
