@@ -464,7 +464,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - 组件基于hooks实现
     - 样式基于classnames
     - theming基于css vars
-      - css文件中使用了自定义导入`composes: small from "./Layout.css";`
+      - css文件使用了自定义导入`composes: small from "./Layout.css";`
       - 只用了全局级变量，未定义组件级变量
   - ref
     - https://github.com/geist-org/themes

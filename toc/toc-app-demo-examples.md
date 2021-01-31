@@ -17,6 +17,13 @@ modified: '2020-10-22T13:02:56.929Z'
 - realword
   - https://github.com/gothinkster/realworld
 
+# web
+
+- https://github.com/googlechromelabs/houdini-samples
+  - https://googlechromelabs.github.io/houdini-samples/
+  - Demos for different Houdini APIs
+  - no vendor has published a version of their browser with support for any of the Houdini standards yet.
+
 # list-grid
 
 # bi-olap-search

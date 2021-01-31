@@ -7,6 +7,16 @@ modified: '2020-06-30T05:17:43.290Z'
 
 # coding-style
 
+# naming is hard
+
+## Function naming conventions
+
+- One of the more universal, yet simple rules is: 
+  - consistent
+  - Function names should be verbs if the function changes the state of the program, and nouns if they're used to return a certain value.
+
+- [Coding like Shakespeare: Practical Function Naming Conventions](https://dmitripavlutin.com/coding-like-shakespeare-practical-function-naming-conventions/)
+
 # js
 
 - export 导出

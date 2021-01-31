@@ -18,8 +18,9 @@ modified: '2021-01-13T17:12:25.854Z'
 - packages
   - @pgd/design-tokens
   - @pgd/components(css)
-  - @pgd/react
-  - @pgd/react-lab
+  - @pgd/components-react
+  - @pgd/components-react-lab
+  - @pgd/components-webgl(r3f)
   - more
     - @pgd/design-system-site
     - @pgd/web-components

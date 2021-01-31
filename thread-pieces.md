@@ -11,6 +11,7 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## JavaScript tip: You can wrap your `console.log()` arguments with curly brackets to see the variable names.
 
 - ## I have to admit that "frameworkless" is a better buzzword than "framework agnostic", even if it’s *less* accurate.
 

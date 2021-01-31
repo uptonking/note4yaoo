@@ -111,6 +111,9 @@ modified: '2021-01-28T21:34:18.645Z'
   - Dark theme for Slack
 - https://github.com/LucaScorpion/prismjs-darcula-theme
   - PrismJS Darcula syntax highlighting theme based on the JetBrains IDEs
+- https://github.com/taniarascia/new-moon
+  - New Moon is the optimized dark theme for web development. 
+  - New Moon is available for: vscode, chrome, sublime
 
 # react-theming
 

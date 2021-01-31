@@ -43,6 +43,7 @@ modified: '2020-10-22T13:33:45.146Z'
 - code block extensions
   - 支持markdown作为内容语法高亮
   - 支持json5
+  - 支持切换代码高亮主题，类似[carbon](https://carbon.now.sh/)
 
 ## 表格扩展相关
 

@@ -13,7 +13,25 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Hyphens are pretty. Underscores are ugly and don’t belong in URLs
+- https://twitter.com/mscccc/status/1355525419152384002
+- What about emojis in URLs? 
+- [URL as UI](https://www.nngroup.com/articles/url-as-ui/)
+
+- ## "The DOM is bad for apps" makes me laugh pretty hard. 
+- https://twitter.com/_developit/status/1355670204366393347
+  - It's effectively the same type of abstraction as a scene graph, but because we use it poorly it must be bad!
+- I think the dom is very much bad for apps, who in their right mind would say otherwise. 
+  - Why else do we have frameworks abstracting it. 
+  - Most people don't know or see a dom when they make apps and that is a good thing.
+  - That is the same reason why we have rejected a component model built on that pile of perpetual backward compat which is the dom.
+- The browsers dom is virtual, bc it's faster. 
+  - Every GUI system is split into a logical/virtual & a visual tree, otherwise you wouldn't be able to schedule, or, well, virtualize. 
+  - Ever used a virtual list, I suppose you did. 
+  - FBs "vdom" has better scheduling than the "dom", facts. 
+- aren't some of the most popular apps just app shells with a web-view?
+  - that, or react-native which uses a tree abstraction very similar to the DOM anyway
+- Well, if we just used fixed height for everything and there was never a need to refresh layout I think most html apps would be as fast as 'native' - as if running apps in a JVM/runtime is native anyway - if it's not assembly writing directly to a framebuffer it's trash
 
 - ## Software tradeoffs
 - https://twitter.com/housecor/status/1355144710185230336

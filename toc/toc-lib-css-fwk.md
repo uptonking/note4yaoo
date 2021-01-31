@@ -157,7 +157,8 @@ modified: '2021-01-28T21:14:14.667Z'
 - sakura /2.9kStar/MIT/202012/scss
   - https://github.com/oxalorg/sakura
   - https://oxal.org/projects/sakura/demo/
-  - theming基于scss vars实现，文档单页比较简单
+  - theming基于scss vars实现，提供了dark、ink、vader、earthy等多个主题
+  - 文档单页很标准
   - a minimal classless css framework/theme
 - https://github.com/yegor256/tacit
   - http://yegor256.github.io/tacit/

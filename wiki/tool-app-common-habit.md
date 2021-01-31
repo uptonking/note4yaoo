@@ -56,8 +56,10 @@ modified: '2020-12-29T17:53:03.684Z'
     - 支持last.fm，支持播放列表保存到本地
     - 可手动添加歌词并显示在左侧面板
     - https://www.clementine-player.org/
-        - https://github.com/clementine-player/clementine
-        - GPLv3
+      - https://github.com/clementine-player/clementine
+      - GPLv3
+    - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
+      - `mkdir ~/.local/share/Last.fm`
   - local-more
     - Tauon Music Box: linux only
       - 可显示滚动歌词/synced lyrics，但歌词的时间戳毫秒位不能是3位

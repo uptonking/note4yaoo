@@ -94,3 +94,8 @@ modified: '2021-01-08T11:48:16.590Z'
   - Easily manage (open, hide, move, ...) your Electron windows.
 
 # more
+
+- https://github.com/tomkp/react-split-pane
+  - https://tomkp.github.io/react-split-pane
+  - /2.4kStar/MIT/202008/js
+  - Split-Pane component, can be nested or split vertically or horizontally!

@@ -15,8 +15,7 @@ modified: '2020-12-13T09:22:36.413Z'
   - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
   - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
 
-f- https://github.com/thiagobustamante/typescript-rest
-
+- https://github.com/thiagobustamante/typescript-rest
   - annotation-based expressjs extension for typescript.
   - typescript-rest、typescript-ioc、typescript-rest-ioc
 
@@ -24,6 +23,10 @@ f- https://github.com/thiagobustamante/typescript-rest
   - boilerplate for building REST APIs with ES6 and Express.
 
 # rest-examples
+
+- https://github.com/taniarascia/node-api-postgres
+  - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+  - Create, read, update, delete in a Node.js app with an Express server and Postgres database.
 
 - https://github.com/andregardi/jwt-express-typeorm
   - use TypeScript, Express.js and TypeORM to create an enterprise level Rest API with JWT authentication and role based authorization. 

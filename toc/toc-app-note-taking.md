@@ -47,6 +47,14 @@ modified: '2020-10-22T10:03:50.526Z'
   - /79Star/MIT/202009/js
   - crossplatform desktop notes application based on Electron and Editor.js
 
+- https://github.com/taniarascia/takenote
+  - https://takenote.dev/app
+  - /2.8kStar/MIT/202010/ts
+  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
+  - A free, open-source notes app for the web
+  - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
+  - What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
+
 # more-note-app
 
 - https://github.com/0xGG/crossnote
@@ -58,8 +66,3 @@ modified: '2020-10-22T10:03:50.526Z'
   - Realtime collaborative markdown notes on all platforms.
   - HackMD helps developers write better documents and build active communities with open collaboration
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)
-- https://github.com/taniarascia/takenote
-  - /2.8kStar/MIT/202010/ts
-  - A free, open-source notes app for the web
-  - TakeNote was made by developers for developers - a plain-text note-taking app for the web with Markdown support. 
-  - What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 

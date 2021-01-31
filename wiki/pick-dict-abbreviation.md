@@ -31,6 +31,8 @@ modified: '2020-08-06T05:29:22.922Z'
 - IMO / IMHO
   - in my humble opinion
   - 恕我直言，我谦虚地说
+- IME
+  - im my experience
 - FWIW
   - for what it's worth
   - 就其价值而言

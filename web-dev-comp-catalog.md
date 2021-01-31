@@ -84,8 +84,10 @@ modified: '2020-12-21T08:03:35.993Z'
 - ComboBox
   - 可输入选择(自动完成)，可选择多个
 - Toggle
-- Search
+
+- ## Search
   - [appbaseio/reactivesearch](https://github.com/appbaseio/reactivesearch)
+  - 搜索结果预览，类似豆瓣输入后
 
 # display
 

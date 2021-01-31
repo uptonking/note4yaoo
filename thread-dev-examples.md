@@ -13,10 +13,10 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
-- ## an interactive CSS box model experience
-- https://twitter.com/argyleink/status/1355161023221813250
-  - 显示box model的三维效果
-  - https://codepen.io/argyleink/pen/BaLedvd
+- ## Ooh a nifty prototype of a "Futuristic UI", using WebGL via Three.js and React Three Fiber
+- https://twitter.com/JoshWComeau/status/1355637170116112386
+- [Building Future UIs](https://formidable.com/blog/2021/future-ui/)
+  - https://formidablelabs.github.io/github-2049/?cachebust=123
 
 - ## Digging this dark/light toggle effect 
 - https://twitter.com/JoshWComeau/status/1354119661516943360
@@ -29,19 +29,3 @@ modified: '2021-01-22T08:32:57.313Z'
   - this still requires a lot of knowledge when it comes to both trigonometry and 3D concepts.
   - https://codesandbox.io/s/9cenu?file=/src/App.js
 - I did a bit of 3D with ThreeJS before but the light was always challenging to me.
-
-- ## I made a new piece with just #css & html - Ring Doorbell. 
-- https://twitter.com/KassandraSanch/status/1336789953821478913
-  - Can you tell which one is code and which one is an image?
-  - https://codepen.io/kassandrasanch/pen/oNzzMjr?editors=0100
-- And I figured out one little difference between A and B. 
-  - B have a rounded corners on bottom! 
-  - so i check on your code, you made that rounded corner. 
-  - So I guess B is Art and A is image
-
-- ## New scroll-animations demo: A (contact) list where items that come into  view fly-in.
-- https://twitter.com/bramus/status/1352506087304540161
-- [CSS-only with @​scroll-timeline](https://codepen.io/bramus/full/bGwJVzg)
-  - 需要chrome 89，并且开启特性
-- [JavaScript Web Animations API (WAAPI) + ScrollTimeline](https://codepen.io/bramus/full/ExgJPjM)
-- Key part is setting `endScrollOffset` to edge `end` + offset `1` . 

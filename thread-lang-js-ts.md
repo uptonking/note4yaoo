@@ -11,6 +11,16 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Yet again I'm reminded that JavaScript class fields are a bad design
+- https://twitter.com/justinfagnani/status/1355665301979897860
+  - Define semantics means you can't meta-program over them like other class members, and you can't override them with accessors.
+  - Class fields should have been sugar for accessors.
+  - ES Classes in general feel like an opportunity to carve out some static niche and forgo metaprogramming altogether.
+  - Which really limits them. The list opportunity here is that they don't need to have false equivalences to object literals because they aren't.
+- A similar issue is happening for decorators as a decorator won’t be able to convert a field to an accessor unless you prefix with prop, as in: `@example prop field` . 
+  - I wonder if this could lead to some `prop field` as sugar to set accessors without the decorator.
+  - It’s a workaround and honest I’d just prefer the decorator without prop but that’s the much we can do in the consensus model.
+
 - ## In JavaScript, there are no classes.
 - https://twitter.com/SimonHoiberg/status/1355453046617108484
   - t’s syntactical sugar added to please developers from other languages such as Java or C#.

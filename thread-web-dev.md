@@ -11,6 +11,14 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## HTML(performance) tip: You can use the `loading=lazy` attribute to defer the loading of the image until the user scrolls to them
+- https://twitter.com/denicmarko/status/1355439705853194241
+- Here's how it works. 
+  - When the user comes to your page, the browser will load all images you used. 
+  - But, if you use this attribute, the images will be loaded only until (and if) the user scrolls to them. 
+  - It will boost the performance of your page significantly.
+- How can we do this for a whole section, not just image.
+  - The `content-visibility` CSS property controls whether or not an element renders its contents at all
 
 - ##  you no longer have to write <a target=“_blank” rel=“noopener”> to make external links secure!
 - https://twitter.com/swyx/status/1354743782701375488
