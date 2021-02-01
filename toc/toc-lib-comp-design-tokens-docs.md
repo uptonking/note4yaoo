@@ -41,6 +41,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://oxal.org/projects/sakura/demo/ (classless)
   - https://ajusa.github.io/lit/docs/lit.html
   - https://jenil.github.io/chota/
+  - https://yeun.github.io/open-color/
 
 - 多页文档示例
   - https://newcss.net/usage/elements/ (classless)

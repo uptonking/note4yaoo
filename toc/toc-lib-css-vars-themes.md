@@ -142,6 +142,12 @@ modified: '2021-01-29T18:54:36.865Z'
   - 样式设计基于白底的圆角方形，设计感很强
   - Elementric is a free front-end package of UI element
 
+- https://github.com/arwes/arwes
+  - https://arwes.dev/
+  - Arwes is a web framework to build user interfaces based on futuristic science fiction designs, animations, and sound effects.
+  - The concepts behind are opinionated with influences from Cyberpunk, Cyberprep, and Synthwave, and productions like Star Citizen, Halo, and TRON: Legacy.
+  - It tries to inspire advanced space and alien technology.
+
 # css-vars
 
 - https://github.com/alphardex/aqua.css

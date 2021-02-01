@@ -42,10 +42,6 @@ modified: '2021-01-13T19:30:59.508Z'
   - http://fxaeberhard.github.io/handdrawn.css/
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
 
-- https://github.com/tsx/shireframe
-  - Declarative wireframes for programmers
-  - http://rawgit.com/tsx/shireframe/master/examples/doodle.html
-
 # paper
 
 - https://github.com/papercss/papercss /字体变成手写体
@@ -72,5 +68,16 @@ modified: '2021-01-13T19:30:59.508Z'
   - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
   - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
   - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
+
+# wireframe
+
+- https://github.com/tsx/shireframe
+  - http://rawgit.com/tsx/shireframe/master/examples/doodle.html
+  - Declarative wireframes for programmers
+
+- https://github.com/mydraft-cc/ui
+  - https://mydraft.cc/
+  - 依赖react, redux, antd, typescript
+  - The goal of this project is to create an open source wireframing tool. 
 
 # more

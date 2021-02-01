@@ -89,6 +89,11 @@ modified: '2020-11-17T13:38:19.107Z'
 - Framer /MIT/5.6kStar/201905
   - https://github.com/koenbok/Framer
   - We are in the process of open sourcing our new Framer Library for React. Come back soon.
+- https://github.com/penpot/penpot
+  - https://penpot.app/
+  - The open-source solution for design and prototyping. 
+  - Penpot works with SVG, a standard format, for all your designs and prototypes . 
+    - This means that all your stuff in Penpot is portable and editable in many other vector tools and easy to use on the web.
 - react-proto
 - ReacType
 - silex /201907/GPLv3/680star

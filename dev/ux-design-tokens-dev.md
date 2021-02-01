@@ -18,12 +18,6 @@ modified: '2021-01-01T20:09:10.218Z'
 
 # guide
 
-- https://github.com/design-tokens/community-group
-  - https://twitter.com/DesignTokens
-  - The DTCG was founded in June 2019. 
-  - The DTCG’s goal is to provide standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
-  - [[RFC] Format specification](https://github.com/design-tokens/community-group/issues/1)
-  - [[RFC] Theming](https://github.com/design-tokens/community-group/issues/2)
 
 - design-tokens-awesome-catalog
   - 主流tokens工具及标准参考

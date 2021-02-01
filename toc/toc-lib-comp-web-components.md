@@ -58,3 +58,8 @@ modified: '2020-11-13T07:31:42.369Z'
 - https://github.com/aws-amplify/amplify-js
   - A declarative JavaScript library for application development using cloud services.
   - 正在转向stencil
+# more
+- https://github.com/numldesign/numl
+  - https://numl.design/
+  - An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI that follows your Design System.
+  - Numl is built on top of Web Components, and it's compatible with most modern JS-frameworks. 

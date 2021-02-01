@@ -13,6 +13,11 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+
+- ## A really fun project I did with the amazing r3f
+- https://twitter.com/mlperego/status/1356042349160312833
+  - https://1wh6f.csb.app/
+
 - ## Ooh a nifty prototype of a "Futuristic UI", using WebGL via Three.js and React Three Fiber
 - https://twitter.com/JoshWComeau/status/1355637170116112386
 - [Building Future UIs](https://formidable.com/blog/2021/future-ui/)

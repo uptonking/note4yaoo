@@ -72,6 +72,11 @@ modified: '2020-10-22T06:49:25.812Z'
 
 # list-grid-app
 
+- https://github.com/handsontable/hyperformula
+  - https://handsontable.com/docs/hyperformula
+  - HyperFormula is an Excel-like calculation engine 
+  - You can use it in a browser or as a service with Node.js as your backend
+  - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
 - gridstudio /AGPLv3/7.8kStar/202006/go/python
   - https://github.com/ricklamers/gridstudio
   - https://gridstudio.io/
@@ -98,8 +103,6 @@ modified: '2020-10-22T06:49:25.812Z'
   - http://tabler-react.com/
   - React implementation of the Tabler Dashboard UI Kit
   - 基于table标签实现
-- https://github.com/handsontable/hyperformula
-  - a high-performance, spreadsheet-like calculation engine for web applications
 - https://github.com/coston/instant-table
   - Input data, output a react responsive table 
   - Responsive conversion to HTML `<dl>` key-value format at mobile breakpoint

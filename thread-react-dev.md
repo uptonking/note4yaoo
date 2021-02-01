@@ -12,6 +12,19 @@ modified: '2021-01-06T14:40:11.360Z'
 - ## 
 
 
+- ## Anyone ever used Preact without using internal state at all?
+- https://twitter.com/_developit/status/1356068911263977472
+  - Thinking about using an FSM for state management and then just calling `render(<App {state} />, el)` on state changes.
+- Main issue is that you'll only ever be triggering whole-app renders. 
+  - With state, only the subtree with changes re-renders. 
+  - For a state machine approach I tend to subscribe components individually, even if all they do is call `setState({})` on themselves.
+- And if you use a non-vdom library, whole app re-renders might even be cheap 
+  - That depends on reference equality bailouts same as VDOM though. 
+    - In both cases, a top-level rerender with entirely new data is worst-case perf.
+  - There should be far fewer such checks in a sparse tree of template bindings than a full vdom tree. It would be less by the ratio of bindings to leaf DOM nodes.
+  - true, assuming minimal composition of templates.
+
+
 - ## I've come to believe that the base React Hooks should always be used inside of a custom hook 
 - https://twitter.com/kyleshevlin/status/1354845869246476290
   - to provide encapsulation and context to the concern

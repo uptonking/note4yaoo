@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+
+- ## Trick—JavaScript superclass that can’t be instantiated 
+- https://twitter.com/rauschma/status/1356134928707153920
+- why is this pattern useful, when we have structural typing and interfaces? 
+  - This is when you do OOP-style abstract superclasses: You want the subclasses to be instantiated, but not the superclass.
+
 - ## Yet again I'm reminded that JavaScript class fields are a bad design
 - https://twitter.com/justinfagnani/status/1355665301979897860
   - Define semantics means you can't meta-program over them like other class members, and you can't override them with accessors.

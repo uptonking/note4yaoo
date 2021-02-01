@@ -14,6 +14,13 @@ modified: '2020-10-15T13:42:23.746Z'
 - csf (Component Story Format)
   - title, component, parameters, decrators
 
+# graphics
+
+- SVG(SCALABLE VECTOR GRAPHICS)
+  - SVG is a markup language for describing two-dimensional graphics applications and images, and a set of related graphics script interfaces. 
+  - [SVG Working Group Charter](https://www.w3.org/Graphics/SVG/2014/new-charter)
+  - [SVG Roadmap](https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap)
+
 # ref
 
 - [Understand how structured data works](https://developers.google.com/search/docs/guides/intro-structured-data)

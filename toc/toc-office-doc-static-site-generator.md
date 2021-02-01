@@ -55,6 +55,7 @@ modified: '2021-01-17T09:26:53.093Z'
   - A progressive static site is a website where every statically exported HTML page is an entry point to a fully-featured automatically-code-split React application.
   - Just like a normal static site, static progressive websites are capable of loading initial landing pages very quickly, but then extend the user experience by transforming invisibly into a single-page React application.
 - https://github.com/11ty/eleventy
+  - https://www.11ty.dev/
   - /8kStar/MIT/202011/js
   - A simpler static site generator. An alternative to Jekyll.
   - ransforms a directory of templates (of varying types) into HTML.

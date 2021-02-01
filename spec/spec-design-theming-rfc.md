@@ -39,6 +39,9 @@ modified: '2021-01-04T17:07:56.548Z'
   - more
     - cactus, flame, w-design
 
+- The theme object is intended to be a general purpose format for storing design system style values, scales, and/or design tokens. 
+  - The object itself is not coupled to any particular library's implementation and can be used in places where sharing common style values in multiple parts of a code base is desirable.
+
 - 对样式主题的需求
   - If you’ve ever worked on a large application that has been worked on by many different people over time, you know that consistency can be hard to maintain. 
   - The amount of different colors, spacing, font-sizes and media queries can easily get out of control. 

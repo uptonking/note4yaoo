@@ -94,3 +94,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - Company logos created in pure CSS.
 - https://github.com/primefaces/primeui
   - PrimeUI is a collection of rich javascript widgets based on jQuery UI.
+
+- https://github.com/raphaelfabeni/ui-interactions
+  - https://raphaelfabeni.com/ui-interactions/
+  - Ready-to-use UI interactions using only one element and pure CSS

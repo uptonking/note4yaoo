@@ -11,6 +11,15 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+
+- ## Unpopular opinion: ESM was a bad idea.
+- https://twitter.com/devongovett/status/1356258095949885442
+  - It has caused half a decade of churn in the JS ecosystem, broken almost every tool, caused maintenance nightmares for library authors, and for what? A different syntax? CJS was fine. 😐
+- CJS is not perfect too. Resolving algo is a nightmare. It would never be compatible with web.
+- As someone who has written a few Babel plugins that analyze dependencies etc, I will say that it is an advantage for toolability that ESM syntax is more constrained than what CJS allows. 
+  - I believe Sasha is correct about sync vs async and the web being the main driver.
+  - Wasn’t the reasoning behind this something along the lines of “node modules are FS-based and sync and web cannot work like this”?
+
 - ## HTML(performance) tip: You can use the `loading=lazy` attribute to defer the loading of the image until the user scrolls to them
 - https://twitter.com/denicmarko/status/1355439705853194241
 - Here's how it works. 
