@@ -28,6 +28,26 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Today I looked into the performance of different layout modes in CSS. 
+- https://twitter.com/JoshWComeau/status/1356377422925541377
+  - I was curious if it takes the browser longer to lay out elements in a grid vs. Flexbox vs. flow layout.
+  - TL: DR; they're all plenty fast, but there are small differences.
+- For the benchmark, I created an app that renders 1000 random items, with a couple HTML tags in each one. I trigger a re-render, and measure how long it takes to recalculate layout.
+- Regular flow layout. No CSS on the container.
+  - I imagine this is the lowest it could be, since each element fills the available width. No "interplay" between children.
+  - This will be our baseline!
+- A flex column.
+  - Very similar layout to the last element, except that margins don't collapse anymore.
+- A flex row, with `flex-wrap: wrap` , and min/max sizes on children
+  - This one requires a bit more computation, since the browser has to decide where the lines wrap.
+- A 5-column grid.
+  - I remember reading that CSS Grid could be slower in some circumstances, but it doesn't make a HUGE difference.
+- I've seen a couple "CSS Grid is slow, use Flexbox instead" takes, 
+  - and I feel much more comfortable now saying that you should ignore them Smiling face with open mouth and cold sweat the folks working on browsers are super smart 
+  - and they wouldn't ship a layout method with huge performance problems.
+- My takeaway: there is a cost when it comes to using dynamic layouts, but that cost is quite small in absolute terms.
+  - Even on a low-end device, using Grid layout probably won't increase render times by a noticeable amount
+
 - ## I'm working on a UI for a client project and wanted to share some CSS and SVG goodness.
 - https://twitter.com/shadeed9/status/1353047713256882177
   - The requirement is to implement a dynamic tape element that can be colored, rotated, and sized. 

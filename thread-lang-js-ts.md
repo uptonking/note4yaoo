@@ -11,6 +11,11 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## I wish JavaScript import statements were written in reverse order so that autocomplete worked properly.
+- https://twitter.com/markdalgleish/status/1356404787244195840
+  - e.g. from 'lodash' import { debounce }
+- Seems like a nice improvement at first glance, but I’m wondering how imports with side-effects could look
+  - `from "./styles.css" import *` ; 
 
 - ## Trick—JavaScript superclass that can’t be instantiated 
 - https://twitter.com/rauschma/status/1356134928707153920

@@ -9,9 +9,38 @@ modified: '2020-12-08T13:14:07.354Z'
 
 # guide
 
-- [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-  - list all the HTML elements, which are created using tags
-  - In HTML, a tag is used for creating an element. 
+# [Empty element](https://developer.mozilla.org/en-US/docs/Glossary/empty_element)
+
+- The empty elements in HTML are as follows:
+  - area, base, br, col, embed, hr, img, input, keygen, link, meta, param, source, track, wbr
+  - 不是empty elements: script, style
+
+- An empty element is an element from HTML, SVG, or MathML that cannot have any child nodes (i.e., nested elements or text nodes).
+- The HTML, SVG, and MathML specifications define very precisely what each element can contain. 
+  - Many combinations have no semantic meaning, for example an `<audio>` element nested inside an `<hr>` element.
+- In HTML, using a closing tag on an empty element is usually invalid. 
+  - `<input type="text"></input>` is invalid HTML.
+
+- There is no such thing as a self-closing tag in HTML5 syntax.
+  - Self-closing tags on non-void elements like `<p/>, <div/>` will not work at all. 
+    - The trailing slash will be ignored, and these will be treated as opening tags. 
+    - This is likely to lead to nesting problems.
+    - This is true regardless of whether there is whitespace in front of the slash: `<p /> and <div />` also won't work for the same reason.
+  - Self-closing tags on void elements like `<br/> or <img src="" alt=""/>` will work, 
+    - but only because the trailing slash is ignored, and in this case that happens to result in the correct behaviour.
+
+- In HTML5, the meaning of `<foo />` depends on the type of element.
+  - On HTML elements that are designated as void elements (essentially "An element that existed before HTML5 and which was forbidden to have any content"), end tags are simply forbidden. 
+    - The slash at the end of the start tag is allowed, but has no meaning. 
+    - It is just syntactic sugar for people (and syntax highlighters) that are addicted to XML.
+  - On other HTML elements, the slash is an error, but error recovery will cause browsers to ignore it and treat the tag as a regular start tag. 
+    - This will usually end up with a missing end tag causing subsequent elements to be children instead of siblings.
+  - Foreign elements (imported from XML applications such as SVG) treat it as self-closing syntax.
+
+# [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+- Below listed are all the HTML elements, which are created using tags
+- In HTML, a tag is used for creating an element. 
   - The name of an HTML element is the name used in angle brackets such as `<a>`
 - elements by group
   - html: root element of html document

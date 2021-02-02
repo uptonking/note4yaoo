@@ -55,6 +55,8 @@ modified: '2020-07-14T09:28:43.976Z'
 
 # more-benchmarks
 
+- [Today I looked into the performance of different layout modes in CSS.](https://twitter.com/JoshWComeau/status/1356377422925541377)
+
 - [textJust how much faster is vanilla JS than frameworks?_202008](https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/)
 
 - https://github.com/Polymer/benchmarks

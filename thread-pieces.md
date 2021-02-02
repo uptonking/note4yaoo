@@ -11,6 +11,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## friendly reminder: whenever somethings not working the *first* thing to do is `rm -rf node_modules` then reinstall dependencies
+
 - ## JavaScript tip: You can wrap your `console.log()` arguments with curly brackets to see the variable names.
 
 - ## I have to admit that "frameworkless" is a better buzzword than "framework agnostic", even if it’s *less* accurate.

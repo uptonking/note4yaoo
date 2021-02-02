@@ -13,6 +13,14 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## Trying to build an accessible interactive tooltip in a React portal—the trick is simulating natural tab order
+- https://twitter.com/markdalgleish/status/1356534519776432129
+  - e.g. tabbing out of it should take you to the next focusable element on the page. 
+  - There's no browser API for this, but luckily I found focus-trap/tabbable
+- https://github.com/focus-trap/tabbable
+  - Find descendants of a DOM node that are in the tab order
+  - If you think a node should be included in your array of tabbables but it's not, all you need to do is add tabindex="0" to deliberately include it.(-1 to exclude it)
+
 - ## Thinking on ways to solve a SIDENAV
 - https://twitter.com/argyleink/status/1352343431914299393
   - No position absolute anywhere, and the JS is only ux enhancements

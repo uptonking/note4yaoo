@@ -92,7 +92,8 @@ modified: '2020-12-21T08:03:35.993Z'
 # display
 
 - Collapsible: 默认显示前16个字符串，也可显示单独设置的，点击时展开显示原内容
-- collapsible text   
+  - 内容显示为可折叠的card，或者显示为浮动的modal()
+- collapsible text
 - collapsible banner
 
 - ## Card
@@ -233,6 +234,9 @@ modified: '2020-12-21T08:03:35.993Z'
 - BulletComment/弹幕
 
 # experimental
+
+- table-of-contents
+  - 内容显示为可折叠的card，或者显示为浮动的modal()
 
 # ui-components-catalog
 

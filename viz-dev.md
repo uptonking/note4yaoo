@@ -93,6 +93,29 @@ modified: '2021-01-01T20:21:10.887Z'
   - https://blogs.msdn.microsoft.com/ie/2011/04/22/thoughts-on-when-to-use-canvas-and-svg/
   - http://jack-kelly.com/html5_canvas_versus_svg_for_interactive_charts_and_graphical
 
+# canvas vs webgl
+
+- canvas(cpu) vs webgl(gpu)
+
+- ## [What's better: Canvas vs. WebGL](https://hashnode.com/post/whats-better-canvas-vs-webgl-for-a-newbie-cje7kxq2n046tiqwu94uv44lu)
+- Depends on you goal. 
+- If you have low-level graphics programming in mind, with the eventual aim to develop a render engine, then, in my opinion, it is a lot easier to start out with the HTML5 Canvas API. 
+  - It abstracts away a lot of low-level details you do not need in order to create visuals. 
+  - Also, in the beginning, it is rather likely, that performance is not an issue. 
+  - I believe that it is far more important to first study the concept of 2D programming and how to manage things, like assets, states, input handling, etc.
+- If you feel comfy with those things, switching over to WebGL is pretty easy. Everything will stay nearly the same, but become a lot more complicated. 
+  - That allows you to do things you were not able to, before, with a great deal of control, like 3D scenes with shaders and instancing, etc.
+- However, if you do not want to learn the exact implementation stuff, but just have fun creating content, like a game, it is advisable, that you use an available engine. 
+  - WebGL, just like OpenGL or Direct2D/3D, Vulkan and Metal, is a very sophisticated API, which takes a lot of time to learn. 
+  - Even if you know it by heart take a lot of time to use and optimize.
+  - WebGL is not always available, so fallbacks have to put in place. 
+  - As such, it ususally makes more sense to use a library, which raises the abstraction level to something manageable, pre-optimized and purposed. 
+  - In that case, you should not study the low-level stuff for too long, but get on reading the docs of your renderer or engine.
+
+- If you want fast prototypes with less than 100 sprites, some basic shape primitives, filters with globalAlpha and sheer image/pixel manipulation, go for canvas.
+- If you have a lot of sprites and many layers choose WebGl. WebGl will offer better performance. 2 key points where WebGl will beat any other approach: shaders + sprite count
+- If you want a lot of easy to implement interactivity with less than ~30000 elements, you can also in principle venture into SVG. In principle you can also get very nice and interesting effects with combining SVGFilter, linearGradient and masks so you might want to give it a try.
+
 # ref
 
 - [SVG 与 HTML5的canvas各有什么优点，哪个更有前途？](https://www.zhihu.com/question/19690014/answers/updated)

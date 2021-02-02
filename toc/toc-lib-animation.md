@@ -117,6 +117,10 @@ modified: '2020-10-05T06:22:02.107Z'
 
 # js animation
 
+- https://github.com/jeremyckahn/shifty
+  - https://jeremyckahn.github.io/shifty/doc/
+  - Shifty is a tweening engine for JavaScript
+
 - anime /MIT/36.3kStar/202004
   - https://github.com/juliangarnier/anime
   - https://animejs.com/
@@ -171,6 +175,11 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/spite/ccapture.js
   - a library to help capturing animations created with HTML5 canvas at a fixed framerate.
 
+- https://github.com/kennethcachia/shape-shifter
+  - A canvas experiment in which a set of particles is used to render different shapes based on the user's input.
+  - It supports multiple modes: text, countdown, time and icons.
+  - 示例的效果amazing
+
 # interactive-ui-components
 
 - scrollreveal /GPLv3/18.9kStar/202007
@@ -187,8 +196,11 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/ozrenkosi/flow
   - Animation inspired by @sasj, made with p5.js
   - 斑点上下移动
+- https://github.com/hakimel/kontext
+  - http://lab.hakim.se/kontext/
+  - 页面切换时的三维效果
 
-# misc
+# animation tools
 
 - svg.js /MIT/8.2kStar/202006
   - https://github.com/svgdotjs/svg.js
@@ -217,7 +229,7 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/wadackel/sweet-scroll
   - dependency-free smooth scroll library using raf
 
-# ref
+# more
 
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation
@@ -231,3 +243,6 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/IanLunn/Sequence
   - http://sequencejs.com/
   - responsive CSS animation framework for creating unique sliders, presentations, banners, and other step-based applications.
+
+- https://github.com/alexjlockwood/ShapeShifter
+  - a web-app that simplifies the creation of icon animations for Android, iOS, and the web.

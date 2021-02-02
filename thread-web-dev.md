@@ -19,6 +19,10 @@ modified: '2021-01-08T17:13:43.392Z'
 - As someone who has written a few Babel plugins that analyze dependencies etc, I will say that it is an advantage for toolability that ESM syntax is more constrained than what CJS allows. 
   - I believe Sasha is correct about sync vs async and the web being the main driver.
   - Wasn’t the reasoning behind this something along the lines of “node modules are FS-based and sync and web cannot work like this”?
+- The main benefit of ESM is not in features it adds over CJS, it is the features it removes. 
+  - The inability to specify dynamic synchronous dependencies comes to mind.
+  - To my "we haven't capitalized on it yet" point though: CJS exports mix realms, whereas ES Module instances preserve the potential for future cross-realm dependencies (JS<->WASM, between threads, etc)
+  - ES Modules feel like they will be more than just JavaScript, whereas CJS was obviously a JavaScript-first approach. e.g. Import assertions
 
 - ## HTML(performance) tip: You can use the `loading=lazy` attribute to defer the loading of the image until the user scrolls to them
 - https://twitter.com/denicmarko/status/1355439705853194241
