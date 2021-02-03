@@ -26,6 +26,14 @@ modified: '2021-01-31T08:39:52.693Z'
 
 - ## 
 
+- ##  Focus outlines are important for accessibility, but they can't be rounded. Simulate 'em with box-shadow!
+- https://twitter.com/JoshWComeau/status/1356713502954635274
+  - https://codepen.io/joshwcomeau/pen/LYbEQMa
+- Don't forget a little dash of `border: 2px solid transparent` for Windows High Contrast Mode support!
+- I remember hearing from @adamwathan this wasn't great for accessibility (in high-contrast mode on Windows or something?)
+  - It’s totally ok but just have to make sure you don’t use `outline: none` to hide the browser focus style. 
+  - Use something like `outline: 2px dotted transparent` instead, invisible to regular users but WHC will ignore transparent and show a real color 
+
 - ## Pure CSS/SVG Tic Tac Toe 2021 
 - https://twitter.com/jh3yy/status/1355625929968640000
   - https://codepen.io/jh3y/pen/KKNwpzN

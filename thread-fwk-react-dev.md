@@ -13,6 +13,19 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## The browser is the source of truth when it comes to the URL. 
+- https://twitter.com/mjackson/status/1356713777526263808
+  -  Any time you read it and put it into memory (like Redux) you risk getting out of sync. 
+  - Your Redux store is not the source of truth when it comes to the URL.
+- Remember: the user can change the URL without you ever knowing about it. They can either:
+  - hit the back button or
+  - manipulate the address bar directly.
+  - You can't stop them. Once they do, the URL has changed. If your source of truth is Redux, you're now out of sync.
+  - The only thing you can do is react to a change in the URL.
+  - To effectively "prevent" navigation, you must be able to undo the navigation they just did. This is not easy to do, but it's possible in most cases using histry pkg
+- i think the main appeal to copying any sort of external state into redux was so that you can join it with other data already in redux (in mapStateToProps) but i don’t think this is necessary anymore given hooks. makes it much nicer to compose state at the component level
+- one can also say the the url is just a side  effect of being in the current state. Kinda like saving a bookmark. Now source of truth is your app, and in state X it sets url Y and renders DOM Z
+
 - ## One interesting thing we found when researching my last article is that every framework's version of this React code logs different things when you click the button
 - https://twitter.com/RyanCarniato/status/1353801009844240389
   - Which are more correct

@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+
+- ## does anyone know if using Symbol, instead of direct properties, is either faster or slower, *especially* in NodeJS or, in general, v8?
+- https://twitter.com/WebReflection/status/1356911723920445440
+- It made no difference
+  - In this benchmark, symbols are 3.2 times slower
+
 - ## I wish JavaScript import statements were written in reverse order so that autocomplete worked properly.
 - https://twitter.com/markdalgleish/status/1356404787244195840
   - e.g. from 'lodash' import { debounce }

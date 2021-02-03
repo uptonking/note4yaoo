@@ -18,6 +18,17 @@ modified: '2021-01-29T18:54:36.865Z'
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
 
+# css-fwk-popular
+
+- bootstrap v5.0.0-beta1(202012)
+  - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
+
+- primitive ui v1.5.3(202004)
+  - reset: normalize.css8, scaffolding.scss
+
+- pico.css v1.2.1(202011)
+  - reset: normalize.css8, sanitize.css12, sectioning.scss
+
 # themes-popular
 
 ## material

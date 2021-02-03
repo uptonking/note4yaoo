@@ -13,6 +13,12 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+
+- ## If you don't know which code is calling your function, use console.trance()
+- https://twitter.com/sseraphini/status/1356654950198239233
+- I used `console.log(new Error)`
+- I usually also do “console.log = console.trace” to locate and remove some console.log
+
 - ## Hyphens are pretty. Underscores are ugly and don’t belong in URLs
 - https://twitter.com/mscccc/status/1355525419152384002
 - What about emojis in URLs? 

@@ -14,6 +14,19 @@ modified: '2020-12-31T15:33:17.149Z'
   - It specifies a standardized language-independent columnar memory format for flat and hierarchical data, organized for efficient analytic operations on modern hardware. 
   -  It also provides computational libraries and zero-copy streaming messaging and interprocess communication
 
+- https://github.com/wesm/feather
+  - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
+
+# data-tools
+
+- https://github.com/pbeshai/tidy
+  - https://pbeshai.github.io/tidy/
+  - /47Star/MIT/202102/ts
+  - 依赖d3-array, ts-toolbelt
+  - Tidy up your data with JavaScript, inspired by dplyr and the tidyverse
+  - tidy.js attempts to bring the ergonomics of data manipulation from R to javascript
+  - No wrapper classes needed — all tidy.js needs is an array of plain old-fashioned JS objects to get started. Simple in, simple out.
+
 # more
 
 - https://github.com/finos/perspective

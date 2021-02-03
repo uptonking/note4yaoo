@@ -1,15 +1,32 @@
 ---
-title: thread-web-fwk
+title: thread-fwk-web
 tags: [framework, frontend, thread, web]
 created: '2020-12-05T17:52:28.808Z'
 modified: '2021-01-08T17:13:53.965Z'
 ---
 
-# thread-web-fwk
+# thread-fwk-web
 
 # pieces
 
 - ## 
+
+- ## The existing history API (window.history, popstate, etc.) is bad for building web apps. We've been working on a proposal for a new history API, and would love your feedback
+- https://twitter.com/domenic/status/1356656668222885889
+- I think it should be possible to iterate on top of what window.history already provides, and just fix the problems with it instead of introducing something entirely new.
+
+- ## After all these years there really are still only 2 types of frontend JS UI Framework. Angular(React) and KnockoutJS. 
+- https://twitter.com/RyanCarniato/status/1356655576420282371
+  - Work has gone into optimization, and borrowing the benefits of the other's approach, sometimes producing a hybrid. 
+  - The basics haven't changed for nearly a decade.
+- Thnx for putting this into words @RyanCarniato - for me as well we've got 2 fundamental patterns:
+  - pull: "ask for changes" (Angular, React etc.)
+  - push: "tell me that sth changed" (KnockoutJS, Solid, Svelte etc.)
+  - There are  toons of hybrids and nuances of course.
+  - Still can't decide if "hybrids" trying to add push-based change detection on top of a framework written with a top-down pull mentality (ex. NgRx with Angular) are a good thing or not. 
+  - Having a framework designed with a push-based model from the ground-up feels so much "cleaner"
+  - Yeah, Vue is another example of this. Their reactive system sits on top of a VDOM. The types of optimizations it does are not unlike Solid or Svelte, but uses them to generate VDOM nodes and then goes diff them.
+- 计算机研究的问题，很多都可以总结为经典问题，但具体业务的应用场景需要修改
 
 - ## What are folks using to split their CSS bundles to only load the CSS used by the current page?
 - https://twitter.com/rob_dodson/status/1355575341696204801

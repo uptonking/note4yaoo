@@ -27,14 +27,18 @@ modified: '2021-01-11T18:34:20.713Z'
   - 不必搜索所有最新样式项目的仓库
     - 深入理解流行的css framework的文档实现就好，大多都是多页文档
 
-- primitive/skeleton-css  /760Star/MIT/202010/scss/css-only/NoDeps
+- primitive/skeleton-css  /760Star/MIT/202010/scss/NoDeps
   - https://github.com/taniarascia/primitive
   - https://taniarascia.github.io/primitive/
   - https://taniarascia.github.io/primitive/test.html
-  - 提供了基础页面模版
+  - 完全基于sass，提供了基础页面模版
   - 提供了通过改变link的href属性值来切换theming的示例
   - A front-end design toolkit built with Sass for developing responsive web apps.
   - [Skeleton CSS](http://getskeleton.com/), the original inspiration
+  - 实现细节
+    - 使用了normalize.css和单独的reset.css，scaffolding.scss重置了大多数内置元素的样式
+    - 测试页面link标签默认href为空字符串，即默认不加载css，但传入undefined不会变为空
+    - 测试页面只有3处使用class设置了样式名，只用了`.small-container`和`.radio`两个类名
 
 - 单页文档示例
   - primitive, pico

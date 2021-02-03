@@ -16,3 +16,7 @@ modified: '2021-01-19T10:43:51.224Z'
 # frontend-engineering
 
 # backend-dev
+
+# more
+
+- [JavaScript for Automation (JXA) Resources](https://gist.github.com/JMichaelTX/d29adaa18088572ce6d4)
