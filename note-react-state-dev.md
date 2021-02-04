@@ -158,6 +158,14 @@ function StateProvider({ children }) {
   - CharlesStover/react-multi-context
   - dai-shi/react-context-global-state
 
+- list of atomic module state libs
+  - jotai
+  - recoil
+  - reatom
+  - klyva
+  - xoid
+  - pipestate
+
 - state-状态管理技术选型
   - recoil (要等到API稳定、功能齐全)
   - constate

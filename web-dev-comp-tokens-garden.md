@@ -29,6 +29,12 @@ modified: '2021-01-13T17:12:25.854Z'
   - 主题样式实现一套css，再实现一套css in js
     - primer-components
 
+- themeable 设计样式时theming可参考
+  - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
+    - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
+  - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
+    - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
+
 - 公共api/variant
   - borderless
     - 部分组件提供无边框的版本，如modal

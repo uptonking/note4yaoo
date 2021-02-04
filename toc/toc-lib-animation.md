@@ -176,9 +176,10 @@ modified: '2020-10-05T06:22:02.107Z'
   - a library to help capturing animations created with HTML5 canvas at a fixed framerate.
 
 - https://github.com/kennethcachia/shape-shifter
+  - http://www.kennethcachia.com/shape-shifter/
   - A canvas experiment in which a set of particles is used to render different shapes based on the user's input.
   - It supports multiple modes: text, countdown, time and icons.
-  - 示例的效果amazing
+  - 粒子动画示例的效果amazing
 
 # interactive-ui-components
 

@@ -66,7 +66,7 @@ modified: '2021-01-09T16:13:07.758Z'
 
 ## leaflet
 
-## mapbox-gl-js
+## maplibre-gl-js
 
 ## more-mapping
 

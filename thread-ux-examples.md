@@ -26,6 +26,12 @@ modified: '2021-01-31T08:39:52.693Z'
 
 - ## 
 
+- ##  Tweak numbers to create neat-o shapes, and then nab the CSS to generate them.
+- https://twitter.com/JoshWComeau/status/1357033108898410496
+  - https://codepen.io/yuanchuan/pen/QWGWXPz
+- Because it's `clip-path` , it can be applied to your images, HTML nodes, anything!
+  - No more weird border hacks for basic shapes
+
 - ##  Focus outlines are important for accessibility, but they can't be rounded. Simulate 'em with box-shadow!
 - https://twitter.com/JoshWComeau/status/1356713502954635274
   - https://codepen.io/joshwcomeau/pen/LYbEQMa

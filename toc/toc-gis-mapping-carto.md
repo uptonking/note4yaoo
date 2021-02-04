@@ -15,17 +15,19 @@ modified: '2021-01-04T16:21:29.894Z'
   - /558Star/BSD/202012/js
   - a community led fork derived from mapbox-gl-js
   - The primary goal is consistency and backwards-compatability with previous releases and continued bug-fixes and maintenance going forward.
+  - 最后的v1版本号为v1.13.0(20201119)
   - https://github.com/cgcs2000/mapbox-gl-js
     - a fork of mapbox/mapbox-gl-js, adding support for CGCS2000.
   - https://github.com/socrata/mapbox-gl-js
     - Support for clustering points like supercluster by SOQL(Salesforce)
 
 - https://github.com/mapbox/mapbox-gl-js
+  - https://github.com/mapbox/mapbox-gl-js/tree/v1.13.0
   - /7.1kStar/BSD/202012/js
   - customizable maps in the browser, powered by vector tiles and WebGL
   - It takes map styles that conform to the Mapbox Style Specification, applies them to vector tiles that conform to the Mapbox Vector Tile Specification, and renders them using WebGL.
   - Mapbox gl-js version 2.0 or higher (“Mapbox Web SDK”) must be used according to the Mapbox Terms of Service.
-  - [(20201208)v2.0 changes merged with updated TOS and license](https://github.com/mapbox/mapbox-gl-js/issues/10162)
+  - [v2.0.0(20201209) changes merged with updated TOS and license](https://github.com/mapbox/mapbox-gl-js/issues/10162)
     - v2: reducing map load time by 30%, 3D terrain rendering, new satellite imagery, a low level camera API, and a new sky layer type
     - All new features and improvements will only be available in v2.
     - Mapbox GL JS v2+ are governed by the Mapbox Terms of Service (this is a change from the old v1 3-clause BSD license).

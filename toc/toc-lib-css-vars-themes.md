@@ -11,7 +11,9 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - 设计样式时theming可参考
   - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
-  - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
+    - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
+  - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
+    - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
 
 - ref
   - search: pure css, css only, css framework, css vars
@@ -145,6 +147,33 @@ modified: '2021-01-29T18:54:36.865Z'
 - https://github.com/saurabhdaware/text-to-handwriting
   - https://saurabhdaware.github.io/text-to-handwriting/
   - converts text to an image that looks like handwriting
+
+## particles-tracks
+
+- https://github.com/matteobruni/tsparticles
+  - https://particles.js.org/
+  - TypeScript library for creating particles. Dependency free
+
+- https://github.com/Wufe/react-particles-js
+  - https://rpj.bembi.dev/
+  - Particles React component, using tsParticles
+
+- https://github.com/tim-soft/react-particles-webgl
+  - https://timellenberger.com/particles
+  - A 2D/3D particle library built on React, Three.js and WebGL
+  - react-particles-webgl was inspired by the popular particles.js library and built with react-three-fiber to offer smooth 60FPS high-count particle fields in both two and three dimensions.
+
+- https://github.com/kennethcachia/shape-shifter
+  - http://www.kennethcachia.com/shape-shifter/
+  - A canvas experiment in which a set of particles is used to render different shapes based on the user's input.
+  - It supports multiple modes: text, countdown, time and icons.
+  - 粒子动画示例的效果amazing
+
+- more-particles
+  - https://github.com/chainlito/dot-dashboard
+    - https://dot-dashboard.vercel.app/
+    - 依赖react, redux-saga, react-chartjs
+    - dot-dashboard 一个暗黑系的首页示例
 
 # themes-ui-design
 
