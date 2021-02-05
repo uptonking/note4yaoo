@@ -1,28 +1,13 @@
 ---
-title: thread-ux-examples
-tags: [examples, thread, ux]
-created: '2021-01-13T08:26:14.421Z'
-modified: '2021-01-31T08:39:52.693Z'
+title: thread-ux-css-examples
+tags: [css, examples, thread, ux]
+created: '2021-02-05T13:56:42.396Z'
+modified: '2021-02-05T14:00:02.922Z'
 ---
 
-# thread-ux-examples
+# thread-ux-css-examples
 
-# themes-in-colors
-
-- blue
-  - https://www.artstation.com/artwork/g2J64x
-    - 深黑蓝，暗黑科技感
-
-- green
-  - https://sktthemesdemo.net/natureone/
-    - https://www.sktthemes.org/shop/nature-wordpress-theme/
-    - 森林绿
-- green-sites
-  - https://www.spotify.com/us/
-  - https://emuiers.blogspot.com/2020/08/emui-10-themes.html
-    - 华为202008
-
-# ux-examples
+# ux-dev-examples
 
 - ## 
 
@@ -77,9 +62,3 @@ modified: '2021-01-31T08:39:52.693Z'
   - https://ishaan28malik.github.io/champion-runner-home/
   - https://divymr.tech/
   - https://abdulsalam.netlify.app/
-
-# ux-pieces
-
-- my Twitter experience vastly improved when I realized I could zoom in enough that the sidebar disappears
-- https://twitter.com/jlengstorf/status/1355236444780937217
-  - twitter是三列布局，当放大到一定比例，最右边的第三列会消失

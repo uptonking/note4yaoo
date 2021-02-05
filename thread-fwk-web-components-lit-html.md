@@ -11,7 +11,11 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## Looking for some publicly available/open source web components to test the custom elements manifest analyzer on
+- https://twitter.com/passle_/status/1357676192413999105
+  - Do you have some components written with either lit or vanilla, JS or TS, that are available on github? 
+- dile-tabs
+  - Hadnt considered window.customElements.define, only customElements.define. Very helpful, thanks for sharing!
 
 - ## The web is definitely not a great application platform currently, but there’s no reason why it can’t be! 
 - https://twitter.com/devongovett/status/1355557264631988229

@@ -51,6 +51,8 @@ modified: '2021-01-28T21:14:14.667Z'
 - halfmoon /2.1kStar/MIT/202010/js
   - https://github.com/halfmoonui/halfmoon
   - https://www.gethalfmoon.com/
+  - theming基于css vars，dark-mode变量名前缀为`--dm`
+  - 未提供组件级css vars
   - 未模块化，一个css文件一万多行
     - [More modular approach in the roadmap](https://github.com/halfmoonui/halfmoon/issues/78)
   - Front-end framework with a built-in dark mode and full customizability using CSS variables

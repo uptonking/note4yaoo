@@ -30,6 +30,14 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - pico.css v1.2.1(202011)
   - reset: normalize.css8, sanitize.css12, sectioning.scss
+  - 未提供组件级css vars，样式变量全是global
+  - 组件中的css vars没有使用fallback回退值
+
+- spectrum
+  - 未提供组件级css vars，样式变量全是全局级，分为`--spectrum-global/button/...`
+
+- patternfly
+  - 组件级的变量未提供fallback回退值
 
 # themes-popular
 
@@ -193,6 +201,7 @@ modified: '2021-01-29T18:54:36.865Z'
 - https://github.com/alphardex/aqua.css
   - https://aquacss.netlify.com/
   - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
+  - 定义了组件级css变量，利用了scss支持嵌套语法，但组件级变量未提供回退值
   - 文档基于vue，仓库中提供了很多纯html demo示例
   - [dashboard demo](https://codepen.io/alphardex/full/yLNwKqx)
 - https://github.com/zaydek/duomo
@@ -206,15 +215,17 @@ modified: '2021-01-29T18:54:36.865Z'
   - Introspection via CSS variables; Duomo tokens can be overridden without Sass
   - Small JavaScript runtime for toggling dark mode, etc.
 
-- https://github.com/tylerchilds/cutestrap /1.6kStar
+- https://github.com/tylerchilds/cutestrap /1.6kStar/css
   - http://www.cutestrap.com/features/themes
   - 样式源码基于css，文档是多个html，但默认首页的html可单独使用
   - 提供了dark主题demo，另外的css文档使用了kss生成
+  - 定义了组件级css变量，但组件级变量未提供回退值
   - A strong, independent CSS Framework. Only 2.7KB gzipped.
   - The two constraints for browser support are Custom Properties and CSS Grid.
 
-- https://github.com/elishaterada/feathercss /2Star
+- https://github.com/elishaterada/feathercss /2Star/css
   - https://feathercss.makerkits.co/
+  - 没有组件级css vars
   - 文档单页，文档基于next，每个组件并排显示明暗两种样式，设计简洁干净
   - FeatherCSS is a Dark Mode ready minimalist CSS Framework with support for RTL and Accessibility
   - It purposefully excludes features like grid layout, media queries, or icons which tends to require per-project customization.
@@ -224,9 +235,16 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - https://github.com/jenil/chota
   - https://jenil.github.io/chota/
+  - 没有组件级css vars
   - 文档单页，纯html
   - Easy to extend with CSS variables
   - Easy dark mode switch，虽然支持，但未提供主题demo
+
+- https://github.com/johannschopplich/buldy
+  - 定义了组件级css变量，但极少数才有组件级变量，几乎都是全局级
+  - 无docs网站
+  - Modern CSS framework distilled from the best of larger frameworks
+  - Easily editable and extendable CSS variables
 
 - https://github.com/lnolte/und-css
   - https://css.und-pohlen.de/tokens/
@@ -241,11 +259,6 @@ modified: '2021-01-29T18:54:36.865Z'
   - It's based on CSS Variables for easy customization and extension. 
   - It features cool tech like CSS Grid. 
   - The source is a collection of SCSS modules
-
-- https://github.com/johannschopplich/buldy
-  - 无docs网站
-  - Modern CSS framework distilled from the best of larger frameworks
-  - Easily editable and extendable CSS variables
 
 # more-themes
 

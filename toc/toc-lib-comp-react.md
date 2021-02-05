@@ -29,6 +29,9 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/mui-org/material-ui
   - https://material-ui.com/
   - React components that implement Google's Material Design
+  - [[RFC] Material-UI v5:  Unstyled components](https://github.com/mui-org/material-ui/issues/20012)
+    - A migration to styled-components is our most requested (upvoted) issue to date.
+    - It could be interesting to provide a choice between different style engines. v5's users would be able to replace @material-ui/styles with react-jss.
 - mineral-ui  /517Star/Apache2/202008
   - https://github.com/mineral-ui/mineral-ui
   - https://mineral-ui.netlify.com/

@@ -13,6 +13,26 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## 3 Rules for Keeping Components Organized
+- https://www.seancdavis.com/blog/three-rules-keep-components-organized/
+- Rule #1: Separate Source Files into Logical Buckets
+  - I prefer to separate components by the role they play within the larger application.
+  - Even though layouts, templates(container), and blocks(comp/element) are (or could be) all technically a type of component, I like keeping them separate from one another. 
+  - some frameworks — Jekyll is one example — are more opinionated about where you place your components without some custom configuration. 
+  - (With Jekyll, components are more like partial templates, which they call includes). 
+  - In cases like this, it's usually a good idea to use the framework's defaults.
+- Rule #2: The Top Level is for Shared Components Only
+  - Many times a component is only used in one place, by one other component. 
+  - In that case, it isn’t necessary for that component to be exposed right in the primary components directory. 
+  - Instead, it could be nested within the directory of the component that uses it.
+  - the top-level of a directory of components should be in use either by more than one other component or by some other type of component.
+- Rule #3: Supporting Files Live Alongside their Component(s)
+  - Knowing that all supporting files are in a directory along with a component saves me a lot of digging around.
+  - Supporting files include stylesheets, client-side scripts (for server-side components), or utility files (like adapters and transformers).
+  - I have found it much more efficient to group a component with all its supporting files rather than grouping types of files together. 
+  - I've found it easier to locate pesky issues by keeping styles and scripts decentralized and closer to the thing they are affecting.
+  - That said, this requires some additional diligence on your part to ensure you're scoping those supporting files in such a way that they're only affecting the necessary component(s).
+
 - ## The browser is the source of truth when it comes to the URL. 
 - https://twitter.com/mjackson/status/1356713777526263808
   -  Any time you read it and put it into memory (like Redux) you risk getting out of sync. 

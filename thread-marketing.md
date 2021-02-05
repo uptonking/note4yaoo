@@ -11,6 +11,14 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## Has anybody built a social network for rich people yet?
+- https://twitter.com/sebastienlorber/status/1357606986066653185
+  - It would only work on the very latest, most expensive iPhone.
+  - You'd have to buy new hardware every 6 months to prove you are wealthy
+- [I Am Rich](https://en.wikipedia.org/wiki/I_Am_Rich) is an iOS application developed by Armin Heinrich and which was distributed using the App Store.
+  - I Am Rich was sold on the App Store for US$999.99 
+  - The application was removed from the App Store without explanation by Apple Inc. the day after its release, August 6, 2008
+
 - ## Singapore is pretty great¹ for indie hackers
 - https://twitter.com/swyx/status/1355099275252785153
   - No corporate tax up to $100k/yr

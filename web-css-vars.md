@@ -260,6 +260,48 @@ document.documentElement.style.setProperty('--primary-color', 'green');
 
 ```
 
+- ## [Theming With CSS Variables_hot and cold vars_201910](https://blog.prototypr.io/css-variables-90cc4cdf41e9)
+
+- ref
+  - [demo: button comp before theming](https://codesandbox.io/s/silly-silence-efgfw)
+  - [demo: themed button](https://codesandbox.io/s/dracula-bh1d6)
+  - [demo: dark themed button](https://codesandbox.io/s/neon-mtj7)
+  - 所有示例都没有提供来回切换theme的功能，只提供了实现theme的方法
+    - 通过`className="dracula-theme_btn"`传入新类名，此法不推荐
+
+- There was a use case — to build a scalable design system with an easy customize method for the Whitelabel option when a client wants to have their own colors and typography, styles.
+  - The easiest way is to use CSS variables — manage hundreds of places where you implemented different styles much better with a small list of variables.
+  - And much more comfortable is just add one new CSS file instead of menage variables with preprocessors or JS. Also, because initial design-tokens in our project always should be the same and updated with our latest default styles. I consider a new CSS file with new variables that will override current variables like a web-manifest file.
+  - Also, we have deeply nested components, one library import another and another import a new one. It means that we can’t override SASS variables or properties that are stored in the imported libraries, where we can override only styles.
+- Therefore, the best solution here will be to have union variables which we can override no matter if they nested it another library or no.
+- You can’t use CSS variables in media-queries, but there is a solution (in the future)— CSS Environment Variables. 
+  - It has not so wide coverage like CSS variables, but it’s a matter of time.
+
+- Our first artboard in the project — Design Tokens— the foundation.
+- I suggest you separate design tokens into 2 pieces — native and preprocessor's variables or hot and cold variables.
+- we can’t use CSS variables for media-queries, so, we will make variables for `Grid`s as cold (SASS) variables.
+- Also, we will make `Spacer`s as cold variables as well, because there is no case when you will change them globally, 
+  - like to change spacer M with8px value to16px, it will break all our designs.
+- Making a component with isolated variables
+  - We already used Sass and CSS variables in the Layout component, but here is a different case where we will use “nested variables” 
+  - it means that we will add CSS variables inside components classes, not in the `:root` because we want to isolate and protect the component’s variables.
+- Add variable `--btn-text-clr`. 
+  - This variable will cover not only the text color but, also, the icon fill as well because the icon and the text always will have the same color. 
+  - And this is the big advantage of CSS variables that we can actually override several properties only by one variable.
+- Theming
+  - We need to create a new stylesheet and override inside the root all variables that we want to change and import this file in the index.js
+  - but there is a problem — we also need to change the text and the icon color to more contrast — from black to white.
+  - To do so, we need to create a new modifiers group consists of classes that we will add to elements with privite variables.
+  - then add this class .dracula-theme_btn to the element, you want to change.
+  - So, by one shot we changed two properties color and fill. Using this approach we can change any privite variable.
+  - There is another way
+    - you can store privite variables for certain components in the root it depends. 
+    - But here I prefer to add an additional class to change.
+
+- In this article, I tried to show how we can theme a website with CSS variables without JS, combine CSS and SASS variables, override several CSS props only by one variable.
+- Like I mentioned before we have nested libraries and components that we can’t change, so we can’t add hooks in certain components, only change their CSS. 
+  - But still if you are doing everything from the scratch there are good articles about CSS variables + JS
+
 # ref
 
 - [Theming with CSS Custom Properties](https://ramenhog.com/blog/2017/06/07/theming-with-css-custom-properties)
@@ -268,6 +310,8 @@ document.documentElement.style.setProperty('--primary-color', 'green');
   - 本示例通过js直接修改css变量的值
   - `element.style.setProperty(`--${this.id}`, this.value);`更新css变量
   - store the new theme string in LocalStorage with a specific keyname
-    - whenever the app loads, we get that theme from LocalStorage
+  - whenever the app loads, we get that theme from LocalStorage
+- [Theming With Variables: Globals and Locals_201803](https://css-tricks.com/theming-with-variables-globals-and-locals/)
+- [Theming with CSS variables: Two layers theming_201904](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
 - [How To Create a Dark-Mode Theme Using CSS Variables](https://www.digitalocean.com/community/tutorials/css-theming-custom-properties)
   - 本示例通过在最外层元素添加带css变量主题值的类名覆盖原值

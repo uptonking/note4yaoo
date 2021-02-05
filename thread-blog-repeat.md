@@ -23,6 +23,17 @@ modified: '2021-01-06T14:39:51.714Z'
     - Suggestions for error recovery
   - Summary
 
+- [Manipulating AST with JavaScript](https://lihautan.com/manipulating-ast-with-javascript/)
+  - The parsers
+  - Traversing an AST
+  - Manipulating AST
+    - Adding a node
+    - Replacing a node
+    - Removing a node
+  - Targeting a node
+  - Creating a node
+  - Summary
+
 # frontend
 
 # backend

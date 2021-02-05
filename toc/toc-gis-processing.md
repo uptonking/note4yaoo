@@ -7,6 +7,10 @@ modified: '2021-01-04T16:21:40.119Z'
 
 # toc-gis-processing
 
+- guide
+  - postgis, vector tiles
+  - map server, node
+
 # js
 
 - turf /MIT/5.5kStar/202007
@@ -21,8 +25,7 @@ modified: '2021-01-04T16:21:40.119Z'
   - https://github.com/uber/h3
     - /2.5kStar/Apache2/202011/c
   - ref
-    - [Use cases](https://h3geo.org/docs/usecases)
-      - Comparisons: geohash, h3, s2
+    - [Comparisons: geohash, h3, s2 & Use cases](https://h3geo.org/docs/usecases)
 
 # opengis
 

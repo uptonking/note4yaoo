@@ -232,6 +232,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - 组件基于hooks实现
       - 每个组件的交互state通过react-stately实现为单独的包
     - 样式基于classnames高仿版，源码中为`className={css(`
+      - 未提供组件级css vars，样式变量全是全局级，分为`--spectrum-global/button/...`
     - react-aria
       - Hooks that provides accessible UI primitives
       - React Aria is intentionally very low level. It’s designed to allow building higher level UI libraries on top, so it provides small building blocks that you can compose yourself.
@@ -354,9 +355,9 @@ modified: '2020-11-13T07:29:55.201Z'
     - 单独的组件包，如react-charts,react-datetime,react-table
   - https://github.com/patternfly/patternfly
     - /259Star/MIT/202010/scss
-    - theming基于css vars
+    - theming基于css vars，组件级的变量未提供fallback回退值
       - 可覆盖的变量包括color,spacer,font
-      - 未提供预置主题
+      - 未提供预置主题，提供了过于简单的dark主题样式选择器
       - [chore(dark-theme): dark theme POC](https://github.com/patternfly/patternfly/pull/3686)
         - [old dark theme poc](https://github.com/patternfly/patternfly/pull/3298)
     - This repo contains core (HTML/CSS) implementation for PatternFly.
