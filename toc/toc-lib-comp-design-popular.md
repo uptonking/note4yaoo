@@ -243,19 +243,71 @@ modified: '2020-11-13T07:29:55.201Z'
     - /744Star/Apache2/202010
     - theming基于css vars，能覆盖color和size，支持全局级和组件级
       - 预置了多套主题lightest/darkest/midlight/middark
-        - 每个主题css文件内容全是颜色变量，但其他文件也涉及尺寸变量
+        - 提供了多种类型的主题，light/dark这类全是颜色变量，large/medium这类全是尺寸
       - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
+      - 每个组件打包时会生成index-vars.css，然后根据index-vars.css生成vars.css，vars.css专门列出了所有组件级变量方便查看
     - The standard CSS implementation of the Spectrum design language.
     - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
     - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
     - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
     - Each component has a `dist/vars.css` file that contains declarations for each component-level variable
-    - ref
-      - https://github.com/adobe/spectrum-web-components
-        - 基于lit-element实现
-      - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
-        - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
-        - React Spectrum splits each component into three parts: state, behavior, and the rendered component.
+  - [Spectrum DNA](https://www.npmjs.com/package/@adobe/spectrum-tokens)
+    - 源码未开源
+      - dna-linked.json, dna.json都是1070000多行
+      - dna-api.json是58000多行
+      - dna-vars-linked.json,dna-vars.json是222000多行
+      - spectrum-css的spectrum-metadata.json有5600多行
+    - Spectrum DNA project is used to automate the integration of Spectrum into UI code by converting design parameters into consumable data.
+    - the data for Spectrum can be output into JSON, including a flat 'vars' view of all the tokens in our system
+      - This data is intended to be consumed by various UI frameworks
+    - if you're using one of these, you are already using DNA: Spectrum-CSS, React-Spectrum
+    - How DNA Works
+      - JS classes are used to provide simple containers which are used to organize the DNA data. 
+      - Static `extract` functions return a data object with variable DNA values resolved when the data is extracted. 
+      - The API includes options to either extract the entire data set as a JavaScript object (via a Promise), or retrieve a JSON version of the data.
+      - An additional JSON option includes a 'vars' view of the data, where the nested complexity of the data is flattened into simple name/value constants for use in other applications.
+    - DNA Data Hierarchy
+      - The DNA data is structured to start with general, Global declarations. 
+      - We the map those to a middle layer of Alias and Semantic abstractions, and consume those abstractions to build the Component data needed in Spectrum.
+    - Globals are constant values that are used to build other, lower level definitions.One should probably not use globals directly
+    - Aliases
+      - This abstraction layer represents structural constructs that are found in most components.
+    - Semantics
+      - Another abstraction layer is provided to represent values with an activity based meaning that is common across components.
+    - Components
+      - This is point where global, alias, and semantic constants are combined to describe the various components available in the Spectrum design language. 
+      - Once the globals and abstractions are resolved, an component's JSON will include all rendering attributes in data that are usable for building a Spectrum based UI.
+    - Mixins
+      - We use a basic mixin strategy to provide base data that is common across multiple components. 
+      - Some or all of that base-data object can be overridden by values from the mixin implementor.
+    - variables naming
+      - Global, Alias, and Semantic data types follows the following pattern: `<namespace> <type> <attribute>`
+      - Component data follows the following pattern: `<namespace> <component> <variant> <attribute>`
+      - Color data specific to each color stop is not noted in the var name. Instead, a var set is created for each stop.
+      - Scale data values are treated in the same way as Color data.
+      - Component display state data (eg. hover, down, disabled) uses the following pattern: `<namespace> <component> <variant> <attribute> <state>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - ref
+    - https://github.com/adobe/spectrum-web-components
+      - 基于lit-element实现
+    - [Architecture of React Spectrum](https://react-spectrum.adobe.com/architecture.html)
+      - user interactions, accessibility, internationalization, and behavior can be reused, while allowing custom styling and rendering to live within individual design systems.
+      - React Spectrum splits each component into three parts: state, behavior, and the rendered component.
 
 - ## Elastic UI /Elastic
   - /2.3kStar/Apache2/202010/ts/scss/themed
@@ -358,16 +410,15 @@ modified: '2020-11-13T07:29:55.201Z'
     - theming基于css vars，组件级的变量未提供fallback回退值
       - 可覆盖的变量包括color,spacer,font
       - 未提供预置主题，提供了过于简单的dark主题样式选择器
+      - 最终组件的几乎所有css样式属性的值都是组件级变量值
       - [chore(dark-theme): dark theme POC](https://github.com/patternfly/patternfly/pull/3686)
         - [old dark theme poc](https://github.com/patternfly/patternfly/pull/3298)
     - This repo contains core (HTML/CSS) implementation for PatternFly.
     - PatternFly follows a two-layer theming system where global variables always inform component variables. 
     - The main reason to have global variables is to maintain consistency
-      - Global variables follow this formula:
       - `--pf-global--concept--PropertyCamelCase--modifier--state`
     - The second layer is scoped to themeable component custom properties
       - Component variables are always defined by global variables.
-      - Component variables follow this formula:
       - `--pf-c-block__element--modifier--state--breakpoint--pseudo-element--PropertyCamelCase`
   - ref
     - https://github.com/patternfly/patternfly-elements

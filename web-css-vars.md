@@ -29,6 +29,16 @@ modified: '2021-01-29T18:55:16.043Z'
     - 要考虑代码清晰、明确
     - 要考虑包含css变量的读写操作多不多，性能影响
 
+- css-vars-tips
+  - css变量名区分大小写
+  - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
+  - css变量值遵循css样式值的层叠规则
+  - css变量值的赋值可以使用另一个css变量
+  - css变量值会提升，所以可先使用再声明
+  - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
+    - 不能用`font-size: var(--scale) + 'px';`
+  - css变量值不能用在普通样式属性名，不能用在media query名称中
+
 - tips
   - 若var()函数的fallback值包含大量计算，会导致性能问题
   - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便

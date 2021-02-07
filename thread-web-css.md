@@ -26,32 +26,29 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Browsers have a built-in Dark Mode color scheme. 
+- https://twitter.com/bramus/status/1358093784001740801
+  - If you don’t change any of the default colors, you can have Dark Mode support by adding only this little piece of CSS:
+  - `:root { color-scheme: dark light; }` .
+  - To prevent a FOUC(flash of unstyled content), its recommended to use a meta tag for it though.
+- [Improved dark mode default styling with the color-scheme CSS property](https://web.dev/color-scheme/)
+
 - ## I got a question asking what I thought about CSS frameworks like Bootstrap.
 - https://twitter.com/JoshWComeau/status/1357709670325059592
   - My answer: I do not suggest using them. Nor do I suggest using fully-styled component libraries like Material UI.
   - TL; DR — unless you’re building a short-term project (prototype, hackathon), CSS frameworks can be harmful, *increasing* the amount of time you need to spend on the UI. 
-
-    - I recommend using a style-agnostic tool like Reach UI instead. 
-    - Use third-party functionality, not styles.
-
+  - I recommend using a style-agnostic tool like Reach UI instead. 
+  - Use third-party functionality, not styles.
   - A design is more than the sum of its parts. I can take a bunch of really-nicely-designed components and still wind up with a poorly-designed product. 
-
-    - It’s been said that only Google can produce nice-looking Material Design apps, since their designers understand how to use it.
-
+  - It’s been said that only Google can produce nice-looking Material Design apps, since their designers understand how to use it.
   - I teach at a bootcamp, and we strongly discouraged students from using fully-styled component libraries. 
-
-    - Invariably, students would hit a point where they’d spend longer trying to override the styles/get it to work than they would have spent building it from scratch
-
+  - Invariably, students would hit a point where they’d spend longer trying to override the styles/get it to work than they would have spent building it from scratch
   - Now there is one HUGE caveat here. I’m talking specifically about “styled” component libraries. 
-
-    - Style-agnostic libraries like Reach UI, which focus purely on functionality, are a godsend and you should absolutely use them. 
-    - Please don’t build your own modal from scratch.
-
+  - Style-agnostic libraries like Reach UI, which focus purely on functionality, are a godsend and you should absolutely use them. 
+  - Please don’t build your own modal from scratch.
   - I think if you’re a solo dev maker, investing in your design skills is the best thing you can do.
 - 100 % agree. I think this is exactly why Material-UI is working on Unstyled Components in v5.
   - [[RFC] Material-UI v5:  Unstyled components](https://github.com/mui-org/material-ui/issues/20012)
-- 
-- 
 
 - ## Today I looked into the performance of different layout modes in CSS. 
 - https://twitter.com/JoshWComeau/status/1356377422925541377

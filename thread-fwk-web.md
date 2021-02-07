@@ -11,6 +11,20 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+
+- ## creating framework-agnostic components with @stitchesjs core
+- https://twitter.com/peduarte/status/1358125279303065602
+- Im so happy with this API so far. One thing is spec'ing it and the other is actually using it.
+- Love it! Hear me out, I'm not drunk. Variants look like state machines 
+  - Now you can create finite css styles with #xstate
+  - Would be cool to have stitches dev tools to visualise components variants like that 
+  - Question: Are there any limitations for variants? Obviously, I can't put variants inside variants. But besides that, is there anything else? Can I use pseudo selectors, media queries etc.?
+  - No limitations like that apart from obvious stuff like you mentioned
+  - The cool thing about variants is that they can be “immutable”, meaning instead of changing its styles on different conditions (breakpoints), they can be *applied conditionally*
+- Framework-agnostic in 2019: React, Vue, Angular
+  - Framework-agnostic in 2021: different flavors of React
+  - stitches supports svelte too.
+
 - ## The existing history API (window.history, popstate, etc.) is bad for building web apps. We've been working on a proposal for a new history API, and would love your feedback
 - https://twitter.com/domenic/status/1356656668222885889
 - I think it should be possible to iterate on top of what window.history already provides, and just fix the problems with it instead of introducing something entirely new.

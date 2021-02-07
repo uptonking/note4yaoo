@@ -13,10 +13,23 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## which companies are using @GraphQL in production nowadays?
+- https://twitter.com/mxstbr/status/1358351658078634014
+- Frontend teams at Danske Bank use GraphQL, mostly driven through Apollo. 
+  - Microservices are still on REST so there's redundancy maintaining a mid-tier just for conversion.
+  - GraphQL has most significant advantages when adopted by backend teams which isn't the case at most places.
+- Using it in production at @skillshare . 
+  - Running Apollo Gateway as API composition layer to allow frontend decoupled monolith -> microservices migration.
+- @OrbitalChat uses it for admin-based stuff. 
+  - The more interactive part is done with Firebase Real-time database and Firestore direct from the client. 
+  - Also @SketchADay is 98% GraphQL and a couple of little plain JSON-over-HTTP bits
+- GitHub and Contentful
+- @AirbnbEng uses it quite a lot
 
 - ## If you don't know which code is calling your function, use console.trance()
 - https://twitter.com/sseraphini/status/1356654950198239233
 - I used `console.log(new Error)`
+
 - I usually also do “console.log = console.trace” to locate and remove some console.log
 
 - ## Hyphens are pretty. Underscores are ugly and don’t belong in URLs

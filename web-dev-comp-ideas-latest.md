@@ -69,7 +69,9 @@ modified: '2020-12-27T20:29:55.568Z'
     - scroll-to-position
 - block-style component
   - 方便实现 collapsible content/card
-  - try: 使用collapsible而不是modal，来引导用户聚焦，而不是打断流程
+  - 可缩放组件/scalable component，类似获取焦点时会自动放大的效果
+  - try
+    - 使用collapsible而不是modal，来引导用户聚焦，而不是打断流程
 - interactive animation
   - anchor based flowing animation 
     - 基于某起点开始的变形动画，多是流动线型

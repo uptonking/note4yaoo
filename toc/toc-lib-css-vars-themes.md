@@ -15,20 +15,43 @@ modified: '2021-01-29T18:54:36.865Z'
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
 
-- ref
-  - search: pure css, css only, css framework, css vars
-  - https://github.com/topics/css-framework?o=desc&s=updated
-  - https://github.com/troxler/awesome-css-frameworks
+- css-vars-tips
+  - css变量名区分大小写
+  - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
+  - css变量值遵循css样式值的层叠规则
+  - css变量值的赋值可以使用另一个css变量
+  - css变量值会提升，所以可先使用再声明
+  - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
+    - 不能用`font-size: var(--scale) + 'px';`
+  - css变量值不能用在普通样式属性名，不能用在media query名称中
 
-# css-fwk-popular
+- 实现组件theming的方法(用css vars)
+  - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
+    - 考虑到设计规则会使组件级变量名唯一，所以组件级变量也是全局级变量，实现新主题就很方便
+  - 实现组件的不同theme都是(通过添加新类名如.pf-t-dark/.spectrum-dark)修改组件级变量的值
+    - patternfly需手动书写在新主题下该组件级变量的值
+    - spectrum自动生成各套主题对应的组件级变量的新值
+  - patternfly的优点
+    - 切换主题很简单，只需在根部添加一个类 .pf-t-dark
+    - 将所有属性值都提取为样式变量，符合思维习惯，手动命名更易理解
+  - patternfly的缺点
+    - 每新增一个主题，都需要将组件级变量的新值写一遍，没有使用组合，灵活性不足，且工作量大
+  - spectrum的优点
+    - 不同size和color的主题可组合很灵活
+  - spectrum的缺点
+    - 组件的类名变得很长
+  - 因为组件级变量名称不变而值改变，同时很多中间属性值是自动生成的，这就导致部分全局级变量值与思维相反，(此问题spectrum存在，其他方案也会存在类似问题)
+    - 如明主题下gray100最白、gray900最黑，暗主题下gray100最黑、gray900最白
+    - patternfly未完整实现暗主题，现有部分很不成熟且少，只是将全局级变量和组件级变量命名为pf-global--Color--100/BorderColor--100，然后设置变量值为dark-100/light-100
 
-- 实现theme切换
+- 实现theme切换的方法
   - 核心思路
     - `data-theme` 自定义data-属性，然后通过属性选择器设置theme样式变量
-      - 若使用的时`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
+      - 若使用的是`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
+      - 不方便添加其他可选信息到theme名称
     - `class="theme-name--modifier"` 类选择器设置theme样式变量
   - **通过`body.theme-light/dark'`**
-    - 当设计多套主题且每套主题有各自的黑白模式时，使用多个类更合适，但多个类也可以加到data-theme属性的元素，此方法也可以用到
+    - 当设计多套主题且每套主题有各自的黑白模式时，使用多个类更合适，但多个类也可以加到data-theme属性的元素，此方法思路也可以用到
       - `<html class="is-dark-mode name-of-current-theme">`
       - 甚至可以将主题变量根据多个类名拆分成对应多个部分，提高可读性和复用性
     - 此法还适合自定义主题名称较长的情况，因为BEM命名方式本身就很长
@@ -41,9 +64,16 @@ modified: '2021-01-29T18:54:36.865Z'
   - 通过`:root:not([data-theme="dark"])`
     - 推荐此方法，流行且清晰
     - 案例：pico
-    - 尝试 `:root:not([data-theme])`
-  - 尝试 `:root:not([class*='theme-dark' i])`
+  - 尝试1 `:root:not([data-theme])`
+  - 尝试2 `:root:not([class*='theme-dark' i])`
     - 谨慎用此法，伪类+:not属性选择器的特指度 高于 单个类选择器/单个属性选择器
+
+- ref
+  - search: pure css, css only, css framework, css vars
+  - https://github.com/topics/css-framework?o=desc&s=updated
+  - https://github.com/troxler/awesome-css-frameworks
+
+# css-fwk-popular
 
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
@@ -57,17 +87,21 @@ modified: '2021-01-29T18:54:36.865Z'
   - 组件中的css vars没有使用fallback回退值
 
 - spectrum
-  - 未提供组件级css vars，样式变量全是全局级，分为`--spectrum-global/button/...`
+  - 用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
+  - 提供了组件级css vars，组件级变量也是全局级，分为`--spectrum-global/button/...`
+  - 切换theme通过在html标签添加多个class实现，包括scale, color, ltr-direction等，示例的中添加的class超级多，其中包括serif字体
+
+  - 
 
 - patternfly
+  - [Patternfly 4 Guidelines](https://pf4.patternfly.org/guidelines/)
   - 组件级的变量未提供fallback回退值
   - dark mode只有button和card勉强能用，其他组件如banner的dark模式刚开始未实现
   - `.pf-t-dark`下的变量
     - 全局变量
       - --pf-global--primary-color--100
     - 各组件的变量，具体使用的是`.pf-t-dark .pf-c-button`
-      - --pf-c-card--BackgroundColor
-      - --pf-c-button--m-primary--Color
+      - --pf-c-card--BackgroundColor, --pf-c-button--m-primary--Color
 
 # themes-popular
 
