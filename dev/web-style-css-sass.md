@@ -36,6 +36,18 @@ modified: '2021-01-01T20:06:59.601Z'
   - postcss缺点
     - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
 
+# sass-pieces
+
+- @mixin vs @extend
+  - Unlike mixins, which copy styles into the current style rule, @extend updates style rules that contain the extended selector so that they contain the extending selector as well. 
+  - When extending selectors, Sass does intelligent unification
+
+- @mixin vs %placeholder-selector
+  - 最好的建议是：如果你需要参数变量，使用mixin。否则，继承一个placehodler
+  - 第一，在placeholder里面，不能像mixin那样传递使用参数变量。但是可以使用全局变量。
+  - 第二，当你使用mixin时，Sass会重复输出这个mixin的属性规则内容，不会让CSS选择器公用这个mixin。这样的话，样式表将会变得很大。
+    - mixin会输出重复样式，而%placeholder常输出`selector1,selector2{}`
+
 # theming-examples 切换主题方案示例
 
 - ## 若多个theme所有样式在同一css文件中(都预加载也行)

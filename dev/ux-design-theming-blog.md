@@ -313,6 +313,7 @@ function checkToggle(shouldCheck) {
   - We use JS to replace all variables that serve as values for our ‘selected properties’ with another set of variables from the ‘stored properties’.
 
 ``` CSS
+/* 这里可以抽出同名变量，然后写成3个class */
 :root {
   /* Set the deafult values */
   --selected-primary-color: var(--light-primary-color);

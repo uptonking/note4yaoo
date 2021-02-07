@@ -29,6 +29,7 @@ modified: '2020-12-08T14:06:06.985Z'
     - 类似 postman 的接口调试
     - 支持 postman, har, swagger 数据导入
     - 免费开源，内网部署
+  - [开发不活跃，YApi开源项目作者，目前在美团优选工作](https://github.com/YMFE/yapi/issues/1173)
 - https://github.com/thx/rap2-delos
   - /6.4kStar/MIT/202009
   - 依赖Koa、MySQL、react、@material-ui/core、chart.js、codemirror、formik、jquery、react-redux

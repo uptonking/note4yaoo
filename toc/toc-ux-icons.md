@@ -18,6 +18,10 @@ modified: '2020-07-17T10:52:17.250Z'
   - The Mono icon font is a simple, consistent open-source icon set
   - You can download the whole set of SVG icons or selected items
 
+- https://github.com/tailwindlabs/heroicons
+  - https://heroicons.com/
+  - A set of free MIT-licensed high-quality SVG icons for UI development
+
 # icons
 
 - feather  /MIT/16kStar/201908

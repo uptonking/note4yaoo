@@ -45,14 +45,15 @@ modified: '2020-11-13T07:30:03.110Z'
 - Storybook Design System /Storybook
   - /MIT/890Star/202010/ts/css-in-js
   - https://github.com/storybookjs/design-system
-    - 组件基于函数组件，但未用hooks
   - https://storybook-design-system.netlify.com/
-  - a reusable component library that helps Storybook build UIs faster
   - 依赖styled-components、prismjs
+  - 组件基于函数组件，但未用hooks
+  - a reusable component library that helps Storybook build UIs faster
 - Stacks /Stack Overflow
   - /268Star/MIT/202010/ts/less
   - https://github.com/StackExchange/Stacks
   - https://stackoverflow.design/
+  - 依赖stimulus、@popperjs/core
   - While Stacks is first and foremost a CSS library, it also provides commonly used functionality for some components via JavaScript. 
     - If you only need the styling parts of Stack, you’re free to ignore the provided JavaScript. 
   - The Stacks JavaScript components are provided as Stimulus controllers.

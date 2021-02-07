@@ -19,12 +19,12 @@ modified: '2020-12-21T07:45:45.366Z'
   - 定义变量: sass用 `$` , less用 `@`
   - @mixin指令定义一个可复用mixin，@include指令使用mixin
   - sass is the older syntax， scss(sassy css) is the new syntax as of Sass 3
-    - 主要区别是scss有行尾分号，有花括号包括kv
+    - 主要区别是scss有行尾分号，有花括号包围kv
 
 - css缺点
   - 无局部模块，命名会全局污染
   - 无嵌套书写
-  - 无变量(旧版css无)
+  - 无变量(旧版css)
 
 # sass
 

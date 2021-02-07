@@ -11,6 +11,13 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Properties like `z-index` can be used in your transitions and keyframe animations! 
+- https://twitter.com/JoshWComeau/status/1358128488071507969
+  - They'll step between values at the right time, helping you orchestrate effects like this.
+  - [The Surprising Things That CSS Can Animate](https://codersblock.com/blog/the-surprising-things-that-css-can-animate/)
+  - https://codepen.io/uptonking/pen/OJbNgLd
+  - 卡片切换时使用图层交错的效果
+
 - ##  Tweak numbers to create neat-o shapes, and then nab the CSS to generate them.
 - https://twitter.com/JoshWComeau/status/1357033108898410496
   - https://codepen.io/yuanchuan/pen/QWGWXPz

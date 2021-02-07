@@ -362,8 +362,13 @@ modified: '2020-11-13T07:29:55.201Z'
         - [old dark theme poc](https://github.com/patternfly/patternfly/pull/3298)
     - This repo contains core (HTML/CSS) implementation for PatternFly.
     - PatternFly follows a two-layer theming system where global variables always inform component variables. 
-      - The main reason to have global variables is to maintain consistency
-      - The second layer is scoped to themeable component custom properties
+    - The main reason to have global variables is to maintain consistency
+      - Global variables follow this formula:
+      - `--pf-global--concept--PropertyCamelCase--modifier--state`
+    - The second layer is scoped to themeable component custom properties
+      - Component variables are always defined by global variables.
+      - Component variables follow this formula:
+      - `--pf-c-block__element--modifier--state--breakpoint--pseudo-element--PropertyCamelCase`
   - ref
     - https://github.com/patternfly/patternfly-elements
       - community-created web components based on PatternFly design.

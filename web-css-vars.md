@@ -50,6 +50,28 @@ element.style.setProperty("--my-var", jsVar + 4);
   - [CSS variables (Custom Properties) polyfill for IE11](https://github.com/nuxodin/ie11CustomProperties)
   - https://github.com/notoriousb1t/awesome-css-variables
 
+# css-vars-examples
+
+- css vars的值，可以先使用，再声明定义，即存在类似js变量的变量提升
+
+``` HTML
+<div>
+  <h1 class="theme-red-text">hello</h1>
+</div>
+```
+
+``` CSS
+.theme-red-text {
+  --pf-global--Color--100: var(--pf-global--Color--dark-100);
+
+  color: var(--pf-global--Color--100);
+}
+
+div {
+  --pf-global--Color--dark-100: coral;
+}
+```
+
 # theming-examples
 
 - Themes becomes easier with css custom properties (css variables). 
@@ -315,3 +337,9 @@ document.documentElement.style.setProperty('--primary-color', 'green');
 - [Theming with CSS variables: Two layers theming_201904](https://dev.to/wendell_adriel/theming-with-css-variables-1o56)
 - [How To Create a Dark-Mode Theme Using CSS Variables](https://www.digitalocean.com/community/tutorials/css-theming-custom-properties)
   - 本示例通过在最外层元素添加带css变量主题值的类名覆盖原值
+
+- [CSS variables: Scoping](https://blog.logrocket.com/css-variables-scoping/)
+  - The place in the CSS hierarchy where you declare a CSS variable will determine its level of visibility throughout the lower levels of the hierarchy.
+  - CSS variables are hoisted and they are moved on the top of the CSSOM before rendering the styles of respective HTML elements in the browser.
+  - Just like in JavaScript, CSS variables can be hoisted. 
+    - This means that CSS variables can be used before they are declared.

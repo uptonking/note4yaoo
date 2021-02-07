@@ -11,7 +11,7 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - 设计样式时theming可参考
   - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
-    - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
+    - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
 
@@ -21,6 +21,29 @@ modified: '2021-01-29T18:54:36.865Z'
   - https://github.com/troxler/awesome-css-frameworks
 
 # css-fwk-popular
+
+- 实现theme切换
+  - 核心思路
+    - `data-theme` 自定义data-属性，然后通过属性选择器设置theme样式变量
+      - 若使用的时`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
+    - `class="theme-name--modifier"` 类选择器设置theme样式变量
+  - **通过`body.theme-light/dark'`**
+    - 当设计多套主题且每套主题有各自的黑白模式时，使用多个类更合适，但多个类也可以加到data-theme属性的元素，此方法也可以用到
+      - `<html class="is-dark-mode name-of-current-theme">`
+      - 甚至可以将主题变量根据多个类名拆分成对应多个部分，提高可读性和复用性
+    - 此法还适合自定义主题名称较长的情况，因为BEM命名方式本身就很长
+    - 案例：stackoverflow,patternfly,spectrum
+
+- 实现默认的light theme
+  - 直接将light主题的变量全部放到`:root{}`，或者组件级变量的fallback回退值设为light主题变量值
+    - 此时每个组件因为有fallback值可独立使用
+    - 案例：patternfly
+  - 通过`:root:not([data-theme="dark"])`
+    - 推荐此方法，流行且清晰
+    - 案例：pico
+    - 尝试 `:root:not([data-theme])`
+  - 尝试 `:root:not([class*='theme-dark' i])`
+    - 谨慎用此法，伪类+:not属性选择器的特指度 高于 单个类选择器/单个属性选择器
 
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
@@ -38,6 +61,13 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - patternfly
   - 组件级的变量未提供fallback回退值
+  - dark mode只有button和card勉强能用，其他组件如banner的dark模式刚开始未实现
+  - `.pf-t-dark`下的变量
+    - 全局变量
+      - --pf-global--primary-color--100
+    - 各组件的变量，具体使用的是`.pf-t-dark .pf-c-button`
+      - --pf-c-card--BackgroundColor
+      - --pf-c-button--m-primary--Color
 
 # themes-popular
 
