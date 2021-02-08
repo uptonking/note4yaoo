@@ -26,6 +26,17 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## print-to-pdf is almost good enough. Are there CSS tricks you can use to improve page breaks?
+- https://twitter.com/Swizec/status/1358589201495728129
+- There are a few things, you can force page breaks or try to prevent them inside specific elements (if possible) with "page-break-after" and "page-break-before"
+- There is also "widows" and "orphans", which might come in handy
+  - [Orphans and Widows in CSS](https://tosbourn.com/orphans-widows-css/)
+  - Orphans are the lines of text that get left behind on an old page should a paragraph of text get split onto a new page.
+
+- ## For an LTR layout, positioning an element outside its parent on the left side does not cause a horizontal scroll. 
+- https://twitter.com/shadeed9/status/1358664786867798017
+  - However, positioning the element on the right side does.
+
 - ## Browsers have a built-in Dark Mode color scheme. 
 - https://twitter.com/bramus/status/1358093784001740801
   - If you don’t change any of the default colors, you can have Dark Mode support by adding only this little piece of CSS:

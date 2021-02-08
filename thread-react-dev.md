@@ -11,6 +11,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## saw so many tweets about how cm and suspense are useless etc. 
+- https://twitter.com/0xca0a/status/1358703189428752384
+  - if you have ever tried R3F you know how it simplifies things that otherwise would cost you an arm and a leg. 
+  - FE & forms will gets the same benefits, try it if you can, it's a paradigm shift. 
 
 - ## Anyone ever used Preact without using internal state at all?
 - https://twitter.com/_developit/status/1356068911263977472
@@ -20,26 +24,33 @@ modified: '2021-01-06T14:40:11.360Z'
   - For a state machine approach I tend to subscribe components individually, even if all they do is call `setState({})` on themselves.
 - And if you use a non-vdom library, whole app re-renders might even be cheap 
   - That depends on reference equality bailouts same as VDOM though. 
+
     - In both cases, a top-level rerender with entirely new data is worst-case perf.
+
   - There should be far fewer such checks in a sparse tree of template bindings than a full vdom tree. It would be less by the ratio of bindings to leaf DOM nodes.
   - true, assuming minimal composition of templates.
-
 
 - ## I've come to believe that the base React Hooks should always be used inside of a custom hook 
 - https://twitter.com/kyleshevlin/status/1354845869246476290
   - to provide encapsulation and context to the concern
   - IME, 2 things are true:
+
     - there’s never a use of useEffect that couldn’t benefit from a good function name
     - Re: the other hooks, they almost always come grouped together, ie if your managing state, you have some callbacks to handle that state.
     - Put ‘em in custom hooks.
+
   - Don’t worry if the hooks are reusable, that can come later.
+
     - By putting all the elements related to a concern in a custom hook, you can focus on the API you want your component to use. 
     - You can hide implementation details your component doesn’t need to know.
+
   - [useEncapsulation or Why Your React Components Should Only Use Custom Hooks](https://kyleshevlin.com/use-encapsulation)
+
     - A custom hook is just a function and functions are structures we can use to encapsulate the related elements of a concern and expose an API to our function's consumer.
     - Take notice, our Component now only consumes custom hooks. 
     - Another benefit of this pattern is that dependencies quickly become obvious because they end up being arguments to our custom hooks.
     - By adding this layer of abstraction between our component and the standard React hooks, we can change the implementation of our custom hook's API without changing the component. 
+
 - Something that could help writing components like this.
   - The hook can still live in the same file, declare it at the bottom rather than the top with a "function declaration", or attach it a static property to the component.
   - If it becomes reusable, move it to a separate file.

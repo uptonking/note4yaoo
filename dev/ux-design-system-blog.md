@@ -73,6 +73,12 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # top design systems
 
+## [UI Design Trend of 2021](https://dev.to/harshhhdev/ui-design-trend-of-2021-4fb7)
+
+- Glassmorphism is possibly the new UI Design Trend of 2021, which in my opinion has a lot of potential.
+- The design trend for 2020 was Neumorphism which had some rather obvious issues.
+  - there are of course accessibility issues for people who have eyeshight issues
+
 ## [10 Best Design Systems and How to Learn (and Steal) From Them](https://designerup.co/blog/10-best-design-systems-and-how-to-learn-and-steal-from-them/)
 
 01.  Google Material Design System

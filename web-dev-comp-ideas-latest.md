@@ -63,13 +63,16 @@ modified: '2020-12-27T20:29:55.568Z'
   - dark mode形式的组件
   - export default component screenshot image, not source code
     - 参考use-screenshot-hook，每个组件内置截图功能，截图时组件会动画变小
+    - 界面倾斜的[截图效果](https://github.com/haneenmahd/apple-colors)
   - disable mode形式的组件，组件变灰色，常作为背景
   - scalable，如下拉列表列表选项变多时会变modal
   - more-config-options
     - scroll-to-position
 - block-style component
   - 方便实现 collapsible content/card
-  - 可缩放组件/scalable component，类似获取焦点时会自动放大的效果
+  - 可缩放组件/scalable component
+    - 类似获取焦点时会自动放大的效果
+    - 从全宽占满屏幕或容器，变为四周出现padding、四角为圆角矩形的卡片形式
   - try
     - 使用collapsible而不是modal，来引导用户聚焦，而不是打断流程
 - interactive animation

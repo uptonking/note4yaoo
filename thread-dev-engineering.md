@@ -13,6 +13,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## When learning something new, it’s easy to fall in to the trap of comparing your work to seasoned professionals and think everything you’re doing is wrong. 
+- https://twitter.com/steveschoger/status/1358588140328538115
+  - Lately I’ve been trying to embrace this learning period because it’s a small window of great discoveries.
+- Constant learning from seasoned profs, using my previous dev knowledge mixed with theirs, change code as I find better or more efficient solutions, seasoned profs's solutions are not always right or appropriate for the current app.  Having a blast and always learning.
+
 - ## which companies are using @GraphQL in production nowadays?
 - https://twitter.com/mxstbr/status/1358351658078634014
 - Frontend teams at Danske Bank use GraphQL, mostly driven through Apollo. 

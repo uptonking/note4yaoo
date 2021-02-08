@@ -29,6 +29,12 @@ modified: '2021-01-12T18:49:02.623Z'
 
 # starred
 
+- https://github.com/JonnyBurger/remotion
+  - https://www.remotion.dev/
+  - /112Star/Free4NonCommercial&ISC/202102/ts
+  - a framework for creating videos programmatically using React.
+  - [Announcing Remotion - a framework for making videos in React!](https://twitter.com/JNYBGR/status/1358824089960542208)
+
 - https://github.com/sergiodxa/flagged
   - Feature Flags for React made easy with hooks, HOC and Render Props
 - https://github.com/garbles/flag

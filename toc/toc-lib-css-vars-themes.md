@@ -9,8 +9,8 @@ modified: '2021-01-29T18:54:36.865Z'
 
 # guide
 
-- 设计样式时theming可参考
-  - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
+- 设计样式theming时可参考
+  - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui
     - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
@@ -18,7 +18,7 @@ modified: '2021-01-29T18:54:36.865Z'
 - css-vars-tips
   - css变量名区分大小写
   - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
-  - css变量值遵循css样式值的层叠规则
+  - css变量值遵循css样式属性值的层叠规则
   - css变量值的赋值可以使用另一个css变量
   - css变量值会提升，所以可先使用再声明
   - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
@@ -28,21 +28,24 @@ modified: '2021-01-29T18:54:36.865Z'
 - 实现组件theming的方法(用css vars)
   - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
     - 考虑到设计规则会使组件级变量名唯一，所以组件级变量也是全局级变量，实现新主题就很方便
+    - 这两个方案的组件的样式值几乎都是css变量，灵活性极高，但变量数量太多手写慢
   - 实现组件的不同theme都是(通过添加新类名如.pf-t-dark/.spectrum-dark)修改组件级变量的值
     - patternfly需手动书写在新主题下该组件级变量的值
-    - spectrum自动生成各套主题对应的组件级变量的新值
+    - spectrum可以自动生成各套主题对应的组件级变量的新值，也可手写
   - patternfly的优点
     - 切换主题很简单，只需在根部添加一个类 .pf-t-dark
     - 将所有属性值都提取为样式变量，符合思维习惯，手动命名更易理解
   - patternfly的缺点
     - 每新增一个主题，都需要将组件级变量的新值写一遍，没有使用组合，灵活性不足，且工作量大
   - spectrum的优点
-    - 不同size和color的主题可组合很灵活
+    - 不同size和color的主题可组合很灵活，但若组合过多如加上字体、阴影时就容易思维混乱，不如单个主题类清晰
   - spectrum的缺点
     - 组件的类名变得很长
-  - 因为组件级变量名称不变而值改变，同时很多中间属性值是自动生成的，这就导致部分全局级变量值与思维相反，(此问题spectrum存在，其他方案也会存在类似问题)
-    - 如明主题下gray100最白、gray900最黑，暗主题下gray100最黑、gray900最白
-    - patternfly未完整实现暗主题，现有部分很不成熟且少，只是将全局级变量和组件级变量命名为pf-global--Color--100/BorderColor--100，然后设置变量值为dark-100/light-100
+  - 因为组件级变量名不变而值会改变，且组件级变量都由全局级变量初始化，(同时很多中间属性值可能是自动生成的，)这就导致部分全局级变量值与思维相反，(此问题spectrum存在，其他方案也会存在类似问题)
+    - patternfly未完整实现暗主题，现有部分很不成熟且少，只是将全局级变量和组件级变量命名为中立名如--pf-c-button--m-primary--Color(代表字颜色)，然后在明主题下值为light-100(蓝底的白色字)，在暗主题下值为dark-100(白底的蓝色字，名称为dark却代表蓝色)
+      - 使用的是不同名的全局变量值，在不同主题下值也不同
+    - spectrum明主题下gray100最白、gray900最黑，暗主题下gray100最黑、gray900最白
+      - 使用的是同名的全局变量值，但在不同主题下具体值不同
 
 - 实现theme切换的方法
   - 核心思路
@@ -50,12 +53,12 @@ modified: '2021-01-29T18:54:36.865Z'
       - 若使用的是`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
       - 不方便添加其他可选信息到theme名称
     - `class="theme-name--modifier"` 类选择器设置theme样式变量
-  - **通过`body.theme-light/dark'`**
+  - **通过`body.theme-light/dark`**
     - 当设计多套主题且每套主题有各自的黑白模式时，使用多个类更合适，但多个类也可以加到data-theme属性的元素，此方法思路也可以用到
       - `<html class="is-dark-mode name-of-current-theme">`
       - 甚至可以将主题变量根据多个类名拆分成对应多个部分，提高可读性和复用性
     - 此法还适合自定义主题名称较长的情况，因为BEM命名方式本身就很长
-    - 案例：stackoverflow,patternfly,spectrum
+    - 案例(未使用data-theme)：halfmoon,patternfly,spectrum,stackoverflow
 
 - 实现默认的light theme
   - 直接将light主题的变量全部放到`:root{}`，或者组件级变量的fallback回退值设为light主题变量值
@@ -73,7 +76,7 @@ modified: '2021-01-29T18:54:36.865Z'
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
 
-# css-fwk-popular
+# css-fwk-codebase
 
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
@@ -86,22 +89,25 @@ modified: '2021-01-29T18:54:36.865Z'
   - 未提供组件级css vars，样式变量全是global
   - 组件中的css vars没有使用fallback回退值
 
+- halfmoon v1.1.1(202010)
+  - 未提供组件级css vars，但全局级css变量名称规则很容易提取出各组件的变量
+  - 单位几乎都用rem，1rem = 10px
+  - 几乎所有组件的样式值都是css vars，非常灵活
+
 - spectrum
   - 用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
   - 提供了组件级css vars，组件级变量也是全局级，分为`--spectrum-global/button/...`
   - 切换theme通过在html标签添加多个class实现，包括scale, color, ltr-direction等，示例的中添加的class超级多，其中包括serif字体
 
-  - 
-
 - patternfly
   - [Patternfly 4 Guidelines](https://pf4.patternfly.org/guidelines/)
   - 组件级的变量未提供fallback回退值
-  - dark mode只有button和card勉强能用，其他组件如banner的dark模式刚开始未实现
-  - `.pf-t-dark`下的变量
+  - dark mode只有button和card勉强能用，其他组件如banner的dark模式部分已开始但未实现
+  - `.pf-t-dark`下的变量，命名清晰
     - 全局变量
       - --pf-global--primary-color--100
     - 各组件的变量，具体使用的是`.pf-t-dark .pf-c-button`
-      - --pf-c-card--BackgroundColor, --pf-c-button--m-primary--Color
+      - --pf-c-button--m-primary--Color，--pf-c-card--BackgroundColor
 
 # themes-popular
 
@@ -140,7 +146,49 @@ modified: '2021-01-29T18:54:36.865Z'
     - lightweight CSS framework that follows Google's Material Design guidelines.
     - Small footprint: mui.min.css - 6.6K, mui.min.js - 5.4K
 
-## bootstrap-like
+## apple/ios
+
+- https://github.com/Tommy-dotcom/IOS-UI
+  - This is free iOS based UI ressources written in SCSS. 
+  - It's like Bootstrap but inspired by Apple's design.
+- https://github.com/elDrimm/iCss
+  - iCSS is a open source CSS component library based on Apple's iOS 11 design.
+- https://github.com/deepak-kumbhar/glass-ui-like-mac-big-sur
+  - The basic HTML and CSS to design glass UI as like the Apple Big sur os
+- https://github.com/hbang/iOS-7-CSS
+  - Basic iOS 7 CSS
+- https://github.com/codedgar/Puppertino
+  - https://codedgar.github.io/Puppertino/
+  - A CSS framework based on Human Guidelines from apple
+  - Puppertino does not include any responsive system, you must use Bootstrap, Flexbox Grid, Skeleton, or some other responsive Framework along with it.
+
+ 
+
+- https://github.com/react-cupertino/react-cupertino
+  - https://react-cupertino.github.io/components/accordion
+  - React UI Component library inspired by Apple's Design Philosophy
+- https://github.com/hennessyevan/human-ui
+  - SwiftUI and The Human Design Guidelines for the Web
+  - This UI library is built using The Platformtm. 
+  - It is made possible by StencilJS, web-components, css modules and other native browser features.
+
+- more-apple-ios
+  - https://github.com/sungik-choi/gatsby-starter-apple
+    - https://gatsby-starter-apple.netlify.app/
+    - 效果就像最新的ios界面，推荐
+    - Gatsby blog starter kit with beautiful responsive design
+  - https://github.com/rex-taiwan/applescss
+    - https://rex-taiwan.github.io/applescss/
+    - Sass & Scss Design - Apple Watch Series 5 Web Recreation
+  - https://github.com/haneenmahd/apple-colors
+  - https://github.com/nursh/Apple-Store-Designs
+    - https://nursh.github.io/Apple-Store-Designs/
+  - [10 Sleek Apple-Style Code Projects From CodePen](https://1stwebdesigner.com/10-sleek-apple-style-code-projects-codepen/)
+  - https://github.com/afeiship/wsui-appify
+    - https://afeiship.github.io/wsui-appify/
+    - Apple ui tookit for wsui.
+
+## bootstrap
 
 - chipolette /5Star/MIT/202008/css
   - https://github.com/Marcisbee/chipolette
@@ -198,6 +246,21 @@ modified: '2021-01-29T18:54:36.865Z'
   - Minimal design based on black and white.
 - https://github.com/cihankoseoglu/shades
   - A Sass/CSS framework for minimalist websites that use black, white and shades of gray as a design choice
+
+## glass ui
+
+- https://github.com/heypoom/glassmorphic-ui
+  - https://glassmorphic.netlify.app/
+  - Glassmorphic-style UI components for the web.
+- https://github.com/harshhhdev/glassmorphicssm
+  - https://dev.to/harshhhdev/ui-design-trend-of-2021-4fb7
+
+ 
+
+- https://github.com/AKAspanion/ui-glassmorphism
+  - https://akaspanion.github.io/ui-glassmorphism/
+  - React component library on 'glassmorphism' UI/UX trend.
+  - 提供的示例是移动端预览效果，推荐
 
 ## neomorphism
 
@@ -262,15 +325,15 @@ modified: '2021-01-29T18:54:36.865Z'
 
 # css-vars
 
-- https://github.com/alphardex/aqua.css
+- https://github.com/alphardex/aqua.css /250Star/scss
   - https://aquacss.netlify.com/
   - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
-  - 定义了组件级css变量，利用了scss支持嵌套语法，但组件级变量未提供回退值
+  - 定义了组件级css变量，但组件级变量未提供回退值，利用了scss支持嵌套语法
   - 文档基于vue，仓库中提供了很多纯html demo示例
   - [dashboard demo](https://codepen.io/alphardex/full/yLNwKqx)
-- https://github.com/zaydek/duomo
+- https://github.com/zaydek/duomo /scss
   - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
-  - 无docs网站
+  - 无docs网站，源码scss大量运用mixin，超级复杂
   - Stackable, themeable CSS library
   - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
   - Duomo is a spiritual successor of Tailwind CSS.
@@ -282,8 +345,8 @@ modified: '2021-01-29T18:54:36.865Z'
 - https://github.com/tylerchilds/cutestrap /1.6kStar/css
   - http://www.cutestrap.com/features/themes
   - 样式源码基于css，文档是多个html，但默认首页的html可单独使用
-  - 提供了dark主题demo，另外的css文档使用了kss生成
   - 定义了组件级css变量，但组件级变量未提供回退值
+  - 提供了dark主题demo，另外的css文档使用了kss生成
   - A strong, independent CSS Framework. Only 2.7KB gzipped.
   - The two constraints for browser support are Custom Properties and CSS Grid.
 
@@ -297,28 +360,28 @@ modified: '2021-01-29T18:54:36.865Z'
   - How Dark Mode works
     - In order to provide maximum flexibility of turning it on, off, or automatically switch based on user display settings, you can toggle `data-theme="dark"` attribute to your markup with a minimal JavaScript code
 
-- https://github.com/jenil/chota
+- https://github.com/jenil/chota /css
   - https://jenil.github.io/chota/
   - 没有组件级css vars
   - 文档单页，纯html
   - Easy to extend with CSS variables
   - Easy dark mode switch，虽然支持，但未提供主题demo
 
-- https://github.com/johannschopplich/buldy
-  - 定义了组件级css变量，但极少数才有组件级变量，几乎都是全局级
+- https://github.com/johannschopplich/buldy /scss
+  - 只有极少数组件有组件级变量，几乎都是全局级
   - 无docs网站
   - Modern CSS framework distilled from the best of larger frameworks
   - Easily editable and extendable CSS variables
 
-- https://github.com/lnolte/und-css
+- https://github.com/lnolte/und-css /scss
   - https://css.und-pohlen.de/tokens/
   - 文档单页，样式过于简单，不推荐
   - Custom Property based CSS Framework fully configurable using SASS
   - und CSS aims to make working with CSS easier by providing robust compositions and tools to flexibly set up visual languages fast.
   - und CSS consists of three parts: Tokens, Objects and Utilities
-- https://github.com/fortrabbit/teutonic-css
+- https://github.com/fortrabbit/teutonic-css /scss
   - https://teutonic.co/
-  - 样式很不美观
+  - 文档多页，样式很不美观，不推荐
   - A modern CSS framework — versatile, well documented.
   - It's based on CSS Variables for easy customization and extension. 
   - It features cool tech like CSS Grid. 
