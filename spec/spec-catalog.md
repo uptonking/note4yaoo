@@ -16,6 +16,12 @@ modified: '2020-08-17T07:16:58.844Z'
 - rest api
   - [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
+# cultural-regional
+
+- [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646)
+  - [IETF language tag wiki](https://en.wikipedia.org/wiki/IETF_language_tag)
+  - [Tags for Identifying Languages (BCP47)](https://www.ietf.org/rfc/bcp/bcp47.txt) (html标签的lang属性值所用)
+
 # music
 
 - [ID3 tags](https://id3.org/)

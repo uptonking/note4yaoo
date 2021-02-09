@@ -30,6 +30,7 @@ modified: '2021-01-13T17:13:08.881Z'
 - css样式及布局
   - 趋势：静态提取、主题切换、无重复原子类、带约束的属性
   - 必备：局部样式、动态样式、主题切换
+  - component-separated/scoped css: 参考cra支持css modules
   - 推荐使用css in js作为预处理器
     - 这样自动生成的类名既可以是单个普通类名，也可是多个原子类空格拼接而成的类名，更灵活
   - css-in-js: styled-components, emotion

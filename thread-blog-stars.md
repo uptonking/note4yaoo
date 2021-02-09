@@ -1,8 +1,8 @@
 ---
 title: thread-blog-stars
-tags: [blog, thread]
+tags: [blog]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-01-19T10:44:12.205Z'
+modified: '2021-02-09T19:25:20.378Z'
 ---
 
 # thread-blog-stars

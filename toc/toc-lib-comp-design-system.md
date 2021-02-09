@@ -114,6 +114,11 @@ modified: '2020-11-13T07:30:03.110Z'
   - ref
     - https://github.com/zeit-ui/react
     - https://github.com/geist-org/vue
+    - https://github.com/geist-org/themes
+      - CSS Variables of Geist Themes
+    - https://github.com/geist-org/style
+      - Geist style is a modern Css library.
+      - 文档基于pug实现
 - Liquid Design System /Merck
   - /17Star/202010/CustomLic/js/css-in-js
   - https://gitlab.com/liquid-design/liquid-design-react

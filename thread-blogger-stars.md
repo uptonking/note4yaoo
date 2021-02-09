@@ -1,13 +1,11 @@
 ---
-title: toc-linkedin-blogger
-tags: [linkedin, toc]
+title: thread-blogger-stars
+tags: [blogger]
 created: '2019-12-29T11:49:48.192Z'
-modified: '2020-10-22T16:10:59.589Z'
+modified: '2021-02-09T19:27:07.664Z'
 ---
 
-# toc-linkedin-blogger  
-
-- 代码+项目
+# thread-blogger-stars  
 
 # viz
 
@@ -34,44 +32,6 @@ modified: '2020-10-22T16:10:59.589Z'
   - 天地图，iview，mapbox
   - https://github.com/jingsam
   - https://jingsam.github.io/archives/
-
-# web-dev
-
-- 司徒正美
-  - react，anu
-  - https://www.zhihu.com/people/si-tu-zheng-mei/posts
-  - https://github.com/RubyLouvre/anu
-- 黄子毅
-  - react，阿里
-  - https://www.zhihu.com/people/huang-zi-yi-83
-  - https://github.com/ascoders
-- 雪碧
-  - react, 阿里，beam
-  - https://github.com/doodlewind
-- 云谦
-  - react，阿里，umi、dva
-  - https://github.com/sorrycc
-- 张立理
-  - react，百度云上百度运营平台
-  - https://www.zhihu.com/people/otakustay
-  - https://github.com/otakustay
-- 方正
-  - react，训记健身服务，自由职业者，主要提供app和小程序
-  - https://www.zhihu.com/people/fang-zheng-3-34
-  - https://github.com/Foveluy
-- 张振衣
-  - react, 百度
-  - https://www.zhihu.com/people/dancerphil
-  - https://github.com/dancerphil
-  - https://github.com/regionjs/region-core
-- D 
-  - https://github.com/88250
-  - artwork: b3blog, solo, symphony
-- 徐飞
-  - web
-  - https://www.zhihu.com/people/sharpmaster/posts
-- 贺师俊
-  - https://www.zhihu.com/people/he-shi-jun/answers
 
 # data-analysis
 

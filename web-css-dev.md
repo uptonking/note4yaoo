@@ -24,6 +24,7 @@ modified: '2021-02-07T18:27:52.684Z'
   - 效果是用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
     - 会自动生成各主题类名下该组件级变量的新值，新值由全局级变量设置
     - 只有size主题通过此法实现，各颜色的主题直接通过设置变量新值实现
+    - 使用了@remapvars的.css文件会提示语法错误
   - Traditionally, in CSS, we define modifier classes that change various properties of a given component.
   - this would mean that we would have 5 separate modifier classes (XS, S, M, L, XL) that each re-define the same set of properties.
 
@@ -214,3 +215,7 @@ modified: '2021-02-07T18:27:52.684Z'
   --spaceLarge: 20px;
 }
 ```
+
+# ref
+
+- [cssdb](https://cssdb.org/) is a comprehensive list of CSS features and their positions in the process of becoming implemented web standards.

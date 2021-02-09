@@ -1,6 +1,6 @@
 ---
 title: web-dev-ui-window-layout-portal
-tags: [portal, window-layout]
+tags: [components, portal, ui, window-layout]
 created: '2021-01-13T17:13:36.979Z'
 modified: '2021-01-13T17:14:22.218Z'
 ---
@@ -25,7 +25,7 @@ modified: '2021-01-13T17:14:22.218Z'
 
 # iframe
 
-- ## [iframe 有什么好处，有什么坏处？](https://www.zhihu.com/question/20653055)
+- ## [iframe有什么好处，有什么坏处？](https://www.zhihu.com/question/20653055)
 - 浏览器兼容性特别好
 - iframe原本的用法在现在看来是不合时宜的，问题太多了但是它的其他功能却是不错的黑魔法，这里列举一些
   - 用来实现长连接，在websocket不可用的时候作为一种替代，最开始由google发明。Comet：基于 HTTP 长连接的“服务器推”技术

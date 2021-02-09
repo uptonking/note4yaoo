@@ -1,11 +1,11 @@
 ---
-title: toc-blog-catalog-company-team
-tags: [blog, catalog, toc]
+title: thread-blogger-catalog-company-team
+tags: [blogger, catalog, org]
 created: '2020-06-22T09:37:10.800Z'
 modified: '2020-10-22T13:06:52.353Z'
 ---
 
-# toc-blog-catalog-company-team
+# thread-blogger-catalog-company-team
 
 # 技术周刊
 

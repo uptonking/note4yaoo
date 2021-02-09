@@ -13,6 +13,13 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Offline support has been part of the PWA installability criteria since the beginning. 
+- https://twitter.com/ChromiumDev/status/1358817467661967365
+  - In Chrome 89, we'll warn you if your PWA doesn't have an offline experience. 
+  - In Chrome 93, we'll start enforcing the updated install criteria for new PWAs.
+- If all you need is a baseline offline fallback page without actually delivering a true offline experience (which, acknowledgedly, many apps don’t need or can’t), then give my article a read
+  - [Create an offline fallback page](https://web.dev/offline-fallback-page/)
+
 - ## When learning something new, it’s easy to fall in to the trap of comparing your work to seasoned professionals and think everything you’re doing is wrong. 
 - https://twitter.com/steveschoger/status/1358588140328538115
   - Lately I’ve been trying to embrace this learning period because it’s a small window of great discoveries.

@@ -68,7 +68,7 @@ modified: '2020-11-13T07:29:55.201Z'
 - ## Carbon Design System /IBM
   - /3.5kStar/Apache2/202009/js/css-vars/themed
   - https://github.com/carbon-design-system/carbon
-    - https://www.carbondesignsystem.com/
+    - https://www.carbondesignsystem.com/developing/frameworks/vanilla
     - The design system is built React first. 
       - We also support core parts of the system in vanilla JS, Angular, and Vue. 
   - carbon-components
@@ -286,21 +286,6 @@ modified: '2020-11-13T07:29:55.201Z'
       - Color data specific to each color stop is not noted in the var name. Instead, a var set is created for each stop.
       - Scale data values are treated in the same way as Color data.
       - Component display state data (eg. hover, down, disabled) uses the following pattern: `<namespace> <component> <variant> <attribute> <state>`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   - ref
     - https://github.com/adobe/spectrum-web-components
@@ -523,9 +508,6 @@ modified: '2020-11-13T07:29:55.201Z'
     - theming基于css vars
       - css文件使用了自定义导入`composes: small from "./Layout.css";`
       - 只用了全局级变量，未定义组件级变量
-  - ref
-    - https://github.com/geist-org/themes
-      - CSS Variables of Geist Themes
 - Garden /Zendesk
   - /Apache2/794Star/202009/ts/css-in-js
   - https://github.com/zendeskgarden/react-components

@@ -10,7 +10,9 @@ modified: '2021-01-29T18:55:16.043Z'
 # guide
 
 - faq-not-yet
-  - inline样式的css vars的性能
+  - 使用css vars和普通css书写class的性能对比
+  - 更新样式时，可通过切换包含css vars新值的class类名，可通过js修改css vars的值，性能对比
+    - 甚至还可以直接设置style属性的值来更新css vars的值
 
 - css-vars pros
   - 浏览器直接支持，浏览器内置，符合标准
@@ -24,7 +26,7 @@ modified: '2021-01-29T18:55:16.043Z'
     - css的值的数据类型太单一，js的值可以函数、Map等，js更灵活
   - css内置的计算函数不够丰富，如比不过polish
 
-- css vars的值也采用css属性值的层叠规则
+- css vars的值也采用tcss属性值的层叠规则
   - 据此可基于css变量实现theme
     - 要考虑代码清晰、明确
     - 要考虑包含css变量的读写操作多不多，性能影响
@@ -40,7 +42,7 @@ modified: '2021-01-29T18:55:16.043Z'
   - css变量值不能用在普通样式属性名，不能用在media query名称中
 
 - tips
-  - 若var()函数的fallback值包含大量计算，会导致性能问题
+  - 若`var()`中的fallback值包含大量计算，会导致性能问题
   - css-variables除了存储样式常用变量，还可以用来存储状态变量，通过`style={{ '--box-size': size }}`的形式传入，用来实现动态样式很方便
 
 ``` JS

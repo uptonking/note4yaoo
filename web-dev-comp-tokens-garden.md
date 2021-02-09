@@ -25,9 +25,11 @@ modified: '2021-01-13T17:12:25.854Z'
     - @pgd/design-system-site
     - @pgd/web-components
 
-- dev
+- css
   - 主题样式实现一套css，再实现一套css in js
     - primer-components
+  - css-global-config
+    - theme, size, dir/left-right
 
 - themeable 设计样式时theming可参考
   - dark/darcula, material, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), glass-ui

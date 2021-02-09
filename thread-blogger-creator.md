@@ -1,37 +1,22 @@
 ---
-title: toc-linkedin-creator
-tags: [linkedin, toc]
+title: thread-blogger-creator
+tags: [blogger, kickstarter]
 created: '2020-02-16T14:30:18.987Z'
-modified: '2020-09-19T12:46:00.501Z'
+modified: '2021-02-09T19:23:39.082Z'
 ---
 
-# toc-linkedin-creator
-
-- 代码+产品
+# thread-blogger-creator
 
 # watching
 
-- 尤雨溪
-  - info
-    - https://github.com/yyx990803
-    - https://www.zhihu.com/people/evanyou
-  - artwork: vue
-  - 2020
-    - 12-vite2: library mode
-    - 9-vue3: release
-
-- Dan Abramov
-  - info: Co-author of Redux and Create React App
-    - http://twitter.com/dan_abramov
-    - https://github.com/gaearon
-  - artwork: redux
-
-# web-dev
+# data-saas
 
 - Mike Bostock
   - info
     - https://twitter.com/mbostock
     - https://github.com/mbostock
+  - works
+    - d3js, observable notebook
   - artwork1: d3.js
     - D3.js is an open-source library for data viz on the web
     - https://d3js.org/
@@ -45,6 +30,8 @@ modified: '2020-09-19T12:46:00.501Z'
   - info
     - https://twitter.com/tannerlinsley
     - https://github.com/tannerlinsley
+  - works
+    - react-table, nozzle
   - artwork1: react-table
     - build fast and extendable tables and datagrids for React
     - https://github.com/tannerlinsley/react-table
@@ -57,6 +44,8 @@ modified: '2020-09-19T12:46:00.501Z'
   - info
     - https://twitter.com/chris_whong
     - https://github.com/chriswhong
+  - works
+    - qri, nyctaxi for A Day in the Life
   - artwork1: qri
     - qri (“query”) is a global dataset version control system (GDVCS) built on the distributed web
     - https://qri.io/

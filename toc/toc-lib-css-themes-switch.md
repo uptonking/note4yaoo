@@ -1,11 +1,11 @@
 ---
-title: toc-lib-css-vars-themes
+title: toc-lib-css-themes-switch
 tags: [css, css-vars, themes, theming, toc]
 created: '2021-01-28T21:12:30.674Z'
-modified: '2021-01-29T18:54:36.865Z'
+modified: '2021-02-09T13:40:11.536Z'
 ---
 
-# toc-lib-css-vars-themes
+# toc-lib-css-themes-switch
 
 # guide
 
@@ -14,16 +14,6 @@ modified: '2021-01-29T18:54:36.865Z'
     - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
-
-- css-vars-tips
-  - css变量名区分大小写
-  - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
-  - css变量值遵循css样式属性值的层叠规则
-  - css变量值的赋值可以使用另一个css变量
-  - css变量值会提升，所以可先使用再声明
-  - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
-    - 不能用`font-size: var(--scale) + 'px';`
-  - css变量值不能用在普通样式属性名，不能用在media query名称中
 
 - 实现组件theming的方法(用css vars)
   - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
@@ -52,13 +42,16 @@ modified: '2021-01-29T18:54:36.865Z'
     - `data-theme` 自定义data-属性，然后通过属性选择器设置theme样式变量
       - 若使用的是`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
       - 不方便添加其他可选信息到theme名称
+      - 案例
+        - pico,cutestrap
     - `class="theme-name--modifier"` 类选择器设置theme样式变量
+      - 案例
+        - halfmoon,patternfly,spectrum,stackoverflow
   - **通过`body.theme-light/dark`**
     - 当设计多套主题且每套主题有各自的黑白模式时，使用多个类更合适，但多个类也可以加到data-theme属性的元素，此方法思路也可以用到
       - `<html class="is-dark-mode name-of-current-theme">`
       - 甚至可以将主题变量根据多个类名拆分成对应多个部分，提高可读性和复用性
     - 此法还适合自定义主题名称较长的情况，因为BEM命名方式本身就很长
-    - 案例(未使用data-theme)：halfmoon,patternfly,spectrum,stackoverflow
 
 - 实现默认的light theme
   - 直接将light主题的变量全部放到`:root{}`，或者组件级变量的fallback回退值设为light主题变量值
@@ -78,6 +71,15 @@ modified: '2021-01-29T18:54:36.865Z'
 
 # css-fwk-codebase
 
+- css-coding-tips
+  - css-reset依赖全局级css vars，经常将两者放在一个文件或挨着@import
+  - css vars的polyfill有些只支持全局级变量
+  - css-framework-global-config
+    - theme, size, lang(标准html属性), dir/ltr/rtl(标准html属性)
+    - 同时支持多种配置方式，优先级: 自定义配置类名 > 标准属性值 > 框架默认值
+  - 使用主流design system的类名都包含前缀，如mdc-/slds-/pf-/spectrum-
+    - 无前缀的有bootstrap、carbon
+
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
 
@@ -91,8 +93,11 @@ modified: '2021-01-29T18:54:36.865Z'
 
 - halfmoon v1.1.1(202010)
   - 未提供组件级css vars，但全局级css变量名称规则很容易提取出各组件的变量
-  - 单位几乎都用rem，1rem = 10px
-  - 几乎所有组件的样式值都是css vars，非常灵活
+    - 因为没有组件级变量，切换主题时，直接修改属性color的值为另一个变量即可
+  - 单位几乎都用rem，1rem = 10px，因为1600px以上的屏幕会自动放大
+  - 所有组件的所有样式值几乎都是css vars，非常灵活
+  - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
+  - Transparency(rgba) is used more commonly in dark mode, because everything needs to blend together to look good.
 
 - spectrum
   - 用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
@@ -322,70 +327,6 @@ modified: '2021-01-29T18:54:36.865Z'
   - Arwes is a web framework to build user interfaces based on futuristic science fiction designs, animations, and sound effects.
   - The concepts behind are opinionated with influences from Cyberpunk, Cyberprep, and Synthwave, and productions like Star Citizen, Halo, and TRON: Legacy.
   - It tries to inspire advanced space and alien technology.
-
-# css-vars
-
-- https://github.com/alphardex/aqua.css /250Star/scss
-  - https://aquacss.netlify.com/
-  - 纯CSS框架，没有任何JS。许多CSS变量，易换肤
-  - 定义了组件级css变量，但组件级变量未提供回退值，利用了scss支持嵌套语法
-  - 文档基于vue，仓库中提供了很多纯html demo示例
-  - [dashboard demo](https://codepen.io/alphardex/full/yLNwKqx)
-- https://github.com/zaydek/duomo /scss
-  - https://codepen.io/zaydek/pen/vYXjBra (dashboard skeleton)
-  - 无docs网站，源码scss大量运用mixin，超级复杂
-  - Stackable, themeable CSS library
-  - Duomo is a stack-based CSS framework.(stacks are based on Flexbox)
-  - Duomo is a spiritual successor of Tailwind CSS.
-  - Uses HStack and VStack instead of Flexbox for rows and columns
-  - Uses ZStack to layer along the z-axis
-  - Introspection via CSS variables; Duomo tokens can be overridden without Sass
-  - Small JavaScript runtime for toggling dark mode, etc.
-
-- https://github.com/tylerchilds/cutestrap /1.6kStar/css
-  - http://www.cutestrap.com/features/themes
-  - 样式源码基于css，文档是多个html，但默认首页的html可单独使用
-  - 定义了组件级css变量，但组件级变量未提供回退值
-  - 提供了dark主题demo，另外的css文档使用了kss生成
-  - A strong, independent CSS Framework. Only 2.7KB gzipped.
-  - The two constraints for browser support are Custom Properties and CSS Grid.
-
-- https://github.com/elishaterada/feathercss /2Star/css
-  - https://feathercss.makerkits.co/
-  - 没有组件级css vars
-  - 文档单页，文档基于next，每个组件并排显示明暗两种样式，设计简洁干净
-  - FeatherCSS is a Dark Mode ready minimalist CSS Framework with support for RTL and Accessibility
-  - It purposefully excludes features like grid layout, media queries, or icons which tends to require per-project customization.
-  - It’s Just CSS™ with CSS variables. Bring your own LESS/SaaS/CSS-in-JS solution
-  - How Dark Mode works
-    - In order to provide maximum flexibility of turning it on, off, or automatically switch based on user display settings, you can toggle `data-theme="dark"` attribute to your markup with a minimal JavaScript code
-
-- https://github.com/jenil/chota /css
-  - https://jenil.github.io/chota/
-  - 没有组件级css vars
-  - 文档单页，纯html
-  - Easy to extend with CSS variables
-  - Easy dark mode switch，虽然支持，但未提供主题demo
-
-- https://github.com/johannschopplich/buldy /scss
-  - 只有极少数组件有组件级变量，几乎都是全局级
-  - 无docs网站
-  - Modern CSS framework distilled from the best of larger frameworks
-  - Easily editable and extendable CSS variables
-
-- https://github.com/lnolte/und-css /scss
-  - https://css.und-pohlen.de/tokens/
-  - 文档单页，样式过于简单，不推荐
-  - Custom Property based CSS Framework fully configurable using SASS
-  - und CSS aims to make working with CSS easier by providing robust compositions and tools to flexibly set up visual languages fast.
-  - und CSS consists of three parts: Tokens, Objects and Utilities
-- https://github.com/fortrabbit/teutonic-css /scss
-  - https://teutonic.co/
-  - 文档多页，样式很不美观，不推荐
-  - A modern CSS framework — versatile, well documented.
-  - It's based on CSS Variables for easy customization and extension. 
-  - It features cool tech like CSS Grid. 
-  - The source is a collection of SCSS modules
 
 # more-themes
 

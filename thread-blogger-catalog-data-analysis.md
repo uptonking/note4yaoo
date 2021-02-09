@@ -1,11 +1,11 @@
 ---
-title: toc-blog-catalog-data-analysis
-tags: [blog, catalog, data-analysis, toc]
+title: thread-blogger-catalog-data-analysis
+tags: [blogger, catalog, data-analysis, org]
 created: '2020-06-22T09:43:58.184Z'
 modified: '2020-10-22T13:07:24.149Z'
 ---
 
-# toc-blog-catalog-data-analysis
+# thread-blogger-catalog-data-analysis
 
 # 数据类
 

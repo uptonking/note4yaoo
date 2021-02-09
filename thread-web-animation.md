@@ -11,6 +11,12 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## An Interactive Guide to CSS Transitions
+- https://twitter.com/JoshWComeau/status/1359162874707533825
+  - It's a deep dive into `transition` , the CSS motion workhorse. 
+  - We'll discover different timing functions, learn about UX and performance best-practices, and more! 
+- [An Interactive Guide to CSS Transitions](https://www.joshwcomeau.com/animation/css-transitions/)
+
 - ## If I am let down by any Web API, it's gotta be the Web Animations API._201906
 - https://twitter.com/maxlynch/status/1138501067451355138
   - The (only?) benefit it brings is stepping and pause/play. 

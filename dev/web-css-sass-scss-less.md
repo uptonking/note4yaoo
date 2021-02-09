@@ -9,6 +9,9 @@ modified: '2020-12-21T07:45:45.366Z'
 
 # guide
 
+- css书写tips
+  - 趋势是每个组件的css样式能独立使用，不需要单独引入reset样式和theme变量
+
 - css预处理器的技术选型
   - 参考知名项目或大公司项目的选择，如google、microsoft、alibaba
   - 比较开发工具的下载量
@@ -28,7 +31,7 @@ modified: '2020-12-21T07:45:45.366Z'
 
 # sass
 
-- sass使用代表
+- who is using
   - bootstrap 4
   - google-material-components-web
   - ibm-carbon-components
@@ -43,9 +46,12 @@ modified: '2020-12-21T07:45:45.366Z'
   - Scss对sass语法进行了改良，Sass 3就变成了Scss(sassy css)。与原来的语法兼容，只是用{}取代了原来的缩进。
   - bootstrap 4的版本，使用的就是Scss，而之前的3使用的是less
 
+- sass cons
+  - sass内置函数有限，没有充分利用js灵活计算的优势，参考treat.js和polished
+
 # less
 
-- less使用代表
+- who is using
   - ant-design 4
   - bootstrap 3
 

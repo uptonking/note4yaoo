@@ -24,6 +24,11 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- I've now roasted 100s of landing pages through my side project http://roastmylandingpage.com.
+- https://twitter.com/helloitsolly/status/1359174396284436480
+  - As part of this, I've started live annotating ideas and changes on the video.
+  - Tag a landing page you want me to roast and I'll record and share it.
+
 - @TheEconomist data team has won a silver award  for our 'Graphic detail' print portfolio
 - https://twitter.com/AlexSelbyB/status/1290336216538329089
 

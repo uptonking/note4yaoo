@@ -20,6 +20,7 @@ modified: '2020-10-31T06:36:49.770Z'
 - ref
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
+  - linkware, watermark
 
 # pieces
 

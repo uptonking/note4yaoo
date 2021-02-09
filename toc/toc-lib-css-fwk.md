@@ -7,7 +7,7 @@ modified: '2021-01-28T21:14:14.667Z'
 
 # toc-lib-css-fwk
 
-# css-framework-popular
+# popular
 
 - bootstrap /143kStar/MIT/202007
   - https://github.com/twbs/bootstrap
@@ -32,39 +32,6 @@ modified: '2021-01-28T21:14:14.667Z'
   - 文档多页，文档基于pug实现
   - a responsive CSS framework based on flexbox
   - Designed and built by Yan Zhu(Microsoft MVP)
-
-- pico.css /65Star/MIT/202010/scss/文档优秀
-  - https://github.com/picocss/pico
-  - https://picocss.com/
-  - theming通过添加`data-theme` + css vars到html标签实现
-    - theming只处理了颜色
-    - 最顶层处理了 `prefers-color-scheme: dark`
-  - Graceful & Minimal CSS design system in pure semantic HTML
-  - use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
-  - No dependencies, package manager, external files or JavaScript.
-  - Responsive everything: Elegant and consistent adaptative spacings and typography on all devices.
-  - Shipped with two beautiful color themes, automatically enabled according to the user preference.
-  - Pico provide a .classless version ([Example](https://picocss.com/examples/classless/)).
-    - `<header>/<main>/<footer>` as direct childs of `<body>` provide a responsive vertical `padding`
-    - act as containers to define a centered or a fluid viewport.
-
-- halfmoon /2.1kStar/MIT/202010/js
-  - https://github.com/halfmoonui/halfmoon
-  - https://www.gethalfmoon.com/
-  - theming基于css vars，dark-mode变量名前缀为`--dm`
-  - 未提供组件级css vars
-  - 未模块化，一个css文件一万多行
-    - [More modular approach in the roadmap](https://github.com/halfmoonui/halfmoon/issues/78)
-  - Front-end framework with a built-in dark mode and full customizability using CSS variables
-    - Great for building dashboards and tools
-  - Halfmoon comes with a built-in, toggleable dark mode
-  - The framework is built entirely using CSS variables 
-    - There are close to 1,500 CSS variables, which means that almost everything can be customized by overriding a property
-  - [Complete page demo](https://www.gethalfmoon.com/page-sections-demo/)
-  - [Starter template generator](https://www.gethalfmoon.com/docs/page-building/#starter-template-generator)
-  - Optional JS library—Many of the components found in Halfmoon are built to work without JavaScript. 
-    - However, the framework still comes with a powerful JavaScript library with no extra dependencies, such as jQuery.
-  - The class names should be instantly familiar to anyone who has used Bootstrap.
 
 - skeleton /18kStar/MIT/201412/css
   - https://github.com/dhg/Skeleton
@@ -99,14 +66,6 @@ modified: '2021-01-28T21:14:14.667Z'
 
 # css-framework-ui
 
-- chipolette /5Star/MIT/202008/css
-  - https://github.com/Marcisbee/chipolette
-  - http://marcisbee.com/chipolette/
-  - 单页文档，但根据多个html通过innerHTML实现，使用了css vars
-  - It is designed to replace Bootstrap and to be used with CSS variables.
-  - Chipolette is a tiny CSS framework/Starter kit.
-  - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
-  - It's written in LESS, because of nesting and other neat features
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram
   - https://milligram.io/
@@ -137,12 +96,11 @@ modified: '2021-01-28T21:14:14.667Z'
   - 文档单页，样式非常友好
   - minimalistic CSS framework for your webpages.
   - Made in pure SCSS and compiled with Gulp.
-
 - https://github.com/Borderliner/Meshki
   - https://borderliner.github.io/Meshki/
   - Meshki: A Black-Colored, Responsive Boilerplate for UI Development
 
-# classless-framework
+# classless
 
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css

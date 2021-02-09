@@ -12,19 +12,20 @@ modified: '2021-01-01T20:06:59.601Z'
 - SASS variables are replaced with their values as the preprocessor produces its CSS output long before the browser interprets the code, 
   - while CSS custom properties are evaluated by the browser at runtime.
 
-- sass vs css variables
-  - sass优点
-    - There are no inherit browser support considerations. They compile down into normal CSS.
-    - Little stuff: Like you can strip units from a value if you had to.
-    - sass除了提供变量，还提供了样式值计算工具函数
-  - sass缺点
-    - 难以实现让用户随意修改变量值来更新样式，因为预编译了
-    - node-sass下载安装对墙内不友好
-  - css变量优点
-    - 易于实现让用户随意修改变量值来更新样式
-  - css变量缺点
-    - 兼容性不够完美
-    - 样式计算工具函数不多，暂时只有calc，标准还在制定
+- **sass vs css variables**
+- sass pros
+  - There are no inherit browser support considerations. They compile down into normal CSS.
+  - Little stuff: Like you can strip units from a value if you had to.
+  - sass除了提供变量，还提供了样式值计算工具函数
+- sass cons
+  - 难以实现让用户随意修改变量值来更新样式，因为预编译了
+  - node-sass下载安装对墙内不友好，但dart-sass很好用
+  - sass内置函数有限，没有充分利用js灵活计算的优势，参考treat.js和polished
+- css vars pros
+  - 易于实现让用户随意修改变量值来更新样式
+- css vars cons
+  - 浏览器的兼容性不够完美
+  - 样式计算工具函数不多，如calc，标准还会继续扩充
 
 - [SASS VARIABLES VS. CSS CUSTOM PROPERTIES](https://intu.io/blog/sass-css-custom-properties/)
   - If your project requires dynamic theming, CSS custom properties will be the way to go very shortly. 
@@ -35,14 +36,15 @@ modified: '2021-01-01T20:06:59.601Z'
     - 插件非常丰富
   - postcss缺点
     - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
+    - 如果将postcss作为预处理器使用，如在css中引入嵌套、插值，则会提示css文件语法错误，能用但不友好
 
 # sass-pieces
 
-- @mixin vs @extend
+- `@mixin` vs `@extend`
   - Unlike mixins, which copy styles into the current style rule, @extend updates style rules that contain the extended selector so that they contain the extending selector as well. 
   - When extending selectors, Sass does intelligent unification
 
-- @mixin vs %placeholder-selector
+- `@mixin` vs `%placeholder-selector`
   - 最好的建议是：如果你需要参数变量，使用mixin。否则，继承一个placehodler
   - 第一，在placeholder里面，不能像mixin那样传递使用参数变量。但是可以使用全局变量。
   - 第二，当你使用mixin时，Sass会重复输出这个mixin的属性规则内容，不会让CSS选择器公用这个mixin。这样的话，样式表将会变得很大。

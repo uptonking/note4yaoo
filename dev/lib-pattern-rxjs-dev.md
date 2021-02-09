@@ -253,3 +253,6 @@ useEffect(() => {
 - [Just put a PR up to finally land streaming progress events to the #RxJS AJAX implementation (for both upload and download!).](https://twitter.com/BenLesh/status/1358669689325555714)
   - Basically, you'll be able to get all of the events out of one observable. 
   - any chance you'll be supporting signals soon with this? 
+  - And to be clear: I wouldn't have recommended `fetch` before they added cancellation.
+    - I'd have recommended something like axios for the simple cases where you didn't already have RxJS, because they had cancellation at that point.
+    - But now that fetch can be aborted? It's fine.
