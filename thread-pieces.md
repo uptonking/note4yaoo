@@ -11,6 +11,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## TIL: LinkeDOM can replace JSDOM in Jest, with JSX behind the scene, and the result seems convincing
+
 - ## friendly reminder: whenever somethings not working the *first* thing to do is `rm -rf node_modules` then reinstall dependencies
 
 - ## JavaScript tip: You can wrap your `console.log()` arguments with curly brackets to see the variable names.

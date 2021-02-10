@@ -11,6 +11,13 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## If you have `class SubEl extends HTMLElement {}` .
+- https://twitter.com/justinfagnani/status/1359213920272044034 
+  - is there any way to dynamically add something like `SubEl.prototype.disconnectedCallback = function() { }`
+
+- Custom element reaction callbacks are torn off at definition time so that they don't require a lookup for every invocation.
+  - So you need to do the patching before `define()` .
+
 - ## Looking for some publicly available/open source web components to test the custom elements manifest analyzer on
 - https://twitter.com/passle_/status/1357676192413999105
   - Do you have some components written with either lit or vanilla, JS or TS, that are available on github? 

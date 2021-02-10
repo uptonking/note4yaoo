@@ -169,3 +169,4 @@ modified: '2021-01-01T20:12:36.651Z'
 
 - [Animate Your HTML5_2013](http://animateyourhtml5.appspot.com)
   - A tour of HTML5 animation techniques with CSS3, SVG, Canvas and WebGL
+- [An Interactive Guide to CSS Transitions](https://www.joshwcomeau.com/animation/css-transitions/)

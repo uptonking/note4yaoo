@@ -9,6 +9,9 @@ modified: '2020-11-03T06:54:59.051Z'
 
 # amazing-ux-viz
 
+- https://tabbied.com/select-artwork 
+  - 源码基于nextjs，超级适合用来制作logo
+
 - https://github.com/zerosoul/chinese-colors
   - https://colors.ichuantong.cn/
   - 中国传统颜色在线手册

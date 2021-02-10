@@ -11,6 +11,14 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## Generate abstract geometric art using a delightful free tool. Includes 11 different styles and a ton of customization.
+- https://twitter.com/JoshWComeau/status/1359399954347929604
+  - https://tabbied.com/select-artwork 
+  - 源码基于nextjs，超级适合用来制作logo
+- That is cool. But I hoped for an svg export though.
+-  I poked at it and it’s built using standard HTML nodes rather than SVG, so it makes sense that it can only export png
+
 - ## Properties like `z-index` can be used in your transitions and keyframe animations! 
 - https://twitter.com/JoshWComeau/status/1358128488071507969
   - They'll step between values at the right time, helping you orchestrate effects like this.

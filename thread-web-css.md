@@ -26,6 +26,15 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+
+- ## The lesson: only use comma-separated selectors when those selectors have broad browser support. 
+- https://twitter.com/JoshWComeau/status/1359213597331763200
+  - When using browser-prefixed things, or cutting-edge stuff like `:focus-within`, you should repeat the rules instead.
+- Here's what's going on: 
+  - the comma operator is used to apply the same CSS rule to multiple selectors, but in order for it to work, *all selectors must be valid*.
+  - When Chrome sees `-moz-range-track`, it doesn't recognize it, and it invalidates the *entire rule*.
+- Firefox ignored but not fails on `-webkit-*` for compatibility reasons, since devs are/were littering their CSS with it and it was breaking sites in Firefox.
+
 - ## print-to-pdf is almost good enough. Are there CSS tricks you can use to improve page breaks?
 - https://twitter.com/Swizec/status/1358589201495728129
 - There are a few things, you can force page breaks or try to prevent them inside specific elements (if possible) with "page-break-after" and "page-break-before"

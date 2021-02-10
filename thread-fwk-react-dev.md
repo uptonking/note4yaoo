@@ -13,6 +13,17 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## What are the major changes to the ecosystem since 2018?
+- https://www.reddit.com/r/reactjs/comments/lg92yi/what_are_the_major_changes_to_the_ecosystem_since/
+- Biggest things:
+  - React hooks changed how we write components, along with increased use of the new Context API (which has also led to confusion over when and how to use Context effectively)
+  - Redux is still most widely used state management tool, but there are many other good options
+  - Redux Toolkit and React-Redux hooks drastically simplified writing Redux code
+  - New libraries like React-Query and Apollo that focus on "data fetching/caching" instead of "state management"
+  - Next and Gatsby joining CRA as major "React distributions"
+  - Switch from Enzyme to React Testing library and more "integrated" component testing
+  - Widespread use of TypeScript (>50% usage in the React community at this time)
+
 - ## 3 Rules for Keeping Components Organized
 - https://www.seancdavis.com/blog/three-rules-keep-components-organized/
 - Rule #1: Separate Source Files into Logical Buckets
