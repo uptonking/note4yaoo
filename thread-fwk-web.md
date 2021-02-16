@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## When you set an `id` to an HTML element it... becomes a global JavaScript variable referencing that element
+- https://twitter.com/stackblitz/status/1359525093601382406
+  - Beware of relying on globals!
+- always name your id with - in between，example layout-version
+- Global variables should not be here. They should be in a seperated js file that is used as global. And also not in any dom element.
 
 - ## creating framework-agnostic components with @stitchesjs core
 - https://twitter.com/peduarte/status/1358125279303065602

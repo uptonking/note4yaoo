@@ -11,6 +11,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## TIL about the Visual Viewport API
+- https://twitter.com/rikschennink/status/1361598959828037633
+  - When opening a soft keyboard `window.innerHeight` will stay the same but `visualViewport.height` won't!
+  - Even better, you can listen for `resize` and `scroll` events on the `visualViewport` object.
 
 - ## Unpopular opinion: ESM was a bad idea.
 - https://twitter.com/devongovett/status/1356258095949885442

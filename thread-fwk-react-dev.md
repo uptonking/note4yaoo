@@ -13,6 +13,33 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+
+- ## how to debug @reactjs components?
+- https://twitter.com/sseraphini/status/1361300393544855554
+  - console.log props and state
+  - console.log inside useEffect
+  - console.log
+- How to debbug JS:
+  - Old school - alert
+  - New Kids on The Block - console.log
+  - Bonkers - debbuger;
+  - Noobs - Dev tools
+- I prefer debugger, or debugger statements, which is basically flexible console.log
+- Break points (debugger) is the only way I debug anything in any language.
+- Devtools. Breakpoints
+- useDebugValue to custom hooks
+
+
+- ## I smell an antipattern.
+- https://twitter.com/erikras/status/1361606811971952641
+  - I’ve got two third party custom hooks that want to give me a ref to give to an element so that it can do fun stuff to the element.
+  - The problem is I want to give both refs to the same element. 
+- Libraries should almost always accept, not create, refs IMO
+  - How do libraries know when these refs resolve?
+  - The same way we all do? In a useEffect.
+- This is a good reason to stay away from react-hook-form and instead embrace the glory that is react-final-form!
+- mergeRefs utility function to the rescue.
+
 - ## What are the major changes to the ecosystem since 2018?
 - https://www.reddit.com/r/reactjs/comments/lg92yi/what_are_the_major_changes_to_the_ecosystem_since/
 - Biggest things:

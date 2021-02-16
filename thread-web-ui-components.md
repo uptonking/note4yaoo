@@ -13,6 +13,33 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+
+- ## Do you guys still use 12-column grid system?
+- https://twitter.com/renatorib_/status/1361688536500629507
+  - Because of flexbox/cssgrid, I haven't used it in a while. 
+  - But we are considering using it to create a better consistency with UI.
+- With the gap property in CSS grid, it’s been a really long time since I used columns. What kind of inconsistencies do you see in your UI that you’d need a 12-column grid system to fix?
+  - The auto-sizing in Grid is fantastic, but we give up some control by letting the browser make decisions for us. 
+  - If that’s a no-go, columns could still make sense.
+
+- ## Pulling Braid's layout components out to a standalone library, I had to switch to an array for configuring breakpoints
+- https://twitter.com/markdalgleish/status/1361551281190412289
+  - so TypeScript can extract the names of the first and last breakpoints—something I couldn't do when breakpoints are defined with an object.
+- You can do something like this, but yeah, an array is probably the best solution
+
+``` JS
+{
+  one: "one",
+  two: "two",
+  get first() {
+    return this.one;
+  }
+  get last() {
+    return this.two;
+  }
+}
+```
+
 - ## Trying to build an accessible interactive tooltip in a React portal—the trick is simulating natural tab order
 - https://twitter.com/markdalgleish/status/1356534519776432129
   - e.g. tabbing out of it should take you to the next focusable element on the page. 

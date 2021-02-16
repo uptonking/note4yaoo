@@ -13,6 +13,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## How are some of you actually working on _side tech projects_? I'm struggling to even maintain energy for day-job projects lately.
+- https://twitter.com/brian_d_vaughn/status/1361520253604421634
+- I get anxious without side project. It’s how I relax.
+  - When the brain is full of errant(错误的、行为不当的) thoughts and ideas, only way to get anything done at work is to regularly clean the brain.
+- don't believe everyone on twitter. Specially in the Dev community.
+  -  I have experienced it a lot that people try to talk them selfs better than they actually are. Per se it is not a problem. 
+  -  But it promotes a bad reputation for devs. We don't code 24/7
+
 - ## Offline support has been part of the PWA installability criteria since the beginning. 
 - https://twitter.com/ChromiumDev/status/1358817467661967365
   - In Chrome 89, we'll warn you if your PWA doesn't have an offline experience. 

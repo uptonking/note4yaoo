@@ -11,6 +11,41 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+
+- ## I think most JS libraries that vend some kind of observable value could just use async iterables instead of an actual observable library.
+- https://twitter.com/justinfagnani/status/1360793286781247491
+  - Clients mostly need to be able to subscribe and unsubscribe to new values. 
+  - The rest isn't strictly needed and a client can pipe the async iterable into their library of choice if they really want.
+  - No need for clients to read about rxjs/wonka/zen-observable or whatever is used.
+- I think the platform should have added a simple type like observables, instead of a heavy complicated type like AsyncIterables.
+  - A promise allocation for each event?
+  - No cancellation other than not iterating, ignoring the next event, or rejecting the next event and handling it?
+- It always surprised that Angular 2+ went all in on RxJS, while other frameworks could perfectly live with only promises.
+  - IMO the choice for RXJS causes a way too high learning curve. 
+  - And also are error prone because unsubscribe is sometimes automatically but not always.
+- I disagree with things like react being able to live with only promises. 
+  - You end up building your own ad-hoc chains in likely buggy async/await code and probably doing it in some complex hook with race conditions or difficult to debug code. 
+  - I don't use rxjs but I see the appeal.
+
+
+- ## Babel gave us an incredibly flexible ecosystem of plugins and presets. TypeScript (as a language) limits you to using whatever language features they choose to implement.
+- https://twitter.com/mjackson/status/1361525113175171072
+  - It’s always trade-offs when it comes to engineering, but what a price for type safety!
+- TS is usually pretty good about implementing features at Stage 3
+
+
+- ## Writing app TypeScript is *way* easier than writing library TypeScript
+- https://twitter.com/tannerlinsley/status/1361159377051262977
+- I have written a couple bits of app-level TS that were fairly complex and resembled "lib"-style TS, but it was an internal abstraction that bordered on lib-like.
+  - [Thoughts as a Library Maintainer](https://blog.isquaredsoftware.com/2019/11/blogged-answers-learning-and-using-typescript/)
+- TS keeps your app consistent. Found a better way to structure some object? Change it and TS tells you all the places you need to fix its usage.
+- Generics come in handy quite a lot, but I never reach for them right away. 
+  - I just write the code I need and always try to think about how to avoid `any` , and if I end up factoring out reusable stuff at all, generics tend to emerge as the right solution.
+- Needing generics in app code tends to be rare. 
+  - Typescript is fantastic for defining API boundaries such as component props.
+- In our team, we start types without genetics, but add them if we need more reusable parts, and more type safety around those parts. 
+  - We try to communicate intent rather than expectation.
+
 - ## Don’t use `delete` to remove a property from an object.
 - https://twitter.com/SimonHoiberg/status/1357998820106399744
   - Instead, use the rest operator to create a new copy without the given property.

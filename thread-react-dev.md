@@ -11,6 +11,13 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+
+- ## Is there still no answer to composing forwarded and internal refs in React?
+- https://twitter.com/ryanflorence/status/1361519704821538820
+- what is the core use case behind needing this? 
+  - When you want to use the ref within your component but also want to allow component user to pass a ref
+- I always just used callback refs like so.
+
 - ## saw so many tweets about how cm and suspense are useless etc. 
 - https://twitter.com/0xca0a/status/1358703189428752384
   - if you have ever tried R3F you know how it simplifies things that otherwise would cost you an arm and a leg. 
