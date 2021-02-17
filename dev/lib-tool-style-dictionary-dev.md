@@ -17,7 +17,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
 
 - extensions
-  - 扩展输出的format，自动生成简单的单页文档，类似theo输出html
+  - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
 
 - tips
   - 先基于theme specification定义输出design tokens的类别和名称
@@ -32,10 +32,13 @@ modified: '2021-01-02T18:08:07.806Z'
 
 # faq
 
-- s-d vs theo
-  - Theo uses json or yaml and takes a file-in file-out strategy. 
+- style-dictionary vs theo
+  - Theo uses json or yaml and takes a file-in file-out strategy.
   - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
-  - 工具要考虑后期集成：theming, css in js
+  - ref
+    - 工具要考虑实现或集成：theming, css in js
+    - You can also create a custom tool (Adobe did this). 
+    - 甚至考虑用通用工具如google spreadsheet来存放tokens
 
 - 是否该用工具生成design tokens外，还生成所有组件的样式？
   - 若自动生成所有组件样式
@@ -46,6 +49,12 @@ modified: '2021-01-02T18:08:07.806Z'
   - 用style-dictionary来写所有组件的样式，还是只书写通用变量
     - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
     - 若只书写tokens，则需要再用sass来书写组件样式
+  - 折中方案
+    - 用工具只生成各个变量，然后手写各组件样式时只用变量值
+
+- referencing/alias transform vs transitive transform
+  - the current implementation only transforms and resolves once, and transformation on values containing references do not work.
+  - This 3.0 change enables this transitive dependencies, by executing "transform & resolve" until all transformations are executed.
 
 - output css vars
   - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
@@ -56,7 +65,7 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - 是否要在输出样式的顶层，再加上一层`:root{}`或 `.dark-theme{}`
   - tokens一般要在具体组件的scss中使用
-  - [can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
+  - [I can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
     - You could write a custom format that does this too if you can't wait for that change to be made into the core library
 
 - 不是输出一个大文件，而是输出各小文件
@@ -162,7 +171,7 @@ modified: '2021-01-02T18:08:07.806Z'
 - A property is transformed for use in different platforms, languages, and contexts.
 - A property file organizes properties in a structured way for quick access. 
   - Property files are organized as a deep object with the leaf nodes being the style `key:value` pairs.
-- Any object in the JSON that has a `value` attribute on it is a property
+- **Any object in the JSON that has a `value` attribute on it is a property**
   - For any properties you wish to output, the `value` attribute is required. 
   - This provides the data that will be used throughout the build process (and ultimately used for styling in your deliverables). 
   - You can optionally include any custom attributes you would like (e.g. `comment` with a string or `metadata` as an object with its own attributes).

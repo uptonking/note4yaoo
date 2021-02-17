@@ -18,7 +18,7 @@ modified: '2021-02-09T13:40:11.536Z'
 - 实现组件theming的方法(用css vars)
   - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
     - 考虑到设计规则会使组件级变量名唯一，所以组件级变量也是全局级变量，实现新主题就很方便
-    - 这两个方案的组件的样式值几乎都是css变量，灵活性极高，但变量数量太多手写慢
+    - 两者所有组件的样式值几乎都是css变量，灵活性极高，但变量数量太多手写慢
   - 实现组件的不同theme都是(通过添加新类名如.pf-t-dark/.spectrum-dark)修改组件级变量的值
     - patternfly需手动书写在新主题下该组件级变量的值
     - spectrum可以自动生成各套主题对应的组件级变量的新值，也可手写
@@ -35,7 +35,7 @@ modified: '2021-02-09T13:40:11.536Z'
     - patternfly未完整实现暗主题，现有部分很不成熟且少，只是将全局级变量和组件级变量命名为中立名如--pf-c-button--m-primary--Color(代表字颜色)，然后在明主题下值为light-100(蓝底的白色字)，在暗主题下值为dark-100(白底的蓝色字，名称为dark却代表蓝色)
       - 使用的是不同名的全局变量值，在不同主题下值也不同
     - spectrum明主题下gray100最白、gray900最黑，暗主题下gray100最黑、gray900最白
-      - 使用的是同名的全局变量值，但在不同主题下具体值不同
+      - 使用的是同名的全局变量值，但在不同主题下具体值不同，极易思维混乱
 
 - 实现theme切换的方法
   - 核心思路
@@ -73,7 +73,7 @@ modified: '2021-02-09T13:40:11.536Z'
 
 - css-coding-tips
   - css-reset依赖全局级css vars，经常将两者放在一个文件或挨着@import
-  - css vars的polyfill有些只支持全局级变量
+  - css vars的polyfill有些只支持全局级变量，要考虑支持IE浏览器
   - css-framework-global-config
     - theme, size, lang(标准html属性), dir/ltr/rtl(标准html属性)
     - 同时支持多种配置方式，优先级: 自定义配置类名 > 标准属性值 > 框架默认值
@@ -102,7 +102,7 @@ modified: '2021-02-09T13:40:11.536Z'
 - spectrum
   - 用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
   - 提供了组件级css vars，组件级变量也是全局级，分为`--spectrum-global/button/...`
-  - 切换theme通过在html标签添加多个class实现，包括scale, color, ltr-direction等，示例的中添加的class超级多，其中包括serif字体
+  - 切换theme通过在html标签添加多个class实现，包括scale, color, ltr-direction等，示例的中html元素的class超级多，其中包括serif字体
 
 - patternfly
   - [Patternfly 4 Guidelines](https://pf4.patternfly.org/guidelines/)

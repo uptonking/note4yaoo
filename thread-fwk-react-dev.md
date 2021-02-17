@@ -13,6 +13,26 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## I envy the mental capacity of folks who can be productive prototyping with single-file components.
+- https://twitter.com/dan_abramov/status/1361792509601607685
+  - React lets me write garbage code (for prototyping) and I love that. 
+  - Got a single 1K line file, ~10 components, changing their names/structure all the time. 
+- I'm not sure what the difference is here. At least in Vue, single-file components allow you to do the very thing that you describe for prototyping:
+  - Everything in one file? Check.
+  - Define multiple components in the same file? Check.
+  - As a React and Vue user I can relate
+  - With Vue SFC I really have to plan the components in advance; 
+  - sometimes I get it right, sometimes I get it wrong, 
+  - but refactoring them is painful. 
+  - Meanwhile with React I can just refactor them like normal functions
+- It's exactly the opposite for me - I split into smaller files to navigate more easily. 
+  - I envy the technical skills of people who are able to navigate 1K line file productively
+- A big file doesn't mean your code is garbage. 
+  - You will know its boundaries better after a while and you can split it up and give it good names. 
+  - But that's usually the path towards good code. 
+  - Premature organization by arbitrary rules can make it harder to see better patterns.
+- I prefer react style allowing me to compose multiple components in one file, especially when it's something like a drop-down component, or something where I may not reuse some of the other components.
+  - I like embers conventions for structures and uniformity, and then I like svelte for the simple and fast dev process.
 
 - ## how to debug @reactjs components?
 - https://twitter.com/sseraphini/status/1361300393544855554
@@ -22,13 +42,12 @@ modified: '2021-01-06T14:40:03.364Z'
 - How to debbug JS:
   - Old school - alert
   - New Kids on The Block - console.log
-  - Bonkers - debbuger;
+  - Bonkers - debbuger; 
   - Noobs - Dev tools
 - I prefer debugger, or debugger statements, which is basically flexible console.log
 - Break points (debugger) is the only way I debug anything in any language.
 - Devtools. Breakpoints
 - useDebugValue to custom hooks
-
 
 - ## I smell an antipattern.
 - https://twitter.com/erikras/status/1361606811971952641

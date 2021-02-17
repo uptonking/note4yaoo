@@ -15,7 +15,7 @@ modified: '2020-12-08T13:29:27.651Z'
 
 # guide
 
-# koa vs express
+# express vs koa
 
 - [多维度分析 Express、Koa 之间的区别](https://zhuanlan.zhihu.com/p/115339314)
   - 本文从 Handler 处理方式、中间件执行机制的实现、响应机制三个维度来对 Express、Koa 做了比较，

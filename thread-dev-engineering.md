@@ -13,7 +13,10 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Introducing Blazepack - a super fast dev server powered by @codesandbox sandpack bundler.
+- https://twitter.com/ameerthehacker/status/1361615692294852613
+  - Supports @reactjs, @vuejs, @angular
+-  It is a thin wrapper around the sandpack bundler, so it support React fast refresh, HMR and all the cool stuffs that sandbox supports
 
 - ## How are some of you actually working on _side tech projects_? I'm struggling to even maintain energy for day-job projects lately.
 - https://twitter.com/brian_d_vaughn/status/1361520253604421634

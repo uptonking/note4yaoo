@@ -14,7 +14,7 @@ modified: '2020-11-13T07:29:55.201Z'
     - polaris,fluid,官方examples
   - theming(推荐css vars)
     - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
-    - 切换theme基于修改同名css vars的值，具体可以是切换包含这些css vars的类名
+    - 切换theme基于修改同名css vars值，具体可以是切换包含这些css vars的类名
   - vanillajs组件的实现(推荐实现为一个单独的包)
     - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
   - react组件(推荐hooks)

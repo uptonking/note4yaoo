@@ -17,7 +17,7 @@ modified: '2021-02-09T13:39:41.705Z'
   - css变量值会提升，所以可先使用再声明
   - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
     - 不能用`font-size: var(--scale) + 'px';`
-  - css变量值不能用在普通样式属性名，不能用在media query名称中
+  - css变量值不能用在普通样式属性名，不能用在media query名称中，可用sass插值
 
 # popular
 

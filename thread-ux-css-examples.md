@@ -11,6 +11,11 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## A table that has a sticky header *and* a sticky first-column. 
+- https://twitter.com/JoshWComeau/status/1361741382759636993
+  - Pure CSS solution too, via `position: sticky` and some clever stacking orders. No JS required!
+  - [A table with both a sticky header and a sticky first column](https://css-tricks.com/a-table-with-both-a-sticky-header-and-a-sticky-first-column/)
+- I used this solution in a project with a large table for mobile. It’s a little difficult to use, but do the job.
 
 - ## Generate abstract geometric art using a delightful free tool. Includes 11 different styles and a ton of customization.
 - https://twitter.com/JoshWComeau/status/1359399954347929604
