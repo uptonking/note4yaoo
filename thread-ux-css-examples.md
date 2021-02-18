@@ -11,6 +11,14 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Digging this fluid-type implementation
+- https://twitter.com/JoshWComeau/status/1362128684639940608
+  - [Fluid typography with CSS clamp](https://piccalil.li/tutorial/fluid-typography-with-css-clamp)
+- I’m a big fan of clamp()
+  - it’s decent at doing what I like to do the most with CSS: 
+  - let the browser do its job with some hints at how to do it. 
+  - It also provides just the right amount of control, which is handy for layout elements, too.
+
 - ## A table that has a sticky header *and* a sticky first-column. 
 - https://twitter.com/JoshWComeau/status/1361741382759636993
   - Pure CSS solution too, via `position: sticky` and some clever stacking orders. No JS required!

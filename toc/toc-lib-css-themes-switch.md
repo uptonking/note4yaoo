@@ -64,6 +64,9 @@ modified: '2021-02-09T13:40:11.536Z'
   - 尝试2 `:root:not([class*='theme-dark' i])`
     - 谨慎用此法，伪类+:not属性选择器的特指度 高于 单个类选择器/单个属性选择器
 
+- dark-mode
+  - 要测试黑暗模式下系统滚动条的效果，如低版本safari的滚动条未变黑
+
 - ref
   - search: pure css, css only, css framework, css vars
   - https://github.com/topics/css-framework?o=desc&s=updated

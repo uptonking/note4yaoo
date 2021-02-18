@@ -11,6 +11,12 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## 
+
+- ## My life has gotten better since making Code my default Git editor.
+  - git config --global core.editor "code --wait"
+  - git config --global -e
+
 - ## TIL: LinkeDOM can replace JSDOM in Jest, with JSX behind the scene, and the result seems convincing
 
 - ## friendly reminder: whenever somethings not working the *first* thing to do is `rm -rf node_modules` then reinstall dependencies

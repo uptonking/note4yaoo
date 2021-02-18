@@ -26,13 +26,20 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## CSS question, for folks with a deeper understanding of browser mechanics than me: Is there a difference between “layers” and “stacking contexts”?
+- https://twitter.com/JoshWComeau/status/1362073864495370240
+  - As far as I can tell, they're synonyms used in different contexts — layers are mentioned in terms of animation performance, stacking contexts in terms of layout and z-index. But are they actually discrete concepts? If so, what's the distinction?
+- Yes, any transform (or non-0 opacity) (i.e. on the h1) creates a stacking context which would normally stack above the list. 
+  - However, `position: relative` explicitly stacks the list above the in-flow content (including that implicit context).
+- I think stacking contexts don't get browser's GPU acceleration like composite layers
+- it seems like if there is a difference, stacking contexts could refer to more rules than just layers. 
 
 - ## The lesson: only use comma-separated selectors when those selectors have broad browser support. 
 - https://twitter.com/JoshWComeau/status/1359213597331763200
-  - When using browser-prefixed things, or cutting-edge stuff like `:focus-within`, you should repeat the rules instead.
+  - When using browser-prefixed things, or cutting-edge stuff like `:focus-within` , you should repeat the rules instead.
 - Here's what's going on: 
   - the comma operator is used to apply the same CSS rule to multiple selectors, but in order for it to work, *all selectors must be valid*.
-  - When Chrome sees `-moz-range-track`, it doesn't recognize it, and it invalidates the *entire rule*.
+  - When Chrome sees `-moz-range-track` , it doesn't recognize it, and it invalidates the *entire rule*.
 - Firefox ignored but not fails on `-webkit-*` for compatibility reasons, since devs are/were littering their CSS with it and it was breaking sites in Firefox.
 
 - ## print-to-pdf is almost good enough. Are there CSS tricks you can use to improve page breaks?

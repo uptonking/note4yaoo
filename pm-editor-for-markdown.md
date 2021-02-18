@@ -23,6 +23,9 @@ modified: '2020-10-22T13:33:45.146Z'
 
 - table editor for markdown
 
+- json editor
+  - json <> json5
+
 - later
   - pdf studio阅读的文字是正常的，但复制文字粘贴下来却很多乱码，，，很安全
   - mobile reponsive editor

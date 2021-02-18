@@ -11,6 +11,16 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## Should You Use useMemo in React? A Benchmarked Analysis.
+- https://twitter.com/tannerlinsley/status/1362119303793844226
+- It's true that useMemo is not free, but IMO this article is somewhat misleading. 
+  - The reason the slowdown for initial render gets so large is because this benchmark returns that huge object from useMemo (so it's being stored!) 
+  - It's not algorithmic complexity but memory cost.
+  - In the example with n = 5000, we have 10000 components, and each of them stores an array with 5000 objects in it. If you look at the Memory tab, this gets our page to 1GB memory usage! At that point it's not that surprising it would slow down.
+  - If we return a primitive value from useMemo (e.g. result of an expensive calculation — which is what it's meant for), the perf gap almost disappears in my testing.
+  - So yes, useMemo may slowdown because it uses computer memory, and holding onto 1GB might not be the best idea.
+  - There is still a broader point about unnecessary useMemo being unnecessary, but the claim that it by itself causes such a drastic algorithmic slowdown on first render doesn't appear to be true. But holding onto large objects — and lots of them — does have a cost, useMemo or not.
+- But using useMemo not just for a value or loop but to memoise the children when there's loads that rarely need to rerender would be super beneficial and not covered here? Also (not sure on this) but when fetching data from an API it would help (when not using some other lib).
 
 - ## Is there still no answer to composing forwarded and internal refs in React?
 - https://twitter.com/ryanflorence/status/1361519704821538820
@@ -31,9 +41,7 @@ modified: '2021-01-06T14:40:11.360Z'
   - For a state machine approach I tend to subscribe components individually, even if all they do is call `setState({})` on themselves.
 - And if you use a non-vdom library, whole app re-renders might even be cheap 
   - That depends on reference equality bailouts same as VDOM though. 
-
-    - In both cases, a top-level rerender with entirely new data is worst-case perf.
-
+  - In both cases, a top-level rerender with entirely new data is worst-case perf.
   - There should be far fewer such checks in a sparse tree of template bindings than a full vdom tree. It would be less by the ratio of bindings to leaf DOM nodes.
   - true, assuming minimal composition of templates.
 

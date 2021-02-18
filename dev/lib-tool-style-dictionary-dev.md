@@ -13,8 +13,8 @@ modified: '2021-01-02T18:08:07.806Z'
   - 方便将design tokens输出到各个平台
 
 - s-d cons
-  - 暂不支持输出文件的值中包含`var(--name)`形式的css变量，可自己实现
   - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
+  - ~~暂不支持输出文件的值中包含`var(--name)`形式的css变量~~
 
 - extensions
   - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
@@ -33,7 +33,7 @@ modified: '2021-01-02T18:08:07.806Z'
 # faq
 
 - style-dictionary vs theo
-  - Theo uses json or yaml and takes a file-in file-out strategy.
+  - Theo uses json, json5 or yaml and takes a file-in file-out strategy.
   - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
   - ref
     - 工具要考虑实现或集成：theming, css in js
@@ -53,8 +53,16 @@ modified: '2021-01-02T18:08:07.806Z'
     - 用工具只生成各个变量，然后手写各组件样式时只用变量值
 
 - referencing/alias transform vs transitive transform
-  - the current implementation only transforms and resolves once, and transformation on values containing references do not work.
+  - Before version 3.0, Style Dictionary did not have transitive transforms though. 
+    - While you could reference non-token values, you would not be able to then transform the value if it had a reference in it.
+  - the current(v2) implementation only transforms and resolves once, and transformation on values containing references do not work.
+    - it would iterate through the merged object and transform tokens it found, but only do value transforms on tokens that did not reference another token.
+    - The original intent here was that a value of any reference should be the same for all references of it, so we only need to do a value transform once.
+    - Then after all tokens are transformed, resolve all aliases/references.
   - This 3.0 change enables this transitive dependencies, by executing "transform & resolve" until all transformations are executed.
+  - transitive
+    - 支持引用非样式值，能获取到json数组中某个索引下标的值，如分开存放rgb/hsl
+    - 支持添加自定义属性如modify，然后tranform引用值
 
 - output css vars
   - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
@@ -306,6 +314,15 @@ modified: '2021-01-02T18:08:07.806Z'
 - Pre-defined Transform groups
   - attribute/cti name/cti/kebab size/px color/css
   - attribute/cti name/cti/pascal size/rem color/hex
+
+- the registration of custom transforms needs to be done before applying the configuration 
+  - (the methods needs to be already declared and registered in Style Dictionary to be used when extending it with the configuration).
+- the name of a custom "transform" can be the same as an existing pre-defined method; 
+  - in that case, the pre-defined method is overwritten
+- beyond the existing attributes, you can use custom attributes to create matcher functions, 
+  - used to filter the properties and apply the transform only to those that match the filter condition.
+- if you don't specify a matcher, the transformation will be applied to all the properties
+- the transformation can be applied not only to the value of a property, but also to its name (and also to its attributes)
 
 ## [Formats & Filter](https://amzn.github.io/style-dictionary/#/formats)
 

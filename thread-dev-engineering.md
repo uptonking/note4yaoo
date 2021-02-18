@@ -13,6 +13,12 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## The reason Vite requires .jsx extension for JSX processing is because in most cases plain .js files shouldn't need full AST transforms to work in the browser.
+- https://twitter.com/RyanCarniato/status/1362178225493839874
+  -  Allowing JSX in .js files means every served file must be full-AST-processed just in case it contains JSX.
+- We have been struggling about enforcing this because it makes so much sense, but figured there wouldn't be enough community backing. 
+  - But if major tools like Vite go this way that is amazing. It never should have been just .js when you consider compilation
+
 - ## Introducing Blazepack - a super fast dev server powered by @codesandbox sandpack bundler.
 - https://twitter.com/ameerthehacker/status/1361615692294852613
   - Supports @reactjs, @vuejs, @angular

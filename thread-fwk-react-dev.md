@@ -13,6 +13,14 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## One of the challenges of building React component libraries is to not impose any specific styling solution to the App code.
+- https://twitter.com/pomber/status/1362125599607820290
+  - My approach is to use a `classes` prop
+  - That makes the component interoperable with almost all styling solutions.
+  - 本已有10种方案，作者又提出了一种，于是有了11种方案；更应该参考大公司方案
+- I like this approach a lot, I have this same problem with my company’s component library used in multiple apps with different styling solutions, 
+  - I initially used Tailwind but ended up ditching it and providing behavior only components without styles
+
 - ## I envy the mental capacity of folks who can be productive prototyping with single-file components.
 - https://twitter.com/dan_abramov/status/1361792509601607685
   - React lets me write garbage code (for prototyping) and I love that. 
