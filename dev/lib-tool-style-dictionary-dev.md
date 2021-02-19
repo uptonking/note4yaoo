@@ -11,6 +11,7 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - s-d pros
   - 方便将design tokens输出到各个平台
+  - 支持输出scss，也支持输出css vars，所以可以针对ie浏览器build适合的格式
 
 - s-d cons
   - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
@@ -61,12 +62,11 @@ modified: '2021-01-02T18:08:07.806Z'
     - Then after all tokens are transformed, resolve all aliases/references.
   - This 3.0 change enables this transitive dependencies, by executing "transform & resolve" until all transformations are executed.
   - transitive
-    - 支持引用非样式值，能获取到json数组中某个索引下标的值，如分开存放rgb/hsl
+    - 支持引用非样式值，能获取json数组中某索引下标的值，如分开存放rgb/hsl
     - 支持添加自定义属性如modify，然后tranform引用值
 
 - output css vars
   - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
-    - Allow for variable references in output files.
     - Adding a `useVariables` configuration on SCSS, CSS, and Less variables formats to make use of this
   - [Feature/css var deep_202008](https://github.com/amzn/style-dictionary/pull/428)
     - This one also currently supports CSS variables flat, split out dark tokens
@@ -76,14 +76,91 @@ modified: '2021-01-02T18:08:07.806Z'
   - [I can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
     - You could write a custom format that does this too if you can't wait for that change to be made into the core library
 
-- 不是输出一个大文件，而是输出各小文件
+- 不输出一个大文件，而输出各小文件
   - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
     - example of automatically generating 1:1 token files based on a custom filter.
 
 - 如何生成tokens的简单说明文档，类似theo输出html format
   - [Style guide? ](https://github.com/amzn/style-dictionary/issues/477)
 
+- [Specifications for property values](https://github.com/amzn/style-dictionary/issues/461)
+
 # pieces
+
+- ## component tokens
+- [json to scss](https://github.com/amzn/style-dictionary/issues/492)
+  - The way I would do this is create a custom format and template.
+  - I have done something similar in some projects, but instead used a custom action to build the files.
+    - The action grabs parts of the dictionary under the component namespace and passes the entire component object to a formatter to generate the SCSS file. 
+    - This way you can add more components without needing to add more files to the configuration.
+
+- ## s-d examples
+- component-cti
+  - All of the built-in transforms target tokens using the CTI attributes.
+    - The built-in `attribute/cti` transform adds the CTI attributes to each token based on the object path of the token. 
+  - In this example we override the default behavior of the `attribute/cti` transform to apply CTI attributes based on token's key, or last part of the object path to generate the equivalent category and type. 
+    - This way we can correctly map a token with an object path of `component.button.background-color` to a category of `color` and type of `background`.
+    - we monkey patch the `attribute/cti` transform to look at the top-level namespace of the token and if it is 'component', 
+      - instead of running the default attribute/cti transform, it instead looks at the last part of the object path to generate the equivalent category and type.
+    - This example uses CSS property names, but you could also change it to use similar React/CSS-in-JS names like 'backgroundColor' instead of 'background-color'.
+  - Style Dictionary allows for extensibility through monkey patching. 
+    - This allows you to override the default behavior of the Style Dictionary library, and any built-in transforms and formats.
+    - You can override built-in transforms and formats by adding ones with the same name. 
+    - Also, all of the built-in transforms, transformGroups, and formats are available by accessing them in the Style Dictionary library under the attributes transform, transformGroup, and format respectively. 
+  - `propertiesToCTI`: A plain object where we map the CSS property name to the proper category and type.
+
+- custom-formats-with-templates
+  - This example shows how to generate design tokens files with custom formats using "custom" template files/engines. 
+    - registerFormat API method is invoked, passing a custom name for the format (whatever string you like) and a formatting function that returns the content to be saved to file.
+    - For the formatting function, it's possible to use any templating language (Lodash, Mustache, PUG, anything that can return a string). 
+  - This is useful when you need to distribute your design tokens and integrate them with custom pipelines or scripts, that expect specific formats
+  - web-scss.template: this is a template that uses Lodash`_.template`
+  - android-xml_alt.hbs: this is an alternative example of custom XML format for Android, that uses Handlebar as templating language.
+
+- custom-transforms
+  - This example shows how to use custom transforms (and transformGroups) to apply custom "transformations" to the properties when converted to design tokens.
+  - The reason for transforms is that in this way each platform can consume the property in different ways 
+  - the transformation can be applied not only to the value of a property, but also to its name (and also to its attributes)
+
+- matching-build-files
+  - This example shows how you can manage what tokens are generated and how they are organized. 
+  - This is useful when you want to generate a 1:1 relationship between build files and token categories.
+
+- multi-brand-multi-platform
+  - This example shows how to setup a multi-brand, multi-platform suite of design tokens, with values that may depend on the brand (eg. a brand color) or the platform (eg. a font family).
+
+- node-modules-as-config-and-properties
+  - tokens和config都用js书写，而不是用json
+  - Style Dictionary understands node modules that export a simple object for both a config file as well as the property source files. 
+  - Using node module exports allows you to do some pretty cool things like generating properties programmatically (design tokens).
+  - The `.extend()` method on the Style Dictionary module can take an object or a path to a JSON or node module and it copies the object attributes onto a new copy of the Style Dictionary object. 
+    - The Style Dictionary object stores the transforms, transformGroups, and formats as attributes on the SD object. 
+    - You can override these defaults by directly adding these attributes to your config object. 
+    - This allows you to add custom transforms and formats without calling `.registerTransform()`!
+
+- referencing_aliasing
+  - This example shows how to use referencing (or "aliasing") to reference a value -or an attribute– of a property and assign it to the value –or attribute– of another property.
+  - You can also reference other attributes of a property, not only its value. 
+
+- tokens-deprecation
+  - the deprecated attributes have been converted to comments (and extra properties in the plist) in the output files.
+
+- transitive-transforms
+  - Before version 3.0, Style Dictionary did not have transitive transforms though. 
+  - While you could reference non-token values, you would not be able to then transform the value if it had a reference in it.
+
+- variables-in-outputs
+  - This example shows how you keep aliases/references intact in certain types of formats as well as in custom formats.
+  - Common use cases include: Vending theme-able output like CSS variables
+
+- yaml-tokens
+  - This example shows how to use a custom parser to define yaml token files.
+  - A custom parser has a regular expression pattern to match against source filenames. 
+    - The parse function is then run taking the text content of the file and returning an object. 
+    - A custom parser is like a module rule in a webpack configuration.
+
+- custom-parser
+  - 支持design tokens用任意文件格式书写
 
 # docs
 
@@ -344,6 +421,16 @@ modified: '2021-01-02T18:08:07.806Z'
   - json
   - json/flat
   - sketch/palette
+
+## [Actions](https://amzn.github.io/style-dictionary/#/actions)
+
+- Custom actions can do whatever you need, such as: copying files, base64'ing files, running other build scripts, etc. 
+  - After you register a custom action, you then use that action in a platform your config.json
+- You can perform operations on files generated by the style dictionary as actions run after these files are generated. 
+  - Actions are run sequentially, if you write synchronous code then it will block other actions, or if you use asynchronous code like Promises it will not block.
+
+- Actions provide a way to run custom build code such as generating binary assets like images.
+- You use actions in your config file under `platforms > [platform] > actions`
 
 ## [Get ready for v3](https://amzn.github.io/style-dictionary/#/version_3)
 

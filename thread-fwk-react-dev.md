@@ -13,6 +13,26 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+
+- ## can I virtualize an array of @reactjs components?
+- https://twitter.com/sseraphini/status/1362502418781642755
+  - I'd like an API like this:
+  - `<Virtualize> {arr.map(a => <Item key={a.id} a={a} /> </Virtualize>`
+- What do you mean by virtualize?
+  - I’d like to stop rendering them on DOM to make the page light
+  - For offscreen elements? Or something else?
+  - Yep, offscreen ones
+  - Offscreen elements are deprioritized in React. But that would be a great challenge, since you'd end up destroying and recreating elements every time it left the viewport.
+  - But that would be a interesting feature for React.
+  - We could check for an element position in the viewport, and check if it's inside it. And not render elements outside that viewport. But that would make the components mount/remount every time.
+- replace react-window/virtualized with react-virtuoso
+  - removed a lot of boilerplate code!
+
+
+- ## Does anyone else add `console.log()` or `debugger;` to their components in the middle of a debugging session so that Fast Refresh picks it up?
+- https://twitter.com/dan_abramov/status/1362549600511483917
+- I sometimes add a console log so I can look at it's arguments in the debugger because it's easier than looking at a massive list of props
+
 - ## One of the challenges of building React component libraries is to not impose any specific styling solution to the App code.
 - https://twitter.com/pomber/status/1362125599607820290
   - My approach is to use a `classes` prop

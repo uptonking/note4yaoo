@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Running web apps from archives (think cross-platform executables) would be an important complement to hosted PWAs.
+- https://twitter.com/rauschma/status/1362440337705365504 
+  - Does anyone know why there is so little progress in this area (AFAICT)?
+  - https://github.com/WICG/webpackage 
+  - Web packaging format
+- I think a big problem is the origin of a bundle: it's not HTTP, and it doesn't have a domain. 
+  - That breaks a lot of assumptions about security and privacy on the web. 
+  - Still would be interested in seeing this developed though.
+- [Dynamic bundle serving with WebBundles](https://docs.google.com/document/d/11t4Ix2bvF1_ZCV9HKfafGfWu82zbOD7aUhZ_FyDAgmA/edit#)
+
 - ## When you set an `id` to an HTML element it... becomes a global JavaScript variable referencing that element
 - https://twitter.com/stackblitz/status/1359525093601382406
   - Beware of relying on globals!

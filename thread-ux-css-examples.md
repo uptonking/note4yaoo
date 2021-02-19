@@ -11,6 +11,13 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## 4 layouts for the price of 1, thanks flex
+- https://twitter.com/argyleink/status/1217213431947747328
+  - https://codepen.io/argyleink/pen/LYEegOO
+- You may also like CSS Grid for such responsive permutations
+  - https://codesandbox.io/s/responsive-form-fikwv
+
 - ## Digging this fluid-type implementation
 - https://twitter.com/JoshWComeau/status/1362128684639940608
   - [Fluid typography with CSS clamp](https://piccalil.li/tutorial/fluid-typography-with-css-clamp)
