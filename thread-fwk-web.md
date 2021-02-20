@@ -11,6 +11,13 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## [I was impressed by @pmndrs valtio, so I decided to figure out how to implement a proxy state like valtio, using valtio's test cases.](https://twitter.com/lihautan/status/1361481299970592770)
+  - Tips on get a deeper understanding of the library you are using
+  - Try implement the library based on the public API and test cases, figure out how it might be implemented.
+  - Peek into the source code if you are stucked.
+  - https://www.youtube.com/watch?v=uZnO2G8pqn0
+  - It's very interesting to see someone like you got interested in the vanilla version. I heard someone else is using it in vanilla. I had no idea if it's useful in vanilla when I started, as its goal was to implement an API that is compatible with React's useMutableSource.
+
 - ## Running web apps from archives (think cross-platform executables) would be an important complement to hosted PWAs.
 - https://twitter.com/rauschma/status/1362440337705365504 
   - Does anyone know why there is so little progress in this area (AFAICT)?

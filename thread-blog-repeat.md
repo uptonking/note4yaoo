@@ -34,6 +34,10 @@ modified: '2021-02-09T19:25:17.381Z'
   - Creating a node
   - Summary
 
+- [Building a simplified webpack clone](https://lihautan.com/building-a-simplified-webpack-clone/)
+
+- [Step-by-step guide for writing a custom babel transformation](https://lihautan.com/step-by-step-guide-for-writing-a-babel-transformation/)
+
 # frontend
 
 # backend

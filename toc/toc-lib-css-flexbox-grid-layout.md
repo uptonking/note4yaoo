@@ -72,6 +72,11 @@ modified: '2021-01-28T21:31:18.697Z'
   - https://codepen.io/aholachek/pen/VXjOPB
   - Painless transitions for CSS Grid
 
+- https://github.com/kieler/elkjs/
+  - The Eclipse Layout Kernel (ELK) implements an infrastructure to connect diagram editors or viewers to automatic layout algorithms. 
+  - This library takes the layout-relevant part of ELK and makes it available to the JavaScript world. 
+  - ELK's flagship is a layer-based layout algorithm that is particularly suited for node-link diagrams with an inherent direction and ports (explicit attachment points on a node's border). 
+
 # ref
 
 - [csslayout](https://github.com/phuoc-ng/csslayout)

@@ -1,11 +1,11 @@
 ---
-title: lib-pattern-callbag-dev
+title: pattern-lib-callbag
 tags: [callbag, pattern]
 created: '2020-12-15T09:40:19.722Z'
 modified: '2020-12-20T15:41:43.270Z'
 ---
 
-# lib-pattern-callbag-dev
+# pattern-lib-callbag
 
 # guide
 

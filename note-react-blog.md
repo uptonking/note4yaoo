@@ -690,3 +690,7 @@ class FavoriteNumbers extends React.Component {
   - We know now that effects run after every render, are conceptually a part of the component output, and “see” the props and state from that particular render.
   - Closures are great when the values you close over never change. That makes them easy to think about because you’re essentially referring to constants.
   - And as we discussed, props and state never change within a particular render.
+
+# ref
+
+- [The Current State of HoC, Hooks, and Render Props](https://webup.org/blog/the-current-state-of-hoc-hook-and-render-props/)

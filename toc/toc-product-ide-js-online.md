@@ -10,8 +10,8 @@ modified: '2020-12-08T14:43:00.091Z'
 # vscode-powered
 
 - https://github.com/cdr/code-server
+  - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
-  - all intensive tasks run on your server
 
 ## CodePen
 

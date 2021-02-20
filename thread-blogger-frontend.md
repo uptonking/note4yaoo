@@ -26,6 +26,13 @@ modified: '2021-02-09T19:27:01.319Z'
     - https://github.com/gaearon
   - artwork: redux
 
+- Tan Li Hau
+  - svelte
+  - https://twitter.com/lihautan
+  - https://lihautan.com/blogs/
+  - blogs
+    - [Building a simplified webpack clone](https://lihautan.com/building-a-simplified-webpack-clone/)
+
 - 司徒正美
   - react，anu
   - https://www.zhihu.com/people/si-tu-zheng-mei/posts

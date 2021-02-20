@@ -89,6 +89,10 @@ modified: '2021-01-28T21:14:14.667Z'
 - https://github.com/OfficeDev/office-ui-fabric-core
   - Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
+- https://github.com/5t3ph/smolcss
+  - https://smolcss.dev/
+  - Minimal snippets for modern CSS layouts and components
+
  
 
 - https://github.com/andrearufo/nova.css

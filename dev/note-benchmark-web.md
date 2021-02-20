@@ -7,6 +7,11 @@ modified: '2020-07-14T09:28:43.976Z'
 
 # note-benchmark-web
 
+# js
+
+- [JS: Benchmarking Lazy Getters](https://webreflection.medium.com/js-benchmarking-lazy-getters-9b132f45c15e)
+  - Lazily evaluating properties is not just handy, but mandatory in some case.
+
 # frontend-framework
 
 - [前端框架基准测试最新结果：18个框架当中有13个达到顶级](https://www.infoq.cn/article/UHsl0gogHtL2BM*vJIOs)

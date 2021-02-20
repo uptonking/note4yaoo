@@ -1,12 +1,14 @@
-[
-	{
-		"path": "$ROOTPATH$/log-dev-pieces-frontend.md",
-		"bookmarks": [
-			{
-				"line": 11,
-				"column": 0,
-				"label": ""
-			}
-		]
-	}
-]
+{
+	"files": [
+		{
+			"path": "log-dev-pieces-frontend.md",
+			"bookmarks": [
+				{
+					"line": 11,
+					"column": 0,
+					"label": ""
+				}
+			]
+		}
+	]
+}

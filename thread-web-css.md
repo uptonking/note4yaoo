@@ -26,6 +26,33 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Braid uses arrays for responsive props, but I've realised objects are much better:
+- https://twitter.com/markdalgleish/status/1362779695683543041
+  - No need to plug holes with null, e.g. ['small', null, 'large']
+  - Adding new breakpoints between existing ones isn't a breaking change
+  - Types are simpler, e.g. `Partial<Record<Breakpoint, Space>>`
+
+- Once you add it all up, I feel like it's tough to argue for responsive prop arrays over objects.
+- I've been leaning on a more CSS approach recently either through a mediaQueries/variants prop:
+
+``` jsx
+<Stack
+  direction="column"
+  mediaQueries={{ 'medium': { direction: 'row'  } }}
+/>
+```
+
+  - More typing, but when you have a lot going on it's easier to discern IMO.
+
+- Yeah, I believe Chakra supports both so you get the simplicity of the array for simple cases and the advantages you mention for the more complex ones. 
+  - Loses some of the typing simplicity benefit though.
+- We use them in our custom component system.
+  - Btw braid inspired us a lot when we started to draft layout components API, so thank you very much
+- Agreed. We swapped early on and never looked back.
+  - Objects are much easier to parse and read too imp
+- A related question: Do you define those breakpoints in Braid, or do consumers define those? Or I suppose you could provide defaults they override in the theme.
+  - They're defined in Braid.
+
 - ## CSS question, for folks with a deeper understanding of browser mechanics than me: Is there a difference between “layers” and “stacking contexts”?
 - https://twitter.com/JoshWComeau/status/1362073864495370240
   - As far as I can tell, they're synonyms used in different contexts — layers are mentioned in terms of animation performance, stacking contexts in terms of layout and z-index. But are they actually discrete concepts? If so, what's the distinction?

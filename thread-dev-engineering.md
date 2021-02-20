@@ -13,6 +13,20 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Sometimes it’s overwhelming to change some complex feature in the existing code.
+- https://twitter.com/BenLesh/status/1362762796501401601
+- I used to do this. But it's often dangerous. I try to take a more measured approach now.
+  1. Make a couple of PoCs off to the side to see what I learn.
+  2. Carefully improve the code and add tests in the parts of the code I'll be touching, and see what I learn.
+  3. Add the feature.
+- I find that after part 2 above, often the approach I take is different and better than what I did in some of my PoC work.
+- The main difference between the new code and deleted code: The deleted code has been tested and hardened, if only by users. 
+  - It already has behaviors that are expected. 
+  - Depending on complexity, a "big bang" rewrite has little hope of recapturing all of that.
+- Even when I've had insane test coverage, there were missing corners. 
+  - I've found big bang rewrites have a higher probability of regression. 
+  - Better to push existing code around until it looks like a rewrite. But this is my experience.
+
 - ## The reason Vite requires .jsx extension for JSX processing is because in most cases plain .js files shouldn't need full AST transforms to work in the browser.
 - https://twitter.com/RyanCarniato/status/1362178225493839874
   -  Allowing JSX in .js files means every served file must be full-AST-processed just in case it contains JSX.

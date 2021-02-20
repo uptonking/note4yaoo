@@ -13,6 +13,13 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## 
+
+- ## What’s the best investment you’ve ever made?
+  - https://twitter.com/jmj/status/1362791801413799939
+  - building my ideas
+  - learning how to build and sell online
+
 - ## My life has gotten better since making Code my default Git editor.
   - git config --global core.editor "code --wait"
   - git config --global -e

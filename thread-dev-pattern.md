@@ -11,6 +11,10 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## Where is the course to learn how to manipulate ASTs so I can do cool things 
+- https://twitter.com/ryanflorence/status/1362840515725590528
+- [A talk](https://speakerdeck.com/xjamundx/hiking-through-the-javascript-forest) about Abstract Syntax Trees (ASTs) in JavaScript and how to use them to create codemods and eslint rules
+
 - ## where does the idea that immutability is good come from?
 - https://twitter.com/_binary_search/status/1362666809682444289
 - Predictability. 
