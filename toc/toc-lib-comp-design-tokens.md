@@ -15,7 +15,7 @@ modified: '2021-01-01T22:09:59.545Z'
 - https://github.com/infor-design/design-system
   - https://design.infor.com/code/ids-enterprise/latest
   - including design tokens, which are design metadata, and basic tools like Sketch files and icons.
-  - 实现了theming，一个主题最后输出成1个大文件，全是css变量
+  - 实现了theming，每个主题最后输出成1个大css文件，全是css变量，全局变量有前缀，组件级变量无前缀
 - [Fluid Design System Design Tokens Intro](https://www.engie.design/fluid-design-system/design-tokens/)
   - We introduce Design Tokens thanks to style-dictionary.
   - Variable naming convention follows CTI (Category/Type/Item) structure.
@@ -24,11 +24,12 @@ modified: '2021-01-01T22:09:59.545Z'
 - https://github.com/AlaskaAirlines/AuroDesignTokens
   - https://auro.alaskaair.com/getting-started/developers/design-tokens
   - Abstract UI atomic values to support the Auro Design System.
-  - 未实现theming
+  - 未实现theming，全是css变量，生成的变量有前缀
 - https://github.com/rei/rei-cedar-tokens
   - https://rei.github.io/rei-cedar-tokens/
   - https://rei.github.io/rei-cedar-docs/tokens/all-tokens/
-  - Tokens for cedar design system
+  - Tokens for cedar design system. 
+  - 未实现theming，全是scss变量，生成的变量有前缀
   - We follow the basic structure of style-dictionary with the exception being that our tokens don't follow the implicit `category-type-item` structure
     - and we abstract that into a separate `category` key
 - https://github.com/lyne-design-system/lyne-design-tokens
@@ -40,7 +41,11 @@ modified: '2021-01-01T22:09:59.545Z'
   - demonstration of a (possible) setup of Style Dictionary for the generation of design tokens. 
   - It's been created as a companion to a Medium article that I have written to share my experience in setting up Style Dictionary for our Cosmos Design System in Badoo.
 - https://github.com/ivandata/another-way-to-create-themes
+  - 例子基于vue，但样式部分很清晰，s-d生成的全是sass变量
   - Code example for [Another way to create themes](https://imalov.dev/articles/another-way-to-create-themes/) article.
+
+ 
+
 - https://github.com/growingio/gio-design-tokens
   - https://gio-design-tokens.vercel.app/
   - GrowingIO Design Tokens， 文档基于storybook

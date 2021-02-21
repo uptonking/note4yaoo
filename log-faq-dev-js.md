@@ -390,6 +390,7 @@ num1 === num2; // returns false
 
 - ref
   - [JavaScript: using constructor without operator 'new'](https://stackoverflow.com/questions/1928342/javascript-using-constructor-without-operator-new)
+
 ## call constructor function without new keyword. 使用构造函数代替类
 
 - Here's a pattern I've come across that really helps me.
@@ -485,12 +486,21 @@ const RightStaticMethods = ({
 
 # function declaration vs function expression(named vs anonymous)
 
-- namedFunc优点
+- namedFunc pros
   - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
   - 调试时的可读性更好
-- funcExpression 优点
-  - 更好的scoped，namedFunc总是提升
+  - usecase
+    - 用在class中时常需要bind(this)
+    - I prefer function because python and java both use it and I don’t get confused.
+
+- funcExpression pros
+  - 更好的scoped，namedFunc总是提升，而箭头函数是先声明再使用
   - 方便动态修改调用的函数
+  - usecase
+    - Arrow functions are especially meant to be placed inline, anonymously. 函数能写为一行时常用
+    - 箭头函数常用作事件监听器函数
+    - 箭头函数内部没有自己的局部this
+
 - Availability (scope) of the function，函数或变量会自动提升hoist
   - one difference that concerns me is when the machine creates the function object. Which in the case of declarations is before any statement is executed but after a statement body is invoked (be that the global code body or a sub-function's), and in the case of expressions is when the statement it is in gets executed. 
 - `(function(){}).name === ""` ，匿名函数表达式会返回true

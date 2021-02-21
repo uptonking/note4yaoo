@@ -195,32 +195,23 @@ modified: '2021-01-01T20:07:20.702Z'
 
 ## faq
 
-- 实现原理
+- ## s-c实现原理
   - https://dev.to/stereobooster/styled-components-one-more-time-5g0l
   - https://medium.com/styled-components/how-styled-components-works-618a69970421
-- styled(MyComp)会传递所有属性，如何只传递指定属性
+
+- ## styled(MyComp)会传递所有属性，如何只传递指定属性
   - 对于styled('tag')，s-c只传递html属性
   - 手动选出不需要传递下去的属性，然后传递给底层组件restProps
-- Why write styles inline with jsxstyle library?
+
+- ## Why write styles inline with jsxstyle library?
   - Naming things is hard
   - Jumping between JS and CSS in your editor wastes time
   - inline styles are easy to find styles and to delete
   - Styles written inline don’t remain inline
   - Building tooling around inline styles is simple and straightforward
   - webpack plugin , at build time, extracts static styles defined on jsxstyle components into separate CSS file and in some cases entirely removes the need for runtime jsxstyle
-- style vs className
-  - 使用inline style动态修改样式更方便
-  - inline styling does not support pseudos, media queries, keyframes, auto-prefix
-      - className is better for debugging
-  - The obvious conclusion must be that changing the className of an element is faster than changing its style (except in Safari)
-  - with inline styles, the browser spends more time both scripting and rendering. It spends more time in scripting because it has to map all the styles rules passed in to the component to actual css rules (remember, you have to camelCase all your css rules when using inline css in react). It ends up spending more time rendering because it has to calculate the styles for 10, 000 divs each second.
-  - Inline styles take more size in the DOM, are converted more slowly from VDOM (have probably a bigger impact on memory), and take more time to be handled by the browser. But they have no impact on performance once it’s rendered.
-  - ref
-    - https://quirksmode.org/dom/classchange.html
-    - https://webkit.org/blog/13/classname-vs-style/
-    - https://medium.com/@swazza85/use-css-modules-instead-of-inlining-styles-in-react-fea247b97431
-    - https://www.sderosiaux.com/articles/2015/08/17/react-inline-styles-vs-css-stupid-benchmark/
-- inline styles/js vs external .css/.js 
+
+- ## inline styles/js vs external .css/.js 
   - Inlining everything is the ultimate way to reduce the number of requests (in theory to one). But it’s not the best way to make your site faster.  
       - inline的3个问题：缓存、按需加载、预加载、修改与维护
       - If the HTML holds all the resources, and the HTML is not cacheable by itself, the resources are re-downloaded every time.

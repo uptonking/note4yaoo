@@ -27,63 +27,96 @@ modified: '2021-01-02T18:08:07.806Z'
   - 可以输出扁平化无嵌套的样式变量，
     - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
   - 输出的值也可以使用 css vars
+  - 建议使用js书写tokens，计算工具库更丰富，
+    - 适合以后生成gradient
+    - 适合转换颜色格式
+    - 还可以根据Shorthands自动生成完整css样式名
 
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
 
 # faq
 
-- style-dictionary vs theo
-  - Theo uses json, json5 or yaml and takes a file-in file-out strategy.
-  - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
-  - ref
-    - 工具要考虑实现或集成：theming, css in js
-    - You can also create a custom tool (Adobe did this). 
-    - 甚至考虑用通用工具如google spreadsheet来存放tokens
+- ## style-dictionary vs theo
+- Theo uses json, json5 or yaml and takes a file-in file-out strategy.
+- Style Dictionary uses json or JS modules and merges all token files into 1 big object.
+- ref
+  - 工具要考虑实现或集成：theming, css in js
+  - You can also create a custom tool (Adobe did this). 
+  - 甚至考虑用通用工具如google spreadsheet来存放tokens
 
-- 是否该用工具生成design tokens外，还生成所有组件的样式？
-  - 若自动生成所有组件样式
-    - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
-    - 不支持 伪类
-  - 若手写各个组件的样式
-    - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
-  - 用style-dictionary来写所有组件的样式，还是只书写通用变量
-    - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
-    - 若只书写tokens，则需要再用sass来书写组件样式
-  - 折中方案
-    - 用工具只生成各个变量，然后手写各组件样式时只用变量值
+- ## 是否该用工具生成design tokens外，还生成所有组件的样式？
+- 若自动生成所有组件样式
+  - 极大提高复用性，所有组件的样式都自动生成了，但对生成工具高依赖、高要求
+  - 不支持 伪类
+- 若手写各个组件的样式
+  - 极大提高组件设计修改的灵活性，花费更多精力，针对某一平台进行优化更方便
+- 用style-dictionary来写所有组件的样式，还是只书写通用变量
+  - 若书写所有，则最大化跨平台的收益，但变量处理逻辑还有很多异常
+  - 若只书写tokens，则需要再用sass来书写组件样式
+- 折中方案
+  - 用工具只生成各个变量，然后手写各组件样式时只用变量值
 
-- referencing/alias transform vs transitive transform
-  - Before version 3.0, Style Dictionary did not have transitive transforms though. 
-    - While you could reference non-token values, you would not be able to then transform the value if it had a reference in it.
-  - the current(v2) implementation only transforms and resolves once, and transformation on values containing references do not work.
-    - it would iterate through the merged object and transform tokens it found, but only do value transforms on tokens that did not reference another token.
-    - The original intent here was that a value of any reference should be the same for all references of it, so we only need to do a value transform once.
-    - Then after all tokens are transformed, resolve all aliases/references.
-  - This 3.0 change enables this transitive dependencies, by executing "transform & resolve" until all transformations are executed.
-  - transitive
-    - 支持引用非样式值，能获取json数组中某索引下标的值，如分开存放rgb/hsl
-    - 支持添加自定义属性如modify，然后tranform引用值
+- ## referencing/alias transform vs transitive transform
+- Before version 3.0, Style Dictionary did not have transitive transforms though. 
+  - While you could reference non-token values, you would not be able to then transform the value if it had a reference in it.
+- the current(v2) implementation only transforms and resolves once, and transformation on values containing references do not work.
+  - it would iterate through the merged object and transform tokens it found, but only do value transforms on tokens that did not reference another token.
+  - The original intent here was that a value of any reference should be the same for all references of it, so we only need to do a value transform once.
+  - Then after all tokens are transformed, resolve all aliases/references.
+- This 3.0 change enables this transitive dependencies, by executing "transform & resolve" until all transformations are executed.
+- transitive
+  - 支持引用非样式值，能获取json数组中某索引下标的值，如分开存放rgb/hsl
+  - 支持添加自定义属性如modify，然后tranform引用值
 
-- output css vars
-  - [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
-    - Adding a `useVariables` configuration on SCSS, CSS, and Less variables formats to make use of this
-  - [Feature/css var deep_202008](https://github.com/amzn/style-dictionary/pull/428)
-    - This one also currently supports CSS variables flat, split out dark tokens
+- ## output css vars
+- [feat(format): adding ability to have variables in output_202012](https://github.com/amzn/style-dictionary/pull/504)
+  - Adding a `useVariables` configuration on SCSS, CSS, and Less variables formats to make use of this
+- [Feature/css var deep_202008](https://github.com/amzn/style-dictionary/pull/428)
+  - This one also currently supports CSS variables flat, split out dark tokens
 
-- 是否要在输出样式的顶层，再加上一层`:root{}`或 `.dark-theme{}`
-  - tokens一般要在具体组件的scss中使用
-  - [I can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
-    - You could write a custom format that does this too if you can't wait for that change to be made into the core library
+- ## 是否要在输出样式的顶层，再加上一层`:root{}`或 `.dark-theme{}`
+- tokens值一般要在具体组件的scss中使用，而不是具体某个组件的类
+  - 若要生成具体组件的css，用主流css预处理器更好
+- [I can't generate css variables to a specific class_202007](https://github.com/amzn/style-dictionary/issues/448)
+  - You could write a custom format that does this too if you can't wait for that change to be made into the core library
 
-- 不输出一个大文件，而输出各小文件
-  - [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
-    - example of automatically generating 1:1 token files based on a custom filter.
+- ## 不输出一个大文件，而输出各小文件
+- [feat(examples): add matching build files example](https://github.com/amzn/style-dictionary/pull/481)
+  - example of automatically generating 1:1 token files based on a custom filter.
 
-- 如何生成tokens的简单说明文档，类似theo输出html format
-  - [Style guide? ](https://github.com/amzn/style-dictionary/issues/477)
+- ## 如何生成tokens的简单说明文档，类似theo输出html format
+- [Style guide? ](https://github.com/amzn/style-dictionary/issues/477)
 
-- [Specifications for property values](https://github.com/amzn/style-dictionary/issues/461)
+- ## [Specifications for property values](https://github.com/amzn/style-dictionary/issues/461)
+  - I am currently working on a figma plugin to extract and prepare design tokens to be converted using the style-dictionary. 
+  - I feel it would be helpful to specify how certain properties should be defined
+- How should units be specified?
+  - Units can be specified in the value, like "2rem". 
+  - As you noticed in the next question, some of the examples don't have units and you can't really tell what unit they are specifying. 
+  - This is because the transforms used in the configuration like 'size/remToPx' are simplistic in that they just parse the value for a number and assume it is either pixels or rems.
+- Are size values in pixel units always omitted?
+  - Not necessarily, but because all the transforms right now make assumptions of what unit they are specifying by which transform you are using in your config, specifying a unit is not necessary. 
+  - The size transforms right now are just parsing for a number, so technically you could have "12rem", "12px", or "12pixels" and the would all be parsed to the number 12, and then based on which transform is run could output "12px", "144px", or "0.75rem".
+- Should colors always be specified as a hex value?
+  - Colors can be specified as a hex or as any string or object that tinycolor can understand.
+- How should gradient fills be specified?
+  - We don't yet have a built-in way to deal with gradients right now. 
+  - there is no built-in way doesn't mean we can't handle it
+- How should shadows & effects be specified?
+  - For shadows again, there is not a built-in way yet.
+  - Defining the structure of a shadow that can be transformed to different platforms would be great to have built-in transforms for.
+- How corner radii be specified?
+  - Because radii are a size, under the CTI structure they would go under the "size" namespace.
+- How borders/strokes be specified?
+  - there aren't built-in transformers for borders yet, but that would be good to add.
+- Specific categories
+  - It seems there are expected categories to allow for transformation 
+  - However I can not find any place in the documentation where they are specified. 
+
+- ## [Adds prefix option for scss/map-deep format](https://github.com/amzn/style-dictionary/pull/372)
+- We already do allow prefixes, but they are in the name transforms
+- The only difference would be you need to add the "prefix" attribute to the platform object rather than the file object
 
 # pieces
 

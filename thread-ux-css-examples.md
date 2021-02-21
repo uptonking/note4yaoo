@@ -11,6 +11,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## CSS 404 Concept Page
+- https://twitter.com/jh3yy/status/1363238109413052423
+  - Using "at-property" to animate background clipped text
+  - https://codepen.io/jh3y/pen/MWbvzKb
 
 - ## 4 layouts for the price of 1, thanks flex
 - https://twitter.com/argyleink/status/1217213431947747328

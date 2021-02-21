@@ -11,6 +11,33 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## What is your favorite web server port?
+- https://twitter.com/jbrancha/status/1363155210521243649
+- 8000 of course, python -m http.server
+- Parcel’s 1234 always appealed to me.
+- also like Redwood's :8910
+
+- ## More and more I’m realizing that there are two very different ideas of the web. 
+- https://twitter.com/devongovett/status/1363194220635426817
+  - One group thinks the web is for content sites, marketing pages, and mainly server rendered apps. 
+  - The other is trying to build native-like apps using web technology.
+  - The first group cares way more about loading performance, bundle sizes, server side rendering, progressive enhancement, etc.
+  - The other group cares more about rich interactivity, keyboard navigation, touch gestures, rendering performance, animations, offline support, etc
+  - One group wants to get rid of all build tooling and load their source code directly in the browser.
+  - The other embraces build tools for the DX and UX benefits they provide, and capabilities they enable. (Seriously, do you know how much better web tooling is than native?)
+  - This is the source of many disagreements on this website. It comes from each group seeing everything only from one perspective.
+  - In reality, both are equally valid, and in fact there is often a great deal of overlap. The web is for all types of apps, not just one or the other!
+  - Your priorities should change from project to project. Are new users constantly coming to your site for a short time? 
+  - Maybe loading perf is your top priority. Do users keep your app open all day? Maybe great interactions at the cost of bundle size is the right trade off.
+  - Of course, we should always aim for all of the above, but it’s not always possible to achieve. 
+  - There are always trade offs. That’s why they are priorities, not exclusive.
+  - You should prioritize what’s most important for *your* users. Everything else is secondary. 
+- And here is my dumb self trying to do both at the same time.
+- that's why I am a supporter of creating:
+  - Document context (light browser view for content - this is what Google is trying to do with AMP)
+  - Application context (there are many things here, it treats the screen window as a canvas, we can mess things up and create a new API which is exactly to the benefit of building web applications)
+  - Legacy Context (the current browser, which we will give up in 10 years, downgrading websites to the document model or upgrading them to the application model)
+
 - ## [I was impressed by @pmndrs valtio, so I decided to figure out how to implement a proxy state like valtio, using valtio's test cases.](https://twitter.com/lihautan/status/1361481299970592770)
   - Tips on get a deeper understanding of the library you are using
   - Try implement the library based on the public API and test cases, figure out how it might be implemented.

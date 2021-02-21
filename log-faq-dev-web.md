@@ -31,10 +31,68 @@ modified: '2020-12-23T09:54:10.963Z'
   - 读写文件：文本、图片、文档doc、表格
   - 图表绘
 
+## css更新的方式比较，切换class类名，通过修改style属性来更新css vars的值
+
+- 修改style属性本身可看做修改内联样式
+  - inline style不支持伪类、媒体查询，难复用
+  - 因为会加大dom体积，增加解析时间和存储空间，所以渲染会慢一点点
+
+- @see: inline style vs className
+
+# inline style vs className
+
+- inline style
+  - 使用inline style动态修改样式更方便
+  - inline styling does not support pseudos, media queries, keyframes, auto-prefix
+- className
+  - className is better for debugging
+  - 易复用，减少重复
+  - 易组织和拆分成多个文件，都放在外部文件方便搜索
+- comparison
+  - The obvious conclusion must be that changing the className of an element is faster than changing its style (except in Safari)
+  - with inline styles, the browser spends more time both scripting and rendering. It spends more time in scripting because it has to map all the styles rules passed in to the component to actual css rules (remember, you have to camelCase all your css rules when using inline css in react). It ends up spending more time rendering because it has to calculate the styles for 10, 000 divs each second.
+  - ref
+    - https://quirksmode.org/dom/classchange.html
+    - https://webkit.org/blog/13/classname-vs-style/
+    - https://medium.com/@swazza85/use-css-modules-instead-of-inlining-styles-in-react-fea247b97431
+
+- [External CSS vs inline style performance difference?](https://stackoverflow.com/questions/8284365)
+- Using the style attribute, the browser only paints the rule for that particular element, which in this case is the `<div>` element. 
+  - This reduces the amount of look up time for the CSS engine to find which elements match the CSS selector (e.g. a.hover or #someContainer li).
+- However, putting styling at element level would mean that you cannot cache the CSS style rules separately. 
+  - Usually putting styles in CSS files would allow the caching to be done, thus reducing the amount of load from the server each time you load a page.
+- Putting style rules at the element level will also make you lose track of what elements are styled what way. 
+  - It might also backfire the performance boost of painting a particular element where you can repaint multiple elements together. 
+  - Using CSS files separates the CSS from HTML, and thus allows you to make sure that your styles are correct and it's easier to modify later on.
+
+- ### [ReactJS inline styles VS CSS : benchmark _2015](https://www.sderosiaux.com/articles/2015/08/17/react-inline-styles-vs-css-stupid-benchmark/)
+- When use one against the other?
+  - CSS stylesheets can be better for the layout: such as the bootstrap layout classes: row-fluid, span*. They are fixed and form the static part of the website.
+  - The inline styles can be better for the state-styles: the style that can change according to a state. They form the dynamic part of the website.
+- I decided to try something stupid and not truly relevant to a real business case:
+  - Generate two big `<table>`s: one with inline styles, one with CSS stylesheets. Same content.
+  - Check the performance/smoothness/size/time of rendering for both.
+  - It’s not relevant because we would not generate a big table in our DOM
+  - test at Chrome 45b, React 0.13.3
+- Waterfall timeline
+  - no difference because small dom
+- Size of the DOM
+  - DOM size is huge with the inline styles and is linearly proportional to the number of rows.
+  - with SSR, the inline styles will be downloaded each and every time (part of the HTML), whereas a CSS stylesheet will be downloaded once. (thanks to the browser’s cache)
+- Time to mount the DOM
+  - React has done its job converting the virtual DOM into DOM and has injected it into our mounted node
+  - It takes twice the time to convert our virtual DOM with inline styles to DOM and mount it.
+- Rendering time
+  - We assume it will take longer to render the inline styles, because it has more to parse and store every `style` attribute of every `td`.
+- Conclusion
+  - Inline styles take way more size in the DOM, are converted more slowly from VDOM (have probably a bigger impact on memory), and take more time to be handled by the browser.
+  - But they have no impact on performance once it’s rendered.
+
 ## 如何将多个传统网站页面集成合并，组成一个portal门户目录，且冲突尽可能少
 
 - 暂时没找到直接的方法，因为原本各网站的文字链接、资源url地址都会变化
-- 可考虑重新开发
+- 可考虑重写原网站
+- 可参考阿里qiankun微前端解决方案
 
 # 是否要用前端模版引擎
 

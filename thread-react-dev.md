@@ -11,6 +11,30 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ##  `<Context.Provider value={<SomeJSX />}> <Stuff /> </Context.Provider>` .
+- https://twitter.com/dan_abramov/status/1363134687250636800
+  - Haven’t used this pattern before, but it’s kind of neat? If you want to pass some piece of UI deeply down without passing props themselves. 
+  - Sprinkle(撒，洒) useMemo on JSX node to avoid extra re-renders.
+- We use this pattern in our design system. 
+  - We have a 'linkComponent' prop on the provider so you can customise how links are rendered, e.g. wire them up to your router, add analytics, etc.
+  - [BraidProvider](https://seek-oss.github.io/braid-design-system/components/BraidProvider/)
+- May be the first time I've read a facebook dev acknowledge that we actually want to avoid extra re-renders.
+  - I mean specifically in this situation (pass some context deep down). 
+  - I am not proposing that one should micro-optimize every single component, which is how people tend to interpret this.
+  - The rule of thumb is pretty simple — if it makes an interaction faster (as measured by profiling) then do it
+- We use multiple vue apps, which the equivalent would be provide/inject, but using this makes components hard to reuse sometimes as they depend on data that sometimes isn't there. 
+  - Best to keep this down to globals that are relevant to the entire app, not just a specific component.
+- We do this at Stripe to make sure the correct legal text gets shown in our various signup flows. It's also handy (with some extra complexity) for implementing ReCAPTCHA.
+- Isn't it just equivalent to container or layout component?
+  - Yea, pretty much, although that’s usually done with props rather than Context
+  - Yes. Basically a replacement of Container components suffering from prop drilling? But a neat pattern, not sure why I never thought it's possible 
+- Interesting. Provider which instead of controlling data, controls rendering. 
+  - So the client gets baked ui which is black box for him, the only think is to show it where or when we want.
+- I have followed this pattern when I created a generic table component (wrapped in a provider). 
+  - When using an instance of such a table, the developer can define different types of columns (column displaying a url link, checkbox column, date column...etc)
+  - These different types were f columns are essentially jsx components I’m sending back to the table provider which then renders them as content of my `<td>` .
+- Creating modals on demand through redux or context, including react elements, callback function etc. I really like it.
+
 - ## Should You Use useMemo in React? A Benchmarked Analysis.
 - https://twitter.com/tannerlinsley/status/1362119303793844226
 - It's true that useMemo is not free, but IMO this article is somewhat misleading. 

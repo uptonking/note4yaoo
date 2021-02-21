@@ -29,6 +29,10 @@ modified: '2021-01-12T18:49:02.623Z'
 
 # starred
 
+- https://github.com/CharlesStover/use-offline
+  - React hook for listening to online/offline events.
+  - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.
+
 - https://github.com/JonnyBurger/remotion
   - https://www.remotion.dev/
   - /112Star/Free4NonCommercial&ISC/202102/ts

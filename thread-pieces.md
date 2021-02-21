@@ -13,7 +13,17 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## I'm vibing with mono color, but maybe it's overdone. I
+- https://twitter.com/brian_lovin/status/1363388183153569793
+  - I love the negative margins on the subscribe box to maintain a straight key line.
+- I love it, but feels slightly less legible. 
+  - I find the sweetspot is iA Writer Quattro, using it here
+- Love the look. Much cleaner. Don't think it's overdone. 
+  - Agree with some others - maybe mono for headings and something more legible for body text.
+
+- ## Balance is both art and science.
+- https://twitter.com/Jabronus/status/1362770841210126341
+- Reminds me of this [Apple guideline](https://developer.apple.com/design/human-interface-guidelines/ios/bars/tab-bars/) for tab bar icons! 
 
 - ## What’s the best investment you’ve ever made?
   - https://twitter.com/jmj/status/1362791801413799939
