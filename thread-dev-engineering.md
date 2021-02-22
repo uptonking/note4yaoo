@@ -13,6 +13,19 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Imagine if tools like Sketch and Figma let you write expressions the way Excel does.
+- https://twitter.com/markdalgleish/status/1363703556109312007
+  - e.g. calculating a background based on another element: `=darken(getBackground($ELEMENT_NAME, 10%))` .
+- Transpile to CSS vars and ship as code
+- Figma could expose the API in editor in addition to using it for plugins. That’d be sweet!
+  - It's already done. You can use it in the console.
+  - Good point. I think a part of writing “expressions”, not code is making it more approachable. For example, a small thing excel does when writing expression’s is letting you click to select fields and inserting them into the expression.
+- It's really clever that Excel doesn't refer to writing expressions as "writing code." More tools should let you "write expressions" rather than underestimating their users' intelligence.
+
+- [Excel is visual programming because you're placing data, labels, variables and calculations in physical space.](https://twitter.com/markdalgleish/status/1363727357169704963) 
+- This makes VBA is the javascript of the spreadsheet world
+- arent all programming languages like this as well? only difference is that it’s not bound by y and x axis
+
 - ## Sometimes it’s overwhelming to change some complex feature in the existing code.
 - https://twitter.com/BenLesh/status/1362762796501401601
 - I used to do this. But it's often dangerous. I try to take a more measured approach now.

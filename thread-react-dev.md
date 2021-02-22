@@ -11,6 +11,12 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## Once upon a time, there was discussion and PRs that tried to add a third "root state" argument to `combineReducers` , so that slice reducers could read other slices if available:
+- https://twitter.com/acemarke/status/1363547923963863046
+  - But, we finally gave up on that idea. Still feels potentially useful, though
+  - [Feature Request: Allow reducers to consult global state](https://github.com/reduxjs/redux/pull/1768)
+- There's been at least one time in the past where I wanted two reducers but went with only one because one of them would need access to the other's state. I can't honestly remember the exact situation though.
+
 - ##  `<Context.Provider value={<SomeJSX />}> <Stuff /> </Context.Provider>` .
 - https://twitter.com/dan_abramov/status/1363134687250636800
   - Haven’t used this pattern before, but it’s kind of neat? If you want to pass some piece of UI deeply down without passing props themselves. 

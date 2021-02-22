@@ -21,16 +21,16 @@ modified: '2021-01-02T18:08:07.806Z'
   - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
 
 - tips
-  - 先基于theme specification定义输出design tokens的类别和名称
+  - 基于theme specification定义输出design tokens的类别和名称
     - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
   - 可以将每个组件的design tokens输出到单独的文件，利用自定义filter
   - 可以输出扁平化无嵌套的样式变量，
     - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
   - 输出的值也可以使用 css vars
-  - 建议使用js书写tokens，计算工具库更丰富，
-    - 适合以后生成gradient
-    - 适合转换颜色格式
-    - 还可以根据Shorthands自动生成完整css样式名
+
+- 建议使用js书写tokens，计算工具库更丰富，
+  - 适合以后生成gradient
+  - polished提供的方法分类：mixins，color，shorthands，easing
 
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
@@ -161,6 +161,15 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - multi-brand-multi-platform
   - This example shows how to setup a multi-brand, multi-platform suite of design tokens, with values that may depend on the brand (eg. a brand color) or the platform (eg. a font family).
+  - The properties are stored in three different folders:
+  - brands
+    - this folder contain properties that depend on the "brand", eg. the "primary" and "secondary" colors (generally these are called "brand colors", think of the blue of Facebook, the orange of Amazon).
+  - platforms
+    - this folder contain properties that depend on the "platform", eg. the font family used in the application or website (eg. a font stack like "Tahoma, Arial, 'Helvetica Neue', sans" on web, "San Francisco" in iOS, "Roboto" in Android).
+  - global
+    - this folder contain properties that are common, that don't depend on the specific "platform" or "brand", eg. the base grayscale colors, the font sizes, etc.
+  - Leveraging the ability of Style Dictionary to reference other properties values as "aliases", we can have generic properties like `font.family.base` or `color.primary` whose values actually depend on the "platform" and "brand" and whose values are computed dynamically at build time depending on the specific "platform/brand" files, included dynamically by the `getStyleDictionaryConfig` function.
+  - Depending on the file included at build time, the actual value of `color.primary` will depend on the "brand"
 
 - node-modules-as-config-and-properties
   - tokens和config都用js书写，而不是用json

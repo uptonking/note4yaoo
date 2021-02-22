@@ -31,6 +31,14 @@ modified: '2020-10-05T06:18:29.671Z'
 - https://github.com/Harmoware/Harmoware-VIS
   - Spatial-Temporal Visualization Library using Deck. GL
 
+# threejs
+
+- https://github.com/RenaudRohlinger/three-material-editor
+  - https://z59h4.csb.app/
+  - A GLSL editor for Threejs materials. 
+  - Automatically detect the WebGL programs and provide live edit for the shaders. 
+  - Easily edit the materials in your beautifully crafted threejs scene. Compatible vanilla and react.
+
 # webgl-animation
 
 - https://github.com/scottstensland/webgl-3d-animation
