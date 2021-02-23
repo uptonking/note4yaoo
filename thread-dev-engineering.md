@@ -13,6 +13,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Best CSS debugger: `border: 1px red solid;` .
+- https://twitter.com/kyleshevlin/status/1363901000948408320
+- I have to say this every time: This is close, but it's NOT the best.
+  - It's better to use `outline` than to use `border` . Why?
+  - Because `border` affects layout, changing the width and height of its element. `outline` has no affect on layout, whatsoever.
+- It's especially important to use `outline` instead of `border` when testing the cumulative layout shifts
+- Good call. Its also useful to keep in mind when trying optimize for a better Cumulative Layout Score, if there are larger shifts in elements that could alter the CLS.  Though something as small as a border may not be enough for the algorithm to catch, I am not sure.
+- Sometimes, I do prefer using backgrounds, like: `background-color: rgba(0,0,0,0.1)` , I can see how much an element takes, and how they stack
+  - But most of the time, outline is the way to go
+
 - ## Imagine if tools like Sketch and Figma let you write expressions the way Excel does.
 - https://twitter.com/markdalgleish/status/1363703556109312007
   - e.g. calculating a background based on another element: `=darken(getBackground($ELEMENT_NAME, 10%))` .

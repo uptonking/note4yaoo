@@ -22,6 +22,21 @@ modified: '2020-12-23T09:52:21.060Z'
     - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
     - Angular是通过装饰器来模拟了注解的功能
 
+# 
+
+# .js vs .jsx
+
+- The distinction between .js and .jsx files was useful before Babel, but it’s not that useful anymore.
+  - There are other syntax extensions (e.g. Flow). What would you call a JS file that uses Flow? .flow.js? What about JSX file that uses Flow? .flow.jsx? What about some other experimental syntax? .flow.stage-1.jsx?
+  - Most editors are configurable so you can tell them to use a JSX-capable syntax scheme for .js files. Since JSX (or Flow) are strict supersets of JS, I don’t see this as an issue.
+
+- It's a bit concerning that many devs insist on putting JSX inside .js files "just because it's common practice" 
+- https://twitter.com/youyuxi/status/1362049928139321348
+  - The reason Vite requires .jsx extension for JSX processing is because in most cases plain .js files shouldn't need full AST transforms to work in the browser. Allowing JSX in .js files means every served file must be full-AST-processed just in case it contains JSX.
+- Try .tsx
+
+- ref
+
 # In js, what does `this` refer to?
 
 - tips
@@ -339,12 +354,15 @@ Number instanceof Number //false
 - ref
   - [Why use classes instead of functions?](https://stackoverflow.com/questions/6480676/why-use-classes-instead-of-functions)
   - [5 reasons not to use ES6 classes in React](https://blog.krawaller.se/posts/5-reasons-not-to-use-es6-classes-in-react/)
+
     - Inconsistent context
     - No mixin support
     - Inconsistent state handling
     - Inconsistent definition
     - Dealing with super
+
   - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
+
     - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
 
 ## [Built in Constructor functions in Javascript (可以省略new)](https://stackoverflow.com/questions/9745729/built-in-constructor-functions-in-javascript)
@@ -469,9 +487,11 @@ const RightStaticMethods = ({
   - While they did not explicitly deprecate the class-based components yet, they are likely to in the near future.
   - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. That's something classes cannot express properly. 使用class组件对并发操作状态不友好
   - 想象一下这种场景，一个组件的render函数结构基本一致，但是它的数据层states可能会根据环境条件有不同的变化逻辑（相似的state结构，但是计算state的逻辑不同）
+
     - 这种情况下用class写就免不了大量的if else，
     - 但是hooks就可以把每种条件下的state变化逻辑抽离出来，
     - hooks比class组件更优雅的实现了states的多态
+
 - Using a standard function+object+prototype chain "classes" is a good way to learn how JS works, but hiding all that behind the class sugar is too much abstraction to me.
   - Main benefit I get out of ES6 classes is defining the shape of data I am dealing with, so I can talk and think about it in precise terms. 
   - When I say "Customer", I know exactly what fields and properties that entails (and IDE will help me remember it too).
@@ -506,7 +526,7 @@ const RightStaticMethods = ({
 - `(function(){}).name === ""` ，匿名函数表达式会返回true
   - Both have a name property
 - In Google's V8 and Firefox's Spidermonkey there might be a few microsecond JIST compilation difference, but ultimately the result is the exact same.
-- If we declare the variable as `function funcName(){}`, then the immutability of the variable is the same as declaring it with var。
+- If we declare the variable as `function funcName(){}` , then the immutability of the variable is the same as declaring it with var。
   - function expression can be const
   - function declaration name can be reassigned, too
 - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block ( `{ ... }` ) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 

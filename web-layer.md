@@ -384,7 +384,6 @@ top layer (closest to the observer)
 - A stage can contain more than one layer to compose frames on top of each other. 
 - Within the layer we added a single frame with id home which will contain the content of the first page/screen. 
 
-
 # ref
 
 - [zh: 前端项目中有简洁的z-index的约束规则（管理方案）吗？](https://www.zhihu.com/question/24216418)
@@ -392,3 +391,5 @@ top layer (closest to the observer)
   - 使用臭名昭著的99999
   - 使用两位数递增z-index的值
   - 使用Sass管理顺序
+
+- [What the heck, z-index?](https://www.joshwcomeau.com/css/stacking-contexts/)

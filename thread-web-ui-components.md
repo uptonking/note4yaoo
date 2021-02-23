@@ -13,6 +13,9 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## https://github.com/seek-oss/capsize
+  - Capsize makes the sizing and layout of text as predictable as every other element on the screen.
+  - Using font metadata, text can now be sized according to the height of its capital letters while trimming the space above capital letters and below the baseline.
 
 - ## Do you guys still use 12-column grid system?
 - https://twitter.com/renatorib_/status/1361688536500629507

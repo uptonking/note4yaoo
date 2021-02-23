@@ -11,6 +11,11 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## The future of CSS: Scroll-Linked Animations 
+- https://twitter.com/bramusblog/status/1364016209516232709
+  - In this post we dig into CSS @​scroll-timeline to create Scroll-Linked Animations between two absolute scroll-offsets, and how we can tweak them.
+  - [The Future of CSS: Scroll-Linked Animations](https://www.bram.us/2021/02/23/the-future-of-css-scroll-linked-animations-part-1/)
+
 - ## An Interactive Guide to CSS Transitions
 - https://twitter.com/JoshWComeau/status/1359162874707533825
   - It's a deep dive into `transition` , the CSS motion workhorse. 

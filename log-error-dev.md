@@ -12,6 +12,10 @@ modified: '2021-01-04T15:50:21.746Z'
 
  
 
+- Conflict: Multiple assets emit different content to the same filename index.html
+  - 删掉前面配置文件定义的html-webpack-plugin的配置对象即可
+  - 因为使用了 webpack-merge，不同文件的html-webpack-plugin合并后却成了2个，所以要注意某些对象的属性不同不会合并
+
 - Errorr: ENOENT: no such file or directory, open 'build/scripts.js'
   - 若uglify输出的目录不存在，则需要开发者提前手动创建，否则会抛出异常
     - 系统依赖本身也会有依赖，有时难以分析出到底缺哪个包

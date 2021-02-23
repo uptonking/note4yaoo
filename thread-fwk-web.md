@@ -11,6 +11,29 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Replace Type Component with Subcomponents. Tip: replace ReactNode by ComponentType
+- https://twitter.com/sebastienlorber/status/1363891104194699269
+  - Describe a pattern I often use in React, where you have some kind of "router" component that dispatch to subcomponents by reading a "configuration map".
+- [Replace Type Component with Subcomponents](https://altrim.io/posts/replace-type-component-with-subcomponents)
+  - At this point it was time to refactor the component and clean up the code so that even if we add additional themes in future we won't have to deal with all the conditionals and specific function behaviors depending on the theme type.
+  - For the refactoring I thought to use a similar technique to Replace Type Code with Subclasses. 
+  - The idea with this technique is to remove the type from the main class and replace it with specific type sub classes.
+
+``` JSX
+// Refactor this 👇
+<InvoiceDetails invoice={invoice} theme={Theme.Simple} />
+<InvoiceDetails invoice={invoice} theme={Theme.Modern} />
+<InvoiceDetails invoice={invoice} theme={Theme.Classic} />
+
+// Into this 👇
+const Details: Record<Theme, ReactNode> = {
+  [Theme.Simple]: <SimpleTheme invoice={invoice} />,
+  [Theme.Modern]: <ModernTheme invoice={invoice} />,
+  [Theme.Classic]: <ClassicTheme invoice={invoice} />,
+};
+
+```
+
 - ## What is your favorite web server port?
 - https://twitter.com/jbrancha/status/1363155210521243649
 - 8000 of course, python -m http.server

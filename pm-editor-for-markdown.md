@@ -25,6 +25,7 @@ modified: '2020-10-22T13:33:45.146Z'
 
 - json editor
   - json <> json5
+  - 支持superjson，属性值支持的类型包括Date、RegExp、bigint、Set、Map
 
 - later
   - pdf studio阅读的文字是正常的，但复制文字粘贴下来却很多乱码，，，很安全
@@ -34,6 +35,9 @@ modified: '2020-10-22T13:33:45.146Z'
   - lint markdown format
     - 检查重要区块的语法、自定义语法
     - 检查头部元数据格式
+  - table-renderer
+    - for cli
+    - for 鸿蒙OS
 
 - 细节设计
 

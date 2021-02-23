@@ -23,6 +23,15 @@ modified: '2020-06-30T05:17:43.290Z'
   - 结论是使用命名导出，少用default
     - 使用命名导出应该在声明时导出，还是在文件末尾导出本模块所有对象？？？
     - 不能在一个文件中使用上述方法export两次，因为export的对象不可变
+  - [Avoid Export Default](https://basarat.gitbook.io/typescript/main-1/defaultisbad)
+    - Poor Discoverability
+    - Autocomplete
+    - CommonJS interop
+    - Re-exporting
+    - Typo Protection
+    - TypeScript auto-import
+    - Dynamic Imports
+    - Needs two lines for non-class / non-function
   - `export {default as Module} from './module';` is the standard ES6 way
   - `export Module from './module;` is a proposed ESnext way
   - A default export is actually a named export with the name default

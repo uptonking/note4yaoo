@@ -32,6 +32,8 @@ modified: '2021-01-02T18:08:07.806Z'
   - 适合以后生成gradient
   - polished提供的方法分类：mixins，color，shorthands，easing
 
+- source配置时，tokens文件的声明顺序不重要，可以先写依赖了其他tokens的目录，再写依赖所在的目录
+
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)
 
@@ -492,3 +494,9 @@ modified: '2021-01-02T18:08:07.806Z'
   - Removing filters inside Android formats: WIP
 - todo
   - Use ES6 where possible, Better log levels
+
+# ref
+
+- [[RFC] Plugin Architecture](https://github.com/amzn/style-dictionary/issues/311)
+  - We don't want to try to build in so many transforms, formats, and actions into the core library that it becomes hard to maintain and bloated.
+  - Technically, this ability exists today, but we don't document or promote this ability yet.

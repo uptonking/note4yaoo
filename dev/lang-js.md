@@ -17,7 +17,10 @@ modified: '2020-07-14T09:26:50.808Z'
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
 - Object.assign修改属性值的性能
-- https://github.com/airbnb/javascript
+- tutorial
+  - [mdn: JavaScript's basic grammar, variable declarations, data types and literals.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types)
+- js style guide
+  - https://github.com/airbnb/javascript
 
 # faq
 

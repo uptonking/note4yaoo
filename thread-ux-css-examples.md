@@ -11,6 +11,14 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Opposing corner radial gradients look softer than angled linear gradients:
+- https://twitter.com/argyleink/status/1295745027063218176
+  - https://codepen.io/argyleink/pen/ExKyMeZ
+  - [linear vs radial](https://codepen.io/obvi_as/pen/abNmvoz?editors=1100)
+-  I've been loving https://uigradients.com recently 
+- omg this is so true and i never thought of it! so simple! 
+  - i made a comparison based off your pen
+
 - ## CSS 404 Concept Page
 - https://twitter.com/jh3yy/status/1363238109413052423
   - Using "at-property" to animate background clipped text

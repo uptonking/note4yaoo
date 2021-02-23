@@ -24,11 +24,21 @@ modified: '2020-12-28T12:24:09.275Z'
   - An opinionated low code platform that helps you code business applications
 - https://github.com/appsmithorg/appsmith
   - A low code way to build dashboards, workflows, forms, and any internal tool.
+
+# lowcode-solutions
+
+- https://github.com/baidu/amis
+  - /4.3kStar//Apache2/202009
+  - 依赖mobx、react、jquery、sortablejs、tinymce
+  - 前端低代码框架，通过JSON配置就能生成各种后台页面，不适合大量交互、定制ui
+  - https://github.com/aisuda/amis-editor-demo
+    - http://aisuda.github.io/amis-editor-demo
+    - amis 可视化编辑器示例
+    - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
+
 - https://github.com/umijs/sula
   - Pluggable enterprise-level configurable framework based on antd and umi.
-  - Sula 可视化搭建平台
-  - Sula 在线配置化工具
-
-# lowcode-products
+  - sula-builder：可视化搭建平台
+  - sula-cooker：在线配置化工具
 
 # more-lowcode
