@@ -62,6 +62,12 @@ modified: '2020-12-08T14:43:00.091Z'
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
 
+# more-online-code-editor
+
+- https://github.com/agneym/playground
+  - https://blog.agney.dev/introducing-playground/
+  - playground for HTML, CSS and JavaScript supporting module imports.
+
 # ref
 
 - [7 JavaScript Playgrounds to Use in 2019 ― Scotch.io](https://scotch.io/tutorials/7-javascript-playgrounds-to-use-in-2019)

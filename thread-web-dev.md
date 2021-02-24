@@ -11,6 +11,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## Use the `start` attribute to change the starting point for your ordered lists.
+- https://twitter.com/denicmarko/status/1364480932955238401
+  - `<ol start="2">`
+
 - ##  TIL about the "ping" attribute on `<a>` tags, which will send a POST request to the given URLs when the anchor is clicked.
 - https://twitter.com/svenluijten/status/1363245229533507585
   - https://caniuse.com/ping

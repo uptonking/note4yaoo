@@ -20,9 +20,19 @@ modified: '2021-01-16T20:24:48.984Z'
   - https://mdxjs.com/
   - /9.7kStar/MIT/202009
   - let you seamlessly use JSX in your markdown documents
+- https://github.com/wooorm/xdm
+  - xdm is an MDX compiler that focussed on two things:
+    - Compiling the MDX syntax (markdown + JSX) to JavaScript
+    - Making it easier to use the MDX syntax in different places
+
+ 
+
 - https://github.com/jxnblk/mdx-deck
   - https://mdx-deck.jxnblk.com/
   - React MDX-based presentation decks
+
+ 
+
 - https://github.com/PaulieScanlon/mdx-embed
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr

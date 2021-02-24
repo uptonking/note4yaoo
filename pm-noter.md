@@ -20,6 +20,7 @@ modified: '2020-11-24T07:46:00.967Z'
     - 生成openapi/swagger ui风格的文档
   - term block
     - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
+  - examples as notes
 
 # faq
 

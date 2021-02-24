@@ -24,7 +24,44 @@ modified: '2021-01-08T17:15:13.906Z'
 
 # pieces
 
-- ## 
+- ## In general, items with bigger z-index values rise to the top, but that's not always true.
+- https://twitter.com/JoshWComeau/status/1364569420325150722
+  - Here, our tooltip (z-index 999999) renders under the header (z-index 2).
+  - [What the heck, z-index?](https://www.joshwcomeau.com/css/stacking-contexts/)
+
+- ##  For some reason, the blur is much more saturated on Firefox than Chrome. Not sure why, but ultimately both look good to me!
+- https://twitter.com/JoshWComeau/status/1364313758584213504
+  - Safari struggles with animating blurred elements. So be cautious with this one!
+- Blurred pngs tend to be REALLY heavy (like, hundreds of kbs even after optimization), and jpegs don’t support transparency. 
+  - Maybe some of the newer image formats are better, but yeah I’ve found it easier to do it in-browser.
+- So apparently browsers don’t always agree on color space and it’s caused a number of bugs in the past. My guess is filter is new enough that the color handling in it either has bugs in one browser or wasn’t well specced for this usecase and it’s the Wild West.
+
+- ## Avoid fixed dimensions! Layout should be fluid to cater for folks with different screens, preferences, and accessibility needs.
+- https://twitter.com/jaffathecake/status/1364474359944007680
+  - An indent must be exactly two spaces wide 
+  - and prose must hard wrap at 100 chars.
+- A viewer can choose how wide they want their tabs tab to render. 1.337 characters wide?
+- 100 chars? Heresy! 80 or GTFO.
+- 60 is my personal preference.  Ref https://baymard.com/blog/line-length-readability . Not just in design rendered but in code. Surprisingly helps keep things easy to parse. Yea, I’m totally crazy for doing this to myself.
+
+- ## TIL that SVGs should almost always be sized with viewBox instead of width/height, and constrained by height (not width) via CSS when inlined into HTML.
+- https://twitter.com/kripod97/status/1364319449306775554
+  - Also, inputs and buttons should have a fixed height so they can follow a spacing scale without using weird paddings.
+- How do you handle constrained-height buttons with user-defined text (thinking word-wrap ; )? 
+  - I use Tailwind’s `inline-flex items-center justify-center text-center leading-tight` utility classes to make sure that even an anchor element behaves like a button would do.
+
+- ## Does styled-components offer any lower level APIs for generating styles *without* generating a component? 
+- https://twitter.com/markdalgleish/status/1364350921317097477
+  - Something like Emotion's css function
+- There’s an alternative solution called CSS Modules, have you heard of it?
+  - I know you're kidding—but yeah, CSS Modules aren't great for super dynamic libraries. This is where CSS-in-JS really shines.
+  - I’ve found that the most compelling solutions for your use case are CSS Modules + Tailwind + classnames to add dynamism or emotion with its css function.
+  - You could give Twind a try. It is a tailwind-first CSS-in-JS solution
+- css prop generates a styled component under the hood. I'm just wanting to generate class names without the component.
+- My approach is to use a classes prop
+  - https://twitter.com/pomber/status/1362125599607820290
+  - https://github.com/code-hike/codehike/tree/v0.3/packages/classer
+  - to make React component libraries interoperable with most styling solutions
 
 - ## Braid uses arrays for responsive props, but I've realised objects are much better:
 - https://twitter.com/markdalgleish/status/1362779695683543041
@@ -57,7 +94,7 @@ modified: '2021-01-08T17:15:13.906Z'
 - https://twitter.com/JoshWComeau/status/1362073864495370240
   - As far as I can tell, they're synonyms used in different contexts — layers are mentioned in terms of animation performance, stacking contexts in terms of layout and z-index. But are they actually discrete concepts? If so, what's the distinction?
 - Yes, any transform (or non-0 opacity) (i.e. on the h1) creates a stacking context which would normally stack above the list. 
-  - However, `position: relative` explicitly stacks the list above the in-flow content (including that implicit context).
+  - However `position: relative` explicitly stacks the list above the in-flow content (including that implicit context).
 - I think stacking contexts don't get browser's GPU acceleration like composite layers
 - it seems like if there is a difference, stacking contexts could refer to more rules than just layers. 
 

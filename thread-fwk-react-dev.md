@@ -13,7 +13,24 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## Do you have a really interesting use for inline reducers? 
+- https://twitter.com/acdlite/status/1364250190279045126
+  - Like where you pass a closure to useReducer. Or, you swap out different reducers at runtime.
+  - In the class world, an equivalent is accessing the second argument (props) of a setState updater.
+- Personally, I dont see a use case for an inline reducer because it is a function of state and action. 
+  - If I need to access props, I pass it as action payload.
+- Opposite viewpoint: I strongly believe that reducers never need to be swapped out. 
+  - App logic can always be factored so that the same reducer is used for the lifetime of the component.
+  - Contrived example - you wouldn't do this: `useReducer(asleep ? sleepingReducer : awakeReducer, ...)` .
+  - You should have this instead: `useReducer(humanReducer, ...)` .
+  - Where `humanReducer` handles both being asleep and awake.
+  - What’s your position on passing a function to setState? Why is one ok but the other isn’t?
+  - I personally never do it, and I think that it's an implicit "event" which is better handled by a reducer.
+  - In other words, setState + functional updates = an implicit, decentralized reducer.
+- Yeah, this is a very useful for inline cDU which doesn’t exist in hooks land
+  - Right but do you have a representative example that instantly convinces people why it’s useful? That’s what I’m looking for
+  - Validating form a with something async, get the validated state and latest values in the callback
+  - Invert control so that the caller of the  imperative function has ability to abort or alter the effect at the call site
 
 - ## can I virtualize an array of @reactjs components?
 - https://twitter.com/sseraphini/status/1362502418781642755

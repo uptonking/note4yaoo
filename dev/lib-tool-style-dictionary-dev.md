@@ -500,3 +500,29 @@ modified: '2021-01-02T18:08:07.806Z'
 - [[RFC] Plugin Architecture](https://github.com/amzn/style-dictionary/issues/311)
   - We don't want to try to build in so many transforms, formats, and actions into the core library that it becomes hard to maintain and bloated.
   - Technically, this ability exists today, but we don't document or promote this ability yet.
+
+- [https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa)
+- https://github.com/didoo/style-dictionary-demo
+- This, for example, is how we use some design tokens as Sass variables in the declaration of the styles for the `<Button/>` component
+- These properties are also exposed in our style guide so that they can be part of our documentation
+- Theo, a tool developed by the design system team at Salesforce 
+  - Theo has evolved a lot (now we are at Theo8!) and the way you declare the token values has quite changed, 
+  - but what remains a pain point (at least, for me) is the fact that in order to reference a value of a token in another token, you have to declare it before using a specific alias definition; 
+  - and, if this declaration is in another file, you have to import the file where it’s used (which also means that, when declaring the files to import/process, the order of the declarations matters).
+  - This way to define “aliases” leads to a lot of repetitions 
+  - Besides, in this way, the resulting organisation of the design tokens, and the files where they are stored, tends to be very prescriptive (see for example here or here) and rigid when you need to refactor or re-arrange the design tokens.
+  - Don’t get me wrong: Theo is a great tool, and the issues I have mentioned above are small details, just a matter of personal preferences. 
+- First impact with Style Dictionary
+  - This “deep merge” of different JSON files (plus, the different compilations for different platforms) was exactly what I had in mind.
+- The ”Category > Type > Item” classification
+  - This classification is simply based on the nesting of the properties inside the JSON files.
+  - the order in the nesting of the source JSON is automatically interpreted as logical tree/structure, and it’s used to build the name of the properties 
+  - While working with Style Dictionary, you will find this implicit CTI classification consistently across many helpers and functions
+  - you can organize and name your style properties however you want, there are no restrictions
+- My Cosmos design tokens organisation
+  - built to support different “platforms” (Mobile Web, iOS and Android) and different “brands
+  - Instead of following the suggested CTI — Category > Type > Item — organisation (e.g. color > background > button) 
+  - I’ve preferred to follow a classification which is more “component-oriented”.
+- Conclusions/Final thoughts
+  - In the last days, weeks, I have used extensively Style Dictionary, and every time I find myself thinking “Wow. It just works!”. 
+  - Everything in this project works as one would expect to, everything is so well-thought and clear

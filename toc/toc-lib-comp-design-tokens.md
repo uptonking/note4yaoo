@@ -178,3 +178,13 @@ modified: '2021-01-01T22:09:59.545Z'
 - https://github.com/amzn/sketch-constructor
   - Read/write/manipulate Sketch files in Node without Sketch plugins!
   - 提供了示例 you can generate a Sketch file from a Style Dictionary. 
+
+# ref
+
+- Has anyone catalogued popular theme token systems where I can read about them? They are so similar AND unique.
+- https://twitter.com/dbanksDesign/status/1341449787468439553
+  - One has tokens like color & space; another has colors & spacing; another has colors & space.
+  - I don’t imagine they can merge either, as that might be a breaking change.
+  - Adobe probably has one of the most (if not the most) well-thought out and complex token structures in the game
+  - For Style Dictionary, we created a built-in naming/structure we called a CTI structure (category, type, item). 
+    - This is not an enforced structure in any way, but just a default we came up with

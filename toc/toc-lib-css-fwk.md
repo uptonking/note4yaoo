@@ -64,6 +64,15 @@ modified: '2021-01-28T21:14:14.667Z'
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
 
+- infima /60kStar/MIT/202102/css
+  - https://github.com/facebookincubator/infima
+  - https://facebookincubator.github.io/infima/
+  - A modern styling framework for content-driven websites 
+  - It's just CSS, so it works with React, Vue, Angular, anything!
+  - Built using modern CSS approaches - CSS variables and Postcss, BEM naming.
+  - built-in support for theming and dark mode!
+  - The main difference between Infima and existing CSS frameworks (e.g. Bootstrap, Bulma) is that it's built with a modern theming approach (CSS variables), modern tooling and has dark mode support out of the box, which makes it perfect for building content-driven websites such as documentation websites.
+
 # css-framework-ui
 
 - milligram /8.8kStar/MIT/202006

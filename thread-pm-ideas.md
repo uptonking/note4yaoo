@@ -13,7 +13,8 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
-- ## 
+- ## Floating field labels are bad for accessibility! Don’t use them just because Google does.
+- https://twitter.com/devongovett/status/1364577800116711424
 
 - ## Quick tip: don't use a datepicker on date of birth fields. That's dumb.
 - https://twitter.com/brad_frost/status/1362771518137249794
