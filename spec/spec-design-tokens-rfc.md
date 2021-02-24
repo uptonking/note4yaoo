@@ -9,6 +9,9 @@ modified: '2021-01-04T17:07:34.171Z'
 
 # solutions
 
+- design-tokens-catalog
+  - amazon style-dictionary
+
 ## Adobe DSP
 
 - ref
@@ -170,6 +173,32 @@ interface Data {
   - typography
   - any other design token-related specifications
 
+# [Universal Design Tokens (UDT) Specification](https://github.com/universal-design-tokens/udt/blob/master/packages/spec/docs/README.md)
+
+- ref
+  - https://udt.design/
+  - 更新于201906
+
+``` JSON
+
+{
+  "$schema": "http://udt.design/schemas/dev/udt-schema.json",
+  "tokens": [
+    {
+      "name": "Token A",
+      "type": "color",
+      "value": "@token-b"
+    },
+    {
+      "name": "Token B",
+      "id": "token-b",
+      "type": "color",
+      "value": "#123456"
+    }
+  ]
+}
+```
+
 # Open UI
 
 - open ui相对于dtcg的特点
@@ -181,10 +210,11 @@ interface Data {
   - We should also standardize a way of theming these components. 
   - We should set a path for existing solutions to converge and for browsers to natively provide these things in the future.
 
-- https://github.com/WICG/open-ui
-  - https://open-ui.org/components/button
-- https://wicg.io/
-  - to define the next generation of web technologies.
+- ref
+  - https://github.com/WICG/open-ui
+    - https://open-ui.org/components/button
+  - https://wicg.io/
+    - to define the next generation of web technologies.
 
 ## [Web Incubator Community Group Charter](https://wicg.github.io/admin/charter.html)
 
