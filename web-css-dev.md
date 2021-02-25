@@ -11,7 +11,32 @@ modified: '2021-02-07T18:27:52.684Z'
 
 ## css-vars-naming
 
-- ### [adobe spectrum css Class Naming Conventions](https://github.com/adobe/spectrum-css/wiki/Class-Naming-Conventions)
+- css变量名和类名都采用小写和短横，如halfmoon，infima
+  - spectrum变量小写，类名大写
+  - patternfly变量大写，类名小写
+
+- 全局级样式
+  - category，css-prop，modifier，state
+
+- 组件级样式
+  - comp，element，modifier，state，breakpoint，pseudo-ele，css-prop
+  - 将--PropertyCamelCase放在最后
+
+### [SUIT CSS naming conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
+
+- Utilities can be applied directly to any element within a component.
+  - `u-[sm-|md-|lg-]<utilityName>`
+  - `class="u-sizeFill u-textBreak"`
+- The CSS responsible for component-specific styling.
+  - `[<namespace>-]<ComponentName>[-descendentName][--modifierName]`
+  - If necessary, components can be prefixed with a namespace.
+  - `class="Tweet-bodyText"`
+  - `class="Tweet is-expanded"`
+- Custom properties are global. Components should not expose the internal structure. 
+  - `--ComponentName[-descendant|--modifier][-onState]-(cssProperty|variableName)`
+
+### [adobe spectrum css Class Naming Conventions](https://github.com/adobe/spectrum-css/wiki/Class-Naming-Conventions)
+
 - Our naming convention is based on SUIT CSS
 - In Spectrum, we have two sizing notions:
   - Scale
@@ -81,7 +106,8 @@ modified: '2021-02-07T18:27:52.684Z'
   - Right. Spectrum Tokens re-defines all possible variables, even color (which doesn't change between t-shirt sizes)! 
   - We really don't use all of those variables in our implementation, so we can start by filtering out color
 
-- ### patternfly css
+### patternfly css
+
 - [Patternfly 4 Guidelines](https://pf4.patternfly.org/guidelines/)
 - PatternFly follows [Harry Robert's CSS Guidelines](https://cssguidelin.es/) with some exceptions, deviations and additions.
 - PatternFly follows a two-layer theming system where global variables always inform component variables. 

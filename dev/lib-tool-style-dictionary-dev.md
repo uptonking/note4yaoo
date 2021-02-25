@@ -32,6 +32,17 @@ modified: '2021-01-02T18:08:07.806Z'
   - 适合以后生成gradient
   - polished提供的方法分类：mixins，color，shorthands，easing
 
+- 组件的样式不推荐使用style-dictionary书写
+  - s-d虽然能提供sass的variables、functions、mixins、nested、import等功能，
+    - 同名变量的覆盖可以用source覆盖include，但不能只在某一个文件中覆盖该文件中的所有变量
+    - 变量只能全部输出css variables，不能只输出某部分为css vars，
+  - 但s-d在以下几个方面不如sass
+    - 书写多层嵌套nested的样式时实现自定义format就很复杂
+    - 书写sass支持的placeholder自动转换成群组选择器，很难实现
+    - sass在大公司的支持度很高
+    - 通常输出的样式文件格式仍然是scss，此时若手动编辑scss以后更新tokens就会丢失
+    - 基于自定义action可以输出component样式，后期可以考虑单独实现此方案，不冲突
+
 - source配置时，tokens文件的声明顺序不重要，可以先写依赖了其他tokens的目录，再写依赖所在的目录
 
 - roadmap
@@ -124,10 +135,20 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - ## component tokens
 - [json to scss](https://github.com/amzn/style-dictionary/issues/492)
-  - The way I would do this is create a custom format and template.
-  - I have done something similar in some projects, but instead used a custom action to build the files.
+  - 方法1
+    - The way I would do this is create a custom format and template.
+  - 方法2
+    - 使用action实现本质上是修改自动生成的样式文件，甚至可以提取为单独的项目来实现
+    - I have done something similar in some projects, but instead used a custom action to build the files.
     - The action grabs parts of the dictionary under the component namespace and passes the entire component object to a formatter to generate the SCSS file. 
     - This way you can add more components without needing to add more files to the configuration.
+- [Should we consider token organization a primary use case?](https://github.com/amzn/style-dictionary/issues/268)
+  - people are using style dictionary both to create original design tokens AND to reference them into specific components. 
+    - In this case it is clear that the file organization is representative of that "both" structure.
+  - This is all fine until you need to output those tokens. 
+  - So while we support the use case, we do so only in a round-about way and require technical knowledge.
+  - It is my belief that if we want to enable simple design token control for people, we should probably make this a direct goal and engineer a simple solution.
+  - We avoid being opinionated on how you want to organize your tokens, but try to help somewhat by providing value/functionality if you use the CTI model.
 
 - ## s-d examples
 - component-cti
@@ -501,7 +522,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - We don't want to try to build in so many transforms, formats, and actions into the core library that it becomes hard to maintain and bloated.
   - Technically, this ability exists today, but we don't document or promote this ability yet.
 
-- [https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa)
+- [How to manage your Design Tokens with Style Dictionary](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa)
 - https://github.com/didoo/style-dictionary-demo
 - This, for example, is how we use some design tokens as Sass variables in the declaration of the styles for the `<Button/>` component
 - These properties are also exposed in our style guide so that they can be part of our documentation

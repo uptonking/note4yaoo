@@ -24,16 +24,19 @@ modified: '2021-01-04T17:07:56.548Z'
 - ref
   - System UI is an open source organization that houses a Theme Specification for creating interoperable UI components.
   - https://mitchgavan.com/styleguide-driven-development/
-  - https://github.com/primer/components/blob/master/src/theme.js
 
 - who is using
   - theme-ui
     - styled-system, onno, xstyled
+    - https://github.com/system-ui/theme-ui/blob/develop/packages/preset-bootstrap/src/index.ts
   - chakra-ui
     - blockstack-ui
+    - https://github.com/chakra-ui/chakra-ui/blob/main/packages/theme/src/index.ts
   - github primer components
-  - priceline design system
+    - https://github.com/primer/components/blob/main/src/theme.ts
+    - ~~https://github.com/primer/components/blob/master/src/theme.js~~
   - looker components
+  - priceline design system
   - mineral-ui
   - pulse-boilerplate
   - more
@@ -61,7 +64,38 @@ modified: '2021-01-04T17:07:56.548Z'
 
 # theme-examples
 
-- examples
+- theme object keys
+  - fonts
+  - fontSizes
+  - fontWeights
+  - colors
+  - space/spacing/spaces
+  - sizes
+  - lineHeights
+  - letterSpacings
+  - borders
+  - borderWidths
+  - borderStyles
+  - radii
+  - shadows
+  - zIndices
+  - transitions
+
+- styled-system Reference Table
+  - The Styled System theme object is intended to be a general purpose format for storing design system style values and scales
+    - The objects shape is based on the System UI Theme Specification. 
+  - colors
+  - fonts/fontSizes/fontWeights/lineHeights/lineSpacins
+  - space
+  - sizes
+  - borders/borderWidths/borderStyles
+  - radii
+  - zIndices
+  - shadows
+  - variants
+    - buttons
+    - textStyles
+    - colorStyles
 
 ## theme-ui-base
 

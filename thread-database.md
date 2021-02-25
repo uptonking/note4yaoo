@@ -11,6 +11,17 @@ modified: '2021-01-06T14:39:56.358Z'
 
 - ## 
 
+- ## Guilty pleasure: I sort of like writing SQL.
+- https://twitter.com/BenLesh/status/1364681180021329922
+- I enjoy doing a thing akin to SQL Golfing... 
+  - where I try to have any report/export being done 100% in SQL 
+  - my code is just making the query and sending the result as json
+- Yeah, we definitely can't be friends anymore.
+- I like how there's not a lot of ambiguity in SQL, 
+  - unlike typeof undefined === "undefined" (true) or typeof undefined === undefined (false)
+- SQL is beautiful maths with quirky syntax.
+- It's algebraic set theory in concrete terms.
+
 - ## [Geode 和 redis 两个分布式内存数据库的对比，优缺点？](https://www.zhihu.com/question/31699176/answers/updated)
   - Geode是分布式内存数据库，提供了可配置的一致性保证，能够保证数据不丢失，更符合数据库的定位。
   - 而Redis的定位本身就是缓存，采用的最终一致性和周期性持久化策略，在单服务进程模型下，提供了高性能缓存服务

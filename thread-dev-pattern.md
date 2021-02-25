@@ -11,6 +11,22 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+
+- ## Folks who have are familiar with both Protobufs/gRPC and GraphQL (incl Relay/Apollo/Amplify etc) 
+- https://twitter.com/swyx/status/1364852210144747522
+  - how would you compare/contrast their priorities and ideal usecases?
+- I've used both extensively for years (and Avro) I'd rank them GraphQL > Avro > Protobufs which hurts, because I'm a Gopher first. 
+  - GraphQL's schema IDL expressiveness and tooling is first-rate. 
+  - Avro has amazing back/forward compat tooling, and protobufs is ...protobufs.
+  - Clearly my preference is explicit types, good tooling, clear docs, and performance behind that. Avro and protob are within a negligible % of each-other. But Avro works best (along side Apache Parquet) for the long-tail of BI/reporting needs in my org.
+  - gRPC on the other hand, multi-plexing stuff screaming fast over HTTP2 between [micro] services feels so fast, you can hardly believe there's a network in the middle, but the cost in debuggability and being stuck with protob is kinda high.
+  - I would favor GraphQL for anything "user facing" (incl internal) with a well written schema (in the original schema definition language, not in some "compiles from my language to SDL). For speed, archival, "downstream" reporting, etc I'd take Avro
+- Go with REST/GraphQL when you start.
+  - Introduce gRPC only when REST/GraphQL does not fit the scope.
+- Protobuf suits fast-evolving systems i.e back-end services through “non-breaking” flexibility: versioning, reserved fields, non-breaking name changes (preserves index)
+  - GraphQL suits more change-sensitive systems (client-side apps)
+- Every technology has an inciting use case, and then we try to extend it and turn it into the uber-tool, sometimes to the detriment of the original tech. The extensibility of both I think is still being determined.
+
 - ## Where is the course to learn how to manipulate ASTs so I can do cool things 
 - https://twitter.com/ryanflorence/status/1362840515725590528
 - [A talk](https://speakerdeck.com/xjamundx/hiking-through-the-javascript-forest) about Abstract Syntax Trees (ASTs) in JavaScript and how to use them to create codemods and eslint rules

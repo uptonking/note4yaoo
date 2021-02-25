@@ -55,6 +55,15 @@ modified: '2021-02-09T13:39:41.705Z'
   - The class names should be instantly familiar to anyone who has used Bootstrap.
   - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
 
+- infima /60kStar/MIT/202102/css
+  - https://github.com/facebookincubator/infima
+  - https://facebookincubator.github.io/infima/
+  - A modern styling framework for content-driven websites 
+  - It's just CSS, so it works with React, Vue, Angular, anything!
+  - Built using modern CSS approaches - CSS variables and Postcss, BEM naming.
+  - built-in support for theming and dark mode!
+  - The main difference between Infima and existing CSS frameworks (e.g. Bootstrap, Bulma) is that it's built with a modern theming approach (CSS variables), modern tooling and has dark mode support out of the box, which makes it perfect for building content-driven websites such as documentation websites.
+
 - cutestrap /1.6kStar/GPLv3/201910/css
   - https://github.com/tylerchilds/cutestrap
   - http://www.cutestrap.com/features/themes

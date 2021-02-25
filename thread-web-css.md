@@ -24,6 +24,21 @@ modified: '2021-01-08T17:15:13.906Z'
 
 # pieces
 
+- ## 
+
+- ## The css prop, as it was implemented, was a mistake.
+- https://twitter.com/threepointone/status/1364696794005921801
+  - it changes the type signature of every component 
+  - the prop that's passed in is never available in the props received
+  - the passed prop can't be examined
+  - when composing, it has to be deserialised and serialised again
+- How it should (could?) be
+  - only 'host' elements (div, span, etc) should accept it and convert to className
+  - other components could accept the object, but not convert to a className
+- The css prop makes tracing CSS infinitely harder. It had/has great benefits, but that continues to be my biggest heartache about it.
+- How does this compare to the styled syntax?
+  - Dunno, never used it. I like the css() function.
+
 - ## In general, items with bigger z-index values rise to the top, but that's not always true.
 - https://twitter.com/JoshWComeau/status/1364569420325150722
   - Here, our tooltip (z-index 999999) renders under the header (z-index 2).

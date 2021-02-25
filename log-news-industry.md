@@ -19,6 +19,9 @@ modified: '2020-08-27T11:52:21.241Z'
 
 # 2020
 
+- 2020
+  - Chromebooks outsold Macs worldwide in 2020, cutting into Windows market share.
+
 - 202012-market-市场监管总局根据举报，依法对阿里巴巴集团控股有限公司实施“二选一”等涉嫌垄断行为立案调查。
 - 202012-market-甲骨文宣布将总部从加州迁往得克萨斯，为何硅谷科技公司纷纷逃离
   - oracle离开加州之前，palantir也走了

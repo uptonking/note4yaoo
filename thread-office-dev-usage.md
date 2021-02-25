@@ -11,6 +11,14 @@ modified: '2021-01-14T13:17:38.972Z'
 
 - ## 
 
+- ## Despite all its warts, MDX is a gamechanger for writing documentation and technical content. 
+- https://twitter.com/dan_abramov/status/1364652922055835648
+  - It removes the friction between the desire to add a bit of interactivity, and actually doing it in a way that surpasses your original intent. 
+  - I can’t imagine going back to plain Markdown.
+  - Unlike with a traditional CMS-backed writing, I don’t need a vendor to tell me what kind of blocks I’m allowed to use. I want to make my own in a few minutes.
+  - My biggest problem with MDX is complexity of the stack. Hoping Server Components can simplify it in the long term.
+- This uses a fresh new fork of MDX: xdm
+
 - ## Live Edit "playground" type component using @Alpine_JS and some @tailwindcss
 - https://twitter.com/kevinbatdorf/status/1287783480567271429
   - it's almost like codepen-ception

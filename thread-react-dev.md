@@ -11,6 +11,12 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## how to trace which component is suspending in React so I can put a Suspense wrapper around it?
+- https://twitter.com/fakenickels/status/1364921351820181512
+- tired: Suspense wrapper, wired: Suspenders
+- debug stopping at every error since suspense is basically throwing a promise from a component?
+- I *think* the dev tools might tell you what suspended.
+
 - ## Once upon a time, there was discussion and PRs that tried to add a third "root state" argument to `combineReducers` , so that slice reducers could read other slices if available:
 - https://twitter.com/acemarke/status/1363547923963863046
   - But, we finally gave up on that idea. Still feels potentially useful, though
@@ -78,19 +84,16 @@ modified: '2021-01-06T14:40:11.360Z'
 - ## I've come to believe that the base React Hooks should always be used inside of a custom hook 
 - https://twitter.com/kyleshevlin/status/1354845869246476290
   - to provide encapsulation and context to the concern
-  - IME, 2 things are true:
-
-    - there’s never a use of useEffect that couldn’t benefit from a good function name
-    - Re: the other hooks, they almost always come grouped together, ie if your managing state, you have some callbacks to handle that state.
-    - Put ‘em in custom hooks.
+  - IME, 2 things are true
+  - there’s never a use of useEffect that couldn’t benefit from a good function name
+  - Re: the other hooks, they almost always come grouped together, ie if your managing state, you have some callbacks to handle that state.
+  - Put ‘em in custom hooks.
 
   - Don’t worry if the hooks are reusable, that can come later.
-
     - By putting all the elements related to a concern in a custom hook, you can focus on the API you want your component to use. 
     - You can hide implementation details your component doesn’t need to know.
 
   - [useEncapsulation or Why Your React Components Should Only Use Custom Hooks](https://kyleshevlin.com/use-encapsulation)
-
     - A custom hook is just a function and functions are structures we can use to encapsulate the related elements of a concern and expose an API to our function's consumer.
     - Take notice, our Component now only consumes custom hooks. 
     - Another benefit of this pattern is that dependencies quickly become obvious because they end up being arguments to our custom hooks.

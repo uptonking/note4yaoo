@@ -1,11 +1,11 @@
 ---
-title: web-css-sass-scss-less
-tags: [css, less, sass]
+title: web-css-sass-less-postcss
+tags: [css, less, postcss, sass, styling, web]
 created: '2020-10-06T12:03:25.728Z'
-modified: '2020-12-21T07:45:45.366Z'
+modified: '2021-02-25T17:48:40.857Z'
 ---
 
-# web-css-sass-scss-less
+# web-css-sass-less-postcss
 
 # guide
 
@@ -49,6 +49,48 @@ modified: '2020-12-21T07:45:45.366Z'
 - sass cons
   - sass内置函数有限，没有充分利用js灵活计算的优势，参考treat.js和polished
 
+# postcss
+
+- PostCSS的主要功能只有两个
+  - 第一个就是把CSS解析成JavaScript可以操作的 抽象语法树结构（Abstract Syntax Tree，AST），
+  - 第二个就是调用插件来处理AST并得到结果。
+- PostCSS一般不单独使用，而是与已有的构建工具进行集成。
+  - PostCSS与主流的构建工具，如 Webpack完成集成之后，选择满足功能需求的 PostCSS 插件并进行配置。
+
+- [GitHub now supports PostCSS syntax highlight.](https://twitter.com/Qodesmith/status/1039592898076008450)
+  - Use `.pcss` file file extension and `pcss` for code block examples in Markdown
+  - Where can I find info on the `.pcss` extension? Is it the same syntax as css?
+    - `.pcss` is a convention for a style sheet which supposed to be processed by PostCSS and usually has non-standard syntax or features, or standard syntax which isn't supported in all browsers yet. 
+    - It could be a regular CSS as well.
+    - Yep, it is just a convetion without proper description (because PostCSS plugins are very different)
+
+## postcss vs sass
+
+- postcss更/过于灵活，它对自定义css语法没有统一的规定，需要查看当前项目依赖的插件
+  - 而sass内置了最常用的扩展css功能的语法
+  - 主流ide可以支持sass文件跳转到@import的依赖文件，但postcss不支持
+  - 可以参考babel和typescript对语法支持的关系
+
+- the biggest difference between Sass and PostCSS:
+  - Sass comes with a whole bunch of functionality out of the box, even if you don’t need some of that functionality. 
+  - PostCSS allows you to choose which functionality you’d like to add (and they have a pretty amazing choice of independently created plugins).
+
+- ref
+  - https://www.npmtrends.com/sass-vs-postcss-vs-node-sass-vs-postcss-loader
+    - vs2021: postcss >> postcss-loader > node-sass > sass(dart-sass)
+  - https://www.npmtrends.com/typescript-vs-@babel/preset-typescript
+    - vs2021: ts: 17m, babel-ts: 7m
+  - [Switching from SASS to PostCSS](https://dev.to/michaeldscherr/switching-from-sass-to-postcss-4p0c)
+
+## postcss-plugins
+
+- https://github.com/postcss/postcss-scss
+  - A SCSS parser for PostCSS.
+- https://github.com/jonathantneal/postcss-sass
+  - 依赖sass
+- https://github.com/AleshaOleg/postcss-sass
+  - 不依赖sass，Not all Sass syntax supported. 
+
 # less
 
 - who is using
@@ -75,7 +117,8 @@ modified: '2020-12-21T07:45:45.366Z'
   - Both options will minimize the footprint of your styles, as well as avoid any problems that might result from the client’s browser not running JavaScript. 
 - Maybe when LESS has a companion like Compass for Sass, it will become as powerful as Sass.
 
-- ## less vs sass
+## less vs sass
+
 - Less will work on both client side and Server side. SCSS will only work on Server side.
   - less是通过客户端处理的，sass是通过服务端处理，相比较之下前者解析会比后者慢一点
 - Less环境较Sass简单

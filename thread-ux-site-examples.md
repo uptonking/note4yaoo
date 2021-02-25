@@ -22,7 +22,19 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://emuiers.blogspot.com/2020/08/emui-10-themes.html
     - 华为202008
 
+# logo examples
+
+- mirror style
+- https://twitter.com/lachlanjc/status/1364599448052117507
+
+- blitz
+- https://twitter.com/flybayer/status/1364684173554892807
+  - https://blitzjs.com/stickers
+
 # ux-pieces
+
+- new website with card
+- https://twitter.com/juergenhassler/status/1364593421986525185
 
 - I've now roasted 100s of landing pages through my side project http://roastmylandingpage.com.
 - https://twitter.com/helloitsolly/status/1359174396284436480

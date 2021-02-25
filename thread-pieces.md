@@ -13,7 +13,14 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## I'm vibing with mono color, but maybe it's overdone. I
+- ## Someone literally emailed me a death threat because they got the last letter from my course and I don’t have more content to send. 
+- https://twitter.com/dan_abramov/status/1364936558651076615
+  - When the audience is large enough, there’s always going to be some percentage of people who are unstable and need help. 
+  - It’s just numbers. Kind of scary to think about.
+- Similar recent issue happened to the Curl maintainer
+  - [I WILL SLAUGHTER YOU](https://daniel.haxx.se/blog/2021/02/19/i-will-slaughter-you/)
+
+- ## I'm vibing with mono color, but maybe it's overdone.
 - https://twitter.com/brian_lovin/status/1363388183153569793
   - I love the negative margins on the subscribe box to maintain a straight key line.
 - I love it, but feels slightly less legible. 

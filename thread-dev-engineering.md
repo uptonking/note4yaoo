@@ -13,6 +13,18 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Want to find a perf problem? Throw something big at it.
+- https://twitter.com/kuvos/status/1364929672652464132
+  - 88mb of js will probably do
+
+- ## Integration testing tip: Avoid creating many small tests. Instead, create a few big tests. 
+- https://twitter.com/housecor/status/1364584436755480578
+  - Here’s why: There’s a lot of overhead in starting each integration test. 
+  - So to build a fast integration test suite, favor “big” tests over “small” tests.
+  - Example: Imagine I have a todo app. I don’t write separate tests for create, update, and delete. Instead, I create a single test that checks all three. I name the test “should support adding, editing, and deleting todos”.
+- And when the test fails, you don't know why.
+  - In Cypress that’s clear. It shows what line. And even records and screenshots.
+
 - ## Best CSS debugger: `border: 1px red solid;` .
 - https://twitter.com/kyleshevlin/status/1363901000948408320
 - I have to say this every time: This is close, but it's NOT the best.
