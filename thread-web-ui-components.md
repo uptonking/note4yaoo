@@ -13,6 +13,15 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+
+- ## Spacer component is a one-way ticket for handling CSS margins, there's simply no going back.
+- https://twitter.com/bernam92/status/1365322784004571139
+  - It's WAY faster than giving top/bottom margins to elements that don't belong in them!
+  - Debug mode? Add background-color and :before content to visualize your spacings!
+- Hmm doesn't it make the html too bloated and hard to read like it used to be when we used to use HoC in react?
+  - This is the only downside of this approach, which I feel... ignorable?
+
+
 - ## https://github.com/seek-oss/capsize
   - Capsize makes the sizing and layout of text as predictable as every other element on the screen.
   - Using font metadata, text can now be sized according to the height of its capital letters while trimming the space above capital letters and below the baseline.

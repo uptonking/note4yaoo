@@ -13,6 +13,13 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## As a CS prof, I use binary search practically every day to figure out which part of the paper is crashing LaTeX.
+- https://twitter.com/bradreaves/status/1365061879744315398
+- I take quadratic computer time to avoid the logarithmic human time for the binary search (a.k.a. re-compile every few keystrokes).
+- This is how I used to teach kids to debug. 
+  - When a problem is really hard to find, try and reduce code in half, recursively, until the program works
+- Divide and comment 😋
+
 - ## Want to find a perf problem? Throw something big at it.
 - https://twitter.com/kuvos/status/1364929672652464132
   - 88mb of js will probably do

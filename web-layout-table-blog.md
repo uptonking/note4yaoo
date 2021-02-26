@@ -10,11 +10,11 @@ modified: '2020-12-21T07:46:26.570Z'
 # Responsive CSS Table
 
 - ## [Responsive Data Tables_2011](https://css-tricks.com/responsive-data-tables/)
-- Responsive design is all about adjusting designs to accommodate screens of different sizes. 
-- So what happens when a screen is narrower than the minimum width of a data table? 
+- Responsive design is all about adjusting designs to accommodate screens of different sizes.
+- So what happens when a screen is narrower than the minimum width of a data table?
   - zoom out and see the whole table, but text may be too small
   - zoom in to read, but scrolling by touch sucks
-- The biggest change is that we are going to force the table to not behave like a table by **setting every table-related element to be block-level**. 
+- The biggest change is that we are going to force the table to not behave like a table by **setting every table-related element to be block-level**.
 - Then by keeping the zebra striping we originally added, it’s kind of like each table row becomes a table in itself, but only as wide as the screen. No more horizontal scrolling! 
 - Then for each “cell”, we’ll use CSS generated content ( `:before` ) to apply the label, so we know what each bit of data means.
 - two alternative ideas that are both very cool

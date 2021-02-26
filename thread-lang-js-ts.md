@@ -11,6 +11,21 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## is there a way to wait for N promises on tests?
+- https://twitter.com/sseraphini/status/1365297469911937025
+  - I have a test that will receive N messages and process each of them using an async code
+  - so I need to wait N process to be processed to do some assertion
+- Promise.all() or Promise.allSettled() might be work.
+- `await new Promise(setImmediate)` .
+  - will this awaits a single promise or all the pending promises?
+  - This awaits all promises that are to be resolved in the same event loop
+
+- ## I just realized ternary operator is called that way because it handles THREE things at once
+- https://twitter.com/vishwajeetv/status/1365121673922543622
+- Personally I am not fan of the reduced readability introduced by ternary operator. I avoided them for years, and even today I use it sparingly. 
+  - If else is much more readable and maintainable.
+  - Short expressions *should* use the ternary operator.
+  - The problem is that if/else is not an expression, but a statement
 
 - ## I think most JS libraries that vend some kind of observable value could just use async iterables instead of an actual observable library.
 - https://twitter.com/justinfagnani/status/1360793286781247491
@@ -27,12 +42,10 @@ modified: '2021-01-28T14:34:20.579Z'
   - You end up building your own ad-hoc chains in likely buggy async/await code and probably doing it in some complex hook with race conditions or difficult to debug code. 
   - I don't use rxjs but I see the appeal.
 
-
 - ## Babel gave us an incredibly flexible ecosystem of plugins and presets. TypeScript (as a language) limits you to using whatever language features they choose to implement.
 - https://twitter.com/mjackson/status/1361525113175171072
   - It’s always trade-offs when it comes to engineering, but what a price for type safety!
 - TS is usually pretty good about implementing features at Stage 3
-
 
 - ## Writing app TypeScript is *way* easier than writing library TypeScript
 - https://twitter.com/tannerlinsley/status/1361159377051262977

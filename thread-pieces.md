@@ -11,7 +11,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
-- ## 
+- ## Worry less about people disabling JavaScript for websites.
+- Worry more about JavaScript disabling websites for people.
 
 - ## Someone literally emailed me a death threat because they got the last letter from my course and I don’t have more content to send. 
 - https://twitter.com/dan_abramov/status/1364936558651076615

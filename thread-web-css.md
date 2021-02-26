@@ -26,6 +26,18 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Does the world need another CSS-in-JS library?
+- https://twitter.com/markdalgleish/status/1365201894457679873
+  - 使用postcss插件可以转换最新的css特性，类似babel
+- Yes, something that can keep Lighthouse happy. I use one styled-component and Lighthouse screams at me to "REMOVE UNUSED JAVASCRIPT".
+- What the world needs is CSS Variables-based zero-runtime library
+  - CSS Variables are so much more suitable for themes and allow for the theme to be referenced from any context.
+  - The only downside is that one can't use variables in a media query (for now?).
+  - Custom Media Queries is in works
+  - You can substitute it with "postcss-custom-media" for now.
+  - What is really exciting is logical functions and constant variables
+- Only if it outputs atomic CSS
+
 - ## The css prop, as it was implemented, was a mistake.
 - https://twitter.com/threepointone/status/1364696794005921801
   - it changes the type signature of every component 

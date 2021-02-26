@@ -55,7 +55,10 @@ modified: '2021-02-25T17:48:40.857Z'
   - 第一个就是把CSS解析成JavaScript可以操作的 抽象语法树结构（Abstract Syntax Tree，AST），
   - 第二个就是调用插件来处理AST并得到结果。
 - PostCSS一般不单独使用，而是与已有的构建工具进行集成。
-  - PostCSS与主流的构建工具，如 Webpack完成集成之后，选择满足功能需求的 PostCSS 插件并进行配置。
+  - PostCSS与主流的构建工具，如 Webpack完成集成之后，选择满足功能需求的 PostCSS插件并进行配置。
+- 使用postcss插件可以转换最新的css语法特性，类似babel
+  - 可以书写最新的css语法，然后利用postcss插件转换
+  - 不建议使用自定义的css语法，因为.css/.scss后缀的文件ide会报错，而.pcss文件不够流行
 
 - [GitHub now supports PostCSS syntax highlight.](https://twitter.com/Qodesmith/status/1039592898076008450)
   - Use `.pcss` file file extension and `pcss` for code block examples in Markdown
