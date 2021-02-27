@@ -82,7 +82,14 @@ modified: '2021-02-09T13:40:11.536Z'
     - theme, size, lang(标准html属性), dir/ltr/rtl(标准html属性)
     - 同时支持多种配置方式，优先级: 自定义配置类名 > 标准属性值 > 框架默认值
   - 使用主流design system的类名都包含前缀，如mdc-/slds-/pf-/spectrum-
-    - 无前缀的有bootstrap、carbon
+    - 无前缀的有bootstrap、carbon、infima
+  - 如何去掉prefix
+    - 若卸载样式源码中，export的对象就变得复杂
+    - 建议使用一个默认prefix，生成样式文件后，通过hook action修改生成的文件来去掉
+
+- css变量名和类名都采用小写和短横，如halfmoon，infima
+  - spectrum变量小写，类名大写
+  - patternfly变量大写，类名小写
 
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
@@ -117,6 +124,16 @@ modified: '2021-02-09T13:40:11.536Z'
       - --pf-global--primary-color--100
     - 各组件的变量，具体使用的是`.pf-t-dark .pf-c-button`
       - --pf-c-button--m-primary--Color，--pf-c-card--BackgroundColor
+  - PatternFly is made out of isolated and modular structures that fall into 2 categories: Layouts, Components
+  - Layouts are the containers that allow for organizing and grouping its immediate children on the page
+    - A layout never imposes padding or element styles on its children.
+  - Components are modular and independent structures concerned with how a thing looks.
+    - The component itself never has widths, floats or margins.
+  - classnames
+    - create an extension to an element with BEM modifiers if it’s a change of color or scale. 
+      - If the change generates a new entity, then create a new component.
+    - PatternFly is made up of isolated components that don't allow dependencies. 
+      - Therefore, the use of helpers or utility classes is discouraged.
 
 # themes-popular
 

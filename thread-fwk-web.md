@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## JSX Lite is now the first and only framework you can edit visually right in your IDE 
+- https://twitter.com/Steve8708/status/1365356598441308162
+- At Vaadin we are working on something similar for those who prefer lit-html tagged literals to JSX.
+- I think the coolest thing about JSX here is using it to map to compiled frameworks as well. 
+  - Like there are Svelte and Solid outputs. 
+  - One of the challenge I've seen with tagged template literals (and I do have a version for Solid) is that you can't bury the reactivity easily.
+  - I'm stoked how JSX-Lite looked at common templating patterns--I'm biased since it basically reflects Solid's API--came up with something that should work regardless of top-down, reactive, or fine-grained rendering paradigms. As someone constantly fighting tooling it is refreshing
+- Solid's API was such a huge unlock and inspiration for JSX Lite, and the highest performing output target! 
+  - Solid is such an amazing project on so many levels everyone should check out
+
 - ## Replace Type Component with Subcomponents. Tip: replace ReactNode by ComponentType
 - https://twitter.com/sebastienlorber/status/1363891104194699269
   - Describe a pattern I often use in React, where you have some kind of "router" component that dispatch to subcomponents by reading a "configuration map".

@@ -11,6 +11,25 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## The modern `.avif` image format is small and mighty: it produces images that are *20-90% smaller* than png/jpg!
+- https://twitter.com/JoshWComeau/status/1365347703107031041
+  - But it's only supported in Chrome and Firefox
+  - Fortunately, we can use the `<picture>` HTML tag to support *all* browsers, by providing fallbacks in other formats
+  -  I found, a web-based .avif file converter that does its work *in the browser*
+- the decoding speed of this format can be pretty slow, since the compression is so advanced. 
+  - This can mean that while it saves time/bandwidth downloading, it can still be bad for performance 
+  - As always, do your own testing! 
+
+- ## What if you could tell the browser about a JWT, and then it would automatically send it with any future requests to the server that authorized it?
+- https://twitter.com/ryanflorence/status/1365451878075572228
+- Oooh! We can call them cookies!
+  - And make them just one giant string that’s a pain to parse!!!!
+- And what if you didn't use JWTs at all and made your app reasonably secure instead with server-side sessions. Where the libraries automatically use httpOnly cookies by default.
+  - What if you did use jwt with httpOnly so you can have best of both? Secure and no tie to a server architecture
+- I like how the Firebase library works - any time you have Firebase authenticate (it receives a JWT), any further use of Functions/Firestore automatically include the JWT in the request. it's necessary for Firestore access rules
+  - would be cool to see this for any jwt/fetch request
+- Exactly, you can store the JWT in a cookie, just make sure it’s a local only and secure cookie
+
 - ## Use the `start` attribute to change the starting point for your ordered lists.
 - https://twitter.com/denicmarko/status/1364480932955238401
   - `<ol start="2">`

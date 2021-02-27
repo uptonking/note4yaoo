@@ -7,8 +7,6 @@ modified: '2021-02-09T19:27:01.319Z'
 
 # thread-blogger-frontend
 
-# dev-frontend
-
 # web-stars
 
 - 尤雨溪
@@ -44,6 +42,89 @@ modified: '2021-02-09T19:27:01.319Z'
 - 雪碧
   - react, 阿里，beam
   - https://github.com/doodlewind
+
+# dev-frontend
+
+- Joshua Comeau
+  - https://github.com/joshwcomeau
+  - https://twitter.com/JoshWComeau
+  - https://www.joshwcomeau.com/
+  - intro: css expert
+  - projects
+    - https://github.com/joshwcomeau/react-flip-move
+      - inactive
+      - you may be interested in checking out projects like react-flip-toolkit.
+
+- Andrea Giammarchi 
+  - https://github.com/WebReflection
+  - https://twitter.com/WebReflection
+  - projects
+    - https://github.com/WebReflection/hyperHTML
+      - A Fast & Light Virtual DOM Alternative
+      - https://github.com/WebReflection/linkedom
+
+- Ryan Carniato
+  - https://github.com/ryansolid
+  - https://twitter.com/RyanCarniato
+  - projects
+    - https://github.com/ryansolid/solid
+
+- Chris Ferdinandi 
+  - https://github.com/cferdinandi
+  - https://twitter.com/ChrisFerdinandi
+  - https://gomakethings.com/articles/
+  - projects
+    - https://github.com/cferdinandi/reef
+
+- Mark Erikson
+  - https://github.com/markerikson
+  - https://twitter.com/acemarke
+  - https://github.com/reduxjs/redux
+
+- Erik Rasmussen
+  - https://github.com/erikras
+  - https://twitter.com/erikras
+  - projects
+    - https://github.com/final-form/final-form
+      - Framework agnostic, high performance, subscription-based form state management
+    - https://github.com/redux-form/redux-form
+      - A Higher Order Component using react-redux to keep form state in a Redux store
+
+- Paul Henschel
+  - https://twitter.com/0xca0a
+  - https://github.com/pmndrs/three-stdlib
+
+- John Gruber
+  - https://twitter.com/gruber
+  - intro: creator of markdown
+  - https://daringfireball.net/projects/
+
+- Tan Li Hau 
+  - https://github.com/tanhauhau
+  - https://twitter.com/lihautan
+  - https://lihautan.com/blogs/
+  - intro: svelte expert
+  - projects
+    - https://github.com/tanhauhau/svelte-json-tree
+
+- Daishi Kato
+  - https://github.com/dai-shi
+  - https://twitter.com/dai_shi
+  - https://github.com/dai-shi/react-tracked
+
+- Brian Vaughn
+  - https://github.com/bvaughn
+  - https://twitter.com/brian_d_vaughn
+  - https://github.com/bvaughn/react-virtualized
+
+- Jason Miller
+  - https://github.com/developit
+  - https://twitter.com/_developit
+  - https://github.com/developit/htm
+
+- Devon Govett
+  - https://twitter.com/devongovett
+
 - 云谦
   - react，阿里，umi、dva
   - https://github.com/sorrycc

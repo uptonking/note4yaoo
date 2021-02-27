@@ -11,6 +11,20 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ##  `ComponentProps` helper type from React is indeed very helpful
+- https://twitter.com/wcandillon/status/1365326333807583234
+- ComponentProps accepts a component and gives you back the type of that component’s props
+  - In this example his “icon” prop will accept all the values that the FeatherIcon’s “prop” accepts
+  - It’s useful because it means you can declare a type that is derived from a component’s props
+  - The reason derivation is good is that it causes the correct things to break and stay up to date.
+  - If feather icons adds more icons, the name enum will grow and so will your icon prop. Similarly if it shrinks you will get type errors telling about it.
+  - A good deal of being efficient with TypeScript is about knowing how to structure your types such that the errors appear in the most useful places!
+  - Sometimes an in-line declaration does wonders for “traceability” and other times inline declarations are noise.
+  - It really depends.
+- Neat! My solution for the same problem was a little more hacky: `name: keyof typeof Feather.glyphMap;` .
+- It really is, even if you control the underlying component it saves you having to export its props interface.
+  - Gotcha: it can tempt you to use inheritance excessively when it's easy to dig into another component. In this snippet, icon could be a ReactNode instead.
+
 - ## how to trace which component is suspending in React so I can put a Suspense wrapper around it?
 - https://twitter.com/fakenickels/status/1364921351820181512
 - tired: Suspense wrapper, wired: Suspenders

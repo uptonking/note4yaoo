@@ -26,6 +26,26 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## :focus only works on the exact input element. But, if you stick the element you want to style on focus immediately after the input in the HTML, you can do this
+- https://twitter.com/jarredsumner/status/1365403128632238080
+  - `input:focus + .FocusContainer {` .
+  - Often this is to make `<label>` more prominent – you probably want it to visually appear before the `<input>` .
+- `:focus-within` can also be used for this
+
+
+- ## TIL CSS `background-repeat: round` repeats background images without clipping Scissors
+- https://twitter.com/addyosmani/status/1275322697933881344
+- repeat间距不变，直接重复，会截取只显示可见部分
+- round会缩放间距，只显示完整图案
+- space类似round
+- https://twitter.com/anatudor/status/1099921793614336000
+  - use `background-repeat: round` when you want your background to repeat n (integer) times AND have a size around a certain value
+  - if you don't want any background stretching/ distortion, but you're ok with a bit of extra space in between background repetitions, go for `background-repeat: space`
+
+- ## There are *lots* of different ways to hide stuff on the web
+- https://hugogiraudel.com/2021/02/17/hiding-content-responsibly/
+  - https://codepen.io/vincent-valentin/full/JjGmxzV
+
 - ## Does the world need another CSS-in-JS library?
 - https://twitter.com/markdalgleish/status/1365201894457679873
   - 使用postcss插件可以转换最新的css特性，类似babel

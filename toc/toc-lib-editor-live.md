@@ -173,6 +173,11 @@ modified: '2021-01-17T07:14:21.293Z'
   - An isolated component environment
   - Automatic UI controls for React component props
 
+- https://github.com/pmndrs/leva
+  - https://leva.pmnd.rs/
+  - React-first components GUI
+  - More than 12 different kinds of inputs available
+
 # json-object-editor
 
 - https://github.com/YMFE/json-schema-editor-visual

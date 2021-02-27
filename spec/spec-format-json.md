@@ -18,8 +18,12 @@ modified: '2020-10-15T13:41:01.275Z'
   - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号
 
 - ## json-extensions
-- json5
-  - Main JSON5 features: comments, trailing commas.
+- json-superset
+  - json5: 官方只实现了js解析器
+  - hjson: 官方实现了很多解析器js, py, go
+  - json5 vs hjson
+    - stars: 4.3k vs 2.2k
+    - npmtrends: 36m > 0.17m
 - geo
   - geojson
   - topojson

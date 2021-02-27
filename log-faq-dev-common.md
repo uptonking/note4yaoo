@@ -18,56 +18,50 @@ modified: '2020-12-23T09:52:52.428Z'
 - 哪些计算适合放在服务端，哪些计算适合放在客户端？
   - 行业案例: ssr, react-server-components
 
-# 配置项过多时，如何处理更好，特别是针对组件或应用
+# json格式的key是否可以含有特殊字符
 
+- 用不用都可以，一致性最重要
+  - 参考已有配置或其他项目的选择，或语言特性的选择，或团队风格
+  - 不同命名风格之间可通过处理工具进行转换
+    - camelCase: java,js,google-json-style-guide
+    - PascalCase:
+    - snake_case:python,php,js
+    - kebab-case
+- 缺点
+  - 访问属性时，-易与减号混淆
 - tips
-  - search: component too many props/options
-  - Too many options = bad software.
-- 惯例优先原则/约定优于配置(convention over configuration)
-  - 提供合理的默认值
-  - opinionated的另外一个同义词是Convention over configuration，或者coding by convention
-- 拆分出弱耦合的小组件，然后组合小组件
-- 将部分紧密相关的配置项组合成一个大对象作为一个大的配置项，还要考虑方便替换该大配置对象的默认值
-  - group by features
-  - 类似component的`variant`属性，设计目的就是一次修改多个值
-- 利用custom hooks，将配置项参数作为函数的参数，而不是组件自身的参数
-  - 也称为 state reducer pattern
-
-- It has too many configuration options and lacks configuration-by-convention dependency injection, one needs to look up all the services
-
-- [A component with 500+ possible variants feels too much imho.](https://twitter.com/apixelpusher/status/1336875440972181510)
-  - 本次讨论没有提出解决方案
-  - If I’ve learned anything that past two weeks of focusing on standing up a library quickly it’s to not over-complicate variants or have too many of them for a single component. It’s not useful to force people to waste time parsing a ton of options in a bunch of select inputs.
-  - I think this might be true for a lot of components, but a button in a reasonably complex design system? That's easily 500+ (1000+ depending on complexity) variations in the code component. How are you all doing this? Split by size (or w/e), even if that's not true in code?
-    - `<Button>` props:
-      * Size (several)
-      * With icon (left or right)
-      * Prominence (primary, secondary, tertiary, etc)
-      * Visual style (default, success, danger, brand, etc—we had a lot lol) 
-      * Automatic width vs sized to container
-      * Some others I'm missing heh
-
-- [What do you get when you put too many props on a component instead of breaking it into smaller components? Prop soup](https://twitter.com/NerdCowboy/status/966027592506617856)
-  - if you want the most flexibility, compound components are the way to go imo. 
-  - It allows you to create a wrapper component where you can pass in an object like you're saying AND you can create custom functionality elsewhere when you need it.
-
-- [Hick’s Law predicts that the time and the effort it takes to make a decision increases with the number of options.](https://twitter.com/InfoKaaswell/status/1261675520271548418)
-  - The more choices, the more time users take to make their decisions.
-  - Trello's 3rd signup step has a dropdown with 15 options.
-  - That makes it hard to pick one:
-  - In a travel booking app like Airbnb, having too many options can lead to a paradox(矛盾的人/事) of choice (and a churn!):
-  - Duolingo's list of lessons can sometimes be overwhelming
-  - Zapier showed too many navigation links during their upgrade flow which distracts you from crucial checkout steps
-  - Find an area where you have a lot of options or a lot of repetitions.
-  - Try to either reduce the number of options or find ways to hide items.
-  - If you can't minimize the options, try to put them in an easily skimmable order and make sure the items are familiar; else, it won't work.
+  - 可以尝试将`{"a-b":v}`写成两级，如`{a:{b:v}}`
+  - key中慎用dot点号，易与路径混淆，如style-dictionary中使用key作为路径访问引用值
+  - api的应用场景一般用camelCase
+    - [jsonapi](https://jsonapi.org/): camelCase
+    - [OpenAPI Specification](https://swagger.io/specification/): camelCase
+- json-config-usecase
+  - style-dictionary书写组件样式时，常用css属性名作为key
+  - npm的package.json使用的是camelCase，如devDependencies
+  - vscode的settings.json文件，很多key中包含dot点号，特殊的如"[html]"
 
 - ref
-  - [Avoid soul-crushing components](https://epicreact.dev/soul-crushing-components/)
-    - The beauty of patterns like compound components, state reducers, prop getters, controlled props, etc. is that you can have your simple API and a simple implementation at the same time.
-  - [7 code smells in your React components_202011](https://dev.to/awnton/7-code-smells-in-react-components-5f66)
-  - [The State Reducer Pattern with React Hooks](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
-  - [Sometimes tools are too flexible.](https://twitter.com/sebmck/status/1142090256096743425)
+  - [Recommending camelCase for JSON members](https://github.com/json-api/json-api/issues/1255)
+  - [JSON Naming Convention (snake_case, camelCase or PascalCase)](https://stackoverflow.com/questions/5543490)
+    - There is no SINGLE standard
+  - [In JSON do you prefer to use camelCase, kebab-case, or snake_case for key names?](https://cryos.net/2018/04/json-camels-kebabs-and-snakes/)
+    - I have apparently been following the premise of that post for quite some time, C++ (at least the conventions I am used to using) favors camel cased (STL favors snakes), as does JavaScript. 
+
+- ## [Is it bad practice to use hyphens in JSON keys?](https://softwareengineering.stackexchange.com/questions/319698)
+- You can use anything as JSON keys, as long as it is valid UTF-8, doesn't contain zero code points, 
+  - and it would be useful if you could represent the key as a string in the programming language of your choice. 
+  - I might recommend not to use different Unicode representations of the same string(for example "Ä" written as one or two code points).
+  - It seems some people try to create classes with instance variables that match the keys in JSON dictionaries.
+    - Which of course doesn't work if your key is "some-value" unless you write COBOL. I think this is misguided. 
+    - I have model classes which are designed the way I want them. 
+    - JSON is just used to fill the model classes. 
+    - I'll take whatever the server guys decided to use for the keys and put it into my model objects.
+- I prefer to avoid hyphens.
+  - if you use hyphens, they can get treated as "minus" unless you bracket them - unaesthetic and extra typing
+- After spending some time in the industry and working a few systems. 
+  - I don't think there is a best practice or proper casing for JSON keys. 
+  - The most important aspect of any formatting (casing/code-style/etc) is **consistency** and team adoption.
+  - If the code base is fragmented and inconsistent, meet as a team and agree on a consistent style then police the formating collectively.
 
 # [event-loop异步模型为什么比多线程模型在IO密集场景中更高效？](https://www.zhihu.com/question/67751355/answers/updated)
 
@@ -375,7 +369,9 @@ function MyComponent(props) {
 # js数组对象能添加自定义属性吗？ 可以
 
 - `var arr=[1,2,3]; arr.count=3;`
+
 - console.log(arr)得到 `[1, 2, 3, b: 33]`
+
 - arr.length得到3
 - 可以借助此方法对数组插值，参考styled-system的responsive array prop value
 

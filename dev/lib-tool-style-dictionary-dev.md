@@ -31,6 +31,7 @@ modified: '2021-01-02T18:08:07.806Z'
 - 建议使用js书写tokens，计算工具库更丰富，
   - 适合以后生成gradient
   - polished提供的方法分类：mixins，color，shorthands，easing
+  - 方便修改变量名前缀prefix
 
 - 组件的样式不推荐使用style-dictionary书写
   - s-d虽然能提供sass的variables、functions、mixins、nested、import等功能，

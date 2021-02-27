@@ -31,6 +31,10 @@ modified: '2021-02-05T14:01:09.420Z'
 - https://twitter.com/flybayer/status/1364684173554892807
   - https://blitzjs.com/stickers
 
+- slack
+  - https://twitter.com/thatbenlifetho/status/1365390262386663424
+  - 类似药丸的设计
+
 # ux-pieces
 
 - new website with card

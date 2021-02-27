@@ -11,6 +11,14 @@ modified: '2021-01-08T18:53:25.244Z'
 
 - ## 
 
+
+- ## One of my favorite GLSL things is being able to rearrange vector components. This is a simple JS utility to do just that with three.js
+- https://twitter.com/ggsimm/status/1365379890267254784
+  - https://codesandbox.io/s/three-swizzle-41d1l?file=/src/index.js
+- Also found this by @mattgperry that does it using proxies, which is even better
+- https://github.com/mattgperry/vekta
+  - A JavaScript vector type with GLSL-inspired swizzling
+
 - ## 90% of award winning sites are webgl enriched experiences that'd be impossible with html/css
 - https://twitter.com/0xca0a/status/1355535059684646914
   - for react devs it can be the same level of complexity as forms/routes maybe easier
