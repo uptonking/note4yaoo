@@ -7,6 +7,9 @@ modified: '2020-08-17T07:50:37.963Z'
 
 # pick-dict-idiom-expression
 
+- rabbit hole
+  - 无底洞
+  - go down the rabbit hole，口语中是深陷其中无法自拔的意思
 - Be there (or) be square
   - 不见不散
 - off the cut

@@ -26,12 +26,17 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## How Spotify makes text on images more readable: a CSS linear-gradient overlay.
+- https://twitter.com/addyosmani/status/1365735686838493187
+  - More common these days, but still an effective technique for better color contrast.
+- This tool right here can help you determine the opacity to use for the overlay
+- Another technique from google.
+
 - ## :focus only works on the exact input element. But, if you stick the element you want to style on focus immediately after the input in the HTML, you can do this
 - https://twitter.com/jarredsumner/status/1365403128632238080
   - `input:focus + .FocusContainer {` .
   - Often this is to make `<label>` more prominent – you probably want it to visually appear before the `<input>` .
 - `:focus-within` can also be used for this
-
 
 - ## TIL CSS `background-repeat: round` repeats background images without clipping Scissors
 - https://twitter.com/addyosmani/status/1275322697933881344

@@ -11,6 +11,16 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## Pure CSS Wardrobe using `<details>` && `<summary>`
+- https://twitter.com/jh3yy/status/1365782898662662147
+  - css实现开门关门
+  - https://codepen.io/jh3y/pen/BaQrKxp
+
+
+- ## Just a couple of floating squares playing Table tennis with pure CSS.
+- https://codepen.io/amit_sheen/full/PobQjMX
+
 - ## Opposing corner radial gradients look softer than angled linear gradients:
 - https://twitter.com/argyleink/status/1295745027063218176
   - https://codepen.io/argyleink/pen/ExKyMeZ

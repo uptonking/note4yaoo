@@ -125,6 +125,10 @@ modified: '2021-02-09T19:27:01.319Z'
 - Devon Govett
   - https://twitter.com/devongovett
 
+- Justin Fagnani
+  - https://twitter.com/justinfagnani
+  - Web components, lit-html & LitElement with the Polymer Project at Google.
+
 - 云谦
   - react，阿里，umi、dva
   - https://github.com/sorrycc

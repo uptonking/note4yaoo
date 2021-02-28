@@ -11,6 +11,24 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+
+- ## Do you use "window." when accessing lowercase properties of the global object?
+- https://twitter.com/NicoloRibaudo/status/1365771610981085202
+- I always use `window` because many vars share identical names. 
+  - Makes it easier to know if I'm accessing window.location or location from useLocation()
+- I use `globalThis` usually
+
+
+
+- ## Theming with design tokens. Let’s say we have color-primary-100 through 900.
+- https://twitter.com/claviska/status/1365672928868712452
+  - Would you assume 100 is always dark and 900 is always light? Or would you find it OK if, for example, a dark theme more or less inverted the values so 100 is light and 900 is dark?
+  - The benefit is you can restyle all components (even ones that don’t exist yet) purely with tokens.
+  - If color values aren’t allowed to change, you’d need to explicitly style each component for every theme.
+  - I’m torn but starting to lean towards this approach
+- Tailwind CSS 
+  - The dark mode just sits as a media query, but they also use statically named colors like: text-red-300
+
 - ## The modern `.avif` image format is small and mighty: it produces images that are *20-90% smaller* than png/jpg!
 - https://twitter.com/JoshWComeau/status/1365347703107031041
   - But it's only supported in Chrome and Firefox

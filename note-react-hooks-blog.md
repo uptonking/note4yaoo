@@ -9,6 +9,34 @@ modified: '2020-12-29T14:18:03.808Z'
 
 # guide
 
+# [DejaVu: Caching versus Memoization](https://dev.to/thekashey/dejavu-caching-versus-memoization-298n)
+
+- Devs had a great conversation about the future concurrent rendering
+- The main problem was “tearing” - different time slices coexistence in one render(output). 
+  - Some component might see the New State, while others might still see the Old. 
+  - You, as a User, will see both.
+- There was no such thing as the "past" with Class based components - there was the only one `this`, and nothing else. And `this` always represents the "present".
+- With hooks, well...
+  - When you are do onClick - it sees variables from the local -functional scope. From the "past" scope - only refs represents the present.
+  - When you are declare effect there is no "past" - only the present. As a result, you don't know when some effect might trigger. "Past" and "Present" dependencies would be compared inside React.
+  - When you are run effect - it's already one time tick in the past. Something might have already been changed, but not for effect - it is frozen in time.
+  - When you are running multiple effects - they might affect each other, causing cascade and repetitive updates. Until they all are not finished - there is no past and there is no present - it's mixed, as long as every hook works by its own.
+- In RxJS world it's called glitches - temporary inconsistencies emitted by Observables - and they are not considered as a problem.
+  - Glitches in React are also more about features than bugs. 
+  - However, they are at least a big performance problem.
+
+- As a conclusion
+  1. useState state is derived from props, only during the first render
+  - useMemo other values are derived from state and props
+  - useEffect some variations of props and state are reflected back to the state.
+  - ANY useEffect might cause glitches.
+  1. React is a subject for glitches
+  2. Use Class Components to handle complex state situations.
+  3. Use external state (like Redux)
+  4. Be aware of the problem
+  5. And it might be not a problem at all.
+- state management is, and always will be a very complicated beast
+
 # [The State Reducer Pattern with React Hooks](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
 
 - As a reminder, the benefit of the state reducer pattern is in the fact that it allows "inversion of control" which is basically a mechanism for the author of the API to allow the user of the API to control how things work internally.

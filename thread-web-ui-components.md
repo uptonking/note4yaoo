@@ -13,6 +13,14 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## Do you have any favorite designs of step-by-step UIs like on this screenshot?
+- https://twitter.com/dan_abramov/status/1365723330825887750
+  - I’m looking for examples where:
+  - There are individual stops
+  - There are descriptions of changes between them
+  - Bonus points if it’s interactive in some way (e.g. you can click or hover an item and that does something).
+- Good old wizard. It can be extended and used to solve complex UI flow
+- [Step by step navigation](https://design-system.service.gov.uk/patterns/step-by-step-navigation/)
 
 - ## Spacer component is a one-way ticket for handling CSS margins, there's simply no going back.
 - https://twitter.com/bernam92/status/1365322784004571139
@@ -20,7 +28,6 @@ modified: '2021-01-19T04:46:23.100Z'
   - Debug mode? Add background-color and :before content to visualize your spacings!
 - Hmm doesn't it make the html too bloated and hard to read like it used to be when we used to use HoC in react?
   - This is the only downside of this approach, which I feel... ignorable?
-
 
 - ## https://github.com/seek-oss/capsize
   - Capsize makes the sizing and layout of text as predictable as every other element on the screen.
