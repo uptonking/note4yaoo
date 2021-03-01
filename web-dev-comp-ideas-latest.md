@@ -121,6 +121,52 @@ modified: '2020-12-27T20:29:55.568Z'
   - 组件的快速预览图，不需要交互事件
   - 可参考SkeletonLoader
 
+# mobile-first 移动优先
+
+- mobile-ux-features
+  - 默认纵向布局显示
+  - 尽量不用水平滚动条
+  - 多用min-width
+
+- ## Tinkering with layout components. How about `<Stack axis="x|y" space={…}>` where the axis should default to "y" for a mobile-first experience.
+- https://twitter.com/kripod97/status/1263393651000049665
+  - Responsive props could also be supported, e.g. to make the component expand horizontally on tablets and up
+  - With this pattern, there would be no need for a separate `<Inline>/<HStack> and <Stack>/<VStack>` component.
+  - I’m wondering if there are any valid use-cases for `flex-direction: *-reverse`. Would love to hear the opinion of accessibility experts about that.
+  - stacks should not wrap at any time.A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
+- I usually go for `inline` flag as it’s always about two possible directions
+  - That’s also fine, but I don’t see how it could support responsive props.
+  - Same approach as yours, `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
+- What about HStack and VStack like SwiftUI?
+  - I tried those concepts at first and currently building a project with them. 
+  - However, I feel like they’re too rigid for responsiveness while being a bit redundant, too.
+  - You need to switch the axis dynamically/responsively?
+  - Yeah, exactly. The `axis` provides that functionality, being a responsive prop.
+
+- ## When designing websites these days, how do you start working on your mock-ups? Mobile first, then desktop? 
+- https://twitter.com/smashingmag/status/1205455057539477504
+- Always component-level; always mobile-first. 
+  - I've taken the habit of creating a pattern library of all components even if it's not "officially" part of the project; it makes cross-browser testing easier, too.
+- Depends on the analytics, if most visits are mobile I'll start with mobile. 
+  - Projects I work on are generally desktop-heavy though, so rarely happens.
+- Same as some others have said, I create section by section, and for each one I have an idea how it will look at each size before I begin.
+- We start with desktop/laptop/tablet, with "mobile-in-mind" rather than mobile-first.
+- I prefer mobile-first but increasingly I am starting with desktop and then refactoring my stylesheet for mobile-first styles. It is just easier to work things out when I only have desktop mockups.
+- Sadly, mobile layouts don't have the same "Wow" factor as desktop. Client's often don't understand the concept of scrolling. Therefore a lot of cases, I have to start with desktop so the client understands the product, then go to mobile (time permitting)
+- I’ve done all of the above, but I’ve returned to Desktop-first, then mobile. It’s been more efficient for me to start with desktop and then to simplify it for mobile.
+- I use a different approach, I design for the highest available resolution (7680 by 4320 pixels) and let the presentation scale down to any screen display device.
+
+- ## When building a CSS component mobile-first, do you use min-width or max-width mostly 
+- https://twitter.com/smashingmag/status/902839994880053248
+- I usually have only min-widths for mobile first. components tend to get more complex on bigger screens, so fewer overrides this way.
+- Mobile-first means it starts changing behavior as the screen gets bigger (technically speaking) so I use min-width.
+- min-width. I start with default styles and as the viewport gets wider, additional styles can be applied. This keeps properties to a minimum.
+- Min-width. With HTTP/2, split CSS to files by min-width, use mq in `<link>` ➡️ browser will prioritize download
+- Min-widths, then group and sort them with mqpacker @PostCSS plugin
+- I can't stand building mobile first. I find it much easier building the most complex layout first then simplifying it for mobile.
+- When a property changes over the different breakpoints we were explicit declare it for every breakpoint. So min and max every mediaquery.
+- Way easier to min-width and add on flex/grid props then to max-width and remove them. Also using flex/calc to avoid MQs altogether is best!
+
 # discuss
 
 - ## [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)

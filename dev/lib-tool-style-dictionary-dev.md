@@ -27,6 +27,7 @@ modified: '2021-01-02T18:08:07.806Z'
   - 可以输出扁平化无嵌套的样式变量，
     - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
   - 输出的值也可以使用 css vars
+  - 使用js对象书写color的value时，hsl不会自动计算
 
 - 建议使用js书写tokens，计算工具库更丰富，
   - 适合以后生成gradient

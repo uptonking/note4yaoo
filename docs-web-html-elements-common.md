@@ -152,7 +152,22 @@ modified: '2020-12-08T13:14:07.354Z'
     - strike: if it represents deleted content, use del instead. 
       - In all other cases use s
 
-# form-select
+# picture ie都不支持
+
+- `<picture>` element contains zero or more `<source>` elements and one `<img>` element to offer alternative versions of an image for different display/device scenarios.
+  - The browser will consider each child `<source>` element and choose the best match among them. 
+  - If no matches are found—or the browser doesn't support the `<picture>` element—the URL of the `<img>` element's `src` attribute is selected.
+- The `<img>` element serves two purposes:
+  - It describes the size and other attributes of the image and its presentation.
+  - It provides a fallback in case none of the offered `<source>` elements are able to provide a usable image.
+- Common use cases for `<picture>`:
+  - Art direction. 
+    - Cropping or modifying images for different media conditions 
+    - (for example, loading a simpler version of an image which has too many details, on smaller displays).
+  - Offering alternative image formats, for cases where certain formats are not supported
+    - For example, newer formats like AVIF or WEBP have many advantages, but  might not be supported by the browser.
+
+# form-select-option
 
 ``` HTML
 <label for="pet-select">Choose a pet:</label>
@@ -184,6 +199,23 @@ modified: '2020-12-08T13:14:07.354Z'
   - React, instead of using the `selected` attribute, uses a `value` attribute on the root `select` tag.
   - Overall, this makes it so that `<input type="text">` `<textarea>` , and `<select>` all work very similarly - they all accept `value` and `onChange` attribute that you can use to implement a controlled component.
   - You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag
+
+## `<datalist>` 主流浏览器都支持
+
+- `<datalist>` element contains a set of `<option>` elements that represent the permissible or recommended options available to choose from within other controls.
+
+``` HTML
+<label for="ice-cream-choice">Choose a flavor:</label>
+<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+<datalist id="ice-cream-flavors">
+  <option value="Chocolate">
+  <option value="Coconut">
+  <option value="Mint">
+  <option value="Strawberry">
+  <option value="Vanilla">
+</datalist>
+```
 
 # br: The Line Break element
 

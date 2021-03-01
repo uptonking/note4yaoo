@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Performance tip: if you're working with *large* objects (10KB and larger), it'll be way faster to parse them as JSON strings rather than consuming them directly in your JavaScript as objects
+- https://twitter.com/mgechev/status/1366259446154989569
+  - because json grammar is uch simpler than js grammar
+  - json can be parsed more efficiently than js.
+- not for GTA apparently
+
 - ## is there a way to wait for N promises on tests?
 - https://twitter.com/sseraphini/status/1365297469911937025
   - I have a test that will receive N messages and process each of them using an async code
