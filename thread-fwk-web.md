@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Why does it take GTA online so long to to load? Great investigation, and the answer is… a JSON parser??
+- https://twitter.com/jaffathecake/status/1366275005185728512
+  - [How I cut GTA Online loading times by 70%](https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/)
+- I can imagine how this happened; 'simple' task given to a junior team member, and 7 years ago the list of items was a lot smaller than 10MB. Too busy to be reviewed properly as it 'works'.
+
 - ## JSX Lite is now the first and only framework you can edit visually right in your IDE 
 - https://twitter.com/Steve8708/status/1365356598441308162
 - At Vaadin we are working on something similar for those who prefer lit-html tagged literals to JSX.

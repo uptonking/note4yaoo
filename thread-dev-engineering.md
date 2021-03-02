@@ -13,6 +13,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Is Webpack's code-splitting just garbage or are there more tricks to implement?
+- https://twitter.com/mattgperry/status/1366344701964648450
+- Why do you think it is garbage?
+  - Because moving a single enum into its own file yielded a 11kb/89% saving.
+  - This is incredibly delicate and has implications about how a project should be structured (no more than one export per file). As far as I can tell, for no good reason. It isn't the case with Rollup.
+- nope, webpack just offloads more to Terser whereas Rollup do a lot more work on its own, this can make a big diff for some projects, 
+  - also - Rollup makes some pragmatic choices sometimes whereas webpack tries to be super strict and safe, which also can make a big diff
+  - So do you personally tend towards single-export files?
+  - This is a good advice if u want to keep things as treeshakeable as possible - ive thought about creating a rollup plugin that would chunk a project this way automatically. I dont want to split files manually. Never got to it though
+
 - ## As a CS prof, I use binary search practically every day to figure out which part of the paper is crashing LaTeX.
 - https://twitter.com/bradreaves/status/1365061879744315398
 - I take quadratic computer time to avoid the logarithmic human time for the binary search (a.k.a. re-compile every few keystrokes).

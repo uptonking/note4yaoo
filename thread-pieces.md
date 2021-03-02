@@ -11,6 +11,9 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## Also sometimes the best solution is indeed just to take a walk or a nap and leave the problem alone.
+  - A tired developer is not a productive one.
+
 - ## Worry less about people disabling JavaScript for websites.
 - Worry more about JavaScript disabling websites for people.
 

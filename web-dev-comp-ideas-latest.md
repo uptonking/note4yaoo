@@ -128,15 +128,20 @@ modified: '2020-12-27T20:29:55.568Z'
   - 尽量不用水平滚动条
   - 多用min-width
 
+- ref
+  - ios
+  - android
+  - miui
+
 - ## Tinkering with layout components. How about `<Stack axis="x|y" space={…}>` where the axis should default to "y" for a mobile-first experience.
 - https://twitter.com/kripod97/status/1263393651000049665
   - Responsive props could also be supported, e.g. to make the component expand horizontally on tablets and up
   - With this pattern, there would be no need for a separate `<Inline>/<HStack> and <Stack>/<VStack>` component.
   - I’m wondering if there are any valid use-cases for `flex-direction: *-reverse`. Would love to hear the opinion of accessibility experts about that.
-  - stacks should not wrap at any time.A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
+  - stacks should not wrap at any time. A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
 - I usually go for `inline` flag as it’s always about two possible directions
   - That’s also fine, but I don’t see how it could support responsive props.
-  - Same approach as yours, `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
+  - Same approach as yours,   `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
 - What about HStack and VStack like SwiftUI?
   - I tried those concepts at first and currently building a project with them. 
   - However, I feel like they’re too rigid for responsiveness while being a bit redundant, too.

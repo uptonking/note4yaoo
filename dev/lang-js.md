@@ -127,6 +127,14 @@ var s = Boolean(myString); // initial value of true
 - WeakMaps are ideal for preventing memory leaks when keeping DOM nodes as keys
 - There are various use cases when you don't control the keys' garbage collection, and WeakMaps are the way to ensure you're not leaking memory. 
 
+## Array
+
+### join
+
+- `join()` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. 
+  - If the array has only one item, then that item will be returned without using the separator.
+  - If an element is undefined, null or an empty array [], it is converted to an empty string.
+
 # mdn docs
 
 ## 函数参数

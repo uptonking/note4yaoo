@@ -13,6 +13,15 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## I feel every data fetch on application have this 5 different UI states: Initial, Fetching (Loading), Error, Empty and Result.
+- https://twitter.com/renatorib_/status/1366481747882504194
+  - Sometimes Refetching !== Fetching
+  - And I feel that the right thing to do is somehow abstract/standardize this UI handling
+  - It's about UI abstraction, not state itself.
+- Also, data may be changed (localy), outdated (server has a new version), invalid (server rollback your version). Error may be intended (validation) or not (network fail).
+  - Many reasons cause many options. We should generalize and name it, to be ready for each of them.
+- For React, react-query or swr solve this beautifully
+
 - ## Do you have any favorite designs of step-by-step UIs like on this screenshot?
 - https://twitter.com/dan_abramov/status/1365723330825887750
   - I’m looking for examples where:

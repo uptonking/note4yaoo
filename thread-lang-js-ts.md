@@ -11,6 +11,68 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## All JavaScript functions should only be allowed to take one argument. 
+- https://twitter.com/swyx/status/1198632709834326021
+  - Take an object if you need to pass more than one piece of data.
+  - Order independent
+  - More Greppable codebase
+  - Low cost of adding API
+  - predictable pointfree JS
+  - you already do this in @Reactjs as "props"
+- i've been calling this the "Single All The Way" rule
+  - there's a backend version of this too
+  - Someone already coin the term for this philosophy, it's called RORO (Retrieve Object, Return Object). 
+- In that way you lose currying unless you implement one that works with object
+- Note that if the object is not persisted/wrapped in a closure, V8 will optimize that away. It’s pretty amazing. 
+  - There are quite few more rules to it, so using multiple args might be better for performance sometimes.
+- controversial controversial opinion: object destructuring should not be done in the function's params
+  - I like destructuring in the arguments, but one pro to the latter form is that they're consts and the destructured ones are not (and, apparently controversial, but I think everything should be const unless you plan on reassigning it).
+- I’m applying this rule when a function has more than 2 arguments, but applying to _every_ function is like too much.
+- But React components are called with two arguments.
+- This is where I love named params in swift. Wish JS had that.
+- I’ve mostly only use positional args for either construction/dependency closure or in cases where partial application is expected.
+  - Though an argument can be made that partial application is better served by a function that returns a function in many cases.
+- Deno (typescript runtime) has it in their style guide of 3 args max, with the 3rd arg being an object if more than 3 properties are required.
+- Yup, the 1 argument is better, especially the bigger the codebase is. Same reasoning applies to C#.
+- Except lots of built in callbacks take two.
+
+- ## I’m starting to have an opinion that *every* JS/TS function that takes more than one argument should take an object instead
+- https://twitter.com/tlakomy/status/1362828075390631936
+  - Better IDE support, code completion and you’ll never screw up the order of arguments
+- I still prefer two args when there is a main argument and I put the rest in the second. eg: `format(code, options)` .
+  - I hate losing myself in custom types for each function param object
+- There is a pattern for that, its name is RORO (receive an object, return an object)
+  - [Javascript RORO pattern - A nice way to write more readable functions](https://www.tinyblog.dev/blog/2020-07-13-javascript-roro-pattern/)
+  - Receive an Object, Return and Object
+  - functions should always accept an object as their parameters and they should always return an object as their result.
+  - Receiving an Object as standard for all the functions I write is something I started doing after learning Python and getting experience with kwargs, which I greatly enjoyed since it made it so easy to know what was going into a function
+  - I personally get a lot less utility of Return an Object than I do Receive an Object. 
+  - Multiple return items are pretty nice, but I find that most functions I write only concern themselves with a single thing.
+- One potential downside is that if you do not make the object properties readonly, the incoming object is mutable. 
+  - This is not the case with non-object parameters since they are passed by value, not by reference.
+- I find the pattern of having a max of two args a good balance: first is required and the second is optional. 
+- Been doing this for years. 
+  - The only exceptions are extremely rare: functions which implement unary or binary operators, which by definition are future proof. 
+  - Another advantage in @typescript : it naturally encourages using named interfaces, making them readable and composable.
+- I often follow this pattern as well, much more predictable for end user/third party and you can build in default behavior for undefined configuration options
+- only downside is having to repeat every argument twice for TS declarations
+- better for extending APIs without breakages as well. it’s the closest thing we have to named function parameters (yet)
+  - I am absolutely of the same opinion. Also the extension or modification is much easier.
+- Every time I don't make a function that accepts an object, I find myself regretting it so hard in the future 
+- In @PixiJS we've been doing more of this. There are some APIs with perplexingly long args for historical reasons.
+  - I only favor args when it really the logical order is baked-in, eg. setPosition(x, y) 
+- The main advantage of the object arg is that it's super easy to refactor. 
+  - Imagine you need to change the order, or add some optional arg
+- I would prefer a python way. They have positional and named arguments at the syntax level.
+
+- ## Totally shocked that there's no refactoring to reorder arguments in VS Code for TypeScript.
+- https://twitter.com/BenLesh/status/1366543595172470786
+  - I get that with type overloads and rest args it's tricky
+- Not a problem if you avoid positional arguments altogether and use a single object instead.
+  - That's fine for apps, but unfortunately if you're developing a library that needs to be memory sensitive and lower level, you probably don't want to do that.
+  - I agree that for hot code GC pressure can be a consideration to opt for positional arguments over POJOs at each call site.
+- I would love so much that TypeScript have a transpiled named parameters feature
+
 - ## Performance tip: if you're working with *large* objects (10KB and larger), it'll be way faster to parse them as JSON strings rather than consuming them directly in your JavaScript as objects
 - https://twitter.com/mgechev/status/1366259446154989569
   - because json grammar is uch simpler than js grammar
