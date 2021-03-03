@@ -126,7 +126,8 @@ modified: '2020-12-27T20:29:55.568Z'
 - mobile-ux-features
   - 默认纵向布局显示
   - 尽量不用水平滚动条
-  - 多用min-width
+  - media query多用min-width
+  - no hover, more touch, less drag
 
 - ref
   - ios
@@ -141,7 +142,7 @@ modified: '2020-12-27T20:29:55.568Z'
   - stacks should not wrap at any time. A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
 - I usually go for `inline` flag as it’s always about two possible directions
   - That’s also fine, but I don’t see how it could support responsive props.
-  - Same approach as yours,   `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
+  - Same approach as yours,      `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
 - What about HStack and VStack like SwiftUI?
   - I tried those concepts at first and currently building a project with them. 
   - However, I feel like they’re too rigid for responsiveness while being a bit redundant, too.

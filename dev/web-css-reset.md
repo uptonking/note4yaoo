@@ -7,6 +7,16 @@ modified: '2020-12-21T07:45:40.012Z'
 
 # web-css-reset
 
+# faq
+
+## [到底该不该用 CSS reset？](https://www.zhihu.com/question/23554164/answers/updated)
+
+- 不写页面的人当然站着说话不腰疼了，现代浏览器之间差异现在仍然很大（这是事实），去看看那些国产浏览器厂商抄的内核版本是多少！
+  - 如果你还在写页面，写css，reset是必须的，
+  - 因为你还在写页面，你还在写css，所以你基本都搞不清楚那些是有用的，哪些是没用的，所以全部干掉是最好的方法，多谈点实用才是硬道理。
+- 传统的CSS reset指的是把所有的浏览器默认样式全部干掉。
+  - Normalize.css：非常温和的CSS reset替代方案，
+
 # guide
 
 - ref
@@ -18,7 +28,7 @@ modified: '2020-12-21T07:45:40.012Z'
     - A modern alternative to CSS resets
     - It makes browsers render all elements more consistently and in line with modern standards. 
     - It precisely targets only the styles that need normalizing
-    - [modern-normalize includes only normalizations for the latest Chrome, Firefox, and Safari](https://github.com/sindresorhus/modern-normalize)
+    - [modern-normalize](https://github.com/sindresorhus/modern-normalize) includes only normalizations for the latest Chrome, Firefox, and Safari
   - minireset.css /MIT/2kStar/201910
     - https://github.com/jgthms/minireset.css
     - https://jgthms.com/minireset.css/
@@ -37,7 +47,6 @@ modified: '2020-12-21T07:45:40.012Z'
       - More importantly though, a single direction of margin is a simpler mental model.
     - For easier scaling across device sizes, block elements should use rems for margins.
     - Keep declarations of font-related properties to a minimum, using inherit whenever possible.
-
 
 # minireset.css 
 

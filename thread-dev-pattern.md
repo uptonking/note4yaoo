@@ -11,6 +11,14 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## How do you prefer to name hooks that provide booleans and their results?
+- https://twitter.com/erikras/status/1367029738880061441
+  - let foo = useFoo()
+  - let isFoo = useFoo()
+  - let isFoo = useIsFoo()
+- “Asymmetric非对称的 naming” (second) case it the most beneficial, and the most hard to constantly follow
+- I never have a single value returned from a hook, I always use an object. 
+  - Everytime I ever tried that, I ended up wanting to add more elements to be returned and having to refactor all the consumers of the hook.
 
 - ## Folks who have are familiar with both Protobufs/gRPC and GraphQL (incl Relay/Apollo/Amplify etc) 
 - https://twitter.com/swyx/status/1364852210144747522

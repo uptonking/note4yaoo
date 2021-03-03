@@ -13,6 +13,17 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+
+- ## 
+
+- ## 99% of what I do in a large codebase is find pre-existing examples, copy-paste structure, fill in the holes and clean up. That's it.
+- https://twitter.com/deech/status/1366859264732635148
+  - Relevant skills: find pre-existing examples, copy-paste structure, fill in holes, clean up
+  - Irrelevant skills: category theory, able to whiteboard delete for a red-black tree
+- This is definitely how big company code works! Sometimes to a surprising effect. 
+  - You might check in some random pattern you haven’t given much thought to while filling in some hole. 
+  - Then a year later you find your code in a 1, 000 places with tiny changes. Hope it was good code.
+
 - ## Is Webpack's code-splitting just garbage or are there more tricks to implement?
 - https://twitter.com/mattgperry/status/1366344701964648450
 - Why do you think it is garbage?

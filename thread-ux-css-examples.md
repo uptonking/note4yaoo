@@ -11,12 +11,15 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## there is an excellent reason to use #CSS Position Sticky with top and bottom combined if the sticky element is stacked in the middle
+- https://twitter.com/eladsc/status/1367047171078582273
+- https://codepen.io/elad2412/pen/ExNKLbrz
 
 - ## Pure CSS Wardrobe using `<details>` && `<summary>`
+
 - https://twitter.com/jh3yy/status/1365782898662662147
   - css实现开门关门
   - https://codepen.io/jh3y/pen/BaQrKxp
-
 
 - ## Just a couple of floating squares playing Table tennis with pure CSS.
 - https://codepen.io/amit_sheen/full/PobQjMX

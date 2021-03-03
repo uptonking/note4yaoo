@@ -11,7 +11,7 @@ modified: '2021-01-09T16:13:07.758Z'
 # ideas
 
 - tips
-  - 借鉴各种解决方案的优点，积累框架/应用
+  - 参考各种解决方案的优点，积累库、框架、应用
 
 - apps
   - datable
@@ -109,13 +109,20 @@ modified: '2021-01-09T16:13:07.758Z'
 - window-layout-manager
   - tips
     - 常作为app的基础组件
-  - golden-layout: 场景功能非常丰富的window
-  - Ventus: 快速切换到窗口平铺预览
+  - golden-layout: 场景丰富功能全面的window
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
+  - Ventus: 快速切换到窗口平铺预览
 
-- lts
+- format
+  - excel/csv/office open xml
   - markdown
   - pdf
-  - excel/office open xml
+  - json
+
+- foundation
+  - canvas
+  - webgl
+  - animation
+    - FLIP
 
 # solutions

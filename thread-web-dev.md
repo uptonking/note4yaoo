@@ -12,6 +12,13 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## 
 
 
+- ## if you want to build a URL, or just get the parts of a URL, the `URL` object isn't half bad.
+- https://twitter.com/BenLesh/status/1366776104942452737
+  - and it exists in both the DOM and Node
+- Its not in IE11 which has burned me so hard multiple times. 
+- It's unfortunately quite broken in React Native Pensive face
+
+
 - ## Do you use "window." when accessing lowercase properties of the global object?
 - https://twitter.com/NicoloRibaudo/status/1365771610981085202
 - I always use `window` because many vars share identical names. 

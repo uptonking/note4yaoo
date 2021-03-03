@@ -34,7 +34,7 @@ modified: '2021-01-01T22:09:59.545Z'
     - and we abstract that into a separate `category` key
 - https://github.com/lyne-design-system/lyne-design-tokens
   - Design Tokens for Lyne Design System
-  - 样式编译根据模版文件 web-scss.template, commonjs.template
+  - token只有10个左右很少，样式输出根据模版web-scss.template, commonjs.template
   - https://github.com/lyne-design-system/lyne-components
     - based on standard compliant Web Components compiled by StencilJS
 - https://github.com/didoo/style-dictionary-demo

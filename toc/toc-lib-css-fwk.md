@@ -56,10 +56,16 @@ modified: '2021-01-28T21:14:14.667Z'
   - https://github.com/pure-css/pure
   - http://purecss.io/
   - A set of small, responsive CSS modules
+- https://github.com/andrearufo/nova.css
+  - https://andrearufo.github.io/nova.css/
+  - 文档单页，样式非常友好，白底绿字
+  - minimalistic CSS framework for your webpages.
+  - Made in pure SCSS and compiled with Gulp.
 - cirrus /694Star/MIT/202101/scss
   - https://github.com/Spiderpig86/Cirrus
   - https://cirrus-ui.netlify.app/
   - 文档单页，文档样式非常友好
+  - css vars和scss vars混用
   - A fully responsive CSS framework with beautiful controls and simplistic structure. 
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
@@ -95,11 +101,6 @@ modified: '2021-01-28T21:14:14.667Z'
 
  
 
-- https://github.com/andrearufo/nova.css
-  - https://andrearufo.github.io/nova.css/
-  - 文档单页，样式非常友好
-  - minimalistic CSS framework for your webpages.
-  - Made in pure SCSS and compiled with Gulp.
 - https://github.com/Borderliner/Meshki
   - https://borderliner.github.io/Meshki/
   - Meshki: A Black-Colored, Responsive Boilerplate for UI Development

@@ -13,7 +13,7 @@ modified: '2020-11-13T07:29:55.201Z'
   - design-tokens(推荐styled-dictionary)
     - polaris,fluid,官方examples
   - theming(推荐css vars)
-    - spectrum-css,pico.css,polaris,patternfly,gestalt,bulma
+    - spectrum-css,pico.css,polaris,halfmoon,patternfly,bulma
     - 切换theme基于修改同名css vars值，具体可以是切换包含这些css vars的类名
   - vanillajs组件的实现(推荐实现为一个单独的包)
     - material,carbon,bootstrap,antd,calcite-web,fluid,phonon,tradeshift,coreui
@@ -241,13 +241,14 @@ modified: '2020-11-13T07:29:55.201Z'
       - Hooks that provides cross-platform state management
   - https://github.com/adobe/spectrum-css
     - /744Star/Apache2/202010
-    - theming基于css vars，能覆盖color和size，支持全局级和组件级
+    - theming基于css vars，包括color和size，支持全局级和组件级
       - 预置了多套主题lightest/darkest/midlight/middark
         - 提供了多种类型的主题，light/dark这类全是颜色变量，large/medium这类全是尺寸
       - 组件和主题都是子包的形式，按需安装，子包非常多，灵活性高
       - 每个组件打包时会生成index-vars.css，然后根据index-vars.css生成vars.css，vars.css专门列出了所有组件级变量方便查看
     - The standard CSS implementation of the Spectrum design language.
-    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
+    - Spectrum CSS is CSS-only, implementing only the interactivity that can be done with pure CSS. 
+    - 没有将css输出成一个大文件，只提供了组件级的css，需逐个引入css文件
     - Adobe maintains separate JavaScript libraries written with React, Angular, and web components
     - Spectrum CSS components have build output that uses CSS custom properties to change themes and scales
     - Each component has a `dist/vars.css` file that contains declarations for each component-level variable

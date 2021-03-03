@@ -38,7 +38,7 @@ modified: '2021-02-09T13:40:11.536Z'
     - spectrum明主题下gray100最白、gray900最黑，暗主题下gray100最黑、gray900最白
       - 使用的是同名的全局变量值，但在不同主题下具体值不同，极易思维混乱
 
-- 实现theme切换的方法
+- 实现themes切换的方法
   - 核心思路
     - `data-theme` 自定义data-属性，然后通过属性选择器设置theme样式变量
       - 若使用的是`data-theme-longName`的形式(名称中含有hyphen一杠)，则读取主题名时要注意会自动camelCase
@@ -81,11 +81,11 @@ modified: '2021-02-09T13:40:11.536Z'
   - css-framework-global-config
     - theme, size, lang(标准html属性), dir/ltr/rtl(标准html属性)
     - 同时支持多种配置方式，优先级: 自定义配置类名 > 标准属性值 > 框架默认值
-  - 使用主流design system的类名都包含前缀，如mdc-/slds-/pf-/spectrum-
+  - 主流design system的类名都包含前缀，如mdc-/slds-/pf-/spectrum-
     - 无前缀的有bootstrap、carbon、infima
-  - 如何去掉prefix
-    - 若卸载样式源码中，export的对象就变得复杂
-    - 建议使用一个默认prefix，生成样式文件后，通过hook action修改生成的文件来去掉
+  - 如何去掉design tokens中的prefix
+    - 若写在样式源码中，export的对象就变得复杂，但可通过js生成来简化
+    - 建议使用一个默认prefix，生成样式文件后，通过hook action修改生成的文件来去掉；或使用自定义transformer
 
 - css变量名和类名都采用小写和短横，如halfmoon，infima
   - spectrum变量小写，类名大写
@@ -106,7 +106,7 @@ modified: '2021-02-09T13:40:11.536Z'
   - 未提供组件级css vars，但全局级css变量名称规则很容易提取出各组件的变量
     - 因为没有组件级变量，切换主题时，直接修改属性color的值为另一个变量即可
   - 单位几乎都用rem，1rem = 10px，因为1600px以上的屏幕会自动放大
-  - 所有组件的所有样式值几乎都是css vars，非常灵活
+  - **所有组件的所有样式值几乎都是css vars**，非常灵活
   - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
   - Transparency(rgba) is used more commonly in dark mode, because everything needs to blend together to look good.
 

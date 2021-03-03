@@ -1,11 +1,11 @@
 ---
-title: toc-lib-editor-live
-tags: [editor, live, toc]
+title: toc-lib-editor-live-doc-knobs
+tags: [doc, editor, live, toc]
 created: '2021-01-17T07:13:51.223Z'
-modified: '2021-01-17T07:14:21.293Z'
+modified: '2021-03-03T21:48:48.379Z'
 ---
 
-# toc-lib-editor-live
+# toc-lib-editor-live-doc-knobs
 
 - guide
   - react组件的实现偏向all in js，所以实现在线编辑只需一个编辑器

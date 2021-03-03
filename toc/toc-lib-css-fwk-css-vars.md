@@ -11,13 +11,17 @@ modified: '2021-02-09T13:39:41.705Z'
 
 - css-vars-tips
   - css变量名区分大小写
-  - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
+  - css变量名中可包含dash和underscore，注意sass属性名的下划线和横杠不区分
   - css变量值遵循css样式属性值的层叠规则
   - css变量值的赋值可以使用另一个css变量
   - css变量值会提升，所以可先使用再声明
   - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
     - 不能用`font-size: var(--scale) + 'px';`
   - css变量值不能用在普通样式属性名，不能用在media query名称中，可用sass插值
+
+- 提供了组件级css vars的组件库
+  - spectrum-css(pcss)，patternfly(scss)，halfmoon(css)，infima(pcss)，
+  - cutestrap(css)，chipolette(less)，aqua(scss)，
 
 # popular
 
@@ -40,7 +44,7 @@ modified: '2021-02-09T13:39:41.705Z'
   - https://github.com/halfmoonui/halfmoon
   - https://www.gethalfmoon.com/
   - theming基于css vars，dark-mode变量名前缀为`--dm`
-  - 未提供组件级css vars
+  - 组件级css vars易分离出来
   - 未模块化，一个css文件一万多行
     - [More modular approach in the roadmap](https://github.com/halfmoonui/halfmoon/issues/78)
   - Front-end framework with a built-in dark mode and full customizability using CSS variables
