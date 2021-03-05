@@ -11,6 +11,23 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## starting to think this "derive transformed data while rendering instead of storing the transformed data in state" needs to be a blog post.
+- https://twitter.com/acemarke/status/1367332072063455232
+- I think the realisation that we can just derive most state instead maintain and sync it was one of the AHA moments I had with react.. would love to read your take on it
+- [Don't Sync State. Derive It!](https://kentcdodds.com/blog/dont-sync-state-derive-it)
+- [Don't over useState](https://tkdodo.eu/blog/dont-over-use-state)
+  - An example
+  - Fetch some data from a remote endpoint (a list of items with categories) and let the user filter by the category.
+  - We have no predictable way of telling what "categories" are.
+  - The page loads, categories are X
+  - User clicks the button, categories are Y
+  - If the data fetching re-executes, the categories will be X again
+  - Maybe this is not so much about `useState` after all, but more about a misconception with `useEffect` : It should be used to sync your state with something outside of React. 
+  - Utilizing `useEffect` to sync two react states is rarely right.
+  - Whenever a state setter function is only used synchronously in an effect, get rid of the state!
+  - We've reduced complexity by halving the amount of effects and we can now clearly see that categories is derived from data. 
+  - A single source of truth.
+
 - ## Literally never ever use redux on a new project under any circumstances. 
 - https://twitter.com/tannerlinsley/status/1365834060161900548
   - Most projects are served just fine with context, hooks, and something like useSWR(). Beyond that you should look at something like relay.

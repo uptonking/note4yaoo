@@ -11,6 +11,13 @@ modified: '2021-01-14T13:17:38.972Z'
 
 - ## 
 
+- ## This looks like the future of documentation
+- https://twitter.com/rauchg/status/1367199228494155786
+  - https://code-hike-scrollycoding-preview.vercel.app/posts/lorem-ipsum-three
+- Have you seen the Stripe docs lately? https://
+  - https://stripe.com/docs/checkout/integration-builder
+  - It's even got selectable options for languages and frameworks at the top, along with Choose Your Own Adventure bits at the bottom if you want to keep customizing. It's really phenomenal documentation.
+
 - ## Despite all its warts, MDX is a gamechanger for writing documentation and technical content. 
 - https://twitter.com/dan_abramov/status/1364652922055835648
   - It removes the friction between the desire to add a bit of interactivity, and actually doing it in a way that surpasses your original intent. 

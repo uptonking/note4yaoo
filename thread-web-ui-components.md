@@ -13,6 +13,22 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## The things we've seen built with @framer this year have already been so awesome. Smart Components are really bringing product design to the next level.
+- https://twitter.com/AddisonSchultz/status/1367067007678578688
+- Been playing around with the Variants & Variables Beta in @framer. 
+  - Here’s a movie library UI with hover variants & simple overlays. It’s crazy how easy and fast it is to prototype this. 
+- Variables really make components crazy customizable
+
+- ## Anyone written about ways they work with design token in dark/light mode?
+- https://twitter.com/SamKap/status/1367299104779489280
+- [Building better products with a design token pipeline](https://uxdesign.cc/building-better-products-with-the-design-token-pipeline-faa86aa068e8)
+- Here's a write-up of the color system from a DS I used to work on:
+  - We had all the color schemes set up in Style Dictionary and exported them as SASS maps. 
+  - In SASS we could then generate color scheme CSS classes 
+  - and doing dark mode was done there by picking 2 color schemes (one for light and one for dark) and putting them behind the appropriate media query.
+  - https://github.com/buildit/gravity-particles/tree/develop/src/tokens/color-schemes
+- By design token do you mean the css prefers-color-scheme attribute?
+
 - ## I feel every data fetch on application have this 5 different UI states: Initial, Fetching (Loading), Error, Empty and Result.
 - https://twitter.com/renatorib_/status/1366481747882504194
   - Sometimes Refetching !== Fetching
