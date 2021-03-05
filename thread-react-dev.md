@@ -11,6 +11,22 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## How would you implement this differently?
+- https://twitter.com/kentcdodds/status/1367356862035718145
+- Wrote this to confirm there wasn't a better way to implement the calculator component (without changing its API). It's included in my blog post
+- Hah, pretty much the same, object lookup using variables is pretty underused syntax but I think it's super elegant and readable
+  - Couldn't disagree more. You're adding in an extra, unnecessary layer of abstraction that moves you further away from the implementation
+
+- ## How to write a React Component in TypeScript
+- https://twitter.com/kentcdodds/status/1367830594730618885
+  - There are plenty of ways to do it, here's how I recommend typing React Components
+  - The point is this: there's no real benefit to using `React.FC` , but there are downsides. So don't use it.
+  - [How to write a React Component in TypeScript](https://kentcdodds.com/blog/how-to-write-a-react-component-in-typescript)
+- Worth mentioning that you _should_ use `React.FC` if you wish for your component to accept a permissive children type (aka any supported children). 
+  - It's not common to restrict children types in my experience (although there are use-cases for that).
+  - You can use `React.FC` and then add `children` with a different type to your props type and it will override the one from `React.FC` .
+- One improvement I’d make is to use `interface` instead of `type` for `CalculatorProps` (or anywhere you’re modeling a JS object and don’t need a union). This is what the TypeScript team recommends.
+
 - ##  `ComponentProps` helper type from React is indeed very helpful
 - https://twitter.com/wcandillon/status/1365326333807583234
 - ComponentProps accepts a component and gives you back the type of that component’s props

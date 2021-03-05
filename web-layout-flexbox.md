@@ -88,9 +88,7 @@ modified: '2020-12-21T07:46:17.578Z'
 - 当 flex-wrap 为 nowrap，且子项宽度和超过父容器宽度时，flex-shrink 会起作用，子项会根据 flex-shrink 设定的值进行缩小（为0的项不缩小）。但这里有一个较为特殊情况，就是当这一行所有子项 flex-shrink 都为0时，也就是说所有的子项都不能缩小，就会出现讨厌的横向滚动条
 - 总结上面四点，可以看出不管在什么情况下，**在同一时间flex-shrink和flex-grow只有一个能起作用**，这其中的道理细想起来也很浅显：空间足够时，flex-grow 就有发挥的余地，而空间不足时，flex-shrink 就能起作用。当然，flex-wrap 的值为 wrap | wrap-reverse 时，表明可以换行，既然可以换行，一般情况下空间就总是足够的，flex-shrink 当然就不会起作用
 
-# A Complete Guide to Flexbox
-
-- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+# [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 # The One Thing Flexbox Can’t Do - Row Span
 
@@ -103,9 +101,7 @@ modified: '2020-12-21T07:46:17.578Z'
   - and make sure one of the elements contains only two elements.
   - Give those elements different flex weights.
 
-# Flexbox layout isn't slow
-
- - [Flexbox layout isn't slow](https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow)
+# [Flexbox layout isn't slow](https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow)
 
 - Wilson notes: some flexbox layouts were taking close to 100 milliseconds; reworking our layouts without flexbox reduced this to 10 milliseconds!
 - Wilson's comments were about the original (legacy) flexbox that used `display: box;`
@@ -120,6 +116,4 @@ modified: '2020-12-21T07:46:17.578Z'
   - I also ran the benchmark using `display:table-cell` and it hit 30ms, right between the two flexbox implementations.
   - The benchmarks above only represent the Blink & WebKit side of things. Due to the time of implementation, flexbox is nearly identical across Safari, Chrome & Android.
 
-# Flexbox and absolute positioning
-
-- [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)
+# [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)

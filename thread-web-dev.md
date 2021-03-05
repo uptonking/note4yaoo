@@ -12,6 +12,14 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## 
 
 
+- ## what's the standard local dev setup for HTTPS-only worklets?
+- https://twitter.com/mattgperry/status/1367514986944335872
+- Caddy + self signed certificate + dnsmasq entries for me. I address my services using .localhost or .dev top level domain
+- Alternatively you can create a local cert. authority (CA). 
+  - This repo is not maintained anymore but I added a short README with documentation on how to create a CA and work through https using Caddy and dnsmasq on localhost. Maybe it can help!
+- Highly recommend mkcert
+- [How to use HTTPS for local development](https://web.dev/how-to-use-local-https/)
+
 - ## if you want to build a URL, or just get the parts of a URL, the `URL` object isn't half bad.
 - https://twitter.com/BenLesh/status/1366776104942452737
   - and it exists in both the DOM and Node

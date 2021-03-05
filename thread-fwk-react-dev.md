@@ -13,6 +13,46 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## react is x-platform. 
+- https://twitter.com/0xca0a/status/1367523451561512968
+  - it renders on the web, desktops, mobile, vr, ar, webgl, canvas, sketch, figma, console, tvs, watches, etc.
+  - you use the same components across platforms. 
+  - this is how it looks when you use react-spring for instance on a native shell
+- As of version 5.3.x react-spring is now universal/platform independent. 
+  - It can animate *anything* on *any target*, from react-native, react-blessed (see screen-cap), to your fridges touchscreen if it had a react-renderer. 🙀 For anything other than dom point it to dist/universal
+- this is how it looks when you use react for webgl and games 
+  - that isn't just shared knowledge bc these are all components, 
+  - it's using the same react libraries you'd rely on with the dom: react-router, redux, etc 
+- preact is a web framework. it renders divs and spans. 
+  - react is preparing for a future in which anyone can create for any platform, and where platforms share the same libraries and components. 
+  - well, actually, not just preparation, that's where we are right now.
+- preact is a web framework. 
+  - That for me is one of the biggest advantages of Preact, not a downside...
+  - Since React started trying to target more and more platforms it got bigger and bigger and it's codebase and code model got very complex.
+  - well, that's not really true is it. people forget that react is 2kb. it got smaller and less complex (hooks). it didn't grow bc of x-platform. but react-dom could really need a face lift, i wish it was smaller so much is certain.
+
+- ## I've wondered for a while what the technical reasons are for so many people using react over preact. Are there any?
+- https://twitter.com/_developit/status/1367514064289730565
+- there are a dozen reasons. 
+  - react is moving forward, constantly innovating and breaching into spaces a web framework like preact does not dare go. 
+  - concurrent mode, suspense, hooks, reconcilers, the new event stuff they're working on, it's always react leading.
+  - doesn't mean no point using preact, there is, but it's easier take an idea and make it smaller, but preact is not the one going forward, fighting for unity across platforms. 
+  - you save a few of bytes, but you also miss out on mostly everything that's happening in reacts eco system.
+  - exactly, though you do have hooks in preact. 😃 but you just can't do things or express yourself in the way you could in react, there's just so much missing. that to me is worth more than a few kb i guess.
+- So technically, it's more about the advanced or experimental features than any major functionality. I would love them to support Web Components as well as Preact does!
+  - the new things are major though. 
+  - suspense will change how we think of async matters. 
+  - concurrent mode will make it rival native performance in ways web apps never could. 
+  - web components are bugged and broken. 
+  - i don't think that's what most people care about.
+- FWIW preact has its own design process and leads in many areas, my guess is that they're just the areas you're not personally interested in.
+  - things like: framework interoperability, pluggable component architectures, partial and mutative hydration, unkeyed diffing, tagged templates as JSX output, state graph integration into VDOM, etc.
+  - i don't doubt it. i am referring to a particular segment of innovation, see unification across platforms, reconciling native and non-native.
+  - or things like suspense, which change how we handle async matters. these are all user-facing, groundbreaking inventions.
+- "state graph integration into VDOM" Face with monocle this sounds intriguing, any further reading available?
+  - I wish! that's the one we're furthest out on, it's only roadmapped at this point. 
+  - Though FWIW Vue is already doing something like it, and Vue 3's performance is great partly as a result.
+
 - ## Do you have a really interesting use for inline reducers? 
 - https://twitter.com/acdlite/status/1364250190279045126
   - Like where you pass a closure to useReducer. Or, you swap out different reducers at runtime.

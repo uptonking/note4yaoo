@@ -11,7 +11,9 @@ modified: '2021-01-21T04:10:34.323Z'
 
 # faq-pieces
 
-## 
+## [怎样取一个跟自己的姓有关的沙雕网名？](https://www.zhihu.com/question/447273744)
+
+- 高耳机、赵相机、付读机、李发店
 
 ## [养一条宠物蛇是一种怎样的体验？](https://www.zhihu.com/question/58571715)
 

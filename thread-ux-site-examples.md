@@ -37,6 +37,9 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- workflow blog built with excalidraw
+  - https://www.elastic.co/blog/elasticsearch-caching-deep-dive-boosting-query-speed-one-cache-at-a-time
+
 - new website with card
 - https://twitter.com/juergenhassler/status/1364593421986525185
 

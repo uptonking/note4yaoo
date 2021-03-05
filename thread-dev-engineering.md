@@ -14,7 +14,22 @@ modified: '2021-01-21T17:52:13.333Z'
 - ## 
 
 
-- ## 
+- ## is there a "modern" UI for OpenAPI? built with @reactjs that could be very customizable?
+- https://twitter.com/sseraphini/status/1367851096421568512
+  - I'm like to embed my API inside @docusaurus
+  - but redoc takes the full page and swagger UI has some dark mode issues
+
+
+- ## You can't mock cloud semantics locally but you can mock the API surface. AWS is very stable. 
+- https://twitter.com/brianleroux/status/1367851230785990663
+  - Folks say you shouldn't use local emulation because of this but I respectfully disagree. It's slower. 
+  - Tighten those feedback loops. Test locally AND in an identical staging stack.
+- Fwiw, same discussion happened in mobile a decade ago. You can't use an emulator they said. Mostly ppl said that because the emulators sucked. 
+  - Ppl don't say that about mobile dev anymore. Cloud will have the same cycle.
+- I was firmly in the “don’t emulate AWS” camp until I actually tried using localstack. 
+  - If the bits you need to emulate are supported, it works quite well.
+  - It's additive too. Work local and then test in a staging stack. Makes step 2 shorter which has higher latency anyhow. 
+  - I'm fairly certain this meme happens every new platform because vendors and frameworks add emulation later. It's an excuse while they get their shit together.
 
 - ## 99% of what I do in a large codebase is find pre-existing examples, copy-paste structure, fill in the holes and clean up. That's it.
 - https://twitter.com/deech/status/1366859264732635148
