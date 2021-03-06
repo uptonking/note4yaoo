@@ -37,6 +37,14 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- This Clubhouse clone with Next.js / Vercel
+- https://twitter.com/leeerob/status/1367958639361818624
+  - next-house.vercel.app
+
+• Uses WebRTC to create voice rooms
+• Uses @Firebase for real-time updates
+• Deployed serverless with @vercel
+
 - workflow blog built with excalidraw
   - https://www.elastic.co/blog/elasticsearch-caching-deep-dive-boosting-query-speed-one-cache-at-a-time
 

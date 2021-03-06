@@ -11,7 +11,7 @@ modified: '2021-02-09T13:40:11.536Z'
 
 - 设计样式theming时可参考
   - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), 
-  - glass-ui, web-map
+  - glass-ui, web-map-theme, gradient
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
@@ -90,6 +90,12 @@ modified: '2021-02-09T13:40:11.536Z'
 - css变量名和类名都采用小写和短横，如halfmoon，infima
   - spectrum变量小写，类名大写
   - patternfly变量大写，类名小写
+
+- style-docs
+  - 组件示例中多个组件的间隔的实现
+    - primitive: ml=mr=0，在一个元素闭合标签和下一个元素开始标签间手动添加空格或换行
+    - halfmoon: docs: mr=2
+    - pico: docs: mr=1/4, mb=1
 
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式

@@ -11,6 +11,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Hot @angular take: "core" and "shared" modules are bad practices
+- https://twitter.com/gc_psk/status/1368143538853191681
+  - I dislike core and shared modules used in multiple places. Adds too much overlapping and leads to bloated bundles.
+- I use "core" to free all imports that should have been declared in app module because I want app module to be as simple as possible. Never use "shared".
+- Never was a fan of core module... App module is core module already. Shared is a nice place to put things which are used in most other modules
+  - The problem I see with SharedModule is that often you end up with lots of unused modules just for the convenience of using a few.
+  - I mean the giant ones with just about everything (99% out there)
+  - Smaller, local shared modules of things that are used often in combination are OK
+
 - ## Why does it take GTA online so long to to load? Great investigation, and the answer is… a JSON parser??
 - https://twitter.com/jaffathecake/status/1366275005185728512
   - [How I cut GTA Online loading times by 70%](https://nee.lv/2021/02/28/How-I-cut-GTA-Online-loading-times-by-70/)

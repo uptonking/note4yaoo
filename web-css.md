@@ -49,6 +49,13 @@ modified: '2020-12-21T07:45:28.814Z'
     - I think that is the right way to go about this, it is easy and will lead to correct outcome.”
 - There are approaches, like BEM for example, which models the CSS as flat as possible, to minimize DOM hierarchy dependency and to decouple web components so they could be "moved" across the DOM and work regardless.
 
+# discuss
+
+- ## [How do I remove the space between inline/inline-block elements?](https://stackoverflow.com/questions/5078239)
+- 在一个元素闭合标签后下一个元素开始标签前，若有空格则会渲染出空格，若没空格则会渲染出挨在一起
+- For CSS3 conforming browsers there is `white-space-collapsing:discard`
+- Today, we should just use Flexbox.
+
 # ref
 
 - [CSS performance revisited: selectors, bloat and expensive styles](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)

@@ -36,6 +36,7 @@ modified: '2021-01-13T17:12:25.854Z'
     - 甚至所有的theme主题样式都可以在bootstrap的基础上修改
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
+  - 设计logo可参考抽象图形、印象派风格
 
 - 公共api/variant
   - borderless

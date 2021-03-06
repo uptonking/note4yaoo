@@ -18,7 +18,7 @@ modified: '2020-12-21T07:46:17.578Z'
 
 # summary
 
-- ## 弹性容器
+- ## 弹性容器 `display: flex | inline-flex;`
 - flex-direction: 指定主轴上项目排列的方向
   - row/column/-reverse
   - 默认值：row，主轴为水平方向，起点在左端
@@ -26,11 +26,11 @@ modified: '2020-12-21T07:46:17.578Z'
   - nowrap, wrap, wrap-reverse
   - 默认值：nowrap，即当主轴尺寸固定时，若空间不足，则项目尺寸会随之调整变小，而并不会挤到下一行
 - flex-flow: flex-direction flex-wrap
-  - 默认值为：row nowrap
+  - 默认值为：`row nowrap`
   - 简写不建议使用
 - justify-content: 指定项目在主轴(水平方向)的对齐方式
   - flex-start/end, center, space-between/around
-  - 默认值：flex-start 左对齐
+  - 默认值：`flex-start` 左对齐
   - 要为项目设置宽度
   - 决定项目显示在一行的什么位置，以及项目在容器里如何分布
 - align-items: 指定高度不同的项目在容器纵向(交叉轴)的对齐方式
@@ -72,7 +72,7 @@ modified: '2020-12-21T07:46:17.578Z'
     - flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定。也就是说、弹性项目里内容的量对项目的宽度没有影响 。
   - 当flex-basis值为auto时，则跟根据尺寸的设定值(如100px)，则这100px不会纳入剩余空间
 - flex: flex-grow flex-shrink flex-basis 指定项目宽度变化方式
-  - 默认值：0 1 auto，弹性项目的宽度由里面的内容自动确定
+  - 默认值：`0 1 auto`，弹性项目的宽度由里面的内容自动确定
   - 简写建议显式写出3个值
   - 快捷值：auto (1 1 auto) 和 none (0 0 auto)
   - 当flex取值为一个非负数字时，则该数字为flex-grow值，flex-shrink 取 1，flex-basis 取 0%

@@ -11,6 +11,15 @@ modified: '2021-01-08T18:53:25.244Z'
 
 - ## 
 
+- ## might have found a solution to threejs being way too big 
+- https://twitter.com/0xca0a/status/1368122900398637058
+  - this is @gordonnl's ogl running through react-three-fiber in a thin wrapper that aliases ogls api into classes that resemble threejs. 
+  - it even inherits three types. 
+  - ogl clocks in at about 14kb. react 2kb. r3f v6 15-20kb.
+- Do you think doing a react ogl fiber renderer is too much of an effort?
+  - already parked react-ogl. 
+  - with the new v6 infra it will be very easy to do it. though the eco system is mostly empty and that's a concern. 
+  - i also like threes architecture a little better, objects are all loose-coupled. the only wart left is the large size tbh.
 
 - ## One of my favorite GLSL things is being able to rearrange vector components. This is a simple JS utility to do just that with three.js
 - https://twitter.com/ggsimm/status/1365379890267254784
