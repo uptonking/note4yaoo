@@ -11,6 +11,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## There are two kinds of developers:
+- The ones who like to make things sound as complicated as possible so they can look smarter than the rest and feel better with themselves.
+- The ones who try to simplify things to make them as easy as possible for others.
+
 - ## Also sometimes the best solution is indeed just to take a walk or a nap and leave the problem alone.
   - A tired developer is not a productive one.
 

@@ -210,6 +210,12 @@ document.getElementsByTagName('head')[0].href = 'stylesheet2.css';
   - Anytime you load a css file or change properties on elements, the css is parsed and re-renders the necessary styling.
   - NOTE: I feel obligated to make sure you take order of selectivity into account when bundling your css files.
 
+- [Node-sass does not understand tilde](https://stackoverflow.com/questions/37106230/node-sass-does-not-understand-tilde)
+  - Tilde path resolving is something that webpack does, node-sass doesn't have such a resolver built in. sass-loader for webpack has this.
+    - You can write your own import resolution alternatively.
+  - the new version of Sass has this new importer option, where every "import" you do on your Sass file will go first through this method
+  - You can add another `includePaths` to your `render` options.
+
 # ref
 
 - [switch theme in javascript](https://stackoverflow.com/questions/26304798/switch-theme-in-javascript)

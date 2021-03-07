@@ -56,6 +56,10 @@ modified: '2020-10-22T13:33:45.146Z'
   - 支持json5
   - 支持切换代码高亮主题，类似[carbon](https://carbon.now.sh/)
 
+## md-integrations
+
+- excalidraw
+
 ## 表格扩展相关
 
 - 目标

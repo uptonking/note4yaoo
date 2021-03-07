@@ -11,6 +11,11 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## I find the term "global state" a bit dated, which is why I use server-state and client-state. 
+- https://twitter.com/TkDodo/status/1368198159223111684
+  - client-state can bel local (useState) or global (zustand, redux). 
+  - server-state with react query is always global - accessible everywhere via the right query key.
+
 - ## starting to think this "derive transformed data while rendering instead of storing the transformed data in state" needs to be a blog post.
 - https://twitter.com/acemarke/status/1367332072063455232
 - I think the realisation that we can just derive most state instead maintain and sync it was one of the AHA moments I had with react.. would love to read your take on it

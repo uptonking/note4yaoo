@@ -26,6 +26,13 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## CSS "content-visibility:auto" is amazing: skip rendering & painting offscreen content until needed. 
+- https://twitter.com/addyosmani/status/1368479029683122180
+  - I got a ~1s faster render on a long HTML document on desktop, ~3s on mobile.
+- This property has an impact on screen-readers though as they end up not being able to discover the content until effectively rendered (which might be too late), so it's important not to use that on landmarks or elements containing landmarks.
+  - Thank you for the reminder. I’d concur with the guidance to try keeping headings & landmark elements outside of areas using content-visibility:auto.
+- I've played with that somewhat in an Electron app but it felt broken at best 🤔 Performance was affected negatively and I got weird glitches here and there. Maybe I should give it another try.
+
 - ## How Spotify makes text on images more readable: a CSS linear-gradient overlay.
 - https://twitter.com/addyosmani/status/1365735686838493187
   - More common these days, but still an effective technique for better color contrast.

@@ -18,6 +18,7 @@ modified: '2021-02-09T13:39:41.705Z'
   - 使用css变量值时，不能用加号构建字符串，可用`width: calc(var(--offset) * 1px);`
     - 不能用`font-size: var(--scale) + 'px';`
   - css变量值不能用在普通样式属性名，不能用在media query名称中，可用sass插值
+  - 若浏览器扩展使用了css vars，可能会污染自己的vars，可在自己的变量名前加前缀
 
 - 提供了组件级css vars的组件库
   - spectrum-css(pcss)，patternfly(scss)，halfmoon(css)，infima(pcss)，
@@ -57,7 +58,7 @@ modified: '2021-02-09T13:39:41.705Z'
   - Optional JS library—Many of the components found in Halfmoon are built to work without JavaScript. 
     - However, the framework still comes with a powerful JavaScript library with no extra dependencies, such as jQuery.
   - The class names should be instantly familiar to anyone who has used Bootstrap.
-  - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
+    - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
 
 - infima /60kStar/MIT/202102/css
   - https://github.com/facebookincubator/infima

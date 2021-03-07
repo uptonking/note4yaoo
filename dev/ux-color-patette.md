@@ -40,6 +40,14 @@ modified: '2021-01-01T20:08:01.651Z'
     - azure：亮蓝色，有点浅
     - royalblue：墨蓝，又亮又深
     - lightgoldenrodyellow：浅金黄，新绿活力
+    - 松柏绿: #21a675
+    - 松花绿: #057748
+    - 竹青: #789262
+    - 碧绿: #2add9c
+    - 青碧: #48c0a3
+    - 黛绿: #426666
+    - 苍翠: #519a73 
+    - 铜绿: #549688
 
 - bolivian beauty  偏冷小暖又干净
   - https://www.color-hex.com/color-palette/25309
@@ -78,6 +86,10 @@ modified: '2021-01-01T20:08:01.651Z'
   - yellow
     - #f4c20d
     - 244, 194, 13
+- Google Spreadsheets Green Color
+  - #0F9D58
+- Excel Logo Color
+  - #1D6F42
 - handsontable-blue
   - #039be5
 - linaria-red 洋红
@@ -85,6 +97,35 @@ modified: '2021-01-01T20:08:01.651Z'
 
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
+
+# 中国风色彩
+
+- https://colors.ichuantong.cn/
+  - https://github.com/zerosoul/chinese-colors
+  - 中国传统颜色在线手册
+  - 技术栈 create-react-app，styled-components，html2canvas，pinyin: 汉字转拼音
+  - 颜色数据来源：[weibo 中国传统颜色](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)
+  - ui参考 https://nipponcolors.com/
+
+- https://colors.flinhong.com/
+  - https://github.com/flinhong/colors
+  - 中国传统色彩，日本传统色彩
+  - 纯css
+
+- more
+  - http://zhongguose.com/
+    - 列出了很多颜色
+  - http://color.xunmi.cool/
+  - https://htmlcss.jp/color/china.html
+
+- 乾隆色谱
+  - 由中国丝绸博物馆通过染色实验还原，在博物馆内展出，网上能找到通过拍照加整理的版本，虽总数不多但具备较高的参考价值，不过网上能找到的版本自身也有色差
+- 金成熺《染作江南春水色》
+  - 作者虽为韩国人，但本书其实很下功夫，网上其实能下到PDF全书
+  - 对于《天工开物》和《多能鄙事》记录的染色方法有做还原实验，但是《布经》《辍耕录》里的颜色是怎么得出来的就有点模糊，感觉准确性也有所下降，主要推荐《天工开物》和《多能鄙事》部分的色卡
+
+- ref
+  - [在哪里能找到中国传统色彩的RGB色卡？](https://www.zhihu.com/question/30491221)
 
 # [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
 

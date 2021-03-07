@@ -11,6 +11,13 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## favorite coding trend lately: removing the code needed to connect frontend to backend (api calls)
+- https://twitter.com/chris__sev/status/1368283798518050830
+  - [blitz.js](https://github.com/blitz-js/blitz)
+  - [inertia.js](https://github.com/inertiajs/inertia)
+  - [livewire](https://github.com/livewire/livewire)
+  - [Alpine](https://github.com/alpinejs/alpine)
+
 - ## Hot @angular take: "core" and "shared" modules are bad practices
 - https://twitter.com/gc_psk/status/1368143538853191681
   - I dislike core and shared modules used in multiple places. Adds too much overlapping and leads to bloated bundles.

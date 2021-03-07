@@ -13,6 +13,13 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Lots and lots of libraries are having to build React wrappers for otherwise-portable Web Components because React is bad at DOM. 
+- https://twitter.com/slightlylate/status/1368418750161055747
+  - [3 Approaches to Integrate React with Custom Elements](https://css-tricks.com/3-approaches-to-integrate-react-with-custom-elements/)
+- Just in case it helps, carbon-web-components package ships React components auto-generated from the corresponding Web Components
+- In the year of our lord 2021, years after all browsers came to support WC natively, and after React broke back-compat guarantees which might have prevented the library from getting good at DOM, folks still have to do these dances
+  - I'm not saying React is the new IE XX, but tooling-space would, perhaps, benefit from thinking of frameworks as runtimes in this way.
+
 - ## react is x-platform. 
 - https://twitter.com/0xca0a/status/1367523451561512968
   - it renders on the web, desktops, mobile, vr, ar, webgl, canvas, sketch, figma, console, tvs, watches, etc.
