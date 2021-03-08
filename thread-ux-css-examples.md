@@ -11,6 +11,11 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Infinity Squares 
+- https://twitter.com/jh3yy/status/1368647671381188608
+  - https://codepen.io/jh3y/pen/xxRaoKP
+  - 方形旋转一圈回原点，基于GSAP
+- This would be perfect for a loader
 
 - ## Conic gradients can be so beautiful.
 - https://twitter.com/JoshWComeau/status/1367492015836049413

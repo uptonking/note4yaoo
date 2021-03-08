@@ -13,6 +13,17 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+
+- ## I've spent more time on this comparison table than I'm willing to admit.
+- https://twitter.com/meijer_s/status/1368617079457386499
+  - It's also honestly workable on mobile. Something many feature comparison tables lack. 
+
+
+
+- ## Leva 0.5.1 introduces two little features: `hint` allows you to show a tooltip when hovering input labels, and `optional` lets you to toggle an input, setting its value to `undefined` when disabled.
+- https://twitter.com/davidbismut/status/1368660111049302018
+- tooltip uses @radix_ui under the hood
+
 - ## The things we've seen built with @framer this year have already been so awesome. Smart Components are really bringing product design to the next level.
 - https://twitter.com/AddisonSchultz/status/1367067007678578688
 - Been playing around with the Variants & Variables Beta in @framer. 

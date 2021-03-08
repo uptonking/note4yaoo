@@ -11,6 +11,13 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # pieces
 
+- ## 
+
+- ## TIL the ISO standards aren't free. For some reason I thought this was open source.
+- https://twitter.com/BenLesh/status/1368811614233837571
+  - It makes me wonder why they don't just use a license that allows them to be open source but still make money off of corporate usage. It seems like it would be beneficial for a standard to be open.
+- Because just about anything that can have a price tag attached will, same as ‘certified organic’ and a load of other things that at first glance you’d think were ‘open’
+
 - ## There are two kinds of developers:
 - The ones who like to make things sound as complicated as possible so they can look smarter than the rest and feel better with themselves.
 - The ones who try to simplify things to make them as easy as possible for others.

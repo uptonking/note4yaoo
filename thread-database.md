@@ -11,6 +11,14 @@ modified: '2021-01-06T14:39:56.358Z'
 
 - ## 
 
+- ## This is probably why planetscale.com is using MySQL instead of Postgres 
+- https://twitter.com/flybayer/status/1368749877044318214
+  - [Why Uber Engineering Switched from Postgres to MySQL_201607](https://eng.uber.com/postgres-to-mysql-migration/)
+- It would be interesting to know if Postgres architecture is still the same after 5 years since the article. We are thinking of switching from mysql to postgres for better json management
+- They're using MySQL because of Vitess planetscale.com/vitess
+  - The article is very old. Postgresql was and is far superior to MySQL in almost every way. 
+  - Quite an amateurish article from uber. Or, if I may , done in the Stackoverflow way, written by a person with not much of an academic background. Hey, everyone can be an engineer after all!
+
 - ## Guilty pleasure: I sort of like writing SQL.
 - https://twitter.com/BenLesh/status/1364681180021329922
 - I enjoy doing a thing akin to SQL Golfing... 

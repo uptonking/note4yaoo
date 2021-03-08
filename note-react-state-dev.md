@@ -193,6 +193,21 @@ function StateProvider({ children }) {
 
 # discuss
 
+- ## [5 Layers of State Management in React Applications](https://joelhooks.com/5-layers-react-state)
+- local
+- shared
+- remote
+- meta
+- router
+
+- ## [The 5 Types Of React Application State_201608](http://jamesknelson.com/5-types-react-application-state/)
+- Data
+- Communication
+- Control
+- Session
+- Location
+- https://twitter.com/acemarke/status/1368660030740963329
+
 - ## History of React State Management
 - https://twitter.com/leeerob/status/1353523847937536000
   - [React State Management in 2021](https://egghead.io/playlists/react-state-management-in-2021-6732)

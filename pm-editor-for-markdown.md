@@ -59,6 +59,7 @@ modified: '2020-10-22T13:33:45.146Z'
 ## md-integrations
 
 - excalidraw
+- github-readme-editor
 
 ## 表格扩展相关
 

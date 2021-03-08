@@ -11,6 +11,14 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## Startup idea: A social network (let's call it "the web") where people can post digital art, *but* they first need permission ("a licence") from the artist.
+- https://twitter.com/AmeliasBrain/status/1368598410673025025
+  - Artists can sell permission in various ways:
+  - exclusive to one owner or not
+  - transferable or not
+  - No chained blocks required
+- I'm seeing so many cool digital artists post links to their NFT offerings & as much as I hate the blockchain absurdity of it, I've felt like I couldn't blame people for grabbing some of the cash flying around.
+
 - ## Has anybody built a social network for rich people yet?
 - https://twitter.com/sebastienlorber/status/1357606986066653185
   - It would only work on the very latest, most expensive iPhone.

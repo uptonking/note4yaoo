@@ -13,12 +13,33 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## When should I (not) use mocks in testing?
+- https://dev.to/kettanaito/when-should-i-not-use-mocks-in-testing-544e
+- Depending on the software that is being tested, there are multiple things that can be mocked:
+  - Environment and context.
+  - API communication
+  - External dependencies.
+
+- ## Writing software is basically a 2 step process: 
+- https://twitter.com/housecor/status/1368569429202792448
+  - Ask the computer to do something
+  - Verify its response
+  - That’s why I believe in creating fast feedback loops. The faster I get a response, the more productive I can be.
+- Feedback loops also involve CI, designer-developer collaboration, automated tests, among others. Any improvement that you do in any of those increases your productivity!
+- You missed the 3rd step. Swear at the computer when the response is wrong and you can't see the problem.
+- What are your favorite techniques for this?
+  - Mock APIs
+  - Small tickets so I get teammate and user feedback faster
+  - Automated unit tests and TDD
+  - Build and test small components in isolation
+  - Create custom dev tools
+  - Use Cypress to avoid interacting with the app manually while coding
+- In all seriousness though, this is why I love to write my code using TDD.
 
 - ## is there a "modern" UI for OpenAPI? built with @reactjs that could be very customizable?
 - https://twitter.com/sseraphini/status/1367851096421568512
   - I'm like to embed my API inside @docusaurus
   - but redoc takes the full page and swagger UI has some dark mode issues
-
 
 - ## You can't mock cloud semantics locally but you can mock the API surface. AWS is very stable. 
 - https://twitter.com/brianleroux/status/1367851230785990663

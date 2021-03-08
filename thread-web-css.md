@@ -26,6 +26,14 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## is there already a plugin for GIFs that does lazy-loading/Twitter style load (load animation on click)?
+- https://twitter.com/allafarce/status/1368615483709091843
+  - The goal here is to allow GIFs on the page but only pay the performance cost when the user wants to.
+- Do you have the option to covert the gifs to video? If it's any help we have a short post on it
+  - I could be wrong but I thought that twitter was secretly converting gifs to videos under the hood.
+  - [Replace animated GIFs with video for faster page loads](https://web.dev/replace-gifs-with-videos/)
+- Not a solution but don’t use gifs, use videos. Compression is much much better.
+
 - ## CSS "content-visibility:auto" is amazing: skip rendering & painting offscreen content until needed. 
 - https://twitter.com/addyosmani/status/1368479029683122180
   - I got a ~1s faster render on a long HTML document on desktop, ~3s on mobile.
