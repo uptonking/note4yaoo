@@ -108,7 +108,7 @@ modified: '2021-02-09T13:40:11.536Z'
   - 未提供组件级css vars，样式变量全是global
   - 组件中的css vars没有使用fallback回退值
 
-- halfmoon v1.1.1(202010)
+- halfmoon v1.1.1(202103, develop branch)
   - 未提供组件级css vars，但全局级css变量名称规则很容易提取出各组件的变量
     - 因为没有组件级变量，切换主题时，直接修改属性color的值为另一个变量即可
   - 单位几乎都用rem，1rem = 10px，因为1600px以上的屏幕会自动放大

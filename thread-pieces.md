@@ -13,6 +13,13 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## If you're looking for a mentor, DMing your favorite open source personality isn't the way to go.
+- https://twitter.com/BenLesh/status/1369022399967096838
+  - Look local: You may already have mentors. Most of what I've learned, I taught myself, or I learned from random peers (junior and senior) over YEARS -- not some single "Sensei" type.
+  - It sounds stupid, but sometimes the best mentor you can have is *yourself*. Learn how to teach yourself things, and when you do work with another peer you're learning from (a "mentor"), you'll get a LOT more out of the experience, and so will they.
+  - I'm not disparaging mentorship. It can be great, I just think people might have the wrong idea of what it has to look like, and how they need it to work.
+- But *sometimes* it is... or at least can be.
+
 - ## TIL the ISO standards aren't free. For some reason I thought this was open source.
 - https://twitter.com/BenLesh/status/1368811614233837571
   - It makes me wonder why they don't just use a license that allows them to be open source but still make money off of corporate usage. It seems like it would be beneficial for a standard to be open.

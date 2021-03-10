@@ -11,6 +11,16 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+
+- ## SaaS is not passive income. When I stop shipping new features and/or stop marketing, I feel sales slowing. SaaS is something you have to keep working on.
+- https://twitter.com/yongfook/status/1369276581567365123
+  - The only people who talk about SaaS as passive income are folks trying to sell you their passive income SaaS course!
+- It’s definitely not passive income but it also depends on where your top of the funnel(漏斗；漏斗状物) traffic is coming from.
+  - I just recently saw a SaaS that invested heavily in content marketing for a few years and now gets traffic on autopilot(自动驾驶).
+  - High domain authority = barrier to entry. It would take years for a new competitor to outrank them.
+- It can become passive if you hire good people to do those things for you as well as run the day to day things. I think this is really hard for many bootstrapping founders to do.
+
+
 - ## Startup idea: A social network (let's call it "the web") where people can post digital art, *but* they first need permission ("a licence") from the artist.
 - https://twitter.com/AmeliasBrain/status/1368598410673025025
   - Artists can sell permission in various ways:

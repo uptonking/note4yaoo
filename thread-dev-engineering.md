@@ -13,6 +13,19 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## How to identify mistakes in a code structure to learn from:
+- https://twitter.com/cse_as/status/1369281929162285063
+  - When you go back to a part in the project your team worked on earlier & it takes you more than 10 seconds to pinpoint where the needed code is, it probably wasn't structured in a way that made sense.
+
+- ## A list of basic Linux commands every developer should know:
+- https://twitter.com/iamdevloper/status/1368866110951596032
+1. Open your browser
+2. Head to your favourite search engine
+3. Type "how to copy a file to another directory"
+4. Click the first Stack Overflow link
+5. Copy the top voted answer
+6. Blindly paste it into your terminal
+
 - ## When should I (not) use mocks in testing?
 - https://dev.to/kettanaito/when-should-i-not-use-mocks-in-testing-544e
 - Depending on the software that is being tested, there are multiple things that can be mocked:

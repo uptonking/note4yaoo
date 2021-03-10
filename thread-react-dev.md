@@ -11,6 +11,19 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## use `useThemeContext/useCustomContext` instead of `useContext` .
+- https://twitter.com/FarazPatankar13/status/1369013998147018752
+  - Is there a reason this isn't more widely recommended? 
+- When I was doing workshops that's how we taught it, too.
+  - It's just the difference between thinking like a library developer or not. How much API do you want to expose?
+  - In React Router we don't just give you the whole context, we only give you pieces with multiple hooks
+- This plus useReducer has been my goto for state management
+- just call it `useTheme` , the consumer doesn't need to worry about it being a Context as long as they are already a child of the Provider
+- I personally don't like it in certain cases b/c it makes testing hard + data/logic is coupled and hard to customize.
+  - Well, you could export both `ThemeContext` and `useThemeContext` for more flexibility?
+- React context/hooks tip: Create a custom hook for React contexts that shows a helpful error.
+  - [How to use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+
 - ## How would you implement this differently?
 - https://twitter.com/kentcdodds/status/1367356862035718145
 - Wrote this to confirm there wasn't a better way to implement the calculator component (without changing its API). It's included in my blog post

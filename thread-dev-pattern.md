@@ -11,6 +11,15 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+
+- ## Which approach would you prefer for defining CORS?
+- https://twitter.com/lukeed05/status/1369145056460906499
+  - Option 1 - an `options` argument. The negative is that this requires addl runtime code *even if* you never enable CORS.
+  - Option 2 – a "prepare" hook that lets you do anything.
+  - Please note that these would *very likely* be mutually exclusive. AKA, `prepare()` supersedes `options.cors` and vice versa.
+- So I think most votes for `Option 1` are so that you don't have to deal with the CORS header names. I get it.
+- I like the option 2 because it teach you the headers + you don't have the overhead of thinking how your API maps into actual CORS headers.
+
 - ## How do you prefer to name hooks that provide booleans and their results?
 - https://twitter.com/erikras/status/1367029738880061441
   - let foo = useFoo()

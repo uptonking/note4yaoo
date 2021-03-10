@@ -14,7 +14,8 @@ modified: '2021-01-02T18:08:07.806Z'
   - 支持输出scss，也支持输出css vars，所以可以针对ie浏览器build适合的格式
 
 - s-d cons
-  - 不直接支持pseudo class的类，需要自己实现，分析有无此需求
+  - 不支持输出css vars时，一个变量值引用了多个其他变量的情况，如hsl, border
+  - 不直接支持生成pseudo class的类名，可自己实现，分析有无此需求
   - ~~暂不支持输出文件的值中包含`var(--name)`形式的css变量~~
 
 - extensions
@@ -46,6 +47,18 @@ modified: '2021-01-02T18:08:07.806Z'
     - 基于自定义action可以输出component样式，后期可以考虑单独实现此方案，不冲突
 
 - source配置时，tokens文件的声明顺序不重要，可以先写依赖了其他tokens的目录，再写依赖所在的目录
+
+- style-dictionary不支持名为value的中间属性名，如`{ "color": { "font": { "value": "#111" , "secondary": { "value": "#333" }, } } }`
+  - 若在中间设置了value属性，则同级和下级属性都不会输出了
+  - 变通方案：对要输出的中间属性名，增加一个子属性名 `.val`
+
+- halfmoon的color变量中，hsl属性名的值不包含`hsl(`的前缀
+- color变量的value值
+  - 若包含outputAsItIs配置，则跳过颜色转换原样输出，适合作为通用变量
+  - 对其他类型的值，会执行默认的color/css转换计算
+  - s-d默认会自动转换不包含变量引用的hsl数字值，若hsl都为字符串时会正常输出
+    - 若h为数字，则css vars获取引用时，要使用 `dictionary.getReference(p.original.value.h.toString())`
+    - 对s,l用字符串即可，支持 `50%/50/0.5` 三种形式，但用自定义工具hslToHex时注意参数格式要求
 
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)

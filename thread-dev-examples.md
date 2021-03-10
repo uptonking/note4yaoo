@@ -13,6 +13,9 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+- ## Intersection Observer Visualizer
+- https://codepen.io/michellebarker/full/xxwLpRG
+- A simple visualizer tool to assist with using the Intersection Observer API.
 
 - ## RedLight by @burocratik (Portugal) wins #SOTD & #DEVAWARD
 - https://twitter.com/AWWWARDS/status/1362415363309395969

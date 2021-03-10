@@ -9,6 +9,14 @@ modified: '2021-02-20T08:21:06.521Z'
 
 # pieces
 
+- ## 
+
+- ## Toying with some animations of long vs wide data
+- https://twitter.com/benmschmidt/status/1369103070446108674
+  - [Wide and long data.](https://observablehq.com/@bmschmidt/wide-and-long-data)
+- quite an old one now, SQL joins visualised as Venn diagrams
+  - [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+
 - ## The Organization of Cartographers for Social Equality
 - https://observablehq.com/@neocartocnrs/the-organization-of-cartographers-for-social-equality
 - 地图从球状展开成图片的示例

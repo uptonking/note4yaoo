@@ -26,6 +26,13 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## I prepared a quick CSS Units Cheat Sheet for you.
+- https://twitter.com/denicmarko/status/1368882923978579975
+- [CSS Units Best Practices](https://gist.github.com/basham/2175a16ab7c60ce8e001)
+- 1ch = width of 0 in font.
+  - 1em = width of m in font.
+  - 1ex = height of x in font.
+
 - ## is there already a plugin for GIFs that does lazy-loading/Twitter style load (load animation on click)?
 - https://twitter.com/allafarce/status/1368615483709091843
   - The goal here is to allow GIFs on the page but only pay the performance cost when the user wants to.
