@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## How to drop IE11 support while keeping your site accessible (including from IE)
+- https://twitter.com/_developit/status/1369384447557140481
+  - Build your site to work properly without JavaScript.
+  - Load JS via `<script type=module>` , which IE ignores
+  - Think about it: bogging IE11 down with 2mb of polyfilled JS reduces accessibility.
+- In case it's been forgotten:
+  - IE11 was half as fast as Chrome M44
+  - current browsers are all >2x faster than M44
+  - this is for ES5 - ~ES2017 widens the gap (+10%)
+- I don't think this is a helpful suggestion. Telling developers to build their site to "work properly" without JavaScript just leads people to do dodgy things with CSS that harms accessibility. It's also unrealistic in an agency world.
 
 - ## what's the standard local dev setup for HTTPS-only worklets?
 - https://twitter.com/mattgperry/status/1367514986944335872
@@ -26,14 +36,11 @@ modified: '2021-01-08T17:13:43.392Z'
 - Its not in IE11 which has burned me so hard multiple times. 
 - It's unfortunately quite broken in React Native Pensive face
 
-
 - ## Do you use "window." when accessing lowercase properties of the global object?
 - https://twitter.com/NicoloRibaudo/status/1365771610981085202
 - I always use `window` because many vars share identical names. 
   - Makes it easier to know if I'm accessing window.location or location from useLocation()
 - I use `globalThis` usually
-
-
 
 - ## Theming with design tokens. Let’s say we have color-primary-100 through 900.
 - https://twitter.com/claviska/status/1365672928868712452

@@ -17,14 +17,14 @@ modified: '2020-12-21T07:46:14.237Z'
   - 控制重叠内容：直接在子项上设置z-index的值即可
 - grid布局缺点
 - ref
+  - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)
+    - flexbox布局非常成熟
+    - css的卖点是炫酷的design，而不是炫酷的技术
   - [写给自己看的display: grid布局教程_张鑫旭](https://www.zhangxinxu.com/wordpress/2018/11/display-grid-css-css3/)
   - [Grid 布局学习](https://juejin.im/post/5d8daa0f518825096d3b4dca)
   - [CSS Grid 系列(上)-Grid布局完整指南](https://zhuanlan.zhihu.com/p/33030746)
   - [[译] Grid布局完全指南](https://shanyue.tech/post/Grid-Guide/)
   - [图解 Grid 布局 (非常详细)](https://lefex.github.io/wsy/2019/11/02/grid.html)
-  - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)
-    - flexbox布局非常成熟
-    - css的卖点是炫酷的design，而不是炫酷的技术
   - [The Quirks of CSS Grid and Absolute Positioning](https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437)
 
 # pieces
@@ -212,7 +212,7 @@ modified: '2020-12-21T07:46:14.237Z'
   - By using -1, you can be sure your content will always reach the end column.
 - Grid areas create implicit line names
 - When you absolutely position a grid item, rather than its positioning context being its container (i.e. the entire grid), we can position it in relation to its specified grid-column and grid-row start and end lines. 
-  - As usual, `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
+  - As usual,   `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
   - This makes absolute positioning useful if you want to overlap grid items without disrupting the grids auto-placement algorithm. 
   - Auto-placement goes out of its way not to overlap items unless you explicitly declare both a grid-column-start and grid-row-start value for every item.
 - All grid items have a default order value of 0. 

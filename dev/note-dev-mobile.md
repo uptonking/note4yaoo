@@ -15,10 +15,13 @@ modified: '2020-07-14T09:32:18.390Z'
   - 开发ppt应用，webview足矣，也要考虑扩展性
 
 - 跨平台可选技术栈
+- 基于webview
+  - ionic
+- 基于自定义渲染canvas/skia
+  - flutter
+- 基于平台相关组件/dom
   - react-native
   - kotlin-native
-  - flutter
-  - ionic
   - Xamarin
   - apicloud
   - uni-app/dcloud

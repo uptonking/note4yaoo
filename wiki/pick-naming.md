@@ -11,8 +11,12 @@ modified: '2020-12-06T13:05:51.375Z'
 
 - prefix
   - is, has, should, min/max, prev/next
-    - ~~enable~~, ~~does~~
+    - ~~enable~~, ~~does~~(exists)
   - 示例：isDisabled, isLoading
+
+- We always use `Is` for any method that will return a `boolean`, so in this case we would call the method `IsExistingAccount(id)` instead of `AccountExists(id)`
+
+# verb
 
 # words
 

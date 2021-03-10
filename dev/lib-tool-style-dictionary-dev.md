@@ -18,6 +18,11 @@ modified: '2021-01-02T18:08:07.806Z'
   - 不直接支持生成pseudo class的类名，可自己实现，分析有无此需求
   - ~~暂不支持输出文件的值中包含`var(--name)`形式的css变量~~
 
+
+- s-d书写属性值时不够灵活
+  - 书写颜色值时，没有提供改变颜色变量透明度alpha的方法
+  - 如没有提供拼接引用变量名的方法，没有简单加减运算的方法
+
 - extensions
   - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
 
@@ -50,15 +55,24 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - style-dictionary不支持名为value的中间属性名，如`{ "color": { "font": { "value": "#111" , "secondary": { "value": "#333" }, } } }`
   - 若在中间设置了value属性，则同级和下级属性都不会输出了
-  - 变通方案：对要输出的中间属性名，增加一个子属性名 `.val`
+  - 变通方案：对要输出的中间属性名，增加一个中间属性名 `.val`
 
-- halfmoon的color变量中，hsl属性名的值不包含`hsl(`的前缀
 - color变量的value值
   - 若包含outputAsItIs配置，则跳过颜色转换原样输出，适合作为通用变量
-  - 对其他类型的值，会执行默认的color/css转换计算
-  - s-d默认会自动转换不包含变量引用的hsl数字值，若hsl都为字符串时会正常输出
-    - 若h为数字，则css vars获取引用时，要使用 `dictionary.getReference(p.original.value.h.toString())`
-    - 对s,l用字符串即可，支持 `50%/50/0.5` 三种形式，但用自定义工具hslToHex时注意参数格式要求
+    - 对其他类型的值，会执行默认的color/css转换计算
+- 不能直接修改css变量颜色值的alpha透明度
+  - 但可以 `--color: 240, 240, 240;` `color: rgba(var(--color), 0.8);`
+  - 问题是前者不是style-dictionary合法的颜色值
+  - 无法动态修改css变量的颜色值，同时又让style-dictionary读取这个更改，因为s-d的应用场景是统一管理设计变量，值明确的变量，css vars过于灵活
+
+- 书写hsl格式的color时要注意
+- 不支持带头明度的值，hsla
+- 对不包含变量引用的hsl裸数字值，s-d默认会自动转换，
+  - 若hsl都为字符串，会正常输出
+  - 若h为数字，则css vars获取引用时，要使用 `dictionary.getReference(p.original.value.h.toString())`
+  - 对s, l用字符串即可，支持 `50%/50/0.5` 三种形式，但用自定义工具hslToHex时注意参数格式要求
+- 对包含变量引用的hsl，
+  - 若hsl属性值hslobjwithref包含引用，则必须用50%，不能用50或0.5
 
 - roadmap
   - [Changelog](https://github.com/amzn/style-dictionary/blob/3.0/CHANGELOG.md)

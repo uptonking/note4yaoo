@@ -11,6 +11,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## For those unfamiliar with negative margin magic, check out the comparison
+- https://twitter.com/hexagoncircle/status/1288510365756612608
+  - Flexbox gap = less HTML elements, less CSS tricks, and cleaner, easier to manage code to get the job done
+  - https://codepen.io/hexagoncircle/pen/oNbrbjP
+
 - ## Infinity Squares 
 - https://twitter.com/jh3yy/status/1368647671381188608
   - https://codepen.io/jh3y/pen/xxRaoKP

@@ -13,12 +13,17 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## The most common layout found across my stylesheets: a gapped stack.
+- https://twitter.com/argyleink/status/1369632881857990658
+  - `display: grid; gap: var(--space-whatever);` .
+- I think it’s actually my main use for grid… cannot wait for it to see wide support for flexbox gap!
+  - https://caniuse.com/flexbox-gap
+- I’ve done this in our WP theme then have been removing it from main containers because Google’s responsive ads don’t play nice and cause horizontal scroll on mobile.
+- If we had margin-trim we could use all CSS layout properties and not just flex and grid.
 
 - ## I've spent more time on this comparison table than I'm willing to admit.
 - https://twitter.com/meijer_s/status/1368617079457386499
   - It's also honestly workable on mobile. Something many feature comparison tables lack. 
-
-
 
 - ## Leva 0.5.1 introduces two little features: `hint` allows you to show a tooltip when hovering input labels, and `optional` lets you to toggle an input, setting its value to `undefined` when disabled.
 - https://twitter.com/davidbismut/status/1368660111049302018

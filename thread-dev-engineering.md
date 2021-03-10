@@ -13,6 +13,8 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## TIL: passing multiple `-m` options to `git commit` creates paragraphs in the message.
+
 - ## How to identify mistakes in a code structure to learn from:
 - https://twitter.com/cse_as/status/1369281929162285063
   - When you go back to a part in the project your team worked on earlier & it takes you more than 10 seconds to pinpoint where the needed code is, it probably wasn't structured in a way that made sense.

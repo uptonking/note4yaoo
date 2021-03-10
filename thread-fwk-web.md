@@ -11,6 +11,68 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Web platform support: Flutter or ReactNative? TLDR: React-Native for websites, Flutter for web-apps
+- https://twitter.com/sebastienlorber/status/1367424075619049474
+- Flutter 2 web has 2 possible backends:
+  - HTML renderer: using web-components for better compatibility
+  - CanvasKit: WebGL + canvas for performant apps but adds 2mb of size
+  - In practice, it seems that all the major demos are using CanvasKit (> 10mb)
+- Flutter Plasma is a cool Flutter demo.
+  - It seems based on CanvasKit and seems like nice use-case for Flutter web.
+  - However it downloads 12mb to show the first frame, so you'd rather have a good connexion.
+- Flutter Folio looks more like a real-world business/consumer app.
+  - But right from the login screen, you can feel it is not the native web platform. 
+  - Also > 10mb
+- Rive looks like the most interesting one.
+  - It seems able to embed a very interactive canvas in existing pages in a lightweight way (like Lottie?).
+  - The homepage is 3mb and impressive.
+  - However, it's using React and NextJS from @vercel , not Flutter
+- Flutter web is progressing:
+  - a11y
+  - password autofill
+  - SPA
+  - PWA
+  - ...
+- However, to succeed for content-centric websites, it also needs:
+  - lightweight, code splitting
+  - Jamstack, pre-rendering, SSR
+  - SEO
+  - ...
+  - Very hard things to handle for CanvasKit
+- Once the flutter.dev and rive.app landing pages are implemented in Flutter, it could be a huge success.
+  - But it's not the case today, for good reasons, and I think this will be hard to achieve in the short term.
+- In comparison, React-Native is a good fit to implement such landing pages.
+  - The Twitter UI you read this thread on is based on React-Native-Web for years now. Many companies use this already in production.
+- React-Native-Web:
+  - Renders regular accessible HTML elements using React and atomic CSS-in-JS in a performant way
+  - Is compatible with the existing frontend tooling (Webpack, code splitting...)
+  - Is compatible with the Jamstack, SEO, server-side-rendering (Gatsby, NextJS...)
+- React-Native does not hide platform differences, does not try to produce a single uniform UI result by default, but uses the target platform primitives.
+  - It can require more work than Flutter, but can be worth it, particularly for websites.
+  - React-Native is full of escape hatches.
+  - You can basically add Flutter widgets, canvas, WebGL or whatever vanilla JS or JQuery in the middle of a React-Native-Web app without any friction.
+- For critical interactive things, you can get as close to the platform as you need to be.
+  - For simpler things, you can share 99% of the code.
+- I still think Flutter is a very good solution for many use-cases, and show good progress to tackle some a11y concerns
+  - But it is still far away from building the kind of websites that React-Native can build today.
+- I would rather use :
+  - Flutter for UI intensive web-apps that can download 10mb upfront
+  - React-Native for content-centric websites
+  - I believe React-Native is a less risky choice for the web, but it might require a bit more work.
+- Why not just plain React and ionic @capacitorjs , possibly even with Next.js? 
+  - Next.js + @capacitorjs for web, mobile, desktop, etc. would be a winning combo and we're seeing a lot of interest in that lately.
+  - In the end we want a native app, not a WebView in a mobile/desktop shell. It definitively can improve but I don't think today WebView has the same level of experience as being close to the platform
+  - You're certainly entitled to that view! Pointing out it's a valid option that has been resonating with React devs. Especially if you want true web platform support and the standard react dev experience and compatibility with all the React libs used today
+  - I want true web platform support AND true mobile platform support AND true desktop platform support, which RN brings to the table.
+  - Using the web everywhere has its advantages but also its limits, until WebViews become as good as native
+
+- ## Flutter 2 announced last week to show off the cross platform power.
+- https://twitter.com/kudochien/status/1369491495892316160
+  - However, for the web support, since it's based on skia. It should be difficult to use SSR or prerender for SEO.
+  - For embedded Linux, we also has an ongoing plan by react-native-skia.
+  - By react-native-skia, we could extend react-native to other platforms like Flutter.
+  - Although I didn't have much time on this project, but people from NAGRA OpenTV invested a lot.
+
 - ## favorite coding trend lately: removing the code needed to connect frontend to backend (api calls)
 - https://twitter.com/chris__sev/status/1368283798518050830
   - [blitz.js](https://github.com/blitz-js/blitz)

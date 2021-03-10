@@ -26,6 +26,23 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## How do I apply opacity to a CSS color variable?
+- https://stackoverflow.com/questions/40010597
+- You can't take an existing color value and apply an alpha channel to it. 
+  - `--color: 240, 240, 240;` ; `color: rgba(var(--color), 0.8);`
+- The magic lies in the fact that the values of custom properties are substituted as is when replacing var() references in a property value, before that property's value is computed. 
+  - This means that as far as custom properties are concerned, the value of --color in your example isn't a color value at all until a var(--color) expression appears somewhere that expects a color value (and only in that context).
+
+- ## Your explanation of margin collapse is really good. 
+- https://twitter.com/aalkz/status/1369168913309765634
+- I return to that article from time to time when my css margins are acting up and I don't remember exactly why (which is often because it's an inherently confusing concept IMO).
+- honestly I often work around this by only applying bottom margin on my elements.
+  - Once flexbox `gap` support lands, I suspect I'll use margin way less!
+
+- ## Have you used the :is() pseudo-class selector yet? 
+- https://twitter.com/kilianvalkhof/status/1369605618068242434
+  - It saves you from having to duplicate the entire selector just to set (for example) both hover and focus styles.
+
 - ## I prepared a quick CSS Units Cheat Sheet for you.
 - https://twitter.com/denicmarko/status/1368882923978579975
 - [CSS Units Best Practices](https://gist.github.com/basham/2175a16ab7c60ce8e001)

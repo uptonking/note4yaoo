@@ -57,6 +57,9 @@ modified: '2020-07-25T12:20:37.613Z'
 
 # [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
+- 伪元素常用
+  - `::after/before/first-letter/first-line/marker/part/selection/...`
+
 ``` CSS
 selector::pseudo-element {
   property: value;
@@ -69,24 +72,7 @@ selector::pseudo-element {
 - You can use only one pseudo-element in a selector. 
   - It must appear after the simple selectors in the statement.
 
-- 伪元素常用
-- `::after/before/first-letter/first-line/marker/part/selection/...`
-
 # [pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-
-``` CSS
-selector:pseudo-class {
-  property: value;
-}
-```
-
-- pseudo-classes can be used to style an element based on its state.
-- a pseudo-class selector targets elements depending on their state rather than on information from the document tree.
-- A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). 
-- Pseudo-classes let you apply a style to an element not only in relation to the content of the document tree, but also in relation to external factors like 
-  - the history of the navigator (:visited, for example), 
-  - the status of its content (like :checked on certain form elements), 
-  - or the position of the mouse (like :hover)
 
 - 伪类类别
   - Linguistic pseudo-classes
@@ -105,6 +91,20 @@ selector:pseudo-class {
     - :in-range/out-of-range/required/optional/user-invalid
   - Tree-structural pseudo-classes
     - :root/empty/nth-child/first-child/only-child/nth-of-type
+
+``` CSS
+selector:pseudo-class {
+  property: value;
+}
+```
+
+- pseudo-classes can be used to style an element based on its state.
+- a pseudo-class selector targets elements depending on their state rather than on information from the document tree.
+- A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). 
+- Pseudo-classes let you apply a style to an element not only in relation to the content of the document tree, but also in relation to external factors like 
+  - the history of the navigator (:visited, for example), 
+  - the status of its content (like :checked on certain form elements), 
+  - or the position of the mouse (like :hover)
 
 - Like regular classes, you can chain together as many pseudo-classes as you want in a selector.
 
@@ -142,3 +142,10 @@ li:nth-child(2) {
 /* select the odd rows of an HTML table: 1, 3, 5, etc.*/
 tr:nth-child(odd) or tr:nth-child(2n+1)
 ```
+
+# `:fullscreen`
+
+- 除safari ios不支持外，其他主流浏览器都支持
+- matches every element which is currently in full-screen mode. 
+  - If multiple elements have been put into full-screen mode, this selects them all.
+- lets you configure your stylesheets to automatically adjust the size, style, or layout of content when elements switch back and forth between full-screen and traditional presentations.

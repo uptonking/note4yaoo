@@ -81,8 +81,14 @@ modified: '2020-10-31T19:11:26.567Z'
   - The one thing I'm missing from CSS variables is to be able to use them in media queries
   - I guess there's no way around JS for now (if they depend on the theme).
 
-- ## [Use CSS Variables instead of React Context_202011](https://twitter.com/kentcdodds/status/1324026743099781120?lang=en)
-- U[se CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+- ## [Use CSS Variables instead of React Context](https://epicreact.dev/css-variables/)
+- Turning to the CSS Variables approach, you'll notice the only component that re-rendered was our `ThemeToggler` component responsible for updating the `body`. And yet the user experience works perfectly! This is the magic behind CSS variables. 
+  - With the `ThemeProvider` approach, we have to update the styles of every component, and then the browser paints those updates. 
+  - But with the CSS Variables approach, we update the styles to a single component (the `body`) and then the browser paints those updates. 
+  - The browser paint should theoretically take the same amount of work on the part of the browser, so **the only difference** is how much work we're making the browser do to have React re-render all our components and get emotion to update the styles of every component.
+  - This can have negative performance implications as your app grows.
+
+- https://twitter.com/kentcdodds/status/1324026743099781120
 - We took a similar approach with @stitchesjs
   - Tokens are converted to CSS Custom Properties
   - Reference token in CSS value without prop-interpolation
