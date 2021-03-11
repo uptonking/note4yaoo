@@ -64,6 +64,13 @@ modified: '2021-01-02T18:08:07.806Z'
   - 问题是前者不是style-dictionary合法的颜色值
   - 无法动态修改css变量的颜色值，同时又让style-dictionary读取这个更改，因为s-d的应用场景是统一管理设计变量，值明确的变量，css vars过于灵活
 
+- halfmoon的颜色变量
+  - --blue-color-hsl:var(--c-h), var(--c-s), 10%
+    - --blue-color:hsl(var(--blue-color-hsl))
+    - 注意对于kv声明，只有后一个是合法的css样式值，所以用户只用后者，前者只被开发者内部使用
+  - --dm-base-text-color: hsla(var(--white-color-hsl), 0.8); 
+    - 此颜色由浏览器动态添加透明度，s-d难以实现，因为两个变量都要输出，而s-d需要输出的变量一般是合法的有效值(token)
+
 - 书写hsl格式的color时要注意
 - 不支持带头明度的值，hsla
 - 对不包含变量引用的hsl裸数字值，s-d默认会自动转换，

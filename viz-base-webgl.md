@@ -7,6 +7,16 @@ modified: '2020-12-21T07:47:02.451Z'
 
 # viz-base-webgl
 
+# guide
+
+# faq
+
+- ## webgl vs regl
+
+- https://twitter.com/h_i_g_s_c_h/status/1370086897142337545
+  - Maybe teaching webgl just using regl? That might be a good compromise between a heavy framework and the nitty gritty shader details.
+    - I know and I love your notes on regl! Smiling face with smiling eyes I‘m actually using it here and there and for me it‘s a bit the D3 of webgl.
+
 # WebGL
 
 - ref

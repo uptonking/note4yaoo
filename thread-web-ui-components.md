@@ -13,6 +13,26 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## Design systems folks, what would you call this component? 
+- https://twitter.com/_alanbsmith/status/1370089747926851586
+
+  • block of highlighted / accented text
+  • inline with the rest of content (not floating)
+  • might or might not be dismissable
+  • usually offers details, notes, or additional info
+
+- Notion refers to it as a "callout", which I think works well.
+- I'd consider that a styled blockquote 
+- callout card (polaris)
+  - section message (atlastkit)
+  - also seen - aside, inline-banner
+- We've called them both Banners and Alerts, but Callout feels more natural
+- Callout, Note or HighlightedNote?
+- We call them “note”, sometimes called “annotation” or “alert”
+- On the Luna design system at Northwestern Mutual, we call it an "Inline Notification"
+
+
+
 - ## The most common layout found across my stylesheets: a gapped stack.
 - https://twitter.com/argyleink/status/1369632881857990658
   - `display: grid; gap: var(--space-whatever);` .

@@ -13,6 +13,9 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## ProTip! Velcro your external drives to the back of your laptop to stay portable and keeping them safe
+- https://twitter.com/samuelkraft/status/1370082404984090624
+
 - ## Always choose a job that you gonna learn the most
 
 - ## If you're looking for a mentor, DMing your favorite open source personality isn't the way to go.
