@@ -11,6 +11,13 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## there's a bunch of articles that explain how React hooks are implemented, 
+- https://twitter.com/acemarke/status/1369869411901992966
+  - and that they're basically a linked list in memory hence the need for identical use order.
+  - has anyone actually written about how hooks have "mount" and "update" impl functions internally?
+- that's how hooks have differing behavior between "first render" and "all other renders" - it's different internal impl functions being called based on whether the hook already exists or not.
+  - Point is I don't think I've seen any articles that try to explain that particular implementation detail and how that relates to the behavior we see externally (like `useState` accepting the initial value, then ignoring what you pass in later)
+
 - ## use `useThemeContext/useCustomContext` instead of `useContext` .
 - https://twitter.com/FarazPatankar13/status/1369013998147018752
   - Is there a reason this isn't more widely recommended? 

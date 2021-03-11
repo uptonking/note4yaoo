@@ -1,15 +1,23 @@
 ---
-title: thread-web-webgl
+title: thread-viz-base-webgl
 tags: [thread, web, webgl]
 created: '2021-01-08T18:52:59.126Z'
-modified: '2021-01-08T18:53:25.244Z'
+modified: '2021-03-11T11:26:12.335Z'
 ---
 
-# thread-web-webgl
+# thread-viz-base-webgl
 
 # pieces
 
 - ## 
+
+- ## just added clock control, @_josh_ellis_ making progress w/ three-test-renderer. 
+- https://twitter.com/0xca0a/status/1369775216818323457
+  - being able to snapshot scenes, advance frames & events, expect the outcome. 
+  - this'll do so much to push webgl into professional front end. 
+  - with tests, a11y and small bundlesize, no reason not to
+- We are quite happy with the rendering quality of three (r3f), and are now thinking about replacing some product renderings from Blender to automatic headless browser screenshots. Is that what I would want to try for this scenario?
+  - These are unit tests, for visual regression tests or automatic images that you create you still need something like puppeteer, a headless browser, but it would be similar. You can look in the current testing folder in v5, it's doing that.
 
 - ## might have found a solution to threejs being way too big 
 - https://twitter.com/0xca0a/status/1368122900398637058

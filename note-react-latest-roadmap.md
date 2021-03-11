@@ -16,6 +16,11 @@ modified: '2020-07-08T03:17:23.369Z'
 
 # guide
 
+- [Basic Fizz Architecture](https://github.com/facebook/react/pull/20970)
+  - Basically, we want to support suspense on the server. 
+    - The simple mode would just be to wait until everything resolves and then write it. 
+    - The advanced mode emits a shell in place HTML and uses embedded script tags to inject more content as it completes. 
+
 - React Fast Refresh: hot reloading for React
   - https://github.com/facebook/react/issues/16604
 - React Fire: Modernizing React DOM

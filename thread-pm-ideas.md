@@ -13,6 +13,36 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## prototyping a tool for messing with data
+- https://twitter.com/_paulshen/status/1362609484519014400
+  - https://github.com/paulshen?tab=repositories&type=source
+  - non-live panes (eg side effects like network requests)
+  - promise values
+  - pop-out expression
+  - I'm trying an experiment where all the code lives in one file. see how long til i break
+  - main inspiration was an interactive curl | jq
+- I think there's also interesting territory to explore around not directly coding the transformation, but instead just demonstrating it "directly on the data"...
+- https://github.com/stedolan/jq
+  - Command-line JSON processor 
+- One dream GUI builder I imagine is like:
+  - Reshape from API response into the JSON underlying your UI, in something like your demo tool
+  - Style the data into an actual UI in something like this:
+- I've been jamming on this concept for making data-driven designs. 
+  - Given some JSON, this app will provide you with an interface to describe how you want each entry styled, allowing you to gradually create a more complicated design. Here I create an airbnb-ish app.
+  - So the controls make it look a lot like other "no-code" solutions like @webflow , but I think the data-first approach makes it a pretty different experience, perhaps more suitable for apps than for say landing pages.
+
+- ## What are people using for versioned controlled diagrams/flow charts/ etc these days?  Is graphviz/plantuml still the goto?
+- https://twitter.com/mat4nier/status/1369769536816226306
+- I’ve gotten _really_ good at Graphviz. There’s a PlantUML plugin for Confluence, btw
+- plantuml and mermaid mostly
+
+- ## best software to create sequence diagrams like this?
+- https://twitter.com/sseraphini/status/1369996346493652995
+- I use plantuml for my docs diagrams. 
+  - Not the slickest or most modern-looking results, but does the job well and the diagrams are text files that can be put under source control which is nice.
+- Write them using mermaid syntax for better version control
+- Visual Paradigm.
+
 - ## I'm happy to announce, that basetools.io is in beta! 
 - https://twitter.com/sebastianhoitz/status/1369390750404927490
   - It is a paywall for your Github repository or npm package. 

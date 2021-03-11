@@ -24,6 +24,9 @@ modified: '2020-07-07T08:10:16.774Z'
 - esX-deprecated
   - cancellable promise
 
+- https://github.com/tc39/proposal-temporal
+  - - The JavaScript Temporal proposal has reached stage 3 in TC39. Proper Date & Time handling are coming!
+
 # class fields
 
 - stage 3

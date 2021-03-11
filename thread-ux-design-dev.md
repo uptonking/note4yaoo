@@ -11,7 +11,20 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## Pro-tip for UI developers: always assume that your users will rage-click any of your buttons multiple times out of frustration. Program accordingly.
+- https://twitter.com/DavidKPiano/status/1370083861472935942
+  - Instead of disabling buttons, you can explicitly model your state and transitions so that rage-clicks and other edge-cases are handled correctly. Let your users rage against the state machine.
+- and not only for UI developers, a rage-clicker caused a massive outage in one of my previous jobs.
+- Specially gamers
+- I like the confidence a state machine gives you here: you can click all you want, but you’ve already transitioned to a different state and there’s way less chance something unexpected will happen.
+- Always give feedback
+
+- ## Avoid round checkboxes. 
+- https://twitter.com/argyleink/status/1329230409784291328
+  - They make a radio list confusing by allowing multiple selection! 
+  - Round the corners of your checkboxes all day, but be weary of the misleading effect a round checkbox can have
+- Who does not know that checkboxes are used for multiselection and radio buttons are used for unique selection. I had a pretty long discussion with our designer a while a ago.
+- I recently did some small research on this topic and LOTS of Android and IOs apps uses the round checkboxes for no reason: Gmail, Outlook, Drive, One Drive... To name a few.
 
 - ## Floating field labels are bad for accessibility! Don’t use them just because Google does.
 - https://twitter.com/devongovett/status/1364577800116711424

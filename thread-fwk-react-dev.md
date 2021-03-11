@@ -13,6 +13,23 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ##  Preact Server Components
+- https://twitter.com/marvinhagemeist/status/1370041302935560194
+- Here is a quick prototype that fetches components that were rendered on the server. 
+  - Need to sort out some implementation details, but so far I like where this is going 
+
+- ## I’ve been waiting to see what this PR (Fizz) would look like for a couple of years by now
+- https://twitter.com/dan_abramov/status/1369624574065803264
+- I'm so excited! I've been out here implementing similar features the way that made sense to me, but have been dying to see how you all were going to do it.
+- still related to server components?
+  - It’s all part of the same picture. This one in particular relates to streaming HTML renderer, which is complementary to Server Components.
+- When you render React on the server today it's a synchronous process, it all happens in one go. This means you have to do all your data fetching ahead of time, meaning it cant live inside of React itself. It also means that a single slow data fetch will block your entire page.
+  - This PR is the initial parts of a new asynchronous server renderer. Besides being a game changer for how we can do data fetching on server rendered React apps, it can also stream the parts as they become ready.
+  - This means a single slow fetch wont block the user from receiving the page, they can get the parts that are ready early.
+  - Note that this isn't the full vision on data fetching on the server, there is also a separate but very related concept Server Components.
+  - Just to be clear though, this isn't something you need to learn or understand right now, it's just laying foundation.
+  - You are also unlikely to interact with the parts in this PR directly, this will be abstracted away for you by frameworks like Next.js.
+
 - ## Lots and lots of libraries are having to build React wrappers for otherwise-portable Web Components because React is bad at DOM. 
 - https://twitter.com/slightlylate/status/1368418750161055747
   - [3 Approaches to Integrate React with Custom Elements](https://css-tricks.com/3-approaches-to-integrate-react-with-custom-elements/)

@@ -12,6 +12,14 @@ modified: '2021-02-05T14:00:02.922Z'
 - ## 
 
 
+- ## This is my implementation of @AndrewGlassner 's glob shape
+- https://twitter.com/steveruizok/status/1369756871041683457
+  - https://4qr7f.csb.app/
+  - https://codesandbox.io/s/glob-4qr7f
+- I think this is the strategy used by @GoodNotesApp for their lines (which are great btw). Those look like globs to me. 👀 And they erase well—glob by glob.
+- The first challenge: the points of a glob need to be far enough away from each-other to allow us to draw tangents between them. (If the handles end up inside of the circles, the glob breaks.) We'll need to lose points, but we still may need those points to inform the curve.
+
+
 - ## For those unfamiliar with negative margin magic, check out the comparison
 - https://twitter.com/hexagoncircle/status/1288510365756612608
   - Flexbox gap = less HTML elements, less CSS tricks, and cleaner, easier to manage code to get the job done

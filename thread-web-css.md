@@ -26,10 +26,29 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Digging Into CSS Logical Properties
+- https://ishadeed.com/article/css-logical-properties/
+- https://caniuse.com/css-logical-props
+- The basic idea of CSS logical properties is that we won’t use physical directions in CSS properties.
+  - Instead, we will use properties that depend on the direction of the HTML document. 
+  - Those properties are called logical properties.
+  - 多使用start/end，而不是left/right
+
+- ## Has anyone tried a CSS strategy where media queries can only change custom properties? 
+- https://twitter.com/argyleink/status/1369887233700892677
+  - no styles in media queries style
+  - https://github.com/propjockey/css-media-vars
+  - https://github.com/limitlessloop/typolize
+- [CSS native variables not working in media queries](https://stackoverflow.com/questions/40722882)
+- It really depends on the case, and in a lot of cases, when it acts well as params, I do.
+- I do that all the time now. Very useful in case of :focus/:hover too.
+  - I work with BEM. All my blocks have custom properties that can be set from "outside" the block. This to prevent nesting blocks. Resembles a how web components and ShadowDOM work too. Every block is standalone.
+- I think I've experimenteel with typography and space scaling this way, by setting a var to be used with calc, and changing the var per viewport width
+
 - ## How do I apply opacity to a CSS color variable?
 - https://stackoverflow.com/questions/40010597
 - You can't take an existing color value and apply an alpha channel to it. 
-  - `--color: 240, 240, 240;` ; `color: rgba(var(--color), 0.8);`
+  - `--color: 240, 240, 240;` ; `color: rgba(var(--color), 0.8);` .
 - The magic lies in the fact that the values of custom properties are substituted as is when replacing var() references in a property value, before that property's value is computed. 
   - This means that as far as custom properties are concerned, the value of --color in your example isn't a color value at all until a var(--color) expression appears somewhere that expects a color value (and only in that context).
 

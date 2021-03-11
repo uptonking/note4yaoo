@@ -13,6 +13,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## Always choose a job that you gonna learn the most
+
 - ## If you're looking for a mentor, DMing your favorite open source personality isn't the way to go.
 - https://twitter.com/BenLesh/status/1369022399967096838
   - Look local: You may already have mentors. Most of what I've learned, I taught myself, or I learned from random peers (junior and senior) over YEARS -- not some single "Sensei" type.

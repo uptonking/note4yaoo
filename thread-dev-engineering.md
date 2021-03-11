@@ -13,6 +13,17 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## For a long time, I was always unhappy with my code. I never trusted it, never liked it.
+- https://twitter.com/eveporcello/status/1369678978827493376
+  - Then I discovered: Testing, Refactoring
+  - With both, I worry much less about getting code right initially—I can always improve it later. 
+  - Testing also lets me trust my code.
+
+- ## My problem with types added to every function and object is that they occupy my brain when I scan the code when I don't need them. 
+- https://twitter.com/oleg008/status/1369956575964782594
+  - They are just cluttering the code most of the time. 
+  - I want to go back to clean JS code but still have the types hints when I want them.
+
 - ## TIL: passing multiple `-m` options to `git commit` creates paragraphs in the message.
 
 - ## How to identify mistakes in a code structure to learn from:
