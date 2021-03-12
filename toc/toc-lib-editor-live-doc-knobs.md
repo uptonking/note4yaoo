@@ -36,6 +36,12 @@ modified: '2021-03-03T21:48:48.379Z'
   - Based on EasyMDE and MDX Runtime
 - https://github.com/JReinhold/mdx-deck-live-code
   - A component for mdx-deck to live code in your slides
+- https://github.com/PolymerLabs/playground-elements
+  - Playground Elements are a set of components for creating interactive editable code experiences on the web
+  - Embed editable code examples in your documentation.
+  - Playground never sends code to a backend server. Instead, Playground uses a Service Worker to create a virtual URL-space that runs 100% within the browser.
+  - Playground automatically compiles .ts files using TypeScript. Compilation happens in a Web Worker on a separate thread
+  - Playground uses Web Components, so it doesn't require a framework. But it will play nicely with any framework you're already using, like React, Vue, and Angular.
 - jxnblk
   - https://github.com/jxnblk/live-doc
     - Convert markdown to live React demos

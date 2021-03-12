@@ -11,6 +11,18 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## Some people that watched my Records & Tuples talks were interested to discuss the benefits for Redux/Reselect ecosystem.
+- https://twitter.com/acemarke/status/1370417763366354949
+  - IMHO it has advantages and can optimize some selectors more easily than Reselect
+  - Maybe the impact of R&T may be smaller for the Redux  ecosystem once useContextSelector land?
+- Really not sure how much benefit it's going to have.
+  - The real point of memoized selectors is _derived_ data, ie, `todos.map(t => t.text)` - both avoiding expensive recalculations, and returning same references if inputs haven't changed.
+  - Eyeballing it, it seems like R&T _might_ help with the _comparisons_ of those (even deeply). But it wouldn't help with _avoiding_ the calculations in the first place.
+  - Also, I don't see as much benefit for updates, given the existing of Immer and its use in RTK.
+- if you filter() and it does not filter anything, or map and it does not transform anything, with a record it can return the same array. 
+  - I think it can have some advantages to bail-out earlier of some further computations, including React re-renders but not only
+  - I like Immer but would be quite happy to replace it with this https://github.com/tc39/proposal-deep-path-properties-for-record
+
 - ## I find the term "global state" a bit dated, which is why I use server-state and client-state. 
 - https://twitter.com/TkDodo/status/1368198159223111684
   - client-state can bel local (useState) or global (zustand, redux). 

@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## Did you know that HTML has a native lazy `loading` ?
+- https://twitter.com/eligarlo/status/1370315477982019588
+- This works for all major browsers except Safari (desktop and mobile). 
+  - If you have a lot of mac/iPhone visitors then a JS-based solution is still recommended for lazyloading
+
 - ## How to drop IE11 support while keeping your site accessible (including from IE)
 - https://twitter.com/_developit/status/1369384447557140481
   - Build your site to work properly without JavaScript.

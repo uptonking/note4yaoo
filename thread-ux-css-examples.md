@@ -9,7 +9,14 @@ modified: '2021-02-05T14:00:02.922Z'
 
 # ux-dev-examples
 
+- css firework
+
 - ## 
+
+- ## - You can create carousel using 2 lines of CSS
+- https://twitter.com/Prathkum/status/1370185869127249921
+  - https://codepen.io/prathamkumar/pen/bGBOzXj
+- The :hover selector changes the CSS when a mouse hovers over the element. I had issues too so I used JS to help. 
 
 - ## This is my implementation of @AndrewGlassner 's glob shape
 - https://twitter.com/steveruizok/status/1369756871041683457

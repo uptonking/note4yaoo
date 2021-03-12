@@ -197,6 +197,9 @@ modified: '2020-10-22T10:22:33.292Z'
 
 # more
 
+- https://www.rgraph.net/download.html
+  - svg, canvas, csv, google sheets, ajax, database
+
 - https://github.com/frappe/gantt
   - https://frappe.io/gantt
 - xchart /MIT/352Star/201903

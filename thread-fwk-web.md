@@ -11,6 +11,13 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Svelte Kit is now open source
+- https://twitter.com/SvelteSociety/status/1370157702144348164
+  - https://github.com/sveltejs/kit
+- Q: What's the big deal about SvelteKit? 
+  - A: The official recommended way to build apps with @Sveltejs . 
+  - Superfast development with @vite_js , deployed with static or serverless adapters.
+
 - ## Web platform support: Flutter or ReactNative? TLDR: React-Native for websites, Flutter for web-apps
 - https://twitter.com/sebastienlorber/status/1367424075619049474
 - Flutter 2 web has 2 possible backends:

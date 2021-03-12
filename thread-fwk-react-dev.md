@@ -17,6 +17,8 @@ modified: '2021-01-06T14:40:03.364Z'
 - https://twitter.com/marvinhagemeist/status/1370041302935560194
 - Here is a quick prototype that fetches components that were rendered on the server. 
   - Need to sort out some implementation details, but so far I like where this is going 
+- I’ve seen preact’s implementation of server components and can confirm they are doing it _right_. 
+  - As always with this team, such a clean execution of quite a complicated concept. I don’t even like SSR but am so very nearly sold.
 
 - ## I’ve been waiting to see what this PR (Fizz) would look like for a couple of years by now
 - https://twitter.com/dan_abramov/status/1369624574065803264

@@ -13,6 +13,25 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 3rd party integrations today are like:
+- https://twitter.com/ryanflorence/status/1370405429189046278
+  - First, add our 100kb browser SDK
+  - Now fetch to your "api route"
+  - Now use our server side sdk
+  - Now back in the browser use our browser SDK
+  - A little config on the third-party dashboard + `<form> ` would have been way simpler.
+- But you know that A in JAM is for API and you can make a `<form method=post>` , right?
+  - Yes indeed, but so many services require browser javascript and you can't actually process that post on the server.
+- `<form method=post>` .
+  - automatically serializes data
+  - automatically fetches an "api route"
+  - automatically changes the page state when complete
+  - automatically adds pending indication to the user interface
+  - works cross origin if needed
+  - This is how you communicate a mutation.
+- use `<form>` , Then use `<Form>` , when you've got the time/energy/skill to implement a nice pending/optimistic UI. 
+  - Remix doesn't care which one you use, it's all the same!
+
 - ## For a long time, I was always unhappy with my code. I never trusted it, never liked it.
 - https://twitter.com/eveporcello/status/1369678978827493376
   - Then I discovered: Testing, Refactoring

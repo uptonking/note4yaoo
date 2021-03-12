@@ -11,6 +11,39 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+
+- ## 19 JAVASCRIPT NUGGETS!
+- https://delicious-insights.com/en/posts/js-nuggets/
+
+- ## How to write a Constrained Identity Function (CIF) in TypeScript
+- https://twitter.com/kentcdodds/status/1370380876568170499
+  - A handy advanced TypeScript pattern to increase your productivity.
+- we have 2 goals:
+  - Enforce that the type of each property is the same
+  - Ensure that `keyof typeof` for our object results in a finite union of the keys
+- With TypeScript, it's a challenge to have both of these. 
+  - By default, we get the second goal. The problem is that when you try to accomplish the first goal with a type annotation like const operations: Record `<string, OperationFn> = ...` , you end up widening the key so keyof typeof results in string. Ugh, how annoying.
+  - So here's where the constrained identity function comes in. By the way, "constrained" describes a situation where you have a function that accepts a narrower version of an input than it's passed
+
+``` typescript
+
+type OperationFn = (left: number, right: number) => number
+const createOperations = <OperationsType extends Record<string, OperationFn>>(
+  opts: OperationsType,
+) => opts
+const operations = createOperations({
+  '+': (left, right) => left + right,
+  '-': (left, right) => left - right,
+  '*': (left, right) => left * right,
+  '/': (left, right) => left / right,
+})
+type CalculatorProps = {
+  left: number
+  operator: keyof typeof operations
+  right: number
+}
+```
+
 - ## All JavaScript functions should only be allowed to take one argument. 
 - https://twitter.com/swyx/status/1198632709834326021
   - Take an object if you need to pass more than one piece of data.

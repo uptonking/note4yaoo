@@ -26,6 +26,22 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+
+- ## Foldables, grid and custom props make a nice team don't ya think?
+- https://twitter.com/argyleink/status/1370383578488442884
+- https://github.com/foldable-devices/spanning-css-polyfill
+  - This is a polyfill for the proposed CSS Foldable Display extensions.
+  - Web developers targeting foldable devices want to be able to effectively lay out the content in a window that spans multiple displays. 
+  - CSS Foldable Display extensions provides a mean to do that using stylesheets.
+
+
+
+- ## I haven't seen any memory difference between overflow:hidden and overflow:clip.
+- https://twitter.com/jaffathecake/status/1370320900025892868
+  - overflow:scroll creates a new compositing layer and does a load more painting, 
+  - but overflow:hidden and overflow:clip seem to behave the same in terms of GPU memory at least.
+- The problem is that the two have different layout semantics, so it's likely to cause cross-browser issues
+
 - ## Digging Into CSS Logical Properties
 - https://ishadeed.com/article/css-logical-properties/
 - https://caniuse.com/css-logical-props
