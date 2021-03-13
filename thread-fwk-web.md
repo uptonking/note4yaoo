@@ -11,6 +11,40 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+
+- ## Angular 的 NgModule 是为了解决什么问题？
+- https://www.zhihu.com/question/376817427
+- 像命名空间一样提供一种方式支持组件之间的引用。这个可以对比vue和react。
+  - vue没有提供类似的功能，所以组件要么是全局注册的，要么就得给每个组件单独声明依赖（也就是对应组件的components和directives成员）。
+  - react则与js原声处理依赖的方式一致，非常的简单也可以说是精妙。
+  - angular的依赖就是以module为单位的，省去给每个组件声明一次依赖的步骤又避免了全局注册带来的代码chunk分割问题。实际上module之间的引用还是要手动声明的。
+- 为依赖注入独立出了一条"查找路径"。
+  - 因为组件本身也是有注入器的，组件注入器之间也有层级关系，当前注入器找不到会再去父注入器递归的查找。
+  - 所以这里就有了一个策略，我没必要去每次都走一遍组件注入器树，我先通过某种方法判断我要的服务在不在组件注入器树里，不在就直接找module注入器树。这就是angular的nodeinjector引入bloom filter的原因。
+- 并不是必须用module才能达到目的，只是angular选择了这样的设计。即使angular没有module的概念，也可以采取类似的策略：组件注入器树找不到就直接找一个全局的顶级的注入器。
+  - 这点也可以对比下vue和react是怎么处理全局依赖的。
+  - vue有的是直接附着在了全局Vue对象上(如vue.router$)，也有采取js全局变量的。
+  - react就不用说了，js怎么做react就怎么做。
+  - 相比之下angular确实是要规范不少，不止是在代码上有更多约束，结构设计上也是有一定规划的。
+
+- ## Idea: a Next.js plugin that takes typed `api/` routes and codegens React hooks (with SWR / react-query) for reads / writes
+- https://twitter.com/rauchg/status/1368283797280550912
+  - Never deal with `fetch` and `res.ok` and `body` and `.json()` and AbortControllers ever again in your life
+- I think @blitz_js is doing something like that
+  - Yep! Plus tons of other awesome features and conventions that make you super productive for building fullstack apps
+- Tougher than it sounds. Codegen thrives when it can target a static schema-style language (like GraphQL). Any codegen that targets actual code will need to either actually run that code (horrible side effects possible) or enforce conventions on that code.
+
+- ## If we let go of the dream of running @blitz_js solely on lambdas, then we can fully embrace websockets and bake awesome real-time features into Blitz.
+- https://twitter.com/flybayer/status/1370463255429275654
+  - Serverless is AWESOME for queues and background processing, but less awesome for user facing requests.
+- If we were to support websockets, we could also use websockets as transport layer for the RPC calls. Something like the deepkit framework by @MarcJSchmidt is using. This would also allow us to do streaming of data (think pagination, etc.)
+- I say drop it. I think most people who praise serverless with Next are people who host on Vercel because they develop purely in monolith app style, but Vercel takes over on deployment and makes it serverless.
+  - I personally don’t see Blitz as the type of app I’d deploy to Vercel either. Databases are an important aspect of the Blitz model, Vercel tells you to use a 3rd party service that adds latency to that.
+  - Yeah I’m no longer recommending people to deploy to Vercel for these reasons. As they say, it’s for “frontend” apps
+- You can use lambdas with websockets
+  - Conceptually, how is that possible? Aren't Lambda's stateless? Isn't a web socket by definition a persistent http connection?
+  - You can connect to lambda via socket a couple different ways. API gateway sockets, Appsync sockets, or older school MQTT sockets APIgateway/appsync are most common today
+
 - ## Svelte Kit is now open source
 - https://twitter.com/SvelteSociety/status/1370157702144348164
   - https://github.com/sveltejs/kit

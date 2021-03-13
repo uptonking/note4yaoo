@@ -11,6 +11,11 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+
+- ## The built-in Link component in @GatsbyJS prefetches the page you're about to click on so it can load even faster. 
+- https://twitter.com/gill_kyle/status/1370478472699682819
+  - This is the kind of runtime optimization I didn't even realize was happening
+
 - ## When it comes to performance, it's so easy to focus exclusively on speed. The numbers matter, but they're not the only lever we can pull!
 - https://twitter.com/JoshWComeau/status/1365333133252558850
   - A few years ago in an OSS project, we had a process that took 20+ seconds. 

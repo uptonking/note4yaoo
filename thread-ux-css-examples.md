@@ -13,6 +13,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## New CSS @​scroll-timeline demo!
+- https://twitter.com/bramus/status/1370466149536763905
+  - Experimental technology: Chrome with “Experimental Web Platform Features” enabled only for now
+  - https://codepen.io/bramus/pen/GRNNjqz
+- While we translate the `<figure>` elements on scroll, they're not the drivers of the animation. Instead, it's the position of their parent `<section>` that controls their animation progress (e.g. “Element-based Offsets”)
+
 - ## - You can create carousel using 2 lines of CSS
 - https://twitter.com/Prathkum/status/1370185869127249921
   - https://codepen.io/prathamkumar/pen/bGBOzXj

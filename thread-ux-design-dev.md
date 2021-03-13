@@ -11,6 +11,15 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## Development foreshadows the future of product design. Trend: How devs work now is how designers will work in 3-5 years. 
+- https://twitter.com/domyen/status/1370515481979985924
+  - Here's a thread about how dev can change design
+  - Variables » Design tokens 
+  - Components » Components 
+  - UI states » Variants
+  - Design primitives are established. 
+  - Design is more creative yet more homogenous(同质的). 
+
 - ## Pro-tip for UI developers: always assume that your users will rage-click any of your buttons multiple times out of frustration. Program accordingly.
 - https://twitter.com/DavidKPiano/status/1370083861472935942
   - Instead of disabling buttons, you can explicitly model your state and transitions so that rage-clicks and other edge-cases are handled correctly. Let your users rage against the state machine.

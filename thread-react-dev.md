@@ -11,6 +11,16 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+
+- ## When creating composite React components (i.e. parent + child pairs like HTML's <select> and <option>) you can avoid exposing private props like "index" or "isFirstChild" on child elements by using context.
+- https://twitter.com/markdalgleish/status/1370552733590167552
+- Forgive my ignorance, perhaps I misunderstand. But what is the benefit to this other than not seeing a prop e.g. "index" as you mention. This seems on the surface over engineered and perhaps, even if a little, incurring a greater performance hit than exposing the prop.
+  - If you use cloneElement instead, it means consumers are able to see the private props in the component's type signature.
+  - Also, cloneElement prevents consumers from wrapping child elements with another element since you'll be cloning an element without those private props available.
+- Yes, please bring more visibility to this. Several big libraries still use clone element and it's frustrating to have things break because I wrapped a component without forwarding all props. Context works great here.
+
+
+
 - ## there's a bunch of articles that explain how React hooks are implemented, 
 - https://twitter.com/acemarke/status/1369869411901992966
   - and that they're basically a linked list in memory hence the need for identical use order.

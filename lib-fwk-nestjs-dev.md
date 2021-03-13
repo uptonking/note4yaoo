@@ -35,4 +35,15 @@ modified: '2020-12-12T19:22:59.759Z'
 
 # pieces
 
+# module
+
+- Why did nestjs copied the Angular module system I don't know....
+
+- ## The Global decorator from @nestframework is awesome and should find it's way into @angular . 
+- https://twitter.com/aaronfrost/status/1079056698311008256
+  - Having every single module in the system import a Common or Core module is superfluous(多余的，过多的). I love this Global solution from Nest.
+- would grouping everything in one module and name it global help you? 
+  - It could help, but would still need to be imported everywhere is used and for every test, etc.
+- Interesting idea. Would be helpful especially for lazy loaded angular apps where every module is importing common module.
+
 # ref

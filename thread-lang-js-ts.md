@@ -12,6 +12,22 @@ modified: '2021-01-28T14:34:20.579Z'
 - ## 
 
 
+- ## TypeScript experts: is there a way to find out which tsconfig files are being used in a given compilation? I'm getting `lib.dom.d.ts` in one of my compilations, but I don't know who is including it. { lib: [] } in my tsconfig isn't helping.
+- https://twitter.com/mjackson/status/1370525900819689476
+- --explainFiles in 4.2
+
+- ##  `export default` is bad. Don't do it. Ever.
+- https://twitter.com/BenLesh/status/1370447621970669580
+- Counterpoint(对照物): now you have to open the file to know what the module exports. Just a tradeoff. I ack your IDE may do this for you… Eclipse did lots for Java too.
+- Unfortunately, React.lazy() only supports default exports.
+  - Loadable Components could help us out here, though.
+- From 20 Years of JavaScript, export default is only added late in the proposal to accommodate module.exports.
+- I’d state it like this:
+  - export named when you export for other humans to use
+  - export default for frameworks to collect when traversing your directories (Next doesn’t care about the page component name, and no human will auto-import the page)
+- I use default exports all the time. They're useful when you want to enforce a 1:1 relationship between a module and the interface it provides.
+
+
 - ## 19 JAVASCRIPT NUGGETS!
 - https://delicious-insights.com/en/posts/js-nuggets/
 

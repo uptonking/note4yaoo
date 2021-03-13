@@ -13,6 +13,10 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Looks like React Native's Hermes JS engine is finally shipping with Proxy support
+- https://twitter.com/acemarke/status/1370515928300027909
+- What’s almost shocking for me is that they’re shipping no iOS as well
+
 - ##  Preact Server Components
 - https://twitter.com/marvinhagemeist/status/1370041302935560194
 - Here is a quick prototype that fetches components that were rendered on the server. 

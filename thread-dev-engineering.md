@@ -13,6 +13,34 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## friendly reminder that http-only cookies don't protect you from XSS
+- https://twitter.com/benawad/status/1370532233698770947
+  - if someone can inject code they don't need your token, they can just make fetch calls on that users behalf
+- The solution to this is using CSP, right?
+  - The solution is "don't trust user input"
+  - Yep but not all browsers respect the policy. And if you parse malicious code comming for user inputs it doesn't matter if the browser respect the CSP especially if that code can be rendered by other users too
+- Very true. If you've an XSS you're actually flawed and a local jwt should be the least of your worries
+
+- ## Webpack have achieved production server Hot Module Reloading between apps using module federation
+- https://twitter.com/ScriptedAlchemy/status/1370555543136301060
+  - No cold start, no downtime, no new process. I've seen the future, and its got zero-downtime
+
+- ## Preemptive Pluralization is (Probably) Not Evil
+- https://www.swyx.io/preemptive-pluralization/
+- What if we just assumed we might have two of everything?
+- Before you write any code — ask if you could ever possibly want multiple kinds of the thing you are coding. If yes, just do it. Now, not later.
+- But I think Preemptive Pluralization(先发制人多元化) — projecting forward into hypothetical situations when you need N types of a thing — is exempt, even though you are literally optimizing for a future you don't currently live in.
+- It is a LOT easier to scale code from a cardinality of 2 to 3 than it is to refactor from a cardinality of 1 to 2. 
+- Robust code is optimized for change (more in a future blogpost).
+- Let's address two obvious criticisms of Preemptive Pluralization:
+  - Increased code complexity: Functional languages and other abstractions can help make array or matrix operations almost as easy to work with as regular operations.
+  - Slow performance from doing extra loops: Loops only cost significantly when you have lots of N. By definition, if you are pluralizing prematurely, N = 1.
+- Listen up, this is sound advice that I can attest to after years of experience. 
+  - You will almost always need two or more. 
+  - If you end up not needing 2 or more, the risk/reward is worth it in almost every situation.
+  - Just Pluralize It.
+- I've made this type of refactor more times than I care to count, and it's always a pain. Absolutely good advice.
+
 - ## 3rd party integrations today are like:
 - https://twitter.com/ryanflorence/status/1370405429189046278
   - First, add our 100kb browser SDK

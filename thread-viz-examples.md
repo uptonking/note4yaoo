@@ -11,6 +11,9 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+- ## we got #d3js data and scales into a fully 3D #threejs scene!
+- https://observablehq.com/@enjalot/2d-to-3d
+
 - ## Toying with some animations of long vs wide data
 - https://twitter.com/benmschmidt/status/1369103070446108674
   - [Wide and long data.](https://observablehq.com/@bmschmidt/wide-and-long-data)

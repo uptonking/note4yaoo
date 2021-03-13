@@ -22,6 +22,8 @@ modified: '2020-11-03T06:55:09.225Z'
     - InversifyJS has a friendly API and encourages the usage of the best OOP and IoC practices.
   - https://github.com/thiagobustamante/typescript-ioc
   - https://github.com/typestack/typedi
+  - [Typescript Dependency Injection in 200 LOC](https://dev.to/darcyrayner/typescript-dependency-injection-in-200-loc-12j7)
+  - [minimal DI container in TypeScript](https://dev.to/mindplay/minimal-di-container-in-typescript-1p7d)
 
 - https://github.com/catalinmiron/react-typical
   - Animated typing based on awesome typical library
