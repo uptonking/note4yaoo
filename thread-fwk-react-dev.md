@@ -13,6 +13,19 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Invented a new React pattern I'm calling the "fake child" pattern.
+- https://twitter.com/markdalgleish/status/1370951759284162565
+  - When making composite components (e.g. `<Select> and <Option>` ) it lets you pass private props (i.e. not on the type signature) from parent to child *without* using context.
+  - Note that this also prevents `<Child>` from being rendered outside of `<Parent>` , which is pretty neat given there's no use of context here.
+  - https://codesandbox.io/s/dry-surf-jfmzx?file=/src/App.tsx
+- This breaks composition though.
+  - `const SpecialChild = () => <Child />` .
+  - The child component is a dead blob, it can't be bound to state or made dynamic.
+  - This is something where imo context should always be used.
+  - If it's not clear, the trade-off here is that `<Child>` must be a *direct* child of `<Parent>` , i.e. it can't be rendered by another component.
+- I think react-aria has been doing smth similar, but your example is much understandable
+- Why do you want to avoid using Context here? It seems like a good use case for it.
+
 - ## Looks like React Native's Hermes JS engine is finally shipping with Proxy support
 - https://twitter.com/acemarke/status/1370515928300027909
 - What’s almost shocking for me is that they’re shipping no iOS as well

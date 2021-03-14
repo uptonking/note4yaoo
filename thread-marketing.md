@@ -11,6 +11,11 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## I'm in the market for a ticketing system (eg Zendesk). Ideally one developer-friendly, with a solid API.
+- https://twitter.com/JoshWComeau/status/1370831667749863428
+- Helpscout is really great. It’s email based from the customer side, whereas Zendesk it feels like you’re talking to help desk with their ticketed emails and I hated it.
+- I use Freescout which is free and open source, has extra modules that you can buy, and presumably you can make your own as well, but I haven't tried (uses Laravel)
+- Intercom is the best and easiest for both you and the customer. But it's paid and costly with limited API.
 
 - ## SaaS is not passive income. When I stop shipping new features and/or stop marketing, I feel sales slowing. SaaS is something you have to keep working on.
 - https://twitter.com/yongfook/status/1369276581567365123
@@ -19,7 +24,6 @@ modified: '2021-01-06T14:40:06.842Z'
   - I just recently saw a SaaS that invested heavily in content marketing for a few years and now gets traffic on autopilot(自动驾驶).
   - High domain authority = barrier to entry. It would take years for a new competitor to outrank them.
 - It can become passive if you hire good people to do those things for you as well as run the day to day things. I think this is really hard for many bootstrapping founders to do.
-
 
 - ## Startup idea: A social network (let's call it "the web") where people can post digital art, *but* they first need permission ("a licence") from the artist.
 - https://twitter.com/AmeliasBrain/status/1368598410673025025

@@ -13,6 +13,28 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## The #1 tech skill to have is comfort in coding, on the fly, in front of other people.
+- https://twitter.com/AdamRackis/status/1370875384812740610
+  - Expect to be given some silly use case, ie, "write a class that take two strings, and tracks which is longer"
+  - Be comfortable talking through the requirements, asking questions, etc.
+- Expect to iterate on it, over and over, with requirements being added. Ie, "now optionally take an array of strings, and, if an array was passed, track the shortest string. If just two strings were passed, like before, then ..."
+- Most important tip I can give: **think out loud**. Always. Turn the voice in your head you normally think with, off, and think out loud.
+  - If you get stuck, talk it through, out loud. Explain why you're stuck. Ask questions. Your interviewer is there to help you. Seriously.
+- The worst thing you can do is stop coding, and freeze up, panicking in your mind. Talk it through.
+- Expect to be asked questions in your domain to test how deeply you know it. I was asked about everything from arrow functions, to Promises, to web sockets.
+  - The deeper you know your stuff, and can demonstrate it, the better.
+- If you're asked about arrow functions, don't just say they're shorter syntax sugar.
+  - Mention lexical this.
+  - Mention lexical arguments.
+  - Mention lack of a Prototype and [[Construct]] slot.
+  - Show them you're someone who knows their shit.
+- You know what I was never, ever asked about, even once? JS Frameworks
+  - Oh, you've written apps in React, Svelte, Vue and also Angular? Nobody gives a shit.
+  - Companies care a lot more that you have deep language mastery, vs having played with a bunch of different frameworks.
+- You know what else I was never asked about? CSS Frameworks.
+  - Tailwind seems really, really cool. But maybe learn the fundamentals of CSS before you dive in, there.
+
+
 - ## friendly reminder that http-only cookies don't protect you from XSS
 - https://twitter.com/benawad/status/1370532233698770947
   - if someone can inject code they don't need your token, they can just make fetch calls on that users behalf

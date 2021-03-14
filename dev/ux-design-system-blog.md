@@ -9,6 +9,34 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # blog
 
+## [7 Rules for Creating Gorgeous UI (Updated for 2020)](https://learnui.design/blog/7-rules-for-creating-gorgeous-ui-part-1.html)
+
+### Light comes from the sky
+
+- Shadows are invaluable cues in telling the human brain what user interface elements we’re looking at.
+
+### Black and white first
+
+- Designing in grayscale before adding color simplifies the most complex element of visual design– and forces you to focus on spacing and laying out elements.
+- UX designers are really into designing “mobile-first” these days. 
+  - That means you think about how pages and interactions work on a phone before imagining them on your zillion-pixel $6000 pro monitor.
+  - That sort of constraint is great. It clarifies thinking. You start with the harder problem (usable app on a teeny-weeny screen), then adopt the solution to the easier problem (usable app on a large screen).
+- Well here’s another similar constraint: design black and white first. 
+  - Start with the harder problem of making the app beautiful and usable in every way, but without the aid of color. Add color last, and even then, only with purpose.
+
+### Double your whitespace
+
+- To make UI that looks designed, add a lot of breathing room.
+- In Rule 2, I said that B&WF forces designers to think about spacing and layout before considering color, and how that’s a good thing. Well, it’s time we talk about spacing and layout.
+
+### Learn the methods of overlaying text on images (in Part 2)
+
+### Make text pop — and un-pop (in Part 2)
+
+### Use only good fonts (in Part 2)
+
+### Steal like an artist (in Part 2)
+
 ## [Design Systems Should be JavaScript Framework Agnostic_201809](https://medium.com/hackernoon/design-systems-should-be-javascript-framework-agnostic-2a0c47129ec8)
 
 - An emerging trend in design systems is the idea of separating your core HTML & CSS from the current JavaScript framework. 

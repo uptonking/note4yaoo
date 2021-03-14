@@ -26,6 +26,11 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## CSS resets don't have to be globally scoped! Here's an example where I've taken the famous Eric Meyer reset and locally scoped it using @emotioncss .
+- https://twitter.com/markdalgleish/status/1371047244095365122
+  - This is obviously a bit tedious to use in this form, but you could make it more ergonomic by wiring it up to a primitive `<Box>` component or something similar, e.g. `<Box as="h1">` will apply the reset.h1 class.
+  - This is particularly useful if you're building a component library and don't want to leak your reset into the global scope.
+- mmh, you have to add className to every single element?
 
 - ## Foldables, grid and custom props make a nice team don't ya think?
 - https://twitter.com/argyleink/status/1370383578488442884
@@ -33,8 +38,6 @@ modified: '2021-01-08T17:15:13.906Z'
   - This is a polyfill for the proposed CSS Foldable Display extensions.
   - Web developers targeting foldable devices want to be able to effectively lay out the content in a window that spans multiple displays. 
   - CSS Foldable Display extensions provides a mean to do that using stylesheets.
-
-
 
 - ## I haven't seen any memory difference between overflow:hidden and overflow:clip.
 - https://twitter.com/jaffathecake/status/1370320900025892868

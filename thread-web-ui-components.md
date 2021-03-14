@@ -13,6 +13,26 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## One of the common mistakes while building a UI is forgetting to add padding for long text elements.
+- https://twitter.com/shadeed9/status/1371043578227650562
+  - Make sure to have a good variety of text lengths while testing.
+- [Handling Short And Long Content In CSS](https://ishadeed.com/article/css-short-long-content/)
+- Long Content
+  - overflow-wrap: break-word; 
+  - hyphens: auto; 
+  - text-overflow: ellipsis; 
+  - -webkit-line-clamp: 3; 
+  - Sometimes, it’s not always practical to break or hyphenate a word, allowing horizontal scrolling will make the reading experience better.
+  - you might forget to add padding until you notice a visual issue. 
+- Short Content
+  - min-width
+- Use cases and examples
+  - Profile card
+  - Navigation items
+  - Article content
+  - Shopping cart
+  - Flexbox and long content
+
 - ## Design systems folks, what would you call this component? 
 - https://twitter.com/_alanbsmith/status/1370089747926851586
 
@@ -30,8 +50,6 @@ modified: '2021-01-19T04:46:23.100Z'
 - Callout, Note or HighlightedNote?
 - We call them “note”, sometimes called “annotation” or “alert”
 - On the Luna design system at Northwestern Mutual, we call it an "Inline Notification"
-
-
 
 - ## The most common layout found across my stylesheets: a gapped stack.
 - https://twitter.com/argyleink/status/1369632881857990658

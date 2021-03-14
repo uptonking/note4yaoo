@@ -11,6 +11,10 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## indiebrands.io now features mockups auto-generated for each brand.
+- https://twitter.com/lauridskern/status/1370787677021347843
+  - https://indiebrands.io/
+
 - ## Development foreshadows the future of product design. Trend: How devs work now is how designers will work in 3-5 years. 
 - https://twitter.com/domyen/status/1370515481979985924
   - Here's a thread about how dev can change design

@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## Use "translate" attribute and set it value to "no" for your company name.
+- https://twitter.com/Prathkum/status/1370910146059190279
+  - So that in case, the webpage is translated into another language, your brand name will remain intact
+- To prevent #Google translate in a  text, use 𝘁𝗿𝗮𝗻𝘀𝗹𝗮𝘁𝗲="𝗻𝗼" for that tag. 
+
 - ## Did you know that HTML has a native lazy `loading` ?
 - https://twitter.com/eligarlo/status/1370315477982019588
 - This works for all major browsers except Safari (desktop and mobile). 
