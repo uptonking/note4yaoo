@@ -7,6 +7,51 @@ modified: '2021-01-29T18:55:16.043Z'
 
 # web-css-vars
 
+# faq
+
+## css vars的范围问题
+
+- 注意
+  - 当前范围中使用的css变量的值，由父级中同名变量的值决定；
+  - 当前范围中声明的css变量的值，只是声明一个同名变量，具体计算发生在当前元素的子元素之中
+
+- ### [CSS Variables not global?](https://stackoverflow.com/questions/61553471/css-variables-not-global)
+
+- why does the div not appear when the button is hovered over?
+
+``` HTML
+<button>Hover</button>
+<div></div>
+```
+
+``` CSS
+:root {
+  --op: hidden;
+}
+
+button:hover {
+  background-color: yellow;
+  --op: visible;
+}
+
+div {
+  visibility: var(--op);
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+```
+
+- That's not working because you are setting the variable only for the button, so you are not overriding the global variable.
+
+- 测试
+  - chrome浏览器中，button默认的bg-color是rgb(239, 239, 239)
+  - 若强行设置background-color: var(--my-bg); 且--my-bg未定义，则bg-color时rgb(0, 0, 0, 0)
+  - 未定义的color类css变量默认是时透明色
+  - 注意可能会使用button自身的默认色
+
+- ### [Overriding :root CSS variables from inner scopes](https://stackoverflow.com/questions/58206867)
+
 # guide
 
 - faq-not-yet
@@ -31,7 +76,7 @@ modified: '2021-01-29T18:55:16.043Z'
     - 要考虑代码清晰、明确
     - 要考虑包含css变量的读写操作多不多，性能影响
 
-- css-vars-tips
+- css-vars-basics
   - css变量名区分大小写
   - css变量名中可包含dash和underscore，，注意sass变量的下划线和横杠不区分
   - css变量值遵循css样式值的层叠规则

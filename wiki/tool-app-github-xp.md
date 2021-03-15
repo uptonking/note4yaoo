@@ -20,6 +20,8 @@ modified: '2020-12-29T17:45:15.518Z'
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
   - 搜索org，可用`type:org`
     - `https://github.com/search?q=design+type%3Aorg&type=users`
+  - 搜索自己评论过的issues `commenter:uptonking type:issue`
+    - https://github.com/search?o=desc&q=commenter%3Auptonking+type%3Aissue&s=updated&type=Issues
   - 按标签或主题搜索
   - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
     - most starred

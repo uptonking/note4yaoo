@@ -57,6 +57,8 @@ modified: '2020-07-25T12:20:37.613Z'
 
 # [pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
+- A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). 
+
 - 伪元素常用
   - `::after/before/first-letter/first-line/marker/part/selection/...`
 
@@ -73,6 +75,8 @@ selector::pseudo-element {
   - It must appear after the simple selectors in the statement.
 
 # [pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+
+- A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). 
 
 - 伪类类别
   - Linguistic pseudo-classes
@@ -107,6 +111,66 @@ selector:pseudo-class {
   - or the position of the mouse (like :hover)
 
 - Like regular classes, you can chain together as many pseudo-classes as you want in a selector.
+
+# LVHA-order: :link, :visited, :hover, (:focus), :active
+
+- `:link`: unvisited
+- `:visited`: visited
+
+- `:hover` pseudo-class matches when the user interacts with an element with a pointing device, but does not necessarily activate it. 
+  - It is generally triggered when the user hovers over an element with the cursor (mouse pointer).
+  - `:hover` is problematic on touchscreens. Depending on the browser, the :hover might never match, match only for a moment after touching an element, or continue to match even after the user has stopped touching and until the user touches another element
+
+- `:active` pseudo-class represents an element (such as a button) that is being activated by the user. 
+  - When using a mouse, "activation" typically starts when the user presses down the primary mouse button.
+  - `:active`  is commonly used on `<a>/<button>` elements. 
+  - Other common targets of this pseudo-class include elements that contain an activated element, and form elements that are being activated through their associated `<label>`.
+  - 鼠标正在按下时才会显示active样式，按下结束松开鼠标后，会显示visited
+
+- `:focus` pseudo-class represents an element (such as a form input) that has received focus. 
+  - It is generally triggered when the user clicks or taps on an element or selects it with the keyboard's Tab key.
+  - This pseudo-class applies only to the focused element itself. Use `:focus-within` if you want to select an element that contains a focused element.
+
+- `:focus-visible` pseudo-class applies while an element matches the `:focus` pseudo-class and the UA (User Agent) determines via heuristics that the focus should be made evident on the element. (Many browsers show a “focus ring” by default in this case.)
+  - This selector is useful to provide a different focus indicator based on the user’s input modality (mouse vs. keyboard).
+  - usecase: button点击时无outline，tab时显示outline
+  - 注意：safari不支持
+
+- `:focus-within` pseudo-class represents an element that has received focus or contains an element that has received focus.
+  - In other words, it represents an element that is itself matched by the :focus pseudo-class or has a descendant that is matched by :focus. (This includes descendants in shadow trees.)
+  - usecase: 点击内部输入框时，高亮外部表单
+
+## [Style hover, focus, and active states differently](https://zellwk.com/blog/style-hover-focus-active-states/)
+
+- Hover states are usually represented by a change in background-color (and/or color).
+  - The difference in states doesn’t have to be obvious because users already know they hovered on something.
+- Elements can receive focus in two ways:
+  - When users tab into a focusable element
+  - When users click on a focusable element
+- Focusable elements are:
+  - Links (`<a>`)
+  - Buttons (`<button>`)
+  - Form elements (`<input>`, textarea, etc.)
+  - Elements with `tabindex`
+  - a few important points to note:
+    - Users cannot tab into an element with `tabindex="-1"`, but they can click on it. The click triggers focus.
+    - On Safari and Firefox (Mac), clicks do not focus the `<button>` element.
+    - When you click on a link (`<a>`), focus remains on the link until you lift your finger from your mouse. When you lift your finger, the focus gets redirected elsewhere if the href points to a valid id on the same page
+- :active triggers when you interact with an element
+  - Holding down your left mouse button on an element (even non-focusable ones)
+  - Holding down the Space key (on buttons)
+  - Holding down Space triggers :active on buttons, but holding down Enter doesn’t.
+  - Enter triggers links but it doesn’t create create an active state. Space doesn’t trigger links at all.
+- The relationship between active and focus
+  - When you hold down the left mouse button on a focusable element, you trigger the active state. You also trigger the focus state at the same time.
+  - When you release the left mouse button, focus remains on the element(true for most focusable elements except links and buttons.)
+  - For links:
+    - When you hold down left mouse button: Triggers :active and :focus state on Firefox and Chrome Only triggers active on Safari 
+    - When you release left mouse button: :focus remains on link (if the link’s href does not match an id on the same page). On Safari, focus goes back to `<body>`.
+  - For buttons:
+    - When you hold down left mouse button: Triggers :active and :focus state on Chrome only. Does not trigger :focus at all in Safari and Firefox (Mac).
+
+- Order of styles - :hover then :focus then :active
 
 # `:first-of-type` pseudo-class 
 

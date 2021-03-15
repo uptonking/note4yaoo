@@ -34,6 +34,15 @@ modified: '2021-01-02T18:08:07.806Z'
   - 输出的值也可以使用 css vars
   - 使用js对象书写color的value时，hsl不会自动计算
 
+- transformer
+  - 在循环处理各转换项时，碰到包含引用的会跳过
+  - [Custom value transforms skip values with aliases](https://github.com/amzn/style-dictionary/issues/451)
+    - Notably the transform step skips doing any value transforms on values that reference other values.
+    - The original intent was that the aliased token should already be properly transformed for the given format.
+
+- formatter
+  - 可以在自定义formatter中灵活生成各种输出
+
 - 建议使用js书写tokens，计算工具库更丰富，
   - 适合以后生成gradient
   - polished提供的方法分类：mixins，color，shorthands，easing

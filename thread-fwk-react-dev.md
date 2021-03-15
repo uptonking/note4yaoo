@@ -23,8 +23,25 @@ modified: '2021-01-06T14:40:03.364Z'
   - The child component is a dead blob, it can't be bound to state or made dynamic.
   - This is something where imo context should always be used.
   - If it's not clear, the trade-off here is that `<Child>` must be a *direct* child of `<Parent>` , i.e. it can't be rendered by another component.
-- I think react-aria has been doing smth similar, but your example is much understandable
 - Why do you want to avoid using Context here? It seems like a good use case for it.
+
+- I think react-aria has been doing sth similar, but your example is much understandable
+- We do this exact thing in React Spectrum for all our collection components. They all share the same `<Item>` “component”, which is just mapped to the appropriate internal element based on the parent
+  - Another cool thing about this is it enables virtualized scrolling without changing the API. Rather than passing all children through, we can simply not render some of them until they are scrolled into view.
+  - We actually built a whole system for this type of component using generators
+  - This does break composition though - ie no wrappers of `<Item>` are allowed. I wish React had a mechanism to query the rendered tree without actually rendering to the DOM.
+
+- Having some feature for this has been on the plans for a while but don’t really have a great plan that isn’t very limiting. Eg server streaming gets tricky if the parent can change the output. This pattern also doesn’t always work well with Server Components...
+- Depending on if both or either are client components rendered from a server component. Either the server component parent can observe children that are representations of the client children, not the real child. Or client parent can observe a placeholder for a suspended child.
+- Breaking composition has some deep implications.
+  - Yeah though in the cases we apply this pattern you wouldn’t ever render the parent in one place and children in another, and I think that’s a reasonable restriction. The children are not real components, they’re just providing data for the parent like any other prop, but via JSX.
+  - What about HOC? It’s less of a problem now with lots of libraries going with hooks, but they’re still wildly used. For example Relay pre-Hooks.
+    - Generally we recommend placing anything you would have wrapped around `<Item>` inside the item instead which works pretty well. The content is generally what people want to customize anyway.
+- Perhaps. That `<Select><Option /></Select>` pattern is commonly great for Server Components though because it allows for highly reusable Client Components so you have to download zero code specific to that usage. I'm sure we'll figure something out though.
+- Another option for this is to have a wrapper around both Select and Options that are "Shared" which does the loop over the children and then pass to some client specific implementation detail. The problem doesn't really kick in since the child can't suspend so maybe it's nbd.
+  - I think with this API you could put the content inside the Option in a server component instead of the Option itself. Eg `<Select><Option><ServerContent /></Option></Select>`. Makes some sense because the Option itself doesn’t render anything anyway.
+  - Could there be a simple useIndex hook that maintained the proper index in the tree and was only readable similar to a ref? In practice, it seems you never need that index on initial render, just things like keyboard interaction.
+    - We use this for more than just passing an index through though, eg rendering only some of the items for virtualized scrolling, and mapping to completely different UIs depending on the parent component. It’s more of a JSX replacement for passing a list of objects to a prop.
 
 - ## Looks like React Native's Hermes JS engine is finally shipping with Proxy support
 - https://twitter.com/acemarke/status/1370515928300027909

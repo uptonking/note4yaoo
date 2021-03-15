@@ -111,6 +111,8 @@ modified: '2021-02-09T13:40:11.536Z'
 - halfmoon v1.1.1(202103, develop branch)
   - 未提供组件级css vars，但全局级css变量名称规则很容易提取出各组件的变量
     - 因为没有组件级变量，切换主题时，直接修改属性color的值为另一个变量即可
+    - 全局级变量统一放在:root中，组件中样式规则用的css属性名和css变量值
+      - background-color: var(--lm-button-primary-bg-color-hover);
   - 单位几乎都用rem，1rem = 10px，因为1600px以上的屏幕会自动放大
   - **所有组件的所有样式值几乎都是css vars**，非常灵活
   - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
@@ -118,12 +120,14 @@ modified: '2021-02-09T13:40:11.536Z'
 
 - spectrum
   - 用[postcss-remapvars](https://www.npmjs.com/package/postcss-remapvars)自动生成各组件各套size对应的css vars变量名
-  - 提供了组件级css vars，组件级变量也是全局级，分为`--spectrum-global/button/...`
+  - 提供了组件级css vars，组件级变量也是全局级，分为`--spectrum-global/button/...`.
+    - 组件中样式规则用的css属性名和css变量值
   - 切换theme通过在html标签添加多个class实现，包括scale, color, ltr-direction等，示例的中html元素的class超级多，其中包括serif字体
 
 - patternfly
   - [Patternfly 4 Guidelines](https://pf4.patternfly.org/guidelines/)
   - 组件级的变量未提供fallback回退值
+    - 组件中样式规则用的css变量名和css变量值，前提条件是每种variant的前面需要写一遍color: var(--pf-c-button--m-secondary--Color);
   - dark mode只有button和card勉强能用，其他组件如banner的dark模式部分已开始但未实现
   - `.pf-t-dark`下的变量，命名清晰
     - 全局变量
