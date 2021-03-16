@@ -45,6 +45,9 @@ modified: '2021-01-08T17:15:13.906Z'
   - but overflow:hidden and overflow:clip seem to behave the same in terms of GPU memory at least.
 - The problem is that the two have different layout semantics, so it's likely to cause cross-browser issues
 
+- https://twitter.com/argyleink/status/1371586954878275590
+  - TIL: at least in Chromium, savings for `overflow: clip` are so negligible/small or would only exist under extreme use cases, that "less memory" has been removed from its list of benefits.
+
 - ## Digging Into CSS Logical Properties
 - https://ishadeed.com/article/css-logical-properties/
 - https://caniuse.com/css-logical-props

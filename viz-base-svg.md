@@ -120,10 +120,10 @@ modified: '2020-12-21T07:46:58.910Z'
 - The line between HTML and CSS is clear: HTML is about content and structure, and CSS is about the look. 
 - SVG blurs this line, to say the least. SVG 1.1 did not require CSS to style SVG nodes — styles were applied to SVG elements using attributes known as “presentation attributes.”
 - Presentation attributes are a shorthand for setting a CSS property on an element. Think of them as special style properties. They even contribute to the style cascade, but we’ll get to that shortly.
-- The `fill` , `stroke` and `stroke-width` attributes are presentation attributes.
+- The `fill` ,   `stroke` and `stroke-width` attributes are presentation attributes.
 - In SVG, a subset of all CSS properties may be set by SVG attributes, and vice versa. 
 - The SVG specification lists the SVG attributes that may be set as CSS properties. 
-- Some of these attributes are shared with CSS, such as `opacity` and `transform` , among others, while some are not, such as `fill` , `stroke` and `stroke-width` , among others.
+- Some of these attributes are shared with CSS, such as `opacity` and `transform` , among others, while some are not, such as `fill` ,   `stroke` and `stroke-width` , among others.
 - In SVG 2, this list will include x, y, width, height, cx, cy and a few other presentation attributes that were not possible to set via CSS in SVG 1.1. The new list of attributes can be found in the SVG 2 specification.
 - Another way to set the styles of an SVG element is to use CSS properties in `style` attribute. 
 - Indeed, presentation attributes count as low-level “author style sheets” and are overridden by any other style definitions: external style sheets, document style sheets and inline styles.
@@ -163,3 +163,5 @@ modified: '2020-12-21T07:46:58.910Z'
 
 - [Appendix H: SVG Property Index](https://www.w3.org/TR/SVG/propidx.html)
 - [Appendix D: Animating SVG Documents](https://www.w3.org/TR/SVG2/animate.html)
+
+- [A Generative SVG Starter Kit](https://dev.to/georgedoescode/a-generative-svg-starter-kit-5cm1)

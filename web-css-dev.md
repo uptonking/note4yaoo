@@ -15,6 +15,9 @@ modified: '2021-02-07T18:27:52.684Z'
 - 考虑让media queries的breakpoints sortable
   - bp10-xs, bp20-sm, bp30-md, bp40-lg, bp50-xl
 
+- 书写border的样式时，若拆成两部分如 `border: 1px solid; border-color: red;`
+  - 一定要把border-color写在border的后面，否则边框色不生效
+
 # naming
 
 ## css-vars-naming

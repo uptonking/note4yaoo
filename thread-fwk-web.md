@@ -11,6 +11,23 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Event bubbling causes so many problems. It breaks component encapsulation. Events shouldn't leak out of a component just like styles shouldn't.
+- https://twitter.com/devongovett/status/1371549410245640195
+  - When you handle an event in a component, you should usually stop propagation so parent components don't also try to handle it.
+  - example: you could have row selection in a table. Clicking anywhere on the row selects it, but if you had a button inside a cell, you would want the button to handle this event rather than selecting the row.
+- In React Aria we treat this as a general rule. 
+  - All of our interaction hooks stop propagation on all events once they've been handled. 
+  - This means application developers don't need to worry about these problems and in general things work as expected out of the box.
+  - Obviously there are cases where bubbling is useful, but often times these can also be handled by using capture phase listeners instead. 
+  - We also support a `continuePropagation` method on some events that allows opting into propagation rather than opting out.
+- We had to add this for Headless UI, because while I was working on an example with a Menu inside a Modal, guess what happened when you pressed "escape" 
+- What if you want to extend a behavior ? If your event isn't bubbling you can't do it
+  - Usually there are better ways to do this. For example adding an event handler on the element you want to handle events for rather than a parent. But of course there's always capturing events you can use too.
+- Agree. I like the concept of custom events in @vuejs -  they propagate only one level up. 
+  - Hence you don't have such a problem there at least with custom events. 
+  - On the other hand, for native events, Vue has a nice syntaxis to stop event propagation
+- So much code (and people's mental models) assumes that events will bubble, that I've found this can lead to subtle, hard to find/debug problems. I use it sparingly and deliberately, but not universally for the above reason.
+- I've been toying with an Overrides pattern that allows controlled bubbling. Still need to experiment more, but the idea was you could always stopPropagation and then use overrides where needed.
 
 - ## Angular 的 NgModule 是为了解决什么问题？
 - https://www.zhihu.com/question/376817427
@@ -27,7 +44,7 @@ modified: '2021-01-08T17:13:53.965Z'
   - react就不用说了，js怎么做react就怎么做。
   - 相比之下angular确实是要规范不少，不止是在代码上有更多约束，结构设计上也是有一定规划的。
 
-- ## Idea: a Next.js plugin that takes typed `api/` routes and codegens React hooks (with SWR / react-query) for reads / writes
+- ## Idea: a Next.js plugin that takes typed `api/` routes and codegens React hooks (with SWR / react-query) for reads/writes
 - https://twitter.com/rauchg/status/1368283797280550912
   - Never deal with `fetch` and `res.ok` and `body` and `.json()` and AbortControllers ever again in your life
 - I think @blitz_js is doing something like that

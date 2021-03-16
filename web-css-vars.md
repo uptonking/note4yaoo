@@ -11,9 +11,10 @@ modified: '2021-01-29T18:55:16.043Z'
 
 ## css vars的范围问题
 
-- 注意
+- tips
   - 当前范围中使用的css变量的值，由父级中同名变量的值决定；
   - 当前范围中声明的css变量的值，只是声明一个同名变量，具体计算发生在当前元素的子元素之中
+  - 书写css变量值时，尽量不要存在循环引用，否则某个样式值表现为浏览器默认色或颜色值默认值，难以分析原因，如halfmoon的border hover色
 
 - ### [CSS Variables not global?](https://stackoverflow.com/questions/61553471/css-variables-not-global)
 

@@ -12,6 +12,11 @@ modified: '2021-01-28T14:34:20.579Z'
 - ## 
 
 
+- ## We really need an API for inspecting the ES module graph. Wasn't someone working on this?
+- https://twitter.com/_developit/status/1371528639926403079
+- It's sort of possible in Node by hooking into the module loader, with a small amount of guesswork but no reparsing. But it's straight up not a thing in-browser. This would make HMR so, so much more effective.
+
+
 - ## TypeScript experts: is there a way to find out which tsconfig files are being used in a given compilation? I'm getting `lib.dom.d.ts` in one of my compilations, but I don't know who is including it. { lib: [] } in my tsconfig isn't helping.
 - https://twitter.com/mjackson/status/1370525900819689476
 - --explainFiles in 4.2

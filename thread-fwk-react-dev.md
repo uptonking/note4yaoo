@@ -13,6 +13,17 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## The html `...` alternative to JSX is 🔥, as it allows React without transpiling. But there's no TS checking on components in the literal
+- https://twitter.com/giltayar/status/1371443623573749760
+- It's a problem I really really hope the TS folks find a solution for - right now it would require implementing a complete XML parser in TS Types. There are some demos, but they make my head spin and I have no idea how they could be feasibly generalized (v slow).
+- The current recommendation is basically that, if you are working in an environment like VSCode where TS types are super helpful, you should author in JSX and transpile to HTM. The transpile process can be extremely fast, but we haven't released a pure token-based approach yet.
+- Whenever I see such a discussion about this general topic, I'm kinda sad we don't just use JSON to create the VDOM
+  - Tagged template literals were designed specifically for embedded languages. I think TS growing to be able type-check them w/o plugins is a great way forward here.
+
+- ## In React Router, a URL is just *part* of a Location. So you can have many locations at the same URL.
+- https://twitter.com/mjackson/status/1371533569785356289
+  - Each location may have its own state, and has its own entry in the history stack.
+
 - ## Invented a new React pattern I'm calling the "fake child" pattern.
 - https://twitter.com/markdalgleish/status/1370951759284162565
   - When making composite components (e.g. `<Select> and <Option>` ) it lets you pass private props (i.e. not on the type signature) from parent to child *without* using context.

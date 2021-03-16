@@ -97,6 +97,13 @@ modified: '2021-02-09T13:40:11.536Z'
     - halfmoon: docs: mr=2
     - pico: docs: mr=1/4, mb=1
 
+- 组件variant的样式规则使用`css属性名: css变量值`(语义更明确，推荐)
+  - pico，halfmoon, infima, cutestrap, chipolette, aqua
+  - 样式规则全部采用css属性名，标准统一且语义明确方便查找
+- 组件variant的样式规则使用`css变量名: 新的css变量的值`(修改更灵活)
+  - patternfly, infima, cutestrap
+  - 若在类似hover/primary这类样式中全写css变量名，早晚有一两个会出现循环引用的error，或者一两个不常用的css属性名未提前定义为变量，如outline/text-decoration，这时仍需要书写css属性名，会产生不一致的视觉效果
+
 - bootstrap v5.0.0-beta1(202012)
   - reset: normalize.css8，进行了定制，移除无关浏览器，添加新样式
 

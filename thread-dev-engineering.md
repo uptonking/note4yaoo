@@ -13,6 +13,15 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## What are some times you've needed to keep data synced between two SaaS products? (eg: keep a Trello board synced w/ a Notion table)
+- https://twitter.com/geoffreylitt/status/1371509957779148802
+  - Looking for example use cases for a sync tool I'm working on
+  - Could also be things like "needed to keep this Salesforce data updated in a Google Sheet"
+- In design-engineering teams:
+  - Figma Comments <> Trello Cards <> GitLab Issues
+  - Trello being the middle ground for managers who‘re afraid of Figma/ GitLab
+- Personally: Airtable <> Google Sheets
+
 - ## The #1 tech skill to have is comfort in coding, on the fly, in front of other people.
 - https://twitter.com/AdamRackis/status/1370875384812740610
   - Expect to be given some silly use case, ie, "write a class that take two strings, and tracks which is longer"
@@ -33,7 +42,6 @@ modified: '2021-01-21T17:52:13.333Z'
   - Companies care a lot more that you have deep language mastery, vs having played with a bunch of different frameworks.
 - You know what else I was never asked about? CSS Frameworks.
   - Tailwind seems really, really cool. But maybe learn the fundamentals of CSS before you dive in, there.
-
 
 - ## friendly reminder that http-only cookies don't protect you from XSS
 - https://twitter.com/benawad/status/1370532233698770947
