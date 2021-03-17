@@ -13,6 +13,20 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## project || prototype starter styles:
+- https://twitter.com/argyleink/status/1371850967822520333
+  - normalize box sizing
+  - zero out margins
+  - document & body fill viewport
+  - use OS system font
+  - https://codepen.io/uptonking/pen/QWGRyrX
+  - 简单的落地页，文字水平竖直居中
+- there's more to reset and/or normalize in a page, but it can get complex quickly and tradeoffs start to happen. 
+  - the above is generically stable for my projects; a sturdy foundation.
+- Not fond of the `position: relative` by default 
+  - because I’ve often needed to break out of 2-3 ancestors to absolutely position something relative to their 3th or 4th ancestor. 
+  - In React Native you can’t do that, so you have to change your structure significantly instead.
+
 - ## New CSS @​scroll-timeline demo!
 - https://twitter.com/bramus/status/1370466149536763905
   - Experimental technology: Chrome with “Experimental Web Platform Features” enabled only for now

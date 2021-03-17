@@ -13,6 +13,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## I've noticed a recent trend of design system consumers tricking components that have required accessibility properties by providing empty strings.
+- https://twitter.com/JossMackison/status/1372058993380651009
+  - Drastic times call for drastic measures.
+
 - ## ProTip! Velcro your external drives to the back of your laptop to stay portable and keeping them safe
 - https://twitter.com/samuelkraft/status/1370082404984090624
 

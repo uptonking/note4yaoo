@@ -9,6 +9,11 @@ modified: '2020-10-22T10:22:55.878Z'
 
 # flowchart
 
+- react-flow /2.8kStar/MIT/202103/ts
+  - https://github.com/wbkd/react-flow
+  - https://reactflow.dev/
+  - library for building interactive node-based UIs, editors, flow charts and diagrams
+  - 依赖react-redux, react-draggable, d3-zoom, d3-selection
 - react-flow-chart /MIT/719Star/202006
   - https://github.com/MrBlenny/react-flow-chart
   - https://mrblenny.github.io/react-flow-chart/index.html
@@ -52,7 +57,6 @@ modified: '2020-10-22T10:22:55.878Z'
   - https://www.yuque.com/imove/docs/hvu0md
   - iMove 是一个逻辑可复用的，面向函数的，流程可视化的 JavaScript 工具库。
   - 感谢 蚂蚁 X6 团队 提供的绘图引擎
-
 
 # node-graph
 

@@ -11,11 +11,24 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## In Node.js, we have awaitable timers built in, with cancellation support.
+- https://twitter.com/jasnell/status/1371955481342742529
+
+``` JS
+import { setTimeout } from 'timers/promises'
+const ac = new AbortController()
+await setTimeout(1000, undefined, { signal: ac.signal })
+```
+
+- ## Converting an array of objects into an object lookup is something I've always needed in my data utility functions
+- https://twitter.com/benmvp/status/1371966367100891140
+  - I think I've gotten it down to its minimalist version! 🤓
+  - all the way from creating an empty object and assigning to it within a for-loop
+- I would really like to use Map (and Set) more but I find that using regular objects ends up being easiest
 
 - ## We really need an API for inspecting the ES module graph. Wasn't someone working on this?
 - https://twitter.com/_developit/status/1371528639926403079
 - It's sort of possible in Node by hooking into the module loader, with a small amount of guesswork but no reparsing. But it's straight up not a thing in-browser. This would make HMR so, so much more effective.
-
 
 - ## TypeScript experts: is there a way to find out which tsconfig files are being used in a given compilation? I'm getting `lib.dom.d.ts` in one of my compilations, but I don't know who is including it. { lib: [] } in my tsconfig isn't helping.
 - https://twitter.com/mjackson/status/1370525900819689476
@@ -31,7 +44,6 @@ modified: '2021-01-28T14:34:20.579Z'
   - export named when you export for other humans to use
   - export default for frameworks to collect when traversing your directories (Next doesn’t care about the page component name, and no human will auto-import the page)
 - I use default exports all the time. They're useful when you want to enforce a 1:1 relationship between a module and the interface it provides.
-
 
 - ## 19 JAVASCRIPT NUGGETS!
 - https://delicious-insights.com/en/posts/js-nuggets/

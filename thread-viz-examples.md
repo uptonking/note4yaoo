@@ -11,6 +11,12 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+
+- ## animated SVG logo for an Etsy store
+- https://twitter.com/jh3yy/status/1371963752489320448
+  - @greensock DrawSVG Plugin
+  - https://codepen.io/jh3y/pen/rNWbXwO
+
 - ## branching #madewithshapes
 - https://twitter.com/FreyaHolmer/status/1370846602303262720
 

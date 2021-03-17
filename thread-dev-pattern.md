@@ -12,6 +12,9 @@ modified: '2021-02-19T12:23:12.286Z'
 - ## 
 
 
+- ## 
+
+
 - ## Which approach would you prefer for defining CORS?
 - https://twitter.com/lukeed05/status/1369145056460906499
   - Option 1 - an `options` argument. The negative is that this requires addl runtime code *even if* you never enable CORS.

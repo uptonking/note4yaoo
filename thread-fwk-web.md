@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## I’ve been talking lately how Vercel isn’t good for fullstack, but wow do I love the simplicity of their api/folder with regular node req/res handlers.
+- https://twitter.com/flybayer/status/1372007899418013697
+  - So much nicer and more portable than the lambda event api
+- server codesharing DX. The lack of an arbitrarily nestable way to share layout was too painful so I use React Router and client-side render everything. It's been great.
+
 - ## Event bubbling causes so many problems. It breaks component encapsulation. Events shouldn't leak out of a component just like styles shouldn't.
 - https://twitter.com/devongovett/status/1371549410245640195
   - When you handle an event in a component, you should usually stop propagation so parent components don't also try to handle it.

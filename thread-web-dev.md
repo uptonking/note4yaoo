@@ -11,6 +11,28 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## I have a form (in our SPA), but every time I save data, the page reloads!
+- https://twitter.com/acemarke/status/1371826468263763970
+  - My psychic debugging skills say, add `type="button"` to your 'Save' button in the form, because it's auto-POST-ing to the server
+- But wouldn't you want to keep it as type submit so that Enter key still works. I guess preventDefault in submit handler can fix it too
+  - for accessibility purposes I think one can mimic the button type submit with button `type="button" role="submit"` .
+- Wouldn't doing prevent default in the on submit handler be a better option ?
+
+- ## When implementing file uploads in your app, do you have a File model in your database to store attributes like s3 id, bucket, image width, height, etc?
+- https://twitter.com/flybayer/status/1371865319271239680
+- Always. I usually call it a Media. 
+  - Each record contains the metadata and paths to all versions/sizes of a file. 
+  - Every other table points to Media records and never to any paths directly. 
+  - This makes it trivial to resize media/migrate/alter metadata in the future
+  - Also, I never include the hostname in any of the paths. Makes it easier for move things between per-environments buckets
+- Also allows arbitrary data to be stored along side the file, which can come in really useful. E.g. you could store a blurhash string of images.
+- Yeah, I usually store only the key in S3 then a reference + everything else in the db so I have more data access patterns for querying
+  - Yeah same. I try and keep DJ table data to a minimum as I’ve found doc tables are one of those things that are easy to add a ton of fields, most of which you find aren’t really needed
+- I personally prefer to add some metadata inside of a db, even if S3 and other providers allows us to store image attributes. It makes things easier once you need to query the images for any reason
+- I think you should make a separate storage layer, so that we could have many adapters, like FileStoreAdapter, S3StoreAdapter, ..
+- I usually have a File model/entity with these properties: id, bucket key, mime type, and URL (computed).
+  - All S3 details coming from ENV variables, so objects can be migrated between buckets with no DB changes needed.
+
 - ## Use "translate" attribute and set it value to "no" for your company name.
 - https://twitter.com/Prathkum/status/1370910146059190279
   - So that in case, the webpage is translated into another language, your brand name will remain intact
