@@ -13,6 +13,24 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## What's the coolest open source project in the JS or Wasm ecosystems you've seen that's *new* within the last year?
+- https://twitter.com/_jayphelps/status/1372249383291457540
+- esbuild
+- We just finished a show on Remotion and @JNYBGR - how to programmatically make videos with React. It's really excellent and empowering technology.
+- css-in-js: SnackUI - the final React style library
+  - The smart SwiftUI-inspired UI kit for React Native & Web.
+
+- ## I don't actually show much of my coding work in public, largely because I do most of my coding at my day job.
+- https://twitter.com/acemarke/status/1372374988762779649
+  - Even then, teammates normally only see "final" code in my PRs, and don't often see how many mistakes I made along the way to get to that final result.
+- A couple nights ago I decided I'd see if I could try writing a faster implementation of the RTK mutation detection logic. I did get it passing all our tests.
+  - It appears to be like 15x _slower_ than the original.
+  - I guess the point here is, consider this your semi-inspirational reminder that everyone screws up - you just don't always see that happening visibly.
+  - I am now trying to figure out _why_ my implementation is slow.
+  - today I deployed a new build of our app to prod. small app, single server, half-automated deploy process.
+
 - ## What are some times you've needed to keep data synced between two SaaS products? (eg: keep a Trello board synced w/ a Notion table)
 - https://twitter.com/geoffreylitt/status/1371509957779148802
   - Looking for example use cases for a sync tool I'm working on

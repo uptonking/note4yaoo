@@ -11,6 +11,30 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+
+- ## If you had to choose one browser API that’s the most frustrating to work with, what would it be?
+- https://twitter.com/devongovett/status/1372215804318613510
+  - I’ll go first: the drag and drop/clipboard APIs. OMG they are so so so bad. 
+  - Not only is the API bad, but the implementations in browsers are incredibly buggy and inconsistent.
+  - The dnd API was first implemented in IE 5, and then subsequently copied by other browsers and standardized in HTML5. It's honestly astonishing that it basically hasn't been touched since then. Here's an article from 2009 that explains how bad it is.
+- "If you had to choose one" - Immediately lists two
+  -  They are really the same API. They both use the DataTransfer API, which is really what I'm talking about. But I thought people wouldn't know that specifically, and understand dnd/clipboard better. 
+- We should differentiate between bad design and low level capabilities... 
+  - mostly nobody likes IndexedDB but it gives us a lot of features 
+  - document.cookies gives us only error prone, string based, shenanigan approach 
+  - One is over engineered for basic use but powerful
+  - What do you find bad about document.cookie?
+  - You have to properly escape concatenated strings with various options, as opposite of passing a `setCookie({...options})` ... and you can't read options at all unless parsing explicitly once the whole string is out ...
+- tabindex is broken too, of course. Focus management could be easy but instead it’s always a pain
+  - And mostly for backwards compatibility with the positive number api we all agree shouldn’t be used anyway
+- I’d have to say video and audio, there are teams of ours at Canva trying to really push the envelope and the support for the type of primitives you need are just not there
+- Seriously except localStorage, document.querySelector, fetch, and classList, the whole DOM/Browser API is pure shit.
+  - LS can't sore rich types and doesn't convert rich types to strings for you. Its that great. Its actually more on the inconvenient side. Talking just in terms of API. Having the LS feature itself is of course nice.
+  - It's simple and efficient enough, the kind of thing we need in this context. It has limitations, arguably dumb, but working with strings is ok when you have native JSON support.
+- Push notifications are super complicated too
+- WebRTC
+
+
 - ## I have a form (in our SPA), but every time I save data, the page reloads!
 - https://twitter.com/acemarke/status/1371826468263763970
   - My psychic debugging skills say, add `type="button"` to your 'Save' button in the form, because it's auto-POST-ing to the server

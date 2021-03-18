@@ -11,6 +11,10 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Very good picture, it's from @MarkoDevTeam , explaining streaming SSR.
+- https://twitter.com/dogetoge/status/1372440505200504833
+- I love this visual. I used to try to explain this with Chrome timelines. @mlrawlings nailed it with this one.
+
 - ## I’ve been talking lately how Vercel isn’t good for fullstack, but wow do I love the simplicity of their api/folder with regular node req/res handlers.
 - https://twitter.com/flybayer/status/1372007899418013697
   - So much nicer and more portable than the lambda event api

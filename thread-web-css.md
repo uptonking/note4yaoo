@@ -26,6 +26,11 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## In 2021 #CSS Specificity can be confusing with the new ":is()" and "where()" pseudo-classes.
+- https://twitter.com/eladsc/status/1372445466709868545
+  - https://codepen.io/elad2412/pen/72c460c264a736692b1a72733c390195
+- As @dannievinther noted :is() takes over the specificity of the most specific selector contained inside it. I took the liberty to adjust the visualisation. Think this conveys the message better.
+
 - ## CSS resets don't have to be globally scoped! Here's an example where I've taken the famous Eric Meyer reset and locally scoped it using @emotioncss .
 - https://twitter.com/markdalgleish/status/1371047244095365122
   - This is obviously a bit tedious to use in this form, but you could make it more ergonomic by wiring it up to a primitive `<Box>` component or something similar, e.g. `<Box as="h1">` will apply the reset.h1 class.

@@ -11,6 +11,25 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## what's the best way to do a perf profile trace on a TS file under Node, then view the results as line-by-line hotspot information in VS Code?
+- https://twitter.com/acemarke/status/1372385260147724288
+- you mean like flamegraph?
+  - No, because that's normally per-function. I actually want to get an idea of how many ms were spent per line
+
+- ## It always cracks me up when JavaScript developers are concerned about performance.
+- https://twitter.com/mjackson/status/1372285513969725440
+  - Like, you're using JavaScript. That ship already sailed.
+- Depends on what you’re doing I guess. 
+  - Sure, if you’re building a compiler, JS might not be the best language (we’ve seen this play out lately). 
+  - But most tasks people use JS for are not CPU bound at all, and JS is plenty fast. Definitely way faster than other scripting languages.
+- Is it just sarcasm(讽刺，嘲讽，挖苦)? Doesn’t make any sense to me though. 
+  - Whats alternate on client side? Even if you use server side rendering, still you need to use JS on client side (mostly). 
+  - For NodeJS, it has its own pros and cons but you can’t argue its performance, Its just fine.
+  - I'm sure he means from the Server Side. Sure, NodeJS is *fine*, but there are faster alternatives, such as those coming from Rust, such as actix-web.
+  - This is a reason to care about performance even more in JS, since you're already starting out at a disadvantage (compare to compiled languages, JS is faster than Python or Ruby).
+- I agree, as long as we do not use JavaScript to do the thing basic HTML and CSS animation can do.
+- In most of cases, performance is an architectural problem, not language problem.
+
 - ## In Node.js, we have awaitable timers built in, with cancellation support.
 - https://twitter.com/jasnell/status/1371955481342742529
 
