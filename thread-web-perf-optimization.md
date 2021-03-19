@@ -11,6 +11,8 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ##  how to get a Core Web Vitals report in Google Data Studio. (It’s actually quick! Just clone a template and change the url.)
+- https://twitter.com/iamakulov/status/1372562229413941254
 
 - ## The built-in Link component in @GatsbyJS prefetches the page you're about to click on so it can load even faster. 
 - https://twitter.com/gill_kyle/status/1370478472699682819

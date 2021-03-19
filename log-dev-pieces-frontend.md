@@ -14,6 +14,14 @@ modified: '2020-08-18T05:56:56.343Z'
 
  
 
+- [CSS: Width and Max-Width](https://stackoverflow.com/questions/6456468)
+  - width CSS property sets an element's width. By default, it sets the width of the content area
+  - max-width CSS property sets the maximum width of an element.
+    - It prevents the used value of the width property from becoming larger than the value specified by max-width.
+  - The `min-width` and `max-width` properties override `width`.
+    - 与书写顺序无关，前两个都会覆盖width
+    - max-width overrides width, but min-width overrides max-width.
+
 - The current version of React (react 16) has some shortcomings when it comes to handling Custom Elements, 
   - namely the binding of `boolean` attributes as well as adding event listeners to custom event names like `selection-change`. 
   - With the help of UI5 Web Components for React, you can use the UI5 Web Components in React as if they were native React components. 

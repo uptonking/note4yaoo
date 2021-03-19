@@ -13,6 +13,17 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## Thinking on ways to build Settings UI: layout, color, animation, a11y
+- https://twitter.com/ChromiumDev/status/1372593649486233601
+  - https://github.com/argyleink/gui-challenges/tree/main/settings
+- There's the uncanny(异常的) valley of the grid gap being not clickable
+  - It can be fixed too by not using `display: contents` .
+- GUI Challenges are now built with Vite, I'm a huge fan. 
+- Why have you chosen to rely on pseudo-element inside the `<input>` (checkbox example)? 
+  - This doesn't work consistently across the browsers. For instance, this won't work in Firefox as of today.
+  - Great write-up, nicely done as always. What bothers me a bit is the use of `<h3>` inside the `<label>` . As far as I know, `<label>` accepts only `Phrasing content` , and `<h3>` is a `Flow content` .
+  - And by the way, the same goes for the `<small>` element. It's also a `Flow content`
+
 - ## One of the common mistakes while building a UI is forgetting to add padding for long text elements.
 - https://twitter.com/shadeed9/status/1371043578227650562
   - Make sure to have a good variety of text lengths while testing.

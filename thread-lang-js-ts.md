@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Has anyone ever use a pattern of hybrid sync/async iterables in JS?
+- https://twitter.com/justinfagnani/status/1372579326953103364
+  - I have a case where I want the highest throughput and all-async is just slower than sync. But a couple of features require async. 
+  - I'm thinking about a sync iterable that can emit Promises as a middle ground.
+- It’d be great if JavaScript supported code that can be run either synchronously or asynchronously. I did some experiments a while ago, but was never happy with the results
+
 - ## what's the best way to do a perf profile trace on a TS file under Node, then view the results as line-by-line hotspot information in VS Code?
 - https://twitter.com/acemarke/status/1372385260147724288
 - you mean like flamegraph?

@@ -7,7 +7,11 @@ modified: '2021-03-16T15:12:58.491Z'
 
 # web-dev-ui-comp-general
 
-# 
+# container
+
+- halfmoon文档: container-fluid
+- bootstrap5文档: container-xxl
+- pico文档: container各断点都有max-width，最小屏除外
 
 # button
 

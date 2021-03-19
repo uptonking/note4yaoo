@@ -15,6 +15,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Developers that can't or don't write good comments aren't great developers yet.
+- https://twitter.com/BenLesh/status/1372562839475470336
+  - Add comments about WHY code exists, not what it does.
+- Comments cannot be tested and should therefore be assumed to be wrong.
+
 - ## What's the coolest open source project in the JS or Wasm ecosystems you've seen that's *new* within the last year?
 - https://twitter.com/_jayphelps/status/1372249383291457540
 - esbuild

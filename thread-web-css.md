@@ -26,6 +26,10 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ##  `color-contrast()` will automatically pick a color that passes contrast ratios, just give it a list to choose from. aka: throw colors at it!
+- https://twitter.com/argyleink/status/1372634187866378243
+- Ooh, it's only in Safari TP! That's not very obvious from this tweet. 
+
 - ## In 2021 #CSS Specificity can be confusing with the new ":is()" and "where()" pseudo-classes.
 - https://twitter.com/eladsc/status/1372445466709868545
   - https://codepen.io/elad2412/pen/72c460c264a736692b1a72733c390195

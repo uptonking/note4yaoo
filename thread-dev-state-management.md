@@ -11,6 +11,13 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+
+- ## Counter examples: zustand vs. valtio vs. jotai
+- https://twitter.com/dai_shi/status/1372705718764068865
+  - https://codesandbox.io/s/zustand-valtio-jotai-counters-my6np
+- Can we also have speed/performance comparison between those libraries?
+  - Performance is hard to discuss. Main concern in React global state libs is extra re-renders and all there basically deal with it. Other than that, it depends on requirements and app code. Zustand is thin, so if app code is optimal, it'd be best. Valtio might work better otherwise
+
 - ## Some people that watched my Records & Tuples talks were interested to discuss the benefits for Redux/Reselect ecosystem.
 - https://twitter.com/acemarke/status/1370417763366354949
   - IMHO it has advantages and can optimize some selectors more easily than Reselect

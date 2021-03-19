@@ -27,16 +27,29 @@ modified: '2021-02-25T17:50:04.640Z'
   - 浏览器的兼容性不够完美
   - 样式计算工具函数不多，如calc，标准还会继续扩充
 
-- [SASS VARIABLES VS. CSS CUSTOM PROPERTIES](https://intu.io/blog/sass-css-custom-properties/)
+- ## hard
+- comment注释
+  - @import其他文件的含嵌套样式时，难以添加#region/#endregion来方便折叠浏览
+  - 可以定义一个用来生成comment的mixin
+
+``` SCSS
+@mixin region($text){
+  /* #region #{$text} */
+}
+
+@include region('hello');
+```
+
+- ## [SASS VARIABLES VS. CSS CUSTOM PROPERTIES](https://intu.io/blog/sass-css-custom-properties/)
   - If your project requires dynamic theming, CSS custom properties will be the way to go very shortly. 
   - Otherwise, SASS variables are still a good choice, because they give you access to the power of a wide range of SASS functions. 
 
-- sass vs postcss
-  - postcss优点
-    - 插件非常丰富
-  - postcss缺点
-    - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
-    - 如果将postcss作为预处理器使用，如在css中引入嵌套、插值，则会提示css文件语法错误，能用但不友好
+- ## sass vs postcss
+- postcss优点
+  - 插件非常丰富
+- postcss缺点
+  - 有时配置会优点繁琐，但很适合给构建工具开发postcss插件
+  - 如果将postcss作为预处理器使用，如在css中引入嵌套、插值，则会提示css文件语法错误，能用但不友好
 
 - tips
   - 若scss变量值为null，而书写类样式时只有1个属性且属性值为该变量，那么构建输出时该类名不会被输出
@@ -52,6 +65,20 @@ modified: '2021-02-25T17:50:04.640Z'
   - 第一，在placeholder里面，不能像mixin那样传递使用参数变量。但是可以使用全局变量。
   - 第二，当你使用mixin时，Sass会重复输出这个mixin的属性规则内容，不会让CSS选择器公用这个mixin。这样的话，样式表将会变得很大。
     - mixin会输出重复样式，而%placeholder常输出`selector1,selector2{}`
+
+- sass的文件名为什么要加前缀_
+  - 若你不加，其他人使用你的源文件或非官方编译器转换时，可能在原目录直接生成输出文件，造成污染和不方便
+  - 参考主流sass项目的选择，大多数都加了_
+
+- [Is it possible to use Sass variables in the comments?](https://stackoverflow.com/questions/21180452)
+  - https://sass-lang.com/documentation/syntax/comments
+  - comment can contain interpolation
+  - When the first letter of a comment is !, the comment will be interpolated and always rendered into css output even in compressed output modes. 
+
+- map-get vs map.get
+  - [map.get() doesn't work. map-get() does. What gives?](https://stackoverflow.com/questions/64210390)
+  - The documentation doesn't seem to be very clear on this, but the (Sass Module System: Draft 6) document on Github explains it better.
+  - It seems like Sass is moving on to using `@use` in favour of `@import` for better compatibility with native CSS, and in order to get access to `map.get` you now must explicitly import the map module using the @use keyword `@use "sass:map";`.
 
 # theming-examples 切换主题方案示例
 
