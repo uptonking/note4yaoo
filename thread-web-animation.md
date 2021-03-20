@@ -11,6 +11,14 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## What’s your biggest animation pain point?
+- https://twitter.com/mattgperry/status/1373252112298225667
+- Triggering viewport scroll animations below the fold. Such a massive pain in the arse!
+- Mount/unmount animations still usually end up buggy for me even with animate presence.
+- Animating only once in view. Easy enough with intersection observer but also ends up with buggy edge cases.
+- Animating for multiple media queries.
+- Getting animations to fire in sequence
+
 - ## The future of CSS: Scroll-Linked Animations 
 - https://twitter.com/bramusblog/status/1364016209516232709
   - In this post we dig into CSS @​scroll-timeline to create Scroll-Linked Animations between two absolute scroll-offsets, and how we can tweak them.

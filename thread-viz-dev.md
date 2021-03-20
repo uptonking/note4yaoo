@@ -11,6 +11,18 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
+
+- ## If PDFs are where data goes to die, where does data go to *live*?
+- https://twitter.com/chris_whong/status/1372990040113053702
+- I hate myself for saying this, but... Excel.
+- Anywhere with an open data license, a decent API, and an explanation of fields and collection methods. 
+  - Any format people can read and use easily. http://data.ny.gov, http://humdata.org, http://datacatalog.worldbank.org etc: data needs eyeballs and motives to live
+- AirTable and APIs
+- https://github.com/simonw/datasette
+  - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - a tool for exploring and publishing data. 
+  - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
+
 - ## Observable Collaboration is a huge leap forward for thinking with data, together. And it’s a new architecture for Observable, taking us into the future.
 - https://twitter.com/mbostock/status/1370134788279922689
   - Our new front-end has a Redux-inspired state system, which with Next.js’ server-side props and TypeScript have dramatically improved our dev velocity.

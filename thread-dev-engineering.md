@@ -13,7 +13,20 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+
+- ## Wondering sometimes if, instead of more libs, we shouldn't offer more first-class copy-and-paste solutions.
+- https://twitter.com/mpocock1/status/1372986732354883588
+  - Copy and paste an entire component lib and then tweak to your heart's content
+- I'm absolutely against this: the good thing about libs is that they are documented and tested configurable blocks. All code should be libs, even our own.Coding for open source enforces code quality (at least at the boundaries).
+  - Libs are wonderful, invaluable. But choosing libs for _all_ solutions is perhaps too dogmatic. There should also be space for when you want to grab something pre-built and modify it.
+- What you described is the basic idea behind the architecture of Crown. You “install” packages within the framework by cloning with git subrepo. You own the code but can still pull changes from upstream
+
+- ## For tools that don't have multi-versioned docs sites: what are good techniques for how they indicate a particular API or option was added/modified in a specific lib version?
+- https://twitter.com/acemarke/status/1373102543371390979
+- just a line at the top of the page/section mentioning the version works fine. I think I've seen that pattern in a bunch of pages on Next.js and some other docs.
+- api.jquery.com/blur/ Of course that's how things were done back in the day I guess 
+  - The version added for a method is always specified, also there are always notes about the differences between versions.
+- Kotlin docs show you which version APIs were added in and if they are supported in JavaScript, JVM and/or native
 
 - ## Developers that can't or don't write good comments aren't great developers yet.
 - https://twitter.com/BenLesh/status/1372562839475470336

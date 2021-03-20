@@ -26,6 +26,13 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## If you use low-level CSS Variables for theming, how do you declare your themes?
+- https://twitter.com/markdalgleish/status/1373153810516877312
+  - 1 theme via ":root"
+  - 1 theme via class
+  - 2+ themes, all classes 
+- Each theme defined for the class, noy using root at all. Dark mode is just another theme with some special treatment that is used for invertef components like Tooltip in light mode and vice versa. So at least 2 themes at all times.
+
 - ##  `color-contrast()` will automatically pick a color that passes contrast ratios, just give it a list to choose from. aka: throw colors at it!
 - https://twitter.com/argyleink/status/1372634187866378243
 - Ooh, it's only in Safari TP! That's not very obvious from this tweet. 

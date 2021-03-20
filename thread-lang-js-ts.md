@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+
+- ## Generators are _so_ handy for stuff like AST walkers or similar traversing algorithms.
+- https://twitter.com/DasSurma/status/1373226617938571264
+- generators are everywhere in Python. I’m surprised they don’t get more attention in JS. I love them for tree traversal.
+- Wow, this is so cool. Not only for AST, but for any type of nested datastructure
+
 - ## Has anyone ever use a pattern of hybrid sync/async iterables in JS?
 - https://twitter.com/justinfagnani/status/1372579326953103364
   - I have a case where I want the highest throughput and all-async is just slower than sync. But a couple of features require async. 

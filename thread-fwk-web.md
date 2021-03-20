@@ -9,7 +9,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 # pieces
 
-- ## 
+- ## Anyone know if Angular, Ember, or Svelte have a hooks or composition type API?
+- https://twitter.com/justinfagnani/status/1372967430025142272
+  - Looking to enable reusable, stateful, reactive units of code across frameworks.
+- We're working on a decorators/class based API for providing the same reactive composition that hooks provides. 
+  - I would say the result ends up being a bit less granular, but a bit more clear IMO
 
 - ## Very good picture, it's from @MarkoDevTeam , explaining streaming SSR.
 - https://twitter.com/dogetoge/status/1372440505200504833

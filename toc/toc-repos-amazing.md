@@ -27,6 +27,9 @@ modified: '2020-11-03T06:54:59.051Z'
 - Off the Presses 类似白纸设计稿的ui从打印机主动送出来的效果
   - https://codepen.io/uptonking/pen/ZEpMQXX
 
+- [1998年至2018年女演员在内地热度变化](https://www.bilibili.com/video/BV17t411X7bK)
+  - 横向条形图动态变化
+
 # amazing-tools
 
 - https://github.com/williamngan/pts
