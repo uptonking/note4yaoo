@@ -9,6 +9,11 @@ modified: '2020-12-08T13:33:11.249Z'
 
 # bootstrap 5
 
+## guide
+
+- bs5的utilities
+  - 非重复的工具class只有1440行，然后各个breakpoint会修改，所有工具class共有4755行
+
 ## [Theming](https://getbootstrap.com/docs/5.0/customize/css-variables/)
 
 - Bootstrap 5 includes around two dozen CSS custom properties (variables) in its compiled CSS, with dozens more on the way for improved customization on a per-component basis.

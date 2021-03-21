@@ -11,6 +11,13 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## You might not need all those keyframes! 
+- https://twitter.com/jh3yy/status/1373417544200171529
+  - Repeating keyframes at different points? You can group them.
+  - Keyframe putting an element in its default position? You might not need it.
+  - https://codepen.io/jh3y/pen/poNMVYG
+- Woah! I for sure thought you’d need the “reset” state.
+
 - ## What’s your biggest animation pain point?
 - https://twitter.com/mattgperry/status/1373252112298225667
 - Triggering viewport scroll animations below the fold. Such a massive pain in the arse!

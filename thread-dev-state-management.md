@@ -7,10 +7,25 @@ modified: '2021-02-28T07:29:07.622Z'
 
 # thread-dev-state-management
 
+# repeat
+
+- ## The motivation I develop global state libraries is to avoid selector interface that are only required for render optimization.
+- https://twitter.com/dai_shi/status/1373607985033871363
+  - It depends on object ref identity which is a hard concept for beginners.
+  - This shows some comparison among use-context-selector, jotai and proxy-memoize.
+  - #ReactTracked and #Valtio are not shown, but they have the same idea.
+
 # pieces
 
 - ## 
 
+- ## 
+
+- ## today I'd use Redux Toolkit, hooks, single-file "slice" logic, no hand-written actions, and probably not bring in Redux-ORM unless I had _very_ relational data.
+- https://twitter.com/acemarke/status/1373296162082553862
+  - Ecosystem: hooks, CRA abs path changes, Semantic-UI unmaintained, Redux-ORM had a lot of API changes.
+- In other words, _principles_ are still the same, vs specific lib versions and APIs.
+  - feature folders, optimizing re-renders, selecting data in children by ID, reducer patterns, techniques for modals, etc.
 
 - ## Counter examples: zustand vs. valtio vs. jotai
 - https://twitter.com/dai_shi/status/1372705718764068865
