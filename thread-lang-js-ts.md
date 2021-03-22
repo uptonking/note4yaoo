@@ -11,6 +11,52 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Deleted a thread about async/await flows since I hadn’t realized that it made error-handling more complicated.
+- https://twitter.com/JoshWComeau/status/1374056481524482054
+- I still think it's a valuable tip. I use it all the time - it really helps to speed things up when you've got independent parallel requests.
+- You can use try catch.
+  - I think it doesn't work when you don't `await` the async function! And that's what Josh means.
+
+- ## When you have a complex series of async functions to call, how do you manage them? 
+- https://twitter.com/JoshWComeau/status/1374027384119263233
+  - we'll look at 3 different ways, including an *awesome* way that isn't super well-known.
+- First, though, let's look at the most straightforward way: serially, one at a time.
+  - The beauty of `async/await` is that it lets us read the code in the order it executes. I love how easy it is to understand.
+  - The trouble is that it can be quite slow, since none of these tasks can start until the previous one finishes.
+- What about `Promise.all` ? Well, we can't dump all 5 into a single call, since there are dependencies.
+- From a performance standpoint, this is quite a lot better, since we can let 3 operations run in parallel.
+  - But we can make this even faster 
+- This final way makes selective use of the `await` keyword. 
+  - We can weave the promises together to create a tapestry without gaps. 
+  - Each function starts as soon as possible! 
+  - The key insight is that promises can be await-ed at any time, not just on creation!
+- Which way is best? Well, it depends on the circumstances.
+  - The third way is the fastest, but it's also (IMO) the hardest to follow. 
+  - We're trading away some simplicity in order to gain some performance.
+
+- ## I'm always surprised when I see `window.` in front of global APIs in JS code, but I guess it's just a matter of preference?
+- https://twitter.com/RReverser/status/1373817866420695042
+  - What do you normally use for global things like `document` , `postMessage` , `addEventListener` , `fetch` etc.?
+- funny self.someAPI wasn't there ... as window doesn't exist in Workers ... 
+  - anyway, there are cases where you don't have globals (see LinkeDOM) so, in such case, passing a window/self and a document is better than polluting the global NodeJS env with these.
+  - No other use cases here
+- When the context is specific to window and not that it happens to be the same object as the “global” I include it. Like window.addEventListener() but not fetch()
+  - Said another way, addEventListener is defined in the spec on EventTarget. Window extends EventTarget like other things like Node does. It isn’t conceptually on window just because it’s a “global variable” (conceptually, I know WebIDL is complicated)
+  - fetch() is not. It’s specifically specced as being on the WindowOrWorkerGlobalScope
+  - What about non-functions - document, location, etc.?
+  - When it’s effectively only on window because global variables are the rage, I don’t do window. XXX (document, location) but when it very specifically refers to the physical window itself like window.innerWidth I do. There are probably ones that are grey areas or where I break this “rule” because I don’t really give it much thought other than what just feels natural. Just explaining the gist of the feeling. It’s not actually a rule.
+  - Doing the same, often out of what feels natural, or when I know that it is specific to window, for clarity. Seems like an opportunity to shine some light on in devrel channels, at least I'd find it interesting 
+- window.someAPI is more greppable and guarantees codebase-wise consistency if enforced
+  - I saw many times where something that seemed like a global API was a ref to a local var (or `fetch` was from an imported lib)
+  - Too, I mostly prefer to explicitly put `window` everywhere to make globals more distinct, b/c I think it's generally helpful too see where things are coming from, but `window.document` seems super odd to me and I have never used it.
+- We use window-prefixed in our project to be able to mock all the DOM stuff in tests with something like jsdom. Generally the less global references, the easier to stub/mock/test
+  - Eg a library for browsers being unit-tested under Node, where there’s no window or document.
+- I find that prefixing with window is a useful visual cue when using SSR that someAPI is only meant for client side and cannot/shouldn’t be polyfilled.
+  - Examples: window.localStorage (client only) vs fetch (client or server)
+
+- ## TIL "void" operator evaluates the given expression and then returns undefined.
+- https://twitter.com/neoziro/status/1373645418035306496
+- Oh I gotta use `void` more instead of adding dumb ugly curly braces
 
 - ## Generators are _so_ handy for stuff like AST walkers or similar traversing algorithms.
 - https://twitter.com/DasSurma/status/1373226617938571264

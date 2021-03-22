@@ -12,6 +12,12 @@ modified: '2021-01-06T14:40:11.360Z'
 - ## 
 
 
+- ## Every time you do async action in onClick handler or running `setState` not under React control - you probably need a batched update
+- https://twitter.com/theKashey/status/1373841140860944384
+- setState in react will wait for handler to finish before commiting, setState outside has no way of knowing handler, so commits immediately.
+- With useState we have entered a way of "glitches" - temporal state inconsistencies.
+  - If before we were "trashing layouts", now we are "trashing fibers".
+
 - ## When creating composite React components (i.e. parent + child pairs like HTML's <select> and <option>) you can avoid exposing private props like "index" or "isFirstChild" on child elements by using context.
 - https://twitter.com/markdalgleish/status/1370552733590167552
 - Forgive my ignorance, perhaps I misunderstand. But what is the benefit to this other than not seeing a prop e.g. "index" as you mention. This seems on the surface over engineered and perhaps, even if a little, incurring a greater performance hit than exposing the prop.

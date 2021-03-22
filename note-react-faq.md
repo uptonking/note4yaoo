@@ -12,6 +12,13 @@ modified: '2020-06-30T12:51:08.791Z'
 - `React.forwardRef()` 是高阶组件吗
 
 # faq-repeat
+- ## [React 的 Concurrent Mode 是否有过度设计的成分？](https://www.zhihu.com/question/434791954/answers/updated)
+- 对于web工程而言，其实更多的是要在工程环境、开发体验、持续迭代上不断创新。但react项目明显不是，它自己不提供官方工程环境，开发体验也不怎么好
+  - 但是从另一方面看，整个前端领域，除了react，你很难再找到一个项目，在运行时（重点）领域有react这般的创新。为什么整个前端，只有一个virtual dom方案？而没有同时期出现一个hard dom, quick dom之类的方案，形成百花齐放百家争鸣的局面？包括hooks？前端领域的发展脉络越来越死板，也就react，这个全身心只在搞运行时渲染库（却被当作工程框架在用）有在做一些探索，每年都有一些新方案出现在它的计划中。
+  - react在DOM领域是做的很烂的，它的核心成就在React而非ReactDOM。
+  - react native, react+canvas实际上可能正好会用到concurrent mode的东西，我们却会忽略了
+  - react明显不想在dom上渲染花太多功夫，已逝大佬司徒正美在书中提到的那些DOM魔法，reactdom好像根本没怎么用。整个react团队几乎没想过在DOM上优化的事，大部分第三方的优化，都是伪装成react组件的原生DOM操作，比如大数据量的list渲染
+  - 
 
 - ## [我们为什么需要 React？](hhttps://www.zhihu.com/question/47161776/answers/updated)
 - 我们需要技术栈

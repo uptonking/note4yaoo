@@ -9,6 +9,15 @@ modified: '2020-11-02T05:19:40.469Z'
 
 # state-blog
 
+## [My State Management Mistake](https://epicreact.dev/my-state-management-mistake/)
+
+- Frankly, what happened was we decided to avoid Redux, but then grabbed another library and made the same mistakes that made Redux such a problem: Almost all state was globally managed by the library.
+- If I could go back in time and could only say one thing, here's what I would say: 
+  - Server cache is not the same as UI state, and should be handled differently.
+  -  React Query is simply the perfect abstraction that can handle the server cache for me.
+- And once my server cache is handled so perfectly by react-query, I don't have enough state left to feel like I need a library for the rest of it. 
+  - React is a state management solution and it's a really good one when you componentize your state like you do your UI.
+
 ## [What is state? Why do I need to manage it?](https://egghead.io/articles/what-is-state-why-do-i-need-to-manage-it)
 
 - When it comes to client-side JavaScript applications, I like to think of state as “the outcome of all of the actions that the user has taken since the page loaded”.
@@ -177,7 +186,7 @@ store.setState({ b: 1 });
   - So we’ll try to make another type of implementation. 
   - where subscribers have to inform in which part of the state they’re interested in.
 - In the available solutions in the market, there’s one that implements this kind of solution the most easy way (IMHO): React-redux `connect` method.
-  - the connect method first parameter,       `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
+  - the connect method first parameter `mapStateToProps`, is a function that receives the updated state and returns an object that is part of this state. 
   - This way the connect method knows if it must update the component’s props or not.
 - We can do the same in our little state management library. 
   - Whenever someone wants to subscribe to the state changes, it will pass the callback function and other function similar to the mapStateToProps. 

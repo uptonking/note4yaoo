@@ -61,6 +61,11 @@ modified: '2020-11-08T10:40:45.221Z'
 - lit-html prepares templates the first time they're rendered, not every execution. 
   - The preparation step records where the expressions are in the DOM so that on the changing expressions are ever updated.
 
+# roadmap
+
+- [Reactive controller adapters for other frameworks](https://github.com/Polymer/lit-html/issues/1682)
+  - We would like to enable a framework-agnostic subset of reactive controller to work across frameworks.
+
 # pieces
 
 - The primary drawback of lit-html to me is that it doesn't seem to work with Typescript as well as JSX does (specifically for custom component props)

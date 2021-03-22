@@ -13,6 +13,11 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## What are y’all using for for team collaboration on documents, product specs, etc beside Notion? I’m looking for something faster and less clunky than Notion.
+- https://twitter.com/flybayer/status/1373788153207734275
+- Ditto. Notion has made me appreciate Google Docs. Next up Dropbox Paper.
+- Confluence, but it's definitely not faster or less clunky than Notion Face with tears of joy
+
 - ## prototyping a tool for messing with data
 - https://twitter.com/_paulshen/status/1362609484519014400
   - https://github.com/paulshen?tab=repositories&type=source

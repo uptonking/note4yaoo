@@ -3,7 +3,7 @@ title: draft-pastebin-pieces
 tags: [draft, todo]
 pinned: true
 created: '2019-11-11T06:57:46.101Z'
-modified: '2020-07-30T13:52:49.242Z'
+modified: '2021-03-22T18:24:50.639Z'
 ---
 
 # draft-pastebin-pieces
@@ -11,6 +11,9 @@ modified: '2020-07-30T13:52:49.242Z'
  
 
 ------  
+
+- install app-ubuntu-calibre
+ - sudo mkdir -p /opt/calibre && sudo rm -rf /opt/calibre/* && sudo tar xvf calibre-5.13.0-x86_64.txz -C /opt/calibre && sudo /opt/calibre/calibre_postinstall
 
 - TODO: components、datable、chart
 

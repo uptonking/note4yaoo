@@ -20,6 +20,7 @@ modified: '2021-01-13T17:12:25.854Z'
   - @pgd/components(css)
   - @pgd/components-react
   - @pgd/components-react-lab
+    - lit-html: to enable a framework-agnostic subset of reactive controller to work across frameworks.
   - @pgd/components-webgl(r3f)
   - more
     - @pgd/design-system-site
@@ -111,8 +112,8 @@ modified: '2021-01-13T17:12:25.854Z'
   - https://github.com/jaywcjlove/awesome-uikit
   - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
 
-
 # dev-log
+
 - design-tokens支持theming
   - 最终的用法是，用户修改theme.js/json，然后触发切换样式
   - 样式配置对象 > css vars形式的样式表 > 通过style属性设置/动态创建class样式表/直接修改cssom

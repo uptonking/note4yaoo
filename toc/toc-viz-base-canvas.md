@@ -19,6 +19,11 @@ modified: '2020-10-05T06:17:42.467Z'
 - react-canvas /12.5kStar/BSD/201703
   - https://github.com/Flipboard/react-canvas
   - High performance canvas rendering for React components
+  - https://github.com/Flipboard/react-canvas/issues/138
+    - This is a Cairo graphics library with HTML5 Canvas and a react bindings. 
+    - Its a pretty straight forward wrapper around Cairo. 
+    - Cairo has been wrapped many times by many different libraries, 
+    - this one is just the same as all the others, except maybe that its used by Flipboard, but they don't say much about it other than their one Wiki article.
 - https://github.com/Gitjinfeiyang/easy-canvas
   - https://github.com/Gitjinfeiyang/easy-canvas
   - /106Star/MIT/202010/js
