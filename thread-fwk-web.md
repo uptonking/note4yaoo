@@ -9,6 +9,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 # pieces
 
+- ## 
+
+- ## To make nostalgie.dev's SSR pipeline extensible, I've been trying to figure out how to give plugins the ability to customize the wrapper markup.
+- https://twitter.com/filearts/status/1374342826318761992
+  - "Why not give them a mutable HTML AST?", I thought. Then I wondered if npm.im/linkedom would be fast enough
+  - Plugins will get a per-request, high-fidelity HTMLDocument instance that can be modified in an idiomatic way before being stringified and served.
+- If you think about doing SSR, the patterns for rendering the app itself are pretty solid; you call your framework's renderToString() equivalent and dump it in #root of your html template.
+  - But what if Plugins want to customize that html template in a _general_ way?
+
 - ## Anyone know if Angular, Ember, or Svelte have a hooks or composition type API?
 - https://twitter.com/justinfagnani/status/1372967430025142272
   - Looking to enable reusable, stateful, reactive units of code across frameworks.

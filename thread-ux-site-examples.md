@@ -37,6 +37,10 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- https://generative.parts/generative
+  - https://github.com/winkerVSbecks/generative-parts
+  - 配置所有ui组件的圆角、颜色，样式超级友好
+
 - This Clubhouse clone with Next.js / Vercel
 - https://twitter.com/leeerob/status/1367958639361818624
   - next-house.vercel.app

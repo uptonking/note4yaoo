@@ -40,6 +40,7 @@ modified: '2020-10-22T13:33:45.146Z'
     - for 鸿蒙OS
 
 - 细节设计
+  - 类似github的readme，点击顶部标题，只显示一级目录大纲
 
 # features-copied
 

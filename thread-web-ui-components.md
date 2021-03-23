@@ -13,6 +13,20 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## By nesting a `<dialog open>` inside a `<details>` you can create an infobox using only #CSS.
+- https://twitter.com/bramus/status/1374090556566089738
+  - https://codepen.io/bramus/pen/KKaPJdr
+  - You might not want to use this "in production" though, as is most definitely has #compat, #a11y and #ux issues.
+- That's clever and it's seems to work fine on iOs using VoiceOver!
+
+
+- ##  If you have form fields where trailing/leading spaces don't matter, just trim the value instead of failing
+- https://twitter.com/tomayac/status/1361972883468279808
+- `HTMLInputElement.value.trim()` .
+- interestingly regular text input fields are left as-is, whereas email input fields get trimmed: both name and email had a leading and a trailing space
+- That's a bug, as spec says to trim
+  - The value sanitization algorithm is as follows: Strip newlines from the value, then strip leading and trailing ASCII whitespace from the value.
+
 - ## Thinking on ways to build Settings UI: layout, color, animation, a11y
 - https://twitter.com/ChromiumDev/status/1372593649486233601
   - https://github.com/argyleink/gui-challenges/tree/main/settings

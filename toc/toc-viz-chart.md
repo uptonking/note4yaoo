@@ -192,8 +192,17 @@ modified: '2020-10-22T10:22:33.292Z'
 
 # css chart
 
+- https://github.com/ChartsCSS/charts.css
+  - https://chartscss.org/
+  - It uses CSS utility classes to style HTML elements as charts.
 - https://github.com/asciimoo/cssplot
+  - https://asciimoo.github.io/cssplot
+  - /777Star/MIT/201411/unfinished
   - Simple, css-only plotting.
+- https://github.com/ffoodd/chaarts/
+  - https://ffoodd.github.io/chaarts
+  - Every charts in this project relies solely on semantic markup — `<table>` based — and a spread of CSS variables carried by the tags. 
+  - No JavaScript required for display
 
 # more
 

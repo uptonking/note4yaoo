@@ -11,6 +11,15 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
+- ## CSS utility classes meet Custom Properties to style HTML elements as charts.
+- https://twitter.com/smashingmag/status/1374266140990566400
+  - https://github.com/ChartsCSS/charts.css
+
+- https://twitter.com/shadeed9/status/1374271549709168641
+- Is using tables for charts mandatory when having graphs? I’ve been using lists for my own system and always wondered if that was okay.
+  - Depends on your datas, in fact. If your list  is repeating headers, a table would probably be a better choice.
+  - However as long as the accessibility tree exposes everything, you're safe. 
+  - I started some charts using definition list, but their supports is embarassing
 
 - ## If PDFs are where data goes to die, where does data go to *live*?
 - https://twitter.com/chris_whong/status/1372990040113053702

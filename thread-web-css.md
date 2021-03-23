@@ -26,6 +26,20 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Have you used `display: inline-block` to adjust visual width?
+- https://twitter.com/5t3ph/status/1374376280146120709
+  - What if you still want a different `display` type for that element, like grid or flex?
+  - Upgrade to `fit-content` - retain block behavior but limit visual width!
+- [Smol css Visited Styles](https://smolcss.dev/#smol-visited-styles)
+  - The `:visited` pseudo class is very unique because of the potential to be exploited in terms of user's privacy. 
+  - To resolve this, browser makers have limited which CSS styles are allowed to be applied using :visited.
+  - A key gotcha is that styles applied via :visited will always use the parent's alpha channel - meaning, you cannot use rgba to go from invisible to visible, you must change the whole color value. 
+  - So, to hide the initial state, you need to be able to use a solid color
+
+- ## In terms of #CSS low specificity selectors, it's better to use the pseudo-class selector of ':not()' within the ':where()' pseudo-class.
+  - :not会增加特指度，:where不会
+  - Everything in the where brackets isn't counted in the specific, include the :where pseudo-class itself
+
 - ## If you use low-level CSS Variables for theming, how do you declare your themes?
 - https://twitter.com/markdalgleish/status/1373153810516877312
   - 1 theme via ":root"

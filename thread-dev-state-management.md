@@ -19,6 +19,10 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## Did you know that a reducer is like a single-state finite state machine (and vice versa)?
+- https://twitter.com/erikras/status/1374381386476396563
+- [A reducer is a single-state state machine](https://erikras.com/blog/reducer-single-state-machine)
+
 - ## I don't like the proxy based update strategy, because it involves the magic of runtime and the fatal flaw of deconstruction. Coarse grained update is always good, whether it's block level or component level.
 - https://twitter.com/dogetoge/status/1373828122269732866
 - You don't need proxies to do fine-grained. It just makes the experience a bit smoother(other than destructuring). Use functions instead. You maintain explicitness, don't have destructuring issues, and get to keep performance too. Although I'd give up destructuring for proxies.

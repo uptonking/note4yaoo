@@ -11,11 +11,34 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## "let" and "else if" are often bad smells in JavaScript. 
+- https://twitter.com/neoziro/status/1374002846681731078
+  - You can easily replace them using a ternary or a self-invoking function.
+- Immutability helps, sure. 
+  - But you've got a function with three returns and two if statements. 
+  - The cyclomatic complexity is higher because of multiple paths and the risk of error is higher because the default value is at the end. 
+  - Increased complexity <= immutability
+  - Additionally, i don't understand why you'd choose an IIFE over a function that could return. 
+  - Agree, since the time we acquired `let` and modules, IIFE is a smell. Are there still any use cases for it?
+- I would disagree with that statement. Ternary is good but if you have more than one condition it often becomes nightmare. And IIFE produces unnecessary memory allocation.
+  - Let-else-if has the same level of visibility as IIFE and comes with less cost.
+- Both ways are ugly at some point. We need pattern matching to stop these discussions.
+
+- ## Are you using async/await safely in Node.js? @simonplend explains why Express is not a safe choice and why you should consider an alternative like Fastify instead.
+- https://twitter.com/sebastienlorber/status/1374029709210701831
+- [Are you using promises and async/await safely in Node.js?](https://simonplend.com/are-you-using-promises-and-async-await-safely-in-node-js/)
+
+- ## I was chasing the race conditions today in the code that is using observers and async/await syntax. Oh, boy, a day full of fun.
+- https://twitter.com/maciejadamczak/status/1374286061543718916
+- I still need to fix the root problem
+
 - ## Deleted a thread about async/await flows since I hadn’t realized that it made error-handling more complicated.
 - https://twitter.com/JoshWComeau/status/1374056481524482054
 - I still think it's a valuable tip. I use it all the time - it really helps to speed things up when you've got independent parallel requests.
 - You can use try catch.
   - I think it doesn't work when you don't `await` the async function! And that's what Josh means.
+- Now I'm interested in a thread about proper error-handling when working with async functions
+  - imo async makes it _easier_ (you just use try/catch). I think the difficulty is when you're mixing async/await with raw promises.
 
 - ## When you have a complex series of async functions to call, how do you manage them? 
 - https://twitter.com/JoshWComeau/status/1374027384119263233

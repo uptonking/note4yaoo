@@ -13,6 +13,20 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## Use HSL to generate shades. Store in CSS variables 
+- https://twitter.com/jh3yy/status/1374142406023610369
+  - https://codepen.io/jh3y/pen/JjEjJjN
+- Often times HWB and LCH can be more intuitive, hue-centric representations of color and are a part of the CSS4 Color spec. So coming soon.
+  - https://github.com/caub/color-tf
+    - Color transforms between RGB, HSL, HSV and HWB, and more
+  - LCH
+    - https://css.land/lch/
+
+- ## Color picker animation 
+- https://twitter.com/mironcatalin/status/1374306238499061761
+- Done using Moti by @FernandoTheRojo powered by Reanimated2 by @swmansion & @kzzzf , built with @expo .
+
 - ## project || prototype starter styles:
 - https://twitter.com/argyleink/status/1371850967822520333
   - normalize box sizing

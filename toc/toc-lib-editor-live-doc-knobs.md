@@ -247,6 +247,11 @@ modified: '2021-03-03T21:48:48.379Z'
 - https://github.com/milankinen/livereactload /201904
   - Live code editing with Browserify and React
 
+# live-config
+
+- examples
+  - https://generative.parts/flag
+
 # more
 
 - openchakra /MIT/1.6kStar/202008

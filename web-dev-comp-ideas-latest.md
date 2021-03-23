@@ -121,18 +121,22 @@ modified: '2020-12-27T20:29:55.568Z'
   - 组件的快速预览图，不需要交互事件
   - 可参考SkeletonLoader
 
-# mobile-first 移动优先
+# mobile-first-design 移动优先
 
 - mobile-ux-features
   - 默认纵向布局显示
+    - 每个组件能够在横向布局和纵向布局间切换，一般根据屏幕大小/方向切换
   - 尽量不用水平滚动条
   - media query多用min-width
-  - no hover, more touch, less drag
+  - event: no hover, more touch, less drag
 
 - ref
   - ios
   - android
   - miui
+
+- examples
+  - https://generative.parts/responsive
 
 - ## Tinkering with layout components. How about `<Stack axis="x|y" space={…}>` where the axis should default to "y" for a mobile-first experience.
 - https://twitter.com/kripod97/status/1263393651000049665
@@ -142,7 +146,7 @@ modified: '2020-12-27T20:29:55.568Z'
   - stacks should not wrap at any time. A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
 - I usually go for `inline` flag as it’s always about two possible directions
   - That’s also fine, but I don’t see how it could support responsive props.
-  - Same approach as yours,      `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
+  - Same approach as yours,           `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
 - What about HStack and VStack like SwiftUI?
   - I tried those concepts at first and currently building a project with them. 
   - However, I feel like they’re too rigid for responsiveness while being a bit redundant, too.

@@ -9,14 +9,14 @@ modified: '2021-01-03T17:11:03.150Z'
 
 # adobe spectrum
 
-# pieces
+## pieces
 
 - `@spectrum/spectrum-dna` has been updated to `@spectrum-css/vars`
   - The vars component contains all the variables that drive the presentation of a component.
 
-# components
+## components
 
-# styling
+## styling
 
 - React Spectrum components are designed to be consistent across all Adobe applications. 
   - They include built-in styling that has been considered carefully, and extensively tested. 
@@ -34,7 +34,7 @@ modified: '2021-01-03T17:11:03.150Z'
   - Use of these props should be considered a last resort.
   - They can be used to work around bugs or limitations in React Spectrum
 
-# theming
+## theming
 
 - Colors, sizing, and spacing options can be customized through the use of CSS variables which are defined using the `Provider` component. 
   - Themes consist of variable definitions for light and dark color schemes, along with medium and large platform scales. 
@@ -50,7 +50,7 @@ modified: '2021-01-03T17:11:03.150Z'
   - The darkTheme uses the Spectrum dark and darkest color themes
   - The lightTheme uses the Spectrum lightest and darkest color themes
 
-# layout
+## layout
 
 - The Flex and Grid components are containers, which are responsible for the layout of their children. 
   - Flex follows the CSS flexbox algorithm, while Grid implements CSS grid
@@ -64,10 +64,19 @@ modified: '2021-01-03T17:11:03.150Z'
 
 # discuss
 
-- [Implementing Spectrum: Getting Organizational Buy-In on Design Systems_201809](https://xd.adobe.com/ideas/principles/design-systems/implementing-spectrum-how-adobe-is-coming-together-to-build-a-new-design-system/)
-  - When design values aren’t connected to a single source of truth, implementations quickly become misaligned.
-  - Keeping things connected to a single source of truth ensures our design intent is mapped consistently across a variety of implementations, and that makes Spectrum an “easier sell” as a design system for multiple product teams with their own individual needs.
-  - One way we do this is via our repository of design variables, which we call Spectrum DNA. 
-  - This repository, which is co-managed by a designer and engineer on the Spectrum team, is a collection of values that defines visual attributes
-    - colors, type styles, padding, and so forth 
-    - (basically, any aspect of the design that can be expressed as data).
+- ## [Theme, States, Modifiers, and Overrides](https://github.com/souporserious/jsxui/discussions/16)
+- Problem
+  - Managing Design Systems for React and React Native can be difficult
+  - There are great features of CSS, but these don't carry over into JSX
+  - Lack of constraints make static analysis hard
+- Solution
+  - Primitives to help make building UIs easier and more ergonomic
+  - The goal of this library is to make building, maintaining, and analyzing Design Systems easier while bringing some of the niceties of writing CSS into JSX.
+
+- ## [Implementing Spectrum: Getting Organizational Buy-In on Design Systems_201809](https://xd.adobe.com/ideas/principles/design-systems/implementing-spectrum-how-adobe-is-coming-together-to-build-a-new-design-system/)
+- When design values aren’t connected to a single source of truth, implementations quickly become misaligned.
+- Keeping things connected to a single source of truth ensures our design intent is mapped consistently across a variety of implementations, and that makes Spectrum an “easier sell” as a design system for multiple product teams with their own individual needs.
+- One way we do this is via our repository of design variables, which we call Spectrum DNA. 
+- This repository, which is co-managed by a designer and engineer on the Spectrum team, is a collection of values that defines visual attributes
+  - colors, type styles, padding, and so forth 
+  - (basically, any aspect of the design that can be expressed as data).

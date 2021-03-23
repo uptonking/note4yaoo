@@ -149,6 +149,20 @@ modified: '2021-02-09T19:27:01.319Z'
   - https://github.com/88250
   - artwork: b3blog, solo, symphony
 
+# ux-engineer
+
+- Varun Vachhar
+  - info
+    - http://github.com/winkerVSbecks
+    - https://twitter.com/winkerVSbecks
+    - With a background in engineering and creative coding, I specialize in component-driven development, design systems and computational design.
+  - artwork
+  - generative
+    - https://github.com/winkerVSbecks/generative-parts
+      - https://generative.parts/
+    - https://github.com/winkerVSbecks/sketchbook
+      - https://sketchbook.netlify.app/
+
 # dev-more
 
 - 徐飞
