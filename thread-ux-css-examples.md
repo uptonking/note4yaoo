@@ -13,15 +13,20 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## 50 Shades of Hue. Generate monochromatic HSL color palettes for your CSS 
+- https://twitter.com/jh3yy/status/1374499978039631879
+  - Made some updates to that color picker
+  - Built with @reactjs , @prismjs , && @skypackjs
+  - https://codepen.io/jh3y/pen/xxgbvPz
 
 - ## Use HSL to generate shades. Store in CSS variables 
 - https://twitter.com/jh3yy/status/1374142406023610369
   - https://codepen.io/jh3y/pen/JjEjJjN
 - Often times HWB and LCH can be more intuitive, hue-centric representations of color and are a part of the CSS4 Color spec. So coming soon.
-  - https://github.com/caub/color-tf
-    - Color transforms between RGB, HSL, HSV and HWB, and more
-  - LCH
-    - https://css.land/lch/
+- https://github.com/caub/color-tf
+  - Color transforms between RGB, HSL, HSV and HWB, and more
+- LCH
+  - https://css.land/lch/
 
 - ## Color picker animation 
 - https://twitter.com/mironcatalin/status/1374306238499061761
@@ -47,7 +52,7 @@ modified: '2021-02-05T14:00:02.922Z'
   - https://codepen.io/bramus/pen/GRNNjqz
 - While we translate the `<figure>` elements on scroll, they're not the drivers of the animation. Instead, it's the position of their parent `<section>` that controls their animation progress (e.g. “Element-based Offsets”)
 
-- ## - You can create carousel using 2 lines of CSS
+- ## You can create carousel using 2 lines of CSS
 - https://twitter.com/Prathkum/status/1370185869127249921
   - https://codepen.io/prathamkumar/pen/bGBOzXj
 - The :hover selector changes the CSS when a mouse hovers over the element. I had issues too so I used JS to help. 

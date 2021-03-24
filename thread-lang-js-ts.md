@@ -11,6 +11,13 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ##  what do you mean when you say:"objects naturally represent orthogonality"?
+- https://twitter.com/hhg2288/status/1374707460397760512
+- If you modify one value in an object, the other values are unaffected. 
+  - An object can represent multiple things (key-value pairs) at the same time, and those things can change independently.
+- also from Wikipedia:
+  - "Orthogonality is a system design property which guarantees that **modifying the technical effect produced by a component of a system neither creates nor propagates side effects to other components of the system**."
+
 - ## "let" and "else if" are often bad smells in JavaScript. 
 - https://twitter.com/neoziro/status/1374002846681731078
   - You can easily replace them using a ternary or a self-invoking function.

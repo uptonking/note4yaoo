@@ -9,6 +9,10 @@ modified: '2021-03-22T19:03:55.040Z'
 
 # navbar
 
+## mobile
+
+- form elements表单元素会折叠或收起或收缩为图标
+
 ## tips
 
 - 导航条的汉堡菜单在 左侧
@@ -22,6 +26,12 @@ modified: '2021-03-22T19:03:55.040Z'
   - text: muted color
   - content: container for buttons, dropdowns...
   - form-inline: create forms inside navbar
+
+- collapsible navbar
+  - bootstrap导航菜单上的内容可折叠展开
+    - 展开时会平滑地增加navbar的高度，仍是原位置，体验很好
+  - halfmoon可通过下拉菜单dropdown收起部分内容，如登录按钮
+    - 展开时通过小弹出菜单展示，场景更通用，体验还行
 
 ## halfmoon
 

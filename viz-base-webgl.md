@@ -15,7 +15,87 @@ modified: '2020-12-21T07:47:02.451Z'
 
 - https://twitter.com/h_i_g_s_c_h/status/1370086897142337545
   - Maybe teaching webgl just using regl? That might be a good compromise between a heavy framework and the nitty gritty shader details.
-    - I know and I love your notes on regl! Smiling face with smiling eyes I‘m actually using it here and there and for me it‘s a bit the D3 of webgl.
+    - I know and I love your notes on regl! I‘m actually using it here and there and for me it‘s a bit the D3 of webgl.
+
+## webgl vs canvas 2d
+
+### [Is there any reason for using WebGL instead of 2D Canvas for 2D games/apps?](https://stackoverflow.com/questions/21603350)
+
+- WebGL is unusable without a GPU.
+  - This hardware dependency is not a big problem because most systems have GPUs, but if GPU or CPU architectures ever evolve, preserving webgl content by emulation may be challenging. Running it on old (virtualized) computers is problematic.
+  - But "Canvas vs WebGL" does not have to be a binary choice. 
+    - I actually prefer using webgl for effects, but doing the rest in canvas. 
+    - When I run it in a VM, it still works nicely and fast, just without the effects.
+- "WebGL is unusable without a GPU" is false. It might be slow but it is not unusable.
+
+- If you write code from zero, the canvas API is much easier to learn and understand. It requires minimal math knowledge, and development is fast and straightforward.
+- Working with the WebGL API requires strong math skills and a full understanding of the rendering pipeline. People with these skills are harder to find, production is slower (due to the size and complexity of such a code base), and therefore it costs more.
+
+## [Why isn't canvas 2D context using WebGL under the hood?](https://stackoverflow.com/questions/61698902)
+
+- In theory, I believe everything in canvas 2D context could be emulated in WebGL, resulting in large performance gains. So why isn't it?
+
+- Canvas2D does use the GPU under the hood using basically the same API as WebGL.
+  - It's likely that if you implement the entire Canvas 2D spec in WebGL it will be a similar speed. 
+  - Canvas supports things like drawing with patterns, drawing with gradients, clipping paths, lines with arbitrary widths, ends, joins, etc... 
+  - Add all those features into your Canvas implemented in WebGL and it might a similar speed.
+- The **reason WebGL can be faster** is (a) because you can choose not to implement the features you are not going to use and (b) because you can optimize knowing you're only going to use certain features.
+- As a simple example, in canvas you can draw an image with drawImage(someImageElement, x, y). 
+  - In WebGL you first have to create a texture from the image, then draw using the texture so you manually manage that texture. 
+  - Canvas actually has to do the same thing. 
+  - It had to load the image into a texture in order to draw it (assuming it's GPU based which canvas usually is). 
+  - But, it has no idea if you're going to draw the image again so it can't keep that image as a texture forever. 
+  - The simplest implementation would be to copy the image to a texture, draw, then delete the texture. I doubt that is what canvas does, I'm guessing it has some cache of textures it has made from images. 
+  - But, the point is, it's management of textures is implicit where as in WebGL it's explicit, you have to manually manage the textures yourself.
+- Another example is drawing shapes. 
+  - In WebGL you generally decide what shapes to draw at init time, setup all the data needed to draw them, then at render time you just use the shapes you already setup. 
+  - In Canvas it's more common to draw shapes on the fly meaning each time you want to draw the shape you use moveTo and lineTo commands to plot out the shape, which is effectively doing all the work every time you render instead of like WebGL doing that work only at init time.
+- It's differences like those that add up to canvas being easier and webgl being faster.
+- some people have tried to implement canvas2d in WebGL here and here
+  - https://github.com/play-co/webgl-2d
+    - /489Star/MIT/201104/js
+    - WebGL-2D is a work in progress and currently supports a very small subset of the Canvas2D API.
+  - https://github.com/karellodewijk/canvas-webgl
+    - /21Star/NALic/201611/js
+    - A canvas2d api implementation using webgl and javascript
+  - https://github.com/jagenjo/Canvas2DtoWebGL
+    - /206Star/MIT/202008/js
+    - ports almost all the methods from the regular Canvas2D context (CanvasRenderingContext2D) of HTML5 to WebGL
+    - this allows to mix 3D in your 2D Canvas or the opposite 
+    - It uses litegl.js as the base WebGL library.
+    - To improve performance it doesn't generate garbage (reuses the same containers). It can work with non power of two textures (no mipmaps obviously).
+
+## [WebGL VS Canvas 2D hardware acceleration](https://stackoverflow.com/questions/36908427)
+
+- These days, I need to draw many images on a canvas.
+  - First, if I use canvas 2D context, I can just use context.drawimage() method to put every image on the proper location of the canvas.
+  - Another way, I use WebGL to draw these images on the canvas. I use the image as texture to fill it.
+  - Then, I compare the performance of these two methods. Both of their fps will reach 60
+  - I compare their CPU usage. I expect that when I use WebGL, the CPU will use less because GPU will assure many work of drawing. But the result is, the CPU usage looks almost the same.
+  - By google, I found that browser such as Chrome, Firefox will enable Hardware acceleration by default
+  - I try to close the hardware acceleration. Then the CPU usage of the first method becomes much higher. 
+- So, my question is, since canvas 2D use GPU to accelerate, is it necessary for me to use WebGL just for 2D rendering? 
+  - What is different between canvas 2D GPU acceleration and WebGL? They both use GPU. 
+
+- Canvas 2D has better compatibility.
+- Theoretically WebGL can be faster because the default for canvas 2d is that the drawingbuffer is preserved whereas for WebGL it's not. 
+  - That means if you turn anti-aliasing off on WebGL the browser has the option to double buffer. 
+  - Something it can't do with canvas2d. 
+- Another optimization is in WebGL you can turn off alpha which means the browser has the option to turn off blending when compositing your WebGL with the page, 
+  - again something it doesn't have the option to do with canvas 2d. 
+  - (there are plans to be able to turn off alpha for canvas 2d but as of 2017/6 it's not widely supported)
+- But, by option I mean just that. It's up to the browser to decide whether or not to make those optimizations.
+  - Otherwise if you don't pick those optimizations it's possible the 2 will be the same speed. I haven't personally found that to be the case. I've tried to do some drawImage only things with canvas 2d and didn't get a smooth framerate were as I did with WebGL. It made no sense to be but I assumed there was something going on inside the browser I was un-aware off.
+
+- I guess that brings up the final difference. WebGL is low-level and well known. There's not much the browser can do to mess it up. Or to put it another way you're 100% in control.
+  - With Canvas2D on the other hand it's up to the browser what to do and which optimizations to make. They might changes on each release. 
+- An example would be what the canvas does when drawing an image. 
+  - In WebGL you make the texture. You decide how complicated your shader is. 
+  - In Canvas you have no idea what it's doing.
+  - Maybe it's using a complicated shader that supports all the various canvas globalCompositeOperation, masking, and other features. 
+  - Maybe for memory management it splits images into chucks and renders them in pieces. 
+  - For each browser as well as each version of the same browser what it decides to do is up to that team, where as with WebGL it's pretty much 100% up to you. 
+  - There's not much they can do in the middle to mess up WebGL.
 
 ## [threejs目前有什么缺陷?](https://www.zhihu.com/question/308346610)
 

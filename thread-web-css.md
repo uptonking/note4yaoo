@@ -26,6 +26,10 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## If you don’t want your background image to show underneath your padding space, you can use `background-clip` to prevent this
+- https://twitter.com/Vanaf1979/status/1374341846021894148
+- https://codepen.io/Since1979/pen/NWbQZYr
+
 - ## Have you used `display: inline-block` to adjust visual width?
 - https://twitter.com/5t3ph/status/1374376280146120709
   - What if you still want a different `display` type for that element, like grid or flex?
