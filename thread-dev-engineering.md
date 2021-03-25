@@ -13,29 +13,32 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Where do you put tests and why? same folder vs separate tests/ folder
+- https://twitter.com/claviska/status/1375071253753647118
+- Separate “tests” folder because clutter etc. 
+  - Also if you are concerned that things aren’t getting test, you can also setup code coverage and know for sure.
+- Framework's default
+  - It's configurable, but I'm looking at one with a tests folder. My concern is, if tests are independent of the things they're testing, it's easy to forget to add/update them (particularly for contributors and large codebase)
 
 - ## If you deploy your app to serverless platforms (Vercel and friends) but you use services (Postgres, Redis, etc) that don’t have auto scaling, then your app is not serverless at all. It’s only an illusion.
 - https://twitter.com/flybayer/status/1373824547506511873
 - We just shift the bottleneck. Classic manufacturing efficiency optimization problem
-
 
 - ## I always wondered about Google, how do you push through the internal competition? Android, PWA, Flutter. 
 - https://twitter.com/sebmarkbage/status/1373775862219292674
   - I sit here with an amazing community, team, org and management support. 
   - Yet all I can think of before every Monday is the people that don’t believe in me or what we’re doing.
 - You have to lead and stand by your decision: Think of Steve Jobs coming back to Apple and bring all that Objective-C guys from Next.
-  - It was the better technology - but heck it was unpopular at that time.And despite all the lows he denied all alternatives (Java, Flash).
+  - It was the better technology - but heck it was unpopular at that time. And despite all the lows he denied all alternatives (Java, Flash).
 - I worked at companies where such competition is a norm. 
   - In my experience, that's what helped to avoid such feeling. 
   - Helpful competition promotes stuff that works, kills stuff that does not; 
   - it allows people to focus on the objectivism of the tech not the subjectivism of feelings.
 
-
-
 - ## Wondering sometimes if, instead of more libs, we shouldn't offer more first-class copy-and-paste solutions.
 - https://twitter.com/mpocock1/status/1372986732354883588
   - Copy and paste an entire component lib and then tweak to your heart's content
-- I'm absolutely against this: the good thing about libs is that they are documented and tested configurable blocks. All code should be libs, even our own.Coding for open source enforces code quality (at least at the boundaries).
+- I'm absolutely against this: the good thing about libs is that they are documented and tested configurable blocks. All code should be libs, even our own. Coding for open source enforces code quality (at least at the boundaries).
   - Libs are wonderful, invaluable. But choosing libs for _all_ solutions is perhaps too dogmatic. There should also be space for when you want to grab something pre-built and modify it.
 - What you described is the basic idea behind the architecture of Crown. You “install” packages within the framework by cloning with git subrepo. You own the code but can still pull changes from upstream
 

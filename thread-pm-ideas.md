@@ -13,6 +13,23 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## I'm really excited to announce Serenity Notes
+- https://twitter.com/nikgraf/status/1374619720842944513
+  - It's an end-to-end encrypted collaborative notes app allowing you to compose private & shared notes.
+  - Think of a simple Google Docs, but end-to-end encrypted and offline-first.
+  - and forgot to mention that the client/app code is open source
+  - https://github.com/SerenityNotes/serenity-notes-clients
+- Is it built on top of a decentralized protocol like  scuttlebutt.nz?
+  - I initially started out building it on top of the Matrix Protocol, but hit some roadblocks and eventually went a level deeper directly building a custom protocol on top of gitlab.matrix.org/matrix-org/olm
+  - It's still very much inspired by parts of the Matrix Protocol, but no federation atm
+  - I would love to see it go decentralised by default and a backup to dropbox/drive by choice 
+  - Encrypted backups to iCloud/GDrive are one of the next things on the roadmap
+- pure CRDTs? how did you solve for undo/redo? checkpoints for docs with lots of changes?
+  - I'm using https://github.com/yjs/yjs and this is the true magic behind the editor. 
+- Desktop/web version is planning?
+  - Yeah, started working on a Desktop (macOS) version and after that would focus on Windows.
+  - Web would be great, but there are certain security implications and also the offline-first part is hard. So not planning to do this anytime soon.
+
 - ## I'm super impressed by the approach @craftdocsapp is taking to data ownership. 
 - https://twitter.com/geoffreylitt/status/1374144532976168967
   - 提出了制定markdown在线多人共同编辑协议的建议

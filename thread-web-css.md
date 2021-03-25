@@ -26,6 +26,13 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## If you need to style multiple elements in a pseudo selector state (focus, hover, active...) you can use :is() to select them all at once!
+- https://twitter.com/wesbos/status/1374771569852043269
+  - Before you go all-in on :is(), there's three interesting things to know about it:
+  - The selector list of :is() is forgiving
+  - The specificity of :is() is that of its most specific argument (!!)
+  - :is() does not work with pseudo-elements (for now)
+
 - ## If you don’t want your background image to show underneath your padding space, you can use `background-clip` to prevent this
 - https://twitter.com/Vanaf1979/status/1374341846021894148
 - https://codepen.io/Since1979/pen/NWbQZYr

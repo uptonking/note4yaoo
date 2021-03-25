@@ -228,6 +228,8 @@ modified: '2020-12-08T13:14:07.354Z'
 
 # `<a>` : The Anchor element
 
+- 没有href属性就无法使用tab键focus，解决方法是添加属性`tabindex=0`
+
 - The HTML `<a>` element (or anchor element), with its href attribute, creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. 
 - Content within each `<a>` should indicate the link's destination.
 - `<link>` is similar to `<a>` , but for metadata hyperlinks that are invisible to users.

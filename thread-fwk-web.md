@@ -11,6 +11,17 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+
+- ## I wonder how many people realize that React Hooks is really just disconnected, less declarative reactive programming.
+- https://twitter.com/BenLesh/status/1374755992378953730
+- Comments immediately go towards RxJS (Streams) but hooks syntactically more resemble MobX (Signals/Behaviors). In that light this description is dead on. I'd go as far as saying almost all JS UI Frameworks land here to anyone wanting to beat that tired React isn't reactive drum.
+- This relationship is muddled in my mind because AFAICT most reactive frameworks put _events_ and _time_ as front-and-center concepts, and Hooks seems more about dataflow - which feels extremely related to event systems, often implemented via events, but don't quite seem the same.
+- Now, I am confused. Are hooks good or bad? This really got me thinking because I am having horrible time in build meaningful observable abstractions with hooks.
+  - I think they were a step in the right direction and there was reason to be excited about that. But there are caveats and a lot of people have been bitten by them. Hooks are essentially limited reactivity. The reactive part is awesome, but the limitations aren’t.
+- RxJS makes react much cleaner imho. In fact, imho RxJS (the reactive paradigm, really) makes working in an event driven env like the frontend of web apps much easier after the initial learning curve, results in much cleaner code, and encourages better data como/flow
+  - RxJS was absolutely the worst thing I ever had to maintain.
+
+
 - ## To make nostalgie.dev's SSR pipeline extensible, I've been trying to figure out how to give plugins the ability to customize the wrapper markup.
 - https://twitter.com/filearts/status/1374342826318761992
   - "Why not give them a mutable HTML AST?", I thought. Then I wondered if npm.im/linkedom would be fast enough

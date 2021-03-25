@@ -9,9 +9,8 @@ modified: '2021-03-22T19:03:55.040Z'
 
 # navbar
 
-## mobile
-
-- form elements表单元素会折叠或收起或收缩为图标
+- mobile
+  - form elements表单元素会折叠或收起或收缩为图标
 
 ## tips
 
@@ -20,20 +19,20 @@ modified: '2021-03-22T19:03:55.040Z'
 - 导航条的汉堡菜单在 右侧
   - bulma，bootstrap
 
-- navbar结构 display: flex
-  - brand: text/image
-  - nav-link/item: active
-  - text: muted color
-  - content: container for buttons, dropdowns...
-  - form-inline: create forms inside navbar
-
 - collapsible navbar
   - bootstrap导航菜单上的内容可折叠展开
     - 展开时会平滑地增加navbar的高度，仍是原位置，体验很好
   - halfmoon可通过下拉菜单dropdown收起部分内容，如登录按钮
     - 展开时通过小弹出菜单展示，场景更通用，体验还行
 
-## halfmoon
+- ## eg-halfmoon
+
+- navbar结构 display: flex
+  - content: container for buttons, dropdowns...
+  - brand: text/image
+  - nav-link/item: active
+  - text: muted color
+  - form-inline: create forms inside navbar
 
 - Navbars are made responsive by strategically showing/hiding different elements for different breakpoints using display utilities
   - .form-inline displayed only on screen lg+
@@ -50,7 +49,50 @@ modified: '2021-03-22T19:03:55.040Z'
 
 # sidebar
 
+- a.k.a.
+  - side menu
+
+- usecase
+  - side menu
+
+- should i use an alternative
+  - dockable panel
+
+- examples
+  - https://getbootstrap.com/docs/5.0/examples/sidebars/
+
 - 点击导航条的汉堡菜单，出现左侧sidebar
   - spectrum，halfmoon
 - 点击导航条的汉堡菜单，不出现sidebar，额外内容显示在导航条下方
   - github，bulma，bootstrap
+
+- ## eg-halfmoon
+
+- sidebar结构
+  - menu: main container
+  - content: container for content like buttons...
+  - brand: brand text/image
+  - title: section titles
+  - link: active
+  - divider: div element as divider
+
+- sidebar type
+  - default: make space for the navbars on top
+  - full height: take up the full height of the page
+  - overlayed: float on top of the page
+  - composite & responsive
+
+- ## eg-bootstrap-offcanvas
+
+- Offcanvas is a sidebar component that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport.
+  - Offcanvas shares some of the same JavaScript code as modals. 
+    - Conceptually, they are quite similar, but they are separate plugins.
+  - some source Sass variables for offcanvas’s styles and dimensions are inherited from the modal’s variables.
+  - When shown, offcanvas includes a default backdrop(背景幕布；背景) that can be clicked to hide the offcanvas.
+  - Similar to modals, only one offcanvas can be shown at a time.
+
+- Scrolling the `<body>` element is disabled when an offcanvas and its backdrop are visible. 
+  - Use the `data-bs-scroll` attribute to toggle `<body>` scrolling and `data-bs-backdrop` to toggle the backdrop.
+
+- Since the offcanvas panel is conceptually a modal dialog, be sure to add aria-labelledby="..."—referencing the offcanvas title—to .offcanvas. 
+  - Note that you don’t need to add `role="dialog"` since we already add it via JavaScript.

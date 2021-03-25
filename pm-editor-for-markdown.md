@@ -38,11 +38,12 @@ modified: '2020-10-22T13:33:45.146Z'
   - table-renderer
     - for cli
     - for 鸿蒙OS
+  - 协同编辑，更适合用在文档或笔记中
 
 - 细节设计
   - 类似github的readme，点击顶部标题，只显示一级目录大纲
 
-# features-copied
+## features-copied
 
 - code highlighting
 
@@ -57,7 +58,7 @@ modified: '2020-10-22T13:33:45.146Z'
   - 支持json5
   - 支持切换代码高亮主题，类似[carbon](https://carbon.now.sh/)
 
-## md-integrations
+## md-integrations/connections
 
 - excalidraw
 - github-readme-editor
@@ -94,15 +95,15 @@ modified: '2020-10-22T13:33:45.146Z'
 
 - md-extension
   - gfm
-      - checkbox-task-list
-      - automatic-linking
-      - strikethrough
-      - table
-      - emoji
-      - syntax-highlight
-      - github-only
-          - issue-reference
-          - username-mention
+    - checkbox-task-list
+    - automatic-linking
+    - strikethrough
+    - table
+    - emoji
+    - syntax-highlight
+    - github-only
+      - issue-reference
+      - username-mention
   - toc
   - footnote
   - mathTeX: formula
