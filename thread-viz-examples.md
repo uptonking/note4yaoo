@@ -11,8 +11,11 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-
-
+- ## I just published an introduction to the @jsonstat toolkit as a notebook
+- https://twitter.com/badosa/status/1375212974592421889
+- This notebook shows you the main features of the jsonstat-toolkit using data from different official statistics providers like Eurostat, UNECE
+  - https://observablehq.com/d/22fc6d7389380799
+  - JSON-stat is a simple lightweight JSON dissemination(传播, 散布) format best suited for data visualization, mobile apps or open data initiatives, that has been designed for all kinds of disseminators.
 
 - ## animated SVG logo for an Etsy store
 - https://twitter.com/jh3yy/status/1371963752489320448

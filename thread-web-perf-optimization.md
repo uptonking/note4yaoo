@@ -11,6 +11,15 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ## I spent some time today working on the page-load experience of my course platform. 
+- https://twitter.com/JoshWComeau/status/1375237480652345347
+  - Some of the changes:
+  - SSR the code snippets instead of lazy-loading them and doing it all on the client
+  - Get SSR styles working in MDX
+  - Give things concrete heights to prevent CLS between spinner/loaded content
+  - [Next + next-mdx-remote + styled-components](https://twitter.com/JoshWComeau/status/1375133558734532619)
+- I love how you put so much effort into all the details! Definitely learning a lot from your approach to our craft.
+
 - ##  how to get a Core Web Vitals report in Google Data Studio. (It’s actually quick! Just clone a template and change the url.)
 - https://twitter.com/iamakulov/status/1372562229413941254
 

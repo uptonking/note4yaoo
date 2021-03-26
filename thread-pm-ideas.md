@@ -13,6 +13,12 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## I just published an introduction to the @jsonstat toolkit as a notebook
+- https://twitter.com/badosa/status/1375212974592421889
+- This notebook shows you the main features of the jsonstat-toolkit using data from different official statistics providers like Eurostat, UNECE
+  - https://observablehq.com/d/22fc6d7389380799
+  - JSON-stat is a simple lightweight JSON dissemination(传播, 散布) format best suited for data visualization, mobile apps or open data initiatives, that has been designed for all kinds of disseminators.
+
 - ## I'm really excited to announce Serenity Notes
 - https://twitter.com/nikgraf/status/1374619720842944513
   - It's an end-to-end encrypted collaborative notes app allowing you to compose private & shared notes.

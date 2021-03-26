@@ -11,6 +11,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Use TypeScript template literal types to quickly generate a type with all permutations / options based on other types
+- https://twitter.com/wesbos/status/1375145379197509634
+- This can also be handy when using a Record to define an objects possible properties. 
+  - You can even pipe them through string manipulation types like Lowercase<> and Capitalize<>
+- [Creating a Scientific Pitch Notation Type using template literal types](https://madewithlove.com/blog/software-engineering/creating-a-scientific-pitch-notation-type-using-template-literal-types/)
+
 - ##  what do you mean when you say:"objects naturally represent orthogonality"?
 - https://twitter.com/hhg2288/status/1374707460397760512
 - If you modify one value in an object, the other values are unaffected. 
