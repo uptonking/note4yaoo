@@ -9,6 +9,9 @@ modified: '2020-12-21T07:44:38.205Z'
 
 # pieces
 
+- https://caniuse.com/web-animation
+  - usage: 93.66% (202103), 除IE外都支持
+
 # Web Animations API (WAAPI)
 
 - The Web Animations API allows for synchronizing and timing changes to the presentation of a Web page, i.e. animation of DOM elements. 

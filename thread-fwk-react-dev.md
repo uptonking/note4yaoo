@@ -13,6 +13,18 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## I stopped using React professionally right before hooks were released. 
+- https://twitter.com/AdamRackis/status/1375484819891752961
+  - Getting back into that game now and my fucking god this shit is hard. It is shockingly easy to mess things up in subtle, hard to debug ways.
+- They just wanted to diversify the wider framework ecosystem. 
+  - Hooks were their way of telling people it was ok to use reactive primitives. 
+  - In a way, I thank React hooks for Vue and Svelte 3 even if the core principles in those libraries precede them. React made them brave again.
+- Spoiler: every framework has issues
+- Hooks only exist because React wants to run a render() multiple times and throw away the results, for concurrent mode. 
+  - That can only happen if render() is pure though, hence getting rid of the possibility of using state external to what React gives you.
+  - Yep, and all external state management tools are facing a bit of a crisis now.
+  - And I've yet to see any real benefit to CM or suspense. Suspense is basically a PoC when it comes to features, UX and DX, and CM is trying to turn a runtime into a VM.
+- Yeah in a sense the worst thing that happens with tearing is we lose our async consistency guarantees and fallback to how things are today. It settles the same in the end. I had more concern about MobX synchronous side effects during render. But seems they aren't concerned.
 
 - ## React is great for websites, wizards etc but it’s still incredibly hard to build really fast and interactive (drag&drop, shortcuts etc) applications.
 - https://twitter.com/jorilallo/status/1375216746081173512

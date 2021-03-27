@@ -13,6 +13,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Swag 卡通人走路
+- https://twitter.com/rolivaalonso/status/1375439896756813825
+  - https://codepen.io/ricardoolivaalonso/pen/bGgEQLL
+
 - ## 50 Shades of Hue. Generate monochromatic HSL color palettes for your CSS 
 - https://twitter.com/jh3yy/status/1374499978039631879
   - Made some updates to that color picker

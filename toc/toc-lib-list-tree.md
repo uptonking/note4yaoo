@@ -57,3 +57,13 @@ modified: '2020-07-12T19:00:27.345Z'
   - Simple react hierarchy tree - any React children accepted for nodes
 - https://github.com/bkrem/react-d3-tree
 - https://github.com/mar10/fancytree
+
+- https://github.com/clauderic/dnd-kit
+  - http://dndkit.com/
+  - http://examples.dndkit.com
+  - extensible drag & drop toolkit for React.
+- https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
+  - https://5fc05e08a4a65d0021ae0bf2-vrdufzklrj.chromatic.com/?path=/story/examples-tree-sortable--basic-setup
+  - https://twitter.com/clauderic_d/status/1375623307060510731
+    - I recently built a sortable tree example with @dndkit .
+    - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.

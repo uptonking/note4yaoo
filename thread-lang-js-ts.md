@@ -11,6 +11,14 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## why don't other languages have destructuring assignment like JS added in ES6?
+- https://twitter.com/acemarke/status/1375564793361358851
+- other people are saying it too, but this is generally a functional programming thing that imperative languages are adding. elixir, haskell, ocaml all have it
+- AFAIK you can destruct a Tuple and List returned from a function in Python. Not fully feature fledged like in JS but it fill in some gaps
+- Pretty much any language with pattern matching allows you to do this. eg.  Rust, ReScript
+  - Swift and scala also. I suppose a requirement is for pattern matching to be allowed as an expression
+- I might be wrong but I think Kotlin has this as well.
+
 - ## Use TypeScript template literal types to quickly generate a type with all permutations / options based on other types
 - https://twitter.com/wesbos/status/1375145379197509634
 - This can also be handy when using a Record to define an objects possible properties. 

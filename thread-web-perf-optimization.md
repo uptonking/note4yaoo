@@ -11,9 +11,14 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ## Beyond junior, you need to understand performance of nested loops. You need to understand when to pick object vs array and what that means as your data grows. 
+- https://twitter.com/dan_abramov/status/1375495411746635781
+  - You need to understand how to write functions so that computation can be cached.
+  - That’s not what y’all are testing.
+
 - ## I spent some time today working on the page-load experience of my course platform. 
 - https://twitter.com/JoshWComeau/status/1375237480652345347
-  - Some of the changes:
+- Some of the changes:
   - SSR the code snippets instead of lazy-loading them and doing it all on the client
   - Get SSR styles working in MDX
   - Give things concrete heights to prevent CLS between spinner/loaded content

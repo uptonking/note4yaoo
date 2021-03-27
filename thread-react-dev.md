@@ -11,6 +11,16 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## React people hear me out:
+- https://twitter.com/lmatteis/status/1375557621789384705
+  - VSCode plugin that renders components
+  - Editable widgets for changing props on any component
+  - The widgets are created based on TypeScript info
+  - Any changes to widget are synched w/ code
+  - Expose a typed style prop for free editing capabilities
+- you are describing @storybookjs
+  - No, changes to the knobs/controls don't alter the code, just an in-memory preview.
+  - I built a POC for this a few years ago. Storybook has a dev server with access to the file system. This is a feature we’d like to add in the future, made more powerful by controls/args
 
 - ## Every time you do async action in onClick handler or running `setState` not under React control - you probably need a batched update
 - https://twitter.com/theKashey/status/1373841140860944384
@@ -24,8 +34,6 @@ modified: '2021-01-06T14:40:11.360Z'
   - If you use cloneElement instead, it means consumers are able to see the private props in the component's type signature.
   - Also, cloneElement prevents consumers from wrapping child elements with another element since you'll be cloning an element without those private props available.
 - Yes, please bring more visibility to this. Several big libraries still use clone element and it's frustrating to have things break because I wrapped a component without forwarding all props. Context works great here.
-
-
 
 - ## there's a bunch of articles that explain how React hooks are implemented, 
 - https://twitter.com/acemarke/status/1369869411901992966

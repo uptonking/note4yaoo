@@ -13,6 +13,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## TIL Webpack v5.20.0 added `output.clean` to auto clean the output directory before emit
+
 - ## Underrated way to learn something: try building a toy version of it. You both learn a little bit about the problem and get better at extracting the essence of something complex.
 - https://twitter.com/dan_abramov/status/1372395035342295042
 - Like fre, it is a 2KB implementation of react.

@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## I think the `@` for event handler was mostly popularized by Vue and later on by LitHtml. 
+- https://twitter.com/RyanCarniato/status/1375527347948941315
+  - Any thoughts on why this syntax and not the `on:click` from Svelte for example?
+- We choose @ . and ? in lit-html so that we had 1 character prefixes and could check for them easily.
+  - They're also not valid to use with setAttribute() so the chance of collision with a real world attribute is extremely low
 
 - ## I wonder how many people realize that React Hooks is really just disconnected, less declarative reactive programming.
 - https://twitter.com/BenLesh/status/1374755992378953730
@@ -20,7 +25,6 @@ modified: '2021-01-08T17:13:53.965Z'
   - I think they were a step in the right direction and there was reason to be excited about that. But there are caveats and a lot of people have been bitten by them. Hooks are essentially limited reactivity. The reactive part is awesome, but the limitations aren’t.
 - RxJS makes react much cleaner imho. In fact, imho RxJS (the reactive paradigm, really) makes working in an event driven env like the frontend of web apps much easier after the initial learning curve, results in much cleaner code, and encourages better data como/flow
   - RxJS was absolutely the worst thing I ever had to maintain.
-
 
 - ## To make nostalgie.dev's SSR pipeline extensible, I've been trying to figure out how to give plugins the ability to customize the wrapper markup.
 - https://twitter.com/filearts/status/1374342826318761992

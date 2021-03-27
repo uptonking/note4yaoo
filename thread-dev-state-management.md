@@ -19,6 +19,15 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## Pardon my stupidity but what are your thoughts on running Redux in a separate thread/worker?
+- https://twitter.com/agusterodin/status/1375569680300040193
+- It's absolutely doable, and there's multiple articles that talk about it.
+  - However, I don't see any benefit to doing so in almost all scenarios. 
+  - Reducers are rarely a perf bottleneck - updating the UI is more expensive.
+  - you should minimize main thread work, but DOM updates have to happen there, so in most cases the logic does too.
+  - But realistically most apps probably aren't perf sensitive enough to where they would even have to consider that sort of thing.
+- [Off-main-thread React Redux with Performance](https://blog.axlight.com/posts/off-main-thread-react-redux-with-performance/)
+
 - ## Did you know that a reducer is like a single-state finite state machine (and vice versa)?
 - https://twitter.com/erikras/status/1374381386476396563
 - [A reducer is a single-state state machine](https://erikras.com/blog/reducer-single-state-machine)
