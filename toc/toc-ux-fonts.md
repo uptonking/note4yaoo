@@ -9,6 +9,15 @@ modified: '2020-07-17T10:54:16.341Z'
 
 # discuss
 
+- ## [安卓系统的默认中文字体是什么？](https://www.zhihu.com/question/23487706)
+- android 4.0（<=4.0）之前只有三种字体: 有衬线、无衬线、等宽
+  - normal (Droid Sans), serif (Droid Serif), and monospace(Droid Sans Mono).
+- android高版本 >= 4.1
+  - 英文：Roboto
+  - 中文：Noto （思源黑体）
+- ref
+  - [material design typography](https://material.io/design/typography/the-type-system.html)
+
 - ## How to get the fastest web fonts (Updated 2021)
 - https://twitter.com/leeerob/status/1345554813375938561
   - Use a variable font 

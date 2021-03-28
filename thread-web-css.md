@@ -26,6 +26,12 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Didn't realise CSS support and a plugin architecture was coming to esbuild. That's super exciting—and great news for vanilla-extract.
+- https://twitter.com/markdalgleish/status/1375580423602888707
+- Unfortunately, it is just a bundler, it does not provide the same rich API as babel, and we cannot operate AST.
+  - Haven't looked into it, but we have pretty straightforward requirements and could probably get away without access to the AST.
+- Esbuild provides a plugin API. The ast can be used from a separate library. 
+
 - ## If you need to style multiple elements in a pseudo selector state (focus, hover, active...) you can use :is() to select them all at once!
 - https://twitter.com/wesbos/status/1374771569852043269
   - Before you go all-in on :is(), there's three interesting things to know about it:

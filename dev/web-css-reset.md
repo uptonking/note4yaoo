@@ -19,6 +19,15 @@ modified: '2020-12-21T07:45:40.012Z'
 
 # guide
 
+- reset必须的部分
+  - a标签链接：下划线很讨厌，默认颜色也不好
+  - code行内代码文本
+  - form label, legend
+- reset可选的部分
+  - h1-h6
+  - list: ul, ol
+  - table
+
 - ref
   - normalize.css  /MIT/39.7kStar/201811
     - https://github.com/necolas/normalize.css
