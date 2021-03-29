@@ -1,12 +1,11 @@
 ---
-title: log-dev-pieces-frontend
-tags: [dev, frontend, log]
-pinned: true
+title: dev-ing-pieces-frontend
+tags: [dev, frontend]
 created: '2019-06-09T15:54:12.063Z'
-modified: '2020-08-18T05:56:56.343Z'
+modified: '2021-03-29T19:30:00.059Z'
 ---
 
-# log-dev-pieces-frontend
+# dev-ing-pieces-frontend
 
 - about web, state, routing
 

@@ -1,12 +1,12 @@
 ---
-title: log-repeat-solutions
-tags: [repeat, solutions]
+title: dev-log-repeat-solutions
+tags: [dev, repeat, solutions]
 favorited: true
 created: '2021-01-08T00:10:18.987Z'
-modified: '2021-01-09T16:13:07.758Z'
+modified: '2021-03-29T19:30:24.663Z'
 ---
 
-# log-repeat-solutions
+# dev-log-repeat-solutions
 
 # ideas
 

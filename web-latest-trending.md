@@ -10,17 +10,21 @@ modified: '2021-01-01T20:52:42.088Z'
 # guide
 
 - watching
-  - render
+  - renderer using sika like flutter
   - 华为鸿蒙os的app开发基于js
 
-- new
-  - react server components
-  - lowcode/nocode
+- new-infra
   - webpack module federation
-  - faas
-  - component story format
+    - deno url import
+  - faas/serverless
+  - esbuild/vite bundler
 
-- still
+- new-framework-app
+  - react server components
+  - component story format
+  - lowcode/nocode
+
+- hot-now
   - 小程序
   - hybrid
   - flutter
@@ -116,7 +120,8 @@ modified: '2021-01-01T20:52:42.088Z'
   - There's a good chance this year that I will reimplement React-Charts with airbnb/visx
     - and a slightly smaller chance that React Charts goes away all together.
     - I need more chart types @nozzleio, and not enough time to build essentially what visx has already built.
-- [Web development and designing trends in 2021](https://twitter.com/Prathkum/status/1347779080259715073)
+
+- ## [Web development and designing trends in 2021](https://twitter.com/Prathkum/status/1347779080259715073)
   - Progressive Web Apps
   - Single Page Websites
   - Accelerated Mobile Pages
@@ -127,7 +132,8 @@ modified: '2021-01-01T20:52:42.088Z'
     - 也称为soft ui，是一种类似于浮雕的效果，有的人说这是新的拟物风格（New Skeuomorphism）
   - Abstract art compositions
   - 3D visuals
-- [My bold two-year prediction](https://twitter.com/tylerlwsmith/status/1346282659484323841): 
+
+- ## [My bold two-year prediction](https://twitter.com/tylerlwsmith/status/1346282659484323841): 
   - 2021 will be the peak of JavaScript frameworks & compilers. 
   - In 2022, tools like Turbo, Laravel Livewire, . NET Blazor Pages and Alpine JS that allow interactivity with little custom JavaScript will become serious alternatives to React & friends.
   - Developers gravitate towards tools that let them build things fast, even if it means letting go of some control. 
@@ -150,7 +156,7 @@ modified: '2021-01-01T20:52:42.088Z'
     - However, the tent of web development will become much bigger.
     - Here's to a democratized web
 
-- ## [Serverless 能取代微服务吗？](https://www.zhihu.com/question/335301678/answers/updated)
+- ## [Serverless能取代微服务吗？](https://www.zhihu.com/question/335301678/answers/updated)
 - serverless是一种概念，serverless的目的是让开发者能更专注于逻辑的开发。
   - 云函数是一种可以直接使用的工具。也可以说是 serverless 的一种实现方式（虽然并不完美）
   - 云函数可以用来直接跑主要业务服务吗？看云商的支持力度。
@@ -160,7 +166,7 @@ modified: '2021-01-01T20:52:42.088Z'
   - 应用领域有很多复杂的状态问题, 应用冷启动, jit, 状态迁移, 缓存, session , 都制约了应用的弹性
   - serverless目前是云厂商售卖的概念。需要解决的体验问题很多。
 
-- ## [2020 国内公司前端团队都在搞些什么?](https://www.zhihu.com/question/398940598/answers/updated)
+- ## [2020年国内公司前端团队都在搞些什么?](https://www.zhihu.com/question/398940598/answers/updated)
 - 我的前端工程化突破点是 webpack5 的 module federation
 - 得物作为最近两年的黑马，前端团队也在不断探索新的技术疆域：
   - “no code”、“low code”、“数据可视化”、“前端微服务”、“设计素材中心”、“性能异常监控”、“动画库”、“可视化埋点”、“一站式服务”、“组件 Hub”、“H5 游戏”、“Mock Server”、“前端质量诊断系统”、“BFF”、“前端行为回放”

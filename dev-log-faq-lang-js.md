@@ -1,11 +1,11 @@
 ---
-title: log-faq-dev-js
+title: dev-log-faq-lang-js
 tags: [faq, js]
 created: '2020-11-07T11:48:30.544Z'
-modified: '2020-12-23T09:52:21.060Z'
+modified: '2021-03-29T19:18:55.989Z'
 ---
 
-# log-faq-dev-js
+# dev-log-faq-lang-js
 
 # faq-not-yet
 

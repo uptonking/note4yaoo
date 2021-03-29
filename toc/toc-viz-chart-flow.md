@@ -58,6 +58,13 @@ modified: '2020-10-22T10:22:55.878Z'
   - iMove 是一个逻辑可复用的，面向函数的，流程可视化的 JavaScript 工具库。
   - 感谢 蚂蚁 X6 团队 提供的绘图引擎
 
+# uml
+
+- mermaid /32.1kStar/MIT/202009/js
+  - https://github.com/mermaid-js/mermaid
+  - Generation of diagram and flowchart from text in a similar manner as markdown
+  - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
+
 # node-graph
 
 - https://github.com/reaviz/reaflow
@@ -65,10 +72,6 @@ modified: '2020-10-22T10:22:55.878Z'
   - REAFLOW is a modular diagram engine for build static or interactive editors. 
 
 # more
-
-- mermaid /32.1kStar/MIT/202009/js
-  - https://github.com/mermaid-js/mermaid
-  - Generation of diagram and flowchart from text in a similar manner as markdown
 
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

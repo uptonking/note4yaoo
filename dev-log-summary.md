@@ -1,11 +1,11 @@
 ---
-title: log-dev-summary
+title: dev-log-summary
 tags: [dev, log, repeat]
 created: '2019-04-22T03:42:22.447Z'
-modified: '2020-07-14T10:28:11.443Z'
+modified: '2021-03-29T19:14:57.440Z'
 ---
 
-# log-dev-summary
+# dev-log-summary
 
 # dev-summary
 

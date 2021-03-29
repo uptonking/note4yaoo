@@ -11,6 +11,37 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+
+- ## we added an oft-requested feature to the SvelteKit beta: SPA mode, aka 'no SSR
+- https://twitter.com/Rich_Harris/status/1376589240373493771
+- If hydrate is false on some pages, how is routing handled between hydrated and non-hydrated pages? 
+  - Does the page request hit the server when navigating to or away from a “hydrate = false” page (instead of using the client side router)?
+  - hydrate only affects the first page you hit, so as long as you don't specify `router=false` all subsequent navigations will be handled by the client-side router, even though the initial page isn't made interactive
+  - this is something you only get if you use `<a>` elements for navigation rather than framework/router-specific `<Link>` components. remember to #usetheplatform
+
+
+- ## What's faster than a static HTML file?
+- https://twitter.com/mjackson/status/1376588198118232066
+  - An HTML page with `Cache-Control: public, max-age=60` . Browsers can use a local cache instead of requesting the page again.
+  - But "instant cache invalidation" (jamstack "best practice") makes it impossible to cache HTML. So it's slower.
+  - It's a concession(妥协，让步) that jamstack has to make because it has no control over how the HTML page is served. So they try to frame "instant cache invalidation" as a good thing. But it's not.
+  - With "instant cache invalidation" you don't have the option to cache HTML because it will have a `<script src="some-a23ef05.js">` in it.
+  - It's ok to cache the .js (its name is unique) but not the HTML! So jamstack takes away the option.
+  - No cache for you! It's a *best practice*
+- Am I missing something because it seems like when jamstack mentions instant cache invalidation, its about server cache instead of browser side cache? Are they actually referring to the same cache?
+- On storify.com back in the day we’d change the cache policy depending on whether you were logged in or not.
+  - Instant updates for the author on publish but viewers would have to wait a minute or two. 
+  - Instant gratification(满意，满足) but better cache hit rate.
+
+- ## Built an online playground for Vue 3 SFCs: https://sfc.vuejs.org
+- https://twitter.com/youyuxi/status/1376570861382213641
+  - Uses actual @vue/compiler-sfc, bundled to run in the browser, deployed for every commit
+  - Supports features like `<script setup>` .
+  - Sharable URL (useful for reproductions)
+  - Download as Vite project
+- @vue/compiler-sfc
+  - Lower level utilities for compiling Vue Single File Components
+
 - ## I think the `@` for event handler was mostly popularized by Vue and later on by LitHtml. 
 - https://twitter.com/RyanCarniato/status/1375527347948941315
   - Any thoughts on why this syntax and not the `on:click` from Svelte for example?

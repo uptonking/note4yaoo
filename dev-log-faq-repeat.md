@@ -1,11 +1,11 @@
 ---
-title: log-faq-dev-repeat
+title: dev-log-faq-repeat
 tags: [dev, faq, repeat]
 created: '2021-02-27T14:40:13.374Z'
-modified: '2021-02-27T14:40:39.386Z'
+modified: '2021-03-29T19:17:20.657Z'
 ---
 
-# log-faq-dev-repeat
+# dev-log-faq-repeat
 
 # 配置项过多时，如何处理更好，特别是针对组件或应用
 

@@ -9,7 +9,25 @@ modified: '2021-03-22T18:46:03.513Z'
 
 # 2021
 
-## [w0315-0321](https://twitter.com/sebastienlorber/status/1374029672162459649)
+## w0322-0328
+
+- https://twitter.com/sebastienlorber/status/1376537880273821696
+
+👉 Suspense & Concurrent Mode news
+👉 React API evol
+👉 Piral: React microfrontends
+👉 React-Spring 9
+👉 Instagram Lite & Bloks
+👉 Human-Readable JS
+👉 CSS container queries
+👉 vanilla-extract
+👉 Deno company
+👉 SvelteKit
+👉 tRPC
+
+## w0315-0321
+
+- https://twitter.com/sebastienlorber/status/1374029672162459649
 
 👉 State management
 👉 Svelte vs React

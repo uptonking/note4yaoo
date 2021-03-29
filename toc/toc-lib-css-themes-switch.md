@@ -12,6 +12,7 @@ modified: '2021-02-09T13:40:11.536Z'
 - 设计样式theming时可参考
   - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), 
   - glass-ui, web-map-theme, gradient
+  - vendor: tailwindui(paid)
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon

@@ -1,11 +1,11 @@
 ---
-title: log-dev-pieces-pattern
+title: dev-log-pattern
 tags: [cs, dev, log, pattern]
 created: '2021-01-01T20:38:51.480Z'
-modified: '2021-01-01T20:40:14.733Z'
+modified: '2021-03-29T19:16:46.931Z'
 ---
 
-# log-dev-pieces-pattern
+# dev-log-pattern
 
 - about algorithms, data structures, design pattern
 

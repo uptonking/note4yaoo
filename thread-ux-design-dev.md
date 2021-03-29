@@ -11,6 +11,12 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## Destructive actions should be cancellable (even better, they should be undoable).
+- https://twitter.com/fortysevenfx/status/1376253883417251843
+- I think I’d prefer a “are you sure” modal to instantly click instead of the wait here
+- Do you know how it's implemented? Only in front and if you close window you don't delete or in back and the timer is synchronized with front? I'm never sure how make it and generally choose to 2 times validations (delete → are you sure ?) for deleting
+  - So far I implemented only the timer on the front-end (React hook), which delays the destructive action, leaving time for the user to change their mind, but without interrupting their workflow with a modal if they actually intended to perform this action.
+
 - ## indiebrands.io now features mockups auto-generated for each brand.
 - https://twitter.com/lauridskern/status/1370787677021347843
   - https://indiebrands.io/

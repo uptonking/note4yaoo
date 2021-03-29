@@ -1,11 +1,11 @@
 ---
-title: log-dev-pieces-backend
-tags: [backend, dev, log]
+title: dev-ing-pieces-backend
+tags: [backend, dev]
 created: '2020-02-20T10:56:13.810Z'
-modified: '2020-07-14T09:29:55.789Z'
+modified: '2021-03-29T19:29:50.760Z'
 ---
 
-# log-dev-pieces-backend
+# dev-ing-pieces-backend
 
 - about crud, rpc, database
 

@@ -13,6 +13,15 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## What's the right process for a library to drop support for IE11/ES5-only environments in its published artifacts? 
+- https://twitter.com/acemarke/status/1376381894279987209
+  - Should that be a new major, or a minor?
+  - Right now our CJS/ESM files are back-compiled to ES5 syntax for IE11 support.
+- So "major" seems to be the consensus answer so far, which is reasonable.
+- We're planning for RTK Query to be released in RTK 1.6. It's additive only, so that doesn't require a new major.
+  - I really want to keep RTK and the new RTK Query features accessible to as many devs as possible. On the other hand... IE11. Ew.
+  - Maybe put these out in 1.6, and then begin planning RTK 2.0 that drops ES5-only support?
+
 - ## Where do you put tests and why? same folder vs separate tests/ folder
 - https://twitter.com/claviska/status/1375071253753647118
 - Separate “tests” folder because clutter etc. 

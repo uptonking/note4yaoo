@@ -1,12 +1,11 @@
 ---
-title: log-error-dev
-tags: [dev, error, log]
-pinned: true
+title: dev-ing-error
+tags: [dev, error]
 created: '2020-02-20T10:43:37.374Z'
-modified: '2021-01-04T15:50:21.746Z'
+modified: '2021-03-29T19:29:32.505Z'
 ---
 
-# log-error-dev
+# dev-ing-error
 
 # logging 
 

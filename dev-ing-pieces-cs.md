@@ -1,15 +1,16 @@
 ---
-title: log-cs
-tags: [cs, log]
+title: dev-ing-pieces-cs
+tags: [cs, dev]
 created: '2020-03-28T19:35:12.408Z'
-modified: '2020-07-14T09:29:42.100Z'
+modified: '2021-03-29T19:29:56.558Z'
 ---
 
-# log-cs
+# dev-ing-pieces-cs
 
 # pieces
 
-- ## linux的硬链接与软链接
+## linux的硬链接与软链接
+
 - 现代操作系统为解决信息能独立于进程之外被长期存储引入了文件，文件作为进程创建信息的逻辑单元可被多个进程并发使用
 - Linux与其他类UNIX系统一样并不区分文件与目录：目录是记录了其他文件名的文件
 - 文件有文件名与数据，这在Linux上被分成两个部分：用户数据 (user data) 与元数据 (metadata)

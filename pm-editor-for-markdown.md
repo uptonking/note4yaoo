@@ -61,8 +61,10 @@ modified: '2020-10-22T13:33:45.146Z'
 
 ## md-integrations/connections
 
-- excalidraw
 - github-readme-editor
+
+- mermaid-flow-uml
+- excalidraw
 
 ## 表格扩展相关
 

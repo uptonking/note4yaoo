@@ -15,9 +15,21 @@ modified: '2021-02-28T07:29:07.622Z'
   - This shows some comparison among use-context-selector, jotai and proxy-memoize.
   - #ReactTracked and #Valtio are not shown, but they have the same idea.
 
+- [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
+- [RTK Query comparison](https://rtk-query-docs.netlify.app/introduction/comparison/)
+
 # pieces
 
 - ## 
+
+- ## Having a sudden deep temptation to rewrite my whole side project to strip out Redux and try out React Query and React Context. This would be a biggish undertaking.
+- https://twitter.com/TkDodo/status/1348542727860989953
+- I still really value a lot of the things that I originally liked about Redux - the fact that it encourages stateful thinking about your application and making its behavior deterministic.
+  - But it does entail a lot of boilerplate overhead and being able to strip that out would be really satisfying.
+- I haven't had the need to use context alongside of react-query. 
+  - if you have some state left that is not server state _and_ truly needed everywhere (darkmode toggle is a classic example), context serves nicely.
+  - But often, not many "complex" things are left that warrant useReducer
+- if you like #redux but also appreciate the data fetching ideas that #ReactQuery offer - try out #ReduxToolKit with #RTK-Query
 
 - ## Pardon my stupidity but what are your thoughts on running Redux in a separate thread/worker?
 - https://twitter.com/agusterodin/status/1375569680300040193

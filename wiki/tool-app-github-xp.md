@@ -90,3 +90,9 @@ modified: '2020-12-29T17:45:15.518Z'
 
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community
+
+# github-slow
+
+- download release and repo
+  - https://pd.zwc365.com/
+  - https://shrill-pond-3e81.hunsh.workers.dev/

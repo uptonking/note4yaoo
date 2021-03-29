@@ -1,11 +1,11 @@
 ---
-title: log-news-industry
+title: dev-log-news-industry
 tags: [latest, log, news]
 created: '2019-06-24T11:19:00.127Z'
-modified: '2020-08-27T11:52:21.241Z'
+modified: '2021-03-29T19:15:28.401Z'
 ---
 
-# log-news-industry
+# dev-log-news-industry
 
 # 2021
 

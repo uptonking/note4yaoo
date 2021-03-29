@@ -13,6 +13,11 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## Motivation doesn't last. Neither does inspiration.
+- There are only two solutions to this problem:
+  - We can capture those rare moments and use them to solve hard problems. 
+  - Or we can focus on habits, which will minimize the mental effort to get the important things done.
+
 - ## TIL Webpack v5.20.0 added `output.clean` to auto clean the output directory before emit
 
 - ## Underrated way to learn something: try building a toy version of it. You both learn a little bit about the problem and get better at extracting the essence of something complex.

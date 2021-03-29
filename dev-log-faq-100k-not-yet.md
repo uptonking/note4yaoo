@@ -1,11 +1,11 @@
 ---
-tags: [faq]
-title: log-faq-100k-yet
+title: dev-log-faq-100k-not-yet
+tags: [faq, not-yet]
 created: '2020-01-03T10:25:55.928Z'
-modified: '2020-06-22T09:07:53.075Z'
+modified: '2021-03-29T19:30:08.250Z'
 ---
 
-# log-faq-100k-yet
+# dev-log-faq-100k-not-yet
 
 - reselect vs useMemo
 - 对于智能开关类产品，如灯泡、风扇等，若通过app执行开关命令后，自身硬件的开关状态就会出现不一致的问题

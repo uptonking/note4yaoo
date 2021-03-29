@@ -13,6 +13,20 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## A map quiz for this month's #ironquest - Game
+- https://twitter.com/ShijiaWendy/status/1376465383813615620
+  - [island shape quiz](https://public.tableau.com/views/IslandShapeQuiz/STARTDB?:language=en&:display_count=y&publish=yes&:origin=viz_share_link&:showVizHome=no)
+- I had much fun playing with @Mapbox to make those patterns.
+
+- ## Mermaid for Markdown is not only supported on GitHub but also in #VSCode it seems - code on left, preview on right 
+- https://twitter.com/_s_hari/status/1376353291525881864
+- Correction: Mermaid is supported on #AzureDevOps. 
+
+- ## I would pay so so so much money for a Figma-based service in that:
+- https://twitter.com/Allan/status/1375975277294055425
+  - Adds something like tailwind and/or syncs tailwind.config.js as a Figma design system.
+  - Exports frames as usable React components. Down to linking Figma symbols to JSON coming out of a fetch or axios.
+
 - ## I just published an introduction to the @jsonstat toolkit as a notebook
 - https://twitter.com/badosa/status/1375212974592421889
 - This notebook shows you the main features of the jsonstat-toolkit using data from different official statistics providers like Eurostat, UNECE

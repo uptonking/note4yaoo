@@ -26,6 +26,11 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+
+- ## An epoch-making new feature of CSS container queries are here! Now enable Flag in Chrome Canary to preview
+- https://twitter.com/jieorlin/status/1376395220812619776
+- 
+
 - ## Didn't realise CSS support and a plugin architecture was coming to esbuild. That's super exciting—and great news for vanilla-extract.
 - https://twitter.com/markdalgleish/status/1375580423602888707
 - Unfortunately, it is just a bundler, it does not provide the same rich API as babel, and we cannot operate AST.
