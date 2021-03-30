@@ -13,6 +13,12 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## If you've ever tried to use multiple React renderers in the same app (like `react-dom` , `react-kanva` , and `react-three-fiber` ), you may have noticed Context doesn't cross renderer boundaries.
+- https://twitter.com/acemarke/status/1376659560920928256
+  - There's a neat `useContextBridge` hook that should help that
+- In particular, this might pop up as the classic "can't find store in context" error from React-Redux, when you've got a Redux-connected `react-konva` or `react-three-fiber` component nested inside a React-Redux `<Provider>` in a ReactDOM app, since it can't access the context.
+- I think it actually got worse, when experimenting with reacts new reconciler modes every now and then I'm bumping into a new error that states react detected that a context is being read from two renderers which "isn't supported" 
+
 - ## I stopped using React professionally right before hooks were released. 
 - https://twitter.com/AdamRackis/status/1375484819891752961
   - Getting back into that game now and my fucking god this shit is hard. It is shockingly easy to mess things up in subtle, hard to debug ways.

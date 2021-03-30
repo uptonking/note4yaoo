@@ -40,6 +40,7 @@ modified: '2020-10-22T13:33:45.146Z'
     - for 鸿蒙OS
   - 协同编辑，更适合用在文档或笔记中
   - turn two-column PDFs into a single column
+  - 图文混排，侧重于表格挂件，而不是可视化
 
 - 细节设计
   - 类似github的readme，点击顶部标题，只显示一级目录大纲

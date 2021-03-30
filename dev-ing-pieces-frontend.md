@@ -13,6 +13,11 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- [How to prevent anchor links from scrolling behind a sticky header](https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/)
+- The `scroll-margin-top` property lets you define a top margin that the browser should use when snapping a scrolled element into place.
+  - Now, when the browser jumps to the anchor link, it will leave a margin of 1em at the top
+  - This margin only applies to scroll snapping. The element still has its normal margins within the context of the document.
+
 - [CSS: Width and Max-Width](https://stackoverflow.com/questions/6456468)
   - width CSS property sets an element's width. By default, it sets the width of the content area
   - max-width CSS property sets the maximum width of an element.

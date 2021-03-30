@@ -19,6 +19,9 @@ modified: '2020-12-08T14:43:00.091Z'
 - CodePen is a social development environment. 
 - It comes fully equipped with all the features you'll need to build, test, share, collaborate and even deploy your websites.
 
+- open source alternative
+  - https://github.com/chinchang/web-maker
+
 ## CodeSandbox
 
 - http://codesandbox.io/

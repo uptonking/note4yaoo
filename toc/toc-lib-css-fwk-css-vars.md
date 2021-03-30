@@ -44,6 +44,7 @@ modified: '2021-02-09T13:39:41.705Z'
 - halfmoon /2.1kStar/MIT/202010/css/js
   - https://github.com/halfmoonui/halfmoon
   - https://www.gethalfmoon.com/
+  - https://codepen.io/tahmid-hm-dev/pens/public
   - theming基于css vars，dark-mode变量名前缀为`--dm`
   - 组件级css vars易分离出来
   - 未模块化，一个css文件一万多行

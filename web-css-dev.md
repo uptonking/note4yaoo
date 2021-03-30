@@ -9,7 +9,7 @@ modified: '2021-02-07T18:27:52.684Z'
 
 # guide
 
-- media query中不包含具体样式，只包含css vars
+- 一种技巧：media query中不包含具体样式，只包含css vars
   - https://github.com/propjockey/css-media-vars
   - 甚至可以在media query中预先定义变量，然后在组件中直接写变量
 - 考虑让media queries的breakpoints sortable

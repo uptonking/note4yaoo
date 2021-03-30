@@ -11,6 +11,13 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## For those of you looking to write cross-environment, isomorphic javascript that works in browsers and Node.js --- other than fetch and WHAT-WG streams, what globals from the browser are missing in Node.js that you want to have?
+- https://twitter.com/jasnell/status/1376618110099226626
+- It would be neat if there were an official require(”vm”) factory to produce a browser-compatible context. Something along those lines might be a nice way to sandbox the sometimes incompatible underpinnings.
+- Important: WebSocket + SSE, IndexedDB, FormData, FileSystem, Text{Encoder/Decoder}Stream, Sanitizer
+  - Important-ish: WebRTC/Media*/Video*
+  - Fun, but not important: Bluetooth, USB, Audio
+
 - ## why don't other languages have destructuring assignment like JS added in ES6?
 - https://twitter.com/acemarke/status/1375564793361358851
 - other people are saying it too, but this is generally a functional programming thing that imperative languages are adding. elixir, haskell, ocaml all have it

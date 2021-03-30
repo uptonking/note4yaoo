@@ -13,6 +13,24 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## I don't use TDD This is what I do instead: code -> test -> docs (CTD)
+- https://twitter.com/sseraphini/status/1376636172080922629
+- CPT - code > production > test
+- Tdd is great but it usually it is not so practical while you are still exploring the implementation space
+- I do the opposite: docs code test, DCT
+- TDD is interesting for pure functions that you know the expected result and use the test as a tool to automatically check if you are doing it right. Test functions manually are boring if it's not trivial.
+
+- ## it never ceases to amaze me how much some people will resist showing their code after asking a question and saying "this doesn't work".
+- https://twitter.com/acemarke/status/1376656948926496768
+  - Sometimes I can provide an answer after just hearing a description.
+  - but most of the time, I need to see the _real code_ to debug the issue.
+
+- ## Is there any kind of a utility lib that will scan a JS file and identify code that doesn't match a given set of features supported by a target browser?
+- https://twitter.com/acemarke/status/1376703719669182471
+  - I'm basically looking for something like (notional): `is-browser-safe ie11 my-file.js` .
+- eslint-plugin-compat
+- eslint-ie11-compat
+
 - ## What's the right process for a library to drop support for IE11/ES5-only environments in its published artifacts? 
 - https://twitter.com/acemarke/status/1376381894279987209
   - Should that be a new major, or a minor?

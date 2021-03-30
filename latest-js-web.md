@@ -102,3 +102,24 @@ modified: '2020-09-26T12:52:33.493Z'
     - `import * as Foo from './foo';` // namespace import
     - `import { bar, bar2, bar3 } from './foo';` // named import
     - with a modern webpack setup, the two will generate the same compiled/transpiled JS
+
+# discuss
+
+- ## Prediction: we'll see MORE runtimes for JavaScript on the backend in the coming years. Many more. 
+- https://twitter.com/brianleroux/status/1376568886032695297
+  - Node has a nice lead and will keep it for at least another 3-5 years. 
+  - Deno is obvious up and comer. 
+  - CloudFlare has their own runtime.
+  -  So that is at least three. Who is next?
+- jstime and xs
+- Let’s remember that Rhino was first 😉
+  - Netscape Enterprise Server's server-side environment shipped before Rhino
+- I think WASM will be the target for the runtimes. JS is just the authoring abstraction.
+  - thought so too in 2014 ish and here we are still saying that; not saying it isn't going to happen but also not going to wait for it to do even basic table stakes things
+  - Cloudflare workers supports wasm, it's how you get Rust, C, etc. It's shaping up to be a pretty good platform
+- Elsa is a JS runtime written in Go
+- Aren’t node and deno based on the same runtime (v8)?
+  - yep. and cloudflares thing too. more of an interpreter than a runtime tho isn't it…
+- Netflix has had its own for years. Powers the TV UI.
+  - Correct me if I’m wrong, but from what I remember isn’t it more a forked V8 & the “browser” part is the fully custom part.
+  - I remember the V8 part because of backporting issues to 32bit for newer parts of V8

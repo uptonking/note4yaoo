@@ -11,6 +11,11 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## Why is JavaScript hardly taught in any major universities? Based on the current market, it should be 80% of the entire curriculum!
+- https://twitter.com/SimonHoiberg/status/1376569844993232902
+- JavaScript is a bad programming language for first time learners. Preparing students for a single job makes them unprepared to jump from one task to the other and how to teach themselves. CS is not JavaScript, the other way round.
+- JS is bad for teaching theory. Theory doesn't go out of style, so the language used is almost an after thought. Also JS changes WAY to fast and too often. If you know the theory, picking up JS is more a matter of time to learn the syntax. (and the gotchas)
+
 - ## I'm in the market for a ticketing system (eg Zendesk). Ideally one developer-friendly, with a solid API.
 - https://twitter.com/JoshWComeau/status/1370831667749863428
 - Helpscout is really great. It’s email based from the customer side, whereas Zendesk it feels like you’re talking to help desk with their ticketed emails and I hated it.

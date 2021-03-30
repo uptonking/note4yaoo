@@ -11,14 +11,12 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-
 - ## we added an oft-requested feature to the SvelteKit beta: SPA mode, aka 'no SSR
 - https://twitter.com/Rich_Harris/status/1376589240373493771
 - If hydrate is false on some pages, how is routing handled between hydrated and non-hydrated pages? 
   - Does the page request hit the server when navigating to or away from a “hydrate = false” page (instead of using the client side router)?
   - hydrate only affects the first page you hit, so as long as you don't specify `router=false` all subsequent navigations will be handled by the client-side router, even though the initial page isn't made interactive
   - this is something you only get if you use `<a>` elements for navigation rather than framework/router-specific `<Link>` components. remember to #usetheplatform
-
 
 - ## What's faster than a static HTML file?
 - https://twitter.com/mjackson/status/1376588198118232066
@@ -41,6 +39,9 @@ modified: '2021-01-08T17:13:53.965Z'
   - Download as Vite project
 - @vue/compiler-sfc
   - Lower level utilities for compiling Vue Single File Components
+- This project also includes an ad-hoc setup that rewrites a bunch of cross-importing esm source code and evaluate them as actual modules (without bundling) in a sandbox iframe.
+  - Does require a JS parser, but the actual implementation is just a few hundred LOCs. Maybe useful to abstract into something reusable 
+  - We use https://github.com/plnkr/runtime for this on the Mirage repl, did you happen to come across it?
 
 - ## I think the `@` for event handler was mostly popularized by Vue and later on by LitHtml. 
 - https://twitter.com/RyanCarniato/status/1375527347948941315

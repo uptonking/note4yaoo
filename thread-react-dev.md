@@ -11,6 +11,13 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## I found that migration of complex(ish) class components to hooks is a great exercise to understand hooks. 
+- https://twitter.com/sseraphini/status/1376892107416338441
+  - I have put this as a task in the new developer onboarding process. So we update some old code, new devs to learn hooks and learn the system.
+- simple components are easy to convert
+  - but hard ones with ref, lifecycles, and singleton can be tricky to get right
+  - the only way is to practice to figure it out all the details
+
 - ## React people hear me out:
 - https://twitter.com/lmatteis/status/1375557621789384705
   - VSCode plugin that renders components

@@ -19,6 +19,7 @@ modified: '2020-10-22T13:34:14.848Z'
 - gantt for project management
 - database-table-viewer
 - ecommerce-order-list
+- comparison-table: 产品参数对比，参考国内手机厂商新品发布会的ppt
 
 - **layout**
 

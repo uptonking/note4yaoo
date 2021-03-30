@@ -20,7 +20,13 @@ modified: '2021-02-28T07:29:07.622Z'
 
 # pieces
 
-- ## 
+- ## RTK Query vs React Query - which to use in what scenarios?
+- https://www.reddit.com/r/reactjs/comments/mggpr7/rtk_query_vs_react_query_which_to_use_in_what/
+- In general, the main reasons to use RTK Query are:
+  - You already have a Redux app and you want to simplify your existing data fetching logic
+  - You want to be able to use the Redux DevTools to see the history of changes to your state over time
+  - You want to be able to integrate the RTK Query behavior with the rest of the Redux ecosystem
+  - Your app logic needs to work outside of React
 
 - ## Having a sudden deep temptation to rewrite my whole side project to strip out Redux and try out React Query and React Context. This would be a biggish undertaking.
 - https://twitter.com/TkDodo/status/1348542727860989953
@@ -67,7 +73,7 @@ modified: '2021-02-28T07:29:07.622Z'
   - IMHO it has advantages and can optimize some selectors more easily than Reselect
   - Maybe the impact of R&T may be smaller for the Redux  ecosystem once useContextSelector land?
 - Really not sure how much benefit it's going to have.
-  - The real point of memoized selectors is _derived_ data, ie, `todos.map(t => t.text)` - both avoiding expensive recalculations, and returning same references if inputs haven't changed.
+  - The real point of memoized selectors is _derived_ data, ie,      `todos.map(t => t.text)` - both avoiding expensive recalculations, and returning same references if inputs haven't changed.
   - Eyeballing it, it seems like R&T _might_ help with the _comparisons_ of those (even deeply). But it wouldn't help with _avoiding_ the calculations in the first place.
   - Also, I don't see as much benefit for updates, given the existing of Immer and its use in RTK.
 - if you filter() and it does not filter anything, or map and it does not transform anything, with a record it can return the same array. 
