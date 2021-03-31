@@ -24,6 +24,9 @@ modified: '2021-02-09T13:39:41.705Z'
   - spectrum-css(pcss)，patternfly(scss)，halfmoon(css)，infima(pcss)，
   - cutestrap(css)，chipolette(less)，aqua(scss)，
 
+- css框架
+  - 一般结构: layout, elements, forms, components
+
 # popular
 
 - pico.css /65Star/MIT/202010/scss/文档优秀
@@ -60,6 +63,7 @@ modified: '2021-02-09T13:39:41.705Z'
     - However, the framework still comes with a powerful JavaScript library with no extra dependencies, such as jQuery.
   - The class names should be instantly familiar to anyone who has used Bootstrap.
     - the containers, grid system and the flex utilities found in Halfmoon CSS are almost direct copies of the ones found in Bootstrap
+  - [Considerations for Making a CSS Framework](https://css-tricks.com/considerations-for-making-a-css-framework/)
 
 - infima /60kStar/MIT/202102/css
   - https://github.com/facebookincubator/infima

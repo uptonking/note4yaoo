@@ -20,6 +20,19 @@ modified: '2021-02-28T07:29:07.622Z'
 
 # pieces
 
+- ## 
+
+
+- ## I don't recommend any global state management now, 
+- https://twitter.com/dogetoge/status/1377097524490641415
+  - because there are too many state management libraries. They are all the same. 
+  - With the development of react concurrent, we tend to build state management into the framework. 
+  - React itself is also a state management, isn't it?
+- It's funny that before React it wasn't a thing. 
+  - Part of that because state wasn't respected enough, conflated with the Model in MVC, or the libraries were reactive in MVP with their own primitives. React created the space where we got this new tool.
+  - Patterns like reducers, and state machines are all possible with provided primitives. 
+  - Although until Context is performant enough to recommend in all cases this will not come to pass because React's state management is tied to the component system which has consequence.
+
 - ## RTK Query vs React Query - which to use in what scenarios?
 - https://www.reddit.com/r/reactjs/comments/mggpr7/rtk_query_vs_react_query_which_to_use_in_what/
 - In general, the main reasons to use RTK Query are:

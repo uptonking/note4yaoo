@@ -13,6 +13,10 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## to repeat my favorite software development mantra: "make it work. make it right. make it fast."
+- https://twitter.com/acemarke/status/1376969090552725506
+- I hate perfectionism, I rather create something initially janky but a really cool thing/idea THEN work on improving it and optimizing it.
+
 - ## I don't use TDD This is what I do instead: code -> test -> docs (CTD)
 - https://twitter.com/sseraphini/status/1376636172080922629
 - CPT - code > production > test
