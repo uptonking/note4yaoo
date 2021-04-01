@@ -11,6 +11,8 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
 - ## we added an oft-requested feature to the SvelteKit beta: SPA mode, aka 'no SSR
 - https://twitter.com/Rich_Harris/status/1376589240373493771
 - If hydrate is false on some pages, how is routing handled between hydrated and non-hydrated pages? 

@@ -13,6 +13,30 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Confession: 80% of what I enjoy about @sveltejs could be built atop React/Preact. 
+- https://twitter.com/dan_abramov/status/1377302931096154112
+  - I think it'd greatly improve the DX for devs struggling w/ React's extreme lack of opinions.
+- I think it’s worth noting we *are* starting to have opinions about some things. E.g. data loading. Routing is related to that. 
+  - We just don’t do it only because some solution is popular. We do it where the whole strategy depends on it. There are downsides and upsides to this.
+  - What we want to avoid is picking a solution because it’s common (but not because of some first principle reason) and then realizing it doesn’t work with things that we actually *do* have opinions about that come from first principles.
+  - The frustrating thing about our approach is that it’s slow and takes a long time. The nice thing about it is that each of the pieces play together well as a cohesive whole and integrate in a deep way. And each new piece informs constraints for the next pieces.
+- Like, how could we have opinions on routing before Server Components? It would be a shame to standardize some approach and then have to backtrack because it doesn’t work with the paradigm that’s actually built from first principles. But now we have the constraints for next steps.
+- Think about feature intersections. What happens at intersection of code splitting and server rendering? Data fetching and animations? Loading states and streaming rendering? Routing and cache invalidation? “Convenient” solutions may solve individual aspects but fail to compose.
+- I agree with @heystevenyung it was great that ecosystem could innovate. But the next step isn’t to cement the current state. It’s to learn from it and upstream the lessons into the architecture. Our current focus is data loading, server rendering, and code splitting.
+  - We learned that we shouldn’t put all the logic on the client. 
+  - We learned that initial HTML should stream instead of waiting for all data. 
+  - We learned that large blocking JSON blobs are bad. 
+  - Waterfalls bad, but colocation good. 
+  - Loading too much is bad, loading too late is also bad.
+- These are all problems of most mainstream solutions. Both in React and other ecosystems. 
+  - That’s clearly not what we need to standardize on! 
+  - Instead, we need to provide composable primitives that let the ecosystem default to good outcomes. 
+  - That’s been, and still is, our focus.
+- One huge benefit for everyone with React adopting these approaches is platform support returning. Perhaps unsurprising but many platforms/services down't support streaming back responses and always been an unfortunate barrier. React's clout should help here.
+- I haven’t seen that Marko article by Patrick before. 
+  - @acdlite just said a few days ago he was surprised BigPipe did not end up influential, and seemed largely forgotten with SPAs. But the article references BigPipe. 
+  - Our new streaming server renderer is inspired by BigPipe too.
+
 - ## If you've ever tried to use multiple React renderers in the same app (like `react-dom` , `react-kanva` , and `react-three-fiber` ), you may have noticed Context doesn't cross renderer boundaries.
 - https://twitter.com/acemarke/status/1376659560920928256
   - There's a neat `useContextBridge` hook that should help that
