@@ -261,3 +261,7 @@ modified: '2021-03-03T21:48:48.379Z'
 
 - https://github.com/sueddeutsche/editron
   - Editron is a JSON-Editor, which takes a JSON-Schema to generate an HTML form for user input and live validation
+
+- [JavaScript Editor from Scratch to live-edit CSS Values in your Browser](https://dev.to/typo3freelancer/javascript-editor-from-scratch-to-live-edit-css-values-in-your-browser-244)
+  - https://codepen.io/uptonking/pen/PoWmWEd
+  - 基于css vars实现

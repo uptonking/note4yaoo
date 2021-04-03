@@ -11,6 +11,26 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+
+- ## web components lock you in to the web - use React primitives like View, Text, Image and be free
+- https://twitter.com/notbrent/status/1135103126724325377
+- Are you referencing RNW?
+  - that’s one possible implementation, yeah. react-primitives was another. maybe at some point this will all just be part of React itself
+
+- ## preact-custom-element: Convert any Preact component to a web component!
+- https://twitter.com/marvinhagemeist/status/1300822560804872192
+  - Propagate context through Custom Element boundaries
+  - Reflect DOM property changes to Preact props
+  - Sync DOM attributes with props 
+- How does that work without using a class for the custom element?
+  - Oh, I see the Reflect.construct().
+  - That's only supported in browsers that have classes, and it's much slower than a real class. Why not use classes directly?
+  - Need to check the git history. It was already there when I came on board. I'll get back to ya
+- I have a question. I recently gained experience with stencil and found that web components props only consume strings. The Preact approach also allows me to use complex prop binding.
+  - In my opinion all renderers should set properties only. Attributes can be reflected by the elements themselves if needed. One of few useful use cases for attributes is for CSS selectors where it makes sense. Otherwise you only need ever properties.
+  - This is an interesting idea. However, there are still a number of native element attributes that don’t map back and forth to properties, e.g. aria attributes. What do we do about those?
+  - Fall through when there is no corresponding property
+
 - ## If you have `class SubEl extends HTMLElement {}` .
 - https://twitter.com/justinfagnani/status/1359213920272044034 
   - is there any way to dynamically add something like `SubEl.prototype.disconnectedCallback = function() { }`

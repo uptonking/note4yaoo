@@ -6,6 +6,7 @@ modified: '2021-03-22T19:03:55.040Z'
 ---
 
 # web-dev-ui-navbar-sidebar
+# details-summary
 
 # navbar
 
@@ -65,6 +66,13 @@ modified: '2021-03-22T19:03:55.040Z'
   - spectrum，halfmoon
 - 点击导航条的汉堡菜单，不出现sidebar，额外内容显示在导航条下方
   - github，bulma，bootstrap
+
+- sidebar作为放置目录TOC的容器
+  - spectrum css docs的目录用的是多层嵌套列表 nav > ul > li > ul >li
+  - bulma docs的目录用的是 div > ul > li
+  - pico docs的目录用的是 details > ul >li
+  - bootstrap docs的目录用的是 aside > nav > ul > li > ul > li
+  - halfmoon docs的目录用的是 div > a
 
 - ## eg-halfmoon
 

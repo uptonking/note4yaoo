@@ -13,12 +13,17 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## You can use the `details` element to create native HTML accordion.
+- https://twitter.com/denicmarko/status/1348523949014065153
+- Only problem, so you've got to control your according(grouped), closed the previous on open of next
+- Since there's no toggling of classes or pseudo-classes, you can't use CSS to add transitions to `<details>` .
+  - `<details>` has one "toggle" event, but that's fired after the state change. 
+
 - ## By nesting a `<dialog open>` inside a `<details>` you can create an infobox using only #CSS.
 - https://twitter.com/bramus/status/1374090556566089738
   - https://codepen.io/bramus/pen/KKaPJdr
   - You might not want to use this "in production" though, as is most definitely has #compat, #a11y and #ux issues.
 - That's clever and it's seems to work fine on iOs using VoiceOver!
-
 
 - ##  If you have form fields where trailing/leading spaces don't matter, just trim the value instead of failing
 - https://twitter.com/tomayac/status/1361972883468279808

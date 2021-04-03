@@ -26,10 +26,21 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Use "clip-path: polygon()" to create shapes with CSS 
+- https://twitter.com/jh3yy/status/1377782704285097986
+  - Need a drop shadow? Apply the "clip" to a pseudo-element 
+  - Check this demo that's a "clip-path" version of the famous [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/) article
+  - https://codepen.io/jh3y/pen/RwKpLYg
+  - the demo is created with @reactjs && @prismjs
+- How does that "drop-shadow" trick work? 
+1. Create an element.
+2. Create a pseudo-element.
+3. Clip the pseudo-element.
+4. Apply filters to the parent.
+- For hollow polygons, you can use the zero-width tunnel technique
 
 - ## An epoch-making new feature of CSS container queries are here! Now enable Flag in Chrome Canary to preview
 - https://twitter.com/jieorlin/status/1376395220812619776
-- 
 
 - ## Didn't realise CSS support and a plugin architecture was coming to esbuild. That's super exciting—and great news for vanilla-extract.
 - https://twitter.com/markdalgleish/status/1375580423602888707

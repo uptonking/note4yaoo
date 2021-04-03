@@ -19,6 +19,11 @@ modified: '2020-10-22T13:33:45.146Z'
 - tips
   - 主流的编辑器采用的是live preview，实时预览
 
+# md-syntax
+
+- core-options
+  - render line breaks in .md as line breaks in html
+
 # features
 
 - table editor for markdown
@@ -44,6 +49,7 @@ modified: '2020-10-22T13:33:45.146Z'
 
 - 细节设计
   - 类似github的readme，点击顶部标题，只显示一级目录大纲
+  - [Tips and Tricks for using Markdown](https://github.com/MishManners/GitHub-Like-A-Boss/blob/main/markdowntricks.md)
 
 ## features-copied
 

@@ -47,3 +47,5 @@ modified: '2020-12-12T19:22:59.759Z'
 - Interesting idea. Would be helpful especially for lazy loaded angular apps where every module is importing common module.
 
 # ref
+
+- [Modern Full-Stack Development with Nest.js, React, TypeScript, and MongoDB](https://auth0.com/blog/modern-full-stack-development-with-nestjs-react-typescript-and-mongodb-part-1/)

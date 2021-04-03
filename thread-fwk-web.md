@@ -11,6 +11,25 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Q for indie hackers, what’s your preferred stack?
+- https://twitter.com/AspynPalatnick/status/1376314834447429637
+  - Right now I’m exploring React + NestJS + MongoDB for web dev but would be great to hear what others are using
+- Depends on the product. Node, Express, Mongo, Nuxt. Or Laravel, mySQL, Vue. For CSS it's always tailwind.
+- ReactJS, MongoDB and either MeteorJS (for near real-time client apps) or NextJS for static-ish sites. ChakraUI for styling. I'm going to look into NestJS now. I'd not heard of it.
+
+- ## The new vanguard charitable website has no real links on it. 
+- https://twitter.com/_developit/status/1212229704771653632
+  - What's crazy is that everything you click changes the url, and direct links do work, but nothing is an `<a href>` , just React components and click handlers. 
+- This is one of the reasons I wouldn't ship a `<Link>` component in preact-router. 
+  - Making the "API" `<a href="/">` serves as a constant reminder that links are vital to the health of the web.
+  - We get asked a lot about how to pass props to a route. To me, that's a red flag!
+- Hm, wouldnt this mean you SHOULD shit a link component that renders a regular anchor tag?
+  - We do, but that also makes it pointless. The router is designed to work with `<a>` natively.
+  - But how does this work? `<a>` does not do a `history.push` . Or are you listening to clicks on `<a>` globally?
+  - The library listens for all link clicks and tests if they can be handled by the available routes. If it can be handled, the default navigation is prevented and pushState routed on the client. Since this is only applied to simple clicks, all other link behaviours still work.
+- This sounds like a lot of code for testing this... I chose to ship hookrouter with a custom anchor component that pushes to history. Regular anchors just do their native thing.
+  - Not sure how reducing API surface could increase testing needs - it's quite the opposite.
+
 - ## fetch() api? Eugh. You’re using “objects” to drive a protocol that’s all about text. 
 - https://twitter.com/pfrazee/status/1377640086435692547
   - They’ve played us for absolute fools.

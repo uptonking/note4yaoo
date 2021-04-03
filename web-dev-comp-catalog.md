@@ -31,6 +31,9 @@ modified: '2020-12-21T08:03:35.993Z'
 - resize
 - layer
   - 考虑：portal的target容器默认是组件自身或document.body
+- typing
+  - 文字逐个打出
+  - 在文字较多时，自动换行；多到占满容器时，自动缩小
 
 # layout
 

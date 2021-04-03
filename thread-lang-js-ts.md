@@ -11,6 +11,11 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Which could pick non-enumerable properties from object
+- https://twitter.com/buildsghost/status/1378138160664735744
+- To be clear, there are correct answers either way, Lodash and TypeScript made different choices (intentionally or not), each might have been the most reasonable choice for them. I'm wondering if a new library should match one or the other
+- TypeScript's behavior matches my mental model. Omit to me is "copy literally everything except these specific properties" IMO that includes non-enumerable properties, but tbh I don't think I care about non-enumerable properties very often so I haven't thought too hard about it.
+
 - ## For those of you looking to write cross-environment, isomorphic javascript that works in browsers and Node.js --- other than fetch and WHAT-WG streams, what globals from the browser are missing in Node.js that you want to have?
 - https://twitter.com/jasnell/status/1376618110099226626
 - It would be neat if there were an official require(”vm”) factory to produce a browser-compatible context. Something along those lines might be a nice way to sandbox the sometimes incompatible underpinnings.

@@ -11,6 +11,20 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+
+- ## Design system tip: if you have opaque backgrounds/borders on UI components, use mix-blend-mode: multiply, so they work on different coloured backgrounds.
+- https://twitter.com/colmtuite/status/1377968794434428929
+- I have always struggled with this concept. How do you ensure contrast ratios for accessibility? My color system is contrast based. So I can recommend a lighter color within the same hue to put on top of it rather than allow opacity which could drastically shift based on context
+- Our color system is designed for specific, but extremely common, use cases.
+  - So 300–500 are designed for interactive backgrounds, like hover, active, selected, and highlighted states.
+  - 200 is designed for static backgrounds, and 300–500 are guaranteed to work well on top.
+- What do you do for dark mode?
+  - You could try mix-blend-mode: difference, or use alpha transparency instead, or a few different things.
+- This is what I've been looking for to use instead of postcss color functions. Gotta give a try!
+- I think rgba works too
+  - Yep, but then they wouldn't be opaque.
+  - I mean... technically yes? but functionally they're not opaque if you're using a blend mode
+
 - ## Destructive actions should be cancellable (even better, they should be undoable).
 - https://twitter.com/fortysevenfx/status/1376253883417251843
 - I think I’d prefer a “are you sure” modal to instantly click instead of the wait here
