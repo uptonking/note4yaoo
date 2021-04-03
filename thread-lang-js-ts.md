@@ -18,6 +18,11 @@ modified: '2021-01-28T14:34:20.579Z'
   - Important-ish: WebRTC/Media*/Video*
   - Fun, but not important: Bluetooth, USB, Audio
 
+- ## [RFC] Proposal for dropping ie11 support in Vue 3
+- https://twitter.com/youyuxi/status/1378006612435214337
+  - https://github.com/vuejs/rfcs/discussions/296
+- [The cost of supporting IE11 in Vue 3](https://github.com/vuejs/rfcs/blob/ie11/active-rfcs/0000-vue3-ie11-support.md#motivation)
+
 - ## why don't other languages have destructuring assignment like JS added in ES6?
 - https://twitter.com/acemarke/status/1375564793361358851
 - other people are saying it too, but this is generally a functional programming thing that imperative languages are adding. elixir, haskell, ocaml all have it

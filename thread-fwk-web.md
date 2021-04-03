@@ -11,7 +11,16 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## fetch() api? Eugh. You’re using “objects” to drive a protocol that’s all about text. 
+- https://twitter.com/pfrazee/status/1377640086435692547
+  - They’ve played us for absolute fools.
+  - Make HTTP requests the way TBL intended with HTTP-Template-Literal
+- Why would you ever do things other than string parsing and interpolation? Explain to me how variables can have “types” other than strings when I’m looking at the values and they’re clearly made of text
+  - IIRC, you are describing Tcl
+  - I think I tried it once and it wasn’t much fun to use. But many of the ideas seem solid—especially Tk.
+  - I did program extensively in tcl and it was a nice language, but today... I would like to see how it works with VSCode.
+- This is surprisingly a brilliant take on HTTP requests in JS
+- Add things like character encoding, form data, easier testing, binary payloads, debugging requests that are bigger than a simple json, etc. Please don't do that in production or anywhere else.
 
 - ## we added an oft-requested feature to the SvelteKit beta: SPA mode, aka 'no SSR
 - https://twitter.com/Rich_Harris/status/1376589240373493771
