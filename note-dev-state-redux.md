@@ -141,6 +141,8 @@ modified: '2020-11-02T06:05:38.780Z'
 - [用redux-toolkit 改造你的redux](https://juejin.im/post/6844904129178009613)
   - https://github.com/acivan/react-rtk-ts
 
+- 202104-switch RTK's build tooling from tsdx to esbuild
+
 # ref
 
 - [Why you should NEVER use Redux with Angular](https://morioh.com/p/548aad273e3e)

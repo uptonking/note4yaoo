@@ -48,6 +48,11 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/ag-grid/ag-grid
   - https://www.ag-grid.com/javascript-charts-api-explorer/
   - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
+- rgraph /4Star/MIT/202104/js
+  - https://github.com/heyesr/rgraph
+  - https://www.rgraph.net/
+  - started in 2008 and was initially canvas only.
+  - Now it has support for over 60 responsive chart types across SVG and canvas
 
 # geo-charts
 

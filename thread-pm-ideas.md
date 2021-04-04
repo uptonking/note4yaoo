@@ -13,7 +13,16 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
-- ## 
+- ## I'm so glad I used MDX for my blog. 
+- https://twitter.com/joshwcomeau/status/1243136771652751360
+  - It enables things that otherwise would not be possible with Markdown or a CMS, while still being a consumable data source (unlike having the posts be all-JSX)
+- I created an `<Asterisk>` component because I wanted to add XKCD-style "jokes on hover". 
+  - Plus, I tend to be very verbose, and this means I can pack some of that away into an opt-in annotation.
+  - For tangential information, I have a `Sidenote` component. It has a `title` prop which accepts JSX, so I can use any special formatting within it. Also a `type` which accepts info/warning/error/success.
+  - For code snippets, I built a little playground component on top of react-live. You can pass props using the typical Markdown code-snippet syntax. 
+  - Because animated GIFs tend to be huge, I use "video GIFs", similar to social media platforms. I created a component for this, and allowed it to support both `light` and `dark` variants, to swap out the src depending on the user's color theme.
+  - The examples I'm showing are JSX-heavy, which might give you the wrong idea. For the most part, my blog posts look like any other Markdown doc.
+- Because HTML is valid Markdown I like using Web Components to do the same thing. 
 
 - ## cascading data updates
 - https://twitter.com/chris_whong/status/1376626993614184452

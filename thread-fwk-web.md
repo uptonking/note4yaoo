@@ -11,6 +11,10 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## Did a huge refactor of macos.now.sh, moved from Styled Components to plain old SCSS modules, threw out some stuff, and the size savings were 100kb
+- https://twitter.com/puruvjdev/status/1378294873384611840
+  - Plus all the CSS now lives in a .css files, rather than injected by JS in runtime, so much more performant!!
+
 - ## Q for indie hackers, what’s your preferred stack?
 - https://twitter.com/AspynPalatnick/status/1376314834447429637
   - Right now I’m exploring React + NestJS + MongoDB for web dev but would be great to hear what others are using

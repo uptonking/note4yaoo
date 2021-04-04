@@ -11,6 +11,19 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## As a designer & indie maker, I must tell you this: Visual design (read: aesthetic) is the least important thing to focus on. 
+- https://twitter.com/philipyoungg/status/1378658135456448513
+  - Make it work and focus on UX (onboarding(onboarding是新用户引导流程, 是刺激用户激活的增长手段之一), reduce friction(分歧，争执；摩擦), good contrast). 
+  - Visual is the deciding factor when your competitor has equally good product.
+- Similar app as Session has similar pricing but make more revenue each month despite having uglier visual design. Why?
+  - They have integrations (Todoist, JIRA etc), 
+  - available on web (don't need to install app), 
+  - they have simple to do list
+  - ...essentially reduce friction
+- So, stop focusing on logo design, brand name, aesthetic, etc
+  - It doesn't matter if your product doesn't solve the problem and have many frictions. 
+  - I regret spent a lot of time (even days) designing linear and radial gradient for Session. Twice even (for light and dark mode).
+
 - ## Why is JavaScript hardly taught in any major universities? Based on the current market, it should be 80% of the entire curriculum!
 - https://twitter.com/SimonHoiberg/status/1376569844993232902
 - JavaScript is a bad programming language for first time learners. Preparing students for a single job makes them unprepared to jump from one task to the other and how to teach themselves. CS is not JavaScript, the other way round.

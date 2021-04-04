@@ -9,6 +9,12 @@ modified: '2021-02-28T08:06:41.340Z'
 
 # pieces
 
+- ## I figured out how to use d3 and TopoJSON to render an animated SVG map of vaccinations by US county
+- https://twitter.com/simonw/status/1378583374235717637
+  - [US county vaccinations choropleth map](https://observablehq.com/@simonw/us-county-vaccinations-choropleth-map)
+- Turn it into an mp4 with observable-prerender!
+  - [Introducing observable-prerender - Pre-render Observable notebooks with Puppeteer!](https://observablehq.com/@asg017/introducing-observable-prerender)
+
 - ## I wrote up a guide for combining React & d3
 - https://twitter.com/Wattenberger/status/1375063666840772615
   - [react + d3.js](https://wattenberger.com/blog/react-and-d3)

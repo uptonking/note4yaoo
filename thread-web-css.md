@@ -26,6 +26,19 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+
+- ## 
+
+- ## What are the most common things you use CSS filters/backdrop filters for? 
+- https://twitter.com/adamwathan/status/1378423163185463301
+  - Trying to figure out which values should exist for each filter function in Tailwind by default — always the absolute hardest part of building any new feature 
+  - Making a bit of progress on some sensible default constraints here 
+- Gray scale the page on slow page transitions.
+
+1. grayscale() for disabled items.
+2.  blur() mostly for modal backgrounds.
+3. drop-shadow() for non-rectangular shapes (e.g. icons).
+
 - ## Use "clip-path: polygon()" to create shapes with CSS 
 - https://twitter.com/jh3yy/status/1377782704285097986
   - Need a drop shadow? Apply the "clip" to a pseudo-element 

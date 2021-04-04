@@ -1,11 +1,11 @@
 ---
-title: thread-viz-canvas-webgl-examples
+title: thread-viz-examples-canvas-webgl
 tags: [canvas, examples, thread, viz, webgl]
 created: '2021-03-24T10:24:38.895Z'
-modified: '2021-03-24T10:25:09.618Z'
+modified: '2021-04-04T14:43:15.420Z'
 ---
 
-# thread-viz-canvas-webgl-examples
+# thread-viz-examples-canvas-webgl
 
 # pieces
 

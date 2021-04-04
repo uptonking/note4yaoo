@@ -11,6 +11,19 @@ modified: '2021-01-06T14:39:56.358Z'
 
 - ## 
 
+- ## Made my database access about 20x faster (and smaller!) by removing some tables and storing json in sqlite instead. 
+- https://twitter.com/steipete/status/1378633040289792009
+  - The JSON1 extensions are compiled into iOS and make queries super easy. 
+- Worked with a German car manufacturer during my bachelor‘s thesis. We tried many different things to optimize database performance: schema normalization, in-memory search in the app, etc. What helped most with least effort? Installing a freaking indexing plugin for text fields 
+- How did you identify those tables and json -> sqlite to make db faster? Analysing db queries processing time?
+  - One table had on average 100x more rows than the others 😬
+  - And yeah track time in queries
+- For most apps we use json files instead of a database. Not possible for all apps but it is waaay faster when it is possible.
+  - We have done it even with large data sets. The large bulk could be referenced by an id (= filename) so not generally applicable, but still.
+  - We have another app with read/write data sync’ed with backend, everything in json files. Works great. Again, no generally applicable.
+- It's not possible to query on JSON values - or is it?
+  - SQLite supports partial indexes and indexes on expressions, as ‘big’ DBMSs do. You can build indexes on generated columns and even turn SQLite into a document database.
+
 - ## Declarative data modelling has been the heart of @KeystoneJS from the start, but mapping it to SQL database structure is proper hard. 
 - https://twitter.com/JedWatson/status/1369644213067935745
 - The balance @prisma have struck with Migrate - auto gen’d sync, with the escape hatch of real SQL when you need it - is a game changer

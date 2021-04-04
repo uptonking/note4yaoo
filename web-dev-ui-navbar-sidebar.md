@@ -6,7 +6,6 @@ modified: '2021-03-22T19:03:55.040Z'
 ---
 
 # web-dev-ui-navbar-sidebar
-# details-summary
 
 # navbar
 
