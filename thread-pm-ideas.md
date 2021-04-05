@@ -13,6 +13,12 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+
+- ## If you use Next.js, what is your favourite part about it?
+- https://twitter.com/heybereket/status/1378889849235775489
+- Speed, fast refresh, next/image, SSR, ISR!
+- The examples folder on GitHub. Every important OS project should have sth like that
+
 - ## I'm so glad I used MDX for my blog. 
 - https://twitter.com/joshwcomeau/status/1243136771652751360
   - It enables things that otherwise would not be possible with Markdown or a CMS, while still being a consumable data source (unlike having the posts be all-JSX)

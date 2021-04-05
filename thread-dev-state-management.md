@@ -22,6 +22,22 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## For the last ~2 months I’ve been using Redux with a game engine, and for the last week with Preact. 
+- https://twitter.com/orta/status/1378983491250106369
+  - I’ve been constantly impressed by how thoroughly documented Redux is, and the useSelector API is absolutely stunning design. Great work.
+  - I’m now reasonably convinced that a lot of the criticism I’ve seen of Redux comes from how people use it in their codebases vs instead of anything intrinsic to the abstraction.
+- btw, you might be interested in the main discussion threads where we designed the React-Redux hooks API. Lot of technical constraints and design choices for something _seemingly_ simple!
+  - [The History and Implementation of React-Redux](https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/)
+- I found it difficult to explore selectors in large code bases, as they are just global functions rather than getters that are listed by autocomplete.
+  - We struggled with proper encapsulation, parametrized caches and polymorphism (for different kinds of dialogs provided by modules).
+  - From my memory, we had performance problems with selectors that returned arrays which are passed as props to a react component, especially when these selectors depend on props of the react component.
+  - We never had these kind of problems again with mobx.
+- A lot of prior criticisms I had heard:
+  - Hard to type
+  - Verbose API
+  - Forces all components to go through redux APIs
+  - Doesn’t scale well
+  - It’s likely that these all had some validity pre- react hooks, and pre redux-toolkit.  Coming in fresh today it’s worth re-evaluating
 
 - ## I don't recommend any global state management now, 
 - https://twitter.com/dogetoge/status/1377097524490641415
@@ -86,7 +102,7 @@ modified: '2021-02-28T07:29:07.622Z'
   - IMHO it has advantages and can optimize some selectors more easily than Reselect
   - Maybe the impact of R&T may be smaller for the Redux  ecosystem once useContextSelector land?
 - Really not sure how much benefit it's going to have.
-  - The real point of memoized selectors is _derived_ data, ie,      `todos.map(t => t.text)` - both avoiding expensive recalculations, and returning same references if inputs haven't changed.
+  - The real point of memoized selectors is _derived_ data, ie, `todos.map(t => t.text)` - both avoiding expensive recalculations, and returning same references if inputs haven't changed.
   - Eyeballing it, it seems like R&T _might_ help with the _comparisons_ of those (even deeply). But it wouldn't help with _avoiding_ the calculations in the first place.
   - Also, I don't see as much benefit for updates, given the existing of Immer and its use in RTK.
 - if you filter() and it does not filter anything, or map and it does not transform anything, with a record it can return the same array. 

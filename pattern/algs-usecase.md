@@ -31,6 +31,9 @@ modified: '2020-12-20T15:24:16.216Z'
   - ref
     - https://www.zhihu.com/question/20418254
 
+- ## Voronoi polygons for hover interactivity of points are popular and make sense to dataviz practitioners but maybe we should have been teaching people how to use quadtrees instead? 
+- https://twitter.com/Elijah_Meeks/status/1378880759713333252
+
 # ref
 
 - [世界上有哪些代码量很少，但很牛逼很经典的算法或项目案例？](https://www.zhihu.com/question/358255792)

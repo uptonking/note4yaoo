@@ -7,6 +7,14 @@ modified: '2021-02-09T19:25:20.378Z'
 
 # thread-blog-stars
 
+# course
+
+- [Here is how to access Kent Dodds' $359 Epic React course repositories](https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/)
+  - https://twitter.com/kentcdodds/status/1280710694640291840
+  - [course tour video](https://www.youtube.com/watch?v=SDWxeGKX7Fs)
+  - https://github.com/kentcdodds/advanced-react-hooks
+  - https://github.com/kentcdodds/advanced-react-patterns
+
 # frontend
 
 - [精读《react-intersection-observer 源码》](https://zhuanlan.zhihu.com/p/149926289)

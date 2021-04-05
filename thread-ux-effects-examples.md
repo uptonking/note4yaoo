@@ -9,7 +9,9 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
-- ## 
+- ## Scroll up to navigate router history?
+- https://twitter.com/raunofreiberg/status/1379069069303947265
+  - 界面历史的展示，使用堆叠层次的缩略图
 
 - ## my latest project in solo "Mont Saint Michel 3D"
 - https://twitter.com/VIGNEAurelien/status/1375114346905358346

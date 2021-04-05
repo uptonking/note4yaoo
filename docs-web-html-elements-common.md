@@ -245,19 +245,42 @@ a {
 
 # details
 
+- ie不支持
+
 - The HTML Details Element ( `<details>` ) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. 
-- A summary or label can be provided using the `<summary>` element.
+  - A summary or label must be provided using the `<summary>` element.
+  - 如果没有summary标签，则会使用系统默认设置的label，chrome是普通字符串`Details`
+  - Fully standards-compliant implementations automatically apply the CSS `display: list-item` to the `<summary>` element. 
 - A disclosure widget is typically presented onscreen using a small triangle which rotates (or twists) to indicate open/closed status, with a label next to the triangle. 
-- If the first child of the `<details>` element is a `<summary>` , the contents of the `<summary>` element are used as the label for the disclosure widget.
+  - If the first child of the `<details>` element is a `<summary>` , the contents of the `<summary>` element are used as the label for the disclosure widget.
 - A `<details>` widget can be in one of two states. 
-- The default closed state displays only the triangle and the label inside `<summary>` (or a user agent-defined default string if no `<summary>` ). 
+  - The default closed state displays only the triangle and the label inside `<summary>` (or a user agent-defined default string if no `<summary>` ). 
   - the browser has a default summary string (usually "Details")
-- When the user clicks on the widget or focuses it then presses the space bar, it "twists" open, revealing its contents
-- By default when closed, the widget is only tall enough to display the disclosure triangle and summary. When open, it expands to display the details contained within.
-- Fully standards-compliant implementations automatically apply the CSS `display: list-item` to the `<summary>` element. 
+  - When the user clicks on the widget or focuses it then presses the space bar, it "twists" open, revealing its contents
+  - By default when closed, the widget is only tall enough to display the disclosure triangle and summary. When open, it expands to display the details contained within.
+
+-  You have to remove `open` attribute entirely to make the `details` hidden. 
+
+   - `open="false"` makes the `details` visible because this attribute is `Boolean` .
+
+- `<details>` element supports the `toggle` event, 
+  - which is dispatched to the `<details>` element whenever its state changes between open and closed. 
+  - It is sent after the state is changed, although if the state changes multiple times before the browser can dispatch the event, the events are coalesced(合并) so that only one is sent.
+
+# summary
 
 - A `<summary>` element may only be used as the first child of a `<details>` element. 
-  - When the user clicks on the summary, the parent `<details>` element is toggled open or closed, and then a toggle event is sent to the `<details>` element, which can be used to let you know when this state change occurs.
+  - When the user clicks on the summary, the parent `<details>` element is toggled open or closed, 
+  - and then a toggle event is sent to the `<details>` element, which can be used to let you know when this state change occurs.
+- If a `<details>` element's first child is not a `<summary>` element, the user agent will use a default string (typically `Details`) as the label for the disclosure box.
+- Per the HTML specification, the default style for `<summary>` elements includes `display: list-item`.
+  - You can also change the style to `display: block` to remove the disclosure triangle.
+
+- note
+- Chrome currently doesn't use `display: list-item` on the `<summary>` element, so `display: block` will not automatically hide the disclosure widget. 
+  - Instead, use the non-standard pseudo-element `::-webkit-details-marker` to change the disclosure widget in Chrome. 
+  - chrome89(202103)已支持 
+    - [Feature: `display: list-item` by default for `<summary>`](https://chromestatus.com/feature/6730096436051968)
 
 # time
 

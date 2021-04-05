@@ -26,8 +26,12 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-
-- ## 
+- ## Any hardcore CSS geeks able to confirm if `backdrop-filter: drop-shadow(...)` actually *does* anything in any browser?
+- https://twitter.com/adamwathan/status/1378817428839407617
+  - Same question for `backdrop-filter: opacity(...)` too.
+- Okay so it seems like `backdrop-filter: opacity(...)` does actually do something — it changes the opacity of any other backdrop-filters that are applied, which I suppose makes sense 
+  - Still pretty sure drop-shadow(...) does absolutely nothing as a backdrop-filter.
+- It most likely will, but only in Chromium (AFK right now, so can't test).
 
 - ## What are the most common things you use CSS filters/backdrop filters for? 
 - https://twitter.com/adamwathan/status/1378423163185463301

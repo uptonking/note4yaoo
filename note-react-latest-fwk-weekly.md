@@ -9,6 +9,24 @@ modified: '2021-03-22T18:46:03.513Z'
 
 # 2021
 
+## w0329-0404
+
+- https://twitter.com/sebastienlorber/status/1379094940874113028
+
+👉 React Labs (video series)
+👉 Next.js 10.1
+👉 Dependency Injection
+👉 Fastest Text Update
+👉 Tuples?
+👉 React React Errors
+👉 Expo 41
+👉 RN Timeline
+👉 Web: Flutter vs RN?
+👉 TS 4.3 betap
+👉 Coolify
+👉 Storybook 6.2
+👉 Change Array by copy
+
 ## w0322-0328
 
 - https://twitter.com/sebastienlorber/status/1376537880273821696
