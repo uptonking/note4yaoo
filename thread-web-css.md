@@ -26,6 +26,15 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Over the past decade, writing cross-browser CSS has gotten easier
+- https://twitter.com/JoshWComeau/status/1379101677589037062
+  - browser vendors implement the spec without many custom flourishes.
+  - This thread shares some scarcely-known browser differences.
+- Starting in Firefox 88, CSS outlines will match the radius of their elements.
+  - This even works with `outline-offset` — outlines that are further away will be more rounded!
+- On MacOS, both Chrome and Safari will "soften" colours, making them less bright and vibrant. 
+- A while ago, grid and transitions only worked well on Firefox, was that already fixed?
+
 - ## Any hardcore CSS geeks able to confirm if `backdrop-filter: drop-shadow(...)` actually *does* anything in any browser?
 - https://twitter.com/adamwathan/status/1378817428839407617
   - Same question for `backdrop-filter: opacity(...)` too.

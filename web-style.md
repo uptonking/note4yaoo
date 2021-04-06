@@ -89,31 +89,24 @@ modified: '2020-12-21T07:46:38.612Z'
 # css变量
 
 - 除IE外的浏览器都已支持
-- 定义局部变量 
+  - 变量值只能用作属性值，不能用作属性名
 
 ``` css
+/* 定义局部变量  */
 element {
   --main-bg-color: brown;
 }
-```
 
-- 定义全局变量
-
-``` css
+/* 定义全局变量 */
 :root {
   --main-bg-color: brown;
 }
-```
 
-- 使用变量
-
-``` css
+/* 使用变量 */
 element {
   background-color: var(--main-bg-color);
 }
 ```
-
-- 变量值只能用作属性值，不能用作属性名
 
 # 大型项目参考
 
@@ -214,8 +207,6 @@ element {
   - https://github.com/Tencent/weui
   - 同微信原生视觉体验一致的基础样式库
   - css命名基于BEM
-
-## color-palettes
 
 # dev-tips
 
@@ -472,47 +463,3 @@ element {
   5. dynamic css templates in js
     - example: freestyler, jsxstyle, style-it, superstyle
     - you can use JavaScript variables from component's `.render()` function scope.
-
-# animation
-
-- https://github.com/ConnorAtherton/loaders.css
-
-# css预处理器
-
-- 都提供了语法糖，最终经过预处理工具转换成css
-- sass
-  - 使用场景：bootstrap4, foundation
-  - 特点
-    - 无大括号，使用缩进
-    - 支持变量$作用域
-    - 支持函数
-    - 支持流程控制
-    - 支持数据结构$list, $map
-  - 编译需要ruby
-  - node-sass国内安装不流畅
-  - 讨论度更高，资料更全
-  - since2007
-- less
-  - 使用场景：bootstrap3，ant-design，七牛pd团队
-  - 特点
-    - 有大括号
-    - 支持变量@
-    - 不支持函数
-  - 编译基于node
-  - since2009
-- scss
-  - 使用场景：
-  - 特点
-    - 有大括号
-    - **兼容css**
-  - 就是sass 3
-- stylus
-  - 使用场景：
-  - 特点
-    - 支持缩进和大括号
-  - since2010
-- postcss
-  - 使用场景：
-  - 特点
-- 预处理器使用建议
-  - CSS中不建议用@import导入css，因为会增加http请求。但CSS预处理器中的导入和CSS的有很大区别，它是将不同css是在语义上导入，最终编译结果会生成一个CSS文件

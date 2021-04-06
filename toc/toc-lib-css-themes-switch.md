@@ -12,7 +12,7 @@ modified: '2021-02-09T13:40:11.536Z'
 - 设计样式theming时可参考
   - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), 
   - glass-ui, web-map-theme, gradient
-  - vendor: tailwindui(paid)
+  - vendor: tailwindui(paid), infima(参考官网文档)
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
@@ -65,6 +65,11 @@ modified: '2021-02-09T13:40:11.536Z'
   - 尝试1 `:root:not([data-theme])`
   - 尝试2 `:root:not([class*='theme-dark' i])`
     - 谨慎用此法，伪类+:not属性选择器的特指度 高于 单个类选择器/单个属性选择器
+
+- 实现多主题的方式对比 sass vs css vars
+  - 不需要提前编译
+  - css vars所有属性都会被inherit，而css属性只会inherit部分
+  - css vars支持在css函数中使用
 
 - dark-mode
   - 要测试黑暗模式下系统滚动条的效果，如低版本safari的滚动条未变黑

@@ -13,7 +13,10 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
-- ## 
+- ## Infinite tiles in an Infinite zoom-loop.
+- https://twitter.com/MattDzugan/status/1379229467227398144
+  - pushing and pulling the cubes 方块自动移动拼接的效果
+  - [Cube Pushing Loop notebook ](https://observablehq.com/@mattdzugan/cube-pushing-loop)
 
 - ## mixing html+webgl couldn't be any easier, there's literally no code, just declaration. they share the same graph & state. 
 - https://twitter.com/0xca0a/status/1374515365875650567

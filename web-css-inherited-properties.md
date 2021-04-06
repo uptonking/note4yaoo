@@ -29,55 +29,55 @@ modified: '2020-12-21T07:45:31.968Z'
 - width: auto
 - height: auto
 
+- border-width
 - border-style
 - border-color
-- border-width
 
 - background
 - background-color
 
 # inherited
 
-azimuth
-border-collapse
-border-spacing
-caption-side
-color
-cursor
-direction
-elevation
-empty-cells
-font-family
-font-size
-font-style
-font-variant
-font-weight
-font
-letter-spacing
-line-height
-list-style-image
-list-style-position
-list-style-type
-list-style
-orphans
-pitch-range
-pitch
-quotes
-richness
-speak-header
-speak-numeral
-speak-punctuation
-speak
-speech-rate
-stress
-text-align
-text-indent
-text-transform
-visibility
-voice-family
-volume
-white-space
-widows
-word-break
-word-spacing
-word-wrap
+- azimuth
+- border-collapse
+- border-spacing
+- caption-side
+- color
+- cursor
+- direction
+- elevation
+- empty-cells
+- font-family
+- font-size
+- font-style
+- font-variant
+- font-weight
+- font
+- letter-spacing
+- line-height
+- list-style-image
+- list-style-position
+- list-style-type
+- list-style
+- orphans
+- pitch-range
+- pitch
+- quotes
+- richness
+- speak-header
+- speak-numeral
+- speak-punctuation
+- speak
+- speech-rate
+- stress
+- text-align
+- text-indent
+- text-transform
+- visibility
+- voice-family
+- volume
+- white-space
+- widows
+- word-break
+- word-spacing
+- word-wrap

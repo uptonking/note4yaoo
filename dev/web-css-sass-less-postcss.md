@@ -133,6 +133,46 @@ modified: '2021-02-25T17:48:40.857Z'
   - 逻辑控制，if，while，for
   - 数据结构，list，map
 
+## css预处理器简介
+
+- 都提供了语法糖，最终经过预处理工具转换成css
+- sass
+  - 使用场景：bootstrap4, foundation
+  - 特点
+    - 无大括号，使用缩进
+    - 支持变量$作用域
+    - 支持函数
+    - 支持流程控制
+    - 支持数据结构$list, $map
+  - 编译需要ruby
+  - node-sass国内安装不流畅
+  - 讨论度更高，资料更全
+  - since2007
+- less
+  - 使用场景：bootstrap3，ant-design，七牛pd团队
+  - 特点
+    - 有大括号
+    - 支持变量@
+    - 不支持函数
+  - 编译基于node
+  - since2009
+- scss
+  - 使用场景：
+  - 特点
+    - 有大括号
+    - **兼容css**
+  - 就是sass 3
+- stylus
+  - 使用场景：
+  - 特点
+    - 支持缩进和大括号
+  - since2010
+- postcss
+  - 使用场景：
+  - 特点
+- 预处理器使用建议
+  - CSS中不建议用@import导入css，因为会增加http请求。但CSS预处理器中的导入和CSS的有很大区别，它是将不同css是在语义上导入，最终编译结果会生成一个CSS文件
+
 # ref
 
 - [Bootstrap 4 alpha release blog](https://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/)

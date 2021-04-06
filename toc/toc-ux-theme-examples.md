@@ -7,6 +7,26 @@ modified: '2020-12-08T14:24:16.195Z'
 
 # toc-ux-theme-examples
 
+# themes-editor
+
+- https://github.com/dbanksdesign/themeweaver
+  - https://themeweaver.dev/
+  - Themeweaver is a web app that uses design tokens to create IDE and syntax highlighting themes.
+
+- https://github.com/rxlabz/panache
+  - https://rxlabz.github.io/panache/#/editor
+  - create beautiful Material themes for your Flutter applications.
+
+- https://github.com/brijeshb42/monaco-themes
+  - https://editor.bitwiser.in/
+  - Themes to be used and generated with monaco-editor in web browser
+
+- https://github.com/PaulieScanlon/skin-ui /202004
+  - https://www.skin-ui.com/editor/#button
+  - A Theme UI Live Preview and Code Editor
+
+# theming-pieces
+
 - green-as-primary-examples
   - [medium website](https://medium.com/)
   - [bulma docs](https://bulma.io/documentation/overview/colors)

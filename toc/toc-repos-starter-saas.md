@@ -65,6 +65,12 @@ modified: '2020-12-08T20:36:23.977Z'
 - https://github.com/cbiltekin/survey-maker
   - This is a survey creating, sharing, answering web application using tools like React, Redux, and Spring.
 
+# netlify/vercel/self-hostable
+
+- https://github.com/coollabsio/coolify
+  - https://coollabs.io/coolify
+  - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
+
 # more-saas
 
 - https://github.com/staqjs/staq

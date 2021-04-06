@@ -7,9 +7,7 @@ modified: '2021-01-19T12:47:29.048Z'
 
 # viz-chart-blog
 
-# gitlab: why we chose echarts for data visualizations from d3.js
-
-- [GitLab: Why we chose ECharts for data visualizations_201909](https://about.gitlab.com/blog/2019/09/30/why-we-chose-echarts/)
+# [GitLab: Why we chose ECharts for data visualizations from d3.js_201909](https://about.gitlab.com/blog/2019/09/30/why-we-chose-echarts/)
 
 - As GitLab continues to grow in depth and breadth across the DevOps lifecycle, the use of charts and data visualizations has increased in frequency and complexity. 
 - As the number of different libraries increased along with our charting requirements, we decided it was time to start unifying our charting libraries to help us move quickly.
@@ -22,3 +20,7 @@ modified: '2021-01-19T12:47:29.048Z'
     - enough flexibility for us to create our own custom charts
   - Performance
   - Growing ecosystem
+
+# ref
+
+- [How to compare data using charts](https://www.highcharts.com/blog/post/how-to-compare-data-using-charts/)

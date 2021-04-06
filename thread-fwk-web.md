@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## I'm going with Postgres + Prisma (ORM) for the Remix Project Management/Trello demo app. 
+- https://twitter.com/ryanflorence/status/1379288404777607169
+  - Nobody ever got fired for picking Postgres (but they maybe should get fired for using an ORM?)
+- The great thing about Prisma is that where the ORM fails it's really easy to pick it up with some SQL
+
 - ## Did a huge refactor of macos.now.sh, moved from Styled Components to plain old SCSS modules, threw out some stuff, and the size savings were 100kb
 - https://twitter.com/puruvjdev/status/1378294873384611840
   - Plus all the CSS now lives in a .css files, rather than injected by JS in runtime, so much more performant!!

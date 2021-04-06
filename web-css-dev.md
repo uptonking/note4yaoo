@@ -253,6 +253,19 @@ modified: '2021-02-07T18:27:52.684Z'
 }
 ```
 
+# unit
+
+## vh/vw
+
+- 慎用
+  - 100vh/100vw会包含滚动条的宽度，进而导致元素实际的高或宽会比预期的大一点点
+  - 移动浏览器在页面滚动时会[隐藏地址栏](https://stackoverflow.com/questions/37112218)，导致视口不变但页面实际高度发生变化
+
+- [Prevent 100vw from creating horizontal scroll](https://stackoverflow.com/questions/30489594)
+- If an element is set to `width: 100vw;` and there is a vertical scrollbar, the width of the element will be equal to the viewport plus the width of the scrollbar
+- Basically the answer is no, if you have a vertical scrollbar there is no way to make 100vw equal the width of the visible viewport. 
+- If you need an element to be 100% width of the visible viewport(viewport minus scrollbar), you will need to set it to 100% of the body. You can't do it with vw units if there is a vertical scrollbar.
+
 # ref
 
 - [cssdb](https://cssdb.org/) is a comprehensive list of CSS features and their positions in the process of becoming implemented web standards.

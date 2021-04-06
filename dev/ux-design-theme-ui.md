@@ -56,5 +56,5 @@ modified: '2021-01-01T20:08:51.345Z'
 # ref
 
 - https://github.com/PaulieScanlon/skin-ui /202004
-  - https://www.skin-ui.com/
+  - https://www.skin-ui.com/editor/#button
   - A Theme UI Live Preview and Code Editor
