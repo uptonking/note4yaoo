@@ -22,6 +22,22 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## Announcing XState Catalogue 0.1.0
+- https://twitter.com/mpocock1/status/1379385435919646723
+  - Take the guesswork out of modelling state. 
+  - Bootstrap your application logic with professionally designed state machines.
+  - https://github.com/mattpocock/xstate-catalogue
+- XState Catalogue's next machines:
+  - Payment checkout
+  - Shopping cart
+  - Video/audio playback controls
+  - Websocket connection with retry logic
+  - Role-based access
+  - Web-based video call with controls (muting/unmuting)
+  - Data grid
+  - Advanced search area with pagination
+- This might be one of the coolest oss projects I've seen in a while. Like a UI lib but for logic!
+
 - ## For the last ~2 months I’ve been using Redux with a game engine, and for the last week with Preact. 
 - https://twitter.com/orta/status/1378983491250106369
   - I’ve been constantly impressed by how thoroughly documented Redux is, and the useSelector API is absolutely stunning design. Great work.

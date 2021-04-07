@@ -30,6 +30,9 @@ modified: '2021-01-12T18:49:13.490Z'
 
 # app
 
+- https://github.com/outline/tiley
+  - Tiley creates consistent colored squares with initials that can be used for default avatars
+
 - https://github.com/nextcloud/deck
   - /578Star/AGPLv3/202010/php/vue
   - https://apps.nextcloud.com/apps/deck

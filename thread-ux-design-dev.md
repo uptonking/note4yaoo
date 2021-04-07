@@ -11,6 +11,25 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## What are all of your favourite features of design system docs sites?
+- https://twitter.com/colmtuite/status/1379570553674170368
+- props configurator with copy code button
+  - all variants shown
+  - guidelines (with examples in context) for both devs and designers
+  - search
+- Interactive demo
+  - Props configurator 
+  - Related components section that highlights the distinction and when to use one vs the other.
+- checklist that reflects component status
+  - release notes 
+  - an easy way to edit/add docs
+  - design data mapping
+- Code examples & copy buttons
+- Let’s be serious we all only care about the pretty grid of color swatches.
+- Show me variants and states and let me toggle stuff on and off. 
+  - Showing all the stuff is probably better, but sometimes not feasible if there’s too much. 
+- Drag n drop builder mode
+- the material design guidelines for where and how to use (and also how to extend/customize) components still beats all of the design systems docs out there.  the ultimate benchmark I believe. the case studies are all just gems.
 
 - ## Design system tip: if you have opaque backgrounds/borders on UI components, use mix-blend-mode: multiply, so they work on different coloured backgrounds.
 - https://twitter.com/colmtuite/status/1377968794434428929

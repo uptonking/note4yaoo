@@ -7,6 +7,11 @@ modified: '2021-04-06T13:57:29.745Z'
 
 # web-tool-style-css-engineering
 
+# efficiency
+
+- [How available are the web platform's features?](https://paulirish.github.io/web-feature-availability/)
+  - viz based on caniuse
+
 # browser-extensions
 
 ## web

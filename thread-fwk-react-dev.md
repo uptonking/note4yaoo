@@ -9,6 +9,16 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
 
+# repeat
+
+- ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
+- https://twitter.com/sseraphini/status/1379547345130565632
+- For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.
+- Componentization leads to code reusability.
+  - Unidirectional data flow is easier to reason about.
+  - VDOM makes it performant and robust.
+  - Huge ecosystem and community.
+
 # pieces
 
 - ## 

@@ -11,6 +11,29 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## I don't like much Promise.all
+- https://twitter.com/sebastienlorber/status/1379731789707632640
+  - Too sensitive to array destructuring typo
+  - Code becomes verbose when input to transform is an object
+  - Finally published this little utility: combine-promises
+- Reminds me of `Promise.props` in Bluebird. 
+  - I wonder why something like this wasn’t part of the Promise spec.
+- Another big pain point with Promise.all and variations, is error handling IMO (ex: calling 3 APIs from diff providers). It would be awesome if you could solve this in the lib too. I'd love to help, got some ideas on how to go about doing it.
+
+- ## Who's interested in mutation-free JS "algorithms" for common data transformations that are only a single statement?
+- https://twitter.com/benmvp/status/1379569782656135169
+- Deleting an item from an array by using `.filter` to return everything but the target
+- Replacing an item at an array index by taking slices before and after the index, and then spreading into a new array with the new item
+  - (probably not the best solution if your array can be large because of the intermediary array slices)
+- Creating an empty array of X items (a la _.times) by using `Array.from` and its lesser-known(?) 2nd argument that's a map function
+  - ( `Array.from` accepts any object that has a length property and indexed elements 😉)
+- Mapping the values/keys of an object (a la _.mapValues & _.mapKeys) by using `Object.entries` (object ➡️ pairs) + `.map` (new pairs) + `Object.fromEntries` (new pairs ➡️ new object)
+  - we can even map the keys & values simultaneously 
+- Creating an array of unique values (a la _.uniq) or a union of arrays (a la _.union) by converting to a `Set` and spreading it into a new array
+- Picking / omitting from an object (a la _.pick & _.omit) by using `Object.entries` (object ➡️ pairs) + `.filter` (select/drop pairs) + `Object.fromEntries` (filtered pairs ➡️ new object)
+  - (very similar to mapping values/keys but uses `.filter` instead of `.map` )
+- [Generate a Dynamically Sized Array with Unique Values](https://justinnoel.dev/2019/09/27/generate-a-dynamically-sized-array-with-unique-values/)
+
 - ## Which could pick non-enumerable properties from object
 - https://twitter.com/buildsghost/status/1378138160664735744
 - To be clear, there are correct answers either way, Lodash and TypeScript made different choices (intentionally or not), each might have been the most reasonable choice for them. I'm wondering if a new library should match one or the other

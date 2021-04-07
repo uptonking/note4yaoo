@@ -37,6 +37,13 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- https://www.cassie.codes/
+  - 设计感很强，自我介绍页面
+  - 卡通人物的眼睛跟随鼠标移动，超级可爱
+  - /amazing/theming-绿色
+  - https://codepen.io/uptonking/pen/QWdqEmr
+    - [Making lil' me - part 1.](https://www.cassie.codes/posts/making-a-lil-me-part-1/)
+
 - https://generative.parts/generative
   - https://github.com/winkerVSbecks/generative-parts
   - 配置所有ui组件的圆角、颜色，样式超级友好

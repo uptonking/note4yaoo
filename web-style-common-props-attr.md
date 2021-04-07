@@ -21,6 +21,7 @@ modified: '2021-04-06T13:55:58.501Z'
   - 该元素content宽度为父元素宽度，该元素可能会超出父元素，超出部分会显示，
     - box-sizing若为content-box，则该元素总宽度还要加上padding+border+margin，
     - box-sizing若为border-box，则总宽度要加上margin
+  - 若width为100%且页面出现竖直滚动条，则元素实际宽度会比预期的要小一点，比如比viewport的宽度小一个滚动条的宽度
   - if you specify width:100%, the element’s total width will be 100% of its containing block plus any horizontal margin, padding and border (unless you’ve used box-sizing:border-box, in which case only margins are added to the 100% to change how its total width is calculated). This may be what you want, but most likely it isn’t.
 - ref
   - https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent

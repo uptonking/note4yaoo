@@ -11,6 +11,10 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+- ## Let's compare the GDP of nations and the wealth of billionaires. 
+- https://twitter.com/neocartocnrs/status/1379767142376206340
+  - [Countries vs Billionaires](https://observablehq.com/@neocartocnrs/countries-vs-billionaires)
+
 - ## I just published an introduction to the @jsonstat toolkit as a notebook
 - https://twitter.com/badosa/status/1375212974592421889
 - This notebook shows you the main features of the jsonstat-toolkit using data from different official statistics providers like Eurostat, UNECE

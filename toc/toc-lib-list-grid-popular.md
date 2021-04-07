@@ -238,6 +238,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现
   - Apollo spreadsheet that supports table and grids out of the box
   - uses Material-UI, React hooks, styled-components and it's fully written in Typescript
+- https://github.com/developit/preact-virtual-list
+  - https://jsfiddle.net/developit/qqan9pdo/
+  - Virtual List that only renders visible items. Supports millions of rows.
 
 ## div-more
 

@@ -7,6 +7,24 @@ modified: '2021-02-09T19:25:11.641Z'
 
 # thread-blog-pieces
 
+# product
+
+- [Announcing react-pdf v2.0](https://react-pdf.org/blog/announcing-react-pdf-v2)
+- Motivation
+1. Separate Layout from Rendering
+2. Embracing Immutability
+3. Performance Boost
+4. Better Testing
+
+- Solution
+1. Redefining Rendering Process
+2. Functional Approach
+
+- What's New
+  - SVG Support
+  - New Hook API
+  - More styles supported
+
 # frontend-dev
 
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
