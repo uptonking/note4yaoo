@@ -1,11 +1,11 @@
 ---
-title: ux-design-prototyping-tool
+title: ux-tool-design-prototyping
 tags: [design, prototyping, tool, ux]
 created: '2021-01-02T12:24:49.293Z'
-modified: '2021-01-03T17:10:26.463Z'
+modified: '2021-04-08T09:20:43.467Z'
 ---
 
-# ux-design-prototyping-tool
+# ux-tool-design-prototyping
 
 # guide
 

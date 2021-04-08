@@ -53,6 +53,18 @@ modified: '2020-12-21T07:44:53.873Z'
   - JavaScript引擎：Mocha -> SpiderMonkey
   - JIT即时编译器: TraceMonkey -> JaegerMonkey -> IonMonkey+OdinMonkey
 
+# JavaScriptCore 
+
+## JavaScriptCore wiki
+
+- https://trac.webkit.org/wiki/JavaScriptCore
+
+- JavaScriptCore is the built-in JavaScript engine for WebKit. 
+  - It currently implements ​ECMAScript as in ​ECMA-262 specification.
+- JavaScriptCore is often referred with different names, such as ​SquirrelFish and ​SquirrelFish Extreme. 
+  - Within the context of Safari, Nitro and Nitro Extreme (the marketing terms from Apple) are also commonly used. 
+  - However, the name of the project and the library is always JavaScriptCore.
+
 # blog
 
 ## [Chrome浏览器架构](https://www.cnblogs.com/suihang/p/12718528.html)

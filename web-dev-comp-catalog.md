@@ -94,7 +94,7 @@ modified: '2020-12-21T08:03:35.993Z'
 
 # display
 
-- ## Collapsible/Accordion
+- ## Collapse/Accordion
   - 默认显示前N个字符串，也可显示设置内容，点击会切换展开与折叠状态
   - 内容显示为可折叠的card，或者显示为浮动的modal()
 
@@ -124,6 +124,11 @@ modified: '2020-12-21T08:03:35.993Z'
 
 - PinnableCard
   - 类似支付宝首页可固定的菜单
+
+- ## tabs
+- eg-preview
+  - https://gui-challenges.web.app/tabs/dist/
+    - 可通过移动水平滚动条来自动切换tab
 
 - ## List
   - collapsible

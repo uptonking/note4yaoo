@@ -12,6 +12,15 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## 
 
 
+- ## Little pro-tip: Firefox is *so* much smoother than Chrome when it comes to window resizing, at least on the sites I've tested with.
+- https://twitter.com/JoshWComeau/status/1379849269692207108
+  - I switch to FF whenever I need to record a GIF of a window resize for my CSS course.
+- I've noticed Chrome is only janky if devtools is open and you resize
+- What I do is keep the devtools narrow and turn on mobile emulation with the "Responsive" option instead of a device 
+- In Firefox you can also close the dev tools but keep the resizer. In Chrome you have to move the dev tools to the side or pop it out to get it out of the way
+- Firefox is my go-to browser for debugging layout issues as well
+
+
 - ## If you had to choose one browser API that’s the most frustrating to work with, what would it be?
 - https://twitter.com/devongovett/status/1372215804318613510
   - I’ll go first: the drag and drop/clipboard APIs. OMG they are so so so bad. 

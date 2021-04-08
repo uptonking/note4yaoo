@@ -11,7 +11,7 @@ modified: '2021-03-26T11:29:45.212Z'
 
 - ## 
 
-- ## 
+- ## [Let's Sketch a Map](https://observablehq.com/@neocartocnrs/lets-sketch-a-map)
+- 可控制边框粗细、详略程度
 
-- ## World Elevation Line Map.
-- https://observablehq.com/@neocartocnrs/world-elevation-line-map
+- ## https://observablehq.com/@neocartocnrs/world-elevation-line-map

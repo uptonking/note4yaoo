@@ -10,8 +10,11 @@ modified: '2021-03-29T19:30:24.663Z'
 
 # ideas
 
+- roadmap
+  - rendering(not web) is the future.
+
 - tips
-  - 参考各种解决方案的优点，积累库、框架、应用
+  - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
 - apps
   - datable

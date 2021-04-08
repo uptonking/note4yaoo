@@ -11,6 +11,12 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## Introducing Esri's new design system - Calcite
+- https://twitter.com/mapdex/status/1379846669320085505
+  - Esri is another company all in on Web Components.  
+- https://github.com/Esri/calcite-components
+  - Web Components for the Calcite Design System. 
+  - Built with Stencil JS.
 
 - ## web components lock you in to the web - use React primitives like View, Text, Image and be free
 - https://twitter.com/notbrent/status/1135103126724325377

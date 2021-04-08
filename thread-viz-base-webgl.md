@@ -7,11 +7,52 @@ modified: '2021-03-11T11:26:12.335Z'
 
 # thread-viz-base-webgl
 
+# babylon
+
+- ref
+  - https://twitter.com/search?q=babylon%20(from%3A0xca0a)&src=typed_query&f=live
+
 # pieces
 
 - ## 
 
-- ## 
+
+- ## #MicrosoftMesh is also coming to WebXR! Though @babylonjs and React Native. Awesome!
+- https://twitter.com/worksalt/status/1369533623636881408
+- Would there be a JavaScript lib that is not dependent on a specific framework? It would help to use it in other web frameworks
+  - React Native code is ReactJS, ReactJS can be used on the web as well. React Three Fiber (r3f) is the best integration of React and Threejs that I have seen so far. Its the basis of React XR, and mobile apps made with r3f can run at native speed thanks to React Native.
+  - I bet that building support for Babylon Native & React Native first for maximum on device performance was the driving factor for this being Microsoft's focus.
+
+
+- ## With Babylon.js 4.2 releasing on 2020-11-12, you'll be able to use Babylon on React Native to power your cross-platform 3D apps! Code once, deploy everywhere!
+- https://twitter.com/0xca0a/status/1314867358918475777
+- i have only ever used three, but babylon building on RN to get onto native mobile (and desktop some day), with microsoft being behind react-native-windows and macos, that's pretty radical!
+- Babylon RN is actually built on top of Babylon Native, which is a bit different from Expo. Rather than polyfilling WebGL, we shim the engine layer and translate the shaders to run natively per platform: DirectX, OpenGL, and Metal (Vulkan WIP). It's pretty fun stuff!
+
+- ## Even WebGL is being translated into native GL by Expo & Babylon. Rendering(not web) is the future.
+- https://twitter.com/0xca0a/status/1345523434487488520
+  - Everything seems to point towards a future where platforms converge, or simply do not matter, where browsers are just render targets. 
+  - Imo "rendering" is the future, not having to rely on a fat Chrome for "web apps".
+- Browser: a native polyfill
+- Yes the web platform is just another render target 
+  - but its still the best way to reach users on every platform, everywhere, outside walled-gardens and with a standard API.
+- i think that's now changing. the web is absolutely not the best medium to reach users on mobile, they prefer apps, always will, 
+  - and it's a quite heavy compromise on desktop, too (electron). 
+  - i'd be glad if the web is for web-pages and acts as a transpile target for x-platform apps
+  - Many of my clients now use WebView in React Native containers. Social login is the only native part. Even Apple Pay is in the web part. As always, hybrid can be a good compromize.
+- [expo-gl pkg](https://github.com/expo/expo/tree/master/packages/expo-gl)
+- [Babylon Native](https://github.com/BabylonJS/BabylonNative)
+
+- ## React community jumping on the WebGL bandwagon 
+- https://twitter.com/0xca0a/status/1290243186019971072
+- threejs的下载量远超其他方案
+- aframe is based on three, you install it, three comes along. 
+  - r3f more or less *is* three, that is, it's just a different way to express it + some utilities. 
+  - the only one that competes with three is babylon. 
+  - three gets ~400k hits/week, so all these results turn into a flat line 
+
+- ## WebGL Frameworks: Three.js vs Babylon.js 
+- https://twitter.com/reddotblues/status/1306581610440134656
 
 - ## just added clock control, @_josh_ellis_ making progress w/ three-test-renderer. 
 - https://twitter.com/0xca0a/status/1369775216818323457

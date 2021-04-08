@@ -11,6 +11,16 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Node.js is terrible at two things:
+- https://twitter.com/jevakallio/status/1380073988802670595
+  - Traversing big trees
+  - De/serializing large strings
+  - Also known as: - GraphQL Servers; - React SSR; 
+- Serialization in all languages is costly and CPU intensive tasks the same, 
+  - but this is a very good opportunity to write some native code in rust to cover those requirements.
+- the purpose of event loop do not regards to it's limitation in certain kind of algorithms solving, 
+  - because we pretty know that we have C to do this, the nodejs is a multipurpose tool that we use to do abstract things.
+
 - ## I don't like much Promise.all
 - https://twitter.com/sebastienlorber/status/1379731789707632640
   - Too sensitive to array destructuring typo
