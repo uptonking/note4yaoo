@@ -13,6 +13,17 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## Every repo, issue, commit, etc will get a generated card like it.
+- https://twitter.com/JasonEtco/status/1380194813140725761
+  - And an even more special card for issues, PRs or commits!
+- This is sweet. Visual + text is a great way to help people engage and not miss important information.
+- I believe we'll be doing a larger blog post about it soon, but we use Puppeteer to generate a screenshot from some HTML.
+  - Just out of curiosity: wouldn't something like a Canvas with html2canvas for Example be faster or more efficient Memory wise? Nice Idea btw! Love it!
+- I did an open-source server for doing that exact thing some time ago
+  - https://github.com/micheleriva/gauguin
+  - High performances Golang server for generating open graph images dynamically. 
+- I just had a look at how the @vercel team did it in their OG img generator and it’s also Puppeteer and headless chromium
+  - https://github.com/vercel/og-image
 
 - ## If you use Next.js, what is your favourite part about it?
 - https://twitter.com/heybereket/status/1378889849235775489

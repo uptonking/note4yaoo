@@ -118,12 +118,16 @@ modified: '2020-12-21T08:03:35.993Z'
 - collapsible banner
 
 - ## Card
+
 - CodeCard
   - 显示源码的卡片，类似源码截图，左上角有类似macOS的三点菜单
   - examples
 
 - PinnableCard
   - 类似支付宝首页可固定的菜单
+
+- examples-usecases
+  - [Every repo, issue, commit, etc will get a generated card like it.](https://twitter.com/JasonEtco/status/1380194813140725761)
 
 - ## tabs
 - eg-preview

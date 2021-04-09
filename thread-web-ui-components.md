@@ -13,6 +13,12 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## You know the "segmented control" UI pattern used as an alternative to radio buttons? 
+- https://twitter.com/fvsch/status/1380420535373475840
+  - Designers always design it with 3 items, so you can see which one is selected by comparing with the other 2.
+  - But when there are two items only, it breaks down. Which is selected here?
+- I think adding an inset to the selected option helps
+
 - ## You can use the `details` element to create native HTML accordion.
 - https://twitter.com/denicmarko/status/1348523949014065153
 - Only problem, so you've got to control your according(grouped), closed the previous on open of next

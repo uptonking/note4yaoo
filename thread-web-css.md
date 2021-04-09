@@ -26,6 +26,12 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## We just deprecated setting `body` properties with the expectation that they "propagate" to the viewport. 
+- https://twitter.com/MiriSuzanne/status/1380310383588646916
+  - This currently works with things like overflow, & will continue to work forever, because: The Web.
+- Trust me, your life (or at least, the parts of it spent debugging CSS) will be easier if you get in the habit of distinguishing between styles on `<html>` (which fills the viewport) and styles on `<body>` (which might not).
+- [viewport propagation of scrollbar-gutter](https://github.com/w3c/csswg-drafts/issues/6079)
+
 - ## Over the past decade, writing cross-browser CSS has gotten easier
 - https://twitter.com/JoshWComeau/status/1379101677589037062
   - browser vendors implement the spec without many custom flourishes.

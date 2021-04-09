@@ -11,6 +11,24 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## What makes a lit-html or stencil based component suite more "future proof" than a collection of framework-x components wrapped as native custom elements? 
+- https://twitter.com/youyuxi/status/1380181910631112708
+  - I see the "future proof" slogan being used as major selling points for these WC-based solutions (lion, fast-element etc.) but by using them you are still running hundreds of kilobytes of JavaScript written and maintained by others.
+  - If all you care is for components to be distributed and used as native custom elements, most major frameworks have the capability to do that already (maybe except for React?...)
+  - In other words, if a framework provides the capability of compiling and distributing its components as native Custom Elements, it's also "future proof"?
+- Nothing, and that's sort of the point; once you commit to publishing as custom elements, you get all the compat (so long as you respect API stability) and can change internals (as AMP did). Win/win!
+  - A goal of WC has been to help promote component re-use across these sorts of boundaries, letting things built in one tool interop more-or-less-seamlessly over time.
+  - E.g., folks who like Vue should be able to use Vue to build their components, but still be able to consume things built another way. Similarly, folks who want to build in Vue should have a bigger market than Vue-centric apps. That future is enabled by interop + low runtime cost.
+- Future-proof cannot really apply to lit-html or lit-element the way you are referring to!
+  - However, compiler-built web components (Svelte, Stencil.js) are almost self-enclosed. The notion of run-time abstracted "enough" away for the consumer to bother about it.
+  - Also, web components are good as long as you do not need patterns like Render Prop or Vue.js style slots or even React Children. It ends up being a super nightmare.
+  - Almost nothing works well. Simple a11y focus-trapping is nearly impossible.
+- For me the key point to consider here is: "How easy would it be for me to migrate my collection of components to not use any dependency in the future"
+  - Ideally, we could all create vanilla WC and they will live forever without any real maintenance. But since the APIs are low level, the ergonomics can become a big hurdle on productivity as you mentioned
+  - So, any collection of a certain scope will need to embrace a library
+  - This is why I personally prefer class-based libraries for creating web components like lit or FAST rather than compiler or functional-based approaches
+  - The standard requires you to extend a class, embracing that fact makes it easier if you ever need to go back
+
 - ## Introducing Esri's new design system - Calcite
 - https://twitter.com/mapdex/status/1379846669320085505
   - Esri is another company all in on Web Components.  

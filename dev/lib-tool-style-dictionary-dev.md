@@ -34,6 +34,13 @@ modified: '2021-01-02T18:08:07.806Z'
   - 输出的值也可以使用 css vars
   - 使用js对象书写color的value时，hsl不会自动计算
 
+- 如何实现依次依赖的3套主题，如bs, bs-flat, bs-flat-dark
+  - 对于bs和bs-flat，直接用 include 和 source
+    - bs写值，bs-flat直接写新值去覆盖bs，只需要属性名相同
+  - 对于bs-flat和bs-flat-dark，可考虑 [multi-brand-with-defaults](https://github.com/dbanksdesign/style-dictionary-multi-brand-with-defaults)
+    - bs-flat-dark不能直接写新值覆盖，因为bs-flat-dark可能用到bs-flat中没有而bs中有的值
+    - 此时可将bs-flat作为default分支，但属性名都有brand前缀
+
 - transformer
   - 在循环处理各转换项时，碰到包含引用的会跳过
   - [Custom value transforms skip values with aliases](https://github.com/amzn/style-dictionary/issues/451)
