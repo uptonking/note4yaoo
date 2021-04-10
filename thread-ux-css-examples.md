@@ -13,6 +13,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## full-screen scroll-snap starter? 
+- https://twitter.com/argyleink/status/1380552877467336710
+  - https://codepen.io/argyleink/pen/qBRpdEr
+  - 竖向多个满屏内容，自动滚动到满屏状态
+- one suggestion: make it `min-block-size: 100vh` , so you don't get scrollbars on every section on short screens/large user font settings.
+
 - ## The Impossible Checkbox 🐻
 - https://twitter.com/jh3yy/status/1295782167977615361
   - @reactjs && @greensock

@@ -29,7 +29,7 @@ modified: '2021-01-04T17:26:25.032Z'
 
 - https://github.com/HarryChen0506/react-markdown-editor-lite
   - /446Star/MIT/202008
-  - 一款轻量的基于React的markdown编辑器
+  - 基于React的markdown编辑器
 - https://github.com/uiwjs/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
   - 依赖react-markdown、codemirror、highlight.js
@@ -42,6 +42,9 @@ modified: '2021-01-04T17:26:25.032Z'
   - In-browser Markdown editor
 - https://github.com/pandao/editor.md
   - The open source embeddable online markdown editor (component).
+- https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
 
 # markdown-viewer
 

@@ -8,11 +8,22 @@ modified: '2021-01-03T17:11:47.916Z'
 # ux-design-tailwind
 
 # guide
+
 - ref
   - [Theme Configuration](https://tailwindcss.com/docs/theme)
   - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
 
 # pieces
+
+- ## [What is the difference between Tailwind UI and Headless UI?](https://twitter.com/samselikoff/status/1380593139484872712)
+  - Tailwind UI = Library of Prototyping components or full Layouts
+  - Headless UI = UI Components that are fully accessible, with no styling
+  - Tailwind UI - > Presentation(TailwindCSS)
+  - Headless UI - > Behaviour(React, Vue, Alpine coming soon)
+- So Tailwind UI is Headless UI but also with layouts?
+  - components like these with the proper keyboard controls are prebuilt for you in Headless UI.
+- I don't like the sound of it, but you could compare Tailwind UI more to something like bootstrap, prebuilt, prestyled components you could plug and play into a website, intended for prototyping a layout.
+- The same level as Stripe (or even better) 
 
 - ## [Tailwind the switch statement](https://lukejacksonn.github.io/blog/oceanwind)
 - Oceanwind is my very own runtime implementation of Tailwind.

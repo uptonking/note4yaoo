@@ -11,6 +11,15 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+
+- ## When it comes to Dark Mode, my strategy has always been to manually create a second set of colors. 
+- https://twitter.com/JoshWComeau/status/1380549061204439042
+  - This wonderful blog post by @LeaVerou shows how we can derive the palette automatically using CSS variables and LCH colors
+- [Dark mode in 5 minutes, with inverted lightness variables](https://lea.verou.me/2021/03/inverted-lightness-variables/)
+- The problem with HSL
+  - The root cause is that HSL lightness does not actually correspond to what humans perceive as lightness, and the same lightness difference can produce vastly different perceptual differences.
+- LCH is a much better color space for this technique, because its lightness actually means something, not just across different lightnesses of the same color, but across different hues and chromas.
+
 - ## What are all of your favourite features of design system docs sites?
 - https://twitter.com/colmtuite/status/1379570553674170368
 - props configurator with copy code button

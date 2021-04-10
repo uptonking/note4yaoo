@@ -11,6 +11,39 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## No, js classes have never been just sugar, various things are better/different.
+- https://twitter.com/WebReflection/status/1380809258095247360
+- [JS classes are not “just syntactic sugar”](https://webreflection.medium.com/js-classes-are-not-just-syntactic-sugar-28690fedf078)
+  - Strictly guarded by default
+  - Builtin Extends
+  - Species
+  - The super
+  - Methods
+  - Enumerability
+  - Arrows
+  - Privates
+- Summary
+  - there are many things that could be simulated via ES5 and old prototypal inheritance, but none of these come out of the box, are as fast, or as safe, as using appropriate syntax for classes and, 
+  - on top of that, there are things that are just not possible with prototypal inheritance.
+- Do you have resources explaining how JS classes are not syntactic sugar?
+  - The spec has some differences:
+  1. A class constructor can't be called without new.
+  2. Class methods are have their enumerable flag set to false.
+  3. The internal flag [[FunctionKind]] has the value "classConstructor".
+  4. "use strict" by default.
+
+- ## You'll never convince me that: `fn({ // One thousand random things here })` Is better than a class.
+- https://twitter.com/matthewcp/status/1380610388467793920
+- This is so prevalence with web component libraries, and I just don't get it.
+  - How is writing special object properties named "props" and "methods" any better than using plain class fields and methods? Just to avoid the class keyword? It's so weird.
+- There’s no problem with classes per se, the problem is subclassing. 
+  - A struct with a million random things is fine compared to a function with a million random things. 
+  - The issue is wrangling covariance/contravariance, jumping between definitions of overridden methods, etc.
+- You'll never convince me that 1, 000 random things in a class is better than 1, 000 random things in a function.
+  - 1, 000 random things anywhere is bad.
+- I like classes, as long as I don't do any inheritance with them.
+  - What I don't like is the sea of `.this` that easily ends up being almost 50% of the code. I'd rather take a `<div>` soup or a HOC hell anytime.
+
 - ## Node.js is terrible at two things:
 - https://twitter.com/jevakallio/status/1380073988802670595
   - Traversing big trees

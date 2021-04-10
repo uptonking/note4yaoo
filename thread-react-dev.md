@@ -11,6 +11,17 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## Did you know that getSnapshotBeforeUpdate in React fires before *any* DOM mutations?
+- https://twitter.com/sebmarkbage/status/1380539161690640384 
+  - I.e. neither siblings nor parents have been mutated. 
+  - This is an important property that avoids layout read/write thrash 
+  - but if you read it, the layout hasn't been skewed by previous siblings.
+  - This is useful for things like layout animations, restoring scroll position and can be used for focus management (e.g. figuring out where to move focus after something is deleted based on where it was before it got deleted).
+  - There's a tradeoff though because it requires queuing mutations, which is why most other libraries don't do this. Seems tough to solve these edge cases without it though. Maybe some new DOM API could help. E.g. pausing style recalc for a while.
+- So how do you do it with hooks ?
+  - There’s no equivalent with hooks. I use this workaround
+  - This is probably really dirty, and the definition of a hack, but since getSnapshotBeforeUpdate runs before the commit phase, maybe you could have a combination of an effectfull callback inside a useMemo hook (which also runs at the pre commit phase) and a ref
+
 - ## I found that migration of complex(ish) class components to hooks is a great exercise to understand hooks. 
 - https://twitter.com/sseraphini/status/1376892107416338441
   - I have put this as a task in the new developer onboarding process. So we update some old code, new devs to learn hooks and learn the system.

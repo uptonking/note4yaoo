@@ -11,6 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## component libraries that prioritize cross-framework compatibility (e.g. web components with compat layers) will always be beat out by framework-specific alternatives for any sufficiently popular framework.
+- https://twitter.com/aweary/status/1380567398160465921
+  - compatibility always come at a cost and that cost is often going to be: performance, bundle size, and/or framework-integration ergonomics (e.g., how well it works with the framework as a whole).
+  - In the majority of cases those things are going to be more important than compat.
+  - and in the open source economy there will always be someone willing to do the work to build the fast, framework-optimized version.
 
 - ## What quality do you find the most attractive in your favorite JavaScript UI Framework?
 - https://twitter.com/RyanCarniato/status/1380351427868979200

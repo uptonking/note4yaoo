@@ -13,6 +13,14 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## One step closer to moving away from abuse of history.pushState() to get back-button-closable sidebars and dialogs!
+- https://twitter.com/domenic/status/1339675541083971586
+- ModalCloseWatcher code, including Android back button support, is in Chrome Canary behind a flag! 
+- All the excitement and engagement on appHistory has been really great. 
+  - But I worry that if we don't solve the "Android back button" close signal problem, developers will be forced to abuse appHistory like they currently abuse window.history. Let's make sure both of these succeed!
+- This is great. Modals are full of workarounds right now. Another related area I think you should consider are APIs to help restrict focus within a modal
+- [Some ideas for to improve history state on the web](https://github.com/slightlyoff/history_api)
+
 - ## You know the "segmented control" UI pattern used as an alternative to radio buttons? 
 - https://twitter.com/fvsch/status/1380420535373475840
   - Designers always design it with 3 items, so you can see which one is selected by comparing with the other 2.

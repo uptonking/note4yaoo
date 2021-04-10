@@ -11,16 +11,22 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - s-d pros
   - 方便将design tokens输出到各个平台
-  - 支持输出scss，也支持输出css vars，所以可以针对ie浏览器build适合的格式
+  - 支持输出scss，也支持输出css vars，所以可以针对ie浏览器build输出合适的格式
 
 - s-d cons
-  - 不支持输出css vars时，一个变量值引用了多个其他变量的情况，如hsl, border
-  - 不直接支持生成pseudo class的类名，可自己实现，分析有无此需求
+  - ~~在输出css vars时，不支持一个变量值引用了多个其他变量的情况，如hsl, border~~
+  - ~~不直接支持生成pseudo class的类名，可自己实现，分析有无此需求~~
   - ~~暂不支持输出文件的值中包含`var(--name)`形式的css变量~~
 
 - s-d书写属性值时不够灵活
-  - 书写颜色值时，没有提供改变颜色变量透明度alpha的方法
-  - 如没有提供拼接引用变量名的方法，没有简单加减运算的方法
+  - ~~书写颜色值时，没有提供改变颜色变量透明度alpha的方法~~
+    - 现已支持hsl的方式
+  - 没有提供拼接引用变量名的api，但已支持直接替换引用变量
+  - 没有提供简单算术运算的方法，但可利用自定义transformer
+
+- style-dictionary不支持名为value的中间属性名，如`{ "color": { "font": { "value": "#111" , "secondary": { "value": "#333" }, } } }`
+  - 若在中间设置了value属性，则同级和下级属性都不会输出了
+  - 变通方案：对要输出的中间属性名，增加一个中间属性名 `.val`
 
 - extensions
   - 可自定义输出的format，自动生成简单的单页文档，类似theo输出html
@@ -28,18 +34,19 @@ modified: '2021-01-02T18:08:07.806Z'
 - tips
   - 基于theme specification定义输出design tokens的类别和名称
     - 具体可参考theme-ui预置主题对应的[raw json](https://theme-ui.com/demo/)
-  - 可以将每个组件的design tokens输出到单独的文件，利用自定义filter
+  - 可以将每个组件的design tokens输出到单独的文件(利用自定义filter)
   - 可以输出扁平化无嵌套的样式变量，
     - 也可以输出时设置最外层的选择器名，如`:root{}` 或 `.dark-theme{}`
   - 输出的值也可以使用 css vars
   - 使用js对象书写color的value时，hsl不会自动计算
 
 - 如何实现依次依赖的3套主题，如bs, bs-flat, bs-flat-dark
+  - **对于在`include`或`source`设置的路径数组，后面路径中的同名属性值会覆盖前面路径中的值**，而不会抛出异常
+  - 若source中存在token属性名相同，默认会使用s-d内部排序的最新值，不会抛出异常，可通过编译，但会在控制台输出冲突的token名
   - 对于bs和bs-flat，直接用 include 和 source
     - bs写值，bs-flat直接写新值去覆盖bs，只需要属性名相同
-  - 对于bs-flat和bs-flat-dark，可考虑 [multi-brand-with-defaults](https://github.com/dbanksdesign/style-dictionary-multi-brand-with-defaults)
-    - bs-flat-dark不能直接写新值覆盖，因为bs-flat-dark可能用到bs-flat中没有而bs中有的值
-    - 此时可将bs-flat作为default分支，但属性名都有brand前缀
+  - 对于bs-flat和bs-flat-dark，可直接将bs和bs-flat依次配置在include中
+    - 还可参考 [multi-brand-with-defaults](https://github.com/dbanksdesign/style-dictionary-multi-brand-with-defaults)
 
 - transformer
   - 在循环处理各转换项时，碰到包含引用的会跳过
@@ -57,20 +64,18 @@ modified: '2021-01-02T18:08:07.806Z'
 
 - 组件的样式不推荐使用style-dictionary书写
   - s-d虽然能提供sass的variables、functions、mixins、nested、import等功能，
-    - 同名变量的覆盖可以用source覆盖include，但不能只在某一个文件中覆盖该文件中的所有变量
-    - 变量只能全部输出css variables，不能只输出某部分为css vars，
+    - 同名变量的覆盖可以用source覆盖include，但不能只在某一个文件中覆盖该文件中的所有变量，css属性名非常灵活且容错性高
+    - 变量只能全部输出css variables，不能只输出某部分为css vars
   - 但s-d在以下几个方面不如sass
+    - 通常输出的样式文件格式仍然是scss，此时若手动编辑scss以后更新tokens就会丢失
     - 书写多层嵌套nested的样式时实现自定义format就很复杂
     - 书写sass支持的placeholder自动转换成群组选择器，很难实现
     - sass在大公司的支持度很高
-    - 通常输出的样式文件格式仍然是scss，此时若手动编辑scss以后更新tokens就会丢失
     - 基于自定义action可以输出component样式，后期可以考虑单独实现此方案，不冲突
 
-- source配置时，tokens文件的声明顺序不重要，可以先写依赖了其他tokens的目录，再写依赖所在的目录
-
-- style-dictionary不支持名为value的中间属性名，如`{ "color": { "font": { "value": "#111" , "secondary": { "value": "#333" }, } } }`
-  - 若在中间设置了value属性，则同级和下级属性都不会输出了
-  - 变通方案：对要输出的中间属性名，增加一个中间属性名 `.val`
+- config
+  - ~~source配置时，tokens文件的声明顺序不重要，可以先写依赖了其他tokens的目录，再写依赖所在的目录~~
+    - include和source数组在配置时，后面路径中的同名属性值会覆盖前面路径中的值
 
 - color变量的value值
   - 若包含outputAsItIs配置，则跳过颜色转换原样输出，适合作为通用变量
@@ -87,8 +92,8 @@ modified: '2021-01-02T18:08:07.806Z'
   - --dm-base-text-color: hsla(var(--white-color-hsl), 0.8); 
     - 此颜色由浏览器动态添加透明度，s-d难以实现，因为两个变量都要输出，而s-d需要输出的变量一般是合法的有效值(token)
 
-- 书写hsl格式的color时要注意
-- 不支持带头明度的值，hsla
+- **书写hsl格式的color时要注意**
+- 不支持带透明度的值如hsla，需要转换成rgba
 - 对不包含变量引用的hsl裸数字值，s-d默认会自动转换，
   - 若hsl都为字符串，会正常输出
   - 若h为数字，则css vars获取引用时，要使用 `dictionary.getReference(p.original.value.h.toString())`
@@ -106,7 +111,7 @@ modified: '2021-01-02T18:08:07.806Z'
 - Style Dictionary uses json or JS modules and merges all token files into 1 big object.
 - ref
   - 工具要考虑实现或集成：theming, css in js
-  - You can also create a custom tool (Adobe did this). 
+  - You can also create a custom tool (Adobe did this).
   - 甚至考虑用通用工具如google spreadsheet来存放tokens
 
 - ## 是否该用工具生成design tokens外，还生成所有组件的样式？

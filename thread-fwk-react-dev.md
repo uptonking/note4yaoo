@@ -23,6 +23,19 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## I didn't realize that I could use RTK for generating reducers/actions with React.useReducer.  
+- https://twitter.com/SquishyDough/status/1380592058411388935
+- Yep, I've done that several times myself - works great! After all, a reducer function is just a reducer, no matter what you used to write it :)
+
+``` JS
+const counterSlice = createSlice({
+  /* usual stuff here */
+})
+
+// later
+const [counter, dispatch] = useReducer(counterSlice.reducer, 0)
+```
+
 - ## Confession: 80% of what I enjoy about @sveltejs could be built atop React/Preact. 
 - https://twitter.com/dan_abramov/status/1377302931096154112
   - I think it'd greatly improve the DX for devs struggling w/ React's extreme lack of opinions.
