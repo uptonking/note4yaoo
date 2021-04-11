@@ -26,6 +26,13 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## Just found out that window.getComputedStyle() won't list out all custom properties for a given element. 
+- https://twitter.com/markdalgleish/status/1381105674260684800
+  - You can request specific properties by name, but there's no way to get a complete list. 
+  - I was hoping to automatically detect and forward all CSS Variables through a React portal, but this means I can't. Sad about it.
+- [How to list all css variables names/values pairs from element](https://stackoverflow.com/questions/54004635/how-to-list-all-css-variables-names-values-pairs-from-element)
+  - It's using a browser API that's been removed (getMatchedCSSRules), and their polyfill looks pretty expensive
+
 - ## We just deprecated setting `body` properties with the expectation that they "propagate" to the viewport. 
 - https://twitter.com/MiriSuzanne/status/1380310383588646916
   - This currently works with things like overflow, & will continue to work forever, because: The Web.

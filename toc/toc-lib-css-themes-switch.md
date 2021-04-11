@@ -73,6 +73,8 @@ modified: '2021-02-09T13:40:11.536Z'
 
 - dark-mode
   - 要测试黑暗模式下系统滚动条的效果，如低版本safari的滚动条未变黑
+  - 对chrome，最右侧的滚动条在dark模式下依旧是白色，若页面中间也有白色滚动条，就比较刺眼
+  - 对firefox，页面中间的滚动条背景色默认会与周边背景同色，更友好
 
 - ref
   - search: pure css, css only, css framework, css vars

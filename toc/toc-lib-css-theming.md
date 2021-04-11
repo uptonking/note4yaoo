@@ -46,7 +46,7 @@ modified: '2021-01-28T21:34:18.645Z'
 - https://github.com/alexandersandberg/theme-switcher
   - https://alexandersandberg.github.io/theme-switcher/unlimited.html
   - A website theme switcher using CSS only
-  - 基于css vars实现
+  - 基于css vars实现，使用:checked伪类修改css vars的值
 
 - https://github.com/kemar/html-elements
   - https://kemar.github.io/html-elements/

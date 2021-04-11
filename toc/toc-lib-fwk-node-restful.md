@@ -15,6 +15,9 @@ modified: '2020-12-13T09:22:36.413Z'
   - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
   - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
 
+- https://github.com/typicode/json-server
+  - Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+
 - https://github.com/thiagobustamante/typescript-rest
   - annotation-based expressjs extension for typescript.
   - typescript-rest、typescript-ioc、typescript-rest-ioc

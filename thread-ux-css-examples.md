@@ -13,6 +13,19 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## The `--var: ;` Hack to Toggle Multiple Values With One Custom Property
+- https://twitter.com/MiriSuzanne/status/1380635887705284613
+  - https://codepen.io/mirisuzanne/pen/qBRpard?editors=1100
+- I made a quick demo sometime ago that demonstrates how you can change a property's value depending on whether or not a custom property was space-toggled.
+  - https://codepen.io/uptonking/pen/poRazzY
+  - 若css vars为空，则含有该值的属性也无效
+
+- ## Menu Button Interaction
+- https://twitter.com/aybukeceylan/status/1380920082822524937
+  - https://codepen.io/aybukeceylan/pen/zYNpWdj
+  - 类似fab圆形浮动菜单
+
 - ## full-screen scroll-snap starter? 
 - https://twitter.com/argyleink/status/1380552877467336710
   - https://codepen.io/argyleink/pen/qBRpdEr

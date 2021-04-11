@@ -22,6 +22,10 @@ modified: '2021-01-08T17:13:53.965Z'
 - For me it used to be performance, but these days I value a small bundle size and a clean syntax a lot more.
   - Extreme perf is only relevant in some use cases. The majority of frameworks have good enough perf IMO.
 - This poll is a bit of testing the water. See, performance is something that empirically matters to the enduser, but has no impact on DX. Control and Execution Model are in the middle giving you tools to improve code quality. Syntax is comfort.
+- Svelte started as an experiment in improving performance, 
+  - but people didn't really care until we adopted the v3 syntax. 
+  - It makes sense — perf and low level stuff are things you have to worry about once in a blue moon; 
+  - syntax is what you have to deal with every day
 
 - ## I'm going with Postgres + Prisma (ORM) for the Remix Project Management/Trello demo app. 
 - https://twitter.com/ryanflorence/status/1379288404777607169
