@@ -1,11 +1,11 @@
 ---
-title: web-dev-ui-comp-general
+title: web-ui-general-elements
 tags: [components, ui]
 created: '2021-03-16T15:12:30.702Z'
-modified: '2021-03-16T15:12:58.491Z'
+modified: '2021-04-11T17:43:15.229Z'
 ---
 
-# web-dev-ui-comp-general
+# web-ui-general-elements
 
 # container
 

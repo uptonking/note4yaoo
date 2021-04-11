@@ -8,7 +8,7 @@ modified: '2021-03-29T19:30:24.663Z'
 
 # dev-log-repeat-solutions
 
-# ideas
+# guide
 
 - roadmap
   - rendering(not web) is the future.
@@ -16,7 +16,7 @@ modified: '2021-03-29T19:30:24.663Z'
 - tips
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
-- apps
+- apps-about-table-in-markdown
   - datable
     - pivot table
   - noter
@@ -38,56 +38,46 @@ modified: '2021-03-29T19:30:24.663Z'
 
 ## more-list-grid
 
-- competitor
-  - excel
-  - tencent docs
-
 - x-spreadsheet /indie
 - frappe-datatable
 
-# chart
+- leading
+  - excel
+  - tencent docs
 
-- tips
+## chart
 
-## d3
-
-## amcharts
-
-## chartjs
-
-## more-charting
-
-- competitor
+- d3
+- amcharts
+- chartjs
+- more-charting
+  - frappe-charts
+- leading
   - plotly
   - antv
 
-- frappe-charts
+## map
 
-# map
-
-- tips
-
-## leaflet
-
-## maplibre-gl-js
-
-## more-mapping
-
-- competitor
+- leaflet
+- maplibre-gl-js
+- more-mapping
+  - turf
+- leading
   - esri
   - mapbox
   - gaode
 
-- turf
+# editor
+
+- tips
+  - live edit
+  - 搭建ui需求过于灵活，实现基于controls的在线配置编辑更实用
+
+## editorjs
+
+## craftjs
 
 # faves
-
-- editor
-  - tips
-    - live edit
-    - 搭建ui需求过于灵活，实现基于controls的在线配置编辑更实用
-  - editorjs
-  - craftjs
 
 - dashboard
   - tips
@@ -128,4 +118,6 @@ modified: '2021-03-29T19:30:24.663Z'
   - animation
     - FLIP
 
-# solutions
+# pm-datable
+
+# pm-noter

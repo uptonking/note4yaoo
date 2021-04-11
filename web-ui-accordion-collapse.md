@@ -1,11 +1,11 @@
 ---
-title: web-dev-ui-accordion-collapse
+title: web-ui-accordion-collapse
 tags: [accordion, components, ui]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-04-04T16:03:15.105Z'
+modified: '2021-04-11T17:40:05.929Z'
 ---
 
-# web-dev-ui-accordion-collapse
+# web-ui-accordion-collapse
 
 # html-details-summary
 

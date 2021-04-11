@@ -1,12 +1,12 @@
 ---
-title: web-dev-comp-react-in-action
-tags: [components, web]
+title: web-ui-comp-in-action-react
+tags: [components, in-action, react, web]
 favorited: true
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-12-21T08:03:56.709Z'
+modified: '2021-04-11T17:47:57.291Z'
 ---
 
-# web-dev-comp-react-in-action
+# web-ui-comp-in-action-react
 
 # react-comp-in-action
 

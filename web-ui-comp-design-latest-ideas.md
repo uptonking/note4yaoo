@@ -1,11 +1,11 @@
 ---
-title: web-dev-comp-design-latest-ideas
+title: web-ui-comp-design-latest-ideas
 tags: [components, frontend, latest, web]
 created: '2020-10-29T12:46:59.023Z'
-modified: '2021-04-11T10:23:33.304Z'
+modified: '2021-04-11T17:38:36.027Z'
 ---
 
-# web-dev-comp-design-latest-ideas
+# web-ui-comp-design-latest-ideas
 
 # 组件库研发方向及特色
 

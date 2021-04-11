@@ -1,11 +1,11 @@
 ---
-title: web-dev-ui-window-layout-portal
+title: web-ui-window-layout-portal
 tags: [components, portal, ui, window-layout]
 created: '2021-01-13T17:13:36.979Z'
-modified: '2021-01-13T17:14:22.218Z'
+modified: '2021-04-11T17:40:34.988Z'
 ---
 
-# web-dev-ui-window-layout-portal
+# web-ui-window-layout-portal
 
 # guide
 

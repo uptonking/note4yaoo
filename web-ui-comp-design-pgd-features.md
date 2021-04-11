@@ -1,11 +1,11 @@
 ---
-title: web-dev-comp-tokens-garden
-tags: [components, design-tokens]
+title: web-ui-comp-design-pgd-features
+tags: ['@pgd', components, design-tokens]
 created: '2020-10-02T11:42:34.698Z'
-modified: '2021-01-13T17:12:25.854Z'
+modified: '2021-04-11T17:42:26.580Z'
 ---
 
-# web-dev-comp-tokens-garden
+# web-ui-comp-design-pgd-features
 
 # prospect-garden-design-in-action
 

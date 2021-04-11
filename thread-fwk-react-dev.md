@@ -23,9 +23,17 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Is there a special name for @reactjs components whose sole purpose is to execute custom #hooks?
+- https://twitter.com/TkDodo/status/1330492854628708364
+  - I use them for "conditional" hooks when information is not available at the top level
+  - I call them headless components, not sure if that's a thing though
+- The term "headless components" was used to refer to components that handled logic, but inverted control of the view to the user (render props). They're not really needed now thanks to hooks.
+- The pattern I wanted to show is about a component that doesn’t render anything but only executes side effects
+- react-nil calls them null-components or logical components in their readme
+
 - ## I didn't realize that I could use RTK for generating reducers/actions with React.useReducer.  
 - https://twitter.com/SquishyDough/status/1380592058411388935
-- Yep, I've done that several times myself - works great! After all, a reducer function is just a reducer, no matter what you used to write it :)
+- Yep, I've done that several times myself - works great! After all, a reducer function is just a reducer, no matter what you used to write it
 
 ``` JS
 const counterSlice = createSlice({

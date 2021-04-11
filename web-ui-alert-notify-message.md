@@ -1,11 +1,11 @@
 ---
-title: web-dev-ui-alert-notify-message
+title: web-ui-alert-notify-message
 tags: [alert, components, ui]
 created: '2021-04-04T15:50:44.364Z'
-modified: '2021-04-04T15:51:22.443Z'
+modified: '2021-04-11T17:40:10.032Z'
 ---
 
-# web-dev-ui-alert-notify-message
+# web-ui-alert-notify-message
 
 # alert
 

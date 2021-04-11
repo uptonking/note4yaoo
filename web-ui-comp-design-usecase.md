@@ -1,11 +1,11 @@
 ---
-title: web-dev-comp-design-usecase
+title: web-ui-comp-design-usecase
 tags: [components, design-style, usecase]
 created: '2021-04-11T10:23:39.124Z'
-modified: '2021-04-11T10:25:02.045Z'
+modified: '2021-04-11T17:38:41.941Z'
 ---
 
-# web-dev-comp-design-usecase
+# web-ui-comp-design-usecase
 
 # b2b vs b2c
 

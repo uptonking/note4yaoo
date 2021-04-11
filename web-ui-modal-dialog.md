@@ -1,11 +1,11 @@
 ---
-title: web-dev-ui-modal-dialog
+title: web-ui-modal-dialog
 tags: [components, modal, ui]
 created: '2021-02-09T18:33:56.949Z'
-modified: '2021-02-09T18:34:59.002Z'
+modified: '2021-04-11T17:40:20.457Z'
 ---
 
-# web-dev-ui-modal-dialog
+# web-ui-modal-dialog
 
 # guide
 
