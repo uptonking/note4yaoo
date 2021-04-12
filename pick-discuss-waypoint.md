@@ -2,7 +2,7 @@
 title: pick-discuss-waypoint
 tags: [discuss, waypoint, zhihu]
 created: '2020-12-11T12:41:45.123Z'
-modified: '2021-01-21T04:10:38.629Z'
+modified: '2021-04-12T16:30:53.968Z'
 ---
 
 # pick-discuss-waypoint

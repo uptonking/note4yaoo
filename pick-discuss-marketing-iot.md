@@ -2,7 +2,7 @@
 title: pick-discuss-marketing-iot
 tags: [discuss, iot]
 created: '2021-02-22T07:42:52.195Z'
-modified: '2021-02-22T07:45:20.196Z'
+modified: '2021-04-12T16:30:53.968Z'
 ---
 
 # pick-discuss-marketing-iot

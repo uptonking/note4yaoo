@@ -2,7 +2,7 @@
 title: pick-discuss-story-of-the-stone
 tags: [discuss, 红楼梦]
 created: '2021-02-17T08:12:07.192Z'
-modified: '2021-02-17T08:13:02.255Z'
+modified: '2021-04-12T16:30:53.968Z'
 ---
 
 # pick-discuss-story-of-the-stone

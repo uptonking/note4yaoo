@@ -141,3 +141,6 @@ modified: '2021-01-28T21:14:14.667Z'
 - https://github.com/AliBahaari/Jikan
   - https://alibahaari.github.io/Jikan/
   - CSS framework for better, faster and more beautiful UIs.
+
+- https://github.com/ffoodd/a11y.css
+  - This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. 

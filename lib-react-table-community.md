@@ -1,15 +1,15 @@
 ---
-title: lib-react-table-discuss
-tags: [discuss, react-table]
+title: lib-react-table-community
+tags: [community, react-table]
 created: '2021-02-24T10:09:46.820Z'
-modified: '2021-02-24T10:10:02.012Z'
+modified: '2021-04-12T16:37:46.744Z'
 ---
 
-# lib-react-table-discuss
+# lib-react-table-community
 
 # pieces
 
-## 
+- ## 
 
 - ## I think I've built a type-safe plugin system for #ReactTable v8.
 - https://twitter.com/tannerlinsley/status/1364251586956943361

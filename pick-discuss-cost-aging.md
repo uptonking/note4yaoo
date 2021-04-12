@@ -2,7 +2,7 @@
 title: pick-discuss-cost-aging
 tags: [aging, discuss]
 created: '2021-03-13T06:40:25.253Z'
-modified: '2021-03-13T06:40:53.521Z'
+modified: '2021-04-12T16:30:53.967Z'
 ---
 
 # pick-discuss-cost-aging

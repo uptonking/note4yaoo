@@ -16,7 +16,7 @@ modified: '2021-03-29T19:30:24.663Z'
 - tips
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
-- apps-about-table-in-markdown
+- apps-about-table-in-markdown-editor
   - datable
     - pivot table
   - noter
