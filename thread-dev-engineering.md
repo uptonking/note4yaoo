@@ -13,6 +13,22 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Don't forget to consider an option to scale horizontally rather than vertically. 
+- https://twitter.com/kettanaito/status/1381604735304806403
+  - Horizontal scaling is far more sustainable and prone to refactoring.
+- let's say when we need to extend an existing function to handle two different scenarios - request in browser or nodejs.
+  - instead of pushing the logic through one function `handleRequest` , consider treating each scenario as a standalone implementation, potentially reusing the internal logic that repeats.
+- Treating those as two independent scenarios also contributes to much more scoped tests. 
+  - That, in turn, allows to reason about similarities and difference and makes it easier to alter logic on a per-scenario basis.
+
+- ## I'd really like to have a thing that wraps every function in my codebase at compile time, it profiles samples of them with minimal overhead, 
+- https://twitter.com/fabiospampinato/status/1381569380203573257 
+  - it's always on, and over time it tells you interesting things. 
+  - Potentially it could work across an entire user base too, that'd be super.
+- Different domain and technology, but this idea reminds me very much of pira
+  - https://github.com/tudasc/pira
+  - Except we don't instrument / wrap every function. We Actually try to minimize the instrumentation to only "relevant" parts -- for different aspects of relevant.
+
 - ## to repeat my favorite software development mantra: "make it work. make it right. make it fast."
 - https://twitter.com/acemarke/status/1376969090552725506
 - I hate perfectionism, I rather create something initially janky but a really cool thing/idea THEN work on improving it and optimizing it.

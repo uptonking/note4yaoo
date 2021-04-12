@@ -12,11 +12,12 @@ modified: '2020-12-08T13:22:47.564Z'
 # changelog
 
 - ref
-  - https://ant.design/changelog-cn
-  - https://github.com/ant-design/ant-design/blob/3.x-stable/CHANGELOG.zh-CN.md
-  - https://github.com/ant-design/ant-design/blob/2.x-stable/CHANGELOG.zh-CN.md
-  - https://github.com/ant-design/ant-design/blob/1.x-stable/CHANGELOG.md
-  - https://github.com/ant-design/ant-design/releases?after=0.10.1
+  - [changelog for v4.x](https://ant.design/changelog-cn)
+  - [changelog for v3.x](https://github.com/ant-design/ant-design/blob/3.x-stable/CHANGELOG.zh-CN.md)
+  - [changelog for v2.x](https://github.com/ant-design/ant-design/blob/2.x-stable/CHANGELOG.zh-CN.md)
+  - [changelog for v1.x](https://github.com/ant-design/ant-design/blob/1.x-stable/CHANGELOG.md)
+  - [changelog for v0.x](https://github.com/ant-design/ant-design/releases?after=0.10.1)
+
 - 4.0.0-20200228
   - v4依赖的React最低版本要求升级到了React 16.9，提供更多的hooks 
   - 设计规范升级：将基础圆角由4px调整为2px

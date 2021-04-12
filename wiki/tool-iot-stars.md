@@ -13,7 +13,7 @@ modified: '2021-01-12T18:49:22.746Z'
 
 - 简介
   - iPhone 6s和iPhone 6s Plus两款产品于2015年9月9日发布
-  - iPhone 6S和iPhone 6S Plus支持iOS 9、10、11、12、13 、14
+  - iPhone 6S和iPhone 6S Plus支持iOS 9、10、11、12、gg13 、14
   - 机身采用7000系铝金属
   - 第一季度销售量6s/6s plus是7480万台，销售量仅比前一代高出0.4%，低于市场预期
 - 外观/finish

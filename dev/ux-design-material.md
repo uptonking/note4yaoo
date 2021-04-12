@@ -9,6 +9,25 @@ modified: '2021-01-01T20:08:06.371Z'
 
 # material-design
 
+- ref
+  - https://material.io/design/introduction/
+- theme
+  - https://material-ui.com/customization/default-theme/
+
+- breakpoints
+  - xs, sm, md, lg, xl
+  - 0, 600, 960, 1280, 1920
+- typography
+  - 1.25-1.5-2.25-3-3.75-6
+- palette
+  - gray
+  - primary:light/dark/main
+  - secondary
+  - success, info, warning, error
+- shadows
+- zIndex
+  - speedDial1000, drawer1200, modal1300, snackbar1400, tooltip1500
+
 # material-design-components-web
 
 - ## dev

@@ -7,7 +7,37 @@ modified: '2021-03-22T18:46:03.513Z'
 
 # note-react-latest-fwk-weekly
 
+# guide
+
+- [React Weekly 法语版](https://www.getrevue.co/profile/sebastien-lorber)
+  - 英文版 https://twitter.com/sebastienlorber
+
 # 2021
+
+## w0426-w0502
+
+## w0419-w0425
+
+## w0412-w0418
+
+## w0405-w0411
+
+- https://twitter.com/sebastienlorber/status/1381632647072452614
+
+👉 React-Hook-Form 7
+👉 React-UX-Form
+👉 Dumi
+👉 Figma-To-React
+👉 Recoil 0.2
+👉 Hermes  Intl + OTA
+👉 Nextgen buildtools
+👉 Bundless
+👉 Microsite
+👉 Let ➡️ Const
+👉 How to test UI
+👉 XState Catalogue
+👉 Vue 3 ❌ IE11
+👉 DevTools ➡️ TS 
 
 ## w0329-0404
 

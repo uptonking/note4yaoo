@@ -66,6 +66,11 @@ modified: '2021-01-04T16:18:46.383Z'
 - https://yeun.github.io/open-color/
 - open-source color scheme optimized for UI like font, background, border, etc.
 
+# color-palette
+
+- https://yoksel.github.io/handy-colors/#full-palette
+  - 基于浏览器提供的css名，按颜色分类
+
 # color
 
 - requirements
@@ -318,23 +323,6 @@ modified: '2021-01-04T16:18:46.383Z'
   - https://zhuanlan.zhihu.com/p/45424881
   - https://usecontrast.com/guide
 
-# material-design
-
-- ref
-  - https://material.io/design/introduction/
-- theme
-  - https://material-ui.com/customization/default-theme/
-  - breakpoints
-      - xs,sm,md,lg,xl
-      - 0,600,960,1280,1920
-  - typography:1.25-1.5-2.25-3-3.75-6
-  - palette
-      - grey
-      - primary:light/dark/main
-      - secondary
-      - success,info,warning,error
-  - shadows
-  - zIndex:speedDial1000-drawer1200-modal1300-snackbar1400-tooltip1500
 
 # ant-design色彩
 
@@ -363,8 +351,6 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref
   - https://ant.design/docs/spec/colors-cn
   - https://zhuanlan.zhihu.com/p/32422584
-
-          
 
 # Mineral UI
 

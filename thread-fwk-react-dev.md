@@ -23,6 +23,12 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## React Server Components are all about APIs.
+- https://twitter.com/RyanCarniato/status/1381640821510873089
+  - When you keep state in the client you are sending the data over one way or the other, there is no escaping it. Below the navigation fold you need to present new information. Only MPAs never are going to need the "static" parts
+  - Now there are plenty of ways to lazy load that information. We can defer hydration. Use things like Intersection Observers. But if you ever return to the same route you will at some point you will be sending some serialization of the data/markup.
+  - So where are the savings? Well framework is there anyway, the interactivity/stateful stuff needs to be in the browser, and below the fold the template is coming one way or another. It's avoiding pulling in JS libraries to process data. Lodash, Markup, etc
+
 - ## Is there a special name for @reactjs components whose sole purpose is to execute custom #hooks?
 - https://twitter.com/TkDodo/status/1330492854628708364
   - I use them for "conditional" hooks when information is not available at the top level

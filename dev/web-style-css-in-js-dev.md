@@ -120,7 +120,7 @@ modified: '2021-01-01T20:06:19.327Z'
     - And the more you use the CSS Vars for everything else, the fewer context consumers you'll have, 
       - so the only ones that consume the context are the ones that need to swap the implementation
 
-  # pieces 
+# pieces 
 
 - css-in-js vs sass
   - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!
@@ -133,7 +133,7 @@ modified: '2021-01-01T20:06:19.327Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 
-- [Why Don’t I Sell the Idea of Static Extraction with CSS-in-JS?](https://medium.com/@tkh44/why-dont-i-sell-the-idea-of-static-extraction-with-css-in-js-df21f571503b)
+- ## [Why Don’t I Sell the Idea of Static Extraction with CSS-in-JS?](https://medium.com/@tkh44/why-dont-i-sell-the-idea-of-static-extraction-with-css-in-js-df21f571503b)
 
 - CSS has a dynamic nature, with one-off rules applicable to only a few pages per site. 
   - I think we should address this need first, and then generate a bundle of common styles upfront. 
@@ -153,7 +153,7 @@ modified: '2021-01-01T20:06:19.327Z'
     - What sucked with Emotion was I was never able to figure out how set up a complex amount of variations for my button example. Multiple color, fill, and size options and all of them have unique CSS. 
   - Stitches was great to install. Almost zero config changes. The built-in theming and variables are super nice. I came up with an interesting way of composing the component that I was starting to like.
 
-- [survey: styled-components vs SASS vs CSS, which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
+- ## [survey: styled-components vs SASS vs CSS, which one would win!](https://twitter.com/Ipenywis/status/1275091218905608192)
   - s-c:sass:css = 2:1:5
   - 仅8人投票
 
@@ -191,9 +191,17 @@ modified: '2021-01-01T20:06:19.327Z'
 - I tend to stick to what I know that works at scale (BEM/ITCSS). But I also find that there is such a huge learning curve to BEM/ITCSS that it leads to problems in itself. Is scoped styling the answer? 
   - For a personal project, I'll generally go with BEM. For a project involving many developers and which will be used and maintained over years ? Scoped styles for sure.
 
-- [Why write CSS-in-JS when vanilla CSS is just fine? ](https://twitter.com/saltnburnem/status/1290690315540717568)
+- ## [Why write CSS-in-JS when vanilla CSS is just fine? ](https://twitter.com/saltnburnem/status/1290690315540717568)
   - The styling of a component is very linked to it's structure, so put them together.
   - The main element of reuse is the component. You won't ever need a .header CSS class when instead you'll reuse `<Header>`
+
+- ## is possible to compile styled-components at build time in nextjs? 
+- https://twitter.com/gipsterya/status/1381391459723530243
+- As far as I know, styled-components requires runtime JS. You might consider another CSS-in-JS solution with zero runtime.
+- I used styled-components, but switched to emotion because it does ssr without configuration. 
+  - Then I switched to linaria, it drops 6kb from bundle and no runtime. 
+  - Going forward I'll explore linaria+tailwind. 
+  - I think tailwind will be a more powerful now because its jit compiler.
 
 # jss
 

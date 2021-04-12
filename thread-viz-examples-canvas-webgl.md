@@ -11,7 +11,6 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
-
 - ## Tetris made with @babylonjs and AmmoJS Physics.
 - https://twitter.com/HiteshSahu_/status/1319177977297539073
   - https://codepen.io/hiteshsahu/pen/LYZbjGq
@@ -26,6 +25,10 @@ modified: '2021-04-04T14:43:15.420Z'
 - https://twitter.com/MattDzugan/status/1379229467227398144
   - pushing and pulling the cubes 方块自动移动拼接的效果
   - [Cube Pushing Loop notebook ](https://observablehq.com/@mattdzugan/cube-pushing-loop)
+
+- ## Infinite Zoom Cubes 方块自动拼接
+- https://twitter.com/MattDzugan/status/1381613290036588546
+  - [Cube Swivel Loop ](https://observablehq.com/@mattdzugan/cube-swivel-loop)
 
 - ## mixing html+webgl couldn't be any easier, there's literally no code, just declaration. they share the same graph & state. 
 - https://twitter.com/0xca0a/status/1374515365875650567

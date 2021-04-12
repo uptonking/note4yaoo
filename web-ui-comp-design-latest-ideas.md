@@ -175,6 +175,20 @@ modified: '2021-04-11T17:38:36.027Z'
 - The idea for this post came out of a twitter discussion with Max Stoiber who shares a lot of my thoughts on this 
   - you should check out his thoughts on `margin`.
 
+- ## What are some of the most challenging engineering-heavy UI problems? Stuff like virtualization?
+- https://twitter.com/sarah_federman/status/1381392860172324864
+- search
+  - datatables
+  - cross cultural ux /localized
+  - security
+  - regression prevention
+- Internationalization. 
+  - Things like parsing and formatting dates/numbers in every locale/numbering system/calendar. 
+  - Very quickly, you learn that basically every assumption you have is wrong. 😅
+- Keeping documentation in Figma inline to production.
+- Memory, internet connectivity, search, data management/ tables. Saving / loading.
+- Synchronization for offline-capable apps, especially collaborative ones (using CRDTs, OT, etc). Really anything involving distributed systems
+
 # ref
 
 - [UI Component Best Practices](https://github.com/chris-pearce/ui-component-best-practices)

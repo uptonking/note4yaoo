@@ -11,6 +11,21 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## TypeScript question: When have you used "never" in a production codebase?
+- https://twitter.com/kentcdodds/status/1381453907730128900
+- `never` and `unknown` are good replacements for `any` . 
+  - A generic function for example can look something like this:
+  - type GenericFunction = (...arg: readonly never[]) => unknown; 
+  - An empty array type can look like this:
+  - type EmptyArray = readonly never[]; 
+- Restricting prop combinations, e.g. `<List type="icon" icon={<IconPositive />}>` — the type of the `icon` prop is `never` when the `type` prop isn't icon
+  - icon?: undefined would work too, right?
+  - That’s not the same, though. `("icon" in { icon: undefined }) === true` .
+  - never entirely disallows the property
+  - But who relies on that in React components to check if a prop was passed? 
+  - Imo it's better to assume undefined to be not passing a prop, behavior like default props rely on that. I have also passed undefined to signal no prop many times, not reason to prevent that.
+- We almost never use never directly, but it's a useful concept for type narrowing. Specifically, the case of 'switch'ing over a union type.
+
 - ## No, js classes have never been just sugar, various things are better/different.
 - https://twitter.com/WebReflection/status/1380809258095247360
 - [JS classes are not “just syntactic sugar”](https://webreflection.medium.com/js-classes-are-not-just-syntactic-sugar-28690fedf078)
