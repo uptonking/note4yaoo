@@ -13,6 +13,28 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Why I code against a mock API:
+- https://twitter.com/housecor/status/1256242384075198472
+
+1 I control the speed
+2 It's never down
+3 No internet required
+4 No cross-team dependency
+5 I can force it to throw errors to simulate server errors
+6 I can write fast, reliable app tests
+7 When I find a bug, I can enhance mock data and test it
+
+- ## What challenges have you faced adopting serverless technologies?
+- https://twitter.com/flybayer/status/1381743417391255559
+- Simulating the environment "locally" for testing/debugging.
+  - use case: complex business logic breaking, like a bunch of calculations, how to simulate and debug that to find the error 
+  - arc.codes solves that part w a local sandbox
+- Realtime, 
+  - Connection pools, 
+  - Stateful assets(dynamic images et al), 
+  - Complex setup (or lose of control)
+  - inability to use some tools I love(e.g. mongodb is just poor in serverless)
+
 - ## Don't forget to consider an option to scale horizontally rather than vertically. 
 - https://twitter.com/kettanaito/status/1381604735304806403
   - Horizontal scaling is far more sustainable and prone to refactoring.

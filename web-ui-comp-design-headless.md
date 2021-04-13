@@ -42,6 +42,9 @@ modified: '2021-04-11T17:37:29.528Z'
   - but what we wanted is an in-house component library at timelessco to use as a foundation for our next design system.
   - The hope is that we can build a UI library and ultimately to create a nocode design system designer.
 
+- There is a new style of component libraries like reach-ui and @radix_ui that just offer functionality and doesn't try to be a design system. 
+  - IMO this is the most important thing that has happened to the react ecosystem since... Probably React.
+
 - ## material-ui: Provide a version of the components without any styles
 - https://github.com/mui-org/material-ui/issues/6218
 - SliderBase is a version of the component with almost no dependencies (it's very bundle-size efficient). The component can be customize with a couple of approaches.

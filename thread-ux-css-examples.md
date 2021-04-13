@@ -13,6 +13,17 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Made a 10 line polyfill for flexbox gap.
+- https://twitter.com/devongovett/status/1244679626162450432
+  - You can use it just like normal CSS properties. No extra wrappers around each item, or spacer elements needed. 
+  - https://codesandbox.io/s/gallant-monad-p8jpv
+  - CSS custom properties are super powerful!
+  - `<div class="flex" style="--gap: 10px;">`
+
+- ## Evening Lanterns
+- https://twitter.com/BraydonCoyer/status/1291085918183489537
+  - https://codepen.io/braydoncoyer/pen/NWqaBmK
+  - 放孔明灯的效果
 
 - ## The `--var: ;` Hack to Toggle Multiple Values With One Custom Property
 - https://twitter.com/MiriSuzanne/status/1380635887705284613

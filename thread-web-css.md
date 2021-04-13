@@ -26,6 +26,8 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## 
+
 - ## Just found out that window.getComputedStyle() won't list out all custom properties for a given element. 
 - https://twitter.com/markdalgleish/status/1381105674260684800
   - You can request specific properties by name, but there's no way to get a complete list. 

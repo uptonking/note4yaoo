@@ -11,6 +11,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## @nodejs is fast and easy to use. 
+- https://twitter.com/matteocollina/status/1381639256842584069
+  - The fact that your JavaScript libraries are either (1) buggy (2) slow is not a problem of JavaScript. 
+  - Simply put, those libraries are not well written. 
+  - Rewriting everything in another language is unlikely to solve either problems.
+- Node is also SOOO easy to use in ways that seem fine at first but break in a myriad of strange and surprising ways at scale.
+  - Yes, I'm looking at you Streams and your hostile frenemy EventEmitter.
+- I'm not sure how fast it actually is, I recently made a couple of libraries for reading files and fetching their stats objects about ~2x faster than what Node itself can do, and those libraries are build on top of Node itself too, this kind of stuff shouldn't really be possible.
+
 - ## TypeScript question: When have you used "never" in a production codebase?
 - https://twitter.com/kentcdodds/status/1381453907730128900
 - `never` and `unknown` are good replacements for `any` . 
