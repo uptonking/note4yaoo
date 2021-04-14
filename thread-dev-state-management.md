@@ -22,6 +22,11 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## What GraphQL is for API's, XState is for application logic.
+- https://twitter.com/mpocock1/status/1381980661209300992
+  - What was previously random, arbitrary and diverse becomes predictable and introspectable.
+- Everyone still doing CRUD with GraphQL is still killing basement rats in the tutorial area.
+
 - ## Announcing XState Catalogue 0.1.0
 - https://twitter.com/mpocock1/status/1379385435919646723
   - Take the guesswork out of modelling state. 

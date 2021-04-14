@@ -9,6 +9,16 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
+- ## I've improved reCAPTCHA.
+- https://twitter.com/defaced/status/1381939949843406856
+  - 验证码的形式是类似移动方块将九宫格(少1块)拼成一幅图，真的难
+  - after 5 minutes of failing: "damn, guess I'm not human"
+  - You monster.
+
+- ## Our design team lead Andrey O. has become a judge 
+- https://twitter.com/ZajnoCrew/status/1382001079181787138
+  - 黑白卡片能传达出一直庄重感
+
 - ## Control the size and color of a 16x16 dot matrix with a single JavaScript function. 
 - https://twitter.com/aemkei/status/1323399877611708416
   - 一个矩阵全是点，可批量调整大小、颜色

@@ -13,6 +13,18 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## The largest misconception about @webpack is: 
+- https://twitter.com/TheLarkInn/status/1017052742039326721
+  - Not treeshaking or making vendorbundles is the cause of their web perf issues. 
+  - Rather, in _most cases_, the main cause is not leveraging code splitting enough. 
+  - You should prioritize code-splitting above the aforementioned.
+- The irony here is that to code split, you don't need to configure anything for webpack. 
+  - Just use `import()` . 
+- I think code-splitting will be more efficient at making your app faster, whether code is tree-shaken or not.
+- We use webpack dynamic imports to also lazy load features into our app that only apply in certain config e.g. /config endpoint -> {features:[]} -> for each feature -> import. Works well for us
+- Any recommendation or best practices articles  
+  - The key is this, if the code you `import` is not needed to produce the initial render of your application (routes, modals, tooltips, dialogues, event handlers, etc.)， then you should use `import()` instead.
+
 - ## Why I code against a mock API:
 - https://twitter.com/housecor/status/1256242384075198472
 

@@ -1,11 +1,11 @@
 ---
-title: lib-react-bootstrap-dev
-tags: [bootstrap, lib, react]
+title: lib-ui-bootstrap-react-dev
+tags: [bootstrap, lib, react-bootstrap, ui]
 created: '2020-12-25T12:09:41.310Z'
-modified: '2020-12-25T12:10:07.972Z'
+modified: '2021-04-14T17:36:17.442Z'
 ---
 
-# lib-react-bootstrap-dev
+# lib-ui-bootstrap-react-dev
 
 # guide
 

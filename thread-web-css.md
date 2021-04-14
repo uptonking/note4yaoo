@@ -26,7 +26,16 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## What does `min-width: 0` have to do with anything?
+- https://twitter.com/ryanflorence/status/1382116922678861826
+  - Spent 3 hours until I figured out to put `min-width: 0;` on some containers to fix some flex children from being too wide because of `<pre>` s.
+- This happens with Grid as well. By default it's "auto", which will use the intrinsic content size. Put that ish next to your global box-sizing selector
+- The magic min-width. Also useful when you use ellipsised text inside flex-box.
+- Min-width defines the same value as flex-basis. They both define the inicial width before any flex is applied. By default is auto, which means: look at my width.
+- `flex-basis: 0;` might work too
+- I had to do exactly the same thing some days ago to correctly truncate text with ellipsis.
+  - [Flexbox and Truncated Text](https://css-tricks.com/flexbox-truncated-text/)
+- min-width: 0 is not some hacky workaround, it’s actually the suggested behavior right from the spec.
 
 - ## Just found out that window.getComputedStyle() won't list out all custom properties for a given element. 
 - https://twitter.com/markdalgleish/status/1381105674260684800

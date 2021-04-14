@@ -12,6 +12,8 @@ modified: '2021-01-01T22:14:19.469Z'
 - 发包工作流：version bump -> changelog -> git release -> npm publish
   - lerna提供了主流的解决方案，但并不是每步都必须执行
 
+- Old but gold tip for Chrome and Firefox: To select part of a hyperlinked text, hold `Alt` while click-dragging the cursor.
+
 # react
 
 - cra

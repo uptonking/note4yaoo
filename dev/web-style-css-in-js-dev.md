@@ -39,10 +39,14 @@ modified: '2021-01-01T20:06:19.327Z'
 # theming
 
 - ## While I love the API and DX of Theme-UI (and derivative libraries like Chakra), they are fatally flawed without static CSS extraction. 
-  - https://twitter.com/jaredpalmer/status/1271482711132254210
+- https://twitter.com/jaredpalmer/status/1271482711132254210
   - Hooking every single component into that theme and calculating runtime styles is death by 1000 cuts. 
-  - You pay a price for every single `<Box>`
-  - Pinterest has a very fast `<Box>` component [implementation](https://github.com/pinterest/gestalt/blob/master/packages/gestalt/src/Box.js). it’s got Only 30 properties and mapped direct to css modules. No runtime theming.
+  - You pay a price for every single `<Box>`.
+- One thing I've learned from using Tailwind in a component-based framework (React/Vue) is that neither fully static or fully dynamic is perfect. You've gotta do a mix of static for things that can be extracted, and dynamic for other things.
+  - Tailwind is a great example of fully static. But if you have more than a few design tokens, and you want to generate variant classes (screen size, hover, focus) you end up with _too_ much CSS. This is why most Tailwind users reach for PurgeCSS. But that causes its own problems..
+  - If you want a component like this `<button color="blue">` to render `<button class="text-blue-500 hover:text-blue-700 focus:text-blue-800">`, there's no guarantee that those classes will exist because they may be purged.
+  - All this to say, I totally agree that 90% of CSS can be static, but that 10% is a real problem that has to be dealt with.
+- Pinterest has a very fast `<Box>` component [implementation](https://github.com/pinterest/gestalt/blob/master/packages/gestalt/src/Box.js). it’s got Only 30 properties and mapped direct to css modules. No runtime theming.
   - It's been my experience as well with things like styled-components, etc. 
     - React is slow enough without having to double the number of components, parsing CSS strings, etc.
   - I think Linaria would work as a better foundation since theming is based on CSS variables. 
@@ -55,11 +59,6 @@ modified: '2021-01-01T20:06:19.327Z'
   - Does what you're describing also apply to styled-components (using their ThemeProvider)? I know they support static extraction, but I specifically am not using it. Or is this a Theme-UI thing?
     - It's both, since both implement the "styled" API whereby CSS is a function of a components props and a global theme object is injected in to those props, which requires a Context Consumer wrapping every single styled component instance
   - I can’t say I’ve noticed any perf issues but this seems like something Theme UI could solve pretty easily with a plugin at build time for static sites or asynchronously when you initialize the theme provider
-  - One thing I've learned from using Tailwind in a component-based framework (React/Vue) is that neither fully static or fully dynamic is perfect. 
-    - You've gotta do a mix of static for things that can be extracted, and dynamic for other things.
-    - Tailwind is a great example of fully static. But if you have more than a few design tokens, and you want to generate variant classes (screen size, hover, focus) you end up with _too_ much CSS. This is why most Tailwind users reach for PurgeCSS. But that causes its own problems..
-    - If you want a component like this `<button color="blue">` to render `<button class="text-blue-500 hover:text-blue-700 focus:text-blue-800">`, there's no guarantee that those classes will exist because they may be purged.
-    - All this to say, I totally agree that 90% of CSS can be static, but that 10% is a real problem that has to be dealt with.
 
 - ## Is static extraction seems realistic?
   - Static extraction is realistic, at work we created library (something like Chakra but with some special features) and we try to generate theme for components to CSS and it looks promising

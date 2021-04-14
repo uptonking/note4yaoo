@@ -12,6 +12,11 @@ modified: '2020-12-08T14:05:52.048Z'
 - tips
   - [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
 
+# common-pkg
+
+- typesync
+  - Install missing TypeScript typings for dependencies in your package.json
+
 # roadmap
 
 - [Today(20201119)'s npm OpenRFC recap](https://twitter.com/ruyadorno/status/1329164549140996100)

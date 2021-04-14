@@ -119,6 +119,9 @@ modified: '2021-04-11T17:38:36.027Z'
 - ComponentPreview
   - 组件的快速预览图，不需要交互事件
   - 可参考SkeletonLoader
+- 组件共享
+  - [bit 跨项目区块复用方案实践](https://github.com/mcuking/blog/issues/88)
+  - [bit的组件搜索和预览界面给人一种凌乱感](https://bit.dev/components)
 
 # discuss
 

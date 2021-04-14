@@ -11,9 +11,19 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-
-- ## 
-
+- ## It(vuejs) still blows my mind that I can make a living by giving away all the code I write for free.
+- https://twitter.com/youyuxi/status/1382100303206625282
+- You can do that because you CHANGE lifes.
+- You are living a dream while helping people build the best they can.
+- The fact about knowledge is the more you share, more you will get. You are legend mate.
+- If you create something amazing, people will want to pay for even free stuff
+- Vue is such a beautiful tool. So easy to do and maintain a semi-complex application. Vue Just changed my life. Thank you
+- explain this business model
+  - Adding value to the lives of others.
+  - BUSINESS MODEL - COMPANIES AND GOOD PEOPLE SPONSOR HIS WORK WHICH BENEFITS EVERYONE, NOT JUST THEM.
+- Does it blow your mind that companies then take that free code and charge extortionate rates for people to use it
+- By the way, you make my job easier. 
+- I’m very glad you’re making a living off of it, because me too.
 
 - ## Which approach would you prefer for defining CORS?
 - https://twitter.com/lukeed05/status/1369145056460906499

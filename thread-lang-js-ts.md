@@ -11,6 +11,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## Having been neck-deep in advanced TypeScript typings for more than a year now (and generally disliking most of that time), I'm in total agreement with: Prefer interfaces over types.
+- https://twitter.com/BenLesh/status/1382076661575905283
+- Do you think this applies more to widely used libraries vs most apps?
+- Only using types for Unions i can agree with all above.
+- [TypeScript: Prefer Interfaces_202010](https://ncjamieson.com/prefer-interfaces/)
+  - Some time after this blog post was written, Anders Hejlsberg opened a PR that preserves type aliases for union and intersection types. 
+  - That PR’s changes should included in TypeScript 4.2, 
+  - so when that version is released, the reasons for preferring interfaces might be less compelling.
+
 - ## @nodejs is fast and easy to use. 
 - https://twitter.com/matteocollina/status/1381639256842584069
   - The fact that your JavaScript libraries are either (1) buggy (2) slow is not a problem of JavaScript. 

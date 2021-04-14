@@ -7,6 +7,15 @@ modified: '2021-04-12T18:06:57.616Z'
 
 # lib-ui-spectrum-codebase-architecture
 
+# guide
+
+- For React Spectrum v3, a new architecture is proposed taking advantage of hooks in React 16.8, 
+  - which abstracts components into three reusable pieces: 
+    - platform agnostic state management, 
+    - theme agnostic behavior, 
+    - and themed components. 
+  - This will allow new platforms to reuse common state, and new themes to utilize common behavior while getting accessibility and more out of the box.
+
 # react-stately
 
 - implements state management and core logic for each component. 

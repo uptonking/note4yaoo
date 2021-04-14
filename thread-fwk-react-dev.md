@@ -23,6 +23,35 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## 
+
+- ## Pages in Next are just components and it pre-renders all pages at build time by default (aka static-site generation aka SSG)
+- https://twitter.com/benmvp/status/1382119271766003713
+  - When a page's data must be retrieved at request time (likely user-specific), we can render using OG server-side rendering (SSR) by swapping in `getServerSideProps` .
+- "On-demand rendering" combines the best of SSG (cached pages) & SSR (dynamic pages) to enable dynamic cached pages
+- One way is by creating fallback pages w/ `getStaticPaths` that caches dynamic routes (eg `/post/<id>` ) on request instead of pre-rendering them upfront
+- The other way is thru "Incremental Static Regeneration" using `revalidate` . It makes static pages seem dynamic by regenerating them often (up to once a second) w/ updated data
+
+- ## Redux was only ever added because the old context api was a trash fire.
+- https://twitter.com/_developit/status/1382078110041059331 
+  - It's in the process of being phased out in favor of useReducer/modern context api.
+- That's interesting. New context API still has performance issues if not used carefully. 
+  - Redux 6 actually moved to it and quickly reverted back in Redux 7 for that reason. 
+  - The problem is if using hooks directly in the provider you are tying your updates to further up the tree.
+- My whole area of work has been looking at how we can use granular techniques to optimize update boundaries independent of components. 
+  - It frees the enduser from needing to worry about structure when it comes to performance. 
+  - This has application on client and server rendering.
+- In the end components become little more than just a function call. 
+  - They don't own their own state, and props are just things passed through them instead of bound to them. Still colocated in creation, just not owned.
+  - So that's what I mean when components are just function calls.
+- would you consider the vue-style nested function to be part of this? or is your goal to fully extract any form of state from rendering
+  - I'm not exactly extracting it outside. It's just the boundaries are the control flow rather than the components. Components are for the developer, but the framework flattens things down to control flow boundaries.
+- Inside a conditional it doesn't matter if there are 1 or 10 components, things are only going to be released if that condition changes. Things are only going to be updated if they granular depend on what changes. Components are just organization mechanism.
+  - sounds like the approach we've been discussing too. subscriptions trigger updates, components are just a way to create subscriptions or register side-effects.
+- I developed this system accidentally creating Solid. 
+  - I built it without components at first. I was focused on performance and thinking one day I'd just stick them into WebComponents. For convenience I adopted JSX Components syntax which compiled to `Comp(props)` .
+  - I was focused on the client, but then Marko team approached me, having realized that removing the components could let them with stateful primitives and analysis do subcomponent hydration. Actually break hydration along control flows as well.
+
 - ## React Server Components are all about APIs.
 - https://twitter.com/RyanCarniato/status/1381640821510873089
   - When you keep state in the client you are sending the data over one way or the other, there is no escaping it. Below the navigation fold you need to present new information. Only MPAs never are going to need the "static" parts
