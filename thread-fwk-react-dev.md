@@ -23,7 +23,23 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## Thread See new Tweets Conversation Lee Robinson @leeerob What is Incremental Static Regeneration (ISR) with Next.js?
+- https://twitter.com/leeerob/status/1382400399949271040
+- Incremental Static Regeneration (ISR) is a new solution allowing you to update static content instantly without needing a full rebuild of your site.
+- let me explain why ISR exists.
+  - If you've tried to build a large-scale static site, you might be stuck waiting hours for your site to build. If you double the number of pages, the build time also doubles.
+  - Next.js allows you to create or update static pages after you've built your site. 
+  - ISR enables developers and content editors to use static generation on a per-page basis, without needing to rebuild the entire site.
+  - Next.js can define a revalidation time per-page (e.g. 60 seconds). Initially, we'll show the cached page.
+  - Any requests to the page after the initial request and before the revalidation period are cached and instantaneous.
+  - After 60 seconds, Next.js will show the cached page and trigger a regeneration in the background to fetch the latest data from your CMS.
+  - Once the page has been successfully generated, Next.js will invalidate the cache and show the updated info
+  - ISR is just one feature of Next.js' hybrid approach. Developers are empowered to pick the correct solution for their needs (e.g. SSG, ISR, SSR)
+- If there is an error generating the page, it will *not* invalidate the cache and instead continue serving the existing static file. No downtime!
+- Could you expand on what you like about incremental builds?
+  - ISR is really useful for data changes/caching. For code changes, you want something similar. 
+  - Gatsby's incremental builds only rebuild pages with changed dependencies/code. My Gatsby rebuilds take about 20-60 seconds, compared to Next.js's 15-20 mins.
+- You have control over the initial build. As a developer, you get to make the tradeoff for faster build times or to statically generate more pages
 
 - ## Pages in Next are just components and it pre-renders all pages at build time by default (aka static-site generation aka SSG)
 - https://twitter.com/benmvp/status/1382119271766003713

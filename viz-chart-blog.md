@@ -24,3 +24,4 @@ modified: '2021-01-19T12:47:29.048Z'
 # ref
 
 - [How to compare data using charts](https://www.highcharts.com/blog/post/how-to-compare-data-using-charts/)
+- [how to feed live data to a chart with Highcharts API](https://www.highcharts.com/docs/working-with-data/live-data)

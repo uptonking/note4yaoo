@@ -11,6 +11,21 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## 
+
+- ## I've been trying to persuade AVIF folks to allow a 'preview' frame at the start of the stream.
+- https://twitter.com/jaffathecake/status/1382608978400702465
+- I can confirm that some people (🤚) hate this “feature”, mostly because the LQIP is often not replaced with the final image 
+  - I guess it would be much better with a native support, without relying on additional JS.
+  - The alternative for the "failure to fully load" case is just empty space.
+  - I prefer empty space over useless LQIP. At least I know something better is supposed to load.
+  - As I said, a native solution would have less issues, at least on the JS side.
+  - With JS-based LQIP, "straight away" is not the main goal (for me), I can wait a little. But the final image often doesn't load at all (even if I wait for it) when I go on Medium.
+- Why an area of the page might not load straight away
+  - Dependent on JS
+  - In an iframe
+  - In the cell of a grid that hasn't been parsed yet
+  - Dependent on web fonts that haven't loaded yet
 
 - ## Little pro-tip: Firefox is *so* much smoother than Chrome when it comes to window resizing, at least on the sites I've tested with.
 - https://twitter.com/JoshWComeau/status/1379849269692207108
@@ -19,7 +34,6 @@ modified: '2021-01-08T17:13:43.392Z'
 - What I do is keep the devtools narrow and turn on mobile emulation with the "Responsive" option instead of a device 
 - In Firefox you can also close the dev tools but keep the resizer. In Chrome you have to move the dev tools to the side or pop it out to get it out of the way
 - Firefox is my go-to browser for debugging layout issues as well
-
 
 - ## If you had to choose one browser API that’s the most frustrating to work with, what would it be?
 - https://twitter.com/devongovett/status/1372215804318613510
@@ -42,7 +56,6 @@ modified: '2021-01-08T17:13:43.392Z'
   - It's simple and efficient enough, the kind of thing we need in this context. It has limitations, arguably dumb, but working with strings is ok when you have native JSON support.
 - Push notifications are super complicated too
 - WebRTC
-
 
 - ## I have a form (in our SPA), but every time I save data, the page reloads!
 - https://twitter.com/acemarke/status/1371826468263763970

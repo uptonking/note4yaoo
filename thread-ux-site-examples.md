@@ -35,6 +35,12 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://twitter.com/thatbenlifetho/status/1365390262386663424
   - 类似药丸的设计
 
+# 优雅使用圆角矩形卡片的设计
+
+- https://mxb.dev/
+  - https://github.com/maxboeck/mxb
+  - 主要卡片的背景为图片且无边框，展示文字的卡片的有边框且有点乱
+
 # ux-pieces
 
 - https://www.cassie.codes/

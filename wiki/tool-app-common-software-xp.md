@@ -58,3 +58,10 @@ modified: '2020-12-29T17:52:23.312Z'
 
 - sysget
   - one syntax to every package manager
+
+# products
+
+- https://github.com/junaid33/opensource.builders
+  - https://opensource.builders/
+  - a website to find and request open-source alternatives to popular software
+  - /米白色背景

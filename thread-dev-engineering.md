@@ -13,6 +13,15 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Unpopular opinion: you should write E2E/integration tests *first*, always. 
+- https://twitter.com/DavidKPiano/status/1180497113341468677
+  - (This mainly applies to applications. For libraries used by developers, the unit tests *are* the E2E tests, a lot of the time.)
+  - They should be directly related to business logic (user) requirements. 
+  - Only when an E2E/integration test fails should you even think about writing unit tests. 
+  - And be willing to delete those unit tests.
+- Speaking strictly from the point of view of a library author, it’s the failing unit tests that can give you an instant idea of why the e2e tests are failing, rather than having to go spelunking(洞穴攀爬运动)
+- When we first started React Training, we had only one test for the whole website: make sure someone can buy a ticket. As long as that worked, everything else was negotiable
+
 - ## The largest misconception about @webpack is: 
 - https://twitter.com/TheLarkInn/status/1017052742039326721
   - Not treeshaking or making vendorbundles is the cause of their web perf issues. 

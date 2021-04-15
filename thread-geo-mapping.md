@@ -11,6 +11,18 @@ modified: '2021-03-26T11:28:29.993Z'
 
 - ## 
 
+
+- ## 
+
+- ## The new Static Playground -- now, developers can see how Static Images API responses will look based on the position, resolution, padding, overlays, and any style parameters
+- https://twitter.com/Mapbox/status/1382449857097515008
+
+
+- ## Roofs on 3D buildings are now level relative to the earth rather than the terrain. 
+- https://twitter.com/Mapbox/status/1382457903513231364
+  - Level roofs are now drawn for all fill-extrusion layers drawn on top of terrain. 
+  - @Mapbox GLJS v2.2.0 just launched
+
 - ## Voronoi polygons for hover interactivity of points are popular and make sense to dataviz practitioners but maybe we should have been teaching people how to use quadtrees instead? 
 - https://twitter.com/Elijah_Meeks/status/1378880759713333252
   - Familiarity with quadtrees is more valuable in the long-term and gives greater dataset flexibility.

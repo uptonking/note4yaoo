@@ -11,6 +11,23 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## The point of Symbols is that they are unique and primitive at the same time. 
+- https://twitter.com/asleMammadam/status/1382641865883852802
+  - We can use them as a sign of our values. 
+  - As we may know, objects are unique too, but not primitives, which means they're not something like numbers or strings, but Symbols are.
+  - You can also use Symbols for object's keys, so no one can access them unless they have that symbol.
+
+- ## I'm starting to avoid putting any data in an object keys.seems easier to iterate, filter, expand, 
+- https://twitter.com/daKmoR/status/1382313714276270090
+  - from `{k: 'v'}` to `{name: ` k `, value: 'v'}` .
+  - Filtering and iterating especially seems nicer with an array of objects.
+  - But by FAR the biggest benefit is extendability without a "breaking" change.
+- `Object.keys, Object.values, Object.entries` are very helpful for structure #1. 
+  - I tend to prefer the readability of #1 personally.
+- I'm curious: in which cases? What are the pros/cons? The second object structure reminds me of XML.
+- I tend to prefer Map. Best of both worlds imo. 
+  - You can initialize it using an array, it's easy lookup (no need for find + predicate), easy filtering and iterating because it is Iterable by default.
+
 - ## Having been neck-deep in advanced TypeScript typings for more than a year now (and generally disliking most of that time), I'm in total agreement with: Prefer interfaces over types.
 - https://twitter.com/BenLesh/status/1382076661575905283
 - Do you think this applies more to widely used libraries vs most apps?

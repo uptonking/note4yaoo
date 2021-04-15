@@ -13,6 +13,25 @@ modified: '2021-04-07T10:21:02.611Z'
 
 - ## 
 
+- ## I've wished that *ALL* of @nozzleio was written in TypeScript. 
+- https://twitter.com/tannerlinsley/status/1382435100449591296
+  - In true @getsentry style, expect a lengthy post-mortem(事后反思) about the imminent(即将发生的) transition/rewrite.
+- Please tell me how you attack this because there's a 200k+ line codebase I'd like to do this for
+  - First step is likely setting up tooling to let TS and JS files build and coexist.
+  - From there, it's about how you want to tackle converting files. I opted for hand-converting one at a time. Tried a couple different auto-migrate tools but wasn't impressed with the output.
+  - First file should probably be some tiny utils file, just so you know that TS is compiling anything at all and the app still loads.
+  - From there, pick a few key core files, convert, start writing types for critical data structures. Branch out from there.
+- I've read several of these "we migrated our whole codebase to TS" posts, and the common themes are usually:
+  - A few key folks driving the effort
+  - Get buy-in by socializing with other devs
+  - Long-term process
+  - Have to interop JS+TS
+  - Track progress over time
+- In my case, we have a typical Express CRUD server, plus about 20K lines of pure business logic.
+  - I set up `ts-node` for dev, and just call `tsc` to build for prod. 
+  - I have it outputting JS files in the original folders vs a separate build folder.
+  - [2020 best practices for refactoring 60k LoC JS project to TS?](https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/g7q6hvw/)
+
 - ## [Things I Regret: Returning Modified Data In API Response Payloads](https://www.bennadel.com/blog/4019-things-i-regret-returning-modified-data-in-api-response-payloads.htm)
 - https://twitter.com/BenNadel/status/1377583041263058949
   - After working on the same application for close to a decade, one software architectural decision that I've come to really regret is returning modified data in an API response payload. 

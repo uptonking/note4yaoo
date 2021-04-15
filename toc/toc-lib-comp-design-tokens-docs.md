@@ -46,6 +46,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://ajusa.github.io/lit/docs/lit.html
   - https://jenil.github.io/chota/
   - https://yeun.github.io/open-color/
+  - https://nordhealth.com/styleguide/
 
 - 多页文档示例
   - https://newcss.net/usage/elements/ (classless)

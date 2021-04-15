@@ -23,7 +23,7 @@ modified: '2020-12-21T07:46:14.237Z'
 
 - grid布局缺点
 
-# pieces
+# [CSS Grid网格布局教程_阮一峰_2019](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
 - Grid布局是微软在2010年提出来的一种新的布局方式，到2016年的时候提交了该布局的草案，经过发展，grid布局慢慢变的成熟，兼容性也越来越好
 - Grid Container
@@ -42,39 +42,13 @@ modified: '2020-12-21T07:46:14.237Z'
   - 与网格单元不同的是，网格单元必须是相邻的网格线
 - `fr`单位：剩余空间分配数，用于在一系列长度值中分配剩余空间，按数字比例分配
 
-- 在使用Grid布局的时候始终把容器当作是一个多行多列的网格有助于更准确的实现UI效果
-- Grid属性布局分为容器属性和项目属性， 这与Flex布局的属性分类是相似的
-- 使用 `display:grid` 声明一个容器， 容器以块级元素存在
-  - 如果需要是容器变为行级元素可以使用 `display: inline-grid;`
-- 当容器的宽度不确定的时候，如果需要容器中尽可能的充满项目，使用 `auto-fill` 属性自动填充容器。
-- `minmax(min,max)` 给定项目一个长度范围，使项目的长度在这个范围当中。
-- `auto` 不设定项目的宽度， 由浏览器根据实际情况决定项目的宽
-- `fr` 是网格布局提供的一种表示比例关系的关键词
-- 容器中的子项目的分布是由无形的一条条网格线划分的，在定义行和列的时候可以同时定义网格线的名称，方面设定子项目的位置和跨度。
-- grid-template-areas：定义网格区域的名称，同网格线名称的作用相同，方便定义子项目位置，跨度的定义
-- grid-auto-flow：定义子项目的排列顺序， 默认是先列后行(row)
-- justify-items: 定义子项目在水平位置的分布
-- align-items: 定义子项目在垂直位置上面的分布
-- place-items: justify-items 和 align-items 的合并写法
-- 在之前的项目中内容默认都是在左上角，可以通过配置这三个属性来改变，和Flex布局的justify-content和align-items属性的使用是相似的。
-
-- grid布局是二维的，可以通过横轴和交叉轴来对齐grid item。
-  - 它有一条轴叫 inline axis，它与文字的书写模式（水平书写、竖直书写）有关，
-  - 由于我们通常不会涉及到文字的书写模式，暂且把 inline axis 看做是横轴，把 block axis 看做是与横轴交叉的轴
-  - justify-items是描述items在布局区域沿着 inline axis 的对齐方式
-    - In grid layouts, it aligns the items inside their grid areas on the inline axis
-  - align-items在FlexBox布局中它表示items在纵轴上的对齐方式；
-    - 在grid布局中，表示items在grid area竖直方向上对齐方式
-
-# [CSS Grid网格布局教程_阮一峰_2019](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
-
 - 对于grid布局，外层div元素是容器，内层div元素是项目
 - 项目只能是容器的顶层子元素，不包含项目的子元素，Grid布局只对项目生效
 - 容器的水平方向为row，竖直方向为column，行列交叉的区域为cell
 - grid line划分了网格区域，n行有n+1条水平网格线，m列有m+1条竖直网格线
 
 - ## 容器属性
-- `display: grid` 指定一个容器采用网格布局
+- `display: grid` 设置一个容器采用grid布局
   - 默认情况下，容器元素都是块级元素，但也可以用 `display: inline-grid;` 设成行内元素
   - 设为网格布局以后，容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。
 - grid-template-columns/rows
@@ -156,6 +130,32 @@ modified: '2020-12-21T07:46:14.237Z'
     - 可以理解为它可以控制最大值是多少
   - minmax(min, max) ：定义了长度范围区间
 
+# pieces
+
+- 在使用Grid布局的时候始终把容器当作是一个多行多列的网格有助于更准确的实现UI效果
+- Grid属性布局分为容器属性和项目属性， 这与Flex布局的属性分类是相似的
+- 使用 `display:grid` 声明一个容器， 容器以块级元素存在
+  - 如果需要是容器变为行级元素可以使用 `display: inline-grid;`
+- 当容器的宽度不确定的时候，如果需要容器中尽可能的充满项目，使用 `auto-fill` 属性自动填充容器。
+- `minmax(min,max)` 给定项目一个长度范围，使项目的长度在这个范围当中。
+- `auto` 不设定项目的宽度， 由浏览器根据实际情况决定项目的宽
+- `fr` 是网格布局提供的一种表示比例关系的关键词
+- 容器中的子项目的分布是由无形的一条条网格线划分的，在定义行和列的时候可以同时定义网格线的名称，方面设定子项目的位置和跨度。
+- grid-template-areas：定义网格区域的名称，同网格线名称的作用相同，方便定义子项目位置，跨度的定义
+- grid-auto-flow：定义子项目的排列顺序， 默认是先列后行(row)
+- justify-items: 定义子项目在水平位置的分布
+- align-items: 定义子项目在垂直位置上面的分布
+- place-items: justify-items 和 align-items 的合并写法
+- 在之前的项目中内容默认都是在左上角，可以通过配置这三个属性来改变，和Flex布局的justify-content和align-items属性的使用是相似的。
+
+- grid布局是二维的，可以通过横轴和交叉轴来对齐grid item。
+  - 它有一条轴叫 inline axis，它与文字的书写模式（水平书写、竖直书写）有关，
+  - 由于我们通常不会涉及到文字的书写模式，暂且把 inline axis 看做是横轴，把 block axis 看做是与横轴交叉的轴
+  - justify-items是描述items在布局区域沿着 inline axis 的对齐方式
+    - In grid layouts, it aligns the items inside their grid areas on the inline axis
+  - align-items在FlexBox布局中它表示items在纵轴上的对齐方式；
+    - 在grid布局中，表示items在grid area竖直方向上对齐方式
+
 # Relationship of grid layout to other layout methods
 
 - The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. 
@@ -214,7 +214,7 @@ modified: '2020-12-21T07:46:14.237Z'
   - By using -1, you can be sure your content will always reach the end column.
 - Grid areas create implicit line names
 - When you absolutely position a grid item, rather than its positioning context being its container (i.e. the entire grid), we can position it in relation to its specified grid-column and grid-row start and end lines. 
-  - As usual,               `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
+  - As usual,                      `position: absolute` removes an element from the flow of the document (i.e. it is ignored by other elements). 
   - This makes absolute positioning useful if you want to overlap grid items without disrupting the grids auto-placement algorithm. 
   - Auto-placement goes out of its way not to overlap items unless you explicitly declare both a grid-column-start and grid-row-start value for every item.
 - All grid items have a default order value of 0. 

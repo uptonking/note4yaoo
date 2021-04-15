@@ -11,6 +11,17 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## Two hard engineering problems that show up in all systems eventually:
+- https://twitter.com/undef_obj/status/1382350128380485642
+  - Dealing with distributed state
+  - Handling concurrent updates
+  - The more you learn about how to address these with different algorithms and systems, the better off you'll be in the long run.
+- For enterprise systems I'd add a third:
+  - Authorization and governance
+  - It's an often overlooked(忽视的) part of enterprise development, but insanely difficult to manage at scale unless it's baked in.
+  - Try to break the problem down to a more primitive state. What is authorization? It's taking the triple (user, operation, object) and applying it at runtime. This is state that must be consistent (see original tweet) or authorization is faulty.
+  - I like to think of Authorization Metadata in terms of a Lampson Access Control Matrix
+
 - ## It(vuejs) still blows my mind that I can make a living by giving away all the code I write for free.
 - https://twitter.com/youyuxi/status/1382100303206625282
 - You can do that because you CHANGE lifes.

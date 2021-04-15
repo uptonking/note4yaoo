@@ -26,6 +26,12 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## typography tip: word break with `<wbr>` and/or `&shy;` .
+- https://twitter.com/argyleink/status/1382685891613712387
+  - https://codepen.io/argyleink/pen/vYgjVVx?editors=1100
+  - wbr会换行，&shy; 换行时还会显示短横连字符
+- Good way to show the hyphen difference between `<wbr>` and `&shy;`
+
 - ## What does `min-width: 0` have to do with anything?
 - https://twitter.com/ryanflorence/status/1382116922678861826
   - Spent 3 hours until I figured out to put `min-width: 0;` on some containers to fix some flex children from being too wide because of `<pre>` s.

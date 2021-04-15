@@ -11,6 +11,14 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## Should pure selection changes be part of an app's undo/redo stack?
+- https://twitter.com/steveruizok/status/1382660618361143296
+- I think Photoshop does it because a selection is a complex shape that can be modified. 
+  - But on programs where it‘s just a collection of items 
+  - I think the majority avoids it being a part of the history.
+- No. They are an edge case for me. For that time I'm SHIFT - selecting a bunch of layers and make a mistake. All else, selection is annoying in the undo-stack.
+  - It's also confusing to me. My brain assumes layer states in the undo-stack. Having selection states as well, makes intuitive undo-ing impossible.
+- Personally don’t like it, I never want to redo/undo a selection, always an actual change. Which means that if I selected things in between changes it then « pollutes » the changes thread
 
 - ## When it comes to Dark Mode, my strategy has always been to manually create a second set of colors. 
 - https://twitter.com/JoshWComeau/status/1380549061204439042
