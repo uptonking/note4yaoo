@@ -23,6 +23,19 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ##  `import React from 'react';` will go away in distant future
+- https://twitter.com/dan_abramov/status/1308739731551858689
+  - use ` import * as React from 'react';` instead.
+  - https://www.reddit.com/r/reactjs/comments/iyehol/import_react_from_react_will_go_away_in_distant/
+- what is the problem with default imports?
+  - It complicates our ESM story, doesn’t work by default with TypeScript, and was mostly necessary for JSX anyway. 
+  - Now that JSX doesn’t need it, it doesn’t make sense to have so many different ways to import React.
+  - I’d say it would’ve been annoying if we still often needed React to be in scope (because "* as" is more to type) but with the new JSX transform it would not be as useful.
+- What is the purpose of this？
+  - When you need to import everything from a file that has bunch of exports in them then you can use (import * as React from "react), which makes more sense as you are importing everything from it, every export it has.
+  - While, on the other hand (import React from "react") is a default export which means there has to be a default export named "React" in that file. Something like. export default React; On of the biggest reason for this switch is (tree shaking).
+  - 能够使语义更明确
+
 - ## Thread See new Tweets Conversation Lee Robinson @leeerob What is Incremental Static Regeneration (ISR) with Next.js?
 - https://twitter.com/leeerob/status/1382400399949271040
 - Incremental Static Regeneration (ISR) is a new solution allowing you to update static content instantly without needing a full rebuild of your site.

@@ -13,18 +13,27 @@ modified: '2021-03-29T19:30:24.663Z'
 - roadmap
   - rendering(not web) is the future.
 
-- tips
-  - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
+- tech stacks: table in markdown editor
+  - design system: ui components
+  - text editor
+  - table editor
 
-- apps-about-table-in-markdown-editor
+- apps: docs/sheets/data-oriented
   - datable
     - pivot table
   - noter
-    - live edit
+    - collapsible
+    - pdf
+  - live-doc-generator
+    - live table & data sources
+    - shareable & embeddable
 
 - integrations
 
-# list
+- tips
+  - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
+
+# list-grid-table
 
 - tips
 
@@ -60,8 +69,11 @@ modified: '2021-03-29T19:30:24.663Z'
 
 - leaflet
 - maplibre-gl-js
-- more-mapping
-  - turf
+
+## more-mapping
+
+- turf
+
 - leading
   - esri
   - mapbox
@@ -77,14 +89,14 @@ modified: '2021-03-29T19:30:24.663Z'
 
 ## craftjs
 
-# faves
+## more-editor
 
-- dashboard
-  - tips
-    - 实际仪表板常与业务紧密相关，建议结合window-layout和drag实现
-  - coreui
-  - creativetim
-  - olap(js intensive)
+- slate
+- monaco-editor
+  - code editor that powers desktop vscode
+  - not supported in mobile browsers. not for IE.
+
+# faves
 
 - design-system
   - tips
@@ -98,6 +110,13 @@ modified: '2021-03-29T19:30:24.663Z'
   - doc-site
     - sass-primitive
     - pico
+
+- dashboard
+  - tips
+    - 实际仪表板常与业务紧密相关，建议结合window-layout和drag实现
+  - coreui
+  - creativetim
+  - olap(js intensive)
 
 - window-layout-manager
   - tips

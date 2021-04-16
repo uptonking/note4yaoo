@@ -221,11 +221,39 @@ modified: '2020-10-31T06:36:49.770Z'
   - 要求 公开源码、协议和版权信息
   - 允许 商用、分发、修改、专利授权、私用、附加协议
   - 禁止 责任承担、商标使用
-- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。但是，在MPL 许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
+- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。
+  - 但是，在MPL许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。
+  - 这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
 - MPL许可证第三条第7款中允许被许可人将经过MPL许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
 - 要求源代码的提供者不能提供已经受专利保护的源代码
 - 要求所有再发布者都得有一个专门的文件就对源代码程序修改的时间和修改的方式有描述
 - MPL 2.0与Apache许可证以及GPL第二版或更新、LGPL2.1版或更新，及AGPL第三版或更新兼容。而1.1版因为有“一些复杂的限制”造成与GPL的不兼容（从而阻止升级到MPL 2.0）
+
+- ## [How does the scope of the MPL's copyleft compare with the LGPL and GPL's copyleft?](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
+- MPL: The copyleft applies to any files containing MPLed code.
+- GPL: The copyleft applies to all software based on GPLed code.
+- LGPL: The copyleft applies to any library based on LGPLed code.
+
+- ## I want to use software which is available under the MPL. What do I have to do?
+- Nothing. 
+- Like all other free and open source software, software available under the MPL is available for anyone (including individuals and companies) to use for any purpose. 
+- The MPL only creates obligations for you if you want to distribute the software outside your organization.
+
+- ## I want to distribute (outside my organization) executable programs or libraries that I have compiled from someone else's unchanged MPL-licensed source code, either standalone or part of a larger work. 
+- You must inform the recipients where they can get the source for the MPLed code in the executable program or library you are distributing (i.e., you must comply with Section 3.2). 
+- You may distribute any executables you create under a license of your choosing, as long as that license does not interfere with the recipients' rights to the source under the terms of the MPL.
+
+- ## I want to distribute (outside my organization) MPL-licensed source code that I have modified. 
+- You must inform the recipients that the source code is made available to them under the terms of the MPL (Section 3.1), including any Modifications (as defined in Section 1.10) that you have created.
+- You must respect the restrictions on removing or altering notices in the source code
+
+- ## I want to distribute (outside my organization) an executable program based on MPL-licensed source code that I have modified. What do I have to do?
+- You must make available the MPL-licensed portions of the source code as described in the previous question, and inform the recipients how they can obtain such source code
+
+- ## If I use MPL-licensed code in my proprietary application, will I have to give all the source code away?
+- No. The license requires that Modifications (as defined in Section 1.10 of the license) must be licensed under the MPL and made available to anyone to whom you distribute the Source Code. 
+- However, new files containing no MPL-licensed code are not Modifications, and therefore do not need to be distributed under the terms of the MPL, even if you create a Larger Work (as defined in Section 1.7) by using, compiling, or distributing the non-MPL files together with MPL-licensed files. 
+- This allows, for example, programs using MPL-licensed code to be statically linked to and distributed as part of a larger proprietary piece of software, which would not generally be possible under the terms of stronger copyleft licenses.
 
 # EPL (Eclipse Public License)
 

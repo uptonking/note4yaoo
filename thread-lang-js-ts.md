@@ -7,6 +7,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 # thread-lang-js-ts
 
+# repeat
+
+- ## React TypeScript Cheatsheet
+- https://github.com/typescript-cheatsheets/react
+  - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
+
+- more-cheatsheet
+  - https://nerdcave.com/tailwind-cheat-sheet
+
 # pieces
 
 - ## 

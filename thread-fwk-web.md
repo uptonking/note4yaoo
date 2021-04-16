@@ -11,7 +11,9 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## Started an RFC around i18n and how it should be implemented in the core library.
+- https://twitter.com/shoelace_style/status/1383065846298337285
+  - [RFC: i18n](https://github.com/shoelace-style/shoelace/issues/419)
 
 - ## component libraries that prioritize cross-framework compatibility (e.g. web components with compat layers) will always be beat out by framework-specific alternatives for any sufficiently popular framework.
 - https://twitter.com/aweary/status/1380567398160465921

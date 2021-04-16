@@ -1,8 +1,8 @@
 ---
 title: pm-noter-i18n-cn
-tags: [cn, note-taking, pm]
+tags: [cn, i18n, note-taking, pm]
 created: '2021-04-09T07:10:20.648Z'
-modified: '2021-04-09T07:11:14.059Z'
+modified: '2021-04-16T15:06:04.668Z'
 ---
 
 # pm-noter-i18n-cn

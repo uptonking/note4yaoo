@@ -146,7 +146,7 @@ modified: '2021-01-28T21:34:18.645Z'
     - Only the elements inside of `<sl-theme>` will inherit the theme's styles.
   - 没有组件级的css vars
   - dark主题提供了一套全局变量，还提供了各组件在该主题下的特殊样式
-  - 使用了 `::part` 伪元素选择shadow tree中含有part属性的元素
+  - 使用了 `::part` 伪元素选择器，选择shadow tree中含有part属性的元素
 - https://github.com/bruegmann/bluce
   - Make Bootstrap customizable with CSS variables only
   - You can already customize Bootstrap. But only at build time.

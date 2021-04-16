@@ -29,6 +29,9 @@ modified: '2021-01-08T11:48:16.590Z'
   - 700+ Pure CSS, SVG & Figma UI Icons Available in SVG Sprite, styled-components, NPM & API
 - https://github.com/colorswall/CSS-file-icons
   - Pure CSS icons for popular file extensions
+- https://github.com/astrit/css.gg
+  - https://css.gg/
+  - 700+ Pure CSS, SVG & Figma UI Icons
 
 - https://github.com/ConnorAtherton/loaders.css
   - https://connoratherton.com/loaders

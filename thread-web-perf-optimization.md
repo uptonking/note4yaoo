@@ -11,6 +11,19 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ## Spent some dev cycles over the last week working on some JS bundle improvements for @components_ai .
+- https://twitter.com/4lpine/status/1382805903603163136
+- Offloaded a lot of client heavy JS to API endpoints.
+  - Main app serves 60% less JS
+  - 80%+ reduction in large components
+  - 50% improvement in build times
+- The most fruitful optimizations boiled down to a few things:
+  - Preprocessing large sets of data so we only send what's needed
+  - Replacing large, inlined SVGs with CDN links (with caching)
+  - Moving functionality requiring Babel/PostCSS/Prettier/etc. to API endpoints
+- The #NextJS bundle analyzer plugin was super useful because it helped pinpoint problematic pages and modules.
+  - From there it was preprocessing data and moving code around with a more clear separation between "front end" and "back end".
+
 - ## Beyond junior, you need to understand performance of nested loops. You need to understand when to pick object vs array and what that means as your data grows. 
 - https://twitter.com/dan_abramov/status/1375495411746635781
   - You need to understand how to write functions so that computation can be cached.

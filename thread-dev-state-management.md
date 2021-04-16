@@ -22,6 +22,13 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## You know, the world of enterprise SAAS react could really use a router that behaves similar to a state machine, 
+- https://twitter.com/tannerlinsley/status/1382736036304867332
+  - is strongly typed for known combinations of routes+searchParams, 
+  - and first class search param support eg. default params, synchronously stateful, synchronized to URL
+- I might not have state machines but I just released a package to control query params as regular state !
+- Bespoke routers are bespoke. Would love to see names given to the various parts I could use to build up my router. For example maybe I use iframes and part of my pathname is actually controlled by the app inside the iframe and postMessage
+
 - ## What GraphQL is for API's, XState is for application logic.
 - https://twitter.com/mpocock1/status/1381980661209300992
   - What was previously random, arbitrary and diverse becomes predictable and introspectable.

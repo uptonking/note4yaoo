@@ -11,6 +11,37 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## Please don't import SVGs as JSX. 
+- https://twitter.com/_developit/status/1382838799420514317
+  - It's the most expensive form of sprite sheet: costs a minimum of 3x more than other techniques, and hurts both runtime (rendering) performance and memory usage.
+  - This bundle from a popular site is almost 50% SVG icons (250kb), and most are unused.
+  - If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>` , or extracts them into `<defs>` for use with `<use href="#">` .  
+  - Unlike JS, SVGs inlined into HTML are pretty cheap.
+- You can define them in many different hidden SVGs, or you can use `<svg src="">` within the defs. 
+  - There are actually some solutions that do this automatically with similar ergonomics to the more common "import as a component" solutions.
+- They are not cheap when they are 3000 elements (tried going this route with an emoji keyboard, font or png sprite is so much better)
+- what if i want to use animation on svg?? `</img>` can't do that.
+  - You can use inline SVG without inlining the SVG into JS. Inline it into the HTML (that's what "inline SVG" means). 
+  - Or you can use `<object>` , which supports animation.
+- normally, an SVG is download cost (rendering doesn't have any main thread cost).
+  - SVGs inlined into bundles get downloaded as JS, then parsed & evaluated as JS function calls to create objects, then rendered by a UI library (often repeatedly).
+  - There is also a hidden cost here we don't really talk much about, which is that it's more expensive to execute a bunch of JavaScript to build up static HTML trees than it is to let the browser parse them along with the rest of the HTML for a page.
+- What if each SVG is a component? Wouldn't tree shaking (mostly) solve this?
+  - That just spreads out the problem over time. The memory issue and performance impact are still there, just less up-front.
+  - code-splitting these is better than nothing, but since there's no technical reason for inlining SVG into JS in the first place, we can do better.
+- I'm guessing this is only an issue with frameworks where each DOM node is function call though (React, Preact, Mithril, Inferno, etc).
+  - I imagine Svelte for example wouldn't suffer from this.
+  - there's still overhead. there's a cost to having _any_ data represented in code
+  - indeed. unless the SVG ends up being fully extracted from bundles, something is doing the work of parsing it and generating imperative DOM calls (effectively an expensive emulation of what browsers already do for us).
+- What about inlined as JS strings and created with innerHTML? I assume still more expensive than `<def>` directly in HTML, but cheaper than vdom render fns.
+  - Considerably. But hard to do if the svg is a top level element, since you can't nuke the component's container, and you can't use innerHTML with the SVG element
+  - FWIW Svelte will do exactly this where it *is* possible, but those cases are rare
+  - Yeah, Vue 3 does this too but have similar bail out conditions
+  - Cheaper yes, though mainly for large SVGs. The bundle in the screenshot is actually doing that to a small extent IIRC, but for tiny icons like this, the cost of invoking fragment parsing can end up being basically as bad as nested render functions.
+- Just do some related optimizations on tiktok.com, define the global inlined svg in `<body>` and `<use>` them in svg component.
+- would you recommend using SVGR?
+  - NO. IIRC that is the exact solution that produced the bundle in js.
+
 - ## Did you know that getSnapshotBeforeUpdate in React fires before *any* DOM mutations?
 - https://twitter.com/sebmarkbage/status/1380539161690640384 
   - I.e. neither siblings nor parents have been mutated. 

@@ -26,9 +26,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - frappe-datatable
 
 - src-list-grid-canvas
-  - **luckysheet**
-  - **x-spreadsheet**
-  - cheetah-grid(ts)
+  - **luckysheet**: 未使用class类，函数式风格
+  - **x-spreadsheet**: class类和函数式都有
+  - cheetah-grid(ts): 基于class类继承
 
 # list-grid-with-div
 
@@ -241,6 +241,10 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/developit/preact-virtual-list
   - https://jsfiddle.net/developit/qqan9pdo/
   - Virtual List that only renders visible items. Supports millions of rows.
+- react-virtuoso /876Star/MIT/202011/ts/list
+  - https://github.com/petyosi/react-virtuoso
+  - virtual list component for React
+  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces. 
 
 ## div-more
 
@@ -258,8 +262,8 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现
   - Powerful data grid component built on top of StencilJS.
   - Millions of cells virtual viewport scroll with a powerful core is in-build by default.
-- https://github.com/datopian/recline
-  - /2kStar/MIT/202008/js
+- recline /2kStar/MIT/202008/js
+  - https://github.com/datopian/recline
   - https://datopian.github.io/recline/demos/
   - 2020: A framework for building data driven applications in React.
   - 2014: A simple, powerful library for building data applications in pure Javascript and HTML
@@ -267,10 +271,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://github.com/ZingGrid/zinggrid
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components. 
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes. 
-- react-virtuoso /876Star/MIT/202011/ts/list
-  - https://github.com/petyosi/react-virtuoso
-  - virtual list component for React
-  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces. 
 
 # list-grid-with-canvas
 
@@ -544,23 +544,3 @@ modified: '2020-10-22T06:49:10.760Z'
   - aimed at turning HTML tables into advanced editable components
 - https://github.com/tim-band/js-dataentrygrid
   - Featherweight Excel-like grid for data entry
-
-# ui-components-grid
-
-- bootstrap
-- DevExtreme
-- https://github.com/sushruth/fluent-list
-
-# grid-utils
-
-- https://github.com/unosquare/tubular-common
-  - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
-  - https://github.com/unosquare/tubular-react
-    - a Material-UI table (or data grid) with local or remote data-source
-  - https://github.com/unosquare/tubular-nodejs
-- https://github.com/jammeryhq/gridsome-source-mock-data
-  - Simple gridsome source plugin which uses danibram/mocker-data-generator to generate your mock data.
-- excelexportjs /88Star/MIT/201909/ts/NoDeps
-  - https://github.com/tarunbatta/excelexportjs
-  - Various server-side binaries and support libraries are present to help us export grids/tables data to excel sheets, but the same export handling at client side is a tough nut to crack. 
-  - This plugin helps you achieve that, thereby providing advance features as well.
