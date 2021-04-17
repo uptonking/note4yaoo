@@ -123,6 +123,11 @@ modified: '2021-04-11T17:38:36.027Z'
   - [bit 跨项目区块复用方案实践](https://github.com/mcuking/blog/issues/88)
   - [bit的组件搜索和预览界面给人一种凌乱感](https://bit.dev/components)
 
+# ux-effects
+
+- https://uiw.tf/
+  - uiwtf is an experimental laboratory of user interface patterns and interactions that make you think "what the fuck?" in a thought-provoking way.
+
 # discuss
 
 - ## [Old and new ideas in React UI](https://react-ui.dev/core-concepts/ideas)

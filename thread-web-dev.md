@@ -11,7 +11,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## I hate to be the one to tell you this, but serviceworker didn't make offline-first any easier.
+- https://twitter.com/aboodman/status/1383157955248283649
+- we ended up removing it entirely, it was too expensive to keep trying to debug the issues
+  - [Goodbye Offline Page](https://dev.to/devteam/goodbye-offline-page-5d98)
+  - the TLDR; : we weren't sure about what was actually going on and were tired of threading in the dark and had related tech debt, by removing it we put a stop to it all.
+  - Aggressive edge caching plus InstantClick plus not enough service worker related expertise in the team doomed it
+- Strong disagree
 
 - ## I've been trying to persuade AVIF folks to allow a 'preview' frame at the start of the stream.
 - https://twitter.com/jaffathecake/status/1382608978400702465

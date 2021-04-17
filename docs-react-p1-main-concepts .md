@@ -7,7 +7,7 @@ modified: '2020-06-30T05:11:03.190Z'
 
 # docs-react-p1-main-concepts
 
-- React is a javaScript library for building user interfaces.
+> React is a javaScript library for building user interfaces.
 
 # resources 
 

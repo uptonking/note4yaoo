@@ -16,13 +16,17 @@ modified: '2021-03-11T11:26:12.335Z'
 
 - ## 
 
+- ## can react outperform threejs? updated my old scheduler test for r3f v6
+- https://twitter.com/0xca0a/status/1383165072554532865
+- now let's see how react handles the same amount of data in concurrent mode. distributed. and at once. 
+- i believe react is still behind most frameworks when it comes to base read/write ops. 
+  - but at this point it's the only one that can balance load which often is the real bottleneck.
 
 - ## #MicrosoftMesh is also coming to WebXR! Though @babylonjs and React Native. Awesome!
 - https://twitter.com/worksalt/status/1369533623636881408
 - Would there be a JavaScript lib that is not dependent on a specific framework? It would help to use it in other web frameworks
   - React Native code is ReactJS, ReactJS can be used on the web as well. React Three Fiber (r3f) is the best integration of React and Threejs that I have seen so far. Its the basis of React XR, and mobile apps made with r3f can run at native speed thanks to React Native.
   - I bet that building support for Babylon Native & React Native first for maximum on device performance was the driving factor for this being Microsoft's focus.
-
 
 - ## With Babylon.js 4.2 releasing on 2020-11-12, you'll be able to use Babylon on React Native to power your cross-platform 3D apps! Code once, deploy everywhere!
 - https://twitter.com/0xca0a/status/1314867358918475777

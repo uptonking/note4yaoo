@@ -15,6 +15,13 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## If you have an idea for something that already exists
+- https://twitter.com/tannerlinsley/status/1383201108508635138
+  - and a passion to solve that problem better for yourself or even the tiniest subset of existing users, then you should probably give it a try.
+  - You'll likely learn a ton about the problem space and at least validate your idea.
+- I think it also depends on if you want to open source it or not. 
+  - Even then, contributors will try to help you clean it up whether you want to or not
+
 - ## Motivation doesn't last. Neither does inspiration.
 - There are only two solutions to this problem:
   - We can capture those rare moments and use them to solve hard problems. 

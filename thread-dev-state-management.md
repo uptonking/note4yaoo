@@ -22,6 +22,14 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## I wanted to write an article called "Why do we need state machines, anyway?" 
+- https://twitter.com/DavidKPiano/status/1383096040065269764
+  - but it can be summed up in a tweet:
+  - State machines & statecharts provide a precise, visual, and universal "language" for describing all kinds of logic.
+  - They let you move faster without breaking things.
+- Ask 10 developers how they handle logic in their apps and you'll get 15 different answers.
+- State machines help you answer "how does this app work?" without looking at 50 different click handlers and boolean variables scattered in random places
+
 - ## You know, the world of enterprise SAAS react could really use a router that behaves similar to a state machine, 
 - https://twitter.com/tannerlinsley/status/1382736036304867332
   - is strongly typed for known combinations of routes+searchParams, 

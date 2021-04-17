@@ -14,7 +14,7 @@ modified: '2020-07-14T11:27:32.700Z'
   - The type argument can be either a tag name string (such as 'div' or 'span'), a React component type (a class or a function), or a React fragment type
 - Capitalized types indicate that the JSX tag is referring to a React component. 
   - These tags get compiled into a direct reference to the named variable
-  - so if you use the JSX `<Foo />` expression, `Foo` must be in scope.
+  - so if you use the JSX `<Foo />` expression,  `Foo` must be in scope.
   - Since JSX compiles into calls to `React.createElement` , the React library must also always be in scope from your JSX code.
 - When an element type starts with a lowercase letter, it refers to a built-in component like `<div>` or `<span>` and results in a string 'div' or 'span' passed to React.createElement. 
 - Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file.
@@ -59,7 +59,7 @@ modified: '2020-07-14T11:27:32.700Z'
   - JavaScript expressions can be mixed with other types of children
 - If you have a custom component, you could have it take a *callback function* as `props.children`
   - Children passed to a custom component can be anything, as long as that component transforms them into something React can understand before rendering
-- `false` , `null` , `undefined` , and `true` are valid children. 
+- `false` ,  `null` ,  `undefined` , and `true` are valid children. 
   - They simply don’t render. 
   - These JSX expressions will all render to the same thing
 
@@ -126,6 +126,7 @@ var Greeting = createReactClass({
 - mixins
 	- es6不支持混入，推荐使用高阶组件
 	- createReactClass()作为一个属性 `mixins: [SetIntervalMixin]`
+
 	
 
 # React Without JSX
@@ -199,7 +200,7 @@ ReactDOM.render(
   - The `contextType` property on a class can be assigned a Context object created by `React.createContext()` . 
   - This lets you consume the nearest current value of that Context type using `this.context` . 
   - You can reference this in any of the lifecycle methods including the render function.
-  - You can only subscribe to a single context using this API- 
+  - You can only subscribe to a single context using this API
 - `Context.displayName`
   -  React DevTools uses this string to determine what to display for the context.
 - It is often necessary to update the context from a component that is nested somewhere deeply in the component tree. 
@@ -372,7 +373,7 @@ class Parent extends React.Component {
 ```
 
 - In the example above, Parent passes its ref callback as an `inputRef` prop to the CustomTextInput, and the CustomTextInput passes the same function as a special `ref` attribute to the `<input>` . 
-- As a result, `this.inputElement` in Parent will be set to the DOM node corresponding to the `<input>` element in the CustomTextInput.
+- As a result,  `this.inputElement` in Parent will be set to the DOM node corresponding to the `<input>` element in the CustomTextInput.
 - If the `ref` callback is defined as an inline function, it will get called twice during updates, first with `null` and then again with the DOM element.
   - This is because a new instance of the function is created with each render
   - so React needs to clear the old ref and set up the new one. 
@@ -426,7 +427,7 @@ const ref = React.createRef();
 
 - In the example, FancyButton uses React.forwardRef to obtain the ref passed to it, and then forward it to the DOM button that it renders
   - This way, **components using FancyButton can get a ref to the underlying button DOM node** and access it if necessary—just like if they used a DOM button directly.
-  - When the ref is attached, `ref.current` will point to the `<button>` DOM node.
+  - When the ref is attached,  `ref.current` will point to the `<button>` DOM node.
 - The second ref argument only exists when you define a component with React.forwardRef call. 
 - Regular function or class components don’t receive the ref argument, and `ref` is not available in `props` either.
 - Ref forwarding is not limited to DOM components. 
@@ -559,7 +560,7 @@ const EnhancedComponent = enhance(WrappedComponent)
 ``` js
 function withSubscription(WrappedComponent) {
   class WithSubscription extends React.Component { /* ... */ }
-  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})` ;
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`;
   return WithSubscription;
 }
 
@@ -705,7 +706,7 @@ class MouseTracker extends React.Component {
 }
 ```
 
-- In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state), `<Mouse>` should extends `React.Component` instead.
+- In cases where you cannot define the prop statically (e.g. because you need to close over the component’s props and/or state),  `<Mouse>` should extends `React.Component` instead.
   - In cases where you cannot define the render prop method (renderTheCat) statically (e.g. because you need to close over the Mouse component's props and/or state), Mouse Component should extend React. Component instead. When Mouse is a PureComponent, the child Cat will not re-render when Mouse's state or props change, since Cat's own props and state will not have changed! If Mouse is a regular Component instead, a change to the Mouse's state or props will automatically cause it's child Cat to re-render.
   - I think including a bound method in the example is dangerous, because if the method did reference this.props or this.state, it would be incorrect to pass a bound version to the render prop because Mouse would fail to re-render when props/state change, 
   - https://github.com/reactjs/reactjs.org/pull/700
@@ -1046,7 +1047,7 @@ const MyComponent = lazy(() => import("./MyComponent.js"));
 # Strict Mode
 
 - `StrictMode` is a tool for highlighting potential problems in an application. 
-  - Like `Fragment` , `StrictMode` does not render any visible UI. 
+  - Like `Fragment` ,  `StrictMode` does not render any visible UI. 
   - It activates additional checks and warnings for its descendants.
   - Strict mode checks are **run in development mode only**; they do not impact the production build.
 - You can enable strict mode for any part of your application

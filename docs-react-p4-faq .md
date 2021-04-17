@@ -72,7 +72,7 @@ modified: '2020-06-30T05:14:08.093Z'
 	}
 ```
 
-	- Class Properties (Stage 3 Proposal)  
+  - Class Properties (Stage 3 Proposal)  
     - 推荐使用这种写法，不用在render中绑定
 
 ``` js

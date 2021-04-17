@@ -11,12 +11,14 @@ modified: '2021-03-26T11:28:29.993Z'
 
 - ## 
 
-
 - ## 
+
+- ## Maps in Slack using quick-map
+- https://sparkgeo.com/quick-map-landing-page/
+  - The quick-map slash command uses Mapbox Static Images and Geocoding APIs to convert an address or pair of coordinates into a simple map.
 
 - ## The new Static Playground -- now, developers can see how Static Images API responses will look based on the position, resolution, padding, overlays, and any style parameters
 - https://twitter.com/Mapbox/status/1382449857097515008
-
 
 - ## Roofs on 3D buildings are now level relative to the earth rather than the terrain. 
 - https://twitter.com/Mapbox/status/1382457903513231364

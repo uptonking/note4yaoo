@@ -18,7 +18,6 @@ modified: '2021-01-01T20:09:10.218Z'
 
 # guide
 
-
 - design-tokens-awesome-catalog
   - 主流tokens工具及标准参考
     - system-ui-theme-specification
@@ -48,7 +47,6 @@ modified: '2021-01-01T20:09:10.218Z'
   - design tokens editor
     - [效果类似在线编辑预览](https://twitter.com/Una/status/1352109495565090817)
 
-
 - https://github.com/system-ui/theme-specification
   - The theme object is intended to be a general purpose format for storing design system style values, scales, and/or design tokens.
 
@@ -74,6 +72,9 @@ modified: '2021-01-01T20:09:10.218Z'
 # discuss
 
  
+
+- ## Just shared the First Editor’s Draft of the Design Tokens specification with design tool vendors
+- https://twitter.com/DesignTokens/status/1383245282134032387
 
 - ## Why is a design system conflated by so many with code components, where it can be actually expressed as lower level tokens?
 - https://twitter.com/oleg008/status/1095652075705434112

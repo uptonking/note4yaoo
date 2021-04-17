@@ -98,6 +98,12 @@ modified: '2021-01-01T20:52:42.088Z'
   - CSS Typed OM
   - Web Bluetooth
 
+# products
+
+- natto
+  - https://natto.dev/
+  - a canvas for JavaScript
+
 # discuss
 
 - ## techs to look out for in the javascript world in 2021

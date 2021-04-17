@@ -13,7 +13,9 @@ modified: '2021-04-05T09:45:51.791Z'
 
 - ## 
 
-- ## 
+- ## Visualising different easing functions in sveltejs
+- https://twitter.com/lihautan/status/1314470361900019714
+  - 动画沿着函数图像的轨迹运动
 
 - ## My journey learning react-three-fiber began by recreating examples from the #THREEjs 
 - https://twitter.com/httpstersk/status/1378710771895525379

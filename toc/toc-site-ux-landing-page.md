@@ -26,7 +26,7 @@ modified: '2020-12-29T11:27:41.474Z'
   - 完爆官方界面，高颜值的第三方网易云播放器，支持win/macOS/linux
 
 - https://vazurio.co/
-  - 干净简洁，纯白背景
+  - 干净简洁，纯白背景，大量使用圆角矩形，设计感很强
   - https://github.com/vazurio/buildkit-doc
   - https://github.com/vazurio/white-wolf
   - https://portfolio-anyelos.vercel.app/

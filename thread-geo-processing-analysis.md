@@ -11,10 +11,17 @@ modified: '2021-03-26T11:29:22.438Z'
 
 - ## 
 
+- ## Thinking that GDAL, GEOS and QGIS all have C++ geometry classes (you know Point, LineString, etc.) implementing the same standard(s). Probably too late to fix history.
+- https://twitter.com/EvenRouault/status/1383190934200942602
+- IMO the problem is that geos doesn’t have support for curved geometries or m values. Otherwise it’d be a natural fit for a “common” geometry representation. (Alternatively we could make a new common library for JUST geometry representation storage...)
+- IMO the problem is that the simple feature standard has only be thought through for Cartesian coordinates, but the earth is round. Why not go straight for S2 geometry? With "half-open polygons" S2 geometry also solves sfa / DE-9IM's lacking support for polygon coverages.
+  - S2 is cool in this respect... Even though there is a point, line, and polygon class, the primary unit is an interface (Shape) with no requirements for how/if coordinates are in memory
+  - S2 would be cool if it wasn't just 1D shapes ... polygons are just lines (topologically, the geometry can be spherical ... it can be  whatever as you say, it's unrelated to the topology ...)
+- @postgis doing it right. @GRASSGIS is another world.
+
 - ## I think I should write a blog post where I explain what's wrong with every single spatial file format.
 - https://twitter.com/stevage1/status/1376721603405307908
 - Bet you can’t find any fault with .shp files or any of the 42 mandatory files that go with it.
   - they're only good when exported from manifold with auxiliary xml
 - @shapefiIe is RUBBISH! GeoJSON is RUBBISH! @GeoPackage1 is RUBBISH! MapInfo TAB is RUBBISH! GeoBuf is RUBBISH! GML is RUBBISH! KML is RUBBISH! PostGIS geometry is RUBBISH! PostGIS geography is RUBBISH! CSVs with lat/lon are RUBBISH! TopoJSON is RUBBISH!
   - we can automate this with gdalinfo --formats
-

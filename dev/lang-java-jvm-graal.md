@@ -33,6 +33,18 @@ modified: '2021-01-15T04:09:25.198Z'
 
 # discuss
 
+- ## [为什么没人推动用 JS 实现 JVM 这件事，为什么浏览器不内置 JVM？](https://www.zhihu.com/question/333230233)
+  - 为什么没人推动用js实现一个工程化的jvm，不是个人玩具类的，从而使浏览器可以运行java程序
+
+- applet就是java在浏览器的执行环境，但是对比JS没有优势，被淘汰了。
+  - jvm 是 c++实现的，js在浏览器上运行也是基于 V8 引擎的，所以不可能用 js 实现一个 JVM （没啥意义）
+  - wasm 并不是编译为 js，而是直接编译成了浏览器可以运行的二进制模块
+
+- 想用java写js的人有很多很多，可参考vaadin, gwt, jsweet, Java2Script等项目，都在致力于用java写浏览器程序
+- 曾经的浏览器是可以用object或embed标签跑java程序的，但并没有多好用，而且有安全性问题，所以早就 ban 了。
+- 有 WebAssembly 了。
+  - JVM 只是 Java 一家用的，WebAssembly 是一套二进制标准给所有语言用，到时候就不只是 Java 了，还有 C#、Rust、C++，等等等等。
+
 - ## [如何评价 GraalVM 这个项目？](https://www.zhihu.com/question/274042223/answers/updated)
 - 结论是GraalVM想成为一统天下的“最终”虚拟机。
   - 大部分脚本语言或者有动态特效的语言都需要一个语言虚拟机运行，比如CPython，Lua，Erlang，Java，Ruby，R，JS，PHP，Perl，APL等等，

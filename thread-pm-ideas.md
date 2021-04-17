@@ -13,6 +13,19 @@ modified: '2021-01-17T17:14:34.313Z'
 
 - ## 
 
+- ## Things web apps can do by default that I wish native apps could do, too:
+- https://twitter.com/rauschma/status/1383350431619837955
+  - Zoom in anywhere
+  - Copy any UI text
+  - Clone the current view(open the current page in new tab)
+  - Bookmark the current location
+- May I add?
+  - allow for script blocking (ads, tracking etc)
+  - allow for loading custom stylesheets (reader mode, dark mode, accessibility - this requires a bit technical knowledge on HTML/CSS)
+  - allow for being consumed on any device (even via terminal!)
+- Android 11 can copy any text, but it's not really pretty.
+  - Note: you must be in app switcher mode (app not maximized) to enable text selection.
+
 - ## Every repo, issue, commit, etc will get a generated card like it.
 - https://twitter.com/JasonEtco/status/1380194813140725761
   - And an even more special card for issues, PRs or commits!
@@ -156,7 +169,7 @@ modified: '2021-01-17T17:14:34.313Z'
 - You can think of it as Gumroad but specifically targeting developers selling their UI components, frameworks, starter templates, or libraries.
   - I think there are huge opportunities for developers to sell their projects and earn a living this way. Lots of exciting projects getting started, too. 
   - People like @adamwathan or @mxstbr are leading the way. I'm sure there is going to be plenty more.
-  - I want to support developers with basetools.io by basically taking care of a lot of the barriers to this: Charging money, making sure it has the correct taxes, writing invoices, granting access only to people that paid – This is what we do.
+  - I want to support developers with basetools.io by basically taking care of a lot of the barriers to this: Charging money, making sure it has the correct taxes, writing invoices, granting access only to people that paid - This is what we do.
 - This could go really well or really, really bad. 
   - Hopefully it doesn't turn into a situation like the Unity Asset Store where folks reskin libraries simply looking to profit. 
   - There could be an explosion of low quality libraries that only serve to add confusion.
