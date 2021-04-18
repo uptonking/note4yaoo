@@ -9,6 +9,11 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
+- ## Mini Fruit Carousels built with greensock
+- https://twitter.com/jh3yy/status/1383548575972352006
+  - 环状走马灯，可以循环播放
+  - https://codepen.io/jh3y/pen/mdRjKgr
+
 - ## I've improved reCAPTCHA.
 - https://twitter.com/defaced/status/1381939949843406856
   - 验证码的形式是类似移动方块将九宫格(少1块)拼成一幅图，真的难

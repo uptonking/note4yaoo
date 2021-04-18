@@ -137,6 +137,8 @@ modified: '2021-03-29T19:30:24.663Z'
   - animation
     - FLIP
 
-# pm-datable
+# ideas
 
-# pm-noter
+- 更适合中文的faker.js
+  - 互联网忽悠味的文章生成器，如赋能、反哺、闭环、全链路、引爆点、私域流量、渠道下沉
+  - 同长度的诗词组合

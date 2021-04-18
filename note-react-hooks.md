@@ -9,6 +9,15 @@ modified: '2020-06-29T13:14:27.166Z'
 
 # faq
 
+- ## `useCallback` vs `useMemo`
+- `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
+- useMemo() makes the function run only when inputs change. 
+  - Else it returns the memoized(cached) result.
+- useCallback() prevents the new instance of function being created on each rerender
+  - thus prevents the rerendering of child components if we pass the function as props to them
+
+- Use `React.useMemo` instead of multiple `React.useCallback` s to create an object of handler functions in a custom hook.
+
 - ## Why not just useMemo?
   - In the future, React may choose to “forget” some previously memoized values 
     - and recalculate them on next render, e.g. to free memory for offscreen components. 
@@ -80,68 +89,57 @@ function FancyInput(props, ref) {
 FancyInput = forwardRef(FancyInput);
 ```
 
-- ## `useCallback` vs `useMemo`
-  - `useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)` .
-  - useMemo() makes the function run only when inputs change. 
-    - Else it returns the memoized(cached) result.
-  - useCallback() prevents the new instance of funtion being created on each rerender
-    - thus prevents the rerendering of child components if we pass the function as props to them
-
-- react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
-  - render方法的执行时机
-  - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
-
 - ## `useEffect` vs `useLayoutEffect`
-  - 结论
-    - useLayoutEffect总是比useEffect先执行
-    - useLayoutEffect: If you need to mutate the DOM and/or do need to perform measurements
-    - useEffect: If you don't need to interact with the DOM at all or your DOM changes are unobservable (seriously, most of the time you should use this). 
-    - componentDidMount and useLayoutEffect both run before paint. useEffect yields (so the browser can paint) before running.
-    - We suggest using the passive effect (useEffect) for things that don't affect display, like logging or setting timeouts etc. 
-    - Use layout effect for e.g. adjusting tooltip position or size, things you want to tweak before the user sees your component's rendered output.
-  - 正常情况用默认的useEffect钩子就够了，这可以保证状态变更不阻塞渲染过程
-    - 但如果effect更新（清理）中涉及DOM更新操作，用useEffect就会有意想不到的效果。
-    - 比如逐帧动画 requestAnimationFrame ，要做一个 useRaf hook 就得用上后者，需要保证同步变更。
-    - useLayoutEffect > requestAnimationFrame > useEffect
-  - useEffect的时期非常晚，可以保证页面是稳定下来再做事情
-    - useEffect的函数会在最后才执行，可能晚于包含它的父组件的did update
-  - `useEffect` runs asynchronously and after a render is painted to the screen.
-    - You cause a render somehow (change state, or the parent re-renders)
-    - React renders your component (calls it)
-    - The screen is visually updated
-    - THEN useEffect runs.
-  - `useLayoutEffect` runs synchronously after a render but before the screen is updated
-    - You cause a render somehow (change state, or the parent re-renders)
-    - React renders your component (calls it)
-    - useLayoutEffect runs, and React waits for it to finish.
-    - The screen is visually updated
-  - **useEffect**
-    - It runs after the render is committed to the screen i.e. **after Layout and Paint phase**. 
-    - Use this whenever possible to avoid blocking visual updates
-  - **useLayoutEffect**
-    - It **fires synchronously after all DOM mutations but before Paint phase**.
-    - Use this to read layout(styles or layout information) from the DOM and then perform blocking custom DOM mutations based on layout.
-  - useMutationEffect
-    - It fires synchronously before Layout phase i.e. during the same phase that React performs its DOM mutations.
-    - Use it to perform blocking custom DOM mutations without taking any DOM measurement/reading layout.
-  - `useMutationEffect` has problems (namely, refs aren't attached at the time that it runs) and we're not positive it's necessary. 
-    - we should use useLayoutEffect if we want to read Layout from the DOM. Otherwise we should use useMutationEffect
-    - `useLayoutEffect` runs at the same time as componentDidMount/Update, so it's sufficient for all existing use cases; it can be used in any case that useEffect happens too late. Until we figure out what we want to do, let's delete it.
-    - https://github.com/facebook/react/pull/
-  - useEffect runs after react renders your component 
-    - and ensures that your effect callback does not block browser painting. 
-    - This differs from the behavior in class components where componentDidMount and componentDidUpdate run synchronously after rendering
-    - However, if your effect is mutating the DOM (via a DOM node ref) and the DOM mutation will change the appearance of the DOM node between the time that it is rendered and your effect mutates it, then you don't want to use useEffect. You'll want to use useLayoutEffect.
-    - Otherwise the user could see a flicker when your DOM mutations take effect.
-    - This is pretty much the only time you want to avoid useEffect and use useLayoutEffect instead.
-  - useLayoutEffect
-    - This runs synchronously immediately after React has performed all DOM mutations. 
-    - This can be useful if you need to make DOM measurements (like getting the scroll position or other styles for an element) and then make DOM mutations or trigger a synchronous re-render by updating state.
-    - As far as scheduling, this works the same way as componentDidMount and componentDidUpdate. 
-    - Your code runs immediately after the DOM has been updated, but before the browser has had a chance to "paint" those changes (the user doesn't actually see the updates until after the browser has repainted)
-  - ref
-    - https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
-    - https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-between-usemutationeffect-and-uselayoutef
+- 结论
+  - useLayoutEffect总是比useEffect先执行
+  - useLayoutEffect: If you need to mutate the DOM and/or do need to perform measurements
+  - useEffect: If you don't need to interact with the DOM at all or your DOM changes are unobservable (seriously, most of the time you should use this). 
+  - componentDidMount and useLayoutEffect both run before paint. useEffect yields (so the browser can paint) before running.
+  - We suggest using the passive effect (useEffect) for things that don't affect display, like logging or setting timeouts etc. 
+  - Use layout effect for e.g. adjusting tooltip position or size, things you want to tweak before the user sees your component's rendered output.
+- 正常情况用默认的useEffect钩子就够了，这可以保证状态变更不阻塞渲染过程
+  - 但如果effect更新（清理）中涉及DOM更新操作，用useEffect就会有意想不到的效果。
+  - 比如逐帧动画 requestAnimationFrame ，要做一个 useRaf hook 就得用上后者，需要保证同步变更。
+  - useLayoutEffect > requestAnimationFrame > useEffect
+- useEffect的时期非常晚，可以保证页面是稳定下来再做事情
+  - useEffect的函数会在最后才执行，可能晚于包含它的父组件的did update
+- `useEffect` runs asynchronously and after a render is painted to the screen.
+  - You cause a render somehow (change state, or the parent re-renders)
+  - React renders your component (calls it)
+  - The screen is visually updated
+  - THEN useEffect runs.
+- `useLayoutEffect` runs synchronously after a render but before the screen is updated
+  - You cause a render somehow (change state, or the parent re-renders)
+  - React renders your component (calls it)
+  - useLayoutEffect runs, and React waits for it to finish.
+  - The screen is visually updated
+- **useEffect**
+  - It runs after the render is committed to the screen i.e. **after Layout and Paint phase**. 
+  - Use this whenever possible to avoid blocking visual updates
+- **useLayoutEffect**
+  - It **fires synchronously after all DOM mutations but before Paint phase**.
+  - Use this to read layout(styles or layout information) from the DOM and then perform blocking custom DOM mutations based on layout.
+- useMutationEffect
+  - It fires synchronously before Layout phase i.e. during the same phase that React performs its DOM mutations.
+  - Use it to perform blocking custom DOM mutations without taking any DOM measurement/reading layout.
+- `useMutationEffect` has problems (namely, refs aren't attached at the time that it runs) and we're not positive it's necessary. 
+  - we should use useLayoutEffect if we want to read Layout from the DOM. Otherwise we should use useMutationEffect
+  - `useLayoutEffect` runs at the same time as componentDidMount/Update, so it's sufficient for all existing use cases; it can be used in any case that useEffect happens too late. Until we figure out what we want to do, let's delete it.
+  - https://github.com/facebook/react/pull/
+- useEffect runs after react renders your component 
+  - and ensures that your effect callback does not block browser painting. 
+  - This differs from the behavior in class components where componentDidMount and componentDidUpdate run synchronously after rendering
+  - However, if your effect is mutating the DOM (via a DOM node ref) and the DOM mutation will change the appearance of the DOM node between the time that it is rendered and your effect mutates it, then you don't want to use useEffect. You'll want to use useLayoutEffect.
+  - Otherwise the user could see a flicker when your DOM mutations take effect.
+  - This is pretty much the only time you want to avoid useEffect and use useLayoutEffect instead.
+- useLayoutEffect
+  - This runs synchronously immediately after React has performed all DOM mutations. 
+  - This can be useful if you need to make DOM measurements (like getting the scroll position or other styles for an element) and then make DOM mutations or trigger a synchronous re-render by updating state.
+  - As far as scheduling, this works the same way as componentDidMount and componentDidUpdate. 
+  - Your code runs immediately after the DOM has been updated, but before the browser has had a chance to "paint" those changes (the user doesn't actually see the updates until after the browser has repainted)
+- ref
+  - https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
+  - https://stackoverflow.com/questions/53513872/react-hooks-what-is-the-difference-between-usemutationeffect-and-uselayoutef
 
 - ## How to pass arguments to `onClick` events in React Hooks 
   - simple: `<Button onClick={() => handleClick(myValue)}></Button>`
@@ -165,6 +163,10 @@ FancyInput = forwardRef(FancyInput);
     ...
     <Button onClick={myHandleClick}></Button>
 ```
+
+- ## react生命周期方法的执行时，是处于浏览器渲染过程中的什么位置(js-style-layout-paint-composite)
+- render方法的执行时机
+  - One drawback of using `componentDidUpdate` , or `componentDidMount` is that they are actually executed before the dom elements are done being drawn, but after they've been passed from React to the browser's DOM.
 
 # pieces
 

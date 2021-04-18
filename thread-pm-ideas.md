@@ -9,6 +9,9 @@ modified: '2021-01-17T17:14:34.313Z'
 
 # repeat
 
+- ## Harsh truth: Reading about other successful creators won't make you one. Start creating so that you have your own success story to tell.
+- https://twitter.com/mkhundmiri/status/1383688592099135498
+
 # ideas
 
 - ## 

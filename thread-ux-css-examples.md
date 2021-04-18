@@ -13,6 +13,17 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ##  `<datalist>` HTML element - useful for adding input suggestions with 0 javascript
+- https://twitter.com/swyx/status/1260199927856001024
+- I learned “the opposite”. 
+  - I once tried to render ~100.000 options in a datalist using nextjs. 
+  - Only to see each key press taking 5 secs to show 😂. 
+  - Then I thought “maybe I need something else”. 
+  - But datalist is awesome (in fact I would find it a lot harder to do that in js).
+- Now try to put a image!!!... Don't work!
+- `<datalist>` is well supported on mobile too. The only downside is that they are hard to style
+- This is a similar idea to the `<optgroup>` tag
+
 - ## Made a 10 line polyfill for flexbox gap.
 - https://twitter.com/devongovett/status/1244679626162450432
   - You can use it just like normal CSS properties. No extra wrappers around each item, or spacer elements needed. 

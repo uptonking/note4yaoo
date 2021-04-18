@@ -437,7 +437,7 @@ function Profile() {
 
 - When possible, Fast Refresh attempts to preserve the state of your component between edits. 
 - In particular `useState` and `useRef` preserve their previous values as long as you don't change their arguments or the order of the Hook calls.
-- Hooks with dependencies such as `useEffect, useMemo`, and `useCallback`, will always update during Fast Refresh. 
+- Hooks with dependencies such as `useEffect, useMemo, useCallback`, will always update during Fast Refresh. 
   - Their list of dependencies will be ignored while Fast Refresh is happening.
 - Sometimes, this can lead to unexpected results. 
   - For example, even a useEffect with an empty array of dependencies would still re-run once during Fast Refresh.

@@ -13,6 +13,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Request: point me to some good examples of JS libraries that show the TS types for their APIs in the API reference pages? 
+- https://twitter.com/acemarke/status/1383503585812508684
+  - I'd like to see how other libs organize presenting descriptions vs typedefs in the reference docs.
+  - How to present potentially complex and nested typedefs
+  - How to maybe hand-wave some of those complex types for readability
+  - How to split arg/return value display from the written descriptions
+- We dynamically replace the generic type parameters in the docs for generic types with a concrete type where necessary. 
+  - No `IEnumerable<T>` but `IEnumerable<INode>` .
+  - why not just name the generic parameter something readable (rather than abstract T)? that way you wouldn't have to replace anything - like probably you could just grab the name from `Node extends INode`
+
 - ## Unpopular opinion: you should write E2E/integration tests *first*, always. 
 - https://twitter.com/DavidKPiano/status/1180497113341468677
   - (This mainly applies to applications. For libraries used by developers, the unit tests *are* the E2E tests, a lot of the time.)
