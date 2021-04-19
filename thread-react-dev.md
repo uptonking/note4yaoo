@@ -9,7 +9,20 @@ modified: '2021-01-06T14:40:11.360Z'
 
 # pieces
 
-- ## 
+- ## Have you used the useCallback() hook? Tell me why. I'd love to hear about your use case.
+- https://twitter.com/brian_d_vaughn/status/1174359975600091136
+- I'm using it for debouncing an autosave experience
+
+- ## I rarely use these React performance features: `React.memo` , useCallback, useMemo
+- https://twitter.com/housecor/status/1358791451665178634
+  - If I have a performance issue, I usually find I made a mistake or am using a component that merely needs optimized.
+- You generally don't need them unless you have an onMouseMove or onDrag listener, Or scroll/wheel
+- What about when creating custom hooks? Using useCallback helps a lot
+  - In theory, it can help. In practice, I find it’s typically unnecessary. 
+  - If you are ever pass a function to a component you should probably wrap it in a `useCallback` . You never know what that component is going to do with that function and if they put it in a useEffect dependency array it will cause it to fire each render.
+- useCallback is almost mandatory when you have to include a function as a dependency of a useEffect and you are not declaring the function inside the effect, isnt?
+  - Yep, though I prefer to declare inside the effect.  That said, this tweet is about using it for performance, not identity.
+- I’ve never used useCallback as a performance feature, but they carry functional semantics. If I’m defining a function that’s going to be passed to a descendant component that’s not a native element (eg div, span, button), I always use useCallback.
 
 - ## Did you know that getSnapshotBeforeUpdate in React fires before *any* DOM mutations?
 - https://twitter.com/sebmarkbage/status/1380539161690640384 

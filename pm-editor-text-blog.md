@@ -1,11 +1,11 @@
 ---
-title: pm-text-editor-blog
+title: pm-editor-text-blog
 tags: [blog, editor, text-editor]
 created: '2020-12-24T18:17:55.072Z'
-modified: '2020-12-24T18:18:19.568Z'
+modified: '2021-04-19T15:06:47.696Z'
 ---
 
-# pm-text-editor-blog
+# pm-editor-text-blog
 
 # [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
 

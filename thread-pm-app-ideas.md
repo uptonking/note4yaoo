@@ -1,11 +1,11 @@
 ---
-title: thread-pm-ideas
-tags: [ideas, thread]
+title: thread-pm-app-ideas
+tags: [ideas, pm, thread]
 created: '2021-01-17T17:13:54.678Z'
-modified: '2021-01-17T17:14:34.313Z'
+modified: '2021-04-19T14:53:27.158Z'
 ---
 
-# thread-pm-ideas
+# thread-pm-app-ideas
 
 # repeat
 

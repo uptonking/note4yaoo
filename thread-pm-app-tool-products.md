@@ -1,8 +1,8 @@
 ---
 title: thread-pm-app-tool-products
-tags: [products, thread]
+tags: [products, thread, tool]
 created: '2021-03-15T05:21:25.780Z'
-modified: '2021-04-12T14:43:34.424Z'
+modified: '2021-04-19T14:53:36.883Z'
 ---
 
 # thread-pm-app-tool-products

@@ -13,6 +13,9 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## "Avoid global state — Colocate with Uncontrolled Compound Components" This might help shed light on some of the design decisions made for the @radix_ui Primitive APIs.
+- https://twitter.com/jjenzz/status/1384158245556690945
+
 - ## One step closer to moving away from abuse of history.pushState() to get back-button-closable sidebars and dialogs!
 - https://twitter.com/domenic/status/1339675541083971586
 - ModalCloseWatcher code, including Android back button support, is in Chrome Canary behind a flag! 

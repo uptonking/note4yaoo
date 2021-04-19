@@ -237,15 +237,48 @@ modified: '2021-02-05T14:00:02.922Z'
   - 显示box model的三维效果
   - https://codepen.io/argyleink/pen/BaLedvd
 
-- ## [Do you have a portfolio website? Share it below](https://twitter.com/study_web_dev/status/1349218005406916608)
-- https://www.colecaccamise.com/
-  - theming-黑白，基于bootstrap，但视觉上难以察觉
-- https://sosplush.github.io/
-  - theming-淡黄
-- theming-黑暗
-  - https://usmahm.github.io/
-  - https://tutul.netlify.app/
-  - https://www.rahulmahesh.me/
-  - https://ishaan28malik.github.io/champion-runner-home/
-  - https://divymr.tech/
-  - https://abdulsalam.netlify.app/
+- ## 实现div-border-collapse效果的方法
+- https://stackoverflow.com/questions/17915865/how-to-make-borders-collapse-on-a-div
+- 不要使用display:table-cell，表格布局在频繁操作动态样式时性能差
+- 使用负值margin
+  - http://jsfiddle.net/6eGdN
+  - 通过父边框挡住子边框实现，或全部显示子边框
+
+``` css
+    div.gridcontainer {
+      width: 7/86px;
+      line-height: 0;
+    }
+
+    div.griditem {
+      display: inline-block;
+      border: 1px solid black;
+      width: 18px;
+      height: 18px;
+      margin-left: -1px;
+      margin-bottom: -1px;
+    }
+```
+
+- 使用父边框上左，使用子边框右下，也可交换
+
+``` css
+  div.gridcontainer {
+    width: 76px;
+    line-height: 0;
+    border: solid black;
+    border-width: 1px 0 0 1px;
+  }
+
+  div.griditem {
+    display: inline-block;
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    width: 18px;
+    height: 18px;
+  }
+```
+
+- use box-shadow instead of using border 
+  - https://codepen.io/savehansson/pen/rsIEp
+- add a left and bottom border to the ul and drop it from the li

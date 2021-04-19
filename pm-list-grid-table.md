@@ -8,7 +8,7 @@ modified: '2020-10-22T13:33:54.313Z'
 
 # pm-list-grid-table
 
-# summary
+# guide
 
 - ag-grid源码要点
   - ioc
@@ -60,6 +60,8 @@ modified: '2020-10-22T13:33:54.313Z'
   - table-clone
   - data(~~viz~~)-replay
 
+# draft
+
 - 细节
   - 搜索结果
     - 快速跳转到第1个、最后一个、第N个
@@ -68,8 +70,9 @@ modified: '2020-10-22T13:33:54.313Z'
 - 细节设计
   - 默认显示成没有分行样式的整篇文档，鼠标悬浮时该行浮起提升
 
-- extensions
-  - grid-config(defaults+utils)
+# extensions
+
+- grid-config(defaults+utils)
 
 - Multiple Sorting
   - The DataGrid can sort values by a single or multiple columns.
@@ -88,8 +91,9 @@ modified: '2020-10-22T13:33:54.313Z'
   - apache arrow columnar format
   - wasm vs webgpu
 
-- integrations
-  - excalidraw
+# integrations
+
+- excalidraw
 
 # grid-implementation
 

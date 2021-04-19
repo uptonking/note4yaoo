@@ -1,11 +1,11 @@
 ---
-title: pm-editor-for-markdown
+title: pm-editor-markdown
 tags: [editor, markdown, pm, product]
 created: '2019-08-22T03:45:48.886Z'
-modified: '2020-10-22T13:33:45.146Z'
+modified: '2021-04-19T15:10:47.546Z'
 ---
 
-# pm-editor-for-markdown
+# pm-editor-markdown
 
 # guide
 
@@ -51,7 +51,7 @@ modified: '2020-10-22T13:33:45.146Z'
   - 类似github的readme，点击顶部标题，只显示一级目录大纲
   - [Tips and Tricks for using Markdown](https://github.com/MishManners/GitHub-Like-A-Boss/blob/main/markdowntricks.md)
 
-## features-copied
+## draft
 
 - code highlighting
 
@@ -66,14 +66,7 @@ modified: '2020-10-22T13:33:45.146Z'
   - 支持json5
   - 支持切换代码高亮主题，类似[carbon](https://carbon.now.sh/)
 
-## md-integrations/connections
-
-- github-readme-editor
-
-- mermaid-flow-uml
-- excalidraw
-
-## 表格扩展相关
+- ## md-table
 
 - 目标
   - 在普通md预览器中显示较友好的表格
@@ -85,6 +78,13 @@ modified: '2020-10-22T13:33:45.146Z'
   - 可以考虑使用mdx中支持的自定义组件的标签
   - 甚至可以直接在markdown中书写web components组件的标签
   - 还计划在markdown中实现类似react-live的编辑效果
+
+# md-integrations/connections
+
+- github-readme-editor
+
+- mermaid-flow-uml
+- excalidraw
 
 # md-editor-as-component
 

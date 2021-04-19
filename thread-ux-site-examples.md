@@ -41,6 +41,10 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://github.com/maxboeck/mxb
   - 主要卡片的背景为图片且无边框，展示文字的卡片的有边框且有点乱
 
+- https://generative.parts/generative
+  - https://github.com/winkerVSbecks/generative-parts
+  - 配置所有ui组件的圆角、颜色，样式超级友好
+
 # ux-pieces
 
 - https://www.cassie.codes/
@@ -50,11 +54,7 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://codepen.io/uptonking/pen/QWdqEmr
     - [Making lil' me - part 1.](https://www.cassie.codes/posts/making-a-lil-me-part-1/)
 
-- https://generative.parts/generative
-  - https://github.com/winkerVSbecks/generative-parts
-  - 配置所有ui组件的圆角、颜色，样式超级友好
-
-- This Clubhouse clone with Next.js / Vercel
+- ## This Clubhouse clone with Next.js/Vercel
 - https://twitter.com/leeerob/status/1367958639361818624
   - next-house.vercel.app
 
@@ -62,20 +62,34 @@ modified: '2021-02-05T14:01:09.420Z'
 • Uses @Firebase for real-time updates
 • Deployed serverless with @vercel
 
-- workflow blog built with excalidraw
+- ## workflow blog built with excalidraw
   - https://www.elastic.co/blog/elasticsearch-caching-deep-dive-boosting-query-speed-one-cache-at-a-time
 
-- new website with card
+- ## new website with card
 - https://twitter.com/juergenhassler/status/1364593421986525185
 
-- I've now roasted 100s of landing pages through my side project http://roastmylandingpage.com.
+- ## I've now roasted 100s of landing pages through my side project http://roastmylandingpage.com.
 - https://twitter.com/helloitsolly/status/1359174396284436480
   - As part of this, I've started live annotating ideas and changes on the video.
   - Tag a landing page you want me to roast and I'll record and share it.
 
-- @TheEconomist data team has won a silver award  for our 'Graphic detail' print portfolio
+- ## @TheEconomist data team has won a silver award  for our 'Graphic detail' print portfolio
 - https://twitter.com/AlexSelbyB/status/1290336216538329089
 
-- my Twitter experience vastly improved when I realized I could zoom in enough that the sidebar disappears
+- ## my Twitter experience vastly improved when I realized I could zoom in enough that the sidebar disappears
 - https://twitter.com/jlengstorf/status/1355236444780937217
   - twitter是三列布局，当放大到一定比例，最右边的第三列会消失
+
+- ## Do you have a portfolio website? Share it below
+- https://twitter.com/study_web_dev/status/1349218005406916608
+- https://www.colecaccamise.com/
+  - theming-黑白，基于bootstrap，但视觉上难以察觉
+- https://sosplush.github.io/
+  - theming-淡黄
+- theming-黑暗
+  - https://usmahm.github.io/
+  - https://tutul.netlify.app/
+  - https://www.rahulmahesh.me/
+  - https://ishaan28malik.github.io/champion-runner-home/
+  - https://divymr.tech/
+  - https://abdulsalam.netlify.app/

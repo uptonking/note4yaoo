@@ -1,11 +1,11 @@
 ---
-title: pm-editor-for-markdown-dev
+title: pm-editor-markdown-dev
 tags: [dev, editor, markdown, product]
 created: '2020-07-13T13:39:04.621Z'
-modified: '2020-10-22T13:33:49.505Z'
+modified: '2021-04-19T15:10:56.559Z'
 ---
 
-# pm-editor-for-markdown-dev
+# pm-editor-markdown-dev
 
 # usage
 

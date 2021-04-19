@@ -7,6 +7,14 @@ modified: '2020-11-17T13:38:27.686Z'
 
 # toc-lib-editorjs
 
+# block-style-editor
+
+- https://github.com/psyhyde/domino-editor
+  - https://domino-editor.vercel.app/
+  - /6Star/NALic/202009/js/未开源代码/only-文档
+  - Document Site for a Block Style Editor
+  - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
+
 # text-editor
 
 - https://github.com/tbhuabi/textbus
@@ -71,6 +79,7 @@ modified: '2020-11-17T13:38:27.686Z'
   - The main repository for Viking CMS. Currently in Development.
 
 # more-editor
+
 - https://github.com/CedarXi/All-in-one
   - http://all-in-one.qingzhu.co/
   - All-in-one 是一个开源的模块化内容构建编辑器，基于Vue和element的打造

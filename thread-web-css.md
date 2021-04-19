@@ -26,6 +26,12 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
+- ## 
+
+- ## Enhanced `:not()` can take a selector list, and refer to the base selector with `*` .
+- https://twitter.com/5t3ph/status/1383803482310807557
+  - https://codepen.io/5t3ph/pen/OJWoJrE
+
 - ## typography tip: word break with `<wbr>` and/or `&shy;` .
 - https://twitter.com/argyleink/status/1382685891613712387
   - https://codepen.io/argyleink/pen/vYgjVVx?editors=1100

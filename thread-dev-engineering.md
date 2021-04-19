@@ -13,6 +13,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## Forget DRY. It's okay to repeat code sometimes. 
+- https://twitter.com/renatorib_/status/1384159371593060357
+  - Abstract it when you are sure that it will more help than harm.
+  - Repeat first, abstract later.
+
 - ## Request: point me to some good examples of JS libraries that show the TS types for their APIs in the API reference pages? 
 - https://twitter.com/acemarke/status/1383503585812508684
   - I'd like to see how other libs organize presenting descriptions vs typedefs in the reference docs.

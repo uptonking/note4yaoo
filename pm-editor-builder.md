@@ -1,11 +1,11 @@
 ---
-title: pm-builder
-tags: [builder, pm, product]
+title: pm-editor-builder
+tags: [builder, editor, pm, product]
 created: '2020-08-08T19:39:58.351Z'
-modified: '2020-10-22T13:33:21.232Z'
+modified: '2021-04-19T15:09:12.890Z'
 ---
 
-# pm-builder
+# pm-editor-builder
 
 # guide
 
@@ -34,6 +34,7 @@ modified: '2020-10-22T13:33:21.232Z'
 - grapesjs /BSD/11.4kStar/202008
 - react-page /LGPLv3/8.2kStar/202008/ts
 
-# xp-dev-builder
-- ref
+# blog
+
+- more
   - [React组件可视化拖拽页面搭建，源码生成，你有什么想法？](https://www.zhihu.com/question/392818555)

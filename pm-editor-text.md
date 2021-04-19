@@ -1,11 +1,11 @@
 ---
-title: pm-text-editor
+title: pm-editor-text
 tags: [editor, pm, product]
 created: '2020-07-13T13:50:42.498Z'
-modified: '2020-10-22T13:34:23.200Z'
+modified: '2021-04-19T15:06:33.233Z'
 ---
 
-# pm-text-editor
+# pm-editor-text
 
 # guide
 

@@ -2,12 +2,12 @@
 title: pm-list-vs-grid
 tags: [comparison, grid, list]
 created: '2020-09-25T16:41:20.596Z'
-modified: '2020-11-16T12:43:51.117Z'
+modified: '2021-04-19T15:11:44.900Z'
 ---
 
 # pm-list-vs-grid
 
-# summary
+# guide
 
 - 使用场景
   - 要显示的内容中图片、图表多吗，grid更适合显示图片
