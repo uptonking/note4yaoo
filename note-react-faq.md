@@ -13,6 +13,13 @@ modified: '2020-06-30T12:51:08.791Z'
 
 # faq-repeat
 
+- ## [Can I Use Decorators?](https://create-react-app.dev/docs/can-i-use-decorators/)
+- Create React App intentionally doesn’t support decorator syntax at the moment because:
+  - It is an experimental proposal and is subject to change (in fact, it has already changed once, and will change again).
+  - Most libraries currently support only the old version of the proposal — which will never be a standard.
+- However in many cases you can rewrite decorator-based code without decorators and achieve the same result.
+- Create React App will add decorator support when the specification advances to a stable stage.
+
 - ## [React 的 Concurrent Mode 是否有过度设计的成分？](https://www.zhihu.com/question/434791954/answers/updated)
 - 对于web工程而言，其实更多的是要在工程环境、开发体验、持续迭代上不断创新。但react项目明显不是，它自己不提供官方工程环境，开发体验也不怎么好
   - 但是从另一方面看，整个前端领域，除了react，你很难再找到一个项目，在运行时（重点）领域有react这般的创新。为什么整个前端，只有一个virtual dom方案？而没有同时期出现一个hard dom, quick dom之类的方案，形成百花齐放百家争鸣的局面？包括hooks？前端领域的发展脉络越来越死板，也就react，这个全身心只在搞运行时渲染库（却被当作工程框架在用）有在做一些探索，每年都有一些新方案出现在它的计划中。

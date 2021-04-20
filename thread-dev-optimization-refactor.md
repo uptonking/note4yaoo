@@ -9,6 +9,11 @@ modified: '2021-04-07T10:21:02.611Z'
 
 # guide
 
+- refactor 
+  - before adding a new feature
+  - before fixing a bug
+  - before doing an improvement
+
 # pieces
 
 - ## 

@@ -9,6 +9,8 @@ modified: '2021-03-29T19:17:38.650Z'
 
 # faq-not-yet
 
+- autoSave或formatOnSave 经常会导致编辑器卡顿
+
 - 要不要用css-in-js？
   - 优点是方便实现 局部样式、动态样式、theming、type check
   - 缺点是styled组件会带来runtime cost，做性能优化时早晚会干掉

@@ -35,6 +35,10 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://twitter.com/thatbenlifetho/status/1365390262386663424
   - 类似药丸的设计
 
+- Generative CSS experiments: border edition
+- https://twitter.com/mrmrs_/status/1384367857925074964
+  - 碎片图形重复或微调放置，有抽象感
+
 # 优雅使用圆角矩形卡片的设计
 
 - https://mxb.dev/

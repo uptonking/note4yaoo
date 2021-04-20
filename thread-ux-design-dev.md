@@ -11,6 +11,12 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## I wrote a few words about why design files are disposable artefacts and code is the source of truth.
+- https://twitter.com/petermcreaper/status/1384280996548255747
+- The people who use our apps and websites will never see our beloved design files. 
+  - The only thing that actually matters is the code that gets shipped to production — because that is what our users will see and experience.
+- A better way to think about our design files is as artefacts that we use to communicate our design intent. 
+
 - ## Should pure selection changes be part of an app's undo/redo stack?
 - https://twitter.com/steveruizok/status/1382660618361143296
 - I think Photoshop does it because a selection is a complex shape that can be modified. 

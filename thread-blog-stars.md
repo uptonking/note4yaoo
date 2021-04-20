@@ -17,6 +17,10 @@ modified: '2021-02-09T19:25:20.378Z'
 
 # frontend
 
+- [TypeScript 中的 Decorator & 元数据反射：从小白到专家](https://zhuanlan.zhihu.com/p/20743919)
+- [理解 TypeScript 装饰器（为什么 Angular 不需要 Hooks）](https://zhuanlan.zhihu.com/p/65764702)
+  - Hooks是为了解决函数式组件没有自身状态的问题。
+  - Angular用的是class组件
 - [精读《react-intersection-observer 源码》](https://zhuanlan.zhihu.com/p/149926289)
 - [精读《用 React 做按需渲染》](https://zhuanlan.zhihu.com/p/146588607)
 - [精读《用 Babel 创造自定义 JS 语法》](https://zhuanlan.zhihu.com/p/85543308)

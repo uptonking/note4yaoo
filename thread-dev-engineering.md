@@ -13,6 +13,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## AsyncAPI is the OpenAPI for Event Driven architecture 
+- https://twitter.com/sseraphini/status/1384490726168227843
+  - You can document all your events and payloads, internal and external ones
+  - https://www.asyncapi.com/
+  - https://github.com/asyncapi/spec
+  - https://github.com/asyncapi/asyncapi-react
+  - AsyncAPI正在成为定义异步、事件驱动的API的行业标准；您可以将其视为异步世界的OpenAPI
+  - 它既提供了以机器可读格式描述和记录异步应用程序的规范，也提供了工具(如代码生成器)来简化负责实现这些应用程序的开发人员的工作
+  - 很多框架都支持从代码直接生成OpenAPI，比如SpringDoc等
+
 - ## Forget DRY. It's okay to repeat code sometimes. 
 - https://twitter.com/renatorib_/status/1384159371593060357
   - Abstract it when you are sure that it will more help than harm.

@@ -57,6 +57,14 @@ modified: '2020-11-03T06:54:59.051Z'
   - 回放时，页面动态显示的是dom元素，不是图片视频
   - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
 
+- https://github.com/JonnyBurger/remotion
+  - https://www.remotion.dev/
+  - /112Star/Free4NonCommercial&ISC/202102/ts
+  - a framework for creating videos programmatically using React.
+  - [Announcing Remotion - a framework for making videos in React!](https://twitter.com/JNYBGR/status/1358824089960542208)
+- https://github.com/FelippeChemello/podcast-maker
+  - This project takes tech news, creates a 5 minute daily briefing, renders it in 3 different formats, and uploads it to YouTube, Instagram and AnchorFM - fully automated using Remotion and Github Actions!
+
 # nice
 
 - https://github.com/kamranahmedse/driver.js

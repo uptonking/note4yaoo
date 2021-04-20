@@ -22,6 +22,11 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+
+- ## I’m pretty proud of this level of commenting I did recently for a UI where you can drag and drop "layers", and one of them might be selected.
+- https://twitter.com/erikras/status/1384440999200571392
+  - This is an "assign" action in an #XState machine
+
 - ## I wanted to write an article called "Why do we need state machines, anyway?" 
 - https://twitter.com/DavidKPiano/status/1383096040065269764
   - but it can be summed up in a tweet:

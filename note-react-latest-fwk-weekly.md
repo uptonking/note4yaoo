@@ -20,9 +20,25 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0412-w0418
 
-## w0405-w0411
+👉 Remotion 2
+👉 Docusaurus
+👉 React: lib | fwk?
+👉 Latest Ref pattern
+👉 forwardRef + TS
+👉 useImperativeHandle
+👉 Formily
+👉 HeadlessUI
+👉 Sentry TS migration
+👉 Mailbrew Next migration
+👉 Expo 41
+👉 Hermes + iOS
+👉 RN-Multithreading
+👉 Jamstack
 
-- https://twitter.com/sebastienlorber/status/1381632647072452614
+- ref
+  - https://twitter.com/sebastienlorber/status/1384171018831335432
+
+## w0405-w0411
 
 👉 React-Hook-Form 7
 👉 React-UX-Form
@@ -38,6 +54,9 @@ modified: '2021-03-22T18:46:03.513Z'
 👉 XState Catalogue
 👉 Vue 3 ❌ IE11
 👉 DevTools ➡️ TS 
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1381632647072452614
 
 ## w0329-0404
 
@@ -59,8 +78,6 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0322-0328
 
-- https://twitter.com/sebastienlorber/status/1376537880273821696
-
 👉 Suspense & Concurrent Mode news
 👉 React API evol
 👉 Piral: React microfrontends
@@ -73,9 +90,10 @@ modified: '2021-03-22T18:46:03.513Z'
 👉 SvelteKit
 👉 tRPC
 
-## w0315-0321
+- ref
+  - https://twitter.com/sebastienlorber/status/1376537880273821696
 
-- https://twitter.com/sebastienlorber/status/1374029672162459649
+## w0315-0321
 
 👉 State management
 👉 Svelte vs React
@@ -88,3 +106,6 @@ modified: '2021-03-22T18:46:03.513Z'
 👉 mobile budget
 👉 Tailwind JIT
 👉 esbuild
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1374029672162459649
