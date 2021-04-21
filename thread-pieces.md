@@ -13,7 +13,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## I don't view what I do as primarily self promotion but education, 
+- https://twitter.com/RyanCarniato/status/1384650828997267458
+  - but I definitely can understand how it can be seen that way as I'm passionate about all things reactive, and JS frameworks.
+- I don't mind you saying Solid is fast (it is) or well designed, but writing articles as though you had done that work seems odd.
 
 - ## If you have an idea for something that already exists
 - https://twitter.com/tannerlinsley/status/1383201108508635138

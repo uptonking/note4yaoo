@@ -13,6 +13,12 @@ modified: '2020-10-15T13:42:23.746Z'
 
 - csf (Component Story Format)
   - title, component, parameters, decrators
+- [Storybook for everyone: CSF vs. MDX](https://dev.to/lauracarballo/storybook-for-everyone-csf-vs-mdx-88b)
+  - Both CSF and MDX provide a great way of building component libraries. 
+  - I recently ran a twitter poll on prefered method when writing stories and nearly 70% of the people (80 votes aprox.) voted on using CSF, which is understandable as it is still the standard and recommended way. 
+  - But, MDX is still a very convenient way of writing stories in those cases where CSF seems a bit of a barrier for non technical users or our component needs precise and well structured documentation.
+- [What are your thoughts on the MDX format for @storybookjs](https://twitter.com/lcarb14/status/1379913918445801473)
+  - I'm currently preferring MDX as it provides both Stories and Docs with a single file.
 
 # graphics
 

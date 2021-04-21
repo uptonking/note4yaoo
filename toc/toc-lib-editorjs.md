@@ -7,7 +7,7 @@ modified: '2020-11-17T13:38:27.686Z'
 
 # toc-lib-editorjs
 
-# block-style-editor
+# block style editor
 
 - https://github.com/psyhyde/domino-editor
   - https://domino-editor.vercel.app/
@@ -16,6 +16,12 @@ modified: '2020-11-17T13:38:27.686Z'
   - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
 
 # text-editor
+
+- https://github.com/ProseMirror/prosemirror
+  - /5.1kStar/MIT/202002/js
+  - http://prosemirror.net/
+  - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
+  - ProseMirror library consists of a number of separate modules.
 
 - https://github.com/tbhuabi/textbus
   - /150Star/GPL/202011/ts
@@ -34,6 +40,17 @@ modified: '2020-11-17T13:38:27.686Z'
     - 实时代码高亮
     - 由于TextBus的架构设计天然的支持过滤脏内容，所以，当粘贴进 TextBus 不认识的数据时，会自动忽略掉
     - 粘贴进来的资源上传，目前正在开发中
+
+# code editor
+
+- vscode-monaco-editor
+
+- https://github.com/codemirror/CodeMirror
+  - /21.3kStar/MIT/202010/js
+  - In-browser code editor
+  - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
+  - The new system provides solid accessibility, touchscreen support, better content analysis
+  - It is not API-compatible with the old code.
 
 # plugins-editorjs
 

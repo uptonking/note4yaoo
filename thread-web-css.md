@@ -26,7 +26,11 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## Used the :in-range or :out-of-range CSS selector?
+- https://twitter.com/jh3yy/status/1384766096511733762
+  - Use them to select an input whose value is in/out of the min/max range
+  - `<input type="number" min="0" max="5"/>` .
+  - https://codepen.io/jh3y/pen/MWWowEb
 
 - ## Enhanced `:not()` can take a selector list, and refer to the base selector with `*` .
 - https://twitter.com/5t3ph/status/1383803482310807557

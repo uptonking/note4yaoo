@@ -49,6 +49,12 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://github.com/winkerVSbecks/generative-parts
   - 配置所有ui组件的圆角、颜色，样式超级友好
 
+- https://vazurio.co/
+  - 干净简洁，纯白背景，大量使用圆角矩形，设计感很强
+  - https://github.com/vazurio/buildkit-doc
+  - https://github.com/vazurio/white-wolf
+  - https://portfolio-anyelos.vercel.app/
+
 # ux-pieces
 
 - https://www.cassie.codes/

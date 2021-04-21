@@ -22,6 +22,10 @@ modified: '2020-12-29T09:08:02.870Z'
 # discuss
 
 - ## [2020年跨端开发时 Flutter 和 React Native 哪个更值得选择？](https://www.zhihu.com/question/384934444/answers/updated)
+
+- flutter招得到人？ RN直接js前端能上，dart不行
+  - 如果涉及到具体业务的计算，flutter生态太差，如格式转换、文档读写
+
 - React Native 基于 JS-Native Bridge 的渲染方案有着没有办法弥补的先天缺陷。性能上优化到 60 fps 都比较成问题，更不用提以后广泛普及的 120 fps 的设备。
   - RN 之前的桥是完全用队列异步的，JS 线程并不会阻塞 UI 线程的 vsync。
   - RN 在 18 年就提到了原有的桥架构不支持同步调用的问题，所以新架构的目的就是完全基于可同步调用的 JSI (JavaScript Interface）来重构原生模块（TurboModules）、渲染（Fabric）与包括初始化在内的残余部分，使得 RN 可以完全去掉「桥」。

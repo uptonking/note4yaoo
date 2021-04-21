@@ -57,6 +57,11 @@ modified: '2020-10-22T10:22:55.878Z'
   - https://www.yuque.com/imove/docs/hvu0md
   - iMove 是一个逻辑可复用的，面向函数的，流程可视化的 JavaScript 工具库。
   - 感谢 蚂蚁 X6 团队 提供的绘图引擎
+- https://github.com/egoist/flowkit
+  - https://flowkit.vercel.app/
+  - /45Star/NALic/202104/ts
+  - 依赖react-flow-renderer, preact, tailwindcss
+  - A simple online flow chart editor.
 
 # uml
 
