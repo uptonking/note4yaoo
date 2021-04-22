@@ -11,6 +11,19 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+
+- ## What if it were incredibly easy to create reusable web components with Preact too?
+- https://twitter.com/justinfagnani/status/1385017231101231107
+- With new @lit/reactive-element package, you can easily use any rendering layer and still get all the reactive property, scoped style, and update lifecycle goodness that drives Lit.
+- What's really great is how very simple the implementation is
+  - We pushed more of Lit's styling and decorators into ReactiveElement and published it as a separate package so that more people could use this as a base with their preferred template system, or no template system at all.
+
+- ## People often ask how lit-html works because it looks like it's just doing string building, and it's a bit unintuitive that it could be so fast.
+- https://twitter.com/justinfagnani/status/1247652729922531328
+- Separating out the static from the dynamic pieces of a template has traditionally been a hard problem, but using string template literals makes it so easy!
+  - And now it makes our SSR code really fast too
+- `strings` and `values` are both arrays. The vm calls the tag function something like this: `tag(['hello '], 1)` .
+
 - ## What makes a lit-html or stencil based component suite more "future proof" than a collection of framework-x components wrapped as native custom elements? 
 - https://twitter.com/youyuxi/status/1380181910631112708
   - I see the "future proof" slogan being used as major selling points for these WC-based solutions (lion, fast-element etc.) but by using them you are still running hundreds of kilobytes of JavaScript written and maintained by others.

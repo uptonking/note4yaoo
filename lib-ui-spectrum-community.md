@@ -11,6 +11,28 @@ modified: '2021-04-12T18:07:01.092Z'
 
 # pieces
 
+- ## React is amazing because it makes building components so easy. 
+- https://twitter.com/devongovett/status/1120783819978629120
+  - But it's a double edged sword: everyone is building their own components from scratch now instead of using a library. 
+  - That’s bad for accessibility, bad for internationalization, and a giant waste of developer time!
+- Supporting accessibility is not just adding role and aria props. 
+  - It’s proper focus and tab management, keyboard navigation support, internationalized labels for screen readers, and much more. 
+  - It takes years to build a component library with all of this in mind.
+- This is why the web is still perceived as an inferior(较差的) app platform. 
+  - Since it is so hard to build high quality components with all the features that native has out of the box, almost no one does it. 
+  - The web gives us `<div>`, while native has huge libraries of customizable components
+  - Efforts like @ryanflorence 's reach-ui are heading in the right direction I think.
+- This is what my team is currently working on at Adobe. 
+  - We’ve spent years building our design system to support accessibility, internationalization, keyboard navigation, cross platform, and more, and have learned a lot along the way.
+  - We’re working on abstracting away the Adobe-specific design into a reusable, accessibility-first library of React Hooks that you can use as a starting point for your design system. 
+
+- https://twitter.com/sarah_federman/status/1121106681226616832
+  - Zendesk Garden has a similar approach
+  - There's a middle ground here between totally open endedness and constrained to one company's design.
+- Garden aims to provide an extremely solid and a11y foundation for other teams to build with.  
+  - Our containers save lots of external teams time and effort already, and we want to jumpstart that.
+  - We've actually already starting to do this with our react-containers repo. A series of hooks that help with a11y and keyboard navigation and you provide the UI
+
 - ## What were your decisions making points behind choosing px over rems?
 - https://twitter.com/_kamlesh_/status/1362041207501688832
   - I was going through the codebase and implementation of these decisions in react spectrum and saw everything is in `px`. 

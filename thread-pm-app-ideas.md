@@ -16,6 +16,27 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
+- ## 
+
+- ## I seriously love this Github comment feature
+- https://twitter.com/LukyVJ/status/1385164657007149058
+
+``` suggestion
+your suggestion here 
+```
+
+- I only wish it worked well with nested fenced code blocks (e.g., when suggesting to add a Markdown code example). I suspect it’s parsed with a lazy regular expression.
+  - you can add an extra ` to the outer one. it's in the spec
+  - https://github.github.com/gfm/#example-95
+- This has 100% changed the way we do code reviews and it's amazing. If only GitHib could also lint/Prettier the suggestions before committing them though.
+
+- ## The next frontier in product design tools is in making prototypes/designs/sketches that are NOT disposable - that are coupled with the platform they describe.
+- https://twitter.com/mpocock1/status/1385153436954546177
+  - In other words, imagine making a PR to your repo from Figma/Excalidraw.
+- Imagine a design tool that could:
+  - PR a failing test to your repo that passes when you complete the work it describes.
+  - Create application flows driven by 'typed holes' that the developer fills in.
+
 - ## Things web apps can do by default that I wish native apps could do, too:
 - https://twitter.com/rauschma/status/1383350431619837955
   - Zoom in anywhere

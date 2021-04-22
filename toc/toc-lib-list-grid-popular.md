@@ -300,6 +300,12 @@ modified: '2020-10-22T06:49:10.760Z'
   - Declarative Canvas Grid.
   - SpreadSheet - Commercially available Excel-like Grid
   - Exporter - Excel Export plugin
+- https://github.com/glideapps/glide-data-grid
+  - https://grid.glideapps.com/
+  - /417Star/MIT/202104/ts
+  - high-performance React grid component, with rich rendering
+  - the open-source data grid powering @glideapps
+
 - OpenWebSheet /MIT/14Star/202003/ts/vue
   - https://github.com/SiamandMaroufi/OpenWebSheet
   - https://siamandmaroufi.github.io/OpenWebSheet/
@@ -318,9 +324,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
-- https://grid.glideapps.com/
-  - /16Star/MIT/202012/ts
-  - high-performance React grid component, with rich rendering
 
 # list-grid-with-table-tr-td
 

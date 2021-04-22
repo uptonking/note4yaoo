@@ -20,6 +20,26 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## in Node.js 16 you can prefix CJS require() and ESM import() specifiers for Node.js core modules with `node:` .
+- https://twitter.com/jasnell/status/1385238402149150721
+  - for instance `require('node:fs')` instead of `require('fs')` . 
+  - This makes it clearer that it's a core module.
+- Yeah I like this pattern, it’s worth using for weird cases when you want to ignore any mocking
+
+- ## TypeScript Pro Tip: When creating large conditional types, ensure your conditionals are working as expected by returning string literals mapping to your intent.
+- https://twitter.com/mattcompiles/status/1385047092003962880
+
+- ## you find this when reviewing a PR: `type CategoriesByName = Record<string, Category>;` . Too explicit? Just right? The Best Way™?
+- https://twitter.com/erikras/status/1384891209219518466
+- I usually prefer doing: `Record<Category['name'], Category>` , just because it's easier to understand what is the key of that map
+- If used only once: inline
+  - If used in multiple places: yes
+- `const nameToCategory = new Map<string, Category>();`
+
 - ## The point of Symbols is that they are unique and primitive at the same time. 
 - https://twitter.com/asleMammadam/status/1382641865883852802
   - We can use them as a sign of our values. 

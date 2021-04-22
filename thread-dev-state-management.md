@@ -15,13 +15,37 @@ modified: '2021-02-28T07:29:07.622Z'
   - This shows some comparison among use-context-selector, jotai and proxy-memoize.
   - #ReactTracked and #Valtio are not shown, but they have the same idea.
 
-- [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
+- ## what's the difference between @sveltejs store and context?
+- https://twitter.com/lihautan/status/1385027049673269253
+  - Store allow multiple components to share the same value, and get updated when the value changes
+  - Context allow components under the same component tree to share the same value, where is the component placed decides the value the component gets
+  - [Svelte Store: Store vs Context](https://www.youtube.com/watch?v=p4GmT0trCPE)
+- so how should I decide when to use store, context, or both?
+  - Here's the 2 dimensions you can think about:
+  - static or dynamic - can the value be changed by the user?
+  - global or local - is the value the same throughout the entire app, or depending on where the component is used?
+  - use store - 💡 if the value needs to be dynamic
+  - use context - 💡 if the value is local to where the component is used
+- static + global
+  - define the constant in a file
+  - import the constant from anywhere
+- static + local
+  - define the constant in a context
+  - depends on where it's used, the context value will be different
+- dynamic + global
+  - define the store 📦 in a file
+  - import the store 📦 from anywhere
+- dynamic + local
+  - define the store 📦 in a context
+  - depends on where it's used, the store 📦 from the context will be different
+
+- ## ref
 - [RTK Query comparison](https://rtk-query-docs.netlify.app/introduction/comparison/)
+- [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
 
 # pieces
 
 - ## 
-
 
 - ## I’m pretty proud of this level of commenting I did recently for a UI where you can drag and drop "layers", and one of them might be selected.
 - https://twitter.com/erikras/status/1384440999200571392

@@ -9,6 +9,27 @@ modified: '2021-01-06T14:40:11.360Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## Let’s talk about a React performance antipattern that I see in apps sometimes.
+- https://twitter.com/iamakulov/status/1385230664648253443
+  - Say I have two functions that I want to pass down through a context
+  - How would I do that? 
+- The easiest way would be with `<Provider value={{signIn,signOut}}>` .
+  - this object is recreated every time AuthWrapper is rendered. 
+  - Which means the context receives a new value every time.
+- The easiest way to do that is to move the object out of the component
+  - However, sometimes (eg if `signIn` and `signOut` come from props), that’s impossible. 
+  - In that case, wrap the object with `useMemo` .
+- Another (future) way to fix this might be `useContextSelector` .
+  - useContextSelector is a proposed React API that lets you subscribe to a specific context’s field. 
+  - This way, components rerender only when the field changes.
+  - And you can use this API today, thanks to the use-context-selector library
+- React.memo() (and PureComponent) help to prevent a component from rerendering when its props and state don’t change.
+  - However, they don’t work with context. Every context update always rerenders all subscribed components.
+
 - ## Have you used the useCallback() hook? Tell me why. I'd love to hear about your use case.
 - https://twitter.com/brian_d_vaughn/status/1174359975600091136
 - I'm using it for debouncing an autosave experience

@@ -18,18 +18,13 @@ modified: '2021-04-11T17:37:29.528Z'
   - reach-ui
   - react-containers
   - downshift
+  - radix-ui
 
-# discuss
+# headless-ui-comparison
 
-- ## In many cases, headless React components (components that only execute code and return null) are better than hooks.
-- https://twitter.com/ralex1993/status/1249705985729368068
-  - Why? Because you can conditionally render them.
-  - You can even loop over them!
-  - And there is nothing stopping you from calling hooks inside of your headless components. This is just one easy way to conditionally call hooks.
-- While this is true, if you have to choose between exposing a hook and exposing a headless component, choose the hook.
-  - Users can make their own headless component out of the hook, but you can't make a hook out of a headless component.
+## [renderlesskit-react](https://renderlesskit-react.vercel.app/)
 
-- ## How does Renderlesskit React differ from other solutions?
+- ### How does Renderlesskit React differ from other solutions?
 - https://survivejs.com/blog/renderlesskit-interview/
 - Under the hood, Renderlesskit uses Reakit
   - There are two parts for creating any components in Reakit: component hook and state hook.
@@ -44,6 +39,41 @@ modified: '2021-04-11T17:37:29.528Z'
 
 - There is a new style of component libraries like reach-ui and @radix_ui that just offer functionality and doesn't try to be a design system. 
   - IMO this is the most important thing that has happened to the react ecosystem since... Probably React.
+
+## [radix-ui](https://radix-ui.com/primitives/docs/overview/introduction)
+
+- Our goal is to create a well-funded, open-source component library that the community can use to build accessible design systems.
+
+- Key Features
+- Accessible
+  - Components adhere to the WAI-ARIA design patterns where possible.
+  -  We handle many of the difficult implementation details related to accessibility, including aria and role attributes, focus management, and keyboard navigation. 
+- Unstyled
+  - Components ship with zero styles, giving you complete control over styling. 
+  - Components are compatible with CSS-in-JS libraries, CSS preprocessors, and vanilla CSS. 
+- Opened
+  - Our open component architecture provides you granular(细粒度的) access to each component part, 
+  - so you can wrap them and add your own event listeners, props, or refs.
+- Uncontrolled
+  - Where applicable, components are uncontrolled by default but can also be controlled, alternatively. 
+  - All of the behavior wiring is handled internally, so you can get up and running as smoothly as possible, without needing to create any local states.
+- Developer experience
+  - Radix Primitives provides a fully-typed API. 
+  - All components share a similar API, creating a consistent and predictable experience. 
+  - We've also implemented a truly polymorphic `as` prop, so the prop suggestions update.
+- Incremental adoption
+  - Each primitive can be installed individually so you can adopt them incrementally.
+  - Primitives are also versioned independently
+
+# discuss
+
+- ## In many cases, headless React components (components that only execute code and return null) are better than hooks.
+- https://twitter.com/ralex1993/status/1249705985729368068
+  - Why? Because you can conditionally render them.
+  - You can even loop over them!
+  - And there is nothing stopping you from calling hooks inside of your headless components. This is just one easy way to conditionally call hooks.
+- While this is true, if you have to choose between exposing a hook and exposing a headless component, choose the hook.
+  - Users can make their own headless component out of the hook, but you can't make a hook out of a headless component.
 
 - ## material-ui: Provide a version of the components without any styles
 - https://github.com/mui-org/material-ui/issues/6218
