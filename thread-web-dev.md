@@ -7,9 +7,27 @@ modified: '2021-01-08T17:13:43.392Z'
 
 # thread-web-dev
 
-# pieces
+# repeat
 
-- ## 
+- ## Is there any reason not to use HTTP PUT and DELETE in a web application?
+- https://stackoverflow.com/questions/1101888
+- Quite simply, the HTML 4.01 `form` element only allows the values "POST" and "GET" in its `method` attribute
+  - an HTML document must conform to the HTML spec.
+  - it explicitly disallows any `<form>` method except for POST and GET.
+  - But this doesn't apply to Ajax requests
+  - For example jQuery supports all HTTP methods
+- Actually a fair amount of people use PUT and DELETE, mostly for non-browser APIs. Some examples are the Atom Publishing Protocol and the Google Data APIs
+  - Beyond that, you don't see PUT/DELETE in common usage because most browsers don't support PUT and DELETE through Forms. HTML5 seems to be fixing this
+  - The way it works for browser applications is: people design RESTful applications with PUT and DELETE in mind, then "tunnel" those requests through POSTs from the browser. 
+- There are some comments on whether AJAX libraries support all the methods. 
+  - It does come down to the actual browser implementation of `XMLHttpRequest`
+
+- [http中的put、delete等请求为什么不安全？](https://www.zhihu.com/question/38770182)
+- HTTP中那些method的真正区别只有那个单词拼写不一样。其他部分没有任何区别。
+  - 各种Method的区别是语义上的。是为了让你的应用程序能够清晰简化的进行通信。对于HTTP本身来讲没有任何区别。当然安全性也没有任何区别。
+  - 当然也有可能是一些其他的客观因素。比如公司斥巨资买了一个防火墙，发现只能拦截过滤POST和GET请求。。。。。
+
+# pieces
 
 - ## I hate to be the one to tell you this, but serviceworker didn't make offline-first any easier.
 - https://twitter.com/aboodman/status/1383157955248283649
@@ -327,7 +345,7 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## Avoid layout shifts on long pages by adding a scrollbar
 - https://twitter.com/JoshWComeau/status/1349374805418635264
-  - `overflow-y: scroll;`
+  - `overflow-y: scroll; `
 
   - Improves CLS score
 - this is indeed annoying.
