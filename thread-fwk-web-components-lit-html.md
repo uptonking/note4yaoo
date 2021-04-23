@@ -11,12 +11,29 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How @buildWithLit templates work in 4 steps:
+- https://twitter.com/justinfagnani/status/1385659190153121795
+  - html tag gets template strings and data 
+  - Lit creates HTML from template strings 
+  - Browser parses HTML into a `<template>` , Lit records marker locations
+  - Lit clones `<template>` and inserts data at marker locations
+- The first three steps are the "template preparation" steps and only happen once per template.
+  - That work is reused across every rendered instance and every re-render of the template. 
+- I think you mentioned somewhere you were working in making this preparation AOT?
+  - Yep! We have compiled template support in core, with tests
 
 - ## What if it were incredibly easy to create reusable web components with Preact too?
 - https://twitter.com/justinfagnani/status/1385017231101231107
-- With new @lit/reactive-element package, you can easily use any rendering layer and still get all the reactive property, scoped style, and update lifecycle goodness that drives Lit.
+  - With new @lit/reactive-element package, you can easily use any rendering layer and still get all the reactive property, scoped style, and update lifecycle goodness that drives Lit.
 - What's really great is how very simple the implementation is
   - We pushed more of Lit's styling and decorators into ReactiveElement and published it as a separate package so that more people could use this as a base with their preferred template system, or no template system at all.
+- Still React event and prop issues?
+  - Preact doesn't use delegated events and uses introspection to detect and use custom properties. It has always worked with Custom Elements.
+  - @lit-labs/react: React integration for Web Components and Reactive Controllers.
 
 - ## People often ask how lit-html works because it looks like it's just doing string building, and it's a bit unintuitive that it could be so fast.
 - https://twitter.com/justinfagnani/status/1247652729922531328

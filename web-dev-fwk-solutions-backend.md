@@ -11,7 +11,7 @@ modified: '2021-04-17T15:30:00.844Z'
 
 # node as backend
 
-- ## [Node.js 做 Web 后端优势为什么这么大？](https://www.zhihu.com/question/357717742/answers/updated)
+- ## [Node.js做Web后端优势为什么这么大？](https://www.zhihu.com/question/357717742/answers/updated)
 - 从没见过哪个后端开发语言的标准库比js还小的，连leftpad这种常用的功能还有一个npm库，难以想象
 
 - Node的DNA是异步的，而Java的主流框架底层都是同步的，包括io，jdbc等。而异步非阻塞是提高并发能力的不二法门。

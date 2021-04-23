@@ -1,11 +1,11 @@
 ---
-title: web-ui-shell
+title: web-ux-ui-shell
 tags: [components, ui, ui-shell]
 created: '2020-12-28T10:06:47.657Z'
-modified: '2021-04-11T17:40:30.288Z'
+modified: '2021-04-23T15:42:07.105Z'
 ---
 
-# web-ui-shell
+# web-ux-ui-shell
 
 # Overview
 

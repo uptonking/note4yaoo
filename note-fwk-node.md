@@ -1,11 +1,11 @@
 ---
-title: note-fwk-app-node
+title: note-fwk-node
 tags: [framework, node]
 created: '2020-12-08T18:43:22.473Z'
-modified: '2020-12-09T13:51:38.769Z'
+modified: '2021-04-23T18:14:19.386Z'
 ---
 
-# note-fwk-app-node
+# note-fwk-node
 
 # guide
 

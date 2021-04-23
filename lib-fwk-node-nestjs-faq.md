@@ -1,11 +1,11 @@
 ---
-title: lib-fwk-nestjs-faq
+title: lib-fwk-node-nestjs-faq
 tags: [faq, nestjs]
 created: '2020-12-17T18:04:47.102Z'
-modified: '2020-12-17T18:05:08.219Z'
+modified: '2021-04-23T18:12:22.607Z'
 ---
 
-# lib-fwk-nestjs-faq
+# lib-fwk-node-nestjs-faq
 
 # faq-not-yet
 

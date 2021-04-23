@@ -3,7 +3,7 @@ title: dev-log-repeat-solutions
 tags: [dev, repeat, solutions]
 favorited: true
 created: '2021-01-08T00:10:18.987Z'
-modified: '2021-03-29T19:30:24.663Z'
+modified: '2021-04-23T17:17:33.807Z'
 ---
 
 # dev-log-repeat-solutions
@@ -11,24 +11,25 @@ modified: '2021-03-29T19:30:24.663Z'
 # guide
 
 - roadmap
-  - rendering(not web) is the future.
+  - rendering is the future, but web not.
 
 - tech stacks: table in markdown editor
-  - design system: ui components
+  - design system: ui components, themeable, headless
   - text editor
-  - table editor
+  - table component
 
 - apps: docs/sheets/data-oriented
+  - note-taking
+    - markdown-based
+    - collapsible
   - datable
     - pivot table
-  - noter
-    - collapsible
-    - pdf
-  - live-doc-generator
+  - live-documentation
     - live table & data sources
     - shareable & embeddable
+    - pdf
 
-- integrations
+- integrations/connections
 
 - tips
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
@@ -83,7 +84,7 @@ modified: '2021-03-29T19:30:24.663Z'
 
 - tips
   - live edit
-  - 搭建ui需求过于灵活，实现基于controls的在线配置编辑更实用
+  - 随意搭建ui的需求过于灵活，而基于controls的在线配置编辑更实用
 
 ## editorjs
 
@@ -104,12 +105,7 @@ modified: '2021-03-29T19:30:24.663Z'
   - carbon
   - spectrum
   - theme-ui
-  - design-tokens
-    - polaris-tokens
-    - infor
-  - doc-site
-    - sass-primitive
-    - pico
+  - design-tokens: polaris-tokens
 
 - dashboard
   - tips
@@ -137,8 +133,4 @@ modified: '2021-03-29T19:30:24.663Z'
   - animation
     - FLIP
 
-# ideas
-
-- 更适合中文的faker.js
-  - 互联网忽悠味的文章生成器，如赋能、反哺、闭环、全链路、引爆点、私域流量、渠道下沉
-  - 同长度的诗词组合
+# pieces

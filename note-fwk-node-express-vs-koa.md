@@ -1,11 +1,11 @@
 ---
-title: note-fwk-app-express-vs-koa
+title: note-fwk-node-express-vs-koa
 tags: [comparison, express, framework, koa]
 created: '2020-12-08T09:38:21.479Z'
-modified: '2020-12-08T13:29:27.651Z'
+modified: '2021-04-23T18:11:48.029Z'
 ---
 
-# note-fwk-app-express-vs-koa
+# note-fwk-node-express-vs-koa
 
 # faq
 

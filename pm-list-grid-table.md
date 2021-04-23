@@ -57,7 +57,7 @@ modified: '2020-10-22T13:33:54.313Z'
 - 特色功能点
   - 现有表格的快速集成(导入、theming)
     - 开发单独库实现table-tr-td的操作
-  - table-clone
+  - table-clone: 或复制粘贴表格到同一文档，需要设计布局
   - table from table: 大表中copy部分小表进行分析
   - data(~~viz~~)-replay
 

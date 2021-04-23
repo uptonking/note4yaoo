@@ -7,6 +7,14 @@ modified: '2020-12-22T12:40:40.412Z'
 
 # tool-iot-mobile-phone
 
+# mobile
+
+- 小米mix alpha环绕屏的使用场景(官方未给出)
+  - 应用演示
+  - 背面歌词/封面
+  - 背部笔记
+  - ios widgets
+
 # top cellphone sales
 
 - samsung

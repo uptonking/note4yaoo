@@ -1,17 +1,15 @@
 ---
-title: web-ui-general-elements
+title: web-ui-comp-general-elements
 tags: [components, ui]
 created: '2021-03-16T15:12:30.702Z'
-modified: '2021-04-11T17:43:15.229Z'
+modified: '2021-04-23T15:33:32.664Z'
 ---
 
-# web-ui-general-elements
+# web-ui-comp-general-elements
 
-# container
+> 常作为创建业务组件的基础组件，如Box、Link
 
-- halfmoon文档: container-fluid
-- bootstrap5文档: container-xxl
-- pico文档: container各断点都有max-width，最小屏除外
+# guide
 
 # button
 

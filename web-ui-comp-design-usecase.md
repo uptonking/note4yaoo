@@ -58,7 +58,7 @@ modified: '2021-04-11T17:38:41.941Z'
   - stacks should not wrap at any time. A separate `<Cluster>` component could fulfill that use-case, serving as a horizontal stack which wraps automatically on overflow.
 - I usually go for `inline` flag as it’s always about two possible directions
   - That’s also fine, but I don’t see how it could support responsive props.
-  - Same approach as yours,                                   `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
+  - Same approach as yours,  `inline={{md: true}}` or what others do with arrays: `inline=[false, true, true]`
 - What about HStack and VStack like SwiftUI?
   - I tried those concepts at first and currently building a project with them. 
   - However, I feel like they’re too rigid for responsiveness while being a bit redundant, too.
@@ -88,3 +88,8 @@ modified: '2021-04-11T17:38:41.941Z'
 - I can't stand building mobile first. I find it much easier building the most complex layout first then simplifying it for mobile.
 - When a property changes over the different breakpoints we were explicit declare it for every breakpoint. So min and max every mediaquery.
 - Way easier to min-width and add on flex/grid props then to max-width and remove them. Also using flex/calc to avoid MQs altogether is best!
+
+# discuss
+
+- ## "Avoid global state — Colocate with Uncontrolled Compound Components" This might help shed light on some of the design decisions made for the @radix_ui Primitive APIs.
+- https://twitter.com/jjenzz/status/1384158245556690945

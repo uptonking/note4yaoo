@@ -114,6 +114,13 @@ modified: '2021-03-03T21:48:48.379Z'
   - https://github.com/premieroctet/openchakra
   - https://openchakra.app/
   - visual editor and code generator for React using Chakra UI
+- https://github.com/malerba118/react-handoff
+  - https://codesandbox.io/s/async-night-7kyrq?file=/src/App.tsx
+  - 依赖chakra-ui, emotion
+  - aimed to turn any react app into a visual editor where you can visually tweak and persist props from the browser.
+  - enables designers and developers to work in parallel
+  - 修改后组件的配置可以导出为json，而组件的默认值从json初始化
+
 - https://github.com/grommet/grommet-designer
   - https://designer.grommet.io/
   - A tool to design screens using grommet components.
@@ -203,13 +210,6 @@ modified: '2021-03-03T21:48:48.379Z'
   - This package works well with output from the Editor.js rich text editor library. However, there is no dependency on Editor.js. 
 
 # react-live-code
-
-- https://github.com/malerba118/react-handoff
-  - https://codesandbox.io/s/async-night-7kyrq?file=/src/App.tsx
-  - 依赖chakra-ui, emotion
-  - aimed to turn any react app into a visual editor where you can visually tweak and persist props from the browser.
-  - enables designers and developers to work in parallel
-  - 修改后组件的配置可以导出为json，而组件的默认值从json初始化
 
 - live-example /4Star/MIT/202012/js
   - https://github.com/mytecor/live-example

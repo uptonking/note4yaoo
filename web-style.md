@@ -1,9 +1,8 @@
 ---
 title: web-style
 tags: [style, web]
-favorited: true
 created: '2019-08-05T11:51:59.761Z'
-modified: '2020-12-21T07:46:38.612Z'
+modified: '2021-04-23T17:10:55.308Z'
 ---
 
 # web-style

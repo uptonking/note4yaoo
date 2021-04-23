@@ -1,12 +1,11 @@
 ---
-title: web-ui-comp-in-action-react
+title: web-ui-comp-design-react-in-action
 tags: [components, in-action, react, web]
-favorited: true
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-04-11T17:47:57.291Z'
+modified: '2021-04-23T17:15:27.072Z'
 ---
 
-# web-ui-comp-in-action-react
+# web-ui-comp-design-react-in-action
 
 # react-comp-in-action
 
@@ -49,14 +48,14 @@ modified: '2021-04-11T17:47:57.291Z'
     - grommet将样式写在StyledButton，然后Button使用了它，主题样式值冗长
     - w-design,knack-ux,Amsterdam-s-c
 - defaultProps默认值的写法  
-  - 推荐: 直接在函数的参数处指定，如 `const C = function(p1='1',p2...){}`
+  - 推荐: 直接在函数的参数处指定，如 `const C = function(p1='1', p2...){}`
     - polaris-react,om,kenobi,knitui,smores-react,axiomatic
     - flame,w-design
     - 为避免实参对象每次render都重新创建，可考虑在函数外创建复杂对象再赋值到内部
   - 在组件定义之外指定，如 `Button.defaultProps={}` , to be deprecated
     - react-atomicus，Amsterdam-s-c,cactus,everblue-ui
     - flame，looker,prestyled,priceline,primer,pulse
-  - 参数写props，方法体中 `const {p1='1',p2=false,...restProps}=props;`
+  - 参数写props，方法体中 `const {p1='1', p2=false, ...restProps}=props; `
     - w-design,eui,minerva-ui,xl-vision,knitui,snake-design      
   - ref作为单独的参数，方便forwardRef
     - polaris-react，react-ui-components，snake-design,xl-vision

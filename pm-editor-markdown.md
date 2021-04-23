@@ -91,7 +91,7 @@ modified: '2021-04-19T15:10:47.546Z'
 - editor-plugins
   - keyboard-shortcuts:preview, bold, checkbox, newLine
   - list-editing-sugar:enter, tab, delete
-  - export & print    
+  - export & print
   - import
   - auto-completion
     - math

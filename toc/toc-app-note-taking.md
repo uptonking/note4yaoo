@@ -19,9 +19,13 @@ modified: '2020-10-22T10:03:50.526Z'
   - /16.4kStar/MIT |AGPLv3/202007/ts
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
-  - The source code for newer versions of the app is unavailable
-  - v1.0.0..v1.3.0: These initial releases have been published under MIT
-  - v1.4.0..v1.5.1: These later releases have been published under AGPL-v3
+  - license
+    - `<= v1.3.0` : MIT 
+    - `<= v1.5.1` : AGPLv3
+    - `>= v1.6.0` : Not open-source
+    - v1.0.0..v1.3.0: These initial releases have been published under MIT
+    - v1.4.0..v1.5.1: These later releases have been published under AGPL-v3
+    - The source code for newer versions of the app is unavailable
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
 - https://github.com/BoostIO/Boostnote
   - /17.2kStar/GPLv3/202009/js

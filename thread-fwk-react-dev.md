@@ -23,6 +23,19 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## Really don't understand React devs who don't like @tailwindcss (I mean, use what makes you happy ofc).
+- https://twitter.com/swyx/status/1385573418158891014
+  - React components localize state and side effects. 
+  - Tailwind localizes styles and responsive design. 
+  - They are fundamentally, philosophically aligned.
+- DX of styled components/emotion is just so much better. Its much harder to read components larded up with utility classes from bootstrap and tailwind
+- Because they don’t know that an asset with a URL is better than injecting different style tags on ever render.
+- The string-based API makes it hard to re-use, hard to derive those styles and hard to maintain.
+- Because tailwind is not Javascript ? Remember React is just javascript.
+- Utility-first and token-based styling is the probably the right approach for most teams. 
+  - However, utility classes in the form of magic strings is the wrong abstraction. 
+  - Better to use a more type-safe, component friendly approach—there are plenty these days (stitches, fela)
+
 - ##  `import React from 'react';` will go away in distant future
 - https://twitter.com/dan_abramov/status/1308739731551858689
   - use ` import * as React from 'react';` instead.

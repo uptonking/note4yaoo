@@ -9,6 +9,18 @@ modified: '2020-12-08T13:14:07.354Z'
 
 # guide
 
+# [Image file types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types)
+
+- The older formats like PNG, JPEG, GIF have poor performance compared to newer formats like WebP and AVIF, but enjoy broader "historical" browser support. 
+- The newer image formats are seeing increasing popularity as browsers without support become increasingly irrelevant (i.e. have virtually zero market share).
+
+- [WebP 相对于 PNG、JPG 有什么优势？](https://www.zhihu.com/question/27201061)
+- webp体积小，编码算法可以有针对性。
+  - webp的无损模式与png质量是无差异的，但是大小要小很多，特别是插画。
+- 需要注意的是jpg本身就是有损压缩格式，不适宜使用webp无损压缩。
+  - 有损压缩建议使用AVIF。
+- 需要避免使用格式工厂转化webp，因为格式工厂里出来的都是有损格式。建议使用GIMP及其批量处理插件。
+
 # [Empty element](https://developer.mozilla.org/en-US/docs/Glossary/empty_element)
 
 - The empty elements in HTML are as follows:

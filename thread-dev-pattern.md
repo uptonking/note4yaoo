@@ -11,6 +11,25 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## 
+
+- ## Let's say you submit a form, via POST, to /form. 
+- https://twitter.com/jaffathecake/status/1385485629392293890
+  - Then, that page uses pushState({}, '', '/foo') to change the URL to /foo, without reloading the page.
+  - If the user presses refresh, what do _you_ think should happen?
+- First rule of form posts: return a 303 redirect (possibly to the same URL) to specifically avoid those kind of cases.
+  - So I leave it to browser vendors to define what's best UX for those cases that everyone should avoid
+
+- ## ReactQuery's `staleTime` default is 0ms and this gets a few people scratching their heads every now and then. 
+- https://twitter.com/tannerlinsley/status/1385258144549330952
+  - The explanation is pretty simple:
+  - "How is the data on the screen always up to date?"
+  - is a much better question to be asking than
+  - "Why is my data not updating?!"
+- I also recently discovered this behaviour when I was setting up react-query in a project. 
+  - It went against my initial expectation but it does make sense to have 0 as the default to ensure up-to-date data always. 
+  - If the concern is too many API request, it is easy to override.
+
 - ## Two hard engineering problems that show up in all systems eventually:
 - https://twitter.com/undef_obj/status/1382350128380485642
   - Dealing with distributed state

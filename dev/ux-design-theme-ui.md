@@ -36,22 +36,23 @@ modified: '2021-01-01T20:08:51.345Z'
 
 # chakra-ui
 
-- [RFC: Static CSS Extraction](https://github.com/chakra-ui/chakra-ui/issues/859)
-  - One of the downsides of CSS-in-JS, particularly the styled-system approach is the runtime performance issues.
-    - You pass some style props to any component
-    - Chakra UI uses styled-system functions to transform the style props you pass to CSS objects
-    - Chakra UI uses emotion to convert the CSS object to a class name (using some hashing strategy) and appends a style tag to the head of the browser
-  - This process happens very often during the lifetime of any Chakra component, and performance issues might become noticeable with very fast, frequent updates.
-  - Ideas on how to solve this
-  - Static CSS Extraction
-    - Figure out how to generate static CSS files based on the style props at build time, so there's almost zero runtime cost.
-  - Prefer CSS variables to Context
-    - Because CSS variables work like React context, we can simply switch the current implementation to write theme specs to `:root` via css variables. 
-    - Then update styled-system functions.
-  - discussion
-  - After some research, Compiled CSS-in-JS by the Atlassian team seems to be an amazing solution.
-  - there could be something interesting looking into seek-oss/treat, they seem have a good solution in how they use it for their Braid design system
-  - why not using CSS variables from the start 
+- ## [RFC: Static CSS Extraction](https://github.com/chakra-ui/chakra-ui/issues/859)
+- One of the downsides of CSS-in-JS, particularly the styled-system approach is the runtime performance issues.
+  - You pass some style props to any component
+  - Chakra UI uses styled-system functions to transform the style props you pass to CSS objects
+  - Chakra UI uses emotion to convert the CSS object to a class name (using some hashing strategy) and appends a style tag to the head of the browser
+- This process happens very often during the lifetime of any Chakra component, and performance issues might become noticeable with very fast, frequent updates.
+- Ideas on how to solve this
+- Static CSS Extraction
+  - Figure out how to generate static CSS files based on the style props at build time, so there's almost zero runtime cost.
+- Prefer CSS variables to Context
+  - Because CSS variables work like React context, we can simply switch the current implementation to write theme specs to `:root` via css variables. 
+  - Then update styled-system functions.
+
+- discussion
+- After some research, Compiled CSS-in-JS by the Atlassian team seems to be an amazing solution.
+- there could be something interesting looking into seek-oss/treat, they seem have a good solution in how they use it for their Braid design system
+- why not using CSS variables from the start 
 
 # ref
 

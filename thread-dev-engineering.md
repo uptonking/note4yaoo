@@ -13,6 +13,26 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## How can I generate a tree, starting from a component to see where it is being used? like A is used in B and C, and D uses B and C
+- https://twitter.com/lucasleandrodev/status/1385617694653882370
+- [How to easily visualize a project's dependency graph with dependency-cruiser](https://www.netlify.com/blog/2018/08/23/how-to-easily-visualize-a-projects-dependency-graph-with-dependency-cruiser/)
+- https://github.com/pahen/madge
+  - Create graphs from your CommonJS, AMD or ES6 module dependencies
+
+
+- ## avoid pages/screens vs components folder structure 
+- https://twitter.com/sseraphini/status/1385574397998637058
+  - folder-by-type vs folder-by-feature
+  - keep components and routes colocated based on their feature example: 
+- `<feature>` .
+  - all routes of this `<feature>` .
+  - all components of this `<feature>` .
+  - like sub apps that you can compose
+- for both pages and features folder (for a multi-page app)
+  - one thing to notice is that a page can use multiple features, so having the page component inside a specific features folder is something that breaks this logic colocation.
+- But take next for example
+  - Since it's routing is based on the file system, won't that put components to be considered as pages, when they shouldn't be?
+
 - ## AsyncAPI is the OpenAPI for Event Driven architecture 
 - https://twitter.com/sseraphini/status/1384490726168227843
   - You can document all your events and payloads, internal and external ones

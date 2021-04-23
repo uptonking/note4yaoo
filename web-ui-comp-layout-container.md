@@ -1,13 +1,28 @@
 ---
-title: web-ui-layout-container
-tags: [components, container, layout, ui, web]
+title: web-ui-comp-layout-container
+tags: [components, layout, ui, web]
 created: '2021-04-14T18:35:52.173Z'
-modified: '2021-04-14T18:36:15.441Z'
+modified: '2021-04-23T15:53:50.281Z'
 ---
 
-# web-ui-layout-container
+# web-ui-comp-layout-container
+
+> 布局/网格类组件
+
+# guide
+
+# discuss
+
+- ## 
+
+- ## 
 
 # container(常用于布局)
+
+- usecase-examples
+  - halfmoon文档: container-fluid
+  - bootstrap5文档: container-xxl
+  - pico文档: container各断点都有max-width，最小屏除外
 
 - ## Media Query Breaks Modularity, Use Container Query
 - https://react-container-query.github.io/react-container-query/
@@ -28,17 +43,17 @@ modified: '2021-04-14T18:36:15.441Z'
   - It sets minimum padding on the right and the left side, so your content doesn't touch the edges. 
   - At the same time, it horizontal centers your content when the screen is too wide. 
   - For instance, a small container width improves readability.
-- The `Grid` component handles the layout positioning within a `Container`. 
+- The `Grid` component handles the layout positioning within a `Container` . 
   - It's a slim abstraction on top of the CSS flexbox model. 
   - It has two interesting features: the items spacing and the responsive columns handling. 
 - The `Box` component is a style toolbox
   - it's an abstraction for people who like the tailwinds approach. 
   - Instead of writing custom CSS, you can use the Box style props
-- You might be confused by `<Container />` vs `<Grid container />`. 
+- You might be confused by `<Container />` vs `<Grid container />` . 
   - But make no mistakes, you can't use the two interchangeably. 
   - A Grid container, abstracts a flex container. 
   - A Container abstracts a page top level element.
-- What's the difference between `Grid` and `Box`? 
+- What's the difference between `Grid` and `Box` ? 
   - You should be able to replace the Grid usage with the Box. 
   - However, the Box is a direct mapping to CSS properties, while the Grid tries to be smarter, with a more abstracted API. 
   - The Grid should be the default go to solution. 
