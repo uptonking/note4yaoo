@@ -13,6 +13,13 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## Tuggable Lamp
+- https://twitter.com/jh3yy/status/1385764359490703366
+  - Playing with animated SVG on today's stream
+  - @greensock (Draggable && MorphSVG)
+  - https://codepen.io/jh3y/pen/mdRaNgM
+  - 拉亮台灯的效果
+
 - ##  `<datalist>` HTML element - useful for adding input suggestions with 0 javascript
 - https://twitter.com/swyx/status/1260199927856001024
 - I learned “the opposite”. 
@@ -29,7 +36,7 @@ modified: '2021-02-05T14:00:02.922Z'
   - You can use it just like normal CSS properties. No extra wrappers around each item, or spacer elements needed. 
   - https://codesandbox.io/s/gallant-monad-p8jpv
   - CSS custom properties are super powerful!
-  - `<div class="flex" style="--gap: 10px;">`
+  - `<div class="flex" style="--gap: 10px; ">`
 
 - ## Evening Lanterns
 - https://twitter.com/BraydonCoyer/status/1291085918183489537

@@ -11,6 +11,17 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+
+- ## 一直需要一个很好用的财税 SaaS 服务，强付费需求，要不是我不懂行我早下场自己做了。
+- https://twitter.com/waylybaye/status/1385921039989755906
+- 财税的基础逻辑还是简单的，也都比较死，没啥技术难度。
+  - 但是第一，企业要合理避税甚至操控报表（部分操控报表的行为也是合法的），财税软件很难做到
+  - 第二，各种税法很繁琐，甚至有些标准年年在变，因此将其转化位代码也很繁琐
+- 澳新有两个公司做得比较好，MyOB和Xero。业务也很成功。
+- 财税太专业了，投下去无底洞。而且它的核心竞争力也不在好不好用。
+- 阿里云貌似有相关产品，按照要求记账，自动报税
+  - 阿里是抄袭的自记账。太不要脸了。
+
 - ## As a designer & indie maker, I must tell you this: Visual design (read: aesthetic) is the least important thing to focus on. 
 - https://twitter.com/philipyoungg/status/1378658135456448513
   - Make it work and focus on UX (onboarding(onboarding是新用户引导流程, 是刺激用户激活的增长手段之一), reduce friction(分歧，争执；摩擦), good contrast). 

@@ -7,6 +7,8 @@ modified: '2021-01-01T20:06:31.225Z'
 
 # web-style-css-in-js-lib-jss
 
+> material-ui v5 is migrating from jss to styled-components
+
 # faq
 
 - [[Question] Advantage over One Class One Property](https://github.com/cssinjs/jss/issues/536)

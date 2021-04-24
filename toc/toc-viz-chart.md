@@ -53,6 +53,17 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.rgraph.net/
   - started in 2008 and was initially canvas only.
   - Now it has support for over 60 responsive chart types across SVG and canvas
+- https://github.com/plouc/nivo
+  - https://nivo.rocks/about
+  - built on top of d3.
+  - Several libraries already exist for React d3 integration, but just a few provide server side rendering ability and fully declarative charts.
+  - Features
+    - Motion/transitions, powered by react-motion
+    - Component playground
+    - SVG charts
+    - HTML charts
+    - Canvas charts
+    - Server side rendering API
 
 # geo-charts
 

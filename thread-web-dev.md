@@ -29,6 +29,20 @@ modified: '2021-01-08T17:13:43.392Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How to handle reloading pages created with POST
+- https://github.com/whatwg/html/issues/6600
+- What to spec
+- Manually refreshing a page where the top-level was submitted via POST should show a prompt. I'm not sure about location.reload(). I think it should either downgrade to GET, or show a prompt.
+- Using pushState means reloads of that document will be GET, even if the pushState doesn't change the URL, or only the hash of the URL changes.
+- Changing the hash of the URL by other means doesn't change anything in terms of refreshes. Refreshes will still show a prompt and use POST.
+- Traversing to a page previously fetched with POST will show an error page. If it's top-level, the error page can invite the user to refresh, which will prompt and re-POST. If it's nested, the error is not recoverable.
+
 - ## I hate to be the one to tell you this, but serviceworker didn't make offline-first any easier.
 - https://twitter.com/aboodman/status/1383157955248283649
 - we ended up removing it entirely, it was too expensive to keep trying to debug the issues

@@ -212,6 +212,28 @@ modified: '2021-01-01T20:06:19.327Z'
     - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
     - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 
+# discuss
+
+- ## the initial version of @stitchesjs was based on atomic CSS. Lots of specificity issues to look out for
+- https://twitter.com/giuseppegurgone/status/1385926007283138561
+- What's the problem you saw with atomic and specificity? I am assuming one never has to "override" a property with a rule and each property-value combination exists only once. I am sure I am forgetting something...
+  - You need to sort pseudo classes and at rules in a particular order otherwise the result would be non deterministic and depending on which component uses a declaration first. Of course this is not an issue if state is managed with JS and styles are just fn(state)
+- So in case of a media query an atomic rule for the same property can be global and as a media child. If one uses both classes, specificity algorithm is involved. Is that the case you are talking about? When would one have both classes applied to one element?
+  - If you have global styles then chances is that they are going to mess with yours - this is the case with any CSS in JS library.
+  - If you have two classes one for the plan declaration and the other with a media query you need to sort them because the @media rule doesn't have any impact on specificity
+
+- Is critical CSS even such a problem? I realize that loading all atomic classes like tailwind can lead to some delays but in a real life there much less such classes so why even care about extraction? @markdalgleish any comparison of your lib to tailwind?
+- imo critical CSS extraction is not necessary when using a solution that produces atomic CSS classes. In tailwind it is (was?) necessary because you’d start from a bundle with the entire universe in it. With JIT compilation this shouldn’t be a problem
+- Critical CSS optimizes initial paint for empty cache user by removing the need to wait for a blocking css request. It has nothing to do with atomic, cssinjs, static or client-side. Not everybody needs to have this optimized.
+
+- ### Almost any CSS ordering suffer from code splitting, and almost nobody talking about it
+- I was having a play with this in @compiledcss , where I'd move all "unsafe" styles to the primary chunk, but then leave everything else alone. Seems to work ok.
+- yeah, also css-modules has the same problem, there was an issue like 10 years ago
+  - Yes CSS Modules suffer from this issue as well: it happens when you import from multiple (shared) modules or pass scoped classnames as props.
+- Well, this is not about CSS Modules, but a very nature of CSS and the bundling process. 
+  - MiniCSSPlugin actually detects and reports some of such “race conditions”, (mostly false positives) but not able to solve.
+  - indeed. CSS Modules additionally gives you that false sense confidence - people think that since styles are scoped they are good. I think that with some strict linter rules the issue I mentioned can be avoided
+
 # ref
 
 - [The Next Era of CSS in JavaScript - From CSS-in-JS to TSS_202008](https://joebell.co.uk/blog/the-next-era-of-css-in-js)
