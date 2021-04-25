@@ -65,6 +65,7 @@ modified: '2021-04-13T11:00:52.211Z'
   - https://subwayti.me/
   - A nice NYC Subway time table.
 - https://github.com/AntlerVC/firetable
+  - https://firetable.io/
   - Excel/Google Sheets like UI for Firebase/Firestore. 
 - https://github.com/jamovi/jamovi
   - jamovi is a free statistics package, which is designed to be familiar to users of SPSS. 

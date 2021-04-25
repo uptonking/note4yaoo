@@ -47,6 +47,15 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## Announcing the alpha release of Lucy, a new DSL for finite state machines and statecharts that compiles to XState machines. 
+- https://twitter.com/matthewcp/status/1386030120838877187
+  - What CSS does for styling, Lucy aims to do for runtime logic.
+- The object syntax used by xstate always tripped me up. This looks much nicer. 
+  - Sorry about that! Ironically, one of the reasons that XState has an object syntax is to serve as a low-level output format for something exactly like Lucy.
+  - it’s great to have something as a foundation for higher level tools (DSLs, visualizers, etc).
+  - XState is CloudFormation, Lucy is CDK
+  - XState Builder (when I finally finish it) is Pulumi, (different than the visual creator, which is like... Whimsical)
+
 - ## I’m pretty proud of this level of commenting I did recently for a UI where you can drag and drop "layers", and one of them might be selected.
 - https://twitter.com/erikras/status/1384440999200571392
   - This is an "assign" action in an #XState machine
