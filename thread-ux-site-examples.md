@@ -12,7 +12,6 @@ modified: '2021-02-05T14:01:09.420Z'
 - blue
   - https://www.artstation.com/artwork/g2J64x
     - 深黑蓝，暗黑科技感
-
 - green
   - https://sktthemesdemo.net/natureone/
     - https://www.sktthemes.org/shop/nature-wordpress-theme/
@@ -54,6 +53,12 @@ modified: '2021-02-05T14:01:09.420Z'
   - https://github.com/vazurio/buildkit-doc
   - https://github.com/vazurio/white-wolf
   - https://portfolio-anyelos.vercel.app/
+
+- https://v2.grommet.io/components
+  - 页面背景为白色时，卡片背景就不是白色，所以卡片组件用得反而少了，直接在白色页面上布局图文也很友好
+
+- https://winstall.app/
+  - 页面背景为白色，卡片背景为灰色，很奇怪，但页面样式风格很统一
 
 # ux-pieces
 

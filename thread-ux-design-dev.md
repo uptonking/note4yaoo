@@ -11,6 +11,13 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## Skeleton loaders (supposedly) make your app feel faster, but am I the only one that feels like *animated* skeleton loaders make it feel even slower?
+- https://twitter.com/markdalgleish/status/1386618622181724161
+  - 很多观点认为，骨架屏让用户感觉速度变慢了，不值得做
+- If you have large animated areas they will require your attention. When you pay attention to something while you wait, it will feel slower.
+  - The whole idea of skeleton loaders is to reduce motion on the page.
+- Most of my friends refresh as soon as they see them because they think something broke on the page 
+
 - ## I wrote a few words about why design files are disposable artefacts and code is the source of truth.
 - https://twitter.com/petermcreaper/status/1384280996548255747
 - The people who use our apps and websites will never see our beloved design files. 

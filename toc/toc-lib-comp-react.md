@@ -93,10 +93,7 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/Semantic-Org/Semantic-UI-React
   - https://react.semantic-ui.com/
   - Official React integration for Semantic UI
-- react-grid-layout  /MIT/9kStar/201902
-  - https://github.com/STRML/react-grid-layout
-  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
-  - A draggable and resizable grid layout with responsive breakpoints
+
 - react-desktop /MIT/8kStar/201908
   - https://github.com/gabrielbull/react-desktop
   - http://reactdesktop.js.org/
@@ -285,7 +282,11 @@ modified: '2020-11-13T07:31:20.012Z'
 
 ## layout/panel 布局面板
 
-- https://github.com/STRML/react-grid-layout#demos
+- react-grid-layout  /MIT/9kStar/201902
+  - https://github.com/STRML/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - A draggable and resizable grid layout with responsive breakpoints
+  - https://github.com/STRML/react-grid-layout#demos
   - https://strml.github.io/react-grid-layout/examples/10-dynamic-min-max-wh.html
   - https://strml.github.io/react-grid-layout/examples/2-no-dragging.html
 - https://haltu.github.io/muuri

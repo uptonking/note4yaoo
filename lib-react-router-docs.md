@@ -9,7 +9,24 @@ modified: '2020-12-08T13:08:02.973Z'
 
 - React Router is a collection of navigational components that compose declaratively with your application. 
 
-# dev-tips
+# roadmap
+
+- ## [@reach/router future](https://reach.tech/router)
+  - Reach Router and it’s sibling project React Router are merging as React Router v6. 
+  - In other words, Reach Router v2 and React Router v6 are the same.
+  - [The Future of React Router and @reach/router](https://reacttraining.com/blog/reach-react-router-future/)
+- ## Why haven't we shipped RR v6?
+- https://twitter.com/ryanflorence/status/1380328500318457858
+  - Simple: Covid decimated our training business to a fraction of what used to be 😭
+  - Spending time on OSS is a luxury we don't have right now. 
+  - We need people buying @remix_run preview licenses or @ReactTraining workshops to give us room for OSS.
+- At the moment(2021-04-09), I'm hoping we get RR v6 out the door in the summer.
+  - We should have a 1.0 for Remix here in the next month. 
+  - After the dust settles on that, we can hopefully spend time bringing over everything we possibly can from Remix to React Router.
+- I promise you, after we ship @remix_run 1.0, and bring over the good stuff to React Router v6, data fetching/mutation will be SO MUCH BETTER. 
+  - You'll only use hooks for what they're good at after we ship.
+
+# pieces
 
 - how to programmatically navigate using react router v4
 	- https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4

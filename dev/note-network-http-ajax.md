@@ -120,17 +120,19 @@ modified: '2020-12-21T06:03:02.191Z'
 - ref
   - [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
 
-# Why I still use XHR instead of the Fetch API
+# blog
+
+## Why I still use XHR instead of the Fetch API
 
 - [Why I still use XHR instead of the Fetch API_2018](https://gomakethings.com/why-i-still-use-xhr-instead-of-the-fetch-api/)
 
 - UPDATE: I’ve completely changed my mind on this. I’m now all-in on fetch()
 
-# How to use the Fetch API with vanilla JS
+## How to use the Fetch API with vanilla JS
 
 - [How to use the Fetch API with vanilla JS](https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/)
 
-# [The Bayeux Protocol Specification 1.0](https://docs.cometd.org/current/reference/index.html#_bayeux)
+## [The Bayeux Protocol Specification 1.0](https://docs.cometd.org/current/reference/index.html#_bayeux)
 
 - Bayeux is a protocol for transporting asynchronous messages (primarily over web protocols such as HTTP and WebSocket), with low latency between a web server and web clients.
 - The primary purpose of Bayeux is to support responsive bidirectional interactions between web clients, for example using using AJAX, and the web server.
@@ -159,3 +161,16 @@ modified: '2020-12-21T06:03:02.191Z'
   - The second difference is that async servlets only carry HTTP, and you need more than that to handle remote Comet clients.
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
+
+# discuss
+
+- ## I've just included Undici as the best way for fetching data on the server-side in my "Real-World Next.js" book. 
+- https://twitter.com/MicheleRivaCode/status/1386357676540579844
+- https://github.com/nodejs/undici
+  - An HTTP/1.1 client, written from scratch for Node.js
+  - https://github.com/Ethan-Arrowood/undici-fetch
+    - A WHATWG Fetch implementation based on @nodejs/undici
+- Next.js automatically polyfills fetch API on the server-side, but in my book I do explore alternatives... and Undici is by far my favorite one
+- Yep. Undici is more reliable, it's well designed and tested, and it has better defaults for serverless environments. 
+  - We're already using it inside some places of the @vercel core production infrastructure which gives us the confidence to adopt it more broadly.
+  - I could even see it providing the `fetch` global in the default Node.js distribution 

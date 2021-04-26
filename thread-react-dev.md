@@ -11,7 +11,22 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Just realised that JSX has a syntax to support generics
+- https://twitter.com/wcandillon/status/1386413737263960064
+
+``` typescript
+type FormValues = {
+  email: string
+}
+
+<Formik<FormValues>
+  initialValues={{
+    email: false // TS error: boolean is not assignable to string
+  }}
+/>
+```
+
+- also, generic type parameters can be both explicitly defined (as in your snippet above) or inferred via arguments (props)
 
 - ## Let’s talk about a React performance antipattern that I see in apps sometimes.
 - https://twitter.com/iamakulov/status/1385230664648253443

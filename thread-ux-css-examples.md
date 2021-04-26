@@ -13,6 +13,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## I tried making the purple iPhone with CSS: Mine vs the real pic
+- https://twitter.com/ece_minaa/status/1386335568548831237
+  - https://codepen.io/ece_mina/pen/poRGeKO?editors=1100
+
 - ## Tuggable Lamp
 - https://twitter.com/jh3yy/status/1385764359490703366
   - Playing with animated SVG on today's stream

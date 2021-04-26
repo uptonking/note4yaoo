@@ -10,47 +10,80 @@ modified: '2021-01-08T11:48:16.590Z'
 # panel-window-manager
 
 - ref
-  - [search: window manager repos](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
+  - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
 
-- https://github.com/golden-layout/golden-layout /4.9kStar/202004
+- https://github.com/react-grid-layout/react-grid-layout
+  - https://strml.github.io/react-grid-layout/examples/0-showcase.html
+  - /13.4kStar/MIT/202104/js
+  - A draggable and resizable grid layout with responsive breakpoints, for React.
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片不能相互遮挡
+- https://github.com/golden-layout/golden-layout 
   - https://github.com/pbklink/golden-layout /v2
-  - http://golden-layout.com/examples/#d508753b29c3001c24218bf3a6b25141
+  - https://golden-layout.com/
+  - /4.9kStar/MIT/202004/ts
   - A multi window layout manager for webapps
-- https://github.com/rlamana/Ventus /300Star/201812
-  - http://www.rlamana.com/ventus/code/examples/simple/
-  - http://www.rlamana.com/ventus/code/examples/desktop/
-  - A window manager written in Javascript, HTML5 and CSS3.
-  - https://github.com/davidfig/window-manager /32Star/202007
-    - https://davidfig.github.io/window-manager/
-    - A javascript-only Window Manager
-    - I used Ventus to build internal tools and editors, 
-      - but I wanted a more configurable solution with a better event model that didn't rely on CSS.
-- https://github.com/hlhielkema/elara /5Star/202012/js
+  - 主要用于传统分栏布局
+  - 适合实现类似vscode、notable这类编辑器或文件管理器
+- https://github.com/hlhielkema/elara 
   - https://hlhielkema.github.io/elara/
+  - /5Star/MIT/202009/js
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片能部分遮挡；样式非常友好
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
-- https://github.com/Knossys/Proscenium /1Star/202011
+- https://github.com/rlamana/Ventus
+  - /300Star/MIT/201812/js
+  - http://www.rlamana.com/ventus/code/examples/simple/
+  - http://www.rlamana.com/ventus/code/examples/desktop/
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片能部分遮挡
+  - A window manager written in Javascript, HTML5 and CSS3.
+- https://github.com/davidfig/window-manager
+  - https://davidfig.github.io/window-manager/
+  - /32Star/MIT/202007/Ventus
+  - 明显感觉比Ventus更卡顿
+  - A javascript-only Window Manager
+  - I used Ventus to build internal tools and editors, but I wanted a more configurable solution with a better event model that didn't rely on CSS.
+- https://github.com/Knossys/Proscenium 
+  - /1Star/202011
   - A web based window manager and user interface toolkit for cloud based applications
 - https://github.com/cezarykluczynski/simone
   - http://cezarykluczynski.github.io/simone/demos/functional/basic.html
-  - window manager consisting of two widgets: taskbar and window, providing a desktop-like experience
+  - /27Star/MIT/201810/js
+  - 缩放窗口时有动画渐变，明显地给人流畅感；样式非常传统陈旧
   - It's built on top of the jQuery and jQuery UI.
-- https://github.com/UbiCastTeam/overlay-display-manager /3Star/202101
+  - window manager consisting of two widgets: taskbar and window, providing a desktop-like experience
+- https://github.com/UbiCastTeam/overlay-display-manager
   - JS overlay window manager to display iframes, images and html content.
-- https://github.com/ColinEspinas/wwm /2Star/202101
+  - /3Star/202101
+- https://github.com/ColinEspinas/wwm
   - customizable windows manager for the web
-- https://github.com/acdra1n/wm.js /2Star/202101
+  - /2Star/202101
+- https://github.com/acdra1n/wm.js
   - window manager for the web.
+  - /2Star/LGPLv3/202101
 
-- https://github.com/projectstorm/react-workspaces /90Star/202006/ts
+- https://github.com/projectstorm/react-workspaces
   - http://projectstorm.cloud/react-workspaces/
+  - /90Star/202006/ts
   - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
+- https://github.com/nextapps-de/winbox
+  - https://nextapps-de.github.io/winbox/
+  - /313Star/Apache2/202004/js
+  - 功能简单，但文档示例丰富
+  - outstanding performance, no dependencies, fully customizable
 - https://github.com/nomcopter/react-mosaic /2.5kStar/202005
   - https://nomcopter.github.io/react-mosaic/
   - A React tiling window manager
 - https://github.com/arqex/react-tiles /46Star/201804
   - https://react-tiles.firebaseapp.com/
   - a window manager component to display more than one app route at the same time dividing your browser in tiles.
+- https://github.com/masesk/webapp-interface-manager
+  - https://masesk.github.io/webapp-interface-manager/
+  - /1Star/NALic/202004/js
+  - 依赖react-bootstrap
+  - React application to mange and display multiple web pages and/or React components in their own window on a single browser tab
 - https://github.com/stayradiated/reactwm /33Star/201409
   - http://stayradiated.github.io/reactwm/
   - A minimal window manager built using React.
@@ -99,3 +132,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://tomkp.github.io/react-split-pane
   - /2.4kStar/MIT/202008/js
   - Split-Pane component, can be nested or split vertically or horizontally!
+
+- https://github.com/krishpranav/js-os
+  - js-os is an open-source web desktop platform with a window manager, application APIs, GUI toolkit, filesystem abstractions and much more.

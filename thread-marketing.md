@@ -11,6 +11,17 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 
+- https://twitter.com/jaredpalmer/status/1386411683074101248
+  - Huge opportunity for an ambitious open source project or consultancy.
+- https://github.com/getmeli/meli
+  - platform for deploying static sites and frontend applications.
+- https://github.com/coollabsio/coolify
+  - self-hostable Heroku & Netlify alternative
+- Our(Vercel) answer to this is continuing to invest in advanced Enterprise features: "bring your own" CI, VPC peering, more resource isolation features on the horizon. 
+  - We're thrilled so many govt, fintech, and healthcare customers are enjoying the @vercel platform already.
+  - More broadly… building, maintaining, securing and operating your frontend & global edge infrastructure is hard, undifferentiated stuff.
+  - The big question is whether folks *should* focus on this instead of investing in their app experiences.
 
 - ## 一直需要一个很好用的财税 SaaS 服务，强付费需求，要不是我不懂行我早下场自己做了。
 - https://twitter.com/waylybaye/status/1385921039989755906

@@ -13,6 +13,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## Mozilla used Rust to build Stylo, the CSS engine in Firefox (replacing approximately 160, 000 lines of C++ with 85, 000 lines of Rust). 
+- https://twitter.com/mozhacks/status/1386533367072579584
+- I’m 100% convinced by rust and use it every day, but tbh lines of code are a terrible metric. One of the worst in fact.
+
 - ## I don't view what I do as primarily self promotion but education, 
 - https://twitter.com/RyanCarniato/status/1384650828997267458
   - but I definitely can understand how it can be seen that way as I'm passionate about all things reactive, and JS frameworks.

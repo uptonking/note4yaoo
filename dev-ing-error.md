@@ -11,6 +11,12 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- react_devtools_backend.js:2557 Warning: Cannot update a component (`BrowserRouter`) while rendering a different component (`Login`). To locate the bad setState() call inside `Login`,
+  - [v6] Cannot update a component from inside the function body of a different component.
+  - https://github.com/ReactTraining/react-router/issues/7199
+  - 
+
+
 - Conflict: Multiple assets emit different content to the same filename index.html
   - 删掉前面配置文件定义的html-webpack-plugin的配置对象即可
   - 因为使用了 webpack-merge，不同文件的html-webpack-plugin合并后却成了2个，所以要注意某些对象的属性不同不会合并
