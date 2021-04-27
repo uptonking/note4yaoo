@@ -20,6 +20,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## I'm so tired of trying to make a TypeScript plugin system for React Table v8 
+- https://twitter.com/tannerlinsley/status/1386903354769477638
+  - that I'm about to slash(大幅削减；砍) the entire plugin system altogether and just build a monolithic(完整的) utility. 
+  - Everything included, all the time.
+- I thought you'd gotten it working?
+  - It was so close. But apparently generic maps just don't have the support they need yet. Either the inferred generic syntax needs to land or named/optional generic slots need to land. Without either, it just won't work without increasing the LOC required by plugins by like 10x 
+- Typescript FAILS when the effort to 'type' variations of arguments and overrides becomes  *more work* than writing the actual library code. I then revert to 'any' or 'unknown'.
+  - That last 20%of typing properly is not worth the mental anguish(痛苦，苦恼) just to deliver extra 'insight' that will be rarely used.
+
 - ## Is there a serialisation library with strong TS support? 
 - https://twitter.com/glenmaddern/status/1379408751564894208
   - As in, I can share a type def between two projects 

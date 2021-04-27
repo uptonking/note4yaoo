@@ -38,7 +38,7 @@ modified: '2021-02-05T14:01:09.420Z'
 - https://twitter.com/mrmrs_/status/1384367857925074964
   - 碎片图形重复或微调放置，有抽象感
 
-# 优雅使用圆角矩形卡片的设计
+# 大量使用圆角矩形卡片的设计
 
 - https://mxb.dev/
   - https://github.com/maxboeck/mxb
@@ -59,6 +59,9 @@ modified: '2021-02-05T14:01:09.420Z'
 
 - https://winstall.app/
   - 页面背景为白色，卡片背景为灰色，很奇怪，但页面样式风格很统一
+
+- https://zenn.dev/matamatanot/articles/7572dccafbc96d
+  - 页面背景灰蓝，卡片背景纯白，很友好
 
 # ux-pieces
 

@@ -11,6 +11,8 @@ modified: '2021-04-11T17:37:29.528Z'
 
 - headless-ui-examples
   - headlessui
+    - listbox/select(侧重数据),dropdown-menu(侧重操作),switch,disclosure
+    - dialog,popover,radio-group,transition
   - renderlesskit-react
   - react-spectrum
   - reakit
@@ -39,6 +41,22 @@ modified: '2021-04-11T17:37:29.528Z'
 
 - There is a new style of component libraries like reach-ui and @radix_ui that just offer functionality and doesn't try to be a design system. 
   - IMO this is the most important thing that has happened to the react ecosystem since... Probably React.
+
+- ### Sneak peak of a headless Date Picker component
+- https://twitter.com/anuraghazru/status/1331932805387808769
+  - Keyboard & screen-reader accessible
+  - Totally headless & renderless
+  - Composable with hooks
+- Built on top of @reakitjs, Components are headless and extremely flexible, 
+  - The core logic only consists of state hooks pattern.
+  - All the accessibility/keyboard handling logic is also handled in those hooks out of the box.
+- Core principles of the library is
+  - Accessible
+  - Composable
+  - Stylable
+  - Extensible
+- Which means that these components can be used as foundation for larger Design Systems and component libraries. 
+  - That's why we don't even provide any default styles with it, thus "renderless"
 
 ## [radix-ui](https://radix-ui.com/primitives/docs/overview/introduction)
 

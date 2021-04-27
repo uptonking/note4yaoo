@@ -13,12 +13,34 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## creating a javascript package is easy
+- https://twitter.com/sseraphini/status/1094358825417797633
+  - it should run on all node versions
+  - it should run both on node and browser
+  - it should works on SSR
+  - it should works on pure js, typescript and so on
+  - it should have lint, prettier setup
+  - it should have autorelease process
+  - it should work on both react web and react native
+  - it should work across frameworks: angular/react/vue
+  - it should provide hooks api
+  - it should work with webpack, parcel, metro bundler
+  - it should cover 100% of edge cases
+  - it should have docs and a good readme
+  - it should be blazing fast
+  - it should have blog posts
+  - it should be incrementally adopted
+  - it should have tests
+  - it should have/provide types
+  - it should work on npm, yarn
+  - it should have a great logo
+  - it should have a changelog
+
 - ## How can I generate a tree, starting from a component to see where it is being used? like A is used in B and C, and D uses B and C
 - https://twitter.com/lucasleandrodev/status/1385617694653882370
 - [How to easily visualize a project's dependency graph with dependency-cruiser](https://www.netlify.com/blog/2018/08/23/how-to-easily-visualize-a-projects-dependency-graph-with-dependency-cruiser/)
 - https://github.com/pahen/madge
   - Create graphs from your CommonJS, AMD or ES6 module dependencies
-
 
 - ## avoid pages/screens vs components folder structure 
 - https://twitter.com/sseraphini/status/1385574397998637058

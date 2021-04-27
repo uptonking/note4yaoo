@@ -18,6 +18,22 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0419-w0425
 
+👉 Next.js ISR
+👉 Josh Comeau's blog
+👉 Typing onSubmit()
+👉 TS GraphQL Codegen done right
+👉 Expo: EAS + managed
+👉 expo-auto-navigation
+👉 Hermes iOS perf
+👉 RN Boilerplate v3
+👉 Node 16
+👉 Sucrase
+👉 Tree Shaking
+👉 Netlify fn
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1386704715858206729
+
 ## w0412-w0418
 
 👉 Remotion 2

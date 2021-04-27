@@ -11,6 +11,12 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## 687 plugins! Really? We might need some form of categorizing system to group them all in order to simplify "browsing".
+- https://twitter.com/klaskarlsson/status/1386279983023284228
+- A plugin’s plugins plugin.
+- Not so sure that is a good idea if tags are more than plugins.
+- I've been pretty happy just using the search, which is super fast and will match any words in the plugin description as well as the title.
+
 - ## Skeleton loaders (supposedly) make your app feel faster, but am I the only one that feels like *animated* skeleton loaders make it feel even slower?
 - https://twitter.com/markdalgleish/status/1386618622181724161
   - 很多观点认为，骨架屏让用户感觉速度变慢了，不值得做

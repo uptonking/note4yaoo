@@ -11,11 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
-- react_devtools_backend.js:2557 Warning: Cannot update a component (`BrowserRouter`) while rendering a different component (`Login`). To locate the bad setState() call inside `Login`,
+- react_devtools_backend.js:2557 Warning: Cannot update a component (`BrowserRouter`) while rendering a different component (`Login`). To locate the bad setState() call inside `Login`, 
   - [v6] Cannot update a component from inside the function body of a different component.
   - https://github.com/ReactTraining/react-router/issues/7199
-  - 
-
+  - 原因是 `navigate()`没有放在`useEffect()`中
 
 - Conflict: Multiple assets emit different content to the same filename index.html
   - 删掉前面配置文件定义的html-webpack-plugin的配置对象即可
@@ -27,8 +26,8 @@ modified: '2021-03-29T19:29:32.505Z'
   - 开发调试时，可将图片优化处理替换为copy
   - [Create output directory](https://github.com/mishoo/UglifyJS/issues/1278)
 - 使用jpegtran优化jpg图片的示例
-  - `find src/ -name "*.jpg" -type f -exec  jpegtran -copy none -optimize -outfile {} {} \;`
-  - `find src/ -type f -exec  jpegtran -copy none -optimize -outfile {} {} \;`
+  - `find src/ -name "*.jpg" -type f -exec  jpegtran -copy none -optimize -outfile {} {} \; `
+  - `find src/ -type f -exec  jpegtran -copy none -optimize -outfile {} {} \; `
   - 注意，上述命令会原地优化，立即覆盖图片，记得先备份；图片优化后体积可能会变大
 
 - npm err Unsupported platform for fsevents@2.1.3: wanted {"os"
@@ -126,7 +125,7 @@ const throttledMethod = React.useMemo(
 ```
 
 - 循环引用的问题
-  - It means that the object has a circular reference, something like: `var a = {}; a.b = a;`
+  - It means that the object has a circular reference, something like: `var a = {}; a.b = a; `
   - `JSON.stringify` cannot convert structures like this.
   - [How can I print a circular structure in a JSON-like format?](https://stackoverflow.com/questions/11616630/how-can-i-print-a-circular-structure-in-a-json-like-format)
     - 使用自定义replacer函数

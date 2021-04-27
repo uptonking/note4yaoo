@@ -40,3 +40,33 @@ modified: '2021-04-19T15:06:33.233Z'
 
 - react-page
   - renderer package基于slate实现
+
+# discuss
+
+- [主流的开源「富文本编辑器」都有什么缺陷？](https://www.zhihu.com/question/404836496/answers/updated)
+
+- https://www.zhihu.com/question/404836496/answer/1319381793
+- 美团的学城、印象笔记的超级笔记都是 ProseMirror。
+  - 另外，PM并不是一个开箱即用的编辑器，需要写 Schema 定结构；其渲染出来的内容是完全的 html；标准用法就是按照 Schema 中确定的结构来渲染 DOM，特殊用法比如表格，或者自定义元素渲染可以使用 Angular、React 这种做视图层。
+
+- 我必须要再提下最新 slate 5.* 以上的版本，大概做了下面几件事：
+  - 使用TypeScript重构。
+  - 使用immer替换immutable，数据就是纯粹的JS对象，调试的时候再也不用.toJS()了。
+  - 新的插件机制，以前的插件机制我定义为仿洋葱模型，包装了太多层的调用栈，新插件机制就是简单的高阶函数实现的，很容易就能定位到代码实现。
+  - 使用WeakMaps记录DOM元素与Node节点与节点Path之间的关联，不再依赖于nodeRef以及DOM的data-key属性。
+  - 不得不说新的API更优雅了。
+  - Slate最核心的针对数据处理操作基本实现测试覆盖
+
+- 特别想研究Prosemirror是因为Confluence的编辑器技术用的是Prosemirror
+  - ProseMirror是CodeMirror作者打造的另外一款编辑器。
+- 区别一：定位不同
+  - Prosemirror是一款可以直接用的编辑器，而Slate是底层框架，它不提供编辑器功能实现和预设
+- 区别二：框架
+  - Prosemirror是基于原生JS和HTML的实现，而Slate是框架之上的产物。
+  - 看过一些Prosemirror实现的介绍，它也有虚拟DOM的概念，它的设计思想、基于编辑器业务的地位，类似于React之与它之上的业务地位是一样的，粗略的认为Prosemirror和React是同级别的。
+- 区别三：可扩展性
+  - Slate的扩展能力更强，主要是想说它的实现方式更多更灵活、更容易理解，不是说Slate能做而Prosemirror做不了。
+- 区别四：细节处理
+  - 因为定位不同，所以Prosemirror无疑更稳定有些特殊场景Prosemirror处理的非常到位。
+  - 比如Slate中最困扰我的就是块级元素前后无法设定焦点的问题（没有焦点就无法在元素前后按Enter创建空段落），前后有焦点会让编辑器使用起来更流畅，这方面语雀做的最好，Prosemirror也提供了一个gapcursor的模块专门处理这个问题
+- 时间已经来到2021年，不得不说真快，主要更新下前面提到的闪烁的焦点问题，这个需求在Slate中已经有方案，而且交互效果要比Prosemirror的gapcursor要好一点点，足以体现Slate的扩展能力还是可以的
