@@ -14,6 +14,10 @@ modified: '2021-04-19T15:06:33.233Z'
   - 能够选择多个block/card，然后一起拖拽移动
     - 优点是灵活，缺点是凌乱，还可以参考masonry布局
 
+- comparison
+  - popular: [prosemirror, codemirror, slate, draft](https://www.npmtrends.com/prosemirror-state-vs-draft-js-vs-@codemirror/state-vs-slate-vs-codemirror-vs-@editorjs/editorjs)
+  - unpopular: @editorjs/editorjs, @craftjs/core, @tiptap/core, @codemirror/basic-setup
+
 # 编辑器开发体验
 
 - 编辑器大致分为两种: 源代码编辑器和富文本编辑器，可以基于富文本实现源代码编辑器
@@ -21,7 +25,7 @@ modified: '2021-04-19T15:06:33.233Z'
   - 代表是UEditor、TinyMCE、Quill
   - contenteditable是浏览器DOM的一个原生属性，值为true时表示该元素变为可编辑状态
   - 因此原生就直接支持很多内容编辑操作，包括光标位移、内容选择的行为、键盘事件（如方向键控制光标）等等
-  - 辅以iframe技术，可以将编辑器放在一个独立的docment对象下，与页面的document对象分离
+  - 辅以iframe技术，可以将编辑器放在一个独立的document对象下，与页面的document对象分离
   - 问题
     - 编辑器中存在不可编辑元素，会有浏览器兼容性的问题，如火狐浏览器下光标无法正确移动甚至无法删除这个元素
     - 用户行为难以控制，难以抽象编辑器内的视图逻辑关系并将它们映射到代码模型中
@@ -70,3 +74,5 @@ modified: '2021-04-19T15:06:33.233Z'
   - 因为定位不同，所以Prosemirror无疑更稳定有些特殊场景Prosemirror处理的非常到位。
   - 比如Slate中最困扰我的就是块级元素前后无法设定焦点的问题（没有焦点就无法在元素前后按Enter创建空段落），前后有焦点会让编辑器使用起来更流畅，这方面语雀做的最好，Prosemirror也提供了一个gapcursor的模块专门处理这个问题
 - 时间已经来到2021年，不得不说真快，主要更新下前面提到的闪烁的焦点问题，这个需求在Slate中已经有方案，而且交互效果要比Prosemirror的gapcursor要好一点点，足以体现Slate的扩展能力还是可以的
+
+# ref

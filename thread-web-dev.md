@@ -35,7 +35,20 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Safari really is the new IE
+- https://twitter.com/MarijnJH/status/1387049528927289346
+  - my users keep bringing me new obscure bugs, they never get fixed, 
+  - and one doesn't really get the impression that the company in control cares all that much anymore.
+- As a bonus, debugging Mobile Safari is a giant pain when you're not developing on a Mac. 
+  - When a new issue with iOS in the title is reported, my stomach sinks.
+- They(Apple) are also essentially using their position to block consensus on platform progress in a similar manner
+- What’s the reasoning again for MS having to allow users a choice of browser during os onboarding while Apple gets away blocking everything thats not Safari from iOS?
+  - MS was forced to do so after an anti-monopoly ruling. Apple also deserves the same fate.
+- Apple uses their position on iOS to hobble other browsers -- requiring them to use JavaScriptCore or pure interpretation (no JIT).
+  - Actually, JavaScriptCore is a quite good JavaScript engine. 
+  - The bigger problem is Apple's restriction that browsers *must* use WebKit, not their own rendering engine, letting Apple control how good web apps can be -- some say to force people to build apps and give Apple 30%.
+- It(Safari) might be the new IE regarding compatibility, but Chrome is the new IE regarding monopoly and making up their own standards
+  - I'm not advocating for Chrome as a whole. I am simply defending their aggressive web standards development. 
 
 - ## How to handle reloading pages created with POST
 - https://github.com/whatwg/html/issues/6600

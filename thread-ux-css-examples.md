@@ -13,6 +13,14 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## make focus a little more engaging
+- https://twitter.com/argyleink/status/1387072095159406596
+  - prefers-reduced-motion: no-preference
+  - https://codepen.io/argyleink/pen/JjEzeLp
+  - 使用按键移动焦点时，元素外框出现波纹动画
+- Is there a way to preserve the nicely rounded corners when supplying your own outline style (e.g. to compensate for a background color) in Chrome or am i just out of luck?
+  - FocusRing: The discord accessibility team built a library so we could use another element to position and style focus rings correctly. It’s solved a number of issues and it looks great for users who need them
+
 - ## I tried making the purple iPhone with CSS: Mine vs the real pic
 - https://twitter.com/ece_minaa/status/1386335568548831237
   - https://codepen.io/ece_mina/pen/poRGeKO?editors=1100

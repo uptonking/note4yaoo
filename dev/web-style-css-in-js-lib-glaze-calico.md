@@ -11,7 +11,7 @@ modified: '2021-01-01T20:06:24.571Z'
 
 - glaze pros
   - 支持使用约束限制的值
-  - 能编译出atomic css
+  - 能输出atomic css
 
 - glaze cons
   - 设置样式通过类似style属性的sx

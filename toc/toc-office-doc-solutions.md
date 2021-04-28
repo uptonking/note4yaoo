@@ -76,6 +76,11 @@ modified: '2021-01-17T09:26:42.467Z'
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8
   - GitBook is only free for open-source and non-profit teams.
+- https://github.com/callstack/component-docs
+  - /120Star/MIT/202011/ts
+  - Simple documentation for your React components.
+  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
+
 - https://github.com/jxnblk/mdx-deck
   - /9.6kStar/MIT/202004
   - 依赖gatsby
@@ -102,6 +107,11 @@ modified: '2021-01-17T09:26:42.467Z'
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
+- https://github.com/remorses/vitro
+  - https://vitro.vercel.app/
+  - /248Star/ISC/202103/ts
+  - Vitro is a storybook alternative that builds 20x faster
+  - It is built on top of esbuild (thanks to bundless)
 - storycruise /6Star/MIT/202101/ts
   - https://github.com/itaditya/storycruise
   - https://storycruise.vercel.app/stories/button
@@ -128,7 +138,7 @@ modified: '2021-01-17T09:26:42.467Z'
     - Effortless documentation with Next.js and MDX
     - File based routing
   - https://github.com/remorses/vitro
-    - https://vitro.now.sh/
+    - https://vitro.vercel.app/
     - /151Star/ISC/202010/ts
     - Build and showcase your react components in isolation
     - Differences with storybook

@@ -33,7 +33,9 @@ modified: '2021-04-21T15:01:12.882Z'
 
 - ## 
 
-- ## 
+- ## This is how we created “Traveloop”. Animating basic shapes in After Effects and then creating the 3D look inside Cinema 4D
+- https://twitter.com/MestreMotion/status/1387125087871062020
+  - 同一对象运动动画的3d版和2d版，主要是形状渐变
 
 - ## I'm *thrilled* to announce I'm joining @greensock as the 'Lead bestower of animation superpowers'.
 - https://codepen.io/cassie-codes/pen/ExZpRwO

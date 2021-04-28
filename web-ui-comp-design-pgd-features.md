@@ -10,6 +10,8 @@ modified: '2021-04-11T17:42:26.580Z'
 # prospect-garden-design-in-action
 
 - features
+  - built for datable and documentation products
+    - 参考文档编辑器网站的设计，很多页面背景是灰蓝色，文档背景是纯白色
   - framework agnostic
   - themeable components following the Theme Specification
     - maintain consistency with constraint-based design
@@ -17,7 +19,7 @@ modified: '2021-04-11T17:42:26.580Z'
 
 - packages
   - @pgd/design-tokens
-  - @pgd/components(css)
+  - @pgd/css
   - @pgd/components-react
   - @pgd/components-react-lab
     - lit-html: to enable a framework-agnostic subset of reactive controller to work across frameworks.

@@ -26,6 +26,11 @@ modified: '2020-12-08T14:05:52.048Z'
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
 
+# bugs
+
+- [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
+  - npm exec -w website -- docusaurus
+
 # faq
 
 - 如何执行某个workspace子包的package.json中预定义的命令

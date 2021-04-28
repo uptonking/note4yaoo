@@ -259,6 +259,7 @@ modified: '2021-04-11T17:38:29.829Z'
 - Toast
 - Loading
   - flower-loader
+  - 类似文字从左到右一次变色的动画，如ktv歌词，如https://vaadin.com/components
 
 - ## Skeleton 骨架屏
   - bg-image-color

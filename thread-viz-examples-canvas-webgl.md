@@ -11,6 +11,18 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+
+- ## Drag & drop with 50'000 objects using instanced meshes. 
+- https://twitter.com/flavioschneide/status/1387152027143360516
+  - In the process of making this even more declarative - this shouldn't be possible in a web browser. 
+  - @reactjs + @threejs_org + R3F + React Spring
+  - write a custom gesture control for D&D
+  - https://codesandbox.io/s/drag-and-drop-instanced-meshes-lwd1r
+
 - ## CPC Scrolling with Three.js & GSAP 
 - https://twitter.com/shunyadezain/status/1383367473114742789
   - https://codepen.io/shunyadezain/pen/RwKBZBd

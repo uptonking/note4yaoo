@@ -13,6 +13,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
+- ## you should review your priorities every single day
+
 - ## Mozilla used Rust to build Stylo, the CSS engine in Firefox (replacing approximately 160, 000 lines of C++ with 85, 000 lines of Rust). 
 - https://twitter.com/mozhacks/status/1386533367072579584
 - I’m 100% convinced by rust and use it every day, but tbh lines of code are a terrible metric. One of the worst in fact.

@@ -13,6 +13,19 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you do code split for each page of your application, you are denying the benefits of building a SPA.
+- https://twitter.com/danieljpgo/status/1387149559315550211
+- With webpack you can have an SPA with chunk splits dynamically imported to improve performance, and with react you can use suspense
+  - Yes, but you will still have to download the bundle for each page, which will not deliver smooth navigation when using your application, which is one of the main features that the SPA brought.
+  - render as you fetch solves this
+- I would agree that many of us focus on code splitting routes over code splitting features. The latter thinking is more SPA like imo
+
 - ## creating a javascript package is easy
 - https://twitter.com/sseraphini/status/1094358825417797633
   - it should run on all node versions

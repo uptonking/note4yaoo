@@ -47,7 +47,10 @@ modified: '2020-06-22T09:23:56.117Z'
     - 网站使用的技术栈总结，技术栈变迁记录
 
 - 流水历史数据
-  - [twitter热搜](https://trends24.in/united-states/) 
+  - twitter热搜
+    - https://trends24.in/united-states/
+  - github每日流行
+    - https://github.com/quasoft/trending-daily
 
 - geo
   - 月球概图

@@ -13,6 +13,8 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
+- ## [Say Hello To CSS Container Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
+
 - ## HTML sanitizers are critical to web applications, mitigating the risk of XSS when working with untrusted strings. 
 - https://twitter.com/mikewest/status/1386932250391023619
   - The HTML Sanitizer API is a work-in-progress (behind a flag in Chrome and Firefox) that shifts responsibility for this task to the browser

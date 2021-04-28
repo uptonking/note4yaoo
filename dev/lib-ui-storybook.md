@@ -15,6 +15,9 @@ modified: '2021-01-18T06:24:33.117Z'
   - 复用文本过于灵活，需要各种解析器
   - 复用js函数则设计更清晰、复用更简单(特别是纯函数)
 
+- alternatives to storybook
+  - https://github.com/remorses/vitro
+
 - ref
   - [storybook docs rfc](https://docs.google.com/document/d/1D4Ov4UvrB80Uy1CLGshbFEWQKWEpr8dL4FmOqRDwjwI/edit)
   - [storybook args rfc](https://docs.google.com/document/d/1Mhp1UFRCKCsN8pjlfPdz8ZdisgjNXeMXpXvGoALjxYM/edit)
