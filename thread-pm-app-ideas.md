@@ -16,7 +16,17 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
-- ## 
+- ## JavaScript based projects ideas -
+01. URL Shortener
+02. Whether App
+03. Todo App
+04. YouTube Web Player
+05. Stock Website
+07. Portfolio website
+08. Video conferencing app
+09. Web based terminal
+10. Browser code editor
+- Pro Tip: Host these projects on AWS, and push the code to GitHub.
 
 - ## I seriously love this Github comment feature
 - https://twitter.com/LukyVJ/status/1385164657007149058

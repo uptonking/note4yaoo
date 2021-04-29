@@ -63,9 +63,6 @@ modified: '2021-01-11T18:34:20.713Z'
 - [grommet components](https://v2.grommet.io/components)
 - 在所有组件预览的页面，展示了所有组件的轮廓，重新设计和简化了所有组件
 
-- [bit components](https://bit.dev/components)
-- 页面白背景卡片白背景，视觉上失败，文字太多了
-
 - [ant-design scaffold 脚手架](https://scaffold.ant.design/#/)
 - 页面灰背景卡片白背景，视觉上失败，元素凌乱
 - https://ant.design/index-cn
@@ -82,22 +79,33 @@ modified: '2021-01-11T18:34:20.713Z'
 - [UI Components Handbook](https://www.uiguideline.com/components)
 - 组件信息详细，列出了所参考的设计系统
 
-- more-ui-components
+- 页面灰背景卡片白背景
+  - https://www.facebook.com/
   - https://chakra-ui.com/
-    - 页面灰白背景卡片白背景，视觉上很棒
+    - 视觉上很棒
+
+- 页面白背景卡片白背景
+  - [bit components](https://bit.dev/components)
+    - 视觉上失败，文字太多了
+  - https://ionicframework.com/docs/components
+    - 网格展示，每行3个卡片，视觉还行
+  - https://storybook.js.org/addons
+    - 视觉上还行
+  - https://vaadin.com/components
+    - 页面白背景卡片白背景，视觉一般
+
+- 页面白背景，无卡片
+  - https://medium.com/
+  - https://substack.com/
+
+- more-ui-components
   - [eva design](https://akveo.github.io/nebular/docs/components/components-overview)
     - 首页只展示各种组件的缩略图图标
     - 灰白背景卡片白背景，视觉很棒
   - https://akveo.github.io/react-native-ui-kitten/
     - 直接展示在手机屏幕上的组件，并且是以动画自动播放的形式
-  - https://ionicframework.com/docs/components
-    - 网格展示，每行3个卡片，页面白背景卡片白背景，视觉还行
-  - https://storybook.js.org/addons
-    - 页面白背景卡片白背景，视觉上还行
   - https://material-ui.com/discover-more/showcase/
     - 直接展示应用该组件库的网站
-  - https://vaadin.com/components
-    - 页面白背景卡片白背景，视觉一般
 
 # themeable design docs
 

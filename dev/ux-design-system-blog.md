@@ -9,6 +9,39 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # blog
 
+## [spotify: Customization vs. Configuration in Evolving Design Systems](https://engineering.atspotify.com/2021/04/28/customization-vs-configuration-in-evolving-design-systems/)
+
+- When a design system first starts out, the promise of visual consistency glows bright
+  - the ideal product would have only one set of buttons, a unified typography scale, and elements that look the same no matter which designer made the design or which developer programmed them to be real and deployed.
+- As the product grows, Your once-perfect button doesn’t quite cover the new specs needed for a new feature. 
+  - Some restrictions in the way a component is coded means it would be quicker and easier to spin up something new, rather than pull from the component library.
+- As a system grows more complex, this evolution can be handled by developing an abstract shared vocabulary around component properties or by ensuring that base properties remain accessible for modification by end consumers.
+- In this post, we’ll dive into the factors at play as a design system evolves, and the pros and cons of this range of approaches.    
+
+- Abstraction
+- In this context, we define it as a simplified version of a more complex concept. 
+- Abstraction can make some concepts easier by obscuring(使模糊) underlying characters of a system in favor of a more high-level representation. 
+- We are looking at abstraction here as a measure of how different the code we write is from the HTML and CSS that is ultimately rendered. 
+- For the scope of this piece, we will be discussing abstraction from the lens of frontend development using React, starting with written code through to what is rendered in the browser. 
+- In this context, a low level of abstraction would define something that touches CSS or HTML elements directly, 
+- whereas a high level of abstraction would define changing custom properties that have their own subjective meaning and value, that in turn modify some underlying CSS or elements within the component.
+
+- Customization
+  - Custom styles are added external to the component. 
+  - These styles reference HTML elements and touch CSS properties directly. 
+  - A low level of abstraction.
+- Pros: Autonomy, speed, innovation
+- Cons: Lack of coherency, loss of maintainability, potential duplication
+
+- Configuration
+  - The original component is made more flexible. 
+  - Additional parameters are passed to the component for more varied behavior. 
+  - A high level of abstraction.
+- Pros: Consistency, contribution, maintainability 
+- Cons: Can become a bottleneck, rigidness, vocabulary awareness
+
+- With both ends of the abstraction spectrum carrying implications for the key functions of your design system, it should come as no surprise that you will end up with a mix of approaches. 
+
 ## [7 Rules for Creating Gorgeous UI (Updated for 2020)](https://learnui.design/blog/7-rules-for-creating-gorgeous-ui-part-1.html)
 
 ### Light comes from the sky

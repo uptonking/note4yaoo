@@ -7,6 +7,10 @@ modified: '2020-12-12T19:29:51.981Z'
 
 # toc-lib-nextjs
 
+# guide
+
+- 基于nextjs和mdx实现的blog或其他系统越来越多
+
 # nextjs-popular
 
 - awesome-nextjs

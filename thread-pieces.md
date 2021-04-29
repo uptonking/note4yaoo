@@ -9,9 +9,26 @@ modified: '2021-01-11T12:10:50.900Z'
 
 # guide
 
+- Tip of the day.. stop wasting time on Twitter xD
+
 # pieces
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## When someone asks for something I “don’t have the time for”, I don’t say that. Because we all have 1,440 minutes every day. 
+- https://twitter.com/flybayer/status/1387535834614845442
+  - Instead I politely decline so that “I can focus on the most important things”. 
+  - And I also don’t apologize.
+  - Saying “no” gives me the same feeling as marking a task Done
+- Saying “I have no time.” is the socially less offensive choice, because it avoids saying “I want to spend my time on some other thing x, because that is more important than what you want from me”.
+
+
 
 - ## you should review your priorities every single day
 

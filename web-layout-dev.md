@@ -40,6 +40,21 @@ modified: '2021-01-01T20:17:05.116Z'
 
  
 
+- ## Use autolayout to clean up your natto.dev canvas, like prettier for code. 
+- https://twitter.com/_paulshen/status/1387506747334533121
+  - This uses elkjs laying out panes left-to-right.
+  - https://github.com/kieler/elkjs
+  - I find the results almost okay but they usually differ from what I consider an ideal layout. The notion of a deterministic layout is good though.
+- in natto, the default is your standard nodes-wire interface where the pane location/size is user-controlled. 
+  - autolayout is a button that on press, overwrites the location of every pane
+- I’ve tried many approaches to auto layouts and keep coming back to the fact that **nothing does what you want**, they jump around like crazy if you slightly change anything, 
+  - and often it’s hard to make file formats that diff well if you mass change x/y/width/height in the file
+  - I’ve been lately thinking of trying out bringing flexbox like containers that make it easy to smartly layout code blocks, and mix it with the outputs blocks
+  - I didn't understand the "output blocks" part but if what you're saying is creating higher-level user-controlled layout primitives, I think that's a good direction to explore.
+  - In the tool I’m building, it’s pretty graphics centric, so you see the visual output a code block generates, it’s usually also in a box. I call those output boxes. 
+- that's my current opinion as well. 
+  - the changes are sometimes jarring and unpredictable. contrast with pretty-printing code - the changes are localized and predictable to humans
+
 - ## Flexbox vs CSS Grid? Which do you prefer?
 - https://twitter.com/Tyler_Potts_/status/1344946469707554817
 - They can be used together. It's not like you can only use one or the other. 

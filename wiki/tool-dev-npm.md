@@ -12,6 +12,16 @@ modified: '2020-12-08T14:05:52.048Z'
 - tips
   - [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
 
+- [most depended upon packages](https://www.npmjs.com/browse/depended)
+  - lodash, core-js, moment, debug, uuid
+  - fs-extra, glob, chalk, commander, yargs, inquirer, minimist, colors, chokidar
+  - axios, express, request, node-fetch, async, bluebird, body-parser, isomorphic-fetch
+  - react, vue, classnames, rxjs, jquery, redux
+  - typescript, webpack, dotenv, @babel/runtime, jest, socket.io, redis
+  - styled-components, 
+  - ramda, deepmerge, date-fns
+  - marked
+
 # common-pkg
 
 - typesync

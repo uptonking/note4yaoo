@@ -11,6 +11,17 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
+- ## Turn your github issues into a CMS for your blog
+- https://twitter.com/renatorib_/status/1387496644158033922
+  - https://github.com/renatorib/github-blog
+  - 依赖graphql，不依赖react
+- Imagine doing a template repo based on this library.
+  - It renders HTML using a vercel cloud function with given cache time or using github actions on a secondary branch.
+  - You fork it, setup the PAT and HTML template, setup vercel to deploy the repo and start posting.
+  - I'm doing it XD. It's actually a starter template using next
+- I was thinking about a cloud function generated HTML with Cache-Control fetching comments asynchronously on load but NextJS can even fit better for this.
+  - Basically what NextJS do almost out of the box with SSG XD
+
 - ## Unpopular opinion but true: Google Docs blows chunks for user experience.
 - https://twitter.com/gruber/status/1386764214874824706
 - Word: "90% of users use 10% of the features"

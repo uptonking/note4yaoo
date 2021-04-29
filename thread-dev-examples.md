@@ -13,6 +13,10 @@ modified: '2021-01-22T08:32:57.313Z'
 
 - ## 
 
+- ## Which demos have made the largest impression on you as a developer?
+- https://twitter.com/mjackson/status/1387472761744855040
+- Figma. It’s when I really understood how powerful the web can be.
+
 - ## Intersection Observer Visualizer
 - https://codepen.io/michellebarker/full/xxwLpRG
 - A simple visualizer tool to assist with using the Intersection Observer API.

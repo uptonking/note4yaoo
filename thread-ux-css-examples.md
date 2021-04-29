@@ -13,6 +13,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## HSL Palette Generator: Generate CSS custom properties for a color palette
+- https://twitter.com/jh3yy/status/1387153018764898312
+  - https://codepen.io/jh3y/pen/rNjbmBQ
+  - 通过滑动条选择范围，批量生成hsl和steps
+  - This is an update to my "50 Shades of Hue" demo that now allows you to configure a "Hue" range too
+
 - ## make focus a little more engaging
 - https://twitter.com/argyleink/status/1387072095159406596
   - prefers-reduced-motion: no-preference

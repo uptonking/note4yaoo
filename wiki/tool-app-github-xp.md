@@ -72,12 +72,6 @@ modified: '2020-12-29T17:45:15.518Z'
     - ghtopdep
     - source-reader
 
-- [most depended upon packages](https://www.npmjs.com/browse/depended)
-  - lodash, react, chalk, request, moment, express, axios, debug, bluebird
-  - uuid, classnames, yargs, webpack, rxjs, glob, jquery, node-fetch
-  - redux, styled-components, ramda, jest, socket.io, redis, chokidar
-  - deepmerge, date-fns, marked, isomorphic-fetch
-
 - 查看某个作者的所有包
   - https://www.npmjs.com/~tannerlinsley
 - 查看某个组织的所有包

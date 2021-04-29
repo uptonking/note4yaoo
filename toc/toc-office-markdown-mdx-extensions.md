@@ -7,6 +7,16 @@ modified: '2021-01-16T20:24:48.984Z'
 
 # toc-office-markdown-mdx-extensions
 
+- 实现mdx文档编辑后自动更新的思路
+  - (在当前app界面)编辑内容后直接渲染最新内容到dom，都在内存无需本地
+  - (在3方编辑器界面)编辑内容后保存到本地文件，然后app扫描目录，渲染内容
+- 方案1:ssg
+  - 将扫描到的所有.mdx信息扫描保存到json文件，react应用import该文件，然后将所有.mdx作为源码进行build
+  - 可以另外开一个命令行，定期扫描目录下的所有.mdx并输出新json替换原json，或者在后台定期通过ajax请求新json来更新页面
+  - 也可以基于url进行code split，每请求一个组件或在请求前，就提前编译该路由相关的代码
+- 方案2:ssr
+  - 每次请求url，都会重新fetch请求mdx文件的内容
+
 - ref
   - search: markdown plugin, md table, md electron, 缺点/mistakes
   - mdx: live edit, md in js, md superset
@@ -36,6 +46,26 @@ modified: '2021-01-16T20:24:48.984Z'
 - https://github.com/PaulieScanlon/mdx-embed
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr
+
+# mdx-docs
+
+- https://github.com/callstack/component-docs
+  - /120Star/MIT/202011/ts
+  - 支持ssr，已实现自动搜索指定目录下的所有.mdx文件
+  - Simple documentation for your React components.
+  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
+
+- https://github.com/mitchgavan/react-mdx-styleguide
+  - 标准的components文档网站，实现复杂度不大不小
+  - 所有.mdx的路径目录通过开发者手动创建对应的路径json对象实现
+  - 依赖react-router, react-live, emotion/core, prism-react-renderer, @mdx-js/loader
+
+- https://github.com/esmevane/living-document
+  - 所有.mdx的路径目录通过用户手动编辑markdown的链接`[]()`实现，对用户要求太高
+  - 简洁的mdx文档网站模版，所有mdx放在pages文件夹
+  - 只依赖react, react-router, styled-components, @mdx-js/loader
+- https://github.com/zaydek/esbuild-mdx
+  - 依赖@mdx-js/mdx, @mdx-js/react, 例子太过简单
 
 # md-web-components/mdjs
 
@@ -83,5 +113,12 @@ modified: '2021-01-16T20:24:48.984Z'
   - This library is an attempt to provide a runtime to compile mdx-like markdown files (with the goal to support full JSX inside of markdown) using htm + marked that is much smaller in file-size as opposed to the official runtime
 - https://github.com/wallapatta/wallapatta
   - Wallapatta is like Markdown, but has a layout inspired by handouts of Edward R. Tufte
+
+# mdx-tooling
+
+- https://github.com/kentcdodds/mdx-bundler
+  - This is an async function that will compile and bundle your MDX files and their dependencies. It uses esbuild
+  - It also uses xdm which is a more modern and powerful MDX compiler with fewer bugs and more features (and no extra runtime requirements).
+  - Your source files could be local, in a remote github repo, in a CMS, or wherever else and it doesn't matter.
 
 # more

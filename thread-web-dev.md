@@ -33,7 +33,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## new image codecs this generation: AVIF, JPEG-XL, WebPv2.
+- https://twitter.com/jaffathecake/status/1387715305112211457
+- Remember, for most images on the web, you're aiming for "not bad" rather than "almost lossless".
+- JPEG-XL and WebPv2 aren't ready yet, so they're not 100% representative. Also, how the images look as they load is something we'll only really know as they land in browsers.
 
 - ## Safari really is the new IE
 - https://twitter.com/MarijnJH/status/1387049528927289346

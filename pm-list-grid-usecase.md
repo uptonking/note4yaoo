@@ -43,4 +43,7 @@ modified: '2020-10-22T13:34:14.848Z'
 
 - [js web frameworks benchmark](https://krausest.github.io/js-framework-benchmark/2020/table_chrome_86.0.4240.75.html)
 
+- [Yarn Lock Changes](https://github.com/Simek/yarn-lock-changes)
+  - a short list and a long list of changes
+
 # usecase-blog

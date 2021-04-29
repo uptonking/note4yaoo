@@ -13,6 +13,11 @@ modified: '2021-01-08T19:16:04.471Z'
 
  - ## 
 
+ - ## vote: To animate, I primarily use css vs WAAPI vs js
+ - https://twitter.com/mattgperry/status/1387667723405103106
+   - css : WAAPI :js = 0.497 : 0.12: 0.491(165votes)
+ - I default to CSS as much as possible, but when the animation has the potential to burn out your whole career, I use libs like framer motion or popmotion
+
  - ## I dislike most animations on the web since they just slow things down. 
  - https://twitter.com/BenNadel/status/1374691082978660353
    - An example that has bugged me for a while: the change in size, shape, color, and location is _sufficient_ for a low cognitive load. 
