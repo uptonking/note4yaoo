@@ -104,6 +104,12 @@ modified: '2020-07-12T19:00:27.345Z'
   - 依赖chokidar
   - Use glob patterns to watch file sets and run a command when anything is added, changed or deleted.
 
+- https://github.com/tapio/live-server
+  - 依赖chokidar、colors、connect、event-stream、faye-websocket、htp-auth、morgan、opn
+  - a little development server with live reload capability.
+  - Having the page reload automatically after changes to files can accelerate dev
+  - If you don't want/need the live reload, you should probably use something simpler, like python -m SimpleHTTPServer/http.server 8999
+
 - https://github.com/mihneadb/node-directory-tree
   - Creates a JS object representing a directory tree.
   - const dirTree = require("directory-tree"); 

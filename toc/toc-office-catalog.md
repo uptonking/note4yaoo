@@ -17,6 +17,11 @@ modified: '2021-01-04T17:31:31.845Z'
     - 4.1.0 - 201904
     - 4.0.0 - 201808
     - 3.17 - 201709 
+- https://github.com/kekingcn/kkFileView
+  - https://kkfileview.keking.cn/
+  - 使用spring boot打造文件文档在线预览项目解决方案，
+  - 支持doc、docx、ppt、pptx、xls、xlsx、zip、rar、mp4，mp3
+  - 以及众多类文本如txt、html、xml、java、properties、sql、js、md、json、conf、ini、vue、php、py、bat、gitignore等文件在线预览
 
 # word-text-editor
 

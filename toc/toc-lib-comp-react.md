@@ -278,7 +278,6 @@ modified: '2020-11-13T07:31:20.012Z'
 - https://github.com/alibaba/ChatUI
   - https://chatui.io/
   - UI design language and React library for Conversational UI
-- [awesome-react-headless-components](https://github.com/jxom/awesome-react-headless-components)
 
 ## layout/panel 布局面板
 

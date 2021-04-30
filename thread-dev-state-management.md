@@ -47,6 +47,14 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## XState is built to orchestrate side effects - but you can get lost if you don't know how to use the primitives.
+- https://twitter.com/mpocock1/status/1388040079004864513
+  - [XState: Should this be an action, or a service?](https://dev.to/mpocock1/xstate-should-this-be-an-action-or-a-service-2cp0)
+- We’re approaching the limits of my Xstate knowledge now.
+  - Say you needed that data that your fetch() returned, you would recommend putting any processing of that in an action fired onDone?
+  - With the separation of implementation and logic with the actions, I’m always struck how annoying it is with services to have functions in my machine definition. No way around that?
+  - You can give them names: `invoke: { src: 'getData' }` and define that in the options you pass to useMachine? If you want to define them locally.
+
 - ## Announcing the alpha release of Lucy, a new DSL for finite state machines and statecharts that compiles to XState machines. 
 - https://twitter.com/matthewcp/status/1386030120838877187
   - What CSS does for styling, Lucy aims to do for runtime logic.

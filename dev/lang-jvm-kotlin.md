@@ -7,7 +7,44 @@ modified: '2020-12-08T13:20:20.680Z'
 
 # lang-jvm-kotlin
 
-# basis
+# guide
+
+# KMM(Kotlin Multiplatform Mobile)
+
+- https://github.com/Kotlin/kmm-production-sample
+  - Kotlin Multiplatform Mobile is a flexible technology that allows you to share only what you want to share, from the core layer to UI layers.​
+  - This sample demonstrates sharing not only the data and domain layers of the app but also the application state
+    - ​The Redux pattern is used for managing the application state. 
+    - The simplified Redux architecture is implemented in the shared module. 
+  - ​The UI layer is fully native and implemented using SwiftUI for iOS and Jetpack Compose for Android.​
+
+- The purpose of the Kotlin Multiplatform Mobile (KMM) technology is unifying the development of applications with common logic for Android and iOS platforms. 
+  - To make this possible, KMM uses a mobile-specific structure of Kotlin Multiplatform projects.
+  - Note that this structure isn’t the only possible way to organize a KMM project; however, we recommend it as a starting point.
+- A basic Kotlin Mobile Multiplatform (KMM) project consists of three components:
+  - Shared module
+    - a Kotlin module that contains common logic for both Android and iOS applications. 
+    - Builds into an Android library and an iOS framework. Uses Gradle as a build system.
+  - Android application
+    - a Kotlin module that builds into the Android application. Uses Gradle as a build system.
+  - iOS application
+    - an Xcode project that builds into the iOS application.
+    - it uses the shared module as an external artifact - framework. 
+- Shared module contains the core application logic used in both target platforms: classes, functions, and so on. 
+  - The shared module contains the code that is common for Android and iOS applications. 
+  - However, to implement the same logic on Android and iOS, you sometimes need to write two platform-specific versions of it. 
+- To handle such cases, Kotlin offers the expect/actual mechanism.
+  - `commonMain` stores the code that works on both platforms, including the `expect` declarations
+  - `androidMain` stores Android-specific parts, including `actual` implementations
+  - `iosMain` stores iOS-specific parts, including `actual` implementations
+- `androidMain` is typical for Android projects.
+- `iosMain` connects to the Xcode project that builds into an iOS application.
+  - The framework is produced via the Kotlin/Native compiler. 
+- The Android application part of a KMM project is a typical Android application written in Kotlin.
+- The iOS application is produced from an Xcode project generated automatically by the Project Wizard.
+  - This is a basic Xcode project configured to use the framework produced from the shared module.
+
+# pieces
 
 - Kotlin是在Java虚拟机（JVM）上运行的静态类型编程语言。
   - 它的开发始于2010年的JetBrains，但是直到2016年，才发布了第一个稳定版本（Kotlin v1.0）

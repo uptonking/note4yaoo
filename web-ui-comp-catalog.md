@@ -8,6 +8,17 @@ modified: '2021-04-11T17:38:29.829Z'
 
 # web-ui-comp-catalog
 
+# component-api-design
+
+- awesome-list
+  - https://open-ui.org/analysis/component-matrix
+  - [Material-UI API Design Approach](https://next.material-ui.com/guides/api/)
+  - [react-native Core Components and APIs](https://reactnative.dev/docs/components-and-apis)
+
+- more-comp-libs
+  - https://www.npmtrends.com/@material-ui/core-vs-antd-vs-react-bootstrap
+  - https://ant.design/components/button-cn/
+
 # general 
 
 - Button

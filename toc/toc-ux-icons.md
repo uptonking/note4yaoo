@@ -1,11 +1,31 @@
----
-title: toc-ux-icons
-tags: [icon, toc]
-created: '2019-09-14T03:30:03.478Z'
-modified: '2020-07-17T10:52:17.250Z'
----
+# guide
 
-# toc-ux-icons
+- ## “How to make complex icons with only CSS”. Don’t do this.
+- https://twitter.com/SaraSoueidan/status/643803332117704704
+  - Use #SVG. It was *made* for this kind of stuff.
+- If someone wants to show off skills they should try hand-coding SVG path data
+- SVG icons are accessible and semantic. CSS icons are FAKE icons. Also, the epic icon fonts vs SVG comparison guide
+- use SVG instead of icon fonts whenever possible.
+- CSS only icons are awful, iconographers have a job for a reason.
+  - Iconography is such a specific art form with considerable effort taken to convey meaning, brand personality and functionality.
+- the only advantage I can see is you can mutate glyphs without js—but those mutations are super specific so it's kinda moot
+
+- ## Seriously, Don’t Use Icon Fonts
+- https://cloudfour.com/thinks/seriously-dont-use-icon-fonts/
+- Screen Readers Actually Read That Stuff
+  - Most assistive devices will read aloud text inserted via CSS, and many of the Unicode characters icon fonts depend on are no exception. 
+  - Best-case scenario, your “favorite” icon gets read aloud as “black favorite star.” 
+  - Worse-case scenario, it’s read as “unpronounceable” or skipped entirely.
+- They’re a Nightmare if You’re Dyslexic(诵读困难的)
+- They Encroach on Emoji Turf(unicode冲突)
+- They Fail Poorly and Often(下载失败时浏览器可能显示乱码)
+- They Never Looked Right
+  - The way browsers hint fonts to optimize legibility was never a good fit for our custom iconography
+  - Multicolor icons are even worse.
+  - 还要考虑不同浏览器渲染字体所产生的不一致
+- There’s Already a Better Way
+  - svg is a vector image format with optional support for CSS
+- 不要墨守陈规，盲目模仿
 
 # icons-css-svg
 
@@ -226,3 +246,5 @@ modified: '2020-07-17T10:52:17.250Z'
   - This tool lets you combine icon webfonts
   - shrink glyph collections, minimizing font size
   - merge symbols from several fonts into a single file
+
+- https://twitter.com/search?q=pure%20css%20icon&src=typed_query

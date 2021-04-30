@@ -28,4 +28,10 @@ modified: '2020-12-31T15:32:40.135Z'
   - https://github.com/xresloader/xresconv-cli
     - 跨平台命令行工具，兼容python2和python3
 
+# infrastructure
+
+- https://github.com/coollabsio/coolify
+  - https://coollabs.io/coolify
+  - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
+
 # more-tools

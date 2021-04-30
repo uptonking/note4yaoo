@@ -11,7 +11,9 @@ modified: '2021-04-23T09:24:19.873Z'
 
 - ## 
 
-- ## 
+- ## I have to admit that I thought I would be using CSS Grid a lot more when I learned it. 
+- https://twitter.com/andrewbaisden/status/1386999817444986883
+  - However with both React Native and Flutter using Flexbox for layout I am using it much more.
 
 - ## have a design system taking advantage of CSS named template areas | lines for layout?
 - https://twitter.com/argyleink/status/1366894892404809728

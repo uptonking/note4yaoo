@@ -9,12 +9,83 @@ modified: '2021-04-21T16:08:27.595Z'
 
 # guide
 
+- 保守方案：native + webview
+
+- Skia支持硬件加速，Android应用的绘图引擎是Skia，Chrome的2D页面绘图引擎也是 skia。
+
+## react-native
+
+- 跨平台
+- 系统架构有缺陷
+
+## flutter
+
+- 跨平台
+- 基于非主流的dart语言
+
+- Flutter本身就是因为谷歌不满于webview的性能和html css js的一系列遗留问题，而去重新实现了渲染和ui书写。
+  - 我觉得长期而言前端还是会往Flutter这上面走的。
+  - 利用flutter render去重新实现web来接着写js总觉得有点削足适履了。
+
+## jetpack compose
+
+- 支持android原生，后续支持win/linux/macOS
+  - 基于kotlin，能直接调用丰富的java库
+  - swiftui不开源，且对ios版本要求高
+
+- android: When using images for API 27 or later, the emulator can render the Android UI with Skia, which can render more smoothly and efficiently.
+
+- [Compose for Desktop](https://www.jetbrains.com/lp/compose/) targets the JVM, and supports high-performance, hardware-accelerated UI rendering on all major desktop platforms (macOS, Windows, and Linux/x64) by leveraging the powerful native Skia graphics library.
+
+- [Any possibility of releasing Jetpack Compose for Kotlin multiplatform mobile support (Android and iOS) ?](https://www.reddit.com/r/Kotlin/comments/jox14m/any_possibility_of_releasing_jetpack_compose_for/)
+- I've started a project like that for iOS. 
+  - https://github.com/cl3m/multiplatform-compose
+- I don't think we need another Flutter. 
+  - Dart sucks and Flutter is very opinionated. Compose is not, it's strictly UI only
+- Actually there is POC port of compose on js and they're looking for developers to make it production ready solution. So why not ios/multiplatform later?
+
+## [skia](https://skia.org/)
+
+- Skia is an open source 2D graphics library which provides common APIs that work across a variety of hardware and software platforms. 
+- It serves as the graphics engine for Google Chrome and Chrome OS, Android, Flutter, Mozilla Firefox and Firefox OS, and many other products.
+
+- Skia is used by both Flutter and Fuchsia.
+  - the versions of Skia being used by Flutter and Fuchsia must be “source compatible” 
+
 # discuss
 
 - ref
   - [twitter: JetPack compose flutter ](https://twitter.com/search?q=JetPack%20compose%20flutter%20min_replies%3A1&src=typed_query&f=live)
 
 - ## 
+
+- ## 
+
+- ## [如何评价 Flutter for Web？](https://www.zhihu.com/question/323439136/answers/updated)
+- Flutter for Web和Flutter在上层都是Dart环境，两者不同的是，
+  - Flutter的Dart代码运行在Dart虚拟机中，界面由Flutter引擎处理，通过Skia绘图引擎经由GPU绘制到屏幕上。
+  - 而Flutter for Web的Dart代码编译成Java，界面上部分转换成标准的html标签，部分转换成通过Canvas绘制的自定义标签，最终构成一个dom树。
+  - 如果Flutter for Web追求（和Flutter）完美的一致性，势必需要大量使用Canvas去绘制，而Canvas去绘制组件的性能（尤其在移动端）至少不会比html标签好。
+  - 如果FFW追求性能极限而使用大量标准的html标签，这就会带来和Weex、RN等一样的一致性问题
+
+- ## Jetpack Compose is going to use Skia for rendering the UI. High hopes for the multiplatform
+- https://www.reddit.com/r/androiddev/comments/g6gjug/jetpack_compose_is_going_to_use_skia_for/
+- Compose front end is decoupled from Android. 
+  - Drawing to android canvas is an implementation detail just like drawing to Skia canvas is. 
+  - While this desktop UI implementation (contributed by JetBrains) uses skia there can be other renderers too.
+- Android has been using Skia as its 2D library since Android 1.0. Jetpack Compose therefore uses Skia already
+- Flutter also uses Skia underhood. 
+  - What the point to have 2 basically identical technology for one company? 
+  - Oh... it's Google... so very likely one of the project will be killed sooner or later.
+- Flutter's future is tied to how successful Dart and Fuchsia teams end up being.
+  - It's the opposite. Dart's future is tied to how successful Flutter is. 
+
+- ## 老板们不同意将应用最低部署版本从 iOS 10 提高到 iOS 11，这意味着如果我们想在公司项目中使用SwiftUI 可能还需要等到6、7年以后。
+- https://twitter.com/ainopara/status/1382614339106918405
+  - Flutter 在中国这么火，可能也有这层原因吧。
+
+- ## [如何评价 SwiftUI？](https://www.zhihu.com/question/327763737/answers/updated)
+  - SwiftUI简单来说是一个未完成的无生态的闭源UI框架。。。
 
 - ## [Kotlin、Java和Flutter在安卓项目中的使用情况?](https://www.zhihu.com/question/377409430/answers/updated)
 - 对于Android而言， Java至今还是只支持 Java8 而已
@@ -74,4 +145,4 @@ modified: '2021-04-21T16:08:27.595Z'
 
 - ## Flutter Developers working with Jetpack Compose
 - https://twitter.com/Fbillionare/status/1375113097388638212
-- The similarities aren't super surprising, as we had ongoing discussions with the Flutter team when designing Jetpack Compose.  Thankful for all their help and friendship!
+- The similarities aren't super surprising, as we had ongoing discussions with the Flutter team when designing Jetpack Compose. Thankful for all their help and friendship!

@@ -11,6 +11,13 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## The most requested feature of the year is here—announcing Auto Size 
+- https://twitter.com/framer/status/1387783277390573572
+  - 主要是卡片大小会随文字变多而变长变宽
+  - 折叠展开的动画会显示背景变短变长的过程
+  - And it works dynamically on everything from text to interactions. Design expanding accordions, dropdowns, buttons, and more.
+- [Auto Size](https://www.framer.com/updates/2021-04-29/)
+
 - ## 687 plugins! Really? We might need some form of categorizing system to group them all in order to simplify "browsing".
 - https://twitter.com/klaskarlsson/status/1386279983023284228
 - A plugin’s plugins plugin.

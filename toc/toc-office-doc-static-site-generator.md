@@ -46,6 +46,12 @@ modified: '2021-01-17T09:26:53.093Z'
   - A Git-based CMS for Static Site Generators
   - Netlify CMS is a single-page app that you pull into the /admin part of your site.
     - It presents a clean UI for editing content stored in a Git repository.
+- https://github.com/11ty/eleventy
+  - https://www.11ty.dev/
+  - /8kStar/MIT/202011/js
+  - A simpler static site generator. An alternative to Jekyll.
+  - ransforms a directory of templates (of varying types) into HTML.
+  - Works with HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, and JavaScript Template Literals.
 - https://github.com/getpelican/pelican
   - /10.1kStar/AGPLv3/202012/python
   - Static site generator that supports Markdown and reST syntax. Powered by Python.
@@ -54,12 +60,6 @@ modified: '2021-01-17T09:26:53.093Z'
   - 原作者已转向next.js
   - A progressive static site is a website where every statically exported HTML page is an entry point to a fully-featured automatically-code-split React application.
   - Just like a normal static site, static progressive websites are capable of loading initial landing pages very quickly, but then extend the user experience by transforming invisibly into a single-page React application.
-- https://github.com/11ty/eleventy
-  - https://www.11ty.dev/
-  - /8kStar/MIT/202011/js
-  - A simpler static site generator. An alternative to Jekyll.
-  - ransforms a directory of templates (of varying types) into HTML.
-  - Works with HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, and JavaScript Template Literals.
 - https://github.com/segmentio/metalsmith
   - /7.6kStar/MIT/201912/js
   - pluggable static site generator.
@@ -81,4 +81,34 @@ modified: '2021-01-17T09:26:53.093Z'
 - https://github.com/make-my/makemy
   - makemy is a tool that parses your text-posts and creates beautiful webpages out of them 
   - Powered entirely in NodeJS 
-- jbake(java)
+- https://github.com/jbake-org/jbake
+  - http://jbake.org/
+  - /913Star/MIT/202104/java
+  - a Java based static site/blog generator
+
+# discuss
+
+- ## why I should use eleventy over Gatsby
+- https://twitter.com/CallMeWuz/status/1241171870751305728
+- sure
+  - Eleventy doesn't enforce conventions on you. 
+    - You can choose a templating language. Gatsby forces you to use React. 
+  - Eleventy doesn't serve a JS bundle by default. 
+    - Gatsby can strip its added bundle with a plugin.
+  - I personally love multi-page sites more than SPAs
+- I'm a senior react developer and I enjoy Gatsby! 
+  - The people there are doing some great work to make React projects less client-bloated, and I'm glad they reinvigorated the interest in SSG tools. 
+  - I just also love that Eleventy doesn't require a complex API layer. Or React.
+- @eleven_ty is _just_ #JavaScript. 
+  - No React overhead ... or of any kind, really. 
+  - 11ty frees you up to concentrate on your project. 
+  - It drastically lowers the barrier to entry for clients and collaborators. 
+  - And you will not find anything remotely as convenient, fast, and secure.
+
+- ## Unpopular opinion: most of the sites people use gatsby for should be vanilla HTML or CSS, not even eleventy or anything.
+- https://twitter.com/oleg008/status/1339311178892398593
+- A lot of people use these frameworks on simpler websites to learn. Often, they might anticipate it growing and it'd just be easier to have it there. I see your point, but it's not always the case that people are over-complicating it without reason.
+  - that reason is the reason for all overengineering
+- I guess the problem is the lack of tooling for building things with plain css and HTML. 
+  - I suspect people choose gatsby for the tooling (templating, data fetching) more than because JavaScript. 
+  - There’s Hugo and it’s not bad. What other options are there?

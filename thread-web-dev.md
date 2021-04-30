@@ -33,6 +33,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## 
+
+- ## Is there an open source implementation of http://vectormagic.com / http://vectorizer.io? That takes a png and outputs a svg.
+- https://twitter.com/Vjeux/status/1387828983522234370
+- Often times these sorts of vectorization tools are based on the Potrace algorithm. There’s a port of it in node, but it’s not great performance wise.
+  - https://github.com/tooolbox/node-potrace#readme
+
 - ## new image codecs this generation: AVIF, JPEG-XL, WebPv2.
 - https://twitter.com/jaffathecake/status/1387715305112211457
 - Remember, for most images on the web, you're aiming for "not bad" rather than "almost lossless".

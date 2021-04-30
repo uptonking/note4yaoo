@@ -11,16 +11,21 @@ modified: '2021-04-11T17:37:29.528Z'
 
 - headless-ui-examples
   - headlessui
-    - listbox/select(侧重数据),dropdown-menu(侧重操作),switch,disclosure
-    - dialog,popover,radio-group,transition
-  - renderlesskit-react
+    - listbox/select,dropdown/menu,switch,radio-group
+    - dialog,popover,disclosure,transition
   - react-spectrum
+    - based on react-stately,react-aria
+  - renderlesskit-react
+    - 依赖reakit,react-aria,chakra-ui
   - reakit
-    - bumbag-ui,renderlesskit-react
+    - who is using: bumbag-ui
   - reach-ui
-  - react-containers
+  - react-containers: 有2种使用方式: hook, render prop
+  - radix-ui: 提供了自研stitches的样式解决方案
   - downshift
-  - radix-ui
+
+- more-headless-examples
+  - https://github.com/jxom/awesome-react-headless-components
 
 # headless-ui-comparison
 

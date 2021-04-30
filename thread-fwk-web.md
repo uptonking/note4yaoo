@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+
+- ## I think web framework's biggest sin might be coupling their template systems with their component models.
+- https://twitter.com/justinfagnani/status/1387788178333966337
+  - Basically every framework works this way. The framework both creates components instances and runs their lifecycle, and renders their templates. Outside of web components, I'm not aware of one that decouples these.
+  - The problem with this is that it's an unnecessary coupling and restricts evolution, choice, and modularity. Rendering DOM should be a concern of the individual components, and then components can choose different rendering strategies and change over time.
+- If that is your goal. At some point the goals here overlapped but they now have diverged. I think the bigger problem is where people think that frameworks components and custom elements are the same thing with the same goals. They are not.
+  - I would argue that certain types of components already empose restrictions. Only through controlling that can we look at ways to improve the system on the whole. I'm much more on the train of thought that components should be compiled out of our applications.
+  - Rather than be embraced as an arbitrary boundary that adds overhead and restricts what we can do in the name of interoperability. I think for your purposes @justinfagnani you should consider frameworks as a templating language, and the fact they have components secondary.
+- 
+
 - ## Started an RFC around i18n and how it should be implemented in the core library.
 - https://twitter.com/shoelace_style/status/1383065846298337285
   - [RFC: i18n](https://github.com/shoelace-style/shoelace/issues/419)

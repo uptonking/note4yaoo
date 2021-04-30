@@ -85,6 +85,8 @@ modified: '2021-01-11T18:34:20.713Z'
     - 视觉上很棒
 
 - 页面白背景卡片白背景
+  - https://next-ozone.vercel.app/
+    - hover时卡片会变大，多用对齐的布局，卡片用得很少
   - [bit components](https://bit.dev/components)
     - 视觉上失败，文字太多了
   - https://ionicframework.com/docs/components
@@ -94,7 +96,11 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://vaadin.com/components
     - 页面白背景卡片白背景，视觉一般
 
-- 页面白背景，无卡片
+- 页面白背景，无卡片边框
+  - https://www.magicpattern.design/blog
+    - 页面白背景，默认无卡片边框，但hover时显示边框阴影；部分卡片背景为深蓝色
+    - 作者展示了很多示例和模版，大多数模板页面是灰背景
+    - 设计了很多半圆形扇形的抽象图形
   - https://medium.com/
   - https://substack.com/
 

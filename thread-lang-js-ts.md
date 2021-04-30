@@ -24,7 +24,19 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## When you get deep enough into @typescript generics, they basically become functions that you invoke with `<>` instead of `()` ... 
+- https://twitter.com/tannerlinsley/status/1387806690364465152
+  - but without optional *named* param support... and a lot of other things that I would expect from a "function"
+- And when you come to this realization it's even more bizarre that people use single-letter "parameter names"
+  - Agreed. I very rarely have a single "T", unless it's something obvious like: `type Identity<T> => T` ; 
+  - The rules say that generics are single letter always. Look at any programming language in history that supports them. Always 1 letter
+- Great point. At some point we started expecting Typescript to behave more like an expressive language in itself, instead of just a typed superset. It feels like we're a couple of major versions away.
+- This is exactly how I've been thinking about them. And using a generic to create a new type is like "currying" or "function parameter binding" to create a new function.
+  - I wonder if they could do something like how zig does generics.  There is no special syntax at all, only that comptime functions treat types as first-class values.
+- I've started naming my aliases with camelCase for this exact reason. I import and use them like functions and it feels weird to use CapitalCamelCase for them
+- I don't really know your usecase but have you seen Module Augmentation?
+  - When you reference the same interfaces, it will even work across multiple modules.
+- They should add meta programming to generate genetics
 
 - ## New JavaScript features in Node.js v16 (compared to the latest v14)
 - https://twitter.com/mathias/status/1387023971741315075
@@ -39,17 +51,6 @@ modified: '2021-01-28T14:34:20.579Z'
   - top-level await
   - private methods and accessors
   - WeakRefs
-
-- ## I'm so tired of trying to make a TypeScript plugin system for React Table v8 
-- https://twitter.com/tannerlinsley/status/1386903354769477638
-  - that I'm about to slash(大幅削减；砍) the entire plugin system altogether and just build a monolithic(完整的) utility. 
-  - Everything included, all the time.
-- I thought you'd gotten it working?
-  - It was so close. But apparently generic maps just don't have the support they need yet. Either the inferred generic syntax needs to land or named/optional generic slots need to land. Without either, it just won't work without increasing the LOC required by plugins by like 10x 
-- Typescript FAILS when the effort to 'type' variations of arguments and overrides becomes  *more work* than writing the actual library code. I then revert to 'any' or 'unknown'.
-  - That last 20%of typing properly is not worth the mental anguish(痛苦，苦恼) just to deliver extra 'insight' that will be rarely used.
-- Yes. Everyone has a different answer, none of them have been comprehensive.
-  - I might have some higher expectations from TS (eg. I refuse to declaration merge)
 
 - ## Is there a serialisation library with strong TS support? 
 - https://twitter.com/glenmaddern/status/1379408751564894208

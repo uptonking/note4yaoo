@@ -32,6 +32,10 @@ modified: '2021-01-17T09:26:42.467Z'
   - who is using
     - https://shoelace.style/
     - https://imdone.io/docs/
+- https://github.com/callstack/component-docs
+  - /120Star/MIT/202011/ts
+  - Simple documentation for your React components.
+  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
 - https://github.com/YvesCoding/rcpress
   - /160Star/MIT/202008
   - 基于react、Ant Design的静态文档生成器
@@ -55,7 +59,7 @@ modified: '2021-01-17T09:26:42.467Z'
   - /11.7kStar/MIT/202012/ts
   - OpenAPI/Swagger-generated API Reference Documentation
 - https://github.com/benjycui/bisheng
-  - /2.5kStar/MIT/202012/js
+  - /2.5kStar/MIT/202012/js/react
   - 依赖mark-twain、react-router、webpack、prismjs
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
 - https://github.com/facebook/docusaurus
@@ -76,10 +80,6 @@ modified: '2021-01-17T09:26:42.467Z'
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8
   - GitBook is only free for open-source and non-profit teams.
-- https://github.com/callstack/component-docs
-  - /120Star/MIT/202011/ts
-  - Simple documentation for your React components.
-  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
 
 - https://github.com/jxnblk/mdx-deck
   - /9.6kStar/MIT/202004

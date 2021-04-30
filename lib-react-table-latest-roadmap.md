@@ -23,11 +23,11 @@ modified: '2020-07-14T12:07:15.486Z'
 
 # react-table v8
 
-- [WIP v8 pr 2335](https://github.com/tannerlinsley/react-table/pull/2335)
+- [pr: /2335/ WIP v8](https://github.com/tannerlinsley/react-table/pull/2335)
 - The external API in v8 will be almost identical (with breaking changes for only a couple of apis, mostly around controlled state).  
 - Other breaking changes will be focused around the plugin system as well, but only in boilerplate structure and types.
 
-- [WIP v8 pr 2166](https://github.com/tannerlinsley/react-table/pull/2166)
+- [pr: /2166/ WIP v8](https://github.com/tannerlinsley/react-table/pull/2166)
 - This PR is likely v8. It's been refactored to something that is much easier to understand and maintain. 
 - More notable **differences**:
   - What were "core" plugins are now native to the useTable hook

@@ -13,6 +13,11 @@ modified: '2021-01-08T19:16:04.471Z'
 
  - ## 
 
+ - ## Why aren’t you using WebAnimations API?
+ - https://twitter.com/mattgperry/status/1387990910043140098
+ - I mostly work with React and React Native. I can use Animated/Reanimated on both, but I can't use WebAnimation API on React Native. Would be cool if I could though.
+ - if i have to call useRef one more time i’ma lose it is the main reason.in all seriousness though CSS animations+framer motion when needed seems like the simplest (fewest LoC) way to accomplish my motion needs
+
  - ## vote: To animate, I primarily use css vs WAAPI vs js
  - https://twitter.com/mattgperry/status/1387667723405103106
    - css : WAAPI :js = 0.497 : 0.12: 0.491(165votes)

@@ -31,8 +31,6 @@ modified: '2021-04-11T06:17:51.318Z'
   - /8.7kStar/MIT/202009
   - A set of primitives to build simple, flexible, WAI-ARIA compliant React autocomplete, combobox or select dropdown components. 
 
-
-
 - https://github.com/InfiniteXyy/just-ui
   - /1Star/NALic/202009
   - [WIP] A headless React component library
@@ -56,10 +54,11 @@ modified: '2021-04-11T06:17:51.318Z'
   - /2Star/NALic/202004
   - Headless component in React with Custom hooks
 
-
 # more-headless-ui
 
-- https://github.com/jxom/awesome-react-headless-components
+- ref
+  - https://github.com/jxom/awesome-react-headless-components
+
 - https://github.com/ice9js/headless-components /article
 - https://github.com/TBear79/headless-datepicker
 - https://github.com/hennessyevan/radform

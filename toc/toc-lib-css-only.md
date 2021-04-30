@@ -14,6 +14,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://github.com/zhangyingwei/html-css-only
   - https://github.com/yyeexin/bilibili-html-demo
   - https://github.com/Zhangjd/awesome-pure-css-no-javascript
+  - https://twitter.com/search?q=pure%20css%20icon&src=typed_query
 
 # popular
 

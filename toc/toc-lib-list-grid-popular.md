@@ -130,6 +130,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - use-table-tools /MIT/18Star/202009/ts/NoDeps
     - https://github.com/davidalekna/use-table-tools
     - Hooks for building kickass react table components
+- https://github.com/Buuntu/react-final-table
+  - https://githubbox.com/Buuntu/react-final-table/tree/master/examples/basic
+  - /9Star/MIT/202009
+  - A headless UI component libray for managing complex table state in React.
+  - Inspired by react-table but with Typescript support built in and a simpler API.
 
 ## div-react
 

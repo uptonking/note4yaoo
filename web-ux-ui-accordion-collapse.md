@@ -11,7 +11,26 @@ modified: '2021-04-23T15:42:22.362Z'
 
 # html-details-summary
 
+- accordion vs tab
+
 ## discuss
+
+- ### Accordion and Disclosure are different. 
+- https://twitter.com/jnurthen/status/929033708643872769
+  - An Accordion is a grouping of disclosures. 
+  - Disclosures are **independently** operating controls. 
+  - I'd be happy to hear a better name though (internally we call ours "collapsible" but I'm not sure that is better)
+- Tabs are part of a group and they have a tablist container for grouping semantics. I'm liking "Expandable" controls since it's aria-expanded
+  - Accordions used to use tab semantics but it lead to horrible keyboard behaviour so we removed that in 1.1 APG. 
+  - I agree it needs something - I think I suggested adding a labelled region around the entire widget but I think I lost that fight. If you agree open an issue against APG.
+
+- ### In an accordion, if one section is already expanded, and a user clicks on another section, should the first one be collapsed or stay as is?
+- https://twitter.com/smashingmag/status/864355263230361600
+- The scroll position changes when collapsing sections above the viewport. That's why I usually keep them open.
+- Nasty pattern. Use tabs instead
+- If it doesn't collapse the others then it ain't an accordion. it's a series of disclosure panels.
+- Like several others have said, I'd keep them expanded. 
+  - Another good reason is it can help users know which sections they already looked at.
 
 - ### What HTML element do you feel is still not used enough these days? How about `<details>`
 - https://twitter.com/stackblitz/status/1312021847123390464

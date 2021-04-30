@@ -11,6 +11,9 @@ modified: '2021-01-11T23:21:37.132Z'
   - [search: landing page](https://github.com/search?o=desc&p=1&q=landing+page+language%3Acss+language%3Ascss&s=stars&type=Repositories)
     - site template
 
+- awesome-list
+  - https://github.com/nordicgiant2/awesome-landing-page
+
 # landing-pm
 
 - https://github.com/papa28x4/Watches-Product-Page
