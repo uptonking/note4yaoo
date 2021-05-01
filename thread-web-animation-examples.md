@@ -33,6 +33,10 @@ modified: '2021-04-21T15:01:12.882Z'
 
 - ## 
 
+- ## A map of the best  animation Libraries of #javascript and #css3
+- https://twitter.com/Lindsey_design/status/1388244530831446017
+  - Where is AnimeJS and Framer motion?
+
 - ## This is how we created “Traveloop”. Animating basic shapes in After Effects and then creating the 3D look inside Cinema 4D
 - https://twitter.com/MestreMotion/status/1387125087871062020
   - 同一对象运动动画的3d版和2d版，主要是形状渐变

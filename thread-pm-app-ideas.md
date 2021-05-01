@@ -16,16 +16,27 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
-- ## JavaScript based projects ideas -
-01. URL Shortener
-02. Whether App
-03. Todo App
-04. YouTube Web Player
-05. Stock Website
-07. Portfolio website
-08. Video conferencing app
-09. Web based terminal
-10. Browser code editor
+- ## Turn your github issues into a CMS for your blog
+- https://twitter.com/renatorib_/status/1387496644158033922
+  - https://github.com/renatorib/github-blog
+  - 依赖graphql，不依赖react
+- Imagine doing a template repo based on this library.
+  - It renders HTML using a vercel cloud function with given cache time or using github actions on a secondary branch.
+  - You fork it, setup the PAT and HTML template, setup vercel to deploy the repo and start posting.
+  - I'm doing it XD. It's actually a starter template using next
+- I was thinking about a cloud function generated HTML with Cache-Control fetching comments asynchronously on load but NextJS can even fit better for this.
+  - Basically what NextJS do almost out of the box with SSG XD
+
+- ## JavaScript based projects ideas
+1.  URL Shortener
+2.  Whether App
+3.  Todo App
+4.  YouTube Web Player
+5.  Stock Website
+6.  Portfolio website
+7.  Video conferencing app
+8.  Web based terminal
+9.  Browser code editor
 - Pro Tip: Host these projects on AWS, and push the code to GitHub.
 
 - ## I seriously love this Github comment feature

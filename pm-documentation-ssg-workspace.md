@@ -1,11 +1,11 @@
 ---
-title: pm-documentation-ppt
-tags: [documentation, pm, ppt, presentation]
+title: pm-documentation-ssg-workspace
+tags: [documentation, pm, static-site-generator]
 created: '2020-08-04T06:26:13.984Z'
-modified: '2021-04-19T15:10:17.176Z'
+modified: '2021-05-01T13:33:22.431Z'
 ---
 
-# pm-documentation-ppt
+# pm-documentation-ssg-workspace
 
 # guide
 

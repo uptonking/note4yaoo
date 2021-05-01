@@ -18,6 +18,11 @@ modified: '2021-04-19T15:06:33.233Z'
   - popular: [prosemirror, codemirror, slate, draft](https://www.npmtrends.com/prosemirror-state-vs-draft-js-vs-@codemirror/state-vs-slate-vs-codemirror-vs-@editorjs/editorjs)
   - unpopular: @editorjs/editorjs, @craftjs/core, @tiptap/core, @codemirror/basic-setup
 
+# draft
+
+- 可拖拽的主界面
+  - 考虑设计成类似trello这类数据卡片，可以任意拖动、缩放、auto-layout自动对齐
+
 # 编辑器开发体验
 
 - 编辑器大致分为两种: 源代码编辑器和富文本编辑器，可以基于富文本实现源代码编辑器

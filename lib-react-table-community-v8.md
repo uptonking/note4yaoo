@@ -20,6 +20,7 @@ modified: '2021-04-30T17:54:03.762Z'
 
 - We got it working! This is one of the biggest wins I’ve ever had with a TS plug-in system. 
   - I won’t say I’m happy about the gotchas/limitations that held back my previous attempts, but at least I know now!
+- React Table v8's new plugin system will officially be fully typed, even for developers writing plugins!
 
 - I thought you'd gotten it working?
   - It was so close. But apparently generic maps just don't have the support they need yet. Either the inferred generic syntax needs to land or named/optional generic slots need to land. Without either, it just won't work without increasing the LOC required by plugins by like 10x 

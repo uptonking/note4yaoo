@@ -25,6 +25,7 @@ modified: '2021-04-23T17:17:33.807Z'
   - datable
     - pivot table
   - live-documentation
+    - table in document: notion
     - live table & data sources
     - shareable & embeddable
     - pdf

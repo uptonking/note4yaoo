@@ -24,9 +24,13 @@ modified: '2020-11-24T07:46:00.967Z'
 
 # features
 
-- ## details
+- ## text-editing
 - 选择多行文字，批量在行首添加`- `，转换成列表显示
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-b vs c-d
+
+# draft
+
+- 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 
 # faq
 

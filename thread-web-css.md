@@ -24,6 +24,20 @@ modified: '2021-01-08T17:15:13.906Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Web container layout syntax guide:
+- https://twitter.com/argyleink/status/1388490388755865600
+
+1️⃣ `justify-*` the axis/direction letters and words travel along
+2️⃣ `align-*` the axis/direction paragraphs travel along
+3️⃣ `*-content` align/distribute cells
+4️⃣ `*-items` align/distribute children within their cell
+
 - ## If you could use a parent() function in CSS to return the parent value of *any* CSS property (e.g. parent(background-color) returns the parent background color, and parent(--foo) returns the parent value of var(--foo)) what would you use it for?
 - https://twitter.com/LeaVerou/status/1377062738472603650
 - Recently was using CSS grid with a 2nd grid inside the grid items. Wanted to use 5% of parent grid width as the gap for both, but 5% of the grid-item is different than 5% of the parent. parent() sounds like the perfect solution.
@@ -201,7 +215,7 @@ modified: '2021-01-08T17:15:13.906Z'
 - ## How do I apply opacity to a CSS color variable?
 - https://stackoverflow.com/questions/40010597
 - You can't take an existing color value and apply an alpha channel to it. 
-  - `--color: 240, 240, 240;` ;  `color: rgba(var(--color), 0.8);` .
+  - `--color: 240, 240, 240;` ; `color: rgba(var(--color), 0.8);` .
 - The magic lies in the fact that the values of custom properties are substituted as is when replacing var() references in a property value, before that property's value is computed. 
   - This means that as far as custom properties are concerned, the value of --color in your example isn't a color value at all until a var(--color) expression appears somewhere that expects a color value (and only in that context).
 
