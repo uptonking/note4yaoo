@@ -14,6 +14,8 @@ modified: '2021-04-11T17:38:29.829Z'
   - https://open-ui.org/analysis/component-matrix
   - [Material-UI API Design Approach](https://next.material-ui.com/guides/api/)
   - [react-native Core Components and APIs](https://reactnative.dev/docs/components-and-apis)
+    - [react-native-web](https://necolas.github.io/react-native-web/docs/)
+    - [react-native-aria](https://geekyants.github.io/react-native-aria/docs/)
 
 - more-comp-libs
   - https://www.npmtrends.com/@material-ui/core-vs-antd-vs-react-bootstrap

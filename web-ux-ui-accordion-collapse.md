@@ -15,6 +15,16 @@ modified: '2021-04-23T15:42:22.362Z'
 
 ## discuss
 
+- ### [Add Accordion component](https://github.com/adobe/react-spectrum/issues/848)
+- This should follow the ARIA accordion pattern. 
+  - Much of the keyboard behavior should already be handled by our selection/focus management hooks.
+- For state, we can use the `useTreeState` hook.
+  - Since accordions don't allow selection, the `selectionMode` option should always be set to "none".
+- `useAccordion` hook should be created to manage the list of accordion items. 
+  - It should use the useSelectableList hook to manage focus and keyboard interactions (e.g. arrow keys).
+- `useAccordionItem` hook should be created to manage an individual accordion item.
+- The selection hooks may be overkill for this actually, but we can try it out and see how much we need to override.
+
 - ### Accordion and Disclosure are different. 
 - https://twitter.com/jnurthen/status/929033708643872769
   - An Accordion is a grouping of disclosures. 

@@ -103,6 +103,14 @@ modified: '2020-10-22T13:11:04.726Z'
 
 # rdbms
 
+- https://github.com/PostgREST/postgrest
+  - https://postgrest.org/
+  - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
+  - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
+  - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
+
+ 
+
 # nosql
 
 # json based database

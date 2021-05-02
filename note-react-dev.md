@@ -13,6 +13,9 @@ modified: '2020-07-14T10:38:48.217Z'
 - react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
   - 发展方向：jquery > querySelector, react > web components
+- react-style-guide
+  - create-react-app
+  - airbnb react style guide
 
 - react-competitors
   - vue/angular/web-components
@@ -61,7 +64,7 @@ modified: '2020-07-14T10:38:48.217Z'
   - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. 
 
   - That's something classes cannot express properly.
-- ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current);`
+- ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current); `
 - 在requestAnimationFrame中setState的性能
 
 # tips
@@ -289,7 +292,7 @@ React.cloneElement(
   - 高阶组件是一个函数，接收一个组件作为输入，返回一个功能进行处理后的新组件      
   - 多个hoc嵌套的执行顺序 
 
- `withDefaultProps(withCalSize(withAccessor(withTooltip(PiePlot))));`
+ `withDefaultProps(withCalSize(withAccessor(withTooltip(PiePlot)))); `
 
   属性从外层向里传，越来越多  
 

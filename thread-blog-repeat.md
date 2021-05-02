@@ -41,6 +41,8 @@ modified: '2021-02-09T19:25:17.381Z'
 
 # frontend
 
+- [The Zen of Preact's source code_202105](https://puruvj.dev/blog/deep-dive-into-preact-source-code)
+
 # backend
 
 # series

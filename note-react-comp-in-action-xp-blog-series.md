@@ -1,11 +1,11 @@
 ---
-title: note-react-comp-in-action-5parts
-tags: [copied, optimization, react]
+title: note-react-comp-in-action-xp-blog-series
+tags: [blog, copied, optimization, react, series, xp]
 created: '2020-06-22T07:53:20.287Z'
-modified: '2020-12-08T13:30:39.499Z'
+modified: '2021-05-02T21:42:20.424Z'
 ---
 
-# note-react-comp-in-action-5parts
+# note-react-comp-in-action-xp-blog-series
 
 # guide
 

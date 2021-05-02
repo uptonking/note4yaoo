@@ -27,6 +27,11 @@ modified: '2021-02-05T14:00:02.922Z'
 - Is there a way to preserve the nicely rounded corners when supplying your own outline style (e.g. to compensate for a background color) in Chrome or am i just out of luck?
   - FocusRing: The discord accessibility team built a library so we could use another element to position and style focus rings correctly. It’s solved a number of issues and it looks great for users who need them
 
+- ## I made a Mac mini with HTML & CSS.
+- https://twitter.com/_georgemoller/status/1388528849600847874
+  - https://codepen.io/george2106/pen/MWJdQYV?editors=1100
+- Neither are real. They are both just pictures produced by pixels on our screens. To see a real one, you need to see it in real life.
+
 - ## I tried making the purple iPhone with CSS: Mine vs the real pic
 - https://twitter.com/ece_minaa/status/1386335568548831237
   - https://codepen.io/ece_mina/pen/poRGeKO?editors=1100

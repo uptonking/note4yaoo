@@ -9,6 +9,40 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # blog
 
+## [Why I build Design Systems with Stitches and Radix](https://ped.ro/blog/why-i-build-design-systems-with-stitches-and-radix)
+
+- I've built design systems, But they never felt quite right—some were too laborious(耗时的，辛苦的) and too error-prone. Others were too slow and too opinionated.
+- I've lost count of how many times I've been asked to build complex components from scratch—dialogs, tooltips, dropdown menus, popovers, sheets, tabs.
+- But they were all flawed and lacked fundamental accessibility features.
+- When working against a deadline, it's almost impossible to build them correctly.
+- So for the last couple of years, we at Modulz worked hard to facilitate how teams can build, maintain and scale their design systems—all whilst adhering to the WAI-ARIA design pattern.
+
+- Stitches is a styling solution focusing on component architecture and developer experience.
+  - It introduces a first-class variant API, enabling design system authors to express their intent better. 
+  - It's fully typed
+- With Stitches, you're able to create resilient, maintainable and scalable design systems. 
+  - You can focus on what matters the most. 
+  - The system itself — your theme, scales and tokens. 
+  - The look and feel of the components and their potential variations. 
+  - The way each component can look at different breakpoints.(responsive)
+
+- Radix Primitives is a low-level UI component library focusing on accessibility, customisation and developer experience. 
+  - It's a comprehensive library of unstyled, and accessible components, with over twenty-five to choose from.
+  - All its components adhere to the WAI-ARIA design patterns. 
+  - They can be the base layer of your design system or adopted incrementally.
+- With Radix, you're able to delegate the logic and accessibility concerns of complex components while having full control over their aesthetics and behaviour. 
+  - Style its parts and states.
+  - Use them controlled or uncontrolled. 
+  - Add animations, either with CSS or an animation library.
+
+- [discussion](https://twitter.com/peduarte/status/1388040430860701696)
+
+- I'm fascinated. Wondering, why did you go with magic strings (e.g. `$turq`) as opposed to variables/constants?
+  - Because it offers a simpler developer experience and feels more first-class
+- Good to know! Are there compile time errors in case a referenced theme variable doesn't exist?
+  - We are trying to type check the token when used in a string more strictly. But there are some limitation by typescript 
+  - If you want strict typing it’s recommended you import the theme
+
 ## [spotify: Customization vs. Configuration in Evolving Design Systems](https://engineering.atspotify.com/2021/04/28/customization-vs-configuration-in-evolving-design-systems/)
 
 - When a design system first starts out, the promise of visual consistency glows bright

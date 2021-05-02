@@ -13,7 +13,16 @@ modified: '2021-04-12T16:30:53.968Z'
 
 ## 
 
+## [如何看待cloudera收费墙问题？](https://www.zhihu.com/question/435951902)
+
+- 而且对之前所有版本收费了，之前高版本的，我使用的cdh5.x也要收费了。。。
+  - 1月31号这个还是正常使用没发现什么影响，可能是因为当时使用的是免费社区版吧，官网说是要针对所有版本收费可能是用来唬人的
+
+- Cloudera和Hortonwork合并了，连HDP也要收费了，难道只能迁移到原生Hadoop吗，如果使用Apache Hadoop的话有什么管理工具可以用吗
+
 ## [为什么国内的云盘（百度网盘、微云、115）没有形成类似于 Google Drive、Dropbox 那样的生态呢？](https://www.v2ex.com/t/355453)
+
+- 百度网盘、微云 最近(2020)都开放了api
 
 - 这里的“生态”指的是：
   - 集成的应用比较多，比如 spectacle 截图顺便上传到 Google Drive ；比如用 enjoy music player 听歌；比如 stackedit 写文章扔到 Google Drive

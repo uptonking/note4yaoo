@@ -55,6 +55,8 @@ modified: '2021-04-19T15:10:47.546Z'
 
 - code highlighting
 
+- 允许半个符号而不抛出异常，如`>, 1)`
+
 # md-extensions
 
 - 扩展markdown的方法
