@@ -13,6 +13,11 @@ modified: '2020-11-13T13:08:39.052Z'
 - 修改所有子目录和子目录下的文件的权限为755/644
   - `sudo chmod -R a=r, u+w, a+X ./garden/`
   - 注意逗号间无空格
+- 实测ubuntu的yaoo用户的home目录及文件权限分别为775和664
+  - [My ubuntu default permissions suddenly changed from 644 to 664?](https://askubuntu.com/questions/1321256)
+    - This depends on the default umask which is different for normal users and the root user.
+    - normal user:  0002,  775/664
+    - root user:    0022,  755/644
 - 查看当前目录所有文件和文件夹的权限 
   - find . -maxdepth 1 -printf "%m  %f\n" 
 
