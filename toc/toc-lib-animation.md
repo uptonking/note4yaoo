@@ -7,6 +7,11 @@ modified: '2020-10-05T06:22:02.107Z'
 
 # toc-lib-animation
 
+# guide
+
+- ref
+  - [react-spring vs react-motion vs gsap vs framer-motion vs animate.css vs animejs](https://www.npmtrends.com/react-spring-vs-react-motion-vs-gsap-vs-framer-motion-vs-animate.css-vs-animejs)
+
 # animation-with-flip
 
 - flipping /MIT/1.1kStar/202006

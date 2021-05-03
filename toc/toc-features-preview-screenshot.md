@@ -64,3 +64,6 @@ modified: '2021-01-30T16:05:48.466Z'
 - https://ray.so/
 
 # more
+
+- https://github.com/antfu/broz
+  - A simple, frameless browser for screenshots

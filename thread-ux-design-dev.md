@@ -11,6 +11,22 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Trying to write the most terse theme preference check to insert at the top of the document head. Order or precedence being:
+- https://twitter.com/michaeltaranto/status/1389062386691104775
+  - Site preference
+  - OS preference
+  - Fallback to light mode with neither
+  - Fallback to light mode with no JS.
+  - Tell me where I'm wrong 
+- how would you handle preference set by a backend API?
+- Reading this Tweet though I'm thinking maybe I should split the script in two, one for reading inline, and the other for modification.
+  - Yeah I'd definitely suggest decoupling the two. One is on the hot path for rendering, the other is a bit more of an edge case right?
+  - Yeah, if any of the modification code can be extracted it would be better to load it the same way as the rest of the JS on the page. Only reading code has to be inlined. Hopefully it doesn’t complicate setup and usage too much to split them.
+
 - ## The most requested feature of the year is here—announcing Auto Size 
 - https://twitter.com/framer/status/1387783277390573572
   - 主要是卡片大小会随文字变多而变长变宽

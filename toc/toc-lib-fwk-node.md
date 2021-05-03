@@ -10,6 +10,9 @@ modified: '2021-01-04T16:18:39.667Z'
 - 公司里面的技术选型很难由自己决定
 - keyword: backend-for-frontend, spring-like, restful-api, node-framework
 
+- ref
+  - [@nestjs/core vs koa vs fastify vs restify vs loopback](https://www.npmtrends.com/@nestjs/core-vs-koa-vs-fastify-vs-restify-vs-loopback)
+
 # popular-node-framework
 
 - nestjs /32.4kStar/MIT/202012/ts

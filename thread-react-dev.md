@@ -11,6 +11,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## My favourite thing about React so far is how much time I get to spend thinking about exactly which state variables depend on other variables, 
+- https://twitter.com/stevage1/status/1389032093724839943
+  - and when it's safe to update them, so I don't get distracted by actually building anything.
+
 - ## Just realised that JSX has a syntax to support generics
 - https://twitter.com/wcandillon/status/1386413737263960064
 

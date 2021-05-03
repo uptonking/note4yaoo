@@ -46,6 +46,37 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## Data fetching in Next.js can be a bit confusing. 
+- https://twitter.com/theworstdev/status/1371915581100847107
+  - This confusion stems from the fact that there are three ways to fetch and render data: static, server-side, and client-side. 
+  - There are benefits and tradeoffs to each strategy so let's discuss what they are
+- First up is data fetching for static rendering:
+  - With static rendering, your pages are generated at build time and then served as static HTML files. 
+  - This method provides speedy response times because the pages don’t need to be rendered for each request.
+  - SEO also works as expected for statically rendered pages because the content is readily available for crawlers. 
+  - However, statically rendered content can only be updated by deploying a new version of your app.
+  - This means that relative to other methods, your content is more likely to become stale between deploys.
+  - Static data if fetched in Next.js using the `getStaticProps` method
+- Next up is data fetching for server-side rendering
+  - With server-side rendering, pages are generated dynamically for each incoming request. 
+  - This enables content to be updated between deploys (unlike static rendering), and SEO works as expected.
+  - However, rendering on every request does add processing time that can noticeably increase response latency.
+  - Server-side data is fetched using the `getServerSideProps` method
+- Lastly, there is fetching data client-side rendering
+  - With client-side rendering (the typical strategy for React apps), the browser requests the app, the page loads, then React requests the data to present to the user.
+  - This strategy keeps pages fresh and responsive, but it isn’t compatible with SEO crawlers.
+  - To fetch data client-side you use hooks in your React components
+- it's worth mentioning that the delivery of files will be fast if you are using a CDN, but the cost of rendering is moved to the client.
 
-- ## 
+- ## You might not need SSR
+- https://twitter.com/devongovett/status/1388946950557372416
+- Aside from SEO which is a bit tricky with client side data fetching, what is the point of SSR?
+  - First page of app along with app-shell is statically generated and hosted on any CDN which hydrates on the client side. Navigating to different pages would only download the required data.
+  - This is my favored approach, app shell + dynamic/on-demand module loading. SSR is a waste of time and energy for every project I've worked on. SSR introduces way too many problems for only solving one.
+- Depends always on the app, I found if there is content, why should the user wait on JS to be downloaded and parsed, when it can be rendered as soon as the first byte comes?! For an app however, I tend to agree, if UX is not a white screen until JS comes!
+  - And then next time the user needs to load some different content the JS will be cached and they just have to download the content. Instead of downloading the html and content. Which is pretty neat
+  - Note that the JS is cached, but it still has to re-parse and run it, which can be a considerable cost on mobile.
+- You probably want SSR for non static sites, it’s why 20 year old PHP forums can load in under 200ms backed by millions of live DB records, while Jamstack sites take seconds to show you a loading spinner.
+  - API calls are faster in your VPC than over the internet so data fetching is faster in SSR, and browsers are optimized to show HTML as fast as possible.
+  - But in React SSR your HTML response generally has to contain all the fetched data anyway (in addition the HTML you rendered using that data). You probably won’t get a significant end-to-end speed improvement until you throw on an HTTP cache/CDN.
+- You probably don't need a SPA either.

@@ -7,6 +7,11 @@ modified: '2021-03-31T06:50:19.936Z'
 
 # thread-devops
 
+# guide
+
+- apache2服务器配置子域名的方法
+  - [Ubuntu Apache配置子域名（单IP多域名）](https://www.jianshu.com/p/a9eeac672069)
+
 # pieces
 
 - ## 

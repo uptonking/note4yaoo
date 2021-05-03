@@ -7,10 +7,19 @@ modified: '2020-11-13T13:08:39.052Z'
 
 # cli-linux-shell
 
+# linux
+
+- [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744)
+- 修改所有子目录和子目录下的文件的权限为755/644
+  - `sudo chmod -R a=r, u+w, a+X ./garden/`
+  - 注意逗号间无空格
+- 查看当前目录所有文件和文件夹的权限 
+  - find . -maxdepth 1 -printf "%m  %f\n" 
+
 # ubuntu
 
-- apt remove 会删除软件包而保留软件的配置文件
-- apt purge 会同时清除软件包和软件的配置文件
+- apt remove: 会删除软件包而保留软件的配置文件
+- apt purge: 会同时清除软件包和软件的配置文件
 
 # linux-commands
 

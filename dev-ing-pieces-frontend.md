@@ -13,6 +13,12 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- [Difference between apachectl and apache2](https://stackoverflow.com/questions/16338313)
+- `man apache2` indicates the following:
+  - In  general,  `apache2` should not be invoked directly, but rather should be invoked via /etc/init.d/apache2 or `apache2ctl`. 
+  - The default Debian configuration  requires  environment variables  that  are  defined  in `/etc/apache2/envvars` and are not available if `apache2` is started directly.
+  - However,  `apache2ctl` can be used to pass arbitrary arguments to `apache2`.
+
 - [How to prevent anchor links from scrolling behind a sticky header](https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/)
 - The `scroll-margin-top` property lets you define a top margin that the browser should use when snapping a scrolled element into place.
   - Now, when the browser jumps to the anchor link, it will leave a margin of 1em at the top
@@ -112,7 +118,7 @@ modified: '2021-03-29T19:30:00.059Z'
   -  we can help terser by using the `/*#__PURE__*/` annotation
   - It flags a statement as side effect free. 
   - So it would make it possible to tree-shake the code
-  - `var Button$1 = /*#__PURE__*/ withAppProvider()(Button);`
+  - `var Button$1 = /*#__PURE__*/ withAppProvider()(Button); `
   - This would allow to remove this piece of code. 
   - But there are still questions with the imports which need to be included/evaluated because they could contain side effects.
   - To tackle this, we use the `sideEffects` property in package.json.
@@ -169,7 +175,7 @@ modified: '2021-03-29T19:30:00.059Z'
     - 优点是使用rem时，若修改了根元素的字体大小，就可以自动显示相应的尺寸
     - 实现1px的border不精确，计算时常产生小数
     - 横竖屏切换时，可能需要动态计算并设置根html的大小
-- `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px";`
+- `document.getElementsByTagName("html")[0].style.fontSize = (width)height/7.5 + "px"; `
 - 最近在做开发的时候遇到rem的一个大坑，就是如果用户改变了手机的字体大小，而且我们的页面样式的宽用了rem, 比如{width:1rem}, 那么页面的宽就会成倍增长，导致页面乱掉。。。还没找到办法解决，宽度还是先避免使用rem的好。
   - 字体的大小和字体宽度，并不成线性关系，所以字体大小不能使用rem；由于设置了根元素字体的大小，会影响所有没有设置字体大小的元素。可以在body上做字体修正
   - 如果用户在PC端浏览，页面过宽怎么办？一般我们都会设置一个最大宽度，大于这个宽度的话页面居中，两边留白 `body { margin: auto; width: 100rem }`
@@ -214,7 +220,7 @@ self’s height
 translate-left
 self’s width
 
-- js中对象的创建 `var thing=Object(stuff);`
+- js中对象的创建 `var thing=Object(stuff); `
   - The Object constructor returns its argument when the argument is already an object. 
   - If it's not an object, it returns the "objectified" version of the argument: a String instance if it's a string, a Number instance if it's a number, etc.
   - if `stuff` is object ,  `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
@@ -400,7 +406,7 @@ spread(fn)
 args => fn.apply(null, args)
 ```
 
-- 理解 `return new (Function.prototype.bind.apply(ctor, args))();`
+- 理解 `return new (Function.prototype.bind.apply(ctor, args))(); `
   - 分解成多步
 
 ``` JS
@@ -632,7 +638,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 - console对象
   - 分级日志：console.log/info/debug/warn/error
   - 字符串占位符： `%s` 代表字符串， `%o` 代表对象， `%d` 代表数字
-  - 设置样式：开头使用 `%c` , 如 `console.log('%cNull','color:gold;font-size:large')`
+  - 设置样式：开头使用 `%c` , 如 `console.log('%cNull', 'color:gold; font-size:large')`
   - `console.dir` ：强制以JSON模式输出，如DOM会转换成json对象
   - `console.table` ：将对象属性或数组打印成表格更美观
   - `console.assert` ：仅当第一个参数为false时才打印第二个参数
@@ -676,14 +682,14 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
     - https://zhuanlan.zhihu.com/p/90746589
 
 - lodash引用方式
-  - `import _ from 'lodash';`
+  - `import _ from 'lodash'; `
     - Pros:
       - Only one import line
     - Cons:
       - It seems like the import of a whole library will lead to the largest bundle size
       - Less readable usage in the javascript code like `_.map()`
 
-  - `import { map, tail, times, uniq } from 'lodash';`
+  - `import { map, tail, times, uniq } from 'lodash'; `
     - 70.9KB
     - Pros:
       - Only one import line (for a decent amount of functions)
@@ -691,7 +697,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
     - Cons:
       - Every time we want use a new function or stop using another - it needs to be maintained and managed
 
-  - `import cloneDeep from 'lodash/cloneDeep';`
+  - `import cloneDeep from 'lodash/cloneDeep'; `
     - 17.8KB
     - Pros:
       - Seems to be the smallest bundle size.
@@ -700,7 +706,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
       - The import maintenance is much more complicated than the previous options
       - Lots of import lines in the head of the file don’t look nice and readable.
 
-  - `import { cloneDeep } from 'lodash-es';`
+  - `import { cloneDeep } from 'lodash-es'; `
     - 14.6KB
 
   - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
@@ -728,7 +734,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - prop is the name of the property to bind to the given function.
   - you can also use expressions for a computed property name to bind to the given function.
   - It is not possible to simultaneously have a getter bound to a property and have that property actually hold a value, although it is possible to use a getter and a setter in conjunction to create a type of pseudo-property.
-  - If you want to remove the getter, you can just delete it: `delete obj.latest;`
+  - If you want to remove the getter, you can just delete it: `delete obj.latest; `
   - While using the get keyword and Object.defineProperty() have similar results, there is a subtle difference between the two when used on classes.
   - When using get the property will be defined on the instance's prototype, while using Object.defineProperty() the property will be defined on the instance it is applied to.
 - js定义了两种不同的属性
@@ -751,11 +757,11 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - `import { has } from 'lodash-es';`  
   - tree shakable, but CommonJS modules are not 
 
-- `import has from 'lodash/has';`
+- `import has from 'lodash/has'; `
     - lodash holds all it's functions in a single file, so rather than import the whole 'lodash' library at 100k, it's better to just import lodash's has function which is maybe 2k.
     - 'lodash/has' isn't a separate package. There's a file called has.js in the root of the regular 'lodash' package, and import has from 'lodash/has' (or const has = require ('lodash/has) will load that file. 
 
-- `import { has } from 'lodash';`
+- `import { has } from 'lodash'; `
 
 - 前端定时器
   - `setTimeout()`

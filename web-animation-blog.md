@@ -7,6 +7,35 @@ modified: '2020-12-21T07:44:14.728Z'
 
 # web-animation-blog
 
+# [React-Spring vs Framer Motion: Comparing Examples in Two Animation Libraries](https://medium.com/the-clever-dev/react-spring-vs-framer-motion-comparing-examples-in-two-animation-libraries-ad4d866dca5)
+
+- Framer Motion uses the more traditional duration-and-location approach. 
+  - Most developers likely have experience with this animation strategy and it will feel familiar.
+- React-Spring approaches animations using spring-physics. 
+  - This is a well-executed attempt to make animations feel and behave like real-life movement.
+- Below I will convert an example from the react-spring docs to Framer Motion, 
+  - then convert an example from this Framer Motion article to react-spring.
+
+- Framer Motion has a built-in suite of event APIs called Gestures. 
+  - These APIs make handling certain user events easy and dynamic. 
+- react-spring useTransition hook has two significant features that I need to replicate. 
+  - First, it monitors four states: from, enter, leave, and update . 
+  - Second, it easily handles multiple transitions per state. 
+
+- Comparing React-Spring and Framer Motion
+  - Motions in Framer Motion are the corollary to Render-Props in react-spring — they have a different focus but each give highly specialized functionality to the libraries
+  - Framer Motion useTransform is the corollary(随之而来的；结果的) to react-spring interpolation
+  - Framer Motion Gestures are the corollary to react-spring + react-with-gestures
+  - Framer Motion drag is the corollary to react-spring clamp
+  - Framer Motion animate is the corollary to react-spring useSpring
+
+- In fact, many of the examples in the react-spring docs are reminiscent(令人回想的；使人回忆的) of examples in the Framer Motion docs.
+- I think Framer Motion will be best when I want to create animations quickly, 
+  - because duration-and-location animation is what I have prior experience with. 
+  - I would tend towards react-spring if I want spring physics look-and-feel in my project. 
+  - Also, I would consider Framer Motion Gestures and react-spring + react-with-gesture and consider if either out-of-the-box animation suite had the exact event I needed.
+  - When choosing a library for a project, consider the end goal of the project, the look and feel that you want your animations to have, and don’t be afraid to try something new.
+
 # [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
 
 - Animation brings user interfaces to life. 
@@ -190,7 +219,7 @@ modified: '2020-12-21T07:44:14.728Z'
 - [High Performance Animations_2013](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
 - Modern browsers can animate four things really cheaply: 
-  - position: `transform: translate(Xpx,Ypx)`
+  - position: `transform: translate(Xpx, Ypx)`
   - scale: `transfrom: scale(ratio)`
   - rotation: `transform: rotate(Xdeg)`
   - opacity: 0~1

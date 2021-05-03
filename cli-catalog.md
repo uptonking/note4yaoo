@@ -30,9 +30,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - commit相关
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
-  - 撤销上次commit，不回滚修改
+  - 撤销上次commit的记录，不回滚修改
     - git reset HEAD~
-    - 能保证原本的修改还在，也能撤销本次提交失误，只撤销提交
+    - 只撤销本次提交记录，实际修改后的文件仍然存在本地
   - 撤销上次commit的修改，回滚到上次修改前
 
 - clone非master分支、修改克隆下来的文件夹名称
@@ -90,6 +90,18 @@ git push origin master --force
     - `git checkout feature` + `git rebase master`
     - 将整个feature分支移动到master分支的后面，将master分支上新的提交并过来
     - 不会产生新commit
+
+- 其他命令
+  - git stage 作为 git add 的一个同义词
+  - git diff --staged 作为 git diff --cached 的相同命令
+    - 为了容易理解，推荐大家使用 git stage 和 git diff --staged 这两个命令，
+    - 而git add 和 git diff --cached 这两个命令，仅仅为了保持和以前的兼容做保留。
+  - git diff 显示当前工作区的文件和stage区文件的差异
+  - git diff --staged 显示stage区和HEAD的文件的差异
+  - git diff HEAD 显示工作区和上次递交文件的差异
+  - 当文件加入了 stage 区以后，如果要从stage删除，则使用 reset, 此时工作区的文件不做任何修改
+  - 当文件加入了 stage 区以后，后来又做了一些修改，这时发现后面的修改有问题，想回退到stage的状态，使用 checkout 
+  -  git commit -a 并不会作用于第一次新建的文件。 否则容易因此忽略新文件的提交。
 
 # java相关
 
