@@ -27,6 +27,7 @@ modified: '2021-02-09T19:25:11.641Z'
 
 # frontend-dev
 
+- [The Evolution Of Jamstack](https://www.smashingmagazine.com/2021/05/evolution-jamstack/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
 - [JavaScript系列之立即执行函数IIFE](https://zhuanlan.zhihu.com/p/74440468)
 - [Practice CSS Like an Artist](https://mastery.games/post/practice-css/)

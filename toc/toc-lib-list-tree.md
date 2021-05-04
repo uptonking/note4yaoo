@@ -105,12 +105,29 @@ modified: '2020-07-12T19:00:27.345Z'
   - Use glob patterns to watch file sets and run a command when anything is added, changed or deleted.
 
 - https://github.com/tapio/live-server
-  - 依赖chokidar、colors、connect、event-stream、faye-websocket、htp-auth、morgan、opn
+  - 依赖chokidar、colors、connect、event-stream、faye-websocket、htp-auth、morgan、opn、proxy-middleware、send、serve-index
+    - 不建议使用，推荐使用依赖livereload-js的node-livereload
   - a little development server with live reload capability.
   - Having the page reload automatically after changes to files can accelerate dev
   - If you don't want/need the live reload, you should probably use something simpler, like python -m SimpleHTTPServer/http.server 8999
+  - https://github.com/geelen/jspm-server
+    - It's based on @tapio's excellent live-server
+- https://github.com/livereload/livereload-js
+  - 无依赖
+  - 示例依赖watchify，watchify依赖chokidar
+  - To use LiveReload, you need a client (this script) in your browser and a server running on your development machine
+  - This repository (livereload.js) implements the client side of the protocol. 
+  - The client connects to a LiveReload server via web sockets and listens for incoming change notifications. 
+  - It gets change notifications from a LiveReload server and applies them to the browser.
+  - If you are developing a LiveReload server, see dist/livereload.js for the latest version built using the sources in this repository. 
+  - We require LiveReload server vendors to distribute livereload.js as part of their apps or tools.
+- https://github.com/napcs/node-livereload
+  - Current maintained fork of LiveReload server in Node.js
+  - 依赖 chokidar、livereload-js、ws、opts
+  - 注意：文件更新消息的发送，使用的是ws协议，需要在浏览器中访问file:///path/to/test.html，而不是http://localhost:35729/test.html
 
 - https://github.com/mihneadb/node-directory-tree
+  - http://livereload.com/
   - Creates a JS object representing a directory tree.
   - const dirTree = require("directory-tree"); 
   - const tree = dirTree("/some/path"); 

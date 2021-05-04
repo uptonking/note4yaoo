@@ -9,6 +9,9 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
+- ## glob style looks perfect for Chinese/Japanese characters.
+- https://twitter.com/lomography1996/status/1389525442227413003
+
 - ## Mini Fruit Carousels built with greensock
 - https://twitter.com/jh3yy/status/1383548575972352006
   - 环状走马灯，可以循环播放

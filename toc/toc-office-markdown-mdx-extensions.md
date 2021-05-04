@@ -61,9 +61,10 @@ modified: '2021-01-16T20:24:48.984Z'
   - 依赖react-router, react-live, emotion/core, prism-react-renderer, @mdx-js/loader
 
 - https://github.com/esmevane/living-document
-  - 所有.mdx的路径目录通过用户手动编辑markdown的链接`[]()`实现，对用户要求太高
+  - 所有.mdx的路径目录通过用户手动编辑markdown的链接`[]()`实现，自动化程度太低
   - 简洁的mdx文档网站模版，所有mdx放在pages文件夹
   - 只依赖react, react-router, styled-components, @mdx-js/loader
+  - 动态请求的代码 `import(`!babel-loader!@mdx-js/loader!content/${content}`)`
 - https://github.com/zaydek/esbuild-mdx
   - 依赖@mdx-js/mdx, @mdx-js/react, 例子太过简单
 

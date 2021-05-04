@@ -21,6 +21,11 @@ modified: '2020-11-13T13:08:39.052Z'
 - 查看当前目录所有文件和文件夹的权限 
   - find . -maxdepth 1 -printf "%m  %f\n" 
 
+- ssh相关权限
+  - sudo chmod 700 ~/.ssh
+  - sudo chmod 600 ~/.ssh/id_rsa; 
+  - sudo chmod 600 ~/.ssh/id_rsa.pub
+
 # ubuntu
 
 - apt remove: 会删除软件包而保留软件的配置文件

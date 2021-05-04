@@ -23,6 +23,17 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Do you know the state reducer pattern in React?
+- https://twitter.com/matiasfha/status/1389583745632673800
+  - Is a design pattern that enable the user of a component to manipulate or manage the inner state of it by using a reducer pattern.
+  - [The State Reducer Pattern with React Hooks](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
+- The State Reducer Pattern (an idea an implementation by @kentcdodds for downshift) is a form of Inversion of Control where your component enable the user of it to control internal behavior through the API.
+- React hooks made the implementation of this pattern slightly simpler and idiomatic by using the useReducer hook.
+
 - ## Really don't understand React devs who don't like @tailwindcss (I mean, use what makes you happy ofc).
 - https://twitter.com/swyx/status/1385573418158891014
   - React components localize state and side effects. 

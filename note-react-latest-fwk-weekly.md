@@ -16,6 +16,23 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0426-w0502
 
+👉 Remix v1 beta
+👉 Next.js 10.2
+👉 Redux 4.1
+👉 Babel 7.14
+👉 Safari 14.1
+👉 Suspense is killing me
+👉 Key prop
+👉 Advanced Framer Motion
+👉 Design system: Stitches & Radix
+👉 Airtable Flow Rightwards arrow TS
+👉 Inspx
+👉 Expo + Next.js
+👉 Mighty
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1389236898858668034
+
 ## w0419-w0425
 
 👉 Next.js ISR

@@ -70,6 +70,11 @@ modified: '2020-10-22T10:22:55.878Z'
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
+- https://github.com/jgraph/mxgraph
+  - /6.1kStar/Apache2/202011/archived
+  - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
+  - [Future of types after mxgraph EOL announcement](https://github.com/typed-mxgraph/typed-mxgraph/issues/12)
+
 # node-graph
 
 - https://github.com/reaviz/reaflow

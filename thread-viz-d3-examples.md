@@ -22,4 +22,9 @@ modified: '2021-04-23T18:46:07.908Z'
 
 - ##
 
-- ##
+- ## Today's @observablehq notebook is about how to display cards from data.gouv.fr in notebooks.
+- https://twitter.com/taniki/status/1389308293143740418
+  - [Embedding cards from data.gouv.fr](https://observablehq.com/@taniki/datagouvfr-oembed)
+- what's the advantage vs just calling the "standard" embed code?
+  - `<script>` won't execute.
+  - I forgot that the script is plainly fetching the html code to display from the api and inserting it in the DOM.

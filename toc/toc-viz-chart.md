@@ -38,6 +38,31 @@ modified: '2020-10-22T10:22:33.292Z'
   - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
   - 依赖svg2pdf.js、jspdf-yworks
   - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
+
+- observable-plot /17Star/ISC/202105/js
+  - https://github.com/observablehq/plot
+  - https://observablehq.com/@observablehq/plot
+  - JavaScript library to help you quickly visualize tabular data.
+  - Plot employs a layered grammar of graphics inspired by Vega-Lite, ggplot2, Wilkinson’s Grammar of Graphics, and Bertin’s Semiology of Graphics. 
+    - Plot rejects a chart typology in favor of marks, scales, and transforms.
+    - Plot is compatible with Observable dataflow: use inputs to control charts, and views to read chart selections
+    - We created Plot to better support exploratory data analysis in reactive, JavaScript notebooks like Observable. 
+    - We continue to support D3 for bespoke explanatory visualization and recommend Vega-Lite for imperative, polyglot environments such as Jupyter. 
+  - [Introducing Observable Plot](https://observablehq.com/@observablehq/introducing-observable-plot)
+    - With its concise and (hopefully) memorable API, Observable Plot lets you try out ideas quickly. 
+    - You can make a meaningful chart with as little as one line of code.
+    - Plot is highly configurable and supports interaction with minimal fuss through Observable dataflow. 
+    - Plot’s aim is speed and convenience. 
+    - Our hope is you’ll spend less time reading the docs, searching for snippets, and debugging — and more time asking questions of data. 
+    - Plot is informed by ten years of maintaining D3 but does not replace it. 
+    - We continue to support and develop D3, and recommend its low-level approach for bespoke explanatory visualizations and as a foundation for higher-level exploratory visualization tools. 
+    - In fact, Plot is built on D3! 
+    - Observable Plot is more akin to Vega-Lite, another great tool for exploration. 
+    - We designed Plot to pair beautifully with Observable: to leverage Observable dataflow for fluid exploration and interaction.
+    - However, Plot does not depend on Observable; use it wherever you like.
+
+
+
 - carbon-charts /Apache2/156Star/202007
   - https://github.com/carbon-design-system/carbon-charts
   - https://carbon-design-system.github.io/carbon-charts/

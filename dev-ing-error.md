@@ -11,6 +11,13 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- README.md: Support for the experimental syntax 'jsx' isn't currently enabled 
+  - 因为workspace的子项目中配置 @mdx-js/loader的babel-loader时，也要设置 `options: { rootMode: 'upward', }, `.
+
+- SassError: expected "{".
+  - [SassError: expected "{".](https://github.com/webpack-contrib/sass-loader/issues/867)
+  - 注意webpack-merge会自动合并module.rules，所以注意不要在子项目重复写css-loader
+
 - react_devtools_backend.js:2557 Warning: Cannot update a component (`BrowserRouter`) while rendering a different component (`Login`). To locate the bad setState() call inside `Login`, 
   - [v6] Cannot update a component from inside the function body of a different component.
   - https://github.com/ReactTraining/react-router/issues/7199

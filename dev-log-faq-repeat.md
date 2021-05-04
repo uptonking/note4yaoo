@@ -12,6 +12,11 @@ modified: '2021-03-29T19:17:20.657Z'
 - tips
   - search: component too many props/options
   - Too many options = bad software.
+
+- 参考
+  - vscode的settings页面
+  - tsconfig的配置options页面
+
 - 惯例优先原则/约定优于配置(convention over configuration)
   - 提供合理的默认值
   - opinionated的另外一个同义词是Convention over configuration，或者coding by convention
@@ -55,5 +60,4 @@ modified: '2021-03-29T19:17:20.657Z'
   - [Avoid soul-crushing components](https://epicreact.dev/soul-crushing-components/)
     - The beauty of patterns like compound components, state reducers, prop getters, controlled props, etc. is that you can have your simple API and a simple implementation at the same time.
   - [7 code smells in your React components_202011](https://dev.to/awnton/7-code-smells-in-react-components-5f66)
-  - [The State Reducer Pattern with React Hooks](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
   - [Sometimes tools are too flexible.](https://twitter.com/sebmck/status/1142090256096743425)

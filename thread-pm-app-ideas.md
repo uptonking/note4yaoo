@@ -16,6 +16,13 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
+- ## Time for the annual "What are people using to blog these days?" question. 
+- https://twitter.com/BenLesh/status/1389585490412818440
+  - I think I want to just use plain HTML at this point. 
+  - Or maybe something pre-made that generates HTML.
+  - I definitely don't want to maintain yet another code base.
+- Jekyll, for the last 5 years or so. Just a bunch of markdown files and a template.
+
 - ## Turn your github issues into a CMS for your blog
 - https://twitter.com/renatorib_/status/1387496644158033922
   - https://github.com/renatorib/github-blog

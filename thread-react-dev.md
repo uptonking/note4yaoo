@@ -15,6 +15,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## 
+
+- ## How to implement a zoom bar with react-three/fiber and react-three/drei?
+- https://twitter.com/0xca0a/status/1389520530131324932
+  - In React components can either be visual or logical, as in, components can return null/nothing. 
+  - We're using LEVA here to quickly implement a re-usable zoom component that you can drop in (or out).
+  - https://github.com/pmndrs/react-three-fiber/discussions/1308
+
 - ## My favourite thing about React so far is how much time I get to spend thinking about exactly which state variables depend on other variables, 
 - https://twitter.com/stevage1/status/1389032093724839943
   - and when it's safe to update them, so I don't get distracted by actually building anything.

@@ -15,9 +15,24 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## If you do integration tests you don't need to know if the app is using react, redux, redux-saga, or something else
+- https://twitter.com/sseraphini/status/1389584078790352902
+  - render the app to the DOM
+  - interact with the DOM
+  - assert the final state of the DOM
+- if you refactor from redux to pure react, the test would still pass
 
-- ## 
+- ## I don’t use fake data generators for testing. I prefer using a static dataset instead.
+- https://twitter.com/housecor/status/1389386557648482308
+  - Tests using local static data are reliable and fast.
+  - I can enhance the dataset when I find edge cases.
+  - I use the static dataset in mock APIs, unit/integration tests, and Storybook.
+- Fake data can be useful for “Fuzz” testing (feeding the app a bunch of random data to see if it bombs), but that’s a separate conversation.
+- I would use a faker library to generate useful datasets. Then store that json in a static, committed file.
+- Overall I agree with the sentiment: tests should be deterministic. I don't want them to sometimes fail (or falsely pass) depending on randomly generated data; the code either works or it doesn't.
+  - We sometimes use static data and sometimes a Faker generator, but with a static seed. Precisely to give us predictable tests. I find that the two versions behave the same in practice.
+- For integration tests of components, I prefer to generate fake data 
+  - and override parts of fake data with static data  when testing a particular scenario, so the focus on the data remains clear.
 
 - ## If you do code split for each page of your application, you are denying the benefits of building a SPA.
 - https://twitter.com/danieljpgo/status/1387149559315550211

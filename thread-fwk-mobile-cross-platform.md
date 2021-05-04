@@ -32,7 +32,19 @@ modified: '2021-04-30T15:26:55.024Z'
 
 - ## 
 
-- ## 
+- ## Jetpack Compose advances to the browser! 
+- https://twitter.com/kotlin/status/1389550923635167232
+  - Our newest technology preview brings Google’s toolkit for building reactive user interfaces with Kotlin to the web.
+- [Technology Preview: Jetpack Compose for Web](https://blog.jetbrains.com/kotlin/2021/05/technology-preview-jetpack-compose-for-web/)
+  - Compose for Web is far from being done
+  - We still want to provide a first look at this new Kotlin/JS-powered target for Jetpack Compose
+  - Jetpack Compose for Web works on top of Kotlin Multiplatform, meaning you can develop an Android, Desktop, and Web application using Jetpack Compose as your UI framework
+  - Kotlin Multiplatform allows you to share platform-agnostic code and functionality like your business logic through common code, while still being able to implement and use platform-specific functionality from Android, Desktop JVM, and the JavaScript ecosystem alike.
+  - In this preview, you can already freely reuse all core Compose state management concepts across the platforms. 
+  - Compose for Web currently does not allow you to directly reuse existing widgets (unlike the Android and Desktop targets for Jetpack Compose, which allow direct code sharing for most widgets out of the box).
+  - However, you can use Kotlin Multiplatform’s expect/actual mechanism to build your own common widgets with implementations for all three platforms. 
+  - This way, you can apply the same principles to build your app UI on mobile, desktop, and web.
+  - This technology preview includes two types of APIs that we are currently exploring and designing for declaring user interfaces in Kotlin code with Compose: a DOM API, and a web implementation of the widgets you already know from Jetpack Compose for Desktop and Android.
 
 - ## Fuchsia is not an Android replacement
 - https://twitter.com/alex_tiki/status/1388091353867948032

@@ -20,7 +20,19 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## Design System opinion: Don't make your `<Link>` and `<Button>` components support both link and button visuals 
+- https://twitter.com/buildsghost/status/1389294014222934018
+  - Do make your `<Link>` and `<Button>` components renders either `<a>` or `<button>` based on the props passed to it ("to" should render an anchor, "onClick" should render a button)
+- When I tried that some years ago it was really hard to express the interface _properly_ in TypeScript. How about going one step further and call it `<Action/>` and forbid `<Link/>` and `<Button/>` components?
+  - type BaseLinkProps = { to: string } 
+  - type BaseButtonProps = { onClick(): void } 
+  - type BaseLinkOrButtonProps = | BaseLinkProps | BaseButtonProps 
+  - type ButtonProps = BaseLinkOrButtonProps & { other: boolean }
+- From a HATEOAS/hypertext point of view, a link is a perfectly fine tag to use even for a button, as long as it has a href and expects the agent to follow the link to the new page. `<button>` is for submitting forms.
+  - I don’t know what HATEOAS is but WAI-ARIA’s authoring practices don’t agree
+  - HATEOAS/hypertext is the semantic underpinning of the web.
+  - I realize my previous tweet as a bit vague, but I'm arguing for `<a>` for links, `<button>` for 'submitting forms', and to *not* use a `<button>` for navigating to another page
+  - There are plots of use cases for buttons besides submitting forms. Ex: Showing/hiding a menu
 
 - ##  `accent-color` will enable us to have style-matching checkboxes and radios.
 - https://twitter.com/stefanjudis/status/1385294684977868802
