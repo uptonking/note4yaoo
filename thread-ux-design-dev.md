@@ -13,7 +13,12 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## UX pattern question: I've got 5-ish categories. Each can be "true", "false", or "off". Is there a good input type
+- https://twitter.com/acemarke/status/1389679142405279752
+- What is the difference between false and off?
+  - "Off": no filter applied for this category
+  - "True/False": filter applied, matching that value
+- Radio inputs with labels can be styled to look like a button group. Bootstrap utilizes this and it nicely works with keyboard navigation.
 
 - ## Trying to write the most terse theme preference check to insert at the top of the document head. Order or precedence being:
 - https://twitter.com/michaeltaranto/status/1389062386691104775

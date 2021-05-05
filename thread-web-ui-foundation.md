@@ -11,6 +11,18 @@ modified: '2021-04-23T09:24:19.873Z'
 
 - ## 
 
+
+- ## how do you solve this problem: I often have SVG files I load in img tags. 
+- https://twitter.com/bradwestfall/status/1389724773077315584
+  - I want to control the width and height with CSS only. 
+  - Sometimes the SVG will load HUGE for a split second until the CSS loads and shapes it down to size.
+  - my solution: Right now I do a style tag that looks for all img's with file names ending in svg, display none those. Wait until the CSS loads to give it it's size and also reset omg/svg to display:inline
+  - [SVG Style Inheritance and the ‘Flash Of Unstyled SVG’](https://www.sarasoueidan.com/blog/svg-style-inheritance-and-fousvg/)
+- If the original SVG has viewBox defined, you can size them inline with the image tag, and further resize them using CSS. 
+  - On the img tag, I usually size them for mobile and scale them up as needed with CSS for larger viewports. 
+  - A lot of compressors remove the viewBox.
+- You can set the size of the SVG I believe, so perhaps you can set the initial size of the resource to be smaller
+
 - ## I have to admit that I thought I would be using CSS Grid a lot more when I learned it. 
 - https://twitter.com/andrewbaisden/status/1386999817444986883
   - However with both React Native and Flutter using Flexbox for layout I am using it much more.

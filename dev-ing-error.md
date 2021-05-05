@@ -11,6 +11,13 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Uncaught Error: Cannot find module '../../src/components/accordion/Accordion.docs.mdx'
+  - webpack 的dynamic import不支持 `import(pathAllVar)`的情况
+  - 作为参数的路径必须写一部分出来
+  - https://webpack.js.org/api/module-methods/
+  - It is not possible to use a fully dynamic import statement, such as `import(foo)`.
+  - The import() must contain at least some information about where the module is located. 
+
 - README.md: Support for the experimental syntax 'jsx' isn't currently enabled 
   - 因为workspace的子项目中配置 @mdx-js/loader的babel-loader时，也要设置 `options: { rootMode: 'upward', }, `.
 

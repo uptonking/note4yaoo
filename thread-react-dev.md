@@ -15,7 +15,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Here are the differences between component render, dom updating and painting the screen in React.
+- https://twitter.com/yagopereiraaz/status/1389743940249784324
+- Render: 
+  - Component render method/body get called, for functional components that means Component() for classes ComponentInstance.render().
+- DOM Updates: 
+  - Elements instances are created you can interact with them with useLayoutEffect, but you can't yet see them on the browser.
+- Browser paints: 
+  - The DOM updates are finally painted on the screen and you can interact with the DOM elements via useEffect and on screen, with the UI.
 
 - ## How to implement a zoom bar with react-three/fiber and react-three/drei?
 - https://twitter.com/0xca0a/status/1389520530131324932

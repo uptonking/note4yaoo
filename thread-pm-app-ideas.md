@@ -12,9 +12,24 @@ modified: '2021-04-19T14:53:27.158Z'
 - ## Harsh truth: Reading about other successful creators won't make you one. Start creating so that you have your own success story to tell.
 - https://twitter.com/mkhundmiri/status/1383688592099135498
 
+- ## Too many projects and ideas, not enough time!
+- https://twitter.com/tannerlinsley/status/1389725014379823107
+- Lay down the roadmap. Check if people are interested in building that. Instead of idea it will become something
+- I wish I could say that too.. I have time for now but no enough knowledge yet
+- No project ideas. Only problem
+  - make a project to solve your problem
+
 # ideas
 
 - ## 
+
+- ##  I found Notion is the one-stop solution for all note-taking purposes 
+- https://twitter.com/iamrohitgund/status/1325229159027630080
+  - but only one problem I faced is that I can't copy tables to Microsoft Word or other platforms. 
+  - If there is any way to do that I can shift 100% from Evernote, Microsoft To-do, etc
+- Our(Notion's) tables are databases, not spreadsheets, so there's some fundamental differences compared to other programs.
+  - That being said, you should be able to copy + paste into a spreadsheet. 
+  - You can also export content as .csv!
 
 - ## Time for the annual "What are people using to blog these days?" question. 
 - https://twitter.com/BenLesh/status/1389585490412818440

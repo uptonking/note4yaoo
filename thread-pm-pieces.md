@@ -9,15 +9,22 @@ modified: '2021-04-19T14:52:58.244Z'
 
 # pieces
 
-- ## 
+- ##
 
-- ##  I found Notion is the one-stop solution for all note-taking purposes 
-- https://twitter.com/iamrohitgund/status/1325229159027630080
-  - but only one problem I faced is that I can't copy tables to Microsoft Word or other platforms. 
-  - If there is any way to do that I can shift 100% from Evernote, Microsoft To-do, etc
-- Our(Notion's) tables are databases, not spreadsheets, so there's some fundamental differences compared to other programs.
-  - That being said, you should be able to copy + paste into a spreadsheet. 
-  - You can also export content as .csv!
+- ##
+
+- ##
+
+- ## Product GIFs are your best friend.
+- https://twitter.com/heyblake/status/1389725794063331333
+  - If you have a SaaS or DTC product, show don't tell. Give us action shots.
+- Don't really use GIF, though. 
+  - Video formats tend to be more efficient at playing video, and you can achieve the same look and feel with the right HTML markup (most GIFs platforms use mp4 videos under the hood).
+
+- ## What are your thoughts on-sponsors-only (Sponsorware) open source and npm packages?
+- https://twitter.com/giuseppegurgone/status/1389833727564451845
+- How would that be different than non-oss paid products?
+  - I think you'd be better off talking about it as a product people can buy (including the source) than calling it sponsorware. 
 
 - ## Unpopular opinion but true: Google Docs blows chunks for user experience.
 - https://twitter.com/gruber/status/1386764214874824706

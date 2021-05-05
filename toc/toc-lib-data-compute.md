@@ -19,6 +19,13 @@ modified: '2020-12-31T15:33:17.149Z'
 
 # data-tools
 
+- https://github.com/uwdata/arquero
+  - https://uwdata.github.io/arquero
+  - /438Star/BSD/202105/js
+  - a JavaScript library for query processing and transformation of array-backed data tables. 
+  - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
+  - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
+  - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
 - https://github.com/pbeshai/tidy
   - https://pbeshai.github.io/tidy/
   - /47Star/MIT/202102/ts

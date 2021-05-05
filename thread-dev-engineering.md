@@ -9,6 +9,19 @@ modified: '2021-01-21T17:52:13.333Z'
 
 # guide
 
+- ## Working on open source while also having a full time job is exhausting and unsustainable. 
+- https://twitter.com/devongovett/status/1389635869628256259
+  - No wonder people are starting companies around this stuff!
+- People expect so much for free and it’s not always easy to let that go and not feel bad about it.
+- The open source, unfortunately, is on the verge of being broken by the big companies.
+  - There has never been a better time for open source companies than now. Elastic is a billion dollar company.
+  - the most popular ones are being bought by a limited number of companies. A very limited number.
+  - Thankfully those projects maintainers have the ability to choose not to sell. But it begs the question: why do they?
+- I've got some news for you. If you quit your job, you just have new problems and need to spend even more time doing things which are not coding.
+- The problem is that the github platform promoted open source as free (non paid). 
+  - And now everyone expects oss to be free labor, big corps are using software without funding or contributing while making millions. 
+  - Getting paid shouldn't be an after thought.
+
 # pieces
 
 - ## 

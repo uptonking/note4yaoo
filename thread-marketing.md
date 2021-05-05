@@ -11,6 +11,12 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 
 - https://twitter.com/jaredpalmer/status/1386411683074101248
   - Huge opportunity for an ambitious open source project or consultancy.

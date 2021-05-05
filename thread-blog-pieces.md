@@ -25,8 +25,13 @@ modified: '2021-02-09T19:25:11.641Z'
   - New Hook API
   - More styles supported
 
+# frontend-design-system-components
+
+- [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)
+
 # frontend-dev
 
+- [We can finally animate CSS gradient](https://dev.to/afif/we-can-finally-animate-css-gradient-kdk)
 - [The Evolution Of Jamstack](https://www.smashingmagazine.com/2021/05/evolution-jamstack/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)
 - [JavaScript系列之立即执行函数IIFE](https://zhuanlan.zhihu.com/p/74440468)
