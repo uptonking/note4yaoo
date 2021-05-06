@@ -1,11 +1,11 @@
 ---
+title: lib-react-docs-p6-hooks
 tags: [docs, hooks, react]
-title: docs-react-p6-hooks
 created: '2020-06-23T07:26:09.551Z'
-modified: '2020-06-30T05:14:35.291Z'
+modified: '2021-05-06T09:23:50.850Z'
 ---
 
-# docs-react-p6-hooks
+# lib-react-docs-p6-hooks
 
 # Introducing Hooks
 

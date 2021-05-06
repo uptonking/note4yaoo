@@ -1,11 +1,11 @@
 ---
-title: docs-react-p6.1-hooks-api
+title: lib-react-docs-p6.1-hooks-api
 tags: [api, docs, hooks]
 created: '2020-07-17T04:31:41.903Z'
-modified: '2020-07-17T04:32:12.879Z'
+modified: '2021-05-06T09:23:57.939Z'
 ---
 
-# docs-react-p6.1-hooks-api
+# lib-react-docs-p6.1-hooks-api
 
 # Hooks API Reference
 

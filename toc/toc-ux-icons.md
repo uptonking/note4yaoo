@@ -1,3 +1,10 @@
+---
+title: toc-ux-icons
+tags: [icon]
+created: '1970-01-01T00:00:00.000Z'
+modified: '2021-05-06T09:58:23.803Z'
+---
+
 # guide
 
 - ## “How to make complex icons with only CSS”. Don’t do this.
@@ -248,3 +255,4 @@
   - merge symbols from several fonts into a single file
 
 - https://twitter.com/search?q=pure%20css%20icon&src=typed_query
+

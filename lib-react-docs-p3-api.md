@@ -1,11 +1,11 @@
 ---
+title: lib-react-docs-p3-api
 tags: [api, docs, react]
-title: docs-react-p3-api
 created: '2020-06-23T07:30:37.293Z'
-modified: '2020-06-30T05:13:55.088Z'
+modified: '2021-05-06T09:23:26.666Z'
 ---
 
-# docs-react-p3-api
+# lib-react-docs-p3-api
 
 # API for React Component Class Definition
 

@@ -1,11 +1,11 @@
 ---
-title: docs-react-p2-advanced-guides
+title: lib-react-docs-p2-advanced-guides
 tags: [docs, react]
 created: '2020-06-23T06:10:10.882Z'
-modified: '2020-07-14T11:27:32.700Z'
+modified: '2021-05-06T09:23:18.044Z'
 ---
 
-# docs-react-p2-advanced-guides
+# lib-react-docs-p2-advanced-guides
 
 # JSX In Depth
 

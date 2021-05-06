@@ -1,11 +1,11 @@
 ---
+title: lib-react-docs-p4-faq
 tags: [docs, faq, react]
-title: docs-react-p4-faq
 created: '2020-06-23T07:27:08.496Z'
-modified: '2020-06-30T05:14:08.093Z'
+modified: '2021-05-06T09:23:35.399Z'
 ---
 
-# docs-react-p4-faq
+# lib-react-docs-p4-faq
 
 # AJAX and APIs
 

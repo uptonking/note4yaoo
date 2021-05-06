@@ -1,11 +1,11 @@
 ---
-title: docs-react-p7-concurrent-mode
+title: lib-react-docs-p7-concurrent-mode
 tags: [concurrent, docs, react]
 created: '2020-06-23T07:35:14.835Z'
-modified: '2020-07-05T18:55:35.555Z'
+modified: '2021-05-06T09:24:04.392Z'
 ---
 
-# docs-react-p7-concurrent-mode
+# lib-react-docs-p7-concurrent-mode
 
 # Introducing Concurrent Mode
 
