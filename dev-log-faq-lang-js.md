@@ -88,7 +88,7 @@ f1() === globalThis; // true
   - Static methods are not properties of `this`. 
     - They are properties of the class itself.
 - For derived classes, derived constructors have no initial `this` binding. 
-- Calling `super()` creates a `this` binding within the constructor, like evaluating `this = new Base();`
+- Calling `super()` creates a `this` binding within the constructor, like evaluating `this = new Base(); `
 - Referring to this before calling super() will throw an error.
 - Derived classes must not return before calling super(), unless they return an Object or have no constructor at all. 
 
@@ -281,7 +281,7 @@ bird.sayBye(); // Bye from Ferrari
   - 根据ECMA定义 'to the value of its constructor’s "prototype" ' ----指向创建这个对象的函数(构造函数)的显式原型
   - JS中对象被创建的方式，一眼看过去似乎有三种方式：（1）对象字面量 `{}` 的方式 （2） `new` 的方式 （3）ES5中的 `Object.create()`
   - 但是我认为本质上只有一种方式，也就是通过 `new` 来创建。
-  - 首先字面量的方式是一种为了开发人员更方便创建对象的一个语法糖，本质就是 `var o = new Object(); o.xx = xx;o.yy=yy;`
+  - 首先字面量的方式是一种为了开发人员更方便创建对象的一个语法糖，本质就是 `var o = new Object(); o.xx = xx; o.yy=yy; `
   - 再来看 `Object.create()` , 这是ES5中新增的方法，在这之前这被称为原型式继承，
     - 从实现代码 return new F() 中我们可以看到，这依然是通过new来创建的。
     - 不同之处在于由 Object.create() 创建出来的对象没有构造函数，其实这里说它没有构造函数是指在 Object.create() 函数外部我们不能访问到它的构造函数，然而在函数内部实现中是有的
@@ -353,8 +353,8 @@ Number instanceof Number //false
   - Should have complicated syntax to discourage use, ES6 made it too easy.
 - ref
   - [Why use classes instead of functions?](https://stackoverflow.com/questions/6480676/why-use-classes-instead-of-functions)
-  - [5 reasons not to use ES6 classes in React](https://blog.krawaller.se/posts/5-reasons-not-to-use-es6-classes-in-react/)
 
+  - [5 reasons not to use ES6 classes in React](https://blog.krawaller.se/posts/5-reasons-not-to-use-es6-classes-in-react/)
     - Inconsistent context
     - No mixin support
     - Inconsistent state handling
@@ -362,7 +362,6 @@ Number instanceof Number //false
     - Dealing with super
 
   - [Not Awesome: ES6 Classes](https://github.com/petsel/not-awesome-es6-classes)
-
     - Instead of ES6 classes, you should consider factory functions, object composition, and/or prototypal inheritance via the use of prototypes, object literals, Object.create(), Object.assign(), etc. while avoiding constructors and the `new` keyword altogether.
 
 ## [Built in Constructor functions in Javascript (可以省略new)](https://stackoverflow.com/questions/9745729/built-in-constructor-functions-in-javascript)

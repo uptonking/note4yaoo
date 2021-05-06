@@ -9,6 +9,9 @@ modified: '2021-04-23T15:42:22.362Z'
 
 # guide
 
+- react-spectrum的accordion组件
+- hover事件触发rerender次数过多
+
 # html-details-summary
 
 - accordion vs tab

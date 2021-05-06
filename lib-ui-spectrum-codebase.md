@@ -9,7 +9,15 @@ modified: '2021-04-12T18:06:54.456Z'
 
 # guide
 
+## coding-style
+
+- 函数内大多数局部变量都是let块级可再赋值的变量，特别是props参数
+  - https://github.com/adobe/react-spectrum/pull/93
+  - Creating a new variable is a recipe for bugs in this case. I'd immediately forget to use the new variable not named props and keep using props later in the code, not realizing that it isn't actually all of the props. Already did this several times.
+
 # pieces
+
+# state
 
 # docs
 

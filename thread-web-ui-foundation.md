@@ -11,6 +11,14 @@ modified: '2021-04-23T09:24:19.873Z'
 
 - ## 
 
+- ## When people learn ARIA, overuse is a common mistake. 
+- https://twitter.com/housecor/status/1390295213659279360
+- [Notes on ARIA Use in HTML](https://www.w3.org/TR/using-aria/)
+  - If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
+  - Do not change native semantics, unless you really have to.
+  - All interactive ARIA controls must be usable with the keyboard.
+  - Do not use `role="presentation"` or `aria-hidden="true"` on a focusable element .
+  - All interactive elements must have an accessible name.
 
 - ## how do you solve this problem: I often have SVG files I load in img tags. 
 - https://twitter.com/bradwestfall/status/1389724773077315584

@@ -18,7 +18,7 @@ modified: '2020-11-13T13:08:39.052Z'
     - This depends on the default umask which is different for normal users and the root user.
     - normal user:  0002,  775/664
     - root user:    0022,  755/644
-- 查看当前目录所有文件和文件夹的权限 
+- 查看当前目录所有文件夹和文件的权限 
   - find . -maxdepth 1 -printf "%m  %f\n" 
 
 - ssh相关权限

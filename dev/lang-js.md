@@ -16,13 +16,24 @@ modified: '2020-07-14T09:26:50.808Z'
 - js vm bytecode
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
-- Object.assign修改属性值的性能
 - tutorial
   - [mdn: JavaScript's basic grammar, variable declarations, data types and literals.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types)
 - js style guide
   - https://github.com/airbnb/javascript
 
 # faq
+
+- Object.assign vs spread operator
+  - Spread is NOT just syntactic sugar around Object.assign. 
+  - `Object.assign` applies setters to a new object, Spread`...` does not. In addition, the object must be iterable.
+  - the spread operator will not copy the the source object’s prototype to the target object. 
+    - If you want to add properties to an object and you don't want to change what instance it is of, then you will have to use `Object.assign`.
+  - I'd like to add this simple example when you have to use Object.assign.
+    - `const objectAssign = Object.assign(new SomeClass(), {});`.
+    - It can be not clear when you use JavaScript. But with TypeScript it is easier if you want to create instance of some class
+  - ref
+    - Object.assign修改属性值的性能 ???
+    - [Object spread vs. Object.assign](https://stackoverflow.com/questions/32925460)
 
 - js复制数组方法的性能比较
   - `b = [...a]`
@@ -247,7 +258,7 @@ f1(10);
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
   - https://www.jeffjade.com/2016/01/10/2016-01-10-javacript-setTimeout/
-- `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]);`
+- `var timeoutID = scope.setTimeout(function[, delay, arg1, arg2, ...]); `
 - `setTimeout()` method of the WindowOrWorkerGlobalScope mixin (and successor to Window.setTimeout()) sets a timer which executes a function or specified piece of code once the timer expires.
 - The returned timeoutID is a *positive integer value* which identifies the timer created by the call to setTimeout()
 - use cases
@@ -409,7 +420,7 @@ Point === Point.prototype.constructor // true
   - `arr1.slice()`
   - `arr1.concat()`
   - `Array.from(arr1)`
-  - `Array.prototype.push.apply(arr2,arr1);`
+  - `Array.prototype.push.apply(arr2, arr1); `
   - 使用数组遍历赋值
 
 ``` js
@@ -433,7 +444,7 @@ Point === Point.prototype.constructor // true
 ```
 
   - 深拷贝
-  - `arr2=JSON.parse(JSON.stringify(array1));`
+  - `arr2=JSON.parse(JSON.stringify(array1)); `
       - 数组中的项如果是undefined，那么转换后将变为null
       - 如果数组的项为对象，则对象之间不可相互引用。若存在循环引用，则无法JSON序列化
 - js遍历对象属性几种方法的区别

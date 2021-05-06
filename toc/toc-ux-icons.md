@@ -72,7 +72,7 @@ modified: '2021-05-06T09:58:23.803Z'
   - available via Webfont/SCSS, JavaScript/TypeScript, SVG/Meta.json, react
 - react-icons  /MIT/3kStar/201905
   - https://github.com/react-icons/react-icons
-  - https://react-icons.netlify.com/
+  - https://react-icons.github.io/react-icons/
   - svg react icons of popular icon packs, including fa, md 
 - ionicons   /MIT/13kStar/201908
   - https://github.com/ionic-team/ionicons
@@ -255,4 +255,3 @@ modified: '2021-05-06T09:58:23.803Z'
   - merge symbols from several fonts into a single file
 
 - https://twitter.com/search?q=pure%20css%20icon&src=typed_query
-
