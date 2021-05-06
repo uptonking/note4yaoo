@@ -13,6 +13,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## I've been enjoying playing with some variable fonts this eve.
+- https://twitter.com/piccalilli_/status/1390053832814563330
+  - https://codepen.io/piccalilli/pen/XWMWpzy
+  - 字体变化
+
 - ## HSL Palette Generator: Generate CSS custom properties for a color palette
 - https://twitter.com/jh3yy/status/1387153018764898312
   - https://codepen.io/jh3y/pen/rNjbmBQ

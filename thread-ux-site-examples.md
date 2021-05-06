@@ -68,8 +68,12 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
-- https://www.cassie.codes/
-  - 设计感很强，自我介绍页面
+- ## 404 Not Found 自动切换不同颜色的主题
+- https://twitter.com/puruvjdev/status/1390205908014096387
+  - 主题变色时，能感受到渐变的过程
+
+- ## 设计感很强，自我介绍页面
+  - https://www.cassie.codes/
   - 卡通人物的眼睛跟随鼠标移动，超级可爱
   - /amazing/theming-绿色
   - https://codepen.io/uptonking/pen/QWdqEmr

@@ -28,6 +28,35 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## has anyone tried both esbuild (or meta build systems like Vite that use it) side by side with Rome?
+- https://twitter.com/devongovett/status/1390023696782221312
+  - Does/can Rome approach esbuild's speed?
+- https://github.com/alangpierce/sucrase
+  - Sucrase is an alternative to Babel that allows super-fast development builds.
+- vs
+  - babel - mutable ast, plugins can mutate the ast, slow af
+  - esbuild - immutable ast, filter/link file plugins, very fast
+  - sucrase - immutable ast, no plugins, silly fast
+- Sucrase doesn’t even have an AST at all. 
+  - It manipulates the token stream as it parses. 
+  - Much less flexible but skips full parse, ast pass, and codegen.
+  - Also mutation itself isn’t the problem. 
+  - It’s revisiting mutated nodes that increases complexity from linear to quadratic.
+- Rome can get there for sure. sucrase (babel alternative written in TypeScript) is already faster than esbuild for some things.
+  - The real bottleneck is multi-threading. 
+  - Sucrase only wins slightly in single-threaded mode PLUS the trade-off of non-extensible AST treatment (by design).
+  - Future dev machines likely come with 8+ cores and a flexible AST is required for Rome's intended scope.
+  - Which is to say... using Sucrase as an example for "JS compilers can be fast if you design it right" isn't particularly accurate because (1) Sucrase is designed to take shortcuts by drastically reducing its scope. Sucrase and Babel are like apples and oranges.
+  - And (2) you can't solve JS' inherent problem at multi-threading with compiler design.
+- To be fair, ESBuild also takes a lot of the same shortcuts. 
+  - No custom transform plugins means it reduces the number of AST passes but wouldn’t be scalable to something with the scope of Rome. 
+  - Nothing wrong with being focused one one thing, but they are different approaches.
+- Does swc take shortcuts too? If it is comparable to babel and still beats esbuild in performance benchmark, I am even more impressed.
+  - It is very similar to babel. Everything is built in separate passes. Does not have quadratic behavior like Babel though.
+- Parcel switches to swc (written in Rust) for massive perf boosts
+
 - ## If you do integration tests you don't need to know if the app is using react, redux, redux-saga, or something else
 - https://twitter.com/sseraphini/status/1389584078790352902
   - render the app to the DOM

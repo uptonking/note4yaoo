@@ -18,7 +18,16 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## does anyone have any knowledge around performance characteristics of "box" components? 
+- https://twitter.com/itsmadou/status/1390120303343276033
+  - considering the number of styles that could be applied (conditionally!) 
+  - i'm curious if the before/after story affects performance if used at scale.
+- Box components is too small to create an issue, but when you get more of those little bustards...
+  - You will end with WAY more HTML elements than you ever wanted to have.
+  - Boxes are good for DX, bad for users.
+- The styles don't matter but having 2x the no of components actually makes React rendering (much?) slower. I don't remember where I have this test but try rendering 10000 divs as divs vs as a `<Box />` — back when I tried it was 2-4x slower
+  - I had similar experience. For me swapping styles-components with just classes didn’t help much for the same tree. Reducing the depth is what helped. But it’s hard to do without breaking abstractions.
+  - Had a bunch of styled components in a table, we were wondering why performance is so bad, tried changing and upgrading the table until we realised it was those little fuckers inside the cells making the overhead. Swapped with static and it's been great!
 
 - ## Design System opinion: Don't make your `<Link>` and `<Button>` components support both link and button visuals 
 - https://twitter.com/buildsghost/status/1389294014222934018

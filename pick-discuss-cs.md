@@ -11,6 +11,20 @@ modified: '2021-04-12T16:30:53.967Z'
 
 ## 
 
+## [2021年了，Rust在偏底层的某些领域是替代C++的一个好的选择吗？](https://www.zhihu.com/question/451687128)
+
+- 嵌入式，操作系统，硬件驱动这些底层领域大多数用的是C，而不是C++，，所以就更谈不上Rust替代C++了，，
+  - C++在嵌入式领域主要的应用是GUI，，比如Qt 
+  - C++和Rust最大的特点是"zero cost abstraction"，底层领域只需要“zero cost”，不太需要“abstraction”，，所以语法简单的C更合适
+
+- 当前有两个标志性事件，linux kernel，已经同意使用rust来编写内核模块，这个绝对够底层了。
+  - android，Google也决定引入rust来开发底层服务。
+- rust自身是MIT/BSD/Apache, linux内核偏向于GPL
+
+- 底层这个领域的特性对 Rust 并不友好。
+  - 第一是 Rust 并不是变魔术消除 complexity，它是把 complexity 圈禁在 unsafe code 里。如果你的项目大部分都是 safe code，这个是否还叫「底层开发」就值得商榷。你把好多 safe code 归到底层，这就是说你的架构可能就不清晰。
+  - 第二是底层开发强调一个项目尽可能通用，可重用，功能稳定。这种项目的管理本身消除了 C++ 在快速迭代上的弱势，凸显了 C++ 语言本身稳定，工具链成熟的优势。
+
 ## [公司项目并发量都特小，自己如何实际接触高并发项目？](https://www.zhihu.com/question/267113602)
 
 - 高并发与大数据的技术问题，终极方案几乎都会转成分布式存储+实时流处理的解决方案，

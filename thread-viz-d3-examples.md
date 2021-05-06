@@ -20,7 +20,9 @@ modified: '2021-04-23T18:46:07.908Z'
 
 - ##
 
-- ##
+- ## bnbThree template
+- https://observablehq.com/@makio135/bnbthree-template
+  - 钻石旋转
 
 - ## Today's @observablehq notebook is about how to display cards from data.gouv.fr in notebooks.
 - https://twitter.com/taniki/status/1389308293143740418

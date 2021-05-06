@@ -25,7 +25,12 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## A reminder that React `StrictMode` silences `console.log` on the double renders. This is the reminder I wish I'd read two hours ago 
+- https://twitter.com/mattgperry/status/1389946417993687043
+- I’m still struggling to understand how concurrent mode works exactly.
+  - I think the "easiest" way to think about it is we're used to render => commit. Whereas in concurrent mode this often happens but the renders could happen any time and the commit may happen/may not happen/may happen later.
+  - My least favourite gotcha as a result of this is renders can't *read* from *any* mutable source. Not just useRef, but classes/objects etc. You can read those in effects, but not in the render body. As a function that accepts props, good luck discerning those
+- It’s still crazy that there isn’t an option to turn them back on especially for library authors.
 
 - ## Do you know the state reducer pattern in React?
 - https://twitter.com/matiasfha/status/1389583745632673800

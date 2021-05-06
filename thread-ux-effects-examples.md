@@ -9,6 +9,11 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
+- ## I've created a fake 3D iPhone mockup with a bunch of CSS and @framer Motion magic.
+- https://twitter.com/linuz90/status/1390226030024138752
+  - https://mailbrew.com/
+  - The mockup is made of two images that parallax to fake the 3D perspective 
+
 - ## glob style looks perfect for Chinese/Japanese characters.
 - https://twitter.com/lomography1996/status/1389525442227413003
 

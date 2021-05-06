@@ -13,7 +13,10 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## Counter argument; there is an even bigger ecosystem of vanilla JS libraries that often integrate nicely with Svelte more than React, since Svelte has regular events/bindings. 
+- https://twitter.com/DanaWoodman/status/1390030682789859329
+  - Using actions to integrate to vanilla JS can be effective. 
+  - Doesn't work with all of them of course.
 
 - ## How @buildWithLit templates work in 4 steps:
 - https://twitter.com/justinfagnani/status/1385659190153121795
