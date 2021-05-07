@@ -45,7 +45,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 
 ``` 
 
-git rm --cached 文件（夹）名，此时只删除了仓库中的缓存，实际文件不会删除
+git rm --cached 文件/夹名，只删除了缓存，实际文件不会删除
 git commit -m '备注'
 git push origin 分支
 ```
@@ -73,7 +73,27 @@ git reset --hard origin/master
 
 ``` 
 
-git push origin master --force 
+git push origin main --force 
+```
+
+- Syncing Fork with Parent Repo
+
+``` shell
+# check if remote exists
+git remote -v
+
+# add the remote
+git remote add upstream <https... .git>
+
+# fetch the upstream repo
+git fetch upstream
+
+# merge the branch
+git merge upstream/main
+
+# push the changes
+git push
+
 ```
 
 - git status命令 

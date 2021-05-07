@@ -87,7 +87,7 @@ modified: '2021-05-06T09:23:18.044Z'
   <MyTextBox autocomplete={true} />
 ```
 
-  - 现有对象使用使用扩展操作符来将整个对象作为属性传递给子组件 `return <Greeting {...props} />;`
+  - 现有对象使用使用扩展操作符来将整个对象作为属性传递给子组件 `return <Greeting {...props} />; `
 - This JSX only renders a `<Header />` if showHeader is true:
 
 ``` js
@@ -102,7 +102,7 @@ modified: '2021-05-06T09:23:18.044Z'
 # React Without ES6
 
 - 声明类
-  - 使用class `class Greeting extends React.Component{}`
+  - 使用class `class Greeting extends React. Component{}`
   - 使用create-react-class
 
 ``` js
@@ -176,13 +176,13 @@ ReactDOM.render(
   - You can take it even further with render props if the child needs to communicate with the parent before rendering.
 - However, sometimes the same data needs to be accessible by many components in the tree, and *at different nesting levels*. 
   - Context lets you “broadcast” such data, and changes to it, to all components below
-- `const MyContext = React.createContext(defaultValue);`
+- `const MyContext = React.createContext(defaultValue); `
   - Creates a Context object. 
   - When React renders a component that subscribes to this Context object, it will read the current context value from the closest matching `Provider` above it in the tree.
   - The `defaultValue` argument is only used when a component does not have a matching Provider above it in the tree. 
   - This can be helpful for testing components in isolation without wrapping them. 
   - Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue` .
-- `<MyContext.Provider value={/* some value */}>`
+- `<MyContext. Provider value={/* some value */}>`
   - Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
   - Accepts a `value` prop to be passed to consuming components that are descendants of this Provider. 
   - One Provider can be connected to many consumers. 
@@ -190,7 +190,7 @@ ReactDOM.render(
   - All consumers that are descendants of a Provider will re-render *whenever the Provider’s `value` prop changes*. 
   - The propagation from Provider to its descendant consumers (including `.contextType` and `useContext` ) is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component skips an update.
   - Changes are determined by comparing the new and old values using the same algorithm as `Object.is` .
-- `<MyContext.Consumer> {value => /* use context value */} </MyContext.Consumer>`
+- `<MyContext. Consumer> {value => /* use context value */} </MyContext. Consumer>`
   - A React component that subscribes to context changes
   - Requires a function as a child. 
     - The function receives the current context value and returns a React node. 
@@ -464,7 +464,8 @@ export default logProps(FancyButton);
 - To write an uncontrolled component, instead of writing an event handler for every state update, you can use a `ref` to get form values from the DOM.
 - Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components.
 - With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled.
-  - To handle this case, you can specify a `defaultValue` attribute instead of value
+  - To handle this case, you can specify a `defaultValue` attribute instead of `value`.
+  - Changing the value of `defaultValue` attribute after a component has mounted will not cause any update of the value in the DOM.
 - **In React, an `<input type="file" />` is always an uncontrolled component**
   - because its value can only be set by a user, and not programmatically.
   - You should use the File API to interact with the files. 
@@ -474,7 +475,7 @@ export default logProps(FancyButton);
 
 - A higher-order component(HOC) is an advanced technique in React for reusing component logic
 - **A higher-order component is a function that takes a component and returns a new component**.
-- `const EnhancedComponent = higherOrderComponent(WrappedComponent);`
+- `const EnhancedComponent = higherOrderComponent(WrappedComponent); `
 - Note that a HOC doesn’t modify the input component, nor does it use inheritance to copy its behavior. 
 - Rather, a *HOC composes the original component by wrapping it in a container component*. 
 - A HOC is a pure function with zero side-effects.

@@ -8,7 +8,6 @@ modified: '2021-04-12T18:06:54.456Z'
 # lib-ui-spectrum-codebase
 
 # guide
-
 ## coding-style
 
 - 函数内大多数局部变量都是let块级可再赋值的变量，特别是props参数

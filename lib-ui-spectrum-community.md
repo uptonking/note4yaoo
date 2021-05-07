@@ -9,13 +9,21 @@ modified: '2021-04-12T18:07:01.092Z'
 
 # guide
 
+- [Add CRUD example for Table and add useListData and useTreeData hooks](https://github.com/adobe/react-spectrum/pull/439)
+
 # pieces
 
 - ## 
 
 - ## 
 
-- ## 
+- ## is useListData useful? 
+- https://twitter.com/kamal/status/1299086783284559872
+  - i only see the usage in docs. 
+  - seems only the main thing i would get from it is selectedKeys, but useListState maintains that for me too.
+- `useListData` is more meant for application developers rather than component developers. 
+  - You'd use it to manage and update data and then pass it to the `items` prop of a collection component. 
+  - `useListState` manages it internal to the component itself.
 
 - ## React events propagate the *React tree* and not just the DOM tree. 
 - https://twitter.com/devongovett/status/1317205109265215488

@@ -11,6 +11,20 @@ modified: '2021-04-12T18:07:20.604Z'
 
 # react-stately
 
+- CollectionBase类型的children和items的区别
+  - children是必需属性而非可选
+  - items是可选属性，常用来实现 dynamic collections
+
+- useControlledState对于非受控组件，状态值应该如何变化
+  - hook自身就是封装了useState的功能，返回[value, setValue]
+
+- useCollection的工作
+  - 创建集合数据对应的不可变的节点 new CollectionBuilder(props, context)
+  - 根据节点集合创建对应的Collection对象
+
+- CollectionBuilder
+  - 
+
 ## Collection
 
 - The `Collection` interface provides a generic representation for many types of collections. 

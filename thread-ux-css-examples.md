@@ -13,6 +13,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## CSS Full-Bleed Scroll-Snapping Carousel with visible Overflow
+- https://twitter.com/bramusblog/status/1390421794365001732
+  - [CSS Full-Bleed Scroll-Snapping Carousel with Centered Content and Visible Overflow](https://www.bram.us/2021/05/06/css-full-bleed-scroll-snapping-carousel-with-visible-overflow/)
+  - https://codepen.io/bramus/pen/VwpwdZy
 
 - ## I've been enjoying playing with some variable fonts this eve.
 - https://twitter.com/piccalilli_/status/1390053832814563330

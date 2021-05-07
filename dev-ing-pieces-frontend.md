@@ -13,6 +13,9 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- [How to watch only a single field in an object in useEffect hook?](https://stackoverflow.com/questions/56823586)
+  - by extracting a variable out of useEffect
+
 - [Difference between apachectl and apache2](https://stackoverflow.com/questions/16338313)
 - `man apache2` indicates the following:
   - In  general,  `apache2` should not be invoked directly, but rather should be invoked via /etc/init.d/apache2 or `apache2ctl`. 

@@ -7,7 +7,7 @@ modified: '2021-01-01T20:18:56.579Z'
 
 # web-style-styled-system
 
-# summary
+# guide
 
 - styled-system解决的问题
   - 组件样式属性值webweb的一致性，本质通过重用预定义的工具函数
@@ -144,3 +144,14 @@ modified: '2021-01-01T20:18:56.579Z'
   - 可以先只用所需的style prop function，然后根据新组建逐渐增加
   - started out with the default one but in the end put everything in it, I use these pretty much everywhere in my layout
   - https://spectrum.chat/styled-system/general/whats-in-your-box~6f41c990-f49f-4063-ba64-fcea702014f9
+
+# discuss
+
+- ## A lot of Theme UI's runtime can be compiled to static styles and custom properties when there's no dynamic data/composition.
+- https://twitter.com/4lpine/status/1390430222558760963
+- I've toyed around with an sx prop compiler. 
+  - Feels like it's not outlandish(奇怪的) to compile away CSS-in-JS runtime during a build for entire files/components/pages at a time when the prop's composition is statically analyzable.
+  - When you've encountered code that is dynamic in nature, fallback to what currently exists with Theme UI's provider and Emotion.
+- A lot of really cool work being done in this space, too
+  - vanilla-extract, compiled-css-in-js, fela
+  - Interested to see what's possible when you have a direct CSS-in-JS fallback.

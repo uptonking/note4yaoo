@@ -30,7 +30,7 @@ modified: '2021-04-11T17:42:26.580Z'
 
 - css
   - 主题样式实现一套css，再实现一套css in js
-    - primer-components
+    - github-primer,adobe-spectrum
   - css-global-config
     - theme, size, dir/left-right
 
@@ -47,6 +47,7 @@ modified: '2021-04-11T17:42:26.580Z'
   - dark mode形式的组件
   - disable mode形式的组件，组件变灰色，常作为背景
   - scalable，如下拉列表列表选项变多时会变modal
+  - auto-responsive-animation: 屏幕由窄变宽时组件预览图更新动画
 
 - logo: green plum
 - design-system-tokens

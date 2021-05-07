@@ -22,7 +22,11 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Repeat after me: Adding enforced type checks to JS slows down JS performance at runtime.
+- https://twitter.com/bradleymeck/status/1390373380319219719
+- for runtime checks, no? you should be able to statically check the types and erase them a la typescript and dump it all into the load step right?
+  - for runtime checks, no? you should be able to statically check the types and erase them a la typescript and dump it all into the load step right?
+- I think what Bradley is suggesting is compiling so the runtime knows the types ahead of time. But you can't be sure that `"foo" + object.toString()` is concatenating strings since toString could be patched.
 
 - ## When you get deep enough into @typescript generics, they basically become functions that you invoke with `<>` instead of `()` ... 
 - https://twitter.com/tannerlinsley/status/1387806690364465152

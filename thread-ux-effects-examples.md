@@ -9,6 +9,20 @@ modified: '2021-03-26T09:11:13.396Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Really happy with how the coded version of this Pricing Page design by @jamesm turned out for an upcoming Tailwind UI update
+- https://twitter.com/david_luhr/status/1390407355733577735
+  - Lots of interesting semantic markup and responsive design considerations for the pricing tiers and feature comparison sections.
+  - 屏幕由宽变窄时ui变化的过程
+- Many feature comparison sections in the wild aren't actually accessible. 
+  - To do thing properly, we use a well-structured `<table>` on larger screens and a `<dl>` (definition list) on smaller screens to present this dense content in a semantic way.
+- Another detail: in the feature comparison, the "cards" are faked to work around `<table>` and `<dl>` limitations. 
+  - Semantics always come first. 
+  - They're backgrounds, followed by the content, followed by borders, which scale with the content, all hidden from the accessibility tree.
+
 - ## I've created a fake 3D iPhone mockup with a bunch of CSS and @framer Motion magic.
 - https://twitter.com/linuz90/status/1390226030024138752
   - https://mailbrew.com/
