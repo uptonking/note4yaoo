@@ -12,18 +12,33 @@ modified: '2021-04-12T18:07:20.604Z'
 # react-stately
 
 - CollectionBase类型的children和items的区别
-  - children是必需属性而非可选
-  - items是可选属性，常用来实现 dynamic collections
-
-- useControlledState对于非受控组件，状态值应该如何变化
-  - hook自身就是封装了useState的功能，返回[value, setValue]
-
-- useCollection的工作
-  - 创建集合数据对应的不可变的节点 new CollectionBuilder(props, context)
-  - 根据节点集合创建对应的Collection对象
+  - children是必需属性而非可选，可用于静态或动态数据
+  - items是可选属性，用来实现 dynamic collections
 
 - CollectionBuilder
-  - 
+  - iterable(){}工具方法可以返回一个迭代器对象，执行迭代器对象的next()，则会返回cache中的item，并更新cache
+  - build()是入口
+  - *iterateCollection()会创建数据对应的Node对象的集合
+  - *getFullNode()创建一项数据对应的Node对象
+
+- PartialNode比Node类型多的属性：element、renderer
+
+- Item能获取到，填充各种信息后，一项数据对应的较为详细的节点数据，主要包括节点类型、子节点类型
+
+- TreeCollection
+
+- useControlledState对于非受控组件，状态值应该如何变化???
+  - hook自身就是封装了useState的功能，返回[value, setValue]
+  - [useControlledState value param should be optional ?](https://github.com/adobe/react-spectrum/issues/1859) 
+
+- useCollection的工作
+  - 创建集合数据对应的不可变的节点集合 new CollectionBuilder(props, context)
+  - 根据节点集合创建对应的Collection对象
+
+- useTreeState
+  - 返回值对象的属性包括 collection，expandedKeys, disabledKeys, toggleKey(), selectionManager
+
+- Item组件函数始终`return null`，该组件的状态不由react管理
 
 ## Collection
 

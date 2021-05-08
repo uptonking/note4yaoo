@@ -20,7 +20,11 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## I can't say this for *every* situation, but I get this feeling that setting default generics in @typescript has bitten me in behind more often than it has helped. 
+- https://twitter.com/tannerlinsley/status/1390780257897115649
+  - It might have *felt* good at first, but I swear it causes so many issues later on.
+- I’m so many cases generics can be precisely inferred, default only when you start to get these non inferred cases... sometimes you can tell ahead of time by the nature of the signature
+- Because you do not span your focus where you consume the data but where it is produced. Which makes it much harder trucking the type of that data. Imho
 
 - ## Repeat after me: Adding enforced type checks to JS slows down JS performance at runtime.
 - https://twitter.com/bradleymeck/status/1390373380319219719

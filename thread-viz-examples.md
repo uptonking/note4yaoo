@@ -11,6 +11,12 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+
+- ## Big data should be filtered through trends in location preferably over time. 
+- https://twitter.com/datamongerbonny/status/1388276092125990912
+  - Sifting through Census data to see where populations may have been undercounted 
+  - and how these profound insights will influence more than representation in congress. 
+
 - ## Let's compare the GDP of nations and the wealth of billionaires. 
 - https://twitter.com/neocartocnrs/status/1379767142376206340
   - [Countries vs Billionaires](https://observablehq.com/@neocartocnrs/countries-vs-billionaires)

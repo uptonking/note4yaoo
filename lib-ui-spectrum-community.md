@@ -15,7 +15,23 @@ modified: '2021-04-12T18:07:01.092Z'
 
 - ## 
 
-- ## 
+- ## Initial implementation of collections API and Tree
+- https://github.com/adobe/react-spectrum/pull/31
+- A Collection is an interface which has getKeys and getItem methods to retrieve items from the collection. 
+- CollectionManager
+- useCollectionState
+- CollectionView
+- CollectionBuilder
+  - It handles converting both the static and dynamic forms using the `<Section>` and `<Item>` components into a form consumable by `CollectionView` . 
+  - it generates normalized Node objects which are essentially tree nodes with a key, value, children, etc. 
+  - Item states like `isSelected` and `isExpanded` are also set here so that nodes update when state change.
+  - The keys on nodes are global to the entire collection, not within each parent like normal react. 
+  - This allows us to track changes even if the items change parents (e.g. an item is moved to a different folder by a user).
+  - In the dynamic form, CollectionBuilder also handles caching so that only changed nodes are re-rendered. 
+  - This is only possible in the dynamic form because we can cache based on the item objects, whereas in the static form we don't have the original values - only the rendered JSX.
+- useTreeState
+  - uses a CollectionBuilder to build a TreeCollection from its child items, 
+  - and also manages expanded and selected states for items as a Set of keys. 
 
 - ## is useListData useful? 
 - https://twitter.com/kamal/status/1299086783284559872

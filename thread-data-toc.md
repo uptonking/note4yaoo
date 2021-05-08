@@ -13,6 +13,10 @@ modified: '2021-01-31T08:40:11.675Z'
 
 - ## 
 
+- ## voting: Those of you working at a company/agency/studio: are you using an off-the-shelf component lib (MaterialUI, Chakra, Bootstrap, Ant etc.) for your customer-facing products?
+- https://twitter.com/colmtuite/status/1390991908978274309
+  - yes : no : other = 33.9% : 41.2%: 29.4%
+
 - ## What's a good JS lib for quickly generating a bunch of fake data, preferably in a rather nested form?
 - https://twitter.com/acemarke/status/1371604298115727363
 - Fox News might have a public API

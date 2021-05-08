@@ -11,6 +11,35 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Warning for 'exhaustive-deps' keeps asking for the full 'props' object instead of allowing single 'props' properties as dependencies
+  - https://github.com/facebook/react/issues/16265
+  - The problem is Typescript's discriminated unions. With destructuring we have to null-check everything.
+
+``` JS
+// This way I get the proper warning (if I omit props.whatever from the array).
+useEffect(() => {
+  const whatever = props.whatever;
+  whatever();
+}, [props.whatever]);
+
+// By reading the function before the call you’re avoiding the problem:
+// This is the preferred solution.
+const { whatever } = props;
+
+useEffect(() => {
+  // at some point
+  whatever();
+}, [whatever]);
+
+// To avoid destructuring or assigning in the outer scope, I'll prefer this syntax:
+useEffect(function() {
+  const onWhatever = props.onWhatever;
+  if (typeof onWhatever === 'function') {
+    onWhatever();
+  }
+}, [props.onWhatever]);
+```
+
 - Uncaught Error: Cannot find module '../../src/components/accordion/Accordion.docs.mdx'
   - webpack 的dynamic import不支持 `import(pathAllVar)`的情况
   - 作为参数的路径必须写一部分出来
