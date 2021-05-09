@@ -9,6 +9,11 @@ modified: '2021-04-12T18:07:46.180Z'
 
 # guide
 
+# todo
+
+- CollectionBuilder应该提供预先计算(空闲计算)的能力
+  - 目前全是基于generator函数延迟计算的数据，一般要等到点击父节点后才开始计算该节点下子节点的数据，然后计算成VDOM再渲染
+
 # issues-not-yet
 
 - ## [How to set text's color?](https://github.com/adobe/react-spectrum/issues/864)
