@@ -30,7 +30,25 @@ modified: '2020-11-03T06:54:59.051Z'
 - [1998年至2018年女演员在内地热度变化](https://www.bilibili.com/video/BV17t411X7bK)
   - 横向条形图动态变化
 
+- https://macos.now.sh/
+  - https://github.com/puruvj/macos-web
+  - replicate some of the Mac OS(Big Sur, at the time)'s desktop experience on web
+  - 依赖 preact、vite、scss+css modules、no component lib
+  - 类似macOS风格的例子
+    - https://github.com/Renovamen/playground-macos
+
 # amazing-tools
+
+- https://github.com/rrweb-io/rrweb
+  - https://www.rrweb.io/
+  - /7.6kStar/MIT/202009/ts
+  - a tool for recording and replaying users' interactions on the web
+  - 录制回放web操作的架构：rrweb、rrweb-player、extensions
+  - 回放时，页面动态显示的是dom元素，不是图片视频
+  - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
+  - https://storyteller.webzard.io/
+    - a no-code interactive tutorial builder built with rrweb
+  - rrweb：打开 web 页面录制与回放的黑盒子
 
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
@@ -49,13 +67,6 @@ modified: '2020-11-03T06:54:59.051Z'
   - Style your readme using CSS trick, 一行文字会以中点为中心上下摇晃
   - https://github.com/nearbycoder
   - https://github.com/timoschwarzer
-
-- https://github.com/rrweb-io/rrweb
-  - /7.6kStar/MIT/202009/ts
-  - a tool for recording and replaying users' interactions on the web
-  - 录制回放web操作的架构：rrweb、rrweb-player、extensions
-  - 回放时，页面动态显示的是dom元素，不是图片视频
-  - 类似矢量图片的矢量视频，放大无马赛克，体积小，缺点是计算量大
 
 - https://github.com/JonnyBurger/remotion
   - https://www.remotion.dev/

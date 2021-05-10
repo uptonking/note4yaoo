@@ -7,6 +7,11 @@ modified: '2021-03-10T11:38:16.053Z'
 
 # thread-ux-design-dev
 
+# guide
+
+- https://www.screensizes.app/
+  - 各种Apple设备的信息与图片
+
 # pieces
 
 - ## 

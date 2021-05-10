@@ -1,17 +1,22 @@
 ---
-title: thread-ux-effects-examples
+title: thread-ux-design-effects-examples
 tags: [examples, thread, ux]
 created: '2021-03-26T09:10:52.255Z'
-modified: '2021-03-26T09:11:13.396Z'
+modified: '2021-05-10T04:06:02.843Z'
 ---
 
-# thread-ux-effects-examples
+# thread-ux-design-effects-examples
 
 - ## 
 
-- ## 
+- ## Inspired by @peduarte I also made changes to the code highlight UI: muted color 
+- https://twitter.com/pveyes/status/1391641615295385603
+  - I'm still keeping highlight color & indicator on hover because main use case is exploring code through twoslash
+  - 默认只高亮部分代码，鼠标移动时高亮全部代码
 
-- ## 
+- ## themed window
+- https://twitter.com/jsngr/status/1391503528443711490
+  - 软件窗口的主题
 
 - ## Really happy with how the coded version of this Pricing Page design by @jamesm turned out for an upcoming Tailwind UI update
 - https://twitter.com/david_luhr/status/1390407355733577735

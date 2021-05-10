@@ -7,6 +7,13 @@ modified: '2021-01-09T16:56:35.339Z'
 
 # toc-work-portfolio-resume
 
+# github-readme
+
+- https://github.com/nearbycoder
+- https://github.com/timoschwarzer
+- https://github.com/mrdoob
+- https://github.com/Renovamen
+
 # resume-popular
 
 - https://github.com/iRaul/creative-portfolios
@@ -16,6 +23,21 @@ modified: '2021-01-09T16:56:35.339Z'
 
 - https://github.com/sindresorhus/css-in-readme-like-wat
   - Style your readme using CSS with this simple trick
+
+# portfolio-amazing
+
+- https://portfolio.zxh.io/
+  - https://github.com/Renovamen/playground-macos
+  - 依赖 @rooks/use-raf, framer-motion, react-markdown, react-redux, react-rnd
+  - features-xp
+    - 页面整体风格是macOS的设计，登录交互完全复制macOS
+    - 登录后默认展示类似vscode的浏览器，显示个人项目信息和简介
+    - 竟然将底部DOCK中的应用都实现了基本ui操作，特别是vscode能直接打开浏览器项目
+  - https://twitter.com/adamwathan/status/1391513719457390598
+    - winbox.js is a good library if anyone wants to make a project like this.
+    - https://news.ycombinator.com/item?id=27084995 (作者实现只用了10天时间)
+  - 类似macOS风格的例子
+    - https://github.com/puruvj/macos-web
 
 # portfolio
 
@@ -30,9 +52,3 @@ modified: '2021-01-09T16:56:35.339Z'
 
 - https://github.com/sadanandpai/single-page-resume-builder
 - https://github.com/sramezani/resume-builder
-
-# github-readme
-
-- https://github.com/nearbycoder
-- https://github.com/timoschwarzer
-- https://github.com/mrdoob

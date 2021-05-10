@@ -61,8 +61,6 @@ modified: '2020-10-22T10:22:33.292Z'
     - We designed Plot to pair beautifully with Observable: to leverage Observable dataflow for fluid exploration and interaction.
     - However, Plot does not depend on Observable; use it wherever you like.
 
-
-
 - carbon-charts /Apache2/156Star/202007
   - https://github.com/carbon-design-system/carbon-charts
   - https://carbon-design-system.github.io/carbon-charts/
@@ -264,3 +262,6 @@ modified: '2020-10-22T10:22:33.292Z'
   - 微信小程序图表charts组件，Charts for WeChat small app
 - https://github.com/benpickles/peity
   - Progressive svg pie, donut, bar and line charts
+
+- https://github.com/twitter/d3kit
+  - d3Kit provides thin scaffold for creating reusable and responsive charts with D3

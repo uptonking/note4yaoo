@@ -15,6 +15,13 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ##
 
+- ## Just use @splitbee and make your analytics dashboard public
+- https://twitter.com/peduarte/status/1390930597942636544
+- https://app.splitbee.io/public/mxstbr.com
+- Sorry to hijack this convo, but are there any docs or examples for A/B testing with @splitbee ? 
+  - I'm struggling to find some I'm happy with Plausible but willing to give Splitbee a go for A/B testing!
+- I think Splitbee looks great, but in case you missed you can make your Fathom analytics public too
+
 - ## Product GIFs are your best friend.
 - https://twitter.com/heyblake/status/1389725794063331333
   - If you have a SaaS or DTC product, show don't tell. Give us action shots.

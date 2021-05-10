@@ -22,6 +22,12 @@ modified: '2021-04-11T06:17:51.318Z'
 - https://github.com/timelessco/renderlesskit-react
   - https://renderlesskit-react.vercel.app/
   - Collection of headless components/hooks that are accessible, composable, customizable from low level to build your own UI & Design System powered by Reakit System.
+- https://github.com/zendeskgarden/react-containers
+  - https://github.com/zendeskgarden/react-components
+  - https://garden.zendesk.com/components/
+  - /873Star/Apache2/202105/ts
+  - 依赖styled-components
+  - Garden React provides consistent styling and behavior for Garden components. 
 - https://github.com/coveo/ui-kit
   - Coveo UI kit repository, home of @coveo/headless, @coveo/atomic, and more.
 - https://github.com/smakosh/ontwik-ui

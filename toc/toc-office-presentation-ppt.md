@@ -9,6 +9,14 @@ modified: '2021-04-30T20:14:17.669Z'
 
 # page-viewer 偏向页面展示
 
+- slidev /4.8kStar/MIT/202105/ts
+  - https://github.com/slidevjs/slidev
+  - https://sli.dev/
+  - Presentation Slides for Developers
+  - Markdown-based
+  - Developer Friendly - built-in syntax highlighting, live coding, etc.
+  - themeable
+  - Integrated editor, or extension for VS Code
 - spectacle /8.6kStar/MIT/202006
   - https://github.com/FormidableLabs/spectacle
   - https://formidable.com/open-source/spectacle/docs/tutorial/

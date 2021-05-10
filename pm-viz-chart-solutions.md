@@ -7,7 +7,7 @@ modified: '2020-11-16T12:39:25.862Z'
 
 # pm-viz-chart-solutions
 
-# [AntV](https://antv.vision/zh/)
+# [solutions: AntV](https://antv.vision/zh/)
 
 - G2
 - G2Plot

@@ -90,3 +90,9 @@ modified: '2021-01-12T18:49:13.490Z'
 - ASCII Generator
   - https://www.snapfiles.com/screenshots/asciigenerator.htm
   - convert images into ASCII text art - an image that is entirely made of text characters.
+
+# engineering
+
+- https://github.com/microsoft/playwright
+  - https://playwright.dev/
+  - library to automate Chromium, Firefox and WebKit with a single API

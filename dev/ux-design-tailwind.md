@@ -130,3 +130,7 @@ modified: '2021-01-03T17:11:47.916Z'
 - ref
   - https://tailwindui.com/
     - Fully responsive HTML components
+
+# ref
+
+- [TailwindCSS: Adds complexity, does nothing.](https://dev.to/brianboyko/tailwindcss-adds-complexity-does-nothing-3hpn)

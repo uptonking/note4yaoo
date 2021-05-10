@@ -13,7 +13,12 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Playing around with a React hook that returns a component with some props pre-applied. Too hacky?
+- https://twitter.com/satya164/status/1391513127431385088
+- The problem is that component from the hook will reMount on every re-render of the host component
+  - It won't. I'm using a ref for the component and it's never updated after the creation.
+- I’ve done that for modals. It works great.
+- I think styled components does something similar here.
 
 - ## Here are the differences between component render, dom updating and painting the screen in React.
 - https://twitter.com/yagopereiraaz/status/1389743940249784324

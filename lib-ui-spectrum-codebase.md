@@ -9,6 +9,40 @@ modified: '2021-04-12T18:06:54.456Z'
 
 # guide
 
+# react-spectrum
+
+- useComp hook的参数一般都是3个：props、state、domRef
+
+- useComp(options) hook传入的参数会作为内部各个函数的默认值，最后返回的对象也会包含这些默认值属性及新的属性，如事件处理函数
+
+## Accordion
+
+- 主要状态的管理基于 useTreeState
+- useAccordion使用了 useSelectableList 来处理按键和鼠标选择事件
+  - allowsTabNavigation: true
+- useAccordionItem使用了useSelectItem来处理item相关事件
+  - 主要是将mouse相关事件处理函数都变为调用onSelect方法
+
+# react-aria
+
+## Collection相关
+
+- useSelectableCollection
+  - 处理按键相关事件onKeyDown：4个方向键 + Home/End/PageDown/PageUp/Escape/Tab
+  - 处理焦点或选择相关事件onFocus/onBlur/onMouseDown
+
+- useSelectableItem
+  - 利用selectionManager处理onSelect事件
+  - 条用onPress(/Start)会调用onSelect方法
+
+- useSelectableList
+  - 使用了 useSelectableCollection
+  - 注意单独处理virtualized的情况
+
+## interaction相关
+
+- useHover返回的hoverProps会在鼠标进入元素触发一次，鼠标离开元素也会触发一次
+
 # react-stately
 
 - CollectionBase类型的属性children和items的区别

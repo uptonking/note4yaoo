@@ -16,6 +16,15 @@ modified: '2021-04-12T18:07:46.180Z'
 
 # issues-not-yet
 
+- ## watching
+- [Allow disabled menu items to be focused](https://github.com/adobe/react-spectrum/issues/1696)
+
+- ## [Make onChange event handler accept standard event object as argument](https://github.com/adobe/react-spectrum/issues/1860)
+- I think the problem is that there isn't always a DOM event for all change events. 
+  - It might be true for input elements but for other components that's not the case. 
+  - We'd rather be consistent and avoid leaking implementation details of our components if possible.
+  - For example, a custom select dropdown isn't going to have native DOM change events available.
+
 - ## [How to set text's color?](https://github.com/adobe/react-spectrum/issues/864)
 - We haven't finished implementing the typography components in React Spectrum just yet. 
   - The current text components are mainly used as part of another component that provides the styling for it, e.g. menu items, illustrated message, dialog, etc. 

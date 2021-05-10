@@ -47,6 +47,23 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
+- ## 
+
+- ## What is the best way to continuously make requests on react?
+- https://twitter.com/LauraViglioni/status/1391083143474647041
+  - RJsX Observables?
+  - For continuous I mean each n seconds I make an Axios request and update stuff on my page
+- Pooling, useInterval or recursive setTimemout
+  - Just make sure to wrap it in a hook that cancells it on unmount
+- How about using a websocket? It scales better than doing a lot of requests.
+- Easy to get get done with React query, checkout the polling/real time example on the docs
+
+- ## I want to write about react-query and TypeScript next, but need some motivation: what do you find most confusing or are struggling with?
+- https://twitter.com/TkDodo/status/1391384960918081542
+- The best way to type your data once and have it get inferred all the way down. Is it in the fetcher implementation or manually supplied generics? Which is better for different use cases?
+  - This is exactly the goal of the form state hooks I'm working on! Infer types from initial values when possible, carry that through to all usage. Pass type params to narrow where necessary.
+- How would you incorporate data validation(types enforcement) for incoming data if you do that?
+
 - ## XState is built to orchestrate side effects - but you can get lost if you don't know how to use the primitives.
 - https://twitter.com/mpocock1/status/1388040079004864513
   - [XState: Should this be an action, or a service?](https://dev.to/mpocock1/xstate-should-this-be-an-action-or-a-service-2cp0)

@@ -37,6 +37,8 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## 
+
 - ## Is there an open source implementation of http://vectormagic.com / http://vectorizer.io? That takes a png and outputs a svg.
 - https://twitter.com/Vjeux/status/1387828983522234370
 - Often times these sorts of vectorization tools are based on the Potrace algorithm. There’s a port of it in node, but it’s not great performance wise.

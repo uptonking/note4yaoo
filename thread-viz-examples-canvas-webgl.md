@@ -13,8 +13,10 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
-- ## 
-
+- ## replicating amazing noisy stripy look from beautiful @leonard_agency website with @threejs
+- https://twitter.com/akella/status/1391401430741921794
+  - 人脸由黑白变彩色
+  - https://www.youtube.com/watch?v=_qJdpSr3HkM
 
 - ## Drag & drop with 50'000 objects using instanced meshes. 
 - https://twitter.com/flavioschneide/status/1387152027143360516

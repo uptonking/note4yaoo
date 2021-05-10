@@ -18,11 +18,16 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
+- ## What is the correct way to include a blank line
+- https://stackoverflow.com/questions/35315023
+- I use a `<hr>` because is the semantic tag to represent that kind of break.
+  - `<hr style="height:16px; border:none; " />`
+
+- `<br />`设置height没有效果，除非强行修改display
+  - 连续用2个`<br />`就有一个空行的效果了，但高度依旧是默认的，不如 `<hr />` 灵活
+
 - ## Popover components in a Dark, Black and Light UI theme
 - https://twitter.com/getdona/status/1390229858266062850
-
-
-
 
 - ## does anyone have any knowledge around performance characteristics of "box" components? 
 - https://twitter.com/itsmadou/status/1390120303343276033

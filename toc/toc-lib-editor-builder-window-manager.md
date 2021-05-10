@@ -45,6 +45,11 @@ modified: '2021-01-08T11:48:16.590Z'
   - 明显感觉比Ventus更卡顿
   - A javascript-only Window Manager
   - I used Ventus to build internal tools and editors, but I wanted a more configurable solution with a better event model that didn't rely on CSS.
+- https://github.com/nextapps-de/winbox
+  - https://nextapps-de.github.io/winbox/
+  - /3.7kStar/Apache2/202105/js
+  - 功能简单，但文档示例丰富
+  - outstanding performance, no dependencies, fully customizable
 - https://github.com/Knossys/Proscenium 
   - /1Star/202011
   - A web based window manager and user interface toolkit for cloud based applications
@@ -68,11 +73,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - http://projectstorm.cloud/react-workspaces/
   - /90Star/202006/ts
   - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
-- https://github.com/nextapps-de/winbox
-  - https://nextapps-de.github.io/winbox/
-  - /313Star/Apache2/202004/js
-  - 功能简单，但文档示例丰富
-  - outstanding performance, no dependencies, fully customizable
 - https://github.com/nomcopter/react-mosaic /2.5kStar/202005
   - https://nomcopter.github.io/react-mosaic/
   - A React tiling window manager

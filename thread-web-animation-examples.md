@@ -33,6 +33,10 @@ modified: '2021-04-21T15:01:12.882Z'
 
 - ## 
 
+- ## Animated draggable playing cards stack made with @framer motion.
+- https://twitter.com/kaestner_felix/status/1391470242338164737
+  - https://codesandbox.io/s/framer-motion-cards-4bqbn
+
 - ## A map of the best  animation Libraries of #javascript and #css3
 - https://twitter.com/Lindsey_design/status/1388244530831446017
   - Where is AnimeJS and Framer motion?

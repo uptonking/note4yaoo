@@ -45,6 +45,11 @@ modified: '2020-10-22T06:51:07.421Z'
   - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
   - It saves adding extra, compacted services on the server. 
   - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
+
+- https://github.com/nextapps-de/flexsearch
+  - /6.7kStar/Apache2/201911/js
+  - Next-Generation full text search library for Browser and Node.js
+
 - https://github.com/bvaughn/js-search
   - /1.6kStar/MIT/202007/js/NoDeps
   - Js Search began as a lightweight implementation of Lunr JS, offering runtime performance improvements and a smaller file size. 
@@ -56,7 +61,3 @@ modified: '2020-10-22T06:51:07.421Z'
 - https://github.com/lucaong/minisearch
   - a tiny but powerful in-memory fulltext search engine written in JavaScript. 
   - It is respectful of resources, and it can comfortably run both in Node and in the browser.
-
-- https://github.com/nextapps-de/flexsearch
-  - /6.7kStar/Apache2/201911/js
-  - Next-Generation full text search library for Browser and Node.js
