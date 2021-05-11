@@ -129,6 +129,10 @@ modified: '2021-01-12T18:49:02.623Z'
 - https://github.com/seeden/react-facebook
   - Facebook components like a Login button, Like, Share, Chat, Comments, Page or Embedded Post
 
+- https://github.com/jquense/react-widgets
+  - extensible, and accessible form inputs built for React.
+  - 很多组件都使用了 uncontrollable 的模式，react-bootstrap也用了这个模式
+
 # datetime
 
 - https://github.com/wojtekmaj/react-date-picker

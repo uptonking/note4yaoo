@@ -30,11 +30,15 @@ modified: '2020-11-13T07:28:27.824Z'
     - https://github.com/material-components/material-components-android
       - /11.2kStar/Apache2/2020209/java
       - Modular and customizable Material Design UI components for Android
+
+
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
   - carbon-components: Component styles and Vanilla JavaScript
   - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
+
+
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts
   - responsive front-end framework with a focus on flexibility in Sass and TS
@@ -50,7 +54,7 @@ modified: '2020-11-13T07:28:27.824Z'
   - https://github.com/Tradeshift/react-tradeshift-ui
     - React wrappers for the Tradeshift ui components.
     - class组件的render方法都是`return null`，完全通过js操作dom
-    - 将tradeshift对象添加到window，然后在didUpdate方法中操作dom
+    - tradeshift对象会被添加到window，然后在didUpdate方法中创建并操作dom
 - https://github.com/AgnosticUI/agnosticui
   - https://agnosticui.github.io/agnosticui
   - /3Star/Apache2/202101/js

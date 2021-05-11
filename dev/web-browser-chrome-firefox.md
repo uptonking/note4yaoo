@@ -14,7 +14,9 @@ modified: '2020-12-21T07:44:48.911Z'
   - [Firefox version history](https://en.wikipedia.org/wiki/Firefox_version_history)
   - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history)
 
-
+- [browser-market-share](https://gs.statcounter.com/)
+  - desktop: chrome-0.675, firefox-0.779, safari-0.986, edge-0.796, ie-0.168, opera-0.265
+  - mobile: chrome-0.622, firefox-0.0045, safari-0.252, samsung-0.0575, uc-0.0217, opera-0.0191, android-0.0103
 
 - 202101
   - chrome

@@ -95,10 +95,26 @@ modified: '2020-11-17T13:38:27.686Z'
 - https://github.com/vikingcms/viking
   - The main repository for Viking CMS. Currently in Development.
 
+# notion-like editor
+
+- https://github.com/Xheldon/NotionEditor
+  - A Notion's editor implement based on ProseMirror
+- https://github.com/commutatus/cm-page-builder
+  - http://cm-page-builder.herokuapp.com/
+  - a modern rich text component based page builder inspired from Notion. 
+
+- https://github.com/ryuever/react-tapable-editor
+  - A pluginable, intuitive medium/notion like rich text editor
+  - built on draft-js, and its plugin system is besed on tapable which is famous as the engine of webpack.
+- https://github.com/ericyip/hexx
+  - https://hexx.vercel.app/
+  - notion like block editor in react
+
 # more-editor
 
 - https://github.com/CedarXi/All-in-one
   - http://all-in-one.qingzhu.co/
+  - /63Star/NALic/202004/js/vue/inactive
   - All-in-one 是一个开源的模块化内容构建编辑器，基于Vue和element的打造
   - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。

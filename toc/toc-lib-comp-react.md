@@ -77,14 +77,10 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/bvaughn/react-virtualized
   - https://bvaughn.github.io/react-virtualized/
   - efficiently rendering large lists and tabular data
-- react-bootstrap  /MIT/16kStar/201908
+- react-bootstrap  /16kStar/MIT/201908
   - https://github.com/react-bootstrap/react-bootstrap
   - https://react-bootstrap.github.io/
   - Bootstrap components built with React
-- slate /MIT/15kStar/201908
-  - https://github.com/ianstormtaylor/slate
-  - http://slatejs.org/
-  - customizable framework for building rich text editors
 - recharts /MIT/12kStar/201908
   - https://github.com/recharts/recharts
   - http://recharts.org/

@@ -16,6 +16,7 @@ modified: '2020-11-24T07:46:00.967Z'
     - 支持多种排序，包括创建时间、修改时间、tag
 
 - 特色功能点
+  - localizable note file(not local-first)
   - api doc
     - 生成openapi/swagger ui风格的文档
   - term block

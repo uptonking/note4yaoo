@@ -14,6 +14,33 @@ modified: '2021-03-22T18:46:03.513Z'
 
 # 2021
 
+## w0531-0606
+
+## w0524-0530
+
+## w0517-0523
+
+## w0510-0516
+
+## w0503-0509
+
+👉 Remix: Super Simple Start
+👉 Remotion 2.1
+👉 Gatsby 3.4
+👉 ESLint in Next.js
+👉 Code blocks
+👉 Hermes: Hades GC
+👉 React-Native-Vision-Camera
+👉 Jetpack Compose for Web
+👉 0kb of JS?
+👉 Hello ESM
+👉 Rome Tools inc
+👉 Prettier 2.3
+👉 zx
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1391785697724583938
+
 ## w0426-w0502
 
 👉 Remix v1 beta

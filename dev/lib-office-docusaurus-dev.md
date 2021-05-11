@@ -13,7 +13,7 @@ modified: '2020-12-19T08:52:02.671Z'
 
 # docs
 
-# docusaurus v2
+# blog
 
 - ## [Docusaurus 2019 Recap_201912](https://v2.docusaurus.io/blog/2019/12/30/docusaurus-2019-recap/)
 - In 2018, we proposed to rebuild Docusaurus from the ground up.
@@ -55,16 +55,26 @@ modified: '2020-12-19T08:52:02.671Z'
 
 - ## [Docusaurus 2 Design_201806](https://github.com/facebook/docusaurus/issues/789)
 - v1 problems
-  - Current architecture is a bit tangled and makes it hard to introduce plugins.
+- Current architecture is a bit tangled and makes it hard to introduce plugins.
+- styling
+  - All CSS is compiled into one file.
   - Does not allow adding local vendor CSS and JS
-  - Routing logic is separated and resides within both server and generation code
-  - Build pipeline is imperative and quite tangled(纠缠的；混乱的).
-  - New features are mostly enabled via siteConfig - siteConfig will bloat(膨胀) over time
-  - Many components relies on process.cwd() too much (mostly for siteConfig), making it very hard to test.
-  - LiveReload does a full-page reload, and page reloads for changes of all files.
+  - Docusaurus controls much of the styles and layout, Site layout is not/hard customizable 
+- Routing logic is separated and resides within both server and generation code
+- New features are mostly enabled via siteConfig, siteConfig will bloat(膨胀) over time
+- Many components relies on process.cwd() too much (mostly for siteConfig), making it very hard to test.
+- LiveReload does a full-page reload, and page reloads for changes of all files.
+- Build pipeline is imperative and quite tangled(纠缠的；混乱的).
+
 - v2 proposals
-  - v2 should be responsible for documentation content, routing, translation and versioning, 
-    - leaving layout and styling to the end user.
-    - It's not a good idea for Docusaurus to maintain the entire layout and styling as these stuff are hard to make improvements without breaking existing users' code.
-  - Use a module bundler like webpack
-  - Rearchitect architecture to introduce hooks into the development and build phase so that a plugin system is possible.
+- v2 should be responsible for documentation content, routing, translation and versioning, leaving layout and styling to the end user.
+  - It's not a good idea for Docusaurus to maintain the entire layout and styling as these stuff are hard to make improvements without breaking existing users' code.
+- Rearchitect architecture to introduce hooks into the development and build phase so that a plugin system is possible.
+- Use a module bundler like webpack
+
+# discuss
+
+- ## Docusaurus v1 was just simple HTML output, while v2 is a React SPA.
+- https://twitter.com/sebastienlorber/status/1389128918028931074
+  - v2 has lower lighthouse score, but I don't think this tool is fair for many reasons, and v2 users are happy with the v2 UX.
+- We'll benefit from React innovations sooner or later, and Docusaurus can almost work if you disable the JS (ie React as non-blocking progressive enhancement)

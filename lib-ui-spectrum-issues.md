@@ -18,6 +18,7 @@ modified: '2021-04-12T18:07:46.180Z'
 
 - ## watching
 - [Allow disabled menu items to be focused](https://github.com/adobe/react-spectrum/issues/1696)
+- [why textfield onChange does not receive an event?](https://github.com/adobe/react-spectrum/discussions/1884)
 
 - ## [Make onChange event handler accept standard event object as argument](https://github.com/adobe/react-spectrum/issues/1860)
 - I think the problem is that there isn't always a DOM event for all change events. 

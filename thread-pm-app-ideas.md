@@ -190,7 +190,7 @@ your suggestion here
   - But I think the extra tricky part is going beyond "individual devs should do local-first" to "we should have a cross-app local-first FS"
 - I believe that future is possible with event sourcing. @todoist somewhat done this with their sync API.
 - As long as we have:
-  - websocket / web etc
+  - websocket/web etc
   - ordered list of events 
   - SDK that convert events to data
 

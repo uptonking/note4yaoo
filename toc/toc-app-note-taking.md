@@ -15,6 +15,11 @@ modified: '2020-10-22T10:03:50.526Z'
 
 # popular
 
+- https://github.com/gzuidhof/starboard-notebook
+  - https://starboard.gg/
+  - /633Star/MPLv2/202005/ts
+  - In-browser literal notebook runtime used in Starboard.
+
 - https://github.com/notable/notable
   - /16.4kStar/MIT |AGPLv3/202007/ts
   - https://notable.md/

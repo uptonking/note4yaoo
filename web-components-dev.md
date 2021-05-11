@@ -13,7 +13,8 @@ modified: '2021-01-01T18:24:23.850Z'
   - web标准方案，浏览器提供实现的runtime
 
 - web components cons
-  - 只提供了组件组成的结构，没有解决前端经典问题 keep dom in sync with state/data，需自己实现
+  - 只提供了组件组成的结构，没有解决前端经典问题
+    - keep dom in sync with state/data，需自己实现
   - 提供的template/slot模版不够强，没有传统template engine的变量替换和控制流
     - 不适合用来split large html
   - 现在(202101)仍然没有提出ssr的标准方案，可选方案有Declarative Shadow DOM

@@ -9,6 +9,9 @@ modified: '2021-05-01T13:33:22.431Z'
 
 # guide
 
+- related products
+  - docusaurus
+
 - ## [如何看待美团效仿亚马逊，内部汇报拒用 PPT 而改用 Word?](https://www.zhihu.com/question/340219070/answers/updated)
 - 拒用PPT，就是减少形式主义，把更多的精力投入到工作本身
 - 近日，PPT遭多家名企抵制

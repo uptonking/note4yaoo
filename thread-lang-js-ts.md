@@ -20,6 +20,16 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## I wanted a way to extend/override an object's properties and type without changing its referential identity
+- https://twitter.com/tannerlinsley/status/1391786858619699203
+  - I want to be able to enforce identity consistency, but allow for type changes
+- That pattern works very well with `Object.assign` .
+  - Or you go for the "internal signature, external signature" shizophrenia by using an overload signature.
+- If that's really all you want, might as well just use `Object.assign` directly.
+- Maybe just adding a dynamic key to the thing object which can then be assigned any value you want? 
+  - `[key]: [value]` .
+- use `as` to force conversion
+
 - ## I can't say this for *every* situation, but I get this feeling that setting default generics in @typescript has bitten me in behind more often than it has helped. 
 - https://twitter.com/tannerlinsley/status/1390780257897115649
   - It might have *felt* good at first, but I swear it causes so many issues later on.

@@ -9,6 +9,14 @@ modified: '2021-04-24T15:07:50.479Z'
 
 # repeat
 
+# preact web components
+
+- ## Why I Chose Preact for my Latest Project
+- https://dev.to/muhimasri/why-i-chose-preact-for-my-latest-projectsharing-my-experience-working-with-preact-on-my-latest-javascript-project-48h
+- Unlike React, Preact uses the browser’s native addEventListener for handling events internally so it can listen to native DOM events dispatched from Custom Elements. 
+  - Also, it has a special approach to know when to pass data to Custom Elements as either properties or attributes.
+- you can use preact-custom-element to turn any Preact component into a Web Component!
+
 - ## Preact works with both React and Web Component toolkits.
 - https://twitter.com/munawwarfiroz/status/1378223550226653185
 - We've been working on the second half of the rewrite of Preact's renderer. 

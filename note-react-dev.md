@@ -12,33 +12,31 @@ modified: '2020-07-14T10:38:48.217Z'
 
 - react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
-  - 发展方向：jquery > querySelector, react > web components
+  - trending：jquery > querySelector, react > web components
 - react-style-guide
   - create-react-app
   - airbnb react style guide
 
-- react-competitors
-  - vue/angular/web-components
-  - react-like/alternatives: preact, inferno, rewrite
+- react-like/alternatives: preact, inferno, rewrite
   - lit-html/hyperhtml
 
 - react features
-  - 函数式的组件架构
-    - 在组件层解决更I新dom与状态数据一致的问题(keep dom in sync with state)
-      - 这是前端框架都需考虑的问题，web components标准没有涉及，需自己实现
-    - 复用组件模块更简单，写法上只需一个jsx
-      - 传统组件需要先写html元素标签，再引入js操作元素
-    - 组件易复用，关注点分离，local state
-    - 组件可组合，函数更适合扩展到更多规模
-  - 单向数据流
-    - 思路更清晰，容易定位和调试
-  - 声明式的组件
-    - 由框架隐藏底层操作细节，降低开发复杂度
-    - 由框架操作底层dom更新，组件代码更关注业务操作，更简单清晰，更适合大规模
-  - 虚拟DOM结构
-    - dom操作进行优化的空间，如Concurrent Mode，只更新必须变化的部分
-    - 实现跨平台
-  - all in js
+- 函数式的组件架构
+  - 在组件层解决更I新dom与状态数据一致的问题(keep dom in sync with state)
+    - 这是前端框架都需考虑的问题，web components标准没有涉及，需自己实现
+  - 复用组件模块更简单，写法上只需一个jsx
+    - 传统组件需要先写html元素标签，再引入js操作元素
+  - 组件易复用，关注点分离，local state
+  - 组件可组合，函数更适合扩展到更多规模
+- 单向数据流
+  - 思路更清晰，容易定位和调试
+- 声明式的组件
+  - 由框架隐藏底层操作细节，降低开发复杂度
+  - 由框架操作底层dom更新，组件代码更关注业务操作，更简单清晰，更适合大规模
+- 虚拟DOM
+  - dom操作进行优化的空间，如Concurrent Mode，只更新必须变化的部分
+  - 实现跨平台
+- all in js
 
 - why react components
   - 核心优点：非常丰富的生态与扩展，同时具有良好的性能

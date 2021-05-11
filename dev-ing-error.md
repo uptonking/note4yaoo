@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './v4' is not defined by "exports
+  - https://github.com/uuidjs/uuid/issues/444
+  - I fixed it by running `npm ci`
+
 - Warning for 'exhaustive-deps' keeps asking for the full 'props' object instead of allowing single 'props' properties as dependencies
   - https://github.com/facebook/react/issues/16265
   - The problem is Typescript's discriminated unions. With destructuring we have to null-check everything.

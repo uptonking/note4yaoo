@@ -12,7 +12,7 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/react-bootstrap/react-bootstrap
   - Bootstrap components built with React
   - more-bs-react
-    - https://github.com/reactstrap/reactstrap
+    - https://github.com/reactstrap/reactstrap /inactive
 - https://github.com/uxsolutions/bootstrap-datepicker
   - A datepicker for twitter bootstrap
 - https://github.com/wenzhixin/bootstrap-table

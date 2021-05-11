@@ -10,23 +10,24 @@ modified: '2021-04-11T17:42:26.580Z'
 # prospect-garden-design-in-action
 
 - features
-  - built for datable and documentation products
-    - 参考文档编辑器网站的设计，很多页面背景是灰蓝色，文档背景是纯白色
-  - framework agnostic
-  - themeable components following the Theme Specification
-    - maintain consistency with constraint-based design
-  - playful with pluggable extensions
+  - framework agnostic kept in mind [WIP]
+  - themeable components ~~following the Theme Specification(maintain consistency with constraint-based design)~~
+  - fully customizable, built on top of headless react-aria
+  - choices
+    - playful with pluggable extensions
+    - ~~built for~~ better datable and documentation experience
+      - 参考文档编辑器网站的设计，很多页面背景是灰蓝色，文档背景是纯白色
 
 - packages
-  - @pgd/design-tokens
-  - @pgd/css
-  - @pgd/components-react
-  - @pgd/components-react-lab
-    - lit-html: to enable a framework-agnostic subset of reactive controller to work across frameworks.
-  - @pgd/components-webgl(r3f)
+  - @pgd/design-tokens: across platform kept in mind
+  - @pgd/css: themeable
+  - @pgd/components-react: headless
+  - @pgd/components-react-lab: experimental latest react
+  - @pgd/components-react-ina11y: with smaller bundle size
+  - @pgd/web-components: lit-html/preact-custom-element
+  - @pgd/components-webgl: r3f/babylonjs
   - more
     - @pgd/design-system-site
-    - @pgd/web-components
 
 - css
   - 主题样式实现一套css，再实现一套css in js

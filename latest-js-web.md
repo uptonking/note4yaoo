@@ -7,9 +7,11 @@ modified: '2020-09-26T12:52:33.493Z'
 
 # latest-js-web
 
-- To make vanillajs great again
+- ~~make vanillajs great again~~
 
 # latest-web
+
+- [2021前端会有什么新的变化？](https://www.zhihu.com/question/428128531/answers/updated)
 
  
 

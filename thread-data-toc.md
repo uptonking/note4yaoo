@@ -9,6 +9,9 @@ modified: '2021-01-31T08:40:11.675Z'
 
 # dataseeds
 
+- https://www.data-is-plural.com/
+  - a weekly newsletter of useful/curious datasets
+
 # pieces
 
 - ## 
