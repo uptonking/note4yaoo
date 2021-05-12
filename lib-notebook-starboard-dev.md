@@ -23,6 +23,12 @@ modified: '2021-05-06T09:44:07.629Z'
   - /633Star/MPLv2/202005/ts
   - In-browser literal notebook runtime used in Starboard.
 
+# [An Open Source ObservableHQ notebook environment](https://starboard.gg/gz/open-source-observablehq-nfwK2VA)
+
+- Large parts of Observable are open source, but not everything. 
+  - In particular the editor and compiler are closed which means that you have to use the ObservableHQ web app to author notebooks. 
+  - You can however embed the resulting notebook on your own website.
+
 # [Starboard – Fully in-browser literate notebooks like Jupyter Notebook](https://news.ycombinator.com/item?id=24029002)
 
 - Cell-by-cell notebooks like Jupyter are great for prototyping, explaining and exploration, but their dependence on a Python server (with often undocumented dependencies) limits their ability to be shared and remixed. 

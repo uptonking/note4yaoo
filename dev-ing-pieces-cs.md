@@ -9,7 +9,44 @@ modified: '2021-03-29T19:29:56.558Z'
 
 # pieces
 
-## linux的硬链接与软链接
+- ## [Thunk 是什么？](https://zhuanlan.zhihu.com/p/103908179)
+- 我们在很多文章或者第三方库中均见到过 Thunk 这个词出现。但其含义着实难以理解
+- 在编程语言刚起步的时候，有不同的求值策略，即函数的参数该在什么时候求值。
+  - 其中一种叫 传值调用（call by value）， 顾名思义就是在函数被调用前其参数的值就已经被编译器给算好了，每次调用函数都会用同样的参数值。
+  - 另一种策略叫 传名调用（call by name），也就是只有当函数真正被调用的时候才去计算参数的值（惰性求值），在此过程中编译器其实已经把惰性求值的过程包装成了一个名叫 Thunk 辅助函数，函数被调用时，先调这个辅助函数求出参数值，再进入函数主体。这也许是最早 Thunk 这个概念被使用的时候了。
+- Thunk 是一类函数的别名，主要特征是对另外一个函数添加了一些额外的操作，类似装饰器。
+  - 其主要用途为延迟函数执行（惰性求值）或者给一个函数执行前后添加一些额外的操作。
+- 对于我们开发者来说我们基本不用关心函数参数是怎么求值的，一般我们使用的编程语言都已经决定好了。
+  - 比如JavaScript，就是用的 传值调用 策略。
+
+``` JS
+// ThunkActionCreator
+function fetchUser(id) {
+  // 返回的这个函数既是一个 Thunk, 或者叫 ThunkAction
+  return async ({ dispatch }) => {
+    // 额外的异步API调用
+    const user = await api.getUser(id);
+    // 此时才真正dispatch action
+    dispatch({ type: 'UPDATE_USER', payload: user });
+  }
+}
+```
+
+``` js
+const util = require('util');
+const fs = require('fs');​
+// stat函数是一个 Thunk
+// - 只有执行stat的时候才会执行真正额fs.stat函数
+// - stat还把fs.stat包装成了具有promise接口的函数
+const stat = util.promisify(fs.stat);
+stat('.').then((stats) => {
+  // Do something with `stats`
+}).catch((error) => {
+  // Handle the error.
+});
+```
+
+- ## linux的硬链接与软链接
 
 - 现代操作系统为解决信息能独立于进程之外被长期存储引入了文件，文件作为进程创建信息的逻辑单元可被多个进程并发使用
 - Linux与其他类UNIX系统一样并不区分文件与目录：目录是记录了其他文件名的文件

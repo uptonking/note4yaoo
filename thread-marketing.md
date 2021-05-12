@@ -17,7 +17,17 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## The whole open source model of relying on donations from individuals, and to a much lesser extent, companies, is really problematic. 
+- https://twitter.com/devongovett/status/1392201493596446722
+  - The pandemic has shown us that it's not sustainable
+  - even the most successful projects like webpack and Babel have seen huge declines in funding.
+- Building companies around open source can also be problematic though. 
+  - It's hard to say when the VC money will run out, 
+  - or the company will need to pivot to become profitable in a way that hurts open source users.
+- An alternative model is for companies looking to improve a project to hire contributors and pay them to work on it together with members of the project from other companies. 
+  - The project can't be owned by any individual company for this to work – all parties need to be equal.
+
+
 
 - ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 
 - https://twitter.com/jaredpalmer/status/1386411683074101248

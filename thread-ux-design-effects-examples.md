@@ -9,6 +9,12 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
+
+- ## I‘ve made a mini playground project to walk you through our new Variant updates. 
+- https://twitter.com/benjaminnathan/status/1392486734311694342
+  - https://t.co/0PYB9pApAA?amp=1
+  - 组件背景会自动变宽或变窄
+
 - ## Inspired by @peduarte I also made changes to the code highlight UI: muted color 
 - https://twitter.com/pveyes/status/1391641615295385603
   - I'm still keeping highlight color & indicator on hover because main use case is exploring code through twoslash
