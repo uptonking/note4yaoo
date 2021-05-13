@@ -23,11 +23,37 @@ modified: '2021-05-06T09:44:07.629Z'
   - /633Star/MPLv2/202005/ts
   - In-browser literal notebook runtime used in Starboard.
 
+# [About Why Starboard is worth building](https://starboard.gg/about)
+
+- Starboard's unique design decisions
+  - Browser-native: 
+    - there is no bridge required between the server and the browser like in Jupyter notebook as everything is in-browser. 
+  - Zero-setup: 
+    - there is zero setup and you don't need a server running to serve your notebook. 
+    - Everything is a static file.
+  - Portable: 
+    - Starboard notebooks are stored on disk as plaintext files for maximum portability. 
+  - Hackable: 
+    - Different than any other notebook system the Starboard editor itself runs inside the sandbox. 
+    - The code you write in the notebook can alter the notebook itself: 
+    - you can dynamically create new cell types, change the CSS styles, or anything really.
+
+- Starboard vs Starboard Notebook
+  - Starboard Notebook is the actual notebook runtime with the editor (the code cells, outputs and buttons).
+  - This website, Starboard, embeds this editor and allows you to save and share notebooks (allowing you to share by just a link) and will in the future have some social features (stars, upvotes, followers, ...). Think of it as a publishing platform for your notebooks.
+  - A somewhat correct analogy: If Starboard was GitHub, Starboard Notebook would be Git.
+
 # [An Open Source ObservableHQ notebook environment](https://starboard.gg/gz/open-source-observablehq-nfwK2VA)
 
 - Large parts of Observable are open source, but not everything. 
   - In particular the editor and compiler are closed which means that you have to use the ObservableHQ web app to author notebooks. 
   - You can however embed the resulting notebook on your own website.
+- Starboard is an open source in-browser notebook system. 
+  - Think Jupyter Notebook but re-imagined for the browser.
+- Starboard allows you to define your own cell types at runtime, which is how the plugin adds `Observable` cell support. 
+  - Observable cells are all about reactivity, try changing the sliders below.
+- Starboard is a base notebook runtime that runs entirely in the browser sandbox which can be extended dynamically.
+- This plugin wouldn't be possible without the unofficial-observablehq-compiler package. This package provides an alternative implementation for the closed source compiler. (MIT licensed)
 
 # [Starboard – Fully in-browser literate notebooks like Jupyter Notebook](https://news.ycombinator.com/item?id=24029002)
 
@@ -62,35 +88,3 @@ modified: '2021-05-06T09:44:07.629Z'
   - I find having control over your data and delegating access to various apps to be a nice flow when implemented well
   - It's not a silver bullet. For larger data you can't afford to download it every time. 
 
-# [changelog](https://github.com/gzuidhof/starboard-notebook/blob/master/CHANGELOG.md)
-
-- 0.9.0-202105
-  - The iframe now resizes to at least be able to show dropdown menus.
-  - Update to Bootstrap version 5.0.0.
-  - Update to Monaco version 0.23.0.
-- 0.8.0-202103
-  - Markdown cells now have their own WYSIWYG editor (as well as a plaintext editor for advanced users).
-  - A newly inserted cell now defaults to Markdown instead of Javascript when no cells are present.
-  - Clicking anywhere outside of a markdown cell stops its edit mode.
-- 0.7.20-202103
-  - Introduce ProseMirror as the default editor for Markdown content. 
-    - Note that it isn't enabled yet for Markdown editors by default, it still needs some love (in particular it needs KaTeX support)
-    - StarboardContentEditor element is exposed in the exports for plugins to use.
-- 0.7.0-202011
-  - This update features a large style rework - the notebook's actual content is now capped in width. 
-  - The global styles are now more easily changed through CSS custom variables properties.
-  - Added emoji support in Markdown
-- 0.6.0-202010
-  - update starboard-notebook switches to a new format which is more similar to Jupytext's formats.
-  - The old format still works (but will be phased out) 
-  - A cell's properties are now nested under cell.metadata.properties instead of cell.properties.
-- 0.5.2-202010
-  - CodeMirror is now the default editor which loads without user input.
-  - The chosen editor is now persisted (in LocalStorage).
-  - Enable Python support in standalone notebooks.
-- 0.4.0-202008
-  - A large refactor: 
-    - Starboard Notebook is now built around a single Runtime that allows for metaprogramming and plugin support. 
-    - This is a single source of truth for the state and functionality of a notebook. It is exposed as a global variable `runtime`.
-- 0.2.2-202008
-  - first post

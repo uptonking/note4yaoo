@@ -7,6 +7,23 @@ modified: '2021-05-11T19:25:57.270Z'
 
 # lib-notebook-starboard-community
 
+# guide
+
+- ## Google docs is apparently moving to a canvas based editor. 
+- https://twitter.com/devongovett/status/1392597989768585218
+  - This is horrible for accessibility and a great example of what *not* to do. 
+  - I’m surprised no one flagged this
+- They could have worked with the Chrome team to help improve standards where they are lacking and make the web better for all of us, 
+  - but instead decided to reimplement the browser themselves. Very disappointing.
+  - Well, to be fair, the old one was also very broken. But at least it had the potential for improvement. Switching to canvas kinda prevents that.
+- Would you say that implementing web apps with the canvas API no-go?Are there other downfalls to be aware of? (aside of a11y problems)
+  - Text selection, copy/paste, find in page, spell checking, dictionary, system wide text replacement/auto correct, etc would all need to be rewritten and would not integrate as expected with the system.
+
+- ## [Google Docs will now use canvas based rendering: this may impact some Chrome extensions](https://workspaceupdates.googleblog.com/2021/05/Google-Docs-Canvas-Based-Rendering-Update.html)
+- We’re updating the way Google Docs renders documents. 
+  - we’ll be migrating the underlying technical implementation of Docs from the current `HTML-based` rendering approach to a `canvas-based` approach 
+  - to improve performance and improve consistency in how content appears across different platforms. 
+
 # discuss
 
 - ## 

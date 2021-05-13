@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-dev
-tags: [pattern, rxjs]
+tags: [observer, pattern, rxjs]
 created: '2020-12-10T10:02:32.636Z'
-modified: '2020-12-14T11:23:17.570Z'
+modified: '2021-05-13T04:02:49.797Z'
 ---
 
 # lib-pattern-rxjs-dev
@@ -43,6 +43,8 @@ modified: '2020-12-14T11:23:17.570Z'
 
 - redux-observable
   - An Epic is a function which takes a stream of actions and returns a stream of actions. Actions in, actions out.
+
+- [RxJS的另外四种实现方式](https://zhuanlan.zhihu.com/p/45005457)
 
 # pieces
 
