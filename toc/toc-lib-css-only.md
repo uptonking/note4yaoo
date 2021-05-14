@@ -24,6 +24,14 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/asciimoo/cssplot
   - Simple, css-only plotting.
 
+- https://github.com/css-doodle/css-doodle
+  - https://css-doodle.com/
+  - A web component for drawing patterns with CSS.
+- https://github.com/css-doodle/shapes
+  - https://css-doodle.com/shapes/?#collection
+  - A tool for discovering new CSS polygon shapes generated with css-doodle `@shape` function and mathematical expressions. 
+  - The shape is defined with polar equations or cartesian equations.
+
 - https://github.com/saeedalipoor/icono
   - One tag One icon, no font or svg, Pure CSS
 - https://github.com/astrit/css.gg

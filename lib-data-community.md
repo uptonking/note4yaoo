@@ -9,6 +9,8 @@ modified: '2021-05-13T16:11:33.402Z'
 
 # guide
 
+- [Arquero Cookbook](https://observablehq.com/@uwdata/arquero-cookbook)
+
 # discuss
 
 - ## The state of data analysis

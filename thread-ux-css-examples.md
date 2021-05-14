@@ -13,6 +13,17 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I built a 4-bit binary adder out of html & css
+- https://twitter.com/LillianKodi/status/1392962911258267659
+  - https://codepen.io/lillian-kodi/full/LYWNZvQ
+- I didn't even know you could program with css.
+
 - ## CSS Full-Bleed Scroll-Snapping Carousel with visible Overflow
 - https://twitter.com/bramusblog/status/1390421794365001732
   - [CSS Full-Bleed Scroll-Snapping Carousel with Centered Content and Visible Overflow](https://www.bram.us/2021/05/06/css-full-bleed-scroll-snapping-carousel-with-visible-overflow/)

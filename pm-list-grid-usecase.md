@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-usecase
-tags: [grid, list, pm, usecase]
+tags: [grid, list, pm, pmgr, usecase]
 created: '2020-09-26T08:31:08.179Z'
-modified: '2020-10-22T13:34:14.848Z'
+modified: '2021-05-14T14:34:59.116Z'
 ---
 
 # pm-list-grid-usecase

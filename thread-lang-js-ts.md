@@ -24,7 +24,8 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## PSA: Using Node.js 16+ and want to compare the runtime performance of two functions ... Use `timerify` and `createHistogram` !
+- https://twitter.com/jasnell/status/1392589770140774402
 
 - ## I've figured out my primary reason for choosing types before interfaces with TypeScript. 
 - https://twitter.com/kentcdodds/status/1392678508954980353

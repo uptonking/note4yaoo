@@ -1,8 +1,8 @@
 ---
 title: pm-noter
-tags: [note-taking, pm]
+tags: [note-taking, pm, pmgr]
 created: '2020-11-24T07:44:16.296Z'
-modified: '2020-11-24T07:46:00.967Z'
+modified: '2021-05-14T14:35:09.254Z'
 ---
 
 # pm-noter

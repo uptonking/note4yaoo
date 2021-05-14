@@ -1,11 +1,11 @@
 ---
-title: lib-office-latest-announcement
-tags: [announcement, documentation, latest, office]
+title: lib-office-latest-industry
+tags: [documentation, latest, office]
 created: '2021-05-13T02:38:54.706Z'
-modified: '2021-05-13T02:50:03.275Z'
+modified: '2021-05-14T18:47:24.054Z'
 ---
 
-# lib-office-latest-announcement
+# lib-office-latest-industry
 
 # guide
 

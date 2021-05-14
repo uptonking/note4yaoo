@@ -18,6 +18,10 @@ modified: '2021-01-17T06:18:28.855Z'
   - https://github.com/popperjs/react-popper
   - https://popper.js.org/react-popper/
   - It will position any UI element that "pops out" from the flow of your document and floats near a target element
+- react-atmosphere /6Star/MIT/202104/ts
+  - https://github.com/paulshen/react-atmosphere
+  - https://react-atmosphere.netlify.com/
+  - React building blocks for UI layers (tooltips, dialogs, etc).
 - layerJS /MIT/1.8kStar/202002
   - https://github.com/layerJS/layerJS
   - https://layerjs.org/

@@ -1,11 +1,11 @@
 ---
-title: toc-product-exploring
-tags: [exploring, pm, product, toc]
+title: toc-saas-exploring
+tags: [exploring, pm, toc]
 created: '2020-05-03T08:34:20.399Z'
-modified: '2020-11-13T07:36:50.247Z'
+modified: '2021-05-14T14:30:22.685Z'
 ---
 
-# toc-product-exploring
+# toc-saas-exploring
 
 # exploring
 

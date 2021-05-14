@@ -1,11 +1,11 @@
 ---
-title: toc-repos-js-ts
+title: toc-repos-lang-js-ts
 tags: [repos, toc, typescript]
 created: '2020-09-28T02:11:01.912Z'
-modified: '2021-01-12T18:50:09.195Z'
+modified: '2021-05-14T15:04:55.849Z'
 ---
 
-# toc-repos-js-ts
+# toc-repos-lang-js-ts
 
 # focus
 

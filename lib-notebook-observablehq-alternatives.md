@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-alternatives
-tags: [notebook, observable]
+tags: [alternatives, notebook, observablehq]
 created: '2021-05-13T04:01:17.658Z'
-modified: '2021-05-13T04:21:46.377Z'
+modified: '2021-05-14T14:46:37.026Z'
 ---
 
 # lib-notebook-observablehq-alternatives
@@ -13,25 +13,6 @@ modified: '2021-05-13T04:21:46.377Z'
   - jupyter
 
 # observable notebook alternatives
-
-## Dataflow
-
-- https://github.com/asg017/dataflow
-  - https://alexgarcia.xyz/dataflow/docs/
-  - A self-hosted Observable notebook editor, with support for FileAttachments, Secrets, custom standard libraries, and more!
-
-- Observable notebooks are reactive, JavaScript-based computational notebooks that run inside your browser.
-- Dataflow is one of the first fully open-sourced and fully featured Observable notebook editors
-- Dataflow notebooks are files on your computer, in the form of `.ojs` files. 
-- A single `.ojs` file is analog to a single Observable notebook, and `.ojs` files can import from other .ojs files.
-  - dataflow run my-notebook.ojs will start a dev server at localhost:8080 that shows a live rendered look at a notebook defined in my-notebook.ojs
-  - Any update you make to the my-notebook.ojs file from any text editor will instantly update.
-  - Dataflow can also compile these notebooks with dataflow compile to plain JavaScript ES modules, and generate HTML files that run a notebook locally.
-- Since Dataflow notebooks aren't ran in a sandboxed iframe, that means you can control every aspect to how a notebook looks.
-  - Dataflow also offers easy access to your filesystem with file attachments. 
-  -  Instead manually uploading files, you can simple include a configuration comment in a notebook to the path of your FileAttachment, and Dataflow will be instantly available 
-- Finally, since Dataflow is just another service that runs on localhost:8080, you can build your own APIs and webservices
-- This is only possible by the new beta version of the unofficial-observablehq-compiler
 
 ## [Jupyter Notebook](https://jupyter.org/)
 
@@ -114,5 +95,5 @@ modified: '2021-05-13T04:21:46.377Z'
 # observable-extensions
 
 - https://github.com/asg017/unofficial-observablehq-compiler
-  - An unoffical compiler for Observable notebooks (glue between the Observable parser and runtime)
+  - An unofficial compiler for Observable notebooks (glue between the Observable parser and runtime)
   - This compiler will compile "observable syntax" into "javascript syntax". 

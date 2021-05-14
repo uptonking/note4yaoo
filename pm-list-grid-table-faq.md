@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-table-faq
-tags: [faq, grid, list, pm, product, table]
+tags: [faq, grid, list, pm, pmgr, table]
 created: '2020-08-18T12:59:03.811Z'
-modified: '2020-11-16T12:43:29.621Z'
+modified: '2021-05-14T14:34:45.776Z'
 ---
 
 # pm-list-grid-table-faq

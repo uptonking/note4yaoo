@@ -19,6 +19,8 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## 
+
 - ## Better Image Overlays
 - https://twitter.com/d__raptis/status/1392511897589669891
   - Avoid plain text over images. Use fading gradient overlays to strengthen the contrast instead. 

@@ -7,6 +7,13 @@ modified: '2021-02-09T19:27:07.664Z'
 
 # thread-blogger-stars  
 
+# d3-notebook
+
+- Alex Garcia
+  - https://twitter.com/agarcia_me
+  - artwork
+  - https://github.com/asg017/unofficial-observablehq-compiler
+
 # viz
 
 - 沈毅
@@ -29,7 +36,7 @@ modified: '2021-02-09T19:27:07.664Z'
   - [GIS之闲谈（四）——明年三件事+GIS学习路线+择业_202012](https://www.zhihu.com/zvideo/1326297199974490112)
     - pr优化教学视频 + gis常用库讲座 + 智慧水务
 - 彭金金
-  - 天地图，iview，mapbox
+  - foxgis-server-lite，天地图，mapbox
   - https://github.com/jingsam
   - https://jingsam.github.io/archives/
 

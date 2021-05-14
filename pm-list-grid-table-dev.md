@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-table-dev
-tags: [dev, grid, list, product, table]
+tags: [dev, grid, list, pmgr, table]
 created: '2020-07-13T13:34:22.833Z'
-modified: '2020-10-22T13:34:07.553Z'
+modified: '2021-05-14T14:34:40.145Z'
 ---
 
 # pm-list-grid-table-dev

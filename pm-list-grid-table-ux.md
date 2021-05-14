@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-table-ux
-tags: [grid, table, ux]
+tags: [grid, pmgr, table, ux]
 created: '2020-07-30T16:42:11.432Z'
-modified: '2020-11-16T12:43:01.532Z'
+modified: '2021-05-14T14:34:55.383Z'
 ---
 
 # pm-list-grid-table-ux

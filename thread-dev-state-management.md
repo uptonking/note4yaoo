@@ -47,7 +47,14 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
-- ## 
+- ## My favourite part of the XState API doesn't involve state machines - it's the invoked callback.
+- https://twitter.com/mpocock1/status/1392947622038720517
+  - They're concise, type-safe, and exceptionally flexible. If you aren't using them - seriously, try it.
+- I wonder if XState is TOO flexible. Here you are describing use cases that I feel could be solved in 10 different ways, WITHIN the XState paradigm and I think figuring out what the right solution is, could be really fatiguing(令人精疲力竭的，令人身心交瘁的).
+  - We should offer guides on use cases, example integrations... There is so much ground we can cover.
+- Interesting. Why the double function call as the API? Instead of: `({ context, event, send, onReceive }) => { }` .
+  - Because (context, event) => something is the general signature for an invoke creator
+- "callback" is legacy node for Promise, which is the standard. Not that I like it, I would rather prefer a lazy promise like Fluture.
 
 - ## What is the best way to continuously make requests on react?
 - https://twitter.com/LauraViglioni/status/1391083143474647041

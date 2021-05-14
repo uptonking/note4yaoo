@@ -1,8 +1,8 @@
 ---
 title: pm-editor-builder
-tags: [builder, editor, pm, product]
+tags: [builder, editor, pm, pmgr]
 created: '2020-08-08T19:39:58.351Z'
-modified: '2021-04-19T15:09:12.890Z'
+modified: '2021-05-14T14:33:26.559Z'
 ---
 
 # pm-editor-builder

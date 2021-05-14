@@ -1,11 +1,11 @@
 ---
-title: toc-repos-solutions-common
-tags: [repos, solutions, toc]
+title: toc-repos-solutions-devops
+tags: [devops, repos, solutions, toc]
 created: '2020-10-05T11:00:14.905Z'
 modified: '2020-12-12T19:01:56.749Z'
 ---
 
-# toc-repos-solutions-common
+# toc-repos-solutions-devops
 
 # devops
 

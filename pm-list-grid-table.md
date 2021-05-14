@@ -1,9 +1,9 @@
 ---
 title: pm-list-grid-table
-tags: [grid, list, pm, product, table]
+tags: [grid, list, pm, pmgr, table]
 favorited: true
 created: '2019-08-29T01:24:09.168Z'
-modified: '2020-10-22T13:33:54.313Z'
+modified: '2021-05-14T14:34:31.493Z'
 ---
 
 # pm-list-grid-table
