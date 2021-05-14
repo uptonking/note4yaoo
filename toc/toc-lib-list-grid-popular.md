@@ -330,6 +330,13 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
 
+# list-grid-with-svg 
+
+- https://github.com/analyzer2004/svgtable
+  - https://observablehq.com/@analyzer2004/svgtable
+  - /10Star/NALic/202011/js/d3
+  - An SVG Table with sticky rows, columns and many other features.
+
 # list-grid-with-table-tr-td
 
 - handsontable 6.2.2 /MIT/13.8kStar/202007/js

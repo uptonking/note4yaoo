@@ -32,6 +32,9 @@ modified: '2021-02-05T14:01:09.420Z'
 - https://zenn.dev/matamatanot/articles/7572dccafbc96d
   - 页面背景灰蓝，卡片背景纯白，很友好
 
+- https://www.magicpattern.design/
+  - 页面背景灰色，卡片背景白色
+
 # themes-in-colors
 
 - blue

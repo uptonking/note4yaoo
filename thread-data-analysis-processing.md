@@ -1,11 +1,11 @@
 ---
-title: thread-data-analysis-compute
-tags: [compute, data-analysis, thread]
+title: thread-data-analysis-processing
+tags: [compute, data-analysis, data-processing, thread]
 created: '2021-03-09T08:37:07.404Z'
-modified: '2021-03-09T08:37:38.482Z'
+modified: '2021-05-13T16:12:47.773Z'
 ---
 
-# thread-data-analysis-compute
+# thread-data-analysis-processing
 
 # pieces
 

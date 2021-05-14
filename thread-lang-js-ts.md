@@ -20,6 +20,19 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I've figured out my primary reason for choosing types before interfaces with TypeScript. 
+- https://twitter.com/kentcdodds/status/1392678508954980353
+  - It's because interface augmentation feels like mutability whereas you can't do that with types and must do unions instead which feels like immutability.
+  - Type unions are sorta like: NewType = {...a, ...b}
+  - Interface augmentation is sorta like: Object.assign(a, b)
+  - They both have their use cases, but I prefer the union over augmentation, so I start with types and only use interfaces when I need them.
+
 - ## I wanted a way to extend/override an object's properties and type without changing its referential identity
 - https://twitter.com/tannerlinsley/status/1391786858619699203
   - I want to be able to enforce identity consistency, but allow for type changes

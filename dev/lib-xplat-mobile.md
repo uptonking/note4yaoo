@@ -7,6 +7,8 @@ modified: '2021-05-13T03:09:56.491Z'
 
 # lib-xplat-mobile
 
+# guide
+
 - 跨平台技术选型参考
   - 要不要做app，现在app的需求减少了，连做web的也减少了，小程序正流行
   - 有多少业务计算会放到移动端而不是服务端，对应的框架库是否丰富
@@ -140,18 +142,3 @@ modified: '2021-05-13T03:09:56.491Z'
     - 放弃Native API使用Skia作为图形后端会不会有些大胆？不会的，人家说了：Google Chrome, Android, Flutter, Firefox Canvas, Xamarin, LibreOffice 都有在用，我用怎么了？
 
 # ios
-
-# discuss
-
-- ## flutter为什么不使用kotlin作为开发语言？
-- https://www.zhihu.com/question/378389226/answers/updated
-- dartvm在设计时候就没想过做成一个通用的虚拟机
-  - 这个跟jvm不一样，jvm从一开始就设计成兼容性比较强的虚拟机，所以jvm上有很多语言，甚至还有脚本引擎，dartvm那个更像是一个语言引擎
-  - 安卓的dalvik就是hotspot改嘛，所以兼容kotlin简单，dartvm就要困难许多，一开始就没这么设计，谷歌也没空去做那个兼容
-
-- [Dart: Why Not a Bytecode VM?](https://fartlang.org/articles/dart-vm/why-not-bytecode.html)
-  - The biggest advantage of a bytecode VM is that it is not restricted to one input language. (JVM)
-  - Scala and F# show that a new language can be developed for an existing VM, 
-  - but it’s possible to do that without bytecode: you can compile to source. (like CoffeeScript)
-  - [Inaccuracies in "bytecode VM" article](https://groups.google.com/a/dartlang.org/g/misc/c/u_jk0906sYg)
-  - [Why not a bytecode VM in the browser?](https://www.reddit.com/r/programming/comments/nkkcm/why_not_a_bytecode_vm_in_the_browser/)

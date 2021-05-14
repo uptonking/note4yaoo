@@ -9,6 +9,11 @@ modified: '2020-10-22T10:22:55.878Z'
 
 # flowchart
 
+- mermaid /32.1kStar/MIT/202009/js
+  - https://github.com/mermaid-js/mermaid
+  - Generation of diagram and flowchart from text in a similar manner as markdown
+  - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
+
 - react-flow /2.8kStar/MIT/202103/ts
   - https://github.com/wbkd/react-flow
   - https://reactflow.dev/
@@ -64,11 +69,6 @@ modified: '2020-10-22T10:22:55.878Z'
   - A simple online flow chart editor.
 
 # uml
-
-- mermaid /32.1kStar/MIT/202009/js
-  - https://github.com/mermaid-js/mermaid
-  - Generation of diagram and flowchart from text in a similar manner as markdown
-  - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived

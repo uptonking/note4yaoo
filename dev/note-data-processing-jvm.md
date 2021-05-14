@@ -1,11 +1,11 @@
 ---
-title: note-data-compute-jvm
-tags: [compute, data, java]
+title: note-data-processing-jvm
+tags: [data, data-processing, java]
 created: '2019-10-05T05:43:13.087Z'
-modified: '2020-12-08T14:20:05.628Z'
+modified: '2021-05-13T16:11:59.456Z'
 ---
 
-# note-data-compute-jvm
+# note-data-processing-jvm
 
 # tablesaw
 

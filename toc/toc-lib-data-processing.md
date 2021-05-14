@@ -1,11 +1,11 @@
 ---
-title: toc-lib-data-compute
-tags: [compute, data, toc]
+title: toc-lib-data-processing
+tags: [data-processing, lib, toc]
 created: '2020-12-31T15:33:05.382Z'
-modified: '2020-12-31T15:33:17.149Z'
+modified: '2021-05-13T16:14:15.415Z'
 ---
 
-# toc-lib-data-compute
+# toc-lib-data-processing
 
 # data-model
 
@@ -13,9 +13,6 @@ modified: '2020-12-31T15:33:17.149Z'
   - Apache Arrow is a cross-language development platform for in-memory data. 
   - It specifies a standardized language-independent columnar memory format for flat and hierarchical data, organized for efficient analytic operations on modern hardware. 
   -  It also provides computational libraries and zero-copy streaming messaging and interprocess communication
-
-- https://github.com/wesm/feather
-  - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
 
 # data-tools
 
@@ -26,15 +23,13 @@ modified: '2020-12-31T15:33:17.149Z'
   - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
   - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
   - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
-- https://github.com/pbeshai/tidy
-  - https://pbeshai.github.io/tidy/
-  - /47Star/MIT/202102/ts
-  - 依赖d3-array, ts-toolbelt
-  - Tidy up your data with JavaScript, inspired by dplyr and the tidyverse
-  - tidy.js attempts to bring the ergonomics of data manipulation from R to javascript
-  - No wrapper classes needed — all tidy.js needs is an array of plain old-fashioned JS objects to get started. Simple in, simple out.
 
-# more
+# data-wasm
+
+- https://github.com/pyodide/pyodide
+  - https://pyodide.org/en/stable/
+  - /5.4kStar/MPLv2/202105/python
+  - Python with the scientific stack, compiled to WebAssembly.
 
 - https://github.com/finos/perspective
   - Streaming pivot visualization via WebAssembly
@@ -78,6 +73,7 @@ modified: '2020-12-31T15:33:17.149Z'
   - 从Hadoop到Spark；从HDFS到Alluxio；
     - 再到现在Arrow的出现，可以让不同计算引擎、计算库共享内存中的数据结构。
   - 从一级缓存取一个block的数据只要0.5纳秒，而从内存取一个block则需要100纳秒
+
 - [2019年大数据的发展趋势](https://zhuanlan.zhihu.com/p/81946004)
   - **趋势1：Apache Arrow和Arrow Flight的崛起**
   - Arrow定义了用于处理数据的内存列存储格式以及对应的低级别操作库，

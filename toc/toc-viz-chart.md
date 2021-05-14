@@ -14,6 +14,13 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://d3js.org/
   - bring data to life using SVG, Canvas and HTML
   - https://github.com/d3/d3-scale
+- observable-plot /17Star/ISC/202105/js
+  - https://github.com/observablehq/plot
+  - https://observablehq.com/@observablehq/plot
+  - JavaScript library to help you quickly visualize tabular data.
+  - Plot employs a layered grammar of graphics inspired by Vega-Lite, ggplot2, Wilkinson’s Grammar of Graphics, and Bertin’s Semiology of Graphics. 
+  - Plot rejects a chart typology in favor of marks, scales, and transforms.
+  - We continue to support D3 for bespoke explanatory visualization and recommend Vega-Lite for imperative, polyglot environments such as Jupyter. 
 - plotly.js /12.3kStar/MIT/202009/js
   - https://github.com/plotly/plotly.js
   - https://plotly.com/javascript/
@@ -39,54 +46,45 @@ modified: '2020-10-22T10:22:33.292Z'
   - 依赖svg2pdf.js、jspdf-yworks
   - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
 
-- observable-plot /17Star/ISC/202105/js
-  - https://github.com/observablehq/plot
-  - https://observablehq.com/@observablehq/plot
-  - JavaScript library to help you quickly visualize tabular data.
-  - Plot employs a layered grammar of graphics inspired by Vega-Lite, ggplot2, Wilkinson’s Grammar of Graphics, and Bertin’s Semiology of Graphics. 
-    - Plot rejects a chart typology in favor of marks, scales, and transforms.
-    - Plot is compatible with Observable dataflow: use inputs to control charts, and views to read chart selections
-    - We created Plot to better support exploratory data analysis in reactive, JavaScript notebooks like Observable. 
-    - We continue to support D3 for bespoke explanatory visualization and recommend Vega-Lite for imperative, polyglot environments such as Jupyter. 
-  - [Introducing Observable Plot](https://observablehq.com/@observablehq/introducing-observable-plot)
-    - With its concise and (hopefully) memorable API, Observable Plot lets you try out ideas quickly. 
-    - You can make a meaningful chart with as little as one line of code.
-    - Plot is highly configurable and supports interaction with minimal fuss through Observable dataflow. 
-    - Plot’s aim is speed and convenience. 
-    - Our hope is you’ll spend less time reading the docs, searching for snippets, and debugging — and more time asking questions of data. 
-    - Plot is informed by ten years of maintaining D3 but does not replace it. 
-    - We continue to support and develop D3, and recommend its low-level approach for bespoke explanatory visualizations and as a foundation for higher-level exploratory visualization tools. 
-    - In fact, Plot is built on D3! 
-    - Observable Plot is more akin to Vega-Lite, another great tool for exploration. 
-    - We designed Plot to pair beautifully with Observable: to leverage Observable dataflow for fluid exploration and interaction.
-    - However, Plot does not depend on Observable; use it wherever you like.
+- vega /9.2kStar/BSD/202105/js
+  - https://github.com/vega/vega
+  - https://vega.github.io/vega
+  - [Vega and D3](https://vega.github.io/vega/about/vega-and-d3/)
+  - Vega is a visualization grammar, a declarative format for creating, saving, and sharing interactive visualization designs. 
+  - With Vega you can describe data visualizations in a JSON format, and generate interactive views using either HTML5 Canvas or SVG.
+- vega-lite /3.2kStar/BSD/202105/ts
+  - https://github.com/vega/vega-lite
+  - https://vega.github.io/vega-lite/
+  - [Vega-Lite Compared with other Languages](https://vega.github.io/vega-lite/comparison)
+  - Vega-Lite provides a higher-level grammar for visual analysis that generates complete Vega specifications.
+  - It provides a concise, declarative JSON syntax to create an expressive range of visualizations for data analysis and presentation.
+  - As Vega-Lite can compile its specifications to Vega specifications, users may use Vega-Lite as the primary visualization tool 
+  - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
+  - https://github.com/vega/editor
+    - https://vega.github.io/editor/
+    - Editor/IDE for Vega and Vega-Lite
+  - https://github.com/vega/vega-geo
+    - This package has been consolidated into the vega/vega repository
 
-- carbon-charts /Apache2/156Star/202007
+- ag-charts /6.7kStar/MIT/202010/ts
+  - https://github.com/ag-grid/ag-grid
+  - https://www.ag-grid.com/javascript-charts-api-explorer/
+  - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
+- carbon-charts /156Star/Apache2/202007
   - https://github.com/carbon-design-system/carbon-charts
   - https://carbon-design-system.github.io/carbon-charts/
   - Robust dataviz framework implemented using D3 & typescript
   - 依赖d3、date-fns、@carbon/utils-position
   - 提供react/vue/angular/svelte的wrapper
-- ag-charts /6.7kStar/MIT/202010/ts
-  - https://github.com/ag-grid/ag-grid
-  - https://www.ag-grid.com/javascript-charts-api-explorer/
-  - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
 - rgraph /4Star/MIT/202104/js
   - https://github.com/heyesr/rgraph
   - https://www.rgraph.net/
   - started in 2008 and was initially canvas only.
   - Now it has support for over 60 responsive chart types across SVG and canvas
-- https://github.com/plouc/nivo
-  - https://nivo.rocks/about
-  - built on top of d3.
-  - Several libraries already exist for React d3 integration, but just a few provide server side rendering ability and fully declarative charts.
-  - Features
-    - Motion/transitions, powered by react-motion
-    - Component playground
-    - SVG charts
-    - HTML charts
-    - Canvas charts
-    - Server side rendering API
+
+- bqplot /3.1kStar/Apache2/202105/ts
+  - https://github.com/bqplot/bqplot
+  - a 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics.
 
 # geo-charts
 
@@ -124,22 +122,30 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
   - Financial lightweight charts built with HTML5 canvas
   - paid: Technical Analysis Charts, Trading Platform
-- chart-parts /MIT/500Star/202007
+- chart-parts /500Star/MIT/202007/ts/low-active
   - https://github.com/microsoft/chart-parts
   - https://microsoft.github.io/chart-parts/documentation/
   - A flexible, React-friendly, Grammar of Graphics for data visualization
+- charticulator /549Star/MIT/202105/ts
+  - https://github.com/microsoft/charticulator
+  - Interactive Layout-Aware Construction of Bespoke Charts
+  - a new charting tool that allows you to design charts by interactively specifying constraints.
+  - https://github.com/microsoft/charticulator-extensions
+- https://github.com/plouc/nivo
+  - https://nivo.rocks/about
+  - built on top of d3.
+  - Several libraries already exist for React d3 integration, but just a few provide server side rendering ability and fully declarative charts.
+  - Features
+    - Motion/transitions, powered by react-motion
+    - Component playground
+    - SVG charts
+    - HTML charts
+    - Canvas charts
+    - Server side rendering API
 - react-charts /MIT/880Star/202007
   - https://github.com/tannerlinsley/react-charts
   - https://react-charts.js.org/
   - interactive charts for React powered by D3
-- vega /BSD/8.5kStar/303006
-  - https://github.com/vega/vega
-  - https://vega.github.io/vega
-  - Vega is a visualization grammar
-  - With Vega you can describe data visualizations in a JSON format, 
-  - and generate interactive views using either HTML5 Canvas or SVG.
-  - https://github.com/vega/vega-lite /2.6kStar
-  - 缺点是重视学术前沿，不重视用户体验，如缺乏交互
 - D3FC /860Star/MIT/202011/js
   - https://github.com/d3fc/d3fc
   - Components to rapidly build fast, highly customisable, interactive charts with D3

@@ -119,3 +119,7 @@ modified: '2020-11-17T13:38:27.686Z'
   - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
+
+- https://github.com/liferay/alloy-editor
+  - http://alloyeditor.com/
+  - WYSIWYG editor based on CKEditor with completely rewritten UI

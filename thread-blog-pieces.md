@@ -31,6 +31,7 @@ modified: '2021-02-09T19:25:11.641Z'
 
 # frontend-dev
 
+- [Everything you need to know about change detection in Angular](https://indepth.dev/posts/1053/everything-you-need-to-know-about-change-detection-in-angular)
 - [We can finally animate CSS gradient](https://dev.to/afif/we-can-finally-animate-css-gradient-kdk)
 - [The Evolution Of Jamstack](https://www.smashingmagazine.com/2021/05/evolution-jamstack/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)

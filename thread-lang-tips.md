@@ -7,6 +7,16 @@ modified: '2021-04-30T11:10:26.083Z'
 
 # thread-lang-tips
 
+# guide
+
+- ## This is how I have been learning TypeScript 
+- https://twitter.com/alexpage_/status/1392338786193870851
+- One multiplier I have been leaning into while learning new technologies is searching open source repos on GitHub.
+  - Sort by recently indexed for up to date examples
+  - Filter by language and code usage
+  - Lurk(潜伏；诡计) pull requests to learn the why
+  - I have this as my go to..have done for years.
+
 # pieces
 
 - ## 

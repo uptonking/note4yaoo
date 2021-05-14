@@ -1,11 +1,11 @@
 ---
-title: toc-lib-database
-tags: [database, lib, toc]
+title: toc-lib-db-orm
+tags: [database, lib, orm, toc]
 created: '2020-10-05T16:22:46.508Z'
-modified: '2020-10-22T13:11:04.726Z'
+modified: '2021-05-13T14:59:22.147Z'
 ---
 
-# toc-lib-database
+# toc-lib-db-orm
 
 # orm
 

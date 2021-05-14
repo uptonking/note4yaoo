@@ -13,5 +13,7 @@ modified: '2021-05-13T04:21:53.152Z'
 
 # ref
 
+- [How to: Embed a Notebook in a React App](https://observablehq.com/@observablehq/how-to-embed-a-notebook-in-a-react-app)
+
 - [HQ](https://askubuntu.com/questions/627516) means Headquarters.
   - It's the name given to the website, not the software project per se(本身，自身，本质上).

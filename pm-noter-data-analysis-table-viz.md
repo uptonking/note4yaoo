@@ -1,11 +1,11 @@
 ---
-title: pm-noter-data-viz-analysis-table
+title: pm-noter-data-analysis-table-viz
 tags: [data-analysis, note-taking, pm, viz]
 created: '2021-04-16T15:06:09.060Z'
-modified: '2021-04-16T15:07:51.553Z'
+modified: '2021-05-13T16:15:57.553Z'
 ---
 
-# pm-noter-data-viz-analysis-table
+# pm-noter-data-analysis-table-viz
 
 # guide
 

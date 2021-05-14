@@ -28,7 +28,16 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## We all agree JSON-in-CSS is the future.
+- https://twitter.com/jon_neal/status/1392600862703378433
+  - CSS respects quotes, & bracket groups like (), [], or {}.
+  - Ergo, CSS can syntactically support "JSON".
+  - Custom Properties support syntactically valid values.
+  - Ergo, Custom Properties can be "JSON".
+  - CSS doesn’t know it’s JSON.
+  - But CSSOM can see it.
+  - And JS can parse it.
+- incredible. the future of the internet rests in your hands
 
 - ## Web container layout syntax guide:
 - https://twitter.com/argyleink/status/1388490388755865600

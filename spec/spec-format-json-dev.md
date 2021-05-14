@@ -11,8 +11,7 @@ modified: '2021-02-27T15:31:23.130Z'
 
 # discuss
 
-## [JSON 可以替代 XML，为什么网页不用 JSON 格式来写呢？](https://www.zhihu.com/question/373946861)
-
+- ## [JSON 可以替代 XML，为什么网页不用 JSON 格式来写呢？](https://www.zhihu.com/question/373946861)
 - XML 和 JSON 的复杂度完全不在一个数量级上。JSON 的 ECMA-404 规范，其 PDF 内容部分仅 4 页。而 XML 1.0 规范 则有整整 50 多页。
   - 因此，哪怕是工业级的 JSON Parser，靠递归下降这样基础的算法照标准硬写就足够了。
   - 像 Google 在 V8 引擎里就是这么实现了 JSON.parse 十多年，直到2019年才做了解决递归爆栈风险的重构优化
@@ -25,3 +24,8 @@ modified: '2021-02-27T15:31:23.130Z'
     - 另外，引号实在是太多了。这还没有涉及到转义字符和换行符，像多行、有排版的内容要手写就更难了。
     - 如果要在`<script>`里写javascript，在javascript里再处理dom，然后整个转换成JSON里的字符串，大量引号嵌套引号
   - HTML适合的是大量文本内容配合少量标签的场景，这些情况下JSON并不合适
+
+# ref
+
+- [从零开始的JSON库教程](https://zhuanlan.zhihu.com/json-tutorial)
+  - https://github.com/miloyip/json-tutorial

@@ -12,11 +12,17 @@ modified: '2021-03-10T11:38:16.053Z'
 - https://www.screensizes.app/
   - 各种Apple设备的信息与图片
 
+- visual ui tips
+  - https://twitter.com/d__raptis
+
 # pieces
 
 - ## 
 
-- ## 
+- ## Better Image Overlays
+- https://twitter.com/d__raptis/status/1392511897589669891
+  - Avoid plain text over images. Use fading gradient overlays to strengthen the contrast instead. 
+  - Use black gradient & white text (or other high contrast combos) to make sure that the text is visible regardless of the background colors.
 
 - ## UX pattern question: I've got 5-ish categories. Each can be "true", "false", or "off". Is there a good input type
 - https://twitter.com/acemarke/status/1389679142405279752

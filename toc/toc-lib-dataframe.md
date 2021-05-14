@@ -1,8 +1,8 @@
 ---
 title: toc-lib-dataframe
-tags: [compute, data-toolkit, dataframe, lib]
+tags: [data-processing, dataframe, lib]
 created: '2020-12-07T09:59:23.769Z'
-modified: '2020-12-07T10:41:47.651Z'
+modified: '2021-05-13T16:14:41.762Z'
 ---
 
 # toc-lib-dataframe
@@ -35,24 +35,8 @@ modified: '2020-12-07T10:41:47.651Z'
 - https://github.com/modin-project/modin
   - Speed up your Pandas workflows by changing a single line of code
 
-# js
-
-- https://github.com/uwdata/arquero
-  - https://uwdata.github.io/arquero
-  - /438Star/BSD/202105/js
-  - a JavaScript library for query processing and transformation of array-backed data tables. 
-  - Following the relational algebra and inspired by the design of dplyr, Arquero provides a fluent API for manipulating column-oriented data frames.
-  - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
-  - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
-
-- https://github.com/opensource9ja/danfojs
-  - /1.1kStar/MIT/202011/js
-  - provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive
-  - heavily inspired by Pandas library, and provides a similar API
-
-- https://github.com/tensorflow/tfjs
-  - /14.3kStar/Apache2/202012/ts
-  - A WebGL accelerated JavaScript library for training and deploying ML models.
+- https://github.com/wesm/feather
+  - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
 
 # java
 
