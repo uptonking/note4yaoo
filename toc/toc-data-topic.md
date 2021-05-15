@@ -52,10 +52,6 @@ modified: '2020-06-22T09:23:56.117Z'
   - github每日流行
     - https://github.com/quasoft/trending-daily
 
-- geo
-  - 月球概图
-  - 月表采样点：人工 + 无人机
-
 - 互联网行业
   - 被收购后废弃的公司或产品
     - 阿里：天天动听、虾米音乐、优酷、豌豆荚、大麦
@@ -81,6 +77,13 @@ modified: '2020-06-22T09:23:56.117Z'
 - housing
   - 城乡差距很小的县城
     - [2020苏州居住体验](https://www.zhihu.com/question/428861354/answer/1559801427)
+
+## geodata
+
+- 月球概图
+  - 月表采样点：人工 + 无人机
+- [Spatial Data Catalog](https://carto.com/spatial-data-catalog/)
+  - https://carto.com/spatial-data-catalog/browser/
 
 ## dev
 

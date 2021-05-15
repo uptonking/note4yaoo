@@ -32,8 +32,8 @@ modified: '2020-11-03T06:54:59.051Z'
 
 - https://macos.now.sh/
   - https://github.com/puruvj/macos-web
+  - 依赖 preact、vite、scss+css modules、no component lib、react-rnd、jotai、framer-motion、date-fns、rooks
   - replicate some of the Mac OS(Big Sur, at the time)'s desktop experience on web
-  - 依赖 preact、vite、scss+css modules、no component lib
   - 类似macOS风格的例子
     - https://github.com/Renovamen/playground-macos
 

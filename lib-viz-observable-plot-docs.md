@@ -101,7 +101,7 @@ modified: '2021-05-05T07:42:37.727Z'
   - With D3 I routinely spend a week on a single graphic; 
   - Plot encourages me to fling them around. 
 
-# [Plot & Vega-Lite](https://observablehq.com/@observablehq/plot-vega-lite)
+# [Plot vs Vega-Lite](https://observablehq.com/@observablehq/plot-vega-lite)
 
 lib              |   Observable Plot    |    Vega-Lite 
 -----------------|----------------------|------------  

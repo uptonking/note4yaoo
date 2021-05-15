@@ -174,3 +174,8 @@ modified: '2020-12-21T06:03:02.191Z'
 - Yep. Undici is more reliable, it's well designed and tested, and it has better defaults for serverless environments. 
   - We're already using it inside some places of the @vercel core production infrastructure which gives us the confidence to adopt it more broadly.
   - I could even see it providing the `fetch` global in the default Node.js distribution 
+
+# ref
+
+- [AsyncAPI 2.0: Enabling the Event-Driven World_202105](https://tech.ebayinc.com/engineering/asyncapi-2-0-enabling-the-event-driven-world/)
+  - Learn about how eBay is standardizing on and publishing AsyncAPI Specification 2.0-based contracts for event notifications.

@@ -15,8 +15,16 @@ modified: '2021-02-09T19:27:01.319Z'
     - https://www.zhihu.com/people/evanyou
   - artwork: vue
   - 2020
-    - 12-vite2: library mode
-    - 9-vue3: release
+    - vite2: library mode
+    - vue3: release
+
+- Jason Miller
+  - https://github.com/developit
+  - https://twitter.com/_developit
+  - artwork
+  - https://github.com/preactjs/preact
+  - https://github.com/preactjs/wmr
+  - https://github.com/developit/htm
 
 - Dan Abramov
   - info: Co-author of Redux and Create React App
@@ -116,11 +124,6 @@ modified: '2021-02-09T19:27:01.319Z'
   - https://github.com/bvaughn
   - https://twitter.com/brian_d_vaughn
   - https://github.com/bvaughn/react-virtualized
-
-- Jason Miller
-  - https://github.com/developit
-  - https://twitter.com/_developit
-  - https://github.com/developit/htm
 
 - Devon Govett
   - https://twitter.com/devongovett

@@ -10,6 +10,5 @@ modified: '2021-01-04T16:27:19.903Z'
 # Carto Platform
 
 - [Spatial Data Catalog](https://carto.com/spatial-data-catalog/)
-  - datasets
-    - https://carto.com/spatial-data-catalog/browser/
+  - https://carto.com/spatial-data-catalog/browser/
   - Browse our Spatial Data Catalog to discover thousands of public & premium datasets to enrich your data. 

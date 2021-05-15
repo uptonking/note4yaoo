@@ -53,6 +53,25 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://picturepan2.github.io/spectre/utilities/colors.html
   - https://mildrenben.github.io/surface/
 
+# docs-ui
+
+- https://github.com/htmlstreamofficial/docs-ui-kit
+  - https://htmlstream.com/preview/docs-ui-kit/index.html
+  - /62Star/MIT/201905
+  - 依赖jquery、jquery-ui、feather、prismjs
+  - A beautiful Open Source Bootstrap 4 UI Kit 
+  - Perfect for Documentation & Help Desk projects.
+- infima /60kStar/MIT/202102/css
+  - https://github.com/facebookincubator/infima
+  - https://facebookincubator.github.io/infima/
+  - A modern styling framework for content-driven websites 
+  - It's just CSS, so it works with React, Vue, Angular, anything!
+- UI Playbook /507Star/MIT/202010/ts
+  - https://github.com/raunofreiberg/ui-playbook
+  - https://uiplaybook.dev/
+  - document common UI components, their functionality, best practices, accessibility requirements, and examples.
+  - 网站设计是页面背景灰色、卡片背景白色
+
 # components-docs-showcase
 
 - [material-components-web](https://material-components.github.io/material-components-web-catalog/#/)

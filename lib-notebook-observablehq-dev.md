@@ -9,6 +9,9 @@ modified: '2021-05-14T14:44:14.720Z'
 
 # guide
 
+- tips
+  - observable-notebook的使用体验，感觉像为d3语法设计的文档ide
+
 # docs
 
 # ref

@@ -18,6 +18,13 @@ modified: '2020-08-17T07:16:58.844Z'
 - rest api
   - [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
+# web
+
+- OEmbed
+  - https://oembed.com/
+  - oEmbed is a format for allowing an embedded representation of a URL on third party sites. 
+  - The simple API allows a website to display embedded content (such as photos or videos) when a user posts a link to that resource, without having to parse the resource directly.
+
 # cultural-regional
 
 - [Tags for Identifying Languages](https://tools.ietf.org/html/rfc5646)

@@ -171,6 +171,9 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/sanjayaharshana/AnimTrap
   - AnimTrap is a CSS Framework for animations. 
 
+- https://animista.net/play/basic/flip
+  - Animista is a CSS animation library and a place where you can play with a collection of ready-made CSS animations and download only those you will use.
+
 # canvas animation
 
 - https://github.com/shzlw/zeu

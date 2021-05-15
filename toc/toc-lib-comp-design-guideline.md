@@ -27,6 +27,11 @@ modified: '2020-12-20T15:47:13.585Z'
 
 # popular-guidelines
 
+- UI Playbook /507Star/MIT/202010/ts
+  - https://github.com/raunofreiberg/ui-playbook
+  - https://uiplaybook.dev/
+  - document common UI components, their functionality, best practices, accessibility requirements, and examples.
+  - 网站设计是页面背景灰色、卡片背景白色
 - Apple Human Interface Guidelines
   - https://developer.apple.com/design/
   - https://developer.apple.com/design/resources/
@@ -56,10 +61,6 @@ modified: '2020-12-20T15:47:13.585Z'
   - https://github.com/marvelapp/devices.css
   - Pure CSS phones and tablets
   - https://marvelapp.com/styleguide/overview/introduction
-- UI Playbook /507Star/MIT/202010/ts
-  - https://github.com/raunofreiberg/ui-playbook
-  - https://uiplaybook.dev/
-  - document common UI components, their functionality, best practices, accessibility requirements, and examples.
 
 # more-guidelines
 

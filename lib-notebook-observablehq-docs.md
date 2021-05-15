@@ -9,6 +9,13 @@ modified: '2021-05-14T18:00:35.421Z'
 
 # guide
 
+- features
+  - free private collaboration
+  - realtime multiplayer editing
+  - cell modes for MD, HTML & more
+
+- [hands-on introductory tutorial series](https://observablehq.com/collection/@observablehq/introduction)
+
 - ref
   - [Observable: The User Manual](https://observablehq.com/@observablehq/user-manual)
 
@@ -63,7 +70,8 @@ modified: '2021-05-14T18:00:35.421Z'
   - If the cells are defined asynchronously, such as a promise that fetches a dataset from a remote server, the cells will run concurrently.
   - Thus, be wary of side-effects and implicit dependencies on other cells (such as selecting from the DOM), as the order of computation is not guaranteed.
 - Second, circular references are not allowed.
-- The data flow graph also allows Observable to recompute a subset of the graph efficiently when something changes. 
+- The data flow graph also allows Observable to recompute a subset of the graph efficiently when something changes.
+
 - In March of 2020, we introduced visual dataflow so you can see how data flows through your notebook. 
   - For a more detailed view of your notebook’s graph, also see the notebook visualizer.
 
@@ -107,12 +115,399 @@ modified: '2021-05-14T18:00:35.421Z'
   - a small standard library for essential features, such as Markdown tagged template literals and reactive width.
 - Cells can be imported from other notebooks.
   - Observable imports are lazy: if you don’t use it, it won’t run.
+
 - Static ES imports are not supported; use dynamic imports.
+  - Since everything in Observable is inherently dynamic, there’s not really a need for static ES imports
   - we might add static ES imports support in the future
-  - Note that only the most-recent browsers support dynamic imports, so you might consider using require for now.
-- require is AMD, not CommonJS.
-  - Observable’s require looks a lot like CommonJS because cells implicitly await promises. 
+  - Note that only the most-recent browsers support dynamic imports, so you might consider using `require` for now.
+- `require` is AMD, not CommonJS.
+  - Observable’s `require` looks a lot like CommonJS because cells implicitly await promises. 
   - But under the hood it uses the Asynchronous Module Definition (AMD).
   - This convention will eventually be replaced with modern ES modules and imports
 
+# Cells are Functions
+
+- In Observable, each cell is a function; 
+  - this function is called automatically by the runtime with the values of any other cell it references.
+- Unlike promises, generators are automatically terminated on invalidation by the runtime.
+- If you want to avoid a generator, you can do something similar using the invalidation promise and `Promise.race`: 
+  - this will throw an error when the cell is invalidated, causing the loop to terminate. 
+  - This error is never shown because the cell is immediately re-evaluated, giving it a new value.
+
 # Notebook fundamentals
+
+## Five-Minute Introduction
+
+- An Observable notebook consists of cells.
+- Each **cell** is a snippet of JavaScript. 
+  - You can see (and edit!) the code for any cell by clicking the menu in the left margin
+- Cells can have names.
+  - This allows a cell’s value to be referenced by other cells.
+  - A cell referencing another cell is re-evaluated automatically when the referenced value changes. 
+- Cells can generate DOM (HTML, SVG, Canvas, WebGL, etc.). 
+  - You can use the standard DOM API like `document.createElement`, or use the built-in `html` tagged template literal
+  - There’s a Markdown tagged template literal, too
+- DOM can be made reactive simply by referring to other cells.
+
+- Sometimes you need to load data from a remote server, or compute something expensive in a web worker. 
+  - For that, cells can be defined asynchronously using **promise**s
+  - A cell that refers to a promise cell sees the value when it is resolved; 
+  - this implicit await means that referencing cells don’t care whether the value is synchronous or not. 
+- Promises are also useful for loading libraries from npm
+  - `d3 = require("d3-fetch@1")`.
+  - `require` returns a promise that resolves to the `d3-fetch` library
+- If you prefer, you can use async and `await` explicitly
+
+- Cells can be defined as **generator**s; 
+  - Any cell that refers to a generator cell sees its current value; 
+  - the referencing cell is re-evaluated whenever the generator yields a new value.
+  - a generator can yield promises for async iteration; referencing cells see the current resolved value.
+
+- Combining these primitives—promises, generators and DOM—you can build custom user interfaces.
+- `Generators.input` returns a generator that yields promises. 
+  - The promise resolves whenever the associated input element emits an input event. 
+  - You don’t need to implement that generator by hand, though.
+  - There’s a builtin `viewof` operator which exposes the current value of a given input element
+
+- You can import cells from other notebooks.
+
+## Introduction to Code
+
+- Observable notebooks are written in JavaScript, the web’s native language, but with a few changes. 
+- Cells come in two primary forms: expressions and blocks. 
+  - Expression cells are the most concise and are intended for simple definitions, such as basic arithmetic(算术)
+  - Blocks are surrounded by curly braces, `{ }`, and are intended for more complex definitions, such as ones involving local variables or loops
+- Local variables can’t be referenced from other cells; 
+  - trying to reference an unknown variable will throw a runtime error. 
+  - However, this error is localized to the broken cell, allowing the rest of the notebook to run happily.
+- If you want to define a cell as an object literal, you must wrap the literal in parenthesis to disambiguate it from a block
+- To share code between cells without copying and pasting, define a function
+- While local variables are not visible across cell boundaries, you can name cells to reference their values
+  - This looks identical to a standard JavaScript assignment, but it’s not—it’s reactive!
+- You needn’t define named cells before you reference them: order your cells however you like, 
+  - and Observable will automatically execute them in topological order. 
+- A cell that references other cells is re-evaluated automatically whenever the referenced values change.
+  - This reactivity is similar to live reload, with an important difference: when a value changes, only referencing cells are re-evaluated, rather than the entire notebook.
+- To understand reactivity, think of each cell as a function.
+  - the runtime waits for the value of a and b to resolve and then invokes the sum function.
+  - The runtime invokes sum again whenever a or b change.
+- If a cell contains a `yield` statement, the runtime creates a generator function instead of a normal function.
+  -  Likewise if the definition uses await, the runtime creates an `async` function.
+
+## Introduction to HTML
+
+- If a cell returns a DOM element, that DOM element is displayed as-is!
+  - Or using the W3C DOM API directly (not that you should—it’s quite verbose)
+
+``` JS
+html `<p>I am a <i>paragraph</i> element!</p>`
+
+// 既可以使用 dom标签，也可以使用 dom js api
+
+{
+  const p = document.createElement("p");
+  p.appendChild(document.createTextNode("I am also a "));
+  p.appendChild(document.createTextNode(" element!"));
+  return p;
+}
+```
+
+- Even better, you can write Markdown
+- Since all cells in Observable are JavaScript—a “Markdown cell” is just a JavaScript cell of a Markdown tagged template literal—Markdown and HTML cells can be dynamic: you can embed expressions `${…}` in template literals
+  - Embedded expressions can also be DOM nodes. 
+  - This lets you embed dynamic content, such as little charts in SVG or mathematical notation in LaTeX, within Markdown.
+  - I like Markdown for prose, but katex for math.
+- And of course, Markdown can be reactive, too! 
+  - The `now` built-in from the Observable standard library is a reactive variable whose value is the current time.
+  - So, embedding a reference to `now` causes the Markdown to re-evaluate continuously
+
+- Another common type of dynamic content is Canvas.
+  - The standard library method `DOM.context2d` returns a `CanvasRenderingContext2D` of the specified width and height (and automatic scaling for high-resolution displays). 
+  - Draw to the context, and then return the canvas to display it in the notebook.
+
+- Often you’ll use a helper library such as D3 to generate dynamic content
+  - more succinctly as a single expression
+- If your DOM is defined purely as a function of data—that is, if you don’t need D3’s data join to update and exit nodes, and instead you just create the DOM from scratch every time
+  - then usually it’s simpler to stick with template literals. 
+  - There’s an svg tagged template literal in the standard library that is useful for composing SVG fragments.
+- For the mathematically inclined, you can write katex, either inline or as blocks
+- you can read properties of a DOM element defined in another cell
+  - But note that properties of a DOM element are not automatically reactive: 
+  - a cell that references slider.value won’t be re-evaluated automatically when the slider changes. 
+  - DOM elements are mutable, so be careful when referencing an element defined in another cell, and you should usually avoid mutating elements defined in other cells
+- Cells share the same iframe, so you can use CSS to change styles globally.
+- Use caution when applying global styles: if a style affects a cell’s height, the runtime may not notice unless the affected cell is re-evaluated.
+  - You can explicitly tell the runtime to recompute cell heights by dispatching a load event, but it shouldn’t be necessary in most cases.
+- A cell can return a DOM element that’s already being displayed somewhere else on the page. 
+  - In this case, the value inspector is used, rather than showing the element inline.
+
+## [Introduction to Views](https://observablehq.com/@observablehq/introduction-to-views)
+
+- In Observable, a view is a user interface element that directly controls a value in the notebook. 
+- A view consists of two parts:
+  - The `view`, which is typically an interactive DOM element.
+  - The `value`, which is any JavaScript value.
+- See Observable Inputs for inputs that are more convenient and more usable than the native HTML inputs
+- views aren’t limited to built-in HTML input types! 
+  - A view can have any visual representation you desire, and any value, too.
+  - A view could be a blank canvas for the user to draw a squiggle(写或画的弯弯曲曲的线条；潦草的笔迹)
+- If there is a value you’d like the user to control in your notebook, represent that value as a view. 
+- view’s value is exposed as `element.value`. 
+- The `viewof` operator is just shorthand for defining the view and its value in the same cell. 
+  - You can define them as separate cells if you prefer
+- To trigger the re-evaluation of any cell that references a view’s value, the view must emit an input event
+- the reason that HTML input elements work by default as views is that these elements have a `value` property and they emit `input` events when you interact with them. 
+  - There is a little extra logic for dealing with idiosyncrasies; see the `Generators.input` source for details. 
+  - And a view doesn’t need to be a DOM element; it only needs to support the `EventTarget` interface. 
+  - For an example of a non-element view, see the Synchronized Inputs notebook.
+
+## Introduction to Imports
+
+- Observable lets you quickly reuse code by importing named cells from other notebooks.
+- You could instead copy-paste the `ramp` function from that notebook into this one—it’s only a few lines of code.
+- But imports have a few advantages.
+- First, the cell you want to reuse may depend on other cells. 
+  - If you import, the dependencies are loaded automatically, so you don’t have to think about it.
+- Second, by importing, it’s easier to keep the reused code up-to-date.
+  - Imports target the latest published version
+  - The risk of importing the latest version is that your notebook may break if the imported notebook changes in a non-backwards-compatible way.
+  - Observable also supports versioned imports, however version numbers aren’t currently exposed in the user interface, so for now you must specify the version manually.
+  - In the future, imports will be pinned to the latest published version at the time you write the import statement, and can be re-pinned on-demand.
+- Third, Observable imports let you inject dependencies using import-with!
+  - As long as the new data conforms to the same shape as the old data, you can reuse the existing code
+- Best of all, because Observable is reactive, you can even inject dynamic definitions into code that was previously static!
+
+- Here are a few additional nuances(细微差别) of imports
+- Like ES imports, Observable imports are live bindings. 
+  - If you import a value that changes over time (a generator cell), the imported value will change over time, too
+- You can only import named cells, 
+  - and you must name each cell you want to import explicitly. 
+  - No anonymous cells allowed; 
+  - if a notebook uses side effects, as is sometimes common with anonymous cells, you must name and import the cells with side effects, too.
+- Imported cells are lazily evaluated: 
+  - if you import a cell but you don’t reference it anywhere, the code won’t run.
+- Also like ES imports, only the cells you import are available (bound) in the local notebook, even if those cells depend on other cells. 
+  - Those dependent cells are run—they’re just not exposed in the scope of the local notebook.
+- You can use circular imports, but only if you don’t use the `with` clause when importing.
+- You can import the same notebook multiple times and references will resolve exactly.
+- If you find yourself using lots of imports in your notebooks, you might find our import visualizer helpful for debugging. 
+- You can import from shared (non-public) notebooks, too
+- You can even import from private notebooks
+  - Don’t forget to share or publish your imports before you publish.
+
+- Lastly, imports aren’t intended to replace libraries (like lodash or D3); 
+  - if you want to design, build and support a reusable library, go for it and publish to npm! 
+  - But if you want a lightweight way to reuse code across notebooks without resorting to copy-paste, reach for import.
+
+## [Introduction to Data](https://observablehq.com/@observablehq/introduction-to-data)
+
+- How do you get data into Observable for analysis and visualization?
+  - inline - embedded in the notebook as code, for small amounts of data
+  - files - attached to the notebook, for medium amounts of data (e.g., CSV, SQLite)
+  - APIs - queried from a remote server, for programmatic access to data
+  - databases - via an Observable database client, for accessing SQL databases
+- For tiny datasets, you can inline JSON/CSV
+- For medium-size datasets, you can attach files directly to your notebooks
+  - To use a file, pass the file’s name to the built-in `FileAttachment` function from the Observable standard library 
+  - then call the appropriate method depending on how you want to consume the file.
+  - You can also fetch files uploaded and hosted on outside services such as GitHub Gist, as long as they support CORS.
+- You can read local files in your notebooks too, without hosting
+- A particularly powerful type of file for data analysis is a SQLite file, which you can query with arbitrary SQL, using SQL.js.
+- There are myriad APIs available on the web, many of which are publicly accessible.
+  - You can also use WebSockets to connect to realtime data streams!
+  - If you want to access services that use API secret keys or passwords, you can use Observable secrets to store sensitive values securely, separately from code
+- databases
+  - To access PostgreSQL 8+, MySQL 5, or Google BigQuery databases, you can use an Observable database client.
+  - For databases on private networks, use our self-hosted Observable database proxy. 
+
+- You can also download generated data from notebooks.
+- You can get data back out of notebooks as CSV or JSON by clicking on the cell menu.
+  - This technique is especially useful for transforming (aggregating, filtering or reducing) data within a notebook, and then loading the transformed data in the future rather than transforming it on load. 
+  - You can also download any attached files from the files pane.
+- In addition to the built-in cell download menu items, you can download any file using `DOM.download`. 
+
+## [Reading Local Files](https://observablehq.com/@mbostock/reading-local-files)
+
+- As an alternative to attaching a file to your notebook, you can read files from your local file system in Observable using a file input
+  - The initial value of a file input is `undefined`, so any cell that references this file will wait for the reader to choose a file before running. 
+  - If you’d an initial value so that referencing cells run on load, wrap the input in a form and assign the form’s value. 
+  - Or, import my reusable file input with initial value.
+- A `File` is a `Blob`, so one way to read a file is to use `URL.createObjectURL`. 
+  - This is useful, for example, with images. 
+  - (Don’t forget to revoke your URLs, though, say using `Generators.disposable`.)
+- This works with `require`, too
+- You can also read a file using a `FileReader`. 
+  - Observable’s standard library includes several convenience methods for reading files.
+- If the file is text, use `Files.text` to obtain a promise to a String.
+- For a binary file, use `Files.buffer` for a promise to an ArrayBuffer.
+
+## Connecting to databases
+
+- Observable database clients allow secure and convenient querying of SQL databases from private notebooks
+- We currently support PostgreSQL 8+, MySQL 5, Google BigQuery, and Snowflake. 
+- Create a DatabaseClient for a configured database, then use `client.query(sql, [parameters])` to issue a query, or `client.describe(table)` to inspect the schema.
+
+## Introduction to Secrets
+
+- we’re introducing Secrets, a new feature to make it easier to securely access private data and APIs on Observable.
+- Secrets are name-value pairs, similar to environment variables, that you can can specify in your settings.
+- Only your private notebooks (which are only readable by you) can access your secrets—that’s why they’re secret!
+  -  If you share or publish a notebook, it won’t be able to access secrets: any cell that references the Secret function will error.
+- You must explicitly grant permission for a notebook to access your secrets. 
+
+## [Observable anti-patterns and code smells](https://observablehq.com/@tmcw/observable-anti-patterns-and-code-smells)
+
+- Here are a few things that you might do a bunch in JavaScript ‘in general’ but are often more trouble than they're worth within in the context of Observable.
+
+- Timers: use them sparingly, a lot of times there’s a better way
+- Now timers will still ‘work’ in Observable
+- cells are often re-evaluated, so it's important that everything a cell does can be cleaned up.
+
+- Mutation: try to avoid it!
+- Notebooks work better and are much more understandable if you keep mutation to a minimum. 
+- Mutation being defined here as ‘changing a variable in-place’: not creating a new variable that’s some modification of an old one, but instead changing the original variable's value. 
+- Some common sources of mutation in JavaScript are:
+  - Array methods like .sort() and .splice() that modify arrays in-place
+  - Similar methods on custom objects that modify them
+  - Stateful regular expression methods
+- One of my favorite things about Observable notebooks is that cell evaluation order doesn't matter. 
+  - They don't run top-to-bottom, they simply run whenever values are needed or updated. 
+  - Mutation really mucks that up.
+- When you run into a method that works by default with mutation, you can make your code nice and ‘immutable’ instead by:
+  - Using an alternative that doesn't mutate the data - for instance, using `Array#concat`, which returns a new Array, instead of `Array#push`, which modifies an array in-place
+  - Making a copy of the data and mutating that: for instance, by using `Array#slice()`.
+- If you have some object and then assign to some property of it, you have untracked mutation, which is usually bad.
+  - the rule that if you want to get a modified object, it should be a new object, not a modification of the one you have. Spread syntax, noted as `...` in code, makes this great
+- if you are dealing with modifying objects and arrays a lot, you may want to use something like `lodash`, which lets you avoid mutation by providing lots of useful functions.
+
+- Generators: the return value doesn’t matter
+- Don't use `return` in a generator that crosses cell boundaries.
+- the return value of a generator is ignored, so don't return from a generator.
+- This advice is all about generators that cross cell boundaries. 
+  - In a JavaScript sense, you should think of cell boundaries as calling `generator.next()` and ignoring its value if `done` is true: that's what they do internally.
+
+- Re-selecting elements: it's much better to reference elements in a notebook using variables than it is to reference them using class or tag names.
+- Once you create an element, there are generally two ways to get a reference to it again in another cell:
+  - Using the variable it was assigned to.
+  - Selecting it again based on a class, id, or tag name - with `d3.select()`,  `document.querySelector()` .
+- Note that this advice only applies for getting elements out of nowhere - you will still likely use sub-selectors to select within elements you already have references to. 
+  - It also doesn't apply to using d3.select() with a variable as its argument, only with a string.
+- Cells don't run top-down: they run in dependency order.
+- And if two cells don't have a dependency relationship - one cell doesn't rely on the other's name - there's no guarantee that they'll run in any specific order. This is a good thing. 
+- instead of selecting it based on the fact that it’s an svg element, or by its ID, we use the cell variable
+
+## [Introduction to Embedding](https://observablehq.com/@observablehq/introduction-to-embedding)
+
+- 还可以考虑嵌入动态的图片
+
+- Embedding lets you put a working version of your notebooks inside another website.
+- if you want more control or a deeper integration, you can try the other embedding methods, Runtime with JavaScript or Runtime with React, which generate code that uses the Runtime API to render your cells.
+- The Runtime-based embedding methods are limited to environments where you can run your own scripts. - But since the Iframe isolates that in a different document, it can go in more controlled WordPress blogs, content management systems like Gatsby, and note-taking software like Notion or Roam. 
+- Some sites like Medium and Reddit that don’t allow arbitrary HTML still “unfurl” certain links you paste to interactive versions, using a standard called oEmbed.
+  - If the site uses Embedly, the Iframe can automatically resize to match the height of your content.
+- It doesn’t help you embed in Slack, Facebook, Twitter, or LinkedIn, which don’t support arbitrary interactive embeds; we still use the notebook thumbnail for those. 
+
+## Introduction to Promises
+
+- A promise represents a value that is not yet known, but that will be known in the future. 
+- This asynchronous design, essential for fluid interaction and parallel downloads, introduces complexity: 
+  - code that depends on promised values must wait until the values are resolved rather than running immediately. 
+  - Fortunately, JavaScript’s `Promise` API (and its companion `await` operator), make it easier to work with asynchronous values.
+- Promises are often not created by you. Instead, an asynchronous library method might return a promise, and you need to wait for the promise to resolve (or reject)
+- Observable implicitly awaits promises across cell boundaries
+- Observable’s standard library has few built-in methods related to Promises.
+- The implicit await of promises **only** happens across cell boundaries. 
+  - So, if you create a promise and then refer to it within the same cell, you’ll see the `Promise` object and not the resolved value
+  - You can use the `await` operator to pause the execution of code in the current cell while you wait for a promise to resolve
+  - you can use `promise.then` to chain promises
+
+``` JS
+// "[object Promise]world!"
+{
+  let promise = Promises.delay(3000, "Hello, ");
+  return promise + "world!"; // 💥 Oops!
+}
+
+// "Hello, world!"
+{
+  let greeting = await Promises.delay(3000, "Hello, ");
+  return greeting + "world!";
+}
+
+// "Hello, world!"
+Promises.delay(3000, "Hello, ").then(greeting => greeting + "world!")
+```
+
+- Some libraries and methods use asynchronous callbacks. 
+  - For example, the browser built-in `setTimeout` doesn’t return a promise like `Promises.delay`; 
+  - instead it calls the specified callback function after the specified delay. 
+  - To use callbacks in Observable, you should adapt to promises using the Promise constructor.
+
+``` JS
+new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Time’s up!");
+  }, 5000);
+})
+```
+
+## Introduction to Generators
+
+- Observable uses generators to represent values that change over time. 
+  - Generators enable interaction, animation, realtime data streaming, and all the other exciting, dynamic capabilities of Observable notebooks.
+- The simplest generator is a cell that yields a single value.
+  - This behaves no differently than a plain expression cell.
+- When a yielded value resolves, referencing cells are automatically rerun, even if the new value is the same as the old one.
+- Observable waits until the yielded value resolves before pulling the next value from the generator. 
+  - The generator cell is magically suspended (paused) until Observable requests the the next value, at which point the cell resumes exactly where it left off. 
+  - In effect, there’s an implicit await when you yield a promise.
+- If a generator cell yields the same DOM element as it did previously, Observable doesn’t touch the DOM. 
+  - This makes yielding an element repeatedly an efficient animation strategy.
+- The previously-resolved value continues to be visible to other cells until the newly-yielded value resolves: 
+  - in other words, a generator cell’s apparent value is the most-recently resolved value.
+- Observable pulls at most one value per animation frame (sixty times per second) from the generator. 
+  - To define a cell that counts sixty times per second, yield a resolved value rather than a pending promise.
+- Per the iterator protocol, the `return` value of a generator is not considered part of the sequence of values; it is ignored.
+- Use delegation (yield-star expressions) to yield the values of an iterable in order.
+
+- Generators that yield promises are the basis for interactive views in Observable.
+  - `Generators.observe` takes a push-based data source—code that invokes a callback function whenever there is new data—and converts it to a pull-based generator that yields promises. 
+  - These promises resolve with the passed value when `next` is called.
+- This pattern is based on JavaScript’s proposed Observable type.
+- It’s tedious to add and remove event listeners to observe an input’s value, so the standard library provides `Generators.input` as a convenience method on top of `Generators.observe` for observing inputs. 
+  - Yet you rarely need to use `Generators.input` directly: 
+  - Observable’s `viewof` operator will do it for you! 
+  - If you name a cell `viewof` value, Observable implicitly creates a second (hidden) cell named `value` using `Generators.input`.
+- Many generators are infinite—they represent sequences of values that never end. 
+  - Observable forcibly terminates the old generator when a generator cell is rerun by calling `generator.return` .
+- you can define your own generator functions in notebooks, too.
+- Calling a generator function returns a new generator object. 
+  - This generator can then be consumed by the runtime, just like a generator cell.
+- In addition to generator functions, the Observable standard library has several built-in reactive variables that are implemented with generators. 
+  - There’s `width`, which represents the current page width and updates when the window resizes.
+
+## Introduction to require
+
+- Observable’s `require` lets you use thousands of open-source JavaScript modules in your notebooks. 
+- require returns a promise with the module’s contents, or, if the module can’t be loaded, a promise rejection.
+- Most of the time, you’ll use require in a cell of its own, so you won’t need to worry about the return value being asynchronous. 
+  - But if you do want to use require in the context of other code, you’ll need to await the value of the promise it returns.
+- By default, require uses modules published on npm
+  - Because notebooks run in a web environment, we use another service, jsDelivr, that takes npm’s modules and makes them accessible to browsers.
+  - For example, if we call require with the argument "d3@6", it resolves to "https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+- The require function works with modules that include AMD distributions and that point to them in the jsdelivr, unpkg or main fields of their package.json files.
+  - Unfortunately, not all modules are compatible: 
+  - some rely on the built-in functions in Node.js that have no equivalent in the browser, 
+  - and others don’t include an AMD file that require can use.
+- require works with a subset of AMD modules that includes the vast majority of such modules: 
+  - the strict specification is documented by `d3-require`, the module that powers Observable’s require.
+
+- In addition to require, which uses the widely-supported AMD standard, we also support **dynamic import**, a new way of requiring modules that aims to replace custom module loaders such as require.
+- It requires modules to be published in the ES6 module specification, which is still gaining adoption.
+
+## [Introducing Visual Dataflow](https://observablehq.com/@observablehq/introducing-visual-dataflow)
+
+- When a cell yields a new value, anything that references its name will be re-evaluated. 
+  - That makes those variables “reactive”, different from normal JavaScript variables. 
+- Now, we are explicitly showing reactive connections, both in the code editor and in a new minimap.
+  - The little gray dots are the minimap. 
