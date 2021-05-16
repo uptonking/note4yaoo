@@ -15,6 +15,11 @@ modified: '2021-05-14T14:50:35.347Z'
 
 - https://github.com/observablehq/stdlib
 
+- The Observable standard library is built-in to Observable, so you don’t normally need to install or instantiate it directly.
+- `Library([resolve])`
+- Returns a new standard library object. 
+  - The properties on the returned library instance correspond to the symbols that are available in Observable notebooks.
+
 * [DOM](#dom) - create HTML and SVG elements.
 * [Files](#files) - read local files into memory.
 * [FileAttachments](#file-attachments) - read remote files.

@@ -13,7 +13,10 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ##
 
-- ##
+- ## I've been thinking a lot in the last few days, how a code editor/IDE focused on React could looks like. So it brings me to this
+- https://twitter.com/danilowoz/status/1393212141122031621
+  - 在行号左边有一列操作拦，可以拖拽移动一行代码
+  - https://codesandbox.io/s/ide-concept-ke6vz
 
 - ## Just use @splitbee and make your analytics dashboard public
 - https://twitter.com/peduarte/status/1390930597942636544

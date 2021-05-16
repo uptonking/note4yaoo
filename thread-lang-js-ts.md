@@ -22,7 +22,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Why does @typescript not have some native operator to *merge* types? 
+- https://twitter.com/tannerlinsley/status/1393704549240606720
+  - I don't want an intersection or union, 
+  - I want the equiv. of TS-Toolbelt's Union/Object.Merge<> but with support for recursive types
+- [Add a Merge utility type](https://github.com/microsoft/TypeScript/issues/35627)
+  - Why not use `Omit`?
 
 - ## PSA: Using Node.js 16+ and want to compare the runtime performance of two functions ... Use `timerify` and `createHistogram` !
 - https://twitter.com/jasnell/status/1392589770140774402

@@ -53,23 +53,6 @@ modified: '2021-05-13T16:08:15.067Z'
 - Live coding environment. 
 - Use SuperCollider, Python, TidalCycles, Node.js etc. in the same project.
 
-# observable-notebook
-
-- https://github.com/asg017/dataflow
-  - https://alexgarcia.xyz/dataflow/docs/
-  - A self-hosted Observable notebook editor, with support for FileAttachments, Secrets, custom standard libraries, and more!
-
-- https://github.com/observablehq/datasets
-  - Test datasets for convenience in Observable notebooks.
-- https://github.com/asg017/unofficial-observablehq-compiler
-  - An unofficial compiler for Observable notebook syntax
-- https://github.com/asg017/observable-prerender
-  - Pre-render Observable notebooks with Puppeteer! Inspired by [d3-pre](https://github.com/fivethirtyeight/d3-pre)
-
-- https://github.com/zzzev/observable-press
-  - An opinionated way to publish Observable notebooks.
-  - The core idea is to do all your coding in your notebook, write an HTML skeleton for its presentation, and let observable-press glue it all together.
-
 # ref
 
 - https://github.com/jsvine/notebookjs

@@ -14,29 +14,6 @@ modified: '2021-05-14T14:46:37.026Z'
 
 # observable notebook alternatives
 
-## [Jupyter Notebook](https://jupyter.org/)
-
-- provides a web-based application suitable for capturing the whole computation process: developing, documenting, and executing code, as well as communicating the results. T
-- The Jupyter notebook combines two components:
-  - A web application: 
-    - In-browser editing for code, with automatic syntax highlighting
-    - In-browser editing for rich text using the Markdown markup language
-    - The ability to execute code from the browser
-    - Displaying the result of computation using rich media representations, such as HTML, LaTeX, PNG, SVG, etc
-    - The ability to easily include mathematical notation within markdown cells using LaTeX, and rendered natively by MathJax.
-- Notebook documents: 
-  - contains the inputs and outputs of a interactive session as well as additional text that accompanies the code but is not meant for execution.
-  - These documents are internally JSON files and are saved with the .ipynb extension. 
-
-### BeakerX
-
-- BeakerX is a collection of kernels and extensions to the Jupyter interactive computing environment. 
-- It provides JVM support, Spark cluster support, polyglot programming, interactive plots, tables, forms, publishing, and more. 
-
-- ref
-  - [The Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
-  - http://beakerx.com/documentation
-
 ## GRID
 
 - https://grid.is/
@@ -62,6 +39,29 @@ modified: '2021-05-14T14:46:37.026Z'
   - https://data-forge-notebook.github.io/datakit/
   - Simple toolkit for reading and writing data CSV and JSON files
   - Consider using data-forge-ts for data transformation, analysis and visualization
+
+## [Jupyter Notebook](https://jupyter.org/)
+
+- provides a web-based application suitable for capturing the whole computation process: developing, documenting, and executing code, as well as communicating the results.
+- The Jupyter notebook combines two components:
+  - A web application: 
+    - In-browser editing for code, with automatic syntax highlighting
+    - In-browser editing for rich text using the Markdown markup language
+    - The ability to execute code from the browser
+    - Displaying the result of computation using rich media representations, such as HTML, LaTeX, PNG, SVG, etc
+    - The ability to easily include mathematical notation within markdown cells using LaTeX, and rendered natively by MathJax.
+  - Notebook documents: 
+    - contains the inputs and outputs of a interactive session as well as additional text that accompanies the code but is not meant for execution.
+    - These documents are internally JSON files and are saved with the .ipynb extension. 
+
+### BeakerX
+
+- BeakerX is a collection of kernels and extensions to the Jupyter interactive computing environment. 
+- It provides JVM support, Spark cluster support, polyglot programming, interactive plots, tables, forms, publishing, and more. 
+
+- ref
+  - [The Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
+  - http://beakerx.com/documentation
 
 ## more-notebook
 

@@ -11,6 +11,17 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - Tip of the day.. stop wasting time on Twitter xD
 
+- ## Whenever I watch a tutorial for anything, I'll spend at least the same amount of time afterwards trying to do something similar from scratch.
+- https://twitter.com/JoshWComeau/status/1393259427491426305
+  - I feel like this is critical for breaking free from "tutorial hell".
+- If you're not familiar with the term, "tutorial hell" is the thing where you watch tutorial after tutorial, following along without issue, 
+  - but never actually learning how to build stuff from scratch, on your own
+
+- ## Recently I learned a new term: “productive failure”. 
+- https://twitter.com/JoshWComeau/status/1393262281375555589
+  - We learn more from struggling and failing to build something than we do from effortlessly completing it. 
+  - As long as you know more at the end than you did at the start, it’s a success.
+
 # pieces
 
 - ## 
@@ -21,14 +32,12 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## When someone asks for something I “don’t have the time for”, I don’t say that. Because we all have 1,440 minutes every day. 
+- ## When someone asks for something I “don’t have the time for”, I don’t say that. Because we all have 1, 440 minutes every day. 
 - https://twitter.com/flybayer/status/1387535834614845442
   - Instead I politely decline so that “I can focus on the most important things”. 
   - And I also don’t apologize.
   - Saying “no” gives me the same feeling as marking a task Done
 - Saying “I have no time.” is the socially less offensive choice, because it avoids saying “I want to spend my time on some other thing x, because that is more important than what you want from me”.
-
-
 
 - ## you should review your priorities every single day
 

@@ -11,7 +11,7 @@ modified: '2021-05-14T17:35:56.576Z'
 
 ## [ObservableHQ vs. Dataflow](https://alexgarcia.xyz/dataflow/docs/#using-dataflow)
 
-- 相互import，暂不支持
+- 暂不支持，相互import
 
 # blogging
 
