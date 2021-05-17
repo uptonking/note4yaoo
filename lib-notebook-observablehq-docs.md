@@ -511,3 +511,89 @@ new Promise((resolve, reject) => {
   - That makes those variables “reactive”, different from normal JavaScript variables. 
 - Now, we are explicitly showing reactive connections, both in the code editor and in a new minimap.
   - The little gray dots are the minimap. 
+
+# [Observable for Jupyter users](https://observablehq.com/@observablehq/observable-for-jupyter-users)
+
+- Observable, like Jupyter, is a computational notebook that’s great for doing data science and visualization, 
+  - where “notebook” refers to a series of cells containing prose, code, and visualizations.
+
+- Observable is reactive
+  - This is the biggest difference between the evaluation model of Observable and Jupyter.
+  - Like a spreadsheet, Observable keeps track of which cells depend on the output of other cells and recalculates results as necessary to keep everything up to date.
+  - You can think of Observable keeping cells up to date as killing the kernel and rerunning the whole notebook each time you edit a cell, or you can think of it as rerunning just the cells that depend on the cell you’re editing (which is what’s actually happening).
+  - This is a very different tradeoff than Jupyter makes! Observable’s approach is helpful for quickly iterating on visualizations or other outputs built up over multiple cells, and when a value is used in multiple places in a notebook. Not needing to remember to rerun the right cells is one less thing to worry about while focusing on a notebook’s contents.
+  - These special, Notebook-level variables can only be defined once, and cannot be reassigned; cannot define a cell circularly
+  - The upside is that user interactions and changes to code propagate instantly. 
+- Observable runs a superset of JavaScript
+  - You can also write some JavaScript in Jupyter that gets executed in the browser, 
+  - but typically code in Jupyter notebooks is written in the kernel language and executed in a remote process running the kernel. 
+  - Observable’s flavor of JavaScript is a little bit different, 
+- Cell outputs are shown above the code
+  - 类似预览组件的效果，上面是预览图，下面是源码
+- You can show or hide the code
+- Use shift-enter to run a cell, not alt+enter
+- Cells produce only one value
+  - Like function bodies in JavaScript, cells in Observable are either a single expression or a block of statements. 
+  - only one expression is returned from a cell with multiple statements.
+  - If no value is returned, similar to ending the last statement in Jupyter with a semicolon, the cell evaluates to undefined.
+- Variables defined inside a block can only be accessed inside that block
+  - Cell blocks are similar to bodies of functions in this way. 
+- Cells can be named
+  - Because every cell has just one return value, you should break up big cells into little, focused ones.
+- Cells don’t run from top to bottom
+- There’s only one kind of cell
+  - Instead of Jupyter’s separate Markdown cells and code cells, all cells in Observable contain JavaScript code.
+  - The result of evaluating this code is rendered based on its type.
+  - Observable includes standard library functions that return DOM nodes, to make it easy to create rich documents with text and graphics.
+- Notebooks live on the web
+- Code runs in your browser
+  - Observable code running in your browser’s JavaScript engine is different from Jupyter code running in a separate kernel process: for instance, you can use your browser’s dev tools to debug your code.
+  - Respond to user interaction in milliseconds, without a client–server roundtrip
+  - New web superpowers, with d3/webgl/video
+  - You can’t get the current process ID in Observable. You can’t directly open a TCP socket, you can’t access the filesystem
+- You can import cells from other notebooks
+  - Importing a cell from another Observable notebook only runs the cells needed to produce the imported value, 
+    - e.g. you can import just a file attachment from another notebook and know that data processing and animations in the notebook are not running in the background.
+
+## Visualize a data frame with Observable, in Jupyter
+
+- The most common reason for Jupyter users to use Observable is the creation and distribution of visualizations. 
+- Anytime we have a dataframe like this in Jupyter we can package it up for Observable by exporting to csv
+- Once you've got a CSV file with your data, the most direct way to get data into a notebook is to use a file attachment. 
+- let's require d3-dsv, a library for parsing for CSVs.
+- `irisData = d3.csvParse(await FileAttachment("iris_data.csv").text(), d3.autoType)`
+- you can also view the data as a table.
+- There's good news on the JavaScript-for-data-wrangling front: your browser's JavaScript runtime is fast.
+- Making visualizations with web power
+- Reusing cells wholesale
+- Sharing your work
+
+## Interactivity in Observable
+
+- Notebooks make arguments and explorations more reproducible by showing each step in code and encouraging the reader to run it themselves. 
+- But viewing and modifying code isn't something all viewers are comfortable doing or something even the most technical viewers always have time for. 
+- Interactive inputs make the acts of plugging in different data and questioning model assumptions available to everyone. 
+- Interactive inputs in Observable, called views, are similar to IPythonWidgets in Jupyter, but tend to be
+  - simpler to write
+    - because they don't need to deal with crossing the Python/JavaScript border
+  - quicker to respond to user changes
+    - because they don't require server round-trips
+  - more integrated with the notebook
+    - because changing a value updates each of its references throughout a notebook, not just a single widget
+- Adding a slider, a clickable map, a text box, or other input to modify a value used throughout a notebook works the same way as normal cross-cell communication: reactively.
+- Visualizations in Observable are often created in multiple steps across multiple cells.
+- In Jupyter, IPythonWidgets functionality like interact() and interactive() can be used to provide inputs which cause a Python function to be reexecuted when changed.
+- In Observable, inputs modify variables which any other cells in the notebook are permitted to use. 
+  - Cells that reference these variables will all change in sync with the input changing.
+- IPythonWidgets allow other objects implementing the widget protocols to be linked on the JavaScript side, skipping the kernel, so the distinction between jslink and a trailets link is important. 
+  - This distinction does not exist in Observable, because all code is linked in JavaScript (and links are implicit based on the cells referenced in code, not objects created in code).
+- IPythonWidgets often use callbacks to hook up mutable objects, while Observable uses the reactive pattern of recreating objects based on the new values.
+- Like IPythonWidgets, the state of a widget, such as which value is currently selected, is not part of the persisted notebook state.
+  - If other people are viewing the same notebook, changes to the slider value are not shared between viewers and are not saved. 
+- Part of getting used to the lack of client/server roundtrips in Observable is using animations more frequently. 
+- Changing the value of a cell can be driven by a generator, a JavaScript language feature very similar to generators in Python.
+
+- In review, for a Jupyter user to get comfortable with Observable it is helpful to:
+  - know some JavaScript
+  - understand differences from Jupyter, particularly reactivity
+  - be able to import data, use a visualization tool, share notebooks and embed visualizations

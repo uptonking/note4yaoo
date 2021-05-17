@@ -14,6 +14,18 @@ modified: '2021-05-14T18:47:24.054Z'
   - we’ll be migrating the underlying technical implementation of Docs from the current `HTML-based` rendering approach to a `canvas-based` approach 
   - to improve performance and improve consistency in how content appears across different platforms. 
 
+- ## MathJax Turns 3.0
+- https://news.ycombinator.com/item?id=22582343
+- MathJax 3 is about twice as fast as MathJax 2, but still slower than KaTeX.
+- One relatively clear thing is that MathJax supports more features
+- One thing I remember reading is that MathJax takes a fundamentally different approach, and that a lot of the time it spends is in measuring things on the page to get things exactly right, while KaTeX is looser about things. 
+- Both MathJax and KaTeX support server-side rendering, and the speed differences vanish(消失) (for the reader at least) when nothing is being done client-side.
+
+- [Switching From MathJax to KaTeX](https://www.xaprb.com/blog/switching-mathjax-katex)
+  - MathJax is sophisticated(复杂巧妙的，先进的；水平高的), but it’s large and has a lot of dependencies. It’s not slow, but KaTeX is a lightweight drop-in replacement that’s even faster.
+  - MathJax is simple to install with a one-line `<script>` tag
+  - KaTeX is slightly more involved. js, css, setup
+
 # discuss
 
 - ## Google docs is apparently moving to a canvas based editor. 

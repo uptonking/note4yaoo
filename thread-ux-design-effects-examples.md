@@ -35,11 +35,6 @@ modified: '2021-05-10T04:06:02.843Z'
   - Semantics always come first. 
   - They're backgrounds, followed by the content, followed by borders, which scale with the content, all hidden from the accessibility tree.
 
-- ## I've created a fake 3D iPhone mockup with a bunch of CSS and @framer Motion magic.
-- https://twitter.com/linuz90/status/1390226030024138752
-  - https://mailbrew.com/
-  - The mockup is made of two images that parallax to fake the 3D perspective 
-
 - ## glob style looks perfect for Chinese/Japanese characters.
 - https://twitter.com/lomography1996/status/1389525442227413003
 

@@ -40,29 +40,6 @@ modified: '2021-05-14T14:46:37.026Z'
   - Simple toolkit for reading and writing data CSV and JSON files
   - Consider using data-forge-ts for data transformation, analysis and visualization
 
-## [Jupyter Notebook](https://jupyter.org/)
-
-- provides a web-based application suitable for capturing the whole computation process: developing, documenting, and executing code, as well as communicating the results.
-- The Jupyter notebook combines two components:
-  - A web application: 
-    - In-browser editing for code, with automatic syntax highlighting
-    - In-browser editing for rich text using the Markdown markup language
-    - The ability to execute code from the browser
-    - Displaying the result of computation using rich media representations, such as HTML, LaTeX, PNG, SVG, etc
-    - The ability to easily include mathematical notation within markdown cells using LaTeX, and rendered natively by MathJax.
-  - Notebook documents: 
-    - contains the inputs and outputs of a interactive session as well as additional text that accompanies the code but is not meant for execution.
-    - These documents are internally JSON files and are saved with the .ipynb extension. 
-
-### BeakerX
-
-- BeakerX is a collection of kernels and extensions to the Jupyter interactive computing environment. 
-- It provides JVM support, Spark cluster support, polyglot programming, interactive plots, tables, forms, publishing, and more. 
-
-- ref
-  - [The Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
-  - http://beakerx.com/documentation
-
 ## more-notebook
 
 - https://github.com/iodide-project/iodide
@@ -71,20 +48,21 @@ modified: '2021-05-14T14:46:37.026Z'
   - Note that the pyodide project (python-on-webassembly) continues and is unaffected by this change.
   - For another take on interactive, client-side notebooks, you may also be interested in the Starboard Notebook which provides some of the same capabilities as Iodide and is in active development.
 
+- https://github.com/polynote/polynote
+  - /ByNetflix
+  - an experimental polyglot notebook environment. 
+  - Currently, it supports Scala and Python (with or without Spark), SQL, and Vega.
+  - Current notebook solutions, like Jupyter and Zeppelin, are lacking in some fundamental features:
+    - Code editing
+    - Text editing
+    - Multi-language support
+    - Runtime insight: shows what kernel is doing; variables tables; highlight exceptions
+
 - https://github.com/calculist/calculist-web
   - https://github.com/calculist/calculist
   - https://calculist.io/
   - the open source thinking tool for problem solvers
   - Write down your thoughts, ideas, and data in the form of lists.
-
-- https://github.com/polynote/polynote
-  - an experimental polyglot notebook environment. 
-  - Currently, it supports Scala and Python (with or without Spark), SQL, and Vega.
-  - Current notebook solutions, like Jupyter and Zeppelin, are lacking in some fundamental features: 
-    - Code editing
-    - Text editing
-    - Multi-language support
-    - Runtime insight: shows what kernel is doing; variables tables; highlight exceptions
 
 - https://github.com/spark-notebook/spark-notebook
   - an interactive web-based editor that can combine Scala code, SQL queries, Markup and JavaScript in a collaborative manner to explore, analyse and learn from massive data sets.

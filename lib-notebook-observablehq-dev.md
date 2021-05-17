@@ -15,16 +15,25 @@ modified: '2021-05-14T14:44:14.720Z'
 # pros
 
 - reactive document，适合用来做展示文档
+- import named cells from other notebooks
+  - `import` cell `with` data `from` other-notebook
+- 可以修改和探索任何发布的notebook
 
 # cons
 
 - ## 文档编辑类
 - 不支持图文混排，如水平分栏，只能上下堆叠单元格
+- @username会另起一行
 
 - ## 导航浏览类
 - 快捷键冲突
 - 文档不支持自动生成目录toc
 
+- ## syntax
+- import的来源无法区分来自npm，还是来自其他observable notebook
+  - observablehq对于导入npm包使用`require()`，默认基于cdn.jsdelivr.net，需要AMD
+  - `import()`需要手动指定cdn.skypack.dev，需要es6
+  - `d3-require` is the module that powers Observable’s `require`.
 
 # faq-not-yet
 

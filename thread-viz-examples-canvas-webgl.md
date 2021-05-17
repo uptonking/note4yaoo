@@ -11,7 +11,10 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
-- ## 
+- ## New side project featuring some AIs from cool movies! 
+- https://twitter.com/lorismat_/status/1393932200530358276
+  - https://www.lorismat.com/almosthumans
+  - 线条动画构建文字的过程，源码是纯html网页，未混淆
 
 - ## replicating amazing noisy stripy look from beautiful @leonard_agency website with @threejs
 - https://twitter.com/akella/status/1391401430741921794

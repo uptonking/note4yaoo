@@ -9,11 +9,57 @@ modified: '2021-05-14T14:48:34.412Z'
 
 # guide
 
+
 # Unofficial ObservableHQ Compiler
 
 ## docs
 
-- ### [v0.6.0 of the Unofficial ObservableHQ Compiler_202105](https://observablehq.com/@asg017/v0-6-0-of-the-unofficial-observablehq-compiler)
+### [AN OBSERVABLE NOTEBOOK compiled to js](http://www.tophtucker.com/observable-docco/index.js.html)
+
+- When you download an Observable notebook, you get a compressed folder of files. 
+- Several are basically the same for every notebook
+- index.html 
+  - loads everything else; 
+  - it imports the notebook definition, Runtime, Standard Library, and Inspector. 
+  - It does not hold the main content of your notebook; 
+  - it is customized only with your title.
+- package.json 
+  - includes basic metadata about your notebook to make it an npm-installable package.
+- runtime.js 
+  - includes a copy of the Runtime, Standard Library, and Inspector, 
+  - so that your tarball is self-contained and runs without an Internet connection.
+- index.js 
+  - is the default entry point for the notebook package, 
+  - and just points to your main notebook definition.
+- README.md 
+  - includes a link to your notebook on observablehq.com 
+  - and boilerplate information about how you can use the package.
+- inspector.css 
+  - styles the display of cells that return a JavaScript value (like an array or string), as opposed to a DOM node. 
+  - It does not include the other styles (like fonts, colors, and tables) that you see when you render a cell on observablehq.com.
+
+- notebook contents
+
+- The content of each cell is wrapped in a function, 
+  - and each function is passed to the runtime as a cell definition. 
+  - In this context, each cell is called a variable. They’re basically the same thing; 
+  - what you see as a cell in the frontend is defined as a variable for the runtime.
+
+- I said earlier that cells and variables are basically the same thing. 
+  - One exception is that there are built-in variables that aren’t represented by any cell. 
+  - This last cell depends on one of them, `require`.
+  - We saw three other examples above: `FileAttachment`, `md`, and `width`.
+
+- That’s how a compiled Observable notebook is defined for the Runtime.
+- For me, seeing the notebook in plain JavaScript clarified what the curly brace block syntax does; 
+  - how reactive variables relate to the scope of a cell; 
+  - and that asynchronous cells don’t look that scary. (One thing not shown here is a generator cell, with yield statements; maybe I should find a better example!) 
+  - It also begins to demystify(使明白易懂；深入浅出地解释) the Runtime, which enables very intricate(复杂的；难理解的) interoperation. 
+  - Finally, it helps understand how to copy and paste to port a notebook to a non-reactive setting (without the Runtime). 
+  - If you pull out one of these functions, it’s plain JavaScript, and if you call it with the same arguments, you’ll get the same result.
+
+### [v0.6.0 of the Unofficial ObservableHQ Compiler_202105](https://observablehq.com/@asg017/v0-6-0-of-the-unofficial-observablehq-compiler)
+
 - The biggest change in v0.6.0 is the API change to distinguish between the library as a compiler and as an interpreter. 
   - Before, the entire thing was called a "compiler", but that wasn't really accurate.
   - in this library, the interpreter interprets (ie, executes) Observable JavaScript in a JavaScript environment, while the compiler compiles (ie, generates source code) Observable JavaScript into plain JavaScript as text. 

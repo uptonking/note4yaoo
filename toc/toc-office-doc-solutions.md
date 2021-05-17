@@ -102,16 +102,21 @@ modified: '2021-01-17T09:26:42.467Z'
   - /inactive
   - Living Style Guides Engine and Maintenance Environment for Front-end Components.
   - Today, the ideas SourceJS surfaced are evolving in other open source projects, like styleguidist and storybook.
-- Storybook /MIT/40kStar/201908/ts
+
+- Storybook /40kStar/MIT/201908/ts
   - https://github.com/storybookjs/storybook
   - https://storybook.js.org/
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - 定位很尴尬，做测试有更专业的jest，做文档不够灵活，适合边开发边预览
-- https://github.com/remorses/vitro
+- vitro /248Star/ISC/202103/ts
+  - https://github.com/remorses/vitro
   - https://vitro.vercel.app/
-  - /248Star/ISC/202103/ts
   - Vitro is a storybook alternative that builds 20x faster
   - It is built on top of esbuild (thanks to bundless)
+  - Build and showcase your react components in isolation
+  - Differences with storybook
+    - No addons, if you want more features open a pull request here
+    - Many features inherited from next.js like Incremental compilation
 - storycruise /6Star/MIT/202101/ts
   - https://github.com/itaditya/storycruise
   - https://storycruise.vercel.app/stories/button
@@ -131,22 +136,20 @@ modified: '2021-01-17T09:26:42.467Z'
     - Project documentation with Markdown built with python
   - https://github.com/star7th/showdoc
     - 适合IT团队的在线API文档、技术文档工具
+    - 依赖PHP
   - https://github.com/remorses/dokz
     - https://dokz.site/
     - /283Star/ISC/202010/ts
     - 依赖@chakra-ui/core、@emotion/core、prism-react-renderer
     - Effortless documentation with Next.js and MDX
     - File based routing
-  - https://github.com/remorses/vitro
-    - https://vitro.vercel.app/
-    - /151Star/ISC/202010/ts
-    - Build and showcase your react components in isolation
-    - Differences with storybook
-      - No addons, if you want more features open a pull request here
-      - Many features inherited from next.js like Incremental compilation
 - hosting-docs
   - https://zeroheight.com/
     - Create beautiful living styleguides and document all your design system resources in one place
+- https://github.com/jashkenas/docco
+  - http://ashkenas.com/docco/
+  - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
+  - It produces an HTML document that displays your comments intermingled with your code. 
 
 # more-repos
 
