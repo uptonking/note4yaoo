@@ -9,6 +9,52 @@ modified: '2020-12-08T13:29:35.248Z'
 
 # web-framework-comparison
 
+## [Why I Finally Chose React over Vue.js](https://javascript.plainenglish.io/why-i-finally-chose-react-over-vue-f090cb0e097a)
+
+- After some years building apps with both libraries, I’ve found that I prefer React. 
+- It’s not because React is more popular
+- Vue.js is easier — but not enough that it makes a difference
+- So, if both libraries are so similar, and each has its pros and cons, why do I prefer React?
+- The answer ultimately lies in JSX, React’s templating system. 
+  - Whereas Vue uses XML with embedded Javascript, JSX is truly Javascript, only formatted like XML.
+  - React, therefore, is JavaScript all the way down — and this has two important benefits.
+
+### Better compatibility with TypeScript
+
+- To understand the value of Typescript compatibility, we need to review the benefits of having a type system in the first place.
+- For one, it makes code more readable. 
+  - it’s beneficial to future you as you scale the application.
+- Second, a type system helps you design more robust abstractions. 
+- A final benefit of TypeScript is its help in quickly catching subtle bugs.
+- All these benefits mean faster development and fewer bugs, improvements that see increasing returns as the complexity of the application grows.
+- JSX = more types
+- Every part of a JSX element can (and should) be typed: components, props, children, and so on.
+- for a library to integrate well with Typescript, all of its features must be easily typed. Thanks to JSX, React easily meets this criteria.
+- Indeed, it is possible to type many of these elements in Vue as well, but the effort required is often greater
+- React’s larger ecosystem does make a difference
+- React libraries and add-ons are more likely to support TypeScript.
+
+### A more functional paradigm
+
+- In math and computer science, a function is an operation that consumes some inputs and returns some output. 
+- The best functions are pure and deterministic.
+- Pure functions have no side effects; they ignore state and care only about the inputs to the function.
+- Deterministic functions always return the same output given the same inputs.
+- These functions are easier to test, simpler to think about, and improve code readability.
+- Since JSX is JavaScript, we can treat JSX elements as first-class variables. 
+- The difference may appear insignificant, but there are two distinct disadvantages to Vue’s organization. 
+  - First, it spreads code for one part of the component across the entire file. 
+  - Second, it’s unclear just from looking at the formatAsMoney method where the method is used or what will happen if it’s changed or removed.
+- Another important difference between React and Vue is how child components pass data up to parents. 
+  - In React, the parent component passes a function to the child that the child calls; 
+  - this pattern demands an advanced understanding of functional JavaScript, but is far more powerful and flexible than Vue’s `emit` pattern. 
+  - And because React’s functional pattern is truer to Javascript, it also offers superior TypeScript compatibility.
+
+- I’ll close with some final advice: don’t make an important tech decision without fully understanding your options.
+  - Take the time to become proficient at Vue/React to understand its strong and weak points. 
+  - Whatever you pick, your choice shouldn’t determine the quality of your end product, and it certainly shouldn’t determine the quality of your code
+- Sort out your wants and needs as a team, discuss the pros and cons of your options, and reach an agreement that satisfies as much of your team as possible.
+
 ## [lit-html vs hyperHTML vs lighterhtml_201902](https://webreflection.medium.com/lit-html-vs-hyperhtml-vs-lighterhtml-c084abfe1285)
 
 - When `lit-html` released at the end of July 2017 as an experimental, not production ready, library, 

@@ -37,7 +37,12 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## The browser puts up new frames for every single motion on the page, even when scrolling.
+  - To provide a smooth experience, it has to prepare each frame in 16.66 ms (60 fps)
+  - To help the browser with that, we need to have our JS callbacks run FAST & at the RIGHT TIME (during each frame)
+  - If a callback runs near the end of a frame, the frame might exceed its 16.66 ms deadline (causing it to be delayed/dropped)
+  - `requestAnimationFrame` helps with timing
+- It's best to do DOM manipulations or style changes (even when not doing animations) via requestAnimationFrame, as it schedules the callback to run at the start of the next frame
 
 - ## Is there an open source implementation of http://vectormagic.com / http://vectorizer.io? That takes a png and outputs a svg.
 - https://twitter.com/Vjeux/status/1387828983522234370

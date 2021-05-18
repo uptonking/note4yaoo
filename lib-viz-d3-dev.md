@@ -7,12 +7,50 @@ modified: '2020-12-08T13:32:22.331Z'
 
 # lib-viz-d3-dev
 
-# tip
+# guide
 
-- Mike Bostock的外边距约定 http://bl.ocks.org/mbostock/3019563
+# pieces
+
+- Mike Bostock的外边距约定
+  - http://bl.ocks.org/mbostock/3019563
 - 剪切路径clip-path会将svg边界上和边界外的元素超出svg矩形的部分隐藏
 
 # summary
+
+- d3绘图套路
+
+``` js
+svg.selectAll('rect')
+  .data(dataset)
+  .enter()
+  .append('circle')
+  .attr()
+```
+
+- 核心api
+  - data()
+  - enter()
+  - exit()
+  - transition()
+- data vs datum
+  - data 将一个数组的各项分别绑定到各元素上
+  - datum 将数组本身绑定到各元素上
+- attr()用于设置DOM属性，style()用于设置css样式
+  - 添加样式1 selection.attr('class', 'title')
+  - 添加样式2 selection.style('width', 240px)
+  - 添加样式3 selection.classed('title', true)
+- 数据更新
+  - 数量不变，值变化 enter()
+  - 数量变多 enter()
+  - 数量变少 exit()
+- transition()默认插值间隔是250ms
+  - duration() ms
+  - ease() 
+  - delay() ms
+- 坐标轴3部分
+  - 轴线(注意：坐标轴要与比例尺关联)
+  - 刻度线
+  - 文本标签
 
 - d3.svg.arc()
   - disk 圆形
@@ -22,45 +60,6 @@ modified: '2020-12-08T13:32:22.331Z'
 - 约定
   - tooltip 鼠标提示
   - label 数据标注
-- data vs datum
-  - data 将一个数组的各项分别绑定到各元素上
-  - datum 将数组本身绑定到各元素上  
-  - 自定义数据绑定？
-
-- 核心api
-  - data()
-  - transition()
-  - enter()
-  - exit()
-
-- attr()用于设置DOM属性，style()用于设置css样式  
-  - 添加样式1 selection.attr('class', 'title')  
-  - 添加样式2 selection.style('width', 240px)
-  - 添加样式3 selection.classed('title', true)
-
-- d3绘图套路
-
-``` js
-svg.selectAll('circle')
-  .data(dataset)
-  .enter()
-  .append('circle')
-  .attr()
-```
-
-- 数据更新
-  - 数量不变，值变化 enter()
-  - 数量变多 enter()
-  - 数量变少 exit()
-- transtion()默认插值间隔是250ms
-  - duration() ms
-  - ease() 
-  - delay() ms
-- 坐标轴3部分
-  - 轴线
-  - 刻度线
-  - 文本标签  
-  - 注意：坐标轴要与比例尺关联    
 
 # blog
 
@@ -192,4 +191,72 @@ svg.selectAll('circle')
 - ### discuss
 - https://twitter.com/mbostock/status/1364263392555327490
 
+# read-books
+
+## Integrating D3.js with React: Learn to Bring Data Visualization to Life /202106/src
+
+- https://www.apress.com/gp/book/9781484270516 
+- https://github.com/Apress/integrating-d3.js-with-react
+
+- Set up your project with React, TypeScript and D3.js
+- Create simple and advanced D3.js charts
+- Work with complex charts such as world and force charts
+- Integrate D3 data with **React state management**
+- Improve the performance of your D3 components
+- Deploy as a server or serverless app and debug test
+
+## D3 Tips and Tricks v6.x: Interactive Data Visualization in a Web Browser /202102/free
+
+- https://leanpub.com/d3-t-and-t-v6
+- https://gist.github.com/d3noob
+
+## Pro D3.js: Use D3.js to Create Maintainable, Modular, and Testable Charts /201911
+
+- https://www.apress.com/gp/book/9781484252024
+- https://github.com/Apress/pro-d3.js
+- https://github.com/britecharts/britecharts
+  - Client-side reusable Charting Library based on D3.js v5
+  - https://github.com/britecharts/britecharts-react
+
+- Create v5 D3.js charts with ES2016 and unit tests
+- Develop modular, testable and extensible code with the Reusable API pattern
+- Work with and extend Britecharts, a reusable charting library created at Eventbrite
+- Use Webpack and npm to create and publish a charting library from your own chart collections
+- Write reference documentation and build a documentation homepage for your library.
+
+## Fullstack D3 and Data Visualization: Build beautiful data visualizations with D3 /201907
+
+- https://www.newline.co/fullstack-d3
+- https://github.com/TheRobBrennan/explore-data-visualization-with-D3
+
+Chapter 0: Introduction When would you want to use D3.js?
+Chapter 1: Making your first chart
+Chapter 2: Making a scatterplot
+Chapter 3: Making a bar chart
+Chapter 4: Animations and Transitions
+Chapter 5: Interactions
+Chapter 6: Making a map
+Chapter 7: Data Visualization Basics
+Chapter 8: Common Charts
+Chapter 9: Dashboard Design
+Chapter 10: Advanced Visualization: Marginal Histogram
+Chapter 11: Advanced Visualization: Radial Weather Chart
+Chapter 12: Advanced Visualization: Animated Sankey Diagram
+Chapter 13: D3 and React
+Chapter 14: D3 and Angular
+
+## D3 for the Impatient: Interactive Graphics for Programmers and Scientists /201905
+
+- https://www.oreilly.com/library/view/d3-for-the/9781492046783/
+- https://github.com/janert/d3-for-the-impatient
+
+- Understand D3 selections, the library’s fundamental organizing principle
+- Learn how to create data-driven documents with data binding
+- Create animated graphs and interactive user interfaces
+- Draw figures with curves, shapes, and colors
+- Use the built-in facilities for heatmaps, tree graphs, and networks
+- Simplify your work by writing your own reusable components
+
 # ref
+
+- [Adding Graphics to a React App with D3.js_202010](https://dev.to/search?q=Adding%20Graphics%20to%20a%20React%20App%20with%20D3&filters=class_name: Article&sort_by=published_at&sort_direction=desc)

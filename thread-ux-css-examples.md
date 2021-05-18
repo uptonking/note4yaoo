@@ -17,7 +17,13 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Modern Blog Layout with CSS Grid
+- https://twitter.com/AysnrTrkk/status/1393918222194335746
+  - https://codepen.io/TurkAysenur/full/gOmMgpx
+  - 页面内容区的顶部，会自动滑动到当前文章标题的位置
+- It's a visually cool tech demo, but it's also introduces countless accessibility issues. 
+  - For instance, locking should be disabled if there isn't enough screen real estate to display the content.
+  - Screen design vs Page design 👌 We don’t design pages, we design screens and interactions.
 
 - ## I built a 4-bit binary adder out of html & css
 - https://twitter.com/LillianKodi/status/1392962911258267659

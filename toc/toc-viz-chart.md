@@ -82,6 +82,12 @@ modified: '2020-10-22T10:22:33.292Z'
   - started in 2008 and was initially canvas only.
   - Now it has support for over 60 responsive chart types across SVG and canvas
 
+- britecharts /3.7kStar/Apache2/202105/js
+  - https://github.com/britecharts/britecharts
+  - http://britecharts.github.io/britecharts/
+  - a client-side reusable Charting Library based on D3.js v5
+  - written in ES2016 with a Test Driven methodology
+  - https://github.com/britecharts/britecharts-react
 - bqplot /3.1kStar/Apache2/202105/ts
   - https://github.com/bqplot/bqplot
   - a 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics.

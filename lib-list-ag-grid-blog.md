@@ -243,3 +243,5 @@ modified: '2021-05-13T02:42:08.630Z'
 - [Testing with Jest & Enzyme - querying JSDOM vs ag-Grid API](https://blog.ag-grid.com/testing-ag-grid-react-jest-enzyme/)
   - jsdom: test user behavior
   - ag-grid api: compatible with dom virtualisation, test implementation
+
+- [Build Customized Spreadsheets Using AG-Grid](https://techblog.geekyants.com/build-customized-spreadsheets-using-ag-grid)

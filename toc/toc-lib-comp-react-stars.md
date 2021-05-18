@@ -29,6 +29,11 @@ modified: '2021-01-12T18:49:02.623Z'
 
 # starred
 
+- https://github.com/nikxda/react-xray
+  - https://react-xray.vercel.app/
+  - A component to reveal images on user interaction, written with TypeScript + React.
+  - 模糊图片，然后鼠标所在的部分可以看清图片
+
 - https://github.com/CharlesStover/use-offline
   - React hook for listening to online/offline events.
   - Want to change your #ReactJS app when your users disconnect from the internet? Now you can.

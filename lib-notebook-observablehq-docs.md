@@ -568,7 +568,7 @@ new Promise((resolve, reject) => {
 - Reusing cells wholesale
 - Sharing your work
 
-## Interactivity in Observable
+# [Interactivity in Observable](https://observablehq.com/@observablehq/interactivity-in-observable)
 
 - Notebooks make arguments and explorations more reproducible by showing each step in code and encouraging the reader to run it themselves. 
 - But viewing and modifying code isn't something all viewers are comfortable doing or something even the most technical viewers always have time for. 

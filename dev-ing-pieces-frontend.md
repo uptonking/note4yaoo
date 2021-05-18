@@ -13,6 +13,28 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- ## [parseInt vs unary plus, when to use which?](https://stackoverflow.com/questions/17106681)
+
+- The unary `+` acts more like `parseFloat` since it also accepts decimals.
+- An empty string "" evaluates to a 0, while parseInt evaluates it to NaN. IMO, a blank string should be a NaN.
+
+``` JS
++'' === 0; //true
+isNaN(parseInt('', 10)); //true
+
+parseInt('2a', 10) === 2; //true
+parseFloat('2a') === 2; //true
+isNaN(+'2a'); //true
+
+parseInt('2e3', 10) === 2; //true. This is supposed to be 2000
++
+'2e3' === 2000; //true. This one's correct.
+
+parseInt("0xf", 10) === 0; //true. This is supposed to be 15
++
+'0xf' === 15; //true. This one's correct.
+```
+
 - ## [How to watch only a single field in an object in useEffect hook?](https://stackoverflow.com/questions/56823586)
   - by extracting a variable out of useEffect
 

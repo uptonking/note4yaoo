@@ -22,6 +22,21 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0510-0516
 
+👉 Docusaurus 2 Beta
+👉 Chose React over Vue
+👉 (un)controlled inputs
+👉 Eliminate problems
+👉 Recoil 0.3
+👉 Coinbase -> React Native
+👉 Stripe-React-Native
+👉 Hermes on iOS
+👉 Babel drama
+👉 TypeScript 4.3 RC
+👉 TS 7 sources of unsoundness
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1394315009220653057
+
 ## w0503-0509
 
 👉 Remix: Super Simple Start
