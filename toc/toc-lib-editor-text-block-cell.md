@@ -13,6 +13,22 @@ modified: '2021-05-14T10:37:33.820Z'
   - https://editorjs.io/
   - /15.4kStar/Apache2/202105/ts
   - A block-styled editor with clean JSON output
+  - https://github.com/editor-js/awesome-editorjs
+  - https://github.com/omegion/horul-editor
+    - horul-editor is editorjs wrapper component with vue
+
+- https://github.com/appleple/smartblock/
+  - https://appleple.github.io/smartblock/
+  - intuitive block based wysiwyg editor built with React and ProseMirror
+- https://github.com/TorstenDittmann/omnia-editor
+  - https://omnia-editor.vercel.app/
+  - 依赖 svelte
+  - A lightweight open source block style editor built for the modern web.
+
+- https://github.com/johnthethird/makona-editor
+  - http://johnthethird.github.io/makona-editor/
+  - /archived--201504
+  - a block-style editor written in ReactJS.
 
 - https://github.com/psyhyde/domino-editor
   - https://domino-editor.vercel.app/
