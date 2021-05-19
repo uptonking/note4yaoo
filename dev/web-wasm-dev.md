@@ -9,6 +9,9 @@ modified: '2021-01-01T20:10:51.125Z'
 
 # guide
 
+- tips
+  - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
+
 # faq
 
 # pieces

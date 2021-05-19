@@ -24,11 +24,14 @@ modified: '2020-08-03T13:29:04.709Z'
   - Unreal Engine 4
     - 开源但只能学习不能再次分发
 - common
+  - https://github.com/pixijs/pixi.js
+    - /30.7kStar/MIT/202009/ts
+    - Create digital content with the fastest 2D WebGL renderer.
+    - PixiJS has full WebGL support and seamlessly falls back to HTML5's canvas if needed.
   - https://github.com/libgdx/libgdx  /Apache2
     - 基于gwt，放弃
   - https://github.com/cocos2d/cocos2d-x  /MIT
     - cocos2d-js不如-x好用
-  - https://github.com/pixijs/pixi.js  /MIT
   - https://github.com/photonstorm/phaser  /MIT
     - 从性能到底层api的易用和强大
     - 没有做模块拆分，tween,particles等全在一个包中，release的min版本大概在2M，egret在700K左右

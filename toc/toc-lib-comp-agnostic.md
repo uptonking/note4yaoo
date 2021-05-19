@@ -31,13 +31,25 @@ modified: '2020-11-13T07:28:27.824Z'
       - /11.2kStar/Apache2/2020209/java
       - Modular and customizable Material Design UI components for Android
 
-
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
   - carbon-components: Component styles and Vanilla JavaScript
   - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
 
+- easy-canvas /106Star/MIT/202010/js/NoDeps
+  - https://github.com/Gitjinfeiyang/easy-canvas
+  - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
+  - 支持文档流，参照 web，无需设置 x、y 以及宽高
+  - 提供了一套比较完整的组件库
+  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
+  - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
+  - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
+  - https://github.com/Gitjinfeiyang/vue-easy-canvas
+    - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
+
+- https://github.com/prasannavl/icomponent
+  - A super simple, render-agnostic component library for the modern web that emphasizes framework and renderer freedom
 
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts
@@ -169,4 +181,3 @@ modified: '2020-11-13T07:28:27.824Z'
   - https://github.com/qlik-demo-team/qdt-components
     - 封装一个通过ReactDOM.render渲染出DOM节点的方法，每个单独的组件都会命令式地调用此方法渲染
     - React Components to be used with Angular 6, React 16 and Vue 2.
-

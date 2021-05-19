@@ -16,6 +16,10 @@ modified: '2021-01-13T19:30:59.508Z'
   - https://github.com/excalidraw/excalidraw
   - https://excalidraw.com/
   - Virtual whiteboard for sketching hand-drawn like diagrams
+  - https://twitter.com/Vjeux/status/1292706657663762432
+    - Excalidraw stores everything into a giant variable "AppState" and whenever it changes, we re-draw the canvas and optionally the UI if needs be.
+    - We don't use requestAnimationFrame, we respond to DOM events directly. 
+    - History is implemented pushing JSON.stringify(appState) to an array. It's pretty memory heavy, we need to optimize this at some point! 
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz

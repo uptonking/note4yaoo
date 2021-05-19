@@ -72,7 +72,11 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/projectstorm/react-workspaces
   - http://projectstorm.cloud/react-workspaces/
   - /90Star/202006/ts
+  - 基于dom实现
   - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
+  - https://github.com/projectstorm/react-canvas
+    - 基于canvas实现
+    - A pluggable layout and graphics system aimed at powering desktop publishing as well as storm-react-diagrams
 - https://github.com/nomcopter/react-mosaic /2.5kStar/202005
   - https://nomcopter.github.io/react-mosaic/
   - A React tiling window manager

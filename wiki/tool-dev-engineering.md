@@ -9,8 +9,22 @@ modified: '2020-12-08T14:06:06.985Z'
 
 # dev
 
-- https://github.com/preactjs/wmr
-  - The tiny all-in-one development tool for modern web apps, in a single 2mb file with no dependencies.
+- build or serve
+  - esbuild, wmr
+
+# image
+
+- OpenSeadragon /2.1kStar/BSD/202105/js
+  - https://github.com/openseadragon/openseadragon
+  - http://openseadragon.github.io/
+  - web-based viewer for high-resolution zoomable images, implemented in pure JavaScript, for desktop and mobile.
+  - Supported Tile Sources: legacy image pyramids、osm、tms
+
+- mirador /400Star/Apache2/202105/js
+  - https://github.com/ProjectMirador/mirador
+  - https://projectmirador.org/
+  - https://mirador-dev.netlify.app/__tests__/integration/mirador/
+  - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
 
 # compile
 

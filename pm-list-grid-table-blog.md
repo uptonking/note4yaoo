@@ -19,6 +19,25 @@ modified: '2020-11-16T12:42:45.751Z'
 - 表格渲染有多复杂
 - 数据管理的难题
 
+# [精读《高性能表格》](https://zhuanlan.zhihu.com/p/364094849)
+
+- 要做表格首先要选择基于 DOM 还是 Canvas，这是技术选型的第一步
+  - Canvas 渲染效率比 DOM 高，这是浏览器实现导致的。
+  - DOM 可拓展性比 Canvas 好，渲染自定义内容首选 DOM 而非 Canvas。
+- 技术选型要看具体的业务场景，钉钉表格其实就是在线 Excel，Excel 这种形态决定了单元格内一定是简单文本加一些简单图标，
+  - 因此不用考虑渲染自定义内容的场景，所以选择 Canvas 渲染在未来也不会遇到不好拓展的麻烦。
+- 而自助分析表格天然可能拓展图形、图片、操作按钮到单元格中，对轴的拖拽响应交互也非常复杂，为了不让 Canvas 成为以后拓展的瓶颈，还是选择 DOM 实现比较妥当。
+- 我们应该如何用 DOM 实现一个高性能表格呢？
+  - 其实业界已经有许多 DOM 表格优化方案了，主要以按需渲染、虚拟滚动为主，即预留一些 Buffer 区域用于滑动时填充，表格仅渲染可视区域与 Buffer 区域部分。
+  - 但这些方案都不可避免的存在快速滑动时白屏问题，笔者通过不断尝试终于发现了一种完美解决的方案，我们一起往下看吧！
+
+- 单元格使用 DIV 绝对定位
+- 模拟滚动而非原生滚动
+- 零 buffer 区域
+- 预计算
+- 局部预计算
+- Map Reduce
+
 # Five Fast JavaScript Data Grids — A Performance Review
 
 - [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)

@@ -9,6 +9,14 @@ modified: '2020-10-05T06:17:42.467Z'
 
 # popular
 
+- canvas-engines-comparison
+  - https://github.com/slaylines/canvas-engines-comparison
+  - https://benchmarks.slaylines.io/
+  - 渲染5000个矩形的性能：PixiJS > Two.js >> konva.js/fabric.js/paper.js
+  - [Show HN: Canvas engines performance comparison – PixiJS, Two.js, and Paper.js](https://news.ycombinator.com/item?id=23083730)
+    - The comparison was unfair it was only moving the positions of the rectangles each frame for paper.js, and two.js 
+    - but for pixi.js it was redrawing them from scratch which means it had to retesselate everything every frame.
+
 - konva /5.3kStar/MIT/202007
   - https://github.com/konvajs/konva
   - http://konvajs.org/
@@ -21,15 +29,31 @@ modified: '2020-10-05T06:17:42.467Z'
   - High performance canvas rendering for React components
   - https://github.com/Flipboard/react-canvas/issues/138
     - This is a Cairo graphics library with HTML5 Canvas and a react bindings. 
-    - Its a pretty straight forward wrapper around Cairo. 
+    - Its a pretty straight forward wrapper around Cairo.
     - Cairo has been wrapped many times by many different libraries, 
     - this one is just the same as all the others, except maybe that its used by Flipboard, but they don't say much about it other than their one Wiki article.
-- https://github.com/Gitjinfeiyang/easy-canvas
-  - https://github.com/Gitjinfeiyang/easy-canvas
-  - /106Star/MIT/202010/js
-  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
-  - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
-  - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
+
+- two.js /7.1kStar/MIT/202105/js
+  - https://github.com/jonobr1/two.js
+  - https://two.js.org/
+  - 依赖 Underscore.js(以前也依赖raf、@codemirror/next)
+  - A renderer agnostic two-dimensional drawing api for the web.
+  - It is renderer agnostic enabling the same api to render in multiple contexts: webgl, canvas2d, and svg.
+  - Focus on Vector Shapes: aims to make the creation and animation of flat shapes easier and more concise.
+  - At its core two.js relies on a scenegraph.
+    - This means that when you draw or create an object (a Two.Path or Two.Group), two actually stores and remembers that. 
+  - Two.js has a built in animation loop. 
+  - Two.js features a Scalable Vector Graphics Interpreter
+- spritejs /4.5kStar/MIT/202105/js/inactive/周边项目都没有更新了
+  - https://github.com/spritejs/spritejs
+  - https://spritejs.org/#/zh-cn/index
+  - 依赖 gl-matrix、sprite-animator
+  - OffscreenCanvas and Web Worker.
+  - Work with d3.
+  - It is renderer agnostic enabling the same api to render in multiple contexts: webgl2, webgl, and canvas2d.
+  - Manipulate the sprites in canvas as you do with the DOM elements.
+  - https://github.com/spritejs/q-charts
+    - 基于 spritejs 封装的图表库
 
 - paper.js /12.2kStar/MIT/202006/js
   - https://github.com/paperjs/paper.js
@@ -37,6 +61,69 @@ modified: '2020-10-05T06:17:42.467Z'
   - Scriptographer ported to JavaScript and the browser, using HTML5 Canvas.
   - paper-full.js – The full version for the browser, including PaperScript support and Acorn.js
   - paper-core.js – The core version for the browser, without PaperScript support nor Acorn.js. 
+- react-ape /1.2kStar/MIT/202012/js
+  - https://github.com/raphamorim/react-ape
+  - https://raphamorim.io/react-ape/
+  - a react renderer to build UI interfaces using canvas/WebGL. 
+  - React Ape was built to be an optional React-TV renderer. 
+  - It's mainly a renderer focused on creating things for TV, PS4, Nintendo Switch, PS Vita, PS3 and low memory devices.
+  - https://github.com/raphamorim/react-tv
+    - deprecated for react-ape
+
+- easy-canvas /106Star/MIT/202010/js/NoDeps
+  - https://github.com/Gitjinfeiyang/easy-canvas
+  - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
+  - 支持文档流，参照 web，无需设置 x、y 以及宽高
+  - 提供了一套比较完整的组件库
+  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
+  - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
+  - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
+  - https://github.com/Gitjinfeiyang/vue-easy-canvas
+    - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
+
+- https://github.com/fabricjs/fabric.js
+  - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
+
+- https://github.com/cburgmer/rasterizeHTML.js
+  - http://cburgmer.github.io/rasterizeHTML.js
+  - Renders HTML into the browser's canvas
+  - it is possible by embedding the HTML into an SVG image as a `<foreignObject>` and then drawing the resulting image via `ctx.drawImage()`.
+  - SVG is not allowed to link to external resources and so rasterizeHTML.js will load external images, fonts and stylesheets and store them inline via data: URIs (or inline style elements respectively).
+
+- https://github.com/eKoopmans/html2pdf.js
+  - Client-side HTML-to-PDF rendering using pure JS.
+  - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using html2canvas and jsPDF.
+
+- https://github.com/jarenchow/janvas
+  - 未开源源码，目前 janvas.min.js 仅使用 uglifyjs --compress 简单压缩无混淆
+  - 基于 HTML5 Canvas 2d 绘图上下文的 JavaScript 绘图库，不仅便于 拓展，拥有极佳的 灵活度 和超越原生 canvas API 开发的 性能
+
+# canvas-designer-builder
+
+- react-design-editor /556Star/MIT/202009
+  - https://github.com/salgum1114/react-design-editor
+  - https://salgum1114.github.io/react-design-editor/
+  - 画布区是canvas，其余地方是dom
+  - developed direct manipulation of editable design tools like Powerpoint
+  - We've developed it with reactjs, ant.design, fabricjs
+
+# canvas-extensions
+
+- https://github.com/udevbe/react-canvaskit
+  - Experiment in creating a custom react renderer using an offscreen webgl canvas on top of Skia CanvasKit
+  - This implementation allows you to use all familiar React concepts like hooks and contexts, in conjunction with JSX elements that closely match the existing Skia CanvasKit API. 
+  - Everything is drawn to a hardware accelerated WebGL canvas.
+  - [CanvasKit](https://skia.org/docs/user/modules/canvaskit/) 
+    - WebGL context encapsulated as an SkSurface, allowing for direct drawing to an HTML canvas
+
+- https://github.com/Automattic/node-canvas
+  - a Cairo-backed Canvas implementation for Node.js.
+
+- https://github.com/spritejs/sprite-flex-layout
+  - 无依赖
+  - a layout engine which implements flex, can use in canvas/node-canvas
+- https://github.com/miguelpeixe/react-flexcanvas
+  - Canvas grid system built with flexboxes for React
 
 # canvas-animation
 
@@ -51,6 +138,7 @@ modified: '2020-10-05T06:17:42.467Z'
 - https://github.com/doodlewind/freecube
   - Freecube renders and animates Rubik's Cube with raw WebGL, plus a tiny rule-based solver showing how CFOP works.
   - 魔方打乱还原动画
+
 - https://github.com/datavized/morph /201809
   - 5 steps to create generative art from tabular data (e.g. spreadsheets and comma-separated values).
 

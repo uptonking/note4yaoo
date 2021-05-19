@@ -32,6 +32,12 @@ modified: '2020-09-25T08:29:40.588Z'
   - As of version 5.5.0, Jaspersoft Studio will be the official design client for JasperReports. 
   - iReport will remain as a supported product in maintenance-only mode until December 31, 2015
 
+# java-charting
+
+- https://github.com/jfree/jfreechart-fx
+  - JFreeChart-FX is an extension for JFreeChart that allows JFreeChart to be used in JavaFX applications.
+  - It’s canvas-based and therefore a different approach to the scene-based charts that come with JavaFX.
+
 # misc
 
 - eclipse brit

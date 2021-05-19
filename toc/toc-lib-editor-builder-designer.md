@@ -26,6 +26,7 @@ modified: '2020-11-17T13:38:19.107Z'
 - openchakra /MIT/1.6kStar/202008
   - https://github.com/premieroctet/openchakra
   - https://openchakra.app/
+  - 画布编辑区全部基于dom实现
   - visual editor and code generator for React using Chakra UI
 - VvvebJs /Apache2/3.3kStar/202007
   - https://github.com/givanz/VvvebJs
@@ -39,7 +40,8 @@ modified: '2020-11-17T13:38:19.107Z'
   - 依赖underscore，backbone，codemirror
 - react-page /LGPLv3/8.2kStar/202008/ts
   - https://github.com/react-page/react-page
-  - http://ory-editor.aeneas.io/
+  - https://react-page.github.io/
+  - 画布编辑区全部基于dom实现
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
 - react-ui-builder-editor /GPL/12Star/202006
   - https://github.com/react-ui-builder/react-ui-builder-editor
@@ -54,22 +56,27 @@ modified: '2020-11-17T13:38:19.107Z'
   - https://github.com/iwangbowen/UI-Builder
   - 基于 bootstrap 4和jquery实现
 - react-visual-editor /MIT/2.3kStar/202008
-  - https://github.com/brick-design/react-visual-editor
-  - https://brick-design.github.io/react-visual-editor/
+  - https://github.com/brick-design/brick-design
+  - https://brick-design.github.io/brick-design/
   - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
   - 基于antd
-- https://github.com/salgum1114/react-design-editor /556Star/MIT/202009
+  - old-repo
+    - https://github.com/brick-design/react-visual-editor
+- react-design-editor /556Star/MIT/202009
+  - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
+  - 画布区是canvas，其余地方是dom，直接导出图片或json
   - developed direct manipulation of editable design tools like Powerpoint
   - We've developed it with reactjs, ant.design, fabricjs
-- https://github.com/xinyu198736/antd-visual-editor /443SStar/201904
-  - https://xinyu198736.github.io/antd-visual-editor/#/?_k=u97lci
+- antd-visual-editor /443SStar/201904
+  - https://github.com/yu-tou/antd-visual-editor
+  - https://yu-tou.github.io/antd-visual-editor/index.html
 - pagedraw /MIT/2.8kStar/201906/CoffeeScript
   - https://github.com/Pagedraw/pagedraw
   - https://pagedraw.io/
   - a UI builder for React web apps
-  - Pagedraw is shutting down 
-  - Ultimately, we think Pagedraw is the wrong product. We think you can get 90% of the benefits of Pagedraw by just using JSX better. 
+  - Pagedraw is shutting down. Ultimately, we think Pagedraw is the wrong product. 
+  - We think you can get 90% of the benefits of Pagedraw by just using JSX better. 
   - 产品的ui类似codepen的三栏编辑器，分别是入口处源码、可拖拽组件编辑器、预览视图
 - misc
   - https://github.com/cerner/kaiju
@@ -124,22 +131,18 @@ modified: '2020-11-17T13:38:19.107Z'
 
 # h5-editor
 
+- react-designer /1.7kStar/MIT/201906/js
+  - https://github.com/react-designer/react-designer
+  - http://react-designer.github.io/react-designer/
+  - Editable vector graphics in your react apps
+  - 形状基于svg
+  - https://github.com/fritz-c/react-shape-editor
+    - /49Star/MIT/202002
+    - Simple shape editor component with React and SVG
 - https://github.com/lzuntalented/lz-h5-edit
   - /289Star/NALic/202009
   - http://show.lzuntalented.cn/
   - react版h5微场景编辑器，一款类似【易企秀】【兔展】的H5微场景编辑器
-- https://github.com/salgum1114/react-design-editor
-  - /558Star/MIT/202009
-  - https://salgum1114.github.io/react-design-editor/
-  - direct manipulation of editable design tools like Powerpoint
-  - primarily uses the Ant Design, Fabric.js and React
-- https://github.com/react-designer/react-designer
-  - /1.6kStar/BuyLic/201906
-  - http://react-designer.github.io/react-designer/
-  - Editable vector graphics in your react apps
-- https://github.com/fritz-c/react-shape-editor
-  - /49Star/MIT/202002
-  - Simple shape editor component with React and SVG
 - https://github.com/react-ui-builder/wcd-ant-design
   - /4Star/MIT/202006
   - Since React UI Builder is based on a visual Web application builder - Webcodesk

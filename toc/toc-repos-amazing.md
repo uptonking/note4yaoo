@@ -53,6 +53,7 @@ modified: '2020-11-03T06:54:59.051Z'
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
   - library for visualization and creative-coding.
+  - 例子几乎都是基于canvas实现
 
 - https://github.com/wenyan-lang/wenyan
   - https://wy-lang.org/

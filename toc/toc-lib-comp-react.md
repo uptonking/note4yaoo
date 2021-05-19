@@ -114,10 +114,6 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/adazzle/react-data-grid
   - http://adazzle.github.io/react-data-grid/
   - Excel-like grid component built with React, with editors
-- react-diagrams /MIT/3kStar/201908/ts
-  - https://github.com/projectstorm/react-diagrams
-  - http://projectstorm.cloud/react-diagrams
-  - diagramming library written in react
 - react-tiny-virtual-list  /MIT/1600Star/201807/ts
   - https://github.com/clauderic/react-tiny-virtual-list
   - https://clauderic.github.io/react-tiny-virtual-list/
@@ -126,6 +122,11 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/myxvisual/react-uwp
   - https://www.react-uwp.com/
   -  Components implement Microsoft's UWP Design & Fluent Design
+
+- react-diagrams /MIT/3kStar/201908/ts/canvas
+  - https://github.com/projectstorm/react-diagrams
+  - http://projectstorm.cloud/react-diagrams
+  - diagramming library written in react
 - reaviz /Apache2/797Star/201908/ts
   - https://github.com/jask-oss/reaviz.git
   - https://jask-oss.github.io/reaviz/

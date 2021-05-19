@@ -310,6 +310,8 @@ modified: '2020-10-22T06:49:10.760Z'
   - /417Star/MIT/202104/ts
   - high-performance React grid component, with rich rendering
   - the open-source data grid powering @glideapps
+- https://github.com/ericdrowell/PowerGrid
+  - blazing fast performance and massive scale (100M cells+) via virtualized viewport
 
 - OpenWebSheet /MIT/14Star/202003/ts/vue
   - https://github.com/SiamandMaroufi/OpenWebSheet

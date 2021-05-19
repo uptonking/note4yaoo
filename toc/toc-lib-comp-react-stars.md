@@ -166,9 +166,6 @@ modified: '2021-01-12T18:49:02.623Z'
   - A small demo for react-screen-capture
 - https://github.com/vivianuol/screenCapture-React
   - an React component created using Twilio screenCapture API.
-- https://github.com/raphamorim/react-ape.git
-  - React Renderer to build UI interfaces using canvas/WebGL
-  - React Ape was built to be an optional React-TV renderer
 - https://github.com/tajo/react-portal.git
   - has a fallback for React v15
 - https://github.com/contra/react-responsive

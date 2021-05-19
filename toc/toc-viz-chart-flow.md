@@ -67,6 +67,10 @@ modified: '2020-10-22T10:22:55.878Z'
   - /45Star/NALic/202104/ts
   - 依赖react-flow-renderer, preact, tailwindcss
   - A simple online flow chart editor.
+- react-diagrams /MIT/3kStar/201908/ts/canvas
+  - https://github.com/projectstorm/react-diagrams
+  - http://projectstorm.cloud/react-diagrams
+  - diagramming library written in react
 
 # uml
 
@@ -77,6 +81,13 @@ modified: '2020-10-22T10:22:55.878Z'
 
 # node-graph
 
+- https://github.com/awslabs/diagram-maker
+  - https://awslabs.github.io/diagram-maker
+  - https://awslabs.github.io/diagram-maker/explore/demos.html
+  - framework-agnostic
+  - 基于svg实现，没有canvas
+  - 提供了layout、circular、theming等多种示例
+  - A library to display an interactive editor for any graph-like data.
 - https://github.com/reaviz/reaflow
   - Node-based Visualizations for React
   - REAFLOW is a modular diagram engine for build static or interactive editors. 
