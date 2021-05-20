@@ -10,7 +10,10 @@ modified: '2020-12-20T15:46:29.566Z'
 # guide
 
 - 很多成熟优秀的系统都是插件式架构
-  - react
+  - react hooks
+
+- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+  - 500 Lines or Less
 
 # plugin-system-repos
 

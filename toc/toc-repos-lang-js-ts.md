@@ -41,7 +41,7 @@ modified: '2021-05-14T15:04:55.849Z'
   - 依赖react、react-router、blueprint组件、codemirror、mobx
 - https://github.com/ianstormtaylor/slate
   - /18.6kStar/MIT/202009/ts/react
-  - completely customizable framework for building rich text editors.
+  - a completely customizable framework for building rich text editors.
   - since 0.50.0(20191127), slate codebase has had a complete overhaul(彻底检修)
     - The data model is now comprised of simple JSON objects.(old: Immutable.js data structures)
     - The codebase now uses TypeScript. 

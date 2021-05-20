@@ -7,6 +7,20 @@ modified: '2020-12-06T13:05:51.375Z'
 
 # pick-naming
 
+# guide
+
+- https://github.com/kettanaito/naming-cheatsheet
+  - Comprehensive language-agnostic guidelines on variables naming. 
+  - S-I-D: short, intuitive, descriptive
+  - prefix(rarely used in function names.)
+    - is,has,should,min/max,prev/next
+  - singular for a single value, plurals for multiple values
+  - naming functions: A/HC/LC pattern.
+    - prefix? + action (A) + high context (HC) + low context? (LC)
+  - action
+    - get,set,reset,fetch,remove,delete(completely erase),compose(create new from existing),handle
+  - context:operable domain
+
 # variables
 
 - prefix

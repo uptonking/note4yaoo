@@ -11,6 +11,19 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Logux is a framework to build real-time web apps with:
+- https://twitter.com/sitnikcode/status/1395070650927169536
+  - Collaboration and CRDT conflict resolutions
+  - Real-time updates by WebSocket
+  - Optimistic UI and Offline data editing
+  - It hides all complexity by replacing the idea of request/response to background action log sync.
+- Our new Logux State state manager in 159 bytes (!) for React/Vue/Svelte which is great even outside Logux.
+
+
 
 - ## I think web framework's biggest sin might be coupling their template systems with their component models.
 - https://twitter.com/justinfagnani/status/1387788178333966337
@@ -38,7 +51,7 @@ modified: '2021-01-08T17:13:53.965Z'
 - This poll is a bit of testing the water. See, performance is something that empirically matters to the enduser, but has no impact on DX. Control and Execution Model are in the middle giving you tools to improve code quality. Syntax is comfort.
 - Svelte started as an experiment in improving performance, 
   - but people didn't really care until we adopted the v3 syntax. 
-  - It makes sense — perf and low level stuff are things you have to worry about once in a blue moon; 
+  - It makes sense - perf and low level stuff are things you have to worry about once in a blue moon; 
   - syntax is what you have to deal with every day
 
 - ## I'm going with Postgres + Prisma (ORM) for the Remix Project Management/Trello demo app. 

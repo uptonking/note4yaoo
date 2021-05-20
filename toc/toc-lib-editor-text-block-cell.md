@@ -17,9 +17,25 @@ modified: '2021-05-14T10:37:33.820Z'
   - https://github.com/omegion/horul-editor
     - horul-editor is editorjs wrapper component with vue
 
-- https://github.com/appleple/smartblock/
+- https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
+  - /192Star/MIT/202003/ts
+  - 依赖prosemirror、codemirror、react-highlight.js、react-svg、styled-components
   - intuitive block based wysiwyg editor built with React and ProseMirror
+
+- https://github.com/madebymany/sir-trevor-js
+  - http://madebymany.github.io/sir-trevor-js/
+  - /4.5kStar/MIT/202103/js
+  - 提供的示例就是分块的
+  - Rich content editing entirely re-imagined for the web
+  - Stored in structured JSON with limited inline HTML markup
+  - Trivial to extend and create your own block types
+
+- https://github.com/vigetlabs/colonel-kurtz
+  - /304Star/MIT/201909/js
+  - A block based content editor powered by React. 
+  - Colonel Kurtz provides a front-end for building pages as a series of blocks, serializing to a JSON data structure.
+
 - https://github.com/TorstenDittmann/omnia-editor
   - https://omnia-editor.vercel.app/
   - 依赖 svelte

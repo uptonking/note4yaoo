@@ -19,7 +19,14 @@ modified: '2021-05-14T10:28:38.524Z'
   - 引入项目比较麻烦，不能直接简单的import，webpack要使用专门的plugin，如cra无法直接使用
 
 - ref
+  - [html editors](https://gist.github.com/manigandham/65543a0bc2bf7006a487)
   - [codemirror6 vs prosemirror vs editorjs](https://www.npmtrends.com/@editorjs/editorjs-vs-@codemirror/state-vs-prosemirror-state-vs-monaco-editor-vs-codemirror)
+  - https://bangle.io/ 编辑器的折叠体验很好，链接编辑也好
+  - Abstracted Editors
+    - These use separate document structures instead of HTML, 
+    - some are more modular libraries than full editors
+  - Dom-Based Editors
+    - eg, tinymce,medium-editor,froala
 
 # text-editor
 
@@ -28,6 +35,15 @@ modified: '2021-05-14T10:28:38.524Z'
   - /5.1kStar/MIT/202002/js
   - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
   - ProseMirror library consists of a number of separate modules.
+
+- https://github.com/ianstormtaylor/slate
+  - https://docs.slatejs.org/general/changelog
+  - /18.6kStar/MIT/202009/ts/react
+  - a completely customizable framework for building rich text editors.
+  - since v0.50.0(201911), slate codebase has had a complete overhaul(彻底检修)
+    - The data model is now comprised of simple JSON objects.(old: Immutable.js data structures)
+    - The codebase now uses TypeScript. 
+    - Plugins are now plain functions that augment the Editor object they receive and return it again.
 
 - https://github.com/tbhuabi/textbus
   - /150Star/GPL/202011/ts
@@ -60,10 +76,19 @@ modified: '2021-05-14T10:28:38.524Z'
 
 # collaborative
 
+- https://github.com/josephg/reference-crdts
+  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
+
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/
   - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 
   - Shared types are common data types like Map or Array with superpowers: changes are automatically distributed to other peers and merged without merge conflicts.
+
+- https://github.com/YousefED/reactive-crdt
+  - It's built on top of Yjs, a proven, high performance CRDT implementation.
+- https://github.com/yjs/y-codemirror.next
+  - https://demos.yjs.dev/codemirror/codemirror.html
+  - Collaborative extensions for CodeMirror6
 
 # more-editor
 

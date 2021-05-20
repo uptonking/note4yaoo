@@ -14,6 +14,10 @@ modified: '2020-08-17T07:50:37.963Z'
 
 # expression
 
+- gut reaction
+  - 直觉反应; 本能反应; 内部反应; 内心反应; 肠道反应; 
+  - Let's have your gut reaction to the facts as we know them. 
+    - 请告诉我们你对我们所了解的这些事实的本能反应。
 - rabbit hole
   - 无底洞
   - go down the rabbit hole，口语中是深陷其中无法自拔的意思

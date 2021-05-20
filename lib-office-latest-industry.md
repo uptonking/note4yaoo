@@ -108,6 +108,19 @@ modified: '2021-05-14T18:47:24.054Z'
 
 - ## 
 
+- ## 
+
+- ## carota: Rich text editor implemented in JavaScript that uses HTML5 Canvas
+- https://www.reddit.com/r/javascript/comments/1zjfcg/rich_text_editor_implemented_in_javascript_that/
+  - [Structured Editing: Cross-browser javascript text editor](https://www.fluffy.co.uk/stediting/)
+- wouldn't it have been easier to make something that just used the DOM to render the document?
+  - That is what `contenteditable` is for. 
+  - Problem is that `contenteditable` is a pain in the ass to work with. 
+  - Using the DOM to output the rich text is easy until you have to implement the idea of "where is my cursor, what is my selection state, what happens when I press a key?"
+- Those problems remain regardless of whether you use canvas or the DOM for rendering.
+  - Without using the `contenteditable` , how do you put a cursor into a DOM element?
+  - [Fabric.js tests · IText tests](http://fabricjs.com/test/misc/itext.html)
+
 - ## Google Docs will now use canvas based rendering
 - https://news.ycombinator.com/item?id=27129858
 - canvas comes with very real trade offs though:

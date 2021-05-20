@@ -24,7 +24,7 @@ modified: '2021-05-19T13:54:12.338Z'
   - https://github.com/pinqy520/revas
   - https://pinqy520.github.io/demo/revas-pwa/
   - 交互操作只支持触摸touch，不支持鼠标click；样式非常友好
-  - 依赖自研的开源布局工具yoga-layout-wasm
+  - 依赖开源布局工具yoga-layout-wasm
   - Use React and CSS to build UI interfaces on canvas
 
 - https://github.com/SensormaticFirmware/FlexCanvasJS
@@ -36,6 +36,25 @@ modified: '2021-05-19T13:54:12.338Z'
 - https://github.com/ericdrowell/concrete
   - Html5 Canvas framework that enables hit detection, layering, multi-buffering for lightning fast performance, pixel ratio support, and download support
   - As the creator of KineticJS, author of HTML5 Canvas Cookbook, I've identified a handful of features that just about every HTML5 Canvas project needs. 
+
+# render-to-canvas
+
+- https://github.com/steria773-archive/Crosskit
+  - 4 Renderers: CANVAS, WEBGL, SVG, DOM
+  - Rendering engine that can renders graphics in CanvasRenderingContext2D, WebGLRenderingContext, SVG, DOM
+  - Lightweight and simple with size of 75kb (Smaller than Two.js and Hilo)
+
+- https://github.com/LibertyGlobal/ReactLiberty
+  -  choose between WebGL/Canvas/DOM/Native or any other UI renderer
+  - a React library designed to abstract renderer by presenting three kinds of entities. 
+  - They are Image, Text and Container.
+  - React Liberty uses Yoga CSS Layout for laying components out, ReactMotion for declarative animations and Sunbeam for focus management.
+
+- https://github.com/benboba/canvas-render
+  - 使用HTML5 Canvas模拟DOM，解析CSS并在Canvas中渲染。
+
+- https://github.com/ksandin/react-surface
+  - A custom react renderer utilizing yoga-layout targeting pixi.js.
 
 # more-canvas-ui
 

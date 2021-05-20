@@ -19,67 +19,84 @@ modified: '2020-07-07T08:10:16.774Z'
 
 # [ECMAScript-new-features-list](https://github.com/daumann/ECMAScript-new-features-list)
 
-- [es2015/es6](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.md)
-  - scoping variables
-  - module
-  - class
-  - arrow functions
-  - generator function
-  - promise
-  - constants
-  - template literals
-  - map & set
-  - typed array
-  - symbol type as unique object property
-  - Rest parameter & Spread Operator
-  - destructuring assignment
-  - iterators & for-of
-  - proxy & relfecting
-  - formatting: number, date time
-- [es2016](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2016.md)
-  - Array.prototype.includes
-  - Exponentiation Operator: 5 ** 2 (Math.pow(5, 2))
-- [es2017](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2017.md)
-  - async function
-  - Object.entries, Object.values
-  - Object.getOwnPropertyDescriptors
-  - Trailing commas in function declarations and calls
-  - String padding
-- [es2018](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2018.md)
-  - [object-rest-spread properties](https://github.com/tc39/proposal-object-rest-spread)
-    - Rest properties used in variables declarations
-    - Spread properties used in object literals
-  - Async iterators
-  - Promise.prototype.finally
-- [es2019](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2019.md)
-  - Array.prototype.flat/flatMap
-  - Object.fromEntries
-  - String.prototype.trimStart/trimEnd
-  - Symbol.prototype.description
-  - Optional catch binding
-  - Array.prototype.sort() is required to be stable
-- es2020
-  - bigint
-  - dynamic import: `import()`
-  - optional chaining: `?.`
-  - Nullish Coalescing Operator: `??`解决`||`无法处理空字符串/0这类falsy value的问题
-  - Promise allSettled
-  - String matchAll
-  - globalThis: to provide a standard way of accessing the global this value across environments.
-  - import.meta
-  - for..in order: loop over the properties of an object in the order in which they were defined
-- es2021
+## [es2015/es6](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.md)
 
-- esX-deprecated
-  - cancellable promise
+- scoping variables
+- module
+- class
+- arrow functions
+- generator function
+- promise
+- constants
+- template literals
+- map & set
+- typed array
+- symbol type as unique object property
+- Rest parameter & Spread Operator
+- destructuring assignment
+- iterators & for-of
+- proxy & relfecting
+- formatting: number, date time
+
+## [es2016](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2016.md)
+
+- Array.prototype.includes
+- Exponentiation Operator: 5 ** 2 (Math.pow(5, 2))
+
+## [es2017](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2017.md)
+
+- async function
+- Object.entries, Object.values
+- Object.getOwnPropertyDescriptors
+- Trailing commas in function declarations and calls
+- String padding
+
+## [es2018](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2018.md)
+
+- [object-rest-spread properties](https://github.com/tc39/proposal-object-rest-spread)
+  - Rest properties used in variables declarations
+  - Spread properties used in object literals
+- Async iterators
+- Promise.prototype.finally
+
+## [es2019](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2019.md)
+
+- Array.prototype.flat/flatMap
+- Object.fromEntries
+- String.prototype.trimStart/trimEnd
+- Symbol.prototype.description
+- Optional catch binding
+- Array.prototype.sort() is required to be stable
+
+## es2020
+
+- bigint
+- dynamic import: `import()`
+- optional chaining: `?.`
+- Nullish Coalescing Operator: `??`解决`||`无法处理空字符串/0这类falsy value的问题
+- Promise allSettled
+- String matchAll
+- globalThis: to provide a standard way of accessing the global this value across environments.
+- import.meta
+- for..in order: loop over the properties of an object in the order in which they were defined
+
+## es2021
+
+## esX-deprecated
+
+- cancellable promise
+
+## more-proposals
 
 - stage3/4
   - https://github.com/tc39/proposal-temporal
-    - The JavaScript Temporal proposal has reached stage 3 in TC39. Proper Date & Time handling are coming!
+    - The JavaScript Temporal proposal has reached stage 3 in TC39. 
+    - Proper Date & Time handling are coming!
 
 - ref
   - https://github.com/sudheerj/ECMAScript-features
   - https://kangax.github.io/compat-table/esnext/
+  - [Rethinking JavaScript Infrastructure: Check out a (controversial) proposal to improve JavaScript Infrastructure.](https://cpojer.net/posts/rethinking-javascript-infrastructure)
 
 # class fields
 

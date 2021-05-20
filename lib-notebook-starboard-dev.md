@@ -7,7 +7,21 @@ modified: '2021-05-06T09:44:07.629Z'
 
 # lib-notebook-starboard-dev
 
+> Starboard is an in-browser literate notebook that is extendable, portable, sharable and hackable.
+
 # guide
+
+- starboard pros
+  - 可导出文件本地编辑，但导出文本是自定义格式.sbnb
+  - 基于cell/block的编辑模式，适合数据分析
+  - 可查看每区块的源码，也可查看整篇文档的源码
+  - 可以从上到下一个个单元格执行，也可以全部执行
+  - 支持多种单元格类型，包括md、latex、html、css、js、py
+  - 全部在浏览器中执行，不需要服务器，不需要构建打包
+
+- starboard cons
+  - 跨区块选择文字很难用
+  - 自定义一种新的文档格式, [Starboard Notebook format](https://github.com/gzuidhof/starboard-notebook/blob/master/docs/format.md)
 
 - features
   - Browser-native
@@ -15,76 +29,21 @@ modified: '2021-05-06T09:44:07.629Z'
   - Hackable
   - Works on mobile devices
 
-# Overview
+# ideas
 
-- https://github.com/gzuidhof/starboard-notebook
-  - https://unpkg.com/starboard-notebook/dist/index.html
-  - https://starboard.gg/
-  - /633Star/MPLv2/202005/ts
-  - In-browser literal notebook runtime used in Starboard.
+- 导出到本地的tradeoff
+  - local file的上传与下载，只支持简单样式与标准交互功能模块
+  - 若需要细粒度地定制样式布局，则需要切换到高级编辑器，且下载时只能下载图片
+    - (~~会忽略样式、忽略布局，因为样式太多了比excel更复杂~~)
+    - 需要确定困难样式的属性值有哪些
+    - 自定义复杂ui组件的代码太多就偏离重心了，要以计算逻辑的代码为主
 
-# [About Why Starboard is worth building](https://starboard.gg/about)
+- block区块内容编辑应该提供3种模式
+  - split：对于代码类型区块，上面是代码、下面是执行结果
+  - inline：对于文档类型区块，WYSIWYG
+  - in-place-toggle：对所有区块，按切换键显示代码，按esc显示预览
 
-- Starboard's unique design decisions
-  - Browser-native: 
-    - there is no bridge required between the server and the browser like in Jupyter notebook as everything is in-browser. 
-  - Zero-setup: 
-    - there is zero setup and you don't need a server running to serve your notebook. 
-    - Everything is a static file.
-  - Portable: 
-    - Starboard notebooks are stored on disk as plaintext files for maximum portability. 
-  - Hackable: 
-    - Different than any other notebook system the Starboard editor itself runs inside the sandbox. 
-    - The code you write in the notebook can alter the notebook itself: 
-    - you can dynamically create new cell types, change the CSS styles, or anything really.
+- 当代码过多时，效果比不上直接使用ide来开发计算
+- tableau只能使用专用的软件编辑和查看，不能导出到本地
 
-- Starboard vs Starboard Notebook
-  - Starboard Notebook is the actual notebook runtime with the editor (the code cells, outputs and buttons).
-  - This website, Starboard, embeds this editor and allows you to save and share notebooks (allowing you to share by just a link) and will in the future have some social features (stars, upvotes, followers, ...). Think of it as a publishing platform for your notebooks.
-  - A somewhat correct analogy: If Starboard was GitHub, Starboard Notebook would be Git.
-
-# [An Open Source ObservableHQ notebook environment](https://starboard.gg/gz/open-source-observablehq-nfwK2VA)
-
-- Large parts of Observable are open source, but not everything. 
-  - In particular the editor and compiler are closed which means that you have to use the ObservableHQ web app to author notebooks. 
-  - You can however embed the resulting notebook on your own website.
-- Starboard is an open source in-browser notebook system. 
-  - Think Jupyter Notebook but re-imagined for the browser.
-- Starboard allows you to define your own cell types at runtime, which is how the plugin adds `Observable` cell support. 
-  - Observable cells are all about reactivity, try changing the sliders below.
-- Starboard is a base notebook runtime that runs entirely in the browser sandbox which can be extended dynamically.
-- This plugin wouldn't be possible without the unofficial-observablehq-compiler package. This package provides an alternative implementation for the closed source compiler. (MIT licensed)
-
-# [Starboard – Fully in-browser literate notebooks like Jupyter Notebook](https://news.ycombinator.com/item?id=24029002)
-
-- Cell-by-cell notebooks like Jupyter are great for prototyping, explaining and exploration, but their dependence on a Python server (with often undocumented dependencies) limits their ability to be shared and remixed. 
-  - Now that browsers support dynamic imports, it has become possible to create a similar workflow entirely in the browser.
-  - That motivated me to build Starboard Notebook, a tool I wished existed
-
-* Run entirely in the browser, there is no server or setup, it's all static files.
-* Web-native, so no widget system is necessary. There is nearly no magic, it's all web tech (HTML, CSS, JS).
-* Stores as a plaintext file, it will play nicely with version control systems.
-* Hackable: the sandbox that your code gets run in contains the editor itself, so you can metaprogram the editor itself (e.g. adding support for other languages such as Python through WASM).
-* You can import any code that targets the browser directly (e.g. puts stuff on the window object), or that has exports in ES module format.
-
-- discussion
-
-- I worked on a similar project
-  - It's half abandoned now. 
-  - one issue of js based notebook is the missing of a file system. 
-  - data scientists load huge data into notebooks, this is hard to do on the web. 
-  - There is the new web filesystem api, but that only helps load local files.
-- [我为什么要做Epiphany](https://epiphany.pub/@shi-yan/wo-wei-shen-me-yao-zuo-epiphany)
-- 我们做了Epiphany，我们心目中未来的交互式内容平台。特点:
-  - 用Markdown格式书写，支持数学公式。
-  - 可以嵌入交互式程序。目前支持Javascript和Python。未来会支持更多语言。
-  - 一套通用的API，可以绘制图像，打印输出和创建UI与读者互动。
-  - 拥有类似Github的版本管理系统，可以合作内容。
-  - 支持众筹式的出版。
-- 最近的两个类似平台observable和iodide都不约而同地选择了利用web技术。
-  - https://github.com/iodide-project/iodide
-    - /inactive
-- My vision is for this to be handled by things like remoteStorage, Solid, or (if you must) Google Drive. 
-  - I find having control over your data and delegating access to various apps to be a nice flow when implemented well
-  - It's not a silver bullet. For larger data you can't afford to download it every time. 
-
+# pieces

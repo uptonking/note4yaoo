@@ -133,7 +133,20 @@ modified: '2020-10-05T06:17:42.467Z'
   - It provides a feature-rich display list to allow you to manipulate and animate graphics. 
   - It also provides a robust interactive model for mouse and touch interactions.
 
+- https://github.com/jeremyckahn/rekapi
+  - Rekapi is a keyframe animation library for JavaScript. 
+  - It gives you an API for: Defining keyframe-based animations, and Controlling animation playback.
+  - Rekapi is renderer-agnostic. 
+    - At its core, Rekapi does not perform any rendering. 
+    - However, it does expose an API for defining renderers, and comes bundled with renderers for the HTML DOM and HTML5 2D `<canvas>`.
+
 # examples
+
+- https://github.com/snelsi/smart-canvas
+  - https://smart-canvas.vercel.app/
+  - 依赖react-router, three, react-three/fiber, zustand, chakra-ui/react, emotion/react, framer-motion
+  - 依赖很多，但示例效果较好，左侧菜单配置，右侧画布编辑
+  - demo with a bunch of cool interactive stuff and smart, dynamic shell
 
 - https://github.com/doodlewind/freecube
   - Freecube renders and animates Rubik's Cube with raw WebGL, plus a tiny rule-based solver showing how CFOP works.

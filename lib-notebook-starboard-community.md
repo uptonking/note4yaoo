@@ -17,6 +17,39 @@ modified: '2021-05-11T19:25:57.270Z'
 
 - ## 
 
+- ## [Starboard – Fully in-browser literate notebooks like Jupyter Notebook](https://news.ycombinator.com/item?id=24029002)
+
+- Cell-by-cell notebooks like Jupyter are great for prototyping, explaining and exploration, but their dependence on a Python server (with often undocumented dependencies) limits their ability to be shared and remixed. 
+  - Now that browsers support dynamic imports, it has become possible to create a similar workflow entirely in the browser.
+  - That motivated me to build Starboard Notebook, a tool I wished existed
+
+* Run entirely in the browser, there is no server or setup, it's all static files.
+* Web-native, so no widget system is necessary. There is nearly no magic, it's all web tech (HTML, CSS, JS).
+* Stores as a plaintext file, it will play nicely with version control systems.
+* Hackable: the sandbox that your code gets run in contains the editor itself, so you can metaprogram the editor itself (e.g. adding support for other languages such as Python through WASM).
+* You can import any code that targets the browser directly (e.g. puts stuff on the window object), or that has exports in ES module format.
+
+- discussion
+
+- I worked on a similar project
+  - It's half abandoned now. 
+  - one issue of js based notebook is the missing of a file system. 
+  - data scientists load huge data into notebooks, this is hard to do on the web. 
+  - There is the new web filesystem api, but that only helps load local files.
+- [我为什么要做Epiphany](https://epiphany.pub/@shi-yan/wo-wei-shen-me-yao-zuo-epiphany)
+- 我们做了Epiphany，我们心目中未来的交互式内容平台。特点:
+  - 用Markdown格式书写，支持数学公式。
+  - 可以嵌入交互式程序。目前支持Javascript和Python。未来会支持更多语言。
+  - 一套通用的API，可以绘制图像，打印输出和创建UI与读者互动。
+  - 拥有类似Github的版本管理系统，可以合作内容。
+  - 支持众筹式的出版。
+- 最近的两个类似平台observable和iodide都不约而同地选择了利用web技术。
+  - https://github.com/iodide-project/iodide
+    - /inactive
+- My vision is for this to be handled by things like remoteStorage, Solid, or (if you must) Google Drive. 
+  - I find having control over your data and delegating access to various apps to be a nice flow when implemented well
+  - It's not a silver bullet. For larger data you can't afford to download it every time. 
+
 - ## I created an open source literate notebook system similar to Jupyter Notebook but for Javascript that runs entirely in the browser
 - https://www.reddit.com/r/javascript/comments/i2gtnl/i_created_an_open_source_literate_notebook_system/
 - I think Observable is a really cool tool, it's a bit different:

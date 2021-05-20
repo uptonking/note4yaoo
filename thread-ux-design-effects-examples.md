@@ -17,7 +17,15 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## Framer on the web just turned 1! 
+- https://twitter.com/framer/status/1395031864939798532
+  - 产品features的展示动画
+  - Smart Components
+  - Insert Menu
+  - Auto Size
+  - Custom fonts
+  - Templates
+  - Unsplash intergration
 
 - ## Codegame is a game of guessing where teams compete to find words related to a hint-word given by another player.
 - https://www.codegame.cards/

@@ -11,10 +11,22 @@ modified: '2021-01-14T13:17:38.972Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Use these CHAR functions to add context to your spreadsheets
+- https://twitter.com/benlcollins/status/1395091986626056211
+  - google sheets的单元格支持显示符号类字符串
+  - CHAR(8594) produces the right arrow. ➡️
+  - CHAR(8595) produces a down arrow. ⬇️
+
 - ## This looks like the future of documentation
 - https://twitter.com/rauchg/status/1367199228494155786
   - https://code-hike-scrollycoding-preview.vercel.app/posts/lorem-ipsum-three
-- Have you seen the Stripe docs lately? https://
+- Have you seen the Stripe docs lately?
   - https://stripe.com/docs/checkout/integration-builder
   - It's even got selectable options for languages and frameworks at the top, along with Choose Your Own Adventure bits at the bottom if you want to keep customizing. It's really phenomenal documentation.
 

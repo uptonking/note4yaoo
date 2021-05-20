@@ -46,4 +46,9 @@ modified: '2021-05-14T14:34:59.116Z'
 - [Yarn Lock Changes](https://github.com/Simek/yarn-lock-changes)
   - a short list and a long list of changes
 
+- [Flat Data](https://octo.github.com/projects/flat-data)
+  - make it easy to work with data in git and GitHub
+  - https://github.com/githubocto/flat-viewer
+  - https://flatgithub.com/githubocto/flat-demo-bitcoin-price
+
 # usecase-blog

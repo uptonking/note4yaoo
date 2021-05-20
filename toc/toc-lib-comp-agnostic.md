@@ -49,7 +49,11 @@ modified: '2020-11-13T07:28:27.824Z'
     - 将 easy-canvas 封装成vue组件进行使用 注意：内部实现是将vue节点转换成目标节点，转换过程中会有性能损失，渲染与转换时间大概4:1
 
 - https://github.com/prasannavl/icomponent
+  - /28Star/MIT/201902/ts
+  - 只提供了一致的接口和架构，没有实现具体组件
   - A super simple, render-agnostic component library for the modern web that emphasizes framework and renderer freedom
+  - icomponent provides the web component model. 
+  - So, you can easily do things like these by just writing your own render functions
 
 - https://github.com/phonon-framework/phonon
   - /421Star/MIT/202004/ts

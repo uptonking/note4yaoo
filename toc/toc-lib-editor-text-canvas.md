@@ -7,16 +7,35 @@ modified: '2021-05-19T08:32:28.120Z'
 
 # toc-lib-editor-text-canvas
 
+# guide
+
+- ref
+  - https://www.npmtrends.com/primrose-vs-carota-vs-@creately/carota
+
 # popular
 
-- primrose text editor /452Star/MIT/202011/js
+- primrose /452Star/MIT/202011/js
   - https://github.com/capnmidnight/Primrose
   - https://www.primrosevr.com/
+  - A source code text editor that renders in an HTML5 canvas. Useful for texturing objects in WebGL apps.
   - Primrose is a syntax highlighting text editor that renders into an HTML5 Canvas element. 
-  - This is particularly useful for texturing 3D objects in WebGL apps.
-  - Here is a basic example that creates an editor in a 2D web page.
-  - Here is a basic example that creates an editor in a 3D WebGL app, using Three.js.
+    - This is particularly useful for texturing 3D objects in WebGL apps.
+    - Here is a basic example that creates an editor in a 2D web page.
+    - Here is a basic example that creates an editor in a 3D WebGL app, using Three.js.
   - While Primrose can manage most input events on its own, in WebGL contexts, it's not able to figure out what the user's pointer is pointing at. 
+  - Grammars are collections of RegExps that define rules for performing the necessary tokenization to be able to achieve syntax highlighting. 
+
+- carota /553Star/MIT/201605/js
+  - https://github.com/danielearwicker/carota
+  - https://earwicker.com/carota/
+  - Simple, flexible rich text rendering/editing on HTML Canvas
+  - active forks
+    - https://github.com/creately/carota
+
+- https://github.com/markusmoenig/richtextjs
+  - http://richtextjs.com/
+  - /25Star/MIT/201711/js
+  - RichTextJS is inspired by (but does not share any code with) Carota.
 
 - textor /108Star/MIT/201905/ts
   - https://github.com/lutzroeder/textor

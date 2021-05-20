@@ -13,6 +13,21 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- ## strong vs b
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
+- `<strong>` element is for content that is of strong importance
+  - it should not be used to apply bold styling; 
+  - use the CSS `font-weight` property for that purpose. 
+- Use the `<b>` element to draw attention to certain text without indicating a higher level of importance. 
+
+- ## em vs i
+- Use the `<em>` element to mark text that has stress emphasis(represent stress emphasis of its contents).
+  - it should not be used to apply italic styling; 
+  - use the CSS `font-style` property for that purpose.
+  - often limited to a word or words of a sentence and affects the meaning of the sentence itself.
+- `<i>` element represents text that is set off from the normal prose, 
+  - such a foreign word, fictional character thoughts, or when the text refers to the definition
+
 - ## [parseInt vs unary plus, when to use which?](https://stackoverflow.com/questions/17106681)
 
 - The unary `+` acts more like `parseFloat` since it also accepts decimals.

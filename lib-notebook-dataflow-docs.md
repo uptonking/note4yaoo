@@ -9,6 +9,7 @@ modified: '2021-05-14T17:35:56.576Z'
 
 # guide
 
+
 ## [ObservableHQ vs. Dataflow](https://alexgarcia.xyz/dataflow/docs/#using-dataflow)
 
 - 暂不支持，相互import
@@ -17,9 +18,10 @@ modified: '2021-05-14T17:35:56.576Z'
 
 ## overview
 
-- https://github.com/asg017/dataflow
+- dataflow /206Star/MIT/202105/js
+  - https://github.com/asg017/dataflow
   - https://alexgarcia.xyz/dataflow/docs/
-  - A self-hosted Observable notebook editor, with support for FileAttachments, Secrets, custom standard libraries, and more!
+  - self-hosted Observable notebook editor, with support for FileAttachments, Secrets, custom standard libraries, and more!
 
 - Observable notebooks are reactive, JavaScript-based computational notebooks that run inside your browser.
 - Dataflow is one of the first fully open-sourced and fully featured Observable notebook editors
