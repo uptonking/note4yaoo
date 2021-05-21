@@ -8,12 +8,16 @@ modified: '2021-02-28T07:29:07.622Z'
 # thread-dev-state-management
 
 # repeat
+<!-- #region /folded state-repeated -->
 
 - ## The motivation I develop global state libraries is to avoid selector interface that are only required for render optimization.
 - https://twitter.com/dai_shi/status/1373607985033871363
   - It depends on object ref identity which is a hard concept for beginners.
   - This shows some comparison among use-context-selector, jotai and proxy-memoize.
   - #ReactTracked and #Valtio are not shown, but they have the same idea.
+- selector can lead extra re-renders, even if num1 and num2 are not changed, because it creates a new object.
+- (be careful with)Selectors. Relying on memoiztn for perf is more like an antipattern when comprd with reactiveness. 
+  - On huge projcts it's always a pain to write perf rdx due to one of the related selectrs in relesct not maintaining referential equality and breaking memoisation
 
 - ## what's the difference between @sveltejs store and context?
 - https://twitter.com/lihautan/status/1385027049673269253
@@ -39,13 +43,36 @@ modified: '2021-02-28T07:29:07.622Z'
   - define the store 📦 in a context
   - depends on where it's used, the store 📦 from the context will be different
 
+- ## Redux fundamentally has two problems that RTK can't solve (currently)
+- https://twitter.com/DavidKPiano/status/1395541811402268677
+  - Effects aren't declarative. Reducers may be pure, but effects are hidden in middleware and very much impure 
+  - Global, atomic store isn't always the ideal architecture
+- I think that's actually the point David's making: that global state has weaknesses, and that in many cases it _isn't_ the right tool for the job.
+  - but that's not a problem with Redux itself. It's a specific tool.
+- [Discussion: declarative side effects and data fetching approaches](https://github.com/reduxjs/redux-toolkit/issues/349)
+- Wondering what is your opinion on something like Redux-Observables? We use it at work and i just don't see the point
+  - Haven't used it too much to have an informed opinion, but overusing observables for state management leads to what I call "operator juggling", 
+  - where you're just mixing various operators to get the desired result instead of clearly and explicitly specifying logic.
+
 - ## ref
 - [RTK Query comparison](https://rtk-query-docs.netlify.app/introduction/comparison/)
 - [React Query vs SWR vs Apollo vs RTK Query](https://react-query.tanstack.com/comparison)
 
+<!-- #endregion /folded state-repeated -->
+
 # pieces
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Logux State is a tiny (159 bytes!) state manager inspired by @EffectorJS and Recoil, but was created to move logic from components into stores.
+- https://twitter.com/logux_io/status/1395068017755705352
+  - It can be used without Logux and supports Svelte, React, Vue.
+- Logux Client 0.11 uses Logux State to create SyncMap stores, which hide CRDT Map logic inside the store.
+- We will support Logux Redux and Logux Vuex for a while, but now the main use case of using Logux is to use CRDT stores build on top of Logux State.
 
 - ## My favourite part of the XState API doesn't involve state machines - it's the invoked callback.
 - https://twitter.com/mpocock1/status/1392947622038720517

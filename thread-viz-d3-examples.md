@@ -20,9 +20,13 @@ modified: '2021-04-23T18:46:07.908Z'
 
 - ##
 
-- ##
+- ## https://on.wishyoulization.com/fieldbook/
+  - 类似地铁线路图的效果，未开源代码
 
-- ##
+- ## I'm excited to share my interactive Emoji Map Making Tool (and detailed tech writeup).  
+- https://twitter.com/MattDzugan/status/1395399160933883908
+  - This tool offers TONS of controls to render maps as text
+  - [Making Maps out of Emojis](https://observablehq.com/@mattdzugan/making-maps-out-of-emojis)
 
 - ## I wrote a notebook that does a time-intensive computation (Computing Population per Time-Zone).
 - https://twitter.com/MattDzugan/status/1392856742460022789

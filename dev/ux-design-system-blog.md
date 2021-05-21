@@ -9,6 +9,24 @@ modified: '2021-01-01T20:08:32.485Z'
 
 # blog
 
+## [Variant-driven Components](https://ped.ro/blog/variant-driven-components)
+
+- Variants can be immutable, responsive, and composed. 
+  - It enables a great deal of flexibility and power when building UIs.
+- you can define default variants, essentially mimicking the base styles behaviour—without compromises.
+- By organising your styles in variants, you're separating its stylistic concerns. This results in fewer unwanted side effects.
+  - When you combine variants, you embrace composition. This allows for powerful UI variations.
+  - And whenever you need a special rule for a given composition, the compound variants functionality is there to help.
+
+- discussion
+
+- https://twitter.com/peduarte/status/1395348583268880385
+- Even though I’m using stitches in the demo, most of it can be applied to any styling solution
+- Have you considered also supporting arrays for responsive variants?
+  - Yeah, we've used the array responsive syntax for a long time. It's cool for prototyping and stuff
+  - It's not something we're planning on implementing though. It's not scalable or type-friendly. And I find that it scatters too many values across different properties
+  - 在添加或修改breakpoint时，样式值的对应关系会混乱
+
 ## [Why I build Design Systems with Stitches and Radix](https://ped.ro/blog/why-i-build-design-systems-with-stitches-and-radix)
 
 - I've built design systems, But they never felt quite right—some were too laborious(耗时的，辛苦的) and too error-prone. Others were too slow and too opinionated.

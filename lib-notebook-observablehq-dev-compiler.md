@@ -9,12 +9,11 @@ modified: '2021-05-14T14:48:34.412Z'
 
 # guide
 
-
 # Unofficial ObservableHQ Compiler
 
-## docs
+# docs
 
-### [AN OBSERVABLE NOTEBOOK compiled to js](http://www.tophtucker.com/observable-docco/index.js.html)
+## [AN OBSERVABLE NOTEBOOK compiled to js_202](http://www.tophtucker.com/observable-docco/index.js.html)
 
 - When you download an Observable notebook, you get a compressed folder of files. 
 - Several are basically the same for every notebook
@@ -58,7 +57,7 @@ modified: '2021-05-14T14:48:34.412Z'
   - Finally, it helps understand how to copy and paste to port a notebook to a non-reactive setting (without the Runtime). 
   - If you pull out one of these functions, it’s plain JavaScript, and if you call it with the same arguments, you’ll get the same result.
 
-### [v0.6.0 of the Unofficial ObservableHQ Compiler_202105](https://observablehq.com/@asg017/v0-6-0-of-the-unofficial-observablehq-compiler)
+## [v0.6.0 of the Unofficial ObservableHQ Compiler_202105](https://observablehq.com/@asg017/v0-6-0-of-the-unofficial-observablehq-compiler)
 
 - The biggest change in v0.6.0 is the API change to distinguish between the library as a compiler and as an interpreter. 
   - Before, the entire thing was called a "compiler", but that wasn't really accurate.
@@ -71,6 +70,11 @@ modified: '2021-05-14T14:48:34.412Z'
 - Tree-Shaking!
   - When compiling, you now have to option to tree-shake the compiled output on a cellular level. 
   - The compiler that observablehq.com uses doesn't have this feature
+
+- [An Unofficial ObservableHQ Compiler_201909](https://observablehq.com/@asg017/an-unofficial-observablehq-compiler)
+  - This notebook describes the old version of the compiler, v0.5.0, but the new version v0.6.0 is currently in beta.
+
+- [pr: v0.6.0 Beta version: New Interpreter and Compiler APIs](https://github.com/asg017/unofficial-observablehq-compiler/pull/29)
 
 # discuss
 

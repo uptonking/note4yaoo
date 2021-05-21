@@ -7,11 +7,10 @@ modified: '2021-05-14T15:06:46.615Z'
 
 # toc-saas-ide
 
-# ide-popular
+# ide-local
 
 - vscode
 - atom
-- hbuilder
 - visual studio
 - intellij idea
 - eclipse
@@ -19,6 +18,7 @@ modified: '2021-05-14T15:06:46.615Z'
 - jedit
 - qt-creator
   - https://github.com/mervick/Qt-Creator-Darcula
+- hbuilder
 
 # ide-cloud
 
@@ -31,3 +31,7 @@ modified: '2021-05-14T15:06:46.615Z'
 
 - sublime text
 - ultra edit
+
+# discuss
+
+- ## 

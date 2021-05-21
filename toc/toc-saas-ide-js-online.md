@@ -7,6 +7,20 @@ modified: '2021-05-14T15:03:38.010Z'
 
 # toc-saas-ide-js-online
 
+# discuss
+
+- ## 请问 StackBlitz 和 CodeSandBox 这类 Web IDE 的技术栈是如何实现的？
+- https://www.zhihu.com/question/279268026/answers/updated
+- 我想提供一个思路：利用 es module + service worker + browser file system + 浏览器端即时编译实现不依赖服务端能力的 Web IDE.
+  - 类似于 CodeSandBox 的方案是在浏览器端实现了一套兼容于 webpack 的打包系统，这主要是为了解决前端构建过程中对模块系统的依赖。
+  - 而目前市面上所有主流浏览器（排除掉 IE）都已经很好的支持了 es module，我们其实可以充分的利用这个技术点来替代 webpack（即 bundless 构建）。
+  - 在浏览器加载 es module 的过程中会不断的发出 http 请求去获取被依赖的 es module，对于不依赖服务端能力的 Web IDE，我们需要补全这部分本该由静态资源服务器提供的能力。
+  - 所以，可以拦截请求并定制响应的 service worker 正好可以提供这个能力。
+  - 我们需要将所有的代码资源存储在浏览器端，也就是说需要实现一套 browser file system。
+- es module发出的http请求，是以scripts脚本加载的形式。而service worker只能拦截fetch。
+  - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
+  - 包括esm加载时的请求都可以被拦截
+
 # vscode-powered
 
 - https://github.com/cdr/code-server
@@ -31,6 +45,8 @@ modified: '2021-05-14T15:03:38.010Z'
 - It is worthy to note that CodeSandbox is one of the few online playgrounds that has support for back-end languages like Node.js. 
   - It has npm support. 
   - As a result of it, you can install any npm package you require in seconds.
+
+- [CodeSandbox - 从入门到实现原理解析](https://www.yuque.com/wangxiangzhong/aob8up)
 
 ## StackBlitz
 

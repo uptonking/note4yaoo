@@ -14,7 +14,7 @@ modified: '2021-03-29T19:29:42.140Z'
   - 如何合并这些分卷文件更好，cat命令创建的大压缩包无法解压，只能通过zip -F创建
   - 小分卷文件合并得到的大压缩文件，无法通过unzip命令解压，却可以通过文件管理器gui解压
 
-``` 
+```
 
 Archive:  b.zip
    creating: pet/
@@ -28,11 +28,16 @@ error: invalid zip file with overlapped components (possible zip bomb)
 
 # hp-envy-15
 
+- tracker-miner-fs cpu high
+  - 导致触摸板的鼠标指针失效，或者不流畅
+  - [tracker-miner-fs is taking 90% of CPU](https://askubuntu.com/questions/1258757)
+  - tracker reset --hard ; tracker daemon --start
+
 - 无法开机
   - 变通方案：使用win 10的wsl子系统
   - 魔法方案：可能是硬盘松动了，尝试拍几下笔记本底座面，拍几下键盘面
 
-``` 
+```
 
 boot device not found 找不到启动设备
 
@@ -46,7 +51,7 @@ hard disk 3F0
     - sudo gedit /etc/default/grub
     - GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvme_core.default_ps_max_latency_us=5500"
 
-``` 
+```
 
 ext4-fs error (device nvme0n1p6): __ext4_find_entry: inode: reading directory lblock 0
 systemd-journald: failed to write entry ( items,  bytes), ignoring: read-only file system 
@@ -57,7 +62,7 @@ nvme0 failed to set APST feature blocks
   - [解决 SYSTEMD-JOURNALD: FAILED TO WRITE ENTRY 问题](http://smilejay.com/2018/02/systemd-journald-failed-to-write-entry/)
     - 通过 journalctl --verify 命令找到损坏的journal文件，然后删除或者mv移动它，再重启systemd-journald服务即可
 
-``` 
+```
 
 // 执行 journalctl --verify
 f9deb8: Invalid entry item (17/23 offset: 000000                                

@@ -7,11 +7,29 @@ modified: '2021-04-19T14:52:58.244Z'
 
 # thread-pm-pieces
 
+> new features for pm
+
 # pieces
 
 - ##
 
 - ##
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## we kind of had webmail before 2004, but webmail didn't become A Thing until gmail. 
+- https://twitter.com/Rich_Harris/status/1395548128087003146
+  - browser-based IDEs are about to become A Thing, with all that entails (security, live collab, zero install, etc)
+- I don't think StackBlitz is the final word here — 
+  - they've basically just invented a new market (previous browser IDEs were more tech demo than useful product, IMHO, at least once you get beyond building toys)
+- Cloud9, Github Codespaces, etc. all seem like full-featured products that have been used by people who preferred browser-based development, but apparently they remained niche(市场定位；生态位). The only difference I see here is better offline support, and... idk if it's enough.
+  - I mean, it's definitely cool, and I like this idea as well as all the IDEs before it, but don't see what changed drastically market-wise.
+- biggest difference i see is that the browser run everything, instead of being a thick client for a proprietary backend. (but yeah, not sure what node brings here other than npm ecosystem compat).
+- The drastic change is in the performance you can expect from a local runtime vs a server you're sharing with a bunch of other people in who-knows-what region. I've generally found cloud IDEs unusable, latency/perf wise
 
 - ## I've been thinking a lot in the last few days, how a code editor/IDE focused on React could looks like. So it brings me to this
 - https://twitter.com/danilowoz/status/1393212141122031621

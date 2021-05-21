@@ -20,14 +20,25 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## It looks like @typescript 's declaration merging is "addivitve", 
+- https://twitter.com/tannerlinsley/status/1395379651346767877
+  - meaning that clashing members become a union (as long as they are compatible) or just another overload. 
+  - Is there no way to actually "overwrite" types across modules?
+- I use a pattern of extending a type using omit on another type but I may not fully understand your question
+  - The built in utilities like ` Omit<>` can get you pretty far if you want to modify types (eg. completely replacing a prop)
+  - I don't think that would work with declaration merging. You're not creating a new type with declaration merging, you're merging additional types to an existing one. 
+  - to be clear, I'm suggesting an alternative to using declaration merging
+- Declaration merging is nice, but it doesn't work for this specific use case of completely overriding the type
+  - If the types are actually wrong, then overriding is also possible using something like patch-package
+  - But long term harder to maintain
+- No - i dont believe you can override stuff, which makes sense: some module could depend on what u’d like to rewrite
 
 - ## Why does @typescript not have some native operator to *merge* types? 
 - https://twitter.com/tannerlinsley/status/1393704549240606720
   - I don't want an intersection or union, 
-  - I want the equiv. of TS-Toolbelt's Union/Object.Merge<> but with support for recursive types
+  - I want the equiv. of TS-Toolbelt's Union/Object. Merge<> but with support for recursive types
 - [Add a Merge utility type](https://github.com/microsoft/TypeScript/issues/35627)
-  - Why not use `Omit`?
+  - Why not use `Omit` ?
 
 - ## PSA: Using Node.js 16+ and want to compare the runtime performance of two functions ... Use `timerify` and `createHistogram` !
 - https://twitter.com/jasnell/status/1392589770140774402
@@ -398,7 +409,7 @@ modified: '2021-01-28T14:34:20.579Z'
 - ## In Node.js, we have awaitable timers built in, with cancellation support.
 - https://twitter.com/jasnell/status/1371955481342742529
 
-``` JS
+```JS
 import { setTimeout } from 'timers/promises'
 const ac = new AbortController()
 await setTimeout(1000, undefined, { signal: ac.signal })
@@ -442,7 +453,7 @@ await setTimeout(1000, undefined, { signal: ac.signal })
   - By default, we get the second goal. The problem is that when you try to accomplish the first goal with a type annotation like const operations: Record `<string, OperationFn> = ...` , you end up widening the key so keyof typeof results in string. Ugh, how annoying.
   - So here's where the constrained identity function comes in. By the way, "constrained" describes a situation where you have a function that accepts a narrower version of an input than it's passed
 
-``` typescript
+```typescript
 
 type OperationFn = (left: number, right: number) => number
 const createOperations = <OperationsType extends Record<string, OperationFn>>(
@@ -632,7 +643,7 @@ type CalculatorProps = {
 - [Don't use functions as callbacks unless they're designed for it](https://jakearchibald.com/2021/function-callback-risks/)
 - Here's the problem:
 
-``` JS
+```JS
 // Convert some numbers into human-readable strings:
 import { toReadableNumber } from 'some-library';
 
@@ -650,7 +661,7 @@ const readableNumbers = someNumbers.map((item, index, arr) =>
 - `toReadableNumber` wasn't designed to be a callback to `array.map`, so the safe thing to do is create your own function that is designed to work with `array.map`
 - **The same issue, but with web platform functions**
 
-``` JS
+```JS
 // A promise for the next frame:
 const nextFrame = () => new Promise(requestAnimationFrame);
 
@@ -661,7 +672,7 @@ const nextFrame = () =>
 
 - **Option objects can have the same gotcha**
 
-``` JS
+```JS
 const controller = new AbortController();
 const { signal } = controller;
 

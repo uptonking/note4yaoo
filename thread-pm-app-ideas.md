@@ -21,6 +21,14 @@ modified: '2021-04-19T14:53:27.158Z'
 
 # ideas
 
+> new marketable apps
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ##  I found Notion is the one-stop solution for all note-taking purposes 
@@ -64,7 +72,7 @@ modified: '2021-04-19T14:53:27.158Z'
 - ## I seriously love this Github comment feature
 - https://twitter.com/LukyVJ/status/1385164657007149058
 
-``` suggestion
+```suggestion
 your suggestion here 
 ```
 

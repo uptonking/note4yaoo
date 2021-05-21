@@ -19,7 +19,12 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## Landing Page Teardown
+- https://twitter.com/d__raptis/status/1395378798661615619
+- Choose visuals that demonstrate your product's value over pure screenshots.
+- Promote use cases over features!
+- Use clear pricing tables
+- Boost your SEO game by showcasing your best pages
 
 - ## Better Image Overlays
 - https://twitter.com/d__raptis/status/1392511897589669891

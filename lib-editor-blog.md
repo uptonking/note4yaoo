@@ -48,3 +48,8 @@ modified: '2021-05-13T04:44:39.320Z'
 
 - Why CKEditor 5?
   - (tl; dr) To keep leading on innovation everything is to be re-thought.
+
+# more
+
+- [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
+- [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)

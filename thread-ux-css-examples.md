@@ -7,11 +7,18 @@ modified: '2021-02-05T14:00:02.922Z'
 
 # thread-ux-css-examples
 
-# ux-dev-examples
+# examples-stars
+
+- ## a demo of a Smooth-Scrolling Sticky ScrollSpy Menu: as you scroll down, the correct navigation item gets highlighted … using only CSS!
+- https://twitter.com/bramus/status/1395494519420899330
+  - https://codepen.io/bramus/pen/LYbBoRj
+- You might recognise this demo from some of my earlier work, as it's a “Pure CSS” rework of a demo from 2020.
+  - https://codepen.io/bramus/pen/ExaEqMJ (js version)
+  - 下滑时会自动高亮toc的对应菜单
+
+# css-ux-examples
 
 - css firework
-
-- ## 
 
 - ## 
 
@@ -310,7 +317,7 @@ modified: '2021-02-05T14:00:02.922Z'
   - http://jsfiddle.net/6eGdN
   - 通过父边框挡住子边框实现，或全部显示子边框
 
-``` css
+```css
     div.gridcontainer {
       width: 7/86px;
       line-height: 0;
@@ -328,7 +335,7 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - 使用父边框上左，使用子边框右下，也可交换
 
-``` css
+```css
   div.gridcontainer {
     width: 76px;
     line-height: 0;

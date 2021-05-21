@@ -164,6 +164,18 @@ modified: '2020-12-21T06:03:02.191Z'
 
 # discuss
 
+- ## TIL: no way to fetch huge (2GB+) files, and XHR on readyState 3 is hopeless too (it keeps incrementing responseText even if consumed).
+- https://twitter.com/WebReflection/status/1395733097187090442
+- If you’re wondering the use case: CSV files is just one of them, and you gotta be smart about lines split, but it works after all and it’s the best solution we have
+- [Streaming requests with the fetch API](https://web.dev/fetch-upload-streaming/)
+- Chrome 85 has an experimental implementation of request streams, 
+  - meaning you can start making a request before you have the whole body available.
+- usecase
+  - Warm up the server. 
+    - In other words, you could start the request once the user focuses a text input field, and get all of the headers out of the way, then wait until the user presses 'send' before sending the data they entered.
+  - Gradually send data generated on the client, such as audio, video, or input data.
+  - Recreate web sockets over HTTP.
+
 - ## I've just included Undici as the best way for fetching data on the server-side in my "Real-World Next.js" book. 
 - https://twitter.com/MicheleRivaCode/status/1386357676540579844
 - https://github.com/nodejs/undici

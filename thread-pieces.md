@@ -30,7 +30,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## You can learn more building one autocomplete than building a whole website. Both ways are OK though.
+- https://twitter.com/dan_abramov/status/1395520718033534976
 
 - ## When someone asks for something I “don’t have the time for”, I don’t say that. Because we all have 1, 440 minutes every day. 
 - https://twitter.com/flybayer/status/1387535834614845442

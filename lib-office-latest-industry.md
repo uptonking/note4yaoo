@@ -166,3 +166,19 @@ modified: '2021-05-14T18:47:24.054Z'
   - canvas: no cost of removing/adding Dom nodes.
   - render low level pixel graphics at the speed of the user, like an endless scroller game.
   - dom wasn't designed for these things, canvas makes perf trivial. 
+
+# pdf
+
+- [Announcing react-pdf v2.0](https://react-pdf.org/blog/announcing-react-pdf-v2)
+- Motivation
+  - Separate Layout from Rendering
+  - Embracing Immutability
+  - Boost
+  - Better Testing
+- Solution
+  - Redefining Rendering Process
+  - Functional Approach
+- What's New
+  - SVG Support
+  - New Hook API
+  - More styles
