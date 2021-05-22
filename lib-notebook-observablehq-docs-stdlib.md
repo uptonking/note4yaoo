@@ -14,6 +14,7 @@ modified: '2021-05-14T14:50:35.347Z'
 ## [Standard Library](https://observablehq.com/@observablehq/stdlib)
 
 - https://github.com/observablehq/stdlib
+  - provides helpful functions for working with HTML, SVG, generators, files and promises among other useful sundries
 
 - The Observable standard library is built-in to Observable, so you don’t normally need to install or instantiate it directly.
 - `Library([resolve])`

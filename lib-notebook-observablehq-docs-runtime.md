@@ -1,16 +1,19 @@
 ---
-title: lib-notebook-observablehq-docs-runtime-inspector
-tags: [docs, observablehq]
+title: lib-notebook-observablehq-docs-runtime
+tags: [docs, notebook, observablehq, runtime]
 created: '2021-05-14T14:44:25.385Z'
-modified: '2021-05-14T14:51:47.612Z'
+modified: '2021-05-22T18:47:39.353Z'
 ---
 
-# lib-notebook-observablehq-docs-runtime-inspector
+# lib-notebook-observablehq-docs-runtime
 
-# runtime
+# guide
+
+# docs
 
 - https://github.com/observablehq/runtime
   - The Observable dataflow runtime.
+  - an open-source runtime which stitches together a notebook’s cells into a dependency graph and brings them to life through evaluation
 
 - The Observable runtime lets you run Observable notebooks as true reactive programs in any JavaScript environment: on your personal website, integrated into your web application or interactive dashboard. 
 
@@ -45,14 +48,3 @@ modified: '2021-05-14T14:51:47.612Z'
 - For convenience, this module re-exports the Observable standard library.
 
 - For convenience, this module re-exports the Observable standard inspector.
-# inspector
-
-- https://github.com/observablehq/inspector
-
-
-- This library implements the default value renderer for Observable programs. 
-- When used with the Observable runtime as observers, inspectors can insert elements into the DOM and render interactive displays for arbitrary values.
-- An inspector implements the Observable runtime’s Observer interface by rendering the current value of its associated variable to a given DOM element. 
-- Inspectors display DOM elements “as-is”, and create interactive “devtools”-style inspectors for other arbitrary values such as numbers and objects.
-
-

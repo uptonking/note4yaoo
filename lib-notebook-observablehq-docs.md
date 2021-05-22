@@ -199,7 +199,7 @@ modified: '2021-05-14T18:00:35.421Z'
 - If a cell returns a DOM element, that DOM element is displayed as-is!
   - Or using the W3C DOM API directly (not that you should—it’s quite verbose)
 
-``` JS
+```JS
 html `<p>I am a <i>paragraph</i> element!</p>`
 
 // 既可以使用 dom标签，也可以使用 dom js api
@@ -260,6 +260,30 @@ html `<p>I am a <i>paragraph</i> element!</p>`
   - There is a little extra logic for dealing with idiosyncrasies; see the `Generators.input` source for details. 
   - And a view doesn’t need to be a DOM element; it only needs to support the `EventTarget` interface. 
   - For an example of a non-element view, see the Synchronized Inputs notebook.
+
+## [Introduction to Mutable State](https://observablehq.com/@observablehq/introduction-to-mutable-state)
+
+- Observable notebooks are made of cells. 
+  - Each cell is defined by a bit of code and will react to updates in any other cells it references.
+  - To take full advantage of this reactivity, we generally want to **avoid mutation** in our Observable code. 
+  - Instead of reaching into the contents of other cells and setting values imperatively, each cell should usually return a new value when it runs. 
+  - Any cells that reference that value will run every time the upstream cell recomputes.
+- But you might run into a situation where this reactivity becomes a bit tricky to work with
+  - What if I want to be able to set a cell’s value programmatically?
+  - What if I want a cell to update some but not all of the times another cell’s value changes?
+  - What if I want a long-running cell — like an animation loop — to use another cell’s value, but not reset itself when that value changes?
+- In situations like these you have two main options:
+  - Rewrite your code to use a functional style and avoid mutation (generally the best idea!)
+  - Use Observable’s `mutable` keyword to define a cell with a mutable value — one that is meant to be changed by other cells.
+
+- In Observable, a cell will automatically run each time any value it depends on changes.
+- you can use Observable’s `mutable` keyword to define a cell with a mutable value — one that is meant to be changed by other cells.
+- By using `mutable`, we can control the timing of when a downstream cell should be re-evaluated, by only setting its value at the appropriate moment. 
+  - This can help cells share values without creating circular dependencies, and also prevent cells from updating more often than is needed — while allowing any cells that depend on them to continue receiving reactive updates as normal.
+
+- Mutable values can be referenced either reactively, or non-reactively, as appropriate. 
+  - To use the current value of a mutable without creating a dependency, use `mutable x`; 
+  - to depend on it for re-evaluation, just use `x`.
 
 ## Introduction to Imports
 
@@ -398,14 +422,46 @@ html `<p>I am a <i>paragraph</i> element!</p>`
 
 ## [Introduction to Embedding](https://observablehq.com/@observablehq/introduction-to-embedding)
 
-- 还可以考虑嵌入动态的图片
+- 还可以考虑嵌入动态的图片gif/mp4
 
 - Embedding lets you put a working version of your notebooks inside another website.
-- if you want more control or a deeper integration, you can try the other embedding methods, Runtime with JavaScript or Runtime with React, which generate code that uses the Runtime API to render your cells.
-- The Runtime-based embedding methods are limited to environments where you can run your own scripts. - But since the Iframe isolates that in a different document, it can go in more controlled WordPress blogs, content management systems like Gatsby, and note-taking software like Notion or Roam. 
-- Some sites like Medium and Reddit that don’t allow arbitrary HTML still “unfurl” certain links you paste to interactive versions, using a standard called oEmbed.
+- In many cases, you’re done with embedding `iframe`.
+- But if you want more control or a deeper integration, you can try the other embedding methods, Runtime with JavaScript or Runtime with React, which generate code that uses the Runtime API to render your cells.
+- The Runtime-based embedding methods are limited to environments where you can run your own scripts.
+- But since the Iframe isolates that in a different document, it can go in more controlled WordPress blogs, content management systems like Gatsby, and note-taking software like Notion or Roam.
+- If you want to pass data in and out of the cells, you’re still better off using `import`s
+
+- Some sites like Medium and Reddit that don’t allow arbitrary HTML still “unfurl” certain links you paste to interactive versions, using a standard called [oEmbed](https://oembed.com/).
   - If the site uses Embedly, the Iframe can automatically resize to match the height of your content.
 - It doesn’t help you embed in Slack, Facebook, Twitter, or LinkedIn, which don’t support arbitrary interactive embeds; we still use the notebook thumbnail for those. 
+
+- let’s explore some ways to use embedded notebooks!
+
+- ### Rendering cells
+- The most obvious way to embed a notebook is to display its contents, live, in a web page
+- It’s important to note that when you render a limited set of cells from your notebook, the cells that aren’t used — or depended on by those that are — won’t be run at all!
+- If you want to run a cell with side effects in the background of your embedded notebook, you can return true instead of an inspector for those cells
+- Note that CSS `<style>` cells don’t produce their side effects unless they are actually inserted into the DOM; they cannot be silently run in the background, and should instead be interpolated into a displayed HTML cell.
+
+- ### Reading cell values
+- An observer is an object that you define and implements optional methods to observe a cell’s live value. 
+  - These methods are called repeatedly by the runtime
+- Sometimes you just want the current value of a cell. 
+  - For that, you don’t need a proper observer; 
+  - instead, use `module.value` to get a promise to the current value of the cell with the given name.
+
+- ### Overriding cell values
+- your JavaScript program can assign reactive values, too, allowing bidirectional dataflow. 
+- Then whenever you want to change the chart’s data, call `module.redefine`.
+- Because Observable uses dataflow, the chart will update automatically in response to the new data, and the inspector will replace the contents 
+- Another way to alter the behavior of your running notebook is to override Observable’s standard library.
+
+- Notebooks as npm modules
+
+- ### How to: Embed a Notebook in a React App
+
+- [a notebook can embed itself](https://observablehq.com/@jashkenas/ouroboros-a-notebook-embeds-itself)
+  - new Runtime().module(notebook).value("animation")
 
 ## Introduction to Promises
 
@@ -421,7 +477,7 @@ html `<p>I am a <i>paragraph</i> element!</p>`
   - You can use the `await` operator to pause the execution of code in the current cell while you wait for a promise to resolve
   - you can use `promise.then` to chain promises
 
-``` JS
+```JS
 // "[object Promise]world!"
 {
   let promise = Promises.delay(3000, "Hello, ");
@@ -443,7 +499,7 @@ Promises.delay(3000, "Hello, ").then(greeting => greeting + "world!")
   - instead it calls the specified callback function after the specified delay. 
   - To use callbacks in Observable, you should adapt to promises using the Promise constructor.
 
-``` JS
+```JS
 new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Time’s up!");

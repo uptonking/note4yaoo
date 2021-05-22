@@ -11,6 +11,12 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## Finally got a grip on how I want to handle animations with @shoelace_style components. 
+- https://twitter.com/claviska/status/1395873208063217668
+  - Going with the Web Animations API and a thin animation registry instead of [unreliable] CSS transitions.
+  - This took me more time than I’d like to admit. I really wanted to allow animation customizations to happen with CSS, but this is the next best thing.
+- There’s also a method to set the default animation(s) for all components.
+
 - ## You might not need all those keyframes! 
 - https://twitter.com/jh3yy/status/1373417544200171529
   - Repeating keyframes at different points? You can group them.
