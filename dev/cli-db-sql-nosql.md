@@ -1,11 +1,11 @@
 ---
-title: cli-database
-tags: [cli, database]
+title: cli-db-sql-nosql
+tags: [cli, database, nosql, sql]
 created: '2020-12-18T04:28:11.723Z'
-modified: '2020-12-18T04:28:56.828Z'
+modified: '2021-05-23T10:16:39.269Z'
 ---
 
-# cli-database
+# cli-db-sql-nosql
 
 # mysql
 

@@ -1,11 +1,11 @@
 ---
-title: pm-list-grid-table-faq
+title: pm-list-grid-faq
 tags: [faq, grid, list, pm, pmgr, table]
 created: '2020-08-18T12:59:03.811Z'
-modified: '2021-05-14T14:34:45.776Z'
+modified: '2021-05-23T16:34:39.850Z'
 ---
 
-# pm-list-grid-table-faq
+# pm-list-grid-faq
 
 # faq-not-yet
 

@@ -39,3 +39,18 @@ modified: '2021-01-12T18:48:52.713Z'
     - https://denali.design/docs/2.1.0/guides/themeable
     - https://github.com/denali-design/denali-ember
       - Ember.JS component library for the Denali CSS Framework
+
+# data ui components
+
+- https://github.com/getdkan/data-catalog-components
+  - https://getdkan.github.io/data-catalog-components
+  - A set of React components to facilitate the creation of Open Data Catalogs with React.
+  - built for dkan(基于php，而ckan基于python)
+
+- guidu /13Star/MIT/202105/ts/react
+  - https://github.com/uidu-org/guidu
+  - https://uidu.design/
+  - Guidu is uidu's design system library
+  - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
+  - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
+  - These components are Atlassian Design Guidelines(ADG) compliant

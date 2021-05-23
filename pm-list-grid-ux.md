@@ -1,11 +1,11 @@
 ---
-title: pm-list-grid-table-ux
+title: pm-list-grid-ux
 tags: [grid, pmgr, table, ux]
 created: '2020-07-30T16:42:11.432Z'
-modified: '2021-05-14T14:34:55.383Z'
+modified: '2021-05-23T16:34:42.918Z'
 ---
 
-# pm-list-grid-table-ux
+# pm-list-grid-ux
 
 # The complete guide to building a smart data table in React
 

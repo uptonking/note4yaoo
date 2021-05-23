@@ -30,6 +30,14 @@ modified: '2020-10-22T06:49:10.760Z'
   - **x-spreadsheet**: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
 
+- top-dependents-of-react-table.v7
+  - 各类组件库中的table或list组件
+    - @component-controls/components
+    - @edx/paragon
+    - guidu
+- top-dependents-of-react-table.v6
+  - nteract/data-explorer: 依赖d3、numeral
+
 # list-grid-with-div
 
 - ag-grid /MIT/6.4kStar/202006/ts/NoDeps
@@ -381,6 +389,12 @@ modified: '2020-10-22T06:49:10.760Z'
 
 ## table-tr-td-react
 
+- ali-react-table /530Star/MIT/202105/ts
+  - https://github.com/alibaba/ali-react-table
+  - https://ali-react-table.js.org/examples/big-data
+  - 依赖rxjs、styled-components
+  - 提供了很多业务场景示例的live demo，以及测试数据
+  - 内置虚拟滚动，数据量较大时自动开启，实现了pivot
 - react-datasheet /MIT/4.2kStar/202005/NoDeps
   - https://github.com/nadbm/react-datasheet
   - https://nadbm.github.io/react-datasheet/

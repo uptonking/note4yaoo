@@ -1,12 +1,12 @@
 ---
-title: pm-list-grid-table
+title: pm-list-grid
 tags: [grid, list, pm, pmgr, table]
 favorited: true
 created: '2019-08-29T01:24:09.168Z'
-modified: '2021-05-14T14:34:31.493Z'
+modified: '2021-05-23T16:34:27.206Z'
 ---
 
-# pm-list-grid-table
+# pm-list-grid
 
 # guide
 
@@ -274,36 +274,6 @@ modified: '2021-05-14T14:34:31.493Z'
     - there would be three tables internal tables to implement the frozen feature, 
     - and those tables are all scrollable, then the positioning could be not expected, 
     - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
-
-# extensions-for-table-grid 
-
-- https://github.com/GuillaumeJasmin/react-table-sticky
-  - Sticky hook for React Table v7
-- https://github.com/gargroh/react-table-plugins
-  - This repository contains miscellaneous react-table v7 plugins
-  - useExportData - Exporting data from table
-  - useColumnSummary - For displaying and calculating column summaries
-  - useCellRangeSelection - Allows Cell selection and Cell range selection
-- https://github.com/ggascoigne/react-table-example
-  - Demo of React Table V7 using TypeScript as well as Material UI
-
-- https://github.com/avallete/ag-grid-autocomplete-editor
-  - Quick implementation of autocompletion into ag-Grid cell using autocompleter package.
-- https://github.com/bchariot/ReactCRUD
-  - AG Grid allowing CRUD operations written in React.js
-
-- https://github.com/laomu1988/handsontable
-  - 在线表格编辑，可编辑公式、添加Object对象
-- https://github.com/handsontable/performance-lab
-  - JavaScript performance tests for Handsontable
-- https://github.com/hand-dot/table2md
-  - Convert from Excel-like table to markdown table.
-- https://github.com/orestisrodriguez/handsontable-multi-select
-  - Editor for handsontable that allows multiple select cells. Based on jshjohnson/Choices
-- https://github.com/WranglHQ/handsontable_vs_reactdatagrid
-  - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
-- https://github.com/burnash/dataimport
-  - Simple JavaScript CSV Importer
 
 # office-online-product-catalog
 

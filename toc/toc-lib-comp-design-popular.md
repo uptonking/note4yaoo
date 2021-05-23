@@ -20,6 +20,12 @@ modified: '2020-11-13T07:29:55.201Z'
   - react组件(推荐hooks)
     - carbon,material,polaris,gestalt,elastic-eui,rmwc,antd,zent,xiaomi-hiui
 
+- ## Apache Superset UI /Preset
+  - /212Star/Apache2/202105/ts
+  - https://github.com/apache-superset/superset-ui
+  - https://apache-superset.github.io/superset-ui/
+  - Collection of packages that power the Apache Superset UI, and can be used to craft custom data applications that leverage a Superset backend
+
 - ## Material Design /Google
   - /14.9kStar/MIT/202009/ts/css-vars/themed
   - https://github.com/material-components/material-components-web

@@ -1,15 +1,40 @@
 ---
-title: thread-database
-tags: [database, thread]
+title: thread-db-orm-sql-nosql
+tags: [database, nosql, orm, sql, thread]
 created: '2020-11-22T12:10:09.397Z'
-modified: '2021-01-06T14:39:56.358Z'
+modified: '2021-05-23T10:17:05.993Z'
 ---
 
-# thread-database
+# thread-db-orm-sql-nosql
 
 # pieces
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## MikroORM: One ORM to rule them all
+- https://www.reddit.com/r/node/comments/nia2i5/one_orm_to_rule_them_all/
+- Mikro absolutely thrashes TypeORM with its hands tied behind its back. 
+  - It even gives Prisma a run for its money as well (I’ve used all three of these in high load applications at scale). 
+  - Unit of work is wonderful and “just works” once you properly connect it to your request context.
+  - The only thing that was killing me was lack of type safety when calling toJSON(), but that’s already staged for the next release!
+- My question is are you able to do everything using an ORM efficiently? Or do you still write complex SQL’s? For my job, we don’t use an ORM, and have basically a long list of a couple hundred stored procedures in Oracle DB to do every task. What are your views on this?
+  - Any ORM will give you a “perfect” query for simple stuff, and I’ve found it’s a perfect fit for 95% of queries. 
+  - You absolutely have to drop down to pure sql for the more complex queries.
+  - Analytics, multi-joined counts, and extremely large where clauses are usually good candidates.
+  - Prepared statements are an awesome choice! I’d say that the only downside is that it generally aces your front end devs out of making tweaks to those endpoints, which really depends on how your company operates.
+  - One more thing: make sure you’re always checking the cost of your most used queries (something that’s less intuitive on an orm). I’ve been burned on queries that “felt” fast and then got extremely slow once the table had a few million rows.
+- TypeORM died when MikroORM came out. The documentation sucks, it's buggy as hell and the type-safety doesn't even come close to what MikroORM offers, let alone all the issues with getting the CLI to work.
+  - I wrote a pretty detailed comment on how MikroORM compares to Prisma, using their own selection of features that Prisma advertises against TypeORM, and think MikroORM absolutely holds its own against Prisma.
+  - Prisma's main advantages at this point are type-safety, at the cost of flexibility. Since Prisma returns objects, it can use generics in a completely different way, but that also makes it less of a traditional ORM, meaning you can't leverage after-the-fact loading of relations, computed fields, or any sort of business logic in models.
+  - MikroORM on the other hand offers nearly the same level of type-safety with helpers like isInitialized(), load(), while still giving you full access to the underlying query builder (KnexJS), entity manager for hydration, and properly leverages DB transactions the way an ORM should.
+
+
+
+
 
 - ## One of the biggest limitations of a static site is the inability to host a queryable db with it w/o loading the entire db
 - https://twitter.com/privatenumbr/status/1389041601494855685

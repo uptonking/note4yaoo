@@ -1,11 +1,11 @@
 ---
-title: pm-list-grid-table-blog
+title: pm-list-grid-blog
 tags: [blog, grid, list]
 created: '2020-07-14T13:04:22.299Z'
-modified: '2020-11-16T12:42:45.751Z'
+modified: '2021-05-23T16:34:32.755Z'
 ---
 
-# pm-list-grid-table-blog
+# pm-list-grid-blog
 
 # [在线Excel项目到底有多刺激](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
 

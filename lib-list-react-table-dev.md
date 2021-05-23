@@ -7,6 +7,8 @@ modified: '2021-05-13T02:54:23.406Z'
 
 # lib-list-react-table-dev
 
+# guide
+
 # react-table表格实现的ui结构层次
 
 - ## useBlockLayout
@@ -23,7 +25,7 @@ modified: '2021-05-13T02:54:23.406Z'
       - cell/td
     - row/tr
 
-``` CSS
+```CSS
 .table {
   display: inline-block;
   border-spacing: 0;
@@ -66,7 +68,7 @@ modified: '2021-05-13T02:54:23.406Z'
       - cell
     - row-body
 
-``` CSS
+```CSS
 .table {
   box-sizing: border-box;
   max-width: 700px;
@@ -122,7 +124,7 @@ modified: '2021-05-13T02:54:23.406Z'
       - cell
     - row-tr
 
-``` CSS
+```CSS
 .table {
   min-width: 735px;
   border-spacing: 0;
@@ -211,7 +213,7 @@ modified: '2021-05-13T02:54:23.406Z'
 # pieces
 
 - `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
-  - `const getInstance = useGetLatest(instanceRef.current);`
+  - `const getInstance = useGetLatest(instanceRef.current); `
   - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n, 杂乱，混乱)
     - as for memory leaks, it’s not the getLatest implementation that does this. It’s just the fact that it’s used at all as opposed to creating closures around `instanceRef.current`
   - Converted almost all usages of `instanceRef.current` to use `useGetLatest(instanceRef.current)` to help with avoiding memory leaks and to be more terse.

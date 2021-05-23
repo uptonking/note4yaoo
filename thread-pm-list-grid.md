@@ -1,11 +1,11 @@
 ---
-title: thread-pm-list-grid-table
+title: thread-pm-list-grid
 tags: [grid, list, pm, table, thread]
 created: '2021-04-19T14:50:45.904Z'
-modified: '2021-04-19T14:51:17.057Z'
+modified: '2021-05-23T16:34:47.370Z'
 ---
 
-# thread-pm-list-grid-table
+# thread-pm-list-grid
 
 # guide
 

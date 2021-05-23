@@ -28,12 +28,6 @@ modified: '2020-10-22T06:49:25.812Z'
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
 
-# list-grid-table-from-design-system-ui
-
-- bootstrap
-- DevExtreme
-- https://github.com/sushruth/fluent-list
-
 # commercial-list-grid
 
 - FancyGrid /OneOffLic
@@ -75,19 +69,5 @@ modified: '2020-10-22T06:49:25.812Z'
   - https://www.sencha.com/
   - 基于Ext JS实现
   - 基于div实现表格，单元格中可包含canvas图表
-
-# grid-utils
-
-- https://github.com/unosquare/tubular-common
-  - Tubular Common provides TypeScript and Javascript models and data transformer to use any Tubular DataGrid component with an array of Javascript objects.
-  - https://github.com/unosquare/tubular-react
-    - a Material-UI table (or data grid) with local or remote data-source
-  - https://github.com/unosquare/tubular-nodejs
-- https://github.com/jammeryhq/gridsome-source-mock-data
-  - Simple gridsome source plugin which uses danibram/mocker-data-generator to generate your mock data.
-- excelexportjs /88Star/MIT/201909/ts/NoDeps
-  - https://github.com/tarunbatta/excelexportjs
-  - Various server-side binaries and support libraries are present to help us export grids/tables data to excel sheets, but the same export handling at client side is a tough nut to crack. 
-  - This plugin helps you achieve that, thereby providing advance features as well.
 
 # more

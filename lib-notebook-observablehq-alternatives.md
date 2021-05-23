@@ -43,8 +43,8 @@ modified: '2021-05-14T14:46:37.026Z'
 ## more-notebook
 
 - https://github.com/iodide-project/iodide
-  - Literate scientific computing and communication for the web
   - Iodide is no longer under development
+  - Literate scientific computing and communication for the web
   - Note that the pyodide project (python-on-webassembly) continues and is unaffected by this change.
   - For another take on interactive, client-side notebooks, you may also be interested in the Starboard Notebook which provides some of the same capabilities as Iodide and is in active development.
 
@@ -70,8 +70,9 @@ modified: '2021-05-14T14:46:37.026Z'
 - https://github.com/fonsp/Pluto.jl
   - Simple reactive notebooks for Julia
 
-# observable-extensions
-
-- https://github.com/asg017/unofficial-observablehq-compiler
-  - An unofficial compiler for Observable notebooks (glue between the Observable parser and runtime)
-  - This compiler will compile "observable syntax" into "javascript syntax". 
+- https://github.com/Jermolene/TiddlyWiki5
+  - https://tiddlywiki.com/
+  - TiddlyWiki, a non-linear personal web notebook that anyone can use and keep forever, independently of any corporation.
+  - TiddlyWiki is a complete interactive wiki in JavaScript. 
+    - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
+    - It is highly customisable: the entire user interface is itself implemented in hackable WikiText.

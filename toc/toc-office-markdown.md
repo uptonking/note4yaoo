@@ -29,15 +29,26 @@ modified: '2021-01-04T17:26:25.032Z'
 
 - https://github.com/HarryChen0506/react-markdown-editor-lite
   - /446Star/MIT/202008
-  - 基于React的markdown编辑器
+  - 基于React的markdown编辑器，实现简单且清晰
+- https://github.com/outline/rich-markdown-editor
+  - /2kStar/BSD/202105/ts
+  - React and Prosemirror based markdown editor that powers Outline.
+  - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
+- https://github.com/remarkjs/react-markdown
+  - https://remarkjs.github.io/react-markdown/
+  - /7.1kStar/MIT/202105/js
+  - 依赖remark-parse、remark-rehype、unified, vfile
+  - Markdown component for React using remark.
+  - why this one?
+    - The two main reasons are that they often rely on `dangerouslySetInnerHTML` or have bugs with how they handle markdown. 
+    - react-markdown uses a syntax tree to build the virtual dom which allows for updating only the changing DOM instead of completely overwriting. 
 - https://github.com/uiwjs/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
   - 依赖react-markdown、codemirror、highlight.js
 - https://github.com/uiwjs/react-md-editor
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
   - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
-- https://github.com/Microsoft/monaco-editor
-  - the code editor which powers VS Code
+
 - https://github.com/benweet/stackedit
   - In-browser Markdown editor
 - https://github.com/pandao/editor.md
@@ -45,6 +56,9 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/Saul-Mirone/milkdown
   - https://saul-mirone.github.io/milkdown/
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
+
+- more-markdown-editor
+  - vscode-monaco-editor
 
 # markdown-viewer
 

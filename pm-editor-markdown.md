@@ -127,11 +127,9 @@ modified: '2021-05-14T14:33:33.975Z'
 # solution-catalog-editor-for-markdown
 
 - https://github.com/kkfor/for-editor
-- https://github.com/uiwjs/react-md-editor
 - https://nhn.github.io/tui.editor/latest/ToastUIEditor
 - https://github.com/RIP21/react-simplemde-editor
 - https://github.com/sparksuite/simplemde-markdown-editor
 - https://github.com/tuture-dev/editure
 - https://github.com/andrerpena/react-mde
-- https://github.com/HarryChen0506/react-markdown-editor-lite
 - https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one

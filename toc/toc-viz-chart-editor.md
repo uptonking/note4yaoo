@@ -41,8 +41,11 @@ modified: '2020-10-22T10:22:43.618Z'
 - tui.editor /11.8kStar/MIT/202009
   - https://github.com/nhn/tui.editor
   - http://ui.toast.com/tui-editor
-  - Markdown WYSIWYG Editor. GFM Standard + Chart & UML Extensible.
+  - core只依赖 codemirror5，另外提供了react/vue-editor，新版本会升级到prosemirror
   - 通过代码块中的图表配置信息生成图表
+  - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example06-editor-with-chart-plugin)
+  - Markdown WYSIWYG Editor. 
+  - GFM Standard + Chart & UML Extensible.
 - https://github.com/KrSiddharth/React-Chart-Builder
   - Drag-Drop-Resize Beautiful Charts 
   - 基于react-redux、react-chartjs-2、react-grid-layout

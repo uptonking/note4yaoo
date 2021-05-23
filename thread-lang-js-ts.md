@@ -18,7 +18,35 @@ modified: '2021-01-28T14:34:20.579Z'
 
 # pieces
 
-- ## 
+- ## When should you consolidate generic type params: what's better?
+- https://twitter.com/DavidKPiano/status/1396161493075431426
+
+```typescript
+function somethingA<T, U>(
+  thing: Thing<T, U>,
+  other: U
+) { 
+  // ... 
+  }
+
+// Or this?
+
+type GetUFromThing<T extends Thing<any,any>> =
+  T extends Thing<any, infer U> ? U : never;
+
+function somethingB<T extends Thing<any, any>>(
+  thing: T,
+  other: GetUFromThing<T>
+) { 
+  // ... 
+  }
+```
+
+- Notice they mean different things. So, it depends.
+- I've found the second one gets tricky in public APIs because you have to make Thing public too 
+- To me it would depend on if it’s public API or internals? 
+  - If it’s public, do the magic to keep the API simple. 
+  - If it’s internal, write the easiest code.
 
 - ## It looks like @typescript 's declaration merging is "addivitve", 
 - https://twitter.com/tannerlinsley/status/1395379651346767877
@@ -354,7 +382,7 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## I'm always surprised when I see `window.` in front of global APIs in JS code, but I guess it's just a matter of preference?
 - https://twitter.com/RReverser/status/1373817866420695042
-  - What do you normally use for global things like `document` , `postMessage` , `addEventListener` , `fetch` etc.?
+  - What do you normally use for global things like `document` ,  `postMessage` ,  `addEventListener` ,  `fetch` etc.?
 - funny self.someAPI wasn't there ... as window doesn't exist in Workers ... 
   - anyway, there are cases where you don't have globals (see LinkeDOM) so, in such case, passing a window/self and a document is better than polluting the global NodeJS env with these.
   - No other use cases here

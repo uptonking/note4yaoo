@@ -47,6 +47,16 @@ modified: '2021-05-13T14:59:22.147Z'
       - 数据库和数据模型来自同一个地方
       - 控制力高于SQL构造器，低于手写SQL； 但生产力最高
 
+- https://github.com/mikro-orm/mikro-orm
+  - https://mikro-orm.io/
+  - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. 
+  - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
+  - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
+
+- https://github.com/knex/knex
+  - http://knexjs.org/
+  - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
+
 - https://github.com/orbitjs/orbit
   - Orbit is a composable data framework for managing the complex needs of today's web applications.
   - Although Orbit is primarily used as a flexible client-side ORM, it can also be used server-side in Node.js.
@@ -59,7 +69,6 @@ modified: '2021-05-13T14:59:22.147Z'
   - A sql style orm lib for nodejs. (similar to mybatis on java)
 - https://github.com/vyspace/nbatis
   - a node.js plugin about data persistence, similar to mybatis
-
 - https://github.com/mybatis/mybatis-3
   - /14.3kStar/Apache2/202009/java
   - MyBatis SQL mapper framework for Java

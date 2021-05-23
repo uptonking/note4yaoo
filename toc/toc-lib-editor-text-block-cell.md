@@ -20,12 +20,13 @@ modified: '2021-05-14T10:37:33.820Z'
 - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
   - /192Star/MIT/202003/ts
-  - 依赖prosemirror、codemirror、react-highlight.js、react-svg、styled-components
+  - 依赖prosemirror、codemirror5、react-highlight.js、react-svg、styled-components
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
 - https://github.com/madebymany/sir-trevor-js
   - http://madebymany.github.io/sir-trevor-js/
   - /4.5kStar/MIT/202103/js
+  - 依赖只有svg4everybody，编辑器完全自己实现，代码量较大
   - 提供的示例就是分块的
   - Rich content editing entirely re-imagined for the web
   - Stored in structured JSON with limited inline HTML markup
@@ -33,6 +34,7 @@ modified: '2021-05-14T10:37:33.820Z'
 
 - https://github.com/vigetlabs/colonel-kurtz
   - /304Star/MIT/201909/js
+  - 只支持3类block:text/image/media，且实现较简单，不依赖编辑器
   - A block based content editor powered by React. 
   - Colonel Kurtz provides a front-end for building pages as a series of blocks, serializing to a JSON data structure.
 

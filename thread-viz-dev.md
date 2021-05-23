@@ -37,8 +37,7 @@ modified: '2021-02-28T08:06:19.703Z'
   - Our new front-end has a Redux-inspired state system, which with Next.js’ server-side props and TypeScript have dramatically improved our dev velocity.
   - We also have a new multiplayer editor and client-server architecture  building on CodeMirror 6
   - The challenges here are deep. But in remote-first times, it brings me so much joy to be “in the notebook” with others.
-- I've set up an example for collaborative editing in CodeMirror 6. With a very cute interactive demo
-  - https://codemirror.net/6/examples/collab/
+- I've set up an example for collaborative editing in CodeMirror 6. With a very cute interactive [demo](https://codemirror.net/6/examples/collab/)
 
 - ## here's a UX question I'm thinking over: Does a log scale work better than a linear one for profiling tools (given that most commits are usually small)
 - https://twitter.com/brian_d_vaughn/status/1368219961383063552
