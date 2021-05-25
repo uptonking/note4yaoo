@@ -7,6 +7,12 @@ modified: '2021-02-28T08:06:41.340Z'
 
 # thread-viz-d3
 
+# guide
+
+- https://github.com/sgratzl/d3tutorial
+  - https://www.sgratzl.com/d3tutorial/
+  - A D3 v6 tutorial - interactive bar chart and multiple coordinated views (MCV)
+
 # pieces
 
 - ## I figured out how to use d3 and TopoJSON to render an animated SVG map of vaccinations by US county

@@ -12,9 +12,6 @@ modified: '2020-12-20T15:46:29.566Z'
 - 很多成熟优秀的系统都是插件式架构
   - react hooks
 
-- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
-  - 500 Lines or Less
-
 # plugin-system-repos
 
 - https://github.com/Webpack/tapable /js/202012
@@ -39,6 +36,13 @@ modified: '2020-12-20T15:46:29.566Z'
   - With React Pluggable, we can think of our app as a set of features instead of a set of components
   - A plugin can be added or removed by a single line (which is perfect for A/B testing)
 
+# discuss
+
+- ## [前端开发，如何优雅的实现这样一个插件机制？](https://www.zhihu.com/question/294560351)
+
 # ref
+
+- [The Architecture of Open Source Applications](http://aosabook.org/en/index.html)
+  - 500 Lines or Less
 
 - [如何设计一个JavaScript插件系统，编程思维比死磕API更重要](https://zhuanlan.zhihu.com/p/211072788)

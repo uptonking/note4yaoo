@@ -35,7 +35,12 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Why are race conditions so tricky to prevent and debug? In my opinion, a couple of reasons:
+- https://twitter.com/DavidKPiano/status/1396819218205655042
+  - Time is one of the most neglected variables.
+  - We tend to think of logic as a fixed sequence, and seldom consider that time can affect the order of events in the sequence.
+  - And because of that, there's actually a combinatorial explosion of sequences in which events can occur, 
+  - and it's difficult to predict and simulate all those possible sequences. Race conditions live in the unexpected sequences.
 
 - ## The browser puts up new frames for every single motion on the page, even when scrolling.
   - To provide a smooth experience, it has to prepare each frame in 16.66 ms (60 fps)

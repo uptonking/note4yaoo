@@ -11,6 +11,15 @@ modified: '2020-12-19T08:52:02.671Z'
 
 # pieces
 
+# examples
+
+- https://github.com/wgao19/docusaurus-template-no-style
+  - https://docusaurus-template-no-style.netlify.app/
+  - Opinionated minimum style template for Docusaurus 2
+  - a trim-down from Docusaurus 2's classic theme that contains only opinionated minimum styles
+  - all css selectors are using only semantic html tags with roles, no class names used
+  - accessory sections have paddings with a fixed value of 1rem
+
 # docs
 
 # blog
@@ -78,3 +87,34 @@ modified: '2020-12-19T08:52:02.671Z'
 - https://twitter.com/sebastienlorber/status/1389128918028931074
   - v2 has lower lighthouse score, but I don't think this tool is fair for many reasons, and v2 users are happy with the v2 UX.
 - We'll benefit from React innovations sooner or later, and Docusaurus can almost work if you disable the JS (ie React as non-blocking progressive enhancement)
+
+# discuss-stars
+
+- ## MDX and similar `md -> rendering` options are in my opinion the foundation of the next no-code/low code great SaaS platforms.
+- https://twitter.com/BibeauGuillaume/status/1389728075370442760
+
+- ## What is the best technical documentation SaaS?  Ideally one that can handle tutorials, how-tos, reference and explainers in one spot.
+- https://twitter.com/sebastienlorber/status/1386953063823466496
+  - 202104
+- Docusaurus is not a SaaS.
+  - It's a free open-source tool that you can self-host easily everywhere as it builds a static website
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## I'm looking for a simple CMS for a small @GatsbyJS site Requirements: 
+- https://twitter.com/maciejkorsan/status/1395843494938284036
+  - cheap SaaS /self hosted 
+  - preferably storing data in the repository (mdx) 
+  - Any recommendations?
+- Maybe Strapi
+  - https://github.com/strapi/strapi
+  - /36.7kStar/MIT+EE/202105/js
+  - Open source Node.js Headless CMS to easily build customisable APIs
+- Netlify CMS sounds like it might work
+  - https://github.com/netlify/netlify-cms
+  - /14kStar/MIT/202105/js
+  - A Git-based CMS for Static Site Generators

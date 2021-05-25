@@ -16,6 +16,12 @@ modified: '2021-02-09T19:27:07.664Z'
 
 # viz
 
+- Samuel Gratzl
+  - https://github.com/sgratzl
+  - https://github.com/upsetjs/upsetjs
+  - https://github.com/lineupjs/lineupjs
+  - https://github.com/cmu-delphi/www-covidcast
+
 - 沈毅
   - 百度，echarts、claygl(formerly qtek)
   - https://github.com/pissang

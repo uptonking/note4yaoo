@@ -37,3 +37,8 @@ modified: '2021-05-22T19:55:00.238Z'
     - The import statement would be visible, however, so you can’t hide the code entirely!
 - In the future, we might formalize the concept of an “appendix” (or perhaps an “implementation section”), and allow that section to be collapsed by default. 
   - Or we might go so far as to make notebooks hierarchical, and allow you to embed notebooks within notebooks…
+
+- ## Import/require works then doesn’t
+- https://talk.observablehq.com/t/import-require-works-then-doesnt/4439
+- The `require` function that is available in Observable is actually `d3-require`, which only supports AMD style modules.
+  - The default CDN used by d3-require is jsdeliver.com

@@ -9,7 +9,9 @@ modified: '2021-04-19T15:11:23.072Z'
 
 # trending
 
-- react server components / ssr
+- headless/unstyled components
+
+- react server components /ssr
   - nextjs
 
 # design

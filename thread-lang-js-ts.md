@@ -18,6 +18,19 @@ modified: '2021-01-28T14:34:20.579Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## reduce() is a very helpful function because it accomplishes two important tasks at once: writing unreadable code and showing off how smart you are
+- https://twitter.com/eevee/status/1396445889883906053
+- 2 years ago me was totally with you, but now i use it frequently. just give it a go
+- “our core user metrics improved after replacing reduce with map and filter in our JavaScript code base” said no one ever
+
 - ## When should you consolidate generic type params: what's better?
 - https://twitter.com/DavidKPiano/status/1396161493075431426
 
@@ -382,7 +395,7 @@ function somethingB<T extends Thing<any, any>>(
 
 - ## I'm always surprised when I see `window.` in front of global APIs in JS code, but I guess it's just a matter of preference?
 - https://twitter.com/RReverser/status/1373817866420695042
-  - What do you normally use for global things like `document` ,  `postMessage` ,  `addEventListener` ,  `fetch` etc.?
+  - What do you normally use for global things like `document` , `postMessage` , `addEventListener` , `fetch` etc.?
 - funny self.someAPI wasn't there ... as window doesn't exist in Workers ... 
   - anyway, there are cases where you don't have globals (see LinkeDOM) so, in such case, passing a window/self and a document is better than polluting the global NodeJS env with these.
   - No other use cases here

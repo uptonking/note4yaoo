@@ -9,6 +9,8 @@ modified: '2021-04-11T17:37:29.528Z'
 
 # guide
 
+- 基于场景预定义react组件接口，允许替换默认使用的各个组件
+
 - headless-ui-examples
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
