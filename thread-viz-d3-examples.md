@@ -15,10 +15,16 @@ modified: '2021-04-23T18:46:07.908Z'
 - One file per example.
 - https://github.com/pbeshai/tidy
   - Tidy up your data with JavaScript, inspired by dplyr and the tidyverse
-
 # pieces
+- ## 
 
-- ##
+- ## 
+
+- ## 
+
+- ## Hacking PowerBI Charts with Plot
+- https://observablehq.com/@analyzer2004/plot-powerbi
+  - Here are some ideas for recreating PowerBI charts with the almighty(全能的) Plot
 
 - ## https://on.wishyoulization.com/fieldbook/
   - 类似地铁线路图的效果，未开源代码

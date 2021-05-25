@@ -15,16 +15,25 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - more-cheatsheet
   - https://nerdcave.com/tailwind-cheat-sheet
-
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## In TypeScript, classes that extend other classes still need to provide parameter types for methods. 
+- https://twitter.com/steveruizok/status/1397122781054181377
+  - TS knows what these types need to be and will error if the wrong type is provided... so why aren't these types just inferred?
+  - Here's the pattern that I've been using instead: a function that enforces the base types on its parameter while still allowing it to be extended. This loses a bunch of good features from classes tho
+- I guess it doesn't make sense that it's required, but it makes sense that some types are disallowed due to co- and contravariance
 
-- ## 
+- ## here are my thoughts on reduce vs chaining array methods vs for loop
+- https://twitter.com/kentcdodds/status/1396820360792731648
+  - [Array reduce vs chaining vs for loop](https://kentcdodds.com/blog/array-reduce-vs-chaining-vs-for-loop)
+  - Actually, I wrote this over a year ago and now I use for loops a lot more. 
+  - I think I should probably update the post to give the loop a more positive light. 
+  - I think for of **loops are definitely easier to understand** than reduce.
+- Ya, it’s obviously all subjective. but the for-loop (to me) is far more explicit and easy to parse
+- Finally someone with a sensible and pragmatic take on this issue. I too just map and filter specially cause most UI is short lists (short for processing by even slow phones). I only use reduce for transformation between data types (array to object).
 
 - ## reduce() is a very helpful function because it accomplishes two important tasks at once: writing unreadable code and showing off how smart you are
 - https://twitter.com/eevee/status/1396445889883906053

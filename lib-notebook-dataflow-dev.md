@@ -10,3 +10,30 @@ modified: '2021-05-14T17:35:34.511Z'
 # guide
 
 # codebase
+- src/content/core.js由src/client/core.js通过esbuild输出esm，compile和run两种任务都会用到
+
+## compileNotebook
+
+```JS
+// 编译ojs的流程
+async function compileNotebook(inPath, output, options) {
+  const { treeShake = null, bundle = true } = options;
+  // 对于默认的简单场景，执行这里就返回结束了！！！
+  if (bundle) return compileBundle(inPath, output, options);
+
+  // 默认后面不会执行
+
+  const source = readFileSync(inPath, "utf8");
+  const compiled = compileSingleNotebook(source, treeShake);
+  writeFileSync(output, compiled, "utf8");
+}
+```
+
+- 简单ojs文件的compile输出有5个文件
+  - sha.js为 unofficial-compiler 编译输出的文件
+  - core.js是从src/content/core.js复制到输出目录
+  - index.js为动态生成的文件，内容简单 `export {default} from "./${sha}.js"; `
+  - stdlib.js为简单复制或生成的附加stdlib.js
+  - index.html为内置的默认预览页面
+
+## runServer

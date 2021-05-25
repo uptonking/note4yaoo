@@ -21,14 +21,19 @@ modified: '2021-01-21T17:52:13.333Z'
 - The problem is that the github platform promoted open source as free (non paid). 
   - And now everyone expects oss to be free labor, big corps are using software without funding or contributing while making millions. 
   - Getting paid shouldn't be an after thought.
-
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## One driver behind the 'lots of small packages' trend in JavaScript has been the desire to ship the minimal amount of code in web pages.
+- https://twitter.com/MarijnJH/status/1397127566503419904
+  - Have tree-shaking tools mooted that? Is there still a good point to be made against packages that include a bunch of stuff that many people won't need, as long as it's in a shape where unused code is easy to eliminate?
+- Since tree-shaking has been adopted by @RollupJS, I've been shovelling(铲起；挖出) all utility functions that I use across projects into a single monorepo. 
+  - Creating yet another package would mean that I'd abandon it at some point.
+  - A monorepo forces me to keep it up to date
+- I think another advantage of small packages is that all the relevant documentation can easily fit into the README. This makes it pretty straightforward for new contributors to properly document the stuff they add or change, which in turn leads to better documentation overall.
+- No. I have found tree shaking to be unreliable when many exports are included in one module, and it is still best to have many small modules to get the best out of the shaker.
 
 - ## has anyone tried both esbuild (or meta build systems like Vite that use it) side by side with Rome?
 - https://twitter.com/devongovett/status/1390023696782221312

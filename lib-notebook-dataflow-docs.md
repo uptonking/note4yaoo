@@ -9,11 +9,9 @@ modified: '2021-05-14T17:35:56.576Z'
 
 # guide
 
-
 ## [ObservableHQ vs. Dataflow](https://alexgarcia.xyz/dataflow/docs/#using-dataflow)
 
 - 暂不支持，相互import
-
 # blogging
 
 ## overview
@@ -21,6 +19,7 @@ modified: '2021-05-14T17:35:56.576Z'
 - dataflow /206Star/MIT/202105/js
   - https://github.com/asg017/dataflow
   - https://alexgarcia.xyz/dataflow/docs/
+  - 依赖unofficial-compiler、runtime、htl、websocket、commander、chokidar
   - self-hosted Observable notebook editor, with support for FileAttachments, Secrets, custom standard libraries, and more!
 
 - Observable notebooks are reactive, JavaScript-based computational notebooks that run inside your browser.
@@ -61,15 +60,14 @@ modified: '2021-05-14T17:35:56.576Z'
   - Dataflow uses the same underlying open source technologies as the notebooks on observablehq.com, such as the Observable notebook runtime, parser, standard library, and inspector. 
   - The sole exception is the compiler, which the observablehq.com compiler is closed-sourced, but Dataflow uses the unofficial-observablehq-compiler project.
   - ObservableHQ is a fantastic SaaS product with an in-browser editor and collaboration features, while Dataflow is a CLI tool that works with local files that you must selfhost. 
-
 # [docs](https://alexgarcia.xyz/dataflow/docs/)
 
 ## Quickstart
 
 - Dataflow is a program that you install on your computer and use on the command line.
-  - `dataflow run` will start a dev sever that enable a live editing experience for your `.ojs` notebook files, a
-  - nd `dataflow compile` will compile those files into re-usable JavaScript ES modules for use in other projects.
-- In Dataflow, you work with .ojs files, which has a similar vibe as JavaScript, but with key differences. 
+  - `dataflow run` will start a dev sever that enable a live editing experience for your `.ojs` notebook files, 
+  - `dataflow compile` will compile those files into re-usable JavaScript ES modules for use in other projects.
+- In Dataflow, you work with `.ojs` files, which has a similar vibe as JavaScript, but with key differences. 
   - If you copy+paste the cells found in Observable notebooks at observablehq.com into a new file by itself, then that would be an `.ojs` file!
   - you can use whatever text editor you want: VS Code, vim, nano, whatever can edit a file!
 - Just like observablehq.com, Dataflow uses the Observable notebook Standard Library, so cells like Promises, html, md, require, and more all are builtin by default. 
@@ -91,5 +89,5 @@ modified: '2021-05-14T17:35:56.576Z'
   - These compiled files could be included in other projects like React apps, SPAs, or any other place the web can reach
 - Compiling does not bundle everything needed to run an Observable notebook. 
   - You will still need to include the Observable runtime when embeding your notebooks elsewhere, 
-  - and any dynamically fetched dependencies (like require() or import()) inside your code will not be included in the compiled bundle. 
+  - and any dynamically fetched dependencies (like `require()` or `import()`) inside your code will not be included in the compiled bundle. 
 - FileAttachments are included inside the compiled bundle.

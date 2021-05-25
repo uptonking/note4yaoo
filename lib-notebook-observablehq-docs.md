@@ -18,29 +18,23 @@ modified: '2021-05-14T18:00:35.421Z'
 
 - ref
   - [Observable: The User Manual](https://observablehq.com/@observablehq/user-manual)
-
 # A Taste of Observable
-
 - A notebook is made up of a series of cells, and each cell is defined by its JavaScript source code.
-- Let’s make that forecast easier to read by taking the next few days of weather and turning it into a table
 - This reactivity is the heart of what makes Observable notebooks a special environment for exploration. 
   - Whenever you change anything, or anything changes by itself, the rest of the notebook instantly updates to reflect the latest information. 
   - In technical terms, this is called reactive, or dataflow programming. 
   - But in practical terms, it means that your notebooks never get stuck in a broken state, and that you never have to refresh the page. 
   - Reactivity gives you immediate feedback when you are exploring your data, sketching ideas in code, and collaborating with others.
 - Observable makes it particularly easy to repurpose and remix other peoples’ D3 visualizations.
-  - Since the external notebook also happens to also render data in the Weather.gov forecast format, that’s not going to be too hard.
-
 # [Why Observable?](https://observablehq.com/@observablehq/why-observable/2)
-
 - Observable was born out of many years of creation in the world of data visualization and understanding developer productivity.
-- The notebook is a running environment with no compiling required.
-  -  Rather than track dependencies in your head, Observable re-evaluates cells whenever things change, like a spreadsheet.
-- Observable offers thousands of visualizations to start from: charts with D3 and Vega-Lite, maps, art, and other components.
+- You can explore data and create.
+  - The notebook is a running environment with no compiling required.
+  - Rather than track dependencies in your head, Observable re-evaluates cells whenever things change, like a spreadsheet.
+- Observable offers thousands of visualizations to start from
+  - charts with D3 and Vega-Lite, maps, art, and other components.
 - You can share and collaborate with others
-
 # [How Observable Runs](https://observablehq.com/@observablehq/how-observable-runs)
-
 - If you’ve used other interactive notebooks before, you’re probably accustomed to code running from top to bottom. 
   - The first cell runs first, the second cell runs second and can reference values defined in the first cell, and so on down the page.
 - Observable is different: it functions like a spreadsheet, where cells (like formulas) run **automatically** whenever their referenced values change. 
@@ -74,8 +68,21 @@ modified: '2021-05-14T18:00:35.421Z'
 
 - In March of 2020, we introduced visual dataflow so you can see how data flows through your notebook. 
   - For a more detailed view of your notebook’s graph, also see the notebook visualizer.
-
 # [Observable’s not JavaScript](https://observablehq.com/@observablehq/observables-not-javascript)
+- observablehq特有的语法
+  - A syntax error in one cell won’t prevent other cells from running.
+  - cells run in topological order
+  - auto re-evaluate
+  - Cells implicitly await promises.
+  - Cells implicitly iterate over generators.
+  - named cells
+  - Statements need curly braces, and return (or yield).
+  - cells can be views
+  - cells can be mutables
+  - stdlib in runtime: lodash, d3, vl, Inputs, Plot, dot, htl
+  - Cells can be imported from other notebooks.
+  - Static ES imports are not supported; use dynamic imports.
+  - require is AMD, not CommonJS. require uses jsdelivr
 
 - by building on the native language of the web, Observable is more familiar and you can use the libraries you know and love, such as D3, Three, and TensorFlow. 
   - Yet for (topological)dataflow, Observable needed to change JavaScript in a few ways.
@@ -124,16 +131,13 @@ modified: '2021-05-14T18:00:35.421Z'
   - Observable’s `require` looks a lot like CommonJS because cells implicitly await promises. 
   - But under the hood it uses the Asynchronous Module Definition (AMD).
   - This convention will eventually be replaced with modern ES modules and imports
-
 # Cells are Functions
-
 - In Observable, each cell is a function; 
   - this function is called automatically by the runtime with the values of any other cell it references.
 - Unlike promises, generators are automatically terminated on invalidation by the runtime.
 - If you want to avoid a generator, you can do something similar using the invalidation promise and `Promise.race`: 
   - this will throw an error when the cell is invalidated, causing the loop to terminate. 
   - This error is never shown because the cell is immediately re-evaluated, giving it a new value.
-
 # Notebook fundamentals
 
 ## Five-Minute Introduction
@@ -567,9 +571,7 @@ new Promise((resolve, reject) => {
   - That makes those variables “reactive”, different from normal JavaScript variables. 
 - Now, we are explicitly showing reactive connections, both in the code editor and in a new minimap.
   - The little gray dots are the minimap. 
-
 # [Observable for Jupyter users](https://observablehq.com/@observablehq/observable-for-jupyter-users)
-
 - Observable, like Jupyter, is a computational notebook that’s great for doing data science and visualization, 
   - where “notebook” refers to a series of cells containing prose, code, and visualizations.
 
@@ -623,9 +625,7 @@ new Promise((resolve, reject) => {
 - Making visualizations with web power
 - Reusing cells wholesale
 - Sharing your work
-
 # [Interactivity in Observable](https://observablehq.com/@observablehq/interactivity-in-observable)
-
 - Notebooks make arguments and explorations more reproducible by showing each step in code and encouraging the reader to run it themselves. 
 - But viewing and modifying code isn't something all viewers are comfortable doing or something even the most technical viewers always have time for. 
 - Interactive inputs make the acts of plugging in different data and questioning model assumptions available to everyone. 

@@ -1,11 +1,11 @@
 ---
-title: thread-geo-examples
-tags: [examples, geo, thread]
+title: thread-gis-examples
+tags: [examples, gis, thread]
 created: '2021-03-26T11:29:28.403Z'
-modified: '2021-03-26T11:29:45.212Z'
+modified: '2021-05-25T08:40:49.076Z'
 ---
 
-# thread-geo-examples
+# thread-gis-examples
 
 # pieces
 

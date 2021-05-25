@@ -13,7 +13,9 @@ modified: '2021-05-22T18:47:06.718Z'
 
 - https://github.com/observablehq/inspector
   - implements the default strategy for rendering DOM and JavaScript values into a live web page — although you’re free to write your own.
-  - takes live values from the notebook and puts them into your HTML 
+  - takes live values from the notebook and puts them into your HTML
+  - The inspector doesn’t include any inline styles, but there is a default stylesheet
+    - https://github.com/observablehq/inspector/blob/master/src/style.css
 
 - This library implements the default value renderer for Observable programs. 
 - When used with the Observable runtime as observers, inspectors can insert elements into the DOM and render interactive displays for arbitrary values.

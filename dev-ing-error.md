@@ -11,6 +11,12 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- esbuild  esbuild: Failed to install correctly
+  - If you're using npm v7, make sure your package-lock.json file contains either "lockfileVersion": 1
+  - 只是esbuild这个包未安装成功，可以查看 node_modules/esbuild/bin/esbuild，这个文件内容为空
+  - 因为npm安装此包时，未执行postinstall，需要自己单独执行npm rebuild esbuild，
+  - 若还是异常，可以进一步手动执行 node node_modules/esbuild/install.js
+
 - [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './v4' is not defined by "exports
   - https://github.com/uuidjs/uuid/issues/444
   - I fixed it by running `npm ci`
@@ -19,7 +25,7 @@ modified: '2021-03-29T19:29:32.505Z'
   - https://github.com/facebook/react/issues/16265
   - The problem is Typescript's discriminated unions. With destructuring we have to null-check everything.
 
-``` JS
+```JS
 // This way I get the proper warning (if I omit props.whatever from the array).
 useEffect(() => {
   const whatever = props.whatever;
@@ -100,7 +106,7 @@ useEffect(function() {
 - git push error
   - git push origin HEAD:main
 
-``` 
+```
 
 error: src refspec main does not match any
 error: failed to push some refs to 'git@github.com:
@@ -110,14 +116,14 @@ error: failed to push some refs to 'git@github.com:
   - did you edit package.json only? if npm-shrinkwrap.json is still there, please remove it or try `npm i -f`
   - https://github.com/angular/angular/issues/13935
 
-``` 
+```
 
 Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin"} (current: {"os":"linux","arch":"x64"})
 ```
 
 - ag-grid使用@babel/preset-typescript编译源码时多次碰到的异常
 
-``` 
+```
 
 agAbstractLabel.ts:48 Uncaught TypeError: Super expression must either be null or a function
     at _inherits (agAbstractLabel.ts:48)
@@ -126,7 +132,7 @@ agAbstractLabel.ts:48 Uncaught TypeError: Super expression must either be null o
 - create-react-app 初次创建示例项目时异常
   - 原因是缺少编译node-canvas的环境
 
-``` 
+```
 
 Downloads/react-cra-es6/node_modules/canvas
 npm ERR! command failed
@@ -157,7 +163,7 @@ VM37226:1 Uncaught DOMException: Blocked a frame with origin "https://stackoverf
 - error  React Hook useCallback received a function whose dependencies are unknown. Pass an inline function instead 
   - useCallback is specifically designed for inline functions.
 
-``` JS
+```JS
 // error
 const throttledMethod = React.useCallback(
   _.throttle(abc, 500),
@@ -180,7 +186,7 @@ const throttledMethod = React.useMemo(
   - [mdn: TypeError: cyclic object value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cyclic_object_value)
     - find and filter (thus causing data loss) a cyclic reference by using the replacer parameter of `JSON.stringify()`
 
-``` 
+```
 
 TypeError: Converting circular structure to JSON
     --> starting at object with constructor 'Object'
@@ -194,7 +200,7 @@ TypeError: Converting circular structure to JSON
   - 将index.ts文件名改为index.tsx
 - pentaho下载依赖慢或停止：多等等或使用mvn代理而不是terminal代理
 
-``` 
+```
 
 Downloading from Twitter: http://maven.twttr.com/org/pentaho/pentaho-ce-jar-parent-pom/9.1.0.0-SNAPSHOT/maven-metadata.xml
 [WARNING] Could not transfer metadata org.pentaho:pentaho-ce-jar-parent-pom:9.1.0.0-SNAPSHOT/maven-metadata.xml from/to Twitter (http://maven.twttr.com/): Transfer failed for http://maven.twttr.com/org/pentaho/pentaho-ce-jar-parent-pom/9.1.0.0-SNAPSHOT/maven-metadata.xml
@@ -213,7 +219,7 @@ Downloading from Twitter: http://maven.twttr.com/org/pentaho/pentaho-ce-parent-p
     -  sudo dpkg-reconfigure ttf-mscorefonts-installer 手动配置离线下载的字体位置
     -  remove the partial download: rm -R /var/lib/update-notifier/package-data-downloads/partial/
 
-``` 
+```
 
 Failure to download extra data files
 The following packages requested additional data downloads after package installation, but the data could not be downloaded or could not be processed.
@@ -226,7 +232,7 @@ The download will be attempted again later, or you can try the download again no
     - @babel/plugin-transform-react-jsx
     - 要多与官方文档示例对比，不要忽视细节，自我猜测
 
-``` 
+```
 
 RROR in ./src/components/general/Button/__stories__/Button1.docs.mdx
 Module build failed (from **/babel-loader/lib/index.js):
@@ -246,7 +252,7 @@ SyntaxError: __stories__/Button1.docs.mdx: Unexpected token (10:9)
     - 未发现原因，只能每次手动调整顺序
 - ts编译问题  
 
-``` 
+```
 
 Option 'allowJs' cannot be specified with option 'declaration'.
 "declaration": true
@@ -265,7 +271,7 @@ Option 'allowJs' cannot be specified with option 'declaration'.
 <button onclick="handleClick1()">单击或双击我</button>
 <button οnclick="handleClick1()">单击或双击我</button>
 
-``` 
+```
 
 - Warning: React.createElement: type is invalid -- expected a string Check the render method of
     - refer to react conditional rendering
@@ -293,7 +299,7 @@ TS2349: This expression is not callable.
 No constituent of type 'ReactNode' is callable.
 Cannot invoke an expression whose type lacks a call signature. Type 'ReactNode' has no compatible call signatures.ts(2349)
 
-``` 
+```
 
 类似的，下面也会异常
 ```
@@ -312,7 +318,7 @@ function f2 (f: F) {
 }
 // Cannot invoke an expression whose type lacks a call signature. Type 'F' has no compatible call signatures.
 
-``` 
+```
 
 - 当children类型声明为 `children?: ((props: T) => React.ReactNode) | React.ReactNode;` 时，会异常，解决方法有2个
     - `(children as ((props: T) => React.ReactNode))(renderRest);`
@@ -325,7 +331,7 @@ function f2 (f: F) {
     }
     
 
-``` 
+```
 
     
 
@@ -345,7 +351,7 @@ function f2 (f: F) {
 
   
 
-``` 
+```
 
     - 异常的位置是  
 
@@ -357,7 +363,7 @@ function f2 (f: F) {
           </ThemeProvider>
         
 
-``` 
+```
 
     - 删除注释 ` {/* 这个是绿色 */}` 就没问题了
 - `Uncaught Invariant Violation: Target container is not a DOM element.`
@@ -389,7 +395,7 @@ function f2 (f: F) {
     thread "AWT-EventQueue-0" java.lang. NoSuchMethodError: onScheduleMessagePumpWork  
     
 
-``` 
+```
 
     maven打包后的main class是 example.simple.CefFrameExample  
     报错原因可能是cef不同版本的方法不一样  
@@ -398,7 +404,7 @@ function f2 (f: F) {
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:target/* example.simple. CefFrameExample
     
 
-``` 
+```
 
 - jcef-quickstart
     - 运行成功，在任意目录
@@ -408,7 +414,7 @@ function f2 (f: F) {
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:/home/yaoo/Downloads/jcef-quickstart/target/classes  tests.simple. MainFrame
     
 
-``` 
+```
 
     - 运行成功，在maven项目根目录
 
@@ -417,14 +423,14 @@ function f2 (f: F) {
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:lib/jogamp/jar/*:target/classes  tests.simple. MainFrame
     
 
-``` 
+```
 
     ```
 
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:lib/jogamp/jar/*:target/*  tests.simple. MainFrame
     
 
-``` 
+```
 
     - 运行失败，core dumped
 
@@ -433,7 +439,7 @@ function f2 (f: F) {
     java  -Djava.library.path=lib/native/Release -cp .:lib/jogamp/jar/*:target/classes  tests.simple. MainFrame
     
 
-``` 
+```
 
     - jcef自带示例，运行成功，在任意目录均可
 
@@ -442,7 +448,7 @@ function f2 (f: F) {
     java  -Djava.library.path=/home/yaoo/Documents/repo/opensource/java-cef/src/jcef_build/native/Release -cp .:/home/yaoo/Documents/repo/opensource/java-cef/src/third_party/jogamp/jar/*:/home/yaoo/Documents/repo/opensource/java-cef/src/out/linux64 tests.simple. MainFrame
     
 
-``` 
+```
 
 - jcef build
 - error1
@@ -460,7 +466,7 @@ function f2 (f: F) {
     make: *** [all] Error 2
     
 
-``` 
+```
 
     - sudo apt-get install libx11-dev -y
 - error2    

@@ -15,14 +15,28 @@ modified: '2021-02-05T14:00:02.922Z'
 - You might recognise this demo from some of my earlier work, as it's a “Pure CSS” rework of a demo from 2020.
   - https://codepen.io/bramus/pen/ExaEqMJ (js version)
   - 下滑时会自动高亮toc的对应菜单
-
 # css-ux-examples
-
 - css firework
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Scroll-Linked Animations: Coverflow (CSS @scroll-timeline version)
+- https://twitter.com/bramus/status/1397134003707256834
+  - https://codepen.io/bramus/pen/xxRZZdK
+  - 走马灯组件
+
+- ## circle particles
+  - https://codepen.io/chrisgannon/pen/vYxmexW
+  - 彩色圆形围绕人头轮廓，黑色主题很酷
+
+- ## Check out these page control indicators
+- https://twitter.com/anatudor/status/1393637484580548614
+  - https://codepen.io/thebabydino/pen/JjWdrXK
+  - 包括多种形式，如圆点、空心圆点、短横线
 
 - ## Modern Blog Layout with CSS Grid
 - https://twitter.com/AysnrTrkk/status/1393918222194335746

@@ -8,7 +8,8 @@ modified: '2020-12-19T08:52:02.671Z'
 # lib-office-docusaurus-dev
 
 # guide
-
+- tips
+  - 支持动态编辑代码，基于插件 @docusaurus/theme-live-codeblock
 # pieces
 
 # examples
@@ -19,7 +20,6 @@ modified: '2020-12-19T08:52:02.671Z'
   - a trim-down from Docusaurus 2's classic theme that contains only opinionated minimum styles
   - all css selectors are using only semantic html tags with roles, no class names used
   - accessory sections have paddings with a fixed value of 1rem
-
 # docs
 
 # blog
@@ -80,16 +80,12 @@ modified: '2020-12-19T08:52:02.671Z'
   - It's not a good idea for Docusaurus to maintain the entire layout and styling as these stuff are hard to make improvements without breaking existing users' code.
 - Rearchitect architecture to introduce hooks into the development and build phase so that a plugin system is possible.
 - Use a module bundler like webpack
-
 # discuss
-
 - ## Docusaurus v1 was just simple HTML output, while v2 is a React SPA.
 - https://twitter.com/sebastienlorber/status/1389128918028931074
   - v2 has lower lighthouse score, but I don't think this tool is fair for many reasons, and v2 users are happy with the v2 UX.
 - We'll benefit from React innovations sooner or later, and Docusaurus can almost work if you disable the JS (ie React as non-blocking progressive enhancement)
-
 # discuss-stars
-
 - ## MDX and similar `md -> rendering` options are in my opinion the foundation of the next no-code/low code great SaaS platforms.
 - https://twitter.com/BibeauGuillaume/status/1389728075370442760
 
@@ -98,9 +94,7 @@ modified: '2020-12-19T08:52:02.671Z'
   - 202104
 - Docusaurus is not a SaaS.
   - It's a free open-source tool that you can self-host easily everywhere as it builds a static website
-
 # discuss
-
 - ## 
 
 - ## 

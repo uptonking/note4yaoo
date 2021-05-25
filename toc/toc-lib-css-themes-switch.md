@@ -80,7 +80,6 @@ modified: '2021-02-09T13:40:11.536Z'
   - search: pure css, css only, css framework, css vars
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
-
 # themes-popular
 
 ## material
@@ -281,9 +280,9 @@ modified: '2021-02-09T13:40:11.536Z'
     - https://dot-dashboard.vercel.app/
     - 依赖react, redux-saga, react-chartjs
     - dot-dashboard 一个暗黑系的首页示例
-
+  - https://codepen.io/chrisgannon/pen/vYxmexW
+    - 彩色圆形围绕人头轮廓，黑色主题很酷
 # themes-ui-design
-
 - https://github.com/ciucacristi/elementric
   - https://ciucacristi.github.io/elementric/
   - 样式设计基于白底的圆角方形，设计感很强
@@ -294,8 +293,6 @@ modified: '2021-02-09T13:40:11.536Z'
   - Arwes is a web framework to build user interfaces based on futuristic science fiction designs, animations, and sound effects.
   - The concepts behind are opinionated with influences from Cyberpunk, Cyberprep, and Synthwave, and productions like Star Citizen, Halo, and TRON: Legacy.
   - It tries to inspire advanced space and alien technology.
-
 # more-themes
-
 - https://github.com/yashdiniz/FRUI
   - Flat & Round User Interface, is a minimalistic and professional UI framework 

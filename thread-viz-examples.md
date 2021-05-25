@@ -11,6 +11,16 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+- ## 
+
+- ## The Evolution of a ggplot
+- https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/
+  -  I aim to show you how to turn a default ggplot into a plot that visualizes information in an appealing and easily understandable way. 
+  -  The goal of each blog post is to provide a step-by-step tutorial explaining how my visualization have evolved from a typical basic ggplot.
+
+- ## Exploring local income deprivation
+- https://www.ons.gov.uk/visualisations/dvc1371/#/E07000223
+  - storytelling
 
 - ## Big data should be filtered through trends in location preferably over time. 
 - https://twitter.com/datamongerbonny/status/1388276092125990912

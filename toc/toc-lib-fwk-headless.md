@@ -10,9 +10,7 @@ modified: '2021-05-24T16:55:40.481Z'
 # guide
 
 - rest api本身就是headless的设计
-
 # popular
-
 - netlify-cms /14kStar/MIT/202105/js
   - https://github.com/netlify/netlify-cms
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
@@ -28,7 +26,11 @@ modified: '2021-05-24T16:55:40.481Z'
   - Open source Node.js Headless CMS to easily 
   - The original purpose of the project was to help Bootstrap your API
   - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
-
 # headless-platfrom
-
+- https://github.com/TencentCloudBase/cloudbase-extension-cms
+  - https://docs.cloudbase.net/cms/intro.html
+  - 依赖 Node.js + Nest.js + CloudBase
+  - CloudBase CMS 是由腾讯云开发推出的，基于 Node.js 的 Headless 内容管理平台
+  - 基于模板配置生成内容管理界面，无须编写代码
+  - 支持 Webhook 触发，可以方便的与外部系统集成
 # more-headless

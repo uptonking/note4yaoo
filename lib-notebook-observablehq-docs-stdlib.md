@@ -35,3 +35,14 @@ modified: '2021-05-14T14:50:35.347Z'
 * [width](#width) - the current page width.
 * [invalidation](#invalidation) - dispose resources.
 * [visibility](#visibility) - wait for visibility.
+
+## [Recommended Libraries](https://observablehq.com/@observablehq/recommended-libraries)
+
+- To help you get work done quickly, the Observable standard library provides a handful of recommended open-source libraries by default in all notebooks
+- lodash, `_`
+- d3.js, `d3`
+- vega-lite, `vl`
+- observable Inputs, `Inputs`
+- Observable Plot, `Plot`
+- Observable Graphviz, `dot`
+- Observable Hypertext Literal, `htl`

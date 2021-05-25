@@ -9,7 +9,9 @@ modified: '2021-04-11T17:37:29.528Z'
 
 # guide
 
-- 基于场景预定义react组件接口，允许替换默认使用的各个组件
+- headless ui的实现思路
+  - 只提供状态管理和事件行为，将组件样式和dom结构都暴露给外传入
+  - 基于场景预定义react组件接口，允许替换默认使用的各个组件
 
 - headless-ui-examples
   - headlessui
@@ -28,7 +30,6 @@ modified: '2021-04-11T17:37:29.528Z'
 
 - more-headless-examples
   - https://github.com/jxom/awesome-react-headless-components
-
 # headless-ui-comparison
 
 ## [renderlesskit-react](https://renderlesskit-react.vercel.app/)
@@ -89,9 +90,7 @@ modified: '2021-04-11T17:37:29.528Z'
 - Incremental adoption
   - Each primitive can be installed individually so you can adopt them incrementally.
   - Primitives are also versioned independently
-
 # discuss
-
 - ## In many cases, headless React components (components that only execute code and return null) are better than hooks.
 - https://twitter.com/ralex1993/status/1249705985729368068
   - Why? Because you can conditionally render them.
@@ -128,5 +127,4 @@ modified: '2021-04-11T17:37:29.528Z'
   - You can write all your logic in them and then inside your component use the logic but customize the styles just like you want.
 - How do you usually implement variants in React?
   - [React Buttons with the Base + Variant Pattern](https://devadi.netlify.app/blog/design-systems-react-buttons-base-variant)
-
 # ref

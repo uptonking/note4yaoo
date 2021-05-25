@@ -9,17 +9,37 @@ modified: '2021-05-14T14:52:48.486Z'
 
 # guide
 
-# discuss-stars
+# blogging
 
-- ## [Cell Modes](https://observablehq.com/@observablehq/cell-modes)
+## [Introducing Observable Templates!_20210525](https://observablehq.com/@observablehq/introducing-observable-templates)
+
+- Templates provide pre-packaged artifacts for common data-related workflows.
+  - Building an accurate user retention dashboard can take days, if not weeks. 
+  - With our User Retention Template, all you need to do is upload your data
+- With Templates the data, visualizations, and text, all live together. 
+
+## [Cell Modes_20210514](https://observablehq.com/@observablehq/cell-modes)
+
 - Previously, writing an Observable notebook was optimized for JavaScript. 
   - there was a little extra work for non-JavaScript cells -- for example, you had to manage the opening and closing backticks for a Markdown cell.
 - Now, you can choose the mode in which you want to edit a cell. 
   - The mode of a cell affects the way the cell is parsed and evaluated (treating the contents of the cell as if it were wrapped in the appropriate tagged template), as well as the editing options displayed in the editor.
 - The mode defaults to JavaScript for newly created cells, but newly split cells will keep the mode of the original cell.
 
-# changelog
+## [Working with Observable Collaboration_20210311](https://observablehq.com/@observablehq/working-with-observable-collaboration)
 
+- We call our improved (but still experimental) editor “Next”, and our current (stable) editor “Classic”. 
+- The following features are only partially supported:
+  - [ ] You can create, view, resolve and delete comments, but you cannot lock comments.
+  - [ ] Files can be accessed by notebooks, and you can upload files using the Cmd+Shift+U keyboard shortcut. The files pane is only partially implemented.
+  - [ ] Suggest and compare are not yet supported.
+  - [ ] Visual dataflow is not yet supported.
+  - [ ] You can view a notebook at a specific version by appending @version to the URL, but the history pane is not yet implemented.
+
+- To go back to Classic temporarily without permanently disabling experimental features, click the `Switch to Classic` action
+  - In theory, there shouldn’t be any issues with collaborators editing a notebook in Next and Classic simultaneously
+  - You can disable automatic redirects to Next ui by adding `?ui=classic` to the URL.
+# changelog
 - 2021-05-13
   - We're excited to announce Cell Modes!
   - You can choose the mode you want to edit - Javascript, Markdown, HTML and TeX.

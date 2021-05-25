@@ -1,11 +1,11 @@
 ---
-title: thread-geo-mapping
-tags: [geo, mapping, thread]
+title: thread-gis-mapping
+tags: [gis, mapping, thread]
 created: '2021-03-26T11:27:57.480Z'
-modified: '2021-03-26T11:28:29.993Z'
+modified: '2021-05-25T08:41:02.257Z'
 ---
 
-# thread-geo-mapping
+# thread-gis-mapping
 
 # pieces
 

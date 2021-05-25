@@ -1,0 +1,58 @@
+---
+title: lib-notebook-observablehq-pm-xp
+tags: [notebook, observablehq, pm, xp]
+created: '2021-05-25T17:52:27.247Z'
+modified: '2021-05-25T17:53:28.504Z'
+---
+
+# lib-notebook-observablehq-pm-xp
+
+# observablehq-xp
+
+- tips
+  - observable-notebook的使用体验，感觉像是为内置d3语法的文档而专门设计的ide
+# pros
+
+## general
+
+- 可以修改和探索任何发布的notebook
+
+## text-editor
+
+- cell的执行顺序不按照书写顺序，而按照依赖顺序
+- import named cells from other notebooks
+  - `import` cell `with` data `from` other-notebook
+
+## data
+
+## viz
+
+- 动态交互的reactive document，适合用来做展示文档或仪表板
+# cons
+
+## general
+
+- 若第一行中包含@username，则会另起一行
+
+## text-editor
+
+- 导航浏览类
+  - 文档不支持自动生成目录toc
+  - 快捷键冲突
+  - 跳转到声明处，未实现
+
+- 不支持图文混排，如水平分栏，只能上下堆叠单元格
+
+- ### 文档编辑-markdown
+- markdown的code block的样式与observablehq的代码样式相同，易混淆文档和实际执行的代码
+
+- ### syntax
+- import的来源无法区分来自npm，还是来自其他observable notebook
+  - observablehq对于导入npm包使用`require()`，默认基于cdn.jsdelivr.net，需要AMD
+  - `import()`需要手动指定cdn.skypack.dev，需要es6
+# draft
+- 自动在末尾生成appendix
+# proposals
+- [Making Your Code Citable](https://guides.github.com/activities/citable-code/)
+  - 提出了一种基于zenodo发布与引用代码或网页的方法
+  - 类似arxiv、biorxiv、figshare、peerage of science、peerj preprints

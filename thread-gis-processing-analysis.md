@@ -1,11 +1,11 @@
 ---
-title: thread-geo-processing-analysis
-tags: [analysis, geoprocessing, thread]
+title: thread-gis-processing-analysis
+tags: [analysis, geoprocessing, gis, thread]
 created: '2021-03-26T11:28:39.211Z'
-modified: '2021-03-26T11:29:22.438Z'
+modified: '2021-05-25T08:41:18.938Z'
 ---
 
-# thread-geo-processing-analysis
+# thread-gis-processing-analysis
 
 # pieces
 

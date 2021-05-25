@@ -10,7 +10,7 @@ modified: '2021-03-03T21:48:48.379Z'
 - guide
   - react组件的实现偏向all in js，所以实现在线编辑只需一个编辑器
   - 传统ui组件如bootstrap/web-comp，需要考虑html, css, js三部分，所以实现在线编辑需要多个编辑器，类似codepen
-  - react-live进一步的研发方向应该考虑类似storybook的controls
+  - react-live进一步的研发方向可以考虑类似storybook的controls
   - 考虑支持多种实现的切换，如react/vue/vanillajs，此时可考虑仅展示不编辑
 
 # markdown-live-doc

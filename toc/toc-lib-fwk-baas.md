@@ -1,11 +1,11 @@
 ---
-title: toc-lib-fwk-sass
-tags: [fwk, lib, sass, toc]
-created: '2021-03-31T06:23:17.868Z'
-modified: '2021-03-31T06:23:42.163Z'
+title: toc-lib-fwk-baas
+tags: [baas, framework, toc]
+created: '2021-05-25T09:40:21.484Z'
+modified: '2021-05-25T09:40:55.797Z'
 ---
 
-# toc-lib-fwk-sass
+# toc-lib-fwk-baas
 
 # backend-as-a-service
 
@@ -19,7 +19,4 @@ modified: '2021-03-31T06:23:42.163Z'
   - Authentication and authorization
   - Auto-generated APIs
   - Dashboard
-
-# sass-examples
-
-# more
+# baas
