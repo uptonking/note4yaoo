@@ -23,31 +23,24 @@ modified: '2020-12-29T17:52:42.667Z'
 - 统计挖掘能力不足，比不上spss, sas
   - excel的定位本身就是入门级的工具，不是专业全面的工具
 
-# faq
-
 - 多人协作冲突解决
-  - OT  http://www3.ntu.edu.sg/home/czsun/projects/otfaq/
+  - OT 
+    - http://www3.ntu.edu.sg/home/czsun/projects/otfaq/
 
 ## 特定需求
 
 - 一批数据制作多表时，各表有同样的数据，存在冗余
 - 横向排版不能分栏
 - 不统计则不能分组显示
-
 # 优点
-
 - 简单清晰
 - 使用广泛
 - 数据和样式保存在一个文件
 - 可视化的数据编辑和样式编辑
-
 # feature
-
 - tip of the day
   - 最常用和最实用的表格操作技巧
-
 # excel 格式说明
-
 - 默认情况下，Excel for Windows使用1900日期系统，而Excel for Macintosh使用1904日期系统，Excel for Windows 也支持使用1904时间系统。
   - https://support.microsoft.com/zh-cn/help/214330/differences-between-the-1900-and-the-1904-date-system-in-excel
   - 1900日期系统有一小错误，即其包含了1900年2月29日（1900年不是闰年）所对应的序列值，早期 Macintosh 计算机的设计，不支持 1904 年 1 月 1 日之前的日期，是为了防止与 1900 年不是闰年相关的问题

@@ -11,8 +11,37 @@ modified: '2021-05-14T17:35:56.576Z'
 
 ## [ObservableHQ vs. Dataflow](https://alexgarcia.xyz/dataflow/docs/#using-dataflow)
 
-- 暂不支持，相互import
+- dataflow中支持大部分observablehq的语法
+  - 但observablehq不支持ojs
 # blogging
+
+## [Introducing Dataflow, a self-hosted Observable Notebook Editor](https://observablehq.com/@asg017/introducing-dataflow)
+
+- Dataflow is a new tool that lets you run, edit, and compile Observable notebooks locally on your own computer, with any text editor you want!
+- In Dataflow, Observable notebooks are files on your computer, with a `.ojs` extension by convention (to distinguish Observable JavaScript from other JavaScript files). 
+  - `.ojs` files cam import other .ojs files, and from notebooks hosted on observablehq.com.
+
+- **features**
+- Import from other local `.ojs` files!
+- Import from ObservableHQ notebooks!
+- FileAttachments!
+  - FileAttachments in Dataflow are just files on your computer. 
+  - A configuration comment at the very top defines the names and path of a FileAttachment, 
+  - and they can be referenced in code with the FileAttachment builtin!
+- Live File Attachments!
+  - LiveFileAttachments are a Dataflow specific feature that allows you to reference a FileAttachment, and have it update whenever the underlying file updates! 
+  - This is fantastic when you're working with other CLI tools or programs
+- Secrets
+  - Pass in secrets from the `dataflow run` command to avoid putting secrets in source code! 
+- Custom Standard Libraries!
+- Compile to ES Modules and html!
+  - using the `dataflow compile` command to compile your notebook into ES modules and an example index.html file! 
+
+- Dataflow or ObservableHQ?
+  - Dataflow uses the same underlying open source technologies as the notebooks on observablehq.com, such as the Observable notebook runtime, parser, standard library, and inspector. 
+  - The sole exception is the compiler, which the observablehq.com compiler is closed-sourced, but Dataflow uses the unofficial-observablehq-compiler project.
+  - ObservableHQ is a fantastic SaaS product with an in-browser editor and collaboration features, while Dataflow is a CLI tool that works with local files that you must selfhost. 
+# [docs](https://alexgarcia.xyz/dataflow/docs/)
 
 ## overview
 
@@ -33,34 +62,6 @@ modified: '2021-05-14T17:35:56.576Z'
   - Dataflow also offers easy access to your filesystem with file attachments. 
   - Instead manually uploading files, you can simple include a configuration comment in a notebook to the path of your FileAttachment, and Dataflow will be instantly available 
 - Finally, since Dataflow is just another service that runs on localhost:8080, you can build your own APIs and webservices
-
-## [Introducing Dataflow, a self-hosted Observable Notebook Editor](https://observablehq.com/@asg017/introducing-dataflow)
-
-- Dataflow is a new tool that lets you run, edit, and compile Observable notebooks locally on your own computer, with any text editor you want!
-- In Dataflow, Observable notebooks are files on your computer, with a `.ojs` extension by convention (to distinguish Observable JavaScript from other JavaScript files). 
-  - `.ojs` files cam import other .ojs files, and from notebooks hosted on observablehq.com.
-
-- **features**
-- Import from other local .ojs files!
-- Import from ObservableHQ notebooks!
-- FileAttachments!
-  - FileAttachments in Dataflow are just files on your computer. 
-  - A configuration comment at the very top defines the names and path of a FileAttachment, 
-  - and they can be referenced in code with the FileAttachment builtin!
-- Live File Attachments!
-  - LiveFileAttachments are a Dataflow specific feature that allows you to reference a FileAttachment, and have it update whenever the underlying file updates! 
-  - This is fantastic when you're working with other CLI tools or programs
-- Secrets
-  - Pass in secrets from the `dataflow run` command to avoid putting secrets in source code! 
-- Custom Standard Libraries!
-- Compile to ES Modules and html!
-  - using the `dataflow compile` command to compile your notebook into ES modules and an example index.html file! 
-
-- Dataflow, or ObservableHQ?
-  - Dataflow uses the same underlying open source technologies as the notebooks on observablehq.com, such as the Observable notebook runtime, parser, standard library, and inspector. 
-  - The sole exception is the compiler, which the observablehq.com compiler is closed-sourced, but Dataflow uses the unofficial-observablehq-compiler project.
-  - ObservableHQ is a fantastic SaaS product with an in-browser editor and collaboration features, while Dataflow is a CLI tool that works with local files that you must selfhost. 
-# [docs](https://alexgarcia.xyz/dataflow/docs/)
 
 ## Quickstart
 

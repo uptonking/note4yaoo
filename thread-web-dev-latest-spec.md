@@ -11,7 +11,27 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
-- ## 
+- ## [CSS Container Queries For Designers](https://ishadeed.com/article/container-queries-for-designers/)
+- The Current State Of Responsive Design
+  - Nowadays, it’s still okay to work on multiple versions of the same web layout to show how the inner parts will change **based on the viewport width**
+  - In CSS, the developer needs to create three variations of this component
+  - The variations above depend on media queries or the viewport width. That means, we can’t control them based on their parent width.
+- The problem is that the developer is tied with using a variation of a component only when the viewport width is greater than a specific value
+- What Are Container Queries?
+  - First, let me define the container. 
+  - It’s an element that contains another element(s), and is sometimes called a wrapper. 
+  - When a component is placed within an item, it’s contained within that item. 
+  - That means, we can query the width of its parent and modify it based on that.
+- Sometimes, it would be better for the front-end developer to work on a completely new component rather than creating the variation with container queries.
+  - If the inner parts will stay the same, or at least won’t include new ones, we can alter the component and have multiple variations 
+- Use Cases For CSS Container Queries
+  - Chat List
+  - Sidebar
+  - Accordion
+  - Search
+  - List
+  - UserProfile
+  - SocialSharing
 
 - ## [Say Hello To CSS Container Queries](https://ishadeed.com/article/say-hello-to-css-container-queries/)
 

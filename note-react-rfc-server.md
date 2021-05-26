@@ -10,7 +10,6 @@ modified: '2020-12-22T14:08:27.952Z'
 # react server components
 
 # guide
-
 - RSC优点
   - 将数据请求频繁的组件和计算仅放在服务端执行，减轻客户端压力
   - 将部分代码放在服务端，可作为一种代码分割方式，可减小传输量加快显示
@@ -42,9 +41,12 @@ modified: '2020-12-22T14:08:27.952Z'
   - rsc发送的不是html，定制的格式能使refetch时客户端状态不丢失
   - ssr渲染到html是同步的，渲染时不能取数
     - rsc支持异步取数，渲染时也能取数，流式传输能边下载边渲染
-
+# discuss-stars
+- ## React should have a `useUniqueId()` hook that is SSR-stable built-in, 
+- https://twitter.com/buildsghost/status/1397347873637818370
+  - [Add useOpaqueIdentifier Hook](https://github.com/facebook/react/pull/17322)
+  - there is not a single React app that doesn't need it once you start implementing accessibility features
 # discuss
-
 - ## I want to recap a few points from our talk about the different kinds of components.
 - https://twitter.com/dan_abramov/status/1342260256638951425
 - Server Components are the new proposed kind of components. 
@@ -267,9 +269,7 @@ modified: '2020-12-22T14:08:27.952Z'
   - 我认为，把复用的组件提到服务端反而降低可维护性。
 - 感觉就是Suspense和lazyload的云端实现，
   - lazy load 已经是lazy了，那这个component 是从本地引入的还是云端的，就没有什么太大的区别了。
-
 # [rsc faq](https://github.com/reactjs/rfcs/blob/2b3ab544f46f74b9035d7768c143dc2efbacedb6/text/0000-server-components.md#faq)
-
 - not-yet
   - 若将view的数据样式都频繁变化的部分采用rsc形式实现，组件更新时rerender如何实现，性能如何
 
@@ -404,7 +404,7 @@ modified: '2020-12-22T14:08:27.952Z'
 
 - Basic Example
 
-``` JS
+```JS
 // Note.server.js - Server Component
 
 import db from 'db.server';
@@ -523,9 +523,7 @@ function Note(props) {
   - a fork of the original demo without the Postgres dependency
   - you can run the demo app without needing a database.
   - you won't be able to execute SQL queries (but fetch should still work).
-
 # pieces
-
 - Cool, React can now do what PHP has been able to for decades.
   - PHP is definitely an inspiration, but there are a few different nuances:
     - Being able to *refetch* a Server tree without blowing away the Client state inside of it.

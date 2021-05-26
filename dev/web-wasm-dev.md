@@ -11,13 +11,31 @@ modified: '2021-01-01T20:10:51.125Z'
 
 - tips
   - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
-
 # faq
 
 # pieces
-
+- 典型应用场景
+  - 扩展浏览器端视音频处理能力
+  - 游戏计算
+- 90%的应用场景都不需要WebAssembly
+  - https://www.infoq.cn/article/ytxfUWloi2wi00cQY-8a
+  - js问题
+    - 语法太灵活导致开发大型项目困难
+    - 性能不能满足一些场景的需要
+  - TypeScript是JavaScript的一个严格超集，并添加了可选的静态类型和使用看起来像基于类的面向对象编程语法操作Prototype，TypeScript最终仍然是被编译成JavaScript在浏览器中执行
+  - 在2008年，Google推出了JavaScript引擎V8，首次通过JIT技术提升JavaScript的执行速度，并且它真的做到了
+    - Web应用中，性能瓶颈大部分的原因已经不在JavaScript，而在于DOM。浏览器中通常会把DOM 和JavaScript独立实现，这两个模块相互访问的时候，都是通过接口访问。由于JavaScript单线程的特性，这种访问只能是单工的
+    - 为了减少js访问dom的次数，可以使用Virtual Dom，Web Worker 
+    - JIT执行时，可以根据代码编译进行优化，代码运行时，不需要每次都翻译成二进制汇编代码，V8就是这样优化JavaScript性能的
+  - 为了进一步提升JIT优化效率，Mozilla 推出了asm.js。asm.js也是强类型的JavaScript，但是他的语法则是JavaScript的子集，是为了JIT性能优化而专门打造的，其他大厂都觉得asm.js的思路不错，于是联合起来共建WebAssembly生态
+  - WebAssembly是一份字节码标准，以字节码的形式依赖虚拟机在浏览器中运行，可以依赖Emscripten等编译器将C++/Golang/Rust/Kotlin等强类型语言编译成为WebAssembly字节码.wasm 文件。
+    - WebAssembly并不是Assembly（汇编），它只是看起来像汇编
+  - 鉴于V8的强大性能，90%的应用场景下你不需要WebAssembly
+  - 如何提高JS代码性能
+    - 声明变量时提供默认类型，加快JIT介入
+    - 不要轻易改变变量的类型
+    - Node.js像Java一样也存在JIT预热？
 # discuss
-
 - ## [如何看待 WebAssembly 这门技术？](https://www.zhihu.com/question/362649730/answers/updated)
 - 我不太认为 WASM 是值得前端 all in 的技术，概括地说几点问题：
   - WASM运行时性能在原理上就是受限的，跑不到真正的汇编级别。
@@ -177,9 +195,7 @@ modified: '2021-01-01T20:10:51.125Z'
 - 飞书这边，我用 wasm 编译zlib 提供给js接口做压缩和解压，没有用emcc 工具链，自己手动编译其实也不复杂。
   - 出于包体积敏感的原因，没有生成is glue，互相调用过程，数据传输等手动封装一下问题也不大的。
   - 不过对于复杂的cpp还是更推荐emcc
-
 # ref
-
 - [Node.js大家是用什么方式链接C++代码的](https://www.v2ex.com/t/568399)
 - 打算用 electron 做 UI，CPP 做内核。但是在选择使用什么方式在 C++和 electron 之间搭桥的时候遇到了困难。
 - 目前看到的只有两个选择，一个是 node-ffi 直接链接 C++编译的 dll，

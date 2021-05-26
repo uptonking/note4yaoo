@@ -9,6 +9,12 @@ modified: '2021-05-21T18:52:34.253Z'
 
 # guide
 
+- compiler
+  - jsx -> ojs
+  - mdx -> ojs
+  - ojs通过unofficial-compiler编译成es6标准模块
+    - 编译前的ojs大部分无需修改就可以拷贝到observablehq notebook
+    - 编译后的es6可以灵活在自己的项目中使用
 # roadmap
 
 ## [Compiler v1 - Current problems, potential solutions](https://github.com/asg017/unofficial-observablehq-compiler/issues/26)
@@ -29,7 +35,8 @@ const main = await compile.module(`a =1; b = 2; c = a + b;`);
 console.log(main.value('c')); // 3
 ```
 
-- The above doesn't compile observable javascript into "real" javascript, it interprets it and executes it on the fly. This library didnt have "compiler" features until @bryangingechen added it like so:
+- The above doesn't compile observable javascript into "real" javascript, it interprets it and executes it on the fly. 
+  - This library didn't have "compiler" features until @bryangingechen added it like so:
 
 ```JS
 const compile = new Compiler();
@@ -39,7 +46,7 @@ console.log(src); // "export default function define(runtime, observer) { ..."
 
 - I think we can do a better job at distinguishing this in the API. 
   - Maybe separate Interpreter and Compiler classes that you interact with. 
-  - In dataflow, I found myself using the "Interpreter" functions (.cell, .module, createCellDefinition) when building the "live editor" features, and the "Compiler" functions (.moduleToESModule) when building "export" features. 
+  - In dataflow, I found myself using the "Interpreter" functions (`.cell, .module, createCellDefinition`) when building the "live editor" features, and the "Compiler" functions (`.moduleToESModule`) when building "export" features. 
   - I would assume other users of this library would want something similar, and an easier-to-understand API would be very helpful.
 
 ### define/redefine doesn't help, but raw Runtime variables do
@@ -59,5 +66,4 @@ console.log(src); // "export default function define(runtime, observer) { ..."
   - (b) offer some sort of utility functions that make this easier
   - (c) return more than just runtime variables / offer better hooks to customize behavior (e.g. return whether a cell is referencing FileAttachment/secrets, adding a "resolveNotebookPath" function in function calls, etc.).
 - I haven't thought too much about what this would look like, but I think this can be done last when most of the other changes are made.
-
 # changelog

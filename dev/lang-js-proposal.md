@@ -7,17 +7,19 @@ modified: '2020-07-07T08:10:16.774Z'
 
 # lang-js-proposal
 
-# proposal-toc
+# proposals-toc
 
 - https://babeljs.io/docs/en/plugins
 - https://github.com/babel/proposals
 - [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)
   - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
   - [tc39 proposals stages](https://github.com/tc39/proposals)
-
+# proposals-dead
+- html import
+- [proposal-bind-operator `::`](https://github.com/tc39/proposal-bind-operator)
+  - [Is this proposal dead?](https://github.com/tc39/proposal-bind-operator/issues/53)
 # guide
-
-# [ECMAScript-new-features-list](https://github.com/daumann/ECMAScript-new-features-list)
+- [ECMAScript-new-features-list](https://github.com/daumann/ECMAScript-new-features-list)
 
 ## [es2015/es6](https://github.com/daumann/ECMAScript-new-features-list/blob/master/ES2015.md)
 
@@ -97,9 +99,7 @@ modified: '2020-07-07T08:10:16.774Z'
   - https://github.com/sudheerj/ECMAScript-features
   - https://kangax.github.io/compat-table/esnext/
   - [Rethinking JavaScript Infrastructure: Check out a (controversial) proposal to improve JavaScript Infrastructure.](https://cpojer.net/posts/rethinking-javascript-infrastructure)
-
 # class fields
-
 - stage 3
   - https://github.com/tc39/proposal-class-fields
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields
@@ -115,7 +115,7 @@ modified: '2020-07-07T08:10:16.774Z'
     - static field和method直接定义在MyClass构造函数上，直接访问
     - 装饰器都是运行在类创建时，而实例成员是在实例化一个类的时候才会执行的，所以没有办法获取对应的descriptor
 
-``` JS
+```JS
 // class示例
 class Model {
   // 实例方法
@@ -198,18 +198,14 @@ Object.defineProperty(Model, 'method3', {
     - If you want to change the value of a property, use assignment.
   - ref
     - https://2ality.com/2012/08/property-definition-assignment.html
-
 # private methods
-
 - stage 3
   - https://github.com/tc39/proposal-private-methods
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
 
 - The class fields proposal provides private fields for classes and instances, and this proposal builds on that by adding private methods and accessors (getter/setters) to JavaScript. 
 - To make methods, getter/setters or fields private, just give them a name starting with `#` .
-
 # decorator
-
 - stage 2
   - https://github.com/tc39/proposal-decorators
   - The decorators champion(支持者、拥护者) group is considering a redesign of the proposal as "static decorators".
@@ -281,9 +277,7 @@ Object.defineProperty(Model, 'method3', {
     - 类似属性装饰器，类的原型或者类的构造函数
     - 参数所处的函数名称
     - 参数在函数中形参中的位置（函数签名中的第几个参数）
-
 # dynamic import
-
 - stage 4
   - https://github.com/tc39/proposal-dynamic-import
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports

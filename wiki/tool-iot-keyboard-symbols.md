@@ -7,7 +7,12 @@ modified: '2020-07-14T11:19:00.521Z'
 
 # tool-iot-keyboard-symbols
 
-``` 
+# keyboard shortcuts
+- ref
+  - https://defkey.com/
+# keyboard characters
+
+```
 
 ` -- Back quote
 ~ -- Tilde

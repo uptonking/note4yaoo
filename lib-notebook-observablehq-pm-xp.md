@@ -11,31 +11,17 @@ modified: '2021-05-25T17:53:28.504Z'
 
 - tips
   - observable-notebook的使用体验，感觉像是为内置d3语法的文档而专门设计的ide
-# pros
-
-## general
-
+# general-xp-pros
 - 可以修改和探索任何发布的notebook
+- 动态交互的reactive document，适合用来做展示文档或仪表板
+# general-xp-cons
 
-## text-editor
+# text-editor-pros
 
 - cell的执行顺序不按照书写顺序，而按照依赖顺序
 - import named cells from other notebooks
   - `import` cell `with` data `from` other-notebook
-
-## data
-
-## viz
-
-- 动态交互的reactive document，适合用来做展示文档或仪表板
-# cons
-
-## general
-
-- 若第一行中包含@username，则会另起一行
-
-## text-editor
-
+# text-editor-cons
 - 导航浏览类
   - 文档不支持自动生成目录toc
   - 快捷键冲突
@@ -43,13 +29,34 @@ modified: '2021-05-25T17:53:28.504Z'
 
 - 不支持图文混排，如水平分栏，只能上下堆叠单元格
 
-- ### 文档编辑-markdown
-- markdown的code block的样式与observablehq的代码样式相同，易混淆文档和实际执行的代码
+## syntax
 
-- ### syntax
+- 不支持解构赋值 destructuring
+  - [Destructuring Objects At Top Level](https://github.com/observablehq/feedback/issues/48)
+
+### done
+
+<!-- #region /folded syntax -->
 - import的来源无法区分来自npm，还是来自其他observable notebook
   - observablehq对于导入npm包使用`require()`，默认基于cdn.jsdelivr.net，需要AMD
   - `import()`需要手动指定cdn.skypack.dev，需要es6
+<!-- #endregion /folded syntax -->
+
+## markdown
+
+- markdown的code block的样式与observablehq的代码样式相同，易混淆文档和实际执行的代码
+
+## wontfix
+
+- 若文字中包含@用户名，则该行文字很快就会换行
+# data-pros
+
+# data-cons
+
+# viz-pros
+
+# viz-cons
+
 # draft
 - 自动在末尾生成appendix
 # proposals

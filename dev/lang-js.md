@@ -10,9 +10,7 @@ modified: '2020-07-14T09:26:50.808Z'
 # tips
 
 - all in js as frontend
-
-# js guide
-
+# guide
 - js vm bytecode
 - Replace `arr.filter().map()` with `arr.reduce()`
   - 可以减少遍历次数
@@ -20,70 +18,103 @@ modified: '2020-07-14T09:26:50.808Z'
   - [mdn: JavaScript's basic grammar, variable declarations, data types and literals.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types)
 - js style guide
   - https://github.com/airbnb/javascript
-
-# faq
-
-- Object.assign vs spread operator
-  - Spread is NOT just syntactic sugar around Object.assign. 
-  - `Object.assign` applies setters to a new object, Spread`...` does not. In addition, the object must be iterable.
-  - the spread operator will not copy the the source object’s prototype to the target object. 
-    - If you want to add properties to an object and you don't want to change what instance it is of, then you will have to use `Object.assign`.
-  - I'd like to add this simple example when you have to use Object.assign.
-    - `const objectAssign = Object.assign(new SomeClass(), {});`.
-    - It can be not clear when you use JavaScript. But with TypeScript it is easier if you want to create instance of some class
-  - ref
-    - Object.assign修改属性值的性能 ???
-    - [Object spread vs. Object.assign](https://stackoverflow.com/questions/32925460)
-
-- js复制数组方法的性能比较
+# faq-not-yet
+- ## js复制数组方法的性能比较
   - `b = [...a]`
   - `b = a.slice()`
-- `new Date()` vs `performance.timing`
-  - Navigation Timing API gives us a more accurate measure  
-- eval vs template literals
-  - template literals are parsed at compile time
-  - the argument to eval only gets parsed at runtime, when eval is executed.
-  - eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable. A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
-- setTimeout添加的异步任务队列和requestAnimationFrame每帧执行的任务队列是一个吗
+
+- ## `setTimeout`添加的异步任务队列和`requestAnimationFrame`每帧执行的任务队列是一个吗
   - ？？？
   - 参考 https://stackoverflow.com/questions/43050448/when-will-requestanimationframe-be-executed
-- 写js时候，需要用到严格模式（use strict）吗
-  - 现在严格模式都不算严格， 还是容易写出安全隐患，还要搭配使用eslint
-  - 虽然严格模式会失去js很多原有的灵活性啊，但是有利于js正式化
-  - 对于ES6来说模块始终以严格模式被解析, 但这一点过去对于非ES6目标在生成的代码中并没有遵循
-  - 从TypeScript 1.8开始, 输出的模块总会为严格模式
-- 使用apply/call方法时第一个参数传入null有什么用
-  - 第一个参数指定了函数体内this对象的指向
-  - 在使用call和apply的时候，如果传入的第一个参数是null，在非严格模式下，函数体内的this会默认指向宿主对象，在浏览器环境里就是window，在严格模式下this还是null
-  - 参考 https://www.cnblogs.com/snandy/archive/2012/03/01/2373243.html
-- js连等赋值A=B=C的原理
-  - 赋值云算符是右结合的，从右边开始向左边赋值
-  - 真正的运算规则是 B = C; A = B; 左右持有的是右边对象的引用
-  - 实例分析
+# faq
 
-``` js
+## [Can we omit parentheses when creating an object using the “new” operator?](https://stackoverflow.com/questions/3034941)
+
+- 结论
+  - 可以省略括号，但不推荐
+
+- As a special case, for the `new` operator only, JavaScript simplifies the grammar by allowing the parenthesis to be omitted if there are no arguments in the function call.
+
+- 例子
+  - `new Date().toString()` works perfectly and returns the current date
+    - 实际执行 `(new Date()).toString()`
+  - `new Date.toString()` throws "TypeError: Date.toString is not a constructor"
+    - 实际执行 `(new (Date.toString))()`
+    - 
+
+  - 因为 带参数括号的new/函数调用 优先级高于 不带参数的new
+  - new Foo() has higher precedence than new Foo
+  - new Foo() has the same precedence as . operator
+
+## Object.assign vs spread operator
+
+- Spread is NOT just syntactic sugar around Object.assign. 
+- `Object.assign` applies setters to a new object, Spread`...` does not. In addition, the object must be iterable.
+- the spread operator will not copy the the source object’s prototype to the target object. 
+  - If you want to add properties to an object and you don't want to change what instance it is of, then you will have to use `Object.assign`.
+- I'd like to add this simple example when you have to use Object.assign.
+  - `const objectAssign = Object.assign(new SomeClass(), {}); `.
+  - It can be not clear when you use JavaScript. But with TypeScript it is easier if you want to create instance of some class
+- ref
+  - Object.assign修改属性值的性能 ???
+  - [Object spread vs. Object.assign](https://stackoverflow.com/questions/32925460)
+
+## `new Date()` vs `performance.timing`
+
+- Navigation Timing API gives us a more accurate measure
+
+## `eval` vs template literals
+
+- template literals are parsed at compile time
+- the argument to eval only gets parsed at runtime, when eval is executed.
+- eval can get a dynamically built argument, while a template literal is literal: it cannot be stored as a template variable. A tag function does not actually get a template variable as argument, but the parsed components of it, which are known at compile-time.
+
+## 写js时候，需要用到严格模式（use strict）吗
+
+- 现在严格模式都不算严格， 还是容易写出安全隐患，还要搭配使用eslint
+- 虽然严格模式会失去js很多原有的灵活性啊，但是有利于js正式化
+- 对于ES6来说模块始终以严格模式被解析, 但这一点过去对于非ES6目标在生成的代码中并没有遵循
+- 从TypeScript 1.8开始, 输出的模块总会为严格模式
+
+## 使用apply/call方法时第一个参数传入null有什么用
+
+- 第一个参数指定了函数体内this对象的指向
+- 在使用call和apply的时候，如果传入的第一个参数是null，在非严格模式下，函数体内的this会默认指向宿主对象，在浏览器环境里就是window，在严格模式下this还是null
+- 参考 https://www.cnblogs.com/snandy/archive/2012/03/01/2373243.html
+
+## js连等赋值A=B=C的原理
+
+- 赋值云算符是右结合的，从右边开始向左边赋值
+- 真正的运算规则是 B = C; A = B; 左右持有的是右边对象的引用
+- 实例分析
+
+```js
       var a = { n: 1 };
       a.x = a = { n: 2 }; // a.x指向之前的地址是因为.运算符优先于=赋值运算符
       console.log(a.x); // 输出undefined 
 ```
 
-    1. 在执行前，会先将a和a.x中的a的引用地址都取出来，此值他们都指向{n:1}
-    2. 在内存中创建一个新对象{n:2}
-    3. 执行a={n:2}，将a的引用从指向{n:1}改为指向新的{n:2}
-    4. 执行a.x=a，此时a已经指向了新对象，而a.x因为在执行前保留了原引用，所以a.x的a依然指向原先的{n:1}对象，所以给原对象新增一个属性x，内容为{n:2}也就是现在a
-    5. 语句执行结束，原对象由{n:1}变成{n:1,x:{n:2}}，而原对象因为无人再引用他，所以被GC回收，当前a指向新对象{n:2}
-    6. 所以执行a.x，自然就是undefined了
-  - 结论
-    - 少用连等符号，会出现全局变量
-- js虚拟机和jvm有什么关系
-  - JS的虚拟机有JSC、spidermonkey、v8等，跟JVM没有什么直接的联系
-  - V8的team leader是Lars Bak，jvm的Hotspot正是Lars Bak领导开发的
-  - 在V8出现之前，JS引擎的技术比较原始，正是Lars Bak率先将JVM中先进的技术带到了JS引擎中的，如分代式GC、机器码直接生成等
-- 若在js函数内部不使用var直接定义一个变量并赋值，则在函数外部能访问吗
-  - 可以访问
-  - 示例
+1. 在执行前，会先将a和a.x中的a的引用地址都取出来，此值他们都指向{n:1}
+2. 在内存中创建一个新对象{n:2}
+3. 执行a={n:2}，将a的引用从指向{n:1}改为指向新的{n:2}
+4. 执行a.x=a，此时a已经指向了新对象，而a.x因为在执行前保留了原引用，所以a.x的a依然指向原先的{n:1}对象，所以给原对象新增一个属性x，内容为{n:2}也就是现在a
+5. 语句执行结束，原对象由{n:1}变成{n:1,x:{n:2}}，而原对象因为无人再引用他，所以被GC回收，当前a指向新对象{n:2}
+6. 所以执行a.x，自然就是undefined了
+- 结论
+ - 少用连等符号，会出现全局变量
 
-``` js
+## js虚拟机和jvm有什么关系
+
+- JS的虚拟机有JSC、spidermonkey、v8等，跟JVM没有什么直接的联系
+- V8的team leader是Lars Bak，jvm的Hotspot正是Lars Bak领导开发的
+- 在V8出现之前，JS引擎的技术比较原始，正是Lars Bak率先将JVM中先进的技术带到了JS引擎中的，如分代式GC、机器码直接生成等
+
+## 若在js函数内部不使用var直接定义一个变量并赋值，则在函数外部能访问吗
+
+- 可以访问
+- 示例
+
+```js
   function sayA() {
 
     var a = 'aaa';
@@ -94,9 +125,6 @@ modified: '2020-07-14T09:26:50.808Z'
   console.log(a); // error, not defined
   console.log(b); // bbb
 ```
-
-- 跨window传递数据的方法
-  - `window.opener`
 
 # data type
 
@@ -110,7 +138,7 @@ modified: '2020-07-14T09:26:50.808Z'
 - Do not use a Boolean object to convert a non-boolean value to a boolean value. 
   - To perform this task, instead, use Boolean as a function, or a double NOT operator
 
-``` JS
+```JS
 var x = Boolean(expression); // use this...
 var x = !!(expression); // ...or this
 var x = new Boolean(expression); // don't use this!
@@ -145,8 +173,40 @@ var s = Boolean(myString); // initial value of true
 - `join()` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. 
   - If the array has only one item, then that item will be returned without using the separator.
   - If an element is undefined, null or an empty array [], it is converted to an empty string.
-
 # mdn docs
+
+## 运算符优先级
+
+- `...`扩展运算符
+  - [Spread syntax is not an operator](https://stackoverflow.com/questions/44934828) and therefore does not have a precedence.
+  - It is part of the array literal and function call (and object literal) syntax.
+  - Similarly, rest syntax is part of the array destructuring and function parameter (and object destructuring) syntax.
+- 用于grouping的圆括号`()`优先级最高
+- 访问属性的点号、可计算属性的方括号[]、`new F(args)`、Function Call`f()`、optional chaining可选链运算符`?.`
+- `new F`无参数的调用，优先级也非常高，注意结合性rtl
+  - 注意 new F(args) 无固定结合性
+- `i++`、`i--`
+- Logical NOT (!)
+- Bitwise NOT (~)
+- Unary plus (+)、Unary negation (-)
+- `++j`、`--j`
+- typeof、void、delete、await
+- ** 指数
+- `* / %`
+- `+ -`
+- 位移操作 `<< >> >>>`
+- 关系运算符 `< <= > >=`
+- in instanceof
+- == === !==
+- 位操作 `& ^ |`
+- 逻辑运算符 &&
+- 逻辑运算符 ||
+- 空值合并运算符 ??
+- ? :
+- 赋值运算符
+- yield
+- yield *
+- comma of sequence `, `
 
 ## 函数参数
 
@@ -155,7 +215,7 @@ var s = Boolean(myString); // initial value of true
   - the value is passed to the function, but if the function changes the value of the parameter, this change is not reflected globally or in the calling function.
 - If you pass an object (i.e. a non-primitive value, such as Array/user-defined object) as a parameter and the function changes the object's properties, that change is visible outside the function, as shown in the following example
 
-``` JS
+```JS
 function f1(a) {
   alert(a);
   a = 1; //修改形参a  使用arguments[0] = 1修改效果一样
@@ -212,7 +272,7 @@ f1(10);
 - If the **value is an object already**, it will return the value.
 - When called in a non-constructor context `Object` behaves identically to `new Object()`.
 
-``` js
+```js
   const a = { aa: 1 };
   Object(a) === a //true
   Object('a') === 'a' //false
@@ -309,7 +369,7 @@ f1(10);
   - 可以**用setTimeout模拟setInterval**来规避掉上面的缺点
   - 示例：一秒后立即输出5个5
 
-``` js
+```js
   for (var i = 0; i < 5; i++) {
 
     setTimeout(function() {
@@ -338,7 +398,7 @@ f1(10);
 
 - js生成对象的传统方法是通过构造函数
 
-``` js
+```js
 function Point(x, y) {
   this.x = x;
   this.y = y;
@@ -353,7 +413,7 @@ var p = new Point(1, 2);
 
 - ES6的class只是语法糖，ES5的构造函数Point，对应ES6的Point类的构造方法
 
-``` js
+```js
 class Point {
   constructor(x, y) {
     this.x = x;
@@ -388,9 +448,9 @@ Point === Point.prototype.constructor // true
   - 实质是先创造子类的实例对象this，然后再将父类的方法添加到this, 类似 `Parent.apply(this)`
 - ES6继承
   - 实质是先创造父类的实例对象this(所以必须先调用super)， 然后再用子类的构造函数修改this 
-
-# dev tips
-
+# tips
+- 跨window传递数据的方法
+  - `window.opener`
 - spread operator `...` vs `Object.assign()`
   - The main difference is that spreading defines new properties, while `Object.assign()` sets them.
   - First,  `Object.assign()` triggers setters, spread doesn’t
@@ -423,7 +483,7 @@ Point === Point.prototype.constructor // true
   - `Array.prototype.push.apply(arr2, arr1); `
   - 使用数组遍历赋值
 
-``` js
+```js
   arr1.forEach(function(value, index) {
 
     arr2[index] = value;
@@ -543,7 +603,7 @@ Point === Point.prototype.constructor // true
   - 由于函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。
   - 例子
 
-``` js
+```js
   var name = "The Window";
   var object = {
     name: "My Object",
@@ -616,7 +676,7 @@ Point === Point.prototype.constructor // true
   - 当调用动作n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间
   - 示例
 
-``` js
+```js
   var debounce = function(idle, action) {
 
     var last
@@ -636,7 +696,7 @@ Point === Point.prototype.constructor // true
   - 预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期
   - 示例
 
-``` js
+```js
   var throttle = function(delay, action) {
 
     var last = 0
@@ -656,20 +716,7 @@ Point === Point.prototype.constructor // true
   - throttle：强制函数以固定的速率执行   
   - 在处理一些高频率触发的DOM事件的时候，它们都能极大提高用户体验
   - throttle和debounce均是通过减少实际逻辑处理过程的执行，来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数
-
-# ECMAScript
-
-- 函数绑定运算符 两个冒号 ::  [doc](http://es6.ruanyifeng.com/#docs/function)
-  - 双冒号左边是一个对象，右边是一个函数，该运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。
-  - 如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面
-  - 如果双冒号运算符的运算结果还是一个对象，就可以采用链式写法
-- js的函数调用  
-  - 定义function f1(a, b){}  
-  - 单参数也可以调用 f1(c)  
-- 模块化开发不推荐使用css和html，可以都写在js中
-
 # tool
-
 - webpack
   - 前端资源模块化管理和打包工具  
   - 通过 loader 的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、 AMD 模块、 ES6 模块、CSS、图片、 JSON、Coffeescript、 LESS 等
@@ -687,21 +734,21 @@ Point === Point.prototype.constructor // true
 - js模块化 CommonJS、AMD、UMD  
   - CommonJS NodeJS  
 
-``` js
+```js
 var $ = require('jquery');
 module.exports = myFunc;
 ```
 
   - AMD requirejs、dojo   
 
-``` js
+```js
 require(['math'], function(math) { math.add(2, 3); });
 define(['jquery'], function($) { return myFunc; });
 ```
 
   - UMD  
 
-``` js
+```js
       (function(root, factory) {
         if (typeof define === 'function' && define.amd) {
           // AMD
@@ -731,7 +778,7 @@ define(['jquery'], function($) { return myFunc; });
 - js自执行函数  
   - 因为JavaScript里括号()里面不能包含语句，用括号将函数括住，解析器在解析function关键字的时候，会将相应的代码解析成function表达式，而不是function声明。
 
-``` js
+```js
   // 下面2个括弧()都会立即执行
   (function() { /* code */ }()); // 推荐使用这个  
   (function() { /* code */ })(); // 但是这个也是可以用的  
@@ -757,9 +804,7 @@ define(['jquery'], function($) { return myFunc; });
 ```
 
 - core-js：为es5、es6提供polyfill   
-
 # react
-
 - 优点
   - React的理念是界面**组件化**，在桌面开发中叫控件，可复用性强，开发效率高
   - 但这个组件的含义与Web Components并无明显联系，Web Components是底层标准，而上层框架的实现是足可以抹平这个差异的
@@ -777,7 +822,6 @@ define(['jquery'], function($) { return myFunc; });
   - 强调只从this.props和this.state生成HTML，所以非常的functional programming
   - 脱离了Flux，在解决大规模UI的问题上React本身并没有拿出比MVVM更优的方案
   - 而结合Flux看的话，MVVM上也可以用Flux的思想，MVVM框架如果加上合适的优化，并不会比React慢，比如Vue的track by
-
 # 样式处理
 
 ## css modules
@@ -799,7 +843,7 @@ define(['jquery'], function($) { return myFunc; });
   - 2. 没法使用postcss，无法自动补全浏览器前缀，css代码压缩，postcss既不是预处理器也不是后处理器
   - 3. js 体积增大，目前没有类似 ExtractCssPlugin 的工具解决这问题。
 
-``` js
+```js
 import styled from 'styled-components';
 import styles from './style.less';
 
@@ -823,31 +867,3 @@ const Header = (props) => {
 
 // 链接：https://www.zhihu.com/question/266625289/answer/321576411
 ```
-
-# resources
-
-- https://github.com/designmodo/html-website-templates
-
-# WebAssembly
-
-- 典型应用场景
-  - 扩展浏览器端视音频处理能力
-  - 游戏计算
-- 90%的应用场景都不需要WebAssembly
-  - https://www.infoq.cn/article/ytxfUWloi2wi00cQY-8a
-  - js问题
-    - 语法太灵活导致开发大型项目困难
-    - 性能不能满足一些场景的需要
-  - TypeScript是JavaScript的一个严格超集，并添加了可选的静态类型和使用看起来像基于类的面向对象编程语法操作Prototype，TypeScript最终仍然是被编译成JavaScript在浏览器中执行
-  - 在2008年，Google推出了JavaScript引擎V8，首次通过JIT技术提升JavaScript的执行速度，并且它真的做到了
-    - Web应用中，性能瓶颈大部分的原因已经不在JavaScript，而在于DOM。浏览器中通常会把DOM 和JavaScript独立实现，这两个模块相互访问的时候，都是通过接口访问。由于JavaScript单线程的特性，这种访问只能是单工的
-    - 为了减少js访问dom的次数，可以使用Virtual Dom，Web Worker 
-    - JIT执行时，可以根据代码编译进行优化，代码运行时，不需要每次都翻译成二进制汇编代码，V8就是这样优化JavaScript性能的
-  - 为了进一步提升JIT优化效率，Mozilla 推出了asm.js。asm.js也是强类型的JavaScript，但是他的语法则是JavaScript的子集，是为了JIT性能优化而专门打造的，其他大厂都觉得asm.js的思路不错，于是联合起来共建WebAssembly生态
-  - WebAssembly是一份字节码标准，以字节码的形式依赖虚拟机在浏览器中运行，可以依赖Emscripten等编译器将C++/Golang/Rust/Kotlin等强类型语言编译成为WebAssembly字节码.wasm 文件。
-    - WebAssembly并不是Assembly（汇编），它只是看起来像汇编
-  - 鉴于V8的强大性能，90%的应用场景下你不需要WebAssembly
-  - 如何提高JS代码性能
-    - 声明变量时提供默认类型，加快JIT介入
-    - 不要轻易改变变量的类型
-    - Node.js像Java一样也存在JIT预热？

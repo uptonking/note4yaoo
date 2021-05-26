@@ -21,10 +21,15 @@ modified: '2021-03-10T11:38:16.053Z'
     - 基于hsb颜色模型探索颜色
     - [Introducing the new ColorBox](https://kvyn.medium.com/introducing-the-new-colorbox-e0109c021729)
     - [classic clolorbox](https://lyft-colorbox.herokuapp.com/)
-
 # pieces
+- ## 
 
 - ## 
+
+- ## Then it's a good practice to place your CTA at the end of this flow to lead users to take action.
+- https://twitter.com/d__raptis/status/1397209106218463237
+  - It states that the user's eyes travel according to a `Z-shaped` path from the top-left area to the bottom-right area. 
+  - Gutenberg Principle (aka Z-Pattern Layout)
 
 - ## Landing Page Teardown
 - https://twitter.com/d__raptis/status/1395378798661615619

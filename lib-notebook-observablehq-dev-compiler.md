@@ -9,8 +9,6 @@ modified: '2021-05-14T14:48:34.412Z'
 
 # guide
 
-# Unofficial ObservableHQ Compiler
-
 # docs
 
 ## [AN OBSERVABLE NOTEBOOK compiled to js_202](http://www.tophtucker.com/observable-docco/index.js.html)
@@ -75,9 +73,7 @@ modified: '2021-05-14T14:48:34.412Z'
   - This notebook describes the old version of the compiler, v0.5.0, but the new version v0.6.0 is currently in beta.
 
 - [pr: v0.6.0 Beta version: New Interpreter and Compiler APIs](https://github.com/asg017/unofficial-observablehq-compiler/pull/29)
-
 # discuss
-
 - ## [From raw notebook source to Observable runtime V1 modules_201903](https://observablehq.com/@bryangingechen/from-raw-notebook-source-to-observable-runtime-v1-modules)
 
 - Update: Alex Garcia's Unofficial ObservableHQ Compiler lets you do much of the following for runtime V3 modules!

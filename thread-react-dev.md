@@ -13,6 +13,8 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## 
+
 - ## Playing around with a React hook that returns a component with some props pre-applied. Too hacky?
 - https://twitter.com/satya164/status/1391513127431385088
 - The problem is that component from the hook will reMount on every re-render of the host component
@@ -42,7 +44,7 @@ modified: '2021-01-06T14:40:11.360Z'
 - ## Just realised that JSX has a syntax to support generics
 - https://twitter.com/wcandillon/status/1386413737263960064
 
-``` typescript
+```typescript
 type FormValues = {
   email: string
 }
