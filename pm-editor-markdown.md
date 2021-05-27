@@ -18,14 +18,10 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - tips
   - 主流的编辑器采用的是live preview，实时预览
-
 # md-syntax
-
 - core-options
   - render line breaks in .md as line breaks in html
-
 # features
-
 - table editor for markdown
 
 - json editor
@@ -56,12 +52,11 @@ modified: '2021-05-14T14:33:33.975Z'
 - code highlighting
 
 - 允许半个符号而不抛出异常，如`>, 1)`
+  - wolai支持将某些中文符号转换成常用md语法，如 `1。`也能转换成数字列表
 
 - format
   - 格式化时，不应该在用引号包裹的字符串内自动插入空格
-
 # md-extensions
-
 - 扩展markdown的方法
   - 参考asciidoc, rst
   - 参考mdx
@@ -83,16 +78,12 @@ modified: '2021-05-14T14:33:33.975Z'
   - 可以考虑使用mdx中支持的自定义组件的标签
   - 甚至可以直接在markdown中书写web components组件的标签
   - 还计划在markdown中实现类似react-live的编辑效果
-
 # md-integrations/connections
-
 - github-readme-editor
 
 - mermaid-flow-uml
 - excalidraw
-
 # md-editor-as-component
-
 - editor-plugins
   - keyboard-shortcuts:preview, bold, checkbox, newLine
   - list-editing-sugar:enter, tab, delete
@@ -123,9 +114,7 @@ modified: '2021-05-14T14:33:33.975Z'
   - footnote
   - mathTeX: formula
   - flowChart
-
 # solution-catalog-editor-for-markdown
-
 - https://github.com/kkfor/for-editor
 - https://nhn.github.io/tui.editor/latest/ToastUIEditor
 - https://github.com/RIP21/react-simplemde-editor

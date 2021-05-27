@@ -70,9 +70,7 @@ modified: '2021-01-01T20:08:01.651Z'
   - 夏加尔
   - 德加
   - 梵高
-
 # brand-color
-
 - [google-logo-brand-color](https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/)
   - red 
     - #db3236
@@ -97,9 +95,7 @@ modified: '2021-01-01T20:08:01.651Z'
 
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
-
 # 中国风色彩
-
 - https://colors.ichuantong.cn/
   - https://github.com/zerosoul/chinese-colors
   - 中国传统颜色在线手册
@@ -126,9 +122,18 @@ modified: '2021-01-01T20:08:01.651Z'
 
 - ref
   - [在哪里能找到中国传统色彩的RGB色卡？](https://www.zhihu.com/question/30491221)
+# Open source color system from components.ai
+- https://components.ai/theme/sRr4Q9BGmH0jAOA99nc2
 
+- 提供了多套色板数据
+  - bootstrap.v5, open color, material 2014, palx, tachyons.v5
+
+- 132 colors
+- 5390 accessible color combinations
+- The first 6 steps in each scale are accessible with white
+  - the last 6 steps are accessible with black
+- Export as CSS, JS, JSON, or Sass 
 # [canva color palettes](https://www.canva.com/learn/brand-color-palette/)
-
 - 01. Rich and Adventurous  温暖饱和感
     - sheer/浅蓝灰           #c5d2db
     - shutter blue/深天蓝    #2096ba

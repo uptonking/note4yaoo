@@ -6,7 +6,6 @@ modified: '2021-01-16T20:24:48.984Z'
 ---
 
 # toc-office-markdown-mdx-extensions
-
 - 实现mdx文档编辑后自动更新的思路
   - (在当前app界面)编辑内容后直接渲染最新内容到dom，都在内存无需本地
   - (在3方编辑器界面)编辑内容后保存到本地文件，然后app扫描目录，渲染内容
@@ -23,9 +22,7 @@ modified: '2021-01-16T20:24:48.984Z'
     - web components in md, mdx web components
   - 推广mdx的公司：gatsby、nextjs、storybook
   - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.
-
 # mdx
-
 - https://github.com/mdx-js/mdx
   - https://mdxjs.com/
   - /9.7kStar/MIT/202009
@@ -46,9 +43,7 @@ modified: '2021-01-16T20:24:48.984Z'
 - https://github.com/PaulieScanlon/mdx-embed
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr
-
 # mdx-docs
-
 - https://github.com/callstack/component-docs
   - /120Star/MIT/202011/ts
   - 支持ssr，已实现自动搜索指定目录下的所有.mdx文件
@@ -67,9 +62,7 @@ modified: '2021-01-16T20:24:48.984Z'
   - 动态请求的代码 `import(`!babel-loader!@mdx-js/loader!content/${content}`)`
 - https://github.com/zaydek/esbuild-mdx
   - 依赖@mdx-js/mdx, @mdx-js/react, 例子太过简单
-
 # md-web-components/mdjs
-
 - https://github.com/modernweb-dev/rocket
   - https://rocket.modern-web.dev/
   - /7Star/MIT/202101
@@ -93,9 +86,7 @@ modified: '2021-01-16T20:24:48.984Z'
   - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
   - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
   - If no indexeddb, Stoxy recognizes these cases automatically, and opts out of using it and utilizes a in-memory system only.
-
 # md-extensions
-
 - https://github.com/mermaid-js/mermaid
   - http://mermaid-js.github.io/mermaid/
   - Generation of diagram and flowchart from text in a similar manner as markdown
@@ -114,12 +105,16 @@ modified: '2021-01-16T20:24:48.984Z'
   - This library is an attempt to provide a runtime to compile mdx-like markdown files (with the goal to support full JSX inside of markdown) using htm + marked that is much smaller in file-size as opposed to the official runtime
 - https://github.com/wallapatta/wallapatta
   - Wallapatta is like Markdown, but has a layout inspired by handouts of Edward R. Tufte
-
 # mdx-tooling
-
 - https://github.com/kentcdodds/mdx-bundler
   - This is an async function that will compile and bundle your MDX files and their dependencies. It uses esbuild
   - It also uses xdm which is a more modern and powerful MDX compiler with fewer bugs and more features (and no extra runtime requirements).
   - Your source files could be local, in a remote github repo, in a CMS, or wherever else and it doesn't matter.
 
+- https://github.com/probablyup/markdown-to-jsx
+  - The most lightweight, customizable React markdown component.
+  - All this clocks in at around 5 kB gzipped, which is a fraction of the size of most other React markdown components.
+  - markdown-to-jsx uses a heavily-modified fork of simple-markdown as its parsing engine 
+  - One limitation of markdown to jsx is that it does not have a transform pipeline, limiting the flexibility of the content.
+  - https://github.com/remarkjs/remark-react and https://github.com/mdx-js/mdx both can have plugins to the parser and transform plugins.
 # more

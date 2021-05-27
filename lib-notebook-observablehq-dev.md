@@ -13,13 +13,6 @@ modified: '2021-05-14T14:44:14.720Z'
 - 如何不显示cell name，同时又能通过cell name引用这个cell
 # faq
 
-# examples-stars
-
-- [新型冠状病毒患者行为数据分析与可视化](https://observablehq.com/@zhangwenjia-pku/untitled)
-  - 展示了随时间动态变化的条形图
-# examples
-- ref
-  - search: 数据 site:observablehq.com
 # ref
 - [How to: Embed a Notebook in a React App](https://observablehq.com/@observablehq/how-to-embed-a-notebook-in-a-react-app)
 

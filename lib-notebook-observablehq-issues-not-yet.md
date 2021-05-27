@@ -1,6 +1,6 @@
 ---
 title: lib-notebook-observablehq-issues-not-yet
-tags: [not-yet, observablehq]
+tags: [issues, not-yet, observablehq]
 created: '2021-05-22T19:54:41.082Z'
 modified: '2021-05-22T19:55:00.238Z'
 ---
@@ -8,6 +8,26 @@ modified: '2021-05-22T19:55:00.238Z'
 # lib-notebook-observablehq-issues-not-yet
 
 # issues-not-yet
+
+- ## In defense of static imports
+- https://talk.observablehq.com/t/in-defense-of-static-imports
+- Since everything in Observable is inherently dynamic, there’s not really a need for static ES imports—though, we might add support in the future.
+- I’d like to disagree with this.
+  - If the library exposes itself through a `default` export, you’re forced to write
+  - `delatin = (await import('https://unpkg.com/delatin')).default` ; 
+  - With static imports of Observable cells, you can import multiple utility functions at once:
+  - `import {slider, button} from '@jashkenas/inputs'` ; 
+  - With dynamic imports, you’re forced to namespace them:
+  - `inputs = import('https://unpkg.com/foobar')` ; 
+  - Inconsistency. It would be easier for beginners if they didn’t have to remember that you can only use static imports for cells, and dynamic imports for external modules
+- we are hoping to add support for cell destructuring in the near future.
+  - Putting that aside, the problem currently is that we need some way to disambiguate between imports of notebooks and imports of ES modules.
+  - if we want to go all-in on ES imports, we’re going to need browser support for import maps and possibly some Observable support for configuring import maps.
+  - https://github.com/WICG/import-maps
+  - https://caniuse.com/import-maps
+  - The challenge with ES imports currently is that all (nested) imports must be relative or absolute paths, not bare identifiers. 
+  - This makes it difficult to use cross-package imports, such as d3-scale importing d3-interpolate. 
+  - `require` does not have this issue because the require function does the resolution, giving us a hook to control the behavior at runtime.
 
 - ## View-only mode?
 

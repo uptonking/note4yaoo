@@ -11,10 +11,14 @@ modified: '2021-05-14T14:48:34.412Z'
 
 # docs
 
-## [AN OBSERVABLE NOTEBOOK compiled to js_202](http://www.tophtucker.com/observable-docco/index.js.html)
+## [AN OBSERVABLE NOTEBOOK compiled to js_201911](http://www.tophtucker.com/observable-docco/index.js.html)
 
 - When you download an Observable notebook, you get a compressed folder of files. 
 - Several are basically the same for every notebook
+- hash@version.js
+  - the contents of your notebook, your code
+- index.js 
+  - simple `export {default} from "./hash@ver.js"`
 - index.html 
   - loads everything else; 
   - it imports the notebook definition, Runtime, Standard Library, and Inspector. 
@@ -25,9 +29,6 @@ modified: '2021-05-14T14:48:34.412Z'
 - runtime.js 
   - includes a copy of the Runtime, Standard Library, and Inspector, 
   - so that your tarball is self-contained and runs without an Internet connection.
-- index.js 
-  - is the default entry point for the notebook package, 
-  - and just points to your main notebook definition.
 - README.md 
   - includes a link to your notebook on observablehq.com 
   - and boilerplate information about how you can use the package.
@@ -37,10 +38,19 @@ modified: '2021-05-14T14:48:34.412Z'
 
 - notebook contents
 
-- The content of each cell is wrapped in a function, 
-  - and each function is passed to the runtime as a cell definition. 
-  - In this context, each cell is called a variable. They’re basically the same thing; 
+- **The content of each cell is wrapped in a function**, 
+  - and **each function is passed to the runtime as a cell definition**. 
+- In this context, **each cell is called a variable**. 
   - what you see as a cell in the frontend is defined as a variable for the runtime.
+
+- the notebook module definition, which will be passed the `runtime` (which lets you define cells) and `observer` (which will be notified when things change) by `index.html`.
+
+- Observable’s file attachments are implemented as a `Map` from the filenames 
+  - The built-in FileAttachment function, which you call in your cells, is here redefined to use that Map.
+
+- To recap the overloading of define:
+  - `.define(Array, Function)` is equivalent to `.define(null, Array, Function)`.
+  - `.define(String, Function)` is equivalent to `.define(String, null, Function)`.
 
 - I said earlier that cells and variables are basically the same thing. 
   - One exception is that there are built-in variables that aren’t represented by any cell. 
@@ -48,11 +58,12 @@ modified: '2021-05-14T14:48:34.412Z'
   - We saw three other examples above: `FileAttachment`, `md`, and `width`.
 
 - That’s how a compiled Observable notebook is defined for the Runtime.
-- For me, seeing the notebook in plain JavaScript clarified what the curly brace block syntax does; 
+- For me, seeing the notebook in plain JavaScript clarified 
+  - what the curly brace block syntax does; 
   - how reactive variables relate to the scope of a cell; 
-  - and that asynchronous cells don’t look that scary. (One thing not shown here is a generator cell, with yield statements; maybe I should find a better example!) 
+  - and that asynchronous cells don’t look that scary. (One thing not shown here is a generator cell, with yield statements; ) 
   - It also begins to demystify(使明白易懂；深入浅出地解释) the Runtime, which enables very intricate(复杂的；难理解的) interoperation. 
-  - Finally, it helps understand how to copy and paste to port a notebook to a non-reactive setting (without the Runtime). 
+- Finally, it helps understand how to copy and paste to port a notebook to a non-reactive setting (without the Runtime). 
   - If you pull out one of these functions, it’s plain JavaScript, and if you call it with the same arguments, you’ll get the same result.
 
 ## [v0.6.0 of the Unofficial ObservableHQ Compiler_202105](https://observablehq.com/@asg017/v0-6-0-of-the-unofficial-observablehq-compiler)
@@ -69,10 +80,55 @@ modified: '2021-05-14T14:48:34.412Z'
   - When compiling, you now have to option to tree-shake the compiled output on a cellular level. 
   - The compiler that observablehq.com uses doesn't have this feature
 
-- [An Unofficial ObservableHQ Compiler_201909](https://observablehq.com/@asg017/an-unofficial-observablehq-compiler)
-  - This notebook describes the old version of the compiler, v0.5.0, but the new version v0.6.0 is currently in beta.
-
 - [pr: v0.6.0 Beta version: New Interpreter and Compiler APIs](https://github.com/asg017/unofficial-observablehq-compiler/pull/29)
+
+## [An Unofficial ObservableHQ Compiler_201909](https://observablehq.com/@asg017/an-unofficial-observablehq-compiler)
+
+- This notebook describes the old version of the compiler, v0.5.0, but the new version v0.6.0 is currently in beta.
+
+- Observable runtime is the engine that powers the reactive variables of every Observable notebook, 
+  - and enables seamless imports and dependency injections across all notebooks.
+  - However, it's pretty hard to use this runtime by itself - the inputs are cryptic, and the Observable parser (which should be the input to the runtime) also have very cryptic outputs
+- You can use compiler to either compile an individual cell with `compile.cell("content")` or `compile.module("content")` to compile a module (list of cell definitions).
+  - A compiled output is just a `define` function
+- Where can this be used?
+  - Anywhere javascript runs!
+    - But seriously, it doesn't make sense to use this in Observable notebooks (since it already has the closed-source official compiler), but it could be used in places where you want Observable syntax/features (reactive variables, inspector, etc.). 
+  - Text editor extensions!
+  - Self-hosted notebooks
+  - Node.js powered notebooks
+
+## [ObservableHQ Notebooks: Building and Compiling_201911](https://observablehq.com/@kotelnikov/observablehq-notebooks-building-and-compiling)
+
+- 提供了unofficial-compiler的一个简化版实现
+
+- This notebook contains compiler code for ObservableHQ notebooks.
+- Code processing works in two steps. 
+  - At first step ("building") text code is transformed to a JSON object with cell functions serialized as a plain text. 
+  - At the next step ("compilation") the JSON description is compiled to real executable code. 
+  - This separation of steps allows to serialize/deserialize JSON cell descriptions and generate plain javascript for notebooks. 
+  - Which is very useful for notebooks compilation on the **server-side** in Node.
+- Code of this notebook is based on the Unofficial ObservableHQ Complier
+  - Code was slightly refactored to separate the whole process to building and compilation phases.
+
+- 编译流程
+  - Transform the text code to an array of JSON objects with cell definitions.
+    - All cell methods are serialized as simple text.
+  - Transform methods code to executable functions.
+- 重要方法
+  - buildModule(): text to json
+  - compileModule(): 会返回代表cell define的function
+  - resolveModule(): resolves imports
+  - compileNotebook(): 编译所有modules，返回包含所有cell define functions的数组
+
+- Module Building
+  - transforming module code to JSON objects describing individual observable cells
+- Each object can have one of the following types
+  - cell
+    - name, references, method
+  - import
+    - contains description of a cell with imports
+- `buildNotebook()`输出对象的modules属性包含所有cell的definitions数组，cell中的方法都是字符串
 # discuss
 - ## [From raw notebook source to Observable runtime V1 modules_201903](https://observablehq.com/@bryangingechen/from-raw-notebook-source-to-observable-runtime-v1-modules)
 

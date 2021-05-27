@@ -11,7 +11,6 @@ modified: '2021-05-14T14:46:37.026Z'
 
 - notebooks
   - jupyter
-
 # observable notebook alternatives
 
 ## GRID
@@ -57,6 +56,11 @@ modified: '2021-05-14T14:46:37.026Z'
     - Text editing
     - Multi-language support
     - Runtime insight: shows what kernel is doing; variables tables; highlight exceptions
+
+- https://github.com/idyll-lang/idyll
+  - 完全基于js
+  - Create explorable explanations and interactive essays.
+  - Idyll is supported by the Interactive Data Lab at the University of Washington
 
 - https://github.com/calculist/calculist-web
   - https://github.com/calculist/calculist

@@ -15,21 +15,26 @@ modified: '2021-05-25T17:53:28.504Z'
 - 可以修改和探索任何发布的notebook
 - 动态交互的reactive document，适合用来做展示文档或仪表板
 # general-xp-cons
-
+- 不支持 search: in issues, forum, notebooks
 # text-editor-pros
-
 - cell的执行顺序不按照书写顺序，而按照依赖顺序
 - import named cells from other notebooks
   - `import` cell `with` data `from` other-notebook
 # text-editor-cons
+- 浏览渲染的内容时，中文和英文间无空格，显得很挤
+
 - 导航浏览类
   - 文档不支持自动生成目录toc
   - 快捷键冲突
   - 跳转到声明处，未实现
 
-- 不支持图文混排，如水平分栏，只能上下堆叠单元格
+- 文本内容布局类
+  - 不支持图文混排，如水平分栏，只能上下堆叠单元格
 
 ## syntax
+
+- import的不一致
+  - cell、`require(npm-amd)`、`import(npm-esm)`
 
 - 不支持解构赋值 destructuring
   - [Destructuring Objects At Top Level](https://github.com/observablehq/feedback/issues/48)
@@ -37,7 +42,7 @@ modified: '2021-05-25T17:53:28.504Z'
 ### done
 
 <!-- #region /folded syntax -->
-- import的来源无法区分来自npm，还是来自其他observable notebook
+- [x] import的来源无法区分来自npm，还是来自其他observable notebook
   - observablehq对于导入npm包使用`require()`，默认基于cdn.jsdelivr.net，需要AMD
   - `import()`需要手动指定cdn.skypack.dev，需要es6
 <!-- #endregion /folded syntax -->
@@ -48,7 +53,8 @@ modified: '2021-05-25T17:53:28.504Z'
 
 ## wontfix
 
-- 若文字中包含@用户名，则该行文字很快就会换行
+- 若作为标题的文字中包含@用户名，则该行文字很快就会换行
+  - 多观察几篇文章，文本区块的宽度比代码区块的宽度要短很多，加上标题行字体大，所以标题行很容易换行，视觉上不友好
 # data-pros
 
 # data-cons

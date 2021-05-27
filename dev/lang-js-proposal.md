@@ -70,6 +70,10 @@ modified: '2020-07-07T08:10:16.774Z'
 - Optional catch binding
 - Array.prototype.sort() is required to be stable
 
+- https://github.com/tc39/proposal-json-superset
+  - A proposal to extend ECMA-262 syntax into a superset of JSON.
+  - 
+
 ## es2020
 
 - bigint

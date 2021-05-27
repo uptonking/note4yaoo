@@ -9,6 +9,9 @@ modified: '2021-05-20T13:45:40.554Z'
 
 # guide
 
+- ref
+  - [SVG element reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
+  - [SVG Attribute reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
 # discuss-stars
 
 # discuss

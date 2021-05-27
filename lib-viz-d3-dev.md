@@ -61,7 +61,7 @@ svg.selectAll('rect')
   - tooltip 鼠标提示
   - label 数据标注
 
-# blog
+# blogging
 
 ## [mbostock: 10 Years of Open-Source Visualization](https://observablehq.com/@mbostock/10-years-of-open-source-visualization)
 

@@ -11,6 +11,12 @@ modified: '2021-05-14T14:52:48.486Z'
 
 # blogging
 
+## [SQLite_20210527](https://observablehq.com/@observablehq/sqlite)
+
+- Observable has built-in support for SQLite
+  - Observable’s SQLite client uses sql.js
+  - https://github.com/sql-js/sql.js
+
 ## [Introducing Observable Templates!_20210525](https://observablehq.com/@observablehq/introducing-observable-templates)
 
 - Templates provide pre-packaged artifacts for common data-related workflows.
@@ -39,6 +45,14 @@ modified: '2021-05-14T14:52:48.486Z'
 - To go back to Classic temporarily without permanently disabling experimental features, click the `Switch to Classic` action
   - In theory, there shouldn’t be any issues with collaborators editing a notebook in Next and Classic simultaneously
   - You can disable automatic redirects to Next ui by adding `?ui=classic` to the URL.
+
+## more features
+
+- [Announcing cell shortcuts_201906](https://observablehq.com/@observablehq/cell-shortcuts)
+  - We’ve added new bindings to our our keyboard shortcuts: something that mirrors vim’s ‘Normal Mode’, or Jupyter’s ‘Command Mode’.
+- [Suggestions](https://observablehq.com/@observablehq/suggestions-and-comments)
+  - You propose code changes to the author of the notebook.
+  - 类似git的diff view
 # changelog
 - 2021-05-13
   - We're excited to announce Cell Modes!

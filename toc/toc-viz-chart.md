@@ -85,7 +85,7 @@ modified: '2020-10-22T10:22:33.292Z'
 - britecharts /3.7kStar/Apache2/202105/js
   - https://github.com/britecharts/britecharts
   - http://britecharts.github.io/britecharts/
-  - a client-side reusable Charting Library based on D3.js v5
+  - client-side reusable Charting Library based on D3.js v5
   - written in ES2016 with a Test Driven methodology
   - https://github.com/britecharts/britecharts-react
 - bqplot /3.1kStar/Apache2/202105/ts

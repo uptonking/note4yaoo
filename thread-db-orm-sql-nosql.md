@@ -13,7 +13,12 @@ modified: '2021-05-23T10:17:05.993Z'
 
 - ## 
 
-- ## 
+- ## Do not generate database tables on the fly
+- https://twitter.com/sseraphini/status/1397888359910055940
+- it has some use cases tho, when you don't know which entities and columns you gonna store, and you don't want to use JSON/JSONB for all data
+  - Just use nosql
+  - in the case of where I'm working we probably use sql because we want to store structured/relational data, we just don't know the tables/columns beforehand.they are user defined (mapped from something else)
+  - @MongoDB shine on this. you can use a wildcard to even make optimize queries on user defined data
 
 - ## MikroORM: One ORM to rule them all
 - https://www.reddit.com/r/node/comments/nia2i5/one_orm_to_rule_them_all/
@@ -31,10 +36,6 @@ modified: '2021-05-23T10:17:05.993Z'
   - I wrote a pretty detailed comment on how MikroORM compares to Prisma, using their own selection of features that Prisma advertises against TypeORM, and think MikroORM absolutely holds its own against Prisma.
   - Prisma's main advantages at this point are type-safety, at the cost of flexibility. Since Prisma returns objects, it can use generics in a completely different way, but that also makes it less of a traditional ORM, meaning you can't leverage after-the-fact loading of relations, computed fields, or any sort of business logic in models.
   - MikroORM on the other hand offers nearly the same level of type-safety with helpers like isInitialized(), load(), while still giving you full access to the underlying query builder (KnexJS), entity manager for hydration, and properly leverages DB transactions the way an ORM should.
-
-
-
-
 
 - ## One of the biggest limitations of a static site is the inability to host a queryable db with it w/o loading the entire db
 - https://twitter.com/privatenumbr/status/1389041601494855685
@@ -135,5 +136,4 @@ modified: '2021-05-23T10:17:05.993Z'
   - For larger data sets, you really should use a database of sort, as they would manage what is kept in memory and what is left on the disk.
 
 # ref
-
 - [OceanBase的一致性协议为什么选择paxos而不是raft?](https://www.zhihu.com/question/52337912/answers/updated)

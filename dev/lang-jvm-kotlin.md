@@ -10,7 +10,6 @@ modified: '2020-12-08T13:20:20.680Z'
 # guide
 
 # KMM(Kotlin Multiplatform Mobile)
-
 - https://github.com/Kotlin/kmm-production-sample
   - Kotlin Multiplatform Mobile is a flexible technology that allows you to share only what you want to share, from the core layer to UI layers.​
   - This sample demonstrates sharing not only the data and domain layers of the app but also the application state
@@ -43,16 +42,12 @@ modified: '2020-12-08T13:20:20.680Z'
 - The Android application part of a KMM project is a typical Android application written in Kotlin.
 - The iOS application is produced from an Xcode project generated automatically by the Project Wizard.
   - This is a basic Xcode project configured to use the framework produced from the shared module.
-
 # pieces
-
 - Kotlin是在Java虚拟机（JVM）上运行的静态类型编程语言。
   - 它的开发始于2010年的JetBrains，但是直到2016年，才发布了第一个稳定版本（Kotlin v1.0）
   - JetBrains的负责人Dmitry Jemerov表示Scala接近但编译速度较慢。
 - Kotlin旨在像Java一样快地进行编译，但是比Java具有更简洁，更实用的语法
-
 # kotlin-extensions
-
 - Kotlin还可以编译为JavaScript，并且可以创建在启用了JavaScript的浏览器中运行的应用程序。
   - 可以直接在Intellij IDEA中编写JavaScript代码，然后使用Maven或使用命令行进行编译。
   - Kotlinx.html是Kotlin模板引擎，用于在Web应用程序中构建HTML。
@@ -60,9 +55,7 @@ modified: '2020-12-08T13:20:20.680Z'
 
 - [如何评价 Kotlin Native?](https://www.zhihu.com/question/58044077/answers/updated)
   - kotlin野心很大啊， 底层直通C， 中间层vm，高层脚本。
-
 # kotlin vs java
-
 - [Kotlin会取代java吗？](https://www.zhihu.com/question/299244850/answers/updated)
   - Kotlin编译是在JVM之上执行的字节码，因此Java是运行Kotlin所必需的。
     - Kotlin的大火，来源于Google的官方支持！
@@ -81,9 +74,29 @@ modified: '2020-12-08T13:20:20.680Z'
 - [Kotlin 作为 Android 开发语言相比传统 Java 有什么优势？](https://www.zhihu.com/question/37288009/answers/updated)
   - Google在2019年已经确立了Kotlin在Android开发中的官方地位
   - Android到2020年了还没有彻底支持Java8, 而kotlin支持全系Android
+# kotlin-roadmap
 
+## [Nine Highlights from the Kotlin Roadmap_202105](https://blog.jetbrains.com/kotlin/2021/05/nine-highlights-from-the-kotlin-roadmap/)
+
+- The new compiler takes a big step forward
+  - The new Kotlin compiler is a huge project that consists of rewriting the JVM and JS backends together with the frontend to the new architecture.
+- Sealed whens
+  - the general idea is to enable the compiler to warn you about your when statement not being exhaustive. 
+- Placing a bet on the WebAssembly
+  - We believe that WebAssembly will become the new standard for creating rich web applications in the future
+  - That’s why we’ve decided to go all-in for Kotlin/Wasm!
+  - We plan to iterate on performance, work closely with authors of the WebAssembly GC proposal, implement basic Kotlin language features, libraries, and basic Gradle support, and add experimental JavaScript interop. 
+- New Kotlin/Native garbage collector on the road to experimental
+  - We’ve already prototyped most of the required components to create a simple garbage collector.
+  - The next step is to write a multithreading-capable garbage collector implementation.
+- Improving iOS-related tooling in KMM
+  - we want developers to enjoy using iOS-related tooling! 
+  - For now, we’re focusing on improving the Cocoapods integration UX and hiding the packForXcode Gradle build task from the default script to simplify project setup
+- Support for the Apple Silicon target in the Kotlin Multiplatform tooling
+- New ways to improve IDE performance and stability
+- New core libraries features
+- Community assets with the new style
 # ref
-
 - [谈编程语言互操作-Java/Kotlin互操作机制](https://zhuanlan.zhihu.com/p/299669161)
   - kotlin语言可以被编译成多种形态，如kotlin-native, kotlin-jvm, kotlin-js
   - Java/Kotlin互操作完全依赖kotlinc编译器产生javac可以识别的统一的字节码*.class文件

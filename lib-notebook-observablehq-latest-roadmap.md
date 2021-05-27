@@ -10,7 +10,6 @@ modified: '2021-05-14T14:46:57.030Z'
 # guide
 
 # discuss
-
 - ## 
 
 - ## 
@@ -26,6 +25,7 @@ modified: '2021-05-14T14:46:57.030Z'
 
 - ## Serverless Cells
 - https://talk.observablehq.com/t/serverless-cells/4491
+  - https://github.com/endpointservices/serverlesscells
 - Add yet-another-cors-proxy using serverless cells. 
   - Very simple implementation because the proxy is also a web environment so you are just forwarding the arguments of a fetch call to execute remotely “as is”.
   - [CORS Proxy fetchp](https://observablehq.com/@tomlarkworthy/fetchp)

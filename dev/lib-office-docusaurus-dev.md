@@ -8,6 +8,11 @@ modified: '2020-12-19T08:52:02.671Z'
 # lib-office-docusaurus-dev
 
 # guide
+- features
+  - pluggable: Content plugins & Behavior plugins
+  - mdx: add interactive jsx components to md
+  - advanced features: i18n, versioning, search
+
 - tips
   - 支持动态编辑代码，基于插件 @docusaurus/theme-live-codeblock
 # pieces

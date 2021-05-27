@@ -75,8 +75,11 @@ modified: '2021-05-13T14:59:22.147Z'
   - https://github.com/pagehelper/Mybatis-PageHelper
   - https://github.com/baomidou/mybatis-plus
   - https://github.com/abel533/Mapper
-
 # popular database
+- https://github.com/sql-js/sql.js
+  - sql.js is a javascript SQL database. 
+  - It allows you to create a relational database and query it entirely in the browser.
+  - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
 
 - https://github.com/typicode/lowdb
   - a small local JSON database powered by Lodash 
@@ -109,9 +112,7 @@ modified: '2021-05-13T14:59:22.147Z'
 - https://github.com/codefollower/H2-Research
   - H2数据库源代码学习研究
   - 包括代码注释、文档、用于代码分析的测试用例
-
 # rdbms
-
 - https://github.com/PostgREST/postgrest
   - https://postgrest.org/
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
@@ -133,9 +134,7 @@ modified: '2021-05-13T14:59:22.147Z'
   - text-based. 
     - Everything is a JSON file, including the database meta information.
   - is around 500 lines of code and 6.6Kb gzipped.
-
 # more-database
-
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java
   - 兼具RDBMS、NoSQL优点的面向OLTP场景的异步化NewSQL单机与分布式关系数据库
