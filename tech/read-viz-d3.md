@@ -8,8 +8,10 @@ modified: '2021-05-27T19:54:31.731Z'
 # read-viz-d3
 
 # d3 for the impatient_201906
+- notes
+  - examples in d3 v5
 
-## c1
+## c1: d3 intro & conventions
 
 - I believe that many of the difficulties experienced by new users are due to incorrect assumptions.
   - the new user is unpleasantly surprised at the verbosity required to set something as elementary as the color of an element
@@ -67,8 +69,206 @@ modified: '2021-05-27T19:54:31.731Z'
 - Data sets are called data or ds.
 - Selections representing either an `<svg>` or a `<g>` element are common and, when assigned to a variable, are denoted as svg or g.
 
-## c2
-- 
-- 
-- 
-- 
+## c2: examples
+
+- Scales are function objects: you call them with a value from the domain and they return the scaled value.
+- Both domain and range are specified as two-element arrays. 
+- D3 tends to defer decisions in favor of “late binding”: 
+  - for example, in the way that it is customary(习俗的，习惯的；典型的，独特的) to pass accessor functions as arguments, rather than requiring that the appropriate columns be extracted from the original data set before being passed to the rendering framework.
+- Without scales or axes it is not possible to read quantitative information from the graph (or any graph, for that matter). 
+  - We therefore need to add axes to the existing graph.
+- Because the visual axis component consists of many individual SVG elements (for the tick marks and labels), it should always be created inside its own `<g>` container. 
+  - all axes are initially located at the origin (the upper-left corner) and must be moved using the `transform` attribute to their desired location
+- Functions that take a Selection as their first argument and then add elements to it are known as components and are an important mechanism for encapsulation and code reuse in D3. 
+- a common D3 idiom: creating DOM elements is kept separate from configuring their appearance options!
+- D3 assigns the active DOM element to `this` before invoking the callback, and so provides access to the current DOM element.
+
+## c3: selections
+
+- Selections are ordered collections of DOM elements
+  - The Selection abstraction provides an API to query and modify the elements it contains.
+- a Selection is a JavaScript wrapper around an ordered collection of DOM elements together with a set of methods to manipulate this collection. 
+  - The API is declarative and supports method chaining, hence it is generally unnecessary to handle the elements of the collection explicitly.
+- The `data()` method accepts an array of arbitrary values or objects 
+  - and attempts to establish **a one-to-one correspondence** between the entries of this array and the elements in the current selection.
+  - If a data point has been associated with a DOM element, the data point itself is stored in the `__data__` property of the selection element.
+- The `data()` method **returns a new Selection object** containing those elements that were successfully bound to entries in the data set.
+- The `exit()` method actually returns a Selection of DOM elements, but the `enter()` method only returns a collection of placeholder elements (by construction, there can be no actual nodes for surplus data points).
+  - `enter()` returns the surplus data items
+  - `exit()` returns the surplus DOM elements
+- The `data()` method itself returns the Selection of DOM elements that were successfully bound to data points
+
+- The General Update Pattern
+- If an existing graph must be updated repeatedly with new data, the complete sequence of steps:
+  1. Bind new data to an existing selection of elements. 
+  2. Remove any surplus items that do not have matching data associated anymore (the `exit()` selection). 
+  3. Create and configure all items associated with data points that did not exist before (the `enter()` selection). 
+  4. Merge the remaining items from the original selection with the newly created items from the enter() selection.
+  5. Update all items in the combined selection based on the current values of the bound data set.
+- The exit selection contains an array having the same number of elements as the old data set, but with **only those entries populated for which there is no corresponding data point** in the new data set. 
+  - Both enter and update selections contain arrays having an entry for each data point in the new data set, but with only those entries populated that are newly added or retained from previously, respectively. 
+  - The `merge()` function combines these complementary arrays into one. 
+  - If both arrays have a nonnull entry in the same position, one of them will be clobbered(打败；痛打). 
+  - All of this is implemented using the JavaScript `Array` type, which allows for “holes” of unassigned, undefined values at arbitrary index positions. 
+  - It is probably also best to consider all of this information as implementation detail and subject to change. 
+  - Just remember the role of the `merge()` function as part of the General Update Pattern.
+
+- The distinction between attributes and properties is subtle. 
+  - Basically, an HTML element has attributes, a JavaScript Node object has properties. 
+  - Most attributes map to properties and vice versa, but the names don’t always agree exactly
+- The SVG specification distinguishes between properties as attributes that can be modified through CSS, in contrast to attributes in general, which cannot.
+- Positions in pseudo-classes are evaluated at the time the pseudo-class is applied.
+- `insert()` does not bind data; 
+  - an explicit call to `datum()` is required to add data to elements added using insert().
+- As a rule, methods that operate on individual elements of a selection return the current selection, whereas methods that operate on the entire selection return a new selection.
+- there are some exceptions(functions that return new selection)
+  - select(), selectAll()
+  - data(), enter(), exit()
+  - append(), insert(), remove()
+  - merge(), filter(), sort()
+  - create()
+
+## c4: events & animation
+
+- D3 treats event handling as part of the Selection abstraction
+- If sel is a Selection instance, then you use the following member function to register a callback as event handler for the specified event type
+  - Any DOM event type is permitted. 
+  - If a handler was already registered for the event type via `on()`, it is removed before the new handler is registered. 
+  - To register multiple handlers for the same event type, the type name may be followed by a period and an arbitrary tag (`click.formSubmit`)
+- The actual event instance is not passed to the callback as an argument, but it is available in the variable `d3.event`
+  - todo: ??? d3v6 has removed d3.event
+- A behavior component is a component that installs required event callbacks in the DOM tree. 
+  - it is also an object that has member functions itself.
+
+- The Transition API allows you to change and remove elements, 
+  - but it does not provide for the creation of elements as part of the transition.
+- The Transition API replicates large parts of the Selection API.
+- Technically, an easing is simply a mapping that is applied to the time parameter t before it is passed to the interpolator. 
+  - This makes the distinction between the easing and the interpolator somewhat arbitrary. 
+  - What if a custom interpolator itself mangles the time parameter in some nonlinear way?
+- From a practical point of view, it seems best to **treat easings as a convenience feature** that adds “slow-in, slow- out” behavior to standard interpolators
+  - D3 includes a confusingly large range of different easings, some of which considerably blur the distinction between an easing and what should be considered a custom interpolator
+- A general problem with transitions is that they usually can’t be interrupted by the user
+- D3 includes a special timer that will invoke a given callback once per animation frame, that is, every time the browser is about to repaint the screen. 
+  - The time interval is not configurable because it is determined by the browser’s refresh rate
+- 去除浮点数的小数部分 `d/n|0`
+
+## c5: generator, layout, component
+
+- SVG provides only a small set of built-in geometric shapes (like circles, rectangles, and lines)
+  - Anything else has to be built up either from those basic shapes or by using the `<path>` element and its turtle(海龟) graphics command language
+- To produce complex figures, D3 employs three different styles of helper functions. 
+  - generators generate individual attributes, 
+  - components create entire DOM elements, 
+  - layouts determine the overall arrangement of the whole figure
+- All of these helpers are implemented as function objects. 
+  - They perform their primary task when invoked as a function. 
+  - But they also have state and expose an API of member functions to modify and configure their behavior.
+- D3 symbol generator uses an HTML5 `<canvas>` element for performance reasons, but there is no strict need to do so
+
+## c6: file parser & formatter
+
+## c7: scale & axes
+
+## c8: color scales & heatmap
+
+## c9: trees & networks
+
+## c10: utilities: array, stats, datetime
+
+# pro d3.js_201911
+
+## c1: d3 intro
+
+## c2: archetypal d3 chart
+
+## c3: d3 code encapsulation and apis
+
+## c4: reusable api
+- The Reusable API is a pattern to create modules that provides privacy and an interface based on getters and setters. 
+  - It also allows us to group the creation of the charts' main building blocks. 
+  - We do this by calling functions within the core of the pattern
+- As a disclaimer, this version of the pattern and the following code evolved from the implementation in Developing a D3.js Edge and Mastering D3.js. 
+  - These two great books were vital for the development of the Reusable API as we show it here
+- Thanks to this process, we can create several charts with the same configuration and different data.
+## c5: make bar chart production-ready
+
+## c6: britecharts
+
+## c7: customize britecharts
+
+## c8: extend a chart
+
+## c9: test charts
+
+## c10: build your library
+
+## c11: creating documentation
+
+## c12: use with react
+
+# more-d3-books
+
+## Integrating D3.js with React: Learn to Bring Data Visualization to Life /202106/src
+
+- https://www.apress.com/gp/book/9781484270516 
+- https://github.com/Apress/integrating-d3.js-with-react
+
+- Set up your project with React, TypeScript and D3.js
+- Create simple and advanced D3.js charts
+- Work with complex charts such as world and force charts
+- Integrate D3 data with **React state management**
+- Improve the performance of your D3 components
+- Deploy as a server or serverless app and debug test
+
+## D3 Tips and Tricks v6.x: Interactive Data Visualization in a Web Browser /202102/free
+
+- https://leanpub.com/d3-t-and-t-v6
+- https://gist.github.com/d3noob
+
+## Pro D3.js: Use D3.js to Create Maintainable, Modular, and Testable Charts /201911
+
+- https://www.apress.com/gp/book/9781484252024
+- https://github.com/Apress/pro-d3.js
+- https://github.com/britecharts/britecharts
+  - Client-side reusable Charting Library based on D3.js v5
+  - https://github.com/britecharts/britecharts-react
+
+- Create v5 D3.js charts with ES2016 and unit tests
+- Develop modular, testable and extensible code with the Reusable API pattern
+- Work with and extend Britecharts, a reusable charting library created at Eventbrite
+- Use Webpack and npm to create and publish a charting library from your own chart collections
+- Write reference documentation and build a documentation homepage for your library.
+
+## Fullstack D3 and Data Visualization: Build beautiful data visualizations with D3 /201907
+
+- https://www.newline.co/fullstack-d3
+- https://github.com/TheRobBrennan/explore-data-visualization-with-D3
+
+Chapter 0: Introduction When would you want to use D3.js?
+Chapter 1: Making your first chart
+Chapter 2: Making a scatterplot
+Chapter 3: Making a bar chart
+Chapter 4: Animations and Transitions
+Chapter 5: Interactions
+Chapter 6: Making a map
+Chapter 7: Data Visualization Basics
+Chapter 8: Common Charts
+Chapter 9: Dashboard Design
+Chapter 10: Advanced Visualization: Marginal Histogram
+Chapter 11: Advanced Visualization: Radial Weather Chart
+Chapter 12: Advanced Visualization: Animated Sankey Diagram
+Chapter 13: D3 and React
+Chapter 14: D3 and Angular
+
+## D3 for the Impatient: Interactive Graphics for Programmers and Scientists /201905
+
+- https://www.oreilly.com/library/view/d3-for-the/9781492046783/
+- https://github.com/janert/d3-for-the-impatient
+
+- Understand D3 selections, the library’s fundamental organizing principle
+- Learn how to create data-driven documents with data binding
+- Create animated graphs and interactive user interfaces
+- Draw figures with curves, shapes, and colors
+- Use the built-in facilities for heatmaps, tree graphs, and networks
+- Simplify your work by writing your own reusable components

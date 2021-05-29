@@ -15,6 +15,8 @@ modified: '2021-05-25T17:53:28.504Z'
 - 可以修改和探索任何发布的notebook
 - 动态交互的reactive document，适合用来做展示文档或仪表板
 # general-xp-cons
+- 不支持edit in place 原地编辑，对于文本而言，类似word的编辑体验最好
+  - 当cell的文本过多时，想要编辑需要下滑很久到编辑区；
 - 不支持 search: in issues, forum, notebooks
 # text-editor-pros
 - cell的执行顺序不按照书写顺序，而按照依赖顺序

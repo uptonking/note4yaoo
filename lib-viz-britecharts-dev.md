@@ -8,7 +8,16 @@ modified: '2021-05-27T19:59:02.463Z'
 # lib-viz-britecharts-dev
 
 # guide
+- cons
+  - 近年来维护不活跃
 
+- pros
+  - 基于d3 v5实现，属于较新的一批库，很多旧图表如c3、nvd3都不维护了
+  - api的设计与d3很切近，链式调用
+  - 内部实现与d3也很贴近，方便定制修改，如果不维护了，切换到d3代码也方便
+  - 文档丰富
+# issues
+- [Make charts responsive by default](https://github.com/britecharts/britecharts/issues/110)
 # roadmap
 
 ## [Road to V3](https://github.com/britecharts/britecharts/issues/870)
@@ -27,3 +36,19 @@ modified: '2021-05-27T19:59:02.463Z'
 
 - not
   - update to d3 v6
+# discuss
+- ## Britecharts: D3.js based charting library of components_201705
+- https://news.ycombinator.com/item?id=14307608
+- Slightly off topic, but after discovering Vega, I can't quite imagine using a template based charting library again.
+  - The declarative markup is interesting for custom datasets. But without some sort of UI builder it's unusable by clients
+  - nvd3 and pretty much all charting libraries are built around the idea of charting templates. 
+  - What Vega (and its simplified cousin Vega-lite) provide is a grammar for describing the mapping between the data space and the visual space.
+  - What this essentially means is that you are able to build your own visualisations. If you for instance check this sample, and in the JSON editor, inside the "encoding" section you swap x with y, and y with x, then click on the parse button, the chart will be redrawn with the x and y axis flipped.
+- Specifically, stacked against C3, Britecharts has a more 'D3-like' API, while C3 is a lot more declarative
+  - his means that on C3, we will render charts by passing large configuration objects, while in Britecharts we strive to use a different API, chaining settings like we do on D3.
+- When I scroll on iPhone on this example page, the chart keeps redrawing itself.
+  - t seems scrolling is triggering a viewport resize, so we will review our viewport resize listener on the demos
+
+- ## [Introducing Britecharts: Eventbrite’s Reusable Charting Library Based on D3_201704](https://www.eventbrite.com/engineering/introducing-britecharts/)
+- API-wise, I see them more or less like this:
+  - D3 —NVD3——Britecharts———Plottable—OOP———C3— Declarative
