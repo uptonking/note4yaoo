@@ -24,9 +24,7 @@ modified: '2020-12-28T12:24:09.275Z'
   - An opinionated low code platform that helps you code business applications
 - https://github.com/appsmithorg/appsmith
   - A low code way to build dashboards, workflows, forms, and any internal tool.
-
 # lowcode-solutions
-
 - https://github.com/baidu/amis
   - /4.3kStar//Apache2/202009
   - 依赖mobx、react、jquery、sortablejs、tinymce
@@ -41,4 +39,8 @@ modified: '2020-12-28T12:24:09.275Z'
   - sula-builder：可视化搭建平台
   - sula-cooker：在线配置化工具
 
+- https://github.com/elis/djit.su
+  - https://djit.su/
+  - 依赖react、redux、styled-components、razzle、d3-require、@mdx-js/runtime、@editorjs、antd.v4、ahooks
+  - Djitsu is an editor, application, and an execution platform all rolled into one
 # more-lowcode

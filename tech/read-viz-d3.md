@@ -19,15 +19,13 @@ modified: '2021-05-27T19:54:31.731Z'
   - instead, it is a JavaScript library to manipulate the DOM tree! 
   - Its basic building blocks are not circles and rectangles, but nodes and DOM elements; 
   - the typical activity does not involve the painting of a graphical shape on a canvas, but the styling of an element through attributes
-  - The “current location” is not so much given through an xy- coordinate on a canvas, but through a selection of nodes in a DOM tree.
 - D3 is a web technology, and relies on a collection of other web technologies; 
-  - the DOM API and event model, Cascading Style Sheet (CSS) selectors and properties, the JavaScript object model, and of course Scalable Vector Graphics (SVG).
   - D3 does make them easier to use, and it provides a considerable amount of unification and abstraction on top of them.
   - The only area where it is definitely not enough to “wing it” is SVG.
 - **why d3**
   - D3 provides a convenient way to deliver graphics over the web
   - D3 makes it easy and convenient to create animated and interactive graphics
-  - easy-to-learn, and easy-to- use framework for general-purpose DOM handling
+  - easy-to-learn, and easy-to-use framework for general-purpose DOM handling
 
 - ### Conventions of the D3 API
 - D3 is primarily an access layer to the DOM tree. 
@@ -180,17 +178,220 @@ modified: '2021-05-27T19:54:31.731Z'
 
 ## c1: d3 intro
 
+- why d3
+  - thorough and complete control
+  - built for web
+  - good examples and large community
+  - constantly improved
+
 ## c2: archetypal d3 chart
 
-## c3: d3 code encapsulation and apis
+- The Margin Convention is a useful pattern that helps us avoid headaches when moving our SVG elements around. 
+  - Once this pattern is arranged, the rest of the chart code can ignore margins altogether.
+
+```JS
+var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+```
+
+## c3: d3 code encapsulation and comparison
+
+- This abstraction should solve the problems we highlighted in the example code, namely: 
+  - lack of clarity, configuration, reusability, composition, and testability. 
+- there are so many coding flavors and levels of abstraction
+
+- Object Oriented
+  - plottable: many new
+
+- Declarative
+  - billboard: c3 fork, based on config object
+  - vega: based on config json files
+  - tell code what to do, but not how to do
+
+- Functional
+  - d3fc: like d3 methods
+  - FP code avoids keeping global state, makes this state immutable, and favors the use of “pure functions.”
+  - reusable and predictable. 
+
+- Chained
+  - britecharts、d3fc
+  - A benefit is that they won’t need to create variables to store the results of each function call.
+  - D3.js itself works in this way
+  - Chained API (also named “Fluent Interface”)
+
+- how to choose an api flavor
+  - the most important goals: easy/customizable/fast
+  - developer bg
 
 ## c4: reusable api
+
 - The Reusable API is a pattern to create modules that provides privacy and an interface based on getters and setters. 
   - It also allows us to group the creation of the charts' main building blocks. 
   - We do this by calling functions within the core of the pattern
 - As a disclaimer, this version of the pattern and the following code evolved from the implementation in Developing a D3.js Edge and Mastering D3.js. 
   - These two great books were vital for the development of the Reusable API as we show it here
-- Thanks to this process, we can create several charts with the same configuration and different data.
+- we can create several charts with the same configuration and different data.
+
+- benefits
+  - simplicity with configurable api
+  - modularity
+  - reusability
+  - composability
+    - Accepting components as configuration
+    - Hooking components to each other by using event handlers
+  - testability
+
+- drawbacks
+  - Increased Complexity
+    - There isn’t an escape from this. It is part of the tradeoff between the ease of use and the power of the abstraction. 
+  - Inefficient Property Updates
+    - One drawback of the Reusable API that developers mentioned is the need for re-calling the charts when updating some value
+    - A proposed way of avoiding re-calling the chart would be to include an “updateWidth” accessor and call it when the width changes
+    - Implementing “update functions” for all the chart properties won’t be scalable
+    - we can throttle the call to “redrawChart”.
+  - Boilerplate Code
+    - This code includes the accessor functions, the logic for sizing the chart, labeling, and event handling
+    - The solution is to generate the code of the accessors
+    - If we want to avoid repetition in the chart-sizing logic and axes creation, we can extract their code
+    - no base Class for Composition over Inheritance
+    -  fine granularity of helpers gives us more flexibility
+
+- The Reusable API covers a middle ground where the chart users need to use a bit of D3.js while the internals of the components are standard D3.js code. 
+- We first read about the Reusable API pattern in Mike Bostock’s original post Towards Reusable Charts in 2012
+  - It hasn’t changed a lot since then. 
+  - Several libraries make use of this pattern, like nvd3
+  - We also read about this pattern in books like Developing a D3.js Edge and Mastering D3.js.
+
+### [Towards Reusable Charts_201202](https://bost.ocks.org/mike/chart/)
+
+- ref
+  - [time series d3.v3 example](https://bl.ocks.org/curran/66d926fe73211fd650ec)
+  - [D3 Reusable Bar Chart Pattern(d3.v6)](https://observablehq.com/@john-guerra/d3-reusable-bar-chart-pattern)
+
+- I’d like to propose a convention for encapsulating reusable charts in D3
+- A function; the standard unit of code reuse!
+
+- #### Configuration
+- In truth we need a configurable function, since most charts require customization of their appearance or behavior. 
+- A simple function is insufficient for highly-configurable charts. You could try a configuration object instead
+- However, the caller must then manage both the chart function (assuming you have multiple types of charts to pick from) and the configuration object. 
+- To bind the chart configuration to the chart function, we need a closure
+
+```JS
+function chart(config) {
+  return function() {
+    // generate chart here, using `config.width` and `config.height`
+  };
+}
+
+var myChart = chart({ width: 720, height: 80 });
+```
+
+> A conventional object-oriented approach as `Chart.​proto­type.​render` would also work, but then you must manage the `this` context when calling the function.
+
+- #### Reconfiguration
+- what if you want to change the configuration after construction? Or if you want to inspect the configuration of an existing chart? 
+- The configuration object is trapped by the closure and inaccessible to the outside world.
+- Fortunately, JavaScript functions are objects, so we can store configuration properties on the function itself!
+- The chart implementation changes slightly so that it can reference its configuration
+
+```JS
+function chart() {
+  return function my() {
+    // generate chart here, using `my.width` and `my.height`
+  };
+}
+```
+
+- we can replace raw properties with getter-setter methods that allow method chaining.
+- This gives the caller a more elegant way of constructing charts, and also allows the chart to manage side-effects when a configuration parameter changes
+- The chart may also provide default configuration values. 
+
+```JS
+function chart() {
+  var width = 720, // default width
+    height = 80; // default height
+
+  function my() {
+    // generate chart here, using `width` and `height`
+  }
+
+  my.width = function(value) {
+    if (!arguments.length) return width;
+    width = value;
+    return my;
+  };
+
+  my.height = function(value) {
+    if (!arguments.length) return height;
+    height = value;
+    return my;
+  };
+
+  return my;
+}
+
+var myChart = chart().width(720).height(80);
+
+// modify the existing chart
+myChart.height(500);
+myChart.height(); // 500
+```
+
+- To sum up: implement charts as closures with getter-setter methods
+  - this is the same pattern used by D3’s other reusable objects, including scales, layouts, shapes, axes, etc.
+
+- #### Implementation
+- The chart can now be configured, but two essential ingredients are still missing: the DOM element into which to render the chart, and the data to display.
+- These could be considered configuration, but D3 provides a more natural representation for data and elements: the `selection`.
+- By taking a selection as input, charts have greater flexibility.
+  - For example, you can render a chart into multiple elements simultaneously
+  - You can control exactly when and how the chart gets updated when data or configuration changes
+- The simplest way of invoking our chart function on a selection, then, is to pass the selection as an argument
+
+```JS
+myChart(selection);
+// Or equivalently,
+selection.call(myChart);
+```
+
+> The `call` operator is identical to invoking a function by hand; but it makes it easier to use method chaining.
+
+- Internally, a `call`-based chart implementation looks something like this:
+
+```JS
+function my(selection) {
+  selection.each(function(d, i) {
+    // generate chart here; `d` is the data and `this` is the element
+  });
+}
+```
+
+- #### Examples
+- A time series is a variable that changes over time. We can visualize this as an area chart
+
+```JS
+// 时间序列图表通用配置，简单示例
+var chart = timeSeriesChart()
+  .x(function(d) { return formatDate.parse(d.date); })
+  .y(function(d) { return +d.price; });
+
+var formatDate = d3.time.format("%b %Y");
+
+// 数据和dom元素都在这里输入，开始执行绘制渲染
+d3.csv("sp500.csv", function(data) {
+  d3.select("#example")
+    .datum(data)
+    .call(chart);
+});
+```
+
+- #### Further Considerations
+- We now have a strawman convention for reusable visualization components
+- Yet there is far more to cover as to what should be considered configuration or even a chart.
+- Consider drawing inspiration from the Grammar of Graphics (see Polychart and ggplot2); there are more modular units for composition
+- Even with traditional chart types, should you expose the underlying scales and axes, or encapsulate them with chart-specific representations? 
+- animation, interaction, reactive...
+
 ## c5: make bar chart production-ready
 
 ## c6: britecharts

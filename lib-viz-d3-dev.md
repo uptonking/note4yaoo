@@ -10,16 +10,13 @@ modified: '2020-12-08T13:32:22.331Z'
 # guide
 
 # pieces
-
 - Mike Bostock的外边距约定
   - http://bl.ocks.org/mbostock/3019563
 - 剪切路径clip-path会将svg边界上和边界外的元素超出svg矩形的部分隐藏
-
 # summary
-
 - d3绘图套路
 
-``` js
+```js
 svg.selectAll('rect')
   .data(dataset)
   .enter()
@@ -60,7 +57,6 @@ svg.selectAll('rect')
 - 约定
   - tooltip 鼠标提示
   - label 数据标注
-
 # blogging
 
 ## [mbostock: 10 Years of Open-Source Visualization](https://observablehq.com/@mbostock/10-years-of-open-source-visualization)
@@ -190,8 +186,5 @@ svg.selectAll('rect')
 
 - ### discuss
 - https://twitter.com/mbostock/status/1364263392555327490
-
-
 # ref
-
 - [Adding Graphics to a React App with D3.js_202010](https://dev.to/search?q=Adding%20Graphics%20to%20a%20React%20App%20with%20D3&filters=class_name: Article&sort_by=published_at&sort_direction=desc)

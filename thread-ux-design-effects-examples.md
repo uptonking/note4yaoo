@@ -7,8 +7,12 @@ modified: '2021-05-10T04:06:02.843Z'
 
 # thread-ux-design-effects-examples
 
+# examples-stars
+- How to mix HTML & WebGL w/ occlusion
+- https://twitter.com/0xca0a/status/1398633764931178498
+  - https://codesandbox.io/s/mixing-html-and-webgl-r3f-laptop-f5i67
+  - 在3d的笔记本的屏幕上显示产品效果，特别适合用来展示
 # pieces
-
 - ## 
 
 - ## 
