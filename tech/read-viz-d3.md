@@ -219,7 +219,7 @@ var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + mar
   - Chained API (also named “Fluent Interface”)
 
 - how to choose an api flavor
-  - the most important goals: easy/customizable/fast
+  - the most important goals: easy?customizable?fast?
   - developer bg
 
 ## c4: reusable api
@@ -293,14 +293,6 @@ var myChart = chart({ width: 720, height: 80 });
 - The configuration object is trapped by the closure and inaccessible to the outside world.
 - Fortunately, JavaScript functions are objects, so we can store configuration properties on the function itself!
 - The chart implementation changes slightly so that it can reference its configuration
-
-```JS
-function chart() {
-  return function my() {
-    // generate chart here, using `my.width` and `my.height`
-  };
-}
-```
 
 - we can replace raw properties with getter-setter methods that allow method chaining.
 - This gives the caller a more elegant way of constructing charts, and also allows the chart to manage side-effects when a configuration parameter changes

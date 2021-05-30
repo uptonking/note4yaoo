@@ -9,6 +9,52 @@ modified: '2020-12-08T13:32:22.331Z'
 
 # guide
 
+# faq
+
+## `sel.datum()` vs `sel.data()`
+
+- `sel.datum([value])` vs `sel.n.data([values[, key]])`
+  - only the `data()` function accepts a `key`
+  - data() performs a join, datum() does not
+
+- [What is the difference D3 datum vs. data?](https://stackoverflow.com/questions/13728402)
+- when you invoke selection.data and selection.datum with an input data parameter, different
+  - Even in that scenario, the two behave differently if the selection is a single element versus when it contains multiple elements
+- both can also be invoked without any input arguments, different again
+
+- **When supplying data as an input argument**
+- `selection.data(data)` will attempt to perform a data-join between the items of the data array with the selection resulting in the creation of enter(), exit() and update() selections that you can subsequently operate on. 
+  - The end result of this is if you pass in an array `data = [1, 2, 3]`, an attempt is made to join each individual data item (i.e. datum) with the selection. 
+  - Each element of the selection will only have a single datum item of data bound to it.
+- `selection.datum(data)` bypasses the data-join process altogether. 
+  - This simply assigns the entirety of data to all elements in the selection as a whole without splitting it up as in the case of data-joins. 
+  - So if you want to bind an entire array data = [1, 2, 3] to every DOM element in your selection, then selection.datum(data) will achieve this.
+- Many people believe that `selection.datum(data)` is equivalent to `selection.data([data])` but this is only true if selection contains a single element. 
+- If selection contains multiple DOM elements, then `selection.datum(data)` will bind the entirety of data to every single element in the selection. 
+  - In contrast,  `selection.data([data])` only binds the entirety of data to the first element in selection. This is consistent with the data-join behavior of selection.data.
+
+- **When supplying no data input argument**
+- `selection.data()` will take the bound datum for each element in the selection and combine them into an array that is returned. 
+  - So, if your selection includes 3 DOM elements with the data "a", "b" and "c" bound to each respectively, selection.data() returns ["a", "b", "c"]. 
+  - It is important to note that if selection is a single element with (by way of example) the datum "a" bound to it, then selection.data() will return `["a"]` and not "a" as some may expect.
+- `selection.datum()` only makes sense for a single selection as it is defined as returning the datum bound to the first element of the selection. 
+  - So in the example above with the selection consisting of DOM elements with bound datum of "a", "b" and "c", selection.datum() would simply return "a".
+- Note that even if selection has a single element, selection.datum() and selection.data() return different values. 
+  - The former returns the bound datum for the selection ("a" in the example above) whereas the latter returns the bound datum within an array (["a"] in the example above).
+
+- [When to use .datum() and .data()?](https://stackoverflow.com/questions/13181194)
+- the API reference on `selection.datum` gives the accepted answer:
+  - Gets or sets the bound data for each selected element. 
+  - Unlike the `selection.data` method, this method does not compute a join (and thus does not compute enter and exit selections).
+  - Since it does not compute a join, it does not need to know a `key`.
+- @Hugolpz' gist gives nice examples of the significance of "groups" vs "individuals". Here, json represents an array of data. 
+  - Notice how datum binds the entire array to one element. 
+  - If we want to achieve the same with data we must first put json inside another array.
+- var chart = d3.select("body").append("svg").data([json])
+- var chart = d3.select("body").append("svg").datum(json)
+
+- ref
+- [Understanding the difference between the d3 data and datum methods](https://www.intothevoid.io/data-visualization/understanding-d3-data-vs-datum/)
 # pieces
 - Mike Bostock的外边距约定
   - http://bl.ocks.org/mbostock/3019563
