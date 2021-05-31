@@ -17,9 +17,7 @@ modified: '2021-05-14T14:33:13.599Z'
 - 近日，PPT遭多家名企抵制
   - 字节跳动，不提倡用PPT进行工作汇报
   - 美团、微信，纷纷直接禁用PPT
-
 # features
-
 - core/核心功能
   - 读取markdown内容生成DOM，然后渲染
 
@@ -30,15 +28,12 @@ modified: '2021-05-14T14:33:13.599Z'
 
 - 标题元数据提取
   - 时间、地点、人物
-
 # draft
-
+- sidenote
+  - 显示在右边toc左侧的批注
 # extensions
-
 - static-site-generator
-
 # discuss
-
 - ## [如何看待字节跳动的飞书（LARK）的前景？](https://www.zhihu.com/question/362435888/answers/updated)
 - 看了下评论里大多都是在以自身作为c端用户的视角评价这几个tob产品，说实话连门都没摸到，看起来很尴尬
 
@@ -88,9 +83,7 @@ modified: '2021-05-14T14:33:13.599Z'
   - 目前的体验企业微信内部应用还没钉钉完善。但架不住客户都在微信啊。
   - 企业微信管理内部可能和钉钉没太多差别，但管理外部客户对钉钉就是降维打击了。
   - 之前客户的信息都在销售的个人微信上，现在企微出来，公司完全可实现将所有销售手里的客户微信导到企业微信了。
-
 # docs-solutions-products
-
 - [ShowDoc](https://www.showdoc.com.cn/)
   - 一个非常适合IT团队的API文档、技术文档工具
   - https://github.com/star7th/showdoc

@@ -9,16 +9,26 @@ modified: '2020-12-21T07:44:53.873Z'
 
 # guide
 
+# discuss-stars
+- ## 准备把《手写简易的浏览器》掏出来。
+- https://www.zhihu.com/pin/1382344579656626176
+- 其实浏览器或者跨端引擎也好都主要完成两件事情：渲染和逻辑（包括交互逻辑），两者之间不能相互阻塞，需要一个 event loop。
+- 整体思路是：
+  - 实现一个html parser，把html字符串 parse 成 dom tree，实现一个css parser，把css字符串 parse 成 css tree，然后实现渲染引擎，也就是把两者合并成 render tree，计算出坐标，之后通过 canvas 来渲染。这是渲染的部分。
+  - js字符串的解释执行，首先需要一个js parser，这个就不自己实现了，用 acron 就行，之后自己做解释执行。这是逻辑部分。
+- 渲染和逻辑执行需要不能相互阻塞，渲染要保证 16ms 渲染一次，自己实现一个 event loop，每次取一个任务来执行，之后执行所有微任务，然后检查下是否要渲染。
+  - 这个 event loop 要不断的用 setTimeout 来异步递归（同步的死循环会卡死）。
+  - 这样就能不断的进行新的帧的渲染和js逻辑的执行。
+  - 上面跑通了之后要实现网络下载的功能，从一个 url 来下载 html，解析出其中的 css 和 js 单独下载。这部分相对简单。
+- 之后要实现一个静态（或者动态）服务器来下发这些资源。
+- 最后在浏览器里面做一个浏览器的界面，有地址栏，有内容区等等。
 # discuss
-
 - ## [Google Chromium 为什么要从 WebKit 中抽离，新建一个 Blink 分支？](https://www.zhihu.com/question/20920823/answers/updated)
 - 因为历史原因，WebCore本身一开始就没有多线程或者多进程的概念，
   - 现有的架构对并行处理的支持非常困难，Google也认为必须对WebCore进行整体架构上的大改才能更好的支持并行处理，更充分利用多核CPU的能力，避免主线程过度拥挤
   - 为了避免单项任务长时间阻塞主线程，WebCore目前是用延时Timer的方式将一个复杂任务分解成多段来顺序执行，这种方式即不优雅，更无法充分利用多核的能力
 - WebCore为了可以同时支持不同的JS虚拟机（如JSC和V8）导致了额外的性能开销和妨碍了对JS性能更多的改进
-
 # pieces
-
 - 苹果曾经使用Gecko，嫌弃Gecko曾经有段时间太臃肿，就把KDE的HTML引擎KHTML、JavaScript引擎KJS加工过来，发布了WebCore+JavaScriptCore的WebKit并开源。
 - 后来Google加入使用WebCore引擎，再后来Chromium又分支出去Blink引擎，JavaScript引擎是Google开源的V8。
 
@@ -52,7 +62,6 @@ modified: '2020-12-21T07:44:53.873Z'
   - HTML引擎：Mariner -> Raptor -> NGLayout -> Gecko
   - JavaScript引擎：Mocha -> SpiderMonkey
   - JIT即时编译器: TraceMonkey -> JaegerMonkey -> IonMonkey+OdinMonkey
-
 # JavaScriptCore 
 
 ## JavaScriptCore wiki
@@ -64,7 +73,6 @@ modified: '2020-12-21T07:44:53.873Z'
 - JavaScriptCore is often referred with different names, such as ​SquirrelFish and ​SquirrelFish Extreme. 
   - Within the context of Safari, Nitro and Nitro Extreme (the marketing terms from Apple) are also commonly used. 
   - However, the name of the project and the library is always JavaScriptCore.
-
 # blog
 
 ## [Chrome浏览器架构](https://www.cnblogs.com/suihang/p/12718528.html)
@@ -124,9 +132,7 @@ modified: '2020-12-21T07:44:53.873Z'
   - safari使用的JavaScriptCore(aka. SquirrelFish)系列引擎
   - Opera使用Carakan引擎
   - chrome使用V8引擎，node封装了V8引擎
-
 # ref
-
 - [一文看懂Chrome浏览器工作原理 google4篇系列总结](https://juejin.cn/post/6844904046411644941)
 - [五大主流浏览器及四大内核](https://zhuanlan.zhihu.com/p/99777087)
 - [浏览器引擎列表](https://pic1.zhimg.com/80/v2-782b4462528d0ef134c71f3c216c6836_720w.jpg)

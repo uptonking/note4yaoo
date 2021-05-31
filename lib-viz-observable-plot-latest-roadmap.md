@@ -10,9 +10,9 @@ modified: '2021-05-05T07:45:07.226Z'
 # guide
 
 # roadmap
-
+- plugins
+- interactions
 # breaking-changes
-
 - ## Announcing a new open-source JavaScript library for exploratory data visualization: Observable Plot!
 - https://twitter.com/mbostock/status/1389611128339144704
 - this will play nice with React?
@@ -24,5 +24,4 @@ modified: '2021-05-05T07:45:07.226Z'
   - That said you can already consume D3 or Plot as ES modules in browsers using Skypack as described in the README.
 - Have y'all considered a standalone dataframe library? I'm surprised ops like group are Plot operations.
   - Try using Observable Plot with Arquero! The integrated transforms like group aren’t mandatory — they’re just convenient.
-
 # changelog

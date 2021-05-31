@@ -17,7 +17,16 @@ modified: '2021-05-27T19:59:02.463Z'
   - 内部实现与d3也很贴近，方便定制修改，如果不维护了，切换到d3代码也方便
   - 文档丰富
 # issues
-- [Make charts responsive by default](https://github.com/britecharts/britecharts/issues/110)
+- ## [Make charts responsive by default](https://github.com/britecharts/britecharts/issues/110)
+  - Right now, in our demos we use a small helper to debounce a listener to the 'resize' event of it's container. 
+  - This makes it possible to redraw our chart and make it responsive. 
+  - Any developer would need to do the same to get a responsive chart.
+  - We could easily move that logic inside our charts, making the debounce delay configurable. Or even the method (debounce or throttle).
+- I'm curious is it necessary to redraw chart on each resize? I mean scaling is the awesome feature of vector graphics and you can let the browser do the work for you
+  - That's true, SVG scales great, but in the context of D3 visualizations, most of the positioning of the elements is 'absolute' and dependant on the data. That's why we need to re-render with new data or new dimensions.
+- AFAIK, when you specify `viewbox` for svg element, all coordinates within it will be relative to a viewbox. Since viewbox height is larger than actual svg height, this rect will be displayed right in the middle. No matter its y coordinate is absolute and equals to the actual svg height.
+  - that's a nice trick! However, I don't think it would scale into the size of elements a regular D3 chart has. Off the top of my head, I don't think this could be applicable to the axis.
+  - yes, you're right about the axis. Still, you can handle them independently, for example, decrease count of ticks
 # roadmap
 
 ## [Road to V3](https://github.com/britecharts/britecharts/issues/870)
