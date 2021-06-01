@@ -7,10 +7,15 @@ modified: '2021-05-29T18:23:39.607Z'
 
 # lib-office-mdx-community
 
-# pieces
-
-- ## 
-
+# discuss-stars
+- ## Markdown编辑器 做成 WYSIWYG（所见即所得）形式会不会有什么弊端？
+- https://www.zhihu.com/question/47789842
+- 这取决于你如何看待 Markdown：
+  - 一个方便生成 HTML 的工具，及其使用的「纯文本精简版 HTML」语法。
+  - 一套用纯文本表达语义的语法，以及将使用这种语法的文档转换为实际表现的工具
+  - 前者：并没有什么弊端。因为 Markdown 只是用来减少按键数的，关注的是最终的显示结果，而非 Markdown 文档本身。
+  - 后者：弊端太明显了，这样的编辑器根本不是 Markdown 编辑器，而是借用了 Markdown 语法的所见即所得的 HTML 编辑器。Markdown 本身就是可以给人看的，转换为 HTML 并不是必须的步骤。typora 这样的所见即所得把 Markdown 本身当作「不必要的细节」处理了。
+# discuss
 - ## 
 
 - ## 
@@ -80,3 +85,5 @@ async function mdx(mdxString) {
 - For people working with content strategy, content is best stored as ingredients from which you can bake the things that you need when you need it.
   - They have been preaching “structured content” for ages, and fighting with CMSes that force content into WYSIWYG page builders and make editors copy-paste their texts around in small layout boxes prisons.
 - You should think really hard about how you want to be able to work with your content, the inclinations of whom you want to work with your content, and finally, how sustainable and flexible your structuring of it is.
+# ref
+- [Rich-markdown-editor: react Dropbox Paper clone](https://news.ycombinator.com/item?id=23462083)

@@ -26,14 +26,14 @@ modified: '2021-01-08T17:13:43.392Z'
 - HTTP中那些method的真正区别只有那个单词拼写不一样。其他部分没有任何区别。
   - 各种Method的区别是语义上的。是为了让你的应用程序能够清晰简化的进行通信。对于HTTP本身来讲没有任何区别。当然安全性也没有任何区别。
   - 当然也有可能是一些其他的客观因素。比如公司斥巨资买了一个防火墙，发现只能拦截过滤POST和GET请求。。。。。
-
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ##  `addEventListener` could automatically clean up your listener if it would have to be invoked only once
+- https://twitter.com/mgechev/status/1399584040815108098
+  - additionally, you can specify `capture` rather than bubble and set the listener as `passive` , which is useful for improving scrolling performance
 
 - ## Why are race conditions so tricky to prevent and debug? In my opinion, a couple of reasons:
 - https://twitter.com/DavidKPiano/status/1396819218205655042
@@ -702,5 +702,4 @@ modified: '2021-01-08T17:13:43.392Z'
   - and in the event you cannot use relational, use JSONB data type in PostgreSQL.
 
 # ref
-
 - [Custom Properties as State](https://css-tricks.com/custom-properties-as-state/)

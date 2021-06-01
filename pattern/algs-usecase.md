@@ -7,14 +7,20 @@ modified: '2020-12-20T15:24:16.216Z'
 
 # algs-usecase
 
+# datastructure
+
+- dag
+  - Merkle DAG的一个常见例子就是Git存储库
 # sort
 
 # search
 
 - 将arr创建成set时，数组中重复元素会被清理掉，但有时需要数组与set长度相等，如何查找数组中的重复元素并合理处理
-
+# pattern
+- state machine
+  - micromark解析markdown词法
+  - xstate
 # dev
-
 - 递归 vs 循环
   - 如果是用c/c++/java这一类的常规的语言来开发的话，递归很难调试。
     - 设了断点也不知道到底到了哪一层；检查个变量也不知道是哪一层的；
@@ -33,7 +39,5 @@ modified: '2020-12-20T15:24:16.216Z'
 
 - ## Voronoi polygons for hover interactivity of points are popular and make sense to dataviz practitioners but maybe we should have been teaching people how to use quadtrees instead? 
 - https://twitter.com/Elijah_Meeks/status/1378880759713333252
-
 # ref
-
 - [世界上有哪些代码量很少，但很牛逼很经典的算法或项目案例？](https://www.zhihu.com/question/358255792)

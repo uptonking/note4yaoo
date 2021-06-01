@@ -31,15 +31,21 @@ modified: '2021-01-16T20:24:48.984Z'
   - xdm is an MDX compiler that focussed on two things:
     - Compiling the MDX syntax (markdown + JSX) to JavaScript
     - Making it easier to use the MDX syntax in different places
-
- 
+- https://github.com/kentcdodds/mdx-bundler
+  - This is an async function that will compile and bundle your MDX files and their dependencies. It uses esbuild
+  - It also uses xdm which is a more modern and powerful MDX compiler with fewer bugs and more features (and no extra runtime requirements).
+  - Your source files could be local, in a remote github repo, in a CMS, or wherever else and it doesn't matter.
+- https://github.com/frontarm/mdx-util
+  - http://mdxc.reactarmory.com/
+  - MDXC has been deprecated in favor of mdx-js/mdx.
+- https://github.com/readmeio/markdown
+  - ReadMe's flavored Markdown parser and MDX rendering engine
 
 - https://github.com/jxnblk/mdx-deck
   - https://mdx-deck.jxnblk.com/
-  - React MDX-based presentation decks
-
- 
-
+  - React MDX-based presentation decks，依赖gatsby
+- https://github.com/filoxo/minideck
+  - 依赖parcel、tailwind，代码量很小，仅作demo示例
 - https://github.com/PaulieScanlon/mdx-embed
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr
@@ -62,6 +68,20 @@ modified: '2021-01-16T20:24:48.984Z'
   - 动态请求的代码 `import(`!babel-loader!@mdx-js/loader!content/${content}`)`
 - https://github.com/zaydek/esbuild-mdx
   - 依赖@mdx-js/mdx, @mdx-js/react, 例子太过简单
+# mdx-tooling
+- https://github.com/probablyup/markdown-to-jsx
+  - The most lightweight, customizable React markdown component.
+  - All this clocks in at around 5 kB gzipped
+  - markdown-to-jsx uses a heavily-modified fork of simple-markdown as its parsing engine 
+  - One limitation of markdown to jsx is that it does not have a transform pipeline, limiting the flexibility of the content.
+  - Arbitrary HTML is supported and parsed into the appropriate JSX representation without `dangerouslySetInnerHTML`.
+  - remarkjs/remark-react and mdx-js/mdx both can have plugins to the parser and transform plugins.
+- mdx-scoped-runtime
+  - https://github.com/karolis-sh/gatsby-mdx/tree/master/packages/mdx-scoped-runtime
+  - This is a wrapper around mdx-runtime that strips down the import ... and export default Layout out of the MDX at runtime.
+
+- https://github.com/remcohaszing/remark-mdx-code-meta
+  - A remark MDX plugin for using markdown code block metadata
 # md-web-components/mdjs
 - https://github.com/modernweb-dev/rocket
   - https://rocket.modern-web.dev/
@@ -86,35 +106,8 @@ modified: '2021-01-16T20:24:48.984Z'
   - Stoxy stores the data in a in-browser Database called IndexedDB, only keeping the latest 5 accessed objects in-memory for faster access.
   - Stoxy utilizes a promise-based use flow making it really easy to asynchronously read and write from the storage.
   - If no indexeddb, Stoxy recognizes these cases automatically, and opts out of using it and utilizes a in-memory system only.
-# md-extensions
-- https://github.com/mermaid-js/mermaid
-  - http://mermaid-js.github.io/mermaid/
-  - Generation of diagram and flowchart from text in a similar manner as markdown
-  - Mermaid lets you represent diagrams using text and code
-- https://github.com/mermaid-js/mermaid-live-editor
-  - https://mermaid-js.github.io/mermaid-live-editor/
-  - Edit, preview and share mermaid charts/diagrams. 
-  - New implementation of the live editor.
-- https://github.com/storybookjs/marksy
-  - A markdown to custom components library. 
-  - Supports any virtual DOM library.
-
- 
-
+# more-md-mdx
 - https://github.com/michael-klein/htmdx
   - This library is an attempt to provide a runtime to compile mdx-like markdown files (with the goal to support full JSX inside of markdown) using htm + marked that is much smaller in file-size as opposed to the official runtime
 - https://github.com/wallapatta/wallapatta
   - Wallapatta is like Markdown, but has a layout inspired by handouts of Edward R. Tufte
-# mdx-tooling
-- https://github.com/kentcdodds/mdx-bundler
-  - This is an async function that will compile and bundle your MDX files and their dependencies. It uses esbuild
-  - It also uses xdm which is a more modern and powerful MDX compiler with fewer bugs and more features (and no extra runtime requirements).
-  - Your source files could be local, in a remote github repo, in a CMS, or wherever else and it doesn't matter.
-
-- https://github.com/probablyup/markdown-to-jsx
-  - The most lightweight, customizable React markdown component.
-  - All this clocks in at around 5 kB gzipped, which is a fraction of the size of most other React markdown components.
-  - markdown-to-jsx uses a heavily-modified fork of simple-markdown as its parsing engine 
-  - One limitation of markdown to jsx is that it does not have a transform pipeline, limiting the flexibility of the content.
-  - https://github.com/remarkjs/remark-react and https://github.com/mdx-js/mdx both can have plugins to the parser and transform plugins.
-# more

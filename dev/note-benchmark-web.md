@@ -11,6 +11,8 @@ modified: '2020-07-14T09:28:43.976Z'
 
 - [JS: Benchmarking Lazy Getters](https://webreflection.medium.com/js-benchmarking-lazy-getters-9b132f45c15e)
   - Lazily evaluating properties is not just handy, but mandatory in some case.
+- [Compare markdown implementations.](https://johnmacfarlane.net/babelmark2/)
+  - 只提供了操作示例，没有提供结论
 
 # frontend-framework
 

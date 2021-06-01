@@ -21,14 +21,15 @@ modified: '2021-01-11T12:10:50.900Z'
 - https://twitter.com/JoshWComeau/status/1393262281375555589
   - We learn more from struggling and failing to build something than we do from effortlessly completing it. 
   - As long as you know more at the end than you did at the start, it’s a success.
-
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## I take copious(大量的，丰富的) notes in meetings. I write a thorough automated tests.
+- https://twitter.com/brian_d_vaughn/status/1399561004237967361
+  - This gives people the impression that I'm organized (and maybe I am) but it doesn't say why.
+  - Why is because I stand no chance to remember what I've done without these coping strategies.
 
 - ## You can learn more building one autocomplete than building a whole website. Both ways are OK though.
 - https://twitter.com/dan_abramov/status/1395520718033534976
@@ -181,5 +182,4 @@ modified: '2021-01-11T12:10:50.900Z'
   - https://github.com/HSCNI-GITHUB/stopcovid-ni-app
 
 # ref
-
 - [Determine font color based on background color](https://stackoverflow.com/questions/1855884/determine-font-color-based-on-background-color)

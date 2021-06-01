@@ -14,22 +14,21 @@ modified: '2021-01-04T17:26:25.032Z'
   - /10.4kStar/MIT/202009
   - Markdown parser. 
   - 100% CommonMark support, extensions, syntax plugins & high speed
-- https://github.com/markedjs/marked
-  - /24kStar/MIT/202012/js
-  - A markdown parser and compiler. Built for speed.
-  - light-weight while implementing all markdown features from the supported flavors & specification
 - https://github.com/remarkjs/remark/tree/main/packages/remark-parse
   - Parses Markdown to mdast syntax trees. 
   - Built on micromark and mdast-util-from-markdown
 - https://github.com/eczn/down-parse
   - /ts/2019
   - markdown parser with a wonderful plugin system
-
+- https://github.com/markedjs/marked
+  - /24kStar/MIT/202012/js
+  - A markdown parser and compiler. Built for speed.
+  - light-weight while implementing all markdown features from the supported flavors & specification
 # markdown-editor
-
 - https://github.com/HarryChen0506/react-markdown-editor-lite
   - /446Star/MIT/202008
   - 基于React的markdown编辑器，实现简单且清晰
+  - 基于textarea实现
 - https://github.com/outline/rich-markdown-editor
   - /2kStar/BSD/202105/ts
   - React and Prosemirror based markdown editor that powers Outline.
@@ -56,24 +55,21 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/Saul-Mirone/milkdown
   - https://saul-mirone.github.io/milkdown/
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
-
+- https://github.com/Vanessa219/vditor
+  - /1.3kStar/MIT/202009
+  - In-browser Markdown editor, support WYSIWYG (Rich Text), Instant Rendering (Typora-like) and Split View modes.
+  - 依赖lute(go语言实现md解析)、hightlight、echarts、katex、mermaid、mathjax，注意依赖文件直接在源码的js/文件夹，不在package.json
 - more-markdown-editor
   - vscode-monaco-editor
-
 # markdown-viewer
-
 - https://github.com/shd101wyy/markdown-preview-enhanced
   - One of the 'BEST' markdown preview extensions for Atom editor
-
 # markdown-examples
-
 - https://github.com/foambubble/foam
   - /7.3kStar/MIT/202010/ts
   - Foam is a personal knowledge management and sharing system built on VSCode and GitHub.
 - https://github.com/atom-community/markdown-preview-plus
   - a fork of Markdown Preview that provides a real-time preview of markdown documents.
-
 # more-repos
-
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents

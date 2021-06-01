@@ -13,5 +13,17 @@ modified: '2021-04-28T15:26:27.324Z'
 
 - hashnode
   - https://shubhamkhunt.hashnode.dev/5-ways-to-optimize-your-react-application
+# md-text-editor
+- https://github.com/mermaid-js/mermaid
+  - http://mermaid-js.github.io/mermaid/
+  - Generation of diagram and flowchart from text in a similar manner as markdown
+  - Mermaid lets you represent diagrams using text and code
+- https://github.com/mermaid-js/mermaid-live-editor
+  - https://mermaid-js.github.io/mermaid-live-editor/
+  - Edit, preview and share mermaid charts/diagrams. 
+  - New implementation of the live editor.
+- https://github.com/storybookjs/marksy
+  - A markdown to custom components library. 
+  - Supports any virtual DOM library.
 
-# text-editor-examples
+ 

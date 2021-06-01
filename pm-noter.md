@@ -7,8 +7,9 @@ modified: '2021-05-14T14:35:09.254Z'
 
 # pm-noter
 
-# guide
+> easy to read， easy to write， content-centric notebook
 
+# guide
 - 主要功能模块
   - file-explorer
     - 复刻vscode的文件管理器
@@ -26,31 +27,23 @@ modified: '2021-05-14T14:35:09.254Z'
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
-
 # features
-
 - ## text-editing
 - 选择多行文字，批量在行首添加`- `，转换成列表显示
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-b vs c-d
-
 # draft
-
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 
 - unlocalizable
   - 移动本地文件时，自动更新其他文件中引用的链接
   - 图床
-
 # faq
-
 - 如何不使用图床而将图片直接嵌入到笔记生成的html中
 
 - 参考
   - jupytext: jupyter notebooks as readable, editable documents
   - executable document
-
 # discuss
-
 - ## [在线编辑器, 多人同时编辑, 如何设计undo/redo的逻辑?](https://www.zhihu.com/question/367915946)
 - 感觉有三种模式:
   - 按action撤销. 
@@ -110,5 +103,4 @@ modified: '2021-05-14T14:35:09.254Z'
 - notion在产品能力上很优秀，打破了传统的笔记软件固化思维，与其说提供给用户的是一套笔记工具，而不如说是一套设计笔记软件的系统。
   - 但通过 block 能力的增强，能力更多了，可以用来做日常工作管理，团队 wiki 等。
   - notion整个软件架构的基建能力是把 block 的渲染、block 的存储、数据修改等都处理好，后期功能的增加可快速迭代，在基础上增加更多的 block 类型。
-
 # pieces

@@ -36,8 +36,14 @@ modified: '2020-12-29T17:45:15.518Z'
     - https://github.com/techgaun/active-forks
     - https://techgaun.github.io/active-forks/index.html
 
-- usage
-  - TODO: 若仓库是一个library，查找依赖本仓库的仓库中star最多的
+- preview html
+  - https://github.com/htmlpreview/htmlpreview.github.com
+  - https://htmlpreview.github.io/?https://github.com/Futur3Sn0w/materialyou/blob/main/index.html
+  - It is a client-side solution using a CORS proxy to fetch assets.
+  - 对于那些没有将repo作为github pages托管网站的，可加上前缀直接在浏览器查看网页内容，而不是查看源码
+
+- tips
+  - TODO: 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
     - https://github.com/hacker-DOM/github-by-stars
       - /inactive
   - 搜索时变通的方法
@@ -64,9 +70,7 @@ modified: '2020-12-29T17:45:15.518Z'
 - ref
   - [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
     - https://github.com/sw-yx/gh-action-data-scraping
-
 # github-pkg-npm
-
 - 查看依赖某个package的所有包
   - https://www.npmjs.com/browse/depended/redux
   - [Allow dependents to be sorted by stars](https://github.com/isaacs/github/issues/1537)
@@ -80,14 +84,10 @@ modified: '2020-12-29T17:45:15.518Z'
 
 - 读取某个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
-
 # github-powered-apps
-
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community
-
 # github-slow
-
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/

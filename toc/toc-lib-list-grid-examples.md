@@ -23,6 +23,11 @@ modified: '2021-05-23T16:34:51.399Z'
   - https://gitlab.com/bramw/baserow
   - Baserow is an open source online database tool and Airtable alternative.
   - 依赖Django、Nuxt.js、PostgreSQL
+- https://github.com/nocodb/nocodb
+  - https://www.nocodb.com/
+  - The Open Source Airtable alternative
+  - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet.
+  - 依赖 #express @vuejs @nuxt_js @vuetifyjs
 - https://github.com/andmarti1424/sc-im
   - /2.4kStar/MIT/202009/c
   - An ncurses spreadsheet program for terminal
@@ -77,9 +82,7 @@ modified: '2021-05-23T16:34:51.399Z'
 
 - https://github.com/PranjaliPatil14/CRUDOperationsWithAgGrid
   - client side Crate, Read, Update, Delete operations on react data grid using AgGrid library.
-
 # examples
-
 - table /463Star/BSD/202009/js
   - https://github.com/gajus/table
   - Produces a string that represents array data in a text table.
@@ -131,5 +134,4 @@ modified: '2021-05-23T16:34:51.399Z'
   - Webix UI library is licensed under "GPL v3" licence
   - Starting from Webix 2.4, it possible to use a FLOSS Exception to the GPL License. 
   - This exception works only for Open Source projects. If you want to distribute Webix as a part of your commercial product, you’ll need to purchase the Webix License instead.
-
 # more

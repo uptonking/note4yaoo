@@ -12,17 +12,16 @@ modified: '2020-10-15T13:41:05.547Z'
 - 关于组件与文档设计
   - 复用文本过于灵活，需要各种解析器
   - 复用js函数则设计更清晰、复用更简单(特别是纯函数)
-
 # spec
-
 - markdown
   - https://daringfireball.net/projects/markdown/
 - GitHub Flavored Markdown Spec
   - https://github.github.com/gfm/
   - https://guides.github.com/features/mastering-markdown/
-
+- ReadMe-flavored markdown 
+  - https://rdmd.readme.io/docs/syntax-extensions
+  - Code Tabs, Callouts, @embed
 # [mdx](https://mdxjs.com/getting-started/)
-
 - ref
   - I'm not an expert in JSX or MDX, but looking at the code example I would think MDX could also handle Web Components.
   - mdx可作为csf的完全替代，但mdx中需要显式import Story/Canvas/Meta
@@ -34,9 +33,7 @@ modified: '2020-10-15T13:41:05.547Z'
 - JSX is good for components.
   - It makes repeating things more clear and allows for separation of concerns. 
   - MDX fully supports JSX syntax. Any line that start with the < character starts a JSX block.
-
 # [mdjs](https://rocket.modern-web.dev/docs/markdown-javascript/overview/)
-
 - ref
   - https://open-wc.org/docs/experimental/mdjs/
 
@@ -51,9 +48,12 @@ modified: '2020-10-15T13:41:05.547Z'
 - Supported Systems
   - es-dev-server
   - storybook-addon-markdown-docs uses mdjs under the hood.
-
+# spec-related
+- rst
+- asciidoc
+- [Org Mode](https://orgmode.org/)
+  - Org mode is for keeping notes, maintaining to-do lists, planning projects, authoring documents, computational notebooks, literate programming and more — in a fast and effective plain text system.
 # faq
-
 - mdx和react-live实现组件文档在线编辑时，为什么组件预览有时会消失
   - 由于 `@mdx/js-loader` 解析的限制，两行export const之间必须有空行
 - markdown-comment-below-is-not-displayed (4 patterns)
@@ -70,7 +70,6 @@ and here
 -->
 
 # guide
-
 - features
   - mdx based doc, 简单读写无需借助专业软件
 
@@ -127,7 +126,6 @@ and here
     - 各级标题可以放在单独页面，类似书的目录页
     - 侧边栏可折叠隐藏
   - math blocks
-
 # blog
 
 ## [6 Things Markdown Got Wrong_202003](https://www.swyx.io/markdown-mistakes/)
@@ -208,5 +206,4 @@ and here
 `
 
 - [Things Markdown got wrong](https://news.ycombinator.com/item?id=22776108)
-
 # ref

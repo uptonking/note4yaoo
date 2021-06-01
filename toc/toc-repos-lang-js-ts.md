@@ -112,7 +112,6 @@ modified: '2021-05-14T15:04:55.849Z'
 - https://github.com/reactivex/rxjs
   - /23.3kStar/Apache2/202011/ts
   - A reactive programming library for JavaScript
-
 # popular
 
 ## viz
@@ -285,7 +284,7 @@ modified: '2021-05-14T15:04:55.849Z'
 - https://github.com/Vanessa219/vditor
   - /1.3kStar/MIT/202009
   - In-browser Markdown editor, support WYSIWYG (Rich Text), Instant Rendering (Typora-like) and Split View modes.
-  - 依赖lute(go语言)、hightlight、echarts、katex、mermaid、mathjax
+  - 依赖lute(go语言实现md解析)、hightlight、echarts、katex、mermaid、mathjax，注意依赖文件直接在源码的js/文件夹，不在package.json
 - https://github.com/react-monaco-editor/react-monaco-editor
   - Monaco Editor for React.
 - https://github.com/tinymce/tinymce
@@ -395,9 +394,7 @@ modified: '2021-05-14T15:04:55.849Z'
   - /1.1kStar/MIT/202009
   - A Kanban-inspired app for keeping track of things that need to get done
   - 依赖php7
-
 # ts-repos
-
 - https://github.com/julianshapiro/velocity
   - Accelerated JavaScript animation.
 - https://github.com/vadimdemedes/ink

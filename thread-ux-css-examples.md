@@ -22,7 +22,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Generative Houdini Stuff! I love the CSS Paint API for this kind of “Generative UI”, expect a lot more from me soon! 
+- https://twitter.com/georgedoescode/status/1399630980625932289
+  - https://codepen.io/uptonking/pen/JjWMabN
 
 - ## Scroll-Linked Animations: Coverflow (CSS @scroll-timeline version)
 - https://twitter.com/bramus/status/1397134003707256834
