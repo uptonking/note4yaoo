@@ -1,11 +1,11 @@
 ---
-title: pm-list-vs-grid
+title: pm-list-grid-comparison
 tags: [comparison, grid, list]
 created: '2020-09-25T16:41:20.596Z'
-modified: '2021-04-19T15:11:44.900Z'
+modified: '2021-06-02T17:22:13.224Z'
 ---
 
-# pm-list-vs-grid
+# pm-list-grid-comparison
 
 # guide
 

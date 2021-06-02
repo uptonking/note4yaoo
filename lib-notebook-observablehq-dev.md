@@ -13,6 +13,7 @@ modified: '2021-05-14T14:44:14.720Z'
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)
   - [国家统计局 统计数据](http://www.stats.gov.cn/tjsj/)
   - 新冠肺炎分析报告 coronavirus/covid-19
+  - tableau public
 # faq-not-yet
 - 如何不显示cell name，同时又能通过cell name引用这个cell
 # faq

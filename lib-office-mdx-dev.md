@@ -1,34 +1,34 @@
 ---
-title: lib-office-markdown-mdx
+title: lib-office-mdx-dev
 tags: [lib, markdown, mdx]
 created: '2021-05-27T01:41:58.386Z'
-modified: '2021-05-29T14:51:54.256Z'
+modified: '2021-06-02T16:45:56.858Z'
 ---
 
-# lib-office-markdown-mdx
+# lib-office-mdx-dev
 
 > easy to read， easy to write， content-centric notebook
 
 # guide
 - goals
   - 易读易写
-  - 上传mdx，能够渲染出html(~~应该是ssr吧~~)，
+  - 上传mdx(到数据库的字段)，能够渲染出html(~~应该是ssr吧~~)
   - 能够在渲染的页面编辑mdx
   - 能够在渲染的页面编辑ojs
 
 - is-goal???
-  - 导出的使用场景哪个多一点，是docx，还是pptx，office标准的ooxml格式规定了很多属性和配置，在设计实现导出时要参考
+  - 导出的使用场景，docx/pptx哪个多一点，office标准的ooxml格式规定了很多属性和配置，在设计实现导出时要参考的
   - 样式丰富的图表、地图很难通过文本表达，通过WYSIWYG能实现，此时编辑器最好是block的，可作为后期目标
 
 - non-goals(难用简单文本实现)
   - 不建议定制各种组件的各种样式细节，样式越多输出的代码就越多，就显得凌乱且难迁移；
     - 提前告知用户，支持保存到本地的文件形式有3种，
-    - 一种只包含基本样式但易迁移，通常可跨平台设备查看，
+    - 一种只包含少量基本样式，但易迁移、可跨平台设备查看
     - 一种包含丰富样式但代码乱，且**以后迁移跨应用可能失败**
     - 一种导出office，支持导出的组件有限、样式有限，平台自定义的组件和样式都不会导出
   - 导出高级组件：图表的代码；嵌入的视频
-  - 不要执着于mdx的解析器和渲染实现
-    - mdx大部分的规则都是兼容markdown的，所以可以考虑扩展markdown现有的工具库，如showdown、json2md、@dimerapp/markdown(remark)、md-2-json(marked)
+  - 不要执着于定制自己的mdx的解析器和渲染实现
+    - mdx大部分的规则都是兼容markdown的，所以可以考虑扩展markdown流行的工具库，如showdown、json2md、@dimerapp/markdown(remark)、md-2-json(marked)
 
 - mdx-features
   - markdown-based simplicity
@@ -42,17 +42,17 @@ modified: '2021-05-29T14:51:54.256Z'
 - mdx-cons
   - *控制布局、动态修改更新布局*
     - 不建议提供过多定制样式的能力，不方便迁移
-    - 建议使用
+    - 建议后期使用block editor配置布局
   - 服务器接收到mdx文件内容的字符串后，应该如何渲染
     - 使用runtime按需渲染
 
 - mdx编辑器：3种输入模式(参考vditor)
   - 要支持输出html/json/.md文本
     - 注意html和md有第三方的转换工具，要考虑是转换而来还是直接获取输入的文本
-  - 输入使用文本编辑器分屏预览SV，不适合做成block editor的形式，输出适合使用.md文本，输出json也容易
-  - 输入使用所见即所得编辑器WYSIWYG，非常适合做成block style editor，输出适合使用json而不是.md文本
-  - 输入使用即时渲染IR，结合WYSIWYG的实时预览和输入标志文本的shortcut，能够减少鼠标操作
-  - ??? block-style WYSIWYG
+  - (1)输入使用文本编辑器分屏预览SV，不适合做成block editor的形式，输出适合使用.md文本，输出json也容易
+  - (2)输入使用所见即所得编辑器WYSIWYG，非常适合做成block style editor，输出适合使用json而不是.md文本
+  - (3)输入使用即时渲染IR，在WYSIWYG实时预览的基础上添加输入标志文本的shortcut，能够减少鼠标操作
+  - (4)后期可在WYSIWYG的基础上，扩展工具条为block editor的配置工具
 
 - 如何在mdx中支持observable javascript(.ojs)
   - 方法1: 直接将字符串写在js变量中，也有人尝试htm tag模版函数
@@ -67,10 +67,11 @@ modified: '2021-05-29T14:51:54.256Z'
     - 缺点：不容易书写；复杂度高、链路长，修改ojs需要执行ojs编译器、rect-live计算、mdx热加载
     - 缺点2: react-live编辑的是react组件，无法直接支持编辑字符串
       - 只能再一次实现类似ojs编译器的转换器，将输入的字符串通过反射封装成函数，自动调用此函数返回输入的字符串ojs
+      - 可在后期实现第(4)种编辑器时实现
 
 - tips
   - mdx的解析，参考remark-parse, mdxc
-  - mdx的渲染基于 mdx/jsx -> react组件 -> dom
+  - mdx的渲染基于 mdx/jsx字符串 -> react组件 -> dom
   - load
     - build time
     - runtime

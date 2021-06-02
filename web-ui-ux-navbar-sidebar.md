@@ -1,11 +1,11 @@
 ---
-title: web-ux-ui-navbar-sidebar
+title: web-ui-ux-navbar-sidebar
 tags: [components, navbar, sidebar, ui]
 created: '2021-03-22T19:03:11.916Z'
-modified: '2021-04-23T15:42:00.837Z'
+modified: '2021-06-02T17:32:43.697Z'
 ---
 
-# web-ux-ui-navbar-sidebar
+# web-ui-ux-navbar-sidebar
 
 # navbar
 

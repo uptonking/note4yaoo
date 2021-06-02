@@ -9,6 +9,8 @@ modified: '2021-05-29T14:51:21.929Z'
 
 # guide
 
+- md-rfc
+  - collapsible block
 # draft
 - 不支持在mdx中直接书写import esm-url
   - https://cdn.skypack.dev/jquery

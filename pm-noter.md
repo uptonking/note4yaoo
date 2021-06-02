@@ -2,14 +2,18 @@
 title: pm-noter
 tags: [note-taking, pm, pmgr]
 created: '2020-11-24T07:44:16.296Z'
-modified: '2021-05-14T14:35:09.254Z'
+modified: '2021-06-02T17:26:42.963Z'
 ---
 
 # pm-noter
 
 > easy to read， easy to write， content-centric notebook
 
-# guide
+# guide(for notable/noter/paper)
+
+- 难点
+  - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
+
 - 主要功能模块
   - file-explorer
     - 复刻vscode的文件管理器

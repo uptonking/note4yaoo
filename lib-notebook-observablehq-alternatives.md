@@ -39,6 +39,19 @@ modified: '2021-05-14T14:46:37.026Z'
   - Simple toolkit for reading and writing data CSV and JSON files
   - Consider using data-forge-ts for data transformation, analysis and visualization
 
+## js-based-notebook
+
+- https://github.com/executablebooks/thebe
+  - https://thebe.readthedocs.io/
+  - /217Star/BSD/202104/js
+  - turn static HTML pages into live documents
+- https://github.com/ines/juniper
+  - https://ines.github.io/juniper/
+  - /194Star/MIT/201904/js
+  - Edit and execute code snippets in the browser using Jupyter kernels
+  - Juniper is a lightweight JavaScript library for adding interactive, editable and runnable code snippets to any website. 
+  - It uses JupyterLab components and Binder, inspired by Min RK's Thebelab
+
 ## more-notebook
 
 - https://github.com/iodide-project/iodide

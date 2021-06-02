@@ -27,4 +27,5 @@ modified: '2021-05-05T07:41:23.432Z'
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)
   - [国家统计局 统计数据](http://www.stats.gov.cn/tjsj/)
   - 新冠肺炎分析报告 coronavirus/covid-19
+  - tableau public
 # pieces

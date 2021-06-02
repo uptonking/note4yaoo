@@ -1,14 +1,17 @@
 ---
-title: toc-lib-fwk-node-restful
-tags: [framework, restful, toc]
+title: toc-lib-fwk-node-restful-http
+tags: [ajax, framework, http, restful, toc]
 created: '2020-12-13T09:14:01.137Z'
-modified: '2020-12-13T09:22:36.413Z'
+modified: '2021-06-02T16:35:46.166Z'
 ---
 
-# toc-lib-fwk-node-restful
+# toc-lib-fwk-node-restful-http
 
+# guide
+
+- mock-api
+  - [fetch-mock vs json-server vs nock](https://www.npmtrends.com/fetch-mock-vs-json-server-vs-nock)
 # rest-api
-
 - https://github.com/restify/node-restify
   - 依赖mime、qs、http-signature、send(for streaming files)
   - restify is a framework, utilizing connect style middleware for building REST APIs.
@@ -24,9 +27,7 @@ modified: '2020-12-13T09:22:36.413Z'
 
 - https://github.com/developit/express-es6-rest-api
   - boilerplate for building REST APIs with ES6 and Express.
-
 # rest-examples
-
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
   - Create, read, update, delete in a Node.js app with an Express server and Postgres database.

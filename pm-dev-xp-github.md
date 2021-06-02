@@ -1,19 +1,26 @@
 ---
-title: tool-app-github-xp
-tags: [github, tool, xp]
+title: pm-dev-xp-github
+tags: [devtools, github, pm, xp]
 created: '2020-07-31T11:59:56.787Z'
-modified: '2020-12-29T17:45:15.518Z'
+modified: '2021-06-02T18:26:20.133Z'
 ---
 
-# tool-app-github-xp
+# pm-dev-xp-github
 
 # github-usage
 
 - nice-to-have
   - 空仓库标记，如搜索时标记出空仓库可省去点开查看
-  - 搜索时显示 latest-push-time, 而不是奇怪的时间，方便判断废弃仓库
+  - 搜索时显示 latest-push-time, 而不是bot机器人push的时间，方便判断废弃仓库
+  - 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
+    - https://github.com/hacker-DOM/github-by-stars
+      - /inactive
+  - repo项目名支持中文名，url中部分path支持中文名
 
-- 搜索
+- search
+  - 搜索时变通的方法
+    - 在github直接搜索导入库 import from react，再限制语言如js
+    - 或者搜索关键词 data-mdc-auto-init 的 code，而不是repositories
   - 搜索使用js或ts的项目
     - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
     - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
@@ -42,13 +49,10 @@ modified: '2020-12-29T17:45:15.518Z'
   - It is a client-side solution using a CORS proxy to fetch assets.
   - 对于那些没有将repo作为github pages托管网站的，可加上前缀直接在浏览器查看网页内容，而不是查看源码
 
+- issues
+  - 对于更名后的repo，issues中的auto linking仍然连接到更名前repo的url，可以在hovercard中提示
+
 - tips
-  - TODO: 若仓库是一个library，查找依赖本仓库的仓库中star最多的，没必要如此做，关注重点依赖即可
-    - https://github.com/hacker-DOM/github-by-stars
-      - /inactive
-  - 搜索时变通的方法
-    - 在github直接搜索导入库 import from react，再限制语言如js
-    - 或者搜索关键词 data-mdc-auto-init 的 code，而不是repositories
 
 - 排行榜
   - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
@@ -84,10 +88,10 @@ modified: '2020-12-29T17:45:15.518Z'
 
 - 读取某个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
-# github-powered-apps
-- https://githubwrapped.tech/
-  - take a look at all the contributions you as an individual made to the open-source community
 # github-slow
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/
+# github-data-apps
+- https://githubwrapped.tech/
+  - take a look at all the contributions you as an individual made to the open-source community

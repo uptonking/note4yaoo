@@ -1,11 +1,11 @@
 ---
-title: web-ux-ui-accordion-collapse
+title: web-ui-ux-accordion-collapse
 tags: [accordion, components, ui]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-04-23T15:42:22.362Z'
+modified: '2021-06-02T17:32:05.417Z'
 ---
 
-# web-ux-ui-accordion-collapse
+# web-ui-ux-accordion-collapse
 
 # guide
 

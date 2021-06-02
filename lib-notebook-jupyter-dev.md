@@ -10,7 +10,6 @@ modified: '2021-05-17T11:53:13.568Z'
 # guide
 
 # faq
-
 - ## vote: if you do exploratory data analysis or build machine learning models, what tool do you reach for first?
   - local, Jupyter notebook
   - local, data science ide(spyder, rstudio, jupyterlab, matlab)
@@ -21,11 +20,11 @@ modified: '2021-05-17T11:53:13.568Z'
 - why do so many people still use notebooks and not Jupyter Lab?
   - [Benefits of the classic UI and use cases for classic over JupyterLab](https://discourse.jupyter.org/t/benefits-of-the-classic-ui-and-use-cases-for-classic-over-jupyterlab-was-why-is-tim-not-moving-to-lab/2419)
   - The goal of the jupyterlab-classic project is to look as close to the classic notebook UI as possible, while leveraging the efforts put in the development of JupyterLab itself and its extension system
-
 # pieces
 
-# jupyter-extensions
+# jupyter-js-notebook
 
+# jupyter-extensions
 - https://github.com/yunabe/tslab
   - tslab is an interactive programming environment and REPL with Jupyter for JavaScript and TypeScript users. 
   - You can write and execute JavaScript and TypeScript interactively on browsers and save results as Jupyter notebooks.
@@ -34,9 +33,7 @@ modified: '2021-05-17T11:53:13.568Z'
   - BeakerX is a collection of JVM kernels and interactive widgets for plotting, tables, autotranslation, and other extensions to Jupyter Notebook and JupyterLab version 1.2.x and 2.x.
   - Version 2.x of BeakerX improves on the original solution architecture by providing independent modules that end-users can install to better tune the platform.
   - The kernel is originally derived from lappsgrid, but has been rewritten in Java and refactored and expanded.
-
 # docs
-
 - [Project Jupyter](https://jupyter.org/)
   - Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages.
 
@@ -85,7 +82,7 @@ modified: '2021-05-17T11:53:13.568Z'
 - There are a few basic cell types for encapsulating code and text. 
 - All cells have the following basic structure:
 
-``` JSON
+```JSON
 {
   "cell_type" : "type",
   "metadata" : {},
@@ -97,7 +94,7 @@ modified: '2021-05-17T11:53:13.568Z'
 
 - Markdown cells are used for body-text, and contain markdown, as defined in GitHub-flavored markdown, and implemented in [marked](https://github.com/markedjs/marked).
 
-``` JSON
+```JSON
 
 {
   "cell_type" : "markdown",
@@ -114,7 +111,7 @@ modified: '2021-05-17T11:53:13.568Z'
   - They contain source code in the language of the document’s associated kernel, and a list of outputs associated with executing that code. 
   - They also have an execution_count, which must be an integer or null.
 
-``` JSON
+```JSON
 {
   "cell_type" : "code",
   "execution_count": 1, # integer or null
@@ -136,7 +133,7 @@ modified: '2021-05-17T11:53:13.568Z'
 - A code cell can have a variety of outputs (stream data or rich mime-type output). 
 - These correspond to messages produced as a result of executing the cell.
 
-``` JS
+```JS
 {
   "output_type": "stream",
   "name": "stdout",
@@ -148,7 +145,7 @@ modified: '2021-05-17T11:53:13.568Z'
   - This is often called a mime-bundle, and shows up in various locations in the notebook format and message spec.
   - mime-types are used for keys, instead of a combination of short names (text) and mime-types, and are stored in a data key, rather than the top-level. i.e. output.data['image/png'] instead of output.png.
 
-``` JSON
+```JSON
 
 {
   "output_type" : "display_data",
@@ -180,7 +177,7 @@ modified: '2021-05-17T11:53:13.568Z'
 - Results of executing a cell (as created by `displayhook` in Python) are stored in `execute_result` outputs. 
   - `execute_result` outputs are identical to `display_data`, adding only a `execution_count` field, which must be an integer.
 
-``` JSON
+```JSON
 
 {
   "output_type" : "execute_result",
@@ -204,7 +201,7 @@ modified: '2021-05-17T11:53:13.568Z'
 
 - Failed execution may show a traceback
 
-``` JSON
+```JSON
 {
   "output_type": "error",
   "ename": "str",  # Exception name
@@ -225,7 +222,7 @@ modified: '2021-05-17T11:53:13.568Z'
   - When outputting to any other format, the raw cell’s contents will be excluded. 
   - In the default case when this value is `undefined`, a raw cell’s contents will be included in any nbconvert output, regardless of format.
 
-``` JSON
+```JSON
 {
   "cell_type" : "raw",
   "metadata" : {
@@ -241,7 +238,7 @@ modified: '2021-05-17T11:53:13.568Z'
 
 - Markdown and raw cells can have a number of attachments, typically inline images that can be referenced in the markdown content of a cell.
 
-``` JSON
+```JSON
 
 {
   "cell_type" : "markdown",

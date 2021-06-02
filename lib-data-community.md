@@ -10,8 +10,8 @@ modified: '2021-05-13T16:11:33.402Z'
 # guide
 
 - [Arquero Cookbook](https://observablehq.com/@uwdata/arquero-cookbook)
-
 # discuss
+- ## 
 
 - ## The state of data analysis
 - https://www.reddit.com/r/javascript/comments/bvqy9l/the_state_of_data_analysis/
@@ -32,10 +32,14 @@ modified: '2021-05-13T16:11:33.402Z'
   - dataframe-js
   - data-forge
   - apache-arrow
+
     - a standardized language-independent columnar memory format for flat and hierarchical data, 
     - organized for efficient analytic operations on modern hardware.
+
   - @stdlib/stdlib
+
     - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
+
 - Because of this one shortcoming of JavaScript, i.e. poor support for data analytics, most web applications tend to handle the bulk of the data crunching in the back-end server. 
 - This means that the front-end would have to request the data over the internet via HTTP. 
 - The disadvantages of this approach are:
@@ -54,7 +58,5 @@ modified: '2021-05-13T16:11:33.402Z'
   - Are there any such packages available for JavaScript?
 - The `stdlib` library does provide access to various mathematical tools including probability distribution functions.
 - js isn't going away - it's just most analysts don't really need it with the ubiquity of bi tools
-
 # ref
-
 - [THE HISTORY OF DATA SCIENCE](https://www.kausalvikash.in/blog/the-history-of-data-science/)

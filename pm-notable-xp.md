@@ -1,11 +1,11 @@
 ---
-title: pm-noter-paper
-tags: [note-taking, pm, pmgr]
+title: pm-notable-xp
+tags: [notable, note-taking, pm, xp]
 created: '2020-05-10T07:13:28.652Z'
-modified: '2021-05-14T14:36:07.341Z'
+modified: '2021-06-02T18:24:28.052Z'
 ---
 
-# pm-noter-paper
+# pm-notable-xp
 
 - local/offline first markdown-based note-taking app
 

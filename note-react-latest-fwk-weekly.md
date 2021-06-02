@@ -11,10 +11,25 @@ modified: '2021-03-22T18:46:03.513Z'
 
 - [React Weekly 法语版](https://www.getrevue.co/profile/sebastien-lorber)
   - 英文版 https://twitter.com/sebastienlorber
-
 # 2021
 
 ## w0531-0606
+
+👉 React's greatest power
+👉 Svelte for React experts
+👉 Refs in deps
+👉 Forms perfs
+👉 CSS-in-JS libs analysis
+👉 Next.js conf + hosting
+👉 React microfrontends
+👉 Cleanup effects
+👉 Expo Run
+👉 Coinbase TabBar
+👉 WebContainers
+👉 Jest 27
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1399737434020122628
 
 ## w0524-0530
 

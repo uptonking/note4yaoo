@@ -1,6 +1,6 @@
 ---
 title: lib-editor-dev-block
-tags: [editor]
+tags: [cell, editor]
 created: '2021-06-01T20:03:25.130Z'
 modified: '2021-06-01T20:03:38.284Z'
 ---
@@ -14,8 +14,12 @@ modified: '2021-06-01T20:03:38.284Z'
   - 引导用户操作复杂功能
   - 支持嵌套
   - 适合在输入文本较少的移动端使用，不适合在输入文字较多的桌面端
+  - 容易实现virtualize，只渲染视口可见范围内的内容
+  - 容易实现折叠指定block区块
 
 - cons
+  - 分散输入大段文字时的注意力，特别是光标默认的焦点位置
+  - 跨block的选择
 # blogging
 
 ## [The WordPress block editor: Why you should be using it](https://yoast.com/the-block-editor-gutenberg-why-you-should-be-using-it/)

@@ -1,8 +1,8 @@
 ---
 title: pm-editor-dashboard
-tags: [dashboard, editor, pm, pmgr]
+tags: [dashboard, editor, pm]
 created: '2020-08-09T08:43:31.229Z'
-modified: '2021-05-14T14:33:30.974Z'
+modified: '2021-06-02T17:21:24.853Z'
 ---
 
 # pm-editor-dashboard
