@@ -16,6 +16,7 @@ modified: '2021-06-02T16:49:11.370Z'
 - code-block-extensions-ideas
   - 高亮的代码显示在**深色背景的卡片**上
   - 给显示代码块的卡片加上标题栏，可显示文件名，也可以显示button、多个button
+  - 支持wikipedia风格的footnote`^`.
   - 支持import code from file，在fence后面添加元信息
   - 支持显示多个tab，如html、css、js、ts，甚至是split view
   - 将list显示为tree
@@ -31,6 +32,7 @@ modified: '2021-06-02T16:49:11.370Z'
   - remark code
   - remark render / output
   - not-yet: format, prettier
+  - [remark plugins list](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)
   - [prismjs vs hightlight.js: hightlight下载较高，因为创建较早](https://www.npmtrends.com/highlight.js-vs-prism-react-renderer-vs-prismjs-vs-react-highlight.js-vs-react-syntax-highlighter-vs-react-highlight)
 # extensions-code-block
 - https://github.com/mrzmmr/remark-code-blocks
@@ -43,7 +45,6 @@ modified: '2021-06-02T16:49:11.370Z'
   - Parse fenced code block "meta" strings as JSX props
 - https://github.com/s0/remark-code-extra
   - Add to or transform the HTML output of markdown code blocks using remark.
-
 - https://github.com/s0/remark-code-frontmatter
   - Extract frontmatter from markdown code blocks using remark and front-matter, and do interesting things!
   - Add properties that add indentation to your code
@@ -153,7 +154,6 @@ modified: '2021-06-02T16:49:11.370Z'
 - https://github.com/remarkjs/remark-vdom
 - https://github.com/remarkjs/remark-highlight.js
 - https://github.com/remarkjs/remark-external-links
-
 - https://github.com/remarkjs/remark-github
 
 - https://github.com/remarkjs/awesome-remark
@@ -161,8 +161,17 @@ modified: '2021-06-02T16:49:11.370Z'
 - https://github.com/remarkjs/react-remark
   - a React hook and React component based way of rendering markdown into React using remark
 # extensions
+- https://github.com/arobase-che/remark-attr
+  - adds support for custom attributes to Markdown syntax.
+  - 图片!`[alt](img){ height=50 }`，设置在{}
+
 - https://github.com/landakram/remark-wiki-link
   - This remark plugin parses and renders `[[Wiki Links]]`.
+
+- https://github.com/zWingz/remark-container
+  - markdown container like markdown-it-container
+- https://github.com/Nevenall/remark-containers
+  - provides parsing for containers in your markdown.
 
 - https://github.com/remcohaszing/remark-mermaidjs
   - A remark plugin to render mermaid diagrams using puppeteer

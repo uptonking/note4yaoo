@@ -18,3 +18,8 @@ modified: '2021-06-02T15:26:19.890Z'
 # draft
 
 # more
+
+- https://github.com/mamamia5x/markdownpedia
+  - https://markdownpedia.tk/
+  - A site similar to Wikipedia written in Markdown.
+  - 依赖express、fs-extra、readdirp、showdown

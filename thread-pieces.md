@@ -24,7 +24,13 @@ modified: '2021-01-11T12:10:50.900Z'
 # pieces
 - ## 
 
-- ## 
+- ## One thing I've learned this week: some of the best engineering candidates have almost *zero* Twitter presence.
+- https://twitter.com/mjackson/status/1400266606723289088
+  - They lurk, and they email you when you put up a job req in a tweet. But they don't tweet much themselves.
+  - I could totally work w someone like that
+- for sure, I know lots of people in that category because I know them personally from meetups and they just don't do much with twitter, but they're the ones I go to for most of my niche advice
+- Building Twitter presence by using reinterpretations of the docs, motivational quotes and asking some arbitrary questions. The stench of opportunism is unbearable.
+- Unpopular comment: in my experience they also tend to not evolve, and to keep reinventing the wheel. They are usually the “I have my framework” people.
 
 - ## I take copious(大量的，丰富的) notes in meetings. I write a thorough automated tests.
 - https://twitter.com/brian_d_vaughn/status/1399561004237967361

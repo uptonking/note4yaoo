@@ -18,7 +18,6 @@ modified: '2021-04-19T14:53:27.158Z'
 - I wish I could say that too.. I have time for now but no enough knowledge yet
 - No project ideas. Only problem
   - make a project to solve your problem
-
 # ideas
 
 > new marketable apps
@@ -29,7 +28,12 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
-- ## 
+- ## “汉典重光”项目
+- https://twitter.com/yun_chuang/status/1400012043680423936
+  - 据不完全估计，散落海外的中国古籍超过400万册。
+  - 由阿里巴巴达摩院、四川大学、美国加州大学伯克利分校、中国国家图书馆、浙江图书馆合作的“汉典重光”项目，旨在寻觅流散海外的中国古籍并将其数字化、公共化，
+  - 首批20万页古籍已发布，并研发了一套古籍AI识别系统，支持全文检索
+  - https://wenyuan.aliyun.com/
 
 - ##  I found Notion is the one-stop solution for all note-taking purposes 
 - https://twitter.com/iamrohitgund/status/1325229159027630080

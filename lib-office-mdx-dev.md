@@ -77,6 +77,7 @@ modified: '2021-06-02T16:45:56.858Z'
     - runtime
 
 - ref
+  - wikipedia的书写设计
   - [@mdx-js/loader vs @mdx-js/mdx vs @mdx-js/react vs xdm](https://www.npmtrends.com/@mdx-js/loader-vs-@mdx-js/mdx-vs-@mdx-js/react-vs-xdm)
   - @mdx-js/mdx和xdm都依赖 remark-parse、remark-rehype的unified生态，还依赖 vfile、estree-walker
 # faq-not-yet

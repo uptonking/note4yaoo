@@ -20,7 +20,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Pure CSS magic gateways with Houdini
+- https://twitter.com/anatudor/status/1399837321479004161
+  - Uses Houdini magic, so Chromium only.
+  - https://codepen.io/thebabydino/pen/LYWeOPP
 
 - ## Generative Houdini Stuff! I love the CSS Paint API for this kind of “Generative UI”, expect a lot more from me soon! 
 - https://twitter.com/georgedoescode/status/1399630980625932289

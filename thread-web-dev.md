@@ -29,7 +29,21 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## Is there a reasonable way to get a list of all the html entities directly from the browser itself without shipping a whole damn list containing all of them?
+- https://twitter.com/fabiospampinato/status/1400429400785555462
+  - I can't stand shipping a ~12kb min+gzip list of all those damn entities, ~95% of which I guess pretty much nobody even knows about or uses.
+- maybe I don't even need a list, I can just let the browser to its work:
+
+```JS
+const decode = entity => {
+  const div = document.createElement('div');
+  div.innerHTML = entity;
+  return div.textContent;
+};
+decode('&#70;'); // => F
+```
+
+- In theory this is also more forward-compatible, it they'll extend the list of entities that function will always work without needing to be updated (assuming you are in a browser to being with though).
 
 - ##  `addEventListener` could automatically clean up your listener if it would have to be invoked only once
 - https://twitter.com/mgechev/status/1399584040815108098
