@@ -74,6 +74,9 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # ux-pieces
 
+- ## 书本封面，倾斜45°的丝带
+- https://www.holloway.com/
+
 - ## 404 Not Found 自动切换不同颜色的主题
 - https://twitter.com/puruvjdev/status/1390205908014096387
   - 主题变色时，能感受到渐变的过程

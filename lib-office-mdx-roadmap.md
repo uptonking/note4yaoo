@@ -18,7 +18,6 @@ modified: '2021-05-29T14:51:21.929Z'
 # mdx vs md
 - [Where MDXjs is different than Markdown](https://github.com/mdx-js/mdx/pull/1039)
 
-- Most likely breaking changes from MDXjs 1
 - You can’t have random `<` or `{` in text anymore
   - 需要使用 &lt; 转义字符
 - You can’t have HTML comments anymore
@@ -92,6 +91,7 @@ The number is { number }.
   - It also adds JSX usage into the AST which will allow users to perform their own transforms with plugins.
   - support expressions throughout a document
   - [Rewrite how MDX is parsed_202005](https://github.com/mdx-js/mdx/pull/1039)
+    - This completely rewrites the parser, which was previously regex based and error prone, and now follows a well-defined state machine.
 - Official Vue support
 - TypeScript support
 

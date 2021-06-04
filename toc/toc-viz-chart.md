@@ -18,9 +18,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/observablehq/plot
   - https://observablehq.com/@observablehq/plot
   - JavaScript library to help you quickly visualize tabular data.
-  - Plot employs a layered grammar of graphics inspired by Vega-Lite, ggplot2, Wilkinson’s Grammar of Graphics, and Bertin’s Semiology of Graphics. 
   - Plot rejects a chart typology in favor of marks, scales, and transforms.
-  - We continue to support D3 for bespoke explanatory visualization and recommend Vega-Lite for imperative, polyglot environments such as Jupyter. 
 - plotly.js /12.3kStar/MIT/202009/js
   - https://github.com/plotly/plotly.js
   - https://plotly.com/javascript/
@@ -76,11 +74,6 @@ modified: '2020-10-22T10:22:33.292Z'
   - Robust dataviz framework implemented using D3 & typescript
   - 依赖d3、date-fns、@carbon/utils-position
   - 提供react/vue/angular/svelte的wrapper
-- rgraph /4Star/MIT/202104/js
-  - https://github.com/heyesr/rgraph
-  - https://www.rgraph.net/
-  - started in 2008 and was initially canvas only.
-  - Now it has support for over 60 responsive chart types across SVG and canvas
 
 - britecharts /3.7kStar/Apache2/202105/js
   - https://github.com/britecharts/britecharts
@@ -91,16 +84,17 @@ modified: '2020-10-22T10:22:33.292Z'
 - bqplot /3.1kStar/Apache2/202105/ts
   - https://github.com/bqplot/bqplot
   - a 2-D visualization system for Jupyter, based on the constructs of the Grammar of Graphics.
-
+- rgraph /4Star/MIT/202104/js
+  - https://github.com/heyesr/rgraph
+  - https://www.rgraph.net/
+  - started in 2008 and was initially canvas only.
+  - Now it has support for over 60 responsive chart types across SVG and canvas
 # geo-charts
-
-- https://github.com/Esri/cedar
-  - /227Star/Apache2/201905/ts
+- cedar /227Star/Apache2/201905/ts
+  - https://github.com/Esri/cedar
   - https://esri.github.io/cedar
   - JavaScript Charts for ArcGIS
-
 # popular
-
 - Chart.js /MIT/49.6kStar/202007
   - https://github.com/chartjs/Chart.js
   - https://www.chartjs.org/
@@ -123,21 +117,8 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/palantir/plottable
   - http://plottablejs.org/
   - A library of modular chart components built on D3
-- lightweight-charts /2.1kStar/Apache2/202007
-  - https://github.com/tradingview/lightweight-charts
-  - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
-  - Financial lightweight charts built with HTML5 canvas
-  - paid: Technical Analysis Charts, Trading Platform
-- chart-parts /500Star/MIT/202007/ts/low-active
-  - https://github.com/microsoft/chart-parts
-  - https://microsoft.github.io/chart-parts/documentation/
-  - A flexible, React-friendly, Grammar of Graphics for data visualization
-- charticulator /549Star/MIT/202105/ts
-  - https://github.com/microsoft/charticulator
-  - Interactive Layout-Aware Construction of Bespoke Charts
-  - a new charting tool that allows you to design charts by interactively specifying constraints.
-  - https://github.com/microsoft/charticulator-extensions
-- https://github.com/plouc/nivo
+- nivo /8.8kStar/MIT/202106/ts
+  - https://github.com/plouc/nivo
   - https://nivo.rocks/about
   - built on top of d3.
   - Several libraries already exist for React d3 integration, but just a few provide server side rendering ability and fully declarative charts.
@@ -148,10 +129,24 @@ modified: '2020-10-22T10:22:33.292Z'
     - HTML charts
     - Canvas charts
     - Server side rendering API
+- chart-parts /500Star/MIT/202007/ts/low-active
+  - https://github.com/microsoft/chart-parts
+  - https://microsoft.github.io/chart-parts/documentation/
+  - A flexible, React-friendly, Grammar of Graphics for data visualization
+- charticulator /549Star/MIT/202105/ts
+  - https://github.com/microsoft/charticulator
+  - Interactive Layout-Aware Construction of Bespoke Charts
+  - a new charting tool that allows you to design charts by interactively specifying constraints.
+  - https://github.com/microsoft/charticulator-extensions
 - react-charts /MIT/880Star/202007
   - https://github.com/tannerlinsley/react-charts
   - https://react-charts.js.org/
   - interactive charts for React powered by D3
+- lightweight-charts /2.1kStar/Apache2/202007
+  - https://github.com/tradingview/lightweight-charts
+  - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
+  - Financial lightweight charts built with HTML5 canvas
+  - paid: Technical Analysis Charts, Trading Platform
 - D3FC /860Star/MIT/202011/js
   - https://github.com/d3fc/d3fc
   - Components to rapidly build fast, highly customisable, interactive charts with D3
@@ -240,9 +235,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://pancake-charts.surge.sh/
   - Pancake is a charting library for Svelte applications that allows you to visualize data with a combination of HTML, SVG and (soon) canvas/WebGL.
   - Unlike most charting libraries, Pancake is designed with server-side rendering in mind, meaning you can create beautiful responsive charts that may not even need JavaScript to render. 
-
 # css chart
-
 - https://github.com/ChartsCSS/charts.css
   - https://chartscss.org/
   - It uses CSS utility classes to style HTML elements as charts.
@@ -254,9 +247,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://ffoodd.github.io/chaarts
   - Every charts in this project relies solely on semantic markup — `<table>` based — and a spread of CSS variables carried by the tags. 
   - No JavaScript required for display
-
 # more
-
 - https://www.rgraph.net/download.html
   - svg, canvas, csv, google sheets, ajax, database
 

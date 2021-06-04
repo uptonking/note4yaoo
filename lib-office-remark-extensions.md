@@ -28,8 +28,7 @@ modified: '2021-06-02T16:49:11.370Z'
   - 支持执行jupyter代码
 
 - ref
-  - remark code block
-  - remark code
+  - remark code block / remark code
   - remark render / output
   - not-yet: format, prettier
   - [remark plugins list](https://github.com/remarkjs/remark/blob/main/doc/plugins.md)
@@ -183,3 +182,14 @@ modified: '2021-06-02T16:49:11.370Z'
   - A custom Markdown syntax parser for remark that adds support for shortcodes.
   - What are shortcodes? They are a way to provide hooks for macros and/or template partials inside a markdown file. 
   - `[[ MailchimpForm id="chfk2" ]]`. 可配置头尾标志
+# more-markdown
+- https://github.com/dimerapp/markdown
+  - an opinionated markdown processor built on top of remark
+- https://github.com/MoOx/markdown-to-json
+  - Transform markdown content as a JSON for easy rendering
+  - 依赖remark
+- https://github.com/sparkartgroup/gulp-markdown-to-json
+  - Parse Markdown and YAML → compile Markdown to HTML → wrap it all up in JSON
+  - This plugin does not bundle any Markdown parser to keep your options open.
+- https://github.com/klaytonfaria/markdown-json
+  - 依赖marked

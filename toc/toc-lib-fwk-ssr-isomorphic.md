@@ -16,6 +16,19 @@ modified: '2020-12-19T13:04:40.865Z'
   - Every component in the pages directory becomes a route.
   - Optionally create API endpoints to provide backend functionality.
 
+- https://github.com/styfle/react-server-example-tsx
+  - https://react-tsx.now.sh/
+  - A complex example of how to do server-side rendering with React and TypeScript so that component code can be shared between server and browser (also known as isomorphic javascript).
+  - 只依赖react、webpack
+
+- https://github.com/catamphetamine/universal-webpack
+  - Isomorphic Webpack: both on client and server
+  - https://github.com/catamphetamine/webpack-react-redux-server-side-render-example
+
+- https://github.com/danielstern/isomorphic-react
+  - Supports hot reloading and server rendering!
+  - Uses React/Redux as main application engine
+
 - https://github.com/redfin/react-server
   - React framework with server render for blazing fast page load and seamless transitions between pages in the browser.
   - React Server is now defunct. Consider Next.js instead.
@@ -38,9 +51,7 @@ modified: '2020-12-19T13:04:40.865Z'
     - 本应用是直接采用webpack --watch + inline-sourcemap 的方式将文件写到本地，实现更加简洁。
     - next.js hmr采用hot-middleware + webpackHotDevClient.js实现
     - 本应用hmr直接用社区的热门库webpack-dev-server实现
-
 # ssr-solutions
-
 - https://github.com/GoogleChrome/rendertron
   - Rendertron is a headless Chrome rendering solution designed to render & serialise web pages on the fly.
   - Built with Puppeteer

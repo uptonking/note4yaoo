@@ -9,6 +9,9 @@ modified: '2021-06-02T15:29:52.268Z'
 
 # guide
 
+# mdx
+- knobs for components
+  - 在组件预览图周围显示修改配置属性值的工具条
 # code-block
 
 # code-related
