@@ -55,3 +55,4 @@ modified: '2021-04-23T09:24:19.873Z'
   - https://www.youtube.com/watch?v=tBn0lVUzUbA
 - oh i'm an idiot i used `position:absolute` ..
   - Well, if your immediate scrollable parent is also the nearest positioned parent, then setting `position: absolute` would be some sort of optimisation where you wouldn't need to repositioned every time it is scrolled.
+  - Yeah most likely I just need repaint and/or re-composition instead of relayout

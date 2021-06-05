@@ -19,7 +19,13 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## Life as a developer in 2021
+- https://twitter.com/dabit3/status/1400804133158989825
+  - Current tech company: you’ve done an excellent job this year, here’s a 4% raise.
+  - Developer’s email inbox: here are 700 offers for 200% of what you’re making in your current role.
+  - Amazon: you’re in the top 5% of the entire company, nice work comrade.
+- I'm not a developer yet, but I work in IT and this is exactly what happened. I'm getting a 20k a year raise with the new job I'm about to start, and my current company refuses to even give raises. I'm also in an area where the talent is extremely hard to find lol. Oops
+- Someone I know was recently promoted to Principal Engineer and it came with a whopping 4% raise. The company's also really stingy with their equity, so I wouldn't be surprised if the 4% was itself 100% of the increase.
 
 - ## we kind of had webmail before 2004, but webmail didn't become A Thing until gmail. 
 - https://twitter.com/Rich_Harris/status/1395548128087003146

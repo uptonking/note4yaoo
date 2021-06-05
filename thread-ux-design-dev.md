@@ -26,6 +26,17 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Here's how I'll determine whether you read a blog post. 
+- https://twitter.com/kentcdodds/status/1401011415666675713
+  - The backend will only actually record it if it's been over a week since the last time you read it (yes, you'll get credit for reading it multiple times).
+- Will the visibility events on tab/window changes?
+
 - ## Then it's a good practice to place your CTA at the end of this flow to lead users to take action.
 - https://twitter.com/d__raptis/status/1397209106218463237
   - It states that the user's eyes travel according to a `Z-shaped` path from the top-left area to the bottom-right area. 

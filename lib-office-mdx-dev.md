@@ -59,14 +59,16 @@ modified: '2021-06-02T16:45:56.858Z'
     - 缺点：字符串不适合复杂代码的自动补全和高亮
   - 方法2: 扩展code block，添加 meta string
     - 优点：书写简单；直接支持语法高亮，执行时仍然是获取并解析字符串
-    - 优点2: 普通markdown渲染器能正常渲染代码块
+    - 优点2: 普通渲染器能正常渲染代码块，再自己实现预览
     - 缺点：需要实现自动补全提示等
-  - 方法3: 基于react-live，(~~无法~~)提供ojs专门的文本编辑器，执行时仍然是获取并解析字符串
+  - 方法3: 基于react-live且提前aot转换ojs，(~~无法提供ojs专门的文本编辑器~~)，先用自定义插件将代码块里的ojs转换成jsx，然后渲染成mdx默认的code block组件和上面的LivePreview
     - 优点：充分利用react-live的预览功能，上面预览，下面代码，与observablehq的体验最接近
     - 缺点：不容易书写；复杂度高、链路长，修改ojs需要执行ojs编译器、rect-live计算、mdx热加载
     - 缺点2: react-live编辑的是react组件，无法直接支持编辑字符串
       - 只能再一次实现类似ojs编译器的转换器，将输入的字符串通过反射封装成函数，自动调用此函数返回输入的字符串ojs
       - 可在后期实现第(4)种编辑器时实现
+    - 方法4: 基于react-live且在runtime转换ojs，结合第2和第3种方法，基于mdx-js/loader不处理ojs的code block，使用系统默认的code block，然后通过MDXProvider注入基于react-live实现的自定义code block组件，实时转换
+    - https://mdxjs.com/guides/syntax-highlighting
 
 - tips
   - mdx的解析，参考remark-parse, mdxc

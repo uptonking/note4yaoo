@@ -38,8 +38,6 @@ modified: '2021-01-16T20:24:48.984Z'
 - https://github.com/frontarm/mdx-util
   - http://mdxc.reactarmory.com/
   - MDXC has been deprecated in favor of mdx-js/mdx.
-- https://github.com/readmeio/markdown
-  - ReadMe's flavored Markdown parser and MDX rendering engine
 
 - https://github.com/jxnblk/mdx-deck
   - https://mdx-deck.jxnblk.com/

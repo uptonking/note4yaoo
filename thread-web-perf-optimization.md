@@ -11,6 +11,14 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Still using JPEG and PNG for images? 
+- https://twitter.com/Steve8708/status/1400953776031285257
+  - Consider using `<picture>` tags and WEBP for +30% faster loading images
+
 - ## Spent some dev cycles over the last week working on some JS bundle improvements for @components_ai .
 - https://twitter.com/4lpine/status/1382805903603163136
 - Offloaded a lot of client heavy JS to API endpoints.

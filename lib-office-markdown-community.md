@@ -97,7 +97,54 @@ export default FrontPage
 # discuss
 - ## 
 
-- ## 
+- ## HOW TO ESCAPE A BACKTICK WITHIN A CODE BLOCK IN MARKDOWN
+- https://www.danvega.dev/blog/2019/05/31/escape-backtick-markdown/
+- The first solution to our problem is to use more backticks. 
+  - 比如下面顶层使用4个反引号，缺点是默认的格式化工具会打乱格式
+
+~~~~markdown
+This is some text
+
+```js
+console.log('Hello, World!');
+```
+
+```js
+console.log('Hello, World!');
+```
+
+~~~~
+
+- 方法2: using the tilde character
+
+~~~markdown
+This is some text
+
+```js
+console.log('Hello, World!');
+```
+
+```js
+console.log('Hello, World!');
+```
+
+~~~
+
+- ## Next.js love MDX, but there are tradeoffs:
+- https://twitter.com/ericclemmons/status/1400577327201984517
+- hashicorp/next-mdx-enhanced
+  - deprecated: next-mdx-remote is ~50% faster, more flexible with content storage, does not induce memory issues at scale
+- hashicorp/next-mdx-remote
+  ✅ get*Props
+  ✅ Local/Remote content
+  ⚠️ eval
+  ❌ No `import` in MDX
+- mdxjs.com
+  ✅ .mdx pages
+  ✅ import Post from "./post.mdx"
+  ❌ getStaticProps
+  ❌ frontmatter
+- xdm might have the right trade offs you need?
 
 - ## Why do bloggers love Markdown? Why use MDX? And other notes from MDXConf_202008
 - https://katiekodes.com/why-markdown-mdx-mdxconf/

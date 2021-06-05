@@ -13,7 +13,15 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Thinking through an interesting problem for how to model the components tree in DevTools. 
+- https://twitter.com/brian_d_vaughn/status/1400843220041580546
+  - The tree currently reflects a filtered view of React's (internal) Fiber tree. 
+  - When React commits an update, the tree is updated by adding, removing, or reordering nodes.
+  - Adding Server Components to this tree means somehow splicing in a new type of node (no backing Fiber, not part of React's internal tree). 
+  - I think these nodes would be added once then skipped over during updates (unless removed via a node higher in the tree).
+- There's probably an elegant way to model this but I'm still turning over the problem in my mind. I think it reduces to:
+  (1) Merge two trees (client and server) into a single tree (hybrid).
+  (2) Sync updates from the client tree to the hybrid tree.
 
 - ## Playing around with a React hook that returns a component with some props pre-applied. Too hacky?
 - https://twitter.com/satya164/status/1391513127431385088
