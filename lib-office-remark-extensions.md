@@ -167,6 +167,10 @@ modified: '2021-06-02T16:49:11.370Z'
 - https://github.com/landakram/remark-wiki-link
   - This remark plugin parses and renders `[[Wiki Links]]`.
 
+- https://github.com/mrzmmr/remark-variables
+  - Variables support for remark
+
+
 - https://github.com/zWingz/remark-container
   - markdown container like markdown-it-container
 - https://github.com/Nevenall/remark-containers

@@ -7,8 +7,11 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-window-manager
 
+# guide
+- ref
+  - 几乎所有的窗口组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
+    - 比较适合做表格，不适合做文档
 # panel-window-manager
-
 - ref
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
 
@@ -17,26 +20,28 @@ modified: '2021-01-08T11:48:16.590Z'
   - /13.4kStar/MIT/202104/js
   - A draggable and resizable grid layout with responsive breakpoints, for React.
   - 卡片能随意拖动和缩放
-  - 静止状态时，卡片不能相互遮挡
+  - 静止状态时，卡片不可重叠遮挡
 - https://github.com/golden-layout/golden-layout 
   - https://github.com/pbklink/golden-layout /v2
   - https://golden-layout.com/
   - /4.9kStar/MIT/202004/ts
   - A multi window layout manager for webapps
-  - 主要用于传统分栏布局
+  - 主要用于传统分栏布局，窗口不可重叠遮挡
   - 适合实现类似vscode、notable这类编辑器或文件管理器
 - https://github.com/hlhielkema/elara 
   - https://hlhielkema.github.io/elara/
-  - /5Star/MIT/202009/js
+  - /5Star/MIT/202009/js/NoDeps
   - 卡片能随意拖动和缩放
-  - 静止状态时，卡片能部分遮挡；样式非常友好
+  - 静止状态时，卡片能部分遮挡；样式非常友好，demo设计很棒
+  - 注意，例子都很好看，但都没有显示竖直滚动条
+  - split平铺窗口后，无法拖拽改变两边大小，不能下滑查看更多窗口
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
 - https://github.com/rlamana/Ventus
-  - /300Star/MIT/201812/js
+  - /300Star/MIT/201812/js/只依赖lodash
   - http://www.rlamana.com/ventus/code/examples/simple/
   - http://www.rlamana.com/ventus/code/examples/desktop/
-  - 卡片能随意拖动和缩放
+  - 卡片能随意拖动和缩放，经典例子expose可以一次预览所有窗口
   - 静止状态时，卡片能部分遮挡
   - A window manager written in Javascript, HTML5 and CSS3.
 - https://github.com/davidfig/window-manager
@@ -73,13 +78,16 @@ modified: '2021-01-08T11:48:16.590Z'
   - http://projectstorm.cloud/react-workspaces/
   - /90Star/202006/ts
   - 基于dom实现
+  - 可以显示侧边小窗
+  - 不能拖拽改变大小，不可以重叠
   - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
   - https://github.com/projectstorm/react-canvas
     - 基于canvas实现
     - A pluggable layout and graphics system aimed at powering desktop publishing as well as storm-react-diagrams
 - https://github.com/nomcopter/react-mosaic /2.5kStar/202005
   - https://nomcopter.github.io/react-mosaic/
-  - A React tiling window manager
+  - A React tiling window 
+  - 不可重叠
 - https://github.com/arqex/react-tiles /46Star/201804
   - https://react-tiles.firebaseapp.com/
   - a window manager component to display more than one app route at the same time dividing your browser in tiles.
@@ -106,9 +114,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - A NodeJs module for Electron (Atom Shell, previously) that will help you create, control, manage and connect your application windows very easily.
   - Most of the applications created using Electron are one-window applications
   - if you are to build a multi-window Electron application, then you may want to have a look at this package module.
-
 # examples
-
 - https://github.com/EikosPartners/windowmanagerjs /20Star/201802
   - https://github.com/aesalazar/windowmanagerjsdemo
   - A framework to manage multiple dockable HTML windows.
@@ -129,9 +135,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - File manager created on Electron/React/Redux (Windows, in future cross-browser)
 - https://github.com/MichalBures/electron-simple-window-manager
   - Easily manage (open, hide, move, ...) your Electron windows.
-
 # more
-
 - https://github.com/tomkp/react-split-pane
   - https://tomkp.github.io/react-split-pane
   - /2.4kStar/MIT/202008/js

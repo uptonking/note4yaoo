@@ -8,6 +8,61 @@ modified: '2021-06-02T15:26:39.741Z'
 # lib-office-markdown-community
 
 # discuss-stars
+
+- ## Shortcodes vs MDX
+- https://www.swyx.io/shortcodes-vs-mdx-3d4e/
+- There are two prevalent solutions for injecting dynamic content into markdown: Shortcodes and MDX. 
+- I think most people should use shortcodes, but there are also valid cases for picking MDX. 
+- ### Defining Shortcodes
+  - The earliest instance I can find of Shortcodes is in WordPress.
+  -  The whole goal is that you can continue writing in standard plain text, but insert special components just by using a special syntax that wouldn't show up in normal writing
+  - Shortcodes are the plaintext analog of Web Components - where a `<custom-element>` might extend HTML, shortcodes extend plaintext (typically Markdown). 
+- ### Defining MDX
+  - MDX, introduced in 2018, inverts this model of content vs code. 
+  - It renders your markdown as a React component (or Svelte component, with MDsveX), so it is very natural to add more React components inline
+  - In my 2020 survey of the React ecosystem, all blogging documentation tools now offer MDX support by default.
+
+- ### Comparing the Two
+- Portability and Future-proofing
+- MDX requires you to use React and a bundler plugin, tying you in to that ecosystem. 
+  - Great if you stay within the lines of what they imagine, 
+  - problematic if you want something slightly different or need to move off React (you now have to go through and convert all your content)
+- Shortcodes are framework and platform agnostic. 
+  - This is how I can blog on Dev.to and render on my own site (the inverted POSSE pattern), and have both render correctly in their native environments.
+  - Though shortcodes still require a build chain to process them (including injecting scripts if needed), the minimal viable shortcode processor is no more complex than String.replace. 
+  - Ultimately, shortcodes are more likely to show graceful degradation
+- Scope
+  - MDX has a broader scope than Shortcodes in that it transforms the entire file - meaning that you can (and often should) supply your own versions of markdown components. 
+    - This is handy for, for example, adding classes and preload handling to `<a>` tags, or adding hash links and id's to `<h2>` headers like I do on my blog.
+    - Shortcodes are limited to their immediate responsibility area - starting and ending with the brackets that designate them.
+- Customizability
+  - With MDX, you can compose components as freely as you do JSX
+  - Shortcodes require you to predefine all the components you are going to use up front. 
+  - If you'd like to add a new type of component, you'll have to jump out of your writing mode, go add some code to your components folder, and then jump back in to keep writing.
+- WYSIWYG
+  - This is a minor point, but the fact that everything in markdown corresponds to a visible rendered element is a nice correspondence. 
+  - MDX breaks this by having import and export statements that compile away to nothing. 
+  - In practice this is no big deal but it slightly rankles me.
+
+- ### Conclusion
+- I think most developer bloggers spring for MDX because they enjoy using JSX, but they end up using the same 3-4 components on every single post or document they write. 
+  - In those scenarios, they are accepting the downsides of MDX, without really benefiting from the customizability.
+- However, there are still valid usecases of MDX.
+  - For a design system or frontend component library, one might argue that MDX allows you to display the exact components 
+  - Storybook's **Component Story Format** also provides a nice convention that keeps your documentation agnostic of MDX.
+- Because MDX compiles to a React component, you could build tooling that can typecheck MDX
+  -  The same is doable for shortcodes, but since there is very little restriction on how shortcodes are processed, it is far less likely that successful shared tooling will arise.
+
+- Finally, there's the question of customization. 
+  - If you need to compose components inline as you write, then MDX is unquestionably the right choice. 
+  - This is why Hashicorp went with MDX
+
+- Perhaps a third "alternative" to Shortcodes vs MDX is structured content - discrete "blocks" of content rendered inside of a CMS, like you see in Notion, Sanity.io or in WordPress Gutenberg. 
+  - I don't have a lot of personal experience with this, but my sense is that it locks you in to these systems, in exchange for WYSIWYG and no-code editing. 
+  - In a way, structured content is what would happen if your writing is entirely made up of data inside shortcodes.
+
+
+
 - ## Markdown编辑器 做成 WYSIWYG（所见即所得）形式会不会有什么弊端？
 - https://www.zhihu.com/question/47789842
 - 这取决于你如何看待 Markdown：
@@ -96,6 +151,16 @@ export default FrontPage
 
 # discuss
 - ## 
+
+
+- ## 
+
+
+- ## 
+
+
+
+
 
 - ## HOW TO ESCAPE A BACKTICK WITHIN A CODE BLOCK IN MARKDOWN
 - https://www.danvega.dev/blog/2019/05/31/escape-backtick-markdown/
