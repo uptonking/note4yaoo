@@ -20,6 +20,17 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Pure HTML + CSS Calculator
+- https://www.bram.us/2021/06/07/pure-html-css-calculator/
+  - https://codepen.io/lillian-kodi/pen/YzZLebR
+  - 不支持除法，显示屏数字的样式是像素风格
+
 - ## Pure CSS magic gateways with Houdini
 - https://twitter.com/anatudor/status/1399837321479004161
   - Uses Houdini magic, so Chromium only.

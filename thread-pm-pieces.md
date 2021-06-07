@@ -10,14 +10,15 @@ modified: '2021-04-19T14:52:58.244Z'
 > new features for pm
 
 # pieces
-
 - ##
 
 - ##
 
 - ## 
 
-- ## 
+- ## Automatically fill your Notion database from events on your website.
+- https://twitter.com/splitbee/status/1401872538393796612
+- [Splitbee Automations: Write to Notion](https://splitbee.io/blog/notion-support-in-automations)
 
 - ## Life as a developer in 2021
 - https://twitter.com/dabit3/status/1400804133158989825

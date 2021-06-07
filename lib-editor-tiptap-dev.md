@@ -30,3 +30,12 @@ modified: '2021-05-06T09:46:30.944Z'
 - At the moment it's not possible to add this functionality with extensions. That's something I have to add to the core.
 - I don’t see us adding this to the core, it’s just too different. So I’m closing this here for now. Consider using CodeMirror, if you really want to work with Markdown.
 # discuss
+
+# examples-repos
+- https://github.com/michelson/Dante
+  - https://www.dante-editor.dev/
+  - /1.5kStar/MIT/202106/js
+  - 依赖 emotion、polished、react-json-view、yjs
+  - Just another medium clone built on top of ProseMirror/TipTap
+  - Dante3 is a port from Dante2 (Draftjs) 
+  - Dante2: Bad mobile support, big size, no realtime collab

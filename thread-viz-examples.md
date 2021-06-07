@@ -13,6 +13,22 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## one of the most emotional projects I ever did: Visualizing Censorship In Iran
+- https://twitter.com/h_i_g_s_c_h/status/1401805057004277761
+  - https://github.com/higsch/censorship-in-iran
+  - 依赖d3、svelte
+  - [Visualizing Censorship in Iran](https://visualization.journalismisnotacrime.com/)
+
+
+
+
 - ## The Evolution of a ggplot
 - https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/
   -  I aim to show you how to turn a default ggplot into a plot that visualizes information in an appealing and easily understandable way. 

@@ -12,11 +12,16 @@ modified: '2021-05-14T14:33:13.599Z'
 - related products
   - docusaurus
 
-- ## [如何看待美团效仿亚马逊，内部汇报拒用 PPT 而改用 Word?](https://www.zhihu.com/question/340219070/answers/updated)
-- 拒用PPT，就是减少形式主义，把更多的精力投入到工作本身
-- 近日，PPT遭多家名企抵制
-  - 字节跳动，不提倡用PPT进行工作汇报
-  - 美团、微信，纷纷直接禁用PPT
+
+# faq
+
+## 是否该添加trailing slash
+
+- https://github.com/slorber/trailing-slash-guide
+- 不同解决方案提供商的实现不同，没有统一标准
+- 选择能配置该选项的方案，尽量保证一致性
+
+
 # features
 - core/核心功能
   - 读取markdown内容生成DOM，然后渲染
@@ -33,6 +38,12 @@ modified: '2021-05-14T14:33:13.599Z'
   - 显示在右边toc左侧的批注
 # extensions
 - static-site-generator
+# discuss-stars
+- ## [如何看待美团效仿亚马逊，内部汇报拒用 PPT 而改用 Word?](https://www.zhihu.com/question/340219070/answers/updated)
+- 拒用PPT，就是减少形式主义，把更多的精力投入到工作本身
+- 近日，PPT遭多家名企抵制
+  - 字节跳动，不提倡用PPT进行工作汇报
+  - 美团、微信，纷纷直接禁用PPT
 # discuss
 - ## [如何看待字节跳动的飞书（LARK）的前景？](https://www.zhihu.com/question/362435888/answers/updated)
 - 看了下评论里大多都是在以自身作为c端用户的视角评价这几个tob产品，说实话连门都没摸到，看起来很尴尬

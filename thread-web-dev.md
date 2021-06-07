@@ -29,6 +29,14 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 更好的做法：在if/else中处理差异，尽快结束分支，回到主线逻辑处理剩下相同/相似的部分。
+- https://twitter.com/TooooooBug/status/1401718371947716609
+  - 代码示例是为了说明，不要写if else，可以写多个if，在前面先处理else的逻辑
+
 - ## Is there a reasonable way to get a list of all the html entities directly from the browser itself without shipping a whole damn list containing all of them?
 - https://twitter.com/fabiospampinato/status/1400429400785555462
   - I can't stand shipping a ~12kb min+gzip list of all those damn entities, ~95% of which I guess pretty much nobody even knows about or uses.

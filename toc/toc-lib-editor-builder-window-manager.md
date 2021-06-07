@@ -61,7 +61,8 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/cezarykluczynski/simone
   - http://cezarykluczynski.github.io/simone/demos/functional/basic.html
   - /27Star/MIT/201810/js
-  - 缩放窗口时有动画渐变，明显地给人流畅感；样式非常传统陈旧
+  - 缩放窗口时有动画渐变，明显地给人流畅感
+  - 样式非常传统陈旧
   - It's built on top of the jQuery and jQuery UI.
   - window manager consisting of two widgets: taskbar and window, providing a desktop-like experience
 - https://github.com/UbiCastTeam/overlay-display-manager
@@ -79,15 +80,16 @@ modified: '2021-01-08T11:48:16.590Z'
   - /90Star/202006/ts
   - 基于dom实现
   - 可以显示侧边小窗
-  - 不能拖拽改变大小，不可以重叠
+  - 不能拖拽改变panel大小
   - help you build super-modern desktop-grade applications that have window management similar to Adobe/Jetbrains and Netbeans
   - https://github.com/projectstorm/react-canvas
     - 基于canvas实现
     - A pluggable layout and graphics system aimed at powering desktop publishing as well as storm-react-diagrams
-- https://github.com/nomcopter/react-mosaic /2.5kStar/202005
+- https://github.com/nomcopter/react-mosaic 
   - https://nomcopter.github.io/react-mosaic/
+  - /2.6kStar/Apache2/202005/ts
   - A React tiling window 
-  - 不可重叠
+  - 可以拖拽改变panel大小，支持自动平铺
 - https://github.com/arqex/react-tiles /46Star/201804
   - https://react-tiles.firebaseapp.com/
   - a window manager component to display more than one app route at the same time dividing your browser in tiles.
