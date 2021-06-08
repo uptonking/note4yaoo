@@ -19,6 +19,11 @@ modified: '2021-06-02T10:28:39.488Z'
   - Notes app that's entirely accessible through your keyboard
   - 依赖auth0、antd4、framer-motion、react-redux、showdown
   - 样式非常友好，设计偏向文档，笔记功能可用
+  - features
+    - fast
+    - keyboard first
+    - beautiful design
+    - cloud sync, extended markdown, secure by auth0
 - https://github.com/syfxlin/xkeditor-next
   - https://xkeditor-next.ixk.me/
   - 基于 rich-markdown-editor 开发的编辑器，在其基础上添加了更多的模块，比如 Monaco Editor 对应的几个模块

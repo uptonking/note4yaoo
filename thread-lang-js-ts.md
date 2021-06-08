@@ -18,7 +18,16 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
-- ## 
+- ## Most (all?) non-collection iterables created by JS are iterators
+- https://twitter.com/rauschma/status/1402202573646540802
+
+```JS
+const IterProto = Object.getPrototypeOf(Object.getPrototypeOf([][Symbol.iterator]()));
+IterProto.isPrototypeOf([].keys()) // true
+IterProto.isPrototypeOf(new Map().keys()) // true
+
+Uint8Array.prototype[Symbol.iterator] === Float64Array.prototype[Symbol.iterator] // true
+```
 
 - ## In TypeScript, classes that extend other classes still need to provide parameter types for methods. 
 - https://twitter.com/steveruizok/status/1397122781054181377

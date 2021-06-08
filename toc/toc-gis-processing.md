@@ -6,13 +6,13 @@ modified: '2021-01-04T16:21:40.119Z'
 ---
 
 # toc-gis-processing
-
 - guide
   - postgis, vector tiles
   - map server, node
 
+- ref
+  - [@turf/helpers vs @turf/turf vs geolib vs geometric](https://www.npmtrends.com/@turf/helpers-vs-@turf/turf-vs-geolib-vs-geometric)
 # js
-
 - turf /MIT/5.5kStar/202007
   - https://github.com/Turfjs/turf
   - http://turfjs.org/
@@ -26,9 +26,7 @@ modified: '2021-01-04T16:21:40.119Z'
     - /2.5kStar/Apache2/202011/c
   - ref
     - [Comparisons: geohash, h3, s2 & Use cases](https://h3geo.org/docs/usecases)
-
 # opengis
-
 - geoserver /GPLv2/java
   - https://github.com/geoserver/geoserver
   - http://geoserver.org/
@@ -83,5 +81,4 @@ modified: '2021-01-04T16:21:40.119Z'
   - https://github.com/libgeos/geos 
   - https://trac.osgeo.org/geos
   - port from jts
-
 # more-repos

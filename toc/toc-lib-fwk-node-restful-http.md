@@ -27,6 +27,9 @@ modified: '2021-06-02T16:35:46.166Z'
 
 - https://github.com/developit/express-es6-rest-api
   - boilerplate for building REST APIs with ES6 and Express.
+
+- https://github.com/albingroen/typescript-express-server
+  - express server template with Typescript
 # rest-examples
 - https://github.com/taniarascia/node-api-postgres
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/

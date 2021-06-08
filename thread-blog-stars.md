@@ -14,9 +14,7 @@ modified: '2021-02-09T19:25:20.378Z'
   - [course tour video](https://www.youtube.com/watch?v=SDWxeGKX7Fs)
   - https://github.com/kentcdodds/advanced-react-hooks
   - https://github.com/kentcdodds/advanced-react-patterns
-
 # frontend
-
 - [TypeScript 中的 Decorator & 元数据反射：从小白到专家](https://zhuanlan.zhihu.com/p/20743919)
 - [理解 TypeScript 装饰器（为什么 Angular 不需要 Hooks）](https://zhuanlan.zhihu.com/p/65764702)
   - Hooks是为了解决函数式组件没有自身状态的问题。
@@ -35,9 +33,16 @@ modified: '2021-02-09T19:25:20.378Z'
 - [Leaving Scribe Text Editor](https://www.theguardian.com/info/2019/jan/24/leaving-scribe)
 - [What does % mean in CSS?](https://wattenberger.com/blog/css-percents)
 - [make vanillajs great again](https://github.com/krausest/js-framework-benchmark/issues/403)
-
 # backend
 
-# series
+# geo
 
+- [MVT generation: Mapnik vs PostGIS](https://carto.com/blog/MVT-mapnik-vs-postgis/)
+  - This change highlights a very important consideration that we at CARTO have been actively promoting for some time: basemap neutrality.
+# series
 - [Michael Jean的数据分析之路](https://zhuanlan.zhihu.com/c_1190937767960715264)
+
+- think8848: gis系列_201610
+  - [使用node-mapnik和openstreetmap数据初步搭建瓦片服务](https://www.cnblogs.com/think8848/p/6262696.html)
+  - [使用node-mapnik生成openstreetmap-carto风格的瓦片](https://www.cnblogs.com/think8848/p/6241836.html)
+  - [shp2pgsql向postgresql导入shape数据](https://www.cnblogs.com/think8848/p/6929351.html)

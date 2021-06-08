@@ -20,9 +20,7 @@ modified: '2021-05-13T03:18:43.412Z'
   - solr官网提供的功能更多，而es本身更注重于核心功能，高级功能有多个第三方插件
   - ref
     - https://zhuanlan.zhihu.com/p/61257030
-
 # discuss
-
 - ## [可否完全使用ElasticSearch代替数据库存储？](https://www.zhihu.com/question/45510463/answers/updated)
 - 目前公司的项目就是用的es做的数据储存，暂时发现的几个问题： 
   - 无事务，不具备ACID的特性（大概率会出现脏数据的问题） 
@@ -38,14 +36,14 @@ modified: '2021-05-13T03:18:43.412Z'
   - 所以ES是写入慢，读取快。数据库是写入快，读取慢。
   - 我觉得写入要求高的用redis，不高的全用ES，感觉挺方便的。没有了数据同步流程，爽
 
+- ## Who will be the first one to submit an OpenSearch plugin to logstash?
+- https://twitter.com/roidelapluie/status/1398678850490535937
+- We might fork the other components as necessary, but honestly people should move away from LogStash towards @fluentd or eventually @opentelemetry
 # docs
-
 - ref
   - https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
   - https://juejin.im/post/5d921442e51d4578364f6fd3
-
 # changelog
-
 - [license change in 202101](https://www.elastic.co/blog/licensing-change)
   - 7.10及以前采用Apache2, 7.11及以后采用SSPL or ElasticLic
   - We are moving our Apache 2.0-licensed source code in Elasticsearch and Kibana to be dual licensed under Server Side Public License (SSPL) and the Elastic License, giving users the choice of which license to apply.
@@ -58,7 +56,7 @@ modified: '2021-05-13T03:18:43.412Z'
     - [License Change Clarification](https://www.elastic.co/blog/license-change-clarification)
     - [license change tweet](https://twitter.com/kimchy/status/1351534442993446917)
 
-- **changelog**    
+- changelog
 - 7.0.0-201904
   - 7.1开始，Security功能免费使用
   - 集群连接变化：TransportClient被废弃，es7的java代码只能使用rest client，建议采用RestHighLevelClient的方式操作ES集群

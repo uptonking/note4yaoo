@@ -22,8 +22,10 @@ modified: '2020-10-05T06:18:21.639Z'
   - /12.9kStar/Apache2/201710
   - http://snapsvg.io/
   - JS library for modern SVG graphics
-
 # svg-animation
+- https://github.com/veltman/flubber
+  - /5.5kStar/MIT/201910/js
+  - The goal of this library is to provide a best-guess interpolation for any two arbitrary shapes
 
 - https://github.com/camoconnell/lazy-line-painter
   - A Modern JS library for SVG path animation
@@ -37,5 +39,4 @@ modified: '2020-10-05T06:18:21.639Z'
 - https://github.com/notoriousb1t/polymorph
   - morphs between two or more svg paths using a simple function
   - compatible with Just Animate, Popmotion, nm8, TweenRex, and other animation libraries
-
 # more-repos

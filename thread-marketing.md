@@ -10,12 +10,16 @@ modified: '2021-01-06T14:40:06.842Z'
 # guide
 
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## Apple has now paid over $230 billion to developers since the app store has launched. (Weird I thought customers paid them)
+- https://twitter.com/tominniss/status/1401972522325774341
+- Or put another way, they've creamed off nearly $100 Billion!
+- Same shit for YouTubers. YouTube gets ad Money and pays the creators. At least Apple talks about the Money, they keep for all of this. YouTube Money is still mysterious because its based on multiple things How much you can own
+  - I can bet that hosting YouTube is significantly more expressive than the Appstore. So maybe it doesn't make sense for YouTube to provide such data and have people fight them into bringing the rate down, i.e., destroy their core business model.
+- Here is why Netflix is not supported in shareplay, and this is also how Apple is preparing for the removal of the anti-steering(操纵，控制) provisions(条款，规定；供应品、粮食)
 
 - ## The whole open source model of relying on donations from individuals, and to a much lesser extent, companies, is really problematic. 
 - https://twitter.com/devongovett/status/1392201493596446722
@@ -26,8 +30,6 @@ modified: '2021-01-06T14:40:06.842Z'
   - or the company will need to pivot to become profitable in a way that hurts open source users.
 - An alternative model is for companies looking to improve a project to hire contributors and pay them to work on it together with members of the project from other companies. 
   - The project can't be owned by any individual company for this to work – all parties need to be equal.
-
-
 
 - ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 
 - https://twitter.com/jaredpalmer/status/1386411683074101248

@@ -21,10 +21,17 @@ modified: '2021-01-08T17:15:13.906Z'
 - clipboard only fully supported by Safari
 - Typed OM & CSS Paint API only fully supported in Chrome
 - bitmaprenderer, feature policy, & web locks experimental
-
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## not-yet: Why would the exact same settings produce so many absurdly wrong radio buttons?
+- https://twitter.com/Elijah_Meeks/status/1402097012875554822
+- My best guess is that whichever styles you're using, they're getting rounded to the nearest screen pixel. Border & box widths do this to avoid fuzzy edges.
+  - And maybe the device and browser are somehow miscommunicating how bit those pixels are??? Unless this is really small text.
 
 - ## justify-content vs align-items vs align-content
 - https://twitter.com/JoshWComeau/status/1394394504283758599
@@ -360,7 +367,7 @@ modified: '2021-01-08T17:15:13.906Z'
 - Once you add it all up, I feel like it's tough to argue for responsive prop arrays over objects.
 - I've been leaning on a more CSS approach recently either through a mediaQueries/variants prop:
 
-``` jsx
+```jsx
 <Stack
   direction="column"
   mediaQueries={{ 'medium': { direction: 'row'  } }}

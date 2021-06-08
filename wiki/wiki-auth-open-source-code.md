@@ -56,6 +56,13 @@ modified: '2020-10-31T06:36:49.770Z'
 - 在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
 - 如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。
 
+# MulanPSL - 2.0
+
+- ref
+  - https://opensource.org/licenses/MulanPSL-2.0
+
+- Apache License要求列出每个修改文件，其实很多项目做不到这一点，所以MulanPSL直接取消了这项要求
+
 # GPL (General Public License)
 
 - ref
@@ -71,7 +78,7 @@ modified: '2020-10-31T06:36:49.770Z'
   - 项目工作适合商业用途
   - 被许可方可以修改项目
   - 被许可方必须将源代码与衍生作品一起发布
-  - 衍生作品**必须以相同的条款发布**
+  - **衍生作品必须以相同的条款发布**
 
 - you have to release source code if you link against and distribute the binary, but don't if you just provide a service
 - 应用广泛
@@ -119,8 +126,8 @@ modified: '2020-10-31T06:36:49.770Z'
 # AGPL (Affero General Public License)
 
 - you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
-- GPL（2.x ~ 3.x） 协议还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。
-  - 如果软件不发布，即使使用 GPL (2.x ~ 3.x) 也可以不用开源。
+- GPL v2和v3还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。
+  - 如果软件不发布，即使使用GPL v2和v3也可以不用开源。
   - 随着以Google为代表的软件作为服务的互联网公司的兴起，它们的“不分发软件，为客户提供网络服务”的商业模式就不受GPL协议的约束
 - AGPL = GPL + 一条限制
 - 一条限制：如果使用AGPL许可的软件与用户通过网络进行交互，也需要提供源代码给用户，所有的修改也要给用户
@@ -144,7 +151,7 @@ modified: '2020-10-31T06:36:49.770Z'
   - 被许可方不得使用原作者名称或商标来为衍生作品背书（3句版和4句版BSD）
   - 被许可方必须在提及此项目功能或用途的所有广告材料中**致谢项目原作者**（4句版BSD）
 
-- 较为宽松，两个变种	
+- 较为宽松，两个变种
   - 要求 协议和版权信息
   - 允许 商用、分发、修改、私用、附加协议
   - 禁止 责任承担
@@ -191,7 +198,7 @@ modified: '2020-10-31T06:36:49.770Z'
 
 - A short, permissive software license. 
   - Basically, you can do whatever you want as long as you include the original copyright. 
-  - This license is functionally identical to the MIT/Expat and the Simplified BSD licenses, discarding some language that was made unnecessary by the Berne convention.
+  - This license is functionally **identical to** MIT/Expat and the Simplified BSD licenses, discarding some language that was made unnecessary by the Berne convention.
 - must include copyright/license
 
 - The ISC license is functionally equivalent to the BSD 2-Clause and MIT licenses, removing some language that is no longer necessary.
@@ -261,7 +268,7 @@ modified: '2020-10-31T06:36:49.770Z'
   - https://tldrlegal.com/license/eclipse-public-license-1.0-(epl-1.0)
   - https://www.eclipse.org/legal/epl-2.0/faq.php
 
-- This license, made and used by the Eclipse Foundation, is similar to GPL but allows you to link code under the license to proprietary applications. 
+- This license, made and used by the Eclipse Foundation, is **similar to GPL** but allows you to link code under the license to proprietary applications. 
   - You may also license binaries under a proprietary license, as long as the source code is available under EPL.
 - must include copyright/license/original, disclose source, compensate for damages
 
@@ -315,12 +322,6 @@ modified: '2020-10-31T06:36:49.770Z'
 
 - Let anyone do anything as long as they don't hold you liable.
 
-# MulanPSL - 2.0
-
-- ref
-  - https://opensource.org/licenses/MulanPSL-2.0
-
-- Apache License要求列出每个修改文件，其实很多项目做不到这一点，所以MulanPSL直接取消了这项要求
 
 # The Unlicense
 

@@ -7,8 +7,9 @@ modified: '2021-03-29T19:17:20.657Z'
 
 # dev-log-faq-repeat
 
-# 配置项过多时，如何处理更好，特别是针对组件或应用
+# 
 
+# 配置项过多时，如何处理更好，特别是针对组件或应用
 - tips
   - search: component too many props/options
   - Too many options = bad software.
@@ -16,6 +17,8 @@ modified: '2021-03-29T19:17:20.657Z'
 - 参考
   - vscode的settings页面
   - tsconfig的配置options页面
+  - webpack的配置
+  - css属性的类别和属性值的指定
 
 - 惯例优先原则/约定优于配置(convention over configuration)
   - 提供合理的默认值

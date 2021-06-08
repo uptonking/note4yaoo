@@ -31,7 +31,12 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Does anyone know if localStorage read/writes are synchronous between different tabs and windows?
+- https://twitter.com/tannerlinsley/status/1402021739513597957
+  - [Define how localStorage is synchronized between browser tabs/windows](https://github.com/whatwg/html/issues/403)
+- Between tabs, localStorage is, sessionStorage isn't. Not sure about between windows
+- I think it’s synchronous. And also persistent. Meaning that if you change it from a tab, it’ll also be changed on the other one. But I believe seeing the change in the other tab requires page refresh unless you have some sort of event listener on it.
+- Wouldn’t that require LS updates to be subscribe-able? Or am I misunderstanding your question?
 
 - ## 更好的做法：在if/else中处理差异，尽快结束分支，回到主线逻辑处理剩下相同/相似的部分。
 - https://twitter.com/TooooooBug/status/1401718371947716609

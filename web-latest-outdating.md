@@ -7,6 +7,15 @@ modified: '2020-12-23T16:19:25.169Z'
 
 # web-latest-outdating
 
+# relicensing
+
+- elasticsearch
+
+- mapbox-gl-js
+  - [Our Thoughts as MapboxGL JS v2.0 Goes Proprietary_202012](https://carto.com/blog/our-thoughts-as-mapboxgl-js-2-goes-proprietary/)
+
+- more-relicense
+  - sugar, redis, mongodb,sugar-crm
 # outdating
 
 ## outdating-projects

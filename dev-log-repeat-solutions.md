@@ -9,96 +9,79 @@ modified: '2021-04-23T17:17:33.807Z'
 # dev-log-repeat-solutions
 
 # guide
-
-- roadmap
-  - rendering is the future, but web not.
-
-- tech stacks: table in markdown editor
-  - design system: ui components, themeable, headless
+- techstacks: table in editor(components/themeable/headless)
+  - design system
   - text editor
-  - table component
+  - data table
 
-- apps: docs/sheets/data-oriented
+- solutions: live/reactive/interactive documentation
   - note-taking
     - markdown-based
     - collapsible
-  - datable
-    - pivot table
+  - pivotable
+    - pivot table/sheets
+    - data-oriented
   - live-documentation
     - table in document: notion
-    - live table & data sources
+    - dynamic data sources
     - shareable & embeddable
     - pdf
 
-- integrations/connections
-
 - tips
+  - rendering(~~web~~) is the future, but not the present.
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
+- integrations/connections
+  - github/gitee
+  - 腾讯文档
 # list-grid-table
-
 - tips
-
-## ag-grid /ag-grid
-
-## react-table/virtualized/window /indie
-
-## tabulator /indie
-
-## luckysheet /indie
-
-## more-list-grid
-
-- x-spreadsheet /indie
-- frappe-datatable
 
 - leading
   - excel
   - tencent docs
 
-## chart
+## ag-grid /ag-grid
 
-- d3
-- amcharts
-- chartjs
-- more-charting
-  - frappe-charts
-- leading
-  - plotly
-  - antv
+## react-table /indie
 
-## map
+## tabulator /indie
 
-- leaflet
-- maplibre-gl-js
+## luckysheet /bytedance
 
-## more-mapping
+## more-list-grid
 
-- turf
-
-- leading
-  - esri
-  - mapbox
-  - gaode
-
+- x-spreadsheet /indie
+- frappe-datatable /frappe
 # editor
-
 - tips
   - live edit
   - 随意搭建ui的需求过于灵活，而基于controls的在线配置编辑更实用
 
-## editorjs
+- more-editor
+  - monaco-editor
+    - code editor that powers desktop vscode
+    - not supported in mobile browsers. not for IE.
 
-## craftjs
+## charting-viz
 
-## more-editor
+- tips
 
-- slate
-- monaco-editor
-  - code editor that powers desktop vscode
-  - not supported in mobile browsers. not for IE.
+- leading
+  - d3
+  - antvis
+  - echarts
 
-# faves
+- more-charting
+  - vega
+# wishlist
+- faves
+  - design: adobe-spectrum, tailwind
+  - editor: prosemirror, codemirror, editorjs, craftjs
+  - geomapping:mapbox-gl, leaflet
+  - geoviz:deck.gl
+  - geoprocessing:turfjs, mapnik
+  - geo: esri，计算工具大部分都基于cpp
 
 - design-system
   - tips
@@ -115,7 +98,7 @@ modified: '2021-04-23T17:17:33.807Z'
   - creativetim
   - olap(js intensive)
 
-- window-layout-manager
+- layout/window-manager
   - tips
     - 常作为app的基础组件
   - golden-layout: 场景丰富功能全面的window
@@ -133,5 +116,3 @@ modified: '2021-04-23T17:17:33.807Z'
   - webgl
   - animation
     - FLIP
-
-# pieces
