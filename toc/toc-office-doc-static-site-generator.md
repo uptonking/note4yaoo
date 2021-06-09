@@ -33,6 +33,15 @@ modified: '2021-01-17T09:26:53.093Z'
   - /41.8kStar/MIT/202012/ruby
   - a blog-aware static site generator in Ruby
   - Jekyll is the engine behind GitHub Pages
+
+
+- https://github.com/snowpackjs/astro
+  - https://astro.build/
+  - Astro works a lot like a static site generator(jekyll)
+  - In Astro, you compose your website using UI components from your favorite JavaScript web framework (React, Svelte, Vue, etc). 
+  - Astro renders your entire site to static HTML during the build. 
+  - The result is a fully static website with all JavaScript removed from the final page.
+
 - https://github.com/hexojs/hexo
   - /31.8kStar/MIT/202010/js
   - 依赖bluebird、moment、warehouse(A JSON database with Models, Schemas, and a flexible querying interface)

@@ -13,21 +13,22 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+- ##  view a few of the universe's *Orbital Resonances* as if they were spirograph toys.
+- https://twitter.com/MattDzugan/status/1402590068787879937
+  - [Orbital Resonances](http://www.mattdzugan.com/resonances/)
+  - 两颗行星围绕太阳公转的简化示例，黑暗主题
 
-- ## 
-
-
-- ## 
-
+- ## visualization of a library collection for Ireland’s entry in the London Design Biennale
+- https://twitter.com/GrantCuster/status/1402330113161695241
+  - 球形上很多小方块
+  - The visualization is rendering in WebGL with the help of regl. We used basis compressed textures to try and keep the GPU load down. 
+  - https://collection.dropeverything.net/
 
 - ## one of the most emotional projects I ever did: Visualizing Censorship In Iran
 - https://twitter.com/h_i_g_s_c_h/status/1401805057004277761
   - https://github.com/higsch/censorship-in-iran
   - 依赖d3、svelte
   - [Visualizing Censorship in Iran](https://visualization.journalismisnotacrime.com/)
-
-
-
 
 - ## The Evolution of a ggplot
 - https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/

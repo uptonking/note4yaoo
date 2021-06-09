@@ -20,22 +20,20 @@ modified: '2020-07-14T10:38:48.217Z'
 - react-like/alternatives: preact, inferno, rewrite
   - lit-html/hyperhtml
 
-- react features
-- 函数式的组件架构
-  - 在组件层解决更I新dom与状态数据一致的问题(keep dom in sync with state)
-    - 这是前端框架都需考虑的问题，web components标准没有涉及，需自己实现
-  - 复用组件模块更简单，写法上只需一个jsx
-    - 传统组件需要先写html元素标签，再引入js操作元素
+- **react-features**
+- 虚拟DOM
+  - dom操作进行优化的空间，如Concurrent Mode，只更新必须变化的部分
+  - 容易实现跨平台
+- 函数式组件架构
+  - 在组件层解决更新dom与状态数据一致的问题(keep dom in sync with state), 这是前端框架都需考虑的问题，web components标准没有涉及，需自己实现
+  - 组件写法上更简单，写法上只需一个jsx, 传统组件需要先写html元素标签，再引入js操作元素
   - 组件易复用，关注点分离，local state
   - 组件可组合，函数更适合扩展到更多规模
 - 单向数据流
   - 思路更清晰，容易定位和调试
 - 声明式的组件
   - 由框架隐藏底层操作细节，降低开发复杂度
-  - 由框架操作底层dom更新，组件代码更关注业务操作，更简单清晰，更适合大规模
-- 虚拟DOM
-  - dom操作进行优化的空间，如Concurrent Mode，只更新必须变化的部分
-  - 实现跨平台
+  - 由框架操作底层dom更新，组件代码更关注业务操作，更简单清晰，更适合大规模开发
 - all in js
 
 - why react components
@@ -43,16 +41,13 @@ modified: '2020-07-14T10:38:48.217Z'
     - 其他框架就算在框架层能胜出性能，也无时间精力推出快速开发的生态
   - 最顶级公司的支持与推广
   - 最优秀的开发者主导的项目，修bug、制定方向与计划
-
 - react优点
   - 核心优点：可复用的组件模型
   - 声明式组件，简单清晰
   - 单向数据流
   - 只是js，没有引入模版和新语法(后面hooks引入了对js功能的部分限制)
-
 - react缺点
   - 不利于seo
-
 - vdom优点
   - 方便跨平台
   - 方便实现更多ui操作
@@ -60,12 +55,9 @@ modified: '2020-07-14T10:38:48.217Z'
 
 - why hooks
   - One of the design constraints and motivations for hooks was to represent a component being multiple states concurrently. 
-
   - That's something classes cannot express properly.
-- ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current); `
+- ??? 用一个ref对象保存另一个ref对象，如react-table中 `useGetLatest(instanceRef.current); `，可以方便垃圾回收
 - 在requestAnimationFrame中setState的性能
-
-# tips
 
 - react开放的生态
   - 状态管理、路由管理、取数、不可变数据结构、服务端渲染
@@ -73,7 +65,8 @@ modified: '2020-07-14T10:38:48.217Z'
   - Reach Router and it’s sibling project React Router are merging as React Router v6. 
     - In other words, Reach Router v2 and React Router v6 are the same
     - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
-- react
+# tips
+- 
 
 - I avoid declaring React components via the concise arrow syntax. 
   - Instead, I prefer to use plain old function declarations. Here's why:
@@ -127,7 +120,7 @@ modified: '2020-07-14T10:38:48.217Z'
   - 示例
     - `<a onClick={() => this.props.handleClick(this.props.item)} />`
 
-``` js
+```js
       // 更好的方式如下
       <a  onClick={this.onClick} />
       onClick = () => { this.props.handleClick(this.props.item); }
@@ -158,7 +151,7 @@ modified: '2020-07-14T10:38:48.217Z'
   - `key` and `ref` from the original element will be `preserved` .
   - React.cloneElement(this.props.children, this.props) 
 
-``` js
+```js
 React.cloneElement(
   element,
   [props],
@@ -168,7 +161,7 @@ React.cloneElement(
 
   - is almost equivalent to   
 
-``` js
+```js
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
@@ -261,9 +254,7 @@ React.cloneElement(
 - 不要在同一个方法连续写两个setState()，异步更新可能只更新一个
 - fiber是React 16中新的和解引擎，它的主要目的是使虚拟DOM能够进行增量渲染   
 - vdom虚拟的视图被保存在内存中，并通过诸如ReactDOM这样的库与真实的DOM保持同步
-
 # react-basis
-
 - react要点
   - 组件的设计：jsx、生命周期、高阶组件、容器组件、非受控组件
   - 单向数据流
@@ -297,7 +288,7 @@ React.cloneElement(
   - 使用  
       - 高阶组件调用wrapper组件的方法：使用ref    
 
-``` js
+```js
             var Wrapper = (Home) => {
               return React.createClass({
                 render() {
@@ -329,9 +320,7 @@ React.cloneElement(
 - 核心
   - 组件声明周期
   - 单向数据流
-
 # react events
-
 - SyntheticEvent是支持跨览器原生事件接口的跨浏览器实现
 - The SyntheticEvent is pooled
 - SyntheticEvent object will be reused and all properties will be nullified after the event callback has been invoked

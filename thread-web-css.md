@@ -26,7 +26,14 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## How much does minifying CSS files really help I wonder.
+- https://twitter.com/kentcdodds/status/1402396259688665089
+  - You can't mangle selectors, property names, or values. You can only really get rid of comments and whitespace (which gzips away anyway).
+  - And with HTTP/2, concatenating probably doesn't matter much either
+- well, if your site gets a million visits a month, a million requests to that CSS file, if you save 5kb by compressing it, that's 5M kb => 5GB of bandwidth and depending on your hosting that could be a couple of bucks a month. Also, a tiny speed boost for every user and page load.
+- As always, it depends on the scale. Sometimes it isn't worth it to uglify JavaScript either. You can always do the math to figure out how many bytes you'll save. But how much will it cost in debugability and developer time? It's good to think it through.
+- you can make structural changes and minify properties & values
+  - https://github.com/css/csso
 
 - ## not-yet: Why would the exact same settings produce so many absurdly wrong radio buttons?
 - https://twitter.com/Elijah_Meeks/status/1402097012875554822

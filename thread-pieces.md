@@ -24,6 +24,19 @@ modified: '2021-01-11T12:10:50.900Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## SQLite 的作者 D.理查德·希普，用到的所有工具都是自己写的
+- https://twitter.com/ruanyf/status/1402439971542167556
+  - 昨天发布了HTTP服务器软件Althttpd。SQLite官网就用它架设，整个软件只有一个C文件
+  - 先写了数据库SQLite，接着写了Bug追踪系统 CVSTrac，然后写了版本管理系统Fossil，现在是 Web 服务器。
+
 - ## One thing I've learned this week: some of the best engineering candidates have almost *zero* Twitter presence.
 - https://twitter.com/mjackson/status/1400266606723289088
   - They lurk, and they email you when you put up a job req in a tweet. But they don't tweet much themselves.

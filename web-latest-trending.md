@@ -8,6 +8,8 @@ modified: '2021-01-01T20:52:42.088Z'
 # web-latest-trending
 
 # guide
+- viewpoints
+  - Payments are moving from batch processing to realtime processing. this changes everything
 
 - watching
   - ~~renderer using sika like flutter~~
@@ -98,15 +100,11 @@ modified: '2021-01-01T20:52:42.088Z'
   - Pointer Events
   - CSS Typed OM
   - Web Bluetooth
-
 # products
-
 - natto
   - https://natto.dev/
   - a canvas for JavaScript
-
 # discuss
-
 - ## techs to look out for in the javascript world in 2021
 - https://twitter.com/KerryRitter/status/1344039489123934209
   - @stenciljs - web components compiler

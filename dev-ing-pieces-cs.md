@@ -22,7 +22,7 @@ modified: '2021-03-29T19:29:56.558Z'
 ``` JS
 // ThunkActionCreator
 function fetchUser(id) {
-  // 返回的这个函数既是一个 Thunk, 或者叫 ThunkAction
+  // 返回的这个函数是一个 Thunk, 或者叫 ThunkAction
   return async ({ dispatch }) => {
     // 额外的异步API调用
     const user = await api.getUser(id);

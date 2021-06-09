@@ -20,7 +20,7 @@ modified: '2021-01-01T20:06:19.327Z'
     - 开发调试时编译成类似bootstrap的唯一类名，发布时编译成atomic css
     - ！！！ 甚至可以在发布时编译出使用css vars实现的theme
 
-- 缺点
+- css-in-js-cons
   - styled形式的css in js，跨项目复用css难
     - 不方便将一套css用在多个项目，可考虑实现一套css和一套css in js
 
@@ -35,9 +35,7 @@ modified: '2021-01-01T20:06:19.327Z'
   - Keep your CSS as static as possible for variations (the most important optimization)
   - Consider compile time libs like linaria, compiled
   - Use CSS Variables for theming
-
 # pieces 
-
 - css-in-js vs sass
   - Component Driven idealogy. Your CSS also is now a component. - This is pretty cool!
   - Total styling isolation
@@ -48,6 +46,30 @@ modified: '2021-01-01T20:06:19.327Z'
   - Easily use javascript variables within style
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
+# discuss-stars
+- ## Super happy that someone dug into real life css-in-js performance. 
+- https://twitter.com/Vjeux/status/1402352889469673473
+  - In theory, css-in-js should be faster because we remove all the rule selection part of css, but that doesn't seem to be realized in this case.
+- Many CSS-in-JS libraries do not compile to stylesheets at build time. The main reason is that this would be very difficult to do statically while still allowing styles to be assembled using arbitrary JS, depend on runtime props, etc.
+- I think most of styles css-in-js build is static, is it possible only dynamically assigned style resources  to be built in runtime?
+  - It's not simple, one big problem is that you can't change the order of rules, or it might break things. So somehow the static extraction part needs to make sure that the order stays the same with dynamic styles, which won't be possible, or determine what's safe to extract.
+  - It's not just rules, sometimes we use multiple classes on same element, and for that to work properly, the order of the styles needs to be the same in the output. It can be very complex to do with combination of both dynamic and static styles, I'm not even sure if it's possible.
+- **Libraries like a Linaria extract everything to static styles, so the order is always preserved**. Dynamic styles are applied using CSS custom properties. But this approach has limitations, you can only have dynamic values for style properties, not whole rulesets.
+  - It's also not simple, to make sure that everything static can be extracted, Linaria needs to evaluate the JavaScript in a VM so that you can have actual logic in JavaScript, import values from other files etc. It also needs to make sure to evaluate as little as needed for perf.
+  - Of course there are other simpler approaches, but the simpler the approach, the more limitations you'll have on what you can do in the styles.
+- I've had a similar experience. This is why a really important part of jsxstyle was the webpack plugin to extract static css files and remove the runtime.
+
+- [Real-world CSS vs. CSS-in-JS performance comparison](https://pustelto.com/blog/css-vs-css-in-js-perf/)
+- tldr: Don’t use runtime CSS-in-JS if you care about the load performance of your site. 
+  - Simply less JS = Faster Site. 
+  - There isn’t much we can do about it. 
+- Run test:
+  - Network (size of the JS and CSS assets, coverage, number of requests)
+  - Lighthouse audits (performance audit with mobile preset).
+  - Performance profiling (tests for page load, one for drag and drop interaction)
+- Conclusion
+  - As you can see runtime CSS-in-JS can have a noticeable impact on your webpage.
+  - I think build-time CSS-in-JS libs will be the next big thing in the CSS ecosystem 
 
 - ## [Why Don’t I Sell the Idea of Static Extraction with CSS-in-JS?](https://medium.com/@tkh44/why-dont-i-sell-the-idea-of-static-extraction-with-css-in-js-df21f571503b)
 
@@ -119,17 +141,13 @@ modified: '2021-01-01T20:06:19.327Z'
   - Then I switched to linaria, it drops 6kb from bundle and no runtime. 
   - Going forward I'll explore linaria+tailwind. 
   - I think tailwind will be a more powerful now because its jit compiler.
-
 # survey: css in js vs css
-
 - ## [are there any cons to using regular CSS vs CSS-in-JS?_2018](https://twitter.com/ka11away/status/1014990019801411586)
 - css: css-in-js = 0.557: 0.443 /79votes
 - It’s depends on ur purposes. 
   - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
   - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
-
 # discuss
-
 - ## NEW ATOMIC CSS FRAMEWORK: Sprinkles
 - https://twitter.com/markdalgleish/status/1387293525256007682
   - Zero-runtime CSS-in-TS
@@ -160,9 +178,7 @@ modified: '2021-01-01T20:06:19.327Z'
 - Well, this is not about CSS Modules, but a very nature of CSS and the bundling process. 
   - MiniCSSPlugin actually detects and reports some of such “race conditions”, (mostly false positives) but not able to solve.
   - indeed. CSS Modules additionally gives you that false sense confidence - people think that since styles are scoped they are good. I think that with some strict linter rules the issue I mentioned can be avoided
-
 # ref
-
 - [The Next Era of CSS in JavaScript - From CSS-in-JS to TSS_202008](https://joebell.co.uk/blog/the-next-era-of-css-in-js)
   - More and more libraries are choosing to focus on features such as:
     - Static extraction

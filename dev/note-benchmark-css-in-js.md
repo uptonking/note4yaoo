@@ -26,17 +26,13 @@ modified: '2020-08-08T11:39:55.792Z'
   - 14.70ms, react-jss@^10.0.4
   - 22.44ms, emotion@^10.0.27  
   - css-modules 
-
 # comparison
-
 - [Stitches Benchmarks](https://github.com/modulz/stitches-benchmark)
 - [styled-components vs emotion](https://github.com/jsjoeio/styled-components-vs-emotion)
   - /20191025
   - emotion is ready for React Concurrent mode and it has a smaller bundle size
-
 # ref
-
-- MicheleBertoli/css-in-js /201809
+- react css-in-js comparison /201809
   - https://github.com/MicheleBertoli/css-in-js
   - React: CSS in JS techniques comparison
   - only list supported features of libs
