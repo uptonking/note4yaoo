@@ -6,11 +6,8 @@ modified: '2021-06-02T18:24:28.052Z'
 ---
 
 # pm-notable-xp
-
 - local/offline first markdown-based note-taking app
-
 # features
-
 - core
   - local/offline/private/privacy first markdown-based note app
     - local note data as first class data source
@@ -48,15 +45,11 @@ modified: '2021-06-02T18:24:28.052Z'
 - globalOptions
   - defaultViewMode/defaultEditMode
   - indentationSpace
-
 # xp
-
 - nice-to-have
   - 该多用一级标题`#`来减少嵌套，与最顶部一级标题作为文档标题并不冲突
     - 可能不符合阅读习惯，比如word中顶部一级标题常用最大号，此处渲染可用代码修改
-
 # conpetitive-alternatives
-
 - notion
 
 - [我来](https://www.wolai.com/)
@@ -72,9 +65,7 @@ modified: '2021-06-02T18:24:28.052Z'
   - 支持右侧显示悬浮目录，在窄屏会显示小黑条
   - 多媒体内容与国内服务商结合紧密，特别是视频、地图
   - 表头提供了免费授权的背景图
-
 # requirements
-
 - io模块
 - 编辑模块
   - markdown-editor-monaco
@@ -102,12 +93,9 @@ modified: '2021-06-02T18:24:28.052Z'
 - discuss
   - markdown顶部元数据采用注释形式，而不是多级键值对
   - 添加快捷键：复制文字的链接url
-
 # experimental
-
 - [interactive notebooks](https://nteract.io/)
   - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPL.
-
 # notable
 
 ## notable-xp-todo
@@ -122,8 +110,9 @@ modified: '2021-06-02T18:24:28.052Z'
 - [ ] edit-character: special character support, like `「Microsoft Store」`
   - https://copychar.cc/symbols/
 - [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
-- [ ] edit-list: list symbol to number  
-- [ ] edit-list: toggle lines to list  
+- [ ] edit-list: list symbol to number
+- [ ] edit-list: toggle lines to list
+  - 直接添加`- `将多行文字里的每行转换成列表中的一项，甚至可以添加`- [ ]`转换成待办事项列表
 - [ ] edit: 粘贴后，批量删除中文段落中部分英文单词两边的空格
 - [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`
 - [ ] keyboard: alt+arrow, move current line up/down

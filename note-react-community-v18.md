@@ -37,7 +37,16 @@ modified: '2021-06-09T10:38:04.542Z'
 
 - ## 
 
-- ## 
+- ## With time we’ve noticed many bugs had common causes. 
+- https://twitter.com/dan_abramov/status/1402937595005386752
+  - Some parts of our code were overly “clever” and fragile. 
+  - In some places the whole model was flawed and fixing one thing broke the other. 
+  - This knowledge led to @acdlite , @lunaruan and @brian_d_vaughn doing two huge refactors.
+  - At some point after the refactors rolled out, these bugs just stopped happening. We haven’t had a big one for months by now. But rolling out those refactors was very hard because they could break everything. So we kept two versions of most files, and shipped both as AB test.
+- One of these refactors was risky because we replaced a “clever” fast mechanism with a more naïve one. This fixed bugs but AB test showed a significant perf regression. We couldn’t ship it because we didn’t know the cause. We can’t slow down all React apps due to some refactor.
+  - We couldn’t guess where the problem is but we were hoping it’s a bug and not a fatal perf flaw. So we reverted the entire refactor and then split it into small individual commits.
+  - In retrospect, we should’ve done that from the beginning. It seemed gruelling to redo the work as small atomic changes and AB test each change separately (for at least a week) but finally we found the bad commit. In a small change, the team guessed the issue and the fix worked.
+- This refactor unblocked the remaining work which was needed to fix the last significant set of issues with Suspense API that we’ve learned over the two years of using it extensively in the product code. We switched to working on incremental adoption right after in early 2021.
 
 - ## Pitfalls and surprises in data fetching
 - https://github.com/reactwg/react-18/discussions/35

@@ -10,7 +10,6 @@ modified: '2021-06-02T17:26:42.963Z'
 > easy to read， easy to write， content-centric notebook
 
 # guide(for notable/noter/paper)
-
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
 
@@ -22,9 +21,10 @@ modified: '2021-06-02T17:26:42.963Z'
 
 - 特色功能点
   - localizable note file(not local-first)
+  - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
   - api doc
     - 生成openapi/swagger ui风格的文档
-  - term block
+  - hero block
     - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - examples as notes
 
@@ -33,8 +33,10 @@ modified: '2021-06-02T17:26:42.963Z'
   - 因为允许替换，所以经常需要动态导入
 # features
 - ## text-editing
-- 选择多行文字，批量在行首添加`- `，转换成列表显示
+- 选择多行文字，批量在行首添加`- `转换成列表显示，甚至`- [ ]`转换成待办列表
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-b vs c-d
+- 按键书写
+  - `[ctrl]`+`[c]`
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

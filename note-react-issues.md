@@ -23,7 +23,6 @@ modified: '2021-06-09T00:46:34.611Z'
   - They don’t depend on each other.
   - Take a look at their implementations, specifically at their render methods.
 
-
 - [How to access Redux store using React Router?](https://stackoverflow.com/questions/56701584)
 - It's a good practice to follow the connect pattern. 
   - You can create containers for components and do the connection there.

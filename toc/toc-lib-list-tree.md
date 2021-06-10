@@ -58,9 +58,7 @@ modified: '2020-07-12T19:00:27.345Z'
     - https://twitter.com/clauderic_d/status/1375623307060510731
       - I recently built a sortable tree example with @dndkit .
       - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
-
 # file-folder-directory-scan-watch
-
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render
   - 文件逐个处理
@@ -103,6 +101,13 @@ modified: '2020-07-12T19:00:27.345Z'
 - https://github.com/Qard/onchange
   - 依赖chokidar
   - Use glob patterns to watch file sets and run a command when anything is added, changed or deleted.
+- https://github.com/fabiospampinato/watcher
+  - The file system watcher, with no native dependencies and optional rename detection support.
+  - Node's built-in `fs.watch` function is garbage and you never want to use it directly.
+    - Recursive watching is not supported under Linux
+    - the events provided by fs.watch are completely useless as they tell you nothing about what actually happened in the file system
+  - `chokidar` requires a native dependency for efficient recursive watching under macOS
+  - It doesn't watch recursively efficiently under Windows
 
 - https://github.com/tapio/live-server
   - 依赖chokidar、colors、connect、event-stream、faye-websocket、htp-auth、morgan、opn、proxy-middleware、send、serve-index
@@ -163,9 +168,7 @@ modified: '2020-07-12T19:00:27.345Z'
   - Data Preview is already capable of loading a few 10+MB's large data files with 100+K records & extensive list of supported Data Formats
   - you'll be hard pressed to find on VSCode marketplace in one extension.
   - soon it will include large text & binary data files loading & Apache Arrow data streaming.
-
 # misc
-
 - https://github.com/aximario/json-tree
   - 把扁平化的数据转换成树形结构的JSON，把树形JSON扁平化
 - https://github.com/daniel-hauser/react-organizational-chart
