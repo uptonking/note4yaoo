@@ -7,9 +7,9 @@ modified: '2021-06-02T17:07:33.920Z'
 
 # lib-editor-rich-markdown-codebase
 
-# rich-markdown-editor
+# rich-markdown-editor.v11.10.0_202106_BSD
 
-# keyboardnotes
+# keyboardnotes.v0.1.0_202101_NALic
 - features
   - keyboard first
   - no vendor lock-in
@@ -29,3 +29,9 @@ modified: '2021-06-02T17:07:33.920Z'
 
 - later
   - 官网demo按`c`键创建新笔记会有延迟，本地却没有延迟，可能是外网连接慢的问题
+
+- xp-pros
+  - reducer和action设计得非常好，可以直接从redux迁移到useReducer
+
+- xp-cons
+  - useReducer不支持thunk，所以dispatch异步action时要修改逻辑

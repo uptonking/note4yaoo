@@ -19,9 +19,7 @@ modified: '2021-05-13T03:14:00.514Z'
     - 可以在浏览器控制台中设置blackboxing为事件源码文件，然后就可以调试跟踪到listener了
   - https://github.com/watson/event-debug
     - Log all events emitted by a Node.js EventEmitter object.
-
 # guide
-
 - 状态管理的主要任务
   - 读写状态，主要是更新：get/set/read/update
   - 状态变化后，通知应用程序变化的数据，通常会执行变化相关的回调函数
@@ -58,6 +56,26 @@ modified: '2021-05-13T03:14:00.514Z'
   - 不支持跨page传递数据
   - 不支持数据持久化
 - SPA中只有跨页面的信息才进入Store。基于这个原则，对Store进行精简、降级
+
+- ## The Modern Quadfecta of React State Management 
+- https://twitter.com/flybayer/status/1337065452154089472
+🏆 xstate  — simplifies complex logic (State machines)
+🏆 zustand — simplifies flux principles (like Redux)
+🏆 jotai   — simplifies atomic principles (like Recoil)
+🏆 valtio  — simplifies proxy principles (like Mobx)
+- Each of the four options are very powerful and can all mostly do the same things, but each one is better suited to different use cases.
+  - NOTE: This does not include cached server state management which would be things like react-query, apollo, etc.
+- zustand is a 100% redux compatible_ store = createStore().getState/setState/subscribe.
+  - essentially bases on the same principles. 
+  - it just doesn't force you to use providers, actions, action-types, reducers. 
+  - the way it evaluates changes is the same.
+
+- [State management solution 2021](https://www.reddit.com/r/reactjs/comments/nbh8ld/state_management_solution_2021/)
+- for the last 2 years I’ve been working on 4 different, high quality and heavily used apps (mostly e-commerce). All of them only used Context API as a solution for state management and it worked very well.
+- zustand is redux reduced to its fundamentals (flux state). 
+  - jotai is recoil reduced (atom state) 
+  - and valtio is like vue/svelte (proxy state). 
+  - all three are on poimandres, and they all share the same philosophy: reduction without sacrifice.
 
 - ## [web前端为什么很少用有限状态机设计框架？](https://www.zhihu.com/question/278938893)
 - 我本身做游戏开发的，但是对前端有着很大的兴趣. 在游戏开发的时候处理不同的状态的切换避免过量的判断语句会使用有限状态机去实现.
@@ -102,9 +120,7 @@ modified: '2021-05-13T03:14:00.514Z'
 - My favorite is both. 
   - Favor CSS variables but still update a context so that you can switch out the components **for advanced use cases that have different rendering**.
   - Also update the CSS variables in useLayoutEffect so it happens at the same time as the context change.
-
 # pieces
-
 - event-pub/sub vs browser event
   - 目前CustomEvent的支持率达到了99.38%，几乎所有浏览器都支持，IE9-11部分支持
   - What your describing is the difference between
@@ -130,7 +146,7 @@ modified: '2021-05-13T03:14:00.514Z'
     - [Custom Event emitter/consumers in Browser Javascript outside DOM](https://stackoverflow.com/questions/51110935/custom-event-emitter-consumers-in-browser-javascript-outside-dom)
       - 借助DOM通过自定义事件传递数据时，事件属性会继承所有基类属性，如bubble、detail等，而这些属性可能与业务数据无关
 
-``` JS
+```JS
 // 提供一个示例元素
 let obj = document.body;
 // add an appropriate event listener
@@ -222,9 +238,7 @@ obj.dispatchEvent(event);
   - flux
   - observables(Observer pattern)
 - To be honest, if your code becomes complex enough that you actively have to worry about state and a few variables clearly don't cut it, you either bring in a small state management helper or write your own.
-
 # ref
-
 - [A Very Basic State Management Library In Under 100 Lines Of JavaScript_2020](https://vijitail.dev/blog/basic-state-management-library-using-vanilla-javascript)
   - https://github.com/vijitail/Kel
   - This library is going to make use of the Pub/Sub pattern like most of the other libraries, so all the data will be passed around using events

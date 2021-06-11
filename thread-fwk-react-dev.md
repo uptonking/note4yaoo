@@ -6,11 +6,8 @@ modified: '2021-01-06T14:40:03.364Z'
 ---
 
 # thread-fwk-react-dev
-
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
-
 # repeat
-
 - ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
 - https://twitter.com/sseraphini/status/1379547345130565632
 - For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.
@@ -18,12 +15,27 @@ modified: '2021-01-06T14:40:03.364Z'
   - Unidirectional data flow is easier to reason about.
   - VDOM makes it performant and robust.
   - Huge ecosystem and community.
-
 # pieces
-
 - ## 
 
-- ## 
+- ## Thinking about React Fast Refresh next, but there are many dependencies.
+- https://twitter.com/jarredsumner/status/1403283485389844485
+- React Fast Refresh depends on:
+  - Hot Module Reloading
+  - JavaScript Parser hooks that hash code and annotate fn calls, hooks, exports
+- Hot Module Reloading depends on:
+  - WebSocket Server + small runtime api / client 
+  - Filesystem Watcher (detect changes)
+- Filesystem Watcher is platform-specific.
+  - macOS: FSEvents || Kqueue
+  - Windows: watch dirs but not files
+  - Fortunately, Zig makes using platform-specific APIs pretty easy. 
+- I’ll probably DIY the Websocket Server implementation
+  - I’ll first try just giving each websocket client it’s own thread. 
+  - That should be okay in a development context where you don’t have thousands of clients. 
+  - Probably another thread for listening and responding to fs events
+- I’ll probably do the websocket part before the filesystem part. 
+  - Worried about the build perf impact of React Fast Refresh — hashing a lot of stuff is slow due to all the copying.
 
 - ## A reminder that React `StrictMode` silences `console.log` on the double renders. This is the reminder I wish I'd read two hours ago 
 - https://twitter.com/mattgperry/status/1389946417993687043
@@ -133,7 +145,7 @@ modified: '2021-01-06T14:40:03.364Z'
 - https://twitter.com/SquishyDough/status/1380592058411388935
 - Yep, I've done that several times myself - works great! After all, a reducer function is just a reducer, no matter what you used to write it
 
-``` JS
+```JS
 const counterSlice = createSlice({
   /* usual stuff here */
 })
@@ -470,7 +482,7 @@ const [counter, dispatch] = useReducer(counterSlice.reducer, 0)
   - [memoizedHandlers.js](https://gist.github.com/kyleshevlin/08a2deb904b79077e46966567ccabf06)
   - Makes it super simple to make a whole bunch of methods stable, preventing unnecessary rerenders
 
-``` JS
+```JS
 function useBool(initialState = false) {
   const [state, setState] = React.useState(initialState)
 

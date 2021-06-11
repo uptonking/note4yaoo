@@ -15,7 +15,10 @@ modified: '2021-06-09T00:46:34.611Z'
 
 - ## 
 
-- ## 
+- ## React useReducer async data fetch
+- https://stackoverflow.com/questions/53146795
+- Fetch data before dispatch (simple)
+- Use middleware for dispatch (generic)
 
 - ## Order of Redux Provider and Router in React app
 - https://stackoverflow.com/questions/49120583

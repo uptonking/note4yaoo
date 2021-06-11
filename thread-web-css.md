@@ -24,7 +24,8 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
-- ## 
+- ## Learn About Aspect Ratio In CSS
+- https://ishadeed.com/article/css-aspect-ratio/
 
 - ## How much does minifying CSS files really help I wonder.
 - https://twitter.com/kentcdodds/status/1402396259688665089

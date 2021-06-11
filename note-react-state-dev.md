@@ -6,7 +6,11 @@ modified: '2020-12-08T13:40:02.577Z'
 ---
 
 # note-react-state-dev
+# guide
 
+- context selector的主要实现
+  - 依赖scheduler: dashi/use-context-selector,@fluentui/react-context-selector
+  - 其他实现: mohebifar/react-use-context-selector(无依赖)
 # guide
 
 - ## [Implement naive version of context selectors](https://github.com/facebook/react/pull/20646)
@@ -31,7 +35,7 @@ modified: '2020-12-08T13:40:02.577Z'
 - ## [Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)
 
 - 状态管理要解决的问题是跨组件状态共享
-  - state声明、读取、修改
+  - state数据结构定义和存放、读取、修改
 - `useState` doesn't offer a way to bail out of rendering once an update is being processed. 
   - This gets a bit weird because we actually process updates during the rendering phase. So we're already rendering. 
   - But we could offer a way to bail on children. 

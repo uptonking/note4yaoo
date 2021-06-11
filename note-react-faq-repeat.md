@@ -14,7 +14,26 @@ modified: '2021-06-10T06:44:27.120Z'
 
 ## 
 
-## 
+## context selector
+
+- [Implement useSelector equivalent for React Context?](https://stackoverflow.com/questions/59741558)
+- No, it's not possible. 
+  - Any time you put a new context value into a provider, all consumers will re-render, even if they only need part of that context value.
+  - That's specifically one of the reasons why we gave up on using context to propagate state updates in React-Redux v6, and switched back to using direct store subscriptions in v7.
+  - Last time I checked, the `useContextSelector` lib works by hacking around its normal behavior. It uses the undocumented `unstable_changedBits` option to force the context consumers to never actually update as they normally would, then uses subscriptions to bypass the normal rendering flow and trigger additional re-renders. 
+- it is not possible, but you can work around it without using external dependencies and without falling back to doing manual subscriptions.
+  - As a workaround, you can let the component re-render, but skip the VDOM reconciliation by memoizing the returned React element with `useMemo`.
+
+```JS
+function Section(props) {
+  const partOfState = selectPartOfState(useContext(StateContext))
+
+  // Memoize the returned node
+  return useMemo(() => {
+    return <div>{partOfState}</div>
+  }, [partOfState])
+}
+```
 
 ## useMemo vs React.memo
 
@@ -104,6 +123,39 @@ function useState<T>(initialState: T | (() => T)) {
   - https://www.jianshu.com/p/7cbf04c6bcc6
 
 ## redux vs useReducer
+
+- [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://blog.isquaredsoftware.com/2021/01/context-redux-differences/)
+- React-Redux uses Context internally. 
+  - However, it's critical to note that React-Redux only passes down the Redux store instance via context, not the current state value!.
+  - The actual Redux store is injected into the tree at runtime using the React-Redux `<Provider>` component.
+- "state management" means having ways to:
+  - store an initial value
+  - read the current value
+  - update a value
+- React's useState and useReducer hooks are good example of state management.
+- Redux and MobX are clearly state management as well
+- We can even say that server caching tools like React-Query, SWR, Apollo, and Urql fit the definition of "state management"
+  - they store initial values based on the fetched data, return the current value via their hooks, 
+  - allow updates via "server mutations", and notify of changes via re-rendering the component.
+- Context is not a "state management" tool!
+  - Context does not "store" anything itself.
+  - The parent component that renders a `<MyContext.Provider>` is responsible for deciding what value is passed into the context, and that value typically is based on React component state. 
+  - The actual "state management" is happening with the `useState/useReducer` hook.
+
+- Context + useReducer does look an awful lot like Redux + React-Redux.
+- Context + useReducer relies on passing the current state value via Context. React-Redux passes the current Redux store instance via Context.
+  - That means that when `useReducer` produces a new state value, all components that are subscribed to that context will be forced to re-render, even if they only care about part of the data. This may lead to performances issue
+  - With React-Redux, components can subscribe to specific pieces of the store state, and only re-render when those values change.
+- Context + useReducer are React features, and therefore cannot be used outside of React. 
+  - A Redux store is independent of any UI, and so it can be used separate from React.
+- The React DevTools allow viewing the current context value, but not any of the historical values or changes over time.
+  - The Redux DevTools allow seeing all actions that were dispatched, the contents of each action, the state as it existed after each action was processed, and the diffs between each state over time.
+- `useReducer` does not have middleware. 
+  - You can do some side-effect-y things with `useEffect` in combination with useReducer
+  - I've even seen some attempts to wrap useReducer with something that resembles a middleware, but both of those are severely limited in comparison to the functionality and capabilities of Redux middleware.
+- There's a lot of posts out there that recommend setting up multiple separate contexts for different chunks of state, both to cut down on unnecessary re-renders and to scope concerns. 
+  - Some of those also suggest adding your own "context selector components", which require a mixture of React.memo(), useMemo(), and carefully splitting things up so there's two separate contexts for each segment of state (one for the data, and one for the updater functions). 
+  - Sure, it's possible to write code that way, but at that point you're just reinventing React-Redux, poorly.
 
 - useReducer+useContext优点
   - 减少依赖和复杂度，减少样板代码，减少组件的wrapper hell

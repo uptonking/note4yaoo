@@ -7,8 +7,10 @@ modified: '2020-07-14T11:03:53.196Z'
 
 # toc-lib-state-management
 
+# guide
+- 实现状态管理的思路
+  - flux、atoms、proxy、state-machine、server-state-cache
 # agnostic
-
 - redux /MIT/53.7kStar/202005/ts/单向数据流
   - https://github.com/reduxjs/redux
   - https://redux.js.org/
@@ -94,9 +96,7 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/ForsakenHarmony/parket
   - A library to manage application state, heavily inspired by mobx-state-tree
   - This library uses Proxies and Symbols
-
 # event pub/sub
-
 - EventEmitter /3kStar/Unlicense/202001/js/NoDeps
   - https://github.com/Olical/EventEmitter
   - brings the power of events from platforms such as node.js to your browser
@@ -133,19 +133,26 @@ modified: '2020-07-14T11:03:53.196Z'
     - It could be months before RxJS it eventually supports Deno.
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
-
 # react
-
+- unstated-next /3.5kStar/MIT/202005/ts
+  - https://github.com/jamiebuilds/unstated-next
+  - 封装很少，无selector
+  - 200 bytes to never think about React state management libraries ever again
+- constate /3.3kStar/MIT/202103/ts
+  - https://github.com/diegohaz/constate
+  - 根据selector自动拆分成多个context，需要比较 创建多个context的消耗 和 使用useMemo的消耗
+  - 使用selector自动创建的context是嵌套的，注意嵌套地狱
+  - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
 - recoil /MIT/7.9kStar/202007/js
   - https://github.com/facebookexperimental/Recoil
   - https://recoiljs.org/
   - Recoil is an experimental set of utilities for state management with React
   - Promote an Actor model event-based architecture
-- zustand /4.9kStar/MIT/202010/ts
+- zustand /4.9kStar/MIT/202010/ts/like-redux
   - https://github.com/pmndrs/zustand
   - a comfy api based on react hooks, isn't boilerplatey or opinionated, 
   - but still just enough to be explicit and flux-like.
-- jotai /1.8kStar/MIT/202010/ts
+- jotai /1.8kStar/MIT/202010/ts/like-atoms
   - https://github.com/pmndrs/jotai
   - state resides with React, getting full benefits from suspense and concurrent mode
   - How does Jotai differ from Recoil?
@@ -171,12 +178,6 @@ modified: '2020-07-14T11:03:53.196Z'
   - Taking the good parts of Redux and React Context to build a flexible, scalable and easy to use state management solution.
   - This library merges ideas from redux, react-redux, redux-thunk, react-copy-write, unstated, bey, react-apollo just to name a few. 
   - Moreover it has been the result of months of discussions with devs at Atlassian
-- unstated-next /MIT/2.6kStar/202005
-  - https://github.com/jamiebuilds/unstated-next
-  - 200 bytes to never think about React state management libraries ever again
-- constate /MIT/2.6kStar/202002
-  - https://github.com/diegohaz/constate
-  - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
 - react-easy-state /MIT/2.1kStar/202004
   - https://github.com/RisingStack/react-easy-state
   - Simple React state management with ES6 Proxies
@@ -214,7 +215,6 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/jamesknelson/govern
   - Component-based state management for JavaScript.
 # redux-like
-
 - easy-peasy /MIT/3.6kStar/202006
   - https://github.com/ctrlplusb/easy-peasy
   - https://easy-peasy.now.sh/
@@ -225,9 +225,7 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/redux-zero/redux-zero
   - /1.9kStar/MIT/202008/ts
   - lightweight state container based on Redux
-
 # state-machine
-
 - https://github.com/jakesgordon/javascript-state-machine
   - /7.4kStar/MIT/201807/js
   - A library for finite state machines. xstate也是
@@ -248,9 +246,7 @@ modified: '2020-07-14T11:03:53.196Z'
   - JavaScript event-driven state machine.
 - https://github.com/alexmdodge/ts-state-machine
   - A package with a simple state machine for the purpose of learning
-
 # more-state
-
 - Valoo: just the bare necessities of state management.
   - https://gist.github.com/developit/a0430c500f5559b715c2dddf9c40948d
 - bloc /MIT/4.9kStar/202007/dart
