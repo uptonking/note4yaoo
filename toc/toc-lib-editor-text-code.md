@@ -28,7 +28,6 @@ modified: '2021-05-23T11:00:25.549Z'
   - @remirror/pm
   - @remirror/react
   - @remirror/core-extensions
-  - @atlaskit/editor-common 
   - @atlaskit/editor-core
   - rich-markdown-editor
 
@@ -59,9 +58,7 @@ modified: '2021-05-23T11:00:25.549Z'
     - some are more modular libraries than full editors
   - Dom-Based Editors
     - eg, tinymce,medium-editor,froala
-
 # text-editor
-
 - https://github.com/ProseMirror/prosemirror
   - http://prosemirror.net/
   - /5.1kStar/MIT/202002/js
@@ -94,9 +91,7 @@ modified: '2021-05-23T11:00:25.549Z'
     - 实时代码高亮
     - 由于TextBus的架构设计天然的支持过滤脏内容，所以，当粘贴进 TextBus 不认识的数据时，会自动忽略掉
     - 粘贴进来的资源上传，目前正在开发中
-
 # code-editor
-
 - https://github.com/codemirror/CodeMirror
   - /21.3kStar/MIT/202010/js
   - In-browser code editor
@@ -107,9 +102,31 @@ modified: '2021-05-23T11:00:25.549Z'
   - https://octo.app/tags/examples
   - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
   - Built on CodeMirror 6. Powers https://octo.app/
+# prosemirror-examples
+- https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
+- https://github.com/jcmnunes/editor
+  - https://editor.binarycapsule.tech/
+  - Prosemirror based text editor with markdown shortcuts and serialization
+  - 功能简单，短小精悍
 
+- https://github.com/benrbray/noteworthy
+  - Markdown editor with bidirectional links and excellent math support
+
+- @atlaskit/editor-core /Apache2/ts
+  - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
+  - https://atlaskit.atlassian.com/packages/editor/editor-core
+  - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
+  - A package contains Atlassian editor core functionality
+  - 基于react class组件实现
+  - 提供了针对image/file的图文混排工具
+  - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
+  - 提供了语法树ADF显示
+
+- https://github.com/BlueMona/prosemirror-react-renderer
+  - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
 # collaborative
-
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/
   - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 
@@ -121,9 +138,7 @@ modified: '2021-05-23T11:00:25.549Z'
 - https://github.com/yjs/y-codemirror.next
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
-
 # more-editor
-
 - https://github.com/liferay/alloy-editor
   - http://alloyeditor.com/
   - WYSIWYG editor based on CKEditor with completely rewritten UI

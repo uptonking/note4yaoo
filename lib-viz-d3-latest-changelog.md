@@ -10,9 +10,17 @@ modified: '2021-05-18T18:25:41.202Z'
 # guide
 
 # changelog
-
 - ref
   - [major changes](https://github.com/d3/d3/blob/master/CHANGES.md)
+
+## v7.0--202106
+
+- D3 now ships as pure ES modules and requires Node.js 12 or higher. 
+- `d3.bin` now ignores `null`s.
+  - `d3.ascending` and `d3.descending` no longer consider `null` comparable.
+- Ordinal scales now use `InternMap` for domains; 
+  - domain values are now uniqued by coercing to a primitive value via `object.valueOf` instead of coercing to a string via `object.toString`.
+- Array-likes (e.g., a live `NodeList` such as `element.childNodes`) are converted to arrays in `d3.selectAll` and `selection.selectAll`.
 
 ## v6.0--202008
 

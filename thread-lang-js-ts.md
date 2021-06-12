@@ -18,6 +18,20 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## sometimes I don't have the mental capacity to figure out what some type should be. So use the IntelliSense quick info feature to hover around, figure it out, and copy/paste the type!
+- https://twitter.com/DavidKPiano/status/1403500184290664461
+- I usually only do it if they're unclear from the implementation.
+- You can also combine this with automatic imports, so that you can copy-paste a return type from an external function and then import the missing types automatically.
+- the big downside to inferred return types is that they're not explicit. It can accidentally be the wrong return type, and you wouldn't know until further downstream.
+
 - ## Most (all?) non-collection iterables created by JS are iterators
 - https://twitter.com/rauschma/status/1402202573646540802
 

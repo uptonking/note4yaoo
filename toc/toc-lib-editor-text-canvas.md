@@ -37,6 +37,11 @@ modified: '2021-05-19T08:32:28.120Z'
   - /25Star/MIT/201711/js
   - RichTextJS is inspired by (but does not share any code with) Carota.
 
+- https://github.com/cqdlhjpdml/jditor
+  - http://www.jditor.com/debug.html
+  - this js project is aimed to help myself to draw a similar ms visio graph in web browser canvas. 
+  - all symbols are svg vector symbol.
+
 - textor /108Star/MIT/201905/ts
   - https://github.com/lutzroeder/textor
   - https://lutzroeder.github.com/textor

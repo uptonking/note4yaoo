@@ -25,16 +25,12 @@ modified: '2020-12-21T06:03:02.191Z'
   - 操作符丰富
 - observable缺点
   - 需要引入第三方实现库，增加项目复杂度和体积
-
 # xhr/ajax
-
 - 基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案。
 - 本身是针对MVC的编程, 不符合现在前端MVVM的浪潮。
 - JQuery整个项目太大，单纯使用ajax却要引入整个JQuery非常的不合理
   - （采取个性化打包的方案又不能享受CDN服务）。
-
 # fetch/promise
-
 - Fetch是基于promise设计的，Fetch的代码结构比起ajax简单多了
 - fetch不是ajax的进一步封装，而是原生js，没有使用XMLHttpRequest对象
 - 符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里
@@ -59,9 +55,6 @@ modified: '2020-12-21T06:03:02.191Z'
   - 自动转换 JSON 数据。
   - 客户端支持防止CSRF。
   - 客户端支持防御 XSRF。
-
-# observable
-
 # [Web端即时通讯技术盘点：短轮询、Comet、Websocket、SSE](https://zhuanlan.zhihu.com/p/21595082)
 
 ## Comet：一种hack技术
@@ -119,7 +112,6 @@ modified: '2020-12-21T06:03:02.191Z'
 
 - ref
   - [为什么网页版微信/QQ，GTalk的IM通讯用的都是comet长连接而不用websocket？](https://www.zhihu.com/question/350007333)
-
 # blog
 
 ## Why I still use XHR instead of the Fetch API
@@ -161,8 +153,15 @@ modified: '2020-12-21T06:03:02.191Z'
   - The second difference is that async servlets only carry HTTP, and you need more than that to handle remote Comet clients.
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
-
 # discuss
+- ## Performance is a top priority of SWR.
+- https://twitter.com/shuding_/status/1324405638986788864
+- why and how SWR ensures your app to be always fast and reactive:
+  ✅ No extra requests
+  ✅ No extra re-renders
+  ✅ No extra code imported
+- If only the server-side prefetcher were as good as the one in React Query, I would definitely think about switching to SWR
+- Nice - Is it doing a fetch request within a useEffect hook under the hood?
 
 - ## TIL: no way to fetch huge (2GB+) files, and XHR on readyState 3 is hopeless too (it keeps incrementing responseText even if consumed).
 - https://twitter.com/WebReflection/status/1395733097187090442
@@ -186,8 +185,6 @@ modified: '2020-12-21T06:03:02.191Z'
 - Yep. Undici is more reliable, it's well designed and tested, and it has better defaults for serverless environments. 
   - We're already using it inside some places of the @vercel core production infrastructure which gives us the confidence to adopt it more broadly.
   - I could even see it providing the `fetch` global in the default Node.js distribution 
-
 # ref
-
 - [AsyncAPI 2.0: Enabling the Event-Driven World_202105](https://tech.ebayinc.com/engineering/asyncapi-2-0-enabling-the-event-driven-world/)
   - Learn about how eBay is standardizing on and publishing AsyncAPI Specification 2.0-based contracts for event notifications.

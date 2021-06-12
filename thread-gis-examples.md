@@ -9,7 +9,8 @@ modified: '2021-05-25T08:40:49.076Z'
 
 # pieces
 
-- ## 
+- ## ICYMI: 24 maps visualizing the results of the 2020 US election, from top media outlets — a lot of different, yet all great election maps. 
+- https://www.anychart.com/blog/2020/11/06/election-maps-us-vote-live-results/
 
 - ## Voronoi World Map 100% made with #Javascript & #d3js.
 - https://twitter.com/neocartocnrs/status/1383025241434247169

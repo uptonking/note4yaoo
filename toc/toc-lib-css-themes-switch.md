@@ -282,6 +282,19 @@ modified: '2021-02-09T13:40:11.536Z'
     - dot-dashboard 一个暗黑系的首页示例
   - https://codepen.io/chrisgannon/pen/vYxmexW
     - 彩色圆形围绕人头轮廓，黑色主题很酷
+
+## gooey/globs 黏成一团、水滴、变形
+
+- https://github.com/luukdv/gooey-react
+  - https://gooey-react.netlify.app/
+  - The gooey effect for React, used for shape blobbing/metaballs
+
+## generative art 重复的线条、形状、色彩
+
+- [THE IMPORTANCE OF GENERATIVE ART](https://tylerxhobbs.com/essays/2021/the-importance-of-generative-art)
+- Tyler has been a huge influence in the generative art space over the last years
+  - https://twitter.com/mattdesl/status/1403381559151968257
+  - https://artblocks.io/project/78
 # themes-ui-design
 - https://github.com/ciucacristi/elementric
   - https://ciucacristi.github.io/elementric/

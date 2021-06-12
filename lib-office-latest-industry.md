@@ -14,6 +14,22 @@ modified: '2021-05-14T18:47:24.054Z'
   - we’ll be migrating the underlying technical implementation of Docs from the current `HTML-based` rendering approach to a `canvas-based` approach 
   - to improve performance and improve consistency in how content appears across different platforms. 
 
+- ## Just been looking at iCloud.com’s new web Notes app. Turns out the text editing is done in WebGL._202002
+- https://twitter.com/danlucraft/status/1225763866765905922
+- I have so many questions
+  - Getting my editor layout to play well with the iOS onscreen keyboard HAS been a nightmare (even with the new visualViewport APIs), and I’m still not completely happy with it, so I can see the temptation to just bypass it all and do it in WebGL
+- Is this a standard thing in Apple web apps? Why this way? What could they not accomplish in HTML? How do they even convince the onscreen keyboard to open when the canvas is tapped? (The onscreen keyboard is not easy to manipulate or interrogate) Where is text input sent??
+  - Oh god it looks like… they create an invisible `contenteditable` div that they update to always contain the text of the line you are working on, and that has the focus and is where text input is sent.
+  - This looks like a similar method to what the Google Docs suite uses. **Sheets is rendered in a canvas, Docs in regular HTML, and Slides in SVG**, or at least they were when I last checked.
+  - That’s kind of how pdfjs works for viewing PDFs on the web - draw a picture in a canvas of what the text should really look like and then put invisible divs behind it so you can select it.
+  - All modern editors work like this — CKEditor 5, Quill, prosemirror, slateJS - internal model, contenteditable just for input
+  - I have had my fair share of struggles with WebGL text
+- See also: Lucidchart. My guess is they did this for the web versions of Pages/Keynote/etc and then reused it for notes. Font rendering is notoriously impossible to match pixel-for-pixel across browsers, so rolling your own is the only option. That’s why Lucid did it, at least.
+  - I would guess that they maybe wouldn’t have done this in Notes if it hadn’t already been done for Pages, a note taking app probably doesn’t need pixel/perfect rendering across browsers or advanced layout (e.g. 3D transforms, etc)
+- Lucidchart uses canvas for most stuff as well?
+  - The shape canvas (shapes, lines, text, etc) is webgl, all the chrome is Angular.
+  - And worth noting that while they did roll their own text editing, it was an endless source of bugs and UI/keybinding inconsistencies across OSes. Definitely not for the faint of heart.
+
 - ## MathJax Turns 3.0
 - https://news.ycombinator.com/item?id=22582343
 - MathJax 3 is about twice as fast as MathJax 2, but still slower than KaTeX.
@@ -25,9 +41,7 @@ modified: '2021-05-14T18:47:24.054Z'
   - MathJax is sophisticated(复杂巧妙的，先进的；水平高的), but it’s large and has a lot of dependencies. It’s not slow, but KaTeX is a lightweight drop-in replacement that’s even faster.
   - MathJax is simple to install with a one-line `<script>` tag
   - KaTeX is slightly more involved. js, css, setup
-
 # discuss-stars
-
 - ## 如何看待 Google Docs 将从 HTML 迁移到基于 Canvas 渲染？
 - https://www.zhihu.com/question/459251463/answers/updated
 
@@ -103,11 +117,7 @@ modified: '2021-05-14T18:47:24.054Z'
 - Web提供的能力和文档编辑的能力需求重合度不高
   - Figma 和 Flutter Web 的出现给未来的 Web 应用指出了一个新的道路，既然 DOM 不适合画出来那就全部自己来画。
   - 至于说是不是弯路，我觉得不是，只是一个更合适的解决方案而已。乐观点，历史总是螺旋上升的，如果未来哪年标准完善+性能过剩到 Web 技术栈能随便写出一个所见即所得的编辑器，我也不会觉得现在的 canvas 是一个弯路的。
-
 # discuss
-
-- ## 
-
 - ## 
 
 - ## carota: Rich text editor implemented in JavaScript that uses HTML5 Canvas
@@ -168,7 +178,6 @@ modified: '2021-05-14T18:47:24.054Z'
   - dom wasn't designed for these things, canvas makes perf trivial. 
 
 # pdf
-
 - [Announcing react-pdf v2.0](https://react-pdf.org/blog/announcing-react-pdf-v2)
 - Motivation
   - Separate Layout from Rendering

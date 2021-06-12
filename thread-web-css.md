@@ -24,6 +24,22 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Hey CSS Grid people, how would you go about center-aligning grid items so that orphans are centered? 
+- https://twitter.com/brad_frost/status/1403441552467185664
+  - Or if only two items are defined they are center-aligned? 
+- I’ve tried VERY HARD to make this happen with Grid (think Quantity Queries), but ultimately went back to Flexbox for this specific lay-out class. 
+  - The rule of thumb I’ve been using is: if you know how many items will be in the grid → CSS Grid. Otherwise, if you don’t → Flexbox
+- I'd straight up go to flex land for this but maybe a quantity query plus grid-column: 2/3 or whatnot?
+- Flexbox grid layouts seem more flexible than CSS Grid when it comes to horiz centering items. While our flexbox grids only need a justify-content: center applied to them to achieve that, that unfortunately doesn’t work with CSS Grid.
+
 - ## Learn About Aspect Ratio In CSS
 - https://ishadeed.com/article/css-aspect-ratio/
 

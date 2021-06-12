@@ -25,13 +25,10 @@ modified: '2020-12-08T14:05:41.408Z'
   - 可查看源码 WebpackOptionsDefaulter.js
   - if your Webpack target is `node`, it looks at the `module` and `main` for entry. Otherwise, it goes to the `browser`, then `module`, then `main`.
   - 技巧：module可指向源码，main指向转义后的es5代码
-
 # Module Federation
-
 - [Module Federation原理剖析](https://zhuanlan.zhihu.com/p/296233114)
   - https://github.com/efoxTeam/emp
     - [基于Webpack 5 & Module Federation的微前端解决方案](https://github.com/efoxTeam/emp/blob/main/README-zh_CN.md)
-
 # webpack-config
 
 # webpack-dev-server
@@ -77,18 +74,14 @@ modified: '2020-12-08T14:05:41.408Z'
   - 作者会等webpack 5稳定后才会升级到webpack 5
   - webpack-dev-server基于express，非常受欢迎
   - 还要考虑是否支持框架层的插件，如react-fast-refresh
-
 # webpack-extensions
-
 - https://github.com/etsy/kevin-middleware
   - Kevin is an Express-style middleware that makes developing with Webpack in a monorepo a lot simpler. 
   - It's loosely based off of Webpack's dev middleware, and it is intended to be used as a replacement for it.
   - Using Webpack in development in a monorepo can be challenging because, by default, it will try to keep your entire JavaScript codebase in memory.
     - Kevin addresses this problem by allowing you to create separate Webpack configs for different parts of your codebase; 
     - it then manages these configs by having Webpack only watch and build relevant files.
-
 # repos-monorepo
-
 - 在子repo中共用webpack配置的示例
   - monorepo-react-webpack-ts
     - 创建了一个单独的dev-tools包
@@ -138,9 +131,7 @@ modified: '2020-12-08T14:05:41.408Z'
   - https://github.com/flegall/monopack
     - A JavaScript bundler for node.js monorepo-codebased applications.
   - https://github.com/lucasgdb/monorepo-react-node-postgres-ts
-
 # ref
-
 - [webpack: Choosing a Development Tool](https://webpack.js.org/guides/development/ )
 - [Cutting our webpack build times in half_201905](https://www.cargurus.dev/Cutting-our-webpack-build-time-in-half/)
   - We use yarn workspaces, and whats known as a mono-repo. 
@@ -152,3 +143,5 @@ modified: '2020-12-08T14:05:41.408Z'
 - [Developing in a Monorepo While Still Using Webpack: kevin-middleware_202004](https://codeascraft.com/2020/04/06/developing-in-a-monorepo-while-still-using-webpack/)
 - [webpack扩展插件](https://www.timsrc.com/article/45/extending-with-plugins)
 - [Webpack vs webpack-dev-server vs webpack-dev-middleware vs webpack-hot-middleware](https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar)
+
+- [How does the CodeSandbox browser-side webpack work? ](https://developpaper.com/how-does-the-codesandbox-browser-side-webpack-work-part-one/)

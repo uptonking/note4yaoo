@@ -50,21 +50,6 @@ modified: '2021-06-02T17:26:42.963Z'
   - jupytext: jupyter notebooks as readable, editable documents
   - executable document
 # discuss
-- ## [在线编辑器, 多人同时编辑, 如何设计undo/redo的逻辑?](https://www.zhihu.com/question/367915946)
-- 感觉有三种模式:
-  - 按action撤销. 
-    - 甲/乙撤销, 会消失一个c. (这样做我觉得容易做, 所有状态容易管理)
-  - 只撤销自己做的. 
-    - 甲撤销, 消失一个c; 乙撤销, 消失一个B. 
-    - Google docs是这么做的, 但是交叉修改后再撤销重做, 应该会造成极大的混乱, 如何解决?
-  - 一路撤销到自己做的. 
-    - 甲撤销, 消失一个c; 乙撤销, 变成aaaBB. 这样就是有点绝情了. 甲想恢复自己的编辑, 需要乙重做.
-- 一般采取的是第 2 种方式，即只撤销自己产生的操作。
-  - 那么怎样才能实现只撤销自己产生的操作呢？这就不得不说说 OT（Operational Transformation）和 CRDT（Conflict-Free Replicated Data Type）算法了。
-  - CRDT 在 2006 年被提出，用于解决分布式计算结果的最终一致性问题。
-  - 相比较还存在很多边缘场景需要打补丁的OT算法，CRDT 可以说是更加先进一些。也有非常多开源的库可以选择，比如 yjs , automerge , gun 或者 teletype-crdt
-  - 简单来说，OT 需要一个中心服务器（用于保证正确性），而 CRDT 则可以支持点对点直接传输数据。
-
 - ## [Notion 编辑器原理分析](https://zhuanlan.zhihu.com/p/359122473)
 - 先了解怎么设计一款编辑器，做下铺垫，参考 facebook draft-js 的介绍视频
   - 文章讲了做一款编辑器为什么不直接使用 contenteditable，但又不能完全抛弃 contenteditable 的原因。
@@ -109,4 +94,7 @@ modified: '2021-06-02T17:26:42.963Z'
 - notion在产品能力上很优秀，打破了传统的笔记软件固化思维，与其说提供给用户的是一套笔记工具，而不如说是一套设计笔记软件的系统。
   - 但通过 block 能力的增强，能力更多了，可以用来做日常工作管理，团队 wiki 等。
   - notion整个软件架构的基建能力是把 block 的渲染、block 的存储、数据修改等都处理好，后期功能的增加可快速迭代，在基础上增加更多的 block 类型。
+
+- ref
+  - [探索 Notion 的实现](https://zhuanlan.zhihu.com/p/152964640)
 # pieces
