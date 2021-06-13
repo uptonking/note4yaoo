@@ -169,6 +169,70 @@ modified: '2021-06-12T02:41:33.389Z'
 
 - ## 
 
+- ## 
+
+- ## Offline, Peer-to-Peer, Collaborative Editing using Yjs
+- https://discuss.prosemirror.net/t/offline-peer-to-peer-collaborative-editing-using-yjs/2488
+- I haven’t dug into the y-prosemirror code in depth yet, but, is there any way with Yjs fragments to model changes that happen to a fragment as steps rather than replacing the whole document? 
+  - It seems like in the current implementation of the sync plugin, **every synced change ends up replacing the whole document**  (taking care to maintain the local selection state, and managing the undo state with a Yjs specific plugin). 
+  - Basically what I’m curious about is whether you could replicate ProseMirror data using Yjs, but still write ProseMirror plugins without needing to “know” that Yjs was handling remote state updates (e.g. where you could, for example, rely on transaction steps + step maps to figure out what ranges have changed during a given remote sync).
+- Oh, no, that does seem like a sure way to break almost every ProseMirror plugin ever written.
+- Yes, there is. I gave an outline here: ProseMirror + CRDT's? . The idea is to compute the steps based on the diff of the new and the old state of the document.
+  - From my personal experience computing “minimal diffs” is a bit expensive and unnecessary for my use-cases. I’m still a bit indifferent about this feature. 
+  - I’m not denying that it will break some ProseMirror plugins (i.e. plugins that render using decorations and ProseMirror mappings). 
+  - But I have tested y-prosemirror successfully in Atlaskit and TipTap. 
+  - For the reasons mentioned above I also needed to replace ProseMirrors history plugin with Yjs-based history plugin (y-undo-plugin).
+- Comparing structure-sharing trees should actually be doable really efficiently (since you can skip all the shared nodes right away). 
+  - (There was an implementation of this in a very early ProseMirror system that relied on it for its redrawing algorithm, and it wasn’t very complicated.)
+- I do use the prosemirror state. 
+  - But for me, the question was if it makes sense to use ProseMirror transforms to represent document changes. 
+  - Currently, I simply replace the document state. This is easier to do for me.
+  - I didn’t see any immediate benefit in Transforms, because they are mainly used to calculate change maps and to provide undo-redo functionality. 
+  - y-prosemirror has an equivalent to change maps and undo functionality, that work better in p2p scenarios. 
+  - But @saranrapjs brought up a good point for ProseMirror transforms.
+- The main thing that we use, by way of example, that wouldn’t work without some kind of transaction mapping is indeed decorations; the ability to map positions transaction-wise is what allows us to do efficient transaction-wise computations only when needed (e.g. only recalculating a data structure for the parts of the document that have changed). If the tradeoff here is how expensive it is to compute the diffs that happen as part of a Yjs update vs. how full resolution the diffs are, for my part, I’d be happy with marginally lower resolution diffs 
+
+
+- Yjs by itself is just a small CRDT implementation. 
+- There are several modules around Yjs that allow you to do different things.
+- Editor bindings, like y-prosemirror, y-codemirror, or y-quill make a specific editor collaborative. 
+- Connectors, like y-webrtc, or y-websocket handle how to sync to other peers
+- Persistence adapters handle how to persist data to a database to make it available offline (e.g. y-indexeddb for the browser, or y-leveldb for the server).
+- The idea is to make Yjs as modular and unopinionated as possible and build a huge ecosystem around it. 
+
+
+
+- ## Inlining a node for a comment plugin or best to use marks?
+- https://discuss.prosemirror.net/t/inlining-a-node-for-a-comment-plugin-or-best-to-use-marks/2391
+- Comments are usually not modeled as document nodes—rather, they are references to ranges, that are tracked separately, outside of the document.
+- I will try with references to ranges outside the document. One downside is that it could be a bit trickier to preserving comments when users copy to clipboard.
+  - That is absolutely true. I’m not aware of an actual good solution to that problem, though you can get pretty far by storing metadata to the side when copying and consulting that, comparing it to the pasted slice, when pasting.
+- what are other arguments to not use marks for comments?
+  - For decoration approach, there is clear separation of non-editable document with ability to comment in “read only” mode.
+  - The data structure for decoration comments are a more straightforward model defined solely by a single from/to.
+
+- ## A4 pages conceptual guide
+- https://discuss.prosemirror.net/t/a4-pages-conceptual-guide/2901
+- have a schema that looks like
+  - https://github.com/todorstoev/prosemirror-pagination
+  - Plugin for ProseMirror emulating A4 pages
+- What is done till now
+  - correct split for single line paragraphs
+- What should be done
+  - correct split in tables
+  - correct split for multiline paragraphs
+
+```
+doc(
+   page(
+       header(block+)
+       body(block+)
+       footer(block+)
+       pageCounter(paragraph{1})
+   )
+)
+```
+
 - ## ProseMirror – A toolkit for building rich-text editors on the web
 - https://news.ycombinator.com/item?id=18998042
 - What sets ProseMirror apart from the rest (Slate, Quill, Trix, Draft, etc.) is - ProseMirror isn't simply a library. 

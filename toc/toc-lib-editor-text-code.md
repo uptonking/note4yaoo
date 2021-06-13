@@ -113,16 +113,8 @@ modified: '2021-05-23T11:00:25.549Z'
 
 - https://github.com/benrbray/noteworthy
   - Markdown editor with bidirectional links and excellent math support
-
-- @atlaskit/editor-core /Apache2/ts
-  - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
-  - https://atlaskit.atlassian.com/packages/editor/editor-core
-  - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
-  - A package contains Atlassian editor core functionality
-  - 基于react class组件实现
-  - 提供了针对image/file的图文混排工具
-  - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
-  - 提供了语法树ADF显示
+  - 参考了prosemirror、zettlr、vscode、notable
+  - 依赖solid-js、remark13、prosemirror、electron-window-state
 
 - https://github.com/BlueMona/prosemirror-react-renderer
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.

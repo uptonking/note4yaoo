@@ -13,7 +13,7 @@ modified: '2021-06-02T17:12:56.049Z'
 - features
   - Unopinionated
     - core is small and generic, allowing different types of editors
-  - Extensible schemas
+  - Customizable schemas
     - Document schemas allow editing documents with a custom structure
   - Modular
     - only load the code you need
@@ -23,6 +23,9 @@ modified: '2021-06-02T17:12:56.049Z'
     - multiple people can work on the same document in real time
   - Functional
     - largely functional and immutable architecture to implement complex behavior
+
+- ref
+  - [Marijn Haverbeke's blog](https://marijnhaverbeke.nl/blog/)
 # overview
 - ProseMirror tries to bridge the gap between editing explicit, unambiguous content like Markdown or XML, and classical WYSIWYG editors.
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
@@ -50,43 +53,64 @@ let state = EditorState.create({ schema })
 let view = new EditorView(document.body, { state })
 ```
 
-- ProseMirror requires you to specify a schema that your document conforms to, so the first thing this does is import a module with a basic schema in it.
-- That schema is then used to create a state, which will generate an empty document conforming to the schema, and a default selection at the start of that document. 
-- Finally, a view is created for the state, and appended to `document.body`. This will render the state's document as an editable DOM node, and generate state transactions whenever the user types into it.
+- ProseMirror requires you to specify a `schema` that your document conforms to, so the first thing this does is import a module with a basic schema in it.
+  - That schema is then used to create a state, which will generate an empty document conforming to the schema, and a default selection at the start of that document. 
+- Finally, a view is created for the state, and appended to `document.body`. 
+  - This will render the state's document as an editable DOM node, and generate state transactions whenever the user types into it.
 
+- Transactions
 - When the user types, or otherwise interacts with the view, it generates ‘state transactions’. 
   - What that means is that it does not just modify the document in-place and implicitly update its state in that way. 
   - Instead, every change causes a transaction to be created, which describes the changes that are made to the state, and can be applied to create a new state, which is then used to update the view.
 - By default this all happens under the cover, but you can hook into by writing plugins or configuring your view.
-  - Every state update has to go through `updateState()`, and every normal editing update will happen by dispatching a transaction.
+  - Every state update has to go through `updateState()`, 
+  - and every normal editing update will happen by dispatching a transaction.
 
+- Plugins
 - Plugins are used to extend the behavior of the editor and editor state in various ways. 
   - Some are relatively simple, like the keymap plugin
   - Others are more involved, like the history plugins
   - Plugins are registered when creating a state (because they get access to state transactions). 
 
+- Commands
 - Most editing actions are written as commands which can be bound to keys, hooked up to menus, or otherwise exposed to the user.
   - prosemirror-commands package provides a number of basic editing commands, along with a minimal keymap that you'll probably want to enable to have things like enter and delete do the expected thing in your editor.
 
+- Content
 - A state's document lives under its `doc` property. 
   - This is a read-only data structure, representing the document as a hierarchy of nodes, somewhat like the browser DOM. 
+- When initializing a state, you can give it an initial document to use. 
+  - In that case, the `schema` field is optional, since the schema can be taken from the document.
 
 ## Documents
 
 - ProseMirror defines its own data structure to represent content documents. 
+
+- Structure
 - A ProseMirror document is a node, which holds a fragment containing zero or more child nodes.
   - This is a lot like the browser DOM, in that it is recursive and tree-shaped. 
   - But it differs from the DOM in the way it stores inline content.
 - in ProseMirror, the inline content is modeled as a flat sequence, with the markup attached as metadata to the nodes
   - It allows us to represent positions in a paragraph using a character offset rather than a path in a tree, 
   - and makes it easier to perform operations like splitting or changing the style of the content without performing awkward tree manipulation.
-- This also means each document has one valid representation. 
-  - Adjacent text nodes with the same set of marks are always combined together, and empty text nodes are not allowed. 
+- This also means **each document has one valid representation**. 
+  - Adjacent text nodes with the same set of marks are always combined together, 
+  - and empty text nodes are not allowed. 
   - The order in which marks appear is specified by the schema.
 - So **a ProseMirror document is a tree of block nodes**, 
   - with most of the leaf nodes being textblocks, which are block nodes that contain text. 
   - You can also have leaf blocks that are simply empty, for example a horizontal rule or a video element.
+- Node objects come with a number of properties that reflect the role they play in the document
+  - `isBlock` and `isInline` tell you whether a given node is a block or inline node.
+  - `inlineContent` is true for nodes that expect inline nodes as content.
+  - `isTextblock` is true for block nodes with inline content.
+  - `isLeaf` tells you that a node doesn't allow any content.
+- So a typical "paragraph" node will be a textblock, 
+  - whereas a blockquote might be a block element whose content consists of other blocks. 
+  - Text, hard breaks, and inline images are inline leaf nodes, 
+  - and a horizontal rule node would be an example of a block leaf node.
 
+- Identity and persistence
 - Another important difference between a DOM tree and a ProseMirror document is the way the objects that represent nodes behave. 
   - In the DOM, nodes are mutable objects with an identity, which means that a node can only appear in one parent node, and that the node object is mutated when it is updated.
   - In ProseMirror, nodes are simply values, and should be approached much as you'd approach the value
@@ -99,13 +123,7 @@ let view = new EditorView(document.body, { state })
   - It makes it impossible to have an editor in an invalid in-between state during an update
   - It also makes it easier to reason about documents in a somewhat mathematical way
 
-- A full document is just a node. 
-  - The document content is represented as the top-level node's child nodes. 
-  - Typically, it'll contain a series of block nodes, some of which may be textblocks that contain inline content. 
-  - But the top-level node may also be a textblock itself, so that the document contains only inline content.
-  - What kind of node is allowed where is determined by the document's schema. 
-  - To programmatically create nodes, you must go through the schema
-
+- Data structures
 - Each node is represented by an instance of the `Node` class. 
   - It is tagged with a type, which knows the node's name, the attributes that are valid for it, and so on. 
   - Node types (and mark types) are created once per schema, and know which schema they are part of.
@@ -113,7 +131,14 @@ let view = new EditorView(document.body, { state })
   - Even for nodes that don't have or don't allow content, this field is filled (with the shared empty fragment).
 - Some node types allow attributes, which are extra values stored with each node.
 - inline nodes hold a set of active marks—things like emphasis or being a link—which are represented as an array of `Mark` instances.
+- A full document is just a node. 
+  - The document content is represented as the top-level node's child nodes. 
+  - Typically, it'll contain a series of block nodes, some of which may be textblocks that contain inline content. 
+  - But the top-level node may also be a textblock itself, so that the document contains only inline content.
+  - What kind of node is allowed where is determined by the document's schema. 
+  - To programmatically create nodes, you must go through the schema
 
+- Indexing
 - ProseMirror nodes support two types of indexing
   - they can be treated as trees, using offsets into individual nodes, 
   - or they can be treated as a flat sequence of tokens.
@@ -121,15 +146,17 @@ let view = new EditorView(document.body, { state })
   - interacting with single nodes, directly accessing child nodes using the child method and childCount, writing recursive functions that scan through a document
 - flat tokens are more useful when addressing a specific position in the document. 
   - It allows any document position to be represented as an integer—the index in the token sequence. 
-  - These tokens don't actually exist as objects in memory—they are just a counting convention—but the document's tree shape, along with the fact that each node knows its size, is used to make by-position access cheap.
+  - These tokens don't actually exist as objects in memory—they are just a counting convention
+  - but the document's tree shape, along with the fact that each node knows its size, is used to make by-position access cheap.
 - The token sequence, with positions
-  - Each node has a nodeSize property that gives you the size of the entire node
+  - Each node has a `nodeSize` property that gives you the size of the entire node
 - Interpreting such position manually involves quite a lot of counting. 
   - You can call `Node.resolve` to get a more descriptive data structure for a position.
   - This data structure will tell you what the parent node of the position is, what its offset into that parent is, what ancestors the parent has, and a few other things.
 
+- Slices
 - To handle things like copy-paste and drag-drop, it is necessary to be able to talk about a slice of document, i.e. the content between two positions. 
-  - The `Slice` data structure is used to represent such slices. 
+- The `Slice` data structure is used to represent such slices. 
   - It stores a fragment along with an open depth on both sides. 
   - You can use the slice method on nodes to cut a slice out of a document.
 
@@ -137,46 +164,59 @@ let view = new EditorView(document.body, { state })
   - Most of the time, you'll use transformations to update documents, and won't have to directly touch the nodes. 
   - These also leave a record of the changes, which is necessary when the document is part of an editor state.
 - To manually create an updated version of a whole document, you'll usually want to use `Node.replace`, which replaces a given range of the document with a slice of new content. 
-  - To update a node shallowly, you can use its copy method, which creates a similar node with new content. 
-  - Fragments also have various updating methods, such as replaceChild or append.
+  - To update a node shallowly, you can use its `copy` method, which creates a similar node with new content. 
+  - `Fragments` also have various updating methods, such as `replaceChild` or `append`.
 
 ## Schemas
 
-- Each ProseMirror document has a schema associated with it. 
-  - The schema describes the kind of nodes that may occur in the document, and the way they are nested. 
-- Every node in a document has a type, which represents its semantic meaning and its properties, such as the way it is rendered in the editor.
+- Each ProseMirror document has a `schema` associated with it. 
+  - The `schema` describes the kind of nodes that may occur in the document, and the way they are nested. 
 
+- Node Types
+- Every node in a document has a `type`, which represents its semantic meaning and its properties, such as the way it is rendered in the editor.
+  - When you define a `schema`, you enumerate the node types that may occur within it, describing each with a `spec` object
+- Every `schema` must at least define a top-level node type (which defaults to the name `doc`), and a `text` type for text content.
+
+- Content Expressions
 - The strings in the `content` fields are called content expressions.
   - They control what sequences of child nodes are valid for this node type.
-- Such expressions can be combined to create a sequence
+  - Such expressions can be combined to create a sequence
 - Some groups of element types will appear multiple times in your schema
   -  You can create a node group by giving your node specs a `group` property, and then refer to that group by its name in your expressions.
-- It is recommended to always require at least one child node in nodes that have block content, because browsers will completely collapse the node when it's empty, making it rather hard to edit.
-- Not every node-manipulating function in the library checks that it is dealing with valid content—higher level concepts like transforms do, but primitive node-creation methods usually don't and instead put the responsibility for providing sane input on their caller.
+- It is recommended to always require at least one child node in nodes that have block content, 
+  - because browsers will completely collapse the node when it's empty, making it rather hard to edit.
+- Not every node-manipulating function in the library checks that it is dealing with valid content—higher level concepts like transforms do, 
+  - but primitive node-creation methods usually don't and instead put the responsibility for providing sane input on their caller.
 
+- Marks
 - Marks are used to add extra styling or other information to inline content. 
   - A schema must declare all mark types it allows in its schema. 
   - Mark types are objects much like node types, used to tag mark objects and provide additional information about them.
 - By default, nodes with inline content allow all marks defined in the schema to be applied to their children.
 
+- Attributes
 - The document schema also defines which attributes each node or mark has. 
   - If your node type requires extra node-specific information to be stored, such as the level of a heading node, that is best done with an attribute.
 - Attribute sets are represented as plain objects with a predefined (per node or mark) set of properties holding any JSON-serializeable values.
-- That will also make it impossible for the library to generate such nodes as filler to satisfy schema constraints during a transform or when calling createAndFill.
+- When you don't give a default value for an attribute, an error will be raised when you attempt to create such a node without specifying that attribute.
+  - That will also make it impossible for the library to generate such nodes as filler to satisfy schema constraints during a transform or when calling createAndFill.
 
+- Serialization and Parsing
 - In order to be able to edit them in the browser, it must be possible to represent document nodes in the browser DOM. 
   - The easiest way to do that is to include information about each node's DOM representation in the schema using the `toDOM` field in the node spec.
   - This field should hold a function that, when called with the node as argument, returns a description of the DOM structure for that node. 
 - Mark specs allow a similar `toDOM` method, 
-  - but they are required to render as a single tag that directly wraps the content, so the content always goes directly in the returned node
+  - but they are required to render as a single tag that directly wraps the content, so the content always goes directly in the returned node, and the hole doesn't need to be specified.
+
 - You'll also often need to parse a document from DOM data, for example when the user pastes or drags something into the editor. 
   - The model module also comes with functionality for that, 
   - and you are encouraged to include parsing information directly in your schema with the `parseDOM` property.
-  - When a schema includes `parseDOM` annotations, you can create a `DOMParser` object for it with `DOMParser.fromSchema`. 
+- When a schema includes `parseDOM` annotations, you can create a `DOMParser` object for it with `DOMParser.fromSchema`. 
   - This is done by the editor to create the default clipboard parser, but you can also override that.
 - Documents also come with a built-in JSON serialization format.
 
-- The nodes and marks options passed to the Schema constructor take OrderedMap objects as well as plain JavaScript objects. 
+- Extending a schema
+- The `nodes` and `marks` options passed to the Schema constructor take `OrderedMap` objects as well as plain JavaScript objects. 
   - Such maps support a number of methods to conveniently create updated versions.
 
 ## Document transformations
@@ -185,30 +225,49 @@ let view = new EditorView(document.body, { state })
   - They form the basis for transactions, 
   - and are what makes history tracking and collaborative editing possible.
 - Immutable data structures really do lead to simpler code
-- the main thing the transform system does is to leave a trail of updates, 
+  - the main thing the transform system does is to leave a trail of updates, 
   - in the form of values that represent the individual steps taken to go from an old version of the document to a new one.
 - More generally, it is very useful for editor plugins to be able to inspect and react to each change as it comes in, in order to keep their own state consistent with the rest of the editor state.
 
+- Steps
 - Updates to documents are decomposed into steps that describe an update. 
 - A step can be applied to a document to produce a new document.
   - Examples of steps are `ReplaceStep` to replace a piece of a document, or `AddMarkStep` to add a mark to a given range.
 - Applying a step is a relatively straightforward process
   - That means applying a step can fail, for example if you try to delete just the opening token of a node, that would leave the tokens unbalanced, which isn't a meaningful thing you can do. 
-  - This is why apply returns a result object, which holds either a new document, or an error message.
+  - This is why `apply` returns a result object, which holds either a new document, or an error message.
 
+- Transforms
 - An editing action may produce one or more steps. 
   - The most convenient way to work with a sequence of steps is to create a `Transform` object 
   - (or, if you're working with a full editor state, a `Transaction`, which is a subclass of `Transform`).
+- Most transform methods return the transform itself, for convenient chaining
 
+- Mapping
 - When you make a change to a document, positions pointing into that document may become invalid or change meaning. 
-- We often do need to preserve positions across document changes
-  - steps can give you a `map` that can convert between positions in the document before and after applying the step.
-- Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, which collects a series of step maps and allows you to `map` through them in one go.
-- `map` method on step maps and mappings accepts a second parameter, bias, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+- We often do need to preserve positions across document changes, 
+  - steps can give you a `map()` that can convert between positions in the document before and after applying the step.
+- Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
+  - which collects a series of step maps and allows you to `map` through them in one go.
+- There are cases where it's not entirely clear what a given position should be mapped to. 
+  - `map` method on step maps and mappings accepts a second parameter, `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+- The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, 
+  - along with inverting steps in a lossless way, and mapping steps through each other's position maps.
 
+- Rebasing
 - Rebasing, in the simple case, is the process of taking two steps that start with the same document, and transform one of them so that it can be applied to the document created by the other instead. 
-  - Steps have a map method, which, given a mapping, maps the whole step through it. 
-  - Even if you have rebased a step, there is no guarantee that it can still be validly applied to the current document. 
+
+```JS
+stepA(doc) = docA
+stepB(doc) = docB
+stepB(docA) = MISMATCH!
+  rebase(stepB, mapA) = stepB '
+stepB '(docA) = docAB
+```
+
+- Steps have a `map` method, which, given a mapping, maps the whole step through it. 
+- Even if you have rebased a step, there is no guarantee that it can still be validly applied to the current document. 
+  - The appropriate response to this is usually just to drop the step.
 
 ## The editor state
 
@@ -216,18 +275,21 @@ let view = new EditorView(document.body, { state })
   - But plugins may also need to store state
   - This is why the set of active plugins is also stored in the state, and these plugins can define additional slots for storing their own state.
 
+- Selection
 - ProseMirror supports several types of selection (and allows 3rd-party code to define new selection types).
 - Selections are represented by instances of (subclasses of) the `Selection` class. 
   - Like documents and other state-related values, they are immutable
   - to change the selection, you create a new selection object and a new state to hold it.
 - Selections have, at the very least, a start (`.from`) and an end (`.to`), as positions pointing into the current document. 
-  - Many selection types also distinguish between the anchor (unmoveable) and head (moveable) side of the selection, so those are also required to exist on every selection object.
-- The most common type of selection is a text selection, which is used for regular cursors (when anchor and head are the same) or selected text. 
+  - Many selection types also distinguish between the `anchor` (unmoveable) and `head` (moveable) side of the selection, so those are also required to exist on every selection object.
+- The most common type of selection is a text selection, 
+  - which is used for regular cursors (when anchor and head are the same) or selected text. 
   - Both endpoints of a text selection are required to be in inline positions, i.e. pointing into nodes that allow inline content.
 - The core library also supports node selections, where a single document node is selected, 
   - which you get, for example, when you ctrl/cmd-click a node. 
   - Such a selection ranges from the position directly before the node to the position directly after it.
 
+- Transactions
 - During normal editing, new states will be derived from the state before them.
 - **State updates happen by applying a transaction** to an existing state, producing a new state. 
   - Conceptually, they happen in a single shot: given the old state and the transaction, a new value is computed for each component of the state, 
@@ -235,15 +297,18 @@ let view = new EditorView(document.body, { state })
 - `Transaction` is a subclass of `Transform`, and inherits the way it builds up a new document by applying steps to an initial document. 
   - In addition to this, transactions track selection and other state-related components, and get some selection-related convenience methods such as `replaceSelection`.
 - By default, the old selection is mapped through each step to produce a new selection, but it is possible to use `setSelection` to explicitly set a new selection.
+  - Similarly, the set of active marks is automatically cleared after a document or selection change, and can be set using the `setStoredMarks` or `ensureMarks` methods.
 - `scrollIntoView` method can be used to ensure that, the next time the state is drawn, the selection is scrolled into view. 
-- Like Transform methods, many Transaction methods return the transaction itself, for convenient chaining.
+- Like `Transform` methods, many `Transaction` methods return the transaction itself, for convenient chaining.
 
+- Plugins
 - When creating a new state, you can provide an array of plugins to use. 
   - These will be stored in the state and any state that is derived from it, and can influence both the way transactions are applied and the way an editor based on this state behaves.
+- When a plugin needs its own state slot, that is defined with a `state` property
 - Because the editor state is a persistent (immutable) object, and plugin state is part of that object, plugin state values must be immutable. 
-  - I.e. their apply method must return a new value, rather than changing the old
+  - I.e. their `apply` method must return a new value, rather than changing the old
 - It is often useful for plugins to add some extra information to a transaction. 
-  - For this purpose, transactions allow metadata to be attached to them. 
+  - For this purpose, transactions allow `metadata` to be attached to them. 
 
 ## The view component
 
@@ -251,30 +316,38 @@ let view = new EditorView(document.body, { state })
 - The definition of editing actions used by the core view component is rather narrow, such as typing, clicking, copying, pasting, and dragging
   - things like displaying a menu, or even providing a full set of key bindings, lie outside of the responsibility of the core view component, and have to be arranged through plugins.
 
+- Editable DOM
 - Browsers allow us to specify that some parts of the DOM are editable, which has the effect of allowing focus and a selection in them, and making it possible to type into them. 
 - The view creates a DOM representation of its document (using your schema's `toDOM` methods by default), and makes it editable. 
   - When the editable element is focused, ProseMirror makes sure that the DOM selection corresponds to the selection in the editor state.
 - It also registers event handlers for many DOM events, which translate the events into the appropriate transactions.
+- Many events are also let through as they are, and only then reinterpreted in terms of ProseMirror's data model. 
 - The browser is quite good at cursor and selection placement 
   - so most cursor-motion related keys and mouse actions are handled by the browser, after which ProseMirror checks what kind of text selection the current DOM selection would correspond to. 
   - If that selection is different from the current selection, a transaction that updates the selection is dispatched.
-- Even typing is usually left to the browser, because interfering with that tends to break spell-checking, autocapitalizing on some mobile interfaces, and other native features. 
+- Even typing is usually left to the browser, 
+  - because interfering with that tends to break spell-checking, autocapitalizing on some mobile interfaces, and other native features. 
   - When the browser updates the DOM, the editor notices, re-parses the changed part of the document, and translates the difference into a transaction.
 
 - **data flow**
-  - the editor view displays a given editor state, 
-  - and when something happens, it creates a transaction and broadcasts this. 
-  - This transaction is then, typically, used to create a new state, which is given to the view using its `updateState` method.
+- the editor view displays a given editor state, 
+- and when something happens, it creates a transaction and broadcasts this. 
+- This transaction is then, typically, used to create a new state, which is given to the view using its `updateState` method.
+- This creates a straightforward, cyclic data flow, 
+  - as opposed to the classic approach (in the JavaScript world) of a host of imperative event handlers, 
+  - which tends to create a much more complex web of data flows.
+- It is possible to ‘intercept’ transactions as they are dispatched with the `dispatchTransaction` prop, in order to wire this cyclic data flow into a larger cycle—if your whole app is using a data flow model like this, 
+  - as with Redux and similar architectures, you can integrate ProseMirror's transactions in your main action-dispatching cycle, and keep ProseMirror's state in your application ‘store’.
 
-- This creates a straightforward, cyclic data flow, as opposed to the classic approach (in the JavaScript world) of a host of imperative event handlers, which tends to create a much more complex web of data flows.
-- It is possible to ‘intercept’ transactions as they are dispatched with the `dispatchTransaction` prop, in order to wire this cyclic data flow into a larger cycle—if your whole app is using a data flow model like this, as with Redux and similar architectures, you can integrate ProseMirror's transactions in your main action-dispatching cycle, and keep ProseMirror's state in your application ‘store’.
-
-- One way to implement updateState would be to simply redraw the document every time it is called. 
+- Efficient updating
+- One way to implement `updateState` would be to simply redraw the document every time it is called. 
   - But for large documents, that would be really slow.
 - Since, at the time of updating, the view has access to both the old document and the new, it can compare them, and leave the parts of the DOM that correspond to unchanged nodes alone. 
   - ProseMirror does this, allowing it to do very little work for typical updates.
-- the DOM selection is only updated when it is actually out of sync with the selection in the state, to avoid disrupting the various pieces of ‘hidden’ state that browsers keep along with the selection (such as that feature where when you arrow down or up past a short line, your horizontal position goes back to where it was when you enter the next long line).
+- the DOM selection is only updated when it is actually out of sync with the selection in the state, 
+  -  to avoid disrupting the various pieces of ‘hidden’ state that browsers keep along with the selection (such as that feature where when you arrow down or up past a short line, your horizontal position goes back to where it was when you enter the next long line).
 
+- Props
 - Props are like parameters to a UI component. 
   - Ideally, the set of props that the component gets completely defines its behavior.
 -  The `updateState` method is just a shorthand to updating the `state` prop.
@@ -285,8 +358,9 @@ let view = new EditorView(document.body, { state })
   - For handler functions that return a boolean to indicate whether they handled the event, the first one that returns `true` gets to handle the event. 
   - And finally, for some props, such as attributes (which can be used to set attributes on the editable DOM node) and decorations (which we'll get to in the next section), the union of all provided values is used.
 
+- Decorations
 - Decorations give you some control over the way the view draws your document. 
-- They are created by returning values from the decorations prop, and come in three types
+- They are created by returning values from the `decorations` prop, and come in three types
   - Node decorations 
     - add styling or other DOM attributes to a single node's DOM representation.
   - Inline decorations 
@@ -295,7 +369,7 @@ let view = new EditorView(document.body, { state })
     - insert a DOM node, which isn't part of the actual document, at a given position.
 - In order to be able to efficiently draw and compare decorations, they need to be provided as a decoration set (which is a data structure that mimics the tree shape of the actual document)
 - When you have a lot of decorations, recreating the set on the fly for every redraw is likely to be too expensive.
-  - the recommended way to maintain your decorations is to put the set in your plugin's state, map it forward through changes, and only change it when you need to.
+  - the recommended way to maintain your decorations is to put the set in your plugin's `state`, map it forward through changes, and only change it when you need to.
 - When a transaction is applied to the state, the plugin state's `apply` method maps the decoration set forward, causing the decorations to stay in place and ‘fit’ the new document shape. 
   - The mapping method is (for typical, local changes) made efficient by exploiting the tree shape of the decoration set
   - only the parts of the tree that are actually touched by the changes need to be rebuilt.
@@ -303,6 +377,7 @@ let view = new EditorView(document.body, { state })
   - possibly by inspecting the changes in the transaction, or based on plugin-specific metadata attached to the transaction.
 - the `decorations` prop simply returns the plugin state, causing the decorations to show up in the view.
 
+- Node views
 - There is one more way in which you can influence the way the editor view draws your document. 
 - Node views make it possible to define a sort of miniature UI components for individual nodes in your document. 
   - They allow you to render their DOM, define the way they are updated, and write custom code to react to events.
@@ -332,7 +407,8 @@ let view = new EditorView(document.body, { state })
   - For this purpose, most plugins that call commands will give them a third argument, which is the whole view.
 - When possible, different behavior, even when usually bound to a single key, is put in different commands. 
   - The utility function `chainCommands` can be used to combine a number of commands—they will be tried one after the other until one return true.
-- The commands module also exports a number of command constructors, such as `toggleMark`, which takes a mark type and optionally a set of attributes, and returns a command function that toggles that mark on the current selection.
+- The commands module also exports a number of command constructors, such as `toggleMark`, 
+  - which takes a mark type and optionally a set of attributes, and returns a command function that toggles that mark on the current selection.
 
 ## Collaborative editing
 
@@ -349,5 +425,24 @@ let view = new EditorView(document.body, { state })
 - Of course, with asynchronous data channels (such as long polling in the collab demo or web sockets), you'll need somewhat more complicated communication and synchronization code. 
 - And you'll probably also want your authority to start throwing away steps at some point, so that its memory consumption doesn't grow without bound. 
 - But the general approach is fully described by this little example.
+# remirror-docs
+
+## overview
+
+- remirror was started as a personal challenge. Would it be possible to build an editor that combined great performance with ease of use?
+  - ProseMirror was picked as the best choice for the core editor layer.
+  - The second decision was to base the structure of the editor on blocks of functionality called Extensions
+- Every single part of the editor is controlled by extensions. 
+  - For example, the core (Schema) is managed by a built-in extension.
+- Multi-framework support is being added in the future. 
+  - Currently the focus is on React and the DOM.
+
+- Features
+  - A11y focused and ARIA compatible.
+  - I18n support via lingui.
+  - Collaborative editing with yjs.
+  - 30+ extensions for creating fully customized editing experiences.
+  - Zero configuration support for Server Side Rendering (SSR).
+  - Cross platform and cross-framework, with an Angular solution coming later this year.
 # ref
 - [Pragmatic ProseMirror guide/cookbook](https://github.com/PierBover/prosemirror-cookbook)

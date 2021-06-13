@@ -14,7 +14,16 @@ modified: '2021-06-02T15:26:19.890Z'
   - 需要多个空格才会渲染line-break
 
 - markdown-extensions
+
+- mdx-extensions
+  - readmeio-markdown
+  - jsxtreme-markdown
+
+- markdown-files-suffix
   - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron"]
+
+- ref
+  - commonmark rfcs
 # popular
 
 ## [Tables in pure Markdown](https://talk.commonmark.org/t/tables-in-pure-markdown/81)

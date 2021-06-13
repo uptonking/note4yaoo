@@ -11,7 +11,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## To keep JSX simple, return early.Check for loading, 404s, or other errors first.
+- https://twitter.com/housecor/status/1404038972700073984
+- returning early avoids the need for nested ternaries, which are harder to read. 
+  - And returning early means I don't need to extract the logic to a separate function merely so that I can implement an if/else (if/else isn't supported inside a return)
 
 - ## Thinking through an interesting problem for how to model the components tree in DevTools. 
 - https://twitter.com/brian_d_vaughn/status/1400843220041580546

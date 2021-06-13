@@ -18,6 +18,26 @@ modified: '2021-01-06T14:40:03.364Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The perf goal for this Hot Module Reloading implementation is 60+fps. 
+- https://twitter.com/jarredsumner/status/1403748267188396034
+- That means < 16ms to:
+  1. detect changes on disk
+  2. push updates to clients
+  3. rebuild
+  4. client performs update
+  - Not sure yet how possible that is. At the very least, 1-3 is something the bundler controls
+- basic websocket echo server works, next steps:
+  - binary protocol
+  - when HMR is enabled, convert export to var & generate default callback function that updates each var
+  - runtime that registers module and a callback
+  - wire up file watcher & websockets to protocol
+
 - ## Thinking about React Fast Refresh next, but there are many dependencies.
 - https://twitter.com/jarredsumner/status/1403283485389844485
 - React Fast Refresh depends on:

@@ -16,10 +16,9 @@ modified: '2021-06-02T16:46:45.119Z'
 
 # ref
 
-- jsxtreme-markdown
+- jsxtreme-markdown /81Star/MIT/202006/js
   - https://github.com/mapbox/jsxtreme-markdown
   - https://mapbox.github.io/jsxtreme-markdown/
-  - /81Star/MIT/202006/js
   - 依赖remark-*、rehype-raw、hast-util-to-jsx、unist-util
   - Transform Markdown into JSX or React component modules
   - You can interpolate JS expression and JSX elements between designated delimiters`{{}}`.

@@ -24,7 +24,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## You can substitute an if-statement checking for a truthy value with an expression using short-circuit evaluation and the logical && and
+- https://twitter.com/ThaddeusJiang/status/1403848377943543809
+- 说实话，我现在负责的项目中已经存在了大量这样的代码，我非常不喜欢。已经和同事解释过了，今后不允许这样的代码，已经存在的也在慢慢改回 if
+  - 从可读性考量，减少不必要的脑力负担。
+- React 中用来判断一个 Component 是否该出现，我感觉挺有用的哈哈。
+  - 不一样。Component 的 return 一定是 jsx，但是普通函数返回值可以是任意，甚至可以不返回。
+- 比较赞同，代码的可读性更重要
+  - 代码逻辑直观比较好，
+  - 利用语言特性去体现逻辑太隐晦了
 
 - ## sometimes I don't have the mental capacity to figure out what some type should be. So use the IntelliSense quick info feature to hover around, figure it out, and copy/paste the type!
 - https://twitter.com/DavidKPiano/status/1403500184290664461
