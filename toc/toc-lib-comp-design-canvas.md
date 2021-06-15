@@ -12,9 +12,10 @@ modified: '2021-05-19T13:54:12.338Z'
 - easy-canvas /106Star/MIT/202010/js/NoDeps
   - https://github.com/Gitjinfeiyang/easy-canvas
   - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
-  - 支持文档流，参照 web，无需设置 x、y 以及宽高
+  - easy-canvas is a powerful tool helps us easy to layout with canvas.
+  - 使用 render 函数，在 canvas 中创建文档流，快速实现布局.
+  - 支持文档流，参照web，无需设置 x、y 以及宽高
   - 提供了一套比较完整的组件库
-  - 使用render函数在canvas中创建文档流布局。Tag: 海报图、小程序朋友圈分享图。
   - [easyCanvas实现原理解析](https://juejin.im/post/6871124987550531592)
   - 之前做dom截图用过 html2canvas 发现太慢了，然后换成 dom-to-image 好很多。foreignObject 是真香啊
   - https://github.com/Gitjinfeiyang/vue-easy-canvas
@@ -37,8 +38,13 @@ modified: '2021-05-19T13:54:12.338Z'
   - Html5 Canvas framework that enables hit detection, layering, multi-buffering for lightning fast performance, pixel ratio support, and download support
   - As the creator of KineticJS, author of HTML5 Canvas Cookbook, I've identified a handful of features that just about every HTML5 Canvas project needs. 
 
+- https://github.com/c7js/c7
+  - C7 is a canvas-based UI toolkit.
+  - C7 re-implements the key technology of modern front-end development based on HTML `<canvas>` (without any third-party libraries)10 commonly used components described in XML (e.g. `<button>, <image>, <input>`)
+  - Flex layout and commonly used CSS
+  - MVVM
+  - Scaffolding and development server out of the box (supports hot reload)
 # render-to-canvas
-
 - https://github.com/steria773-archive/Crosskit
   - 4 Renderers: CANVAS, WEBGL, SVG, DOM
   - Rendering engine that can renders graphics in CanvasRenderingContext2D, WebGLRenderingContext, SVG, DOM
@@ -55,8 +61,6 @@ modified: '2021-05-19T13:54:12.338Z'
 
 - https://github.com/ksandin/react-surface
   - A custom react renderer utilizing yoga-layout targeting pixi.js.
-
 # more-canvas-ui
-
 - https://github.com/andrepxx/pure-knob
   - Canvas-based JavaScript UI element implementing touch, keyboard, mouse and scroll wheel support.

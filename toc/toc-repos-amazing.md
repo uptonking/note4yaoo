@@ -36,9 +36,7 @@ modified: '2020-11-03T06:54:59.051Z'
   - replicate some of the Mac OS(Big Sur, at the time)'s desktop experience on web
   - 类似macOS风格的例子
     - https://github.com/Renovamen/playground-macos
-
 # amazing-tools
-
 - https://github.com/rrweb-io/rrweb
   - https://www.rrweb.io/
   - /7.6kStar/MIT/202009/ts
@@ -49,6 +47,10 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://storyteller.webzard.io/
     - a no-code interactive tutorial builder built with rrweb
   - rrweb：打开 web 页面录制与回放的黑盒子
+
+- https://github.com/joe-bell/plaiceholder
+  - https://plaiceholder.co/
+  - Beautiful image placeholders with pure css/svg
 
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
@@ -76,9 +78,7 @@ modified: '2020-11-03T06:54:59.051Z'
   - [Announcing Remotion - a framework for making videos in React!](https://twitter.com/JNYBGR/status/1358824089960542208)
 - https://github.com/FelippeChemello/podcast-maker
   - This project takes tech news, creates a 5 minute daily briefing, renders it in 3 different formats, and uploads it to YouTube, Instagram and AnchorFM - fully automated using Remotion and Github Actions!
-
 # nice
-
 - https://github.com/kamranahmedse/driver.js
   - /11.7kStar/MIT/202003
   - vanilla JavaScript engine to drive the user's focus across the page
@@ -90,9 +90,7 @@ modified: '2020-11-03T06:54:59.051Z'
 
 - https://github.com/victorqribeiro/isocity
   - An isometric city builder in JavaScript
-
 # geo-viz
-
 - https://github.com/Esri/wind-js
   - http://esri.github.io/wind-js/
   - An demo animation of wind on a Canvas layer in the JSAPI
@@ -108,9 +106,7 @@ modified: '2020-11-03T06:54:59.051Z'
 - https://github.com/zetter/voronoi-maps
   - Voronoi maps using D3 and Leaflet
   - http://chriszetter.com/blog/2014/06/15/building-a-voronoi-map-with-d3-and-leaflet/
-
 # metro-subway
-
 - https://github.com/johnwalley/d3-tube-map
   - Draw tube maps in the style of the London Underground using d3
   - https://observablehq.com/@johnwalley/d3-tube-map
@@ -119,9 +115,7 @@ modified: '2020-11-03T06:54:59.051Z'
 - https://github.com/mbtaviz/mbtaviz.github.io/
   - Visualizing MBTA Data is a web based interactive visualization that provides a glimpse into the performance and behavior of Boston's subway system.
   - http://mbtaviz.github.io/
-
 # poster-logo
-
 - https://github.com/faviator/faviator
   - A simple easy favicon generator.
   - https://www.faviator.xyz/

@@ -19,6 +19,17 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0614-0620
 
+
+👉 React 18 links:
+👉 Redux Toolkit Query
+👉 Don't overabstract comps
+👉 React-Native 0.65 RC
+👉 Reanimated 2.3 layout animations
+👉 Astro
+👉 Vue 3.1
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1404453860035514368
 ## w0607-0613
 
 👉 Remotion Three

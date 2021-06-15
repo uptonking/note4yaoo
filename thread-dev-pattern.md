@@ -11,11 +11,17 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## full stack developer Tips, 对于可以为空的的属性
+- https://twitter.com/ThaddeusJiang/status/1404252068064337922
+- API: 
+  - 为空则不返回，不要返回 null (这里我想说的是返回结果)
+- Client: 
+  - 声明：使用 optional properties，形如 name?: string
+  - 调用：使用 使用 optional chaining operator，形如 name?.length
 
 - ## Let's say you submit a form, via POST, to /form. 
 - https://twitter.com/jaffathecake/status/1385485629392293890
-  - Then, that page uses pushState({}, '', '/foo') to change the URL to /foo, without reloading the page.
+  - Then, that page uses `pushState({}, '', '/foo')` to change the URL to /foo, without reloading the page.
   - If the user presses refresh, what do _you_ think should happen?
 - First rule of form posts: return a 303 redirect (possibly to the same URL) to specifically avoid those kind of cases.
   - So I leave it to browser vendors to define what's best UX for those cases that everyone should avoid

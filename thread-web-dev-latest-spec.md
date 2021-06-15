@@ -11,6 +11,13 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
+- ## With text fragments in URLs, we can link to (and highlight) parts of an HTML page, even if they have no IDs.
+- https://twitter.com/rauschma/status/1404053789724844036
+  - Example (requires a Chromium-based browser): 
+  - https://exploringjs.com/#:~:text=Essential%20JavaScript%20and%20TypeScript%20books
+  - [Boldly link where no one has linked before: Text Fragments](https://web.dev/text-fragments/)
+- The feature indeed only works for non-same page navigation
+
 - ## [CSS Container Queries For Designers](https://ishadeed.com/article/container-queries-for-designers/)
 - The Current State Of Responsive Design
   - Nowadays, it’s still okay to work on multiple versions of the same web layout to show how the inner parts will change **based on the viewport width**

@@ -6,7 +6,19 @@ modified: '2020-07-14T09:28:43.976Z'
 ---
 
 # note-benchmark-web
+# data-grid-table
+- https://github.com/handsontable/performance-lab
+  - JavaScript performance tests for Handsontable
 
+
+- https://github.com/zsimo/render-table-benchmark
+  - https://zsimo.github.io/render-table-benchmark/public/
+  - different ways to render the same table with the same data. 
+  - The purpose is to experiment different Javascript template engines and benchmark them with Vanilla implementation.
+  - tested: hyperhtml lighterhtml lit-html nanomorph pug pug + nanomorph + nanohtml svelte
+# web
+- https://github.com/mikolaj6r/web-benchmark /202011
+  - Node benchmark that uses Lighthouse and generates charts, tables, markdown and big json with results.
 # js
 
 - [JS: Benchmarking Lazy Getters](https://webreflection.medium.com/js-benchmarking-lazy-getters-9b132f45c15e)

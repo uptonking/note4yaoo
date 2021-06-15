@@ -13,7 +13,12 @@ modified: '2021-06-09T00:46:34.611Z'
 
 - ## 
 
-- ## 
+- ## Is dispatch asynchronous or synchronous? How do I know when it has finished affecting the state? with setState I have a callback
+- https://github.com/facebook/react/issues/15344
+  - 要避免此问题，reducer中不要执行side effects
+- In Concurrent Rendering, React can and will start rendering components, only to pause and throw away the results. Because of that, React expects that the rendering process truly is "pure" with no side effects.
+  - React calls your reducers at a couple points in the lifecycle and rendering process. It apparently does sometimes try to call it immediately when the update is queued to see if there's a chance of bailing out early. Assuming it keeps going, then it will normally get called during the rendering phase.
+  - So, if you start putting side effects in reducers, you will almost definitely see unexpected behavior because those effects are running even if the component isn't getting updated at that point.
 
 - ## React useReducer async data fetch
 - https://stackoverflow.com/questions/53146795

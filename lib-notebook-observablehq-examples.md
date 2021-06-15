@@ -10,6 +10,9 @@ modified: '2021-05-27T19:08:18.170Z'
 # guide
 - ref
   - search: 数据 site:observablehq.com
+# extensions
+- Want a quick visual overview of your dataset? Try using the new `SummaryTable()` function
+  - https://observablehq.com/@observablehq/summary-table
 # examples-stars
 - [新型冠状病毒患者行为数据分析与可视化](https://observablehq.com/@zhangwenjia-pku/untitled)
   - 展示了随时间动态变化的条形图

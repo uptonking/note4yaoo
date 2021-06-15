@@ -15,7 +15,11 @@ modified: '2021-03-24T14:13:19.830Z'
 
 - ## 
 
-- ## 
+- ## Create compelling interactive charts to visualize density distribution and relationships with jitter and density plots.
+- https://twitter.com/Highcharts/status/1404228349292122114
+  - 两张图表同步显示数据
+  - [Visualize data distribution with density and jitter plots](https://www.highcharts.com/blog/tutorials/visualize-data-distribution-with-density-and-jitter-plots/)
+  - https://codepen.io/mushigh/pen/abmZRRQ
 
 - ## I love this idea. Data visualizations in pure HTML and CSS!
 - https://twitter.com/dbanksDesign/status/1374261352278024194

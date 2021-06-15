@@ -7,10 +7,46 @@ modified: '2021-01-19T10:51:34.462Z'
 
 # page-ui-comp-react-design
 
-# blog
+# [Don't overabstract your components](https://kirjai.com/component-abstraction/)
+- At some point you are tasked with adding a new component. 
+  - That is first step in a process known as component API design.
 
-## [Writing Type-Safe Polymorphic React Components (Without Crashing TypeScript)_201908](https://blog.andrewbran.ch/polymorphic-react-components/)
+- Component as a layer of abstraction
+- When you are creating a new component - you are, generally, aiming to abstract something away. 
+- Whatever you are abstracting ends up being the component's functionality. What it does and the reason why it exists.
+- As with any abstraction - you are trying to strike a balance. 
+  - A balance between providing some functionality, and the ability to configure said functionality. 
+  - That balance is also the reason why you want to keep your abstractions as small as possible. 
+- The more functionality you are trying to fit into a single layer of abstraction - the more functionality you might have to make configurable. 
+  - Something that becomes harder to do the more functionality the abstraction has.
 
+- Children prop
+  - In my opinion, the `children` prop is underutilized in a lot of React components.
+- Basic select implementation
+- Composable select implementation
+- Shifting responsibility
+  - some responsibility has been shifted to the consumer. 
+  - Generally, that is a good thing, but only to an extent. 
+  - What you want to avoid is having an incomplete abstraction - leaving it up to the consumer to "finish".
+
+- Communication between components
+  - One of the ways is using the React Context API.
+
+- Trade-offs
+  - More opportunity for misconfiguration
+  - Results in more typing
+  - Lack of type safety
+
+- Conclusion
+- My advice is to approach component API design from the perspective of the consumer first. 
+  - Using that as a starting point for iterating over the API. 
+  - Having said that, the first API design that comes to your mind might not be the right one. 
+  - How do you know? Take inspiration from existing component libraries, like Reach UI, Material UI, React Bootstrap, Ant Design to name a few.
+  - There is a lot of overlap in problems a lot of us are solving, after all.
+
+- Finally, if I find myself rendering components and elements from a configuration object - I take a step back. 
+  - I re-evaluate whether the problem I am solving could be solved in a more composable and open way.
+# [Writing Type-Safe Polymorphic React Components (Without Crashing TypeScript)_201908](https://blog.andrewbran.ch/polymorphic-react-components/)
 - When designing a React component for reusability, you often need to be able to pass different DOM attributes to the component’s container in different situations.
 - Let’s say you’re building a `<Button />`. 
   - At first, you just need to allow a custom `className` to be merged in, 
@@ -22,7 +58,7 @@ modified: '2021-01-19T10:51:34.462Z'
   - so there’s a reasonable argument for allowing arbitrary extra props to be passed to Button, 
   - and letting it pass extra ones it doesn’t understand through.
 
-``` typescript
+```typescript
 interface ButtonProps extends React.ButtonHTMLAttributes < HTMLButtonElement > {
   color ? : ColorName;
   icon ? : IconName;
