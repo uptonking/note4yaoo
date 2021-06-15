@@ -22,10 +22,11 @@ modified: '2021-03-29T19:18:55.989Z'
     - 而注解并不产生任何行为，仅仅添加附加内容，需要相应的Scanner读取并识别其中的内容，从而使得Scanner自身产生不同的行为。
     - Angular是通过装饰器来模拟了注解的功能
 
+- 对于index.js中的`export * from './A.js`, `export * from './B.js`，如果A.js和B.js中都有`export default`，那最后index.js中有导出default吗
+
 # 
 
 # .js vs .jsx
-
 - The distinction between .js and .jsx files was useful before Babel, but it’s not that useful anymore.
   - There are other syntax extensions (e.g. Flow). What would you call a JS file that uses Flow? .flow.js? What about JSX file that uses Flow? .flow.jsx? What about some other experimental syntax? .flow.stage-1.jsx?
   - Most editors are configurable so you can tell them to use a JSX-capable syntax scheme for .js files. Since JSX (or Flow) are strict supersets of JS, I don’t see this as an issue.
@@ -36,9 +37,7 @@ modified: '2021-03-29T19:18:55.989Z'
 - Try .tsx
 
 - ref
-
 # In js, what does `this` refer to?
-
 - tips
   - Don't use this
     - You actually don't want to access `this` in particular, but the object it refers to. 
@@ -65,7 +64,7 @@ modified: '2021-03-29T19:18:55.989Z'
 - **Inside a function, the value of `this` depends on how the function is called**.
 - Since the following code is not in strict mode, and because the value of `this` is not set by the call,  `this` will default to the global object, which is `window` in a browser
 
-``` JS
+```JS
 function f1() {
   return this;
 }
@@ -98,7 +97,7 @@ f1() === globalThis; // true
   - The `bind()` function creates a new bound function, which is an exotic(奇异的) function object (a term from ECMAScript 2015) that wraps the original function object. 
     - Calling the bound function generally results in the execution of its wrapped function.
 
-``` JS
+```JS
 function f() {
   return this.a;
 }
@@ -124,7 +123,7 @@ console.log(o.a, o.f(), o.g(), o.h()); // 37,37, azerty, azerty
   - This demonstrates that it matters only that the function was invoked from the `f` method member of object `o` .
   - the `this` binding is only affected by the most immediate member reference
 
-``` JS
+```JS
 var o = {
   prop: 37,
   f: function() {
@@ -145,7 +144,7 @@ console.log(o.b.g()); // 42
 
 - If the method is on an object's prototype chain,  `this` refers to the object the method was called on, as if the method were on the object.
 
-``` JS
+```JS
 var o = { f: function() { return this.a + this.b; } };
 var p = Object.create(o);
 p.a = 1;
@@ -155,7 +154,7 @@ console.log(p.f()); // 5
 
 - A function used as getter or setter has its `this` bound to the object from which the property is being set or gotten.
 
-``` JS
+```JS
 function sum() {
   return this.a + this.b + this.c;
 }
@@ -181,7 +180,7 @@ console.log(o.average, o.sum); // 2, 6
   - if the return value isn't an object, then the `this` object is returned
   - If the function has a return statement that returns some other object, that object will be the result of the `new` expression. 
 
-``` JS
+```JS
 function C2() {
   this.a = 37;
   return { a: 38 };
@@ -196,7 +195,7 @@ console.log(o.a); // 38
   - Note however that only the outer code has its `this` set this way
   - the inner function's `this` isn't set so it returns the global/window object (i.e. the default object in non–strict mode where `this` isn't set by the call).
 
-``` HTML
+```HTML
 <button onclick="alert((function() { return this; })());">
   Show inner this
 </button>
@@ -208,7 +207,7 @@ console.log(o.a); // 38
   - To achieve this,  `bind` the class methods in the constructor
   - Classes are always strict mode code. Calling methods with an undefined `this` will throw an error.
 
-``` JS
+```JS
 class Car {
   constructor() {
     this.sayBye = this.sayBye.bind(this);
@@ -247,7 +246,6 @@ bird.sayBye(); // Bye from Ferrari
   - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
 
 # js: prototype vs __proto__
-
 - prototype 显式原型: explicit prototype property
   - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
   - 通过 `Function.prototype.bind` 方法构造出来的函数是个例外，它没有prototype属性
@@ -287,7 +285,7 @@ bird.sayBye(); // Bye from Ferrari
     - 不同之处在于由 Object.create() 创建出来的对象没有构造函数，其实这里说它没有构造函数是指在 Object.create() 函数外部我们不能访问到它的构造函数，然而在函数内部实现中是有的
     - 因此由Object.create(o)创建出来的对象它的隐式原型指向o
 
-``` JS
+```JS
 // 模拟object.create(o)
 function object(o) {
   function F() {}
@@ -315,7 +313,7 @@ f.__proto__ === o;
   - 它的内部实现原理是这样
   - 也就是沿着L的__proto__一直寻找到原型链末端，直到等于R.prototype为止
 
-``` JS
+```JS
 //设 L instanceof R 
 //通过判断
 L.__proto__.__proto__..... === R.prototype？
@@ -334,7 +332,6 @@ Number instanceof Number //false
   - [js中__proto__和prototype的区别和关系？](https://www.zhihu.com/question/34183746)
 
 # es6 class extends vs node util.inherits
-
 - Since the class and extends keywords are only syntactic sugar on top of prototypal inheritance, 
   - the answer simply is: Yes, you can replace `util.inherits` by `extends` and keep the same behavior.
 - Of course, there are minor things to watch out for, 
@@ -375,7 +372,7 @@ Number instanceof Number //false
   - You can implement this yourself:
     - `Foo()` and `new Foo()` will act the same way
 
-``` JS
+```JS
 function Foo() {
   if (!(this instanceof Foo)) {
     return new Foo();
@@ -389,7 +386,7 @@ function Foo() {
   - Because by default the `new` keyword with a function constructor returns an object, not a primitive type directly. 
   - So you can not, for example, check strict equality on two variables that one of them is declared and assigned using `new Number()` , and the other is with `Number()`
 
-``` JS
+```JS
 var num1 = Number(26);
 var num2 = new Number(26);
 
@@ -413,7 +410,7 @@ num1 === num2; // returns false
 - Here's a pattern I've come across that really helps me.
 - It doesn't use a `class`, but it doesn't require the use of `new` either.
 
-``` JS
+```JS
 const Foo = x => ({
   x,
   hello: () => `hello ${x}`,
@@ -437,7 +434,7 @@ console.log(Foo(1).add(Foo(2)).hello()) // hello 3
   - For production purposes, it is better to use something similar to the answer by Tim and use a method to create a new class.
 - my answer is similar to the one here except it doesn't create new functions each time.
 
-``` JS
+```JS
 const assoc = (prop, value, obj) =>
   Object.assign({}, obj, {
     [prop]: value
@@ -504,7 +501,6 @@ const RightStaticMethods = ({
   - https://dev.to/smalluban/do-we-really-need-classes-in-javascript-after-all-91n
 
 # function declaration vs function expression(named vs anonymous)
-
 - namedFunc pros
   - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
   - 调试时的可读性更好
