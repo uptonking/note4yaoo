@@ -10,7 +10,9 @@ modified: '2021-05-06T09:46:30.944Z'
 > A headless, framework-agnostic and extendable WYSIWYG rich text editor, based on ProseMirror.
 
 # guide
-
+- tiptap-examples
+  - dante
+  - more: shiki-editor(vue)
 # faq-not-yet
 
 # docs
@@ -39,3 +41,12 @@ modified: '2021-05-06T09:46:30.944Z'
   - Just another medium clone built on top of ProseMirror/TipTap
   - Dante3 is a port from Dante2 (Draftjs) 
   - Dante2: Bad mobile support, big size, no realtime collab
+
+- https://github.com/primo-af/primo
+  - https://primo.af/
+  - /76Star/AGPLv3/202106/svelte
+  - a next-gen, dev-friendly alternative to WordPress.
+
+- https://github.com/shikimori/shiki-editor /vue
+  - a wysiwyg editor based on prosemirror
+  - highly inspired by tiptap source code. Many parts of the code are taken from there.

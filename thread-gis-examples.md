@@ -9,6 +9,20 @@ modified: '2021-05-25T08:40:49.076Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Follow a piece of plastic from anywhere in the world on a 20-year journey 
+- https://twitter.com/Mapbox/status/1404902319670562816
+  - 瓶子漂流轨迹
+
 - ## ICYMI: 24 maps visualizing the results of the 2020 US election, from top media outlets — a lot of different, yet all great election maps. 
 - https://www.anychart.com/blog/2020/11/06/election-maps-us-vote-live-results/
 

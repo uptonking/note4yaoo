@@ -31,6 +31,7 @@ modified: '2021-01-04T17:26:25.032Z'
   - 基于textarea实现
 - https://github.com/outline/rich-markdown-editor
   - /2kStar/BSD/202105/ts
+  - 依赖prosemirror-markdown
   - React and Prosemirror based markdown editor that powers Outline.
   - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
 - https://github.com/remarkjs/react-markdown
@@ -41,6 +42,14 @@ modified: '2021-01-04T17:26:25.032Z'
   - why this one?
     - The two main reasons are that they often rely on `dangerouslySetInnerHTML` or have bugs with how they handle markdown. 
     - react-markdown uses a syntax tree to build the virtual dom which allows for updating only the changing DOM instead of completely overwriting. 
+- https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - /454Star/MIT/202106/ts
+  - 依赖prosemirror、markdown-it、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
+- https://github.com/StackExchange/Stacks-Editor
+  - Stack Overflow's Combination Rich Text / Markdown Editor
+  - 依赖prosemirror, hightlight.js，不依赖react
 - https://github.com/uiwjs/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
   - 依赖react-markdown、codemirror、highlight.js
@@ -52,9 +61,6 @@ modified: '2021-01-04T17:26:25.032Z'
   - In-browser Markdown editor
 - https://github.com/pandao/editor.md
   - The open source embeddable online markdown editor (component).
-- https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
 - https://github.com/Vanessa219/vditor
   - /1.3kStar/MIT/202009
   - In-browser Markdown editor, support WYSIWYG (Rich Text), Instant Rendering (Typora-like) and Split View modes.

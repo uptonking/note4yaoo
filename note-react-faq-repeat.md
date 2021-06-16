@@ -12,7 +12,15 @@ modified: '2021-06-10T06:44:27.120Z'
 
 ## 
 
-## 
+## 使用ReactDOM.createPortal和ReactDOM.render的区别
+
+- https://codesandbox.io/s/42x771ykwx
+  - 在render()方法中，在可以使用ReactDOM.createPortal的地方也可以使用ReactDOM.render
+  - ReactDOM.unstable_renderSubtreeIntoContainer 也能传递context
+
+- [How to use ReactDOM.createPortal() in React 16?](https://stackoverflow.com/questions/46393642)
+  - Even though the component rendered through the portal is rendered somewhere else (Outside the current container root), it remains present as the child of the same parent component. (Who invoked the ReactDOM.createPortal) So **any events on the child are propagated to the parent**.
+  - Same **context is accessible inside the component rendered through a portal**. But not in the case when we do `ReactDOM.render` directly.
 
 ## context selector
 

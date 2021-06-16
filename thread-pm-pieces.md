@@ -14,7 +14,11 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ##
 
-- ## 
+- ## Unpopular opinion: reproducible presentations (e.g., R Markdown Xaringan, Jupyter Rise, etc) are easier than WSWYG ones (e.g., Powerpoint, Keynote)
+- https://twitter.com/TiffanyTimbers/status/1404823614596128768
+  - I don't stand by this 100% of the time, but I do most of the time. When do I choose a WSWYG presentation tool? When there is no analysis involved, & for short, one-off presentations. 
+- I have never used WYSWYG because I learn LaTeX before I needed to write my first presentation. Always LaTeX (reports, presentations, posters, journal articles, ...), with knitr if data analysis is involved 
+- IMHO best is very background dependent. In general, only a small fraction of my presentations relate to actual results, while most is background and implications. I do like Rmarkdown for automatic analysis updates or standard analysis templates.
 
 - ## Automatically fill your Notion database from events on your website.
 - https://twitter.com/splitbee/status/1401872538393796612

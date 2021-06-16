@@ -10,7 +10,6 @@ modified: '2021-05-06T09:44:07.629Z'
 > Starboard is an in-browser literate notebook that is extendable, portable, sharable and hackable.
 
 # guide
-
 - starboard pros
   - 可导出文件本地编辑，但导出文本是自定义格式.sbnb
   - 基于cell/block的编辑模式，适合数据分析
@@ -28,9 +27,7 @@ modified: '2021-05-06T09:44:07.629Z'
   - Portable
   - Hackable
   - Works on mobile devices
-
 # ideas
-
 - 导出到本地的tradeoff
   - local file的上传与下载，只支持简单样式与标准交互功能模块
   - 若需要细粒度地定制样式布局，则需要切换到高级编辑器，且下载时只能下载图片
@@ -45,5 +42,9 @@ modified: '2021-05-06T09:44:07.629Z'
 
 - 当代码过多时，效果比不上直接使用ide来开发计算
 - tableau只能使用专用的软件编辑和查看，不能导出到本地
-
 # pieces
+
+# examples-repos
+
+- https://github.com/stefnotch/starboard-editor
+  - add features to the editor: drag & drop, offline

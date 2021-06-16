@@ -62,3 +62,6 @@ modified: '2021-06-02T10:28:39.488Z'
   - a full-stack event discovery app for hosting and finding virtual events. 
   - By default, Eventure uses the production backend API hosted on api.eventure.kevintamcs.com.
   - To change this, swap the value of API_ROOT under src/index.tsx to your desired backend location.
+
+- https://github.com/4giving/r-m-e
+  - a modified clone of Rich Markdown Editor.

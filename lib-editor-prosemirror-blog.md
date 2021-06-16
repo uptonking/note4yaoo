@@ -320,3 +320,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
   - syncToMarks()是通过一个栈结构来实现这种效果的
 - 视图描述只是虚拟DOM，如果一个视图描述节点需要更新时，它会为自己设置一个dirty属性，表示需要更新。
 - 视图描述指示文档DOM的更新，深度遍历从叶子节点往上遍历，完成一个层级就调用renderDescs()来更新相应的DOM。
+
+# more-prosemirror-blogs
+- [Decouple look&feel from Remirror extensions](https://medium.com/collaborne-engineering/decouple-look-feel-from-remirror-extensions-87a06ad9214e)
+  - The Remirror extension thereby exposes an option in the format of `(state) => React.ReactElement` and uses this afterwards to render the component.

@@ -155,10 +155,10 @@ modified: '2021-06-13T07:57:01.122Z'
 - Mark views only support `dom` and `contentDOM`, and don't support any of the node view methods.
 
 - NodeView
-  - dom: ?⁠dom. Node
+  - dom: ?⁠domNode
     - The outer DOM node that represents the document node. 
     - When not given, the default strategy is used to create a DOM node.
-  - contentDOM: ?⁠dom. Node
+  - contentDOM: ?⁠domNode
     - The DOM node that should hold the node's content. 
     - Only meaningful if the node view also defines a `dom` property and if its node type is not a leaf node type.
     - When this is present, ProseMirror will take care of rendering the node's children into it. 

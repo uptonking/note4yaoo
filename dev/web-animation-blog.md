@@ -35,9 +35,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - I would tend towards react-spring if I want spring physics look-and-feel in my project. 
   - Also, I would consider Framer Motion Gestures and react-spring + react-with-gesture and consider if either out-of-the-box animation suite had the exact event I needed.
   - When choosing a library for a project, consider the end goal of the project, the look and feel that you want your animations to have, and don’t be afraid to try something new.
-
 # [Animating Layouts with the FLIP Technique_2017](https://css-tricks.com/animating-layouts-with-the-flip-technique/)
-
 - Animation brings user interfaces to life. 
 - However, adding meaningful transitions and micro-interactions is often an afterthought, or something that is “nice to have” if time permits. 
 - All too often, we experience web apps that simply “jump” from view to view without giving the user time to process what just happened in the current context.
@@ -73,9 +71,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - By adding a `data-flip-key="..."` attribute to HTML elements, it’s possible to predictably and efficiently keep track of elements that might change position and dimensions from state to state.
   - flipping.js: tiny and low-level; only emits events when element bounds change
   - flipping.web.js: uses WAAPI to animate transitions
-
 # FLIP Your Animations
-
 - [FLIP Your Animations_2015](https://aerotwist.com/blog/flip-your-animations/)
   - [github: flipjs](https://github.com/googlearchive/flipjs)
     - /Apache2/1.3kStar/201601
@@ -118,9 +114,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Calculate in JavaScript, but let CSS handle the animations for you. 
   - You don’t have to use CSS to do the animations, though, you could just as easily use the Web Animations API or JavaScript itself, whatever’s easiest. 
   - The main point is that you’re reducing the per-frame complexity and cost (which normally means transform and opacity) to try and give the user the best possible experience.
-
 # history of web animations
-
 - [Navigating the sadistic world of web animations_2019](https://weareferal.com/blog/navigating-the-sadistic-world-of-web-animations)
 
 - To get a good overview of where we cur­rent­ly stand with brows­er ani­ma­tions, here’s what we’re going to look at:
@@ -169,9 +163,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Fur­ther­more, only some of the API has been built-out so far, so some of the more advanced fea­tures are still a lit­tle while off (ani­ma­tion motion along a path for example).
 - With the Web Ani­ma­tions API still in the works, for com­plex ani­ma­tion we may want to fall back to tried-and-test­ed 3rd par­ty libraries
 - The impor­tant thing to note is that all these libraries use one or more of the approach­es we’ve men­tioned: ful­ly cus­tom JavaScript, CSS transitions/​animations, WAAPI or a mix of all three.
-
 # Tips for Writing Animation Code Efficiently
-
 - [Tips for Writing Animation Code Efficiently](https://css-tricks.com/tips-for-writing-animation-code-efficiently/)
 
 - I will be using the GreenSock Animation Platform (GSAP). 
@@ -213,9 +205,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Use case: Animating between multiple states of a timeline
   - Use case: Animating based on the scroll position
 - Bonus tip: Use GSAP’s plugins, utility methods, and helper functions
-
 # High Performance Animations
-
 - [High Performance Animations_2013](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
 
 - Modern browsers can animate four things really cheaply: 
@@ -274,9 +264,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - You should always look to avoid animating properties that will trigger layout or paints, both of which are expensive and may lead to skipped frames. 
   - Declarative CSS animations are preferable to imperative since the browser has the opportunity to optimize ahead of time.
   - Today transforms are the best properties to animate because the GPU can assist with the heavy lifting
-
 # React Web动画的5种创建方式 
-
 - [React Web 动画的 5 种创建方式，每一种都不简单](https://zhuanlan.zhihu.com/p/28500217)
   - [React Animations in Depth_2017](https://medium.com/react-native-training/react-animations-in-depth-433e2b3f0e8e)
 
@@ -308,7 +296,9 @@ modified: '2020-12-21T07:44:14.728Z'
   - Overall, I think I will be using JS style animations for basic animations, and React Motion for anything crazy on the web. 
   - And for React Native, I will be sticking to Animated. 
   - Once Animated is more mature, I will also probably switch to it as well on the web, though I am starting to enjoy using React Motion!
-
 # ref
-
 - [A method for animating browser layouts at 60fps](https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps)
+
+- [Responsive Animations with Framer Motion](https://samuelkraft.com/blog/responsive-animation-framer-motion)
+  - Using media queries in javascript
+  - Responsive Animation with Variants

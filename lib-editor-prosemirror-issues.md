@@ -15,7 +15,15 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
-- ## 
+- ## Customizing Schema for Table
+- https://discuss.prosemirror.net/t/customizing-schema-for-table/1991
+  - I want to change how the table node is rendered. 
+  - For example: I want the `table` element to have a class of `table` .
+- I guess you’re still including the `columnResizing` addon? **That will define a node view for tables which will override your `toDOM` method**.
+  - The tables module builds on a bunch of assumptions about the kind of tables it is representing, and I wouldn’t be surprised if some of its features, like column widths, stop working when you change its DOM representation, 
+  - but in principle if you disable those features you should be able to do what you want here.
+- I fixed this by creating a class that extends the `TableView` , seems a little bit hacky but it works.
+  - and then pass the new class as the View to the the `ColumnResizing` plugin
 
 - ## prosemirror and mermaid
 - https://gitter.im/ProseMirror/prosemirror?at=59c2cbef614889d47520666a
