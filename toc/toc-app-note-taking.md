@@ -33,7 +33,7 @@ modified: '2020-10-22T10:03:50.526Z'
 - https://github.com/benrbray/noteworthy
   - Markdown editor with bidirectional links and excellent math support
   - 参考了prosemirror、zettlr、vscode、notable
-  - 依赖solid-js、remark13、prosemirror、electron-window-state
+  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
 - https://github.com/vicjohnson1213/Medley
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
   - A tag-based note taking app using Markdown for formatting.

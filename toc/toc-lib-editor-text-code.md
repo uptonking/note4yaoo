@@ -114,7 +114,7 @@ modified: '2021-05-23T11:00:25.549Z'
 - https://github.com/benrbray/noteworthy
   - Markdown editor with bidirectional links and excellent math support
   - 参考了prosemirror、zettlr、vscode、notable
-  - 依赖solid-js、remark13、prosemirror、electron-window-state
+  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
 
 - https://github.com/BlueMona/prosemirror-react-renderer
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.

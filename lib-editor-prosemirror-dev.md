@@ -29,11 +29,30 @@ modified: '2021-05-06T09:39:53.522Z'
   - tiptap, rich-markdown-editor, @atlaskit/editor-core, remirror
   - atlaskit-editor实现了layout多列插件和图片排版插件
   - more-react: smartblock, curvenote(redux), nib-edit, xen-editor, czi-prosemirror, pubpub-editor, licit, Aditor
-  - more-vanillajs: stacks-editor, milkdown, bangle.dev, tui.editor.v3, emirror, kangxi-editor
+  - more-vanillajs: stacks-editor, milkdown, bangle.dev, tui.editor.v3, emirror, kangxi-editor, pageboard/client(页面搭建)
 # pieces
 
-# examples-repos
+# examples-remark-parse
 
+- https://github.com/marionebl/prosemirror
+  - A personal experiment libraries over prosemirror project
+  - prosemirror + remark demos
+
+- https://github.com/Novartis/mdx-utils
+  - This package contains utilities for working with MDX syntax.
+  - Parses an MDX document and its frontmatter into an AST.
+  - Create a custom Prosemirror schema. 
+    - This extends the Prosemirror Markdown schema with your custom elements, allowing its AST to represent your MDX document.
+  - transforms an MDX syntax tree into a Prosemirror syntax tree. 
+    - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
+
+- https://github.com/dxos/editor /AGPLv3
+  - Collaborative editor
+  - 依赖 remark-rehype、yjs、prosemirror、hightlight.js
+
+- more-remark
+  - notewothy
+# examples-repos
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -50,18 +69,6 @@ modified: '2021-05-06T09:39:53.522Z'
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
   - copy the approach by Atlassian editor_v20201205
   - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
-
-- https://github.com/marionebl/prosemirror
-  - A personal experiment libraries over prosemirror project
-  - prosemirror + remark demos
-
-- https://github.com/Novartis/mdx-utils
-  - This package contains utilities for working with MDX syntax.
-  - Parses an MDX document and its frontmatter into an AST.
-  - Create a custom Prosemirror schema. 
-    - This extends the Prosemirror Markdown schema with your custom elements, allowing its AST to represent your MDX document.
-  - transforms an MDX syntax tree into a Prosemirror syntax tree. 
-    - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
 
 - https://github.com/BlueMona/prosemirror-react-renderer
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
