@@ -11,8 +11,23 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- @babel/template placeholder "$1": Property expression of ExpressionStatement expected node to be of a type ["Expression"] but instead got "TSModuleBlock"
+  - https://stackoverflow.com/questions/64343700
+  - This might probably due to a namespace being exported which only contain interfaces/types (Not actual classes/functions/objects but type declarations).
+
+```JS
+// A quick fix is to add declare to the exported namespace.
+
+export declare namespace SomeNameSpace {}
+
+// instead of
+
+export namespace SomeNameSpace {}
+```
+
 - esbuild  esbuild: Failed to install correctly
-  - If you're using npm v7, make sure your package-lock.json file contains either "lockfileVersion": 1
+  - If you're using npm v7, make sure your package-lock.json
+  -  file contains either "lockfileVersion": 1
   - 只是esbuild这个包未安装成功，可以查看 node_modules/esbuild/bin/esbuild，这个文件内容为空
   - 因为npm安装此包时，未执行postinstall，需要自己单独执行npm rebuild esbuild，
   - 若还是异常，可以进一步手动执行 node node_modules/esbuild/install.js

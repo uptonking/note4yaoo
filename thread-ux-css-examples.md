@@ -24,7 +24,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## We can use % values for positioning animations on timelines.
+- https://twitter.com/cassiecodes/status/1405254957507428353
+  - https://codepen.io/GreenSock/pen/PopXddg
+  - 依赖gsap、vue，实现刻度进度的显示
 
 - ## Pure HTML + CSS Calculator
 - https://www.bram.us/2021/06/07/pure-html-css-calculator/

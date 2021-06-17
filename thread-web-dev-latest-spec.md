@@ -11,9 +11,29 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why on earth does it take almost a second to close a photo modal? Does it tear down and rebuild all underlying DOM between state changes? 
+- https://twitter.com/sebmarkbage/status/1405205123236864007
+- Browsers tend to optimize things when they become the only bottleneck. There’s also async layout proposals that can help with this.
+  - we’ve also been working with browser vendors to contribute to and test new specs like display locking
+- Concurrency in CSS is definitely something to tackle. We do this in React Native and display locking with async preemptive(优先的) layout calculation is great.
+- The way we plan on JS concurrency helping with these scenarios is to allow content that previously would've been removed from the tree alive so that the DOM can do this kind of layout work preemptively.
+  - Previously keeping things "alive" would be too costly since it can interrupt the foregrounded interaction. Keeping it "dead" in JS terms but alive in DOM would leave it stale and then you pay for it all when you reactive it.
+  - The sweet spot is to use concurrency to keep the tree alive but at low priority. That way all the work to restore the tree is already done by the time you need it but because things are "backgrounded" in terms of priority and connections it doesn't negatively affect interactions.
+- Concurrent Rendering will improve the UX for the 250ms of JS work. Chrome will still spend 750-1000ms on CSS. On Safari the interaction should feel instantaneous.
+  - Not quite. We'll switch off of display: none in Chrome and keep the tree in memory and preemptively compute updates to that tree in the background using concurrent rendering. So when we switch off of it, that work has already been amortized(分期偿还，分期付款).
+  - Like we're already using concurrent rendering to keep the tree in the background (feed) alive without interrupting the foreground work. However, the way React currently does that is using `display: none` to ensure consistency. The new feature is to not use display none
+  - but to do that, we need to deal with CSS relayout in the background using tricks and/or display locking and deal with some other quirks. That's a new feature.
+- The **alternative of not using concurrent features by keeping the tree alive** would let it rerender in the background which would be way worse when it's opened but make closing faster. The other alternative of deleting the whole tree would make restoring it to where you were worse.
+
 - ## With text fragments in URLs, we can link to (and highlight) parts of an HTML page, even if they have no IDs.
 - https://twitter.com/rauschma/status/1404053789724844036
-  - Example (requires a Chromium-based browser): 
+  - Example (requires a Chromium-based browser):
   - https://exploringjs.com/#:~:text=Essential%20JavaScript%20and%20TypeScript%20books
   - [Boldly link where no one has linked before: Text Fragments](https://web.dev/text-fragments/)
 - The feature indeed only works for non-same page navigation
