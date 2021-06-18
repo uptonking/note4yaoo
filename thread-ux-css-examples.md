@@ -7,8 +7,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 # thread-ux-css-examples
 
-# examples-stars
+# guide
 
+- generative art/shapes
+# examples-stars
 - ## a demo of a Smooth-Scrolling Sticky ScrollSpy Menu: as you scroll down, the correct navigation item gets highlighted … using only CSS!
 - https://twitter.com/bramus/status/1395494519420899330
   - https://codepen.io/bramus/pen/LYbBoRj
@@ -22,7 +24,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Experimenting with some generative grid layouts
+- https://codepen.io/georgedoescode/pen/YzZgKyO
+  - Generative Quadtree Based Grid Layouts
+  - 不同大小的圆形、方形的集合
 
 - ## We can use % values for positioning animations on timelines.
 - https://twitter.com/cassiecodes/status/1405254957507428353

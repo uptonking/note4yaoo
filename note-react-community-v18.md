@@ -7,6 +7,13 @@ modified: '2021-06-09T10:38:04.542Z'
 
 # note-react-community-v18
 
+# guide
+
+- [A better React 18 startTransition demo](https://swizec.com/blog/a-better-react-18-starttransition-demo/)
+  - https://react-fractals-git-react-18-swizec.vercel.app/
+  - https://github.com/Swizec/react-fractals
+  - 可以增加树的高度和叶节点的数量
+  - 给出了调试步骤
 # v18-stars
 - ## an initial implementation of built-in Suspense cache.
 - https://github.com/reactwg/react-18/discussions/25

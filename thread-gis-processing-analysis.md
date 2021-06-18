@@ -11,6 +11,20 @@ modified: '2021-05-25T08:41:18.938Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Difference between COG and GeoTIFF basically (but not only) is, that COG uses internal index.
+- https://twitter.com/gdaltips/status/1405615640799551488
+- To speedup work (e.g. in @QGIS ) with raster data, use gdaladdo script to create overviews. 
+  - GeoTIFF will store overviews internally.
+- And sometimes it is very useful thing to add `TILED=YES` option to geotiff creation command.
+- Are overviews similar to pyramid layers?
+  - You mean in QGIS? it uses the same tool, so yes.
+
 - ## Thinking that GDAL, GEOS and QGIS all have C++ geometry classes (you know Point, LineString, etc.) implementing the same standard(s). Probably too late to fix history.
 - https://twitter.com/EvenRouault/status/1383190934200942602
 - IMO the problem is that geos doesn’t have support for curved geometries or m values. Otherwise it’d be a natural fit for a “common” geometry representation. (Alternatively we could make a new common library for JUST geometry representation storage...)

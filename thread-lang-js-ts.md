@@ -22,7 +22,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Problem with `Promise.all()` : Once it encounters a rejection, it doesn’t wait until all Promises are settled (short-circuiting (*)). Consequence: Unexpected things can happen after error handling.
+- https://twitter.com/rauschma/status/1405568325724291080
+- Tentative idea: Promise.forkJoin(objOrArr). Once all Promises are settled:
+  - All fulfilled: fulfill result with obj/arr of values
+  - 1+ rejected: reject with AggregateError
+  - This is what an implementation of forkJoin() could look like:
+  - https://gist.github.com/rauschma/bdc56a046b18528959ad1db3eed05386
+- What about `Promise.allSettled` ? I’ve taken to chaining the outcome to array filter and map (depending on intent, of course).
+- There’s `Promise.allSettled` , combine it with `Promise.all`
 
 - ## You can substitute an if-statement checking for a truthy value with an expression using short-circuit evaluation and the logical && and
 - https://twitter.com/ThaddeusJiang/status/1403848377943543809

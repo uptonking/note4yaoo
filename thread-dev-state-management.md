@@ -61,12 +61,17 @@ modified: '2021-02-28T07:29:07.622Z'
 <!-- #endregion /folded state-repeated -->
 
 # pieces
-
 - ## 
 
 - ## 
 
-- ## 
+- ## A while back we tried putting together an "action listener callback middleware" for potential addition to RTK. 
+- https://twitter.com/acemarke/status/1405695521944223747
+  - Use case is "run code after an action", but meant to be lighter than sagas/observables.
+  - The PR stalled, but we're still interested in feedback
+  -  We'd like to add it, but want to make sure the API is good.
+  - [yet another attempt at actionListenerMiddleware](https://github.com/reduxjs/redux-toolkit/pull/547)
+- Is there really a meaningful benefit to having actions like "add/remove listener" show up in the DevTools? I've never been a fan of the idea of dispatching actions just to get a logging effect.
 
 - ## Logux State is a tiny (159 bytes!) state manager inspired by @EffectorJS and Recoil, but was created to move logic from components into stores.
 - https://twitter.com/logux_io/status/1395068017755705352

@@ -9,7 +9,13 @@ modified: '2020-11-03T06:54:59.051Z'
 
 # amazing-ux-viz
 
-- https://tabbied.com/select-artwork 
+- [A better React 18 startTransition demo](https://swizec.com/blog/a-better-react-18-starttransition-demo/)
+  - https://react-fractals-git-react-18-swizec.vercel.app/
+  - https://github.com/Swizec/react-fractals
+  - 可以增加树的高度和叶节点的数量
+  - 给出了调试步骤
+
+- https://tabbie、、d.com/select-artwork 
   - 源码基于nextjs，超级适合用来制作logo
 
 - https://github.com/zerosoul/chinese-colors

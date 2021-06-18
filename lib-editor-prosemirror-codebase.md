@@ -9,6 +9,11 @@ modified: '2021-06-02T17:13:37.692Z'
 
 # guide
 
+- 要关注的重点
+  - 编辑器state数据结构是如何设计的
+  - 输入时如何更新dom元素
+  - plugin如何更新state
+
 - minimal example渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 # prosemirror-react-dev
 

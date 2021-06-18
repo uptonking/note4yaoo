@@ -10,7 +10,16 @@ modified: '2021-04-23T17:10:52.920Z'
 # faq
 
 - click vs touch
-- 如何实现用2点触控two (simultaneous) touches事件模拟右键菜单，多点触控如何区分不同功能手势如放大缩小、
+
+- ## [onKeyPress Vs. onKeyUp and onKeyDown](https://stackoverflow.com/questions/3396754)
+- Note: `keypress` event has been deprecated, you should look to use `beforeinput` or `keydown` instead.
+- order
+  - keydown > keypress > (textInput >) keyup
+  - 类似的顺序参考: mousedown > mouseup > click
+  - 注意不同浏览器实现可能有差异
+- keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
+
+- ## 如何实现用2点触控two (simultaneous) touches事件模拟右键菜单，多点触控如何区分不同功能手势如放大缩小、
   - `UIEvent.detail`
     - The `MouseEvent` object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 
   - `TouchEvent.targetTouches`
@@ -32,7 +41,7 @@ modified: '2021-04-23T17:10:52.920Z'
     - https://stackoverflow.com/questions/5497073/how-to-differentiate-single-click-event-and-double-click-event
   - 示例
 
-``` js
+```js
   let count = 0;
   class App extends Component {
     onClick = () => {
@@ -54,7 +63,6 @@ modified: '2021-04-23T17:10:52.920Z'
 ```
 
 # summary
-
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers
   - https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers
@@ -91,14 +99,12 @@ modified: '2021-04-23T17:10:52.920Z'
     - onkeypress事件不是适用于所有按键(如： ALT, CTRL, SHIFT, ESC)
     - onkeypress与onkeydown一样，也是先处理事件，再显示文本
   - onchange：当对象或选中区的内容改变且失去焦点时触发
-
 # guide
-
 - Events can be created with the `Event` constructor
   - This constructor is supported in most modern browsers (with Internet Explorer being the exception)
 - To add more data to the event object, the `CustomEvent` interface exists and the `detail` property can be used to pass custom data
 - The older approach to creating events uses APIs inspired by Java
-  - `const event = document.createEvent('Event');`
+  - `const event = document.createEvent('Event'); `
 - Elements can listen for events that haven't been created yet by eventName
 
 - `EventTarget` is a DOM interface implemented by objects that can receive events and may have listeners for them.
@@ -111,9 +117,7 @@ modified: '2021-04-23T17:10:52.920Z'
   - Unlike "native" events, which are fired by the DOM and invoke event handlers asynchronously via the event loop, dispatchEvent() invokes event handlers synchronously. 
   - All applicable event handlers will execute and return before the code continues on after the call to dispatchEvent().
   - dispatchEvent() is the last step of the create-init-dispatch process, which is used for dispatching events into the implementation's event model. The event can be created using Event constructor.
-
 # Web-API-GlobalEventHandlers
-
 - `onchange`
     - ref
       - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
@@ -153,9 +157,7 @@ modified: '2021-04-23T17:10:52.920Z'
     - called when an animationstart event is sent, indicating that a CSS animation has started playing.   
 - `ontransitionstart`
     - called when a transitionstart event is sent, indicating that a CSS transition has started transitioning.
-
 # drag
-
 - HTML drag-and-drop uses `DOM event model` and `drag events` inherited from mouse events.
 - ondrag/start/enter/over/exit/leave/end
 - ondrop
@@ -213,7 +215,7 @@ modified: '2021-04-23T17:10:52.920Z'
   - 不含边框的元素自身的宽度/高度（如果是标准盒模型 width+padding；如果是IE盒模型 width-border）
 - Firefox的event不支持offsetX属性，兼容方法
 
-``` js
+```js
 function getOffsetX(event) {
   var evt = event || window.event;
   var srcObj = evt.target || evt.srcElement;
@@ -295,9 +297,7 @@ function getOffsetX(event) {
 - In iOS UIWebViews, scroll events are not fired while scrolling is taking place; 
   - they are only fired after the scrolling has completed. 
   - See Bootstrap issue #16202. Safari and WKWebViews are not affected by this bug.
-
 # keyboard 
-
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
 - `onkeydown`
@@ -307,9 +307,7 @@ function getOffsetX(event) {
   - It may have already been **removed** from the relevant web standards
   - Note that some implementations may fire keypress event if supported. 
   - The events will be fired repeatedly while the key is held down.
-
 # focus
-
 - focus vs selection
   - Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). 
   - You can get the current selection using `window.getSelection()` .
@@ -319,9 +317,7 @@ function getOffsetX(event) {
   - Other times the focused element might be a `<select>` element (menu) or an `<input>` element, of type "button", "checkbox", or "radio".
   - Typically a user can press the tab key to move the focus around the page among focusable elements, and use the space bar to activate one (that is, to press a button or toggle a radio button). 
     - Which elements are focusable varies depending on the platform and the browser's current configuration. 
-
 # mouse 
-
 - mousedown vs click
   - click is fired after a full click action occurs:
     - that is, the mouse button is pressed and released while the pointer remains inside the same element. 
@@ -338,7 +334,7 @@ function getOffsetX(event) {
   - The click event is raised when the user clicks on an element.
   - It fires **after** both the mousedown and mouseup events have fired, in that order.
   - When using the click event to trigger an action, also consider adding this same action to the `keydown` event, to allow the use of that same action by people who don't use a mouse or a touch screen.
-  - `target.onclick = functionRef;`
+  - `target.onclick = functionRef; `
     - functionRef is a function name or a function expression. 
     - functionRef receives a MouseEvent object as its sole argument. 
     - Within the function, `this` will be the element upon which the event was triggered.        
@@ -356,7 +352,7 @@ function getOffsetX(event) {
     - https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event
   - The dblclick event is raised when the user double clicks an element. 
   - It fires **after** two click events (and by extension, after two pairs of mousedown and mouseup events)..
-  - `target.ondblclick = functionRef;`
+  - `target.ondblclick = functionRef; `
   - Only one ondblclick handler can be assigned to an object at a time. 
     - You may prefer to use the EventTarget.addEventListener()
 - double click vs click
@@ -377,9 +373,7 @@ function getOffsetX(event) {
   - mouseout和mouseleave类似
   - mouseover支持事件冒泡，mouseenter不支持事件冒泡 
     - mouseover从子元素进入父元素的时候，会触发父元素的mouseover事件，而mouseenter并不会
-
 # CompositionEvent
-
 - ref
   - https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent
   - https://segmentfault.com/a/1190000008023476
@@ -395,7 +389,6 @@ function getOffsetX(event) {
 - 在React应用中，如果是一个"Uncontrolled"(不受控制的)的input组件，它与网页上真实DOM中的input元素的事件行为无差异，也就是说，直接使用CompositionEvent的解决方式，就可以解决这个输入法的问题
 
 - Chrome浏览器在2016年的版本53之后，更改了change与compositionend的触发顺序
-
 # event要点
 
 ## 元素宽高
