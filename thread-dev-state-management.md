@@ -63,7 +63,12 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## 
+- ## zustand has a thing called transient updates.
+- https://twitter.com/0xca0a/status/1406246841436487682
+  - binds components to reactive state w/o causing re-render. you wouldn't want react running a complete component lifecycle 60 times a sec. i hope react figures this out natively one day, until then: zustand.
+- In my state-designer lib, I have a “secretly” API (“secretlyTo” for transitions and “secretlyDo” for actions) that will update state without updating React. Great for these kinds of semi-stateful effects.
+- This is why I'm glad there are concurrent features instead of a concurrent mode now; 
+  - IIRC external state doesn't play well with concurrency in React (useSubscription/useMutableSource de-opts), but it's such a common use-case that I wish it were first-class.
 
 - ## A while back we tried putting together an "action listener callback middleware" for potential addition to RTK. 
 - https://twitter.com/acemarke/status/1405695521944223747

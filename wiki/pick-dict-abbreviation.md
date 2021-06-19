@@ -6,11 +6,8 @@ modified: '2020-08-06T05:29:22.922Z'
 ---
 
 # pick-dict-abbreviation
-
 - 缩略词
-
 # pieces
-
 - Git团队协作中常用术语
   - WIP   
     - Work in progress, do not merge yet. // 开发中
@@ -31,6 +28,8 @@ modified: '2020-08-06T05:29:22.922Z'
 
  
 
+- IIRC
+  - an initialism for "If I Remember Correctly" or "If I Recall Correctly"
 - TBH
   - to be honest 老实说
 - tbf

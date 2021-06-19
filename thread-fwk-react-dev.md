@@ -15,9 +15,51 @@ modified: '2021-01-06T14:40:03.364Z'
   - Unidirectional data flow is easier to reason about.
   - VDOM makes it performant and robust.
   - Huge ecosystem and community.
-# pieces
-- ## 
 
+- ## Which React component API do you prefer for complex reusable components (such as a table)?
+- https://twitter.com/housecor/status/1405916713707884554
+  - Option 1: Config object
+  - Option 2: Compound component
+- For complex and re-usable components i would not recommend react at all. There is a reason why enterprise grade widgets won't get created with react or angular (e.g. ag grid, bryntum).
+  - I would say the reason they're not made with React is so they can address a larger audience. If one already has React, using it's paradigm = less code, and the ability to compose other React components inside.
+  - The benefit of using React is I can reuse lots of child components. This reduces the bundle size and complexity of the complex component.
+- Trust me, if you have components which rely on 50+ state vars, React is the wrong tool. For this, you need a class config system and powerful state management logic. This is actually my field of expertise
+  - https://github.com/neomjs/neo
+  - neo.mjs enables you to create scalable & high performant Apps using more than just one CPU. 
+  - No need to take care of a workers setup, and the cross channel communication on your own.
+- For #1, This way I can take json data from an api call and pass it through to the Table component
+- Unpopular opinion - 1 
+  - Composition is great when it comes to homogeneous data 
+  - I always find config object easier to work with. 
+  - JSX just adds a lot of verbosity. 
+  - Also config object allows you to apply filters & transforms easily. 
+  - Also with TS config objects are more predictable
+- In that table example, the compound components is about to get SUPER ugly as soon as the data is dynamic and needs some transformation from the server to what your display interface expects
+  - IMO you can generate the shape config expects using elegant javscript functional programming. Using jsx, you are going to have a lot of extra syntax and mixing of js and jsx to accomplish the same thing
+  - I will concede that the autocomplete experience is better with a config object in TypeScript. 
+- Tables are already implemented in HTML as "compound" elements, ie: `<thead>`/`<tbody>` are children of a `<table>`, 
+  - also HTML is extremely well documented so I don't have to go read the implementation to use them. 
+  - If these were more than just wrapper components I'd take #1.
+- Config object make thinks harder when you want a custom table in one place. You’ll end up having keys that are function that render component
+- If data is dynamic then I think 2nd option us not suitable and 1st option is preferred
+- The second option is a lot more simple and easier to work with while preserving readability (e.g. passing in an array of data with .map)
+- #2 all day- harder to set up initially but worth it for power & flexibility
+
+- ## When creating reusable React components, prefer compound components over config objects.
+- https://twitter.com/housecor/status/1405512541846052871
+  - Compound components are more flexible and offer a more natural API.
+  - Use React's context to pass props down to child elements as needed.
+- Replies: "The config object is type safe and enforces consistency". 
+  - That's fair. Compound components are a tradeoff. 
+  - Arguably a Select is too simple to justify this pattern. But it really shines with complex components like a table
+- They are indeed more flexible, but they are also easier to abuse. You can validate config objects but you can't really validate children.
+  - agreed. I see 2 core downsides to the composite component pattern:
+  1. More work to implement
+  2. More flexibility = more risk of reuse
+- I feel like Typescript encourages you to avoid this pattern for good reason, because CCs rely on children, which can't be typed strongly enough to avoid having to read the implementation. I like letting TS suggest props and catch my mistakes. Config props all the way for me! 
+- We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
+- This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
+# pieces
 - ## 
 
 - ## 

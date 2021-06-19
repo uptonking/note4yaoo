@@ -13,6 +13,20 @@ modified: '2021-06-02T17:26:42.963Z'
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
 
+- 云同步提供商
+  - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
+    - https://github.com/reruin/sharelist
+      - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
+    - 基于 OneDrive API 的图床
+      - https://github.com/harrisoff/onedrive
+      - https://github.com/beetcb/sosf
+    - https://github.com/golf1052/code-sync
+      - Sync VSCode extensions using your favorite file synchronization service
+    - https://github.com/OneDrive/onedrive-texteditor-js
+      - sample application provides a simple markdown (text) editor experience for files stored in OneDrive.
+  - 云服务商：七牛
+  - 非主流存储：github、gitee
+
 - 主要功能模块
   - file-explorer
     - 复刻vscode的文件管理器

@@ -30,7 +30,14 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ##  `touch-action: manipulation;` make taps 300ms faster
+- https://twitter.com/argyleink/status/1405881231695302659
+  - element doesn't want double-tap to zoom
+  - browser *immediately* responds to taps instead of waiting 300ms for a "potential" 2nd tap 
+- If you've got a mobile viewport set, the 300ms tap delay is already gone (since 2013)
+  - Seems like that's not true for Safari, which is a huge percentage of (my) mobile traffic?
+  - yeah I was pretty sure they fixed the delay like 5+ years ago
+- 
 
 - ## Hey CSS Grid people, how would you go about center-aligning grid items so that orphans are centered? 
 - https://twitter.com/brad_frost/status/1403441552467185664

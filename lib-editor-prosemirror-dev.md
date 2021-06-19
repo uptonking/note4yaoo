@@ -47,9 +47,10 @@ modified: '2021-05-06T09:39:53.522Z'
   - transforms an MDX syntax tree into a Prosemirror syntax tree. 
     - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
 
-- https://github.com/dxos/editor /AGPLv3
+- https://github.com/dxos/editor 
+  - /AGPLv3/202101/js
   - Collaborative editor
-  - 依赖 remark-rehype、yjs、prosemirror、hightlight.js
+  - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
 
 - more-remark
   - notewothy

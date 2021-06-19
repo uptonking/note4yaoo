@@ -85,6 +85,7 @@ let view = new EditorView(document.body, { state })
   - This is a read-only data structure, representing the document as a hierarchy of nodes, somewhat like the browser DOM. 
 - When initializing a state, you can give it an initial document to use. 
   - In that case, the `schema` field is optional, since the schema can be taken from the document.
+  - 初始化创建state对象时，若提供了doc，就可以不提供schema
 
 ## Documents
 

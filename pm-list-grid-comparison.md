@@ -43,8 +43,9 @@ modified: '2021-06-02T17:22:13.224Z'
   - Opinionated data arrangement (that’s what I call your lists) establishes a hierarchy of data and makes more flexible use of space. What we now widely refer to as “cards”
     - In this case, users are looking for a known structure and priority of information and the presentation can aid their evaluation.
 
+- comparison
+  - https://github.com/bryntum/grid-performance
 # list vs grid (Card vs Tabular)
-
 - ## [UI cheat sheet: list vs grids](https://uxdesign.cc/ui-cheat-sheet-list-vs-grids-48151a7262a7)
 - Grid is usually (but not always) better for desktop, while list is better for mobile.
 - If your user is in browse mode, they are there for entertainment so will probably be focused on images (Instagram, Pinterest or meme sites), on headlines/statuses (Twitter, news sites) or perhaps a combination of both (Facebook). 

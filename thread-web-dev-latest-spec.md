@@ -15,7 +15,15 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
-- ## 
+- ## TIL: that you can use use css import assertion in the latest stable chrome 91 purely by enabling "Experimental Web Platform features".
+- https://twitter.com/daKmoR/status/1406195981817888770
+- How does it work?
+  1. Imports of type css return a CSSStyleSheet
+  2. Lit creates a shadow root and adopts the CSSStyleSheet to it (via adoptedStyleSheets)
+- Benefits
+  ➡️ CSSStyleSheet are shared across all elements
+  ➡️ Parsed only once
+  ➡️ Adding to a shadow dom brings encapsulation
 
 - ## Why on earth does it take almost a second to close a photo modal? Does it tear down and rebuild all underlying DOM between state changes? 
 - https://twitter.com/sebmarkbage/status/1405205123236864007

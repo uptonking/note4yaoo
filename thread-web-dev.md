@@ -35,7 +35,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## when somebody asks "how would I do [x]", the answer is: Same basic strategy as with PHP, Rails, Laravel, express, etc. Then here are some clientside hooks to make the UX super fancy".
+- https://twitter.com/ryanflorence/status/1406064047712210946
+  - lots of folks have put a JWT in local storage but never "Set-Cookie" in HTTP headers.
+  - I'm finding many web devs today don't know what the baseline behaviors are! We have to teach how the web works first
 
 - ## Does anyone know if localStorage read/writes are synchronous between different tabs and windows?
 - https://twitter.com/tannerlinsley/status/1402021739513597957

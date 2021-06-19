@@ -31,8 +31,9 @@ modified: '2021-06-02T10:28:39.488Z'
   - 依赖@headlessui/react、@isomorphic-git、lightning-fs、styled-components
   - 样式友好
 - https://github.com/QingWei-Li/notea
+  - https://notea.cinwell.com/
   - Self hosted note taking app stored on S3
-  - 依赖nextjs、tailwind、material-ui4、markdown-it
+  - 依赖react-split、nextjs、unstated-next、styled-components、material-ui4、markdown-it
 - https://github.com/BlueSwitchNY/litedocs
   - For quick and easy documentation.
   - 依赖nextjs、hapi、prisma
@@ -43,12 +44,14 @@ modified: '2021-06-02T10:28:39.488Z'
   - 依赖material-ui、redux4、styled-components、tailwind
   - 基本可用，且实现了列表组件和看板组件，但编辑器基本未修改
 - https://github.com/TheodoreChu/append-editor
+  - 依赖styled-comp、remark、monaco-editor
+  - 依赖较多，但复杂度不高
   - Append Editor is an unofficial editor for Standard Notes
   - The Append Editor follows the "read first" philosophy. instead of edit
   - You can easily add to the end of your notes with the Append box at the bottom.
-  - Optional in-line formatting for Markdown provided by CodeMirror
   - Optional dynamic WYSIWYG live formatting provided by the Rich Markdown Editor 
-  - Optional in-line syntax highlighting for Markdown and more than 60 other programming languages, intelligent autocompletion, and sophisticated search and replace provided by the Monaco Editor 
+  - Optional in-line formatting for Markdown provided by CodeMirror
+  - Optional in-line syntax highlighting for Markdown and more than 60 programming languages, intelligent autocompletion, and search/replace provided by the Monaco Editor 
 
 - https://github.com/ayeonee/meemo
   - My own online scheduler

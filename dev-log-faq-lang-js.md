@@ -502,11 +502,14 @@ const RightStaticMethods = ({
 
 # function declaration vs function expression(named vs anonymous)
 - namedFunc pros
-  - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
   - 调试时的可读性更好
+  - funcExpression难以递归调用自身(arguments.callee无法在严格模式)，具名可以
+  - auto hoist
+  - no implicit returns
   - usecase
-    - 用在class中时常需要bind(this)
     - I prefer function because python and java both use it and I don’t get confused.
+    - 用在class中时常需要bind(this)
+    - `export default function Button() {}` vs `const Button = () => {}; export default Button;` 前者更方便export
 
 - funcExpression pros
   - 更好的scoped，namedFunc总是提升，而箭头函数是先声明再使用
@@ -527,6 +530,18 @@ const RightStaticMethods = ({
 - Function Declarations are only allowed to appear in Program or FunctionBody. Syntactically, they can not appear in Block ( `{ ... }` ) — such as that of if, while or for statements. This is because Blocks can only contain Statements, not SourceElements, which Function Declaration is. 
   - The only way Expression is allowed directly within Block is when it is part of ExpressionStatement. 
   - However, ExpressionStatement is explicitly defined to not begin with "function" keyword, and this is exactly why Function Declaration cannot appear directly within a Statement or Block (note that Block is merely a list of Statements).
+
+- [Is there a reason that we've started to use the function key word for function components in the React community? `function Button() {}` vs. `const Button = () => {}` ](https://twitter.com/kyleshevlin/status/1116041620342730754)
+- I went back to using `function` keywords again because of hooks. 
+  - It's easier to add hooks without the implicit return.
+  - Now I follow a pattern: if it's top level, I use `function` keyword. Otherwise, arrow functions.
+  - And, of course, callbacks are always arrow functions.
+- Now, I mostly `export function Name` for both named exports and better stack traces.
+  - because the airbnb style guide says so
+- If I'm gonna return straight away, I'll use the const syntax and make use of the implicit return, if not I'll use the function syntax. Most of the time I don't even think about it but that's as much logic as I can come up.
+- IIRC there was a time when the `.name` prop mattered (for React dev tools maybe?) and function decl’s have that implicitly while arrow func don’t. I remember HoC code would set displayName (the fallback for .name) manually, so there’s some value to that I guess.
+- React docs mostly I think. And for me I just decided that the arrow functions weren’t really adding much there. The declaration syntax is more consistent, no implicit returns, always using parens for params. Refactoring is easier, don’t need to change much to add a console log
+
 - ref
   - http://kangax.github.io/nfe/
   - https://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname

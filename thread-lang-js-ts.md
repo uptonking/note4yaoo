@@ -20,7 +20,10 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## we can use Opaque or Branded types in our advantage to detect if user passed a value or the value has been initialized to default set value. 
+- https://twitter.com/anuraghazru/status/1405925522102657029
+  - Use branded types or opaque types to make them act as nominal types.
+  - 处理多级很深的路径属性及默认值的一种方法
 
 - ## Problem with `Promise.all()` : Once it encounters a rejection, it doesn’t wait until all Promises are settled (short-circuiting (*)). Consequence: Unexpected things can happen after error handling.
 - https://twitter.com/rauschma/status/1405568325724291080

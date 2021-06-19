@@ -6,10 +6,14 @@ modified: '2020-07-14T09:28:43.976Z'
 ---
 
 # note-benchmark-web
+
 # data-grid-table
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable
-
+- https://github.com/bryntum/grid-performance
+  - A performance comparison of popular JavaScript data grid components. 
+  - Measures the initial rendering time and scroll performance for the following data grids
+  - ag-grid, bryntum, devextreme, dhtmlx, extjs
 
 - https://github.com/zsimo/render-table-benchmark
   - https://zsimo.github.io/render-table-benchmark/public/
@@ -20,14 +24,14 @@ modified: '2020-07-14T09:28:43.976Z'
 - https://github.com/mikolaj6r/web-benchmark /202011
   - Node benchmark that uses Lighthouse and generates charts, tables, markdown and big json with results.
 # js
+- https://github.com/bryntum/siesta
+  - Siesta is a stress-free, ubiquitous, open-source JavaScript/TypeScript testing tool
 
 - [JS: Benchmarking Lazy Getters](https://webreflection.medium.com/js-benchmarking-lazy-getters-9b132f45c15e)
   - Lazily evaluating properties is not just handy, but mandatory in some case.
 - [Compare markdown implementations.](https://johnmacfarlane.net/babelmark2/)
   - 只提供了操作示例，没有提供结论
-
 # frontend-framework
-
 - [前端框架基准测试最新结果：18个框架当中有13个达到顶级](https://www.infoq.cn/article/UHsl0gogHtL2BM*vJIOs)
   - https://www.infoq.com/news/2019/04/real-world-framework-benchmark
   - runtime对性能的影响不算很大，浏览器层执行dom操作的影响最大
@@ -71,15 +75,11 @@ modified: '2020-07-14T09:28:43.976Z'
 - [radEventListener: a Tale of Client-side Framework Performance_202008](https://css-tricks.com/radeventlistener-a-tale-of-client-side-framework-performance/)
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
-
 # engineering
-
 - https://github.com/GoogleChromeLabs/tooling.report/
   - https://tooling.report/
   - tooling.report a quick way to determine the best build tool for your next web project
-
 # more-benchmarks
-
 - [Today I looked into the performance of different layout modes in CSS.](https://twitter.com/JoshWComeau/status/1356377422925541377)
 
 - [textJust how much faster is vanilla JS than frameworks?_202008](https://gomakethings.com/just-how-much-faster-is-vanilla-js-than-frameworks/)

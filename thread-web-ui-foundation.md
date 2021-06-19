@@ -7,8 +7,15 @@ modified: '2021-04-23T09:24:19.873Z'
 
 # thread-web-ui-foundation
 
-# pieces
+# guide
 
+- ## The most useful piece of advice I’ve heard for designing reusable React components: Use popular libraries as inspiration.
+- https://twitter.com/housecor/status/1406224388442177542
+  - Before implementing my own Table, Select, Tabs, etc, I look at the APIs of popular libraries like MaterialUI, Ant Design, and Spectrum.
+  - These libraries have been used by 1000's. Their APIs have been carefully thought through, and heavily vetted.
+  - So while the API may not be perfect for my team's needs, it's likely a solid starting point.
+- I have been doing the same with Angular 
+# pieces
 - ## 
 
 - ## When people learn ARIA, overuse is a common mistake. 
