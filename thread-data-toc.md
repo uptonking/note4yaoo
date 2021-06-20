@@ -11,10 +11,20 @@ modified: '2021-01-31T08:40:11.675Z'
 
 - https://www.data-is-plural.com/
   - a weekly newsletter of useful/curious datasets
-
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## how is @WordPress domination this market soo much? 
+- https://twitter.com/daKmoR/status/1406327077285117961
+  - I mean powering ~41.9% of the top 10 million sites (from alexa) is a lot.
+  - @GatsbyJS which I consider a big player is "only" serving 0.2%
+  - Numbers are taken from @W3Techs . Keep in mind only CMS system are considered.
+  - [Usage statistics of content management systems](https://w3techs.com/technologies/overview/content_management)
+- Every year new pages move from "no CMS" to any CMS and its almost always WordPress.
 
 - ## voting: Those of you working at a company/agency/studio: are you using an off-the-shelf component lib (MaterialUI, Chakra, Bootstrap, Ant etc.) for your customer-facing products?
 - https://twitter.com/colmtuite/status/1390991908978274309

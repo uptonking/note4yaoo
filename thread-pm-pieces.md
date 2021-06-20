@@ -12,7 +12,12 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ##
 
-- ##
+- ## This riderless bike took about four months to be made and it's almost totally open source[hardware and structure on github]
+- https://twitter.com/Rainmaker1973/status/1406207562924630016
+  - 自动行驶的自行车
+  - http://www.pengzhihui.xyz/
+- Clearly it's the wow factor. I actually found riding adult sized tricycles less stable than bicycles. 
+- Good for people with no arms or the blind.
 
 - ## Unpopular opinion: reproducible presentations (e.g., R Markdown Xaringan, Jupyter Rise, etc) are easier than WSWYG ones (e.g., Powerpoint, Keynote)
 - https://twitter.com/TiffanyTimbers/status/1404823614596128768

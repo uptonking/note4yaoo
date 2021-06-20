@@ -7,14 +7,13 @@ modified: '2021-05-13T03:16:00.269Z'
 
 # note-react-comp-in-action-blog-series
 
-# guide
+> blogs from [荒山](https://juejin.cn/user/430664257386558/posts)
 
-- [React组件设计实践总结_荒山_2019](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
+# guide
+- [React组件设计实践总结_荒山_201910](https://juejin.im/post/5cd7f2c4e51d453a7d63b715)
 - [浅谈React性能优化的方向](https://juejin.im/post/5d045350f265da1b695d5bf2)
 - https://jxnblk.com/blog/defining-component-apis-in-react/
-
 # React应用性能优化
-
 - **性能优化通用方向**
 - 减少计算量
   - 对应到React中就是减少渲染的节点, 或降低组件渲染的复杂度
@@ -39,9 +38,7 @@ modified: '2021-05-13T03:16:00.269Z'
   - 慎用Context，一旦Context值变动，所有依赖该Context的组件会forceUpdate
     - 明确状态作用域, Context只放置必要关键的，被大多数组件所共享的状态，比较典型的是鉴权状态
     - 一般都不会直接使用Context.Provider, 而是封装为独立的Provider组件
-
 # React组件设计实践总结01-类型检查
-
 - 静态类型检查的作用
   - 可以在开发时就避免许多类型问题, 减少低级错误
   - 通过类型自动补全的提示, 可以提高编码的效率
@@ -91,14 +88,12 @@ modified: '2021-05-13T03:16:00.269Z'
 - Render Props: React的props(包括children)并没有限定类型, 可以是函数
 - 事件处理
   - 如果存在多个相同事件处理器, 可以按照 `handle{Type}{Event}` 命名, 例如handleNameChange.
-  - `import { ChangeEventHandler } from 'react';`
+  - `import { ChangeEventHandler } from 'react'; `
   - 和原生html元素一样, 自定义组件应该暴露自己的事件处理器类型, 尤其是较为复杂的事件处理器, 这样可以避免开发者手动为每个事件处理器的参数声明类型
   - 自定义事件处理器类型以 `{ComponentName}{Event}Handler` 命名，为了和原生事件处理器类型区分, 不使用EventHandler形式的后缀
 - 组件相关问题
   - 所有原生元素props都继承了 `React.HTMLAttributes` , 某些特殊元素也会扩展了自己的属性, 例如InputHTMLAttributes
-
 # 组件设计02-组件组织
-
 - 组件设计的基本原则：单一职责(Single Responsibility Principle)
 - 组件设计基础
   - 如果组件不需要状态, 则使用无状态组件
@@ -140,9 +135,7 @@ modified: '2021-05-13T03:16:00.269Z'
   - 可以用于展示组件的文档. 支持 props 生成和 markdown
   - 可以用于组件测试. 支持组件结构测试, 交互测试, 可视化测试, 可访问性或者手动测试
   - 丰富的插件生态
-
 # 组件设计03-样式的管理
-
 - **CSS的问题**
 - Global Namespace
   - CSS的选择器是没有隔离性的, 不管是使用命名空间还是BEM模式组织, 最终都会污染全局命名空间
@@ -211,9 +204,7 @@ modified: '2021-05-13T03:16:00.269Z'
   - 所有样式默认都是local, 通过导入模块方式可以导入这些生成的类名
   - 可以和CSS proprocessor配合使用
   - 支持非标准的语法, 例如:global, :local, :export, compose
-
 # 组件设计04-组件的思维
-
 - 高阶组件的作用
   - 高阶组件是函数，它接收原始组件并返回原始组件的增强版本
   - 高阶组件是一种用于复用组件逻辑模式, 最为常见的例子就是redux的connect和react-router的withRouter，高阶组件最初用于取代mixin
@@ -287,9 +278,7 @@ modified: '2021-05-13T03:16:00.269Z'
   - Airbnb React/JSX Style Guide
   - React Bits
   - react-in-patterns
-
 # 组件设计05-状态管理
-
 - 现在的前端框架(包括React)的一个核心思想就是数据驱动视图, 即 `UI = f(state)`
   - 这种开发方式的变化其实得益于Virtual-DOM，它使得我们不需要关心浏览器底层DOM的操作细节，只需关心状态(state)和映射关系(f)
   - 随着state的复杂化, 框架现有的组件化方式很难驾驭 f(视图的映射关系变得复杂, 难以被表达和维护); 或者相关类型的应用数据流本来就比较复杂, 组件之间的交互关系多样，本来难以使用UI = f(state)这种关系来表达; 或者应用的组件状态过于离散，需要统一的治理等等。就有了状态管理的需求

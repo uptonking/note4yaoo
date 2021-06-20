@@ -19,7 +19,16 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## Mesmerization. Made with code in Remotion
+- https://twitter.com/calebwright/status/1406412814512803841
+  - https://github.com/c0/remotion-playground
+  - 水滴聚合分散的效果，基于remotion实现
+
+- ## a throwback #generative animation from 2009.
+- https://twitter.com/jonofyi/status/1406361085884735489
+  - Each (signed in) visitor generates a random seed making a unique animation for all.
+  - 视觉效果很像水墨画
+  - https://www.hicetnunc.xyz/objkt/140747
 
 - ## Framer on the web just turned 1! 
 - https://twitter.com/framer/status/1395031864939798532

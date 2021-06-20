@@ -66,7 +66,40 @@ modified: '2020-07-14T10:38:48.217Z'
     - In other words, Reach Router v2 and React Router v6 are the same
     - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
 # tips
-- 
+- React. PureComponent的原理，会分别比较props和state的第一层级所有属性的属性值引用是否相等
+
+```JS
+import React, { Component } from 'react';
+
+function shallowEqual(obj1, obj2) {
+  if (obj1 === obj2) {
+    return true
+  }
+  if (typeof obj1 !== 'object' || obj1 === null || typeof obj2 !== 'object' || obj2 === null) {
+    return false
+  }
+  let keys1 = Object.keys(obj1)
+  let keys2 = Object.keys(obj2)
+  if (keys1.length !== keys2.length) {
+    return false
+  }
+  for (const key of keys1) {
+    if (!obj2.hasOwnProperty(key) || obj1[key] !== obj2[key]) {
+      return false
+    }
+  }
+  return true
+}
+
+class PureComponent extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return !shallowEqual(this.props, nextProps) || !shallowEqual(this.state, nextState)
+  }
+  render() {
+    return this.props.children;
+  }
+}
+```
 
 - I avoid declaring React components via the concise arrow syntax. 
   - Instead, I prefer to use plain old function declarations. Here's why:

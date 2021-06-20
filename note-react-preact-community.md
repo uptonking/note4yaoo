@@ -7,10 +7,9 @@ modified: '2021-05-13T03:46:35.666Z'
 
 # note-react-preact-community
 
-# repeat
+# guide
 
 # preact web components
-
 - ## Why I Chose Preact for my Latest Project
 - https://dev.to/muhimasri/why-i-chose-preact-for-my-latest-projectsharing-my-experience-working-with-preact-on-my-latest-javascript-project-48h
 - Unlike React, Preact uses the browser’s native addEventListener for handling events internally so it can listen to native DOM events dispatched from Custom Elements. 
@@ -28,9 +27,7 @@ modified: '2021-05-13T03:46:35.666Z'
 - afaiu spectrum is pretty new, so that may change. Though its size makes it a bit of an odd choice for preact apps (each spectrum component is larger than preact itself).
   - Seriously though, I think that’s how it should be. Preact is really just a thin layer on top of the DOM. Building actual components takes a lot of code, no matter the framework.
   - But also that’s not entirely true. Our components have a lot of overlapping pieces. One component may look large on bundlephobia, but most of the big pieces are shared between many different components, so it evens out in real apps.
-
 # pieces
-
 - ## 
 
 - ## 

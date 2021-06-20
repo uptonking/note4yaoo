@@ -7,7 +7,61 @@ modified: '2021-06-02T17:07:33.920Z'
 
 # lib-editor-rich-markdown-codebase
 
-# rich-markdown-editor.v11.10.0_202106_BSD
+# guide
+
+- 分析一个产品的实现
+  - 使用的ui框架
+  - 状态管理
+  - css 样式和主题
+
+- 要关注的重点
+  - 编辑器state数据结构是如何设计的
+  - 输入时如何更新dom元素
+  - plugin如何更新state
+
+- storybook
+  - 没有对大多数组件创建story
+
+- tests
+  - 只有一个.test文件
+# todo rich-markdown-editor
+- stories
+  - long doc
+
+- fix
+  - 编辑器默认初始状态只有第一行且文本较短，此时通过选择文本使用悬浮工具条加粗后，悬浮工具条不会消失，工具条很大会挡住默认的短文本
+    - 临时绕过：按回车，点击空行，悬浮条会自动消失
+    - 方案1: 修改悬浮条的位置
+
+- rewrite
+  - MarkdownSerializer/Parser to remark
+  - class to hooks
+  - nodeViews to ReactDOM.createPortal
+
+- optimize
+  - table
+# rich-markdown-editor.v11.11.1_202106_BSD
+- RichMarkdownEditor组件的逻辑
+  - 设置defaultProps、initialState
+  - 依次初始化 
+    - extensions、nodes、marks、schema、plugins、keymaps、serializer、parser、inputRules、nodeViews、view、commands
+    - 后面的成员变量都是从extensions中直接计算出来的
+  - react声明周期函数处理更新
+  - 定义输入和其他事件的处理函数，大多数的逻辑都是调用setState
+  - render()创建编辑器vdom的结构
+
+## dom-elements
+
+- 编辑器ui结构层次
+- 顶层RichMarkdownEditor组件，都是自闭合的组件，没有children
+  - StyledEditor: 包含编辑器的div
+  - SelectionToolbar
+  - LinkToolbar
+  - BlockMenu
+
+## render
+
+## state
 
 # keyboardnotes.v0.1.0_202101_NALic
 - features

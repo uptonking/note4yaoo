@@ -13,6 +13,13 @@ modified: '2021-01-19T04:46:23.100Z'
   - 可搜索各种组件，但部分组件需要付费才能查看详细内容
   - 列出了主流设计系统的组件，进行对比
   - https://www.uiguideline.com/reference-systems
+
+- This is the biggest opportunity for new component libraries and design systems to differentiate: make mobile web a priority.
+- https://twitter.com/rauchg/status/1406341624704102402
+- The ideal approach is to use a platform-agnostic API like React Native (Web), which treats mobile as a first-class citizen. Design for screen size, not platform.
+- Do you think Next would ever investigate pulling down different pages based on screen size? e.g. pages/pricing.sm.js
+  - Yes, we are thinking about introducing something that would help with this pattern. 
+  - I think fundamentally sometimes the page for a mobile and desktop site are quite divergent and deserve different entrypoints.
 # pieces
 - ## 
 

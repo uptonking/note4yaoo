@@ -37,9 +37,7 @@ modified: '2020-10-22T06:49:10.760Z'
     - guidu
 - top-dependents-of-react-table.v6
   - nteract/data-explorer: 依赖d3、numeral
-
 # list-grid-with-div
-
 - ag-grid /MIT/6.4kStar/202006/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
   - https://www.ag-grid.com/example.php
@@ -173,6 +171,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://denisraslov.github.io/grid
   - An Excel-like grid component for React with custom cell editors, performant scroll & resizable columns
   - 功能较少
+- react-table-library /51Star/MIT/202106/js
+  - https://github.com/table-library/react-table-library
+  - yet another table library for React
 - react-bolivianite-grid /MIT/85Star/201905
   - https://github.com/papasnippy/react-bolivianite-grid
   - https://papasnippy.github.io/react-bolivianite-grid/
@@ -284,9 +285,7 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://github.com/ZingGrid/zinggrid
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components. 
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes. 
-
 # list-grid-with-canvas
-
 - Luckysheet /MIT/4.5kStar/202010/js
   - https://github.com/mengshukeji/Luckysheet
   - https://mengshukeji.github.io/LuckysheetDemo/
@@ -339,16 +338,12 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于Canvas开发Excel的技术预研项目
 - https://github.com/Harlock123/LCTDataGrid
   - keep the Canvas object as small as possible by only rendering the visible parts of the resulting Grid
-
 # list-grid-with-svg 
-
 - https://github.com/analyzer2004/svgtable
   - https://observablehq.com/@analyzer2004/svgtable
   - /10Star/NALic/202011/js/d3
   - An SVG Table with sticky rows, columns and many other features.
-
 # list-grid-with-table-tr-td
-
 - handsontable 6.2.2 /MIT/13.8kStar/202007/js
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
