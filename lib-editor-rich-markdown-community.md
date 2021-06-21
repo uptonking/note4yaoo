@@ -13,7 +13,12 @@ modified: '2021-06-02T10:29:43.088Z'
 
 - ## 
 
-- ## 
+- ## always copy latest value of node in CodeFence
+- https://github.com/outline/rich-markdown-editor/pull/409
+  - This change copies the logic of the language toggle such that it gets the position of the node, and then finds the node in the editor view and gets the latest text content.
+- but the duplicated logic between `handleCopyToClipboard` and `handleLanguageChange` to find the codeblock node could be removed by allowing for custom nodeviews written with vanilla javascript (in addition to React ).
+  - That's because with custom node views, you can easily get access to the current node and its position in the constructor and in the update method.
+  - To do that, this library would just need to relax constraints in `createNodeViews` and move `ComponentView` into the `extension.component` method, so individual nodes could choose to use React or plain JS.
 
 - ## Migrate to Prosemirror
 - https://github.com/outline/rich-markdown-editor/issues/134

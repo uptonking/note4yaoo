@@ -11,9 +11,43 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
-- ## 
+- ## How to update nodeview from outside
+- https://discuss.prosemirror.net/t/how-to-update-nodeview-from-outside/3660
+- Node decorations can be used to pass information to node views (though those are also not the easiest thing to set up). I think there is a need for some imperative way to force node views to redraw, but I’m not sure what it would look like yet.
+- Node decorations may not be enough.My requirement is that there is a Mind map component in nodeview, and the interface inside can be updated from the outside when multiple people collaborate in real time.
 
-- ## 
+
+
+- ##  `.toDOM` can also return a string or a DOM node, which are simply used as-is. Is it possible to define holes even when toDOM returns a DOM node?
+- https://stackoverflow.com/questions/59769774
+  - .toDOM method of a schema usually returns a nested array that describes how to render the node to DOM, similar to a "virtual dom" data structure. 
+  - This data structure can also contain what ProseMirror calls a "hole", represented by `0` . 
+  - This hole is where ProseMirror will insert the content of the node, such as text or other nodes.
+- Is it possible to define holes even when toDOM returns a DOM node?
+  - No. Defining a hole makes sense only when there are multiple children DOM elements inside the DOM representation of a given ProseMirror Node. 
+  - Defining a hole tells PM where to insert the next child PM Node.
+
+```JS
+imageAlt: {
+  toDOM: () => ['div', ['h2', 'Alt'],
+    ['div', 0]
+  ],
+  content: 'inline*',
+  defining: true,
+  isolating: true
+}
+
+// This means that imageAlt will render like this:
+
+<div>
+    <h2>Alt</h2>
+    <div>Content Goes Here</div>
+</div>
+```
+
+- Children PM Nodes would have been inserted under either `h2` or `div`; so we explicitly pointed `h2` to contain the child PM Node.
+- But in the case where `toDOM()` returns a `dom.Node` but not an array, that means there is only one option, hence there is no need to define a hole. 
+  - A `dom.Node` is always 1 level deep and any child ProseMirror Node will be the direct child.
 
 - ## Customizing Schema for Table
 - https://discuss.prosemirror.net/t/customizing-schema-for-table/1991

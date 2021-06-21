@@ -171,6 +171,39 @@ modified: '2021-06-12T02:41:33.389Z'
 
 - ## 
 
+- ## Using DOMSerializer inside a NodeView
+- https://discuss.prosemirror.net/t/using-domserializer-inside-a-nodeview/1498
+  - I’m trying to use `DOMSerializer` to produce DOM nodes so i can set the dom property inside a NodeView:
+- The reason i’m doing this is that i want to set up event handlers on the resulting dom. 
+  - The expected dom is too complicated to produce with the `document.createElement` method, so i tried to do it with `DOMSerializer` .
+  - This almost works: the view is rendered, but it is not possible to interact with it.
+
+```JS
+class TodoListView {
+  constructor(node, view, getPos) {
+    const domSerializer = DOMSerializer.fromSchema(mySchema)
+
+    const serializedDom = domSerializer.serializeNode(node, {})
+
+    this.dom = serializedDom;
+  }
+}
+```
+
+- By defining a node view like this, you’re telling ProseMirror that the node is an opaque element that it shouldn’t manage. 
+  - For things to be editable, you have to let the editor render them. 
+  - So don’t render the children in the node view implementation, just provide a `contentDOM` property that the editor will render the children into.
+
+- ## Understanding the interaction between parseDOM, DOMChange and NodeView
+- https://discuss.prosemirror.net/t/understanding-the-interaction-between-parsedom-domchange-and-nodeview/678
+- The issue centers around the way that dom mutations are parsed by PM, and this interacting poorly with my custom node view.
+  - When you enter a character directly after the node view (and I suspect in other cases), PM tries to figure out what changed by parsing the content of the view, and analyzing the diff against the previous state. 
+  - During general operation, this seems to happen pretty infrequently (the transactions are generated through some other means, that don’t rely on diffing the dom).
+  - My custom view has a rather complex DOM structure
+  - I initially didn’t realize that my NodeView would be parsed this way, and it seems that I lose the latex annotations inside my node during this parsing.
+- the parser will get the node’s type and attributes from the node view.
+  - as long as you go through a transaction you should be fine.
+
 - ## Offline, Peer-to-Peer, Collaborative Editing using Yjs
 - https://discuss.prosemirror.net/t/offline-peer-to-peer-collaborative-editing-using-yjs/2488
 - I haven’t dug into the y-prosemirror code in depth yet, but, is there any way with Yjs fragments to model changes that happen to a fragment as steps rather than replacing the whole document? 
@@ -192,15 +225,12 @@ modified: '2021-06-12T02:41:33.389Z'
   - But @saranrapjs brought up a good point for ProseMirror transforms.
 - The main thing that we use, by way of example, that wouldn’t work without some kind of transaction mapping is indeed decorations; the ability to map positions transaction-wise is what allows us to do efficient transaction-wise computations only when needed (e.g. only recalculating a data structure for the parts of the document that have changed). If the tradeoff here is how expensive it is to compute the diffs that happen as part of a Yjs update vs. how full resolution the diffs are, for my part, I’d be happy with marginally lower resolution diffs 
 
-
 - Yjs by itself is just a small CRDT implementation. 
 - There are several modules around Yjs that allow you to do different things.
 - Editor bindings, like y-prosemirror, y-codemirror, or y-quill make a specific editor collaborative. 
 - Connectors, like y-webrtc, or y-websocket handle how to sync to other peers
 - Persistence adapters handle how to persist data to a database to make it available offline (e.g. y-indexeddb for the browser, or y-leveldb for the server).
 - The idea is to make Yjs as modular and unopinionated as possible and build a huge ecosystem around it. 
-
-
 
 - ## Inlining a node for a comment plugin or best to use marks?
 - https://discuss.prosemirror.net/t/inlining-a-node-for-a-comment-plugin-or-best-to-use-marks/2391

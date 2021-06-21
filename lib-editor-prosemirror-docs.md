@@ -33,6 +33,23 @@ modified: '2021-06-02T17:12:56.049Z'
 - ProseMirror tries to bridge the gap between editing explicit, unambiguous content like Markdown or XML, and classical WYSIWYG editors.
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
   - You can customize the shape and structure of the documents your editor creates, and tailor them to your application's needs.
+# examples/tutorials
+
+## [Editing footnotes](https://prosemirror.net/examples/footnote/)
+
+- Footnotes seem like they should be inline nodes with content—they appear in between other inline content, 
+  - but their content isn't really part of the textblock around them. 
+- **Inline nodes with content are not handled well by the library**, at least not by default. 
+  - You are required to write a node view for them, which somehow manages the way they appear in the editor.
+- Footnotes in this example are drawn as numbers.
+  - we'll rely on CSS to add the numbers.
+  - Only when the node view is selected does the user get to see and interact with its content 
+- What we'll do is pop up a little sub-editor, which is itself a ProseMirror view, with the node's content.
+  - Transactions in this sub-editor are handled specially, in the `dispatchInner` method.
+- What should happen when the content of the sub-editor changes? 
+  - We could just take its content and reset the content of the footnote in the outer document to it, but that wouldn't play well with the undo history or collaborative editing.
+  - A nicer approach is to simply apply the steps from the inner editor, with an appropriate offset, to the outer document.
+  - We have to be careful to handle appended transactions, and to be able to handle updates from the outside editor without creating an infinite loop
 # library guide
 
 ## Introduction

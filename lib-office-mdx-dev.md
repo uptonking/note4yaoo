@@ -53,6 +53,12 @@ modified: '2021-06-02T16:45:56.858Z'
   - (3)输入使用即时渲染IR，在WYSIWYG实时预览的基础上添加输入标志文本的shortcut，能够减少鼠标操作
   - (4)后期可在WYSIWYG的基础上，扩展工具条为block editor的配置工具
 
+- 目前ojs-in-mdx文件的处理流程设计
+  - 将ojs全部书写在codeblock中，.mdx文件先使用webpack @mdx-js/loader全部当作mdx处理
+  - mdx渲染code block时，通过MDXProvider设置自定义的code block
+  - 自定义codeblock会在运行时，将ojs字符串转换成react组件显示
+  - todo: 将ojs的处理计算提前到编译期，尝试自定义实现 `@mdx-js/loader`在加载时就转换，提高首屏渲染速度
+
 - 如何在mdx中支持observable javascript(.ojs)
   - 方法1: 直接将字符串写在js变量中，也有人尝试htm tag模版函数
     - 优点：实现简单，方便测试

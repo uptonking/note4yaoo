@@ -18,23 +18,40 @@ modified: '2021-06-02T17:07:33.920Z'
   - 编辑器state数据结构是如何设计的
   - 输入时如何更新dom元素
   - plugin如何更新state
+  - 如何自定义组件样式，最好能直接使用react组件的样式
+    - 大部分组件是vanillajs，少部分使用基于react组件的NodeView
+  - 如何自定义toDOM, parseDOM(toJSON/nodeFromJSON类似)
+
+- features-details
+  - 悬浮工具条支持给文本添加高亮背景色
+# todo rich-markdown-editor
+- stories
+  - ~~long doc~~
+  - 替换内置组件样式为成熟react组件库
+  - 添加新组件，如Collapse、emoji、OJSCodeBlock、Katex、TabView, Slider, LocalForm(类似excel公式)、Accordion、References & Citations
+    - 参考curvenote、bangle
+    - 如何实现 Interactive Components/views/viewof
+  - 优化复杂NodeView，比如table
 
 - storybook
   - 没有对大多数组件创建story
 
 - tests
   - 只有一个.test文件
-# todo rich-markdown-editor
-- stories
-  - long doc
 
 - fix
   - 编辑器默认初始状态只有第一行且文本较短，此时通过选择文本使用悬浮工具条加粗后，悬浮工具条不会消失，工具条很大会挡住默认的短文本
     - 临时绕过：按回车，点击空行，悬浮条会自动消失
     - 方案1: 修改悬浮条的位置
 
-- rewrite
-  - MarkdownSerializer/Parser to remark
+- rewrite-markdown
+  - parser
+    - MarkdownSerializer/Parser to remark
+  - serializer
+  - 格式化配置
+    - 列表、粗体、斜体等可预定义偏爱符号
+
+- rewrite-more
   - class to hooks
   - nodeViews to ReactDOM.createPortal
 
@@ -59,7 +76,15 @@ modified: '2021-06-02T17:07:33.920Z'
   - LinkToolbar
   - BlockMenu
 
-## render
+## render/view
+
+- 基于react组件的NodeView
+  - Embed
+    - toDOM使用了iframe
+  - Image
+    - 使用了 react-medium-image-zoom
+  - Notice
+    - 在该组件的toDOM()方法中执行ReactDOM.render
 
 ## state
 

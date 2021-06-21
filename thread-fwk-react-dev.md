@@ -64,7 +64,13 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## A key philosophical difference between Next.js & @blitz_js is that Blitz is all about giving sharp knives to developers. 
+- https://twitter.com/flybayer/status/1406722174505918464
+  - But Next.js is opposite. They seek to keep you from cutting yourself, which often comes at the expense of power and flexibility.
+- Genuinely curious about how you manage this tension when Blitz is built on Next?
+  - All tension was resolved once we forked Next.js! 
+  - Once I finish the migration from our custom compiler to our additions in nextjs core, Blitz will technically be a fork of Next instead of being built on it. Finishing this is the last big thing before 1.0
+  - Currently we plan to always keep up to date with Next.js. We benefit greatly from all the work that goes into it!
 
 - ## The perf goal for this Hot Module Reloading implementation is 60+fps. 
 - https://twitter.com/jarredsumner/status/1403748267188396034

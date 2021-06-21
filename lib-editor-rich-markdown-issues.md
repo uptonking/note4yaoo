@@ -15,6 +15,15 @@ modified: '2021-06-02T10:30:09.481Z'
 - https://github.com/outline/rich-markdown-editor/pull/438
   - any extension can be disabled, even Doc or Text, but hey, careful what you wish for
 
+- ## Method to customise markdown serialisation
+- https://github.com/outline/rich-markdown-editor/issues/183
+  - I'm currently integrating the editor into an existing site which already has a body of content
+  - The existing markdown has a few conventions, such as using dashes for unordered lists and underscores for emphasis
+  - Any time I open an existing document to edit in rich-text-editor, as well as any changes I make, the editor replaces those characters with asterisks.
+  - What options are available for customising the editor's markdown serialisation preferences?
+- There is no configuration for this and I don't plan on incorporating any I'm afraid. 
+  - The editor outputs compliant Markdown and a proliferation of options would result in a more bug-prone implementation that's difficult to maintain.
+
 - ## Support dynamic loading of languages for code blocks
 - https://github.com/outline/rich-markdown-editor/issues/152
 -  I think in order to support more languages we need to figure out how to dynamically load the language files into the editor, once that's in place then we can support many more languages without increasing the initial download size 
