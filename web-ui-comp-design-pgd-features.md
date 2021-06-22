@@ -7,8 +7,9 @@ modified: '2021-04-11T17:42:26.580Z'
 
 # web-ui-comp-design-pgd-features
 
+# ux-design-effects
+- codeblock的light主题设计，可参考 https://www.joshwcomeau.com/
 # prospect-garden-design-in-action
-
 - features
   - framework agnostic kept in mind [WIP]
   - themeable components ~~following the Theme Specification(maintain consistency with constraint-based design)~~
@@ -68,9 +69,7 @@ modified: '2021-04-11T17:42:26.580Z'
 - shape
   - point/polygon-shape-based
   - https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817
-
 # opinionated
-
 - 技术选型
   - all in js
 - ui设计
@@ -90,9 +89,7 @@ modified: '2021-04-11T17:42:26.580Z'
     - 实现方式1：vanilla js组件加上胶水层可移植到其他库
     - 实现方式2：各框架的组件单独实现
     - 实现方式3：web components，或类似api的库
-
 # 现有组件库参考
-
 - carbon-components: a collection of reusable HTML and SCSS partials
 - carbon-components-react: components implemented using React.
   - built React first. We also support core parts of the system in vanilla JS, Angular, and Vue. 
@@ -115,9 +112,7 @@ modified: '2021-04-11T17:42:26.580Z'
 - ref
   - https://github.com/jaywcjlove/awesome-uikit
   - [Compiler like Svelte.js or Stencil.js](https://github.com/vuejs/vue/issues/9011)
-
 # dev-log
-
 - design-tokens支持theming
   - 最终的用法是，用户修改theme.js/json，然后触发切换样式
   - 样式配置对象 > css vars形式的样式表 > 通过style属性设置/动态创建class样式表/直接修改cssom

@@ -9,13 +9,11 @@ modified: '2021-05-13T16:14:28.745Z'
 
 # guide
 
-- refd
+- ref
   - https://www.npmtrends.com/data-forge-vs-dataframe-js-vs-pandas-js-vs-dataframe-vs-jsdata-vs-jsdataframe
   - https://www.npmtrends.com/arquero-vs-apache-arrow-vs-data-forge-vs-dataframe
-  - https://www.npmtrends.com/@stdlib/stdlib-vs-mathjs-vs-ndarray-vs-numjs-vs-simple-statistics
-
+  - [@stdlib/stdlib vs mathjs vs ndarray vs numjs vs simple-statistics](https://www.npmtrends.com/@stdlib/stdlib-vs-mathjs-vs-ndarray-vs-numjs-vs-simple-statistics)
 # popular
-
 - https://github.com/uwdata/arquero
   - https://uwdata.github.io/arquero
   - /438Star/BSD/202105/js
@@ -56,5 +54,9 @@ modified: '2021-05-13T16:14:28.745Z'
   - /2.6kStar/Apache2/202005
   - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
   - provides a collection of robust, high performance libraries for mathematics, statistics, data processing, streams, and more
-
+# statictics
+- https://github.com/simple-statistics/simple-statistics
+  - https://simplestatistics.org/docs/
+  - A JavaScript implementation of descriptive, regression, and inference statistics.
+  - Implemented in literate JavaScript with no dependencies
 # more

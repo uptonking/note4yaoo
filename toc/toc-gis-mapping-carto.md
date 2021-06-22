@@ -7,6 +7,9 @@ modified: '2021-01-04T16:21:29.894Z'
 
 # toc-gis-mapping-carto
 
+# guide
+- vendors
+  - mapbox, carto, esri
 # popular-mapbox-carto-esri
 
 # [mapbox repos](https://github.com/search?o=desc&q=user%3Amapbox&s=stars&type=Repositories)
@@ -86,9 +89,7 @@ modified: '2021-01-04T16:21:29.894Z'
     - fastest JavaScript pixel-level image comparison library,originally created to compare screenshots in tests.
     - Features: accurate anti-aliased pixels detection and perceptual color difference metrics.
     - Inspired by Resemble.js and Blink-diff, however pixelmatch is around 150 lines of code, has no dependencies, and works on raw typed arrays of image data, 
-
 # [carto repos](https://github.com/search?o=desc&q=user%3Acartodb&s=stars&type=Repositories)
-
 - https://github.com/CartoDB/cartodb
   - /2.5kStar/BSD/202012/js/ruby
   - CARTO Engine, our embeddable platform for web and mobile apps
@@ -112,9 +113,7 @@ modified: '2021-01-04T16:21:29.894Z'
 
 - https://github.com/CartoDB/Windshaft
   - A Node.js map tile library for PostGIS and torque.js, with CartoCSS styling
-
 # [esri repos](https://github.com/search?o=desc&q=user%3Aesri&s=stars&type=Repositories)
-
 - https://github.com/Esri/esri-leaflet
   - Leaflet plugins for working with a handful of the most popular ArcGIS Service types. 
   - This includes Esri basemaps and feature services, as well as tiled map, dynamic map and image services.
@@ -144,5 +143,4 @@ modified: '2021-01-04T16:21:29.894Z'
   - Cedar also uses @esri/arcgis-rest-feature-layer and @esri/arcgis-rest-request to query feature data. 
 - https://github.com/Esri/storymap-tour
   - By downloading the template and putting it on your own web server or website, you can make unlimited customizations and changes to the template
-
 # more

@@ -62,7 +62,33 @@ modified: '2021-01-06T14:40:03.364Z'
 # pieces
 - ## 
 
-- ## 
+- ## If I were to make Inferno today, what would I have done differently.
+- https://twitter.com/trueadm/status/1407086342559997955
+  - I wouldn't use React's API
+  - I would make it formally use an ahead-of-time compiler design
+  - Wouldn't abstract over HTML and instead build around abstractions
+- Furthermore,
+  - It wouldn't have its own event system
+  - It would use a partial virtual DOM system
+  - It would have accessibility baked in as a first-class citizen, including focus management
+  - It would have a hooks-like API and wouldn't use classes
+  - It would have streaming SSR
+- I love the ahead of time idea.I bet JSX would be faster if components transpiled into 2 or 3 flat arrays:
+  - components
+  - children count
+  - props(?)
+  - children counts could be pooled from a preallocated Uint32Array
+- Check out my compiler project I played around with a few years ago
+  - https://github.com/trueadm/react-compiler
+  - you'd actually improve performance not using a Uint32Array, purely for the fact you can re-reference template arrays that commonly appear.
+- Wouldn't abstract over HTML and instead build around abstractions.What do you mean with this point? Any good prior art to share?
+  - React Native Web, cc @necolas . If you get it right, you can solve so many problems. `<div onClick={…} />` should never been allowed to happen.
+  - Is even argue that `<div>` shouldn’t have happened. Look how SwiftUI tackles this. 
+  - We default to HTML because we are accustomed to it, not because it’s the right abstraction.
+- Oh I think I follow. It’s about providing solid primitives instead of driving users towards (mis)using HTML directly. Does that sound right?
+  - Pretty much. HTML is a free for all.
+- you don't need to know about the underlying host with react-native-web. it reduces down to building blocks, a div on some host that happens to be the web is a View there i think and that makes it x-platform. no opinions on if that's good or not, but the idea was interesting.
+
 
 - ## A key philosophical difference between Next.js & @blitz_js is that Blitz is all about giving sharp knives to developers. 
 - https://twitter.com/flybayer/status/1406722174505918464

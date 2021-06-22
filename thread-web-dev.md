@@ -33,7 +33,14 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## TIL `ResizeObserver` & `IntersectionObserver` need to be manually disconnected, else they leak memory through their callback.
+- https://twitter.com/jaffathecake/status/1405437361643790337
+  - This happens in all browsers. 
+  - `MutationObserver` and event listeners don't have this issue. 
+  - Make sure you manually disconnect resize/intersection observers!
+- Now you made me wonder which way `PerformanceObservers` go. How do MutationObservers not leak memory? Hold weak refs to the callbacks?
+  - The other APIs are smart enough to realise the callback will never happen again, because the means to reconnect the element to the document (or manually dispatch an event) are gone. PerformanceObservers are always global, so they always need disconnecting/unobserving manually.
+- I've made it a habit of manually unsubscribing(?) everything I do attach, be it IntersectionObserver or event listeners. It is a bit verbose at times but I've found that it forces me to think what happens when elements/components are torn down, which is quite easy to overlook.
 
 - ## when somebody asks "how would I do [x]", the answer is: Same basic strategy as with PHP, Rails, Laravel, express, etc. Then here are some clientside hooks to make the UX super fancy".
 - https://twitter.com/ryanflorence/status/1406064047712210946

@@ -63,6 +63,33 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## PSA: react-query is Promise based - it doesn't care about network requests, status codes and the likes. 
+- https://twitter.com/TkDodo/status/1407343307047452684
+  - `Promise.resolve(5)` and `Promise.reject("oh noes")`will do just fine, especially for an issue reproduction
+- Would you advise using promises for test mocks as well?
+
+- ## what data do you keep in your store that was not loaded from a backend (and was not received from the URL)? I.e. data that "only" lives in your frontend store? 
+- https://twitter.com/nilshartmann/status/1406851122195742720
+- SelectedItem, selectedSection, selectedWhatever, step, form data that has frontend validations that need to be checked elsewhere, pristineness...
+  - Heuristic: If it's data you'll need in 2 places, why finding an unrelated common ancestor to store it rather than a global state?
+  - Some of these selectedX could be in the URL if they nicely map onto UI (ie if the user can define them as part of the link to share with a friend or bookmark).
+- Auth data, user details, settings (theme & language), stuff like notification pop-ups, a bit read-only navigation state to access it outside of the JSX routes. Most data in this application is server-side though, so generally it's not a lot.
+  - Always depends on the application, but most applications don't have a *lot* of global state. Also depends on architecture of course.
+  - That said, it can even make sense to move some "kinda local" state up into the global store to just benefit from an opinionated dataflow, tooling like the devtools or pre-existing libraries like redux-persist. Very subjective and I haven't really found a 100% answer.
+- I think more and more previously "classic" UI state is also moved to backend/URL/browser, so that users can for example restore all their settings/inputs etc. on browser reload or share with others
+  - Yeah, especially as keeping client-side and server-side state during SSR is a bit of a pain
+- Calculator data. Hold up, not the arithmetic ones. The ones with long forms where you play around with inputs and it gives you a result or a bunch of meaningful messages from an API call, like a tax calculation.
+  - 类似本地输入框这样的临时数据
+- For time-based views like an EPG, storing the current time there is a neat trick as it allows you to speed up things and move forward in time for testing purposes.
+- Shared state between different parts of the application - for eg filters that apply throughout the application.
+- Custom product configuration state. Color, size, make, model selections for example.  And many derivations of that data.
+
 - ## zustand has a thing called transient updates.
 - https://twitter.com/0xca0a/status/1406246841436487682
   - binds components to reactive state w/o causing re-render. you wouldn't want react running a complete component lifecycle 60 times a sec. i hope react figures this out natively one day, until then: zustand.

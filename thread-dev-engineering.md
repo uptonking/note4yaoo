@@ -24,7 +24,15 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
-- ## 
+- ## As someone who ends up building a lot of architectural and infrastructure code, there's one thing I cannot emphasize enough: do the simplest thing that works. 
+- https://twitter.com/promit_roy/status/1405912880663433223
+  - Do not try to imagine future requirements, or support ill-defined potential use cases. 
+  - It will always change later.
+  - The problem is that the simplest thing that will work is dependent on how well you already understand the setting. 
+  - There’s no single simplest possible approach, and they all differ on how easily they can be extended in different vectors.
+- I used to do a lot of planning, and it always turned out to be a waste of time, and I'd have to rewrite large chunks anyway - either because the requirements changed, or because I didn't understand the problem until I actually wrote the code.
+- I don't agree, trying the simplest solution will make it harder for you or anyone to extend
+  - Yes, do simple things, but not the simplest. 
 
 - ## One driver behind the 'lots of small packages' trend in JavaScript has been the desire to ship the minimal amount of code in web pages.
 - https://twitter.com/MarijnJH/status/1397127566503419904

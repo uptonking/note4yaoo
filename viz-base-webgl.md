@@ -9,6 +9,9 @@ modified: '2020-12-21T07:47:02.451Z'
 
 # guide
 
+- tips
+  - 基于webgl实现数据可视化的重点在处理空间数据，然后渲染
+  - 关注点可放在mapbox-gl、deck.gl，而不是threejs、babylonjs
 # faq
 
 ## webgl vs regl
@@ -128,9 +131,7 @@ modified: '2020-12-21T07:47:02.451Z'
 
 - 缺陷很明显，一个2G左右的模型，加载一下试试。
   - 这是浏览器的问题还是threejs的问题呢
-
 # WebGL
-
 - ref
   - [caniuse webgl2](https://caniuse.com/webgl2)
     - 不支持：ie 11
@@ -208,9 +209,7 @@ modified: '2020-12-21T07:47:02.451Z'
 - WebGPU
   - Unlike WebGL, WebGPU is not a direct port of any existing native API. 
   - It is based on concepts in Vulkan, Metal, and Direct3D 12 and is intended to provide high performance on these modern graphics APIs across mobile and desktop platforms
-
 # 计算机图形学
-
 - 选择参考
   - DX用作Windows平台的底层支持，最好能上个DX12
   - OpenGL、OpenGL ES作为Linux、Android、IOS等等其他平台的基础支持。如果需要更强的性能和更好的效果就上个Vulkan
@@ -228,7 +227,6 @@ modified: '2020-12-21T07:47:02.451Z'
   - OpenCL is mostly used for parallel computing, it is a computation API.
   - You may use OpenGL to solve some problems you usually solve with OpenCL but you will have to map your problem to the graphics context in order to get your computation going.
   - I think the main reason for you to pick OpenGL for non-rendering tasks is to support older hardware that can't run OpenCL.
-
 # game
 
 ## libgdx
@@ -238,7 +236,5 @@ modified: '2020-12-21T07:47:02.451Z'
   - https://libgdx.badlogicgames.com/
   - libGDX is licensed under the Apache 2 License.
   - source code based on GWT
-
 # ref
-
 - [How to animate WebGL with GSAP](https://www.reddit.com/r/webdev/comments/j7t271/best_way_how_to_animate_webgl_with_gsap/)

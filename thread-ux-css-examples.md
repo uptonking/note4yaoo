@@ -22,12 +22,22 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## I've reworked my Animated Gradient Border @CodePen demo to support non-Houdini browsers.
+- https://twitter.com/bramus/status/1407332309532131341
+  - Non-Houdini Browsers requires lots of extra code
+  - It's not possible to feature detect support for @property
+  - https://codepen.io/bramus/pen/XWMwPgO?editors=0110
+  - 动态渐变色的边框
+- To cater for the latter I had to StackOverflow my way into some nasty @​supports and @​media combination to target Chromium only. Ugh!
 
 - ## Experimenting with some generative grid layouts
-- https://codepen.io/georgedoescode/pen/YzZgKyO
+- https://twitter.com/georgedoescode/status/1407298514758082566
+  - https://codepen.io/georgedoescode/pen/YzZgKyO
   - Generative Quadtree Based Grid Layouts
   - 不同大小的圆形、方形的集合
+  - [Building Generative Grid Layouts With Quadtrees](https://georgefrancis.dev/writing/generative-grid-layouts-with-quadtrees/)
+  - https://codepen.io/georgedoescode/pen/rNygYMz
+- [pattern generator for a machine learning hardware start-up.](https://www.pentagram.com/work/graphcore/story)
 
 - ## We can use % values for positioning animations on timelines.
 - https://twitter.com/cassiecodes/status/1405254957507428353

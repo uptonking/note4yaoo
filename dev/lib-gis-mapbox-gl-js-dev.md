@@ -10,15 +10,20 @@ modified: '2021-01-04T16:27:30.895Z'
 # guide
 
 - todo
-  - glue between mapbox-gl and deck.gl
-# mapbox-gl-js v2s
-
+  - mapbox-gl to maplibre-gl
+# mapbox-gl-js v2
+# docs
+## overview
+- mapbox-gl-js /7.6kStar/BSD/202102/js
+  - https://github.com/mapbox/mapbox-gl-js/tree/v1.13.1
+  - https://docs.mapbox.com/mapbox-gl-js/
+  - library for customizable vector maps on the web. 
+  - It takes map styles that conform to the Mapbox Style Specification, applies them to vector tiles that conform to the Mapbox Vector Tile Specification, and renders them using WebGL.
 # discuss
-
 - ## What other alternatives exist?
 - https://news.ycombinator.com/item?id=25349195
 - Openlayers has web GL support but not for vector tiles and I would like to have fast vector tiles
-- It's unfair to call Leaflet dead
+- It's unfair to call Leaflet dead.
   - What someone can see as less development activity is simply a sign of a mature product that doesn't need many new features and changes to remain useful — focusing on the core basic mapping needs has always been its goal, and it continues to adhere to it.
 - I wrote a really good incremental tile based renderer for leaflet that could easily be adapted for vector tiles.
 - +1 for CesiumJS, they have been doing 3D since ages

@@ -11,9 +11,27 @@ modified: '2021-04-27T09:19:37.711Z'
 
 - ## 
 
-- ## 
+- ## Shipped with Chromium 91 is TablesNG, a under-the-hood rewrite regarding tables.
+- https://twitter.com/bramusblog/status/1407078048730603521
+- [TablesNG — Improvements to `<table>` rendering in Chromium](https://www.bram.us/2021/06/21/tablesng-improvements-to-table-rendering-in-chromium/)
+- The old table implementation — from WebKit before — was very old, and limited further development. 
+  - The rewrite that landed emphasizes correctness, fixing 72 bugs in one sweep.
+- Subpixel geometry
+- `<TD>` supports orthogonal writing modes
+  - This allows us to have rotated table headers in tables, without needing to resort to extra spans and CSS rotations
+- `visibility: collapse;` for table columns
+  - This allows us to hide entire columns by setting `visibility: collapse;` on a column in a `<colgroup>` .
+  - 可以通过css隐藏某一列
+- Sections/rows can have position: that is not static
+  - This one is a huge addition, as it — finally — allows us to set `position: sticky` on table headers!
+- In Closing
+  - While these changes are very welcome, there unfortunately are some compatibility issues: Safari still uses the “old” tables rendering engine and drags every other browser down with it that way. 
+  - Firefox led the way before regarding table rendering, and can quite keep up with Chromium’s TablesNG.
 
-- ## 
+- ## I was wondering if Next.js live is built on top of WebContainers? That looks like it could but not mentioned anywhere
+- https://twitter.com/sebastienlorber/status/1407003336235229193
+- No, Next Live is a custom ESM devserver that runs via SW (kinda similar to PolymerLabs/playground-elements)
+  - https://github.com/PolymerLabs/playground-elements
 
 - ## TIL: that you can use use css import assertion in the latest stable chrome 91 purely by enabling "Experimental Web Platform features".
 - https://twitter.com/daKmoR/status/1406195981817888770

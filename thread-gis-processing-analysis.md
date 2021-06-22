@@ -15,7 +15,11 @@ modified: '2021-05-25T08:41:18.938Z'
 
 - ## 
 
-- ## 
+- ## Has anyone laid out concrete reasons for building shiny apps instead of using out-of-the-box enterprise software like Tableau?
+- https://twitter.com/mdsumner/status/1304710241293012993
+- Well arc topology doesn't exist in the SF standard, and geojson can't do this. 
+  - TopoJSON was a web-era reconstruction of old Arc/Info vectors "arc-node" topology.
+  - It's very much aligned to how it's used by D3, it's a mesh format kinda
 
 - ## Difference between COG and GeoTIFF basically (but not only) is, that COG uses internal index.
 - https://twitter.com/gdaltips/status/1405615640799551488

@@ -17,10 +17,25 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0621-0627
 
+👉 Next 11
+👉 React 18 demo
+👉 Storybook + Vite
+👉 Jotai v1
+👉 React Docs Reboot
+👉 React-Native-Render-HTML
+👉 Aurora
+👉 Conformance
+👉 Error Cause
+👉 Apollo Sandbox
+👉 Tailwind 2.2
+👉 GraphCDN
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1406998030264438788
+
 ## w0614-0620
 
-
-👉 React 18 links:
+👉 React 18 alpha
 👉 Redux Toolkit Query
 👉 Don't overabstract comps
 👉 React-Native 0.65 RC
@@ -30,6 +45,7 @@ modified: '2021-03-22T18:46:03.513Z'
 
 - ref
   - https://twitter.com/sebastienlorber/status/1404453860035514368
+
 ## w0607-0613
 
 👉 Remotion Three

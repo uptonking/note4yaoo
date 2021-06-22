@@ -20,5 +20,9 @@ modified: '2021-05-27T19:08:18.170Z'
 - Zoomable Circle Packing
   - https://observablehq.com/@d3/zoomable-circle-packing
     - 类似prezi的缩放圆形到页面中间
+
+- Solar Path
+  - https://observablehq.com/@mbostock/solar-path
+  - 类似二维正圆划分经纬度的效果
 # data-seeding
 - [MDN content popularity](https://datastudio.google.com/u/0/reporting/8a2d9085-976d-4cfa-a80d-60d61361be19/page/foIKC)

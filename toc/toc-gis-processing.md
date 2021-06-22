@@ -18,6 +18,7 @@ modified: '2021-01-04T16:21:40.119Z'
   - http://turfjs.org/
   - a library for spatial analysis. 
   - It includes traditional spatial operations, helper functions for creating GeoJSON data, and data classification and statistics tools.
+  - geojson to topojson: @turf/concave使用了
 - h3-js /400kStar/Apache2/202012/js
   - https://github.com/uber/h3-js
     - provides a pure-JavaScript version of the H3 Core Library, a hexagon-based geographic grid system.
@@ -26,6 +27,21 @@ modified: '2021-01-04T16:21:40.119Z'
     - /2.5kStar/Apache2/202011/c
   - ref
     - [Comparisons: geohash, h3, s2 & Use cases](https://h3geo.org/docs/usecases)
+
+- loam /96Star/Apache2/202105/js
+  - https://github.com/azavea/loam
+  - A wrapper for running GDAL in the browser using gdal-js
+  - https://github.com/ddohler/gdal-js
+    - An Emscripten port of GDAL 2.1
+  - [Introducing Loam: A Client-Side GDAL Wrapper for Javascript](https://www.azavea.com/blog/2021/05/03/introducing-loam-a-client-side-gdal-wrapper-for-javascript/)
+    - we compiled GDAL into WebAssembly using the Emscripten project.
+    - Loam wraps the low-level GDAL interface provided by Emscripten with a Promises-based interface 
+    - The actual GDAL code is executed from within a Web Worker in order to prevent blocking the main thread on long-running computations.
+
+- geolib /3.5kStar/MIT/202005/ts
+  - https://github.com/manuelbieh/geolib
+  - Zero dependency library to provide some basic geo functions
+  - This library is currently 2D, meaning that altitude/elevation is not yet supported by any of its functions!
 # opengis
 - geoserver /GPLv2/java
   - https://github.com/geoserver/geoserver
@@ -82,3 +98,8 @@ modified: '2021-01-04T16:21:40.119Z'
   - https://trac.osgeo.org/geos
   - port from jts
 # more-repos
+- https://github.com/DentReality/GeoDBSCAN
+  - js implementation and API for the DBSCAN clustering algorithm using a geographic distance function. 
+  - This allows developers to create clusters based on the geographic density of the points. 
+  - The code is a modernisation and extension of density-clustering.
+  - https://github.com/uhho/density-clustering

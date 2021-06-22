@@ -72,7 +72,6 @@ modified: '2020-07-07T08:10:16.774Z'
 
 - https://github.com/tc39/proposal-json-superset
   - A proposal to extend ECMA-262 syntax into a superset of JSON.
-  - 
 
 ## es2020
 
@@ -87,6 +86,12 @@ modified: '2020-07-07T08:10:16.774Z'
 - for..in order: loop over the properties of an object in the order in which they were defined
 
 ## es2021
+
+- String.prototype.replaceAll
+- Logical Assignment Operators (&&= ||= ??=)
+- Numeric Separators (1_000)
+- Promise.any & AggregateError
+- WeakRefs & FinalizationRegistry
 
 ## esX-deprecated
 
