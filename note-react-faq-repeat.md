@@ -10,7 +10,27 @@ modified: '2021-06-10T06:44:27.120Z'
 # faq
 ## 
 
-## 
+## useEffect vs useLayoutEffect
+
+- [useEffect vs. useLayoutEffect in plain, approachable language](https://blog.logrocket.com/useeffect-vs-uselayouteffect/)
+- With every click of the button, the counter state is updated, the DOM mutation printed to the screen, and the effect function triggered.
+  1. The user performs an action, i.e., clicks the button.
+  2. React updates the count state variable internally.
+  3. React handles the DOM mutation.
+    - The text content of the h1 element has to be changed from “the current count is previous value” to “the current count is new value.”
+  4. The browser paints this DOM change to the browser’s screen. 浏览器自身的渲染管线在这里
+    - React hands over the details about the DOM mutation to the browser engine, which figures out the entire process of painting the change to the screen.
+  5. Only after the browser has painted the DOM change(s) is the `useEffect` function fired.
+    - Although useEffect is deferred until after the browser has painted, it’s guaranteed to fire before any new renders.
+
+- Unlike `useEffect`, the function passed to the `useLayoutEffect` Hook is fired synchronously after all DOM mutations.
+  - `useLayoutEffect` doesn’t really care whether the browser has painted the DOM changes or not. 
+  - It triggers the function right after the DOM mutations are computed.
+  - updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
+
+- I’ll highlight three examples that amplify the significance of the differences between useEffect and useLayoutEffect.
+  - https://codesandbox.io/s/useeffect-uselayouteffect-time-of-execution-2-kqnqp
+
 
 ## 使用ReactDOM.createPortal和ReactDOM.render的区别
 

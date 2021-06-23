@@ -31,7 +31,9 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## There is an `<hr>` tag but there is no `<vr>` tag for vertical separator. I guess they never thought you may want to separate content vertically?
+- https://twitter.com/oleg008/status/1407653485647126534
+- [see Separator of Radix UI](https://radix-ui.com/primitives/docs/components/separator)
 
 - ## TIL `ResizeObserver` & `IntersectionObserver` need to be manually disconnected, else they leak memory through their callback.
 - https://twitter.com/jaffathecake/status/1405437361643790337

@@ -18,7 +18,13 @@ modified: '2021-05-05T07:43:12.792Z'
 
 - ## 
 
-- ## 
+- ## I am obsessed with Plot
+- https://twitter.com/enjalot/status/1398009942070661122
+  - I'll do this with some anecdotes and examples along with pointers to currently available resources. 
+  - It's a very young library but it's already changing the way I make #dataviz dramatically
+- the first thing is speed. I cannot emphasize this enough, when you can make visualizations an order of magnitude faster it qualitatively changes how you approach data.
+  - it takes a little getting used to, but the API is pretty quick to remember and you don't need to type much to get a ton of power. my current obsession is stacking things.
+- [Hands-on Data Visualization with Observable Plot](https://www.youtube.com/watch?v=SnLBbbQzK1E)
 
 - ## Observable Plot 
 - https://news.ycombinator.com/item?id=27036768

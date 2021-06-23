@@ -15,9 +15,19 @@ modified: '2021-05-10T04:06:02.843Z'
 # pieces
 - ## 
 
-- ## 
+- ## @14islands/r3f-scroll-rig allows you smooth-scroll html and canvas in lockstep. 
+- https://twitter.com/0xca0a/status/1407643826890723330
+  - 包括二维形变动画、三维位移动画，超级棒
+  - can either use a virtual scroll bar or hi-jack the existing bar by animating window.scrollY.
+  - it's driven by zustand, r3f and drei @pmndrs
 
-- ## 
+- ## Liquid Swipe - “Can it be done in React Native?”
+- https://twitter.com/wcandillon/status/1407354859209244685
+  - The intro was coded in React using Remotion
+- Amazing intro, man. Even more so after knowing that's made with Remotion.
+- Love the intro, Look clean and professional
+  - Maybe even better with some subtle code snippets in the background.
+  - That way the audiences' expectation would be perfectly set to "crafting design with code"
 
 - ## Mesmerization. Made with code in Remotion
 - https://twitter.com/calebwright/status/1406412814512803841

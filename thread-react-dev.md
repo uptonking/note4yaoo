@@ -11,7 +11,61 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## To keep JSX simple, return early.Check for loading, 404s, or other errors first.
+- ## 
+
+- ## 
+
+- ## Use ternaries rather than && in JSX
+- https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx
+  - `books.length && books.map(...)` , What would happen with the above code if contacts was `[]` ? That's right! You'd render `0` !
+- Because when JavaScript evaluates `0 && anything` the result will always be 0, it doesn't evaluate the right side of the `&&` .
+- The solution? Use a ternary to be explicit about what you want rendered in the falsy case.
+
+- ## Devs coming to React from templating languages like Handlebars are often surprised that JSX doesn't have built-in conditional syntax
+- https://twitter.com/benmvp/status/1392257887527792640
+  - [Conditional rendering in React](https://www.benmvp.com/blog/conditional-rendering-react/)
+  - Well, JSX is "Just JavaScript"™ and I've seen 6️⃣ ways we can use JS to conditionally render UI in React components
+- Which one should you choose? It always depends, but *in general* I do:
+  - only one condition - inline logical `&&` (most popular)
+  - `true/false` conditions - inline ternary
+  - multiple conditions - element variables
+- 1.  Element variables
+  - { `resultJSX` }
+  - We can conditionally assign JSX to a variable & render that variable. Can use `if-else` or `switch` statement
+  - This used to be my preferred way of conditional rendering cuz I liked that it kept the JSX "clean". But I came around to the more popular options
+- 2. Inline logical `&&` operator
+  - { `condition && <Comp />` }
+  - This works cuz the curlies ( {} ) in JSX take any JS expression. When the condition is false React renders nothing. When it's true React renders the UI
+- 3. Inline ternary
+  -  { `condition ? <Comp1 /> : <Comp2 />` }
+  - Depending on how much UI is rendered in the `true` case, it could be hard to figure out where the `false` case starts
+  - I’m in the process of swearing off (complex) ternaries. Except in trivial cases, ternaries feel like a smell that you need to extract some sub components or element variables (to at least make the ternaries easier to read). And don’t get me started on nested ternaries.
+- 4. Component early return
+  - This moves the conditional rendering to a single place when multiple components use this component
+- 5. Helper function
+  - { `renderResultJSX()` }
+  - When multiple variables are needed to calculate a condition or lots of UI is conditionally rendered, we can move it to a helper func to keep everything together
+  - you can even make this inline by using an IIFE
+- 6. JSX control statements
+  - custom `<IF></IF> <Switch> <When>` component
+  - uses component syntax to write conditions. It ultimately transpiles code down to ternary statements
+  - It likely won't play nice with TypeScript so I'll stick with the other solutions
+
+- ## I haven't reached for an IIFE (immediately-invoked function expression) since the jQuery days, but I've been using it lately for embedding a switch statement into JSX in a React component, and I quite like it
+- https://twitter.com/spikebrehm/status/1407102323348942850
+  - It's more useful when there's >2 possible values. Much better than a nested ternary IMO.
+  - 注意，如果在children的地方直接书写对象字面量，那么每次都会创建一个新对象
+  - 讨论的内容大多集中在使用switch语句和多个 `condition && <Comp />` 的优缺点
+  - https://github.com/tc39/proposal-pattern-matching
+- Great way to workaround the constraints of JSX. Shame you're using it for a switch statement though!
+- why not just create a component that returns each case instead of inlining this function which is essentially an adhoc component?
+  - Sometimes wrapping isn’t what you want if a parent uses React.children.map
+- this is totally a stylistic thing, but I'd rather write separate conditions. I also don't like the switch statement in general
+  - I thought of this too, but it doesn’t cover a case where none of the matches have a match. Plus it’s less clear what the purpose is of those conditions. The pattern matching proposal would be dope for this sort of thing though.
+  - It's a bit tedious though and using a Switch statement is certainly nicer.
+- I'm still holding out hope that "do" expressions get approved
+
+- ## To keep JSX simple, return early. Check for loading, 404s, or other errors first.
 - https://twitter.com/housecor/status/1404038972700073984
 - returning early avoids the need for nested ternaries, which are harder to read. 
   - And returning early means I don't need to extract the logic to a separate function merely so that I can implement an if/else (if/else isn't supported inside a return)

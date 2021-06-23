@@ -22,6 +22,33 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## a price slider that has a few great animation details. 
+- https://twitter.com/FrontendHorse/status/1407047562327175173
+  - I love the inertia on the diamond and the way the price counts up and down to adjust. 
+  - https://codepen.io/team/keyframers/pen/ExWGGpX
+  - 无依赖
+- Took me a while to decipher the pseudo elements situation there. So good.
+
+- ## CSS responsive table
+  - https://codepen.io/scottjehl/pen/abJrPOP
+  - here's something I've been trying to do for at least 10 years!
+  - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!
+  - Works in: Firefox, Safari (iOS & Mac), Chrome (Mobile & Desktop), Edge
+- There are some bugs related to interaction of position:sticky & scroll-snap in Chromium implementation
+  - The zoom-in, zoom-out may be just a trigger to recalculate the snap positions leading to odd interaction with now stickily position header.
+- I built a POC for a no tables version too
+  - https://codepen.io/jonnyburch/pen/NWqrVdp
+- Allowing overflow is one of the shortest technique to make tables responsive.
+
+
+
 - ## I've reworked my Animated Gradient Border @CodePen demo to support non-Houdini browsers.
 - https://twitter.com/bramus/status/1407332309532131341
   - Non-Houdini Browsers requires lots of extra code

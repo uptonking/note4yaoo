@@ -382,6 +382,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - adding search, sort, filters and flexibility to tables, lists and various HTML elements. 
   - Built to be invisible and work on existing HTML.
 
+- CSS responsive table
+  - https://codepen.io/scottjehl/pen/abJrPOP
+  - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!
 ## table-tr-td-react
 
 - ali-react-table /530Star/MIT/202105/ts

@@ -27,13 +27,9 @@ modified: '2020-12-21T07:44:48.911Z'
     - future(20210126) 85.0
   - safari
     - stable(20201214) 14.0.2，webkit 610.3.7.1.9, macOS 10.14-11
-
 # browser份额
-
 - [Browser usage table](https://caniuse.com/usage-table)
-
 # chrome
-
 - https://developers.google.com/web/tools/chrome-devtools
 
 - [What's New In DevTools (Chrome 89)](https://developers.google.com/web/updates/2021/01/devtools)
@@ -48,9 +44,7 @@ modified: '2020-12-21T07:44:48.911Z'
 
 - chrome各版本特性
   - https://www.chromestatus.com/features
-
 # browser-impl
-
 - https://github.com/lobobrowser/LoboBrowser
   - /44Star/MIT/202004
   - Lobo is an extensible all-Java web browser and RIA platform. 
@@ -58,9 +52,7 @@ modified: '2020-12-21T07:44:48.911Z'
   - Cobra is the web browser's renderer API; also a Javascript-aware HTML parser.
 - https://github.com/lobobrowser/Cobra
   - Cobra is a rendering engine, origionally designed for LoboBrowser, the gui of LoboBrowser has been separated from it so Cobra can easily be improved by forks of LoboBrowser.
-
 # discuss
-
 - ## [手机端qq浏览器怎么样？](https://www.zhihu.com/question/312923150/answers/updated)
 - 挺好用的（不是水军）
   - 第一个是打开文档不错，还可以创建压缩包
@@ -68,3 +60,9 @@ modified: '2020-12-21T07:44:48.911Z'
   - 第三个是和QQ挂钩，QQ资料卡上有QQ浏览器的等级
     - 因为电脑用的Chrome，手机Chrome没法登录 
 - 因为我是大王卡，以前觉得用qq浏览器还能免流，但后来觉得广告太多
+# browser-download
+- chrome
+  - https://www.chromium.org/getting-involved/dev-channel
+
+- chrominum
+  - https://www.chromium.org/getting-involved/download-chromium

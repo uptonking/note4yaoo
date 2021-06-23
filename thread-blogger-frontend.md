@@ -7,8 +7,31 @@ modified: '2021-02-09T19:27:01.319Z'
 
 # thread-blogger-frontend
 
-# web-stars
+# react-blogger
 
+- kentcdodds
+  - react course
+  - https://github.com/kentcdodds
+  - https://twitter.com/kentcdodds
+  - https://kentcdodds.com/
+  - projects
+    - https://github.com/kentcdodds/mdx-bundler
+    - https://github.com/downshift-js/downshift
+    - https://github.com/testing-library/react-testing-library
+    - https://github.com/kentcdodds/bookshelf
+
+- Ben Ilegbodu
+  - react blogs
+  - https://www.benmvp.com/blog/
+  - projects
+    - https://github.com/benmvp/react-typescript-minishop
+    - https://github.com/benmvp/migrate-react-hooks-minishop
+
+- 全栈潇晨
+  - react源码解析
+  - https://www.zhihu.com/people/qbtqiuqiu/posts
+  - https://xiaochen1024.com/
+# web-stars
 - 尤雨溪
   - info
     - https://github.com/yyx990803
@@ -34,8 +57,11 @@ modified: '2021-02-09T19:27:01.319Z'
 
 - Tan Li Hau
   - svelte
+  - https://github.com/tanhauhau
   - https://twitter.com/lihautan
   - https://lihautan.com/blogs/
+  - projects
+    - https://github.com/tanhauhau/svelte-json-tree
   - blogs
     - [Building a simplified webpack clone](https://lihautan.com/building-a-simplified-webpack-clone/)
 
@@ -50,19 +76,7 @@ modified: '2021-02-09T19:27:01.319Z'
 - 雪碧
   - react, 阿里，beam
   - https://github.com/doodlewind
-
 # dev-frontend
-
-- Joshua Comeau
-  - https://github.com/joshwcomeau
-  - https://twitter.com/JoshWComeau
-  - https://www.joshwcomeau.com/
-  - intro: css expert
-  - projects
-    - https://github.com/joshwcomeau/react-flip-move
-      - inactive
-      - you may be interested in checking out projects like react-flip-toolkit.
-
 - Andrea Giammarchi 
   - https://github.com/WebReflection
   - https://twitter.com/WebReflection
@@ -107,15 +121,8 @@ modified: '2021-02-09T19:27:01.319Z'
   - intro: creator of markdown
   - https://daringfireball.net/projects/
 
-- Tan Li Hau 
-  - https://github.com/tanhauhau
-  - https://twitter.com/lihautan
-  - https://lihautan.com/blogs/
-  - intro: svelte expert
-  - projects
-    - https://github.com/tanhauhau/svelte-json-tree
-
 - Daishi Kato
+  - state management
   - https://github.com/dai-shi
   - https://twitter.com/dai_shi
   - https://github.com/dai-shi/react-tracked
@@ -151,9 +158,36 @@ modified: '2021-02-09T19:27:01.319Z'
 - D 
   - https://github.com/88250
   - artwork: b3blog, solo, symphony
+# css
+- Joshua Comeau
+  - intro: css expert
+  - https://github.com/joshwcomeau
+  - https://twitter.com/JoshWComeau
+  - https://www.joshwcomeau.com/
+  - projects
+    - https://github.com/joshwcomeau/react-flip-move
+      - inactive
+      - you may be interested in checking out projects like react-flip-toolkit.
 
+- Adam Argyle
+  - position: #CSS @GoogleChrome @CSSWG ; 
+  - https://github.com/argyleink
+  - https://twitter.com/argyleink
+  - https://nerdy.dev/ (个人主页是水墨画的效果)
+  - projects
+    - https://github.com/GoogleChromeLabs/ProjectVisBug
+    - https://github.com/argyleink/transition.css
+
+- Ahmad Shadeed
+  - https://twitter.com/shadeed9
+  - https://ishadeed.com/
+  - css container query
+
+- Bramus!
+  - https://www.bram.us/
+  - https://twitter.com/bramus
+  - scroll-timeline
 # ux-engineer
-
 - Varun Vachhar
   - info
     - http://github.com/winkerVSbecks
@@ -165,9 +199,7 @@ modified: '2021-02-09T19:27:01.319Z'
       - https://generative.parts/
     - https://github.com/winkerVSbecks/sketchbook
       - https://sketchbook.netlify.app/
-
 # dev-more
-
 - 徐飞
   - https://www.zhihu.com/people/sharpmaster/posts
 - 贺师俊

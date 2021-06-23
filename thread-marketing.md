@@ -14,6 +14,27 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We @vercel just raised a $102M Series C @ 1.1B on our mission to help build a faster Web, made for everyone. 
+- https://twitter.com/rauchg/status/1407716317507948549
+- Our goals: 
+  - 1️⃣ Build the SDK for Web 
+  - 2️⃣ Lower the barrier of entry 
+  - 3️⃣ Focus on the end-user
+
+- ## 苦读十多年，进入顶尖名校，熟悉前沿技术，进入互联网大厂，拿着 996 的高薪，最重要的工作是：骗人多点一下「继续抽奖」。
+- https://twitter.com/shrugged_hi/status/1407037885325484034
+- 跟谷歌的那帮人，世界上最聪明的头脑都在绞尽脑汁儿的卖广告 一个意思嘛
+- 确实如此～还有咨询公司进入大厂做战略的也都是类似的活儿
+- 我觉得应该是【帮忙砍一刀】
+- 高级人才的定义：分析什么样的优惠券有更多人点击。
+- 日常功课工作：在朋友圈发领导诗歌的赏析
+- 有个笑话：推荐算法发展到最后都会给你推服装搭配。所以不如一开始就推送服装搭配
+- 哈哈，计算广告。
+
 - ## Apple has now paid over $230 billion to developers since the app store has launched. (Weird I thought customers paid them)
 - https://twitter.com/tominniss/status/1401972522325774341
 - Or put another way, they've creamed off nearly $100 Billion!
@@ -30,18 +51,6 @@ modified: '2021-01-06T14:40:06.842Z'
   - or the company will need to pivot to become profitable in a way that hurts open source users.
 - An alternative model is for companies looking to improve a project to hire contributors and pay them to work on it together with members of the project from other companies. 
   - The project can't be owned by any individual company for this to work – all parties need to be equal.
-
-- ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 
-- https://twitter.com/jaredpalmer/status/1386411683074101248
-  - Huge opportunity for an ambitious open source project or consultancy.
-- https://github.com/getmeli/meli
-  - platform for deploying static sites and frontend applications.
-- https://github.com/coollabsio/coolify
-  - self-hostable Heroku & Netlify alternative
-- Our(Vercel) answer to this is continuing to invest in advanced Enterprise features: "bring your own" CI, VPC peering, more resource isolation features on the horizon. 
-  - We're thrilled so many govt, fintech, and healthcare customers are enjoying the @vercel platform already.
-  - More broadly… building, maintaining, securing and operating your frontend & global edge infrastructure is hard, undifferentiated stuff.
-  - The big question is whether folks *should* focus on this instead of investing in their app experiences.
 
 - ## 一直需要一个很好用的财税 SaaS 服务，强付费需求，要不是我不懂行我早下场自己做了。
 - https://twitter.com/waylybaye/status/1385921039989755906

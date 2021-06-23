@@ -255,15 +255,6 @@ modified: '2021-01-19T04:46:23.100Z'
   - how I prototyped a Sidenav component for the web that is responsive, stateful, supports keyboard navigation, works with and without Javascript, and works across browsers. 
   - Try the [demo](https://gui-challenges.web.app/sidenav/dist/).
 
-- ## How to implement a tooltip positioning engine
-- https://twitter.com/lihautan/status/1352431000559607809
-  - positioning in 12 directions
-  - move as you scroll
-  - flip as it hits the edge
-  - constrained within a boundary
-  - hide when the target leaves the screen
-- https://www.youtube.com/watch?v=tBn0lVUzUbA
-
 - ## Intent to Prototype: HTMLPopupElement - <popup>
 - https://twitter.com/intenttoship/status/1352410513876119554
 - https://groups.google.com/a/chromium.org/g/blink-dev/c/9y-Thg9UCxY/m/_4gShWjQAAAJ?pli=1
