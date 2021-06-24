@@ -10,10 +10,23 @@ modified: '2021-04-12T18:07:01.092Z'
 # guide
 
 - [Add CRUD example for Table and add useListData and useTreeData hooks](https://github.com/adobe/react-spectrum/pull/439)
-
 # pieces
-
 - ## 
+
+- ## React Aria's data table component is coming along nicely!
+- https://twitter.com/devongovett/status/1407747623268671490
+  - Keyboard navigation to rows, cells, and focusable elements within cells
+  - Multi selection
+  - ARIA selection announcements
+  - Sorting
+  - Tiered headings
+  - Async data loading + infinite scrolling
+  - Typeahead
+  - And more!
+- We sometimes have tables inside a table and expanding rows. Is that something you plan to implement?
+  - Yeah, we will eventually support expanding rows. We would follow the ARIA treegrid pattern for that
+- Does it have the "basic" features tables proposed as in react-virtualized or react-windows?
+  - Yes! Our own tables in Spectrum are all virtualized. It should work with any virtualization library. We'll add some examples to the docs. Eventually we might make our own virtualizer public as well.
 
 - ## Initial implementation of collections API and Tree
 - https://github.com/adobe/react-spectrum/pull/31

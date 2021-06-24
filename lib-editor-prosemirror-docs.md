@@ -33,14 +33,94 @@ modified: '2021-06-02T17:12:56.049Z'
 - ProseMirror tries to bridge the gap between editing explicit, unambiguous content like Markdown or XML, and classical WYSIWYG editors.
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
   - You can customize the shape and structure of the documents your editor creates, and tailor them to your application's needs.
-# examples/tutorials
+# examples-tutorials
+
+## [basic example](https://prosemirror.net/examples/basic/)
+
+- prosemirror-example-setup package creates an array of plugins
+- These plugins are created by the example setup:
+  - Input rules, which are input macros that fire when certain patterns are typed. 
+    - In this case, it is set up to provide things like smart quotes and some Markdown-like behavior, such as starting a blockquote when you type “> ”.
+  - Keymaps with the base bindings and custom bindings for common mark and node types, 
+    - such as mod-i to enable emphasis and ctrl-shift-1 to make the current textblock a heading.
+  - The drop cursor and gap cursor plugins.
+  - The undo history.
+  - A menu bar, with menu items for common tasks and schema elements.
+
+## [Dinos in the document](https://prosemirror.net/examples/dino/)
+
+- ProseMirror allows you to define your own schemas, which includes defining custom document elements.
+- First, define a command that handles dinosaur insertion.
+- Next, create menu items that call our command.
+
+## [Friendly Markdown](https://prosemirror.net/examples/markdown/)
+
+- you can drop in ProseMirror as an alternative input editor. 
+  - People can even switch between both views as they are editing!
+
+## [Tooltip](https://prosemirror.net/examples/tooltip/)
+
+- I'm using ‘tooltip’ to mean a small interface element hovering over the rest of the interface. 
+- There are two common ways to implement tooltips in ProseMirror. 
+- The easiest is to insert widget decorations and absolutely position them, relying on the fact that if you don't specify an explicit position (as in a `left` or `bottom` property), such elements are positioned at the point in the document flow where they are placed. 
+  - This works well for tooltips that correspond to a specific position.
+- If you want to position something above the selection, or you want to animate transitions, or you need to be able to allow the tooltips to stick out of the editor when the editor's overflow property isn't visible (for example to make it scroll), then decorations are probably not practical. 
+  - In such a case, you'll have to ‘manually’ position your tooltips.
+- you can still make use of ProseMirror's update cycle to make sure the tooltip stays in sync with the editor state. 
+  - u can use a **plugin view** to create a view component tied to the editor's life cycle.
+
+## [Upload handling](https://prosemirror.net/examples/upload/)
+
+- Some types of editing involve asynchronous operations, but you want to present them to your users as a single action. 
+  - For example, when inserting an image from the user's local filesystem, you won't have access to the actual image until you've uploaded it and created a URL for it.
+- Since the upload might take a moment, and the user might make more changes while waiting for it, 
+  - the placeholder should move along with its context as the document is edited, 
+  - and when the final image is inserted, it should be put where the placeholder has ended up by that time.
+- The easiest way to do this is to make the placeholder a decoration, so that it only exists in the user's interface.
+
+## [Schemas from scratch](https://prosemirror.net/examples/schema/)
+
+- ProseMirror schemas provide something like a syntax for documents—they set down which structures are valid.
+- A ProseMirror view can be mounted on any node, including inline nodes.
+
+## [Writing your own menu](https://prosemirror.net/examples/menu/)
+
+- The idea is, roughly, to create a number of user interface elements and tie them to commands. 
+- One question is how to deal with commands that aren't always applicable—when you are in a paragraph, should the control for ‘make this a paragraph’ be shown? If so, should it be grayed out?
+  - Depending on the number of items in your menu, and the amount of work required for determining whether they are applicable, this can get expensive. 
+  - There's no real solution for this, except either keeping the number and complexity of the commands low, or not changing the look of your menu depending on state.
+- The prosemirror-menu package works similarly, but adds support for things like simple drop-down menus and active/inactive icons (to highlight the strong button when strong text is selected).
+
+## [Embedded code editor](https://prosemirror.net/examples/codemirror/)
+
+- It can be useful to have the in-document representation of some node, such as a code block, math formula, or image, show up as a custom editor control specifically for such content. 
+- **Node view**s are a ProseMirror feature that make this possible.
+- In this example, we set up code blocks, as they exist in the basic schema, to be rendered as instances of CodeMirror, a code editor component. 
+  - The general idea is quite similar to the footnote example, but instead of popping up the node-specific editor when the user selects the node, it is always visible.
+- The adaptor code in the node view gets a bit more involved, because we are translating between two different document concepts—ProseMirror's tree versus CodeMirror's plain text.
+- When the code editor is focused, we can keep the selection of the outer editor synchronized with the inner one, so that any commands executed on the outer editor see an accurate selection.
+- Selections are also synchronized the other way, from ProseMirror to CodeMirror, using the view's `setSelection` method.
+- A somewhat tricky aspect of nesting editor like this is handling cursor motion across the edges of the inner editor. 
+  - This node view will have to take care of allowing the user to move the selection out of the code editor. 
+  - For that purpose, it binds the arrow keys to handlers that check if further motion would ‘escape’ the editor, and if so, return the selection and focus to the outer editor.
+
+## [Linter](https://prosemirror.net/examples/lint/)
+
+- A document model that represents a smaller set of documents can be easier to reason about.
+- The first part of this example is a function that, given a document, produces an array of problems found in that document.
+  - We'll use the `descendants` method to easily iterate over all nodes in a document. 
+  - Depending on the type of node, different types of problems are checked for.
+- Each problem is represented as an object with a message, a start, and an end, so that they can be displayed and highlighted. 
+  - The objects may also optionally have a fix method, which can be called (passing the view) to fix the problem.
+- The way the plugin will work is that it'll keep a set of decorations that highlight problems and inserts an icon next to them. 
+  - CSS is used to position the icon on the right side of the editor, so that it doesn't interfere with the document flow.
+- Recomputing the whole set of problems, and recreating the set of decorations, on every change isn't very efficient
 
 ## [Editing footnotes](https://prosemirror.net/examples/footnote/)
 
-- Footnotes seem like they should be inline nodes with content—they appear in between other inline content, 
-  - but their content isn't really part of the textblock around them. 
+- Footnotes seem like they should be inline nodes with content—they appear in between other inline content, but their content isn't really part of the textblock around them. 
 - **Inline nodes with content are not handled well by the library**, at least not by default. 
-  - You are required to write a node view for them, which somehow manages the way they appear in the editor.
+  - You are required to write a **node view** for them, which somehow manages the way they appear in the editor.
 - Footnotes in this example are drawn as numbers.
   - we'll rely on CSS to add the numbers.
   - Only when the node view is selected does the user get to see and interact with its content 
@@ -50,6 +130,16 @@ modified: '2021-06-02T17:12:56.049Z'
   - We could just take its content and reset the content of the footnote in the outer document to it, but that wouldn't play well with the undo history or collaborative editing.
   - A nicer approach is to simply apply the steps from the inner editor, with an appropriate offset, to the outer document.
   - We have to be careful to handle appended transactions, and to be able to handle updates from the outside editor without creating an infinite loop
+
+## [Tracking changes](https://prosemirror.net/examples/track/)
+
+- The first thing we need is a way to track the commit history. 
+  - An editor plugin works well for this, since it can observe changes as they come in. 
+
+## [Collaborative editing](https://prosemirror.net/examples/collab/#edit-Example)
+
+- The editor below talks to a simple server-side service to allow real-time collaborative editing.
+- The demo also (crudely) shows how ProseMirror can be used to implement something like out-of-line annotations. 
 # library guide
 
 ## Introduction
@@ -79,7 +169,7 @@ let view = new EditorView(document.body, { state })
   - This will render the state's document as an editable DOM node, and generate state transactions whenever the user types into it.
   - 但这个例子过于简单，按enter键不会换行
 
-- Transactions
+- Transactions/updating
 - When the user types, or otherwise interacts with the view, it generates ‘state transactions’. 
   - What that means is that it does not just modify the document in-place and implicitly update its state in that way. 
   - Instead, **every change causes a transaction to be created**, which describes the changes that are made to the state, and can be applied to create a new state, which is then used to update the view.
@@ -87,22 +177,23 @@ let view = new EditorView(document.body, { state })
 - Every state update has to go through `updateState()`, 
   - and every normal editing update will happen by dispatching a transaction.
 
-- Plugins
+- Plugins/extending
 - Plugins are used to extend the behavior of the editor and editor state in various ways. 
   - Some are relatively simple, like the keymap plugin
   - Others are more involved, like the history plugins
   - Plugins are registered when creating a state (because they get access to state transactions). 
 
-- Commands
+- Commands/editing
 - Most editing actions are written as commands which can be bound to keys, hooked up to menus, or otherwise exposed to the user.
   - prosemirror-commands package provides a number of basic editing commands, along with a minimal keymap that you'll probably want to enable to have things like enter and delete do the expected thing in your editor.
 
-- Content
+- Content/doc
 - A state's document lives under its `doc` property. 
   - This is a read-only data structure, representing the document as a hierarchy of nodes, somewhat like the browser DOM. 
 - When initializing a state, you can give it an initial document to use. 
   - In that case, the `schema` field is optional, since the schema can be taken from the document.
   - 初始化创建state对象时，若提供了doc，就可以不提供schema
+  - doc: DOMParser.fromSchema(schema).parse(content)
 
 ## Documents
 
@@ -112,7 +203,7 @@ let view = new EditorView(document.body, { state })
 - A ProseMirror document is a node, which holds a fragment containing zero or more child nodes.
   - This is a lot like the browser DOM, in that it is recursive and tree-shaped. 
   - But it differs from the DOM in the way it stores inline content.
-- in ProseMirror, the **inline content is modeled as a flat sequence, with the markup attached as metadata to the nodes**
+- in ProseMirror, the **inline content is modeled as a flat sequence, with the markup attached as metadata to the nodes**.
   - It allows us to represent positions in a paragraph using a character offset rather than a path in a tree, 
   - and makes it easier to perform operations like splitting or changing the style of the content without performing awkward tree manipulation.
 - This also means **each document has one valid representation**. 
@@ -120,7 +211,7 @@ let view = new EditorView(document.body, { state })
   - and empty text nodes are not allowed. 
   - The order in which marks appear is specified by the schema.
 - So **a ProseMirror document is a tree of block nodes**, 
-  - with most of the leaf nodes being textblocks, which are block nodes that contain text. 
+  - with most of the leaf nodes being `textblocks`, which are block nodes that contain text. 
   - You can also have leaf blocks that are simply empty, for example a horizontal rule or a video element.
 - Node objects come with a number of properties that reflect the role they play in the document
   - `isBlock` and `isInline` tell you whether a given node is a block or inline node.
@@ -181,19 +272,19 @@ let doc = schema.node("doc", null, [
   - they can be treated as trees, using offsets into individual nodes, 
   - or they can be treated as a flat sequence of tokens.
 - tree allows you to do things similar to what you'd do with the DOM
-  - interacting with single nodes, directly accessing child nodes using the child method and childCount, writing recursive functions that scan through a document
+  - interacting with single nodes, directly accessing child nodes using the `child` method and `childCount`, writing recursive functions that scan through a document(`descendants/nodesBetween`)
 - flat tokens are more useful when addressing a specific position in the document. 
   - It allows any document position to be represented as an integer—the index in the token sequence. 
   - These tokens don't actually exist as objects in memory—they are just a counting convention
   - but the document's tree shape, along with the fact that each node knows its size, is used to make by-position access cheap.
-- The token sequence, with positions
-  - Each node has a `nodeSize` property that gives you the size of the entire node, and you can access `.content.size` to get the size of the node's content. 
+- Each node has a `nodeSize` property that gives you the size of the entire node, and you can access `.content.size` to get the size of the node's content. 
   - TextNode的`content`为空数组`[]`，文本内容保存在`text`属性中
 - Interpreting such position manually involves quite a lot of counting. 
   - You can call `Node.resolve` to get a more descriptive data structure for a position.
   - This data structure will tell you what the parent node of the position is, what its offset into that parent is, what ancestors the parent has, and a few other things.
+- Take care to distinguish between child indices (as per `childCount`), document-wide positions, and node-local offsets.
 
-- Slices
+- Slices 测试索引
 - To handle things like copy-paste and drag-drop, it is necessary to be able to talk about a slice of document, i.e. the content between two positions. 
 - The `Slice` data structure stores a fragment along with an open depth on both sides. 
   - You can use the slice method on nodes to cut a slice out of a document.
@@ -214,7 +305,7 @@ let doc = schema.node("doc", null, [
 - Node Types
 - Every node in a document has a `type`, which represents its semantic meaning and its properties, such as the way it is rendered in the editor.
 - When you define a `schema`, you enumerate the node types that may occur within it, describing each with a `spec` object
-- Every `schema` must at least define a top-level node type (which defaults to the name `doc`), and a `text` type for text content.
+- Every `schema` must at least define a top-level node type (defaults to `doc`), and a `text` type for text content.
 
 - Content Expressions
 - The strings in the `content` fields are called content expressions.
@@ -301,16 +392,16 @@ const groupSchema = new Schema({
 
 ```JS
 // 创建Step对象然后返回一个新的document
-console.log(myDoc.toString()) // → p("hello")
+console.log(myDoc.toString()); // → p("hello")
 // A step that deletes the content between positions 3 and 5
-let step = new ReplaceStep(3, 5, Slice.empty)
-let result = step.apply(myDoc)
+let step = new ReplaceStep(3, 5, Slice.empty);
+let result = step.apply(myDoc);
 console.log(result.doc.toString()) // → p("heo")
 
 // 应用transform执行一系列的steps，返回新的document
-let tr = new Transform(myDoc)
-tr.delete(5, 7) // Delete between position 5 and 7
-tr.split(5) // Split the parent node at position 5
+let tr = new Transform(myDoc);
+tr.delete(5, 7); // Delete between position 5 and 7
+tr.split(5); // Split the parent node at position 5
 console.log(tr.doc.toString()) // The modified document
 console.log(tr.steps.length) // → 2
 
@@ -322,7 +413,8 @@ tr.delete(5, 7).split(5) // ok too
 - We often do need to preserve positions across document changes, 
   - steps can give you a `map()` that can convert between positions in the document before and after applying the step.
   - map(old-pos) will return new-pos
-- Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, which collects a series of step maps and allows you to `map` through them in one go.
+- Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
+  - which collects a series of step maps and allows you to `map` through them in one go.
 - There are cases where it's not entirely clear what a given position should be mapped to. 
   - `map` method on step maps and mappings accepts a second parameter, `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
 - The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, along with inverting steps in a lossless way, and mapping steps through each other's position maps.
@@ -468,8 +560,8 @@ function draw() {
   - But for large documents, that would be really slow.
 - Since, at the time of updating, the view has access to both the old document and the new, it can compare them, and leave the parts of the DOM that correspond to unchanged nodes alone. 
   - ProseMirror does this, allowing it to do very little work for typical updates.
-- the DOM selection is only updated when it is actually out of sync with the selection in the state, 
-  - to avoid disrupting the various pieces of ‘hidden’ state that browsers keep along with the selection (such as that feature where when you arrow down or up past a short line, your horizontal position goes back to where it was when you enter the next long line).
+- In some cases, like updates that correspond to typed text, which was already added to the DOM by the browser's own editing actions, ensuring the DOM and state are coherent(在一起的，条理分明的) doesn't require any DOM changes at all. (When such a transaction is canceled or modified somehow, the view will undo the DOM change to make sure the DOM and the state remain synchronized.)
+- the DOM selection is only updated when it is actually out of sync with the selection in the state, to avoid disrupting the various pieces of ‘hidden’ state that browsers keep along with the selection (such as that feature where when you arrow down or up past a short line, your horizontal position goes back to where it was when you enter the next long line).
 
 - Props
 - Props are like parameters to a UI component. 
@@ -614,6 +706,8 @@ function deleteSelection(state, dispatch) {
 
 - But some commands do need to interact with the DOM—they might need to query whether a given position is at the end of a textblock, or want to open a dialog positioned relative to the view. 
   - For this purpose, most plugins that call commands will give them a third argument, which is the whole view.
+- commands don't have to dispatch a transaction
+  - they are called for their side effect, which is usually to dispatch a transaction, but may also be something else, such as popping up a dialog.
 - When possible, different behavior, even when usually bound to a single key, is put in different commands. 
 - The utility function `chainCommands` can be used to combine a number of commands—they will be tried one after the other until one return true.
 - The commands module also exports a number of command constructors, such as `toggleMark`, 

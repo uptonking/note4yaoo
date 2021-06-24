@@ -6,14 +6,21 @@ modified: '2020-07-14T09:15:48.967Z'
 ---
 
 # coding-snippet
+- Emojis can have feelings, too! 
 
-``` JS
-// js
+```JS
+const faces = [...'😊️🙃️😏️🥶😤️😁️😱️😩️😔️😭️'];
+
+let index = 0;
+setInterval(_ => {
+  index = (index + 1) % 10;
+  container.innerText = faces[index];
+}, 100);
 ```
 
 - js class extends
 
-``` JS
+```JS
 class Rectangle {
   constructor(height, width) {
     this.height = height;
@@ -60,7 +67,7 @@ var AA = /*#__PURE__*/ (function(_Rectangle) {
 
 - react-jquery(plugins)-dom-ref
 
-``` js
+```js
 class SomePlugin extends React.Component {
   componentDidMount() {
     this.$el = $(this.el);
@@ -77,7 +84,7 @@ class SomePlugin extends React.Component {
 }
 ```
 
-``` js
+```js
 // react包装一个jquery的插件
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
@@ -106,7 +113,7 @@ class QRCode extends Component {
 }
 ```
 
-``` js
+```js
 import React from‘ react’;
 import { findDOMNode } from‘ react - dom’;
 import $ from‘ jquery’;
@@ -142,7 +149,7 @@ class FullDesc extends React.Component {
 
 - react-setState
 
-``` js
+```js
 class App extends React.Component {
   state = { val: 0 }
 
@@ -172,7 +179,7 @@ class App extends React.Component {
 
 - class-extends
 
-``` js
+```js
 class A {
   print() {
     console.log('print a');
@@ -213,7 +220,7 @@ d.print();
 
 - cancelablePromise
 
-``` js
+```js
 export const cancellablePromise = promise => {
   let isCanceled = false;
 
@@ -233,7 +240,7 @@ export const cancellablePromise = promise => {
 
 - HOW TO USE      
 
-``` js
+```js
 const somePromise = new Promise(r => setTimeout(r, 1000));
 
 const cancelable = cancellablePromise(somePromise);
@@ -279,7 +286,7 @@ cancelable.cancel();
         - https://stackoverflow.com/questions/50053064/react-do-children-always-rerender-when-the-parent-component-rerenders
         - https://stackoverflow.com/questions/40819992/react-parent-component-re-renders-all-children-even-those-that-havent-changed
 
-``` js
+```js
 class Application extends React.Component {
   render() {
 
@@ -372,7 +379,7 @@ function Child(props) {
 - ts接口兼容性测试
   - 属性多的对象可以被赋值给属性少的接口
 
-``` typescript
+```typescript
 interface Name {
     name: string;
 }
@@ -387,7 +394,7 @@ obj = dabao; // ok
 
 ```
 
-``` typescript
+```typescript
 interface Name {
     name: string;
     age: number;
@@ -402,7 +409,7 @@ obj = dabao;  // Property 'age' is missing
 - ts接口实现参数数量测试
   - 结论是不能少，也不能多
 
-``` typescript
+```typescript
 interface Animal {
     name: string;
     age: number;

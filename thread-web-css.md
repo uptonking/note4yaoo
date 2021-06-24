@@ -24,9 +24,16 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
-- ## 
+- ##  `img {max-width: 100%}` is a must have in css reset
+- https://twitter.com/eladsc/status/1408042880283914242
 
-- ## 
+- ## With `box-shadow` , one sibling's shadow can cast over another, breaking the 3D illusion. 
+- https://twitter.com/JoshWComeau/status/1407811337984647169
+  - By putting `drop-shadow` on the parent, we avoid this problem 
+  - https://codepen.io/joshwcomeau/pen/KKWjxMv
+- drop-shadow also produces a more “realistic” shadow, since it looks like it’s darker where the item shadows overlap
+- There is one weird bug in Safari when you apply drop-shadow with transform. 
+- I wouldn't recommend drop-shadow for cards. It causes issues with positioning items inside. It's best for single elements, like images.
 
 - ## Custom Scrollbars In CSS
 - https://twitter.com/shadeed9/status/1407412821990776833

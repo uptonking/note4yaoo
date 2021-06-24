@@ -11,10 +11,22 @@ modified: '2021-03-11T11:26:12.335Z'
 
 - ref
   - https://twitter.com/search?q=babylon%20(from%3A0xca0a)&src=typed_query&f=live
-
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## from unity to r3f, three and nextjs" — i know the web is far from being as powerful as native, 
+- https://twitter.com/JDihlmann/status/1407733892564631555
+  - but the possibilities that are opening up to reach broad audiences with visual experiences like that, that is still amazing to me
+  - 场景展示的动画，web太强了
+  - Today I want to share our one year dev progress from #unity to #r3f #threejs #nextjs. 
+  - https://saysom.app/
+- https://twitter.com/0xca0a/status/1407775411384225795
 
 - ## can react outperform threejs? updated my old scheduler test for r3f v6
 - https://twitter.com/0xca0a/status/1383165072554532865

@@ -14,7 +14,23 @@ modified: '2021-06-02T17:13:37.692Z'
   - 输入时如何更新dom元素
   - plugin如何更新state
 
-- minimal example渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
+- parseDOM实现解析
+- 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
+# tutorials-examples
+- 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
+- 编辑器默认支持按backspace退格键删除、del删除键
+- 编辑器默认不支持enter换行
+
+# state
+
+# view
+
+# plugin
+
+# model
+
+# transform
+
 # prosemirror-mdx-dev
 - 一种实现思路是使用react组件作为NodeView，视图层用react封装prosemirror-view实现，一般基于portal渲染
   - pros：使用丰富的react组件和prosemirror插件
@@ -57,12 +73,3 @@ modified: '2021-06-02T17:13:37.692Z'
   - 原理是 ReactDOM.render，不推荐，因为每个NodeView的更新都会更新dom，应该尽量减少dom操作
   - `React.Component.render()` only creates the virtual DOM. It does not add it to the actual browser DOM.
   - `ReactDOM.render()` does both. It creates (or updates) the virtual DOM, and then additionally adds it to the actual browser DOM.
-# state
-
-# view
-
-# plugin
-
-# model
-
-# transform

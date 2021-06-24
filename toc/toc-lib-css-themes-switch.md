@@ -10,12 +10,13 @@ modified: '2021-02-09T13:40:11.536Z'
 # guide
 
 - 设计样式theming时可参考
-  - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss), 
+  - dark/darcula, material, apple/ios, bootstrap, flat/metro, monochrome, neumorphism, hand-drawn(papercss)
   - try: glass-ui, web-map-theme, gradient, globs
   - vendor: tailwindui(paid), infima(参考官网文档)
   - 甚至所有的theme主题样式都可以在bootstrap的基础上修改得来
   - 基于粒子/particles的设计，或偏向于某一种dot dash的设计
     - 特别适合表达地理位置，常用在[logo](https://github.com/maplibre/maplibre-gl-js/issues/65)和icon
+  - 基于折纸/origami展开折叠的设计
 
 - 实现组件theming的方法(用css vars)
   - patternfly和spectrum都用了全局级变量和组件级变量，并且组件级变量值都由全局级变量值初始化
@@ -81,6 +82,37 @@ modified: '2021-02-09T13:40:11.536Z'
   - https://github.com/topics/css-framework?o=desc&s=updated
   - https://github.com/troxler/awesome-css-frameworks
 # themes-popular
+
+## origami
+
+- https://github.com/amandaghassaei/OrigamiSimulator
+  - https://origamisimulator.org/
+  - 依赖jquery、bootstrap、threejs
+  - Realtime WebGL origami simulator
+
+- https://github.com/robbykraft/Origami
+  - a Javascript library for modeling, designing, and diagramming origami.
+  - https://github.com/robbykraft/Math
+    - math for origami. linear algebra, geometry, 2D and 3D, good interoperability with SVG
+
+- https://github.com/xizhonghua/origami
+  - http://masc.cs.gmu.edu/origami/folder.html
+  - Visualize the folding process.
+  - 依赖threejs、jquery
+
+- https://github.com/georgiee/origami
+  - https://georgiee.github.io/origami/editor/
+  - Origami Building in threejs
+
+- https://github.com/MuTsunTsai/box-pleating-studio
+  - https://origami.abstreamace.com/zh/2021/06/02/the-story-of-box-pleating-studio/
+  - https://bpstudio.abstreamace.com/
+  - 箱形褶单轴基本形中的广义错位毕氏伸展（Generalized Offset Pythagorean Stretches in Box-Pleated Uniaxial Bases）
+- ref
+  - https://github.com/search?o=desc&q=origami+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories
+  - https://github.com/raphamorim/origami.js
+    - https://raphamorim.io/origamijs/
+    - Origami began as a project to teach javascript and geometry to children and today has been used to simplify the way we work with canvas
 
 ## material
 

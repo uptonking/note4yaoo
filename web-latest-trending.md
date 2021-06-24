@@ -8,13 +8,15 @@ modified: '2021-01-01T20:52:42.088Z'
 # web-latest-trending
 
 # guide
-- viewpoints
-  - Payments are moving from batch processing to realtime processing. this changes everything
-
 - watching
+  - ssr
+  - cjs to esm
   - ~~renderer using sika like flutter~~
   - 华为鸿蒙os的app开发基于js
   - [Technology Preview: Jetpack Compose for Web](https://blog.jetbrains.com/kotlin/2021/05/technology-preview-jetpack-compose-for-web/)
+# topics
+- viewpoints
+  - Payments are moving from batch processing to realtime processing. this changes everything
 
 - new-infra
   - webpack module federation

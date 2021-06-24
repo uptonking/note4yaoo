@@ -18,7 +18,9 @@ modified: '2021-06-16T07:09:49.289Z'
 - MarkdownSerializerState
   - This is an object used to track state and expose methods related to markdown serialization. 
 
-- This module implements 
-  - a ProseMirror schema that corresponds to the document schema used by CommonMark, 
+- This module implements a ProseMirror schema that corresponds to the document schema used by CommonMark, 
   - and a parser and serializer to convert between ProseMirror documents in that schema and CommonMark/Markdown text.
+
+- todo
+  - 一些输入标签会自动转换，如输入时列表使用`-`，pm-markdown导出时是`*`，没必要转换，或允许设置符号偏好
 # pieces

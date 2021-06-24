@@ -67,7 +67,12 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
-- ## 
+- ## "Refactor away your useEffects with XState"
+- https://twitter.com/mpocock1/status/1407983384509435907
+  - Anyone experienced that wonderful feeling where you can chuck away a bunch of useEffects and model them as invoked services?
+- TBF I quite like keeping the useEffect simple and letting the machine handle the event itself. If you must use a `useEffect`, at least with `XState` you don't have to put any logic in it
+- 
+- 
 
 - ## PSA: react-query is Promise based - it doesn't care about network requests, status codes and the likes. 
 - https://twitter.com/TkDodo/status/1407343307047452684

@@ -38,8 +38,8 @@ modified: '2021-05-25T08:40:49.076Z'
 
 - ## A US map using a hexagon shape to represent the states. 
 - https://twitter.com/Highcharts/status/1382106532477861893
-  - 全是六边形构成的地图，提供了三种主题
   - /amazing
+  - 全是六边形构成的地图，提供了三种主题
   - https://www.highcharts.com/demo/maps/honeycomb-usa
   - https://codepen.io/uptonking/pen/bGgMBGr
 

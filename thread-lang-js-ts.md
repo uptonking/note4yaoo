@@ -20,6 +20,44 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  `obj?.prop1?.func?.(args)` TIL you can use optional chaining on function calls 
+- https://twitter.com/Swizec/status/1407762472614854656
+- Yes! It's a substitute for short circuit syntax
+  - `foo && foo();` vs foo?.(); 
+- And property accessors using bracket notation / arrays:
+  - object?.deepProp?.['evenDeeperProp']
+
+- ## Classes were a good addition to JS. Private fields I'm more skeptical about—mostly because classes are not a good level for managing visibility, modules are.
+- https://twitter.com/MarijnJH/status/1408004016752283648
+
+- ## I wish there were a way in JavaScript for generators to tell that they have been closed, like when breaking out of a for loop.
+- https://twitter.com/justinfagnani/status/1407879232311619587
+  - Closing iterators seems to be a concept that's just not part of the iteration protocol?
+- A generator is like an array of functions, how does a function know if it's never called? But I'd be curious if you do a try/finally, is the finally called when the .return() is called?
+  - Yes, if you call `return()` on a generator, the `finally` block will be called. 
+  - If you iterate a generator with `for-of` , it will also be called. 
+  - If you call `throw()` on a generator, the `catch` block will be called, then the `finally` . 
+  - Also works with async generators. 
+  - RxJS leverages this.
+
+```JS
+let canceled = true;
+try {
+  yield 'foo';
+  canceled = false;
+} finally {
+  if (canceled) // ...
+}
+```
+
+- I think since V8 fixed how try/catch is optimized, I like wrapping the whole function in try/finally so that any reason that the generator exits will run the cleanup code.
+  - Sure, depends on the cleanup code you're running. I really hate the whole pattern. It's super unintuitive, only works with for-of I think, and causes certain edge cases which no programmer would reasonably expect without being told of this behavior.
+- `done` property is only for the consumer of the generator, and if the producer has returned. The generator function itself can't see that the iterator was closed by the VM when breaking from a loop.
+
 - ## we can use Opaque or Branded types in our advantage to detect if user passed a value or the value has been initialized to default set value. 
 - https://twitter.com/anuraghazru/status/1405925522102657029
   - Use branded types or opaque types to make them act as nominal types.

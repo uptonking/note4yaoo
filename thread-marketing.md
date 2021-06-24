@@ -16,7 +16,11 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## I love @github 's approach to marketing pages and a pattern that I think Next.js and React can help democratize(民主化)
+- https://twitter.com/rauchg/status/1407769747954049036
+  - 分析了github运营页的布局
+- Best DX I’ve seen on a documentation page is from @stripe where they inject your own key on code snippets. We need more pages like that.
+- meta-search is here to stay!!!
 
 - ## We @vercel just raised a $102M Series C @ 1.1B on our mission to help build a faster Web, made for everyone. 
 - https://twitter.com/rauchg/status/1407716317507948549

@@ -24,6 +24,24 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I ported Chrome DevTools' inspector to Node.js
+- https://twitter.com/privatenumbr/status/1407976142892580867
+  - Just run `await inspect(object)` to inspect any value with an inline interactive CLI
+  - Great for working with large & complex objects in Node without having to spin up a Chrome debugger
+
+- ## Note: you can't write a test that depends on dynamic import in Jest because Jest runs your code in a vm and dynamic imports don't work in vm due to a Node bug.
+- https://twitter.com/matthewcp/status/1407724050638594050
+  - Another reason not to have your testing library be a runtime.
+- I've used test-framework free solutions quite a few times. Generally they just involve a tiny assertions module, then each test is just a module that exports a test. The actual "test runner" would often just be a simple loop that goes through each test file and runs it.
+  - The fact the test modules know nothing about how they'll be run does offer some nice flexibility, in particular it's very easy to whip up versions that run tests in browsers, in workers, or under other constraints.
+  - The main drawback I've found is it can be kinda annoying to associate descriptions with tests, especially given it can be a lot easier to have multiple tests in a file. e.g. One thing I've done in the past is have object property names as test descriptions, which isn't ideal.
+
 - ## As someone who ends up building a lot of architectural and infrastructure code, there's one thing I cannot emphasize enough: do the simplest thing that works. 
 - https://twitter.com/promit_roy/status/1405912880663433223
   - Do not try to imagine future requirements, or support ill-defined potential use cases. 

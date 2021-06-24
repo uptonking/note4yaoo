@@ -38,7 +38,10 @@ modified: '2021-06-23T13:27:56.975Z'
 - keybinding
   - ctrl+enter: insert line below
   - ctrl+shift+enter: insert line above
-  - shift+enter: run current cell block
+  - shift+enter: run current cell (block)
+- keybinding-cn-更好的支持
+  - / 、
+  - 1、
 # bugs-to-fix
 - 编辑器默认初始状态只有第一行且文本较短，此时通过选择文本使用悬浮工具条加粗后，悬浮工具条不会消失，工具条很大会挡住默认的短文本
   - 临时绕过：按回车，点击空行，悬浮条会自动消失

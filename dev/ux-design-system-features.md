@@ -7,6 +7,11 @@ modified: '2021-01-01T20:08:42.719Z'
 
 # ux-design-system-features
 
+# guide
+
+- design effects trending
+  - neumorphism 类似材质浮雕设计
+  - origami 类似折纸展开折叠的动画
 # popular
 
 ## Material Design
@@ -87,9 +92,7 @@ modified: '2021-01-01T20:08:42.719Z'
 - 生长性
   - 提升功能、价值的可发现性。
   - 用发展的眼光做设计，充分考虑人、机两端的共同生长。
-
 # Element
-
 - 一致性 Consistency
 - 反馈 Feedback
 - 效率 Efficiency
@@ -159,9 +162,7 @@ modified: '2021-01-01T20:08:42.719Z'
   - Designed with composition in mind. Compose new components with ease.
 - Accessible
   - Chakra UI strictly follows WAI-ARIA standards for all components.
-
 # more design system
-
 - Semantic UI
   - Concise HTML
     - Classes use syntax from natural languages like noun/modifier relationships, word order, and plurality to link concepts intuitively.
