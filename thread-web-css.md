@@ -24,6 +24,25 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Designers, use buttons with a larger tap area.
+- https://twitter.com/darylginn/status/1408335654237335554
+  - Around 50% of Internet traffic is mobile, you have to be taking it seriously. Those tiny buttons need to go.
+  - 40px is the sweet spot.
+- Are people setting fixed heights for buttons instead of using padding?
+  - In our case, the text in our buttons will never be on multiple lines - so you gotta consider that
+  - Also great for size variants (small, medium, large, etc.) and for keeping heights consistent with inputs and dropdowns.
+  - You should have an aversion(厌恶) to fixed heights. It’s not accessible. Button heights should only be defined with min-heights. If you have fixed height buttons and the user jacks their font size by 200% it won’t be able to compensate. Very few scenarios require fixed height buttons
+  - Yeah, I prefer to let sizes adjust based on their children, and make them grow to the size of their parents with flex.
+- using em or better yet rem  (based on root em) units would be more ideal for responsive design.  Another option would be percentages. Zooming in might make for a bad UX. A good mobile design should not make the user feel the need to zoom in on any important element.
+
 - ##  `img {max-width: 100%}` is a must have in css reset
 - https://twitter.com/eladsc/status/1408042880283914242
 

@@ -17,7 +17,9 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-- ## 
+- ## I am a freelance illustrator by day, and painter by night. 
+- https://twitter.com/mcmintea/status/1367650890572722179
+  - 插画师的作品
 
 - ##  view a few of the universe's *Orbital Resonances* as if they were spirograph toys.
 - https://twitter.com/MattDzugan/status/1402590068787879937

@@ -16,7 +16,8 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ##
 
-- ##
+- ## “自动合影机”，可以挑选自己喜欢的体育明星合影。
+- https://twitter.com/ruanyf/status/1408412534474874883
 
 - ## This riderless bike took about four months to be made and it's almost totally open source[hardware and structure on github]
 - https://twitter.com/Rainmaker1973/status/1406207562924630016

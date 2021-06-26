@@ -706,7 +706,7 @@ function deleteSelection(state, dispatch) {
 
 - But some commands do need to interact with the DOM—they might need to query whether a given position is at the end of a textblock, or want to open a dialog positioned relative to the view. 
   - For this purpose, most plugins that call commands will give them a third argument, which is the whole view.
-- commands don't have to dispatch a transaction
+- **commands don't have to dispatch a transaction**
   - they are called for their side effect, which is usually to dispatch a transaction, but may also be something else, such as popping up a dialog.
 - When possible, different behavior, even when usually bound to a single key, is put in different commands. 
 - The utility function `chainCommands` can be used to combine a number of commands—they will be tried one after the other until one return true.
@@ -728,6 +728,22 @@ function deleteSelection(state, dispatch) {
 - Of course, with asynchronous data channels (such as long polling in the collab demo or web sockets), you'll need somewhat more complicated communication and synchronization code. 
 - And you'll probably also want your authority to start throwing away steps at some point, so that its memory consumption doesn't grow without bound. 
 - But the general approach is fully described by this little example.
+# prosemirror-keymap
+- Create a keymap plugin for the given set of bindings.
+- Key identifiers are based on the strings that can appear in KeyEvent.key
+- Modifiers can be given in any order. 
+  - Shift- (or s-), Alt- (or a-), Ctrl- (or c- or Control-) and Cmd- (or m- or Meta-) are recognized. 
+  - For characters that are created by holding shift, the Shift- prefix is implied, and should not be added explicitly.
+- You can use `Mod-` as a shorthand for `Cmd-` on Mac and `Ctrl-` on other platforms.
+- You can add multiple keymap plugins to an editor. 
+  - The order in which they appear determines their precedence (the ones early in the array get to dispatch first).
+# prosemirror-gapcursor
+- By default, gap cursor are only allowed in places where the default content node (in the schema content constraints) is a textblock node. 
+  - You can customize this by adding an `allowGapCursor` property to your node specs
+- The cursor is drawn as an element with class `ProseMirror-gapcursor`. 
+  - You can either include `style/gapcursor.css` from the package's directory or add your own styles to make it visible.
+- Gap cursor selections are represented using `GapCursor` class. 
+  - Its `$anchor` and `$head` properties both point at the cursor position.
 # remirror-docs
 
 ## overview

@@ -11,6 +11,21 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Kicking the tires on a 1kb, WAAPI-powered animation API
+- https://twitter.com/mattgperry/status/1408688475973488640
+  - https://codesandbox.io/s/react-waapi-library-sketch-wh09l
+  - 例子依赖motion
+- Are we getting a framer-motion-svelte? 
+  - No probably not! it’s already got a fairly good in-built animation system and I’ve been looking into how possible it’d be to do layout animations and it looks pretty tricky to do without layout thrashing
+- Is the WAAPI GPU-accelerated by default, say, if we use the left or top property to animate?
+  - No these are still layout-triggering properties. The performance improvements come from running animations off the main JS thread
+
 - ## Finally got a grip on how I want to handle animations with @shoelace_style components. 
 - https://twitter.com/claviska/status/1395873208063217668
   - Going with the Web Animations API and a thin animation registry instead of [unreliable] CSS transitions.

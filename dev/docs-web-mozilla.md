@@ -7,6 +7,18 @@ modified: '2021-01-04T16:19:02.355Z'
 
 # docs-web-mozilla
 
+# contenteditable vs contentEditable
+
+- `contenteditable` global attribute is an enumerated attribute indicating if the element should be editable by the user.
+  - 作为html的属性
+  - If so, the browser modifies its widget to allow editing.
+  - `true` or an empty string, which indicates that the element is editable.
+  - `false`, which indicates that the element is not editable.
+  - If the attribute is given without a value, like `<label contenteditable>Example Label</label>`, its value is treated as an empty string.
+  - If this attribute is missing or its value is invalid, its value is inherited from its parent element: so the element is editable if its parent is editable.
+
+- `HTMLElement.contentEditable` property
+  - 用在js中读写该属性
 # Preloading content with `rel="preload"`
 
 - The preload value of the `<link>` element's `rel` attribute lets you declare fetch requests in the HTML's `<head>`, specifying resources that your page will need very soon, 
@@ -14,7 +26,7 @@ modified: '2021-01-04T16:19:02.355Z'
   - **before browsers' main rendering machinery kicks in**. 
   - This ensures they are available earlier and are less likely to block the page's render, improving performance.
 
-``` html
+```html
 <head>
   <meta charset="utf-8">
   <title>JS and CSS preload example</title>
@@ -64,9 +76,7 @@ modified: '2021-01-04T16:19:02.355Z'
 - ref
   - [用 preload 预加载页面资源](https://juejin.cn/post/6844903562070196237)
   - [HTML - Why is my preloaded resource loading again?](https://stackoverflow.com/questions/59353686/html-why-is-my-preloaded-resource-loading-again)
-
 # Replaced elements
-
 - In CSS, a replaced element is an element whose representation is outside the scope of CSS; 
   - they're external objects whose representation is independent of the CSS formatting model.
 - Put in simpler terms, they're elements whose contents are not affected by the current document's styles. 
@@ -90,9 +100,7 @@ modified: '2021-01-04T16:19:02.355Z'
 - CSS handles replaced elements specifically in some cases, like when calculating margins and some `auto` values.
   - Note that some replaced elements, but not all, have intrinsic(自身的) dimensions or a defined baseline, which is used by some CSS properties, such as vertical-align. 
   - Only replaced elements can ever have intrinsic dimensions.
-
 # User agent
-
 - A user agent is a computer program representing a person, for example, a browser in a Web context.
 - Besides a browser, a user agent could be a bot scraping webpages, a download manager, or another app accessing the Web. 
 - Along with each request they make to the server, browsers include a self-identifying `User-Agent` HTTP header called a user agent (UA) string. 
@@ -102,9 +110,7 @@ modified: '2021-01-04T16:19:02.355Z'
 - A typical user agent string looks like this
   - `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
   - `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36`
-
 # `<length>` css data type
-
 - represents a distance value. 
 - Lengths can be used in numerous CSS properties, such as width, height, margin, padding, border-width, font-size, and text-shadow.
 - The `<length>` data type consists of a `<number>` followed by one of the units listed below. 
@@ -156,9 +162,7 @@ modified: '2021-01-04T16:19:02.355Z'
 - ref
   - [length CSS data type](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
   - [CSS像素、物理像素、逻辑像素、设备像素比、PPI、Viewport](https://zhuanlan.zhihu.com/p/91636704)
-
 # `<number>` css data type 
-
 - represents a number, being either an integer or a number with a fractional component.
 - The syntax of `<number>` extends the syntax of `<integer>` . 
   - A fractional value is represented by a `.` followed by one or more decimal digits, and may be appended to an integer. 
