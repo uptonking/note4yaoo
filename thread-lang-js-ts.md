@@ -22,7 +22,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## alias vs dot in property accessors
+- https://twitter.com/tannerlinsley/status/1408919939168100353
+- You can always alias in a destructure, but these days I’m destructuring way less than I used and most others. Keeping context for variables/properties is actually extremely helpful
+  - Keeping context is a plus, and also TypeScript likes it more. For react-query, the `status` field and the derived booleans can narrow the type of `data` and `error`, but that doesn’t work if you destruct
+- Same here. Even stopped destructuring component props. Namespaces help me know where variables come from.
+  - Also less worrying about name conflicts
 
 - ##  `obj?.prop1?.func?.(args)` TIL you can use optional chaining on function calls 
 - https://twitter.com/Swizec/status/1407762472614854656

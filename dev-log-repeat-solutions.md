@@ -14,7 +14,7 @@ modified: '2021-04-23T17:17:33.807Z'
   - text editor
   - data table
 
-- solutions: live/reactive/interactive documentation
+- solutions: live/inter(re)active/reproducible doc
   - note-taking
     - markdown-based
     - collapsible

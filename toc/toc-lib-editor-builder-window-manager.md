@@ -28,6 +28,14 @@ modified: '2021-01-08T11:48:16.590Z'
   - A multi window layout manager for webapps
   - 主要用于传统分栏布局，窗口不可重叠遮挡
   - 适合实现类似vscode、notable这类编辑器或文件管理器
+
+- https://github.com/ticlo/rc-dock
+  - https://ticlo.github.io/rc-dock/examples
+  - /170Star/Apache2/202106/ts
+  - Dock Layout for React Component
+  - 卡片能随意拖动和缩放
+  - 静止状态时，卡片能遮挡
+  - 支持 Popup panel as new browser window
 - https://github.com/hlhielkema/elara 
   - https://hlhielkema.github.io/elara/
   - /5Star/MIT/202009/js/NoDeps
@@ -116,6 +124,26 @@ modified: '2021-01-08T11:48:16.590Z'
   - A NodeJs module for Electron (Atom Shell, previously) that will help you create, control, manage and connect your application windows very easily.
   - Most of the applications created using Electron are one-window applications
   - if you are to build a multi-window Electron application, then you may want to have a look at this package module.
+# dockable
+- https://github.com/balloob/react-sidebar
+  - http://balloob.github.io/react-sidebar/example/
+  - a sidebar component for React.
+  - Dock the sidebar next to the content
+  - Easy to combine with media queries for auto-docking
+  - Sidebar and content passed in as PORCs (Plain Old React Components)
+  - Only dependency is React
+
+- https://github.com/goodoldneon/react-drag-and-dock
+  - https://codepen.io/goodoldneon/pen/WPraLE
+  - Create free-floating panels that "dock" into designated docks. 
+  - Panel docking does not cause its children to remount.
+  - When a Panel docked, the position of the Dock is determined using `Element.getBoundingClientRect()`. Then the Panel height, width, and position are changed. All positions are relative to `document.body`.
+  - To the user, the Panel appears to be inside the Dock. In reality, the Panel is actually on top of the Dock.
+
+- more-dock
+  - 操作的ui不一定是panel，可能是toolbar、floating-action-button
+  - https://github.com/onitecsoft/smarti.dock.js
+    - JQuery floating dock panel. Native configuration, custom layout and css style
 # examples
 - https://github.com/EikosPartners/windowmanagerjs /20Star/201802
   - https://github.com/aesalazar/windowmanagerjsdemo
@@ -145,3 +173,19 @@ modified: '2021-01-08T11:48:16.590Z'
 
 - https://github.com/krishpranav/js-os
   - js-os is an open-source web desktop platform with a window manager, application APIs, GUI toolkit, filesystem abstractions and much more.
+
+- https://github.com/alexkuz/react-dock
+  - http://alexkuz.github.io/react-dock/demo/
+  - Resizable dockable react component
+
+- https://github.com/caplin/FlexLayout
+  - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.5/demo/index.html
+  - A multi-tab layout manager
+
+- https://github.com/charto/phosphor-float-area
+  - https://charto.github.io/phosphor-float-area/
+  - Draggable, dockable, resizable, floating, tabbed Dialog and FloatArea widgets
+  - 100% Virtual DOM, TypeScript, PhosphorJS based modern JavaScript goodness
+
+- https://github.com/antimatter15/breadloaf
+  - draggable, dockable, notebook-style layout engine for React

@@ -7,18 +7,26 @@ modified: '2021-06-23T13:27:56.975Z'
 
 # lib-editor-rich-markdown-codebase-extensions
 
-# xp
+# xp-todo
+- 替换内置组件样式为成熟的react组件库
+  - 模仿Image/Embed替换Notice、FencedCodeBlock/Table/Link, kbd
+
+- 添加新组件到slash命令菜单，如Collapse、emoji、OJSCodeBlock、Katex、TabView, Slider, LocalForm(类似excel公式)、Accordion、References & Citations
+  - 参考atlaskit、curvenote、bangle
+  - 如何实现 Interactive Components/views/viewof
+  - 参考word，ReviewComment
 
 - stories
   - ~~long doc~~
-  - 替换内置组件样式为成熟react组件库
-  - 添加新组件到slash命令菜单，如Collapse、emoji、OJSCodeBlock、Katex、TabView, Slider, LocalForm(类似excel公式)、Accordion、References & Citations
-    - 参考atlaskit、curvenote、bangle
-    - 如何实现 Interactive Components/views/viewof
   - 优化复杂NodeView，比如table
 
 - storybook
   - 没有对大多数组件创建story
+
+- dependencies
+  - update prosemirror-transform v1.2.5 to latest
+  - update react-medium-image-zoom v3 to v4
+  - update refractor v3 to v4
 
 - tests
   - 只有一个.test文件
@@ -42,6 +50,9 @@ modified: '2021-06-23T13:27:56.975Z'
 - keybinding-cn-更好的支持
   - / 、
   - 1、
+
+- 图片toolbar
+  - 图片不支持缩放、拖拽缩放
 # bugs-to-fix
 - 编辑器默认初始状态只有第一行且文本较短，此时通过选择文本使用悬浮工具条加粗后，悬浮工具条不会消失，工具条很大会挡住默认的短文本
   - 临时绕过：按回车，点击空行，悬浮条会自动消失

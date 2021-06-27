@@ -110,3 +110,8 @@ modified: '2021-05-06T09:39:53.522Z'
   - https://github.com/paperbits/paperbits-demo
   - https://github.com/paperbits/paperbits-core
   - Paperbits HTML editor based on ProseMirror.
+
+- https://github.com/MO-Movia/licit
+  - http://greathints.com/licit/
+  - 典型的适合学术论文的文档
+  - 服务端依赖python

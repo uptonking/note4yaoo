@@ -51,6 +51,12 @@ modified: '2021-06-16T14:13:27.162Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## what difference between the plugin view and nodeViews and schema and decoration?
 - https://discuss.prosemirror.net/t/what-can-plugin-view-do-or-what-should-it-be-used-for/3517
 - a `NodeView` is used to control how a specific node is rendered (like a codeblock) but is within the editorview and semi-managed by ProseMirror
@@ -116,6 +122,7 @@ modified: '2021-06-16T14:13:27.162Z'
   - [Lightweight React integration example](https://discuss.prosemirror.net/t/lightweight-react-integration-example/2680)
   - [How can a react element be rendered as a block or mark?](https://github.com/remirror/remirror/issues/129)
   - [Rendering a React component inside a node_201606](https://discuss.prosemirror.net/t/rendering-a-react-component-inside-a-node/349/11)
+  - [How the heck do I use this with React?](https://discuss.prosemirror.net/t/how-the-heck-do-i-use-this-with-react/3437)
 
 - ## remirror: Render ReactNodeView instance into the element of toDOM
 - https://github.com/remirror/remirror/issues/271

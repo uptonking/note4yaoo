@@ -14,8 +14,9 @@ modified: '2021-06-02T17:07:33.920Z'
   - 状态管理
   - css 样式和主题
 
-- features-details
+- 细节亮点
   - 悬浮工具条支持给文本添加高亮背景色
+  - 右对齐的图片不会占据整行空间，左侧部分仍然可以书写文字，甚至文字会自动换行不会被图片挡住
 # faq
 - 如何自定义组件样式，最好能直接使用现有react组件
   - 大部分组件是vanillajs，少部分使用基于react组件的NodeView
@@ -55,12 +56,14 @@ modified: '2021-06-02T17:07:33.920Z'
 
 - 基于react组件的NodeView
   - Embed
-    - toDOM使用了iframe
+    - 使用react组件作为NodeView，toDOM使用了iframe
   - Image
-    - 使用了 react-medium-image-zoom
+    - 使用react组件作为NodeView，基于react-medium-image-zoom
   - Notice
-    - 在该组件的toDOM()方法中执行ReactDOM.render
-
-- ？？？ min-app示例中，默认加载的nodeViews只有embed、image
+    - 没有提供react组件作为NodeView
+    - schema.toDOM()方法中直接执行ReactDOM.render()
+  - 在min-app示例中，默认加载的nodeViews只有embed、image
 
 ## state
+
+- 通过extension组织一个组件相关的各种数据

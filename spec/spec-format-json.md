@@ -11,9 +11,7 @@ modified: '2020-10-15T13:41:01.275Z'
 
 - https://www.json.org/json-en.html
 - https://json5.org
-
 # guide
-
 - 类json格式的操作
   - 从devDependencies移动到dependencies后，需要手动添加逗号和删除逗号
 
@@ -38,21 +36,23 @@ modified: '2020-10-15T13:41:01.275Z'
   - this package began its life as an internal module to express-state
 - https://github.com/blitz-js/superjson
   - Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.
-
+- https://github.com/humanwhocodes/momoa
+  - A JSON parser, tokenizer, traverser, and printer.
+  - A ECMA-404 compliant parser that produces an abstract syntax tree (AST) representing everything inside of a JSON string.
+  - A tokenizer that allows you to separate a JSON string into its component parts.
+  - A traverser that visits an AST produced by the parser in order.
+  - A printer that can convert an AST produced by the parser back into a valid JSON string.
 # faq
 
 - 
 
 # summary
-
 - 列表插件设计
   - 列表类
   - 图表类
   - 地图类
   - 搜索类
-
 # json5
-
 - ref
   - http://json5.org/
   - https://github.com/json5/json5
@@ -76,10 +76,7 @@ modified: '2020-10-15T13:41:01.275Z'
   - Numbers may begin with an explicit plus sign.
 - White Space
   - Additional white space characters are allowed.
-
 # geojson
-
 - https://github.com/mapbox/geojson.io
 - https://github.com/topojson/topojson  
-
 # dev

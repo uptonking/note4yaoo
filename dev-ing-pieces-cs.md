@@ -9,6 +9,26 @@ modified: '2021-03-29T19:29:56.558Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [There is no such thing as the Spread Operator in JavaScript!](https://levelup.gitconnected.com/there-is-no-such-thing-as-the-spread-operator-in-javascript-9c4e4dbd8a02)
+- What is the precedence of the Spread Operator? 
+  - The correct answers is: It does not matter, because there is no such thing as Spread Operator in JavaScript!
+- Another worth-mentioning point is that “An operator is a builtin function [..] that evaluates to exactly one value.”. If we try to run a statement like const `a = …b` in our Web Console, where b is an array, then we’ll `SyntaxError` .
+- The way that the Spread Syntax works, is by **evaluating its arguments first, and then spreading the result**. 
+  - Thus, `[…a || b]` behaves exactly the same way as `[…(a || b)]` . 
+  - Putting a set of parentheses around `a || b` expression helps to remove the ambiguity.
+
+> As a practical reference, Spread Syntax’s arguments are evaluated first and then spread.
+
 - ## [Thunk 是什么？](https://zhuanlan.zhihu.com/p/103908179)
 - 我们在很多文章或者第三方库中均见到过 Thunk 这个词出现。但其含义着实难以理解
 - 在编程语言刚起步的时候，有不同的求值策略，即函数的参数该在什么时候求值。
@@ -19,7 +39,7 @@ modified: '2021-03-29T19:29:56.558Z'
 - 对于我们开发者来说我们基本不用关心函数参数是怎么求值的，一般我们使用的编程语言都已经决定好了。
   - 比如JavaScript，就是用的 传值调用 策略。
 
-``` JS
+```JS
 // ThunkActionCreator
 function fetchUser(id) {
   // 返回的这个函数是一个 Thunk, 或者叫 ThunkAction
@@ -32,7 +52,7 @@ function fetchUser(id) {
 }
 ```
 
-``` js
+```js
 const util = require('util');
 const fs = require('fs');​
 // stat函数是一个 Thunk
