@@ -30,9 +30,11 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## Drone photographer Lior Patel followed a herd of sheep for several months, as the herd was shepherded(护送，牧羊人) to its summer pasture(牧场，工作状况). Entrancing and relaxing.
+- https://twitter.com/ariehkovler/status/1408878326370930690
+  - 一群绵羊的迁移
 
-- ## SQLite 的作者 D.理查德·希普，用到的所有工具都是自己写的
+- ## SQLite 的作者 D. 理查德·希普，用到的所有工具都是自己写的
 - https://twitter.com/ruanyf/status/1402439971542167556
   - 昨天发布了HTTP服务器软件Althttpd。SQLite官网就用它架设，整个软件只有一个C文件
   - 先写了数据库SQLite，接着写了Bug追踪系统 CVSTrac，然后写了版本管理系统Fossil，现在是 Web 服务器。

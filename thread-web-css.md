@@ -30,7 +30,9 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also 🧮 numbers, 📏 ranges, ✉️ emails, and even 🚦 colors!
+- https://twitter.com/stackblitz/status/1409493323660857348
+  - https://stackblitz.com/edit/datalists?file=index.html
 
 - ## Designers, use buttons with a larger tap area.
 - https://twitter.com/darylginn/status/1408335654237335554

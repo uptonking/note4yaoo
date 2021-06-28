@@ -14,3 +14,6 @@ modified: '2021-02-09T19:36:47.734Z'
 # work-xp
 
 # more-xp
+
+- [Drunk Post: Things I've learned as a Sr Engineer](https://www.reddit.com/r/ExperiencedDevs/comments/nmodyl/drunk_post_things_ive_learned_as_a_sr_engineer/)
+

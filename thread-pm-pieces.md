@@ -10,11 +10,31 @@ modified: '2021-04-19T14:52:58.244Z'
 > new features for pm
 
 # pieces
-- ##
+- ## 
 
-- ##
+- ## kind of want to start a consultancy where someone describes their data in detail and i recommend which visualization techniques are appropriate, 
+- https://twitter.com/tmcw/status/1409317416665026563
+  - this should exist, at least someone should do this. 
+  - just narrowing down the appropriate types would do so much good in the world.
+- Unfortunately it’s usually the other way round… “hey, we really want this cool data visualization to communicate the data”. Plot twist: there is no data. 
+- You should get paid just to find every time someone tries to put a 3D pie-chart into a PowerPoint and tell them no
 
-- ##
+- ## 家具定制怎么没有低端定制的，
+- https://twitter.com/waylybaye/status/1409321600663441415
+  - 比如我只需要用 iPhone 的 LiDAR 扫一扫房间，App 自动生成房间 CAD 图，AI 自动生成装修方案，用户选一个后，下单到工厂，工厂用最便宜的合成板加工出家具，寄给用户。年轻人租房也能拥有品质不低的生活。
+  - 大家需要吗，需要的话我回老家菏泽搞一个，菏泽到处都是家具厂，500块，不，200块就能搞一个定制大柜子
+- iPhone测量不精确，留条缝或者塞不下都很尴尬
+  - 低端定制要求什么严丝合缝
+  - 然后就会发现iphone扫出来的尺寸差了2厘米，柜子放不进去白做了。
+- 最大的问题在用户身上，这个测量设计的误差因为用户原因可能会很大。不可靠因素太多了。
+- 家具定制都是派人上门用手持激光测距仪测量各种尺寸的。。别的不准。。
+- 年轻人根本不需要订制，买预制就好了，反正是租房说不定还能搬下一个房子，何苦要订制？
+- 淘宝上的标化成品家具，闲鱼的二手家具，宜家这种环保性好一些的一次性家具，都是面向租房市场的解决方案。
+- 库克看了你这条推文马上就整个Apple Furniture
+- 定制的生产成本比规模化生产更高，哪怕用最便宜材料定制，也不见得比普通材料的量产成本低，所以订制只能走高端的
+- 目前你在淘宝能买到的家具，就有很多菏泽货，这就是零售能做到的最低价。而且不含定制成本。
+  - 如果你能做到比什么维莎、原始原素等大型低端品牌价格更低，那必然是超过马斯克的商业奇才。
+- 室内装修一般都是这样的，都是上门去丈量定做。我觉得没你想的这么简单，虽然实现的方案是可行的，我觉得。
 
 - ## “自动合影机”，可以挑选自己喜欢的体育明星合影。
 - https://twitter.com/ruanyf/status/1408412534474874883

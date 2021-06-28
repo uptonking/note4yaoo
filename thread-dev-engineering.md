@@ -28,7 +28,17 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Open API
+- https://twitter.com/peduarte/status/1407710813247389700
+  · Flexible, composed, extensible 
+  · Can still be abstracted at the app side
+  · Use it when wanting to give users more control
+- Closed API
+  · Opinionated, strict, prop-driven
+  · Can be simpler to learn
+  · Use it when wanting to limit what users can do
+- **They're both good**!
+- I use both on a daily basis, I mean the second (UI preset) can be a shortcut for using the first (design system)
 
 - ## I ported Chrome DevTools' inspector to Node.js
 - https://twitter.com/privatenumbr/status/1407976142892580867

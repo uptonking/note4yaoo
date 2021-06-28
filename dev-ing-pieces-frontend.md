@@ -6,12 +6,13 @@ modified: '2021-03-29T19:30:00.059Z'
 ---
 
 # dev-ing-pieces-frontend
-
 - about web, state, routing
-
 # logging
 
  
+
+- [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
+- The parser uses it to match the text, but ignores it later, in the final result.
 
 - ## strong vs b
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
@@ -33,7 +34,7 @@ modified: '2021-03-29T19:30:00.059Z'
 - The unary `+` acts more like `parseFloat` since it also accepts decimals.
 - An empty string "" evaluates to a 0, while parseInt evaluates it to NaN. IMO, a blank string should be a NaN.
 
-``` JS
+```JS
 +'' === 0; //true
 isNaN(parseInt('', 10)); //true
 
@@ -291,7 +292,7 @@ self’s width
 
 - ## typescript class Parameter properties 构造函数中带有修饰符的参数，可自动生成赋值语句
 
-``` typescript
+```typescript
 class Octopus {
   readonly name: string;
   readonly numberOfLegs: number = 8;
@@ -320,14 +321,14 @@ class Octopus {
   - 下面的例子执行后， `<span>` 元素会移动到b下面，并且a下没有了
     - 若通过button触发js，多次调用appendChild最终b下也只有1个
 
-``` html
+```html
 <div class="a">
   <span></span>
 </div>
 <div class="b"></div>
 ```
 
-``` JS
+```JS
 const span = document.querySelector('span');
 const divB = document.querySelector('.b');
 divB.appendChild(span);
@@ -350,7 +351,7 @@ divB.appendChild(span);
     - It notes that HTMLElement objects of a HTML doc define JS properties that correspond to all standard HTML attributes.
     - So you only need to use `setAttribute` for non-standard attributes.
 
-``` JS
+```JS
 node.className = 'test'; // works
 node.frameborder = '0'; // doesn't work - non standard attribute
 node.setAttribute('frameborder', '0'); // works
@@ -397,7 +398,7 @@ node.setAttribute('frameborder', '0'); // works
 
 - ## 如何打印变量名 Variable name as a string in Javascript
 
-``` JS
+```JS
 // 要实现的效果
 var myFirstName = 'John';
 alert(variablesName(myFirstName) + ":" + myFirstName); // myFirstName:John
@@ -415,7 +416,7 @@ const variableName = Object.keys({ myFirstName }).pop();
 
 - ## ts: any vs Object
 
-``` typescript
+```typescript
 let a: any;
 let b: Object;
 let c: {};
@@ -435,7 +436,7 @@ let d: object;
 
 - ## 函数调用拆分
 
-``` JS
+```JS
 function spread(fn) {
   return Function.apply.bind(fn, null);
 }
@@ -450,7 +451,7 @@ args => fn.apply(null, args)
 - ## 理解 `return new (Function.prototype.bind.apply(ctor, args))(); `
   - 分解成多步
 
-``` JS
+```JS
 var func = Function.prototype.bind.apply(ctor, args);
 return new func();
 ```
@@ -464,7 +465,7 @@ return new func();
 
 - .apply.bind
 
-``` JS
+```JS
 var sum = function(x, y) {
   console.log(x, y);
 }
@@ -508,7 +509,7 @@ foo([10, 20]); // 10, 20
   - [Use of .apply() with 'new' operator. Is this possible?](https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible)
   - [How can I call a javascript constructor using call or apply?](https://stackoverflow.com/questions/3362471/how-can-i-call-a-javascript-constructor-using-call-or-apply)
 
-``` JS
+```JS
 // A bit of explanation:
 var f = Cls.bind(anything, arg1, arg2, ...);
 result = new f();
@@ -539,7 +540,7 @@ function newCall(Cls) {
 }
 ```
 
-``` JS
+```JS
 // 其它实现
 function conthunktor(Constructor) {
   var args = Array.prototype.slice.call(arguments, 1);
@@ -830,7 +831,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
 
 - ## webpack-hmr
 
-``` js
+```js
 const server = http.createServer(app);
 let currentApp = app;
 console.log(currentApp === app); // Returns true 
@@ -925,7 +926,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 - ## typescript typeof
 
-``` typescript
+```typescript
 let bar = {a: 0};
 let TypeofBar = typeof bar;  // the value "object"
 type TypeofBar = typeof bar;  // the type {a: number}

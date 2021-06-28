@@ -60,7 +60,18 @@ modified: '2021-01-06T14:40:03.364Z'
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
 # pieces
-- ## 
+- ## I've been thinking about React Compat in reactive libraries wrong. 
+- https://twitter.com/trueadm/status/1408567234306453504
+  - There are projects trying to remove the VDOM from React but that is proving really hard.
+  - What if instead we view a reactive primitives as the building blocks, and React Compat like a Virtual Machine built on it?
+- I think there's also a blur between what is VDOM and what is not. 
+  - I don't regard VDOM to be a a JS object mapping of DOM nodes, 
+  - but instead I regard it more a structure that stores intermediate values for a template that represents the UI.
+- while checking out my compiler project that I worked on a few years ago. It basically compiles React components to what you see above. It extracts out the metadata as static templates and keeps components as functions that only return the dynamic values.
+  - It won't win things like the JS framework benchmark, because it's not optimized to clone HTML elements (which should be banned IMO), but in real-world the metrics were light and day. It was over twice as fast as Inferno in complex, heavy real world examples.
+  - In the real world, you rarely have enough to warrant a clone. Cloning is only effective if you have enough static content to warrant it.I've found that it's either the case that the children are very dynamic (another composite component), or all the props are dynamic.
+  - Not to mention it adds complexity around things like event handling, fragments, stateful elements, and animations/transitions. I explored all this in-depth with Inferno back in the day, hell we even did element recycling which was a major benchmark hack haha.
+- I wish the JS framework benchmark diversified enough to be more real-world, i.e. more components used and more dynamic content. Its simplicity makes it far too easy to game. In fact, there are libraries built around only that benchmark, and fail for other trivial things.
 
 - ## If I were to make Inferno today, what would I have done differently.
 - https://twitter.com/trueadm/status/1407086342559997955

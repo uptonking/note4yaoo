@@ -26,7 +26,9 @@ modified: '2021-02-05T14:00:02.922Z'
 - ## 
 
 
-- ## 
+- ## circular grid melt with Houdini
+- https://twitter.com/anatudor/status/1409162407902072843
+  - https://codepen.io/thebabydino/pen/vYGvOBY
 
 
 - ## a price slider that has a few great animation details. 

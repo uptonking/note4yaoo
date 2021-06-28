@@ -13,7 +13,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Reusable React component design tip: Mimic native HTML APIs.
+- https://twitter.com/housecor/status/1409221753738514437
+  - Avoid `<Button label="Send" />` .
+  - Prefer `<Button>Send</Button>` .
+  - there's a tradeoff at play here. 
+  - ✅ Accepting children is more flexible & natural.
+  - ❌ Children mean less enforcement over how it's used.
+  - But in my experience, replacing children with separate props is typically insufficiently flexible, and leads to clunky APIs.
 
 - ## Use ternaries rather than && in JSX
 - https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx

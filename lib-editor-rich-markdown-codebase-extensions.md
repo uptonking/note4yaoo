@@ -7,9 +7,18 @@ modified: '2021-06-23T13:27:56.975Z'
 
 # lib-editor-rich-markdown-codebase-extensions
 
+# changes
+- EditorView: provide nodeViews prop
+
+- createNodeViews支持react组件和普通prosemirror NodeView class
 # xp-todo
 - 替换内置组件样式为成熟的react组件库
   - 模仿Image/Embed替换Notice、FencedCodeBlock/Table/Link, kbd
+  - 替换Notice组件碰到问题
+    - notice组件内容是文本，需要将PMDoc的内容添加进去，但Notice作为extension，component却不是标准的react组件，难以操作ref
+  - 方案1: 重写react组件作为NodeView的部分
+  - 方案2: 直接从PMNode中读取textnode的内容值
+  - 方案2实现渲染后，若要实现编辑，要考虑悬浮工具条的位置
 
 - 添加新组件到slash命令菜单，如Collapse、emoji、OJSCodeBlock、Katex、TabView, Slider, LocalForm(类似excel公式)、Accordion、References & Citations
   - 参考atlaskit、curvenote、bangle
@@ -42,6 +51,7 @@ modified: '2021-06-23T13:27:56.975Z'
 - rewrite-more
   - class to hooks
   - nodeViews to ReactDOM.createPortal
+  - 传递给EditorView的nodeViews只支持react组件，不支持普通NodeView class
 
 - keybinding
   - ctrl+enter: insert line below

@@ -17,7 +17,10 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## What's the best way to dynamically import an npm package on the client-side? Like in documentation code playgrounds.
+- https://twitter.com/diegohaz/status/1409278109573160960
+- By appending a script at runtime. Use something like react helmet
+- Perhaps dynamically replace the imports with links to a CDN like https://skypack.dev ?
 
 - ## named exports exports a dynamic reference to the variable being exported, 
 - https://twitter.com/yagopereiraaz/status/1406974989203611654

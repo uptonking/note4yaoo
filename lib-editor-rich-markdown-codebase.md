@@ -17,6 +17,9 @@ modified: '2021-06-02T17:07:33.920Z'
 - 细节亮点
   - 悬浮工具条支持给文本添加高亮背景色
   - 右对齐的图片不会占据整行空间，左侧部分仍然可以书写文字，甚至文字会自动换行不会被图片挡住
+  - 粘贴youtube链接时会显示图片预览 
+    - https://www.youtube.com/watch?v=_uk_6vfqwTA
+    - 并且可播放，但不能全屏
 # faq
 - 如何自定义组件样式，最好能直接使用现有react组件
   - 大部分组件是vanillajs，少部分使用基于react组件的NodeView
@@ -63,6 +66,9 @@ modified: '2021-06-02T17:07:33.920Z'
     - 没有提供react组件作为NodeView
     - schema.toDOM()方法中直接执行ReactDOM.render()
   - 在min-app示例中，默认加载的nodeViews只有embed、image
+- 基于component()实现的NodeView问题很大
+  - 不是标准的react组件，很难使用hoc、forwardRef
+  - 组件内的ref该如何处理，函数每次调用都会创建新ref
 
 ## state
 
