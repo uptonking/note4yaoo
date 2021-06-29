@@ -55,7 +55,9 @@ modified: '2021-06-16T14:13:27.162Z'
 
 - ## 
 
-- ## 
+- ## What’s the best way to do an editable caption inside an element (like an image or figure) in terms of the schema and dom structure?
+- https://discuss.prosemirror.net/t/figure-and-editable-caption/462
+- https://glitch.com/edit/#!/pet-figcaption
 
 - ## what difference between the plugin view and nodeViews and schema and decoration?
 - https://discuss.prosemirror.net/t/what-can-plugin-view-do-or-what-should-it-be-used-for/3517

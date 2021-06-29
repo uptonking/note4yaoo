@@ -9,12 +9,16 @@ modified: '2021-05-14T14:44:14.720Z'
 
 # guide
 
+- onb-cons
+  - auto-ref是优点，也是缺点，kibana最新版在鼓励by-value而不是by-reference，折中方案是snapshot+auto-update-option
+
 - tips
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)
   - [国家统计局 统计数据](http://www.stats.gov.cn/tjsj/)
   - 新冠肺炎分析报告 coronavirus/covid-19
   - tableau public
   - [各大行业报告的数据都是从哪里找的？](https://www.zhihu.com/question/67387122)
+  - 北大毕业生就业质量年度报告
 # faq-not-yet
 - 如何不显示cell name，同时又能通过cell name引用这个cell
 # faq

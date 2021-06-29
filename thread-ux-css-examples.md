@@ -22,14 +22,36 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## 
 
 - ## 
 
+- ## 
+
+- ## mimicking a flashlight
+- https://twitter.com/bramus/status/1409625298212200449
+  - https://codepen.io/bramus/pen/GRmROgE
+
+- ## a gradient text effect
+- https://twitter.com/argyleink/status/1409590647187656706
+  - angled hard color stops
+  - mock gaps (black hard color stops)
+  - background-clip: text
+  - 在文字上面添加斜杠、碎玻璃等特效
+  - https://codepen.io/TajShireen/pen/YzZmbep
+  - https://codepen.io/argyleink/pen/XWRWagg
+- https://twitter.com/bramus/status/1409618011900760065
+  - https://codepen.io/bramus/pen/abWbvXJ
+
+    - Add some Houdini to animate it 斜杠角度自动旋转
+
+  - https://codepen.io/bramus/pen/PomoJym
+
+    - Make the center follow the mouse
 
 - ## circular grid melt with Houdini
 - https://twitter.com/anatudor/status/1409162407902072843
   - https://codepen.io/thebabydino/pen/vYGvOBY
-
 
 - ## a price slider that has a few great animation details. 
 - https://twitter.com/FrontendHorse/status/1407047562327175173
@@ -48,8 +70,6 @@ modified: '2021-02-05T14:00:02.922Z'
 - I built a POC for a no tables version too
   - https://codepen.io/jonnyburch/pen/NWqrVdp
 - Allowing overflow is one of the shortest technique to make tables responsive.
-
-
 
 - ## I've reworked my Animated Gradient Border @CodePen demo to support non-Houdini browsers.
 - https://twitter.com/bramus/status/1407332309532131341

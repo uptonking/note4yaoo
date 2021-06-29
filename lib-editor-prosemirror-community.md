@@ -169,7 +169,11 @@ modified: '2021-06-12T02:41:33.389Z'
 
 - ## 
 
-- ## 
+- ## parseDom Content for Inline Node (footnotes)
+- https://discuss.prosemirror.net/t/parsedom-content-for-inline-node-footnotes/642
+- Your node doesn’t allow content, so indeed, as you noticed, the parser won’t it won’t look for content.
+  - Still, to be able to properly edit these, your node view is going to have to do a bunch more work (at the very least, it’ll have to set the `contenteditable` – or create a textarea with the content). Embedding an extra ProseMirror to edit a node like this will also get easier in the next release.
+- I plan on adding a textarea to the nodeView’s dom for editing the annotation comment. And will be storing the value of the comment in an attribute when serialized into my dom structure.
 
 - ## Using DOMSerializer inside a NodeView
 - https://discuss.prosemirror.net/t/using-domserializer-inside-a-nodeview/1498
@@ -202,7 +206,7 @@ class TodoListView {
   - My custom view has a rather complex DOM structure
   - I initially didn’t realize that my NodeView would be parsed this way, and it seems that I lose the latex annotations inside my node during this parsing.
 - the parser will get the node’s type and attributes from the node view.
-  - as long as you go through a transaction you should be fine.
+- as long as you go through a transaction you should be fine.
 
 - ## Offline, Peer-to-Peer, Collaborative Editing using Yjs
 - https://discuss.prosemirror.net/t/offline-peer-to-peer-collaborative-editing-using-yjs/2488

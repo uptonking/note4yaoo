@@ -9,18 +9,17 @@ modified: '2021-01-01T22:14:19.469Z'
 
 # guide
 
+- js regexp
+  - explain tool https://regexr.com/
+
 - 发包工作流：version bump -> changelog -> git release -> npm publish
   - lerna提供了主流的解决方案，但并不是每步都必须执行
 
 - Old but gold tip for Chrome and Firefox: To select part of a hyperlinked text, hold `Alt` while click-dragging the cursor.
-
 # react
-
 - cra
   - `npm x -- create-react-app react-cra-ts --template typescript --use-npm`
-
 # npm-cli
-
 - config-settings
   - prefix
     - The location to install global items. 
@@ -47,9 +46,7 @@ modified: '2021-01-01T22:14:19.469Z'
 - `npm rebuild`
   - This command runs the `npm build` command on the matched folders. 
   - This is useful when you install a new version of node, and must recompile all your C++ addons with the new binary.
-
 # nvm
-
 - To set a default Node version to be used in any new shell, use the alias 'default':
   - Use `nvm alias default node` to make the "latest" the default.
   - `nvm alias default 6.11.5` if you want it pegged to that specific version.
@@ -57,9 +54,7 @@ modified: '2021-01-01T22:14:19.469Z'
   - alias works as long as you're not installing new versions. 
     - After installing a new node the node will be your current node to use. 
     - So if you want to prevent this behavior, you have to explicitly set up nvm alias default desiredVersionOfNode after each installation or just reopen a terminal
-
 # 前端开发工具
-
 - storybook
   - UI component dev & test: React, Vue, Angular, Web Components & more
   - addon
@@ -147,9 +142,7 @@ modified: '2021-01-01T22:14:19.469Z'
 - [babel-plugin-transform-typescript-metadata](https://github.com/leonardfactory/babel-plugin-transform-typescript-metadata)
   - Current `@babel/preset-typescript` implementation however just strips all types and does not emit the relative Metadata in the output code.
   - Babel plugin to emit decorator metadata like typescript compiler
-
 # postcss
-
 - PostCSS是CSS的处理器。
   - 如果你以前使用过CSS的预处理器的话，比如Sass、LESS或者说Stylus。这几个是使用预编码来处理CSS，然后编译成线上需要使用的CSS。
   - 而PostCSS刚好相反，他是处理你写好的CSS，让你的CSS更健康。
@@ -160,16 +153,12 @@ modified: '2021-01-01T22:14:19.469Z'
     - CSS语法风格检查>CSS next语法兼容>添加私有属性前缀>添加IE的HACK>压缩
   - 这个流程对应的PostCSS插件插件就是：
     - stylelint>cssnext>autoprefixer>cssgrace>cssnano
-
 # 开发常用工具
-
 - Conventional Commits
   - add human and machine readable meaning to commit messages
   - https://www.conventionalcommits.org
   - fix, feat, chore, docs, style, refactor, perf, test
-
 # 前端依赖工具库
-
 - date-fns
   - 方便在浏览器和Node中操作时间日期
   - provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js
@@ -192,9 +181,7 @@ modified: '2021-01-01T22:14:19.469Z'
     - The Iterable class has been renamed to Collection
     - improve Record impl, Record is no longer an Immutable Collection type
     - Flowtype and TypeScript type definitions have been completely rewritten
-
 # 前端工程辅助工具
-
 - rimraf
   - 作用是以包的形式封装rm -rf命令，用来删除文件和文件夹，不管文件夹是否为空，都可删
   - `rm -rf` for node 

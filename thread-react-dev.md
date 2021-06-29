@@ -8,10 +8,16 @@ modified: '2021-01-06T14:40:11.360Z'
 # thread-react-dev
 
 # pieces
-
 - ## 
 
-- ## 
+- ## I was immediately excited when I saw React. I recognized the pain it would remove. 
+- https://twitter.com/housecor/status/1409540502274334721
+  ❌ Cryptic runtime errors
+  ❌ Proprietary templating syntaxes
+  ❌ Manual DOM manipulation
+  ❌ Clunky component APIs. 
+  - For me, React was (and is) a breath of fresh air
+- For what it's worth, JSX was initially designed by Facebook for React. But making it a specification instead of a library was clearly the right move.
 
 - ## Reusable React component design tip: Mimic native HTML APIs.
 - https://twitter.com/housecor/status/1409221753738514437

@@ -28,4 +28,5 @@ modified: '2021-05-05T07:41:23.432Z'
   - [国家统计局 统计数据](http://www.stats.gov.cn/tjsj/)
   - 新冠肺炎分析报告 coronavirus/covid-19
   - tableau public
+  - 北大毕业生就业质量年度报告
 # pieces

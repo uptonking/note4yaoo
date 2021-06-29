@@ -11,7 +11,7 @@ modified: '2021-01-01T22:13:44.013Z'
 
 - ## prettier
 
-``` 
+```
 
 prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 
@@ -20,13 +20,12 @@ prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-pa
 
 - ## changelog
 
-``` 
+```
 
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 # git相关
-
 - commit相关
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
@@ -43,7 +42,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
   - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
 
-``` 
+```
 
 git rm --cached 文件/夹名，只删除了缓存，实际文件不会删除
 git commit -m '备注'
@@ -52,7 +51,7 @@ git push origin 分支
 
 - 删除本地和远程两份文件
 
-``` 
+```
 
 git rm 文件名       // 删除文件
 git rm -r 文件夹名   // 删除文件夹 
@@ -63,7 +62,7 @@ git push origin 分支
 
 - 放弃本地修改，用远程覆盖本地
 
-``` 
+```
 
 git fetch --all
 git reset --hard origin/master
@@ -71,14 +70,14 @@ git reset --hard origin/master
 
 - 用本地覆盖远程
 
-``` 
+```
 
 git push origin main --force 
 ```
 
 - Syncing Fork with Parent Repo
 
-``` shell
+```shell
 # check if remote exists
 git remote -v
 
@@ -122,23 +121,21 @@ git push
   - 当文件加入了 stage 区以后，如果要从stage删除，则使用 reset, 此时工作区的文件不做任何修改
   - 当文件加入了 stage 区以后，后来又做了一些修改，这时发现后面的修改有问题，想回退到stage的状态，使用 checkout 
   -  git commit -a 并不会作用于第一次新建的文件。 否则容易因此忽略新文件的提交。
-
 # java相关
-
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`
   - mvn使用proxy下载依赖： ` mvn clean install -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080`
       - 注意验证，saiku下载的jar全是7.8k无效jar
   - 安装本地jar
 
-``` 
+```
 
    mvn install:install-file -Dfile=/path/to/local.jar -DgroupId=a.b -DartifactId=name -Dversion=1.0.0 -Dpackaging=jar
   ```
 
 - 切换java版本-基于jenv
 
-``` 
+```
 
   jenv add /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
   使用alias添加同一版本的不同jvm：jenv add dcevm11 /path/to/jdk

@@ -7,10 +7,16 @@ modified: '2021-06-23T13:27:56.975Z'
 
 # lib-editor-rich-markdown-codebase-extensions
 
-# changes
-- EditorView: provide nodeViews prop
+# bugs
+- slash弹出菜单会被image挡住，甚至离得很远
+  - 源码运行时偶尔会有此问题，特别是在屏幕宽度很窄时，或者上一行也是图片时当前行的弹出菜单位置就在很远的上面
+  - 问题出现的时机，在图片caption描述紧邻的下一行，书写slash弹出菜单时，菜单会离得很远
+    - 若在caption的下两行，slash弹出菜单可以在当前位置挡住图片
+  - 图片的文字描述使用的是contenteditable的p元素
 
-- createNodeViews支持react组件和普通prosemirror NodeView class
+- roadmap
+  - EditorView: provide nodeViews prop
+  - createNodeViews支持react组件和普通prosemirror NodeView class
 # xp-todo
 - 替换内置组件样式为成熟的react组件库
   - 模仿Image/Embed替换Notice、FencedCodeBlock/Table/Link, kbd
@@ -18,12 +24,18 @@ modified: '2021-06-23T13:27:56.975Z'
     - notice组件内容是文本，需要将PMDoc的内容添加进去，但Notice作为extension，component却不是标准的react组件，难以操作ref
   - 方案1: 重写react组件作为NodeView的部分
   - 方案2: 直接从PMNode中读取textnode的内容值
-  - 方案2实现渲染后，若要实现编辑，要考虑悬浮工具条的位置
+    - 方案2实现渲染后，若要实现编辑，要考虑悬浮工具条的位置
+  - 使用react作为NodeView后，状态和dom就交给react管理，包括`contenteditable`编辑状态，react自身也会警告，特别是自身要处理退格键的状态
+  - 可参考image如何实现添加图片caption描述及删除操作
+  - ??? image编辑caption时没有触发pm和react的事件
+  - 只有提供了uploadImage的回调函数，slash菜单中才会出现image选项
 
 - 添加新组件到slash命令菜单，如Collapse、emoji、OJSCodeBlock、Katex、TabView, Slider, LocalForm(类似excel公式)、Accordion、References & Citations
   - 参考atlaskit、curvenote、bangle
   - 如何实现 Interactive Components/views/viewof
   - 参考word，ReviewComment
+  - add: insert-image
+  - refactor: search commands
 
 - stories
   - ~~long doc~~

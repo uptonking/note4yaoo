@@ -14,7 +14,11 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## The rationale there is that traffic tends to continue strong until a weekend is hit, 
+- https://twitter.com/JoshWComeau/status/1409624431715098627
+  - so by publishing early in the week, the weekend hit happens later. 
+  - But often I’ll publish on Tuesday because I get busy or forget on Monday
+- Same here. Try to publish before usa wakes up but often a bit late 
 
 - ## I love @github 's approach to marketing pages and a pattern that I think Next.js and React can help democratize(民主化)
 - https://twitter.com/rauchg/status/1407769747954049036

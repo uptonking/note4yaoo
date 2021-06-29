@@ -7,8 +7,6 @@ modified: '2021-02-09T19:25:11.641Z'
 
 # thread-blog-pieces
 
-# product
-
 # frontend-design-system-components
 - [How we use Web Components at GitHub](https://github.blog/2021-05-04-how-we-use-web-components-at-github/)
 - [8 Examples of Icon-Based Navigation, Enhanced with CSS and JavaScript](https://speckyboy.com/icon-based-navigation-css-javascript/)

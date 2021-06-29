@@ -16,6 +16,18 @@ modified: '2021-06-27T18:44:15.023Z'
   - Bangle comes with first party React support and React components
   - fast for rendering long documents
 # discuss
+- ## Feedback on an ideal React interface
+- https://discuss.prosemirror.net/t/feedback-on-an-ideal-react-interface/3345
+- I have seen some libraries (tiptap) mixing node/mark spec and PM plugins in a single class which sort of works as a plug-n-play component. 
+  - I initially took the same approach, but then hit a roadblock where I wanted to share the schema between multiple editor views and a collaboration server. 
+  - Sharing the schema is doable but I found the coupling of everything in one giant class is an uphill battle against the modular architecture of PM. 
+  - I am curious to hear what folks think about this, do the benefits of fusing schema, plugins, keybindings, etc in one class help in larger and more complex applications ?
+- I have been working on a higher level tool kit for Prosemirror and wanted to get some feedback on some ideas.
+  - Separation of schema and plugins
+  - Using React hooks
+  - Extensibility
+- This is not really related to React but would love to bounce some ideas on this. 
+  - The plugin architecture of PM works great, but PM leaves ambiguity on how to extend and share specs and plugins.
 - ## Bangle.dev: higher level Prosemirror components
 - https://discuss.prosemirror.net/t/bangle-dev-higher-level-prosemirror-components/3363
 - I am super excited to share with you all something I have been working as a side project for the past 1.5 years.
@@ -38,13 +50,6 @@ modified: '2021-06-27T18:44:15.023Z'
   - An instance where the field pmState points to the PM EditorState instance built using the inputs.
 - I have intentionally kept the `EditorState` initialization separate from `EditorView`, just like Prosemirror so that if one fancies a Bangle component to be used in an existing Prosemirror app, they can do.
   - This has only been possible due to amazing level of modularity in Prosemirror 
-
-- ## Feedback on an ideal React interface
-- https://discuss.prosemirror.net/t/feedback-on-an-ideal-react-interface/3345
-- I have been working on a higher level tool kit for Prosemirror and wanted to get some feedback on some ideas.
-  - Separation of schema and plugins
-  - Using React hooks
-  - This is not really related to React but would love to bounce some ideas on this. The plugin architecture of PM works great, but PM leaves ambiguity on how to extend and share specs and plugins.
 # docs
 - Each of the core component of Bangle comes baked in with markdown shortcuts (you can disable them if you want).
   - 支持export markdown
