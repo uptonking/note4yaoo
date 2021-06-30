@@ -31,6 +31,29 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How do you deal with exceptions in Node.js?
+- https://twitter.com/hanspagel/status/1410192448601608198
+  - When I don’t catch them, the whole process will exit. Bad, rigIht?
+  - When I catch them, I have to make sure to log them somewhere, right?
+- I typically just catch `process.on('uncaughtException')` and log it to sentry
+- We use @getsentry for that
+- move away from LogStash towards @fluentd or eventually @opentelemetry
+
+- ## Loading new style tags into a page that only apply to the new content seems like it would be fast but it requires reapplying rules to all existing content. 
+- https://twitter.com/sebmarkbage/status/1409884048185495562
+  - Making it a factor of all the nodes on the page. This is counter intuitive but a huge perf consideration on larger pages.
+- If you remove all existing content before, it might be less of an issue, but that preclude you from animating between two pages or subscreens. 
+  - It also doesn't work well with progressively showing content if inserting styles change the previous content. You're repaying the cost.
+- One way to solve this is by literally inlining styles. 
+  - That's counter intuitively more expensive than you'd think because each one has to be converted to the internal representation which is way more expensive than looking up an existing value in a Map.
+- These two things together lead a lot of perf sensitive people to conclude that "Atomic CSS" style solutions where you produce large reusable sheets with small rules are the way to go.
+  - Tailwind is another way to do this. 
+  - Statically extracting them using a compiler is another.
+
 - ## There is an `<hr>` tag but there is no `<vr>` tag for vertical separator. I guess they never thought you may want to separate content vertically?
 - https://twitter.com/oleg008/status/1407653485647126534
 - [see Separator of Radix UI](https://radix-ui.com/primitives/docs/components/separator)

@@ -15,8 +15,8 @@ modified: '2020-11-03T06:54:59.051Z'
   - 可以增加树的高度和叶节点的数量
   - 给出了调试步骤
 
-- https://tabbie、、d.com/select-artwork 
-  - 源码基于nextjs，超级适合用来制作logo
+- https://tabbied.com/select-artwork 
+  - 源码基于nextjs，超级适合用来制作logo，很多扇形圆弧的形状
 
 - https://github.com/zerosoul/chinese-colors
   - https://colors.ichuantong.cn/
@@ -42,6 +42,18 @@ modified: '2020-11-03T06:54:59.051Z'
   - replicate some of the Mac OS(Big Sur, at the time)'s desktop experience on web
   - 类似macOS风格的例子
     - https://github.com/Renovamen/playground-macos
+# amazing-animation
+- click to open... Pure #CSS, but a lot of it 
+  - https://twitter.com/amit_sheen/status/1410178652193574915
+  - https://codepen.io/amit_sheen/pen/YzVPrGb
+  - 折叠打开或关闭的动画
+
+
+# amazing-resources
+- https://github.com/ira-design/ira-illustrations
+  - https://iradesign.io/illustrations
+  - create amazing illustrations by using hand-drawn sketch components. 
+  - We proudly offer a cool selection of 5 gradients and the ability to use ai., svg. or png. formats. 
 # amazing-tools
 - https://github.com/rrweb-io/rrweb
   - https://www.rrweb.io/

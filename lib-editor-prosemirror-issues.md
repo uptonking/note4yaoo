@@ -11,12 +11,21 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
+- ## Callback when NodeView is inserted into DOM
+- https://discuss.prosemirror.net/t/callback-when-nodeview-is-inserted-into-dom/1633
+  - Is there a callback for when the NodeView gets added to the DOM, so that I can call
+- Node views are only created when they are about to be added to the document tree, so I think just setting a `requestAnimationFrame` when the view is created should work.
+
+- ## Updating NodeViews on node moved
+- https://discuss.prosemirror.net/t/updating-nodeviews-on-node-moved/1866
+- Node views don’t really get to know about their position in the document—they are rendered and then left alone as long as the node stays the same, since constantly calling their update methods when something somewhere in the document changed would be expensive.
+  - There is one way to communicate with node views, and that is to **add node decorations to them from external code**. 
+  - When their decorations change, the `update` method will be called, and the decorations are passed as one of its arguments.
+
 - ## How to update nodeview from outside
 - https://discuss.prosemirror.net/t/how-to-update-nodeview-from-outside/3660
 - Node decorations can be used to pass information to node views (though those are also not the easiest thing to set up). I think there is a need for some imperative way to force node views to redraw, but I’m not sure what it would look like yet.
-- Node decorations may not be enough.My requirement is that there is a Mind map component in nodeview, and the interface inside can be updated from the outside when multiple people collaborate in real time.
-
-
+- Node decorations may not be enough. My requirement is that there is a Mind map component in nodeview, and the interface inside can be updated from the outside when multiple people collaborate in real time.
 
 - ##  `.toDOM` can also return a string or a DOM node, which are simply used as-is. Is it possible to define holes even when toDOM returns a DOM node?
 - https://stackoverflow.com/questions/59769774

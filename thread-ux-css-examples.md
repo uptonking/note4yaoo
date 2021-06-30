@@ -26,7 +26,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Click to open... Pure #CSS, but a lot of it 
+- https://twitter.com/amit_sheen/status/1410178652193574915
+  - https://codepen.io/amit_sheen/pen/YzVPrGb
+  - 折叠打开或关闭的动画
 
 - ## mimicking a flashlight
 - https://twitter.com/bramus/status/1409625298212200449

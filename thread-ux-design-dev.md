@@ -30,7 +30,13 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## I wonder if any user research has been done about trash cans vs ⛔️ icons vs `X` to signify "delete this item". 
+- https://twitter.com/LeaVerou/status/1410207899633209351
+- [Removing an item from a list: Trashcan Icon vs X](https://ux.stackexchange.com/questions/98238/)
+- The "+" and "-" can be confused with "expanding" and "collapsing". 
+  - That's why I prefer the trash can to signal a deletion. And a floppy disk for saving! 
+- I don't have any documentation, but in my head the bin/trash stores deleted items, it's not usually an actionable item. 
+  - The minus and X are more direct actions. X is also more commonly used for Close, rather than Delete.
 
 - ## Here's how I'll determine whether you read a blog post. 
 - https://twitter.com/kentcdodds/status/1401011415666675713

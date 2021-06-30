@@ -14,6 +14,21 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What are some good examples of sponsorware done right? 
+- https://twitter.com/mattgperry/status/1410122128037486594
+  - I'm looking closely at @steveruizok (glob) but it feels like a tricky thing to get right.
+- @tiptap_editor v2 by @_ueberdosis is a great example imo, launched early to backers, after 5k/mo released publicly
+  - Thanks for the mention! Let me know if you have any questions, we’re on our way to double down on Sponsorware.
+- Lots of thoughts here! I think sponsorware works great with dev log content where that sponsorware covers the secondary/“try it yourself” content. As long as the open content is good, you can build that audience/support without shilling
+  - For tldraw the sponsored content is an app, but I could imagine a blog where interactive examples or additional code samples are all gated like that.
+  - If everything is aligned, it’s a great motivator: make new stuff, write about it, get new supporters. I’m 100% okay with being lured by good free content into supporting individual devs.
+
 - ## The rationale there is that traffic tends to continue strong until a weekend is hit, 
 - https://twitter.com/JoshWComeau/status/1409624431715098627
   - so by publishing early in the week, the weekend hit happens later. 

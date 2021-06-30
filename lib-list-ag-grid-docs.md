@@ -7,8 +7,11 @@ modified: '2021-05-13T02:42:37.479Z'
 
 # lib-list-ag-grid-docs
 
-# Row Models
+# guide
 
+- examples
+  - [Showcase Grid Examples and Applications](https://blog.ag-grid.com/showcase/)
+# Row Models
 - The grid can be configured with different strategies for loading row data into the grid, which are encapsulated into different Row Models. 
   - Changing which Row Model the grid is using means changing the strategy the grid is using for loading rows.
 - The grid comes with four row models
@@ -72,9 +75,7 @@ modified: '2021-05-13T02:42:37.479Z'
 
 - The Client-Side row model does not need a datasource. 
   - Infinite, Viewport and Server-Side all use a datasource. 
-
 # Client-Side Data Overview
-
 - By default the grid expects you to provide all the data up front. 
   - In other words, your application loads the full set of data into the client and then passes it in its entirety to the grid. 
   - This is in contrast to Server-Side Data where the data is mostly kept on the server and loaded into the grid in parts.
@@ -112,14 +113,10 @@ modified: '2021-05-13T02:42:37.479Z'
 - Refreshing the Client-Side Model
   - If you do want to refresh the Client-Side Row Model, call `api.refreshClientSideRowModel(startingStage)` , where `startingStage` can be one of the stages above, i.e.: group, filter, pivot, aggregate, sort, map
   - Because each stage depends on the stage before, refreshing any particular stage means that stage executes and then all the stages after it will also execute again.
-
 # Client-Side Data - Accessing Client-Side Data
-
 - Each time you pass data to the grid, the grid wraps each data item with a RowNode object. 
 - It is handy to access these Row Nodes. 
-
 # Client-Side Data - Updating Client-Side Data
-
 - Updating data in the grid via the grid's API does not cover all the ways in which data can change inside the grid. Data can also change in the grid in the following ways:
   - Editing data inside the grid using the grid's UI, e.g. by the user double-clicking on a cell and editing the cell's value. 
     - When this happens, the grid is in control and there is no need to explicitly tell the grid data has changed. 
@@ -201,9 +198,7 @@ modified: '2021-05-13T02:42:37.479Z'
 - Sometimes you may want all transactions to be applied before doing something 
   - for example you may want to select a rows in the grid but want to make sure the grid has all the latest row data before doing so.
   - To make sure the grid has no Async Transactions pending, you can flush the Async Transaction queue. This is done by calling the API `flushAsyncTransactions` .
-
 # Client-Side Data - Immutable Data
-
 - Under normal operation when new data is set into the grid (e.g. the `rowData` bound property is updated with new data), the grid assumes the new data is a brand new set of data. 
   - It is common for applications to desire this behavior. 
   - However as explained in Setting Fresh Row Data this can be undesirable as grid state (selected rows etc.) is lost.
@@ -235,15 +230,11 @@ modified: '2021-05-13T02:42:37.479Z'
     - If this is not required by your application, then you can suppress this behaviour for a performance boost by setting `suppressMaintainUnsortedOrder=true` .
   - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
     - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
-
 # Client-Side Data - Context
-
 - The context object is passed to most of the callbacks used in the grid. 
 - The purpose of the context object is to allow the client application to pass details to custom callbacks such as the Cell Renderers and Cell Editors.
 - Note that the grid does not place anything into the context and it is not used internally by the grid.
-
 # Row Spanning
-
 - By default, each cell will take up the height of one row.   
   - You can change this behaviour to allow cells to span multiple rows. 
   - This feature is similar to 'cell merging' in Excel or 'row spanning' in HTML tables.
@@ -289,9 +280,7 @@ modified: '2021-05-13T02:42:37.479Z'
       - If this is not required by your application, then you can suppress this behavior for a performance boost by setting `suppressMaintainUnsortedOrder=true` .
     - There is no equivalent of Async Transactions when it comes to Immutable Data Mode. 
       - If you want a grid that manages high frequency data changes, it is advised to not use Immutable Data Mode and use Async Transactions instead.
-
 # Column Spanning
-
 - By default, each cell will take up the width of one column. 
   - You can change this behaviour to allow cells to span multiple columns. 
   - This feature is similar to 'cell merging' in Excel or 'column spanning' in HTML tables.
@@ -309,9 +298,7 @@ modified: '2021-05-13T02:42:37.479Z'
 - ## Column Spanning Constraints
   - Range Selection will not work correctly when spanning cells. 
     - This is because it is not possible to cover all scenarios, as a range is no longer a perfect rectangle.
-
 # DOM Virtualization
-
 - https://www.ag-grid.com/javascript-grid-dom-virtualisation/
 
 - The grid uses DOM virtualization to vastly improve rendering performance.
@@ -336,9 +323,7 @@ modified: '2021-05-13T02:42:37.479Z'
   - There is no column buffer - no additional columns are rendered apart from the visible set. 
   - This is because horizontal scrolling is not as CPU intensive as vertical scrolling, thus the buffer is not needed for a good UI experience.
   - To turn column virtualisation off set the grid property `suppressColumnVirtualisation=true` .
-
 # Export
-
 - The grid provides APIs to export data to CSV and Excel. 
 - You can download a file to the user's computer or generate a string to be uploaded to a server. 
 - What Gets Exported
@@ -356,9 +341,7 @@ modified: '2021-05-13T02:42:37.479Z'
 - It is not possible to download files directly from JavaScript to an iPad. 
   - This is a restriction of iOS and not something wrong with ag-Grid. 
   - For this reason, the download links in the context menu are removed when running on iPad.
-
 # Printing
-
 - Keep Print Layout for Print Only
   - When the grid is in print layout, it will be rendering all cells without using row virtualisation. 
   - This means that the grid will be slower given the amount of DOM it is rendering. 

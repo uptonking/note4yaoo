@@ -23,6 +23,10 @@ modified: '2021-06-02T17:07:33.920Z'
 # faq
 - 如何自定义组件样式，最好能直接使用现有react组件
   - 大部分组件是vanillajs，少部分使用基于react组件的NodeView
+- 如何在pm plugins中访问react state中的数据
+  - ? 需要在react state数据变化时，通知toDom/nodeView渲染
+- 如何在react NodeView中访问pm state中的数据
+  - 直接读取state.doc.content
 
 - 编辑器state数据结构是如何设计的
 - 输入时如何更新dom元素

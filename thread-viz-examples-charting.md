@@ -11,6 +11,18 @@ modified: '2021-04-12T12:03:37.628Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## visualize changes when comparing current versus prior
+- https://twitter.com/tableaupublic/status/1409912104367316998
+  - https://public.tableau.com/en-us/gallery/current-vs-comparison-period
+
 - ## My son is losing his baby teeth, so of course I had to figure out how much the Tooth Fairy is giving these days
 - https://twitter.com/flowingdata/status/1381637006871027713
   - [Tooth Fairy Exchange Rate](https://flowingdata.com/2021/04/08/tooth-fairy-exchange-rate/)
@@ -21,7 +33,6 @@ modified: '2021-04-12T12:03:37.628Z'
 - Nice animation. Unconvincing data. jQuery still very popular due to legacy systems and historic reach. React number one tho in most metrics.
 
 # flow-charts
-
 - ## A map of the best  animation Libraries of #javascript and #css3
 - https://twitter.com/Lindsey_design/status/1388244530831446017
   - Where is AnimeJS and Framer motion?

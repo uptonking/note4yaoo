@@ -15,7 +15,16 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## don't let friends write JS functions with multiple optional parameters, each of which can have multiple overloaded values and behaviors
+- https://twitter.com/acemarke/status/1409971795894181904
+  - this tweet brought to you by me looking at the `connect` implementation for the first time in a while and my mind boggling at how the `mapState/mapDispatch` overload detection behavior is implemented
+- All JavaScript functions should only be allowed to take one argument
+  - you already do this in @Reactjs as "props" 
+- When I got started with JS, I treated jquery's design as the ideal and made functions with lots of different overloads and argument shortcuts.
+  - First awkwardness was when I had to make some wrapper functions around these and it was pain making the wrappers support parsing the args the same way. 
+  - It's a solvable problem, but it was effort for a design that had other downsides too. Sometimes you have to judge whether it's worth it to solve a problem versus just removing the problem.
+- I’m increasingly close to adding a lint rule that forces all function definitions to have 0 or 1 param. Object definitions are cheap enough that I don’t see much a reason to have multiple function params
+  - 0 or 1 required, 1 optional (often boolean), is my empirical limit
 
 - ## What's the best way to dynamically import an npm package on the client-side? Like in documentation code playgrounds.
 - https://twitter.com/diegohaz/status/1409278109573160960

@@ -8,16 +8,23 @@ modified: '2021-06-23T13:27:56.975Z'
 # lib-editor-rich-markdown-codebase-extensions
 
 # bugs
+
+## bugs-highest
+
+- 前面时slash/w时，按enter键无法换行
+  - 在BlockMenuTrigger处优化
+
+## bugs-low
+
 - slash弹出菜单会被image挡住，甚至离得很远
   - 源码运行时偶尔会有此问题，特别是在屏幕宽度很窄时，或者上一行也是图片时当前行的弹出菜单位置就在很远的上面
-  - 问题出现的时机，在图片caption描述紧邻的下一行，书写slash弹出菜单时，菜单会离得很远
-    - 若在caption的下两行，slash弹出菜单可以在当前位置挡住图片
+  - 问题出现的时机，在图片caption描述紧邻的下一行，书写slash弹出菜单时，菜单会离得很远；若在caption的下两行，slash弹出菜单可以在当前位置挡住图片
   - 图片的文字描述使用的是contenteditable的p元素
-
+# xp-todo
 - roadmap
   - EditorView: provide nodeViews prop
-  - createNodeViews支持react组件和普通prosemirror NodeView class
-# xp-todo
+    - createNodeViews支持react组件和普通prosemirror NodeView class
+
 - 替换内置组件样式为成熟的react组件库
   - 模仿Image/Embed替换Notice、FencedCodeBlock/Table/Link, kbd
   - 替换Notice组件碰到问题

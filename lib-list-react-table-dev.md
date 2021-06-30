@@ -10,7 +10,6 @@ modified: '2021-05-13T02:54:23.406Z'
 # guide
 
 # react-table表格实现的ui结构层次
-
 - ## useBlockLayout
   - 必须设置cell的width，使用行内样式设置
 - div-table
@@ -165,11 +164,6 @@ modified: '2021-05-13T02:54:23.406Z'
 ```
 
 # guide
-
-- ## [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
-  - [Data Grid (Table) Framer package](https://packages.framer.com/package/lintonye/data-grid-table)
-  - https://github.com/lintonye/tables
-
 - ## [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
   - I would say that in 5 years, we'll see:
     - a few more nice syntax improvements
@@ -209,9 +203,7 @@ modified: '2021-05-13T02:54:23.406Z'
   - You can get auto column width with div tables :). We do this at my work. We do a two-pass render to measure and it's fast enough most of the time. Working on an implementation with CSS Grid that I'll write about soon.
   - Sticker headers lets the user quickly be able to refer to what a cell represents in large tables. Resizing also helps expand/collapse columns that are more/less important or have dynamic contents. Default column widths can optimize for less text overflow.
     - [not ssr friendly yet](https://ministrycentered.github.io/ui-kit/datatable)
-
 # pieces
-
 - `useGetLatest(instanceRef.current)` how it's helping avoiding memory leaks 
   - `const getInstance = useGetLatest(instanceRef.current); `
   - Instead of using `instanceRef.current` all over the place, you just use `getInstance()` which just looks better imo less clutter(n, 杂乱，混乱)

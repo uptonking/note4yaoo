@@ -88,10 +88,19 @@ modified: '2021-06-02T18:26:20.133Z'
 
 - 读取某个package的所有dependencies，查询下载量后排序
   - https://github.com/pkgjs/dependents
-# github-slow
+# github-proxy
 - download release and repo
   - https://pd.zwc365.com/
   - https://shrill-pond-3e81.hunsh.workers.dev/
 # github-data-apps
 - https://githubwrapped.tech/
   - take a look at all the contributions you as an individual made to the open-source community
+
+- https://copilot.github.com/
+  - With GitHub Copilot, get suggestions for whole lines or entire functions right inside your editor.
+  - https://twitter.com/fabiospampinato/status/1409956406745255936
+  - Autopilot seems cool but:
+    - Most of the time is spent thinking not typing.
+    - Autocomplete is predictable, Autopilot much less so.
+    - Spotting issues is IMO harder when reading code than when writing it.
+    - You want perfect code, not code that the average dev would write.

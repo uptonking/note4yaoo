@@ -60,6 +60,27 @@ modified: '2021-01-06T14:40:03.364Z'
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
 # pieces
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The most underrated feature of @Reactjs Server Components: There's no API - just the filename.
+- https://twitter.com/swyx/status/1341535594543910912
+  - When you add `.server.js` you get:
+  ✅Zero bundle impact
+  ✅Auto code splitting
+  ✅Direct backend access
+  ✅No waterfalls
+- the secret to this, of course, is that "the API" is swept under a figurative rug:
+  - React bundlers/servers now must handle the filename correctly
+  - React I/O libraries hide the caching impl
+  - lets not talk about the SECRET HOOKS we found during livestream
+- @Shopify is using React Server Components (and @tailwindcss !) to build fast, fully customizable storefronts
+
 - ## I've been thinking about React Compat in reactive libraries wrong. 
 - https://twitter.com/trueadm/status/1408567234306453504
   - There are projects trying to remove the VDOM from React but that is proving really hard.
@@ -69,7 +90,7 @@ modified: '2021-01-06T14:40:03.364Z'
   - but instead I regard it more a structure that stores intermediate values for a template that represents the UI.
 - while checking out my compiler project that I worked on a few years ago. It basically compiles React components to what you see above. It extracts out the metadata as static templates and keeps components as functions that only return the dynamic values.
   - It won't win things like the JS framework benchmark, because it's not optimized to clone HTML elements (which should be banned IMO), but in real-world the metrics were light and day. It was over twice as fast as Inferno in complex, heavy real world examples.
-  - In the real world, you rarely have enough to warrant a clone. Cloning is only effective if you have enough static content to warrant it.I've found that it's either the case that the children are very dynamic (another composite component), or all the props are dynamic.
+  - In the real world, you rarely have enough to warrant a clone. Cloning is only effective if you have enough static content to warrant it. I've found that it's either the case that the children are very dynamic (another composite component), or all the props are dynamic.
   - Not to mention it adds complexity around things like event handling, fragments, stateful elements, and animations/transitions. I explored all this in-depth with Inferno back in the day, hell we even did element recycling which was a major benchmark hack haha.
 - I wish the JS framework benchmark diversified enough to be more real-world, i.e. more components used and more dynamic content. Its simplicity makes it far too easy to game. In fact, there are libraries built around only that benchmark, and fail for other trivial things.
 
@@ -78,13 +99,13 @@ modified: '2021-01-06T14:40:03.364Z'
   - I wouldn't use React's API
   - I would make it formally use an ahead-of-time compiler design
   - Wouldn't abstract over HTML and instead build around abstractions
-- Furthermore,
+- Furthermore, 
   - It wouldn't have its own event system
   - It would use a partial virtual DOM system
   - It would have accessibility baked in as a first-class citizen, including focus management
   - It would have a hooks-like API and wouldn't use classes
   - It would have streaming SSR
-- I love the ahead of time idea.I bet JSX would be faster if components transpiled into 2 or 3 flat arrays:
+- I love the ahead of time idea. I bet JSX would be faster if components transpiled into 2 or 3 flat arrays:
   - components
   - children count
   - props(?)
@@ -92,14 +113,13 @@ modified: '2021-01-06T14:40:03.364Z'
 - Check out my compiler project I played around with a few years ago
   - https://github.com/trueadm/react-compiler
   - you'd actually improve performance not using a Uint32Array, purely for the fact you can re-reference template arrays that commonly appear.
-- Wouldn't abstract over HTML and instead build around abstractions.What do you mean with this point? Any good prior art to share?
+- Wouldn't abstract over HTML and instead build around abstractions. What do you mean with this point? Any good prior art to share?
   - React Native Web, cc @necolas . If you get it right, you can solve so many problems. `<div onClick={…} />` should never been allowed to happen.
   - Is even argue that `<div>` shouldn’t have happened. Look how SwiftUI tackles this. 
   - We default to HTML because we are accustomed to it, not because it’s the right abstraction.
 - Oh I think I follow. It’s about providing solid primitives instead of driving users towards (mis)using HTML directly. Does that sound right?
   - Pretty much. HTML is a free for all.
 - you don't need to know about the underlying host with react-native-web. it reduces down to building blocks, a div on some host that happens to be the web is a View there i think and that makes it x-platform. no opinions on if that's good or not, but the idea was interesting.
-
 
 - ## A key philosophical difference between Next.js & @blitz_js is that Blitz is all about giving sharp knives to developers. 
 - https://twitter.com/flybayer/status/1406722174505918464

@@ -63,14 +63,34 @@ modified: '2021-01-04T16:18:46.383Z'
 # open-color
 
 - https://github.com/yeun/open-color
-- https://yeun.github.io/open-color/
-- open-source color scheme optimized for UI like font, background, border, etc.
+  - https://yeun.github.io/open-color/
+  - open-source color scheme optimized for UI like font, background, border, etc.
 
 # color-palette
 
 - https://yoksel.github.io/handy-colors/#full-palette
   - 基于浏览器提供的css名，按颜色分类
 
+- Introducing@radix_uiColors
+  - https://twitter.com/colmtuite/status/1410191440404226048
+  - https://www.radix-ui.com/docs/colors/palette-composition/the-scales
+  •  336 gorgeous colors
+  •  22 color scales
+  •  6 gray scales
+  •  12 steps per scale
+  •  Accessibility baked-in
+  •  Automatic dark mode
+  •  Matching transparent scale variants
+  •  Compatible with any styling solution
+- We studied dozens of products to gather common patterns, use cases, and styles.
+- There are 12 steps in each scale. Each step is designed for at least one specific use case.
+  - This makes it much easier to know which color to use where. 
+  - It also ensures that your design passes WCAG contrast ratios. 
+  - But also, it means dark mode Just Works™.
+- Because Radix Colors are designed around specific use cases, all you need to do for dark mode is apply a dark theme class to a container. Then your entire design updates automagically.
+  - Each scale comes with a matching transparent variant for both light and dark modes (suffixed with "A"), which matches its opaque counterpart almost exactly.
+- Accessibility was one of our top priorities with Radix Colors.
+  - Steps 11 and 12 are designed for text. They're guaranteed to pass 4.5:1 contrast ratio on top of white, step 1, step 2, and step 3.
 # color
 
 - requirements

@@ -13,6 +13,23 @@ modified: '2021-01-08T19:16:04.471Z'
 
  - ## 
 
+ - ## 
+
+ - ## 
+
+ - ## 
+
+ - ## A standing issue with CSS transitions/animations is that you can't apply two or more transforms to a single DOM node with independent timing functions. 
+ - https://twitter.com/sebmarkbage/status/1409897461146165258
+   - It's an issue for 2D physics animations like springs when the starting velocity is an angle (fling).
+   - You end up having to add extra DOM nodes to this which makes it a lot harder to do as a universal library. Unless you hide a bunch of extra nodes in a shadow DOM I guess. That's one reason many pick JS animations today.
+   - CSS worklets doesn't seem to have a solution to this neither. Built-ins like the spring() proposal doesn't neither. Is there any proposal that I've missed that aims to solve this?
+ - I was under the impression that individual transform properties would solve this?
+   - [CSS Individual Transform Properties](https://webkit.org/blog/11420/css-individual-transform-properties/)
+   - I completely missed that! It looks like a good start but unfortunately doesn't seems like it would fully solve it. Since there's no individual X and Y properties. You could hack for 2D by using transform and individuals giving you two dimensions, but you'd run out for Z.
+ - But I’ve managed to solve it with a JS-driven animation as a polyfill
+   - I'm profiling to see if I can understand what you meant by this but registered CSS variables seem to animate on the animation thread like any other and the performance impact is whatever you apply them to.
+
  - ## Why aren’t you using WebAnimations API?
  - https://twitter.com/mattgperry/status/1387990910043140098
  - I mostly work with React and React Native. I can use Animated/Reanimated on both, but I can't use WebAnimation API on React Native. Would be cool if I could though.

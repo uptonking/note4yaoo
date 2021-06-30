@@ -32,6 +32,10 @@ modified: '2020-12-21T07:44:48.911Z'
 # chrome
 - https://developers.google.com/web/tools/chrome-devtools
 
+- List of Chrome URLs:  all "internal" browser pages
+  - chrome://about/
+  - about:about
+
 - [What's New In DevTools (Chrome 89)](https://developers.google.com/web/updates/2021/01/devtools)
   - Capture node screenshot beyond viewport
     - You can now capture node screenshots for a full node, including content below the fold. 

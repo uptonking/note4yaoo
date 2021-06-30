@@ -9,8 +9,15 @@ modified: '2021-05-13T02:53:57.772Z'
 
 # guide
 
+- tutorials
+  - [React Table Tutorial Part 2: Style the table with Tailwind CSS](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/)
+    - https://github.com/jimmybutton/react-tailwind-table
+  - [React Table Tutorial Part 1: Build a fully featured table component](https://www.samuelliedtke.com/blog/react-table-tutorial-part-1/)
+    - https://github.com/jimmybutton/react-tailwind-table/tree/part1
+  - [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
+  - [Data Grid (Table) Framer package](https://packages.framer.com/package/lintonye/data-grid-table)
+  - https://github.com/lintonye/tables
 # react-table-rerender
-
 - ## [after I edit a single cell, I see the entire table being re-render.](https://github.com/tannerlinsley/react-table/issues/2824)
 - You're right that that some if not most of the methods/functions attached to rows and cells are being created on every render. 
   - I truly wish it was possible to alleviate this with the v7 architecture and this makes it almost impossible to memoize the component itself like you said without also calling all of the functions first, then memoizing on their results. This even plagues(困扰、折磨) my own code in a few places
@@ -28,7 +35,5 @@ modified: '2021-05-13T02:53:57.772Z'
   - React Table doesn't use PureComponent or rerender bailouts. If you want to use these in your own markup, feel free to do so, but at your own risk. In most, if not all, scenarios you would do this, it could probably be solved by using a useMemo or useCallback
   - React Table uses extensive memoization, caching and change-detection to ensure that rerenders are extremely performant.
 - Moral of the story: Only worry about rerenders if they are expensive or degrading performance.
-
 # pieces
-
 - ## 

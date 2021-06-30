@@ -20,11 +20,13 @@ modified: '2021-06-02T17:13:37.692Z'
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键
 - 编辑器默认不支持enter换行
-
 # state
 
 # view
 
+- 编辑输入时如何更新dom
+  - 编辑器最外层样式类为`.ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
+  - 但cursor光标由prosemirror自己实现
 # plugin
 
 # model
