@@ -10,7 +10,7 @@ modified: '2020-06-24T08:40:39.069Z'
 # guide
 
 - `ReactElement` and `JSX.Element` are the result of invoking `React.createElement` directly or via JSX transpilation. 
-  - It is an object with `type` , `props` and `key` . 
+  - It is an object with `type` ,  `props` and `key` . 
   - JSX. Element is ReactElement, whose `props` and `type` have type `any` , so they are more or less the same.
   - You can assign almost everything to `ReactNode` . I usually would prefer stronger types, but there might be some valid cases to use it.
   - A ReactElement is an object with a type and props. 
@@ -29,7 +29,7 @@ modified: '2020-06-24T08:40:39.069Z'
 
 - ## hooks相关类型
 
-``` typescript
+```typescript
 type SetStateAction<S> = S | ((prevState: S) => S);
 type Dispatch<A> = (value: A) => void;
 type DispatchWithoutAction = () => void;
@@ -72,19 +72,20 @@ function useDebugValue<T>(value: T, format?: (value: T) => any): void;
 ```
 
 - ## react组件及api相关类型
-- `type ComponentType<P = {}> = ComponentClass<P> | FunctionComponent<P>;`
+- `type ComponentType<P = {}> = ComponentClass<P> | FunctionComponent<P>; `
   - `type FC<P = {}> = FunctionComponent<P>;` SFC is deprecated for FC
-  - `type ComponentState = any;`
-- `type ReactInstance = Component<any> | Element;`
+  - `type ComponentState = any; `
+- `type ReactInstance = Component<any> | Element; `
 - `interface Component<P = {}, S = {}, SS = any> extends ComponentLifecycle<P, S, SS> { }`
   - SS is the user defined type of the snapshot returned by your custom implementation of getSnapshotBeforeUpdate, which gets passed to componentDidUpdate so you can preserve some application specific details from the last render
 
-``` typescript
+```typescript
 interface Props<T> {
     children?: ReactNode;
     key?: Key;
     ref?: LegacyRef<T>;
 }
+
 interface HTMLProps<T> extends AllHTMLAttributes<T>, ClassAttributes<T> { }
 type DetailedHTMLProps<E extends HTMLAttributes<T>, T> = ClassAttributes<T> & E;
 interface DOMAttributes<T> {
@@ -122,6 +123,9 @@ interface ReactHTML {
   // ...
 }
 interface ReactDOM extends ReactHTML, ReactSVG { }
+
+/* 注意createPortal的返回值类型也是ReactElement */
+export function createPortal(children: ReactNode, container: Element, key?: null | string): ReactPortal;
 
 interface ReactPortal extends ReactElement {
     key: Key | null;
@@ -209,7 +213,7 @@ interface SyntheticEvent<T = Element, E = Event> extends BaseSyntheticEvent<E, E
 
 - ## 函数组件
 
-``` typescript
+```typescript
 interface FunctionComponent<P = {}> {
     (props: PropsWithChildren<P>, context?: any): ReactElement | null;
     propTypes?: WeakValidationMap<P>;
@@ -223,7 +227,7 @@ type FC<P = {}> = FunctionComponent<P>;
 
 - ## 类组件
 
-``` typescript
+```typescript
 class Component<P, S> {
   static contextType?: Context<any>;
   constructor(props: Readonly<P>);
@@ -291,7 +295,7 @@ interface ClassicComponentClass<P = {}> extends ComponentClass<P> {
 
 - ## 元素相关
 
-``` typescript
+```typescript
 // ReactType is deprecated for ElementType
 type ElementType<P = any> =
     {
@@ -343,7 +347,7 @@ declare global {
 
 - ## Node相关
 
-``` typescript
+```typescript
 type ReactText = string | number;
 type ReactChild = ReactElement | ReactText;
 
@@ -356,7 +360,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 
 # 类型示例examples
 
-``` typescript
+```typescript
 // Use type inference; inferred return type is `JSX.Element | null`
 const MyComp1 = ({ condition }: { condition: boolean }) =>
     condition ? <div>Hello</div> : null

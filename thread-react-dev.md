@@ -10,6 +10,18 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Simple pattern to reduce the pain of “prop drilling”: Consider using an object instead of separate props.
+- https://twitter.com/housecor/status/1410581176914530305
+- From my understanding props as objects make components harder to be memoized. Other than that I think this is a good pattern.
+
 - ## I was immediately excited when I saw React. I recognized the pain it would remove. 
 - https://twitter.com/housecor/status/1409540502274334721
   ❌ Cryptic runtime errors

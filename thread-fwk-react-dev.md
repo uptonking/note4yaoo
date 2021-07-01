@@ -66,7 +66,12 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## Any good examples of doing Error Boundaries with Next.js?
+- https://twitter.com/leeerob/status/1410452498402398208
+1. No changes needed to keep the dev overlay.
+2. For handling errors on the server, you can create a custom 500.js page
+3. For handling errors on the client, just React Error Boundaries
+4. For reporting, either stdout logging or your favorite exception monitoring tool
 
 - ## The most underrated feature of @Reactjs Server Components: There's no API - just the filename.
 - https://twitter.com/swyx/status/1341535594543910912

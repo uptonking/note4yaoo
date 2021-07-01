@@ -17,7 +17,10 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-- ## 
+- ## analyzes the Sexual Orientation and Gender Identity Legal Index
+- https://twitter.com/tableaupublic/status/1410312356740141065
+  - https://public.tableau.com/en-us/gallery/sogi-li-index
+  - 用tableau实现的典型的仪表板，黑暗-紫红主题
 
 - ## I am a freelance illustrator by day, and painter by night. 
 - https://twitter.com/mcmintea/status/1367650890572722179

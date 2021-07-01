@@ -9,14 +9,13 @@ modified: '2021-05-06T09:38:31.520Z'
 
 # guide
 
-# codebase
+# docs
 
 # [styling](https://codemirror.net/6/examples/styling/)
 
 - CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
   - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
 - Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
-
 # roadmap
 
 ## [CodeMirror 6 Status Update_201908](https://marijnhaverbeke.nl/blog/codemirror-6-progress.html)
@@ -43,8 +42,19 @@ modified: '2021-05-06T09:38:31.520Z'
   - tree-sitter, which is a practical implementation of an incremental LR parser, giving you a real syntax tree for your code and updating it cheaply when you make changes. It is used in the Atom editor.
   - I set out to clone tree-sitter in JavaScript. I didn't exactly clone it, but rather built a different system inspired by it. 
   - That system is Lezer, an incremental parser generator and runtime system for JavaScript.
-
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Meta: Observable editor in observable
+- https://talk.observablehq.com/t/meta-observable-editor-in-observable/2376
+  - One thing that I would like to do is to create a view with a nice text editor (ideally the same as the one used in observable) where users of my notebook can write some code with another linter (e.g. python) 
+- Observable’s editor is based on CodeMirror. There’s a nice and simple example of CodeMirror in this notebook
+- [CodeMirror inside of Observable](https://observablehq.com/@tmcw/codemirror-inside-of-observable)
+  - We use CodeMirror to power a lot of the editing abilities of Observable, but we can also embed CodeMirror inside of a notebook to provide an in-notebook editing experience.
 
 - ## codemirror 6 
 - https://news.ycombinator.com/item?id=26039111

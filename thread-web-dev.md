@@ -33,7 +33,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Number one accessibility tip: learn how to use the screen reader that’s built into your computer/phone. Then test every library you use yourself.
+- https://twitter.com/devongovett/status/1410277820622802944
+  - Unfortunately, many claim they are accessible because they have a few ARIA attributes, but it’s way more complicated than that.
+  - The docs claimed it was accessible because it followed the ARIA authoring practices.
+  - Unfortunately, ARIA authoring practices are not bullet proof. They’re just a guide. They assume perfect ARIA support (definitely does not exist) and any customizations you make can have drastic effects. Testing yourself with real assistive tech is the only way to verify.
+- every screen reader is different, and even then different users have different settings. Accessibility is like design in that it can be quite subjective.
+  - Different screen readers sound like different shots and the ability to holistically understand the whole picture. But how we can hook into those engines…
 
 - ## How do you deal with exceptions in Node.js?
 - https://twitter.com/hanspagel/status/1410192448601608198

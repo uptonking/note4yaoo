@@ -26,5 +26,5 @@ modified: '2021-05-14T14:55:00.191Z'
   - the rendered value as primary and the source code as secondary.
 - Non-linear is a plus. Why force an order. Spreadsheet is non-linear and it works pretty well
 - Clicking to reveal can be simply addressed with a global Expand-All toggle.
-
-
+- What I'm talking about is editing code with Vim-like keys INSIDE the cells. An implementation of the Ace Editor or something similar would be amazing.
+  - We use CodeMirror and are considering the vim bindings, but it’d probably be something we launch at the same time as user-configurable key bindings.

@@ -12,6 +12,22 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What are some visual application builders for the web where you only have a limited range of built-in components but they’re all high-level (e.g. grid/list that can bind to data)? Like Access+VBA but for today
+- https://twitter.com/dan_abramov/status/1410342969786486786
+- Some listed here - Airtable is the closest match to Access
+- Retool, they basically advertise themselves as VBA but in the context of the cloud + browser + JS
+- @builderio is! Specifically our "components-only mode"
+- http://openchakra.app
+  - Components are limited to those available in the source library, and styling options are limited to those tokens found in the theme
+- I wanna say https://editorx.com. You get collection components (grid, list, repeater) which you can bind to data. You can even add buttons, select events, and it will create and bind empty fns - just like VB of yore.
+- I used to use @xojo for software development. It has it's own flavor of VB, has a good community, and is pretty good!
+
 - ## kind of want to start a consultancy where someone describes their data in detail and i recommend which visualization techniques are appropriate, 
 - https://twitter.com/tmcw/status/1409317416665026563
   - this should exist, at least someone should do this. 

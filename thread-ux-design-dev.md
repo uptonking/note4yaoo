@@ -28,7 +28,14 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## How To Design Better Shadows 
+- https://twitter.com/d__raptis/status/1410268576775344135
+1. Add more blur to make your shadow look smoother
+2. Offset the shadow on the Y-axis
+3. Reduce the opacity
+4. Reduce spread to make the shadow look like it's created by a smaller element
+- Bonus:
+  - Add a subtle light gray border when both the background & card are white
 
 - ## I wonder if any user research has been done about trash cans vs ⛔️ icons vs `X` to signify "delete this item". 
 - https://twitter.com/LeaVerou/status/1410207899633209351

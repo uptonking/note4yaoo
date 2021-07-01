@@ -9,7 +9,44 @@ modified: '2020-06-30T12:51:08.791Z'
 
 # faq-not-yet
 
-- `React.forwardRef()` 是高阶组件吗
+- ~~`React.forwardRef()` 是高阶组件吗~~
+
+- createPortal的render、commit过程是怎样的
+  - 注意createPortal()方法的返回值是存在children属性的ReactElement
+  - createPortal()是否存在commit phase?
+    - 不存在commit阶段，createPortal的返回值就是普通的react element，和普通的函数组件返回值一样
+    - 而ReactDOM.render() return a reference to the component (or returns null for stateless components).
+
+```typescript
+function createPortal(children: ReactNode, container: Element, key?: null | string): ReactPortal;
+
+interface ReactPortal extends ReactElement {
+    key: Key | null;
+    children: ReactNode;
+}
+
+// ReactDOM.render
+export const render: Renderer;
+export interface Renderer {
+    // Deprecated(render): The return value is deprecated. In future releases the render function's return type will be void.
+
+    <T extends Element>(
+        element: DOMElement<DOMAttributes<T>, T>,
+        container: Container| null,
+        callback?: () => void
+    ): T;
+
+    <P, T extends Component<P, ComponentState>>(
+        element: CElement<P, T>,
+        container: Container| null,
+        callback?: () => void
+    ): T;
+    // ...
+
+}
+
+```
+
 # faq
 - ## [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
 - We want to fix the “deep update propagation” problem. 
@@ -418,7 +455,6 @@ MyComponent.defaultProps = { x: 0 };
 - 如何为现有组件添加props，比如添加样式属性props
 - react.cloneElement
 - hoc高阶组件
-
 
 - ## componentWillReceiveProps vs getDerivedStateFromProps 
   - componentWillReceiveProps在每次rerender时都会调用，无论props变了没

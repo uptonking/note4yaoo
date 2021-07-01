@@ -145,3 +145,10 @@ modified: '2021-05-14T12:04:55.412Z'
   - Somewhat. The main issue is that in many browsers, the spell checker gets completely confused (removes most of its underlines) when you programmatically touch the DOM. And in typical situations, CodeMirror will do that to adjust the highlighting.
   - Still, we do take care to only mess with the DOM when necessary, so when in content that doesn't change it highlighting during typing (Markdown without markup, HTML text nodes) it might work pretty well. Haven't done that much testing there yet
 - Monaco still doesn't support even arrow keys on iPad/iOS. Ace and codemirror are at least usable.
+
+- ## I have tested/worked with some #javascript rich text editors, here is my feedback. 
+- https://twitter.com/nurlannurmanov/status/1409361282889928707
+- My criteria were as follows:
+  1. Can be used in #React  web apps;
+  2. Out of box example which covers most of the use cases (image, formatting, code addition);
+  3. Production-ready; 

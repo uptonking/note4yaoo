@@ -7,8 +7,20 @@ modified: '2021-03-29T19:17:20.657Z'
 
 # dev-log-faq-repeat
 
-# 
+# web app running in webview vs browser
 
+- [android WebView](https://developer.android.com/reference/android/webkit/WebView)
+  - In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user. 
+  - `WebView` objects allow you to display web content as part of your activity layout, but lack some of the features of fully-developed browsers. 
+  - A WebView is useful when you need increased control over the UI and advanced configuration options that will allow you to embed web pages in a specially-designed environment for your app.
+
+- [What is the engine of Android native browser?](https://stackoverflow.com/questions/33998074)
+- Starting with Android 4.4 KitKat, Google has begun licensing Google Chrome (a proprietary software) separately from Android, but usually bundled with (what most device vendors did). 
+- Android 4.4 includes a completely new implementation of WebView that's based on Chromium 30. 
+  - The new Chromium WebView is included on all compatible devices running Android 4.4 and higher.
+- Starting with Chrome version 51 on Android 7.0 and above, the Chrome APK on your device is used to provide and render Android System WebViews. 
+  - You can choose your WebView provider by enabling Developer Options and selecting WebView implementation.
+  - multiprocess - Starting with Chrome version 51 in Android 7.0, WebView will run web content in a separate sandboxed process when the developer option `Multiprocess WebView` is enabled.
 # 配置项过多时，如何处理更好，特别是针对组件或应用
 - tips
   - search: component too many props/options

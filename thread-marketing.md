@@ -18,7 +18,9 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## webpack sponsored: In November 2020, 28 backers joined ( @EasyAgile , +27) - you are the best! Raising hands We received $13, 996 from 281 backers and we spent $15, 651 on . Our current balance is $10, 116.
+- https://twitter.com/webpack/status/1333751566004838401
+- In May 2021, 20 backers joined ( @mayhemBCN , @lucamezzalira , @tu4mo , +17) - you are the best! 🙌 We received $26, 056 from 273 backers and we spent $17, 044. Our current balance is $60, 138.
 
 - ## What are some good examples of sponsorware done right? 
 - https://twitter.com/mattgperry/status/1410122128037486594

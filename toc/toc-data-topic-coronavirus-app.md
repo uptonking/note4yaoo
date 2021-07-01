@@ -28,3 +28,5 @@ modified: '2020-11-11T13:16:34.742Z'
 - https://github.com/davidbau/covid-19-chart
   - Chart of COVID-19 time series data. 
   - Enables a variety of county- state- and nation-level comparisons and data exploration.
+# covid-examples
+- [Data Visualization for COVID-19 Dashboard Tracker Using AnyChart JS](https://www.anychart.com/blog/2021/04/12/covid-19-dashboard-tracker/)

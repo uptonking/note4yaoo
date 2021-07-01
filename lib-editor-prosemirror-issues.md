@@ -11,6 +11,17 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Access current Plugin state when creating NodeView
+- https://discuss.prosemirror.net/t/access-current-plugin-state-when-creating-nodeview/3084
+
 - ## Callback when NodeView is inserted into DOM
 - https://discuss.prosemirror.net/t/callback-when-nodeview-is-inserted-into-dom/1633
   - Is there a callback for when the NodeView gets added to the DOM, so that I can call

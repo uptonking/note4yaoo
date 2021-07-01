@@ -17,8 +17,10 @@ modified: '2021-02-09T19:25:11.641Z'
 - [JavaScript系列之立即执行函数IIFE](https://zhuanlan.zhihu.com/p/74440468)
 - [Practice CSS Like an Artist](https://mastery.games/post/practice-css/)
 - [React Context for Dependency Injection Not State Management](https://blog.testdouble.com/posts/2021-03-19-react-context-for-dependency-injection-not-state/)
+- [Drawing Graphics with the CSS Paint API](https://tympanus.net/codrops/2021/06/18/drawing-graphics-with-the-css-paint-api/)
+  - CSS Paint is an API that allows developers to programatically generate and draw graphics where CSS expects an image.
 # frontend-engineering
-
+- [Encoding data for POST requests](https://jakearchibald.com/2021/encoding-data-for-post-requests/)
 # backend-dev
 
 # more
