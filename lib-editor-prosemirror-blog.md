@@ -6,6 +6,14 @@ modified: '2021-06-15T00:07:49.228Z'
 ---
 
 # lib-editor-prosemirror-blog
+# guide
+
+
+- prosemirror-experts
+  - https://github.com/benrbray
+    - https://github.com/benrbray/noteworthy
+    - https://github.com/benrbray/prosemirror-math
+  - 
 
 # [富文本编辑器Prosemirror - 入门](https://zhuanlan.zhihu.com/p/263454334)
 - prosemirror-model：

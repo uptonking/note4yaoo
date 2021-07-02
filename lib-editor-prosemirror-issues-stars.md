@@ -7,12 +7,89 @@ modified: '2021-06-16T14:13:27.162Z'
 
 # lib-editor-prosemirror-issues-stars
 
-# good-issues
+# issues-not-yet
+- plugin props vs editorView props
+  - editorView props多两个参数
+    - state, dispatchTransaction
+  - plugin props
+    - Props that are functions will be bound to have the plugin instance as their `this` binding.
+
+- [editable islands](https://github.com/ProseMirror/prosemirror/issues/745)
+  - I think I am going to consider this kind of DOM structure (editable islands) unsupported. 
+  - Even if you can sort of make it work with kludges, I expect it to break in all kinds of interesting ways in corner cases. 
+  - Usually, the structure of the node view can easily be adjusted to put the uneditable content in a node that's not a parent of the editable content, 
+  - and in cases where that is really impossible, I recommend nesting a separate ProseMirror instance for the content and broadcasting the steps to the parent document (as in the footnote demo).
+- [Replicating Typora’s Inline/Display Math Editing](https://discuss.prosemirror.net/t/replicating-typoras-inline-display-math-editing/2906)
+  - https://codesandbox.io/s/prosemirror-katex-toggle-y25u4
+  - 能切换渲染和编辑状态
+- 如何实现不可编辑
+  - filter transform actions, reset to old state
+# issues-good
 - ## 
 
 - ## 
 
-- ## 
+- ## I want to put a Handsontable widget in prosemirror, can you give me a hint about the schema and how?
+- https://discuss.prosemirror.net/t/handsontable-widget/3872
+- There’s roughly two approaches here. Both would involve a node view that renders your table nodes using Handsontable.
+  - You can **model the whole table in your ProseMirror schema**, and carefully map changes in the table control to the proper ProseMirror steps (and vice versa, sync the table when its ProseMirror representation changes). This would make it possible to do collaborative editing inside the table.
+  - You can treat the table as an opaque blob, and **either store it elsewhere or put a representation of its content in a node attribute**. Syncing would be all-or-nothing, which may require some additional logic to keep the selection inside the table intact.
+
+- ## ProseMirror + Math at Desmos
+- https://discuss.prosemirror.net/t/prosemirror-math-at-desmos/707
+  - https://www.desmos.com/calculator
+  - 可直接输入 `y = sin(x)` 查看效果
+  - To move from the math node to prosemirror, we hook into `MathQuill` handlers and trigger a selection transaction and a `view.focus` . 
+  - To go the other direction, we need to know whether we are entering the node from the left or the right. 
+  - **In each math node, we listen for state selection changes (via a plugin)**, and remember whether on the last transaction the cursor was ahead of the node or behind. 
+  - Then we use that info in the `selectNode` callback.
+- Very nice! The crossing of the border between the formula and the other text feels entirely natural.
+- I’m curious about your final design choices for the Desmos node. Did you end up converting it to a leaf node, and run into issues with cursor boundaries? 
+  - We ended up making it a non-leaf node with `text*` content. 
+  - It has a custom `NodeView` , which is controlled by MathQuill.
+  - Transitioning the cursor was tricky. We ended up having to **monitor every transaction on the PM view**, and monitoring whether the cursor was before or after a given MathQuill node. Then, when focus entered the MathQuill node we knew whether to place the (internal, MathQuill) cursor at the beginning or the end of the content. From PM’s point of view, the whole node is selected the entire time we are editing the node.
+
+- ## Replicating Typora’s Inline/Display Math Editing
+- https://discuss.prosemirror.net/t/replicating-typoras-inline-display-math-editing/2906
+  - https://codesandbox.io/s/prosemirror-katex-toggle-y25u4
+  - A: Show math as LaTeX code while the cursor is inside the math node. As soon as the cursor leaves the node, render using KaTeX
+  - B: Changing the cursor position by clicking/arrow keys should seamlessly transition between these two modes.
+  - it seems like NodeViews are the right tool to use. I have tried two approaches
+- Attempt #1: Using contentDOM
+  - Set a contentDOM in the NodeView, so that ProseMirror is responsible for managing the appearance/editing of the NodeView
+  - This successfully achieves Property B (cursor movement with arrow keys behaves as expected), but I cannot get Property A to work (toggling katex/code views).
+  - The reason seems to be that NodeViews with a `contentDOM` have no way of knowing when the editing cursor has left the NodeView. (they only receive `setSelection` events, not selectNode and deselectNode).
+- Attempt #2: Without contentDOM
+  - Without contentDOM, the NodeView is responsible for its own rendering/editing, as in the footnotes example
+  - this approach succeeds at Property A (toggle math editor), but unfortunately I am struggling to implement Property B, as the cursor is always set to the first position in the NodeView
+- Attempt #3: Plugin with arrowHandler
+  - I have also tried adapting the arrowHandler from the CodeMirror example 4 to detect from which side the cursor enters / leaves the NodeView. However, I’m not sure how to pass this information along to the NodeView. 
+- This was an issue that I ran into when developing the math+text feature for Desmos. 
+  - we do not use contentDom in our implementation, but use MathQuill for WYSIWYG latex editing
+  - The solution for us was to listen to PM transactions using the `EditorView.dispatchTransaction` property. 
+  - On every transaction, we look at the new selection in the EditorState, and save a piece of state on each NodeView, telling it whether the current selection is before or after the NodeView.
+  - Then, when `selectNode` is triggered, we know which direction we approached the node from.
+- The best I could come up with was below, where I maintain my own list of NodeViews that I create.
+  - However, passing around these closures feels dirty to me
+  - This method also updates every NodeView in the document every time the selection changes, which may cause performance issues if there are hundreds or thousands of math blocks. 
+  - However, we can probably avoid calling updateCursorPos() on each one by e.g. keeping them sorted by position and calling it only on the ones we know have changed after each transaction.
+- The reason seems to be that NodeViews with a `contentDOM` have no way of knowing when the editing cursor has left the NodeView.
+  - They don’t, but they do know which node decorations are active on their node. So you could have a plugin that maintains a “the cursor is in this math node” **decoration**, and respond to that in the node view.
+- ProseMirror relies on native browser cursor motion in most cases. Setting the math block to `contenteditable=false` might help a bit, though I’m not sure.
+
+- ## ContentEditable=false with NodeViews causing weird selection behavior
+- https://github.com/ProseMirror/prosemirror/issues/553
+- When you create a custom node view without a `contentDOM` property, you're declaring that that node isn't edited in the regular `contentEditable` way, so having its `contentEditable` attribute set to `false` is intentional.
+  - Having a cursor in non-editable content is not supported (and probably not a good idea in general).
+- That is pretty much what happens here -- the non-editable node is a block node, so if you can't put the cursor inside it, the cursor will skip it. That's how `contentEditable` deals with uneditable block nodes, and I think it is appropriate.
+- Selecting the whole element when you arrow onto it is definitely doable with a plugin. 
+  - This is the default behavior for leaf nodes, but since yours has content, that logic doesn't apply to it. 
+  - It might be worthwhile to have another flag, `directlySelectable` or so, for cases like this. 
+  - If you, as a test, remove the `nearestDesc.node.isLeaf` test from the `readFromDOM` method in `prosemirror-view/dist/selection.js` , is the resulting behavior what you want?
+
+- ## Invalid position when calling coordsAtPos()
+- https://discuss.prosemirror.net/t/invalid-position-when-calling-coordsatpos/628
+- When you (or the default `dispatchTransaction` method) calls updateState, the view is updated synchronously, except when `if (this.view.inDOMChange) {}`
 
 - ## NodeView reconstruction
 - https://github.com/ProseMirror/prosemirror/issues/851
@@ -39,11 +116,15 @@ modified: '2021-06-16T14:13:27.162Z'
   - I almost think “view” should just be called “effects”
 
 - ## [How can I communicate from a plugin to a custom nodeView?](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
-- when the node attributes of the custom nodeView change and therefore the underlying doc changes, I just replace the node and all works as expected.
-  - But now I would like to communicate to the nodeView, without actually changing the node. So I tried to set from my plugin a node decoration on that nodeview (putting my payload into the spec argument). Unfortunately at my custom nodeView, the update method (where I expect to get access to the payload in the decoration spec object) never gets called.
+  - when the node attributes of the custom nodeView change and therefore the underlying doc changes, I just replace the node and all works as expected.
+  - But now I would like to communicate to the nodeView, without actually changing the node. So I tried to set from my plugin a node decoration on that nodeview (putting my payload into the spec argument). 
+  - Unfortunately at my custom nodeView, the `update` method (where I expect to get access to the payload in the decoration spec object) never gets called.
 - Is this the recommended way to communicate from a plugin to a NodeView?
-  - I have a similar situation where a plugin gets external data that various NodeViews use. I need those NodeViews to update (re-render) themselves when that external data changes. So I really just need a way to tell prosemirror to re-render the NodeViews.
-  - From this thread it seems possible to decorate the NodeViews and then update the decorations when the external data changes. The decoration change will then trigger prosemirror to re-render the NodeViews. It seems like a round about way to force a re-render but if its the best way then I’ll do it
+  - I have a similar situation where a plugin gets external data that various NodeViews use. 
+  - I need those NodeViews to update (re-render) themselves when that external data changes. So I really just need a way to tell prosemirror to re-render the NodeViews.
+  - From this thread it seems possible to decorate the NodeViews and then update the decorations when the external data changes. 
+  - The decoration change will then trigger prosemirror to re-render the NodeViews. 
+  - It seems like a round about way to force a re-render but if its the best way then I’ll do it
   - Yes. it's recommended
 
 - ## [How can i insert a react component as a node](https://discuss.prosemirror.net/t/how-can-i-insert-a-react-component-as-a-node/2455)
@@ -61,10 +142,10 @@ modified: '2021-06-16T14:13:27.162Z'
 
 - ## prosemirror: react integration
 
-- [Using with React](https://discuss.prosemirror.net/t/using-with-react/904)
+- ### [Using with React](https://discuss.prosemirror.net/t/using-with-react/904)
 - The issue with React-based NodeViews isn’t that it’s undoable, it is just that the interfacing & gluing between the NodeViews, Schema and Plugins (with the event dispatching and portals) is quite difficult to make.
   - So immediately if you want to create a plugin system on top of that implementation, you’ll have to start thinking how to join all the parts (normal plugins + schema + nodeviews (as the React components) + possible toolbar buttons & actions) together. 
-  - What I got stuck before I got too busy doing other things was the implementing of the event-flow from the actions/key-press plugins to the plugin state, which would then notify the React components through an event-dispatcher. 
+  - What I got stuck before I got too busy doing other things was the **implementing of the event-flow from the actions/key-press plugins to the plugin state, which would then notify the React components through an event-dispatcher**. 
   - There’s an example in the Atlassian repo if you want to a crack at it.
 - @johnkueh you’ve done quite a decent starter for the React + PM combo. Very impressive. You got the whole plumbing into a simple React hook
   - If you want to hear my opinion/feedback, I would maybe separate some stuff from the `ReactNodeView` as it seems a bit cluttered(杂乱的). 
@@ -116,7 +197,7 @@ modified: '2021-06-16T14:13:27.162Z'
   - But then things like dragging seem to be broken (and the official nodeViews example also has it not stripped out). 
   - So the schema `toDOM()` function needs to be kept, to allow a node to be serialized for special purpose such as drag and drop ?
 - Yes, a **node view is used when the node is displayed inside the editor**, 
-  - but you’ll still need some way to turn the node into semantic HTML for `copy/paste` and `drag/drop` (and possibly also `export/import` , if you use HTML for that) reasons.
+  - but **you’ll still need some way to turn the node into semantic HTML for `copy/paste` and `drag/drop` ** (and possibly also `export/import` , if you use HTML for that) reasons.
 - Suggestion: maybe prosemirror could use the dom created by the nodeView to get a default serialization of the node ?
 
 - ## [Draggable and NodeViews](https://discuss.prosemirror.net/t/draggable-and-nodeviews/955)

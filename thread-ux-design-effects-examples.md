@@ -15,6 +15,19 @@ modified: '2021-05-10T04:06:02.843Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## here's a new viz celebrating how awesome she is
+- https://twitter.com/juditbekker/status/1410926462211854337
+  - https://www.behance.net/gallery/122698727/Amy-Adams-filmography
+  - 背景图片被文字划分为网格了
+
 - ## @14islands/r3f-scroll-rig allows you smooth-scroll html and canvas in lockstep. 
 - https://twitter.com/0xca0a/status/1407643826890723330
   - 包括二维形变动画、三维位移动画，超级棒

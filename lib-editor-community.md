@@ -91,7 +91,17 @@ modified: '2021-05-14T12:04:55.412Z'
 
 - ## 
 
-- ## 
+- ## Curvenote - scientific editor, explorable explanations & floating comments
+- https://discuss.prosemirror.net/t/inlining-a-node-for-a-comment-plugin-or-best-to-use-marks/2391
+  - Interactive widgets using web-components
+  - Suggestion framework
+  - sidenotes
+- Right now the inline references are a decoration, but if that reference gets lost (e.g. through a cut/delete), the comments fall back to being referenced at the “block” level, which seems ok for now. The sidenote framework does work with multiple inline references pointing to the same note/comment though, so looking forward to getting this feature in. I will see if there is anything we can do to make it generalizable.
+- how do you manage syncing? Do you use some library that utilizes IndexedDB (such as RxDB)
+  - With regard to syncing, we are currently just using the standard prosemirror collaboration module. Our product is built on top of firebase at the moment, and we are using their real-time infrastructure to help keep things in sync. All of our changes are dispatched to our redux state as a middleware of sorts to prosemirror - and that is where we add the collaboration, and keep various views of the editor in sync.
+- With regard to the web-components, we were using them as just other nodes (not even node-views) for a while, and then wrapped them in this class which basically adds right click ability. The only reason we didn’t do that in the web-components directly was that it is a different library and that was out of scope. 
+- Making everything flow through Redux seems appropriate as it avoids managing various event listeners. It seems you’ve separated the UI & API state into Redux stores and PM specific state into plugins?
+  - To connect back up to application logic, we are just using the same redux store in both places (including relevant prosemirror-plugin state). That redux store is also responsible for the editor state (just holds a reference to prosemirror-state). This also means that the state is available for other application components through selectors/actions/etc.
 
 - ## [在线编辑器, 多人同时编辑, 如何设计undo/redo的逻辑?](https://www.zhihu.com/question/367915946)
 - 感觉有三种模式:

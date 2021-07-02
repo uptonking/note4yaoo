@@ -27,8 +27,14 @@ modified: '2021-06-02T17:12:56.049Z'
 - tips
   - cursor-motion, mouse-actions, typing都由browsers处理
 
+- repeat
+  - prosemirror state updates happen by applying a transaction to an existing state, producing a new state.
+    - pm-state的更新一般都是这一种方式
+    - 所以外部更新pm-state的事件处理函数一般都要在这个流程中注册
+
 - ref
   - [Marijn Haverbeke's blog](https://marijnhaverbeke.nl/blog/)
+  - [Pragmatic ProseMirror guide/cookbook](https://github.com/PierBover/prosemirror-cookbook)
 # overview
 - ProseMirror tries to bridge the gap between editing explicit, unambiguous content like Markdown or XML, and classical WYSIWYG editors.
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
@@ -279,6 +285,7 @@ let doc = schema.node("doc", null, [
   - but the document's tree shape, along with the fact that each node knows its size, is used to make by-position access cheap.
 - Each node has a `nodeSize` property that gives you the size of the entire node, and you can access `.content.size` to get the size of the node's content. 
   - TextNode的`content`为空数组`[]`，文本内容保存在`text`属性中
+  - text nodes are different from other nodes, and don’t have a `type` or `attrs`. You’ll have to wrap them in some node if you want to use `setNodeMarkup`, or use mark add/remove steps if you want to change the set of marks on the text.
 - Interpreting such position manually involves quite a lot of counting. 
   - You can call `Node.resolve` to get a more descriptive data structure for a position.
   - This data structure will tell you what the parent node of the position is, what its offset into that parent is, what ancestors the parent has, and a few other things.
@@ -593,6 +600,7 @@ function draw() {
   - possibly by inspecting the changes in the transaction, or based on plugin-specific metadata attached to the transaction.
 - the `decorations` prop simply returns the plugin state, causing the decorations to show up in the view.
 
+
 - ### Node views
 - There is one more way in which you can influence the way the editor view draws your document. 
 - Node views make it possible to define a sort of miniature UI components for individual nodes in your document. 
@@ -764,4 +772,3 @@ function deleteSelection(state, dispatch) {
   - Zero configuration support for Server Side Rendering (SSR).
   - Cross platform and cross-framework, with an Angular solution coming later this year.
 # ref
-- [Pragmatic ProseMirror guide/cookbook](https://github.com/PierBover/prosemirror-cookbook)

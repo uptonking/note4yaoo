@@ -14,9 +14,13 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## Does any static site generator have a market for themes and/or people that sell themes for it?
+- https://twitter.com/rauschma/status/1410627179772354565
+- https://themeforest.net/search/gatsby
 
-- ## 
+- ## 宇树科技推出了面向普通消费者的机器狗，售价1.6万~2万人民币，天猫现在就能预订，10月之前发货。
+- https://twitter.com/ruanyf/status/1410769253972647939
+  - 这个机器狗能够自主跟随和避障，有强大的保持平衡能力，跌倒可以爬起来。价格只有波士顿动力公司同类产品的十分之一
 
 - ## What are some visual application builders for the web where you only have a limited range of built-in components but they’re all high-level (e.g. grid/list that can bind to data)? Like Access+VBA but for today
 - https://twitter.com/dan_abramov/status/1410342969786486786

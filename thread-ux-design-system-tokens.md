@@ -10,8 +10,17 @@ modified: '2021-05-14T10:08:51.423Z'
 # guide
 
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## why don't more people talk about asian typographic design!!! the latin alphabet could never
+- https://twitter.com/milkjuus/status/1410034123662532608
+- Middle Eastern can be quite beautiful too!
 
 - ## @radix_ui Colors launching very soon.
 - https://twitter.com/colmtuite/status/1392833951803211779

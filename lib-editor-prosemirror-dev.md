@@ -12,8 +12,6 @@ modified: '2021-05-06T09:39:53.522Z'
   - 光标、选区、输入法、键盘事件
   - 首屏渲染完成后，用户输入文本时，是否还需要走一次完整的解析渲染流程
 
-- plugin vs node view
-
 - tips
   - 一个prosemirror document是一个无依赖的普通js object对象，所以实现第三方renderer也可行
   - 如果关注的重点是markdown和table，那就将更多的工作放在prosemirror层，增强通用性，将react wrapper层的工作尽量减少，方便迁移
@@ -32,8 +30,9 @@ modified: '2021-05-06T09:39:53.522Z'
   - more-react: smartblock, curvenote(redux), nib-edit, xen-editor, czi-prosemirror, pubpub-editor, licit, Aditor
   - more-vanillajs: stacks-editor, milkdown, bangle.dev, tui.editor.v3, emirror, kangxi-editor, pageboard/client(页面搭建)
 
-
-
+- todo
+  - vscode-prosemirror
+  - prosemirror-handsontable/other-table
 # pieces
 
 # examples-remark-parse
@@ -68,9 +67,6 @@ modified: '2021-05-06T09:39:53.522Z'
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
 
-- https://github.com/dminkovsky/use-prosemirror
-  - This package lets you bootstrap a minimal, unopinionated React integration quickly
-  - Separates state and presentation so you can keep your state as high up as necessary.
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
   - copy the approach by Atlassian editor_v20201205
   - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
