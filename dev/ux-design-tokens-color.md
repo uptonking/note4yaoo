@@ -59,15 +59,11 @@ modified: '2021-01-04T16:18:46.383Z'
   - 缺点
     - 依赖多，修改与定制难度大
     - 与业务结合不紧密
-
 # open-color
-
 - https://github.com/yeun/open-color
   - https://yeun.github.io/open-color/
   - open-source color scheme optimized for UI like font, background, border, etc.
-
 # color-palette
-
 - https://yoksel.github.io/handy-colors/#full-palette
   - 基于浏览器提供的css名，按颜色分类
 
@@ -92,7 +88,6 @@ modified: '2021-01-04T16:18:46.383Z'
 - Accessibility was one of our top priorities with Radix Colors.
   - Steps 11 and 12 are designed for text. They're guaranteed to pass 4.5:1 contrast ratio on top of white, step 1, step 2, and step 3.
 # color
-
 - requirements
   - themable: consistent and distinct look and feel
   - scalable: additive and no breaking change when updating
@@ -245,9 +240,7 @@ modified: '2021-01-04T16:18:46.383Z'
   - http://colormind.io/bootstrap/
   - https://uxpro.cc/toolbox/visual-design/colors/
   - https://www.dute.org/color-converter
-
 # interaction
-
 - choices
   - mouse
   - keyboard
@@ -318,9 +311,7 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref
   - https://material.io/design/interaction/states.html
   - https://polaris.shopify.com/design/interaction-states
-
 # typography
-
 - contrast 对比度
   - 文本色与背景色的“对比度”不足会导致美感不足，甚至视觉不适
   - 对比度是指显示屏上两种相邻颜色之间的亮度或发出光线的强度的差异计算值。这个比值的范围在1到21之间（通常写为 1:1 到 21:1）；该值越大，则对比度越高
@@ -342,10 +333,7 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref
   - https://zhuanlan.zhihu.com/p/45424881
   - https://usecontrast.com/guide
-
-
 # ant-design色彩
-
 - Ant Design将色彩体系解读成两个层面：系统级色彩体系和产品级色彩体系
   - 系统级色彩体系主要定义了蚂蚁中台设计中的基础色板、中性色板和数据可视化色板
   - 产品级色彩体系则是基于系统色彩进一步定义的符合功能、业务和产品调性的颜色
@@ -371,9 +359,7 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref
   - https://ant.design/docs/spec/colors-cn
   - https://zhuanlan.zhihu.com/p/32422584
-
 # Mineral UI
-
 - Mineral ui system contains a gray ramp that is used across themes, and several theme ramps.
 - Base color swatch
   - Base color is the dominant color within the themes; 
@@ -393,9 +379,7 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref
   - https://uxplanet.org/designing-systematic-colors-b5d2605b15c
   - https://mineral-ui.netlify.com/color
-
 # how-to-build-design-system
-
 - Design tokens are the atomic elements we use to store design related variables that describe things like colour, animation, spacing, fonts, shadows etc.
   - text, color, spacing, border
   - shadows, transition
@@ -410,9 +394,7 @@ modified: '2021-01-04T16:18:46.383Z'
 - ref-design-tokens
   - https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421
   - https://bradfrost.com/blog/post/interface-inventory/
-
 # components-examples
-
 - button
   - With buttons, interaction springs to life.
   - primary button
@@ -450,3 +432,5 @@ modified: '2021-01-04T16:18:46.383Z'
     - https://cloudfour.com/thinks/designing-button-states/
     - https://medium.com/eightshapes-llc/buttons-in-design-systems-eac3acf7e23
     - https://css-tricks.com/use-button-element/
+# ref
+- [Sorting colors in JavaScript](https://tomekdev.com/posts/sorting-colors-in-js)

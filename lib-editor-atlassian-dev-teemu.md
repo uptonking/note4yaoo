@@ -65,6 +65,18 @@ this.editorView.dispatch(tr);
   - EditorViewProvider，普通类，提供操作文档的方法，replaceDocument、replaceState
 
 - ReactEditorContext默认使用createDefaultProviders的返回值作为全局传递的value
+# codebase-minimal
+- 核心Editor组件
+  - 在componentDidMount()中创建edittorState和editorView
+  - shouldComponentUpdate()始终return false
+- plugins
+  - baseKeymap + undo/redo + blockquote
+- 定义了两种blockquote PMNode的schema，parseDOM都会解析为`tag: blockquote` PMNode
+  - pmBlockquote节点有attrs属性，且toDOM会渲染处attrs中的数据
+  - blockquote节点无attrs
+- 提供了blockquote的ReactNodeView
+  - 通过 ReactDOM.render 渲染react元素到this.dom
+  - 在ReactNodeView中，this.contentDOM会作为child添加到BlockQuoteReact组件的ref.current.append
 # discuss
 - ## useSsrLayoutEffect vs useLayout
 - https://github.com/styled-components/styled-components/issues/3369

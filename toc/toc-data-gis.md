@@ -20,3 +20,6 @@ modified: '2021-01-04T16:20:47.941Z'
 
 - https://github.com/martgnz/bcn-geodata
   - The official shapefiles of Barcelona, converted to GeoJSON and TopoJSON
+
+- https://www2.gov.bc.ca/gov/content/data/geographic-data-services/lidarbc
+  - This LiDAR data includes LAZ point cloud data and various LiDAR-derived products.

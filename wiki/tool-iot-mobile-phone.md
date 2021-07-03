@@ -33,3 +33,7 @@ modified: '2020-12-22T12:40:40.412Z'
 - 防摔
   - Motorola Force
   - 三星 active系列
+
+# cpu
+
+- [高通处理器规格表](https://www.mydrivers.com/zhuanti/tianti/01/index_gaotong.html)
