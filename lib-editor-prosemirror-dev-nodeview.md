@@ -9,6 +9,11 @@ modified: '2021-07-02T18:24:12.955Z'
 
 # guide
 
+- 基于react组件实现NodeView要注意区分两处逻辑
+  - 一般在NodeView class的constructor()方法中创建react VDOM
+  - 然后在NodeView class的update()方法中更新vdom
+  - 更新时常使用event-emitter模式
+
 - problems
   - how to manage a list of NodeViews
   - complicated/big nodeview

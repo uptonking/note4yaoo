@@ -13,7 +13,20 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## I've noticed @dai_shi and a couple others have been trying to figure out how to do this **atomic rendering** thing.
+- https://twitter.com/RyanCarniato/status/1411704881807691780
+  - This probably can be applied to any reactive library.
+  - [SolidJS: Reactivity to Rendering](https://indepth.dev/posts/1289/solidjs-reactivity-to-rendering)
+  - [jotai-jsx is an experiment to run jotai web app without react.](https://twitter.com/RyanCarniato/status/1411704122722557959)
+- For everyone's information I've applied the same to Knockout, Vue Reactivity, MobX, RxJS and see very similar performance. Solid's obviously the most tuned for this case and has a ton more features built on top.
+  - But I released the generalizable approach: https://github.com/ryansolid/dom-expressions
+  - DOM Expressions is a Rendering Runtime for reactive libraries that do fine grained change detection. 
+  - These libraries rely on concepts like Observables and Signals rather than Lifecycle functions and the Virtual DOM. 
+- Looks nice for creating components. I wrote a reactive library earlier this year for Svelte https://formula.svelte.codes 
+  - Under the hood its vanilla JS and Svelte stores, but that could be made more generic like RxJS (I wish the DOM has reactive Set and Map)
+- The real cool part of this approach is it is decoupled from the components which lets it scale apart from them. People are having fun playing around with reactivity right now, but this has profound architectural benefits.
+- 
+- 
 
 - ## Logux is a framework to build real-time web apps with:
 - https://twitter.com/sitnikcode/status/1395070650927169536
@@ -22,8 +35,6 @@ modified: '2021-01-08T17:13:53.965Z'
   - Optimistic UI and Offline data editing
   - It hides all complexity by replacing the idea of request/response to background action log sync.
 - Our new Logux State state manager in 159 bytes (!) for React/Vue/Svelte which is great even outside Logux.
-
-
 
 - ## I think web framework's biggest sin might be coupling their template systems with their component models.
 - https://twitter.com/justinfagnani/status/1387788178333966337
@@ -321,7 +332,7 @@ modified: '2021-01-08T17:13:53.965Z'
   - For the refactoring I thought to use a similar technique to Replace Type Code with Subclasses. 
   - The idea with this technique is to remove the type from the main class and replace it with specific type sub classes.
 
-``` JSX
+```JSX
 // Refactor this 👇
 <InvoiceDetails invoice={invoice} theme={Theme.Simple} />
 <InvoiceDetails invoice={invoice} theme={Theme.Modern} />

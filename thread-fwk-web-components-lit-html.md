@@ -11,7 +11,13 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## Merged the first draft of the Context Protocol into the web components community protocols!
+- https://twitter.com/justinfagnani/status/1411126244368740353
+  - This proposes a context API that's interoperable across web component implementations, 
+  - and because it's event-based, even framework components.
+- This is part of a broader effort to layer cross-component coordination and framework-like features on top of the base component model
+  - We're also working on SSR, hot-module replacement, things similar to Suspense, and more.
+- Especially love the event-based approach. Intuitive and simple enough to be successful and potentially very powerful.
 
 - ## Counter argument; there is an even bigger ecosystem of vanilla JS libraries that often integrate nicely with Svelte more than React, since Svelte has regular events/bindings. 
 - https://twitter.com/DanaWoodman/status/1390030682789859329

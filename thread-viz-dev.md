@@ -11,6 +11,17 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## With 0.5M+ downloads/month, Dash is the new standard for AI & data science apps. 
+- https://twitter.com/plotlygraphs/status/1411395563711389696
+  - Dash apps go where Tableau and PowerBI cannot... NLP, object detection, predictive analytics, and more. 
+  - 给出了三维散点图的例子
+
 - ## CSS utility classes meet Custom Properties to style HTML elements as charts.
 - https://twitter.com/smashingmag/status/1374266140990566400
   - https://github.com/ChartsCSS/charts.css

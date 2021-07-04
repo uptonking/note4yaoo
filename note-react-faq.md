@@ -11,6 +11,8 @@ modified: '2020-06-30T12:51:08.791Z'
 
 - ~~`React.forwardRef()` 是高阶组件吗~~
 
+- 包含ref的react组件，ref指向的dom是由react更新/rerender吗
+
 - createPortal的render、commit过程是怎样的
   - 注意createPortal()方法的返回值是存在children属性的ReactElement
   - createPortal()是否存在commit phase?

@@ -13,7 +13,10 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## `export default thing` is different to `export { thing as default }`
+- https://jakearchibald.com/2021/export-default-thing-vs-thing-as-default/
+- Imports are references, not values
+- But 'export default' works differently. 导出的是快照值
 
 - ## don't let friends write JS functions with multiple optional parameters, each of which can have multiple overloaded values and behaviors
 - https://twitter.com/acemarke/status/1409971795894181904

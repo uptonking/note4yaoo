@@ -24,7 +24,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Check out my work on User Adaptive Interfaces 
+- https://codepen.io/newerkey/pen/LYWdzEO
+  - 常用设置界面，勾选、滑动条
 
 - ## Click to open... Pure #CSS, but a lot of it 
 - https://twitter.com/amit_sheen/status/1410178652193574915

@@ -10,6 +10,61 @@ modified: '2021-06-10T06:44:27.120Z'
 # faq
 ## 
 
+## 
+
+## 
+
+## 
+
+## [If using `forceUpdate()` is discouraged, how should components react to change events in the model?](https://stackoverflow.com/questions/35617580)
+
+```JS
+// user.js
+
+export default class User extends EventEmitter {
+  constructor(args) {
+    super();
+    this.id = args.id;
+    this.isActivated = args.isActivated || false;
+  }
+  activate() {
+    this.isActivated = true;
+    this.emit('change');
+  }
+}
+
+// UserView.jsx
+
+export default class UserView extends React.Component {
+  componentDidMount() {
+    this.props.user.on('change', this.onUserUpdate);
+  }
+  onUserUpdate() {
+    this.forceUpdate();
+  }
+  render(
+    var user = this.props.user;
+    return (
+      <div>
+                <span>User {user.isActivated ? 'is' : 'is not'} activated.</span>
+                <button onClick={user.activate()}>Activate</button>
+            </div>
+    );
+  );
+}
+
+// app.js
+
+var user = new User({ id: 123 });
+ReactDOM.render(<UserView user={user} />, container);
+```
+
+- React will automatically render the component when either the props or state change.
+  - If you have a model with changing properties, then you should either keep it in the component's local state.
+  - An (arguably) more elegant way to solve this problem would be to use a simple object without any instance methods to represent users. Then write a set of pure operation functions that return new user objects reflecting the changes.
+
+- It sounds like you might benefit a lot from the Flux architecture. Move your state out of your components and into higher level stores that components can subscribe to. Then you can map your models directly to props, that will re-render the component when they change.
+
 ## useEffect vs useLayoutEffect
 
 - [useEffect vs. useLayoutEffect in plain, approachable language](https://blog.logrocket.com/useeffect-vs-uselayouteffect/)
@@ -30,7 +85,6 @@ modified: '2021-06-10T06:44:27.120Z'
 
 - I’ll highlight three examples that amplify the significance of the differences between useEffect and useLayoutEffect.
   - https://codesandbox.io/s/useeffect-uselayouteffect-time-of-execution-2-kqnqp
-
 
 ## 使用ReactDOM.createPortal和ReactDOM.render的区别
 

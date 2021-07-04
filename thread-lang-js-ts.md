@@ -20,12 +20,26 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## I often use JavaScript Maps and Sets and often have to enumerate over them. 
+- https://twitter.com/trueadm/status/1411457860698005504
+  - I benchmarked this about a year ago, and found extracting an array via `Array.from` and then looping over was fastest. 
+  - Now it turns out `for…of` on the Map/Set is fastest. How things change.
+- This was consistent between all browsers JS engines too. 
+  - Interestingly, JSC (Safari) performs really well for cloning Sets and Maps via using the `constructor` .
+  - `const clone = new Map(oldMap)` // clone
+  - Every other JS engine performs better if you manually loop over and copy into the clone.
+  - I mean using the `constructor` is by far the nicest way of doing it. I'd love it if the folks working on V8 and SpiderMonkey could optimize this code-path like the folks working on JSC have.
+  - Probably not worth micro optimising then?
+  - I think it is. I've found compilers and parsers to be good use-cases where these operations are frequent enough to translate into seconds of build time performance.
+- The problem of course is the polyfill. Using the Babel polyfill for `for…of` statements means performance drops dramatically. Almost to the point where you consider not using them still.
+- This week I found a >2x perf win on latest V8 by switching some heavy nested object iteration from `for (var [k, v] of Object.entries(o)) ` to `for (var k in o)` .
+  - The use-case was to accumulate an array of all keys two levels deep.
+  - Yup, for/in is much faster especially if your objects have stable shapes; especially in unoptimized code. Be careful with microbenchmarks. (But only if it matters...)
 
 - ## alias vs dot in property accessors
 - https://twitter.com/tannerlinsley/status/1408919939168100353
 - You can always alias in a destructure, but these days I’m destructuring way less than I used and most others. Keeping context for variables/properties is actually extremely helpful
-  - Keeping context is a plus, and also TypeScript likes it more. For react-query, the `status` field and the derived booleans can narrow the type of `data` and `error`, but that doesn’t work if you destruct
+  - Keeping context is a plus, and also TypeScript likes it more. For react-query, the `status` field and the derived booleans can narrow the type of `data` and `error` , but that doesn’t work if you destruct
 - Same here. Even stopped destructuring component props. Namespaces help me know where variables come from.
   - Also less worrying about name conflicts
 
