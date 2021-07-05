@@ -32,9 +32,10 @@ modified: '2021-01-28T14:34:20.579Z'
   - Probably not worth micro optimising then?
   - I think it is. I've found compilers and parsers to be good use-cases where these operations are frequent enough to translate into seconds of build time performance.
 - The problem of course is the polyfill. Using the Babel polyfill for `for…of` statements means performance drops dramatically. Almost to the point where you consider not using them still.
-- This week I found a >2x perf win on latest V8 by switching some heavy nested object iteration from `for (var [k, v] of Object.entries(o)) ` to `for (var k in o)` .
+- This week I found a >2x perf win on latest V8 by switching some heavy nested object iteration from `for (var [k, v] of Object.entries(o))` to `for (var k in o)` .
   - The use-case was to accumulate an array of all keys two levels deep.
-  - Yup, for/in is much faster especially if your objects have stable shapes; especially in unoptimized code. Be careful with microbenchmarks. (But only if it matters...)
+  - Yup, `for/in` is much faster especially if your objects have stable shapes; especially in unoptimized code. Be careful with microbenchmarks. (But only if it matters...)
+  - When using `for…in` it's also recommended to use `hasOwnProperty` , which adds additional overhead.
 
 - ## alias vs dot in property accessors
 - https://twitter.com/tannerlinsley/status/1408919939168100353

@@ -13,9 +13,13 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-- ## 
+- ## Visualizing Distributions with Raincloud Plots (and How to Create Them with ggplot2)
+- https://twitter.com/icymi_r/status/1411713517166727174
+  - [Visualizing Distributions with Raincloud Plots (and How to Create Them with ggplot2)](https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/)
+  - 多个facet，散点图设计很棒
 
-- ## 
+- ## 广告牌上逼真的猫
+- https://twitter.com/cross_s_vision/status/1411966271566999555
 
 - ## analyzes the Sexual Orientation and Gender Identity Legal Index
 - https://twitter.com/tableaupublic/status/1410312356740141065

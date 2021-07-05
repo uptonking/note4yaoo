@@ -167,7 +167,13 @@ modified: '2021-06-12T02:41:33.389Z'
 
 - ## 
 
-- ## 
+- ## Minimal UI Math Editor - Treena
+- https://discuss.prosemirror.net/t/minimal-ui-math-editor-treena/3117
+- can you share how you implemented the type ahead. i know there are a bunch of open source implementations ( `atlaskit` , `prosemirror-suggest` ), did you use any of those ?
+  - So i based the insert menu on the code in the `prosemirror-mentions` package. 
+  - I basically refactored the code to remove reliance on the included schemas in that package. 
+  - The code is quite flexible so i just added a `fuzzy-search` for the displayed elements and a custom callback for each of the options. 
+  - The callbacks are super similar to the included prose functions such as toggleMark! I hope thats helpful!
 
 - ## parseDom Content for Inline Node (footnotes)
 - https://discuss.prosemirror.net/t/parsedom-content-for-inline-node-footnotes/642

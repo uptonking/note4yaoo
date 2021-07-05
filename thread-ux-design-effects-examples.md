@@ -21,7 +21,10 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## Plockle now supports hand tracking! I've also decided to open source my hand tracking module
+- https://twitter.com/CROEWENS/status/1411746127418888193
+  - https://github.com/driescroons/react-xr-default-hands
+  - 需要vr支持，展示手部操作
 
 - ## here's a new viz celebrating how awesome she is
 - https://twitter.com/juditbekker/status/1410926462211854337

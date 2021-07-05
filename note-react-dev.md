@@ -162,16 +162,16 @@ class PureComponent extends Component {
   - ref
       - https://stackoverflow.com/questions/39226757/react-passing-parameter-with-arrow-function-in-child-component
       - https://stackoverflow.com/questions/47679673/how-does-event-handlers-with-arrow-functions-achieve-context-binding
-- 通过 `cloneElement(element` , [extraProps], [...children])直接给children添加新props，灵活性很高
+- 通过 `cloneElement(element , [extraProps], [...children])`直接给children添加新props，灵活性很高
   - 参考案例包括react-draggable/resizable
-  - 通过 `createElement(children` , props, children)也能直接给children添加新属性
+  - 通过 `createElement(children , props, children)`也能直接给children添加新属性
 - `getDerivedStateFromProps(props, state)`
   - 会在调用render()方法前调用，具体包括
-      - 首次挂载时在调用constructor之后
-      - 接收到new props之后
-      - 调用setState()之后，此时getDerivedStateFromProps方法参数的state已更新
-      - 调用forceUpdate()之后
-  - 参考 
+    - 首次挂载时在调用constructor之后
+    - 接收到new props之后
+    - 调用setState()之后，此时getDerivedStateFromProps方法参数的state已更新
+    - 调用forceUpdate()之后
+  - ref
       - https://stackoverflow.com/questions/51019936/why-getderivedstatefromprops-is-called-after-setstate
 - getSnapshotBeforeUpdate() 
   - is invoked right before the most recently rendered output is committed to e.g. the DOM. 
@@ -186,16 +186,16 @@ class PureComponent extends Component {
 
 ```js
 React.cloneElement(
-  element,
-  [props],
-  [...children]
-)
-```
+    element,
+    [props],
+    [...children]
+  )
 
-  - is almost equivalent to   
+  // is almost equivalent to   
 
-```js
-<element.type {...element.props} {...props}>{children}</element.type>
+<element.type { ...element.props } { ...props }> 
+  { children }
+</element.type>
 ```
 
 - 条件渲染

@@ -7,8 +7,9 @@ modified: '2021-06-12T02:40:42.535Z'
 
 # lib-editor-prosemirror-issues
 
+# issues-not-yet
+- 测试一下哪个优先级更高：plugins中一个plugin.nodeViews vs EditorView的props.nodeViews
 # issues
-
 - ## 
 
 - ## 
@@ -19,7 +20,12 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
-- ## 
+- ## s there any way using keymap when ‘editable’ of the view is false
+- https://discuss.prosemirror.net/t/is-there-any-way-using-keymap-when-editable-of-the-view-is-false/3317
+- With `editable: false`, the `contenteditable` attribute on the document node is removed, which by default makes the browser disable keyboard focus for the element. 
+  - When the node isn’t focused, it doesn’t even receive keyboard events, so it’s hard to implement any keybindings for it.
+  - You could use the `attributes` prop  to add a `tabIndex=0` attribute to your editor to make it focusable. 
+  - But this might lead to some other key bindings also firing, and if those do change the document, `editable: false` (which works only on the DOM) level won’t stop them.
 
 - ## Make only part of a NodeView Draggable
 - https://discuss.prosemirror.net/t/make-only-part-of-a-nodeview-draggable/1145

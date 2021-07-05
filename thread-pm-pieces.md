@@ -12,7 +12,14 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ## 
 
-- ## 
+- ## 不同频道在相同的时间可以有不同的广告 
+- https://twitter.com/vixvix/status/1411762345957863425
+- 长知识了，怪不得我看到欧洲杯都是支付宝和抖音
+- 现在不都是虚拟广告牌了吗？赚钱最大化
+- Real time live rendering
+- Sportsvision, 根据场上相机焦距/角度等参数计算出来的实时AR效果, 现在已经应用非常广泛了, 似乎最开始是NFL显示虚拟首攻线先使用的
+- 由于广告牌是固定的，转播方在不同地区使用不同的滤镜，类似于在照片上增加呢一个图层。但这仅限于画面中固定不动的目标，像球员衣服上的广告在直播的时候就做不到这一点。另外，所谓的直播会比实际的比赛延迟几秒钟，这几秒钟用于计算滤镜处理的缓存时间。
+- 这个技术开始超出认知了，本届欧洲杯转播已经全面实现了么？这个比东京奥运会研究什么16K可牛X多了
 
 - ## Does any static site generator have a market for themes and/or people that sell themes for it?
 - https://twitter.com/rauschma/status/1410627179772354565

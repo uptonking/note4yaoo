@@ -8,6 +8,13 @@ modified: '2021-05-06T09:39:53.522Z'
 # lib-editor-prosemirror-dev
 
 # guide
+- prosemirror-pros
+  - modular and extensible
+
+- prosemirror-cons
+  - 不支持动态改变schema
+  - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
+
 - 编辑器问题
   - 光标、选区、输入法、键盘事件
   - 首屏渲染完成后，用户输入文本时，是否还需要走一次完整的解析渲染流程
@@ -54,8 +61,10 @@ modified: '2021-05-06T09:39:53.522Z'
   - Collaborative editor
   - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
 
-- more-remark
-  - notewothy
+- https://github.com/benrbray/noteworthy
+  - Markdown editor with bidirectional links and excellent math support
+  - 参考了prosemirror、zettlr、vscode、notable
+  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
 # examples-repos
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
@@ -101,13 +110,10 @@ modified: '2021-05-06T09:39:53.522Z'
   - 依赖prosemirror-markdown、codemirror6、katex，不依赖react、tiptap、rich-markdown-editor
   - a rich text editor built upon the ProseMirror framework. 
   - It is based off tiptap and rich-markdown-editor, but tries to stay agnostic to Vue and React.
-- https://github.com/paperbits/paperbits-prosemirror
-  - https://demo.paperbits.io/
-  - https://github.com/paperbits/paperbits-demo
-  - https://github.com/paperbits/paperbits-core
-  - Paperbits HTML editor based on ProseMirror.
 
 - https://github.com/MO-Movia/licit
   - http://greathints.com/licit/
+  - WYSIWYG editor based on ProseMirror & React
+  - 依赖express4、jquery、katex、react
   - 典型的适合学术论文的文档
-  - 服务端依赖python
+  - 服务端依赖python，实现了协作编辑、图片上传

@@ -28,7 +28,8 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## My rule of thumb is to insist that a user story must contain only one event. Only one "when".
+- https://twitter.com/alexbunardzic/status/1411368407048491009
 
 - ## Drone photographer Lior Patel followed a herd of sheep for several months, as the herd was shepherded(护送，牧羊人) to its summer pasture(牧场，工作状况). Entrancing and relaxing.
 - https://twitter.com/ariehkovler/status/1408878326370930690

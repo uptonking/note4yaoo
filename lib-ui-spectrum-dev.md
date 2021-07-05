@@ -9,4 +9,6 @@ modified: '2021-04-12T18:07:14.658Z'
 
 # guide
 
+- faq
+  - 对animation的支持
 # pieces

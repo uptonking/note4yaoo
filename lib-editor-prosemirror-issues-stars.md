@@ -27,7 +27,16 @@ modified: '2021-06-16T14:13:27.162Z'
 # issues-good
 - ## 
 
-- ## 
+- ## Scan the document to find links in paragraphs and mark them
+- https://discuss.prosemirror.net/t/scan-the-document-to-find-links-in-paragraphs-and-mark-them/2764
+- how can I scan a document to find unmarked URLs in nodes.
+- two ways of tackling the problem:
+  - Going through the document tree myself and scanning the `textContent` value of Text nodes to find URLs and then splitting them up. This would be my last resort as I believe there’s probably a better way of achieving this through prosemirror transactions or the transform package
+  - Listen for spaces and check if the last word is URL. If so, mark it as a link. It’s a little different from the actual request but it achieves a similar result and if that’s easier to do I would go this route. Similar behaviour can be found on Bitbucket that uses prosemirror
+
+- To do this for an entire document, you could call `doc.descendants`, and for every text node that’s not already a link, scan for URLs and build up a transaction with `addMark` changes whenever you find any.
+  - You could also express the update-on-space behavior as an input rule, but that’s a bit trickier, since it’s not a plain text replacement, and writing such rules that create their own transaction requires some non-obvious code. 
+  - And this won’t catch pasted or dropped URLs, or those that don’t have a space typed after them (because they are inserted before an existing space, at the end of a paragraph, etc), so that’s probably not the best way to do this.
 
 - ## I want to put a Handsontable widget in prosemirror, can you give me a hint about the schema and how?
 - https://discuss.prosemirror.net/t/handsontable-widget/3872

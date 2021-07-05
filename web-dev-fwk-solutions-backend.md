@@ -9,17 +9,16 @@ modified: '2021-04-17T15:30:00.844Z'
 
 # guide
 
+- ref
+  - [most popular backend frameworks 时间变化条形图 基于d3实现](https://statisticsanddata.org/data/most-popular-backend-frameworks-2012-2021/)
 # node as backend
-
 - ## [Node.js做Web后端优势为什么这么大？](https://www.zhihu.com/question/357717742/answers/updated)
 - 从没见过哪个后端开发语言的标准库比js还小的，连leftpad这种常用的功能还有一个npm库，难以想象
 
 - Node的DNA是异步的，而Java的主流框架底层都是同步的，包括io，jdbc等。而异步非阻塞是提高并发能力的不二法门。
   - 我们做过测试，阿里云2u2g的机器，一个http请求读redis的场景，node能做到8000并发，spring boot只能到2000多（一定要有io操作，http请求纯粹只返回一个字符串的场景node干不过spring）
   - 另外这个跟语法层面也有关系，js/ts的async/await是解决回调地域的完美方案，而java目前没有类似的方案，说到底，还是DNA的问题
-
 # backend-solutions
-
 - http-io
   - express
   - koa

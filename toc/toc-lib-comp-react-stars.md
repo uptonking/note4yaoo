@@ -29,6 +29,10 @@ modified: '2021-01-12T18:49:02.623Z'
   - Based on the WAI ARIA Authoring Practices Guide.
   - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
 # starred
+- https://github.com/tanvesh01/notion-components
+  - A React Component Library for the minimalists. 
+  - Highly inspired by Notion - The all-in-one workplace.
+
 - https://github.com/nikxda/react-xray
   - https://react-xray.vercel.app/
   - A component to reveal images on user interaction, written with TypeScript + React.

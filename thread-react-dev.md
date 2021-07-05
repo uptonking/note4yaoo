@@ -16,7 +16,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## React/Preact friends, if you were to use global components (think design system primitives), would you prefer them to be lowercase/uppercase? 
+- https://twitter.com/souporserious/status/1411751597135175682
+  - Imports aren't required since they are added with a babel plugin.
+  - High-level goal is to describe global components that compile to any platform similar to react-primitives. 
+  - Biggest difference is relying on babel rather than a reconciler so we can optimize at build time. 
+  - Also, playing with no imports since these are special components
+- Personally I prefer uppercase because it doesn’t confuse elements and components, but global with uppercase can get messy with tooling.
+- I would recommend uppercase (importable), I think even the React team suggests that. This is coming from the TS perspective where adding primitive JSX constructor tags can be somewhat painful.
 
 - ## Simple pattern to reduce the pain of “prop drilling”: Consider using an object instead of separate props.
 - https://twitter.com/housecor/status/1410581176914530305

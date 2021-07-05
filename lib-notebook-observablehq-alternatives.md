@@ -39,6 +39,11 @@ modified: '2021-05-14T14:46:37.026Z'
   - Simple toolkit for reading and writing data CSV and JSON files
   - Consider using data-forge-ts for data transformation, analysis and visualization
 
+## jupyter-notebook-extensions
+
+- https://github.com/MarcSkovMadsen/panel-highcharts
+  - panel-highcharts package makes it easy to use Highcharts from Python for exploratory analysis in a Jupyter Notebook or as a HoloViz Panel Web App.
+
 ## js-based-notebook
 
 - https://github.com/executablebooks/thebe

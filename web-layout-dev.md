@@ -13,8 +13,11 @@ modified: '2021-01-01T20:17:05.116Z'
   - css其实本身就是高度封装的东东了，可能有安卓iOS原生写样式，远远不像css这么好
   - 现在前端css相关的库卖点是design，而不是用的技术，企业关注的不是前端是不是用了grid
 
+- [Does CSS Grid Replace Flexbox?_201703](https://css-tricks.com/css-grid-replace-flexbox/)
+  - 还要考虑到，flexbox在其他平台上的支持和实现
+    - android支持
+    - swiftui不支持
 # guide
-
 - angular/flex-layout /MIT/5kStar/202007
   - https://github.com/angular/flex-layout
   - https://tburleson-layouts-demos.firebaseapp.com
@@ -35,7 +38,6 @@ modified: '2021-01-01T20:17:05.116Z'
 - In normal flow, inline elements display in the inline direction, that is in the direction words are displayed in a sentence according to the Writing Mode of the document. 
 - Block elements display one after the other, as paragraphs do in the Writing Mode of that document. 
 - In English therefore, inline elements display one after the other, starting on the left, and block elements start at the top and move down the page.
-
 # discuss
 
  
@@ -76,9 +78,7 @@ modified: '2021-01-01T20:17:05.116Z'
     - CSS grid: to create layout and grids
   - I use flex on the content elements.
     - Flexbox: to position the elements in the cells
-
 # ref
-
 - [CSS Flex vs Grid Tutorial](https://t.co/NPuEsH0BwT?amp=1)
 - https://github.com/facebook/yoga
   - Yoga is a cross-platform layout engine which implements Flexbox. 

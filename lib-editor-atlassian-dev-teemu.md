@@ -7,8 +7,16 @@ modified: '2021-07-01T10:27:24.764Z'
 
 # lib-editor-atlassian-dev-teemu
 
-# guide
+# not-yet
 
+- 实现原地实时编辑katex的方法/inline-renderer
+  - prosemirror-view to math-NodeView
+  - math-NodeView to prosemirror-view: editorView.focus() 
+  - 还要区分从左边进入还是右边进入
+  - [Replicating Typora’s Inline/Display Math Editing](https://discuss.prosemirror.net/t/replicating-typoras-inline-display-math-editing/2906)
+
+- 实现原地实时编辑code block的方法/block-render
+# guide
 - prosemirror-view更新的方法
   - dispatchTransaction()
   - dispatch()
@@ -27,7 +35,8 @@ modified: '2021-07-01T10:27:24.764Z'
   - BlockQuote.tsx组件自身并不直接持有eidtorView，但props传入了能稍后执行的方法；或者也可以将editorView作为props直接传入
 
 ```JS
-/** 对于用在NodeView class中的react组件，
+/** 
+ * 对于用在NodeView class中的react组件，
  * 可以包含与prosemirror无关的状态，
  * 可以通过commands触发执行dispatch，然后更新所有ReactNodeView组件来实现更新本组件自身的目的；
  * 甚至可以触发一个空transaction只更新所有ReactNodeViews，不更新prosemirror-state和pm-view;
@@ -51,69 +60,11 @@ this.editorView.dispatch(tr);
 
 - 对于使用react组件作为NodeView的情况，`this.contentDOM`是`ReactNodeView`的child，`nodeViewReactElement`是`this.dom`的child
 
-- 实现原地实时编辑katex的方法/inline-renderer
-  - prosemirror-view to math-NodeView
-  - math-NodeView to prosemirror-view: editorView.focus() 
-  - 还要区分从左边进入还是右边进入
-  - [Replicating Typora’s Inline/Display Math Editing](https://discuss.prosemirror.net/t/replicating-typoras-inline-display-math-editing/2906)
-
-- 实现原地实时编辑code block的方法/block-render
-
 - tips
   - implementing of the event-flow from the actions/key-press plugins to the plugin state, which would then notify the React components through an event-dispatcher
 # todo-xp
 - useSsrLayoutEffect 替换为 useEffect
 - 将ReactNodeView作为Editor组件的children，这种api是否合适，因为顺序有要求
-# codebase-full-v2
-- Editor的api使用的是composition的模式
-  - 优点是灵活性高
-  - 缺点是隐式顺序规定
-
-```JS
-<div>
-  <Editor>
-    <Base />
-    <BlockQuote />
-  </Editor>
-  <PortalRenderer />
-</div>
-```
-
-- 每次执行dispatchTransaction()，都会rerender `PortalRenderer`组件中所有的ReactNodeViews，性能消耗大吗
-  - 可以类比react，每次都会recreate触发setState的组件及其子树，所以最好在每个组件都实现shouldComponentUpdate
-
-> todo 如何优化
-
-- 对于这里的应用场景，`PortalRenderer`的children是一个扁平的数组，数组每项都是一个ReactNodeView，所以每次rerender都会创建所有ReactNodeViews
-- 可以尝试类似react-virtualized的滑动窗口，只渲染可见部分，因为屏幕大小有限，就算每次重新渲染，实际执行的render()和渲染出的dom节点都不会太多；
-  - 但整个文档不是每项都相似的list，如何拆分文档难度较大
-
-- createDefaultProviders()会创建并返回默认的全局provider对象
-  - AnalyticsProvider，普通类，用于日志打印监测
-  - APIProvider，普通类，实现socket相关功能
-  - ExtensionProvider，普通类，基于Set
-  - PluginsProvider，普通类，基于 EventDispatcher
-  - CollabProvider
-  - PortalProvider，普通类，
-  - EditorViewProvider，普通类，提供操作文档的方法，replaceDocument、replaceState
-
-- ReactEditorContext默认使用createDefaultProviders的返回值作为全局传递的value
-# codebase-minimal
-- 核心的Editor组件
-  - 在`componentDidMount()`中创建edittorState和editorView
-    - 为什么createEditorView()后要执行`this.forceUpdate();`，因为Editor组件没有传入props，没有children，也没有state，所以正常情况下不会rerender，编辑器自己管理pm-state，然后通过`editorRef`挂载到最外层div上
-    - 这里的forceUpdate()是initial render完成后触发，这里才第一次真正将编辑器渲染到dom
-  - shouldComponentUpdate()始终return false
-
-- plugins
-  - baseKeymap + undo/redo + blockquote-keys
-
-- 定义了两种blockquote PMNode的schema，parseDOM都会解析为`tag: blockquote` PMNode
-  - pmBlockquote节点有attrs属性，且toDOM会渲染处attrs中的数据
-  - blockquote节点无attrs
-- 提供了blockquote类型对应的的ReactNodeView
-  - 通过 `ReactDOM.render` 渲染react元素到this.dom
-  - 在NodeView class的constructor(){}中，`this.contentDOM`会作为child，通过操作react组件的ref`ref.current.append`添加到BlockQuoteReact组件所在的dom
 # discuss
 - ## useSsrLayoutEffect vs useLayout
 - https://github.com/styled-components/styled-components/issues/3369
