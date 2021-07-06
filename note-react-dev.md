@@ -66,6 +66,18 @@ modified: '2020-07-14T10:38:48.217Z'
     - In other words, Reach Router v2 and React Router v6 are the same
     - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
 # tips
+- ReactDOM.createPortal出现前的方案
+  - 在v16之前，Use `ReactDOM.unstable_renderSubtreeIntoContainer()` instead if you need to preserve context.
+
+- React guarantees that refs are set before `componentDidMount` or `componentDidUpdate` hooks. But only for children that actually got rendered.
+  - Note this doesn’t mean “React always sets all refs before these hooks run”.
+  - React will only call ref callbacks for elements that you actually returned from render.
+  - 有时候条件渲染会导致ref所在元素没有返回
+
+- The issue can also arise when you try to use a ref of a unmounted component like using a ref in setinterval and do not clear set interval during component unmount.
+  - always clearInterval(id) in willUnmount
+  - https://stackoverflow.com/questions/44074747
+
 - React. PureComponent的原理，会分别比较props和state的第一层级所有属性的属性值引用是否相等
 
 ```JS
@@ -193,8 +205,8 @@ React.cloneElement(
 
   // is almost equivalent to   
 
-<element.type { ...element.props } { ...props }> 
-  { children }
+  <
+  element.type { ...element.props } { ...props } > { children }
 </element.type>
 ```
 

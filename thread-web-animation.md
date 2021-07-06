@@ -15,7 +15,20 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## For the second time in my life I’ve attempted to write a book about animation and ended up making a library instead
+- https://twitter.com/mattgperry/status/1412121262449627140
+  - Every time I tried to explain a non-obvious behaviour of the browser's built-in animation API (WAAPI) I couldn't help but try and fix it with code instead.
+- For instance, WAAPI's default behaviour is to leave your element in its *initial* state once the animation has finished.
+  - There's an option called "fill" that you can set to "forwards" to fix it... except even the spec warns about memory leaks
+  - The recommended method (read: fix) is to make a promise handler that explicitly sets the the styles you were animating to.
+  - It's this kind of just-annoying-enough behaviour that can kill the adoption of an API. Or at least give value to an opinionated API built around it.
+  - These fixes progressed into experiments to see how close I could get to an GSAP or Anime.js-style library, but for a much smaller bundlesize. 
+- Problem is, you bite a ton of limitations when dealing with WAAPI. Many of these could be unsurmountable(无法解决/克服的). But not all.
+  - For instance, I thought you can't animate transforms individually, or use velocity-based springs. But I realised that was not true when making this prototype
+- Unfortunately it is rather hard to add spring easing, custom transforms, attribute tweens, etc... at a small size as I later realized 😢, 
+  - if you choose to use spring easing with @okikio/animate the file size is 11kb but without spring easing it is 5kb, 1kb less than animejs.
+  - I noticed some of the problems with WAAPI, so I built @okikio/animate as a way to make it easier to make animations with the WAAPI.
+  - I based the animation format off of animejs, so, using it shouldn't be too different from animejs.
 
 - ## Kicking the tires on a 1kb, WAAPI-powered animation API
 - https://twitter.com/mattgperry/status/1408688475973488640

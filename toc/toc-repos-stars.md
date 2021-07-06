@@ -14,9 +14,7 @@ modified: '2021-01-12T18:49:13.490Z'
   - 一种基于配置自动生成CMS的工具
 - https://github.com/zchuanzhao/jeesns
   - 基于JAVA研发的社交管理系统
-
 # fundamentals
-
 - https://github.com/jsdom/jsdom
   - jsdom is a pure-JavaScript implementation of many web standards, notably the WHATWG DOM and HTML Standards, for use with Node.js. 
   - the goal of the project is to emulate enough of a subset of a web browser to be useful for testing and scraping real-world web applications.
@@ -27,9 +25,7 @@ modified: '2021-01-12T18:49:13.490Z'
     - Absolute separation of logic and content by avoiding template tags
   - alternatives
     - https://github.com/WebReflection/linkedom
-
 # app
-
 - https://github.com/outline/tiley
   - Tiley creates consistent colored squares with initials that can be used for default avatars
 
@@ -68,8 +64,13 @@ modified: '2021-01-12T18:49:13.490Z'
 - https://github.com/ricklamers/gridstudio
   -  a web-based spreadsheet application with full integration of the Python programming language.
   - 依赖go、ploty、jquery
-
 # collection
+- https://github.com/pouyakary/TextKit
+  - TextKit is a framework for creating Textual Graphics. 
+  - It provides layers, styling, rich color, text justification, layouts, tables, view-ports, transparency, etc. 
+  - All behind a beautiful object-oriented view model that is easy and humane to use
+  - Underneath it also provides a rich rendering engine that is fully independent of any platform and can synthesize rendered code for ANSI Terminals, Web, and plain text format. 
+  - Written in pure ECMAScript without incorporating any platform provided API, (no node/DOM API is used) and therefore works on any JavaScript platform.
 
 - https://github.com/fanchaoo/hahu
   - 参照知乎网做的一个简易版问答网站，
@@ -90,9 +91,7 @@ modified: '2021-01-12T18:49:13.490Z'
 - ASCII Generator
   - https://www.snapfiles.com/screenshots/asciigenerator.htm
   - convert images into ASCII text art - an image that is entirely made of text characters.
-
 # engineering
-
 - https://github.com/microsoft/playwright
   - https://playwright.dev/
   - library to automate Chromium, Firefox and WebKit with a single API

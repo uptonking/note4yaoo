@@ -10,11 +10,43 @@ modified: '2021-07-05T18:12:24.491Z'
 # codebase-atlassian
 - not-yet
   - 在callbackRef函数中调用forceUpdate()方法，各生命周期的执行顺序如何
+  - 为什么ReactEditorView用了2个事件管理器，providerFactory、eventDispatcher
+  - 如何在typeAheadPlugin中修改ReactNodeView
+  - 多个复杂插件的执行顺序和最佳实践
 
 - watching
   - eventDispatcher如何传播事件
   - slash commands
   - CodeBlock works
+
+- ReactNodeView
+  - 渲染react组件NoeView到portal使用的是ReactDOM.unstable_renderSubtreeIntoContainer()
+  - 更新每个ReactNodeView组件时，有判断一次hasReactContext，若没有使用，则停止更新
+
+- EditorPlugin的配置项非常多
+  - 常见：nodes、plugins
+  - toolbar
+  - floatingToolbar
+  - quickInsert
+
+- ReactEditorView
+  - 在constructor()中创建pm-EditorState，这里就综合计算出了所有prosemirror需要的schema、plugins、doc等
+  - 在callbackRef中创建pm-EditorView，还会触发onCreated钩子函数
+- FullPage
+  - 提供了定位布局配置
+  - 放置了popup、toolbar
+  - ContentArea中平级放置 PluginSlot、PMEditor
+
+- quickInsertPlugin
+  - 提供了slash菜单项的初始化方法
+
+- typeAheadPlugin
+  - 提供了contentComponent来渲染输入斜杠文字后弹出菜单会出现的条目
+
+- WithPluginState
+  - subscribe观察插件状态变化有2种方式，根据PluginState中是否含有subscribe属性
+    - pluginState.subscribe(handler);
+    - eventDispatcher.on(pluginKey.key, handler);
 # codebase-full
 - editorPlugin和pmPlugin名称上很容易混淆，不如tiptap主导的extension，它们功能上都是封装某种组件紧密相关的操作
 
