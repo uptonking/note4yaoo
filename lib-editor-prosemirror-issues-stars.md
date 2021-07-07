@@ -10,9 +10,12 @@ modified: '2021-06-16T14:13:27.162Z'
 # issues-not-yet
 - plugin props vs editorView props
   - editorView props多两个参数
-    - state, dispatchTransaction
+    - ~~state~~, dispatchTransaction
   - plugin props
     - Props that are functions will be bound to have the plugin instance as their `this` binding.
+
+- plugin state vs editor state
+- ？？？ update
 
 - [editable islands](https://github.com/ProseMirror/prosemirror/issues/745)
   - I think I am going to consider this kind of DOM structure (editable islands) unsupported. 
@@ -24,8 +27,47 @@ modified: '2021-06-16T14:13:27.162Z'
   - 能切换渲染和编辑状态
 - 如何实现不可编辑
   - filter transform actions, reset to old state
+  - custom NodeView
+  - nested editor like footnote
 # issues-good
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The content of non-editable node is still editable
+- https://discuss.prosemirror.net/t/the-content-of-non-editable-node-is-still-editable/2154
+  - contenteditable is set to false.
+  - However, when you select part of the text in a label by mouse and hit delete key, this part of text is removed.
+
+```JS
+label: {
+  content: 'text*',
+  defining: true,
+  atom: true,
+  selectable: false,
+  parseDOM: [{ tag: 'label' }],
+  toDOM() { return ['label', { contenteditable: false }, 0] }
+}
+```
+
+- You could make the label text an attribute, rather than content.
+  - That would prevent ProseMirror from trying to manage it.
+  - But when you select across a node and press delete, the selected range is going to be deleted—whether individual nodes in the range are editable isn’t relevant there. 
+  - The only way to prevent that is to filter transactions.
+  - simply filter out transactions that delete such a node (though then the delete won’t have any effect at all).
+
+- ## ProseMirror and Uneditable content in the document
+- https://discuss.prosemirror.net/t/prosemirror-and-uneditable-content-in-the-document/1916
+  - I'm trying to build a text editor that has fixed input structures for contextual sections
+  - I tried “contenteditable=false” attribute with unconvincing results.
+  - Second, I tried doing a plugin and Filter transaction: I could potentially filter transactions that try to delete the node, but many operations like selecting big chunks give some complex transaction data to filter.
+  - Third approach would be to use css pseudo selectors and make the tags and titles outside the document model, or use decorators, but ultimately It’s unconvincingly complicated to do it that way
+- I think a more promising approach would be to **have the schema just express the editable parts of the document**, using node types and attributes for the fixed parts (which seem to follow from the document structure), 
+  - and then rendering them as part of the wrapper nodes for those node types (i.e. an `item` node with an attribute `type` that holds the strings like `"HARDDRIVE"` , which renders to something like `["div", {class: "item"}, ["div", {contenteditable: false, class: "itemtype", "HARDDRIVE"], ["div", 0]]` .
 
 - ## Scan the document to find links in paragraphs and mark them
 - https://discuss.prosemirror.net/t/scan-the-document-to-find-links-in-paragraphs-and-mark-them/2764
@@ -95,6 +137,7 @@ modified: '2021-06-16T14:13:27.162Z'
   - This is the default behavior for leaf nodes, but since yours has content, that logic doesn't apply to it. 
   - It might be worthwhile to have another flag, `directlySelectable` or so, for cases like this. 
   - If you, as a test, remove the `nearestDesc.node.isLeaf` test from the `readFromDOM` method in `prosemirror-view/dist/selection.js` , is the resulting behavior what you want?
+- I've made a bunch of changes (not released yet) which allow you to set an `atom` property on a node spec, which makes the node count as an atom (which leaf nodes do by default), and changed the selection logic over to using that property, rather than `isLeaf` . With that feature, you should be able to simply mark nodes that will render as uneditable as atoms, and have them be selectable with the default selection logic.
 
 - ## Invalid position when calling coordsAtPos()
 - https://discuss.prosemirror.net/t/invalid-position-when-calling-coordsatpos/628

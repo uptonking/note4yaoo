@@ -50,6 +50,22 @@ export interface Renderer {
 ```
 
 # faq
+- ## [Is there a way to tell react to NOT transform a 1-param function returning JSX to a component?](https://twitter.com/sebastienlorber/status/1412455641088725002)
+- I want `function(props)` instead of `<Function {...props}/>`
+
+- A simple function returning JSX won't get transformed to a component when you'll call it
+
+```JS
+const a = (<div>Hello</div>);
+
+// vs
+
+const getA = () => (<div>Hello</div>);
+const a = getA();
+
+// is the same thing (and you won't be able to use hooks in getA as it's not a component)
+```
+
 - ## [why not implement new context API in userland with an event emitter?](https://twitter.com/dan_abramov/status/976486152197812229?s=19)
 - We want to fix the “deep update propagation” problem. 
   - But we don’t want to pay the memory and initialization time cost for every single component that consumes context. 

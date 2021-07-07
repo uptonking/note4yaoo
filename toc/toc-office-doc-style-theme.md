@@ -6,13 +6,10 @@ modified: '2021-01-04T17:26:25.032Z'
 ---
 
 # toc-office-doc-style-theme
-
 - search
   - paper, reading, reader, book, document
   - markdown theme, toc
-
 # doc-styling
-
 - https://github.com/delight-im/HTML-Sheets-of-Paper
   - https://delight-im.github.io/HTML-Sheets-of-Paper/
   - /986Star/MIT/201912/css
@@ -45,9 +42,7 @@ modified: '2021-01-04T17:26:25.032Z'
   - All stylesheets in here pull in asciidoctor’s defaults first and then apply custom styles to a few elements.
 - https://github.com/mixu/markdown-styles
   - Markdown to static HTML generator and multiple CSS themes for Markdown
-
 # markdown
-
 - https://github.com/jgthms/wysiwyg.css
   - https://jgthms.com/wysiwyg.css/
   - a simple collection of styles targeted at HTML elements generated from a WYSIWYG editor (like TinyMCE) or Markdown.
@@ -94,9 +89,7 @@ modified: '2021-01-04T17:26:25.032Z'
   - https://yunyoujun.github.io/star-markdown-css/
   - Markdown Css about violet wandering planet.
   - 提供了多个主题切换
-
 # toc
-
 - https://github.com/tscanlin/tocbot
   - http://tscanlin.github.io/tocbot/
   - Tocbot builds a table of contents (TOC) from headings in an HTML document.
@@ -109,9 +102,7 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/gajus/contents
   - Table of contents generator.
   - 例子无法运行，但例子的设计和样式很好，有plain, events, good looking, smooth scrolling
-
 # doc-examples
-
 - https://github.com/AitorRodriguez990/documentation-template
   - https://aitorrodriguez990.github.io/documentation-template/
   - Documentation template created with HTML, CSS
@@ -125,9 +116,7 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/yogurt-foundation/yogurt-css-documentation
   - https://yogurtcss.netlify.app/
   - The official documentation for Yogurt CSS
-
 # reader-books
-
 - https://github.com/readium/readium-css
   - https://readium.org/readium-css/docs/
   - stylesheets for EPUB Reading Systems, starting with Readium 2.
@@ -140,9 +129,7 @@ modified: '2021-01-04T17:26:25.032Z'
   - http://surjithctly.github.io/documentation-html-template/
   - A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. 
   - Built with Bootstrap 3.
-
 # typography
-
 - https://github.com/boriskirov/fluiditype
   - https://www.fluiditype.com/
   - 文字会随视口变大而变大
@@ -158,9 +145,7 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/saurabhdaware/text-to-handwriting
   - https://saurabhdaware.github.io/text-to-handwriting/
   - converts text to an image that looks like handwriting
-
 # more
-
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/
   - 思路就是用 markdown 写作，然后使用专门的工具导出为 html 文件，最后把自定义的样式应用到导出的文件
@@ -183,3 +168,6 @@ modified: '2021-01-04T17:26:25.032Z'
   - http://vinitkumar.github.io/white-paper/
   - clean jekyll theme.
   - It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.
+
+- https://www.nordtheme.com/docs/colors-and-palettes
+  - 背景灰色，页面白色，典型的文档风格，无toc

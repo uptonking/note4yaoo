@@ -34,6 +34,14 @@ modified: '2021-06-02T10:30:09.481Z'
 # issues
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+I
+
 - ## Floating toolbar gets covered by native toolbar on text selection in android
 - https://github.com/outline/rich-markdown-editor/issues/462
 - In Notion, the android app handles this beautifully by showing a toolbar attached to the top of the keyboard (or at the bottom of the page).

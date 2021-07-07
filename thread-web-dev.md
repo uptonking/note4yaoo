@@ -29,9 +29,20 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## HCL Wizard is a perceptually uniform color selection tool based on the HCL color model.
+- https://twitter.com/DataVizSociety/status/1412479722374770693
+  - [Perceptual Uniformity with HCL Wizard](https://nightingaledvs.com/perceptual-uniformity-with-hcl-wizard/)
 
-- ## 
+- ## I feel like it's at least monthly that I'm using @ryanflorence 's @reach/observe-rect package
+- https://twitter.com/tannerlinsley/status/1412498450290077698
+- Curious to know what's the difference with ResizeObserver
+  - ResizeObserver won't notify if the element's rect moved but didn't resize.
+- Just checked implementation for rect and oooof, it gonna kill application or two if used improperly or too much. I’ll better mix `ResizeObserver` and `onScroll` event.
+  - You should write a new implementation with a similar api then.
+  - Not possible without understanding WHY it is used. Right now I know only HOW it does work. tell me about your use case and the reasons to track element position relative to the screen
+  - Tooltip or anchored panel positioning
+- Getting the rect on animation frame shouldn’t be very performant. I’d stick with `ResizeObserver` by default, which has a very similar API as well.
+  - I just mean that for 99% of the cases a ResizeObserver is a better tool. Tbh I can count on a single finger the number of times I’ve had to watch for rect changes due to scroll/resize/etc. 
 
 - ## Number one accessibility tip: learn how to use the screen reader that’s built into your computer/phone. Then test every library you use yourself.
 - https://twitter.com/devongovett/status/1410277820622802944

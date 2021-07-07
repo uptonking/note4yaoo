@@ -55,6 +55,14 @@ import { Editor } from '@atlaskit/editor-core';
 - Inline nodes contain the document content such as text and images. 
 - Some of these nodes can take marks that define text formatting or embellishment such as centered, bold, italics, and alike.
 - A document is ordered, that is, there's a single sequential path through it: traversing a document in sequence and concatenating the nodes yields content in the correct order.
+
+## [confluence macros](https://confluence.atlassian.com/doc/macros-139387.html)
+
+- You can use macros to:
+  - change the format and layout of your page
+  - display media like video, audio, and social media content
+  - collate and organise Confluence pages, blogs, and files
+  - perform actions from a page, such as creating a page from a template. 
 # pieces
 
 # examples

@@ -29,15 +29,22 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## Forms tip!
+- https://twitter.com/stackblitz/status/1412414470681415682
+- Checkbox can be indeterminate, but you have to set that( `inputEl.intdeterminate = true` ) with JavaScript.
+- `autocomplete="one-time-code"` can help users auto-fill the auth code they've just received - they won't need to copy it from the SMS by hand!
+  - one-time-code requires an OS-level integration (eg works on Safari+Mac, but won't on Android)
+- The `<fieldset>` element – used for grouping relevant inputs & buttons – allows you to provide the `disabled` attribute if you want to disable these enclosed controls all at once.
+- Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also numbers, ranges, emails, and even colors!
+- You *can* customize these native html validation messages that browsers display. Just use the `setCustomValidity` method! Super useful for working with pattern validation, or even just to say "Name is required"
+- Use the built-in `.validationMessage` property that allows you to get a native validation message (in your user's locale!), and display it in the UI the way you like it.
 
 - ## What is the correct way to include a blank line
 - https://stackoverflow.com/questions/35315023
 - I use a `<hr>` because is the semantic tag to represent that kind of break.
-  - `<hr style="height:16px; border:none; " />`
-
-- `<br />`设置height没有效果，除非强行修改display
-  - 连续用2个`<br />`就有一个空行的效果了，但高度依旧是默认的，不如 `<hr />` 灵活
+  - `<hr style="height:16px; border:none; " />` .
+- `<br />` 设置height没有效果，除非强行修改display
+  - 连续用2个 `<br />` 就有一个空行的效果了，但高度依旧是默认的，不如 `<hr />` 灵活
 
 - ## Popover components in a Dark, Black and Light UI theme
 - https://twitter.com/getdona/status/1390229858266062850

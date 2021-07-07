@@ -14,7 +14,23 @@ modified: '2021-06-10T06:44:27.120Z'
 
 ## 
 
-## 
+## [Does React always check the whole tree?](https://stackoverflow.com/questions/34696816)
+
+- No, React will not go through the whole tree when you called `setState` only on a leaf node.
+  - On call of `setState`, react will only re-render the component (tree node) for which `setState` was called on and any components (nodes) which are children. 
+  - It should be noted that React will only update the DOM if there is actually a change to be represented from the call to setState.
+
+- [React's render functionality works like this](https://stackoverflow.com/questions/46179773)
+  - State is changed via setState.
+  - React performs an invisible test re-render of the component whose state was changed on the "virtual dom".
+  - As a result of step 2, react re-renders all sub components on the virtual dom as well. This continues recursively until it finds a non-component element.
+  - For every element re-rendered on the virtual dom, react compares the new result with the previous result.
+  - If the new result does not match the previous result, react re-renders the sub component.
+
+- many things can trigger reflow of the DOM. Not just setting, even accessing the DOM element properties can cause reflow of DOM which is a very costly process.
+  - So, if React starts comparing against the actual DOM, then it will bring down the performance of rendering rather than improving it. 
+  - This is why react compares changes with previous copy and update the changes to the Actual DOM if required.
+  - the whole subtree is compared to the previous subtree -- not to the actual DOM but to a previous virtual DOM subtree
 
 ## [If using `forceUpdate()` is discouraged, how should components react to change events in the model?](https://stackoverflow.com/questions/35617580)
 

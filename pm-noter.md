@@ -60,15 +60,19 @@ modified: '2021-06-02T17:26:42.963Z'
   - 移动本地文件时，自动更新其他文件中引用的链接
   - 图床
 
+## toc
+
+- 传统toc
+- 类似批注的大纲+小结简介
 
 ## code-block
+
 - [Update all code blocks to toggle between TS and JS syntax](https://github.com/reduxjs/redux/issues/4112)
   - The RTK docs currently use Lenz Weber's phryneas/remark-typescript-tools plugin to let us write TS syntax in code blocks, compile away the TS syntax to plain JS, and show both versions as a tab
   - https://github.com/phryneas/remark-typescript-tools
   - https://github.com/shikijs/twoslash
   - 两种方案需要选择取舍
 # faq
-
 - 如何不使用图床而将图片直接嵌入到笔记生成的html中
 
 - 参考

@@ -12,6 +12,33 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## do you know any interesting examples of people making money from "tools for developers"?
+- https://twitter.com/Wattenberger/status/1412408988319236108
+  - https://trianglify.io/
+  - I'm thinking of, eg. a generative art tool that lets you export svg patterns for a small fee. 
+  - Really anything infinitely scalable that isn't ads and keeps the tool partly free
+  - another one that comes to mind is tinypng, which has a freemium api for compressing images. although it's not exactly infinitely scalable, with hosting costs. I know @JoshWComeau experimented in this space with Tinkersynth (which I loved!) it didn’t really work for me in terms of being profitable, but I also didn’t really put in the work / give it a solid test.
+- Tools are a harder straight sell than educational resources: most companies will have budgets for education that devs can spend on books or subs, but not as easy to spend on tools.
+- I’ve recently had some success with http://tldraw.com, which is sponsorware; but that’s more about supporting the content I make around the app (as entertainment?). Access to the app is a pretty sweet perk tho!
+- I love the sponsorware model, but I think it's hard to scale up, and I have a tendency to procrastinate if there's any pressure on me 
+- not quite an answer, but back when we were making a WebAssembly data science notebook env, we deliberated (反复思考，深思熟虑) about how to commoditize(商品化) the complement. I've found it to be a good mental model for the monetizing-devtool pattern (which is a tough space to be in)
+  - [Laws of Tech: Commoditize Your Complement](https://www.gwern.net/Complement)
+- Usually, things like SVG pattern and color palette generators, code explainers (https://domevents.dev), etc. are free. 
+  - Seems like a tough market to charge money in. 
+  - However, I've seen them used as funnels into a product that is for sale (includes a link to a book, course, etc.)
+- Not entirely pattern-driven or generative, but @blushdesignapp offers highly modular, randomizable illustrations for free.
+  - 2x, 3x PNGs and SVGs are (paid) pro features.
+
 - ## 不同频道在相同的时间可以有不同的广告 
 - https://twitter.com/vixvix/status/1411762345957863425
 - 长知识了，怪不得我看到欧洲杯都是支付宝和抖音

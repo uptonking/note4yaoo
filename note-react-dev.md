@@ -66,6 +66,19 @@ modified: '2020-07-14T10:38:48.217Z'
     - In other words, Reach Router v2 and React Router v6 are the same
     - We are bringing together the best of React Router and Reach Router into a new, hook-based API.
 # tips
+
+- 
+
+- 
+
+- 
+
+- [react 16: setState() in render()](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
+  - Calling `setState` directly in `render` always causes an update. This was not previously the case. Regardless, you should not be calling setState from render.
+  - Calling `setState` with `null` no longer triggers an update. This allows you to decide in an updater function if you want to re-render.
+    - 但可以设置为undefined来触发rerender
+  - setState callbacks (second argument) now fire immediately after `componentDidMount/componentDidUpdate` instead of after all components have rendered.
+
 - ReactDOM.createPortal出现前的方案
   - 在v16之前，Use `ReactDOM.unstable_renderSubtreeIntoContainer()` instead if you need to preserve context.
 

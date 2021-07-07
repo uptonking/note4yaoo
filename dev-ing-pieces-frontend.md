@@ -11,6 +11,14 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+- node 包入口（Package entry points）
+  - 在 package.json 文件中，有两个字段可以定义包入口："main" 和 "exports"。
+  - 所有版本的 Node.js 都支持 "main" 字段，但它的功能是有限的：它只定义包的主入口。
+  - "exports" 字段算是 "main" 的替代品，它既可以定义包的主入口，又封闭了包，**防止其他未被定义的内容被访问**。这种封闭允许模块作者为他们的包定义公共接口。
+  - 使用 "exports" 字段可以防止包的使用者使用其他未定义的入口点，包括 package.json（例如：require('your-package/package.json')。这很可能是一个重大变更。
+  - 在万不得已时，可以通过 "./*": "./*" 来导出整个包的根目录，此时“封闭”功能也就不起作用了 
+  - 在 "exports" 中使用“条件导出”（Conditional exports）可以为每个环境定义不同入口
+
 - [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
 - The parser uses it to match the text, but ignores it later, in the final result.
 

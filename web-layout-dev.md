@@ -18,6 +18,8 @@ modified: '2021-01-01T20:17:05.116Z'
     - android支持
     - swiftui不支持
 # guide
+- [Ten modern layouts in one line of CSS_202007](https://web.dev/one-line-layouts/)
+
 - angular/flex-layout /MIT/5kStar/202007
   - https://github.com/angular/flex-layout
   - https://tburleson-layouts-demos.firebaseapp.com

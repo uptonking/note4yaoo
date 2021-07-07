@@ -12,6 +12,9 @@ modified: '2021-01-04T17:07:34.171Z'
 - design-tokens-catalog
   - amazon style-dictionary
 
+- ref
+  - [DTCG Glossary](https://www.designtokens.org/glossary/)
+
 ## Adobe DSP
 
 - ref
@@ -36,9 +39,7 @@ modified: '2021-01-04T17:07:34.171Z'
 - `/ext`
   - hold files written by third party tools.
   - Its subfolders must follow the reverse domain name convention of "com_partner_name"
-
 # DTCG(Design Tokens Community Group)
-
 - Design tokens are indivisible pieces of a design system such as colors, spacing, typography scale.
 - The DTCG’s goal is to provide standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
 
@@ -65,7 +66,7 @@ modified: '2021-01-04T17:07:34.171Z'
   - Vendors (design system tools, design tools…) can store information for their own usage, both globally and for each token
   - The format translates well to existing design tools, in order to facilitate adoption
 
-``` typescript
+```typescript
 interface TokenList {
   // Where tokens are stored (in an array)
   tokens: Token[];
@@ -97,7 +98,7 @@ interface Data {
 
 ```
 
-``` JSON
+```JSON
 {
   tokens: [
     {
@@ -136,7 +137,7 @@ interface Data {
 
 - Here's a rough draft that essentially mimics how the CSS cascade works
 
-``` js
+```js
 // Defaults
 [
   { name: 'tokenA', value: 'foo' },
@@ -172,14 +173,12 @@ interface Data {
   - durations
   - typography
   - any other design token-related specifications
-
 # [Universal Design Tokens (UDT) Specification](https://github.com/universal-design-tokens/udt/blob/master/packages/spec/docs/README.md)
-
 - ref
   - https://udt.design/
   - 更新于201906
 
-``` JSON
+```JSON
 
 {
   "$schema": "http://udt.design/schemas/dev/udt-schema.json",
@@ -200,7 +199,6 @@ interface Data {
 ```
 
 # Open UI
-
 - open ui相对于dtcg的特点
   - 重点是通用ui组件的样式与交互规范，而dtcg重点是通用样式变量
   - 重点是帮助开发者和设计师互操作，而dtcg重点是各类设计工具的互操作
@@ -235,9 +233,7 @@ interface Data {
 
 - Out of scope
   - Standardization of appearance of the component
-
 # ref
-
 - https://github.com/malerba118/react-handoff
   - https://codesandbox.io/s/async-night-7kyrq?file=/src/App.tsx
   - 依赖chakra-ui, emotion

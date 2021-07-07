@@ -8,26 +8,53 @@ modified: '2021-07-05T18:12:24.491Z'
 # lib-editor-atlassian-dev-teemu-codebase
 
 # codebase-atlassian
-- not-yet
-  - 在callbackRef函数中调用forceUpdate()方法，各生命周期的执行顺序如何
-  - 为什么ReactEditorView用了2个事件管理器，providerFactory、eventDispatcher
-  - 如何在typeAheadPlugin中修改ReactNodeView
-  - 多个复杂插件的执行顺序和最佳实践
+
+## not-yet
+
+- 在full-v2示例中，ReactNodeView的BlockQuote.tsx组件会执行 `useListenProps(handleUpdate)`，实际是在向portalProvider注册事件函数，handleUpdate中可以包含setState吗
+
+- plugin state变化时，为什么能触发WithPluginState处的react组件更新
+  - plugin.view定义了update()方法，但使用的都是editorView.dispatch
+  - plugin.state.apply使用类似redux的switch-case更新方式，每次dispatch都会执行所有注册的cb函数；其中WithPluginState的setState方法也注册到了里面
+
+- 在callbackRef函数中调用forceUpdate()方法，各生命周期的执行顺序如何
+  - Calling `forceUpdate()` will cause `render()` to be called on the component, skipping `shouldComponentUpdate()`.
+  - [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
+- 为什么ReactEditorView用了2个事件管理器，providerFactory、eventDispatcher
+  - providerFactory通过props传递过来，管理全局providers
+  - eventDispatcher直接传递给pm-plugins
+
+- 如何在typeAheadPlugin中修改ReactNodeView
+  - 根本没有使用NodeView，不存在这个问题
+  - 因为Plugin.view()和NodeView都可以定义update()方法
+  - pm执行dispatchTransaction时, ~~可手动修改globalContextVal的二级属性值，然后forceUpdate~~
+  - 常用方法是在globalContextVal的二级属性存放一个事件管理器，然后将顶层react组件的setState方法注册到事件管理器，在dispatchTransaction时执行此方法会forceUpdate所有子组件，react组件的props中可以向事件管理器注册处理函数，用来计算新的vdom，然后在diff+patch后更新dom
+  - 其实没有直接通过函数调用进行更新，而是通过事件管理器的映射表流程，可以在不同时刻注册各种事件处理器，然后触发时按一定顺序执行，最后两者都更新了
+
+- 多个复杂插件的执行顺序和最佳实践
 
 - watching
-  - eventDispatcher如何传播事件
-  - slash commands
-  - CodeBlock works
+  - eventDispatcher中事件函数的注册与执行时机
+  - slash commands主要实现在typeAheadPlugin
+  - how CodeBlock works
 
-- ReactNodeView
-  - 渲染react组件NoeView到portal使用的是ReactDOM.unstable_renderSubtreeIntoContainer()
-  - 更新每个ReactNodeView组件时，有判断一次hasReactContext，若没有使用，则停止更新
+## pieces
 
 - EditorPlugin的配置项非常多
   - 常见：nodes、plugins
   - toolbar
   - floatingToolbar
   - quickInsert
+
+- prosemirror plugin view
+  - TypeAhead组件的渲染和更新由typeAheadPlugin控制，而不是自定义NodeView，但更新方法是通用的，都基于pubsub
+  - 注意TypeAhead组件渲染的位置提前指定好了
+
+- ReactNodeView
+  - 渲染react组件NoeView到portal使用的是ReactDOM.unstable_renderSubtreeIntoContainer()
+  - 更新每个ReactNodeView组件时，有判断一次hasReactContext，若没有使用，则停止更新
+  - ??? React组件没有state，只用props，因为NodeView的update方法每次都会传入新的props，这样设计正确吗
 
 - ReactEditorView
   - 在constructor()中创建pm-EditorState，这里就综合计算出了所有prosemirror需要的schema、plugins、doc等
@@ -41,12 +68,15 @@ modified: '2021-07-05T18:12:24.491Z'
   - 提供了slash菜单项的初始化方法
 
 - typeAheadPlugin
-  - 提供了contentComponent来渲染输入斜杠文字后弹出菜单会出现的条目
+  - 提供了contentComponent返回的组件来渲染输入斜杠文字后弹出菜单会出现的条目
 
 - WithPluginState
   - subscribe观察插件状态变化有2种方式，根据PluginState中是否含有subscribe属性
     - pluginState.subscribe(handler);
     - eventDispatcher.on(pluginKey.key, handler);
+
+- EditorActions
+  - eventDispatcher：？？？作用是什么，全部被作为参数传递了，本Editor class内并未直接使用
 # codebase-full
 - editorPlugin和pmPlugin名称上很容易混淆，不如tiptap主导的extension，它们功能上都是封装某种组件紧密相关的操作
 

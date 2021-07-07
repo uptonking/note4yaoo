@@ -11,5 +11,6 @@ modified: '2020-12-29T11:27:06.630Z'
 
 - https://eufemia.dnb.no/uilib/getting-started/demos
   - /theming-绿色
-
-# more-docs
+# docs
+- https://www.nordtheme.com/docs/colors-and-palettes
+  - 背景灰色，页面白色，典型的文档风格，无toc

@@ -27,10 +27,18 @@ modified: '2021-06-02T17:12:56.049Z'
 - tips
   - cursor-motion, mouse-actions, typing都由browsers处理
 
-- repeat
-  - prosemirror state updates happen by applying a transaction to an existing state, producing a new state.
-    - pm-state的更新一般都是这一种方式
-    - 所以外部更新pm-state的事件处理函数一般都要在这个流程中注册
+- **repeat**
+- prosemirror state updates happen by applying a transaction to an existing state, producing a new state.
+  - pm-state的更新一般都是这一种方式
+  - 所以外部更新pm-state的事件处理函数一般都要注册到这个流程中
+- `NodeView.stopEvent()`; 
+  - Can be used to prevent the editor view from trying to handle some or all DOM events that bubble up from the node view. 
+  - Events for which this returns true are not handled by the editor.
+- When a given prop is declared multiple times, how it is handled depends on the prop. 
+  - In general, directly provided props take precedence, after which each plugin gets a turn, in order. 
+  - For some props, such as `domParser`, the first value that is found is used, and others are ignored. 
+  - For **handler functions** that return a boolean to indicate whether they handled the event, **the first one that returns `true` gets to handle the event**. 
+  - And finally, for some props, such as attributes and decorations, the union of all provided values is used.
 
 - ref
   - [Marijn Haverbeke's blog](https://marijnhaverbeke.nl/blog/)
@@ -599,7 +607,6 @@ function draw() {
 - In a real-world plugin, the `apply` method would also be the place where you add or remove decorations based on new events, 
   - possibly by inspecting the changes in the transaction, or based on plugin-specific metadata attached to the transaction.
 - the `decorations` prop simply returns the plugin state, causing the decorations to show up in the view.
-
 
 - ### Node views
 - There is one more way in which you can influence the way the editor view draws your document. 

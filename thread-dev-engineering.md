@@ -24,9 +24,22 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
-- ## 
+- ## how to adapt faster in a new squad and a new codebase?
+- https://twitter.com/luizpn_/status/1412431905924993030
+  - this is my first week working with a new squad and I feel so slow 
+- Play with the features, once you understand how the product works you start to make more sense of the code. The rest like architectural decisions made you will pick up on the fly when doing tasks.
+- In the beginning, it's normal to be slow. If your teammates help, you'll also learn faster. I'd put emphasis on learning the domain
+  - Another great way to get familiar with some codebase is to write automated tests for it.
+- Don't worry it's normal
+  - First, demonstrate an interest in the project, be proactive, and ask questions. There will be someone that will value your energy and will want to help you
+  - Do pair programming, read tests, read the whole code base, and try to understand the big picture
 
-- ## 
+- ## What is the best approaches to provide an uniform API (it could be a function, endpoint or something else) when you have APIs that do the same thing but has different inputs and outputs?
+- https://twitter.com/sseraphini/status/1412483649564561408
+- I think doing this will just add more complexity, so I'd avoid this if users are devs. Else if they're clients, I'd do a good enough wrapper over the whole thing returning a Frankenstein
+  - How would u do instead? Expose 100 different formats to end user?
+  - I think a wrapper could work. Enforce the inputs and return an unified output if possible
+- A wrapper that receives the "eigen inputs, " a switch case that calls those APIs, and a mapper to return the "eigen outputs."
 
 - ## Open API
 - https://twitter.com/peduarte/status/1407710813247389700

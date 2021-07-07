@@ -7,9 +7,11 @@ modified: '2021-02-05T14:01:09.420Z'
 
 # thread-ux-site-examples
 
-
+# illustrations
+- Multicolor illustrations by Scale
+  - https://2.flexiple.com/scale/multi-color-illustrations
+  - One new high-quality, open-source illustration each day. No attribution needed
 # ux-pieces
-
 - ## 书本封面，倾斜45°的丝带
 - https://www.holloway.com/
 
