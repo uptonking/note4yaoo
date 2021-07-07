@@ -75,6 +75,12 @@ modified: '2021-07-05T18:12:24.491Z'
     - pluginState.subscribe(handler);
     - eventDispatcher.on(pluginKey.key, handler);
 
+- PortalProvider/PortalProviderAPI
+  - PortalProvider基于PortalProviderAPI实现
+  - PortalProviderAPI实现了EventDispatcher接口，用来更新所有ReactNodeView
+  - plugin.view处指定的contentComponent组件的更新由一路传下来的ReactEditorView.dispatch触发，因为里面会执行包含setState()方法的逻辑，
+    - 而且这些组件的父元素与ReactEditorView平级，plugin.view处react组件的渲染不会触发ReactNodeView的渲染，因为不是一颗子树
+
 - EditorActions
   - eventDispatcher：？？？作用是什么，全部被作为参数传递了，本Editor class内并未直接使用
 # codebase-full
