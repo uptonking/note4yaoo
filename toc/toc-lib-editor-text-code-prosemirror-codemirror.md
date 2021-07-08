@@ -1,11 +1,11 @@
 ---
-title: toc-lib-editor-text-code
-tags: [code-editor, lib, text-editor, toc]
+title: toc-lib-editor-text-code-prosemirror-codemirror
+tags: [code-editor, codemirror, prosemirror, text-editor, toc]
 created: '2021-05-14T10:28:05.856Z'
-modified: '2021-05-23T11:00:25.549Z'
+modified: '2021-07-08T12:37:23.562Z'
 ---
 
-# toc-lib-editor-text-code
+# toc-lib-editor-text-code-prosemirror-codemirror
 
 # guide
 
@@ -21,15 +21,10 @@ modified: '2021-05-23T11:00:25.549Z'
 
 - top-dependents-of-prosemirror
   - prosemirror-collab
-  - @tiptap/core
-  - tiptap
-  - tiptap-extensions
-  - @remirror/core
-  - @remirror/pm
-  - @remirror/react
-  - @remirror/core-extensions
+  - @tiptap/core v2
   - @atlaskit/editor-core
   - rich-markdown-editor
+  - @remirror/core
 
 - top-dependents-of-codemirror.v5
   - react-codemirror
@@ -108,17 +103,15 @@ modified: '2021-05-23T11:00:25.549Z'
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
 - https://github.com/jcmnunes/editor
   - https://editor.binarycapsule.tech/
-  - Prosemirror based text editor with markdown shortcuts and serialization
   - 功能简单，短小精悍
+  - Prosemirror based text editor with markdown shortcuts and serialization
+  - It is highly inspired by rich-markdown-editor, linear-app-editor
 
 - https://github.com/benrbray/noteworthy
   - Markdown editor with bidirectional links and excellent math support
   - 参考了prosemirror、zettlr、vscode、notable
-  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
-
-- https://github.com/BlueMona/prosemirror-react-renderer
-  - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
-# collaborative
+  - 依赖solid-js、remark13、prosemirror、electron-window-state
+# collaborative-editor
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/
   - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 

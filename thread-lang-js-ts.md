@@ -18,7 +18,9 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
-- ## 
+- ## TIL that in JavaScript the `arguments` object holds references to the function parameters and you can even modify them outside. 
+- https://twitter.com/aemkei/status/1412880220223381508
+  - This is a unique behavior and only works in non-strict mode.
 
 - ## I often use JavaScript Maps and Sets and often have to enumerate over them. 
 - https://twitter.com/trueadm/status/1411457860698005504

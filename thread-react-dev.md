@@ -14,7 +14,21 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## has anyone found a solution to this TS generic problem?
+- https://twitter.com/sebastienlorber/status/1412784677795110914
+  - Was wondering if there was a way to make it work without `any` , despite TS not having covariance/contravariance
+- Use a ref function instead of a ref object
+- This is just a HTMLElement vs HTMLDivElement mismatch, right?
+  - yes it is, but it's on purpose because it's to build a generic hook that should hold a ref for any kind of HTML element.
+  - And I don't want to force users to provide that type as explicit hooks generic
+- The issue is while *you* are happy to accept any DOM node, React is not happy to have to assign your generic value to a strictly typed $ref arg for each concrete element such as div. 
+  - One solution is to mimic this with a function ref 
+- One solution is to mimic this with a function ref 
+- Unfortunately TS doesn't allow specifying variance of type parameters
+- i usually do this if i dont know the type of my component (which is usually passed as props)
+ `const ref= React.useRef() as React. MutableRefObject<any>`
+
+- Don’t give it an initial value of null, it’ll work just fine!
 
 - ## React/Preact friends, if you were to use global components (think design system primitives), would you prefer them to be lowercase/uppercase? 
 - https://twitter.com/souporserious/status/1411751597135175682

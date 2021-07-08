@@ -7,6 +7,8 @@ modified: '2021-07-05T18:12:24.491Z'
 
 # lib-editor-atlassian-dev-teemu-codebase
 
+# guide
+- EditorPlugin使用的是纯函数，而full-v2中Extension使用的是class
 # codebase-atlassian
 
 ## not-yet
@@ -84,7 +86,7 @@ modified: '2021-07-05T18:12:24.491Z'
 - EditorActions
   - eventDispatcher：？？？作用是什么，全部被作为参数传递了，本Editor class内并未直接使用
 # codebase-full
-- editorPlugin和pmPlugin名称上很容易混淆，不如tiptap主导的extension，它们功能上都是封装某种组件紧密相关的操作
+- editorPlugin和pmPlugin名称上很容易混淆，不如tiptap设计的extension，它们功能上都是封装某种组件紧密相关的操作
 
 - EditorPlugin的设计将创建pm-Plugin对象的过程又封装了一层，层次有点深
   - 但schema、keymap等都在不同文件夹，灵活性很高

@@ -16,6 +16,12 @@ modified: '2021-06-02T17:13:37.692Z'
 
 - parseDOM实现解析
 - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
+# not-yet
+- ？NodeView.update() 和plugin.view().update()的先后顺序
+  - 简单测试结果
+    - 先执行NodeView，再执行plugin.view的更新
+  - 很多时候NodeView无需更新，就不会触发update
+  - 要测试复杂的例子，观察声明顺序和触发顺序是否一致
 # tutorials-examples
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键
@@ -25,7 +31,7 @@ modified: '2021-06-02T17:13:37.692Z'
 # view
 
 - 编辑输入时如何更新dom
-  - 编辑器最外层样式类为`.ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
+  - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
   - 但cursor光标由prosemirror自己实现
 # plugin
 

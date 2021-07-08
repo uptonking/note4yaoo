@@ -62,6 +62,8 @@ modified: '2021-05-13T03:46:35.666Z'
   - I wrote the vanilla version to be fast. My theory is that this implementation is faster because it is specifically written to trigger JS engine optimizations eagerly - the vanilla version ends up triggering deopts + reoptimizations as it stores state and applies DOM mutations.
   - Also the vanilla version uses functions to represent hierarchy and encapsulate state for list items. Those function calls aren't expensive ones, but they're still infinitely slower than something that has no function calls at all.
   - it's actually not that strange when you think about how JS engines optimize code. JIT optimizes for consistency, and abstractions are able to capitalize on that in a way direct imperative code generally can't.
+- all framework should be faster than bare metal js, bc they schedule. base op perf plays a small role in how fast an app is. first thing that makes apps slow is read/write order → layout thrashing, diffing updates → too many changes, virtualisation → breaching 15ms/frame.
+  - that brings us to the high probability that all bare metal js apps are sub-optimal bc if they weren't they'd have a framework wrapped or written around it. there's nothing in js that helps w/ scheduling, and the complexity, if not well abstracted, creeps into the entire codebase.
 # discuss
 - ## 
 

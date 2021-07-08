@@ -31,9 +31,7 @@ modified: '2021-05-23T16:34:27.206Z'
 - grid实现
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
   - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
-
 # why-datable
-
 - very few options for a data table with all the following 
   - typescript
   - div-based css table, not html table element
@@ -42,9 +40,7 @@ modified: '2021-05-23T16:34:27.206Z'
 
 - ag-grid缺点
   - group功能在企业版，需付费
-
 # features
-
 - core
   - sort/filter/group
     - group-header
@@ -60,9 +56,7 @@ modified: '2021-05-23T16:34:27.206Z'
   - table-clone: 或复制粘贴表格到同一文档，需要设计布局，auto-layout自动对齐
   - table from table: 大表中copy部分小表进行分析
   - data(~~viz~~)-replay: 两种方案，puppeteer、rrweb
-
 # draft
-
 - 功能相关
   - 搜索结果
     - 快速跳转到第1个、最后一个、第N个
@@ -73,9 +67,7 @@ modified: '2021-05-23T16:34:27.206Z'
 
 - 可拖拽的主界面
   - 考虑设计成类似trello这类数据卡片，可以任意拖动、缩放、auto-layout自动对齐
-
 # extensions
-
 - grid-config(defaults+utils)
 
 - Multiple Sorting
@@ -94,13 +86,9 @@ modified: '2021-05-23T16:34:27.206Z'
   - web worker
   - apache arrow columnar format
   - wasm vs webgpu
-
 # integrations
-
 - excalidraw
-
 # grid-implementation
-
 - ## react-table
   - required-props: data, columns
   - data: 必需，类型是 array of objects
@@ -149,9 +137,7 @@ modified: '2021-05-23T16:34:27.206Z'
 - ## react-data-grid
 - ## react-base-table
   - required-props
-
 # popular-data-grid-docs
-
 - https://www.ag-grid.com/javascript-grid-reference-overview/
 - https://handsontable.com/docs/8.0.0/tutorial-features.html
 - https://fancygrid.com/samples/
@@ -159,16 +145,12 @@ modified: '2021-05-23T16:34:27.206Z'
 - https://ej2.syncfusion.com/demos/?#/material/grid/filter.html
 - https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/
 - https://www.grapecity.com/spreadjs/docs/v13/online/UsingtheSpreadSheetsElement.html
-
 # pieces
-
 - To use an absolute layout, you would need to either 
   - use div instead of table element
   - or, switch all of your table element styles to be `display: block` ( `display: inline-block` for cells) 
   - and last but not least, when using an absolute layout, your rows must have a predefined height, eg. 50px.
-
 # product-react-table
-
 - a lightweight, fast and extendable datagrid built for React
 - features
   - Lightweight at 11kb (and just 2kb more for styles)
@@ -215,9 +197,7 @@ modified: '2021-05-23T16:34:27.206Z'
     - about viz
       - 海量svg元素的动画和操作体验很不友好
       - Chart.js has support for mixing chart types, animations
-
 # product-react-data-grid
-
 - Excel-like grid component built with React
 - features
   - Lightning Fast Rendering by smart windowing 
@@ -254,9 +234,7 @@ modified: '2021-05-23T16:34:27.206Z'
     - glyphicon-remove form-control-feedback
   - ChildRowDeleteButton组件使用了glyphicon glyphicon-remove-sign 
   - FilterableHeaderCell组件使用了form-group/control
-
 # product-react-base-table
-
 - A react table component to display large datasets with high performance and flexibility
 - BaseTable is designed to be the base component to build your own complex table component
 - dependencies: react-window, react-virtualized-auto-sizer
@@ -274,36 +252,3 @@ modified: '2021-05-23T16:34:27.206Z'
     - there would be three tables internal tables to implement the frozen feature, 
     - and those tables are all scrollable, then the positioning could be not expected, 
     - you could change the `boundariesElement` to `viewport` or the `container` to fix that.
-
-# office-online-product-catalog
-
-- office软件提供商
-  - 国内主流：石墨，腾讯文档，钉钉文档，金山文档，语雀
-  - 国内其他：飞书
-  - 国外主流：GSuite, MSOffice
-  - 周边产品：Canva、Gravit
-
-- 文字编辑器
-  - 石墨：Quill
-  - 腾讯：Etherpad转自研
-  - 语雀：slate转自研
-
-- 表格
-  - 石墨：spreadjs
-  - 腾讯：handsontable转自研 
-
-- 多人协作冲突解决  
-  - OT算法，石墨和腾讯文档都是
-  - [揭开在线协作的神秘面纱 – OT算法](http://www.alloyteam.com/2019/07/13659/)
-  - [实现一个多人协作在线文档有哪些技术难点?](https://www.zhihu.com/question/274573543)
-
-- 选型参考
-  - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
-  - 在线文档作为其他产品的基础功能，如网盘支持在线打开文档
-
-- [金山文档为什么没有腾讯和石墨火？](https://www.zhihu.com/question/439525789/answers/updated)
-  - 金山全家桶你怕不怕
-  - 在线文档这种东西，除非特别难用，否则火不火完全取决于用的人是否足够多。
-    - 这在某种程度上跟社交软件很像，只要不是特别难用，最后就是用户最多的人取胜。
-    - 在线文档这种东西，也是一个道理，你对接的人，他要用腾讯文档，你无非也就是顺手换一下的事情，用几次，你觉得腾讯文档也还行，那你就开始慢慢用了。
-    - 在基础使用体验上，真的很难拉出明显的差距，最后就是用户最多的取胜，在这一点上，我依然觉得腾讯胜出的概率大。

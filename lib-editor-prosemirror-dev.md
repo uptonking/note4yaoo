@@ -15,27 +15,30 @@ modified: '2021-05-06T09:39:53.522Z'
   - 不支持动态改变schema
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
 
+- who is using
+  - atlassian, nytimes, guardian...
+
 - 编辑器问题
   - 光标、选区、输入法、键盘事件
   - 首屏渲染完成后，用户输入文本时，是否还需要走一次完整的解析渲染流程
+  - 分析一个产品或框架，需要考虑的方面：存储的数据结构、状态管理(更新转换)、视图渲染、样式主题
 
 - tips
   - 一个prosemirror document是一个无依赖的普通js object对象，所以实现第三方renderer也可行
   - 如果关注的重点是markdown和table，那就将更多的工作放在prosemirror层，增强通用性，将react wrapper层的工作尽量减少，方便迁移
-  - 分析一个产品或框架，需要考虑的方面：存储的数据结构、状态管理(更新转换)、视图渲染、样式主题
 
 - prosemirror-renderer
   - `<canvas>`是标准的html元素，考虑实现nodeViews将特殊文本渲染到canvas，如表格、图表
   - tiptap的drawing示例，可以在空svg元素上画路径
   - atlaskit-editor开源了自定义renderer可以参考
+  - atlaskit-editor实现了layout多列插件和图片排版插件
 
 - prosemirror-examples
   - 大部分的方案是以vanillajs为core，react为wrapper
-    - 尝试保留rich-markdown-editor的api，将core用tiptap重写
-  - tiptap, rich-markdown-editor, @atlaskit/editor-core, remirror
-  - atlaskit-editor实现了layout多列插件和图片排版插件
+    - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
+  - popular: tiptap/dante, rich-markdown-editor/keyboardnotes, atlassian-editor, guardian-prosemirror-elements, tui.editor.v3/, wax-prosemirror
   - more-react: smartblock, curvenote(redux), nib-edit, xen-editor, czi-prosemirror, pubpub-editor, licit, Aditor
-  - more-vanillajs: stacks-editor, milkdown, bangle.dev, tui.editor.v3, emirror, kangxi-editor, pageboard/client(页面搭建)
+  - more-vanillajs: remirror, stacks-editor, milkdown, bangle.dev, emirror, kangxi-editor, pageboard/client(页面搭建)
 
 - todo
   - vscode-prosemirror
@@ -79,6 +82,28 @@ modified: '2021-05-06T09:39:53.522Z'
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
   - copy the approach by Atlassian editor_v20201205
   - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+
+- https://gitlab.coko.foundation/wax/wax-prosemirror
+  - http://wax-demo.coko.foundation/
+  - https://waxjs.net/docs/wax/
+  - Wax depends on the following libraries.
+    - React for the view(UI)
+    - Styled-components for theming and styling.
+    - Inversify.io as service containers，用的不多，可剥离
+  - 依赖注入使用了很多class
+  - 大量使用react组件
+
+- tui.editor /11.8kStar/MIT/202009/popular
+  - https://github.com/nhn/tui.editor
+  - http://ui.toast.com/tui-editor
+  - core只依赖 codemirror5，另外提供了react/vue-editor，v3新版本会升级到prosemirror
+  - 全都是vanillajs，react的封装很薄，只有3文件
+  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
+  - 代码复杂度高
+  - 通过代码块中的图表配置信息生成图表
+  - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example06-editor-with-chart-plugin)
+  - Markdown WYSIWYG Editor. 
+  - GFM Standard + Chart & UML Extensible.
 
 - https://github.com/BlueMona/prosemirror-react-renderer
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.

@@ -20,7 +20,14 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## I think there is something in the water with document creation.
+- https://twitter.com/chriscoyier/status/1412881853959266304
+  - Notion & Coda & Cover & Slite & Craft & Nuclino
+  - See also: Confluence, Slack
+- is Gutenberg the OG of the slash approach?
+- we call it "cards" and it's going to change everything
+- For science, here’s Quip
+- I’m building a note editor and I cannot wait to build this UI too
 
 - ## do you know any interesting examples of people making money from "tools for developers"?
 - https://twitter.com/Wattenberger/status/1412408988319236108

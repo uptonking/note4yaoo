@@ -14,6 +14,10 @@ modified: '2021-07-02T18:24:12.955Z'
   - 然后在NodeView class的update()方法中更新vdom
   - 更新时常使用基于pubsub的事件管理器模式
 
+- nodeViews作为一个props的定义
+  - `image(node, view, getPos) { return new ImageView(node, view, getPos) }`本身是一个方法，只是返回值经常创建类的实例
+  - NodeView本身是一个Interface而不是class，所以可以像guardian-pm-elements一样定义一个工厂方法，返回值就是实现了NodeView接口的对象
+
 - problems
   - how to manage a list of NodeViews
   - complicated/big nodeview

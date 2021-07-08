@@ -38,6 +38,8 @@ modified: '2021-01-19T04:46:23.100Z'
 - Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also numbers, ranges, emails, and even colors!
 - You *can* customize these native html validation messages that browsers display. Just use the `setCustomValidity` method! Super useful for working with pattern validation, or even just to say "Name is required"
 - Use the built-in `.validationMessage` property that allows you to get a native validation message (in your user's locale!), and display it in the UI the way you like it.
+- Working with date inputs use the `valueAsDate` property so you don't have to manually convert between "YYYY-MM-DD" string and a `Date` object.
+  - Useful for both getting, and settings the value!
 
 - ## What is the correct way to include a blank line
 - https://stackoverflow.com/questions/35315023

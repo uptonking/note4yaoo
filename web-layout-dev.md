@@ -18,7 +18,10 @@ modified: '2021-01-01T20:17:05.116Z'
     - android支持
     - swiftui不支持
 # guide
-- [Ten modern layouts in one line of CSS_202007](https://web.dev/one-line-layouts/)
+
+- ref
+  - [Ten modern layouts in one line of CSS_202007](https://web.dev/one-line-layouts/)
+  - [Every-layout.dev](https://every-layout.dev/) is an excellent resource to find CSS layout patterns without media queries. They call it algorithmic layout design
 
 - angular/flex-layout /MIT/5kStar/202007
   - https://github.com/angular/flex-layout

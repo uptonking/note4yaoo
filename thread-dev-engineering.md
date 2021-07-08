@@ -24,6 +24,25 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Polishing up a project for release is so much work. I feel like I’ve been working on “finishing” Parcel 2 for the last 6 months. Getting close though!
+- https://twitter.com/devongovett/status/1412865291315417089
+- Some recent things I've been working on:
+  - Automatic module/nomodule
+  - Support for reading tsconfig.json to configure JSX settings
+  - API consistency
+  - TypeScript definitions for public API
+  - Improvements for web workers
+  - Cache portability
+  - Improved diagnostics
+  - Lots of bugs
+- The last 10% is always the longest half of the project
+
 - ## how to adapt faster in a new squad and a new codebase?
 - https://twitter.com/luizpn_/status/1412431905924993030
   - this is my first week working with a new squad and I feel so slow 
