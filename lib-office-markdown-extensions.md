@@ -14,10 +14,20 @@ modified: '2021-06-02T15:26:19.890Z'
   - 需要多个空格才会渲染line-break
 
 - markdown-extensions
-
-- mdx-extensions
-  - readmeio-markdown
-  - jsxtreme-markdown
+  - mdx
+  - [readmeio-markdown](https://github.com/readmeio/markdown)
+  - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
+  - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
+    - who is using: curvenote
+    - MyST is a rich and extensible flavor of Markdown meant for technical documentation and publishing.
+    - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
+  - [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
+    - a Markdown syntax optimized for book authoring. 
+    - It is standardized and published for Vivliostyle and its sibling projects.
+  - [R Markdown](https://rmarkdown.rstudio.com/)
+  - [Idyll markup](https://idyll-lang.org/docs/syntax)
+    - The main extensions are reactive variables, and components. 
+    - Together these two elements can be used to create dynamic, interactive articles.
 
 - markdown-files-suffix
   - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron"]

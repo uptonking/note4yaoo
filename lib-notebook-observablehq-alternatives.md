@@ -98,3 +98,11 @@ modified: '2021-05-14T14:46:37.026Z'
   - TiddlyWiki is a complete interactive wiki in JavaScript. 
     - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
     - It is highly customisable: the entire user interface is itself implemented in hackable WikiText.
+
+- https://github.com/sutter-dave/apogeejs-admin
+  - a javascript programming environment for iterative programming.
+  - inspired by the spreadsheet and notebooks.
+
+- [Idyll markup](https://idyll-lang.org/docs/syntax)
+  - The main extensions are reactive variables, and components. 
+  - Together these two elements can be used to create dynamic, interactive articles.

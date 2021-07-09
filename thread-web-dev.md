@@ -29,6 +29,22 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ##  I've seen a lot of examples of custom selects and comboboxes in various libraries relying on aria-activedescendant. 
+- https://twitter.com/devongovett/status/1312150515220799489
+  - I'd *highly* recommend avoiding this if possible. 
+  - It does not work with mobile screen readers, and changes are often not announced. 
+  - Use real DOM focus!
+  - TL; DR: test your code with real devices and AT! 
+- react-aria solves this?
+  - Not yet! To clarify, we use real DOM focus for our select component and all other published components due to issues we've seen in the past. ComboBox is a work in progress.
+- This is a major headache, especially for junior developers trying to write tests. Where is my Select component?  Yeah check the Dom, it’s outside the app’s root. Time to mock those. Feels very unnecessary...
+
 - ## HCL Wizard is a perceptually uniform color selection tool based on the HCL color model.
 - https://twitter.com/DataVizSociety/status/1412479722374770693
   - [Perceptual Uniformity with HCL Wizard](https://nightingaledvs.com/perceptual-uniformity-with-hcl-wizard/)
@@ -83,6 +99,7 @@ modified: '2021-01-08T17:13:43.392Z'
 - Now you made me wonder which way `PerformanceObservers` go. How do MutationObservers not leak memory? Hold weak refs to the callbacks?
   - The other APIs are smart enough to realise the callback will never happen again, because the means to reconnect the element to the document (or manually dispatch an event) are gone. PerformanceObservers are always global, so they always need disconnecting/unobserving manually.
 - I've made it a habit of manually unsubscribing(?) everything I do attach, be it IntersectionObserver or event listeners. It is a bit verbose at times but I've found that it forces me to think what happens when elements/components are torn down, which is quite easy to overlook.
+- WebKit folks are working on this now
 
 - ## when somebody asks "how would I do [x]", the answer is: Same basic strategy as with PHP, Rails, Laravel, express, etc. Then here are some clientside hooks to make the UX super fancy".
 - https://twitter.com/ryanflorence/status/1406064047712210946

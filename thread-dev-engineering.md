@@ -28,7 +28,14 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## When I do a big refactor to a data structure I like to start by changing the type definitions. Then I fix the red squiggles until they're gone.
+- https://twitter.com/kentcdodds/status/1413326124969459714
+  - The joy of things *just working* when I finally run the code will never get old.
+- This! I have done a few big retractors (~2000-5000 lines of code each) on my current project over the past 9 months without batting an eye. There's a correlation between the red squiggles being gone and the tests passing. TypeScript is the bomb! 
+- This is the red-green-refactor cycle with typescript.
+- With ts I have no problem on refactors covering tens of files, thousands of lines. 
+  - It saved us from having to write a lot of test cases. 
+  - More than that I find writing the interface first, I have a clear mental model of what I’m developing and all goes faster
 
 - ## Polishing up a project for release is so much work. I feel like I’ve been working on “finishing” Parcel 2 for the last 6 months. Getting close though!
 - https://twitter.com/devongovett/status/1412865291315417089

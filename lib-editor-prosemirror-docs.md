@@ -48,6 +48,13 @@ modified: '2021-06-02T17:12:56.049Z'
   - It does this by implementing a WYSIWYG-style editing interface for documents more constrained and structured than plain HTML. 
   - You can customize the shape and structure of the documents your editor creates, and tailor them to your application's needs.
 # examples-tutorials
+- examples-repos
+  - [prosemirror-example-setup](https://github.com/ProseMirror/prosemirror-example-setup)
+  - [official website examples](https://github.com/ProseMirror/website/tree/master/example)
+  - [prosemirror-codemirror-basic](https://codesandbox.io/s/prosemirror-codemirror-basic-forked-78jbk)
+  - [ProseMirror + CodeMirror 6](https://github.com/sibiraj-s/prosemirror-codemirror-6)
+  - [prosemirror-tables-lib-example](https://codesandbox.io/s/prosemirror-tables-lib-example-dij6m)
+    - handsontable官方和CKEditor进行了合作，但不支持prosemirror
 
 ## [basic example](https://prosemirror.net/examples/basic/)
 

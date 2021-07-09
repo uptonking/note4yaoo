@@ -11,6 +11,7 @@ modified: '2021-05-14T14:44:14.720Z'
 
 - onb-cons
   - auto-ref是优点，也是缺点，kibana最新版在鼓励by-value而不是by-reference，折中方案是snapshot+auto-update-option
+  - view + collapsible d3js + collapse data/dataseeds，类似html/css/js的面板
 
 - tips
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)

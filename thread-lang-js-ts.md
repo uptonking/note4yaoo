@@ -18,6 +18,19 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you want to learn advanced @typescript techniques quickly, try retro-typing a library written completely in JavaScript. 
+- https://twitter.com/DavidKPiano/status/1413149144252702729
+  - It's not just a skill, it's an art form and an arduous(艰难的) adventure.
+- we have the existing DT types to work from.
+
 - ## TIL that in JavaScript the `arguments` object holds references to the function parameters and you can even modify them outside. 
 - https://twitter.com/aemkei/status/1412880220223381508
   - This is a unique behavior and only works in non-strict mode.

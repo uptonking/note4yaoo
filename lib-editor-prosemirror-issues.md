@@ -18,13 +18,17 @@ modified: '2021-06-12T02:40:42.535Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Tooltip inline menu fights with iOS selection menu
 - https://github.com/ProseMirror/prosemirror/issues/7
 - Since control over the tooltip menu is impossible for web pages, the **recommendation** here is to either not use the tooltip menu on iOS, or set its `position` option to "below" to prevent the two tooltips from overlapping.
 
-- ## s there any way using keymap when ‘editable’ of the view is false
+- ## Is there any way using keymap when ‘editable’ of the view is false
 - https://discuss.prosemirror.net/t/is-there-any-way-using-keymap-when-editable-of-the-view-is-false/3317
-- With `editable: false`, the `contenteditable` attribute on the document node is removed, which by default makes the browser disable keyboard focus for the element. 
+- With `editable: false` , the `contenteditable` attribute on the document node is removed, which by default makes the browser disable keyboard focus for the element. 
   - When the node isn’t focused, it doesn’t even receive keyboard events, so it’s hard to implement any keybindings for it.
   - You could use the `attributes` prop  to add a `tabIndex=0` attribute to your editor to make it focusable. 
   - But this might lead to some other key bindings also firing, and if those do change the document, `editable: false` (which works only on the DOM) level won’t stop them.

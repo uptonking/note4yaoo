@@ -11,7 +11,7 @@ modified: '2021-06-02T17:13:37.692Z'
 
 - 要关注的重点
   - 编辑器state数据结构是如何设计的
-  - 输入时如何更新dom元素
+  - ??? 输入时如何更新dom元素
   - plugin如何更新state
 
 - parseDOM实现解析
@@ -27,12 +27,28 @@ modified: '2021-06-02T17:13:37.692Z'
 - 编辑器默认支持按backspace退格键删除、del删除键
 - 编辑器默认不支持enter换行
 # state
+- [recommended way to communicate from a plugin to a NodeView](https://discuss.prosemirror.net/t/how-can-i-communicate-from-a-plugin-to-a-custom-nodeview/952)
+  - it seems possible to decorate the NodeViews and then update the decorations when the external data changes
 
+- ## EditorState和plugin.state的首次创建顺序
+  - `EditorState.create()` > 所有plugin.state.init() > `new EditorView()` > **所有plugin.view()**  > 所有plugin.state.apply() > editorView.dispathTransaction(tr) > ~~部分~~插件plugin.view().update()
+  - 注意：NodeView的init()在实际创建Node时才执行，编辑器中没有此类型的Node时不会创建和更新
+  - 实例场景：在plugin.view()中也可以创建和更新dom，基于ReactDOM.render()，参考Aditor，功能上可以部分替代NodeView，但需要自己控制update的内容; 
+  - plugin.view()方法自身只执行一次，但返回值中的view().update()后面编辑器更新时会多次执行
+
+- ## 不涉及NodeView(如只按回车键)时，EditorState和plugin.state的更新顺序
+  - 所有plugin.state.apply()依次执行 > editorView.dispathTransaction(tr) > plugin.view().update()
+
+- ## 涉及NodeView时，EditorState和plugin.state的更新顺序
+  - 所有plugin.state.apply()依次执行 > editorView.dispathTransaction(tr) > `NodeView.init()/update()` > plugin.view().update()
 # view
+- decoration vs NodeView vs plugin.view()
+  - decoration不影响prosemirror document
+  - NodeView可以完全定制渲染逻辑和更新逻辑，只有在编辑器中存在该类型PMNode时，才会创建和更新
+  - plugin.view()只要EditorView更新了，就会被调用，因此要注意控制更新逻辑提高性能
 
 - 编辑输入时如何更新dom
   - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
-  - 但cursor光标由prosemirror自己实现
 # plugin
 
 # model

@@ -156,8 +156,8 @@ label: {
 
 - ## what difference between the plugin view and nodeViews and schema and decoration?
 - https://discuss.prosemirror.net/t/what-can-plugin-view-do-or-what-should-it-be-used-for/3517
-- a `NodeView` is used to control how a specific node is rendered (like a codeblock) but is within the editorview and semi-managed by ProseMirror
-  - There are a limit set of hooks like update, destroy to control the `NodeView` similar to that of a `PluginView` (but more scoped/granular); 
+- `NodeView` is used to control how a specific node is rendered (like a codeblock) but is within the editorview and semi-managed by ProseMirror
+  - There are a limit set of hooks like `update` , `destroy` to control the `NodeView` similar to that of a `PluginView` (but more scoped/granular); 
   - they’re only called a change affects a node, not when a change affects the editor view.
 - We tend to think about the “view” section in the same way we think about a “useEffect” hook in React. The update function can be treated like the “deps” array in useEffect and then you can use destroy to do a final clean up. It’s a really great spot to react to state changes and then perform side effects. 
   - Manipulating the dom outside of view.dom
@@ -171,9 +171,10 @@ label: {
   - when the node attributes of the custom nodeView change and therefore the underlying doc changes, I just replace the node and all works as expected.
   - But now I would like to communicate to the nodeView, without actually changing the node. So I tried to set from my plugin a node decoration on that nodeview (putting my payload into the spec argument). 
   - Unfortunately at my custom nodeView, the `update` method (where I expect to get access to the payload in the decoration spec object) never gets called.
-- Is this the recommended way to communicate from a plugin to a NodeView?
+- **Is this the recommended way to communicate from a plugin to a NodeView**?
   - I have a similar situation where a plugin gets external data that various NodeViews use. 
-  - I need those NodeViews to update (re-render) themselves when that external data changes. So I really just need a way to tell prosemirror to re-render the NodeViews.
+  - I need those NodeViews to update (re-render) themselves when that external data changes. 
+  - So I really just need a way to tell prosemirror to re-render the NodeViews.
   - From this thread it seems possible to decorate the NodeViews and then update the decorations when the external data changes. 
   - The decoration change will then trigger prosemirror to re-render the NodeViews. 
   - It seems like a round about way to force a re-render but if its the best way then I’ll do it

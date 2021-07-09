@@ -59,6 +59,16 @@ modified: '2021-05-14T18:47:24.054Z'
 - Paged.js
   - https://gitlab.pagedmedia.org/tools/pagedjs
   - library to display paginated content in the browser and to generate print books using web technology.
+
+- [Fidus Writer](https://www.fiduswriter.org/how-it-works/)
+  - https://github.com/fiduswriter/fiduswriter
+    - /420Star/AGPLv3/202107/python
+    - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
+    - 子项目很多，很复杂
+  - Fidus Writer is an online collaborative editor especially made for academics who need to use citations and/or formulas.
+  - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
+  - Export as PDF, EPUB or HTML
+  - In each case, you can choose from a number of layouts that are adequate for the medium of choice.
 # guide
 - ## [Google Docs will now use canvas based rendering: this may impact some Chrome extensions](https://workspaceupdates.googleblog.com/2021/05/Google-Docs-Canvas-Based-Rendering-Update.html)
 - We’re updating the way Google Docs renders documents. 
@@ -80,18 +90,6 @@ modified: '2021-05-14T18:47:24.054Z'
 - Lucidchart uses canvas for most stuff as well?
   - The shape canvas (shapes, lines, text, etc) is webgl, all the chrome is Angular.
   - And worth noting that while they did roll their own text editing, it was an endless source of bugs and UI/keybinding inconsistencies across OSes. Definitely not for the faint of heart.
-
-- ## MathJax Turns 3.0
-- https://news.ycombinator.com/item?id=22582343
-- MathJax 3 is about twice as fast as MathJax 2, but still slower than KaTeX.
-- One relatively clear thing is that MathJax supports more features
-- One thing I remember reading is that MathJax takes a fundamentally different approach, and that a lot of the time it spends is in measuring things on the page to get things exactly right, while KaTeX is looser about things. 
-- Both MathJax and KaTeX support server-side rendering, and the speed differences vanish(消失) (for the reader at least) when nothing is being done client-side.
-
-- [Switching From MathJax to KaTeX](https://www.xaprb.com/blog/switching-mathjax-katex)
-  - MathJax is sophisticated(复杂巧妙的，先进的；水平高的), but it’s large and has a lot of dependencies. It’s not slow, but KaTeX is a lightweight drop-in replacement that’s even faster.
-  - MathJax is simple to install with a one-line `<script>` tag
-  - KaTeX is slightly more involved. js, css, setup
 # discuss-stars
 - ## 如何看待 Google Docs 将从 HTML 迁移到基于 Canvas 渲染？
 - https://www.zhihu.com/question/459251463/answers/updated
