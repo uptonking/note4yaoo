@@ -19,9 +19,13 @@ modified: '2021-05-06T09:39:53.522Z'
   - atlassian, nytimes, guardian...
 
 - tips
-  - 实现复杂组件可参考官方基于CodeMirror实现Embedded code editor的例子，使用NodeView，没用contentDOM
+  - 实现复杂组件可参考
+    - 官方基于CodeMirror实现Embedded code editor的例子，使用NodeView，没用contentDOM
+    - 官方Footnotes的例子，使用NodeView，没用contentDOM，但用了sub-editor，总共2个editor
   - 一个prosemirror document是一个无依赖的普通js object对象，所以实现第三方renderer也可行
   - 如果关注的重点是markdown和table，那就将更多的工作放在prosemirror层，增强通用性，将react wrapper层的工作尽量减少，方便迁移
+  - 提供renderless/themeable不同封装层次/灵活性的组件
+  - 类似footnotes使用多个pm-EditorView的例子
 
 - 编辑器问题
   - 光标、选区、输入法、键盘事件
