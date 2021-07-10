@@ -18,6 +18,12 @@ modified: '2021-05-06T09:39:53.522Z'
 - who is using
   - atlassian, nytimes, guardian...
 
+- todo
+  - prosemirror-codeblock
+  - prosemirror-handsontable/data-grid
+  - prosemirror-css/theming
+  - vscode-prosemirror
+
 - tips
   - 实现复杂组件可参考
     - 官方基于CodeMirror实现Embedded code editor的例子，使用NodeView，没用contentDOM
@@ -39,24 +45,34 @@ modified: '2021-05-06T09:39:53.522Z'
   - atlaskit-editor实现了layout多列插件和图片排版插件
 
 - prosemirror-examples
+  - 方向：markdown、collab协作、data-grid、codeblock
   - 大部分的方案是以vanillajs为core，react为wrapper
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
-  - vanillajs-first
-    - tiptap/dante, rich-markdown-editor/keyboardnotes, atlassian-editor, guardian-prosemirror-elements
-    - tui.editor.v3/, wax-prosemirror
-  - react-first
-    - smartblock, curvenote(redux), nib-edit, xen-editor, czi-prosemirror, pubpub-editor, licit, Aditor
-  - more-vanillajs: remirror, stacks-editor, milkdown, bangle.dev, emirror, kangxi-editor, pageboard/client(页面搭建)
-
-- todo
-  - prosemirror-codeblock/css/theming
-  - vscode-prosemirror
-  - prosemirror-handsontable/other-table
+- **vanillajs-first**
+  - tiptap/dante/wix, tui.editor.v3, remirror, emirror
+  - guardian-prosemirror-typerighter/elements/invisibles/noting, stacks-editor(StackOverflow)
+  - milkdown(Typora), bangle.dev, pubpub-editor(202003)
+  - start-editor, jcmnunes-bc-editor(md), zeditor
+  - y-prosemirror, NotionEditor(toy)
+- **react-first**
+  - rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror, xkeditor-next(r-m-e)
+  - curvenote-editor(redux), czi-prosemirror(201906), licit(word), perry-white(newspaper)
+  - Aditor, smartblock(202003), xen-editor(vanillajs为主，代码不多)，nib-edit(高级功能未开源如comment/collab)
+- more-editor
+  - pageboard/client(页面搭建), noteworthy(solidjs)
 # pieces
 
 # examples-remark-parse
 
-- https://github.com/marionebl/prosemirror
+- milkdown
+  - https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - /454Star/MIT/202106/ts
+  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+
+- https://github.com/marionebl/prosemirror  /mdx
   -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView
   - A personal experiment libraries over prosemirror project
   - prosemirror + remark demos
@@ -64,7 +80,7 @@ modified: '2021-05-06T09:39:53.522Z'
     - This library is a full React implementation of the official prosemirror-view package. 
     - Aims to implement a simple React Component that uses ProseMirror Data Model to render the document and bind the right events to synchronize the user selection and created ProseMirror transaction based on user inputs.
 
-- https://github.com/Novartis/mdx-utils
+- https://github.com/Novartis/mdx-utils  /mdx
   - 实现了将mdx ast转换成PMNode，视图层仍然使用prosemirror-view
   - This package contains utilities for working with MDX syntax.
   - Parses an MDX document and its frontmatter into an AST.
@@ -77,7 +93,6 @@ modified: '2021-05-06T09:39:53.522Z'
   - /AGPLv3/202101/js
   - Collaborative editor
   - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
-
 - https://github.com/benrbray/noteworthy
   - Markdown editor with bidirectional links and excellent math support
   - 参考了prosemirror、zettlr、vscode、notable
@@ -89,7 +104,7 @@ modified: '2021-05-06T09:39:53.522Z'
 - https://github.com/ryaninvents/prosemirror-doc-tpl
   - jsx转PMNode，实现很简单
   - provides a concise way to create Prosemirror documents using a JSX-like syntax, for testing or content generation.
-# examples-repos
+# prosemirror-examples-repos
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -99,12 +114,12 @@ modified: '2021-05-06T09:39:53.522Z'
   - 提供了针对image/file的图文混排工具
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
-
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
   - copy the approach by Atlassian editor_v20201205
   - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
 
-- https://gitlab.coko.foundation/wax/wax-prosemirror
+- wax-prosemirror
+  - https://gitlab.coko.foundation/wax/wax-prosemirror
   - http://wax-demo.coko.foundation/
   - https://waxjs.net/docs/wax/
   - Wax depends on the following libraries.
@@ -139,13 +154,6 @@ modified: '2021-05-06T09:39:53.522Z'
   - complex Prosemirror project: [how we structured our code](https://discuss.prosemirror.net/t/prosemirror-composer-wip/3887)
   - Modifier - A modifier function takes a `transaction` and returns a `transaction`.
   - Handler - A handler function takes the `editorView` and composes the modifier functions and `dispatches` them.
-
-- https://github.com/BlueMona/prosemirror-react-renderer
-  - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
-- https://github.com/johnkueh/prosemirror-react-nodeviews
-  - An example of how to use React components as NodeViews for ProseMirror
-  - 原理是`ReactDOM.createPortal(<Component />, container, shortid.generate()); `，事件传播会根据组件在react tree中的位置，而不是根据在真实dom tree中的位置
-
 - https://github.com/atlassian/prosemirror-utils
   - Utils library for ProseMirror
 
@@ -164,6 +172,13 @@ modified: '2021-05-06T09:39:53.522Z'
   - Inspect selection – position, head, anchor and etc.
   - Inspect active marks
   - See document stats – size, child count
+
+- https://github.com/BlueMona/prosemirror-react-renderer
+  - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
+- https://github.com/johnkueh/prosemirror-react-nodeviews
+  - An example of how to use React components as NodeViews for ProseMirror
+  - 原理是`ReactDOM.createPortal(<Component />, container, shortid.generate())`; 
+  - 事件传播会根据组件在react tree中的位置，而不是根据在真实dom tree中的位置
 
 - https://github.com/ueberdosis/prosemirror-to-html
   - Takes ProseMirror JSON and outputs HTML. 基于php实现

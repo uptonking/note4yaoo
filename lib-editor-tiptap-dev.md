@@ -7,30 +7,38 @@ modified: '2021-05-06T09:46:30.944Z'
 
 # lib-editor-tiptap-dev
 
-> A headless, framework-agnostic and extendable WYSIWYG rich text editor, based on ProseMirror.
-
 # guide
+
+- features
+  - headless without any css
+  - framework-agnostic
+  - realtime collaboration
+  - customizable with a ton of extensions
+  - typescript
+
 - tiptap-examples
   - dante
   - more: shiki-editor(vue)
 # faq-not-yet
 
-# docs
-
-## output
-
-- You can store your content as a JSON object or as a good old HTML string.
-- **tiptap doesn’t support Markdown as an input or output format**. 
-  - Both, HTML and JSON, can have deeply nested structures, Markdown is flat.
-  - tiptap’s strength is customization, that doesn’t work very well with Markdown.
-  - Markdown standards vary.
-  - There are enough packages to convert HTML to Markdown and vice-versa.
 # discuss-stars
 - ## [Markdown input and output_201810](https://github.com/ueberdosis/tiptap/issues/66)
 - [prosemirror official Friendly Markdown example](https://prosemirror.net/examples/markdown/)
   - 支持在markdown和wysiwyg间切换，无外部依赖
 - At the moment it's not possible to add this functionality with extensions. That's something I have to add to the core.
 - I don’t see us adding this to the core, it’s just too different. So I’m closing this here for now. Consider using CodeMirror, if you really want to work with Markdown.
+
+- ## Comparison to raw ProseMirror, esp. regarding collaboration. 
+- https://github.com/ueberdosis/tiptap/discussions/1507
+- Everything you can do with ProseMirror, you can also do with tiptap. 
+  - The goal of tiptap is to bundle some related logic into extensions (e.g. schema, commands, input rules), and to make some complex APIs more accessible (e.g. chained commands). 
+  - We also provide a documentation with many examples and extensions so it’s way easier to start than with plain ProseMirror.
+- y.js builds on top of CRDT instead of OT. 
+- Anyway, we’re doing a big bet on Y.js. 
+  - CRDT are the future, and Y.js is the most performant implementation. 
+  - It has a huge ecosystem, and new community projects pop up every week. 
+  - If you want to go the OT-way, you can do that with tiptap as you would do it with ProseMirror. 
+  - All parts and APIs of ProseMirror are accessible through tiptap.
 # discuss
 - ## Tiptap 2 beta is here_202104
 - https://discuss.prosemirror.net/t/tiptap-2-beta-is-here/3710
@@ -67,19 +75,34 @@ modified: '2021-05-06T09:46:30.944Z'
   - But any state that would not be inside plugin state and still be relevant, eg API/UI stuff, you would have to engineer your own method of triggering changes somehow and relaying them forward.
   - Using React context for that purpose sucks.
 # examples-repos
-- https://github.com/michelson/Dante
+- dante3 /1.5kStar/MIT/202106/js
+  - https://github.com/michelson/Dante
   - https://www.dante-editor.dev/
-  - /1.5kStar/MIT/202106/js
   - 依赖 emotion、polished、react-json-view、yjs
   - Just another medium clone built on top of ProseMirror/TipTap
-  - Dante3 is a port from Dante2 (Draftjs) 
-  - Dante2: Bad mobile support, big size, no realtime collab
+  - Dante3(tiptap2): a Tiptap port of Dante2
+  - Dante2(draftjs): Bad mobile support, big size(immutablejs), no realtime collab
+  - Dante1(vanillajs): rely a lot on DOM manipulation
+
+- wix-tiptap-editor
+  - https://github.com/wix/ricos
+  - https://ricos.js.org/docs/ricos/ricos-intro
+  - A React-based rich content editor with an extensible plugin system
+  - wix公司开源了自己的内容编辑器，公开了自己的json schema规范，提供了wix-rich-content-editor、wix-rich-content-viewer
+  - 还支持在基于tiptap v2的编辑器中编辑内容，提供了draftToTiptap()转换方法，将ricos-draft的json格式转换成tiptap支持的json格式
+  - 内部插件大多严重依赖自研ui库和基础库，如wix-rich-content-ui-components、ricos-content
+
+- @sensenet/editor-react
+  - https://github.com/SenseNet/sn-client
+  - Text editor library behind rich text editor is changed to tiptap@2.0
+  - As a first step only those text editing features are implemented
+  - More new things (managing tables, embedding, etc.) are coming in the following releases.
 
 - https://github.com/primo-af/primo
   - https://primo.af/
   - /76Star/AGPLv3/202106/svelte
+  - an all-in-one ide, cms, component library, and static site generator
   - a next-gen, dev-friendly alternative to WordPress.
-
 - https://github.com/shikimori/shiki-editor /vue
   - a wysiwyg editor based on prosemirror
   - highly inspired by tiptap source code. Many parts of the code are taken from there.

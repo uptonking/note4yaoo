@@ -67,8 +67,6 @@ modified: '2021-06-01T20:03:38.284Z'
   - WYSIWYG is limiting, requires a massive amount of extra tooling and styles, and it never actually works because the presentation layer is not flat or static.
   - The better solution is to tell your stakeholders to fill out form fields with no styling, and to take care of that elsewhere.
 - The book editor should have been something like elementor free.
-- 
-- 
 
 - ## Has Your Opinion of the Block Editor Changed?_202009
 - https://www.reddit.com/r/Wordpress/comments/im77i3/has_your_opinion_of_the_block_editor_changed/

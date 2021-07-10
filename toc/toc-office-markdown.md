@@ -25,15 +25,22 @@ modified: '2021-01-04T17:26:25.032Z'
   - A markdown parser and compiler. Built for speed.
   - light-weight while implementing all markdown features from the supported flavors & specification
 # markdown-editor
-- https://github.com/HarryChen0506/react-markdown-editor-lite
-  - /446Star/MIT/202008
-  - 基于React的markdown编辑器，实现简单且清晰
-  - 基于textarea实现
-- https://github.com/outline/rich-markdown-editor
-  - /2kStar/BSD/202105/ts
+- react-markdown-editor-lite /446Star/MIT/202008
+  - https://github.com/HarryChen0506/react-markdown-editor-lite
+  - 基于textarea和React的markdown编辑器，实现简单且清晰
+- rich-markdown-editor /2kStar/BSD/202105/ts
+  - https://github.com/outline/rich-markdown-editor
   - 依赖prosemirror-markdown
   - React and Prosemirror based markdown editor that powers Outline.
   - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
+- milkdown
+  - https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - /454Star/MIT/202106/ts
+  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+
 - https://github.com/remarkjs/react-markdown
   - https://remarkjs.github.io/react-markdown/
   - /7.1kStar/MIT/202105/js
@@ -41,14 +48,9 @@ modified: '2021-01-04T17:26:25.032Z'
   - Markdown component for React using remark.
   - why this one?
     - The two main reasons are that they often rely on `dangerouslySetInnerHTML` or have bugs with how they handle markdown. 
-    - react-markdown uses a syntax tree to build the virtual dom which allows for updating only the changing DOM instead of completely overwriting. 
-- https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - /454Star/MIT/202106/ts
-  - 依赖prosemirror、markdown-it、prism、katex，但不依赖prosemirror-markdown、react
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
+    - react-markdown uses a syntax tree to build the virtual dom which allows for updating only the changing DOM instead of completely overwriting.
 - https://github.com/StackExchange/Stacks-Editor
-  - Stack Overflow's Combination Rich Text / Markdown Editor
+  - Stack Overflow's Combination Rich Text/Markdown Editor
   - 依赖prosemirror, hightlight.js，不依赖react
 - https://github.com/uiwjs/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.

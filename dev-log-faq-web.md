@@ -33,6 +33,8 @@ modified: '2021-03-29T19:17:38.650Z'
   - 读写文件：文本、图片、文档doc、表格
   - 图表绘
 
+- 将对象的引用保存到dom对象，如pm-editorView保存到dom，是否影响性能
+
 ## css更新的方式比较，切换class类名，通过修改style属性来更新css vars的值
 
 - 修改style属性本身可看做修改内联样式
@@ -40,9 +42,7 @@ modified: '2021-03-29T19:17:38.650Z'
   - 因为会加大dom体积，增加解析时间和存储空间，所以渲染会慢一点点
 
 - @see: inline style vs className
-
 # inline style vs className
-
 - inline style
   - 使用inline style动态修改样式更方便
   - inline styling does not support pseudos, media queries, keyframes, auto-prefix
@@ -95,13 +95,9 @@ modified: '2021-03-29T19:17:38.650Z'
 - 暂时没找到直接的方法，因为原本各网站的文字链接、资源url地址都会变化
 - 可考虑重写原网站
 - 可参考阿里qiankun微前端解决方案
-
 # 是否要用前端模版引擎
-
 - 根据团队的技术方案
-
 # how to split large html
-
 - 单页拆多页
   - 最简单的方式是通过`<a>`标签跳转
 - 使用传统(后端)html模板在编译期合并
@@ -112,7 +108,7 @@ modified: '2021-03-29T19:17:38.650Z'
   - 注意template slot并没有提供插入变量占位符、控制流等方法，需自己实现
 - 直接使用js读取和插入html元素
   - `querySelector('s').innerHTML=元素`
-  - `$("#includedContent").load("list.html");`
+  - `$("#includedContent").load("list.html"); `
 
 - ref
   - [Splitting large html file in several files](https://stackoverflow.com/questions/43153049/splitting-large-html-file-in-several-files)
@@ -121,9 +117,7 @@ modified: '2021-03-29T19:17:38.650Z'
   - [写组件的时候是写好html结构还是在js里拼接好？](https://www.zhihu.com/question/40993912/answers/updated)
   - [Chrome 为何 deprecated HTML Imports？](https://www.zhihu.com/question/310628534)
     - 因为推出了更新的web components标准
-
 # hide dom elements: visibility vs display
-
 - `visibility: hidden` does not cause a reflow on the document, while `display: none` does.
 - `display:none` will remove the element from the document's normal flow and set the values for position/height/width to 0 on the element and its children. 
   - When the elements display property is changed to other value than `none` , it triggers a complete document re-flow, which can be a problem for big documents - and sometimes not-so-big documents being rendered on hardware with limited capabilities.
@@ -135,9 +129,7 @@ modified: '2021-03-29T19:17:38.650Z'
 - `display: none` acts like `Element.remove()` .
 - ref
   - [Performance differences between visibility:hidden and display:none](https://stackoverflow.com/questions/11757016/performance-differences-between-visibilityhidden-and-displaynone)
-
 # firefox与chrome滚动条样式不一致，应该如何处理
-
 - 结论
   - 选择1：放弃自定义滚动条，使用系统默认的，各操作系统实现的滚动条不一致
   - 选择2：remove scrollbars

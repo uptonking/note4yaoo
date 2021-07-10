@@ -98,22 +98,20 @@ modified: '2021-07-08T12:37:23.562Z'
   - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
   - Built on CodeMirror 6. Powers https://octo.app/
 # prosemirror-examples
-- 研发方向：collab协作
+- 研发方向：markdown、collab协作、data-grid、codeblock
 - **vanillajs-first**
-  - tiptap, remirror, milkdown(Typora), bangle, pubpub-editor(202003), NotionEditor
-  - guardian-prosemirror-typerighter/elements/invisibles/noting
-  - start-editor, jcmnunes-bc-editor, zeditor
-  - prosemirror-utils
-  - y-prosemirror
+  - tiptap/dante, tui.editor.v3, remirror, emirror
+  - guardian-prosemirror-typerighter/elements/invisibles/noting, stacks-editor(StackOverflow)
+  - milkdown(Typora), bangle.dev, pubpub-editor(202003)
+  - start-editor, jcmnunes-bc-editor(md), zeditor
+  - y-prosemirror, NotionEditor(toy)
 - **react-first**
-  - rich-markdown-editor, xkeditor-next, wax-prosemirror, curvenote-editor, czi-prosemirror(201906), smartblock(202003), nib-edit, licit(word), perry-white(newspaper)
-  - Aditor, xen-editor(以vanillajs为主)
-- more-prosemirror
-  - noteworthy(solidjs)
+  - rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror, xkeditor-next(r-m-e)
+  - curvenote-editor(redux), czi-prosemirror(201906), licit(word), perry-white(newspaper)
+  - Aditor, smartblock(202003), xen-editor(vanillajs为主，代码不多)，nib-edit(高级功能未开源如comment/collab)
+- more-editor
+  - pageboard/client(页面搭建), noteworthy(solidjs)
 
-- https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and markdown-it.
 - https://github.com/jcmnunes/editor
   - https://editor.binarycapsule.tech/
   - 功能简单，短小精悍
@@ -124,6 +122,11 @@ modified: '2021-07-08T12:37:23.562Z'
   - Markdown editor with bidirectional links and excellent math support
   - 参考了prosemirror、zettlr、vscode、notable
   - 依赖solid-js、remark13、prosemirror、electron-window-state
+
+- https://github.com/StackExchange/Stacks-Editor
+  - Stack Overflow's Combination Rich Text/Markdown Editor
+  - 依赖prosemirror, hightlight.js，不依赖react
+  - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/481492297f680472c51e57c981f050133681edc6/src/rich-text/editor.ts#L76)的过程非常标准，无封装
 
 - https://github.com/openstax/perry-white
   - https://openstax.github.io/perry-white/
@@ -164,6 +167,9 @@ modified: '2021-07-08T12:37:23.562Z'
 
 - https://github.com/grauwoelfchen/vergil
   - An editor written with Inferno + ProseMirror
+
+- more-prosemirror
+  - [xpub-edit (pubsweet-edit)](https://gitlab.coko.foundation/pubsweet/pubsweet/-/tree/master/components/client/xpub-edit)
 # prosemirror-utils-extensions
 - https://github.com/ShreyRavi/prosemirror-toc
   - An implementation of a table of contents using prosemirror within React.

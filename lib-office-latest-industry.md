@@ -60,6 +60,11 @@ modified: '2021-05-14T18:47:24.054Z'
   - https://gitlab.pagedmedia.org/tools/pagedjs
   - library to display paginated content in the browser and to generate print books using web technology.
 
+- PubSweet
+  - https://gitlab.coko.foundation/pubsweet/pubsweet
+  - The open toolkit for building publishing workflows
+  - a server and client that work together, components that can modify or extend the functionality of the server and/or client, 
+
 - [Fidus Writer](https://www.fiduswriter.org/how-it-works/)
   - https://github.com/fiduswriter/fiduswriter
     - /420Star/AGPLv3/202107/python
