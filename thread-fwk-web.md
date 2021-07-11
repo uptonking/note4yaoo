@@ -13,6 +13,28 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Higher level UI frameworks like RN for Web/React GUI benefit from a renderer-agnostic API to build upon, so they can work with alternative renderers. 
+- https://twitter.com/trueadm/status/1413972672342528017
+  - At the moment that kind of requires a Hooks API too. 
+  - Teams shouldn't have to bet on core renderer implementations!
+- Yeah it's definitely an area to explore. Premise here is reactivity allows granular updates. So they can be applied it to other systems. The native elements definitely are tuned to the DOM but the Components are just functions and side effects. Those effects can be anything.
+  - If someone never writes a native element (lower case tag) we don't need to bring in any DOM APIs today. I think that bit can be refined a bit further. But also opens the questions of other types of "native" elements for other platforms.
+- I think one of the core things @necolas  and I have been exploring in the last few years are higher level event abstractions. Like `useFocusWithin`, or `usePress` etc; which are an accumulation of various native events to provide real-world interaction handlers.
+  - Another is `useHover`. This one is hard to get right. The implementations tend to have different approaches that either break with touch, accessibility tools, or some other edge-case.Or `useFocusWithin`, to differentiate keyboard focus from normal focus. The list goes on.
+
+- ## I'm kind of getting fed up with frameworks prioritizing performance, data-fetching and server-side rendering capabilities over basic UX necessities. 
+- https://twitter.com/trueadm/status/1413995188876455939
+  - 理性看待这种观点，开公司不是做公益，阅读器、辅助工具使用频率远不如动画感知性强
+  - It should be a high-priority that frameworks focus on making the web accessible and preventing, if not blocking, bad practices.
+  - Frameworks should be promoting interactions that encourage screen readers, speech-to-text, assistive tools, color contrast, the list goes on. This is far more important than fancy CSS animations.
+  - A good example that we should fix focus management. If a keyboard user is using a web form and fills it in and tabs to "Submit" and press enter, if the form disappears and a spinner shows, please don't throw away focus when this happens.
+- Browsers could also do more to provide apis so apps can be agnostic to the users input type. PointerEvents is a good example, but was slow on being implemented.
+  - Far too slow, and PointerEvents also don't play ball with accessibility tools like VoiceOver, NVDA, and JAWS. Surely, if you were to build a spec, you would include "screenreader" or something similar, nope, forgotten.
+
 - ## I've noticed @dai_shi and a couple others have been trying to figure out how to do this **atomic rendering** thing.
 - https://twitter.com/RyanCarniato/status/1411704881807691780
   - This probably can be applied to any reactive library.

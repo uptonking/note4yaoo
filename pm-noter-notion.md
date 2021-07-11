@@ -1,11 +1,11 @@
 ---
-title: pm-noter
-tags: [note-taking, pm, pmgr]
+title: pm-noter-notion
+tags: [note-taking, notion, office, pm]
 created: '2020-11-24T07:44:16.296Z'
-modified: '2021-06-02T17:26:42.963Z'
+modified: '2021-07-11T08:26:43.528Z'
 ---
 
-# pm-noter
+# pm-noter-notion
 
 > easy to read， easy to write， content-centric notebook
 

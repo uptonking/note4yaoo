@@ -24,7 +24,15 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Someone is trying to convince me (with several exclamation marks) that `() => []` is not a pure function because it returns a different array every time. That… can’t be right? Or is it? I’m genuinely confused.
+- https://twitter.com/dan_abramov/status/1413982626302631938
+- From my understanding from purity and functional programming, a function would return the same result with the same input. This doesn’t mean the same reference. Creating a new object will mean creating a new reference
+- At least in practical coding, I've never seen an argument that a pure function must return literally the _same reference_ given the same inputs.  Just a _consistent_ set of values for those inputs.
+- Maybe technically? But if memory allocation is a side effect then I’m not sure there are many pure functions at all.
+- A pure function returns identical results for identical inputs. So it depends on your definition of identical. Once records and tuples are available in JS: `() => []` is not pure; `() => #[]` is pure
+  - Said another way, a function can't be pure in JS unless fn(x) === fn(x)
+- Pure doesn't mean it returns the same reference in memory, it means it returns an identical value every time. If it *did* mean that, it would be a worthless definition for practical application
+- Technically impure; Conceptually pure
 
 - ## If you want to learn advanced @typescript techniques quickly, try retro-typing a library written completely in JavaScript. 
 - https://twitter.com/DavidKPiano/status/1413149144252702729

@@ -1,11 +1,11 @@
 ---
-title: pm-noter-i18n-cn
-tags: [cn, i18n, note-taking, pm]
+title: pm-office-i18n-cn
+tags: [cn, i18n, office, pm]
 created: '2021-04-09T07:10:20.648Z'
-modified: '2021-04-16T15:06:04.668Z'
+modified: '2021-07-11T08:25:55.345Z'
 ---
 
-# pm-noter-i18n-cn
+# pm-office-i18n-cn
 
 # 中文文档特色
 
