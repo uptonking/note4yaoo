@@ -7,8 +7,19 @@ modified: '2021-03-29T19:17:20.657Z'
 
 # dev-log-faq-repeat
 
-# web app running in webview vs browser
+# is `JSON.parse` faster than declaring an object literal.
 
+- [The cost of parsing JSON](https://v8.dev/blog/cost-of-javascript-2019#json)
+  - Because the JSON grammar is much simpler than JavaScript’s grammar, JSON can be parsed more efficiently than JavaScript. 
+  - This knowledge can be applied to improve start-up performance for web apps that ship large JSON-like configuration object literals (such as inline Redux stores).
+  - Instead of inlining the data as a JavaScript object literal, it can be represented in JSON-stringified form, and then JSON-parsed at runtime
+  - **As long as the JSON string is only evaluated once, the `JSON.parse` approach is much faster compared to the JavaScript object literal**, especially for cold loads.
+  - A good rule of thumb is to apply this technique for objects of 10kB or larger — but as always with performance advice, measure the actual impact before making any changes.
+  - At small-scales, JSON.parse is not faster than using object-literals in JavaScript.
+
+- ref
+  - [If that's the case, why are my results showing otherwise?](https://stackoverflow.com/questions/59149074)
+# web app running in webview vs browser
 - [android WebView](https://developer.android.com/reference/android/webkit/WebView)
   - In most cases, we recommend using a standard web browser, like Chrome, to deliver content to the user. 
   - `WebView` objects allow you to display web content as part of your activity layout, but lack some of the features of fully-developed browsers. 

@@ -22,7 +22,8 @@ modified: '2021-05-14T14:33:33.975Z'
 - core-options
   - render line breaks in .md as line breaks in html
 # features
-- table editor for markdown
+- optional block style editor
+- powerful table editor crafted for markdown
 
 - json editor
   - json <> json5

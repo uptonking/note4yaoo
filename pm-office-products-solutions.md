@@ -76,3 +76,9 @@ modified: '2021-07-11T08:31:00.660Z'
   - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
   - Export as PDF, EPUB or HTML
   - In each case, you can choose from a number of layouts that are adequate for the medium of choice.
+
+- bibliothecula
+  - https://github.com/epilys/bibliothecula
+  - https://epilys.github.io/bibliothecula/
+  - document organizer with tags and full-text-search, in a simple and clean sqlite3 schema
+  - Store plain text notes with automatic full-text search and back-reference indexing

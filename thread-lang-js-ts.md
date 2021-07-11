@@ -33,6 +33,7 @@ modified: '2021-01-28T14:34:20.579Z'
   - Said another way, a function can't be pure in JS unless fn(x) === fn(x)
 - Pure doesn't mean it returns the same reference in memory, it means it returns an identical value every time. If it *did* mean that, it would be a worthless definition for practical application
 - Technically impure; Conceptually pure
+- With proxy-based usage tracking in mind any memorised function is not pure, even having the absolutely same result across different runs, as it causes different reads and thus different side effects in trackers… and pure function should not have side effects
 
 - ## If you want to learn advanced @typescript techniques quickly, try retro-typing a library written completely in JavaScript. 
 - https://twitter.com/DavidKPiano/status/1413149144252702729

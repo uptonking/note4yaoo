@@ -89,7 +89,13 @@ modified: '2021-05-14T12:04:55.412Z'
 # discuss
 - ## 
 
-- ## 
+- ## I needed to augment a simple textarea with keyboard shortcuts for basic Markdown formatting + drop/paste image support like GitHub comments
+- https://twitter.com/adamwathan/status/1414216138796449793
+- Just a vanilla textarea
+  - Yeah definitely a bunch of JS but textareas have the APIs you need for this. 
+  - GitHub’s comment field is a textarea too, not a contenteditable div or anything like that.
+- It’s just the rendering that is limited, that’s why **bold** is rendered with asterisks. 
+  - In a contenteditable you can render HTML, for example a `<strong>` tag or even more advanced things like Vue or React components. 
 
 - ## Curvenote - scientific editor, explorable explanations & floating comments
 - https://discuss.prosemirror.net/t/inlining-a-node-for-a-comment-plugin-or-best-to-use-marks/2391

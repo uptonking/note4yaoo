@@ -20,6 +20,9 @@ modified: '2021-06-01T20:03:38.284Z'
 - cons
   - 分散输入大段文字时的注意力，特别是光标默认的焦点位置
   - 跨block的选择
+
+- industry
+  - wordpress强推自研的开源块级编辑器Gutenberg
 # blogging
 
 ## [The WordPress block editor: Why you should be using it](https://yoast.com/the-block-editor-gutenberg-why-you-should-be-using-it/)

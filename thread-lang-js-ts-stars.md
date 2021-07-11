@@ -11,9 +11,21 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## TypeScript: How do you format members of enums?
+- https://twitter.com/justinfagnani/status/1413886888528605184
+- Solution: don't use enums. Stick to the type-system portion of TypeScript.
+- Are there any other TS features that are not simply type-strippable?
+  - enums, namespaces, constructor parameter properties, JSX, and debatably import assignment. 
+  - TypeScript stopped adding non-type features and joined TC39 though, so that's all there ever will be now.
+  - Oh and decorators, kind of, but that's a whole other story
+- we can write an object that gives nice names to "enum" values, derive the type of the allowed values, and do exhaustiveness.
+  - The thing I like about this pattern is the code is what you'd write in JS. The TS is just added types.
+  - What you don't get as easily is the reverse mapping from value to name, but I find that I rarely use that, and you can write the utility pretty easily.
+- Good points. Objects-as-enums really are easier to understand (compared to the subtle quirks of TS enums).
+  - Depending on what is needed, a Java-style enum pattern can be useful, too
 
-- ## `export default thing` is different to `export { thing as default }`
+- ##  `export default thing` is different to `export { thing as default }`
+
 - https://jakearchibald.com/2021/export-default-thing-vs-thing-as-default/
 - Imports are references, not values
 - But 'export default' works differently. 导出的是快照值

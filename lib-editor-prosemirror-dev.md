@@ -14,15 +14,17 @@ modified: '2021-05-06T09:39:53.522Z'
 - prosemirror-cons
   - 不支持动态改变schema
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
+  - 编辑器的多个插件存在依赖关系时如何处理
 
 - who is using
   - atlassian, nytimes, guardian...
 
-- todo
+- roadmap-toys
   - prosemirror-codeblock
   - prosemirror-handsontable/data-grid
   - prosemirror-css/theming
   - vscode-prosemirror
+  - page builder: WordPress-gutenberg, wix
 
 - tips
   - 实现复杂组件可参考
@@ -64,10 +66,9 @@ modified: '2021-05-06T09:39:53.522Z'
 
 # examples-remark-parse
 
-- milkdown
+- milkdown /454Star/MIT/202106/ts
   - https://github.com/Saul-Mirone/milkdown
   - https://saul-mirone.github.io/milkdown/
-  - /454Star/MIT/202106/ts
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark

@@ -11,7 +11,23 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
-- node 包入口（Package entry points）
+- ## [Are variables declared with let or const hoisted?](https://stackoverflow.com/questions/31219420)
+
+- let and const are hoisted but not initialized
+  - Referencing the variable in the block before the variable declaration results in a ReferenceError, because the variable is in a "temporal dead zone" from the start of the block until the declaration is processed.
+
+- All declarations (var, let, const, function, function*, class) are "hoisted" in JavaScript. 
+  - This means that if a name is declared in a scope, in that scope the identifier will always reference that particular variable
+  - This is true both for function and block scopes
+- The difference between `var/function/function*` declarations and `let/const/class` declarations is the initialisation
+  - The former are initialised with `undefined` or the (generator) function right when the binding is created at the top of the scope. 
+  - The lexically declared variables however stay uninitialised. 
+  - This means that a `ReferenceError` exception is thrown when you try to access it. 
+
+- Quoting ECMAScript 6 (ECMAScript 2015) specification
+  - So, to answer your question, yes, let and const hoist but you cannot access them before the actual declaration is evaluated at runtime.
+
+- ## node包入口（Package entry points）
   - 在 package.json 文件中，有两个字段可以定义包入口："main" 和 "exports"。
   - 所有版本的 Node.js 都支持 "main" 字段，但它的功能是有限的：它只定义包的主入口。
   - "exports" 字段算是 "main" 的替代品，它既可以定义包的主入口，又封闭了包，**防止其他未被定义的内容被访问**。这种封闭允许模块作者为他们的包定义公共接口。
@@ -19,7 +35,7 @@ modified: '2021-03-29T19:30:00.059Z'
   - 在万不得已时，可以通过 "./*": "./*" 来导出整个包的根目录，此时“封闭”功能也就不起作用了 
   - 在 "exports" 中使用“条件导出”（Conditional exports）可以为每个环境定义不同入口
 
-- [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
+- ## [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
 - The parser uses it to match the text, but ignores it later, in the final result.
 
 - ## strong vs b

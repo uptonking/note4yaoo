@@ -26,7 +26,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## I feel TDD is focused on backend/business logic, too dogmatic, and lack of clarity on how to test UIs/DOM.
+- https://twitter.com/sebastienlorber/status/1414210224001622018
+  - You are not allowed to write any production code unless it is to make a failing unit test pass
+  - Visual diff tools like Chromatic are much more pragmatic.
+  - I don't want to draw a png as my failing test.
+  - Nor I want to manually edit a video of the desired animation.
+  - testing frontend state/Redux/FSM is only a small part of all the things that can go wrong in a frontend app.
+  - TDD should clarify when it can be applied successfully. In my opinion it's not 100% of the time
+- I think TDD is more useful when interpreted as "write tests alongside production code code" and not as "write tests before production code".
+  - Having a falling test gives you confidence the test is not a false positive, but you can make it fail after writing the production code.
 
 - ## When I do a big refactor to a data structure I like to start by changing the type definitions. Then I fix the red squiggles until they're gone.
 - https://twitter.com/kentcdodds/status/1413326124969459714
