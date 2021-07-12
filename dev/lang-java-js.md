@@ -111,3 +111,9 @@ modified: '2021-01-15T04:08:46.423Z'
     - 它没有用Java实现的JavaScript解释器，而只有把JavaScript编译为Java字节码再交由JVM执行这一种流程，跟Rhino的编译流程类似。
 
 # ref
+
+- [JavaScript的功能是不是都是靠C或者C++这种编译语言提供的？](https://www.zhihu.com/question/49176184)
+  - JavaScript在语言层面并没有暴露任何操作系统层面的功能。它的本意是要嵌在某种宿主环境里，由宿主注入它希望暴露出来的功能。
+  - 例如说V8自身并没有读写文件的能力，而Node.js作为一个宿主环境注入操作文件的API给V8，在Node.js里写JavaScript就可以操作文件了。
+  - 浏览器是最常见的宿主环境，确实大多数浏览器都是C或者C++实现的，但也有用Java、C#、Rust等语言实现的；
+  - 而其它类型的宿主环境也有很多，例如说用Java实现的好几种服务器端环境（Node.jar/Avatar.js、Vert.x/Nodyn）。

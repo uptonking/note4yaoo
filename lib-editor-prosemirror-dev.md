@@ -108,7 +108,6 @@ modified: '2021-05-06T09:39:53.522Z'
 # prosemirror-examples-repos
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
-  - https://atlaskit.atlassian.com/packages/editor/editor-core
   - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
   - A package contains Atlassian editor core functionality
   - 基于react class组件实现

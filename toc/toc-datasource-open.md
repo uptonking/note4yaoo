@@ -17,6 +17,13 @@ modified: '2020-11-11T13:22:28.098Z'
   - Data has full world coverage and freely available for download
   - This tabular data[1] has ~40 million rows and 6 columns in it but only 3 columns (latitude, longitude, and type) are used in this visualization.
 
+
+- NVD: NATIONAL VULNERABILITY DATABASE
+  - https://nvd.nist.gov/
+- https://github.com/nomi-sec/NVD-Database
+  - json
+- https://github.com/olbat/nvdcve
+  - JSON files describing vulnerabilities from the NVD and CVE® dictionaries
 # organization
 
 - 北京大学开放研究数据平台

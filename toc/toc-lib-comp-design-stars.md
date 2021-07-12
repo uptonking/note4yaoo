@@ -13,6 +13,7 @@ modified: '2021-01-12T18:48:52.713Z'
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
   - Guidu is uidu's design system library
+  - 完全复制了atlassian-editor，并将组件替换成了自己的design system
   - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
   - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
   - These components are Atlassian Design Guidelines(ADG) compliant

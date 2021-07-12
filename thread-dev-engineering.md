@@ -24,7 +24,26 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
-- ## 
+- ## Test accessibility with more than 1 tool and more than 1 method.
+- https://twitter.com/jackdomleo7/status/1414468761860587520
+- Accessibility testing tools:
+  - Axe
+  - Pa11y
+  - WAVE
+  - Tota11y
+  - Chrome's Lighthouse
+  - Firefox accessibility devtools
+  - jest-a11y
+  - Checka11y.css
+- Accessibility testing methods:
+  - Use a11y testing tools (see above)
+  - Unplug mouse
+  - Install a screenreader
+  - Install a plugin/extension to mock colour blindness
+  - Turn on high contrast mode
+  - Turn off images
+  - Turn off CSS (very useful for HTML structure)
+  - Video captions
 
 - ## I feel TDD is focused on backend/business logic, too dogmatic, and lack of clarity on how to test UIs/DOM.
 - https://twitter.com/sebastienlorber/status/1414210224001622018

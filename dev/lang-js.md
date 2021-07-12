@@ -28,6 +28,21 @@ modified: '2020-07-14T09:26:50.808Z'
   - 参考 https://stackoverflow.com/questions/43050448/when-will-requestanimationframe-be-executed
 # faq
 
+## [ES6设计反射Reflect的意义是什么？(除了把key in obj、delete这些方式函数化)?](https://www.zhihu.com/question/276403215/answers/updated)
+
+- 阮一峰对Reflect的介绍：
+  - Object里已有的明显属于元编程的函数挪到Reflect里，日后如果加新的元编程函数将只会加在Reflect里
+  - 挪动时如果发现Object里的原始函数行为不合理，在挪动后的新版上做修正
+  - 把命令操作函数化
+  - Proxy支持
+
+- `Object.getOwnPropertyDescriptor`, `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
+
+- 对象上定义了14种接口，比如访问属性`[[GET]]`之类的，这些接口是内部C++使用的，我们代码访问不到。但是通过其他方式，比如js中的元老级对象Object，它的一些属性就可以间接调用这些接口。
+  - 为什么要Reflect呢？因为Object这个函数上的属性太杂了，大概有20种左右，虽然其中包含了对象接口。但是这不太好，我们需要一个专门的对象来做这个事情。显然不可能重新设计Object，毕竟兼容性才是大哥。
+  - 于是Reflect应运而生，上面定义了14个属性，分别对应对象的14个接口。
+  - 取名为Reflect，是因为它像镜子一样无差别的将操作反射给对象的内部接口。
+
 ## [Can we omit parentheses when creating an object using the “new” operator?](https://stackoverflow.com/questions/3034941)
 
 - 结论

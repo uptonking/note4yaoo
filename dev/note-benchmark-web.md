@@ -79,6 +79,14 @@ modified: '2020-07-14T09:28:43.976Z'
 - https://github.com/GoogleChromeLabs/tooling.report/
   - https://tooling.report/
   - tooling.report a quick way to determine the best build tool for your next web project
+
+- https://github.com/webpack/benchmark
+  - https://webpack.github.io/benchmark/
+  - 比较了几个常用库的build时间：atlaskit-editor、rome、esbuild-three
+- https://github.com/parcel-bundler/parcel-benchmark-action
+  - This is an experimental GitHub Action for testing Parcel's performance and bundle size on a couple demo applications to automatically measure and report performance impact of PRs on these examples.
+- https://github.com/atlassian/parcel-stress-test
+  - Apache2
 # more-benchmarks
 - [Today I looked into the performance of different layout modes in CSS.](https://twitter.com/JoshWComeau/status/1356377422925541377)
 

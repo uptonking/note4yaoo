@@ -39,6 +39,8 @@ modified: '2021-01-04T17:26:25.032Z'
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+- https://atlaskit.atlassian.com/packages/editor/editor-markdown-transformer
+  - A Markdown to ProseMirror Node parser.
 
 - https://github.com/remarkjs/react-markdown
   - https://remarkjs.github.io/react-markdown/

@@ -18,7 +18,11 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## If you’re building a social app, you should assume by default that your idea is wrong and map out the possible pivots.
+- https://twitter.com/nikitabier/status/1413392823630680071
+  - Then use this pivot map to create reusable building blocks (such as the friendfinder, invites, onboarding system). 
+  - It will save you months, if not years.
+- Ok loser. Best is to build one app that just works and then acqui-hire by fb (the “fast sellout, no morals” way)
 
 - ## I think there is something in the water with document creation.
 - https://twitter.com/chriscoyier/status/1412881853959266304

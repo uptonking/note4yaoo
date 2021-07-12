@@ -13,59 +13,43 @@ modified: '2021-06-30T19:30:57.926Z'
   - nodeViews: code-block, width, card, emoji, hyperlink, placeholder-text, text-color
     - 所有组件的实现都很复杂！！！
     - 大量依赖atlassian design system中的react组件
-# [docs](https://atlaskit.atlassian.com/packages/editor/editor-core)
-- polyfills
-  - promise
-  - fetch
-  - element.closest
+# examples-repos
+- https://github.com/jungpaeng/playground-test-atlaskit-editor
+  - /202002
+  - Verify that atlaskit editor is active in CRA
+- https://github.com/haniplanet/editor-core
+  - /201912
+  - Atlaskit Custom Editor
 
-- simplest editor starter
+- https://github.com/jonnokata/wilbur
+  - 代码实现过于简单，不过展现了用法
+  - Beautifully simple notes with AtlasKit
+  - As this app was built as more of a technical exploration, the real-world use case was less important to me
 
-```JS
-import { Editor } from '@atlaskit/editor-core';
+- guidu /13Star/MIT/202105/ts/react
+  - https://github.com/uidu-org/guidu
+  - https://uidu.design/
+  - Guidu is uidu's design system library
+  - 完全复制了atlassian-editor，并将组件替换成了自己的design system组件
+  - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
+  - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
+  - These components are Atlassian Design Guidelines(ADG) compliant
 
-<Editor appearance="comment" />;
-```
+- https://github.com/lukasbach/yana
+  - 依赖electron，可选编辑器atlaskit/monaco
+  - note-taking app with nested documents, full-text search, rich-text editor, code snippet editor 
 
-- Editor with mentions
-- Collapsed Editor
+- https://github.com/yeojono/goji /201909
+  - 依赖@atlaskit/editor-core@90.3.4, emotion9, react-intl2, unstated2
+  - another notes app. The difference is the power of the Atlassian Editor.
 
-- `EditorContext` allows you, in conjunction with `WithEditorActions`, to manipulate the editor from anywhere inside the `EditorContext`. 
-
-## props
-
-- appearance
-  - comment
-    - you have a field input but require a toolbar & save/cancel buttons
-  - full-page
-  - chromeless
-    - essentially the comment editor but without the editor chrome, like toolbar & save/cancel buttons
-  - mobile
-    - should be used for the mobile web view. 
-    - It is a full page editor version for mobile.
-
-## [Atlassian Document Format(ADF)](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/)
-
-- Atlassian Document Format (ADF) represents rich text stored in Atlassian products. 
-  - For example, in Jira Cloud platform, the text in issue comments and in `textarea` custom fields is stored as ADF.
-- An Atlassian Document Format document is a JSON object. A JSON schema is available to validate documents.
-- An ADF document is composed of a hierarchy of nodes. 
-- There are two categories of nodes: block and inline. 
-- Block nodes define the structural elements of the document such as headings, paragraphs, lists, and alike. 
-- Inline nodes contain the document content such as text and images. 
-- Some of these nodes can take marks that define text formatting or embellishment such as centered, bold, italics, and alike.
-- A document is ordered, that is, there's a single sequential path through it: traversing a document in sequence and concatenating the nodes yields content in the correct order.
-
-## [confluence macros](https://confluence.atlassian.com/doc/macros-139387.html)
-
-- You can use macros to:
-  - change the format and layout of your page
-  - display media like video, audio, and social media content
-  - collate and organise Confluence pages, blogs, and files
-  - perform actions from a page, such as creating a page from a template. 
-# pieces
-
-# examples
+- https://github.com/yjs/yjs-demos
+  - https://demos.yjs.dev/
+  - yjs和主流编辑器集成实现协作编辑的示例集合
+  - 示例包括prosemirror, codemirror, tiptap, atlaskit, monaco, quill
 
 - https://github.com/b-yond-infinite-network/md-to-adf
   - Markdown to Atlassian Document Format translation/traduction
+
+- https://github.com/portfoolio/dashboard
+  - Portfolio dashboard built with atlaskit-eidtor, rxjs
