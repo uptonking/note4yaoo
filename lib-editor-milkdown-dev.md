@@ -10,6 +10,7 @@ modified: '2021-07-11T15:08:26.481Z'
 # guid
 - milkdown-pros
   - prosemirror和remark的生态都很丰富
+  - 支持自定义markdown语法并给出了示例，可以自定义解析过程
 
 - milkdown-cons
   - 没有实现较复杂的组件，如直接缩放的图片，全部基于html标签toDOM/parseDOM实现
