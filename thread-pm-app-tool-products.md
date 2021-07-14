@@ -11,6 +11,19 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## natto.dev is a canvas for JavaScript.
+- https://www.notion.so/Documentation-44fea11f393a4e46b5a22f5799de58ca
+  - creates an eval pane which consists of an expression editor and output. 
+  - This is very much like a JavaScript console. 
+
 - ## Cloudflare Pages is now in GA! 
 - https://twitter.com/Cloudflare/status/1381593197311315973
   - It's hard to believe how much the product has matured in just a few months.

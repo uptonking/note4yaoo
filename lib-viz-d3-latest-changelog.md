@@ -1,9 +1,9 @@
----
+__-
 title: lib-viz-d3-latest-changelog
 tags: [changelog, d3, lib, viz]
 created: '2021-05-18T18:25:19.917Z'
 modified: '2021-05-18T18:25:41.202Z'
----
+__-
 
 # lib-viz-d3-latest-changelog
 
@@ -13,7 +13,7 @@ modified: '2021-05-18T18:25:41.202Z'
 - ref
   - [major changes](https://github.com/d3/d3/blob/master/CHANGES.md)
 
-## v7.0--202106
+## v7__202106
 
 - D3 now ships as pure ES modules and requires Node.js 12 or higher. 
 - `d3.bin` now ignores `null`s.
@@ -22,7 +22,7 @@ modified: '2021-05-18T18:25:41.202Z'
   - domain values are now uniqued by coercing to a primitive value via `object.valueOf` instead of coercing to a string via `object.toString`.
 - Array-likes (e.g., a live `NodeList` such as `element.childNodes`) are converted to arrays in `d3.selectAll` and `selection.selectAll`.
 
-## v6.0--202008
+## v6__202008
 
 - D3 now uses native collections (`Map` and `Set`) and accepts iterables. 
   - `d3.group` and `d3.rollup` are powerful new aggregation functions that replace d3.nest 
@@ -38,7 +38,7 @@ modified: '2021-05-18T18:25:41.202Z'
   - Rename d3.histogram to d3.bin.
   - Rename d3.scan to d3.leastIndex.
 
-## v5.0--201803
+## v5__201803
 
 - D3 now uses Promises instead of asynchronous callbacks to load data.
 - D3 now uses the Fetch API instead of XMLHttpRequest
@@ -50,7 +50,7 @@ modified: '2021-05-18T18:25:41.202Z'
 - `selection.clone` for inserting clones of the selected nodes
 - `d3.create` for creating detached elements
 
-## v4.0--201606
+## v4__201606
 
 - v4 is modular, instead of one library
 - every symbol in D3 4.0 now shares a flat namespace rather than the nested one of D3 3.x.

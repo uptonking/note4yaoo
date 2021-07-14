@@ -7,8 +7,16 @@ modified: '2021-07-12T05:41:18.380Z'
 
 # lib-ui-react-gui-community
 
-# discuss
+# discuss-stars
 
+- ## What is react-gui?
+- https://github.com/reactwg/react-18/discussions/71
+- This is a personal experiment I moved to a FB repo to share with colleagues. 
+  - There is no official relationship with React. 
+  - We are experimenting with it in a few places at FB in a very limited way, and at this stage there are no current plans for a publicly supported release. 
+  - Some ideas from it have been feeding back into React Native for Web and discussed with the React Native team, 
+  - but it's too early to say whether this will become anything more.
+# discuss
 - ## 
 
 - ## 

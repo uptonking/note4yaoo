@@ -22,7 +22,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## I like this idea of providing a single page collecting all demos.
+- https://twitter.com/bramus/status/1415240625872642049
+  - [CSS Animation Today 2021](https://miocene.io/css-animation-today-2021/)
+  - New accessibility feature in @ChromeDevTools: simulate vision deficiencies, including blurred vision & various types of color blindness. 
 
 - ## Check out my work on User Adaptive Interfaces 
 - https://codepen.io/newerkey/pen/LYWdzEO

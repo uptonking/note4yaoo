@@ -28,10 +28,21 @@ modified: '2021-04-21T15:01:12.882Z'
   - Yeah there's some experimental code in Popmotion from my hacking around.if we're going off-thread I'd rather a very low level, Reanimated 1-style API to start
 - Great work! Such a shame there's no perfromant physics animation API baked into the platform.
 - Interesting. WAAPI is great because literally no work is happening on the main thread. Repeatedly setting currentTime on the main thread looks no different from just using JS for everything. Why would I want to do it this way?
-
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## You can actually achieve spring animations using the WAAPI. 
+- https://twitter.com/okikio_dev/status/1415314400253206528
+  - https://codepen.io/okikio/pen/abJMWNy
+- The demo uses [@okikio/animate](https://github.com/okikio/native/tree/master/packages/animate), but you don't really need it to creative spring animations
+  - https://okikio.github.io/native/demo/animate.html
+  - It utilizes the Web Animation API to deliver butter smooth animations at a small size, it weighs ~11.6 KB
+  - In @okikio/animate, I create tweenAttr which used WAAPI together with rAF to emulate individual transforms for svg and other attribute transforms
+
 
 - ## Animated draggable playing cards stack made with @framer motion.
 - https://twitter.com/kaestner_felix/status/1391470242338164737

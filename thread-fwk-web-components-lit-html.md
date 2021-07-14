@@ -11,6 +11,32 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## 
+
+
+- ## 
+
+
+- ## Core API for turning any Vue 3 component into a custom element.
+- https://twitter.com/justinfagnani/status/1414615879866720270
+  - Works with most Vue APIs including props, emits, and even provide/inject between nested Vue custom elements. Slots will render as native slot elements.
+  - There are different trade-offs here, the CE version lacks certain features like scoped slots, more efficient SSR (no need for simulated DOM / serialization) and introduces a bit more overhead. So shipping CE by default would be a pure loss for Vue users.
+- You could ship both and the web components consumers wouldn't have to know about using Vue at all.
+  - On SSR, we(lit)'re working on an open server-side interface for SSR without DOM. Lit works this way and renders elements through this interface so we can plug in different impls.
+- We're still working up a standalone description of the protocol(SSR Interface), but here's the interface in Lit SSR
+  - The reason for this ElementRenderer interface is that Lit basically has a separate streaming DOM-free server-side implementation, and we want to be able to render CEs via  an intermediary to enable that for other libraries.
+  - [Server-Side Rendering (SSR) API](https://github.com/webcomponents/community-protocols/issues/7)
+
+
+
+
 - ## Merged the first draft of the Context Protocol into the web components community protocols!
 - https://twitter.com/justinfagnani/status/1411126244368740353
   - This proposes a context API that's interoperable across web component implementations, 

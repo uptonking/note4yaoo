@@ -24,6 +24,7 @@ modified: '2021-05-14T14:33:33.975Z'
 # features
 - optional block style editor
 - powerful table editor crafted for markdown
+- configuration/customizable editor with a settings page
 
 - json editor
   - json <> json5

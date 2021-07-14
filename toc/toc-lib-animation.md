@@ -11,9 +11,7 @@ modified: '2020-10-05T06:22:02.107Z'
 
 - ref
   - [react-spring vs react-motion vs gsap vs framer-motion vs animate.css vs animejs](https://www.npmtrends.com/react-spring-vs-react-motion-vs-gsap-vs-framer-motion-vs-animate.css-vs-animejs)
-
 # animation-with-flip
-
 - flipping /MIT/1.1kStar/202006
   - https://github.com/davidkpiano/flipping
   - https://codepen.io/davidkpiano/pen/xLKBpM
@@ -35,9 +33,31 @@ modified: '2020-10-05T06:22:02.107Z'
   - Effortless animation between DOM changes (eg. list reordering) using the FLIP technique.
   - Flip Move uses the FLIP technique to work out what such a transition would look like, and fakes it using 60+ FPS hardware-accelerated CSS transforms.
   - Flip Move was inspired by Ryan Florence's awesome [Magic Move/2016](https://github.com/ryanflorence/react-magic-move)
+# web animations api
+- @okikio/animate
+  - https://github.com/okikio/native/tree/master/packages/animate
+  - https://okikio.github.io/native/demo/animate.html
+  - 提供的示例包括形变动画、轨迹动画、多运动目标动画
+  - It utilizes the Web Animation API to deliver butter smooth animations at a small size, it weighs ~11.6 KB
 
+- use-web-animations /MIT/622Star/202007
+  - https://github.com/wellyshen/use-web-animations
+  - https://use-web-animations.netlify.app/
+  - hooks for highly-performant and manipulable animations using Web Animations API.
+- https://github.com/shoelace-style/animations
+  - Your favorite animate.css effects available as ES modules for use with the Web Animations API.
+  - This module was built for Shoelace, but it works well as a stand-alone library too!
+  - This script parses all animation stylesheets found in node_modules/animate.css and generates keyframe objects that you can use with the Web Animations API.
+  - As animations are tweaked and added to animate.css, the keyframes herein will be kept in sync when rerunning the script.
+- web-animations-js /Apache2/3.4kStar/201906
+  - https://github.com/web-animations/web-animations-js
+  - http://web-animations.github.io/
+  - JavaScript implementation of the Web Animations API
+  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
+- animations.js /3Star/MIT/202006
+  - https://github.com/robertoentringer/animations.js
+  - Web Animations API based in Animate.css
 # react animation
-
 - react-transition-group /BSD/7.5kStar/202005
   - https://github.com/reactjs/react-transition-group
   - https://reactcommunity.org/react-transition-group/
@@ -99,29 +119,7 @@ modified: '2020-10-05T06:22:02.107Z'
     - collecting DOM data, enabling motion between disconnected React elements, executing motions
   - Motions 
     - animation concerns, CSS transitions/animations, JS animations, whatever you can imagine
-
-# web animations api
-
-- use-web-animations /MIT/622Star/202007
-  - https://github.com/wellyshen/use-web-animations
-  - https://use-web-animations.netlify.app/
-  - hooks for highly-performant and manipulable animations using Web Animations API.
-- https://github.com/shoelace-style/animations
-  - Your favorite animate.css effects available as ES modules for use with the Web Animations API.
-  - This module was built for Shoelace, but it works well as a stand-alone library too!
-  - This script parses all animation stylesheets found in node_modules/animate.css and generates keyframe objects that you can use with the Web Animations API.
-  - As animations are tweaked and added to animate.css, the keyframes herein will be kept in sync when rerunning the script.
-- web-animations-js /Apache2/3.4kStar/201906
-  - https://github.com/web-animations/web-animations-js
-  - http://web-animations.github.io/
-  - JavaScript implementation of the Web Animations API
-  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API
-- animations.js /3Star/MIT/202006
-  - https://github.com/robertoentringer/animations.js
-  - Web Animations API based in Animate.css
-
 # js animation
-
 - https://github.com/jeremyckahn/shifty
   - https://jeremyckahn.github.io/shifty/doc/
   - Shifty is a tweening engine for JavaScript
@@ -150,9 +148,7 @@ modified: '2020-10-05T06:22:02.107Z'
 - https://github.com/uber/hubble.gl
     - Hubble.gl is a JS library for animating data visualizations.
     - Render within the browser without a backend. 
-
 # css animation
-
 - transition.css /13Star/Apache2/202010/css
   - https://github.com/argyleink/transition.css
   - https://transition.style/
@@ -173,9 +169,7 @@ modified: '2020-10-05T06:22:02.107Z'
 
 - https://animista.net/play/basic/flip
   - Animista is a CSS animation library and a place where you can play with a collection of ready-made CSS animations and download only those you will use.
-
 # canvas animation
-
 - https://github.com/shzlw/zeu
   - /1.7kStar/MIT/201811/js/作者poli
   - a collection of prebuilt visualization components for building real-time TV dashboard, monitoring UI and IoT web interface.
@@ -188,9 +182,7 @@ modified: '2020-10-05T06:22:02.107Z'
   - A canvas experiment in which a set of particles is used to render different shapes based on the user's input.
   - It supports multiple modes: text, countdown, time and icons.
   - 粒子动画示例的效果amazing
-
 # interactive-ui-components
-
 - scrollreveal /GPLv3/18.9kStar/202007
   - https://github.com/jlmakes/scrollreveal
   - https://scrollrevealjs.org/
@@ -199,18 +191,14 @@ modified: '2020-10-05T06:22:02.107Z'
   - Easing Functions Cheat Sheet to help developers pick the right easing function.
 
 - https://github.com/ConnorAtherton/loaders.css
-
 # animation-examples
-
 - https://github.com/ozrenkosi/flow
   - Animation inspired by @sasj, made with p5.js
   - 斑点上下移动
 - https://github.com/hakimel/kontext
   - http://lab.hakim.se/kontext/
   - 页面切换时的三维效果
-
 # animation tools
-
 - svg.js /MIT/8.2kStar/202006
   - https://github.com/svgdotjs/svg.js
   - http://svgjs.com/
@@ -237,9 +225,7 @@ modified: '2020-10-05T06:22:02.107Z'
   - Interactive UI animation engine for the Web. Core renderer for Haiku Animator.
 - https://github.com/wadackel/sweet-scroll
   - dependency-free smooth scroll library using raf
-
 # more
-
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation
   - https://awesome-web-animation.netlify.com/

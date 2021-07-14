@@ -24,6 +24,25 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Just curious: which package manager/CLI do you use? npm vs yarn vs yarn2 _202105
+- https://twitter.com/JoshWComeau/status/1395044829013368846
+- [Yarn 1 vs Yarn 2 vs NPM](https://shift.infinite.red/yarn-1-vs-yarn-2-vs-npm-a69ccf0229cd)
+- pnpm is supposed to be very good, but since we focus on React Native, it's not an option for us.
+  - Yarn 2 is almost an entirely different CLI altogether. I wish they'd just name it Berry (which is its code name) v1.
+- I feel your article is misleading in two important aspects:
+  1. Yarn 2+ supports React Native well with node_modules install scheme
+  2. Yarn 2+ perfs are better or comparable to perfs of Yarn 1, both with default PnP installs and with node_modules installs
+- I used to use yarn 1. After the acquisition of npm by GitHub I switched back to npm
+- I use whatever the project already uses but use npm for anything I start. No real reason though
+
 - ## Test accessibility with more than 1 tool and more than 1 method.
 - https://twitter.com/jackdomleo7/status/1414468761860587520
 - Accessibility testing tools:

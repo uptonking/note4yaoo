@@ -15,7 +15,17 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## an idea: we could add support to @blitz_js for deploying the frontend and backend separately.
+- https://twitter.com/leeerob/status/1415311384309551107
+  - Because Vercel is frontend focused and is not recommend for deploying backend on.
+  - You don’t have enough controls, you don’t have access to VPC, limited execution time, etc. 
+  - Simple stuff works fine, but anything significant runs into too many issues. 
+  - In their GH discussions, Vercel has explicitly recommend to not deploy backend APIs.
+- This isn’t 100% accurate, so let me clarify. Deploying APIs to Vercel as serverless functions works well for many projects. We encourage that. You are also correct, though, that for some teams they prefer deploying to a Node server.
+  - “Anything significant runs into issues” is not accurate. Vercel.com runs on Vercel, as well as many of our large customers use API routes to deploy functions. But you are correct that Hobby accounts have limited execution time, since they are on the free tier.
+- Is your platform API deployed via Vercel?
+  - Parts of it, yes! Our REST API is standalone infra.
+- I think there’s a strong use case for Vercel / next / blitz APIs for getting spun up quickly, validating ideas, and (likely) going to market. Would be incredible to have transition documentation (or scripts!) for moving to standalone servers when the need arises.
 
 - ## Higher level UI frameworks like RN for Web/React GUI benefit from a renderer-agnostic API to build upon, so they can work with alternative renderers. 
 - https://twitter.com/trueadm/status/1413972672342528017

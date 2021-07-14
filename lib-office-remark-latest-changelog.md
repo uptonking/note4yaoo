@@ -11,12 +11,12 @@ modified: '2021-06-03T15:58:30.094Z'
 
 # changes
 
-## remark.v13.0.0_202014
+## remark.v13.0.0__202010
+
 - This is a giant change for remark. 
   - It replaces the 5+ year old internals with a new low-level parser: micromark.
   - The old internals have served billions of users well over the years, but markdown has changed over that time.
   - micromark comes with 100% CommonMark (and GFM as an extension) compliance
-
 
 - remark-parse
   - `remark-parse` now defers its work to `micromark` and mdast-util-from-markdown.
@@ -28,9 +28,8 @@ modified: '2021-06-03T15:58:30.094Z'
   - It’s a new and better serializer with powerful features to ensure serialized markdown represents the syntax tree (mdast), no matter what plugins do. 
   - Extensions to it work differently
 
-- Changes to output / the tree
+- Changes to output/the tree
   - All of these are for CommonMark compatibility. 
 
 - [pr: Change to use micromark](https://github.com/remarkjs/remark/pull/536)
 # changelog
-

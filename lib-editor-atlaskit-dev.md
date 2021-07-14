@@ -1,17 +1,17 @@
 ---
-title: lib-editor-atlassian-dev
+title: lib-editor-atlaskit-dev
 tags: [atlaskit-editor, editor]
 created: '2021-06-30T19:29:35.962Z'
-modified: '2021-06-30T19:30:57.926Z'
+modified: '2021-07-14T15:36:09.702Z'
 ---
 
-# lib-editor-atlassian-dev
+# lib-editor-atlaskit-dev
 
 # guide
 
 - watching
   - nodeViews: code-block, width, card, emoji, hyperlink, placeholder-text, text-color
-    - 所有组件的实现都很复杂！！！
+    - 所有NodeView组件的实现都很复杂！！！
     - 大量依赖atlassian design system中的react组件
 # examples-repos
 - https://github.com/jungpaeng/playground-test-atlaskit-editor

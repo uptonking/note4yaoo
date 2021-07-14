@@ -44,6 +44,13 @@ modified: '2021-05-14T14:46:37.026Z'
 - https://github.com/MarcSkovMadsen/panel-highcharts
   - panel-highcharts package makes it easy to use Highcharts from Python for exploratory analysis in a Jupyter Notebook or as a HoloViz Panel Web App.
 
+- JupyterLite
+  - https://github.com/jupyterlite/jupyterlite
+  - https://jupyterlite.rtfd.io/en/latest/try/lab
+  - A full JupyterLab distribution running in the browser
+  - Wasm powered Jupyter running in the browser
+  - JupyterLite works out of the box with NumPy, SciPy and Matplotlib, you can also run them in your browser without any backend (helping reduce the load of Binder)
+
 ## js-based-notebook
 
 - https://github.com/executablebooks/thebe

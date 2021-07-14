@@ -1,11 +1,11 @@
 ---
-title: lib-editor-atlassian-docs
+title: lib-editor-atlaskit-docs
 tags: [atlaskit-editor, docs, editor]
 created: '2021-07-12T17:18:03.886Z'
-modified: '2021-07-12T17:18:42.291Z'
+modified: '2021-07-14T15:36:23.541Z'
 ---
 
-# lib-editor-atlassian-docs
+# lib-editor-atlaskit-docs
 
 > Atlassian editor core functionality
 

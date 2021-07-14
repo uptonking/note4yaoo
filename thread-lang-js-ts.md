@@ -22,7 +22,12 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## TIL Node.js v15 or higher can generate UUID v4 using `crypto.randomUUID()` ; 
+- https://twitter.com/Kikobeats/status/1414661088247963652
+  - `crypto.randomUUID([options])` ：Added in: v15.6.0
+  - ts-node is a TypeScript execution engine and REPL for Node.js. 
+  - ts-node非常适合测试api，内置模块也需要import('fs')或者require('fs')，两者都支持；
+  - node版本更新太快，注意兼容性，甚至被删除或不存在
 
 - ## Someone is trying to convince me (with several exclamation marks) that `() => []` is not a pure function because it returns a different array every time. That… can’t be right? Or is it? I’m genuinely confused.
 - https://twitter.com/dan_abramov/status/1413982626302631938

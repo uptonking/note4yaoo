@@ -11,9 +11,17 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## From what I understand, JavaScript animations are limited to 60fps, even on devices that support higher refresh rates—but CSS animations can go higher. What about these?
+- https://twitter.com/steveruizok/status/1415223404022714368
+- Eh? JS is doing perfectly fine going to 120hz on my 4k 120hz display. rAF should always be going up to the displays refresh rate unless the device has performance issues. Maybe some devices browsers have rAF crippled but it's fine on desktop at least.
+  - Ah right, this is a Safari issue (where raf is limited to 60fps)
+  - Depends on the browser: iPad Safari for example maxes out at 60
 
-- ## 
+- ## Interesting jank(闪烁) test here pitting Motion Concept C animating transform, background-color and x (as a CSS variable) against Popmotion.
+- https://twitter.com/mattgperry/status/1415214004465700866
+  - The reason for this is **WAAPI can run opacity and transform (and filter?) completely on the compositor thread**. All other animations play on the main thread, just like your regular JavaScript animation library.
+  - This is a shame for the performance of animating transforms individually but it does reaffirm my feelings that off-thread performance is just one of the benefits we get from WAAPI (Popmotion's animate function is about 5kb and needs `"style.transform ="` boilerplate)
+- Another nice thing about WAAPI too is that you don't incur the cost of injecting a `<style>` tag to create a custom animation 🎉; that was a surprising bottleneck for my spring-keyframes library
 
 - ## For the second time in my life I’ve attempted to write a book about animation and ended up making a library instead
 - https://twitter.com/mattgperry/status/1412121262449627140

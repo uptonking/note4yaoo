@@ -13,17 +13,21 @@ modified: '2021-05-14T14:44:14.720Z'
   - auto-ref是优点，也是缺点，kibana最新版在鼓励by-value而不是by-reference，折中方案是snapshot+auto-update-option
   - view + collapsible d3js + collapse data/dataseeds，类似html/css/js的面板
 # notebook-usecase
-- [国家统计局 统计数据，开放性高，但分析不深、体系不全](http://www.stats.gov.cn/tjsj/)
+- [官方数据分析：国家统计局 统计数据，开放性高，但分析不深、体系不全](http://www.stats.gov.cn/tjsj/)
   - 商业性质的报告质量较高，但大多存在版权问题
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)
   - [各大行业报告的数据都是从哪里找的？](https://www.zhihu.com/question/67387122)
   - [你看过最优秀的研报是什么？ 数据+方法逻辑+观点](https://www.zhihu.com/question/33537844/answers/updated)
+- 开放数据/报告
+  - 开放数据集
+  - github上公开分析案例，如js-framework-benchmark
 - 主题分析
   - 新冠肺炎分析报告 coronavirus/covid-19
   - 北大毕业生就业质量年度报告
   - 数据结构与算法、leetcode数据
 - 行业案例
   - tableau public
+  - kaggle
 - 找数据分析案例费时费力，可以尝试经典数据集/开放数据集的已有分析
   - 范围太广难以集中精力，可以重点关注**推荐系统、广告点击、销量预测**
   - MovieLens

@@ -11,7 +11,10 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-- ## 
+- ## I'm a cartographic designer from Ukraine. I create maps on different topics and purposes using opensource tools.
+- https://twitter.com/gontsa/status/1414818523491221507
+  - 作者创作了很多地图相关作品 
+  - https://www.behance.net/gontsa
 
 - ## Visualizing Distributions with Raincloud Plots (and How to Create Them with ggplot2)
 - https://twitter.com/icymi_r/status/1411713517166727174

@@ -88,6 +88,8 @@ modified: '2021-05-23T16:34:27.206Z'
   - wasm vs webgpu
 # integrations
 - excalidraw
+- remotion
+  - 快速制作数据动态变化图/视频
 # grid-implementation
 - ## react-table
   - required-props: data, columns
@@ -134,9 +136,6 @@ modified: '2021-05-23T16:34:27.206Z'
   - ui实现: div-flexbox
   - note
     - VariableSizeGrid的colWidth和rowHeight值类型都是函数
-- ## react-data-grid
-- ## react-base-table
-  - required-props
 # popular-data-grid-docs
 - https://www.ag-grid.com/javascript-grid-reference-overview/
 - https://handsontable.com/docs/8.0.0/tutorial-features.html
