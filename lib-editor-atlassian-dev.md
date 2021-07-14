@@ -22,7 +22,7 @@ modified: '2021-06-30T19:30:57.926Z'
   - Atlaskit Custom Editor
 
 - https://github.com/jonnokata/wilbur
-  - 代码实现过于简单，不过展现了用法
+  - 代码实现简单，但展现了用法，有很多登录验证firebase的逻辑
   - Beautifully simple notes with AtlasKit
   - As this app was built as more of a technical exploration, the real-world use case was less important to me
 
@@ -36,7 +36,8 @@ modified: '2021-06-30T19:30:57.926Z'
   - These components are Atlassian Design Guidelines(ADG) compliant
 
 - https://github.com/lukasbach/yana
-  - 依赖electron，可选编辑器atlaskit/monaco
+  - 依赖electron、sqlite3
+  - 可选编辑器atlaskit/monaco
   - note-taking app with nested documents, full-text search, rich-text editor, code snippet editor 
 
 - https://github.com/yeojono/goji /201909

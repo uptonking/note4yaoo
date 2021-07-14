@@ -11,6 +11,26 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Uncaught RangeError: Duplicate use of selection JSON ID cell
+  - https://github.com/ueberdosis/tiptap/issues/316
+  - this is a version problem. why do you installed prosemirror-tables?
+  - npm installs prosemirror-utils at verstion 0.9.6 by default, witch requires a peer of prosemirror-tables@^0.9.x. It cause error because tiptap requires prosemirror-tables@^1.0.0.
+
+- @atlaskit/editor-core minimal App 无法正常运行
+  - 异常相关信息
+  - 一直未跑通
+
+```
+Should not import the named export 'version' (imported as 'listenerVersion') from default-exporting module (only default export is available soon)
+
+WARNING in ../../node_modules/@atlaskit/analytics-listeners/dist/esm/atlaskit/process-event.js
+Should not import the named export 'version' (imported as 'listenerVersion') from default-exporting module (only default export is available soon)
+
+WARNING in ../../node_modules/@atlaskit/emoji/dist/esm/util/analytics.js 25:19-30
+Should not import the named export 'name' (imported as 'packageName') from default-exporting module (only default export is available soon)
+
+```
+
 - @babel/template placeholder "$1": Property expression of ExpressionStatement expected node to be of a type ["Expression"] but instead got "TSModuleBlock"
   - https://stackoverflow.com/questions/64343700
   - This might probably due to a namespace being exported which only contain interfaces/types (Not actual classes/functions/objects but type declarations).
