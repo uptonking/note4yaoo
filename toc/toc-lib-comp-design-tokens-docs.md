@@ -25,7 +25,7 @@ modified: '2021-01-11T18:34:20.713Z'
 
 - tips
   - 不必搜索所有最新样式项目的仓库
-    - 深入理解流行的css framework的文档实现就好，大多都是多页文档
+    - 深入理解主流css framework的文档实现更好，大多都是多页文档
 
 - primitive/skeleton-css  /760Star/MIT/202010/scss/NoDeps
   - https://github.com/taniarascia/primitive
@@ -49,9 +49,13 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://nordhealth.com/styleguide/
 
 - 多页文档示例
+  - https://github.com/ciucacristi/elementric
+    - https://ciucacristi.github.io/elementric/
+    - minimal HTML + CSS + JS base front-end framework for simple web site projects.
   - https://newcss.net/usage/elements/ (classless)
   - https://picturepan2.github.io/spectre/utilities/colors.html
   - https://mildrenben.github.io/surface/
+
 
 # docs-ui
 
@@ -286,8 +290,6 @@ modified: '2021-01-11T18:34:20.713Z'
   - Include it in your Rails/Sinatra/Anything project as a gem to apply consistent styles according the uSwitch styleguide.
   - uStyle comes with JavaScript implementations of the custom Sass Ruby functions used by Sprockets.
 
-- https://qian-dao-zhen-yi.gitbook.io/rspec-style-guide/
-  - gitbook
 
 - https://github.com/anges244/evie
   - https://evie.undraw.co/docs
@@ -300,6 +302,13 @@ modified: '2021-01-11T18:34:20.713Z'
   - A starter CSS framework that actually looks good.
   - 文档是纯client js，但组件示例用的是codesandbox
 
+
+- https://qian-dao-zhen-yi.gitbook.io/rspec-style-guide/
+  - 使用gitbook创作
+
+- https://github.com/Foveluy/ReStory
+  - 依赖antd3、showdown、koa
+  - A static site generator with MDX for React documentation.
 ## 文档单页
 
 - https://github.com/agileleague/thimblecss
@@ -344,6 +353,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://trendmicro-frontend.github.io/styled-ui/colors
 
 - https://turretcss.com/demo/
+  - No Javascript. Just clean, simple, and modern CSS.
+  - 支持搜索侧边栏菜单项目
+  - 侧边栏菜单是accordion，只能有1个展开
 
-- https://github.com/ciucacristi/elementric.git
-  - minimal HTML + CSS + JS base front-end framework for simple web site projects.

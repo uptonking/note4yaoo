@@ -15,6 +15,7 @@ modified: '2020-12-28T12:24:09.275Z'
 - https://github.com/appsmithorg/appsmith
   - /340Star/Apache2/202009/ts/java
   - open source alternative to Power Apps, Salesforce Lightning
+  - A low code way to build dashboards, workflows, forms, and any internal tool.
 - https://github.com/sparrow-js/sparrow
   - /vue
   - 场景化低代码（LowCode）搭建工作台
@@ -22,8 +23,6 @@ modified: '2020-12-28T12:24:09.275Z'
   - Low-code programming for event-driven applications
 - https://github.com/icodebetter/icodebetter
   - An opinionated low code platform that helps you code business applications
-- https://github.com/appsmithorg/appsmith
-  - A low code way to build dashboards, workflows, forms, and any internal tool.
 # lowcode-solutions
 - https://github.com/baidu/amis
   - /4.3kStar//Apache2/202009
@@ -43,4 +42,13 @@ modified: '2020-12-28T12:24:09.275Z'
   - https://djit.su/
   - 依赖react、redux、styled-components、razzle、d3-require、@mdx-js/runtime、@editorjs、antd.v4、ahooks
   - Djitsu is an editor, application, and an execution platform all rolled into one
+
+- https://github.com/fantasticit/cube
+  - https://blog.wipi.tech/odin/editor
+  - 中后台页面搭建低代码平台
+    - 通过 JSON 配置描述页面信息
+    - 通过配置初始化 Store
+    - 通过配置渲染页面
+    - 通过交互组件修改 Store 数据，重新渲染页面
+  - 依赖antd4、codemirror5、mobx5、showdown
 # more-lowcode

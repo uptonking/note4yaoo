@@ -15,9 +15,7 @@ modified: '2021-01-17T09:26:42.467Z'
 
 - ref
   - [top documentation-tool](https://github.com/topics/documentation-tool?o=desc&s=stars)
-
 # doc-solution-catalog
-
 - https://github.com/docsifyjs/docsify
   - /15.3kStar/MIT/202010
   - 依赖marked、prismjs
@@ -78,8 +76,14 @@ modified: '2021-01-17T09:26:42.467Z'
   - /1.4kStar/Apache2/202009/gitbook
   - HonKit is building beautiful books using Markdown - Fork of GitBook
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
-  - 依赖immutable3.8
+  - 依赖immutable3.8、nunjucks
   - GitBook is only free for open-source and non-profit teams.
+- https://github.com/amiroff/NextBook
+  - https://next-book.vercel.app/
+  - /53Star/MIT/202105/js
+  - 依赖 next11、next-mdx-remote、react、remark、tailwindcss
+  - 若屏幕很窄，官方文档会显示水平滚动条，此时滚动会有严重的漂移感
+  - easy way to build technical books or documentation with markdown or MDX
 
 - https://github.com/jxnblk/mdx-deck
   - /9.6kStar/MIT/202004
@@ -150,9 +154,17 @@ modified: '2021-01-17T09:26:42.467Z'
   - http://ashkenas.com/docco/
   - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
   - It produces an HTML document that displays your comments intermingled with your code. 
+# book-like-documentation layout/component/interface/ui/page
+- https://github.com/evnbr/bindery
+  - https://evanbrooks.info/bindery/docs/
+  - a library for designing printable books with HTML and CSS.
+  - At its simplest, Bindery flows content over multiple pages.
 
+- https://github.com/SaraVieira/starter-book
+  - https://wizardly-snyder-c98440.netlify.app/
+  - A starter built with gatsby to help you create books with ease.
+  - 样式简单
 # more-repos
-
 - https://github.com/front10/landing-page-book
   - Fully customizable landing-page components written in React.
   - 依赖gatsby、bootstrap、codemirror
@@ -167,8 +179,15 @@ modified: '2021-01-17T09:26:42.467Z'
 - https://github.com/mbrn/libzy
   - a boilerplate that makes documentation faster. It uses material-ui UI components.
 
+- https://github.com/Foveluy/ReStory
+  - 依赖antd3、showdown、koa
+  - A static site generator with MDX for React documentation.
+- https://github.com/MuYunyun/create-react-doc
+  - Create React Doc 是一个使用 React 的 markdown 文档站点生成工具
+  - 建站理念: 文件即站点 (Files as a Site)。
+  - 性能: 通过预渲染、懒加载大幅提升站点加载速度。
+  - 基于 mdx: 支持在 markdown 中书写 React 组件、数学公式等
 # ref
-
 - [Storybook vs Styleguidist_201805](https://www.chromatic.com/blog/storybook-vs-styleguidist/)
 - [What’s the difference between Styleguidist and Storybook?](https://react-styleguidist.js.org/docs/cookbook/#are-there-any-other-projects-like-this)
   - For me, the biggest distinction is how you describe component variations.

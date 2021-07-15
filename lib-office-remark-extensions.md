@@ -197,3 +197,7 @@ modified: '2021-06-02T16:49:11.370Z'
   - This plugin does not bundle any Markdown parser to keep your options open.
 - https://github.com/klaytonfaria/markdown-json
   - 依赖marked
+
+- https://github.com/storybookjs/marksy
+  - A markdown to custom components library. 
+  - Supports any virtual DOM library.

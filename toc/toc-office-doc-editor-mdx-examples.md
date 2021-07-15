@@ -22,8 +22,5 @@ modified: '2021-04-28T15:26:27.324Z'
   - https://mermaid-js.github.io/mermaid-live-editor/
   - Edit, preview and share mermaid charts/diagrams. 
   - New implementation of the live editor.
-- https://github.com/storybookjs/marksy
-  - A markdown to custom components library. 
-  - Supports any virtual DOM library.
 
  

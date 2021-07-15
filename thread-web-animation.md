@@ -11,6 +11,24 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I love react-spring, but does anyone know of anything with a smaller bundle size? 
+- https://twitter.com/tannerlinsley/status/1415457202794500097
+  - I'm looking for something *microscopic* (like 4kb for react-motion), but still performs the animation loop outside of React.
+- Curious how folks handle the “outside of React” part. Any good reads on explanations?
+  - Collect a `ref` on the element and directly manipulate the DOM element’s properties and style using DOM APIs.
+  - It’s funny how fast things can be when you aren’t running a reconciler with every frame.
+- Did a quick create vite app and compared before/after adding a basic spring animation. Ended up adding 15kb so I will eat my words here
+
 - ## From what I understand, JavaScript animations are limited to 60fps, even on devices that support higher refresh rates—but CSS animations can go higher. What about these?
 - https://twitter.com/steveruizok/status/1415223404022714368
 - Eh? JS is doing perfectly fine going to 120hz on my 4k 120hz display. rAF should always be going up to the displays refresh rate unless the device has performance issues. Maybe some devices browsers have rAF crippled but it's fine on desktop at least.

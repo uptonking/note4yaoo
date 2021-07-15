@@ -22,6 +22,19 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Made this Glassmorphic credit card
+- https://twitter.com/theShounakDas/status/1415326842102468610
+  - https://codepen.io/dasshounak/pen/xxERLqZ
+  - [Create a Glassmorphic Credit Card with CSS](https://codecrunch.hashnode.dev/create-a-glassmorphic-credit-card-with-css)
+
 - ## I like this idea of providing a single page collecting all demos.
 - https://twitter.com/bramus/status/1415240625872642049
   - [CSS Animation Today 2021](https://miocene.io/css-animation-today-2021/)

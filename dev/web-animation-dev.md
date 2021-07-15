@@ -9,6 +9,9 @@ modified: '2021-01-01T20:12:36.651Z'
 
 # guide
 
+- faq-not-yet
+  - pluggable animations
+
 - 动画风格
   - 偏重形状渐变
   - 偏重进出场的切换效果
@@ -29,15 +32,11 @@ modified: '2021-01-01T20:12:36.651Z'
     - 可中断的动画
     - 方便实现动画生命周期hooks，工具函数丰富
   - 方便将动画迁移到其他平台
-
 # faq
-
 - 组件的hover effect如何实现
 - 类似条形图悬停时加长某根柱子，饼状图加长某个扇形
 - 类似卡片变大
-
 # js animation
-
 - 动画原理
   - 当页面最小化或被切换成后台标签页时，页面为不可见，浏览器会触发visibilitychange事件, 并设置document.hidden属性为true
   - 切换到显示状态时，页面为可见，也同样触发一个visibilitychange事件，设置document.hidden属性为false
@@ -81,9 +80,7 @@ modified: '2021-01-01T20:12:36.651Z'
     - setTimeout的执行只是在内存中对图像属性进行改变，这个变化必须要等到屏幕下次刷新时才会被更新到屏幕上。如果两者的步调不一致，就可能会导致中间某一帧的操作被跨越过去，而直接更新下一帧的图像。这就一起了丢帧。
 - ref
   - [requestAnimationFrame用法](https://juejin.im/post/5b6020b8e51d4535253b30d1)
-
 # css animation
-
 - CSS Animations is a module of CSS that lets you animate the values of CSS properties over time, using keyframes 
   - The behavior of these keyframe animations can be controlled by specifying their timing function, duration, their number of repetitions, and other attributes
 - CSS animations make it possible to animate transitions from one CSS style configuration to another. 
@@ -103,24 +100,20 @@ modified: '2021-01-01T20:12:36.651Z'
 - ref
   - [Using CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
   - [Animatable CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
-
 # css transition
-
 - CSS Transitions is a module of CSS that lets you create gradual transitions between the values of specific CSS properties. 
   - The behavior of these transitions can be controlled by specifying their timing function, duration, and other attributes.
 - CSS transitions provide a way to control animation speed when changing CSS properties. 
 - Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time.
 - Animations that involve transitioning between two states are often called implicit transitions as the states in between the start and final states are implicitly defined by the browser.
 
-- `transition: transition-property,t-duration,t-timing-function,t-delay`
+- `transition: transition-property, t-duration, t-timing-function, t-delay`
 - Transitions enable you to define the transition between two states of an element. 
 - Different states may be defined using pseudo-classes like `:hover` or `:active` or dynamically set using JavaScript.
 
 - ref
   - [Using CSS transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
-
 # animation-library-comparison
-
 - ## [Comparing JavaScript animation libraries_202004](https://blog.logrocket.com/comparing-javascript-animation-libraries/)
 - Anime.js
 - Pros
@@ -164,9 +157,7 @@ modified: '2021-01-01T20:12:36.651Z'
 - Closing thoughts
   - With Anime.js and GSAP, they both accomplished animations by importing a global object, identifying elements to apply animations to, and then defining the animation, 
   - With p5.js and Three.js, custom elements were created and appended to the DOM. Both leveraged an HTML canvas to generate the associated animation
-
 # ref
-
 - [Animate Your HTML5_2013](http://animateyourhtml5.appspot.com)
   - A tour of HTML5 animation techniques with CSS3, SVG, Canvas and WebGL
 - [An Interactive Guide to CSS Transitions](https://www.joshwcomeau.com/animation/css-transitions/)

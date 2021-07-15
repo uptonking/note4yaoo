@@ -35,6 +35,8 @@ modified: '2021-03-29T19:17:38.650Z'
 
 - 将对象的引用保存到dom对象，如pm-editorView保存到dom，是否影响性能
 
+- 很长的图片如何加载
+
 ## css更新的方式比较，切换class类名，通过修改style属性来更新css vars的值
 
 - 修改style属性本身可看做修改内联样式

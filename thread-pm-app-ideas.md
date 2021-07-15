@@ -7,8 +7,9 @@ modified: '2021-04-19T14:53:27.158Z'
 
 # thread-pm-app-ideas
 
-# repeat
+> new marketable apps
 
+# repeat
 - ## Harsh truth: Reading about other successful creators won't make you one. Start creating so that you have your own success story to tell.
 - https://twitter.com/mkhundmiri/status/1383688592099135498
 
@@ -19,9 +20,6 @@ modified: '2021-04-19T14:53:27.158Z'
 - No project ideas. Only problem
   - make a project to solve your problem
 # ideas
-
-> new marketable apps
-
 - ## 
 
 - ## 

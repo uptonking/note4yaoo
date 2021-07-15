@@ -52,7 +52,8 @@ modified: '2020-10-05T06:17:42.467Z'
   - Work with d3.
   - It is renderer agnostic enabling the same api to render in multiple contexts: webgl2, webgl, and canvas2d.
   - Manipulate the sprites in canvas as you do with the DOM elements.
-  - https://github.com/spritejs/q-charts
+  - https://github.com/qcharts/core
+    - https://github.com/spritejs/q-charts
     - 基于 spritejs 封装的图表库
 
 - paper.js /12.2kStar/MIT/202006/js

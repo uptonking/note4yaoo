@@ -13,12 +13,18 @@ modified: '2021-05-23T11:00:06.662Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Are there any great text editor libraries out there that work like GitHub’s? Markdown, with drag and drop upload support, APIs for things like tagging people., etc?
 - https://twitter.com/adamwathan/status/1405278574337150977
 - The GitHub editor is open source:
   - https://github.com/github/github-elements
   - GitHub's Web Component collection.
-- I tried a whole bunch of markdown editors last month and ended up going with tiptap.dev.It was the easiest of all the editors to add custom behavior/config.
+- I tried a whole bunch of markdown editors last month and ended up going with tiptap.dev. It was the easiest of all the editors to add custom behavior/config.
 - I've built my own editor https://github.com/michelson/dante, it's like a medium editor with pluggable blocks (giphy, vlog, embeds, image, voice recording and more). ( the latest version is on top of @tiptap_editor, previous was written on draftjs ) oh, and I'm using tw for the doc site
 - Any side-by-side Markdown editor/preview without scroll synchronization is a pill of poop.
 

@@ -7,8 +7,12 @@ modified: '2021-05-13T02:42:31.809Z'
 
 # lib-list-ag-grid-dev
 
+# guide
+- usecase
+  - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
+    - AdapTable is a sophisticated HTML5 DataGrid add-on.
+    - AdapTable does not provide a DataGrid control of its own; AdapTable is most commonly used together with ag-Grid 
 # ag-grid表格组件ui结构层次
-
 - ag-root-wrapper: 最顶层容器，ref是eRootWrapper
   - ag-root-wrapper-body
     - ag-tab-guard-top
@@ -39,9 +43,9 @@ modified: '2021-05-13T02:42:31.809Z'
     - ag-tab-guard-bottom
   - ag-paging-panel: 默认隐藏分页组件
 
-- AgGridReact组件会在ag-root-wrapper外层添加一个div `<div style="height: 100%;">`
+- AgGridReact组件会在ag-root-wrapper外层添加一个div `<div style="height: 100%; ">`
 
-``` CSS
+```CSS
 .ag-root {
   position: relative;
   flex: 1 1 auto;
@@ -158,7 +162,7 @@ modified: '2021-05-13T02:42:31.809Z'
   - ref
     - [ag-grid row spanning simple example preview](https://www.ag-grid.com/example-runner/grid-vanilla.php?section=javascript-grid-row-spanning&example=row-spanning-simple)
 
-``` CSS
+```CSS
 .rowspan-cell-style {
   z-index: 1;
   position: absolute;

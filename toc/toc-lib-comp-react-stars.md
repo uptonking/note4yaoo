@@ -178,3 +178,15 @@ modified: '2021-01-12T18:49:02.623Z'
 - https://github.com/dsternlicht/RESTool
   - https://dsternlicht.github.io/RESTool/
   - an open source UI tool for managing RESTful APIs.
+
+- https://github.com/wingkwong/react-quiz-component
+  - a ReactJS component allowing users to attempt a quiz.
+  - 类似做选择题的quiz
+
+
+
+- https://github.com/namannehra/flipping-pages
+  - https://namannehra.github.io/flipping-pages/
+  - React component for flipping book pages animation
+
+

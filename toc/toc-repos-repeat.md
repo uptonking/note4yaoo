@@ -24,11 +24,15 @@ modified: '2020-11-03T06:56:31.090Z'
 
 - ## [simple-virtual-dom](https://github.com/livoras/simple-virtual-dom)
 - Simple virtual-dom algorithm. It has only ~500 lines of code
+- [如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
 - [如何理解虚拟DOM](https://www.zhihu.com/question/29504639)
 - ref
   - https://github.com/Matt-Esch/virtual-dom
     - /10.8kStar/MIT/201604
     - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
+  - https://github.com/fantasticit/vdom
+    - 实际应用：qcharts
+    - [vdom 原理解析与简单实现](https://github.com/fantasticit/coding/issues/23)
 
 - ## [reaction - An alternative implementation of React](https://github.com/djalbat/reaction)
   - The code base is tiny compared to React but React's core functionality is nonetheless implemented faithfully

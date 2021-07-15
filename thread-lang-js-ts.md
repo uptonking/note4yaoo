@@ -20,7 +20,10 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## A very common #typescript pattern with some kinda tricky types behind the scenes. 
+- https://twitter.com/steveruizok/status/1415641397265379328
+  - The second arg's type is based on the first arg
+  - https://codesandbox.io/s/type-mapping-and-filtering-k6k2e
 
 - ## TIL Node.js v15 or higher can generate UUID v4 using `crypto.randomUUID()` ; 
 - https://twitter.com/Kikobeats/status/1414661088247963652
