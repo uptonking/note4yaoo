@@ -26,7 +26,18 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## "Book smart" people always look for obscure, jargon-filled shortcuts to success.
+- https://twitter.com/swyx/status/1388584008494239750
+- Takes a long time to get it down to:
+  - Learn by doing
+  - Do what you said you would do
+  - Do it longer than anyone else
+  - Do stuff with peers and mentors
+  - "Simple, not easy" over "Secret, and fast!"
+- You can be "too smart"
+  - You find it easy to fool people, including yourself.
+  - What’s boring is often important — and the smartest people are the least interested in what’s boring.
+  - Intelligence can make it difficult to communicate.
 
 - ## My rule of thumb is to insist that a user story must contain only one event. Only one "when".
 - https://twitter.com/alexbunardzic/status/1411368407048491009

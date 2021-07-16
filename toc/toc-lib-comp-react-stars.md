@@ -85,7 +85,16 @@ modified: '2021-01-12T18:49:02.623Z'
   - /1.4kStar/MIT/201810
   - http://balloob.github.io/react-sidebar/example/
   - A sidebar component for React
-  - react-sidebar-experimental-architecture branch
+  - [Enable window scrolling in v3](https://github.com/balloob/react-sidebar/pull/161)
+  - https://github.com/MilllerTime/react-sidebar
+    - only support mobile
+    - [Architecture Proposal: Avoid rendering all app content in a nested scrolling container](https://github.com/balloob/react-sidebar/issues/86)
+- https://github.com/yahoo/react-stickynode
+  - A performant and comprehensive React sticky component.
+  - A sticky component wraps a sticky target and keeps the target in the viewport as the user scrolls the page.
+  - In the regular case, when scrolling the page down, react-stickynode will stick to the top of the viewport. 
+  - But in the case of a taller sticky target, it will scroll along with the page until its bottom reaches the bottom of the viewport. 
+
 - https://github.com/stoeffel/react-motion-drawer
   - https://react-motion-drawer.netlify.app/
   - Drawer built with react-motion
@@ -183,10 +192,6 @@ modified: '2021-01-12T18:49:02.623Z'
   - a ReactJS component allowing users to attempt a quiz.
   - 类似做选择题的quiz
 
-
-
 - https://github.com/namannehra/flipping-pages
   - https://namannehra.github.io/flipping-pages/
   - React component for flipping book pages animation
-
-

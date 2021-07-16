@@ -11,6 +11,15 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Never realized destructing could be used to trim unwanted properties
+- https://twitter.com/angustweets/status/1415734961886408704
+  - const { yawn, sigh, ...usefulProperties } = obj; 
+- I do a lot of that with React where the caller could pass lots of things but I only need to deal with a few.
+
 - ## TypeScript: How do you format members of enums?
 - https://twitter.com/justinfagnani/status/1413886888528605184
 - Solution: don't use enums. Stick to the type-system portion of TypeScript.

@@ -8,9 +8,14 @@ modified: '2021-01-08T11:48:16.590Z'
 # toc-lib-editor-builder-window-manager
 
 # guide
+
+- sidebar
+  - 侧边栏过于复杂时可以考虑用窗口来代替实现(侧边栏 vs 浮动面板)
+  - 主流的库会碰到各种需求，可以在issues中搜索 two sidebar
+
 - ref
-  - 几乎所有的窗口组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
-    - 比较适合做表格，不适合做文档
+  - 几乎所有的窗口布局组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
+    - 比较适合做表格，做文档要考虑
 # panel-window-manager
 - ref
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
@@ -124,14 +129,49 @@ modified: '2021-01-08T11:48:16.590Z'
   - A NodeJs module for Electron (Atom Shell, previously) that will help you create, control, manage and connect your application windows very easily.
   - Most of the applications created using Electron are one-window applications
   - if you are to build a multi-window Electron application, then you may want to have a look at this package module.
-# dockable
+# dockable(sidebars)
+- https://github.com/ColorlibHQ/AdminLTE
+  - https://adminlte.io/
+  - https://adminlte.io/themes/v3/
+  - 左侧是可折叠到只显示图标的sidebar，右侧是可勾选配置项的浮动sidebar
+  - Free admin dashboard template based on Bootstrap 4
+
 - https://github.com/balloob/react-sidebar
   - http://balloob.github.io/react-sidebar/example/
   - a sidebar component for React.
   - Dock the sidebar next to the content
-  - Easy to combine with media queries for auto-docking
   - Sidebar and content passed in as PORCs (Plain Old React Components)
   - Only dependency is React
+  - 侧边栏宽度会随着内容宽度变化
+  - 不直接支持同时打开多个sidebar，但可创建多个实例
+  - [Enable window scrolling in v3](https://github.com/balloob/react-sidebar/pull/161)
+    - This PR fixes most of the scrolling issues. 
+    - It basically enables using the body as the scroll container instead of using the content-div as the scrolling container. 
+  - https://github.com/MilllerTime/react-sidebar
+    - only support mobile
+    - [Architecture Proposal: Avoid rendering all app content in a nested scrolling container](https://github.com/balloob/react-sidebar/issues/86)
+
+- slideout /8kStar/MIT/201803/js/NoDeps
+  - https://github.com/Mango/slideout
+  - https://slideout.js.org/
+  - 实现左右2个sidebar的缺点是不能同时显示，一次只能显示一个，并且最左边或最右边的内容会被遮挡
+  - [Is it possible to have two slideout menus - one to the left and one to the right - at the same time?](https://github.com/Mango/slideout/issues/208)
+    - yes
+    - [Two Slideouts](https://codepen.io/pazguille/pen/GNEzZv)
+  - [support 2 menu in page](https://github.com/Mango/slideout/issues/127)
+    - [Slideout.js - Left & Right Menu](https://codepen.io/egmalt/pen/PGbWRq)
+
+- https://github.com/Kamona-WD/starter-dashboard-layout
+  - https://kamona-wd.github.io/starter-dashboard-layout/
+  - tarter responsive dashboard layout built with tailwindcss & alpinejs
+  - 左边侧边栏显示一级菜单，右边可显示浮动侧边面板
+  - 样式非常友好
+  - https://github.com/Kamona-WD/starter-dashboard-layout-vue/
+- https://github.com/Kamona-WD/kwd-dashboard
+  - https://kamona-wd.github.io/kwd-dashboard/
+  - Fully responsive dashboard template built with tailwindcss & alpinejs
+  - 只有左边有侧边栏，左右两边都有浮动面板
+  - 样式非常友好
 
 - https://github.com/goodoldneon/react-drag-and-dock
   - https://codepen.io/goodoldneon/pen/WPraLE

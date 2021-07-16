@@ -59,6 +59,9 @@ modified: '2020-12-29T11:27:41.474Z'
 
 # 产品研发
 
+- https://blazorise.com/
+  - 简洁首页，典型的技术产品首页
+
 - https://www.app.co/
   - 九宫格的风格
 

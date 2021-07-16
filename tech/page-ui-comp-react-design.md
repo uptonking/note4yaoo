@@ -11,6 +11,12 @@ modified: '2021-01-19T10:51:34.462Z'
 - At some point you are tasked with adding a new component. 
   - That is first step in a process known as component API design.
 
+- Core ideas: 
+  - Consider accepting children
+  - Mimic native HTML APIs
+  - Review the APIs of popular libraries for inspiration
+  - Consider compound components over config objects
+
 - Component as a layer of abstraction
 - When you are creating a new component - you are, generally, aiming to abstract something away. 
 - Whatever you are abstracting ends up being the component's functionality. What it does and the reason why it exists.

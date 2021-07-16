@@ -21,6 +21,13 @@ modified: '2020-12-09T09:30:24.694Z'
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
+- https://github.com/drinkjs/mojito
+  - http://mojito.drinkjs.com/
+  - Mojito是一个可视化数据分析、数据展示和轻业务开发的平台
+  - 支持使用React/Vue开发上传自定义组件
+  - 100%开源，支持私有化部署
+  - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable
+  - 后端依赖 fastify、mysql、mongodb、typeorm、next10
 
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server
@@ -47,9 +54,7 @@ modified: '2020-12-09T09:30:24.694Z'
   - https://github.com/PablocFonseca/streamlit-aggrid
   - https://github.com/cceyda/common-voice-explorer
     - https://28a3b43b-3997-4649-adda-93f52445562a.job.gra.training.ai.cloud.ovh.net/
-
 # viz-dashboard
-
 - https://github.com/kantord/just-dashboard /1.5kStar/201907
   - https://kantord.github.io/just-dashboard/
   - Dashboards using YAML or JSON files
@@ -57,18 +62,14 @@ modified: '2020-12-09T09:30:24.694Z'
   - http://mozaik.rocks/
   - http://mozaik.herokuapp.com/
   - a tool based on react/redux/d3 to easily craft dashboards.
-
 # examples
-
 - https://github.com/amcharts/covid-charts
   - A collection of JS-based data visualization tools and data for depicting spread of the COVID-19
 - https://github.com/covid19cubadata/covid19cubadata.github.io
   - Covid19 - Dashboard for Cuba
 - https://github.com/stevenliuyi/covid19
   - an interactive, animated COVID-19 coronavirus map to track the outbreak over time by country and by region
-
 # misc
-
 - snorkel
   - https://github.com/logv/snorkel
   - https://snorkel.logv.org/

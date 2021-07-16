@@ -1,9 +1,9 @@
-__-
+---
 title: lib-viz-d3-latest-changelog
 tags: [changelog, d3, lib, viz]
 created: '2021-05-18T18:25:19.917Z'
 modified: '2021-05-18T18:25:41.202Z'
-__-
+---
 
 # lib-viz-d3-latest-changelog
 
@@ -57,3 +57,4 @@ __-
   - `d3.scale.linear` is now `d3.scaleLinear`
 - 4.0 uses only ASCII variable names and ASCII string literals (see rollup-plugin-ascii), avoiding encoding problems.
   - 3.x employed Unicode variable names such as λ, φ, τ and π for a concise representation of mathematical operations.
+

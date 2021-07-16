@@ -18,7 +18,10 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
-- ## 
+- ## TypeScript: .map() only works for Arrays, not for tuples.
+- https://twitter.com/rauschma/status/1415750873788071939
+- You can still *implement* with .map(), you just need a cast
+- In fp-ts this is called `Tuple.bimap`
 
 - ## A very common #typescript pattern with some kinda tricky types behind the scenes. 
 - https://twitter.com/steveruizok/status/1415641397265379328

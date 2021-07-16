@@ -184,6 +184,7 @@ modified: '2021-01-17T09:26:42.467Z'
   - A static site generator with MDX for React documentation.
 - https://github.com/MuYunyun/create-react-doc
   - Create React Doc 是一个使用 React 的 markdown 文档站点生成工具
+  - 依赖 react-markdown、@mdx-js/react.v1.6、prism-react-renderer
   - 建站理念: 文件即站点 (Files as a Site)。
   - 性能: 通过预渲染、懒加载大幅提升站点加载速度。
   - 基于 mdx: 支持在 markdown 中书写 React 组件、数学公式等

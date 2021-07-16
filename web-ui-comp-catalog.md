@@ -251,6 +251,7 @@ modified: '2021-04-11T17:38:29.829Z'
     - as a result, scroll events never trigger on body and the browser chrome does not get hidden. 
 - multi-sidebar: 使用多个sidebar用于导航
   - https://github.com/balloob/react-sidebar/issues/65
+  - 多个sidebar的效果也可以考虑用多个window来实现
 
 - ## Popover/Tooltip/弹出气泡
 - 要点

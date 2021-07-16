@@ -87,3 +87,8 @@ modified: '2021-01-01T20:17:05.116Z'
 - [CSS Flex vs Grid Tutorial](https://t.co/NPuEsH0BwT?amp=1)
 - https://github.com/facebook/yoga
   - Yoga is a cross-platform layout engine which implements Flexbox. 
+
+- Fixed-Fluid-Fixed (Holy Grail Layout)
+  - https://www.codeply.com/go/licdodtBCO
+  - [Bootstrap 4 Holy Grail Layout](https://stackoverflow.com/questions/42617595)
+
