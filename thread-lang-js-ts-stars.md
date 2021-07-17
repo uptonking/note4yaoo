@@ -19,6 +19,7 @@ modified: '2021-06-22T11:54:44.506Z'
 - https://twitter.com/angustweets/status/1415734961886408704
   - const { yawn, sigh, ...usefulProperties } = obj; 
 - I do a lot of that with React where the caller could pass lots of things but I only need to deal with a few.
+- Removing a property from an object immutably by destructuring it
 
 - ## TypeScript: How do you format members of enums?
 - https://twitter.com/justinfagnani/status/1413886888528605184

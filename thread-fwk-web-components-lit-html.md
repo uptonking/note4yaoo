@@ -11,18 +11,20 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## 
 
 - ## 
 
-
 - ## 
 
-
-- ## 
-
-
-- ## 
-
+- ## The more I play with Web Components, the more I wonder what shadow dom is good for other than adding third party ads to a web site.
+- https://twitter.com/dam/status/1416190642573778945
+- please outline the value of the Shadow DOM
+  - It is supposed to be good for style encapsulation, but if a website implements a CSS design system correctly then Shadow DOM seems to be more of a burden than a benefit.
+- Web components are primarily designed for highly reusable things. If they exist only within a single website then their value is much less. Shadow DOM is more valuable for something like a Stripe embed
+  - Exactly. Shadow DOM seems to be perfect for the embedded use case.
+  - I feel like the reuse statement should be challenged though. 
+  - You can definitely reuse Web Components without Shadow DOM. In some ways it seems easier to do so without it.
 
 - ## Core API for turning any Vue 3 component into a custom element.
 - https://twitter.com/justinfagnani/status/1414615879866720270
@@ -33,9 +35,6 @@ modified: '2021-01-19T17:09:26.629Z'
 - We're still working up a standalone description of the protocol(SSR Interface), but here's the interface in Lit SSR
   - The reason for this ElementRenderer interface is that Lit basically has a separate streaming DOM-free server-side implementation, and we want to be able to render CEs via  an intermediary to enable that for other libraries.
   - [Server-Side Rendering (SSR) API](https://github.com/webcomponents/community-protocols/issues/7)
-
-
-
 
 - ## Merged the first draft of the Context Protocol into the web components community protocols!
 - https://twitter.com/justinfagnani/status/1411126244368740353

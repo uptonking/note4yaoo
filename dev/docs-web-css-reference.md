@@ -12,7 +12,17 @@ modified: '2020-11-13T10:19:20.931Z'
 - [Common CSS Properties Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
   - list of the most common CSS properties with the equivalent of the DOM notation which is usually accessed from JavaScript
   - float > cssFloat
+# [scrollbar-gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter)
+- 浏览器都不支持(202107)
 
+- An element's `scrollbar-gutter` is the **space between the inner border edge and the outer padding edge**, where the browser may display a scrollbar. 
+  - If no scrollbar is present, the gutter will be painted as an extension of the padding.
+- The browser determines whether classic scrollbars or overlay scrollbars are used:
+  - Classic scrollbars are always placed in a gutter, consuming space when present.
+  - Overlay scrollbars are placed over the content, not in a gutter, and are usually partially transparent.
+
+- ref
+  - [scrollbar-gutter](https://css-tricks.com/almanac/properties/s/scrollbar-gutter/)
 # css predefined values
 
 ## [initial](https://developer.mozilla.org/en-US/docs/Web/CSS/initial)
@@ -48,8 +58,6 @@ modified: '2020-11-13T10:19:20.931Z'
 - The `revert` keyword is different from and should not be confused with `initial`, which uses the initial value defined on a per-property basis by the CSS specifications.
   - In contrast, user-agent stylesheets set default values on the basis of CSS selectors.
   - For example, the initial value for the display property is inline, whereas a normal user-agent stylesheet sets the default display value of `<div>`s to `block`, of `<table>`s to `table`, etc.
-
 # color
-
 - The `color` CSS property sets the foreground color value of an element's text and text decorations, and sets the `<currentcolor>` value. 
   - `currentcolor` may be used as an indirect value on other properties and is the default for other color properties, such as border-color.

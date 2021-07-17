@@ -26,7 +26,10 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## We're considering removing a few CSS variables from our design system. 
+- https://twitter.com/markdalgleish/status/1416282722108989440
+  - Normally this would be a breaking change, but luckily they're hashed (via vanilla-extract) 
+  - and we never exported them to consumers, making them private CSS variables—something the web doesn't natively support.
 
 - ## Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also 🧮 numbers, 📏 ranges, ✉️ emails, and even 🚦 colors!
 - https://twitter.com/stackblitz/status/1409493323660857348

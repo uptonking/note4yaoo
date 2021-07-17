@@ -110,3 +110,6 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/raphaelfabeni/ui-interactions
   - https://raphaelfabeni.com/ui-interactions/
   - Ready-to-use UI interactions using only one element and pure CSS
+
+- https://github.com/webondevices/html-css-wizardry
+  - example projects from my book: All you need is HTML and CSS

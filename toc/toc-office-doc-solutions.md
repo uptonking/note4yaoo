@@ -34,6 +34,20 @@ modified: '2021-01-17T09:26:42.467Z'
   - /120Star/MIT/202011/ts
   - Simple documentation for your React components.
   - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
+  - 左侧目录支持折叠和多级目录
+  - 没有实现当前页的toc
+- https://github.com/facebook/docusaurus
+  - /19.5kStar/MIT/202010
+  - Docusaurus 1 used to be a pure documentation site generator. 
+  - In Docusaurus 2, we rebuilt it from the ground up, allowing for more customizability 
+    - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n
+    - While our main focus will still be helping you get your documentations right and well, 
+    - it is possible to build any kind of website using Docusaurus 2 as it is just a React application. 
+    - Docusaurus can now be used to build any website, not just documentation websites.
+  - Gatsby does many things well and is suitable for building many types of websites. 
+    - GraphQL is also pretty core to Gatsby
+  - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
+  - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
 - https://github.com/YvesCoding/rcpress
   - /160Star/MIT/202008
   - 基于react、Ant Design的静态文档生成器
@@ -60,23 +74,11 @@ modified: '2021-01-17T09:26:42.467Z'
   - /2.5kStar/MIT/202012/js/react
   - 依赖mark-twain、react-router、webpack、prismjs
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
-- https://github.com/facebook/docusaurus
-  - /19.5kStar/MIT/202010
-  - Docusaurus 1 used to be a pure documentation site generator. 
-  - In Docusaurus 2, we rebuilt it from the ground up, allowing for more customizability 
-    - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n
-    - While our main focus will still be helping you get your documentations right and well, 
-    - it is possible to build any kind of website using Docusaurus 2 as it is just a React application. 
-    - Docusaurus can now be used to build any website, not just documentation websites.
-  - Gatsby does many things well and is suitable for building many types of websites. 
-    - GraphQL is also pretty core to Gatsby
-  - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
-  - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
 - https://github.com/honkit/honkit
   - /1.4kStar/Apache2/202009/gitbook
   - HonKit is building beautiful books using Markdown - Fork of GitBook
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
-  - 依赖immutable3.8、nunjucks
+  - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
   - GitBook is only free for open-source and non-profit teams.
 - https://github.com/amiroff/NextBook
   - https://next-book.vercel.app/
@@ -154,16 +156,7 @@ modified: '2021-01-17T09:26:42.467Z'
   - http://ashkenas.com/docco/
   - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
   - It produces an HTML document that displays your comments intermingled with your code. 
-# book-like-documentation layout/component/interface/ui/page
-- https://github.com/evnbr/bindery
-  - https://evanbrooks.info/bindery/docs/
-  - a library for designing printable books with HTML and CSS.
-  - At its simplest, Bindery flows content over multiple pages.
 
-- https://github.com/SaraVieira/starter-book
-  - https://wizardly-snyder-c98440.netlify.app/
-  - A starter built with gatsby to help you create books with ease.
-  - 样式简单
 # more-repos
 - https://github.com/front10/landing-page-book
   - Fully customizable landing-page components written in React.

@@ -37,7 +37,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## There are still users browsing with a Chrome 37 engine (7 years ago), 
+- https://twitter.com/firt/status/1415645416276860929
+  - not because they don't update their browsers 
+  - but because it's Facebook Mobile Browser on Android 5 using a webview. 
+  - Facebook does NOT honor user browser choice leaving that user with an old engine.
+  - That user was navigating with Facebook 326 (launched last month), so she was updating her native apps; we can assume her browser was updated as well, and it can be Chrome 91, but the webview is still old, giving the user a bad experience, errors and probably security problems.
+- Not arguing with your main point here but IIRC in 5.0 and above the system webview is an APK that can be updated just like Chrome can. Wonder if it’s a third party Android fork, Amazon or something?
 
 - ##  I've seen a lot of examples of custom selects and comboboxes in various libraries relying on aria-activedescendant. 
 - https://twitter.com/devongovett/status/1312150515220799489

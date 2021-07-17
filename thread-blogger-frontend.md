@@ -83,6 +83,9 @@ modified: '2021-02-09T19:27:01.319Z'
 - 雪碧
   - react, 阿里，beam
   - https://github.com/doodlewind
+- 神说要有光
+  - 前端/编译器，高德
+  - https://www.zhihu.com/people/di-xu-guang-50/pins
 # dev-frontend
 - Andrea Giammarchi 
   - https://github.com/WebReflection

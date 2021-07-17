@@ -10,8 +10,10 @@ modified: '2021-01-08T11:48:16.590Z'
 # guide
 
 - sidebar
+  - 使用场景包括dashboard、doc、book、site...
+  - 可以直接从使用场景的角度来分析解决方案
   - 侧边栏过于复杂时可以考虑用窗口来代替实现(侧边栏 vs 浮动面板)
-  - 主流的库会碰到各种需求，可以在issues中搜索 two sidebar
+  - 主流的库会碰到各种需求，可以在issues中搜索 two sidebar 查看讨论过的方案
 
 - ref
   - 几乎所有的窗口布局组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
@@ -165,13 +167,12 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://kamona-wd.github.io/starter-dashboard-layout/
   - tarter responsive dashboard layout built with tailwindcss & alpinejs
   - 左边侧边栏显示一级菜单，右边可显示浮动侧边面板
-  - 样式非常友好
+  - 样式超级友好
   - https://github.com/Kamona-WD/starter-dashboard-layout-vue/
 - https://github.com/Kamona-WD/kwd-dashboard
   - https://kamona-wd.github.io/kwd-dashboard/
   - Fully responsive dashboard template built with tailwindcss & alpinejs
   - 只有左边有侧边栏，左右两边都有浮动面板
-  - 样式非常友好
 
 - https://github.com/goodoldneon/react-drag-and-dock
   - https://codepen.io/goodoldneon/pen/WPraLE

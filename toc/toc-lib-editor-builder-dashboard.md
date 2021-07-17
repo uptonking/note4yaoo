@@ -7,6 +7,7 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-dashboard
 - guide
+  - 使用场景包括控制台、个人设置...
   - 流行的dashboard大多是基于bootstrap
   - 建议深入一个静态的css dashboard
   - dashboard中的内容与业务场景紧密相关，一般要考虑内容布局
@@ -271,10 +272,11 @@ modified: '2021-01-08T11:48:16.590Z'
 # react-dashboard-admin
 
 - https://github.com/llorentegerman/react-admin-dashboard
-  - https://llorentegerman.github.io/dashboard
+  - https://llorentegerman.github.io/react-admin-dashboard/
   - Building a UI from scratch with ReactJS
   - 依赖 react-router、react-burger-menu、simple-flexbox、react-collapsible-content
   - 只实现了仪表板骨架，功能太少
+  - 不支持手动切换左侧侧边栏，右边没有浮动面板
 
 - https://github.com/codedthemes/berry-free-react-admin-template
   - free(MIT): https://berrydashboard.io/free
@@ -287,6 +289,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - http://dashboards.webkom.co/react/airframe/
   - Dashboard/Admin/Analytics template that works great on any smartphone, tablet or desktop.
   - 依赖bootstrap4、react-router、ag-grid-community、react-grid-layout
+  - 左边侧边栏能折叠到只显示图标，右边是提供设置的浮动面板
   - 提供了很多版本，如angular、jquery、vue
   - 样式一般般
 - https://github.com/panther-labs/pounce
@@ -294,10 +297,9 @@ modified: '2021-01-08T11:48:16.590Z'
 
 - https://github.com/minimal-ui-kit/material-kit-react
   - https://github.com/minimal-ui-kit/material-kit-react
+  - 样式超级友好，右侧没有浮动面板
   - Dashboard made with Material UI's components, create-react-app
   - We also have a pro version
-  - more-material
-    - https://github.com/creativetimofficial/material-dashboard-react
 - https://github.com/modularcode/modular-admin-react
   - http://modular-admin-react.modularcode.io/
   - MaterialUI dashboard theme implemented by using React Hooks + TypeScript + Context API
@@ -318,7 +320,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - http://pro.ant.design/
   - http://preview.pro.ant.design/
   - 左边是包含多级菜单的侧边栏，右边是提供设置的浮动面板
-  -  a production-ready solution for admin interfaces.
+  - a production-ready solution for admin interfaces.
   - 2017年10月发布第一个版本，到现在的201905发布v4, Pro发生了很多的改变，底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TS
   - 区块可以类比为一个组件，而模板代表一个页面
 - react-admin /Apache2/151Star/2020008
