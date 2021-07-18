@@ -10,7 +10,10 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
-- ## 
+- ## Tip: Use `FunctionComponent` in both frameworks to look up types.
+- https://twitter.com/rauschma/status/1416372468269428739
+  – [React] component: FunctionComponent, result: ReactElement, children: ReactNode
+  – [Preact] component: FunctionComponent, result: VNode, children: ComponentChildren
 
 - ## Controversial question: How do you feel about having special `"key"` and `"ref"` values displayed inline within the "props" panel?
 - https://twitter.com/brian_d_vaughn/status/1415418485686087681
@@ -18,7 +21,7 @@ modified: '2021-01-06T14:40:11.360Z'
   - Because the plan is to **eventually move "ref" to just be a prop like any other**. 
   - Where as "key" conceptually is outside the component and belong more to the parent than the child. It's also already displayed elsewhere for that reason.
 - Key is related to "rendered by".
-- Seeing the key helped me the other day. I appreciated it.We should also be writing functions with names so the components are named correctly in debugger.
+- Seeing the key helped me the other day. I appreciated it. We should also be writing functions with names so the components are named correctly in debugger.
 
 - ## has anyone found a solution to this TS generic problem?
 - https://twitter.com/sebastienlorber/status/1412784677795110914

@@ -16,7 +16,13 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## One thing I've consistently had to relearn in developer marketing:"Talk benefits, not features" doesn't work!
+- https://twitter.com/swyx/status/1361279902889086980
+- Developers are sick of vague promises and wary of black boxes.
+- Instead:
+  - Demo - reach Wow! in <10 mins
+  - Explain how it works
+  - Show how real companies use in prod
 
 - ## webpack sponsored: In November 2020, 28 backers joined ( @EasyAgile , +27) - you are the best! Raising hands We received $13, 996 from 281 backers and we spent $15, 651 on . Our current balance is $10, 116.
 - https://twitter.com/webpack/status/1333751566004838401

@@ -11,6 +11,13 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Cannot update a component (`WidthEmitter`) while rendering a different component (`Context. Consumer`).
+  - [Warning: Cannot update a component while rendering a different component.](https://stackoverflow.com/questions/62694745/)
+  - 一种思路是将调用setState()写在useEffect/componentDidUpdate中
+  - 一种思路是检查onClick的值应该是function，而不是函数调用的返回值
+  - ref
+    - https://stackoverflow.com/questions/67030576
+
 - Uncaught RangeError: Duplicate use of selection JSON ID cell
   - https://github.com/ueberdosis/tiptap/issues/316
   - this is a version problem. why do you installed prosemirror-tables?

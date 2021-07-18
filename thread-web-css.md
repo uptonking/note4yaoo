@@ -24,7 +24,12 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
-- ## 
+- ## Easy way to tell if your CSS variables are maintainable or not—comment out one of your variable definitions. Did it break the build?
+- https://twitter.com/markdalgleish/status/1416276184409645056
+  - Another quick test—simulate a typo in one of your `var` expressions by deleting a random letter from the variable name. Did *that* break the build?
+  - The slow way to guard against this: screenshot tests.
+  - The fast way to guard against this: hashed variable names (e.g. vanilla-extract)
+- I prefer scss variables because css vars let my build pass even if they don’t exist..
 
 - ## We're considering removing a few CSS variables from our design system. 
 - https://twitter.com/markdalgleish/status/1416282722108989440

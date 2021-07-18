@@ -165,7 +165,12 @@ modified: '2021-06-12T02:41:33.389Z'
 # discuss
 - ## 
 
-- ## 
+- ##  Why did you pick that over Slate or Draft?
+- https://twitter.com/nikgraf/status/1415726807446401024
+- Afaik all of the are maintained.
+  - Draft’s data updates don’t allow for an integration with a CRDT.
+  - Slate is awesome, but the API changed a lot over the years and still lacks Android support.
+  - Every team that I know where the editor is part of the core UX switched to Prosemirror.
 
 - ## Minimal UI Math Editor - Treena
 - https://discuss.prosemirror.net/t/minimal-ui-math-editor-treena/3117
