@@ -20,7 +20,10 @@ modified: '2021-04-23T18:46:07.908Z'
 
 - ## 
 
-- ## 
+- ## Time distance by road to Paris (France)
+- https://observablehq.com/@neocartocnrs/paris-by-road-osrm
+  - 类似波纹、缓冲区的效果
+
 
 - ## Hacking PowerBI Charts with Plot
 - https://observablehq.com/@analyzer2004/plot-powerbi

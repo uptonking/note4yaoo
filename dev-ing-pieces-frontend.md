@@ -20,7 +20,30 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## [You can watch for nested properties changing in React's useEffect() hook](https://dev.to/aileenr/til-you-can-watch-for-nested-properties-changing-in-react-s-useeffect-hook-26nj)
+
+```JS
+useEffect(() => {
+  ageChangeSideEffect(values.age);
+}, [values.age])
+
+useEffect(() => {
+  // do something
+}, [someValue.someNestedValue.someDeeplyNestedValue])
+```
+
+- It's a fine solution if the object property always exists however if the property is not present at some point you get a reference error. 
+
+```js
+useEffect(() => {
+  if (values?.age) {
+    ageChangeSideEffect(values.age);
+  }
+}, [values])
+```
+
+- ref
+  -[ Object & array dependencies in the React useEffect Hook](https://www.benmvp.com/blog/object-array-dependencies-react-useEffect-hook/)
 
 - ## [Are variables declared with let or const hoisted?](https://stackoverflow.com/questions/31219420)
 
@@ -339,7 +362,7 @@ self’s width
 
   - The Object constructor returns its argument when the argument is already an object. 
   - If it's not an object, it returns the "objectified" version of the argument: a String instance if it's a string, a Number instance if it's a number, etc.
-  - if `stuff` is object , `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
+  - if `stuff` is object ,  `var thing=Object(stuff);` and `var thing=stuff;` are equivalent, 
   - [Object Construct with object parameter](https://stackoverflow.com/questions/47483438/javascript-object-construct-with-object-parameter)
 
 - ## Browsers won't render elements with the `hidden` attribute set.
@@ -560,9 +583,12 @@ return new func();
 ```
 
   - Since .apply() is a function in on itself, it can be bound with .bind(), like so:
+
     - `Function.prototype.apply.bind(fn, null);`
+
     - Meaning that the `this` of `.apply()` would be `fn` and the first argument to `.apply()` would be `null` . Meaning that it would look like this:
     - `fn.apply(null, args)`
+
   - ref
     - [How does function.apply.bind work in the following code?](https://stackoverflow.com/questions/39906893/how-does-function-apply-bind-work-in-the-following-code)
 
@@ -876,8 +902,10 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
     - 14.6KB
 
   - Because static analysis in a dynamic language like JavaScript is hard, there will occasionally be false positives. 
+
     - Lodash is a good example of a module that looks like it has lots of side-effects, even in places that it doesn't. 
     - You can often mitigate those false positives by importing submodules (e.g. `import map from 'lodash-es/map'` rather than `import { map } from 'lodash-es'` ).
+
   - ref
     - https://www.blazemeter.com/blog/the-correct-way-to-import-lodash-libraries-a-benchmark
 
@@ -926,7 +954,7 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - [ ] [[Set]]: 默认为underfined。表示写入属性时调用的函数；
 - `import lodash`
 
-  - `import { has } from 'lodash-es';`
+  - `import { has } from 'lodash-es'; `
 
   - tree shakable, but CommonJS modules are not 
 

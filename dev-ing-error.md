@@ -11,6 +11,12 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [How can I properly define a type interface when using React useContext?](https://stackoverflow.com/questions/61775657)
+
+```JS
+const AppContext = createContext < [AppStateType, React.Dispatch < React.SetStateAction < AppStateType >> ] > ([{ isOnline: false }, () => false]);
+```
+
 - Cannot update a component (`WidthEmitter`) while rendering a different component (`Context. Consumer`).
   - [Warning: Cannot update a component while rendering a different component.](https://stackoverflow.com/questions/62694745/)
   - 一种思路是将调用setState()写在useEffect/componentDidUpdate中

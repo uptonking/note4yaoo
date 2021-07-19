@@ -27,7 +27,8 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## Pouring over the details of other designers and doing some layout studies today. Grid is everything
+- https://twitter.com/souporserious/status/1416884764691161089
 
 - ## Forms tip!
 - https://twitter.com/stackblitz/status/1412414470681415682

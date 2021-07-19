@@ -30,7 +30,13 @@ modified: '2021-04-30T15:26:55.024Z'
 
 - ## 
 
-- ## 
+- ## if I were working on React Native stuff, I would seriously consider statically linking JavaScriptCore on iOS. 
+- https://twitter.com/jarredsumner/status/1416842049823772673
+  - Since the JIT is disabled anyway
+  - you can do bytecode caching!
+- turns out JSC does have a builtin console.log, it's just disabled in their API
+- https://github.com/mceSystems/node-jsc
+  - A node.js port to the JavaScriptCore engine and iOS
 
 - ## Jetpack Compose advances to the browser! 
 - https://twitter.com/kotlin/status/1389550923635167232
