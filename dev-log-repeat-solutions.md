@@ -3,7 +3,7 @@ title: dev-log-repeat-solutions
 tags: [dev, repeat, solutions]
 favorited: true
 created: '2021-01-08T00:10:18.987Z'
-modified: '2021-04-23T17:17:33.807Z'
+modified: '2021-07-20T13:50:23.433Z'
 ---
 
 # dev-log-repeat-solutions
@@ -88,7 +88,7 @@ modified: '2021-04-23T17:17:33.807Z'
   - material
   - carbon
   - spectrum
-  - theme-ui
+  - ui: material-ui, ant design,atlaskit , theme-ui, bootstrap
   - design-tokens: polaris-tokens
 
 - dashboard

@@ -42,5 +42,9 @@ modified: '2020-12-12T19:22:00.735Z'
   - 考虑引入nextjs的收益是否够高，适合开发应用而不适合库
 
 # pieces
+- ## [Gatsby vs Nextjs vs Storybook](https://component-controls.com/blogs/gatsby-vs-nextjs-vs-storybook)
+- gatsby is the original static site generator for react and continues to be a leader in this space.
+- nextjs was known for SSR, however recent builds allow creating highly optimized static sites.
+- while storybook is not a general-purpose SSG, it comes with its own SSG engine under the hood.
 
 # ref

@@ -55,6 +55,8 @@ modified: '2021-01-08T17:14:34.841Z'
   - if you choose to use spring easing with @okikio/animate the file size is 11kb but without spring easing it is 5kb, 1kb less than animejs.
   - I noticed some of the problems with WAAPI, so I built @okikio/animate as a way to make it easier to make animations with the WAAPI.
   - I based the animation format off of animejs, so, using it shouldn't be too different from animejs.
+- You may want to use Animation Worklet's, instead of just WAAPI. 
+  - You can apparently create custom easing using animation worklets.
 
 - ## Kicking the tires on a 1kb, WAAPI-powered animation API
 - https://twitter.com/mattgperry/status/1408688475973488640

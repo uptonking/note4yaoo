@@ -41,9 +41,6 @@ modified: '2021-05-14T14:46:37.026Z'
 
 ## jupyter-notebook-extensions
 
-- https://github.com/MarcSkovMadsen/panel-highcharts
-  - panel-highcharts package makes it easy to use Highcharts from Python for exploratory analysis in a Jupyter Notebook or as a HoloViz Panel Web App.
-
 - JupyterLite
   - https://github.com/jupyterlite/jupyterlite
   - https://jupyterlite.rtfd.io/en/latest/try/lab
@@ -51,7 +48,17 @@ modified: '2021-05-14T14:46:37.026Z'
   - Wasm powered Jupyter running in the browser
   - JupyterLite works out of the box with NumPy, SciPy and Matplotlib, you can also run them in your browser without any backend (helping reduce the load of Binder)
 
-## js-based-notebook
+- Jupyter Book
+  - https://github.com/executablebooks/jupyter-book
+  - http://jupyterbook.org/
+  - Build publication-quality books and documents from computational content.
+  - write their content in markdown files or Jupyter notebooks
+  - include computational elements (e.g., code cells) in either type
+  - include rich syntax such as citations, cross-references, and numbered equations
+  - using a simple command, run the embedded code cells, cache the outputs and convert this content into: a web-based interactive book and a publication-quality PDF.
+
+- https://github.com/MarcSkovMadsen/panel-highcharts
+  - panel-highcharts package makes it easy to use Highcharts from Python for exploratory analysis in a Jupyter Notebook or as a HoloViz Panel Web App.
 
 - https://github.com/executablebooks/thebe
   - https://thebe.readthedocs.io/
@@ -63,6 +70,8 @@ modified: '2021-05-14T14:46:37.026Z'
   - Edit and execute code snippets in the browser using Jupyter kernels
   - Juniper is a lightweight JavaScript library for adding interactive, editable and runnable code snippets to any website. 
   - It uses JupyterLab components and Binder, inspired by Min RK's Thebelab
+
+## js-based-notebook
 
 ## more-notebook
 

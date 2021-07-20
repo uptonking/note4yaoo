@@ -28,9 +28,14 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## TypeScript/VS Code tip: If you don’t see external type updates in your editor, try opening the changed .d.ts file. That usually refreshes things for me.
+- https://twitter.com/rauschma/status/1417285626836160512
+- There's also a "TypeScript: Restart TS Server" command that should work too.
 
-- ## 
+- ## Is there a good CI/CD service that provides "visual diffs" of HTML? (and can plug into GitHub CI/CD checks?)
+- https://twitter.com/choldgraf/status/1417385474272944152
+- https://github.com/cburgmer/csscritic
+  - CSS Critic closes the gap in front end testing and makes HTML & CSS testable
 
 - ## Just curious: which package manager/CLI do you use? npm vs yarn vs yarn2 _202105
 - https://twitter.com/JoshWComeau/status/1395044829013368846

@@ -10,13 +10,9 @@ modified: '2021-05-13T02:53:57.772Z'
 # guide
 
 - tutorials
-  - [React Table Tutorial Part 2: Style the table with Tailwind CSS](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/)
-    - https://github.com/jimmybutton/react-tailwind-table
-  - [React Table Tutorial Part 1: Build a fully featured table component](https://www.samuelliedtke.com/blog/react-table-tutorial-part-1/)
-    - https://github.com/jimmybutton/react-tailwind-table/tree/part1
   - [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
   - [Data Grid (Table) Framer package](https://packages.framer.com/package/lintonye/data-grid-table)
-  - https://github.com/lintonye/tables
+    - https://github.com/lintonye/tables
 # react-table-rerender
 - ## [after I edit a single cell, I see the entire table being re-render.](https://github.com/tannerlinsley/react-table/issues/2824)
 - You're right that that some if not most of the methods/functions attached to rows and cells are being created on every render. 

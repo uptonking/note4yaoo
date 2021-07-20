@@ -43,3 +43,8 @@ modified: '2021-01-17T09:26:32.783Z'
 
 # more-docs
 
+- https://github.com/dabbott/react-express
+  - http://www.react.express/
+  - Learn React through interactive examples
+  - 依赖next10、@mdx-js/mdx.v1、styled-components、spectacle(ppt)、react-guidebook
+  - react-guidebook未开源，提供了页面布局、搜索等功能，依赖javascript-playgrounds、styled-components

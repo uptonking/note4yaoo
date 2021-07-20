@@ -7,7 +7,6 @@ modified: '2021-07-17T13:59:24.514Z'
 
 # lib-editor-atlaskit-codebase-not-yet
 
-
 # codebase-refactor
 
 ## high
@@ -28,7 +27,8 @@ modified: '2021-07-17T13:59:24.514Z'
   - 在consumer的function child中调用了setState，也就是render方法调用了setState，会导致无限循环
   - 改用useContext + useEffect
 
-- webpack 5处理导入json时，按默认导入`import defaultJsonVal from './a.json; `，而不是命名导入
+- @atlaskit发布的多个包都使用了named import `./version.json`获取version，webpack5都不支持打包，但**webpack4可以正常打包**
+  - webpack 5处理导入json时，按默认导入`import defaultJsonVal from './a.json; `，而不是命名导入
   - 所以对于依赖的使用过命名导入的第三方包会出现编译错误
   - 变通方法是重写第三方依赖包
 # issues-not-yet

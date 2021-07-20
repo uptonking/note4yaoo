@@ -7,6 +7,11 @@ modified: '2021-05-13T04:44:39.320Z'
 
 # lib-editor-blog
 
+# guide
+- tldr: Unless browsers will open for the Web multiple crucial features (such as IME, keyboard, selection, touch, on-screen keyboard, spellchecker, etc.) contentEditable is the only sane way to handle text editing.
+
+- contenteditable gives you one very important feature that you can't fake yourself: access to the browser's spell check and corrections
+- Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
 # repeat
 
 ## [ContentEditable  —  The Good, the Bad and the Ugly_201508](https://ckeditor.com/blog/ContentEditable-The-Good-the-Bad-and-the-Ugly/)
@@ -41,15 +46,12 @@ modified: '2021-05-13T04:44:39.320Z'
   - At the same time, it still uses the native selection system, keyboard navigation and other APIs such as those related to clipboard or focus management.
 
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
-
 # blogging
 
 # [CKEditor 5: The Future of Rich Text Editing_201510](https://medium.com/content-uneditable/ckeditor-5-the-future-of-rich-text-editing-2b9300f9df2c)
 
 - Why CKEditor 5?
   - (tl; dr) To keep leading on innovation everything is to be re-thought.
-
 # more
-
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)

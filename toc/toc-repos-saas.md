@@ -7,8 +7,16 @@ modified: '2021-05-14T15:06:05.773Z'
 
 # toc-repos-saas
 
-# js-ts
+# spa-react-boilerplate
+- https://github.com/themesberg/volt-react-dashboard
+  - dashboard + components + pages
+  - 依赖 react-router、bootstrap5、react-chartist、react-live、simplebar(scrollbar)
+- https://github.com/nafiur63/techforing-landing-page
+  - https://techforing-by-nafiur-reza.netlify.app/
+  - 依赖react、bootstrap5、react-bootstrap.v1.6
+  - 样式普通，但依赖少
 
+# js-ts
 - https://github.com/timeoffthescheduler/server
   - Server Side Implementation of TimeOff TS, A Scheduler
   - Express.js, MongoDB, Passport
@@ -41,18 +49,14 @@ modified: '2021-05-14T15:06:05.773Z'
   - Commerce Cloud Reference Storefront Progressive Web Application in React
 - https://github.com/mobiosolutions/ms-bootstrap-admin
   - A sass base bootstrap admin panel.
-
 # python
-
 - https://github.com/CaravelKit/saas-base
   - SaaS base application (Flask, Vue, Bootstrap, Webpack)
 - https://github.com/smartshare-labs/react-boilerplate
   - This app is designed to work hand-in-hand with the Django-Serverless backend.
 - https://github.com/arwildo/akunter
   - Full-stack DRRM (Django, React, Redux, MySQL) application to handle the store's accounting and databases
-
 # saas-app
-
 - https://github.com/steedos/steedos-platform
   - Open source Low Code Development Platform, Salesforce alternative in nodejs and mongodb
   - 华炎魔方致力于打造 Salesforce Platform 的开源替代方案。
@@ -64,15 +68,11 @@ modified: '2021-05-14T15:06:05.773Z'
   - It runs separately to your application so you have two web servers instead of one
 - https://github.com/cbiltekin/survey-maker
   - This is a survey creating, sharing, answering web application using tools like React, Redux, and Spring.
-
 # netlify/vercel/self-hostable
-
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
-
 # more-saas
-
 - https://github.com/staqjs/staq
   - Staq is a Javascript library for creating Software-as-a-Service (SaaS) businesses
   - The staq package contains a set of React components that implement standard SaaS features including: accounts, pricing

@@ -6,12 +6,9 @@ modified: '2021-01-13T19:30:59.508Z'
 ---
 
 # toc-lib-ux-style-sketch-hand-drawn
-
 - search
   - paper, reading, reader, document
-
 # popular
-
 - excalidraw /15.3kStar/MIT/202101/ts
   - https://github.com/excalidraw/excalidraw
   - https://excalidraw.com/
@@ -45,9 +42,7 @@ modified: '2021-01-13T19:30:59.508Z'
 - https://github.com/fxaeberhard/handdrawn.css /201606
   - http://fxaeberhard.github.io/handdrawn.css/
   - Handdrawn.css lets you prototype your web site with a hand drawn look and feel.
-
 # paper
-
 - https://github.com/papercss/papercss /字体变成手写体
   - https://www.getpapercss.com/
   - The Less Formal CSS Framework
@@ -72,9 +67,7 @@ modified: '2021-01-13T19:30:59.508Z'
   - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
   - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
   - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
-
 # wireframe
-
 - https://github.com/tsx/shireframe
   - http://rawgit.com/tsx/shireframe/master/examples/doodle.html
   - Declarative wireframes for programmers
@@ -83,9 +76,13 @@ modified: '2021-01-13T19:30:59.508Z'
   - https://mydraft.cc/
   - 依赖react, redux, antd, typescript
   - The goal of this project is to create an open source wireframing tool. 
-
 # more
-
 - https://github.com/steveruizok/perfect-freehand
   - https://perfect-freehand-example.vercel.app/
   - a library for creating freehand paths 
+
+- https://github.com/szimek/signature_pad
+  - http://szimek.github.io/signature_pad/
+  - Signature Pad is a JavaScript library for drawing smooth signatures. 
+  - It's HTML5 canvas based and uses variable width Bézier curve interpolation based on Smoother Signatures post by Square. 
+  - It doesn't depend on any external libraries.

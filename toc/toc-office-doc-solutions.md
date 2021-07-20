@@ -67,6 +67,11 @@ modified: '2021-01-17T09:26:42.467Z'
   - 依赖react-router、marked、prismjs
   - create beautiful living and fully interactive style guides using Markdown and React components.
   - 使用代码块里的预定义结构来渲染table，将会list形式的文字渲染成table
+- https://github.com/ccontrols/component-controls
+  - https://component-controls.com/
+  - A next-generation tool to create blazing-fast documentation sites.
+  - Using MDX or javascript to author documentation files
+  - 依赖theme-ui
 - https://github.com/Redocly/redoc
   - /11.7kStar/MIT/202012/ts
   - OpenAPI/Swagger-generated API Reference Documentation

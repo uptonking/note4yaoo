@@ -104,3 +104,9 @@ modified: '2021-06-02T18:26:20.133Z'
     - Autocomplete is predictable, Autopilot much less so.
     - Spotting issues is IMO harder when reading code than when writing it.
     - You want perfect code, not code that the average dev would write.
+
+# github-redo-theming
+- https://github.com/imfunniee/gitfolio
+  - https://imfunniee.github.io/gitfolio/
+  - personal website + blog for every github user
+  - 重新组织了个人信息

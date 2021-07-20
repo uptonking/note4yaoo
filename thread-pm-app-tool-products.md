@@ -17,7 +17,11 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
-- ## 
+- ## Figma really is a much better tool for basic vector image editing than Inkscape. 
+- https://twitter.com/stevage1/status/1417354508464574465
+  - Upload some SVGs, easily export to PNG. And keep them organised however you want.
+- also the ceo of figma write esbuild in his spare time
+- And you can share workspaces
 
 - ## natto.dev is a canvas for JavaScript.
 - https://www.notion.so/Documentation-44fea11f393a4e46b5a22f5799de58ca

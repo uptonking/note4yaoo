@@ -86,7 +86,79 @@ modified: '2021-05-14T12:04:55.412Z'
 
 - I was doing some research and I was wondering why you didn't use the same textarea technique in ProseMirror as you did in CodeMirror? Is it planned or impossible to implement in a rich text editor? 😊
   - Because it is a more problematic hack than just using contenteditable. CodeMirror 6 will do the same
+
+- ## CKEditor 5: New approach to rich text editing on the web_201710
+- https://news.ycombinator.com/item?id=15497972
+- It's got to be tough spending a career working on ContentEditable. 
+  - "Why are you implementing the caret in javascript? Haven't you heard of ContentEditable?"
+  - "Why is your simple WYSIWYG editor component seven megabytes of javascript? Wouldn't it be better to just use ContentEditable and be done with it?"
+- Rather than using an all-inclusive editor like CKEditor, Froala or Redacted, I've been thinking a lot about a "block" based content creation like one that is available on notion
+  - We have in mind the "block-based editor" or "content builder" solution you're talking about. 
+  - This could be relatively easily created having CKEditor as its base. 
+  - This means that CKEditor may not be the ready to use way for it but it provides a good framework to develop such solution.
+  - For example, its powerful widgets system, which can be used to handle "blocks"
+- Block Based Editing...?
+  - SharePoint is knocking and asking for it's render model back. Web-parts in SharePoint are the whole reason why SharePoint runs like a dog.
+  - For the open web to go down this route is very worrying indeed.
+- The block-based content is an idea that has been around for a long time and is embodied in several CMS's. 
+  - As a developer, there are 2 advantages I've found to the block-based approach
+  - The editing interface can be custom-tailored to the content and the non-technical users who are editing the site via a GUI interface can be more "guided" through the data.
+  - The front-end HTML+CSS markup can more easily be customized around the content fields.
+- It still uses contenteditable, though, like Quill and ProseMirror, which also use a custom data model and ops. It sounds like CKEditor has caught up to have this kind of architecture too. Not to trivialize this accomplishment. All three are impressive feats of engineering and design.
+  - One thing I've realized playing with a ton of different editors is that **contenteditable gives you one very important feature that you can't fake yourself: access to the browser's spell check and corrections**. It's possible that CKEditor ignores everything else about contenteditable, but turns it on just for red squigglies.
+- Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
+  - tldr: Unless browsers will open for the Web multiple crucial features (such as IME, keyboard, selection, touch, on-screen keyboard, spellchecker, etc.) contentEditable is the only sane way to handle text editing.
+  - There's an ongoing initiative to fix this situation but it's an extremely complicated topic. 
+  - Fortunately, 2 years later I can still say that things move forward. E.g. the `beforeinput` event landed in a couple of browsers.
+- Makes sense.
+  - There is a route you can go that doesn’t use contenteditable, except as a small box at the cursor position to handle IME; it’s what Google Docs does. 
+  - At my most recent job (stealth start-up) we built an editor like this, painting our own selection and everything. 
+  - It makes certain things easy or possible — custom text wrapping, tab stops, custom handling of cursor and selection with regard to embeds. 
+  - It doesn’t get you very far on mobile web, though.
+- Spellcheck and corrections can be faked, I think, if you decide to compile your own hunspell (or whatever). 
+  - IME (i.e. entering text for languages that do not have a one-to-one mapping of key press to character), though, is a lot harder; 
+  - you have no idea what languages the user has configured, and showing _everything_ in a list is impractical.
+- Few people seem to know about Composition Events. Using those, implementing IME should be relatively easy. The events tell you which partial characters to show, and which completed characters to insert.
+  - Unfortunately, it's not that easy. 
+  - Composition events are typically controlled by the IME software, which is not part of the browser proper, and tends to be a lot less serious about conforming to standards. 
+  - The result is that the data in those events often simply doesn't correspond to the actual DOM changes that they caused. 
+  - On Android, you can't even rely on the fact that compositionstart fires when a composition is started—with some virtual keyboards (which act as IME providers) you routinely get compositionupdate or compositionend before a start event.
+  - Listening to these events and using DOM diffing can get you a more or less accurate idea of what happened. But 'relatively easy' does not apply.
+- IME support sucks, even with contenteditable.
+  - I have yet to find a free contenteditable-based WYSIWYG editor that works properly with the Korean IME in recent versions of iOS. Duplicate characters everywhere. Even the Enter key sometimes works and sometimes doesn't, depending on what character is immediately before the line break. 
+  - Froala is better, thanks to a Korean guy who helped develop a fix for them despite the fact that it's not even FOSS.
+- It is true that working with IME is hard, even though it is kind of supported by operating system and browser.
+  - As much as it is doable for standalone editing, it is a nightmare for collaborative editing, where content changes all the time - not only at the place where you type. Each content change may cause composition (IME) to break. That's how the browser works.
+  - This is one of the reasons why "real-time collaborative editing" solutions often implement "block limiting" -- one block/paragraph can be edited only by one user at the same time.
+- ContentEditable was supposed to bring us a world where things like CKEditor no longer needed to exist.
+  - ContentEditable never really specified much of a cross-platform standard API. 
+  - If we wanted to replace CKEditor and its ilk, we should have pushed for a standard spec on textareas with rich structured editing support for a variety of formats (Markdown, reStructuredText, HTML, etc.) 
+  - But that would then require standardizing structured text formats and/or figuring out how to add extensible functions, what to do with copy and paste especially from third-party apps, how should drag and drop be handled, what about saving, auto-saving, how should you add styles to a drop-down list to let users pick their own fonts, font-sizes, etc. 
+  - These are complicated things to get right, often site- and implementation-specific, and contenteditable allowed for direct text manipulation and editing (with spell check and native text cursor flickering) within HTML, which is good enough to build your own rich editing interfaces around. 
+  - So, it would be going too far to say ContentEditable was supposed to put these RTEs out of business. 
+  - In fact, I would argue that Markdown's popularity has done more to put RTEs out of business recently, and that block-based, template- or widget-integrated text editing is the future, and where these tools' APIs are headed.
+- CKEditor 5 uses contentEditable. And that's a good decision—getting bidirectional text, IME, touch selection, spell-check, and screen reader support right without contentEditable, while possible, would require you to reimplement a _lot_ of browser functionality, which would necessarily lead to a blowup of complexity and download size.
+  - So sure, the new CKEditor does more or less what Quill, Slate, ProseMirror, and most other modern WYSIWYG components do—it separates its data model from the editable DOM. That's good, but not new.
+  - Focus a demo editor and inspect `document.activeElement` in the console. You'll get a parent div of the content whose `contentEditable` attribute is true.
+- I've been fascinated with operational transformation for some time, but I haven't found anything that breaks it down into understandable steps.
+  - A guy responsible for OT in Google Wave wrote once that he spent 5 years on it and it still does not work well in all cases. 
+  - The original OT implementation has been designed for linear documents – texts. It does not fit very well with tree structure – you don’t want elements (tags) to intersect after resolving collision. It also does not fit undo where the order matters.
+- I don't see many people talk about Apple's approach to text editing, on iCloud.com Pages. They use svg and it allows them to achieve some pretty fancy effects. Anyone experienced with this method?
+  - They use an invisible content editable field that moves to where the caret is placed. 
+  - The content editable only contains the current word or selection.
+  - Text typed into the content editable is rendered into SVG elements. Unfortunately that doesn't allow a browser's spellcheck to work so they had to implement their own.
+  - iCloud Notes works in a similar way but it renders to canvas elements instead of SVG. Also doesn't provide spellcheck.
+- The idea to separate the model and the view is as old as MVC itself. However, what matters here is how the model is actually implemented and what mechanisms it supports.
+  - In CKEditor 5 we took perhaps the longest possible road so a tree structure with Operational Transformation support and couple of other goodies. It costed us a 3 years of work, but it was worth it. 
+  - We proved the concept and validated the results by implementing the Letters app which supports real-time collaborative editing for real (with selective undo, commenting, displaying selections of other users, etc.). 
+  - We'll now be working on adding more features like e.g. tables support which rise the bar for the data model and the whole architecture even higher, but we're very optimistic seeing the results to far.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I needed to augment a simple textarea with keyboard shortcuts for basic Markdown formatting + drop/paste image support like GitHub comments

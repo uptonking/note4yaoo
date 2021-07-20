@@ -29,14 +29,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - **luckysheet**: 未使用class类，函数式风格
   - **x-spreadsheet**: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
-
-- top-dependents-of-react-table.v7
-  - 各类组件库中的table或list组件
-    - @component-controls/components
-    - @edx/paragon
-    - guidu
-- top-dependents-of-react-table.v6
-  - nteract/data-explorer: 依赖d3、numeral
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202006/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
@@ -112,7 +104,7 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://github.com/Autodesk/react-base-table
   - https://autodesk.github.io/react-base-table/
   - 基于div实现，每行对应的dom元素存在
-  - 依赖react-window
+  - 依赖react-window，依赖很少
   - A react table component to display large datasets with high performance and flexibility
   - 未实现row select(作者为组件unopinionated的目标而未合并pr)，但提供示例
 - react-fluid-table /26Star/MIT/202009/ts
@@ -174,6 +166,8 @@ modified: '2020-10-22T06:49:10.760Z'
 - react-table-library /51Star/MIT/202106/js
   - https://github.com/table-library/react-table-library
   - yet another table library for React
+  - 依赖styled-components
+  - 提供了多个主题 material-ui、semantic、bootstrap、antd
 - react-bolivianite-grid /MIT/85Star/201905
   - https://github.com/papasnippy/react-bolivianite-grid
   - https://papasnippy.github.io/react-bolivianite-grid/
@@ -385,6 +379,7 @@ modified: '2020-10-22T06:49:10.760Z'
 - CSS responsive table
   - https://codepen.io/scottjehl/pen/abJrPOP
   - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!
+
 ## table-tr-td-react
 
 - ali-react-table /530Star/MIT/202105/ts

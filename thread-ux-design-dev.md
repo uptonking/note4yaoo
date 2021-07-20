@@ -26,7 +26,17 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## When dealing with dates in a dashboard, would you like to see that in a human-readable language like "Created 5 hours ago" or just as a regular date format like "19/07/2021 04:09:03, 791"?
+- https://twitter.com/bruno__quaresma/status/1417127583632740355
+- In this scenario, I’d prefer “Created 5 hours ago”, just like Twitter, it shows the hours only.
+- Think Excel dates formatted as a number
+- Personally I prefer to see the date rather than the relative time.
+  - It especially drives me crazy on GitHub when trying to debug an issue where I know the precise day and time when the issue was introduced but the commit time is listed as "last month".
+- I'd say human readable only within "current day" and then more precise format after.
+- I love the human readable, and always use this format!
+  - It makes sorting a little weird though.  Just make sure if you're using a datatable or something that you don't end up sorting it alphabetically (as you'll need to sort with the unformatted date)
+- Depends on the context. Human readable dates with full date-time on the tooltip is a better approach, IMO.
+- Human readable with full datetime on hover 
 
 - ## How To Design Better Shadows 
 - https://twitter.com/d__raptis/status/1410268576775344135

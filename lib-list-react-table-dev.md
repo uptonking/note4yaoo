@@ -163,7 +163,7 @@ modified: '2021-05-13T02:54:23.406Z'
 .cell {}
 ```
 
-# guide
+# discuss
 - ## [What big things do you think will happen in the JavaScript ecosystem in the next 5 years?](https://twitter.com/kentcdodds/status/1237417106594861056)
   - I would say that in 5 years, we'll see:
     - a few more nice syntax improvements
@@ -290,10 +290,7 @@ modified: '2021-05-13T02:54:23.406Z'
   - To be fair, I don't know the best solution for this. Searching a webpage shouldn't be broken by virtualization.
   - Sometimes searching a web requires tools catered for the data. Eg. a table with full-text search that can span both pagination and virtualization.
 
-- Learned about `useLatestValue` utility hook which provides a static callback function so child components where you pass the callback won't be updated. Thanks for idea 
-
-@tannerlinsley
-
+- Learned about `useLatestValue` utility hook which provides a static callback function so child components where you pass the callback won't be updated. Thanks for idea @tannerlinsley
   - I believe setting refs in render is not safe in concurrent mode
   - It needs to be synchronously set, otherwise it won’t be up to date for later use in the render function
   - This won’t work with newer features like useTransition because it assumes that every render immediately gets committed to the screen. But we want to be able to do renders in memory without committing them until later.
@@ -392,8 +389,3 @@ modified: '2021-05-13T02:54:23.406Z'
   - apple keynote
   - mdx deck
   - slides.com
-
-- [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
-  - https://github.com/TheWidlarzGroup/RT7-example
-  - https://rt7-example.netlify.app/
-  - hooks-table-demo-with-pagination
