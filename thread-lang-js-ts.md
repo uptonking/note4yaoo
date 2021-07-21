@@ -18,6 +18,45 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Async functions & microtasks
+- https://whistlr.info/2021/async-and-tasks/
+- When you invoke an `async` function, the function will run its synchronous prefix immediately, but whenever you `await` something, the rest of its code will be put into a microtask.
+
+```JS
+console.info('a');
+const p = foo(); // call async and hold Promise in p
+console.info('b');
+p.then(() => {
+  console.info('c');
+});
+
+async function foo() {
+  console.info('1');
+  await Promise.resolve(); // actually do something async
+  console.info('2');
+}
+// a 1 b 2 c
+```
+
+- Any time we `.then()` a Promise, that callback is executed as a microtask—broadly, that code is queued to run "immediately", but after the current execution and other microtasks. (And, the same happens when we use `await` on them.) 
+
+- ## With the rise of async-await, I've noticed more and more JS developers have less understanding of concurrency and how to work with async code flow
+- https://twitter.com/dev__adi/status/1417554978130915328
+- [How to escape from the async/await hell](https://devadi.netlify.app/blog/async-await-hell)
+  - While working with Asynchronous JavaScript, people often write multiple statements one after the other and slap an await before a function call. 
+  - **This causes performance issues, as many times one statement doesn’t depend on the previous one** — but you still have to wait for the previous one to complete.
+  - One interesting property of promises is that you can get a promise in one line and wait for it to resolve in another. This is the key to escaping async/await hell.
+- How to get out of async/await hell ?
+  - Find statements which depend on the execution of other statements
+  - Group-dependent statements in async functions
+  - Execute these async functions concurrently: Two common patterns of doing this is returning promises early and the `Promise.all` method.
+
 - ## TypeScript: .map() only works for Arrays, not for tuples.
 - https://twitter.com/rauschma/status/1415750873788071939
 - You can still *implement* with .map(), you just need a cast

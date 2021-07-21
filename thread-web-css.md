@@ -24,6 +24,16 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## user in data saver mode? skip the media, save loads!
+- https://twitter.com/argyleink/status/1389244232641089537
+  - @media (prefers-reduced-data: reduce) 
+
 - ## Easy way to tell if your CSS variables are maintainable or not—comment out one of your variable definitions. Did it break the build?
 - https://twitter.com/markdalgleish/status/1416276184409645056
   - Another quick test—simulate a typo in one of your `var` expressions by deleting a random letter from the variable name. Did *that* break the build?

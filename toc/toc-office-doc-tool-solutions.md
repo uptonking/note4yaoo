@@ -1,11 +1,11 @@
 ---
-title: toc-office-doc-solutions
-tags: [documentation, solutions, toc]
+title: toc-office-doc-tool-solutions
+tags: [documentation, solutions, toc, tool]
 created: '2020-10-13T09:15:27.625Z'
-modified: '2021-01-17T09:26:42.467Z'
+modified: '2021-07-21T18:07:43.056Z'
 ---
 
-# toc-office-doc-solutions
+# toc-office-doc-tool-solutions
 
 # guide
 
@@ -48,6 +48,17 @@ modified: '2021-01-17T09:26:42.467Z'
     - GraphQL is also pretty core to Gatsby
   - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
   - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
+
+- https://github.com/ccontrols/component-controls
+  - https://component-controls.com/
+  - A next-generation tool to create blazing-fast documentation sites.
+  - Using MDX or javascript to author documentation files
+  - 依赖theme-ui
+  - 左侧目录，右侧可高亮书签toc
+- https://github.com/josemarluedke/docfy
+  - https://docfy.dev/docs/getting-started/
+  - core依赖remark-gfm
+  - 给的示例基于ember
 - https://github.com/YvesCoding/rcpress
   - /160Star/MIT/202008
   - 基于react、Ant Design的静态文档生成器
@@ -67,11 +78,6 @@ modified: '2021-01-17T09:26:42.467Z'
   - 依赖react-router、marked、prismjs
   - create beautiful living and fully interactive style guides using Markdown and React components.
   - 使用代码块里的预定义结构来渲染table，将会list形式的文字渲染成table
-- https://github.com/ccontrols/component-controls
-  - https://component-controls.com/
-  - A next-generation tool to create blazing-fast documentation sites.
-  - Using MDX or javascript to author documentation files
-  - 依赖theme-ui
 - https://github.com/Redocly/redoc
   - /11.7kStar/MIT/202012/ts
   - OpenAPI/Swagger-generated API Reference Documentation
@@ -85,6 +91,11 @@ modified: '2021-01-17T09:26:42.467Z'
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
   - GitBook is only free for open-source and non-profit teams.
+- https://github.com/zmister2016/MrDoc
+  - http://mrdoc.zmister.com/project-20/
+  - MrDoc 是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
+  - 后端：Python + Django
+  - 前端：LayUI + JQuery
 - https://github.com/amiroff/NextBook
   - https://next-book.vercel.app/
   - /53Star/MIT/202105/js
@@ -161,7 +172,16 @@ modified: '2021-01-17T09:26:42.467Z'
   - http://ashkenas.com/docco/
   - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
   - It produces an HTML document that displays your comments intermingled with your code. 
+# examples
+- ## docusaurus-examples
+- https://github.com/ThinkBucket/docsite
+  - https://thinkbucket.cn/
+  - 只依赖react、@docusaurus/core.v2
+  - 典型的文档风格，左侧目录，右侧书签toc
 
+- ## storybook-examples
+- https://github.com/webapp-suite/elements-react
+  - 在右侧添加了toc
 # more-repos
 - https://github.com/front10/landing-page-book
   - Fully customizable landing-page components written in React.

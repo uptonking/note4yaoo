@@ -78,6 +78,11 @@ modified: '2020-11-13T07:28:27.824Z'
   - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
     - This is done via a simple Node script which literally copies the CSS over.
 
+
+# more
+- https://github.com/vicentedealencar/react-agnostic
+  - you can write your components without any direct dependencies from platform specific components. 
+  - It applies inversion of control using react context pass around components.
 - https://github.com/IgniteUI/ignite-ui
   - /464Star/Apache2/202007/js
   - Ignite UI for jQuery is built on jQuery and jQuery UI 

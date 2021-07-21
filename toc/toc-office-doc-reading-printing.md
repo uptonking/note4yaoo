@@ -1,11 +1,11 @@
 ---
-title: toc-office-doc-style-theme
-tags: [doc, style, themes, toc]
+title: toc-office-doc-reading-printing
+tags: [documentation, read, template, toc]
 created: '2020-10-05T09:49:50.474Z'
-modified: '2021-01-04T17:26:25.032Z'
+modified: '2021-07-21T18:09:20.751Z'
 ---
 
-# toc-office-doc-style-theme
+# toc-office-doc-reading-printing
 - search
   - paper, reading, reader, book, document
   - markdown theme, toc
@@ -117,19 +117,6 @@ modified: '2021-01-04T17:26:25.032Z'
   - http://surjithctly.github.io/documentation-html-template/
   - A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. 
   - Built with Bootstrap 3.
-# toc
-- https://github.com/tscanlin/tocbot
-  - http://tscanlin.github.io/tocbot/
-  - Tocbot builds a table of contents (TOC) from headings in an HTML document.
-  - Tocbot uses native DOM methods and avoids the jQuery & jQuery UI dependencies.
-  - 自动高亮当前浏览处标题
-- https://github.com/Arcandres/table-of-contents
-  - https://arcandres.github.io/table-of-contents/
-  - Table of Contents with Pure Javascript
-  - 实现简单，未实现自动高亮当前浏览处标题
-- https://github.com/gajus/contents
-  - Table of contents generator.
-  - 例子无法运行，但例子的设计和样式很好，有plain, events, good looking, smooth scrolling
 # doc-examples
 - https://github.com/AitorRodriguez990/documentation-template
   - https://aitorrodriguez990.github.io/documentation-template/

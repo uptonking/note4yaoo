@@ -29,6 +29,13 @@ modified: '2020-12-09T09:30:24.694Z'
   - 前端依赖 antd4、animejs、mobx、re-resizable、react-dnd、react-moveable
   - 后端依赖 fastify、mysql、mongodb、typeorm、next10
 
+- https://github.com/rawgraphs/rawgraphs-app
+  - https://rawgraphs.io/
+  - A web interface to create custom vector-based visualizations on top of RAWGraphs core
+- https://github.com/getredash/redash
+  - http://redash.io/
+  - SQL users leverage Redash to explore, query, visualize, and share data from any data sources. 
+
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server
   - built with mongodb, express

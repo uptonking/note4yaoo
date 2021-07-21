@@ -313,6 +313,9 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/darekkay/dashboard
   - Customizable personal dashboard and startpage
   - 可添加各种卡片
+
+- more-dashboard
+  - https://htmlstream.com/front-dashboard/index.html
 ## antd
 
 - ant-design-pro /MIT/26.1kStar/202008

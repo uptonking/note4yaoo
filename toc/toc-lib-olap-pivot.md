@@ -46,9 +46,7 @@ modified: '2020-10-22T06:50:36.740Z'
   - [How to Use Excel Pivot Tables to Organize Data](https://www.timeatlas.com/excel-pivot-tables/)
   - Excel_notes 教學檔案
     - https://github.com/jeanetsai/Excel_notes
-
 # more-olap
-
 - https://github.com/altair-viz/altair
   - Declarative statistical visualization library for Python
   - built on top of the powerful Vega-Lite JSON specification.
@@ -61,6 +59,7 @@ modified: '2020-10-22T06:50:36.740Z'
 - https://github.com/ObservedObserver/pivot-chart
   - /20Star/MIT/202005
   - pivot chart is build based on cube-core: an MOLAP cube solution in js.
+
 - https://github.com/ObservedObserver/cube-core
   - /25Star/GPLv3/201912
   - 无依赖

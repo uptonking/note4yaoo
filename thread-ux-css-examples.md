@@ -24,11 +24,19 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## a generative pattern maker built on “relaxed” Voronoi diagrams.
+- https://twitter.com/georgedoescode/status/1417490092151787531
+  - https://codepen.io/georgedoescode/pen/vYmJXvW
+  - 很多小多边形
 
-- ## 
+- ## Did a quick little #CSS animation based off the merch for the #TokyoOlympics2020
+- https://codepen.io/lukemeyrick/pen/qBmjeLr
+- 太阳旗右移动画
 
-- ## 
+- ## @counter-style allows tying into the algorithm of the browser that creates markers/bullets!
+- https://twitter.com/argyleink/status/1417521640905183232
+  - https://codepen.io/argyleink/pen/rNmzGzW
+  - @counter-style supports images, svg and more! 
 
 - ## Made this Glassmorphic credit card
 - https://twitter.com/theShounakDas/status/1415326842102468610

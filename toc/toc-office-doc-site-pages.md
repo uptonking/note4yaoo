@@ -1,11 +1,11 @@
 ---
-title: toc-office-doc-site-template
-tags: [documentation, examples, template, toc]
+title: toc-office-doc-site-pages
+tags: [documentation, template, toc]
 created: '2020-12-29T22:04:49.931Z'
-modified: '2021-01-17T09:26:32.783Z'
+modified: '2021-07-21T18:09:03.424Z'
 ---
 
-# toc-office-doc-site-template
+# toc-office-doc-site-pages
 
 # guide
 
@@ -41,8 +41,44 @@ modified: '2021-01-17T09:26:32.783Z'
   - 单页文档，右侧是toc，不会高亮当前小标题
   - A template for JSDoc3 based on Bootstrap and themed by Bootswatch
 
-# more-docs
+# toc
+- https://github.com/tscanlin/tocbot
+  - http://tscanlin.github.io/tocbot/
+  - Tocbot builds a table of contents (TOC) from headings in an HTML document.
+  - Tocbot uses native DOM methods and avoids the jQuery & jQuery UI dependencies.
+  - 自动高亮当前浏览处标题
+- tocbot-examples
+  - [tocbot bootstrap 4](https://codepen.io/losol/pen/NEvajy)
 
+
+- https://github.com/Arcandres/table-of-contents
+  - https://arcandres.github.io/table-of-contents/
+  - Table of Contents with Pure Javascript
+  - 实现简单，未实现自动高亮当前浏览处标题
+- https://github.com/gajus/contents
+  - Table of contents generator.
+  - 例子无法运行，但例子的设计和样式很好，有plain, events, good looking, smooth scrolling
+
+- https://ciucacristi.github.io/elementric/introduction.html
+  - 多页文档，左侧目录，右侧高亮当前书签toc
+
+- ref
+  - [CSS Only - Smooth Scrolling Sticky ScrollSpy Navigation](https://codepen.io/davorsuljic/pen/vYgqKWe)
+  - [Sidebar Table of Contents](https://codepen.io/pubwriter/pen/ZgLzYV)
+  - https://www.bitdegree.org/learn/best-code-editor/bootstrap-scrollspy-example-2
+  - https://www.codeply.com/go/PYSH1maRVO/bootstrap-4-nav-sticky-sidebar-scrollspy
+    - 样式友好
+  - https://bootsnipp.com/snippets/y3O1
+  - https://www.codeply.com/p/kHXl9oz7gT
+  - https://www.codeply.com/p/KPvJq8a7Dz
+
+# doc-site-examples
+
+- 典型的文档风格
+- https://grow.io/
+  - https://github.com/grow/grow.dev
+  - 左侧目录，右侧可高亮书签
+# more-docs
 - https://github.com/dabbott/react-express
   - http://www.react.express/
   - Learn React through interactive examples

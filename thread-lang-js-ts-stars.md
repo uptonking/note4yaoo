@@ -13,7 +13,17 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## If you were to quickly explain the fetch API to someone and you don't have an URL handy, data: URLs for the rescue!
+- https://twitter.com/GNUmanth/status/1415560838472105984
+  - const resp = await fetch('data:, {"name":"yoda"}')
+  - const data = await resp.json()
+- This is actually a great idea for tutorials. Usually I create some sort of mock. But this is definitely interesting
+- This would work same way for all HTTP verbs ?
+  - No, as it's not HTTP we can't use the verbs.
+  - I would use http://httpbin.org (flask) in such cases
+- http://httpstat.us/ is another useful site to test HTTP errors.
+- What’s the function of the \uFEFF (zero-width no-break space?) here?
+  - ou may skip it the ZWSP! According to RFC 2397: If `<mediatype>` is omitted, it defaults to "text/plain; charset=US-ASCII"
 
 - ## Never realized destructing could be used to trim unwanted properties
 - https://twitter.com/angustweets/status/1415734961886408704
