@@ -47,3 +47,12 @@ modified: '2020-12-08T13:22:47.564Z'
 - 0.7.0-201500721
   - 第一个公开版本
   - 发布layout、iconfont、button、form、checkbox、radio、switch、slider、input-number、datepicker、select、tabs、steps、breadcrumb、collapse、pagination、modal、message、dropdown、popover、popconfirm、tooltip、progress、table 等组件。
+
+# ref
+
+- https://github.com/huanhunmao/XiLan
+  - 类似Ant design的UI组件库（更加的轻量级和便于使用）
+- https://github.com/websemantics/ant-strap
+  - https://github.com/websemantics/ant-strap
+- https://github.com/joshuaturner/ant-design-sass
+  - Simple port of Ant Design v3 to Sass

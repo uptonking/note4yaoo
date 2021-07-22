@@ -11,6 +11,17 @@ modified: '2021-05-14T14:52:48.486Z'
 
 # blogging
 
+## Introducing Observable for Enterprise_202107
+
+- Observable now offers a new Enterprise Tier with additional support, security, and access control priced at $40/month/editor.
+- Features include:
+  - Access control by authentication domain
+  - Control notebook publishing permissions
+  - Customer Success Manager
+  - Onboarding help and annual training
+  - Early access to new product features
+  - 4 hour response times for email support response
+
 ## [SQLite_20210527](https://observablehq.com/@observablehq/sqlite)
 
 - Observable has built-in support for SQLite
@@ -31,6 +42,13 @@ modified: '2021-05-14T14:52:48.486Z'
 - Now, you can choose the mode in which you want to edit a cell. 
   - The mode of a cell affects the way the cell is parsed and evaluated (treating the contents of the cell as if it were wrapped in the appropriate tagged template), as well as the editing options displayed in the editor.
 - The mode defaults to JavaScript for newly created cells, but newly split cells will keep the mode of the original cell.
+
+## [Introducing Observable Plot_20210504](https://observablehq.com/@observablehq/introducing-observable-plot)
+
+- **Plot’s aim is speed and convenience**. 
+  - Our hope is you’ll spend less time reading the docs, searching for snippets, and debugging — and more time asking questions of data.
+  - With faster iteration, you can see more of your data and find more insights.
+  - Plot not only has intuitive syntax but makes it incredibly easy to iterate through different chart types and faceting methods
 
 ## [Working with Observable Collaboration_20210311](https://observablehq.com/@observablehq/working-with-observable-collaboration)
 

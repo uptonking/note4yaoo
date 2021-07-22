@@ -43,8 +43,25 @@ modified: '2021-04-24T08:29:02.272Z'
 <!-- #endregion /folded renderToStaticMarkup -->
 
 # pieces
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Let me tell you a story of a library developer who wrote some 'isomorphic' code many years ago to run on node and web
+- https://twitter.com/BenDelarre/status/1418005935025377284
+- They merrily littered their library functions with checks to see which platform they were on...and all was well... But they didn't write tests that ran in the browser
+  - Years later another developer enhances their library adding a call to an API from the first libs suite that they hadn't used before... But they too didn't write tests that ran in an actual browser
+  - A month goes by, and an application developer updates the dependency on the second library... and all hell breaks loose! This third developer has tests which run in the browser!
+  - Hours are spent trying to figure out why tests sometimes fail and sometimes pass, many heads are scratched.
+  - Eventually we discover that someone forgot to include the platform check on a function many years ago but nobody had used it until now!
+- Moral of the story...
+  - Give up on web development, we're all doomed, go buy a farm and grow turnips. It'll be better for your health.
 
 - ## Data fetching in Next.js can be a bit confusing. 
 - https://twitter.com/theworstdev/status/1371915581100847107

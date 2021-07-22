@@ -7,19 +7,22 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-dashboard
 - guide
-  - 使用场景包括控制台、个人设置...
-  - 流行的dashboard大多是基于bootstrap
+  - 使用场景包括控制台、个人设置、文件管理...
+  - 流行的dashboard大多是基于bootstrap/tailwindui等基础组件库
   - 建议深入一个静态的css dashboard
   - dashboard中的内容与业务场景紧密相关，一般要考虑内容布局
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
 
+- usecase示例
+  - 案例集合示例demo-showcase，甚至可以参考 [doc ui kit pages](https://htmlstream.com/preview/docs-ui-kit/index.html)
+  - 海致bdp的仪表板，白色主题
+
 - ref
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
-  - [search: dashboard css](https://github.com/search?o=desc&p=1&q=dashboard+language%3Acss+language%3Ahtml+language%3Ascss&s=stars&type=Repositories)
-  - [search: pure css dashboard](https://github.com/search?o=desc&p=1&q=pure+css+dashboard+&s=stars&type=Repositories)
     - css only dashboard
+    - pure css dashboard
     - dashboard ui
-# css dashboard lite
+# popular-dashboard
 - CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
   - https://github.com/coreui/coreui-free-bootstrap-admin-template
     - https://coreui.io/demo/free/
@@ -48,28 +51,11 @@ modified: '2021-01-08T11:48:16.590Z'
     - 用react hooks重写实现组件，只复用css
     - CoreUI for React.js replaces and extends the Bootstrap javascript. 
     - Components have been built from scratch as true React hook components, without jQuery and unneeded dependencies.
-- tabler /22.6kStar/MIT/202101
-  - https://github.com/tabler/tabler
-  - https://tabler.io/
-  - free HTML Dashboard UI Kit built on Bootstrap 4
-  - more-tabler
-    - https://github.com/tabler/tabler-react
-    - https://github.com/tabler/tabler-angular
-    - https://github.com/tabler/tabler-icons
-- Shards Dashboard UI Kit /1.1kStar/MIT/201809
-  - https://github.com/DesignRevision/shards-dashboard
-  - Bootstrap 4 admin dashboard templates pack.
-- Shards React /562Star/MIT/201902
-  - https://github.com/DesignRevision/shards-react
-    - https://designrevision.com/downloads/shards-react/
-    - modern React UI kit based on Shards.
-  - https://github.com/designrevision/shards-ui /1.7kStar/201907
-    - https://designrevision.com/downloads/shards/
-    - Bootstrap 4 UI kit packed with extra templates and components
 
 - AdminLTE /35.8kStar/MIT/202008
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/
+  - https://adminlte.io/themes/v3/
   - a fully responsive administration template
   - Based on Bootstrap 4.5 framework and also the JS/jQuery plugin. 
   - AdminLTE.io just opened a new premium templates page
@@ -93,16 +79,41 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/react-admin-lte/react-admin-lte
   - Admin LTE components built with React
 
-- https://github.com/CoCreate-app/CoCreate-dashboard
-  - A simple HTML5, CSS and pure javascript component. 
-  - Easy configuration using data-attributes and highly styleable.
+- tabler /22.6kStar/MIT/202101/dashboard示例不标准
+  - https://github.com/tabler/tabler
+  - https://tabler.io/
+  - free HTML Dashboard UI Kit built on Bootstrap 4
+  - more-tabler
+    - https://github.com/tabler/tabler-react
+    - https://github.com/tabler/tabler-angular
+    - https://github.com/tabler/tabler-icons
+- Shards Dashboard UI Kit /1.1kStar/MIT/201809
+  - https://github.com/DesignRevision/shards-dashboard
+  - Bootstrap 4 admin dashboard templates pack.
+  - Shards React /562Star/MIT/201902
+    - https://github.com/DesignRevision/shards-react
+      - https://designrevision.com/downloads/shards-react/
+      - modern React UI kit based on Shards.
+    - https://github.com/designrevision/shards-ui /1.7kStar/201907
+      - https://designrevision.com/downloads/shards/
+      - Bootstrap 4 UI kit packed with extra templates and components
+
+- https://github.com/tafcoder/sleek-dashboard
+  - https://sleek.tafcoder.com/
+  - 样式符合最新流行风格，dashboard卡片上全是图表
+  - 提供了2个dashboard：ecommerce、analytics；主题色靛蓝
+  - Free Bootstrap 4 Admin Template and UI Kit
+- https://github.com/moesaid/cleopatra
+  - https://moesaid.github.io/cleopatra/
+  - 提供了2个dashboard：ecommerce、analytics；主题色绿色
+- https://github.com/stisla/stisla
+  - https://demo.getstisla.com/
+  - 主题色靛蓝
+- https://github.com/puikinsh/Adminator-admin-dashboard
+  - Bootstrap 4 Admin Template /白色主题
 - https://github.com/creativetimofficial/material-dashboard
   - Bootstrap 4 Material Design Admin
   - This product came as a result after we released our successful Material Kit
-- https://github.com/tafcoder/sleek-dashboard
-  - Free Bootstrap 4 Admin Template and UI Kit
-- https://github.com/puikinsh/Adminator-admin-dashboard
-  - Bootstrap 4 Admin Template
 - https://github.com/modularcode/modular-admin-html
   - https://modularcode.io/modular-admin-html/
   - Free Bootstrap 4 Dashboard Theme HTML version
@@ -114,11 +125,10 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://demo.flatlogic.com/sing-app/documentation/
   - high quality UI built with Bootstrap 4.5
   - 提供了多个版本，但收费处也多
-
+# css dashboard lite
 - https://codepen.io/TurkAysenur/pen/ZEpxeYm
-  - theming-黑色，可切换明暗主题的dashboard
+  - theming-黑色，macOS风格，可切换明暗主题
   - 依赖jquery，不依赖bootstrap
-
 - https://github.com/ReeganR/Pure-Html-Css-Dashboard
   - Dashboard UI with Html and CSS
 - https://github.com/DanielSilvado/financial-dashboard
@@ -180,14 +190,15 @@ modified: '2021-01-08T11:48:16.590Z'
 # admin dashboard
 - Dashboard UI kit /28.2kStar/MIT/202005/ts/react
   - https://github.com/march08/dashboard-ui-kit
-  - https://developer.dashboard-ui.com/
+  - https://developer.dashboard-ui.com/docs/react/installation
   - https://preview.dashboard-ui.com/docs/react
+  - 示例页面非常丰富
   - React UI components for rapid development.
   - The components are developed with Bootstrap in mind 
     - this doesn't mean that you need bootstrap to run the application, 
     - but if you are used to bootstrap, you can freely use it 
     - (however it's not recommended to use the JS part of the Bootstrap).
-- Square React Dashboard /59Star/MIT/2020009
+- Square React Dashboard /59Star/MIT/2020009/白色主题
   - https://github.com/heysafronov/square-react-dashboard
   - https://heysafronov.github.io/square-react-dashboard/dist/#/login/
   - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components
@@ -203,7 +214,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://cxjs.io/
   - JS UI framework for admin and dashboard applications with ready to use grid, form and chart components.
   - CxJS uses React for DOM manipulation 
-
 - https://github.com/borakilicoglu/nucleo
   - Admin template and Starter project for React
 - https://github.com/androidneha/mern-admin-panel
@@ -270,7 +280,6 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/app-generator/flask-dashboard-coreui
   - Admin dashboard generated by AppSeed in Flask Framework.
 # react-dashboard-admin
-
 - https://github.com/llorentegerman/react-admin-dashboard
   - https://llorentegerman.github.io/react-admin-dashboard/
   - Building a UI from scratch with ReactJS
@@ -278,54 +287,77 @@ modified: '2021-01-08T11:48:16.590Z'
   - 只实现了仪表板骨架，功能太少
   - 不支持手动切换左侧侧边栏，右边没有浮动面板
 
+- https://github.com/themesberg/volt-react-dashboard
+  - https://demo.themesberg.com/volt-react-dashboard/#/dashboard/overview
+  - 依赖 @themesberg/react-bootstrap.v1.4、react-router、bootstrap5、react-chartist、react-live、simplebar(scrollbar)
+  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
+  - 白色主题，dashboard + components + pages
+  - Volt React is an extension of the popular react-bootstrap library and it is based on Bootstrap 5.
+  - https://github.com/themesberg/volt-bootstrap-5-dashboard
+    - 与react版体验相同
+
 - https://github.com/codedthemes/berry-free-react-admin-template
   - free(MIT): https://berrydashboard.io/free
   - pro: https://berrydashboard.io/dashboard/default
   - 依赖react-redux、react-router、emotion11、material-ui5、apexcharts、formik、framer-motion
   - 样式超级友好的仪表板
-  - 左边侧边栏不能折叠到只显示图标，右边是提供设置的浮动面板
+  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
 
 - https://github.com/0wczar/airframe-react
   - http://dashboards.webkom.co/react/airframe/
+  - /3.6kStar/MIT/202002/js
+  - 依赖bootstrap4、reactstrap8、react-router、ag-grid-community、react-grid-layout、react-bootstrfaker、moment、react-beautiful-dnd、react-quill、recharts1
   - Dashboard/Admin/Analytics template that works great on any smartphone, tablet or desktop.
-  - 依赖bootstrap4、react-router、ag-grid-community、react-grid-layout
-  - 左边侧边栏能折叠到只显示图标，右边是提供设置的浮动面板
+  - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
   - 提供了很多版本，如angular、jquery、vue
   - 样式一般般
-- https://github.com/panther-labs/pounce
-  - Composable React Primitives for Building UI Dashboards
 
 - https://github.com/minimal-ui-kit/material-kit-react
-  - https://github.com/minimal-ui-kit/material-kit-react
-  - 样式超级友好，右侧没有浮动面板
+  - https://minimal-kit-react.vercel.app/
+  - 右侧没有浮动面板，样式超级友好，但没有正式感
   - Dashboard made with Material UI's components, create-react-app
   - We also have a pro version
 - https://github.com/modularcode/modular-admin-react
   - http://modular-admin-react.modularcode.io/
   - MaterialUI dashboard theme implemented by using React Hooks + TypeScript + Context API
-- https://github.com/marmelab/react-admin
-  - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
-  - Framework for building data-driven applications
 - https://github.com/bndynet/admin-template-for-react
   - https://admin-react.bndy.net/admin/dashboard
   - admin template with React, React Redux, Material UI and TypeScript
-
+- https://github.com/marmelab/react-admin
+  - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
+  - https://marmelab.com/react-admin-demo/#/
+  - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
 - https://github.com/darekkay/dashboard
   - Customizable personal dashboard and startpage
   - 可添加各种卡片
 
-- more-dashboard
-  - https://htmlstream.com/front-dashboard/index.html
+- https://htmlstream.com/front-dashboard/index.html
+  - https://htmlstream.com/templates/front-dashboard/
+  - 源码需付费，白色主题，样式友好，右侧是可勾选配置项的浮动sidebar
+
 ## antd
 
 - ant-design-pro /MIT/26.1kStar/202008
   - https://github.com/ant-design/ant-design-pro
   - http://pro.ant.design/
   - http://preview.pro.ant.design/
-  - 左边是包含多级菜单的侧边栏，右边是提供设置的浮动面板
+  - 左边是包含多级菜单的侧边栏，右边可切换显示浮动设置面板
   - a production-ready solution for admin interfaces.
   - 2017年10月发布第一个版本，到现在的201905发布v4, Pro发生了很多的改变，底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TS
   - 区块可以类比为一个组件，而模板代表一个页面
+
+- https://github.com/landluck/react-ant-admin
+  - https://www.landluck.cn/react-ant-admin
+  - 依赖antd4、react-markdown、redux-thunk、react-transition-group
+  - 左边是包含一级菜单的侧边栏，右边可切换显示浮动设置面板
+  - 示例需要注册才能使用，实现了权限管理功能
+  - 使用 ant-design react react-hook ts 开发的类 ant-design-pro 管理后台，具有完整的权限系统和配套的node + ts 的 api
+  - 模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
+- https://github.com/sunnut/react-easy-start
+  - A lightweight ant-design-pro based on create-react-app.
+  - 依赖 redux、react-router4、antd4、react-intl、restify
+  - 既然我无法放弃 Ant Design Pro 的 UI，那干脆模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
+
 - react-admin /Apache2/151Star/2020008
   - https://github.com/javaLuo/react-admin
   - https://isluo.com/work/admin/
@@ -333,16 +365,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - 仿antd-pro外观，但没有使用dva和roadhog
   - React+Redux架构，react16、router4、antd4、webpack4、ES6+
   - 依赖@rematch/core，antd4
-
-- https://github.com/landluck/react-ant-admin
-  - https://www.landluck.cn/react-ant-admin
-  - 左边是包含一级菜单的侧边栏，右边是提供设置的浮动面板
-  - 使用 ant-design react react-hook ts 开发的类 ant-design-pro 管理后台，具有完整的权限系统和配套的node + ts 的 api
-  - 模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
-- https://github.com/sunnut/react-easy-start
-  - A lightweight ant-design-pro based on create-react-app.
-  - 依赖 redux、react-router4、antd4、react-intl、restify
-  - 既然我无法放弃 Ant Design Pro 的 UI，那干脆模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
 - https://github.com/bujidao/react-ant-admin-1.0
   - 基于react + umi 创建的后台前端解决方案
   - 使用了redux对数据状态进行管理
@@ -359,7 +381,8 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/JerryMissTom/ant-design-lite
   - react-router, react-redux, redux-saga实现的多Tab页面瘦身版Ant Design Pro
 - https://github.com/LANIF-UI/dva-boot-admin
-  -  react 16 + react-router 4 + dva 2 + antd 4 后台管理 脚手架
+  - react 16 + react-router 4 + dva 2 + antd 4 后台管理 脚手架
+  - 自己实现各个页面，文档示例较多
 - https://github.com/Teachers-Tony/ant-design-pro-template
   - 项目基于 ant-design-pro 精简了部分功能，只保留了基础部分，加入了代码校验，规范约束等辅助工具
   - 依赖umi3、antd4、@ant-design/pro-layout
@@ -388,16 +411,16 @@ modified: '2021-01-08T11:48:16.590Z'
     - Built using Shards React Chart.js Flux No UI Slider React Datepicker Quill
   - https://github.com/zuiidea/antd-admin
   - https://github.com/darekkay/dashboard
-  - https://github.com/ofekashery/vercel-dashboard-template
-    - based on zeit-ui, jss
+  - https://github.com/ofekashery/react-dashboard-design
+    - 依赖react、next10、@geist-ui/react
+    - 非标准dashboard，简单卡片文字，样式简洁；代码量很小
 # more-dashboard
 - list-bootstrap-dashboard
   - https://github.com/ColorlibHQ/gentelella
-  - https://github.com/0wczar/airframe-react
   - https://github.com/coreui/coreui-free-react-admin-template
   - https://github.com/wrappixel/xtreme-admin-lite
 
-- vue-element-admin /MIT/58.3kStar/202007
+- vue-element-admin /MIT/58.3kStar/202007/vue
   - https://github.com/PanJiaChen/vue-element-admin
   - https://panjiachen.github.io/vue-element-admin
   - a production-ready front-end solution for admin interfaces

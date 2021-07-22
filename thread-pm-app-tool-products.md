@@ -15,7 +15,10 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
-- ## 
+- ## CODECHECK
+- https://codecheck.org.uk/
+- CODECHECK tackles one of the main challenges of computational research by supporting codecheckers with a workflow, guidelines and tools to evaluate computer programs underlying scientific papers. 
+- The independent time-stamped runs conducted by codecheckers will award a “certificate of executable computation” and increase availability, discovery and reproducibility of crucial artefacts for computational sciences.
 
 - ## Figma really is a much better tool for basic vector image editing than Inkscape. 
 - https://twitter.com/stevage1/status/1417354508464574465

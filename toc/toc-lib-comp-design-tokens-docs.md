@@ -63,6 +63,7 @@ modified: '2021-01-11T18:34:20.713Z'
   - https://htmlstream.com/preview/docs-ui-kit/index.html
   - /62Star/MIT/201905
   - 依赖jquery、jquery-ui、feather、prismjs
+  - 右侧toc无法高亮
   - A beautiful Open Source Bootstrap 4 UI Kit 
   - Perfect for Documentation & Help Desk projects.
 - infima /60kStar/MIT/202102/css

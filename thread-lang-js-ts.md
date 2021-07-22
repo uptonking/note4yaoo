@@ -22,7 +22,11 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Let's re-implement 10 lodash functions to learn more about how `.reduce` works
+- https://twitter.com/benmvp/status/1418003584386359296
+  - [Learn the Array reduce method by re-implementing lodash functions](https://www.benmvp.com/blog/learn-array-reduce-method-reimplementing-lodash-functions/)
+
+
 
 - ## Async functions & microtasks
 - https://whistlr.info/2021/async-and-tasks/

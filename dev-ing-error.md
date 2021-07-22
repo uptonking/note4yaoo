@@ -11,6 +11,12 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Unhandled Rejection (ScriptExternalLoadError): Loading script failed.  
+(error: http://localhost:8000/mf-va_remoteEntry.js)
+while loading "./core-js" from webpack/container/reference/mf
+  - 解决方法是 将npm7降级到npm6，因为控制台提示esbuild install incorrectly. 
+  - "lockfileVersion": 1
+
 - [How can I properly define a type interface when using React useContext?](https://stackoverflow.com/questions/61775657)
 
 ```JS

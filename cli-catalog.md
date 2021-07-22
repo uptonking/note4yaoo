@@ -31,8 +31,11 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - git commit --amend -m 'new msg'
   - 撤销上次commit的记录，不回滚修改
     - git reset HEAD~
+    - git reset commit_id
     - 只撤销本次提交记录，实际修改后的文件仍然存在本地
-  - 撤销上次commit的修改，回滚到上次修改前
+  - 撤销 commit, 同时本地删除该 commit 修改：
+    - git reset --hard commit_id
+    - [git 放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName`

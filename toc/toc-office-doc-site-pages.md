@@ -13,9 +13,13 @@ modified: '2021-07-21T18:09:03.424Z'
   - 文档以文字内容为主，还是以交互展示为主
   - 对于文字内容为主的site，可以用markdown based static-site-generator
   - 对于交互展示为主的site，可以利用live型工具包，可简单可复杂
+
+- usecase示例
+  - 重写bootstrap-offline-docs，特别是高亮toc + 组件文档
+
 - 常用工具
+  - gitbook, docusaurus
   - jekyll, hugo, hexo, gatsby
-  - gitbook
 # vanillajs-powered-docs
 - https://github.com/xriley/CoderDocs-Theme
   - https://themes.3rdwavemedia.com/demo/bs5/coderdocs/
@@ -40,7 +44,6 @@ modified: '2021-07-21T18:09:03.424Z'
   - http://docstrap.github.io/docstrap/themes/lumen/
   - 单页文档，右侧是toc，不会高亮当前小标题
   - A template for JSDoc3 based on Bootstrap and themed by Bootswatch
-
 # toc
 - https://github.com/tscanlin/tocbot
   - http://tscanlin.github.io/tocbot/
@@ -49,7 +52,6 @@ modified: '2021-07-21T18:09:03.424Z'
   - 自动高亮当前浏览处标题
 - tocbot-examples
   - [tocbot bootstrap 4](https://codepen.io/losol/pen/NEvajy)
-
 
 - https://github.com/Arcandres/table-of-contents
   - https://arcandres.github.io/table-of-contents/
@@ -71,16 +73,26 @@ modified: '2021-07-21T18:09:03.424Z'
   - https://bootsnipp.com/snippets/y3O1
   - https://www.codeply.com/p/kHXl9oz7gT
   - https://www.codeply.com/p/KPvJq8a7Dz
-
 # doc-site-examples
-
 - 典型的文档风格
 - https://grow.io/
   - https://github.com/grow/grow.dev
   - 左侧目录，右侧可高亮书签
+
+- https://github.com/codenpixel/Bootstrap-documentation-template
+  - https://sharebootstrap.com/demo/docu/
+  - 右侧toc无法高亮
 # more-docs
 - https://github.com/dabbott/react-express
   - http://www.react.express/
   - Learn React through interactive examples
   - 依赖next10、@mdx-js/mdx.v1、styled-components、spectacle(ppt)、react-guidebook
   - react-guidebook未开源，提供了页面布局、搜索等功能，依赖javascript-playgrounds、styled-components
+
+- https://github.com/radix-ui/website
+  - https://www.radix-ui.com/docs/primitives/components/checkbox
+  - 简洁大方，左侧目录，右侧toc无法高亮
+- https://github.com/arcticicestudio/nord-docs
+  - https://www.nordtheme.com/docs/colors-and-palettes
+  - 典型的文档风格
+  - 基于gatsby实现

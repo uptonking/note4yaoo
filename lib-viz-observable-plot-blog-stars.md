@@ -116,7 +116,7 @@ modified: '2021-05-31T16:51:41.692Z'
   - Plot is highly configurable and supports interaction with minimal fuss through Observable dataflow. 
   - And Plot is designed to be extended 
 - **Plot’s aim is speed and convenience**. 
-  - Our hope is you’ll spend less time reading the docs, searching for snippets, and debugging — and more time asking questions of data. 
+  - Our hope is you’ll spend less time reading the docs, searching for snippets, and debugging — and more time asking questions of data.
   - With faster iteration, you can see more of your data and find more insights.
   - Plot not only has intuitive syntax but makes it incredibly easy to iterate through different chart types and faceting methods
 - Plot is informed by ten years of maintaining D3 but does not replace it. 

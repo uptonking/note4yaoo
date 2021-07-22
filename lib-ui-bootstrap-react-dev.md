@@ -17,23 +17,14 @@ modified: '2021-04-14T17:36:17.442Z'
   - Accessible by default
     - Each component is implemented with accessibility in mind
 
-- [Why React-Bootstrap?](https://react-bootstrap.github.io/getting-started/why-react-bootstrap/)
-  - 总结
-    - no jquery
-    - no imperative dom update
-    - easier styling, easier state management not from dom
-  - React-Bootstrap is a complete re-implementation of the Bootstrap components using React. 
-    - It has no dependency on either bootstrap.js or jQuery.
-  - Methods and events using jQuery is done imperatively by directly manipulating the DOM. 
-  - In contrast, React uses updates to the state to update the virtual DOM. 
-    - In this way, React-Bootstrap provides a more reliable solution by incorporating Bootstrap functionality into React's virtual DOM.
-  - The CSS and details of Bootstrap components are rather opinionated and lengthy. 
-    - React-Bootstrap simplifies this by condensing(使浓缩；使冷凝) the original Bootstrap into React-styled components.
-  - Since React-Bootstrap is built with React Javascript, state can be passed within React-Bootstrap components as a prop. 
-    - It also makes it easier to manage the state as updates are made using React’s state instead of directly manipulating the state of the DOM. 
-
+- react-bootstrap vs reactstrap
+  - 差别很小，可以考虑更新频率是否支持bootstrap.v5，对自定义className的支持，对第三方主题的支持
+  - Both work in the same way, from the perspective of use
+  - You can view both implementations, comparing a basic component as Button in the packages source code
+    - Despite some differences such as the approach with the use of `prototype` that `reactstrap` implements, and specifically in this component, the handling of some additional props, in general, there are no significant differences between them.
+  - ref
+    - [Using Bootstrap in ReactJS: reactstrap or react-bootstrap?_202106](https://dev.to/cassiolacerda/using-bootstrap-in-reactjs-reactstrap-or-react-bootstrap-gng)
 # codebase
-
 - 组件的基本结构
   - 根组件大多为Component，也有很多为Tag
   - 很多组件使用模版高阶函数createWithBsPrefix()创建
@@ -50,8 +41,21 @@ modified: '2021-04-14T17:36:17.442Z'
 
 - 常用的hook
   - useEventCallback
-
 # Overview
+- [Why React-Bootstrap?](https://react-bootstrap.github.io/getting-started/why-react-bootstrap/)
+  - 总结
+    - no jquery
+    - no imperative dom update
+    - easier styling, easier state management not from dom
+  - React-Bootstrap is a complete re-implementation of the Bootstrap components using React. 
+    - It has no dependency on either bootstrap.js or jQuery.
+  - Methods and events using jQuery is done imperatively by directly manipulating the DOM. 
+  - In contrast, React uses updates to the state to update the virtual DOM. 
+    - In this way, React-Bootstrap provides a more reliable solution by incorporating Bootstrap functionality into React's virtual DOM.
+  - The CSS and details of Bootstrap components are rather opinionated and lengthy. 
+    - React-Bootstrap simplifies this by condensing(使浓缩；使冷凝) the original Bootstrap into React-styled components.
+  - Since React-Bootstrap is built with React Javascript, state can be passed within React-Bootstrap components as a prop. 
+    - It also makes it easier to manage the state as updates are made using React’s state instead of directly manipulating the state of the DOM. 
 
 - You should import individual components like: `react-bootstrap/Button` rather than the entire library. 
   - Doing so pulls in only the specific components that you use, 
@@ -77,5 +81,4 @@ modified: '2021-04-14T17:36:17.442Z'
   - Bootstrap 4 support will be in react-bootstrap versions >= v1.0.0
   - React-Bootstrap only contains components that are present in vanilla Bootstrap. 
     - If functionality was removed from Bootstrap, then it was also removed from React-Bootstrap. 
-
 # pieces

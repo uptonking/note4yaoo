@@ -30,10 +30,6 @@ modified: '2021-07-21T18:09:20.751Z'
 - https://github.com/kykungz/html-a4-paper
   - https://kykungz.github.io/html-a4-paper/
   - Create your own printable A4 page with HTML and CSS
-- https://github.com/darshandsoni/asciidoctor-skins
-  - https://darshandsoni.com/asciidoctor-skins
-  - Asciidoctor comes with a very clean default stylesheet that saves users from spending time formatting their documents
-  - All stylesheets in here pull in asciidoctor’s defaults first and then apply custom styles to a few elements.
 # markdown
 - https://github.com/sindresorhus/github-markdown-css
   - https://sindresorhus.com/github-markdown-css/
@@ -111,8 +107,7 @@ modified: '2021-07-21T18:09:20.751Z'
 - https://github.com/robinsloan/perfect-edition
   - https://robinsloan.github.io/perfect-edition/build/web/index.html
   - responsive web e-book template
-- https://github.com/mraible/infoq-mini-book
-  - Template project for creating an InfoQ Mini-Book with Asciidoctor
+
 - https://github.com/surjithctly/documentation-html-template
   - http://surjithctly.github.io/documentation-html-template/
   - A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. 
@@ -149,6 +144,19 @@ modified: '2021-07-21T18:09:20.751Z'
 - https://github.com/saurabhdaware/text-to-handwriting
   - https://saurabhdaware.github.io/text-to-handwriting/
   - converts text to an image that looks like handwriting
+# asciidoc
+- https://github.com/darshandsoni/asciidoctor-skins
+  - https://darshandsoni.com/asciidoctor-skins
+  - Asciidoctor comes with a very clean default stylesheet that saves users from spending time formatting their documents
+  - All stylesheets in here pull in asciidoctor’s defaults first and then apply custom styles to a few elements.
+- https://github.com/OpenZeppelin/docs.openzeppelin.com
+  - https://docs.openzeppelin.com/
+  - 依赖 asciidoctor、handlebars、highlight.js
+  - 基于asciidoc创建文档网站
+  - 左侧目录，右侧可高亮书签toc
+- https://github.com/mraible/infoq-mini-book
+  - 依赖java、jruby、asciidoctor-gradle-plugin
+  - Template project for creating an InfoQ Mini-Book with Asciidoctor
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/
@@ -176,3 +184,7 @@ modified: '2021-07-21T18:09:20.751Z'
 
 - https://www.nordtheme.com/docs/colors-and-palettes
   - 背景灰色，页面白色，典型的文档风格，无toc
+
+- https://github.com/Apostolique/apos-docs
+  - https://apostolique.github.io/apos-docs/markdown/
+  - 依赖eleventy，右侧toc无法高亮
