@@ -17,7 +17,9 @@ modified: '2021-04-12T12:03:37.628Z'
 
 - ## 
 
-- ## 
+- ## iconic chart about deaths during the Iraq War.
+- https://twitter.com/eagereyes/status/1418227276219486217
+  - 倒立条形图呈现出血液流下的效果
 
 - ## visualize changes when comparing current versus prior
 - https://twitter.com/tableaupublic/status/1409912104367316998

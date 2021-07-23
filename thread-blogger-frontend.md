@@ -21,6 +21,7 @@ modified: '2021-02-09T19:27:01.319Z'
   - https://github.com/kentcdodds
   - https://twitter.com/kentcdodds
   - https://kentcdodds.com/
+  - https://epicreact.dev/articles/
   - projects
     - https://github.com/kentcdodds/mdx-bundler
     - https://github.com/downshift-js/downshift

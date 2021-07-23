@@ -15,9 +15,45 @@ modified: '2021-05-23T11:00:06.662Z'
 
 - ## 
 
-- ## 
+- ## People frequently ask us what the difference between Web Sockets and @replicache is. 
+- https://twitter.com/aboodman/status/1410441402366922762
+  - It's a totally reasonable question if you've never tried to implement something like multiplayer or offline sync before. 
+  - Another variant: what's the difference between Replicache and Firebase?
+- Simplifying, web sockets (or Firebase) are a way to send data from clients to servers and back fast -- "in realtime".  If what you're trying to build is "realtime collaboration", it's reasonable to wonder if WS gives you everything you need.
+  - Spoiler alert: they don't.
+  - You need something like Replicache (or alternately a class of data structures called CRDTs) *and* realtime communication.
+- To understand why, here's a thought experiment:
+  - Imagine you are implementing a multiplayer drawing program like @figmadesign .
+  - Round trip to a server - even a fancy edge server - almost always takes dozens of ms. 100ms is more realistic.
+  - But if you want an experience with drag and drop manipulation that feels fluid and local, this requires the UI to respond at at least 60fps - that's 16ms per frame.
+- it's clear that sending changes over a websocket to server and waiting for confirm isn't going to work.
+  - Instead, you're going to have to **keep a cache of the datamodel on the client, allow user to edit the local copy (i.e., "optimistically"), then send the changes to the server (perhaps via socket)** in the background.
+  - Now let's imagine that you have several users editing a drawing this way. Each time a user changes something, they send a message to server
+  - What happens with this simple drawing app when everyone is doing this in parallel. Does it work? What do users see?
+  - Hopefully this thought experiment makes it clear that what you get is... a mess.
+  - Clients will frequently recv changes in different orders, resulting in seeing a different drawing. For one user, obj 1 is green, because they changed it to green then recv'd the "change to red" message. For other user it's red because they changed it to red, then recv'd opp msg.
+  - These are super simple examples, but this gets complicated fast. 
+  - This is an untenable way to build quality software. It just doesn't make sense for users to potentially be editing a copy of state which differs from other users or the server.
+- Replicache is a client-side cache that makes it easier to build collaborative apps by making divergence as described above impossible. 
+  - **Replicache (and more broadly, all CRDTs) allows you to edit state locally for performance**, but guarantees local state will converge(达成一致；会合；汇聚) with server later.
+  - For the special case of building client-server software (aka SaaS or almost all mobile and web apps) Replicache has compelling advantages over classic CRDTs. 
+- why do you call it “cache” though? Sounds like it’s not persistent state?
+  - It’s persistent. It’s called a cache purposely and this gets to the difference between crdts and Replicache. The server is authoritative.
+- If the server is authoritative and the client may have to rebase ops, is the model more like Operational Transforms rather than CRDT?
+  - It's similar to operational transform in that the server is authoritative, but the mechanism is different. 
+  - OT works by modifying operations to preserve intent when OOO operations are received.
+  - Replicache does not ever modify operations server-side. Once an operation executes server-side it is final.(on the client side, one could say the operation is "modified" but a better way to think of it is rebase -- the operation replays and may compute something different).
+- OT is still considered the best when it comes to unstructured text editing. And this makes sense given how it works.
+  - But the Replicache approach is easier to implement, especially since it places few restrictions on architecture of backend, and works better for structured data.
+- from a serious OT dev: [I was wrong. CRDTs are the future](https://josephg.com/blog/crdts-are-the-future/)
 
-- ## 
+- ## If your online SaaS has a quick interaction-feedback loop (eg Figma, Google docs, etc), you still want to consider local-first approaches. 
+- https://twitter.com/_paulshen/status/1418294517292175363
+  - maybe don't need to go full CRDT but need something where you preserve intention history on the client.
+- Interesting to compare approach of Google Docs where the collaboration has a slight delay (I assume due to CRDT syncing) vs Figma which uses (what looks like) real-time connections
+  - while not "offline-first", Figma is definitely offline-capable. that combined with having multiple writer clients requires CRDT-adjacent methods. They dive into this here!
+  - [How Figma’s multiplayer technology works](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+- a devtool i'm excited about is @replicache, which provides a solution similar to figma's where you have a centralized authoritative server.
 
 - ## Are there any great text editor libraries out there that work like GitHub’s? Markdown, with drag and drop upload support, APIs for things like tagging people., etc?
 - https://twitter.com/adamwathan/status/1405278574337150977

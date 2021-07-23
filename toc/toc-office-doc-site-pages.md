@@ -11,7 +11,7 @@ modified: '2021-07-21T18:09:03.424Z'
 
 - 需求分析
   - 文档以文字内容为主，还是以交互展示为主
-  - 对于文字内容为主的site，可以用markdown based static-site-generator
+  - 对于文字内容为主的site，可以用基于markdown的static-site-generator
   - 对于交互展示为主的site，可以利用live型工具包，可简单可复杂
 
 - usecase示例
@@ -59,7 +59,7 @@ modified: '2021-07-21T18:09:03.424Z'
   - 实现简单，未实现自动高亮当前浏览处标题
 - https://github.com/gajus/contents
   - Table of contents generator.
-  - 例子无法运行，但例子的设计和样式很好，有plain, events, good looking, smooth scrolling
+  - 例子无法运行，但样式很好，有plain, events, good looking, smooth scrolling
 
 - https://ciucacristi.github.io/elementric/introduction.html
   - 多页文档，左侧目录，右侧高亮当前书签toc

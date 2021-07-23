@@ -10,6 +10,22 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## 
+
+
+- ## You can’t use hooks INSIDE callbacks, but apparently you can AS callbacks.
+- https://twitter.com/erikras/status/1418481366451302403
+  - const refs = http://values.map(useRef); 
+
+
+
 - ## Tip: Use `FunctionComponent` in both frameworks to look up types.
 - https://twitter.com/rauschma/status/1416372468269428739
   – [React] component: FunctionComponent, result: ReactElement, children: ReactNode

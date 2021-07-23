@@ -93,7 +93,7 @@ modified: '2021-07-21T18:07:43.056Z'
   - GitBook is only free for open-source and non-profit teams.
 - https://github.com/zmister2016/MrDoc
   - http://mrdoc.zmister.com/project-20/
-  - MrDoc 是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
+  - MrDoc是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
   - 后端：Python + Django
   - 前端：LayUI + JQuery
 - https://github.com/amiroff/NextBook
@@ -146,6 +146,11 @@ modified: '2021-07-21T18:07:43.056Z'
   - Storybook is a great tool but it takes ages to load.
   - Snowpack opens pretty fast.
   - What if it could read Component Story Format and show them on a page like Storybook?
+- https://github.com/kekingcn/kkFileView
+  - https://kkfileview.keking.cn/
+  - 使用spring boot打造文件文档在线预览项目解决方案，
+  - 支持doc、docx、ppt、pptx、xls、xlsx、zip、rar、mp4，mp3
+  - 以及众多类文本如txt、html、xml、java、properties、sql、js、md、json、conf、ini、vue、php、py、bat、gitignore等文件在线预览
 
 - more-docs
   - VuePress

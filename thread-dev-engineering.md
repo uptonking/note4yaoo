@@ -26,7 +26,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Syncing sign-in state
+- https://www.tommoor.com/posts/syncing-signin-state
+- Because Outline is primarily for writing documents, we see a use case where users keep many Outline tabs open containing different docs. 
+  - Outline is built using MobX for state management. 
+  - Local client state is split into multiple stores in the app, for example users, documents, auth. 
+  - The auth store contains data related to authentication such as the current user and team – it also manages the persistence and subscriptions. 
+- There are essentially three parts to this feature:
+  - Syncing auth in MobX state to localStorage
+  - Listening to localStorage changes
+  - Updating local MobX state from received events
 
 - ## TypeScript/VS Code tip: If you don’t see external type updates in your editor, try opening the changed .d.ts file. That usually refreshes things for me.
 - https://twitter.com/rauschma/status/1417285626836160512

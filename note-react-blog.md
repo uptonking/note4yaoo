@@ -42,7 +42,7 @@ modified: '2020-07-14T11:51:59.253Z'
 - By putting it into state we've solved the issue that it will rerun unnecessarily but like above we've also stopped the component from updating. 
 - A better way to solving this issue is using the `useMemo` hook to memoize the result
 
-``` JS
+```JS
 function Button({ text }) {
   const [formattedText] = useState(() => slowlyFormatText(text))
 
@@ -101,7 +101,7 @@ function Button({ text }) {
 
 - There is one I haven't quite made up my mind about, and that's something like this:
 
-``` JS
+```JS
 function SomeComponent(props) {
   const someMoreProp = // calculate some extra stuff
     return <>
@@ -116,9 +116,111 @@ function SomeComponent(props) {
   - I do find this pattern quite useful when I've got different variants of a component (for example a text and a number input component), but I want to expose it as just a single GenericInput component. But it doesn't feel right.
   - Your example is close to writing a Higher-order component but it depends on the use case. 
     - A lot of HOCs use cases however (just as render props) have been replaced by hooks instead, and should probably be the default moving forward unless you have a special use case 
+# [The Latest Ref Pattern in React](https://epicreact.dev/the-latest-ref-pattern-in-react/)
+
+```JS
+function useDebounce(callback, delay) {
+
+  // The pattern itself is pretty simple.
+  const callbackRef = React.useRef(callback);
+  React.useLayoutEffect(() => {
+    callbackRef.current = callback
+  });
+
+  return React.useMemo(
+    () => debounce((...args) => callbackRef.current(...args), delay),
+    [delay],
+  )
+}
+```
+
+- So why would you want to do this? 
+  - You use `useRef` whenever you want to keep track of a value, but not trigger a re-render when you update it. 
+  - So in our case, we're trying to keep track of `callback`.
+  - The reason for this, is we want to make sure that we're always calling the latest version of the `callback` rather than one from an old render.
+- why don't we use `useState` instead? 
+  - We don't want to use `useState` because we don't need to trigger a component re-render when we update to the latest value. 
+  - In fact, in our case if we tried, we'd trigger an infinite loop (go ahead, try it).
+- because we don't need or want a re-render when we update the `callback` to the latest value, it means we also don't need to (and really shouldn't) include it in a dependency array for `useEffect`, `useCallback`, or in our case `useMemo`.
+- It's really important that you follow the `eslint-plugin-react-hooks/exhaustive-deps` rule and always include all dependencies. 
+  - But you should skip the `current` value of a ref. 
+  - This is because updating a ref doesn't trigger a re-render anyway, so React can't call the effect callback or update memoized values when the ref is updated. 
+  - So if you include `ref.current` in the dependency array, you'll get surprising behavior that's difficult to debug.
+- As a side-note, because the `ref` itself is a stable object, it doesn't make a difference if you include the `ref` object itself in your dependency array
+
+```JS
+// ❌ don't ever do this
+React.useEffect(() => {}, [ref.current])
+
+// 🤷‍♂️ doesn't make a difference whether you include the ref or not.
+React.useEffect(() => {}, [ref])
+```
+
+## [How React Uses Closures to Avoid Bugs](https://epicreact.dev/how-react-uses-closures-to-avoid-bugs/)
+
+- When the world moved from React class components and lifecycle methods to React function components and hooks, we left behind a bug that many of us didn't even know was plaguing(困扰；纠缠) our class-based codebases. 
+  - This bug was sneaky, hard to identify and reproduce
+  - To make matters worse, the situations where it pops up are not always bugs, sometimes it's an intended behavior. 
+  - So you can't even lint against it.
+- The bug has to do with the mutability of `this.props`. 
+  - I'm not talking about you the developer mutating `this.props` (you shouldn't do that). 
+  - I'm talking about when the parent component re-renders and passes new props,  `this.props` suddenly points to completely new values. 
+  - This is by design. 
+  - I mean, when your render method re-runs due to an update in the props, you don't want to render the old props. You want the latest values so the React elements you return shows the right information.
+- The problem is actually pretty simple. It typically crops up when you have an event handler or lifecycle method that does something asynchronous.
+- The important bit here is the canLike utility that takes a while to run. So when you click on ❤️, the code execution "pauses" for a little while before continuing to the this.context.toggleLike(this.props.post) call. This means that when you change the active post, this.props.post is pointing to the wrong thing and the toggleLike call goes to the new post, not the one we were trying to like.
+  - This bug bit me a few times with class components, so much that I created a convention for myself to always destructure everything I needed from `this.` in a function at the top of the function (like in the solution above).
+- for "The New Default with Hooks" example
+  - In this case, we don't need to worry because the `props` our component is called with each render will never change for all functions in the component.
+  - This is because each render, all functions are created as brand-new functions. 
+  - And when a function is created, it grabs a reference to all variables outside of itself and hangs onto it for as long as that function exists.
+- When a re-render is triggered, a new `props` object is created and passed to our function component. 
+  - At that time a brand new `handleLikeClick` is created which has reference to the latest version of `props`. 
+  - But if an old version of that function is still running, it's fine because it still has access to the version of props it was called with to begin with.
+- One interesting observation is that this example actually has nothing to do with classes vs hooks, but really classes vs function components.
+- Just like it's possible to simulate the hooks default behavior with class components, it's possible to simulate the classes default behavior with function components. 
+- Refs allow you to update a value without trigger re-renders. 
+  - It gives you a similar mutable API to `this.` (when refactoring class components,  `useRef` is my go-to for any instance values if I can't simplify things as variables within a single `useEffect`).
+- Of course, the above example is buggy, so you wouldn't do that. But are there situations where the old default was a good idea? 
+  - Most certainly! A good example of such a case is a `debounce` function 
+
+```JS
+/** a naive implementation of debounce */
+function debounce(fn, delay) {
+  let timer
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      fn(...args)
+    }, delay)
+  }
+}
+
+/**
+ * this API means that someone would have to memoize the callback otherwise you'd get a new debounce function every render
+ */
+function useDebounce(callback, delay) {
+  return React.useMemo(() => debounce(callback, delay), [callback, delay])
+}
+
+/**
+ * no worry about memoizing their callback now
+ */
+function useDebounce(callback, delay) {
+  const callbackRef = React.useRef(callback);
+
+  React.useLayoutEffect(() => {
+    callbackRef.current = callback
+  })
+
+  return React.useMemo(
+    () => debounce((...args) => callbackRef.current(...args), delay),
+    [delay],
+  )
+}
+```
 
 # [Why React Context is Not a "State Management" Tool (and Why It Doesn't Replace Redux)](https://blog.isquaredsoftware.com/2021/01/blogged-answers-why-react-context-is-not-a-state-management-tool-and-why-it-doesnt-replace-redux/)
-
 - Is Context a "state management" tool?
   - No. Context is a form of Dependency Injection. 
   - It is a transport mechanism - it doesn't "manage" anything. 
@@ -140,9 +242,7 @@ function SomeComponent(props) {
 - There are _multiple_ differences in behavior and functionality between Context+useReducer and React-Redux
   - The "boilerplate" concerns have been eliminated by Redux Toolkit
   - While Redux isn't always the right choice, there are many reasons to choose it over Context+useReducer
-
 # [JSX Gotchas](https://shripadk.github.io/react/docs/jsx-gotchas.html)
-
 - JSX looks like HTML but there are some important differences you may run into.
   - For DOM differences, such as the inline `style` attribute, see DOM Differences
 - You can insert HTML entities within literal text in JSX
@@ -173,9 +273,7 @@ function SomeComponent(props) {
     - whenever a form field is changed this event is fired rather than inconsistently on blur. 
     - We intentionally break from existing browser behavior because onChange is a misnomer for its behavior and React relies on this event to react to user input in real time.
   - Form input attributes such as `value` and `checked`, as well as `textarea`.
-
 # [Four Ways to Fetch Data in React_202007](https://www.bitnative.com/2020/07/06/four-ways-to-fetch-data-in-react/)
-
 - React is a focused component library. So it has no opinion on how to request remote data.
 - If you’re requesting and sending data to web APIs via HTTP, here are four options to consider.
 
@@ -183,7 +281,7 @@ function SomeComponent(props) {
 - This is the simplest and most obvious option.
 - Make the HTTP call in the React component and handle the response.
 
-``` JS
+```JS
 // simple
 fetch("/users").then(response => response.json());
 ```
@@ -191,7 +289,7 @@ fetch("/users").then(response => response.json());
 - Looks simple enough. But this example overlooks loading state, error handling, declaring and setting related state, and more. 
 - In the real world, HTTP calls look more like this.
 
-``` JS
+```JS
 // request
 export default function InlineDemo() {
   const [users, setUsers] = useState([]);
@@ -241,7 +339,7 @@ export default function InlineDemo() {
 - With the magic of React Hooks, we can finally centralize repeated logic. 
 - So how about creating a custom `useFetch` hook to streamline our HTTP calls?
 
-``` JS
+```JS
 // This custom hook centralizes and streamlines handling of HTTP calls
 export default function useFetch(url, init) {
   const [data, setData] = useState(null);
@@ -274,7 +372,7 @@ export default function useFetch(url, init) {
 
 - This single hook dramatically simplifies all call sites
 
-``` JS
+```JS
 export default function HookDemo() {
   const { data, loading, error } = useFetch("users");
   if (loading) return "Loading...";
@@ -290,7 +388,7 @@ export default function HookDemo() {
 - I don’t have to maintain a custom hook. 
 - And each HTTP call requires little code:
 
-``` JS
+```JS
 import React from "react";
 import { getUsers } from "./services/userService";
 import { useQuery } from "react-query";
@@ -315,11 +413,8 @@ export default function ReactQueryDemo() {
     5. Should I handle server cache separately from app state?
     6. Should I avoid refetching recently fetched data?
     7. Should I prefetch data the user is likely to want?
-
 # [Fetching Data in React using React Async](https://css-tricks.com/fetching-data-in-react-using-react-async/)
-
   - [Using data in React with the Fetch API and axios](https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/)
-
 # [Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a)
 
 # [Patterns for data fetching in React](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/)
@@ -339,9 +434,7 @@ export default function ReactQueryDemo() {
   - Utilizing async/await
   - REST vs. GraphQL back end
 - Conclusion
-
 # [How to fetch data with React Hooks?_201903](https://www.robinwieruch.de/react-hooks-fetch-data)
-
 - In this tutorial, I want to show you how to fetch data in React with Hooks by using the state and effect hooks. 
 - Data Fetching with React Hooks
 - How to trigger a hook programmatically / manually?
@@ -351,9 +444,7 @@ export default function ReactQueryDemo() {
 - Custom Data Fetching Hook
 - Reducer Hook for Data Fetching
 - Abort Data Fetching in Effect Hook
-
 # [How to fetch data in React_201807](https://www.robinwieruch.de/react-fetching-data)
-
 - The article gives you a walkthrough on how to fetch data in React. 
 - There is no external state management solution, such as Redux or MobX, involved to store your fetched data. 
 - Instead you will use React's local state management.
@@ -369,9 +460,7 @@ export default function ReactQueryDemo() {
 
 - ref
   - [Example: Using AJAX results to set local state](https://reactjs.org/docs/faq-ajax.html)
-
 # [React-cache, time slicing, and fetching with a synchronous API_201901](https://www.freecodecamp.org/news/react-cache-time-slicing-and-fetching-with-a-synchronous-api-2a57dc9c2e6d/)
-
 - This article doesn’t aim at describing how to use some of the new features but rather at proving how they may have been built. Just for the sake of understanding what we are playing with.
 - This kind of modification has allowed React to split into three phases with their own advantages and particularities:
   - The render phase is pure and deterministic. 
@@ -383,7 +472,6 @@ export default function ReactQueryDemo() {
     - React can’t pause during that phase.
 - This set of three phases has introduced the Time Slicing capabilities. 
 - React is able to pause during the render phase, in between two component function calls, and to resume that phase when necessary.
-
 # [Update on Async Rendering_20180327](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 
 # [React Hooks 你真的用对了吗？](https://zhuanlan.zhihu.com/p/85969406)
@@ -474,9 +562,7 @@ export default function ReactQueryDemo() {
 - 自定义 Hooks 的返回值可以使用 Tuple 类型，更易于在外部重命名。如果返回的值过多，则不建议使用。
 - ref 不要直接暴露给外部使用，而是提供一个修改值的方法。
 - 在使用 useMemo 或者 useCallback 时，可以借助 ref 或者 setState callback，确保返回的函数只创建一次。也就是说，函数不会根据依赖数组的变化而二次创建。
-
 # When to useMemo and useCallback
-
 - ref
   - [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
   - [【译】什么时候使用useMemo和useCallback](https://jancat.github.io/post/2019/translation-usememo-and-usecallback/)
@@ -490,7 +576,7 @@ export default function ReactQueryDemo() {
   - Referential equality
   - Computationally expensive calculations
 
-``` JS
+```JS
 function Foo({ bar, baz }) {
   const options = { bar, baz }
   React.useEffect(() => {
@@ -509,7 +595,7 @@ function Blub() {
   - so when React tests, whether `options` changed between renders, it'll always evaluate to `true` , 
   - meaning the `useEffect` callback will be called after every render rather than only when `bar` and `baz` change.
 
-``` JS
+```JS
 function Foo({ bar, baz }) {
   React.useEffect(() => {
     const options = { bar, baz }
@@ -521,7 +607,7 @@ function Foo({ bar, baz }) {
 
 - But there's one situation when this isn't a practical solution: If `bar` or `baz` are (non-primitive) objects/arrays/functions/etc
 
-``` JS
+```JS
 function Foo({ bar, baz }) {
   React.useEffect(() => {
     const options = { bar, baz }
@@ -540,7 +626,7 @@ function Blub() {
 - This is precisely the reason why `useCallback` and `useMemo` exist. So here's how you'd fix that (all together now)
 - Note that this same thing applies for the dependencies array passed to `useEffect/useLayoutEffect/useCallback` , and `useMemo` .
 
-``` typescript
+```typescript
 function CountButton({onClick, count}) {
   return <button onClick={onClick}>{count}</button>
 }
@@ -568,7 +654,7 @@ function DualCounter() {
   - and there are so many things I can think of for you to do with your time that would be better than optimizing things like this. 
 - However, there are situations when rendering can take a substantial amount of time (think highly interactive Graphs/Charts/Animations/etc.).
 
-``` typescript
+```typescript
 const CountButton = React.memo(function CountButton({onClick, count}) {
   return <button onClick={onClick}>{count}</button>
 })
@@ -603,7 +689,7 @@ function DualCounter() {
   - you could make a mistake in the dependencies array, and you're potentially making performance worse by invoking the built-in hooks and preventing dependencies and memoized values from being garbage collected. 
   - Those are all fine costs to incur if you get the performance benefits necessary, but it's best to measure first.
 
-``` JS
+```JS
 class FavoriteNumbers extends React.Component {
   render() {
     return (
@@ -622,7 +708,6 @@ class FavoriteNumbers extends React.Component {
 ```
 
 # You Probably Don't Need Derived State
-
 - ref
   - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
   - [你可能不需要Derived State](https://zhuanlan.zhihu.com/p/38090110)
@@ -650,9 +735,7 @@ class FavoriteNumbers extends React.Component {
   - Keys are usually used for dynamic lists but are also useful here. 
   - Sometimes it might make more sense to put a key on the whole form instead. Every time the key changes, all components within the form will be recreated with a freshly initialized state.
   - While this may sound slow, the performance difference is usually insignificant. Using a key can even be faster if the components have heavy logic that runs on updates since diffing gets bypassed for that subtree.
-
 # react component vs element vs instance
-
 - ref
   - [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)
 - An element is a plain object describing a component instance or DOM node and its desired properties. 
@@ -673,9 +756,7 @@ class FavoriteNumbers extends React.Component {
   - While mechanisms for a parent component instance to access a child component instance exist, they are only used for imperative actions (such as setting focus on a field), and should generally be avoided.
   - React takes care of creating an instance for every class component, so you can write components in an object-oriented way with methods and local state, but other than that, instances are not very important in the React’s programming model and are managed by React itself.
   - Function components don’t have instances at all.
-
 # A Complete Guide to useEffect
-
 - ref
   - [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 - Question: How do I replicate `componentDidMount` with `useEffect` ?
@@ -690,7 +771,5 @@ class FavoriteNumbers extends React.Component {
   - We know now that effects run after every render, are conceptually a part of the component output, and “see” the props and state from that particular render.
   - Closures are great when the values you close over never change. That makes them easy to think about because you’re essentially referring to constants.
   - And as we discussed, props and state never change within a particular render.
-
 # ref
-
 - [The Current State of HoC, Hooks, and Render Props](https://webup.org/blog/the-current-state-of-hoc-hook-and-render-props/)

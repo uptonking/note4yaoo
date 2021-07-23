@@ -13,7 +13,10 @@ modified: '2021-05-25T08:41:18.938Z'
 
 - ## 
 
-- ## 
+- ## using existing standards (to be defined eg laz, ept) and uniformizing octree based storage and indexation - for the web!
+- https://twitter.com/jo_chemla/status/1418233192612601856
+  - COPC – Cloud Optimized Point Cloud
+  - https://github.com/copcio/copcio.github.io
 
 - ## Has anyone laid out concrete reasons for building shiny apps instead of using out-of-the-box enterprise software like Tableau?
 - https://twitter.com/mdsumner/status/1304710241293012993

@@ -9,6 +9,18 @@ modified: '2020-07-12T19:00:27.345Z'
 
 # tree
 
+- https://github.com/clauderic/dnd-kit
+  - http://dndkit.com/
+  - http://examples.dndkit.com
+  - Zero dependencies and modular: built around built-in React state management and context
+  - extensible drag & drop toolkit for React.
+  - Supports a wide range of use cases: lists, grids, multiple containers, nested contexts, variable sized items, virtualized lists, 2D Games, and more.
+  - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
+    - https://5fc05e08a4a65d0021ae0bf2-vrdufzklrj.chromatic.com/?path=/story/examples-tree-sortable--basic-setup
+    - https://twitter.com/clauderic_d/status/1375623307060510731
+      - I recently built a sortable tree example with @dndkit.
+      - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
+
 - react-treeview /MIT/1kStar/201706
   - https://github.com/chenglou/react-treeview
   - https://cdn.rawgit.com/chenglou/react-treeview/aa72ed8b9e0b31fabc09e2f8bd4084947d48bb09/demos/index.html
@@ -37,8 +49,8 @@ modified: '2020-07-12T19:00:27.345Z'
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
+  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
-  - based on react-virtualized, react-dnd, react-dnd-html5-backend
 - rc-tree /MIT/689Star/202006
   - https://github.com/react-component/tree
   - http://react-component.github.io/tree/
@@ -48,16 +60,6 @@ modified: '2020-07-12T19:00:27.345Z'
   - http://storybookjs.github.io/react-treebeard/
   - Tree Component. Data-Driven, Fast, Efficient and Customisable.
   - based on velocity-animate
-
-- https://github.com/clauderic/dnd-kit
-  - http://dndkit.com/
-  - http://examples.dndkit.com
-  - extensible drag & drop toolkit for React.
-  - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
-    - https://5fc05e08a4a65d0021ae0bf2-vrdufzklrj.chromatic.com/?path=/story/examples-tree-sortable--basic-setup
-    - https://twitter.com/clauderic_d/status/1375623307060510731
-      - I recently built a sortable tree example with @dndkit .
-      - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render

@@ -11,7 +11,13 @@ modified: '2021-03-11T11:26:06.670Z'
 
 - ## 
 
-- ## 
+- ## I was that close to a cool screenshot approach based on an SVG image with `foreignObject` HTML rendered to a canvas that would then be `toBlob()` 'ed, but the canvas is always tainted(腐坏的，受污染的)
+- https://twitter.com/tomayac/status/1418266133568888834
+  - Blobs taint the canvas immediately, and data URLs (see last comment on the bug) somehow don’t work and seem to simply strip out all HTML in foreignObject. HTML2Canvas exists (and is 42kb gzipped) for a reason.
+- I thought this is how DOM-to-canvas techniques currently worked.
+- Why can’t we render, say, an iframe to a canvas anyway
+  - Because an iframe (or any element) can contain all kinds of things you shouldn't have pixel access to
+  - Same origin iframes can contain cross origin (or otherwise private) data
 
 - ## Sometimes I wish there's a language which combines CSS and SVG
 - https://twitter.com/yuanchuan23/status/1379586675517444096

@@ -20,13 +20,40 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Is there EVER a reason to use enums in TypeScript?
+- https://twitter.com/erikras/status/1418279793993338880
+  - outside of t-shirt sizes, where you need SMALL to be < MEDIUM, I’ve found almost no use compared to string union types
+-I have the same experience. Every time I've decided to use enum it has felt very cumbersome(复杂的，笨重的). 
+  - Using arrays or objects literals with "as const" seems to cover all the cases where I'd feel enum would be better.
+- most of the time you need to marshal enum values to strings. And that’s why string union types work.
+- Isn't enums more readable and maintainable?
+Consider the case where I have a Widget enum on FE and BE sends its value. I use the enum for variables, arguments, conditionals and TS enforces to pick from enum. One day BE chose to change value, I just have to change my enum's value.
+  - This is arguably the only thing that enums have over constant union types. However, I would argue that you're very unlikely to ever change an enum's values later on. You're much more likely to extend it with new values, which enums give you no additional benefit with.
+- [Comparing TypeScript's union types, enums and const enums](https://kajetan.dev/2021/typescript-unions-and-enums/)
+- Compile time vs run time
+  - Only enums result in JS output after compilation. Others are dropped during the compile time.
+- Iterating through values
+  - Only enums can be iterated through
+  - If there's no value at runtime, we cannot iterate through it.
+- Switch-case and matching values
+  - Non-exhaustive matching on either of the three results in error when --strictNullChecks compiler option is on.
+- Numeric values
+  - Enums are numeric by default (if you don't assign any value to its members). You can assign any number to the numeric enum.
+- Extending
+  - Unions can be extended by declaring a "union of union types". 
+  - One way to extend an enum or const enum is to convert them to a type by creating a sum.
+- Impact of refactoring
+  - With union, you'd have to check all places impacted by the change and update those places to match new value of the union.
+  - With enum, you'd apply the change just on the value of enum's member. 
+- Template Literal Types
+  - TLT can be created only as a union type
+- Structural vs nominal types
+  - Enum is an example of a nominal type (enums are not equal if they differ by name). 
+  - Unions represent structural types (if literal values match, they are equal).
 
 - ## Let's re-implement 10 lodash functions to learn more about how `.reduce` works
 - https://twitter.com/benmvp/status/1418003584386359296
   - [Learn the Array reduce method by re-implementing lodash functions](https://www.benmvp.com/blog/learn-array-reduce-method-reimplementing-lodash-functions/)
-
-
 
 - ## Async functions & microtasks
 - https://whistlr.info/2021/async-and-tasks/

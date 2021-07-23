@@ -24,7 +24,10 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
-- ## 
+- ## UX tip: ever you need to truncate text, add the full text to the title tag so user will be able to read full text
+- https://twitter.com/renatorib_/status/1418275875779485701
+  - But you will need to find another solution for mobile.
+  - 利用title属性添加鼠标悬停提示
 
 - ## When dealing with dates in a dashboard, would you like to see that in a human-readable language like "Created 5 hours ago" or just as a regular date format like "19/07/2021 04:09:03, 791"?
 - https://twitter.com/bruno__quaresma/status/1417127583632740355

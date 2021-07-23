@@ -22,7 +22,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Segmented Progress Bar
+- https://twitter.com/jonkantner/status/1418182789493571587
+  - https://codepen.io/jkantner/pen/poPWVbV
 
 - ## a generative pattern maker built on “relaxed” Voronoi diagrams.
 - https://twitter.com/georgedoescode/status/1417490092151787531
@@ -70,13 +72,10 @@ modified: '2021-02-05T14:00:02.922Z'
   - https://codepen.io/TajShireen/pen/YzZmbep
   - https://codepen.io/argyleink/pen/XWRWagg
 - https://twitter.com/bramus/status/1409618011900760065
-  - https://codepen.io/bramus/pen/abWbvXJ
-
-    - Add some Houdini to animate it 斜杠角度自动旋转
-
-  - https://codepen.io/bramus/pen/PomoJym
-
-    - Make the center follow the mouse
+- https://codepen.io/bramus/pen/abWbvXJ
+  - Add some Houdini to animate it 斜杠角度自动旋转
+- https://codepen.io/bramus/pen/PomoJym
+  - Make the center follow the mouse
 
 - ## circular grid melt with Houdini
 - https://twitter.com/anatudor/status/1409162407902072843

@@ -7,7 +7,7 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-dashboard
 - guide
-  - 使用场景包括控制台、个人设置、文件管理...
+  - 使用场景包括控制台、个人设置、数据统计...
   - 流行的dashboard大多是基于bootstrap/tailwindui等基础组件库
   - 建议深入一个静态的css dashboard
   - dashboard中的内容与业务场景紧密相关，一般要考虑内容布局
@@ -16,6 +16,9 @@ modified: '2021-01-08T11:48:16.590Z'
 - usecase示例
   - 案例集合示例demo-showcase，甚至可以参考 [doc ui kit pages](https://htmlstream.com/preview/docs-ui-kit/index.html)
   - 海致bdp的仪表板，白色主题
+  - github like cloud drive；百度网盘
+  - 飞书控制台；语雀工作台、知识空间；confluence spaces
+  - [觅道文档 云笔记、云文档、知识管理私有化部署方案](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
 
 - ref
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)

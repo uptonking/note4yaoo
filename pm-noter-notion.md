@@ -42,6 +42,9 @@ modified: '2021-07-11T08:26:43.528Z'
     - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - examples as notes
 
+- editor
+  - copy as markdown link
+
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入

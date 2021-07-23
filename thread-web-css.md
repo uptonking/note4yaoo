@@ -28,7 +28,22 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## Prevent unwanted Layout Shifts caused by Scrollbars with the `scrollbar-gutter` CSS property
+- https://www.bram.us/2021/07/23/prevent-unwanted-layout-shifts-caused-by-scrollbars-with-the-scrollbar-gutter-css-property/
+- there’s a distinction between two types of scrollbars
+- Overlay Scrollbars are those iOS/macOS-style scrollbars which are placed over the content. 
+  - They are not shown by default, but only while the user is scrolling. 
+  - To keep the content underneath visible they are semi-transparent, but that’s totally up to the user-agent (browser) to determine. 
+  - While interacting with them, their size may also vary.
+- Classic Scrollbars are scrollbars that are placed in the so-called “Scrollbar Gutter”. 
+  - The Scrollbar Gutter is the space between the inner border edge and the outer padding edge. 
+  - With classic scrollbars, the size of the Scrollbar Gutter is the same as the width of the scrollbar. These scrollbars are usually opaque (not transparent) and take away some space from the adjacent content.
+
+- When the content of a box becomes too big (e.g. when it is overflowing), the browser will — by default — show a scrollbar. 
+- In case of a classic scrollbar this has a nasty side-effect: as the scrollbar needs some space, the available width for the content shrinks — thus the layout shifts.
+- In case of Overlay Scrollbars there’s no layout shift, as those scrollbars get rendered over the content.
+- By setting `scrollbar-gutter` to `stable` we can have the UA always show the Scrollbar Gutter, even if the box is not overflowing and no scrollbar is shown. 
+  - This way we have a visually stable layout: when the box starts to overflow the scrollbar will be rendered but no layout shift will happen as space for it was already reserved.
 
 - ## user in data saver mode? skip the media, save loads!
 - https://twitter.com/argyleink/status/1389244232641089537

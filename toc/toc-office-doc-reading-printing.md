@@ -6,15 +6,18 @@ modified: '2021-07-21T18:09:20.751Z'
 ---
 
 # toc-office-doc-reading-printing
+
+# guide
 - search
-  - paper, reading, reader, book, document
-  - markdown theme, toc
+  - reading, reader, book, paper, document
+  - markdown theme/extensions/like
+  - toc
 # doc-styling
 - https://github.com/delight-im/HTML-Sheets-of-Paper
   - https://delight-im.github.io/HTML-Sheets-of-Paper/
   - /986Star/MIT/201912/css
-  - 类似没有ribbon menu的word文档，支持显示分页、支持编辑
-  - Word processor in your browser using HTML and CSS (e.g. for invoices, legal notices, etc.)
+  - 类似没有ribbon menu的word文档，支持显示分页、编辑
+  - Word processor in your browser using HTML and CSS(e.g. for invoices, legal notices...)
 - https://github.com/edwardtufte/tufte-css
   - https://edwardtufte.github.io/tufte-css/
   - 示例右侧会显示批注

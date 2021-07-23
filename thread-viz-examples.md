@@ -11,6 +11,19 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
+- ## 
+
+- ## The interactive "Bats Fact Wheel" by @jhjanicki
+- https://twitter.com/simongerman600/status/1418292323230879745
+  - http://the-tardigrade.com/projects/bats/
+  - 转盘转动的动画
+
+- ## animated scatter plot in which the points move to spell
+- https://twitter.com/d_olivaw/status/1417988196366012424
+  - 散点图中的点渐变成英文字母的动画，基于R实现
+  - [Statistical metamerism](https://eliocamp.github.io/codigo-r/en/2019/01/statistical-metamerism/)
+  - https://github.com/eliocamp/metamer/  /R
+
 - ## I'm a cartographic designer from Ukraine. I create maps on different topics and purposes using opensource tools.
 - https://twitter.com/gontsa/status/1414818523491221507
   - 作者创作了很多地图相关作品 
