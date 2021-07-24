@@ -275,7 +275,7 @@ modified: '2021-05-14T15:04:55.849Z'
   - 依赖python
 
 - https://github.com/react-page/react-page
-  - /8.2kStar/LGPL/202009
+  - /8.2kStar/MIT/202009
   - customizable content editor for the browser - based on React and Redux
 - https://github.com/premieroctet/openchakra
   - Full-featured visual editor and code generator for React using Chakra UI

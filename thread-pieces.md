@@ -24,7 +24,8 @@ modified: '2021-01-11T12:10:50.900Z'
 # pieces
 - ## 
 
-- ## 
+- ## A senior developer is someone whose job is to be constantly interrupted and help people out
+- https://twitter.com/qntm/status/1418612464300797957
 
 - ## "Book smart" people always look for obscure, jargon-filled shortcuts to success.
 - https://twitter.com/swyx/status/1388584008494239750

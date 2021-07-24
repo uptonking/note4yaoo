@@ -18,13 +18,14 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - tips
   - 主流的编辑器采用的是live preview，实时预览
-# md-syntax
-- core-options
-  - render line breaks in .md as line breaks in html
 # features
-- optional block style editor
-- powerful table editor crafted for markdown
-- configuration/customizable editor with a settings page
+- core
+  - optional block style editor
+  - powerful table editor crafted for markdown
+  - configuration/customizable editor with a settings page
+
+- core-options-syntax
+  - render line breaks in .md as line breaks in html
 
 - json editor
   - json <> json5
@@ -48,9 +49,7 @@ modified: '2021-05-14T14:33:33.975Z'
 - 细节设计
   - 类似github的readme，点击顶部标题，只显示一级目录大纲
   - [Tips and Tricks for using Markdown](https://github.com/MishManners/GitHub-Like-A-Boss/blob/main/markdowntricks.md)
-
-## draft
-
+# draft
 - code highlighting
 
 - 允许半个符号而不抛出异常，如`>, 1)`
@@ -58,7 +57,7 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - format
   - 格式化时，不应该在用引号包裹的字符串内自动插入空格
-# md-extensions
+# extensions
 - 扩展markdown的方法
   - 参考asciidoc, rst
   - 参考mdx
@@ -68,7 +67,7 @@ modified: '2021-05-14T14:33:33.975Z'
   - 支持json5
   - 支持切换代码高亮主题，类似[carbon](https://carbon.now.sh/)
 
-- ## md-table
+## md-table
 
 - 目标
   - 在普通md预览器中显示较友好的表格
@@ -80,7 +79,16 @@ modified: '2021-05-14T14:33:33.975Z'
   - 可以考虑使用mdx中支持的自定义组件的标签
   - 甚至可以直接在markdown中书写web components组件的标签
   - 还计划在markdown中实现类似react-live的编辑效果
-# md-integrations/connections
+
+## experimental
+
+- better collaborative editor
+- better code editor in doc editor
+- better math/latex
+- canvas based doc
+- headless
+- 更关注使用场景如代码ide、笔记、markdown、block-editor、分享、streamlit、移动端
+# integrations/connections
 - github-readme-editor
 
 - mermaid-flow-uml

@@ -75,6 +75,13 @@ modified: '2021-05-14T10:37:33.820Z'
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
 
+- https://github.com/NotionX/react-notion-x
+  - https://react-notion-x-demo.transitivebullsh.it/
+  - Fast and accurate React renderer for Notion.
+  - react-notion-x is a fork of react-notion with better support for different types of Notion content (especially collections).
+- https://github.com/viqueen/notion-renderer
+  - Simple and naive Notion react renderer, not as advanced as react-notion-x
+
 - more-notion-like
   - https://anytype.io/
     - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.

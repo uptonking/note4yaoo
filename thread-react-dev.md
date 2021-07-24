@@ -10,21 +10,20 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
+- ## 
 
 - ## 
 
-
-- ## 
-
-
-- ## 
-
+- ## redux-saga doesn't play well with Typescript. 
+- https://twitter.com/cse_as/status/1418854592129941513
+  - You could spend hours adding complex types & still have type errors creep in due to how the middleware works.
+  - If the team has been introduced to ReduxToolkit, it might be a good time to consider switching to RTKQuery (ships with RTK)
+- RTKQ can completely eliminate all the hand-written data fetching logic in your Redux apps - no more writing thunks, sagas, or loading state for API reqs!
+  - RTK Query also integrates with the rest of the Redux ecosystem, including the Redux DevTools, middleware, and reducers.
 
 - ## You can’t use hooks INSIDE callbacks, but apparently you can AS callbacks.
 - https://twitter.com/erikras/status/1418481366451302403
   - const refs = http://values.map(useRef); 
-
-
 
 - ## Tip: Use `FunctionComponent` in both frameworks to look up types.
 - https://twitter.com/rauschma/status/1416372468269428739

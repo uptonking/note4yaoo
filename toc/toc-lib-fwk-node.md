@@ -171,6 +171,11 @@ modified: '2021-01-04T16:18:39.667Z'
   - 基于Koa2，使用Typescript开发的轻量级web框架
   - 使用 inversifyjs 的IoC容器管理依赖，让开发者享受最佳的OOP和IoC的编程体验。
   - 开启装饰器配置，ts环境下引入即用
+
+
+- https://github.com/nodosjs/nodos
+  - https://nodosjs.github.io/
+  - Node.js framework for humans (inspired by rails, phoenix, django) 
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

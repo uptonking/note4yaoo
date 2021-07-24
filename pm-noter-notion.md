@@ -75,6 +75,10 @@ modified: '2021-07-11T08:26:43.528Z'
   - https://github.com/phryneas/remark-typescript-tools
   - https://github.com/shikijs/twoslash
   - 两种方案需要选择取舍
+# experimental
+- notion like block editor
+- roam like editor with bidirectional links，国内思源笔记
+- remotion
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记生成的html中
 

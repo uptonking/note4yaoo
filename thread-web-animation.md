@@ -19,7 +19,9 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## One of my endlessly repeated animation tips is 'let easing do the heavy lifting for you' 
+- https://twitter.com/cassiecodes/status/1418863372112736258
+  - i.e. don't write unnecessary code if you can use an easing curve instead. 
 
 - ## I love react-spring, but does anyone know of anything with a smaller bundle size? 
 - https://twitter.com/tannerlinsley/status/1415457202794500097

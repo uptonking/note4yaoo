@@ -35,7 +35,14 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## If you're working on a tool that writes files to disk (like a compiler, babel/postcss/etc), it would be cool if there were an option to say: "Don't write to disk if the file is unchanged."
+- https://twitter.com/kentcdodds/status/1418719232271929346
+  - Otherwise, filewatchers will trigger even when there weren't content changes
+- I think this makes more sense to be the filewatcher’s responsibility? The watcher could be configured in one place and just compare file hashes, otherwise you’d have to configure every tool
+- The filewatcher having the cache for what has changed or not makes more sense. From a tools perspective it is **always cheaper to write rather than keep a cache or read before write**.
+- Having trouble seeing why this just wouldn’t always be the behavior?
+  - I think it’s because writing straight to the fs is just easier to implement. To implement the correct behaviour you’d have to perform an atomic write (write to new file and rename).
+
 
 - ## There are still users browsing with a Chrome 37 engine (7 years ago), 
 - https://twitter.com/firt/status/1415645416276860929

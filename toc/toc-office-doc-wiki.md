@@ -84,7 +84,6 @@ modified: '2021-07-23T08:38:53.805Z'
   - To facilitate this I had to to make a new API server along with some Javascript tweaks
   - https://github.com/hackerkid/Wikifeedia-backend /php
 # github-gdrive-file-manager
-
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
@@ -135,6 +134,11 @@ modified: '2021-07-23T08:38:53.805Z'
     - Traditional upload examples (upload to your own server): java, nodejs, php, python
     - Fine Uploader S3/Azure examples
 
+- https://github.com/psolom/RichFilemanager  /archived
+  - http://fm.devale.pro/
+  - Rich Filemanager is an open-source file manager
+  - Filemanager is designed to interact with a number of programming languages via connectors. 
+  - The actual connectors are: PHP, Java, ASHX, ASP, NodeJs & Python 3 Flask.
 
 - https://github.com/joni2back/react-filemanager
   - https://joni2back.github.io/react-filemanager/
@@ -149,7 +153,6 @@ modified: '2021-07-23T08:38:53.805Z'
 - https://github.com/dailykit/react-file-manager
   - A file manager built in ReactJs
   - 依赖apollo
-
 
 - https://github.com/datahuborg/datahub /archived
   - https://datahub.csail.mit.edu/

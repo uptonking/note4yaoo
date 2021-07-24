@@ -12,7 +12,15 @@ modified: '2021-06-10T06:44:27.120Z'
 
 ## 
 
-## 
+## [For a complex #reactjs component like this one from Mapbox: would you rather it accept separate callback props for each of its events or a single prop (ie `onEvent={handleEvent}` ) where you could switch off of the event name?](https://twitter.com/steveruizok/status/1418853604866265091)
+
+  - I’m not sure myself. I guess if the first pattern is going to just feed back into a reducer or something, then in the second pattern you could just pass the dispatch?
+- I prefer many props for most components as they are easier to type in typescript. 
+  - An alternate pattern which is useful when you need to often add and remove event handlers for performance when using it is to do what gsap/browsers do: `ref.addEventListener(“eventName”, handler)`.
+- Individual props. I assume that the event changes subtly per callback? If it were one callback you'd need to narrow the event type down in Typescript, which hurts discoverability.
+  - Yeah, I’m imagining that the implementation would need tons of function overrides to work right
+- I like that they are split, since it makes it easier to split functions by concern.
+But I also see the counter-argument that with one entry point you could feed it into a reducer or statemachine facade.
 
 ## [Does React always check the whole tree?](https://stackoverflow.com/questions/34696816)
 

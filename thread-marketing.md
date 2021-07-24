@@ -14,7 +14,16 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## Cloudflare 官网罕见发文，抨击亚马逊云服务出口带宽太贵。
+- https://twitter.com/ruanyf/status/1418792375405613056
+  - 它给了一张详细表格，列出它拿到的带宽批发价与亚马逊的零售价之间的对比。
+  - 结论就是，在美国，亚马逊的带宽价格是批发价的80倍。
+- 还好吧，微软的更贵，一个IP每月都好几刀呢
+- 亚马逊太黑, 贵不说, 还很鸡贼, 很多扣费项目藏的很深, 就算不用了, 也还在偷偷的扣着你的钱.
+- cf自己搞个云吧，已经白嫖它的proxy很久了，如果不是它的proxy，我的翻墙服务器需要经常更换。所以很想补偿一下这样的良心厂家。
+- 真得贵得离谱，比do/linode贵太多了，和我用的cc家小鸡$3有5000G就更夸张了
+- 服务器资源卖的便宜，赚你流量钱
+- 大陆的流量价格是AWS的3倍以上。
 
 - ## One thing I've consistently had to relearn in developer marketing:"Talk benefits, not features" doesn't work!
 - https://twitter.com/swyx/status/1361279902889086980

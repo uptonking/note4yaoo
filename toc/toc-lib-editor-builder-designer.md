@@ -38,11 +38,12 @@ modified: '2020-11-17T13:38:19.107Z'
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
   - 依赖underscore，backbone，codemirror
-- react-page /LGPLv3/8.2kStar/202008/ts
+- react-page /MIT/8.2kStar/202008/ts
   - https://github.com/react-page/react-page
   - https://react-page.github.io/
   - 画布编辑区全部基于dom实现
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
+  - LGPLv3 to MIT(202010)
 - react-ui-builder-editor /GPL/12Star/202006
   - https://github.com/react-ui-builder/react-ui-builder-editor
   - An online editor of the Interactive Platform for React Component Libraries

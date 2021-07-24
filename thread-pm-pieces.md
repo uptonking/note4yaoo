@@ -14,7 +14,18 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## A change I don't know if all developers are ready for is that over time, most/all code will be purely "boring" business logic at most companies, with the non business logic increasingly factored out into pure SaaS companies
+- https://twitter.com/fulhack/status/1418588422990614535
+- This has become so clear to me after joining Wikimedia, where we (except with rare exceptions) don’t use SaaS products or third party vendors. 
+  - For privacy and transparency reasons, we are open source all the way down to our own servers in data center.
+  - We don’t buy our way out of problems, we engineer our way out. 
+  - It comes with its own costs and benefits.
+- I think that is part of the reason Google has not created any new breakthrough product since Chrome (everything big since then has been acquired). Their moat was hardcore CS skills and that has been commoditized to a large degree.
+  - My conspiracy theory is they mostly try to create a talent monopoly and employ them on fake projects to prevent anyone from creating a competitor
+- With low-code apps like @getLogicLoop even business logic will be in the hands of operators and analysts in SaaS tools
+  - I am very skeptical of this. Once you get past a certain amount of "logic", code is the best way to express that logic
+- IMO, All the "boring" business logic will be converted from a rule-based logic to ML-driven in all the SaaS companies. If a company keeps writing "boring" business logic, it's a high signal to leave the company.
+  - Correction: I should've used all the business rules will be automated instead of ML-driven.
 
 - ## The worst part of open source
 - https://twitter.com/devongovett/status/1417867860605497347

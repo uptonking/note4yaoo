@@ -72,7 +72,6 @@ modified: '2021-05-14T15:04:42.225Z'
   - https://sortablejs.github.io/sortablejs/
   - a JS library for reorderable drag-and-drop lists.
   - You can use any element for the list and its elements, not just ul/li
-
 # popular
 
 ## viz
@@ -257,9 +256,7 @@ modified: '2021-05-14T15:04:42.225Z'
 - https://github.com/Leaflet/Leaflet
   - /29kStar/BSD/202009/js
   - JavaScript library for mobile-friendly interactive maps
-
 # js-repos
-
 - https://github.com/axios/axios
   - Promise based HTTP client for the browser and node.js
 - https://github.com/PanJiaChen/vue-element-admin

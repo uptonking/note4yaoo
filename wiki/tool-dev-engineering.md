@@ -11,9 +11,7 @@ modified: '2020-12-08T14:06:06.985Z'
 
 - build or serve
   - esbuild, wmr
-
 # image
-
 - OpenSeadragon /2.1kStar/BSD/202105/js
   - https://github.com/openseadragon/openseadragon
   - http://openseadragon.github.io/
@@ -25,14 +23,10 @@ modified: '2020-12-08T14:06:06.985Z'
   - https://projectmirador.org/
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/
   - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
-
 # compile
-
 - https://github.com/nodejs/node-gyp
   - node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js
-
 # test
-
 - https://github.com/YMFE/yapi
   - /18.1kStar/Apache2/202010
   - 依赖mongodb、axios、json5、jsonwebtoken、koa、markdown-it、mockjs
@@ -44,26 +38,29 @@ modified: '2020-12-08T14:06:06.985Z'
     - 支持 postman, har, swagger 数据导入
     - 免费开源，内网部署
   - [开发不活跃，YApi开源项目作者，目前在美团优选工作](https://github.com/YMFE/yapi/issues/1173)
-- https://github.com/thx/rap2-delos
+- RAP 阿里
+  - https://github.com/thx/rap2-delos
   - /6.4kStar/MIT/202009
-  - 依赖Koa、MySQL、react、@material-ui/core、chart.js、codemirror、formik、jquery、react-redux
+  - 依赖Koa、MySQL
+  - https://github.com/thx/rap2-dolores
+  - 依赖react、@material-ui/core、chart.js、codemirror、formik、jquery、react-redux
   - 阿里妈妈前端团队出品的开源接口管理工具RAP第二代
-  - 前端repo
-    - https://github.com/thx/rap2-dolores
-
+- https://github.com/NEIAPI/nei
+  - https://nei.netease.com/
+  - NEI 网易接口管理平台 源代码
+  - 前端依赖：网易自研开源nej、regularjs
+  - 后端依赖：koa、mysql、redis、mongodb
+- https://github.com/trueleaf/moyu
+  - 基于 Vue 和 Electron 的在线协同api接口管理工具。
+  - 接口文档管理工具、接口工具、接口文档、api文档、api工具、快乐摸鱼
 # database-manager
-
 - https://github.com/405go/pdman
   - 开源免费的数据库模型建模工具
   - 是PowerDesigner之外，更好的免费的替代方案
-
 # site
-
 - https://github.com/jbake-org/jbake
   - Java based open source static site/blog generator
-
 # frontend
-
 - webpack
   - https://github.com/JinJieTan/mini-webpack
   - https://github.com/dykily/simple_webpack
@@ -73,9 +70,7 @@ modified: '2020-12-08T14:06:06.985Z'
   - online diagramming tool
 - https://github.com/evolus/pencil
   - tool for making diagrams and GUI prototyping
-
 # java
-
 - https://github.com/alibaba/arthas
   - Alibaba Java Diagnostic Tool
 - https://github.com/RohitAwate/Everest

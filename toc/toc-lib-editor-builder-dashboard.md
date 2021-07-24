@@ -9,7 +9,7 @@ modified: '2021-01-08T11:48:16.590Z'
 - guide
   - 使用场景包括控制台、个人设置、数据统计...
   - 流行的dashboard大多是基于bootstrap/tailwindui等基础组件库
-  - 建议深入一个静态的css dashboard
+  - 深入一个基于css实现的和一个基于框架实现的dashboard
   - dashboard中的内容与业务场景紧密相关，一般要考虑内容布局
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
 
@@ -18,25 +18,27 @@ modified: '2021-01-08T11:48:16.590Z'
   - 海致bdp的仪表板，白色主题
   - github like cloud drive；百度网盘
   - 飞书控制台；语雀工作台、知识空间；confluence spaces
-  - [觅道文档 云笔记、云文档、知识管理私有化部署方案](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
+  - [觅道文档: 云笔记、云文档、知识管理私有化部署方案](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
+  - [思源笔记: 笔记本文件夹下 .sy 后缀的文件用于保存文档数据，数据格式为 JSON](https://b3log.org/siyuan/download.html)
 
 - ref
+  - sleek左侧面板收缩；volt右侧浮动面板
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
     - css only dashboard
     - pure css dashboard
     - dashboard ui
-# popular-dashboard
+# bootstrap-dashboard
 - CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
   - https://github.com/coreui/coreui-free-bootstrap-admin-template
     - https://coreui.io/demo/free/
     - free bootstrap admin template
+    - 左边侧边栏能折叠到只显示图标，右边没有浮动面板
   - https://github.com/coreui/coreui
     - https://coreui.io/docs/getting-started/theming/
     - 依赖perfect-scrollbar, @popperjs/core，免费版未提供其他theme
-    - UI Kit built on top of Bootstrap 4 and plain JavaScript without any additional libraries like jQuery
+    - UI Kit built on top of Bootstrap 5 and plain JavaScript without any additional libraries like jQuery
     - CoreUI is the fastest way to build modern dashboard
-    - Several of our components need the use of JavaScript to function. 
-      - Specifically, they need our JavaScript plugins and Popper.js
+    - Several of our components need the use of JavaScript to function. Specifically, they need our JavaScript plugins and Popper.js
   - more
     - CoreUI offers 6 versions: Bootstrap, Angular, Laravel, React.js, Vue.js, and Vue.js + Laravel.
     - CoreUI PRO Bootstrap Admin Templates
@@ -48,7 +50,11 @@ modified: '2021-01-08T11:48:16.590Z'
 - CoreUI Free React Admin /3.1kStar/MIT/202012/js
   - https://github.com/coreui/coreui-free-react-admin-template
     - http://coreui.io/react/
-    - React admin template based on Bootstrap 4
+    - https://coreui.io/react/demo/
+    - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
+    - 但源码还未完全实现两侧功能
+    - 依赖redux、chart.js；redux易去除
+    - React admin template based on Bootstrap 5
   - https://github.com/coreui/coreui-react
     - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
     - 用react hooks重写实现组件，只复用css
@@ -64,16 +70,20 @@ modified: '2021-01-08T11:48:16.590Z'
   - AdminLTE.io just opened a new premium templates page
   - https://github.com/ColorlibHQ/gentelella /19.8kStar/MIT/202008
     - built with bootstrap 4 and jquery plugins
+- https://github.com/DucThanhNguyen/MaterialAdminLTE
+  - https://ducthanhnguyen.github.io/MaterialAdminLTE
+  - Material Design for AdminLTE
+  - Based on Bootstrap 4.4 framework and also the JS/jQuery plugin. 
 - https://github.com/pattisahusiwa/react-lte
   - https://pattisahusiwa.github.io/react-lte
   - AdminLTE v3 template for ReactJS
-  - 右侧配置侧边栏未实现
-- https://github.com/DucThanhNguyen/MaterialAdminLTE
-  - Material Design for AdminLTE
+  - 左边侧边栏能折叠到只显示图标，右侧配置侧边栏未实现
+  - 依赖reactstrap、bootstrap4
 - https://github.com/erdkse/adminlte-3-react
   - https://adminlte-3-react-sepia.vercel.app/
   - React 17.0.2 start-up project with AdminLTE 3.1.0 template
   - 只实现了dashboard、profile两个页面，未实现右侧配置项
+  - 依赖redux、formik
   - https://github.com/fmomoreira/adminLTE-e-React
     - https://admin-lte-e-react.vercel.app/
     - 只实现了dashboard、profile两个页面，未实现右侧配置项
@@ -90,45 +100,53 @@ modified: '2021-01-08T11:48:16.590Z'
     - https://github.com/tabler/tabler-react
     - https://github.com/tabler/tabler-angular
     - https://github.com/tabler/tabler-icons
-- Shards Dashboard UI Kit /1.1kStar/MIT/201809
+- Shards Dashboard UI Kit /1.1kStar/MIT/201809/archived
   - https://github.com/DesignRevision/shards-dashboard
-  - Bootstrap 4 admin dashboard templates pack.
-  - Shards React /562Star/MIT/201902
-    - https://github.com/DesignRevision/shards-react
-      - https://designrevision.com/downloads/shards-react/
-      - modern React UI kit based on Shards.
-    - https://github.com/designrevision/shards-ui /1.7kStar/201907
-      - https://designrevision.com/downloads/shards/
-      - Bootstrap 4 UI kit packed with extra templates and components
+    - https://designrevision.com/demo/shards-dashboard-lite/
+    - Bootstrap 4 admin dashboard templates pack.
+  - https://github.com/DesignRevision/shards-dashboard-react
+    - Built using Shards React Chart.js Flux No UI Slider React Datepicker Quill
+  - https://github.com/DesignRevision/shards-react
+    - https://designrevision.com/downloads/shards-react/
+    - modern React UI kit based on Shards.
+  - https://github.com/designrevision/shards-ui
+    - Bootstrap 4 UI kit packed with extra templates and components
 
 - https://github.com/tafcoder/sleek-dashboard
   - https://sleek.tafcoder.com/
+  - 依赖bootstrap4、jquery、simplebar、chart.js、google.maps；自己实现了大多数js，依赖较少
   - 样式符合最新流行风格，dashboard卡片上全是图表
   - 提供了2个dashboard：ecommerce、analytics；主题色靛蓝
+  - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
+  - 没有周边项目
   - Free Bootstrap 4 Admin Template and UI Kit
 - https://github.com/moesaid/cleopatra
   - https://moesaid.github.io/cleopatra/
-  - 提供了2个dashboard：ecommerce、analytics；主题色绿色
+  - 提供了2个dashboard：ecommerce、analytics；/主题绿色
+  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
 - https://github.com/stisla/stisla
   - https://demo.getstisla.com/
-  - 主题色靛蓝
+  - /主题靛蓝
+  - 左边侧边栏能折叠到只显示图标，右边没有浮动面板
 - https://github.com/puikinsh/Adminator-admin-dashboard
-  - Bootstrap 4 Admin Template /白色主题
+  - https://colorlib.com/polygon/adminator/index.html
+  - 左边侧边栏能折叠到只显示图标，右边没有浮动面板
+  - Bootstrap 4 Admin Template /主题白色
 - https://github.com/creativetimofficial/material-dashboard
   - Bootstrap 4 Material Design Admin
   - This product came as a result after we released our successful Material Kit
 - https://github.com/modularcode/modular-admin-html
   - https://modularcode.io/modular-admin-html/
+  - https://github.com/modularcode/modular-admin-react
   - Free Bootstrap 4 Dashboard Theme HTML version
   - Each non-underscored folder represents a single component module.
-  - wrap each component's script in jQuery `$(function() { })`；
   - 使用了handlebars模版
-  - https://github.com/modularcode/modular-admin-react
-- https://github.com/flatlogic/sing-app
+- https://github.com/flatlogic/react-dashboard
+  - https://github.com/flatlogic/sing-app
   - https://demo.flatlogic.com/sing-app/documentation/
   - high quality UI built with Bootstrap 4.5
   - 提供了多个版本，但收费处也多
-# css dashboard lite
+# css dashboard
 - https://codepen.io/TurkAysenur/pen/ZEpxeYm
   - theming-黑色，macOS风格，可切换明暗主题
   - 依赖jquery，不依赖bootstrap
@@ -187,40 +205,52 @@ modified: '2021-01-08T11:48:16.590Z'
 
 - creativetim
   - https://github.com/creativetimofficial/argon-dashboard
-    - Dashboard for Bootstrap 4.
     - https://github.com/creativetimofficial/argon-dashboard-react
+    - https://demos.creative-tim.com/argon-dashboard-react/
+    - Dashboard for Bootstrap 4.
   - https://github.com/creativetimofficial/now-ui-dashboard-react
 # admin dashboard
-- Dashboard UI kit /28.2kStar/MIT/202005/ts/react
+- Dashboard UI kit /28.2kStar/MIT/202005/ts/paid
   - https://github.com/march08/dashboard-ui-kit
   - https://developer.dashboard-ui.com/docs/react/installation
   - https://preview.dashboard-ui.com/docs/react
-  - 示例页面非常丰富
+  - https://dashboard-ui.com/
+  - 3.0版本需付费，但示例页面非常丰富，可参考布局设计
   - React UI components for rapid development.
   - The components are developed with Bootstrap in mind 
     - this doesn't mean that you need bootstrap to run the application, 
     - but if you are used to bootstrap, you can freely use it 
     - (however it's not recommended to use the JS part of the Bootstrap).
-- Square React Dashboard /59Star/MIT/2020009/白色主题
+- Square React Dashboard /59Star/MIT/2020009/类似看板
   - https://github.com/heysafronov/square-react-dashboard
   - https://heysafronov.github.io/square-react-dashboard/dist/#/login/
   - Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components
   - No create-react-app, classes react components, Bootstrap and jQuery.
   - use React Hooks, Redux Thunk, axios
+  - Using Firebase as simple backend.
+  - https://github.com/heysafronov/fogga-kanban
 
-- https://github.com/Raathigesh/dazzle
+- https://github.com/Raathigesh/dazzle  /archived
   - http://raathigesh.com/dazzle
   - a library for building dashboards with React JS. 
   - Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them.
   - Dazzle uses react-dnd.
 - https://github.com/codaxy/cxjs
   - https://cxjs.io/
-  - JS UI framework for admin and dashboard applications with ready to use grid, form and chart components.
-  - CxJS uses React for DOM manipulation 
+  - https://cxjs.io/demos
+  - 样式陈旧
+  - UI framework for admin and dashboard applications
+  - CxJS uses React (or a React compatible library like Preact) for DOM manipulation and offers many high-level, UI related, features on top of it. 
+
 - https://github.com/borakilicoglu/nucleo
+  - https://nucleo.netlify.app/
+  - 依赖redux-thunk、jsonwebtoken、material-ui
+  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
+  - 样式友好
   - Admin template and Starter project for React
 - https://github.com/androidneha/mern-admin-panel
   - Admin-panel using ReactJs, ExpressJs, NodeJs, MongoDB and Bootstrap
+  - 样式陈旧
 # kanban
 - https://github.com/riktar/jkanban /630Star/202012
   - https://www.riccardotartaglia.it/jkanban/
@@ -282,29 +312,29 @@ modified: '2021-01-08T11:48:16.590Z'
   - Core UI templates for InfyOm Laravel Generator
 - https://github.com/app-generator/flask-dashboard-coreui
   - Admin dashboard generated by AppSeed in Flask Framework.
-# react-dashboard-admin
+# react-dashboard
 - https://github.com/llorentegerman/react-admin-dashboard
   - https://llorentegerman.github.io/react-admin-dashboard/
   - Building a UI from scratch with ReactJS
   - 依赖 react-router、react-burger-menu、simple-flexbox、react-collapsible-content
   - 只实现了仪表板骨架，功能太少
-  - 不支持手动切换左侧侧边栏，右边没有浮动面板
+  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
 
 - https://github.com/themesberg/volt-react-dashboard
   - https://demo.themesberg.com/volt-react-dashboard/#/dashboard/overview
-  - 依赖 @themesberg/react-bootstrap.v1.4、react-router、bootstrap5、react-chartist、react-live、simplebar(scrollbar)
+  - /372Star/MIT/202102/js
+  - 依赖 bootstrap5、@themesberg/react-bootstrap.v1.4、react-router、chartist、react-live、simplebar(scrollbar) 
   - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
-  - 白色主题，dashboard + components + pages
+  - 主题白色，dashboard + components + pages
   - Volt React is an extension of the popular react-bootstrap library and it is based on Bootstrap 5.
-  - https://github.com/themesberg/volt-bootstrap-5-dashboard
-    - 与react版体验相同
-
-- https://github.com/codedthemes/berry-free-react-admin-template
-  - free(MIT): https://berrydashboard.io/free
-  - pro: https://berrydashboard.io/dashboard/default
-  - 依赖react-redux、react-router、emotion11、material-ui5、apexcharts、formik、framer-motion
-  - 样式超级友好的仪表板
-  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
+- https://github.com/themesberg/volt-bootstrap-5-dashboard
+  - https://demo.themesberg.com/volt/pages/dashboard/dashboard.html
+  - /2.1kStar/MIT/202107/scss
+  - 依赖bootstrap5、popperjs、chartist、simplebar、sweetalert2
+  - 与react版体验相同
+- https://github.com/creativetimofficial/light-bootstrap-dashboard-react
+  - https://demos.creative-tim.com/light-bootstrap-dashboard-react/
+  - 依赖react-bootstrap，chartist
 
 - https://github.com/0wczar/airframe-react
   - http://dashboards.webkom.co/react/airframe/
@@ -313,11 +343,22 @@ modified: '2021-01-08T11:48:16.590Z'
   - Dashboard/Admin/Analytics template that works great on any smartphone, tablet or desktop.
   - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
   - 提供了很多版本，如angular、jquery、vue
-  - 样式一般般
+- https://github.com/NiceDash/Vibe
+  - https://vibe.nicedash.com/
+  - React.js dashboard built with Bootstrap 4
+  - 依赖reactstrap、chart.js
+  - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动面板
 
+- https://github.com/codedthemes/berry-free-react-admin-template
+  - free(MIT): https://berrydashboard.io/free
+  - pro: https://berrydashboard.io/dashboard/default
+  - 依赖react-redux、react-router、material-ui.v5、emotion11、apexcharts、formik、framer-motion
+  - 样式超级友好的仪表板
+  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
 - https://github.com/minimal-ui-kit/material-kit-react
   - https://minimal-kit-react.vercel.app/
   - 右侧没有浮动面板，样式超级友好，但没有正式感
+  - 依赖material-ui.v5、emotion、apexcharts、faker、formik、framer-motion、react-router-dom.v6
   - Dashboard made with Material UI's components, create-react-app
   - We also have a pro version
 - https://github.com/modularcode/modular-admin-react
@@ -334,9 +375,26 @@ modified: '2021-01-08T11:48:16.590Z'
   - Customizable personal dashboard and startpage
   - 可添加各种卡片
 
+- https://github.com/estevanmaito/windmill-dashboard-react
+  - https://windmill-dashboard-react.vercel.app/app/dashboard
+  - 依赖 @windmill/react-ui、chart.js、faker
+  - 样式简洁
+  -  A multi theme, completely accessible dashboard.
+
 - https://htmlstream.com/front-dashboard/index.html
   - https://htmlstream.com/templates/front-dashboard/
   - 源码需付费，白色主题，样式友好，右侧是可勾选配置项的浮动sidebar
+
+- more-react-dashboard
+  - https://github.com/flatlogic/light-blue-react-template
+    - admin dashboard template built with React and Bootstrap 4
+  - https://github.com/flatlogic/one-react-template
+    - admin dashboard template built with React and Bootstrap 4.
+  - https://github.com/darekkay/dashboard
+    - 非标准dashboard，简单卡片
+  - https://github.com/ofekashery/react-dashboard-design
+    - 依赖react、next10、@geist-ui/react
+    - 非标准dashboard，简单卡片文字，样式简洁；代码量很小
 
 ## antd
 
@@ -358,7 +416,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - 模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
 - https://github.com/sunnut/react-easy-start
   - A lightweight ant-design-pro based on create-react-app.
-  - 依赖 redux、react-router4、antd4、react-intl、restify
+  - 依赖redux、react-router4、antd4、react-intl、restify
   - 既然我无法放弃 Ant Design Pro 的 UI，那干脆模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
 
 - react-admin /Apache2/151Star/2020008
@@ -399,29 +457,16 @@ modified: '2021-01-08T11:48:16.590Z'
   - Redux/Redux Thunk + React Router + Ant Design.
 - https://github.com/codepandy/react-project-template
   - react-router + Redux + redux-saga + axios + ant design + mocker-api 
-
-- list-antd
-  - https://github.com/yezihaohao/react-admin
-  - https://github.com/WinmezzZ/react-antd-admin
-- list-react-dashboard
-  - https://github.com/flatlogic/light-blue-react-template
-    - admin dashboard template built with React and Bootstrap 4
-  - https://github.com/flatlogic/one-react-template
-    - admin dashboard template built with React and Bootstrap 4.
-  - https://github.com/flatlogic/react-dashboard
-    - isomorphic admin dashboard template (React.js, Bootstrap, Node.js, GraphQL, React Router, Babel, Webpack, Browsersync)
-  - https://github.com/DesignRevision/shards-dashboard-react
-    - Built using Shards React Chart.js Flux No UI Slider React Datepicker Quill
-  - https://github.com/zuiidea/antd-admin
-  - https://github.com/darekkay/dashboard
-  - https://github.com/ofekashery/react-dashboard-design
-    - 依赖react、next10、@geist-ui/react
-    - 非标准dashboard，简单卡片文字，样式简洁；代码量很小
+- https://github.com/yezihaohao/react-admin
+  - redux、recharts
+- https://github.com/WinmezzZ/react-antd-admin
+  - https://react-admin.hyyar.com/dashboard
+  - 依赖rtk、antd4、emotion、driver.js、recharts、mockjs
 # more-dashboard
-- list-bootstrap-dashboard
-  - https://github.com/ColorlibHQ/gentelella
-  - https://github.com/coreui/coreui-free-react-admin-template
-  - https://github.com/wrappixel/xtreme-admin-lite
+- https://github.com/wrappixel/xtreme-admin-lite
+  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
+  - 提供了bootstrap版、react版、angular版
+  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
 
 - vue-element-admin /MIT/58.3kStar/202007/vue
   - https://github.com/PanJiaChen/vue-element-admin
@@ -440,4 +485,9 @@ modified: '2021-01-08T11:48:16.590Z'
   - 样式基于tailwindcss
 
 - https://github.com/ercumentlacin/Social-media-dashboard-with-theme-switcher
-  - 基于react实现Social media dashboard with theme switcher 
+  - 基于react实现Social media dashboard with theme switcher；过于简单
+
+- https://github.com/cruip/tailwind-dashboard-template
+  - https://mosaic.cruip.com/
+  - 符合tailwindui的风格，白色主题
+  - a responsive dashboard template built on top of TailwindCSS and fully coded in React

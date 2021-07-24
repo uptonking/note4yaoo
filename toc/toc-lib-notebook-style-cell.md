@@ -14,6 +14,7 @@ modified: '2021-05-13T16:08:15.067Z'
 - https://github.com/ottomatica/docable-notebooks
   - https://docable.cloud/ottomatica/docable-examples/script.md
   - /286Star/Apache2/202105/js
+  - 依赖 turndown、express、jsdom
   - provide a literate programming environments which works great for writing and publishing interactive tutorials
   - features
     - Script cells
@@ -24,7 +25,6 @@ modified: '2021-05-13T16:08:15.067Z'
   - Authoring a Docable notebook is as easy as writing a Markdown file.
   - Docable's interactive cells are simply Markdown code block (```) with addition of a few json annotations
   - These code blocks are 100% compatible with GitHub's Markdown rendering and the JSON is simply ignored
-  - 依赖 turndown、express、jsdom
 
 - https://github.com/eventhorizn/react-ts-js-notebook
   - Building a javascript notebook (think Jupyter notebook) with React and TypeScript

@@ -33,7 +33,6 @@ modified: '2021-05-23T16:34:27.206Z'
   - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
 # why-datable
 - very few options for a data table with all the following 
-  - typescript
   - div-based css table, not html table element
   - framework agnostic
   - fully featured
@@ -82,11 +81,13 @@ modified: '2021-05-23T16:34:27.206Z'
 - keyboard-shortcuts
   - 列表使用jk键导航
 
-- experimental
-  - web worker
-  - apache arrow columnar format
-  - wasm vs webgpu
-# integrations
+## experimental
+
+- canvas based data-grid/table
+- web worker
+- apache-arrow columnar format vs pandas-dataframe
+- wasm vs webgpu
+# integrations/connections
 - excalidraw
 - remotion
   - 快速制作数据动态变化图/视频

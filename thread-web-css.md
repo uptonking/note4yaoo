@@ -26,7 +26,10 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## a pseudo selector either needs to be pointing from the root or a child, cannot be used in case of a direct child
+- https://twitter.com/adamwathan/status/1418882038082453506
+  - 伪类不能用作直接子元素
+  - ❌️ .prose > :where(ul > li > p)
 
 - ## Prevent unwanted Layout Shifts caused by Scrollbars with the `scrollbar-gutter` CSS property
 - https://www.bram.us/2021/07/23/prevent-unwanted-layout-shifts-caused-by-scrollbars-with-the-scrollbar-gutter-css-property/

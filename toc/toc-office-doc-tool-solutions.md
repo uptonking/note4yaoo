@@ -96,6 +96,10 @@ modified: '2021-07-21T18:07:43.056Z'
   - MrDoc是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
   - 后端：Python + Django
   - 前端：LayUI + JQuery
+- https://github.com/huangwei9527/Ink-wash-docs
+  - http://47.104.247.183:7001/
+  - 基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档
+  - 工作台|文档列表、文档编辑预览（支持：md， excel，html产品原型托管）、协作编辑、访问权限设置
 - https://github.com/amiroff/NextBook
   - https://next-book.vercel.app/
   - /53Star/MIT/202105/js
@@ -152,31 +156,46 @@ modified: '2021-07-21T18:07:43.056Z'
   - 支持doc、docx、ppt、pptx、xls、xlsx、zip、rar、mp4，mp3
   - 以及众多类文本如txt、html、xml、java、properties、sql、js、md、json、conf、ini、vue、php、py、bat、gitignore等文件在线预览
 
-- more-docs
-  - VuePress
-  - https://github.com/phenomic/phenomic
-    - DEPRECATED. Please use Next.js instead.
-  - https://github.com/egoist/docute
-    - Leveraging the power of Markdown and Vue.
-    - No build process, website is generated on the fly.
-  - https://github.com/mkdocs/mkdocs
-    - Project documentation with Markdown built with python
-  - https://github.com/star7th/showdoc
-    - 适合IT团队的在线API文档、技术文档工具
-    - 依赖PHP
-  - https://github.com/remorses/dokz
-    - https://dokz.site/
-    - /283Star/ISC/202010/ts
-    - 依赖@chakra-ui/core、@emotion/core、prism-react-renderer
-    - Effortless documentation with Next.js and MDX
-    - File based routing
+# more-doc-solutions
+- VuePress
+
+
+- https://github.com/phenomic/phenomic
+  - DEPRECATED. Please use Next.js instead.
+- https://github.com/egoist/docute
+  - Leveraging the power of Markdown and Vue.
+  - No build process, website is generated on the fly.
+- https://github.com/mkdocs/mkdocs
+  - Project documentation with Markdown built with python
+- https://github.com/star7th/showdoc
+  - https://www.showdoc.com.cn/
+  - https://www.showdoc.com.cn/demo/10
+  - 适合IT团队的在线API文档、技术文档工具
+  - 依赖PHP
+- https://github.com/remorses/dokz
+  - https://dokz.site/
+  - /283Star/ISC/202010/ts
+  - 依赖@chakra-ui/core、@emotion/core、prism-react-renderer
+  - Effortless documentation with Next.js and MDX
+  - File based routing
 - hosting-docs
-  - https://zeroheight.com/
-    - Create beautiful living styleguides and document all your design system resources in one place
+- https://zeroheight.com/
+  - Create beautiful living styleguides and document all your design system resources in one place
 - https://github.com/jashkenas/docco
   - http://ashkenas.com/docco/
   - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
   - It produces an HTML document that displays your comments intermingled with your code. 
+- https://github.com/mindoc-org/mindoc
+  - Golang实现的基于beego框架的接口在线文档管理系统
+- https://github.com/TruthHun/BookStack
+  - 基于MinDoc，使用Beego开发的在线文档管理系统，功能类似Gitbook和看云
+- https://github.com/phachon/mm-wiki
+  - 企业知识分享与团队协同软件
+  - 依赖go
+- https://github.com/mylxsw/wizard
+  - 开源的文档管理工具，支持Markdown/Swagger/Table类型的文档。
+  - 依赖php
+
 # examples
 - ## docusaurus-examples
 - https://github.com/ThinkBucket/docsite

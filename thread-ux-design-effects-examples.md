@@ -19,7 +19,8 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## 奥运图标中的蓝色小人进行各种运动
+- https://twitter.com/hashflagsio/status/1418815059661410304
 
 - ## Plockle now supports hand tracking! I've also decided to open source my hand tracking module
 - https://twitter.com/CROEWENS/status/1411746127418888193

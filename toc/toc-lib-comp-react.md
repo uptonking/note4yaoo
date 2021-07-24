@@ -101,10 +101,11 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/reactstrap/reactstrap
   - https://reactstrap.github.io/
   - Simple React Bootstrap 4 components 
-- react-page /LGPLv3/7kStar/201908/ts
+- react-page /MIT/7kStar/201908/ts
   - https://github.com/react-page/react-page
   - https://ory-editor.aeneas.io/
   - highly customizable content editor for the browser
+  - LGPLv3 to MIT(202010)
 - react-content-loader  /MIT/7kStar/201908/ts
   - https://github.com/danilowoz/react-content-loader
   - http://danilowoz.com/create-content-loader/

@@ -28,6 +28,14 @@ modified: '2021-04-21T15:01:12.882Z'
   - Yeah there's some experimental code in Popmotion from my hacking around.if we're going off-thread I'd rather a very low level, Reanimated 1-style API to start
 - Great work! Such a shame there's no perfromant physics animation API baked into the platform.
 - Interesting. WAAPI is great because literally no work is happening on the main thread. Repeatedly setting currentTime on the main thread looks no different from just using JS for everything. Why would I want to do it this way?
+
+
+- ## The Math behind animations is a new series that explores the simple and yet powerful mathematical tools that are used in everyday apps. 
+- https://twitter.com/wcandillon/status/1418810474045583366
+  - 动画中的数学，以react native动画为例，
+  - 动画示例做得很棒
+
+
 # pieces
 - ## 
 

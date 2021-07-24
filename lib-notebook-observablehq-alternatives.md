@@ -73,6 +73,20 @@ modified: '2021-05-14T14:46:37.026Z'
 
 ## js-based-notebook
 
+- https://github.com/ottomatica/docable-notebooks
+  - https://docable.cloud/ottomatica/docable-examples/script.md
+  - /286Star/Apache2/202105/js
+  - 依赖 turndown、express、jsdom
+  - provide a literate programming environments which works great for writing and publishing interactive tutorials
+  - features
+    - Script cells
+    - Embedded Terminals
+    - File cells
+    - Multi-target: local, docker, ssh
+    - Embed your slides, YouTube video, and more
+  - Docable's interactive cells are simply Markdown code block (```) with addition of a few json annotations
+  - These code blocks are 100% compatible with GitHub's Markdown rendering and the JSON is simply ignored
+
 ## more-notebook
 
 - https://github.com/iodide-project/iodide
