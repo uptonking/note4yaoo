@@ -160,4 +160,47 @@ modified: '2021-07-23T08:38:53.805Z'
 
 - https://github.com/magentaLi/CloudDrive
   - 基于javaweb的仿照百度网盘做的小型云盘系统
-# more
+# more-files-manager
+- https://github.com/MrWangJustToDo/file-manager
+  - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
+  - 个人网盘，支持用户的登录、注册，文件/文件夹的新建、删除，文件的上传、下载、编辑、提交、预览、重命名、复制、回收、搜索
+  - https://github.com/MrWangJustToDo/requestModule
+    - 可能是后端的简单测试
+
+- https://github.com/imshubhamsingh/file-system-react
+  - 依赖redux、styled-components、formik
+  - File System UI in Web using react
+  - 样式友好，但功能简单；没有提供列表视图，只有平铺视图
+
+- https://github.com/xlzy520/nestdisk-be
+  - https://github.com/xlzy520/netdisk
+  - 网盘项目后端，Koa、mysql，功能：登录注册，加密，hash计算，文件分享，用户、文件管理。
+  - 网盘前端基于vue2、vuex、element-ui
+- more-基于node实现的网盘
+  - https://github.com/nijiayu0914/file_exchange_frontend
+  
+
+- https://github.com/huangshaomo/nodejs-express-mysql-bootstrap
+  - 一个基于NodeJS Express Bootstrap Mysql 个人博客系统，
+  - 前台包括文章展示，登录注册，评论、网盘系统等。
+  - 后台包括用户，登录，角色，系统管理等
+- https://github.com/270520006/zspdisk
+  - 仿百度网盘的一个项目，用到了layui+ssm+shiro
+- https://github.com/KingJin-web/kingcloud
+  - 基于Hadoop的网盘，spring-boot-data-jpa+vue+layui
+- more-基于java-spring实现的网盘
+  - https://github.com/DongyangHu/smile-disk
+  - https://github.com/asusAaron/XDrive
+  - https://github.com/zayvion/Floda-Drive
+  - https://github.com/Antony998/cloud
+  - https://github.com/heart14/heart-cloud
+  - https://github.com/WEIQ311/code-pan
+
+- https://github.com/Studio-42/elFinder
+  - 样式陈旧但经典
+  - file manager for web, written in JavaScript using jQuery and jQuery UI
+
+- https://github.com/caorushizi/oss-client
+  - 七牛云文件仿百度网盘文件夹管理，上传下载，删除。七牛云存储，七牛云图床。桌面应用程序 windows mac
+- https://github.com/chenhb23/lanzouyun-disk
+  - 蓝奏云网盘、客户端，界面美观。支持登录、大文件批量断点上传 / 下载、URL 解析，使用 electron 构建

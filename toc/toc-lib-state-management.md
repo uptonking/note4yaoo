@@ -26,6 +26,18 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/davidkpiano/xstate
   - https://xstate.js.org/docs/
   - JS and TS finite state machines and statecharts for the modern web.
+- state-designer /472Star/MIT/202107/ts
+  - https://github.com/steveruizok/state-designer
+  - https://state-designer.com/
+  - 主要用于自研的tldraw、perfect-freehand、globs.design
+  - library for managing the state of a user interface. 
+  - It prioritizes the design experience, making it easy to experiment with ideas, iterate on solutions, and communicate the final result.
+  - State Designer is heavily inspired by xstate. 
+  - Note that, unlike xstate, State Designer does not adhere to the scxml spec.
+  - Write state-charts in a simple declarative syntax.
+    - Create both global and local component states.
+    - Put simply, a statechart is a beefed up state machine.  
+    - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.

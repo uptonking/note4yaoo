@@ -7,8 +7,10 @@ modified: '2021-02-20T07:30:23.867Z'
 
 # thread-algs-usecase
 
-# pieces
+# guide
 
+- [Algorithm Visualizer](https://github.com/algorithm-visualizer/algorithm-visualizer) is an interactive online platform that visualizes algorithms from code.
+# pieces
 - ## 
 
 - ## Algorithm question (I have no idea). Given a rectangular plane and a set of rectangles on it, find the “nicest” place for a new rectangle with a given size. 

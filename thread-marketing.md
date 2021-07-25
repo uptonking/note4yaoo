@@ -12,7 +12,21 @@ modified: '2021-01-06T14:40:06.842Z'
 # pieces
 - ## 
 
-- ## 
+- ## I'm taking the rest of the year off to work on @tldraw full time. 
+- https://twitter.com/steveruizok/status/1419048412431933441
+  - Turns out there's a lot of enthusiasm for an open source hackable SVG-rendered drawing tool. 
+  - My goal is to get it the entire architecture open and toot tooting by the end of the year.
+- What do I mean by architecture? 
+  - I'm starting off with a slice-and-dice, separating the current Next.js app into a layered architecture that allows other folks to build on either the app or the renderer.
+- What about hackable? 
+  - The renderer (a React component) is "shape agnostic", meaning that it relies on the implementation to provide it with both the document and the tools to interpret the document. 
+  - This makes it *very* easy to modify existing shapes or add new ones.
+- The app layer is also going to be a NPM module: essentially the current @tldraw app published as a React component that you'll be able to embed it in any React project. 
+  - Control the document either through props or through an imperative API, respond to events—even theme it!
+  - The app layer will include a basic set of shapes and tools, just like @tldraw does now. 
+  - Want to experiment with a custom shape, or change the way things work? Smash that fork button and have a play.
+- The site (http://tldraw.com) is going to be just one example of how the component can be used. 
+  - Features such as file management, multiplayer collaboration, and cloud-backed documents can all be managed at this level.
 
 - ## Cloudflare 官网罕见发文，抨击亚马逊云服务出口带宽太贵。
 - https://twitter.com/ruanyf/status/1418792375405613056

@@ -19,11 +19,15 @@ modified: '2021-04-14T17:36:17.442Z'
 
 - react-bootstrap vs reactstrap
   - 差别很小，可以考虑更新频率是否支持bootstrap.v5，对自定义className的支持，对第三方主题的支持
+  - react-bootstrap(ts+hooks)依赖较多，但模块化解耦程度更高
+  - reactstrap(js+class/hooks)部分复杂组件如Modal/Tab还未迁移到hooks
+  - reactstrap的样式使用了cssModules
   - Both work in the same way, from the perspective of use
   - You can view both implementations, comparing a basic component as Button in the packages source code
     - Despite some differences such as the approach with the use of `prototype` that `reactstrap` implements, and specifically in this component, the handling of some additional props, in general, there are no significant differences between them.
   - ref
     - [Using Bootstrap in ReactJS: reactstrap or react-bootstrap?_202106](https://dev.to/cassiolacerda/using-bootstrap-in-reactjs-reactstrap-or-react-bootstrap-gng)
+    - [Why would you prefer ReactStrap over React Bootstrap or vice versa?__201906](https://twitter.com/_ooade/status/1143141483069005824)
 # codebase
 - 组件的基本结构
   - 根组件大多为Component，也有很多为Tag
@@ -82,3 +86,13 @@ modified: '2021-04-14T17:36:17.442Z'
   - React-Bootstrap only contains components that are present in vanilla Bootstrap. 
     - If functionality was removed from Bootstrap, then it was also removed from React-Bootstrap. 
 # pieces
+
+# [changelog of react-bootstrap](https://github.com/react-bootstrap/react-bootstrap/blob/master/CHANGELOG.md)
+
+- v2.0.0-alpha.0__202103
+  - RTL support
+  - add Offcanvas component
+  - components update
+
+- v1.4.0__202010
+  - carousel: re-implement with committed ref

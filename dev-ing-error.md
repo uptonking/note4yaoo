@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- sass-loader/dist/cjs.js): TypeError: this.getOptions is not a function
+  - sass-loader v11(2021-02-05): minimum supported webpack version is 5
+  - sass-loader v8.0 Breaking Changes
+    - move all sass (includePaths, importer, functions) options to the sassOptions option. 
+
 - Unhandled Rejection (ScriptExternalLoadError): Loading script failed.  
 (error: http://localhost:8000/mf-va_remoteEntry.js)
 while loading "./core-js" from webpack/container/reference/mf
