@@ -15,7 +15,16 @@ modified: '2021-05-14T15:06:05.773Z'
   - https://techforing-by-nafiur-reza.netlify.app/
   - 依赖react、bootstrap5、react-bootstrap.v1.6
   - 样式普通，但依赖少
+# crud
+- https://github.com/taniarascia/react-hooks
+  - https://taniarascia.github.io/react-hooks/
+  - [Build a CRUD App in React with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/)
+  - a simple CRUD app that can add, update, or delete users.
 
+- https://github.com/bezkoder/react-hooks-crud-web-api
+  - 教程示例丰富
+  - [React Hooks CRUD example with Axios and Web API](https://www.bezkoder.com/react-hooks-crud-axios-api/)
+  - [build a server api: Express, Sequelize & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
 # js-ts
 - https://github.com/timeoffthescheduler/server
   - Server Side Implementation of TimeOff TS, A Scheduler

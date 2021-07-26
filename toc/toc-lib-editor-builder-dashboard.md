@@ -8,10 +8,10 @@ modified: '2021-01-08T11:48:16.590Z'
 # toc-lib-editor-builder-dashboard
 - guide
   - 使用场景包括控制台、个人设置、数据统计...
-  - 流行的dashboard大多基于bootstrap/tailwindui等基础组件库
-  - 深入一个基于css实现的和一个基于框架实现的dashboard
-  - dashboard中的内容与业务场景紧密相关，一般要考虑内容布局
+  - 流行的dashboard大多基于bootstrap/tailwindui/material-ui/antd等基础组件库
+  - dashboard的设计与业务场景紧密相关，一次性居多，难以复用具体计算逻辑，要考虑根据业务和内容设计布局
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
+  - 深入一个基于css实现的和一个基于框架实现的dashboard
 
 - usecase示例
   - 案例集合示例demo-showcase，甚至可以参考 [doc ui kit pages](https://htmlstream.com/preview/docs-ui-kit/index.html)
@@ -19,39 +19,36 @@ modified: '2021-01-08T11:48:16.590Z'
   - github like cloud drive；百度网盘
   - 飞书控制台；语雀工作台、知识空间；confluence spaces
   - [觅道文档: 云笔记、云文档、知识管理私有化部署方案](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
-  - [思源笔记: 笔记本文件夹下 .sy 后缀的文件用于保存文档数据，数据格式为 JSON](https://b3log.org/siyuan/download.html)
+  - [思源笔记: 笔记本文件夹下 .sy后缀的文件用于保存文档数据，数据格式为JSON](https://b3log.org/siyuan/download.html)
 
 - 依赖react-bootstrap
-  - creativetimofficial: light-bootstrap-dashboard-react
-  - BootstrapDash: corona-react-free-admin-template、StarAdmin-Free-React-Admin-Template、Purple-React
+  - creativetimofficial: light-bootstrap-dashboard-react(右边有面板)
+  - BootstrapDash: Purple-React、StarAdmin-Free-React、corona-react
+  - codedthemes: datta-able-free-react-admin-template(左边可折叠)、app-generator/react-datta-able-dashboard
   - volt-react-dashboard
-  - app-generator/react-datta-able-dashboard
 
 - 依赖reactstrap
-  - creativetimofficial: now-ui-kit-react、argon-design-system-react、paper-kit-react、blk-design-system-react、black-dashboard-pro-react、argon-dashboard-react、paper-dashboard-react
   - airframe-react、Vibe
+  - creativetimofficial: argon-dashboard-react、black-dashboard-react(右边有面板)、now-ui-dashboard、paper-dashboard-2
+  - wrappixel: xtreme-react-lite(左边可折叠)、ample-react-lite
   - flatlogic/react-dashboard
   - uifort/bamburgh-react-admin-dashboard-reactstrap
 
 - 依赖material-ui
-  - creativetimofficial:material-kit-react、material-dashboard-react
-  - berry-free-react-admin-template
+  - creativetimofficial: material-dashboard-react、material-kit-react
+  - wrappixel: flexy-react-lite
+  - codedthemes/berry-free-react-admin-template
   - flatlogic/react-material-admin
 
-- fullstack-dashboard
-  - https://github.com/app-generator/react-datta-able-dashboard
-  - https://github.com/app-generator
-
 - ref
-  - 左侧边栏收缩可参考 airframe、coreui、sleek
-  - 右边浮动面板可参考 airframe、volt、light-bootstrap
-  - 仪表板的样式可参考 volt、soft-ui
-  - 仪表板baseline:  ant-design-pro、vue-element-admin、AdminLTE
+  - 左侧边栏收缩可参考  purple、airframe、xtream、coreui、sleek
+  - 右边浮动面板可参考  purple、airframe、light-bootstrap、black-dashboard
+  - 仪表板的样式可参考  purple、skydash、star-admin2、volt、flexy、soft-ui、mazer
+  - 仪表板baseline:   AdminLTE、ant-design-pro、vue-element-admin
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
     - css only dashboard
-    - pure css dashboard
     - dashboard ui
-# bootstrap-dashboard
+# popular-bootstrap-dashboard
 - AdminLTE /35.8kStar/MIT/202008
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/
@@ -83,7 +80,7 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/react-admin-lte/react-admin-lte
   - Admin LTE components built with React
 
-- tabler /22.6kStar/MIT/202101/dashboard布局不标准
+- tabler /22.6kStar/MIT/202101/非标准dashboard布局
   - https://github.com/tabler/tabler
   - https://tabler.io/
   - free HTML Dashboard UI Kit built on Bootstrap 4
@@ -120,13 +117,270 @@ modified: '2021-01-08T11:48:16.590Z'
   - 左边侧边栏不能折叠到只显示图标，右边没有
 - https://github.com/stisla/stisla
   - https://demo.getstisla.com/
-  - /主题靛蓝
-  - 样式友好；左边可折叠，右边没有
+  - /主题靛蓝；样式友好；左边可折叠，右边没有
 - https://github.com/puikinsh/Adminator-admin-dashboard
   - https://colorlib.com/polygon/adminator/index.html
   - /主题白色
   - 左边可折叠，右边没有
   - a responsive Bootstrap 5 Admin Template. 
+
+- Mazer Dashboard
+  - https://github.com/zuramai/mazer
+    - https://zuramai.github.io/mazer/demo/
+    - 依赖nunjucks模版、chart.js、apexcharts、popperjs、quill
+  - https://github.com/fachryansyah/react-mazer-ui
+    - 依赖bootstrap.v5、popperjs、react
+    - 只实现了部分组件，没有实现react版本dashboard主页，toy
+  - 样式符合最新流行风格；样式超级友好
+  - 左边不可折叠，右边没有
+  - Bootstrap 5 Admin Dashboard Template and Landing Page
+- https://github.com/zuramai/voler
+  - https://zuramai.github.io/voler/#
+  - 样式符合最新流行风格
+  - 左边不可折叠，右边没有
+  - Bootstrap 5 admin dashboard template
+
+- https://github.com/wrappixel/flexy-react-lite
+  - [free](https://www.wrappixel.com/demos/free-admin-templates/flexy-react-dashboard-lite/main/#/dashboards/dashboard1)
+  - https://github.com/wrappixel/flexy-bootstrap-lite
+  - 依赖material-ui.v5, emotion, apexcharts
+  - 样式符合最新流行风格，超级友好
+  - 左边不可折叠，右边没有
+- https://github.com/wrappixel/xtreme-react-lite
+  - https://wrappixel.com/demos/free-admin-templates/xtreme-reactadmin-lite/main/#/dashboard
+  - 依赖reactstrap.v8、history、chart.js
+  - 提供了bootstrap版、react版、angular版
+  - 左边可折叠，右边没有；样式还行
+  - 左边侧边栏fixed
+- https://github.com/wrappixel/xtreme-admin-lite
+  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
+  - 左边可折叠，右边没有
+- https://github.com/wrappixel/ample-react-lite
+  - https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/dashboard.html
+  - 左边可折叠，右边没有；和xtreme类似
+  - 左边侧边栏不能fixed
+- https://github.com/wrappixel/matrix-admin-bt5
+  - 左边可折叠；纯色块metro风格，样式普通
+
+- https://github.com/themekita/Atlantis-Lite
+  - [free](https://themekita.com/demo-atlantis-lite-bootstrap/livepreview/examples/demo1/)
+  - [pro](https://themekita.com/demo-atlantis-bootstrap/livepreview/examples/demo1/)
+  - 左边可折叠，右边有浮动面板可设置
+- https://github.com/uxcandy/Label-Free-Bootstrap-Admin-Template
+  - [free](https://uxcandy.co/demo/label-free/preview/demo_1/index.html)
+  - /白色主题；左边不可折叠，右边没有
+
+- https://github.com/StartBootstrap/startbootstrap-sb-admin
+  - https://startbootstrap.github.io/startbootstrap-sb-admin/
+- https://github.com/StartBootstrap/startbootstrap-sb-admin-2
+  - [free](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
+    - 左边可折叠，右边没有
+    - 没有实现react版本
+  - [pro](https://startbootstrap.com/previews/sb-admin-pro)
+    - 左边不可折叠，右边有
+
+- https://github.com/DashboardPack/architectui-react-theme-free
+  - [free](https://demo.dashboardpack.com/architectui-react-free/#/dashboards/basic)
+    - 左边可折叠，右边没有
+  - [pro](https://demo.dashboardpack.com/architectui-react-pro/#/dashboards/crm)
+    - 左边可折叠，右边有
+  - 依赖react-bootstrap、reactstrap、chart.js、faker、rc-motion、react-redux、recharts...
+  - 实现了react/vue/angular多个版本
+
+- more-bootstrap-dashboard
+  - https://htmlstream.com/front-dashboard/index.html
+    - https://htmlstream.com/templates/front-dashboard/
+    - 源码需付费，白色主题，样式友好，右侧是可勾选配置项的浮动sidebar
+# react-dashboard
+- https://github.com/llorentegerman/react-admin-dashboard
+  - https://llorentegerman.github.io/react-admin-dashboard/
+  - Building a UI from scratch with ReactJS
+  - 依赖react-router、react-burger-menu、simple-flexbox、react-collapsible-content
+  - 只实现了仪表板骨架，功能太少
+  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
+
+- https://github.com/codedthemes/datta-able-free-react-admin-template
+  - http://lite.codedthemes.com/datta-able/react/default/dashboard/default
+  - 左边可折叠，右边没有
+  - 依赖react-bootstrap、redux、react-nvd3、jquery、react-loadable
+- https://github.com/creativetimofficial/light-bootstrap-dashboard-react
+  - https://demos.creative-tim.com/light-bootstrap-dashboard-react/
+  - 依赖react-bootstrap，chartist
+  - 左边不可折叠，右边有
+
+- https://github.com/0wczar/airframe-react
+  - http://dashboards.webkom.co/react/airframe/
+  - /3.6kStar/MIT/202002/js/archived
+  - 依赖reactstrap.v8、react-router、ag-grid-community、react-grid-layout、react-bootstrfaker、moment、react-beautiful-dnd、react-quill、recharts1
+  - Dashboard/Admin/Analytics template that works great on any smartphone, tablet or desktop.
+  - 左边可折叠，右边有浮动面板可设置
+  - 提供了很多版本的示例如angular、jquery、vue，但没提供源码
+  - /主题白色；样式普通
+  - https://github.com/webkom-co/airframe-next
+    - Dashboard based on Bootstrap 4 & React 16 + Next.js
+- https://github.com/creativetimofficial/now-ui-dashboard-react
+  - https://demos.creative-tim.com/now-ui-dashboard-react/#/admin/dashboard
+  - 依赖reactstrap.v8、chart.js.v3、perfect-scrollbar
+- https://github.com/NiceDash/Vibe
+  - https://vibe.nicedash.com/
+  - React.js dashboard built with Bootstrap 4
+  - 依赖reactstrap.v6、chart.js
+  - 左边可折叠，右边有浮动面板但只展示
+  - 没有提供vanillajs版本和周边项目
+
+- more-reactstrap-dashboard
+  - https://github.com/jamesoyanna/platinum-dashboard
+    - 依赖多；只提供dark主题
+  - https://github.com/ninjadev220/react-recharts-dashboard
+  - https://github.com/uifort/bamburgh-react-admin-dashboard-reactstrap-free
+    - https://demo.uifort.com/bamburgh-react-admin-dashboard-reactstrap-free-demo/DashboardDefault
+
+- https://github.com/minimal-ui-kit/material-kit-react
+  - [free](https://minimal-kit-react.vercel.app/)
+    - 左边不可折叠，右边没有浮动面板
+  - [full/minimal-ui($69)](https://minimals.cc/dashboard/app)
+    - 左边可折叠，右边有浮动面板
+  - 依赖material-ui.v5、emotion、apexcharts、faker、formik、framer-motion、react-router-dom.v6；无redux
+  - 样式超级友好，但没有正式感；免费版只提供了7个页面
+  - 没有提供vanillajs版本和周边项目
+  - Dashboard made with Material UI's components, create-react-app
+- https://github.com/codedthemes/berry-free-react-admin-template
+  - [free](https://berrydashboard.io/free)
+    - 左边不可折叠，右边有浮动面板
+  - [pro](https://berrydashboard.io/dashboard/default)
+    - 左边不可折叠，右边有浮动面板
+  - 依赖material-ui.v5、emotion、react-redux、react-router、apexcharts、formik、framer-motion
+  - 样式超级友好的仪表板
+  - 没有提供vanillajs版本
+- https://github.com/devias-io/material-kit-react
+  - http://material-kit-react.devias.io/
+  - 非常普通的仪表板；左边不可折叠，右边没有
+- Modular Admin
+  - https://github.com/modularcode/modular-admin-html
+    - https://modularcode.io/modular-admin-html/
+    - 样式普通，左边不可折叠，右边没有
+    - Free Bootstrap 4 Dashboard Theme HTML version
+    - 使用了handlebars模版
+  - https://github.com/modularcode/modular-admin-react
+    - http://modular-admin-react.modularcode.io/
+    - 样式普通，左边可折叠，右边没有
+    - MaterialUI dashboard theme implemented by using React Hooks + TypeScript + Context API
+- https://github.com/flatlogic/sofia-react-template
+  - https://flatlogic.github.io/sofia-react-template/#/template/dashboard
+  - 样式符合最新流行风格；左边不可折叠，右边没有
+- https://github.com/borakilicoglu/nucleo
+  - https://nucleo.netlify.app/
+  - 依赖redux-thunk、jsonwebtoken、material-ui
+  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
+  - 样式友好
+  - Admin template and Starter project for React
+- https://github.com/bndynet/admin-template-for-react
+  - https://admin-react.bndy.net/admin/dashboard
+  - admin template with React, React Redux, Material UI and TypeScript
+  - 样式陈旧
+- https://github.com/darekkay/dashboard
+  - Customizable personal dashboard and startpage
+  - 可添加各种卡片
+
+- Windmill Dashboard
+  - https://github.com/estevanmaito/windmill-dashboard-react
+    - https://windmill-dashboard-react.vercel.app/app/dashboard
+    - 依赖@windmill/react-ui、chart.js、faker、tailwindcss
+    - 样式符合最新流行风格
+    - 左边不可折叠，右边没有浮动面板
+    - A multi theme, completely accessible dashboard.
+  - https://github.com/estevanmaito/windmill-dashboard
+    - Styled with Tailwind CSS
+
+- https://github.com/flatlogic/react-dashboard
+  - https://github.com/flatlogic/sing-app
+  - https://demo.flatlogic.com/sing-app/documentation/
+  - high quality UI built with Bootstrap 4.5 & reactstrap
+  - 提供了多个版本；样式普通
+
+- https://github.com/salvia-kit/dashboard-v5-cra
+  - https://salvia-kit-dashboard-v5-demo.vercel.app/
+  - /白色主题；样式简洁，但功能少
+  - 提供了cra、nextjs、vue等多个版本，但功能太少
+
+- more-react-dashboard
+  - https://github.com/flatlogic/one-react-template
+    - admin dashboard template built with React and Bootstrap 4.
+  - https://github.com/darekkay/dashboard
+    - 非标准dashboard，简单卡片
+  - https://github.com/ofekashery/react-dashboard-design
+    - 依赖react、next10、@geist-ui/react
+    - 非标准dashboard，简单卡片文字，样式简洁；代码量很小
+
+## antd
+
+- ant-design-pro /MIT/26.1kStar/202008
+  - https://github.com/ant-design/ant-design-pro
+  - http://pro.ant.design/
+  - http://preview.pro.ant.design/
+  - 左边是包含多级菜单的侧边栏，右边可切换显示浮动设置面板
+  - a production-ready solution for admin interfaces.
+  - 2017年10月发布第一个版本，到现在的201905发布v4, Pro发生了很多的改变，底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TS
+  - 区块可以类比为一个组件，而模板代表一个页面
+
+- https://github.com/landluck/react-ant-admin
+  - https://www.landluck.cn/react-ant-admin
+  - 依赖antd4、react-markdown、redux-thunk、react-transition-group
+  - 左边是包含一级菜单的侧边栏，右边可切换显示浮动设置面板
+  - 示例需要注册才能使用，实现了权限管理功能
+  - 使用 ant-design react react-hook ts 开发的类 ant-design-pro 管理后台，具有完整的权限系统和配套的node + ts 的 api
+  - 既然我无法放弃 Ant Design Pro 的 UI，那干脆模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
+  - https://github.com/landluck/react-ant-admin-api
+    - 后端 API：nodejs、eggjs、ts、mysql、sequelize
+- https://github.com/sunnut/react-easy-start
+  - 依赖redux、react-router4、antd4、react-intl、restify
+  - redux用的不是很多，易去除
+  - A lightweight ant-design-pro based on create-react-app.
+  - Restify -- Mock Server
+
+- react-admin /Apache2/151Star/2020008
+  - https://github.com/javaLuo/react-admin
+  - https://isluo.com/work/admin/
+  - 标准后台管理系统解决方案, 动态菜单配置，权限精确到按钮
+  - 仿antd-pro外观，但没有使用dva和roadhog
+  - React+Redux架构，react16、router4、antd4、webpack4、ES6+
+  - 依赖@rematch/core，antd4
+- https://github.com/bujidao/react-ant-admin-1.0
+  - 基于react + umi 创建的后台前端解决方案
+  - 使用了redux对数据状态进行管理
+  - 登录界面使用了2021年度最热最火的Neumorphism风格
+- https://github.com/nelsonkuang/ant-admin
+  - 基于 antd2 的后台管理平台, 在react中玩转D3.js
+- https://github.com/sxfad/react-admin
+  - 基于React17.x、Ant Design4.x的管理系统架构。
+- https://github.com/pansyjs/react-admin
+  - React/umi/antd 
+
+- https://github.com/zuiidea/antd-admin
+  - applications built upon Ant Design and UmiJS
+- https://github.com/JerryMissTom/ant-design-lite
+  - react-router, react-redux, redux-saga实现的多Tab页面瘦身版Ant Design Pro
+- https://github.com/LANIF-UI/dva-boot-admin
+  - react 16 + react-router 4 + dva 2 + antd 4 后台管理 脚手架
+  - 自己实现各个页面，文档示例较多
+- https://github.com/Teachers-Tony/ant-design-pro-template
+  - 项目基于 ant-design-pro 精简了部分功能，只保留了基础部分，加入了代码校验，规范约束等辅助工具
+  - 依赖umi3、antd4、@ant-design/pro-layout
+- https://github.com/StandAdmin/stand-admin-antdpro-demo
+  - CRUD Demo For Ant Design Pro
+- https://github.com/lvbowen/umi-manage-system
+  - 基于 umi 的管理系统模板，手写布局，非 ant-design-pro
+- https://github.com/HouXingYi/react-antd-admin
+  - 不用umi，ant-design-pro 太重。
+- https://github.com/Denakol/dashboard-prototype
+  - Redux/Redux Thunk + React Router + Ant Design.
+- https://github.com/codepandy/react-project-template
+  - react-router + Redux + redux-saga + axios + ant design + mocker-api 
+- https://github.com/yezihaohao/react-admin
+  - redux、recharts
+- https://github.com/WinmezzZ/react-antd-admin
+  - https://react-admin.hyyar.com/dashboard
+  - 依赖rtk、antd4、emotion、driver.js、recharts、mockjs
 # css dashboard
 - https://codepen.io/TurkAysenur/pen/ZEpxeYm
   - theming-黑色，macOS风格，可切换明暗主题
@@ -281,186 +535,15 @@ modified: '2021-01-08T11:48:16.590Z'
   - Core UI templates for InfyOm Laravel Generator
 - https://github.com/app-generator/flask-dashboard-coreui
   - Admin dashboard generated by AppSeed in Flask Framework.
-# react-dashboard
-- https://github.com/llorentegerman/react-admin-dashboard
-  - https://llorentegerman.github.io/react-admin-dashboard/
-  - Building a UI from scratch with ReactJS
-  - 依赖react-router、react-burger-menu、simple-flexbox、react-collapsible-content
-  - 只实现了仪表板骨架，功能太少
-  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
-
-- https://github.com/creativetimofficial/light-bootstrap-dashboard-react
-  - https://demos.creative-tim.com/light-bootstrap-dashboard-react/
-  - 依赖react-bootstrap，chartist
-  - 左边不可折叠，右边有
-
-- https://github.com/0wczar/airframe-react
-  - http://dashboards.webkom.co/react/airframe/
-  - /3.6kStar/MIT/202002/js/archived
-  - 依赖bootstrap4、reactstrap.v8、react-router、ag-grid-community、react-grid-layout、react-bootstrfaker、moment、react-beautiful-dnd、react-quill、recharts1
-  - Dashboard/Admin/Analytics template that works great on any smartphone, tablet or desktop.
-  - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
-  - 提供了很多版本的示例如angular、jquery、vue，但没提供源码
-  - /主题白色；样式普通
-  - https://github.com/webkom-co/airframe-next
-    - Dashboard based on Bootstrap 4 & React 16 + Next.js
-- https://github.com/NiceDash/Vibe
-  - https://vibe.nicedash.com/
-  - React.js dashboard built with Bootstrap 4
-  - 依赖reactstrap.v6、chart.js
-  - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动面板(聊天面板)
-
-- https://github.com/minimal-ui-kit/material-kit-react
-  - [free](https://minimal-kit-react.vercel.app/): 左边不可折叠，右边没有浮动面板
-  - [full/minimal-ui($69)](https://minimals.cc/dashboard/app): 左边可折叠，右边有浮动面板
-  - 依赖material-ui.v5、emotion、apexcharts、faker、formik、framer-motion、react-router-dom.v6；无redux
-  - 样式超级友好，但没有正式感；免费版只提供了7个页面
-  - Dashboard made with Material UI's components, create-react-app
-- https://github.com/codedthemes/berry-free-react-admin-template
-  - [free](https://berrydashboard.io/free): 左边不可折叠，右边有浮动面板
-  - [pro](https://berrydashboard.io/dashboard/default): 左边不可折叠，右边有浮动面板
-  - 依赖material-ui.v5、emotion、react-redux、react-router、apexcharts、formik、framer-motion
-  - 样式超级友好的仪表板
-- https://github.com/devias-io/material-kit-react
-  - http://material-kit-react.devias.io/
-  - 非常普通的仪表板；左边不可折叠，右边没有
-- Modular Admin
-  - https://github.com/modularcode/modular-admin-html
-    - https://modularcode.io/modular-admin-html/
-    - 样式普通，左边不可折叠，右边没有
-    - Free Bootstrap 4 Dashboard Theme HTML version
-    - 使用了handlebars模版
-  - https://github.com/modularcode/modular-admin-react
-    - http://modular-admin-react.modularcode.io/
-    - 样式普通，左边可折叠，右边没有
-    - MaterialUI dashboard theme implemented by using React Hooks + TypeScript + Context API
-- https://github.com/flatlogic/sofia-react-template
-  - https://flatlogic.github.io/sofia-react-template/#/template/dashboard
-  - 样式符合最新流行风格；左边不可折叠，右边没有
-- https://github.com/borakilicoglu/nucleo
-  - https://nucleo.netlify.app/
-  - 依赖redux-thunk、jsonwebtoken、material-ui
-  - 左边侧边栏不能折叠到只显示图标，右边可切换显示浮动设置面板
-  - 样式友好
-  - Admin template and Starter project for React
-- https://github.com/bndynet/admin-template-for-react
-  - https://admin-react.bndy.net/admin/dashboard
-  - admin template with React, React Redux, Material UI and TypeScript
-  - 样式陈旧
+# fullstack-dashboard
 - https://github.com/marmelab/react-admin
   - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
   - https://marmelab.com/react-admin-demo/#/
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
-- https://github.com/darekkay/dashboard
-  - Customizable personal dashboard and startpage
-  - 可添加各种卡片
 
-- Windmill Dashboard
-  - https://github.com/estevanmaito/windmill-dashboard-react
-    - https://windmill-dashboard-react.vercel.app/app/dashboard
-    - 依赖@windmill/react-ui、chart.js、faker、tailwindcss
-    - 样式符合最新流行风格
-    - 左边不可折叠，右边没有浮动面板
-    - A multi theme, completely accessible dashboard.
-  - https://github.com/estevanmaito/windmill-dashboard
-    - Styled with Tailwind CSS
-
-- https://github.com/flatlogic/react-dashboard
-  - https://github.com/flatlogic/sing-app
-  - https://demo.flatlogic.com/sing-app/documentation/
-  - high quality UI built with Bootstrap 4.5 & reactstrap
-  - 提供了多个版本
-
-- more-react-dashboard
-  - https://github.com/flatlogic/light-blue-react-template
-    - admin dashboard template built with React and Bootstrap 4
-  - https://github.com/flatlogic/one-react-template
-    - admin dashboard template built with React and Bootstrap 4.
-  - https://github.com/darekkay/dashboard
-    - 非标准dashboard，简单卡片
-  - https://github.com/ofekashery/react-dashboard-design
-    - 依赖react、next10、@geist-ui/react
-    - 非标准dashboard，简单卡片文字，样式简洁；代码量很小
-
-- https://htmlstream.com/front-dashboard/index.html
-  - https://htmlstream.com/templates/front-dashboard/
-  - 源码需付费，白色主题，样式友好，右侧是可勾选配置项的浮动sidebar
-
-## antd
-
-- ant-design-pro /MIT/26.1kStar/202008
-  - https://github.com/ant-design/ant-design-pro
-  - http://pro.ant.design/
-  - http://preview.pro.ant.design/
-  - 左边是包含多级菜单的侧边栏，右边可切换显示浮动设置面板
-  - a production-ready solution for admin interfaces.
-  - 2017年10月发布第一个版本，到现在的201905发布v4, Pro发生了很多的改变，底层框架修改为umi，代码组织方式改为区块，完全的拥抱的TS
-  - 区块可以类比为一个组件，而模板代表一个页面
-
-- https://github.com/landluck/react-ant-admin
-  - https://www.landluck.cn/react-ant-admin
-  - 依赖antd4、react-markdown、redux-thunk、react-transition-group
-  - 左边是包含一级菜单的侧边栏，右边可切换显示浮动设置面板
-  - 示例需要注册才能使用，实现了权限管理功能
-  - 使用 ant-design react react-hook ts 开发的类 ant-design-pro 管理后台，具有完整的权限系统和配套的node + ts 的 api
-  - 既然我无法放弃 Ant Design Pro 的 UI，那干脆模仿 Ant Design Pro 的 UI，自己来实现一个较为简单的版本
-  - https://github.com/landluck/react-ant-admin-api
-    - 后端 API：nodejs、eggjs、ts、mysql、sequelize
-- https://github.com/sunnut/react-easy-start
-  - 依赖redux、react-router4、antd4、react-intl、restify
-  - redux用的不是很多，易去除
-  - A lightweight ant-design-pro based on create-react-app.
-  - Restify -- Mock Server
-
-- react-admin /Apache2/151Star/2020008
-  - https://github.com/javaLuo/react-admin
-  - https://isluo.com/work/admin/
-  - 标准后台管理系统解决方案, 动态菜单配置，权限精确到按钮
-  - 仿antd-pro外观，但没有使用dva和roadhog
-  - React+Redux架构，react16、router4、antd4、webpack4、ES6+
-  - 依赖@rematch/core，antd4
-- https://github.com/bujidao/react-ant-admin-1.0
-  - 基于react + umi 创建的后台前端解决方案
-  - 使用了redux对数据状态进行管理
-  - 登录界面使用了2021年度最热最火的Neumorphism风格
-- https://github.com/nelsonkuang/ant-admin
-  - 基于 antd2 的后台管理平台, 在react中玩转D3.js
-- https://github.com/sxfad/react-admin
-  - 基于React17.x、Ant Design4.x的管理系统架构。
-- https://github.com/pansyjs/react-admin
-  - React/umi/antd 
-
-- https://github.com/zuiidea/antd-admin
-  - applications built upon Ant Design and UmiJS
-- https://github.com/JerryMissTom/ant-design-lite
-  - react-router, react-redux, redux-saga实现的多Tab页面瘦身版Ant Design Pro
-- https://github.com/LANIF-UI/dva-boot-admin
-  - react 16 + react-router 4 + dva 2 + antd 4 后台管理 脚手架
-  - 自己实现各个页面，文档示例较多
-- https://github.com/Teachers-Tony/ant-design-pro-template
-  - 项目基于 ant-design-pro 精简了部分功能，只保留了基础部分，加入了代码校验，规范约束等辅助工具
-  - 依赖umi3、antd4、@ant-design/pro-layout
-- https://github.com/StandAdmin/stand-admin-antdpro-demo
-  - CRUD Demo For Ant Design Pro
-- https://github.com/lvbowen/umi-manage-system
-  - 基于 umi 的管理系统模板，手写布局，非 ant-design-pro
-- https://github.com/HouXingYi/react-antd-admin
-  - 不用umi，ant-design-pro 太重。
-- https://github.com/Denakol/dashboard-prototype
-  - Redux/Redux Thunk + React Router + Ant Design.
-- https://github.com/codepandy/react-project-template
-  - react-router + Redux + redux-saga + axios + ant design + mocker-api 
-- https://github.com/yezihaohao/react-admin
-  - redux、recharts
-- https://github.com/WinmezzZ/react-antd-admin
-  - https://react-admin.hyyar.com/dashboard
-  - 依赖rtk、antd4、emotion、driver.js、recharts、mockjs
+- https://github.com/app-generator/react-datta-able-dashboard
+  - https://github.com/app-generator
 # more-dashboard
-- https://github.com/wrappixel/xtreme-admin-lite
-  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
-  - 提供了bootstrap版、react版、angular版
-  - 左边侧边栏不能折叠到只显示图标，右边没有浮动面板
-
 - vue-element-admin /MIT/58.3kStar/202007/vue
   - https://github.com/PanJiaChen/vue-element-admin
   - https://panjiachen.github.io/vue-element-admin
@@ -484,6 +567,3 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://mosaic.cruip.com/
   - 符合tailwindui的风格，白色主题
   - a responsive dashboard template built on top of TailwindCSS and fully coded in React
-
-- https://github.com/DashboardPack/architectui-react-theme-free
-  - 依赖react-bootstrap、reactstrap

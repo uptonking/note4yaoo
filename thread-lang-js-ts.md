@@ -18,7 +18,11 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
-- ## 
+- ## Since Node.js v12, you can do: `import * as fs from 'node:fs'; ` .
+- https://twitter.com/rauschma/status/1419472964496527362
+  - Benefit: Can’t be confused with npm-installed packages.
+- this also works in TS with the latests versions of @types/node which includes all the `node:` prepended stuff
+- I think that’s the main benefit. A related benefit is that it allows adding new modules to Node core even if a package of the same name already exists on npm.
 
 - ## Is there EVER a reason to use enums in TypeScript?
 - https://twitter.com/erikras/status/1418279793993338880

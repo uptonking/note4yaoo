@@ -24,7 +24,15 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
-- ## 
+- ##  Always use profilers to identify performance issues in code. 
+- https://twitter.com/d__raptis/status/1419611806557945859
+  - I'd never find the problem otherwise.
+- It's quite simple (for React at least) : 
+  1. Use this Chrome plugin react-developer-tools 
+  2. Click record
+  3. Reproduce a laggy action
+  4. Check which components/actions are time-consuming
+- Now, you've located the issue and you need to check the code to find the real issue
 
 - ## Syncing sign-in state
 - https://www.tommoor.com/posts/syncing-signin-state

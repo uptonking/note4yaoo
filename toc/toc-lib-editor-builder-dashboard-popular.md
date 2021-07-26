@@ -10,18 +10,44 @@ modified: '2021-07-25T10:48:21.307Z'
 # guide
 
 - dashboard-baseline
-  - ant design pro, AdminLTE, coreui-admin
+  - AdminLTE, ant design pro, coreui-admin
   - ct-material-dashboard
 
-- best dashboards vendors(拥抱开源)
+- best open dashboards vendors
+  - 大厂的dashboard一般会提供多种框架实现的版本，但有些较新的也会只提供一个版本
+  - creativetimofficial的仓库要比bootstrapdash多很多，更容易长期维护
   - https://www.creative-tim.com/
-  - https://keenthemes.com/
-  - https://codedthemes.com/
-  - https://flatlogic.com 
-  - https://themeforest.net/
+    - https://github.com/creativetimofficial
+    - material, argon, black, now-ui
+    - 第三方依赖都较少
   - https://themesberg.com/
+    - https://github.com/themesberg
+    - volt
+  - https://codedthemes.com/
+    - https://github.com/codedthemes
+    - berry, datta-able
   - https://www.bootstrapdash.com/
+    - https://github.com/BootstrapDash
+    - Star Admin 2, Purple Admin
+    - 第三方依赖都很多
+  - https://www.wrappixel.com/
+    - https://github.com/wrappixel
+    - Flexy, Xtreme, Ample
+  - https://startbootstrap.com/
+    - https://github.com/StartBootstrap
+    - SB Admin
+  - https://themeforest.net/
+  - https://flatlogic.com
+  - https://keenthemes.com/
+  - https://github.com/puikinsh
+
+- dashboards examples
   - [Bootstrap Themes](https://themes.getbootstrap.com/shop/?orderby=popularity)
+  - https://www.admin-dashboards.com/
+    - https://github.com/admin-dashboards
+    - 只是自愿提交展示
+  - https://appseed.us/app-generator
+    - https://github.com/app-generator
 # popular dashboards
 - CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
   - CoreUI offers 6 versions: Bootstrap, Angular, Laravel, React.js, Vue.js, and Vue.js + Laravel.
@@ -60,20 +86,29 @@ modified: '2021-07-25T10:48:21.307Z'
     - https://demo.themesberg.com/volt-react-dashboard/#/dashboard/overview
     - /372Star/MIT/202102/js
     - 依赖bootstrap.v5、@themesberg/react-bootstrap.v1.4、react-router、chartist、react-live、simplebar(scrollbar) 
-    - 主题白色，dashboard + components + pages
+    - /主题白色；dashboard + components + pages
     - Volt React is an extension of the popular react-bootstrap library and it is based on Bootstrap 5.
   - https://github.com/themesberg/volt-bootstrap-5-dashboard
     - /2.1kStar/MIT/202107/scss
     - 依赖bootstrap.v5、popperjs、chartist、simplebar、sweetalert2
 # BootstrapDash dashboards 
-- 样式非常友好；打包购买才$59，性价比爆炸
-- 开源react的dashboard不多
-  - StarAdmin-Free-React-Admin-Template
-  - corona-react-free-admin-template
-  - connect-plus-react-free-admin-template
-  - Azia-Admin-React
-  - Stellar-React-Free-Admin-Template
-  - Purple-React
+- 缺点
+  - 左边侧边栏不能fixed，滚动过长时会消失
+- 优点
+  - 样式非常友好
+  - 打包购买才$59，性价比爆炸
+- react版dashboard开源的不多
+  - [Purple-React左可右浮动面板仅展示](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
+  - [StarAdmin-Free-React-Admin-Template 左可右没有](https://www.bootstrapdash.com/demo/star-admin-free/react/template/demo_1/preview/dashboard)
+    - https://github.com/BootstrapDash/StarAdmin-Free-React-Admin-Template
+  - [corona-react-free-admin-template 左可右没有；dark](https://www.bootstrapdash.com/demo/corona-react-free/template/demo_1/preview/dashboard)
+    - https://github.com/BootstrapDash/corona-react-free-admin-template
+  - [connect-plus-react-free-admin-template 左可右没有；样式普通](https://bootstrapdash.com/demo/connect-plus-react-free/template/demo_1/preview/dashboard)
+    - https://github.com/BootstrapDash/connect-plus-react-free-admin-template
+  - [Azia-Admin-React 非标准dashboard，类似nytimes](https://www.bootstrapdash.com/demo/azia-react-free/template/preview/dashboard)
+    - https://github.com/BootstrapDash/Azia-Admin-React
+  - [Stellar-React-Free-Admin-Template 左可右没有；样式普通](https://www.bootstrapdash.com/demo/stellar-react-free/template/demo_1/preview/dashboard)
+    - https://github.com/BootstrapDash/Stellar-React-Free-Admin-Template
 
 - Purple Admin
   - [free](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
@@ -104,21 +139,9 @@ modified: '2021-07-25T10:48:21.307Z'
   - https://www.bootstrapdash.com/demo/futureui-free/template/
   - 右边有浮动面板，能设置颜色
 
-- https://github.com/BootstrapDash/Azia-Admin-React
-  - https://www.bootstrapdash.com/demo/azia-react-free/template/preview/dashboard
-  - 非标准dashboard，类似nytimes
-
-- 没有右侧浮动设置面板
-  - https://github.com/BootstrapDash/StarAdmin-Free-React-Admin-Template
-    - https://www.bootstrapdash.com/demo/star-admin-free/react/template/demo_1/preview/dashboard
-  - https://github.com/BootstrapDash/Stellar-React-Free-Admin-Template
-    - https://www.bootstrapdash.com/demo/stellar-react-free/template/demo_1/preview/dashboard
-  - https://github.com/BootstrapDash/connect-plus-react-free-admin-template
-    - https://bootstrapdash.com/demo/connect-plus-react-free/template/demo_1/preview/dashboard
-  - https://github.com/BootstrapDash/corona-react-free-admin-template
-    - https://www.bootstrapdash.com/demo/corona-react-free/template/demo_1/preview/dashboard
-  - https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
-    - https://www.bootstrapdash.com/demo/majestic-free/template/index.html
+- 右边没有浮动面板
+- https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
+  - https://www.bootstrapdash.com/demo/majestic-free/template/index.html
 # creative tim dashboards
 - tips
   - free版几乎都是 左边不可折叠，右边有浮动面板
@@ -135,7 +158,7 @@ modified: '2021-07-25T10:48:21.307Z'
     - design system based on Bootstrap 4.
 
 - soft-ui-dashboard
-  - 基于bootstrap5，没有实现react版本
+  - 基于bootstrap5，暂时没有实现react版本
   - 样式符合最新流行风格，大量运用卡片，按钮有点浮雕凸起的效果
   - [free](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html)
   - [pro](https://demos.creative-tim.com/soft-ui-dashboard-pro/pages/dashboards/default.html)

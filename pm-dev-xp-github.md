@@ -19,8 +19,8 @@ modified: '2021-06-02T18:26:20.133Z'
 
 - search
   - 搜索时变通的方法
-    - 在github直接搜索导入库 import from react，再限制语言如js
-    - 或者搜索关键词 data-mdc-auto-init 的 code，而不是repositories
+    - 在github直接搜索导入库的代码 import from react，再限制语言如js
+    - 或者搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
   - 搜索使用js或ts的项目
     - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
     - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
@@ -28,9 +28,12 @@ modified: '2021-06-02T18:26:20.133Z'
     - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
   - 搜索org，可用`type:org`
     - `https://github.com/search?q=design+type%3Aorg&type=users`
+    - 既可以搜索出repositories，也可以搜索出org类型的users
   - 搜索自己评论过的issues `commenter:uptonking type:issue`
     - https://github.com/search?o=desc&q=commenter%3Auptonking+type%3Aissue&s=updated&type=Issues
   - 按标签或主题搜索
+    - topics
+    - awesome类型的repositories
   - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
     - most starred
       - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
@@ -104,7 +107,6 @@ modified: '2021-06-02T18:26:20.133Z'
     - Autocomplete is predictable, Autopilot much less so.
     - Spotting issues is IMO harder when reading code than when writing it.
     - You want perfect code, not code that the average dev would write.
-
 # github-redo-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/

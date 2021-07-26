@@ -11,7 +11,43 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## Just a reminder that using `reduce` doesn't always mean iterating less. 
+- https://twitter.com/i_like_robots/status/1418874992146755584
+  - 追求极致性能时可适度放弃immutable，使用mutable方法
+  - The first example using has O(n²) complexity due to the additional iterations required by the spread operator and is ~50x slower than `filter/map` and ~100x slower than using array `push` .
+
+```JS
+// slow
+items.reduce((acc, item) => item.prop ? [...acc, item.prop] : acc, []);
+
+// equivalent to slow
+items.reduce((acc, item) => {
+  if (item.name) {
+    return [].concat(
+      typeof acc[Symbol.iterator] === 'function' ? acc.map(i => i) : [], item.name
+    )
+
+    return acc;
+  }
+}, []);
+
+// fast
+items.filter((item) => item.prop).map((item) => item.prop);
+
+// faster
+items.reduce((acc, item) => {
+  item.prop && acc.push(item.prop);
+  return acc;
+}, []);
+```
+
+- if you're thinking "that's cool in theory but I'm sure engines have optimisations for this" then nope, you're wrong. And 100x slower is generous, some browsers are 1000x slower! If you're doing this lots of times in your apps then you could make them noticeably faster.
+- And of course **`reduce` with object spread creating a newly cloned object for each iteration is no better - it's also super slow**.
+
+- Ditch the `reduce` in the final example for a `for-of` loop to make it more readable. If you're using reduce simple for looping, just use a loop. Way less for the reader to think about, and it reads sequentially.
+
+- Nice! It's also doesn't counted as a harmful mutation because it's internal scoped one with no effect on externals. @getify talked nicely about this in his book "Functional-light JavaScript"
+  - tbh I don’t bother sticking to theory and mutate when it is ok
 
 - ## If you were to quickly explain the fetch API to someone and you don't have an URL handy, data: URLs for the rescue!
 - https://twitter.com/GNUmanth/status/1415560838472105984
