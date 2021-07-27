@@ -23,7 +23,17 @@ modified: '2021-01-19T04:46:23.100Z'
 # pieces
 - ## 
 
-- ## 
+- ## TIL React-Native's Text comp does a bit too much and has a perf overhead 
+- https://twitter.com/sebastienlorber/status/1419723047637037061
+  - @wcandillon found out you could simplify it (ie just render text, no press etc...) and improve perfs
+- it means removing features to only what you really need
+- I wonder if a wrapper component could solve it magically 
+
+```JS
+if (type of props.children === string && noOtherExpensiveProps) {
+  return <SlimText />
+}
+```
 
 - ## Working on Excalidraw and Excalidraw+ we've been doing lots of modals. 
 - https://twitter.com/dluzar/status/1418259104938795017
@@ -32,8 +42,8 @@ modified: '2021-01-19T04:46:23.100Z'
   - Pressing Tab should never take you out of the modal. 
   - Instead, you should cycle back to the first focusable element.
   - (And make sure upon opening the modal you focus the first actionable element, usually the first input field.)
-  - You can do this by listening on `keydown`, querying all focusable elements (inputs, buttons...) from the modal's root element, and manually focusing either the first or last element based on whether user pressed `shift` or not.
-- Clicking outside the modal should close it, same as when pressing `escape`.
+  - You can do this by listening on `keydown` , querying all focusable elements (inputs, buttons...) from the modal's root element, and manually focusing either the first or last element based on whether user pressed `shift` or not.
+- Clicking outside the modal should close it, same as when pressing `escape` .
 - What if the user just filled out the form and clicked away by mistake? Losing progress is annoying, so let's prevent that.
   - When the form is dirty, clicking outside (or Escape) won't close, and require you to explicitly hit `close` or `submit` button.
   - you can show the submit button only on a dirty form. This will give additional visual feedback.
@@ -45,6 +55,7 @@ modified: '2021-01-19T04:46:23.100Z'
 - But how to deal with browser's back button ? Should it close the modal or go to previous page ? (Even more complex wizard steps inside modals)
   - I don't usually add modals to url
   - What I'm doing above is removing the modal url from history if we close it via UI, so we never get history like `page → modal → page → modal...`
+
 - I don't think this is good UX, users shouldn't be constrained in any way. For me a better solution would be to persist the entries of the form.
   - I'm a big fan of keeping the state around and restoring later, but I don't think that applies to modals.
   - In this case we must ensure the user knows whether the operation was submitted or not.

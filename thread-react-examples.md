@@ -11,7 +11,11 @@ modified: '2021-04-05T09:45:51.791Z'
 
 - ## 
 
-- ## 
+- ## I want to add a ramp + curve component to leva for cool gradients, this is a start.
+- https://twitter.com/ggsimm/status/1419763033908420615
+  - https://codesandbox.io/s/7vi0z
+  - 基于leva实现的渐变色生成器实时预览
+  - leva依赖@radix_ui/react-portal、@stitches/react、zustand
 
 - ## Visualising different easing functions in sveltejs
 - https://twitter.com/lihautan/status/1314470361900019714

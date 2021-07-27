@@ -17,7 +17,10 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## I wrote a Figma plugin to help create radial systems for watch design and then made a component library for easy iteration. 
+- https://twitter.com/i_cox/status/1419044424949116931
+  - Final designs get scaled and exported as vector files for printing.
+  - https://www.figma.com/community/plugin/838889318422718953/Radium
 
 - ## 奥运图标中的蓝色小人进行各种运动
 - https://twitter.com/hashflagsio/status/1418815059661410304

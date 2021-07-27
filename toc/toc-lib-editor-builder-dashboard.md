@@ -7,7 +7,7 @@ modified: '2021-01-08T11:48:16.590Z'
 
 # toc-lib-editor-builder-dashboard
 - guide
-  - 使用场景包括控制台、个人设置、数据统计...
+  - 使用场景包括 控制台、个人设置、数据统计...
   - 流行的dashboard大多基于bootstrap/tailwindui/material-ui/antd等基础组件库
   - dashboard的设计与业务场景紧密相关，一次性居多，难以复用具体计算逻辑，要考虑根据业务和内容设计布局
   - 仪表板上的内容一般基于网格或拖拽实现，如react-grid-layout
@@ -30,7 +30,7 @@ modified: '2021-01-08T11:48:16.590Z'
 - 依赖reactstrap
   - airframe-react、Vibe
   - creativetimofficial: argon-dashboard-react、black-dashboard-react(右边有面板)、now-ui-dashboard、paper-dashboard-2
-  - wrappixel: xtreme-react-lite(左边可折叠)、ample-react-lite
+  - wrappixel: xtreme-react-lite(左边可折叠)、ample-react、monster
   - flatlogic/react-dashboard
   - uifort/bamburgh-react-admin-dashboard-reactstrap
 
@@ -140,28 +140,6 @@ modified: '2021-01-08T11:48:16.590Z'
   - 左边不可折叠，右边没有
   - Bootstrap 5 admin dashboard template
 
-- https://github.com/wrappixel/flexy-react-lite
-  - [free](https://www.wrappixel.com/demos/free-admin-templates/flexy-react-dashboard-lite/main/#/dashboards/dashboard1)
-  - https://github.com/wrappixel/flexy-bootstrap-lite
-  - 依赖material-ui.v5, emotion, apexcharts
-  - 样式符合最新流行风格，超级友好
-  - 左边不可折叠，右边没有
-- https://github.com/wrappixel/xtreme-react-lite
-  - https://wrappixel.com/demos/free-admin-templates/xtreme-reactadmin-lite/main/#/dashboard
-  - 依赖reactstrap.v8、history、chart.js
-  - 提供了bootstrap版、react版、angular版
-  - 左边可折叠，右边没有；样式还行
-  - 左边侧边栏fixed
-- https://github.com/wrappixel/xtreme-admin-lite
-  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
-  - 左边可折叠，右边没有
-- https://github.com/wrappixel/ample-react-lite
-  - https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/dashboard.html
-  - 左边可折叠，右边没有；和xtreme类似
-  - 左边侧边栏不能fixed
-- https://github.com/wrappixel/matrix-admin-bt5
-  - 左边可折叠；纯色块metro风格，样式普通
-
 - https://github.com/themekita/Atlantis-Lite
   - [free](https://themekita.com/demo-atlantis-lite-bootstrap/livepreview/examples/demo1/)
   - [pro](https://themekita.com/demo-atlantis-bootstrap/livepreview/examples/demo1/)
@@ -229,6 +207,8 @@ modified: '2021-01-08T11:48:16.590Z'
   - 没有提供vanillajs版本和周边项目
 
 - more-reactstrap-dashboard
+  - https://github.com/wrappixel/materialpro-react-lite
+    - https://wrappixel.com/demos/free-admin-templates/materialpro-reactadmin-lite/main/#/starter/starter
   - https://github.com/jamesoyanna/platinum-dashboard
     - 依赖多；只提供dark主题
   - https://github.com/ninjadev220/react-recharts-dashboard

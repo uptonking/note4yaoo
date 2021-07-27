@@ -24,6 +24,20 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## After experimenting with multiple caching solutions and application frameworks to scale our inventory read layer, 
+- https://twitter.com/dinquisitively/status/1419145128497737731
+  - we finally proceeded to use Hazelcast with near cache support 
+  - and Vert. X as this combination offered maximum performance for our use case.
+  - [Scaling our inventory cache reads to 1000X](https://t.co/91nSO7NOtU?amp=1)
+
 - ##  Always use profilers to identify performance issues in code. 
 - https://twitter.com/d__raptis/status/1419611806557945859
   - I'd never find the problem otherwise.

@@ -156,9 +156,15 @@ modified: '2021-07-21T18:07:43.056Z'
   - 支持doc、docx、ppt、pptx、xls、xlsx、zip、rar、mp4，mp3
   - 以及众多类文本如txt、html、xml、java、properties、sql、js、md、json、conf、ini、vue、php、py、bat、gitignore等文件在线预览
 
+- https://github.com/frictionlessdata/livemark
+  - https://livemark.frictionlessdata.io/
+  - 基于python jinja实现，table、chart完全自己实现
+  - Livemark is a static page generator that extends Markdown with interactive charts, tables, and more.
+  - Livemark process your document using the Jinja templating language. 
+  - Inside templates, you can use Frictionless Framework as a frictionless variable to work with tabular data. 
+  - It's a high-level preprocessing so you can combine Logic with other syntax, such as Table or Chart
 # more-doc-solutions
 - VuePress
-
 
 - https://github.com/phenomic/phenomic
   - DEPRECATED. Please use Next.js instead.
@@ -195,7 +201,6 @@ modified: '2021-07-21T18:07:43.056Z'
 - https://github.com/mylxsw/wizard
   - 开源的文档管理工具，支持Markdown/Swagger/Table类型的文档。
   - 依赖php
-
 # examples
 - ## docusaurus-examples
 - https://github.com/ThinkBucket/docsite

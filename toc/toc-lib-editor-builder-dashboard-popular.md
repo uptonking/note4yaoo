@@ -9,36 +9,36 @@ modified: '2021-07-25T10:48:21.307Z'
 
 # guide
 
-- dashboard-baseline
+- dashboard baseline
   - AdminLTE, ant design pro, coreui-admin
   - ct-material-dashboard
 
-- best open dashboards vendors
+- open dashboards vendors
   - 大厂的dashboard一般会提供多种框架实现的版本，但有些较新的也会只提供一个版本
   - creativetimofficial的仓库要比bootstrapdash多很多，更容易长期维护
   - https://www.creative-tim.com/
     - https://github.com/creativetimofficial
     - material, argon, black, now-ui
     - 第三方依赖都较少
+  - https://www.bootstrapdash.com/
+    - https://github.com/BootstrapDash
+    - Star Admin 2, Purple Admin
+    - 第三方依赖都很多；样式符合最新流行风格
+  - https://www.wrappixel.com/
+    - https://github.com/wrappixel
+    - flexy, xtreme, ample, matrix
   - https://themesberg.com/
     - https://github.com/themesberg
     - volt
   - https://codedthemes.com/
     - https://github.com/codedthemes
     - berry, datta-able
-  - https://www.bootstrapdash.com/
-    - https://github.com/BootstrapDash
-    - Star Admin 2, Purple Admin
-    - 第三方依赖都很多
-  - https://www.wrappixel.com/
-    - https://github.com/wrappixel
-    - Flexy, Xtreme, Ample
   - https://startbootstrap.com/
     - https://github.com/StartBootstrap
     - SB Admin
   - https://themeforest.net/
-  - https://flatlogic.com
   - https://keenthemes.com/
+  - https://flatlogic.com
   - https://github.com/puikinsh
 
 - dashboards examples
@@ -94,21 +94,22 @@ modified: '2021-07-25T10:48:21.307Z'
 # BootstrapDash dashboards 
 - 缺点
   - 左边侧边栏不能fixed，滚动过长时会消失
+  - 第三方依赖过多，但这是复杂应用都会出现的问题
 - 优点
   - 样式非常友好
   - 打包购买才$59，性价比爆炸
 - react版dashboard开源的不多
-  - [Purple-React左可右浮动面板仅展示](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
+  - [Purple-React 左可右浮动面板仅展示](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
   - [StarAdmin-Free-React-Admin-Template 左可右没有](https://www.bootstrapdash.com/demo/star-admin-free/react/template/demo_1/preview/dashboard)
     - https://github.com/BootstrapDash/StarAdmin-Free-React-Admin-Template
   - [corona-react-free-admin-template 左可右没有；dark](https://www.bootstrapdash.com/demo/corona-react-free/template/demo_1/preview/dashboard)
     - https://github.com/BootstrapDash/corona-react-free-admin-template
   - [connect-plus-react-free-admin-template 左可右没有；样式普通](https://bootstrapdash.com/demo/connect-plus-react-free/template/demo_1/preview/dashboard)
     - https://github.com/BootstrapDash/connect-plus-react-free-admin-template
-  - [Azia-Admin-React 非标准dashboard，类似nytimes](https://www.bootstrapdash.com/demo/azia-react-free/template/preview/dashboard)
-    - https://github.com/BootstrapDash/Azia-Admin-React
   - [Stellar-React-Free-Admin-Template 左可右没有；样式普通](https://www.bootstrapdash.com/demo/stellar-react-free/template/demo_1/preview/dashboard)
     - https://github.com/BootstrapDash/Stellar-React-Free-Admin-Template
+  - [Azia-Admin-React 非标准dashboard，类似nytimes](https://www.bootstrapdash.com/demo/azia-react-free/template/preview/dashboard)
+    - https://github.com/BootstrapDash/Azia-Admin-React
 
 - Purple Admin
   - [free](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
@@ -121,7 +122,7 @@ modified: '2021-07-25T10:48:21.307Z'
     - https://www.bootstrapdash.com/demo/purple-admin-free/#
     - 右侧浮动面板未实现
 
-- 左边可折叠，右边有浮动面板
+- 左边可折叠，右边有浮动面板可设置颜色
   - 样式符合最新流行风格
   - 未实现react版本
 - https://github.com/BootstrapDash/skydash-free-bootstrap-admin-template
@@ -142,6 +143,48 @@ modified: '2021-07-25T10:48:21.307Z'
 - 右边没有浮动面板
 - https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template
   - https://www.bootstrapdash.com/demo/majestic-free/template/index.html
+- https://github.com/BootstrapDash/Kapella-Free-Bootstrap-Admin-Template
+  - https://www.bootstrapdash.com/demo/kapella-free/template/index.html
+  - 全宽仪表板页面，没有左边和右边；样式友好
+- https://github.com/BootstrapDash/SpicaAdmin-Free-Bootstrap-Admin-Template
+  - https://www.bootstrapdash.com/demo/spica-free/template/index.html
+- https://github.com/BootstrapDash/RoyalUI-Free-Bootstrap-Admin-Template
+  - https://www.bootstrapdash.com/demo/royalui-free/template/index.html
+  - 卡片直角
+# WrapPixel dashboards
+- Flexy
+- https://github.com/wrappixel/flexy-react-lite
+  - [free](https://www.wrappixel.com/demos/free-admin-templates/flexy-react-dashboard-lite/main/#/dashboards/dashboard1)
+  - https://github.com/wrappixel/flexy-bootstrap-lite
+  - 依赖material-ui.v5, emotion, apexcharts
+  - 样式符合最新流行风格，超级友好
+  - 左边不可折叠，右边没有
+
+- Xtreme
+- https://github.com/wrappixel/xtreme-react-lite
+  - [free](https://wrappixel.com/demos/free-admin-templates/xtreme-reactadmin-lite/main/#/dashboard)
+  - [pro](https://www.wrappixel.com/demos/react-admin-templates/xtreme-react-admin/main/dashboards/classic)
+  - 依赖reactstrap.v8、history、chart.js
+  - 提供了bootstrap版、react版、angular版
+  - 左边可折叠，右边没有；样式还行
+  - 左边侧边栏fixed
+- https://github.com/wrappixel/xtreme-admin-lite
+  - https://www.wrappixel.com/demos/free-admin-templates/xtreme-admin-lite/xtreme-html/ltr/
+  - 左边可折叠，右边没有
+
+- Ample
+- https://github.com/wrappixel/ample-react-lite
+  - https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/dashboard.html
+  - 左边可折叠，右边没有；和xtreme类似
+  - 左边侧边栏不能fixed
+
+- Matrix
+- https://github.com/wrappixel/matrix-admin-bt5
+  - 左边可折叠；纯色块metro风格，样式普通
+
+- more-dashboards
+- https://github.com/wrappixel/materialpro-react-lite
+  - https://wrappixel.com/demos/free-admin-templates/materialpro-reactadmin-lite/main/#/starter/starter
 # creative tim dashboards
 - tips
   - free版几乎都是 左边不可折叠，右边有浮动面板
@@ -178,6 +221,10 @@ modified: '2021-07-25T10:48:21.307Z'
   - [free](https://demos.creative-tim.com/black-dashboard/examples/dashboard.html)
   - [pro](https://demos.creative-tim.com/marketplace/black-dashboard-pro/examples/dashboard.html)
 
+- now-ui-dashboard  
+  - [free](https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html)
+  - [pro](https://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html)
+
 - light-bootstrap-dashboard
   - [free](https://demos.creative-tim.com/light-bootstrap-dashboard/examples/dashboard.html)
   - [pro](https://demos.creative-tim.com/light-bootstrap-dashboard-pro/examples/dashboard.html)
@@ -185,10 +232,6 @@ modified: '2021-07-25T10:48:21.307Z'
 - material-dashboard
   - [free](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
   - [pro](https://demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html)
-
-- now-ui-dashboard  
-  - [free](https://demos.creative-tim.com/now-ui-dashboard/examples/dashboard.html)
-  - [pro](https://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html)
 
 - paper-dashboard
   - 基于bootstrap3

@@ -200,19 +200,4 @@ modified: '2021-07-08T12:37:23.562Z'
 
 - https://github.com/artcompiler/L123
   - A language for writing ProseMirror editors
-# collaborative-editor
-- https://github.com/yjs/yjs
-  - https://docs.yjs.dev/
-  - Yjs is a CRDT implementation that exposes its internal data structure as shared types. 
-  - Shared types are common data types like Map or Array with superpowers: changes are automatically distributed to other peers and merged without merge conflicts.
-- https://github.com/josephg/reference-crdts
-  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
-- https://github.com/YousefED/reactive-crdt
-  - It's built on top of Yjs, a proven, high performance CRDT implementation.
-- https://github.com/yjs/y-codemirror.next
-  - https://demos.yjs.dev/codemirror/codemirror.html
-  - Collaborative extensions for CodeMirror6
-# more-editor
-- https://github.com/liferay/alloy-editor
-  - http://alloyeditor.com/
-  - WYSIWYG editor based on CKEditor with completely rewritten UI
+# more-prosemirror-codemirror

@@ -17,7 +17,12 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## a feature comparison guide for Motion Concept C.
+- https://twitter.com/mattgperry/status/1419753685207429121
+  - where it will shine is bundlesize and perf for those users where any missing features isn't a problem.
+- The main missing features are custom easing functions, path morphing, and animating raw strings/numbers. These might be showstoppers in some projects. But we also get incredible interpolation and off-thread animations.
+- How do you consider Motion Concept C and Motion Framer future? 
+  - No this is separate although having written both it does share a similar API on the React side. In that sense jumping between the two is easy enough if you don’t need the full Framer Motion capabilities
 
 - ## One of my endlessly repeated animation tips is 'let easing do the heavy lifting for you' 
 - https://twitter.com/cassiecodes/status/1418863372112736258
