@@ -6,12 +6,8 @@ modified: '2021-01-04T16:18:39.667Z'
 ---
 
 # toc-lib-fwk-node
-- tips
-  - 公司里面的技术选型很难由自己决定
-  - 最低功能需求：rest api，orm
-  - keyword: backend-for-frontend, spring-like, restful-api, node-framework
-
 - ref
+  - keyword: backend-for-frontend, spring-like, restful-api, node-framework
   - [下一代前端框架会去解决什么问题？ blitz、redwood](https://www.zhihu.com/question/433673833/answer/1616521720)
     - 个人认为，前端~api~后端~数据库，这个链条上的类型安全，是个发展方向。
     - 现在的graphql，apollo，next，prisma这些感觉还是繁琐，未成简洁体系。
@@ -27,6 +23,7 @@ modified: '2021-01-04T16:18:39.667Z'
 - loopback.v4 /3.7kStar/MIT/202106/ts
   - https://github.com/strongloop/loopback-next
   - https://loopback.io/doc/en/lb4/index.html
+  - api多用class和@get等装饰器
   - extensible Node.js and TypeScript framework for building APIs and microservices.
   - OpenAPI Spec Driven REST API
   - A new, improved programming model with Dependency Injection and new concepts such as Components, Mixins, Repositories, etc. make this the most extensible version yet.
@@ -39,6 +36,43 @@ modified: '2021-01-04T16:18:39.667Z'
     - 接口自动生成。可以定制。
   - 缺点
     - 缺乏灵活性。针对性的业务逻辑难以改动。
+
+- blitz
+  - https://github.com/blitz-js/blitz
+  - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
+  - 代码风格是functional，很少用class、this；依赖注入也少
+  - 特色是 no api，带来的问题是很难在mobile app中使用blitz query
+  - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
+  - “Zero-API” data layer lets you import server code directly into your React components instead of having to manually add API endpoints and do client-side fetching and caching.
+  - Client-side rendering, Server-side rendering, and fully static pages all in the same app
+  - Database/ORM agnostic, but Prisma 2 is default
+  - 架构设计
+    - 前端nextjs(react)，后端prisma2，没有中间的graphql！！
+    - 作者自己实现了两个神奇的useQuery useMutation函数，作为前后端的桥梁
+    - 构建时，把应该属于后端的代码抽取到后端；
+    - 开发时，则视为一个整体，整个app的最终类型定义来源就是prisma的schema，利用prisma自动生成的typscript类型定义，一路从后端代码到前端代码，共享这些类型定义。
+  - 优点
+    - 不再需要graphql这个麻烦东西了！把http api这个概念也藏起来了！在前后端之间，不仅仅是类型可以共享，整个http请求的过程都隐藏在 useQuery useMutation函数调用过程中了
+    - 也提供了一套开箱即用的auth功能，以及自动给你配好了eslint prettier husky jest tsconfig等等这些每个项目都要重复搞一遍的东西。
+  - 缺点
+    - 一个不能算缺点的缺点，就是它是基于next/react的
+    - 后端api不方便扩展到其他端，如android、ios
+  - 结论是，期待大佬，把blitz这个思路放到vue生态里来做个新全栈框架
+  - Introducing Blitz, a Ruby on Rails equivalent for monolithic fullstack React apps!
+    - https://twitter.com/flybayer/status/1229425878481793024
+    - At build time we swap out that import with a API call. The server code stays on the server. 
+    - This is a huge DX boost since you don’t have to muck with all the API stuff yourself.
+  - Adonis uses SSR templates instead of React, so it's in its own category, imo
+    - That leaves Redwood & Blitz. We have a core difference at our data layer, but I could see a future where we merge together.
+    - For now, we are both testing our hypothesis to see what people really want 
+  - Blitz/Redwood are providing an all-in-one Rails-like DX with CLI, code scaffolding, etc, 
+    - where Remix is just the react framework part.
+    - You could totally build a Blitz/Redwood type thing on top of Remix.
+
+- feathers
+  - https://github.com/feathersjs/feathers
+  - A framework for real-time applications and REST APIs with JavaScript and TypeScript
+  - Feathers can interact with any backend technology, supports over a dozen databases and works with any frontend technology like React, VueJS, Angular, React Native, Android or iOS.
 
 - egg /16.5kStar/MIT/202011/js
   - https://github.com/eggjs/egg
@@ -73,37 +107,6 @@ modified: '2021-01-04T16:18:39.667Z'
     - fullstack framework based on midway-faas that implemented serverless-side render specification for faas.
     - ssr is serverless-side render specification implementation.
     - Serverless让端开发者更好地开发各种端上应用，不需要投入太多精力关注于后端服务的实现
-
-- blitz
-  - https://github.com/blitz-js/blitz
-  - 依赖react、nextjs、prisma、passport、react-query、jsonwebtoken
-  - 特色是 no api，带来的问题是很难在mobile app中使用blitz query
-  - The Fullstack React Framework, built on Next.js, Inspired by Ruby on Rails
-  - “Zero-API” data layer lets you import server code directly into your React components instead of having to manually add API endpoints and do client-side fetching and caching.
-  - Client-side rendering, Server-side rendering, and fully static pages all in the same app
-  - Database/ORM agnostic, but Prisma 2 is default
-  - 架构设计
-    - 前端nextjs(react)，后端prisma2，没有中间的graphql！！
-    - 作者自己实现了两个神奇的useQuery useMutation函数，作为前后端的桥梁
-    - 构建时，把应该属于后端的代码抽取到后端；
-    - 开发时，则视为一个整体，整个app的最终类型定义来源就是prisma的schema，利用prisma自动生成的typscript类型定义，一路从后端代码到前端代码，共享这些类型定义。
-  - 优点
-    - 不再需要graphql这个麻烦东西了！把http api这个概念也藏起来了！在前后端之间，不仅仅是类型可以共享，整个http请求的过程都隐藏在 useQuery useMutation函数调用过程中了
-    - 也提供了一套开箱即用的auth功能，以及自动给你配好了eslint prettier husky jest tsconfig等等这些每个项目都要重复搞一遍的东西。
-  - 缺点
-    - 一个不能算缺点的缺点，就是它是基于next/react的
-    - 后端api不方便扩展到其他端，如android、ios
-  - 结论是，期待大佬，把blitz这个思路放到vue生态里来做个新全栈框架
-  - Introducing Blitz, a Ruby on Rails equivalent for monolithic fullstack React apps!
-    - https://twitter.com/flybayer/status/1229425878481793024
-    - At build time we swap out that import with a API call. The server code stays on the server. 
-    - This is a huge DX boost since you don’t have to muck with all the API stuff yourself.
-  - Adonis uses SSR templates instead of React, so it's in its own category, imo
-    - That leaves Redwood & Blitz. We have a core difference at our data layer, but I could see a future where we merge together.
-    - For now, we are both testing our hypothesis to see what people really want 
-  - Blitz/Redwood are providing an all-in-one Rails-like DX with CLI, code scaffolding, etc, 
-    - where Remix is just the react framework part.
-    - You could totally build a Blitz/Redwood type thing on top of Remix.
 
 - https://github.com/redwoodjs/redwood
   - 依赖react、prisma、apollo-graphql、jest、babel、webpack、storybook
@@ -172,10 +175,39 @@ modified: '2021-01-04T16:18:39.667Z'
   - 使用 inversifyjs 的IoC容器管理依赖，让开发者享受最佳的OOP和IoC的编程体验。
   - 开启装饰器配置，ts环境下引入即用
 
-
 - https://github.com/nodosjs/nodos
   - https://nodosjs.github.io/
   - Node.js framework for humans (inspired by rails, phoenix, django) 
+# loopback-examples
+- https://github.com/loopbackio/loopback4-example-shopping
+  - LoopBack 4 Example: Online Shopping APIs
+  - [e-commerce demo scenario](https://github.com/loopbackio/loopback-next/issues/1476)
+
+- https://github.com/tomasggarcia/Loopback-my-sql-react-challenge
+  - http://18.229.137.95/
+  - 简单crud项目，依赖少
+
+- more-loopback
+  - https://github.com/NguyenVanDo51/base_project_react_loopback
+# express-examples
+- https://github.com/stemmlerjs/ddd-forum
+  - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
+  - 后端依赖 express、sequelize、redis
+  - 前端依赖 react、redux
+
+- cnode
+  - https://github.com/cnodejs/nodeclub
+    - Nodeclub 是使用 Node.js 和 MongoDB 开发的社区系统
+    - 依赖mongodb4、redis4
+  - https://github.com/cnodejs/egg-cnode
+    - CNode 社区 Egg 版本; /201810
+- https://github.com/ChenJiaH/react-cnode
+  - 基于react&react-router-dom，利用CNode API重写CNode社区。
+  - 依赖只有react-router.v5, react, axios
+
+- https://github.com/proshoumma/ReForum
+  - A minimal forum board application. 只是仪表板
+  - Built on top of React-Redux frontend, ExpressJS-NodeJS backend (with PassportJS for OAuth) and MongoDB databse.
 # more-app-framework
 - https://github.com/ladjs/lad
   - Lad is the best Node.js framework. 可替代express或koa

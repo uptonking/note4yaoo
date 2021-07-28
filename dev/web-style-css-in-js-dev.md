@@ -47,6 +47,13 @@ modified: '2021-01-01T20:06:19.327Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 # discuss-stars
+- ## Has anyone had to deal with styles being mixed up in prod with Next & Styled Components?
+- https://twitter.com/mattgperry/status/1420257223155060736
+- yeah. i think disabling minification of classnames solved the issue for me
+- Yep, I couldn't wrap my head around it and ended up switching to SCSS.
+  - Yeah it's weird. Dev is fine, SSR is fine, and then hydration happens and it all explodes. Even seems to happen on random deploys
+  - Same thing happened to me when mixing scss+tailwind. Dev was fine but build would break.
+
 - ## Super happy that someone dug into real life css-in-js performance. 
 - https://twitter.com/Vjeux/status/1402352889469673473
   - In theory, css-in-js should be faster because we remove all the rule selection part of css, but that doesn't seem to be realized in this case.

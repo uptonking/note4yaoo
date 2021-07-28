@@ -13,6 +13,23 @@ modified: '2021-05-23T10:17:05.993Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I honestly just feel kinda embarrassed for people still arguing about ActiveRecord.
+- https://twitter.com/taylorotwell/status/1420402348216786950
+  - Friendly reminder that no matter how you feel about this Tweet, all of the code you push to GitHub today will be handled by a platform that uses ActiveRecord.
+- Writing code vs arguing on Twitter about the best way to write code. I'll take the former
+- When there are multiple ways to solve the same problem, arguments and turf wars always keep happening! 
+Examples: Vim vs Emacs, Linux vs Windows, Ubuntu vs Fedora, PHP vs Python, etc. etc. ActiveRecord vs DataMapper is just another item on the Yin/Yang pattern
+
+- ## Show HN: FaunaDB, a strongly consistent, globally distributed cloud database__201703
+- https://news.ycombinator.com/item?id=13879475
+- > It’s relational, but not SQL.
+  - Why not? If you already support relational algebra, it seems like a non-brainer to just add SQL. Even if it's only SQL-92 you would be able to support some existing tools/ORMs almost for free.
+- This is explained a bit in a blog post[1]. Basically, this is because FaunaDB uses Calvin to do distributed transactions, which makes it hard to support OLAP-style SQL sessions. (If I understand the Calvin paper[2] correctly, this has to do with a combination of how it doesn't support "dependent" transactions, and how it does concurrency control.)
+
 - ## Do not generate database tables on the fly
 - https://twitter.com/sseraphini/status/1397888359910055940
 - it has some use cases tho, when you don't know which entities and columns you gonna store, and you don't want to use JSON/JSONB for all data

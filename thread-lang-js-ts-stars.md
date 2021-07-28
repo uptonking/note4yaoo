@@ -11,6 +11,45 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
+
+- ## 
+
+
+- ## 
+
+
+- ## 
+
+
+- ## Question: Do you use an object, or an array of objects?
+- https://twitter.com/housecor/status/1420032929829380107
+  - Situation: You need to work with key/value pairs. 
+- Object advantages:
+  - Less code
+  - Fast, direct access by key
+- Array of object advantages:
+  - Easily add another property if requirements change
+  - Can document each property with a comment above the property in the type declaration
+  - More obvious what the code means at a glance
+- The point is, it all depends on requirements. 
+  - Do I need to serialize it? Are the keys strings? `{ [K]: V }`;
+  - Do I need to clear it? Key it by something other than a string? `Map<K,V>`;
+  - Do I just need to loop over the key value pairs, and that's it? `[K,V][]`;
+  - Am I trying to be slick with memory/loops? Maybe `[K, V, K, V]`;
+-  what's most important:
+   1. Does it work?
+   2. Can my team maintain it?
+   3. Can we test it?
+- This 1,2,3 is very good before creating ANY abstraction
+- 87% of the time - arrays. Will enable other indexing/iteration abilities. Examples: index by ID, group by role, filtering, mapping etc.
+It's always easy to do _.keyBy(users, 'username') to get the object you mentioned, and keep the flexibility.
+- Object has some upsides (ensures key is unique, faster getting value by key) and you can easily turn it into array with Object.entries if needed.
+- In this case, it's clearly a set of objects. If needed for data access then reduce the array into a map and use either the objects themselves as the key and the desired result as the value.
+- Another benefit of object is you can enforce uniqueness of your object keys.
+
+
+
+
 - ## Just a reminder that using `reduce` doesn't always mean iterating less. 
 - https://twitter.com/i_like_robots/status/1418874992146755584
   - 追求极致性能时可适度放弃immutable，使用mutable方法

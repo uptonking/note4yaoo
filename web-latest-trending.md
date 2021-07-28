@@ -14,6 +14,7 @@ modified: '2021-01-01T20:52:42.088Z'
   - ~~renderer using sika like flutter~~
   - 华为鸿蒙os的app开发基于js
   - [Technology Preview: Jetpack Compose for Web](https://blog.jetbrains.com/kotlin/2021/05/technology-preview-jetpack-compose-for-web/)
+  - [Airbnb’s Server-Driven UI System](https://t.co/XXSpXaztL8?amp=1)
 # topics
 - viewpoints
   - Payments are moving from batch processing to realtime processing. this changes everything

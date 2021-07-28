@@ -7,8 +7,29 @@ modified: '2021-05-13T02:52:41.975Z'
 
 # lib-http-react-query-dev
 
-# pieces
+# discuss-stars
 
+- ## React 18 and the future of async data
+- https://swizec.com/blog/react-18-and-the-future-of-async-data/
+- React 18 is shipping with `<Suspense>` and `startTransition` for deferred component rendering, but not data loading. 
+  - To explore that future, I built a side-by-side comparison of current best practice – React Query – and future `<Suspense>` for data fetching.
+- The demo shows a New York Times best seller list.
+  - Its name and publication date come from an API call. 
+  - The list of books comes from another API call. 
+  - You get a cascading spinner effect. Need data from the first call to make the second.
+- Suspense coordinates those loading states for you and shows 1 spinner. Nothing renders until everything's ready.
+  - But the true benefit is how Suspense simplifies your code.
+- Look at the WithoutSuspense branch of my demo. 
+  - First you have the low-level data loading. An async helper that calls the fetch() method to load data from an API.
+  -  You await the fetch(), then you await the json() parsing, then you return the result or throw an error.
+  - Second you have a helper hook that loads your data. You should use React Query or similar for this part.
+  - **To avoid re-fetching the same data for every component, libraries like React Query and ApolloGraphQL use an internal global cache**. The shared cache leads to ridiculously snappy UI.
+  - Third you have to handle loading states everywhere.
+- · turns async states into first-class citizens of React. You don't have to think about it. 
+  - You'll need React 18.x and a suspense-enabled library like `react-fetch`. The library would rely on suspense `<Cache>` internally.
+  - Any component inside `<Suspense>` can say "Halt! Don't render me yet". React waits until every "halt" is resolved to render the children.
+  - While components resolve, React shows the fallback.
+# discuss
 - React Query is for managing server state, not client-only application state. 
   - For that, feel free to keep using redux or react context.
 
@@ -211,7 +232,7 @@ modified: '2021-05-13T02:52:41.975Z'
 - Do you know what the “builder pattern” is when referring to Typescript Types?
   - I think the name is leading people in the wrong direction. It’s more about using function chaining like `registerPlugin(plugin).registerPlugin(...).registerPlugin(...)` to build up complex generics where arrays and reducers are limited.
 
-``` JS
+```JS
 can(2020)
   .beTheYear()
   .thatWeStop()
@@ -226,10 +247,11 @@ can(2020)
   - I was a little cheeky, just pointing out the difficulty of visually parsing inside-out: `uppercase(toString(add(mult(2, 3))))`
   Versus left-to-right:
  `mult().add().toString().uppercase`
+
   - The pipe operator is one way to get the readability, without the builder pattern (fluent api).
   - When working with a team, I prefer this:
 
-``` js
+```js
 const multipledNum = mult(2, 3);
 const addedNum = add(multipliedNum, 42);
 const stringAddedNum = upperCase(toString(addedNum));
@@ -237,14 +259,10 @@ const stringAddedNum = upperCase(toString(addedNum));
 
   - Clarity > conciseness (plus this minifies well enough)
   - Also, I don't hate the builder pattern/fluent interfaces completely, I just think they're sometimes overused when more idiomatic alternatives can be used.
-
 # survey: how to fetch data
-
 - [What do you use to fetch data in your web app?](https://twitter.com/kentcdodds/status/1243657342278758401)
   - fetch/axios/other
-
 # survey: where to put app state
-
 - [Where does a majority of your app state truly live? Where is its source of truth? ](https://twitter.com/tannerlinsley/status/1282810546270597121)
   - in memory
   - session storage
@@ -255,7 +273,5 @@ const stringAddedNum = upperCase(toString(addedNum));
   - in the dom
   - I think what’s actually insightful here is that that not all state is created equal. 
   - The rate of access, modification, scope, persistence, etc is very fluid depending on needs and might even change over time, but also determines the tools you use to consume it.
-
-# Comparison
-
+# comparison
 - [react-query vs swr vs apollo-client](https://react-query.tanstack.com/docs/comparison)

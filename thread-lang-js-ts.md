@@ -18,6 +18,18 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Does `['a', 'b', 'c'].includes()` translate to a Set().has() internally?
+- https://twitter.com/kuvos/status/1420101675747102722
+- Doubt it. Too much overhead compared to linear search.
+
+- ## type C = A | B; TS won't let me access props that aren't on both.
+- https://twitter.com/kentcdodds/status/1420125238436655104
+  - You're supposed to use `in` to check structures (to make TS happy)
+
 - ## Since Node.js v12, you can do: `import * as fs from 'node:fs'; ` .
 - https://twitter.com/rauschma/status/1419472964496527362
   - Benefit: Can’t be confused with npm-installed packages.

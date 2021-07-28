@@ -1,11 +1,11 @@
 ---
-title: web-storage
+title: web-fwk-storage
 tags: [storage, web]
 created: '2021-04-12T11:44:40.115Z'
-modified: '2021-04-12T11:45:19.378Z'
+modified: '2021-07-28T20:22:58.032Z'
 ---
 
-# web-storage
+# web-fwk-storage
 
 # guide
 

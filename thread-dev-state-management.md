@@ -65,7 +65,8 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
-- ## 
+- ## Really interesting to see how Uber used statecharts (in Java) to model functional business logic and complex fulfillment flows
+- https://twitter.com/DavidKPiano/status/1420166879985950728
 
 - ## "Refactor away your useEffects with XState"
 - https://twitter.com/mpocock1/status/1407983384509435907

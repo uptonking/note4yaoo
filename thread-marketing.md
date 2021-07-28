@@ -12,6 +12,21 @@ modified: '2021-01-06T14:40:06.842Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 苹果今天公布的财报说，它有7亿的付费订阅用户。这太惊人了，应该是全球最大的在线服务提供商了。
+- https://twitter.com/ruanyf/status/1420221512456359936
+  - iCloud、苹果音乐、苹果电视、苹果健身、苹果新闻、Apple Arcade
+
+- ## Make money without: Capital or Skills. Do this:
+- https://twitter.com/sean0to10k/status/1420021674859192321
+  1.  Pick a service you want to sell
+  2.  Find someone offering that on Fiverr + agree a price
+  3.  Land clients using email, LinkedIn + cold calls
+  4.  Charge 2-3x the price you pay the freelancer
+
 - ## I'm taking the rest of the year off to work on @tldraw full time. 
 - https://twitter.com/steveruizok/status/1419048412431933441
   - Turns out there's a lot of enthusiasm for an open source hackable SVG-rendered drawing tool. 

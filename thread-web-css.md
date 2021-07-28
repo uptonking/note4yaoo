@@ -24,7 +24,9 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
-- ## 
+- ## When you need a #CSS 'display: block' element that takes only the content size, you can now use the 'width: fit-content' instead of the 'inline-block' value.
+- https://twitter.com/eladsc/status/1420411183547432970
+  - And has full browser support! 
 
 - ## a pseudo selector either needs to be pointing from the root or a child, cannot be used in case of a direct child
 - https://twitter.com/adamwathan/status/1418882038082453506

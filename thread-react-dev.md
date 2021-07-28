@@ -10,9 +10,23 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
-- ## 
+- ## I spend a lot of time squeezing performance from React and react-three-fiber. Some quick tips:
+- https://twitter.com/robhawkes/status/1420032462911049728
+  - Avoid updating three.js using props
+  - useMemo/React.memo are good for you
+  - Chrome and React dev tools for debugging
+  - Check perf in production mode
+  - Try frameloop="demand"
+- If you're using react-three-fiber then definitely take a look at the documentation on performance and pitfalls as there are all sorts of neat tricks.
+- There are many other things to consider in regards to performance but these should set you in the right direction.
+  - In general, you want to be updating things as little as possible (ideally not at all!). There are also advanced methods to explore like instancing.
+- It's a myth that WebGL is slow when used with React. 
+  - If you take an open mind and learn how to use react-three-fiber/@threejs then you'll be surprised at just how fast you can make things. 
+  - There's also an argument that using React for this can make things even *faster*
 
-- ## 
+- ## TIL: Do not use dynamic rendering with React Fragments.  
+- https://twitter.com/bruno__quaresma/status/1420090688025374721
+  - That makes it harder for the parser to identify what is changing/changed.
 
 - ## redux-saga doesn't play well with Typescript. 
 - https://twitter.com/cse_as/status/1418854592129941513

@@ -1,11 +1,11 @@
 ---
-title: web-dev-fwk-frontend-icons
+title: web-fwk-icons
 tags: [icon, web]
 created: '2021-04-17T15:27:54.454Z'
-modified: '2021-04-17T15:28:47.071Z'
+modified: '2021-07-28T19:22:07.339Z'
 ---
 
-# web-dev-fwk-frontend-icons
+# web-fwk-icons
 
 # guide
 

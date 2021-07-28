@@ -1,11 +1,11 @@
 ---
-title: web-ui-comp-general-elements
+title: web-ui-comp1-general-elements
 tags: [components, ui]
 created: '2021-03-16T15:12:30.702Z'
-modified: '2021-04-23T15:33:32.664Z'
+modified: '2021-07-28T20:10:24.131Z'
 ---
 
-# web-ui-comp-general-elements
+# web-ui-comp1-general-elements
 
 > 常作为创建业务组件的基础组件，如Box、Link
 

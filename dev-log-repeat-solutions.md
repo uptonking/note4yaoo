@@ -9,23 +9,26 @@ modified: '2021-07-20T13:50:23.433Z'
 # dev-log-repeat-solutions
 
 # guide
-- techstacks: table in editor(components/themeable/headless)
+- techstacks: rich editor
   - design system
+    - themeable/headless/a11y
   - text editor
+    - modular/prod-ready/extensible
   - data table
+    - modular/perf/themeable
 
 - solutions: live/inter(re)active/reproducible doc
-  - note-taking
-    - markdown-based
-    - collapsible
-  - pivotable
-    - pivot table/sheets
-    - data-oriented
-  - live-documentation
-    - table in document: notion
-    - dynamic data sources
-    - shareable & embeddable
-    - pdf
+  - dashboard/spaces
+    - themeable/configurable/widgets
+  - wiki/knowledge-base
+    - local first
+    - markdown-based text format
+    - more: collapsible
+  - live-notebook/note-taking
+    - collaborative
+    - reproducible
+    - easy pivot table in document
+    - more: easy viz
 
 - tips
   - rendering(~~web~~) is the future, but not the present.
@@ -38,20 +41,20 @@ modified: '2021-07-20T13:50:23.433Z'
 - tips
 
 - leading
-  - excel
-  - tencent docs
+  - 微软 office/word/excel
+  - 腾讯 文档
+  - 字节 飞书
+
+## react-table /tannerlinsley
 
 ## ag-grid /ag-grid
-
-## react-table /indie
-
-## tabulator /indie
 
 ## luckysheet /bytedance
 
 ## more-list-grid
 
 - x-spreadsheet /indie
+- tabulator /indie
 - frappe-datatable /frappe
 # editor
 - tips
@@ -77,18 +80,18 @@ modified: '2021-07-20T13:50:23.433Z'
 # wishlist
 - faves
   - design: adobe-spectrum, tailwind
-  - editor: prosemirror, codemirror, editorjs, craftjs
+  - editor: prosemirror, codemirror, gutenberg
   - geomapping:mapbox-gl, leaflet
   - geoviz:deck.gl
   - geoprocessing:turfjs, mapnik
-  - geo: esri，计算工具大部分都基于cpp
+  - geo: gdal, esri，计算工具大部分都基于cpp
 
 - design-system
   - tips
   - material
   - carbon
   - spectrum
-  - ui: material-ui, ant design,atlaskit , theme-ui, bootstrap
+  - ui: material-ui, ant design, atlaskit , theme-ui, bootstrap
   - design-tokens: polaris-tokens
 
 - dashboard

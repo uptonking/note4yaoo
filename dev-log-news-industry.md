@@ -11,6 +11,7 @@ modified: '2021-03-29T19:15:28.401Z'
 
 - 2021
 
+- 202107-market-因政策原因，K12校外教育培训遇冷
 - 202106-career-腾讯、快手、字节等头部一线公司开始取消996加班规定
 - 202105-os-微软正式宣布，IE 11将于2022年6月15日退役(已25年)
 - 202105-fintech-数字人民币接入支付宝
@@ -28,7 +29,6 @@ modified: '2021-03-29T19:15:28.401Z'
 - 202101-world-首批90后31岁，80后41岁，70后51岁，60后61岁
 
 # 2020
-
 - 2020
   - Chromebooks outsold Macs worldwide in 2020, cutting into Windows market share.
 

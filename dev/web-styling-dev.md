@@ -1,11 +1,11 @@
 ---
-title: web-style
-tags: [style, web]
+title: web-styling-dev
+tags: [css, style, styling, web]
 created: '2019-08-05T11:51:59.761Z'
-modified: '2021-04-23T17:10:55.308Z'
+modified: '2021-07-28T20:22:26.057Z'
 ---
 
-# web-style
+# web-styling-dev
 
 # summary
 

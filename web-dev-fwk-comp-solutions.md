@@ -1,11 +1,11 @@
 ---
-title: web-dev-fwk-frontend-comp-solutions
+title: web-dev-fwk-comp-solutions
 tags: [components, design-system, solutions, web]
 created: '2019-06-09T05:38:07.927Z'
-modified: '2021-01-13T17:13:08.881Z'
+modified: '2021-07-28T19:23:10.150Z'
 ---
 
-# web-dev-fwk-frontend-comp-solutions
+# web-dev-fwk-comp-solutions
 
 # 设计系统及组件开发解决方案
 

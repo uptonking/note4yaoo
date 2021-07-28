@@ -30,7 +30,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## implementing the cut-out effect in CSS and SVG.
+- https://twitter.com/shadeed9/status/1419956367486500887
+  - [Thinking About The Cut-Out Effect: CSS or SVG?](https://ishadeed.com/article/thinking-about-the-cut-out-effect/)
+- Love the way you approach this; so much consideration for the details! Discussing the pros and cons of each solution, simple and more complex. The demos are great, too!
 
 - ## 奥运五环丝带形成环的动画
 - https://codepen.io/ste-vg/pen/kXzXYW

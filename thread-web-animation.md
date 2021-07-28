@@ -15,7 +15,11 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## experimenting with a way to visualize the frames of a framer-motion animation
+- https://twitter.com/siddharthkp/status/1420424243007922179
+  - the controls UI is by @pmndrs
+  - fun fact, that's also how we visualise easing (that was all @davidbismut) in Leva, it gives a really good idea of what's going to happen
+  - https://github.com/siddharthkp/tracer-motion
 
 - ## a feature comparison guide for Motion Concept C.
 - https://twitter.com/mattgperry/status/1419753685207429121

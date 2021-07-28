@@ -1,11 +1,11 @@
 ---
-title: web-dev-fwk-vanillajs-comp
+title: web-fwk-vanillajs-comp
 tags: [components, vanillajs, web]
 created: '2020-11-06T13:55:26.840Z'
-modified: '2020-12-27T20:28:20.539Z'
+modified: '2021-07-28T19:21:21.756Z'
 ---
 
-# web-dev-fwk-vanillajs-comp
+# web-fwk-vanillajs-comp
 
 # react-like
 
