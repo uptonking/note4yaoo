@@ -17,7 +17,21 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## I came up with some good patterns that prevent the code from getting mixed up.
+- https://twitter.com/steveruizok/status/1420502623602552833
+- Events are sent from the UI to the state machine, making the UI's event handlers very simple. They just toss events back to the machine.
+  - The state machine decides what (if anything) to do with the event. Sometimes that's easy to figure out.
+  - Either way, if an event just changes the app state, then it's handled with a regular action. 
+  - But if an event changes the document then it's run through a "command".
+- Commands create entries in the undo / redo stack. They have two methods: "do" that produces a change and "undo" that produces the opposite change.
+  - Other actions lead to "sessions". A session has a lifecycle: it begins, updates many times, and then ends or is cancelled. Sessions produce state changes but they don't add to the undo/redo stack.
+  - Sessions themselves can be complex, usually caching "snapshots" of data that are used throughout the session. This helps make behaviors like drawing much more smooth.
+  - If a session completes, then it returns a command. This way, an interaction like dragging shapes (or "translating") will "undo" back to where the shapes were before the drag, ignoring all of the changes in between.
+  - Since the commands and sessions all just operate on an object, they're really easy to test. I've been good on this rebuild to give everything at least cursory tests as I bring things over.
+- My hope with this kind of architecture is that it's easy for a contributor to quickly focus in the part of the app they want to improve. Still bugs with transforming rotated shapes btw—any takers?
+- Thanks Steve for your detailed post on state designer and command pattern.
+  - I envy the way most of the code you put into the state. It makes individual components light weight.
+  - But state is getting scary.
 
 - ## full stack developer Tips, 对于可以为空的的属性
 - https://twitter.com/ThaddeusJiang/status/1404252068064337922

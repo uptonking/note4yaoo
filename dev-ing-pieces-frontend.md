@@ -18,7 +18,13 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## [VisualViewport 实现浏览器窗口的缩放检测](https://www.lijinke.cn/2021/03/31/VisualViewport-%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E7%BC%A9%E6%94%BE%E6%A3%80%E6%B5%8B/)
+- 最近在工作中, 遇到了用户如果缩放浏览器窗口, 或者使用 mac 笔记本的触摸板缩放浏览器窗口时, canvas 会模糊的问题, 
+原因很简单, 缩放之后, 浏览器的 window.devicePixelRatio 已经发生改变, 所以要用最新的 devicePixelRatio 去绘制
+- 对于用户使用键盘, 比如 commond + + 和 common + - 缩放时, 事情很好办, 使用 resize 事件即可
+- 首先还是使用键盘进行缩放, 发现能正常响应, 
+- 接下来使用 mac 触摸板进行双指缩放, 
+- 双指缩放 可以使用 e.target.scale 获取缩放比, 键盘缩放, 可以使用 window.devicePixelRatio , 使用 Math.max 取最大字就可以兼容两种情况
 
 - ## [You can watch for nested properties changing in React's useEffect() hook](https://dev.to/aileenr/til-you-can-watch-for-nested-properties-changing-in-react-s-useeffect-hook-26nj)
 

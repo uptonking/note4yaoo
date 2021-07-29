@@ -9,6 +9,9 @@ modified: '2021-05-14T14:25:57.616Z'
 
 # 大量使用圆角矩形卡片的设计
 
+- https://taskablehq.com/
+  - 页面背景灰色，卡片背景白色
+
 - https://mxb.dev/
   - https://github.com/maxboeck/mxb
   - 主要卡片的背景为图片且无边框，展示文字的卡片的有边框且有点乱

@@ -21,23 +21,44 @@ modified: '2020-07-12T19:00:27.345Z'
       - I recently built a sortable tree example with @dndkit.
       - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
 
-- react-treeview /MIT/1kStar/201706
+- react-treeview /MIT/1kStar/201706/js/NoDeps
   - https://github.com/chenglou/react-treeview
-  - https://cdn.rawgit.com/chenglou/react-treeview/aa72ed8b9e0b31fabc09e2f8bd4084947d48bb09/demos/index.html
+  - demos: [controlled, uncontrolled](https://cdn.rawgit.com/chenglou/react-treeview/aa72ed8b9e0b31fabc09e2f8bd4084947d48bb09/demos/index.html)
+  - 无依赖；可折叠；无样式主题
   - Easy, light, flexible tree view made with React.
-- react-vtree /MIT/113Star/202004
-  - https://github.com/Lodin/react-vtree
-  - https://lodin.github.io/react-vtree/
-  - React component for efficiently rendering large tree structures
-  - based on react-window
-- cp-react-tree-table /MIT/41Star/202005
+- cp-react-tree-table /MIT/41Star/202005/ts/NoDeps
   - https://github.com/constantin-p/cp-react-tree-table
   - https://constantin-p.github.io/cp-react-tree-table/
+  - 给出的示例很像data table，可以从外部按钮触发展开、折叠、滚动
   - A fast, efficient tree table component for ReactJS
-- react-simple-tree-menu /MIT/62Star/202006
+- react-simple-tree-menu /MIT/62Star/202008/ts
   - https://github.com/iannbing/react-simple-tree-menu
   - https://iannbing.github.io/react-simple-tree-menu/
-  - A simple React tree menu component
+  - 依赖可忽略；示例stories使用了reactstrap.v8
+  - Inspired by Downshift, a simple, data-driven, light-weight React Tree Menu component 
+  - fully customizable with render props and control props
+- react-checkbox-tree /505Star/MIT/202105/js
+  - https://github.com/jakezatecky/react-checkbox-tree
+  - https://jakezatecky.github.io/react-checkbox-tree/
+  - 依赖classnames、lodash、nanoid
+  - 非常适合用来实现文件管理器
+- react-super-treeview /93Star/MIT/201908/js/ClassComp
+  - https://github.com/azizali/react-super-treeview
+  - https://azizali.github.io/react-super-treeview/examples/
+  - 依赖只有react-transition-group、lodash
+  - a React Treeview component which is customizable on every level.
+- react-virtualized-sticky-tree
+  - https://github.com/marchaos/react-virtualized-sticky-tree
+  - https://marchaos.github.io/react-virtualized-sticky-tree/
+  - 依赖react-measure
+  - 使用场景类似滚动城市列表时能固定省名
+  - A React component for efficiently rendering tree like structures with support for `position: sticky`. 
+  - uses a similar API to react-virtualized.
+- react-sortable-tree /MIT/3.3kStar/202005
+  - https://github.com/frontend-collective/react-sortable-tree
+  - https://frontend-collective.github.io/react-sortable-tree/
+  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
+  - Drag-and-drop sortable component for nested data and hierarchies
 - react-state-tree /MIT/94Star/202001
   - https://github.com/suchipi/react-state-tree
   - Drop-in replacement for useState that persists your state into a redux-like state tree
@@ -45,21 +66,32 @@ modified: '2020-07-12T19:00:27.345Z'
   - https://github.com/swiftcarrot/react-ui-tree
   - https://swiftcarrot.github.io/react-ui-tree/
   - React tree component with drag & drop
-  - based on js-tree
-- react-sortable-tree /MIT/3.3kStar/202005
-  - https://github.com/frontend-collective/react-sortable-tree
-  - https://frontend-collective.github.io/react-sortable-tree/
-  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
-  - Drag-and-drop sortable component for nested data and hierarchies
+  - 依赖js-tree
 - rc-tree /MIT/689Star/202006
   - https://github.com/react-component/tree
   - http://react-component.github.io/tree/
   - Tree component based on rc-virtual-list, rc-animate
-- react-treebeard /MIT/1.5kStar/201909
+- react-treebeard /MIT/1.5kStar/201909/js
   - https://github.com/storybookjs/react-treebeard
   - http://storybookjs.github.io/react-treebeard/
   - Tree Component. Data-Driven, Fast, Efficient and Customisable.
-  - based on velocity-animate
+  - 依赖emotion、velocity-animate
+- https://github.com/drcmda/react-animated-tree
+  - configurable tree view with full support for drop-in animations
+  - 依赖react-spring.v5
+
+- react-virtualized-tree
+  - https://github.com/diogofcunha/react-virtualized-tree
+  - 依赖 react-virtualized
+- https://github.com/NeekSandhu/react-aspen
+  - https://neeksandhu.github.io/react-aspen-demo/
+  - performant solution for displaying (dynamic) nested trees in React apps.
+  - 依赖aspen-tree-model、react-window
+- react-vtree /MIT/113Star/202004
+  - https://github.com/Lodin/react-vtree
+  - https://lodin.github.io/react-vtree/
+  - React component for efficiently rendering large tree structures
+  - 依赖react-window
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render
@@ -170,10 +202,39 @@ modified: '2020-07-12T19:00:27.345Z'
   - Data Preview is already capable of loading a few 10+MB's large data files with 100+K records & extensive list of supported Data Formats
   - you'll be hard pressed to find on VSCode marketplace in one extension.
   - soon it will include large text & binary data files loading & Apache Arrow data streaming.
-# misc
+# json tree
+- https://github.com/measuredco/react-from-json
+  - Declare your React component tree in JSON
 - https://github.com/aximario/json-tree
   - 把扁平化的数据转换成树形结构的JSON，把树形JSON扁平化
+
+# accordion
+- https://github.com/springload/react-accessible-accordion
+  - https://springload.github.io/react-accessible-accordion
+  - Accessible Accordion component for React
+- https://github.com/glennflanagan/react-collapsible
+  - React component to wrap content in Collapsible element with trigger to open and close.
+  - It's like an accordion, but where any number of sections can be open at the same time.
+  - Collapsible can receive any HTML elements or React component as it's children. Collapsible will wrap the contents, as well as generate a trigger element which will control showing and hiding.
+
+- https://github.com/stuartjnelson/badger-accordion
+  - An accessible vanilla JS accordion with extensible API
+- https://github.com/cferdinandi/houdini
+  - A simple, accessible show-and-hide/accordion script.
+  - 
+# misc
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes
 - https://github.com/bkrem/react-d3-tree
 - https://github.com/mar10/fancytree
+  - http://wwwendt.de/tech/fancytree/demo/
+  - a JavaScript tree view/tree grid plugin with support for keyboard, inline editing, filtering, checkboxes, drag'n'drop, and lazy loading.
+- https://github.com/vakata/jstree
+  - http://jstree.com/
+  - jquery tree plugin
+
+- https://github.com/Idered/behavior-tree
+  - Manage React state with Behavior Trees
+  - JavaScript/TypeScript implementation of Behavior Trees.
+  - @btree/core - Framework agnostic behavior trees implementation
+  - With Behavior Tree notation all your code will be wrapped with nodes - that allows to visualize how it works. 

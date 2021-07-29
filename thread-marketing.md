@@ -14,7 +14,12 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## Now we have Slack, Discord, Gitter, Microsoft Teams, and Atlassian Stride.
+- https://news.ycombinator.com/item?id=15191612
+  - I'm not sure when chat rooms became a business tool. 
+  - Personally, I find myself distracted more than anything from all the notifications these apps cause, I get less done.
+- I wouldn't describe them as "chat rooms" exactly, because they have direct messaging and audio/video calls, etc. They are generalized communication tools geared towards synchronous communication. Email is async.
+  - Without defending Slack (because I have reservations about it too), your coworkers should stop being mad you're not online, that isn't Slack's fault.
 
 - ## 苹果今天公布的财报说，它有7亿的付费订阅用户。这太惊人了，应该是全球最大的在线服务提供商了。
 - https://twitter.com/ruanyf/status/1420221512456359936

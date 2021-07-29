@@ -10,6 +10,37 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React tip: That data you're setting in state in a `useEffect` hook could probably just be derived while rendering instead.
+- https://twitter.com/acemarke/status/1365874077177700361
+- Similarly: in most cases, you probably don't want to sort or filter data and then put that into state.
+  - Instead, store a description of _how_ to sort or filter, and then derive the final updated data while rendering
+  - [DejaVu: Caching versus Memoization](https://dev.to/thekashey/dejavu-caching-versus-memoization-298n)
+  - [Rendering Lists code snippets](https://blog.isquaredsoftware.com/presentations/react-redux-ts-intro-2020-12/#/34)
+
+```JS
+useEffect(() => {
+  setUserCanDoThis(calculateUserPerms(user, perms));
+}, [perms])
+
+// could just be:
+
+const userCanDoThis = calculateUserPerms(user, perms)
+```
+
+- Isn’t this the point of useMemo?
+  - No. `useMemo` is an optimization for the pattern of deriving state while rendering. I'm talking about even trying to use the "derive while rendering" pattern in the first place.
+- How does it know it needs to render though
+- No, this is for computations derived from other state, that does not have any side-effects. An empty array in a useEffect is just for any side-effects you only want to run once.
+  - If these are heavy calculations you'll run into perf problems. That's why we have useMemo.
+
 - ## I spend a lot of time squeezing performance from React and react-three-fiber. Some quick tips:
 - https://twitter.com/robhawkes/status/1420032462911049728
   - Avoid updating three.js using props

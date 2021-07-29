@@ -33,7 +33,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Anyone found a good way to test for accurate scrollBehavior support?
+- https://twitter.com/sebastienlorber/status/1420476101491630080
+  - Getting some false positives on Windows+Chrome
+
 
 - ## If you're working on a tool that writes files to disk (like a compiler, babel/postcss/etc), it would be cool if there were an option to say: "Don't write to disk if the file is unchanged."
 - https://twitter.com/kentcdodds/status/1418719232271929346

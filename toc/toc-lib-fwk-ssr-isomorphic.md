@@ -51,6 +51,11 @@ modified: '2020-12-19T13:04:40.865Z'
     - 本应用是直接采用webpack --watch + inline-sourcemap 的方式将文件写到本地，实现更加简洁。
     - next.js hmr采用hot-middleware + webpackHotDevClient.js实现
     - 本应用hmr直接用社区的热门库webpack-dev-server实现
+
+- https://github.com/FormidableLabs/react-ssr-prepass
+  - A custom partial React SSR renderer for prefetching and suspense
+  - react-dom/server does not have support for suspense yet.
+  - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises. 
 # ssr-solutions
 - https://github.com/GoogleChrome/rendertron
   - Rendertron is a headless Chrome rendering solution designed to render & serialise web pages on the fly.

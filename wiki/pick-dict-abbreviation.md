@@ -27,7 +27,8 @@ modified: '2020-08-06T05:29:22.922Z'
     - negative acknowledgement. // 我不同意
 
  
-
+- LMK
+  - let me know
 - IIRC
   - an initialism for "If I Remember Correctly" or "If I Recall Correctly"
 - TBH

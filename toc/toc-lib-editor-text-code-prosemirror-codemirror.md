@@ -142,6 +142,10 @@ modified: '2021-07-08T12:37:23.562Z'
   - 渲染自定义组件基于`plugin.props.nodeViews`配置
   - EMirror, which based on ProseMirror, designed to provide a free framework
 
+- https://gitlab.com/smoores/ode
+  - A self-hosted collaborative rich text editor.
+  - It's based on Parse Platform, an open source, self-hosted "Complete Application Stack," and Prosemirror, a rich text editor toolkit.
+
 - https://github.com/li-yechao/paper-editor
   - Write everything in your life
   - 整体架构和tiptap/rich-markdown-editor类似

@@ -7,8 +7,24 @@ modified: '2021-04-19T18:10:10.394Z'
 
 # ux-usecase-stars
 
-# landing page for 以UGC内容分享为中心的应用
+# comment 社交评论组件
 
+- 限制缩进，只支持一级评论
+  - twitter: 所有评论项均可以作为一条tweet查看
+
+- 限制缩进，最多支持两级评论
+  - facebook: 所有、最新、热评
+    - 对于二级评论，会在每条评论前显示回复的用户名
+    - 评论和子评论都采用懒加载的方式，需要一直点查看更多
+  - github
+    - issues只支持一级评论，discussion支持两级评论
+  - 知乎、微博
+    - 默认排序、最新排序；每条二级评论支持查看完整上下文
+
+- 使用无限缩进
+  - reddit
+  - hacker news
+# landing page for 以UGC内容分享为中心的应用
 - 主要使用卡片
   - dev.to: 背景灰、卡片白
   - quora: 首页推荐的每个回答都以卡片的形式展示

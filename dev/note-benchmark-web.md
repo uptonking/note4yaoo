@@ -20,9 +20,17 @@ modified: '2020-07-14T09:28:43.976Z'
   - different ways to render the same table with the same data. 
   - The purpose is to experiment different Javascript template engines and benchmark them with Vanilla implementation.
   - tested: hyperhtml lighterhtml lit-html nanomorph pug pug + nanomorph + nanohtml svelte
+# react
+- https://github.com/paularmstrong/react-component-benchmark
+  - This project aims to provide a method for gathering benchmarks of component tree mount, update, and unmount timings.
+  - Since this project does not hook into the React renderer directly, the values gathered are not 100% accurate and may vary slightly because they're taken from a wrapping component.
 # web
 - https://github.com/mikolaj6r/web-benchmark /202011
   - Node benchmark that uses Lighthouse and generates charts, tables, markdown and big json with results.
+
+- https://github.com/Polymer/tachometer
+  - tachometer is a tool for running benchmarks in web browsers. 
+  - It uses repeated sampling and statistics to reliably identify even the smallest differences in timing.
 # js
 - https://github.com/bryntum/siesta
   - Siesta is a stress-free, ubiquitous, open-source JavaScript/TypeScript testing tool

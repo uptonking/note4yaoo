@@ -67,3 +67,9 @@ modified: '2021-01-12T18:49:07.422Z'
   - https://codepen.io/matteobruni/pen/oNxNvja
   - Object GUI is your fully customizable Javascript Object GUI Editor
   - 内置多种主题theming
+
+# more-components
+
+- https://github.com/ashwinbabus/react_comments
+  - A simple react-app (no backend) that demonstrates nested comments feature.
+  - 依赖只有redux；支持无限嵌套的评论组件

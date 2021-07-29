@@ -1,24 +1,34 @@
 ---
-title: web-ui-ux-accordion-collapse
+title: web-ux6-accordion-collapse
 tags: [accordion, components, ui]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2021-06-02T17:32:05.417Z'
+modified: '2021-07-29T20:37:05.228Z'
 ---
 
-# web-ui-ux-accordion-collapse
+# web-ux6-accordion-collapse
 
 # guide
 
 - react-spectrum的accordion组件
 - hover事件触发rerender次数过多
 
+- usecase
+  - 甚至可以用来实现多级评论 comments > tree > accordion
 # html-details-summary
-
 - accordion vs tab
+# discuss
+- ## How to collapse a div with reactjs?
+- https://stackoverflow.com/questions/40629319/
+- setting the right CSS class on the `<div>` it renders.
+- There is also a library called as "react-bootstrap" which allows the integration of react with bootstrap. 
+  - They have a very simple example for making the collapsible div
 
-## discuss
+- ## How can I expand and collapse a <div> using javascript?
+- https://stackoverflow.com/questions/17460116
+- `ele.style.display = "none"`; 
 
-- ### [Add Accordion component](https://github.com/adobe/react-spectrum/issues/848)
+- ## Add Accordion component
+- https://github.com/adobe/react-spectrum/issues/848
 - This should follow the ARIA accordion pattern. 
   - Much of the keyboard behavior should already be handled by our selection/focus management hooks.
 - For state, we can use the `useTreeState` hook.
@@ -28,7 +38,7 @@ modified: '2021-06-02T17:32:05.417Z'
 - `useAccordionItem` hook should be created to manage an individual accordion item.
 - The selection hooks may be overkill for this actually, but we can try it out and see how much we need to override.
 
-- ### Accordion and Disclosure are different. 
+- ## Accordion and Disclosure are different. 
 - https://twitter.com/jnurthen/status/929033708643872769
   - An Accordion is a grouping of disclosures. 
   - Disclosures are **independently** operating controls. 
@@ -37,7 +47,7 @@ modified: '2021-06-02T17:32:05.417Z'
   - Accordions used to use tab semantics but it lead to horrible keyboard behaviour so we removed that in 1.1 APG. 
   - I agree it needs something - I think I suggested adding a labelled region around the entire widget but I think I lost that fight. If you agree open an issue against APG.
 
-- ### In an accordion, if one section is already expanded, and a user clicks on another section, should the first one be collapsed or stay as is?
+- ## In an accordion, if one section is already expanded, and a user clicks on another section, should the first one be collapsed or stay as is?
 - https://twitter.com/smashingmag/status/864355263230361600
 - The scroll position changes when collapsing sections above the viewport. That's why I usually keep them open.
 - Nasty pattern. Use tabs instead
@@ -45,7 +55,7 @@ modified: '2021-06-02T17:32:05.417Z'
 - Like several others have said, I'd keep them expanded. 
   - Another good reason is it can help users know which sections they already looked at.
 
-- ### What HTML element do you feel is still not used enough these days? How about `<details>`
+- ## What HTML element do you feel is still not used enough these days? How about `<details>`
 - https://twitter.com/stackblitz/status/1312021847123390464
   - for doing this common "show more" feature in a nice semantic way, and with no JavaScript needed
 - Nice, but can't customize with css
@@ -55,7 +65,7 @@ modified: '2021-06-02T17:32:05.417Z'
 - To get transitions I prefer to use radio buttons, or checkboxes and the sibling selector in CSS. 
   - Easy enough to generate unique ID server side and no JS needed on the client.
 
-- ### Pretty curious about this actually: <details> and <summary>
+- ## Pretty curious about this actually: <details> and <summary>
 - https://twitter.com/briankardell/status/1299819401995259905
 - I love them, and the fact that they’re not searchable when closed is hopefully getting addressed with beforematch, and I _do_ hope all browsers implement this. 
   - Minor annoyances: styling of the triangle and no simple way to add animation.
@@ -99,11 +109,11 @@ modified: '2021-06-02T17:32:05.417Z'
 - Use it in the past and had terrible support in Safari + Firefox regarding css customization. 
   - Ended up creating the same behavior from scratch in JS.
 
-- ### Twitter A11y people if I am using a <details> element for the open and close behaviour in a menu, what should it's role be?
+- ## Twitter A11y people if I am using a <details> element for the open and close behaviour in a menu, what should it's role be?
 - https://twitter.com/AdaRoseCannon/status/1310515208482426880
 - accessibility mappings for HTML is in its own spec
 
-- ### If you use details::before or details::after on a <details>/<summary> widget
+- ## If you use details::before or details::after on a <details>/<summary> widget
 - https://twitter.com/AmeliasBrain/status/1046877972685238272
 - I'm talking about the pseudos on the details element itself (details::before, details::after), not pseudos on the summary element.
   - summary::before & summary::after are laid out as children of summary in all browsers & aren't affected by open/close state.

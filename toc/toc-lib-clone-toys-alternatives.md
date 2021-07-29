@@ -11,7 +11,26 @@ modified: '2021-07-21T10:03:38.002Z'
 
 - ref
   - 高仿玩具
-# popular
+  - [Repository dedicated to all my UI(clonoe) projects!](https://github.com/Pedro-Murilo/user-interface)
+# toys-react
+- https://github.com/leoronne/github-ui-clone
+  - https://github.ui-clone.ronne.dev/
+  - 依赖material-ui.v4、axios、date-fns、react-router.v6、styled-components
+  - 实现了个人主页和仓库页
+  - This repo contains an UI clone (partial) from GitHub application using it's public APIs
+  - 只实现了个人主页，没有实现单个仓库页，且不依赖material-ui
+    - https://github.com/gideonfernandes/ui-clone-github-web
+    - https://github.com/maganezf/github-ui-clone
+- https://github.com/mustafadalga/github-ui-clone
+  - https://codepen.io/mustafadalga/pen/xxOwJyG
+  - Github Landing Page Responsive UI Clone 仅落地页
+- https://github.com/leoronne/discord-ui-clone
+  - https://discord.ui-clone.ronne.dev/
+  - This repo contains an UI clone (partial) from Discord application 仅黑色主题
+
+- https://github.com/atilara/ui-clone-twitter
+  - Twitter clone, done to study ReactJS and Flexbox
+
 - https://github.com/tohhongxiang123/gitbook-clone
   - 依赖react-sortable-tree、react-router，依赖很少
   - 实现了目录，未实现toc
@@ -35,6 +54,12 @@ modified: '2021-07-21T10:03:38.002Z'
   - https://notion-clone.kmuenster.com/
   - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
   - 后端依赖 express、jsonwebtoken、mongoose
+
+
+# toys-vanillajs-css
+- https://github.com/leocosta1/instagram-clone
+  - https://leocosta1.github.io/instagram-clone/
+  - Responsive Instagram Clone for study purposes. 
 # more-toys
 - https://github.com/tuan3w/linearapp_clone
   - 依赖material-ui、redux4、styled-components、tailwindcss、rich-markdown-editor
