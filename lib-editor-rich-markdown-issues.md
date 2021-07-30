@@ -31,16 +31,19 @@ modified: '2021-06-02T10:30:09.481Z'
 - ## Content is not rendered when using SSR 
 - https://github.com/outline/rich-markdown-editor/issues/303
 - Prosemirror does not support node, so to achieve this we'd have to write a renderer that emulates the output of Prosemirror – Remirror has done a good job of this, so it could be an inspiration for the work
+- ## render method is not arrow function 不应该用
+- https://github.com/outline/rich-markdown-editor/pull/500
+  - change `render = () => {}` to `render() {}`, is able to Inheritance Inversion Editor
+  - now it's ok to use `<>{super.render()}</>`
 # issues
 - ## 
 
 - ## 
 
-- ## 
-
-- ## 
-
-I
+- ## Collapsible headings
+- https://github.com/outline/rich-markdown-editor/issues/169
+  - The way this should likely work is to have "collapsing" a heading add a **Prosemirror decoration** to everything between the heading and the next one of the same level or above. 
+  - The decoration can add a `className` which hides the content.
 
 - ## Floating toolbar gets covered by native toolbar on text selection in android
 - https://github.com/outline/rich-markdown-editor/issues/462

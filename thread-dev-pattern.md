@@ -15,7 +15,16 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## Want an early look at the tldraw renderer?
+- https://twitter.com/steveruizok/status/1420836276878577665
+- The project is exported as two layers, and this is the “lower” of the two: it’s job is to render shapes and run even handlers.
+- In this sandbox, we’re passing the renderer a “page” with shapes, together with a state for that page; and then using the renderer’s events to make changes to that page/state.
+- the renderer doesn’t actually know what shapes we have, or how to render them, so we also pass it some “shape utilities” that it can use to work with/render the shapes.
+- The regular tldraw editor (the second, “higher” layer) works the same way: it’s a collection of shapes, shape utils, and lots of logic around how canvas interactions should effect the page/page’s state.
+- Why export both layers? 
+  - For one, it’s a great way to experiment with new shapes and interactions without having to bring along all the tldraw-specific stuff. You could build anything on top of this renderer.
+  - For another, it’s a good force to keep things small, fast and separate. Improvements are easier to make (and to notice) with the separate packages.
+- And as an increasingly professional canvas UI guy Zipper-mouth face it’s a good to have a clean starting point should I need to prototype other kinds of primitives or interactions for clients/work/etc.
 
 - ## I came up with some good patterns that prevent the code from getting mixed up.
 - https://twitter.com/steveruizok/status/1420502623602552833

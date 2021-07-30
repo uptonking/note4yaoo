@@ -54,14 +54,12 @@ modified: '2020-07-12T19:00:27.345Z'
   - 使用场景类似滚动城市列表时能固定省名
   - A React component for efficiently rendering tree like structures with support for `position: sticky`. 
   - uses a similar API to react-virtualized.
+
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
-- react-state-tree /MIT/94Star/202001
-  - https://github.com/suchipi/react-state-tree
-  - Drop-in replacement for useState that persists your state into a redux-like state tree
 - react-ui-tree /MIT/693Star/201811
   - https://github.com/swiftcarrot/react-ui-tree
   - https://swiftcarrot.github.io/react-ui-tree/
@@ -83,7 +81,8 @@ modified: '2020-07-12T19:00:27.345Z'
 - react-virtualized-tree
   - https://github.com/diogofcunha/react-virtualized-tree
   - 依赖 react-virtualized
-- https://github.com/NeekSandhu/react-aspen
+- react-aspen
+  - https://github.com/NeekSandhu/react-aspen
   - https://neeksandhu.github.io/react-aspen-demo/
   - performant solution for displaying (dynamic) nested trees in React apps.
   - 依赖aspen-tree-model、react-window
@@ -207,7 +206,6 @@ modified: '2020-07-12T19:00:27.345Z'
   - Declare your React component tree in JSON
 - https://github.com/aximario/json-tree
   - 把扁平化的数据转换成树形结构的JSON，把树形JSON扁平化
-
 # accordion
 - https://github.com/springload/react-accessible-accordion
   - https://springload.github.io/react-accessible-accordion
@@ -222,6 +220,7 @@ modified: '2020-07-12T19:00:27.345Z'
 - https://github.com/cferdinandi/houdini
   - A simple, accessible show-and-hide/accordion script.
   - 
+
 # misc
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes

@@ -11,9 +11,7 @@ modified: '2021-01-04T16:21:18.990Z'
 
 - open-geo
   - https://www.osgeo.org/projects/
-
 # geomapping
-
 - green-gis /10Star/MIT/202009/ts
   - https://github.com/shengzheng1981/green-gis-js
   - https://green.ispongecity.com/
@@ -35,6 +33,19 @@ modified: '2021-01-04T16:21:18.990Z'
 - maptalks.js /3kStar/BSD/202012/js
   - https://github.com/maptalks/maptalks.js
   - A light JavaScript library to create integrated 2D/3D maps.
+- protomaps.js /197Star/BSD/202107/ts
+  - https://github.com/protomaps/protomaps.js
+  - https://protomaps.com/docs/protomaps-js
+  - Lightweight vector map rendering, labeling and symbology for the web
+  - This project is a complete web map renderer - including quality label layout, pattern fills, and icons - in as simple as possible of an implementation. 
+  - It's an alternative to renderers like Mapbox GL JS in a fraction of the size.
+  - Render static maps to Canvas elements or interactive maps with Leaflet integration
+  - [what protomaps.js is, what protomaps.js is not](https://protomaps.com/docs/protomaps-js/)
+    - It is not a continuous-zoom system. It displays map tiles at discrete integer zoom levels.
+    - It is not a 3D renderer. Protomaps.js is focused on rendering 2D maps from OpenStreetMap data.
+    - It is not based on WebGL. It instead uses the web-standard Canvas drawing API.
+  - it works with PostGIS vector tiles! Added an example using @pwramsey 's pg_tileserv with Natural Earth data:
+
 - openlayers /BSD/7.4kStar/202009
   - https://github.com/openlayers/openlayers
   - https://openlayers.org/
@@ -52,9 +63,7 @@ modified: '2021-01-04T16:21:18.990Z'
   - It can run from the command line or in the browser.
 - https://github.com/Esri/calcite-maps
   - A Bootstrap theme for designing, styling and creating modern map apps.
-
 # 3d
-
 - cesium /6.2kStar/Apache2/202009/js
   - https://github.com/CesiumGS/cesium
   - https://cesium.com/cesiumjs/
@@ -62,9 +71,7 @@ modified: '2021-01-04T16:21:18.990Z'
 - ViziCities /2.7kStar/BSD/201610/js
   - https://github.com/UDST/vizicities
   - A framework for 3D geospatial visualization in the browser
-
 # map-app
-
 - https://github.com/mapbox/storytelling
   - This template is designed to accelerate building out a "scrollytelling" map story.
     - The output is an HTML and JavaScript file. 

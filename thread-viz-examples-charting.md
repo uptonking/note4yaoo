@@ -15,7 +15,11 @@ modified: '2021-04-12T12:03:37.628Z'
 
 - ## 
 
-- ## 
+- ## I have to admit that this #voronoi treeemap chart animation works great !
+- https://twitter.com/_Kcnarf/status/1421016977171259393
+  - Indeed, this is the first time I see a #voronoi treemap used this way for comparison.
+  - [The Infrastructure Plan: What’s In and What’s Out](https://www.nytimes.com/interactive/2021/07/28/upshot/infrastructure-breakdown.html)
+  - 基于voronoi的饼状图，各大类型数据的扇形区域不变，但扇形内小类型比重却改变
 
 - ## iconic chart about deaths during the Iraq War.
 - https://twitter.com/eagereyes/status/1418227276219486217

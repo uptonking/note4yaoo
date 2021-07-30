@@ -14,8 +14,8 @@ modified: '2021-07-27T09:09:48.459Z'
 # features
 - core
   - theming
+  - configurable panel
   - widgets/componnets: easy to drop in reusable components
-  - flexible, customizable panel
 
 - optional
   - tree-shaking: only include modules you need
@@ -26,6 +26,8 @@ modified: '2021-07-27T09:09:48.459Z'
 - editor/builder/configurable
 - mini app
 # products-solutions
+- black-dashboard右边面板依赖reactstrap
+- xtream-dashboard左边折叠
 
 ## [ant-design-pro](https://pro.ant.design/zh-CN/)
 
@@ -85,6 +87,22 @@ modified: '2021-07-27T09:09:48.459Z'
   - datatables
   - design assets: ps, sketch
 
+### codebase
+
+- code-xp
+  - blackdashboard的scss插入到了bootstrap的scss的源码编译流程
+  - 顶部AdminNavbar不可固定
+
+- 最核心的界面布局是 AdminLayout
+  - 左边Sidebar支持隐藏显示
+  - 中间main-panel包括不可固定的AdminNavbar和与当前路由url对应的react组件
+  - 右边FixedPlugin可配置样式主题，基于Dropdown实现
+- 项目中样式主要使用className设置类名
+  - 甚至主要使用reactstrap中的各种带样式的组件，不用自己实现状态管理、交互等逻辑
+- dark mode通过在body.classList.add/remove样式类名实现
+
+- 路由及其对应的组件通过类似json的js对象配置
+
 ## bootstrapdash dashboards
 
 - pro version
@@ -108,3 +126,41 @@ modified: '2021-07-27T09:09:48.459Z'
   - theming/dark
   - rtl
   - apps
+
+### codebase
+
+- todo
+  - 添加折叠和展开左边侧边栏的按钮；
+  - 目前监听window.width显示折叠按钮的逻辑有问题
+    - 关闭控制台时，折叠过的左边栏不会自动展开
+
+- code-xp
+  - 顶部导航条左侧背景色与侧边栏背景色相同，让人误以为导航条在侧边栏，有好有坏
+  - 动态样式不依赖classnames，而是通过`data-*`css属性选择器控制，如`[data-sidebartype='mini-sidebar']`选择器
+  - 自定义样式都写在.scss文件里面
+
+- 路由及其对应的组件通过类似json的js对象配置
+
+## airframe-react
+
+### codebase
+
+- pros
+  - 示例页面很丰富，比较符合文字展示的示例是projects、financial；与outline wiki样式接近
+  - 侧边栏支持两级目录
+  - 侧边栏内容过多时滚动条也不会显示
+  - 整体布局完全自己基于css实现，不依赖reactstrap组件
+
+- todo
+  - 路由及其对应的组件手写指定，超过100行配置后显得很凌乱 
+
+- code-xp
+  - 左边侧边栏可折叠，侧边栏占据整页高度，导航条在侧边栏右边
+  - 顶部导航条固定在顶部
+  - 动态样式通过classnames拼接类名实现
+
+- AppLayout指定了dashboard整体布局，从上到下依次是 
+  - Navbar
+  - Sidebar
+  - Content
+  - PageConfigConsumer 右侧是可勾选配置项的浮动sidebar

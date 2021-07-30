@@ -10,7 +10,7 @@ modified: '2021-07-25T10:48:21.307Z'
 # guide
 
 - dashboard baseline
-  - AdminLTE, ant design pro, coreui-admin
+  - AdminLTE, ant-design-pro, coreui-admin
   - ct-material-dashboard
 
 - open dashboards vendors
@@ -19,27 +19,45 @@ modified: '2021-07-25T10:48:21.307Z'
   - https://www.creative-tim.com/
     - https://github.com/creativetimofficial
     - material, argon, black, now-ui
-    - 第三方依赖都较少
+    - 第三方依赖都较少；大多基于reactstrap.v8
+    - 更新较频繁，很多repos都长期维护
+    - free repos多，但页面功能较少
+    - 示例大多左边没有，右边有
   - https://www.bootstrapdash.com/
     - https://github.com/BootstrapDash
     - Star Admin 2, Purple Admin
-    - 第三方依赖都很多；样式符合最新流行风格
+    - 第三方依赖都很多；大多基于react-bootstrap.v1
+    - 样式符合最新流行风格
+    - free repos不太多；更新不太频繁
+    - 示例大多左边有，右边有
   - https://www.wrappixel.com/
     - https://github.com/wrappixel
     - flexy, xtreme, ample, matrix
+    - 第三方依赖都较少；大多基于reactstrap.v8，少部分基于material-ui.v4、bootstrap
+    - 样式一般；更新不太频繁
+    - 示例大多左边有，右边没有
   - https://themesberg.com/
     - https://github.com/themesberg
-    - volt
+    - volt(react-bootstrap)
   - https://codedthemes.com/
     - https://github.com/codedthemes
-    - berry, datta-able
+    - berry(material-ui), datta-able(react-bootstrap)
+  - https://flatlogic.com
+    - https://github.com/flatlogic
+    - 第三方依赖有点多；大多依赖reactstrap.v8
+    - 示例大多左边没有，右边没有
+    - 样式都很一般
   - https://startbootstrap.com/
     - https://github.com/StartBootstrap
     - SB Admin
   - https://themeforest.net/
   - https://keenthemes.com/
-  - https://flatlogic.com
+    - https://github.com/KeenthemesHub /无repos
   - https://github.com/puikinsh
+    - 大多基于bootstrap，没有提供react版
+  - https://github.com/uifort
+    - 开源了多个主题，但作者弃更了
+    - 依赖redux
 
 - dashboards examples
   - [Bootstrap Themes](https://themes.getbootstrap.com/shop/?orderby=popularity)
@@ -49,34 +67,6 @@ modified: '2021-07-25T10:48:21.307Z'
   - https://appseed.us/app-generator
     - https://github.com/app-generator
 # popular dashboards
-- CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
-  - CoreUI offers 6 versions: Bootstrap, Angular, Laravel, React.js, Vue.js, and Vue.js + Laravel.
-  - https://github.com/coreui/coreui-free-bootstrap-admin-template
-    - [free](https://coreui.io/demo/free/)
-    - [pro](https://coreui.io/demo/)
-    - free bootstrap admin template
-    - 左边可折叠，右边没有
-  - https://github.com/coreui/coreui
-    - https://coreui.io/docs/getting-started/theming/
-    - 依赖perfect-scrollbar, @popperjs/core，免费版未提供其他theme
-    - UI Kit built on top of Bootstrap 5 and plain JavaScript without any additional libraries like jQuery
-    - CoreUI is the fastest way to build modern dashboard
-    - Several of our components need the use of JavaScript to function. Specifically, they need our JavaScript plugins and Popper.js
-
-- CoreUI Free React Admin /3.1kStar/MIT/202012/js
-  - https://github.com/coreui/coreui-free-react-admin-template
-    - [free](https://coreui.io/react/demo/free/)
-    - [pro](https://coreui.io/react/demo/)
-    - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
-    - 但源码还未完全实现两侧功能
-    - 依赖redux、chart.js；redux易去除
-    - React admin template based on Bootstrap 5
-  - https://github.com/coreui/coreui-react
-    - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
-    - 用react hooks重写实现组件，只复用css
-    - CoreUI for React.js replaces and extends the Bootstrap javascript. 
-    - Components have been built from scratch as true React hook components, without jQuery and unneeded dependencies.
-
 - Volt Bootstrap 5 Dashboard
   - [free](https://demo.themesberg.com/volt/pages/dashboard/dashboard.html)
     - 左边不可折叠，右边有浮动面板
@@ -91,6 +81,33 @@ modified: '2021-07-25T10:48:21.307Z'
   - https://github.com/themesberg/volt-bootstrap-5-dashboard
     - /2.1kStar/MIT/202107/scss
     - 依赖bootstrap.v5、popperjs、chartist、simplebar、sweetalert2
+
+- CoreUI Free Bootstrap Admin /10.5kStar/MIT/202012/pug
+  - CoreUI offers 6 versions: Bootstrap, Angular, Laravel, React.js, Vue.js, and Vue.js + Laravel.
+  - https://github.com/coreui/coreui-free-bootstrap-admin-template
+    - [free](https://coreui.io/demo/free/)
+    - [pro](https://coreui.io/demo/)
+    - free bootstrap admin template
+    - 左边可折叠，右边没有
+  - https://github.com/coreui/coreui
+    - https://coreui.io/docs/getting-started/theming/
+    - 依赖perfect-scrollbar, @popperjs/core，免费版未提供其他theme
+    - UI Kit built on top of Bootstrap 5 and plain JavaScript without any additional libraries like jQuery
+    - CoreUI is the fastest way to build modern dashboard
+    - Several of our components need the use of JavaScript to function. Specifically, they need our JavaScript plugins and Popper.js
+- CoreUI Free React Admin /3.1kStar/MIT/202012/js
+  - https://github.com/coreui/coreui-free-react-admin-template
+    - [free](https://coreui.io/react/demo/free/)
+    - [pro](https://coreui.io/react/demo/)
+    - 左边侧边栏能折叠到只显示图标，右边可切换显示浮动设置面板
+    - 但源码还未完全实现两侧功能
+    - 依赖redux、chart.js；redux易去除
+    - React admin template based on Bootstrap 5
+  - https://github.com/coreui/coreui-react
+    - 依赖coreui css,react-router-dom,perfect-scrollbar,@popperjs/core、Tippy.js,classnames
+    - 用react hooks重写实现组件，只复用css
+    - CoreUI for React.js replaces and extends the Bootstrap javascript. 
+    - Components have been built from scratch as true React hook components, without jQuery and unneeded dependencies.
 # BootstrapDash dashboards 
 - 缺点
   - 左边侧边栏不能fixed，滚动过长时会消失
@@ -98,6 +115,7 @@ modified: '2021-07-25T10:48:21.307Z'
 - 优点
   - 样式非常友好
   - 打包购买才$59，性价比爆炸
+
 - react版dashboard开源的不多
   - [Purple-React 左可右浮动面板仅展示](https://www.bootstrapdash.com/demo/purple-react-free/template/demo_1/preview/dashboard)
   - [StarAdmin-Free-React-Admin-Template 左可右没有](https://www.bootstrapdash.com/demo/star-admin-free/react/template/demo_1/preview/dashboard)

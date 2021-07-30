@@ -24,6 +24,8 @@ modified: '2021-07-23T08:38:53.805Z'
 - https://github.com/outline/outline
   - The fastest wiki and knowledge base for growing teams.
   - 依赖rich-markdown-editor、postgres、redis
+  - 与slack集成很好
+  - 样式与airframe-react dashboard风格类似
 
 - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/

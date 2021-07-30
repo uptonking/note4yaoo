@@ -11,9 +11,12 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## In new Chromium 92, PWAs can register themselves as handlers of custom URL protocols/ schemes using their installation manifest, making them all the more appy.
+- https://twitter.com/brucel/status/1420775444287303680
+  - [URL protocol handler registration for PWAs](https://web.dev/url-protocol-handler/)
 
-- ## 
+- ## Safari quirk: when an element has pointerCapture, the event's movementX and movementY will always be zero. 
+- https://twitter.com/steveruizok/status/1420844366617264132
 
 - ## CSS Module scripts were just merged into the HTML spec! __20210715
 - https://twitter.com/justinfagnani/status/1415383208359645184

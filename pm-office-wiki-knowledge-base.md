@@ -52,6 +52,7 @@ modified: '2021-07-27T11:27:37.050Z'
     - 不需要庞大的office软件，普通文本编辑器即可编辑
   - 统一管理各类资源 easy to batch organization
     - 批量替换、快速拆分合并文章
+  - collaborative
 
 - optional
   - 双向链接

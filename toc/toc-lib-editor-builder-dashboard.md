@@ -6,7 +6,9 @@ modified: '2021-01-08T11:48:16.590Z'
 ---
 
 # toc-lib-editor-builder-dashboard
-- guide
+
+# guide
+- tips
   - 使用场景包括 控制台、个人设置、数据统计...
   - 流行的dashboard大多基于bootstrap/tailwindui/material-ui/antd等基础组件库
   - dashboard的设计与业务场景紧密相关，一次性居多，难以复用具体计算逻辑，要考虑根据业务和内容设计布局
@@ -31,14 +33,14 @@ modified: '2021-01-08T11:48:16.590Z'
   - airframe-react、Vibe
   - creativetimofficial: argon-dashboard-react、black-dashboard-react(右边有面板)、now-ui-dashboard、paper-dashboard-2
   - wrappixel: xtreme-react-lite(左边可折叠)、ample-react、monster
-  - flatlogic/react-dashboard
+  - flatlogic: react-dashboard、sofia-react、one-react
   - uifort/bamburgh-react-admin-dashboard-reactstrap
 
 - 依赖material-ui
   - creativetimofficial: material-dashboard-react、material-kit-react
   - wrappixel: flexy-react-lite
-  - codedthemes/berry-free-react-admin-template
-  - flatlogic/react-material-admin
+  - codedthemes： berry-free-react-admin-template
+  - flatlogic： react-material-admin
 
 - ref
   - 左侧边栏收缩可参考  purple、airframe、xtream、coreui、sleek
@@ -48,7 +50,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - [search: dashboard](https://github.com/search?o=desc&p=1&q=dashboard+language%3Ajavascript+language%3Atypescript&s=stars&type=Repositories)
     - css only dashboard
     - dashboard ui
-# popular-bootstrap-dashboard
+# bootstrap-dashboard
 - AdminLTE /35.8kStar/MIT/202008
   - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/
@@ -214,6 +216,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://github.com/ninjadev220/react-recharts-dashboard
   - https://github.com/uifort/bamburgh-react-admin-dashboard-reactstrap-free
     - https://demo.uifort.com/bamburgh-react-admin-dashboard-reactstrap-free-demo/DashboardDefault
+    - 样式友好；依赖redux；但不更新了
 
 - https://github.com/minimal-ui-kit/material-kit-react
   - [free](https://minimal-kit-react.vercel.app/)

@@ -10,6 +10,8 @@ modified: '2020-12-08T13:33:25.985Z'
 # roadmap
 
 - We’ll likely add css grid support in with v5.1
+
+- [dark mode still not supported; Support for prefers-color-scheme media query](https://github.com/twbs/bootstrap/issues/27514)
 # changelog
 - ref
   - https://blog.getbootstrap.com/archive/

@@ -24,6 +24,20 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## CSS `filter: hue-rotate(-120deg)` can help to change emoji color
+- https://twitter.com/DasSurma/status/1420831971828195328
+  - filter属性除了ie支持度很成熟了
+  - https://codepen.io/bramus/pen/dyWevRe
+- colorize-filter: JS Module to apply a hex color to an image through css filters
+
 - ## When you need a #CSS 'display: block' element that takes only the content size, you can now use the 'width: fit-content' instead of the 'inline-block' value.
 - https://twitter.com/eladsc/status/1420411183547432970
   - And has full browser support! 
