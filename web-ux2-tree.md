@@ -1,7 +1,8 @@
 ---
 title: web-ux2-tree
+tags: [components, data-structure, tree]
 created: '2021-07-29T20:40:04.309Z'
-modified: '2021-07-29T20:40:10.336Z'
+modified: '2021-07-31T20:02:07.392Z'
 ---
 
 # web-ux2-tree

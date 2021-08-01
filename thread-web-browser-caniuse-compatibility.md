@@ -11,6 +11,40 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## JS and CSS modules with no build in sight!
+- https://twitter.com/justinfagnani/status/1403436100132110340
+  - all built into the platform, no builds required, usable with `python -m SimpleHTTPServer 8000`
+
+- CSS modules is a very simple idea: import a CSSStyleSheet from a CSS file. Apply it to the document, or a shadow root for scoped styles.
+  - They're great with web components already and a good building block for future features like importing class names and such from CSS into JS.
+- What is the production perf implications of this? It seems
+  1. CSS imported this way only loads when the importing js module is parsed (nested import chain)
+  2. An app written this way results in many small requests to many small CSS files
+  - Import as Constructable StyleSheet also means the CSS cannot be extracted and merged into a single file (worse compression). A build time optimization can only inline the CSS in JS - which means style changes invalidate js cache.
+- Short-term, to bundle you'll have to go into JS.
+  - With top-level await you can compile to the async `CSSStyleSheet.replace()` call so CSS parsing is non-blocking.
+  - Long term we really need Web Bundles for this and so many reasons. Bundling by mutating and actually merging file contents is really bad for caching and tooling complexity, and only works for file formats where you can encode multiple files. CSS isn't one of those.
+- I think tools could insert preload hints in parent bundles similar to what we do today to solve the first problem. Combining is harder when shadow DOM is involved… another case for Resource Bundles I guess.
+
+- ## Building upon "Import Assertions" we recently saw JSON Modules land in V8/Chromium 91__202104
+- https://twitter.com/bramus/status/1421236658159112196
+  - In Chromium 93 the same thing for CSS lands (“CSS Modules”)
+  - [CSS Modules V1 Explainer](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md)
+
+```JS
+import json from './foo.json'
+assert { type: 'json' };
+
+import styles from "./styles.css"
+assert { type: "css" };
+```
+
 - ## In new Chromium 92, PWAs can register themselves as handlers of custom URL protocols/ schemes using their installation manifest, making them all the more appy.
 - https://twitter.com/brucel/status/1420775444287303680
   - [URL protocol handler registration for PWAs](https://web.dev/url-protocol-handler/)

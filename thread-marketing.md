@@ -12,6 +12,16 @@ modified: '2021-01-06T14:40:06.842Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 创业公司向投资者和用户介绍自己的 PPT，叫做 Pitch Deck。
 - https://twitter.com/ruanyf/status/1420926087735824387
   - [Pitch Deck Hunt](https://www.pitchdeckhunt.com/) 这个网站收集了150多家著名公司早期的 Pitch Deck，可以用来当作借鉴的模板

@@ -26,8 +26,18 @@ modified: '2021-07-27T09:09:48.459Z'
 - editor/builder/configurable
 - mini app
 # products-solutions
-- black-dashboard右边面板依赖reactstrap
-- xtream-dashboard左边折叠
+- 布局参考
+  - black-dashboard右边面板依赖`reactstrap. Dropdown`组件
+    - 主题切换基于document.body.classList.add/remove
+    - 重度定制bootstrap.css，注意自定义css的顺序
+  - xtream-dashboard左边折叠通过`[data-sidebartype='mini-sidebar']`选择器
+    - 折叠侧边栏element.classList.add/remove("mini-sidebar")
+    - 轻度定制bootstrap.css，只添加vars和组件css
+  - airframe-dashboard左边折叠通过显示不同Sidebar Variants组件
+    - Sidebar.HideSlim Only for Desktop
+    - Sidebar.MobileFluid Only for Mobile
+    - 重度定制bootstrap.css
+    - 实现过于复杂
 
 ## [ant-design-pro](https://pro.ant.design/zh-CN/)
 

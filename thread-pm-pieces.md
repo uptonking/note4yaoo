@@ -14,6 +14,34 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
+- ## Notion has a solid ecosystem, it’s not an overnight success.
+- https://twitter.com/felix12777/status/1421300363999682563
+- They’re empowering makers to:
+  1️⃣ Make money from templates
+  2️⃣ Fully customize their workspace
+  3️⃣ Be proud of being a user
+  4️⃣ Leverage user-generated-content 
+- Total agreed. When Notion lauched @NotionAPI . They have been truely done their slogan: "Notion for Everything". Everyday when I open Notion, I always feel so lucky when humans got a product like this.
+
+- ## What the most difficult aspects of building a JAMStack app today?
+- https://twitter.com/flybayer/status/1421121549315280902
+- Not being able to use (a reasonably priced) Postgres DB w/ NextJS-on-vercel
+- Blog list page.
+  - I want to collect the list of mdx posts along with their metadata export that I have in one folder. 
+  - But Nextjs doesn't provide a route list so I need to write a separate script to do that.
+  - You still need a server side function to grab the metadata and the list of slugs, but it is doable.
+  - Even I have one working implementation in my site which I stole from Radix docs. I needed this because I export meta objects from mdx files instead of frontmatter but it has some caching issues.
+- Probably auth
+  - Can't really do sessions unless you've got a real backend so you're gonna be managing JWT's or some kind of token
+  - Lack of many good libraries
+  - Lack of frameworks with auth opinions
+  - Of course Redwood handles all three of these problems but not everyone's using Redwood
+
+- ## 2010s - New Javascript framework every week; 2020s - New Kubernetes PaaS every week
+- https://twitter.com/flybayer/status/1421210855295889410
+- Currently using Render. I don't want to touch Kubernetes
+  - Im hearing it’s really good for static hosting. If your solution does not require the features of Kubernetes it’s best to use something simpler.
+
 - ## A change I don't know if all developers are ready for is that over time, most/all code will be purely "boring" business logic at most companies, with the non business logic increasingly factored out into pure SaaS companies
 - https://twitter.com/fulhack/status/1418588422990614535
 - This has become so clear to me after joining Wikimedia, where we (except with rare exceptions) don’t use SaaS products or third party vendors. 
