@@ -24,7 +24,11 @@ modified: '2021-05-14T14:33:33.975Z'
   - powerful table editor crafted for markdown
   - configuration/customizable editor with a settings page
 
-- core-options-syntax
+- key-problems
+  - realtime collaboration
+  - sync files(git/onedrive)
+
+- options-syntax
   - render line breaks in .md as line breaks in html
 
 - json editor

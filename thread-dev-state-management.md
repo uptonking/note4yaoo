@@ -63,7 +63,9 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## 
+- ## Developers are mostly fine with using finite states, but figuring out transitions between states is where they draw the line.
+- https://twitter.com/DavidKPiano/status/1421951111641006080
+- developers mostly don’t work with finite state
 
 - ## Really interesting to see how Uber used statecharts (in Java) to model functional business logic and complex fulfillment flows
 - https://twitter.com/DavidKPiano/status/1420166879985950728

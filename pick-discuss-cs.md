@@ -11,6 +11,56 @@ modified: '2021-04-12T16:30:53.967Z'
 
 ## 
 
+## 
+
+## 
+
+## 
+
+## 
+
+## 
+
+## [Windows有了Bash，是不是意味着Powershell过时了？](https://www.zhihu.com/question/41972152/answers/updated)
+
+- 窃以为 PowerShell 和 cmd 最大的不同，并且也是和其它 *nix Shell 最大的不同在于 **PowerShell 的 pipe 传递的是 .net object，而不是 raw 字符串**，
+  - 于是这就打开了一扇神奇的大门，因为 PowerShell 的一切组件都可以和谐地共存，彼此不用互相猜忌，不用猜你喂给我的数据合不合法，也不用担心我喂给你的参数格式对不对。
+  - 大家共享一个 CLR，拥有丰富的 metadata，自由自在地在 .net 的世界里徜徉和探索。
+
+- powershell不只是shell， powershell是一个完整的，动态的，面向对象的编程语言。
+  - cmdlet是powershell作为shell的功能。.net是其类库。
+  - powershell的变量系统也更强大
+  - 这么看，powershell就是 bash+python啊 
+
+- 不需 Bash，PowerShell 从一发布，就已过时。其实 PowerShell 也没啥生态圈，PowerShell 这东西就没入过流，也不存在过时一说。
+  - 不懂就别乱说吧。Windows Server，Exchange Server，SQL Server，Azure这些用户极其庞大的企业级软件和平台，现在哪一个不是要用PS来做自动化运维和管理呢?
+
+- 公司报表系统用powerbi, PowerShell有现成cmdlet支持，可以做很多事
+## [Windows 的 PowerShell 和 Linux 的 terminal 有啥区别？](https://www.zhihu.com/question/26860370)
+
+- powershell由微软开源，并长期维护；基于c#实现
+
+- Shell「壳」，即人与电脑的接口，实际上是个命令解释程序，
+  - 从标准输入读取你的命令，把命令结果输出到标准输出和标准错误等设备。
+  - Linux下的 Bash、Zsh，Windows 下的 cmd、PowerShell，这些都是 shell，这个应该很容易理解。
+- Console「控制台」，即在 Linux 下按 Ctrl-Alt-F? 看到的那个命令界面。
+  - 事实上，在远古的 Unix 大型机时代，console 应该是指物理连接在主机上的输入输出设备，
+  - 而 terminal 是指与 console 进行远程通信的串行设备。
+  - 而如今的 Linux 控制台实际上是内核模拟的 /dev/ttyn 终端，/dev/console 一般就是 /dev/tty0，只有 root 用户才能写入。
+- TTY 远程连接到控制台的串行设备，现在来说通常也就是 /dev/ttyn 这些设备啦。
+- PTY
+  - Psuedo Terminal 「伪终端」，是成对的逻辑设备，/dev/ptmx 和 `/dev/pts/<number>`。
+  - 实际上 X 的终端以及 telnet 和 ssh 等服务都是通过伪终端来进行的。
+  - 远程终端绑定到` /dev/pts/<number>` 端口上，服务器实际对 /dev/ptmx 进行读写，但结果都会反映在 `/dev/pts/<number>`，远程终端会认为自己在读写一个串行终端，服务器也会认为自己在从一个串行终端进行读写，中间则由 telnet ssh X11 等协议进行连接。
+
+- 严格来说 Windows（具体来说是 Win32 子系统）上并不存在 Linux 上所谓的「控制台」、「终端」和「伪终端」。
+  - Windows程序可以被编译到 GUI 子系统和控制台子系统，系统通过程序的入口函数可以判断程序是个 GUI 程序还是控制台程序。
+  - 对于 GUI 程序来说，stdin stdout stderr 这些设备都是不存在的。
+  - 而 Windows 那个黑黑的命令行窗口被称为「Windows 控制台」，实际上它里面模拟了标准输入、标准输出等设备。
+  - 默认情况下从 explorer 中双击打开命令行程序时，系统会动态创建一个新的 console，用 start /b 命令可以让程序在当前 console 中运行，不加 /b 则在新的 console 中运行，而这两个 console 的 stdin stdout 等设备又都完全不相干了。
+- tty 实际上是一种字符串流协议。而 Win32 以 API 形式的「终端」协议，一般就很难进行远程通信了。
+
+
 ## [2021年了，Rust在偏底层的某些领域是替代C++的一个好的选择吗？](https://www.zhihu.com/question/451687128)
 
 - 嵌入式，操作系统，硬件驱动这些底层领域大多数用的是C，而不是C++，，所以就更谈不上Rust替代C++了，，

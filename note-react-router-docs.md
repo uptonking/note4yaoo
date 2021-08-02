@@ -7,7 +7,7 @@ modified: '2021-05-13T03:46:42.625Z'
 
 # note-react-router-docs
 
-- React Router is a collection of navigational components that compose declaratively with your application. 
+> React Router is a collection of React components, hooks and utilities that make it easy to build multi-page applications with React. 
 
 # roadmap
 
@@ -15,6 +15,8 @@ modified: '2021-05-13T03:46:42.625Z'
   - Reach Router and it’s sibling project React Router are merging as React Router v6. 
   - In other words, Reach Router v2 and React Router v6 are the same.
   - [The Future of React Router and @reach/router](https://reacttraining.com/blog/reach-react-router-future/)
+
+
 - ## Why haven't we shipped RR v6?
 - https://twitter.com/ryanflorence/status/1380328500318457858
   - Simple: Covid decimated our training business to a fraction of what used to be 😭
@@ -53,65 +55,6 @@ modified: '2021-05-13T03:46:42.625Z'
   - https://reacttraining.com/react-router/web/guides/basic-components
 
 # react-router docs
-
-## Quick Start
-
-``` js
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-const App = () => (
-  <Router>
-    <div>
-      <Header />
-
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
-    </div>
-  </Router>
-);
-
-const Home = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Topic = ({ match }) => <h3>Requested Param: {match.params.id}</h3>;
-const Topics = ({ match }) => (
-  <div>
-    <h2>Topics</h2>
-
-    <ul>
-      <li>
-        <Link to={ `${match.url}/components` }>Components</Link>
-      </li>
-      <li>
-        <Link to={ `${match.url}/props-v-state` }>Props v. State</Link>
-      </li>
-    </ul>
-
-    <Route path={ `${match.path}/:id` } component={Topic} />
-    <Route
-      exact
-      path={match.path}
-      render={() => <h3>Please select a topic.</h3>}
-    />
-  </div>
-);
-const Header = () => (
-  <ul>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">About</Link>
-    </li>
-    <li>
-      <Link to="/topics">Topics</Link>
-    </li>
-  </ul>
-);
-
-export default App;
-```
 
 ## Basic Components
 
@@ -334,20 +277,15 @@ const Parent = props => {
 	);
 ```
 
-#  API Reference
-
-- `<StaticRouter>`
-	- it is a Router that never changes location.
-	- useful in server-side rendering scenarios
 
 # changelog
 
-- 4.4.0-2019
+- v4.4.0-2019
 	- Removed the single-child restriction in `<Router>` so you can have multiple children, provided you're using React 16
 	- Migrated our underlying infrastructure to use React's new context API. 
 	- Both our CJS and ESM builds now use Rollup
 	- Adds support for an array of paths in `<Route path>`
-- 4.3.0-20180606
+- v4.3.0-20180606
 	- Expose generatePath
 	- Use the pretty option in generatePath
 	- Redirect with parameters
@@ -355,7 +293,7 @@ const Parent = props => {
 	- Add invariant for missing "to" property on `<Link>`
 	- Fix pathless route's match when parent is null
 	- Use history.createLocation in `<StaticRouter>`
-- 4.2.0-20170823
+- v4.2.0-20170823
 	- Prevent remounts on routes with the same component in renderRoutes
 	- Case sensitive routes
 	- Use Jest for testing     
@@ -363,7 +301,7 @@ const Parent = props => {
 - 4.1.0-20170411
 	- Add wrappedComponent to the component returned by withRouter
 	- Add wrappedComponentRef prop to the component returned by withRouter
-- 4.0.0-20170310
+- ## v4.0.0-20170310
 	- React Router v4 is a complete rewrite, so there is not a simple migration path.
 	- react-router-redux  has been deprecated. It is recommended that you separate out Redux and React Router, as their state semantics don't match up exactly. 
 		- But if you wish to attempt to keep them in sync, you can use a library such as connected-react-router.
