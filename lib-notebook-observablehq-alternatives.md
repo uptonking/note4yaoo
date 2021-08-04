@@ -10,7 +10,8 @@ modified: '2021-05-14T14:46:37.026Z'
 # guide
 
 - notebooks
-  - jupyter
+  - [jupyter](https://jupyter.org/) helps to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages.
+  - [Dash](https://plotly.com/dash/) is the new standard for AI & data science apps.
 # observable notebook alternatives
 
 ## GRID

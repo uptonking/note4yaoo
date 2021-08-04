@@ -13,7 +13,16 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## I'm surprised by how much more energy efficient animating transform is with WAAPI than GreenSock JavaScript.
+- https://twitter.com/mattgperry/status/1421789054669033473
+- However, at least in Safari by far the the worst battery-life offender is animating CSS variables. 
+  - If @webkit drags its heels supporting` CSS.registerProperty`, I might extend the individual transform polyfill to set transform on an element directly.
+- The WAAPI uses less memory and CPU in general, so, it can produce super smooth animations with little to no worry about sustained performance. 
+  - Note, **infinitely looping animations will accumulate memory and if left running for too long will lead to a memory overflow**
+  - Stateless animations would be one way to address this, where frame to render is determined by time instead of internal state.
+  - Most libraries work this way already though, even Popmotion’s spring
+- Measuring energy efficiency is so interesting! I’d love to profile @astrodotbuild . What tool is this?
+  - Safari/WebKit dev tools I think.
 
 - ## experimenting with a way to visualize the frames of a framer-motion animation
 - https://twitter.com/siddharthkp/status/1420424243007922179

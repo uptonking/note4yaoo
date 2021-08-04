@@ -12,7 +12,14 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ## 
 
-- ## 
+- ## How do you test your startup ideas before you commit to them?
+- https://twitter.com/panphora/status/1422210617369268232
+  • A twitter thread?
+  • An email to friends and family?
+  • Cold calling potential customers?
+- I’d assume someone within my network could be a potential customer. I’ll treat them like a fresh customers and ask corresponding questions. Test if the idea is valid based on a good amount of conversation, maybe 25, maybe 50.
+- Website with a waitlist and paid advertising. We'll use the click through metrics to determine interest. It's the most reliable way to understand if what you're building actually resonates with customers via action not words.
+- Make a MVP using nocode within a week
 
 - ## Notion has a solid ecosystem, it’s not an overnight success.
 - https://twitter.com/felix12777/status/1421300363999682563

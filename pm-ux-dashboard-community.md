@@ -1,13 +1,13 @@
 ---
-title: pm-editor-dashboard
-tags: [dashboard, editor, pm]
+title: pm-ux-dashboard-community
+tags: [community, dashboard, pm]
 created: '2020-08-09T08:43:31.229Z'
-modified: '2021-06-02T17:21:24.853Z'
+modified: '2021-08-03T16:25:16.596Z'
 ---
 
-# pm-editor-dashboard
+# pm-ux-dashboard-community
 
-# dashboard-styling-css
+# discuss
 
 - ## [Building a Dashboard Layout With CSS and a Touch of JavaScript](https://webdesign.tutsplus.com/tutorials/building-an-admin-dashboard-layout-with-css-and-a-touch-of-javascript--cms-33964)
   - [codepen](https://codepen.io/uptonking/pen/gOrpLyV)

@@ -15,7 +15,17 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## I've been using shadow dom for over a year a half, and I still don't see many real world use cases for it. 
+- https://twitter.com/little_bret/status/1419829971376381952
+  - For most situations it introduces more problems than it solves
+- Shadow doesn't SSR. 
+  - Declarative shadow is coming, but who knows when all major browsers will support it.
+  - Even then sharing across declarative shadow roots will still be a problem. Leading us to...
+- Any element that attaches a shadow root cannot re-use CSS. 
+  - No reused utility classes or base branding system. 
+  - Constructable stylesheets help, but like most things shadow, it's been years and still not widely available.
+- Shadow makes dom instrumentation difficult, and many third party instrumentation libraries don't support it. Shadow also makes e2e ui testing more difficult.
+- So you got a component that you want to run isolated in any execution environment regardless of design systems that also doesn't need to be SSR'd? Shadow _might_ be for you.
 
 - ## The more I play with Web Components, the more I wonder what shadow dom is good for other than adding third party ads to a web site.
 - https://twitter.com/dam/status/1416190642573778945

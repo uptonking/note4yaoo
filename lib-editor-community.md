@@ -159,7 +159,15 @@ modified: '2021-05-14T12:04:55.412Z'
 
 - ## 
 
-- ## 
+- ## I was puzzled why the *same* hex codes in @code produce a different color than in @atom .
+- https://twitter.com/LeaVerou/status/1422512437979455507
+  - Code’s are visibly more saturated. What’s going on?
+  - Atom uses Chromium, and thus interprets colors through CSS. In CSS, hex colors specify coordinates in sRGB, not the monitor color space. 
+  - @code not being built with web technologies, just throws raw RGB coordinates at the screen. THIS IS WHY COLOR MANAGEMENT MATTERS PEOPLE!!!
+- VS Code is also built on Chromium with CSS & HTML, as others have said, but the **actual rendering of text uses canvas WebGL**, I think, so that may be where the colour space is getting mangled.
+- Chromium has a flag for color profile; At some version chrome switched to sRGB by default so colors started to look different than system picker/other browsers. Then switched back or something, I quit it. There’s still discrepancy.
+  - Chrome switched to sRGB because that's the spec for how CSS hex colors are interpreted.
+  - If system pickers use device RGB that's a poor choice, because it's not portable, the same hex code on my machine is different than on yours.
 
 - ## I needed to augment a simple textarea with keyboard shortcuts for basic Markdown formatting + drop/paste image support like GitHub comments
 - https://twitter.com/adamwathan/status/1414216138796449793

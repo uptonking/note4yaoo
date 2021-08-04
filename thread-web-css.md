@@ -30,7 +30,20 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## Other than Next.js/styled-jsx, what other CSS libraries clean up their rules when they're no longer used? E.g. when all components using them unmount.
+- https://twitter.com/sebmarkbage/status/1422278240866078725
+  - I meant dynamically on a long running page. Not statically removing rules that are never used but removing rules that were used on one page but not another.
+- We had this in react-jss since the very first version.
+- @remix_run does this per route. When your routes unload, so does the CSS file used on that route.
+  - That can be quite expensive, depending on the kinds of rules you're writing it may be cheaper to leave them in the DOM.
+- **Removing unused CSS is expensive?**
+  - Yes, browsers don't really track what selectors match in a sheet, if you're lucky they walk the entire page and find noting to recalc. If you're unlucky they recompute the style of the entire page. It depends on the browser and the selectors you removed.
+  - Looking at the blink code I think if most of the page turns over on routes it's fine, though I wonder what you're optimizing for removing sheets? If you have a page where a route change swaps the sidebar but the main content doesn't it's probably slightly slower than leaving it
+- To anyone wondering what are the benefits of [“unmounting CSS” ](https://kremling.js.org/concepts/unmounting-css.html)
+  - And so it seems they create style tags with specific attributes, that serve as ids to remove them from the `<head>` upon unmounting
+- Shadow DOM naturally does this
+  - The advantages of Shadow DOM, especially when used with @buildWithLit , handle CSS brilliantly, and was a top reason why I moved to #WebComponents. There's always som use case that doesn't fit nicely, but I can't think of one.
+  - I've been using shadow dom for over a year a half, and I still don't see many real world use cases for it. For most situations it introduces more problems than it solves
 
 - ## CSS `filter: hue-rotate(-120deg)` can help to change emoji color
 - https://twitter.com/DasSurma/status/1420831971828195328

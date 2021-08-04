@@ -155,6 +155,27 @@ modified: '2021-01-01T20:06:19.327Z'
   - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
   - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Working with vanilla-extract and treat for the last few years has me thinking compile time execution of code is a pretty unexplored space
+- https://twitter.com/mattcompiles/status/1422535524535869442
+  - We originally set out to see how powerful a CSS-in-JS library could be with zero runtime. 
+  - But we ended up creating an excellent compile time execution system that happens to generate CSS.
+- AST transforms have traditionally solved these kinds of issues, but you can never really guarantee they work in all situations.
+  - Also you can't debug them when they don't work as expected. I don't to want to fallback to slow mode because I wrote some "edge-case" code.
+- **Having a custom file extension is probably vanilla-extract's most common criticism**. 
+  - However, I actually think it's one of its best features. 
+  - A clear runtime/compile-time boundary that seamlessly fits into your codebase. 
+  - React server-components are using a very similar idea.
+
 - ## NEW ATOMIC CSS FRAMEWORK: Sprinkles
 - https://twitter.com/markdalgleish/status/1387293525256007682
   - Zero-runtime CSS-in-TS

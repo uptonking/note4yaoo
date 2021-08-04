@@ -7,6 +7,17 @@ modified: '2021-05-23T16:34:42.918Z'
 
 # pm-list-grid-ux
 
+
+# discuss
+
+- ## Avoid using dividers to separate elements within a list (or grid) 
+- https://twitter.com/d__raptis/status/1422155680425840645
+  - Use white-spacing (aka `padding/margin`) to visually separate your elements and make your UI look clean
+- I'd say this tip only applies for a situation such as this. Dropdown for 'more actions' that have sectioned groups is certainly a good situation to use dividers. Thoughts?
+  - You can visually separate menu sections with whitespace as well 
+  - I try to base all my tips on established ux laws and science
+  - For example, the whitespace over divider idea is derived by the law of Proximity which states: "Objects that are near, or proximate to each other, tend to be grouped together."
+
 # The complete guide to building a smart data table in React
 
 - [The complete guide to building a smart data table in React_201911](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)

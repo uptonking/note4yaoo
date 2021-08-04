@@ -20,6 +20,7 @@ modified: '2021-07-25T10:48:21.307Z'
     - https://github.com/creativetimofficial
     - material, argon, black, now-ui
     - 第三方依赖都较少；大多基于reactstrap.v8
+    - 样式普通不出色，pro版功能不多，浮动面板配置项少
     - 更新较频繁，很多repos都长期维护
     - free repos多，但页面功能较少
     - 示例大多左边没有，右边有

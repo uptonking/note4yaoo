@@ -13,7 +13,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## I find it slightly ironic that I see lots of complaints about Create React App being a "black box" and "all the config is hidden", and yet I see almost no such complaints about Next.js.
+- https://twitter.com/acemarke/status/1422304284083949569
+  - Both are abstracted wrappers around complex Webpack config. Same principle, really.
+  - I realize Next at least exposes a built-in way to modify the Webpack config from the Next config file, whereas CRA requires either ejecting or using a tool like Craco to override the config. Same result in the end: abstracted config, override points available.
+- t is about people's expectations. Next promises you a full-blown multipurpose framework, so it's expected it builds on abstracting things. That's a tradeoff. While CRA is what... just creates a new react app for you? Why would a boilerplate be so secretive about configuration?
 
 - ## an idea: we could add support to @blitz_js for deploying the frontend and backend separately.
 - https://twitter.com/leeerob/status/1415311384309551107
@@ -33,8 +37,8 @@ modified: '2021-01-08T17:13:53.965Z'
   - Teams shouldn't have to bet on core renderer implementations!
 - Yeah it's definitely an area to explore. Premise here is reactivity allows granular updates. So they can be applied it to other systems. The native elements definitely are tuned to the DOM but the Components are just functions and side effects. Those effects can be anything.
   - If someone never writes a native element (lower case tag) we don't need to bring in any DOM APIs today. I think that bit can be refined a bit further. But also opens the questions of other types of "native" elements for other platforms.
-- I think one of the core things @necolas  and I have been exploring in the last few years are higher level event abstractions. Like `useFocusWithin`, or `usePress` etc; which are an accumulation of various native events to provide real-world interaction handlers.
-  - Another is `useHover`. This one is hard to get right. The implementations tend to have different approaches that either break with touch, accessibility tools, or some other edge-case.Or `useFocusWithin`, to differentiate keyboard focus from normal focus. The list goes on.
+- I think one of the core things @necolas  and I have been exploring in the last few years are higher level event abstractions. Like `useFocusWithin` , or `usePress` etc; which are an accumulation of various native events to provide real-world interaction handlers.
+  - Another is `useHover` . This one is hard to get right. The implementations tend to have different approaches that either break with touch, accessibility tools, or some other edge-case. Or `useFocusWithin` , to differentiate keyboard focus from normal focus. The list goes on.
 
 - ## I'm kind of getting fed up with frameworks prioritizing performance, data-fetching and server-side rendering capabilities over basic UX necessities. 
 - https://twitter.com/trueadm/status/1413995188876455939

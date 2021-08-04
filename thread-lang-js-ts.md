@@ -20,7 +20,54 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## Filtering an Object in TypeScript
+- https://www.steveruiz.me/posts/how-to-filter-an-object
+  - rest operator can also be used to filter props.
+
+```typescript
+// /in es6
+function filterObject(obj, fn) {
+  return Object.fromEntries(Object.entries(obj).filter(fn))
+}
+
+// /in ts
+type Entry<T> = {
+  [K in keyof T]: [K, T[K]]
+}[keyof T]
+
+function filterObject<T extends object>(
+  obj: T,
+  fn: (entry: Entry<T>, i?: number, arr?: Entry<T>[]) => boolean
+) {
+  return Object.fromEntries(
+    (Object.entries(obj) as Entry<T>[]).filter(fn)
+  ) as Partial<T>
+}
+
+// /in old browser
+
+function filterObject2<T extends object>(
+  obj: T,
+  fn: (entry: Entry<T>, i?: number, arr?: Entry<T>[]) => boolean
+): Partial<T> {
+  const next = { ...obj };
+
+  const entries: Entry<T>[] = []
+
+  for (const key in obj) {
+    entries.push([key, obj[key]])
+  }
+
+  for (let i = 0; i < entries.length; i++) {
+    const entry = entries[i];
+    if (!fn(entry, i, entries)) {
+      delete next[entry[0]]
+    }
+  }
+
+  return next;
+}
+```
 
 - ## Does `['a', 'b', 'c'].includes()` translate to a Set().has() internally?
 - https://twitter.com/kuvos/status/1420101675747102722

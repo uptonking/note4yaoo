@@ -10,7 +10,7 @@ modified: '2021-01-08T20:28:00.955Z'
 # faq-not-yet
 
 # faq-repeat
-
+- [Removing unused CSS is expensive](https://twitter.com/mjackson/status/1422375213212131334)
 # faq
 
  

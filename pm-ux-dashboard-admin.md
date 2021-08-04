@@ -9,8 +9,13 @@ modified: '2021-07-27T09:09:48.459Z'
 
 # guide
 
+- usecase
+  - 工作台、分析页、监控页
+  - 表单、列表、详情、结果、异常
+
 - tips
   - dashboard for knowledge base, or wiki spaces
+  - sass场景模板可参考 vercel/commerce, async-labs/saas
 # features
 - core
   - theming

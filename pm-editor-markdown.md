@@ -18,6 +18,9 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - tips
   - 主流的编辑器采用的是live preview，实时预览
+
+- faq-not-yet
+  - 如何指向当前页面的标题
 # features
 - core
   - optional block style editor

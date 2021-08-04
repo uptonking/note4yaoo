@@ -19,7 +19,16 @@ modified: '2021-04-12T16:30:53.967Z'
 
 ## 
 
-## 
+## [为什么很多程序员不用switch，而是大量的if……else if？](https://www.zhihu.com/question/475877331)
+
+- 条件判断语句的四种写法，茴字的四种写法大家不会不知道吧
+  - 多个if，卫语句
+  - lambda 策略模式
+  - DDD领域驱动设计思想+策略模式
+  - Actor模型+领域驱动设计+策略模式+事件响应式架构
+
+- 当比较项比较少时（比如 30个？），编译器应该会把switch结构改成if-else结构，因此两者没有区别。
+  - 当比较项超出那个数时，switch会按照事先排好序的表进行快速定位，比较项的数目越大，switch的定位效果越明显，哪怕是几千万的比较项，比较次数不会超过20次、就可以定位
 
 ## [Windows有了Bash，是不是意味着Powershell过时了？](https://www.zhihu.com/question/41972152/answers/updated)
 
@@ -36,6 +45,7 @@ modified: '2021-04-12T16:30:53.967Z'
   - 不懂就别乱说吧。Windows Server，Exchange Server，SQL Server，Azure这些用户极其庞大的企业级软件和平台，现在哪一个不是要用PS来做自动化运维和管理呢?
 
 - 公司报表系统用powerbi, PowerShell有现成cmdlet支持，可以做很多事
+
 ## [Windows 的 PowerShell 和 Linux 的 terminal 有啥区别？](https://www.zhihu.com/question/26860370)
 
 - powershell由微软开源，并长期维护；基于c#实现
@@ -59,7 +69,6 @@ modified: '2021-04-12T16:30:53.967Z'
   - 而 Windows 那个黑黑的命令行窗口被称为「Windows 控制台」，实际上它里面模拟了标准输入、标准输出等设备。
   - 默认情况下从 explorer 中双击打开命令行程序时，系统会动态创建一个新的 console，用 start /b 命令可以让程序在当前 console 中运行，不加 /b 则在新的 console 中运行，而这两个 console 的 stdin stdout 等设备又都完全不相干了。
 - tty 实际上是一种字符串流协议。而 Win32 以 API 形式的「终端」协议，一般就很难进行远程通信了。
-
 
 ## [2021年了，Rust在偏底层的某些领域是替代C++的一个好的选择吗？](https://www.zhihu.com/question/451687128)
 
