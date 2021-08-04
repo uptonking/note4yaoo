@@ -21,14 +21,14 @@ modified: '2021-07-25T10:48:21.307Z'
     - material, argon, black, now-ui
     - 第三方依赖都较少；大多基于reactstrap.v8
     - 样式普通不出色，pro版功能不多，浮动面板配置项少
-    - 更新较频繁，很多repos都长期维护
+    - **更新较频繁，很多repos都长期维护**
     - free repos多，但页面功能较少
     - 示例大多左边没有，右边有
   - https://www.bootstrapdash.com/
     - https://github.com/BootstrapDash
-    - Star Admin 2, Purple Admin
+    - Star Admin 2, Purple Admin, skydash
     - 第三方依赖都很多；大多基于react-bootstrap.v1
-    - 样式符合最新流行风格
+    - **样式符合最新流行风格，大量使用圆角卡片**
     - free repos不太多；更新不太频繁
     - 示例大多左边有，右边有
   - https://www.wrappixel.com/

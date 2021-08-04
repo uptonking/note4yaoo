@@ -9,7 +9,6 @@ modified: '2021-02-09T19:25:17.381Z'
 
 # build-your-own
 
-- [一次搞定前端“四大手写”：bind、深拷贝、pub-sub、promise](https://zhuanlan.zhihu.com/p/160315811)
 
 - [精读《手写 JSON Parser》](https://zhuanlan.zhihu.com/p/107344979)
   - 更加推荐单文件的[json-parser-for-vscode](https://github.com/microsoft/vscode/blob/main/src/vs/base/common/json.ts)
@@ -47,6 +46,10 @@ modified: '2021-02-09T19:25:17.381Z'
   - [I wrote my module bundler](https://lihautan.com/i-wrote-my-module-bundler/)
 
 - [Step-by-step guide for writing a custom babel transformation](https://lihautan.com/step-by-step-guide-for-writing-a-babel-transformation/)
+
+- [一次搞定前端“四大手写”：bind、深拷贝、pub-sub、promise](https://zhuanlan.zhihu.com/p/160315811)
+
+- [手写实现Javascript的各种功能](https://github.com/MrWangJustToDo/all-javascript)
 
 - [一文帮你搞定90%的JS手写题](https://zhuanlan.zhihu.com/p/377821705)
   01. call的实现

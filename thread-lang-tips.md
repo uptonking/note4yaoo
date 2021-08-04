@@ -16,16 +16,18 @@ modified: '2021-04-30T11:10:26.083Z'
   - Filter by language and code usage
   - Lurk(潜伏；诡计) pull requests to learn the why
   - I have this as my go to..have done for years.
-
 # pieces
-
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## promise.unthen(cb) would be pretty useful
+- https://twitter.com/justinfagnani/status/1422783049159221250
+- Nowadays so many things are  Promises / async/await that EventEmitters and such have almost been forgotten.
+  - It’s an interesting thing to remind oneself of: That Promises may not always be the better choice, sometimes events are preferable, like in this case 
+- `Abort` works with fetch fine. But generic promises is a no go currently. Lots of holdup on exactly how to handle and expose aborting inside a custom executor.
 
 - ## The thing I appreciate the most from @rustlang is its mentality that it explicitly shows all possible problems and race conditions in your code. 
 - https://twitter.com/CompuIves/status/1387830838792970243
