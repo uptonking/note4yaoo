@@ -12,6 +12,22 @@ modified: '2021-04-19T14:52:58.244Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The word2vec service cost $10 to upload 2.7M 1kb files to GCS. 
+- https://twitter.com/tomlarkworthy/status/1422945919419523073
+  - But then it's about $0.03 a month to run. 
+  - If you can avoid the complexity of a database, do so. 
+  - Cloud storage services like S3 and GCS are rock solid scalable Key-Value stores, (ab)use them.
+- So easy to geo-replicate, scale out (CDN), and cache (HTTP cache), migrate (rsync) etc. 
+  - I love a services built on keyed files. 
+  - So much tooling can be applied, and the reliability is so much higher than regional DBs. 
+  - Of course, big minus, they only have prefix querying.
+
 - ## How do you test your startup ideas before you commit to them?
 - https://twitter.com/panphora/status/1422210617369268232
   • A twitter thread?

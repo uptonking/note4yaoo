@@ -18,7 +18,7 @@ modified: '2021-07-27T09:09:48.459Z'
   - sass场景模板可参考 vercel/commerce, async-labs/saas
 # features
 - core
-  - theming
+  - themeable
   - configurable panel
   - widgets/componnets: easy to drop in reusable components
 
@@ -35,7 +35,7 @@ modified: '2021-07-27T09:09:48.459Z'
   - black-dashboard右边面板依赖`reactstrap. Dropdown`组件
     - 主题切换基于document.body.classList.add/remove
     - 重度定制bootstrap.css，注意自定义css的顺序
-  - xtream-dashboard左边折叠通过`[data-sidebartype='mini-sidebar']`选择器
+  - xtreme-dashboard左边折叠通过`[data-sidebartype='mini-sidebar']`选择器
     - 折叠侧边栏element.classList.add/remove("mini-sidebar")
     - 轻度定制bootstrap.css，只添加vars和组件css
   - airframe-dashboard左边折叠通过显示不同Sidebar Variants组件
@@ -105,16 +105,19 @@ modified: '2021-07-27T09:09:48.459Z'
 ### codebase
 
 - code-xp
-  - blackdashboard的scss插入到了bootstrap的scss的源码编译流程
+  - blackdashboard的scss插入到了bootstrap的scss的源码编译流程，耦合度较大
   - 顶部AdminNavbar不可固定
 
 - 最核心的界面布局是 AdminLayout
   - 左边Sidebar支持隐藏显示
   - 中间main-panel包括不可固定的AdminNavbar和与当前路由url对应的react组件
-  - 右边FixedPlugin可配置样式主题，基于Dropdown实现
+  - 右边FixedPlugin浮动面板可配置样式主题，基于Dropdown实现
 - 项目中样式主要使用className设置类名
-  - 甚至主要使用reactstrap中的各种带样式的组件，不用自己实现状态管理、交互等逻辑
+  - 主要使用reactstrap中的各种带样式的组件，不用自己实现状态管理、交互等逻辑
 - dark mode通过在body.classList.add/remove样式类名实现
+- 动态样式的实现
+  - 基于useState('bg-white'): `<Navbar className={classNames("navbar-absolute", colorState)}>`.
+  - 基于props: `<div className={classNames("navbar-toggle ", { toggled: props.sidebarOpened, })} >`
 
 - 路由及其对应的组件通过类似json的js对象配置
 
@@ -142,7 +145,7 @@ modified: '2021-07-27T09:09:48.459Z'
   - rtl
   - apps
 
-### codebase
+### codebase-xtreme
 
 - todo
   - 添加折叠和展开左边侧边栏的按钮；
@@ -154,7 +157,15 @@ modified: '2021-07-27T09:09:48.459Z'
   - 动态样式不依赖classnames，而是通过`data-*`css属性选择器控制，如`[data-sidebartype='mini-sidebar']`选择器
   - 自定义样式都写在.scss文件里面
 
+- xtreme-react-starterkit
+  - redux的store只存放了settings对象
+  - 使用redux大部分都是通过`useSelector()`读取状态子树
+  - 除了Customizer，其他组件都不直接更新redux store的数据
+  - Customizer中使用`useDispatch()`返回值触发更新的示例`onClick={() => dispatch(setSidebarPos("fixed"))}`
+
 - 路由及其对应的组件通过类似json的js对象配置
+
+- fakeApi基于rxjs. BehaviorSubject
 
 ## airframe-react
 

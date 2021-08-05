@@ -20,7 +20,9 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## 亚马逊与 Elastic 的战争升级了，后者修改了 Elasticsearch 的官方客户端，禁止连接到亚马逊维护的  OpenSearch。
+- https://twitter.com/ruanyf/status/1423119088516177923
+  - 亚马逊也不客气，立刻宣布将所有官方客户端（见下图）全部分叉，移植到 OpenSearch，自己来维护，双方都在准备完全脱钩
 
 - ## 创业公司向投资者和用户介绍自己的 PPT，叫做 Pitch Deck。
 - https://twitter.com/ruanyf/status/1420926087735824387

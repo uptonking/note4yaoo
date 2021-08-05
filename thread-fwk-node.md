@@ -14,7 +14,14 @@ modified: '2021-04-23T18:11:04.115Z'
 # node-dev
 - ## 
 
-- ## 
+- ## One of my favorite things about using Node for APIs: I can reuse code on the client and the server.
+- https://twitter.com/housecor/status/1422976765274824709
+- How? I create a monorepo with 3 folders: 
+  1. ui
+  2. api
+  3. shared (code used by both UI and API)
+  - Result: I can reuse validation, formatting, etc. on client & server.
+- I like to organize code the same way. I'll also use dependency-cruiser to make sure nothing in shared/ can import from outside the shared/ folder
 
 - ## WebContainers: Run Node.js natively in the browser
 - https://news.ycombinator.com/item?id=27223012

@@ -15,7 +15,11 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## If you're a fan of alert(), you may have heard about a change that briefly hit Chrome Stable channel this week (it's been temporarily disabled at the moment while breakage is remediated)
+- https://twitter.com/estark37/status/1422694856544059396
+  - The change is to disable alert(), confirm(), etc. inside cross-origin iframes. Sorry if this broke you!
+- if you're wondering why this change is happening,  the tl;dr is: alert() and friends are often used for spoofing(电邮欺骗；滑稽模仿) and scams(欺诈骗钱) that take advantage of the fact that the message's provenance(来源，出处) is ambiguous.
+  - It's very easy to use alert() to trick a user into thinking their browser is telling them something when in fact the message is coming from a malicious website.
 
 - ## JS and CSS modules with no build in sight!
 - https://twitter.com/justinfagnani/status/1403436100132110340

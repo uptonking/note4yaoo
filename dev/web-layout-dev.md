@@ -18,7 +18,6 @@ modified: '2021-01-01T20:17:05.116Z'
     - android支持
     - swiftui不支持
 # guide
-
 - ref
   - [Ten modern layouts in one line of CSS_202007](https://web.dev/one-line-layouts/)
   - [Every-layout.dev](https://every-layout.dev/) is an excellent resource to find CSS layout patterns without media queries. They call it algorithmic layout design
@@ -46,6 +45,17 @@ modified: '2021-01-01T20:17:05.116Z'
 # discuss
 
  
+
+- ## I was wrong. Auto-layout is the real deal 
+- https://twitter.com/steveschoger/status/1422993355353600013
+  - Once the design is finalized, auto-layout makes it really easy to put together all of the responsive breakpoints.
+  - Designers should still learn some basic code though
+- I don't get why Figma invented autolayout to replicate flexbox instead of just... using flexbox.
+  - It’s a bridge. Even simplified, it trips up many designers after months of using it. Pretty a tall order(to be very difficult to do 难以办到；要求苛刻) to have designers who drew boxes their whole career to “just use flexbox” when the priority is quick prototypes. Those that do understand it definitely have an advantage.
+  - Oh I agree, it’s a tall order to ask designers to build all layouts in HTML/CSS. I meant that Figma’s autolayout feature should just use flexbox terminology and concepts.
+- not seeing any value in going nuts with auto-layout crazy abstraction when I can just jump in Webflow and build my designs very quickly in real HTML/CSS, almost in the same visual way but even better (dynamic units, flex, css grid, etc). it has been my ultimate prototyping tool.
+- Developers should learn to design.
+- The separation between @figmadesign and @webflow is closing pretty quickly
 
 - ## Use autolayout to clean up your natto.dev canvas, like prettier for code. 
 - https://twitter.com/_paulshen/status/1387506747334533121
@@ -91,4 +101,3 @@ modified: '2021-01-01T20:17:05.116Z'
 - Fixed-Fluid-Fixed (Holy Grail Layout)
   - https://www.codeply.com/go/licdodtBCO
   - [Bootstrap 4 Holy Grail Layout](https://stackoverflow.com/questions/42617595)
-

@@ -165,7 +165,15 @@ modified: '2021-07-23T15:52:10.409Z'
 - This is a large part of the reason why I spent weeks researching CRDTs even though my document convergence needs are well covered by OT. 
   - If you have a more fine-grained way to address positions (specifically, one that can refer to deleted positions), and you define position mapping in terms of that, you do not have this problem.
 # discuss
-- ## 
+- ## every collaboration tech that i'm seeing is either: closed-source, limited to small data, limited to text-like data, inefficient, or all of the above
+- https://twitter.com/tmcw/status/1422934838873571342
+- replicache is [open-source](https://github.com/rocicorp) but not free. Their approach is giving you a spec to implement for the backend; they're not hosting anything for you.I also think approach handles scale pretty well because it doesn't keep history like some CRDTs
+- Very hard to build a generic collab tech without diving into the domain. 
+  - Text editing collab has requirements like intent preservation while drawing, say, requires lots more data shipped around. 
+  - And CRDTs eschew(回避，避免) centralization but very few apps don’t need authority.
+  - And if you to ship a lot of data, say megabytes, you basically need something like a CAS (like git for binaries), which means you need to remember all the hierarchy of files and/or do things to actually separate content to its data/metadata
+  - Gaming is instructive here. Every type of multiplayer game has diff strategies. Some send pure inputs from the clients, others do a lot more simulation locally and most do a bit of both, depending on the game and reqs(RTS, FPS, cheating) And it’s never good enough!
+- The best examples I can think of violate #1 (game server architectures), and they are generally written custom for every game, or at least every studio/franchise. Even Unity has very limited support for a generic solution, despite being a slam dunk feature.
 
 - ## Are CRDTs suitable for shared editing? _202008
 - https://news.ycombinator.com/item?id=24176455

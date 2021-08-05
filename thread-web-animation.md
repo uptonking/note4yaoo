@@ -11,7 +11,17 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## CSS variables can be used *within CSS keyframe animations*!
+- https://twitter.com/JoshWComeau/status/1422921859021131779
+- Although I think the way you propose is going to perform better as the browser can eval the variable at the start of the animation and only animate transform off the main thread. **CSS variable animation performance is still bound to the main thread**.
+- He's applied `will-transform` which is a more polite way of saying `translateZ(0)`. The browser will most likely put these on GPU layers as in your approach
+  - I'm guessing framer motion already has this baked in?
+  - Yeah but we use translateZ(0) still as it has better old browser support.
+- I built a whole animation system on this core concept! CSS variables allow for composable and fully customizable animations.
+  - Thank you! Next steps are to make it purgeable or use a JIT compiler to reduce overall file size. We took some inspiration/learnings from your dark mode article as well!
+  - https://github.com/ingram-projects/animxyz
+    - The first truly composable CSS animation library. 
+    - Powered by CSS variables to allow a nearly limitless number of unique animations without writing a single keyframe. 
 
 - ## I'm surprised by how much more energy efficient animating transform is with WAAPI than GreenSock JavaScript.
 - https://twitter.com/mattgperry/status/1421789054669033473

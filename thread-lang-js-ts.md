@@ -7,18 +7,14 @@ modified: '2021-01-28T14:34:20.579Z'
 
 # thread-lang-js-ts
 
-# repeat
 
-- ## React TypeScript Cheatsheet
-- https://github.com/typescript-cheatsheets/react
-  - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
-
-- more-cheatsheet
-  - https://nerdcave.com/tailwind-cheat-sheet
 # pieces
 - ## 
 
-- ## 
+- ## namespace import props order
+- https://twitter.com/haoqunjiang/status/1422951822864515082
+  - ECMAScript actually requires the keys to be sorted by %Array.prototype.sort% using undefined as comparefn. 
+- So if using a minifier this would be, more or less, undefined behavior? Seems an odd decision to make. 
 
 - ## Filtering an Object in TypeScript
 - https://www.steveruiz.me/posts/how-to-filter-an-object
