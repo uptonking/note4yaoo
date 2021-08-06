@@ -18,7 +18,7 @@ modified: '2020-12-08T13:22:47.564Z'
 - 暗色主题
 - 部分组件提供了一种新的无边框样式
 - 引入了svg图标，支持tree shaking，打包体积更小
-- 组件重写：Form, Table, DatePicker、 TimePicker 与 Calendar
+- 组件重写：Form, Table, DatePicker、 TimePicker与Calendar
 - 性能优化
 - 由于存在动画效果，自定义虚拟滚动并不方便
 - 使用更符合React的动画
@@ -111,9 +111,10 @@ modified: '2020-12-08T13:22:47.564Z'
 - 升级 Roadhog@2，支持可配置化的代码分割（默认关闭）
 
 - v0.1.10__201710
-  - Ant Design Pro 的第一个版本。
+  - Ant Design Pro的第一个版本。
   - 一个React技术栈的脚手架。
   - 7个标准化场景，22个页面模板。
+    - 列表、详情、表单、结果、异常、个人、账户
   - 14个精品组件。
   - 开发、调试、模拟数据、部署的一整套流程以及配套文案。
 # ref

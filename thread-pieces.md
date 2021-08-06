@@ -24,6 +24,18 @@ modified: '2021-01-11T12:10:50.900Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## As a software maintainer, how do you deal with questions from people who clearly don't have the basic skills to do what they are trying to do?
+- https://twitter.com/MarijnJH/status/1423562136995905536
+  - I don't want to be a jerk, but I also don't have time or energy to nudge all these people through the process of learning web dev.
+- I reply with a simple, polite, “hey this is not an appropriate question here, please post it on SO”. Or, something like, “please read up basics of JS/TS before jumping in on this.”
+- I usually guide them to better teachers. Not everyone is a good instructor!
+
 - ## A senior developer is someone whose job is to be constantly interrupted and help people out
 - https://twitter.com/qntm/status/1418612464300797957
 

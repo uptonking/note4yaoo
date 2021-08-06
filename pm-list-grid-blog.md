@@ -18,9 +18,7 @@ modified: '2021-05-23T16:34:32.755Z'
 - 复制粘贴
 - 表格渲染有多复杂
 - 数据管理的难题
-
 # [精读《高性能表格》](https://zhuanlan.zhihu.com/p/364094849)
-
 - 要做表格首先要选择基于 DOM 还是 Canvas，这是技术选型的第一步
   - Canvas 渲染效率比 DOM 高，这是浏览器实现导致的。
   - DOM 可拓展性比 Canvas 好，渲染自定义内容首选 DOM 而非 Canvas。
@@ -37,11 +35,7 @@ modified: '2021-05-23T16:34:32.755Z'
 - 预计算
 - 局部预计算
 - Map Reduce
-
-# Five Fast JavaScript Data Grids — A Performance Review
-
-- [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)
-
+# [Five Fast JavaScript Data Grids — A Performance Review_201909](https://dzone.com/articles/data-grid-performance-comparison)
 - The following popular data grids were used in this comparison:
   - ag-grid (ag-grid.com)
   - Bryntum Grid (bryntum.com/products/grid)
@@ -88,9 +82,7 @@ modified: '2021-05-23T16:34:32.755Z'
     - ag-grid: 53
     - extjs: 54
     - brytum: 59
-
 # The simplest way to create a Data Grid in React - Tabelify
-
 - [The simplest way to create a Data Grid in React_201606](https://medium.com/myntra-engineering/the-simplest-way-to-create-a-data-grid-in-react-ccdd4368ee7a)
   - [react-tabelify](https://github.com/rishabhbits038/react-tabelify)
     - /NALic/28Star/201606
@@ -131,9 +123,7 @@ modified: '2021-05-23T16:34:32.755Z'
   - TableConfig is modified and setState is called. 
   - setState triggers rerender of the Page with updated state. 
   - Thus the updated values are passed on to Tabelify as well.
-
 # React — Code Your Own DataTable Step by Step
-
 - [React — Code Your Own DataTable Step by Step (Video Tutorial by udemy)](https://codeburst.io/react-code-your-own-datatable-step-by-step-video-tutorial-34fca0ca34e7)
   - [udemy-react-datatable](https://github.com/rajeshpillai/udemy-react-datatable)
     - /NALic/9Star/201810
@@ -147,9 +137,7 @@ modified: '2021-05-23T16:34:32.755Z'
   - Custom Cell renderer using Render prop pattern
   - Basic CRUD template
   - ...
-
 # Building a Data Table Component in React
-
 - [Building a Data Table Component in React_by polaris_201810](https://engineering.shopify.com/blogs/engineering/building-data-table-component-react)
 
 - The Challenge
@@ -209,9 +197,31 @@ modified: '2021-05-23T16:34:32.755Z'
   - Two important attributes make a data table accessible. 
   - Add a `caption` that a screen reader will read and a `scope` tag for each cell. 
   - For more details, the a11y project has an article about how to create accessible data tables.
+# [React Data Grid vs. React Data Table vs. React Grid](https://blog.ag-grid.com/react-data-grid-vs-react-data-table-vs-react-grid/)
+- When describing components in English, we might use the terms "Data Grid", "Data Table", "Table" and "Grid" interchangeably. 
+- When describing web components, the words can often be confused because of their overlap with existing web technology terms.
+  - Grid provides functionality for page layout vs.
+  - Data Table which provides data rendering and some interactivity vs.
+  - Data Grid which provides a data-driven spreadsheet-like level of interactivity.
 
+- A React Grid refers typically to a layout control to create a responsive grid layout to organise child components.
+- A React Table, React Data Table or React Data Grid refers to a component that can render rows and columns of data and allow the user to interact with the data, e.g. sorting and filtering data, exporting data, and in-cell editing.
+- AG Grid is a Data Grid for data-driven tabular rendering. 
+  - Configuration based to offer a rich user experience out of the box with minimal programming. 
+
+- HTML tables:
+  - Render all their data at the same time, so they may not be the best mechanism to display thousands of records.
+  - Size to fit the data. The length of the table increases as more data is displayed, they rely on the page scroll bar to navigate, so they may not be the best option for a tightly controlled screen layout.
+
+- CSS Grids are used to layout all the page elements, whereas Data Grids automatically render configured data in a tabular format.
+
+- An HTML table is a way to display data for a user but offers no way for the user to interact with the data.
+- Data Grids and Data Tables offer more interaction to the user: sorting columns, re-ordering rows, drag and drop columns, filtering, and in-cell editing.
+- React Data Table controls often use a` <table>` element as their underlying DOM representation and then enhance the table to provide the user with functionality to interact with the data.
+- When looking at descriptions and examples for Data Grids compared to Data Tables, you may notice that Data Grids tend to be more self-contained.
+  - Data Tables often require additional dependencies to handle virtualised rows to only render visible data.
+  - AG Grid requires no additional dependencies.
 # ref
-
 - [A React Data Grid Template Powered By ElasticSearch](https://medium.appbase.io/a-react-data-grid-template-powered-by-elasticsearch-a-react-data-grid-template-powered-by-10b21609b67b)
   - build a data grid app from ground up using ReactiveSearch, react-virtualized, and ElasticSearch.
 - [How to Make a Data Grid Scale_201708](https://www.smartly.io/blog/how-to-make-a-data-grid-scale)

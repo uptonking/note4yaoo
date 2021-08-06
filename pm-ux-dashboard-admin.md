@@ -11,11 +11,12 @@ modified: '2021-07-27T09:09:48.459Z'
 
 - usecase
   - 工作台、分析页、监控页
-  - 表单、列表、详情、结果、异常
+  - ant-design-pro.v1设计了[7个标准化场景](https://v1.pro.ant.design/docs/changelog-cn)：列表、详情、表单、结果、异常、个人、账户
+  - dashboard-starter, dashboard
 
 - tips
   - dashboard for knowledge base, or wiki spaces
-  - sass场景模板可参考 vercel/commerce, async-labs/saas
+  - sass场景模板可参考 vercel/commerce, saas-boilerplate
 # features
 - core
   - themeable
@@ -23,6 +24,10 @@ modified: '2021-07-27T09:09:48.459Z'
   - widgets/componnets: easy to drop in reusable components
 
 - optional
+  - tabs in content area
+  - 引导页
+  - 权限
+  - 外链菜单项
   - tree-shaking: only include modules you need
 # draft
 - auth
@@ -30,6 +35,21 @@ modified: '2021-07-27T09:09:48.459Z'
 - data viewer
 - editor/builder/configurable
 - mini app
+# pgd-dashboard与ant-design-pro
+
+## 布局 
+
+## 侧边栏
+
+- pgd的折叠菜单在左上角默认不显示，鼠标悬浮到logo图片才会显示
+  - antd的折叠菜单在左下角，始终显示
+
+- 处理菜单项过长的情况
+
+## 配置面板
+
+- pgd的配置面板之下没有蒙版层
+  - antd在配置面板打开时点击蒙版层会关闭配置面板
 # products-solutions
 - 布局参考
   - black-dashboard右边面板依赖`reactstrap. Dropdown`组件
@@ -63,8 +83,9 @@ modified: '2021-07-27T09:09:48.459Z'
   - 详情页
   - 表单页
   - 结果页
+  - 异常页
   - 个人页
-  - 通知页、异常页
+  - 通知页
   - 图形编辑器
 
 - umi插件

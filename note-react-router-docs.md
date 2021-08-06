@@ -10,12 +10,10 @@ modified: '2021-05-13T03:46:42.625Z'
 > React Router is a collection of React components, hooks and utilities that make it easy to build multi-page applications with React. 
 
 # roadmap
-
 - ## [@reach/router future](https://reach.tech/router)
   - Reach Router and it’s sibling project React Router are merging as React Router v6. 
   - In other words, Reach Router v2 and React Router v6 are the same.
   - [The Future of React Router and @reach/router](https://reacttraining.com/blog/reach-react-router-future/)
-
 
 - ## Why haven't we shipped RR v6?
 - https://twitter.com/ryanflorence/status/1380328500318457858
@@ -27,10 +25,12 @@ modified: '2021-05-13T03:46:42.625Z'
   - After the dust settles on that, we can hopefully spend time bringing over everything we possibly can from Remix to React Router.
 - I promise you, after we ship @remix_run 1.0, and bring over the good stuff to React Router v6, data fetching/mutation will be SO MUCH BETTER. 
   - You'll only use hooks for what they're good at after we ship.
-
 # pieces
+- ## upgrade v5 to v6
+- [Migrating React Router v5 to v6 guide docs](https://github.com/ReactTraining/react-router/blob/dev/docs/advanced-guides/migrating-5-to-6.md)
+- 替换 props.location, props.history
 
-- how to programmatically navigate using react router v4
+- ## how to programmatically navigate using react router v4
 	- https://stackoverflow.com/questions/42123261/programmatically-navigate-using-react-router-v4
 	- In v4, for navigating programatically you need to access the history object, which is available through React context
 	- as long as you have a `<BrowserRouter>` provider component as the top most parent in your application. 
@@ -38,22 +38,22 @@ modified: '2021-05-13T03:46:42.625Z'
 	- The history interface offers several navigation methods, such as  push, replace and goBack, among others.
 	- https://reacttraining.com/react-router/web/api/history
 	- The history object is mutable. Therefore it is recommended to access the location from the render props of `<Route>` , not from `history.location` . 
-- Link vs Redirect
+
+- ## Link vs Redirect
 	- React Router's BrowserRouter maintains the history stack for you, which means that you rarely need to modify it manually.
 	- You'll want to use Link or NavLink in almost all use cases
 	- The Redirect will redirect the user from one route to a new route of your choosing, and then replace the last entry in the history stack with the redirected route.
 		- redirect doesn't support  browser's back button
 	- Link NavLink and Redirect all use the router's history api under the hood, using these components instead of history manually means that you are safe to any changes to the history api in the future. 
-- how to route outside of the app
+
+- ## how to route outside of the app
 	- `<Route path='/external' component={() => window.location = 'https://external.com/path'}/>`
-- how to scroll to top
+
+- ## how to scroll to top
 	- https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top
-
 # resources
-
 - docs 
   - https://reacttraining.com/react-router/web/guides/basic-components
-
 # react-router docs
 
 ## Basic Components
@@ -83,11 +83,10 @@ modified: '2021-05-13T03:46:42.625Z'
 
 - Static Routing
 	- In these frameworks, you declare your routes as part of your app's initialization before any rendering takes place. 
-
 	  React Router pre-v4 was also static (mostly). Let's take a look at how to configure routes in express:   
 		
 
-``` js
+```js
 		// Express Style routing:
 		app.get("/", handleIndex);
 		app.get("/invoices", handleInvoices);
@@ -104,7 +103,7 @@ modified: '2021-05-13T03:46:42.625Z'
 	- That means almost everything is a component in React Router. 
 	- example
 
-``` js
+```js
 	// react-native
 	import { NativeRouter } from "react-router-native";
 
@@ -139,7 +138,7 @@ modified: '2021-05-13T03:46:42.625Z'
 	- When routing is dynamic, however, you can declaratively compose this functionality.
 	- example
 
-``` js
+```js
 	const App = () => (
 	  <AppLayout>
 		<Route path="/invoices" component={Invoices} />
@@ -177,7 +176,7 @@ modified: '2021-05-13T03:46:42.625Z'
 
 - example
 
-``` js
+```js
 import { withRouter } from 'react-router-dom'
 export default withRouter(connect(mapStateToProps)(Something))
 ```
@@ -214,13 +213,12 @@ export default withRouter(connect(mapStateToProps)(Something))
 	- The key to avoiding blocked re-renders after location changes is to pass the blocking component the location object as a prop.
 	- `<UpdateBlocker location={location} />`
 	- In order to pass the current location object as a prop to a component, you must have access to it. 
-
 	  The primary way that a component can get access to the location is via a <Route> component. 
 	  When a <Route> matches (or always if you are using the children prop), it passes the current location to the child element it renders.
 
 - example
 
-``` js
+```js
 // the Blocker is a pure component, so it will only update when it receives new props
 class Blocker extends React.PureComponent {
   render() {
@@ -256,7 +254,7 @@ const Parent = props => {
 - What happens when the component isn't being rendered by a `<Route>` and the component rendering it does not have the location in its variable scope?
   - Render a pathless <Route>, wrap your connected component in a pathless `<Route />`
 
-``` js
+```js
 	// pathless <Route> = <Blocker> will always be rendered
 	const MyComponent = () => (
 	  <SomeComponent>
@@ -267,7 +265,7 @@ const Parent = props => {
 
 	- wrap a component with the `withRouter` higher-order component and it will be given the current location as one of its props.  
 
-``` js
+```js
 	const BlockAvoider = withRouter(Blocker);
 
 	const MyComponent = () => (
@@ -277,9 +275,7 @@ const Parent = props => {
 	);
 ```
 
-
 # changelog
-
 - v4.4.0-2019
 	- Removed the single-child restriction in `<Router>` so you can have multiple children, provided you're using React 16
 	- Migrated our underlying infrastructure to use React's new context API. 

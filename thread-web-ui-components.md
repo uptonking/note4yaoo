@@ -20,7 +20,15 @@ modified: '2021-01-19T04:46:23.100Z'
 - Do you think Next would ever investigate pulling down different pages based on screen size? e.g. pages/pricing.sm.js
   - Yes, we are thinking about introducing something that would help with this pattern. 
   - I think fundamentally sometimes the page for a mobile and desktop site are quite divergent and deserve different entrypoints.
-# pieces
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## TIL React-Native's Text comp does a bit too much and has a perf overhead 

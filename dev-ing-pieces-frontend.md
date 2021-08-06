@@ -16,7 +16,13 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## [理解TypeScript中的infer关键字](https://juejin.cn/post/6844904170353328135)
+- infer可以在 `extends` 的条件语句中推断待推断的类型
+- 使用infer来推断函数的返回值类型
+- infer的作用不止是推断返回值，还可以解包，我觉得这是比较常用的
+- 这里 `T extends (infer R)[] ? R : T` 的意思是，如果T是某个待推断类型的数组，则返回推断的类型，否则返回T
+- infer推断联合类型
+- 在React的typescript源码中应该常常使用infer来获取类型
 
 - ## [VisualViewport 实现浏览器窗口的缩放检测](https://www.lijinke.cn/2021/03/31/VisualViewport-%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E7%BC%A9%E6%94%BE%E6%A3%80%E6%B5%8B/)
 - 最近在工作中, 遇到了用户如果缩放浏览器窗口, 或者使用 mac 笔记本的触摸板缩放浏览器窗口时, canvas 会模糊的问题, 

@@ -7,11 +7,22 @@ modified: '2021-01-28T14:34:20.579Z'
 
 # thread-lang-js-ts
 
-
 # pieces
 - ## 
 
-- ## namespace import props order
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What is `[] + []` in JavaScript?
+- https://twitter.com/jaredpalmer/status/1423394089207312387
+  - `''`
+
+- ## namespace import items order
 - https://twitter.com/haoqunjiang/status/1422951822864515082
   - ECMAScript actually requires the keys to be sorted by %Array.prototype.sort% using undefined as comparefn. 
 - So if using a minifier this would be, more or less, undefined behavior? Seems an odd decision to make. 

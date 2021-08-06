@@ -9,15 +9,19 @@ modified: '2021-04-19T14:52:58.244Z'
 
 > new features for pm
 
-# pieces
+# discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## Current status - I'm blindly copying over zooming-in-math from Excalidraw's codebase like it's Stack Overflow
+- https://twitter.com/mpocock1/status/1423231925007826945
+- Implementing this well is annoying for sure, not the zooming logic only. A nice dependency free lib for managing zoom logic, gesture handling would be 👌. Zoom to content, zoom to mouse, smart scroll bars for infinite surfaces, & hooks for interrupting optimistic tool gestures too
+  - Screen to world space coordinate utilities. Example code for use as css transform, WebGL ortho, svg, and canvas based rendering. In general @steveruizok the gists you made for rect resizing is really gold. I’m starting to prefer clean dependency free code I mod over packages
 
-- ## 
-
+- ## Since we're seeing more projects release with restricted access for GitHub Sponsors only, I wanted to check in & see how people feel about it
+- https://twitter.com/lukeed05/status/1423459704122970115
+- [Do you have more private repos or more public repos? Why?](https://twitter.com/jackdomleo7/status/1423335903284637698)
 - ## The word2vec service cost $10 to upload 2.7M 1kb files to GCS. 
 - https://twitter.com/tomlarkworthy/status/1422945919419523073
   - But then it's about $0.03 a month to run. 

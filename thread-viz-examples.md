@@ -11,7 +11,13 @@ modified: '2021-02-20T08:21:06.521Z'
 
 - ## 
 
-- ## 
+- ## Can we visualize a codebase?
+- https://twitter.com/Wattenberger/status/1423259472919674882
+  - We always look at our code in a file/folder list - what would a bird's-eye-view look like, and how could that enhance our understanding of code?
+  - [Visualizing a codebase](https://octo.github.com/projects/repo-visualization)
+- I love this exploration! a better way to browse files than the standard file list. I especially like the by-commit visualization to see what files people are changing (near bottom). a good way to get pulse of codebase
+- Nice work! There are a few existing VR tools (e.g. @PrimitiveVR ) but I think it might be too limiting to focus exclusively on code which is literally an implementation detail. I’m exploring design level visualization & tooling but progress is slow
+
 
 - ## The interactive "Bats Fact Wheel" by @jhjanicki
 - https://twitter.com/simongerman600/status/1418292323230879745
