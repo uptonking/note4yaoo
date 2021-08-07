@@ -13,6 +13,63 @@ modified: '2021-01-01T20:10:51.125Z'
   - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
 # faq
 
+## [Why WASM is not the future of Babylon.js__202108](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
+
+- [recently a question about WebAssembly (WASM) being the future](https://twitter.com/jpmolla/status/1420704185478156288)
+  - @threejs: NO
+  - @babylonjs: NO
+
+- I wanted to use this blog to get more into details about why we do not think WASM is the future of JavaScript frameworks.
+
+### WASM is a target not a user facing language
+
+- WASM is meant to be a way for native developers (mostly C/C++) to compile their project into something that a browser can understand and execute.
+- You can still read and maybe manually write WASM code as it is text based (the same way you can write byte code instead of writing C# or Java code).
+- It is just **terribly inefficient** to use it that way. 
+- Furthermore to reduce the size most of the time the WASM module are stored in a binary format.
+- Memory management is on you, math functions are on you, string management is on you, etc.
+  - Thanks to that, the performance of WebAssembly is supposed to execute faster than the JavaScript equivalent.
+  - But unfortunately this is not something we can build a web framework on.
+  - The main reason is that it is not easy (to say the least) to write WASM as it is not really meant to be written by humans.
+- We had a long discussion about it on our repo where we were evaluating the option to use AssemblyScript
+  - **The conclusion is that for now we see no good reason to port the entire engine to C++** (immense amount of work, killing all contributions we could get from the community, harder to maintain, etc.) to get the potential performance boost of WASM.
+
+### WASM should not be called for small chunk of work
+
+- We could argue that some parts of the engine should be written with WASM. Maybe the more compute intensive (like the math library).
+- But there is a catch: Communication between JavaScript environment and WASM environment takes time. There is a bit of marshalling involved and that marshalling is expensive.
+
+### WASM is hard to debug
+
+- Because WASM is not easy to read, it it not easy to debug. 
+- Chrome recently released some tools to help
+- But in a nutshell you have to compile your native code with debug symbols to get some debugging support. 
+
+### WASM could be fat
+
+- Because WASM modules needs to provide everything (from memory management to math support) they can quickly become big assets that need to be loaded every time you start your page.
+- As an example, we are currently working on supporting WebGPU. To do so we need to compile our shaders (written in GLSL) to WGSL and this requires us to load a 3MB WASM module (just remember that the entire babylonjs library is 3MB).
+
+### But we still love WASM
+
+- That being said we are not haters of WASM. 
+- On the contrary we are using it in several areas of Babylon.js (mostly when we want to use existing native code that will do some atomic functions)
+  - Draco decompression
+  - KTX2 decoders
+  - GLSL to WGSL compilation
+  - Ammo physics engine
+  - Navmesh and crowd agents
+- Maybe in the future we will revisit our position if the situation changes but we will always make sure that the experience for web developers is top notch!
+
+### discussion
+
+- [Why WASM is not (for now) the future of Babylon.js](https://twitter.com/deltakosh/status/1423657621010087947)
+- What about WebGPU?
+  - Webgpu can be seen like webgl3 so no difference
+- Nice writeup, yeah it’ll be hard to integrate WASM in unless we figure out a way to let WASM do its own thing for longer without too much communication with the JS side.
+- Great read. Could not agree more!
+People should not try to turn WASM into a cult. Tech is meant to be used and leveraged as required by the use cases. Do not try to turn something as great as WASM into an alleged silver bullet that will fit all problems. Be pragmatic engineers!
+
 # pieces
 - 典型应用场景
   - 扩展浏览器端视音频处理能力

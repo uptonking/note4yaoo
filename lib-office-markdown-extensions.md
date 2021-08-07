@@ -17,6 +17,7 @@ modified: '2021-06-02T15:26:19.890Z'
   - mdx
   - [readmeio-markdown](https://github.com/readmeio/markdown)
   - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
+  - [R Markdown](https://rmarkdown.rstudio.com/)
   - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
     - who is using: curvenote
     - MyST is a rich and extensible flavor of Markdown meant for technical documentation and publishing.
@@ -24,7 +25,6 @@ modified: '2021-06-02T15:26:19.890Z'
   - [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
     - a Markdown syntax optimized for book authoring. 
     - It is standardized and published for Vivliostyle and its sibling projects.
-  - [R Markdown](https://rmarkdown.rstudio.com/)
   - [Idyll markup](https://idyll-lang.org/docs/syntax)
     - The main extensions are reactive variables, and components. 
     - Together these two elements can be used to create dynamic, interactive articles.

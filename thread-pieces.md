@@ -28,13 +28,16 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## [The web] is for everyone. Not just for everyone to consume, but for everyone to make
+- https://twitter.com/midvintr/status/1423579315632066568
 
 - ## As a software maintainer, how do you deal with questions from people who clearly don't have the basic skills to do what they are trying to do?
 - https://twitter.com/MarijnJH/status/1423562136995905536
   - I don't want to be a jerk, but I also don't have time or energy to nudge all these people through the process of learning web dev.
-- I reply with a simple, polite, “hey this is not an appropriate question here, please post it on SO”. Or, something like, “please read up basics of JS/TS before jumping in on this.”
 - I usually guide them to better teachers. Not everyone is a good instructor!
+- Try to stay away from those people as good as you can, else you could consider to create a FAQ and politely refer to it. I’ve noticed that the most unskilled procrastinators prefer to involve you in endless talks instead of doing a quick research in Google to find a documentation
+- Thanks for getting in touch. Judging from the question you asked I should warn you that this project is not aimed for someone of your skill level. I'm not able to provide the tutoring necessary to bring you up to speed. Try looking into XYZ or hiring a more experienced developer.
+- Great question. Next question!
 
 - ## A senior developer is someone whose job is to be constantly interrupted and help people out
 - https://twitter.com/qntm/status/1418612464300797957

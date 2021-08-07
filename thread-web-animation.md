@@ -14,19 +14,20 @@ modified: '2021-01-08T17:14:34.841Z'
 - ## CSS variables can be used *within CSS keyframe animations*!
 - https://twitter.com/JoshWComeau/status/1422921859021131779
 - Although I think the way you propose is going to perform better as the browser can eval the variable at the start of the animation and only animate transform off the main thread. **CSS variable animation performance is still bound to the main thread**.
-- He's applied `will-transform` which is a more polite way of saying `translateZ(0)`. The browser will most likely put these on GPU layers as in your approach
+- He's applied `will-transform` which is a more polite way of saying `translateZ(0)` . The browser will most likely put these on GPU layers as in your approach
   - I'm guessing framer motion already has this baked in?
   - Yeah but we use translateZ(0) still as it has better old browser support.
 - I built a whole animation system on this core concept! CSS variables allow for composable and fully customizable animations.
   - Thank you! Next steps are to make it purgeable or use a JIT compiler to reduce overall file size. We took some inspiration/learnings from your dark mode article as well!
-  - https://github.com/ingram-projects/animxyz
-    - The first truly composable CSS animation library. 
-    - Powered by CSS variables to allow a nearly limitless number of unique animations without writing a single keyframe. 
+- https://github.com/ingram-projects/animxyz
+  - The first truly composable CSS animation library. 
+  - Powered by CSS variables to allow a nearly limitless number of unique animations without writing a single keyframe. 
+- I've found if you don't predefined the CSS variables the performance is abysmal(极坏的), I can't properly tell why, but it lags and stutters quite a bit.
 
 - ## I'm surprised by how much more energy efficient animating transform is with WAAPI than GreenSock JavaScript.
 - https://twitter.com/mattgperry/status/1421789054669033473
 - However, at least in Safari by far the the worst battery-life offender is animating CSS variables. 
-  - If @webkit drags its heels supporting` CSS.registerProperty`, I might extend the individual transform polyfill to set transform on an element directly.
+  - If @webkit drags its heels supporting ` CSS.registerProperty` , I might extend the individual transform polyfill to set transform on an element directly.
 - The WAAPI uses less memory and CPU in general, so, it can produce super smooth animations with little to no worry about sustained performance. 
   - Note, **infinitely looping animations will accumulate memory and if left running for too long will lead to a memory overflow**
   - Stateless animations would be one way to address this, where frame to render is determined by time instead of internal state.

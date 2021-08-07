@@ -1,6 +1,6 @@
 ---
 title: tool-iot-devices
-tags: [iot, tool]
+tags: [dataseed,iot, tool]
 created: '2019-08-11T07:36:17.519Z'
 modified: '2020-12-22T12:42:44.995Z'
 ---
@@ -32,6 +32,7 @@ modified: '2020-12-22T12:42:44.995Z'
 - guide
   - 除了分辨率，还要考虑使用场景，如系统分屏、多窗口排列
   - 还要考虑持续更新、消费的能力
+  - [Screen Resolution Stats Worldwide](https://gs.statcounter.com/screen-resolution-stats)
 
 - android
   - ldpi: 240x320, 240x432
@@ -44,7 +45,7 @@ modified: '2020-12-22T12:42:44.995Z'
   - ldpi/0.001, mdpi/0.062, tvdpi/0.027, hdpi/0.179, xhdpi/0.45, xxhdpi/0.281
 
 - desktop
-  - 1920x1080/0.215, 1366x768/0.201, 1536x864/0.096, 1440x900/0.064, 1280x720/0.054, 1600x900/0.036
+  - **1920x1080**/0.215, 1366x768/0.201, 1536x864/0.096, 1440x900/0.064, 1280x720/0.054, 1600x900/0.036
 
 - mobile
   - 360x640/0.106, 414x896/0.072, 360x780/0.057

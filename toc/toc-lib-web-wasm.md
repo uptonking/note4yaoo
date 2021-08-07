@@ -98,7 +98,14 @@ modified: '2020-12-31T15:19:37.542Z'
     - Pyodide may be used standalone in any context where you want to run Python inside a web browser.
 - https://github.com/ballercat/walt
   - JavaScript-like syntax for WebAssembly text format
+# wasm-java
 
+- https://github.com/i-net-software/JWebAssembly
+  - Java bytecode to WebAssembly compiler
+- https://github.com/wasmerio/wasmer-java
+  - WebAssembly runtime for Java
+- https://github.com/leaningtech/cheerpj-meta
+  - CheerpJ - convert Java bytecode to WebAssembly and JavaScript
 # wasm-examples
 
  

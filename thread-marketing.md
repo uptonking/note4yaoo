@@ -18,7 +18,9 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## 5 Gumroad alternatives to help you sell digital products easily.
+- https://twitter.com/felix12777/status/1424024289217372163
+  - Start selling courses, memberships, e-books, digital templates, curated lists etc.
 
 - ## 亚马逊与 Elastic 的战争升级了，后者修改了 Elasticsearch 的官方客户端，禁止连接到亚马逊维护的  OpenSearch。
 - https://twitter.com/ruanyf/status/1423119088516177923

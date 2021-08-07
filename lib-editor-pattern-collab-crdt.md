@@ -8,7 +8,7 @@ modified: '2021-07-23T15:52:10.409Z'
 # lib-editor-pattern-collab-crdt
 
 # guide
-
+e
 # blog
 
 ## [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
@@ -165,9 +165,16 @@ modified: '2021-07-23T15:52:10.409Z'
 - This is a large part of the reason why I spent weeks researching CRDTs even though my document convergence needs are well covered by OT. 
   - If you have a more fine-grained way to address positions (specifically, one that can refer to deleted positions), and you define position mapping in terms of that, you do not have this problem.
 # discuss
+- ## Great writeup by @josephgentle on making CRDTs orders of magnitude faster. 
+- https://twitter.com/martinkl/status/1423230479222939648
+  - [5000x faster CRDTs: An Adventure in Optimization](https://josephg.com/blog/crdts-go-brrr/)
+  - We're working on a similar approach for Automerge, and it's encouraging to see how much performance improvement is possible!
+- Are either of you aware of any efforts to make CRDTs based on 3-way merging? Like a self pruning git history, with peer branches, retaining only the bare minimum of common ancestors to support future merges?
+  - https://gowthamk.github.io/docs/mrdt.pdf
+
 - ## every collaboration tech that i'm seeing is either: closed-source, limited to small data, limited to text-like data, inefficient, or all of the above
 - https://twitter.com/tmcw/status/1422934838873571342
-- replicache is [open-source](https://github.com/rocicorp) but not free. Their approach is giving you a spec to implement for the backend; they're not hosting anything for you.I also think approach handles scale pretty well because it doesn't keep history like some CRDTs
+- replicache is [open-source](https://github.com/rocicorp) but not free. Their approach is giving you a spec to implement for the backend; they're not hosting anything for you. I also think approach handles scale pretty well because it doesn't keep history like some CRDTs
 - Very hard to build a generic collab tech without diving into the domain. 
   - Text editing collab has requirements like intent preservation while drawing, say, requires lots more data shipped around. 
   - And CRDTs eschew(回避，避免) centralization but very few apps don’t need authority.
@@ -230,3 +237,4 @@ modified: '2021-07-23T15:52:10.409Z'
   - https://news.ycombinator.com/item?id=23737639
 - CRDTs: The Hard Parts [video]_202007
   - https://news.ycombinator.com/item?id=23802208
+# ref

@@ -29,7 +29,11 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## I wrote about my favorite HTML element `<dl>` . dl>dt/dd 注意dd会缩进
+- https://twitter.com/BenDMyers/status/1423708549750956037
+- Another benefit is the default styling in browsers.
+- It is nice but its screen reader support is quite patchy compared to ul
+- I know @thatrandybrown has used <dl> as his markup to debug objects' properties.
 
 - ## TIL React-Native's Text comp does a bit too much and has a perf overhead 
 - https://twitter.com/sebastienlorber/status/1419723047637037061

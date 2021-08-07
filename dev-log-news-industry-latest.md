@@ -1,17 +1,17 @@
 ---
-title: dev-log-news-industry
-tags: [latest, log, news]
+title: dev-log-news-industry-latest
+tags: [industry, latest, log, news]
 created: '2019-06-24T11:19:00.127Z'
-modified: '2021-03-29T19:15:28.401Z'
+modified: '2021-08-07T15:30:42.655Z'
 ---
 
-# dev-log-news-industry
+# dev-log-news-industry-latest
 
 # 2021
 
 - 2021
 
-- 202107-market-因政策原因，K12校外教育培训遇冷
+- 202107-market-因政策原因，K12校外教育培训遇冷；字节跳动大力教育大裁员
 - 202106-career-腾讯、快手、字节等头部一线公司开始取消996加班规定
 - 202105-os-微软正式宣布，IE 11将于2022年6月15日退役(已25年)
 - 202105-fintech-数字人民币接入支付宝

@@ -32,6 +32,11 @@ modified: '2021-07-28T19:00:16.604Z'
 
 > The Fullstack React Framework with "Zero-API" Data Layer — Built on Next.js — Inspired by Ruby on Rails
 
+- notes
+  - [Clarification needed for Blitz Zero-API](https://github.com/blitz-js/blitz/discussions/2166)
+    - What kind of API is it that is auto-generated. Is it REST or GraphQL?
+    - Neither, it's RPC. See rpc-specification for more details.
+
 ## overview
 
 - “Zero-API” data layer lets you import server code directly into your React components 

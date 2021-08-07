@@ -55,7 +55,7 @@ modified: '2021-07-27T09:09:48.459Z'
   - black-dashboard右边面板依赖`reactstrap. Dropdown`组件
     - 主题切换基于document.body.classList.add/remove
     - 重度定制bootstrap.css，注意自定义css的顺序
-  - xtreme-dashboard左边折叠通过`[data-sidebartype='mini-sidebar']`选择器
+  - xtreme-dashboard左边折叠通过`[data-sidebartype='mini-sidebar']`属性选择器
     - 折叠侧边栏element.classList.add/remove("mini-sidebar")
     - 轻度定制bootstrap.css，只添加vars和组件css
   - airframe-dashboard左边折叠通过显示不同Sidebar Variants组件
@@ -112,6 +112,39 @@ modified: '2021-07-27T09:09:48.459Z'
   - 创建文章、文章列表
   - excel、pdf
 
+## wrappixel dashboards
+
+- pro version
+  - dashboard variants
+  - mini sidebar
+  - settings floating panel
+  - layouts
+  - theming/dark
+  - rtl
+  - apps
+
+### codebase-xtreme
+
+- todo
+  - 添加折叠和展开左边侧边栏的按钮；
+  - 目前监听window.width显示折叠按钮的逻辑有问题
+    - 关闭控制台时，折叠过的左边栏不会自动展开
+
+- code-xp
+  - 顶部导航条左侧背景色与侧边栏背景色相同，让人误以为导航条在侧边栏，有好有坏
+  - 动态样式不依赖classnames，而是通过`data-*`css属性选择器控制，如`[data-sidebartype='mini-sidebar']`选择器
+  - 自定义样式都写在.scss文件里面
+
+- xtreme-react-starterkit
+  - redux的store只存放了settings对象
+  - 使用redux大部分都是通过`useSelector()`读取状态子树
+  - 除了Customizer，其他组件都不直接更新redux store的数据
+  - Customizer中使用`useDispatch()`返回值触发更新的示例`onClick={() => dispatch(setSidebarPos("fixed"))}`
+
+- 路由及其对应的组件通过类似json的js对象配置
+
+- fakeApi基于rxjs. BehaviorSubject
+
 ## creative tim dashboards
 
 - pro version
@@ -154,39 +187,6 @@ modified: '2021-07-27T09:09:48.459Z'
   - widgets
   - rtl
   - apps: kanban, todo, tickets, chats, email, calendar, gallery
-
-## wrappixel dashboards
-
-- pro version
-  - dashboard variants
-  - mini sidebar
-  - settings floating panel
-  - layouts
-  - theming/dark
-  - rtl
-  - apps
-
-### codebase-xtreme
-
-- todo
-  - 添加折叠和展开左边侧边栏的按钮；
-  - 目前监听window.width显示折叠按钮的逻辑有问题
-    - 关闭控制台时，折叠过的左边栏不会自动展开
-
-- code-xp
-  - 顶部导航条左侧背景色与侧边栏背景色相同，让人误以为导航条在侧边栏，有好有坏
-  - 动态样式不依赖classnames，而是通过`data-*`css属性选择器控制，如`[data-sidebartype='mini-sidebar']`选择器
-  - 自定义样式都写在.scss文件里面
-
-- xtreme-react-starterkit
-  - redux的store只存放了settings对象
-  - 使用redux大部分都是通过`useSelector()`读取状态子树
-  - 除了Customizer，其他组件都不直接更新redux store的数据
-  - Customizer中使用`useDispatch()`返回值触发更新的示例`onClick={() => dispatch(setSidebarPos("fixed"))}`
-
-- 路由及其对应的组件通过类似json的js对象配置
-
-- fakeApi基于rxjs. BehaviorSubject
 
 ## airframe-react
 

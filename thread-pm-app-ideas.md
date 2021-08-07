@@ -10,8 +10,14 @@ modified: '2021-04-19T14:53:27.158Z'
 > new marketable apps
 
 # repeat
-- ## Harsh truth: Reading about other successful creators won't make you one. Start creating so that you have your own success story to tell.
+- ## Harsh truth: Reading about other successful creators won't make you one. 
 - https://twitter.com/mkhundmiri/status/1383688592099135498
+  - Start creating so that you have your own success story to tell.
+
+- ## ❌️ Learn and Build. ✅️ Build in order to learn. 
+- https://twitter.com/tanaypratap/status/1423924948611977217
+  - Don’t wait to know everything before you build something out. 
+  - Build with whatever you know and you’ll end up learning as a side effect.
 
 - ## Too many projects and ideas, not enough time!
 - https://twitter.com/tannerlinsley/status/1389725014379823107
@@ -19,6 +25,8 @@ modified: '2021-04-19T14:53:27.158Z'
 - I wish I could say that too.. I have time for now but no enough knowledge yet
 - No project ideas. Only problem
   - make a project to solve your problem
+
+
 # ideas
 - ## 
 

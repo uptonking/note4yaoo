@@ -16,7 +16,14 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## I've been thinking a lot about the `as` prop for polymorphism lately and wondering why we all went down the road of runtime TypeScript polymorphism. 
+- https://twitter.com/jjenzz/status/1423766700885954562
+  - It introduces so many unnecessary complexities, bloats error messages and kills TS per
+  - It dawned on me that the prop value never actually changes during runtime, we set it and forget it but still pay the TS costs. I've been racking my brain trying to think of a better way... and I think I may have something.Zero-runtime polymorphism.
+- Inversion of control. The prop isn’t the problem, JSX typings are absurdly overloaded
+  - indeed, when there’s no need to overload them this way. how often do you change the value of the `as` prop via state during runtime? I can’t think of one time that I’ve ever needed to do that
+- Today, I think composing hooks (like useDropdownMenuItem, useDialogTrigger etc.) makes much more sense.
+  - +1 to that. For the example above, we would compose the hooks for the dialog and menu item to get behaviors we want and use as to set the element as the styled button. Feels much more atomic (to me). And as a consumer, it’s more clear how the end result will look and behave.
 
 - ## React tip: That data you're setting in state in a `useEffect` hook could probably just be derived while rendering instead.
 - https://twitter.com/acemarke/status/1365874077177700361

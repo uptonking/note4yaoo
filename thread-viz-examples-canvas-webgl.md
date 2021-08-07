@@ -11,6 +11,20 @@ modified: '2021-04-04T14:43:15.420Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 奥运会游泳比赛过程在新闻中以动画示例方式重现
+- https://twitter.com/Rich_Harris/status/1424016284073738244
+- is this a video or something developed with a web framework and SVG animation?
+  - all real-time - it's @threejs plus @sveltejs
+- are the videos (i.e. on twitter) rendered out as frames using node-canvas? or screen recorded? or some other witchcraft?
+  - Going to blog about it next week, but we have a messy SvelteKit app with an admin page with a bunch of renditions - we click a button, it screenshots them one frame at a time then feeds them to `ffmpeg-wasm` , then posts the resulting mp4 to a slack thread for social editors to use
+- I do something similar for a project, and use `puppeteer` to grab screenshots
+  - It's just using canvas.toBlob (for the webgl layer and again for the overlay, then composited on a third canvas) then writing the data to ffmpeg's virtual fs
+- Paywalled
+
 - ## New side project featuring some AIs from cool movies! 
 - https://twitter.com/lorismat_/status/1393932200530358276
   - https://www.lorismat.com/almosthumans
