@@ -9,6 +9,12 @@ modified: '2021-07-27T09:09:48.459Z'
 
 # guide
 
+- 实现的要点
+  - 路由组织
+  - 页面布局灵活配置
+  - 数据流
+  - 权限管理
+
 - usecase
   - 工作台、分析页、监控页
   - ant-design-pro.v1设计了[7个标准化场景](https://v1.pro.ant.design/docs/changelog-cn)：列表、详情、表单、结果、异常、个人、账户
@@ -87,6 +93,15 @@ modified: '2021-07-27T09:09:48.459Z'
   - 个人页
   - 通知页
   - 图形编辑器
+
+- 页面开发
+  - 页面路由
+  - 布局
+
+- 数据流/状态管理
+  - 全局初始化数据
+  - 全局共享数据流
+  - 权限管理
 
 - umi插件
   - 权限、统计、antd、initial-state、layout、locale、model、request

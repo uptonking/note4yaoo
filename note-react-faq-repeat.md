@@ -14,7 +14,7 @@ modified: '2021-06-10T06:44:27.120Z'
 
 ## [For a complex #reactjs component like this one from Mapbox: would you rather it accept separate callback props for each of its events or a single prop (ie `onEvent={handleEvent}` ) where you could switch off of the event name?](https://twitter.com/steveruizok/status/1418853604866265091)
 
-  - I’m not sure myself. I guess if the first pattern is going to just feed back into a reducer or something, then in the second pattern you could just pass the dispatch?
+- I’m not sure myself. I guess if the first pattern is going to just feed back into a reducer or something, then in the second pattern you could just pass the dispatch?
 - I prefer many props for most components as they are easier to type in typescript. 
   - An alternate pattern which is useful when you need to often add and remove event handlers for performance when using it is to do what gsap/browsers do: `ref.addEventListener(“eventName”, handler)`.
 - Individual props. I assume that the event changes subtly per callback? If it were one callback you'd need to narrow the event type down in Typescript, which hurts discoverability.
@@ -342,7 +342,7 @@ const Button = props => {
 ```
 
 - [React hooks useCallback with parameters inside loop](https://stackoverflow.com/questions/55006061)
-- The simple answer here is, you probably shouldn't use useCallback here. 
+- The simple answer here is, you probably shouldn't use `useCallback` here. 
   - The point of useCallback is to pass the same function instance to components
   - the best solution here is probably to use a single function instead of five by `event.target.dataset["key"]`
 
@@ -376,7 +376,7 @@ const Example = (props) => {
 
 ```js
 const Example = (props) => {
-  const clickHandlers = React.useMemo(() => _.times(5, key =>
+  const clickHandlers = React.useMemo(() => _.times(5,  key =>
     () => console.log("You clicked", key)
   ), [ /* dependencies */ ])
 
@@ -475,7 +475,7 @@ const Counter = React.memo(function Counter({
 }) {
   // ok to do onClick={new=>'function'} because we do not pass
   // onClick to sub components unless counter changes
-  // 这里的事件函数直接传到button元素了，没有子组件了
+  // 这里的事件函数直接传到button元素了，没有子组件了，也就只渲染到这个叶节点了；通用性不强
   console.log('rendering index:', index);
   return (
     <button onClick={() => up(index)}>{counter}</button>

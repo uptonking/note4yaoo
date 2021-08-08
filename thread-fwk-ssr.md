@@ -51,7 +51,9 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## Next.js has been doing SSR since October 2016. Plenty of successful SSR apps at scale like tiktok.com and trulia.com 
+- https://twitter.com/rauchg/status/1424163068620075010
+  - Sounds like @brillout had chosen to pre-render everything at build time which is optional
 
 - ## Let me tell you a story of a library developer who wrote some 'isomorphic' code many years ago to run on node and web
 - https://twitter.com/BenDelarre/status/1418005935025377284

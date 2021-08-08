@@ -9,7 +9,16 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # pieces
 
-- ## 
+- ## react onClick中如何访问旧的state
+- 全部通过setState(prev=> newState)；
+  - 不要部分直接使用prev
+``` JS
+   setState((prev) =>
+      prev.has(curItem)
+        ? new Set(Array.from(prev).filter((i) => i !== curItem))
+        : new Set(prev.add(curItem)),
+    );
+```
 
 - ## 实现mdx文档编辑后自动更新的思路
 - (在当前app界面)编辑内容后直接渲染最新内容到dom，都在内存无需本地

@@ -11,6 +11,8 @@ modified: '2021-07-29T11:15:44.100Z'
 - [`:focus-visible` CSS pseudo-class](https://caniuse.com/css-focus-visible)
   - ❌️ safari 15仍然不支持
   - Previously drafted as `:focus-ring`
+- [@supports()](https://caniuse.com/css-featurequeries)
+  - ✅️ 除IE外都支持，很成熟
 # caniuse-js
 
 # discuss
