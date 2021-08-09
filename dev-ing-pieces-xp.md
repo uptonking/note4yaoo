@@ -9,15 +9,43 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # pieces
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## react.lazy 批量动态导入pages文件夹下的所有react组件
+  - 使用ErrorBoundary组件包裹Suspense，可以显示其他正常组件，在动态导入失败的位置显示ErrorBoundary的fallback组件
+- 原因是以异步方式定义的变量，不能直接马上使用它的值，实际执行时的数据类型也可能是异步返回值的类型
+  - 动态导入每个组件后，不能马上 `route.component = LazyLoadedComp`
+
+  - 可以放在Route定义处导入
+
+```
+
+Error: Cannot find module './[object Object].tsx'
+
+ componentStack: "\n    at Lazy\n    at D (webpack-internal:///../../n…/./src/store/global-context.tsx:89:21)
+```
+
+- 抛出的异常却是导入另外一个文件夹下的react组件失败
+  - 变通的方法，在每个`Route`组件定义的定义动态导入，而不是在其他其他统一动态导入
+
 - ## react onClick中如何访问旧的state
-- 全部通过setState(prev=> newState)；
-  - 不要部分直接使用prev
-``` JS
+- 全部通过setState(prev=> { doSth(prev); return newState; })
+  - 不要部分使用oldState，部分使用prev
+
+```JS
    setState((prev) =>
-      prev.has(curItem)
-        ? new Set(Array.from(prev).filter((i) => i !== curItem))
-        : new Set(prev.add(curItem)),
-    );
+     prev.has(curItem) ?
+     new Set(Array.from(prev).filter((i) => i !== curItem)) :
+     new Set(prev.add(curItem)),
+   );
 ```
 
 - ## 实现mdx文档编辑后自动更新的思路
@@ -36,4 +64,4 @@ modified: '2021-04-28T20:54:58.126Z'
 - 异常信息是 `mini css extract plugin loader has been initialized using an options object that does not match the api schema.` .
   - 修改版本后测试发现，深层原因不是mini-css-extract-plugin的版本问题
   - 查看component-docs项目的issues，有人已经提交了最新版样式错乱broken的bug，所以应该降级component-docs，而不是降级mini-css-extract-plugin
-  - 容易看花眼: ^0.20.5，^0.24.0
+  - 容易看花眼: ^0.20.4，^0.24.0

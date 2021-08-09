@@ -17,6 +17,7 @@ modified: '2021-08-08T08:39:17.347Z'
     - isHeader/FooterShown
     - isMenuShown 不展示菜单
     - isMenuHeaderShown 不展示菜单顶栏
+
 - 左侧导航子目录
   - 支持同时打开多个子目录
   - shortcut link，以 http(s):// 开头
@@ -25,6 +26,7 @@ modified: '2021-08-08T08:39:17.347Z'
     - 不能默认展开
     - 通过引入perfect-scrollbar暂时解决了左侧边栏会出现水平滚动条的问题
     - collapse: false时，子菜单项不可展开
+  - 鼠标位于左侧边栏滚动时，只滚动左侧边栏，不应该滚动内容区
 
 - navbar
   - 添加shadow，区分白色导航条和白色侧边栏

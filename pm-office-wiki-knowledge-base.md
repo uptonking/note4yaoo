@@ -10,7 +10,7 @@ modified: '2021-07-27T11:27:37.050Z'
 # guide
 
 - 知识库的设计一般分2部分
-  - 随笔/随记
+  - *随笔/随记*
     - 对于临时书写的文章或难以分类的文章，不需要创建文件夹
     - 底层实现是由系统自动创建了一个名为「随记」的**知识库**
     - 特殊之处在于每篇随记文章很可能会使用不同文档模版
@@ -167,6 +167,55 @@ modified: '2021-07-27T11:27:37.050Z'
   - 工作台是用户登陆以后自己的首页，它可以帮助你快速到达语雀上任何地方，同时在工作台上你也可以找到你最近的参与的内容以及动态。
   - 可直接添加url地址作为快捷入口
 
+## Confluence
+
+- features
+  - Turn conversations into action 记录行动
+    - Built for lasting knowledge so you never lose great ideas or context in a transient notification or chat.
+  - Organize everything in one place 各种格式统一管理
+    - From quarterly planning docs to new hire blogs
+  - Break down team silos 结构规范
+    - An open, connected structure allows information to flow freely among everyone at the organization.
+  - Build a culture of open teamwork 积极反馈
+    - With social features, employees at every level have a voice to contribute, share, and receive feedback.
+  - extensions from atlassian marketplace
+  - best-practice templates
+  - 60, 000+ customers use Confluence to rethink the way they work.
+
+- space体验
+  - 提供了可关闭的模版页占位符，类似README.md、blog
+  - 可将url添加到快捷入口
+
+- conflucence dashboard
+  - discover:  what's happening
+  - Your work: recent, all
+  - customize: homepage, go to settings page
+
+- space directory(知识库)
+  - Spaces(知识空间) are places to collect pages with a common theme – you can create as many spaces as you like – and you can find them all in the space directory.
+
+- space bar(侧边栏)
+  - shortcuts: 快速链接到其他页面或外部页面
+  - page tree
+
+- [Confluence use-cases](https://confluence.atlassian.com/doc/confluence-use-cases-283641068.html)
+  - Using Confluence for technical documentation
+  - Setting up a knowledge base
+  - Setting up an intranet
+  - Confluence for software teams
+
+- who is using /demos
+  - [Atlassian Documentation](https://confluence.atlassian.com/alldoc/atlassian-documentation-32243719.html)
+  - [IGEL Knowledge Base](https://kb.igel.com/)
+  - [Comala Workflows](https://wiki.comalatech.com/display/CWL)
+  - [BMC docs](https://docs.bmc.com/docs/)
+
+- ref
+  - [confluence 6中文文档](https://www.cwiki.us/display/CONFLUENCEWIKI/About+Confluence)
+  - [Confluence Documentation Directory 7.12__202107](https://confluence.atlassian.com/doc/get-started-777010817.html)
+
+## Notion
+
 ## [MrDoc 觅道文档](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
 
 - features
@@ -226,54 +275,7 @@ modified: '2021-07-27T11:27:37.050Z'
   - 文档全文搜索；
   - 私密文档分享码分享
 
-## confluence
-
-- features
-  - Turn conversations into action 记录行动
-    - Built for lasting knowledge so you never lose great ideas or context in a transient notification or chat.
-  - Organize everything in one place 各种格式统一管理
-    - From quarterly planning docs to new hire blogs
-  - Break down team silos 结构规范
-    - An open, connected structure allows information to flow freely among everyone at the organization.
-  - Build a culture of open teamwork 积极反馈
-    - With social features, employees at every level have a voice to contribute, share, and receive feedback.
-  - extensions from atlassian marketplace
-  - best-practice templates
-  - 60, 000+ customers use Confluence to rethink the way they work.
-
-- space体验
-  - 提供了可关闭的模版页占位符，类似README.md、blog
-  - 可将url添加到快捷入口
-
-- conflucence dashboard
-  - discover:  what's happening
-  - Your work: recent, all
-  - customize: homepage, go to settings page
-
-- space directory(知识库)
-  - Spaces(知识空间) are places to collect pages with a common theme – you can create as many spaces as you like – and you can find them all in the space directory.
-
-- space bar(侧边栏)
-  - shortcuts: 快速链接到其他页面或外部页面
-  - page tree
-
-- [Confluence use-cases](https://confluence.atlassian.com/doc/confluence-use-cases-283641068.html)
-  - Using Confluence for technical documentation
-  - Setting up a knowledge base
-  - Setting up an intranet
-  - Confluence for software teams
-
-- who is using /demos
-  - [Atlassian Documentation](https://confluence.atlassian.com/alldoc/atlassian-documentation-32243719.html)
-  - [IGEL Knowledge Base](https://kb.igel.com/)
-  - [Comala Workflows](https://wiki.comalatech.com/display/CWL)
-  - [BMC docs](https://docs.bmc.com/docs/)
-
-- ref
-  - [confluence 6中文文档](https://www.cwiki.us/display/CONFLUENCEWIKI/About+Confluence)
-  - [Confluence Documentation Directory 7.12__202107](https://confluence.atlassian.com/doc/get-started-777010817.html)
-
-## outline
+## Outline
 
 - features
   - fast
@@ -291,3 +293,10 @@ modified: '2021-07-27T11:27:37.050Z'
   - api policies: by id, custom
 - attachments
 - views
+# more-wikis
+- github
+- gitbook
+- wordpress
+- salesforce
+
+- teambition thoughts

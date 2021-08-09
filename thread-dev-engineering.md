@@ -30,7 +30,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Oh God, I've worked with people who made the one function to rule them all. 
+- https://twitter.com/BenLesh/status/1424379521525035010
+  - The one component to rule them all. The one service to rule them all. Etc. 
+  - And then when you finally break it up into tiny pieces, they're like "oh. yeah I guess that's simpler"
+- I think the coolest thing about hooks is they get developers thinking like framework developers. Which is sort of weird but cool. "When this component renders, how do I trick it to wiring things up?" ... That's framework developer thinking, normally.
 
 - ## After experimenting with multiple caching solutions and application frameworks to scale our inventory read layer, 
 - https://twitter.com/dinquisitively/status/1419145128497737731

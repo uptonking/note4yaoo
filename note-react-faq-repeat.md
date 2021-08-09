@@ -185,7 +185,7 @@ function Parent({ a, b }) {
 
 - Is it safe? Yes. At the end of the day the JSX is just converted into a JSON object, which is totally fine to memoize.
 
-## How to implement useState with useReducer
+## How to implement useState with useReducer 使用useReducer实现useState
 
 ```JS
 // 简单版
@@ -221,6 +221,19 @@ function useState<T>(initialState: T | (() => T)) {
       }
     },
   ];
+}
+```
+
+```typescript
+// 使用useState实现useReducer
+
+function useReducer(reducer, initialValue, init) {
+
+  const [state, setState] = useState(init ? () => init(initialValue) : initialValue);
+
+  const dispatch = useCallback((action) => setState((prev) => reducer(prev, action)), [reducer]);
+  
+  return [state,dispatch] as const;
 }
 ```
 
@@ -376,7 +389,7 @@ const Example = (props) => {
 
 ```js
 const Example = (props) => {
-  const clickHandlers = React.useMemo(() => _.times(5,  key =>
+  const clickHandlers = React.useMemo(() => _.times(5, key =>
     () => console.log("You clicked", key)
   ), [ /* dependencies */ ])
 

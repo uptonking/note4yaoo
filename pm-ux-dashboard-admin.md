@@ -10,19 +10,22 @@ modified: '2021-07-27T09:09:48.459Z'
 # guide
 
 - 实现的要点
-  - 路由组织
-  - 页面布局灵活配置
-  - 数据流
-  - 权限管理
+  - 路由配置：嵌套路由、显示隐藏、显示名称、额外参数
+  - 布局配置：sidebar、header、footer、自定义布局
+  - 数据流：全局数据共享
+  - 权限管理：页面元素访问权限、操作权限、菜单权限
+  - 网络请求：请求页面、请求菜单、请求布局
+
+- 流行模版
+  - adminlte, and-design-pro, core-ui-dashboard
+  - dashboard apps/pages/samples
+  - dashboard for knowledge base, or wiki spaces
+  - sass场景模板可参考 vercel/commerce, saas-boilerplate
 
 - usecase
   - 工作台、分析页、监控页
   - ant-design-pro.v1设计了[7个标准化场景](https://v1.pro.ant.design/docs/changelog-cn)：列表、详情、表单、结果、异常、个人、账户
   - dashboard-starter, dashboard
-
-- tips
-  - dashboard for knowledge base, or wiki spaces
-  - sass场景模板可参考 vercel/commerce, saas-boilerplate
 # features
 - core
   - themeable

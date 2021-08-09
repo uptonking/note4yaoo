@@ -14,12 +14,20 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Polymorphism is such a headache. So basically, remove support for `as` prop
+- https://twitter.com/peduarte/status/1424032229659979778
+  - Seriously considering removing it from Stitches components and offer a more explicit way to change the element type. 
+  - TBH, it's a fundamental flaw with the `styled` API
+  - the `as` prop was introduced as a workaround to change the node tag, since the `styled` function couples the element type with styles...
+- I could find some use cases for the dynamic as prop. 
+  - One that's very common is rendering different heading level tags based on a prop or context.
+  - There are more specific uses like rendering a menu button as a div if it's inside a menu (that is, a sub-menu button).
+- My DX is so much more greatly influenced by TS performance than by being able to do run-time polymorphism. Looking through my code, I can't find one case of `as` which I couldn't trivially switch to a static version. (Mostly just use with `Box` to create a `span` )
 
 - ## I've been thinking a lot about the `as` prop for polymorphism lately and wondering why we all went down the road of runtime TypeScript polymorphism. 
 - https://twitter.com/jjenzz/status/1423766700885954562
   - It introduces so many unnecessary complexities, bloats error messages and kills TS per
-  - It dawned on me that the prop value never actually changes during runtime, we set it and forget it but still pay the TS costs. I've been racking my brain trying to think of a better way... and I think I may have something.Zero-runtime polymorphism.
+  - It dawned on me that the prop value never actually changes during runtime, we set it and forget it but still pay the TS costs. I've been racking my brain trying to think of a better way... and I think I may have something. Zero-runtime polymorphism.
 - Inversion of control. The prop isn’t the problem, JSX typings are absurdly overloaded
   - indeed, when there’s no need to overload them this way. how often do you change the value of the `as` prop via state during runtime? I can’t think of one time that I’ve ever needed to do that
 - Today, I think composing hooks (like useDropdownMenuItem, useDialogTrigger etc.) makes much more sense.

@@ -11,7 +11,14 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
-
+- [React suspense looks for the chunk in the wrong directory](https://stackoverflow.com/questions/59467067)
+- webpack `output.publicPath` .
+  - This option specifies the public URL of the output directory when referenced in a browser. 
+  - A relative URL is resolved relative to the HTML page (or `<base>` tag). 
+  - Server-relative URLs, protocol-relative URLs or absolute URLs are also possible and sometimes required, i. e. when hosting assets on a CDN.
+  - The value of the option is prefixed to every URL created by the runtime or loaders. 
+  - Because of this the value of this option ends with `/` in most cases.
+- I had the best experience using react lazy when the folders were in the same folder as the one using the import, or if they were inside a child folder of that folder, anywhere else i got chunk error. 
 
 - TAR_BAD_ARCHIVE: Unrecognized archive format
   - npm install registry https://registry.npmjs.org
