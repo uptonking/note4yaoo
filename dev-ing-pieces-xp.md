@@ -17,7 +17,10 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## 使用 `<a href='#!'> icon </a>` 模拟button
+- 优点是button自身样式过多，anchor更简洁，但也有自身样式
+- 缺点是 可能造成所有组件rerender，注意观察highlight updates的闪烁绿框的范围
+- 还可考虑直接用 `<span style={{cursor:'pointer'}}> icon </span>` ；此时闪烁绿框范围较小
 
 - ## react.lazy 批量动态导入pages文件夹下的所有react组件
   - 使用ErrorBoundary组件包裹Suspense，可以显示其他正常组件，在动态导入失败的位置显示ErrorBoundary的fallback组件

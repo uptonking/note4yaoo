@@ -7,8 +7,16 @@ modified: '2021-05-13T02:52:41.975Z'
 
 # lib-http-react-query-dev
 
-# discuss-stars
+# guide
 
+- [用react-query解决你一半的状态管理问题](https://zhuanlan.zhihu.com/p/351280149)
+  - 将服务端状态(缓存数据)从全局状态中独立出去
+  - 使用通用的hook处理请求中间状态 isLoading, isError
+  - 多余请求合并
+  - 统一的缓存更新/失效策略
+- [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
+  - https://codesandbox.io/s/magical-bush-gbsk7
+# discuss-stars
 - ## React 18 and the future of async data
 - https://swizec.com/blog/react-18-and-the-future-of-async-data/
 - React 18 is shipping with `<Suspense>` and `startTransition` for deferred component rendering, but not data loading. 

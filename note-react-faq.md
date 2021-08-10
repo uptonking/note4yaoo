@@ -50,6 +50,32 @@ export interface Renderer {
 ```
 
 # faq
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Are there any adverse affects of dispatching in close succession with in a handler? 
+- https://www.reddit.com/r/reactjs/comments/i6pb7y/usereducer_and_multiple_dispatch_calls_in_a/
+
+```JS
+const doSomething = () => {
+  dispatch({ type: 'action a' });
+  dispatch({ type: 'action b' });
+}
+```
+
+- They'll be batched together, if you're running them in a React event handler.
+  - If you run them outside of React's event handling (setTimeout, async function after an await, etc), they'll be separate synchronous renders.
+
+- Multiple calls to dispatch will be batched together, so that's most likely no problem doing so. 
+  - However, you should probably create abstractions to cover your use-cases and only require a single dispatch.
+  - Wrap it in a method, and give it a nice name, so you can do something like
+ `dispatch(a_and_b_happened()); `
+
 - ## [Is there a way to tell react to NOT transform a 1-param function returning JSX to a component?](https://twitter.com/sebastienlorber/status/1412455641088725002)
 - I want `function(props)` instead of `<Function {...props}/>`
 
@@ -93,13 +119,16 @@ const a = getA();
   - It can replace react redux for simplest cases, but react redux does some caching work.
   - react-redux(v6), which uses context internally to fight props (actually, data from the store) passing issue.
   - The purpose of Redux is NOT to facilitate passing props to deeply nested children. 
+
     - Redux is meant to provide a predictable state tree, even as our app grows and our data becomes more dynamic. 
     - Context does NOT solve those problems.
+
   - Therefore, no, context is not a replacement for Redux, as it does not solve the problems Redux does. 
+
     - If you were just using Redux to avoid passing props, then you probably never really needed Redux in the first place. 
 
 - ## createRef vs useRef
-- `createRef` is as simple as return `{current: null}`. It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).
+- `createRef` is as simple as return `{current: null}` . It's a way to handle ref prop in most modern way and that's it(while string-based is too magic and callback-based looks too verbose).
   - `useRef` keeps some data before renders and changing it does not cause re-render
   - `useRef(null)` is basically `useState(React.createRef())[0]` .
   - A ref is a plain object `{ current:  value }` .
@@ -107,9 +136,11 @@ const a = getA();
 - useRef(initialValue) creates { current: initialValue } like React.createRef(). 
   - Besides, it memoizes this ref to be useable across multiple renders in a function component
   - In summary, use the optimized API for its intended use case:
+
     - useState → immutable state/values
     - useRef → mutable DOM node references or stored values in function components
     - createRef → mutable DOM node references in class components; you can use instance variables for other values
+
   - You can't set a new value for createRef. But you can for useRef. ??? 待验证
   - [What's the difference between `useRef` and `createRef` ](https://stackoverflow.com/questions/54620698/whats-the-difference-between-useref-and-createref)
 
@@ -197,7 +228,7 @@ class FancyButtonWrapper extends React.Component {
 }
 ```
 
-- ## `props.children` not re-rendered on parent state change
+- ##  `props.children` not re-rendered on parent state change
 - When clicking on Child 'Hi' text, only Container component keeps re-rendering but Child component is not re-rendered.
 - Since the Container's render is executed, so must the components returned from it call their own render methods.
 - No matter how many times Container get's re-rendered, since its children are always referentially the same thing between renders (**because that React Element was created in the App level** and it has no reason to change), they don't get re-rendered.
@@ -346,7 +377,9 @@ MyComponent.defaultProps = { x: 0 };
 
 - ## Is it antipattern to use React.cloneElement to extend an element and modify props in child components
 - `React.cloneElement(element, [props], [...children])`
+
   - 相当于 `<element.type {...element.props} {...props}>{children}</element.type>`
+
   - Clone and return a new React element using element as the starting point. 
   - The resulting element will have the original element’s props with the new props merged in shallowly. 
   - New children will **replace** existing children. 
@@ -371,7 +404,7 @@ MyComponent.defaultProps = { x: 0 };
   - 合成事件是react为了解决跨平台封装的一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件
 - **生命周期钩子函数中的setState是异步的**
 - **原生事件中的setState是同步执行的**
-  - 原生事件是指非react合成事件，原生自带的事件监听`addEventListener`注册事件函数
+  - 原生事件是指非react合成事件，原生自带的事件监听 `addEventListener` 注册事件函数
   - 或者也可以用原生js、jq直接 `document.querySelector().onclick` 这种绑定事件的形式都属于原生事件
   - 当你在原生事件中setState后，能同步拿到更新后的state值
 - 不管是哪个场景(合成/原生/钩子)下，在基于event loop的模型下，**setTimeout中去取setState总能拿到最新的state值**
@@ -396,18 +429,23 @@ MyComponent.defaultProps = { x: 0 };
 
 - ## Does render get called any time setState is called?
   - By default - yes
-  - By default,  `shouldComponentUpdate` always `return true` to prevent subtle bugs when the state is mutated in place
+  - By default, `shouldComponentUpdate` always `return true` to prevent subtle bugs when the state is mutated in place
   - Virtual DOM renders: when render method is called it returns a new virtual dom structure of the component. As I mentioned before, this render method is called always when you call setState(), because shouldComponentUpdate always returns true by default. So, by default, there is no optimization here in React.
   - Native DOM renders: React changes real DOM nodes in your browser only if they were changed in the Virtual DOM and as little as needed - this is that great React's feature which optimizes real DOM mutation and makes React fast.
   - In React class components, we are told that setState always causes a re-render, regardless of whether or not the state actually changed to a new value. In effect, a component will re-render, when state updates to the same value it was before. 
+
     - setState() will always lead to a re-render unless shouldComponentUpdate() returns false. 
     - If you set a valid value apart from returning null within setState, a re-render will always be triggered by react in a class component unless your component is a PureComponent or you implement shouldComponentUpdate
+
   - With hooks however, the docs specify that updating state to a value identical to the previous state, will not cause a re-render (of child components). 
+
     - If you update a State Hook to the same value as the current state, React will bail out without rendering the children or firing effects. 
     - (React uses the Object.is comparison algorithm.)
+
   - For a functional component using useState hook, the setter if called with the same state will not trigger a re-render. 
   - However for an occasional case if the setter is called immediately it does result in two renders instead of one
   - ref
+
     - https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
 
 - ## 给React组件的状态每次设置相同的值，如 `setState({count: 1})` ，React组件是否会发生渲染？ 
@@ -415,15 +453,19 @@ MyComponent.defaultProps = { x: 0 };
   - 利用PureComponent组件可减少组件的重复渲染，那么是否代表组件的状态没有发生变化呢？即引用地址是否依旧是上次地址呢？
   - 虽然PureComponent组件减少了组件的重复渲染，但是组件状态的引用地址却发生了变化.
   - react内部(ReactUpdateQueue.js文件)的getStateFromUpdate()会通过Object.assign生成一个全新的状态state， state的引用地址发生了变化. `return Object.assign({}, prevState, partialState); `
+
   - Object.assign第一个参数是空对象，就说明新的state对象的引用地址发生了变化
   - Object.assign进行的是浅拷贝，不是深拷贝
 - 一个React组件，它包含两个子组件，分别是函数组件和Class组件。当这个React组件的state发生变化时，两个子组件的props并没有发生变化，此时是否会导致函数子组件和Class子组件发生重复渲染呢？
   - 实验结果表明，无论是函数组件还是Class组件，只要父组件的state发生了变化，二者均会产生重复渲染
   - React官方提供了memo组件和PureComponent组件分别用于减少函数组件和类组件的重复渲染
 - 每次调用函数setState，react都会将要更新的状态添加到更新队列中，并产生一个调度任务。调度任务在执行的过程中会做两个事情：
+
     - 遍历更新队列，计算出全新的状态 state，更新到组件实例中
     - 根据标识shouldUpdate来决定是否对组件实例进行重新渲染，而标识shouldUpdate的值则取决于PureComponent组件浅比较结果或者生命周期函数shouldComponentUpdate执行结果；
+
 - ref
+
     - https://stackoverflow.com/questions/24718709/reactjs-does-render-get-called-any-time-setstate-is-called
     - https://stackoverflow.com/questions/55373878/what-are-the-differences-when-re-rendering-after-state-was-set-with-hooks-compar
     - [浅谈setState的更新机制] https://zhuanlan.zhihu.com/p/95865701
@@ -444,7 +486,7 @@ MyComponent.defaultProps = { x: 0 };
   - https://github.com/shaozj/blog/issues/36
   - https://www.jianshu.com/p/033409adf916
 
-- ## `Context. Provider`的value经常变化时，为避免过多rerender，应如何处理
+- ##  `Context. Provider` 的value经常变化时，为避免过多rerender，应如何处理
 - `<Context.Provider>` will only re-render if its children prop does not share reference equality with its previous children prop.
 - `<Context.Provider>` will not re-render if its value changes while its children stay the same. 
 - To ensure that the entire app isn’t re-rendered on each context change, you’ll need to keep the children prop of your providers equal between renders.
@@ -469,22 +511,31 @@ MyComponent.defaultProps = { x: 0 };
 - eventbus
 - redux/mobx
 - ref
+
     - https://blog.csdn.net/wengqt/article/details/80114590
+
 - 如何为现有组件添加props，比如添加样式属性props
 - react.cloneElement
 - hoc高阶组件
 
 - ## componentWillReceiveProps vs getDerivedStateFromProps 
   - componentWillReceiveProps在每次rerender时都会调用，无论props变了没
+
       - 死循环的出现场景：在componentWillReceiveProps中不加条件限制地调用回调函数修改父组件state，父组件在state变化后rerender
+
   - getDerivedStateFromProps是用来替代componentWillReceiveProps的，即允许props变化引发state变化（称之为derived state，即派生state）
+
       - 记录当前滚动方向（recording the current scroll direction based on a changing offset prop）
       - 取props发请求（loading external data specified by a source prop）
+
   - With 16.4.0 the expected behavior is for getDerivedStateFromProps to fire in all cases before shouldComponentUpdate.
   - `getDerivedStateFromProps` is invoked right before calling the render method, both on the initial mount and on subsequent updates
+
     - 首次渲染也会调用
     - It should return an object to update the state, or null to update nothing.
+
   - 参考
+
     - http://www.ayqy.net/blog/%E4%BB%8Ecomponentwillreceiveprops%E8%AF%B4%E8%B5%B7/
 
 - 当context变化后，与consumer同级但未被consumer包裹的组件会重新渲染吗
@@ -520,24 +571,35 @@ MyComponent.defaultProps = { x: 0 };
 
 - ## hoc vs render props
   - hoc优点
+
     - 复用方式简单
     - HOC是一个函数，返回值为组件，可以多层嵌套，但看起来不直观，还要自己看内部实现
     - 支持传入多个参数
+
   - hoc缺点
+
     - 当多个HOC一起使用时，无法直接判断子组件的props是哪个HOC负责传递的
     - 同名属性会覆盖，若父子组件有同样名称的props，或使用的多个HOC中存在相同名称的props，则存在覆盖问题，而且react并不会报错
     - wrapper hell，产生无意义的标签，嵌套层级太深
+
   - hoc使用场景
+
     - 组件异步加载、异步加载script后显示组件、数据源绑定、拖拽排序
+
   - render prop优点
+
     - 不用担心props是从哪里来的，它只能从父组件传递过来，也减少了命名冲突
     - 相较于HOC，不会产生无用的组件加深层级
     - 组件是动态构建的，所有改变都在render中触发，可直接利用生命周期
     - 参数类型可直接带过去，方便使用ts进行类型检查
+
   - render prop缺点
+
     - hoc复用代码只需一行，render prop需要额外的工作
     - 组件可读性降低
+
   - 参考
+
     - HOC的控制权在Wrapper组件，最后的渲染结果其实是由父组件决定的
     - render props是父组件将数据传递给子组件，子组件自己决定渲染
     - https://www.zhihu.com/question/269915942
@@ -555,7 +617,7 @@ MyComponent.defaultProps = { x: 0 };
     - https://www.jianshu.com/p/3609626bd43a
     - https://github.com/milesj/babel-plugin-typescript-to-proptypes
 
-- ## Why did react decides not to support components as classes that don’t extend `React. Component`?_201508
+- ## Why did react decides not to support components as classes that don’t extend `React. Component` ?_201508
 - https://github.com/facebook/react/issues/4599
 - To support arrow functions and plain functions as "components" we need to know if we can call `new` on them.
 - We need to detect if a component is a "function" or a "class" before calling `new` on it.

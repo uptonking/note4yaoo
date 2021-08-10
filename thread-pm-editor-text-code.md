@@ -13,7 +13,12 @@ modified: '2021-05-23T11:00:06.662Z'
 
 - ## 
 
-- ## 
+- ## Would an auto-indenter that clears space-only lines ever cause problems?
+- https://twitter.com/MarijnJH/status/1424650950216650754
+- Ah, multiline strings. Damn
+  - You probably know this, but SublimeText automatically removes trailing spaces, including in multiline strings. I’ve gotten used to it and like it a lot.
+- Any language that allows if conditions without curly braces? Also python?
+  - Python works correctly if you have a blank (no whitespace) line in the middle of indented code
 
 - ## People frequently ask us what the difference between Web Sockets and @replicache is. 
 - https://twitter.com/aboodman/status/1410441402366922762

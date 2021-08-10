@@ -13,7 +13,35 @@ modified: '2021-03-22T18:46:03.513Z'
   - 英文版 https://twitter.com/sebastienlorber
 # 2021
 
-## w0726-0801
+## w0830-0905
+
+## w0823-0829
+
+## w0816-0822
+
+## w0809-0815
+
+## w0802-0808
+
+👉 Mitosis(formerly jsx-lite)
+👉 useMemo
+👉 Sep of Concerns
+👉 Storybook + Testing lib
+👉 Next.js optim
+👉 Recoil v0.4
+👉 RN or Flutter?
+👉 RN-Screens v3.5
+👉 SO survey
+👉 Jetpack Compose v1
+👉 Yarn v3
+👉 Sprinkles v1
+👉 CSS Nesting spec draft
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1424798155648942087
+  - https://github.com/BuilderIO/mitosis
+    - Write components once, run everywhere. 
+    - Compiles to Vue, React, Solid, Angular, Svelte, and Liquid.
 
 ## w0719-0725
 

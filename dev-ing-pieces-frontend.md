@@ -12,9 +12,24 @@ modified: '2021-03-29T19:30:00.059Z'
  
 - ## 
 
-- ## 
+- ## [Box-shadow affects scale performance](https://stackoverflow.com/questions/37939257)
+- shadows and opacity greatly impact on performance.
+- check the idea by using images instead of slow CSS-properties
 
-- ## 
+- ## [How to make one circle inside of another using CSS](https://stackoverflow.com/questions/22406661)
+- 
+
+- ## css double border 双边框之间可以自定义填充颜色吗
+- [Is there is a possible way to fill color between css double border?](https://stackoverflow.com/questions/50825245)
+- I Know that it is Possible by Using Two (div) Borders.
+- You could also use multiple box-shadows
+- You can by using the border, box-shadow, and outline properties.
+- You can use a pseudo-element to accomplish this
+
+- [Css - Need 'triple' border](https://stackoverflow.com/questions/50426095)
+- Consider using box-shadow. You can also do it with multiple box-shadow  
+
+
 
 - ## [理解TypeScript中的infer关键字](https://juejin.cn/post/6844904170353328135)
 - infer可以在 `extends` 的条件语句中推断待推断的类型
