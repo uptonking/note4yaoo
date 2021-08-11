@@ -1,0 +1,86 @@
+---
+title: tech-auth-rbac
+tags: [auth, rbac]
+created: '2021-08-11T07:35:28.800Z'
+modified: '2021-08-11T07:36:15.522Z'
+---
+
+# tech-auth-rbac
+
+# guide
+
+# rbac-blogs
+
+## [Public, private, and role-based routes in React](https://javascript.plainenglish.io/role-based-authorization-role-based-access-control-v-2-in-react-js-cb958e338f4b)
+
+- https://github.com/umair-khanzada/role-based-access-control
+
+- 本方案的优点pros
+  - 统一配置userRoles、routes
+  - 动态路由
+
+- 本方案的缺点cons
+  - 动态路由；子路由不能提前渲染，必须在父路由渲染后才动态渲染；对于嵌套路由的子路由的Layout组件，必须都实现动态渲染子路由组件的逻辑 `<MapAllowedRoutesroutes={allowedRoutes}basePath={basePath}/>`
+
+- it is my second story on the same topic, there was some reason behind version-2 that are listed below.
+  - Version 1 is tightly coupled with the project in which I have introduced this technique.
+  - No child/nested route support.
+  - No technique to define roles in one place.
+  - Updating route access is complicated.
+  - Have to maintain common routes for all roles.
+
+- Updates in version-2:
+  - I have come up with a more generic approach so it’ll better serve the community.
+  - Added child/nested route support.
+  - Define roles in one place so it’s easy to maintain.
+  - Easy to update route access just by adding or removing role.
+  - If you skip the permission, it’ll automatically accessible to everyone.
+
+- The idea is simply prevent the app to generate unnecessary routes, rather checking the role on each route and showing fallback UI
+  - it would be a great idea to generate only the routes in which user have access, 
+  - so if the user navigate manually to a route ie: (typing in the address bar), he/she will get 404 Not Found screen because route is not registered.
+
+- Because we are looking for a role-based solution, so let’s define the roles first, roles are nothing just a plain javascript object having key-value pairs
+- Define the private routes configuration, route config object supports all the react-router’s route component props with some additional props ie: (title/name, permission, children)
+- we have a utility method `getAllowedRoutes` in which we can pass routes array and it’ll return filtered routes array and pass that array into routes mapping component MapAllowedRoutes
+- the last step is to render the filtered routes
+
+- Benefits
+  - Check route access only once when parent route renders
+  - Generate only routes that user have access
+  - Central roles and private routes configuration file
+  - Easy to add/remove a role
+  - Easy to add/remove route access from user role
+  - Synchronization between routes and navigation
+  - Single + Multiple role support
+# rbac-blogs-more
+- [RBAC权限系统分析、设计与实现](https://juejin.cn/post/6844903940752932878)
+  - 简洁概括了rbac模型的原理
+- [设计-RBAC数据库的设计与使用](https://www.jianshu.com/p/1d20fd8c3029)
+  - 权限模型 rbac、acl、abac、pbac
+  - 数据库设计：核心五张表
+
+- [How to Role Based Access Control (RBAC) ?](https://dev.to/thearvindnarayan/how-to-role-based-access-control-rbac-2935)
+  - Route Guarding 
+  - Restricting access to a part of the page
+  - Securing Backend Endpoints
+  - 只列举了使用场景和组件api设计，未给出实现
+
+- [React - Role Based Authorization Tutorial with Example](https://jasonwatmore.com/post/2019/02/01/react-role-based-authorization-tutorial-with-example)
+  - https://github.com/cornflourblue/react-role-based-authorization-example
+  - 请求api时用到了 rxjs BehaviorSubject
+  - 还提供了express后端示例
+  - [Node.js - Role Based Authorization Tutorial with Example API](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api)
+    - https://github.com/cornflourblue/node-role-based-authorization-api
+
+- [Role Based Authorization with React Router v6 and Typescript](https://adarshaacharya.com.np/blog/role-based-auth-with-react-router-v6)
+  - 简单实用 PrivateRoute + requiredRoles
+- [React-router authorization based on user roles](https://www.nafrontendzie.pl/autoryzacja-react-router-role-uzytkownika)
+  - [Role-based authorization using React-Router](http://web.archive.org/web/20170529015710/http://frontendinsights.com/role-based-authorization-using-react-router/)
+  - 限制路由访问的实现，所有需鉴权的页面组件都继承自AuthorizedComponent，里面实现了role的比较判断
+  - 不同role显示不同页面元素的实现，所有需鉴权的子元素组件都继承自RoleAwareComponent，里面实现了role的比较判断
+  - 可作为通用的授权方案，没有强调rbac
+  - https://github.com/burczu/react-router-role-authorization
+  - what I wanted to achieve
+    - limit the access to some routes to specific roles. 
+    - different roles have access to different functionality so I wanted to show different components on the home page.

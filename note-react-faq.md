@@ -52,11 +52,23 @@ export interface Renderer {
 # faq
 - ## 
 
-- ## 
+- ## When should you NOT use React.memo?
+- https://github.com/facebook/react/issues/14463
+- I would assume that the same general advice applies for `React.memo` as it does for `shouldComponentUpdate` and `PureComponent` : doing comparisons does have a small cost, and there's scenarios where a component would never memoize properly (especially if it makes use of props.children). 
+  - So, don't just automatically wrap everything everywhere. 
+  - See how your app behaves in production mode, use React's profiling builds and the DevTools profiler to see where bottlenecks are, and strategically use these tools to optimize parts of the component tree that will actually benefit from these optimizations.
 
-- ## 
+- ## Should I wrap all my components with `React.memo()` even if it is not expecting any props?
+- https://stackoverflow.com/questions/63457889
+- I would argue that you should consider using `React.memo` for those child components that don't accept any props.
+  - Since the components you're asking about don't accept any props, that means the props will never change. 
+  - Therefore, it stands to reason that using React.memo could avoid render cycles.
 
-- ## 
+- ## Is there any reason to wrap a prop-less component with React.memo?
+- https://www.reddit.com/r/reactjs/comments/bqchja/is_there_any_reason_to_wrap_a_propless_component/
+- I'd say yes, else the component would re-render every time it's parent does.
+- 若不使用memo，则当父组件rerender时，子组件也会执行render，但子组件不会执行commint
+  - 若使用memo，则当父组件rerender时，子组件会执行props比较，可能不会执行render
 
 - ## Are there any adverse affects of dispatching in close succession with in a handler? 
 - https://www.reddit.com/r/reactjs/comments/i6pb7y/usereducer_and_multiple_dispatch_calls_in_a/

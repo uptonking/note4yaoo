@@ -15,7 +15,21 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## react-router 在界面中使用 Link 可以正常跳转，但在地址栏address bar输入url回车时不能直接跳转到指定url
+- 要理解client-side routing的原理
+  - 在页面内通过Link组件跳转url是利用页面已下载且正在执行的js修改浏览器的url的值，没有发生服务器请求
+  - 在地址栏输入或粘贴url按回车，会立即发送服务器请求，因为服务器只有index.html/bundle.js等少数资源，所以服务器会返回找不到资源的404异常
+
+- [React-router urls don't work when refreshing or writing manually](https://stackoverflow.com/questions/27928372)
+  - Those same URLs work fine on the client-side, because there React Router is doing the routing for you, but they fail on the server-side unless you make your server understand them.
+  - If you want the http://example.com/about URL to work on both the server- and the client-side, you need to set up routes for it on both the server- and the client-side. 
+- With Hash History instead of Browser History, your URL for the about page would look something like this: `http://example.com/#/about`. 
+  - The part after the hash (#) symbol is not sent to the server. 
+  - So the server only sees http://example.com/ and sends the index page as expected. 
+  - React-Router will pick up the #/about part and show the correct page.
+  - Downsides:
+    - 'ugly' URLs
+    - Server-side rendering is not possible with this approach. As far as Search Engine Optimization (SEO) is concerned, your website consists of a single page with hardly any content on it.
 
 - ## 使用 `<a href='#!'> icon </a>` 模拟button
 - 优点是button自身样式过多，anchor更简洁，但也有自身样式
