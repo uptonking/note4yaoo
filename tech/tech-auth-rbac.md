@@ -22,6 +22,15 @@ modified: '2021-08-11T07:36:15.522Z'
 - 本方案的缺点cons
   - 动态路由；子路由不能提前渲染，必须在父路由渲染后才动态渲染；对于嵌套路由的子路由的Layout组件，必须都实现动态渲染子路由组件的逻辑 `<MapAllowedRoutesroutes={allowedRoutes}basePath={basePath}/>`
 
+- 注意children是子路由，子路由并没有提前统一创建，而是传递给页面组件动态创建；
+  - 所以页面组件内部必须处理子路由的渲染，优点是动态创建路由；缺点是页面组件结构被污染
+
+- 实现步骤
+  - 定义roles
+  - 定义routes
+  - 计算allowedRoutes：比较用户权限和各路由权限
+  - 动态创建Route： MapAllowedRoutes
+
 - it is my second story on the same topic, there was some reason behind version-2 that are listed below.
   - Version 1 is tightly coupled with the project in which I have introduced this technique.
   - No child/nested route support.
