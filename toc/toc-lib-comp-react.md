@@ -6,12 +6,12 @@ modified: '2020-11-13T07:31:20.012Z'
 ---
 
 # toc-lib-comp-react
+
 # guide
 
 - ref
   - [Market share of Material-UI](https://docs.google.com/spreadsheets/d/1l5j3Xjtvm9XZtmb4ulLiWElQaXSlZlyCWT5ONrQMpBo/edit#gid=0)
 # popular-components
-
 - zent  /MIT/1.9kStar/202010
   - https://github.com/youzan/zent
   - https://youzan.github.io/zent
@@ -176,9 +176,7 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/chuchur-china/kui-react
   - https://github.com/guardian/source-components
   - https://github.com/brave/brave-ui
-
 # popular-apps
-
 - vscode  /MIT/81kStar/201908/ts
   - https://github.com/microsoft/vscode
   - https://code.visualstudio.com/
@@ -200,9 +198,7 @@ modified: '2020-11-13T07:31:20.012Z'
   - This client-side app demonstrates the features of the experimental React in the context of the real app with the help of Experimental React Router v6 and React Query with Suspense enabled.
   - Implementing the render-as-you-fetch pattern. During route transitions the app is configured to load the code and data for new routes in parallel. 
   - Using Concurrent Mode and Suspense to improve the loading sequence, including useTransition() for route transitions in order to continue showing the previous route for a brief period while the next route is prepared/rendered.
-
 # popular-tools
-
 - React /MIT/135kStar/201908
   - https://github.com/facebook/react
   - https://reactjs.org/
@@ -259,7 +255,6 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/infernojs/inferno
   - https://infernojs.org/
   - an insanely fast React-like library
-
 # awesome-components
 
 ## resources 
@@ -316,11 +311,19 @@ modified: '2020-11-13T07:31:20.012Z'
 
 ## form 表单
 
+- https://github.com/formium/formik
+  - form library for React and React Native.
+- https://github.com/erikras/redux-form
+  - redux-form works with react-redux to enable an html form in React to use Redux to store all of its state.
+  - The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built **React Final Form**
+  - The only good reason to use Redux Form in your application is if you need really tight coupling of your form data with Redux
+- https://github.com/final-form/react-final-form
+  - [Philosophy](https://final-form.org/docs/react-final-form/philosophy)
+  - React Final Form is a minimal wrapper around the **zero-dependency Final Form core**. 
+  - All React Final Form does is know how to get form values out of SyntheticEvent and manage field subscriptions to the form.
+- https://github.com/mozilla-services/react-jsonschema-form
 - https://joepuzzo.github.io/informed
   - https://github.com/joepuzzo/informed
-- https://github.com/erikras/redux-form
-- https://github.com/mozilla-services/react-jsonschema-form
-- https://github.com/final-form/react-final-form
 
 ## tree 树型组件
 
@@ -385,9 +388,7 @@ modified: '2020-11-13T07:31:20.012Z'
       - https://github.com/MrRio/jsPDF
   - https://react-pdf.org/
       - https://github.com/diegomura/react-pdf
-
 # animation
-
 - http://reactcommunity.org/react-transition-group/css-transition/
   - https://github.com/reactjs/react-transition-group
 - react-motion  /MIT/17kStar/201810 
@@ -400,8 +401,6 @@ modified: '2020-11-13T07:31:20.012Z'
   - https://github.com/react-spring/react-spring
   - https://www.react-spring.io/
   - a spring-physics based animation library
-
 # games
-
 - http://gcedo.github.io/react-solitaire/dist/index.html
   - https://github.com/gcedo/react-solitaire

@@ -147,28 +147,39 @@ function Section(props) {
   - useMemo will only recompute the memoized value when one of the dependencies (either a or b) has changed
   - hooks should be used only at the top level from react functions
 - `React.memo` is a higher order component that can optimize rendition of your component given that it renders the same output with the same properties.
-  - props itself is a new object on every render. memo() does shallow comparison by default. 
-  - You can think of memo() as a useMemo() with a list of all your props like [props.foo, props.bar, props.foobar] except you don't need to type them all manually. It's a shortcut for the most common case.
-  - Basically if your component breaks without memo then you're not using it correctly. It only serves as perf optimization.
+  - props itself is a new object on every render. 
+  - memo() does shallow comparison by default. 
+- You can think of `memo()` as a `useMemo()` with a list of all your props like `[props.foo, props.bar, props.foobar]` except you don't need to type them all manually. It's a shortcut for the most common case.
+- Basically if your component breaks without memo then you're not using it correctly. It only serves as perf optimization.
 
-- https://stackoverflow.com/questions/55466104
+- [Using useMemo instead of React.memo syntax issue](https://stackoverflow.com/questions/55466104)
 - React.memo is a higher order component.
 - React.useMemo on the other hand is more generic hook function, and returns a memoized value
   - while it can be hacked to be used instead of React.memo, it's not its purpose and it will add to the confusion more than it will help
   - useMemo is a hook and is subject to the certain usage rules.
 
-- [Is it safe to useMemo for JSX?](https://stackoverflow.com/questions/60453845)
+## [Is it safe to useMemo for JSX?](https://stackoverflow.com/questions/60453845)
+
 - Memoizing JSX expressions is part of the official useMemo API
   - `useMemo` memoizes individual children and computed values, given any dependencies. 
-  - You can think of `memo` as a shortcut of `useMemo` for the whole component, that compares all props.
-- But `memo` has one flaw - it doesn't work with `children` prop
-  - children are part of the props.
-  - And React.createElement always creates a new immutable object reference (REPL). 
+- You can think of `memo` as a shortcut of `useMemo` for the whole component, that compares all props.
+- But **`memo` has one flaw - it doesn't work with `children` prop**
+  - `children` are part of the props.
+  - And `React.createElement` always creates a new immutable object reference. 
   - So each time `memo` compares props, it will determine that `children` reference has changed, if not a primitive.
-  - To prevent this, you can either use useMemo in parent App to memoize children (which you already did). Or define a custom comparison function for memo, so Modal component now becomes responsible for performance optimization itself. react-fast-compare is a handy library to avoid boilerplate for areEqual.
+- To prevent this, you can either use `useMemo` in parent App to memoize children (which you already did). 
+  - Or define a custom comparison function for `memo`, so Modal component now becomes responsible for performance optimization itself. react-fast-compare is a handy library to avoid boilerplate for areEqual.
 
 ```typescript
 
+// React.memo()的问题
+const Modal = React.memo(ModalView);
+// React.memo won't prevent any re-renders here
+<Modal>
+  <CreateChannel />
+</Modal>
+
+// useMemo可比较children
 function Parent({ a, b }) {
   // Only re-rendered if `a` changes:
   const child1 = useMemo(() => <Child1 a={a} />, [a]);
@@ -181,6 +192,7 @@ function Parent({ a, b }) {
     </>
   )
 }
+
 ```
 
 - Is it safe? Yes. At the end of the day the JSX is just converted into a JSON object, which is totally fine to memoize.

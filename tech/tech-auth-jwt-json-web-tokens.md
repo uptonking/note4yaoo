@@ -8,7 +8,15 @@ modified: '2021-08-12T14:36:02.148Z'
 # tech-auth-jwt-json-web-tokens
 
 # guide
+- jwt
+  - 主要逻辑不包括注册，而是服务端不保存session的登录验证
+  - 适合前后端分离，适合移动端
 
+- tips
+  - mock jwt核心功能的示例都依赖于服务端express/koa的支持，因为每次请求都要发送token到服务端进行解码、验证
+- todo
+  - jwt的核心功能的示例
+  - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
 # jwt-blogs
 
 ## [JSON Web Token 入门教程](https://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
@@ -97,3 +105,57 @@ HMACSHA256(
 - 后端用redis或数据库记录一个用户id到token的对应表，token不用有任何意义，也不需要加密解密，随机字符串即可。
   - 客户端发送token的方法跟JWT一样，可以选择用cookie、header或url参数，服务器校验根据 seesion -> 用户id 的公共存储判断。这样可以很简单地在后台根据用户最后访问时间更新token有效时间和自动删除过期token ，还能通过这个表查看在线用户，这些都是JWT不具备的功能。
   - 所以我看不出JWT相比这个方案有什么好处，除了能节约服务器上 token 到 用户ID 表的这一次查询，还有其他好处吗？ 而且一般业务请求，除了拿到用户ID，还有更多需要服务器调用的服务，比如拿到用户完整对象、用户权限、用户业务操作对象等等，这些不比 查询 token 到用户ID表的开销大得多吗？
+# examples-jwt-react
+- https://github.com/cornflourblue/react-jwt-authentication-example
+  - [React (without Redux) - JWT Authentication Tutorial & Example](https://jasonwatmore.com/post/2019/04/06/react-jwt-authentication-tutorial-example)
+
+- react + rxjs
+  - configureFakeBackend会拦截window.fetch
+  - 通过rxjs. BehaviorSubject共享数据，包括用户信息和jwt token
+  - 只实现了登录，后续/get/users发送了jwt token
+
+- 还提供了express后端示例
+  - https://github.com/cornflourblue/node-jwt-authentication-api
+    - [NodeJS - JWT Authentication Tutorial with Example API](https://jasonwatmore.com/post/2018/08/06/nodejs-jwt-authentication-tutorial-with-example-api)
+  - https://github.com/cornflourblue/react-redux-jwt-authentication-example
+  - https://github.com/cornflourblue/next-js-11-jwt-authentication-example
+  - https://github.com/cornflourblue/node-mongo-jwt-refresh-tokens-api
+  - https://github.com/cornflourblue/node-jwt-authentication-api
+- https://github.com/JulienMora/react-jwt-authentication-sample
+  - 结构和上面jwt例子相同，依赖rxjs
+- https://github.com/cornflourblue/react-role-based-authorization-example
+  - 请求api时用到了 rxjs BehaviorSubject
+
+- https://github.com/bespalowlad/react_base_auth
+  - Base login and registration user with fake backend
+  - 标准的注册登录app
+  - 依赖redux-thunk, formik, material-ui.v4
+  - 不依赖后端，在header的Authorization字段存放了jwt token
+  - 注册登录点击提交按钮后都没有跳转route；
+  - Register和Login组件都只是Form，思路清晰
+  - 没有提供手动logout的菜单，但实现了action-reducer
+  - fakeBackend采用拦截window.fetch并匹配url的方式模拟数据；初始用户数据读取自localStorage，新注册用户数据就保存在内存
+
+
+
+- https://github.com/zafar-saleem/react-login
+  - Before using this project please make sure you get the [server side](https://github.com/zafar-saleem/NodeScalableArchitecture) running 
+# examples-jwt
+- https://github.com/alex-c/mock-auth-backend
+  - A mock backend to test authentication and authorization with JSON Web Tokens (JWT). 
+  - By default, this backend exposes an /auth route, which lets you perform a login with a user identifier and password and returns a JWT, 
+  - and a /protected route, which requires a valid JWT in the request header. 
+  - Additional routes can be configured (see below), to authorize routes depending on roles in the JWT. 
+  - By default, an /admin route is exposed, which requires the admin role.
+
+- https://github.com/thiagoluiznunes/mock-user-auth
+  - a mock user authentication API developed in Nodejs and Express using JWT as an authenticator
+
+- https://github.com/techiediaries/fake-api-jwt-json-server
+  - 依赖json-server, jsonwebtoken, body-parser
+  - A Fake REST API using json-server with JWT authentication. 
+  - Implemented End-points: login, register
+  - [Building a Fake and JWT Protected REST API with json-server](https://www.techiediaries.com/fake-api-jwt-json-server/)
+- https://github.com/abdelrahman-haridy01/full-mocks-api
+  - 依赖json-server
+  - Make a Full fake REST API, MakePOST, PUT, PATCH or DELETE requests, Fake Register and login based on role Api with jwt.

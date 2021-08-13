@@ -21,7 +21,10 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## What's the difference between window.location and document.location in JavaScript?
+- https://stackoverflow.com/questions/2430936
+- According to the W3C, they are the same. 
+  - In reality, for cross browser safety, you should use `window.location` rather than `document.location`.
 
 - ## If you're a fan of alert(), you may have heard about a change that briefly hit Chrome Stable channel this week (it's been temporarily disabled at the moment while breakage is remediated)
 - https://twitter.com/estark37/status/1422694856544059396

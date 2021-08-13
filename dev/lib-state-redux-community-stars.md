@@ -15,7 +15,11 @@ modified: '2021-06-09T01:09:55.241Z'
 
 - ## 
 
-- ## 
+- ## Is there a performance benefit on using Context API vs Redux?
+- https://stackoverflow.com/questions/57841048
+- Use-context with Use-reducer to replace redux is not a good practice. 
+  - Context will cause reloading of the pages, this will be identified if we look into the profiler provided by react dev tools, where as redux won't do that. 
+- I'm actually concerned with the performance, not the differences or when to use it.
 
 - ## Concurrent Mode
 - https://github.com/reduxjs/react-redux/issues/1351

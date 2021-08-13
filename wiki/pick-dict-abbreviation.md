@@ -21,6 +21,7 @@ modified: '2020-08-06T05:29:22.922Z'
     -  request for comments. // 我觉得这个想法很好, 我们来一起讨论下
   - IIRC  
     - if I recall correctly. // 如果我没记错
+    - an initialism for "If I Remember Correctly" or "If I Recall Correctly"
   - ACK  
     - acknowledgement. / 我确认了或者我接受了
   - NACK/NAK 
@@ -29,8 +30,6 @@ modified: '2020-08-06T05:29:22.922Z'
  
 - LMK
   - let me know
-- IIRC
-  - an initialism for "If I Remember Correctly" or "If I Recall Correctly"
 - TBH
   - to be honest 老实说
 - tbf

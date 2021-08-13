@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [TS2339: Property 'span' does not exist on type 'JSX. IntrinsicElements'](https://stackoverflow.com/questions/47694227)
+- I had the same problem but for me, it was the p element. The reason for the error was that I refactored a p element to h3 for instance and VSCode changed also the type definition.
+- As you pointed out cleaning the node_modules and doing a fresh npm install does the trick.
+
 - [React suspense looks for the chunk in the wrong directory](https://stackoverflow.com/questions/59467067)
 - webpack `output.publicPath` .
   - This option specifies the public URL of the output directory when referenced in a browser. 

@@ -11,6 +11,8 @@ modified: '2021-05-13T02:43:35.993Z'
 
 - [The ag-Grid pipeline](https://www.ag-grid.com/ag-grid-pipeline/)
 
+
+
 # latest
 
 - 24.0.0
@@ -19,3 +21,12 @@ modified: '2021-05-13T02:43:35.993Z'
     - (ie to Do aggregations based on other aggregations)
   - Cleanup Legacy Properties (> 1 year old)
   - Filter: Allow set filter to be combined with other filters
+
+# discuss
+
+- ## We've spent the last 6 months porting AG Grid to React, so it's not longer using a wrapper for AG Grid, but AG Grid 100% React. 
+- https://twitter.com/ag_grid/status/1426087043831062528
+  - Our release next week is going to showcase it. 
+- There is no change to Angular, Vue or VanillaJS.
+  - The same business logic grid API is used by all, and will continue to be used.
+  - The new ReactUI is a replacement for the current React Wrapper.

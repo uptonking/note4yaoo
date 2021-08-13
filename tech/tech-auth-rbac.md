@@ -79,8 +79,8 @@ modified: '2021-08-11T07:36:15.522Z'
   - https://github.com/cornflourblue/react-role-based-authorization-example
   - 请求api时用到了 rxjs BehaviorSubject
   - 还提供了express后端示例
-  - [Node.js - Role Based Authorization Tutorial with Example API](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api)
-    - https://github.com/cornflourblue/node-role-based-authorization-api
+  - https://github.com/cornflourblue/node-role-based-authorization-api
+    - [Node.js - Role Based Authorization Tutorial with Example API](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api)
 
 - [Role Based Authorization with React Router v6 and Typescript](https://adarshaacharya.com.np/blog/role-based-auth-with-react-router-v6)
   - 简单实用 PrivateRoute + requiredRoles

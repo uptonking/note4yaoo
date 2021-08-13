@@ -17,7 +17,12 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## How I pivoted from an object-oriented programming style to a functional programming style
+- https://twitter.com/housecor/status/1426191017968119813
+  1. I stopped attaching behavior to objects. My objects are merely data structures.
+  2. I create pure functions.
+  3. I pass primitives/plain objects (with no behaviors) to these functions.
+- I also do this in conjunction with my shift to "vertical slice" type architecture (vs the old n-tier/onion approach).
 
 - ## If I want to create animations for video (nothing too complex: animated diagrams, simple illustrations) should I go straight to After Effects or are there more scoped-down tools to learn instead?
 - https://twitter.com/steveruizok/status/1424799618559320068
@@ -31,6 +36,3 @@ modified: '2021-08-10T03:51:01.891Z'
   - not a bad option
 - Really depends on what you mean by complex... sometimes Keynote is enough for me
 - Rive also exports video and png sequences.
-
-
-

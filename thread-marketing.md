@@ -16,7 +16,9 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## The @1Password :: Dropbox metaphors could not be more perfect.
+- https://twitter.com/gruber/status/1425833298899570698
+  - Breakout consumer app → insane organic growth → bottoms up enterprise adoption → taste that enterprise money → can’t look back → enterprise roadmap → death of a good product
 
 - ## 5 Gumroad alternatives to help you sell digital products easily.
 - https://twitter.com/felix12777/status/1424024289217372163
