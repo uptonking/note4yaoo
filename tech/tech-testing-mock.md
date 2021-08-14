@@ -9,9 +9,12 @@ modified: '2021-08-12T20:21:51.264Z'
 
 # guide
 
+- mock示例：react-jwt-authentication-example/react_base_auth
+  - 采用的思路都是在应用入口执行configureFakeBackend(), 拦截window.fetch
+
 - mock
   - mock的主要使用场景是测试，而不是切换app的测试环境
-  - 应用本身存在很多请求处理的其他逻辑和中间件，所以不一定要在全局实现mock和test，将更多的精力放在测试重要的场景
+  - 应用自身常常存在很多请求处理的其他逻辑和中间件，所以不一定要在全局实现mock和test，将更多的精力放在测试重要的场景
 # discuss
 - ## fetch-mock mocking all requests
 - https://stackoverflow.com/questions/41868698

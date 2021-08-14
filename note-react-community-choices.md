@@ -19,7 +19,16 @@ modified: '2021-07-27T10:04:07.244Z'
 
 - ## 
 
-- ## 
+- ## use-context-selector: [v2] new API and new implementation with useMutableSource
+- https://github.com/dai-shi/use-context-selector/pull/12
+- v2 implementation doesn't rely on context propagation, but use `useMutableSource` for updating components "selectively".
+- I'm giving up on passing 02_tearing_spec in v2, because I don't want to use the undocumented `calculateChangedBits` in v2. 
+  - Unfortunately, useMutableSource will not be able to solve this spec (which is not in their goal). I'd leave it as a limitation.
+
+- [@fluentui/react-context-selector](https://github.com/microsoft/fluentui/tree/master/packages/react-context-selector)
+  - React context by nature triggers propagation of component re-rendering if a value is changed. 
+  - To avoid this, this library uses undocumented feature of `calculateChangedBits`. 
+  - It then uses a subscription model to force update when a component needs to re-render.
 
 - ## Do you still prefer #react-intl nowadays?__201903
 - https://twitter.com/adrirai/status/1106906500054859776

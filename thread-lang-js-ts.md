@@ -14,9 +14,16 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## New Node module: "base256-encoding", 
+- https://twitter.com/fabiospampinato/status/1426299747522994181
+  - if you need to store something like a big base64-encoded string in memory, switching to base256 will save you up to 75% of memory per string.
+  - Base256 is like base64, but it uses all the 256 1-byte codepoints instead of just 64 of them, saving you some memory.
 
-- ## 
+- ## TIL: use array.every instead of forEach when you need to break
+- https://twitter.com/sebastienlorber/status/1426235846647328774
+  - This can replace while loops + break/continue; 
+- The goal of *every* and *some* (and *none*/*any*) is not to break out of the loop or do anything with the items. Rather it's a higher-order function that checks whether *every* element in the array matches a predicate.
+- this will be nicely labelled with "changes requested" when it gets reviewed
 
 - ## What is `[] + []` in JavaScript?
 - https://twitter.com/jaredpalmer/status/1423394089207312387

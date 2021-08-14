@@ -193,11 +193,10 @@ if (type of props.children === string && noOtherExpensiveProps) {
 
 - ## Design systems folks, what would you call this component? 
 - https://twitter.com/_alanbsmith/status/1370089747926851586
-
-  • block of highlighted / accented text
-  • inline with the rest of content (not floating)
-  • might or might not be dismissable
-  • usually offers details, notes, or additional info
+  - block of highlighted/accented text
+  - inline with the rest of content (not floating)
+  - might or might not be dismissable
+  - usually offers details, notes, or additional info
 
 - Notion refers to it as a "callout", which I think works well.
 - I'd consider that a styled blockquote 

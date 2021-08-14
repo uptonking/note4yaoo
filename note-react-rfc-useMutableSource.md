@@ -11,19 +11,18 @@ modified: '2021-01-04T17:05:20.422Z'
 
 ## How come this API isn't merged with useRef? (Both are used for  managing mutable, usually external data.)
 
-- useRef has constraints. 
+- `useRef` has constraints. 
   - Essentially (with the exception of lazy initialization) you should only mutate refs during the "commit phase" (within useEffect or useLayoutEffect).
   - Refs are like instance fields on class components. They let you e.g. compare next and prev props
-  - They aren't meant for sharing values with other components. 
+  - They **aren't meant for sharing values with other components**.
   - Because of their constraints, they're safe to use with concurrent rendering.
-- useMutableSource is for reading from mutable sources that you either don't control (e.g. window.location), or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
+
+- `useMutableSource` is for reading from mutable sources that you either don't control (e.g. window.location), or sources that may be mutated anytime (e.g. a click event might dispatch a Redux action).
   - useMutableSource has nothing to do with mutating the source. 
   - It **provides a way for multiple components to read from a source without "tearing"** (rendering conflicting things).
 - ref
   - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
-
 # guide
-
 - ## [pr: useMutableSource (merged但不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
 - useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
   - However it will still deopt all concurrent mode features when it happens. 
@@ -33,9 +32,7 @@ modified: '2021-01-04T17:05:20.422Z'
   - but in the current experimental releases the only way to be fully compatible is by using immutable data.
 - useMutableSource if you have either mutable data structures or if you have mutable atom where that atom lives outside React.
 - If you have immutable data, storing it in useState or useReducer is preferable because it will just work with everything.
-
 # useMutableSource
-
 - This hook is primarily intended for use by libraries like Redux (and possibly Relay). 
   - Work with the maintainers of those libraries to integrate with the hook.
 
@@ -67,9 +64,7 @@ modified: '2021-01-04T17:05:20.422Z'
   - Reading from a source after subscription
 - Unresolved questions
   - Are there any common/important types of mutable sources that this proposal will not be able to support?
-
 # pieces
-
 - Given a parent and a child, both calling useMutableSource with the same source: when the source updates, what order will the two components try to read the values from the source?
   - Keep in mind that `useMutableSource` is being written for concurrent mode (not legacy sync-rendering mode).
   - So I don't think I understand why the order of subscriptions matters? The resulting React work should be batched into a single React update.

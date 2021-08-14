@@ -9,11 +9,14 @@ modified: '2021-08-12T14:36:02.148Z'
 
 # guide
 - jwt
-  - 主要逻辑不包括注册，而是服务端不保存session的登录验证
+  - 主要逻辑不包括注册，而侧重服务端不保存session的身份验证
   - 适合前后端分离，适合移动端
 
 - tips
-  - mock jwt核心功能的示例都依赖于服务端express/koa的支持，因为每次请求都要发送token到服务端进行解码、验证
+  - mock jwt核心功能的示例都依赖于服务端express/koa的支持
+    - 因为每次请求都要发送token到服务端进行解码、验证
+    - 但完全mock返回值和验证逻辑也可用于测试
+
 - todo
   - jwt的核心功能的示例
   - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
@@ -112,7 +115,8 @@ HMACSHA256(
 - react + rxjs
   - configureFakeBackend会拦截window.fetch
   - 通过rxjs. BehaviorSubject共享数据，包括用户信息和jwt token
-  - 只实现了登录，后续/get/users发送了jwt token
+  - 只实现了登录，未实现注册，后续/get/users发送了jwt token
+  - 抽象出services触发api请求
 
 - 还提供了express后端示例
   - https://github.com/cornflourblue/node-jwt-authentication-api
@@ -135,8 +139,6 @@ HMACSHA256(
   - Register和Login组件都只是Form，思路清晰
   - 没有提供手动logout的菜单，但实现了action-reducer
   - fakeBackend采用拦截window.fetch并匹配url的方式模拟数据；初始用户数据读取自localStorage，新注册用户数据就保存在内存
-
-
 
 - https://github.com/zafar-saleem/react-login
   - Before using this project please make sure you get the [server side](https://github.com/zafar-saleem/NodeScalableArchitecture) running 
