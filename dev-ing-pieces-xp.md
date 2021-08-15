@@ -13,7 +13,9 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## 开发时setState没有触发rerender
+- 可能是因为 react-refresh 热加载插件，保留了页面内组件的状态
+- 刷新页面即可看到
 
 - ## react-router 在界面中使用 Link 可以正常跳转，但在地址栏address bar输入url回车时不能直接跳转到指定url
 - 要理解client-side routing的原理

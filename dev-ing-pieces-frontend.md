@@ -12,6 +12,42 @@ modified: '2021-03-29T19:30:00.059Z'
  
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [why does (undefined && true) return undefined?](https://stackoverflow.com/questions/22767602)
+
+```JS
+var x = (undefined && true);
+// undefined
+x;
+// undefined
+x = (true && undefined);
+// undefined
+x;
+// undefined
+```
+
+- In javascript || and && are not guaranteed to return boolean values, and will only do so when the operands are booleans.
+- a = b || c is essentially a shortcut for: 
+  - a = b ? b : c; 
+- a = b && c
+  - a = b ? c : b; 
+
+- Basically, the Logical AND operator (&&), will return the value of the second operand if the first is truthy, and it will return the value of the first operand if it is by itself falsy
+  - falsy values are those that coerce to false when used in boolean context, they are null, undefined, 0, NaN, an empty string
+
+```JS
+true && "foo"; // "foo"
+NaN && "anything"; // NaN
+0 && "anything"; // 0
+```
+
 - ## [Box-shadow affects scale performance](https://stackoverflow.com/questions/37939257)
 - shadows and opacity greatly impact on performance.
 - check the idea by using images instead of slow CSS-properties
@@ -28,8 +64,6 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - [Css - Need 'triple' border](https://stackoverflow.com/questions/50426095)
 - Consider using box-shadow. You can also do it with multiple box-shadow  
-
-
 
 - ## [理解TypeScript中的infer关键字](https://juejin.cn/post/6844904170353328135)
 - infer可以在 `extends` 的条件语句中推断待推断的类型

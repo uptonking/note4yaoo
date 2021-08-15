@@ -14,7 +14,14 @@ modified: '2021-01-06T14:40:06.842Z'
 
 - ## 
 
-- ## 
+- ## 我突然发现微软才是那个老老实实在做生产力工具的公司, 苹果天天把生产力工具挂嘴上但其实好像没做什么啊...
+- https://twitter.com/Cailurus/status/1426877534914838528
+- 微软说生产力，是现在只有这个能赚钱了……
+  - 苹果说生产力，是现在只有这个还没赚到钱…..
+- 苹果相比直接做一堆软件，更多的是为开发者提供环境吧。
+  - 开发者环境：Xcode，不支持 AMD/Nvidia 显卡的图形，功能稚嫩的 Swift UI 和不再改进的 UIKit。
+- 缺啥喊啥，没毛病
+- 最佳苹果开发者巨硬
 
 - ## The @1Password :: Dropbox metaphors could not be more perfect.
 - https://twitter.com/gruber/status/1425833298899570698

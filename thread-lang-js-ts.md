@@ -19,6 +19,12 @@ modified: '2021-01-28T14:34:20.579Z'
   - if you need to store something like a big base64-encoded string in memory, switching to base256 will save you up to 75% of memory per string.
   - Base256 is like base64, but it uses all the 256 1-byte codepoints instead of just 64 of them, saving you some memory.
 
+- ## New Node module, a weird one: "base256-archive", 
+- https://twitter.com/fabiospampinato/status/1426645445917478915
+  - it's basically a tiny serialization/deserialization library designed to leverage base256 encoding in order to save you ~50% of memory  (could be ~88% in pathological cases).
+  - You should go with JSON most of the times, but if you need to store a string or mini database in memory (like a spell-checker dictionary or grammars for syntax highlighting or something) this can save you a decent amount of memory.
+  - The fundamental problem is that a string of a million "a"s requires 1MB of memory, but add an emoji at the end of that and the whole string suddenly requires 2MB of memory. That's so weird. I wish we could get sane (and fast!) strings like they recently added sane integers.
+
 - ## TIL: use array.every instead of forEach when you need to break
 - https://twitter.com/sebastienlorber/status/1426235846647328774
   - This can replace while loops + break/continue; 
