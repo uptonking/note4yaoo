@@ -1,11 +1,11 @@
 ---
-title: thread-gis-examples
-tags: [examples, gis, thread]
+title: thread-gis-examples-mapping-carto
+tags: [carto, examples, gis, mapping, thread]
 created: '2021-03-26T11:29:28.403Z'
-modified: '2021-05-25T08:40:49.076Z'
+modified: '2021-08-16T06:45:26.099Z'
 ---
 
-# thread-gis-examples
+# thread-gis-examples-mapping-carto
 
 # pieces
 
@@ -18,13 +18,6 @@ modified: '2021-05-25T08:40:49.076Z'
 - ## 
 
 - ## 
-
-- ## Follow a piece of plastic from anywhere in the world on a 20-year journey 
-- https://twitter.com/Mapbox/status/1404902319670562816
-  - 瓶子漂流轨迹
-
-- ## ICYMI: 24 maps visualizing the results of the 2020 US election, from top media outlets — a lot of different, yet all great election maps. 
-- https://www.anychart.com/blog/2020/11/06/election-maps-us-vote-live-results/
 
 - ## Voronoi World Map 100% made with #Javascript & #d3js.
 - https://twitter.com/neocartocnrs/status/1383025241434247169

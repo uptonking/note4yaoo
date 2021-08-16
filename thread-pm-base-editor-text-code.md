@@ -1,17 +1,19 @@
 ---
-title: thread-pm-editor-text-code
+title: thread-pm-base-editor-text-code
 tags: [code-editor, text-editor, thread]
 created: '2021-05-23T10:31:12.011Z'
-modified: '2021-05-23T11:00:06.662Z'
+modified: '2021-08-16T06:56:58.774Z'
 ---
 
-# thread-pm-editor-text-code
+# thread-pm-base-editor-text-code
 
 # pieces
 
 - ## 
 
-- ## 
+- ## VS Code "Comment tagged templates" is sweet, such a clever idea. 
+- https://twitter.com/stevage1/status/1427063995903528962
+  - Get syntax highlighting for code embedded in strings by putting a comment before it saying what language it is.
 
 - ## Would an auto-indenter that clears space-only lines ever cause problems?
 - https://twitter.com/MarijnJH/status/1424650950216650754

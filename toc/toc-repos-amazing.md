@@ -49,8 +49,6 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://twitter.com/amit_sheen/status/1410178652193574915
   - https://codepen.io/amit_sheen/pen/YzVPrGb
   - 折叠打开或关闭的动画
-
-
 # amazing-resources
 - https://github.com/ira-design/ira-illustrations
   - https://iradesign.io/illustrations
@@ -157,3 +155,7 @@ modified: '2020-11-03T06:54:59.051Z'
 - https://github.com/kasuganosoras/logo-maker
   - 轻松制作你的YouTube风格的 Logo
   - https://logomaker.akkariin.com/
+
+- https://github.com/boringdesigners/boring-avatars
+  - https://boringavatars.com/
+  - Boring avatars is a tiny JavaScript React library that generates custom, SVG-based, round avatars from any username and color palette.

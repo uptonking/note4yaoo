@@ -1,11 +1,11 @@
 ---
-title: thread-marketing
-tags: [marketing, thread]
+title: thread-pm-marketing
+tags: [marketing, pm, thread]
 created: '2020-12-07T06:07:44.432Z'
-modified: '2021-01-06T14:40:06.842Z'
+modified: '2021-08-16T06:51:34.419Z'
 ---
 
-# thread-marketing
+# thread-pm-marketing
 
 # guide
 

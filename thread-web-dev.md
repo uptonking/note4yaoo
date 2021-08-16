@@ -31,12 +31,14 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Improve the performance of your apps by lazy-loading iframes
+- https://twitter.com/mgechev/status/1427125495292956675
+  - Just specify the attribute "loading=lazy"
+- [It's time to lazy-load offscreen iframes!](https://web.dev/iframe-lazy-loading/)
 
 - ## Anyone found a good way to test for accurate scrollBehavior support?
 - https://twitter.com/sebastienlorber/status/1420476101491630080
   - Getting some false positives on Windows+Chrome
-
 
 - ## If you're working on a tool that writes files to disk (like a compiler, babel/postcss/etc), it would be cool if there were an option to say: "Don't write to disk if the file is unchanged."
 - https://twitter.com/kentcdodds/status/1418719232271929346
@@ -45,7 +47,6 @@ modified: '2021-01-08T17:13:43.392Z'
 - The filewatcher having the cache for what has changed or not makes more sense. From a tools perspective it is **always cheaper to write rather than keep a cache or read before write**.
 - Having trouble seeing why this just wouldn’t always be the behavior?
   - I think it’s because writing straight to the fs is just easier to implement. To implement the correct behaviour you’d have to perform an atomic write (write to new file and rename).
-
 
 - ## There are still users browsing with a Chrome 37 engine (7 years ago), 
 - https://twitter.com/firt/status/1415645416276860929

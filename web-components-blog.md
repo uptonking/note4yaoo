@@ -7,8 +7,35 @@ modified: '2020-12-21T08:04:19.490Z'
 
 # web-components-blog
 
-# [Declarative Shadow DOM_202009](https://web.dev/declarative-shadow-dom/)
+# [Does shadow DOM improve style performance?__202108](https://nolanlawson.com/2021/08/15/does-shadow-dom-improve-style-performance/)
+- Short answer: Kinda. It depends. And it might not be enough to make a big difference in the average web app. But it’s worth understanding why.
 
+- First off, let’s review the browser’s rendering pipeline
+  - Two fundamental parts of the rendering process are style calculation and layout calculation, or simply “style” and “layout.” 
+  - The first part is about figuring out which DOM nodes have which styles (based on CSS), 
+  - and the second part is about figuring out where to actually place those DOM nodes on the page (using the styles calculated in the previous step).
+- One of the ways we can improve the performance of this process is to break up the work into smaller chunks, i.e. encapsulation.
+- For layout encapsulation, we have CSS containment.(safari不支持)
+  - Suffice it to say, I think there’s sufficient evidence that CSS containment can improve performance 
+- For style encapsulation, we have something entirely different: shadow DOM. 
+
+- Conclusions and future work
+- We can draw a few conclusions from this data. 
+- First off, it’s true that shadow DOM can improve style performance, so our theory about style encapsulation holds up. 
+  - However, ID and class selectors are fast enough that actually it doesn’t matter much whether shadow DOM is used or not – in fact, they’re slightly faster without shadow DOM. 
+  - This indicates that systems like Svelte, CSS Modules, or good old-fashioned BEM are using the best approach performance-wise.
+- This also indicates that using attributes for style encapsulation does not scale well compared to classes. 
+  - So perhaps scoping systems like Vue would be better off switching to classes.
+- Another interesting question is why, in all three browser engines, classes and IDs are slightly slower when using shadow DOM. 
+  - This is probably a better question for the browser vendors themselves, and I won’t speculate.
+- The clearest signal from the data is just that shadow DOM helps to keep the style costs roughly constant, whereas without shadow DOM, you would want to stick to simple selectors like classes and IDs to avoid hitting a performance cliff.
+
+- [discussion](https://twitter.com/tomayac/status/1427151416616001540)
+
+- TLDR; Use class & id rather than Shadow DOM.
+- Yeah, using class is fast of your selectors are all super simple. Degrades *as others add rules with the class involved*. Programming with global variables is juggling flaming knives.
+- The other way of reading this: Shadow DOM gets you robust style encapsulation with little-to-no runtime overhead. Win!
+# [Declarative Shadow DOM_202009](https://web.dev/declarative-shadow-dom/)
 - Shadow DOM is one of the three Web Components standards, rounded out by HTML templates and Custom Elements. 
   - These features combined enable a system for building self-contained, reusable components that integrate seamlessly into existing applications just like a built-in HTML element.
   - Shadow DOM provides a way to scope CSS styles to a specific DOM subtree and isolate that subtree from the rest of the document
@@ -31,9 +58,7 @@ modified: '2020-12-21T08:04:19.490Z'
   - The new `getInnerHTML()` method works like `.innerHTML`, but provides an option to control whether shadow roots should be included in the returned HTML
 - Components built using Custom Elements get automatically upgraded from static HTML. 
   - With the introduction of Declarative Shadow DOM, it's now possible for a Custom Element to have a shadow root before it gets upgraded.
-
 # [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
-
 - 仅供参考，标准及实现都已更新，文章中提到的部分问题已解决了
 
 - I'm mostly writing this for my future self, so that I have something to point to next time someone asks why I'm a web component skeptic(怀疑论者), and why Svelte doesn't compile to custom elements by default. 
@@ -70,9 +95,7 @@ modified: '2020-12-21T08:04:19.490Z'
   - they are true html elements that live in the document and they should be used like any other html element. 
   - Taking a web component and comparing it to an abstracted svelte component is totally misleading. 
   - They do different things.
-
 # ref
-
 - [google-dev: Building Web Components](https://developers.google.com/web/fundamentals/web-components)
 - [How searching for a bundle-free React led me to web components_202008](https://www.bryanbraun.com/2020/08/31/how-searching-for-a-bundle-free-react-led-me-to-web-components/)
   - I couldn’t really use React in the bundle-free dev workflows

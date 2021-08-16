@@ -62,7 +62,8 @@ modified: '2021-08-08T08:39:17.347Z'
   - 登录时记住密码
 
 - auth
-  - 客户端用户登录状态的判断：token + 生效期内
+  - 客户端用户登录状态的判断：token + isLoginAuthed
+  - 退出登录后回到登录界面，但登录按钮是active的；validate的逻辑要重写
 
 - discuss
   - 分享

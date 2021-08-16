@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. 
+- https://stackoverflow.com/questions/56442582
+- The easiest solution is to use a local variable that keeps track of whether the component is mounted or not.
+- [setState hook inside useEffect can cause unavoidable warning Can't perform a React state update](https://github.com/facebook/react/issues/14369)
+
 - [TS2339: Property 'span' does not exist on type 'JSX. IntrinsicElements'](https://stackoverflow.com/questions/47694227)
 - I had the same problem but for me, it was the p element. The reason for the error was that I refactored a p element to h3 for instance and VSCode changed also the type definition.
 - As you pointed out cleaning the node_modules and doing a fresh npm install does the trick.

@@ -26,3 +26,11 @@ modified: '2021-01-04T17:06:14.968Z'
       - Provides MVT encoding through use of the jts library
 
 # ogc
+
+# more-gis-format
+
+- CityJSON
+  - https://www.cityjson.org/
+  - CityJSON is a JSON-based encoding for a well-documented subset of the OGC CityGML data model (version 2.0.0). 
+  - Now published as an OGC community standard!
+  - https://github.com/cityjson/cityjson-threejs-loader

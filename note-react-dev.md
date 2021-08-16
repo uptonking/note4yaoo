@@ -8,8 +8,11 @@ modified: '2020-07-14T10:38:48.217Z'
 
 # note-react-dev
 
-# guide
+# dev-xp
 
+- 多用useEffect，少在event handler里面执行side effects
+  - 特别是data fetching
+# guide
 - react-rfc
   - [react context selectors](https://github.com/reactjs/rfcs/pull/119)
   - trending：jquery > querySelector, react > web components

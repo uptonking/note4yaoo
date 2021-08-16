@@ -7,14 +7,15 @@ modified: '2020-12-29T17:52:31.539Z'
 
 # tool-app-common-saas-xp
 
+# saas-xp
+- https://github.com/iamadamdev/bypass-paywalls-chrome
+  - help bypass paywalls for selected sites.
+  - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
 # zhihu
-
 - 有时候评论的内容比回答的内容更有意思
 
 - [知乎违规记录](https://www.zhihu.com/community/reported)
-
 # twitter
-
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
 
@@ -32,9 +33,7 @@ modified: '2020-12-29T17:52:31.539Z'
       - http://blog.luckly-mjw.cn/tool-show/m3u8-downloader/index.html
       - 当前下载卡住时，可以尝试刷新页面，再次输入url开始下载
       - 一个m3u8的视频经常会提供320/480/720多种分辨率，可是换一种m3u8地址
-
 # 邮箱注册
-
 - 不需要手机号的邮箱
   - mail.protonmail.com
   - ref

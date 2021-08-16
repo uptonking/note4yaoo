@@ -154,6 +154,21 @@ modified: '2020-12-21T06:03:02.191Z'
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
 # discuss
+
+- ## Fetch data from an api in useEffect or in event handler directly in react
+- https://stackoverflow.com/questions/62277013/
+- It depend on your usecase
+- fetching data in useEffect is useful in following scenarios
+  - Fetching data during some lifecycles like initial render
+  - Fetching data when some prop changes
+  - fetching data in an interval but setting up a subscription or setInterval
+- Fetching data in handler is useful
+  - Based on a user interaction such as search button click, search input change
+- I would say you should go with the hooks implementation. 
+  - It's recommended in the React docs for performing side effects
+  - Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. 
+
+
 - ## Performance is a top priority of SWR.
 - https://twitter.com/shuding_/status/1324405638986788864
 - why and how SWR ensures your app to be always fast and reactive:

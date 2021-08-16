@@ -1,15 +1,24 @@
 ---
-title: thread-viz-examples
+title: thread-viz-examples-gallery
 tags: [examples, thread, viz]
 created: '2021-02-20T08:20:43.348Z'
-modified: '2021-02-20T08:21:06.521Z'
+modified: '2021-08-16T06:46:26.175Z'
 ---
 
-# thread-viz-examples
+# thread-viz-examples-gallery
 
 # pieces
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 碎片构成规则图形的动画
+- https://twitter.com/vb_jens/status/1427105639340421125
 
 - ## Can we visualize a codebase?
 - https://twitter.com/Wattenberger/status/1423259472919674882
@@ -17,7 +26,6 @@ modified: '2021-02-20T08:21:06.521Z'
   - [Visualizing a codebase](https://octo.github.com/projects/repo-visualization)
 - I love this exploration! a better way to browse files than the standard file list. I especially like the by-commit visualization to see what files people are changing (near bottom). a good way to get pulse of codebase
 - Nice work! There are a few existing VR tools (e.g. @PrimitiveVR ) but I think it might be too limiting to focus exclusively on code which is literally an implementation detail. I’m exploring design level visualization & tooling but progress is slow
-
 
 - ## The interactive "Bats Fact Wheel" by @jhjanicki
 - https://twitter.com/simongerman600/status/1418292323230879745

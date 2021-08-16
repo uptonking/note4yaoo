@@ -188,6 +188,9 @@ modified: '2021-07-21T18:09:20.751Z'
 - https://www.nordtheme.com/docs/colors-and-palettes
   - 背景灰色，页面白色，典型的文档风格，无toc
 
+- https://flexiple.com/react/conditional-rendering-in-react/
+  - 典型的技术文档风格，页面背景灰色，文档背景白色
+
 - https://github.com/Apostolique/apos-docs
   - https://apostolique.github.io/apos-docs/markdown/
   - 依赖eleventy，右侧toc无法高亮
