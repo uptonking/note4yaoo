@@ -24,7 +24,7 @@ modified: '2021-07-29T11:15:44.100Z'
 - ## What's the difference between window.location and document.location in JavaScript?
 - https://stackoverflow.com/questions/2430936
 - According to the W3C, they are the same. 
-  - In reality, for cross browser safety, you should use `window.location` rather than `document.location`.
+  - In reality, for cross browser safety, you should use `window.location` rather than `document.location` .
 
 - ## If you're a fan of alert(), you may have heard about a change that briefly hit Chrome Stable channel this week (it's been temporarily disabled at the moment while breakage is remediated)
 - https://twitter.com/estark37/status/1422694856544059396
@@ -75,6 +75,19 @@ assert { type: "css" };
   - Bundlers will have to adapt to the ever-evolving web platform as they always do.
   - I'm this case there's a straightforward transform to a JS module that exports a CSSStyleSheet. Later there may be more options around Web Bundles or multi-sheet CSS files.
   - I think with the import assertions, bundlers can use those as flags to fairly skip or delegate this process and then generate a chunk for the target file. But who knows Man shrugging, I'm still yet unsure if bundlers right now supports assertions.
+  - I think with the import assertions, bundlers can use those as flags to fairly skip or delegate this process and then generate a chunk for the target file. But who knows Man shrugging, I'm still yet unsure if bundlers right now supports assertions.
+
+- To be brutally honest, I think the "native CSS modules" standardization is rushed and again shows arrogance of those involved in the process.
+- https://twitter.com/youyuxi/status/1427406150463537152
+- clashes in naming with an popular existing solution (making search results confusing for beginners)
+- uses the same syntax with popular existing conventions (extract via build tools)
+- requires JavaScript (can't avoid FOUC)
+- doesn't play nice with SSR
+- doesn't scale in production (can result in hundreds of requests)
+- All of which are non-issues for existing conventions! And the solution for the problem is more specs.
+- Which begs the question: why rush it into a standard before the whole category of problems are thought through? Why such a hurry to standardize something that collides with existing conventions, yet doesn't even offer feature parity?
+
+- I completely disagree that minimally useful is half-baked.
 
 - ## Things I didn't know are apparently impossible – positioning something exactly above the virtual keyboard on iOS Safari.
 - https://twitter.com/tommoor/status/1420469267057844227

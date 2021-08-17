@@ -15,7 +15,8 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
-- ## 
+- ## Chartability is a methodology for ensuring that data visualizations, systems, and interfaces are accessible.
+- https://observablehq.com/@frankelavsky/chartability
 
 - ## With 0.5M+ downloads/month, Dash is the new standard for AI & data science apps. 
 - https://twitter.com/plotlygraphs/status/1411395563711389696

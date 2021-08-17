@@ -65,6 +65,12 @@ modified: '2021-08-08T08:39:17.347Z'
   - 客户端用户登录状态的判断：token + isLoginAuthed
   - 退出登录后回到登录界面，但登录按钮是active的；validate的逻辑要重写
 
+- test
+  - fetch-mock to msw(Mock Service Worker)
+
+- 中文etl优化
+  - routing url不使用文件名，而使用层级信息如/intro/1, /background/2/1，具体编号大小由文件创建时间确定
+
 - discuss
   - 分享
   - 对于左侧菜单项，使用懒加载而不是直接导入组件时，修改routes.ts配置文件不会自动刷新，拖慢开发速度

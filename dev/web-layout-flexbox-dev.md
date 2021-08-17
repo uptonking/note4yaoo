@@ -11,7 +11,7 @@ modified: '2020-12-21T07:46:20.408Z'
 
 - ## `margin: auto` vs `justify-content/align-items:center`
 
-``` CSS
+```CSS
 /* 第一种 */
 .outer {
   display: flex;
@@ -41,5 +41,13 @@ modified: '2020-12-21T07:46:20.408Z'
   - To overcome this problem, use `margin: auto` for centering to work properly.
 - ref
   - [What's the difference between margin:auto and justify-content/align-items center?](https://stackoverflow.com/questions/44244549/whats-the-difference-between-marginauto-and-justify-content-align-items-cent)
-
-# pieces
+# discuss
+- ## Do you ever not want `min-width/height: 0` to prevent Grid/Flex children from spilling out? 
+- https://twitter.com/souporserious/status/1427404212531458054
+  - Seems like it should be in a reset. 
+  - I did this in a system before and don't recall having any issues 
+  - [Preventing a Grid Blowout](https://css-tricks.com/preventing-a-grid-blowout/)
+- Hmm, I don’t ever set min dims to 0. My approach is usually to conform to content flow and avoid fixed containers that would allow contents to spill. Am I missing something?
+- Yeah there's a difference, here, where min-height:0 causes children to shrink, probably unexpectedly
+  - Sometimes you do want your children content to be the min-height, if you _want_ them to overflow their scrollable containe
+  - Ohh, this is a perfect example! 🙏 So maybe it could be automatically set based on the parent overflow (and could be overridden if needed). Just thinking what the best happy path could be

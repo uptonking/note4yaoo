@@ -12,7 +12,21 @@ modified: '2021-01-28T14:34:20.579Z'
 
 - ## 
 
-- ## 
+- ## New Node module: "base128-encoding", 
+- https://twitter.com/fabiospampinato/status/1427298867113037829
+  - it's not as memory efficient as base256-encoding _when in memory_, it still doesn't produce friendly strings like base64, 
+  - but it's the most memory efficient encoding for writing strings to disk that need to be imported.
+- Somewhat interestingly writing a module as latin1/base256 makes it throw when imported at times, I think JS or at least Node is expecting the file to be utf-8 encoded. 
+  - base128 is basically the memory-efficient subset of utf-8 that always requires 1 byte per character.
+- Some numbers when using different encodings with a file of mine:
+  - base64: 1.65MB on memory & disk (utf8 & latin1).
+  - base128: 1.45MB on memory & disk (utf8 & latin1).
+  - base256 1.25MB on memory & disk latin1-encoded, 1.87MB utf8-encoded.
+- Basically when optimizing for memory usage, base256 is the winner in memory and for latin1-encoded files, and base128 is the winner for utf-8 encoded files. 
+  - Unless engines change it's impossible to do better than this. 
+  - When optimizing for other things, base64 may be the go-to.
+- Interestingly gzipped base64-encoded files may be smaller than gzipped base128-encoded files
+  - No idea why, maybe using fewer characters overall helps the compression algorithm somewhat, I'm pretty surprised by this.
 
 - ## New Node module: "base256-encoding", 
 - https://twitter.com/fabiospampinato/status/1426299747522994181

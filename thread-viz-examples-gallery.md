@@ -15,7 +15,10 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
-- ## 
+- ## I have been tweeting about #Tableau for a year now, so I thought it would be fun to do a viz on the Twitter data behind it.
+- https://twitter.com/consult_ant/status/1427219545148772355
+  - https://public.tableau.com/app/profile/ant.pulley/viz/OneYearofTweets/OneYearofTweets
+  - 圆形布局
 
 - ## 碎片构成规则图形的动画
 - https://twitter.com/vb_jens/status/1427105639340421125

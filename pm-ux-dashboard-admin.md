@@ -159,6 +159,13 @@ modified: '2021-07-27T09:09:48.459Z'
   - 除了Customizer，其他组件都不直接更新redux store的数据
   - Customizer中使用`useDispatch()`返回值触发更新的示例`onClick={() => dispatch(setSidebarPos("fixed"))}`
 
+- 整体布局
+- 最小屏幕宽度时，#main-wrapper是最外层div，position默认无
+  - header.topbar元素是顶部导航条，zIndex是50，position为fixed
+  - aside.left-sidebar元素是左侧边栏，zIndex是10，position在显示或隐藏时都为fixed
+  - .page-wrapper是内容区div，无zIndex，position为relative
+  - aside.customizer是右侧边栏，zIndex是100，position在显示或隐藏时都为fixed
+
 - 路由及其对应的组件通过类似json的js对象配置
 
 - fakeApi基于rxjs. BehaviorSubject
