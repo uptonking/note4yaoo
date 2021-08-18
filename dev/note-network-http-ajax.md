@@ -9,18 +9,29 @@ modified: '2020-12-21T06:03:02.191Z'
 
 # guide
 
+- react程序中，通过事件处理器如onClick触发网络请求的实现应该放在事件处理器，还是放在useEffect?
+  - ajax放在事件处理器如onClick，更易理解
+    - react准备移除[setState on unmounted Comp](https://github.com/facebook/react/pull/22114)的warning，提到了事件处理器的side effect可能引发重复请求的问题
+  - ajax放在useEffect
+    - ❌️ 首次render不应该自动执行useEffect，因为ajax应该由点击事件触发
+    - ❌️ 其他state/props/deps的变化不应该自动执行useEffect，因为ajax应该由点击事件触发
+    - ✅️ 更符合react中执行side effects的设计
+    - ✅️ 用户连续点击按钮触发事件时，因为state未变，不会重复触发
+
 - xhr优点
   - 支持广泛，兼容性强
 - xhr缺点
   - 代码冗长，xhr对象操作较混乱
   - callback hell
   - 需要手动解决CSRF攻击
+
 - fetch优点
   - 代码简洁，promise较少callback
 - fetch缺点
   - 返回值类型是promise，被promise的缺点限制
     - 不能取消，只能消费一次，操作符只有then和catch
   - 有极少xhr功能未实现，如进度通知
+
 - observable优点
   - 操作符丰富
 - observable缺点
@@ -154,7 +165,6 @@ modified: '2020-12-21T06:03:02.191Z'
     - Quickly you realize that you're building another protocol on top of HTTP.
     - At that point, it's better to reuse an existing protocol like Bayeux, and proven solutions like CometD
 # discuss
-
 - ## Fetch data from an api in useEffect or in event handler directly in react
 - https://stackoverflow.com/questions/62277013/
 - It depend on your usecase
@@ -168,6 +178,27 @@ modified: '2020-12-21T06:03:02.191Z'
   - It's recommended in the React docs for performing side effects
   - Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. 
 
+- ## How to send request on click React Hooks way?
+- https://stackoverflow.com/questions/55647287
+- why would you prefer using useCallback instead of useEffect? 
+  - Well, because it's a callback and not a side-effect
+  - well, depends on how you treat it. if you use reactive/declarative way, it can be sideEffect. if you use imperative way, it can be a callback. both work. 
+  - I wouldn't recommend using useEffect. To do that, it would become an effect triggered by a state-change, which would also cause an unnecessary re-render. Callbacks are inherently side-effects when they are triggered by a user-action
+- You don't need an effect to send a request on button click, instead what you need is just a handler method which you can optimise using `useCallback` method
+  - Tracking request using variable with `useEffect` is not a correct pattern because you may set state to call api using `useEffect`, but an additional render due to some other change will **cause the request to go in a loop**
+- In functional programming, any async function should be considered as a side effect.
+  - When dealing with side effects you need to separate the logic of starting the side effect and the logic of the result of that side effect (similar to redux saga).
+  - Basically, the button responsibility is only triggering the side effect, and the side effect responsibility is to update the dom.
+  - It's always better to separate the logic of your side effect from the logic that triggers the effect (the useEffect)
+
+- ## React Hooks API call - does it have to be inside useEffect?
+- https://stackoverflow.com/questions/61348598
+  - I wanted to ask if every single API call we make has to be inside the useEffect hook?
+  - my data fetching actually takes place in a function run on a button click and not in the useEffect itself. It seems to be working.
+- Yes, apis calls that happen on an action like button click will not be part of `useEffect` call. It will be part of your event handler function.
+  - When you call useEffect, you’re telling React to run your “effect” function after flushing changes to the DOM
+  - Note: You should always write async logic inside useEffect if it is not invoked by an event handler function.
+- Yes, you can make api requests in an event handler such as onClick.
 
 - ## Performance is a top priority of SWR.
 - https://twitter.com/shuding_/status/1324405638986788864

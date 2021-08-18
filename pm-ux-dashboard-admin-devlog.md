@@ -64,9 +64,15 @@ modified: '2021-08-08T08:39:17.347Z'
 - auth
   - 客户端用户登录状态的判断：token + isLoginAuthed
   - 退出登录后回到登录界面，但登录按钮是active的；validate的逻辑要重写
+  - ~~debounce 提交按钮的网络请求~~，正在提交了直接在前端拒绝再次提交
+  - 提交按钮无法用tab键focus和选择
 
 - test
   - fetch-mock to msw(Mock Service Worker)
+
+- search
+  - 搜索菜单
+  - 搜索内容
 
 - 中文etl优化
   - routing url不使用文件名，而使用层级信息如/intro/1, /background/2/1，具体编号大小由文件创建时间确定

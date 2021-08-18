@@ -6,22 +6,28 @@ modified: '2021-01-11T23:21:37.132Z'
 ---
 
 # toc-lib-ux-template-landing-page
-
 - guide
   - [search: landing page](https://github.com/search?o=desc&p=1&q=landing+page+language%3Acss+language%3Ascss&s=stars&type=Repositories)
     - site template
 
 - awesome-list
   - https://github.com/nordicgiant2/awesome-landing-page
+# bootstrap
+
+## bootstrap.v5
+
+- https://inovatik.com/zinc-web-agency-website-bootstrap-html-template.html
+  - https://inovatik.com/zinc/index.html
+  - 白背景，主题色时红黄暖色系
+  - 标准的落地页，不算特别亮眼
+
+## bootstrap.v4
 
 # landing-pm
-
 - https://github.com/papa28x4/Watches-Product-Page
   - https://papa28x4.github.io/Watches-Product-Page/
   - ust me trying out a sample product landing page to hone my UI skills
-
 # landing-popular
-
 - https://github.com/uisual/freebies
   - https://uisual.com/
   - Plain HTML & CSS. No JS. 使用了css vars，样式代码在600~1100行左右
@@ -56,16 +62,12 @@ modified: '2021-01-11T23:21:37.132Z'
 - https://github.com/ahmedhosna95/clear-view-escapes-landing-page
   - https://travel-site-webpack.netlify.app/
   - Built with Webpack, PostCSS and VanillaJS, Code Splitting and CSS Architecture (ITCSS, OOCSS, BEM)
-
 # landing-bootstrap
-
 - https://github.com/StartBootstrap/startbootstrap-new-age
   - https://startbootstrap.com/themes/new-age/
   - a web app landing page theme for Bootstrap 
   - theming-红色
-
 # landing-in-fwk
-
 - https://github.com/ant-design/ant-design-landing
   - Landing Pages of Ant Design System
   - https://github.com/ant-design/ant-ux
@@ -78,16 +80,12 @@ modified: '2021-01-11T23:21:37.132Z'
   - https://open.cruip.com/
   - A free React landing page template
   - theming-黑色
-
 # landing-doc-sie
-
 - https://github.com/amiechen/codrops-scribbler
   - https://tympanus.net/Freebies/scribbler/
   - Scribbler is a responsive HTML/CSS/Javascript template designed for developers 
     - who want to set up a small landing page and a documentation/usage page
-
 # more
-
 - https://github.com/Kvaibhav01/Landing-Page-Animation
   - https://kvaibhav01.github.io/Landing-Page-Animation/
   - smooth and beautiful landing page animation using only basic CSS animations.

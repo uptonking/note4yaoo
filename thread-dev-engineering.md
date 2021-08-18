@@ -28,7 +28,11 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## JavaScript build tools measure performance wrong. Roundtrip time — not build time — is what people feel.
+- https://twitter.com/jarredsumner/status/1427891371797454851
+- What is your definition of round-trip here?
+  - For frontend development, that’s ideally how long from saving in your editor to the code refreshing in the page (either through hot reloading or the script loading) — a broader scope than transpilation time
+- That makes sense. Incremental changes generally require fewer files to be rebuilt. So the build plays less of a role in that scenario.
 
 - ## Oh God, I've worked with people who made the one function to rule them all. 
 - https://twitter.com/BenLesh/status/1424379521525035010

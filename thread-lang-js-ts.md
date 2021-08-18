@@ -10,7 +10,14 @@ modified: '2021-01-28T14:34:20.579Z'
 # pieces
 - ## 
 
-- ## 
+- ## if you're sorting an array in JS and keep forgetting how to write the compare functions
+- https://twitter.com/DavidKPiano/status/1292237580780605440
+
+```JS
+nums.sort((a, z) => a - z);
+(a, z) => a - z // ascending, like "a to z"
+(a, z) => z - a // descending, like "z to a"
+```
 
 - ## New Node module: "base128-encoding", 
 - https://twitter.com/fabiospampinato/status/1427298867113037829

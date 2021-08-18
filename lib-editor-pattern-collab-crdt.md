@@ -8,7 +8,7 @@ modified: '2021-07-23T15:52:10.409Z'
 # lib-editor-pattern-collab-crdt
 
 # guide
-e
+
 # blog
 
 ## [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
@@ -238,3 +238,5 @@ e
 - CRDTs: The Hard Parts [video]_202007
   - https://news.ycombinator.com/item?id=23802208
 # ref
+- https://github.com/streamich/json-joy
+  - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 

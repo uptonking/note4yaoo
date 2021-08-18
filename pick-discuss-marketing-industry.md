@@ -15,7 +15,28 @@ modified: '2021-04-12T16:30:53.968Z'
 
 ## 
 
-## 
+## [俄罗斯一游戏支付公司用 AI 裁员 150 人，被裁员工被算法判定不敬业效率低下，这种评判方式合理吗？](https://www.zhihu.com/question/480391613)
+
+- 这算个P的AI，无非就是加权加法
+- 这是Xsolla用来衡量绩效的几个指标
+  - Jira: Chat system for tasks
+  - Confluence: Chat system for documents
+  - Gmail: Formal chat system
+  - chats: Informal chat system
+  - documents: Huray, more powerpoints!
+  - dashboards: How are my chats doing?
+- 可以看到这六个指标大体都是沟通类的
+  - T = w1 * x1 + w2 * x2 + ... + wN * xN
+  - 把所有人的以上指标收集起来，然后所有的T都算出来，比如{T1, T2, ... , Tn}。
+  - 得到所有的T之后，排个序，再拍脑袋定个threshold，也就是所有达不到这个threshold的人都给我下岗。
+
+- 美国最大科技公司之一亚马逊被曝使用AI监控员工工作效率，并根据休息时间自动下达裁员命令，而无需人工介入。
+  - 在亚马逊的仓库里，一个工人每小时必须完成几百个包裹的包装工作；强大的AI系统不仅能跟踪每个人的工作进度，甚至还能精确计算工人消极懈怠的“摸鱼”时间（Time Off Task，简称TOT）
+  - 在一些特殊情况下，主管有权推翻AI的决定，挽救员工的工作机会。
+  - 亚马逊方面则声辩认为，AI系统的上线主要目的不是惩罚和解雇员工，而是为了提高员工的工作效率。
+
+- AI+大数据+物联网，这些技术到底是服务于人类的工具，还是用于奴役人类的工具？
+  - 滴滴，美团，货拉拉也是一样的嘛
 
 ## [现在打压校外培训机构的真正原因是什么？](https://www.zhihu.com/question/476199339)
 

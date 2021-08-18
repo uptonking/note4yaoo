@@ -34,12 +34,14 @@ modified: '2021-08-12T14:36:02.148Z'
   - 如果JWT包含足够多的必需的数据，那么就可以减少对某些操作的数据库查询的需要
   - 如果token是在授权头（Authorization header）中发送的，那么跨源资源共享(CORS)将不会成为问题，因为它不使用cookie。
 
-- 以前我们是怎么做基于服务器session的身份认证
+- 以前基于服务器session的身份认证
   - HTTP协议是无状态的，那么下一次请求的时候，服务器不知道我是谁，我们必须再次认证
-  - 传统的做法是将已经认证过的用户信息存储在服务器上，比如Session。用户下次请求的时候带着Session ID，然后服务器以此检查用户是否认证过。
+  - 传统的做法是将已经认证过的用户信息存储在服务器上，比如Session
+  - 用户下次请求的时候带着Session ID，然后服务器以此检查用户是否认证过。
   - 随着认证通过的用户越来越多，服务器的在这里的开销就会越来越大
   - 由于Session是在内存中的，这就带来一些扩展性的问题。
   - CORS跨域问题
+
 - JWT是在客户端存储用户信息
   - 用户携带用户名和密码请求访问 - 服务器校验用户凭据 - 服务器提供一个token给客户端 - 客户端存储token，并且在随后的每一次请求中都带着它 - 服务器校验token并返回数据
   - 每一次请求都需要token -Token应该放在请求header中 -我们还需要将服务器设置为接受来自所有域的请求，用Access-Control-Allow-Origin: *
@@ -69,9 +71,6 @@ modified: '2021-08-12T14:36:02.148Z'
   - 不过都有个共同的问题，谁拿到这个串，不管是传统的session id 还是 jwt。 都是可以在另外一台机器上请求。
 - 多台服务器负载均衡，你存的session是不是挨个服务器都放一份还是怎么做到session的统一？
   - session共享的方法，是不是要占用大量带宽或者服务器的大量存储空间。存到数据库，是不是也不方便？
-  - 
-
-- 
 
 ## [JSON Web Token 入门教程](https://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 
@@ -97,9 +96,9 @@ modified: '2021-08-12T14:36:02.148Z'
 
 - JWT的数据结构
   - Header. Payload. Signature
-  - Header 部分是一个 JSON 对象，描述 JWT 的元数据
+  - Header 部分是一个JSON对象，描述JWT的元数据
     - 将上面的 JSON 对象使用 Base64URL 算法转成字符串
-  - Payload 部分也是一个 JSON 对象，用来存放实际需要传递的数据。
+  - Payload 部分也是一个JSON对象，用来存放实际需要传递的数据。
     - 除了官方字段，你还可以在这个部分定义私有字段
     - 注意，JWT 默认是不加密的，任何人都可以读到，所以不要把秘密信息放在这个部分。
     - 这个JSON对象也要使用 Base64URL 算法转成字符串。
@@ -115,9 +114,9 @@ HMACSHA256(
   secret)
 ```
 
-- 客户端收到服务器返回的 JWT，可以储存在 Cookie 里面，也可以储存在 localStorage。
-  - 此后，客户端每次与服务器通信，都要带上这个 JWT。你可以把它放在 Cookie 里面自动发送，但是这样不能跨域，
-  - 所以更好的做法是放在 HTTP 请求的头信息Authorization字段里面。
+- 客户端收到服务器返回的JWT，可以储存在 Cookie 里面，也可以储存在 localStorage。
+  - 此后，客户端每次与服务器通信，都要带上这个JWT。你可以把它放在 Cookie 里面自动发送，但是这样不能跨域，
+  - 所以更好的做法是放在HTTP请求的头信息Authorization字段里面。
 
 - JWT的特点
   （1）JWT 默认是不加密，但也是可以加密的。生成原始 Token 以后，可以用密钥再加密一次。
@@ -212,3 +211,57 @@ HMACSHA256(
 - https://github.com/abdelrahman-haridy01/full-mocks-api
   - 依赖json-server
   - Make a Full fake REST API, MakePOST, PUT, PATCH or DELETE requests, Fake Register and login based on role Api with jwt.
+# discuss
+- ## 原来JWT还可以使用私钥签名+公钥验证的方式发放，那其实可以用在第三方和serverless场景上了
+- https://twitter.com/Hooopo/status/1241664133201719296
+- 其实okta之类的IDaaS都是用的 OIDC + JWT公私钥方案
+- 合法的 JWT 并不代表他有效，所以去找签发方验证永远少不了，都要去找签发方验证了，那比普通随机字符串的 Access Token 还有多少好处呢？
+- 失效时间短+refresh token是推荐的策略，其实还有一个blacklist策略
+- Blacklist 是当你知道 JWT 被废弃后要做的事，但问题是失效时间短但仍然会出现在 JWT 标称过期前被 revoke 的情况（而第三方无法感知），有时间差可以利用就一定有可能产生可被利用的安全漏洞，这对外部服务来说是致命的。而请求签发服务验证 Token 有效性天然不存在这些问题
+
+- ## JWT 合法不代表有效，有效只有去签发方的服务验证才可以，JWT 没有解决 Revoke 问题
+- https://twitter.com/jasl9187/status/1241719669829947393
+- JWT没解决，又不代表不能解决
+- 不用去签发方，比如 auth0签发一个token，你有公钥你自己验，验证的是合法性，不能revoke只是因为jwt是stateless的，你自己在服务端记录一下就可以revoke了，并不需要签发方参与。
+
+- ## The JWT is stored on browser, so on logout you remove the token by deleting the cookie at client side but how does one invalidate the token from server side?
+- https://twitter.com/kioko_benedict/status/1374784256380129291
+- I think you typically have two tokens, one is a long lived refresh token than can generates new short lived jwt tokens.
+  - Then you have a table in which you can block specific refresh tokens that you check before generating a new jwt
+  - You could also store all refresh tokens as a sort of user session which I’ve also seen
+- how do you invalidate the token from server side before its expiration time?
+  - I do have refresTokens and a table where they're stored. On logout I have a way to revoke them meaning they can't be used to generate new tokens.
+  - But the jwt might still be active (few minutes)before it expires, how do ensure that it can be used to make requests (server side)?
+- I mean you could have blocklist for the jwt.
+  - Though origin of jwt is you didn’t have to do a lookup for user info first before your actual queries.
+  - Eg I cryptographically validate that my server signed this jwt and and trust the user is/email is valid
+
+- ## One of the main questions I repeatedly get whenever I talk about JWTs is "can I revoke a JWT?"
+- https://twitter.com/bpontarelli/status/1091017706411683840
+- [Revoking JWTs & JWT Expiration](https://fusionauth.io/learn/expert-advice/tokens/revoking-jwts/)
+- you’ll find that the most common answers are:
+  - Set the duration of the JWT to a short period
+  - Implement complicated blacklisting techniques
+  - Store every JWT so you can validate them
+- The most common solution is to reduce the duration of the JWT and revoke the refresh token so that the user can’t generate a new JWT. 
+  - With this setup, the JWT’s expiration duration is set to something short (5-10 minutes) and the refresh token is set to something long (2 weeks or 2 months). 
+  - At any time, an administrator can revoke the refresh token which means that the user must re-authenticate to get a new JWT. 
+
+- ## I still don't get JWTs.what's with the refresh token? Doesn't that just make a JWT's expiry infinite? And how do you revoke a JWT?
+- https://twitter.com/JessTelford/status/1427884068989898756
+- If you store the state of a JWT somewhere, then... you've just invented session-based auth, but more complicated.
+- in micro-service architecture, it make most sense. 
+  - suppose you have distributed system and a service needs to know who is user and is it authenticated (is token valid), the token itself tells everything, you don't have to dig up any db to check that
+  - As so if you have to logout a user, generally you can't. its expiry which dictates that. you can however place something when refreshing so further it won't be refreshed.
+- Here's my simplistic take on it.
+  - JWT with LONG expiry. No way for admin to block this approved JWT. Has access when it shouldnt.
+  - JWT with SHORT expiry. Has to refresh a lot. In the middle of one of these 'refresh' attempts, admin denies this user. Now the next JWT is denied.
+- JWTs are impractical for app auth. (e.g. web apps) The session (aka random is stored on the server. Server stores the state to understand who's behind this string.
+  - But JWTs are useful in microservices (and other APIs talking to each other). 
+  - Because JWT contains info (aka state) of who is behind the JWT. Not only who, but also what permissions this token has, aka ACL.
+  - Main here - the server does not need to store any state. JWT is the state.
+- They are fabulous when you need to cache the content for scale but restrict access. They also work on all devices, cookies are limited 
+  - Come check out token auth signed URLs. Useful if you need to revoke and work with multiple CDNs
+  - Agreed; cookies have their place, but both JWTs and session IDs can be sent via multiple avenues (cookies, headers, request bodies, URLs, etc)
+- If you're building a normal frontend, you're often much better off using traditional sessions with the session cookie being httpOnly so JavaScript does not even have access to it.
+# ref

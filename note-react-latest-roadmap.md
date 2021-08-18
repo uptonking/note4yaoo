@@ -13,9 +13,7 @@ modified: '2020-07-08T03:17:23.369Z'
   - 可以使用es6参数默认值
 - 不建议使用forwardRef，未来ref会作为props中的属性
   - 可以使用callbackRef
-
 # guide
-
 - [Basic Fizz Architecture](https://github.com/facebook/react/pull/20970)
   - Basically, we want to support suspense on the server. 
     - The simple mode would just be to wait until everything resolves and then write it. 
@@ -32,8 +30,36 @@ modified: '2020-07-08T03:17:23.369Z'
   - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
   - [React.js有哪些设计缺陷？](https://www.zhihu.com/question/316425133)
   - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
-
 # roadmap
+- ## [Remove the warning for setState on unmounted components](https://github.com/facebook/react/pull/22114)
+- why added? 
+  - If you forget the unsubscribe call, after the component unmounts you'll get a memory leak.
+- Why does this warning create problems?
+  - This(eg) will trigger the setState warning. 
+  - However, there is no actual problem here. 
+  - There's no "memory leak" here: the POST comes back, we try to set state, the component is unmounted (so nothing happens)
+
+```JS
+async function handleSubmit() {
+  setPending(true)
+  await post('/someapi') // component might unmount while we're waiting
+  setPending(false)
+}
+```
+
+- Avoiding false positives is too difficult
+- It's unfortunate because we're adding slightly more runtime overhead, slightly more code, and making the code slightly less readable — all to avoid an effectively false positive warning.
+- Bu there are other issues, too.
+  - In the future, we'd like to offer a feature that lets you preserve DOM and state even when the component is not visible, but disconnect its effects. With this feature, the code above doesn't work well. 
+- In addition, we've seen that **this warning pushes people towards moving mutations (like POST) into effects** just because effects offer an easy way to "ignore" something using the cleanup function and a flag.
+  - However, this also usually makes the code worse. 
+  - The user action is associated with a particular event — not with the component being displayed — and so moving this code into effect introduces extra fragility. 
+  - Such as the risk of the effect re-firing when some related data changes. 
+  - So the warning against a problematic pattern ends up pushing people towards more problematic patterns though the original code was actually fine.
+- Could we not remove this?
+  - In practice, direct subscriptions in components are not that common anymore. Especially now that we have custom Hooks. 
+  - They tend to be concentrated in libraries, which eventually would likely move to `useMutableSource` where appropriate anyway.
+- So the proposal is to stop compromising the common product case, and not warn at all.
 
 - ## [React v16.9.0 and the Roadmap Update](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 - Here’s what we plan to do next
@@ -78,9 +104,7 @@ modified: '2020-07-08T03:17:23.369Z'
 - Other Projects
   - Modernizing React DOM
   - Suspense for Server Rendering
-
 # discussion
-
 - time-slicing
 
 ## React Flare 
@@ -119,7 +143,6 @@ modified: '2020-07-08T03:17:23.369Z'
 - Migrate from `onChange` to `onInput` and don’t polyfill it for uncontrolled components
 - Drastically simplify the event system
 - className → class
-
 # api-experimental
 
 ## [react-cache](https://github.com/facebook/react/tree/master/packages/react-cache)

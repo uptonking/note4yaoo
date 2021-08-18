@@ -15,7 +15,9 @@ modified: '2021-05-10T04:06:02.843Z'
 # pieces
 - ## 
 
-- ## 
+- ## added live reactions to my @vercel Next.js blog
+- https://twitter.com/linuz90/status/1427690317399068685
+  - emoji表情满天飞的动画
 
 - ## I wrote a Figma plugin to help create radial systems for watch design and then made a component library for easy iteration. 
 - https://twitter.com/i_cox/status/1419044424949116931

@@ -11,7 +11,11 @@ modified: '2021-05-25T08:41:18.938Z'
 
 - ## 
 
-- ## 
+- ## How many decimal digits do you need for longitude and latitude? 
+- https://twitter.com/mourner/status/1427752107692658705
+  - [Latitude and longitude precision](https://observablehq.com/@mourner/latitude-and-longitude-precision)
+- I came to say 7 for sensitive point cloud data but the article already covered it. Great article by the way.
+- Surface area of Earth is about 510.1 trillion meters squared. 2^49 is about 562.9 trillion, so a single unsigned 49 bit integer suffices to identify a square meter.
 
 - ## using existing standards (to be defined eg laz, ept) and uniformizing octree based storage and indexation - for the web!
 - https://twitter.com/jo_chemla/status/1418233192612601856
