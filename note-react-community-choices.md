@@ -30,6 +30,11 @@ modified: '2021-07-27T10:04:07.244Z'
   - To avoid this, this library uses undocumented feature of `calculateChangedBits`. 
   - It then uses a subscription model to force update when a component needs to re-render.
 
+
+- https://github.com/edriang/use-context-selection
+  - This library was inspired by use-context-selector, but here are some key differences
+  - Internally, use-context-selection manages different set of listeners per Context, while use-context-selector stores all listeners (even for different Contexts) within a single shared Set.
+
 - ## Do you still prefer #react-intl nowadays?__201903
 - https://twitter.com/adrirai/status/1106906500054859776
 - No, maintenance on it has dropped off. A PR to update to new React context API has been open since September 2018. Maintainers have become unresponsive. Would avoid using react-intl for new projects.

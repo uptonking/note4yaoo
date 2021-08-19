@@ -15,6 +15,11 @@ modified: '2020-12-19T13:04:40.865Z'
   - Pre-render pages at build time (SSG) or request time (SSR) in a single project
   - Every component in the pages directory becomes a route.
   - Optionally create API endpoints to provide backend functionality.
+- https://github.com/jaredpalmer/after.js
+  - Next.js-like framework for server-rendered React apps built with React Router
+- https://github.com/Aslemammad/vitext
+  - The Next.js like React framework for better User & Developer experience!
+  - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
 
 - https://github.com/styfle/react-server-example-tsx
   - https://react-tsx.now.sh/
@@ -32,9 +37,6 @@ modified: '2020-12-19T13:04:40.865Z'
 - https://github.com/redfin/react-server
   - React framework with server render for blazing fast page load and seamless transitions between pages in the browser.
   - React Server is now defunct. Consider Next.js instead.
-
-- https://github.com/jaredpalmer/after.js
-  - Next.js-like framework for server-rendered React apps built with React Router
 
 - https://github.com/alibaba/beidou
   - Isomorphic framework for server-rendered React apps

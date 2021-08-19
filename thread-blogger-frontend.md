@@ -41,7 +41,7 @@ modified: '2021-02-09T19:27:01.319Z'
     - https://github.com/benmvp/migrate-react-hooks-minishop
 
 - 全栈潇晨
-  - react源码解析
+  - react源码解析系列文章和视频教程，但未发布github
   - https://www.zhihu.com/people/qbtqiuqiu/posts
   - https://xiaochen1024.com/
 # web-stars

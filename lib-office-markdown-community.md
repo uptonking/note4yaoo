@@ -61,8 +61,6 @@ modified: '2021-06-02T15:26:39.741Z'
   - I don't have a lot of personal experience with this, but my sense is that it locks you in to these systems, in exchange for WYSIWYG and no-code editing. 
   - In a way, structured content is what would happen if your writing is entirely made up of data inside shortcodes.
 
-
-
 - ## Markdown编辑器 做成 WYSIWYG（所见即所得）形式会不会有什么弊端？
 - https://www.zhihu.com/question/47789842
 - 这取决于你如何看待 Markdown：
@@ -152,15 +150,55 @@ export default FrontPage
 # discuss
 - ## 
 
+- ## 
 
 - ## 
 
+- ## Joplin Note: Alternative markup like Asciidoc
+- https://discourse.joplinapp.org/t/alternative-markup-like-asciidoc/2059
+- Joplin is really built around Markdown so alternative markups will not be supported. However it might be possible to add the features you need via markdown plugins.
+- Yes I see what you mean but this is currently not an objective as it would be complicated to support multiple markups, and it’s not something that we do and it’s done - it’s a lot of complexity that we’ll have to deal with permanently afterwards. It’s not just rendering, there are other parts of the code that expect Markdown. For example:
+  - There’s a service that index the resources used by notes - to do that we need to parse the Markdown note.
+  - Likewise, there’s a TOC popup that is planned and it will be built based on the markdown text.
+  - The search engine indexing most likely will need to be tweaked for each markup.
+  - We could have a tool that helps creating Markdown tables.
+  - When we import Markdown file, currently we just copy the text to the note. But if we support multiple markup, it would be logical to convert the MD text to the currently active markup.
+- Now every time we change something to these parts of the code, it will have to be updated x times, for each supported markup. There are several other examples like this. So that’s why in this case it makes sense to restrict the scope of the project to allow building other useful features.
+- Asciidoc is a superset of Markdown, even with flavors, so with a fixed Markdown flavor it is feasible to convert from Markdown to Asciidoc
 
-- ## 
+- ## Reasons to not use Asciidoc as a foundation for a software documentation language__202002
+- https://www.eclipse.org/lists/asciidoc-wg/msg00003.html
+- After many years using Asciidoc in larger projects, I have come to the conclusion that Asciidoc is not a good foundation for writing technical documentation though. Some reasons are:
+1. The syntax is not consistent. There are different syntax constructs for different things. 
+  - E.g., setting parameters for certain elements does not follow a single concept. 
+  - In some cases a dot is used as prefix, sometimes not, in other cases assignments are used ([.xxx] vs. [xxx] vs. [xxx=yyy]). 
+  - And the “+” sign at the end of a line is really a pretty bad idea.
+2. The syntax is not intuitive nor readable. 
+  - The Github flavored markdown spec contains a nice comparison of Asciidoc vs markdown. 
+  - I think the example is self-explaining.
+3. There is no clear definition of blocks and nesting. 
+  - This makes it really hard for longer texts to write and read. Some things can be nested, others cannot — very confusing.
+4. The output cannot be split-up into multiple HTML files. 
+  - This is a severe issue when it comes to really long documents, which could easily be the case for specifications. 
+  - You can see the difference here: While the first one needs quite some time to load, the latter loads very fast. I wrote the split-up tool myself, see below as well.
+5. PDF output is not acceptable. For example, footnotes are not supported. Overall the PDF quality is very poor. 
+  - So if you use Asciidoc, you are limited to HTML. 
+  - As a site note: Also epub is not supported.
+6. Important features for technical documents and specifications are missing, such as special numbered blocks, e.g., for requirements, examples etc. 
+  - As a consequence no list of these special blocks, such as list of requirements, list of examples etc., can be created.
+7. Linking is an issue. 
+  - In particular for documenting software projects, it would be crucial to refer to code (e.g., in the source code repository).
+- Issues 4 to 7 may be solved with newly written tools — however that would require a lot of effort, basically writing a new Asciidoc processor from scratch. 
+  - But then there are still the issues 1 to 3, which cannot be solved except for simply not using Asciidoc.
+- In the Eclipse N4JS project, we have used Asciidoc (and Asciidoctor) for quite some time. 
+  - n order to understand why I would not use Asciidoc in the future, simply have a look at some of the Asciidoc sources linked above — they are very hard to read, aren’t they?
+- Instead of establishing an AsciiDoc Working Group, I would recommend to establish an (Eclipse) Markdown Working Group
+  - Markdown is better readable, and it would be possible (as a working group at Eclipse) to define a defined set of extensions (similar to the Github flavor md), a clear definition of blocks (via indention for example) and other things. 
+  - I would strongly recommend to not use Asciidoc as a base for a software documentation language due to the problems described above. 
 
-
-
-
+- ## MyST markdown provides a markdown equivalent of the reStructuredText syntax, meaning that you can do anything in MyST that you can do with reStructuredText
+- https://twitter.com/simonw/status/1272744281531285504
+  - 
 
 - ## HOW TO ESCAPE A BACKTICK WITHIN A CODE BLOCK IN MARKDOWN
 - https://www.danvega.dev/blog/2019/05/31/escape-backtick-markdown/

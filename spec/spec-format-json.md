@@ -22,7 +22,7 @@ modified: '2020-10-15T13:41:01.275Z'
   - json5 vs hjson
     - stars: 4.3k vs 2.2k
     - npmtrends: 36m > 0.17m
-- geo
+- gis-json
   - geojson
   - topojson
 - json-more

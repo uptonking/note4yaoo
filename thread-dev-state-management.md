@@ -10,6 +10,15 @@ modified: '2021-02-28T07:29:07.622Z'
 # repeat
 <!-- #region /folded state-repeated -->
 
+- ## Believe it or not, most my effort in @ReactJS global state libs is to _avoid_ selectors that are only required for render optimization. It just didn't feel a good abstraction.
+- https://twitter.com/dai_shi/status/1428155847536873479
+- for redux: reactive-react-redux, proxy-memoize
+- for context: react-tracked, jotai
+- for module state: react-hooks-global-state, valtio
+- use-context-selector and zustand are out of this category.
+- While, at the same time, I learned people like "selectors" abstraction very much.
+- btw, react-tracked is not only for context, it provides an API for react-redux and zustand too.
+
 - ## The motivation I develop global state libraries is to avoid selector interface that are only required for render optimization.
 - https://twitter.com/dai_shi/status/1373607985033871363
   - It depends on object ref identity which is a hard concept for beginners.
@@ -73,13 +82,13 @@ modified: '2021-02-28T07:29:07.622Z'
 - ## "Refactor away your useEffects with XState"
 - https://twitter.com/mpocock1/status/1407983384509435907
   - Anyone experienced that wonderful feeling where you can chuck away a bunch of useEffects and model them as invoked services?
-- TBF I quite like keeping the useEffect simple and letting the machine handle the event itself. If you must use a `useEffect`, at least with `XState` you don't have to put any logic in it
+- TBF I quite like keeping the useEffect simple and letting the machine handle the event itself. If you must use a `useEffect` , at least with `XState` you don't have to put any logic in it
 - 
 - 
 
 - ## PSA: react-query is Promise based - it doesn't care about network requests, status codes and the likes. 
 - https://twitter.com/TkDodo/status/1407343307047452684
-  - `Promise.resolve(5)` and `Promise.reject("oh noes")`will do just fine, especially for an issue reproduction
+  - `Promise.resolve(5)` and `Promise.reject("oh noes")` will do just fine, especially for an issue reproduction
 - Would you advise using promises for test mocks as well?
 
 - ## what data do you keep in your store that was not loaded from a backend (and was not received from the URL)? I.e. data that "only" lives in your frontend store? 

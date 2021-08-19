@@ -1,18 +1,23 @@
 ---
-title: note-react-alternatives
-tags: [alternatives, react]
+title: note-react-alternatives-rewrite
+tags: [alternatives, react, rewrite]
 created: '2020-12-12T09:10:55.449Z'
-modified: '2020-12-12T09:11:07.197Z'
+modified: '2021-08-19T06:12:33.168Z'
 ---
 
-# note-react-alternatives
+# note-react-alternatives-rewrite
 
+# guide
+
+- react alternative/like/mini/clone
+  - js: preact, didact, fre.v1, luy, mini-react
+  - ts: inferno, nerv
 # react-alternatives
 
 ## preact
 
 - https://github.com/preactjs/preact
-  - /27.8kStar/MIT/202011/js
+  - /27.8kStar/MIT/202108/js
   - Fast 3kB React alternative with the same modern API. Components & Virtual DOM.
 
 - API
@@ -69,10 +74,10 @@ modified: '2020-12-12T09:11:07.197Z'
 - `useCallback` is just useMemo under the hood
   - `const useCallback = (callback, args) => useMemo(() => callback, args); `.
 
-## Inferno
+## inferno
 
 - https://github.com/infernojs/inferno
-  - /14.6kStar/MIT/202011/ts
+  - /14.6kStar/MIT/202108/ts
   - An extremely fast, React-like JavaScript library for building modern user interfaces
 
 - React has a fully synthetic event system, whereas Inferno only supports partial synthetic events, including certain functions such as onClick. 
@@ -93,11 +98,43 @@ modified: '2020-12-12T09:11:07.197Z'
   - Unlike React, Inferno does not support Hooks, Memo, suspense, or lazy to keep the library compact. However, you can keep considering these features while writing in Inferno. 
   - The setState works synchronously. 
   - To use any of the React components, you first need to write and use a React component.
+# react-src-code
+- https://github.com/BetaSu/just-react
+  - https://react.iamkasong.com/
+  - React技术揭秘」 一本自顶向下的React源码分析书
+- https://github.com/BetaSu/react-on-the-way
+  - /364Star/202007/js
+  - 基于V16.13.1，从0实现React
+  - v1 Render-Commit整体架构体系, HostComponent的首屏渲染
+  - v2 FunctionComponent类型组件的首屏渲染, hook架构体系
+  - v3 useState hook对单一HostComponent的状态更新
+  - v4 实现了React Diff算法，可以更新多个兄弟子节点了
+  - v5 实现useEffect hook首屏及再次渲染的完整逻辑
+  - v6 之前的版本中，我们都是同步执行render流程；为产生的update赋予一个优先级，高优先级的update会优先进入render流程。
 
+- https://github.com/LuSuguru/fake-react
+  - /75Star/202007/ts
+  - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能
+  - 还提供了源码解析系列文档，有28个文档
+- https://github.com/AttackXiaoJinJin/reactExplain
+  - React源码解析16.8.6
+
+- https://github.com/AttackXiaoJinJin/reactExplain
+  - React源码解析，还发布了掘金系列文章
+
+- react核心源码解析__全栈潇晨
+  - [知乎专栏发布](https://www.zhihu.com/column/c_1345788302880878592)
+  - [react源码解析19. 手写迷你版react](https://zhuanlan.zhihu.com/p/383433662)
+  - [个人网站的视频课程 需注册](https://xiaochen1024.com/series/60b1b600712e370039088e24)
 # react-like-repos
+- https://github.com/pomber/didact
+  - /3.8kStar/MIT/202010/js
+  - [A DIY guide to build your own React](https://pomb.us/build-your-own-react/)
+- https://github.com/manasb-uoe/didact
+  - Typed version of didact
 
 - https://github.com/NervJS/nerv
-  - /5.3kStar/MIT/202006/ts
+  - /5.3kStar/MIT/202006/ts/inactive
   - Nerv is a virtual-dom based TypeScript library with identical React 16 API
     - higher performance, tinier package size and better browser compatibility.
     - Support React 16 features, Error Boundaries, Portals, custom DOM attributes, etc.
@@ -107,7 +144,7 @@ modified: '2020-12-12T09:11:07.197Z'
     - for Nerv, compatible with React is our main goal, by doing that, we can sacrifice performance and size.
 
 - https://github.com/yisar/fre
-  - /1.5kStar/MIT/202010/ts
+  - /1.5kStar/MIT/202004/js-v1/ts-v2
   - Tiny React-like framework with Time slicing and Algebraic effects.
   - currently no support for the class-based Component API
   - preact准确来说是 react15-like，你可以用它代替react来用，但是不存在【通过preact源码看react源码】
@@ -119,6 +156,30 @@ modified: '2020-12-12T09:11:07.197Z'
 - https://github.com/RubyLouvre/anu
   - /3.1kStar/MIT/202002/js
   - the React16-compat library with hooks
+
+- ts实现
+
+- https://github.com/zerrol/ts-react
+  - 用typescript写的react
+- https://github.com/SamChou19815/mini-react
+  - Sam's Implementation of a simplified React for educational purpose
+  - It should be simple enough so that I could teach it to an average developer in less than two hours.
+  - 勉强能用，部分实现useState, useEffect
+- https://github.com/vutran1710/WriteYourOwnReact
+  - Fiber reconciliation - not perfect, but generally it works.
+  - 勉强能用，未实现：hooks、class lifecycle methods
+- https://github.com/huihao/fake
+  - fake react
+- https://github.com/djwxfdt/react-source-doc
+  - 用typescript重写react源码，逐行写上阅读理解，支持直接调试。
+  - 任务调度（scheduler）	已完成
+  - 协调（react-reconciler）	进行中
+
+- js实现
+
+- https://github.com/alan-oliv/mini-react
+  - a library built to basically study fiber algorithm and implementation
+  - mini-react, mini-react-dom, mini-react-reconciler
 - https://github.com/djalbat/reaction
   - An alternative implementation of React.
   - 不支持hooks
@@ -130,8 +191,14 @@ modified: '2020-12-12T09:11:07.197Z'
   - a tiny react-like library, just for fun, in 2017
 - https://github.com/z81/kekjs
   - React like UI library
+- https://github.com/jackiewillen/build-your-own-react
+  - 手把手带你用85行代码实现一个React.js
+  - [Build Your Own React__201705](https://hackernoon.com/build-your-own-react-48edb8ed350d)
 
 ## react-api-like
+
+- https://github.com/suchipi/concubine
+  - concubine provides the framework necessary to create a "Hooks" system with full TypeScript typings, like the one React uses.
 
 - Crank
   - Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.
@@ -164,7 +231,8 @@ modified: '2020-12-12T09:11:07.197Z'
 - https://github.com/alephjs/aleph.js
   - The React Framework in Deno.
 
+- https://github.com/hellopao/mpreact
+  - react like framework for wechat mini program
 # ref
-
 - [Best React-like JSX UI libraries in 2020_202007](https://areknawo.com/best-react-like-jsx-ui-libraries-in-2020/)
 - [6 Best Alternatives to ReactJS_202007](https://www.bacancytechnology.com/blog/best-react-js-alternatives)

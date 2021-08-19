@@ -19,7 +19,12 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## We're experimenting with a page transition API in Chrome. 
+- https://twitter.com/jaffathecake/status/1427656326172262400
+  - It's just for SPAs right now, but you can use it on real sites via an origin trial.
+  - [Smooth and simple page transitions with the shared element transition API](https://developer.chrome.com/blog/shared-element-transitions-for-spas/)
+- I tried to come up with a fully featured CSS version and ended up with like 20 new properties and I wasn't even close.
+  - There may be a CSS version of this, but it'd be a subset of the full capability.
 
 - ## What's the difference between window.location and document.location in JavaScript?
 - https://stackoverflow.com/questions/2430936

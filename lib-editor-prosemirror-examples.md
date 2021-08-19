@@ -20,7 +20,7 @@ modified: '2021-07-20T02:15:25.917Z'
   - start-editor, jcmnunes-bc-editor(md), zeditor
   - y-prosemirror, NotionEditor(toy)
 - **react-first**
-  - rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror, xkeditor-next(r-m-e)
+  - rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror(coko wax editor), xkeditor-next(r-m-e)
   - curvenote-editor(redux), czi-prosemirror(201906), licit(word), perry-white(newspaper)
   - Aditor, smartblock(202003), xen-editor(vanillajs为主，代码不多)，nib-edit(高级功能未开源如comment/collab)
 - more-editor

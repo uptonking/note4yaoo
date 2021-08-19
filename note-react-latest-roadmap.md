@@ -61,6 +61,15 @@ async function handleSubmit() {
   - They tend to be concentrated in libraries, which eventually would likely move to `useMutableSource` where appropriate anyway.
 - So the proposal is to stop compromising the common product case, and not warn at all.
 
+- I'd say the worst case is people putting mutations in effects (and then have them over-fire), which we're seeing quite widely.
+  - This warning alone probably won't save you from a memory leak either. 
+  - In practice they're often subtle and hard to diagnose without special expertise. 
+  - What's worse, it seems like this warning has given many developers a wrong idea of what a memory leak even is.
+- None of the cases discussed in this thread have any relation to data fetching. 
+  - They're about mutations — sending a form, posting a message, and so on. 
+  - **Mutations belong in the event handlers, while regular data fetching, like you say, usually belongs in lifecycles/effects**. Nothing has changed here.
+- The only case for which the warning is useful is when you have an API like addEventListener + removeEventListener. 
+
 - ## [React v16.9.0 and the Roadmap Update](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
 - Here’s what we plan to do next
 - One Release Instead of Two

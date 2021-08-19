@@ -12,7 +12,11 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Has someone made a JSX editor yet where you can “expand” JSX tree nodes into function definitions inline?
+- https://twitter.com/dan_abramov/status/1428137070388826112
+  - Same for function calls, really. Just give me a nested rectangle with the source right at the callsite. Let me close/collapse it when I don’t care.
+  - apparently VS Code has this ("peek definition"), it's just *not* the popup that appears on hover. The hover one is read-only.
+- Doesn't VSCode already do this?
 
 - ## Polymorphism is such a headache. So basically, remove support for `as` prop
 - https://twitter.com/peduarte/status/1424032229659979778

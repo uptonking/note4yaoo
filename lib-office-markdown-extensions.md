@@ -15,13 +15,20 @@ modified: '2021-06-02T15:26:19.890Z'
 
 - markdown-extensions
   - mdx
-  - [readmeio-markdown](https://github.com/readmeio/markdown)
-  - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
   - [R Markdown](https://rmarkdown.rstudio.com/)
   - [MyST(Markedly Structured Text)](https://github.com/executablebooks/markdown-it-myst)
     - who is using: curvenote
-    - MyST is a rich and extensible flavor of Markdown meant for technical documentation and publishing.
+    - MyST is a rich and extensible flavor of Markdown.
     - MyST is inspired by Sphinx, and comes with its own Sphinx parser.
+    - MyST markdown provides a markdown equivalent of the reStructuredText syntax
+  - [kramdown](https://github.com/gettalong/kramdown)
+    - kramdown is a fast, pure Ruby Markdown superset converter
+    - input formats: kramdown (a Markdown superset), Markdown, GFM, HTML
+    - output formats: HTML, kramdown, LaTeX (and therefore PDF), PDF via Prawn
+    - https://github.com/asciidoctor/kramdown-asciidoc
+      - a kramdown extension for converting Markdown documents to AsciiDoc. 
+  - [readmeio-markdown](https://github.com/readmeio/markdown)
+  - [jsxtreme-markdown](https://github.com/mapbox/jsxtreme-markdown)
   - [vfm(Vivliostyle Flavored Markdown (VFM))](https://github.com/vivliostyle/vfm)
     - a Markdown syntax optimized for book authoring. 
     - It is standardized and published for Vivliostyle and its sibling projects.

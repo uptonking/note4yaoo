@@ -23,6 +23,21 @@ modified: '2021-01-04T17:05:20.422Z'
 - ref
   - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
 # guide
+- ## [React Context without Provider + useMutableSource](https://dev.to/aslemammad/react-context-without-provider-usemutablesource-4aph)
+  - https://codesandbox.io/s/usemutablesource-react-context-spyhu
+  - 自己实现了useMutableSource
+
+- Think of tearing as something like if we have a value(state) that A and B read from it, but somehow in the rendering, the value changes. 
+  - The B component is later than A, So in Rendering, the value in the A component is 0, and in the newer component (B), the value is 1. We call this tearing; 
+  - it means you see two different values in the viewport from one exact source. 
+  - It's a new and hard to understand implementation in React concurrent mode
+
+- I just wonder, if I don't want to use redux, can I use this approach for any "global" state? I'm aware that react-redux uses this internally. Currently hook stores the memorized state locally under each fiber. With this approach, I wonder where the store is placed.
+  - Yes, you can use this approach, And I use it in my projects. Or you can use the better version of it, which we work on, jotai.
+  - The store lives in a simple object, but we attach some useStates to it basically when we use uMS, so when it changes, we call those useStates(setStates) in the components. So no wasteful renders like React Context. Just your subscribed component is going to be changed.
+- couldn't this behavior be achieved with way less code using RxJs and Observables?
+  - every solution has some trade-offs, I just made a vanilla fast solution with uMS, but if you can merge the observables solution with uMS, why not, it would be great. The point of this article is teaching uMS
+
 - ## [pr: useMutableSource (merged但不推荐使用此API_202011)](https://github.com/reactjs/rfcs/pull/147)
 - useMutableSource makes it so that you don’t have semantic breakages due to tearing. 
   - However it will still deopt all concurrent mode features when it happens. 

@@ -146,15 +146,31 @@ modified: '2020-07-14T11:03:53.196Z'
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
 # react
-- unstated-next /3.5kStar/MIT/202005/ts
-  - https://github.com/jamiebuilds/unstated-next
-  - 封装很少，无selector
-  - 200 bytes to never think about React state management libraries ever again
-- constate /3.3kStar/MIT/202103/ts
+- react-redux-useMutableSource
+  - https://codesandbox.io/s/react-redux-usemutablesource-eyxoe
+- mut /7Star/MIT/202008/ts
+  - https://github.com/snakeUni/mut
+  - state management library based on Immer and useMutableSource
+  - if useMutableSource is available then use useMutableSource otherwise use useSubscribe
+- https://github.com/jaredpalmer/mutik
+  - A tiny (495B) immutable state management library based on Immer
+  - Mutik uses the recently-merged useMutableSource hook internally.
+
+- constate /3.4kStar/MIT/202106/ts
   - https://github.com/diegohaz/constate
   - 根据selector自动拆分成多个context，需要比较 创建多个context的消耗 和 使用useMemo的消耗
   - 使用selector自动创建的context是嵌套的，注意嵌套地狱
   - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
+- unstated-next /3.5kStar/MIT/202005/ts
+  - https://github.com/jamiebuilds/unstated-next
+  - 封装很少，无selector
+  - 200 bytes to never think about React state management libraries ever again
+
+- react-hooks-global-state /MIT/473Star/202007
+  - https://github.com/dai-shi/react-hooks-global-state
+  - Simple global state for React with Hooks API
+  - [Steps to Develop Global State for React With Hooks Without Context](https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/)
+  - [v2] new implementIation with useMutableSource
 - recoil /MIT/7.9kStar/202007/js
   - https://github.com/facebookexperimental/Recoil
   - https://recoiljs.org/
@@ -169,11 +185,6 @@ modified: '2020-07-14T11:03:53.196Z'
   - state resides with React, getting full benefits from suspense and concurrent mode
   - How does Jotai differ from Recoil?
     - No string keys. TypeScript oriented. Minimalistic API
-- react-hooks-global-state /MIT/473Star/202007
-  - https://github.com/dai-shi/react-hooks-global-state
-  - https://blog.axlight.com/posts/steps-to-develop-global-state-for-react/
-  - Simple global state for React with Hooks API
-  - [v2] new implementation with useMutableSource
 - react-tracked /MIT/645Star/202006
   - https://github.com/dai-shi/react-tracked
   - https://react-tracked.js.org/docs/comparison
@@ -259,6 +270,9 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/alexmdodge/ts-state-machine
   - A package with a simple state machine for the purpose of learning
 # more-state
+- https://github.com/regionjs/region-core
+  - region-core is a progressive View Model Management Framework. 
+  - You can use it while using react state, redux, and benefit from it.
 - Valoo: just the bare necessities of state management.
   - https://gist.github.com/developit/a0430c500f5559b715c2dddf9c40948d
 - bloc /MIT/4.9kStar/202007/dart

@@ -10,6 +10,15 @@ modified: '2021-08-14T07:08:11.957Z'
 # guide
 
 # discuss
+- ## I had asked in the React 18 Working Group about the status of the "context selectors" PR
+- https://github.com/reactwg/react-18/discussions/73
+- Andrew just replied (paraphrased):
+  - "Lazy propagation" showed mild perf+
+  - API design is the blocker
+  - Busy with React 18 release work now
+  - Likely 18.x minor
+- It's not an active area of research right now, unfortunately — we're too busy with other 18 stuff, for now.
+
 - ## `unstable_useContextSelector`: What's the point if `useMutableSource` is available too? It's really easy to create a custom event emitter.
 - https://twitter.com/sebastienlorber/status/1412852844437413902
 - useMutableSource is "level 2". 

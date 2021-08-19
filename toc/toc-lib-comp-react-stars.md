@@ -100,6 +100,7 @@ modified: '2021-01-12T18:49:02.623Z'
   - Drawer built with react-motion
 - https://github.com/dai-shi/react-hooks-global-state
   - Simple global state for React with Hooks API without Context API
+  - [v2] new implementation with useMutableSource 
 - https://github.com/markusenglund/react-kanban
   - A Trello-like application built with React and Redux.
 - https://github.com/nukeop/react-ui-cards
