@@ -15,6 +15,18 @@ modified: '2021-05-10T04:06:02.843Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Use animations to reward users and make your UX memorable
+- https://twitter.com/d__raptis/status/1428677206369263622
+- But never at the expense of higher-priority requests/bugs. 
+  - I remember using a system that had a backlog of bugs but added falling snow to the UI around the winter holidays. 
+  - It was infuriating to see dedicated effort towards that at the expense of what was needed at the time.
+
 - ## added live reactions to my @vercel Next.js blog
 - https://twitter.com/linuz90/status/1427690317399068685
   - emoji表情满天飞的动画

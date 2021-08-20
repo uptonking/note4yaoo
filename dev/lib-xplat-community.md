@@ -13,7 +13,12 @@ modified: '2021-05-13T07:47:11.964Z'
 
 - ## 
 
-- ## 
+- ## #RN4Desktop "delivers huge performance wins" over Electron and combines high quality, delightful, _native_ UX and dev experience. 
+- https://twitter.com/ReactNativeMSFT/status/1428463475668389891
+- This is what happens when components are allowed to be independent, not vendor controlled & web bound. 
+  - Electrons days are practically numbered once desktop platform renderers are stable. 
+  - A future in which you can drive any platform and participate in a truly x-platform eco-system
+- Do you think we will see a wegl render for desktop like expo made for mobile any time soon? If we could run reac three fiber native on desktop within react native desktop that would be huge
 
 - ## 分享下跨端引擎的一般实现思路
 - https://www.zhihu.com/pin/1375839930619396097

@@ -18,7 +18,15 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## is there any harm in adding a class to an element that already has that class using classList.add
+- https://stackoverflow.com/questions/51214589
+- 浏览器执行.add时会自动去重，所以业务js中不必自己用if判断一次
+- The .classList property is a DOMTokenList object.
+  - It represents a set of whitespace-separated tokens.
+  - The tokens (i.e. the class names) are case-sensitive.
+  - a set cannot contain duplicates.
+  - All methods that read or modify the DOMTokenList (such as DOMTokenList.add()) automatically trim any surrounding whitespace and remove duplicates from the set.
+  - Meaning that if you try to add() the same className twice, it won't add the duplicate.
 
 - ## [why does (undefined && true) return undefined?](https://stackoverflow.com/questions/22767602)
 

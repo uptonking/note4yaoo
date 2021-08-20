@@ -27,7 +27,9 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## Do I understand correctly that "Custom Elements" (JavaScript classes extending HTMLElement) can not take constructor arguments and _have_ to be initialized in the god-awful imperative DOM way of setting attributes/properties one by one?
+- https://twitter.com/MarijnJH/status/1428678081255022593
+- If it’s useful, Object.assign(elements, attributes) can set multiple attributes at once.
 
 - ## I wrote about my favorite HTML element `<dl>` . dl>dt/dd 注意dd会缩进
 - https://twitter.com/BenDMyers/status/1423708549750956037

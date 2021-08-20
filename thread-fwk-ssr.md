@@ -49,7 +49,14 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## To help categorize different Server Rendering JS Frameworks and how they sit relative to each other I made a chart. 
+- https://twitter.com/RyanCarniato/status/1428582141185597447
+  - 横轴 spa -> mpa; 纵轴 ssg -> ssr
+  - Some do extend out of their primary zones but I still think this is illustrative.
+- Generally, all SSR frameworks support SSG even if it isn't their primary focus. 
+  - And Quadrant 1 is way busier than the graphic shows as that is where the majority of Server Rendering JS frameworks sit. 
+  - But there are few clear different types of frameworks here.
+- I've written a few about this. More so focusing on JavaScript centric solutions. These frameworks all feel like you are writing client-side apps that happen to just render on the server. And techniques they use to minimize JS sent to the browser.
 
 - ## Next.js has been doing SSR since October 2016. Plenty of successful SSR apps at scale like tiktok.com and trulia.com 
 - https://twitter.com/rauchg/status/1424163068620075010

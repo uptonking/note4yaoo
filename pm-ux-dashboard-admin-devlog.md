@@ -31,7 +31,10 @@ modified: '2021-08-08T08:39:17.347Z'
 
 - 配置左侧边栏
   - width，配置宽度容纳更长文本，甚至支持拖拽修改宽度
-  - mini-sidebar icons: 只显示一级菜单的icon
+  - [ ] 在full变成mini-sidebar后，不会自动变full；但mini变成full后，仍会自动变mini
+  - [x] mini-sidebar icons: 只显示一级菜单的icon
+  - 从大屏幕到小屏幕，~~sidebar样式依次为 .full空 > .mini > .mini.show-sidebar~~，注意空样式名
+  - 响应式侧边栏的测试点：resize viewport(auto), 点击汉堡菜单(full2mini)，右侧配置面板
 
 - 配置右侧配置面板
   - dockable
