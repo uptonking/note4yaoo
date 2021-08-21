@@ -35,6 +35,8 @@ modified: '2021-06-02T15:26:19.890Z'
   - [Idyll markup](https://idyll-lang.org/docs/syntax)
     - The main extensions are reactive variables, and components. 
     - Together these two elements can be used to create dynamic, interactive articles.
+- more-format-references
+  - [Org mode for Emacs](https://orgmode.org/)
 
 - markdown-files-suffix
   - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron"]

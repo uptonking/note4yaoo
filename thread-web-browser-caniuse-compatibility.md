@@ -19,6 +19,31 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The Safari onLoad event handler for the assets works differently from Chrome and Firefox. 
+- https://twitter.com/bruno__quaresma/status/1428846800631435264
+  - If the asset is already loaded on cache, the onLoad event will not 
+
+- ## macOS Big Sur started hiding scrollbars. Here's why I think it's bad and what we can do about it.
+- https://twitter.com/dluzar/status/1428758952389533700
+  - Apple introduced automatic scrollbar hiding which is enabled by default when no mouse peripheral is connected. 
+  - This not only applies to the system scrollbars, but to websites as well.
+- Scrollbars serve two purposes. 
+  - One is obviously to allow you to scroll content. 
+  - The other is to indicate whether there is more content to be scrolled to.
+  - Apple decided that since you can use a trackpad there's no need for scrollbars, completely ignoring the second aspect.
+- The best thing about it is, the Mac OS scrollbar autohiding doesn't apply to custom scrollbars. It's unclear how long this will remain the case.
+  - You can style it as you want, but there are couple of downsides.
+  - First, you can't replicate the browser look because the scrollbar arrows are hidden when using these CSS rules.
+  - Second, it doesn't work in Firefox (they instead implement `scrollbar-color` and `scrollbar-width` that in turn no one else does — and it doesn't fix the autohiding).
+- Since most devs use macOS, they may not even be aware that their sites could have potentially broken layout on Windows where scrollbars are visible by default.
+- Another problem is unnecessary layout changes when the scrollbar shows. 
+  - Luckily `scrollbar-gutter` is on the horizon
+  - 但所有浏览器都不支持 scrollbar-gutter (202108)
+
 - ## We're experimenting with a page transition API in Chrome. 
 - https://twitter.com/jaffathecake/status/1427656326172262400
   - It's just for SPAs right now, but you can use it on real sites via an origin trial.

@@ -15,7 +15,37 @@ modified: '2021-05-23T10:17:05.993Z'
 
 - ## 
 
-- ## 
+- ## Announcing "A future for SQL on the web"
+- https://twitter.com/jlongster/status/1425825714788503552
+  - [A future for SQL on the web](https://jlongster.com/future-sql-web)
+  - https://github.com/jlongster/absurd-sql
+- absurd-sql adds a backend to sql.js (already a great project) to allow it to persist data to a storage backend. That means you can use it to write real apps!
+- It's blazingly fast compared to IndexedDB.
+- You can ditch any of those IndexedDB wrappers. Just use SQLite!
+  - The *only* downside is that you have to download a 1MB WASM file. 
+  - But remember - browsers parse WASM incredibly fast, and even cache compilation so it's only done once!
+- You can run my benchmark demo here
+  - https://priceless-keller-d097e5.netlify.app/
+- Is IndexedDB's durability a problem? Yes, absolutely. 
+  - Browsers do not guarantee that your data will last forever -- they may delete it under certain circumstances which sucks.
+  - We *really* need better storage APIs for the web.
+- This abstracts away the storage backend -- unlike IndexedDB, you're not locked in
+- Another thing I learned: wow Chrome's IndexedDB implementation is bad, which sucks because it's the major browser
+  - It's consistently TWICE as slow as Safari or Firefox
+- I should also mention another project which is similar
+  - https://github.com/rhashimoto/wa-sqlite
+  - It allows you to write any custom VFS that you want!
+  - It makes different tradeoffs and lacks the same optimizations, but that's ok!
+- Great work by @jlongster : compile SQLite to WebAssembly, use IndexedDB for persistence, and you get a feature-rich and fast client-side database for the web!
+
+- I enjoyed the write up, though I didn't understand some of the benchmarks. It uses IndexDB for persistence, but is faster than indexDB? Or is it faster for operations when it doesn't need to access IndexDB?
+  - It stores stuff in IDB, but since it's working with blocks of data, the amount of reads/writes is drastically reduced, so the equivalent query is much faster in SQL than IDB
+
+- In chrome there is a filesystem api one can use that should be faster than indexedDB. 
+  - https://github.com/random-access-storage/random-access-chrome-file
+  - Already tried. Can't get it to match IDB's performance with long-lived transactions
+
+- According to the MDN pages, Safari doesn't appear to support the Atomics API. Is that a dealbreaker for absurd-sql?
 
 - ## I honestly just feel kinda embarrassed for people still arguing about ActiveRecord.
 - https://twitter.com/taylorotwell/status/1420402348216786950

@@ -14,6 +14,34 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
+- ## The billion dollar Google Chrome extension club: Loom , Honey, Grammarly 
+- https://twitter.com/gregisenberg/status/1428796608561483785
+  - These companies started as Chrome Extensions and created billions of value
+- https://www.loom.com/
+  - Record quick videos of your screen and cam. 
+- https://www.joinhoney.com/
+  - Honey helps you find coupon codes on 30, 000+ sites.
+- https://www.grammarly.com/
+  - Compose bold, clear, mistake-free writing with Grammarly’s AI-powered writing assistant
+
+- Chrome Extensions are underrated
+  - People barely uninstall extensions
+  - Barrier to install is low
+  - Extensions are "always on"
+  - People pay for many of them  
+
+- B2C products win by lowering friction. Huge dif b/w opening an app vs the value in your face, wherever you go. Why we’re building @useFluent . Extensions are just the start, we’re doing this on *every* tech platform, and gamifying your entire consciousness
+
+- Chrome extensions are great micro-micro-saas opportunities
+
+- We are working on an extension platform for companies to customize the apps their employees live in!
+  - https://extension.dev/
+- Now you can build chrome extensions without code
+
+- ## Had a devious(不直接的，迂回的；欺诈的) thought: that SQLite.js trick where you host the DB file statically on GitHub pages? 
+- https://twitter.com/simonw/status/1428843031134834689
+  - You could totally handle writes to the DB if you wrote to a CSV file using the GitHub API and then ran an Action to rebuild and redeploy the database file
+
 - ## Current status - I'm blindly copying over zooming-in-math from Excalidraw's codebase like it's Stack Overflow
 - https://twitter.com/mpocock1/status/1423231925007826945
 - Implementing this well is annoying for sure, not the zooming logic only. A nice dependency free lib for managing zoom logic, gesture handling would be 👌. Zoom to content, zoom to mouse, smart scroll bars for infinite surfaces, & hooks for interrupting optimistic tool gestures too

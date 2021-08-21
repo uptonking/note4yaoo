@@ -39,7 +39,15 @@ modified: '2021-04-28T20:54:58.126Z'
 - 还可考虑直接用 `<span style={{cursor:'pointer'}}> icon </span>` ；此时闪烁绿框范围较小
 
 - ## react.lazy 批量动态导入pages文件夹下的所有react组件
-  - 使用ErrorBoundary组件包裹Suspense，可以显示其他正常组件，在动态导入失败的位置显示ErrorBoundary的fallback组件
+
+> 20210821又碰到此问题
+
+- 原因是文件名写错了，默认拼接成的组件地址为 index.tsx，而不是index.ts
+- 一个文件组件动态导入出错，导致了Suspense的RoutingPagesErrorBoundary错误在其他路由也占据页面，影响判断
+
+------
+
+- 使用ErrorBoundary组件包裹Suspense，可以显示其他正常组件，在动态导入失败的位置显示ErrorBoundary的fallback组件
 - 原因是以异步方式定义的变量，不能直接马上使用它的值，实际执行时的数据类型也可能是异步返回值的类型
   - 动态导入每个组件后，不能马上 `route.component = LazyLoadedComp`
 

@@ -9,13 +9,16 @@ modified: '2021-02-09T19:27:07.664Z'
 
 # d3-notebook
 
+- Taras Novak
+  - https://github.com/RandomFractals
+  - https://github.com/RandomFractals/vscode-data-preview
+  - https://github.com/RandomFractals/js-notebook-inspector
+
 - Alex Garcia
   - https://twitter.com/agarcia_me
   - artwork
   - https://github.com/asg017/unofficial-observablehq-compiler
-
 # viz
-
 - Samuel Gratzl
   - https://github.com/sgratzl
   - https://github.com/upsetjs/upsetjs
@@ -33,9 +36,7 @@ modified: '2021-02-09T19:27:07.664Z'
   - 百度，百度智能云Sugar BI
   - https://github.com/nwind
   - https://www.zhihu.com/people/wuduoyi/posts
-
 # geo
-
 - 盛政
   - 中国农大，greengis
   - https://github.com/shengzheng1981
@@ -45,9 +46,7 @@ modified: '2021-02-09T19:27:07.664Z'
   - foxgis-server-lite，天地图，mapbox
   - https://github.com/jingsam
   - https://jingsam.github.io/archives/
-
 # data-analysis
-
 - 空白白白白
   - 数据分析专家，pointer创始人
   - https://www.zhihu.com/people/jiafeimao/activities
@@ -59,9 +58,7 @@ modified: '2021-02-09T19:27:07.664Z'
 - 花随花心
   - 商业智能数据分析师，花随花心
   - https://www.zhihu.com/people/huagongzi-vip4/answers
-
 # watchlist
-
 - 许雪里
   - java, xxl-job, xxl-sso
   - https://github.com/xuxueli

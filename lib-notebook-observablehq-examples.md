@@ -24,5 +24,7 @@ modified: '2021-05-27T19:08:18.170Z'
 - Solar Path
   - https://observablehq.com/@mbostock/solar-path
   - 类似二维正圆划分经纬度的效果
+# saas
+- [Rapid Software-as-a-Service (SaaS) development with Observable, Firebase and Stripe](https://observablehq.com/@tomlarkworthy/saas-tutorial)
 # data-seeding
 - [MDN content popularity](https://datastudio.google.com/u/0/reporting/8a2d9085-976d-4cfa-a80d-60d61361be19/page/foIKC)

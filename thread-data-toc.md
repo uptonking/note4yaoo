@@ -16,7 +16,11 @@ modified: '2021-01-31T08:40:11.675Z'
 
 - ## 
 
-- ## 
+- ## Google just released data re: geofence warrants as part of their transparency report.
+- https://twitter.com/_dschwarz/status/1428453965423955970
+  - csv在文件末尾
+  - [geofence_warrants_by_jurisdiction_2018_through_2020.zip ](https://services.google.com/fh/files/misc/supplemental_information_geofence_warrants_united_states.pdf)
+- In total, Google received 20932 requests from 2018-2020. 
 
 - ## how is @WordPress domination this market soo much? 
 - https://twitter.com/daKmoR/status/1406327077285117961

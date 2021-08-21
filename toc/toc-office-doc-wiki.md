@@ -10,7 +10,7 @@ modified: '2021-07-23T08:38:53.805Z'
 # guide
 
 - 文章集合的设计
-  - 知乎专栏、掘金小册、文集
+  - 文章pages、知乎专栏、掘金小册、文集
 # github-wiki-confluence-like
 - https://github.com/zmister2016/MrDoc
   - http://mrdoc.zmister.com/project-20/
@@ -30,6 +30,9 @@ modified: '2021-07-23T08:38:53.805Z'
 - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
   - a unique non-linear notebook for capturing, organising and sharing complex information
+
+- https://github.com/foambubble/foam
+  - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
 # wiki-like
 - https://github.com/wikimedia/oojs-ui
   - https://www.mediawiki.org/wiki/OOUI

@@ -417,6 +417,7 @@ modified: '2020-10-22T06:49:10.760Z'
 - react-spreadsheet /MIT/245Star/202003
   - https://github.com/iddan/react-spreadsheet
   - https://iddan.github.io/react-spreadsheet
+  - 依赖 developit/unistore(state container with component actions for Preact & React，支持redux devtools)
   - Simple, customizable yet performant spreadsheet for React
 - react-smart-data-table /MIT/46Star/202006
   - https://github.com/joaocarmo/react-smart-data-table

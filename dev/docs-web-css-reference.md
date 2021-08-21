@@ -13,7 +13,7 @@ modified: '2020-11-13T10:19:20.931Z'
   - list of the most common CSS properties with the equivalent of the DOM notation which is usually accessed from JavaScript
   - float > cssFloat
 # [scrollbar-gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter)
-- 浏览器都不支持(202107)
+- 所有浏览器都不支持(202108)
 
 - An element's `scrollbar-gutter` is the **space between the inner border edge and the outer padding edge**, where the browser may display a scrollbar. 
   - If no scrollbar is present, the gutter will be painted as an extension of the padding.

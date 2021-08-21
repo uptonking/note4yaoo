@@ -23,4 +23,6 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
-- ## 
+- ## A zoomable, point-based embedding of 1-million plus papers in the @arxiv using embeddings from the cartolabe project
+- https://twitter.com/benmschmidt/status/1428763715827023874
+  - [The Arxiv in WebGL](https://observablehq.com/@bmschmidt/arxiv)

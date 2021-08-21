@@ -14,11 +14,18 @@ modified: '2021-07-11T08:31:00.660Z'
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
   - 在线文档作为其他产品的基础功能，如网盘支持在线打开文档
 
+- [飞书 云文档功能更新](https://www.feishu.cn/hc/zh-CN/articles/360049067483)
+- [语雀 更新日志](https://www.yuque.com/yuque/changelog)
+- [Confluence Release Notes](https://confluence.atlassian.com/doc/confluence-release-notes-327.html)
+- [Notion What's New](https://www.notion.so/What-s-New-157765353f2c4705bd45474e5ba8b46c)
+- [腾讯文档 功能更新日志](https://docs.qq.com/doc/p/435191b004cbb16236da93588e128f87949c2646)
+- [Microsoft Office updates](https://docs.microsoft.com/en-us/officeupdates/)
+
 - office软件厂商
   - 国内主流：金山文档，腾讯文档，钉钉文档，语雀
   - 国内其他：飞书，石墨
   - 国外主流：GSuite, MSOffice
-  - 周边产品：Canva、Gravit
+  - 周边产品：Canva、Gravit、Framer
 
 - 文字编辑器
   - 石墨：Quill

@@ -26,7 +26,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## I honestly think the main reason i'm so much happier in the last 12 months is getting off facebook. 
+- https://twitter.com/stevage1/status/1428955323306414085
+  - So much better not comparing your life against others on a daily basis. 
+  - Or feeling the need to share highlights for reactions.
 
 - ## [The web] is for everyone. Not just for everyone to consume, but for everyone to make
 - https://twitter.com/midvintr/status/1423579315632066568

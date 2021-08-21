@@ -9,6 +9,13 @@ modified: '2021-05-13T03:12:23.257Z'
 
 # guide
 
+- 不用过于纠结，集中精力在数据结构+算法，就算view层被替换了，模型抽象、状态管理、协作共享都可以很容易地迁移和复用
+
+- react-native vs electron
+  - electron支持直接复用浏览器的几乎所有功能，主流浏览器由强大厂商支持，商业支持多，自己研发的投入就可以变少；而react-native可用组件少，主推大厂只有facebook
+  - electron应用方便实现web端，跨平台方便；react-native的windows、macos都由微软支持，linux没有大厂支持，也没有社区支持，并且linux的应用开发比windows更加混乱
+  - web的标准化更详细，更主流；原生组件与原生api与各操作系统厂商耦合度过高，难以标准化，比如gtk一套实现、qt一套实现、微软自己就有mfc/wpf/uwp/.net core
+  - 仅凭性能上的小提升很难改变行业生态的方向
 # faq
 
  ## react-native-windows vs electron

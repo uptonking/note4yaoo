@@ -204,9 +204,11 @@ your suggestion here
   - 提出了制定markdown在线多人共同编辑协议的建议
   - At the same time, I think they're hitting the limits of modern data storage platforms, and hinting at precisely why we need a new kind of "collaborative filesystem".
 - As context, Craft is an iOS/Mac notetaking app w/ a "blocks" model that feels inspired by Notion.
-  - Unlike Notion it's offline-first (= very fast!). The interesting thing is they offer two different ways to store your data
+  - Unlike Notion it's offline-first (= very fast!). 
+  - The interesting thing is they offer two different ways to store your data
 - Option 1 is to sync your notes to Craft's servers.
-  - The benefit of this is you get realtime collaboration, and you can share a web link with anyone to get comments. Feels similar to GDocs/Notion, just with much better offline mode.
+  - The benefit of this is you get realtime collaboration, and you can share a web link with anyone to get comments. 
+  - Feels similar to GDocs/Notion, just with much better offline mode.
 - Option 2 is to store data on your filesystem. 
   - The benefit here is data ownership: more privacy, and you can open the files in other apps without issue.
 - Now, if you want sync with Option 2, you can bring your own w/ iCloud Drive etc. But if two devices edit concurrently, you'll hit conflicts.

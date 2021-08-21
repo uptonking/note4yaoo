@@ -13,6 +13,12 @@ modified: '2020-07-08T03:17:23.369Z'
   - 可以使用es6参数默认值
 - 不建议使用forwardRef，未来ref会作为props中的属性
   - 可以使用callbackRef
+
+- https://github.com/dai-shi/react-worker-components
+  - This is an experimental project inspired by React Server Component.
+  - RWC is a library to provide RSC-like interface for Web Workers. 
+  - It serializes React elements keeping their referential identities as much as possible. 
+  - If a React component is "registered", it will be referenced by string names, and it can be used at the both ends.
 # guide
 - [Basic Fizz Architecture](https://github.com/facebook/react/pull/20970)
   - Basically, we want to support suspense on the server. 

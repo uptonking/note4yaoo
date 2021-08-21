@@ -21,6 +21,7 @@ modified: '2021-05-14T14:44:14.720Z'
 - 开放数据/报告
   - 开放数据集
   - github上公开分析案例，如js-framework-benchmark
+  - [Our World in Data](https://ourworldindata.org/) is free and accessible for everyone.
 - 主题分析
   - 新冠肺炎分析报告 coronavirus/covid-19
   - 北大毕业生就业质量年度报告

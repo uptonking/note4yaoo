@@ -44,7 +44,9 @@ modified: '2021-08-02T15:19:42.036Z'
   - 可利用高级搜索，搜索fork仓库中最新被fork的 `fork:only`
   - 查找一个仓库最活跃的fork仓库
     - https://github.com/techgaun/active-forks
-    - https://techgaun.github.io/active-forks/index.html
+      - https://techgaun.github.io/active-forks/index.html
+    - https://github.com/useful-forks/useful-forks.github.io
+      - https://useful-forks.github.io/
 
 - preview html
   - https://github.com/htmlpreview/htmlpreview.github.com

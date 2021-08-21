@@ -15,7 +15,11 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Just added Markdown, HTML, and CSS as export options. Markdown includes links to hosted assets.
+- https://twitter.com/4lpine/status/1428064775372607488
+- We use the Theme UI sx prop as part of our internal data structure since we want direct theme mapping and the nesting of CSS-in-JS (Emotion).
+  - We're statically extracting the styles to pure CSS using some tricks I hope to write a post on (soon).
+  - Also, the declarative and composable nature of a props object that handles styling is so choice for this kind of tooling.
 
 - ## I've been diving into @replicache and I'm convinced its model is what you want for majority of SaaS apps (eg todo apps, figma)
 - https://twitter.com/_paulshen/status/1415365748675907584

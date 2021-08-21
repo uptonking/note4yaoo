@@ -11,6 +11,11 @@ modified: '2021-05-14T14:52:48.486Z'
 
 # blogging
 
+## Exploring/Wrangling data in Observable__202108
+
+- We have released a Data Wrangler notebook to support data transformations via code composition in Observable notebooks. 
+  - This interface helps you manipulate and explore your tabular data using the Arquero library. 
+
 ## Introducing Observable for Enterprise_202107
 
 - Observable now offers a new Enterprise Tier with additional support, security, and access control priced at $40/month/editor.

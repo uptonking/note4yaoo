@@ -26,7 +26,10 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## App: Has 83 feature flags.
+- https://twitter.com/markdalgleish/status/1429005039452835845
+- I often like to think about feature flags in terms of “how many possible versions of this app exist”
+  - 2^83 is well, not maintainable
 
 - ## JavaScript build tools measure performance wrong. Roundtrip time — not build time — is what people feel.
 - https://twitter.com/jarredsumner/status/1427891371797454851

@@ -88,7 +88,12 @@ modified: '2021-05-14T14:46:37.026Z'
   - Docable's interactive cells are simply Markdown code block (```) with addition of a few json annotations
   - These code blocks are 100% compatible with GitHub's Markdown rendering and the JSON is simply ignored
 
+
 ## more-notebook
+
+- https://github.com/airbnb/knowledge-repo
+  - Knowledge Repo project is focused on facilitating the sharing of knowledge between data scientists and other technical roles using data formats and tools that make sense in these professions.
+  - It provides various data stores (and utilities to manage them) for "knowledge posts", with a particular focus on notebooks (R Markdown and Jupyter/IPython Notebook) to better promote reproducible research.
 
 - https://github.com/iodide-project/iodide
   - Iodide is no longer under development
@@ -137,3 +142,13 @@ modified: '2021-05-14T14:46:37.026Z'
 - [Idyll markup](https://idyll-lang.org/docs/syntax)
   - The main extensions are reactive variables, and components. 
   - Together these two elements can be used to create dynamic, interactive articles.
+
+- https://github.com/quarto-dev/quarto-cli
+  - Quarto is an open-source scientific and technical publishing system built on Pandoc. 
+  - Quarto documents are authored using markdown
+  - Support for embedding output from Python, R, and Julia via integration with Jupyter and Knitr .
+# data-platform
+- https://github.com/owid/owid-grapher
+  - https://ourworldindata.org/owid-grapher
+  - A platform for creating interactive data visualizations
+  - This is the project we use at Our World in Data to create embeddable visualizations
