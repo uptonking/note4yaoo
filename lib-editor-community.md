@@ -157,7 +157,10 @@ modified: '2021-05-14T12:04:55.412Z'
 
 - ## 
 
-- ## 
+- ## Notes as data
+- https://twitter.com/gordonbrander/status/1429105115886018560
+  - [If headers did not exist, it would be necessary to invent them](https://subconscious.substack.com/p/if-headers-did-not-exist-it-would)
+-  I’ve filed it away as a nice pattern for identifying important problems, e.g. “If we don’t build X, would we need to later invent it?”
 
 - ## I was puzzled why the *same* hex codes in @code produce a different color than in @atom .
 - https://twitter.com/LeaVerou/status/1422512437979455507

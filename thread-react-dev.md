@@ -10,7 +10,9 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
-- ## 
+- ## React: I keep forgetting that you can use HTML character entities such as &lt; and &gt; in JSX. No need for {'<'} and {'>'}.
+- https://twitter.com/rauschma/status/1429409404210843656
+- Btw: when authoring JSX I feel like we have to use `&nbsp;` more than it's really necessary.
 
 - ## Has someone made a JSX editor yet where you can “expand” JSX tree nodes into function definitions inline?
 - https://twitter.com/dan_abramov/status/1428137070388826112

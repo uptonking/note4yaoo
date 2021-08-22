@@ -33,6 +33,20 @@ modified: '2021-07-23T08:38:53.805Z'
 
 - https://github.com/foambubble/foam
   - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+
+- https://github.com/jaredly/local-first
+  - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
+
+- https://github.com/siyuan-note/siyuan
+  - a local-first personal knowledge management system
+  - SiYuan is made possible by the Vditor and Lute(go)
+
+- https://github.com/logseq/logseq
+  - 依赖clojure
+  - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
+  - A privacy-first, open-source platform for knowledge management and collaboration
+- https://github.com/andymatuschak/orbit
+  - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
 # wiki-like
 - https://github.com/wikimedia/oojs-ui
   - https://www.mediawiki.org/wiki/OOUI

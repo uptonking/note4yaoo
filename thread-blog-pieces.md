@@ -23,6 +23,10 @@ modified: '2021-02-09T19:25:11.641Z'
 - [Encoding data for POST requests](https://jakearchibald.com/2021/encoding-data-for-post-requests/)
 # backend-dev
 
-# more
+# more-blogs
 - [JavaScript for Automation (JXA) Resources](https://gist.github.com/JMichaelTX/d29adaa18088572ce6d4)
 
+- [为什么视频网站的视频链接地址是blob？](https://juejin.cn/post/6844903880774385671)
+  - 实战一：上传图片预览
+  - 实战二：以Blob URL加载网络视频
+  - 可以自己解析m3u8拿到ts视频片段，用mux.js转码一下再播放。或者直接使用hls.js来播放

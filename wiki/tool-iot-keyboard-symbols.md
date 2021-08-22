@@ -9,7 +9,7 @@ modified: '2020-07-14T11:19:00.521Z'
 
 # keyboard shortcuts
 - ref
-  - https://defkey.com/
+  - https://defkey.com/ 可搜索按键组合、描述
 
 - [为什么苹果公司不将 Mac 的 command 键和 control 键合并？](https://www.zhihu.com/question/19814844)
   - tldr

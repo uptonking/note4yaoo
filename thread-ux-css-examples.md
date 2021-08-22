@@ -28,7 +28,12 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## CSS Gradient Shadow
+- https://twitter.com/argyleink/status/1429075313158496261
+  - https://codepen.io/argyleink/pen/WNxeBKa
+  - A pseudo-element, sized and positioned within the container, offset + scaled with transforms, then blurred with filters
+- Whats browser support like?
+  - Great if you add fallbacks to `inset` with left, top, right, bottom 
 
 - ## implementing the cut-out effect in CSS and SVG.
 - https://twitter.com/shadeed9/status/1419956367486500887

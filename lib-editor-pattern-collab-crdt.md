@@ -240,3 +240,7 @@ modified: '2021-07-23T15:52:10.409Z'
 # ref
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 
+
+- [KeyValueCRDT](https://bdewey.com/til/2021/08/21/)
+  - My goal with KeyValueCRDT is to provide a CRDT implementation that can work as a file format for a wide range of applications.
+  - KeyValueCRDT uses SQLite for its storage

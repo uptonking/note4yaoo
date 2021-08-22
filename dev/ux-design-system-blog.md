@@ -94,6 +94,14 @@ modified: '2021-01-01T20:08:32.485Z'
 
 - With both ends of the abstraction spectrum carrying implications for the key functions of your design system, it should come as no surprise that you will end up with a mix of approaches. 
 
+- The more mature a product or feature is, the more beneficial and feasible a configuration approach is. 
+  - However, the iterative and low-level nature of customization makes it more suitable for prototyping and features which are bespoke, or are still subject to change.
+
+- Lastly, one size does not fit all. 
+  - In viewing the pros and cons of these different approaches, think of how those tradeoffs relate to your company’s broader values. 
+  - At Spotify, the ability for teams to work autonomously is highly valued, and thus we generally lean more towards customization as a result.  
+  - Though we have the maturity to support a more configurable design system, that doesn’t mean we need to solve all of our challenges through configuration — it’s just another tool in the set that we can choose from.
+
 ## [7 Rules for Creating Gorgeous UI (Updated for 2020)](https://learnui.design/blog/7-rules-for-creating-gorgeous-ui-part-1.html)
 
 ### Light comes from the sky
@@ -183,7 +191,6 @@ modified: '2021-01-01T20:08:32.485Z'
 
 - interfaces are made up of components that can be categorized into building blocks
 - Atoms, Molecules, Organisms, Templates, Pages
-
 # top design systems
 
 ## [UI Design Trend of 2021](https://dev.to/harshhhdev/ui-design-trend-of-2021-4fb7)
@@ -204,9 +211,7 @@ modified: '2021-01-01T20:08:32.485Z'
 08.  Mailchimp Design System
 09.  Salesforce Lightning Design System
 10.  Helpscout Design System
-
 # ref
-
 - [Web Design Trends in 2021](https://www.editorx.com/prowebsites/web-design-trends)
   - The screen will surpass our real-world expectations by creating stimulating, immersive experiences that make up for what we’ve lost in real life. 
     - Robust platforms will blur the boundaries between real and virtual 

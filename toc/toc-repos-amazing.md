@@ -44,6 +44,7 @@ modified: '2020-11-03T06:54:59.051Z'
     - https://github.com/Renovamen/playground-macos
   - 类似windows风格
     - https://dinhquangtrung.net/windows7/
+    - https://github.com/PiyushSuthar/Windows-11-Web
 # amazing-animation
 - click to open... Pure #CSS, but a lot of it 
   - https://twitter.com/amit_sheen/status/1410178652193574915
