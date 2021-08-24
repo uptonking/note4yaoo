@@ -58,6 +58,9 @@ modified: '2020-12-21T08:04:19.490Z'
   - The new `getInnerHTML()` method works like `.innerHTML`, but provides an option to control whether shadow roots should be included in the returned HTML
 - Components built using Custom Elements get automatically upgraded from static HTML. 
   - With the introduction of Declarative Shadow DOM, it's now possible for a Custom Element to have a shadow root before it gets upgraded.
+
+- Turns out Shadow DOM speeds up style recalculation
+  - But only if selectors are more complex than IDs or classes. (Which means it’s probably not going to help much a typical web app. Pity!)
 # [Why I don't use web components_201906](https://dev.to/richharris/why-i-don-t-use-web-components-2cia)
 - 仅供参考，标准及实现都已更新，文章中提到的部分问题已解决了
 

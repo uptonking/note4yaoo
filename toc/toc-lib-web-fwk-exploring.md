@@ -97,10 +97,7 @@ const CountingComponent = () => {
   - Marko extends the HTML language to allow building modern applications in a declarative way.
   - Among these extensions are conditionals, lists, state, and components
 
-- https://github.com/standard-components/standard-components
-  - /inactive
-  - A specification for functional UI components
-  - This specification is intended as a way to standardize naming conventions and props APIs in order to create an ecosystem of interchangeable UI components
+
 
 - https://github.com/flowxjs/typeclient
   - https://flowxjs.github.io/TypeClient/

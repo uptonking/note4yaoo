@@ -19,6 +19,19 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0816-0822
 
+👉 Scheduling Profiler
+👉 Next.js 11.1
+👉 Split components
+👉 "context flag" anti-pattern virus
+👉 Dynamic forms with visitor
+👉 TS Unions with Destructuring
+👉 React Native 0.65 + plans
+👉 React Navigation 6.0
+👉 Portals + document.body
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1429857998315433990
+
 ## w0809-0815
 
 ## w0802-0808

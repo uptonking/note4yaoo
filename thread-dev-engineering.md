@@ -24,7 +24,29 @@ modified: '2021-01-21T17:52:13.333Z'
 # pieces
 - ## 
 
-- ## 
+- ## There is tension between fast startup times (AOT) and peak performance (JIT).
+- https://twitter.com/jerrinot/status/1430165270631534602
+  - Historically the peak performance was more important for server-side applications.
+  - Cloud is changing it, at least partially, and people go a long way to improve startup times. 
+- Some examples:
+  1. Design brand new frameworks with great startup times as an explicit design goal.
+  2. Give-up on some language/VM features we used to take for granted.
+  3. Maintain a bunch of descriptors for the sake of a specific compiler.
+  4. Extract JIT compiler into a separate process and run it as a network server.
+  5. Switch to an entirely different language/ecosystem.
+- Given all of the above, I wonder how come I don't hear about process snapshotting/checkpointing more.
+- Something like Criu sounds like a good fit for "stateless business logic" - That's precisely the place where the fast startup times are most relevant. 
+  - The idea is simple: Run a regular JVM, with JIT and everything. 
+  - When you need to scale-out then do not start a new process from scratch. 
+  - Instead, take a snapshot of an already running/warmed-up process/container and start its clone. 
+  - Sure, there'll be many state-related issues.
+- https://criu.org/Main_Page
+  - Checkpoint/Restore In Userspace, or CRIU is a Linux software. 
+  - It can freeze a running container (or an individual application) and checkpoint its state to disk. 
+  - The data saved can be used to restore the application and run it exactly as it was during the time of the freeze.
+- Yet I don't hear this approach to be discussed too much. I only saw one FOSDEM talk. What am I missing?
+  - Native image tool in GraalVM is thought of AOT compiler for Java, but it has snapshotting capabilites. **You have to adapt your code to work with this** well, but maybe that's inherent requirement. Most code bases do not expect that they can be snapshotted.
+- [Call for Discussion: New Project: CRaC](https://mail.openjdk.java.net/pipermail/discuss/2021-August/005941.html)
 
 - ## App: Has 83 feature flags.
 - https://twitter.com/markdalgleish/status/1429005039452835845

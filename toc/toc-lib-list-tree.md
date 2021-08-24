@@ -206,6 +206,11 @@ modified: '2020-07-12T19:00:27.345Z'
   - Declare your React component tree in JSON
 - https://github.com/aximario/json-tree
   - 把扁平化的数据转换成树形结构的JSON，把树形JSON扁平化
+
+- https://github.com/proshoumma/organigram
+  - http://organigram.surge.sh/
+  - 依赖redux.v3、react-dnd.v5、react-dropzone
+  - A JSON based tree structure with drag and drop functionally to re-arrange the tree. 
 # accordion
 - https://github.com/springload/react-accessible-accordion
   - https://springload.github.io/react-accessible-accordion

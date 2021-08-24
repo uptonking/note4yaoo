@@ -7,15 +7,27 @@ modified: '2021-08-23T05:27:08.068Z'
 
 # toc-office-file-manager
 
+# guide
+- 文件管理器的url路径设计
+  - github示例 note4yaoo/blob/main/attachment/tech/node架构图.png
+    - url支持完整文件名，包括中文
+  - 百度网盘示例 /index?category=all&path=%2Fopt%2F重装系统相关
+    - 路径中的特殊字符使用了url编码，如%2F表示斜杠/
+  - google drive示例 /folders/uuid-folder?resourcekey=uuid-key
+    - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问
+    - 缺点是url都是随机数字
+  - onedrive示例 /?id=uuid-folder&cid=AE0F511DC7381EDB
+    - 与google drive类似
+  - dropbox示例 /home/Blockstack%20Branding/BlockstackFile
+    - url与文件名和存放路径相对应，支持中文路径
 # popular
-
 - https://github.com/libfuse/libfuse
   - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
 - https://github.com/presslabs/gitfs
   - gitfs is a FUSE file system that fully integrates with git. 
   - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
   - 但vscode不是直接集成git了吗
-# github-gdrive-file-manager
+# react-file
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
@@ -23,6 +35,28 @@ modified: '2021-08-23T05:27:08.068Z'
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
 
+- https://github.com/wx-chevalier/web-file-manager
+  - 基于 React & TS 的文件管理器
+  - 依赖react-beautiful-dnd、styled-components、formik
+
+- https://github.com/codefreak/react-file-manager
+  - 依赖react-dnd
+  - react-file-manager contains some generic code for D&D and selection handling. You will need some additional code to make it render something.
+  - antd-file-manager contains an implementation based on AntD's `<Table/>` component
+
+- https://github.com/uptick/react-keyed-file-browser
+  - https://uptick.github.io/react-keyed-file-browser/
+  - 依赖 react-dnd、date-fns
+  - Folder based file browser given a flat keyed list of objects
+
+- https://github.com/TimboKZ/Chonky
+  - https://chonky.io/
+  - A File Browser component for React.
+  - 依赖react-window、styled-components、material-ui.v4、react-jss、react-dnd、reduxjs/toolkit
+
+- https://github.com/reactfilemanager/core
+  - https://github.com/reactfilemanager/php-server
+# github-gdrive-file-manager
 - https://github.com/rocketseat-content/youtube-clone-dropbox-menu
   - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home
   - 模仿dropbox的首页，简洁大方
@@ -44,7 +78,7 @@ modified: '2021-08-23T05:27:08.068Z'
 
 - https://github.com/pqina/filepond
   - https://github.com/pqina/filepond
-  - 无依赖
+  - /NoDeps/active
   - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
   - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
   - Drop files, select on filesystem, copy and paste files, or add files using the API.
@@ -65,6 +99,15 @@ modified: '2021-08-23T05:27:08.068Z'
     - Server-side examples for the Fine Uploader library
     - Traditional upload examples (upload to your own server): java, nodejs, php, python
     - Fine Uploader S3/Azure examples
+- https://github.com/OpusCapita/filemanager
+  - React based FileManager for browser ( + FS REST API for Node.js and Express)
+  - supports connectors to different file storages like google drive, node server
+  - 前端依赖react-virtualized、react-sortable-hoc、react-dnd
+
+- https://github.com/kannifarhad/CronusFileManager
+  - Filemanager with React & Nodejs
+  - React, Redux, Material UI, Nodejs, ExpressJs
+  - 提供了前端和后端实现
 
 - https://github.com/psolom/RichFilemanager  /archived
   - http://fm.devale.pro/
@@ -74,14 +117,11 @@ modified: '2021-08-23T05:27:08.068Z'
 
 - https://github.com/joni2back/react-filemanager
   - https://joni2back.github.io/react-filemanager/
+  - 依赖redux、material-ui.v4
   - Hello ex angular-filemanager user, this is the new version in React and Redux with backends for Local Files and FTP.
   - https://github.com/joni2back/filemanager-connector-node
     - a local file connector API in NodeJS
 
-- https://github.com/warpdesign/react-explorer
-  - File manager written in TypeScript, React, Blueprint and packaged with Electron
-  - Split-view window
-  - Plugin-based: local supported for now, ftp in the works
 - https://github.com/dailykit/react-file-manager
   - A file manager built in ReactJs
   - 依赖apollo
@@ -93,6 +133,11 @@ modified: '2021-08-23T05:27:08.068Z'
 - https://github.com/magentaLi/CloudDrive
   - 基于javaweb的仿照百度网盘做的小型云盘系统
 # file-electron
+- https://github.com/warpdesign/react-explorer
+  - File manager written in TypeScript, React, Blueprint and packaged with Electron
+  - Split-view window
+  - Plugin-based: local supported for now, ftp in the works
+
 - https://github.com/Cocycles/electron-storage /201703
   - Simply save/load json files to/from file system in electron applications
 - https://github.com/yan-foto/electron-reload /201908

@@ -95,8 +95,8 @@ modified: '2020-10-22T06:49:10.760Z'
 - functional-data-grid /MIT/120Star/201907/ts/react-comp
   - https://github.com/energydrink9/functional-data-grid
   - https://energydrink9.github.io/functional-data-grid-examples
+  - 依赖react-virtualized、emotion、immutable.v3
   - 基于div实现，每行对应的dom元素存在，样式太陈旧
-  - 依赖react-virtualized、emotion
   - Data grids in functional style with ReactJS
   - made with React-Virtualized for creating data grids with filtering, sorting, grouping and aggregates computation.
   - written in functional programming style with ES2016 and Flow.
@@ -157,7 +157,11 @@ modified: '2020-10-22T06:49:10.760Z'
 - react-data-table-component /MIT/598Star/202007/js
   - https://github.com/jbetancur/react-data-table-component
   - https://jbetancur.github.io/react-data-table-component
+  - 基于div和flexbox实现
+  - 依赖styled-components
   - table library with built in sorting, pagination, selection, expandable rows and customizable styling.
+  - If you want to achieve balance with the force and want a simple but flexible table library give React Data Table Component a chance. 
+  - If you require an Excel clone or heavy "enterprise" capabilities, then this is not the React table library you are looking for
 - react-spreadsheet-grid /MIT/949Star/202004/js/inactive
   - https://github.com/denisraslov/react-spreadsheet-grid
   - https://denisraslov.github.io/grid

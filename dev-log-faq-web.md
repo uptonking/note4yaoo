@@ -24,10 +24,8 @@ modified: '2021-03-29T19:17:38.650Z'
 - [微前端的公共依赖是如何解决的?](https://www.zhihu.com/question/419239113)
   - 现在不管什么框架, 都存在一个问题，就是build后摇树, aot等优化操作, 这么一来, 一些公共依赖就不好抽出来了
   - 如果先打出来dll, 然后再搞微前端, 确实也行, 但是没有优化
-  - Currently, I mark the module as usedInUnknownWays to prevent tree shaking the exports on exposed moduled/files
+  - Currently, I mark the module as usedInUnknownWays to prevent tree shaking the exports on exposed modules/files
     - 这里是折中方案，只摇树去掉无关exports
-
-- bootstrap component vs react component
 
 - 哪些业务计算相关的代码适合放在前端，哪些适合放在服务端
   - 读写文件：文本、图片、文档doc、表格
@@ -36,9 +34,7 @@ modified: '2021-03-29T19:17:38.650Z'
 - 将对象的引用保存到dom对象，如pm-editorView保存到dom，是否影响性能
 
 - 很长的图片如何加载
-
-## css更新的方式比较，切换class类名，通过修改style属性来更新css vars的值
-
+# css更新的方式比较，切换class类名，通过修改style属性来更新css vars的值
 - 修改style属性本身可看做修改内联样式
   - inline style不支持伪类、媒体查询，难复用
   - 因为会加大dom体积，增加解析时间和存储空间，所以渲染会慢一点点

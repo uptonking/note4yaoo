@@ -11,8 +11,8 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
-- Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. 
-- https://stackoverflow.com/questions/56442582
+- [Can't perform a React state update on an unmounted component. ](https://stackoverflow.com/questions/56442582)
+  - This is a no-op, but it indicates a memory leak in your application. 
 - The easiest solution is to use a local variable that keeps track of whether the component is mounted or not.
 - [setState hook inside useEffect can cause unavoidable warning Can't perform a React state update](https://github.com/facebook/react/issues/14369)
 

@@ -16,6 +16,9 @@ modified: '2021-05-06T09:46:30.944Z'
   - customizable with a ton of extensions
   - typescript
 
+- who is using
+  - gitlab
+
 - tiptap-examples
   - dante
   - more: shiki-editor(vue)

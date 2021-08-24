@@ -29,9 +29,9 @@ modified: '2020-10-22T06:50:36.740Z'
   - https://github.com/davidguttman/react-pivot
   - http://davidguttman.github.io/react-pivot/
   - a data-grid component with pivot-table-like functionality for data display, filtering
+  - 依赖dataframe，wildemitter，基于react15，较旧
   - 基于table标签实现
   - 典型的透视表视图
-  - 依赖dataframe，wildemitter，基于react15，较旧
 - quick-pivot /49Star/MIT/201812/js
   - https://github.com/pat310/quick-pivot
   - Quickly format data to create a pivot table

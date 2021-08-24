@@ -10,6 +10,21 @@ modified: '2021-01-06T14:40:11.360Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How One Conditional Can Entangle Your React App
+- https://betterprogramming.pub/how-one-conditional-can-entangle-your-react-app-b817aa47718a
+  - 如何处理 `booleanCondition && <Comp />` 这类场景
+- However, without a solid compositional or architectural plan, the result ended up being a component that could be used in a lot of different contexts, but was ultimately pretty fragile and definitely not flexible.
+- Every time the common elements of this component needed to be reapplied in new contexts, additional ternaries, and conditional statements had to be added.
+- There are a few different ways to abstract components, but we tend to stick to the main recommendation from the React documentation and use `children` .
+- My team now considers “context flags” a code smell. 
 - ## React: I keep forgetting that you can use HTML character entities such as &lt; and &gt; in JSX. No need for {'<'} and {'>'}.
 - https://twitter.com/rauschma/status/1429409404210843656
 - Btw: when authoring JSX I feel like we have to use `&nbsp;` more than it's really necessary.

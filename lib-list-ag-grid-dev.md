@@ -8,6 +8,12 @@ modified: '2021-05-13T02:42:31.809Z'
 # lib-list-ag-grid-dev
 
 # guide
+- ag-grid-pros
+  - powerful features
+
+- ag-grid-cons
+  - 可定制性有限，支持自定义renderer、filter等；但不支持类似handsontable、prosemirror这样的全局功能拦截插件
+
 - usecase
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
     - AdapTable is a sophisticated HTML5 DataGrid add-on.

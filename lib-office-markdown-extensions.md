@@ -41,6 +41,9 @@ modified: '2021-06-02T15:26:19.890Z'
 - markdown-files-suffix
   - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron"]
 
+- rmarkdown
+  - [cheatsheet: dynamic, reproducible, citations](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/)
+
 - ref
   - commonmark rfcs
 # popular

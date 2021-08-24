@@ -6,7 +6,7 @@ modified: '2020-12-20T15:47:26.038Z'
 ---
 
 # toc-lib-pattern-pattern-functional-programming
-
+# functional dom ui
 # popular
 
 - https://github.com/reactivex/rxjs
@@ -19,7 +19,9 @@ modified: '2020-12-20T15:47:26.038Z'
   - allbag is just a spec, but callbag-basics is a real library you can use.
   - https://github.com/callbag/callbag
     - A standard for JS callbacks that enables lightweight observables and iterables
-    - Callbag中的source是可以转换成RxJS的Observable的
+    - Callbag中的source可以转换成RxJS的Observable
+
+
 - https://github.com/cyclejs/cyclejs
   - /9.8kStar/MIT/202009/ts
   - A functional and reactive JavaScript framework for predictable code
@@ -117,3 +119,9 @@ modified: '2020-12-20T15:47:26.038Z'
 - https://github.com/osteele/functional-javascript
   - It defines the standard higher-order functions such as map, reduce (aka foldl), and select (aka filter)
   - It also defines functions such as curry, rcurry, and partial for partial function application; and compose, guard
+
+- https://github.com/frouriojs/velona
+  - Velona is TypeScript DI helper for functional programming.
+
+- https://github.com/mreinstein/ecs
+  - data oriented, functional entity component system.

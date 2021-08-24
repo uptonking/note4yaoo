@@ -47,6 +47,16 @@ modified: '2021-01-01T20:06:19.327Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 # discuss-stars
+- ## Speaking of style recalculations: I’d strongly suggest migrating to Linaria
+- https://twitter.com/iamakulov/status/1430106459983945730
+- Here’s a pattern I see a lot:
+  — the app has an `<Input>` that opens an `<Autocomplete>` on keypress
+  — the first time the `<Autocomplete>` mounts, styled-components adds it styles to DOM
+  — that causes the browser to spend 100-200 ms recalculating the page styles. Whoops, slowness!
+- I love styled-components. 
+  - They are a pleasure to use, they extract Critical CSS, they are (generally) fast.
+  - But the way s-c work leads to frequent 100+ ms style recalcs. And you can’t control them – they happen all around the place. Which is bad if you care about input latency.
+
 - ## Has anyone had to deal with styles being mixed up in prod with Next & Styled Components?
 - https://twitter.com/mattgperry/status/1420257223155060736
 - yeah. i think disabling minification of classnames solved the issue for me

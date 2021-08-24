@@ -17,7 +17,19 @@ modified: '2021-03-29T19:29:56.558Z'
 
 - ## 
 
-- ## 
+- ## [DSL是什么](https://www.shuzhiduo.com/A/VGzl44v1zb/)
+- DSL 是 Domain Specific Language 的缩写，它不是一种通用的语言，而是为了解决某一类特殊领域的问题而发明的专用语言。
+- SQL 和 AWK 这种语言都是 DSL，不能解决通用的问题，但是在自己的领域能够大大提升工作效率。
+- 正则表达式 (regular expression) 就可以看作是一个 DSL, 有着自己的语法，目的清晰明确，着力解决字符匹配问题。
+- 注意：正则表达式本身并不能解决字符匹配问题，只是一种描述匹配目标的语言，执行环境会对正则表达式进行解析，并使用相关的算法进行实际的字符匹配。
+
+- DSL与传统意义上的通用编程语言 C、Java 以及 Python 完全不同。
+  - 通用的计算机编程语言是可以用来编写任意计算机程序的，并且能表达任何的可被计算的逻辑，同时也是图灵完备的。
+  - 而DSL并不是图灵完备的，它们的表达能力有限，只是在特定领域解决特定任务的。
+  - 最常见的 DSL 包括 Regex正则表达式以及 HTML & CSS：
+- Regex正则表达式仅仅指定了字符串的 Pattern，其引擎就会根据 Pattern 判断当前字符串跟正则表达式是否匹配。
+  - 正则表达式有自己的语法规范（元字符，运算符的优先级等），犹如一门微型语言，嵌入到通用编程语言 C、Java 以及 Python等里面。
+- SQL也属于DSL，虽然可以定义变量和函数，但是不能编写任意的计算机程序，它就无法实现界面编程，而C、Java 以及 Python都可以。这就是DSL的特点，只面向特定领域。
 
 - ## [There is no such thing as the Spread Operator in JavaScript!](https://levelup.gitconnected.com/there-is-no-such-thing-as-the-spread-operator-in-javascript-9c4e4dbd8a02)
 - What is the precedence of the Spread Operator? 

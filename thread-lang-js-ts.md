@@ -16,9 +16,26 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## TypeScript: What’s the cleanest way to enable globalThis.someProperty? A type assertion ( `as` ) works but feels hacky.
+- https://twitter.com/rauschma/status/1429887307998535681
 
-- ## 
+```JS
+export module globalThis {
+  export const POOP = 'test';
+}
+const test = globalThis.POOP;
+
+declare namespace globalThis {
+  let someProperty: any;
+}
+
+declare global {
+  var someProperty: string;
+}
+```
+
+- ## You can keep your types DRY by using the ReturnType and Parameters built-in types when you wrap an existing function
+- https://twitter.com/NetanelBasal/status/1429819098133934080
 
 - ## JavaScript supports dynamic keys on object literals.
 - https://twitter.com/markdalgleish/status/1428876341735165954

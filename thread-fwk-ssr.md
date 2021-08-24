@@ -47,7 +47,11 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## I really like what @astrodotbuild is doing by shipping less JS. 
+- https://twitter.com/wardpeet/status/1429831663127863303
+  - It comes close to the long-term vision I have for @gatsbyjs . 
+  - Using React's Suspense, Server Components + a sprinkle of magic, we can get into a less JS heavy world. 
+  - It's a long road ahead. I'm excited for the future!
 
 - ## To help categorize different Server Rendering JS Frameworks and how they sit relative to each other I made a chart. 
 - https://twitter.com/RyanCarniato/status/1428582141185597447
