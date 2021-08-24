@@ -1,0 +1,190 @@
+---
+title: toc-office-file-manager
+tags: [file, file-manager, filesystem, toc]
+created: '2021-08-23T05:24:09.775Z'
+modified: '2021-08-23T05:27:08.068Z'
+---
+
+# toc-office-file-manager
+
+# popular
+
+- https://github.com/libfuse/libfuse
+  - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
+- https://github.com/presslabs/gitfs
+  - gitfs is a FUSE file system that fully integrates with git. 
+  - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
+  - 但vscode不是直接集成git了吗
+# github-gdrive-file-manager
+- react-sortable-tree /MIT/3.3kStar/202005
+  - https://github.com/frontend-collective/react-sortable-tree
+  - https://frontend-collective.github.io/react-sortable-tree/
+  - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
+  - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
+  - Drag-and-drop sortable component for nested data and hierarchies
+
+- https://github.com/rocketseat-content/youtube-clone-dropbox-menu
+  - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home
+  - 模仿dropbox的首页，简洁大方
+  - https://cranky-einstein-aff725.netlify.app/
+- https://github.com/emkis/dropbox-clone
+  - an easy way to store, share and access files from anywhere
+  - 依赖后端
+- https://github.com/leoronne/dropbox-homepage-ui-clone
+  - https://dropbox.ui-clone.ronne.dev/
+  - 首页放了很多截图
+- https://github.com/tompdriscoll/DroppyBoy
+  - https://droppyboy.herokuapp.com/#/
+  - A Dropbox clone
+  - 后端：nodejs+PostgreSQL
+  - 前端：react+redux
+  - 实现了登录认证、上传文件到aws s3
+- https://github.com/dhruska/node-dropbox
+  - a simple Dropbox clone built in Node.js.
+
+- https://github.com/pqina/filepond
+  - https://github.com/pqina/filepond
+  - 无依赖
+  - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
+  - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
+  - Drop files, select on filesystem, copy and paste files, or add files using the API.
+  - Async uploading with AJAX, or encode files as base64 data and send along form post.
+  - Image optimization, automatic image resizing, cropping, and fixes EXIF orientation.
+  - https://github.com/pqina/react-filepond
+    - a handy wrapper component for FilePond
+  - https://github.com/wladiston/filepond-server-example
+    - FilePond Server example using Express and AWS
+  - https://github.com/shahnawaz-pabon/File-Upload-With-Multer
+    - Uploading files with Multer in Node
+
+- https://github.com/FineUploader/fine-uploader
+  - Multiple file upload plugin with image previews, drag and drop, progress bars. 
+  - Dependency-free
+  - [Fine Uploader is shutting down](https://github.com/FineUploader/fine-uploader/issues/2073)
+  - https://github.com/FineUploader/server-examples
+    - Server-side examples for the Fine Uploader library
+    - Traditional upload examples (upload to your own server): java, nodejs, php, python
+    - Fine Uploader S3/Azure examples
+
+- https://github.com/psolom/RichFilemanager  /archived
+  - http://fm.devale.pro/
+  - Rich Filemanager is an open-source file manager
+  - Filemanager is designed to interact with a number of programming languages via connectors. 
+  - The actual connectors are: PHP, Java, ASHX, ASP, NodeJs & Python 3 Flask.
+
+- https://github.com/joni2back/react-filemanager
+  - https://joni2back.github.io/react-filemanager/
+  - Hello ex angular-filemanager user, this is the new version in React and Redux with backends for Local Files and FTP.
+  - https://github.com/joni2back/filemanager-connector-node
+    - a local file connector API in NodeJS
+
+- https://github.com/warpdesign/react-explorer
+  - File manager written in TypeScript, React, Blueprint and packaged with Electron
+  - Split-view window
+  - Plugin-based: local supported for now, ftp in the works
+- https://github.com/dailykit/react-file-manager
+  - A file manager built in ReactJs
+  - 依赖apollo
+
+- https://github.com/datahuborg/datahub /archived
+  - https://datahub.csail.mit.edu/
+  - experimental hosted platform (GitHub-like) for organizing, managing, sharing, collaborating, and making sense of data.
+
+- https://github.com/magentaLi/CloudDrive
+  - 基于javaweb的仿照百度网盘做的小型云盘系统
+# file-electron
+- https://github.com/Cocycles/electron-storage /201703
+  - Simply save/load json files to/from file system in electron applications
+- https://github.com/yan-foto/electron-reload /201908
+  - the simplest way to load contents of all active BrowserWindows within electron when the source files are changed.
+- https://github.com/sindresorhus/electron-serve
+  - Static file serving for Electron apps
+
+ 
+- https://github.com/vasylhoban/electron-file-manager
+  - File manager created on Electron/React/Redux (Windows, in future cross-browser)
+- https://github.com/warpdesign/react-explorer /202011
+  - File manager written in TypeScript, React, Blueprint and packaged with Electron
+- https://github.com/matthew-matvei/freeman /201903
+  - extensible, cross-platform file manager for power users
+- https://github.com/k-water/electron-filesystem /201807/vue
+  - 基于vue-electron的文件管理器
+- https://github.com/hawkeye64/electron-quasar-file-explorer /202010
+  - A Simple File Explorer using Vue/Quasar/Electron
+- https://github.com/timotius02/electron-file-explorer /201506
+  - File Explorer built using Electron, React, and Flux
+- https://github.com/mperitz/react-filetree-electron /201707
+  - A react component that renders an expandable/collapsible filetree in an electron app
+- https://github.com/mflorence99/el-file /201907
+  - Electron-based File Manager
+- https://github.com/marceloaugusto80/electron-react-typescript-boilerplate /202010
+  - Boilerplate for electron + file system + react + react-hot-loader + typescript
+- https://github.com/vasylhoban/electron-file-manager /201802
+  - File manager created on Electron/React/Redux
+- https://github.com/pmuellr/AnyViewer /201609
+  - desktop file viewer built on Electron
+
+ 
+
+- https://github.com/gerhardberger/electron-pdf-window /201709
+  - view PDF files in electron browser windows
+- https://github.com/fraserxu/electron-pdf /202010
+  - A command line tool to generate PDF from URL, HTML or Markdown files with electron.
+- https://github.com/artiebits/pdf-to-printer /202101
+  - Print PDF files from Node.js and Electron.
+- https://github.com/btargac/excel-parser-processor /202012
+  - It can download files from URL(s) in a column of Excel files. 
+  - If a new filename is provided at column B it will rename the file before saving. 
+
+- https://github.com/steventhanna/proton /201706
+  - quickly preview and edit Markdown files using Electron.
+- https://github.com/jersou/markdown-explorer /202009
+  - view and edit markdown documentation of a file tree
+- https://github.com/danobot/notorious /202012/GPLv3/31Star
+  - Offline-first note taking and knowledge management application 
+- https://github.com/Merlin04/multipad
+  - Notepad for the future - a swiss army knife file editor/viewer.
+# more-files-manager
+- https://github.com/MrWangJustToDo/file-manager
+  - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
+  - 个人网盘，支持用户的登录、注册，文件/文件夹的新建、删除，文件的上传、下载、编辑、提交、预览、重命名、复制、回收、搜索
+  - https://github.com/MrWangJustToDo/requestModule
+    - 可能是后端的简单测试
+
+- https://github.com/imshubhamsingh/file-system-react
+  - 依赖redux、styled-components、formik
+  - File System UI in Web using react
+  - 样式友好，但功能简单；没有提供列表视图，只有平铺视图
+
+- https://github.com/xlzy520/nestdisk-be
+  - https://github.com/xlzy520/netdisk
+  - 网盘项目后端，Koa、mysql，功能：登录注册，加密，hash计算，文件分享，用户、文件管理。
+  - 网盘前端基于vue2、vuex、element-ui
+- more-基于node实现的网盘
+  - https://github.com/nijiayu0914/file_exchange_frontend
+  
+
+- https://github.com/huangshaomo/nodejs-express-mysql-bootstrap
+  - 一个基于NodeJS Express Bootstrap Mysql 个人博客系统，
+  - 前台包括文章展示，登录注册，评论、网盘系统等。
+  - 后台包括用户，登录，角色，系统管理等
+- https://github.com/270520006/zspdisk
+  - 仿百度网盘的一个项目，用到了layui+ssm+shiro
+- https://github.com/KingJin-web/kingcloud
+  - 基于Hadoop的网盘，spring-boot-data-jpa+vue+layui
+- more-基于java-spring实现的网盘
+  - https://github.com/DongyangHu/smile-disk
+  - https://github.com/asusAaron/XDrive
+  - https://github.com/zayvion/Floda-Drive
+  - https://github.com/Antony998/cloud
+  - https://github.com/heart14/heart-cloud
+  - https://github.com/WEIQ311/code-pan
+
+- https://github.com/Studio-42/elFinder
+  - 样式陈旧但经典
+  - file manager for web, written in JavaScript using jQuery and jQuery UI
+
+- https://github.com/caorushizi/oss-client
+  - 七牛云文件仿百度网盘文件夹管理，上传下载，删除。七牛云存储，七牛云图床。桌面应用程序 windows mac
+- https://github.com/chenhb23/lanzouyun-disk
+  - 蓝奏云网盘、客户端，界面美观。支持登录、大文件批量断点上传 / 下载、URL 解析，使用 electron 构建

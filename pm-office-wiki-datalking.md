@@ -28,6 +28,11 @@ modified: '2021-08-07T19:58:20.142Z'
     - viz: observable plot、britecharts
     - backend: loopback、dashboard、collab-server、grid-studio
   - 研发管理、分析报告
+
+- 设计思路
+  - 类似文档网站，提供熟悉的文档阅读和编辑体验
+  - 类似网盘，提供便捷的文件操作
+  - 类似github，给repo提供丰富的功能和扩展
 # 总体设计(暂时5大功能)
 - 主页/工作台/最近动态 dashboard
 - 知识库/文库集合/仓库/批量操作 wiki lib

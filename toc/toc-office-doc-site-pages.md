@@ -15,7 +15,7 @@ modified: '2021-07-21T18:09:03.424Z'
   - 对于交互展示为主的site，可以利用live型工具包，可简单可复杂
 
 - usecase示例
-  - 重写bootstrap-offline-docs，特别是高亮toc + 组件文档
+  - 重写bootstrap-offline-docs，重点是高亮toc+常用组件
 
 - toc示例
   - elementric css框架文档

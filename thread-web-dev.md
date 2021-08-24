@@ -29,7 +29,9 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## Tip: number inputs have a `valueAsNumber` property, which allows you to quickly get their numeric value 
+- https://twitter.com/mgechev/status/1429662217318850560
+  - use `input.valueAsNumber` instead of `parseInt(input.value)`
 
 - ## Improve the performance of your apps by lazy-loading iframes
 - https://twitter.com/mgechev/status/1427125495292956675

@@ -202,8 +202,7 @@ modified: '2021-01-08T11:48:16.590Z'
   - 提供类似windows资源管理器功能, Windows 7 above, Linux and Mac.
 - https://github.com/nashaofu/dingtalk
   - 钉钉桌面版，基于electron和钉钉网页版开发，支持Windows、Linux和macOS
-- https://github.com/vasylhoban/electron-file-manager
-  - File manager created on Electron/React/Redux (Windows, in future cross-browser)
+
 - https://github.com/MichalBures/electron-simple-window-manager
   - Easily manage (open, hide, move, ...) your Electron windows.
 # more
