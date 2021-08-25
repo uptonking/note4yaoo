@@ -7,7 +7,7 @@ modified: '2021-03-29T19:16:23.854Z'
 
 # dev-log-faq-common
 
-# faq-not-yet
+# not-yet
 
 - 没有电脑、没有网络、没有电的时候，你能做什么？
 

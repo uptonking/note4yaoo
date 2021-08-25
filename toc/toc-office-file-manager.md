@@ -9,24 +9,22 @@ modified: '2021-08-23T05:27:08.068Z'
 
 # guide
 - 文件管理器的url路径设计
-  - github示例 note4yaoo/blob/main/attachment/tech/node架构图.png
+  - github示例
+    - note4yaoo/blob/main/attachment/tech/node架构图.png
     - url支持完整文件名，包括中文
-  - 百度网盘示例 /index?category=all&path=%2Fopt%2F重装系统相关
+  - dropbox示例
+    - /home/Blockstack%20Branding/BlockstackFile
+    - url与文件名和存放路径相对应，支持中文路径
+  - 百度网盘示例 
+    - /index?category=all&path=%2Fopt%2F系统相关
     - 路径中的特殊字符使用了url编码，如%2F表示斜杠/
-  - google drive示例 /folders/uuid-folder?resourcekey=uuid-key
+  - google drive示例 
+    - /folders/uuid-folder?resourcekey=uuid-key
     - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问
     - 缺点是url都是随机数字
-  - onedrive示例 /?id=uuid-folder&cid=AE0F511DC7381EDB
+  - onedrive示例 
+    - /?id=uuid-folder&cid=AE0F511DC7381EDB
     - 与google drive类似
-  - dropbox示例 /home/Blockstack%20Branding/BlockstackFile
-    - url与文件名和存放路径相对应，支持中文路径
-# popular
-- https://github.com/libfuse/libfuse
-  - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
-- https://github.com/presslabs/gitfs
-  - gitfs is a FUSE file system that fully integrates with git. 
-  - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
-  - 但vscode不是直接集成git了吗
 # react-file
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
@@ -52,11 +50,43 @@ modified: '2021-08-23T05:27:08.068Z'
 - https://github.com/TimboKZ/Chonky
   - https://chonky.io/
   - A File Browser component for React.
-  - 依赖react-window、styled-components、material-ui.v4、react-jss、react-dnd、reduxjs/toolkit
+  - 依赖react-window、react-dnd、styled-components、material-ui.v4、react-jss、reduxjs/toolkit
 
 - https://github.com/reactfilemanager/core
   - https://github.com/reactfilemanager/php-server
-# github-gdrive-file-manager
+# git-file-tree
+- https://github.com/ovity/octotree
+  - 旧版v3依赖jquery、jstree
+  - Octotree is a proprietary software. 
+  - This repository contains the old source code of a very limited version of Octotree.
+
+- https://github.com/EnixCoda/Gitako
+  - 依赖 nprogress、react-window
+  - File tree extension for GitHub on Chrome & Firefox & Edge
+
+- https://github.com/brumm/tako
+  - 依赖react-query、styled-components、rehype-dom-parse、zustand
+  - Tako replaces the default Github repository file list with an expandable file tree and file preview
+- https://github.com/ineo6/git-master
+  - 依赖jquery、jquery-ui、jstree
+  - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)
+  - Show GitHub repo size and file download support
+- https://github.com/FrankFan/gitlab-tree
+  - 依赖jquery、jstree
+  - Chrome extension to display Gitlab code in tree format.
+- https://github.com/jawil/GayHub
+  - 依赖monaco-editor、pjax、wolfy-eventemitter
+  - 文件目录树、toc
+
+- https://github.com/kaushiknishchay/better-git-viewer
+  - http://nkaushik.in/better-git-viewer/
+  - react based git repo viewer with file tree for better navigation.
+  - 依赖 isomorphic-git、@isomorphic-git/lightning-fs、material-ui
+
+- https://github.com/jpwilliams/gitree
+  - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
+  - 命令行工具
+# gdrive-file-manager
 - https://github.com/rocketseat-content/youtube-clone-dropbox-menu
   - https://github.com/maykbrito/vanilla-ui-clone-dropbox-home
   - 模仿dropbox的首页，简洁大方
@@ -189,6 +219,13 @@ modified: '2021-08-23T05:27:08.068Z'
   - Offline-first note taking and knowledge management application 
 - https://github.com/Merlin04/multipad
   - Notepad for the future - a swiss army knife file editor/viewer.
+# filesystem
+- https://github.com/libfuse/libfuse
+  - The reference implementation of the Linux FUSE (Filesystem in Userspace) interface
+- https://github.com/presslabs/gitfs
+  - gitfs is a FUSE file system that fully integrates with git. 
+  - You can mount a remote repository's branch locally, and any subsequent changes made to the files will be automatically committed to the remote.
+  - 但vscode不是直接集成git了吗
 # more-files-manager
 - https://github.com/MrWangJustToDo/file-manager
   - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts

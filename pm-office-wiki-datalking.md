@@ -28,21 +28,32 @@ modified: '2021-08-07T19:58:20.142Z'
     - viz: observable plot、britecharts
     - backend: loopback、dashboard、collab-server、grid-studio
   - 研发管理、分析报告
+# 功能设计
+- 类似文档网站、文档阅读器
+  - 提供熟悉的文档阅读和编辑体验
+  - toc目录、书签视图
+  - 文章评论、批注
+  - 不同点
+    - 文档目录/文件目录支持外部链接
+    - 文章目录支持自定义标签、图标
+    - 阅读快捷键：j、k、gg
 
-- 设计思路
-  - 类似文档网站、文档阅读器
-    - 提供熟悉的文档阅读和编辑体验
-    - 文章评论
-  - 类似网盘
-    - 提供便捷的文件操作，如移动、拖拽
-    - 切换多种文件显示模式
-  - 类似github
-    - 以repo为核心提供丰富的功能和扩展
-    - 支持指定文件夹作为文档浏览小程序的根目录
-    - 支持discussion、issues、pr/suggestion
-    - 支持actions自动更新引用文本块或数据
-    - 支持sponsor、paid-only-access
-    - 支持references by; contributors
+- 类似网盘
+  - 提供便捷的文件操作，如移动、拖拽、上传下载
+  - 切换多种文件显示模式，如列表、详情、平铺
+  - 不同点
+    - 专门的文档小程序视图，会显示文档目录而不是a-z排序
+    - 网盘文件通常支持按时间、按首字母排序，支持拖拽移动，但不支持拖拽排序；拖拽排序来指定文档目录顺序
+    - 就地文件树方便快速导航
+
+- 类似github
+  - 以repo为核心提供丰富的功能和扩展
+  - git pages，支持指定文件夹作为文档浏览小程序的根目录
+    - 甚至支持创建多个小程序，支持共用公共资源
+  - 支持discussion、issues、pr/suggestion
+  - 支持actions自动更新引用文本块或数据
+  - 支持sponsor、paid-only-access
+  - 支持references by; contributors
 # 总体设计(核心5大功能)
 - 主页/工作台/最近动态 dashboard
 - 知识库/文库集合/仓库/批量操作 wiki lib

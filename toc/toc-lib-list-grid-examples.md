@@ -9,11 +9,6 @@ modified: '2021-05-23T16:34:51.399Z'
 
 # app
 
-- https://github.com/handsontable/hyperformula
-  - https://handsontable.com/docs/hyperformula
-  - HyperFormula is an Excel-like calculation engine 
-  - You can use it in a browser or as a service with Node.js as your backend
-  - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
 - gridstudio /AGPLv3/7.8kStar/202006/go/python
   - https://github.com/ricklamers/gridstudio
   - https://gridstudio.io/

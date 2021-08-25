@@ -24,6 +24,24 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Do you wish the entire extended color palette was enabled by default or is that too much selection, making it hard to actually benefit from the constraints?
+- https://twitter.com/adamwathan/status/1430203942173126660
+- The ideal solution, IMHO, would be leaving the choice to the developer who'll use it. Separate packages? Installation flags?
+  - It already is up to the developer, you can set up whatever color palette you want in your config. This is just about the defaults.
+- With JIT, enabling all colors is the first thing I always do.
+- With JIT having the extended colors doesn't bug me much. 
+  - But having all the different grays does. It'll be "annoying" for auto-completion alone because they'd all have "gray" in the name. 
+  - Also typing "text-" is gonna suggest a bazillion new classes
+- with JIT I feel like restricting the color palette arbitrarily makes no sense
+- Sounds like enabling all colors will increase CDN build size, but will also reduce your customer support load.
+  - I vote enable all. The time it takes for site visitors to download and cache the new CDN build is very small, but the time it saves for your team is meaningful.
+- It feels like enabling all would actually harm some of Tailwinds benefits.
+- Honestly, I rarely enable all for every projects. There always a fews that are used more regularly than others. In my case is gray and its variants.
+
 - ## UX tip: ever you need to truncate text, add the full text to the title tag so user will be able to read full text
 - https://twitter.com/renatorib_/status/1418275875779485701
   - But you will need to find another solution for mobile.

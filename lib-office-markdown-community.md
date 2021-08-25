@@ -152,7 +152,31 @@ export default FrontPage
 
 - ## 
 
-- ## 
+- ## I like markdown-it plugin: `# A heading {#​id-for-heading}` .
+- https://twitter.com/rauschma/status/1430458279096893440
+  - Alas(不幸的是；哎呀), the available TOC plugins don’t pick up the custom ID. 
+  - Thus, I’ll probably need to write my own TOC plugin. 
+  - Last time I tried Remark, custom IDs + TOC didn’t work, either.
+- AFAIK markdown-it is also the fastest tokenizer (i.e. it's ~easily extendable) for Markdown that we can use in the browser. 
+  - markdown-wasm compiles it ~2x faster than that but it doesn't output tokens.
+- To make it both more semi-standard and a syntax extension, do something with `remark-directive` , which is the best bet on a generic extension mechanism to markdown: `# heading :attrs{#​id.class title="text"}` .
+
+- micromark’s has three primary goals:
+- To allow really complex stuff (e.g., concrete syntax trees) that open up interesting stuff for the future
+- to be a better base for remark (and the rest of unified) — it’s architecturally better, more readable/reasonable/powerful, CM and GFM compliant, etc
+- to provide an alternative for what most folks think they want out of markdown. 
+  - remark and ASTs are powerful but also a bit complex; 
+  - folks coming from marked or markdown-it and the like *just* want HTML out (w/ maybe a couple extensions)
+- Generating a toc is hard in micromark (it’s build in a way that could be streaming, so it spits out HTML immediately), and easy in an AST (find all headings, get their slugs and text, ...)
+  - (also this example was specifically on rehype/hast/html, which is even closer to what people are familiar with, e.g.,  `a` and `h1`, compared to remark/mdast/markdown, which has different link constructs)
+- Interesting. Pandoc’s filter system supports multiple passes. Especially for TOCs that’s a very clean approach.
+  - Yeah, that’s intentionally, those filters are closer to the AST stuff that unified does. micromark doesn’t have an AST; it’s straight to HTML (or to an AST), exactly for people that don’t need multiple passed!
+- If I were to add a TOC to micromark, I’d:
+  1. Run micromark a first time, collect the headings.
+  2. Insert the TOC when running micromark a second time.
+- Ah. That might work.
+  - micromark is intentionally low-level so there’s no knowledge of a “filename” for a stream/buffer/string. 
+  - So assuming multiple files are processed you’d have to track that yourself. But otherwise, that could work!
 
 - ## Joplin Note: Alternative markup like Asciidoc
 - https://discourse.joplinapp.org/t/alternative-markup-like-asciidoc/2059

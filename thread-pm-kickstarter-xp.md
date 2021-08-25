@@ -13,7 +13,11 @@ modified: '2021-08-16T06:55:02.440Z'
 
 - ## 
 
-- ## 
+- ##  I repeat, this is a 100% true story that isn’t about open source but gives a good idea about what it’s like to maintain an open source project. 
+- https://twitter.com/slicknet/status/1430334633611202562
+  - A lot of people suggest a lot of changes to open source projects not understanding that there is a maintenance cost to every new line of code added.
+  - The person coming up with the idea thinks that it’s great because they aren’t the ones that have to maintain it.
+- But I think maintainers should teach those who are willing to contribute to the project cause it's easy to suggest but hard to implement so maybe having the right guideline on how the project works and all that can help.
 
 - ## This summer marked four years of working full-time on my own business(Tailwind UI)
 - https://twitter.com/adamwathan/status/1296447318074568704

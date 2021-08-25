@@ -29,6 +29,14 @@ modified: '2020-10-22T06:49:10.760Z'
   - **luckysheet**: 未使用class类，函数式风格
   - **x-spreadsheet**: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
+# list-grid-usecase
+- hyperformula /603Star/GPLv3/202108/ts
+  - https://github.com/handsontable/hyperformula
+  - https://handsontable.com/docs/hyperformula
+  - HyperFormula is an Excel-like calculation engine 
+  - You can use it in a browser or as a service with Node.js as your backend
+  - It also supports the use of cross-sheet references, named expressions, different data types, and custom functions.
+  - HyperFormula doesn't assume any existing user interface, which makes it a great general-purpose library that can be used in various business applications.
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202006/ts/NoDeps
   - https://github.com/ag-grid/ag-grid

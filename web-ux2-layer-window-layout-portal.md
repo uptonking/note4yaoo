@@ -12,7 +12,6 @@ modified: '2021-07-29T20:39:09.187Z'
 - iframe页面没有自己的历史记录，使用的是基座(父页面)的浏览历史
   - 当iframe页在内部进行跳转时，浏览器地址栏无变化，基座中加载的src资源也无变化
   - 当浏览器刷新时，无法停留在iframe内部跳转后的页面上，需要用户重新走一遍操作
-
 # faq
 
 ## 如何将多个传统网站页面集成合并，组成一个portal门户目录，且冲突尽可能少
@@ -22,9 +21,7 @@ modified: '2021-07-29T20:39:09.187Z'
 
 - ref
   - [Multiple web applications into one portal](https://stackoverflow.com/questions/8100098/multiple-web-applications-into-one-portal)
-
 # iframe
-
 - ## [iframe有什么好处，有什么坏处？](https://www.zhihu.com/question/20653055)
 - 浏览器兼容性特别好
 - iframe原本的用法在现在看来是不合时宜的，问题太多了但是它的其他功能却是不错的黑魔法，这里列举一些
@@ -56,7 +53,15 @@ modified: '2021-07-29T20:39:09.187Z'
 - iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。
 - 当时是基于iframe实现布局方便考虑的，没成想这是一个巨大的坑，
   - 内容区域iframe高度自适应可把我们坑苦了，然后布局上出现各种怪异的问题
-
+# discuss
+- ## 50% of my job is reminding designers that they can't have tooltips on elements that aren't focusable. Stop it!
+- https://twitter.com/devongovett/status/1430234270375636993
+  - Usually it's random text (e.g. truncation), or icons. Disabled buttons are also a very common one.
+- In the case of truncation, I imagine it’s similar to what Safari does natively? Is there a proper way to mimic that and retain accessibility?
+  - That's the reason why I have an abstracted out Actionable utility in Arcade as well. Disabled buttons tooltips are not my favourite but we had a discussion
+  - We're working on this instead: 添加一个添加的类似i的提示图标，鼠标不能聚焦到不可用button，但可以聚焦到不可用button旁边的i型icon
+- I may regret asking this, but why can you not have a tooltip on a non-focusable element?
+  - So that users that navigate using a keyboard can access it
+  - Some users use a keyboard but not a screen reader, and the target needs to be focusable for them to access the tooltip.
 # ref
-
 - [iframe接班人-微前端框架qiankun在中后台系统实践](https://zhuanlan.zhihu.com/p/259209543)

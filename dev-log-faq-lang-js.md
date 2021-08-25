@@ -7,7 +7,7 @@ modified: '2021-03-29T19:18:55.989Z'
 
 # dev-log-faq-lang-js
 
-# faq-not-yet
+# not-yet
 
 - [是否应该在production里使用typescript的decorator？](https://www.zhihu.com/question/404724504)
   - decorator提案已有三版草案，尤其第三版是对前两版的推倒重来

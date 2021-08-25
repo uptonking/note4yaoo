@@ -26,6 +26,8 @@ modified: '2021-02-09T19:25:11.641Z'
   - CSS Paint is an API that allows developers to programatically generate and draw graphics where CSS expects an image.
 # frontend-engineering
 - [Encoding data for POST requests](https://jakearchibald.com/2021/encoding-data-for-post-requests/)
+# mobile
+- [移动端web开发基础 gitbook](https://zhenchao125.gitbooks.io/html5_4_atguigu/content/di-3-zhang-yi-dong-duan-shi-jian/1dian-ji-shi-jian-zai-yi-dong-duan-de-wen-ti.html)
 # backend-dev
 
 # more-blogs

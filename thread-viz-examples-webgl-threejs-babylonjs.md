@@ -7,4 +7,8 @@ modified: '2021-08-07T16:44:32.377Z'
 
 # thread-viz-examples-webgl-threejs-babylonjs
 
+# discuss
 
+- ## beating heart
+- https://codepen.io/Mamboleoo/pen/YzQzQgo
+  - 类似心型软糖

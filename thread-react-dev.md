@@ -16,7 +16,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## React poll ⚛️ Referential equality is important for props attached to host JSX elements (like <button> <div>, etc).
+- https://twitter.com/itsdouges/status/1430368254715850752
+- I don't think so generally, what non-primitive values go onto DOM elements anyways? I can only think of style, not sure if React cares about referential equality for that or not.
+- as only styles and events are accepted as “not strings”, with both (I hope) not triggering VDOM comparison and doing only some very local updates.
 
 - ## How One Conditional Can Entangle Your React App
 - https://betterprogramming.pub/how-one-conditional-can-entangle-your-react-app-b817aa47718a

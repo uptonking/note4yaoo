@@ -16,6 +16,28 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## My favorite way to create a new JavaScript object with a property omitted is Rest/spread.
+- https://twitter.com/housecor/status/1430232426106826754
+  - const { address, ...userWithoutAddress } = user; 
+- I'd rather use the spread operator and the good old 'delete newObj.prop'.makes it much more readable for non js devs.
+- but unnecessary it will create `address` variable
+  - I like to pick object properties using `lodash.pick`
+
+```JS
+// And if you're using a dynamic field
+
+const propertyToRemove = 'email';
+
+const {
+  [propertyToRemove]: removed,
+  ...userWithoutEmail
+} = user;
+```
+
 - ## TypeScript: What’s the cleanest way to enable globalThis.someProperty? A type assertion ( `as` ) works but feels hacky.
 - https://twitter.com/rauschma/status/1429887307998535681
 

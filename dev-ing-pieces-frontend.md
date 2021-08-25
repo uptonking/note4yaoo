@@ -6,7 +6,9 @@ modified: '2021-03-29T19:30:00.059Z'
 ---
 
 # dev-ing-pieces-frontend
-- about web, state, routing
+
+> about web development
+
 # logging
 
  
@@ -16,7 +18,25 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## Best way to create an <a> link with empty href
+- https://stackoverflow.com/questions/22940761
+- 一定不能省略href，否则不可键盘聚焦
+  - using href will also give you keyboard focusability by default
+  - an `<a>` element with no `href` is styled differently in some browsers
+- javascript:void(0)
+  - 不必修改onclick，因为其中必须有return false
+  - javascript:; also behaves like javascript:void(0); 
+- Use `href="#"` , make sure onclick always contains `return false; ` 还会存在跳转到顶部的问题
+
+- javascript:void(0) violates Content Security Policy 
+
+- [Is an empty href valid?](https://stackoverflow.com/questions/5637969/is-an-empty-href-valid)
+  - href="" reloads the page
+  - href="#" adds an extra entry to the browser history (which is annoying when e.g. back-buttoning).
+  - href="javascript:; " does not seem to have any problems (other than looking messy and meaningless) - anyone know of any?
+  - href="//:0", which will not make a request to the server nor leave any history
+- `<a href>sth</a>` leave out the ="". The advantage of this is that the link isn't treated as an anchor to the current page.
+  - This is illegal syntax. According to the spec “[Empty Attribute] syntax is permitted only for boolean attributes.” 
 
 - ## is there any harm in adding a class to an element that already has that class using classList.add
 - https://stackoverflow.com/questions/51214589

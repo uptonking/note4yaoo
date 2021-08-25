@@ -37,6 +37,17 @@ modified: '2021-05-13T03:12:23.257Z'
   - 各自写一遍其实也没想象的工作量大
     - 如果有图表的话，工作量就大了
 # discuss
+- ## Why isn’t there a react native for Linux yet?__202009
+- https://www.reddit.com/r/reactnative/comments/j855s7/why_isnt_there_a_react_native_for_linux_yet/
+- Market share. There just aren't enough users on other platforms.
+- Another thing to consider is that **there isn't really a single unified "Linux" graphical toolkit API**. 
+  - We have GTK 3 for Gnome/elementary/XFCE apps - which one with their own UI guidelines - QT for KDE apps and lots of smaller options. 
+  - Thus, React Native would have to target one or more of those specific APIs, which I don't think would be feasible.
+- I think flutter's approach makes more sense in this regard, since it doesn't use native toolkits for the UI widgets and instead implements their own, thus making it easier to develop cohesive experiences across a different myriad of platforms - which would basically solve a similar problem to what electron currently does.
+- I for one being a GNOME user would love to see a GTK integration for RN backed for some big company, unfortunately I don't think that will happen anytime soon.
+- You could use Proton native, but it's definitely not mature enough right now. Plus there's nodegui as well, which uses QT to render UIs
+- Google have their own cross platform technology called Flutter, and making RN compatible with chrome os will kill their own product. Btw you must try Flutter once its really good.
+
 - ## [2020年跨端开发时 Flutter 和 React Native 哪个更值得选择？](https://www.zhihu.com/question/384934444/answers/updated)
 
 - flutter招得到人？ RN直接js前端能上，dart不行

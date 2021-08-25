@@ -7,7 +7,7 @@ modified: '2021-03-29T19:17:06.810Z'
 
 # dev-log-faq-engineering
 
-# faq-not-yet
+# not-yet
 
 - 海量小文件如何存储、更新
 - 海量图片如何存储、更新

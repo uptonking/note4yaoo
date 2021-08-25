@@ -23,9 +23,19 @@ modified: '2021-05-13T02:42:08.630Z'
   - [JavaScript Big Data in a Small Browser](https://medium.com/@niall.crosby/javascript-big-data-in-a-small-browser-3b19c01e2132)
   - [Delivering Big Data in the Small Browser](https://blog.ag-grid.com/delivering-big-data-in-the-small-browser/)
 - [Max Koretskyi articles](https://indepth.dev/author/maxkoretskyi/)
+# [React UI Overview](https://blog.ag-grid.com/react-ui-overview/)
+- Version 26.0.0 of AG Grid contains the first public iteration of our new React UI - a rendering engine for AG Grid written in pure React.
+- The previous approach to rendering in React was a wrapper around the JavaScript rendering engine using Portals for custom controls.
+- The new approach brings many benefits for React Programmers, the highlights being:
+  - The React Developer Tools Components view now shows named React components used throughout.
+  - The React Profiler shows that the AG Grid rendering engine is very efficient on rendering cycles and shows all components and parts of the Grid in the profiler.
+  - Properties and States can be passed through the React hierarchy as expected with a React application.
 
+- AG Grid React UI does not use portals to show custom components. 
+  - Previously the Grid hosted every React Component in a React Portal with every component in the DOM view wrapped in an `ag-react-container`.
+  - Now, every React Component is directly in the DOM hierarchy with no wrapper.
+  - This change will improve the rendering optimisation of the components.
 # 8 Performance Hacks for JavaScript in ag-grid
-
 - [8 Performance Hacks for JavaScript_Niall Crosby_201709](https://www.ag-grid.com/ag-grid-8-performance-hacks-for-javascript/)
 
 - This blog presents performance patterns, or performance hacks, that we used to put our grid on steroids.
@@ -139,9 +149,7 @@ modified: '2021-05-13T02:42:08.630Z'
   - They are tried and tested approaches for squeezing performance out of the browser. 
   - One lasting note - these are performance hacks that worked for us in ag-Grid. 
   - They may not be suitable to your application (an application has different concerns to a data grid).
-
 # Inside ag-Grid: techniques to make the fastest JavaScript datagrid
-
 - [Inside ag-Grid: techniques to make the fastest JavaScript datagrid_201910](https://indepth.dev/inside-ag-grid-techniques-to-make-the-fastest-javascript-datagrid-in-the-world-2/)
 
 - In just 4 years we built the best JavaScript datagrid in the world.
@@ -196,9 +204,7 @@ modified: '2021-05-13T02:42:08.630Z'
   - So before we do the update, we first run dirty checking — each cell stores current value and compares it to the new value it gets. 
   - Only if changes are detected or update is forced, the DOM is updated. 
   - This approach significantly reduces time required to process changes. 
-
 # [Why do we have Dependency Injection in web development](https://indepth.dev/why-do-we-have-dependency-injection-in-web-development/)
-
 - Dependency Injection (DI) software design pattern has long been part of native client and server-side applications that use OOP languages. 
 - In essence it’s a technique for achieving Inversion of Control (IoC) between classes and their dependencies. 
 - The content mostly discusses cases related to architecture of native applications that use OOP languages like Java or C#. 
@@ -210,13 +216,9 @@ modified: '2021-05-13T02:42:08.630Z'
   - simplifying testing setup. 
 - when two blocks of code are loosely coupled, it means that a change in one usually doesn’t require a change in the other. 
   - advantage of loose coupling is that it increases maintainability of the overall solution.
-
 # JavaScript GPU Animation with Transform and Translate
-
 - [JavaScript GPU Animation with Transform and Translate](https://www.ag-grid.com/ag-grid-gpu-animation-transform-translate/)
-
 # Comparison: Why ag-Grid is the best when it comes to Column Pinning
-
 - ref
   - [Comparison: Why ag-Grid is the best when it comes to Column Pinning](https://blog.ag-grid.com/javascript-grid-comparison-column-pinning-ag-grid/)
   - [Here's why column pinning by ag-Grid wins over competition](https://blog.ag-grid.com/heres-why-column-pinning-in-react-datagrid-by-ag-grid-wins-over-competition/)
@@ -237,9 +239,7 @@ modified: '2021-05-13T02:42:08.630Z'
 - ag-Grid doesn’t force you to indicate an initial pinned column or the specify the number of pinned columns in the configuration. 
   - This can all be done after the grid is initialized
   - All other React datagrids either require at least one pinned column all the time or limit you by specifying the number of pinned columns in advance.
-
 # ref
-
 - [Testing with Jest & Enzyme - querying JSDOM vs ag-Grid API](https://blog.ag-grid.com/testing-ag-grid-react-jest-enzyme/)
   - jsdom: test user behavior
   - ag-grid api: compatible with dom virtualisation, test implementation

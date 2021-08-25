@@ -7,7 +7,7 @@ modified: '2021-03-29T19:17:38.650Z'
 
 # dev-log-faq-web
 
-# faq-not-yet
+# not-yet
 
 - autoSave或formatOnSave 经常会导致编辑器卡顿
 

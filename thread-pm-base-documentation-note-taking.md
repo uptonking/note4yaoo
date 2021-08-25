@@ -11,9 +11,16 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## The Text2PixelArt neural network (generates pixel art based on text) already allows you to create a good cover images for articles.
+- https://twitter.com/sitnikcode/status/1430213610542964740
+  - 生成的图片色彩风格都很浓郁，如深红深紫深蓝
 
-- ## 
+- ## Evernote used to have a feature that let you export all of your notes (1943 for me) in one go... 
+- https://twitter.com/simonw/status/1430407513606791170
+  - but at some point recently they dropped that down to either 50 individually selected notes at a time or everything in a specific notebook
+  - github从设计上就解决了此问题，每个仓库单独下载
+- More frustrating though... the notes they export used to be valid XML, but now they are not! 
+  - Just hit an XML error running my evernote-to-sqlite tool against the ".enex" export file
 
 - ## Just added Markdown, HTML, and CSS as export options. Markdown includes links to hosted assets.
 - https://twitter.com/4lpine/status/1428064775372607488

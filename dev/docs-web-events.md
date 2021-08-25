@@ -14,17 +14,18 @@ modified: '2020-12-08T14:15:41.392Z'
   - [DOM onevent handlers](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers)
   - [Creating and triggering events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events)
   - [Comparison of Event Targets](https://developer.mozilla.org/en-US/docs/Web/API/Event/Comparison_of_Event_Targets)
-
 # event overview
-
 - `event.target` is a reference to the object that dispatched the event. 
   - It identifies the element on which the event occurred and which may be its direct descendent.
 - `event.currentTarget` always refers to the element to which the event handler has been attached. 
   - It is the element you actually bound the event to. 
   - This will never change.
 
+- [HTMLElement.click()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click)
+- The `HTMLElement.click()` method simulates a mouse click on an element.
+  - When click() is used with supported elements (such as an `<input>`), it fires the element's click event.
+  - This event then bubbles up to elements higher in the document tree (or event chain) and fires their click events.
 # MouseEvent
-
 - `MouseEvent.offsetX`
   - The offsetX read-only property of the MouseEvent interface provides the offset in the X coordinate of the mouse pointer between that event and the padding edge of the target node. 
 
@@ -64,7 +65,6 @@ modified: '2020-12-08T14:15:41.392Z'
   - 
 
 # EventSource
-
 - The EventSource interface is web content's interface to server-sent events. 
   - An EventSource instance opens a persistent connection to an HTTP server, which sends events in `text/event-stream` format. 
   - The connection remains open until closed by calling `EventSource.close()`.

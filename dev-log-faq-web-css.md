@@ -7,7 +7,7 @@ modified: '2021-08-07T17:24:01.266Z'
 
 # dev-log-faq-web-css
 
-# faq-not-yet
+# not-yet
 
 - scss/less/css源码中要不要放图片
   - 如何处理相对路径和绝对路径

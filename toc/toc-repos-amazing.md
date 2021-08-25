@@ -134,6 +134,10 @@ modified: '2020-11-03T06:54:59.051Z'
 - https://github.com/mbtaviz/mbtaviz.github.io/
   - Visualizing MBTA Data is a web based interactive visualization that provides a glimpse into the performance and behavior of Boston's subway system.
   - http://mbtaviz.github.io/
+- https://github.com/madneal/subway-shanghai
+  - https://madneal.com/subway-shanghai/
+  - 典型的地铁线路图
+  - 提供了完整数据，依赖可忽略
 # poster-logo
 - https://github.com/faviator/faviator
   - A simple easy favicon generator.

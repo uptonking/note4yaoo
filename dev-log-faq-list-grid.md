@@ -7,7 +7,7 @@ modified: '2021-03-29T19:16:31.873Z'
 
 # dev-log-faq-list-grid
 
-# faq-not-yet
+# not-yet
 
 - 无限滚动列表时，极限条件下会导致dom元素过多，该如何提高性能
   - 采用throttle策略，每隔一段时间，删除不可见的元素

@@ -21,7 +21,9 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## Safari joins Chrome, Firefox, Opera & IE in dropping the 300ms tap delay!__201603
+- https://twitter.com/jaffathecake/status/712004058890915840
+  - Safari 9.1 is also available today for OS X Yosemite and OS X Mavericks with the same great WebKit features from OS X El Capitan 10.11.4.
 
 - ## The Safari onLoad event handler for the assets works differently from Chrome and Firefox. 
 - https://twitter.com/bruno__quaresma/status/1428846800631435264
