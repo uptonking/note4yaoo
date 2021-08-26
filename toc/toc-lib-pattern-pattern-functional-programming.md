@@ -6,9 +6,15 @@ modified: '2020-12-20T15:47:26.038Z'
 ---
 
 # toc-lib-pattern-pattern-functional-programming
-# functional dom ui
-# popular
 
+# guide
+
+- functional-examples
+  - guardian-editor
+  - britecharts
+# functional dom ui
+
+# popular
 - https://github.com/reactivex/rxjs
   - /23.3kStar/Apache2/202011/ts
   - https://rxjs.dev/
@@ -20,7 +26,6 @@ modified: '2020-12-20T15:47:26.038Z'
   - https://github.com/callbag/callbag
     - A standard for JS callbacks that enables lightweight observables and iterables
     - Callbag中的source可以转换成RxJS的Observable
-
 
 - https://github.com/cyclejs/cyclejs
   - /9.8kStar/MIT/202009/ts
@@ -94,9 +99,7 @@ modified: '2020-12-20T15:47:26.038Z'
 
 - https://github.com/nickslevine/zebras
   - Data analysis library for JavaScript built with Ramda
-
 # hooks
-
 - https://github.com/clebert/batis
   - A JS library for reactive programming using React-like Hooks
   - Even though Hooks are actually a constrained solution for modeling states in actually stateless functional components, they have proven to be very elegant in their design. 
@@ -106,9 +109,7 @@ modified: '2020-12-20T15:47:26.038Z'
 - https://github.com/michael-klein/hookuspocus
   - allow you to add hooks to any function.
   - Internally, hookuspocus uses WeakMaps if possible to keep states between runs (and falls back to simple Maps).
-
 # more-fp
-
 - https://github.com/paldepind/flyd
   - /1.5kStar/MIT/201809/js
   - The minimalistic but powerful, modular, functional reactive programming library in JavaScript.

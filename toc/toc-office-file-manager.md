@@ -9,7 +9,7 @@ modified: '2021-08-23T05:27:08.068Z'
 
 # guide
 - 文件管理器的url路径设计
-  - github示例
+  - github示例 支持多个branch、tag
     - note4yaoo/blob/main/attachment/tech/node架构图.png
     - url支持完整文件名，包括中文
   - dropbox示例
@@ -18,13 +18,12 @@ modified: '2021-08-23T05:27:08.068Z'
   - 百度网盘示例 
     - /index?category=all&path=%2Fopt%2F系统相关
     - 路径中的特殊字符使用了url编码，如%2F表示斜杠/
-  - google drive示例 
+  - google drive示例  内层文件夹url扁平化
     - /folders/uuid-folder?resourcekey=uuid-key
     - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问
     - 缺点是url都是随机数字
-  - onedrive示例 
+  - onedrive示例  内层文件夹url扁平化
     - /?id=uuid-folder&cid=AE0F511DC7381EDB
-    - 与google drive类似
 # react-file
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree

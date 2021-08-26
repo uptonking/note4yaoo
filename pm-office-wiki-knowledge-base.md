@@ -60,6 +60,16 @@ modified: '2021-07-27T11:27:37.050Z'
   - standalone article first
   - 批量修改多个文件的内容，如更新链接url
   - 统一管理assets，如替换图片
+# templates 流行模版
+- 飞书知识空间模版
+  - 研发部门、产品部们、市场营销、商业化
+- 语雀模版
+  - 文档、表格、演示文稿、画板、数据表
+- [Confluence templates](https://www.atlassian.com/software/confluence/templates)
+- [Notion Template Gallery](https://www.notion.so/Notion-Template-Gallery-181e961aeb5c4ee6915307c0dfd5156d)
+- [Microsoft Office Templates](https://templates.office.com/)
+- [明道企业数字化Saas 模版库](ht tps://www2.mingdao.com/library.htm)
+- [腾讯文档 模版](https://docs.qq.com/mall/index)
 # products-solutions
 
 ## [飞书](https://www.feishu.cn/hc/zh-CN/articles/134238909902)

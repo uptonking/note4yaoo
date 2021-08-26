@@ -13,7 +13,14 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## API integrations are always 1:1. So the number of required integrations required for interop scales exponentially with the number of apps.
+- https://twitter.com/gordonbrander/status/1430568224106508289
+  - Files act as a hub around which an open set of apps can interoperate. So the number of integrations scales linearly with number of apps.
+- “You can do this with a protocol too”. Yep, any kind of interchange. The more widely supported, the larger the combinatorial space.
+  - We don’t see too many federated APIs. Just a few (IMAP, etc). I wonder why?
+  - I sense one reason may be that APIs are directly controlled by the SaaS product. It’s private property, rather than neutral territory. Incentives to rent out access, rather than interchange.
+- You could also just have them use one protocol. In fact you still need to do this with files, these programs have to all agree to write the same file format. If you can get that level of coordination, there's nothing stopping them from all exposing the same API.
+  - The Language Server Protocol is exactly this, using JSON-RPC rather than a file format.
 
 - ## Want an early look at the tldraw renderer?
 - https://twitter.com/steveruizok/status/1420836276878577665

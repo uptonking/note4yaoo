@@ -26,7 +26,11 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## I think Skeleton Screens are often not the best UX. 
+- https://twitter.com/samselikoff/status/1407125948567334913?s=21
+  - Most React frameworks optimize for them but (a) they require a ton of extra engineering effort and (b) I'd prefer nice loading spinners here. 
+  - Fewer UI states to mentally distinguish.
+- The bit you said about it being an extra cognitive load is so true - hadn’t thought of it that way before but it makes sense!
 
 - ## Do you wish the entire extended color palette was enabled by default or is that too much selection, making it hard to actually benefit from the constraints?
 - https://twitter.com/adamwathan/status/1430203942173126660

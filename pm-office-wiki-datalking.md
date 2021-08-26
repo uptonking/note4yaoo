@@ -9,17 +9,6 @@ modified: '2021-08-07T19:58:20.142Z'
 
 # guide
 
-- 流行模版
-  - 飞书知识空间模版
-    - 研发部门、产品部们、市场营销、商业化
-  - 语雀模版
-    - 文档、表格、演示文稿、画板、数据表
-  - [Confluence templates](https://www.atlassian.com/software/confluence/templates)
-  - [Notion Template Gallery](https://www.notion.so/Notion-Template-Gallery-181e961aeb5c4ee6915307c0dfd5156d)
-  - [Microsoft Office Templates](https://templates.office.com/)
-  - [明道企业数字化Saas 模版库](ht tps://www2.mingdao.com/library.htm)
-  - [腾讯文档 模版](https://docs.qq.com/mall/index)
-
 - usecase
   - 技术文档
     - design: bootstrap、react-spectrum; atlassian
@@ -29,6 +18,10 @@ modified: '2021-08-07T19:58:20.142Z'
     - backend: loopback、dashboard、collab-server、grid-studio
   - 研发管理、分析报告
 # 功能设计
+- 文档格式
+  - 以流行的gfm markdown为主
+  - 考虑后期不依赖具体的文件格式，使用json/rpc协议
+
 - 类似文档网站、文档阅读器
   - 提供熟悉的文档阅读和编辑体验
   - toc目录、书签视图

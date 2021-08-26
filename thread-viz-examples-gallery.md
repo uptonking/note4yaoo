@@ -11,7 +11,9 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
-- ## 
+- ## My latest viz based on car safety features in the theme of a periodic table. Created with @tableau Desktop.
+- https://twitter.com/SuglaniNaresh/status/1430607097083871233
+  - [Periodic Table of Car Safety Elements](https://public.tableau.com/app/profile/naresh.suglani/viz/PeriodicTableofCarSafetyElements/PeriodicTable)
 
 - ## Visualizing a codebase
 - https://next.github.com/projects/repo-visualization

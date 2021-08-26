@@ -11,6 +11,17 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## When reading docs, which mode/code highlight theme combo do you prefer
+- https://twitter.com/youyuxi/status/1430689446664491012
+- Code should always be dark, the doc theme should remain consistent with the system preference.
+- According to settings in my OS. Light mode light theme at day, dark mode dark theme at night.
+
 - ## The Text2PixelArt neural network (generates pixel art based on text) already allows you to create a good cover images for articles.
 - https://twitter.com/sitnikcode/status/1430213610542964740
   - 生成的图片色彩风格都很浓郁，如深红深紫深蓝

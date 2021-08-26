@@ -36,6 +36,9 @@ modified: '2021-02-05T14:00:02.922Z'
 - Whats browser support like?
   - Great if you add fallbacks to `inset` with left, top, right, bottom 
 
+- played around with some other color combos
+  - https://codepen.io/wyoung2020/pen/6b497f38821567e6b0578b2f427e5132
+
 - ## implementing the cut-out effect in CSS and SVG.
 - https://twitter.com/shadeed9/status/1419956367486500887
   - [Thinking About The Cut-Out Effect: CSS or SVG?](https://ishadeed.com/article/thinking-about-the-cut-out-effect/)

@@ -16,7 +16,12 @@ modified: '2021-05-05T07:43:12.792Z'
 
 - ## 
 
-- ## 
+- ## Want to add #d3js transitions to visualizations created with @observablehq Plot?
+- https://twitter.com/mf_viz/status/1430881233978933248
+  - Here's a function you can use to add animations to your plots!
+  - [Plot Animation](https://observablehq.com/@mkfreeman/plot-animation)
+  - Warning: animation may can be distracting. 
+  - there are some use-cases where animation can enhance perception or drive focus, but it can also detract from(贬低、减损) the data.
 
 - ## I am obsessed with Plot
 - https://twitter.com/enjalot/status/1398009942070661122
