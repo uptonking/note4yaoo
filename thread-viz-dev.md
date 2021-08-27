@@ -13,7 +13,10 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
-- ## 
+- ## I know the customer is always right, but not when they ask for an option to support log scales on bar charts. No!
+- https://twitter.com/mistercrunch/status/1431103110022242307
+  - [Graph tip - Don't use a log scale on a bar graph!](https://www.graphpad.com/support/faq/graph-tip-dont-use-a-log-scale-on-a-bar-graph/)
+- Disagree. You can lose long tails without log on the y
 
 - ## Chartability is a methodology for ensuring that data visualizations, systems, and interfaces are accessible.
 - https://observablehq.com/@frankelavsky/chartability

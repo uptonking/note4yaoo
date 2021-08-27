@@ -11,7 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## I'm very impressed with the work @astrodotbuild has been doing to bring MPAs to the forefront. 
+- https://twitter.com/RyanCarniato/status/1430928984867368964 
+  - They are doing a really good job of distilling the advantages and use cases.
+- Focusing on Static Generation and letting people ease into it has really helped.
+- But on the SPA side it's different. We sell wizardry. Portals, Time Travel, Suspense, Time Slicing, Quantum Atoms... Which are all great until you just want your website to load as fast as possible.
 
 - ## I find it slightly ironic that I see lots of complaints about Create React App being a "black box" and "all the config is hidden", and yet I see almost no such complaints about Next.js.
 - https://twitter.com/acemarke/status/1422304284083949569

@@ -17,6 +17,7 @@ modified: '2021-05-14T14:44:14.720Z'
   - 商业性质的报告质量较高，但大多存在版权问题
   - [在哪里能找到各行业的分析研究报告？](https://www.zhihu.com/question/19766160)
   - [各大行业报告的数据都是从哪里找的？](https://www.zhihu.com/question/67387122)
+  - [国内外有什么好的数据平台？](https://www.zhihu.com/question/34498225/answer/2087076914)
   - [你看过最优秀的研报是什么？ 数据+方法逻辑+观点](https://www.zhihu.com/question/33537844/answers/updated)
 - 开放数据/报告
   - 开放数据集

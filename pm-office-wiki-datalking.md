@@ -14,9 +14,9 @@ modified: '2021-08-07T19:58:20.142Z'
     - design: bootstrap、react-spectrum; atlassian
     - editor: prosemirror、tiptap、atlaskit; r-m-e,curvenote
     - list: ag-grid、react-table、luckysheet
-    - viz: observable plot、britecharts
-    - backend: loopback、dashboard、collab-server、grid-studio
-  - 研发管理、分析报告
+    - viz: observable-plot、britecharts
+    - backend: dashboard-api、collab-server、grid-studio
+  - 分析报告
 # 功能设计
 - 文档格式
   - 以流行的gfm markdown为主
@@ -38,6 +38,7 @@ modified: '2021-08-07T19:58:20.142Z'
     - 专门的文档小程序视图，会显示文档目录而不是a-z排序
     - 网盘文件通常支持按时间、按首字母排序，支持拖拽移动，但不支持拖拽排序；拖拽排序来指定文档目录顺序
     - 就地文件树方便快速导航
+    - 支持在限额之内下载文件夹
 
 - 类似github
   - 以repo为核心提供丰富的功能和扩展

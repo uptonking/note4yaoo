@@ -18,6 +18,42 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
+- ## is there a difference between optional parameters and parameters than can be undefined?
+- https://stackoverflow.com/questions/65986108
+- In TypeScript, a function/method parameter or object type's field that is marked as optional with the `?` modifier means that it can be missing
+  - but such optional parameters/fields are also allowed to be present but undefined
+  - In fact, if you use IntelliSense to examine the types of such optional parameters/fields, you'll see that the compiler automatically adds undefined as a possibility
+- Compare and contrast this with a required (non-optional) field or parameter that includes `string | undefined` .
+  - unlike the optional versions, the required ones cannot be called or created with the value missing entirely
+
+```typescript
+
+function opt(x?: string) { }
+
+interface Opt {
+    x?: string;
+}
+
+const optObj: Opt = {}; // okay
+opt(); // okay
+opt(undefined); // okay
+
+// ------------------------------
+
+function req(x: string | undefined) { }
+
+interface Req {
+    x: string | undefined
+}
+
+req(); // error, Expected 1 arguments, but got 0!
+req(undefined); // okay
+
+```
+
+- For function parameters, you can also sometimes use the type void to mean "missing", and therefore `| void` to mean "optional", as implemented in microsoft/TypeScript#27522. So `x?: string` and `x: string | void` are treated similarly
+  - This is not yet the case for object fields. It has been implemented in microsoft/TypeScript#40823, but has not yet made it into the language
+
 - ## Best way to create an <a> link with empty href
 - https://stackoverflow.com/questions/22940761
 - 一定不能省略href，否则不可键盘聚焦

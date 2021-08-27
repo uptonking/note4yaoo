@@ -11,6 +11,9 @@ modified: '2021-05-27T19:08:18.170Z'
 - ref
   - search: 数据 site:observablehq.com
 # extensions
+- Add additional features to the ObservableHQ platform, all implemented as ObservableHQ notebooks with public source code and MIT license. 
+  - https://observablehq.com/collection/@endpointservices/services
+
 - Want a quick visual overview of your dataset? Try using the new `SummaryTable()` function
   - https://observablehq.com/@observablehq/summary-table
 # examples-stars
