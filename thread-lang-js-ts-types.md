@@ -22,7 +22,14 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## Specifying the type of this for functions
+- https://stackoverflow.com/questions/44164032
+- Following up on specifying the type of `this` in a class or an interface, functions and methods can now declare the type of `this` they expect.
+  - By default the type of `this` inside a function is `any` . 
+  - Starting with TypeScript 2.0, you can provide an explicit `this` parameter. 
+  - `this` parameters are fake parameters that come first in the parameter list of a function
+- Notice that `this` won't get translated into js, so it's not a real argument in the function.
+- function f(this: void)  // make sure `this` is unusable in this standalone function
 
 - ## how do people handle functions that can throw in typescript? 
 - https://twitter.com/tmcw/status/1423404151149580292

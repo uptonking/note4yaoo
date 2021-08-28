@@ -7,8 +7,13 @@ modified: '2020-12-08T13:37:10.163Z'
 
 # note-dev-hot-reloading
 
-# webpack
+# guide
 
+- hot-reload相关的功能大多只用于开发测试
+  - production环境下通常不需要webpack-dev-server、nodemon、ts-node、ts-node-dev
+# discuss
+- ## 
+# webpack
 - `module.hot.accept('./App',callback)` vs `module.hot.accept()`
   - The former: only accepted callback will be executed on each hot loading.
   - The latter: whole js file will be executed each time, not just accept callback.

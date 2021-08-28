@@ -12,6 +12,29 @@ modified: '2021-01-04T17:15:36.132Z'
 - https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
 - https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model
 
+# [Difference Between Core Web Vitals and Lighthouse](https://askanydifference.com/difference-between-core-web-vitals-and-lighthouse/)
+- both the tools were introduced by Google 
+- CWV(202005)
+  - LCP (Largest Contentful Paint;loading), FID (First Input Display;interactivity), CLS (Cumulative Layout Shift;visual loading/updating)
+  - The Core Web Vitals can be measured by many tools, and some of them are – Lighthouse tool, Chrome UX report, Chrome DevTools, Search Console, and PageSpeed Insights.
+- Lighthouse(202005)
+  - LCP (Largest Contentful Paint), CLS (Cumulative Layout Shift), TBT (Total Blocking Time)
+  - This tool was built to measure core web vitals and also in improving or optimizing the quality of web pages. 
+  - The tool is used after inputting the URL of the web page, and then it runs a series of checks and then scores the web page with a detailed report of it. 
+- The Core Web Vitals tool shows the performance of the web page based on the real-world usage data (field data) while comparatively, 
+  - on the other hand, Google Lighthouse tool first perform some series of check and then provide a detailed score and report of the page that how it performs.
+
+- discussion
+
+- This is a mistake I see a lot of teams making.
+- https://twitter.com/iamakulov/status/1431310574139346952
+  - If you’re optimizing for SEO, *don’t* look at Lighthouse. 
+  - Look at Core Web Vitals in the Search Console instead.
+  - Google doesn’t use Lighthouse scores for ranking sites. It uses data that it exposes in the Console.
+- Here’s how Search Console differs from Lighthouse in practice:
+  - Often, you don’t need to optimize your JS/third parties, even if Lighthouse tells you otherwise. FID, which is The JS Web Vital™, is typically good even when TBT/TTI (in Lighthouse) are bad
+  - You might have to fix more layout shifts. Search Console data measures CLS all the way until the page is closed. This often makes it higher than what Lighthouse shows
+
 # Critical Rendering Path
 
 - Optimizing the critical rendering path refers to prioritizing the display of content that relates to the current user action.

@@ -22,7 +22,31 @@ modified: '2021-01-04T17:05:20.422Z'
   - It **provides a way for multiple components to read from a source without "tearing"** (rendering conflicting things).
 - ref
   - [twitter: merge useMutableSource into master branch](https://twitter.com/brian_d_vaughn/status/1237829231628828672)
-# guide
+# discuss
+- ## useMutableSource → useSyncExternalStore
+- https://github.com/reactwg/react-18/discussions/86
+  - Selectors no longer need to be memoized
+  - Concurrent reads, synchronous updates
+  - Our goal is for all subscription-based libraries to migrate their implementations to useSyncExternalStore.
+
+- ## useMutableSource and selector stability
+- https://github.com/reactwg/react-18/discussions/84
+  - The React team has created the `useMutableSource` hook as a compatibility mechanism to allow external state stores like Redux to avoid issues with "tearing". 
+  - some concerns were raised about the apparent need to memoize the creation of selector functions via useCallback
+- The concern is that if a library migrates to using `useMutableSource` internally, all "selector" functions written by users of that library will now have to be wrapped in `useCallback` or `useMemo` to ensure that the selector functions have stable references. 
+  - This appears to be necessary because `useMutableSource` relies on function reference changes as an indication that the current snapshot value needs to be recalculated
+  - If a selector `fn` changes, useMutableSource() doesn’t know if it's safe to reuse a snapshot value. (A new `fn` could select a new value - either bc it closes over new props or bc the actual function is totally different). You can memoize with useCallback.
+- Daishi Kato has done some experimenting with useMutableSource, and in a proof of concept concluded that unstable selector references could cause a form of infinite loop
+  - A minor clarification. It's not infinite loop, but didn't work as expected.
+- While this is a very understandable implementation approach, the need to memoize all selector functions appears to be a rather painful change to how libraries like React-Redux are currently used.
+
+- We're working on a proposal 
+  - The short version is: I do think we can remove the requirement that selectors need to be memoized by adding a `selector` option that separate from `getSnapshot`.
+  - `useMutableSource` will be reworked to always render synchronously, including a possible rename and some other API changes
+  - It's likely that an equality check will be built in because that would simplify several end-user cases
+  - The React team will publish a "shim" package to allow using this with both React 17 and React 18
+- Great summary, Mark! Just a caveat regarding the first bullet: updates (i.e. `dispatch`) will trigger a synchronous render, but you can still read from Redux hooks/components during some other concurrent render, like one triggered by a router or useDeferredValue. Which means Redux can work side-by-side with concurrent features.
+
 - ## [React Context without Provider + useMutableSource](https://dev.to/aslemammad/react-context-without-provider-usemutablesource-4aph)
   - https://codesandbox.io/s/usemutablesource-react-context-spyhu
   - 自己实现了useMutableSource
@@ -47,7 +71,7 @@ modified: '2021-01-04T17:05:20.422Z'
   - but in the current experimental releases the only way to be fully compatible is by using immutable data.
 - useMutableSource if you have either mutable data structures or if you have mutable atom where that atom lives outside React.
 - If you have immutable data, storing it in useState or useReducer is preferable because it will just work with everything.
-# useMutableSource
+# useMutableSource docs
 - This hook is primarily intended for use by libraries like Redux (and possibly Relay). 
   - Work with the maintainers of those libraries to integrate with the hook.
 

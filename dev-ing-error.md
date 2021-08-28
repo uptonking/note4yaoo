@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- bcrypt install error: gyp: Undefined variable module_name in binding.gyp while trying to load binding.gyp
+- https://github.com/nodejs/node-gyp/issues/508
+  - I couldn't make it work on npm v7.x no matter what I did so I had to go back to latest npm v6.
+  - For anyone looking for a quick fix, this worked for me. There seems to be a dep issue with NPM 7.
+
 - [Can't perform a React state update on an unmounted component. ](https://stackoverflow.com/questions/56442582)
   - This is a no-op, but it indicates a memory leak in your application. 
 - The easiest solution is to use a local variable that keeps track of whether the component is mounted or not.
