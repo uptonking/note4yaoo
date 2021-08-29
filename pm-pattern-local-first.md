@@ -259,6 +259,27 @@ modified: '2021-08-22T08:05:39.413Z'
   - SQLite is a high-level, stable, reliable, cross-platform, widely-deployed, extensible, performant, accessible, concurrent file format. 
   - It deserves your consideration as the standard file format on your next application design.
 # discuss
+- ## I'm having trouble reconciling an offline-first app with online SaaS sync. 
+- https://twitter.com/_paulshen/status/1431745519873781765
+  - How do you handle auth while offline? 
+  - What happens to your offline documents/changes when you reconnect logged out or as a different user?
+- files backed by git provide some inspiration. you own the files on your disk. but the manual push/pull and resolution steps don't translate directly to "apps"
+- Maybe figma can help you with some ideas of how to handle it
+  - [Can I work offline with Figma?](https://help.figma.com/hc/en-us/articles/360040328553-Can-I-work-offline-with-Figma-)
+  - Figma is probably the gold standard here. this doc is very thorough. thanks!
+  - I tried making some Figma changes offline and deleted my session cookie. It silently lost the changes but Figma doesn't claim to be an offline tool. The save to `.fig` file is nice.
+- Understood. The feature to save the document to .fig file is neat, as that's the only guaranteed way to avoid losing data.
+- Brainstorm: it could be split into different layers:
+  - give the user a way to export the docs to a file (avoid user losing offline data if they want to, ex, uninstall the browser)
+  - when reconnecting, if session is ok + user still has same access to the docs, sync the changes*
+- I think it’s ok to disallow switching accounts when you’re offline.
+- agreed but things can change on the server side while you're offline. maybe you lose permissions to the file or you triggered an action to log out of all your clients.
+  - What should happen in those cases isn’t technically hard, but more of a problem of designing a UI that informs and sets expectations effectively. I do understand designing such a UI isn’t trivial.
+- Offline data sync is complicated with web browsers. User might have a few tabs opened, so you need to sync between them.
+  - You probably don't want to sync the same changes from all tabs. 
+  - Only Chrome has a way to sync data in background I think. 
+  - Other browser quirks like IndexedDB not working in FF private tabs and Safari had some problems. So it gets complicated quickly
+
 - ## It’s quite rare for software to offer both a real local file format and also substantial(大量的，重大的) cloud/SaaS behavior (ie other than syncing). 
 - https://twitter.com/andy_matuschak/status/1428777459235782660
   - Usually it’s one or the other

@@ -42,6 +42,10 @@ modified: '2021-01-04T16:21:40.119Z'
   - https://github.com/manuelbieh/geolib
   - Zero dependency library to provide some basic geo functions
   - This library is currently 2D, meaning that altitude/elevation is not yet supported by any of its functions!
+# spatial-index
+- https://github.com/mourner/flatbush
+  - A really fast static spatial index for 2D points and rectangles in JavaScript.
+  - An efficient implementation of the packed Hilbert R-tree algorithm.
 # opengis
 - geoserver /GPLv2/java
   - https://github.com/geoserver/geoserver

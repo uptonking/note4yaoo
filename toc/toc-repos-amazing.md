@@ -40,6 +40,14 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://github.com/puruvj/macos-web
   - 依赖 preact、vite、scss+css modules、no component lib、react-rnd、jotai、framer-motion、date-fns、rooks
   - replicate some of the Mac OS(Big Sur, at the time)'s desktop experience on web
+  - [Why I moved from React to Svelte](https://dev.to/puruvj/macos-web-why-i-moved-from-react-to-svelte-4mkp)
+    - v1: React, Snowpack, Material UI; 146kb
+    - v2: snowpack to vite, jss to styled-components; 120kb
+    - v3: react to preact; 110kb
+    - v4: styled-components to css modules; 85kb
+    - v5: code splitting with lazy(); 62kb
+    - v6: preact to svelte in 2 days; 28.5kb
+    - The process: Literally, just copy-pasted everything 😂️
   - 类似macOS风格的例子
     - https://github.com/Renovamen/playground-macos
   - 类似windows风格

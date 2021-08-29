@@ -15,10 +15,10 @@ modified: '2021-08-23T05:27:08.068Z'
   - dropbox示例
     - /home/Blockstack%20Branding/BlockstackFile
     - url与文件名和存放路径相对应，支持中文路径
-  - 百度网盘示例 
+  - 百度网盘示例 路径包含在querystring中
     - /index?category=all&path=%2Fopt%2F系统相关
     - 路径中的特殊字符使用了url编码，如%2F表示斜杠/
-  - google drive示例  内层文件夹url扁平化
+  - google-drive示例  内层文件夹url扁平化
     - /folders/uuid-folder?resourcekey=uuid-key
     - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问
     - 缺点是url都是随机数字
