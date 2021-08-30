@@ -9,6 +9,11 @@ modified: '2021-01-04T16:20:47.941Z'
 
 # popular
 
+# tiles
+- https://github.com/michael-laoyu/MapTileGenerator
+  - 依赖c#
+  - 支持TMS、WMTS标准瓦片下载，支持百度地图瓦片、高德地图瓦片、腾讯地图瓦片、天地图、ArcGIS Rest、geoserver等瓦片下载。
+  - 默认以png文件方式保存瓦片，也支持以sqlite（mbtiles格式）保存瓦片。
 # 3d
 - https://github.com/hobu/usgs-lidar
   - https://registry.opendata.aws/usgs-lidar/

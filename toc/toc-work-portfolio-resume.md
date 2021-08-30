@@ -16,6 +16,12 @@ modified: '2021-01-09T16:56:35.339Z'
 
 # resume-popular
 
+- https://anuraghazra.github.io/
+  - 蓝色主题
+  - 很多 creative coding 交互式示例
+  - https://github.com/anuraghazra/github-readme-stats
+    - 可自动生成和更新github统计数据，生成卡片
+
 - https://github.com/iRaul/creative-portfolios
 - https://github.com/resume/resume.github.com
 

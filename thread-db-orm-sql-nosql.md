@@ -20,7 +20,7 @@ modified: '2021-05-23T10:17:05.993Z'
   - Friendly reminder that no matter how you feel about this Tweet, all of the code you push to GitHub today will be handled by a platform that uses ActiveRecord.
 - Writing code vs arguing on Twitter about the best way to write code. I'll take the former
 - When there are multiple ways to solve the same problem, arguments and turf wars always keep happening! 
-Examples: Vim vs Emacs, Linux vs Windows, Ubuntu vs Fedora, PHP vs Python, etc. etc. ActiveRecord vs DataMapper is just another item on the Yin/Yang pattern
+  - Examples: Vim vs Emacs, Linux vs Windows, Ubuntu vs Fedora, PHP vs Python, etc. etc. ActiveRecord vs DataMapper is just another item on the Yin/Yang pattern
 
 - ## Show HN: FaunaDB, a strongly consistent, globally distributed cloud database__201703
 - https://news.ycombinator.com/item?id=13879475

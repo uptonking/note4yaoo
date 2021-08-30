@@ -7,6 +7,19 @@ modified: '2020-07-14T09:28:43.976Z'
 
 # note-benchmark-web
 
+# guide
+- [7GUIs: A GUI Programming Benchmark](https://eugenkiss.github.io/7guis/)
+  - 7GUIs defines seven tasks that represent typical challenges in GUI programming. 
+  - In addition, 7GUIs provides a recommended set of evaluation dimensions.
+  1. Counter
+  2. Temperature Converter
+  3. Flight Booker
+  4. Timer
+  5. CRUD
+  6. Circle Drawer
+  7. Spreadsheet Cells
+  - ref
+    - https://github.com/andrewgreenh/7guis (react实现，多使用class组件)
 # data-grid-table
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable
@@ -24,7 +37,7 @@ modified: '2020-07-14T09:28:43.976Z'
 - https://github.com/paularmstrong/react-component-benchmark
   - This project aims to provide a method for gathering benchmarks of component tree mount, update, and unmount timings.
   - Since this project does not hook into the React renderer directly, the values gathered are not 100% accurate and may vary slightly because they're taken from a wrapping component.
-# web
+# web-ui
 - https://github.com/mikolaj6r/web-benchmark /202011
   - Node benchmark that uses Lighthouse and generates charts, tables, markdown and big json with results.
 

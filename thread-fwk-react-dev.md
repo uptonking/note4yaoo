@@ -66,7 +66,13 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## Can someone please open source a package which takes a list of file path strings (like Remix, Next) and convert into React Router route object.
+- https://twitter.com/dev__adi/status/1432310439254261764
+  - Vite's glob import already solves the other half of File Based Routing.
+- My setup is wild because I dislike file system routing (it introduces so many silly constraints for what amounts to a highly subjective DX boost). So I have some code that turns a route config file into file system routes as a pre-build step, so that Next.js can be kept happy.
+  - I do agree Next.js file based routing is very limited partly because it lacks nested routing support. But since Remix is built on top of react-router I feel that it can handle most of the situations. Have you checked it out?
+- The biggest issue is the awkwardness when it comes to co-locating page-specific modules, 
+  - because most of these systems either don’t allow non-page modules in the pages dir, or force you to use an awkward prefix (like Gatsby’s underscore). But there are some more niche issues too.
 
 - ## Any good examples of doing Error Boundaries with Next.js?
 - https://twitter.com/leeerob/status/1410452498402398208

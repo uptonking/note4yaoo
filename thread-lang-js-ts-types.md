@@ -20,7 +20,20 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## TypeScript—I’ve switched:  From: string[]  To: Array<string>
+- https://twitter.com/rauschma/status/1431884615862603781
+  – Better for complicated element types: Array<[string, number]>
+  – Looks similar to other types.
+  – Look similar to new `Array<string>()` which helps with type inference (default values, class field initializers).
+- Definitely better readability. When you see `Array<number>` you read it from the start as "array of numbers".
+- I used to prefer `Array<string>` for the same reasons but then switched to `string[]` because of readability in nested types. 
+  - `Promise<Array<string>>`  vs `Promise<string[]>`
+- After personally having strong opinions about code style in the past, I've learned that it's better to just align with common practices.
+  - By applying common practices you will get a trained eye for it, which helps to read third-party code that most likely uses the same code style
+  - Therefor I personally decided to just keep using `[]` for arrays.
+  - Unless things really get error prone... like with tuple element type... in which case I will use `Array<..>` for an array.
+- In the same way, prefer `Record<string, T>` over `{ [key: string]: T }` for key value objects with consistent key value types.
+- Linters say to use [] though, so that's what I follow, simply so that the whole team can standardize on one model
 
 - ## Specifying the type of this for functions
 - https://stackoverflow.com/questions/44164032

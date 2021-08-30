@@ -10,14 +10,18 @@ modified: '2020-12-08T13:28:50.105Z'
 # guide
 
 # discuss
-
 - ## [Vert.x 与 Node.js 有哪些区别？](https://www.zhihu.com/question/22021343/answers/updated)
 - vert.x实在是太好用了，根本不需要rxjava，promise这些，自带扁平化callback hell的工具
 
 - ## [Vert.x未来会取代tomcat和现在流行的spring全家桶吗？](https://www.zhihu.com/question/302482388/answers/updated)
-- vert.x说简单点就是一个evenloop模型的实现，用来取代传统的同步多线程编程模式。
+- vert.x没有servlet, 看似是个优点, 但是就没法集成其他基于servlet的框架
+- tomcat完全可以，Spring不可能
+  - 不是说Vert.x不好，也不是说Spring现在多强，Spring最强大的地方是它本身是一直进化的。
+  - 你有Vert.x，我有project reactor，Spring整合了这个之后衍生出Spring Webflux和Spring Data reactive，Spring Data reactive支持几乎所有主流的datasource，并且在自己撸mysql async driver源源不断的创新加上强大的用户基础，
+  - 目前看不到被谁取代的希望 
+- vert.x说简单点就是一个event loop模型的实现，用来取代传统的同步多线程编程模式。
   - 拿它作为基础库，实现事件驱动，提高应用的并发能力还是很好用的
-- Spring是传统Servlet WEB framework的杰出代表，事件驱动方面也有 spring flux
+- Spring是传统Servlet WEB framework的杰出代表，事件驱动方面也有spring flux
   - 在纯异步编程这块，我个人还是倾向于使用vert.x 简单小巧。
 
 - ## [vert.x相比spring全家桶系列, 除了性能外, 还有什么优势?](https://www.zhihu.com/question/277219881/answers/updated)
@@ -31,9 +35,7 @@ modified: '2020-12-08T13:28:50.105Z'
 - ## [国内有用 Vert.x 作为开发框架的公司么？](https://www.zhihu.com/question/33038931/answers/updated)
 - 总体感觉很棒，异步模型性能杠杠的，直接支持分布式开发
   - 缺点就是异步回调hell
-
 # Vert.x
-
 - vert.x vs spring+tomcat
   - Vert.x是面向IO的，而Spring是面向Web的。或许Vert.x Web无法撼动Spring的地位，但是其他领域呢？比如mqtt和其他非http领域，Vert.x仍然是JVM最具竞争力的IO框架
   - Spring可以跟Vert.x结合使用，比如可以在一个Spring3的旧项目中，引入Vert.x集群，用Vert.x的集群下EventBus替换其他RPC解决方案。
@@ -70,9 +72,7 @@ modified: '2020-12-08T13:28:50.105Z'
     - vert.x很早就提出了要兼容bio的api，所以提出了worker verticle/thread pool，这个以后慢慢发展，可以应用fiber，也就是goroutine
     - vert.x还提出了polyglot的概念，就能使用其他语言的特性
     - nosql解决了rdbms的吞吐太小的问题，现在分布式技术的nosql正在替换rdbms，对于db的改造没有完成之前，netty，vert.x这种技术还谈不上大规模的推广，不过现在pg，mysql也都有了自己的异步api，尤其是pg，上升势头跟mongo不相上下
-
 # Vert.x docs
-
 - Vert.x is a toolkit for building reactive applications on the JVM
 - https://vertx.io/docs/
 - https://github.com/vert-x3/wiki/wiki
@@ -112,7 +112,6 @@ modified: '2020-12-08T13:28:50.105Z'
 - Module-Data access: Reactive PostgreSQL/MySQL client + MongoDB/Redis/...
   - Vert.x provides a few different asynchronous clients for accessing various data stores from your application.
   - you could also use clients direct from the vendor if you prefer 
-
 # ES4X 
 
 # ES4X docs

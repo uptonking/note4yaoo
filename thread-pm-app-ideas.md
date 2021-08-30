@@ -37,7 +37,7 @@ modified: '2021-04-19T14:53:27.158Z'
   - [React Dashboards - Open-Source and Free](https://dev.to/sm0ke/react-dashboards-open-source-apps-1c7j)
 - AppSeed — a simple App Generator that uses automation tools to generate UI-Ready, usable web apps using flat, lifeless HTML as input. 
 - https://github.com/app-generator/api-server-nodejs
-  - Express / Nodejs Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
+  - Express/Nodejs Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
   - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
 
 - ## I know of like 9 companies trying to build their own internal in-house Vercel-like platform on AWS. 

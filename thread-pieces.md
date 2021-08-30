@@ -10,6 +10,29 @@ modified: '2021-01-11T12:10:50.900Z'
 # guide
 
 - Tip of the day.. stop wasting time on Twitter xD
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you are on the verge of burning out and in a situation where you cannot take a break, slow down! 
+- https://twitter.com/hey_yogini/status/1432204261647994886
+  - Take one thing at a time and making sure to take out a small amount of time for yourself.  
+  - I kept doing this and it worked!
+- Slowing down, and getting back the energy is the best way to be productive in long run.
+- Taking one thing at a time really works & actually gets everything done faster
+
+- ## If you are on the verge of burning out and in a situation where you cannot take a break, slow down! 
+
+Take one thing at a time and making sure to take out a small amount of time for yourself.  
+
+I kept doing this and it worked!
 
 - ## Whenever I watch a tutorial for anything, I'll spend at least the same amount of time afterwards trying to do something similar from scratch.
 - https://twitter.com/JoshWComeau/status/1393259427491426305
@@ -21,6 +44,7 @@ modified: '2021-01-11T12:10:50.900Z'
 - https://twitter.com/JoshWComeau/status/1393262281375555589
   - We learn more from struggling and failing to build something than we do from effortlessly completing it. 
   - As long as you know more at the end than you did at the start, it’s a success.
+
 # pieces
 - ## 
 

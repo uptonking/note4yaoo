@@ -11,12 +11,20 @@ modified: '2021-03-31T06:50:19.936Z'
 
 - apache2服务器配置子域名的方法
   - [Ubuntu Apache配置子域名（单IP多域名）](https://www.jianshu.com/p/a9eeac672069)
-
 # pieces
-
 - ## 
 
-- ## 
+- ## Containers are fun. Recently, one of the applications was migrated to run inside a container environment. Suddenly, the GC pauses have increased significantly.
+- https://twitter.com/SerCeMan/status/1432278202806784005
+  - The application is on Shenandoah GC, so the GC pauses would typically be below 10 ms as most of the GC work would be done concurrently. 
+  - However, once the app started running inside the container, the pauses increased up to ~100ms. 
+- After looking at the pauses in the GC logs, one line stood out - 16 workers, which seems like a bit too many given the specified ActiveProcessorCount was 3 based on the CPU shares
+  - The next step was to compare the VM options, and the only difference between the previous setup and the container setup was the difference in ConcGCThreads and ParallelGCThreads. 
+  - Reducing the number of GC threads to the lower values brought GC pauses back to the below 10ms range as it was before
+- The issue was already fixed - starting from JDK14, the GC thread configuration in ShenandoahGC is container-aware 
+- The conclusion is - know your environment. 
+  - Small changes, like changing the number of threads, can affect the performance significantly. 
+  - And use the latest JDK! The fix to your issue might already be out there! 
 
 - ## We recommend to not deploy to Vercel. Vercel is for frontend teams, not fullstack. 
 - https://twitter.com/flybayer/status/1373325575553683465

@@ -1,11 +1,11 @@
 ---
-title: toc-lib-db-orm
+title: toc-db-orm
 tags: [database, lib, orm, toc]
 created: '2020-10-05T16:22:46.508Z'
-modified: '2021-05-13T14:59:22.147Z'
+modified: '2021-08-30T18:56:09.644Z'
 ---
 
-# toc-lib-db-orm
+# toc-db-orm
 
 # orm
 
@@ -76,14 +76,11 @@ modified: '2021-05-13T14:59:22.147Z'
   - https://github.com/baomidou/mybatis-plus
   - https://github.com/abel533/Mapper
 # popular database
-- https://github.com/sql-js/sql.js
-  - sql.js is a javascript SQL database. 
-  - It allows you to create a relational database and query it entirely in the browser.
-  - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
-
 - https://github.com/typicode/lowdb
   - a small local JSON database powered by Lodash 
   - supports Node, Electron and the browser
+  - who is using
+    - json-server
 
 - https://github.com/pubkey/rxdb
   - A realtime Database for JavaScript Applications
