@@ -11,6 +11,28 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## There's a little left to do before we release Framer Motion 5 
+- https://twitter.com/mattgperry/status/1432728000710184967
+- Previously, we maintained a "projection target", a viewport-relative bounding box that described where an element should appear on screen.
+- Now, when a layout changes, we figure out the transform required to make an element revert to the old layout, and animate that to zero
+  - This sounds like FLIP but in reality we are calculating the projection target once a frame from applying this transform to the measured layout.
+  - This means we can still calc a transform that will get two different elements into the same box to create shared element animations.
+  - The transform we actually apply to an element is calculated to ensure it's free from any distortion from parent transforms, just like before.
+  - But doing all this from a transform animating to zero is more stable than from a projection target that could become out of date.
+- Additionally, we now measure layout relative to the page, and considering all `overflow: scroll` elements.
+  - This means that measured layouts don't become out of sync if they're measured at different scroll offsets.
+- Finally, `AnimateSharedLayout` was created to remove layout thrashing 
+  - but we use layout animations extensively in Framer so if you nested these or had many siblings, layout thrashing would resurface.
+  - It took a lot of work, some sensible trade-offs and some outright cheats 
+  - but now we've removed layout thrashing completely and removed the need for you as a developer to add `AnimateSharedLayout` . 
+  - Just add `layoutId` and away you go!
+
 - ## CSS variables can be used *within CSS keyframe animations*!
 - https://twitter.com/JoshWComeau/status/1422921859021131779
 - Although I think the way you propose is going to perform better as the browser can eval the variable at the start of the animation and only animate transform off the main thread. **CSS variable animation performance is still bound to the main thread**.

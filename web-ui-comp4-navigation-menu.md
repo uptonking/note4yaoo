@@ -16,3 +16,6 @@ modified: '2021-07-28T20:11:14.714Z'
 - ## 
 
 - ## 
+# ref
+- [Building A Stepper Component](https://ishadeed.com/article/stepper-component-html-css/)
+  - https://twitter.com/shadeed9/status/1432756615137173506

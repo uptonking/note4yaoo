@@ -15,7 +15,9 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Tried copying in my entire thesis into @curvenote . Learned a new HTML status code: 413. (Too large!)
+- https://twitter.com/rowancockett/status/1432935094868594688
+  - I know that we *can* handle larger documents via import, but not currently in a single copy-paste event of a few hundred pages which relies on our real-time collaboration.
 
 - ## When reading docs, which mode/code highlight theme combo do you prefer
 - https://twitter.com/youyuxi/status/1430689446664491012

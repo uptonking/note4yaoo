@@ -22,7 +22,19 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Are dynamic imports inside npm packages a bad idea? 
+- https://twitter.com/devongovett/status/1432864590828769290
+  - Usecase: I'm thinking of is loading translations on demand to avoid large bundles, especially when a component supports many languages that not all apps will need. 
+  - Generally code splitting decisions should be left to apps IMO
+- Really wish there was a standardized way of distributing translations that was supported by bundlers/build tools, and maybe even the browser. i.e. imagine being able to specify at build time what languages you support, and generating a JS bundle for each language.
+  - A thing I'm worried about with the dynamic import approach is that if each component does this, you'll end up with a ton of HTTP requests as each one loads its own translations separately. Would be more optimal to bundle the translations for the same language across components.
+- I had a similar issue with open-sourcing our product tour library. I don’t want to load the code for the tour if it’s not showing up. 
+  - The approach I took was accepting a component as a prop to the parent
+  - This works for most build systems, including Next
+- Radpack: Infusing the greatest benefits of modern bundlers (Webpack, Rollup) and loaders (SystemJS, RequireJS) into an all-inclusive build and run-time solution optimized for the end-user experience.
+  - Bundlers like Webpack do a great job at providing a toolset needed to deliver an optimal out-of-the-box delivery solution for your end-users. 
+  - Most loaders on the other hand, are focused on delivering only the requested assets, as they are needed. 
+  - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading.
 
 - ## My favorite way to create a new JavaScript object with a property omitted is Rest/spread.
 - https://twitter.com/housecor/status/1430232426106826754

@@ -11,6 +11,7 @@ modified: '2020-10-05T06:22:02.107Z'
 
 - ref
   - [react-spring vs react-motion vs gsap vs framer-motion vs animate.css vs animejs](https://www.npmtrends.com/react-spring-vs-react-motion-vs-gsap-vs-framer-motion-vs-animate.css-vs-animejs)
+  - [Pose is deprecated in favor of Framer Motion__202001](https://popmotion.io/blog/20200115-pose-is-deprecated/)
 # animation-with-flip
 - flipping /MIT/1.1kStar/202006
   - https://github.com/davidkpiano/flipping

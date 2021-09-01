@@ -19,7 +19,10 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## There's a gap between:
+- https://twitter.com/sebastienlorber/status/1432728320429461508
+  - what I know I should do
+  - what I do in practice
 
 - ## If you are on the verge of burning out and in a situation where you cannot take a break, slow down! 
 - https://twitter.com/hey_yogini/status/1432204261647994886

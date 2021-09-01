@@ -7,6 +7,12 @@ modified: '2021-08-16T06:46:12.800Z'
 
 # thread-ux-site-examples-gallery
 
+# discuss
+- ## What are great OSS project websites you like? Looks nice, good docs, useful, etc?
+- https://twitter.com/wooorm/status/1432825380604420097
+  - Specifically excluding stuff like:
+    - companies/startups
+    - giant stuff like python/deno/node
 # illustrations
 - Multicolor illustrations by Scale
   - https://2.flexiple.com/scale/multi-color-illustrations

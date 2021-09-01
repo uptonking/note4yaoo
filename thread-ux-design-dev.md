@@ -13,6 +13,8 @@ modified: '2021-03-10T11:38:16.053Z'
   - 各种Apple设备的信息与图片
 
 - visual ui tips
+  - [UI Design Tips by Jim Raptis](https://www.uidesign.tips/ui-tips)
+    - 作者一直在twitter上更新设计案例和示例图
   - https://twitter.com/d__raptis
 
 - design-tooling
