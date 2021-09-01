@@ -48,6 +48,10 @@ modified: '2020-11-03T06:54:59.051Z'
     - v5: code splitting with lazy(); 62kb
     - v6: preact to svelte in 2 days; 28.5kb
     - The process: Literally, just copy-pasted everything 😂️
+    - Jotai as global state library is very close to Svelte stores, so it was effortless.
+    - Moving styles was literally just copy-pasting, *without any changes*
+    - Svelte Code is much simpler. Everything about it was simpler and shorter than JSX code before.
+    - Svelte Motion is a superb, superb thing!!!
   - 类似macOS风格的例子
     - https://github.com/Renovamen/playground-macos
   - 类似windows风格

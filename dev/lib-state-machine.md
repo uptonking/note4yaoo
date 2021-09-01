@@ -9,8 +9,7 @@ modified: '2021-05-13T03:13:52.403Z'
 
 # guide
 
-# ref
-- [A reducer is a single-state state machine](https://erikras.com/blog/reducer-single-state-machine)
+
 # discuss
 - ## 状态机 vs 正则
 - https://www.zhihu.com/pin/1395368116139036672
@@ -25,3 +24,10 @@ modified: '2021-05-13T03:13:52.403Z'
 
 - 谨慎使用正则，这东西可读性太差。
   - 我的原则是，如果你写了一个正则，不能在3s内肉眼parse出来语义的话，那就不要写正则了，换另外一种方式。
+
+# ref
+- [A reducer is a single-state state machine](https://erikras.com/blog/reducer-single-state-machine)
+
+- https://github.com/statelyai/xstate-viz
+  - https://stately.ai/viz
+  - Visualize XState state machines and statecharts in real-time.

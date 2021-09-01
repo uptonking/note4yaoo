@@ -9,22 +9,22 @@ modified: '2021-07-20T13:50:23.433Z'
 # dev-log-repeat-solutions
 
 # guide
-- techstacks: rich editor
+- techstacks: nocode editor
   - design system
     - themeable/headless/a11y
   - text editor
     - modular/prod-ready/extensible
-  - data table
+  - data table/grid
     - modular/perf/themeable
 
 - solutions: live/inter(re)active/reproducible doc
   - dashboard/spaces
     - themeable/configurable/widgets
-  - wiki/knowledge-base
+  - wiki/knowledge-base/markdown-editor
     - local first
     - markdown-based text format
-    - more: collapsible
-  - live-notebook/note-taking
+    - interactive: collapsible, floating
+  - live-notebook
     - collaborative
     - reproducible
     - easy pivot table in document

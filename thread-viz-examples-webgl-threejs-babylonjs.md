@@ -12,3 +12,7 @@ modified: '2021-08-07T16:44:32.377Z'
 - ## beating heart
 - https://codepen.io/Mamboleoo/pen/YzQzQgo
   - 类似心型软糖
+
+- ## Photo to 3D RGB Model using @threejs .
+  - https://observablehq.com/@analyzer2004/photo-to-3d-rgb-model
+  - 任意照片都可以执行颜色形式的形变

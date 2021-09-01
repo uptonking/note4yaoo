@@ -26,9 +26,19 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## z-index Tip: When creating a reusable component that declares a z-index, add this style to the root element: isolation: isolate
+- https://twitter.com/housecor/status/1432346434356060162
+  - Why? This creates a “stacking context”, which means your z-index won’t “leak out” and override surrounding components.
+- My proposed solution was using React context to create the stacking. This is much simpler.
 
-- ## 
+
+- ## Before building dark mode for your component library, build "dark context." 
+- https://twitter.com/markdalgleish/status/1432601569069916165
+  - Even in light mode, setting a dark background on a container should flip the foreground elements. 
+  - This forces you to decouple the concept of contrast from the idea that your app has two design modes.
+- I’ve always worked with split concept. A ‘theme’ and a context. Your theme is the over all concept and the context is the specific variations over the theme, such as focus areas. Both should be able to be set independently throughout the DOM tree. Dark mode is just a theme.
+- How do you execute this technically?
+  - CSS variables and/or React context.
 
 - ## Other than Next.js/styled-jsx, what other CSS libraries clean up their rules when they're no longer used? E.g. when all components using them unmount.
 - https://twitter.com/sebmarkbage/status/1422278240866078725
