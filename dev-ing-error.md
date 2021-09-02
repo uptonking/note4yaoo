@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Access to fetch at 'http://localhost:11122/account/login' from origin 'http://localhost:8999' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Credentials' header in the response is '' which must be 'true' when the request's credentials mode is 'include'.
+- Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
+  - credentials为include时，origin不能为 *
+
 - bcrypt install error: gyp: Undefined variable module_name in binding.gyp while trying to load binding.gyp
 - https://github.com/nodejs/node-gyp/issues/508
   - I couldn't make it work on npm v7.x no matter what I did so I had to go back to latest npm v6.

@@ -7,8 +7,101 @@ modified: '2020-11-13T13:08:39.052Z'
 
 # cli-linux-shell
 
-# linux
+# common
 
+# file
+
+## file-cli
+
+- `ln -s fileOrFolder softLinkName`
+
+- 查看文件大小
+  - ls -lh 会显示当前目录下的所有文件和文件夹的大小
+  - du -h 会显示当前目录的大小，以及当前目录所有子目录的大小；但不会显示当前目录下文件的大小和数量
+  - du -ah 会显示当前目录的大小，以及所有子孙目录和文件的大小，被打平了
+
+- 打开目录路径
+  - nautilus .
+  - xdg-open 通过参数传入要打开的文件，系统会根据文件类型自动调用对应的程序
+    - xdg-open a.png/pdf/doc 
+    - xdg-open . 会调用nautilus
+    - xdg-open https://www.baidu.com 会打开默认浏览器，其中https不可省略
+
+## tar
+
+### 普通压缩解压缩
+
+```shell
+tar -cvf /tmp/etc.tar  /etc # <==仅打包，不压缩！
+tar -czvf /tmp/etc.tar.gz  /etc # <==打包后以gzip压缩,tgz
+tar -cjvf /tmp/etc.tar.bz2  /etc # <==打包后以bzip2压缩
+
+tar -xzvf /tmp/etc.tar.gz  /my # 解压到文件夹
+```
+
+```
+
+-c ：建立一个压缩文件的参数指令(create的意思)；
+-x ：解开一个压缩文件的参数指令！
+-t ：查看tarfile里面的文件！
+  注意，c/x/t仅能存在一个！不可同时存在！因为不能同时压缩与解压。
+-z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩？
+-j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩？
+-v ：压缩的过程中显示文件！这个常用，但不建议用在背景执行过程！
+-f ：使用档名，请留意，在 f 之后要立即接档名喔！不要再加参数！
+　　例如使用『 tar -zcvfP tfile sfile』就是错误的写法，
+    要写成 『 tar -zcvPf tfile sfile』才对喔！
+-p ：使用原文件的原来属性（属性不会依据使用者而变）
+-P ：可以使用绝对路径来压缩！
+-N ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的文件！
+--exclude FILE：在压缩的过程中，不要将FILE打包！
+```
+
+### 分卷压缩
+
+- `tar -cvzf - filedir | split -d -b 50m - filename`
+- 将./picture文件夹打包，分割为10m的小文件
+- 输出的文件为 filename00、filename01、filename02
+- 如果不加filename，则输出文件为 x00、x01、x02
+- 如果不加参数 -d，则输出aa、ab、ac
+
+```shell
+tar -cvzf - ./picture | split -d -b 10m - picture
+```
+
+### 压缩小文件合并
+
+- `cat picture* > my.tgz`
+
+- 最后解压大的压缩包
+
+## file-zip
+
+- 分卷压缩时，先压缩成大压缩包，再分卷
+  - 分卷文件的名称为a.zip, a.z01, a.z02
+
+```shell
+zip a.zip file
+zip -r a.zip folder
+zip -s 4m a.zip --out a  # 分割现有zip压缩包
+
+# 直接创建分卷压缩文件
+zip -s 100m -r a.zip foo/
+
+```
+
+- 分卷解压时，先合并分卷成大压缩包，再解压
+
+```shell
+zip -F a.zip --out b.zip # b.zip无法通过unzip命令解压，但可通过文件管理器gui解压
+# cat a.z* > b.zip # 这样得到的大压缩文件b.zip无法解压
+unzip -v b.zip
+```
+
+# ubuntu
+- apt remove: 会删除软件包而保留软件的配置文件
+- apt purge: 会同时清除软件包和软件的配置文件
+# account
 - [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744)
 - 修改所有子目录和子目录下的文件的权限为755/644
   - `sudo chmod -R a=r, u+w, a+X ./garden/`
@@ -23,17 +116,15 @@ modified: '2020-11-13T13:08:39.052Z'
 
 - ssh相关权限
   - sudo chmod 700 ~/.ssh
-  - sudo chmod 600 ~/.ssh/id_rsa; 
+  - sudo chmod 600 ~/.ssh/id_rsa
   - sudo chmod 600 ~/.ssh/id_rsa.pub
 
-# ubuntu
-
-- apt remove: 会删除软件包而保留软件的配置文件
-- apt purge: 会同时清除软件包和软件的配置文件
-
-# linux-commands
-
 - sudo vs su
+  - `su account`
+    - 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。
+    - 如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。
+    - 没有时间限制。
+    - su root的权限太大，所以诞生了sudo
   - `sudo`
     - 暂时切换到超级用户模式以执行超级用户权限，提示输入密码时该密码为当前用户的密码，而不是超级账户的密码。
     - 不过有时间限制，Ubuntu默认为一次时长15分钟。
@@ -45,18 +136,13 @@ modified: '2020-11-13T13:08:39.052Z'
     - 想退回普通账户时可以执行“exit”或“logout” 。
   - `sudo s`
     - 环境用的是当前用户本身的环境（只切换shell环境）
-  - `su`
-    - 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。
-    - 如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。
-    - 没有时间限制。
-    - su root的权限太大，所以诞生了sudo
 
 - `su` vs `su -`
   - su 和 su - 进入的目录是不一样的
     - su切换成root用户以后，pwd一下，发现工作目录仍然是普通用户的工作目录；
-    - 而用su -命令切换以后，工作目录变成root的工作目录了。
-  - su 会保持前者的用户环境, 而 su - 会新建一个目的用户的环境
-    - `su`只是切换了root身份，但Shell环境仍然是普通用户的Shell；
+    - 而用`su -`命令切换以后，工作目录变成root的工作目录了。
+  - su会保持前者的用户环境, 而 `su -` 会新建一个目的用户的环境
+    - `su`只是切换了root身份，但shell环境仍然是普通用户的shell；
     - `su -`连用户身份和Shell环境一起切换成root身份了。
     - 只有切换了Shell环境才不会出现PATH环境变量报command not found的错误
     - 用`echo $PATH`命令看一下su和su - 后的环境变量已经变了。
@@ -64,9 +150,7 @@ modified: '2020-11-13T13:08:39.052Z'
     - 比如重现或者debug问题时,在当前用户环境下更高效
   - 当然 su 在很多情况下是不建议使用的, 或者说是相当危险的. 
     - 因为这会给非root用户更改系统文件或数据的权限
-
-# linux-os
-
+# os
 - 系统变量或环境
   - env: 打印所有环境变量
   - locale: 打印各种LANG, LC_TIME
@@ -89,94 +173,16 @@ modified: '2020-11-13T13:08:39.052Z'
 - 用户组
   - groupadd testgroup    组的添加
   - groupdel testgroup    组的删除
-
-- ## file-tar
-
-- 普通压缩解压缩
-
-``` shell
-tar -cvf /tmp/etc.tar  /etc # <==仅打包，不压缩！
-tar -czvf /tmp/etc.tar.gz  /etc # <==打包后以gzip压缩,tgz
-tar -cjvf /tmp/etc.tar.bz2  /etc # <==打包后以bzip2压缩
-
-tar -xzvf /tmp/etc.tar.gz  /my # 解压到文件夹
-```
-
-``` 
-
--c ：建立一个压缩文件的参数指令(create的意思)；
--x ：解开一个压缩文件的参数指令！
--t ：查看tarfile里面的文件！
-  注意，c/x/t仅能存在一个！不可同时存在！因为不能同时压缩与解压。
--z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩？
--j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩？
--v ：压缩的过程中显示文件！这个常用，但不建议用在背景执行过程！
--f ：使用档名，请留意，在 f 之后要立即接档名喔！不要再加参数！
-　　例如使用『 tar -zcvfP tfile sfile』就是错误的写法，
-    要写成 『 tar -zcvPf tfile sfile』才对喔！
--p ：使用原文件的原来属性（属性不会依据使用者而变）
--P ：可以使用绝对路径来压缩！
--N ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的文件！
---exclude FILE：在压缩的过程中，不要将FILE打包！
-```
-
-- 分卷压缩
-  - `tar -cvzf - filedir | split -d -b 50m - filename`
-  - 将./picture文件夹打包，分割为10m的小文件
-  - 输出的文件为 filename00、filename01、filename02
-  - 如果不加filename，则输出文件为 x00、x01、x02
-  - 如果不加参数 -d，则输出aa、ab、ac
-
-``` shell
-tar -cvzf - ./picture | split -d -b 10m - picture
-```
-
-- 压缩小文件合并
-  - `cat picture* > my.tgz`
-- 最后解压大压缩包
-- ## file-zip
-- 分卷压缩时，先压缩成大压缩包，再分卷
-  - 分卷文件的名称为a.zip, a.z01, a.z02
-
-``` shell
-zip a.zip file
-zip -r a.zip folder
-zip -s 4m a.zip --out a  # 分割现有zip压缩包
-
-# 直接创建分卷压缩文件
-zip -s 100m -r a.zip foo/
-
-```
-
-- 分卷解压时，先合并分卷成大压缩包，再解压
-
-``` shell
-zip -F a.zip --out b.zip # b.zip无法通过unzip命令解压，但可通过文件管理器gui解压
-# cat a.z* > b.zip # 这样得到的大压缩文件b.zip无法解压
-unzip -v b.zip
-```
-
-- ## file-cli
-
-- `ln -s fileOrFolder softLinkName`
-- 打开目录路径
-  - nautilus .
-  - xdg-open 直接参数传入要打开的文件，系统会根据文件类型自动调用对应的程序
-    - xdg-open a.png/pdf/doc 
-    - xdg-open . 会调用nautilus
-    - xdg-open https://www.baidu.com 会打开默认浏览器，其中https不可省略
-
 # linux-remote
 
-- ## ssh
+## ssh
+
 - ssh免密登录
   - `ssh-copy-id [-f] [-n] [-i identity file] [-p port] [-o ssh_option] [user@]hostname`
-
 # linux-hardware
-
 - sudo lshw
 
-``` 
+```
 
 yaoohpu18                   
     description: Notebook

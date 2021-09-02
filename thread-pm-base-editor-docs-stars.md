@@ -10,7 +10,18 @@ modified: '2021-08-22T07:29:34.045Z'
 # discuss
 - ## 
 
-- ## 
+- ## So, dumb question: you're building a (small) Postgres/Node/Vue web application that has a feature where user can upload file, and retrieve it later. Where do you store the file?
+- https://twitter.com/stevage1/status/1433215485051613187
+  - 结论是避免过早优化
+  1. In the DB
+  2. On disk on the Node server
+  3. In S3
+  4. Some other third party?
+- If it's a small number of files and there are no big files, I'd definitely go with 1. That way you cut out the AWS dependency and you have all the data in a single place.
+- No.1 is also good because of the concurrency guarantees - can use as a rudimentary message queue
+- Must be some library out there to make 3 easy? In Python/Django, there's a package that just shims it in so it looks like reading/writing to local disk, and generates signed URLs as needed.
+- Depending on how hard you anticipate making the switch later if it starts to cause issues... I'd probably give 1 a crack. Avoid premature optimisation, a bit easier in the short term etc
+  - The aws-sdk for node is not that complicated, but you wanna be mindful of security then
 
 - ## I'm super impressed by the approach @craftdocsapp is taking to data ownership. 
 - https://twitter.com/geoffreylitt/status/1374144532976168967
@@ -45,4 +56,3 @@ modified: '2021-08-22T07:29:34.045Z'
   - websocket/web etc
   - ordered list of events 
   - SDK that convert events to data
-

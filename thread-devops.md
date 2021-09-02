@@ -14,6 +14,23 @@ modified: '2021-03-31T06:50:19.936Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## #infrastructure  #Azure 如何选择 app service 还是 vm？
+- https://twitter.com/ThaddeusJiang/status/1433367427203559426
+  - 前提：
+  1. 同样的价格vm的性能更好
+  2. app service 不能停机
+  3. app service 默认提供弹性扩容，SSL证书，custom domain，高可用性等功能
+- 结论：
+  - 如果不需要 app service 提供的高级功能，推荐 vm。
+
 - ## Containers are fun. Recently, one of the applications was migrated to run inside a container environment. Suddenly, the GC pauses have increased significantly.
 - https://twitter.com/SerCeMan/status/1432278202806784005
   - The application is on Shenandoah GC, so the GC pauses would typically be below 10 ms as most of the GC work would be done concurrently. 

@@ -17,6 +17,15 @@ modified: '2021-05-13T02:52:41.975Z'
 - [Use react-query but no react](https://github.com/tannerlinsley/react-query/discussions/790)
   - https://codesandbox.io/s/magical-bush-gbsk7
 # discuss-stars
+- ## While I could probably refactor #ReactQuery to use middleware too and get the meat-and-potatoes bundle down to around where SWR is, it would ultimately require users to add a bunch of middleware to get it back to today's 100% functionality, bringing it right back up where it is 
+- https://twitter.com/tannerlinsley/status/1433154450600853505
+  - Would it be worth it? Meh.
+  - To be clear. We are not doing this.
+- Where can I see what middleware are for libs like react query (without having to learn and write swr)? The only middleware I know are from redux or from server side (express, fastapi)
+  - Middleware usually just describes a user defined function that wraps the original functionality of the caller.
+- very interested to see a smaller react query, but the effort can be too much indeed 🥲
+  - i think what i'd like to see is more alternatives flourishing, it gives more control over size vs feature set.
+I
 - ## React 18 and the future of async data
 - https://swizec.com/blog/react-18-and-the-future-of-async-data/
 - React 18 is shipping with `<Suspense>` and `startTransition` for deferred component rendering, but not data loading. 

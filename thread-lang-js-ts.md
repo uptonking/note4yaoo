@@ -20,7 +20,11 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Anyone have a maintained alternative to node-fetch? Apparently they've gone ESM-only and so I can't use them in my many CommonJS Node servers.
+- https://twitter.com/domenic/status/1433190271764860930
+- CommonJS cannot use top-level await, and I cannot delay getting the ability to fetch things.
+  - You could create a utils/fetch.js in your repo
+- I'm kind of ok staying on it - "We recommend you stay on v2 which is built with CommonJS unless you use ESM yourself. 
 
 - ## Are dynamic imports inside npm packages a bad idea? 
 - https://twitter.com/devongovett/status/1432864590828769290
