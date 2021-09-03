@@ -11,7 +11,8 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## 少使用 `auth && <Routes />` 的形式
+- auth为null时，右边也会悄悄执行
 
 - ## 开发时setState没有触发rerender
 - 可能是因为 react-refresh 热加载插件，保留了页面内组件的状态
@@ -39,6 +40,11 @@ modified: '2021-04-28T20:54:58.126Z'
 - 还可考虑直接用 `<span style={{cursor:'pointer'}}> icon </span>` ；此时闪烁绿框范围较小
 
 - ## react.lazy 批量动态导入pages文件夹下的所有react组件
+
+> 20210904 又碰到此问题
+
+- 原因是数据的属性数量与预期的不同
+  - error信息里面给出了错误链路，可以倒着分析出来
 
 > 20210821又碰到此问题
 

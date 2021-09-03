@@ -15,4 +15,9 @@ modified: '2021-07-28T20:11:47.388Z'
 
 - ## 
 
-- ## 
+- ## How to Make Tooltips Responsive
+- https://twitter.com/d__raptis/status/1433410562994679812
+- The classic tooltip is activated once the user hovers over the element...
+  - On desktop, this works perfectly! 
+  - However mobile devices don't support the hover effect
+  - To deal with this, add a clickable help icon next to your button.

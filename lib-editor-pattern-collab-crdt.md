@@ -165,6 +165,32 @@ modified: '2021-07-23T15:52:10.409Z'
 - This is a large part of the reason why I spent weeks researching CRDTs even though my document convergence needs are well covered by OT. 
   - If you have a more fine-grained way to address positions (specifically, one that can refer to deleted positions), and you define position mapping in terms of that, you do not have this problem.
 # discuss
+- ## Tom MacWright @tmcw · 14h if you were building a collaborative web application today, you'd use 
+- https://twitter.com/tmcw/status/1433436431658196997
+  - automerge or yjs
+  - replicache
+  - ot
+- going down this rabbit hole again today. it's been a mental block because the lock-in for these systems is so big - you're replacing state management, rewriting all of the places you transform your application's data, etc. i've been collecting notes
+- i'm no longer considering yjs or gun, because they require transforming data back to native js structures for things like 'updating the map' - similar feeling to using immutable.js
+- automerge's removal of built-in undo/history in the 1.x branch i think also removes it from the running, because history is sort of more important than collaboration for my usecase and i don't want a redundant history implementation. OT with immer might be the way.
+- an oversimplified gist here is that "ot is theoretically inferior, practically superior, and not P2P, but you probably, unfortunately, aren't building true P2P"
+  - a sicko approach i'm considering is to write application logic _as_ json patches instead of generating them.
+- I'd use @CroquetIO where the data is only processed client-side but you still get to write server-like code (it's not a database, OT or CRDT).
+- i picked OT but with a hefty dose of “other”. my biggest problem with all the frameworks in the poll is that they are javascript on the server side. that’s a show-stopper for me; i’ve found it a major pain to build stuff beyond PoCs in node.
+  - replicache is implementable in whatever language you want, though tbh i am using all typescript on the server because it's what's comfortable
+- CRDTs, we make collaborative apps for the maritime industry where internet is very bad and intermittent... everything needs to work offline and reach consensus on state without coordination and with minimum amount of data transfer
+- I think it's application specific which is the right answer.
+  - OT/CRDT when you really have multiple clients manipulating the exact same block of data at the same time and you can't represent the work as deltas to stream to a data owner.
+  - It does happen, but rarer than you think.
+
+- natto: I feel this pain going from nothing -> yjs -> hybrid replicache. one thing that I'm happy with is having a unified subscription and mutator interface so it's easier to make these changes
+  - i'm intrigued(好奇的), what makes your replicache setup hybrid? so far i like replicache but totally missing the low-boilerplate bliss of @blitz_js 's query/mutation system
+  - it's hybrid in that there are two types of natto canvases. 
+  - "browser drafts" (single-player local-only) don't use replicache. 
+  - "user canvases" (ugh - synced to server) use replicache.
+  - mutators are implemented 3 times.. twice on client (one for local-only mode, one for client replicache) and once on server for persistence (replicache)
+  - but if i want to switch to yjs or something else, i can just swap out the implementation of the mutators and subscriptions in a single file.
+
 - ## Great writeup by @josephgentle on making CRDTs orders of magnitude faster. 
 - https://twitter.com/martinkl/status/1423230479222939648
   - [5000x faster CRDTs: An Adventure in Optimization](https://josephg.com/blog/crdts-go-brrr/)

@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Error: Multipart: Boundary not found
+  - [Fetch API and multer error while uploading file](https://stackoverflow.com/questions/35795529)
+  - There is no need to assign a header `{Content-Type': 'multipart/form-data'}`: the browser substitutes its own.
+  - But if you expose it, then it is not specified `boundary` after `content-type:multipart/form-data; boundary=...` in Request Headers before Request Payload and that is causing the error on the server-side.
+
 - Access to fetch at 'http://localhost:11122/account/login' from origin 'http://localhost:8999' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Credentials' header in the response is '' which must be 'true' when the request's credentials mode is 'include'.
 - Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
   - credentials为include时，origin不能为 *

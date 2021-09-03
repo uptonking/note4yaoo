@@ -16,7 +16,7 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - ## 
 
-- ## 
+- ## "foo".endsWith(""); // true
 
 - ## is there a difference between optional parameters and parameters than can be undefined?
 - https://stackoverflow.com/questions/65986108
