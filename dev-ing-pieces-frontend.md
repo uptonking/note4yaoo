@@ -12,9 +12,13 @@ modified: '2021-03-29T19:30:00.059Z'
 # logging
 
  
-- ## 
+- ## [How to use onClick event on Link?](https://stackoverflow.com/questions/48294737)
+- One possible way is, Instead of using `Link`, use `history.push` to change the route dynamically.
+- Now first perform all the task inside `onClick` function 
+  - and at the end use `history.push` to change the route means to navigate on other page.
 
-- ## 
+- ## [HTML anchor tag with Javascript onclick event](https://stackoverflow.com/questions/7347786)
+- If your onclick function returns `false`, the default browser behaviour is cancelled.
 
 - ## "foo".endsWith(""); // true
 

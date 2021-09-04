@@ -9,6 +9,18 @@ modified: '2021-01-21T17:52:13.333Z'
 
 # guide
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## the most valuable thing I've learned in my career isn't a specific skill, but instead the knowledge that "this will eventually work"
+- https://twitter.com/Wattenberger/status/1433880202086600704
+  - Projects can be seriously overwhelming when you're in the middle of them, but they almost always come together, and usually faster than you think!
+
 - ## Working on open source while also having a full time job is exhausting and unsustainable. 
 - https://twitter.com/devongovett/status/1389635869628256259
   - No wonder people are starting companies around this stuff!
@@ -21,6 +33,7 @@ modified: '2021-01-21T17:52:13.333Z'
 - The problem is that the github platform promoted open source as free (non paid). 
   - And now everyone expects oss to be free labor, big corps are using software without funding or contributing while making millions. 
   - Getting paid shouldn't be an after thought.
+
 # pieces
 - ## 
 

@@ -7,6 +7,10 @@ modified: '2021-01-04T17:26:43.784Z'
 
 # toc-office-pdf
 
+
+# guide
+- https://printcss.live/
+  - 渲染pdf的多种js示例
 # popular
 
 - pdf.js /32kStar/Apache2/202009

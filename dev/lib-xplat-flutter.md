@@ -51,13 +51,37 @@ modified: '2021-05-13T03:10:56.112Z'
 
 - Skia is used by both Flutter and Fuchsia.
   - the versions of Skia being used by Flutter and Fuchsia must be “source compatible” 
+# discuss-stars
+- ## It's Flutter. But in React Native.
+- https://twitter.com/wcandillon/status/1433831742302003227
+- How does this new effort differ from react-native-skia
+  - this is a single skia canvas and you need to rebuild the world inside that canvas (like Flutter did). 
+    - Our effort is to bring Skia views in regular RN. In fact some of the demos in the video feature many skia views at the same time.
+  - Makes sense! **This library might then mean that RN can do some things with Skia that Flutter itself can’t** – I remember an issue that you couldn’t lay any Skia views atop of certain native views. e.g. you couldn’t show a toast over a `WKWebView`.
+  - that is true! nesting native views inside skia surface is hard. flutter introduces "hybrid composition" to do this but still with some limitations
+- https://github.com/react-native-skia/react-native-skia
+  - Cross platform React Native solution to draw graphics based on Skia
+  - The project is still in proof of concept and requires lots of work.
+  - Only macOS and Linux (Ubuntu 18) is supported in the mean time, but the most implementation is cross platform.
+
+- As far as I understand, this is different from react-native-skia:
+  - react-native-skia renders the whole RN app in Skia
+  - this new solution may build new declarative primitives that are not in RN core? (or allow you to build your own)
+- What I don't grasp though with this project, is that the difference with react-native-skia seems small. Like in theory with this new approach my whole app could just be one "skia view" too.
+- yes somehow, but does it make sense to force your whole app to be Skia from day 1? This approach is more likely to succeed as it allows incremental adoption.
+  - In the same way, **React-Native-Web is more successful than React-Native-DOM**: you can mix dom + RN elements in the same webapp, and can even decide to just implement your design system in RNW, not the root web pages
+- React-native-skia is aiming to help support new platforms like Linux. That would be mostly complimentary.
+
+- Drop shadows in android. AND performant blur view… 😱😱😱 holly shit.
+  - Drop Shadows are already (somewhat) possible with SVG (e.g. react-native-shadow2). Would this work without explicitly specifying width and height? Would be amazing if so
+- This is really great. How does it compare with with ART tho ? Isn’t it basically the same thing?
+  - The community ART module has pretty much been depracted in favour of RNSVG, which doesn't support advanced features like filters or shaders.
+  - Except the deprecation part it is pretty similar isn’t it?
+  - From what I understand this is more of a low-level solution for 2D graphics in general. I guess we'll see when it actually becomes public, until then I suggest watching the video if you are interested
 
 # discuss
-
 - ref
   - [twitter: JetPack compose flutter ](https://twitter.com/search?q=JetPack%20compose%20flutter%20min_replies%3A1&src=typed_query&f=live)
-
-- ## 
 
 - ## 
 

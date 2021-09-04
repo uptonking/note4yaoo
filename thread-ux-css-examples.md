@@ -51,11 +51,6 @@ modified: '2021-02-05T14:00:02.922Z'
 - https://twitter.com/jonkantner/status/1418182789493571587
   - https://codepen.io/jkantner/pen/poPWVbV
 
-- ## a generative pattern maker built on “relaxed” Voronoi diagrams.
-- https://twitter.com/georgedoescode/status/1417490092151787531
-  - https://codepen.io/georgedoescode/pen/vYmJXvW
-  - 很多小多边形
-
 - ## Did a quick little #CSS animation based off the merch for the #TokyoOlympics2020
 - https://codepen.io/lukemeyrick/pen/qBmjeLr
 - 太阳旗右移动画

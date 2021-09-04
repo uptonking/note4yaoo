@@ -19,7 +19,9 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
-- ## 
+- ## A new feature-detecting function coming soon to a browser near you: HTMLScriptElement.supports("importmap")
+- https://twitter.com/domenic/status/1433842051339243522
+  - import.meta.supportsType("css")
 
 - ## Safari joins Chrome, Firefox, Opera & IE in dropping the 300ms tap delay!__201603
 - https://twitter.com/jaffathecake/status/712004058890915840

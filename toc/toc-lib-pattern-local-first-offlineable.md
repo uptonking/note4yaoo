@@ -1,16 +1,20 @@
 ---
-title: toc-lib-pattern-local-first
+title: toc-lib-pattern-local-first-offlineable
 tags: [lib, local-first, pattern, toc]
 created: '2021-08-25T15:50:00.635Z'
-modified: '2021-08-25T15:50:47.502Z'
+modified: '2021-09-04T14:03:39.046Z'
 ---
 
-# toc-lib-pattern-local-first
+# toc-lib-pattern-local-first-offlineable
 
 # guide
 
 - search: local-first, local first, offline first
 # popular
+- https://github.com/redux-offline/redux-offline
+  - Persistent Redux store for Reasonaboutable  Offline-First applications, with first-class support for optimistic UI. 
+  - Use with React, React Native, or as standalone state container for any web app.
+
 - https://github.com/nornagon/autowiki
   - Autowiki is a tool for creating networked documents.
   - Autowiki is a local-first app: you own all the data you put into it, and your data never leaves your own machine unless you want it to.

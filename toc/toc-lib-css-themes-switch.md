@@ -320,13 +320,6 @@ modified: '2021-02-09T13:40:11.536Z'
 - https://github.com/luukdv/gooey-react
   - https://gooey-react.netlify.app/
   - The gooey effect for React, used for shape blobbing/metaballs
-
-## generative art 重复的线条、形状、色彩
-
-- [THE IMPORTANCE OF GENERATIVE ART](https://tylerxhobbs.com/essays/2021/the-importance-of-generative-art)
-- Tyler has been a huge influence in the generative art space over the last years
-  - https://twitter.com/mattdesl/status/1403381559151968257
-  - https://artblocks.io/project/78
 # themes-ui-design
 - https://github.com/ciucacristi/elementric
   - https://ciucacristi.github.io/elementric/

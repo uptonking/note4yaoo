@@ -59,6 +59,7 @@ modified: '2020-07-14T09:28:43.976Z'
 
 - https://github.com/krausest/js-framework-benchmark
   - https://krausest.github.io/js-framework-benchmark/index.html
+  - [Chrome 79 - 93 results](https://github.com/krausest/js-framework-benchmark/issues/683)
   - [JS web frameworks benchmark – Round 1_201601](https://www.stefankrause.net/wp/?p=191)
   - [JS web frameworks benchmark – Round 7_201711](https://www.stefankrause.net/wp/?p=454)
     - Surplus is fastest after vanillajs and it’s really impressively close(仅以些微之差获胜的). 

@@ -9,6 +9,9 @@ modified: '2021-05-19T17:48:06.572Z'
 
 # guide
 
+- 技术选型
+  - 全局canvas自绘制，还是部分自绘制+部分现有框架/dom绘制
+  - 比如，基于canvas的data-grid很多只有行列部分是canvas，其余部分是基于dom实现
 # faq
 
 ## skia vs canvas2d
@@ -16,15 +19,11 @@ modified: '2021-05-19T17:48:06.572Z'
 - 对canvas的优化由浏览器决定，浏览器可能会选择它认为快的方式，如GPU
   - 使用skia由开发者决定什么时候使用何种方式
   - skia作为底层渲染工具库，提供了更底层的api，可以实现canvas api没有的功能
-
 # discuss-stars
-
 - ## 
 
 - ## 
-
 # discuss
-
 - ## 
 
 - ## 

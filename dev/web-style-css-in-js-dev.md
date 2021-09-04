@@ -47,6 +47,20 @@ modified: '2021-01-01T20:06:19.327Z'
   - colocate css with jsx/html
   - 参考使用css-in-js的优点
 # discuss-stars
+- ## CSS Modules became the safe, boring choice for traditional CSS devs—in a good way—and I think vanilla-extract has the same potential.
+- https://twitter.com/markdalgleish/status/1433991554239107075
+- What are the actual pain points it fixes?
+  - It hashes all class/variable/animation/font-face names. 
+  - **This makes your CSS much more maintainable because dependencies between files are explicit**.
+  - It also adds static type safety. 
+  - I find this is especially useful across team boundaries, e.g. a design system and its consumers.
+- If I remove a CSS variable definition, I want errors in my editor if I'm still trying to consume it somewhere. 
+  - If I change the signature of a "mixin" (i.e. function that returns styles), I want errors in my editor if it's still being called with the old signature somewhere.
+- The biggest appeal of CSS modules for me is its ubiquity. 
+  - It works anywhere webpack, parcel, or esbuild does. 
+  - Getting emotion/styled-components to work with frameworks like Next.js can feel like duct-tape-engineering.
+  - Hoping vanilla-extract can get that convenient
+
 - ## Speaking of style recalculations: I’d strongly suggest migrating to Linaria
 - https://twitter.com/iamakulov/status/1430106459983945730
 - Here’s a pattern I see a lot:
@@ -165,8 +179,6 @@ modified: '2021-01-01T20:06:19.327Z'
   - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
   - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
 # discuss
-- ## 
-
 - ## 
 
 - ## 

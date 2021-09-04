@@ -29,6 +29,18 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 30+ HTML tags to consider before using a div; Why does using specific tags instead of divs matter? 
+- https://twitter.com/housecor/status/1434168410364157965
+  ✅ Accessible (used by screen readers)
+  ✅ Machine parsable (SEO, metadata parsing, etc)
+  ✅ Maintainable (easier for fellow devs to read and understand)
+  ✅ Testable (target for tests)
+- Also, this is why code reviews are so critical. Enforcing good semantic markup can’t be automated. It requires a human to consider the content and context.
+
 - ## Tip: number inputs have a `valueAsNumber` property, which allows you to quickly get their numeric value 
 - https://twitter.com/mgechev/status/1429662217318850560
   - use `input.valueAsNumber` instead of `parseInt(input.value)`

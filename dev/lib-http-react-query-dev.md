@@ -25,7 +25,10 @@ modified: '2021-05-13T02:52:41.975Z'
   - Middleware usually just describes a user defined function that wraps the original functionality of the caller.
 - very interested to see a smaller react query, but the effort can be too much indeed 🥲
   - i think what i'd like to see is more alternatives flourishing, it gives more control over size vs feature set.
-I
+- Glad that you're now thinking of it this way. 
+  - There're things that SWR *can* have, but we've decided not to add aggressively (just like your opinion on middleware). 
+  - To be clear: supporting middleware doesn't mean SWR will "shift a lot of core features into the user's hands".
+
 - ## React 18 and the future of async data
 - https://swizec.com/blog/react-18-and-the-future-of-async-data/
 - React 18 is shipping with `<Suspense>` and `startTransition` for deferred component rendering, but not data loading. 

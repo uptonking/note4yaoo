@@ -72,6 +72,16 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## It's always "are you using finite state machines" but never "are you in a fine state"
+- https://twitter.com/DavidKPiano/status/1434146478319091723
+- Any day im not in a final state, im in a fine state
+
+- ## Finally all done! [7GUIs](https://eugenkiss.github.io/7guis/) challenge for jotai
+- https://twitter.com/dai_shi/status/1433804219828490241
+  - Usually I define atoms and components in one file, but for this one, atoms.ts is a separate file.
+
 - ## Developers are mostly fine with using finite states, but figuring out transitions between states is where they draw the line.
 - https://twitter.com/DavidKPiano/status/1421951111641006080
 - developers mostly don’t work with finite state

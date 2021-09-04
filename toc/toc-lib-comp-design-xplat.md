@@ -10,9 +10,25 @@ modified: '2021-05-25T12:02:08.398Z'
 # popular
 
 # react-native-web
+- https://github.com/necolas/react-native-web
+  - https://necolas.github.io/react-native-web
+  - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
+
+- https://github.com/react-native-webview/react-native-webview
+  - a modern, well-supported, and cross-platform WebView for React Native.
+  - It is intended to be a replacement for the built-in WebView (which will be removed from core).
+  - Platforms Supported: ios, android, win, macOS
+- https://github.com/react-native-web-community/react-native-web-webview
+  - https://react-native-web-community.github.io/react-native-web-webview/storybook
+  - React Native for Web implementation of RN's WebView
+
 - dripsy /648Star/MIT/202105/ts
   - https://github.com/nandorojo/dripsy
   - A responsive, theme-based design system for Expo + React Native Web.
   - Heavily inspired by React's theme-ui.
   - Universal (Android, iOS, Web, & more)
   - After trying many, many different ways, I'm convinced this approach is the answer. 
+# more
+- https://github.com/vincentriemer/react-native-dom /201901/archived
+  - https://rntester.now.sh/
+  - An experimental port of React Native to the web.

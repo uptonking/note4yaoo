@@ -11,6 +11,23 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
+- ## Although it's perfectly logical that once you append `DocumentFragment` with child nodes to the other parent node, children are moved from the fragment to the new parent node, I was surprised to discover that today for the first time
+- https://twitter.com/maxkoretskyi/status/1433810552560758785
+- What's the use case for DocumentFragment?
+  - I usually use it as a container to build DOM tree, but as opposed to a DIV or other block node it allows appending multiple children in one operation, like multiple spans in my example above
+
+- ## Frontend development is essentially repeating "no for real, this framework is better than the last one" until you get promoted enough that it's not your problem anymore.
+- https://twitter.com/polotek/status/1433820890601385984
+  - Life is basically just upgrading to new js frameworks/versions until you quit or the company goes out of business.
+- Web components advocacy is often talking to leads on teams during their Nth framework migration saying "but we don't really need interop since this is our last migration, for real" until they leave the team.
+  - I've wondered about this. WCs don't remove frameworks. Use still need a lib. Given the speed large companies move, is this ultimately a way of loading all the frameworks on the page. Get started on the next migration before we finish the last since interopt is easier.
+
+- ## bun uses 50x less memory to render the same Next.js page compared to "next dev".
+- https://twitter.com/jarredsumner/status/1434120049673990146
+  - True for smaller Next.js apps too.
+
 - ## I'm very impressed with the work @astrodotbuild has been doing to bring MPAs to the forefront. 
 - https://twitter.com/RyanCarniato/status/1430928984867368964 
   - They are doing a really good job of distilling the advantages and use cases.

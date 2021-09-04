@@ -26,7 +26,16 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
-- ## 
+- ## For a SPA website with a drawer menu (doc site). When using the Android physical back button should it:
+- https://twitter.com/sebastienlorber/status/1433424873955610639
+  ➡️ 1) Close drawer AND navigate backward
+  ➡️ 2) Close drawer AND prevent backward navigation
+  ➡️ 3) Just navigate backward (drawer stays open)
+- I really like number 2 but it seems like a workaround implementation.
+  - It’s about  browser behavior. It’s ok if is a Android app, but it is’nt expected in web browser back button.
+- Open or Close the drawer is the internal component’s action IMO, that’s why I choose the 1st answer 
+  - 2 would also close it, so why 1 and not 2?
+  - Ok, I mean whether it will close or not doesn’t matter to me Smiling face with open mouth and smiling eyes I’m focusing on whether it will navigate back or not
 
 - ## I think Skeleton Screens are often not the best UX. 
 - https://twitter.com/samselikoff/status/1407125948567334913?s=21

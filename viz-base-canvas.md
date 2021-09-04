@@ -21,6 +21,9 @@ modified: '2020-12-21T07:46:54.190Z'
     - 保留模式API的优点是，对于你的应用程序，他们通常更容易构建复杂的场景，例如DOM。
     - 通常这都会带来性能成本,需要额外的内存来保存场景和更新场景，这可能会很慢
 
+- 技术选型
+  - 全局canvas自绘制，还是部分自绘制+部分基于现有框架/dom的混合绘制
+  - 比如，基于canvas的data-grid很多只有行列部分是canvas，其余部分是基于dom实现
 # faq
 
 ## 要不要全局 all in canvas ?
@@ -116,9 +119,7 @@ modified: '2020-12-21T07:46:54.190Z'
 - it's stateless, so you have to record the states of the elements in the canvas, and handle the hit test by yourself.
 - low efficient for very large size but with one a few elements in the game
 - great ability, great responsibility. the freedom to draw, brings in you have to charge of all the drawing staff. Fortunately, there are many libraries there, such as cocos2d-html5, IvanK.
-
 # discuss
-
 - ## 
 
 - ## 
@@ -231,9 +232,7 @@ modified: '2020-12-21T07:46:54.190Z'
     - This isn’t true for asm.js, which is mixed in with regular JavaScript and requires a complex verification pass to validate that it actually follows the asm.js restrictions.
   - WebAssembly has native support for 64-bit integers. 
     - JavaScript only has 64-bit floating-point numbers so it only supports 53-bit integers.
-
 # ref
-
 - [canvas动画](https://zhuanlan.zhihu.com/p/73561191)
   - canvas动画原理：快速切换的静态画面
   - 动画步骤：绘制 - 清空 - 绘制 - 清空 - 绘制...
