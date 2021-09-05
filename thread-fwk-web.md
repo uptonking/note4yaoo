@@ -24,9 +24,36 @@ modified: '2021-01-08T17:13:53.965Z'
 - Web components advocacy is often talking to leads on teams during their Nth framework migration saying "but we don't really need interop since this is our last migration, for real" until they leave the team.
   - I've wondered about this. WCs don't remove frameworks. Use still need a lib. Given the speed large companies move, is this ultimately a way of loading all the frameworks on the page. Get started on the next migration before we finish the last since interopt is easier.
 
-- ## bun uses 50x less memory to render the same Next.js page compared to "next dev".
+- ## Is bun focused on Next.js apps first, or are you just making sure Next.js works properly with bun?
+- https://twitter.com/okikio_dev/status/1434306312976863238
+- Bun works with static apps and create-react-app. 
+  - Next.js is a great litmus test for end-to-end usage, instead of  one infra tool among many. That, plus I think Next.js is a great framework, is why I'm mostly talking about it
+  - There's basically no Next.js specific code in Bun.
+- So, basically, by the time bun is released, it will function similar to esbuild, but will also, have good support for other frameworks.
+  - yes and no. 
+  - no: the first version of Bun will only ship with a dev server, plus a command for generating a node_module -- instead of arbitrarily transpiling JS code.
+  - yes: next.js, and hopefully people write integrations for other frameworks too
+- Also, I heard bun will work on the browser through wasm, will you use memfs for browser support?
+  - It does transpile in the dev server, but not as a separate command. I'll definitely add a command for it, just need to cut some scope so that this actually ships
+  - The WASM stuff was the original plan but I'm not prioritizing that anymore. Web platform isn't good enough yet.
+  - specifically: Filesystem Access API is impractical(不现实、不明智) for bundler-like usecases. Probably great for REPLs and things like that, but need a really comprehensive & fast & low friction filesystem API
+- I think the Web Container api is what you need, I'd suggest doing some research into it (it's what @stackblitz uses to emulate node in the browser)
+
+- ## Bun is a fast new:
+- https://twitter.com/jarredsumner/status/1434150145164079111
+  - JSX/TS transpiler
+  - JS & CSS Bundler
+  - JS runtime environment (powered by JavaScriptCore, the engine used by Safari)
+  - frontend dev server with hot reloading (and react fast refresh)
+  - I’ve been working on it since April(202104-202109), or so.
+
+- bun uses 50x less memory to render the same Next.js page compared to "next dev".
 - https://twitter.com/jarredsumner/status/1434120049673990146
   - True for smaller Next.js apps too.
+
+- With Bun, Create React App starts 31x faster end-to-end.
+- https://twitter.com/jarredsumner/status/1434396683861782530
+  - bun : cra(webpack+babel) = 133ms : 4184ms
 
 - ## I'm very impressed with the work @astrodotbuild has been doing to bring MPAs to the forefront. 
 - https://twitter.com/RyanCarniato/status/1430928984867368964 

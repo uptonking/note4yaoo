@@ -227,6 +227,16 @@ modified: '2020-12-21T07:46:14.237Z'
   - We can divide our content evenly into 12 parts, 6 parts, 4 parts, 3 parts, or in half.
 - While some people like the familiarity that comes with consistently using the same grid for every project, there is no need to have more columns than you actually need and you should build the grid that’s right for your content and desired layout rather than a one-size-fits all set-up.
 
+# discuss
+
+- ## If you are using CSS grid, avoid horizontal scrolling by setting a grid item column to `minmax(0, 1fr)` instead of `1fr`.
+- https://twitter.com/shadeed9/status/1434441947003998209
+  - I just helped a friend with a bug. On mobile, he was trying to make a responsive `<table>`, but there was a horizontal scroll. What causes it?
+  - On the parent, the first thing I noticed was `grid-template-columns: 1fr`. It's risky and problematic to use that 1fr.
+  - When a grid item contains a `<table>`, its width will expand to match the table's width. CSS grid defaults to this behavior.
+  - To override that, we need to replace `1fr` with `minmax(0, 1fr)`.
+  - [The Minimum Content Size In CSS Grid](https://ishadeed.com/article/min-content-size-css-grid/)
+- When I ended up with horizontal scrolling on my page I try to work around the width of the grid container or I just use, overflow-x: hidden
 # ref
 
 - [CSS Grid布局那么好，为什么至今没有人开发出基于Grid布局的前端框架呢？](https://www.zhihu.com/question/397861009)

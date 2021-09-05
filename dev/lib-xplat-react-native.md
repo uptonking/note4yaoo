@@ -36,13 +36,6 @@ modified: '2021-05-13T03:12:23.257Z'
     - 扶不起的QT
   - 各自写一遍其实也没想象的工作量大
     - 如果有图表的话，工作量就大了
-# discuss-stars
-- ## It's Flutter. But in React Native.
-- https://twitter.com/wcandillon/status/1433831742302003227
-- How does this new effort differ from react-native-skia
-  - this is a single skia canvas and you need to rebuild the world inside that canvas (like Flutter did). 
-    - Our effort is to bring Skia views in regular RN. In fact some of the demos in the video feature many skia views at the same time.
-  - Makes sense! **This library might then mean that RN can do some things with Skia that Flutter itself can’t** – I remember an issue that you couldn’t lay any Skia views atop of certain native views. e.g. you couldn’t show a toast over a `WKWebView`.
 # discuss
 - ## Why isn’t there a react native for Linux yet?__202009
 - https://www.reddit.com/r/reactnative/comments/j855s7/why_isnt_there_a_react_native_for_linux_yet/

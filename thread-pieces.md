@@ -17,7 +17,9 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## poll: URL vs Url
+- https://twitter.com/kentcdodds/status/1434480148649177094
+  - URL : Url  = 49.6% : 50.4%  /votes1401
 
 - ## There's a gap between:
 - https://twitter.com/sebastienlorber/status/1432728320429461508

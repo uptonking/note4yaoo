@@ -52,6 +52,56 @@ modified: '2021-05-13T03:10:56.112Z'
 - Skia is used by both Flutter and Fuchsia.
   - the versions of Skia being used by Flutter and Fuchsia must be “source compatible” 
 # discuss-stars
+
+- ## Flutter 与 React Native 深入对比分析__201912
+- 曾有人问我：“他即写 Java 又会 Object-C ，在 Android 和 IOS 平台上可以同时开发，为什么还要学跨平台呢？”
+  - 而我的回答是：跨平台的市场优势不在于性能或学习成本，甚至平台适配会更耗费时间，但是它最终能让代码逻辑（特别是业务逻辑），无缝的复用在各个平台上，降低了重复代码的维护成本，保证了各平台间的统一性， 如果这时候还能保证一定的性能，那就更完美了。
+- 实现原理
+  - 在 Android 和 IOS 上，默认情况下 Flutter 和 React Native 都需要一个原生平台的 Activity / ViewController 支持，且在原生层面属于一个“单页面应用”， 
+  - 而它们之间最大的不同点其实在于UI构建渲染流程
+- React Native
+  - jsx > vdom > c++ bridge > android/ios
+  - 默认情况下会在 Activity 下加载 JS 文件，然后运行在 JavaScriptCore 中解析 Bundle 文件布局，最终堆叠出一系列的原生控件进行渲染。
+  - 简单来说就是 通过写 JS 代码配置页面布局，然后 React Native 最终会解析渲染成原生控件，如 `<View>` 标签对应 ViewGroup/UIView ，`<ScrollView>` 标签对应 ScrollView/UIScrollView ，`<Image>` 标签对应 ImageView/UIImageView 等。
+  - js中的操作都会通过bridge通知native ui
+- Flutter中只需平台提供一个 Surface 和一个 Canvas
+  - framework(dart) widgets > engine(c++) skia
+  - Flutter中绝大部分的 Widget 都与平台无关， 开发者基于 Framework 开发 App ，而 Framework 运行在 Engine 之上，由 Engine 进行适配和跨平台支持。
+  - 这个跨平台的支持过程，其实就是将 Flutter UI 中的 Widget “数据化” ，然后通过 Engine 上的 Skia 直接绘制到屏幕上 。
+- Flutter中写的Widget，其实并非真正的渲染控件，这一点和 React Native 中的标签类似，Widget更像配置文件， 由它组成的 Widget 树并非真正的渲染树。
+  - Widget在渲染时会经过 Element 变化， 最后转化为 RenderObject 再进行绘制， 而最终组成的 RenderObject 树才是 *真正的渲染Dom*，每次 Widget 树触发的改变，并不一定会导致RenderObject 树的完全更新。
+- 所以在实现原理上 React Native 和 Flutter 是完全不同的思路，虽然都有类似“虚拟 DOM 的概念” ，但是React Native 带有较强的平台关联性，而 Flutter UI 的平台关联性十分薄弱。
+
+
+- 在跨平台开发中，就不得不说到接入原有平台的支持，比如 在 Android 平台上接入 x5 浏览器 、接入视频播放框架、接入 Lottie 动画框架等等。
+- 这一需求 React Native 先天就支持，甚至在社区就已经提供了类似 lottie-react-native 的项目。 
+  - 因为 React Native 整个渲染过程都在原生层中完成，所以接入原有平台控件并不会是难事
+- 而 Flutter 在就明显趋于弱势，甚至官方在开始的时候，连 WebView 都不支持，这其实涉及到 Flutter 的实现原理问题。
+  - 因为 Flutter 的整体渲染脱离了原生层面，直接和 GPU 交互，导致了原生的控件无法直接插入其中 ，
+  - 而在视频播放实现上， Flutter 提供了外界纹理的设计去实现，但是这个过程需要的数据转换，很明显的限制了它的通用性，所以在后续版本中 Flutter 提供了 PlatformView 的模式来实现集成。
+  - PlatformView 的设计必定导致了性能上的缺陷，最大的体现就是内存占用的上涨，同时也引导了诸如键盘无法弹出#19718和黑屏等问题，甚至于在 Android 上的性能还可能不如外界纹理。
+  - 所以目前为止， Flutter 原生控件的接入上是仍不如 React Native 稳定。
+- 编译和产物
+  - 可以看出在 React Native 同等条件下， Android 比 IOS 大很多 ，这是因为 IOS 自带了 JSCore ，而 Android 需要各类动态 so 内置支持，而且这里 Android 的动态库 so 是经过了 ndk 过滤后的大小，不然还会更大。
+  - Flutter 和 React Native 则是相反，因为 Android 自带了 skia ，所以比没有自带 skia 的 IOS 会小得多。
+
+
+- 有一点需要注意，抛开场景说性能显然是不合适的，因为性能和代码质量与复杂度是有一定联系的。
+- 先说理论性能，**在理论上 Flutter 的设计性能是强于 React Native** ，
+  - 这是框架设计的理念导致的，Flutter 在少了 OEM Widget ，直接与 CPU/GPU 交互的特性，决定了它先天性能的优势。
+- 注意不要用模拟器测试性能，特别是IOS模拟器做性能测试，因为 Flutter 在 IOS模拟器中纯 CPU ，而实际设备会是 GPU 硬件加速，同时只在 Release 下对比性能。
+- 代码的实现方式不同，也可能会导致性能的损失，
+  - 比如 Flutter 中 skia 在绘制时，saveLayer 是比较消耗性能的，比如 透明合成、clipRRect 等等，都会可能需要 saveLayer 的调用， 而 saveLayer 会清空GPU绘制的缓存，导致性能上的损耗，从而导致开发过程中如果掉帧严重。
+- 额外补充一点，JS 和 Dart 都是单线程应用，利用了协程的概念实现异步效果，
+  - 而在 Flutter 中 Dart 支持的 isolate ，却是属于完完全全的异步线程处理，可以通过 Port 快捷地进行异步交互，这大大拓展了 Flutter 在 Dart 层面的性能优势。
+
+- React Native 在 0.59 版本开始支持 React Hook 等特性，并将原本平台的特性控件从 React Native 内部剥离到社区，这样控件的单独升级维护可以更加便捷
+- Flutter UI 平台的无关能力，让 Flutter 在跨平台的拓展上更为迅速，尽管 React Native 也有 Web 和 PC 等第三方实现拓展支持，但是由于平台关联性太强，这些年发展较为缓慢， 而 Flutter 则是短短时间又宣布 Web 支持，甚至拓展到 PC 和嵌入式设备当中。
+- Flutter Web 保留了 大量原本已有的移动端逻辑，只是在 Engine 层利用 Dart2Js 的能力实现了差异化， 不过现阶段而言，Flutter Web 仍处在技术预览阶段，不建议在生产环境中使用 。
+- 
+- 
+- 
+
 - ## It's Flutter. But in React Native.
 - https://twitter.com/wcandillon/status/1433831742302003227
 - How does this new effort differ from react-native-skia

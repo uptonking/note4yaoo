@@ -15,7 +15,12 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
-- ## 
+- ## Just pushed a BIG update to @tldraw
+- https://twitter.com/steveruizok/status/1434190045238472704
+  - a full rewrite, six weeks in the making, that includes new faster state management, an architecture made up of three packages, and tons of bug fixes and improvements.
+- The whole app is built on the @tldraw/core package, which is an excellent renderer for custom primitives. 
+  - It's fast and efficient—but there's still plenty of room for improvement, too. 
+- Me: Decides on the button variants for 6 weeks
 
 - ## CODECHECK
 - https://codecheck.org.uk/

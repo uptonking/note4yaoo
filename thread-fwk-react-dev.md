@@ -7,7 +7,7 @@ modified: '2021-01-06T14:40:03.364Z'
 
 # thread-fwk-react-dev
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
-# repeat
+# discuss-stars
 - ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
 - https://twitter.com/sseraphini/status/1379547345130565632
 - For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.
@@ -59,12 +59,17 @@ modified: '2021-01-06T14:40:03.364Z'
 - I feel like Typescript encourages you to avoid this pattern for good reason, because CCs rely on children, which can't be typed strongly enough to avoid having to read the implementation. I like letting TS suggest props and catch my mistakes. Config props all the way for me! 
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
-# pieces
+# discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## svelte even supports web components
+- https://twitter.com/passle_/status/1433019029766148096
+- I mean, yeah, React is even worse, its not just silence, its feigning to be working on it until someone else does it for them.
+- I've extensively consumed WCs in a Svelte app and only had minor issues. AFAIK it's just the compile-to-CE feature that's buggy -- a nice-to-have, but nowhere near as essential as basic WC compatibility.
+- tbh, reading that issue as someone who knows React but not WCs, the impression I got was that no one on the WC side could come up with a clear explanation of how React _should_ handle the seemingly dozens of nuances(细微差别) in data passing behavior WCs can apparently have
+- It’s a very difficult design space because there are many ways to do WCs, and also because **React is “pulling” into the SSR direction while the WC community doesn’t have a cohesive story around it yet**. I think Joseph has done a fabulous job integrating feedback from all sides.
 
 - ## Can someone please open source a package which takes a list of file path strings (like Remix, Next) and convert into React Router route object.
 - https://twitter.com/dev__adi/status/1432310439254261764
