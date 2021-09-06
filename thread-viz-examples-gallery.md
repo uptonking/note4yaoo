@@ -11,6 +11,19 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## thank you for the 10k followers! Thank you very much to the people who shared my projects and supported my work!
+- https://twitter.com/fedfragapane/status/1434849983874928641
+  - 作者的可视化作品包括图表、地图等各种类型
+
+- ## 20, 000 Olympic medals in one chart
+- https://twitter.com/spren9er/status/1434449244212051968
+  - https://olympic-medals.spren9er.de/
+  - 展示了历届奥运会各国奖牌数量排名
+
 - ## My latest viz based on car safety features in the theme of a periodic table. Created with @tableau Desktop.
 - https://twitter.com/SuglaniNaresh/status/1430607097083871233
   - [Periodic Table of Car Safety Elements](https://public.tableau.com/app/profile/naresh.suglani/viz/PeriodicTableofCarSafetyElements/PeriodicTable)

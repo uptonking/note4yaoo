@@ -11,6 +11,13 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## arr.forEach 遍历action reducer 函数时，return无法立即结束forEach 
+- 可改用传统for循环
+
 - ## 少使用 `auth && <Routes />` 的形式
 - auth为null时，右边也会悄悄执行
 

@@ -72,7 +72,8 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## 
+- ## Just released redux-in-worker v0.8.0, a library to run redux reducers and middleware in web workers
+- https://twitter.com/dai_shi/status/1434840658292842500
 
 - ## It's always "are you using finite state machines" but never "are you in a fine state"
 - https://twitter.com/DavidKPiano/status/1434146478319091723

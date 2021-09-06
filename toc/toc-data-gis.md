@@ -9,6 +9,7 @@ modified: '2021-01-04T16:20:47.941Z'
 
 # popular
 
+- [google spreadsheets list of GIS data sources](https://docs.google.com/spreadsheets/d/1utQRlrX3lJniBjWE3rNjLZeTRsbjH-zdjxNmXhhvO9Q/edit#gid=47)
 # tiles
 - https://github.com/michael-laoyu/MapTileGenerator
   - 依赖c#

@@ -11,7 +11,22 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## being framework-agnostic
+- https://twitter.com/dai_shi/status/1434543349524877317
+  - I started developing `jotai` to solve a certain issue in React. 
+  - Afterward, I realized that it's more than that, a reactive coding pattern, so to say. 
+  - To prove that, `jotai-jsx` is developed as a PoC (for now), which runs jotai app without React.
+- So, the answer is useState and useEffect.
+  - jotai-jsx's atom+useAtom+useConstant is almost equivalent to React's useState+useEffect+useRef.
+- Valtio is also developed to solve an issue in React, but soon made me realize its vanilla part is useful as is.
+  - valtio/utils are not tied to React, and most jotai/utils are not tied to react either.
+- We use Zustand/Valtio specifically because they are agnostic to the UI rendering layer, so we can isolate our business state for testing/portability/re-usability. 
+  - Additionally, it's easier to use with events beyond the UI (e.g. network events) without adding components as glue
+- We use Valtio specifically because is not tied to React. One of our applications uses non React layers for specific parts. Valtio allows us to easily connect the different layers. It's such a great library
+- #ReactQuery is the same. Though I don’t believe you could run React with it 😆
+  - In terms of being framework agnostic, I could just use the Query Client and QueryObserver in other frameworks, correct?
+  - You’d want to mimic the life cycles of useQuery as much as possible.
+  - https://github.com/DamianOsipiuk/vue-query
 
 - ## API integrations are always 1:1. So the number of required integrations required for interop scales exponentially with the number of apps.
 - https://twitter.com/gordonbrander/status/1430568224106508289
