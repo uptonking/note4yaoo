@@ -24,13 +24,16 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
-- ## 
+- ## CSS trick to dynamically reduce the line-height as the font-size grows, large texts need condensed line-height
+- https://twitter.com/hihayk/status/1280979972258172928
+  - line-height: calc(0.25rem + 1em)
+- or use doppler to fine-tune it
+  - https://hihayk.github.io/doppler/
 
-- ## z-index Tip: When creating a reusable component that declares a z-index, add this style to the root element: isolation: isolate
+- ## z-index Tip: When creating a reusable component that declares a z-Iindex, add this style to the root element: isolation: isolate
 - https://twitter.com/housecor/status/1432346434356060162
   - Why? This creates a “stacking context”, which means your z-index won’t “leak out” and override surrounding components.
 - My proposed solution was using React context to create the stacking. This is much simpler.
-
 
 - ## Before building dark mode for your component library, build "dark context." 
 - https://twitter.com/markdalgleish/status/1432601569069916165

@@ -13,6 +13,19 @@ modified: '2021-05-13T07:47:11.964Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Wait, just remembered native apps don't have CSS. I might be in trouble.
+- https://twitter.com/markdalgleish/status/1435055048967409668
+- React Native has a kinda fake CSS thing, it's pretty OK.
+- In react native we exclusively use inline styles…you’re gonna love it!
+- React native is fantastic. There’s a great library called @shopify/restyle which makes it so nice
+- Android does have styles. They don't cascade though, just inherit
+
 - ## #RN4Desktop "delivers huge performance wins" over Electron and combines high quality, delightful, _native_ UX and dev experience. 
 - https://twitter.com/ReactNativeMSFT/status/1428463475668389891
 - This is what happens when components are allowed to be independent, not vendor controlled & web bound. 

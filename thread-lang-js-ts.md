@@ -18,8 +18,11 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
-
+- ## null >= 0  // true
+- https://twitter.com/andrestaltz/status/1435244740975468547
+  - null > 0   // false
+  - null == 0  // false
+  - null === 0 // false
 - ## Anyone have a maintained alternative to node-fetch? Apparently they've gone ESM-only and so I can't use them in my many CommonJS Node servers.
 - https://twitter.com/domenic/status/1433190271764860930
 - CommonJS cannot use top-level await, and I cannot delay getting the ability to fetch things.

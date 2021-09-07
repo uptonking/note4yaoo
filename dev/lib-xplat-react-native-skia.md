@@ -31,15 +31,18 @@ modified: '2021-09-05T13:20:14.519Z'
 - The library itself links in the Skia binaries, which we're working on getting as small as possible. 
   - The mono/SkiaSharp project has had nice progress with this, so hopefully it will add somewhere around 10 mb to your app.
 
-
-
-
 - How this compressor(压气机，压缩机) competes with reanimated2? Do you use them both or you chose between them? Any use cases?
   - `Reanimated` is about running animations. You can create animated values and animated them. 
   - Then you can actually use `Reanimated.View` to render something you can do with RN and animated it. Or you'll be able to use `Skia.View` and `onDrawCallback` to animate some "canvas" stuff
-- 
-- 
-- 
+
+- Another good reason why I think React-Native has the best tradeoffs for cross-platform. 
+  - It is even possible that React-Native could end up being a better choice for using Skia than using Flutter 
+- I guess eventually someone will create a wrapper around this Skia API to support html5 canvas and then lots of cool stuff from the web will work perfectly fine on mobile too.
+- You mean something like React Three Fiber could run on mobile?
+  - Yep. Kinda. Lots of cool stuff can be easier built with canvas. Such as charts. Or lots of 2d graphics. And not it will be possible.
+  - maybe not the 3d part but a subset
+
+- still prefer the 1-1 mapping from rn-native views/widgets, that's the main reason why i don't like flutter. + if we're serious about all the UI w/ skia, we need accessibility as well. that being said, having skia in the rn land is a game charger (games, complex ui, drawing, etc)
 
 - ## Flutter 2 announced last week to show off the cross platform power.
 - https://twitter.com/kudochien/status/1369491495892316160

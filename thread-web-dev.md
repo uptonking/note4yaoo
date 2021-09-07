@@ -31,7 +31,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## I recently learned about Event.composedPath() that returns an array of objects (DOM up to a Window) on which listeners will be invoked
+- https://twitter.com/maxkoretskyi/status/1434955497082441732
+- Hm.. sounds like nice way to handle outside click
+  - It is, but you only really need it if you are working with Shadow DOM. Otherwise plain `Element.contains()` is enough.
 
 - ## 30+ HTML tags to consider before using a div; Why does using specific tags instead of divs matter? 
 - https://twitter.com/housecor/status/1434168410364157965
