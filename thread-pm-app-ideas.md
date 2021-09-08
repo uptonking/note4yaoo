@@ -25,12 +25,12 @@ modified: '2021-04-19T14:53:27.158Z'
 - I wish I could say that too.. I have time for now but no enough knowledge yet
 - No project ideas. Only problem
   - make a project to solve your problem
-
-
 # ideas
 - ## 
 
-- ## 
+- ## 把推文链接贴一下就能生成一张漂亮的推文效果图
+- https://poet.so/
+  - 放在社交平台上效果还不错，网站可调整渐变色、调整尺寸等参数，推荐大家来试试！
 
 - ## App Generator — The technology-agnostic way
 - https://dev.to/sm0ke/web-app-generator-the-technology-agnostic-way-36k4

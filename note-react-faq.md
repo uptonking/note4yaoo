@@ -15,7 +15,7 @@ modified: '2020-06-30T12:51:08.791Z'
 
 - 包含ref的react组件，ref指向的dom是由react更新/rerender吗
 
-- createPortal的render、commit过程是怎样的
+- ## createPortal的render、commit过程是怎样的
   - 注意createPortal()方法的返回值是存在children属性的ReactElement
   - createPortal()是否存在commit phase?
     - 不存在commit阶段，createPortal的返回值就是普通的react element，和普通的函数组件返回值一样
@@ -53,6 +53,24 @@ export interface Renderer {
 
 # faq
 - ## 
+
+- ## 类似文件浏览器的任意层级的嵌套route如何实现
+- [React Router: How to match indeterminate amount of sub paths of a nested route?](https://stackoverflow.com/questions/57047928)
+- 测试表明，通配符 * 可以匹配任意多个层级，以 `/repo/*` 为例
+  - 可以匹配 /repo/01
+  - 可以匹配 /repo/01/02
+  - 可以匹配 /repo/01/02/03
+
+- I've never done a thing like this, 
+  - but I can only imagine it to work using a dynamic route definition. 
+  - Of course this works only if your app will render the same component for all the routes generated since the first one.
+
+- [Advanced React Router concepts: Recursive path, code splitting, and more](https://blog.logrocket.com/advanced-react-router-concepts-code-splitting-animated-transitions-scroll-restoration-recursive-17096c0cf9db/)
+- A recursive path is a path that uses nested routes to display nested views by calling on the same component. 
+  - An example of a recursive path in action could be the common use of breadcrumb on websites. 
+  - A “breadcrumb” is a type of secondary navigation scheme that reveals the user’s location in a website or Web application.
+  - Breadcrumbs offer users a way to trace the path back to their original landing point even after going through multiple routes, 
+  - and that can be implemented using React Router’s functionality, specifically the `match` object, it provides the ability to write recursive routes for nested child components.
 
 - ## When should you NOT use React.memo?
 - https://github.com/facebook/react/issues/14463

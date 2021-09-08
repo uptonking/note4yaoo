@@ -15,6 +15,25 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0830-0905
 
+👉 Ultra
+👉 Snapshot Testing
+👉 TS Props Readability
+👉 TS Polymorphism
+👉 Best Practices
+👉 SWR
+👉 Render Tracker
+👉 Flutter/Skia in RN
+👉 RN's Many Platforms Vision
+👉 Mobile: Imperative ➡️ Declarative
+👉 TC39
+👉 App History API
+👉 Solid
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1435332777554153472
+  - https://github.com/lahmatiy/react-render-tracker
+    - a tool to discover performance issues related to unintended re-renders
+
 ## w0823-0829
 
 ## w0816-0822
@@ -52,7 +71,7 @@ modified: '2021-03-22T18:46:03.513Z'
 
 - ref
   - https://twitter.com/sebastienlorber/status/1424798155648942087
-  - https://github.com/BuilderIO/mitosis
+  - https://github.com/BuilderIO/mitosis /formerly-jsx-lite
     - Write components once, run everywhere. 
     - Compiles to Vue, React, Solid, Angular, Svelte, and Liquid.
 

@@ -26,6 +26,15 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## When creating form fields, do you mark the required ones, or do you mark the optional ones?
+- https://twitter.com/darianrosebrook/status/1433899512049795072
+- I usually go with "depends on which is more prevalent in the current form". If 90% of the fields are required it is annoying to see 'required' on them, and vice versa. Also if all fields are required then don't show anything.
+- I often have marked both. Adding “optional” to the text field default state copy. Definitely helps. But minimally mark required fields because I’m not a monster.
+
 - ## For a SPA website with a drawer menu (doc site). When using the Android physical back button should it:
 - https://twitter.com/sebastienlorber/status/1433424873955610639
   ➡️ 1) Close drawer AND navigate backward

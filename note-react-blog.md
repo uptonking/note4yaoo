@@ -7,6 +7,122 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog
 
+# [How Readable Are Your React Component's TypeScript Props Typing?](https://www.chakshunyu.com/blog/how-readable-are-your-react-component's-typescript-props-typing/)
+- This article will discuss and analyse three different ways of implementing the TypeScript implementation of a React component’s props typing.
+- To properly illustrate the different approaches, we will use one example problem in this article. 
+- We’ll implement the missing props typing using the different approaches in each respective section using this example. 
+
+```typescript
+
+type Article = {
+  id: string;
+  coverImageUrl?: string;
+  title: string;
+  subtitle: string;
+};
+
+type ArticleCardsProps = {
+  articles: Article[];
+};
+
+// 多了一个size属性
+const ArticleCards = ({ articles }: ArticleCardsProps) => {
+  return (
+    <section className="articles-cards-container">
+      {articles.map((article, index) => (
+        <ArticleCard
+          key={article.id}
+          coverImageUrl={article.coverImageUrl}
+          title={article.title}
+          subtitle={article.subtitle}
+          size={index === 0 ? "large" : "medium"}
+        />
+      ))}
+    </section>
+  );
+};
+
+type ArticleCardProps = ???
+
+const ArticleCard = ({
+  coverImageUrl,
+  title,
+  subtitle,
+  size
+}: ArticleCardProps) => {
+  return (
+    <div className={`article-card-container-${size}`}>
+      <ArticleCardCover image={coverImageUrl} />
+      <h2 className="article-card-title">{title}</h2>
+      <div className="article-card-subtitle">{subtitle}</div>
+    </div>
+  );
+};
+```
+
+## Write Out Every Prop Type
+
+```typescript
+
+type ArticleCardProps = {
+  coverImageUrl?: string;
+  title: string;
+  subtitle: string;
+  size: "small" | "medium" | "large";
+}; 
+```
+
+✅ Typing is always explicit.
+✅ Reader never needs additional resources, typings, or files to understand the prop types.
+✅ Future adjustments are straightforward.
+⛔ All of the typing is repeated.
+⛔ No context or information about relationships between typings.
+⛔ Typings needs to be adjusted by all users if the original typing changes.
+
+## Reference The Original Object Types
+
+```typescript
+
+type ArticleCardProps = {
+	coverImageUrl?: Article["coverImageUrl"];
+  title: Article["title"];
+  subtitle: Article["subtitle"];
+  size: "small" | "medium" | "large";
+};
+```
+
+✅ Reuses the typing of the original object.
+✅ Component can use whatever prop names they prefer but the typing remains.
+✅ Changing types is only necessary in one place.
+⛔ Makes the typing implicit.
+⛔ Doesn’t necessarily reduce the amount of code.
+
+## Reuse The Original Object As Prop Types
+
+```typescript
+type ArticleCardProps = Omit<Article, "id"> & {
+  size: "small" | "medium" | "large";
+};
+
+// OR
+
+type ArticleCardProps = Pick<Article, "coverImageUrl" | "title" | "subtitle"> & {
+  size: "small" | "medium" | "large";
+};
+
+```
+
+✅ Reuse as much code as possible, resulting in as little code as possible.
+✅ Same props are represented with the same name between components.
+✅ Does a great job of highlighting the similarities, differences, or extensions.
+⛔ Heavily relies on implicit knowledge about the referenced typings.
+⛔ Depends on the reader knowing the ins and outs of most TypeScript utility functions.
+⛔ The smaller fraction of types that can be reused, the higher the impact on readability.
+
+## Final Thoughts
+
+- All of them have their advantages, drawbacks, and use cases in terms of readability. 
+- The information in this article will provide you with a solid foundation on different ways to implement TypeScript props typing for your React components in a readable manner. 
 # [7 code smells in your React components_202011](https://dev.to/awnton/7-code-smells-in-react-components-5f66)
 
 ## Too many props

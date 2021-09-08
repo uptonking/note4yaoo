@@ -11,7 +11,6 @@ modified: '2020-12-20T15:43:51.808Z'
 
 - Observer 观察者模式
   - MutationObserver
-
 # design-patterns
 
 ## [Observer vs Pub-Sub pattern](https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c)
@@ -41,3 +40,12 @@ modified: '2020-12-20T15:43:51.808Z'
     - On the other hand, the Publisher/Subscriber pattern is more of a cross-application pattern.
 
 - Despite the differences between these patterns, some might say that Publisher-Subscriber pattern is a variation of Observer pattern because of the conceptual similarity between them. And it won’t be wrong at all. Don’t need to take the differences religiously. 
+# delegation
+- thinking in java
+  - A third relationship, which is not directly supported by Java, is called delegation. 
+  - This is midway between inheritance and composition, because you place a member object in the class you’re building (like composition), 
+  - but at the same time you expose all the methods from the member object in your new class (like inheritance).
+- https://twitter.com/maxkoretskyi/status/1435487471509413889
+  - I've heard many times devs bashing #javascript for its implementation of OOP through prototypes (delegation). 
+  - Yet, delegation is the most powerful and flexible approach to code reuse, 
+  - b/c it allows to effectively combine composition and inheritance and change behavior at runtime

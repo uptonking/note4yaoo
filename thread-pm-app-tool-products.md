@@ -13,7 +13,11 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
-- ## 
+- ## Starting to feel like the @tldraw engine really wants to be a “render react components in a canvas paradigm” engine.
+- https://twitter.com/steveruizok/status/1435515509756338177
+  - This isn’t too far from what it is currently. Right now you’re limited to only elements that can go inside of an svg `<g>` tag.
+- One of the limitations with that canvas is the limited way that a custom/code component could behave on the canvas. Components with nonstandard behaviors, like their Graphics shape, were all baked in.
+- So more work for the lab. As with all hobby projects, part of the fun is seeing where things go—and if @tldraw points to a “next” project, then I think that project would be a similarly generic “interactive canvas for components”.
 
 - ## Just pushed a BIG update to @tldraw
 - https://twitter.com/steveruizok/status/1434190045238472704

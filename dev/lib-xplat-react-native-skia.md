@@ -44,6 +44,11 @@ modified: '2021-09-05T13:20:14.519Z'
 
 - still prefer the 1-1 mapping from rn-native views/widgets, that's the main reason why i don't like flutter. + if we're serious about all the UI w/ skia, we need accessibility as well. that being said, having skia in the rn land is a game charger (games, complex ui, drawing, etc)
 
+- Chrome, Android & Flutter all use the insanely fast Skia library as their graphics backend.
+  - By bringing Skia bindings to React Native, we unlock faster, mightier and platform-consistent graphic capabilities.
+  - Long way to go, but think much faster SVG, Blur, Shadows, gradients…!
+- I’ve rendered Lottie animations to video with Skia and it was around 100x faster than node-canvas for anything with parities or blending modes. The hype is real.
+
 - ## Flutter 2 announced last week to show off the cross platform power.
 - https://twitter.com/kudochien/status/1369491495892316160
   - However, for the web support, since it's based on skia. 
