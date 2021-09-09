@@ -11,7 +11,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## Did someone tell you the Virtual DOM was slow?
+- https://twitter.com/RyanCarniato/status/1435721745344831494
+- Honestly great job by @GDebongnie to apply the template clone approach to VDOM. 
+  - This approach originated in Tagged Template Literal framework @WebReflection's HyperHTML 
+  - but has since been adopted by Reactive libs like Solid, and now for the first time in a VDOM.
+- I'm assuming it doesn't rerender the whole to the DOM, only pieces of it?
+  - Every modern framework does a pretty reasonable job only updating portions of the DOM through some sort of diffing. 
+  - The trick here is mostly that it clones blocks of real DOM nodes rather than creation per element like most VDOM libraries.
+  - Beyond that what you are seeing is pretty characteristic of top-down vs reactivity. Worse selection performance (independent nested updates are reactivity's strength) but slightly better create/remove due to lower memory overhead.
 
 - ## Although it's perfectly logical that once you append `DocumentFragment` with child nodes to the other parent node, children are moved from the fragment to the new parent node, I was surprised to discover that today for the first time
 - https://twitter.com/maxkoretskyi/status/1433810552560758785

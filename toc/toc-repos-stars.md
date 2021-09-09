@@ -61,9 +61,6 @@ modified: '2021-01-12T18:49:13.490Z'
   - open source platform for sharing, finding, citing, and preserving research data 
   - 依赖glassfish、postgresql、smtp、solr、DOI/Handle.net
 
-- https://github.com/ricklamers/gridstudio
-  -  a web-based spreadsheet application with full integration of the Python programming language.
-  - 依赖go、ploty、jquery
 # collection
 - https://github.com/pouyakary/TextKit
   - TextKit is a framework for creating Textual Graphics. 

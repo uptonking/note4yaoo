@@ -17,7 +17,8 @@ modified: '2021-05-10T04:06:02.843Z'
 
 - ## 
 
-- ## 
+- ## 庆祝时模拟撒花碎屑的效果
+- https://twitter.com/opinionatedpie/status/1435952182948413447
 
 - ## 基于toggle按钮实现数字、字母的霓虹灯效果
 - https://twitter.com/sw12/status/1430187718471032832

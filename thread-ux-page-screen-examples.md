@@ -59,6 +59,7 @@ modified: '2021-05-14T14:25:57.616Z'
 # logo examples
 - 渐变圆润丝带
   - https://twitter.com/ChristiesInc/status/1435346651217108996
+  - [The Sunrises and Sunsets of America](https://public.tableau.com/en-us/gallery/sunrises-and-sunsets-america)
 
 - mirror style
 - https://twitter.com/lachlanjc/status/1364599448052117507

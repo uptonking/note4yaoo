@@ -23,3 +23,7 @@ modified: '2020-12-29T17:46:00.207Z'
 # guide
 
 - [The Visual Studio Code Roadmap 2020](https://github.com/microsoft/vscode/wiki/Roadmap)
+
+# ref
+
+- [一个vscode的模拟界面，仅界面和编辑，不能跳转文件和点击菜单](https://remoteok.io/vscode)

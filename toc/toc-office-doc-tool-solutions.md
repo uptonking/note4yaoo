@@ -230,11 +230,16 @@ modified: '2021-07-21T18:07:43.056Z'
   - 依赖antd3、showdown、koa
   - A static site generator with MDX for React documentation.
 - https://github.com/MuYunyun/create-react-doc
-  - Create React Doc 是一个使用 React 的 markdown 文档站点生成工具
+  - http://muyunyun.cn/create-react-doc/README
   - 依赖 react-markdown、@mdx-js/react.v1.6、prism-react-renderer
   - 建站理念: 文件即站点 (Files as a Site)。
   - 性能: 通过预渲染、懒加载大幅提升站点加载速度。
-  - 基于 mdx: 支持在 markdown 中书写 React 组件、数学公式等
+  - 基于 mdx: 支持在markdown中书写React组件、数学公式等
+  - crd是一个使用React的markdown文档站点生成工具
+- https://github.com/framer/monobase
+  - https://elegant-clarke-8778e0.netlify.app/
+  - 依赖webpack.v4、react-remarkable、express、@mdx-js/loader；不依赖framer-motion
+  - Monobase let's you build sites in a component based way, allowing you to isolate and re-use every part of your website. 
 # ref
 - [Storybook vs Styleguidist_201805](https://www.chromatic.com/blog/storybook-vs-styleguidist/)
 - [What’s the difference between Styleguidist and Storybook?](https://react-styleguidist.js.org/docs/cookbook/#are-there-any-other-projects-like-this)

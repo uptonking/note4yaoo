@@ -13,6 +13,7 @@ modified: '2021-07-20T02:15:25.917Z'
   - 方向：markdown、collab协作、data-grid、codeblock
   - 大部分的方案是以vanillajs为core，react为wrapper
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
+  - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
 - **vanillajs-first**
   - tiptap/dante/wix, tui.editor.v3, remirror, emirror
   - guardian-prosemirror-typerighter/elements/invisibles/noting, stacks-editor(StackOverflow)

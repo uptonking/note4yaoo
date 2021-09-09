@@ -83,6 +83,9 @@ modified: '2021-07-21T18:09:03.424Z'
   - https://github.com/grow/grow.dev
   - 左侧目录，右侧可高亮书签
 
+- https://help.tactiq.io/en/articles/5492858-tactiq-s-notion-integration
+  - 页面灰背景，文档白背景，文档宽度适中非常符合文件样式
+
 - https://github.com/codenpixel/Bootstrap-documentation-template
   - https://sharebootstrap.com/demo/docu/
   - 右侧toc无法高亮

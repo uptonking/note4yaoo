@@ -7,8 +7,20 @@ modified: '2021-01-04T17:26:25.032Z'
 
 # toc-office-markdown
 
-# markdown-parser-generator
+# guide
+- popular-md-products(产品核心部分都是编辑器)
+  - outline, HedgeDoc/CodiMD/HackMD, Crowi
+  - gitbook, bookdown, docsify, docusaurus, nextra
+  - foam, dendron, gistpad, obsidian-dataview
+  - notable, BoostNote, standardnotes/web, notea, laverna, vnote
+  - mdx-deck, md2googleslides, marp, nodeppt, gitpitch
+  - react-resume-site
 
+- popular-md-editor
+  - tui.editor, milkdown, rich-markdown-editor, vditor
+  - zettlr
+  - mermaid
+# markdown-parser-generator
 - https://github.com/markdown-it/markdown-it
   - https://markdown-it.github.io/
   - /10.4kStar/MIT/202009
@@ -17,13 +29,12 @@ modified: '2021-01-04T17:26:25.032Z'
 - https://github.com/remarkjs/remark/tree/main/packages/remark-parse
   - Parses Markdown to mdast syntax trees. 
   - Built on micromark and mdast-util-from-markdown
-- https://github.com/eczn/down-parse
-  - /ts/2019
-  - markdown parser with a wonderful plugin system
 - https://github.com/markedjs/marked
   - /24kStar/MIT/202012/js
   - A markdown parser and compiler. Built for speed.
   - light-weight while implementing all markdown features from the supported flavors & specification
+- https://github.com/eczn/down-parse /ts/2019
+  - markdown parser with a wonderful plugin system
 # markdown-editor
 - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark

@@ -28,3 +28,8 @@ modified: '2021-05-23T18:45:59.139Z'
   - [upset live demo](http://vcg.github.io/upset/)
 
 # viz-examples
+
+- https://github.com/houshanren/hangzhou_house_knowledge
+  - 2017年买房经历总结出来的买房购房知识分享给大家
+- https://github.com/ayuer/shanghai_house_knowledge
+  - 2020年11月在上海买房经历总结出来的，启发来自这位同学2017年做的杭州购房分享

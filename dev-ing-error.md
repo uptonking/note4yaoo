@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- docker run -p 80:80 docker/getting-started
+  - 80: bind: address already in use.
+  - docker run -p 8080:80 docker/getting-started
+
 - Error: Multipart: Boundary not found
   - [Fetch API and multer error while uploading file](https://stackoverflow.com/questions/35795529)
   - There is no need to assign a header `{Content-Type': 'multipart/form-data'}`: the browser substitutes its own.

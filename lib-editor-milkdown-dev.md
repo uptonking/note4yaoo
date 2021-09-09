@@ -7,7 +7,7 @@ modified: '2021-07-11T15:08:26.481Z'
 
 # lib-editor-milkdown-dev
 
-# guid
+# guide
 - milkdown-pros
   - prosemirror和remark的生态都很丰富
   - 支持自定义markdown语法并给出了示例，可以自定义解析过程
@@ -16,12 +16,6 @@ modified: '2021-07-11T15:08:26.481Z'
   - 没有实现较复杂的组件，如直接缩放的图片，全部基于html标签toDOM/parseDOM实现
   - 过于强调remark的配置会破坏编辑器插件的设计，remark不应该作为和编辑器插件平级的一级配置，一级配置应该是编辑器的主要features如slash菜单、markdown；remark应该作为markdown的二级配置
 
-- milkdown-discussion
-  - 通过atom来控制执行流程的设计更清晰，还是更繁琐？
-    - 优点：
-    - 很多其他项目也会使用这种类似ioc依赖注入的风格，传入实例属性不使用constructor，而是通过在init/inject方法中赋值
-    - 本项目只注入了全局单例的this.context对象，没有注入其他对象，实现很简单；
-    - 其他很多其他对象都保存到了this.context的二级属性或三级属性
 
 - features
   - WYSIWYG
@@ -36,6 +30,15 @@ modified: '2021-07-11T15:08:26.481Z'
 - tips
   - 不要将关注点放在markdown，渲染和编辑的实现几乎全部依赖于prosemirror，只有少数场景如初始化和导出才会用到parser和serializer
   - 自定义syntax的要点
+
+# faq
+
+- 通过atom来控制执行流程的设计更清晰，还是更繁琐？
+  - 优点：
+  - 很多其他项目也会使用这种类似ioc依赖注入的风格，传入实例属性不使用constructor，而是通过在init/inject方法中赋值
+  - 本项目只注入了全局单例的this.context对象，没有注入其他对象，实现很简单；
+  - 其他很多其他对象都保存到了this.context的二级属性或三级属性
+
 # codebase
 - dataflow
   - md str > mdast > prosemirror node > dom
@@ -47,7 +50,7 @@ modified: '2021-07-11T15:08:26.481Z'
 - 通过在editorView.dispatchTransaction()中执行options中传入的监听器函数，来实现各种交互
   - 控制粒度不如NodeView，NodeView只在指定类型Node出现时才会触发执行；并且NodeView和plugin.view对dom ui的控制力很强
 
-- Editor 编辑器所有操作的顶级入口类，但pm-EditorView的创建不在这里
+- Editor编辑器所有操作的顶级入口类，但pm-EditorView的创建不在这里
   - this.#ctx保存了核心的编辑器数据，通过#injectCtx()注入到所有atoms对象，有点依赖注入ioc的风格；几乎所有atom子类都没有构造函数，公共父类的构造函数只是简单赋值，main()方法只有一个，不像声明周期函数
   - 编辑器的初始化流程是依次执行状态分别为idle/loadSchema/schemaReady/loadPlugin/complele的所有atoms的main方法
   - 流程中最重要的步骤是createSchema, loadPlugin

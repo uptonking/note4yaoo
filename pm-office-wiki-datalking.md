@@ -17,6 +17,9 @@ modified: '2021-08-07T19:58:20.142Z'
     - viz: observable-plot、britecharts
     - backend: dashboard-api、collab-server、grid-studio
   - 分析报告
+
+- 技术实现
+  - 存储层考虑主流方式，如sqlite、S3、fake-s3这类易兼容的格式
 # 功能设计
 - 文档格式
   - 以流行的gfm markdown为主

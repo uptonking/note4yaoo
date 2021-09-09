@@ -26,6 +26,7 @@ modified: '2021-07-27T11:27:37.050Z'
   - **创作空间 spaces**
     - 重点是展示某个主题相关的多个知识库，主要用来降低复杂度和嵌套深度
     - 类似npm workspaces、monorepo、github org，可包含多个库
+    - 还可以作为类似多语言、多版本文档的入口页
     - 设计可参考dashboard工作台，可放置快捷入口、动态流
     - 可执行批量操作、添加标签/水印、收藏
     - 可查看扁平化的多个文档
@@ -227,6 +228,15 @@ modified: '2021-07-27T11:27:37.050Z'
 
 ## Notion
 
+- features
+  - One tool for your whole team: wiki, docs, notes, tasks, design, sales, hr
+  - connect the whole company
+  - collabrate in real time
+  - integrations: embed 500+ other apps inside Notion pages. 
+
+- [Notion Official Documentation](https://www.notion.so/Notion-Official-83715d7703ee4b8699b5e659a4712dd8)
+- [Notion: What's New?](https://www.notion.so/What-s-New-157765353f2c4705bd45474e5ba8b46c)
+
 ## [MrDoc 觅道文档](https://github.com/zmister2016/MrDoc/blob/master/README-zh.md)
 
 - features
@@ -289,12 +299,12 @@ modified: '2021-07-27T11:27:37.050Z'
 ## Outline
 
 - features
-  - fast
-  - intuitive
-  - structured
+  - fast response and instantly searchable
+  - intuitive editor with markdown support
+  - structured nestable documents with backlinks
+  - 20+ integrations like slack/figma/loom
   - security & permissions
   - customizable
-  - 20+ integrations
   - i18n
   - open source
 

@@ -34,7 +34,11 @@ modified: '2020-12-09T09:30:24.694Z'
   - A web interface to create custom vector-based visualizations on top of RAWGraphs core
 - https://github.com/getredash/redash
   - http://redash.io/
-  - SQL users leverage Redash to explore, query, visualize, and share data from any data sources. 
+  - SQL users leverage Redash to explore, query, visualize, and share data from any data sources.
+
+- https://github.com/ricklamers/gridstudio
+  -  a web-based spreadsheet application with full integration of the Python programming language.
+  - 依赖Flask、golang、plotly、jquery
 
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server

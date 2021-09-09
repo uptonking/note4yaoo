@@ -69,9 +69,7 @@ modified: '2021-01-28T21:14:14.667Z'
   - A fully responsive CSS framework with beautiful controls and simplistic structure. 
   - Cirrus is designed to be adaptable to existing themes or when starting fresh.
   - The only component that requires the use of jQuery is the Header component for toggling the dropdown menu on mobile.
-
 # css-framework-ui
-
 - milligram /8.8kStar/MIT/202006
   - https://github.com/milligram/milligram
   - https://milligram.io/
@@ -98,15 +96,17 @@ modified: '2021-01-28T21:14:14.667Z'
 - https://github.com/5t3ph/smolcss
   - https://smolcss.dev/
   - Minimal snippets for modern CSS layouts and components
-
+  - The goal of SmolCSS is to provide solutions to everyday scenarios and give you just enough info about the included modern CSS properties.
+    - responsive grids with both flex and CSS grid
+    - centering
+    - custom list styles
+    - image gallery
  
 
 - https://github.com/Borderliner/Meshki
   - https://borderliner.github.io/Meshki/
   - Meshki: A Black-Colored, Responsive Boilerplate for UI Development
-
 # classless
-
 - water.css /5.7kStar/MIT/202010/css/classless
   - https://github.com/kognise/water.css
   - https://watercss.kognise.dev/
@@ -132,9 +132,7 @@ modified: '2021-01-28T21:14:14.667Z'
   - Here are some frameworks built on top of Tacit: kacit, Bahunya
 - https://github.com/kevquirk/simple.css
   - a classless CSS template that allows you to make a good looking website really quickly.
-
 # more-css-framework
-
 - https://github.com/sitetent/tentcss
   - Includes only the essentials to make camp.
   - not currently receiving updates.

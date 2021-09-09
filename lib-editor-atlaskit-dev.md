@@ -13,6 +13,7 @@ modified: '2021-07-14T15:36:09.702Z'
   - nodeViews: code-block, width, card, emoji, hyperlink, placeholder-text, text-color
     - 所有NodeView组件的实现都很复杂！！！
     - 大量依赖atlassian design system中的react组件
+  - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
 # examples-repos
 - https://github.com/jungpaeng/playground-test-atlaskit-editor
   - /202002

@@ -28,7 +28,13 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ## Preferred storage format for looping algorithmic art collectibles: gif vs mp4 vs js-dynamic-live
+- https://twitter.com/golan/status/1435909958202183683
+- GIF for short loops, MP4 for longer or with more colors, JS only when generative (no need to run more CPU/GPU than needed for a loop)
+- Having been burned by Shockwave, Java, and Flash, I’m not sure I trust JS to still work in (say) 10 years.
+  - but Shockwave, Java, and Flash were never part of shared specifications. 
+- I think compared to image formats like jpeg and mp4, code in general is brittle. But I think for storing on chain long-term, code makes a lot of sense. In addition to the parameters you outlined @golan , code is (typically) far less memory to store.
+- Agree, I think the fear is for browsers to stop supporting an API, like say WEBGL1 for newer or because hardwares are changing
 
 - ## When creating form fields, do you mark the required ones, or do you mark the optional ones?
 - https://twitter.com/darianrosebrook/status/1433899512049795072

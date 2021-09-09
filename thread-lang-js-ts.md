@@ -16,7 +16,10 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## how to extract the generic type determined by a type guard function
+- https://twitter.com/acemarke/status/1435731824303648771
+  - type GuardedType<T> = T extends (x: any) => x is (infer T) ? T : never;
+- [Get the guarded type of a custom type guard](https://github.com/microsoft/TypeScript/issues/30542)
 
 - ## null >= 0  // true
 - https://twitter.com/andrestaltz/status/1435244740975468547

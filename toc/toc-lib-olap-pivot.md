@@ -22,6 +22,7 @@ modified: '2020-10-22T06:50:36.740Z'
   - 依赖react-draggable, sortablejs
   - 基于table标签实现
   - 依赖jquery
+  - https://github.com/plotly/dash-pivottable
 - pivot.js /753Star/BSD/201706/js
   - https://github.com/rwjblue/pivot.js
   - Build Pivot Tables from CSV/JSON Data
