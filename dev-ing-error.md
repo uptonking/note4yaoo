@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [403 forbidden error in Apache with document root on an NTFS partition](https://askubuntu.com/questions/163685)
+  - 结论是站点不适合放在win分区；若默认放到win分区，则linux分区的内容可能出问题
+  - Please try editing the default sites-available file with that path, restart Apache with sudo service apache2 restart and see if it works.
+  - it appears Nautilus mounts NTFS partitions with odd permissions so that no user but yourself (and root, of course) can read or write from/to it.
+
 - docker run -p 80:80 docker/getting-started
   - 80: bind: address already in use.
   - docker run -p 8080:80 docker/getting-started

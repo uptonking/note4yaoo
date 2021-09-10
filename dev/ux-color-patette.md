@@ -9,6 +9,9 @@ modified: '2021-01-01T20:08:01.651Z'
 
 # guide
 
+- tips
+  - 各设计系统都会有自己的调色板
+
 - nice css standard color
   - Grey
     - silver：银灰色，比grey浅
@@ -95,6 +98,29 @@ modified: '2021-01-01T20:08:01.651Z'
 
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
+# color-repos
+
+- https://github.com/yeun/open-color
+  - https://yeun.github.io/open-color/
+  - an open-source color scheme optimized for UI like font, background, border, etc.
+
+- https://github.com/radix-ui/colors
+  - https://www.radix-ui.com/colors
+  - A gorgeous, accessible color system.
+- https://github.com/dmarman/dmarman.github.io
+  - https://tailwind.ink/
+  - an AI palette generator trained with the Tailwindcss colors.
+- https://github.com/jxnblk/palx
+  - https://palx.jxnblk.com/
+  - Automatic UI Color Palette Generator
+
+- https://github.com/ant-design/ant-design-colors
+  - https://ant.design/docs/spec/colors-cn
+  - Color palettes calculator of Ant Design
+
+- https://github.com/arcticicestudio/nord
+  - https://github.com/arcticicestudio/nord
+  - 冷绿色系
 # 中国风色彩
 - https://colors.ichuantong.cn/
   - https://github.com/zerosoul/chinese-colors

@@ -13,6 +13,25 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## HelpKit allows you to easily build your company's Knowledge Base or Help Center with @NotionHQ
+- https://twitter.com/sobedominik/status/1436016818079076366
+  - With HelpKit you can use all the Notion blocks you know and love.
+  - No code required
+  💨 Ultra fast
+  🎨 Customizable
+  ✨ Looks professional
+  🎛️ Embeddable widget like Intercom or Zendesk
+  🔍 Sophisticated search
+  🌐 Custom domain
+
+- ## Anyone know of smarter reading time estimation algorithms than words/wordsPerMinute?
+- https://twitter.com/wooorm/status/1436262232338444310
+- I thought about text to speech + measuring audio length
+
 - ## no idea if this naming is any less confusing but http://natto.dev now has "browser drafts" and "user canvases". 
 - https://twitter.com/_paulshen/status/1433508225651904522
   - browser drafts are local to your browser not tied to any account. 

@@ -113,6 +113,10 @@ modified: '2021-07-23T08:38:53.805Z'
   - 无需服务端开发，只需支持http静态访问网页空间
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
+
+- https://github.com/huangwei9527/Ink-wash-docs
+  - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
+  - 依赖vue、element-ui、vditor、egg、x-spreadsheet
 # wiki-like
 - https://github.com/wikimedia/oojs-ui
   - https://www.mediawiki.org/wiki/OOUI

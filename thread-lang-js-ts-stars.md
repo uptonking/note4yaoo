@@ -13,7 +13,16 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ##  `setTimeout` is a codesmell 99% of the time
+- https://twitter.com/oleg008/status/1436027606302928897
+- Today I implemented an UI for copy-to-clipboard button. It shows a "Copied" feedback that dismiss after 5 seconds. 
+  - `setTimeout` is a codesmell when it is used to workaround some async operation like "ensuring" a value is updated or waiting an animation
+  - It's a codesmell because it's not reliable and you should figure out how to capture the end of that async operation. Like `onAnimationEnd` events for animations, callbacks, etc
+- Persistent Browser-Based Games use it for server-side ticks, to alleviate the logistical nightmare of having the client trigger the processing of player data. Maybe it should be 98.9% of the time
+- Alternative is async and await?
+  - No. Thats not the point. The point is timers are never or rarely needed.
+  - One of the few places where it’s really needed is when you want to display a “loading…” text and animate the dots.
+  - can do that with css
 
 - ## I used to think I was clever writing code that behaved differently depending on how many parameters a callback was expecting.
 - https://twitter.com/erikras/status/1422545745647972358

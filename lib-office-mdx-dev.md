@@ -24,6 +24,8 @@ modified: '2021-06-02T16:45:56.858Z'
     - 建议后期使用block editor配置布局
   - 服务器接收到mdx文件内容的字符串后，应该如何渲染
     - 使用runtime按需渲染
+- note-yet
+  - 若是mdx源码被索引，则搜索结果会出现以外的文章mdx
 
 - goals
   - 易读易写

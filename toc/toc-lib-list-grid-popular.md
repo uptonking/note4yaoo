@@ -144,6 +144,14 @@ modified: '2020-10-22T06:49:10.760Z'
 
 ## div-react
 
+- react-data-table-component /1.2kStar/Apache2/202109/ts
+  - https://github.com/jbetancur/react-data-table-component
+  - https://jbetancur.github.io/react-data-table-component
+  - 基于div和flexbox实现
+  - 依赖styled-components
+  - table library with built in sorting, pagination, selection, expandable rows and customizable styling.
+  - If you want to achieve balance with the force and want a simple but flexible table library give React Data Table Component a chance. 
+  - If you require an Excel clone or heavy "enterprise" capabilities, then this is not the React table library you are looking for
 - reactdatagrid /25Star/MIT/202010/js
   - https://github.com/inovua/reactdatagrid
   - https://reactdatagrid.io/demo
@@ -162,14 +170,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - React table component designed to allow presenting millions of rows of data.
   - https://github.com/facebook/fixed-data-table 
     - /4.3kStar/archived
-- react-data-table-component /MIT/598Star/202007/js
-  - https://github.com/jbetancur/react-data-table-component
-  - https://jbetancur.github.io/react-data-table-component
-  - 基于div和flexbox实现
-  - 依赖styled-components
-  - table library with built in sorting, pagination, selection, expandable rows and customizable styling.
-  - If you want to achieve balance with the force and want a simple but flexible table library give React Data Table Component a chance. 
-  - If you require an Excel clone or heavy "enterprise" capabilities, then this is not the React table library you are looking for
 - react-spreadsheet-grid /MIT/949Star/202004/js/inactive
   - https://github.com/denisraslov/react-spreadsheet-grid
   - https://denisraslov.github.io/grid

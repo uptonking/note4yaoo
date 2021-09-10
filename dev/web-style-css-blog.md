@@ -11,6 +11,48 @@ modified: '2021-01-07T16:44:56.296Z'
 
 # blog
 
+## [Less Absolute Positioning With Modern CSS](https://ishadeed.com/article/less-absolute-positioning-modern-css/)
+
+- In this article, I will explore a few use-cases that using absolute positioning with them isn’t really needed.
+- some of these use-cases can be solved with CSS flexbox or grid these days.
+
+- Use Cases And Examples
+
+- Card Overlay
+- When we have a card that contains text over an image, we often use `position: absolute` to place the content over the image. 
+- This is no longer needed with CSS grid.
+- The first step is to add `display: grid` to the card component. 
+  - We don’t need to set any columns or rows.
+  - By default, CSS grid will create rows automatically based on the content. 
+  - In the card, we have two main elements, and so we have two rows of content.
+  - To overlap the content with the image, we need to place both of them on the first grid area.
+  - grid-column: 1/2; grid-row: 1/2; 
+  - we can also use `grid-area: 1/-1`. The -1 represents the last column and row in a grid, 
+
+- Card Tag
+- Based on the previous example, we want to extend it and include a tag at the top left area of the card.
+
+- Hero Section
+- Another perfect use case is a hero section with content overlapping an image.
+
+- display: contents
+- Notice that the content is wrapped inside `.hero__content`. How we can tell the browser that we want the `<h2>, <p>, <a>` to become direct siblings with the `<img>`? Well,  `display: contents` can do that.
+  - By adding `display: contents`, the `.hero__content` element is a hidden ghost now
+  - 还要结合css `order`属性调整元素位置
+
+- Reordering Card Component Items
+- This will allow us to control all child items and have the flexibility of recording them as needed with the `order` property.
+
+- Centering
+  - No more using `position: absolute` with CSS transforms. 
+  - For example, we can use `margin: auto` to center a flex item both horizontally and vertically.
+
+- An Image Aspect Ratio
+- The new CSS `aspect-ratio` property is now supported in all major browsers. 
+- We used to do the padding hack to force a box to respect a specific aspect ratio.
+
+- [Positioning Overlay Content with CSS Grid](https://css-tricks.com/positioning-overlay-content-with-css-grid/)
+
 ## [Debugging CSS: Some Tips and Tricks](https://dev.to/sheelah_b/debugging-css-some-tips-and-tricks-bek)
 
 - In this article I'll provide some strategies I've used for troubleshooting CSS when things are not working as expected
@@ -21,7 +63,7 @@ modified: '2021-01-07T16:44:56.296Z'
 - If the layout issue is more complex and you need to debug the layout of the entire page, you can add outlines for every element on the page using different colors.
 - An alternative strategy for debugging the layout of the entire page is to place a background color on all elements
 
-``` CSS
+```CSS
 .element {
   outline: 1px solid red;
 }

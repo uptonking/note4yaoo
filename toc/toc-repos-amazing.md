@@ -85,8 +85,11 @@ modified: '2020-11-03T06:54:59.051Z'
 
 - https://github.com/williamngan/pts
   - /3.9kStar/Apache2/202009/ts
-  - library for visualization and creative-coding.
-  - 例子几乎都是基于canvas实现
+  - Pts provides you with essential building blocks for creative coding and visualization.
+  - Pt module provides Pt and Group classes for manipulating points (ie, n-dimensional vectors).
+  - Op and Num modules provides various algorithms for numeric and geometric operations.
+  - Canvas module provides the corresponding Space and Form classes for html canvas. SVG module provide the same for SVG.
+  - Check out other useful modules like Create and Color
 
 - https://github.com/wenyan-lang/wenyan
   - https://wy-lang.org/
@@ -174,5 +177,6 @@ modified: '2020-11-03T06:54:59.051Z'
   - https://logomaker.akkariin.com/
 
 - https://github.com/boringdesigners/boring-avatars
+  - 头像填充渐变色、小方块、表情形状；可选方形、圆形
   - https://boringavatars.com/
   - Boring avatars is a tiny JavaScript React library that generates custom, SVG-based, round avatars from any username and color palette.

@@ -20,7 +20,13 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## TypeScript—I’ve switched:  From: string[]  To: Array<string>
+- ## how to extract the generic type determined by a type guard function
+- https://twitter.com/acemarke/status/1435731824303648771
+  - type GuardedType<T> = T extends (x: any) => x is (infer T) ? T : never; 
+- [Get the guarded type of a custom type guard](https://github.com/microsoft/TypeScript/issues/30542)
+
+- ## TypeScript—I’ve switched:  From: `string[]` To: `Array<string>`
+
 - https://twitter.com/rauschma/status/1431884615862603781
   – Better for complicated element types: Array<[string, number]>
   – Looks similar to other types.

@@ -29,7 +29,16 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## I remembered document.domain is a thing and ruined my day
+- https://twitter.com/jaffathecake/status/1436340091098652692
+- Forget about it by remembering the existence of the one falsy object: document.all.
+- I have that with navigator.userAgent and navigator.onLine
+- I recently used it to make communication with an iframe on a different subdomain work. Not aware of any alternatives
+  - Websockets? Maybe webRTC? Window.postMessage?
+  - True, but admittedly it was some marketing script. I was thinking more in the direction of CSP headers.
+- And that's without having to worry about IE8. I've written posts on the topic. I think I even did a velocity talk on it once.
+- 
+- 
 
 - ## I recently learned about Event.composedPath() that returns an array of objects (DOM up to a Window) on which listeners will be invoked
 - https://twitter.com/maxkoretskyi/status/1434955497082441732

@@ -16,10 +16,25 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## how to extract the generic type determined by a type guard function
-- https://twitter.com/acemarke/status/1435731824303648771
-  - type GuardedType<T> = T extends (x: any) => x is (infer T) ? T : never;
-- [Get the guarded type of a custom type guard](https://github.com/microsoft/TypeScript/issues/30542)
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Today I learned that `Array.concat()` can work just fine with non array variables.
+- https://twitter.com/maxkoretskyi/status/1436010126415122434
+  - It simply adds them to the array without inlining, so there's no need to use extra check if a variable is array or not.  
+  - Of course, you pay with extra new array for that
+
+```js
+const a = 1;
+const b = [2];
+
+// no need for Array.isArray(a)
+[].concat(a, b) // [1,2]
+[a, ...b] // works too
+```
 
 - ## null >= 0  // true
 - https://twitter.com/andrestaltz/status/1435244740975468547

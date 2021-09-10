@@ -7,7 +7,9 @@ modified: '2020-10-15T13:42:23.746Z'
 
 # spec-format-catalog
 
-- specifications about file format  
+> specifications about file formats
+
+# guide
 
 # popular-file-formats
 
@@ -19,16 +21,29 @@ modified: '2020-10-15T13:42:23.746Z'
   - But, MDX is still a very convenient way of writing stories in those cases where CSF seems a bit of a barrier for non technical users or our component needs precise and well structured documentation.
 - [What are your thoughts on the MDX format for @storybookjs](https://twitter.com/lcarb14/status/1379913918445801473)
   - I'm currently preferring MDX as it provides both Stories and Docs with a single file.
+# JSON-stat
+- docs
+  - https://json-stat.org/
+  - https://github.com/jsonstat/toolkit
+  - https://json-stat.org/samples/oecd.json
 
+- Until the introduction of JSON-stat, the main statistical standards for data and metadata exchange were XML-based: they were usually complicated and verbose.
+- JSON-stat is a simple lightweight JSON dissemination format best suited for data visualization, mobile apps or open data initiatives, that has been designed for all kinds of disseminators(传播者).
+  - JSON-stat also proposes an HTML microdata schema to enrich HTML tables and put the JSON-stat vocabulary in the browser.
+
+- The JSON-stat format is a simple lightweight JSON format for data dissemination. 
+  - It is based in a cube model that arises from the evidence that the **most common form of data dissemination is the tabular form**.
+- HTML microdata allows machine-readable data to be embedded in HTML documents in the form of nested groups of name-value pairs. 
+  - JSON-stat proposes a vocabulary in microdata format to enrich HTML tables.
+- If you have to process JSON-stat responses, you are not on your own. 
+  - There are solutions available in several programming languages: JavaScript, Java, R, Python, Julia, PHP. 
+  - And many end user tools to browse, filter, validate and convert JSON-stat.
 # graphics
-
 - SVG(SCALABLE VECTOR GRAPHICS)
   - SVG is a markup language for describing two-dimensional graphics applications and images, and a set of related graphics script interfaces. 
   - [SVG Working Group Charter](https://www.w3.org/Graphics/SVG/2014/new-charter)
   - [SVG Roadmap](https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap)
-
 # ref
-
 - [Understand how structured data works](https://developers.google.com/search/docs/guides/intro-structured-data)
   - Structured data is a standardized format for providing information about a page and classifying the page content
   - Most Search structured data uses schema.org vocabulary, but you should rely on the documentation on developers.google.com as definitive for Google Search behavior

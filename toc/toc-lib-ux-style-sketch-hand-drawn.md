@@ -76,6 +76,9 @@ modified: '2021-01-13T19:30:59.508Z'
   - https://mydraft.cc/
   - 依赖react, redux, antd, typescript
   - The goal of this project is to create an open source wireframing tool. 
+# ink 水墨画
+- https://github.com/BloodmageThalnos/ShadowInk
+  - 基于深度学习的水墨画创作与分享平台
 # more
 - https://github.com/steveruizok/perfect-freehand
   - https://perfect-freehand-example.vercel.app/
