@@ -11,6 +11,16 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## More frameworks have been deprecated than HTML tags.
+- https://twitter.com/claviska/status/1436436571474038784
+  - yeah, show them your `<marquee>, <font> and <applet>`
+
 - ## Did someone tell you the Virtual DOM was slow?
 - https://twitter.com/RyanCarniato/status/1435721745344831494
 - Honestly great job by @GDebongnie to apply the template clone approach to VDOM. 

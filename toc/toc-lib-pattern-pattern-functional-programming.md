@@ -126,3 +126,6 @@ modified: '2020-12-20T15:47:26.038Z'
 
 - https://github.com/mreinstein/ecs
   - data oriented, functional entity component system.
+
+- https://github.com/TomerAberbach/contextus
+  - The context you know and love, but framework agnostic!

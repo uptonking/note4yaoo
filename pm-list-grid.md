@@ -83,7 +83,7 @@ modified: '2021-05-23T16:34:27.206Z'
 
 ## experimental
 
-- canvas based data-grid/table
+- canvas renderer for data-grid/table
 - web worker
 - apache-arrow columnar format vs pandas-dataframe
 - wasm vs webgpu

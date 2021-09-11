@@ -10,6 +10,23 @@ modified: '2021-08-22T07:29:34.045Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I’m working on a spike(尖刺) for TLDraw’s renderer, replacing the current “one big SVG” approach with lots of divs for each shape instead.
+- https://twitter.com/steveruizok/status/1436638874432851968
+  - The goal is to support “shapes” that render regular HTML, not just SVG elements like `<rect>` or `<path>` , which is the current limitation.
+  - Instead, the renderer should be able to put any React component on the page. Most of the current shapes will return SVG elements, but shapes like Text wouldn’t have to.
+  - The biggest trade off here is auto-sizing `<g>` elements, which are awesome. Since SVG elements are basically `overflow:hidden` , we’ll need to pad the shapes more based on the zoom level.
+- My one concern would be files will tend to stop being SVG compatible as the files gets laden with non SVG components. So no clean export. I want non-SVG components though too. Perhaps being able to have constrained parent objects that only allow SVG children so people can intent.
+  - **SVG export is more of a “app level” feature vs a “renderer level” feature**, so it’s really up to what you do with it. No reason we can’t still have good SVG export in the tldraw app.
+  - For example, if I had a post-it component that I rendered in HTML, in order to make it easier to edit on the page, I could still write my export code to create an SVG shape from its data.
+- Is `foreignObject` not an option? I was hoping that we can start using it in projects that don’t need to support IE (which I’m assume TLDraw doesn’t).
+- I'm basically doing something similar to this for the visual editor. It's still one big SVG, but also a `foreignElement` that positions HTML elements (single one for perf reasons)
+
 - ## So, dumb question: you're building a (small) Postgres/Node/Vue web application that has a feature where user can upload file, and retrieve it later. Where do you store the file?
 - https://twitter.com/stevage1/status/1433215485051613187
   - 结论是避免过早优化

@@ -62,7 +62,37 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
-- ## 
+- ## It's time for the React Router v6 mega thread!
+- https://twitter.com/mjackson/status/1436117485808349204
+  - We are on the home stretch; the last 10%. This is the hardest part of any project
+- Things on my short list of TODOs:
+  • Add better animation primitives
+  • Allow `<Link>` to link to external origins
+  • Low-level renderMatches API (complements matchRoutes)
+- Still would like to see middlewares implemented, I made my own router to get that feature. But happy to see new things nonetheless
+  - What are you doing with your middleware?
+- https://github.com/aposoftworks/react-complete-router
+  - side effects (SEO)
+  - guards (prevent route from being viewed but does not trigger a redirect, for example auth), this is pretty good with switch
+  - inject extra values and calculations
+  - bind router externally to other fw (redux, etc)
+  - This basically exposes an API for the user to write code to further extend the router without having to alter the router source code. Giving tools for incredible new things.
+ 
+- The router is fairly low-level. I'm pretty sure you can do everything you mentioned with React hooks. For example, side effects when the location changes are just:
+
+```JS
+const location = useLocation();
+
+React.useEffect(() => {
+  // side effect goes here
+}, [location]);
+```
+- The same thing can be said from backend middlewares, they can be declared within controllers, but somehow it's much better to do it with middlewares.
+  - I think coupling those things into react are unnecessary, since they do not work with react. Making it harder to test or debug. 
+  - Another example is that the router algorithm itself can be overridden because it can be a middleware.
+
+- In my opinion, React hooks *are* middleware. They are like stateful middleware. React Router v6 gives you a LOT of hooks that should allow you to do just about anything you want. You can hook into any piece of state that you need.
+  - it feels wrong to control things like this, routing should be handled by the routers and routes. And creating a component only to handle this would pollute the vdom in a unnecessary way (one of my main problems with styled components)
 
 - ## svelte even supports web components
 - https://twitter.com/passle_/status/1433019029766148096

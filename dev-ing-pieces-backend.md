@@ -6,55 +6,53 @@ modified: '2021-03-29T19:29:50.760Z'
 ---
 
 # dev-ing-pieces-backend
-
 - about crud, rpc, database
-
 # logging
 
  
 
-- A lot of folks think serving JSON is more efficient than HTML, but once gzipped they're often the same. Sometimes HTML is smaller.
-  - https://twitter.com/jaffathecake/status/930836616779878401
-  - Important benefit of JSON over HTML
-    - for SPAs that reside for a long time in a browser tomorrow's JSON is much more likely to still work with the loaded page than tomorrow's HTML.
+## [The Dhall configuration language](https://dhall-lang.org/)
 
-- [The Dhall configuration language](https://dhall-lang.org/)
-  - Dhall is a programmable configuration language that you can think of as: 
-    - JSON + functions + types + imports
+- Dhall is a programmable configuration language that you can think of as: 
+  - JSON + functions + types + imports
 
-- CQRS系统
-  - 简单的说，CQRS（Command Query Responsibility Segration）就是一个系统，从架构上把 CRUD 系统拆分为两部分：命令（Command）处理和查询（Query）处理。
-    - CQRS即读与写的职责分离。CQRS将读取和写入分离到不同的模型中，使用命令更新数据，查询用于读取数据。
-    - 读写分离是物理层面的分离，CQRS是数据模型层面的分离
-  - 其中命令处理包括增、删、改。
-  - 然后命令与查询两边可以用不同的架构实现，以实现CQ两端（即Command Side，简称C端；Query Side，简称Q端）的分别优化
-  - CQRS作为一个读写分离思想的架构，在数据存储方面也没有做过多的约束。所以 CQRS可以有不同层次的实现。
-  - CQRS可以有两种实现方式
-  - CQ两端数据库共享，只是在上层代码上分离。
-    - 这样做的好处是可以让我们的代码读写分离，更容易维护，
-    - 而且不存在 CQ 两端的数据一致性问题，因为是共享一个数据库的。这种架构是非常实用的。
-  - CQ两端不仅代码分离，数据库也分离，然后Q端数据由C端同步过来。
-    - 同步方式有两种：同步或异步，
-    - 如果需要 CQ 两端的强一致性，则需要用同步；
-    - 如果能接受 CQ 两端数据的最终一致性，则可以使用异步。
-    - C端可以采用Event Sourcing（简称ES）模式，所有C端的最新数据全部用 Domain Event 表达即可；
-    - 而要查询显示用的数据，则从Q端的 ReadDB（关系型数据库）查询即可。
+## CQRS系统
 
-- 文本编码
-  - ANSI
-    - 泛指最早每种国家语言各自实现的扩展编码方式，各个编码互相之间不兼容，比较省空间。
-  - Unicode
-    - 一套抽象的兼容所有常用语言的编码方式，但是不适合计算机系统直接存储。
-  - UTF-8
-    - 一种将unicode转换成适合计算机存储的方式，相对其他的UTF-xx省空间，同时又可以和ASCII混用，结构相对复杂，底层处理相对慢。
-  - UTF-16，UTF-32
-    - 另外的unicode存储编码，结构简单，不能和ASCII混用。
-  - BOM
-    - 一种为了跨平台设计的文件起始标记，但很多程序没去处理这个，用了BOM反而常造成问题。
-  - 在Windows记事本的语境中
-    - 所谓的「ANSI」指的是对应当前系统 locale 的遗留（legacy）编码
-    - 所谓的「Unicode」指的是带有 BOM 的小端序 UTF-16
-    - 所谓的「UTF-8」指的是带 BOM 的 UTF-8
+- 简单的说，CQRS(Command Query Responsibility Segregation)就是一个系统，从架构上把CRUD系统拆分为两部分：命令（Command）处理和查询（Query）处理。
+  - CQRS即读与写的职责分离。CQRS将读取和写入分离到不同的模型中，使用命令更新数据，查询用于读取数据。
+  - 读写分离是物理层面的分离，CQRS是数据模型层面的分离
+- 其中命令处理包括增、删、改。
+- 然后命令与查询两边可以用不同的架构实现，以实现CQ两端（即Command Side，简称C端；Query Side，简称Q端）的分别优化
+- CQRS作为一个读写分离思想的架构，在数据存储方面也没有做过多的约束。所以 CQRS可以有不同层次的实现。
+- CQRS可以有两种实现方式
+- CQ两端数据库共享，只是在上层代码上分离。
+  - 这样做的好处是可以让我们的代码读写分离，更容易维护，
+  - 而且不存在 CQ 两端的数据一致性问题，因为是共享一个数据库的。这种架构是非常实用的。
+- CQ两端不仅代码分离，数据库也分离，然后Q端数据由C端同步过来。
+  - 同步方式有两种：同步或异步，
+  - 如果需要 CQ 两端的强一致性，则需要用同步；
+  - 如果能接受 CQ 两端数据的最终一致性，则可以使用异步。
+  - C端可以采用Event Sourcing（简称ES）模式，所有C端的最新数据全部用 Domain Event 表达即可；
+  - 而要查询显示用的数据，则从Q端的 ReadDB（关系型数据库）查询即可。
+
+## 文本编码
+
+- ANSI
+  - 泛指最早每种国家语言各自实现的扩展编码方式，各个编码互相之间不兼容，比较省空间。
+- Unicode
+  - 一套抽象的兼容所有常用语言的编码方式，但是不适合计算机系统直接存储。
+- UTF-8
+  - 一种将unicode转换成适合计算机存储的方式，相对其他的UTF-xx省空间，同时又可以和ASCII混用，结构相对复杂，底层处理相对慢。
+- UTF-16，UTF-32
+  - 另外的unicode存储编码，结构简单，不能和ASCII混用。
+- BOM
+  - 一种为了跨平台设计的文件起始标记，但很多程序没去处理这个，用了BOM反而常造成问题。
+- 在Windows记事本的语境中
+  - 所谓的「ANSI」指的是对应当前系统 locale 的遗留（legacy）编码
+  - 所谓的「Unicode」指的是带有 BOM 的小端序 UTF-16
+  - 所谓的「UTF-8」指的是带 BOM 的 UTF-8
+
+## java maven
 
 - maven-config
   -  maven会根据模块的版本号(pom文件中的version)中是否带有-SNAPSHOT来判断是快照版本还是正式版本
@@ -78,32 +76,40 @@ modified: '2021-03-29T19:29:50.760Z'
 - java枚举类与switch使用
   - enum switch case label must be the unqualified name of an enumeration constant   
   - switch指定枚举类后，case后只能用枚举类的非限定名，不要再写枚举类了
-- java string 
-  - StringReader
-  - String Pool是一个固定大小的Hashtable，默认大小是1009，如果放入常量池的字符串过多，就会造成hash冲突，导致链表很长，而链表长了后直接会造成的影响就是当调用String.intern时性能会大幅下降
-  - 直接使用双引号声明出来的String对象会直接存储在常量池中
-  - intern 方法会从字符串常量池中查询当前字符串是否存在，若不存在就会将当前字符串放入常量池中
-  - 在Jdk6以及以前的版本中，字符串的常量池是放在堆的Perm区的，Perm区是一个类静态的区域，主要存储一些加载类的信息，常量池，方法片段等内容，默认大小只有4m，一旦常量池中大量使用 intern 是会直接产生java.lang. OutOfMemoryError: PermGen space错误的。 所以在jdk7的版本中，字符串常量池已经从Perm区移到Java Heap区。jdk8已经直接取消了Perm区，而新建立了一个元区
-- maven的packaging为bundle
-  - bundle是OSGI中的依赖单元，是一种特殊格式的jar
-  - `<dependency>` 的type也可以为bundle
-- jdk webview js engine
-  - The full Oracle Java Runtime 8 ships with two JavaScript engines
-  - Nashorn: "Nashorn's goal is to implement a lightweight high-performance JavaScript runtime in Java with a native JVM. This Project intends to enable Java developers embedding of JavaScript in Java applications via JSR-223 and to develop free standing JavaScript applications using the jrunscript command-line tool."
-  - JavaScriptCore: The JavaScript engine built into the WebKit implementation wrapped by WebView component the JavaFX system. JavaScript Runtime Used by WebView and JavaFX applications
 
-  - JavaFX Webkit does not use Nashorn, it uses JavaScriptCore.
-- 如何遍历文件夹下上亿文件而不栈溢出   
-  - 考虑层序遍历   
-  - https://www.cnblogs.com/intsmaze/p/6031894.html
-- build tools
-  - bazel：由google开发维护，支持Java/C++，支持Android，存在版本之间不兼容的问题
-  - buck：由facebook开发，支持Android/iOS，移动端支持更好
-- Java File
-  - FileInputStream reads the file byte by byte
-    - Abstract class is the superclass of all classes representing an input stream of bytes.
-    - 读取字节流，可处理二进制内容
-  - FileReader reads the file character by character
-    - Reader - Abstract class for reading character streams 
-    - 读取字符流，一般用于处理文本，不处理视频文件
-    - java中InputStream实例化时，文件是否已经读完了？ no
+## java string 
+
+- StringReader
+- String Pool是一个固定大小的Hashtable，默认大小是1009，如果放入常量池的字符串过多，就会造成hash冲突，导致链表很长，而链表长了后直接会造成的影响就是当调用String.intern时性能会大幅下降
+- 直接使用双引号声明出来的String对象会直接存储在常量池中
+- intern方法会从字符串常量池中查询当前字符串是否存在，若不存在就会将当前字符串放入常量池中
+  - 在Jdk6以及以前的版本中，字符串的常量池是放在堆的Perm区的，Perm区是一个类静态的区域，主要存储一些加载类的信息，常量池，方法片段等内容，默认大小只有4m，一旦常量池中大量使用intern是会直接产生java.lang. OutOfMemoryError: PermGen space错误的。
+  - 所以在jdk7的版本中，字符串常量池已经从Perm区移到Java Heap区。
+  - jdk8已经直接取消了Perm区，而新建立了一个元区
+
+## maven的packaging为bundle
+
+- bundle是OSGI中的依赖单元，是一种特殊格式的jar
+- `<dependency>` 的type也可以为bundle
+
+## jdk webview js engine
+
+- The full Oracle Java Runtime 8 ships with two JavaScript engines
+- Nashorn: "Nashorn's goal is to implement a lightweight high-performance JavaScript runtime in Java with a native JVM. This Project intends to enable Java developers embedding of JavaScript in Java applications via JSR-223 and to develop free standing JavaScript applications using the jrunscript command-line tool."
+- JavaScriptCore: The JavaScript engine built into the WebKit implementation wrapped by WebView component the JavaFX system. JavaScript Runtime Used by WebView and JavaFX applications
+- JavaFX Webkit does not use Nashorn, it uses JavaScriptCore.
+
+## build tools: bazel; buck
+
+- bazel：由google开发维护，支持Java/C++，支持Android，存在版本之间不兼容的问题
+- buck：由facebook开发，支持Android/iOS，移动端支持更好
+
+## Java File
+
+- FileInputStream reads the file byte by byte
+  - Abstract class is the superclass of all classes representing an input stream of bytes.
+  - 读取字节流，可处理二进制内容
+- FileReader reads the file character by character
+  - Reader - Abstract class for reading character streams 
+  - 读取字符流，一般用于处理文本，不处理视频文件
+  - java中InputStream实例化时，文件是否已经读完了？ no

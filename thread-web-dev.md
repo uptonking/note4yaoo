@@ -29,6 +29,19 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## A lot of folks think serving JSON is more efficient than HTML, but once gzipped they're often the same. Sometimes HTML is smaller.
+- https://twitter.com/jaffathecake/status/930836616779878401
+- Important benefit of JSON over HTML
+  - for SPAs that reside for a long time in a browser tomorrow's JSON is much more likely to still work with the loaded page than tomorrow's HTML.
+
 - ## I remembered document.domain is a thing and ruined my day
 - https://twitter.com/jaffathecake/status/1436340091098652692
 - Forget about it by remembering the existence of the one falsy object: document.all.
@@ -37,8 +50,6 @@ modified: '2021-01-08T17:13:43.392Z'
   - Websockets? Maybe webRTC? Window.postMessage?
   - True, but admittedly it was some marketing script. I was thinking more in the direction of CSP headers.
 - And that's without having to worry about IE8. I've written posts on the topic. I think I even did a velocity talk on it once.
-- 
-- 
 
 - ## I recently learned about Event.composedPath() that returns an array of objects (DOM up to a Window) on which listeners will be invoked
 - https://twitter.com/maxkoretskyi/status/1434955497082441732

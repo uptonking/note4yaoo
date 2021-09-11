@@ -97,7 +97,7 @@ modified: '2021-05-14T14:33:33.975Z'
 - better collaborative editor
 - better code editor in doc editor
 - better math/latex
-- canvas based doc
+- canvas renderer for partial/full doc 
 - headless
 - 更关注使用场景如代码ide、笔记、markdown、block-editor、分享、streamlit、移动端
 # integrations/connections

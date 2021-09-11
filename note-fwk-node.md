@@ -10,18 +10,17 @@ modified: '2021-04-23T18:14:19.386Z'
 # guide
 
 - node在js体系下标准和新技术发展非常快，框架的周期大多不长
-  - 可选框架太多express, koa, nestjs, egg.js, midway, hapi, fastify
+  - 可选框架太多express, koa, nestjs, loopback, sails, blitz.js, egg.js, midway, hapi, fastify
   - node的挑战者deno也在快速发展
 - java spring成熟稳定，从200210维护至今，适合计划长期运行的企业级项目
   - spring几乎一家独大，不用纠结选择其他框架
+
 - 前后端一体化
   - 优点
     - 高效快速
   - 缺点
     - 若前后台耦合过多，如去掉api服务层，则难以支持不同的前端如android、ios
-
 # pieces
-
 - node web framework
   - Express, Koa, Hapi, Restify, Fastify, Egg, Midways, Nest, Thinkjs, Sails
 
@@ -54,9 +53,7 @@ modified: '2021-04-23T18:14:19.386Z'
 - I prefer a lightweight framework to have the liberty to extend it as I please
   - If I need to build something for the long term, I'll go with express or fastify 
   - If I need something quick and more straightforward, then I will go with nest
-
 # nestjs
-
 - 项目的组织规范官方已经给了，还配套有CLI，你不用再到处去找 best practice 了
   - passport、config 等一些常用的工具，Nest 有自己的实现
   - 以前用 express 这样传统的 node 框架，总感觉很累，主要工作就是写一个 route，再加个 handler，其它功能东拼西凑弄出来交差了事，总感觉像是在写脚本。。。而 Nest 在 OOP、TS、Decorator 的加持下，编码体验提升成不是一点半点
@@ -72,9 +69,7 @@ modified: '2021-04-23T18:14:19.386Z'
   - 阿里的egg.js则是在koa的基础上做了一层很好的面向大型企业级应用的框架封装，现在也有了非常好的TS特性支持。
   - egg.js更多的是按照洋葱模型的开发方式，和AOP编程还是有点区别的。
     - 中小型项目推荐egg.js，上手快易懂；大型项目不妨试试NEST.js+typeorm
-
 # ref
-
 - [NestJS is unnecessarily complex](https://www.reddit.com/r/node/comments/bmfvf6/nestjs_is_unnecessarily_complex/)
   - Nest is an opinionated framework, Just like angular
 - [Future proof service with Express or Nestjs?](https://www.reddit.com/r/node/comments/cejxyn/future_proof_service_with_express_or_nestjs/)

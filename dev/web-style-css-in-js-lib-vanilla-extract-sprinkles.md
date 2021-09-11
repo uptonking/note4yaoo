@@ -10,6 +10,11 @@ modified: '2021-08-22T16:08:42.552Z'
 # guide
 
 # discuss
+- ## First look at Vanilla Extract
+- https://twitter.com/kylemathews/status/1382212439538761732?lang=en
+- Does Vanilla Extract support to react-native?
+  - No, it's specifically designed to target CSS.
+
 - ## Are CSS Modules or Vanilla Extract suitable for a reusable component library?
 - https://twitter.com/housecor/status/1429043686478909443
   - My concern: It would be difficult to override the styles as a consumer, right? (since generated classname hash may change if the parent DOM elements change)
