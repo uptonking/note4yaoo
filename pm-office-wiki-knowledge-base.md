@@ -179,7 +179,13 @@ modified: '2021-07-27T11:27:37.050Z'
 - 工作台
   - 工作台是用户登陆以后自己的首页，它可以帮助你快速到达语雀上任何地方，同时在工作台上你也可以找到你最近的参与的内容以及动态。
   - 可直接添加url地址作为快捷入口
+## [gitbook](https://docs.gitbook.com/)
+- features
+  - spaces
+  - organizations
 
+- In GitBook, a space is a project where you can start organizing your ideas. 
+  - Imagine it as a virtual book where you can start writing pages simultaneously with other members or individually with rich-content and rich-text.
 ## Confluence
 
 - features

@@ -318,9 +318,9 @@ modified: '2020-10-22T06:49:10.760Z'
   - Declarative Canvas Grid.
   - SpreadSheet - Commercially available Excel-like Grid
   - Exporter - Excel Export plugin
-- https://github.com/glideapps/glide-data-grid
+- glide-data-grid /417Star/MIT/202104/ts
+  - https://github.com/glideapps/glide-data-grid
   - https://grid.glideapps.com/
-  - /417Star/MIT/202104/ts
   - high-performance React grid component, with rich rendering
   - the open-source data grid powering @glideapps
 - https://github.com/ericdrowell/PowerGrid

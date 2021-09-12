@@ -7,7 +7,13 @@ modified: '2021-08-07T16:44:32.377Z'
 
 # thread-viz-examples-webgl-threejs-babylonjs
 
+# repos
+- https://github.com/brunosimon/my-room-in-3d
+  - https://my-room-in-3d.vercel.app/
+  - 依赖three、gsap
+  - 房间的电视机在播放，电脑在操作，非常逼真
 # discuss
+- ## 
 
 - ## beating heart
 - https://codepen.io/Mamboleoo/pen/YzQzQgo

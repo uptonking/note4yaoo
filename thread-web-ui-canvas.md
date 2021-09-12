@@ -12,9 +12,39 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Starting to feel like the @tldraw engine really wants to be a “render react components in a canvas paradigm” engine.
+- https://twitter.com/steveruizok/status/1435515509756338177
+  - This isn’t too far from what it is currently. Right now you’re limited to only elements that can go inside of an svg `<g>` tag.
+- One of the limitations with that canvas is the limited way that a custom/code component could behave on the canvas. Components with nonstandard behaviors, like their Graphics shape, were all baked in.
+- So more work for the lab. As with all hobby projects, part of the fun is seeing where things go—and if @tldraw points to a “next” project, then I think that project would be a similarly generic “interactive canvas for components”.
 
-- ## 
+- ## Just pushed a BIG update to @tldraw
+- https://twitter.com/steveruizok/status/1434190045238472704
+  - a full rewrite, six weeks in the making, that includes new faster state management, an architecture made up of three packages, and tons of bug fixes and improvements.
+- The whole app is built on the @tldraw/core package, which is an excellent renderer for custom primitives. 
+  - It's fast and efficient—but there's still plenty of room for improvement, too. 
+- Me: Decides on the button variants for 6 weeks
+
+- ## Shapes in @tldraw are essentially React components with extra methods for hit testing, bounds calculation, etc. So what’s the best way of organizing that?
+- https://twitter.com/steveruizok/status/1436982621528109061
+- I think my current solution is confusing. To define a shape, you write a “shape utils” class that overrides certain utility methods that will be used for all shapes of that type in the project.
+  - In the data model, shapes are stored as plain objects. We use the shape’s utils class (as a singleton) to answer questions about shapes of that type: given this shape, what are its bounds? Given this shape and this transformation, what should we change?
+  - We also use the shape utils class to render the shape. Its “render” method (likely to be renamed) is a React ForwardRefExoticComponent to that receives a shape and some contextual info (hovered?) as props.
+  - So far it would sound like all of those class methods could be static. But we also use caches for things like bounds, or sometimes path data, depending on what’s efficient for that kind of shape. Which means we need that singleton model, I think, to access the mutable data.
+  - I could put this mutable stuff outside of the class… but then if a page had more than one `<TLDraw>` component, then they would both share their caches. Maybe this doesn’t matter?
+  - It would be easier if the whole model was OOP (storing instances of a shape class rather than using objects+utilities), but that’s tough to make work with React.
+- I like to separate data model and React render tree just because it’ll be cleaner in the long term. It’s easy to write an adapter hook if your data model supports listening on changes on a per-entity level. 
+  - Same, I currently have the store in a zustand store. Though for multiplayer I might need to move to some more multiplayery data structures
+  - Yeah you may just wanna use Yjs for the entire in-memory data structure (storage after multiplayer is closed could still be something else tho).
+- I generally store everything as plain objects so they are easily serialisable for structured clone algorithm and stringify.
+
+- ## here's one of the quirkiest browser quirks for a canvas-type of a UI
+- https://twitter.com/steveruizok/status/1436816229268959241
+  - If an absolutely positioned text elements changes its width in a way that would cause the cursor to go off screen, the browser automatically scrolls the container to the cursor's location. 
+  - It doesn't matter if you've set overflow to hidden—the container is going to scroll!
+  - The only fix I've found is to use the element's onScroll to reset the scroll if it ever happens.
+  - This allows the cursor to go offscreen, which is alright IMO. On each keystroke, the browser is scrolling the container and then we are **synchronously resetting the scroll**. Problem solved, I hope!
+- Ugh, it's similar to inserting dom at the end of an page that is scrolled to the bottom, most browsers will increase the scroll top offset.
 
 - ## Just found React Designer for the first time. Wild how similar their API is to what I'm doing with @tldraw 
 - https://twitter.com/steveruizok/status/1423631926884196352

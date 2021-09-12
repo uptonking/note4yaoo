@@ -15,7 +15,10 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## HTML is the original single file component. 
+- https://twitter.com/devongovett/status/1436853348896935942
+  - Big fan of using inline `<script>` and `<style>` elements, at least while prototyping.
+
 
 - ## More frameworks have been deprecated than HTML tags.
 - https://twitter.com/claviska/status/1436436571474038784

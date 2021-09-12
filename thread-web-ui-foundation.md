@@ -24,7 +24,12 @@ modified: '2021-04-23T09:24:19.873Z'
 
 - ## 
 
-- ## 
+- ## A box component is primarily used for
+- https://twitter.com/itsdouges/status/1436904368289189893
+- I originally introduced Box to Braid because it looked up themed utility classes from context.
+  - Once we had Sprinkles, the need for Box really dropped off. 
+  - However, it's still useful because it puts the background colour on context so nested components can adjust their contrast.
+  - Currently Braid Design System tracks the current background colour via context. We're experimenting with pulling some of this into CSS vars ATM but will probably still keep the JS layer for some scenarios.
 
 - ## When people learn ARIA, overuse is a common mistake. 
 - https://twitter.com/housecor/status/1390295213659279360

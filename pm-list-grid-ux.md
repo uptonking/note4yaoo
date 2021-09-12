@@ -18,9 +18,7 @@ modified: '2021-05-23T16:34:42.918Z'
   - I try to base all my tips on established ux laws and science
   - For example, the whitespace over divider idea is derived by the law of Proximity which states: "Objects that are near, or proximate to each other, tend to be grouped together."
 
-# The complete guide to building a smart data table in React
-
-- [The complete guide to building a smart data table in React_201911](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)
+# [The complete guide to building a smart data table in React_201911](https://blog.logrocket.com/complete-guide-building-smart-data-table-react/)
 
 - Some common use cases for table UIs include displaying data for finance reports, sports leaderboards, and pricing and comparison pages.
 - Some products that use data tables extensively include:
@@ -29,13 +27,13 @@ modified: '2021-05-23T16:34:42.918Z'
   - Asana Timeline
   - Google Sheets
   - Notion Table
-- Basic features of a data table UI include:
+- **Basic features of a data table UI** include:
   - Uncompromised UX and UI. 
     - Clearly understandable - typography and custom elements inside the table UI
   - Remote data calls to load data
   - Searching the table or specific columns
   - Basic filtering and sorting options
-- Advanced features in a data table UI include:
+- **Advanced features in a data table UI** include:
   - Custom sorting and filtering options for columns based on data types (numbers, string, boolean, select input, etc.)
   - Pagination support or infinitely long tables (performance for very large datasets)
   - Showing and hiding columns
@@ -46,6 +44,7 @@ modified: '2021-05-23T16:34:42.918Z'
   - Resizable columns to accommodate long data points inside a column (e.g., multi-line comments)
   - Horizontal and vertical scroll support
   - Expandable rows to show complete data about the row
+
 - Common UX challenges in a table UI
   - difficult to make a table responsive without changing the layout to suit smaller screen sizes.
   - A table might need scrolling in both directions. 
@@ -55,6 +54,8 @@ modified: '2021-05-23T16:34:42.918Z'
     - It often causes UX glitches when we load dynamic data in the table. 
     - Each time the data changes, it resizes the column width and causes an alignment glitch. 
     - We need to be careful in handling those issues while designing the UX.
+
+
 - Top libraries for data tables in React
   - react-table
     - no: not support for horizontal and vertical scroll for both touch and non-touch devices

@@ -9,7 +9,11 @@ modified: '2021-05-13T02:51:35.505Z'
 
 # issues
 
+## rowspan & colmunspan
+
 - [Feature request: Row & column span (merging cells)](https://github.com/adazzle/react-data-grid/issues/1872)
   - Unfortunately we do not this on our roadmap but we will be happy to accept a PR
 - [Merge cells](https://github.com/adazzle/react-data-grid/issues/619)
   - not support
+
+- [Add `column.colSpan` prop__202104__已支持](https://github.com/adazzle/react-data-grid/pull/2356)

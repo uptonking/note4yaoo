@@ -30,6 +30,7 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## Anyone know of smarter reading time estimation algorithms than words/wordsPerMinute?
 - https://twitter.com/wooorm/status/1436262232338444310
+  - https://github.com/syntax-tree/hast-util-reading-time
 - I thought about text to speech + measuring audio length
 
 - ## no idea if this naming is any less confusing but http://natto.dev now has "browser drafts" and "user canvases". 
