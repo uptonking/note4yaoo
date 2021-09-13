@@ -13,6 +13,19 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
+- ## FWIW we spent considerable effort exploring whether modern syntax could benefit Preact, and our conclusion was that hand-optimized ES5 is still fastest.
+- https://twitter.com/_developit/status/1437429523893600256
+  - We did find a bunch of browser bug workarounds for IE11 that were worth dropping though.
+- Example - here's the fastest ES20xx JSX factory vs ES5
+  - The ES5 version is faster than the modern syntax version - not because rest parameters are slow, but because syntactic rest parameters unconditionally allocate an Array. In the verbose ES5 version allocation is conditional for the two most common cases (0 children / 1 child).
+- There are a bunch of these cases:
+  - `for..of`: faster than `forEach()`, slower than `for(;;)` syntax
+  - `Map`: faster than array pairs, slower than dictionary-mode object
+  - `async`: faster than `Promise` chains, slower than callbacks
+  - `class`: faster than transpiled ES5, slower than hand-written
+- I believe we're sort of at the point where modern JS is fast enough for 95% of things and should be the default, but library authors seeking low-level performance wins still drop down to ES5 where verbosity can better inform VM optimizations
+  - Ideally this would reverse itself over time, but that's a chicken-egg problem.
+
 - ##  `setTimeout` is a codesmell 99% of the time
 - https://twitter.com/oleg008/status/1436027606302928897
 - Today I implemented an UI for copy-to-clipboard button. It shows a "Copied" feedback that dismiss after 5 seconds. 

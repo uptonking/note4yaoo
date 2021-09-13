@@ -9,7 +9,7 @@ modified: '2021-04-19T14:53:27.158Z'
 
 > new marketable apps
 
-# repeat
+# ideas-stars
 - ## Harsh truth: Reading about other successful creators won't make you one. 
 - https://twitter.com/mkhundmiri/status/1383688592099135498
   - Start creating so that you have your own success story to tell.
@@ -27,6 +27,14 @@ modified: '2021-04-19T14:53:27.158Z'
   - make a project to solve your problem
 # ideas
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Just added a Wall of Love powered by @testimonialto
+- https://twitter.com/sobedominik/status/1437385606624002050
+  - 直接挑选用户的评论片段生成类似 大家都说好 的广告卡片
 
 - ## 把推文链接贴一下就能生成一张漂亮的推文效果图
 - https://poet.so/

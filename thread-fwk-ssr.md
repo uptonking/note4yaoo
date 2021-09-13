@@ -45,7 +45,12 @@ modified: '2021-04-24T08:29:02.272Z'
 # pieces
 - ## 
 
-- ## 
+- ## How to do partial hydration in React, 2021 edition
+- https://twitter.com/iamakulov/status/1437415799514271746
+- Use https://github.com/hadeeb/react-lazy-hydration
+- Build you own partial hydration
+- Try out React 18’s selective hydration
+- Check out the React’s Server Components proposal
 
 - ## I really like what @astrodotbuild is doing by shipping less JS. 
 - https://twitter.com/wardpeet/status/1429831663127863303

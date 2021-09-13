@@ -16,7 +16,13 @@ modified: '2021-05-14T10:08:51.423Z'
 
 - ## 
 
-- ## 
+- ## Consistent Border-Radius
+- https://twitter.com/d__raptis/status/1437410390149931008
+  - Round images usually look weird when they're included in a card with a small border-radius. 
+  - Use the simple rule of thumb: 𝙊𝙪𝙩𝙚𝙧 𝙍𝙖𝙙𝙞𝙪𝙨 = 2 * 𝙄𝙣𝙣𝙚𝙧 𝙍𝙖𝙙𝙞𝙪𝙨
+- I got really curious whether avatars MUST be circular or not since traditional frames are rectangular.
+  - It seems that UI trends make them circular & it's a way to bring the focus on the face
+
 
 - ## why don't more people talk about asian typographic design!!! the latin alphabet could never
 - https://twitter.com/milkjuus/status/1410034123662532608

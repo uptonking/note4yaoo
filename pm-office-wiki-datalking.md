@@ -84,6 +84,11 @@ modified: '2021-08-07T19:58:20.142Z'
 
 - 适合存储在sqlite
   - emails、calendar、tasks、photos
+# keyboard-shortcuts
+- edit
+
+- nav
+  - cmd/win+k: spotlight command menu 弹出式命令菜单
 
 ## 知识库/仓库/文件管理器
 

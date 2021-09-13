@@ -17,6 +17,15 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## The danger of open redirects!
+- https://scotthelme.co.uk/the-danger-of-open-redirects/
+  - 要防止被利用钓鱼
+- The absolute first thing I do when I come across any phishing page is report it to Safe Browsing here, as you should too: https://safebrowsing.google.com/safebrowsing/report_general/
+- The problem with having an open redirect like the one above is that it can, and will, be abused by attackers in scenarios like this. 
+  - The reason these open redirects are useful is that they add legitimacy to the URL in the email itself which helps it to bypass spam filters.
+- If an email provider were to check the domain reputation of homes4wiltshire.co.uk then it would come back as quite positive. It hasn't been flagged as being involved in any phishing/malware activity, it doesn't appear on any block lists
+- This is what the attackers want to hide and is why the open redirect on a 'good' domain is so useful.
+
 - ## the most valuable thing I've learned in my career isn't a specific skill, but instead the knowledge that "this will eventually work"
 - https://twitter.com/Wattenberger/status/1433880202086600704
   - Projects can be seriously overwhelming when you're in the middle of them, but they almost always come together, and usually faster than you think!

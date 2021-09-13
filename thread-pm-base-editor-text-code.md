@@ -11,6 +11,21 @@ modified: '2021-08-16T06:56:58.774Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## It'd be neat if we could reference other files/lines of code in comments, and tooling would let you jump into and out of those links. Add `#135` at the end of a comment and you could jump to that line
+- https://twitter.com/jlongster/status/1437423113139101701
+  - I hate jumping around code based on how variables are referenced. Human-level docs have a much higher level of signal to noise, but currently there's no way to construct a walkable knowledge graph
+- I think you’d want IDs instead of line numbers.
+  - I’d love to be able to mark related code fragments and later retrieve them.
+  - yeah, you'd need to resolve the line number into what Roam calls blocks. I'd want this done automatically, so it tracks an expression and knows how to link to it
+- In Javadoc you do this via the "link" syntax. But you reference symbol names rather than line numbers, so the that link doesn't break when the target file is edited.
+- Yea, the back refs might be too heavy for most big code bases, but would be nice.
+
 - ## VS Code "Comment tagged templates" is sweet, such a clever idea. 
 - https://twitter.com/stevage1/status/1427063995903528962
   - Get syntax highlighting for code embedded in strings by putting a comment before it saying what language it is.

@@ -20,7 +20,7 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+
 
 - ## Today I learned that `Array.concat()` can work just fine with non array variables.
 - https://twitter.com/maxkoretskyi/status/1436010126415122434
