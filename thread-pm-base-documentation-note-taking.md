@@ -15,7 +15,12 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Fragment: A Couple of Unofficial and Unofficial Unofficial Jupyter Extensions for VS Code and the Future of Rich Visual Editing of Interactive Generative Texts
+- https://blog.ouseful.info/2021/09/13/on-a-couple-of-unofficial-and-unofficial-unofficial-jupyter-extensions-for-vs-code-and-the-future-of-rich-visual-editing-of-interactive-generative-texts/
+- on my long list, one thing I’m hoping to see at some point is an executable document editor running purely in the browser on top of something like a JupyterLite kernel. 
+- There are a couple of different directions I think this could come from: 
+  - one would be getting something like the Curvenote editor or a Stencila editor working in the browser on top of a JupyterLite WASM powered backend, 
+  - and the other would be some plugins to make a Jupyter Book editable, cf. a wiki, with edits saved to browser local storage. 
 
 - ## HelpKit allows you to easily build your company's Knowledge Base or Help Center with @NotionHQ
 - https://twitter.com/sobedominik/status/1436016818079076366

@@ -10,7 +10,15 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
-- ## 
+- ##  When we made a shape, we need to make the the bounding box a little bigger than the shape itself.
+- https://twitter.com/steveruizok/status/1437514372520284163
+  - SVGs clip their content, so if the shape is rendering an SVG image (like this one is), we want to leave some padding in case there's any overlap.
+  - We might improve this by doing a better job of calculating the bounding box: we could use the freehand shape's points, rather than the input points. To get it *really* right, we'd need to use the curves between each point. Not worth it imo
+- We adjust this padding based on the camera scale. This helps us leave room for the bounding box and any other controls we might want to put there.
+  - But how we calculate the bounding box does matter. On the arrow, I'm calculating a box based on the three handles. Looks like that's the wrong approach!
+- Previously, I’ve been using a measurement div to get the size and shape of text layers content. But now that shapes are components, we can get the size data from inside of the shape’s component!
+
+
 
 - ## Starting to feel like the @tldraw engine really wants to be a “render react components in a canvas paradigm” engine.
 - https://twitter.com/steveruizok/status/1435515509756338177

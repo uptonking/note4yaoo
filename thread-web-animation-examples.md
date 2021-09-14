@@ -41,7 +41,14 @@ modified: '2021-04-21T15:01:12.882Z'
 
 - ## 
 
-- ## 
+- ## Animated effect, but a square mask! 
+- https://twitter.com/argyleink/status/1437769098742538242
+  - This mask is fit dynamically to a hovered || tapped DOM element 
+  - https://codepen.io/argyleink/pen/jOwwWOb
+  - 长按时会聚焦到当前元素，其他所有元素都会被mask蒙版样式覆盖
+- 
+- 
+- 
 
 - ## You can actually achieve spring animations using the WAAPI. 
 - https://twitter.com/okikio_dev/status/1415314400253206528

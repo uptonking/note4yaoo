@@ -245,8 +245,8 @@ bird.sayBye(); // Bye from Ferrari
   - [mdn this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
   - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
 
-# js: prototype vs __proto__
-- prototype 显式原型: explicit prototype property
+# js: `Ctr.prototype` vs `obj.__proto__`
+- `Ctr.prototype` 显式原型: explicit prototype property
   - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
   - 通过 `Function.prototype.bind` 方法构造出来的函数是个例外，它没有prototype属性
   - **显式原型的作用：用来实现基于原型的继承与属性的共享**
@@ -255,7 +255,7 @@ bird.sayBye(); // Bye from Ferrari
       - and then execute code that initialises all or part of them by assigning initial values to their properties. 
     - Each constructor is a function that has a property named `prototype` that is used to implement prototype-based inheritance and shared properties.
     - Objects are created by using constructors in `new` expressions; for example, new Date(2009,11) creates a new Date object. ----ECMAScript Language Specification
-- __proto__ 隐式原型: implicit prototype link
+- `obj.__proto__` 隐式原型: implicit prototype link
   - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
   - 隐式原型指向创建这个对象的函数(constructor)的prototype
   - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
@@ -338,6 +338,12 @@ Number instanceof Number //false
   - e.g. you need to make sure to call the `super` constructor in your derived class's constructor, 
   - whereas with `util.inherits` you had to call the constructor function and `apply` it to `this`. 
   - But effectively, these things are only other syntactic constructs, semantically, they are equivalent.
+
+
+- [Why do people hate `class` so much](https://twitter.com/steveruizok/status/1437321061935243264)
+  - classes feel kind of loose for an library API. 
+  - Functions give better defaults and stricter types for methods, feels more on rails. 
+  - But after spending the day making a factory pattern work here… I think we might be heading back to classes.
 
 - ref
   - [Can i replace util.inherits with es6's extend keyword?](https://stackoverflow.com/questions/44226524/can-i-replace-util-inherits-with-es6s-extend-keyword)

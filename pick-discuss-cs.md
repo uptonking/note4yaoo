@@ -7,7 +7,7 @@ modified: '2021-04-12T16:30:53.967Z'
 
 # pick-discuss-cs
 
-# faq
+# discuss
 
 ## 
 

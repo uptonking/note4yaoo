@@ -9,6 +9,8 @@ modified: '2020-06-30T12:51:08.791Z'
 
 # faq-not-yet
 
+- open new tab
+
 - 如何让多层url的页面支持f5刷新
 
 - ~~`React.forwardRef()` 是高阶组件吗~~

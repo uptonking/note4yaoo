@@ -7,9 +7,8 @@ modified: '2021-04-12T16:30:53.968Z'
 
 # pick-discuss-story-of-the-stone
 
-# faq-not-yet
 
-# faq-dive
+# discuss
 
 ## 
 
