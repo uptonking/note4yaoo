@@ -18,7 +18,24 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Array elements are actually properties with string keys
+- https://twitter.com/rauschma/status/1438030552871981056
+
+```JS
+
+const arr = ['a', 'b'];
+arr.prop = 123;
+
+assert.deepEqual(
+  Object.keys(arr),
+  ['0', '1', 'prop']);
+
+assert.equal(arr[0], 'a');    // true
+assert.equal(arr['0'], 'a');  // true
+```
+- Just because you can doesn't mean you should
+- I got bitten the other week by `Object.entries` returning the indexes as strings, not numbers.
+- But modern JavaScript engines do manage to optimize Array access to behave like the array of languages like C or Java, and not like dictionaries
 
 
 

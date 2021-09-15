@@ -13,6 +13,9 @@ modified: '2021-06-02T15:26:19.890Z'
 - markdown-cons
   - 需要多个空格才会渲染line-break
 
+- markdown-filename-suffix
+  - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron", "rmd"]
+
 - markdown-extensions
   - mdx
   - [R Markdown](https://rmarkdown.rstudio.com/)
@@ -37,9 +40,6 @@ modified: '2021-06-02T15:26:19.890Z'
     - Together these two elements can be used to create dynamic, interactive articles.
 - more-format-references
   - [Org mode for Emacs](https://orgmode.org/)
-
-- markdown-files-suffix
-  - ["md", "markdown", "mdown", "mkdn", "mkd", "mdwn", "mkdown", "ron"]
 
 - rmarkdown
   - [cheatsheet: dynamic, reproducible, citations](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/)

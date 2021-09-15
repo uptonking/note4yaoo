@@ -13,7 +13,10 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Announcing http://papertohtml.org, an on-demand PDF to HTML converter for scientific papers!
+- https://twitter.com/lucyluwang/status/1437837455902658560
+  - HTML is easier to make accessible for screen readers or on mobile. 
+- We @curvenote have been working at the opposite-problem how to write html-native papers that export to PDF nicely. (+ keep benefits of metadata/interactivity)
 
 - ## Fragment: A Couple of Unofficial and Unofficial Unofficial Jupyter Extensions for VS Code and the Future of Rich Visual Editing of Interactive Generative Texts
 - https://blog.ouseful.info/2021/09/13/on-a-couple-of-unofficial-and-unofficial-unofficial-jupyter-extensions-for-vs-code-and-the-future-of-rich-visual-editing-of-interactive-generative-texts/

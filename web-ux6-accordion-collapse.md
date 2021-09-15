@@ -23,7 +23,7 @@ modified: '2021-07-29T20:37:05.228Z'
 - There is also a library called as "react-bootstrap" which allows the integration of react with bootstrap. 
   - They have a very simple example for making the collapsible div
 
-- ## How can I expand and collapse a <div> using javascript?
+- ## How can I expand and collapse a `<div>` using javascript?
 - https://stackoverflow.com/questions/17460116
 - `ele.style.display = "none"`; 
 

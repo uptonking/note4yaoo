@@ -36,6 +36,13 @@ modified: '2021-07-21T18:07:43.056Z'
   - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
   - 左侧目录支持折叠和多级目录
   - 没有实现当前页的toc
+  - features
+    - minimal configuration
+    - fully static, deployable on GitHub pages
+    - both server + client routing
+    - hot reload
+    - supports tsx/jsx/md/mdx
+    - Support including markdown from a file reference in markdown files
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
   - Docusaurus 1 used to be a pure documentation site generator. 

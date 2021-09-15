@@ -13,7 +13,11 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## Note to self: If you face complex problems and don’t know where to start, there are three simple things you can do.
+- https://twitter.com/hanspagel/status/1438107649330008064
+  - Go for a walk and think about the actual problem 🌲
+  - Read a book and learn how others solve it 📚
+  - Start with the tiniest thing you can do *now* 💪
 
 - ## Poll: How does your team do daily app development?
 - https://twitter.com/housecor/status/1426893559056240645

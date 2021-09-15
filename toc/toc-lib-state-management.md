@@ -33,10 +33,10 @@ modified: '2020-07-14T11:03:53.196Z'
   - library for managing the state of a user interface. 
   - It prioritizes the design experience, making it easy to experiment with ideas, iterate on solutions, and communicate the final result.
   - State Designer is heavily inspired by xstate. 
-  - Note that, unlike xstate, State Designer does not adhere to the scxml spec.
+    - Note that, unlike xstate, State Designer does not adhere to the scxml spec.
   - Write state-charts in a simple declarative syntax.
     - Create both global and local component states.
-    - Put simply, a statechart is a beefed up state machine.  
+  - Put simply, a statechart is a beefed up state machine.  
     - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon

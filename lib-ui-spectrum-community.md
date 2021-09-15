@@ -13,6 +13,28 @@ modified: '2021-04-12T18:07:01.092Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Table is out!
+- https://twitter.com/devongovett/status/1437855303899365377
+  - Keyboard navigation
+  - Sorting
+  - Multi-selection
+  - Async loading
+  - Infinite scrolling
+  - Virtualization
+- We have many more features planned.
+  - Inline edit mode
+  - Mac style highlight selection (i.e. no checkboxes)
+  - Resizing and reordering columns
+  - Drag and drop
+  - Multiple sections
+  - Tree grid support (i.e. outline view)
+
 - ## React Aria's data table component is coming along nicely!
 - https://twitter.com/devongovett/status/1407747623268671490
   - Keyboard navigation to rows, cells, and focusable elements within cells
