@@ -17,7 +17,31 @@ modified: '2021-04-12T18:07:01.092Z'
 
 - ## 
 
-- ## 
+- ## I'm often asked why React Aria is hooks-based rather than component-based. 
+- https://twitter.com/devongovett/status/1438188332001808384
+  - [Consider upgrading to a component-based API](https://github.com/adobe/react-spectrum/issues/2331)
+  - We've also heard some feedback that it could be easier to use in some simple cases. 
+  - I wrote a reply on GitHub about how we think about this tradeoff, and how we plan to improve.
+  - We're focused on the low level behavior, and I was hoping the community would build lots of higher level wrappers. I think there's room for API experimentation and integrations with different styling methodologies.
+- FWIW we are offering both in React Router v6.
+  - For example, we have a `<Routes>` component and a `useRoutes()` hook. 
+  - The idea here is that the use cases for a hook vs component are subtly different. 
+  - The hook lets you express your routes as plain JS objects and get the element back as a variable. 
+  - But the component lets you declare your routes as JSX if you prefer.
+- Back in 2018, I proposed a hook-based API similar to react-aria for Reakit 
+  - but we concluded that was much lower level than we wanted. 
+  - As a user, it was also super inconvenient to adhere to the rules of hooks and work with React Context and Portals.
+  - We ended up adopting a hybrid component-based approach where we export both the hooks and the components with render props
+  - [reakit RFC: Hooks](https://github.com/reakit/reakit/issues/288)
+- I’m actually surprised I haven’t come across a UI library that uses React Aria and React Stately internally
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## Table is out!
 - https://twitter.com/devongovett/status/1437855303899365377

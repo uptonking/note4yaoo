@@ -11,7 +11,28 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## @replayio is an elegantly simple product, but I think it gets at some really deep ideas about the human psychology of debugging
+- https://twitter.com/geoffreylitt/status/1438152748449636360
+- A question that has always fascinated me: why is print debugging so popular? Like, there are nice fancy step-based debuggers, but most devs just use print statements most of the time. Why?
+  - One idea could be: we don't need fancy tools! Print debugging is simple 
+    - and it's good enough to get the job done. People don't want to bother learning fancy tools.
+    - Maybe some truth to that, but I don't think it's the main reason...
+  - IMO, a main reason is that print debugging is actually *better* than step-based debugging in one key area: *showing time in space*.
+    - With print debugging, I see what my program did from start to end; 
+    - I can "scrub through time" by just scrolling up and down in the terminal.
+- In contrast, in a step-based debugger, I'm stuck at one moment in time. 
+  - It's hard to have a sense of place: where am I in the execution of the code? Gotta be careful not to step forward too far..
+  - For me this leads to a vague sense of unease, even if I'm not consciously aware.
+- The sad thing is, step-based debuggers are better in so many ways! Interactively evaluate code at any point. Explore live, no need to add print statements ahead of time. Etc. 
+  - But still, I choose print debugging because showing time in space is the killer feature...
+- Finally, this brings us to Replay. 
+  - Simple idea: Just get the best of both of these worlds.
+  - Like print debugging, it shows time in space. 
+  - But way way better: I can actually scrub a timeline, I can see what my UI looked like at any point...
+  - But also has all the normal benefits of step debugging. 
+  - I can rewind to any point in the running program and interactively debug.
+  - Also allows absurd things, like edit a print statement and see the entire log instantly retroactively update 
+- They have impressive tech under the hood making this possible, but the dev experience is straightforward. Once you've fully wrapped your head around this idea, normal debuggers just start to feel primitive... can't wait for record-replay to become the new normal
 
 - ## Note to self: If you face complex problems and don’t know where to start, there are three simple things you can do.
 - https://twitter.com/hanspagel/status/1438107649330008064

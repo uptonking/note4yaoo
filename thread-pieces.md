@@ -15,7 +15,16 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## 
 
-- ## 
+- ## “The purpose of software engineering is to control complexity, not to create it.” - Pamela Zave
+- https://twitter.com/CodeWisdom/status/1438174531508658176
+- Complexity kills software projects. It causes bugs. It hides bugs. It makes bugs hard to fix.
+- There are two kinds. 
+  - Complexity can be imposed from the outside by the problem to be solved.
+  - Or it can originate from implementation details. 
+  - Programmers must control the latter.
+- One of the worst rookie mistakes is to attempt to control the former, often by hiding it behind an abstraction. 
+- But the complexity doesn’t go away. 
+- It ends up leaking out in unexpected places.
 
 - ## poll: URL vs Url
 - https://twitter.com/kentcdodds/status/1434480148649177094
