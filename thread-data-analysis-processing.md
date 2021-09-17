@@ -11,6 +11,18 @@ modified: '2021-05-13T16:12:47.773Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Did you ever want to learn how to read ROC curves?
+- https://twitter.com/haltakov/status/1438206936680386560
+  - ROC stands for Receiver Operating Characteristic but just forget about it. 
+  - Think about these curves as True Positive Rate vs. False Positive Rate plots.
+  - The ROC curve visualizes the trade-offs that a binary classifier makes between True Positives and False Positives.
+
 - ## Javascript is poised to displace R and Python (really!) as the indispensable language of data programming, touching on WebGPU/WebGL, @observablehq , and @ApacheArrow .
 - https://twitter.com/benmschmidt/status/1368988766174666753
   - Computers have gotten much, much faster in the last couple decades, but our languages for data analysis have failed to keep up. (+)

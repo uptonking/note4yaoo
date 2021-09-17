@@ -15,7 +15,14 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## XSS cheat sheet only with stuff that works in 2021!
+- https://twitter.com/SamuelAnttila/status/1358822910526320640
+  - [Cheatsheet: XSS that works in 2021](https://netsec.expert/posts/xss-in-2021/)
+* Tons of  XSS filter bypasses!
+* mXSS Sanitizer bypasses
+* URL Schema filter tips
+* MIME type exploitation
+* Too much stuff to fit here!
 
 - ## The danger of open redirects!
 - https://scotthelme.co.uk/the-danger-of-open-redirects/

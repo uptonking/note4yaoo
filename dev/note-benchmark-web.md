@@ -37,6 +37,9 @@ modified: '2020-07-14T09:28:43.976Z'
 - https://github.com/paularmstrong/react-component-benchmark
   - This project aims to provide a method for gathering benchmarks of component tree mount, update, and unmount timings.
   - Since this project does not hook into the React renderer directly, the values gathered are not 100% accurate and may vary slightly because they're taken from a wrapping component.
+
+- https://github.com/reduxjs/react-redux-benchmarks
+  - Performance benchmark harness for React-Redux
 # web-ui
 - https://github.com/mikolaj6r/web-benchmark /202011
   - Node benchmark that uses Lighthouse and generates charts, tables, markdown and big json with results.

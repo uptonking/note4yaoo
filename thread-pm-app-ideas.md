@@ -30,7 +30,9 @@ modified: '2021-04-19T14:53:27.158Z'
 
 - ## 
 
-- ## 
+- ## Remotion Success Story!
+- https://twitter.com/JNYBGR/status/1438444378482221062
+  - With http://MakeStories.io you can use drag and drop to create Google Web Stories, and with the Remotion-powered rendering engine, export them as MP4 as well!
 
 - ## Just added a Wall of Love powered by @testimonialto
 - https://twitter.com/sobedominik/status/1437385606624002050

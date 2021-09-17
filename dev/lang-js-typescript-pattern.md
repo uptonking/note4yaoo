@@ -12,7 +12,6 @@ modified: '2021-03-22T14:43:12.866Z'
 # object
 
 # data-type
-
 # function
 
 - ## [TypeScript Function Syntaxes](https://kentcdodds.com/blog/typescript-function-syntaxes)
@@ -48,3 +47,7 @@ interface InterfaceWithFn {
 
 - Given the choice between type, interface, and declare function, I think I prefer type personally, unless I need the extensibility that interface offers. 
   - I'd only really use declare if I really did want to tell the compiler about something that it doesn't already know about (like a library).
+# expression
+
+- https://github.com/Dkendal/pattern-match.js
+  - Provides pattern matching features typically found in functional languages like Elixir/Erlang, ML, F#, etc.
