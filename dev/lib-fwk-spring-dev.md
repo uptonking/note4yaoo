@@ -21,9 +21,7 @@ modified: '2020-12-08T13:28:14.387Z'
   - libs
 
 - tips
-
 # dev-tips
-
 - WebMvcConfigurationSupport精简了5个方法
   - beanNameHandlerMapping()
   - mvcResourceUrlProvider()
@@ -34,9 +32,7 @@ modified: '2020-12-08T13:28:14.387Z'
   - 但保存bean方法到configurationClasses时，用的是子类，而不是父类
 - play-mvc处理带有@Configuration注解的类时，只处理子类，以及子类继承的带有@Bean注解标注的方法
 - AnnotationConfigUtils.attributesForRepeatable() 获取注解的所有属性
-
 # faq
-
 - SqlSessionTemplate何时实例化的
 - @Bean标注的方法如何注入参数
 - properties属性文件何时读取的
@@ -86,22 +82,16 @@ modified: '2020-12-08T13:28:14.387Z'
   - org.springframework.beans.factory.annotation. AutowiredAnnotationBeanPostProcessor
 
 - ServletContext与ApplicationContext相关概念
-  - ServletContext：此接口定义了一系列的方法，可以很方便地与所在的容器进行一些交互，比如通过getMajorVersion与getMinorVersion来获取容器的版本信息等，
-
-    在一个应用中(一个JVM)只有一个ServletContext, 换句话说，容器中所有的servlet都共享同一个ServletContext.
+  - ServletContext：此接口定义了一系列的方法，可以很方便地与所在的容器进行一些交互，比如通过getMajorVersion与getMinorVersion来获取容器的版本信息等，在一个应用中(一个JVM)只有一个ServletContext, 换句话说，容器中所有的servlet都共享同一个ServletContext.
 
   - ServletConfig: servletConfig是针对servlet而言的，每个servlet都有它独有的serveltConfig信息，相互之间不共享
   - ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE
 
-  
-
 - spring mvc 父子上下文/容器
   - Tomcat启动时，监听器ContextLoaderListener创建一个XMLWebApplicationContext上下文容器，
-
     并加载context-param中的配置文件，完成容器的刷新后将上下文设置到ServletContext。
 
   - 当DispatcherServlet创建时，先进行初始化操作，从ServletContext中查询出监听器中创建的上下文对象，
-
     作为父类上下文来创建servlet的上下文容器，并加载Servlet配置中的init-param的配置文件
     (默认加载/WEB-INF/servletName-servlet.xml，servletName为DispatcherServlet配置的servlet-name)，然后完成容器的刷新。
 
@@ -124,13 +114,11 @@ modified: '2020-12-08T13:28:14.387Z'
 
 - Flash属性
   - flash attributes提供了一个请求为另一个请求存储有用属性的方法。
-
     这在重定向的时候最常使用，比如常见的 POST/REDIRECT/GET 模式。Flash属性会在重定向前被暂时地保存起来（ 通常是保存在session中） ，
     重定向后会重新被下一个请求取用并立即从原保存地移除。
 
   - FlashMap 被用来存储flash属性，而用 FlashMapManager 来存储、取回、管理 FlashMap 的实例
   - 控制器通常不需要直接接触 FlashMap 。一般是通过 @RequestMapping 方法去接受一个 RedirectAttributes 类型的参数，
-
     然后直接地往其中添加flash属性。通过 RedirectAttributes 对象添加进去的flash属性会自动被填充到请求的“输出” FlashMap 对象中去
     
 
@@ -175,10 +163,9 @@ modified: '2020-12-08T13:28:14.387Z'
   - 用户可以选择是否提供WebApplicationInitializer实现，如果未检测到WebApplicationInitializer类型，则此SpringServletContainerInitializer将不起作用
   - 如果在类路径下找不到WebApplicationInitializer实现，则此方法不会有任何操作。将发出INFO级别的日志消息，通知用户ServletContainerInitializer确实已被调用，但没有找到WebApplicationInitializer实现。
   - 假设检测到一个或多个WebApplicationInitializer类型，它们将被实例化（如果存在@Order注释或实现Ordered接口，则对其进行排序）。然后，将调用每个实例WebApplicationInitializer.onStartup(ServletContext)方法，并委派ServletContext，以便每个实例都可以注册和配置Servlet，例如Spring的DispatcherServlet，listeners（如Spring的ContextLoaderListener），或者其他Servlet API组件（如filters）
-
     
 
-- HttpServletBean 以依赖注入的方式来读取Servlet类的<init-param>配置信息
+- HttpServletBean 以依赖注入的方式来读取Servlet类的`<init-param>`配置信息
 - FrameworkServlet完成的是容器上下文的建立
 - DispatcherServlet完成的是SpringMVC具体编程元素的初始化策略
 
@@ -209,16 +196,14 @@ modified: '2020-12-08T13:28:14.387Z'
   - 扩展点3位置
   - 通过自定义拦截器，可以在一个请求被真正处理之前、请求被处理但还没输出到响应中、请求已经被输出到响应中之后这三个时间点去做任何事情
 
-- HandlerAdapter  
+- HandlerAdapter
 
-  
 
 - ModelAndView是SpringMVC中对视图和数据的一个聚合类
   - 所有的数据，最后会作为一个Map对象传递到View实现类中的render方法，调用这个render方法，就完成了视图到响应的渲染
   - 这个View实现类，就是来自HandlerAdapter中的handle方法的返回结果
   - 从ModelAndView到真正的View实现类有一个解析的过程，ModelAndView中可以有真正的视图对象，也可以只是有一个视图的名字
 
-  
 
 - web开发主要任务
   - url映射
@@ -329,10 +314,9 @@ modified: '2020-12-08T13:28:14.387Z'
     - @Component: ClassPathScanningCandidateComponentProvider.findCandidateComponents()
     - @Configuration: ConfigurationClassPostProcessor.processConfigBeanDefinitions()
     - @Bean: ConfigurationClassParser.doProcessConfigurationClass()
-
     
 
-- AbstractApplicationContext类 refresh() 
+- AbstractApplicationContext类 `refresh()` 方法
 
   1) prepareRefresh(); 
 
@@ -439,7 +423,7 @@ modified: '2020-12-08T13:28:14.387Z'
   
 
 - PropertyEditor  
-  - 由于Bean属性通过配置文档以字符串了方式为属性赋值，属性编辑器负责将这个字符串转换为属性的直接对象，如属性的类型为int，那编辑器的工作就是 `int i = Integer.parseInt("1");`
+  - 由于Bean属性通过配置文档以字符串了方式为属性赋值，属性编辑器负责将这个字符串转换为属性的直接对象，如属性的类型为int，那编辑器的工作就是 `int i = Integer.parseInt("1"); `
   - Spring为一般的属性类型提供了默认的编辑器，BeanWrapperImpl负责对注入的Bean进行包装化的管理，常见属性类型对应的编辑器即在该类中定义
 
   
@@ -490,9 +474,7 @@ modified: '2020-12-08T13:28:14.387Z'
       - 序列化，远程调用和持久化 -对象需要实例化并存储为到一个特殊的状态，而没有调用代码。
       - 代理，AOP库和Mock对象 -类可以被子类继承而子类不用担心父类的构造器
       - 容器框架 -对象可以以非标准的方式被动态实例化。
-
 # spring boot
-
 - 常用特有注解
   - @SpringBootApplication
   - @EnableAutoConfiguration
