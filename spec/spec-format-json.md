@@ -36,12 +36,7 @@ modified: '2020-10-15T13:41:01.275Z'
   - this package began its life as an internal module to express-state
 - https://github.com/blitz-js/superjson
   - Safely serialize JavaScript expressions to a superset of JSON, which includes Dates, BigInts, and more.
-- https://github.com/humanwhocodes/momoa
-  - A JSON parser, tokenizer, traverser, and printer.
-  - A ECMA-404 compliant parser that produces an abstract syntax tree (AST) representing everything inside of a JSON string.
-  - A tokenizer that allows you to separate a JSON string into its component parts.
-  - A traverser that visits an AST produced by the parser in order.
-  - A printer that can convert an AST produced by the parser back into a valid JSON string.
+
 # faq
 
 - 
