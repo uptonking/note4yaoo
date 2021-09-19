@@ -1,11 +1,11 @@
 ---
-title: page-market-why-so-hard-in-tob
-tags: [marketing, ToB]
+title: page-marketing-industry-why-so-hard-in-tob
+tags: [industry, marketing, toB]
 created: '2021-07-31T09:43:11.014Z'
-modified: '2021-07-31T09:43:56.345Z'
+modified: '2021-09-19T09:39:34.087Z'
 ---
 
-# page-market-why-so-hard-in-tob
+# page-marketing-industry-why-so-hard-in-tob
 
 # [为什么国内大厂，都很难在 ToB 领域出成绩](https://twitter.com/passluo/status/1290750619624411136)
 

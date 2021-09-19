@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-dx
+title: lib-editor-prosemirror-dx-log
 tags: [dx, issues, prosemirror]
 created: '2021-09-17T19:14:10.041Z'
-modified: '2021-09-17T19:29:55.813Z'
+modified: '2021-09-19T15:14:41.307Z'
 ---
 
-# lib-editor-prosemirror-dx
+# lib-editor-prosemirror-dx-log
 
 # upgrading
 

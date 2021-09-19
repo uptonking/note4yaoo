@@ -35,7 +35,16 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Designing even simple websites is so hard these days! So many variables and constraints to consider:
+- https://twitter.com/devongovett/status/1439362488995237889
+  - Responsive design across 4+ breakpoints
+  - Light + dark mode
+  - Accessible color contrast
+  - Animations, but also reduce motion setting
+  - Touch and keyboard friendly interactivity
+- [Prioritize optimization axes on the web](https://notebook.lachlanjc.com/2021-08-23_priotize_optimization_axes_on_the_web/)
+- This is why it's pedantic to build with plain old javascript. You'll end up building a mini framework yourself.
+
 
 - ## A lot of folks think serving JSON is more efficient than HTML, but once gzipped they're often the same. Sometimes HTML is smaller.
 - https://twitter.com/jaffathecake/status/930836616779878401

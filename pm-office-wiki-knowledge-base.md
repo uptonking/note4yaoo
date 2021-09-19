@@ -232,7 +232,31 @@ modified: '2021-07-27T11:27:37.050Z'
 - ref
   - [confluence 6中文文档](https://www.cwiki.us/display/CONFLUENCEWIKI/About+Confluence)
   - [Confluence Documentation Directory 7.12__202107](https://confluence.atlassian.com/doc/get-started-777010817.html)
-
+## [Documize](https://www.documize.com/product/)
+- Flexible organization strategies
+  - labels, spaces and categories
+- Bring along existing assets
+  - We all have mountains of Word documents sitting in search-less locations.
+- Reusable templates and snippets
+  - helps establish your best practices library
+- Compose top-to-bottom for a more natural reading and editing experience.
+- Compose content with various section types — Rich Text, Code, Markdown, Jira, Trello & more.
+  - Forcing everything through WYSIWYG editing hinders content creation.
+- Define change control workflows to request, approve and publish changes.
+  - Renegade changes, email tennis and review meetings detract from the job in hand.
+- Let lifecycle reduce clutter
+  - Archive the old stuff and keep new content in draft till ready for publication.
+- version management to support different versions of the same content
+- Put automation inside
+  - Request contributions, reviews and feedback from within the document
+- Be guided by intelligence/stats
+  - See what content is being consumed, ignored or is completely missing.
+- One place for everyone
+  - Centralize internal and external documentation and invite employees, partners and customers.
+- Secure external customers
+  - Invite and collaborate with external users whilst protecting internal documentation.
+- Endgame is your knowledge backbone
+  - Provide the means to capture and centralize everything you absolutely need to know.
 ## Notion
 
 - features

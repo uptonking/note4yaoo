@@ -52,7 +52,6 @@ modified: '2021-05-13T03:10:56.112Z'
 - Skia is used by both Flutter and Fuchsia.
   - the versions of Skia being used by Flutter and Fuchsia must be “source compatible” 
 # discuss-stars
-
 - ## Flutter 与 React Native 深入对比分析__201912
 - 曾有人问我：“他即写 Java 又会 Object-C ，在 Android 和 IOS 平台上可以同时开发，为什么还要学跨平台呢？”
   - 而我的回答是：跨平台的市场优势不在于性能或学习成本，甚至平台适配会更耗费时间，但是它最终能让代码逻辑（特别是业务逻辑），无缝的复用在各个平台上，降低了重复代码的维护成本，保证了各平台间的统一性， 如果这时候还能保证一定的性能，那就更完美了。
@@ -72,7 +71,6 @@ modified: '2021-05-13T03:10:56.112Z'
   - Widget在渲染时会经过 Element 变化， 最后转化为 RenderObject 再进行绘制， 而最终组成的 RenderObject 树才是 *真正的渲染Dom*，每次 Widget 树触发的改变，并不一定会导致RenderObject 树的完全更新。
 - 所以在实现原理上 React Native 和 Flutter 是完全不同的思路，虽然都有类似“虚拟 DOM 的概念” ，但是React Native 带有较强的平台关联性，而 Flutter UI 的平台关联性十分薄弱。
 
-
 - 在跨平台开发中，就不得不说到接入原有平台的支持，比如 在 Android 平台上接入 x5 浏览器 、接入视频播放框架、接入 Lottie 动画框架等等。
 - 这一需求 React Native 先天就支持，甚至在社区就已经提供了类似 lottie-react-native 的项目。 
   - 因为 React Native 整个渲染过程都在原生层中完成，所以接入原有平台控件并不会是难事
@@ -84,7 +82,6 @@ modified: '2021-05-13T03:10:56.112Z'
 - 编译和产物
   - 可以看出在 React Native 同等条件下， Android 比 IOS 大很多 ，这是因为 IOS 自带了 JSCore ，而 Android 需要各类动态 so 内置支持，而且这里 Android 的动态库 so 是经过了 ndk 过滤后的大小，不然还会更大。
   - Flutter 和 React Native 则是相反，因为 Android 自带了 skia ，所以比没有自带 skia 的 IOS 会小得多。
-
 
 - 有一点需要注意，抛开场景说性能显然是不合适的，因为性能和代码质量与复杂度是有一定联系的。
 - 先说理论性能，**在理论上 Flutter 的设计性能是强于 React Native** ，
@@ -128,12 +125,18 @@ modified: '2021-05-13T03:10:56.112Z'
   - The community ART module has pretty much been depracted in favour of RNSVG, which doesn't support advanced features like filters or shaders.
   - Except the deprecation part it is pretty similar isn’t it?
   - From what I understand this is more of a low-level solution for 2D graphics in general. I guess we'll see when it actually becomes public, until then I suggest watching the video if you are interested
-
 # discuss
 - ref
   - [twitter: JetPack compose flutter ](https://twitter.com/search?q=JetPack%20compose%20flutter%20min_replies%3A1&src=typed_query&f=live)
 
-- ## 
+- ## Kraken is an interesting take on cross-platform dev
+- https://twitter.com/youyuxi/status/1439310638451466243
+  - it combines Flutter's rendering engine with a JS runtime that implements a subset of W3C specs - essentially allowing web frameworks to leverage Flutter's rendering performance
+  - there are parts of the dev story I'd like to see improved - specifically hot reloading and better styling DX (only inline styles for now). But I think the direction of building on top of web specs + Flutter is promising.
+  - Note this is not to be confused with Flutter's web renderer, which is "write in Dart, compile to JS, render in browser".
+  - Kraken is essentially "write in JS, compile to JS, render in Flutter on mobile"
+- how is this different to Flutter Web's HTML renderer? 
+  - It's not for building web apps. It's for using web/JS frameworks to build native apps using Flutter's native renderers.
 
 - ## [如何评价 Flutter for Web？](https://www.zhihu.com/question/323439136/answers/updated)
 - Flutter for Web和Flutter在上层都是Dart环境，两者不同的是，

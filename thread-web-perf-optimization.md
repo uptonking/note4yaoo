@@ -13,7 +13,12 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
-- ## 
+- ## How Chrome handles: `<script> in <head>` vs. `<script async>` vs. `<script defer>` vs. `<script> in <body>` ; 
+- https://twitter.com/iamakulov/status/1439182424798232577
+- [JavaScript Loading Priorities in Chrome](https://addyosmani.com/blog/script-priorities/)
+  - Note: Loading priorities are not guaranteed to be consistent cross-browser so use this knowledge wisely and measure when unsure. 
+  - Ideally, aim to delivery a great experience to the widest number of users possible.
+  - If you're a web developer wondering where you can see the "Loading Priority", Chrome DevTools has an optional "Priority" column available in the Network panel. 
 
 - ## Still using JPEG and PNG for images? 
 - https://twitter.com/Steve8708/status/1400953776031285257

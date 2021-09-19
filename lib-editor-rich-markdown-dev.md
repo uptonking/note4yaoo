@@ -10,6 +10,12 @@ modified: '2021-06-02T10:28:39.488Z'
 # guide
 - todo
   - replace markdown-it with remark
+
+- pros
+  - production-ready
+
+- cons
+  - markdown生成的heading没有id
 # roadmap
 
 # examples-repos

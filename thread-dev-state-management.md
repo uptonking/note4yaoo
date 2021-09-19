@@ -19,6 +19,9 @@ modified: '2021-02-28T07:29:07.622Z'
 - While, at the same time, I learned people like "selectors" abstraction very much.
 - btw, react-tracked is not only for context, it provides an API for react-redux and zustand too.
 
+- valtio/mobx/vue are based on proxies. 
+- jotai is based on atoms, which is "just functions" like React.
+
 - ## The motivation I develop global state libraries is to avoid selector interface that are only required for render optimization.
 - https://twitter.com/dai_shi/status/1373607985033871363
   - It depends on object ref identity which is a hard concept for beginners.
@@ -94,8 +97,6 @@ modified: '2021-02-28T07:29:07.622Z'
 - https://twitter.com/mpocock1/status/1407983384509435907
   - Anyone experienced that wonderful feeling where you can chuck away a bunch of useEffects and model them as invoked services?
 - TBF I quite like keeping the useEffect simple and letting the machine handle the event itself. If you must use a `useEffect` , at least with `XState` you don't have to put any logic in it
-- 
-- 
 
 - ## PSA: react-query is Promise based - it doesn't care about network requests, status codes and the likes. 
 - https://twitter.com/TkDodo/status/1407343307047452684

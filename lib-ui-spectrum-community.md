@@ -34,14 +34,6 @@ modified: '2021-04-12T18:07:01.092Z'
   - We ended up adopting a hybrid component-based approach where we export both the hooks and the components with render props
   - [reakit RFC: Hooks](https://github.com/reakit/reakit/issues/288)
 - I’m actually surprised I haven’t come across a UI library that uses React Aria and React Stately internally
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## Table is out!
 - https://twitter.com/devongovett/status/1437855303899365377

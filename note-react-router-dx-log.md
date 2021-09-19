@@ -1,11 +1,11 @@
 ---
-title: note-react-router-dx
+title: note-react-router-dx-log
 tags: [dx, issues, react-router]
 created: '2021-09-17T19:30:13.866Z'
-modified: '2021-09-17T19:30:36.721Z'
+modified: '2021-09-19T15:14:45.954Z'
 ---
 
-# note-react-router-dx
+# note-react-router-dx-log
 
 # not-yet
 
