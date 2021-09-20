@@ -393,3 +393,5 @@ modified: '2021-08-22T08:05:39.413Z'
 - An in-between solution is to keep source of truth on the server but 
   - (a) guarantee all data can import/export to a simple format like csv, 
   - and (b) periodically export it to user owned place (eg s3, gdrive), so the user doesnt worry that “a” is a fake claim.
+# ref
+- [Optimistic, Offline-First Apps__202001](https://www.swyx.io/svelte-amplify-datastore/)

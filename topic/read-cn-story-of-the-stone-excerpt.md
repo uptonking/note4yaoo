@@ -9,7 +9,7 @@ modified: '2021-03-20T17:02:27.479Z'
 
 # excerpt
 
-## c2 贾夫人仙逝扬州城 冷子兴演说荣国府
+## ch2 贾夫人仙逝扬州城 冷子兴演说荣国府
 
 - 子兴叹道：“老先生休如此说。如今这荣国两门，也都萧疏了，不比先时的光景。“
 
@@ -33,10 +33,10 @@ modified: '2021-03-20T17:02:27.479Z'
 
 - 子兴道：“政公既有玉儿之后，其妾后又生了一个，倒不知其好歹。只眼前现有二子一孙，却不知将来如何。若问那赦公，也有二子。长名贾琏，今已二十来往了。亲上作亲，娶的就是政老爹夫人王氏之内侄女，今已娶了二年。这位琏爷身上现捐的是个同知，也是不喜读书，于世路上好机变言谈去的，所以如今只在乃叔政老爷家住着，帮着料理些家务。谁知自娶了他令夫人之后，倒上下无一人不称颂他夫人的，琏爷倒退了一射之地。说模样又极标致，言谈又爽利，心机又极深细，竟是个男人万不及一的。”
 
-## c54 史太君破陈腐旧套 王熙凤效戏彩斑衣
+## ch54 史太君破陈腐旧套 王熙凤效戏彩斑衣
 
-- Lady Jia ridicules the cliches of romantic fiction
-- And Wang Xi-feng emulates the filial antics of Lao Lai-zi
+> Lady Jia ridicules the cliches of romantic fiction
+> And Wang Xi-feng emulates the filial antics of Lao Lai-zi
 
 - 斑衣戏彩，意思是指身穿彩衣，作婴儿戏耍以娱父母；后以之为老养父母的孝亲典故。出自《北堂书钞》
 
@@ -45,22 +45,33 @@ modified: '2021-03-20T17:02:27.479Z'
 - 女先生又说道：“这年王老爷打发了王公子上京赶考，那日遇见大雨，进到一个庄上避雨。谁知这庄上也有个乡绅，姓李，与王老爷是世交，便留下这公子住在 书房里。这李乡绅膝下无儿，只有一位千金小姐。这小姐芳名叫作雏鸾，琴棋书画， 无所不通。” 贾母忙道：“怪道叫作《凤求鸾》。不用说，我猜着了，自然是这王熙凤要求这雏鸾小姐为妻。” 女先儿笑道：“老祖宗原来听过这一回书。” 众人都道： “老太太什么没听过！便没听过，也猜着了。”
 - 贾母笑道：“这些书都是一个套子，左不过是些佳人才子，最没趣儿。把人家女儿说的那样坏，还说是佳人，编的连影儿也没有了。开口都是书香门第，父亲不是尚书就是宰相，生一个小姐必是爱如珍宝。这小姐必是通文知礼，无所不晓，竟是个绝代佳人。只一见了一个清俊的男人，不管是亲是友，便想起终身大事来，父母也忘了，书礼也忘了，鬼不成鬼，贼不成贼，那一点儿是佳人？便是满腹文章，做出这些事来，也算不得是佳人了。比如男人满腹文章去作贼，难道那王法就说他是才子，就不入贼情一案不成？可知那编书的是自己塞了自己的嘴。再者，既说是世宦书香大家小姐都知礼读书，连夫人都知书识礼，便是告老还家，自然这样大家人口不少，奶母丫鬟伏侍小姐的人也不少，怎么这些书上，凡有这样的事，就只小姐和紧跟的一个丫鬟？你们白想想，那些人都是管什么的，可是前言不答后语？”
 
-- p589
+> p589
+
 - ‘These stories are all the same’, said Grandmother Jia, ’so tedious! Always the same ideally eligible young bachelors and the same ideally beautiful and accomplished young ladies - at least, they are supposed to be ideal, but there’s certainly nothing ideal about their behaviour - in fact there’s nothing very ladylike about them at all. Invariably, we are told how well-born they are. Their father has been a Prime Minister, or a First Secretary at the very least. They are always their father’s only child and the apple of his eye. They are always amazingly well-educated, a model of decorum, a regular paragon of all the virtues - that is, until the first presentable young man comes along. As soon as he appears on the scene - it doesn’t matter who or what he is - all their book-learning and the duty they owe their parents fly out of the window and the next moment they are “making their plans for the future” and generally carrying on in a way that would bring blushes to the cheek of a cat-burglar - certainly not in the least like respectable, educated young ladies. You would hardly call a young woman who conducted herself like that a “paragon”, however many books she might have read - any more than you would acquit a young fellow charged with highway robbery on the grounds that he was a good scholar. The people who make up these stories give themselves the lie every time they open their mouths.
 
 - 众人听了，都笑说：“老太太这一说，是谎都批出来了。” 贾母笑道：“这有个原故：编这样书的，有一等妒人家富贵，或有求不遂心，所以编出来污秽人家。再一等，他自己看了这些书看魔了，他也想一个佳人，所以编了出来取乐。何尝他知道那世宦读书家的道理！别说他那书上那些世宦书礼大家，如今眼下真的，拿我们这中等人家说起，也没有这样的事，别说是那些大家子。可知是诌掉了下巴的话。所以我们从不许说这些书，丫头们也不懂这些话。这几年我老了，他们姊妹们住的远，我偶然闷了，说几句听听，他们一来，就忙歇了。” 李薛二人都笑说：“这正是大家的规矩，连我们家也没这些杂话给孩子们听见。”
 - ‘There’s always a reason for it’, the old lady went on. ‘In some cases it’s because the writer is envious of people so much better off than himself, or disappointed because he has tried to obtain their patronage and failed, and deliberately portrays them in this unfavourable light as a means of getting his own back on them. In other cases the writers have been corrupted by reading this sort of stuff before they begin to write any themselves, and, though totally ignorant of what life in educated, aristocratic families is really like, portray their heroines in this way simply because everyone else does so and they think it will please their readers. I ask you now, never mind very grand families like the ones they pretend to be writing about, even in average well-to-do families like ours when do you ever hear of such carryings-on? It’s a wonder their jaws don’t drop off, telling such dreadful lies! For my part, I  have never allowed these sort of stories to be told. Even the maids here don’t know about such matters. It’s true that during the past year or two, since I’ve been getting older, and particularly now that the young people are most of the time safely out of the way in the Garden, I do once in a while listen to a snatch or two of one of these stories, when I feel in need of cheering up a bit; but as soon as the children arrive, I make the person telling it stop.’
 
-## c65 幽淑女悲题五美吟 浪荡子情遗九龙佩
+## ch65 幽淑女悲题五美吟 浪荡子情遗九龙佩
 
 - 尤二姐笑道：“原来如此。但我听见你们家还有一位寡妇奶奶和几位姑娘。他 这样利害，这些人如何依得？” 
 - 兴儿拍手笑道：“原来奶奶不知道。我们家这位寡妇奶奶，他的浑名叫作 ‘大菩萨’，第一个善德人。我们家的规矩又大，寡妇奶奶们不管事，只宜清净守节。妙在姑娘又多，只把姑娘们交给他，看书写字，学针线， 学道理，这是他的责任。除此问事不知，说事不管。只因这一向他病了，事多，这大奶奶暂管几日。究竟也无可管，不过是按例而行，不像他多事逞才。
 - 我们大姑娘不用说，但凡不好也没这段大福了。二姑娘的浑名是 ‘二木头’，戳一针也不知‘嗳哟’ 一声。三姑娘的浑名是 ‘玫瑰花’。” 尤氏姊妹忙笑问何意。兴儿笑道：“玫瑰花又红又香，无人不爱的，只是刺戳手。也是一位神道，可惜不是太太养的，‘老鸹窝里出凤凰’。四姑娘小，他正经是珍大爷亲妹子，因自幼无母，老太太命太太抱过来养这么大，也是一位不管事的。奶奶不知道，我们家的姑娘不算，另外有两个姑娘，真是天上少有，地下无双。一个是咱们姑太太的女儿，姓林，小名儿叫什么黛玉，面庞身段和三姨不差什么，一肚子文章，只是一身多病，这样的天，还穿夹的，出来风儿一吹就倒了。我们这起没王法的嘴都悄悄的叫他 ‘多病西施’。还有一位姨太太的女儿，姓薛，叫什么宝钗，竟是雪堆出来的。每常出门或上车，或一时院子里瞥见一眼，我们鬼使神差，见了他两个，不敢出气儿。” 
 - 自己不敢出气，是生怕这气大了，吹倒了姓林的；气暖了，吹化了姓薛的
 
-## c74 惑奸谗抄检大观园 矢孤介杜绝宁国府
+## ch74 惑奸谗抄检大观园 矢孤介杜绝宁国府
 
-- 太太说的固然有理，我也不敢辩我并无这样的东西。但其中还要求太太细详其理：那香袋是外头雇工仿着内工绣的，带子穗子一概是市卖货。我便年轻不尊重些，也不要这劳什子，自然都是好的，此其一。二者这东西也不是常带着的，我纵有，也只好在家里，焉肯带在身上各处去？况且又在园里去，个个姊妹我们都肯拉拉扯扯， 倘或露出来，不但在姊妹前，就是奴才看见，我有什么意思？我虽年轻不尊重，亦不能糊涂至此。三则论主子内我是年轻媳妇，算起奴才来，比我更年轻的又不止一个人了。况且他们也常进园，晚间各人家去，焉知不是他们身上的？四则除我常在园里之外，还有那边太太常带过几个小姨娘来，如嫣红翠云等人，皆系年轻侍妾， 他们更该有这个了。还有那边珍大嫂子，他不算甚老外，他也常带过配凤等人来，焉知又不是他们的？五则园内丫头太多，保的住个个都是正经的不成？也有年纪大些的知道了人事，或者一时半刻人查问不到偷着出去，或借着因由同二门上小幺儿们打牙犯嘴，外头得了来的，也未可知。如今不但我没此事，就连平儿我也可以下保的。太太请细想。
+- 太太说的固然有理，我也不敢辩我并无这样的东西。但其中还要求太太细详其理：
+> 那香袋是外头雇工仿着内工绣的，带子穗子一概是市卖货。我便年轻不尊重些，也不要这劳什子，自然都是好的，此其一。
+
+> 二者这东西也不是常带着的，我纵有，也只好在家里，焉肯带在身上各处去？况且又在园里去，个个姊妹我们都肯拉拉扯扯， 倘或露出来，不但在姊妹前，就是奴才看见，我有什么意思？我虽年轻不尊重，亦不能糊涂至此。
+
+> 三则论主子内我是年轻媳妇，算起奴才来，比我更年轻的又不止一个人了。况且他们也常进园，晚间各人家去，焉知不是他们身上的？
+
+> 四则除我常在园里之外，还有那边太太常带过几个小姨娘来，如嫣红翠云等人，皆系年轻侍妾， 他们更该有这个了。还有那边珍大嫂子，他不算甚老外，他也常带过配凤等人来，焉知又不是他们的？
+
+> 五则园内丫头太多，保的住个个都是正经的不成？也有年纪大些的知道了人事，或者一时半刻人查问不到偷着出去，或借着因由同二门上小幺儿们打牙犯嘴，外头得了来的，也未可知。如今不但我没此事，就连平儿我也可以下保的。太太请细想。
+
 - 王夫人听了这一席话大近情理，因叹道：“你起来。我也知道你是大家小姐出 身，焉得轻薄至此，不过我气急了，拿了话激你。但如今却怎么处？你婆婆才打发 人封了这个给我瞧，说是前日从傻大姐手里得的，把我气了个死。” 
 - 太太快别生气。若被众人觉察了，保不定老太太不知道。且平心静气暗暗访察，才得确实，纵然访不着，外人也不能知道。这叫作 ‘胳膊折在袖内’。如今惟有趁着赌钱的因由革了许多的人这空儿，把周瑞媳妇旺儿媳妇等四五个贴近不能走话的人 安插在园里，以查赌为由。再如今他们的丫头也太多了，保不住人大心大，生事作耗，等闹出事来，反悔之不及。如今若无故裁革，不但姑娘们委屈烦恼，就连太太和我也过不去。不如趁此机会，以后凡年纪大些的，或有些咬牙难缠的，拿个错儿撵出去配了人。一则保得住没有别的事，二则也可省些用度。太太想我这话如何？
 

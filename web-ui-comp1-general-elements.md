@@ -19,7 +19,7 @@ modified: '2021-07-28T20:10:24.131Z'
 
 ## faq
 
-### `<a>` 作为button使用时，无法使用<kbd>Tab</kbd>键获得焦点
+### `<a>` 作为button使用时，无法使用`<kbd>Tab</kbd>`键获得焦点
 
 - `<a role="button">anchor</a>` 无href属性就无法tab键focus
 - `<a>anchor</a>` 无href属性就无法tab键focus

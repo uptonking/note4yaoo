@@ -11,7 +11,12 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
-- ## 
+- ## Avoid performance degradations during marketing campaigns by excluding these query strings from your (CDN) Cache Key: utm_*; fbclid; gclib
+- https://twitter.com/TimVereecke/status/1439851763851579393
+- Under actual traffic conditions
+🎯 Better offload
+🎯 Better TTFB performance 
+- Or go the whole hog and select "Ignore all parameters". If your site doesn't rely on query params for driving content you'll get a very nice perf lift.
 
 - ## How Chrome handles: `<script> in <head>` vs. `<script async>` vs. `<script defer>` vs. `<script> in <body>` ; 
 - https://twitter.com/iamakulov/status/1439182424798232577

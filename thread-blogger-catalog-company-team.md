@@ -121,8 +121,6 @@ modified: '2020-10-22T13:06:52.353Z'
   - https://scala.cool/
 - 小米前端技术博客 /20190717/综合
   - http://0313.name/
-- 小米大数据技术博客 /20141203
-  - http://bigdata-blog.net
 - 大搜车技术团队博客 /20190713
   - https://blog.souche.com/
 
@@ -133,8 +131,6 @@ modified: '2020-10-22T13:06:52.353Z'
   - http://ifeve.com/sitemap.html
 - HKUST VisLab
   - http://vis.cse.ust.hk/
-- 智能大数据可视化实验室
-  - http://idvx.lab.tongji.edu.cn/publication.html
 - 浙江大学可视分析小组博客
   - https://zjuvag.org/
 

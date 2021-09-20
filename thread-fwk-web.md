@@ -13,7 +13,13 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## one of my issues with single file components is that i find it troubling having to make a file for each component, no matter how minor it is
+- https://twitter.com/intrnl0/status/1439427883659784194
+- This has been one of mine as well. We have something for this in @MarkoDevTeam templates called the macro tag.
+- [rfc: Inline components for svelte](https://github.com/sveltejs/rfcs/pull/34)
+- 
+- 
+- 
 
 - ## HTML is the original single file component. 
 - https://twitter.com/devongovett/status/1436853348896935942

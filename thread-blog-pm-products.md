@@ -10,7 +10,7 @@ modified: '2021-06-29T07:05:13.621Z'
 # office-doc
 
 # bi-data-tooling
-- [New in Kibana: How we made it easier to manage visualizations and build dashboards_202106](https://www.elastic.co/blog/new-in-kibana-how-we-made-it-easier-manage-visualizations-and-build-dashboards?utm_content=&utm_medium=social&utm_source=twitter)
+## [New in Kibana: How we made it easier to manage visualizations and build dashboards_202106](https://www.elastic.co/blog/new-in-kibana-how-we-made-it-easier-manage-visualizations-and-build-dashboards?utm_content=&utm_medium=social&utm_source=twitter)
   - My hope for this post is that it helps inform the mental models of our curious power users while they attempt to learn these new dashboard creation flows.
   - By-ref vs By-value
   - A dashboard is populated with panels. 
