@@ -16,7 +16,7 @@ modified: '2021-09-20T09:00:43.564Z'
   - 设计模式
   - 参考资料
 
-- frontend 前端开发基础
+- frontend 前端基础
   - react框架
   - 语言基础
   - web框架
@@ -25,7 +25,9 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - projects 项目经历
   - materials-repo
-  - prosemirror 编辑器
+  - configurable-dashboard
+  - prosemirror-editor
+  - react组件
   - 组件库
   - 编辑器
   - 表格
