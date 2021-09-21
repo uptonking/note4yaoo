@@ -28,12 +28,27 @@ modified: '2020-08-06T05:29:22.922Z'
     - negative acknowledgement. // 我不同意
 
  
+
+- ICYMI
+  - In Case You Missed It 万一你错过了
+
+- AMA 
+  - ask me anything
 - LMK
   - let me know
+- AMA
+  -  ask me anything
 - TBH
   - to be honest 老实说
 - tbf
   - to be fair
+
+- FYI
+  - for your information 仅供参考
+- IDC 
+  - I don’t care
+- GG 
+  - good game 认输退出
 - TIL
   - 作为until的简写
   - 代表 today I learned

@@ -11,6 +11,25 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Webpack: Bundle.js - Uncaught ReferenceError: process is not defined
+  - 可以实现读取自定义环境变量，如 REACT_APP_ENV
+
+```JS
+const webpackConfig = {
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env)
+    })
+  ],
+};
+```
+
+- Module not found: Error: Can't resolve '/home/yaoo/Documents/repo/template/all-react/react-starter-ts/src/render.ts'
+  - 注意入口文件是 render.tsx，而不是 render.ts
+
 - [403 forbidden error in Apache with document root on an NTFS partition](https://askubuntu.com/questions/163685)
   - 结论是站点不适合放在win分区；若默认放到win分区，则linux分区的内容可能出问题
   - Please try editing the default sites-available file with that path, restart Apache with sudo service apache2 restart and see if it works.

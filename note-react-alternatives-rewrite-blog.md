@@ -1,25 +1,28 @@
 ---
-tags: [react, rewrite]
-title: note-react-rewrite
+title: note-react-alternatives-rewrite-blog
+tags: [alternatives, blog, react, rewrite]
 created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-01T06:09:16.202Z'
+modified: '2021-09-20T20:13:21.764Z'
 ---
 
-# note-react-rewrite
+# note-react-alternatives-rewrite-blog
 
 # guide
 
-- [完成一个简化版的React learn-react](https://github.com/Luminqi/learn-react)
-  - [实现自定义的渲染器](https://github.com/Luminqi/learn-react/blob/master/Guide/CustomRenderer.md)
-  - [实现 Fiber 架构 I](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part1.md)
-  - [实现 Fiber 架构 II](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part2.md)
-  - [实现 React Core API](https://github.com/Luminqi/learn-react/blob/master/Guide/ReactCore.md)
-- [一个极简的React框架 simple-react](https://github.com/hujiulong/simple-react)
-- [Luy 1.0 ：一个React-like轮子的诞生](https://zhuanlan.zhihu.com/p/30073543)
-  - [「造轮子1」周末和方正一起Luy](https://zhuanlan.zhihu.com/p/30677179)
-
 # react-core
 
+## [Build your own React in 90 lines of JavaScript](https://dev.to/ameerthehacker/build-your-own-react-in-90-lines-of-javascript-1je2)
+
+- What features we will build?
+  - jsx
+  - functional components
+  - class components with state
+  - lifecycle: componentDidMount
+- What we won't be building?
+  - Virtual DOM: import snabbdom used by vuejs
+  - hooks
+  - debuggability
+  - Performance and portability
 # react-hooks
 
 ## [How to replicate useState with vanilla JS](https://stackoverflow.com/questions/64744252/how-to-replicate-usestate-with-vanilla-js)
@@ -31,7 +34,7 @@ modified: '2020-07-01T06:09:16.202Z'
   - Which is why you can have one functional component declaration, render that same function multiple times, and each of those will be able to maintain their own state - 
   - the state isn't part of the function, the state is part of the React fiber.
 
-``` JS
+```JS
 // this line is example only so we can access the stateSetter external to the function
 let stateSetter;
 
@@ -70,7 +73,7 @@ stateSetter('new state'); // state has been updated!
 - 接下来实现 `getHook` 函数找到正在执行的Hook，如果CurrenOwner.current是null，那这就不是一个合法的hook函数，我们直接报错。如果满足条件，我们就把hook的index + 1，接下来我们把组件的Hooks都保存在一个数组里，如果index大于Hooks的长度，说明Hooks没有被创造，我们就push一个空对象，避免之后取值发生runtime error。然后我们直接返回我们的Hook
 - 实现 `useState` 。首先如果initState是函数，直接执行它。其次调用我们我们之前写好的 `getHook` 函数，它返回的就是Hook的状态。接下来就是 useState 的主逻辑，如果hook还没有状态的话，我们就先把正在执行的组件缓存起来，然后 useState 返回的，就是我们的hook.state, 其实就是一个数组，第一个值当然就是我们initState，第一个参数是一个函数，它如果是一个函数，我们就执行它，否则就直接把参数赋值给我们的hook.state第一个值，赋值完毕之后我们把当前的组件加入到更新队列，等待更新
 
-``` typescript
+```typescript
 // 全局对象存放正在执行的hook函数和其在hooks数组中的顺序
 const CurrentOwner: {
   current: null | Component<any, any> ,
@@ -117,20 +120,20 @@ function useState<S>(initialState: S | (() => S)):
 }
 ```
 
-# reinvent the wheel
+# ref
+- [完成一个简化版的React learn-react](https://github.com/Luminqi/learn-react)
+  - [实现自定义的渲染器](https://github.com/Luminqi/learn-react/blob/master/Guide/CustomRenderer.md)
+  - [实现 Fiber 架构 I](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part1.md)
+  - [实现 Fiber 架构 II](https://github.com/Luminqi/learn-react/blob/master/Guide/Fiber_part2.md)
+  - [实现 React Core API](https://github.com/Luminqi/learn-react/blob/master/Guide/ReactCore.md)
+- [一个极简的React框架 simple-react](https://github.com/hujiulong/simple-react)
+- [Luy 1.0 ：一个React-like轮子的诞生](https://zhuanlan.zhihu.com/p/30073543)
+  - [「造轮子1」周末和方正一起Luy](https://zhuanlan.zhihu.com/p/30677179)
 
-- https://github.com/MrWangJustToDo/MyReact
-  - 实现自己的react框架 了解fiber架构 函数组件 hook 异步更新 等react的基础功能
-
-- https://github.com/MuYunyun/cpreact
-  - Build React from Scratch
-  - [从0到1实现React](http://muyunyun.cn/blog/React/%E4%BB%8E0%E5%88%B01%E5%AE%9E%E7%8E%B0React/0.%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87)
-
-- ref
-  - [从零开始的 React 再造之旅](https://segmentfault.com/a/1190000021689852)
-  - [React源码系列(一): 总结看源码心得及方法感受](https://github.com/jsonz1993/react-source-learn/issues/1)
-  - [React 实践揭秘之旅，中高级前端必备(上)](https://github.com/xd-tayde/blog/blob/master/ReactGL-1.md)
-  - [React 实践揭秘之旅，中高级前端必备(下)](https://github.com/xd-tayde/blog/blob/master/ReactGL-2.md)
+- [从零开始的 React 再造之旅](https://segmentfault.com/a/1190000021689852)
+- [React源码系列(一): 总结看源码心得及方法感受](https://github.com/jsonz1993/react-source-learn/issues/1)
+- [React 实践揭秘之旅，中高级前端必备(上)](https://github.com/xd-tayde/blog/blob/master/ReactGL-1.md)
+- [React 实践揭秘之旅，中高级前端必备(下)](https://github.com/xd-tayde/blog/blob/master/ReactGL-2.md)
 - 框架最核心的 `JSX - Render - Diff - Update` 的渲染更新机制
   1. `JSX` 是一种 **动态模板语法**，通过 `Babel` 编译为 `createElement` 函数；
   2. `createElement` 将 `JSX` 转换为 **虚拟Dom(VNode)**，包含完整的标签信息 (类型、属性、子级列表)；

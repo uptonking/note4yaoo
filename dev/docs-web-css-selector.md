@@ -213,3 +213,39 @@ tr:nth-child(odd) or tr:nth-child(2n+1)
 - matches every element which is currently in full-screen mode. 
   - If multiple elements have been put into full-screen mode, this selects them all.
 - lets you configure your stylesheets to automatically adjust the size, style, or layout of content when elements switch back and forth between full-screen and traditional presentations.
+
+# [The Future of CSS: Cascade Layers `@layer`__202109](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/)
+
+- there’s a new CSS Language Feature coming to help us: Cascade Layers (CSS `@layer`).
+
+
+- The CSS Cascade is the algorithm which CSS uses to resolve competing declarations that want to be applied to an element.
+- Without taking Cascade Layers into account just yet, these criteria(These criteria are ranked from high to low priority) are:
+  - Origin and Importance
+  - Context
+  - Style Attribute
+  - Specificity
+  - Order of Appearance (aka Source Code Order)
+
+- When authoring CSS we place our CSS mainly into one and the same origin: the Author Origin. 
+  - As a result, we end up juggling with Selector Specificity and Order of Appearance as our ways to control the cascade. 
+- While doing so, we have to perform a fine balancing act between both of these aspects:
+  - Statements that use selectors of a high specificity can cause problems in case you want to override some properties later in the code. 
+    - This often leads to even more heavy selectors or the use of `!important`, which in itself can raise even more issues.
+  - Statements that use selectors of a low specificity can be overwritten too easily by statements that appear later in the code. 
+    - This can especially be troublesome when loading third-party CSS after your own code.
+
+
+- To help us tame those aspects of the Cascade, a few clever developers have come up with methodologies such as BEM, ITCSS, OOCSS, etc. over time. 
+- These methodologies mainly lean on the following aspects:
+  - Structuring your code in such a way that you create some sort of logical order that works for most scenarios.
+  - Keeping Selector Specificity as low as possible by leaning primarily to classes.
+
+
+- While these approaches can certainly help you strike a balance between Selector Specificity and Order of Appearance, they are not 100% closing:
+  - The established order is never really enforced as Order of Appearance still determines things.
+  - Selector Specificity still has the upper hand over the order of the layers
+
+- To make this balancing act more easy, there’s a new mechanism named Cascade Layers being worked on. 
+  - With Cascade Layers you can split your CSS into several layers via the @layer at-rule.
+- In the same way that Origins provide a balance of power between user and author styles, Cascade Layers provide a structured way to organize and balance concerns within a single Origin.

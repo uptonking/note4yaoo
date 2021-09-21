@@ -1,11 +1,11 @@
 ---
-title: note-react-alternatives-rewrite
-tags: [alternatives, react, rewrite]
+title: note-react-alternatives-rewrite-toc
+tags: [alternatives, lib, react, rewrite, toc]
 created: '2020-12-12T09:10:55.449Z'
-modified: '2021-08-19T06:12:33.168Z'
+modified: '2021-09-20T20:12:38.499Z'
 ---
 
-# note-react-alternatives-rewrite
+# note-react-alternatives-rewrite-toc
 
 # guide
 
@@ -36,7 +36,6 @@ modified: '2021-08-19T06:12:33.168Z'
   - Entrepreneurs can create new projects easily by using the official CLI without the trouble of getting into Babel and Webpack configuration. 
   - You can get all the help from the official website examples and Preact documentation to kick-start your application development. 
   - Along with all the inspiring features of React, the Preact library also consists of some special features like the LinkedState.
-
 - Preact Cons
   - You do not get the context support. 
   - For the stateful functionalities of your application, the createClass function is missing. 
@@ -44,35 +43,6 @@ modified: '2021-08-19T06:12:33.168Z'
   - Preact doesn’t care about the React propTypes. 
   - The community size is yet to reach the competition with React. 
   - Preact lacks innovation and mostly mimics React.
-
-### [The Zen of Preact's source code_202105](https://puruvj.dev/blog/deep-dive-into-preact-source-code)
-
-- Preact's source code is written in TypeScript, but the main files themselves aren't. 
-  - The main files with the functionality are written in plain JavaScript, 
-  - but they use JSDoc to pull in Types from TypeScript Definition files (.d.ts).
-- There's a whole article about Using TypeScript without TypeScript, 
-  - but the TLDR; here would be: Avoid development time tooling. 
-  - If its just plain JS, you don't need to run a file watcher to transpile files as you change them. Just run what you got.
-  - This is a very interesting approach and I see more and more libraries take it up, especially non-UI libraries
-  - For UI libraries, you already got a web server running, so adding in TypeScript in the tooling won't change much, go ahead and add TypeScript
-
-- Preact's source code is very very well written and commented, as you'd expect from such a paramount framework.
-  - One of the reasons Preact is so small is that it reuses it's own exported function in its other exported functions. A LOT
-- Preact is quite a big library to cover in a blog post, so I'll just cover the interesting parts.
-
-- Notable points: `h`, which is Preact's JSX factory, is actually named `createElement`. Just like `React.createElement`. 
-  - But is exported as `h` because it allows you to write raw Preact(Without JSX), also because it was initially inspired from HyperScript 
-- `ref`s in P/React are basically used to encapsulate values that shouldn't trigger re-renders and are not re-created on every re-render.
-  - A `ref` is just an object with `current` property set to `null`.
-- Consumer expects its children to be a function, and it's simply calling it with the context data. 
-  - As for Provider, what it's doing mostly is modifying its parent component's lifecycle hooks to watch for context state changes.
-
-- Hooks are located in a separate directory. 
-  - Unlike React, everything is opt-in in Preact
-- `useState` is basically calling `useReducer`.
-  - `const useState = (initialState) => useReducer(invokeOrReturn, initialState); `.
-- `useCallback` is just useMemo under the hood
-  - `const useCallback = (callback, args) => useMemo(() => callback, args); `.
 
 ## inferno
 
@@ -101,7 +71,9 @@ modified: '2021-08-19T06:12:33.168Z'
 # react-src-code
 - https://github.com/BetaSu/just-react
   - https://react.iamkasong.com/
-  - React技术揭秘」 一本自顶向下的React源码分析书
+  - 卡颂 《React技术揭秘》 一本自顶向下的React源码分析书(不是又一个手撸react)
+  - 本书的宗旨是打造一本严谨、易懂的React源码分析教程，分为理念篇、架构篇、实现篇
+  - 本书在React版本更新后会及时补充，当前版本v17.0.0-alpha
 - https://github.com/BetaSu/react-on-the-way
   - /364Star/202007/js
   - 基于V16.13.1，从0实现React
@@ -117,22 +89,21 @@ modified: '2021-08-19T06:12:33.168Z'
   - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能
   - 还提供了源码解析系列文档，有28个文档
 - https://github.com/AttackXiaoJinJin/reactExplain
-  - React源码解析16.8.6
+  - React源码解析16.8.6，还发布了掘金系列文章  /js
 
-- https://github.com/AttackXiaoJinJin/reactExplain
-  - React源码解析，还发布了掘金系列文章
-
-- react核心源码解析__全栈潇晨
-  - [知乎专栏发布](https://www.zhihu.com/column/c_1345788302880878592)
-  - [react源码解析19. 手写迷你版react](https://zhuanlan.zhihu.com/p/383433662)
-  - [个人网站的视频课程 需注册](https://xiaochen1024.com/series/60b1b600712e370039088e24)
-# react-like-repos
 - https://github.com/pomber/didact
   - /3.8kStar/MIT/202010/js
   - [A DIY guide to build your own React](https://pomb.us/build-your-own-react/)
 - https://github.com/manasb-uoe/didact
   - Typed version of didact
+  - this repository refactors the code into separate files of TypeScript code and adds more features: useEffect, userMemo, useRef
 
+- react核心源码解析__全栈潇晨
+  - [react源码解析19. 手写迷你版react](https://zhuanlan.zhihu.com/p/383433662)
+    - 实现过于简单，没有提供单独的github仓库
+  - [知乎专栏发布](https://www.zhihu.com/column/c_1345788302880878592)
+  - [个人网站的视频课程 需注册](https://xiaochen1024.com/series/60b1b600712e370039088e24)
+# react-like-repos
 - https://github.com/NervJS/nerv
   - /5.3kStar/MIT/202006/ts/inactive
   - Nerv is a virtual-dom based TypeScript library with identical React 16 API
@@ -156,6 +127,12 @@ modified: '2021-08-19T06:12:33.168Z'
 - https://github.com/RubyLouvre/anu
   - /3.1kStar/MIT/202002/js
   - the React16-compat library with hooks
+
+- https://github.com/MrWangJustToDo/MyReact  /js
+  - 实现自己的react框架 了解fiber架构 函数组件 hook 异步更新 等react的基础功能
+- https://github.com/MuYunyun/cpreact  /js
+  - Build React from Scratch
+  - [从0到1实现React](http://muyunyun.cn/blog/React/%E4%BB%8E0%E5%88%B01%E5%AE%9E%E7%8E%B0React/0.%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87)
 
 - ts实现
 
@@ -194,6 +171,12 @@ modified: '2021-08-19T06:12:33.168Z'
 - https://github.com/jackiewillen/build-your-own-react
   - 手把手带你用85行代码实现一个React.js
   - [Build Your Own React__201705](https://hackernoon.com/build-your-own-react-48edb8ed350d)
+- https://github.com/djalbat/reaction  /js
+  - 不支持hooks
+  - The code base is tiny compared to React but React's core functionality is nonetheless implemented faithfully
+  - https://github.com/djalbat/Inference
+    - A dispatcher in a similar vein to Redux. To go hand in hand with Reaction. 
+
 
 ## react-api-like
 

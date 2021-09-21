@@ -25,6 +25,7 @@ modified: '2021-08-30T18:56:18.632Z'
   - However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
 
 - https://github.com/realm/realm-js
+  - https://realm.io/
   - Realm is a mobile database: an alternative to SQLite & key-value stores
   - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
   - Currently we support React Native (both iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).

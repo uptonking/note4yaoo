@@ -35,7 +35,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - 只撤销本次提交记录，实际修改后的文件仍然存在本地
   - 撤销 commit, 同时本地删除该 commit 修改：
     - git reset --hard commit_id
-    - [git 放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
+    - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName`
@@ -103,6 +103,7 @@ git push
 
 - git 常用命令
   - `git branch branchName` : 创建新分支
+  - `git branch -m master main`: 修改分支名
   - `git checkout branchName startPoint` ：切换到新分支
   - `git checkout -b bName` = `g branch bName` + `g checkout bName`
   - `git merge b` ：将b分支合并到当前分支

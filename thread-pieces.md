@@ -13,7 +13,11 @@ modified: '2021-01-11T12:10:50.900Z'
 # discuss
 - ## 
 
-- ## 
+- ## When you look at technology today, you probably group things into categories
+- https://dev.to/triptych/observable-discovering-a-new-world-1egc
+  - such as “Relevant to me” or “Not something I’ll ever use”. 
+- However, there are things that you come across as “What is this?” or “What’s the big deal?” where you are unsure as to whether this new thing you are encountering will be a distraction or a possible new source of benefit to you.
+  - You hear about things like blockchain, AI, Augmented Reality, and new languages like Rust or GO and you struggle to find a way to make it relevant to your day to day work.
 
 - ## “The purpose of software engineering is to control complexity, not to create it.” - Pamela Zave
 - https://twitter.com/CodeWisdom/status/1438174531508658176

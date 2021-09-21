@@ -7,7 +7,7 @@ modified: '2021-01-19T10:57:46.316Z'
 
 # page-frontend-why-I-still-dont-use-graphql
 
-# [Why do Webdevs keep trying to kill REST?](https://dev.to/swyx/why-do-webdevs-keep-trying-to-kill-rest-j2j)
+# [Why do Webdevs keep trying to kill REST?](https://www.swyx.io/client-server-battle/)
 - Watching recent trends in client-server paradigms, from Apollo GraphQL to React Server Components to Rails Hotwire, I've had a revelation that helped me make sense of it all: They're all abstractions over REST!
 - There are two schools of thought:
 - Smart Client: State updates are rendered clientside first, then sent back to the server.
@@ -113,6 +113,14 @@ modified: '2021-01-19T10:57:46.316Z'
 
 - JSONAPI is a JSON REST spec, and the Relay spec is essentially a GraphQL superset spec
   - Similar to JSONAPI, OpenAPI (formerly Swagger) is another superset rest spec that offers a unique perspective on REST API usage.
+
+- Not Everyone is Anti-REST
+  - Splitting hairs, but we're pro-HTTP, indifferent to REST. 
+  - A form can send a graphql mutation via POST or a PUT to a REST endpoint, we just care that's it's not GET.
+
+- I'd love to get more attention on @OrbitJS and @jsonapi
+  - They don't seem like much at first but it is the best realization of the smart client pattern you mention that I've seen. Totally REST friendly but sadly not marketed as well as GQL
+
 # Why I Still Don't Use GraphQL
 - Some thoughts I've gathered over the years on what I think about GraphQL. 
   - All of this is subject to change of course, and some of it may be "hot-take"-ish, 

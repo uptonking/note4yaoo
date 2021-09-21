@@ -6,6 +6,9 @@ modified: '2021-03-29T19:30:08.250Z'
 ---
 
 # dev-log-faq-100k-not-yet
+
+- http和rest的区别是什么
+
 - reselect vs useMemo
 
 - 对于智能开关类产品，如灯泡、风扇等，若通过app执行开关命令后，自身硬件的开关状态就会出现不一致的问题
