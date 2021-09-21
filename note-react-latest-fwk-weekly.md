@@ -9,11 +9,35 @@ modified: '2021-03-22T18:46:03.513Z'
 
 # guide
 
-
 - [React Status Weekly](https://react.statuscode.com/issues)
 - [React Weekly 法语版](https://www.getrevue.co/profile/sebastien-lorber)
   - 英文版 https://twitter.com/sebastienlorber
 # 2021
+
+## w0927-1003
+
+## w0920-09926
+
+## w0913-09919
+
+👉 Ultra
+👉 Snapshot Testing
+👉 TS Props Readability
+👉 TS Polymorphism
+👉 Best Practices
+👉 SWR
+👉 Render Tracker
+👉 Flutter / Skia in RN
+👉 RN's Many Platforms Vision
+👉 Mobile: Imperative ➡️ Declarative
+👉 TC39
+👉 App History API
+👉 Solid
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1435332777554153472
+
+## w0906-09912
 
 ## w0830-0905
 
@@ -34,6 +58,7 @@ modified: '2021-03-22T18:46:03.513Z'
 - ref
   - https://twitter.com/sebastienlorber/status/1435332777554153472
   - https://github.com/lahmatiy/react-render-tracker
+
     - a tool to discover performance issues related to unintended re-renders
 
 ## w0823-0829

@@ -45,6 +45,22 @@ modified: '2021-04-24T08:29:02.272Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## how much trouble is it really to have client and server code live in the same file, only to be stripped out on either end during bundling? Is it complex? Needs dependency tracking? 
+- https://twitter.com/tannerlinsley/status/1440306663299293191
+- @vercel does this with Next. In page files `getStaticProps` , `getServersideProps` and `getStaticPaths` are stripped from the client bundle
+- One way is to write a babel plugin that removes the server code from the file and then remove all unused imports so that node builtins are removed. But the way next does it is by tracking imports and variables and then removing the ones that were just used inside the server code.
+
+- Reading about isomorphic architecture for web apps, looks promising.
+  - Routes render on client or server depending on request 
+  - React bootstraps to rendered HTML on data round trip
+  - Once data is fetched, it is cached in client state
+
 - ## How to do partial hydration in React, 2021 edition
 - https://twitter.com/iamakulov/status/1437415799514271746
 - Use https://github.com/hadeeb/react-lazy-hydration

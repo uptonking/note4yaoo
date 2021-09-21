@@ -37,15 +37,17 @@ modified: '2020-11-11T13:16:42.423Z'
 - 卫健委：疫情风险等级查询
   - http://bmfw.www.gov.cn/yqfxdjcx/index.html
 
+- https://github.com/pomber/covid19
+  - Transforms the data from CSSEGISandData/COVID-19 into a json file. 
+  - https://pomber.github.io/covid19/timeseries.json
+  - Updated three times a day using GitHub Actions.
+  - JSON time-series of coronavirus cases (confirmed, deaths and recovered) per country - updated daily
 # vaccine
-
 - [Coronavirus (COVID-19) Vaccinations](https://ourworldindata.org/covid-vaccinations)
   - Our World in Data will be tracking recent announcements on the first countries to administer these vaccinations. 
   - Our sources for the data presented here are listed at the bottom of this page.
 - [巴西公布科兴新冠疫苗临床试验结果，总保护效力 50.4％，预防轻症有效率78%](https://www.zhihu.com/question/438378660)
-
 # org
-
 - 新冠肺炎（COVID-19）开放数据源
   - https://www.aminer.cn/data-covid19/
   - 只有索引链接
@@ -56,15 +58,11 @@ modified: '2020-11-11T13:16:42.423Z'
   - https://aws.amazon.com/cn/blogs/big-data/a-public-data-lake-for-analysis-of-covid-19-data/
 - CORONAVIRUS RESOURCE CENTER
   - https://coronavirus.jhu.edu/
-
 # gov-cn
-
 - 广东省新冠肺炎疫情基本情况统计表
   - http://gddata.gd.gov.cn/data/dataSet/toDataDetails/29000_01300008
 - 北京新型冠状病毒感染的肺炎疫情信息历史数据下载
   - https://data.beijing.gov.cn/cms/web/download/historyDownload.jsp?articleID=18372
-
 # gov-world
-
 - [Cases in the US](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/cases-in-us.html)
 - [Cases & Deaths by County](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/county-map.html)
