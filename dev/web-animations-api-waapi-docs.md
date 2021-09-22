@@ -1,11 +1,11 @@
 ---
-title: web-animations-api-docs
+title: web-animations-api-waapi-docs
 tags: [animation, docs, waapi, web]
 created: '2020-08-02T13:35:01.695Z'
-modified: '2020-12-21T07:44:38.205Z'
+modified: '2021-09-22T04:13:57.615Z'
 ---
 
-# web-animations-api-docs
+# web-animations-api-waapi-docs
 
 # pieces
 

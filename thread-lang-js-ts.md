@@ -16,7 +16,11 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## Moved some of my smaller libs to JSDoc TS; thoroughly recommend it. 
+- https://twitter.com/Rich_Harris/status/1440639878065111048
+  - Among other things, the resulting code is generally smaller than transpiled code. 
+  - Building, testing etc all become much less finicky.
+  - An underdiscussed benefit of JS over TS - I'll frequently test individual functions by pasting them into the browser console. There's no faster feedback loop. You can't do that with TS.
 
 - ## Array elements are actually properties with string keys
 - https://twitter.com/rauschma/status/1438030552871981056

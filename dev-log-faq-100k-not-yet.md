@@ -6,17 +6,7 @@ modified: '2021-03-29T19:30:08.250Z'
 ---
 
 # dev-log-faq-100k-not-yet
-- setTimeout的callback调用自身是否会无限循环？ 测试表明，会无限循环
-
-```JS
-function sayHello() {
-  console.log(';;ing')
-
-  setTimeout(sayHello, 1500)
-}
-
-sayHello() // 会无限循环打印 
-```
+- 闭包和class的实例变量
 
 - http和rest的区别是什么
 

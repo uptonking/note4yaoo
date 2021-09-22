@@ -9,7 +9,16 @@ modified: '2021-05-14T12:04:55.412Z'
 
 # guide
 
-# discuss-stars
+# discuss-
+- ## [The CKEditor 5 and CKEditor 4 comparison](https://support.ckeditor.com/hc/en-us/sections/115001489149-The-CKEditor-4-and-CKEditor-5-Comparison)
+- When compared to its predecessor, CKEditor 5 should be considered a totally new editor. 
+  - Every single aspect of it was redesigned — from installation, to integration, to features, to its data model, and finally to its API. 
+  - There is no "drop in" solution for migrating. 
+- New data model
+  - The new data model is part of the MVC architecture of the editing engine. 
+  - It is defined and controlled with pure JavaScript, moving the data model that represents the text totally away from the browser
+  - The data structure is normalized and optimized for complex data management operations making implementation of algorithms such as Operational Transformation and real-time collaboration possible.
+
 - ## [如何不借助 contenteditable 实现富文本编辑器？](https://www.zhihu.com/question/366666295)
 - 在浏览器里，打开了 contentEditable 不等于借助了 contentEditable。
 - 粗略看来，一个 DOM 元素加上 contenteditable 属性后，就大致具备了这些能力：

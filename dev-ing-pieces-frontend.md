@@ -12,6 +12,84 @@ modified: '2021-03-29T19:30:00.059Z'
 # logging
 
  
+
+- ## [requestIdleCallback和requestAnimationFrame详解](https://www.cnblogs.com/cangqinglang/p/13877078.html)
+- 页面是一帧一帧绘制出来的，当每秒绘制的帧数（FPS）达到 60 时，页面是流畅的
+  - 每一帧分到的时间是 1000/60 ≈ 16 ms。所以我们书写代码时力求不让一帧的工作量超过 16ms。
+- 浏览器每一帧都需要完成哪些工作？ life of a frame
+1. 处理用户的交互
+  - blocking input events: touch wheel
+  - non-blocking input events: click, keypress
+2. JS执行
+  - 如事件处理函数
+3. 帧开始。窗口尺寸变更，页面滚去等的处理
+  - window resize
+  - scroll
+  - mediaquery changed
+  - animation events
+4. requestAnimationFrame(rAF)/IntersectionObserver callbacks
+5. Layout
+  - recalc style
+  - update layout
+  - ResizeObserver callbacks
+6. Paint
+  - compositing update
+  - patint invalidation
+  - records
+- requestIdleCallback 可能不会执行
+- 上面六个步骤完成后没超过 16 ms，说明时间有富余，此时就会执行 `requestIdleCallback` 里注册的任务。
+- requestAnimationFrame 每一帧必定会执行，requestIdleCallback 是捡浏览器空闲来执行任务。
+
+- 一些低优先级的任务可使用 requestIdleCallback 等浏览器不忙的时候来执行，同时因为时间有限，它所执行的任务应该尽量是能够量化，细分的微任务（micro task）。
+  - 因为它发生在一帧的最后，此时页面布局已经完成，所以不建议在 requestIdleCallback 里再操作 DOM，这样会导致页面再次重绘。DOM 操作建议在 rAF 中进行。
+- Promise也不建议在这里面进行，因为 Promise 的回调属性 Event loop 中优先级较高的一种微任务，会在 requestIdleCallback 结束时立即执行，不管此时是否还有富余的时间，这样有很大可能会让一帧超过 16 ms。
+
+- requestAnimationFrame(callback) 会在浏览器每次重绘前执行 callback 回调, 每次 callback 执行的时机都是浏览器刷新下一帧渲染周期的起点上。
+
+- requestAnimationFrame 方法不同与 setTimeout 或 setInterval，它是由系统来决定回调函数的执行时机的，会请求浏览器在下一次重新渲染之前执行回调函数。
+  - 无论设备的刷新率是多少，requestAnimationFrame 的时间间隔都会紧跟屏幕刷新一次所需要的时间
+  - 需要注意的是这个方法虽然能够保证回调函数在每一帧内只渲染一次，但是如果这一帧有太多任务执行，还是会造成卡顿的；因此它只能保证重新渲染的时间间隔最短是屏幕的刷新时间。
+
+- ## [React 源码解析 - 调度模块原理 - 实现 requestIdleCallback](https://www.jianshu.com/p/87533d64626a)
+
+- macrotasks
+  - setTimeout, setInterval, setImmediate, I/O, UI rendering
+- microtasks
+  - process.nextTick, Promises, Object.observe, MutationObserver
+- 在每一帧的中会先执行 **macrotasks 任务 -> 再执行 UI rendering -> 最后有剩余时间执行Idle(一般是低优先级)回调**
+
+- react 16 之前，通过vdom更新dom是同步的，一旦有更新就会一直执行到更新完毕, 如果更新很复杂就会一直占用浏览器主线程，这时候浏览器本身的动画和用户输入操作就会出现卡顿或没响应。
+  - react 16 后，采用时间片的方式解决更新卡顿的问题。
+  - 给每个 react 更新任务一个过期时间 timeout，维护一个 react 更新队列
+  - 通过 requestAnimationFrame 找到每一帧的开始时间，再计算出下一帧的开始时间
+  - 把优先级最高的 react 更新任务推入 event loop 的 tasks queue 中
+  - 每次 event loop 开始 react 更新的 tasks 时都会检查这个任务是否到期 timeout 了，只有 timeout 时才会执行
+  - react更新任务会先进入 renderRoot 渲染阶段更新 fiberTree 上的内容，再进行 completeRoot 提交阶段更改 dom 的最终结果。
+  - react 更新任务 didTimeout 过期时执行 renderRoot ，这个渲染阶段哪怕时间很长也最大限度的保证了浏览器高优先级别的动画和用户输入的流畅运行
+- 总结
+  - 调度时通过 requestAnimationFrame api 在浏览器每次重绘前做想做的事
+  - 
+
+- ## [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+- `window.requestIdleCallback(callback, options)` method queues a function to be called during a browser's idle periods. 
+  - This enables developers to perform background and low priority work on the main event loop, without impacting latency-critical events such as animation and input response. 
+  - Functions are generally called in first-in-first-out order; 
+  - however, callbacks which have a timeout specified may be called out-of-order if necessary in order to run them before the timeout elapses.
+
+> safari、safari ios、ie都不支持，但其他浏览器都支持
+
+- ## setTimeout的callback调用自身是否会无限循环？ 测试表明，会无限循环
+
+```JS
+function sayHello() {
+  console.log(';;ing')
+
+  setTimeout(sayHello, 1500)
+}
+
+sayHello() // 会无限循环打印 
+```
+
 - ## [How to use onClick event on Link?](https://stackoverflow.com/questions/48294737)
 - One possible way is, Instead of using `Link`, use `history.push` to change the route dynamically.
 - Now first perform all the task inside `onClick` function 
@@ -243,9 +321,9 @@ parseInt("0xf", 10) === 0; //true. This is supposed to be 15
 
 - ## [Difference between apachectl and apache2](https://stackoverflow.com/questions/16338313)
 - `man apache2` indicates the following:
-  - In  general, `apache2` should not be invoked directly, but rather should be invoked via /etc/init.d/apache2 or `apache2ctl` . 
+  - In  general,  `apache2` should not be invoked directly, but rather should be invoked via /etc/init.d/apache2 or `apache2ctl` . 
   - The default Debian configuration  requires  environment variables  that  are  defined  in `/etc/apache2/envvars` and are not available if `apache2` is started directly.
-  - However, `apache2ctl` can be used to pass arbitrary arguments to `apache2` .
+  - However,  `apache2ctl` can be used to pass arbitrary arguments to `apache2` .
 
 - ## [How to prevent anchor links from scrolling behind a sticky header](https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/)
 - The `scroll-margin-top` property lets you define a top margin that the browser should use when snapping a scrolled element into place.

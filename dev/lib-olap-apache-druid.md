@@ -24,3 +24,10 @@ modified: '2021-05-13T03:15:22.261Z'
 - 当然clickhouse也有缺陷。
   - 从我自己做过的测试来看，clickhouse主要关注单表优化，不能很好地处理复杂表达式和多表join的场景，而且在需要落盘的场景clickhouse也没有做过很好的优化。
   - 有些原因是clickhouse没有在这个点上花太多功夫，有些原因则是clickhouse的列式架构本身的限制。
+
+- ## An interesting aspect of this comparison between Clickhouse and Apache Pinot is C++ is assumed to be faster than Java. If this is true today, will it be true in 5 years time?
+- https://twitter.com/richardstartin/status/1440382771730411520
+- Reminds me Apache Cassandra vs ScyllaDB a bit. I’d say it’s rather a question of how close Java and C++ could end up in terms of performance in certain use cases.
+
+- ## Clickhouse and Apache Pinot
+- https://www.reddit.com/r/bigdata/comments/pse4gb/clickhouse_and_apache_pinot/

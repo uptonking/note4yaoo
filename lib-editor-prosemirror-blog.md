@@ -6,14 +6,13 @@ modified: '2021-06-15T00:07:49.228Z'
 ---
 
 # lib-editor-prosemirror-blog
-# guide
 
+# guide
 
 - prosemirror-experts
   - https://github.com/benrbray
     - https://github.com/benrbray/noteworthy
     - https://github.com/benrbray/prosemirror-math
-
 # [富文本编辑器Prosemirror - 入门](https://zhuanlan.zhihu.com/p/263454334)
 - prosemirror-model：
   - 负责prosemirror的内容结构。
@@ -333,3 +332,7 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 
 - [Why Tag1 Selected ProseMirror_201911](https://www.tag1consulting.com/blog/modern-rich-text-editors-how-evaluate-evolving-landscape)
   - 比较了 prosemirror，draftjs、ckeditor5、quill、slate
+# ref
+- [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
+
+- [Decouple look&feel from Remirror extensions: render props to the rescue](https://medium.com/collaborne-engineering/decouple-look-feel-from-remirror-extensions-87a06ad9214e)

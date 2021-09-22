@@ -10,7 +10,19 @@ modified: '2021-08-06T08:32:26.142Z'
 # discuss
 - ## 
 
-- ## 
+- ## Thunks are great for "run some code now and dispatch eventually" logic, but they can't _listen_ for other actions.
+- https://twitter.com/acemarke/status/1440494692836069392
+  - Sagas and observables are widely used for that, but they're heavyweight syntactically and conceptually.
+- Would love to have folks try out the "action listener callback middleware" we've got as an upcoming RTK API
+  - It lets you add listeners ahead of time (statically), but also dynamically add listeners at runtime. Listeners can call `dispatch` and `getState` , unsubscribe, etc.
+
+```JS
+let mw = createActionListenerMiddleware()
+
+mw.addListener(todoAdded, (action, listenerApi) => {
+      console.log(`Text was: ${action.payload}, new num todos: ${listenerApi.getState().todos.length})
+})
+```
 
 - ## JWT shouldn't be the default way of storing session data - because it doesn't allow logging out a user. 
 - https://twitter.com/francoisz/status/1394258658641514514
