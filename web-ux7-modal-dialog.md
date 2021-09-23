@@ -10,6 +10,24 @@ modified: '2021-07-29T20:37:39.797Z'
 # guide
 
 # discuss
+- ## Building a Dialog component: markup, handlers, problems, solution
+- https://twitter.com/peduarte/status/1440610257810571269
+- The markup
+  - We need to be able to open and close it
+- The handlers
+  -  add some state and some handlers to be able to open and close the Dialog
+- The problems
+  - Lack of instructions for assistive technology 
+  - Lack of keyboard shortcuts 
+  - Lack of control over the content in the DOM
+- The solution
+- The @radix_ui Dialog component is unstyled and comes with all necessary features out of the box
+  · Follows the WAI-ARIA pattern
+  · Implements AT instructions
+  · Focus trap
+  · Scroll lock
+  · Keyboard shortcuts
+  · Familiar API
 
 - ## [Design Patterns for Replacing Modal Windows](https://community.appway.com/screen/kb/article/design-patterns-for-replacing-modal-windows-1482810903553)
 - The problem with modal windows
@@ -30,5 +48,4 @@ modified: '2021-07-29T20:37:39.797Z'
   - Close when clicking outside the modal window
   - Add a drop shadow and a transparent background
   - Don't make the modal window too large
-
 # ref

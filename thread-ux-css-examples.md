@@ -24,7 +24,10 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## CSS Scroll-Timeline Demo! a full-screen carousel, with split-screen panels. Pure CSS, no JS!
+- https://twitter.com/bramus/status/1440663180905119759
+  - The code builds further upon this basic full-screen carousel with scroll-snapping that I built earlier.
+  - https://codepen.io/bramus/pen/MWoXNgb
 
 - ## 纯css实现的键盘
 - https://codepen.io/lillian-kodi/pen/poeXoXr

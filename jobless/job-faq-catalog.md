@@ -17,13 +17,13 @@ modified: '2021-09-20T09:00:43.564Z'
   - 参考资料
 
 - frontend 前端基础
-  - react框架
   - 语言基础
   - web框架
   - 性能优化
   - 参考资料
 
 - projects 项目经历
+  - react框架
   - materials-repo
   - configurable-dashboard
   - prosemirror-editor

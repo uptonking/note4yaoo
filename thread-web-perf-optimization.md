@@ -11,6 +11,32 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Optimum `<head>` order for performance
+- https://twitter.com/smashingmag/status/1440697011985018881
+- Putting the 'SEO' `meta` tags at the end of the `<head>` might be optimal for performance, it's actually very dangerous for SEO. The inclusion of scripts above those meta tags in the `<head>` increases the likelihood of search engines ignoring or improperly parsing the `meta` tags.
+  - Google does indeed render in headless browsers, but not for all pages and definitely not faultlessly.
+- Not all `<meta>` s should be at the top.
+  - to avoid reparsing
+  - since this is rendered separately, in the browser UI itself
+  - since this affects layout
+  - [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate/blob/main/dist/doc/html.md)
+
+```html
+<meta charset="utf-8"><!-- 1 -->
+<title>…</title><!-- 2 -->
+<meta name="viewport" content="width=device-width"><!-- 3 -->
+<link rel="stylesheet" href="css">
+<-- everything else -->
+```
+
+- Preload of fonts should generally go before CSS if you’re reasonably confident the fonts will be used on the page. Improves waterfall, CLS, FOUT, etc. And yeah, I don’t think sync JS before sync CSS makes sense
+
 - ## Avoid performance degradations during marketing campaigns by excluding these query strings from your (CDN) Cache Key: utm_*; fbclid; gclib
 - https://twitter.com/TimVereecke/status/1439851763851579393
 - Under actual traffic conditions

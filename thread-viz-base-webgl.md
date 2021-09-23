@@ -16,7 +16,11 @@ modified: '2021-03-11T11:26:12.335Z'
 
 - ## 
 
-- ## 
+- ## Just released v2 of TinySDF, my ~1.2kb browser-side SDF font generator (useful for rendering crisp scalable text in WebGL) 
+- https://twitter.com/mourner/status/1440713101049929745
+- Can this be used on labels on maps? Trying to understand the use cases for this better.
+  - Yes. Currently it’s being used in Mapbox GL JS to render Chinese/Japanese/Korean labels locally, as there have too many glyphs to download SDFs from a server (which happens for other languages)
+  - Ah thanks for the explanation.  I could see you could maybe use something like this to render dynamic data driven symbols.  Eg and arrow pointing in a specific direction
 
 - ## With the next major release of react-three-a11y, I want full WebGL user interface to become a thing.
 - https://twitter.com/AlaricBaraou/status/1418879357679030278

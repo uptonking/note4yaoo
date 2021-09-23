@@ -11,6 +11,19 @@ modified: '2021-03-11T11:26:06.670Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TIL that the transform origin property of an SVG element is relative to the SVG image, rather than the center of the transforming element like it is in CSS.
+- https://twitter.com/steveruizok/status/1440730385248260104
+- Did you use `transform-box: fill-box;` on the SVG element to transform on its origin instead of the SVG image?
+  - Today I learned that too! I used `rotate(degrees, centerX, centerY)`
+
 - ## I was that close to a cool screenshot approach based on an SVG image with `foreignObject` HTML rendered to a canvas that would then be `toBlob()` 'ed, but the canvas is always tainted(腐坏的，受污染的)
 - https://twitter.com/tomayac/status/1418266133568888834
   - Blobs taint the canvas immediately, and data URLs (see last comment on the bug) somehow don’t work and seem to simply strip out all HTML in foreignObject. HTML2Canvas exists (and is 42kb gzipped) for a reason.
