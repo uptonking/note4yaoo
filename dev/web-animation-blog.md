@@ -7,8 +7,19 @@ modified: '2020-12-21T07:44:14.728Z'
 
 # web-animation-blog
 
-# [React-Spring vs Framer Motion: Comparing Examples in Two Animation Libraries](https://medium.com/the-clever-dev/react-spring-vs-framer-motion-comparing-examples-in-two-animation-libraries-ad4d866dca5)
+# [motion one: performance](https://motion.dev/guides/performance)
 
+## conclusion
+
+- To achieve smooth animations your main priority should be which values you animate. 
+  - As a developer, that is the thing you have most control over.
+- `transform` and `opacity` are cheapest to render in all browsers. 
+- Browsers are improving the rendering performance of other styles (and SVG) all the time, with `filter`,  `background-color` and `clip-path` on the horizon.
+- Layout-triggering styles can be animated on elements that don't affect the layout of surrounding elements (for instance if they're `position: absolute`). 
+  - But make sure you test these animations in many browsers, especially low-powered devices.
+- Finally, hardware acceleration is an excellent tool to avoid jank if your website is performing heavy processing during an animation. 
+  - But it isn't something you have full control over, there are many conditions under which it gets disabled.
+# [React-Spring vs Framer Motion: Comparing Examples in Two Animation Libraries](https://medium.com/the-clever-dev/react-spring-vs-framer-motion-comparing-examples-in-two-animation-libraries-ad4d866dca5)
 - Framer Motion uses the more traditional duration-and-location approach. 
   - Most developers likely have experience with this animation strategy and it will feel familiar.
 - React-Spring approaches animations using spring-physics. 
@@ -163,9 +174,7 @@ modified: '2020-12-21T07:44:14.728Z'
   - Fur­ther­more, only some of the API has been built-out so far, so some of the more advanced fea­tures are still a lit­tle while off (ani­ma­tion motion along a path for example).
 - With the Web Ani­ma­tions API still in the works, for com­plex ani­ma­tion we may want to fall back to tried-and-test­ed 3rd par­ty libraries
 - The impor­tant thing to note is that all these libraries use one or more of the approach­es we’ve men­tioned: ful­ly cus­tom JavaScript, CSS transitions/​animations, WAAPI or a mix of all three.
-# Tips for Writing Animation Code Efficiently
-- [Tips for Writing Animation Code Efficiently](https://css-tricks.com/tips-for-writing-animation-code-efficiently/)
-
+# [Tips for Writing Animation Code Efficiently](https://css-tricks.com/tips-for-writing-animation-code-efficiently/)
 - I will be using the GreenSock Animation Platform (GSAP). 
 - It provides a simple, readable API and solves cross-browser inconsistencies so that you can focus on animating. 
 - Use an animation library

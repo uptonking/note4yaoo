@@ -15,7 +15,8 @@ modified: '2021-07-25T12:49:10.410Z'
 
 - ## 
 
-- ## 
+- ## In CSS you can use `display: contents` to omit the box of an element, which makes it behave like its child elements
+- https://twitter.com/sobedominik/status/1441004416866213892
 
 - ## Poll: Imagine your company has a component library that implements your design system. Should the components support custom restyling?
 - https://twitter.com/housecor/status/1429426336695824384
