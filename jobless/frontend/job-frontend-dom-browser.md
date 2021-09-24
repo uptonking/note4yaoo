@@ -27,15 +27,130 @@ modified: '2021-09-23T08:23:52.100Z'
   - Promise.resolve()是同步行为，当落定为解决态后，then回调才会加入任务队列
   - 当await后的promise落定，此时给await提供值并恢复async函数执行的回调作为一个微任务被添加到队列
   - promise链式调用时，前一个回调落定后，后一个回调进入微任务队列
+# microtask vs macrotask
+- macrotasks
+  - setTimeout, setInterval, setImmediate, 
+  - requestAnimationFrame, 
+  - I/O, UI rendering
+- microtasks
+  - promise, queueMicrotask()
+  - MutationObserver
+  - process.nextTick, 
+
+- event loop algorithm
+  1. Dequeue and run the oldest task from the macrotask queue (e.g. “script”).
+  2. Execute all microtasks: While the microtask queue is not empty: Dequeue and run the oldest microtask.
+  3. Render changes if any.
+  4. If the macrotask queue is empty, wait till a macrotask appears.
+  5. Go to step 1.
+- To schedule a new macrotask:
+  - Use zero delayed `setTimeout(f)`: split a big calculation-heavy task into pieces
+- To schedule a new microtask
+  - Use `queueMicrotask(f)`.
+  - Also promise handlers go through the microtask queue.
+- There’s no UI or network event handling between microtasks: they run immediately one after another.
+- For long heavy calculations that shouldn’t block the event loop, we can use Web Workers.
+  - Web Workers can exchange messages with the main process, but they have their own variables, and their own event loop.
+
+- All microtasks are completed before any other event handling or rendering or any other macrotask takes place.
+  - it guarantees that the application environment is basically the same (no mouse coordinate changes, no new network data, etc) between microtasks.
+
+## [Difference between microtask and macrotask within an event loop context](https://stackoverflow.com/questions/25915634)
+
+- One go-around of the event loop will have exactly one task being processed from the macrotask queue (this queue is simply called the task queue in the WHATWG specification).
+  - After this macrotask has finished, all available microtasks will be processed, namely within the same go-around cycle. 
+  - While these microtasks are processed, they can queue even more microtasks
+- If a microtask recursively queues other microtasks, it might take a long time until the next macrotask is processed. 
+  - This means, you could end up with a blocked UI, or some finished I/O idling in your application.
+- requestAnimationFrame (and UI rendering) are not "tasks", they are part of the event loop processing and are just callbacks, 
+  - rAF being stored in a map not a queue 
+  - and other UI events like scroll or resize being just DOM events. 
+  - This means you can have many non-microtask js jobs executed in the same event loop iteration
+
+- when a task (in macrotask queue) is running, new events may be registered. So new tasks may be created.
+  - setTimeout(callback, n)'s callback is a task, and will be pushed into macrotask queue, even n is 0; 
+  - promiseA.then()'s callback is a task
+    - promiseA is resolved/rejected:  the task will be pushed into microtask queue in current round of event loop.
+    - promiseA is pending:  the task will be pushed into microtask queue in the future round of event loop(may be next round)
+- task in microtask queue will be run in the current round, while task in macrotask queue has to wait for next round of event loop.
+- we all know callback of "click", "scroll", "ajax", "setTimeout"... are tasks, however we should also remember js codes as a whole in `script` tag is a task(a macrotask) too.
+
+```JS
+console.log(1);
+setTimeout(() => {
+  console.log(2);
+});
+new Promise((resolve) => {
+    console.log(3);
+    resolve("resolve");
+    console.log(4);
+    reject("error");
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .then((res) => {
+    console.log(res);
+  });
+
+Promise.resolve().then(() => {
+  console.log(5);
+});
+console.log(6);
+
+// 输出顺序 1 3 4 6 5 resolve 2
+```
+
+```js
+console.log(1);
+setTimeout(() => {
+  console.log(2);
+  Promise.resolve().then(() => {
+    console.log(3)
+  });
+});
+new Promise((resolve, reject) => {
+  console.log(4)
+  resolve(5)
+}).then((data) => {
+  console.log(data);
+})
+setTimeout(() => {
+  console.log(6);
+})
+console.log(7);
+
+// 1475236
+```
+
+```JS
+async function async1() {
+  console.log('async1 start'); //2
+  await async2();
+  console.log('async1 end'); // 6
+}
+async function async2() {
+  console.log('async2'); //3
+}
+
+console.log('script start'); //1
+setTimeout(function() {
+  console.log('setTimeout'); //8
+}, 0)
+async1();
+new Promise(function(resolve) {
+  console.log('promise1'); //4
+  resolve();
+}).then(function() {
+  console.log('promise2'); //7
+});
+```
 
 # dom操作
-
 - elem.querySelector(css) 会返回给定 CSS 选择器的第一个元素。其结果与 elem.querySelectorAll(css)[0] 相同
 - 该搜索器支持伪类，如 :hover 和 :active，但是不支持伪元素，伪元素会使得返回结果始终为空列表
 - getElementById(id) 获取的是动态集合，querySelector 获取的是静态集合，即如果在脚本中修改DOM，以 querySelector 获取的元素并不会随之更新
-
 # 事件
-
 - DOM2事件规范规定事件流分为3 个阶段：事件捕获、到达目标和事件冒泡
   - 现代浏览器支持以冒泡的方式处理
 - 默认事件处理程序会被添加到事件流的冒泡阶段，主要原因是跨浏览器兼容性好。如果不需要拦截，则不要使用事件捕获。
@@ -72,9 +187,7 @@ ele.insertBefore(new, old)
     - 多个defer脚本会保持其相对顺序，就像常规脚本一样
   - defer属性的脚本一定会在完成页面 DOM 结构加载后，触发 DOMContentLoaded 前执行
     - 多个defer脚本会保持其相对顺序，就像常规脚本一样
-
 # 浏览器架构
-
 - 现代浏览器通常由7部分构成：
   - 渲染引擎：负责显示请求的内容。如果请求的内容是 HTML，它就负责解析 HTML 和 CSS 内容，并将解析后的内容显示在屏幕上。
   - JS引擎：用于解析和执行JavaScript代码。
@@ -94,12 +207,15 @@ ele.insertBefore(new, old)
 
 - 每一个tab页面可默认对应一个渲染器进程，这个进程是多线程的：UI线程、JS引擎线程、事件触发线程、网络请求线程等
 # 从输入url到页面显示的过程
+
 ## URL 解析
+
 - 浏览器进程的UI线程会捕捉输入内容
   - 如果是一个地址，UI线程会启动一个网络线程进行 DNS 查询，接着建立连接获取数据
   - 如果是一串关键词，浏览器会调用默认配置的搜索引擎进行查询
 
 ## DNS 查询
+
 - 如果浏览器有缓存，直接从中获取IP地址，否则在系统缓存、路由器缓存查询，
   - 如果都没有命中，则向 DNS 服务器发起解析请求
 
@@ -114,12 +230,15 @@ ele.insertBefore(new, old)
 - CSS 的下载不会阻塞 html 解析，但 CSS 的解析本身由主线程完成，因此当 DOM 树生成完毕，需要等待 CSS 解析完进入下一步
 
 ## CSS 解析 & 样式计算
+
 ## layout
+
 - 主线程通过遍历 DOM 树和计算样式，生成一棵 Layout tree，精确计算出每个节点在屏幕上的的 x，y 坐标与尺寸信息。
 - Layout tree 和 DOM tree 不一定一致
   - 一些结点会被忽略（比如 script 标签，meta 标签等），因为不会影响渲染的输出
   - 一些结点是通过 CSS 样式隐藏了，这些节点同样被忽略——例如应用 display:none 样式的结点
   - 一些结点被添加进布局树，比如 ::before，::after 添加的伪元素
+
 ## paint
 
 - 由于有 z-index 或脱离文档流的元素，layout tree 中结点顺序并非渲染顺序，因此主线程会遍历 layout tree，调用节点对应绘制逻辑（这里的绘制逻辑并不是真正意义上的显示器设备完成绘制，而是生成一条条的绘制记录），最终得到一个绘制记录表（paint record）
@@ -135,16 +254,15 @@ ele.insertBefore(new, old)
   - 当页面滚动，合成器线程又会生成下一个“合成器帧”，同样传递给 GPU 渲染
 
 ## 页面交互与更新
+
 - reflow
   - 调整浏览器窗口大小
   - 增加、删除、修改DOM节点
   - 修改字体（字号字形会影响盒子布局）
   - display: none：会触发重排和重绘，因为这是不保留物理空间的隐藏
 
-
 - repaint
   - visibility: hidden：只触发重绘，因为此盒子依旧占位存在，只不过透明了
-
 # 浏览器渲染优化
 - 重绘与重排都会占用主线程，而 JS 也运行在主线程上，因此会面临抢占主线程的问题
 - requestAnimationFrame

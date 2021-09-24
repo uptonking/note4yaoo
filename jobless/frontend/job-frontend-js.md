@@ -21,12 +21,323 @@ modified: '2021-09-23T08:24:41.968Z'
   - symbol：用于唯一的标识符
   - object：用于更复杂的数据结构
 
+## promise
+
+- 代码补充 asyncGetValue()，使之实现 asyncGetValue(1, 2).then(v => console.log(v)); 
+
+```JS
+function asyncAdd(a, b, callback) {
+  doAsyncWork(a, b).then(value => callback(value));
+}
+
+function asyncGetValue(a, b) {
+  return new Promise((resolve) => asyncAdd(a, b, resolve));
+}
+
+function asyncGetValues(list) {
+  let promises = [];
+  for (let item of list) {
+    promises.push(new Promise((resolve) => asyncAdd(item.a, item.b, resolve)));
+  }
+  return Promise.all(promises);
+}
+
+// 实现并发控制，即有一个最大的并发数 maxConcurrent
+function asyncGetValues(list, max) {
+  let _max = max;
+  let _count = 0;
+  let _taskQueue = [];
+
+  function add(caller) {
+    return new Promise((resolve) => {
+      let task = createTask(caller, resolve);
+      if (_count < _max) task();
+      else _taskQueue.push(task);
+    });
+  }
+
+  function createTask(caller, resolve) {
+    return () => {
+      caller()
+        .then(resolve)
+        .finally(() => {
+          if (_taskQueue.length) {
+            let task = _taskQueue.shift();
+            task();
+            _count--;
+          }
+        });
+      _count++;
+    };
+  }
+
+  let promises = [];
+  for (let item of list) {
+    let promise = add(
+      () => new Promise((resolve) => asyncAdd(item.a, item.b, resolve))
+    );
+    promises.push(promise);
+  }
+  return Promise.all(promises);
+}
+```
+
+## js作用域和变量提升
+
+- 普通var变量提升，会初始化为undefined
+- 函数名变量提升，会立即初始化为函数对象
+
+- Hoisting happens on every execution context. 
+  - During the hoisting variable or function declarations are not moving to the top, they are just being written to the memory.
+
+- Function hoisting means that functions are moved to the top of their scope.
+  - function declaration `function a(){}` is hoisted first and it behaves like `var a = function () {}; `, hence in local scope `a` is created.
+  - `var a` forces it into a local scope, and variable scope is through the entire function, so the global a variable is still 1 because you have declared a into a local scope by making it a function.
+
+```JS
+var a = 1;
+
+function b() {
+  a = 10;
+  return;
+
+  function a() {}
+}
+b();
+alert(a); // 1
+
+// ------- equals to -----------
+
+var a = 1; //defines "a" in global scope
+function b() {
+  var a = function() {}; //defines "a" in local scope 
+  a = 10; //overwrites local variable "a"
+  return;
+}
+b();
+alert(a); //alerts global variable "a"
+```
+
+```JS
+var boo = 11
+
+function foo() {
+  console.log(boo)
+  var boo = 10
+}
+foo() // undefined
+
+// ------- equals to -----------
+
+function foo() {
+  var boo = undefined
+  // "boo" is partially hoisted inside  
+  // "boo" is written into the variable environment of the execution context
+  // "foo()" will always look into the its variable environment first
+  console.log(boo)
+  boo = 10
+}
+```
+
+- 执行优先级
+  - 20: 成员访问.[]?. = new 有参构造(有括号即可，不一定要有实参) = 函数调用
+  - 19: new 无参构造(无括号)
+  - 17: 单+-! 号 = typeof = delete = await = void
+  - 12: instanceof = in = ><
+  - 7: &&
+  - 6: ||
+  - 5: ??
+  - 4: ?:
+  - 3: = +=
+  - 2: yield yield*
+  - 1 , 
+
+```JS
+new Foo().getName() // (new Foo()).getName();
+new Foo.getName() // new(Foo.getName());
+new Foo().getName() // new ((new Foo()).getName())
+```
+
+## valueOf vs toString (+号运算符) 类似java的自动拆箱装箱/隐式类型转换
+
+- [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+  - returns the primitive value of the specified object.
+  - JavaScript automatically invokes it when encountering an object where a primitive value is expected.
+  - If an object has no primitive value,  `valueOf` returns the object itself.
+- A (unary) plus sign can sometimes be used as a shorthand for `valueOf`, e.g. in `+new Number()`.
+
+- The unary plus operator (`+`) precedes its operand and evaluates to its operand but attempts to convert it into a number, if it isn't already.
+  - Although unary negation (`-`) also can convert non-numbers, unary plus is the fastest and preferred way of converting something into a number
+
+```typescript
+{}.valueOf(); // Uncaught SyntaxError: Unexpected token '.'
+let aa = {};
+aa.valueOf(); // {}
+[].valueOf(); // []
+
+// 单个+号默认是获取数值类型的原始值
+
++"5" // 5 (string to number)
++"" // 0 (string to number)
++"1 + 2" // NaN (doesn't evaluate)
++new Date() // same as (new Date()).getTime()
++"foo" // NaN (string to number)
++{} // NaN
++[] // 0 (toString() returns an empty string list)
++[1] // 1
++[1,2] // NaN
++new Set([1]) // NaN
++BigInt(1) // Uncaught TypeError: Cannot convert a BigInt value to a number
++undefined // NaN
++null // 0
++true // 1
++false // 0
+```
+
+- [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
+  - returns a string representing the object.
+  - toString() method that is automatically called when the object is to be represented as a text value or when an object is referred to in a manner in which a string is expected.
+  - If this method is not overridden in a custom object, toString() returns "[object type]", where type is the object type.
+
+```typescript
+
+// {}.toString()  // Uncaught SyntaxError: Unexpected token '.'
+let aa = {};
+aa.toString(); // [object Object]
+[].toString(); // '' 空字符串
+[1,2].toString(); // 1,2 数组转字符串默认没有方括号
+null.toString(); // Uncaught TypeError: Cannot read properties of null
+null+''; // null
+undefined.toString(); // Uncaught TypeError: Cannot read properties of undefined
+undefined+''; //undefined
+
+Number(); // 0
+Number(''); // 0
+
+({valueOf: () => 1, toString: () => "f"})+""    // "1" 
+`${({valueOf: () => 1, toString: () => "f"})}`  // "f"
+```
+
+- The addition operator (`+`) produces the sum of numeric operands or string concatenation.
+
+```JS
+var x = {
+  toString: function() { return "foo"; },
+  valueOf: function() { return 42; }
+};
+console.log("x=" + x); // x=42
+console.log("x=" + x.toString()); // x=foo
+```
+
+- Type coercion(强迫), or implicit type conversion, enables weak typing and is used throughout JavaScript. 
+  - Most operators (with the notable exception of the strict equality operators `===` and `!==`), and value checking operations (eg. if(value)...), will coerce values supplied to them, if the types of those values are not immediately compatible with the operation.
+  - The precise mechanism used to coerce a value depends on the expression being evaluated.
+- The **addition(`+`) operator will first ensure both operands are primitives**, which, in this case, involves calling the `valueOf` method.
+  - 遇到+号运算符，会先将两边操作数转为原生类型，自动调用ToPrimitive，若不给hint，默认先调用valueOf()，若返回值不为原生类型，再调用toString()
+  - The `toString` method is not called in this example because the overridden `valueOf` method on object `x` returns a primitive value. 
+  - Then, because one of the operands in the question is a string, both operands are converted to strings. This process uses the abstract, internal operation `ToString` (note: capitalized), and is distinct from the `toString` method on the object (or its prototype chain).
+
+- The purpose of `valueOf` is to retrieve the primitive value associated with an object (if it has one). 
+  - If an object does not have an underlying primitive value, then the object is simply returned.
+- If `valueOf` is invoked against a primitive, then the primitive is auto-boxed in the normal way, and the underlying primitive value returned. 
+  - Note that for strings, the underlying primitive value (ie. the value returned by `valueOf`) is the string representation itself.
+- For most operations, JavaScript will silently attempt to convert one or more operand(s) to the required type. 
+  - This kind of implicit type conversion is called type coercion, and it is the basis of JavaScript's loose (weak) type system.
+  - The complicated rules behind this behavior are intended to move the complexity of typecasting into the language itself, and out of your code.
+- **When attempting to convert non-primitive types to primitives to be operated upon, the abstract operation `ToPrimitive` is called** with an optional "hint" of 'number', or 'string'. 
+  - If the hint is omitted, the default hint is 'number' (unless the `@@toPrimitive` method has been overridden). 
+  - If the hint is 'string', then `toString` is tried first, and `valueOf` second if `toString` did not return a primitive. Else, vice-versa. 
+- The hint depends on the operation requesting the conversion.
+  - The addition(`+`) operator supplies no hint, so `valueOf` is tried first. 
+  - The subtraction(`-`) operator supplies a hint of 'number', so `valueOf` is tried first. 
+  - The only situations I can find in the spec in which the hint is 'string' are: `Object#toString` or `ToPropertyKey`
+- **The addition operator will first use `ToPrimitive` to ensure each operand is a primitive**; 
+  - then, if either operand is a string, it will then deliberately invoke the abstract operation `ToString` on each operand, to deliver the string concatenation behavior we expect with strings. 
+  - If, after the `ToPrimitive` step, both operands are not strings, then arithmetic addition is performed.
+- Unlike addition, the subtraction operator does not have overloaded behavior, and so will invoke `toNumeric` on each operand having first converted them to primitives using `ToPrimitive`
+
+```typescript
+ 1  +  1   //  2 
+'1' +  1   // '11'   Both already primitives, RHS converted to string, '1' + '1',   '11'
+ 1  + [2]  // '12'   [2].valueOf() returns an object, so `toString` fallback is used, 1 + String([2]), '1' + '2', 12
+ 1  + {}   // '1[object Object]'    {}.valueOf() is not a primitive, so toString fallback used, String(1) + String({}), '1' + '[object Object]', '1[object Object]'
+ 2  - {}   // NaN    {}.valueOf() is not a primitive, so toString fallback used => 2 - Number('[object Object]'), NaN
++'a'       // NaN    `ToPrimitive` passed 'number' hint), Number('a'), NaN
++''        // 0      `ToPrimitive` passed 'number' hint), Number(''), 0
++'-1'      // -1     `ToPrimitive` passed 'number' hint), Number('-1'), -1
++{}        // NaN    `ToPrimitive` passed 'number' hint', `valueOf` returns an object, so falls back to `toString`, Number('[Object object]'), NaN
+ 1 + 'a'   // '1a'    Both are primitives, one is a string, String(1) + 'a'
+ 1 + {}    // '1[object Object]'    One primitive, one object, `ToPrimitive` passed no hint, meaning conversion to string will occur, one of the operands is now a string, String(1) + String({}), `1[object Object]`
+ 1 - 'a'   // NaN    Both are primitives, one is a string, `ToPrimitive` passed 'number' hint, 1-Number('a'), 1-NaN, NaN
+ 1 - {}    // NaN    One primitive, one is an object, `ToPrimitive` passed 'number' hint, `valueOf` returns object, so falls back to `toString`, 1-Number([object Object]), 1-NaN, NaN
+[] + []    // ''     Two objects, `ToPrimitive` passed no hint, String([]) + String([]), '' (empty string)
+[] - []    // 0      Two objects, `ToPrimitive` passed 'number' hint => `valueOf` returns array instance, so falls back to `toString`, Number('')-Number(''), 0-0, 0
+
+let date = new Date();
+date.valueOf(); // 1632449848133
+date.toString(); // 'Fri Sep 24 2021 14:34:47 GMT+0800 (China Standard Time)'
+date + ''; // 'Fri Sep 24 2021 14:34:47 GMT+0800 (China Standard Time)'
+
+```
+
+- Note that the `Date` intrinsic object is unique, in that it is the only intrinsic to override the default `@@toPrimitive` method, in which the default hint is presumed to be 'string' (rather than 'number').
+  - The reason for having this, is to have Date instances translate to readable strings by default
+
 ## 如何理解原型？
+
+- `Ctr.prototype` 显式原型: explicit prototype property
+  - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
+  - **显式原型的作用：用来实现基于原型的继承与属性共享**
+
+- `obj.__proto__` 隐式原型: implicit prototype link
+  - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
+  - **对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype**
+  - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
+  - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
+
+- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`.
+- 修改对象的隐式原型影响范围一般较大，要避免，可以使用`Object.create(obj)` .
 
 - 构造函数：任何情况下创建一个函数，都会在内部为其创建一个prototype属性，该属性是一个指向原型对象的引用。使用原型对象可以允许上面定义的属性与方法被对象实例共享。
 - 原型对象：原型对象会默认自动获得一个constructor属性，该属性是指回构造函数的引用。自定义构造函数的原型对象默认只会获得constructor属性，其余方法都继承自Object
 - 原型对象的原型：原型对象本身是Object或父类的实例，它也有一个暴露为__proto__的属性指向父类构造函数的原型对象（隐式原型）。特别的，Object的原型对象是原型链的起点，其constructor指向Object()构造函数，同时Object原型对象的不再有原型，其不再具有__proto__
 - 对象实例：每个被构造的实例内部也有__proto__，同样指向其构造函数原型对象
+
+```JS
+var a = function() { this.b = 3; }
+var c = new a(); // 创建一个新对象，构造函数中this指向新对象
+a.prototype.b = 9;
+var b = 7;
+a();
+console.log(b); // 3
+c // {b: 3}
+a.prototype // {b:9, constructor}
+
+Function.prototype.__proto__ === Object.prototype // true
+
+function aa() {}
+
+aa.__proto__ === Function.prototype // true
+aa.prototype === Function.prototype // false
+
+let aaObj = new aa();
+aaObj.constructor === aa // true
+aaObj.__proto__ === aa.prototype // true
+```
+
+```JS
+Function.prototype.a = () => alert(1);
+Object.prototype.b = () => alert(2);
+
+function A() {};
+var a = new A();
+
+// 查找属性时会沿着原型链查找
+// a.__proto__ === A.prototype  // true
+// A.prototype.__proto__ === Object.prototype  // true
+a.a();
+a.b(); // Uncaught TypeError: a.a is not a functionI
+```
 
 ## new一个对象时发生了什么
 
@@ -46,6 +357,27 @@ modified: '2021-09-23T08:24:41.968Z'
   - new 绑定：new 构造一个新对象时，构造函数内部的 this 会自动绑定到新建的对象上
 - 绑定优先级：new绑定 > 显式绑定 > 隐式绑定 > 默认绑定
 
+```JS
+// 箭头函数内没有自己的this，使用外部this
+const fn = () => {
+  this.x = 'z';
+};
+
+const b = { x: 'y' };
+fn.call(b); // 设置window.x = 'z'
+console.log(b); // {x:'y'}
+
+// --------- 不用箭头函数 -------
+
+function fn2() {
+  this.x = 'z';
+};
+
+const b2 = { x: 'y' };
+fn2.call(b2); // 设置b2.x
+console.log(b2); // {x:'z'}
+```
+
 ## 闭包
 
 - 当一个函数可以访问到其他函数作用域中自由变量时，即构成闭包，创建闭包的最常见的方式就是在一个函数内创建另一个函数，创建的函数可以访问到当前函数的局部变量。
@@ -61,10 +393,11 @@ modified: '2021-09-23T08:24:41.968Z'
 - 私有变量与特权函数：
   - 对于构造函数内不想被外界直接访问修改的变量，同时又需要操作，通过this提供特权函数，让特权函数构成闭包，其具备访问外部构造函数中私有变量的能力
 
-
 ### 为什么Java没有闭包？
+
 - 其实Java处处是闭包，比如对象、内部类等
   - Java使用new实例化Add对象后，Java对象不会像JS中的函数上下文一样立即消失，同时private又保证了变量对外隐藏，之后只要使用calc.add()就能实现计算
+
 ## 箭头函数
 
 - 箭头函数没有`this`，其`this`需从外部作用域获取，因此取决于箭头函数定义位置的上下文
@@ -486,7 +819,6 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
   - 当引擎执行到函数时会创建新的函数上下文入栈，对函数体中代码进行“词法分析-语法分析-代码生成-执行”，执行到子函数时重复上述入栈到执行的步骤。
   - 当函数执行完，执行栈会弹出当前函数上下文，将控制权返还给之前的执行上下文
 
-
 - 为什么会存在变量、函数提升和暂时性死区？
   - 对于var变量声明，构建上下文时会给标识符分配内存空间，初始化为undefined。执行阶段，在声明语句之前访问var变量会读取到undefined，不会报错
   - 对于let/const变量声明，保持uninitialized。如果代码中在声明语句前访问，会报引用错误（未初始化）
@@ -495,7 +827,6 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 - 可执行上下文中的词法环境中含有outer，通过这个引用获取外部词法环境的变量、声明等，这些引用串联起来一直指向全局的词法环境，形成了作用域链
 - 作用域链是一个包含指针的列表，每个指针指向了一个执行栈中上下文的词法环境组件
 
-
 - 闭包三种定义
 - MDN：函数和函数内部所能访问到变量的总和
 - 红宝书：引用了另一个函数作用域中变量的函数
@@ -503,6 +834,7 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 - 闭包通常是在嵌套函数中实现
 
 ## js垃圾回收
+
 - 浏览器发展中，主要有两种GC策略：标记-清理 & 引用计数
 - JS最常用的GC策略是标记清理（mark-and-sweep）：该策略主要在维护一个可达性图，“可达”值是那些以某种方式可访问或可用的值。它们一定是以某种方式被使用的，不应该被回收。
 - 标记清理：JS的GC程序会定期执行以下“垃圾回收”步骤，更新可达值并回收不可达的内存空间

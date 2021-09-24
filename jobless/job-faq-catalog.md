@@ -17,6 +17,7 @@ modified: '2021-09-20T09:00:43.564Z'
   - 参考资料
 
 - frontend 前端基础
+  - 浏览器的渲染管线及优化
   - 语言基础
   - web框架
   - 性能优化
@@ -52,15 +53,16 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [网友面经合集2018-2020](https://github.com/wangwenjie1314/webQd/blob/master/file/%E9%9D%A2%E7%BB%8F/index.md)
 # 面试总结
-- [2020年中大厂前端面试总结](https://github.com/funnycoderstar/blog/issues/156)
+- [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
+- [前端面试直通车 2021(大厂收集)](https://www.yuque.com/robinson/fe-interview)
 
 - [前端面试指北 面向面经学习](https://www.yuque.com/nepjnq/fgeemd)
-- [前端面试直通车 2021](https://www.yuque.com/robinson/fe-interview)
 - [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
 - [前端面试小册](https://docs.chenqaq.com/algorithm)
   - https://github.com/okaychen/FE-Interview-Brochure
   - 本人2019年秋招前端面试经历
   - 包含基础篇、Vue框架篇、HTTP&浏览器、构建工具篇、安全篇、算法篇
+
 - [高频面试大纲](https://github.com/lanweipeng/fullAnswer)
 - [前端面试高频问题](https://github.com/soneway/blog/blob/master/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98.md)
 - [前端面试大杂烩](https://github.com/royIdoodle/fe-interview-chaos)

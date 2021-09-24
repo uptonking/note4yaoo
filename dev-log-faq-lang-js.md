@@ -246,34 +246,37 @@ bird.sayBye(); // Bye from Ferrari
   - [How to access the correct `this` inside a callback?](https://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-inside-a-callback)
 
 # js: `Ctr.prototype` vs `obj.__proto__`
+
 - `Ctr.prototype` 显式原型: explicit prototype property
-  - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
+  - 每个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
   - 通过 `Function.prototype.bind` 方法构造出来的函数是个例外，它没有prototype属性
-  - **显式原型的作用：用来实现基于原型的继承与属性的共享**
+  - **显式原型的作用：用来实现基于原型的继承与属性共享**
   - ECMAScript does not use classes such as those in C++, or Java. 
-    - Instead objects may be created in various ways including via a literal notation or via constructors which create objects 
-      - and then execute code that initialises all or part of them by assigning initial values to their properties. 
-    - Each constructor is a function that has a property named `prototype` that is used to implement prototype-based inheritance and shared properties.
+  - Instead objects may be created in various ways including via a literal notation or via constructors which create objects 
+    - and then execute code that initialises all or part of them by assigning initial values to their properties. 
+  - Each constructor is a function that has a property named `prototype` that is used to implement prototype-based inheritance and shared properties.
     - Objects are created by using constructors in `new` expressions; for example, new Date(2009,11) creates a new Date object. ----ECMAScript Language Specification
+
 - `obj.__proto__` 隐式原型: implicit prototype link
   - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
-  - 隐式原型指向创建这个对象的函数(constructor)的prototype
+  - 对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype
   - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
-  - **隐式原型的作用：构成原型链，同样用于实现基于原型的继承**
+  - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
     - 举个例子，当我们访问obj这个对象中的x属性时，如果在obj中找不到，那么就会沿着__proto__依次查找。
   - Every object created by a constructor has an implicit reference (called the object’s `prototype` ) to the value of its constructor’s `prototype` ----ECMAScript Language Specification
-  - The `__proto__` property of `Object.prototype` is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
-  - The `__proto__` getter function exposes the value of the internal [[Prototype]] of an object. 
-    - For objects created using an object literal, this value is `Object.prototype` .
-    - For objects created using array literals, this value is `Array.prototype` . 
-    - For functions, this value is `Function.prototype` . 
-    - For objects created using `new fun` , where `fun` is one of the built-in constructor functions provided by JavaScript (Array, Boolean, Date, Number, Object, String, and so on — including new constructors added as JavaScript evolves), this value is always `fun.prototype` .
-  - The `__proto__` setter allows the [[Prototype]] of an object to be mutated.
+
+- The `__proto__` property of `Object.prototype` is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
+- The `__proto__` getter function exposes the value of the internal [[Prototype]] of an object. 
+  - For objects created using an object literal, this value is `Object.prototype` .
+  - For objects created using array literals, this value is `Array.prototype` . 
+  - For functions, this value is `Function.prototype` . 
+  - For objects created using `new fun` , where `fun` is one of the built-in constructor functions provided by JavaScript (Array, Boolean, Date, Number, Object, String, and so on — including new constructors added as JavaScript evolves), this value is always `fun.prototype` .
+- The `__proto__` setter allows the [[Prototype]] of an object to be mutated.
     - Changing the [[Prototype]] of an object is, by the nature of how modern JavaScript engines optimize property accesses, a **very slow** operation, in every browser and JavaScript engine
     - The effects on the performance of altering inheritance are subtle(不易察觉的，不明显的) and far-flung(广泛的), and are not limited to simply the time spent in `obj.__proto__ = ...` statements, but may extend to any code that has access to any object whose [[Prototype]] has been altered.
     - If you care about performance you should avoid setting the [[Prototype]] of an object. 
     - Instead, create a new object with the desired [[Prototype]] using `Object.create()` .
-- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`
+- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`.
 
 - __proto__的指向
   - 根据ECMA定义 'to the value of its constructor’s "prototype" ' ----指向创建这个对象的函数(构造函数)的显式原型
@@ -338,7 +341,6 @@ Number instanceof Number //false
   - e.g. you need to make sure to call the `super` constructor in your derived class's constructor, 
   - whereas with `util.inherits` you had to call the constructor function and `apply` it to `this`. 
   - But effectively, these things are only other syntactic constructs, semantically, they are equivalent.
-
 
 - [Why do people hate `class` so much](https://twitter.com/steveruizok/status/1437321061935243264)
   - classes feel kind of loose for an library API. 

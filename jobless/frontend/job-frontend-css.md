@@ -38,7 +38,99 @@ modified: '2021-09-23T08:17:41.755Z'
   - src指向外部资源的位置，**指向的内容会嵌入到文档中当前标签所在的位置**，在请求src资源时会将其指向的资源下载并应用到文档内替换当前元素。当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕
   - href是指向网络资源所在位置（的超链接），只是用来建立和当前元素或文档之间的连接
   - 小结：src 用于替换当前元素，href 用于在当前文档和引用资源之间确立联系
-# css
+# css-faq
+
+## 绝对定位元素塌陷
+
+- 三个盒子自外而内嵌套，position属性依次为，fixed, absolute, relative（顺序可能不一样，记不太清了）。如果给最里面的盒子添加padding，问三个盒子的高度会如何变化
+
+- 经过实测，这道题中，relative-box 的 padding 修改时会影响 absolute-box 的高度，而最外层 fixed-box 若不设置高度宽度，则始终保持 0 0
+- 对于BFC来说，绝对定位的子元素会被忽略，无法撑起高度
+  - float元素可以撑起其高度
+- 因此最外层盒子的高度不会改变，而绝对定位盒子的高度会随相对定位盒子高度改变
+
+## 往 ul 里面插入10000个 li
+
+- 使用 `document.createDocumentFragment()` API，创建一个单独的文档对象（一个微型 document），先向该对象上插入 10000 个 `<li>`，之后将该片段插入 `<ul>`，其中的 10000 个节点被一次性插入，只触发一次重新渲染过程；
+  - 如果每次都直接向文档中插入 `<li>`，就会触发 10000 次重新渲染
+
+```JS
+let list = document.getElementById("list");
+let frag = document.createDocumentFragment();
+// var frag = new DocumentFragment()
+
+for (let i = 0; i < 10000; i++) {
+  let li = document.createElement("li");
+  li.innerText = i;
+  frag.appendChild(li);
+}
+list.appendChild(frag);
+```
+
+## 实现点击右滑动按钮，同时要求 button 自适应父元素宽度
+
+```css
+.container {
+  width: 150px;
+}
+
+.btn {
+  width: 100%;
+  /* transition:属性名 持续时间 时间函数 推迟变化时间 */
+  transition: margin-left 1s;
+}
+
+.btn:hover {
+  margin-left: 50px;
+}
+```
+
+## 递归判断 body 结构是否相同
+
+```JS
+let body1 = document1.body;
+let body2 = document2.body;
+
+const compareDOM = function(elem1, elem2) {
+  let [children1, children2] = [elem1.children, elem2.children];
+  if (children1.length != children2.length) return false;
+  for (let i = 0; i < children1.length; i++) {
+    if (!compareDOM(children1[i], children2[i])) return false;
+  }
+  if (elem1.tagName != elem2.tagName || elem1.innerText != elem1.innerText)
+    return false;
+  return true;
+};
+```
+
+- 借助 Element.children() 可获取当前元素的子元素列表(动态的 HTMLCollection)，递归的获取子元素即可，
+  - 到达最底层子节点后比较节点的 tagName 和 innerText，然后返回至上一层——`先序遍历`
+
+- `Element.children` includes only element nodes. 
+  - To get all child nodes, including non-element nodes like text and comment nodes, use `Node.childNodes`.
+
+## 负 maring 意义
+
+- 元素自身无宽度，设置负值水平 maring：增加元素宽度。
+  - 当设置 margin-left:-100px 元素会在填充完父元素宽度后向左溢出 100px 宽度
+- 元素设置了宽度，设置负值水平 maring
+  - 产生位移（圣杯布局）
+- 元素设置负值 margin-top
+  - 与自身高度无关，会导致元素向上偏移（垂直居中）
+- 元素设置负值 margin-bottom
+  - 与自身高度无关，也不会偏移，会让元素 CSS 作用的范围减小，如背景色；
+  - 可比较inline-block元素垂直方向的padding可以让CSS作用范围扩大，但不会增加元素实际尺寸
+
+## 如何减少回流重绘
+
+- transform、opacity
+- 使用 display:none 隐藏元素避免回流重绘、使用 visibility:hidden 只是避免回流
+- 当要有大量新增样式的操作时，可以使用 document fragment 将最终更新的结果插入，这样只触发一次回流重绘
+- 使用 rAF 调节渲染
+  - 很多情况下频繁的重新渲染无法避免，比如页面滚动与动画
+  - 如果将所有动画函数放在 rAF 回调中，那它就会被放在下一帧渲染前执行，这样将动画效果集中在一次回流重绘中就能渲染，避免了DOM修改时再额外导致回流重绘。 
+
+# css-knowledge
 - transform: translate
   - 单个值：A percentage value refers to the width of the reference box defined by the transform-box property.
   - 两个值

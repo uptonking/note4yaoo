@@ -19,6 +19,13 @@ modified: '2021-07-29T11:15:44.100Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Just confirmed: iOS 15 now supports the HTML5 drag and drop API on iPhone!
+- https://twitter.com/devongovett/status/1441087776489807875
+
 - ## A new feature-detecting function coming soon to a browser near you: HTMLScriptElement.supports("importmap")
 - https://twitter.com/domenic/status/1433842051339243522
   - import.meta.supportsType("css")
