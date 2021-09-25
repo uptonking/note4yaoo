@@ -22,7 +22,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## product showcase ui
+- https://codepen.io/TurkAysenur/pen/gORaboY
+  - 基于swiper实现产品图轮播，只占据屏幕中间区域
 
 - ## CSS Scroll-Timeline Demo! a full-screen carousel, with split-screen panels. Pure CSS, no JS!
 - https://twitter.com/bramus/status/1440663180905119759

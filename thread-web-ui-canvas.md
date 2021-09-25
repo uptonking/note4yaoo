@@ -10,6 +10,21 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## right now the minimap is part of the renderer, but it really works like its own renderer, and may make more sense as something entirely separate. 
+- https://twitter.com/steveruizok/status/1441472275639832577
+  - This would make it easier to style or place (or not include)
+- The renderer is an infinite canvas and so this minimap is positioning things relative to the “expanded bounds”, ie the bounding box that fits around all of the other bounding boxes. Which makes for some cool visuals as that changes.
+  - We normally only “render” shapes that are on screen, but this needs to render shapes that are off screen too. Which could be a performance issue? Even if the shapes render more simple elements into an SVG, it still might be a lot of elements.
+
+
+
+
 - ##  When we made a shape, we need to make the the bounding box a little bigger than the shape itself.
 - https://twitter.com/steveruizok/status/1437514372520284163
   - SVGs clip their content, so if the shape is rendering an SVG image (like this one is), we want to leave some padding in case there's any overlap.

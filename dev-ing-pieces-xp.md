@@ -13,7 +13,8 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## 递归有时会依赖其返回值
+- 不要漏写return
 
 - ## arr.forEach 遍历action reducer 函数时，return无法立即结束forEach 
 - 可改用传统for循环

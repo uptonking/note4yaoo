@@ -13,7 +13,12 @@ modified: '2021-05-23T10:17:05.993Z'
 
 - ## 
 
-- ## 
+- ## Very common mistake in ActiveRecord: checking for the existence of a belongs_to associated record with `present?` or `blank?` . 
+- https://twitter.com/nateberkopec/status/1441406828424822792
+  - This is an almost-guaranteed N+1. 
+  - You have the foreign key on the record you're looking at - just check if the foreign key is `nil?` .
+- If you have a situation where the foreign key might be set but the record doesn't exist: fix that problem before it begins, don't defensively code around it here and shoot yourself in the kneecap.
+- ActiveRecord does such a strong job auf abstracting the _id away, so it would awesome if it could do that too in these situations…
 
 - ## I honestly just feel kinda embarrassed for people still arguing about ActiveRecord.
 - https://twitter.com/taylorotwell/status/1420402348216786950

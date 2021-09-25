@@ -28,8 +28,7 @@ modified: '2021-09-20T09:00:43.564Z'
   - materials-repo
   - configurable-dashboard
   - prosemirror-editor
-  - react组件
-  - 组件库
+  - react组件库
   - 编辑器
   - 表格
   - 性能优化

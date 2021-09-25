@@ -14,6 +14,13 @@ modified: '2020-10-22T10:22:55.878Z'
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
+- kroki /1.1kStar/MIT/202109
+  - https://github.com/yuzutech/kroki
+  - https://kroki.io/
+  - Convert plain text diagrams to images !
+  - it takes a text diagram as input and returns an image.
+  - Kroki provides a unified HTTP API with support for BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag), BPMN, Bytefield, C4 (with PlantUML), Ditaa, Erd, Excalidraw, GraphViz, Mermaid, Nomnoml, Pikchr, PlantUML, SvgBob, UMLet, Vega, Vega-Lite and WaveDrom…​ and more to come!
+
 - react-flow /2.8kStar/MIT/202103/ts
   - https://github.com/wbkd/react-flow
   - https://reactflow.dev/
@@ -71,16 +78,12 @@ modified: '2020-10-22T10:22:55.878Z'
   - https://github.com/projectstorm/react-diagrams
   - http://projectstorm.cloud/react-diagrams
   - diagramming library written in react
-
 # uml
-
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived
   - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
   - [Future of types after mxgraph EOL announcement](https://github.com/typed-mxgraph/typed-mxgraph/issues/12)
-
 # node-graph
-
 - https://github.com/awslabs/diagram-maker
   - https://awslabs.github.io/diagram-maker
   - https://awslabs.github.io/diagram-maker/explore/demos.html
@@ -91,9 +94,7 @@ modified: '2020-10-22T10:22:55.878Z'
 - https://github.com/reaviz/reaflow
   - Node-based Visualizations for React
   - REAFLOW is a modular diagram engine for build static or interactive editors. 
-
 # more
-
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html
   - A windowed flow chart editor in React
