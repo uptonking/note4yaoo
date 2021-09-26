@@ -8,6 +8,12 @@ modified: '2020-07-14T09:28:43.976Z'
 # note-benchmark-web
 
 # guide
+
+- tips
+  - 不必执着于选择最正确的测试api和库，分析业务场景，选择最重要的性能指标，有针对性地进行优化
+  - it matters far more what you measure than the timer API you pick
+  - 很多测试api甚至自身都不是一致的，时快时慢
+
 - [7GUIs: A GUI Programming Benchmark](https://eugenkiss.github.io/7guis/)
   - 7GUIs defines seven tasks that represent typical challenges in GUI programming. 
   - In addition, 7GUIs provides a recommended set of evaluation dimensions.
@@ -55,6 +61,24 @@ modified: '2020-07-14T09:28:43.976Z'
   - Lazily evaluating properties is not just handy, but mandatory in some case.
 - [Compare markdown implementations.](https://johnmacfarlane.net/babelmark2/)
   - 只提供了操作示例，没有提供结论
+
+- https://github.com/yesvods/jsperf
+  - 基于主流benchmark库测试部分js api的性能
+  - 条件判断，使用字符串等非Boolean，性能会比直接用true/false差
+  - 使用Map或{}来查找key，比IndexOf有 21, 600x 性能提升，不论是Array还是Object
+  - 通过substring获取字符串子集比遍历接着加号连接有 97x 性能提升
+  - typeof属于原生基本操作，速度炒鸡快，基本无视性能使用
+  - for-in, for-of ing
+
+- https://github.com/caderek/benny
+  - simple benchmarking framework for JS/TS libs
+  - 依赖benchmark
+- https://github.com/kupriyanenko/astrobench
+  - library for running in the browser performance benchmarks, based on Benchmark.js
+
+- https://github.com/speedracer/speedracer
+  - a performance runner, like a test runner, but for performance
+  - It runs scripts (races) in Chrome (headlessly if possible) and produces detailed traces and reports on scripting, rendering and painting.
 # frontend-framework
 - [前端框架基准测试最新结果：18个框架当中有13个达到顶级](https://www.infoq.cn/article/UHsl0gogHtL2BM*vJIOs)
   - https://www.infoq.com/news/2019/04/real-world-framework-benchmark
@@ -97,10 +121,18 @@ modified: '2020-07-14T09:28:43.976Z'
   - so they're not suitable for anything that might get deployed with a content security policy
   - Yes, it was acceptable as proof-of-concept. 
 
+- https://github.com/matteofigus/api-benchmark
+  - A node.js tool that measures and compares performances of single and multiple apis inspired by BenchmarkJs
+- https://github.com/jeffbski/bench-rest
+  - benchmark REST (HTTP/HTTPS) API's. 
+  - node.js client module for easy load testing / benchmarking REST API's…
+
 - [radEventListener: a Tale of Client-side Framework Performance_202008](https://css-tricks.com/radeventlistener-a-tale-of-client-side-framework-performance/)
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
 # engineering
+- https://github.com/seancdavis/ssg-build-performance-tests
+  - A comparison on build performance of popular SSGs, as they are tasked with processing local markdown files as the data source
 - https://github.com/GoogleChromeLabs/tooling.report/
   - https://tooling.report/
   - tooling.report a quick way to determine the best build tool for your next web project

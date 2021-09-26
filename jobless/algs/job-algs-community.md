@@ -15,7 +15,17 @@ modified: '2021-09-25T08:10:17.911Z'
 
 ## 
 
-## 
+## [What is `Array.prototype.sort()` time complexity?](https://stackoverflow.com/questions/57763205)
+
+- Since V8 v7.0 and Chrome 70 Timsort algorithm is used.
+  - Which, for smaller arrays, has a time complexity of O(n) and space complexity of 0(1). 
+  - And for larger arrays, it has a time complexity of O(nlog(n)) and space complexity of O(n).
+- The older version of V8 uses Quick Sort, and it has a check for small arrays (up to 10 elements). 
+  - So for smaller arrays, the time complexity is O(n^2), and space complexity is O(1).
+  - For larger arrays, time complexity is O(nlog(n)) (average case), and space complexity is O(log(n))
+
+- Chrome, as of version 70, uses a hybrid of merge sort and insertion sort called Timsort.
+- Firefox uses merge sort.
 
 ## [Javascript swap array elements](https://stackoverflow.com/questions/872310)
 

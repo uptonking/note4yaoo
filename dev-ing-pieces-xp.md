@@ -11,7 +11,12 @@ modified: '2021-04-28T20:54:58.126Z'
 
 - ## 
 
-- ## 
+- ## js `arr.sort()` 不传递比较函数参数时，会先转换为字符串再比较
+- 所以使用官方的arr.sort()建议必须写比较函数
+
+> The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+- 所以 `[1,2,100].sort()` 的结果是 [1, 100, 2]
 
 - ## 递归有时会依赖其返回值
 - 不要漏写return

@@ -10,6 +10,10 @@ modified: '2021-09-24T19:46:42.224Z'
 > Sort Algorithms 经典排序算法
 
 # guide
+- tips
+  - 不必执着于哪个是性能最高的算法，影响排序的因素很多
+    - 常见因素包括数量多少、极值分布、空间要求、稳定性等
+    - 会碰到数据处理和类型转换用的时间比排序用的时间更多
 
 ```JS
 /**
@@ -49,7 +53,7 @@ var sortArray = function(nums) {};
   - 平均速度最快：快速排序
   - 所需辅助空间最少：堆排序
   - 所需辅助空间最多/非就地排序：归并排序
-  - 具有稳定性的排序算法：插入排序、冒泡排序、归并排序 
+  - 具有稳定性的排序算法：插入排序、冒泡排序、归并排序
 - 稳定性
   - 假定在待排序的记录序列中存在多个具有相同的关键字的记录，
   - 若经过排序，这些记录的相对次序保持不变则称这种排序算法是稳定的，否则称为不稳定的
@@ -101,6 +105,24 @@ var sortArray = function(nums) {};
 ## js实现
 
 ```JS
+/** 💡️ 内层循环仅选出最小索引但不交换 */
+function selectionSort(nums) {
+  // 每次循环处理从i开始的元素序列
+  for (let i = 0; i < nums.length - 1; i++) {
+    // 每次循环要找出最小元素的索引
+    let min = i;
+    for (let j = i; j < nums.length; j++) {
+      if (nums[j] < nums[min]) {
+        min = j;
+      }
+    }
+    let temp = nums[i];
+    nums[i] = nums[min];
+    nums[min] = temp;
+  }
+  return nums
+}
+
 // 减少了内层循环的计算量
 function selectionSort2(nums) {
   // 第i个未排序的元素
@@ -116,23 +138,6 @@ function selectionSort2(nums) {
       j++;
     }
     // 将最小的元素交换到第i个位置，i及其左边都是排好序的了
-    let temp = nums[i];
-    nums[i] = nums[min];
-    nums[min] = temp;
-  }
-  return nums
-}
-/** 💡️ 内层循环仅选出最小索引但不交换 */
-function selectionSort3(nums) {
-  // 每次循环处理从i开始的元素序列
-  for (let i = 0; i < nums.length - 1; i++) {
-    // 每次循环要找出最小元素的索引
-    let min = i;
-    for (let j = i; j < nums.length; j++) {
-      if (nums[j] < nums[min]) {
-        min = j;
-      }
-    }
     let temp = nums[i];
     nums[i] = nums[min];
     nums[min] = temp;
@@ -162,7 +167,20 @@ function selectionSort3(nums) {
 ## js实现
 
 ```JS
+/** 💡️ 从后往前逐个比较并交换 */
 function insertionSort(nums) {
+  // 将第i项作为待插入项
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = i; j > 0 && nums[j] < nums[j - 1]; j--) {
+      let temp = nums[j];
+      nums[j] = nums[j - 1];
+      nums[j - 1] = temp;
+    }
+  }
+  return nums;
+}
+
+function insertionSort2(nums) {
   // 将数组第1个元素看成有序序列，开始处理第2,3,4...个元素
   for (let i = 1; i < nums.length; i++) {
     // 每次循环都要将当前项插入到有序序列的正确位置
@@ -175,18 +193,6 @@ function insertionSort(nums) {
     }
     // 若temp比所有项都大，则放在已排好序的末尾
     nums[j + 1] = temp;
-  }
-  return nums;
-}
-/** 💡️ 从后往前逐个比较并交换 */
-function insertionSort2(nums) {
-  // 将第i项作为待插入项
-  for (let i = 1; i < nums.length; i++) {
-    for (let j = i; j > 0 && nums[j] < nums[j - 1]; j--) {
-      let temp = nums[j];
-      nums[j] = nums[j - 1];
-      nums[j - 1] = temp;
-    }
   }
   return nums;
 }
@@ -272,8 +278,43 @@ function shellSort(nums) {
 - 缺点
  
 - 应用场景
+- Top K 问题
+  - 堆化，取前 K 个元素
+- 中位数问题
+  - 维护两个堆，一大（前50%）一小（后50%），奇数元素取大顶堆的堆顶，偶数取取大、小顶堆的堆顶
+
+- ref
+  - [前端进阶算法9： 堆排序、Top K、中位数问题](https://github.com/sisterAn/JavaScript-Algorithms/issues/60)
 
 ## js实现
+
+```JS
+/** 💡️ 先递归的拆分数组，再两两合并  */
+function mergeSort2(nums) {
+  const len = nums.length;
+  if (len === 1) {
+    return nums;
+  }
+  const mid = Math.floor(len / 2);
+  const lnums = nums.slice(0, mid);
+  const rnums = nums.slice(mid);
+  return merge(mergeSort(lnums), mergeSort(rnums));
+}
+
+function merge(lnums, rnums) {
+  // 临时的有序数组，一直存放到两个数组中有一个为空
+  const arr = [];
+  while (lnums.length && rnums.length) {
+    if (lnums[0] < rnums[0]) {
+      arr.push(lnums.shift())
+    } else {
+      arr.push(rnums.shift())
+    }
+  }
+  return [...arr, ...lnums, ...rnums]
+  // return arr.concat(lnums).concat(rnums);
+}
+```
 
 ```JS
 /** 先拆分数组到只有1个元素，然后相邻两两合并 */
@@ -309,34 +350,6 @@ function mergeSort(nums, left, right) {
   for (let x = left, y = 0; x <= right; x++, y++) {
     nums[x] = temp[y]
   }
-}
-```
-
-```JS
-/** 💡️ 先递归的拆分数组，再两两合并  */
-function mergeSort2(nums) {
-  const len = nums.length;
-  if (len === 1) {
-    return nums;
-  }
-  const mid = Math.floor(len / 2);
-  const lnums = nums.slice(0, mid);
-  const rnums = nums.slice(mid);
-  return merge(mergeSort(lnums), mergeSort(rnums));
-}
-
-function merge(lnums, rnums) {
-  // 临时的有序数组，一直存放到两个数组中有一个为空
-  const arr = [];
-  while (lnums.length && rnums.length) {
-    if (lnums[0] < rnums[0]) {
-      arr.push(lnums.shift())
-    } else {
-      arr.push(rnums.shift())
-    }
-  }
-  return [...arr, ...lnums, ...rnums]
-  // return arr.concat(lnums).concat(rnums);
 }
 ```
 
@@ -471,7 +484,7 @@ function swap(A, i, j) {
   - 从算法描述来看，堆排序需要两个过程，一是建立堆，二是堆顶与堆的最后一个元素交换位置。
   - 所以堆排序有两个函数组成。一是建堆的渗透函数，二是反复调用渗透函数实现排序的函数。  
   - 堆的存储： 堆由数组来实现，相当于对二叉树做层序遍历。
-  - 对于结点i(i为节点所在数组的索引号)，其子结点为 2i+1 与 2i+2，其父节点为 Math.ceil(i/2)-1 
+  - 对于结点i(i为节点所在数组的索引号)，其子结点为 2i+1 与 2i+2，其父节点为 Math.floor((i+1)/2))-1 或 Math.ceil(i/2)-1 
 - 特征
 **时间复杂度** 
 **空间复杂度** 
@@ -605,7 +618,7 @@ function buildMaxHeap(nums, lastIndex) {
 
 ```JS
 /** 💡️ 将较大值后移 */
-function bubleSort2(nums) {
+function bubleSort(nums) {
   let swapped = false;
   for (let i = 0; i < nums.length - 1; i++) {
     swapped = false;
@@ -623,7 +636,7 @@ function bubleSort2(nums) {
   return nums;
 }
 /** 将较小值前移 */
-function bubleSort(nums) {
+function bubleSort2(nums) {
   for (let i = 0; i < nums.length - 1; i++) {
     for (let j = i; j < nums.length; j++) {
       if (nums[j] < nums[i]) {

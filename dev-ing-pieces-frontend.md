@@ -13,7 +13,40 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
-- ## [requestIdleCallback和requestAnimationFrame详解](https://www.cnblogs.com/cangqinglang/p/13877078.html)
+## [performance.now() vs Date.now() vs process.hrtime() vs console.timeEnd()](https://stackoverflow.com/questions/30795525)
+
+- 返回日期时间 performance.now() Date.now()
+- 返回计时器时间 console.timeEnd()，单位是毫秒ms
+
+### [performance.now()](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)
+
+- returns a DOMHighResTimeStamp, measured in milliseconds.
+- Unlike other timing data available to JavaScript (for example `Date.now`), the timestamps returned by `performance.now()` are not limited to one-millisecond resolution. 
+- Instead, they represent times as floating-point numbers with up to microsecond precision.
+- Also unlike Date.now(), the values returned by performance.now() always increase at a constant rate, independent of the system clock
+- performance.timing.navigationStart + performance.now() will be approximately equal to Date.now().
+
+- it is relative to page load and more precise in orders of magnitude. 
+- Use cases include benchmarking and other cases where a high-resolution time is required such as media (gaming, audio, video, etc.)
+
+### [Date.now()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
+
+- returns the number of milliseconds elapsed since 1970-01-01T00:00:00Z
+- it is relative to the Unix epoch (`1970-01-01T00:00:00Z`) and dependent on system clock. 
+- Use cases include same old date manipulation ever since the beginning of JavaScript.
+
+```JS
+// 几乎相同，但极端情况下需要考虑对象创建和函数调用的时间
+var t1 = Date.now(); // 理论上更快
+var t2 = new Date().getTime();
+```
+
+### [process.hrtime()](https://nodejs.org/api/process.html#process_process_hrtime_time)
+
+- returns the current high-resolution real time in a [seconds, nanoseconds] tuple Array, where nanoseconds is the remaining part of the real time that can't be represented in second precision.
+
+## [requestIdleCallback和requestAnimationFrame详解](https://www.cnblogs.com/cangqinglang/p/13877078.html)
+
 - 页面是一帧一帧绘制出来的，当每秒绘制的帧数（FPS）达到 60 时，页面是流畅的
   - 每一帧分到的时间是 1000/60 ≈ 16 ms。所以我们书写代码时力求不让一帧的工作量超过 16ms。
 - 浏览器每一帧都需要完成哪些工作？ life of a frame
@@ -50,7 +83,7 @@ modified: '2021-03-29T19:30:00.059Z'
   - 无论设备的刷新率是多少，requestAnimationFrame 的时间间隔都会紧跟屏幕刷新一次所需要的时间
   - 需要注意的是这个方法虽然能够保证回调函数在每一帧内只渲染一次，但是如果这一帧有太多任务执行，还是会造成卡顿的；因此它只能保证重新渲染的时间间隔最短是屏幕的刷新时间。
 
-- ## [React 源码解析 - 调度模块原理 - 实现 requestIdleCallback](https://www.jianshu.com/p/87533d64626a)
+## [React 源码解析 - 调度模块原理 - 实现 requestIdleCallback](https://www.jianshu.com/p/87533d64626a)
 
 - macrotasks
   - setTimeout, setInterval, setImmediate, I/O, UI rendering
@@ -70,7 +103,8 @@ modified: '2021-03-29T19:30:00.059Z'
   - 调度时通过 requestAnimationFrame api 在浏览器每次重绘前做想做的事
   - 
 
-- ## [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+## [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+
 - `window.requestIdleCallback(callback, options)` method queues a function to be called during a browser's idle periods. 
   - This enables developers to perform background and low priority work on the main event loop, without impacting latency-critical events such as animation and input response. 
   - Functions are generally called in first-in-first-out order; 
@@ -90,12 +124,14 @@ function sayHello() {
 sayHello() // 会无限循环打印 
 ```
 
-- ## [How to use onClick event on Link?](https://stackoverflow.com/questions/48294737)
+## [How to use onClick event on Link?](https://stackoverflow.com/questions/48294737)
+
 - One possible way is, Instead of using `Link`, use `history.push` to change the route dynamically.
 - Now first perform all the task inside `onClick` function 
   - and at the end use `history.push` to change the route means to navigate on other page.
 
-- ## [HTML anchor tag with Javascript onclick event](https://stackoverflow.com/questions/7347786)
+## [HTML anchor tag with Javascript onclick event](https://stackoverflow.com/questions/7347786)
+
 - If your onclick function returns `false`, the default browser behaviour is cancelled.
 
 - ## "foo".endsWith(""); // true
@@ -166,7 +202,7 @@ req(undefined); // okay
   - All methods that read or modify the DOMTokenList (such as DOMTokenList.add()) automatically trim any surrounding whitespace and remove duplicates from the set.
   - Meaning that if you try to add() the same className twice, it won't add the duplicate.
 
-- ## [why does (undefined && true) return undefined?](https://stackoverflow.com/questions/22767602)
+## [why does (undefined && true) return undefined?](https://stackoverflow.com/questions/22767602)
 
 ```JS
 var x = (undefined && true);
@@ -194,11 +230,13 @@ NaN && "anything"; // NaN
 0 && "anything"; // 0
 ```
 
-- ## [Box-shadow affects scale performance](https://stackoverflow.com/questions/37939257)
+## [Box-shadow affects scale performance](https://stackoverflow.com/questions/37939257)
+
 - shadows and opacity greatly impact on performance.
 - check the idea by using images instead of slow CSS-properties
 
-- ## [How to make one circle inside of another using CSS](https://stackoverflow.com/questions/22406661)
+## [How to make one circle inside of another using CSS](https://stackoverflow.com/questions/22406661)
+
 - 
 
 - ## css double border 双边框之间可以自定义填充颜色吗
@@ -211,7 +249,8 @@ NaN && "anything"; // NaN
 - [Css - Need 'triple' border](https://stackoverflow.com/questions/50426095)
 - Consider using box-shadow. You can also do it with multiple box-shadow  
 
-- ## [理解TypeScript中的infer关键字](https://juejin.cn/post/6844904170353328135)
+## [理解TypeScript中的infer关键字](https://juejin.cn/post/6844904170353328135)
+
 - infer可以在 `extends` 的条件语句中推断待推断的类型
 - 使用infer来推断函数的返回值类型
 - infer的作用不止是推断返回值，还可以解包，我觉得这是比较常用的
@@ -219,7 +258,8 @@ NaN && "anything"; // NaN
 - infer推断联合类型
 - 在React的typescript源码中应该常常使用infer来获取类型
 
-- ## [VisualViewport 实现浏览器窗口的缩放检测](https://www.lijinke.cn/2021/03/31/VisualViewport-%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E7%BC%A9%E6%94%BE%E6%A3%80%E6%B5%8B/)
+## [VisualViewport 实现浏览器窗口的缩放检测](https://www.lijinke.cn/2021/03/31/VisualViewport-%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E7%BC%A9%E6%94%BE%E6%A3%80%E6%B5%8B/)
+
 - 最近在工作中, 遇到了用户如果缩放浏览器窗口, 或者使用 mac 笔记本的触摸板缩放浏览器窗口时, canvas 会模糊的问题, 
 原因很简单, 缩放之后, 浏览器的 window.devicePixelRatio 已经发生改变, 所以要用最新的 devicePixelRatio 去绘制
 - 对于用户使用键盘, 比如 commond + + 和 common + - 缩放时, 事情很好办, 使用 resize 事件即可
@@ -227,7 +267,7 @@ NaN && "anything"; // NaN
 - 接下来使用 mac 触摸板进行双指缩放, 
 - 双指缩放 可以使用 e.target.scale 获取缩放比, 键盘缩放, 可以使用 window.devicePixelRatio , 使用 Math.max 取最大字就可以兼容两种情况
 
-- ## [You can watch for nested properties changing in React's useEffect() hook](https://dev.to/aileenr/til-you-can-watch-for-nested-properties-changing-in-react-s-useeffect-hook-26nj)
+## [You can watch for nested properties changing in React's useEffect() hook](https://dev.to/aileenr/til-you-can-watch-for-nested-properties-changing-in-react-s-useeffect-hook-26nj)
 
 ```JS
 useEffect(() => {
@@ -252,7 +292,7 @@ useEffect(() => {
 - ref
   -[ Object & array dependencies in the React useEffect Hook](https://www.benmvp.com/blog/object-array-dependencies-react-useEffect-hook/)
 
-- ## [Are variables declared with let or const hoisted?](https://stackoverflow.com/questions/31219420)
+## [Are variables declared with let or const hoisted?](https://stackoverflow.com/questions/31219420)
 
 - let and const are hoisted but not initialized
   - Referencing the variable in the block before the variable declaration results in a ReferenceError, because the variable is in a "temporal dead zone" from the start of the block until the declaration is processed.
@@ -276,7 +316,8 @@ useEffect(() => {
   - 在万不得已时，可以通过 "./*": "./*" 来导出整个包的根目录，此时“封闭”功能也就不起作用了 
   - 在 "exports" 中使用“条件导出”（Conditional exports）可以为每个环境定义不同入口
 
-- ## [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
+## [What is a non-capturing group in regular expressions?](https://stackoverflow.com/questions/3512471)
+
 - The parser uses it to match the text, but ignores it later, in the final result.
 
 - ## strong vs b
@@ -294,7 +335,7 @@ useEffect(() => {
 - `<i>` element represents text that is set off from the normal prose, 
   - such a foreign word, fictional character thoughts, or when the text refers to the definition
 
-- ## [parseInt vs unary plus, when to use which?](https://stackoverflow.com/questions/17106681)
+## [parseInt vs unary plus, when to use which?](https://stackoverflow.com/questions/17106681)
 
 - The unary `+` acts more like `parseFloat` since it also accepts decimals.
 - An empty string "" evaluates to a 0, while parseInt evaluates it to NaN. IMO, a blank string should be a NaN.
@@ -316,21 +357,25 @@ parseInt("0xf", 10) === 0; //true. This is supposed to be 15
 '0xf' === 15; //true. This one's correct.
 ```
 
-- ## [How to watch only a single field in an object in useEffect hook?](https://stackoverflow.com/questions/56823586)
+## [How to watch only a single field in an object in useEffect hook?](https://stackoverflow.com/questions/56823586)
+
   - by extracting a variable out of useEffect
 
-- ## [Difference between apachectl and apache2](https://stackoverflow.com/questions/16338313)
+## [Difference between apachectl and apache2](https://stackoverflow.com/questions/16338313)
+
 - `man apache2` indicates the following:
   - In  general,  `apache2` should not be invoked directly, but rather should be invoked via /etc/init.d/apache2 or `apache2ctl` . 
   - The default Debian configuration  requires  environment variables  that  are  defined  in `/etc/apache2/envvars` and are not available if `apache2` is started directly.
   - However,  `apache2ctl` can be used to pass arbitrary arguments to `apache2` .
 
-- ## [How to prevent anchor links from scrolling behind a sticky header](https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/)
+## [How to prevent anchor links from scrolling behind a sticky header](https://gomakethings.com/how-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header-with-one-line-of-css/)
+
 - The `scroll-margin-top` property lets you define a top margin that the browser should use when snapping a scrolled element into place.
   - Now, when the browser jumps to the anchor link, it will leave a margin of 1em at the top
   - This margin only applies to scroll snapping. The element still has its normal margins within the context of the document.
 
-- ## [CSS: Width and Max-Width](https://stackoverflow.com/questions/6456468)
+## [CSS: Width and Max-Width](https://stackoverflow.com/questions/6456468)
+
   - width CSS property sets an element's width. By default, it sets the width of the content area
   - max-width CSS property sets the maximum width of an element.
 
@@ -394,7 +439,8 @@ parseInt("0xf", 10) === 0; //true. This is supposed to be 15
     - @babel/preset-typescript does zero type checking, it knows nothing about your types, so building the types of referenced projects before the babel build gets you nowhere.
     - I would have thought the correct approach surely is to build your @babel/preset-typescript as per normal in isolation, and then if you want to ensure you have no type errors then do a separate type-check step with tsc --noEmit afterwards?
 
-- ## [How can i use es6 modules in node.js](https://stackoverflow.com/questions/57932008/how-can-i-use-es6-modules-in-node-js)
+## [How can i use es6 modules in node.js](https://stackoverflow.com/questions/57932008/how-can-i-use-es6-modules-in-node-js)
+
   - Node.js treats JavaScript code as CommonJS modules by default. 
 
     - Authors can tell Node.js to treat JavaScript code as ECMAScript modules via the `.mjs` file extension, the package.json `type` field, or the `--input-type` flag
@@ -957,7 +1003,8 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
   - ref
     - [Webpack 转译 Typescript 现有方案](https://juejin.im/post/6844904052094926855)
 
-- ## [Differences in output of Typescript compiler and Babel for classes](https://kevinwil.de/differences-in-output-of-typescript-compiler-and-babel-for-classes/)
+## [Differences in output of Typescript compiler and Babel for classes](https://kevinwil.de/differences-in-output-of-typescript-compiler-and-babel-for-classes/)
+
   - Recently, I worked on switching our entire frontend codebase from using ts-loader to use babel-loader.
   - We continued to use ts-loader for some time because it was working well for us and we didn’t have a compelling reason to use Babel instead. 
   - That changed when I saw react-refresh. 
@@ -977,7 +1024,8 @@ var d = callConstructor(Date, 2008, 10, 8, 00, 16, 34, 254);
     - Initialize properties to themselves
     - Static create method in base class instead of constructor
 
-- ## [TypeScript and Babel 7](https://devblogs.microsoft.com/typescript/typescript-and-babel-7/)
+## [TypeScript and Babel 7](https://devblogs.microsoft.com/typescript/typescript-and-babel-7/)
+
   - Babel is a fantastic tool with a vibrant ecosystem by transforming the latest JavaScript features to older runtimes and browsers; but it doesn’t do type-checking 
   - While TypeScript itself can do both, we wanted to make it easier to get that experience without forcing users to switch from Babel.
   - Using the TypeScript compiler is still the preferred way to build TypeScript. 

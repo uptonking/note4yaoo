@@ -14,6 +14,10 @@ modified: '2020-08-17T07:50:37.963Z'
 
 # expression
 
+- nit/nits
+  - 在与国外开源项目合作的时候，我们经常看review 者会留下「nit/nits」这样的黑话，可能开始会一脸懵逼。
+  - nit的全称是 nitpick，本意是吹毛求疵，挑刺儿，但用在 review 时是一个中性词，指一个微不足道的建议（如代码风格、文案大小写），开发者可以选择性忽略
+
 - gut reaction
   - 直觉反应; 本能反应; 内部反应; 内心反应; 肠道反应; 
   - Let's have your gut reaction to the facts as we know them. 

@@ -111,11 +111,11 @@ function binarySearch(nums, target, low, high) {
   if (high === undefined) {
     high = nums.length - 1;
   }
+  if (low > high) {
+    return 'not-found+1';
+  }
 
   const mid = Math.floor((low + high) / 2);
-  if (low > high) {
-    return -1;
-  }
 
   if (nums[mid] === target) {
     return mid;

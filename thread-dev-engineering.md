@@ -13,7 +13,9 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ##  `<num value={123} />` vs `<num>123</num>` which style do you prefer?
+- https://twitter.com/jarredsumner/status/1441923089382535173
+- my opinion as a developer: `<number value={123} />` is better because it's clearer and there's no ambiguity of what the type is going to be
 
 - ## XSS cheat sheet only with stuff that works in 2021!
 - https://twitter.com/SamuelAnttila/status/1358822910526320640
