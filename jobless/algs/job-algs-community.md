@@ -11,9 +11,19 @@ modified: '2021-09-25T08:10:17.911Z'
 
 ## 
 
-## 
+## [How to "draw" a Binary Tree to the console](https://stackoverflow.com/questions/801740)
+- Look at the output of `pstree` command in Linux. It does not produce the output in the exact form that you want, but IMHO it's more readable that way.
+- https://github.com/kyliau/print-binary-tree
 
-## 
+## [Time complexity using N way Merge](https://stackoverflow.com/questions/10420397)
+- Note that the base-4 log of a number is exactly half the base-2 log of a number; 
+  - thus, you're only introducing a constant-factor speedup. 
+  - Except you're not, because you introduce a similar constant-factor SLOWDOWN in the cost of the actual merging (2-way merge needs 1 comparison per item, 4-way may need up to 3). 
+  - So while there may be fewer passes, the passes are each more costly.
+  - So you've complicated the code a fair bit, and the benefits are in question.
+
+- It sounds reasonable but is not, because in this case you have to do at least 5 comparions to sort each 4 elements. 
+  - This way you have 5*N*log4(N) comparisons and this is greater than N*log2(N) by factor 5*log(2)/log(4)
 
 ## [What is `Array.prototype.sort()` time complexity?](https://stackoverflow.com/questions/57763205)
 

@@ -84,13 +84,11 @@ modified: '2021-09-20T09:00:43.564Z'
 - [汇总各大互联网公司容易考察的高频leetcode题 人工整理面经而得](https://github.com/afatcoder/LeetcodeTop)
   - https://codetop.cc/home
 
-- 从0到1构建完整的数据结构与算法体系
+- 从0到1构建完整的数据结构与算法体系 按数据结构整理题目与解答，每篇都是一个github issue
   - https://github.com/sisterAn/JavaScript-Algorithms
 
 - https://github.com/basarat/algorithms
   - Code/tests for algorithm and data structure lessons using TypeScript 视频+代码+测试
-
-
 # 代码案例
 - [前端面试手写代码](https://www.yuque.com/just-write/mwkth8)
 - [前端知识总结 + 案例积累分析](https://github.com/huangyangquang/DEMO)

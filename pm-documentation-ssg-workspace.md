@@ -11,17 +11,17 @@ modified: '2021-05-14T14:33:13.599Z'
 
 - related products
   - docusaurus
-
-
 # faq
+
+## not-yet
+
+- 根据包含中文的markdown文件名生成url时，因为浏览器显示到地址栏时会进行编码，所以url拷贝出来会变得特别长，此时在文章中引用很可能污染文档内容
 
 ## 是否该添加trailing slash
 
 - https://github.com/slorber/trailing-slash-guide
 - 不同解决方案提供商的实现不同，没有统一标准
 - 选择能配置该选项的方案，尽量保证一致性
-
-
 # features
 - core/核心功能
   - 读取markdown内容生成DOM，然后渲染

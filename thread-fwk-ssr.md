@@ -49,7 +49,9 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## I'm looking for a state of the art solution or architecture for loading external react components (basically js files) into an existing react app at runtime without rebuilding the app.
+- https://twitter.com/code_punkt/status/1438132387301535750
+- Dynamic import over http perhaps? Webpack module federation is one pf many ways to solve this
 
 - ## how much trouble is it really to have client and server code live in the same file, only to be stripped out on either end during bundling? Is it complex? Needs dependency tracking? 
 - https://twitter.com/tannerlinsley/status/1440306663299293191
