@@ -13,6 +13,28 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+## [Why doesn't JavaScript ES6 support multi-constructor classes?](https://stackoverflow.com/questions/32626524)
+
+- What you want is called constructor overloading. 
+  - This, and the more general case of function overloading, is not supported in ECMAScript.
+- ECMAScript does not handle missing arguments in the same way as more strict languages. 
+  - The value of missing arguments is left as `undefined` instead of raising a error. 
+  - In this paradigm, it is difficult/impossible to detect which overloaded function you are aiming for.
+  - The idiomatic solution is to have one function and have it handle all the combinations of arguments that you need. 
+
+```JS
+class Option {
+  constructor(key, value, autoLoad = false) {
+    if (typeof key !== 'undefined') {
+      this[key] = value;
+    }
+    this.autoLoad = autoLoad;
+  }
+}
+```
+
+- Another option would be to allow your constructor to take an object that is bound to your class properties
+
 ## [performance.now() vs Date.now() vs process.hrtime() vs console.timeEnd()](https://stackoverflow.com/questions/30795525)
 
 - 返回日期时间 performance.now() Date.now()

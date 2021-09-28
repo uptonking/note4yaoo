@@ -16,6 +16,19 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Psst, when using TypeScript (or generally being halfway disciplined about your types), using '===' instead of '==' does not actually get you anything.
+- https://twitter.com/MarijnJH/status/1442414215940034567
+- Except a performance benefit would be a reasonable expectation?
+  - Any performance benefit would have to come from a compiler optimization.
+- When using input from external sources (API, json files, user input) using == might get you into trouble.  TS types are gone during execution in JS execution contexts so it's always best to use ===
+- Unless you have a mixed types accuracy and you never know if something is checked
+
 - ## Moved some of my smaller libs to JSDoc TS; thoroughly recommend it. 
 - https://twitter.com/Rich_Harris/status/1440639878065111048
   - Among other things, the resulting code is generally smaller than transpiled code. 
@@ -26,7 +39,6 @@ Symbol('a') === Symbol('a') //false
 - https://twitter.com/rauschma/status/1438030552871981056
 
 ```JS
-
 const arr = ['a', 'b'];
 arr.prop = 123;
 
@@ -34,14 +46,13 @@ assert.deepEqual(
   Object.keys(arr),
   ['0', '1', 'prop']);
 
-assert.equal(arr[0], 'a');    // true
-assert.equal(arr['0'], 'a');  // true
+assert.equal(arr[0], 'a'); // true
+assert.equal(arr['0'], 'a'); // true
 ```
+
 - Just because you can doesn't mean you should
 - I got bitten the other week by `Object.entries` returning the indexes as strings, not numbers.
 - But modern JavaScript engines do manage to optimize Array access to behave like the array of languages like C or Java, and not like dictionaries
-
-
 
 - ## Today I learned that `Array.concat()` can work just fine with non array variables.
 - https://twitter.com/maxkoretskyi/status/1436010126415122434

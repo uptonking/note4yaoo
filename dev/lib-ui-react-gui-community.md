@@ -25,7 +25,13 @@ modified: '2021-07-12T05:41:18.380Z'
 
 - ## 
 
-- ## 
+- ## React GUI is an exploration of what React Native's APIs could look like if they were more modular, more composable, expanded beyond mobile touch interfaces, and modeled on web standards.
+- https://twitter.com/ReactWeb/status/1442563831775956996
+- This looks cool, but I think it’s worth noting it’d look messier with evt callbacks that:
+  - are defined in the component, since the hook wraps them in both an object and the hook call
+  - need to be memo’d. Yet another wrapper
+  - are used alongside a ref callback. What is what?
+- Headless UIs would benefit. Logic and styles can be separated.
 
 - ## It looks like Facebook will release react-gui soon. 
 - https://twitter.com/estejs/status/1414259301632385027

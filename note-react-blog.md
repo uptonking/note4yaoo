@@ -123,6 +123,29 @@ type ArticleCardProps = Pick<Article, "coverImageUrl" | "title" | "subtitle"> & 
 
 - All of them have their advantages, drawbacks, and use cases in terms of readability. 
 - The information in this article will provide you with a solid foundation on different ways to implement TypeScript props typing for your React components in a readable manner. 
+# [React antipatterns to avoid__202109](https://isamatov.com/react-antipatterns)
+- Putting everything in Redux
+  - The rule of thumb: Only use Redux for truly global data, like user session or app theme.
+- Storing everything as a state
+  - The rule of thumb: Before storing a variable in the state, ask yourself: “Can I somehow derive this variable based on other data I’m already storing?"
+- Passing props using spread operator everywhere
+  - The rule of thumb: Generally avoid passing props using the spread operator.
+  - it’s not immediately clear which props your child components actually need. 
+  - Even small refactoring efforts will open up a can of worms. Plus it’s much harder to track bugs in your component tree.
+- Declaring components inside of components
+  - The rule of thumb: Avoid declaring components inside their parents.
+  - The parent component will re-create the declaration function of the child component on each render.
+- Passing too much information to components
+  - When possible, pass only primitives to presentational components. 
+  - Doing so simplifies optimizing their performance later on.
+  - This makes it easier to reduce the number of re-renders using React.memo
+- Overoptimizing performance
+  - You could be building out new features and solving the problems that matter instead.
+- Huge component trees
+  - The rule of thumb: Keep component trees clean so that it’s easier to see what the component is supposed to be rendering and when.
+  - Refactor long conditional statements into separate variables.
+  - Separate pieces of the tree into smaller presentational components.
+  - Move the arrow function handlers out of the component tree.
 # [7 code smells in your React components_202011](https://dev.to/awnton/7-code-smells-in-react-components-5f66)
 
 ## Too many props

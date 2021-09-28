@@ -212,6 +212,18 @@ modified: '2021-06-12T02:41:33.389Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## export work to Microsoft Word from our @prosemirror editor.
+- https://twitter.com/curvenote/status/1442542857944911873
+- https://github.com/curvenote/prosemirror-docx
+  - Export a prosemirror document to a Microsoft Word file, using docx.
+- https://github.com/dolanmiu/docx
+  - Easily generate .docx files with JS/TS with a nice declarative API. 
+  - Works for Node and on the Browser.
+
 - ##  Why did you pick that over Slate or Draft?
 - https://twitter.com/nikgraf/status/1415726807446401024
 - Afaik all of the are maintained.

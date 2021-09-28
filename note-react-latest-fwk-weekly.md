@@ -18,6 +18,23 @@ modified: '2021-03-22T18:46:03.513Z'
 
 ## w0920-09926
 
+👉 Chat with Swyx & Sunil
+👉 Shopify Hydrogen
+👉 MUI v5
+👉 React antipatterns
+👉 useIsMounted
+👉 useReducer
+👉 Expo OTA
+👉 Skia Breakout
+👉 Reanimated Layout anim
+👉 Colorwaver
+👉 Smart client vs Smart server
+👉 Rome ➡️ Rust
+👉 Partytown
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1442796679934222337
+
 ## w0913-09919
 
 👉 Ultra

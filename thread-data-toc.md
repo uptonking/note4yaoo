@@ -14,7 +14,9 @@ modified: '2021-01-31T08:40:11.675Z'
 # pieces
 - ## 
 
-- ## 
+- ## Test of Time Awards
+- http://ieeevis.org/year/2021/info/awards/test-of-time-awards
+- 对行业产生持续影响的论文、工作
 
 - ## Google just released data re: geofence warrants as part of their transparency report.
 - https://twitter.com/_dschwarz/status/1428453965423955970

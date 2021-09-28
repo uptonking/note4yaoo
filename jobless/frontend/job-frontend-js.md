@@ -341,6 +341,11 @@ a.b(); // Uncaught TypeError: a.a is not a functionI
 
 ## new一个对象时发生了什么
 
+1. Creates a blank, plain JavaScript object.
+2. Adds a property to the new object (`__proto__`) that links to the `constructor` function's `prototype` object 
+3. Binds the newly created object instance as the `this` context (i.e. all references to `this` in the constructor function now refer to the object created in the first step).
+4. Returns `this` if the function doesn't return an object.
+
 - 在内存中创建一个新对象
 - 新对象内部的[[Prototype]]特性被赋值为构造函数的prototype属性
 - 构造函数内部的this被赋值为这个新对象（即this指向新对象）
