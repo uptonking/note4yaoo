@@ -18,9 +18,13 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Working with (JavaScript) Proxies is kind of a pain
+- https://twitter.com/brian_d_vaughn/status/1443202951368089601
+  - Can't detect them. Can't iterate over them (in some cases).
 
-- ## 
+- ## “foo” === “foo” in JavaScript returned false. Can you guess why? 
+- https://twitter.com/jarredsumner/status/1443117924894470147
+  - Hint: one “foo” came from a fetch() response body
 
 - ## Psst, when using TypeScript (or generally being halfway disciplined about your types), using '===' instead of '==' does not actually get you anything.
 - https://twitter.com/MarijnJH/status/1442414215940034567

@@ -17,6 +17,12 @@ modified: '2021-02-05T14:00:02.922Z'
 - You might recognise this demo from some of my earlier work, as it's a “Pure CSS” rework of a demo from 2020.
   - https://codepen.io/bramus/pen/ExaEqMJ (js version)
   - 下滑时会自动高亮toc的对应菜单
+
+- ## an interactive CSS box model experience
+- https://twitter.com/argyleink/status/1355161023221813250
+  - 显示box model的三维效果
+  - 无依赖，纯css实现
+  - https://codepen.io/argyleink/pen/BaLedvd
 # css-ux-examples
 - css firework
 
@@ -464,11 +470,6 @@ modified: '2021-02-05T14:00:02.922Z'
   - 需要chrome 89，并且开启特性
 - [JavaScript Web Animations API (WAAPI) + ScrollTimeline](https://codepen.io/bramus/full/ExgJPjM)
 - Key part is setting `endScrollOffset` to edge `end` + offset `1`
-
-- ## an interactive CSS box model experience
-- https://twitter.com/argyleink/status/1355161023221813250
-  - 显示box model的三维效果
-  - https://codepen.io/argyleink/pen/BaLedvd
 
 - ## 实现div-border-collapse效果的方法
 - https://stackoverflow.com/questions/17915865/how-to-make-borders-collapse-on-a-div

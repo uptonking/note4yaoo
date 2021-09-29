@@ -160,10 +160,11 @@ new Foo().getName() // new ((new Foo()).getName())
 
 ## valueOf vs toString (+号运算符) 类似java的自动拆箱装箱/隐式类型转换
 
-- [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
-  - returns the primitive value of the specified object.
-  - JavaScript automatically invokes it when encountering an object where a primitive value is expected.
-  - If an object has no primitive value,  `valueOf` returns the object itself.
+### [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+
+- returns the primitive value of the specified object.
+- JavaScript automatically invokes it when encountering an object where a primitive value is expected.
+- If an object has no primitive value,  `valueOf` returns the object itself.
 - A (unary) plus sign can sometimes be used as a shorthand for `valueOf`, e.g. in `+new Number()`.
 
 - The unary plus operator (`+`) precedes its operand and evaluates to its operand but attempts to convert it into a number, if it isn't already.
@@ -194,10 +195,11 @@ aa.valueOf(); // {}
 +false // 0
 ```
 
-- [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
-  - returns a string representing the object.
-  - toString() method that is automatically called when the object is to be represented as a text value or when an object is referred to in a manner in which a string is expected.
-  - If this method is not overridden in a custom object, toString() returns "[object type]", where type is the object type.
+### [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
+
+- returns a string representing the object.
+- toString() method that is automatically called when the object is to be represented as a text value or when an object is referred to in a manner in which a string is expected.
+- If this method is not overridden in a custom object, toString() returns "[object type]", where type is the object type.
 
 ```typescript
 
@@ -216,9 +218,27 @@ Number(''); // 0
 
 ({valueOf: () => 1, toString: () => "f"})+""    // "1" 
 `${({valueOf: () => 1, toString: () => "f"})}`  // "f"
+
+'a' === String('a')      // true
+'a' === new String('a')  // false
 ```
 
-- The addition operator (`+`) produces the sum of numeric operands or string concatenation.
+### [obj.toString() vs String(obj)](https://stackoverflow.com/questions/3945202)
+
+- `value.toString()` will cause an error if value is `null` or `undefined`. 
+  - `String(value)` should not.
+- The `String` constructor called as a function would be roughly equivalent to: `value +''; `
+
+- when converting from Object-to-String, the following steps are taken:
+  - If available, execute the `toString` method.
+    - If the result is a primitive, return result, else go to Step 2.
+  - If available, execute the `valueOf` method.
+    - If the result is a primitive, return result, else go to Step 3.
+  - Throw `TypeError`.
+
+### The addition operator ( `+` ) 自动类型转换
+
+- produces the sum of numeric operands or string concatenation.
 
 ```JS
 var x = {
@@ -227,6 +247,11 @@ var x = {
 };
 console.log("x=" + x); // x=42
 console.log("x=" + x.toString()); // x=foo
+
+Symbol("foo").toString() // Symbol(foo)
+String(Symbol("foo")) // Symbol(foo)
+Symbol("foo") + "" // Uncaught TypeError: Cannot convert a Symbol value to a string
+`${Symbol("foo")}` // Uncaught TypeError: Cannot convert a Symbol value to a string
 ```
 
 - Type coercion(强迫), or implicit type conversion, enables weak typing and is used throughout JavaScript. 
@@ -339,11 +364,12 @@ a.a();
 a.b(); // Uncaught TypeError: a.a is not a functionI
 ```
 
-## new一个对象时发生了什么
+## new新建对象时发生了什么
 
 1. Creates a blank, plain JavaScript object.
 2. Adds a property to the new object (`__proto__`) that links to the `constructor` function's `prototype` object 
-3. Binds the newly created object instance as the `this` context (i.e. all references to `this` in the constructor function now refer to the object created in the first step).
+3. Binds the newly created object instance as the `this` context 
+   - (i.e. all references to `this` in the constructor function now refer to the object created in the first step).
 4. Returns `this` if the function doesn't return an object.
 
 - 在内存中创建一个新对象

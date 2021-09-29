@@ -1,13 +1,13 @@
 ---
-title: toc-repos-repeat
-tags: [repeat, repos, rewrite, toc]
+title: toc-lib-rewrite-build-your-own
+tags: [repeat, rewrite, toc]
 created: '2020-10-11T09:40:20.215Z'
-modified: '2020-11-03T06:56:31.090Z'
+modified: '2021-09-29T13:23:09.969Z'
 ---
 
-# toc-repos-repeat
+# toc-lib-rewrite-build-your-own
 
-# repos
+# guide
 
 - https://github.com/danistefanovic/build-your-own-x
   - Build your own (insert technology here), listing examples
@@ -19,12 +19,11 @@ modified: '2020-11-03T06:56:31.090Z'
 - https://github.com/iampava/steal-like-a-dev
   - Tutorial series focused on implementing from scratch popular packages/libraries.
   - create-react-app, react-router, react-redux, redux-thunk, styled-components
-
 # web
 
 ## vdom
-- [如何理解虚拟DOM](https://www.zhihu.com/question/29504639)
 
+- [如何理解虚拟DOM](https://www.zhihu.com/question/29504639)
 
 - https://github.com/livoras/simple-virtual-dom
   - Simple virtual-dom algorithm. It has only ~500 lines of code
@@ -42,4 +41,7 @@ modified: '2020-11-03T06:56:31.090Z'
   - It offers a modular architecture with rich functionality for extensions through custom modules. 
   - To keep the core simple, all non-essential functionality is delegated to modules.
 - more-vdom
-
+# 3d-threejs
+- Build your own react-three-fiber
+  - https://codesandbox.io/s/build-your-own-react-three-fiber-zlq3c
+  - The only issue is that events are blocking the render loop, but I'm not sure what's causing this.

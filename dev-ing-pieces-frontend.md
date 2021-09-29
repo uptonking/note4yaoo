@@ -13,6 +13,28 @@ modified: '2021-03-29T19:30:00.059Z'
 
  
 
+## 
+
+## 
+
+## 
+
+## [How to compare arrays in JavaScript?](https://stackoverflow.com/questions/7837456)
+
+- I have been running performance tests on some of the more simple suggestions proposed here with the following results (**fast to slow**):
+- while
+  - if (a1[i] !== a2[i]) return false; 
+- every
+  - a1.every((v, i)=> v === a2[i]); 
+- reduce
+  - a1.reduce((a, b) => a && a2.includes(b), true); 
+- join / toString()/String()
+  - a1.join('') === a2.join(''); 
+  - a1.toString() === a2.toString(); 
+- a1 == a2.toString(); 
+- stringify
+  - JSON.stringify(a1) === JSON.stringify(a2); 
+
 ## [Why doesn't JavaScript ES6 support multi-constructor classes?](https://stackoverflow.com/questions/32626524)
 
 - What you want is called constructor overloading. 

@@ -44,6 +44,20 @@ modified: '2021-09-20T09:00:43.564Z'
   - 经典css
   - 参考资料
     - [前端面试常见手写题整理](https://github.com/Mayandev/fe-interview-handwrite)
+# 多刷几遍
+- [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
+
+- [前端面试指北 面向面经学习+手撕代码](https://www.yuque.com/nepjnq/fgeemd)
+- [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
+- [前端面试小册](https://docs.chenqaq.com/algorithm)
+  - https://github.com/okaychen/FE-Interview-Brochure
+  - 本人2019年秋招前端面试经历
+  - 包含基础篇、Vue框架篇、HTTP&浏览器、构建工具篇、安全篇、算法篇
+
+- https://github.com/sisterAn/JavaScript-Algorithms
+  - 从0到1构建完整的数据结构与算法体系 
+  - 按数据结构整理题目与解答，每篇都是一个github issue
+  - 提供了经典的手写源码题和基础题
 # 面经参考
 - [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://zhuanlan.zhihu.com/p/363694889)
 
@@ -54,15 +68,7 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [网友面经合集2018-2020](https://github.com/wangwenjie1314/webQd/blob/master/file/%E9%9D%A2%E7%BB%8F/index.md)
 # 面试总结
-- [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
 - [前端面试直通车 2021(大厂收集)](https://www.yuque.com/robinson/fe-interview)
-
-- [前端面试指北 面向面经学习](https://www.yuque.com/nepjnq/fgeemd)
-- [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
-- [前端面试小册](https://docs.chenqaq.com/algorithm)
-  - https://github.com/okaychen/FE-Interview-Brochure
-  - 本人2019年秋招前端面试经历
-  - 包含基础篇、Vue框架篇、HTTP&浏览器、构建工具篇、安全篇、算法篇
 
 - [高频面试大纲](https://github.com/lanweipeng/fullAnswer)
 - [前端面试高频问题](https://github.com/soneway/blog/blob/master/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E9%97%AE%E9%A2%98.md)
@@ -86,12 +92,9 @@ modified: '2021-09-20T09:00:43.564Z'
 - [汇总各大互联网公司容易考察的高频leetcode题 人工整理面经而得](https://github.com/afatcoder/LeetcodeTop)
   - https://codetop.cc/home
 
-- 从0到1构建完整的数据结构与算法体系 按数据结构整理题目与解答，每篇都是一个github issue
-  - https://github.com/sisterAn/JavaScript-Algorithms
-
 - https://github.com/basarat/algorithms
   - Code/tests for algorithm and data structure lessons using TypeScript 视频+代码+测试
-# 代码案例
+# 手撕代码
 - [前端面试手写代码](https://www.yuque.com/just-write/mwkth8)
 - [前端知识总结 + 案例积累分析](https://github.com/huangyangquang/DEMO)
 # 招聘信息

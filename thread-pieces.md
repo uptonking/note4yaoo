@@ -41,7 +41,7 @@ modified: '2021-01-11T12:10:50.900Z'
 
 - ## After suffering career burnout for the past 4-5 years, here's how I've come to understand its cause: 
 - https://twitter.com/marcysutton/status/1292971874570256385
-  - Burnout is a response to repeated attempts to make meaningful change while lacking the agency to do so. 
+  - Burnout is a response to repeated attempts to make meaningful change while lacking the agency(力量、作用) to do so. 
   - See problems > try to fix them > get shot down or ignored.
 - Mismatch between authority and responsibility like others said, but also feeling like your work is not personally meaningful or effective. See problems > try to fix them > welcome to outcome unclear research limbo land
 
