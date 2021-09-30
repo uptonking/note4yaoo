@@ -9,7 +9,11 @@ modified: '2021-05-14T14:52:48.486Z'
 
 # guide
 
-# blogging
+# release-notes
+
+## Support for Microsoft Excel File Attachments__202109
+
+- supports parsing data from `.xlsx` file attachments
 
 ## Exploring/Wrangling data in Observable__202108
 

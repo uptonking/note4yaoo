@@ -169,3 +169,36 @@ function checkInView(el) {
   1. 监听组件上 `mousedown` 事件：回调中添加对文档中 `mousemove` 事件和组件上 `mouseup` 事件的监听、
   2. 当鼠标移动：执行 `moveAt()`，设置当前元素的绝对定位偏移坐标为指针坐标
   3. 当鼠标松开：移除对于文档中 `mousemove` 事件和组件上 `mouseup` 事件的监听
+# 使用一个 div 实现width为200px, height为0的的正方形？
+
+```CSS
+.div1 {
+  width: 200px;
+  /* padding-top会导致背景色消失 */
+  padding-top: 200px;
+  background-color: coral;
+}
+
+.c2 {
+  /* 如果注释掉width，正方形会占满整个屏幕 */
+  width: 25%;
+  aspect-ratio: 1 / 1;
+  background-color: coral;
+}
+```
+
+```HTML
+<!-- 这里只能用padding-bottom，而不能用padding-top -->
+<!-- 这个正方形尺寸会随着viewport响应式缩放 -->
+<div style="height:0; width:20%; padding-bottom:20%;background-color:beige">
+  <div>
+    Content goes here
+  </div>
+</div>
+```
+
+- 盒模型规定，任何元素的padding和border都是在此指定的宽度和高度内布置和绘制。
+  - 内容宽度和高度是通过从指定的“宽度”和“高度”属性中减去相应边的边框和padding值来计算的。
+  - 然而对于宽度和高度的值是不能为负值的，所以0 - padding-top的极限值就是0. 故高度就一直会是0
+
+- padding-top的百分比是基于父元素的width来计算的。

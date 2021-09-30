@@ -16,7 +16,17 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## If you want to run a piece of code multiple times (e.g. while evolving it), you can also wrap it in a code block
+- https://twitter.com/rauschma/status/1443339928503529478
+
+```JS
+// js代码块，默认是块级作用域，不会污染全局变量，适合用于测试
+{
+  const str1 = 'abc';
+  const str2 = str1 + 'def';
+  console.log(str2);
+}
+```
 
 - ## Working with (JavaScript) Proxies is kind of a pain
 - https://twitter.com/brian_d_vaughn/status/1443202951368089601

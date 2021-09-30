@@ -111,8 +111,9 @@ function binarySearch(nums, target, low, high) {
   if (high === undefined) {
     high = nums.length - 1;
   }
+  // 若参数数组只有1个元素，也应该执行比较，所以这里不能为=
   if (low > high) {
-    return 'not-found+1';
+    return -1;
   }
 
   const mid = Math.floor((low + high) / 2);
@@ -128,7 +129,6 @@ function binarySearch(nums, target, low, high) {
     return binarySearch(nums, target, mid + 1, high)
   }
 
-  return 'not-found';
 }
 
 var arr = [-34, 1, 3, 4, 5, 8, 34, 45, 65, 87];

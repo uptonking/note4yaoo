@@ -13,6 +13,10 @@ modified: '2021-09-23T08:17:41.755Z'
   - 层叠规则、特指度、选择器
   - 盒模型
   - 定位布局
+
+- 零宽字符
+  - 有时候可使用伪元素结合零宽字符使空div显示宽高
+  - .class1::before{ content: "\200B"; }
 # html
 
 ## html元素分类
@@ -31,6 +35,14 @@ modified: '2021-09-23T08:17:41.755Z'
   - 元素不会导致换行，但可以设置 width、height
   - 盒宽度默认为内容宽度，设置 margin 和 padding 都生效
   - 代表：input、button
+
+- div没有内容时，默认不占位，设置宽度也没用
+  - 可以设置 `min-height:1px;` 使设置的宽高生效
+  - The height and width CSS properties are not inheritable. 
+  - If not specified, their default value is “auto” which means “browser will calculate it“. 
+  - In fact, the **actual width of empty `<div>`** is the width of the containing element. 
+  - The **actual height of empty `<div>`** is `0`. 
+  - for empty div, the final height would be `0` even there is a percentage height.
 
 ## src vs href
 
@@ -129,7 +141,6 @@ const compareDOM = function(elem1, elem2) {
 - 使用 rAF 调节渲染
   - 很多情况下频繁的重新渲染无法避免，比如页面滚动与动画
   - 如果将所有动画函数放在 rAF 回调中，那它就会被放在下一帧渲染前执行，这样将动画效果集中在一次回流重绘中就能渲染，避免了DOM修改时再额外导致回流重绘。 
-
 # css-knowledge
 - transform: translate
   - 单个值：A percentage value refers to the width of the reference box defined by the transform-box property.

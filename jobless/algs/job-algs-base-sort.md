@@ -516,7 +516,7 @@ export function heapSort(nums) {
     heapifyMax(nums, i, len);
   }
 
-  for (let j = len - 1; j > 0; j--) {
+  for (let j = len - 1; j >= 0; j--) {
     swap(nums, 0, j);
     // j可以代表本轮未排序元素个数
     heapifyMax(nums, 0, j);

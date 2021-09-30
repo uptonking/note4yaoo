@@ -20,9 +20,7 @@ modified: '2021-05-14T15:03:38.010Z'
 - es module发出的http请求，是以scripts脚本加载的形式。而service worker只能拦截fetch。
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
-
 # vscode-powered
-
 - https://github.com/cdr/code-server
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
@@ -33,8 +31,13 @@ modified: '2021-05-14T15:03:38.010Z'
 - CodePen is a social development environment. 
 - It comes fully equipped with all the features you'll need to build, test, share, collaborate and even deploy your websites.
 
-- open source alternative
-  - https://github.com/chinchang/web-maker
+- open source alternatives
+- https://github.com/chinchang/web-maker
+  - an offline playground for your web experiments. 
+  - Something like CodePen or JSFiddle, but much more faster and offline supported because it runs completely on your system.
+- https://github.com/lostintangent/codeswing
+  - an interactive coding playground for VS Code
+  - It's like having the magic of a traditional web playground (e.g. CodePen, JSFiddle), but available directly from your highly-personalized editor
 
 ## CodeSandbox
 
@@ -80,13 +83,9 @@ modified: '2021-05-14T15:03:38.010Z'
   - Scrimba lets you take up an instructors demo and build it up into whatever use case you desire. 
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
-
 # more-online-code-editor
-
 - https://github.com/agneym/playground
   - https://blog.agney.dev/introducing-playground/
   - playground for HTML, CSS and JavaScript supporting module imports.
-
 # ref
-
 - [7 JavaScript Playgrounds to Use in 2019 ― Scotch.io](https://scotch.io/tutorials/7-javascript-playgrounds-to-use-in-2019)
