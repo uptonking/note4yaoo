@@ -1,11 +1,11 @@
 ---
-title: spec-format-office-math
+title: spec-office-math
 tags: [format, math, office, spec]
 created: '2020-12-16T12:41:16.245Z'
-modified: '2021-01-14T13:21:12.375Z'
+modified: '2021-09-30T07:44:28.907Z'
 ---
 
-# spec-format-office-math
+# spec-office-math
 
 # spec
 

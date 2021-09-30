@@ -1,11 +1,11 @@
 ---
-title: spec-format-markdown
+title: spec-office-markdown
 tags: [format, markdown]
 created: '2019-12-24T11:23:55.280Z'
-modified: '2020-10-15T13:41:05.547Z'
+modified: '2021-09-30T07:43:25.286Z'
 ---
 
-# spec-format-markdown
+# spec-office-markdown
 
 # guide
 

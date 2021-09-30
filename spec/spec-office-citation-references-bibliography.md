@@ -1,11 +1,11 @@
 ---
-title: spec-format-citation-references-bibliography
+title: spec-office-citation-references-bibliography
 tags: [bibliography, citation, format, spec]
 created: '2021-07-28T13:01:39.543Z'
-modified: '2021-07-28T13:03:37.759Z'
+modified: '2021-09-30T07:44:48.235Z'
 ---
 
-# spec-format-citation-references-bibliography
+# spec-office-citation-references-bibliography
 
 # guide
 

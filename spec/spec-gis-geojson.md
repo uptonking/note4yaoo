@@ -1,13 +1,20 @@
 ---
-title: spec-format-geojson
+title: spec-gis-geojson
 tags: [format, gis]
 created: '2019-12-24T12:58:14.641Z'
-modified: '2021-01-04T16:20:14.177Z'
+modified: '2021-09-30T07:43:15.350Z'
 ---
 
-# spec-format-geojson
+# spec-gis-geojson
 
 # guide
+
+- geojson features
+  - JSON format: **human-readable**, text-based format
+  - File based
+  - Can handle complex data
+  - File size grows fast
+  - IETF Standard
 
 - json-ext-gis
   - geojson

@@ -63,6 +63,11 @@ modified: '2021-01-04T16:21:18.990Z'
   - It can run from the command line or in the browser.
 - https://github.com/Esri/calcite-maps
   - A Bootstrap theme for designing, styling and creating modern map apps.
+
+- https://github.com/kothic/kothic-js
+  - http://kothic.org/
+  - a full-featured JavaScript map rendering engine using HTML5 Canvas. 
+  - It was initially developed as a JavaScript port of Kothic rendering engine written in Python
 # 3d
 - cesium /6.2kStar/Apache2/202009/js
   - https://github.com/CesiumGS/cesium

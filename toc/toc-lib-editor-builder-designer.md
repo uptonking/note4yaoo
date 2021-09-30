@@ -6,11 +6,8 @@ modified: '2020-11-17T13:38:19.107Z'
 ---
 
 # toc-lib-editor-builder-designer
-
 - 拖拽编辑器可用于界面设计、图表设计、产品原型设计
-
 # popular
-
 - craft.js /MIT/3kStar/202009/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
@@ -87,9 +84,7 @@ modified: '2020-11-17T13:38:19.107Z'
   - https://ant-extensions.herokuapp.com/?path=/story/page-maker-example--example
   - https://github.com/wrannaman/mui-scaffold
     - Drag and drop material ui components on to the page.
-
 # designer-prototype
-
 - alva /MIT/3.5kStar/201907/ts
   - https://github.com/meetalva/alva
   - https://meetalva.io/
@@ -116,9 +111,7 @@ modified: '2020-11-17T13:38:19.107Z'
     - Requires PHP: 5.6
   - 稿定设计
     - 在线PS、自动抠图、海量素材
-
 # page/site/ui-builder
-
 - page-builder /NALic/77Star/202008
   - https://github.com/cqm1994617/page-builder
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
@@ -129,8 +122,12 @@ modified: '2020-11-17T13:38:19.107Z'
   - http://fex-team.github.io/amis-editor
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
-
 # h5-editor
+- h5-dooring /5.4kStar/GPL/202109/ts
+  - https://github.com/MrXujiang/h5-Dooring
+  - http://h5.dooring.cn/
+  - H5可视化页面配置解决方案
+  - 依赖dva、umi、antd、redux、react-dnd、koa
 
 - react-designer /1.7kStar/MIT/201906/js
   - https://github.com/react-designer/react-designer
@@ -148,13 +145,7 @@ modified: '2020-11-17T13:38:19.107Z'
   - /4Star/MIT/202006
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
-- https://github.com/MrXujiang/h5-Dooring
-  - /799Star/GPLv3/202010
-  - H5可视化页面配置解决方案
-  - 依赖dva、umi、antd、redux、react-dnd、koa
-
 # misc
-
 - https://github.com/chriskitson/react-drag-drop-layout-builder
   - simple
 - https://github.com/h5ds/h5ds
@@ -164,7 +155,5 @@ modified: '2020-11-17T13:38:19.107Z'
 
 - https://github.com/swagger-api/swagger-editor
   - Swagger Editor lets you edit Swagger API specifications in YAML inside your browser and to preview documentations in real time. 
-
 # discussion
-
 - [List of drag & drop React UI builders_202003](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)

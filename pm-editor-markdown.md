@@ -68,7 +68,9 @@ modified: '2021-05-14T14:33:33.975Z'
 - 提示上一个标题h? 的级别，甚至自动补全当前标题的等级，不用到处查找
 
 - list
-  - 复制ol有序列表时，自动复制序号
+  - 提供有序列表和无序列表的自动转换功能
+  - 复制ol有序列表时，可选择自动复制序号
+  - 可自动统计ul无序列表的总数量
 # extensions
 - 扩展markdown的方法
   - 参考asciidoc, rst
@@ -98,8 +100,10 @@ modified: '2021-05-14T14:33:33.975Z'
 - better code editor in doc editor
 - better math/latex
 - canvas renderer for partial/full doc 
-- headless
-- 更关注使用场景如代码ide、笔记、markdown、block-editor、分享、streamlit、移动端
+- headless component
+- 针对常见使用场景进行优化
+  - 如代码ide、笔记、markdown、block-editor、分享、streamlit、移动端
+- fast long documents with hosted sqlite and http range
 # integrations/connections
 - github-readme-editor
 

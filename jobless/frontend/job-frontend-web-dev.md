@@ -8,7 +8,8 @@ modified: '2021-09-23T08:19:02.135Z'
 # job-frontend-web-dev
 
 # guide
-
+- not-yet
+  - 利用http range实现请求github pages上托管的sqlite的部分数据
 # web性能优化
 - 资源压缩
 - 异步加载
