@@ -83,6 +83,8 @@ modified: '2021-09-20T09:00:43.564Z'
 - [阿里、网易、滴滴共十次前端面试碰到的问题](https://juejin.cn/post/6844903480428068872)
 - [「2021」高频前端面试题汇总之JavaScript篇（上）](https://juejin.cn/post/6940945178899251230)
 - [Web前端面试指南与高频考题解析](https://www.kancloud.cn/sllyli/s1212#/catalog)
+
+- [前端面试查漏补缺 15个知识点15篇文章](https://juejin.cn/post/6844903781079973895)
 # 开发参考
 - [前端性能优化总结](https://github.com/zoro-web/blog/issues/11)
 # 算法参考

@@ -11,6 +11,14 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## @algolia docsearch can now index your technical blog, for free
+- https://twitter.com/sebastienlorber/status/1443920402686922755
+  - I believe now a Docusaurus-based tech blog would be eligible
+
 - ## Tiny helpers
 - https://tiny-helpers.dev/
   - A collection of free single-purpose online tools for web developers

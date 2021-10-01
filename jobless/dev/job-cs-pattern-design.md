@@ -13,12 +13,12 @@ modified: '2021-09-23T18:31:42.015Z'
 - 创建型
   - 工厂模式
 - 结构型
-  - 迭代器模式
+  - 迭代器模式 Symbol.iterator
 - 行为型
   - 单例模式
   - 发布订阅模式
   - 观察者模式
-  - 代理模式
+  - 代理模式 Proxy
 
 - 框架中常用的数据结构
   - stack栈：JS执行栈、react stack reconciler

@@ -32,7 +32,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## pure CSS skipping rope
+- https://twitter.com/anatudor/status/1443835073703391234
+  - https://codepen.io/thebabydino/pen/WNOMWBa
 
 - ## Hilbert curve
 - https://codepen.io/yuanchuan/pen/oNwJqqK

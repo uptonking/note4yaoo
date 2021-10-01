@@ -333,7 +333,7 @@ var a = function() { this.b = 3; }
 var c = new a(); // 创建一个新对象，构造函数中this指向新对象
 a.prototype.b = 9;
 var b = 7;
-a();
+a(); // 这里再次设置window.b
 console.log(b); // 3
 c // {b: 3}
 a.prototype // {b:9, constructor}
@@ -344,10 +344,33 @@ function aa() {}
 
 aa.__proto__ === Function.prototype // true
 aa.prototype === Function.prototype // false
+aa.prototype.__proto__ === Object.prototype // true
 
 let aaObj = new aa();
 aaObj.constructor === aa // true
 aaObj.__proto__ === aa.prototype // true
+```
+
+```JS
+// 关于类与继承
+
+class A {}
+class B extends A {}
+
+B.__proto__ === A // true
+B.prototype.__proto__ === A.prototype // true
+
+// 继承实现的原理
+// Object.setPrototypeOf(B.prototype , A.prototype) // B 的实例继承 A 的实例
+// Object.setPrototypeOf (B, A)  // B 的实例继承 A 的静态属性
+
+class A extends Object {}
+A.__proto__ === Object // true
+A.prototype.__proto__ === Object.prototype // true
+
+class A {}
+A.__proto__ === Function.prototype // true
+A.prototype.__proto__ === Object.prototype // true
 ```
 
 ```JS
@@ -362,6 +385,15 @@ var a = new A();
 // A.prototype.__proto__ === Object.prototype  // true
 a.a();
 a.b(); // Uncaught TypeError: a.a is not a functionI
+```
+
+```JS
+const prototype1 = {};
+const object1 = Object.create(prototype1);
+
+object1.__proto__ === prototype1 // true
+object1.__proto__ === Object.prototype // false
+object1.__proto__.__proto__ === Object.prototype // true
 ```
 
 ## new新建对象时发生了什么
@@ -801,6 +833,65 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 - Map实例会维护键值对的插入顺序，因此可以根据插入顺序执行迭代操作
 - Weak主要形容弱映射中的key是弱的——GC随时会回收弱映射的key，但是只要key存在，value就不会被回收
 
+## es6 class
+
+- 类使用在前，定义在后，这样会报错，因为 ES6 不会把变量声明提升 到代码头部。
+  - 这种规定的原因与继承有关，必须保证子类在父类之后定义。
+
+- 类的方法内部如果含有 this ，它将默认指向类的实例 。 
+  - 但是，必须非常小心， 一旦单独使用该方法，很可能会报错。
+  - 如果将这个方法提取出来单独使用， this 会指向该方法运行时所在的环境
+  - 方法1: 在构造函数中bind
+  - 方法2: 方法的定义使用箭头函数
+  - 方法3: 创建对象实例时，创建并返回Proxy对象，代理对象的处理器中在获取方法时，先bind方法再返回
+
+- new.target内置属性，可以在构造函数中获取new命令所作用的构造函数
+  - `new.target` pseudo-property lets you detect whether a function or constructor was called using the `new` operator. 
+  - In constructors and functions invoked using the `new` operator,  `new.target` returns a reference to the constructor or function. 
+  - In normal function calls,  `new.target` is `undefined`.
+  - Class 内部调用 new.target ，返回当前 Class
+  - 子类继承父类时 ηew . target 会返回子类。
+  - 可以写出不能独立使用而必须继承后才能使用的类：在父类和子类构造函数中分别检查new.target
+
+- 私有方法的实现
+
+```JS
+// 💡️ 方法1: 将私有方法移出模块，不可访问私有方法，但仍可直接访问私有值
+
+class C1 {
+
+  getPrivate(args) {
+    getPrivateImpl.call(this, args);
+  }
+
+}
+
+function getPrivateImpl(args) {
+  return this.val = args;
+}
+
+// 💡️ 方法2: 将私有方法命名为一个Symbol值
+
+const privateFn = Symbol('privateFn');
+const privateVal = Symbol('privateVal');
+
+class C2 {
+
+  getPrivate(args) {
+    this[privateFn](args);
+  }
+
+  [privateFn](args) {
+    this[privateVal] = args;
+  }
+
+}
+
+function getPrivateImpl(args) {
+  return this.val = args;
+}
+```
+
 ## js继承
 
 - 原型链继承
@@ -809,12 +900,17 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 - class关键字，类实际就是函数，但是类语法明确了存在于实例、原型、类上的成员
   - ES6使用extends关键字继承，可以继承类或者普通的构造函数，其背后依旧基于“寄生式组合继承”
 
-- ES6继承与ES5继承对比
-  - ES5的继承是先创建子类对象，将之替换为父类的this
-    - ES6继承父类的this对象，然后在子类对其使用this进行加工
+- ES6继承 vs ES5继承
+  - ES5的继承是先创造子类的实例对象this，然后再将父类的方法添加到 this 上面 (`Parent.apply(this)`)。
+    - ES6的继承机制完全不同，实质是先创造父类的实例对象 this （所以必须先调用 `super()` 方法），然后再用子类的构造函数修改 this 。
+    - 因为es6子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。
+    - super 虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 `super()` 在这里相当于`A.prototype.constructor.call(this)`;
+    - ES6规定，通过 super 调用父类的方法时， super 会绑定子类的 this
   - ES5原型链中子类原型是父类实例，子类构造函数和父类构造函数无直接关系，因此需要使用call()
     - ES6具有双重继承关系：除了原型对象间继承，子类本身是父类构造的实例
 
+- ref
+  - [深入JavaScript继承原理](https://juejin.cn/post/6844903569317953543)
 ## js内存模型
 
 - JS引擎将内存空间分为两块：堆（heap）与栈（stack）
