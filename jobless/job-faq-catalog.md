@@ -104,6 +104,8 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [字节跳动-基础工程-APM团队](https://github.com/sl1673495/bytedance-apm-group)
   - 字节跳动2021三大业务重点：跨境电商、To B和办公硬件
+
+- [v2ex 工作板块](https://v2ex.com/?tab=jobs)
 # 更多资源
 - 面试参考来源
   - github、知乎、掘金、语雀

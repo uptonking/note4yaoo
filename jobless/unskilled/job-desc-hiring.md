@@ -41,7 +41,7 @@ modified: '2021-09-26T16:44:04.493Z'
   - wip project: materials-repo
 # workflow
 - [2021年我的前端面试准备](https://juejin.cn/post/6989422484722286600)
-# jd
+# jd-ing
 - [字节 luckysheet 内推相关](https://github.com/mengshukeji/Luckysheet/commit/4788fe6019554fdf68f5a8e6f802fc6eee8b0cf3#diff-2b8d2db04fe3277c3a06cbdf5da2ba7659f95e19e31f59d5382b40ac81a1a98d)
 
 - [leetcode 内推专区](https://leetcode-cn.com/circle/career/)
@@ -56,5 +56,10 @@ modified: '2021-09-26T16:44:04.493Z'
 
 - 钉钉前端
   - https://www.zhipin.com/job_detail/86868ea4616e7f1c1nR829u4GVdR.html
+# jd-more
+
 # ref
 - [如何招聘「前端领域编辑器」相关的人才？](https://www.zhihu.com/question/396755131/answers/updated)
+
+- [分享毕业后第一次找工作经历（2 年经验）](https://v2ex.com/t/805449)
+  - 八股文理解贯通、算法刷题、项目难点

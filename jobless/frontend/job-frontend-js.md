@@ -308,108 +308,6 @@ date + ''; // 'Fri Sep 24 2021 14:34:47 GMT+0800 (China Standard Time)'
 - Note that the `Date` intrinsic object is unique, in that it is the only intrinsic to override the default `@@toPrimitive` method, in which the default hint is presumed to be 'string' (rather than 'number').
   - The reason for having this, is to have Date instances translate to readable strings by default
 
-## 如何理解原型？
-
-- `Ctr.prototype` 显式原型: explicit prototype property
-  - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
-  - **显式原型的作用：用来实现基于原型的继承与属性共享**
-
-- `obj.__proto__` 隐式原型: implicit prototype link
-  - js中任意对象都有一个内置属性[[prototype]]，在ES5之前没有标准的方法访问这个内置属性，但是大多数浏览器都支持通过 `__proto__` 来访问。
-  - **对象的隐式原型指向创建这个对象的构造函数(constructor)的prototype**
-  - ES5中有了对于这个内置属性标准的Get方法 `Object.getPrototypeOf()` .
-  - **隐式原型的作用：构成原型链查找属性，同样用于实现基于原型的继承**
-
-- `Object.prototype` 这个对象是个例外，它的 `__proto__` 值为 `null`.
-- 修改对象的隐式原型影响范围一般较大，要避免，可以使用`Object.create(obj)` .
-
-- 构造函数：任何情况下创建一个函数，都会在内部为其创建一个prototype属性，该属性是一个指向原型对象的引用。使用原型对象可以允许上面定义的属性与方法被对象实例共享。
-- 原型对象：原型对象会默认自动获得一个constructor属性，该属性是指回构造函数的引用。自定义构造函数的原型对象默认只会获得constructor属性，其余方法都继承自Object
-- 原型对象的原型：原型对象本身是Object或父类的实例，它也有一个暴露为__proto__的属性指向父类构造函数的原型对象（隐式原型）。特别的，Object的原型对象是原型链的起点，其constructor指向Object()构造函数，同时Object原型对象的不再有原型，其不再具有__proto__
-- 对象实例：每个被构造的实例内部也有__proto__，同样指向其构造函数原型对象
-
-```JS
-var a = function() { this.b = 3; }
-var c = new a(); // 创建一个新对象，构造函数中this指向新对象
-a.prototype.b = 9;
-var b = 7;
-a(); // 这里再次设置window.b
-console.log(b); // 3
-c // {b: 3}
-a.prototype // {b:9, constructor}
-
-Function.prototype.__proto__ === Object.prototype // true
-
-function aa() {}
-
-aa.__proto__ === Function.prototype // true
-aa.prototype === Function.prototype // false
-aa.prototype.__proto__ === Object.prototype // true
-
-let aaObj = new aa();
-aaObj.constructor === aa // true
-aaObj.__proto__ === aa.prototype // true
-```
-
-```JS
-// 关于类与继承
-
-class A {}
-class B extends A {}
-
-B.__proto__ === A // true
-B.prototype.__proto__ === A.prototype // true
-
-// 继承实现的原理
-// Object.setPrototypeOf(B.prototype , A.prototype) // B 的实例继承 A 的实例
-// Object.setPrototypeOf (B, A)  // B 的实例继承 A 的静态属性
-
-class A extends Object {}
-A.__proto__ === Object // true
-A.prototype.__proto__ === Object.prototype // true
-
-class A {}
-A.__proto__ === Function.prototype // true
-A.prototype.__proto__ === Object.prototype // true
-```
-
-```JS
-Function.prototype.a = () => alert(1);
-Object.prototype.b = () => alert(2);
-
-function A() {};
-var a = new A();
-
-// 查找属性时会沿着原型链查找
-// a.__proto__ === A.prototype  // true
-// A.prototype.__proto__ === Object.prototype  // true
-a.a();
-a.b(); // Uncaught TypeError: a.a is not a functionI
-```
-
-```JS
-const prototype1 = {};
-const object1 = Object.create(prototype1);
-
-object1.__proto__ === prototype1 // true
-object1.__proto__ === Object.prototype // false
-object1.__proto__.__proto__ === Object.prototype // true
-```
-
-## new新建对象时发生了什么
-
-1. Creates a blank, plain JavaScript object.
-2. Adds a property to the new object (`__proto__`) that links to the `constructor` function's `prototype` object 
-3. Binds the newly created object instance as the `this` context 
-   - (i.e. all references to `this` in the constructor function now refer to the object created in the first step).
-4. Returns `this` if the function doesn't return an object.
-
-- 在内存中创建一个新对象
-- 新对象内部的[[Prototype]]特性被赋值为构造函数的prototype属性
-- 构造函数内部的this被赋值为这个新对象（即this指向新对象）
-- 执行构造函数内部的代码
-- 如果构造函数返回非空对象，则返回该对象；否则，返回刚创建的新对象
-
 ## this
 
 - this 是执行上下文中的一个属性，它指向最后一次调用这个方法的对象。 
@@ -460,6 +358,16 @@ console.log(b2); // {x:'z'}
 
 - 其实Java处处是闭包，比如对象、内部类等
   - Java使用new实例化Add对象后，Java对象不会像JS中的函数上下文一样立即消失，同时private又保证了变量对外隐藏，之后只要使用calc.add()就能实现计算
+
+- [Closures vs. classes for encapsulation?](https://stackoverflow.com/questions/8729714)
+- The reasons to avoid closures is overhead.
+  - Your get and set functions are trivially 20x slower than properties. 
+  - Your closures also have a large memory overhead that is `O(N)` with the number of instances.
+
+- there aren't any real classes in javascripts, we just mimic them with closures.
+  - Because closures must reference the environment in which they were created (this is how they can use the private internal state data), they are more costly than just using a public function. 
+  - So if you have a static method that doesn't require the internal state, you should add it to Class1 instead by using the `prototype` keyword
+  - This way, the static method can be used through the prototype chain without using up extra memory with unnecessary closures. 
 
 ## 箭头函数
 
@@ -826,6 +734,16 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 - 数组去重
   - [... new Set(arr)]
 
+- indexOf vs includes
+  - [NaN].indexOf(NaN) // -1，因为indexOf使用的是严格相等
+  - NaN].includes(NaN) // true
+
+- indexOf vs findIndex
+  - indexOf() expects a value
+  - findIndex() expects a callback; good for objects
+
+- 不要再forEach里面return，因为forEach循环无法终止
+
 ## map vs object
 
 - Object只能使用数值、字符串或符号作为键，且会被转换为字符串，
@@ -911,6 +829,7 @@ function getPrivateImpl(args) {
 
 - ref
   - [深入JavaScript继承原理](https://juejin.cn/post/6844903569317953543)
+
 ## js内存模型
 
 - JS引擎将内存空间分为两块：堆（heap）与栈（stack）
