@@ -23,64 +23,21 @@ modified: '2021-09-23T08:24:41.968Z'
 
 ## promise
 
-- 代码补充 asyncGetValue()，使之实现 asyncGetValue(1, 2).then(v => console.log(v)); 
+- `Promise.all()` 必须全部resolve，有一个失败就立即reject
+  - takes an iterable of promises as an input, and returns a single Promise that resolves to an array of the results of the input promises. 
+  - This returned promise will resolve when all of the input's promises have resolved
+  - It rejects immediately upon any of the input promises rejecting or non-promises throwing an error
+  - 使用 Promise.all() 执行过个 promise 时，只要其中任何一个promise 失败都会执行 reject ，并且 reject 的是第一个抛出的错误信息，只有所有的 promise 都 resolve 时才会调用 .then 中的成功回调
+  - 但大多数场景中，我们期望传入的这组 promise 无论执行失败或成功，都能获取每个 promise 的执行结果，为此，ES2020 引入了 Promise.allSettled()
+  - 适合promise彼此相互依赖，其中任何一个被 reject ，其它都失去了实际价值
 
-```JS
-function asyncAdd(a, b, callback) {
-  doAsyncWork(a, b).then(value => callback(value));
-}
+- Promise.allSettled() 
+  - returns a promise that resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise
+  - In comparison, the Promise returned by Promise.all() may be more appropriate if the tasks are dependent on each other / if you'd like to immediately reject upon any of them rejecting.
+  - 可以获取数组中每个 promise 的结果，无论成功或失败
+  - 适合promise彼此不依赖，其中任何一个被 reject ，对其它都没有影响
+  - 期望知道每个 promise 的执行结果
 
-function asyncGetValue(a, b) {
-  return new Promise((resolve) => asyncAdd(a, b, resolve));
-}
-
-function asyncGetValues(list) {
-  let promises = [];
-  for (let item of list) {
-    promises.push(new Promise((resolve) => asyncAdd(item.a, item.b, resolve)));
-  }
-  return Promise.all(promises);
-}
-
-// 实现并发控制，即有一个最大的并发数 maxConcurrent
-function asyncGetValues(list, max) {
-  let _max = max;
-  let _count = 0;
-  let _taskQueue = [];
-
-  function add(caller) {
-    return new Promise((resolve) => {
-      let task = createTask(caller, resolve);
-      if (_count < _max) task();
-      else _taskQueue.push(task);
-    });
-  }
-
-  function createTask(caller, resolve) {
-    return () => {
-      caller()
-        .then(resolve)
-        .finally(() => {
-          if (_taskQueue.length) {
-            let task = _taskQueue.shift();
-            task();
-            _count--;
-          }
-        });
-      _count++;
-    };
-  }
-
-  let promises = [];
-  for (let item of list) {
-    let promise = add(
-      () => new Promise((resolve) => asyncAdd(item.a, item.b, resolve))
-    );
-    promises.push(promise);
-  }
-  return Promise.all(promises);
-}
-```
 
 ## js作用域和变量提升
 
@@ -637,89 +594,13 @@ function outerFunction() {
 - 字符串字面量 (通过单引号或双引号定义) 和 直接调用 String 方法(没有通过 new 生成字符串对象实例)的字符串都是基本字符串
   - 当基本字符串需要调用一个字符串对象才有的方法或者查询值的时候(基本字符串是没有这些方法的)，JS会自动将基本字符串转化为字符串对象并且调用相应的方法或者执行查询
 
-## array
-
-- 对象的拷贝实际上只是在栈上多存了一个指向堆中实例的引用
-- 深拷贝就是不仅新建一个引用，同时在堆上新开辟一块内存空间，存储一个和原始对象一样的对象，并让新引用指向该对象。
-- JSON.parse(JSON.stringify(oldObj)); 
-  - 无法深拷贝函数、正则对象；所有新对象constructor都会是Object；循环引用会报错
+## number
 
 ```JS
-/** 深拷贝 */
-function clone(parent) {
-  // 存储循环引用
-  let parents = [],
-    children = [];
-
-  function _clone(parent) {
-    if (parent === null) return null;
-    // 原始值，直接返回
-    if (typeof parent != "object" || typeof parent != "function") return parent;
-
-    let child, proto;
-    // 确定具体对象类型
-    let parentType = Object.prototype.toString.call(parent);
-    if (parentType == "[object Array]") {
-      // Array
-      child = [];
-    } else if (parentType == "[object RegExp]") {
-      // RegExp
-      child = new RegExp(parent.source, parent.flags);
-      if (parent.lastIndex) child.lastIndex = parent.lastIndex;
-    } else if (parentType == "[object Date]") {
-      // Date
-      child = new Date(parent.getDate());
-    } else {
-      // 其他对象
-      // 获取parent原型配合create()而不是获取constructor配合new，避免创建冗余属性
-      proto = Object.getPrototypeOf(parent);
-      child = Object.create(proto);
-    }
-
-    // 是否有循环引用
-    const index = parents.indexOf(parent);
-    if (index != -1) {
-      return children[index];
-    }
-    parents.push(parent);
-    children.push(child);
-
-    // for-in 遍历可迭代属性
-    for (let item in parent) {
-      child[item] = _clone(parent[item]);
-    }
-
-    return child;
-  }
-
-  return _clone(parent);
-}
-
-// 测试
-function person(pname) {
-  this.name = pname;
-}
-
-const Messi = new person("Messi");
-
-function say() {
-  console.log("hi");
-}
-
-const oldObj = {
-  a: say,
-  c: new RegExp("ab+c", "igum"),
-  d: Messi,
-};
-
-oldObj.b = oldObj;
-
-const newObj = clone(oldObj);
-console.log(newObj.a, oldObj.a);
-console.log(newObj.b, oldObj.b);
-console.log(newObj.c, oldObj.c);
-console.log(newObj.d.constructor, oldObj.d.constructor);
+NaN === NaN // false; 但作为Map的key时是被认为相等的
 ```
+
+## array
 
 - 扁平化
 - reduce
@@ -744,12 +625,114 @@ console.log(newObj.d.constructor, oldObj.d.constructor);
 
 - 不要再forEach里面return，因为forEach循环无法终止
 
-## map vs object
+## Map vs Object
+
+- 区别
+  - Map对象默认不包含键值对
+    - Object原型对象上的默认属性会添加到普通对象上
+    - 但Object.create(null)也可以实现类似Map的效果
+  - Map的key的类型可以是任意类型，包括对象、函数、symbol、数字
+    - Object的key必须是String或Symbol
+  - Map对象的keys会保持插入顺序
+    - Object的keys的顺序以前没有在规范中规定保持插入顺序
+    - obj的遍历机制很复杂
+    - `for-in` includes only enumerable string-keyed properties，还会遍历原型对象上的kv
+    - `Object.keys` includes only own, enumerable, string-keyed properties; 这里不包含原型对象上的kv
+    - `Object.getOwnPropertyNames` includes own, string-keyed properties even if non-enumerable;
+  - Map对象的size很容易获得
+    - 获取Object的属性数量必须遍历和过滤
+  - Map默认实现了 iterator protocol 
+    - Object需要自己实现 Object.keys/entries
+    - for-in可遍历obj及其原型链上的可迭代属性，会忽略Symbol，
+  - Map在插入、删除操作较多时性能较好
+    - Object没有针对插入删除进行优化
+  - Map序列化默认会丢失所有内容，总是{}
+    - Object对象默认提供了序列化和反序列化的方法，但有限制
+
+- for-in遍历
+  - only iterates over enumerable, non-Symbol properties.
+  - 可遍历原型对象上的属性
+  - for...in loop iterates over the properties of an object in an arbitrary order 
+    - 而数组的遍历一般按索引顺序，所以最好不要使用for-in遍历数组
+  - for-in遍历数组会遍历手动添加的属性
+  - for-in为遍历对象而设计
+
+- [es6 Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- holds key-value pairs and remembers the original insertion order of the keys
+- Key equality is based on the sameValueZero algorithm.
 
 - Object只能使用数值、字符串或符号作为键，且会被转换为字符串，
-  - Map可使用任何数据类型作为key ，且保持该类型
+  - Map可使用任何数据类型作为key，且保持该类型
 - Map实例会维护键值对的插入顺序，因此可以根据插入顺序执行迭代操作
 - Weak主要形容弱映射中的key是弱的——GC随时会回收弱映射的key，但是只要key存在，value就不会被回收
+
+- Object.isSealed
+  - 让这个对象变的不能添加新属性，且所有已有属性会变的不可配置。属性不可配置的效果就是属性变的不可删除，以及一个数据属性不能被重新定义成为访问器属性
+  - 但属性的值仍然可以修改。
+- Object.isFrozen
+  - 属性不能被修改。
+
+## 深拷贝
+
+- stringify缺点：
+  - 序列化循环引用会抛出异常
+  - 无法序列化函数
+  - 无法序列化特殊内置对象
+    - 如RegExp
+    - 序列化Map/Set会丢失内容，始终是{}
+    - 序列化Date对象默认丢失timezone // "2021-10-03T13:42:01.550Z"
+  - 忽略值为undefined的属性; JSON.stringify({b: undefined}) // {}
+  - 忽略键为Symbol的属性
+
+- 对象的拷贝实际上只是在栈上多存了一个指向堆中实例的引用
+- 深拷贝就是不仅新建一个引用，同时在堆上新开辟一块内存空间，存储一个和原始对象一样的对象，并让新引用指向该对象。
+- JSON.parse(JSON.stringify(oldObj)); 
+  - 无法深拷贝函数、正则对象；所有新对象constructor都会是Object；循环引用会报错
+
+- 对于数组arr, 若手动添加新属性arr.ext='ext'，序列化(JSON.stringify())时新属性ext会丢失，
+  - 但for-in遍历可以获取到ext属性和值，for-of会获取到数组元素但获取不到添加的ext属性和值
+
+- `typeof operand` / `typeof(operand)` 的表达式的值只有8种
+  - 5种基本类型：'string', 'number', 'boolean', 'undefined', 'bigint'
+  - 3种非基本类型：object, function, symbol
+
+## Map/Set
+
+- WeakSet与Set的区别
+  - 成员都是对象
+  - 成员都是弱引用，可以被垃圾回收机制回收，可以用来保存 DOM 节点，不容易造成内存泄漏
+  - 不能遍历；而Set可遍历
+
+- WeakMap
+  - 只接受对象最为键（null除外），不接受其他类型的值作为键
+  - 不能遍历，没有keys()/entries()等方法
+  - 没有size属性，没有clear()方法
+  - 键名是弱引用，键值可以是任意的，键名所指向的对象可以被垃圾回收，此时键名是无效的；
+
+- [从【垃圾回收机制】的角度认识【Map与WeakMap】的区别](https://zhuanlan.zhihu.com/p/266054976)
+- JavaScript最常用垃圾回收策略是"标记清理（mark-and-sweep）"
+  - 遍历空间下所有的对象，并标记活着的，有被引用的并且最终可以到达根（window/global）的对象。
+  - 在垃圾回收阶段的时候，将没有标记进行清除。
+- 当WeakMap对象的key键所对应引用地址的 **key引用断开**或**key引用指向的地址内容发生变化**
+  - 引用断开，WeakMap表现出“自动”删掉了对应value
+- 所以weakMap也还是遵循垃圾回收机制对吗？栏主有没有试过多个引用指向weakMap的key，将一个引用断开，weakMap的键值是否还在内存中？
+  - 只要Key的引用还在当前空间的时候，这个键值就还在。
+  - 不管“复制”多少份key，只要他们引用还存在变量里面，那么垃圾回收机制并不会收回他们
+- 你上面的例子 因为变量注册在最外层，不会被垃圾回收机制自动回收 所以会有用，在函数体内函数上下文执行了一般会自动释放，所以使用Map 和 WeakMap ，并没什么区别
+
+```JS
+const wm = new WeakMap();
+// 给 WeakMap实例 赋值一个 占领内存足够大的 键值对
+wm.set(key, new Array(114514 * 19));
+global.gc();
+
+// 此时把 key键 的引用进行断开，并观察内存占用情况
+key = null;
+// key = new Array(); 
+global.gc();
+```
+
+- ES2021 推出了 WeakRef ，能实现保留对另一个对象的弱引用，而不会阻止该弱引用对象被GC回收
 
 ## es6 class
 
@@ -836,13 +819,12 @@ function getPrivateImpl(args) {
 - JS中的原始数据类型值通常都存储在栈中（Number String Null Undefined Boolean Symbol）
 - 引用类型的数据都被存储在堆中（Object）
 - 当使用原始数据值运算时，我们就是在操纵栈中的数据；
-  - 但JS不允许直接访问堆空间，我们只能在栈中保存指向堆中数据的引用/指针/地址，
-  - 在操作对象时，实际上是在操作对象的引用而不是实际的对象
+  - 但JS不允许直接访问堆空间，我们只能在栈中保存指向堆中数据的引用/指针/地址，在操作对象时，实际上是在操作对象的引用而不是实际的对象
 - 函数本身作为对象，在被声明后就创建在了堆上
-  - 当函数被调用，引擎会在执行栈上创建函数的上下文
+  - 当**函数被调用，引擎会在执行栈上创建函数的上下文**
   - 函数中的基本类型数据会直接被存放在栈空间上
   - 函数中的引用类型数据会存放在堆空间上，但为了使用堆上的数据，函数上下文会在栈中保存一个指向堆上数据的引用，实际上该过程刚才已经存在——全局上下文在栈上保存了一个指向函数的引用，函数对象本身存在堆上等待调用
-  - 函数执行结束，则它的上下文出栈，栈空间被回收，如果堆中对象不再被使用，则堆空间会被垃圾回收程序重新回收
+  - **函数执行结束，则它的上下文出栈，栈空间被回收**，如果堆中对象不再被使用，则堆空间会被垃圾回收程序重新回收
 
 ## js执行机制
 
@@ -857,6 +839,7 @@ function getPrivateImpl(args) {
   - 分词结束后，引擎将对tokens进行语法分析（parsing），得到一棵AST，如果语法分析出错则会停止后续操作直接报错
 - 代码生成阶段
   - 这一阶段解释器会根据AST生成字节码（bytecode），v8引擎还会将字节码优化为CPU可执行的机器码
+
 - 执行阶段
 - 执行阶段是开发者可直接面对的场景，通常调试js程序可以看到一个调用栈，调用栈是什么？栈里的每一帧是什么，是什么时候放进去的？
 - 调用栈里的每个栈帧是一个执行上下文（execution context），JS程序执行时会生成不止一个上下文，不同的执行上下文会遵循LIFO顺序被存入一个栈结构——调用栈
@@ -882,14 +865,20 @@ function getPrivateImpl(args) {
 ## js垃圾回收
 
 - 浏览器发展中，主要有两种GC策略：标记-清理 & 引用计数
-- JS最常用的GC策略是标记清理（mark-and-sweep）：该策略主要在维护一个可达性图，“可达”值是那些以某种方式可访问或可用的值。它们一定是以某种方式被使用的，不应该被回收。
+
+- JS最常用的GC策略是标记清理（mark-and-sweep）
+  - 该策略主要在维护一个可达性图，“可达”值是那些以某种方式可访问或可用的值。它们一定是以某种方式被使用的，不应该被回收。
+
 - 标记清理：JS的GC程序会定期执行以下“垃圾回收”步骤，更新可达值并回收不可达的内存空间
   - 垃圾收集器找到所有的根，并“标记”它们【“根”指固有的可达值的基本集合，比如当前上下文的局部变量和参数、全局变量等，它们显然不可回收，因此作为根】
   - 遍历并“标记”根引用的对象
   - 再遍历并标记对象引用的内容。所有被遍历到的对象都会被记住，以免将来再次遍历到同一个对象
   - 重复直到所有可达的（从根部）引用都被访问到，没有被标记的对象都会被删除
-- 引用计数（reference counting）策略使用较少。其思路是对每个值记录它被引用的次数。声明变量并给它赋一个引用值（对象）时，这个值的引用数为1。
+
+- 引用计数（reference counting）策略使用较少。
+  - 其思路是对每个值记录它被引用的次数。声明变量并给它赋一个引用值（对象）时，这个值的引用数为1。
   - 引用计数无法解决循环引用问题，循环引用会导致两个对象的引用值至少为一，即便函数执行完毕
+
 - 优化
   - 分代
   - 增量

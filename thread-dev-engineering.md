@@ -15,6 +15,9 @@ modified: '2021-01-21T17:52:13.333Z'
 - https://twitter.com/ThaddeusJiang/status/1444133176352247810
   * 有状态迁移关系：state，交通灯状态： red -> green -> yellow
   * 没有状态迁移关系：status，付款结果：success、failure
+- Search vs. Query
+  - Search：在未知的领域查找，比如搜索引擎的搜索 
+  - Query：在已经确定的领域内超出某些特例，比如数据库的查询。
 
 - ##  `<num value={123} />` vs `<num>123</num>` which style do you prefer?
 - https://twitter.com/jarredsumner/status/1441923089382535173
@@ -28,6 +31,12 @@ modified: '2021-01-21T17:52:13.333Z'
 * URL Schema filter tips
 * MIME type exploitation
 * Too much stuff to fit here!
+
+- ## 以前经历过的编程模式有：
+- https://www.v2ex.com/t/795043
+  - Salary Oriented Programming
+  - Lingdao Oriented Programming
+  - Hongbao Oriented Programming
 
 - ## The danger of open redirects!
 - https://scotthelme.co.uk/the-danger-of-open-redirects/

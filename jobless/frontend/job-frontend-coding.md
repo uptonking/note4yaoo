@@ -43,6 +43,100 @@ for (var a = 0; a < 5; a++) {
   })(a);
 ```
 
+# 实现轮播图
+- 基于js实现
+
+- 纯css实现参考
+  - 整体布局基于 ul-li，但不标准，ul的直接子元素还有input、div
+  - 每个li前面都有一个input-radio，可配和实现点击切换
+  - 每个图片兄弟元素都有label包裹的左右2个箭头，点击会切换到input
+
+```HTML
+<!-- 纯css实现的参考 https://codepen.io/uptonking/pen/dyREOxR -->
+
+<div>
+  <div class="carousel">
+    <ul class="slides">
+      <input type="radio" name="radio-buttons" id="img-1" checked />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-3" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-2" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-2" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-1" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-3" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-3" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-2" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-1" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <div class="carousel-dots">
+        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<!-- container设置 relative，width和高为一张图片的宽高, 超出后隐藏-->
+<div class="container">
+  <!--  wrap 设置 absolute， 之后主要就是移动 wrap 元素 -->
+  <div class="wrap" style="left: -600px">
+    <!-- 实现无限滚动的关键，开头多放一张5-->
+    <div class="img div5">5</div>
+    <div class="img div1">1</div>
+    <div class="img div2">2</div>
+    <div class="img div3">3</div>
+    <div class="img div4">4</div>
+    <div class="img div5">5</div>
+    <!-- 实现无限滚动的关键 末尾多放一张5 -->
+    <div class="img div1">1</div>
+  </div>
+
+  <div class="buttons">
+    <span class="on">1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+  </div>
+  <a href="javascript:;" class="arrow arrowLeft">&lt;</a>
+  <a href="javascript:;" class="arrow arrowRight">&gt;</a>
+</div>
+```
+
+# 实现放大镜特效
+
 # 实现动画：淡出-平移-放大
 
 > 一个三角形从透明到实体，持续一秒，然后匀速前进五秒，然后变大持续两秒

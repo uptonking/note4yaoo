@@ -14,7 +14,14 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## The perfect-freehand algorithm starts from scratch every time, with nothing kept in memory, and this makes it both inefficient (in a minor way) but more importantly limited in what it can do.
+- https://twitter.com/steveruizok/status/1444397702251429890
+  - In other words, if you're drawing with perfect-freehand, you're re-computing all of the points on every frame, even if most of those points come back the same each time. That repeated work could be saved, making the 1000th point as expensive as the 10th point.
+  - I really am re-writing this
+- For 90% of use cases, that's no problem—and it usually takes very long lines with 1000s of points before the algorithm causes any performance issues. So yeah, a little 'inefficient' but it's fast and O(n), and honestly easier to use than managing something that sits in memory.
+  - But as far as features go, its limited because the points given back by perfect-freehand don't know their relationship to other points, or to their input point—and this makes features like erasing very difficult to implement. I've had lots of folks ask me about this.
+- PS. it's also MUCH more easy to start from scratch each time than it is to manage nodes and linked lists of outline points. Tapering and corners are especially difficult, as these can change as points are added or options change (both could use their own threads tbh)
+
 
 - ## right now the minimap is part of the renderer, but it really works like its own renderer, and may make more sense as something entirely separate. 
 - https://twitter.com/steveruizok/status/1441472275639832577

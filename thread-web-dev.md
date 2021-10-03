@@ -31,17 +31,21 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## New Node module: "html-segmentator", a thing for splitting an HTML string into its top-level tags. 
+- https://twitter.com/fabiospampinato/status/1444436271120752641
+  - It can unlock some extra performance when you need to do some work on your HTML (parsing, sanitizing etc.) and you can cache the result for unchanged tags.
+  - You should probably use DOMParser instead for this, but the thing is **DOMParser is synchronous** and the HTML string could be arbitrarily large, you can't just block the main thread indefinitely like that. 
+  - Unfortunately **DOMParser can't run in a Web Worker**, but this module can.
 
 - ## at work i need to change the cursor dynamically, tried to translate3d html but it's laggy.
 - https://twitter.com/0xca0a/status/1441327362914742277
-  - the idea is that you have a portal into the dom cursor: `<Cursor>`, and everything inside is svg. but it's just react, so you can form components, bind them to state, animate contents, use anything in the eco system, do whatever you want basically.
+  - the idea is that you have a portal into the dom cursor: `<Cursor>` , and everything inside is svg. but it's just react, so you can form components, bind them to state, animate contents, use anything in the eco system, do whatever you want basically.
   - this is not moving a html fragment along though it literally renders the document.body.style.cursor. 
   - moving stuff along is too laggy because the browser is unable to keep up with the cursor and the events come in when it already miles away.
 - you mean like rendering a whole ass svg into cursor: url(...)
-  - const callback = () => (document.body.style.cursor = `url('data:image/svg+xml;base64,${btoa(node.outerHTML)}'), auto`)
+  - const callback = () => (document.body.style.cursor = `url('data:image/svg+xml; base64, ${btoa(node.outerHTML)}'), auto` )
 - css transforms tied to mouse in general are impossibly slow. that's why these fancy agency sites always smooth-lerp them. base64 svg can drop frames for all i care, it's not that i *need* to animate it 60fps, but it will cling to the cursor, it *is* the cursor
-- addEventListener("pointermove", e => div.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`, { passive: true })
+- addEventListener("pointermove", e => div.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)` , { passive: true })
 - Can’t you just change the same SVG instance programmatically vs re-rendering the whole thing?
   - thats what react does, only changes single props. but eventually you need to base64 it for it to be a cursor, so the little time that react saves is probably for nothing.
 
@@ -54,7 +58,6 @@ modified: '2021-01-08T17:13:43.392Z'
   - Touch and keyboard friendly interactivity
 - [Prioritize optimization axes on the web](https://notebook.lachlanjc.com/2021-08-23_priotize_optimization_axes_on_the_web/)
 - This is why it's pedantic to build with plain old javascript. You'll end up building a mini framework yourself.
-
 
 - ## A lot of folks think serving JSON is more efficient than HTML, but once gzipped they're often the same. Sometimes HTML is smaller.
 - https://twitter.com/jaffathecake/status/930836616779878401

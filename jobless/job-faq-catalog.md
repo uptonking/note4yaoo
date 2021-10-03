@@ -48,6 +48,7 @@ modified: '2021-09-20T09:00:43.564Z'
 - [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
 
 - [前端面试指北 面向面经学习+手撕代码](https://www.yuque.com/nepjnq/fgeemd)
+
 - [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
 - [前端面试小册](https://docs.chenqaq.com/algorithm)
   - https://github.com/okaychen/FE-Interview-Brochure
@@ -58,6 +59,9 @@ modified: '2021-09-20T09:00:43.564Z'
   - 从0到1构建完整的数据结构与算法体系 
   - 按数据结构整理题目与解答，每篇都是一个github issue
   - 提供了经典的手写源码题和基础题
+
+- [手写代码系列 高频 数量不多](https://wangyaxing.cn/blog/jsCode/)
+  - [面试题专题](https://wangyaxing.cn/blog/interview/)
 # 面经参考
 - [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://zhuanlan.zhihu.com/p/363694889)
 
