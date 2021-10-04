@@ -38,7 +38,6 @@ modified: '2021-09-23T08:24:41.968Z'
   - 适合promise彼此不依赖，其中任何一个被 reject ，对其它都没有影响
   - 期望知道每个 promise 的执行结果
 
-
 ## js作用域和变量提升
 
 - 普通var变量提升，会初始化为undefined
@@ -672,31 +671,14 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
 - Object.isFrozen
   - 属性不能被修改。
 
-## 深拷贝
-
-- stringify缺点：
-  - 序列化循环引用会抛出异常
-  - 无法序列化函数
-  - 无法序列化特殊内置对象
-    - 如RegExp
-    - 序列化Map/Set会丢失内容，始终是{}
-    - 序列化Date对象默认丢失timezone // "2021-10-03T13:42:01.550Z"
-  - 忽略值为undefined的属性; JSON.stringify({b: undefined}) // {}
-  - 忽略键为Symbol的属性
-
-- 对象的拷贝实际上只是在栈上多存了一个指向堆中实例的引用
-- 深拷贝就是不仅新建一个引用，同时在堆上新开辟一块内存空间，存储一个和原始对象一样的对象，并让新引用指向该对象。
-- JSON.parse(JSON.stringify(oldObj)); 
-  - 无法深拷贝函数、正则对象；所有新对象constructor都会是Object；循环引用会报错
-
-- 对于数组arr, 若手动添加新属性arr.ext='ext'，序列化(JSON.stringify())时新属性ext会丢失，
-  - 但for-in遍历可以获取到ext属性和值，for-of会获取到数组元素但获取不到添加的ext属性和值
-
-- `typeof operand` / `typeof(operand)` 的表达式的值只有8种
-  - 5种基本类型：'string', 'number', 'boolean', 'undefined', 'bigint'
-  - 3种非基本类型：object, function, symbol
-
 ## Map/Set
+
+- 弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 
+  - 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。
+  - 我们默认创建一个对象：const obj = {}，就默认创建了一个强引用的对象，我们只有手动将obj = null，它才会被垃圾回收机制进行回收，如果是弱引用对象，垃圾回收机制会自动帮我们回收。
+  - weakMap.set(obj, 'i can be auto recycled');
+  - obj = null;
+  - weakMap和obj是弱引用关系，当obj断开时，obj对应的val会被自动回收
 
 - WeakSet与Set的区别
   - 成员都是对象

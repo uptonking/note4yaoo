@@ -9,29 +9,62 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # pieces
 
-- ## 
+## 
 
-- ## js `arr.sort()` 不传递比较函数参数时，会先转换为字符串再比较
+## 
+
+## 
+
+## 调试深拷贝的实现碰到各种问题
+
+- 必须使用`Map`或双数组或元素为键值对的数组，不能用`{}`; 
+  - The keys of an Object must be either a String or a Symbol.
+  - 如果使用object对象作为键，会产生覆盖问题
+
+```JS
+aa = { a: 1 };
+bb = { b: 1 };
+cc = {};
+
+// 使用对象作为key时，类型会转换成string，所以默认都是  [object Object]
+// 因为属性名相同，所以属性值会覆盖
+
+cc[aa] = 'cc11'; // {[object Object]: 'cc11'}
+cc[bb] = 'cc22'; // {[object Object]: 'cc22'}
+```
+
+- 特殊内置类型对象属性值创建拷贝后可立即返回，不用遍历拷贝Date/RegExp的属性了
+
+- `new Date(dateObj); new RegExp(reObj)` 可以方便地创建对象，
+  - 但mozilla的文档没有提供说明，各浏览器底层的实现也可能不一样
+
+## js `arr.sort()` 不传递比较函数参数时，会先转换为字符串再比较
+
 - 所以使用官方的arr.sort()建议必须写比较函数
 
 > The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
 
 - 所以 `[1,2,100].sort()` 的结果是 [1, 100, 2]
 
-- ## 递归有时会依赖其返回值
+## 递归有时会依赖其返回值
+
 - 不要漏写return
 
-- ## arr.forEach 遍历action reducer 函数时，return无法立即结束forEach 
+## arr.forEach 遍历action reducer 函数时，return无法立即结束forEach 
+
 - 可改用传统for循环
 
-- ## 少使用 `auth && <Routes />` 的形式
+## 少使用 `auth && <Routes />` 的形式
+
 - auth为null时，右边也会悄悄执行
 
-- ## 开发时setState没有触发rerender
+## 开发时setState没有触发rerender
+
 - 可能是因为 react-refresh 热加载插件，保留了页面内组件的状态
 - 刷新页面即可看到
 
-- ## react-router 在界面中使用 Link 可以正常跳转，但在地址栏address bar输入url回车时不能直接跳转到指定url
+## react-router 在界面中使用 Link 可以正常跳转，但在地址栏address bar输入url回车时不能直接跳转到指定url
+
 - 要理解client-side routing的原理
   - 在页面内通过Link组件跳转url是利用页面已下载且正在执行的js修改浏览器的url的值，没有发生服务器请求
   - 在地址栏输入或粘贴url按回车，会立即发送服务器请求，因为服务器只有index.html/bundle.js等少数资源，所以服务器会返回找不到资源的404异常
@@ -47,12 +80,13 @@ modified: '2021-04-28T20:54:58.126Z'
     - 'ugly' URLs
     - Server-side rendering is not possible with this approach. As far as Search Engine Optimization (SEO) is concerned, your website consists of a single page with hardly any content on it.
 
-- ## 使用 `<a href='#!'> icon </a>` 模拟button
+## 使用 `<a href='#!'> icon </a>` 模拟button
+
 - 优点是button自身样式过多，anchor更简洁，但也有自身样式
 - 缺点是 可能造成所有组件rerender，注意观察highlight updates的闪烁绿框的范围
 - 还可考虑直接用 `<span style={{cursor:'pointer'}}> icon </span>` ；此时闪烁绿框范围较小
 
-- ## react.lazy 批量动态导入pages文件夹下的所有react组件
+## react.lazy 批量动态导入pages文件夹下的所有react组件
 
 > 20210904 又碰到此问题
 
@@ -82,7 +116,8 @@ Error: Cannot find module './[object Object].tsx'
 - 抛出的异常却是导入另外一个文件夹下的react组件失败
   - 变通的方法，在每个`Route`组件定义的定义动态导入，而不是在其他其他统一动态导入
 
-- ## react onClick中如何访问旧的state
+## react onClick中如何访问旧的state
+
 - 全部通过setState(prev=> { doSth(prev); return newState; })
   - 不要部分使用oldState，部分使用prev
 
@@ -94,18 +129,21 @@ Error: Cannot find module './[object Object].tsx'
    );
 ```
 
-- ## 实现mdx文档编辑后自动更新的思路
+## 实现mdx文档编辑后自动更新的思路
+
 - (在当前app界面)编辑内容后直接渲染最新内容到dom，都在内存无需本地
 - (在3方编辑器界面)编辑内容后保存到本地文件，然后app扫描目录，渲染内容
 - ssg: 首次全面渲染，然后在后台监听新文件的添加，并立即构建
 - ssr: 每次点击url，都重新请求mdx的内容
 
-- ## 文件编辑浏览的实现思路
+## 文件编辑浏览的实现思路
+
 - edit > ~~save(内存或本地)~~ > render
 - usecase
   - webpack的热加载
 
-- ## 调试component-docs的文档示例
+## 调试component-docs的文档示例
+
 - npm workspaces的不同子包，可以使用不同版本的react，不会冲突
 - 异常信息是 `mini css extract plugin loader has been initialized using an options object that does not match the api schema.` .
   - 修改版本后测试发现，深层原因不是mini-css-extract-plugin的版本问题

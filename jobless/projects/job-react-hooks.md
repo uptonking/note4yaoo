@@ -22,7 +22,7 @@ modified: '2021-09-23T05:19:43.908Z'
 ## 使用 React Hooks 好处是什么
 
 - motivation
-  - It’s hard to reuse stateful logic between components
+  - It’s hard to reuse stateful logic between components; 
   - Complex components become hard to understand
   - Classes confuse both people and machines
 - ~~函数式编程的风格~~
