@@ -106,10 +106,20 @@ modified: '2021-09-20T09:00:43.564Z'
 # 招聘信息
 - [阮一峰 谁在招人 专门发布程序员招聘信息](https://github.com/ruanyf/weekly/issues?q=%E8%B0%81%E5%9C%A8%E6%8B%9B%E4%BA%BA)
 
+- [v2ex 工作板块](https://v2ex.com/?tab=jobs)
+
+- [leetcode-cn 力扣](https://leetcode-cn.com/circle/career/newest)
+
+- [牛客网 社招广场](https://nowpick.nowcoder.com/w/fulltime/center?recruitType=3&careerJobId=11022&order=1)
+
+- [神策数据｜多岗位内推](https://leetcode-cn.com/circle/discuss/cOWd8g/)
+
 - [字节跳动-基础工程-APM团队](https://github.com/sl1673495/bytedance-apm-group)
   - 字节跳动2021三大业务重点：跨境电商、To B和办公硬件
 
-- [v2ex 工作板块](https://v2ex.com/?tab=jobs)
+- [投光编辑器 岗位信息](https://www.shixiseng.com/com/com_aik7t6totq5z)
 # 更多资源
 - 面试参考来源
   - github、知乎、掘金、语雀
+
+- [关于面试的一点心得 心态类](https://mp.weixin.qq.com/s/5D7vi6WZOGfv3guBWhvOcg)

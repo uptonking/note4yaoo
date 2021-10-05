@@ -24,32 +24,7 @@ console.log(data) //2017-10-24
 
 # 判断DOM标签的合法性
 
-> 判断标签的闭合可以使用栈，跟判断有效的括号差不多。
-
-# 统计HTML标签中以b开头的标签数量
-
-```JS
-// 获取当前文档中的所有标签。
-const tags = document.getElementsByTagName('*');
-// 注意要先将类数组转换成数组
-const value = [...tags].filter((item) => item.tagName.startsWith('B'));
-
-// ------ 递归实现 -----
-
-const $prefixBElements = [];
-
-function dfs($el) {
-  if ($el.tagName.startsWith('B')) {
-    $prefixBElements.push($el);
-  }
-  for (const $child of $el.children) {
-    dfs($child);
-  }
-}
-dfs(document.documentElement);
-
-console.log($prefixBElements);
-```
+> 判断标签的闭合可以使用栈，跟判断有效的括号思路类似。
 
 # 统计HTML标签中出现次数最多的标签
 - elements = element.getElementsByTagName(tagName)
@@ -75,4 +50,29 @@ for (let i = 0; i < tags.length; i++) {
     max = value;
   }
 }
+```
+
+# 统计HTML标签中以b开头的标签数量
+
+```JS
+// 获取当前文档中的所有标签。
+const tags = document.getElementsByTagName('*');
+// 注意要先将类数组转换成数组
+const value = [...tags].filter((item) => item.tagName.startsWith('B'));
+
+// ------ 递归实现 -----
+
+const $prefixBElements = [];
+
+function dfs($el) {
+  if ($el.tagName.startsWith('B')) {
+    $prefixBElements.push($el);
+  }
+  for (const $child of $el.children) {
+    dfs($child);
+  }
+}
+dfs(document.documentElement);
+
+console.log($prefixBElements);
 ```

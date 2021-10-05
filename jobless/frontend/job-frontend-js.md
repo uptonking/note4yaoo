@@ -602,9 +602,9 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
 ## array
 
 - 扁平化
-- reduce
-- map
-- 基于队列，非递归
+  - reduce，递归
+  - map，递归
+  - 基于队列，非递归
 
 - 判断Array类型
   - Array.isArray(arr)
@@ -623,6 +623,99 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
   - findIndex() expects a callback; good for objects
 
 - 不要再forEach里面return，因为forEach循环无法终止
+
+### `concat vs ...rest` ([...arr1, ...arr2] vs arr1.concat(arr2))
+
+- concat不会改变arr1和arr2，返回的也是新数组，a new Array instance.
+- 最大的区别是rest操作符可读性好，测试leetcode快排算法时结尾用展开语法更快
+- rest还能展开字符串、对象等
+- the only honest answer is that "it depends". 
+  - Browsers change all the time
+- concat will preserve the empty slots in the array while the Spread will replace them with undefined values.
+
+- 虽然concat保留了空位置，但比较起来却是相等的，都等于`undefined`
+
+```JS
+var x = [],
+  y = [];
+
+x[1] = "a";
+y[1] = "b";
+
+var usingSpread = [...x, ...y];
+var usingConcat = x.concat(y);
+
+console.log(usingSpread); // [ undefined, "a", undefined, "b"]
+console.log(usingConcat); // [ empty, "a",empty , "b"] 
+
+console.log(1 in usingSpread); // true
+console.log(1 in usingConcat); // true
+
+usingSpread[0] === usingConcat[0] // true
+usingConcat[0] === undefined // true
+```
+
+- 在常见使用场景中，concat不会修改数组
+  - arr1.push(...arr2)使用rest经常需要修改已有数组
+
+```JS
+const arr1 = ["dog", "cat", "hamster"];
+const arr2 = ["bird", "snake"];
+
+arr1.push(arr2);
+arr1 // ['dog', 'cat', 'hamster', Array(2)]
+
+arr1.push.apply(arr1, arr2);
+arr1 // ['dog', 'cat', 'hamster', 'bird', 'snake']
+
+// When we invoke the function, we pass it all the values in the array using the spread syntax 
+arr1.push(...arr2); // ['dog', 'cat', 'hamster', 'bird', 'snake']
+```
+
+- Spread syntax is not an operator and therefore does not have a precedence.
+  - It is part of the array literal and function call (and object literal) syntax.
+  - Similarly, rest syntax is part of the array destructuring and function parameter (and object destructuring) syntax.
+
+- [Array.prototype.push.apply](https://stackoverflow.com/questions/35638511)
+- `arr1.push.apply(arr1, arr2); `的计算逻辑
+  - `arr1.push === Array.prototype.push` // true
+  - Function.prototype.apply(thisArg, argsArray)，apply的第2个参数会自动展开然后传递给函数  
+  - When you use `apply()`, it will take the array that you have supplied as the second argument and convert it to multiple arguments.
+- [Difference between using a spread syntax (...) and push.apply](https://stackoverflow.com/questions/39716216)
+- Both `Function.prototype.apply` and the `...` spread syntax may cause a stack overflow when applied to large arrays
+  - `apply: Maximum call stack size exceeded` 异常信息
+  - 因为 JavaScriptCore engine 引擎限制了函数参数列表的长度为65536，但是chrome的v8引擎测试表明支持参数数量大于65536
+  - Use `Array.prototype.concat` instead. Besides avoiding stack overflows, `concat` has the advantage that it also avoids mutations. Mutations are considered harmful, because they can lead to subtle side effects.
+  - But that isn't a dogma(教条). If you are within a function scope and perform mutations to improve performance and relieve garbage collection you can perform mutations, as long as they aren't visible in the parent scope.
+
+- [Does spread operator affect performance?](https://stackoverflow.com/questions/55843097)
+  - Yes, spreading a variable which refers to an object into another object requires the interpreter to look up what the variable refers to, and then look up all the enumerable own properties (and the associated values) of the object that gets spreaded so as to insert into the new object. 
+  - But, on modern computers, and on modern JS engines, the processing power required is next to nothing; 
+- beware of using spread with an `array.reduce()`. I suspect it leads to O(n^2) behavior or worse.
+
+```JS
+let phoneBook = inputs.reduce((acc, entry) => {
+  let [name, phone] = entry.trim().split(' ');
+
+  // ! 不要用展开运算符，返回的是在循环内创建的新对象
+  return { ...acc, [name]: phone };
+}, {});
+
+let phoneBook = inputs.reduce((acc, entry) => {
+  let [name, phone] = entry.trim().split(' ');
+
+  // 返回的是同一个acc对象
+  acc[name] = phone;
+
+  return acc;
+}, {});
+```
+
+- [spread operator vs array.concat()](https://stackoverflow.com/questions/48865710)
+- To sum it up, when your arguments are possibly non-arrays, the choice between concat and ... depends on whether you want them to be iterated.
+  - `concat` makes no attempt to iterate the generator and appends it as a whole, while `...` nicely fetches all values from it.
+  - ES6 provides a way to override it with `Symbol.isConcatSpreadable`; 
+- Performance-wise `concat` is faster, probably because it can benefit from array-specific optimizations, while `...` has to conform to the common iteration protocol. 
 
 ## Map vs Object
 
@@ -676,8 +769,8 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
 - 弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 
   - 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。
   - 我们默认创建一个对象：const obj = {}，就默认创建了一个强引用的对象，我们只有手动将obj = null，它才会被垃圾回收机制进行回收，如果是弱引用对象，垃圾回收机制会自动帮我们回收。
-  - weakMap.set(obj, 'i can be auto recycled');
-  - obj = null;
+  - weakMap.set(obj, 'i can be auto recycled'); 
+  - obj = null; 
   - weakMap和obj是弱引用关系，当obj断开时，obj对应的val会被自动回收
 
 - WeakSet与Set的区别

@@ -28,7 +28,7 @@ modified: '2021-10-04T19:03:41.234Z'
 
 ```JS
 /**
- * * 深拷贝一个比较标准的实现，跑通了大部分lodash测试用例
+ * * 深拷贝一个比较标准的实现，跑通了大部分lodash测试用例。
  * - 但没有处理特殊类型对象，如Map； 注意 `typeof null` 也是 object
  * * 1. 返回循环引用的对象 copied.get(val)
  * * 2. 创建新内置对象、[]或{}，并放入记录循环引用的映射表
@@ -121,8 +121,8 @@ function cloneDeep2(value) {
 
 - 对于数组arr, 若手动添加新属性`arr.ext='ext'`，不同的遍历方法得到的结果不同
   - `JSON.stringify()`时新属性ext会丢失，得到 '["a", "b", "c"]'
+  - for-of会获取到数组元素值，但获取不到添加的ext属性
   - for-in遍历可以获取到ext属性和值，0, 1, 2, ext
-  - for-of会获取到数组元素值，但获取不到添加的ext属性和值
   - Object.keys()会获取到ext
 
 - `typeof operand` / `typeof(operand)` 表达式的值只有8种
@@ -130,7 +130,7 @@ function cloneDeep2(value) {
   - 3种非基本类型：object, function, symbol
 
 - 为什么 `typeof null` 会返回 object ？
-  - 因为在 js 的设计中，object的前三位标志是000，而 null 在32位表示中也全是0，因此，typeof null 也会打印出object
+  - 因为在js的设计中，object的前三位标志是000，而 null 在32位表示中也全是0，因此，typeof null 也会打印出object
 
 - mozilla文档描述了Date()作为构造函数有4种使用方法
   - new Date()
@@ -142,7 +142,6 @@ function cloneDeep2(value) {
   - from the relevant portion of the ECMAScript 6 spec:
     - If `Type(value)` is Object and value has a `[[DateValue]]` internal slot, then Let tv be thisTimeValue(value).
   - But, the ES5 spec is not the same and will do a conversion to a string when you do what you're doing which will then be parsed as a string by the constructor.
-  - for es5: `var date2 = new Date(date.getTime()); `
   - es6相当于直接 new Date(d1.getTime()); 
   - es5相当于直接 new Date(Date.parse(d1.toString())); 
   - Firefox seems to be following ES5.1 behaviour at the moment and Chrome ES6.0
@@ -158,7 +157,8 @@ JSON.stringify(function() {}) // undefined
   - 我特意看了下lodash对函数的处理，如果发现是函数的话就会直接返回了
 - 通过prototype来区分下箭头函数和普通函数，箭头函数是没有prototype
 - `new Function(arg1, ... , argN, functionBody)`; 
-- 可以直接使用eval和函数字符串来重新生成一个箭头函数，注意这种方法是不适用于普通函数的。
+  - 如 `new Function('a', 'b', 'return a + b')`; 
+- 可以直接使用`eval`和函数字符串来重新生成一个箭头函数，注意这种方法是不适用于普通函数的。
 
 ```JS
 /**
@@ -214,19 +214,18 @@ function cloneFunction(func) {
   - 直接赋值，修改对象后，浅拷贝的对象也会改变
   - 浅拷贝第一层属性值
     - let obj2 = { ...obj }
-    - 在循环中利用赋值浅拷贝第一层属性值
     - Object.assign(target, source)
+    - 在循环中利用赋值浅拷贝第一层属性值
 
 ```JS
 let obj2 = { ...obj };
+let obj2 = Object.assign({}, obj); // returns the modified target object.
 
 let obj2 = {};
 for (let i in obj) {
   if (!obj.hasOwnProperty(i)) break; // 这里使用 continue 也可以
   obj2[i] = obj[i];
 }
-
-let obj2 = Object.assign({}, obj); // returns the modified target object.
 ```
 
 - 深拷贝就是不仅新建一个引用，同时在堆上新开辟一块内存空间，存储一个和原始对象一样的对象，并让新引用指向该对象。

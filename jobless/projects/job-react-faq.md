@@ -1,11 +1,11 @@
 ---
-title: job-react-family-faq
+title: job-react-faq
 tags: [job, react]
 created: '2021-09-21T19:31:15.701Z'
-modified: '2021-09-22T16:36:57.040Z'
+modified: '2021-10-05T08:23:17.099Z'
 ---
 
-# job-react-family-faq
+# job-react-faq
 
 # guide
 
