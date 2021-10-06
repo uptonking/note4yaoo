@@ -1,13 +1,16 @@
 ---
-title: job-coding-algs-tree-traversal
-tags: [coding, job, traversal, tree, leetcode]
+title: job-leetcode-tree-traversal
+tags: [coding, job, leetcode, traversal, tree]
 created: '2021-10-05T10:07:02.318Z'
-modified: '2021-10-05T10:09:04.082Z'
+modified: '2021-10-06T14:54:33.247Z'
 ---
 
-# job-coding-algs-tree-traversal
+# job-leetcode-tree-traversal
 
 # guide
+- to-do
+  - [锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
+
 - 二叉树遍历小结
   - 二叉树的前中后序深度优先遍历都基于stack，访问元素都使用 `stack.pop()`，只有后序遍历将访问结果`unshift`插入结果数组的第一个
   - 二叉树的层序遍历基于queue，访问元素使用 `queue.shift()`
@@ -31,6 +34,60 @@ function orderTraversal(root) {
 // 用于基于循环实现的深度优先遍历
 // const stack = [];
 // let curr = root;
+```
+
+# 根据前序遍历和中序遍历生成二叉树
+
+```JS
+/**
+ * * 根据前序遍历和中序遍历生成二叉树。
+ * 思路是根据pre-o确定根节点，在in-o遍历中找到该节点，然后递归左右子树。
+ * 假设树中没有重复的元素。
+ * https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+ */
+export function buildTree(preorder, inorder) {
+  if (preorder.length !== inorder.length || inorder.length === 0) {
+    // * 这里返回的是null，会作为空的left/right，不可以返回[]
+    return null;
+  }
+
+  // root和i代表的是同一个节点，当前根节点对象和索引
+  const root = new TreeNode(preorder[0]);
+  const i = inorder.indexOf(preorder[0]);
+
+  // 递归处理子数组时要去掉i节点，左子树
+  root.left = buildTree(preorder.slice(1, i + 1), inorder.slice(0, i));
+
+  // * 根左右、左根右；右这部分的索引是相同的
+  root.right = buildTree(preorder.slice(i + 1), inorder.slice(i + 1));
+
+  return root;
+}
+```
+
+# 根据后序遍历和中序遍历生成二叉树
+
+```JS
+/**
+ * * 根据后序遍历和中序遍历生成二叉树。
+ * * 注意参数顺序。
+ * https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+ */
+export function buildTree(inorder, postorder) {
+  if (postorder.length !== inorder.length || inorder.length === 0) {
+    return null;
+  }
+
+  const root = new TreeNode(postorder[postorder.length - 1]);
+  const i = inorder.indexOf(postorder[postorder.length - 1]);
+
+  // * 左根右、左右根；左这部分的索引是相同的
+  root.left = buildTree(inorder.slice(0, i), postorder.slice(0, i));
+
+  root.right = buildTree(inorder.slice(i + 1), postorder.slice(i, -1));
+
+  return root;
+}
 ```
 
 # 前序遍历
@@ -175,6 +232,7 @@ function postorderTraversal(root) {
 # 层序遍历
 
 ```JS
+// 递归实现
 function levelorderTraversal(root) {
   if (!root) return [];
   const ret = [];
@@ -198,6 +256,7 @@ function levelorderTraversal(root) {
 ```
 
 ```JS
+// 基于循环实现
 function levelorderTraversal(root) {
   if (!root) return [];
   const ret = [];

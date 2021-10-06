@@ -9,7 +9,10 @@ modified: '2021-09-25T19:40:33.814Z'
 
 # guide
 
-- 动态规划
+- O(1) < O(logn) < O(n) < O(nlogn) < O(n^2)
+
+- to-do
+  - 动态规划
 # discuss
 
 ## [如何分析、统计算法的执行效率和资源消耗](https://github.com/sisterAn/JavaScript-Algorithms/issues/1)

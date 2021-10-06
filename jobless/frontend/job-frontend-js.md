@@ -593,6 +593,26 @@ function outerFunction() {
 - 字符串字面量 (通过单引号或双引号定义) 和 直接调用 String 方法(没有通过 new 生成字符串对象实例)的字符串都是基本字符串
   - 当基本字符串需要调用一个字符串对象才有的方法或者查询值的时候(基本字符串是没有这些方法的)，JS会自动将基本字符串转化为字符串对象并且调用相应的方法或者执行查询
 
+- 字符串可以使用类似数组索引下标的方式来访问字符元素
+  - 如 aa = 'string'; aa[1] === 't'
+
+- [`string.charAt(x)` or `string[x]`](https://stackoverflow.com/questions/5943726)
+- There is a difference when you try to access an index which is out of bounds or not an integer.
+  - string[x] returns the character at the xth position in string if x is an integer between 0 and string.length-1, and returns `undefined` otherwise.
+  - string.charAt(x) converts x to an integer and then returns the character at the that position if the integer is between 0 and string.length-1, and returns an empty string otherwise.
+- Word of caution: using either syntax for emojis or any other unicode characters past the Basic Multilingual Plane BPM (AKA the "Astral Plane") "😃".charAt(0) will return an unusable character
+  - using either syntax for emojis will return an unusable character
+  - That’s why Array.from("😃")[0] or [..."😃"][0] should be used in this case. 
+
+```JS
+// They can give different results in edge cases.
+'hello' [NaN] // undefined
+'hello'.charAt(NaN) // 'h'
+
+'hello' [true] //undefined
+'hello'.charAt(true) // 'e'
+```
+
 ## number
 
 ```JS
@@ -685,7 +705,7 @@ arr1.push(...arr2); // ['dog', 'cat', 'hamster', 'bird', 'snake']
 - Both `Function.prototype.apply` and the `...` spread syntax may cause a stack overflow when applied to large arrays
   - `apply: Maximum call stack size exceeded` 异常信息
   - 因为 JavaScriptCore engine 引擎限制了函数参数列表的长度为65536，但是chrome的v8引擎测试表明支持参数数量大于65536
-  - Use `Array.prototype.concat` instead. Besides avoiding stack overflows, `concat` has the advantage that it also avoids mutations. Mutations are considered harmful, because they can lead to subtle side effects.
+  - Use `Array.prototype.concat` instead. Besides avoiding stack overflows,  `concat` has the advantage that it also avoids mutations. Mutations are considered harmful, because they can lead to subtle side effects.
   - But that isn't a dogma(教条). If you are within a function scope and perform mutations to improve performance and relieve garbage collection you can perform mutations, as long as they aren't visible in the parent scope.
 
 - [Does spread operator affect performance?](https://stackoverflow.com/questions/55843097)

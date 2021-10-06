@@ -1,11 +1,11 @@
 ---
-title: job-coding-algs-search-base
-tags: [algorithms, coding, job, search, leetcode]
+title: job-leetcode-search-base
+tags: [algorithms, coding, job, leetcode, search]
 created: '2021-10-05T10:10:13.503Z'
-modified: '2021-10-05T10:10:31.151Z'
+modified: '2021-10-06T14:46:53.654Z'
 ---
 
-# job-coding-algs-search-base
+# job-leetcode-search-base
 
 # guide
 
@@ -14,8 +14,8 @@ modified: '2021-10-05T10:10:31.151Z'
 - 空间复杂度 O(1)
 
 - 二分查找局限性
-  - 针对的对象是数组结构，因为是通过下标来随机访问元素
   - 数组必须有序
+  - 针对的对象是数组结构，因为是通过下标来随机访问元素
   - 数组太小不合适，直接使用顺序查找即可
   - 数组太长不合适，数组要求连续的内存空间，数组太长不利于存储
 

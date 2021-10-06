@@ -10,12 +10,11 @@ modified: '2021-09-20T09:00:43.564Z'
 # 求职相关资料
 
 - algs 算法基础
-  - tree 二叉树、多叉树
-  - 数据结构
-  - 排序
+  - 排序 快排、归并、堆排序
   - 查找
+  - 数据结构
+  - tree 二叉树、多叉树
   - 设计模式
-  - 参考资料
 
 - frontend 前端基础
   - 浏览器的渲染管线及优化
@@ -34,7 +33,6 @@ modified: '2021-09-20T09:00:43.564Z'
   - 编辑器
   - 表格
   - 性能优化
-  - 参考资料
 
 - coding 手撕代码
   - json解析器 > ast tree
@@ -42,18 +40,13 @@ modified: '2021-09-20T09:00:43.564Z'
   - 常用算法
   - 常用组件
   - 经典css
-  - 参考资料
-    - [前端面试常见手写题整理](https://github.com/Mayandev/fe-interview-handwrite)
 # 多刷几遍
 - [2020年中大厂前端面试总结 高频+超高频](https://github.com/funnycoderstar/blog/issues/156)
+- [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://juejin.cn/post/6894101837696204808)
 
 - [前端面试指北 面向面经学习+手撕代码](https://www.yuque.com/nepjnq/fgeemd)
 
 - [前端高频面试精粹「精炼+引导」](https://827652549.github.io/my-book/#/README)
-- [前端面试小册](https://docs.chenqaq.com/algorithm)
-  - https://github.com/okaychen/FE-Interview-Brochure
-  - 本人2019年秋招前端面试经历
-  - 包含基础篇、Vue框架篇、HTTP&浏览器、构建工具篇、安全篇、算法篇
 
 - https://github.com/sisterAn/JavaScript-Algorithms
   - 从0到1构建完整的数据结构与算法体系 
@@ -62,9 +55,13 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [手写代码系列 高频 数量不多](https://wangyaxing.cn/blog/jsCode/)
   - [面试题专题](https://wangyaxing.cn/blog/interview/)
-# 面经参考
-- [两年前端双非二本，科班出身面经分享（已拿阿里，头条，pdd，快手offer）](https://zhuanlan.zhihu.com/p/363694889)
 
+- [汇总各大互联网公司容易考察的高频leetcode题 人工整理面经而得](https://github.com/afatcoder/LeetcodeTop)
+  - https://codetop.cc/home
+  - 可按频度排序
+
+- [Web前端面试指南与高频考题解析](https://www.kancloud.cn/x751685875/x751685875/541670)
+# 面经参考
 - [一年半经验，百度、有赞、阿里前端面试总结](https://github.com/yacan8/blog/issues/18)
 - [一年经验字节跳动、虾皮、快手、拼多多前端面试总结](https://github.com/flytam/blog/issues/20)
 
@@ -72,6 +69,11 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [网友面经合集2018-2020](https://github.com/wangwenjie1314/webQd/blob/master/file/%E9%9D%A2%E7%BB%8F/index.md)
 # 面试总结
+- [前端面试小册](https://docs.chenqaq.com/algorithm)
+  - https://github.com/okaychen/FE-Interview-Brochure
+  - 本人2019年秋招前端面试经历
+  - 包含基础篇、Vue框架篇、HTTP&浏览器、构建工具篇、安全篇、算法篇
+
 - [前端面试直通车 2021(大厂收集)](https://www.yuque.com/robinson/fe-interview)
 
 - [高频面试大纲](https://github.com/lanweipeng/fullAnswer)
@@ -95,12 +97,11 @@ modified: '2021-09-20T09:00:43.564Z'
 - [thinkbucket 算法与设计模式](https://thinkbucket.cn/docs/algorithm/5.binary-tree/tree)
   - https://github.com/ThinkBucket/docsite
 
-- [汇总各大互联网公司容易考察的高频leetcode题 人工整理面经而得](https://github.com/afatcoder/LeetcodeTop)
-  - https://codetop.cc/home
-
 - https://github.com/basarat/algorithms
   - Code/tests for algorithm and data structure lessons using TypeScript 视频+代码+测试
 # 手撕代码
+- [前端面试常见手写题整理](https://github.com/Mayandev/fe-interview-handwrite)
+
 - [前端面试手写代码](https://www.yuque.com/just-write/mwkth8)
 - [前端知识总结 + 案例积累分析](https://github.com/huangyangquang/DEMO)
 # 招聘信息

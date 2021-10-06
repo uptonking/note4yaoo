@@ -13,6 +13,31 @@ modified: '2021-09-22T16:31:02.228Z'
   - 分析、抽象目标
   - 设计 api 和 workflow
   - 设计各个api的input-args, output-return
+# to-do
+- 判断DOM标签的合法性
+  - 判断标签的闭合可以使用栈，跟判断有效的括号思路类似。
+# 实现算术运算的加法
+- 按位与 & 同1才1
+- 按位或 | 有1则1
+- 按位异或 ^ 不同则1 
+
+- 简单实现
+  - 按位异或 是不进位的加法
+  - a + b = (a ^ b) + ((a & b) << 1
+  - 通过迭代的方式模拟加法
+
+```JS
+function sum(a, b) {
+  if (a == 0) return b;
+  if (b == 0) return a;
+
+  let newA = a ^ b;
+  let newB = (a & b) << 1;
+
+  return sum(newA, newB);
+}
+```
+
 # 替换日期格式 yyyy-MM-dd > MM-dd-yy
 
 ```JS
@@ -21,10 +46,6 @@ var data = '10.24/2017'
 data = data.replace(reg, '$3-$1-$2')
 console.log(data) //2017-10-24
 ```
-
-# 判断DOM标签的合法性
-
-> 判断标签的闭合可以使用栈，跟判断有效的括号思路类似。
 
 # 统计HTML标签中出现次数最多的标签
 - elements = element.getElementsByTagName(tagName)

@@ -33,6 +33,8 @@ modified: '2021-10-05T08:23:17.099Z'
   * 写一个顺滑的拖拽
   * 用一个 component 递归渲染
   * 写一个 react router
+# to-do
+- react 懒加载的实现原理
 # faq
 
 ## 如何在vue里用react渲染，如何在js/jquery中使用react组件

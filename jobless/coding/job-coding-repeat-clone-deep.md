@@ -162,7 +162,8 @@ JSON.stringify(function() {}) // undefined
 
 ```JS
 /**
- * * 取出参数、函数体，生成函数对象
+ * * 箭头函数对象使用eval()生成；
+ * * 对普通函数对象，取出参数、函数体，通过new Function(...args, body)生成
  */
 function cloneFunction(func) {
   //  { 中间是任意字符或换行 }

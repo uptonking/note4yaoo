@@ -1,19 +1,18 @@
 ---
-title: job-coding-algs-leetcode
-tags: [algorithms, coding, job, leetcode]
-created: '2021-10-05T09:05:19.429Z'
-modified: '2021-10-05T09:05:31.852Z'
+title: job-leetcode-repeat-everytime
+tags: [algorithms, coding, job, leetcode, repeat]
+created: '2021-09-21T19:40:24.161Z'
+modified: '2021-10-06T14:58:39.894Z'
 ---
 
-# job-coding-algs-leetcode
+# job-leetcode-repeat-everytime
 
 # guide
 
 # 斐波那契数
-
-> 该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。
-> F(0) = 0，F(1) = 1
-> F(n) = F(n - 1) + F(n - 2)，其中 n > 1
+- 该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。
+  - `F(0) = 0，F(1) = 1` 前2项
+  - `F(n) = F(n - 1) + F(n - 2)`，其中 n > 1
 
 ```JS
 /**
@@ -45,7 +44,7 @@ function fibonacci(n) {
  */
 function fibonacciRecursive(n) {
 
-  // 处理 0、1；递归终止条件
+  // 处理 0、1；也是递归终止条件
   if (n < 2) return n;
 
   return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
@@ -54,7 +53,7 @@ function fibonacciRecursive(n) {
 /**
  * * 使用缓存优化fibonacci
  * - 优化的递归性能仍然不如循环
- * * cache中保存的是整个数列，但却前2项，[,,1,2,3,5...]
+ * * cache中保存的是整个数列，但却缺前2项[,,1,2,3,5...]
  * https://segmentfault.com/a/1190000022973482
  */
 function fibonacciRecursive(n, cache = []) {

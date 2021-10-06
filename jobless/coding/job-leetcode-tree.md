@@ -1,13 +1,15 @@
 ---
-title: job-coding-algs-tree
-tags: [algorithms, coding, job, tree, leetcode]
+title: job-leetcode-tree
+tags: [algorithms, coding, job, leetcode, tree]
 created: '2021-10-05T09:02:06.952Z'
-modified: '2021-10-05T09:02:30.252Z'
+modified: '2021-10-06T14:54:23.456Z'
 ---
 
-# job-coding-algs-tree
+# job-leetcode-tree
 
 # guide
+
+- to-do
 
 ```JS
 // 二叉树的节点定义
@@ -18,9 +20,29 @@ function TreeNode(val, left, right) {
 }
 ```
 
-- todo
-  - 二叉树转链表
-# 给定一个二叉树，找出其最大深度
+# 翻转二叉树
+
+```JS
+/**
+ * * 翻转二叉树。二叉树的左右子树交换
+ * https://leetcode-cn.com/problems/invert-binary-tree/
+ * - 从根节点开始前序遍历每个节点，然后交换左右子树既可
+ */
+export function invertTree(root) {
+  if (!root) return null;
+
+  const temp = root.left;
+  root.left = root.right;
+  root.right = temp;
+
+  invertTree(root.left);
+  invertTree(root.right);
+
+  return root;
+}
+```
+
+# 求二叉树的最大深度
 - 思路1: 递归求左右子树的深度，从叶到根每层+1
 - 思路2: 层序遍历
 
@@ -33,11 +55,35 @@ function TreeNode(val, left, right) {
  */
 function maxDepth(root) {
   if (!root) return 0;
+
   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 }
 ```
 
-# 给定一个二叉树，判断它是否是高度平衡的二叉树
+# 求二叉树的最小深度
+
+```JS
+/***
+ * * 二叉树的最小深度。与求最大深度相反
+ * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+ * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+ */
+function minDepth(root) {
+  if (!root) return 0;
+
+  // 如果左或右子树为空的话是构不成子树的。而最小深度是要求从根节点到子树的。
+  if (!root.left && root.right) {
+    return 1 + minDepth(root.right);
+  }
+  if (!root.right && root.left) {
+    return 1 + minDepth(root.left);
+  }
+
+  return 1 + Math.min(minDepth(root.left), minDepth(root.right));
+}
+```
+
+# 判断平衡的二叉树
 
 > 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。
 
@@ -50,10 +96,12 @@ function maxDepth(root) {
  */
 export function isBalanced(root) {
   if (!root) return true;
+
   const getDepth = (node) => {
-    if (!node) return -1;
+    if (!node) return 0;
     return Math.max(getDepth(node.left), getDepth(node.right)) + 1;
   };
+
   return (
     Math.abs(getDepth(root.left) - getDepth(root.right)) <= 1 &&
     isBalanced(root.left) &&
@@ -62,7 +110,30 @@ export function isBalanced(root) {
 }
 ```
 
-# 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先
+# 二叉搜索树的最近公共祖先
+
+```JS
+/**
+ * * 二叉搜索树的最近公共祖先
+ * * 注意p,q节点大小未知
+ * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+ *
+ */
+function lowestCommonAncestor(root, p, q) {
+  if (!root) return null;
+
+  if (root.val > p.val && root.val > q.val) {
+    return lowestCommonAncestor(root.left, p, q);
+  }
+  if (root.val < p.val && root.val < q.val) {
+    return lowestCommonAncestor(root.right, p, q);
+  }
+
+  return root;
+}
+```
+
+# 二叉树的最近公共祖先
 
 ```JS
 /**
@@ -71,11 +142,18 @@ export function isBalanced(root) {
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/43
  */
 export function lowestCommonAncestor(root, p, q) {
+
+  // 如果树为空树或 p 、 q 中任一节点为根节点，那么 p 、 q 的最近公共节点为根节点
   if (!root || root === p || root === q) return root;
+
   const left = lowestCommonAncestor(root.left, p, q);
   const right = lowestCommonAncestor(root.right, p, q);
+
+  // 如果左子树没找到，那就在右子树上；树是连通的无环图
   if (!left) return right;
   if (!right) return left;
+
+  // 如果p 、q节点在左右子树的最近公共祖先都存在
   return root;
 }
 ```
@@ -85,10 +163,10 @@ export function lowestCommonAncestor(root, p, q) {
 ```JS
 /**
  * * 给定一个二叉树, 找到该树中两个指定节点间的最短距离。
- * 思路：
- * - a.找到最近公共祖先lca节点； 
- * - b.分别求出两节点到lca的距离； 
- * - c. 距离相加
+ * - 思路：
+ * * a.找到最近公共祖先lca节点； 
+ * * b.分别求出两节点到lca的距离； 
+ * * c. 距离相加
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/82
  */
 export function shortestDistance(root, p, q) {
@@ -99,6 +177,7 @@ export function shortestDistance(root, p, q) {
   getPath(lowestCA, q, qDis);
   return pDis.length + qDis.length;
 }
+
 /**
  * * 计算根节点root到节点node的路径。
  * - 从root节点开始向下查找node节点
@@ -144,37 +223,17 @@ function isSymmetric(root) {
 }
 ```
 
-# 翻转二叉树
-
-```JS
-/**
- * * 翻转二叉树。二叉树的左右子树交换
- * https://leetcode-cn.com/problems/invert-binary-tree/
- * - 从根节点开始前序遍历每个节点，然后交换左右子树既可
- */
-export function invertTree(root) {
-  if (!root) return null;
-
-  const temp = root.left;
-  root.left = root.right;
-  root.right = temp;
-
-  invertTree(root.left);
-  invertTree(root.right);
-
-  return root;
-}
-```
-
-# 判断两个树节点值完全相同
+# 判断两棵树节点值完全相同
 
 ```JS
 /**
  * * 判断2棵树val完全相同
+ * * 递归，类似前序遍历的思路
  * https://leetcode-cn.com/problems/same-tree/
  */
 function isSameTree(root1, root2) {
   if (!root1 && !root2) return true;
+
   if (!root1 || !root2 || root1.val !== root2.val) return false;
 
   return (
@@ -200,6 +259,7 @@ function isSubtree(root, subRoot) {
   if (root.val === subRoot.val && isSameTree(root, subRoot)) {
     return true;
   }
+
   return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
 }
 ```
@@ -216,6 +276,7 @@ function isSubtree(root, subRoot) {
 export function flatten(root) {
   if (!root) return null;
   let current = root;
+
   while (current) {
     if (!current.left) {
       current = current.right;
@@ -223,6 +284,7 @@ export function flatten(root) {
     }
     const next = current.left;
     let pre = next;
+
     while (pre.right) {
       pre = pre.right;
     }
@@ -245,9 +307,12 @@ export function flatten(root) {
  */
 export function hasPathSum(root, targetSum) {
   if (!root) return false;
+
   if (root.left === null && root.right === null) {
+    // 若是叶节点，则直接比较总和
     return root.val === targetSum;
   }
+
   targetSum = targetSum - root.val;
   return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
 }
@@ -257,10 +322,9 @@ export function hasPathSum(root, targetSum) {
 
 ```JS
 export function pathSum(root, targetSum) {
-  if (!root) {
-    return [];
-  }
+  if (!root) return [];
   const result = [];
+
   const dfs = (node, sum, path) => {
     if (!node) {
       return 0;
@@ -274,6 +338,7 @@ export function pathSum(root, targetSum) {
     node.left && dfs(node.left, sum, path);
     node.right && dfs(node.right, sum, path);
   };
+
   dfs(root, targetSum, []);
   return result;
 }
@@ -283,7 +348,7 @@ export function pathSum(root, targetSum) {
 
 ```JS
 /**
- * 二叉树的序列化与反序列化
+ * * 二叉树的序列化与反序列化
  * https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
  * * 基于层序遍历实现序列化，空子节点序列化为 #
  */
@@ -328,37 +393,5 @@ export function deserialize(data) {
     cursor += 2;
   }
   return root;
-}
-```
-
-# 二叉搜索树 BST
-
----
-
-# 二叉搜索树中第 K 小的元素
-
-```JS
-/**
- * * 二叉搜索树中第K小的元素
- * https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/86
- * - 中序遍历二叉搜索树，输出第 k 个既可
- */
-export function kthSmallest(root, k) {
-  if (!root) return -1;
-  const stack = [];
-  let current = root;
-  // 遍历一个就加一
-  let i = 0;
-  while (stack.length || current) {
-    while (current) {
-      stack.push(current);
-      current = current.left;
-    }
-    current = stack.pop();
-    i++;
-    if (i === k) return current.val;
-    current = current.right;
-  }
 }
 ```
