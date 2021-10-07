@@ -30,3 +30,6 @@ modified: '2021-07-27T15:12:39.959Z'
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
 # more-editor
+- https://github.com/jaredreich/pell
+  - https://jaredreich.com/pell/
+  - smallest WYSIWYG text editor with no dependencies

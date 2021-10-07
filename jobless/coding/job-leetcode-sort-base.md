@@ -39,7 +39,6 @@ function arraySort(nums) {
 # 快速排序
 
 ```JS
-/** 交换数组中i,j两个索引位置的值 */
 function swap(nums, i, j) {
   const temp = nums[i];
   nums[i] = nums[j];
@@ -48,12 +47,14 @@ function swap(nums, i, j) {
 
 /**
  * * 💡️ 快速排序，递归实现，非原地排序
+ * oj测试消耗时间 148ms，内存 59.3mb，用空间换时间的典型
  */
 function quickSort(nums) {
   const len = nums.length;
   if (len <= 1) return nums;
 
   const pivotIndex = Math.floor(len / 2);
+  // 修改了原数组，删除了基准值
   const pivot = nums.splice(pivotIndex, 1)[0];
 
   const low = [];
@@ -72,20 +73,25 @@ function quickSort(nums) {
 
   // leetcode oj实测，concat需要200ms，展开语法需要164ms
   // return quickSort(low).concat(pivot).concat(quickSort(high));
-};
+}
 ```
 
 ```JS
 /**
  * * 💡️ 快速排序，递归版，原地排序
- * [用 JavaScript 实现快速排序](https://segmentfault.com/a/1190000037611587)
+ * https://segmentfault.com/a/1190000037611587
+ * oj测试消耗时间 3632ms，内存 56.4mb，👀️ 时间消耗太长了 
  */
-export function quickSort(nums, start, end) {
+function quickSort(nums, start, end) {
+  const len = nums.length;
+  if (len <= 1) return nums;
+
   if (start === undefined) start = 0;
-  if (end === undefined) end = nums.length - 1;
+  if (end === undefined) end = len - 1;
 
   if (start >= end) return;
 
+  // 在索引范围内找到基准值的位置索引，end初始是len-1
   const pivotIndex = partition(nums, start, end);
 
   quickSort(nums, start, pivotIndex - 1);
@@ -95,8 +101,8 @@ export function quickSort(nums, start, end) {
 }
 
 /**
- * 重新排列数组的元素，使得基准值左侧的有元素都<基准值，而右侧的所有元素都>=基准值。
- * 这一步称为分区。
+ * 这一步称为分区，每次分区只确定最终处在中间位置的值。
+ * 重新排列数组的元素，使得基准值左侧的所有元素都<基准值，而右侧的所有元素都>=基准值。
  */
 function partition(nums, start, end) {
   // 每次分区都以最后一个元素作为基准值，最后一个元素就固定在最后，在遍历时不参与交换了
@@ -104,8 +110,11 @@ function partition(nums, start, end) {
 
   // 用来确定将数组分为2部分时基准值对应的索引
   let pivotIndex = start;
+
+  // 数组末尾值是基准值，所以end不参与比较交换
   for (let i = start; i < end; i++) {
     if (nums[i] < pivot) {
+      // 将比基准值小的值都换到数组前部分
       swap(nums, i, pivotIndex);
       pivotIndex++;
     }
@@ -116,7 +125,6 @@ function partition(nums, start, end) {
 
   return pivotIndex;
 }
-
 ```
 
 # 归并排序
@@ -144,6 +152,9 @@ function mergeSort(nums) {
   return merge(mergeSort(left), mergeSort(right));
 };
 
+/**
+ * * 合并2个无序数组
+ */
 function merge(nums1, nums2) {
 
   const temp = [];
@@ -206,6 +217,8 @@ export function mergeSortRecursively2(nums, start, end) {
 ```
 
 # 堆排序 / 最大堆
+- 以数组存储的完全二叉树，索引i对应的父节点索引为(i-1)/2
+  - 数组最后一个元素索引为i-1，所以其父节点索引为 (i-1-1)/2 = i/2 - 1
 
 ```JS
 /** 交换数组中i,j两个索引位置的值 */
@@ -222,12 +235,14 @@ function heapSort(nums) {
   const len = nums.length;
   if (len <= 1) return nums;
 
+  // * 从最后一个非叶子从后往前构建大顶堆，i--
   for (let i = Math.floor(len / 2 - 1); i >= 0; i--) {
     heapifyMax(nums, i, len);
   }
 
-  // 每次循环中未排序元素数量时 len-1
+  // 每次循环中未排序元素数量是 j
   for (let j = len - 1; j >= 0; j--) {
+    // 交换堆顶和最后一个未排序的元素，所以剩下未排序的元素数量就是j
     swap(nums, 0, j);
     heapifyMax(nums, 0, j);
   }
@@ -235,6 +250,7 @@ function heapSort(nums) {
   return nums;
 };
 
+/** 将节点 i 调整到除堆顶外本身已经大顶堆的正确位置 */
 function heapifyMax(nums, i, heapSize) {
 
   // 循环找出子节点的最大值，然后交换到堆顶
@@ -247,6 +263,7 @@ function heapifyMax(nums, i, heapSize) {
       swap(nums, i, j);
       i = j;
     } else {
+      // 所有子节点都比根节点小，heapSize本身已经是大顶堆了，可结束返回了
       break;
     }
   }
@@ -303,7 +320,6 @@ function heapifyMaxRecursive(nums, i, heapSize) {
  * - 当k为arr长度时，可以得到逆序数组
  */
 function heapSortMin(arr, k) {
-  if (k === 0) return [];
   const len = arr.length;
   if (len <= 1) return arr;
 
@@ -316,6 +332,7 @@ function heapSortMin(arr, k) {
     heapifyMin(arr, 0, j);
   }
 
+  // 取倒数k个数
   return arr.slice(-k).reverse();
 }
 
@@ -338,7 +355,6 @@ function heapifyMin(arr, i, heapSize) {
 # 希尔排序
 
 ```JS
-
 export function shellSort(nums) {
   const len = nums.length;
   if (len <= 1) {
@@ -354,5 +370,5 @@ export function shellSort(nums) {
   }
 
   return nums;
-}I
+}
 ```

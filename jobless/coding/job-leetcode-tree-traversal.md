@@ -28,7 +28,9 @@ function TreeNode(val, left, right) {
 // 二叉树遍历模版
 function orderTraversal(root) {
   if (!root) return [];
+
   const ret = [];
+
   return ret;
 }
 // 用于基于循环实现的深度优先遍历
@@ -100,8 +102,7 @@ function preorderTraversal(root) {
   function preTree(node) {
     if (node) {
       ret.push(node.val);
-      // node.left && preTree(node.left);
-      // node.right && preTree(node.right);
+
       pretree(node.left);
       pretree(node.right);
     }
@@ -119,6 +120,7 @@ function preorderTraversal(root) {
   const ret = [];
   const stack = [root];
   let curr = root;
+
   while (stack.length) {
     curr = stack.pop();
     ret.push(curr.val);
@@ -144,7 +146,9 @@ function inorderTraversal(root) {
   function inTree(node) {
     if (node) {
       inTree(node.left);
+
       ret.push(node.val);
+
       inTree(node.right);
     }
   }
@@ -173,7 +177,7 @@ function inorderTraversal(root) {
     curr = stack.pop();
     ret.push(curr.val);
 
-    curr = curr.right
+    curr = curr.right;
   }
 
   return ret;
@@ -194,6 +198,7 @@ function postorderTraversal(root) {
     if (node) {
       postTree(node.left);
       postTree(node.right);
+
       ret.push(node.val)
     }
   }
@@ -232,7 +237,33 @@ function postorderTraversal(root) {
 # 层序遍历
 
 ```JS
-// 递归实现
+/**
+ * * 基于队列实现，返回一维数组
+ */
+function levelorderTraversal(root) {
+  if (!root) return [];
+  const ret = [];
+
+  const queue = [root];
+  let curr = root;
+
+  while (queue.length) {
+    curr = queue.shift();
+
+    ret.push(curr.val);
+
+    curr.left && queue.push(curr.left);
+    curr.right && queue.push(curr.right);
+  }
+
+  return ret;
+}
+```
+
+```JS
+/**
+ * * 递归实现，返回每层的节点值，返回的是二维数组
+ */
 function levelorderTraversal(root) {
   if (!root) return [];
   const ret = [];
@@ -256,29 +287,9 @@ function levelorderTraversal(root) {
 ```
 
 ```JS
-// 基于循环实现
-function levelorderTraversal(root) {
-  if (!root) return [];
-  const ret = [];
-
-  const queue = [root];
-  let curr = root;
-
-  while (queue.length) {
-    curr = queue.shift();
-
-    ret.push(curr.val);
-
-    curr.left && queue.push(curr.left);
-    curr.right && queue.push(curr.right);
-  }
-
-  return ret;
-}
-```
-
-```JS
-// 返回每层的节点值，返回的是二维数组
+/**
+ * *  基于队列实现，返回每层的节点值，返回的是二维数组
+ */
 function getNodesByLevelOrder(root) {
   if (!root) return [];
   const ret = [];
@@ -311,3 +322,65 @@ function getNodesByLevelOrder(root) {
   - https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
   - https://github.com/sisterAn/JavaScript-Algorithms/issues/47
   - https://github.com/sisterAn/JavaScript-Algorithms/issues/46
+# 二叉树的锯齿形层序遍历
+
+```JS
+/**
+ * * 二叉树的锯齿形层序遍历，
+ * * 基于循环或递归与上面思路相同，奇数索引的元素是倒序的，要在上一个偶数层unshift
+ * https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+ */
+function zigzagLevelOrder(root) {
+  if (!root || root.length === 0) return [];
+
+  const ret = [];
+
+  const level = (node, depth) => {
+    if (!node) return;
+
+    ret[depth] = ret[depth] || [];
+
+    // 当前层值的访问顺序，第depth层，偶数层正序，奇数层倒序
+    // 注意这里设置的是下一层添加元素的顺序
+    depth % 2 === 0 ? ret[depth].push(node.val) : ret[depth].unshift(node.val);
+
+    level(node.left, depth + 1);
+    level(node.right, depth + 1);
+  };
+
+  level(root, 0);
+
+  return ret;
+}
+
+function zigzagLevelOrder2(root) {
+  if (!root || root.length === 0) return [];
+
+  const ret = [];
+
+  const queue = [root];
+  let curr = root;
+
+  let depth = -1;
+
+  while (queue.length) {
+    const levelArr = [];
+    const levelSize = queue.length;
+
+    depth++;
+
+    for (let i = 0; i < levelSize; i++) {
+      curr = queue.shift();
+
+      depth % 2 === 0 ? levelArr.push(curr.val) : levelArr.unshift(curr.val);
+
+      curr.left && queue.push(curr.left);
+      curr.right && queue.push(curr.right);
+    }
+
+    ret.push(levelArr);
+  }
+
+  return ret;
+}
+```

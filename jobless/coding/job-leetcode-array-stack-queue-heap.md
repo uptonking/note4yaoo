@@ -143,7 +143,7 @@ CQueue.prototype.appendTail = function(value) {
   this.stack1.push(value);
 };
 
-// 出队时将栈2顶部出栈；若栈2空则先将栈1所有元素出栈放到栈2
+// 出队时将栈2顶部出栈；若栈2空则先将栈1所有元素出栈放到栈2再将顶部出栈
 CQueue.prototype.deleteHead = function() {
   if (this.stack2.length) {
     return this.stack2.pop();

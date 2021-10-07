@@ -9,6 +9,17 @@ modified: '2021-05-14T12:04:55.412Z'
 
 # guide
 
+- 浏览器的键盘输入事件顺序
+  - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)
+    - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
+    - 输入中文时 keyup > keydown > beforeinput > input > keyup
+      - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
+  - [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
+    - 事件顺序与上面一致
+
+- events-deprecated
+  - keypress  > keydown/beforeinput
+
 - [从流行的编辑器架构聊聊富文本编辑器的困境](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
 # discuss
 - ## [The CKEditor 5 and CKEditor 4 comparison](https://support.ckeditor.com/hc/en-us/sections/115001489149-The-CKEditor-4-and-CKEditor-5-Comparison)
@@ -20,45 +31,7 @@ modified: '2021-05-14T12:04:55.412Z'
   - It is defined and controlled with pure JavaScript, moving the data model that represents the text totally away from the browser
   - The data structure is normalized and optimized for complex data management operations making implementation of algorithms such as Operational Transformation and real-time collaboration possible.
 
-- ## [如何不借助 contenteditable 实现富文本编辑器？](https://www.zhihu.com/question/366666295)
-- 在浏览器里，打开了 contentEditable 不等于借助了 contentEditable。
-- 粗略看来，一个 DOM 元素加上 contenteditable 属性后，就大致具备了这些能力：
-  - 选区的拖选编辑和光标闪动支持
-  - 方向键控制时的默认行为
-  - 输入文字时的默认行为（牵扯到输入法）
-  - 复制粘贴时的默认行为（牵扯到富文本剪贴）
-
-- 主流富文本编辑器都可以改成不借助 contenteditable 实现，，以 ProseMirror 为例进行改造，
-- 学习 prosemirror-view/src/domobserver.js 文件代码，将其逻辑应用在编辑器外的不可见的 input 标签上。
-  - 如果不特别纠结 contenteditable，使用设置了 contenteditable 的 div 标签可能会好些。
-  - 也可以使用 beforeinput 事件代替脏检测，方案参考 slate。
-- 删除 prosemirror-view 中对 contenteditable 的依赖，主要是文本选区相关逻辑。
-- 处理编辑器焦点问题，模拟输入法样式，模拟光标和选区。
-  - 选区渲染可以参考各种编辑器协同选区的实现方案，ProseMirror 也有模拟光标的实现方案。
-  - 至于确定点击后的选区位置，ProseMirror 有坐标映射到 Position 的工具函数。
-- 注意回避方向键上下移动光标、双击选中词语、拼写检查和 bidi 等问题，人多可以正面解决，人少 case by case。
-- 没有使用原生选区的 ProseMirror 相关插件应该可以正常使用。
-- 一个人一两个月应该可以搞定主流程。以上纯属脑洞，未经任何可靠调研，如有错误或遗漏，欢迎大家指正。
-
-- contenteditable方案
-- 优势：就是浏览器对于光标、选区方面基本上都帮忙做好了，输入方面要做的事情主要是对于所有可能造成文档模型修改的地方一一处理，将浏览器行为映射到程序的数据里，保持数据与视图的一致正确。
-- 劣势：数据、视图、输入是高度耦合的，而且跨浏览器几乎没有标准可言。受到浏览器限制较多，比如如果要实现代码编辑器里场景的多光标，就很难了。另外就是，因为视图是contenteditable来排版的，要搭载自己实现的排版引擎就几乎不可能。
-- 隐藏textarea方案
-- 优势：它只负责接收输入事件，其他视图输出全靠自己，相对来说，更容易解耦。因为基本脱离了浏览器原生的光标，这块可以实现出更强大的功能。排版引擎可以自己搞，只要码力够强，想搞一个从从上往下从右往左的文言富文本也没问题。
-- 劣势：要处理输入是一个巨大的课题，光是处理好光标就够头疼了，更不用说还有选区。另外就是因为接管了输入、点选、拖拽等各种操作，在移动端这种光标操作不同平台各自高度定制的场景，要搞起来工作量是很恐怖的。
-
-- 首先打开chrome的f12点击settings，勾选Shadow Dom，再看看原生的input元素，你会发现，input在原生的封装下，里面是这样的
-
-```html
-<div>
-  <div>为空的占位</div>
-  <div>输入的内容</div>
-</div>
-```
-
-- 记得开源onlyoffice的word编辑器都是canvas渲染一部分，光标、选择文字等是模拟，细节可以看看源码，不过跟Google docs还是有差距的。
-
-- ## 开源富文本编辑器技术的演进（20201024）
+- ## 开源富文本编辑器技术的演进__20201024
 - https://zhuanlan.zhihu.com/p/268366406
 - 在2019年8月份左右的时候，我们开始开发自己的知识库产品PingCode Wiki，然后对于在线文档、知识库以及背后的富文本编辑器技术都有了更深刻了解和认识
 - 大家公认的富文本编辑器领域在前端里面是天坑的存在，落后的生产力与人们日益增长的需求之间的矛盾

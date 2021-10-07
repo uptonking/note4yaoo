@@ -126,3 +126,117 @@ function majorityElement3(nums) {
   return ret;
 }
 ```
+
+# 下一个排列
+
+```JS
+/**
+ * * 下一个排列
+ * * 思路：从后向前找到nums[i]大于nums[i-1]的时候，重排nums[i-1]之后的所有数字；找不到则从小到大重新排序。
+ * https://leetcode-cn.com/problems/next-permutation/
+ * https://leetcode-cn.com/problems/next-permutation/solution/javascript-mo-ni-by-leoren/
+ * - 实现获取 下一个排列 的函数，算法需要将给定数字序列重新排，组合出下一个更大的整数。
+ * - 如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）
+ */
+function nextPermutation(nums) {
+  let flag = 0;
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    // 如果当前值i大于前一个值i-1，则进行操作
+    if (nums[i] > nums[i - 1]) {
+      // 选取i及其后面最小的一个值，和前一个值i-1进行交换
+      let tmp = nums[i - 1];
+      let min = i;
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[j] > tmp && nums[min] > nums[j]) min = j;
+      }
+      nums[i - 1] = nums[min];
+      nums[min] = tmp;
+
+      // 将i及其后面的值进行排序
+      for (let j = i; j < nums.length; j++) {
+        min = j;
+        for (let k = j + 1; k < nums.length; k++) {
+          min = nums[min] < nums[k] ? min : k;
+        }
+        tmp = nums[j];
+        nums[j] = nums[min];
+        nums[min] = tmp;
+      }
+      flag = 1;
+      break;
+    }
+  }
+
+  // 如果所有值逆序排，则从小到大排列
+  if (!flag) {
+    for (let i = 0; i < (nums.length + 1) >> 1; i++) {
+      const tmp = nums[i];
+      nums[i] = nums[nums.length - 1 - i];
+      nums[nums.length - 1 - i] = tmp;
+    }
+  }
+  return nums;
+}
+```
+
+# 全排列问题
+
+```JS
+/**
+ * * 全排列问题
+ * 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
+ * https://leetcode-cn.com/problems/permutations/
+ * https://leetcode-cn.com/problems/permutations/
+ * 全排列，首先将每个元素排到第一位。剩余元素再重复第一步操作，依次处理各个元素。
+ * 对于移动的元素，在递归操作之前，和之后该如何操作。
+ */
+
+// swap
+const permute = function(nums) {
+  const len = nums.length;
+  if (len === 0) return [
+    []
+  ];
+  const res = [];
+  const perm = function(arr, p, q, res) {
+    if (p === q) {
+      res.push([...arr]);
+    }
+    for (let i = p; i < q; i++) {
+      swap(arr, i, p);
+      perm(arr, p + 1, q, res);
+      swap(arr, i, p);
+    }
+  };
+  const swap = function(arr, left, right) {
+    const temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+  };
+  perm(nums, 0, len, res);
+  return res;
+};
+```
+
+# 计算平方根 sqrt
+
+```JS
+/**
+ * * 给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+ * https://leetcode-cn.com/problems/sqrtx/
+ */
+function mySqrt(x) {
+  if (x === 1) return 1;
+  let min = 0;
+  let max = x;
+
+  while (max - min > 1) {
+    let m = Math.floor((max + min) / 2);
+
+    x / m < m ? (max = m) : (min = m);
+  }
+
+  return min;
+}
+```

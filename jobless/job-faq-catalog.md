@@ -94,11 +94,17 @@ modified: '2021-09-20T09:00:43.564Z'
 # 开发参考
 - [前端性能优化总结](https://github.com/zoro-web/blog/issues/11)
 # 算法参考
+- [字节跳动最常考的64道JS算法题](https://dev.to/fengmao/64-js-3loo)
+
 - [thinkbucket 算法与设计模式](https://thinkbucket.cn/docs/algorithm/5.binary-tree/tree)
   - https://github.com/ThinkBucket/docsite
 
 - https://github.com/basarat/algorithms
   - Code/tests for algorithm and data structure lessons using TypeScript 视频+代码+测试
+
+- LeetCode 刷题攻略 代码随想录
+  - https://github.com/youngyangyang04/leetcode-master
+  - https://programmercarl.com/
 # 手撕代码
 - [前端面试常见手写题整理](https://github.com/Mayandev/fe-interview-handwrite)
 
@@ -119,6 +125,7 @@ modified: '2021-09-20T09:00:43.564Z'
   - 字节跳动2021三大业务重点：跨境电商、To B和办公硬件
 
 - [投光编辑器 岗位信息](https://www.shixiseng.com/com/com_aik7t6totq5z)
+  - 微信投递 https://learnku.com/go/t/56865 
 # 更多资源
 - 面试参考来源
   - github、知乎、掘金、语雀

@@ -9,12 +9,12 @@ modified: '2021-10-06T14:46:25.494Z'
 
 # guide
 - to-do
-  - [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 # 最大子序和
 
 ```JS
 /**
  * * 最大子序和(最大和的连续子数组)
+ * * 思路：求和时，是正数就加上，否则重新开始
  * https://leetcode-cn.com/problems/maximum-subarray/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/94
  * - 动态规划（Dynamic Programming，DP）是一种将复杂问题分解成小问题求解的策略
@@ -37,7 +37,7 @@ function maxSubArray(nums) {
       // 如果之前的的和大于0，那么可以继续累加
       sum += nums[i];
     } else {
-      // 否则的话之前是负数，加正数或负数都只小，不如从新的开始
+      // 若是sum为负，则加正数或负数都只是小，不如重新的开始
       sum = nums[i];
     }
 
@@ -45,5 +45,61 @@ function maxSubArray(nums) {
   }
 
   return max;
+}
+```
+
+# 买卖股票的最佳时机
+
+```JS
+/**
+ * * 买卖股票的最佳时机。只简单买卖一次。
+ * * 思路：贪心算法，取最左最小值，取最右最大值，那么得到的差值就是最大利润。
+ * - 每次循环都计算最小价格和最大利润
+ * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+ * https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/comments/1060657
+ * - 给定一个数组 prices ，它的第i个元素prices[i] 表示一支给定股票第 i 天的价格。
+ * - 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。
+ * - 设计一个算法来计算你所能获取的最大利润。
+ * - 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0
+ */
+function maxProfit(prices) {
+  if (prices.length <= 1) return 0;
+
+  let minPrice = prices[0];
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    // 今天的最大获利
+    maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+
+    // 买入价格的最小值，下次使用
+    minPrice = Math.min(minPrice, prices[i]);
+  }
+
+  return maxProfit;
+}
+```
+
+# 最长递增子序列
+
+```JS
+/**
+ * * 最长递增子序列
+ * * 思路：第i个元素之前的最小上升子序列的长度无非就是max(dp[i],dp[j]+1),
+ * https://leetcode-cn.com/problems/longest-increasing-subsequence/
+ * - 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+ */
+function lengthOfLIS(nums) {
+  const dp = new Array(nums.length).fill(1);
+
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (nums[i] > nums[j]) {
+        dp[i] = Math.max(dp[i], dp[j] + 1);
+      }
+    }
+  }
+
+  return Math.max(...dp);
 }
 ```

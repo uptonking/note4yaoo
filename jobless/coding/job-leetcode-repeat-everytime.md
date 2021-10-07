@@ -68,3 +68,141 @@ function fibonacciRecursive(n, cache = []) {
   return cache[n];
 }
 ```
+
+# 两数之和
+
+```JS
+/**
+ * * 两数之和。
+ * * 思路：用映射表存储 [元素值，元素索引]，然后求差找元素
+ * 给定整数数组nums和整数目标值target，在该数组中找出和为目标值target的那两个整数，并返回它们的下标
+ * 假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。返回顺序任意
+ * https://leetcode-cn.com/problems/two-sum/
+ * https://github.com/sisterAn/JavaScript-Algorithms/issues/4
+ */
+
+function twoSum(nums, target) {
+  const map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const k = target - nums[i];
+
+    if (map.has(k)) return [i, map.get(k)];
+
+    map.set(nums[i], i);
+  }
+
+  return [];
+}
+```
+
+```JS
+// 暴力法
+function twoSum2(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      // 必须是2个不同的数
+      if (i !== j && nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+
+  return [-1, -1];
+}
+```
+
+# 三数之和
+
+```js
+/**
+ * * 三数之和
+ * * 思路：先排序 + 双指针夹逼相遇。
+ * 判断 nums 中是否存在三个元素 a，b，c ，请找出所有和为0且不重复的三元组。
+ * https://leetcode-cn.com/problems/3sum/
+ * https://github.com/sisterAn/JavaScript-Algorithms/issues/31
+ */
+function threeSum(nums, target) {
+  nums.sort((a, b) => a - b);
+
+  const ret = [];
+  let second;
+  let last;
+
+  for (let i = 0; i < nums.length; i++) {
+    // 因为是递增数组
+    if (nums[i] > 0) break;
+
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+
+    second = i + 1;
+    last = nums.length - 1;
+
+    // 循环终止条件，因为是3个不同位置的元素
+    while (second < last) {
+      const sum = nums[i] + nums[second] + nums[last];
+
+      if (sum < 0) {
+        second++;
+        continue;
+      }
+      if (sum > 0) {
+        last--;
+        continue;
+      }
+
+      // sum === 0
+
+      ret.push([nums[i], nums[second], nums[last]]);
+
+      // 去重
+      while (second < last && nums[second] === nums[second + 1]) second++;
+      while (second < last && nums[last] === nums[last - 1]) last--;
+
+      second++;
+      last--;
+    }
+  }
+
+  return ret;
+}
+```
+
+```JS
+/**
+ * * 利用两数和的思路，新建set去除重复元素；
+ * 👎🏻️ 二维数组去重的时间/空间复杂度多过高，不推荐
+ */
+function threeSum(nums, target) {
+  nums.sort((a, b) => a - b);
+
+  const ret = [];
+  const retSet = new Set();
+  const map = new Map();
+
+  for (let i = 0; i < nums.length - 2; i++) {
+    const first = nums[i];
+
+    // 下面就是求2数和的思路
+    for (let j = i + 1; j < nums.length; j++) {
+      // 第2个数
+      const second = 0 - nums[j] - first;
+
+      const maybeRet = [first, second, nums[j]].sort((a, b) => a - b);
+      const maybeRetStr =
+        String(String(maybeRet[0]) + maybeRet[1]) + maybeRet[2];
+
+      if (map.has(second) && !retSet.has(maybeRetStr)) {
+        ret.push([first, second, nums[j]]);
+        retSet.add(maybeRetStr);
+      }
+
+      map.set(nums[j], j);
+    }
+
+    map.clear();
+  }
+
+  return ret;
+}
+```

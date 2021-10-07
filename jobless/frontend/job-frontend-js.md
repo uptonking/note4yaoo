@@ -332,6 +332,12 @@ console.log(b2); // {x:'z'}
 
 ## Object 对象
 
+- 从对象中删除属性的方法
+  - const {prop, ...newObj} = obj; 
+  - delete obj['prop']
+  - Reflect.deleteProperty(myJSONObject, 'regex'); 
+  - The difference between `delete` and `deleteProperty` is when using strict mode
+
 - 对象属性的特征
   - [[Configurable]]：属性是否可通过 delete 删除并重新定义，默认 true
   - [[Enumerable]]：属性是否可通过 for-in 或 Object.keys() 枚举，默认 true
@@ -339,16 +345,16 @@ console.log(b2); // {x:'z'}
   - [[Value]]：属性值，默认 undefined
 - Object.keys()返回一个由一个给定对象的自身可枚举属性组成的数组
   - 作为对比 for-in 循环则会遍历对象自身+其原型链上可枚举属性，每次获取的索引都是字符串类型
-- Object.freeze()
+- `Object.freeze()` 不可加、不可删、不可改
   - 冻结对象，使其不能被修改（冻结一层）
   - 不能新增、删除、修改属性
   - 对象 [[prototype]] 不可修改
-- Object.seal()
+- `Object.seal()` 不可加、不可删、可改
   - 不能新增属性
   - 现有属性标记为不可配置，即不可删除
   - 已有可写属性可以修改
   - 对象 [[prototype]] 不可修改
-- Object.preventExtensions()
+- Object.preventExtensions() 不可加、可删、不可改
   - 不能新增属性
   - 可删除已有属性
   - 对象 [[prototype]] 不可修改
@@ -642,6 +648,14 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
   - indexOf() expects a value
   - findIndex() expects a callback; good for objects
 
+- 从数组中删除元素
+  - immutable： arr.filter( item => item!==target)
+  - arr.splice(arr.indexOf(target), 1)
+  - delete arr[ arr.indexOf(target) ]
+  - 还可以考虑直接赋值覆盖 arr[index] = undefined
+- 从数组中删除多个元素
+  - arr.filter( item => !targets.includes(item))
+
 - 不要再forEach里面return，因为forEach循环无法终止
 
 ### `concat vs ...rest` ([...arr1, ...arr2] vs arr1.concat(arr2))
@@ -785,6 +799,18 @@ let phoneBook = inputs.reduce((acc, entry) => {
   - 属性不能被修改。
 
 ## Map/Set
+
+- Map会记住kv的插入顺序
+
+```JS
+mm = new Map()
+mm.set('a', 'aa')
+mm.set('b', 'bb')
+mm.keys(); // a,b
+
+mm.set('a', 'aa11')
+mm.keys() // a,b  💡️ 更新已有key时，插入顺序不变，a不会在最后
+```
 
 - 弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 
   - 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。

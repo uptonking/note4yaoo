@@ -50,7 +50,7 @@ function binarySearchRecursive(nums, target, low, high) {
   if (low === undefined) low = 0;
   if (high === undefined) high = nums.length - 1;
 
-  // 包含只有1个元素的情况
+  // 只有1个元素时，也要执行后面
   if (low > high) return -1;
 
   const mid = Math.floor((low + high) / 2);
