@@ -9,128 +9,14 @@ modified: '2021-10-06T14:54:06.837Z'
 
 # guide
 
-# 数组中的第K个最大元素
-
-```JS
-/**
- * * 数组中的第K个最大元素
- * https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/62
- */
-function findKthLargest(nums, k) {
-  const len = nums.length;
-  if (len === 1) return nums[0];
-
-  // 整个数组，从最后一个非叶子节点从后往前构建大顶堆，使数组整体有序
-  for (let i = Math.floor(len / 2 - 1); i >= 0; i--) {
-    heapifyMax(nums, i, len);
-  }
-
-  // 处理到第k个数就可以结束了
-  for (let j = len - 1; j >= len - k; j--) {
-    swap(nums, 0, j);
-    heapifyMax(nums, 0, j);
-  }
-
-  return nums[len - k];
-}
-```
-
-# 前K个高频元素
-
-```JS
-/**
- * * 前 K 个高频元素。给定一个非空的整数数组，返回其中出现频率前 k 高的元素。
- * https://leetcode-cn.com/problems/top-k-frequent-elements/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/61
- * 遍历一遍数组统计每个元素的频率，并将元素值（ key ）与出现的频率（ value ）保存到 map 中
- */
-function topKFrequent(nums, k) {
-  // let map ={};// 最好不用字面量，若扩展到任意数组的元素频率统计，需要区分 1和 '1'
-  const map = new Map();
-
-  nums.forEach((num) => {
-    if (map.has(num)) {
-      map.set(num, map.get(num) + 1);
-    } else {
-      map.set(num, 1);
-    }
-  });
-  const mapSize = map.size;
-  const mapKeys = [...map.keys()];
-
-  if (mapSize <= k) {
-    return mapKeys;
-  }
-
-  for (let i = Math.floor(mapSize / 2 - 1); i >= 0; i--) {
-    heapifyMax(mapKeys, i, mapSize, map);
-  }
-
-  for (let j = mapSize - 1; j >= mapSize - k; j--) {
-    swap(mapKeys, 0, j);
-    heapifyMax(mapKeys, 0, j, map);
-  }
-
-  return mapKeys.slice(-k).reverse();
-}
-```
-
-# 最小的k个数
-
-```JS
-/**
- * * 最小的k个数；
- * * 思路：堆排序，维护一个 K 大小的小顶堆。
- * https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/59
- *
- * 动态数组可能会插入或删除元素，难道我们每次求 Top k 问题的时候都需要对数组进行重新排序吗？
- */
-
-function getLeastNumbers(arr, k) {
-  if (k === 0) return [];
-  const len = arr.length;
-  if (len <= 1) return arr;
-
-  for (let i = Math.floor(len / 2 - 1); i >= 0; i--) {
-    heapifyMin(arr, i, len);
-  }
-
-  for (let j = len - 1; j >= len - k; j--) {
-    swap(arr, 0, j);
-    heapifyMin(arr, 0, j);
-  }
-
-  console.log(arr);
-
-  return arr.slice(-k).reverse();
-}
-
-function heapifyMin(arr, i, heapSize) {
-  for (let j = 2 * i + 1; j < heapSize; j = 2 * j + 1) {
-    if (j + 1 < heapSize && arr[j] > arr[j + 1]) {
-      j++;
-    }
-
-    if (arr[i] > arr[j]) {
-      swap(arr, i, j);
-      i = j;
-    } else {
-      break;
-    }
-  }
-}
-```
-
 # 用两个栈实现队列
 
 ```JS
 /**
  * * 用两个栈实现队列
+ * * 思路：双栈可以实现序列倒置
  * https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/34
- * 双栈可以实现序列倒置
  */
 
 const CQueue = function() {
@@ -143,7 +29,7 @@ CQueue.prototype.appendTail = function(value) {
   this.stack1.push(value);
 };
 
-// 出队时将栈2顶部出栈；若栈2空则先将栈1所有元素出栈放到栈2再将顶部出栈
+// 👀️ 出队时将栈2顶部出栈；若栈2空则先将栈1所有元素出栈放到栈2再将顶部出栈
 CQueue.prototype.deleteHead = function() {
   if (this.stack2.length) {
     return this.stack2.pop();
@@ -167,33 +53,35 @@ CQueue.prototype.deleteHead = function() {
 ```JS
 /**
  * * 滑动窗口最大值问题。
+ * * 思路：双端队列。没必要一次性获取窗口内所有元素；
+ * * 思路：逐个入队元素，若已有值索引在窗口范围之前，或已有值<=当前值，则去掉失效或不够大的已有元素。这样数组头部总是最大值，也就是当前滑动窗口的最大值。
  * https://leetcode-cn.com/problems/sliding-window-maximum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/33
- * 暴力多重循环会超时
  */
-
-// 使用一个双端队列存储窗口中值的索引 ，并且保证双端队列中第一个元素永远是最大值，那么只需要遍历一次 nums，就可以取到每次移动时的最大值。
 function maxSlidingWindow2(nums, k) {
-  // 存储窗口中值的索引，并且保证双端队列中第一个元素永远是最大值
-  const deque = [];
   // 存放每个滑动窗口的最大值
   const result = [];
 
+  // 存储窗口中值的索引，双端队列中第一个元素永远是最大值，且是递减的
+  const deque = [];
+
   for (let i = 0; i < nums.length; i++) {
-    // 把滑动窗口之外的踢出
-    if (i - deque[0] >= k) {
+    // 若头部元素在窗口范围之前，则需要去掉头部元素
+    if (deque[0] < i - k + 1) {
       deque.shift();
     }
 
-    // 保证当队头出队时，新的队头依旧是最大值
+    // 小于当前元素的都不可能是当前滑动窗口的最大值，应该从尾部去掉，循环找到当前的最大值
     while (nums[deque[deque.length - 1]] <= nums[i]) {
       deque.pop();
     }
 
+    // 将当前元素放到尾部
     deque.push(i);
 
+    // 从第k个元素开始才构成滑动窗口
     if (i >= k - 1) {
-      // 依次把最大值（双端队列的队头）添加到结果 result 中
+      // 依次把最大值（队头）添加到结果 result 中
       result.push(nums[deque[0]]);
     }
   }
@@ -201,6 +89,7 @@ function maxSlidingWindow2(nums, k) {
   return result;
 }
 
+// 暴力法，暴力多重循环会超时
 const maxSlidingWindow = function(nums, k) {
   if (k === 1) return nums;
 
@@ -222,6 +111,7 @@ const maxSlidingWindow = function(nums, k) {
 ```JS
 /**
  * * 有效的括号
+ * * 碰到左括号就入栈对应的右括号，若当前元素是右括号但不是栈顶元素，就说明不是有效括号
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
  * https://leetcode-cn.com/problems/valid-parentheses/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/25
@@ -256,20 +146,22 @@ function isValid(s) {
 ```JS
 /**
  * * 删除字符串中的所有相邻重复项。
+ * * 遍历字符串，依次入栈，入栈时判断与栈头元素是否一致，如果一致，即这两个元素相同相邻，则需要将栈头元素出栈，并且当前元素也无需入栈
  * https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/26
  * 选择两个相邻且相同的字母，并删除它们。
- * 遍历字符串，依次入栈，入栈时判断与栈头元素是否一致，如果一致，即这两个元素相同相邻，则需要将栈头元素出栈，并且当前元素也无需入栈
  * * 扩展 删除字符串中出现次数 >= 2 次的相邻字符
  */
 function removeDuplicates(s) {
-  const stack = [];
-  for (const c of s) {
-    const prev = stack.pop();
+  if (s.length <= 1) return s;
 
-    if (prev !== c) {
-      stack.push(prev);
-      stack.push(c);
+  const stack = [s[0]];
+
+  for (let i = 1; i < s.length; i++) {
+    if (s[i] === stack[stack.length - 1]) {
+      stack.pop();
+    } else {
+      stack.push(s[i])
     }
   }
 
@@ -282,6 +174,8 @@ function removeDuplicates(s) {
 ```JS
 /**
  * * 最小栈（包含getMin函数的栈）
+ * * 思路：进栈时记录最小值，出栈时，更新最小值
+ * 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
  * https://leetcode-cn.com/problems/min-stack/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/23
  */
@@ -290,6 +184,11 @@ function MinStack() {
   this.items = [];
   this.min = null;
 }
+
+// 检索栈中的最小元素
+MinStack.prototype.getMin = function() {
+  return this.min;
+};
 
 // 进栈
 MinStack.prototype.push = function(x) {
@@ -309,10 +208,5 @@ MinStack.prototype.pop = function() {
 MinStack.prototype.top = function() {
   if (!this.items.length) return null;
   return this.items[this.items.length - 1];
-};
-
-// 检索栈中的最小元素
-MinStack.prototype.getMin = function() {
-  return this.min;
 };
 ```

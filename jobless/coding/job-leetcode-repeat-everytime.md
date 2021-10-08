@@ -16,8 +16,10 @@ modified: '2021-10-06T14:58:39.894Z'
 
 ```JS
 /**
- * * 斐波那契数列 fibonacci
+ * * 斐波那契数列 fibonacci，如 f0=0, f1=1,f2=1,f3=2
+ * * 思路：前2项预定义0、1，从i=2(即第3项)开始累加
  * https://leetcode-cn.com/problems/fibonacci-number/
+ * * n从0开始
  */
 function fibonacci(n) {
   // 处理 0、1

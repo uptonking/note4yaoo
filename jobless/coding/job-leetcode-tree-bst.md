@@ -49,6 +49,8 @@ export function isValidBST(root) {
     }
     // 最下方的左节点
     current = stack.pop();
+
+    // 👀️ 合法bst 左 < 根 < 右
     if (prev && prev.val >= current.val) {
       return false;
     }
@@ -81,7 +83,7 @@ function sortedArrayToBST(nums) {
 }
 ```
 
-# 二叉搜索树中第 K 小的元素
+# 二叉搜索树中第K小的元素
 
 ```JS
 /**

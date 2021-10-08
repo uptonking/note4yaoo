@@ -6,6 +6,7 @@ modified: '2021-10-06T14:46:31.518Z'
 ---
 
 # job-leetcode-linked-list
+
 > 单向链表
 
 # guide
@@ -19,6 +20,7 @@ function ListNode(val, next) {
 ```
 
 # 反转单向链表
+
 > 给你单链表的头节点 head，请你反转链表，并返回反转后的链表。
 
 ```JS
@@ -30,17 +32,21 @@ function ListNode(val, next) {
  */
 function reverseList(head) {
   if (!head || !head.next) return head;
+
   let prev = null;
   let curr = head;
   let next;
+
   while (curr) {
     // 临时保存 curr后继节点
     next = curr.next;
     // 反转当前节点
     curr.next = prev;
+
     prev = curr;
     curr = next;
   }
+
   // 最后返回新链表的头结点
   head = prev;
   return head;
@@ -55,6 +61,7 @@ function reverseList2(head) {
   if (!head || !head.next) return head;
   return reverse(null, head);
 }
+
 function reverse(prev, curr) {
   if (!curr) return prev;
   const nextNode = curr.next;
@@ -64,46 +71,51 @@ function reverse(prev, curr) {
 ```
 
 # 反转链表 指定范围
+- 反转从位置 left 到位置 right 的链表节点，返回反转后的链表 
 
 ```JS
 /**
- * * 反转链表 II 反转从位置 left 到位置 right 的链表节点
+ * * 反转链表 II；反转从位置 left 到位置 right 的链表节点
  * https://leetcode-cn.com/problems/reverse-linked-list-ii/
  * https://xie.infoq.cn/article/f5db6e4a84aef1339e4582d40
  */
 function reverseBetween(head, left, right) {
   let prev = null;
   let curr = head;
-  // 将prev和head都移动m-1次，prev在m-1位置，head在m位置
+
+  // 将curr移动到left位置，即找到待反转部分的头结点
   while (left > 1) {
     prev = curr;
     curr = curr.next;
-    // 每次循环将m减1，控制移动次数
     left--;
-    // 移动指针的同时，需要减少n的数量，完成移动后剩下的n次，即为反转链表的次数
     right--;
   }
+
   const prevListTail = prev; // prev即为链表反转后，前半段的尾指针
   const reversedListTail = curr; // curr即为链表反转后，反转部分的尾指针
-  // 将链表反转n次
+
+  // 将链表反转left-right次；注意前面right已经减过了，right这里开始时就是要反转的节点数量
   while (right > 0) {
     // 反转链表节点的通用方法
     const next = curr.next;
     curr.next = prev;
+
     prev = curr;
     curr = next;
     // 每次循环将n减1，控制移动次数
     right--;
+
   }
+
   // 如果prevListTail不为空，即为链表中间的一段进行了反转，需要将前半段与反转后的链表头指针连接起来
   if (prevListTail) {
-    // 链表反转后，prev的位置即为反转部分的头指针
     prevListTail.next = prev;
   } else {
     // 链表未空，表示链表从头开始反转，反转后的prev即为新链表的头，因此需要重新设置链表的头指针
     head = prev;
   }
-  // 链表反转后，反转部分原来的头，变成了尾部，而curr已加移出了链表，成为了最后一段链表的头指针
+
+  // 链表反转后，反转部分原来的头，变成了尾部，而curr已经移出了链表，成为了最后一段链表的头指针
   // 因此需要将反转部分的尾指针与最后一段的头指针连接起来，组成新链表
   reversedListTail.next = curr;
   return head;
@@ -122,17 +134,21 @@ function reverseBetween(head, left, right) {
  */
 function reverseKGroup(head, k) {
   if (!head || !head.next) return head;
+
   // 哨兵
   const root = new ListNode(0);
   root.next = head;
   let prev = root;
+
   while (head) {
     let tail = prev;
+
     // 计算要反转范围的尾指针
     for (let i = 0; i < k; i++) {
       tail = tail.next;
       if (!tail) return root.next;
     }
+
     // 下一个子链起点
     const next = tail.next;
     [head, tail] = reverseListK(head, tail);
@@ -143,6 +159,7 @@ function reverseKGroup(head, k) {
   }
   return root.next;
 }
+
 // 反转链表的变体
 function reverseListK(head, tail) {
   let prev = tail.next;
@@ -159,154 +176,11 @@ function reverseListK(head, tail) {
 }
 ```
 
-# 获取链表的中间节点
+# 环形链表：判断一个单链表是否有环
 
 ```JS
 /**
- * * 求链表的中间结点
- * https://leetcode-cn.com/problems/middle-of-the-linked-list/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/15
- */
-/**
- * * 双指针法
- * 快指针走两步，慢指针走一步，快指针走完，慢指针则为中间值
- * - 如果链表长度为奇数，则返回中间节点
- * - 如果链表长度为偶数，则有两个中间节点，这里返回第一个
- */
-function middleNode(head) {
-  // if (!head || !head.next) return head;
-  let fast = head;
-  let slow = head;
-  while (fast && fast.next) {
-    fast = fast.next.next;
-    slow = slow.next;
-  }
-  return slow;
-}
-// 链表元素放到数组
-function middleNode2(head) {
-  if (!head || !head.next) return head;
-  const arr = [];
-  while (head) {
-    arr.push(head);
-    head = head.next;
-  }
-  return arr[Math.ceil((arr.length - 1) / 2)];
-}
-```
-
-# 合并两个有序链表
-
-```JS
-/**
- * * 合并两个有序链表。
- * * 思路：递归合并
- * 将两个升序链表合并为一个新的 升序 链表并返回。
- * https://leetcode-cn.com/problems/merge-two-sorted-lists/
- */
-function mergeTwoLists(l1, l2) {
-  if (!l1) return l2;
-  if (!l2) return l1;
-  if (l1.val <= l2.val) {
-    l1.next = mergeTwoLists(l1.next, l2);
-    return l1;
-  } else {
-    l2.next = mergeTwoLists(l2.next, l1);
-    return l2;
-  }
-}
-function mergeTwoLists2(l1, l2) {
-  const preHead = new ListNode(-1);
-  let cur = preHead;
-  while (l1 && l2) {
-    if (l1.val < l2.val) {
-      cur.next = l1;
-      l1 = l1.next;
-    } else {
-      cur.next = l2;
-      l2 = l2.next;
-    }
-    cur = cur.next;
-  }
-  cur.next = l1 || l2;
-  return preHead.next;
-}
-```
-
-# 链表排序
-
-```js
-/**
- * * 链表排序
- * * 类似数组归并排序，先找链表中间节点，然后递归合并
- * https://leetcode-cn.com/problems/sort-list/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/79
- */
-const sortList = function(head) {
-  return mergeSortRec(head);
-};
-// 类似归并排序
-// 若分裂后的两个链表长度不为1，则继续分裂，直到分裂后的链表长度都为 1，
-// 然后合并小链表
-function mergeSortRec(head) {
-  if (!head || !head.next) return head;
-  // 获取中间节点
-  const middle = middleNode2(head);
-  // 分裂成两个链表
-  const temp = middle.next;
-  middle.next = null;
-  let left = head;
-  let right = temp;
-  // 继续分裂（递归分裂）
-  left = mergeSortRec(left);
-  right = mergeSortRec(right);
-  // 合并两个有序链表
-  return mergeTwoLists(left, right);
-}
-// ⚠️️ 与上面获取中间节点的方法不同
-function middleNode2(head) {
-  // if (!head || !head.next) return head;
-  let fast = head;
-  let slow = head;
-  // 可以走到倒数第一个节点
-  while (fast && fast.next && fast.next.next) {
-    fast = fast.next.next;
-    slow = slow.next;
-  }
-  return slow;
-}
-```
-
-# 合并K个升序链表
-
-```JS
-/**
- * * 合并K个升序链表
- * * 思路: 两两合并。 采用分治法，简单来说就是不停的对半划分
- * 给你一个链表数组，每个链表都已经按升序排列。返回合并后的链表。
- * https://leetcode-cn.com/problems/merge-k-sorted-lists/
- * https://juejin.cn/post/6844903844971806727
- */
-function mergeKLists(lists) {
-  let len = lists.length;
-  if (len === 0) return null;
-  if (len === 1) return lists[0];
-  while (len > 1) {
-    const k = Math.floor((len + 1) / 2);
-    for (let i = 0; i < Math.floor(len / 2); i++) {
-      lists[i] = mergeTwoLists(lists[i], lists[i + k]);
-    }
-    len = k;
-  }
-  return lists[0];
-}
-```
-
-# 判断一个单链表是否有环
-
-```JS
-/**
- * * 判断一个单链表是否有环。环形链表
+ * * 判断一个单链表是否有环。
  * 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。
  * 如果 pos 是 -1，则在该链表中没有环。
  * https://leetcode-cn.com/problems/linked-list-cycle/
@@ -321,7 +195,7 @@ function hasCycle(head) {
   if (!head || !head.next) return false;
   let fast = head.next.next;
   let slow = head.next;
-  // 若相遇，则说明有环，会推出循环
+  // 若相遇，则说明有环，会退出循环
   while (fast !== slow) {
     // fast已经走完了一圈，没发现有环
     if (!fast || !fast.next) return false;
@@ -339,6 +213,7 @@ function hasCycle2(head) {
   }
   return false;
 }
+
 function hasCycleS3(head) {
   try {
     JSON.stringify(head);
@@ -349,44 +224,41 @@ function hasCycleS3(head) {
 }
 ```
 
-# 环形链表 开始入环的第一个节点
+# 环形链表 开环形链表相交的起点
 
 ```JS
 /**
  * * 寻找环形链表相交的起点
+ * * 思路：公式推导 从头节点到入环点的距离D  = (慢指针)从首次相遇点到入环点的距离S2
+ * D+n(S1+S2)+S1=2(D+S1)  -->  (n−1)S1+nS2=D  -->  D=S2
  * https://leetcode-cn.com/problems/linked-list-cycle-ii/
+ * https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/141ti-de-kuo-zhan-ru-guo-lian-biao-you-huan-ru-he-/
  */
 function detectCycle(head) {
-  // 如果链表为空，或者链表只有一个元素且无环，此时指针无法行动，则返回null
+  // 如果链表为空，或者链表只有一个元素且无环，则返回null
   if (!head || !head.next) return null;
-  // 创建快慢指针
+
   let slow = head;
   let fast = head;
-  while (fast && fast.next) {
-    // 慢指针走一步，快指针走两步
-    slow = slow.next;
-    fast = fast.next.next;
-    // 如果两个指针的指向相同，则表示已经查找到环。
-    // 但两个指针相遇的节点不一定是环的连接点，而是在环的某个位置
-    if (slow === fast) {
-      break;
+  while (fast) {
+    if (fast.next == null) { // fast.next走出链表了，说明无环
+      return null;
+    }
+    slow = slow.next; // 慢指针走一步
+    fast = fast.next.next; // 慢指针走一步
+    if (slow == fast) { // 首次相遇
+      fast = head; // 让快指针回到头节点
+      while (true) { // 开启循环，让快慢指针相遇
+        if (slow == fast) { // 相遇，在入环处
+          return slow;
+        }
+        slow = slow.next;
+        fast = fast.next; // 快慢指针都走一步
+      }
     }
   }
-  // 前面的退出循环条件有两个，一个是没有找到环，一个是找到了环
-  // 通过快慢指针是否相同，判断是否找到环，如果没有，则返回null
-  if (slow !== fast) return null;
-  // 如果有环，而且快指针的速度是慢指针的两倍。
-  // 因此如果创建两个指针，从链表起始点和快慢指针相遇节点分别出发。
-  // 两者相遇的节点必然是环的连接点。
-  let startNode = head;
-  let meetNode = fast;
-  // 遍历链表，查找连接点，如果两个指针相等，则表示找到连接点。
-  while (startNode !== meetNode) {
-    startNode = startNode.next;
-    meetNode = meetNode.next;
-  }
-  return meetNode;
-}
+  return null;
+};
 ```
 
 # 判断一个链表是否为回文链表
@@ -398,7 +270,7 @@ function detectCycle(head) {
  * https://leetcode-cn.com/problems/palindrome-linked-list-lcci/solution/js-jie-fa-by-cranky-roentgen-3/
  */
 /**
- * * 比较回文字符串
+ * * 思路1: 比较 正序构造字符串 和 倒序构造的字符串是否相等
  */
 function isPalindrome(head) {
   let str1 = '';
@@ -412,7 +284,7 @@ function isPalindrome(head) {
 }
 /**
  * * 思路1：先反转链表，再判断是否相同
- * * 思路2:链表转数组，数组转字符串，比较回文字符串
+ * * 思路2:链表转数组，数组转字符串，比较字符串
  */
 function isPalindrome(head) {
   /** 新链表的头节点 */
@@ -427,6 +299,7 @@ function isPalindrome(head) {
     list2 = node;
     curr = curr.next;
   }
+
   let curr1 = head;
   let curr2 = list2;
   while (curr1 && curr2) {
@@ -441,11 +314,34 @@ function isPalindrome(head) {
 }
 ```
 
-# 删除链表倒数第 n 个结点。
+# 链表中倒数第k个节点
 
 ```JS
 /**
- * * 删除链表倒数第 n 个结点。
+ * * 链表中倒数第k个节点
+ * * 思路： 快慢双指针，让快指针先走k步，然后两个指针一起移动，
+ * * 当快指针到最后一个节点处，慢指针指针就在倒数第K个节点
+ */
+function getKthFromEnd(head, k) {
+  let fast = head;
+  let slow = head;
+  while (k !== 0) {
+    fast = fast.next;
+    k--;
+  }
+  while (fast !== null) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+  return slow;
+}
+```
+
+# 删除链表倒数第n个结点
+
+```JS
+/**
+ * * 删除链表倒数第n个结点。
  * 要求在删除了指定节点后，需要返回的是链表的头结点。所以返回的是head。
  * * 双指针法
  * 快指针先走n个节点，然后快慢指针一起，知道快指针走到null,这时慢指针指向n-1
@@ -469,31 +365,9 @@ function removeNthFromEnd(head, n) {
     fast = fast.next;
     slow = slow.next;
   }
+  // 👀️ 在单链表中删除节点
   slow.next = slow.next.next;
   return head;
-}
-```
-
-# 链表中倒数第k个节点
-
-```JS
-/**
- * * 链表中倒数第k个节点
- * * 思路： 快慢双指针，让第一个先走k步，然后两个指针一起移动，
- * * 当第一个指针到最后一个节点处，第二个指针就在倒数第K个节点
- */
-function getKthFromEnd(head, k) {
-  let fast = head;
-  let slow = head;
-  while (k !== 0) {
-    fast = fast.next;
-    k--;
-  }
-  while (fast !== null) {
-    fast = fast.next;
-    slow = slow.next;
-  }
-  return slow;
 }
 ```
 
@@ -502,7 +376,7 @@ function getKthFromEnd(head, k) {
 ```JS
 /**
  * * 找到两个单链表相交的起始节点。注意相交节点之后的节点序列共享。
- * * 思路1，标记法，或者用新数组存放已访问过的节点。先访问并标记完一条，然后检查另一条。
+ * * 思路1，标记法。先访问并标记完一条，然后检查另一条。
  * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/17
  * 思路2，链表转数组。
@@ -546,10 +420,4 @@ function listToArray(head, isValOnly) {
   }
   return arr;
 }
-```
-
-# 重排链表
-
-```JS
-
 ```

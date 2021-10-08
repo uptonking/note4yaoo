@@ -9,13 +9,15 @@ modified: '2021-10-06T14:45:51.381Z'
 
 # guide
 
+- 从数组中随机取一个元素的方法
+  - `items[Math.floor(Math.random()*items.length)]`
 # 合并两个有序数组
 - 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 num1 成为一个有序数组。
 
 ```JS
 /**
- * * 合并2个有序数组，原地合并，从后往前处理；
- * - 因为有序，所以可以从后向前处理
+ * * 合并2个有序数组，原地合并
+ * * 思路：因为有序，所以可以从后向前处理，
  * https://leetcode-cn.com/problems/merge-sorted-array/
  */
 function mergeTwoSortedArr(nums1, m, nums2, n) {
@@ -61,7 +63,6 @@ function mergeTwoArr(nums1, m, nums2, n) {
 
   // if (m > 0) temp.push(...nums1.slice(0, m));
   // if (n > 0) temp.push(...nums2.slice(0, n));
-
   temp = [...temp, ...nums1, ...nums2];
 
   // oj系统不支持直接修改
@@ -98,14 +99,45 @@ function mergeArrays2(nums1, m, nums2, n) {
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/6
  */
 function getIntersectionOfTwoArr(nums1, nums2) {
-  return [...new Set(nums1.filter((item) => nums2.includes(item)))];
+  // return [...new Set(nums1.filter((item) => nums2.includes(item)))];
+  return Array.from(new Set(nums1.filter((item) => nums2.includes(item))))
+
+}
+
+// 标记法，用空间换时间
+function intersection(nums1, nums2) {
+
+  const map1 = {};
+  const map2 = {};
+
+  const result = [];
+
+  nums1.forEach(item => {
+    map1[item] = true;
+  });
+
+  nums2.forEach(item => {
+    // map1中也存在，且map2中还没访问过
+    if (map1[item] && !map2[item]) {
+      result.push(item);
+      map2[item] = true;
+    }
+  });
+
+  return result;
+}
+
+function intersection(arr1, arr2) {
+  // 用set可减少内存消耗，但时间并没有减少
+  const set2 = new Set(arr2);
+  return Array.from(new Set(arr1.filter(item => set2.has(item))));
 }
 ```
 
 ```JS
 /**
  * * 计算多个数组的交集。
- * * 思路，从最短数组开始找。
+ * * 思路：从最短数组开始找。
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/10
  *
  */
@@ -163,10 +195,13 @@ function getIntersectionOfMultiArr2(...arrs) {
 const Solution = function(nums) {
   this.nums = nums;
 };
+
+// reset会返回原数组
 Solution.prototype.reset = function() {
   return this.nums;
 };
 
+// 每次洗牌都返回的是新数组
 // Knuth-Durstenfeld Shuffle
 // 将“删除”的数字移至数组末尾，即将每个被删除数字与最后一个未删除的数字进行交换。
 Solution.prototype.shuffle = function() {
@@ -218,6 +253,7 @@ const swap = function(arr, i, j) {
 ```JS
 /**
  * * 合并重叠区间，返回不重叠的区间。合并区间
+ * * 思路：先排序，若前区间终点大于后区间起点，则合并，然后调整i循环合并
  * https://leetcode-cn.com/problems/merge-intervals/
  * https://leetcode-cn.com/problems/merge-intervals/solution/fei-chang-tong-yi-li-jie-de-qian-duan-ji-7mmv/
  */
@@ -274,6 +310,7 @@ function numSubarrayBoundedMax(nums, left, right) {
     }
 
   }
+
   return count
 }
 ```
@@ -317,10 +354,26 @@ const isPossible = function(nums) {
 
 ```JS
 /**
- * * 反转字符数组。原地修改。
- * * 可以抽象为更一般的反转数组。
+ * * 反转字符数组。原地修改。可以抽象为更一般的反转数组。
+ * * 思路：头尾双指针夹逼中间，逐次交换头尾
  * https://leetcode-cn.com/problems/reverse-string/
  */
+
+function reverseString(s) {
+  const len = s.length;
+  let i = 0;
+  let j = len - 1;
+
+  while (i <= j) {
+    const temp = s[i];
+    s[i] = s[j];
+    s[j] = temp;
+    i++;
+    j--;
+  }
+
+}
+
 function reverseString(s) {
   const len = s.length;
   const mid = Math.floor(len / 2);

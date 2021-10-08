@@ -9,7 +9,7 @@ modified: '2021-10-06T14:46:37.860Z'
 
 # guide
 
-# LRU 最近最少使用 数据结构
+# 设计数据结构：LRU 最近最少使用
 - LRUCache(int capacity) 
   - 以正整数作为容量 capacity 初始化 LRU 缓存
 - int get(int key) 
@@ -207,13 +207,40 @@ function removeKey(arr, key) {
 }
 ```
 
+# 第一个只出现一次的字符
+
+```JS
+/**
+ * * 第一个只出现一次的字符
+ * https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/
+ * https://github.com/sisterAn/JavaScript-Algorithms/issues/50
+ * 使用 map 两次遍历即可：
+ * 遍历字符串，将每个字符的值与出现次数记录到map中
+ * 再次遍历 map.keys() ，获取 map 中每个字符出现的次数，判断是否仅仅只有 1 次，返回第一个仅出现一次的字符
+ */
+function firstUniqChar(s) {
+  if (!s) return ' ';
+  const map = {};
+  for (let i = 0, len = s.length; i < len; i++) {
+    // 出现1次的就是1，再次出现就会变0
+    map[s[i]] = map[s[i]] === undefined ? 1 : 0;
+  }
+  for (const item in map) {
+    if (map[item] === 1) {
+      return item;
+    }
+  }
+  return ' ';
+}
+```
+
 # 设计一个在常数时间O(1)下插入获取元素的数据结构
 
 ```JS
 /**
  * * 设计一个支持在平均时间复杂度O(1)下，常数时间插入、删除和获取随机元素
+ * * 思路：常数时间就多考虑数组和映射表
  */
-
 const RandomizedSet = function() {
   // 保存 值
   this.list = [];

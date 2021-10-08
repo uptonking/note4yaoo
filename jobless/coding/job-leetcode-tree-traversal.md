@@ -8,8 +8,6 @@ modified: '2021-10-06T14:54:33.247Z'
 # job-leetcode-tree-traversal
 
 # guide
-- to-do
-  - [锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 - 二叉树遍历小结
   - 二叉树的前中后序深度优先遍历都基于stack，访问元素都使用 `stack.pop()`，只有后序遍历将访问结果`unshift`插入结果数组的第一个
@@ -380,6 +378,63 @@ function zigzagLevelOrder2(root) {
 
     ret.push(levelArr);
   }
+
+  return ret;
+}
+```
+
+# 二叉树的右视图
+
+```JS
+/**
+ * * 二叉树的右视图
+ * * 思路：层序遍历，每层只取最右边1个
+ * 想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+ * https://leetcode-cn.com/problems/binary-tree-right-side-view/
+ * https://github.com/Chocolate1999/leetcode-javascript/issues/51
+ */
+function rightSideView(root) {
+  if (!root) return [];
+
+  const ret = [];
+  const queue = [root];
+  let curr = root;
+
+  while (queue.length) {
+    const levelArr = [];
+    const levelSize = queue.length;
+
+    for (let i = 0; i < levelSize; i++) {
+      curr = queue.shift();
+      if (i === levelSize - 1) {
+        ret.push(curr.val);
+      }
+
+      curr.left && queue.push(curr.left);
+      curr.right && queue.push(curr.right);
+    }
+  }
+
+  return ret;
+}
+
+function rightSideView(root) {
+  if (!root) return [];
+
+  const ret = [];
+
+  const level = (node, depth) => {
+    if (!node) return;
+
+    // 每层只保存最右边的元素
+    if (ret.length === depth) ret.push(node.val);
+
+    // 因为每层保存一个，所以从右边开始递归遍历
+    level(node.right, depth + 1);
+    level(node.left, depth + 1);
+  };
+
+  level(root, 0);
 
   return ret;
 }

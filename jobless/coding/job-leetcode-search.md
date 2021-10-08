@@ -42,6 +42,60 @@ function searchRange(nums, target) {
 }
 ```
 
+# 计算平方根 sqrt
+
+```JS
+/**
+ * * 给你一个非负整数 x ，计算并返回 x 的 算术平方根 。
+ * * 思路：二分法
+ * https://leetcode-cn.com/problems/sqrtx/
+ * https://juejin.cn/post/6991791437645873166
+ */
+
+function mySqrt(x) {
+
+  let low = 1;
+  let high = x;
+  // 如果 x 小于 0 输出 -1
+  if (x < 0) return -1;
+
+  // 循环终止条件
+  while (low <= high) {
+    // mid 取值
+    let mid = Math.floor(low + ((high - low) / 2));
+    // 判断平方是否小于等于
+    if (Math.pow(mid, 2) <= x) {
+
+      // 如果小于等于,且下一值大于 x, 则当前值为 x 平方根的最小整数值
+      if (Math.pow(mid + 1, 2) > x || mid === high) {
+        return mid;
+      } else {
+        low = mid + 1;
+      }
+    } else {
+      high = mid - 1;
+    }
+  }
+  return 0;
+}
+
+// 牛顿迭代法
+// https://leetcode-cn.com/problems/sqrtx/solution/js-by-joeyzhouyicheng-6/
+function mySqrt(x) {
+  if (x === 1) return 1;
+  let min = 0;
+  let max = x;
+
+  while (max - min > 1) {
+    let m = Math.floor((max + min) / 2);
+
+    x / m < m ? (max = m) : (min = m);
+  }
+
+  return min;
+}
+```
+
 # 搜索旋转排序数组
 
 ```JS

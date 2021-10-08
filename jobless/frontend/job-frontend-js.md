@@ -640,6 +640,9 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
 - 数组去重
   - [... new Set(arr)]
 
+- 创建数组的方法
+  - 二维数组 Array(m).fill(Array(n)); 
+
 - indexOf vs includes
   - [NaN].indexOf(NaN) // -1，因为indexOf使用的是严格相等
   - NaN].includes(NaN) // true
@@ -657,6 +660,11 @@ NaN === NaN // false; 但作为Map的key时是被认为相等的
   - arr.filter( item => !targets.includes(item))
 
 - 不要再forEach里面return，因为forEach循环无法终止
+
+- [`Array()` vs `new Array()` 创建新数组](https://stackoverflow.com/questions/8205691)
+  - Thus the function call `Array(…)` is equivalent to the object creation expression `new Array(…)` with the same arguments.
+  - Array === Array.prototype.constructor //true
+  - 调用Array构造函数带不带new结构都想同，但调用普通的构造函数带不带new却是不同的
 
 ### `concat vs ...rest` ([...arr1, ...arr2] vs arr1.concat(arr2))
 

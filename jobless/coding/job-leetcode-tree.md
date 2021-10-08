@@ -42,55 +42,14 @@ export function invertTree(root) {
 }
 ```
 
-# 求二叉树的最大深度
-- 思路1: 递归求左右子树的深度，从叶到根每层+1
-- 思路2: 层序遍历
-
-```JS
-/**
- * * 给定一个二叉树，找出其最大深度。
- * 深度为根节点到最远叶子节点的最长路径上的节点数。
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/42
- * https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
- */
-function maxDepth(root) {
-  if (!root) return 0;
-
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-}
-```
-
-# 求二叉树的最小深度
-
-```JS
-/***
- * * 二叉树的最小深度。与求最大深度相反
- * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
- * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
- */
-function minDepth(root) {
-  if (!root) return 0;
-
-  // 如果左或右子树为空的话是构不成子树的。而最小深度是要求从根节点到子树的。
-  if (!root.left && root.right) {
-    return 1 + minDepth(root.right);
-  }
-  if (!root.right && root.left) {
-    return 1 + minDepth(root.left);
-  }
-
-  return 1 + Math.min(minDepth(root.left), minDepth(root.right));
-}
-```
-
 # 判断平衡的二叉树
-
-> 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。
+- 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。
+  - AVL树是指左右子树深度差不超过1的二叉树
 
 ```JS
 /**
- * * AVL树是指左右子树深度差不超过1的二叉树；
- * 思路：自顶向下的比较每个节点的左右子树的最大高度差，如果二叉树中每个节点的左右子树最大高度差
+ * * 判断平衡的二叉树。
+ * * 思路：自顶向下的比较每个节点的左右子树的最大高度差，如果二叉树中每个节点的左右子树最大高度差
  * 小于等于1 ，即每个子树都平衡时，此时二叉树才是平衡二叉树
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/44
  */
@@ -110,34 +69,16 @@ export function isBalanced(root) {
 }
 ```
 
-# 二叉搜索树的最近公共祖先
-
-```JS
-/**
- * * 二叉搜索树的最近公共祖先
- * * 注意p,q节点大小未知
- * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
- *
- */
-function lowestCommonAncestor(root, p, q) {
-  if (!root) return null;
-
-  if (root.val > p.val && root.val > q.val) {
-    return lowestCommonAncestor(root.left, p, q);
-  }
-  if (root.val < p.val && root.val < q.val) {
-    return lowestCommonAncestor(root.right, p, q);
-  }
-
-  return root;
-}
-```
-
 # 二叉树的最近公共祖先
 
 ```JS
 /**
  * * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先
+ * * 思路：
+ * * a.若处理到了叶节点或根节点和目标节点之一相等，则祖先就是root
+ * * b. 分别从root.left/right上递归找
+ * * c. 若左子树上没找到，那一定在右子树上；反之亦然
+ * * d. 若左右子树都可以找到，那就是root
  * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/43
  */
@@ -158,45 +99,27 @@ export function lowestCommonAncestor(root, p, q) {
 }
 ```
 
-# 找到该树中两个指定节点间的最短距离
+# 二叉搜索树的最近公共祖先
 
 ```JS
 /**
- * * 给定一个二叉树, 找到该树中两个指定节点间的最短距离。
- * - 思路：
- * * a.找到最近公共祖先lca节点； 
- * * b.分别求出两节点到lca的距离； 
- * * c. 距离相加
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/82
+ * * 二叉搜索树的最近公共祖先，注意p,q节点大小未知
+ * * 思路1：root值最大就在左子树上找，最小就在右子树找，否则就是root
+ * * 思路2：普通二叉树的lca找法也适用，oj测试此法快一点点
+ * https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+ *
  */
-export function shortestDistance(root, p, q) {
-  const lowestCA = lowestCommonAncestor(root, p, q);
-  const pDis = [];
-  const qDis = [];
-  getPath(lowestCA, p, pDis);
-  getPath(lowestCA, q, qDis);
-  return pDis.length + qDis.length;
-}
+function lowestCommonAncestor(root, p, q) {
+  if (!root) return null;
 
-/**
- * * 计算根节点root到节点node的路径。
- * - 从root节点开始向下查找node节点
- */
-export function getPath(root, node, paths) {
-  if (root === node) return true;
-  paths.push(root);
-  let hasFound = false;
-  if (root.left) {
-    hasFound = getPath(root.left, node, paths);
+  if (root.val > p.val && root.val > q.val) {
+    return lowestCommonAncestor(root.left, p, q);
   }
-  if (root.right) {
-    hasFound = getPath(root.right, node, paths);
+  if (root.val < p.val && root.val < q.val) {
+    return lowestCommonAncestor(root.right, p, q);
   }
-  if (hasFound === false) {
-    // 如果没找到，说明不在这里节点的子树
-    paths.pop();
-  }
-  return hasFound;
+
+  return root;
 }
 ```
 
@@ -228,7 +151,7 @@ function isSymmetric(root) {
 ```JS
 /**
  * * 判断2棵树val完全相同
- * * 递归，类似前序遍历的思路
+ * * 尾递归，类似前序遍历的思路
  * https://leetcode-cn.com/problems/same-tree/
  */
 function isSameTree(root1, root2) {
@@ -247,6 +170,7 @@ function isSameTree(root1, root2) {
 ```JS
 /**
  * * 另一棵树的子树
+ * * 思路：先判断根点的值和根节点树，再递归左右子树
  * https://leetcode-cn.com/problems/subtree-of-another-tree/
  * - 如果一棵二叉树t是另一颗二叉树s的子树，那么有3种情况
  * - 1. s和t完全一样
@@ -293,54 +217,6 @@ export function flatten(root) {
     current.left = null;
   }
   return root;
-}
-```
-
-# 从根到叶的路径中，判断是否存在满足目标和的路径
-
-```JS
-/**
- * * 给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
- *
- * https://leetcode-cn.com/problems/path-sum/
- * https://github.com/sisterAn/JavaScript-Algorithms/issues/45
- */
-export function hasPathSum(root, targetSum) {
-  if (!root) return false;
-
-  if (root.left === null && root.right === null) {
-    // 若是叶节点，则直接比较总和
-    return root.val === targetSum;
-  }
-
-  targetSum = targetSum - root.val;
-  return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
-}
-```
-
-# 从根到叶的路径中，寻找满足目标和的节点路径
-
-```JS
-export function pathSum(root, targetSum) {
-  if (!root) return [];
-  const result = [];
-
-  const dfs = (node, sum, path) => {
-    if (!node) {
-      return 0;
-    }
-    path = [...path, node.val];
-    sum = sum - node.val;
-    if (!node.left && !node.right && sum === 0) {
-      result.push(path);
-      return;
-    }
-    node.left && dfs(node.left, sum, path);
-    node.right && dfs(node.right, sum, path);
-  };
-
-  dfs(root, targetSum, []);
-  return result;
 }
 ```
 
