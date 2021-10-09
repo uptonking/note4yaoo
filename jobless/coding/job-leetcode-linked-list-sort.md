@@ -90,7 +90,7 @@ function mergeTwoLists2(l1, l2) {
 ```JS
 /**
  * * 合并K个升序链表
- * * 思路: 两两合并。 采用分治法，就是不停的对半划分
+ * * 思路: 归并的思想，先拆分到只有1个或2个链表，再两两合并。
  * 给你一个链表数组，每个链表都已经按升序排列。返回合并后的链表。
  * https://leetcode-cn.com/problems/merge-k-sorted-lists/
  * https://juejin.cn/post/6844903844971806727
@@ -115,7 +115,7 @@ function mergeKLists(lists) {
 ```js
 /**
  * * 链表排序
- * * 类似数组归并排序，先找链表中间节点，然后拆分链表为左右，最后递归合并
+ * * 类似数组归并排序，先找链表中间节点，然后拆分链表为左右，最后递归合并相邻2个有序链表
  * https://leetcode-cn.com/problems/sort-list/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/79
  * 给你链表的头结点 head ，请将其按 升序 排列并返回排序后的链表 。

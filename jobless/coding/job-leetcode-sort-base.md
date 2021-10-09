@@ -26,14 +26,13 @@ function swap(nums, i, j) {
  * * https://leetcode-cn.com/problems/sort-an-array/
  * @param {number[]} nums
  * @return {number[]}
- * 
  */
 function arraySort(nums) {
   const len = nums.length;
   if (len <= 1) return nums;
 
   return nums;
-};
+}
 ```
 
 # 快速排序
@@ -53,6 +52,7 @@ function quickSort(nums) {
   const len = nums.length;
   if (len <= 1) return nums;
 
+  // 选择中间索引位置作为基准值
   const pivotIndex = Math.floor(len / 2);
   // 修改了原数组，删除了基准值
   const pivot = nums.splice(pivotIndex, 1)[0];
@@ -115,7 +115,7 @@ function partition(nums, start, end) {
   for (let i = start; i < end; i++) {
     if (nums[i] < pivot) {
       // 将比基准值小的值都换到数组前部分
-      swap(nums, i, pivotIndex);
+      swap(nums, pivotIndex, i);
       pivotIndex++;
     }
   }
@@ -139,6 +139,7 @@ function swap(nums, i, j) {
 
 /**
  * * 💡️ 归并排序，递归实现，非原地排序
+ * oj测试消耗时间 3384ms，内存 56.9mb
  */
 function mergeSort(nums) {
   const len = nums.length;
@@ -153,7 +154,7 @@ function mergeSort(nums) {
 };
 
 /**
- * * 合并2个无序数组
+ * * 合并2个无序数组，可作为通用方法
  */
 function merge(nums1, nums2) {
 
@@ -178,7 +179,7 @@ function merge(nums1, nums2) {
 ```
 
 ```JS
-export function mergeSortRecursively2(nums, start, end) {
+export function mergeSortRecursive2(nums, start, end) {
   if (start === undefined) start = 0;
   if (end === undefined) end = nums.length - 1;
 
@@ -186,8 +187,8 @@ export function mergeSortRecursively2(nums, start, end) {
 
   const mid = Math.floor((start + end) / 2);
 
-  mergeSortRecursively2(nums, start, mid);
-  mergeSortRecursively2(nums, mid + 1, end);
+  mergeSortRecursive2(nums, start, mid);
+  mergeSortRecursive2(nums, mid + 1, end);
 
   let l = start;
   let r = mid + 1;

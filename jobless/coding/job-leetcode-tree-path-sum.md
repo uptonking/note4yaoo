@@ -70,7 +70,7 @@ export function shortestDistance(root, p, q) {
 
 /**
  * * 计算根节点root到节点node的路径。
- * - 从root节点开始向下查找node节点
+ * * 思路：类似前序遍历，先入栈，递归查找左右子树，若没找到就出栈
  */
 export function getPath(root, node, paths) {
   if (root === node) return true;
@@ -95,7 +95,7 @@ export function getPath(root, node, paths) {
 ```JS
 /**
  * * 是否存在 根节点到叶子节点 的路径，所有节点值相加等于目标和 targetSum
- * * 思路：每层减去根节点值，再递归左右子树一直到叶子节点
+ * * 思路：先判断叶子节点直接比较，否则每层减去根节点值，再递归左右子树
  * - 给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
  * https://leetcode-cn.com/problems/path-sum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/45
@@ -125,11 +125,11 @@ export function pathSum(root, targetSum) {
   const result = [];
 
   const dfs = (node, sum, path) => {
-    if (!node) {
-      return 0;
-    }
+    if (!node) return 0;
     path = [...path, node.val];
     sum = sum - node.val;
+
+    // 若到叶节点刚好满足就是了
     if (!node.left && !node.right && sum === 0) {
       result.push(path);
       return;
@@ -183,6 +183,7 @@ function sumNumbers(root) {
 /**
  * * 二叉树的直径。
  * * 思路： 将二叉树的直径转换为：二叉树的每个节点的左右子树的高度和的最大值。
+ * * 递归左右子树求直径，每次+1或0；
  * 直径长度是任意两个结点路径长度中的最大值，这条路径可能穿过也可能不穿过根结点
  * https://leetcode-cn.com/problems/diameter-of-binary-tree/
  * - root的直径 = root左子树高度 + root右子树高度
@@ -191,20 +192,20 @@ function sumNumbers(root) {
 function diameterOfBinaryTree(root) {
   let ret = 0;
 
-  const deep = (node) => {
+  const dfs = (node) => {
     if (!node) return 0;
 
-    const left = node.left ? deep(node.left) + 1 : 0;
-    const right = node.right ? deep(node.right) + 1 : 0;
+    const left = node.left ? dfs(node.left) + 1 : 0;
+    const right = node.right ? dfs(node.right) + 1 : 0;
 
-    // 节点直径
+    // 更新直径最大值
     ret = Math.max(left + right, ret);
 
     // 子树高度
     return Math.max(left, right);
   };
 
-  deep(root);
+  dfs(root);
 
   return ret;
 }
@@ -215,7 +216,7 @@ function diameterOfBinaryTree(root) {
 ```JS
 /**
  * * 二叉树中的最大路径和
- *
+ * * 与求直径类似，但每次递归加的是节点值
  * https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
  * https://github.com/Chocolate1999/leetcode-javascript/issues/57
  * https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/shou-hui-tu-jie-hen-you-ya-de-yi-dao-dfsti-by-hyj8/
@@ -226,19 +227,17 @@ function diameterOfBinaryTree(root) {
 function maxPathSum(root) {
   let maxSum = Number.MIN_SAFE_INTEGER;
 
-  const dfs = (root) => {
-    if (!root)
-      return 0;
+  const dfs = (node) => {
+    if (!node) return 0;
 
-    const left = dfs(root.left); // 左子树提供的最大路径和
-    const right = dfs(root.right); // 右子树提供的最大路径和
+    const left = dfs(node.left); // 左子树提供的最大路径和
+    const right = dfs(node.right); // 右子树提供的最大路径和
 
     // 当前子树内部的最大路径和
-    const innerMaxSum = left + root.val + right;
-    maxSum = Math.max(maxSum, innerMaxSum);
+    const innerMaxSum = left + node.val + right;
+    maxSum = Math.max(maxSum, innerMaxSum); // 挑战最大纪录
 
-    // 当前子树对外提供的最大和
-    const outputMaxSum = root.val + Math.max(0, left, right);
+    const outputMaxSum = node.val + Math.max(0, left, right); // 当前子树对外提供的最大和
 
     // 如果对外提供的路径和为负，直接返回0。否则正常返回
     return outputMaxSum < 0 ? 0 : outputMaxSum;

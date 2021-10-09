@@ -195,6 +195,7 @@ function hasCycle(head) {
   if (!head || !head.next) return false;
   let fast = head.next.next;
   let slow = head.next;
+
   // 若相遇，则说明有环，会退出循环
   while (fast !== slow) {
     // fast已经走完了一圈，没发现有环

@@ -27,7 +27,7 @@ function searchRange(nums, target) {
         start--;
       while (nums[end] === target)
         end++;
-
+      // 最后返回的区间要测试下
       return [start + 1, end - 1];
     }
 

@@ -23,7 +23,7 @@ modified: '2021-10-08T18:41:34.540Z'
 
 ```JS
 /**
- * * 最大子序和(最大和的连续子数组)
+ * * 最大子序和，找到一个具有最大和的连续子数组，返回最大和
  * * 思路：求和时，是正数就加上，否则重新开始
  * https://leetcode-cn.com/problems/maximum-subarray/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/94
@@ -143,7 +143,7 @@ function lengthOfLIS(nums) {
  * * 最长连续递增序列
  * * 思路：贪心算法，若 nums[i] < nums[i+1]，那就+1，否则重新计数1
  * https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/
- * - 给定一个未经排序的整数数组，找到最长且 连续递增的子序列，并返回该序列的长度。
+ * - 给定一个未经排序的整数数组，找到最长且连续递增的子序列，并返回该序列的长度。
  * 时间复杂度：O(n),空间复杂度：O(1)
  */
 function findLengthOfLCIS(nums) {

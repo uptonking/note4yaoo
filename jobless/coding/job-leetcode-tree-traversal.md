@@ -41,7 +41,7 @@ function orderTraversal(root) {
 ```JS
 /**
  * * 根据前序遍历和中序遍历生成二叉树。
- * 思路是根据pre-o确定根节点，在in-o遍历中找到该节点，然后递归左右子树。
+ * * 思路：根据pre-o确定根节点，在in-o遍历中找到该节点，然后递归左右子树。
  * 假设树中没有重复的元素。
  * https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
  */
@@ -325,7 +325,7 @@ function getNodesByLevelOrder(root) {
 ```JS
 /**
  * * 二叉树的锯齿形层序遍历，
- * * 基于循环或递归与上面思路相同，奇数索引的元素是倒序的，要在上一个偶数层unshift
+ * * 思路：与基于循环或递归相同，奇数索引的元素是倒序的，要在上一个偶数层unshift
  * https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
  */
 function zigzagLevelOrder(root) {
@@ -339,7 +339,6 @@ function zigzagLevelOrder(root) {
     ret[depth] = ret[depth] || [];
 
     // 当前层值的访问顺序，第depth层，偶数层正序，奇数层倒序
-    // 注意这里设置的是下一层添加元素的顺序
     depth % 2 === 0 ? ret[depth].push(node.val) : ret[depth].unshift(node.val);
 
     level(node.left, depth + 1);
@@ -429,7 +428,7 @@ function rightSideView(root) {
     // 每层只保存最右边的元素
     if (ret.length === depth) ret.push(node.val);
 
-    // 因为每层保存一个，所以从右边开始递归遍历
+    // 因为每层保存一个，所以先递归处理右子树
     level(node.right, depth + 1);
     level(node.left, depth + 1);
   };

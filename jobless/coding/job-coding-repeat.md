@@ -9,7 +9,6 @@ modified: '2021-10-04T14:47:29.358Z'
 
 > 高频：至少被问过2次
 
-
 # 实现双向绑定 / 响应式数据
 
 ```JS
@@ -102,6 +101,7 @@ console.log(pObj.newPropKey);
 ```JS
 /**
  * * 手写parseInt，不处理小数。返回解析后的整数值。
+ * * 思路：先提取整数字符串，然后遍历每位模拟加法计算
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/89
  * - 如果被解析参数的第一个字符无法被转化成数值类型，则返回 NaN。
  */
@@ -116,7 +116,7 @@ export function _parseInt(str, radix) {
   const len = intStr.length;
   if (!len) return NaN;
 
-  console.log(intStr);
+  // console.log(intStr);
 
   if (!radix) radix = 10;
   if (typeof radix !== 'number' || radix < 2 || radix > 36) {
@@ -132,4 +132,58 @@ export function _parseInt(str, radix) {
 
   return ret;
 }
+```
+
+# 实现 instanceof
+
+```JS
+/**
+ * * 判断A的原型链上是否有B的原型
+ * 思路是 在a的原型链a.__proto__上查找 b.prototype
+ */
+function _instanceof(obj, Cls) {
+  const bPrototype = Cls.prototype;
+
+  let aProto = Object.getPrototypeOf(obj);
+
+  while (aProto) {
+    if (aProto === bPrototype) {
+      return true;
+    }
+
+    aProto = Object.getPrototypeOf(aProto);
+  }
+
+  return false;
+}
+```
+
+# 实现一个 iterator
+- next()方法的参数表示上一条 yield 语句的返回值 ， 所以第一次使用 next 方法时 传递参数是无效的 。
+  - 通过 next 方法的参数就有办法在 Generator 函数开始运行后继续向函数 体内部注入值 。
+
+```JS
+function makeIterator(array) {
+  const nextIndex = 0;
+  return {
+    next: function(value) {
+      return nextIndex < array.length ? {
+        value: array[nextIndex++],
+        done: false
+      } : {
+        value: undefined,
+        done: true
+      };
+    }
+  };
+}
+
+const it = makeIterator(['a', 'b']);
+
+it.next()
+// { value: "a", done: false }
+it.next()
+// { value: "b", done: false }
+it.next()
+// { value: undefined, done: true }
 ```

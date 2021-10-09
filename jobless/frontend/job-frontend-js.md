@@ -602,10 +602,14 @@ function outerFunction() {
 - 字符串可以使用类似数组索引下标的方式来访问字符元素
   - 如 aa = 'string'; aa[1] === 't'
 
-- [`string.charAt(x)` or `string[x]`](https://stackoverflow.com/questions/5943726)
+- `substr(start, length)` vs `slice(beginIndex, endIndex)` 提取字符串片段
+  - 👀️ 第2个参数是不同的
+
+### [ `string.charAt(x)` or `string[x]` ](https://stackoverflow.com/questions/5943726)
+
 - There is a difference when you try to access an index which is out of bounds or not an integer.
-  - string[x] returns the character at the xth position in string if x is an integer between 0 and string.length-1, and returns `undefined` otherwise.
-  - string.charAt(x) converts x to an integer and then returns the character at the that position if the integer is between 0 and string.length-1, and returns an empty string otherwise.
+  - `string[x]` returns the character at the xth position in string if x is an integer between 0 and string.length-1, and returns `undefined` otherwise.
+  - `string.charAt(x)` converts x to an integer and then returns the character at the that position if the integer is between 0 and string.length-1, and returns an empty string `''` otherwise.
 - Word of caution: using either syntax for emojis or any other unicode characters past the Basic Multilingual Plane BPM (AKA the "Astral Plane") "😃".charAt(0) will return an unusable character
   - using either syntax for emojis will return an unusable character
   - That’s why Array.from("😃")[0] or [..."😃"][0] should be used in this case. 
@@ -863,10 +867,10 @@ global.gc();
 
 - ES2021 推出了 WeakRef ，能实现保留对另一个对象的弱引用，而不会阻止该弱引用对象被GC回收
 
-## es6 class
+## class
 
-- 类使用在前，定义在后，这样会报错，因为 ES6 不会把变量声明提升 到代码头部。
-  - 这种规定的原因与继承有关，必须保证子类在父类之后定义。
+- 类使用在前，定义在后，这样会报错，因为ES6不会把变量声明提升到代码头部。
+  - 这种规定的原因与继承有关，必须**保证子类在父类之后定义**。
 
 - 类的方法内部如果含有 this ，它将默认指向类的实例 。 
   - 但是，必须非常小心， 一旦单独使用该方法，很可能会报错。
@@ -893,7 +897,6 @@ class C1 {
   getPrivate(args) {
     getPrivateImpl.call(this, args);
   }
-
 }
 
 function getPrivateImpl(args) {
@@ -914,7 +917,6 @@ class C2 {
   [privateFn](args) {
     this[privateVal] = args;
   }
-
 }
 
 function getPrivateImpl(args) {
@@ -932,9 +934,9 @@ function getPrivateImpl(args) {
 
 - ES6继承 vs ES5继承
   - ES5的继承是先创造子类的实例对象this，然后再将父类的方法添加到 this 上面 (`Parent.apply(this)`)。
-    - ES6的继承机制完全不同，实质是先创造父类的实例对象 this （所以必须先调用 `super()` 方法），然后再用子类的构造函数修改 this 。
-    - 因为es6子类没有自己的 this 对象，而是继承父类的 this 对象，然后对其进行加工。
-    - super 虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 `super()` 在这里相当于`A.prototype.constructor.call(this)`;
+  - ES6的继承机制完全不同，实质是先创造父类的实例对象 this（所以必须先调用 `super()` 方法），然后再用子类的构造函数修改 this 。
+    - 因为es6子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。
+    - super虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 `super()` 在这里相当于`A.prototype.constructor.call(this)`;
     - ES6规定，通过 super 调用父类的方法时， super 会绑定子类的 this
   - ES5原型链中子类原型是父类实例，子类构造函数和父类构造函数无直接关系，因此需要使用call()
     - ES6具有双重继承关系：除了原型对象间继承，子类本身是父类构造的实例

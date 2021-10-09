@@ -9,8 +9,6 @@ modified: '2021-10-06T14:54:23.456Z'
 
 # guide
 
-- to-do
-
 ```JS
 // 二叉树的节点定义
 function TreeNode(val, left, right) {
@@ -25,8 +23,8 @@ function TreeNode(val, left, right) {
 ```JS
 /**
  * * 翻转二叉树。二叉树的左右子树交换
+ * * 思路：从根节点开始前序遍历每个节点，然后交换左右子树既可
  * https://leetcode-cn.com/problems/invert-binary-tree/
- * - 从根节点开始前序遍历每个节点，然后交换左右子树既可
  */
 export function invertTree(root) {
   if (!root) return null;
@@ -94,7 +92,7 @@ export function lowestCommonAncestor(root, p, q) {
   if (!left) return right;
   if (!right) return left;
 
-  // 如果p 、q节点在左右子树的最近公共祖先都存在
+  // 如果p 、q节点在左右子树的最近公共祖先都存在，此时left===right===root
   return root;
 }
 ```
@@ -188,35 +186,62 @@ function isSubtree(root, subRoot) {
 }
 ```
 
-# 二叉树转链表
+# 二叉树展开为链表
 
 ```JS
 /**
  * * 二叉树转链表。展开后的单链表应该与二叉树 先序遍历 顺序相同。
- * https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/submissions/
- * https://blog.voyz.vip/2020/12/31/LeetCode%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-Day54/
- *
+ * * 思路：做图分析，转换后的链表为前序遍历根左右，那可以把右子树挂在左子树最下方的节点
+ * https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+ * https://juejin.cn/post/6856411258976600077
  */
-export function flatten(root) {
-  if (!root) return null;
-  let current = root;
 
-  while (current) {
-    if (!current.left) {
-      current = current.right;
-      continue;
-    }
-    const next = current.left;
-    let pre = next;
+function flatten(root) {
+  let curr = root;
+  let left;
+  let temp;
+  while (curr) {
+    // 若左子树非空
+    if (curr.left) {
+      left = curr.left;
+      temp = left;
+      // 找到左子树的最后一个元素，一般是最下方的右叶子
+      while (temp.right) {
+        temp = temp.right;
+      }
 
-    while (pre.right) {
-      pre = pre.right;
+      // 将curr的右子树挂到左子树的最下方
+      temp.right = curr.right;
+
+      // 将左子树变为右子树
+      curr.left = null;
+      curr.right = left;
     }
-    pre.right = current.right;
-    current.right = next;
-    current.left = null;
+
+    curr = curr.right;
   }
-  return root;
+}
+
+// 类似后序遍历，太巧妙了
+function flatten(root) {
+
+  // 记录前一个节点
+  let prev = null;
+
+  const dfs = node => {
+
+    if (!node) return;
+
+    dfs(node.right);
+    dfs(node.left);
+
+    node.left = null;
+    node.right = prev;
+
+    prev = node;
+  }
+
+  dfs(root)
 }
 ```
 

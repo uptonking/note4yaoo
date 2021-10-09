@@ -138,6 +138,12 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [牛客网 社招广场](https://nowpick.nowcoder.com/w/fulltime/center?recruitType=3&careerJobId=11022&order=1)
 
+- [react china 招聘分类](http://react-china.org/)
+
+- [ruby china 招聘板块](https://ruby-china.org/jobs)
+- [电鸭社区](https://eleduck.com/)
+- [帆软社区 招聘公共区](https://bbs.fanruan.com/jobs)
+
 - [神策数据｜多岗位内推](https://leetcode-cn.com/circle/discuss/cOWd8g/)
 
 - [字节跳动-基础工程-APM团队](https://github.com/sl1673495/bytedance-apm-group)
@@ -150,3 +156,15 @@ modified: '2021-09-20T09:00:43.564Z'
   - github、知乎、掘金、语雀
 
 - [关于面试的一点心得 心态类](https://mp.weixin.qq.com/s/5D7vi6WZOGfv3guBWhvOcg)
+
+- [如何描述自己的工作？](https://www.zhangxinxu.com/life/2021/06/describe-work/)
+  - STAR法则
+    - Situation: 事情是在什么情况下发⽣
+    - Task: 你是如何明确你的任务的
+    - Action: 针对这样的情况分析，你采⽤了什么⾏动⽅式
+    - Result: 结果怎样，在这样的情况下你学习到了什么
+  - 对于汇报等时间有限的场景，可将重点放在结果上，放大亮点
+  - 跳出自己的视角
+  - 主动性，会研究提高性能、提高效率、自动化的方法
+  - 专业性，控制台仪表板更简单、可定制
+  - 准确性，性能提升了多少，feature加了多少，bug改了几个

@@ -91,6 +91,7 @@ function twoSum(nums, target) {
 
     if (map.has(k)) return [i, map.get(k)];
 
+    // 存放 [元素值，索引下标]
     map.set(nums[i], i);
   }
 

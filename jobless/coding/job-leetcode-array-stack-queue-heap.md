@@ -18,7 +18,6 @@ modified: '2021-10-06T14:54:06.837Z'
  * https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/34
  */
-
 const CQueue = function() {
   this.stack1 = [];
   this.stack2 = [];
@@ -54,7 +53,10 @@ CQueue.prototype.deleteHead = function() {
 /**
  * * 滑动窗口最大值问题。
  * * 思路：双端队列。没必要一次性获取窗口内所有元素；
- * * 思路：逐个入队元素，若已有值索引在窗口范围之前，或已有值<=当前值，则去掉失效或不够大的已有元素。这样数组头部总是最大值，也就是当前滑动窗口的最大值。
+ * * 思路：
+ * * - 逐个入队元素，若已有值索引在窗口范围之前，或已有值<=当前值，则去掉失效或不够大的已有元素。
+ * * - 这样数组头部总是最大值，也就是当前滑动窗口的最大值。
+ * * - 每次循环都能找到当前窗口的最大值并放在数组头部
  * https://leetcode-cn.com/problems/sliding-window-maximum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/33
  */
@@ -146,7 +148,7 @@ function isValid(s) {
 ```JS
 /**
  * * 删除字符串中的所有相邻重复项。
- * * 遍历字符串，依次入栈，入栈时判断与栈头元素是否一致，如果一致，即这两个元素相同相邻，则需要将栈头元素出栈，并且当前元素也无需入栈
+ * * 思路：遍历字符串，依次入栈，入栈时判断与栈顶元素是否一致，如果一致，即这两个元素相同相邻，则需要将栈头元素出栈，并且当前元素也无需入栈
  * https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/26
  * 选择两个相邻且相同的字母，并删除它们。

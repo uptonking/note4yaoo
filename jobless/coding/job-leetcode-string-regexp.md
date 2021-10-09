@@ -35,10 +35,13 @@ function addStrings(num1, num2) {
     const n1 = i >= 0 ? num1[i] : 0;
     const n2 = j >= 0 ? num2[j] : 0;
 
+    // 进位当当前两个数的和
     const sum = Number(n1) + Number(n2) + carry;
 
+    // 获取一个当前位
     ret = (sum % 10) + ret;
 
+    // 获取进位
     carry = Math.floor(sum / 10);
     i--;
     j--;
@@ -78,6 +81,7 @@ function myAtoi(s) {
  * * 翻转字符串里的单词(无空格字符构成一个单词)。
  * 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
  * 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+ * 示例： "the sky is blue"  -->  "blue is sky the"
  * https://leetcode-cn.com/problems/reverse-words-in-a-string/
  */
 function reverseWords(s) {

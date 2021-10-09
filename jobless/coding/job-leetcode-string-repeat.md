@@ -29,10 +29,11 @@ function longestCommonPrefix(strs) {
   // 从第1个字符开始往后逐次比较，最长公共子串就保存在这里
   let ret = '';
   for (let i = 0; i < minLenStr.length; i++) {
+    const curr = minLenStr.slice(0, i + 1);
     if (
-      strs.every((item) => item.slice(0, i + 1) === minLenStr.slice(0, i + 1))
+      strs.every((item) => item.slice(0, i + 1) === curr)
     ) {
-      ret = minLenStr.slice(0, i + 1);
+      ret = curr;
     }
   }
   return ret;
@@ -204,7 +205,7 @@ function longestPalindrome(s) {
       even = s.slice(evenIndex.left, evenIndex.right);
     }
 
-    // 若是奇数中心回文
+    // 若是奇数中心回文,
     const oddIndex = center(s, i - 1, i + 1);
     odd = s.slice(oddIndex.left, oddIndex.right);
 

@@ -10,7 +10,7 @@ modified: '2021-10-06T14:45:51.381Z'
 # guide
 
 - 从数组中随机取一个元素的方法
-  - `items[Math.floor(Math.random()*items.length)]`
+  - `arr[Math.floor(Math.random()*arr.length)]`
 # 合并两个有序数组
 - 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 num1 成为一个有序数组。
 
@@ -94,6 +94,7 @@ function mergeArrays2(nums1, m, nums2, n) {
 ```JS
 /**
  * * 给定两个数组，编写一个函数来计算它们的交集。
+ * * 思路：标记法，访问过的就存入Map
  * 我们可以不考虑输出结果的顺序。
  * https://leetcode-cn.com/problems/intersection-of-two-arrays
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/6
@@ -179,8 +180,7 @@ function getIntersectionOfMultiArr2(...arrs) {
 ```JS
 /**
  * * 洗牌算法。打乱数组。
- * - Fisher-Yates 洗牌算法，
- *   - 时间复杂度： O(n) 空间复杂度：O(n)
+ * - Fisher-Yates洗牌算法，时间复杂度O(n)，空间复杂度O(n)
  *   * 基本思想就是从原始数组中随机取一个之前没取过的数字到新的数组中
  * - Knuth-Durstenfeld shuffle
  *   - 在Fisher 等人的基础上对算法进行了改进，在原始数组上对数字进行交互，省去了额外O(n)的空间
@@ -190,7 +190,6 @@ function getIntersectionOfMultiArr2(...arrs) {
  * https://segmentfault.com/a/1190000039246947
  * 浅拷贝数组，利用random()方法重制数组下标索引。
  * 可用来实现音乐随机播放。
- *
  */
 const Solution = function(nums) {
   this.nums = nums;

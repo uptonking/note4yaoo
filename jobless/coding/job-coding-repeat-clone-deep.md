@@ -230,3 +230,37 @@ for (let i in obj) {
 ```
 
 - 深拷贝就是不仅新建一个引用，同时在堆上新开辟一块内存空间，存储一个和原始对象一样的对象，并让新引用指向该对象。
+# 手写深比较
+
+```JS
+/**
+ * * 手写深比较
+ * * 思路
+ * * a. 直接比较 ===
+ * * b. 比较非null的对象的Object.keys()属性数量
+ * * c. for in循环里面递归比较各属性值
+ */
+function deepEquals(o1, o2) {
+  if (o1 === o2) return true;
+
+  if (
+    typeof o1 === 'object' &&
+    typeof o2 === 'object' &&
+    o1 != null &&
+    o2 != null
+  ) {
+    if (Object.keys(o1) !== Object.keys(o2)) {
+      return false;
+    }
+
+    // for-in可处理数组的情况
+    for (const p in o1) {
+      if (!deepEquals(o1[p], o2[p])) return false;
+    }
+
+    return true;
+  }
+
+  return false;
+}
+```

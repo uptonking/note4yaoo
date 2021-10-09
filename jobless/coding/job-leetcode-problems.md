@@ -14,7 +14,7 @@ modified: '2021-10-06T19:59:58.846Z'
 ```JS
 /**
  * * 螺旋矩阵
- * * 思路1：逐个遍历，在边界先确定方向，再修改索引遍历下一个
+ * * 思路1：逐个遍历，在边界先确定方向，再根据方向修改索引，遍历下一个
  * * 思路2：先遍历外圈，再递归遍历内圈
  * https://leetcode-cn.com/problems/spiral-matrix/
  * https://leetcode-cn.com/problems/spiral-matrix/solution/jsshi-xian-luo-xuan-ju-zhen-by-adorable-deg/
@@ -112,7 +112,7 @@ function spiralOrderRecursive(matrix) {
 /**
  * * 缺失的第一个正数
  * * 理想情况下，索引i的位置的最小正数是 i+1
- * * 将[1,i+1]之间的数对应的位置置为负数，然后输出不是负数的位置就是最小正数。
+ * * 思路：将值大小在数组长度范围内的这些值交换到正确位置，最后遍历数组，nums[i]!==i+1的就是缺失的
  * 未排序的整数数组，请你找出其中没有出现的最小的正整数。
  * https://leetcode-cn.com/problems/first-missing-positive/
  * https://mingtiao.top/2020/06/27/Leetcode-41-%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/

@@ -97,6 +97,7 @@ function throttle(fn, wait) {
   return function(...args) {
     const that = this;
 
+    // 计时器存在就返回
     if (timer) return;
 
     timer = setTimeout(() => {
@@ -156,4 +157,179 @@ function throttle(fn, wait, immediate) {
 
   }
 }
+```
+
+# curry 函数柯里化
+- 要判断当前传入函数的参数个数 (args.length) 是否大于等于原函数所需参数个数 (fn.length) ，
+  - 如果是，则执行当前函数；
+  - 如果是小于，则返回一个函数。
+
+```JS
+function curry2(fn, ...args) {
+  return args.length >= fn.length ?
+    fn(...args) :
+    (...args2) => curry2(fn, ...args, ...args2);
+}
+
+function curry(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      // 参数足够，直接返回func调用
+
+      return func.apply(this, args);
+    }
+
+    // 参数不够，返回偏函数
+    return function(...args2) {
+      curried.apply(this, args.concat(args2));
+    };
+  };
+}
+```
+
+# new 创建新对象的过程
+
+```JS
+/**
+ * * 手动实现new创建新对象的过程。
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
+ * https://github.com/sisterAn/JavaScript-Algorithms/issues/71
+ * 1. 在内存中创建新对象
+ * 2. 新对象内部的[[Prototype]]指向构造函数的原型对象
+ * 3. 构造函数内部的this指向新对象
+ * 4. 执行构造函数内部代码
+ * 5. 如果构造函数返回非空对象，则返回该对象，否则返回第1步创建的对象
+ * - 这里的constructor其实是，`[].shift.call(arguments)`
+ */
+function _newObjectFactory(constructor, ...args) {
+  const obj = new Object();
+
+  // const obj = Object.create(constructor.prototype);
+  Object.setPrototypeOf(obj, constructor.prototype);
+
+  // 将构造函数内部的this绑定到新对象，并执行构造函数
+  const newObj = constructor.apply(obj, args);
+
+  // if (temp && ['object', 'function'].includes(typeof temp)) {
+  //   return temp;
+  // }
+
+  // return obj;
+  return typeof newObj === 'object' ? newObj : obj;
+}
+```
+
+# 手写继承
+
+## 组合式继承
+
+- 特点
+  - 父类新增在构造函数上面的方法，子类都能访问到
+  - 创建子类实例时，可以向父类传递参数
+- 缺点
+  - 调用了两次父类构造函数，生成了两份实例
+
+```JS
+// * 组合式继承
+// https://juejin.cn/post/6844903569317953543
+// 本方法很明显执行了两次父类的构造函数
+// 子类仍旧无法传递动态参数给父类！
+// 父类的构造函数被调用了两次。
+
+function Parent1() {
+  this.superName = 'su';
+}
+Parent1.prototype.getSuperName = function() {
+  return this.superName;
+};
+
+function Child1() {
+  // 借用构造函数
+  Parent1.call(this);
+  this.subName = 'child';
+}
+// 原型链继承
+Child1.prototype = new Parent1();
+
+const chd1 = new Child1();
+console.log('chd1, ', chd1);
+```
+
+## 寄生组合式继承
+
+```JS
+// * 寄生组合式继承
+// 子类继承了父类的属性和方法，同时属性没有被创建在原型链上，因此多个子类不会共享同一个属性。
+// 子类可以传递动态参数给父类！
+// 父类的构造函数只执行了一次！
+// 但是子类想要在原型上添加方法，必须在继承之后添加，否则将覆盖掉原有原型上的方法。
+
+/** 类似Object.create, 可以不用创建父类，直接利用已有实例作为模板 */
+function object(o) {
+  function F() {}
+  F.prototype = o;
+  return new F();
+}
+
+function inheritPrototype(child, parent) {
+  // 继承父类原型对象
+  const p = object(parent.prototype);
+  // 重写子类的原型对象
+  child.prototype = p;
+  // 将父类原型和子类原型合并，并赋值给子类的原型，实现允许在子类原型上添加新方法
+  // copy原型链上可枚举的方法，如果子类本身已经继承自某个类，仍不能满足要求。
+  // child.prototype = Object.assign(p, child.prototype);
+
+  // 更新构造函数的指向
+  p.constructor = child;
+}
+
+// 通过类似Object.create创建对象，然后更新Child.prototype和对象constructor的指向
+inheritPrototype(Child1, Parent1);
+const chd2 = new Child1();
+console.log('chd2, ', chd2);
+```
+
+# setTimeout
+
+```JS
+/**
+ * * 手写 setTimeout，思路是基于 `requestAnimationFrame` 和计算时间差实现
+ * `Date.now()` method returns the number of milliseconds elapsed since 1970-01-01T00:00:00Z.
+ */
+function _setTimeout(fn, delay, ...args) {
+  const start = Date.now();
+
+  let timer;
+  let now;
+
+  const loop = () => {
+    timer = requestAnimationFrame(loop);
+
+    now = Date.now();
+
+    if (now - start >= delay) {
+      fn.apply(this, args);
+      cancelAnimationFrame(timer);
+    }
+  };
+
+  requestAnimationFrame(loop);
+
+  return timer;
+}
+```
+
+```js
+// 使用 setTimeout 实现 setInterval
+
+setTimeout(function fn() {
+  console.log('我被调用了');
+  setTimeout(fn, 100);
+}, 100);
+
+setTimeout(function() {
+  console.log('我被调用了');
+  setTimeout(arguments.callee, 100);
+}, 100);
 ```
