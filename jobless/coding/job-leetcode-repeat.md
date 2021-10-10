@@ -8,8 +8,8 @@ modified: '2021-10-06T14:46:25.494Z'
 # job-leetcode-repeat
 
 # guide
-- to-do
-
+- 思路
+  - 先暴力求解，在解决时间、空间复杂度过高的问题
 # 买卖股票的最佳时机
 
 ```JS
@@ -41,4 +41,3 @@ function maxProfit(prices) {
   return maxProfit;
 }
 ```
-

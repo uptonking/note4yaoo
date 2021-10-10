@@ -29,6 +29,12 @@ modified: '2021-09-26T16:44:04.493Z'
     - 移动端弹出键盘
   - 经常陷入技术选型的无底洞
     - 自己实现写得丑，第三方的依赖实在太多
+  - 优先级没分清
+
+- plan
+  - 积累技术和代码：用prosemirror重写outline
+  - 研究同类产品做到行业领先：飞书、语雀、confluence
+  - 用技术领先实现市场领先
 
 - why web developer
   - interest, self-taught

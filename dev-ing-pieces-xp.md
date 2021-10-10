@@ -13,7 +13,14 @@ modified: '2021-04-28T20:54:58.126Z'
 
 ## 
 
-## 
+## 手写Promise
+
+- then()方法可以注册回调函数
+- 对于static resolve/reject方法的实现，可以用setTimeout，创建promise对象时阻塞，然后给机会让then方法执行注册回调函数
+
+- 复制相似的代码注意修改必需项
+  - 复制 this.resolveList.push 到 this.rejectList.push
+  - 忘记修改排查了好久才找到原因
 
 ## 调试深拷贝的实现碰到各种问题
 

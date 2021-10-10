@@ -1,15 +1,30 @@
 ---
-title: job-frontend-dom-browser
+title: job-fe-browser-event-loop
 tags: [browser, dom, frontend, job]
 created: '2021-09-23T08:23:18.415Z'
-modified: '2021-09-23T08:23:52.100Z'
+modified: '2021-10-10T09:18:01.462Z'
 ---
 
-# job-frontend-dom-browser
+# job-fe-browser-event-loop
 
 # guide
 
+# event loop
 
+## 事件循环 浏览器端
+
+- JS 作为单线程执行的语言，程序的执行流依靠执行栈控制，
+  - 当主线程遇到异步任务时，会将异步任务放入任务队列，而非执行栈；
+  - 在执行栈中的同步任务全部执行结束后，主线程会去任务队列中取出就绪的异步任务（计时器回调不会在计时未结束时执行），执行它们的回调函数，而异步任务又分为宏任务和微任务：
+- 宏任务：script( 整体代码)、setTimeout、setInterval、I/O、UI交互事件、setImmediate(Node.js 环境)
+- 微任务：Promise、MutationObserver、process.nextTick(Node.js 环境)
+- 整体的执行流程：
+  - 执行同步代码，这是宏任务
+  - 执行栈为空，执行所有微任务
+  - 必要时渲染 UI
+  - 进行下一轮的 EventLoop ，执行宏任务队列中队首任务的异步代码
+- 在浏览器中，setTimeout()/setInterval() 的每调用一次定时器的最小间隔是4ms，这通常是由于函数嵌套导致，或者是由于已经执行的 setInterval 的回调函数阻塞导致的。
+  - 例如：setTimeout(fn, 0)只能指定某个任务在主线程最早有空闲时尽快执行
 # 浏览器的event-loop
 - JS作为单线程语言，引擎只能按顺序往下执行代码，不能并行执行任务，遇到耗时任务时，用户必须长时间等待（阻塞），此时异步就很有必要
 

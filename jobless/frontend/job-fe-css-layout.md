@@ -1,11 +1,11 @@
 ---
-title: job-frontend-css-layout
+title: job-fe-css-layout
 tags: [css, job, layout]
 created: '2021-09-23T15:46:13.688Z'
-modified: '2021-09-23T15:46:32.183Z'
+modified: '2021-10-10T09:17:17.328Z'
 ---
 
-# job-frontend-css-layout
+# job-fe-css-layout
 
 # guide
 

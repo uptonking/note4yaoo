@@ -1,11 +1,11 @@
 ---
-title: job-frontend-faq
+title: job-fe-faq
 tags: [engineering, faq, frontend, job]
 created: '2021-09-21T19:48:12.024Z'
-modified: '2021-09-22T16:32:08.666Z'
+modified: '2021-10-10T09:18:13.931Z'
 ---
 
-# job-frontend-faq
+# job-fe-faq
 
 # faq
 
@@ -17,10 +17,8 @@ modified: '2021-09-22T16:32:08.666Z'
   - 数据变化后更新视图
   - 视图变化后更新数据
 - 监听器（Observer）：对所有数据的属性进行监听
-- 解析器（Compiler）：对每个元素节点的指令进行扫描跟解析,根据指令模板替换数据,以及绑定相应的更新函数
+- 解析器（Compiler）：对每个元素节点的指令进行扫描跟解析, 根据指令模板替换数据, 以及绑定相应的更新函数
 - 给出了实现示例
-
-
 
 - [为什么react不实现双向绑定](https://www.zhihu.com/question/300849926/answers)
 - 双向或者单向， 只是实现某些功能的方式或者理念，React完全可以以双向的方式去处理组件之间的交互逻辑

@@ -163,6 +163,7 @@ function throttle(fn, wait, immediate) {
 - 要判断当前传入函数的参数个数 (args.length) 是否大于等于原函数所需参数个数 (fn.length) ，
   - 如果是，则执行当前函数；
   - 如果是小于，则返回一个函数。
+- `fn.length` 可以获取到函数的正式形参数量，不包括rest参数和带默认值的参数
 
 ```JS
 function curry2(fn, ...args) {
@@ -171,20 +172,29 @@ function curry2(fn, ...args) {
     (...args2) => curry2(fn, ...args, ...args2);
 }
 
-function curry(func) {
-  return function curried(...args) {
-    if (args.length >= func.length) {
-      // 参数足够，直接返回func调用
+// 测试表明，不用apply也能正常返回偏函数
 
-      return func.apply(this, args);
+function curry(fn) {
+  return function curryCore(...args) {
+    if (args.length >= fn.length) {
+      // return fn.apply(this, args);
+      return fn(...args);
     }
 
-    // 参数不够，返回偏函数
     return function(...args2) {
-      curried.apply(this, args.concat(args2));
+      // return curryCore.apply(this,args.concat(args2));
+      return curryCore(...args, ...args2);
     };
   };
 }
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const s = curry(sum);
+
+s(1)(2)(3);
 ```
 
 # new 创建新对象的过程
@@ -223,6 +233,9 @@ function _newObjectFactory(constructor, ...args) {
 
 ## 组合式继承
 
+- 思路是使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承
+  - 既通过在原型上定义方法实现了函数复用，又能够保证每个实例都有它自己的属性
+
 - 特点
   - 父类新增在构造函数上面的方法，子类都能访问到
   - 创建子类实例时，可以向父类传递参数
@@ -237,19 +250,20 @@ function _newObjectFactory(constructor, ...args) {
 // 父类的构造函数被调用了两次。
 
 function Parent1() {
-  this.superName = 'su';
+  this.p1 = 'parent1';
 }
-Parent1.prototype.getSuperName = function() {
-  return this.superName;
+
+Parent1.sayHello = function() {
+  console.log('hello');
 };
 
-function Child1() {
-  // 借用构造函数
-  Parent1.call(this);
-  this.subName = 'child';
+function Child(...args) {
+  Parent1.apply(this, args);
+  this.c1 = 'child1';
 }
-// 原型链继承
-Child1.prototype = new Parent1();
+
+Child.prototype = new Parent1();
+Child.prototype.constructor = Child;
 
 const chd1 = new Child1();
 console.log('chd1, ', chd1);
@@ -257,12 +271,21 @@ console.log('chd1, ', chd1);
 
 ## 寄生组合式继承
 
+- 所谓寄生组合式继承，即通过借用构造函数来继承属性，通过原型链的混成形式来继承方法。
+  - 不必为了指定子类型的原型而调用超类型的构造函数
+  - 使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型
+
 ```JS
 // * 寄生组合式继承
 // 子类继承了父类的属性和方法，同时属性没有被创建在原型链上，因此多个子类不会共享同一个属性。
 // 子类可以传递动态参数给父类！
 // 父类的构造函数只执行了一次！
 // 但是子类想要在原型上添加方法，必须在继承之后添加，否则将覆盖掉原有原型上的方法。
+
+function Child(...args) {
+  Parent1.apply(this, args);
+  this.c1 = 'child1';
+}
 
 /** 类似Object.create, 可以不用创建父类，直接利用已有实例作为模板 */
 function object(o) {
@@ -273,6 +296,7 @@ function object(o) {
 
 function inheritPrototype(child, parent) {
   // 继承父类原型对象
+  // const p = Object.create(parent.prototype);
   const p = object(parent.prototype);
   // 重写子类的原型对象
   child.prototype = p;
@@ -281,7 +305,7 @@ function inheritPrototype(child, parent) {
   // child.prototype = Object.assign(p, child.prototype);
 
   // 更新构造函数的指向
-  p.constructor = child;
+  child.prototype.constructor = child;
 }
 
 // 通过类似Object.create创建对象，然后更新Child.prototype和对象constructor的指向
@@ -324,9 +348,9 @@ function _setTimeout(fn, delay, ...args) {
 // 使用 setTimeout 实现 setInterval
 
 setTimeout(function fn() {
-  console.log('我被调用了');
-  setTimeout(fn, 100);
-}, 100);
+  console.log('在setTimeout中调用自身，就形成了setInterval');
+  setTimeout(fn, 1000);
+}, 1000);
 
 setTimeout(function() {
   console.log('我被调用了');

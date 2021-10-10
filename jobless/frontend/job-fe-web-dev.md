@@ -1,11 +1,11 @@
 ---
-title: job-frontend-web-dev
+title: job-fe-web-dev
 tags: [frontend, job, web]
 created: '2021-09-23T08:18:44.835Z'
-modified: '2021-09-23T08:19:02.135Z'
+modified: '2021-10-10T09:19:13.926Z'
 ---
 
-# job-frontend-web-dev
+# job-fe-web-dev
 
 # guide
 - not-yet

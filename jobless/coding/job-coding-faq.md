@@ -2,7 +2,7 @@
 title: job-coding-faq
 tags: [coding, engineering, job, 手撕代码]
 created: '2021-09-21T19:50:09.680Z'
-modified: '2021-09-22T16:31:02.228Z'
+modified: '2021-10-10T08:52:32.419Z'
 ---
 
 # job-coding-faq
@@ -11,7 +11,7 @@ modified: '2021-09-22T16:31:02.228Z'
 
 - 手撕代码的问题处理
   - 分析、抽象目标
-  - 设计 api 和 workflow
+  - 设计 api、测试用例 和 workflow
   - 设计各个api的input-args, output-return
 # to-do
 - 判断DOM标签的合法性

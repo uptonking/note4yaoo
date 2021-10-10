@@ -1,14 +1,25 @@
 ---
-title: job-frontend-coding
-tags: [coding, frontend, job]
+title: job-fe-ux-usecase-coding
+tags: [coding, frontend, job, usecase, ux]
 created: '2021-09-24T16:33:42.242Z'
-modified: '2021-09-24T16:34:14.601Z'
+modified: '2021-10-10T09:19:27.035Z'
 ---
 
-# job-frontend-coding
+# job-fe-ux-usecase-coding
 
 # guide
 
+- 如何实现直播上的弹幕组件，要求不能重叠，仿照b站上的弹幕
+- 如何实现动态表单，仿照antd上的form组件
+- 实现一个promise（一般不会这样问）
+- 实现一个限制请求数量的方法
+- 如何实现一个大文件的上传
+- 实现一个eventEmitter
+- 实现一个new，call，bind，apply
+- 实现一个throttle，debound
+- 实现promise.then，finally，all
+- 实现继承，寄生组合继承，instanceof
+- 实现Generator，Aynsc
 # 延迟打印
 
 ```JS

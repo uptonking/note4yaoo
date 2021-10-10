@@ -1,11 +1,11 @@
 ---
-title: job-react-design-pattern
-tags: [job, pattern, react]
+title: job-react-optimization-pattern
+tags: [job, optimization, pattern, react]
 created: '2021-09-23T05:26:17.336Z'
-modified: '2021-09-23T05:26:44.005Z'
+modified: '2021-10-10T09:25:37.896Z'
 ---
 
-# job-react-design-pattern
+# job-react-optimization-pattern
 
 # guide
 

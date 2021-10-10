@@ -1,18 +1,15 @@
 ---
-title: job-frontend-js-repeat
-tags: [frontend, job, js, repeat]
-created: '2021-09-21T19:54:16.072Z'
-modified: '2021-09-23T08:17:23.261Z'
+title: job-js-prototype-class
+tags: [frontend, job, js]
+created: '2021-10-10T09:08:20.137Z'
+modified: '2021-10-10T09:31:04.461Z'
 ---
 
-# job-frontend-js-repeat
+# job-js-prototype-class
 
 # guide
 
-# faq
-
-## 如何理解原型？
-
+# 如何理解原型？
 - `Ctr.prototype` 显式原型: explicit prototype property
   - 每一个函数在创建之后都会拥有一个名为 `prototype` 的属性，这个属性指向函数的原型对象。
   - **显式原型的作用：用来实现基于原型的继承与属性共享**
@@ -45,7 +42,10 @@ Function.prototype.__proto__ === Object.prototype // true
 
 function aa() {}
 
+aa.constructor === Function // true
+aa.constructor.prototype === Function.prototype // true
 aa.__proto__ === Function.prototype // true
+Object.getPrototypeOf(aa) === Function.prototype // true
 aa.prototype === Function.prototype // false
 aa.prototype.__proto__ === Object.prototype // true
 
@@ -109,8 +109,7 @@ oo.constructor === Object; // true
 let aa = Object.create(null); // aa 没有toString等基础原型方法
 ```
 
-## new新建对象时发生了什么
-
+# new新建对象时发生了什么
 1. Creates a blank, plain JavaScript object.
 2. Adds a property to the new object (`__proto__`) that links to the `constructor` function's `prototype` object 
 3. Binds the newly created object instance as the `this` context 
@@ -122,9 +121,77 @@ let aa = Object.create(null); // aa 没有toString等基础原型方法
 - 构造函数内部的this被赋值为这个新对象（即this指向新对象）
 - 执行构造函数内部的代码
 - 如果构造函数返回非空对象，则返回该对象；否则，返回刚创建的新对象
+# class
+- 类使用在前，定义在后，这样会报错，因为ES6不会把变量声明提升到代码头部。
+  - 这种规定的原因与继承有关，必须**保证子类在父类之后定义**。
 
-## [async await 和 promise 的关系](https://github.com/sisterAn/JavaScript-Algorithms/issues/149)
+- 类的方法内部如果含有this ，它将默认指向类的实例 。 
+  - 但是，必须非常小心， 一旦单独使用该方法，很可能会报错。
+  - 如果将这个方法提取出来单独使用， this 会指向该方法运行时所在的环境
+  - 方法1: 在构造函数中bind
+  - 方法2: 方法的定义使用箭头函数
+  - 方法3: 创建对象实例时，创建并返回Proxy对象，代理对象的处理器中在获取方法时，先bind方法再返回
 
-- async/await 应该就是个语法糖，是对 Promise + Generator 的更好的封装，async/await 是后面才出现的(ES2017)，在这以前用 Generator 可以实现异步任务，如dva库的 effects 实现。
-  - Promise 相当于是 JS 引擎的底层异步 API，其它的异步方案是在它的基础上构建
-- 通过 typescript 或 babel 的 playground，编写 async/await 代码转换到 ES2015 的语法就会发现，可以看到输出代码内部用的其实就是迭代器去实现的
+- new.target内置属性，可以在构造函数中获取new命令所作用的构造函数
+  - `new.target` pseudo-property lets you detect whether a function or constructor was called using the `new` operator. 
+  - In constructors and functions invoked using the `new` operator,  `new.target` returns a reference to the constructor or function. 
+  - In normal function calls,  `new.target` is `undefined`.
+  - Class 内部调用 new.target ，返回当前 Class
+  - 子类继承父类时 ηew . target 会返回子类。
+  - 可以写出不能独立使用而必须继承后才能使用的类：在父类和子类构造函数中分别检查new.target
+
+- 私有方法的实现
+
+```JS
+// 💡️ 方法1: 将私有方法移出模块，不可访问私有方法，但仍可直接访问私有值
+
+class C1 {
+
+  getPrivate(args) {
+    getPrivateImpl.call(this, args);
+  }
+}
+
+function getPrivateImpl(args) {
+  return this.val = args;
+}
+
+// 💡️ 方法2: 将私有方法命名为一个Symbol值
+
+const privateFn = Symbol('privateFn');
+const privateVal = Symbol('privateVal');
+
+class C2 {
+
+  getPrivate(args) {
+    this[privateFn](args);
+  }
+
+  [privateFn](args) {
+    this[privateVal] = args;
+  }
+}
+
+function getPrivateImpl(args) {
+  return this.val = args;
+}
+```
+
+# js继承
+- 原型链继承
+- 寄生式继承
+
+- class关键字，类实际就是函数，但是类语法明确了存在于实例、原型、类上的成员
+  - ES6使用extends关键字继承，可以继承类或者普通的构造函数，其背后依旧基于“寄生式组合继承”
+
+- ES6继承 vs ES5继承
+  - ES5的继承是先创造子类的实例对象this，然后再将父类的方法添加到 this 上面 (`Parent.apply(this)`)。
+  - ES6的继承机制完全不同，实质是先创造父类的实例对象 this（所以必须先调用 `super()` 方法），然后再用子类的构造函数修改 this 。
+    - 因为es6子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。
+    - super虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 super 内部的 this 指的是 B，因此 `super()` 在这里相当于`A.prototype.constructor.call(this)`;
+    - ES6规定，通过 super 调用父类的方法时， super 会绑定子类的 this
+  - ES5原型链中子类原型是父类实例，子类构造函数和父类构造函数无直接关系，因此需要使用call()
+    - ES6具有双重继承关系：除了原型对象间继承，子类本身是父类构造的实例
+
+- ref
+  - [深入JavaScript继承原理](https://juejin.cn/post/6844903569317953543)

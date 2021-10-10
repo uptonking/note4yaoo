@@ -43,6 +43,7 @@ modified: '2021-09-21T19:47:30.211Z'
   - 任意文件夹可以资料小程序网站的形式打开
   - 文档浏览体验很方便，类似excel里面切换多张工作表
 - 进一步的工作
+  - 直接在前端请求网盘中sqlite单文件数据库中保存的数据，因为observable笔记本在推、geojson -> geopackage
   - markdown文档的解析目前很简陋，需要定制的front-matter，针对中文优化空格、字体等
   - 文档编辑需要提高性能
 # prospect-garden-design

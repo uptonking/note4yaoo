@@ -9,6 +9,19 @@ modified: '2021-10-06T17:17:34.809Z'
 
 # 实现promise的一个示例
 
+- Promise.all
+  - 只要其中任何一个promise任务失败了，就会直接返回这个失败的结果。其他的忽略。 
+  - 只有任务数组中全部都成功了，才会把所有的任务结果全部返回。调用 .then 中的成功回调
+  - Promise.all返回的是promise所以可以继续调用promise原型上的方法，只是没有值而已
+- 使用场景
+  - 彼此相互依赖，其中任何一个被 reject ，其它都失去了实际价值
+
+- Promise.allSettled
+  - 可以获取数组中每个 promise 的结果，无论成功或失败
+- 使用场景
+  - 期望知道每个 promise 的执行结果
+  - 彼此不依赖，其中任何一个被 reject，对其它都没有影响
+
 ```JS
 /**
  * * 💡️ 实现promise的一个示例
@@ -27,8 +40,32 @@ class Promise {
 
     this.resolveList = []; // 成功后回调函数
     this.rejectList = []; // 失败后的回调函数
+    this.finalList = [];
 
     executor(this.execResolve.bind(this), this.execReject.bind(this));
+  }
+
+  execResolve(value) {
+    if (this.status !== 'pending') return;
+    this.status = 'fulfilled';
+
+    // 延迟执行，提供机会让then()方法执行注册事件处理函数
+    setTimeout(() => {
+      this.resolveList.forEach((fn) => {
+        value = fn(value);
+      });
+    });
+  }
+
+  execReject(reason) {
+    if (this.status !== 'pending') return;
+    this.status = 'rejected';
+
+    setTimeout(() => {
+      this.rejectList.forEach((fn) => {
+        reason = fn(reason);
+      });
+    });
   }
 
   /** 💡️ 任务是注册成功或失败回调函数 */
@@ -42,26 +79,17 @@ class Promise {
     return this;
   }
 
-  execResolve(value) {
-    if (this.status !== 'pending') return;
-    this.status = 'fulfilled';
-    setTimeout(() => {
-      this.resolveList.forEach((fn) => {
-        value = fn(value);
-      });
-    });
+  finally(onFinally) {
+    // if (this.status === 'pending') return;
+
+    if (onFinally && typeof onFinally === 'function') {
+      this.finalList.push(onFinally);
+    }
+
+    return this;
   }
 
-  execReject(reason) {
-    if (this.status !== 'pending') return;
-    this.status = 'rejected';
-    setTimeout(() => {
-      this.rejectList.forEach((fn) => {
-        reason = fn(reason);
-      });
-    });
-  }
-
+  /** 注册异常处理 */
   catch (cb) {
     if (cb) {
       this.rejectList.push(cb);
@@ -77,22 +105,20 @@ class Promise {
   static resolve(data) {
     if (data instanceof Promise) {
       return data;
-    } else {
-      return new Promise((resolve, reject) => {
-        resolve(data);
-      });
     }
+    return new Promise((resolve, reject) => {
+      resolve(data);
+    });
   }
 
   // 实现Promise.reject
   static reject(err) {
     if (err instanceof Promise) {
       return err;
-    } else {
-      return new Promise((resolve, reject) => {
-        reject(err);
-      });
     }
+    return new Promise((resolve, reject) => {
+      reject(err);
+    });
   }
 
   /**
@@ -120,6 +146,33 @@ class Promise {
             return reject(err);
           },
         );
+      }
+    });
+  }
+
+  static allSettled(promises) {
+    return new Promise1((resolve, reject) => {
+      const result = [];
+
+      let count = 0;
+      const len = promises.length;
+
+      for (let i = 0; i < len; i++) {
+        Promise1.resolve(promises[i])
+          .then(
+            (val) => {
+              result[i] = { status: 'fulfilled', value: val };
+            },
+            (reason) => {
+              result[i] = { status: 'rejected', reason };
+            },
+          )
+          .finally(() => {
+            count++;
+            if (count === len) {
+              resolve(result);
+            }
+          });
       }
     });
   }
@@ -187,126 +240,7 @@ Promise.race([q1, q2]).then((res) => {
 });
 ```
 
-# promise
-- Promise.all
-  - 只要其中任何一个promise任务失败了，就会直接返回这个失败的结果。其他的忽略。 
-  - 只有任务数组中全部都成功了，才会把所有的任务结果全部返回。调用 .then 中的成功回调
-  - Promise.all返回的是promise所以可以继续调用promise原型上的方法，只是没有值而已
-- 使用场景
-  - 彼此相互依赖，其中任何一个被 reject ，其它都失去了实际价值
-
-- Promise.allSettled
-  - 可以获取数组中每个 promise 的结果，无论成功或失败
-- 使用场景
-  - 期望知道每个 promise 的执行结果
-  - 彼此不依赖，其中任何一个被 reject，对其它都没有影响
-
-```JS
-/**
- * * 在每个promise任务的then方法中，都判断resolvedCount
- */
-Promise.all2 = (promises) => {
-  return new Promise((resolve, reject) => {
-    // promise成功结果数组
-    const result = [];
-    let resolvedCount = 0;
-
-    for (let i = 0; i < promises.length; i++) {
-
-      const promise = promises[i];
-      promise.then(
-        (response) => {
-          result[i] = response;
-          resolvedCount++;
-
-          // 当返回结果为最后一个时
-          if (resolvedCount === promises.length) {
-            resolve(result);
-          }
-        },
-        (error) => {
-          reject(error);
-        },
-      );
-
-    }
-  });
-};
-
-const p1 = Promise.resolve(1)
-const p2 = Promise.resolve(2)
-const p3 = new Promise((resolve, reject) => {
-  setTimeout(reject, 1000, 'three');
-});
-
-Promise.all2([p1, p2, p3])
-  .then(values => {
-    console.log('resolve: ', values)
-  }).catch(err => {
-    console.log('reject: ', err)
-  })
-
-// reject:  three // 丢失了成功的结果
-```
-
-```JS
-/**
- * * 在每个promise任务的finally方法中，都判断taskCount
- */
-Promise.allSettled2 = function(promises) {
-  return new Promise((resolve, reject) => {
-    const len = promises.length;
-
-    const result = [];
-    let count = 0;
-
-    for (let i = 0; i < len; i += 1) {
-      const promise = promises[i];
-
-      promise
-        .then(
-          (res) => {
-            result[i] = { status: 'fulfilled', value: res };
-          },
-          (error) => {
-            result[i] = { status: 'rejected', reason: error };
-          },
-        )
-        .finally(() => {
-          count++;
-
-          // 全部执行完了，才会执行resolve
-          if (count === len) {
-            resolve(result);
-          }
-        });
-    }
-  });
-};
-
-const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) =>
-  setTimeout(reject, 1500, 'foo'),
-);
-const promises = [promise2, promise1];
-
-Promise.allSettled2(promises).then((results) =>
-  results.forEach((result) => console.log(result)),
-);
-```
-
-```JS
-// 有一个promise状态变为fulfilled或rejected，就立即返回promise
-Promise.race = (promises) => {
-  return new Promise((resolve, reject) => {
-    for (let i = 0; i < promises.length; i++) {
-      Promise.resolve(promises[i]).then(resolve, reject);
-    }
-  });
-};
-```
-
-# promise的实现 / 手写promise
+# promise的实现示例2
 
 ```JS
 /**
@@ -417,7 +351,7 @@ function asyncToGenerator(genFn) {
       /**
        * * 封装了调用generator的next/throw方法的过程
        */
-      function step(key, args) {
+      function runIterator(fnName, args) {
         let genResult;
         try {
           genResult = gen[key](args);
@@ -433,8 +367,8 @@ function asyncToGenerator(genFn) {
         } else {
           // 若未迭代完成，就继续调用next方法
           return Promise.resolve(value).then(
-            (val) => step('next', val),
-            (err) => step('throw', err),
+            (val) => runIterator('next', val),
+            (err) => runIterator('throw', err),
           );
         }
       }
@@ -442,7 +376,7 @@ function asyncToGenerator(genFn) {
       /**
        * * 触发执行generator函数返回值对象的next()方法
        */
-      step('next');
+      runIterator('next');
     });
   };
 }
