@@ -9,6 +9,62 @@ modified: '2021-10-08T10:50:26.290Z'
 
 # guide
 
+# 爬楼梯
+
+```JS
+/**
+ * * 爬楼梯
+ * * 规律：第 n 层的走法数量是第 n-1 层和第 n-2 层走法数量之和。
+ * * 与Fibonacci不同的是，fib是0、1、1、2，这里是1，2，3
+ * 每次你可以爬1或2个台阶。你有多少种不同的方法可以爬到n个台阶的楼顶呢？
+ * https://leetcode-cn.com/problems/climbing-stairs/
+ * https://segmentfault.com/a/1190000040464134
+ * https://www.cnblogs.com/echolun/p/14707269.html
+ * https://blog.csdn.net/qq_30216191/article/details/81712018
+ */
+
+/**
+ * * 解法1: 循环累加
+ */
+function climbStairs(n) {
+  if (n <= 2) return n;
+
+  // 第n级台阶的爬法
+  let ret = 0;
+  // n1 表示前 2 项，n2 表示前 1 项
+  let n1 = 1;
+  let n2 = 2;
+
+  for (let i = 3; i < n + 1; i++) {
+    // 前两项值固定，因此从第 3 项开始循环
+    ret = n1 + n2;
+    n1 = n2;
+    n2 = ret;
+  }
+
+  return ret;
+}
+/**
+ * * 解法2: 递归
+ * 就是斐波那契函数的形式，oj会提示超出时间限制
+ */
+function climbStairs(n) {
+  if (n <= 2) return n;
+
+  return climbStairs(n - 1) + climbStairs(n - 2);
+}
+
+/***
+ * * 扩展：每次可以走 1 步、2 步、3 步
+ */
+function climbStairs(n) {
+  if (n <= 2) return n;
+  if (n === 3) return 4;
+
+  return climbStairs(n - 1) + climbStairs(n - 2) + climbStairs(n - 3);
+}
+```
+
 # 岛屿数量
 
 ```JS
@@ -21,7 +77,8 @@ modified: '2021-10-08T10:50:26.290Z'
  * 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
  */
 function numIslands(grid) {
-  let count = 0; // 岛屿数量
+  // 存放岛屿数量
+  let count = 0;
   if (grid.length === 0) return count;
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[0].length; j++) {
@@ -36,6 +93,7 @@ function numIslands(grid) {
 
 function dfsSearch(grid, i, j) {
   if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) return;
+
   if (grid[i][j] === '1') {
     grid[i][j] = '0';
     dfsSearch(grid, i + 1, j); // 搜索右边
@@ -105,61 +163,5 @@ function trap(height) {
   }
 
   return ret;
-}
-```
-
-# 爬楼梯
-
-```JS
-/**
- * * 爬楼梯
- * * 规律：第 n 层的走法数量是第 n-1 层和第 n-2 层走法数量之和。
- * * 与Fibonacci不同的是，fib是0、1、1、2，这里是1，2，3
- * 每次你可以爬1或2个台阶。你有多少种不同的方法可以爬到n个台阶的楼顶呢？
- * https://leetcode-cn.com/problems/climbing-stairs/
- * https://segmentfault.com/a/1190000040464134
- * https://www.cnblogs.com/echolun/p/14707269.html
- * https://blog.csdn.net/qq_30216191/article/details/81712018
- */
-
-/**
- * * 解法1: 循环累加
- */
-function climbStairs(n) {
-  if (n <= 2) return n;
-
-  // 第n级台阶的爬法
-  let ret = 0;
-  // n1 表示前 2 项，n2 表示前 1 项
-  let n1 = 1;
-  let n2 = 2;
-
-  for (let i = 3; i < n + 1; i++) {
-    // 前两项值固定，因此从第 3 项开始循环
-    ret = n1 + n2;
-    n1 = n2;
-    n2 = ret;
-  }
-
-  return ret;
-}
-/**
- * * 解法2: 递归
- * 就是斐波那契函数的形式，oj会提示超出时间限制
- */
-function climbStairs(n) {
-  if (n <= 2) return n;
-
-  return climbStairs(n - 1) + climbStairs(n - 2);
-}
-
-/***
- * * 扩展：每次可以走 1 步、2 步、3 步
- */
-function climbStairs(n) {
-  if (n <= 2) return n;
-  if (n === 3) return 4;
-
-  return climbStairs(n - 1) + climbStairs(n - 2) + climbStairs(n - 3);
 }
 ```

@@ -282,10 +282,14 @@ console.log('chd1, ', chd1);
 // 父类的构造函数只执行了一次！
 // 但是子类想要在原型上添加方法，必须在继承之后添加，否则将覆盖掉原有原型上的方法。
 
-function Child(...args) {
+function Child2(...args) {
   Parent1.apply(this, args);
   this.c1 = 'child1';
 }
+
+Child2.prototype = Object.create(Parent1.prototype);
+Child2.prototype.constructor = Child2;
+
 
 /** 类似Object.create, 可以不用创建父类，直接利用已有实例作为模板 */
 function object(o) {

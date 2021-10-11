@@ -61,6 +61,10 @@ Boolean(Infinity); // true
 - `substr(start, length)` vs `slice(beginIndex, endIndex)` 提取字符串片段
   - 👀️ 第2个参数是不同的
 
+- string.match(regexp)
+  - 若正则使用了`g`，返回所有匹配部分，但不包括捕获组
+  - 若正则未使用`g`，值返回匹配的第一个
+
 ### [ `string.charAt(x)` or `string[x]` ](https://stackoverflow.com/questions/5943726)
 
 - There is a difference when you try to access an index which is out of bounds or not an integer.

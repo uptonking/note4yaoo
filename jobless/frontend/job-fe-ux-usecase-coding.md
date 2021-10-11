@@ -9,17 +9,22 @@ modified: '2021-10-10T09:19:27.035Z'
 
 # guide
 
+- 场景题的思路
+  - 总体功能设计: 核心功能、扩展功能
+  - api设计：输入参数、输出返回值、转换思路
+  - 数据结构设计、优化
+
 - 如何实现直播上的弹幕组件，要求不能重叠，仿照b站上的弹幕
 - 如何实现动态表单，仿照antd上的form组件
 - 实现一个promise（一般不会这样问）
 - 实现一个限制请求数量的方法
 - 如何实现一个大文件的上传
 - 实现一个eventEmitter
-- 实现一个new，call，bind，apply
-- 实现一个throttle，debound
+- 实现一个new，call，apply，bind
+- 实现一个throttle，debounce
 - 实现promise.then，finally，all
+- 实现Generator，async
 - 实现继承，寄生组合继承，instanceof
-- 实现Generator，Aynsc
 # 延迟打印
 
 ```JS
@@ -35,9 +40,10 @@ for (var a = 0; a < 5; a++) {
 }
 
 // 方案二：使用let，每次都是块级变量
-for (let a = 0; a < 5; a++) {
-  setTimeout(() => console.log(a), 1000 * a);
+for (let i = 0; i < 5; i++) {
+  setTimeout(() => console.log(i), 1000 * i);
 }
+
 // 方案三：使用promise
 for (var a = 0; a < 5; a++) {
   Promise.resolve(a).then((value) => {
@@ -54,6 +60,43 @@ for (var a = 0; a < 5; a++) {
   })(a);
 ```
 
+# 实现固定宽高比
+- 最经典的padding-bottom/padding-top
+  - 垂直方向上的内外边距使用百分比做单位时，是基于包含块的宽度来计算的。
+  - 这种方式只能高度随着宽度动，并不能实现宽度随着高度动
+  - 尺寸比例，也可以通过calc()来计算
+
+```css
+.wrapper {
+  /* 最外层 */
+  width: 40vw;
+}
+
+.intrinsic-aspect-ratio-container {
+  width: 100%;
+  height: 0;
+  padding: 0;
+  padding-bottom: 50%;
+
+  /* 💡️ 这里指定的是 高：宽 */
+  /* padding-bottom: calc(33 / 17 * 100%); */
+  margin: 50px;
+  background-color: lightsalmon;
+}
+```
+
+- aspect-ratio属性指定元素宽高比
+
+```CSS
+.box2 {
+  background-color: beige;
+  /* 默认会占满屏幕 */
+  aspect-ratio: 16/9
+}
+```
+
+- 可替换元素(如`<img>、<video>`)和其他元素不同，它们本身有像素宽度和高度的概念。 
+  - 可以指定其宽度或者高度值，另一边自动计算就可以了 width: 100%; height: auto; 
 # 实现轮播图
 - 基于js实现
 

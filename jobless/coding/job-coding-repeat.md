@@ -187,3 +187,41 @@ it.next()
 it.next()
 // { value: undefined, done: true }
 ```
+
+# 手写 jsonp
+
+```JS
+/**
+ * * 手写jsonp
+ * * 思路：拼接querystring(以?或&开头)，动态创建script标签，将回调函数名挂载到window，然后appendChild(script)
+ https://juejin.cn/post/6947694608247685127
+ * - JSONP只支持GET请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。
+ */
+function jsonp(url, params, callback) {
+  // 判断是否已有参数
+  let queryString = url.indexOf('?') ? '?' : '&';
+  // 拼接参数
+  for (const item in params) {
+    if (params.hasOwnProperty(item)) {
+      queryString += `${item}=${params[item]}&`;
+    }
+  }
+
+  // 为cb拼接随机token（可省略）
+  const token = Math.random().toString().replace('.', '');
+  const cbName = 'jsonpCb' + token;
+  queryString += `callback=${cbName}`;
+
+  // 添加标签
+  const script = document.createElement('script');
+  script.src = url + queryString;
+
+  // 包装回调执行逻辑
+  window[cbName] = function(response) {
+    callback.apply(this, response);
+    document.removeChild(script);
+  };
+
+  document.appendChild(script);
+}
+```

@@ -7,20 +7,6 @@ modified: '2021-10-05T15:35:15.751Z'
 
 # job-coding-react-family
 
-# hooks
-
-```JS
-export function usePrevious(state) {
-  const ref = useRef();
-
-  useEffect(() => {
-    ref.current = state;
-  });
-
-  return ref.current;
-}
-```
-
 # redux-like
 
 # react-router-like

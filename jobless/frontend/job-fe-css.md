@@ -14,6 +14,9 @@ modified: '2021-10-10T09:17:08.066Z'
   - 盒模型
   - 定位布局
 
+- 常见伪元素 :
+  - :before/after, ::first-letter/line, ::selection
+
 - 零宽字符
   - 有时候可使用伪元素结合零宽字符使空div显示宽高
   - .class1::before{ content: "\200B"; }

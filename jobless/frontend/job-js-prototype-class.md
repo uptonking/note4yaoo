@@ -195,3 +195,24 @@ function getPrivateImpl(args) {
 
 - ref
   - [深入JavaScript继承原理](https://juejin.cn/post/6844903569317953543)
+# `Object.create(proto, propertiesObject)`
+
+- creates a new object, using an existing object as the prototype of the newly created object.
+
+```JS
+function objectCreate(o) {
+
+  function F() {}
+
+  F.prototype = o;
+
+  return new F();
+}
+
+const newObj = objectCreate(obj);
+```
+
+- 当修改newOBj.constructor.prototype的属性的时候，旧的o.constructor.prototype就不会被修改
+
+- [Object.create 内部为什么要用一个中间函数来实现？](https://www.zhihu.com/question/272240823)
+  - 动态修改继承关系会严重降低性能（现代浏览器优化失效），所以用 ES6 的 `Reflect.setPrototypeOf` 也一样不可取。

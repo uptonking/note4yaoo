@@ -21,7 +21,7 @@ modified: '2021-10-08T19:52:20.160Z'
 function maxDepth(root) {
   if (!root) return 0;
 
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 }
 ```
 

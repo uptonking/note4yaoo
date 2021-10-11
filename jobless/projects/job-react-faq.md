@@ -34,9 +34,26 @@ modified: '2021-10-05T08:23:17.099Z'
   * 用一个 component 递归渲染
   * 写一个 react router
 # to-do
-- react 懒加载的实现原理
+
 # faq
 
+# [Vue Composition API 和 React Hooks 对比](https://juejin.cn/post/6847902223918170126)
+
+- Hooks 通过 function 抽离的方式，实现了复杂逻辑的内部封装
+- Vue Composition API 围绕一个新的组件选项 setup 而创建。setup() 为 Vue 组件提供了状态、计算值、watcher 和生命周期钩子
+
+- 原理区别
+- React Hooks底层是基于链表实现，调用的条件是每次组件被 render 的时候都会顺序执行所有的 Hooks 
+  - 因为底层是链表，每一个 Hook 的 next 是指向下一个 Hook 的，if 会导致顺序不正确，从而导致报错，所以 React 是不允许这样使用 Hook 的。
+  - React数据更改的时候，会导致重新 render，重新 render 又会重新把 Hooks 重新注册一次 
+- Vue Hook 只会被注册调用一次，Vue能避开这些麻烦的问题，原因在于它对数据的响应是基于 proxy 的，对数据直接代理观察。
+  - 这种场景下，只要任何一个更改 data 的地方，相关的 function 或者 template 都会被重新计算，因此避开了 React 可能遇到的性能上的问题
+
+- 代码的执行
+  - Vue中，“钩子”就是一个生命周期方法
+  - Vue Composition API 的 setup() 晚于 beforeCreate 钩子，早于 created 钩子被调用
+  - React Hooks 会在组件每次渲染时候运行，而 Vue setup() 只在组件创建时运行一次
+  - Vue 中 setup() 只会运行一次，可以将 Composition API 中不同的函数 (reactive、ref、computed、watch、生命周期钩子等) 作为循环或条件语句的一部分
 ## 如何在vue里用react渲染，如何在js/jquery中使用react组件
 
 - 基本思路是 ReactDOM.render(reactElement, domContainer)，直接将react元素渲染到dom
@@ -51,7 +68,56 @@ modified: '2021-10-05T08:23:17.099Z'
     - However, using this return value is legacy and should be avoided because future versions of React may render components asynchronously in some cases. 
     - If you need a reference to the root ReactComponent instance, the **preferred solution is to attach a callback ref to the root element**.
 
-## 
+## react 懒加载
+
+- 比如某个体积相对比较大的第三方库或插件（比如JS版的PDF预览库），只在单页应用（SPA）的某一个不是首页的页面使用了，这种情况就可以考虑代码分割，增加首屏的加载速度
+
+- import()、React.lazy 和 Suspense 共同一起实现了 React 的懒加载，也就是我们常说了运行时动态加载，
+  - 即 OtherComponent 组件文件被拆分打包为一个新的包（bundle）文件，并且只会在 OtherComponent 组件渲染时，才会被下载到本地。
+- 当 webpack 解析到该`import()`语法时，会自动进行代码分割。
+
+- React.lazy返回了一个 LazyComponent 对象，其 _status 默认是 -1
+- 随后会检查模块是否 Resolved，如果已经Resolved了（已经加载完毕）则直接返回moduleObject.default（动态加载的模块的默认导出），否则将通过 throw 将 thenable 抛出到上层。
+- React捕获到异常之后，会判断异常是不是一个 thenable，如果是则会找到 `SuspenseComponent` ，
+  - 如果 thenable 处于 pending 状态，则会将其 children 都渲染成 fallback 的值，
+  - 一旦 thenable 被 resolve 则 SuspenseComponent 的子组件会重新渲染一次。
+
+```JS
+class Suspense extends React.Component {
+  state = {
+    promise: null
+  }
+
+  componentDidCatch(err) {
+    // 判断 err 是否是 thenable
+    if (err !== null && typeof err === 'object' && typeof err.then === 'function') {
+      this.setState({ promise: err }, () => {
+        err.then(() => {
+          this.setState({
+            promise: null
+          })
+        })
+      })
+    }
+  }
+
+  render() {
+    const { fallback, children } = this.props
+    const { promise } = this.state;
+    return <>{ promise ? fallback : children }</>
+  }
+}
+```
+
+- `React.lazy(() => import('./SomeComponent'))`; 
+  - define a component that is loaded dynamically
+  - Note that rendering lazy components requires that there’s a `<React.Suspense>` component higher in the rendering tree. 
+- `<React. Suspense fallback={<Spinner />}>`; 
+  - Today, lazy loading components is the only use case supported
+  - While this is not supported today, in the future we plan to let Suspense handle more scenarios such as data fetching.
+
+- ref
+  - [深入理解React：懒加载（lazy）实现原理](https://juejin.cn/post/6844904191853494280)
 
 ## React的请求应该放在哪个生命周期中?
 

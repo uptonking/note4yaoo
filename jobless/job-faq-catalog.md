@@ -34,19 +34,19 @@ modified: '2021-09-20T09:00:43.564Z'
   - 参考资料
 
 - projects 项目经历
-  - react框架
+  - 富文本编辑器
   - materials-repo
   - configurable-dashboard
   - prospect-garden-design css
   - prosemirror-editor
   - react组件库
-  - 编辑器
+  - react框架
   - 表格
   - 性能优化
 
 - coding 手撕代码
-  - json解析器 > ast tree
   - markdown解析器
+  - json解析器 > ast tree
   - 常用算法
   - 常用组件
   - 经典css

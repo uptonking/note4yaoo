@@ -18,6 +18,10 @@ modified: '2021-09-26T16:44:04.493Z'
   - 编辑器技术深度、广度都很大，值得长期投入，符合程序员的职业目标，而不是实现各种crud应用
 
 - self-cons
+  - 经常陷入技术选型的无底洞
+    - 如css-in-js、theming
+    - 自己实现写得丑，第三方的依赖实在太多
+  - 算法能力和思维需要训练和加强，如ot、crdt
   - 方向不明确
     - 编辑器baseline：prosemirror，slate，quill，editorjs
     - 产品方向：笔记、论文、office文档、jupyter
@@ -27,13 +31,11 @@ modified: '2021-09-26T16:44:04.493Z'
     - 跨端实现
     - 响应式
     - 移动端弹出键盘
-  - 经常陷入技术选型的无底洞
-    - 自己实现写得丑，第三方的依赖实在太多
   - 优先级没分清
 
 - plan
   - 积累技术和代码：用prosemirror重写outline
-  - 研究同类产品做到行业领先：飞书、语雀、confluence
+  - 研究同类产品，技术上和体验上做到行业领先：飞书、语雀、confluence
   - 用技术领先实现市场领先
 
 - why web developer
