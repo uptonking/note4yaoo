@@ -21,6 +21,9 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - faq-not-yet
   - 如何指向当前页面的标题
+
+- painful
+  - 对于页面不需要展示，但跳转需要用到的标题id，如何设计和书写
 # features
 - core
   - optional block style editor

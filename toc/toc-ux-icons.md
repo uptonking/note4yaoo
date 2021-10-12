@@ -49,6 +49,8 @@ modified: '2021-05-06T09:58:23.803Z'
   - https://heroicons.com/
   - A set of free MIT-licensed high-quality SVG icons for UI development
 
+- https://iconpark.oceanengine.com/home
+  - IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库
 # icons
 
 - feather  /MIT/16kStar/201908

@@ -52,6 +52,11 @@ modified: '2021-07-20T02:15:25.917Z'
   - transforms an MDX syntax tree into a Prosemirror syntax tree. 
     - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
 
+- https://github.com/bytedance/syllepsis
+  - https://bytedance.github.io/syllepsis/#/
+  - rich text editor compatible with mainstream modern browsers.
+  - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins
+
 - https://github.com/dxos/editor 
   - /AGPLv3/202101/js
   - Collaborative editor

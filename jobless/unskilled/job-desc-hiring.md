@@ -34,9 +34,9 @@ modified: '2021-09-26T16:44:04.493Z'
   - 优先级没分清
 
 - plan
-  - 积累技术和代码：用prosemirror重写outline
-  - 研究同类产品，技术上和体验上做到行业领先：飞书、语雀、confluence
-  - 用技术领先实现市场领先
+  - 前端主程之一，积累技术和代码，高效高质量完成工作：用prosemirror重写outline
+  - 追求在同类产品中实现技术领先和体验领先：飞书、语雀、Confluence
+  - 从技术领先到市场领先，服务更多的客户和更大的市场
 
 - why web developer
   - interest, self-taught

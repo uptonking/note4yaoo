@@ -24,14 +24,20 @@ modified: '2021-08-10T16:39:00.631Z'
 - faq
 # 开始使用
 
+```
+npm run start
+```
+
 # 配置约定
 - 在项目运行前支持的配置项，只作为默认初始值，后续修改不会生效
-  - ./config/defaultSettings.ts 配置项很少，暂时只包括标题、主题色
+  - `./config/defaultSettings.ts` 暂时支持的配置项很少，暂时只包括标题、主题色
+
 - 在项目运行时支持的配置
-  - ./config/routes.ts 配置路由、文件路径
-  - ./src/App.tsx 每次initialState改变都会触发rerender
+  - 通过右侧设置面板直接在界面中配置界面布局、主题
+  - ./config/routes.ts 配置路由及其对应的文件路径
   - initialState可以直接修改globalStore中的值
-- 通过设置面板直接在界面中配置，支持的配置项不多
+
+- ./src/App.tsx 每次initialState改变都会触发rerender
 # 路由配置
 - 添加页面、添加链接
 # 布局配置
@@ -64,4 +70,3 @@ modified: '2021-08-10T16:39:00.631Z'
 ## 网络请求
 
 # roadmap
-- goal、recent

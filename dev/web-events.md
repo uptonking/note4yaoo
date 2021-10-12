@@ -178,6 +178,7 @@ modified: '2021-04-23T17:10:52.920Z'
     - 如果这种情况发生，某些mousemove事件会发生在原始目标元素之外，没有捕获，这些事件将无法分派正确的处理程序
     - addEventListener方式其实对capture或者bubble都无影响，因为反正都是监听在document之上，不管鼠标多快，不管是不是超出目标元素的范围，mousemove事件都会发生，所以总会把目标元素移动到指定鼠标的位置
     - 这里的考虑是针对ie浏览器的elementToDrag.attachEvent()这种方式的事件绑定，因为它将mousemove事件直接绑定在了目标元素上，那么如果鼠标移动太快，而元素没有跟上，那么mousemove事件就不会再目标元素身上发生，就触发不了处理函数
+
 - 元素无论自身有没有定位，offsetParent返回的是距离自己最近的有定位的祖先元素，若祖先没有定位，则返回body
 - offset值指的是元素外边到祖先元素内边的距离
 - event.pageX若有滚动条，要包括页面拉上面的部分，若无滚动条，则page与client一致
@@ -193,6 +194,7 @@ modified: '2021-04-23T17:10:52.920Z'
   - 当某个div触发touch事件，将会冒泡到document.body上
   - 针对不同类型的touch事件，触发document不同的mouse事件
   - 然后接下来就是document.body的事件委托了
+
 - 计算位置坐标
   - Element.getBoundingClientRect() 
     - returns the size of an element and its position relative to the viewport.
@@ -203,7 +205,7 @@ modified: '2021-04-23T17:10:52.920Z'
 - scrollHeight、scrollWidth
   - 获取对象可滚动的总高度/宽度（针对父容器）
 - offsetLeft、offsetTop
-  - 获取当前对象与父元素之间的距离（不包含父元素的边框，父元素是porsition不为static）
+  - 获取当前对象与父元素之间的距离（不包含父元素的边框，父元素是position不为static）
   - 这两个属性只能用于元素设置了overflow的css样式中，否者这两个属性没有任何意义。且overflow的值不能为visible，但可以为hidden, auto, scroll的之中，但是hidden最常见
   - scrollLeft：是该元素的显示（可见）的内容与该元素实际的内容的距离
   - 一开始scrollLeft的值为0，你就看到了你的页面最左边的内容，而不显示超过浏览器的那部分。当你向右拖动滚动条时，scrollLeft的值在增大，你就看到了右边隐藏的内容，而看不到左边隐藏的部分。就会从scrollLeft的位置开始显示，而不显示0-scrollLeft的元素内容。即：该元素的显示位置与实际内容的位置的距离变大。元素会从scrollLeft的位置显示该元素的内容
@@ -228,25 +230,25 @@ function getOffsetX(event) {
   }
 ```
 
-# resize
-
 # scrollHeight/Top
-
 - scrollHeight
   - 获取元素内容的高度，包括overflow属性导致的不可见内容，在没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同
   - 包括content、padding，不包括margin
   - 只有DOM元素才有，window/document没有
   - 判断元素是否滚动到底 
     - element.scrollHeight - element.scrollTop === element.clientHeight
+
 - scrollTop
   - **可读写**，其他client? 和offset? 都只读
   - 设置或获取一个元素不可见部分的顶部距离盒子border-top的距离
   - 当一个元素的容器没有产生垂直方向的滚动条, 那它的scrollTop的值默认为0
   - 设置scrollTop的值小于0，scrollTop被设为0
   - scrollTop属性只有DOM元素才有，window/document没有
+
 - scrollLeft
   - 可读写
   - 设置或获取位于元素左边界和目前可见内容的最左端之间的距离
+
 - onscroll
   - 当元素的滚动条滚动时触发的事件
   - element.onscroll=function(){}，元素包括DOM元素、window、document
@@ -267,6 +269,8 @@ function getOffsetX(event) {
   - 对于inline的元素这个属性一直是0
   - 在没有滚动条时，scrollHeight===clientHeight恒成立
   - 练习中，不管有没有滚动条，document.body的scrollWidth与clientWidth一直相等
+
+
 - clientTop
   - border-top的高度，及上边框的粗细宽度
   - https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop
@@ -277,9 +281,11 @@ function getOffsetX(event) {
 ## offsetHeight
 
 - offsetHeight
-  - 包含content、padding、滚动条、border，不包括margin
+  - 包含content、padding、滚动条、border，**不包括margin**
   - 标准盒模型采用，设置style的height即这里
   - 对于inline的元素这个属性一直是0
+
+
 - offsetLeft
   - 当前元素相对于其offsetParent元素的左边的距离
 - offsetTop

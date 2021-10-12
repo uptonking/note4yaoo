@@ -19,8 +19,11 @@ modified: '2021-09-20T18:01:39.932Z'
 - [quill editor(BSD)](https://quilljs.com/blog/)
 
 - [handsontable(paid) blog](https://handsontable.com/blog)
-
+# editor
 - [王福朋 wangEditor](https://www.zhihu.com/people/wangfupeng1988)
+
+- [lastnigtic 字节 syllepsis](https://lastnigtic.cn/archives/)
+- [李健乐 金山 字节 syllepsis 排版](https://blog.edeity.me/)
 # frontend
 - [React Status Weekly](https://react.statuscode.com/issues)
 - [React Weekly 法语版](https://www.getrevue.co/profile/sebastien-lorber)
