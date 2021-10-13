@@ -290,7 +290,6 @@ function Child2(...args) {
 Child2.prototype = Object.create(Parent1.prototype);
 Child2.prototype.constructor = Child2;
 
-
 /** 类似Object.create, 可以不用创建父类，直接利用已有实例作为模板 */
 function object(o) {
   function F() {}
@@ -360,4 +359,35 @@ setTimeout(function() {
   console.log('我被调用了');
   setTimeout(arguments.callee, 100);
 }, 100);
+```
+
+# 大数相加
+
+```JS
+/**
+ * * 大数相加
+ * * 思路：先在短数前面补0对齐，再逐位相加，ret前面接上当前位，再计算出进位大小
+ * https://zhuanlan.zhihu.com/p/72179476
+ * https://gist.github.com/Jancat/eaee5b0b95b96a1a5c0dbfc5b981bad2
+ */
+function addBigNum(a, b) {
+  const maxLen = Math.max(a.length, b.length);
+  a = a.padStart(maxLen, 0);
+  b = b.padStart(maxLen, 0);
+
+  let ret = '';
+  let carry = 0;
+  let temp;
+
+  for (let i = maxLen - 1; i >= 0; i--) {
+    temp = parseInt(a[i], 10) + parseInt(b[i], 10) + carry;
+    ret = (temp % 10) + ret;
+    carry = Math.floor(temp / 10);
+  }
+
+  if (carry === 1) {
+    ret = '1' + ret;
+  }
+  return ret;
+}
 ```

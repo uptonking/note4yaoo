@@ -98,7 +98,7 @@ modified: '2021-10-10T09:18:22.446Z'
 - 回流：某个元素的尺寸发生了变化，则需重新计算渲染树，重新渲染。
 # 首屏加载优化
 
-## https://vue3js.cn/interview/vue/first_page_time.htmlSPA首屏加载速度慢的怎么解决
+## [首屏加载速度慢的怎么解决](https://vue3js.cn/interview/vue/first_page_time.htmlSPA)
 
 - 首屏时间（First Contentful Paint），指的是浏览器从响应用户输入网址地址，到首屏内容渲染完成的时间，此时整个网页不一定要全部渲染完成，但需要展示当前视窗需要的内容
 - 关于计算首屏时间
@@ -167,5 +167,3 @@ performance.getEntriesByName("first-contentful-paint")[0].startTime
 - 优化dom渲染时间
   - 使用 defer async 加载js 优先级低的 可以使用 defer
   - preload 使用提高加载权重
-#
-#

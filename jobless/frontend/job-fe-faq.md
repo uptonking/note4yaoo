@@ -9,9 +9,7 @@ modified: '2021-10-10T09:18:13.931Z'
 
 # guide
 
-
 # 双向绑定 vs 单向绑定
-
 - [说说你对双向绑定的理解?](https://zhuanlan.zhihu.com/p/321367623)
 - 单向绑定非常简单，就是把Model绑定到View，当我们用JavaScript代码更新Model时，View就会自动更新
 - 双向绑定，是在单向绑定的基础，用户更新了View，Model的数据也自动被更新了
@@ -38,9 +36,7 @@ modified: '2021-10-10T09:18:13.931Z'
   - 优点是在表单交互较多的场景下，会简化大量业务无关的代码。
   - 缺点就是由于都是“暗箱操作”，我们无法追踪局部状态的变化
 - 我们可以在合适的场景下使用合适的手段。比如在 UI控件 中(通常是类表单操作)，我会使用双向的方式绑定数据；而其他场景则统一采用 单向 + inline event
-
 # csr vs ssr
-
 - ssr
   - 浏览器向后端请求页面
   - 后端服务器会计算所需的业务数据后将结果填充在页面的对应区域，再将页面响应给前端
@@ -72,7 +68,6 @@ modified: '2021-10-10T09:18:13.931Z'
 - 前端框架方向
   - 前后端一体化框架，自动生成api层
   - streaming ssr
-
 # [安全相关 XSS](https://juejin.cn/post/6844904179182354439)
 - XSS Cross Site Script
   - XSS攻击，通常是指攻击者通过 “HTML注入”篡改了网页，插入了恶意的脚本，从而在用户浏览网页时，对用户的浏览器进行控制或者获取用户的敏感信息（Cookie, SessionID等）的一种攻击方式。
@@ -84,17 +79,16 @@ modified: '2021-10-10T09:18:13.931Z'
   - 在页面内生成浮窗广告
 
 - 防御XSS的方法
-  - 使用HttpOnly属性来防止直接通过 document.cookie 来获取 cookie。
-    - HttpOnly 并非阻止 XSS 攻击，而是能阻止 XSS 攻击后的 Cookie 劫持攻击。
-  - 输入和输出的检查
-    - 永远不要相信用户的输入
+  - 利用CSP(Content Security Policy) 即内容安全策略，是一种可信白名单机制
   - 防御 DOM Based XSS
     - 从JavaScript输出到HTML页面，相当于一次 XSS输出的过程
     - 会触发 DOM Based XSS的地方有很多，比如 innerHTML/document.write/页面中所有的input框/XMLHttpRequest返回的数据 
     - 一定要避免在字符串中拼接不可信的数据
-  - 利用CSP(Content Security Policy) 即内容安全策略，是一种可信白名单机制
+  - 使用HttpOnly属性来防止直接通过 document.cookie 来获取 cookie。
+    - HttpOnly 并非阻止 XSS 攻击，而是能阻止 XSS 攻击后的 Cookie 劫持攻击。
+  - 输入和输出的检查
+    - 永远不要相信用户的输入
     - 可以在服务端配置浏览器哪些外部资源可以加载和执行
-
 
 - 反射型XSS
   - 恶意脚本作为网络请求的一部分。
@@ -115,28 +109,25 @@ modified: '2021-10-10T09:18:13.931Z'
   - 用户打开带有恶意代码的URL
   - 用户浏览器接受到响应后执行解析，前端JavaScript取出URL中的恶意代码并执行
   - 恶意代码窃取用户数据并发送到攻击者的网站，冒充用户行为，调用目标网站接口执行攻击者指定的操作。
-
-
-
-
-
 # [安全相关 CSRF](https://juejin.cn/post/6844904180918779918)
 - 跨站请求伪造（Cross Site Request Forgery），是指攻击者诱导用户打开伪造的网站，在伪造网站中，利用用户的登陆状态发起的跨站请求。
   - CSRF攻击就是利用了用户的登陆状态，并通过第三方的站点来做一个坏事。
-- 要完成一次CSRF攻击,受害者依次完成两个步骤:
+- 要完成一次CSRF攻击, 受害者依次完成两个步骤:
   - 登录受信任网站A，并在本地生成Cookie
   - 在不登出A的情况，访问危险网站B
   - 在a.com登陆后获得cookie, 然后有个支付的页面，支付页面有个诱导点击的按钮或者图片，第三方网站域名为 b.com，中的页面请求 a.com的接口，b.com 其实拿不到cookie，请求 a.com会把Cookie自动带上（因为Cookie种在 a.com域下）
-
 
 - CSRF攻击
   - 自动发起Get请求
   - 自动发起POST请求
   - 引导用户点击链接
 
-
 - CSRF防御
   - 利用cookie的SameSite
   - 验证请求的来源点，通过HTTP请求头中的 Referer和Origin属性。
   - 最开始浏览器向服务器发起请求时，服务器生成一个CSRF Token，浏览器之后再发起请求的时候，需要带上页面中的 CSRF Token
-- 
+# target 和 currentTarget 的区别
+- target在事件流的目标阶段；
+  - currentTarget在事件流的捕获，目标及冒泡阶段。
+  - 只有当事件流处在目标阶段的时候，两个的指向才是一样的，
+- 而当处于捕获和冒泡阶段的时候，target指向被点击的对象而currentTarget指向当前事件活动的对象（一般为父级）。

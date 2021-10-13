@@ -37,6 +37,13 @@ modified: '2021-10-05T08:23:17.099Z'
 
 # faq
 
+# 为什么自定义的React组件必须大写
+- string 类型 React会当做原生的DOM节点进行解析
+- ReactClass type 类型 自定义组件
+
+- babel在编译过程中会判断jsx组件的首字母，如果是小写，则当做原生的DOM标签解析，就编译成字符串。如果是大写，则认为是自定义组件，编译成对象。
+
+
 # [Vue Composition API 和 React Hooks 对比](https://juejin.cn/post/6847902223918170126)
 
 - Hooks 通过 function 抽离的方式，实现了复杂逻辑的内部封装

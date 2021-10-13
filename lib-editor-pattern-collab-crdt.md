@@ -9,6 +9,27 @@ modified: '2021-07-23T15:52:10.409Z'
 
 # guide
 
+## [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)
+- You are welcome to ask about the differences. 
+- I don't have much experience with automerge. 
+  - If I understand correctly, automerge was primarily build for sharing application state. 
+  - They decided to make application state immutable, and therefore it nicely integrates into react applications.
+- Yjs was primarily build for shared editing on text and rich-text. 
+  - Yjs exposes state as mutable data types. 
+  - State is mutable by design, because some computations can be done more efficiently on mutable objects.
+- I would argue that Yjs is the better choice if you plan to share huge (text / rich-text) documents, 
+  - because 1. its algorithm is specifically designed for shared editing and 
+  - 2. it encodes its structure very efficiently in a binary format. 
+  - Automerge on the other hand might be easier to handle because state changes are just operations on the shared document.
+- If you are not working on a shared editing application and you are not hitting any performance problems, then you are probably fine with automerge. 
+  - Otherwise you should definitely consider Yjs.
+- I created a set of benchmarks to compare Yjs with Automerge
+  - https://github.com/dmonad/crdt-benchmarks
+
+
+
+
+
 # blog
 
 ## [I was wrong. CRDTs are the future_202009](https://josephg.com/blog/crdts-are-the-future/)
