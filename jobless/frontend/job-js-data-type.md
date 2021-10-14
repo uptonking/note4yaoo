@@ -9,8 +9,9 @@ modified: '2021-10-10T09:31:00.229Z'
 
 # guide
 
-## js数据类型
-
+# typescript
+- unknown类型可以接受任意类型赋值，但是unknown类型赋值给其他类型前，必须被断言
+# js数据类型
 - JavaScript 中有八（7+1）种基本的数据类型（七种基本数据类型，也称为原始类型，object 为复杂数据类型）
   - string：用于字符串
   - number：用于整数或浮点数，在 ±(2^53-1) 范围内的整数
@@ -20,8 +21,7 @@ modified: '2021-10-10T09:31:00.229Z'
   - bigInt：用于任意长度的整数
   - symbol：用于唯一的标识符
   - object：用于更复杂的数据结构
-
-## 类型转换
+# 类型转换
 
 ```JS
 String(null); // 'null'
@@ -50,8 +50,7 @@ Boolean(Infinity); // true
   [] == "" // true： 左侧 toPrimitive() 转为 "" 和右侧相等
 ```
 
-## string
-
+# string
 - 字符串字面量 (通过单引号或双引号定义) 和 直接调用 String 方法(没有通过 new 生成字符串对象实例)的字符串都是基本字符串
   - 当基本字符串需要调用一个字符串对象才有的方法或者查询值的时候(基本字符串是没有这些方法的)，JS会自动将基本字符串转化为字符串对象并且调用相应的方法或者执行查询
 
@@ -65,7 +64,7 @@ Boolean(Infinity); // true
   - 若正则使用了`g`，返回所有匹配部分，但不包括捕获组
   - 若正则未使用`g`，值返回匹配的第一个
 
-### [ `string.charAt(x)` or `string[x]` ](https://stackoverflow.com/questions/5943726)
+## [ `string.charAt(x)` or `string[x]` ](https://stackoverflow.com/questions/5943726)
 
 - There is a difference when you try to access an index which is out of bounds or not an integer.
   - `string[x]` returns the character at the xth position in string if x is an integer between 0 and string.length-1, and returns `undefined` otherwise.
@@ -83,14 +82,13 @@ Boolean(Infinity); // true
 'hello'.charAt(true) // 'e'
 ```
 
-## number
+# number
 
 ```JS
 NaN === NaN // false; 但作为Map的key时是被认为相等的
 ```
 
-## 数字处理
-
+# 数字处理
 - JS 的 Number 类型遵循的是 IEEE 754 标准，使用的是 64 位固定长度来表示
 - 0.1 转换为 IEEE 754 标准，转换过程主要经历 3 个过程：
   - 将 0.1 转换为二进制表示：乘2取整，自上而下，得到0.00011
@@ -128,8 +126,7 @@ console.log(
 );
 ```
 
-## Object 对象
-
+# Object 对象
 - 从对象中删除属性的方法
   - const {prop, ...newObj} = obj; 
   - delete obj['prop']
@@ -158,9 +155,7 @@ console.log(
   - 对象 [[prototype]] 不可修改
   - 其余属性都可修改
 - 从限制的严格性来说：Object.preventExtensions() [不可增，可删可改] < Object.seal() [不可增不可删，可改] < Object.freeze() [不可增不可删不可改] 
-
-## array
-
+# array
 - 扁平化
   - reduce，递归
   - map，递归
@@ -200,7 +195,7 @@ console.log(
   - Array === Array.prototype.constructor //true
   - 调用Array构造函数带不带new结构都想同，但调用普通的构造函数带不带new却是不同的
 
-### `concat vs ...rest` ([...arr1, ...arr2] vs arr1.concat(arr2))
+## `concat vs ...rest` ([...arr1, ...arr2] vs arr1.concat(arr2))
 
 - concat不会改变arr1和arr2，返回的也是新数组，a new Array instance.
 - 最大的区别是rest操作符可读性好，测试leetcode快排算法时结尾用展开语法更快
@@ -292,9 +287,7 @@ let phoneBook = inputs.reduce((acc, entry) => {
   - `concat` makes no attempt to iterate the generator and appends it as a whole, while `...` nicely fetches all values from it.
   - ES6 provides a way to override it with `Symbol.isConcatSpreadable`; 
 - Performance-wise `concat` is faster, probably because it can benefit from array-specific optimizations, while `...` has to conform to the common iteration protocol. 
-
-## Map vs Object
-
+# Map vs Object
 - 区别
   - Map对象默认不包含键值对
     - Object原型对象上的默认属性会添加到普通对象上
@@ -339,9 +332,7 @@ let phoneBook = inputs.reduce((acc, entry) => {
   - 但属性的值仍然可以修改。
 - Object.isFrozen
   - 属性不能被修改。
-
-## Map/Set
-
+# Map/Set
 - Map会记住kv的插入顺序
 
 ```JS
@@ -399,10 +390,9 @@ global.gc();
 ```
 
 - ES2021 推出了 WeakRef ，能实现保留对另一个对象的弱引用，而不会阻止该弱引用对象被GC回收
+# valueOf vs toString (+号运算符) 类似java的自动拆箱装箱/隐式类型转换
 
-## valueOf vs toString (+号运算符) 类似java的自动拆箱装箱/隐式类型转换
-
-### [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+## [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
 
 - returns the primitive value of the specified object.
 - JavaScript automatically invokes it when encountering an object where a primitive value is expected.
@@ -437,7 +427,7 @@ aa.valueOf(); // {}
 +false // 0
 ```
 
-### [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
+## [Object.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
 
 - returns a string representing the object.
 - toString() method that is automatically called when the object is to be represented as a text value or when an object is referred to in a manner in which a string is expected.
@@ -465,7 +455,7 @@ Number(''); // 0
 'a' === new String('a')  // false
 ```
 
-### [obj.toString() vs String(obj)](https://stackoverflow.com/questions/3945202)
+## [obj.toString() vs String(obj)](https://stackoverflow.com/questions/3945202)
 
 - `value.toString()` will cause an error if value is `null` or `undefined`. 
   - `String(value)` should not.
@@ -478,7 +468,7 @@ Number(''); // 0
     - If the result is a primitive, return result, else go to Step 3.
   - Throw `TypeError`.
 
-### The addition operator ( `+` ) 自动类型转换
+## The addition operator ( `+` ) 自动类型转换
 
 - produces the sum of numeric operands or string concatenation.
 

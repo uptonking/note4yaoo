@@ -16,12 +16,25 @@ modified: '2021-10-13T13:25:26.289Z'
 ## 两数之和
 
 ```JS
-function
+function twoSum(nums, target) {
+  const map = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const curr = target - nums[i];
+    if (map[curr] !== undefined) return [i, map[curr]];
+
+    map[nums[i]] = i;
+
+  }
+}
 ```
 
 ## 超长文档、超宽画布，如何优化性能
 
 - 文档可先分页、再利用virtualized只渲染可见区部分
+
+- 局部/分层渲染（只渲染当前视图的内容，或按照主次异步渲染不同图层），
+- 离屏渲染/双缓冲（提前完成下一帧计算，并加入到缓冲池中）
 
 ## 给你很多坐标点，怎么查找一个点附近的poi元素
 

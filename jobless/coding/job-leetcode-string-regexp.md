@@ -24,30 +24,23 @@ modified: '2021-10-06T14:47:19.962Z'
  * 两个字符相减会变成number类型。
  */
 function addStrings(num1, num2) {
-  // 使用两个指针分别指向数字字符串的末尾位置。
-  let i = num1.length - 1;
-  let j = num2.length - 1;
-  // 变量carry记录进位。
-  let carry = 0;
+  const maxLen = Math.max(a.length, b.length);
+  a = a.padStart(maxLen, 0);
+  b = b.padStart(maxLen, 0);
+
   let ret = '';
+  let carry = 0;
+  let temp;
 
-  while (i >= 0 || j >= 0) {
-    const n1 = i >= 0 ? num1[i] : 0;
-    const n2 = j >= 0 ? num2[j] : 0;
-
-    // 进位当当前两个数的和
-    const sum = Number(n1) + Number(n2) + carry;
-
-    // 获取一个当前位
-    ret = (sum % 10) + ret;
-
-    // 获取进位
-    carry = Math.floor(sum / 10);
-    i--;
-    j--;
+  for (let i = maxLen - 1; i >= 0; i--) {
+    temp = parseInt(a[i], 10) + parseInt(b[i], 10) + carry;
+    ret = (temp % 10) + ret;
+    carry = Math.floor(temp / 10);
   }
 
-  if (carry === 1) ret = carry + ret;
+  if (carry === 1) {
+    ret = '1' + ret;
+  }
   return ret;
 }
 ```
