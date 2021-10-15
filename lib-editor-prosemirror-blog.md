@@ -13,6 +13,77 @@ modified: '2021-06-15T00:07:49.228Z'
   - https://github.com/benrbray
     - https://github.com/benrbray/noteworthy
     - https://github.com/benrbray/prosemirror-math
+
+## [ContentEditable困境与破局 prosemirror的基础实现原理](https://zhuanlan.zhihu.com/p/123341288)
+
+- 现在市面上针对富文本编辑器的方案大概分为以下三种
+  - textarea
+  - contenteditable
+  - Google Doc
+- 首先，我们来思考一下，一个编辑器要包含什么？
+  - 最基础也要有：可编辑的DOM，外部修改DOM的API
+  - 这两个要素浏览器都提供了，分别是ContentEditable和document.execCommand
+- contentEditable实际上是浏览器厂商提供的一个富文本编辑器的实现方案。
+  - 通过设置一个dom的contenteditable属性为true，可以让这个DOM变得可以编辑。
+- document.execCommand
+  - 当一段document被转为designMode（contentEditable 和 input框）的时候，document.execCommand的command会作用于光标选区（加粗，斜体等操作），也可能会插入一个新的元素，也可能会影响当前行的内容，取决于command是啥。
+- 一个contentEditable的DOM配合document.execCommand可以实现修改DOM的标签，调整DOM的背景色等等一系列操作。
+
+- 厂商实现差异
+- 对同一个标准（contentEditable，同时是相对不够完善的标准），各个浏览器厂商的实现方案是不同的。
+- 当我们在一个空的contentEditable的dom里面打一个回车，那么预期的表现是什么？换行。那么承载这个新的行的标签是什么？
+  - Chrome/Safari 是 div 标签
+  - Firefox 在60版本之前，是在当前的行级标签中加一个br
+  - Firefox 在60版本之后，趋同于Chrome/Safari，是div标签
+  - IE/Opera 是 p 标签
+
+- 不可预测的表现
+  - 先回车再换行时可能生成额外标签，如span
+
+- 行内标签嵌套
+  - 在没有明确的规则约束的前提下，用户在contentEditable的dom中编写出什么样的结构都是有可能的
+  - 视觉上等价，但是在DOM结构上不是等价的。
+  - contentEditable生成的DOM不总是符合我们的预期的。
+
+- 基于现代前端框架开发 ui = f(state/data)，操作一个简单的JS对象一定是比操作DOM要简单的，这屏蔽了浏览器差异，规避了DOM复杂的特性。
+- 首先，我们在View和command之间引入一个state。
+  - 在数据存储层面，我们就不需要维护复杂的DOM结构了，可以用一个JS object的结构去维护当前结构
+- 这样的树状的结构导致我们操作跨层级的DOM十分不方便
+  - 行内标签实际上并不会影响我们解释完整的DOM结构，那么我们实际上是可以把他作为style处理的，比如 strong 我们可以等价于 font-weight: bold, em 可以等价于 font-style: italic。
+- 实际上，这样更符合我们人类对于这段文档的认知习惯，而且无论上面那个dom结构怎么变换嵌套形式，我们都会将其解释成同样的一个state。
+- 用户的行为是不可以预测的，editable dom里面出现什么样的结构都是有可能的。这显然不是我们想要的。
+  - 有序的，规则化的，可解析的结构才是我们开发喜欢的结构。
+- 可以设定规则，可以通过指定什么样的DOM标签下可以出现什么样的DOM标签，什么DOM标签可以拥有什么样的marks来约束用户的输入，在这里称作Schema。
+  - 如果用户的输入产生了不符合我们设定的schema的标签结构。我们就忽略它（or 转化成我们认可的标签）
+- 通过这样的声明，并将其以某种形式应用到EditorState的生成过程中，将不合规的标签移除掉，那么我们的编辑器就应该只出现符合我们刚才schema定义的规则的内容了。
+
+- 有了能够表示编辑过程中不同时间节点的DOM状态EditorState（被Schema约束），有了能够从State映射到View的方法。那么这个链条中差的就是从 StateA 到 StateB 的过程。
+- 引入一个概念叫做Transform（tr），由tr来描述一次变更，这个变更可能是代码中生成的，也有可能是用户在contentEditable进行交互的时候自动生成的。
+  - 当我们给一个state应用一个tr后，他应该生成一个新的state，新的state来生成新的View。
+
+- 那思考一下这个tr中应该包含什么信息？
+  - 当前的选区信息
+  - 当前的文档对象
+  - 描述一系列动作的步骤
+  - 当前正在使用的marks
+- 这实际有点类似batch的概念，并不是每做一次修改就会直接应用到UI上，而是一个完整的事件之后才会被应用到UI上。我们把步骤称为Step
+  - step实际上就是我们之前提到的document.execCommand在EditorState上的实现，相当于我们这个编辑器的接口，一般来说要实现的功能集很大
+- 什么是当前正在使用的marks
+  - storedMarks实际上就是提供了这样的一个位置存储这个数据，上面叙述的Step实现的功能集里面应该也要有addStoredMarks和removeStoredMarks这两个方法。
+
+- 本文叙述的只是最为简单的编辑器的实现思路，在我们实现了足够完整的功能集之后，整个编辑器应该可以像堆积木一样，用这些基础的东西组装成一个复杂的编辑器。
+- 除此之外，编辑器的复杂性还在于用户行为不可预测，边界Case太多，要思考出一个完备的，囊括所有可能的逻辑实际上是相对困难的，这一方面就需要我们一点点的去慢慢完善我们的编辑器功能
+
+- 请问一下实现事前同步修改model层如何考虑各种输入法呢？比如再beforeinput的时候可以拦截英文输入法，直接修改model层。但是中文输入法要如何拦截呢？
+  - 目前是使用的`MutationObserver`监听变化，如果有变化再映射到model层的
+
+- 我捋一捋，就是更改时先改state ，再把state 的内容覆盖到前面的内容里面？会不会有延迟呢？
+  - 是会有的，当数据量大的时候就会更新变慢。
+  - 这个时候文章中提到的行内标签转化为mark就有一定的性能优化作用。
+  - 然后一般都会借鉴diff算法，更新局部而非全部重绘
+- 我专门去看过有道云笔记的html，里面全部都是span+style，每个span都把所有的style写到里面去了。不知道这种做法算哪一类？可能存在什么问题
+  - 对于一篇文章来说，html是提供了更加清晰，更语义化的标签的
+  - 一般做富文本的话，文章内容是需要后台分析处理的，语义化的标签写正则会方便一些，span+style简直不敢想
 # [富文本编辑器Prosemirror - 入门](https://zhuanlan.zhihu.com/p/263454334)
 - prosemirror-model：
   - 负责prosemirror的内容结构。
@@ -40,17 +111,17 @@ modified: '2021-06-15T00:07:49.228Z'
   - toDOM表示其渲染为`<p>xxx</p>`，子节点从0的位置开始插入，更多的配置可以查看NodeSpec，
   - content是一个类正则字符串，可以使用node的名称或者是group名。
 
-```
+```js
 paragraph: {
-    group: "block", 
-    content: "text*",
-    parseDOM: [{tag: 'p'}],
-    toDOM(node) { return ['p', 0] },
-     attrs: {
-        align: {
-            default: 'left'
-        }
+  group: "block",
+  content: "text*",
+  parseDOM: [{ tag: 'p' }],
+  toDOM(node) { return ['p', 0] },
+  attrs: {
+    align: {
+      default: 'left'
     }
+  }
 }
 ```
 

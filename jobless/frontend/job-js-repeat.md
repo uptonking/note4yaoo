@@ -34,6 +34,8 @@ modified: '2021-10-10T09:31:09.831Z'
   - 柯里化实现
   - react hooks如返回值中的setState
     - [深入理解：React hooks是如何工作的](https://zhuanlan.zhihu.com/p/81528320)
+  - redux - useState
+  - react - useState
 
 - 一个函数和对其其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）
   - 存在自由变量的函数就是闭包

@@ -103,7 +103,7 @@ modified: '2021-09-21T19:49:30.918Z'
 ## Virtual DOM 的优势
 
 - DOM引擎、JS引擎相互独立，但又工作在同一线程（主线程）
-- JS代码调用 DOM API 必须挂起 JS引擎、转换传入参数数据、激活DOM引擎，DOM 重绘后再转换可能有的返回值，最后激活 JS 引擎并继续执行若有频繁的 DOM API 调用，且浏览器厂商不做“批量处理”优化，
+- JS代码调用 DOM API 必须挂起JS引擎、转换传入参数数据、激活DOM引擎，DOM重绘后再转换可能有的返回值，最后激活JS引擎并继续执行若有频繁的 DOM API 调用，且浏览器厂商不做“批量处理”优化，
 - 引擎间切换的单位代价将迅速积累若其中有强制重绘的 DOM API 调用，重新计算布局、重新绘制图像会引起更大的性能消耗。
 
 - 虚拟 DOM 不会立马进行排版与重绘操作
@@ -166,7 +166,7 @@ modified: '2021-09-21T19:49:30.918Z'
 
 ## [react类组件中为什么要bind this](https://zhuanlan.zhihu.com/p/54962688)
 
-- React在 document上进行统一的事件分发， dispatchEvent通过循环调用所有层级的事件来模拟事件冒泡和捕获。
+- React在document上进行统一的事件分发， dispatchEvent通过循环调用所有层级的事件来模拟事件冒泡和捕获。
   - 事件处理函数是直接调用的，并没有指定调用的组件，所以不进行手动绑定的情况下直接获取到的 this是不准确的
 
 - React class组件中，点击事件的handle方法其实就相当于回调函数传参方式赋值给了 callback，在执行 click 事件时类似 `element.addEventListener('click', callback, false)`, handle失去了隐式绑定的上下文，this 的值为 undefined

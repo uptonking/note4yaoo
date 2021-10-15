@@ -112,6 +112,8 @@ modified: '2021-09-20T09:00:43.564Z'
 - [前端面试查漏补缺 15个知识点15篇文章](https://juejin.cn/post/6844903781079973895)
 # 开发参考
 - [前端性能优化总结](https://github.com/zoro-web/blog/issues/11)
+- [前端面试（个人总结）](https://blog.csdn.net/COCOLI_BK/article/details/99414036)
+- [给公司面试了100多个前端，心态差点给爷整崩了](https://www.helloworld.net/p/5395275659)
 # 算法参考
 - [字节跳动最常考的64道JS算法题](https://dev.to/fengmao/64-js-3loo)
 

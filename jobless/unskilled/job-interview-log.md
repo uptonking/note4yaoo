@@ -9,6 +9,49 @@ modified: '2021-10-13T13:25:26.289Z'
 
 # guide
 
+# 20211015-墨刀-一面/二面
+- 墨刀产品系列
+  - 思维导图、脑图
+  - 流程图
+  - 原型设计
+
+- 脑图数据结构设计
+  - 思路：树、sibling
+
+- 流程图叶子节点增多时，动态调整布局的方法
+  - 思路：深度优先计算高度、确定位置
+
+- 文件管理器
+  - 文件层数特别多 - 动态请求
+  - 文件数量特别多 - 虚拟滚动
+
+- 二面主要围绕产品
+  - 原型设计基于 dom
+  - 新产品 流程图、脑图基于canvas
+
+## mipmap
+
+- 在三维计算机图形的贴图渲染中有一个常用的技术被称为Mipmapping。
+- 为了加快渲染速度和减少图像锯齿，贴图被处理成由一系列被预先计算和优化过的图片组成的文件, 这样的贴图被称为 MIP map 或者 mipmap。
+
+- Mipmap中每一个层级的小图都是主图的一个特定比例的缩小细节的复制品。
+  - 虽然在某些必要的视角，主图仍然会被使用，来渲染完整的细节。
+  - 但是当贴图被缩小或者只需要从远距离观看时，mipmap就会转换到适当的层级。
+
+- 因为mipmap的图片已经是做过抗锯齿处理的，从而减少了实时渲染的负担。放大和缩小也因为mipmap而变得更有效率。
+# 20211015-投光编辑器-三面
+- ot vs crdt
+
+- 线性代数
+# 20211014-投光编辑器-二面
+- To define a type guard, we simply need to define a function whose return type is a type predicate
+
+```typescript
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+```
+
 # 20211013-投光编辑器-一面
 
 > 面试官：雪碧

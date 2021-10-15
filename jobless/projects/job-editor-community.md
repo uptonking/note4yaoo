@@ -36,6 +36,7 @@ modified: '2021-10-01T06:42:39.302Z'
 - 如何不借助 contenteditable 实现富文本编辑器？
 # discuss
 
+
 ## [如何不借助 contenteditable 实现富文本编辑器？](https://www.zhihu.com/question/366666295)
 
 - 不使用 contentEditable 无非就以下几件事
@@ -47,7 +48,7 @@ modified: '2021-10-01T06:42:39.302Z'
   - 由数据驱动的，难度则由整个架构设计决定开发难度和扩展难度。看到有一些富文本抽象成 Block 和 Inline 加 Style 这种结构的
 
 - 简单地说就是拦截各种操作事件，然后转换成对对象的操作，然后再渲染反映出来。
-  - 可以看看 Draft.js 项目和代码。
+  - 可以看看 draft.js 项目和代码。
   - 比如光标和选择，就是有一个内部的 SelectionState 来存储当前状态，你可以找到 offset 等信息
   - 当鼠标点击编辑器的时候，你就需要拦截然后看是单击还是拖拽，然后再计算 offset 等，再拦截键盘事件，把接受到的字符在 ContentState 里面插入到对应的 offset 位置（单击）或者替换内容（拖拽）
   - 之后再利用 React 等渲染出来，看到的就是替换掉了。
