@@ -13,23 +13,118 @@ modified: '2021-09-21T19:49:30.918Z'
 - [React我就问这些问题！能不能刷到我就看你的造化了](https://juejin.cn/post/6933197531606155272)
 # faq-optimization
 
+## react设计有哪些缺陷
+
+### 部分场景使用双向绑定比较繁琐
+
+- 典型的例子是表单，通过state更新ui不算复杂，但通过ui更新state需要手动设置value和onChange，onChange与html标准里面的onInput不一致
+- onchange vs oninput
+  - onchange事件是在输入框输入完内容后，输入框失焦后触发；而onkeydown/onkeypress/onkeyup在处理复制、粘贴、拖拽、长按键（按住键盘不放）等细节上并不完好。Unlike oninput, the `onchange` event handler is not necessarily called for each alteration to an element's value.
+  - onpropertychange为IE专属的。onpropertychange属性可在某些情况下解决上面存在的问题，不用考虑是否失去焦点。无论js操作还是键盘鼠标手动操作，仅仅要HTML元素属性发生改变就可以马上捕获到。
+  - oninput事件是在输入框中输入时就会触发。HTML5中的标准事件oninput，实时监听（和ie的onpropertychange一样），只是IE9下面的浏览器是不支持oninput事件的。
+
+- onChange触发频率过高时，也会对性能问题，影像输入体验
+  - 可以考虑用非受控组件，使用更新频率低的事件，比如 onBlur。
+- 对非受控组件，react只渲染一次不更新的解决方案有2种
+  - 添加key，让input强制更新。受控组件是更新其中的值，而我们这里要更新整个 input 组件，虽然更新频率低了，但是更新一次代价大了。
+  - 用 ref 指向真实 dom 节点，在适当时机手动更新其中的值。但是写的代码更多了，非常繁琐。
+
+- debounce 做的是 debounce 的事情，他并不能修复 onChange 的语义，他考的是延时来完成任务，而原生 api 并不是靠这个触发。我们当然希望代码不仅能跑，还要跑得合乎道理，而不是凑合着看起来差不多。
+
+- 非受控组件将真实数据储存在 DOM 节点中，所以在使用非受控组件时，有时候反而更容易同时集成 React 和非 React 代码。
+  - 使用非受控组件往往可以减少你的代码量
+
+### 合成事件层太厚了
+
+- 只要放弃IE，打薄事件层，立刻可以让 react-dom 大幅度瘦身。
+- 合成事件还有个问题，就是他的实现方式其实不是对开发者透明的，使用stopPropagation又要自己在document注册dom事件时就会变成一个坑
+
+### children属性的困惑
+
+- 当一个组件将children视为数据而非渲染内容时，children的结构不可随意封装。
+- 在不仔细阅读文档（如果有的话）或者参考实现的情况下，无法分辨一个组件怎么使用children。
+
+- children 的存在导致破坏 pure component 的默认优化
+
+### js动画的实现与react的设计相悖
+
+- 除了css动画，基于js的动画一般都是获取dom，然后操作style属性、调用animate()
+
+### 生态非常丰富，很多方案没有最佳实践
+
+- 状态管理，context vs redux
+- css-in-js
+- 网络请求, useEffect, onClick
+
+- 已解决
+  - 状态逻辑复用方法：hoc, render props --> hooks
+
+### 缺乏把DOM对象从一个节点下直接移动到另一个节点下而不重建的方法
+
+- HTML里可以
+
+### JSX转换到JS丢失了一部分信息
+
+- 这部分算是 JSX 的，可能和 React 关系不大。
+- 在 JSX 中，className 的值都是静态的，在整个渲染周期内都没有改变的可能，而两个button中的 a 和 b 都是动态的，会随着应用状态的转移而发生改变。
+- 是静态还是动态，我们在 JSX 中看得清清楚楚，然而转换成 JavaScript，喂给 React.createElement 函数，它并不能知道 "counter/output"这样的className字面量，和 a/b 这样的变量有什么不同。
+- 这是静态分析就能知道的信息，可以提供给 diff 算法，减轻 diff 负担。
+  - 这其中的想法来源于 lit-html，如果可能的话，是以后可以优化的点。
+
+- 另外jsx信息丢失的问题，本质是编译器的能力问题，你不应该指望jsx编译到js后保留信息，而是应该先在jsx层面上做足优化，再去js，如babel的constant-element插件就在干这个事情。
+
+- 写完发现槽点都是集中在 react-dom 上，其实 react 不一定是以 react-dom 为渲染器的，它还有其他的比如 react-native
+
+### PureComponent 即便一个组件事实上是非纯的，实现者依然能声明它是纯的
+
+- 这种声明与事实的相悖，潜藏着大量的BUG隐患。
+
+### 没有slot
+
+- 不能说这是一个缺陷，它有替代的解决方案，但对代码的可读性确实不友好。
+
+### 其他设计缺失或缺陷
+
+- hooks不支持class组件
+  - 感觉有点太牵强了，思考一下，如果支持了，未来团队的代码该怎么维护，以什么为标准，以什么为最佳实践
+
+- keep-alive
+  - 指在 UnMount 时，并不删掉组件实例，而是在某时候调回来省去 Mount 过程的一种优化。
+  - react是没有 keep-alive 的机制的，UnMount 了就 UnMount 了，下一次继续 Mount。
+  - 它和上文提到的区分 Mount 和 Update 的问题合在一起，造成开发者总是在思考如何能【触发/不触发】一个特定的生命周期函数，从而达成自己的目的，但这个思路并不是很好，不够 react。
+  - 当然，由于有太多组件依赖了 Mount，keep-alive 会导致组件的行为发生改变（Mount 钩子不被触发了），所以 keep-alive 做不了。
+
+- 没有用typescript重写
+
+- 很多unstable_useMutableSource/useSyncedStore/renderSubtreeIntoContainer/batchedUpdates/runWithPriority/
+
+- prop drilling
+
+## react优点
+
+- React.createElement创造一个非平台相关的PlainObject来描述需要渲染的元素。
+  - 提供PlainObject描述元素，维护状态，生命周期。跨平台Render部分实现渲染才是最牛逼的地方。
+  - React.createElement很像编程语言里产生新的astNode，完全就是把任何代码通过jsx-parser转成了一个IR。
+
+- 生态工具非常丰富：优点 + 缺点
+
 ## [React性能优化 | 包括原理、技巧、Demo、工具使用](https://juejin.cn/post/6935584878071119885)
 
 - 跳过不必要的组件更新
   01. PureComponent、React.memo
   02. shouldComponentUpdate
   03. useMemo、useCallback 实现稳定的 Props 值
-  04. 发布者订阅者跳过中间组件 Render 过程
-  05. 状态下放，缩小状态影响范围
-  06. 列表项使用 key 属性
-  07. useMemo 返回虚拟 DOM
-  08. 跳过回调函数改变触发的 Render 过程
-  09. Hooks 按需更新
-  10. 动画库直接修改 DOM 属性
+  04. useMemo返回虚拟DOM
+  05. 列表项使用 key 属性
+  06. 状态下放，缩小状态影响范围
+  07. 跳过回调函数改变触发的 Render 过程
+  08. 发布者订阅者跳过中间组件 Render 过程
+  09. Hooks按需更新
+  10. 动画库直接修改DOM属性
 - 提交阶段优化
   - 避免在 didMount、didUpdate、useLayoutEffect 中更新组件 State
 - 前端通用优化
-  01. 组件按需挂载
+  01. 组件按需挂载，懒加载
   02. 批量更新
   03. 按优先级更新，及时响应用户
   04. 缓存优化

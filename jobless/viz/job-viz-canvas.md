@@ -10,7 +10,7 @@ modified: '2021-10-15T16:03:50.979Z'
 # guide
 
 # 什么是 canvas 污染
-- 将一张跨域的图片绘制到 canvas 上，这个 canvas 就是被污染的，此时无法读取该 canvas 的数据
+- 将一张跨域的图片绘制到canvas上，这个canvas就是被污染的，此时无法读取该 canvas 的数据
   - 这个是同源策略的限制。应该是为了避免第三方网站读取其他网站的图片数据（Canvas渲染第三方图片请求不受 CORS 限制），避免用户隐私泄露。比如已知某个隐私图片的 url，进入第三方网站后，可以请求到该图片，如果不做数据读取限制的话，该数据将被传送到网站后台进而导致信息泄露。
 - 有什么解决方案？
   - 这个要看能否控制图片的响应了。如果可以控制的话，利用 cors 跨域，并在图片请求发起时增加 crossOrigin = "Anonymous" 设置；否则只能自己的网站做个代理，让网站与图片同源。
@@ -29,7 +29,7 @@ modified: '2021-10-15T16:03:50.979Z'
 # canvas简介
 - Use the HTML `<canvas>` element with either the canvas scripting API or the WebGL API to draw graphics and animations.
 
-- Canvas 解决了什么问题
+- Canvas解决了什么问题
   - 在互联网出现的早期，Web 只不过是静态文本和链接的集合。1993 年，有人提出了 img 标签，它可以用来嵌入图像。
   - 但是随着 Web 应用的发展，出现了 HTML5，在 HTML5 中，浏览器中的媒体元素大受青睐。包括出现新的 Audio 和 Video 标签，可以直接将音频和视频资源放在 Web 上，而不需要其他第三方如flash。
 - 其次就是为了解决只能在 Web 页面中显示静态图片的问题，出现了 Canvas 标签。

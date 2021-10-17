@@ -381,7 +381,9 @@ function addBigNum(a, b) {
 
   for (let i = maxLen - 1; i >= 0; i--) {
     temp = parseInt(a[i], 10) + parseInt(b[i], 10) + carry;
+    // 计算当前位
     ret = (temp % 10) + ret;
+    // 计算进位
     carry = Math.floor(temp / 10);
   }
 

@@ -35,17 +35,21 @@ modified: '2021-10-05T08:23:17.099Z'
   * 写一个 react router
 # to-do
 
-# faq
-
+# 为什么用useReducer使用useState，而不是反过来
+- 我倒觉得reducer实现state才是正道，为啥要反过来……
+  - 不要把reducer理解成有actionType才工作的，reducer就是一个old => new的函数，而setState是一种固定的reducer（只认new）。这就像是map基于reduce实现，而不可能反过来
+# unstable_renderSubtreeIntoContainer vs portal
+- unstable_renderSubtreeIntoContainer现在已经被Portal组件取代
+- Portal不需要自己管理组件的生命周期。
+  - 用ReactDOM.render()渲染到某个DOM节点，如果要卸载的话需要手动执行unmountComponentAtNode()
+- Portal可以接受到Context的值。
+  - 用render()渲染的组件是无法获取到上级节点的Context值的。比如多语言机制实现
 # 为什么自定义的React组件必须大写
 - string 类型 React会当做原生的DOM节点进行解析
 - ReactClass type 类型 自定义组件
 
 - babel在编译过程中会判断jsx组件的首字母，如果是小写，则当做原生的DOM标签解析，就编译成字符串。如果是大写，则认为是自定义组件，编译成对象。
-
-
 # [Vue Composition API 和 React Hooks 对比](https://juejin.cn/post/6847902223918170126)
-
 - Hooks 通过 function 抽离的方式，实现了复杂逻辑的内部封装
 - Vue Composition API 围绕一个新的组件选项 setup 而创建。setup() 为 Vue 组件提供了状态、计算值、watcher 和生命周期钩子
 
@@ -61,6 +65,7 @@ modified: '2021-10-05T08:23:17.099Z'
   - Vue Composition API 的 setup() 晚于 beforeCreate 钩子，早于 created 钩子被调用
   - React Hooks 会在组件每次渲染时候运行，而 Vue setup() 只在组件创建时运行一次
   - Vue 中 setup() 只会运行一次，可以将 Composition API 中不同的函数 (reactive、ref、computed、watch、生命周期钩子等) 作为循环或条件语句的一部分
+
 ## 如何在vue里用react渲染，如何在js/jquery中使用react组件
 
 - 基本思路是 ReactDOM.render(reactElement, domContainer)，直接将react元素渲染到dom

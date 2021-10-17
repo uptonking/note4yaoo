@@ -35,7 +35,7 @@ modified: '2021-09-26T16:44:04.493Z'
 
 - plan
   - 前端主程之一，积累技术和代码，提高性能和用户体验：用prosemirror重写outline
-  - 追求在同类产品中实现技术领先和体验领先：飞书、语雀、Confluence
+  - 追求在同类产品中实现技术领先和体验领先：飞书、语雀、Confluence； figma, framer
   - 从技术领先到市场领先，服务更多的客户和更大的市场
 
 - why web developer

@@ -7,8 +7,46 @@ modified: '2021-09-21T19:47:30.211Z'
 
 # job-projects-yaoo
 
-# configurable-dashboard 仪表板
+# 项目中的难点
 
+## 长列表virtualized实现，参考react-window
+
+## 不同框架的数据通信
+
+- 编辑器通知react组件，一般是更新props而不是state
+  - 在编辑器的NodeView.update获取新数据, React.createPortal(), ReactDOM.render(), unstable
+
+- react组件通知编辑器
+  - 直接通过编辑器的updateState
+
+- react NodeView如何通知其他NodeView
+  - react state --> editor state 钩子更新 portals nodeView --> react state
+
+- 2个问题
+  - portal中自定义react组件子树非常多，还可能非常深 (react应用自身就是一颗巨大的vdom树)
+  - 通信链路长的问题
+
+## 当一个portal里面存在大量NodeViews，任何一个NodeView的rerender都会触发Portal组件的rerender
+
+- 虽然最终commit阶段只会更新dom变化的部分，但render阶段Portal也存在React.createElement将所有子组件、标签的vdom重新计算一遍的过程
+
+- 思路1: 最简单的，提取高频子组件到单独的portal，如popover、callout，缺点是需要额外添加Provider和PortalRenderer
+- 思路2: 使用非受控组件+useRef手动更新dom，这些组件ui展示的数据保存在dom，不受react state/props控制，代码量变大了
+
+- 思路atlaskit： 
+  - 借助context传递EventEmitter，这样context的值不变，但EventEmitter中保存的值变化了，同时不会引起Context. Provider的所有子组件更新
+  - 首次渲染使用createPortal，更新使用 unstable_renderSubtreeIntoContainer
+  - 批量更新，需要更新的ReactNodeView会将自身的更新方法注册到portalProviderApi, 然后每次PortalProvider更新都会在componentDidUpdate里面更新
+
+- once I was able to implement the rendering with React portals I noticed my approach to be quite unusable when rendering large numbers of nodeviews. 
+  - This was mainly due to how the rendering of the portals was done in one big loop that every update caused to re-render. 
+- Atlassian solved by using unstable_renderSubtreeIntoContainer.
+
+- 渲染的时机选择
+  - 独立
+  - 同时
+  - 之后
+# configurable-dashboard 仪表板
 - goals
   - 简单易定制的仪表板/管理界面
 - tasks
