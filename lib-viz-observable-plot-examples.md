@@ -11,6 +11,7 @@ modified: '2021-08-21T12:54:10.152Z'
 
 - https://github.com/looker/vizzy
   - 依赖d3.v5, looker-components
+  - a collection of React-based SVG components for making data viz charts.
   - Custom visualization utilities for Looker.
   - VizzyCharts package emphasizes Map based visualizations
 
