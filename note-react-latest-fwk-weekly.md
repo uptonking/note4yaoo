@@ -14,7 +14,20 @@ modified: '2021-03-22T18:46:03.513Z'
   - 英文版 https://twitter.com/sebastienlorber
 # 2021
 
-## w0927-1003
+## w1011-1017
+
+👉 many useState VS useState(obj)
+👉 useState => useRef
+👉 hook w/ imperative APIs
+👉 TS + hooks
+👉 React code review
+👉 Next.js conf + React Advanced
+👉 Metro Exotic Transformers
+👉 React-Native team Ask-Us-Anything
+👉 Demo: Skia, Harmony
+
+- ref
+  - https://twitter.com/sebastienlorber/status/1450480085656612873
 
 ## w0920-09926
 

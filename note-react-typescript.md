@@ -374,3 +374,8 @@ const MyComp3 = (): React.ReactElement => <div>Hello</div>;
 const MyComp4: React.FC<MyProps> = () => <div>Hello</div>;
 
 ```
+
+
+# ref
+
+- [React & TypeScript: how to type hooks (a complete guide)](https://devtrium.com/posts/react-typescript-how-to-type-hooks)

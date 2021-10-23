@@ -9,6 +9,13 @@ modified: '2021-08-19T13:02:28.478Z'
 
 # guide
 
+# edge-linux体验
+- 优点
+  - 同步无需vpn
+
+- 缺点
+  - 无网络时，edge在打开后等待一小段时间会自动退出
+  - 不单单是edge浏览器的问题，ubuntu的窗口dock在左边后，屏幕左边隔一段时间就会闪屏/花屏
 # chrome
 - 可以在地址栏显示扩展图标
   - chrome-extension://iahnhfdhidomcpggpaimmmahffihkfnj

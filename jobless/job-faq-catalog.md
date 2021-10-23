@@ -153,6 +153,7 @@ modified: '2021-09-20T09:00:43.564Z'
 
 - [投光编辑器 岗位信息](https://www.shixiseng.com/com/com_aik7t6totq5z)
   - 微信投递 https://learnku.com/go/t/56865 
+  - [牛客网招聘信息](https://www.nowcoder.com/job/41675)
 # 更多资源
 - 面试参考来源
   - github、知乎、掘金、语雀

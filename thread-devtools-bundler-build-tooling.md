@@ -15,6 +15,15 @@ modified: '2021-09-22T05:47:54.470Z'
 
 - ## 
 
+- ## For checking if a codepoint is possibly a JS identifier, using a gigantic switch statement seems 3.5x faster than binary search 
+- https://twitter.com/jarredsumner/status/1451355843857768452
+  - at least in Zig, which is an LLVM frontend
+  - V8, esbuild and TypeScript use binary search
+- Turns out, the microbenchmark was flawed. The inline while in main() made it inconsistent with real code. 
+- Here’re updated numbers that are consistent with real code
+  - Using a bitset is 3x faster with Unicode-heavy text, but only slightly faster for ascii text.
+  - By “Unicode-heavy” I mean lots of emoji
+
 - ## Also easy to forget: JS/Node is FANTASTIC at orchestrating IO. **Moving compute out of JS but keeping data flow in JS** is the best of both worlds, IMO
 - https://twitter.com/FredKSchott/status/1440508008245514246
 - I’m thoroughly convinced Go & Rust are great choices for core compute functions like compilers, bundlers, and the like. 

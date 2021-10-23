@@ -11,6 +11,12 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 代码中 state 和 status 区别：
 - https://twitter.com/ThaddeusJiang/status/1444133176352247810
   * 有状态迁移关系：state，交通灯状态： red -> green -> yellow

@@ -7,8 +7,34 @@ modified: '2021-05-11T14:36:13.256Z'
 
 # note-react-pattern
 
-# [Building highly customizable React components_201810](https://ankit-m.github.io/blog/building-highly-customizable-react-components/)
+# [4 Common Patterns You Can Easily Focus On In Your React Code Reviews](https://www.chakshunyu.com/blog/4-common-patterns-you-can-easily-focus-on-in-your-react-code-reviews/)
 
+- Prop Drilling
+- A common (anti-)pattern to solve this issue is to pass the value from the parent component all the way to the child component that needs it. 
+-  While this works, it means that all the components in between also have to accept that prop.
+- If you’re constantly going between files and being navigated all over the place while trying to understand the code, then it’s very likely that you’re dealing with an occurrence of prop drilling. 
+- Based on the scenario, solutions include but aren’t limited to using the composition pattern, React context, or compound components.
+
+- Multiple Boolean States
+- A common example is a component that fetches some data and needs to handle the logic for retrieving that data. 
+  - This almost always goes together with one variable to track whether the data is done loading and one variable to track whether the data request has failed. 
+  - In certain scenarios, it’s also relevant to track whether the data request has already been initialized.
+- During reviews, this pattern comes to light more quickly.
+  -  It’s indicated by multiple numbers of boolean states that are part of the same data flow or the logic flow. 
+  -  This is paired with a lot of combined null checking to verify them individually before they can be used in any meaningful way.
+- The most straightforward way to solving this problem is changing the implementation of the states to use a different data structure. 
+  - Instead of several boolean variables, use one enumeration variable. 
+  - Combining this with TypeScript will remove any unreachable state from having to be handled during development.
+
+- Component, Hook, And Props Naming
+- The most common mistake regarding naming components, hooks, and props that I’ve experienced is sacrificing clarity for length. 
+- Shorter names are easier to read and result in less code but aren’t always more clear. 
+- Therefore, it never hurts to include more information in the names, like elaborating on the context in which it should be used, what type it is, what it expects and returns, and more.
+
+- God Component(does too much job)
+- In React development, the equivalent would be a component that either receives a lot of data, is responsible for a lot of logic, renders most of the UI, or a combination of these. 
+- When reviewing React code, these symptoms become significantly more apparent due to the lack of IDE support in the browser. You’re forced to read through the code in a different way than you’re used to, which makes you focus on different aspects. 
+# [Building highly customizable React components_201810](https://ankit-m.github.io/blog/building-highly-customizable-react-components/)
 - Building a React web application, for the most part, is writing components which combine to form your user interface.
 - No matter how strict the design guidelines are, you cannot expect the same type of button to be used everywhere. There will be some changes required based on the context.
 - Customizability allows them to be modified, both visually and functionally, to fit in various use cases. 
