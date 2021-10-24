@@ -25,17 +25,17 @@ modified: '2021-10-23T18:08:23.141Z'
 - Focus on content, not formatting
   - 处于创作模式时，不应该加入复杂的排版配置功能
   - 让用户专注创作，输出结果时进行排版
-# compatibility 兼容要求
-- PC 浏览器平台
-  - 支持 Firefox，Safari，Chrome，Edge 浏览器。
+# compatibility 兼容性要求
+- PC浏览器平台
+  - 支持Firefox，Safari，Chrome，Edge浏览器
 
 - 移动端
-  - 除去编辑功能外，其他展示性组建均能正常显示。
+  - 除去编辑功能外，其他展示性组建均能正常显示
   - 需要验证的设备：iPhone, Android
 # development 研发流程
 - 每个版本的预计工作量大概在一个月左右
   - 在新版本release前，我们会持续将增量更新推送至 canary 频道
-  - canary的数据，账号，与 Editoe 相互隔离
+  - canary的数据、账号，与Editoe相互隔离
 
 - Done的定义
   - 满足 设计原则

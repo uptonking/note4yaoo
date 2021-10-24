@@ -10,7 +10,12 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
-- ## 
+- ## I don't love React anymore
+- https://twitter.com/fabiospampinato/status/1451531510075564074
+  - I'd like to try to write an alternative library in the future, I I really dislike that the code I use for my components doesn't look anything like the rest of the code in the codebase, and the performance is too much out of my control.
+- Wishlist so far: 
+  - no JSX, no compilation step, no custom event system, no className, no VDOM, no (rules of) hooks, ~no dependencies arrays, 
+  - yes optional and easy imperative DOM updates, yes mutating state without executing the entire component again, yes tiny bundle size.
 
 - ## React poll ⚛️ Referential equality is important for props attached to host JSX elements (like `<button> <div>` , etc).
 - https://twitter.com/itsdouges/status/1430368254715850752

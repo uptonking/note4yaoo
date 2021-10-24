@@ -39,3 +39,6 @@ modified: '2021-02-09T19:25:11.641Z'
   - 实战一：上传图片预览
   - 实战二：以Blob URL加载网络视频
   - 可以自己解析m3u8拿到ts视频片段，用mux.js转码一下再播放。或者直接使用hls.js来播放
+
+
+- [Building an awesome image loading experience__202110](https://kentcdodds.com/blog/building-an-awesome-image-loading-experience)

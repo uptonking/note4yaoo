@@ -7,7 +7,7 @@ modified: '2021-10-23T16:31:59.465Z'
 
 # editoe-products-goals
 
-> GitHub for Paper
+> GitHub for Paper/Knowledge
 
 # guide
 - 投光编辑器亮点
