@@ -34,7 +34,7 @@ modified: '2021-10-23T18:08:23.141Z'
   - 需要验证的设备：iPhone, Android
 # development 研发流程
 - 每个版本的预计工作量大概在一个月左右
-  - 在新版本release前，我们会持续将增量更新推送至 canary 频道
+  - 在新版本release前，我们会持续将增量更新推送至canary频道
   - canary的数据、账号，与Editoe相互隔离
 
 - Done的定义
