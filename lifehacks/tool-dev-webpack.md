@@ -9,6 +9,10 @@ modified: '2020-12-08T14:05:41.408Z'
 
 # guide
 
+- 仅支持webpack v4的项目
+  - ckeditor 5
+  - atlaskit editor
+
 - Webpack Incremental Builds
   - Use webpack's watch mode. Don't use other tools to watch your files and invoke webpack. 
   - The built-in watch mode will keep track of timestamps and passes this information to the compilation for cache invalidation.
