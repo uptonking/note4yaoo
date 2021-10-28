@@ -16,10 +16,29 @@ modified: '2021-10-27T03:20:45.841Z'
   - dataDowncast
   - editingDowncast
 
+- 创建block widget的基本流程
+  - 设计插件和widget的层次结构：entry、editing、ui、cmd
+  - 在editing中定义schema
+  - 在editing中定义converter
+  - 将converter细粒度定义，editingDowncast的view方法的返回值使用toWidget/toWidgetEditable
+  - 继承Command，实现execute/refresh
+  - 在editing中注册commands
+  - 在ui中创建图标，并添加到toolbar
+
+- 创建inline widget的基本流程
+  - 设计插件和widget的层次结构
+  - _defineSchema
+  - _defineConverters
+  - 继承Command，实现execute/refresh
+  - 在editing中注册commands
+  - fix position mapping 解决点击inline文字中间会抛出异常的问题
+  - 创建dropdown ui，并添加到toolbar
+  - 将placeholder的预定义类型在editing中定义，而不是硬编码
+
 ## 1026
 
-- 创建简单plugin的基本步骤
-  - 确定插件功能目标和依赖
+- 创建简单plugin的基本流程
+  - 确定插件功能目标、依赖关系、数据流或架构
   - 继承Plugin class
   - 在init方法中创建ui
   - 在ui组件中注册execute事件处理函数
