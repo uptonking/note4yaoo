@@ -9,6 +9,57 @@ modified: '2021-10-27T03:20:45.841Z'
 
 # daily
 
+## 1028
+
+- 图片插件features
+  - 支持拖拽上传、粘贴上传、从toolbar的图片按钮打开文件选择器上传选定图片
+  - 实现本地预览预览图片，可选上传
+  - 支持插入外部图片url
+
+- 实现图片上传的基本步骤
+  - The images are intercepted by the image upload plugin
+  - For every image, the image upload plugin creates an instance of a file loader.
+  - While the images are being uploaded, the image upload plugin 展示占位符或进度
+  - Once uploaded, the upload adapter notifies the editor
+  - ref
+    - [How To Use React Ckeditor Upload File Image With Demo and Example Codes](https://www.techgalery.com/2021/05/how-to-use-react-ckeditor-upload-file.html)
+    - [CKEditor5 With Custom Image Uploader in React](https://www.alvinrapada.com/stories/ckeditor5-with-custom-image-uploader-in-react)
+    - [CKEditor Image upload with Firebase and React](https://dev.to/suraj975/ckeditor-image-upload-with-firebase-and-react-1pe8)
+    - [How to enable image upload support in CKEditor 5?](https://newbedev.com/how-to-enable-image-upload-support-in-ckeditor-5)
+
+- 图片插件的问题
+  - 要不要上传到后端? yes
+  - 要不要支持用户输入任意图片url? no
+
+```markdown
+- 流程图
+
+graph TD
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+
+graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+
+- User Journey Diagram
+
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
+
 ## 1027
 
 - conversion提供的3种转换方式的时机确认
