@@ -15,6 +15,8 @@ modified: '2021-10-27T03:20:45.841Z'
   - 支持拖拽上传、粘贴上传、从toolbar的图片按钮打开文件选择器上传选定图片
   - 实现本地预览预览图片，可选上传
   - 支持插入外部图片url
+- 实现说明
+  - 一次只能上传一张图片，暂不支持上传多张
 
 - 实现图片上传的基本步骤
   - The images are intercepted by the image upload plugin
