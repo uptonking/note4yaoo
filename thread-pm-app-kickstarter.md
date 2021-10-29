@@ -1,11 +1,11 @@
 ---
-title: thread-pm-app-ideas
-tags: [ideas, pm, thread]
+title: thread-pm-app-kickstarter
+tags: [app, ideas, kickstarter, pm, thread]
 created: '2021-01-17T17:13:54.678Z'
-modified: '2021-04-19T14:53:27.158Z'
+modified: '2021-10-29T15:02:28.882Z'
 ---
 
-# thread-pm-app-ideas
+# thread-pm-app-kickstarter
 
 > new marketable apps
 
@@ -26,6 +26,14 @@ modified: '2021-04-19T14:53:27.158Z'
 - No project ideas. Only problem
   - make a project to solve your problem
 # ideas
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

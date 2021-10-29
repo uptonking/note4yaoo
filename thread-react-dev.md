@@ -10,6 +10,21 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Today we are releasing react-freeze
+- https://twitter.com/swmansion/status/1454086713719070726
+- https://github.com/software-mansion-labs/react-freeze
+  - Prevent React component subtrees from rendering.
+  - This library allows for freezing renders of the parts of the React component tree using Suspense mechanism introduced in React 17.
+  - The main use-case for this library is to avoid unnecessary re-renders for parts of the app that are not visible to the user at a given moment. 
+  - It is important to note that while frozen component subtrees are replaced with a placeholder view, the actual components are not unmounted and hence their React state and corresponding native view instances are retained
+  - The most prominent use case is navigation in React Native apps, which is typically follows a stack-based approach. 
+
 - ## I don't love React anymore
 - https://twitter.com/fabiospampinato/status/1451531510075564074
   - I'd like to try to write an alternative library in the future, I I really dislike that the code I use for my components doesn't look anything like the rest of the code in the codebase, and the performance is too much out of my control.

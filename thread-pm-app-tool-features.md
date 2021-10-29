@@ -1,11 +1,11 @@
 ---
-title: thread-pm-app-tool-products
+title: thread-pm-app-tool-features
 tags: [products, thread, tool]
 created: '2021-03-15T05:21:25.780Z'
-modified: '2021-04-19T14:53:36.883Z'
+modified: '2021-10-29T15:05:07.897Z'
 ---
 
-# thread-pm-app-tool-products
+# thread-pm-app-tool-features
 
 # pieces
 
@@ -13,7 +13,8 @@ modified: '2021-04-19T14:53:36.883Z'
 
 - ## 
 
-- ## 
+- ## Handshake is our(Framer) new game-changing beta feature, enabling anyone to import components into production with just a URL. 
+- https://twitter.com/framer/status/1454055435745611779
 
 - ## @algolia docsearch can now index your technical blog, for free
 - https://twitter.com/sebastienlorber/status/1443920402686922755

@@ -7,6 +7,10 @@ modified: '2021-08-06T07:36:05.864Z'
 
 # thread-web-ui-canvas
 
+# guide
+- https://github.com/tldraw/core
+  - This package contains the Renderer and core utilities used by tldraw.
+  - You can use this package to render React components in a canvas user interface.
 # discuss
 - ## 
 
@@ -22,15 +26,11 @@ modified: '2021-08-06T07:36:05.864Z'
   - But as far as features go, its limited because the points given back by perfect-freehand don't know their relationship to other points, or to their input point—and this makes features like erasing very difficult to implement. I've had lots of folks ask me about this.
 - PS. it's also MUCH more easy to start from scratch each time than it is to manage nodes and linked lists of outline points. Tapering and corners are especially difficult, as these can change as points are added or options change (both could use their own threads tbh)
 
-
 - ## right now the minimap is part of the renderer, but it really works like its own renderer, and may make more sense as something entirely separate. 
 - https://twitter.com/steveruizok/status/1441472275639832577
   - This would make it easier to style or place (or not include)
 - The renderer is an infinite canvas and so this minimap is positioning things relative to the “expanded bounds”, ie the bounding box that fits around all of the other bounding boxes. Which makes for some cool visuals as that changes.
   - We normally only “render” shapes that are on screen, but this needs to render shapes that are off screen too. Which could be a performance issue? Even if the shapes render more simple elements into an SVG, it still might be a lot of elements.
-
-
-
 
 - ##  When we made a shape, we need to make the the bounding box a little bigger than the shape itself.
 - https://twitter.com/steveruizok/status/1437514372520284163
@@ -39,8 +39,6 @@ modified: '2021-08-06T07:36:05.864Z'
 - We adjust this padding based on the camera scale. This helps us leave room for the bounding box and any other controls we might want to put there.
   - But how we calculate the bounding box does matter. On the arrow, I'm calculating a box based on the three handles. Looks like that's the wrong approach!
 - Previously, I’ve been using a measurement div to get the size and shape of text layers content. But now that shapes are components, we can get the size data from inside of the shape’s component!
-
-
 
 - ## Starting to feel like the @tldraw engine really wants to be a “render react components in a canvas paradigm” engine.
 - https://twitter.com/steveruizok/status/1435515509756338177

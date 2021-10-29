@@ -26,13 +26,29 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 # git相关
+- git配置
+  - cat .git/config
+    - 查看本仓库git的配置文件，注意本地和全局配置可能不同；
+    - 不论配置命令的大小写，`.gitconfig`中都是小写
+  - git config --global core.fileMode false 
+  - git config --global core.ignoreCase false 
+  - git config --global init.defaultBranch main 
+
+- git命令别名
+  - git config --global alias.lg "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit"
+    - %h 表示提交id；
+    - %cr 表示提交时间；
+    - %an 表示提交人；
+    - %d 表示 分支、tag、HEAD 等信息；
+    - %s 表示提交的信息。
+
 - commit相关
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
   - 撤销上次commit的记录，不回滚修改
     - git reset HEAD~
     - git reset commit_id
-    - 只撤销本次提交记录，实际修改后的文件仍然存在本地
+    - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
   - 撤销 commit, 同时本地删除该 commit 修改：
     - git reset --hard commit_id
     - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
@@ -125,6 +141,13 @@ git push
   - 当文件加入了 stage 区以后，如果要从stage删除，则使用 reset, 此时工作区的文件不做任何修改
   - 当文件加入了 stage 区以后，后来又做了一些修改，这时发现后面的修改有问题，想回退到stage的状态，使用 checkout 
   -  git commit -a 并不会作用于第一次新建的文件。 否则容易因此忽略新文件的提交。
+
+- 对于多分支的代码库，将代码从一个分支转移到另一个分支是常见需求。
+  - 一种情况是，你需要另一个分支的所有代码变动，那么就采用合并（git merge）
+  - 另一种情况是，你只需要部分代码变动（某几个提交），这时可以采用 Cherry pick。
+  - git checkout master
+  - git cherry-pick commit-id1 commit-id2
+  - 将feature分支的commit-id1 id2合并到master
 # java相关
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`
