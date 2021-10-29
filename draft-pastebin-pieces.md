@@ -15,7 +15,7 @@ modified: '2021-03-22T18:24:50.639Z'
 - install app-ubuntu-calibre
  - sudo mkdir -p /opt/calibre && sudo rm -rf /opt/calibre/* && sudo tar xvf calibre-5.13.0-x86_64.txz -C /opt/calibre && sudo /opt/calibre/calibre_postinstall
 
-- TODO: components、datable、chart
+- TO-DO: components、datable、chart
 
 - 知乎禁止转载的回答测试
   - https://www.zhihu.com/question/25950466/answer/31731502
