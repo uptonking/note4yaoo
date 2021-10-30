@@ -9,6 +9,9 @@ modified: '2021-10-29T16:09:06.481Z'
 
 # guide
 
+- 查看所有plugins
+  - ClassicEditor.builtinPlugins
+
 # predefined builds overview
 - Predefined CKEditor 5 builds are a set of ready-to-use rich text editors.
   - **Every “build” provides a single type of editor with a set of features and a default configuration**. 
