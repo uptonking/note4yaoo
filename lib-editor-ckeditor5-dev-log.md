@@ -9,6 +9,22 @@ modified: '2021-10-27T03:20:45.841Z'
 
 # daily
 
+## 1029-31
+
+- 上传图片的问题
+  - 使用的是源码定制的编辑器ckeditor5-editor-classic，而不是预定义编辑器ckeditor5-build-classic
+    - 对预定义编辑器，添加自定义插件要使用extraPlugins属性
+    - 对于源码定制的编辑器，直接添加在依赖项之后
+  - 插入图片的command选择错误
+    - insertImage -> uploadImage
+  - 未实现将图片上传并保存到服务器
+
+- data view 和 editing view的区别
+
+- semantic views for rendering and data retrieval purposes and non-semantic views for data input.
+- The view may need to be changed manually if the cause of such change is not represented in the model.
+- Because the UI is organized according to the view-per-tree rule, it is clear which view is responsible for which part of the UI 
+
 ## 1028
 
 - 图片插件features
