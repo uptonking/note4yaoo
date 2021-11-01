@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- ckeditor的css加载问题
+  - 需要使用 postcss-loader@3
+- ValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.
+ - options has an unknown property 'plugins'.
+
 - Webpack: Bundle.js - Uncaught ReferenceError: process is not defined
   - 可以实现读取自定义环境变量，如 REACT_APP_ENV
 
