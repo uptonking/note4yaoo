@@ -85,6 +85,11 @@ git push origin 分支
 
 git fetch --all
 git reset --hard origin/master
+
+
+git fetch --all
+git reset --hard origin/master
+git pull
 ```
 
 - 用本地覆盖远程

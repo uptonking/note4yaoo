@@ -9,6 +9,20 @@ modified: '2021-10-27T03:20:45.841Z'
 
 # daily
 
+## not-yet
+
+- 每次合并远程分支后，会出现 merge branch main of github.com:toeverything/toe-editor 的干扰性commit
+
+## 1101
+
+- 新编辑器缺少的props
+  - autoSave, updateTitle
+
+- npm发版流程
+  - npm run patch 修改版本号
+  - npm run pub 自动创建新分支，自动push，需要手动提添加新分支的pr
+  - npm自动发包了
+
 ## 1029-31
 
 - 上传图片的问题
@@ -24,6 +38,17 @@ modified: '2021-10-27T03:20:45.841Z'
 - semantic views for rendering and data retrieval purposes and non-semantic views for data input.
 - The view may need to be changed manually if the cause of such change is not represented in the model.
 - Because the UI is organized according to the view-per-tree rule, it is clear which view is responsible for which part of the UI 
+
+## 图片上传问题
+
+- 上传图片到阿里云oss的逻辑不清晰
+
+- 临时变通的思路：
+  - 上传时将图片转换成base64，保存到localStorage
+  - 显示时使用 data: url 前缀的形式
+
+- 限制说明
+  - 单个域名下，localStorage/sessionStorage的总大小不能超过5mb，若超出则丢弃而不会覆盖
 
 ## 1028
 
