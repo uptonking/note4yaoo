@@ -13,6 +13,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - 每次合并远程分支后，会出现 merge branch main of github.com:toeverything/toe-editor 的干扰性commit
 
+## 1102
+
+- mermaid如何和image联系起来
+
+
+- 插入图片时，图片标题添加的代码位置 captionElementCreator()
+  - editoe\plugins\ckeditor5-image\src\imagecaption\utils.js 
+
 ## 1101
 
 - 新编辑器缺少的props
