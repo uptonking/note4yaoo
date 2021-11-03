@@ -11,7 +11,15 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
-- 每次合并远程分支后，会出现 merge branch main of github.com:toeverything/toe-editor 的干扰性commit
+- 图片标题切换显示要改成中文提示
+- 要添加全局样式去掉所有图片的左上右下操作按钮
+
+- nightly网站上最新commit未生效，右键菜单未去除插入相关菜单项，但本地运行时右键菜单已精简过了
+  - 原因是pr合并到了错误的canary分支，应该合并到nightly分支
+  - package-lock.json需要每次更新toe-editor的版本
+
+- 每次合并远程分支后，会出现干扰性commit
+  - merge branch main of github.com:toeverything/toe-editor
 
 ## 1102
 
@@ -28,8 +36,8 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - npm发版流程
   - npm run patch 修改版本号
-  - npm run pub 自动创建新分支，自动push，需要手动提添加新分支的pr
-  - npm自动发包了
+  - npm run pub:tag 自动创建新分支，自动push，需要手动提添加新分支的pr
+  - npm自动会自动发包
 
 ## 1029-31
 
