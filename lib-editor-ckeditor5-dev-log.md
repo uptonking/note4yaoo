@@ -11,17 +11,53 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
-- 图片标题切换显示要改成中文提示
+- [ ] 图片标题切换显示要改成中文提示
 
-- 插入mermaid时，如何和image联系起来
+- [ ] 插入mermaid时，如何和image联系起来
 
-- 每次合并远程分支后，会出现干扰性commit
-  - merge branch main of github.com:toeverything/toe-editor
-
-## 1103
+- 要不要实现自定义image-plugin
+  - 双击图片时，会在蒙版层中放大图片，全屏显示图片
+  - 图片裁剪图标
+  - 系统操作菜单，如收藏、下载
 
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
   - 插入元素的位置，通常放在command
+
+- later
+  - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
+
+## 1104
+
+- 修改model的writer参数对象 和 conversionaApi的writer属性(DowncastWriter) 不同
+  - `editor.model.change((writer) => {` 在源码 @ckeditor/ckeditor5-engine/src/model/writer
+    - The model can only be modified by using the writer. 
+    - It should be used whenever you want to create a node, modify child nodes, attributes or text, set the selection's position and its attributes.
+    - The instance of the writer is only available in the change() or enqueueChange().
+    - Note that the writer should never be stored and used outside of the change() and enqueueChange() blocks.
+    - Note that writer's methods do not check the Schema. It is possible to create incorrect model structures by using the writer.
+  - `conversion.for( 'One-way converter' ) → DowncastHelpers` | UpcastHelpers
+    - elementToElement( config = { config.model, config.view, [config.triggerBy], config.triggerBy.attributes, config.triggerBy.children } )
+    - This conversion results in creating a view element.
+
+- **UI elements are ignored by the editor selection system**.
+  - the selection cannot be placed in it, it is skipped (invisible) when the user modifies the selection by using arrow keys 
+  - and the editor does not listen to any mutations which happen inside your UI elements.
+  - The limitation is that you cannot convert a model element to a UI element. 
+  - UI elements need to be created for markers or as additional elements inside normal container elements.
+
+- The **raw elements** work as data containers ("wrappers", "sandboxes") but their **children are not managed or even recognized by the editor**. 
+  - This encapsulation allows integrations to maintain custom DOM structures in the editor content without, for instance, worrying about compatibility with other editor features. 
+  - Raw elements are a perfect tool for integration with external frameworks and data sources.
+  - they are considered by the editor selection and they can work as widgets.
+
+## 1103
+
+- 读image部分的源码
+  - 分析描述性标题的实现
+  - 分析多语言的实现
+
+- 图片形式的内容如流程图是否要做个小重构
+  - 是否要显示左右居中对齐、添加字幕
 
 ## 1102
 

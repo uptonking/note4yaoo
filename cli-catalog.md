@@ -86,7 +86,6 @@ git push origin 分支
 git fetch --all
 git reset --hard origin/master
 
-
 git fetch --all
 git reset --hard origin/master
 git pull
@@ -154,6 +153,11 @@ git push
   - git checkout master
   - git cherry-pick commit-id1 commit-id2
   - 将feature分支的commit-id1 id2合并到master
+
+## git-not-yet
+
+- 每次合并远程分支后，会出现干扰性commit
+  - merge branch main of github.com:toeverything/toe-editor
 # java相关
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`
