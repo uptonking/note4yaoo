@@ -9,6 +9,12 @@ modified: '2021-10-31T15:56:24.071Z'
 
 # guide
 
+# ckeditor-faq-repeat
+- ckeditor通知更新react组件
+  - react组件将自身setState方法注册到eventEmitter，在editingDowncast中更新view时触发执行更新react组件的方法，并传入最新编辑器状态作为参数
+
+- react组件通知更新ckeditor状态
+  - 自定义command
 # 富文本编辑器ckeditor5源码分析
 - ckeditor5/engine封装了model tree的几个概念。
 - 主要数据类型，其中Node、NodeList、Element、RootElement、Text、TextProxy和DocumentFragment具有类似的结构

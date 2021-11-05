@@ -13,11 +13,12 @@ modified: '2021-09-21T19:47:30.211Z'
 
 ## 不同框架的数据通信方法
 
-- 编辑器通知react组件，一般是更新props而不是state
+- 编辑器通知更新react组件，一般是更新props而不是state
   - 在编辑器的NodeView.update获取新数据, React.createPortal(), ReactDOM.render(), unstable
+  - 还可以在上面的过程中封装一层，init时保存 {this.dom: elements}，update时将PMNode的新数据作为参数传给注册过的react封装setState的函数
 
 - react组件通知编辑器
-  - 直接通过编辑器的updateState
+  - 直接通过编辑器的dispatch/updateState
 
 - react NodeView如何通知其他NodeView
   - react state --> editor state 钩子更新 portals nodeView --> react state

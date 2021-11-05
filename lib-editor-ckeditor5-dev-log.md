@@ -15,6 +15,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [ ] 插入mermaid时，如何和image联系起来
 
+- 是否需要更新图片标题的显示逻辑
+  - 若不存在，则默认不显示；选中图片时，可输入标题
+  - 若存在，则始终显示；选中图片时，可输入修改标题
+  - 图片下方标题默认居中对齐
+
 - 要不要实现自定义image-plugin
   - 双击图片时，会在蒙版层中放大图片，全屏显示图片
   - 图片裁剪图标
@@ -27,6 +32,10 @@ modified: '2021-10-27T03:20:45.841Z'
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 
 ## 1104
+
+- 如何允许新的schema
+  - 作为parent，包含已有schema，allowContent
+  - 作为子元素，包含在已有父元素schema中，allowedIn
 
 - 修改model的writer参数对象 和 conversionaApi的writer属性(DowncastWriter) 不同
   - `editor.model.change((writer) => {` 在源码 @ckeditor/ckeditor5-engine/src/model/writer

@@ -25,7 +25,7 @@ modified: '2021-07-01T10:27:24.764Z'
   - 用户在普通pm-view编辑输入时，会自动触发 dispatchTransaction
   - 用户在react-NodeView编辑输入时，可手动触发dispatch()，也就是prosemirror设计的commands
 
-- pm-state变化后，如何通知ReactNodeView
+- > pm-state变化后，如何通知ReactNodeView
   - 可以在NodeView.update()中直接读取PMNode.attrs的最新值，也可以直接使用contentDOM，然后将新值/contentDOM作为新props传入react组件
 
 - > ReactNodeView-state变化后，如何通知 prosemirror
