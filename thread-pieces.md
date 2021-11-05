@@ -10,8 +10,14 @@ modified: '2021-01-11T12:10:50.900Z'
 # guide
 
 - Tip of the day.. stop wasting time on Twitter xD
-# discuss
+# sdiscuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 社会大学漂流系
 
 - ## When you look at technology today, you probably group things into categories
 - https://dev.to/triptych/observable-discovering-a-new-world-1egc
@@ -44,7 +50,6 @@ modified: '2021-01-11T12:10:50.900Z'
   - Burnout is a response to repeated attempts to make meaningful change while lacking the agency(力量、作用) to do so. 
   - See problems > try to fix them > get shot down or ignored.
 - Mismatch between authority and responsibility like others said, but also feeling like your work is not personally meaningful or effective. See problems > try to fix them > welcome to outcome unclear research limbo land
-
 
 - ## If you are on the verge of burning out and in a situation where you cannot take a break, slow down! 
 - https://twitter.com/hey_yogini/status/1432204261647994886

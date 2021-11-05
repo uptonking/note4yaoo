@@ -9,14 +9,20 @@ modified: '2021-10-27T03:20:45.841Z'
 
 # daily
 
+- 工作开发问题
+  - 原因定位
+  - 解决方法
+  - 其他方案
+
 - dev-xp
   - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
 
 ## not-yet
 
-- [ ] 自定义图片的实现，比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
-  - 可考虑在downcast中动态创建imageBlock的model
-  - 次优的方案是修改schema
+- [ ] 自定义图片更新时，修改model还是修改view
+  - 比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
+  - 可考虑在downcast过程中动态创建imageBlock的model
+  - 次优的方案是修改schema，将实现细节也定义出来
 
 - [ ] 图片标题切换显示要改成中文提示
 

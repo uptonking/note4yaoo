@@ -8,6 +8,13 @@ modified: '2021-05-14T12:04:55.412Z'
 # lib-editor-community
 
 # guide
+- 编辑器研发方向
+  - 实时协作
+  - 版本控制
+  - 离线存储
+  - features
+    - 开放api
+    - 双向链接
 
 - 浏览器的键盘输入事件顺序
   - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)
@@ -18,7 +25,7 @@ modified: '2021-05-14T12:04:55.412Z'
     - 事件顺序与上面一致
 
 - events-deprecated
-  - keypress  > keydown/beforeinput
+  - keypress  >  keydown/beforeinput
 
 - [从流行的编辑器架构聊聊富文本编辑器的困境](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
 # discuss

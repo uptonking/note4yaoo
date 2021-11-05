@@ -21,7 +21,11 @@ modified: '2021-08-02T15:19:42.036Z'
   - 搜索时变通的方法
     - 在github直接搜索导入库的代码 import from react，再限制语言如js
     - 或者搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
-  - 搜索使用js或ts的项目
+    - 对于最新的库或版本，直接搜索import是最准确的方式
+  - 搜索条件使用日期 pushed:2021-11-11
+    - react created:<2011-01-01 
+    - editor pushed:>=2013-03-06 fork:only 
+  - 搜索js或ts的项目 language:javascript language:typescript
     - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
     - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
   - 搜索一个organization的仓库，可使用 `user/org:orgName` ，注意冒号后无空格
