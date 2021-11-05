@@ -9,7 +9,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 # daily
 
+- dev-xp
+  - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
+
 ## not-yet
+
+- [ ] 自定义图片的实现，比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
+  - 可考虑在downcast中动态创建imageBlock的model
+  - 次优的方案是修改schema
 
 - [ ] 图片标题切换显示要改成中文提示
 
@@ -30,6 +37,38 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
+
+## 1105
+
+- 图片目标
+  - 导出data view时，去掉image部分
+  - 编辑显示时，添加imageBlock的部分
+  - 打开带数据的文档初始化时，添加imageBlock的部分
+
+- 如果要用官方的image插件的功能，model包含imageBlock是最简单的方式
+  - 否则，要在downcast之中手动创建元素
+
+- 插入图片和标题的参考
+  - [How to insert an image with a caption into a custom element in CKEditor 5?](https://stackoverflow.com/questions/53208435)
+  - [Refreshing a CKEditor5 widget upon model changes](https://stackoverflow.com/questions/51319311)
+
+- 流程图插入标题的自定义实现
+
+```JS
+const mermaidView = writer.createEmptyElement('img', {
+  src: `https://api.editoe.com/api/mermaid/generate?data=${encodeURI(mermaidCode)}`,
+});
+
+const figcaptionElem = writer.createEditableElement('figcaption', {
+  class: 'ck-editor__editable ck-editor__nested-editable ck-placeholder image__caption_highlighted',
+});
+
+writer.insert(writer.createPositionAt(container, 0), mermaidView);
+writer.insert(writer.createPositionAt(container, 1), figcaptionElem);
+writer.insert(writer.createPositionAt(figcaptionElem, 0), writer.createText('请输入标题或描述'));
+
+return toWidget(container, writer, 'figure');
+```
 
 ## 1104
 
