@@ -17,7 +17,7 @@ modified: '2021-10-29T16:09:36.091Z'
 - Introduce the `Command#affectsData` property to indicate whether a given command should stay enabled in editor modes with restricted write permissions. 
 - The mentions feature has gained the ability to customize the max number of items in the list
 
-- InsertHtmlEmbedCommand and UpdateHtmlEmbedCommand have been replaced by HtmlEmbedCommand
+- InsertHtmlEmbedCommand and UpdateHtmlEmbedCommand have been replaced by `HtmlEmbedCommand`
 
 - New collaboration features samples are available:
   - For the React integration that will implement the context feature, as well as the watchdog.
@@ -25,7 +25,7 @@ modified: '2021-10-29T16:09:36.091Z'
 ## v30.0.0__202109
 
 - Cut down the search time in the Find & replace feature
-- config.toolbar.viewportTopOffset property was moved to config.ui.viewportOffset and it now accepts an object.
+- config.toolbar.viewportTopOffset property was moved to `config.ui.viewportOffset` and it now accepts an object.
 - toWidgetEditable() will now set highlight handling for the editable element.
 
 ## v29.0.0__202107
@@ -52,6 +52,15 @@ modified: '2021-10-29T16:09:36.091Z'
 ## v25.0.0__202101
 
 - ui: Configuration passed to ToolbarView.fillFromConfig() will be stripped off of any leading, trailing, and duplicated separators ('|' and '-').
+
+## v23.0.0__202009
+
+- This release brings the new pagination feature.
+- In order to use the "insert image via URL" feature you now need to load the `ImageInsert` instead of `imageUpload`
+
+- v23.1.0
+  - The new `data-cke-ignore-events` attribute in view element that prevents CKEditor from handling events fired in this element.
+  - The new `triggerBy` option that triggers element re-render.
 
 ## v20.0.0__202006
 

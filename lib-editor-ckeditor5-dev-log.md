@@ -19,10 +19,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+- 如何在自定义插件中使用官方image-plugin的功能和UI
+  - 类似插入buttonView一样插入imageView
+
 - [ ] 自定义图片更新时，修改model还是修改view
   - 比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
   - 可考虑在downcast过程中动态创建imageBlock的model
   - 次优的方案是修改schema，将实现细节也定义出来
+  - 因为modelWriter不检查schema，所以可以在不修改schema定义的前提下，动态插入内容
 
 - [ ] 图片标题切换显示要改成中文提示
 
@@ -37,12 +41,35 @@ modified: '2021-10-27T03:20:45.841Z'
   - 双击图片时，会在蒙版层中放大图片，全屏显示图片
   - 图片裁剪图标
   - 系统操作菜单，如收藏、下载
+  - 自定义图片标题的显示和更新逻辑
 
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
   - 插入元素的位置，通常放在command
 
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
+
+## 1106
+
+- 更新plugin config的方法
+  - 提前设计成可开启关闭的配置项，然后添加到配置对象
+
+- All changes in the document structure, of the document’s selection and even the creation of elements, can only be done by using the model writer.
+
+- Currently, there is no straightforward way to override the schema preconfigured by features. 
+  - If you want to override the default settings when initializing the editor, the best solution is to replace `editor.model.schema` with a new instance of it. 
+  - This, however, requires rebuilding the editor.
+
+- The role of the model layer is to create an abstraction over the data. 
+  - Its format was designed to allow storing and modifying the data in the most convenient way
+  - Most features operate on the model (read from it and change it).
+
+- The view may need to be changed manually if the cause of such change is not represented in the model. 
+
+- Technically, the data pipeline does not have a document and a view controller. 
+
+- there is no editing upcasting 
+  - because all user actions are handled by editor features by listening to view events, analyzing what happened and applying necessary changes to the model.
 
 ## 1105
 

@@ -24,7 +24,7 @@ modified: '2021-11-05T13:31:12.802Z'
   - https://dnde.bluepie.in/
   - Drag and drop editor Designed for Mails
   - built with react, antd, mjml(a markup language created by Mailjet and designed to reduce the pain of coding a responsive email)
-  - 依赖html2canvas、quill
+  - 依赖html2cansvas、quill
 # ckeditor-react
 - https://github.com/ckeditor/ckeditor5-react
   - https://ckeditor.com/ckeditor-5
@@ -62,6 +62,7 @@ modified: '2021-11-05T13:31:12.802Z'
 
 - https://github.com/isaul32/ckeditor5-math
   - a TeX-based mathematical plugin for CKEditor 5. 
+  - This plugin supports MathJax, KaTeX and custom typesetting engines.
 - https://github.com/centaur54dev/ckeditor5-math-preview
   - a plugin for ckeditor 5. 
   - When clicking on a latex math expression, a popup is shown that displays the expression rendered with MathJax or KaTeX.
@@ -81,6 +82,10 @@ modified: '2021-11-05T13:31:12.802Z'
 
 - https://github.com/RasmusRummel/ckeditor5-bookmark
   - a free bookmark plugin for CKEditor 5
+
+- https://github.com/wiris/html-integrations
+  - MathType is a formula editor and equation writer. 
+  - We develop and maintain MathType Web plugins for CKEditor, Froala, and TinyMCE.
 # ckeditor-examples
 - https://github.com/ckeditor/ckeditor5-collaboration-samples
   - Collaboration integration examples for CKEditor 5
