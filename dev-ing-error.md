@@ -11,6 +11,12 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- postcss-loader在ckeditor项目中使用的问题
+  - You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing. Pick plugins for your case 
+  - 异常时有时无，不能稳定复现
+  - 按官方文档中的postcss-loader@3和style-loader@1会出现问题，编辑器样式异常
+  - 实测使用postcss-loader@4和style-loader@2编辑器样式能够正常显示
+
 - ckeditor的css加载问题
   - 需要使用 postcss-loader@3
 - ValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.

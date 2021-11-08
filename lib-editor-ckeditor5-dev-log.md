@@ -19,18 +19,16 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
-- 如何在自定义插件中使用官方image-plugin的功能和UI
-  - 类似插入buttonView一样插入imageView
-
-- [ ] 自定义图片更新时，修改model还是修改view
-  - 比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
-  - 可考虑在downcast过程中动态创建imageBlock的model
-  - 次优的方案是修改schema，将实现细节也定义出来
-  - 因为modelWriter不检查schema，所以可以在不修改schema定义的前提下，动态插入内容
+- 检查图片的接入方式
+  - toolbar打开文件选择器
+  - 拖拽本地图片到编辑器光标位置
+  - ctrl+v粘贴图片到编辑器
 
 - [ ] 图片标题切换显示要改成中文提示
 
-- [ ] 插入mermaid时，如何和image联系起来
+- 如何在自定义插件中使用官方image-plugin的功能和UI
+  - 类似插入buttonView一样插入imageView
+  - 需要继承官方plugin暴露的各个class，然后添加自定义逻辑，再glue一个新的入口类
 
 - 是否需要更新图片标题的显示逻辑
   - 若不存在，则默认不显示；选中图片时，可输入标题
@@ -40,7 +38,7 @@ modified: '2021-10-27T03:20:45.841Z'
 - 要不要实现自定义image-plugin
   - 双击图片时，会在蒙版层中放大图片，全屏显示图片
   - 图片裁剪图标
-  - 系统操作菜单，如收藏、下载
+  - 系统操作菜单，如收藏、下载、删除当前图片
   - 自定义图片标题的显示和更新逻辑
 
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
@@ -48,6 +46,46 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
+# 2021
+
+## 1107
+
+- 双击图片时，是如何出现编辑弹窗的，弹窗中提供了流程图模版
+  - MermaidUI.init()方法中，通过_enableUserBalloonInteractions()注册双击事件，每次双击mermaid图片节点，都会执行showUI()，触发执行 `ReactDOM.render(<MermaidPanel />, this.element)`，会显示包含流程图模版的弹窗
+  - `<MermaidPanel />`会传入初始文本代码，以及更新文本代码的方法
+  - 在MaterialUI中监听`'change:code'`事件，每次文本代码code更新，都会执行insertMermaid命令(该命令会创建或更新当前的model对象)，然后触发view更新
+
+- [x] 插入mermaid时，如何和image联系起来
+  - 获取到mermaid或第三方的图片url地址后，不要手动创建img，而是修改image-plugin对应的的model数据
+
+- [x] 自定义图片更新时，修改model还是修改view
+  - 比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
+  - 可考虑在downcast过程中动态创建imageBlock的model
+  - 次优的方案是修改schema，将实现细节也定义出来
+  - 因为modelWriter不检查schema，所以可以在不修改schema定义的前提下，动态插入内容
+
+- image-plugins
+  - ImageToolbar
+    - Instances of toolbar components (e.g. buttons) are created using the editor's component factory based on the image.toolbar configuration option.
+  - ImageCaption
+  - ImageStyle
+    - glue for ImageStyleEditing, ImageStyleUI
+    - It provides a default configuration, which can be extended or overwritten.
+  - ImageResize
+    - It adds a possibility to resize each image using handles.
+  - ImageUpload
+    - glue for ImageUploadEditing,ImageUploadUI,ImageUploadProgress
+  - ImageInsert
+    - Insert images via source URL
+    - glue for ImageUploadImageInsertUI
+  - AutoImage
+    - It recognizes image links in the pasted content and embeds them shortly after they are injected into the document.
+  - ImageTextAlternative
+  - LinkImage
+
+- editor.config中的配置变化时，如何rerender editor
+  - 思路1: 先destroy editor实例，再创建新的editor实例
+  - 思路2: 修改CKEditor的id属性，交给ckeditor5-react更新
 
 ## 1106
 

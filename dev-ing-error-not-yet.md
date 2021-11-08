@@ -10,16 +10,10 @@ modified: '2021-03-29T19:29:15.528Z'
 # pieces
 
 
-
-- postcss-loader使用时的问题
-- You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing. Pick plugins for your case 
-- 异常时有时无，不能稳定复现
- 
 - 在ckeditor项目执行yarn install的异常信息
   - Error: https://github.com/ckeditor/jsdoc: ETIMEDOUT
   - Error: https://github.com/pemrouz/buble: ETIMEDOUT
   - Error: https://github.com/ckeditor/jsdoc: ESOCKETTIMEDOUT
-
 
 - ## 浏览器窗口占半屏时，直接跳转到@pgd/css docs文档页的url，若url尾部含有锚点如#button，则右边文档内容会被左边fixed的目录挡住，显得凌乱
   - 点击目录文字跳转时也会出现此问题
