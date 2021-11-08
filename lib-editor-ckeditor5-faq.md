@@ -44,6 +44,9 @@ modified: '2021-11-07T11:05:40.405Z'
 
 ### image-toolbar
 
+- [Can I modify, the default toolbar icon with custom text or icon](https://github.com/ckeditor/ckeditor5/issues/1702)
+  - 官方faq提供了在webpack中配置toolbar图标的方法
+
 - [How can I disable a custom toolbar button in CKEditor 5](https://github.com/ckeditor/ckeditor5/issues/8748)
   - Every item in the toolbar is an object created from ButtonView or DropdownView class
   - Those classes have isEnabled property. Setting it to false will disable this item. 
