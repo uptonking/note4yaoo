@@ -9,6 +9,9 @@ modified: '2021-10-29T16:18:17.804Z'
 
 # guide
 
+# refactor
+
+- [Redesign and introduce new reconversion system](https://github.com/ckeditor/ckeditor5/issues/10294)
 # to-do
 - [Allow passing your own translations when building CKEditor 5](https://github.com/ckeditor/ckeditor5/issues/763)
   - [Translations in third party plugins](https://github.com/ckeditor/ckeditor5/issues/1471)

@@ -39,6 +39,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 双击图片时，会在蒙版层中放大图片，全屏显示图片
   - 图片裁剪图标
   - 系统操作菜单，如收藏、下载、删除当前图片
+  - 替换当前图片
   - 自定义图片标题的显示和更新逻辑
 
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
@@ -47,6 +48,30 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1109
+
+- [ ] 流程图获取焦点时是否要移除外部蓝色边框
+- [ ] 流程图双击时出现编辑文本代码弹窗，但修改过的文本代码无法保存
+
+- CKEditorError: model-position-before-root
+  - Cannot read properties of undefined (reading 'length')
+
+## 1108
+
+- 修复了插入流程图时复用官方图片插件的问题，但引入了新的问题
+  - 粘贴mermaid流程图文本代码时，无法正常显示
+  - 双击流程图图片时，无法出现编辑mermaid代码的弹窗
+  - ~~流程图的缩放仍未实现~~
+
+- 修改图片悬浮工具条的文字提示为中文
+  - 思路0：利用官方提供的构建多语言的方法，add/t(), webpack配置
+    - add需要手动在创建editor实例前，修改`window.CKEDITOR_TRANSLATIONS`属性对象，添加键值对
+    - webpack能提取出.po文件中配置的多语言翻译，但这些多语言翻译文件资源必须作为第3方包引入
+  - 思路1：通过私有api获取到图标工具条的toolbar菜单项，直接修改js对象的属性
+    - editor.plugins.get('WidgetToolbarRepository')._toolbarDefinitions
+  - 思路2：修改缺失多语言翻译所在插件的源码，添加对应的文字翻译；但需要持续修改更新
+    - \ckeditor5-image\src\imagecaption\imagecaptionui.js
 
 ## 1107
 

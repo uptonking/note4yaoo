@@ -117,4 +117,9 @@ modified: '2021-11-05T13:31:12.802Z'
 
 - https://github.com/letsbug
 
-https://github.com/afeiship
+- https://github.com/afeiship
+
+- https://www.zhihu.com/people/136170746
+  - https://editor.yanmao.cc/zh-CN
+  - https://github.com/yanmao-cc/am-editor/blob/master/README.zh-CN.md
+  - 一个富文本协同编辑器框架，可以使用React和Vue自定义插件
