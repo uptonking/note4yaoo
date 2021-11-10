@@ -11,6 +11,9 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- CKEditorError: model-position-before-root
+  - 检查ckeditor修改model部分的代码，可能是当前选择的position和要插入的position不匹配
+
 - postcss-loader在ckeditor项目中使用的问题
   - You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing. Pick plugins for your case 
   - 异常时有时无，不能稳定复现

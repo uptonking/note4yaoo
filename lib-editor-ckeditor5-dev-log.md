@@ -49,6 +49,25 @@ modified: '2021-10-27T03:20:45.841Z'
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
 
+## 1110
+
+- [x] 编辑器editor.getData()再editor.setData()时，mermaid的model会多出一个空的imageBlock的问题
+  - 比较理想的方式，是getData时只输出mermaidCode，不输出image，但没有找到具体实现方法，因为dataDowncast无法完全控制getData的输出过程
+  - 变通的方式，是getData时输出mermaid和imageBlock，setData时修改upcast过程，避免创建新的imageBlock
+
+- 测试编辑器内容的保存
+  - editor.setData(editor.getData())
+
+- editor.getData()的实现原理
+  - 会调用DataApiMixin.getData( options ) { return this.data.get( options ); }
+  - core/editor中 this.data = new DataController( this.model, stylesProcessor ); 
+  - DataController.constructor中，会创建 this.viewDocument
+
+- mermaid dataDowncast的输出是正常的
+  - mermaidView = writer.createContainerElement
+
+- 检查editor.getData的过程和dataDowncast的关系
+
 ## 1109
 
 - [ ] 流程图获取焦点时是否要移除外部蓝色边框
@@ -56,6 +75,57 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - CKEditorError: model-position-before-root
   - Cannot read properties of undefined (reading 'length')
+  - 检查修改model时插入元素的位置
+
+- 媒体查询@media技巧
+  - 如果判断最小值，即使用(min-width)，应该从小到大写；也是推荐的写法，因为一些前端框架（如：bootstrap）就是判断最小值，从小往大写的；
+  - 如果判断最大值，即使用(max-width)，应该从大到小写
+
+- 给文档添加margin的设计
+  - 飞书文档网页版未适配手机浏览器
+  - 文档内容的宽度需要设置 min-width， max-width
+  - 当宽度缩小到最小宽度以下，文档宽度就不会继续变小了，此时也没有水平滚动条，水平选择和浏览不方便
+
+- 飞书文档容器宽度样式css
+  - 文档在宽屏上，最大宽度为790
+
+- mui的默认断点
+  - xs 0
+  - sm 600
+  - md 960
+  - lg 1280
+  - xl 1920
+  - [@media 查询条件判断的顺序](https://www.jianshu.com/p/c9901d17a5d6)
+
+```CSS
+.etherpad-container {
+  min-width: 470px;
+  max-width: 790px;
+  min-height: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  transition: margin .4s ease-out;
+}
+
+/* @media screen and (max-width: 900px) */
+.etherpad-container {
+  width: calc(100% - 40px);
+  margin-left: 32px;
+  min-width: 344px;
+}
+
+/* @media screen and (max-width: 1279px) */
+.etherpad-container {
+  width: 70%;
+  margin-left: 15%;
+}
+
+/* @media screen and (max-width: 1400px) */
+.etherpad-container {
+  width: 80%;
+  margin-left: 20%;
+}
+```
 
 ## 1108
 
