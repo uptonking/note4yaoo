@@ -19,12 +19,12 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+- 流程图缩放问题
+
 - 检查图片的接入方式
   - toolbar打开文件选择器
   - 拖拽本地图片到编辑器光标位置
   - ctrl+v粘贴图片到编辑器
-
-- [ ] 图片标题切换显示要改成中文提示
 
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
@@ -51,7 +51,37 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 1110
 
+- 图片本地化
+  - 图片保存为doc的结构设计？图片存储 id/url, displayName编号或显示名, data
+    - data保存在哪里，如何向doc里面添加图片base64数据
+    - 最后图片img的src应该显示的是什么
+  - 流程图的图片src本身就是符合要求的url，只需要替换通过工具栏上传的图片
+    - 但注意流程图要去掉无必要的元素标签
+
+- 审阅balloonToolbar悬浮工具条的方法
+  - editor.plugins.get('BalloonToolbar').show()
+
+```CSS
+.ck.ck-balloon-panel.ck-balloon-panel_visible {
+  & .ck.ck-dropdown {
+    & .ck.ck-splitbutton {
+      display: inline-flex;
+      flex-flow: row nowrap;
+    }
+  }
+}
+
+.ck.ck-balloon-panel.ck-balloon-panel_visible .ck.ck-dropdown .ck.ck-splitbutton {
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+```
+
 - [x] 编辑器editor.getData()再editor.setData()时，mermaid的model会多出一个空的imageBlock的问题
+  - 原因定位
+    - pre元素的upcast过程中，imageBlock只有在不存在时才需要创建，没必要每次都创建
+    - ~~观察model的变化，model变化了，说明command的执行过程中执行了额外的操作, 应该在command中排查，而不是在upcast或downcast的地方排查~~
+      - editor.setData(editor.getData())的过程，实测不会触发command
   - 比较理想的方式，是getData时只输出mermaidCode，不输出image，但没有找到具体实现方法，因为dataDowncast无法完全控制getData的输出过程
   - 变通的方式，是getData时输出mermaid和imageBlock，setData时修改upcast过程，避免创建新的imageBlock
 
@@ -60,8 +90,18 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - editor.getData()的实现原理
   - 会调用DataApiMixin.getData( options ) { return this.data.get( options ); }
-  - core/editor中 this.data = new DataController( this.model, stylesProcessor ); 
+  - core/editor中, this.data = new DataController( this.model, stylesProcessor ); 
   - DataController.constructor中，会创建 this.viewDocument
+  - DataController.get(options)方法，return this.stringify( root, options )
+  - 会执行 DataController.stringify( modelElementOrFragment, options)，只做2件事
+    - model -> view: const viewDocumentFragment = this.toView( modelElementOrFragment, options );
+    - view -> data: return this.processor.toData( viewDocumentFragment );
+
+- editor.setData(data)的实现原理
+  - DataController.set( data, options = {} ) 会把将新数据设置到editor的任务添加到队列
+  - 会执行 DataController.parse(data, context)，只做2件事
+    - data -> view: const viewDocumentFragment = this.processor.toView( data );
+    - view -> model: return this.toModel( viewDocumentFragment, context );
 
 - mermaid dataDowncast的输出是正常的
   - mermaidView = writer.createContainerElement
@@ -133,6 +173,8 @@ modified: '2021-10-27T03:20:45.841Z'
   - 粘贴mermaid流程图文本代码时，无法正常显示
   - 双击流程图图片时，无法出现编辑mermaid代码的弹窗
   - ~~流程图的缩放仍未实现~~
+
+- [x] 图片标题切换显示要改成中文提示
 
 - 修改图片悬浮工具条的文字提示为中文
   - 思路0：利用官方提供的构建多语言的方法，add/t(), webpack配置
