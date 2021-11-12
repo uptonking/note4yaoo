@@ -22,6 +22,28 @@ modified: '2021-03-29T19:30:00.059Z'
 - Blob与ArrayBuffer的区别是，除了原始字节以外它还提供了mime type作为元数据，Blob和ArrayBuffer之间可以进行转换。
 - File对象其实继承自Blob对象，并提供了提供了name ， lastModifiedDate， size ，type 等基础元数据。
 
+## `URL.createObjectURL` vs `FileReader.readAsDataURL`
+
+### [URL.createObjectURL instead of FileReader.readAsDataURL](https://forweb.dev/en/blog/2020-05-05-object-url/)
+
+- If you need to show an image from a file or a blob, don’t use `FileReader.readAsDataURL` for this job. 
+  - This method requires significant work to read the blob and convert it into data URL. 
+  - And although it works **asynchronously**, which is good because it doesn’t block the main thread, in general it’s inconvenient.
+
+- `URL.createObjectURL` is a better solution: 
+  - it **synchronously** and in no time generates temporary URL and binds it to the blob. 
+  - **Generating such URL doesn’t require reading the blob**, hence it is much faster and cheaper (see algorithm details in the specification).
+  - The blob can’t be garbage collected while it has temporary URLs bound to it. So don’t forget to use `URL.revokeObjectURL` to unbind URL after you’re done with it.
+
+### [Using URL.createObjectURL()](https://www.linkedin.com/pulse/using-urlcreateobjecturl-chris-ng)
+
+- when we invoke the function on the variable blob, we get back a persistent reference string with a unique URL that temporarily references to the in-memory blob object that lives in the Blob URL Store.
+- It is a persistent reference since as long as that blob is in memory the reference string will be in play unless revoked.
+- It is temporary however since when the browser is refreshed or basically unloaded, this reference is no longer held since that would be a security concern for sure. 
+  - The reference is also temporary since it can be revoked using the Web API URL.revokeObjectURL().
+- **It is unique since each time you call `createObjectURL()`, a new object URL is created, even if you’ve already created one for the same object**. 
+  - These must be individually revoked by calling `URL.revokeObjectURL()` on each one.
+
 ## [How to compare arrays in JavaScript?](https://stackoverflow.com/questions/7837456)
 
 - I have been running performance tests on some of the more simple suggestions proposed here with the following results (**fast to slow**):
