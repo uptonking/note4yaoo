@@ -17,7 +17,10 @@ modified: '2021-03-29T19:30:00.059Z'
 
 ## 
 
-## 
+## [为什么视频网站的视频链接地址是blob？](https://juejin.cn/post/6844903880774385671)
+
+- Blob与ArrayBuffer的区别是，除了原始字节以外它还提供了mime type作为元数据，Blob和ArrayBuffer之间可以进行转换。
+- File对象其实继承自Blob对象，并提供了提供了name ， lastModifiedDate， size ，type 等基础元数据。
 
 ## [How to compare arrays in JavaScript?](https://stackoverflow.com/questions/7837456)
 

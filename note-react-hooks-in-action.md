@@ -10,7 +10,6 @@ modified: '2020-07-14T11:58:56.082Z'
 - react hooks开发实践总结
 
 - hooks-custom-rfc 
-  - usePrevious
   - react-use: 就像是hooks界的lodash，一统api命名，提供参考实现
   - [@huse/hookName](https://github.com/ecomfe/react-hooks): 百度研发，提供了很多不同层次的hooks，大多基础层，也有业务层
   - [ahooks](https://github.com/alibaba/hooks): 阿里研发，提供了丰富的生产环境检验过的hooks

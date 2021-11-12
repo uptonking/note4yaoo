@@ -26,6 +26,9 @@ modified: '2021-10-27T03:20:45.841Z'
   - 拖拽本地图片到编辑器光标位置
   - ctrl+v粘贴图片到编辑器
 
+- 图片上传
+  - 将 同步执行的createObjectURL 改为 异步执行的` FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`
+
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
   - 需要继承官方plugin暴露的各个class，然后添加自定义逻辑，再glue一个新的入口类
@@ -48,6 +51,65 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1111
+
+- 图片上传问题
+  - 图片保存时，id如何设计；由服务端实现
+    - 取 uuid、文件名+随机值 、 md5-hash值 、 文件url
+  - 图片更新如何实现
+    - 目前只能先删除，再上传
+  - 图片blob对象只保存到了rxdb，暂时没有读取和使用，可以用来实现图片编号
+    - 图片数据单独存储的目的
+  - uploadedImg这个新api的设计
+  - 只实现了图片存储，暂未实现editor.getData()获取文件的无关数据移出
+
+- 体验
+  - 本地文档不方便调试图片
+
+- 实现图片本地化的思路
+  - 1. 上传图片时，图片保存到本地数据库
+  - 2. 图片保存的格式为blob格式的url
+
+- File是Blob的子类
+  - new File([], 'foo.txt') instanceof File // true
+  - new File([], 'foo.txt') instanceof Blob // true
+
+- [FileReader vs. URL.createObjectURL](https://stackoverflow.com/questions/31742072)
+- createObjectURL 同步执行
+- FileReader.readAsDataURL 异步
+- createObjectURL
+  - returns url with hash, and store object in memory until document triggers unload event (e.g. document close) or execute revokeObjectURL
+  - 需要手动释放内存
+  - ？ 注意每次上传相同的图片会返回不同的url，是否存在过多的冗余数据
+- FileReader.readAsDataURL 
+  - returns base64 that contains many characters, and use more memory than blob url, but removes from memory when you don't use it (by garbage collector)
+  - 占用更多内存，但会自动gc回收内存
+  - 方便读取和保存额外的元数据
+
+- 入职半月工作小结
+  - 第1周 主要解决图片上传显示功能不可用的问题
+    - 一开始是打算复用旧版编辑器的上传逻辑，涉及到上传服务器的部分，所以我实现了一个简单的node版
+    - 后来，通过自定义上传插件，直接将图片数据放在内存，不保存到服务器
+    - 然后，将图片上传的逻辑移出编辑器的核心，作为一个使用示例提供给外部，方便使用者自定义
+  - 第2周 主要解决流程图图片重构的问题，一开始是为了解决没有标题的问题
+    - 对照旧版编辑器查找解决方案浪费了很多时间
+    - 重构了流程图的model和view部分，复用了官方image plugin的功能，就包含了需要的caption
+    - 解决了旧的问题，引入了新的问题
+      - 开始解决粘贴mermaid文本代码不显示流程图、双击无法编辑、本地化图片会插入空imageBlock的问题
+    - 可以将此方法复用到处理其他图片相关问题，如plotly
+  - 第3周 主要在修复新编辑器的bug
+    - 修复新编辑器的样式问题，如蓝色边框、最大最小宽度、工具条有时过高，目前已没有明显bug
+    - 开始协助文浩，实现图片本地化存储、管理、编号的问题
+  - 开发体验
+    - 目前修复bug的目标大多实现在可用的水平，距离良好的代码和架构有很大差距
+    - 图片插件的自定义以后可能有比较大的工作量，如自定义图片工具条，自动更新的caption编号
+    - 新编辑器产品的研发方向很有挑战性
+  - 工作计划
+    - 继续修复编辑器的bug
+    - 开始协助文浩完善文档本地化的实现细节
+    - 配合demo day等宣传工作，实现新功能
+    - 时间允许的条件下，实现新编辑器的新feature，如统一图片公式的编号目录
 
 ## 1110
 
