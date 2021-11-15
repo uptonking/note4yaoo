@@ -30,6 +30,13 @@ modified: '2021-11-07T11:05:40.405Z'
 
 ## image plugin
 
+- [How can i change all images src attributes inserted in editor?](https://github.com/ckeditor/ckeditor5/issues/1917)
+  - You can use walker to iterate over a whole document.
+  - Then check if `value.item.is( 'image' )` and then update it's `source` attribute
+
+- [How can I add custom attribute and class on an Image after upload?](https://github.com/ckeditor/ckeditor5/issues/8943)
+  - Hi! You can use e.g. DowncastDispatcher for listening on the image insertion and use DowncastWriter to add a proper class to your `<figure>` element (which by default wraps `<img>` element)
+
 - [How can I set the alignment of a `<figcaption>`?](https://github.com/ckeditor/ckeditor5/issues/7848)
 - Enabling the `AlignmentCommand` for a caption is tricky as image's caption is a limit element in the schema
   - The command limits itself to the content of a limit element so it does not even look up to the `<caption>` element.

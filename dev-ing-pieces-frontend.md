@@ -15,12 +15,60 @@ modified: '2021-03-29T19:30:00.059Z'
 
 ## 
 
-## 
-
 ## [为什么视频网站的视频链接地址是blob？](https://juejin.cn/post/6844903880774385671)
 
 - Blob与ArrayBuffer的区别是，除了原始字节以外它还提供了mime type作为元数据，Blob和ArrayBuffer之间可以进行转换。
 - File对象其实继承自Blob对象，并提供了提供了name ， lastModifiedDate， size ，type 等基础元数据。
+
+## [How to test for equality in ArrayBuffer, DataView, and TypedArray](https://stackoverflow.com/questions/21553528)
+
+```JS
+// compare ArrayBuffers
+function arrayBuffersAreEqual(a, b) {
+  return dataViewsAreEqual(new DataView(a), new DataView(b));
+}
+
+// compare DataViews
+function dataViewsAreEqual(a, b) {
+  if (a.byteLength !== b.byteLength) return false;
+  for (let i = 0; i < a.byteLength; i++) {
+    if (a.getUint8(i) !== b.getUint8(i)) return false;
+  }
+  return true;
+}
+
+// compare TypedArrays
+function typedArraysAreEqual(a, b) {
+  if (a.byteLength !== b.byteLength) return false;
+  return a.every((val, i) => val === b[i]);
+}
+```
+
+```JS
+export function compareByteArrayData(a, b) {
+  a = dataToUint8Array(a);
+  b = dataToUint8Array(b);
+  if (a.byteLength != b.byteLength) return false;
+  return a.every((val, i) => val == b[i]);
+}
+
+// It will not copy any underlying buffers, instead it will create a view into them.
+function dataToUint8Array(data) {
+  let uint8array;
+  if (data instanceof ArrayBuffer || Array.isArray(data)) {
+    uint8array = new Uint8Array(data);
+  } else if (data instanceof Buffer) {
+    // Node.js Buffer
+    uint8array = new Uint8Array(data.buffer, data.byteOffset, data.length);
+  } else if (ArrayBuffer.isView(data)) {
+    // DataView, TypedArray or Node.js Buffer
+    uint8array = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
+  } else {
+    throw Error('Data is not an ArrayBuffer, TypedArray, DataView or a Node.js Buffer.');
+  }
+  return uint8array;
+}
+```
 
 ## `URL.createObjectURL` vs `FileReader.readAsDataURL`
 
@@ -39,7 +87,7 @@ modified: '2021-03-29T19:30:00.059Z'
 
 - when we invoke the function on the variable blob, we get back a persistent reference string with a unique URL that temporarily references to the in-memory blob object that lives in the Blob URL Store.
 - It is a persistent reference since as long as that blob is in memory the reference string will be in play unless revoked.
-- It is temporary however since when the browser is refreshed or basically unloaded, this reference is no longer held since that would be a security concern for sure. 
+- It is **temporary** however since when the browser is refreshed or basically unloaded, this reference is no longer held since that would be a security concern for sure. 
   - The reference is also temporary since it can be revoked using the Web API URL.revokeObjectURL().
 - **It is unique since each time you call `createObjectURL()`, a new object URL is created, even if you’ve already created one for the same object**. 
   - These must be individually revoked by calling `URL.revokeObjectURL()` on each one.
