@@ -9,9 +9,6 @@ modified: '2021-10-25T09:33:39.528Z'
 
 # 2021
 
-- 排查水平滚动条出现的原因
-  - [Finding/Fixing Unintended Body Overflow](https://css-tricks.com/findingfixing-unintended-body-overflow/)
-    - 打印出过宽元素的dom
 
 # guide
 - features
