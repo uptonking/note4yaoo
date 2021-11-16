@@ -9,21 +9,6 @@ modified: '2021-10-31T15:56:24.071Z'
 
 # 2021
 
-## 1114
-
-- 对上传保存图片和取出图片数据的api理解不清晰
-  - 上传图片时，img-file  ->  blobUrl  ->  rxdb-doc-id
-  - 刷新页面时，model不变，如何根据blobUrl查找图片数据
-
-- DocumentImpl.addVersion(blob, type)的目的是为了什么
-  - 操作 DocumentImpl.#versions，保存新数据的版本
-  - this.#versions.add(blob, type)
-
-- DocumentClient.set(document)的目的是为了什么
-  - 通过DocumentClient操作rxdb数据库
-  - this.#documents.atomicUpsert({ ...value, id })
-  - this.#blobs.insert({ id, type: v.type, created: v.created })
-  - ? 问题：为什么返回document.id，这个id本来就可以从参数中取到，中间有被更新吗
 
 # guide
 

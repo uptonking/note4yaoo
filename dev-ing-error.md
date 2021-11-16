@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- ckeditor writer-incorrect-use
+  - 原因待确定
+  - 修改方式为将writer.insertText()这类修改model部分的代码放在方法的第一层
+
 - CKEditorError: model-position-before-root
   - 检查ckeditor修改model部分的代码，可能是当前选择的position和要插入的position不匹配
 

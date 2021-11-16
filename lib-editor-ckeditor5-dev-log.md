@@ -14,6 +14,8 @@ modified: '2021-10-27T03:20:45.841Z'
   - 解决方法
   - 其他方案
 
+
+
 - dev-xp
   - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
 
@@ -26,8 +28,11 @@ modified: '2021-10-27T03:20:45.841Z'
   - 拖拽本地图片到编辑器光标位置
   - ctrl+v粘贴图片到编辑器
 
-- 图片上传
-  - 将 同步执行的createObjectURL 改为 异步执行的` FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`
+- 图片上传的问题
+  - ~~将 同步执行的createObjectURL 改为 异步执行的` FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`~~
+  - 上传已经以前已经上传过的图片时，是否保存了2份数据，存在冗余
+  - 首次渲染图片时，由于blobUrl失效了，控制台会报错
+    - blob:http://127.0.0.1:4001/223c5400-55e2-4ac7-b936-574b47cd0201 net::ERR_FILE_NOT_FOUND
 
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
@@ -51,6 +56,55 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1115
+
+- 首次执行editor.setData时，解决本地上传图片blobUrl失效的问题
+  - 借助正则表达式
+  - URL.createObjectURL返回的url一直是63位
+
+- 图片本地化后，刷新页面仍然会导致图片无法显示的问题
+  - 因为modelWriter.setAttribute后，ckeditor的model变化不会自动触发react的setContent更新
+  - 解决方法是手动触发更新content数据，接着自动保存更新内容
+
+- 保存图片数据后，如何恢复
+  - 通过从rxdb中读取图片数据，再对blob对象创建url
+
+- 编辑器初始测试数据
+
+```html
+<h1>title</h1>
+<figure class="image image-style-align-right">
+  <img src="blob:http://127.0.0.1:4001/f24939fd-49c8-4fb2-b90c-86917bec4b88">
+  <figcaption>&nbsp;</figcaption>
+</figure>
+<figure class="image"><img src="blob:http://127.0.0.1:4001/f4fe8af7-300e-4c89-b713-94abd837f8d4">
+</figure>
+<pre class="mermaid" style="width:80vw;"><figure class="image"><img src="https://api.editoe.com/api/mermaid/generate?data=graph%20TD%0A%20%20%20%20A%20--%3E%20B%0A%20%20%20%20A%20--%3E%20C%0A%20%20%20%20B%20--%3E%20D%0A%20%20%20%20C%20--%3E%20D%0A"></figure>graph TD
+    A --&gt; B
+    A --&gt; C
+    B --&gt; D
+    C --&gt; D
+</pre>
+<p>&nbsp;</p>
+```
+
+## 1114
+
+- 对上传后保存图片和取出图片数据的api理解不清晰
+  - 上传图片时，img-file  ->  blobUrl  ->  rxdb-doc-id
+  - 刷新页面时，model不变，如何根据blobUrl查找图片数据
+
+- DocumentImpl.addVersion(blob, type)的目的是为了什么
+  - 操作 DocumentImpl.#versions，保存新数据的版本
+  - this.#versions.add(blob, type)
+
+- DocumentClient.set(document)的目的是为了什么
+  - 通过DocumentClient操作rxdb数据库
+  - this.#documents.atomicUpsert({ ...value, id })
+  - this.#blobs.insert({ id, type: v.type, created: v.created })
+  - 问题：为什么返回document.id，这个id本来就可以从参数中取到，中间有被更新吗
+    - 虽然再次调用了setArticleId，但因为状态没变，react也不会rerender
 
 ## 1112
 
@@ -111,7 +165,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - returns base64 that contains many characters, and use more memory than blob url, but removes from memory when you don't use it (by garbage collector)
   - 占用更多内存，但会自动gc回收内存
   - 方便读取和保存额外的元数据
-
 
 ## 1110
 
@@ -452,8 +505,9 @@ return toWidget(container, writer, 'figure');
   - 要不要上传到后端? yes
   - 要不要支持用户输入任意图片url? no
 
-```markdown
 - 流程图
+
+```markdown
 
 graph TD
     A-->B;
