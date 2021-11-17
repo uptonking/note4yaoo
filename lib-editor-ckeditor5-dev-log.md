@@ -21,6 +21,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+- 折叠列表时，如何添加事件监听器的能减少rerender
+
+- 日期时间的处理
+  - 可参考日历组件的实现方案
+
 - 流程图缩放问题
 
 - 检查图片的接入方式
@@ -56,6 +61,21 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1117
+
+- useStyles()的地方会触发warning
+  - Each child in a list should have a unique "key" prop.
+
+- 利用mui的breakpoints，实现不同宽度时，同一位置显示不同元素
+  - 只在宽屏时显示
+    - hiddenSmDown:{ [theme.breakpoints.down('xs')]: { display: 'none' } }
+  - 只在小屏时显示
+    - hiddenSmUp:{ [theme.breakpoints.up('sm')]: { display: 'none' } }
+  - [Using Breakpoints in MaterialUI](https://dev.to/christensenjoe/using-breakpoints-in-materialui-5gj0)
+
+- css单位
+  - `ch` Represents the width, or more precisely the advance measure, of the glyph "0" (zero, the Unicode character U+0030) in the element's font.
 
 ## 1116
 
