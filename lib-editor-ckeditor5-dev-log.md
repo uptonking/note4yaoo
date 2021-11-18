@@ -21,6 +21,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+
+- 新首页设计与实现要点
+  - 首页使用类似workspace的设计
+  - 布局改为左侧边栏
+  - 功能上
+    - 首页时间轴默认只显示创建的文件，最近操作的文档暂时不显示
+    - pin置顶一个日期
+
 - 折叠列表时，如何添加事件监听器的能减少rerender
 
 - 日期时间的处理
@@ -38,6 +46,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 上传已经以前已经上传过的图片时，是否保存了2份数据，存在冗余
   - 首次渲染图片时，由于blobUrl失效了，控制台会报错
     - blob:http://127.0.0.1:4001/223c5400-55e2-4ac7-b936-574b47cd0201 net::ERR_FILE_NOT_FOUND
+  - 考虑直接将数据库中docId存储到
 
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
@@ -66,6 +75,7 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - useStyles()的地方会触发warning
   - Each child in a list should have a unique "key" prop.
+  - 原因定位，返回react fragment时，如果使用`<>`则无法添加key，必须使用完整的react元素 `<React. Fragment key='yourKey' >`
 
 - 利用mui的breakpoints，实现不同宽度时，同一位置显示不同元素
   - 只在宽屏时显示
