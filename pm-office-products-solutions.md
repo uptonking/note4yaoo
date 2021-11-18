@@ -48,6 +48,14 @@ modified: '2021-07-11T08:31:00.660Z'
     - 这在某种程度上跟社交软件很像，只要不是特别难用，最后就是用户最多的人取胜。
     - 在线文档这种东西，也是一个道理，你对接的人，他要用腾讯文档，你无非也就是顺手换一下的事情，用几次，你觉得腾讯文档也还行，那你就开始慢慢用了。
     - 在基础使用体验上，真的很难拉出明显的差距，最后就是用户最多的取胜，在这一点上，我依然觉得腾讯胜出的概率大。
+
+- [富文本调研](https://juejin.cn/post/6844904068847140877)
+- 字节 飞书
+  - etherpad
+- 阿里 语雀
+  - slate转自研
+- 金山 wps
+  - 自研
 # office-open-solutions
 - [Cabbage Tree Labs](https://www.cabbagetreelabs.org/)
   - Cabbage Tree Labs is a home for publishing projects critical for the wider publishing ecosystem. 
