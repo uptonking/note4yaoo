@@ -16,6 +16,7 @@ modified: '2020-12-09T09:30:24.694Z'
   - originally made for Druid
   - https://github.com/apache-superset/superset-ui
   - https://github.com/apache-superset/examples-data
+  - https://github.com/dropbox/incubator-superset-internal
 - turnilo /Apache2/335Star/202007
   - https://github.com/allegro/turnilo
   - https://allegro.tech/2018/10/turnilo-lets-change-the-way-people-explore-big-data.html
@@ -80,6 +81,10 @@ modified: '2020-12-09T09:30:24.694Z'
   - Covid19 - Dashboard for Cuba
 - https://github.com/stevenliuyi/covid19
   - an interactive, animated COVID-19 coronavirus map to track the outbreak over time by country and by region
+
+- https://github.com/savecost/datav
+  - Visualization for metrics,traces and logs etc, datav is a lightweight but better alternative to Grafana. 
+  - 后端依赖go
 # misc
 - snorkel
   - https://github.com/logv/snorkel

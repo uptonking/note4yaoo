@@ -36,7 +36,13 @@ modified: '2021-10-29T15:02:28.882Z'
 
 - ## 
 
-- ## 
+- ## So when does @GitHub copilot SEO officially start?
+- https://twitter.com/tannerlinsley/status/1461706183799189509
+  - Keywords are now code comments, 
+  - search results are now code snippets, 
+  - core web vitals is how often your snippets are used in high profile public codebases.
+
+- Especially considering that code is a very viable part of a content mix (in dev marketing at least)
 
 - ## Remotion Success Story!
 - https://twitter.com/JNYBGR/status/1438444378482221062

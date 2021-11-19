@@ -16,6 +16,16 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ##  `Array.from` uses (rightly so) `Symbol.species` , while `Object.fromEntries` doesn't
+- https://twitter.com/WebReflection/status/1461320477012631554
+  - Amend: Array.from uses `this` , not Symbol.species … yet Object.fromEntries doesn’t
+
 - ## If you want to run a piece of code multiple times (e.g. while evolving it), you can also wrap it in a code block
 - https://twitter.com/rauschma/status/1443339928503529478
 

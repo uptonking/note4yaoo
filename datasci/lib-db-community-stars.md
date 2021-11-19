@@ -17,7 +17,11 @@ modified: '2021-08-30T15:51:28.094Z'
 
 - ## 
 
-- ## 
+- ## dbt (data build tool) enables analytics engineers to transform data in their warehouses by simply writing select statements. 
+  - dbt handles turning these select statements into tables and views.
+  - dbt does the T in ELT (Extract, Load, Transform) processes – it doesn’t extract or load data
+  - A dbt project is a directory of .sql and .yml files. 
+
 # uuid vs auto-increment
 
 ## [Best practices on primary key, auto-increment, and UUID in RDBMs and SQL databases](https://stackoverflow.com/questions/52414414)

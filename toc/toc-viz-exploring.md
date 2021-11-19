@@ -27,3 +27,8 @@ modified: '2021-01-01T20:21:03.780Z'
 - https://github.com/shzlw/zeu
 # rendering
 - https://github.com/BabylonJS/Babylon.js
+
+# tools
+- https://github.com/visualize-admin/visualization-tool
+  - https://visualize.admin.ch/en
+  - The tool for visualizing Swiss Open Government Data. 

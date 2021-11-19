@@ -155,8 +155,7 @@ modified: '2021-09-20T09:00:43.564Z'
   - 微信投递 https://learnku.com/go/t/56865 
   - [牛客网招聘信息](https://www.nowcoder.com/job/41675)
 
-
-- [深圳头条 Lark 团队招前端, 实习社招都要, 大量需求](https://v2ex.com/t/647031)
+- [深圳头条 Lark 团队招前端](https://v2ex.com/t/647031)
 # 更多资源
 - 面试参考来源
   - github、知乎、掘金、语雀

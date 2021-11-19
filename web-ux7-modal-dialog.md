@@ -10,6 +10,10 @@ modified: '2021-07-29T20:37:39.797Z'
 # guide
 
 # discuss
+- ## Popper v3 is now platform-agnostic, so it can run on React Native (or anything that runs JS)
+- https://twitter.com/atomiksdev/status/1461340424275054593
+- For React Native, this demo uses very simple/naive calls unlike the DOM version, need to dedicate some time to it!
+
 - ## Building a Dialog component: markup, handlers, problems, solution
 - https://twitter.com/peduarte/status/1440610257810571269
 - The markup

@@ -10,7 +10,9 @@ modified: '2021-07-20T13:28:26.296Z'
 # guide
 
 - tips
-  - react-table的问题在于没有成熟的使用案例，没有大公司使用支持，缺少样式主题、性能优化
+  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化
+    - github最新的issues多维表格界面基于react-table实现
+    - outline wiki使用了react-table和react-window
 
 - top-dependents-of-react-table.v7
   - 各类组件库中的table或list组件
@@ -23,9 +25,20 @@ modified: '2021-07-20T13:28:26.296Z'
 - ui-table /25Star/MIT/202107/ts
   - https://github.com/habx/ui-table
   - https://habx.github.io/ui-table/
-  - 依赖@habx/ui-core、lodash、styled-components、react-table7、react-window、exceljs、papaparse(csv)、react-dropzone
+  - 依赖@habx/ui-core、react-table.v7、react-window、lodash、styled-components、exceljs、papaparse(csv)、react-dropzone
   - 例子非常多，比较成熟
   - UI components for react-table based on [ui-core](https://github.com/habx/ui-core)
+
+- https://github.com/archit-p/editable-react-table
+  - https://codesandbox.io/s/editable-react-table-gchwp
+  - React table built to resemble a database.
+  - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable
+
+- react-table-ui /4Star/MIT/202105/ts
+  - https://github.com/GuptaSiddhant/react-table-ui
+  - https://react-table-ui.js.org/
+  - https://codesandbox.io/s/react-table-ui-basic-8ukxd
+  - Out-of-the-box UI for React-Table 7
 
 - lineup-lite /7Star/MPLv2/202104/ts
   - https://github.com/sgratzl/lineup-lite
@@ -42,32 +55,33 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://github.com/Arthanadftz/plugin-chart-table
     - 依赖@emotion/core、@superset-ui/core、d3、react-table
 
-- guidu /13Star/MIT/202105/ts/react
+- @uidu/table /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
+  - table组件依赖于 react-table, react-virtual, styled-components, numeral
   - Guidu is uidu's design system library
   - 完全复制了atlassian-editor，并将组件替换成了自己的design system
   - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
   - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
   - These components are Atlassian Design Guidelines(ADG) compliant
+  - https://github.com/uidu-org/guidu/tree/main/packages/data/table
+    - 依赖react-table7、react-virtual2、styled-components5、react-intl5、@uidu
+  - https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets
+    - 依赖@uidu/table、d3、amcharts4、cubejs-client/react、s-c
 # react-table-extensions
-- react-table-ui /4Star/MIT/202105/ts
-  - https://github.com/GuptaSiddhant/react-table-ui
-  - https://react-table-ui.js.org/
-  - https://codesandbox.io/s/react-table-ui-basic-8ukxd
-  - Out-of-the-box UI for React-Table 7
-
-- https://github.com/archit-p/editable-react-table
-  - React table built to resemble a database.
-
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
+
 - https://github.com/gargroh/react-table-plugins
   - This repository contains miscellaneous react-table v7 plugins
   - useExportData - Exporting data from table
   - useColumnSummary - For displaying and calculating column summaries
   - useCellRangeSelection - Allows Cell selection and Cell range selection
 # examples
+- https://github.com/ggascoigne/react-table-example
+  - https://codesandbox.io/s/github/ggascoigne/react-table-example
+  - Demo of React Table V7 using TypeScript as well as Material UI
+
 - https://github.com/jimmybutton/react-tailwind-table
   - 只依赖 react-table7、@tailwindcss/forms
   - [React Table Tutorial Part 2: Style the table with Tailwind CSS](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/)
@@ -81,17 +95,18 @@ modified: '2021-07-20T13:28:26.296Z'
   - 依赖bootstrap4、react-table7、reactstrap8
   - [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
 
-- https://github.com/ggascoigne/react-table-example
-  - https://codesandbox.io/s/github/ggascoigne/react-table-example
-  - Demo of React Table V7 using TypeScript as well as Material UI
-
 - https://github.com/bezkoder/react-table-crud-example
   - React Table example: CRUD App with react-table v7, axios, Bootstrap
+  - [React Table example: CRUD App | react-table 7](https://www.bezkoder.com/react-table-example-hooks-crud/)
+
 - https://github.com/jcape-gt/RemoteDataTable
   - A CRUD data table library for React 
-  - 依赖react-table7、material-ui、date-fns、react-hook-form
+  - 依赖react-table.v7、material-ui.v4、date-fns、react-hook-form
+  - Rows automatically support read/edit mode
+
 - https://github.com/Eversoft-Group/react-table
   - React table component build with Bootstrap and react-table
+  - https://eversoft-group.github.io/react-table/
 
 - https://github.com/datopian/datapub
   - https://tech.datopian.com/publish/
@@ -106,6 +121,9 @@ modified: '2021-07-20T13:28:26.296Z'
   - 依赖d3、react-table、react-dropzone、html-react-parser、bootstrap4
   - 示例简单实用，表格很简单
 
+- https://github.com/vishal-nath-chauhan/React-table-v7-blog-series
+  - https://github.com/vishal-nath-chauhan/React-table-v7-blog-series-Part-2
+
 - https://github.com/nteract/data-explorer
   - https://data-explorer.nteract.io/
   - Data Explorer is nteract's automatic visualization tool.
@@ -115,13 +133,12 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://github.com/getdkan/data-catalog-components
   - https://getdkan.github.io/data-catalog-components
   - A set of React components to facilitate the creation of Open Data Catalogs with React.
-  - built for dkan(基于php，而ckan基于python) 
-# design system/ui built with react-table
-- https://github.com/uidu-org/guidu/tree/main/packages/data/table
-  - 依赖react-table7、react-virtual2、styled-components5、react-intl5、@uidu
-- https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets
-  - 依赖@uidu/table、d3、amcharts4、cubejs-client/react、s-c
+  - built for dkan(基于php，而ckan基于python)
 
+- https://github.com/toni783/MUI-react-virtual-table
+  - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
+  - react-table.v7, react-virtual, material-ui.v4
+# design system/ui built with react-table
 - https://github.com/netdata/netdata-ui/tree/master/src/components/table
   - https://netdata.github.io/netdata-ui/
   - Table component Implementation based on react-table lib.
@@ -139,6 +156,13 @@ modified: '2021-07-20T13:28:26.296Z'
   - React data table component.
   - 示例比较多
   - 依赖 @material-ui/core.v4、@eqworks/lumen-ui，有部分ui包无法安装需要密码
+- @heathmont/moon-table
+  - https://github.com/coingaming/moon-design
+- @zenbu-ui/table
+  - https://github.com/KodepandaID/zenbu-ui
+
+- more design system using react-table
+  - PatternFly
 
 - 过于简单
   - https://github.com/edx/paragon/tree/master/src/Table
@@ -159,3 +183,10 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/uqix/reactkit-table
   - Table component using react-table and material-ui
+
+- https://github.com/brycemcl/covid-table
+  - https://covid-table-675ae.web.app/
+  - Just a short project parsing a CSV file into a table
+
+- https://github.com/pramodsvidyarthi/react-table-virtualized
+  - Created with CodeSandbox

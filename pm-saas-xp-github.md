@@ -22,6 +22,9 @@ modified: '2021-08-02T15:19:42.036Z'
     - 在github直接搜索导入库的代码 import from react，再限制语言如js
     - 或者搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
     - 对于最新的库或版本，直接搜索import是最准确的方式
+  - 搜索代码的变通方式 filename:
+    - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~
+    - react-table filename:package.json
   - 搜索条件使用日期 pushed:2021-11-11
     - react created:<2011-01-01 
     - editor pushed:>=2013-03-06 fork:only 
