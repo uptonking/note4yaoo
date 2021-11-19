@@ -9,7 +9,16 @@ modified: '2021-10-31T15:56:24.071Z'
 
 # 2021
 
+## 1119
 
+- 日历热力图样式
+  - github方块 10x10
+  - gitee方块 13x15
+  - affine方块 14x14
+
+- 方块样式参考github
+
+- 点击添加文档按钮，在日历热力图上会反映出操作记录
 # guide
 
 # ckeditor-faq-repeat
