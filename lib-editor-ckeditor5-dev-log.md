@@ -24,6 +24,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+- affine的ux交互设计
+  - 落地页
+  - 个人主页、首页
+  - 工作空间页
+
 - workspace如何设计
   - 本地仓库、云端仓库
   - 我的仓库、公共仓库
@@ -80,6 +85,27 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1119
+
+- material-ui v4 组件
+  - `Modal` component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.
+  - `Popper` can be used to display some content on top of another. 
+    - It's an alternative to react-popper.
+  - `Popover` can be used to display some content on top of another.
+    - The component is built on top of the `Modal` component.
+    - The scroll and click away are blocked unlike with the `Popper` component.
+  - `Dialog` informs users about a task and can contain critical information, require decisions, or involve multiple tasks.
+
+## 1118
+
+- 日历热力图样式
+  - github方块 10x10
+  - gitee方块 13x15
+  - affine方块 14x14
+  - 方块样式参考github
+
+- 点击添加文档按钮，在日历热力图上会反映出操作记录
 
 ## 1117
 

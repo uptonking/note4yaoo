@@ -9,6 +9,52 @@ modified: '2021-07-11T08:31:00.660Z'
 
 # guide
 
+# trending-office-products
+
+## [almanac](https://almanac.io/features)
+
+- features-selling-points
+  - modern editor
+    - real-time collaboration, track changes, version history, templates...
+  - os for documents
+    - organize docs in handbooks, folders, groups or nested docs
+  - living documentation
+    - enable anyone to suggest changes, without disturbing the original doc
+  - collaborative workflows
+    - use structured workflows to ask for feedback or approval on documents
+  - version control
+    - use branches to draft, ideate, and revise high-risk work
+
+- features
+  - everything remote teams need to create, organize, collaborate, and share
+  - create
+    - an easy-to-use yet powerful document editor
+    - save templates or content to quickly reuse.
+    - realtime collaboration
+    - keyboard friendly; command panel
+    - dynamic elements: insert checklists, tables, embed videos, figma files
+  - organize
+    - curate docs into wiki-style handbooks
+    - git-like version control to branch and merge ideas, drafts, and revisions
+    - create bidirectional links to other docs
+    - nested folders: organize docs in a simple folder system
+    - fast search
+  - collaborate
+    - get feedback on documents in a way that is structured and transparent
+    - assign, manage, and review tasks in the doc editor; not in another trello
+    - approval (and an audit trail) without another meeting
+    - comments on the doc with auto-threading
+    - track changes: see exactly what edits have been made
+    - crowd-source improvements:let anyone suggest changes
+    - message inbox: respond to comments from across all your docs, in one place
+  - share
+    - share docs with read receipts
+    - publish docs with a link with edit/comment/copy permissions
+    - home for community-focused documentation
+    - password protect for docs
+    - adjust permissions for dozens of documents at once
+    - easily share folders and docs with multiple people
+
 # office-online-products
 - 选型参考
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
