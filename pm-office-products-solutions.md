@@ -18,12 +18,17 @@ modified: '2021-07-11T08:31:00.660Z'
     - real-time collaboration, track changes, version history, templates...
   - os for documents
     - organize docs in handbooks, folders, groups or nested docs
+    - 双链引用，助力分析，操作更方便
+    - 文档小册，wiki风格的文档浏览，左侧目录，右侧文档内容，便于整理
   - living documentation
     - enable anyone to suggest changes, without disturbing the original doc
   - collaborative workflows
     - use structured workflows to ask for feedback or approval on documents
+    - 文档、任务、审批、反馈集中化管理
+    - 透明工作流
   - version control
     - use branches to draft, ideate, and revise high-risk work
+    - 支持创建分支文档，然后将分支文档的修改合并回原文档
 
 - features
   - everything remote teams need to create, organize, collaborate, and share
@@ -54,7 +59,6 @@ modified: '2021-07-11T08:31:00.660Z'
     - password protect for docs
     - adjust permissions for dozens of documents at once
     - easily share folders and docs with multiple people
-
 # office-online-products
 - 选型参考
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml

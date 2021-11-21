@@ -5,12 +5,14 @@ created: '2021-04-30T17:53:42.566Z'
 modified: '2021-05-13T02:54:14.171Z'
 ---
 
-# lib-list-react-table-community-v8
-
-# guide
-
+# lib-list-react-table-commu
+- v8分支参考
+  - https://github.com/HebleV/react-table/tree/beta
+    - beta-20201109
+    - https://github.com/XiaoyueCai/react-table/tree/beta
+  - https://github.com/schuchertmanagementberatung/react-table/tree/next
+    - next-20200525
 # pieces
-
 - ## 
 
 - ## [20210430] I'm so tired of trying to make a TypeScript plugin system for React Table v8 
@@ -42,6 +44,7 @@ modified: '2021-05-13T02:54:14.171Z'
 
 - ## [20201117] #ReactTable v8 #TypeScript Plugin System Update
 - https://twitter.com/tannerlinsley/status/1328410205734858753
+  - 未push到github
 - This is the current status of how it looks like to build a (contrived) React Table plugin.
   - Provide your Instance
   - Opt-in to decorate specific generics, allow others to default
