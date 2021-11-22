@@ -107,6 +107,43 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 1122
 
+- 只在鼠标悬浮时才显示元素的方法
+  - [Using only CSS, show div on hover over another element](https://stackoverflow.com/questions/5210033)
+
+```CSS
+.showme {
+  display: none;
+}
+
+.showhim:hover .showme {
+  display: block;
+}
+```
+
+```html 
+<div class="showhim">
+  HOVER ME
+  <div class="showme">hai</div>
+</div>
+
+```
+
+- 表格的最大宽度无法占满右边
+  - 问题在于表格是inline-block，列宽默认150，总宽是多少就显示多少
+  - 可以手动修改列宽
+
+- 表格一列的宽度无法设置
+  - 考虑使用useBlockLayout
+  - [Width is not working Material-UI Enhanced Table](https://github.com/tannerlinsley/react-table/discussions/2332)
+
+- workspace的文档列表功能实现顺序
+  - [x] 替换mock数据
+  - [x] 图标
+  - [x] 折叠
+  - [x] 排序
+  - 工具条
+  - [ ] sticky header
+
 - react-table选用哪种布局
   - 参考相关示例和成熟的产品，可选择table或绝对定位
 

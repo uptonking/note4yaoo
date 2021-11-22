@@ -11,17 +11,34 @@ modified: '2021-03-29T19:30:00.059Z'
 
 # logging
 
- 
+## [Typing for object deep paths](https://github.com/microsoft/TypeScript/issues/12290)
 
+- is it possible in theory to type deeply nested paths
+
+```typescript
+interface Some {
+  a: number,
+  b: {
+    c: number
+    d: {
+      e: number
+    }
+  }
+}
+
+```
+- https://github.com/sindresorhus/type-fest/pull/153
 ## [How do I save and restore a File object in local storage](https://stackoverflow.com/questions/19119040)
+
 - Your only option is to store the full image data in localStorage. I also wonder why you would allow your application to store references to images. If they are meant to be uploaded just upload when you're online. What can you do offline anyway?
   - The reason I'm trying to save the File object is so that it is persisted across browser/page reloads. 
 - My suggestion is to add the dataURL to your file object and stringify it after. So you have have the full file object and you can load the image with the dataURL stored
 - Since there is literally no way to instantiate a `File` object in JavaScript you are pretty much out of luck. 
   - The closest alternative would be, when restoring the string encoded file from local storage, to create a `Blob`, which `File` inherits from. 
   - You can use a `Blob` for the majority of things you would otherwise use a `File` for. 
-  - If you think an example of this would be useful I will write it up. It doesn't really solve your problem though, just gets you a little closer to the kind of object you seem to actually want.
-
+  - If you think an example of this would be useful I will write it up. It doesn't really 
+  
+  solve your problem though, just gets you a little closer to the kind of object you seem to actually want.
 
 ## [为什么视频网站的视频链接地址是blob？](https://juejin.cn/post/6844903880774385671)
 
