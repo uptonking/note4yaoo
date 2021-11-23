@@ -105,6 +105,30 @@ modified: '2021-10-27T03:20:45.841Z'
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
 
+## 1123
+
+- nextjs用户登录的实现
+  - rbac路由
+  - [Role-Based Routing](https://github.com/vercel/next.js/discussions/23041)
+    - 思路是基于 import { useRouter } from "next/router" 实现
+
+- nextjs动态路由
+  - 将匹配路由的过程在构建时或请求时自动计算匹配
+  - 与react-router的手动计算类似
+
+- 不登录的时候，能够查看哪些内容
+  - 本地缓存
+  - 公共模版
+  - 用户分享
+
+- workspace的路由url设计
+  - 类似github的url： username/workspace
+  - 用户名必须6位及以上，小于6位由系统保留使用
+
+- nextjs的全局状态管理
+  - pages/_app.js 中可以定义全局使用的context，这样子组件就能通过useContext获取到
+  - 可考虑将经常变动的state值放在单独的context，然后将不变的dispatch方法放在另一个单独的context
+
 ## 1122
 
 - 只在鼠标悬浮时才显示元素的方法
