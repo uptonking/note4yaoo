@@ -25,7 +25,7 @@ modified: '2021-08-11T07:36:15.522Z'
 - 注意children是子路由，子路由并没有提前统一创建，而是传递给页面组件动态创建；
   - 所以页面组件内部必须处理子路由的渲染
   - 优点是动态创建路由
-  - 缺点是页面组件结构被污染
+  - 缺点是页面组件结构被污染(在页面中处理子路由的逻辑)
 
 - 实现步骤
   - 定义roles
@@ -85,7 +85,9 @@ modified: '2021-08-11T07:36:15.522Z'
     - [Node.js - Role Based Authorization Tutorial with Example API](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api)
 
 - [Role Based Authorization with React Router v6 and Typescript](https://adarshaacharya.com.np/blog/role-based-auth-with-react-router-v6)
-  - 简单实用 PrivateRoute + requiredRoles
+  - 简单实用，思路清晰，先验证用户，再检查用户的权限是否符合路由要求
+  - PrivateRoute + requiredRoles
+
 - [React-router authorization based on user roles](https://www.nafrontendzie.pl/autoryzacja-react-router-role-uzytkownika)
   - [Role-based authorization using React-Router](http://web.archive.org/web/20170529015710/http://frontendinsights.com/role-based-authorization-using-react-router/)
   - 限制路由访问的实现，所有需鉴权的页面组件都继承自AuthorizedComponent，里面实现了role的比较判断
@@ -95,3 +97,14 @@ modified: '2021-08-11T07:36:15.522Z'
   - what I wanted to achieve
     - limit the access to some routes to specific roles. 
     - different roles have access to different functionality so I wanted to show different components on the home page.
+
+- [6 种 Vue 权限路由实现方式总结(最全)](https://cloud.tencent.com/developer/article/1449210)
+  - 使用全局路由守卫
+  - 登录页与主应用分离
+  - 使用 addRoutes 动态挂载路由
+  - 菜单与路由分离，菜单由后端返回
+  - 菜单与路由完全由后端返回
+  - 不使用全局路由守卫，手动添加路由
+    - 前面几种方式，除了 登录页与主应用分离，每次路由跳转，都在全局路由守卫里做了判断
+    - 应用初始化的时候只挂载不需要权限控制的路由
+    - 若没有初始化，则调用远程接口获取菜单和路由等，然后处理后端返回的路由，将 component 赋值为真正的组件，接着调用 addRoutes 挂载新路由，最后跳转路由即可
