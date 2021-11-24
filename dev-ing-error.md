@@ -11,6 +11,9 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [Error: No router instance found. you should only use "next/router" inside the client side of your app.](https://github.com/vercel/next.js/issues/6713) 
+  - 不要将router.push()写到render方法里面，要写到onClick方法或useEffect里面
+
 - ckeditor writer-incorrect-use
   - 原因待确定
   - 修改方式为将writer.insertText()这类修改model部分的代码放在方法的第一层

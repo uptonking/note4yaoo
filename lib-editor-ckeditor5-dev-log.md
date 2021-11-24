@@ -15,8 +15,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 原因定位
   - 解决方法
   - 其他方案
-
-- 提出问题之后，你有什么更好的方案、行业内更专业的方案
+  - 提出问题之后，有什么更好的方案、行业内更专业的方案
 
 - dev-xp
   - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
@@ -41,6 +40,8 @@ modified: '2021-10-27T03:20:45.841Z'
 - to-do
   - workspace
     - sticky header
+  - 全局路由守卫的时机错误
+    - **应该在路由跳转前重定向，而不是在路由跳转后再次跳转**
 
 - workspace如何设计
   - 本地仓库、云端仓库
@@ -121,15 +122,51 @@ modified: '2021-10-27T03:20:45.841Z'
   4. 打开单个文档  >  编辑器页面
      - /usernameId/docId
 
-## 1123
+## 1124
 
-- material-ui 暂时没有dropdown组件
-  - select组件样式太简陋
+- nextjs router.push()要放到useEffect或onClick里面
+
+- 权限状态码
+  - 401 Unauthorized（未经授权），需要登陆
+  - 403 Forbidden（被禁止），需要对应权限
+  - 404 Not Found（找不到），可能的原因是服务器端没有这个页面
+
+- 处理复制粘贴url的流程
+  - 先访问/user/me检查登录
+  - 在获取workspace列表等基本信息
+  - 然后检查目标url是否符合权限要求
+  - 最后显示目标url的页面
+
+- 路由权限和http取数权限的验证返回值结构
+  - 路由权限要检查返回的用户对象是否包含`role/canAccess`属性，通过后才跳转路由；
+    - 需要新的查询接口，或者直接在前端配置规则
+    - {errorCode: 401, canAccessRes: false}
+  - http请求权限要在请求头中带上 authorization，检查返回值是否包含成功标志，返回值包含成功标志才直接使用，否则鉴权失败
+    - {errorCode: 401, canAccessRes: false}
 
 - nextjs用户登录的实现
   - rbac路由
   - [Role-Based Routing](https://github.com/vercel/next.js/discussions/23041)
     - 思路是基于 import { useRouter } from "next/router" 实现
+    - 不要将router.push()写到render方法里面，要写到onClick方法或useEffect里面
+  - [Role-Based Routing with Next.js](https://spin.atomicobject.com/2019/12/11/role-based-routing-with-next-js/)
+    - 每次跳转page时检查 router.pathname.startsWith("/employee") && role !== "employee"
+
+- 解决用户权限的2个维度
+  - 路由级权限控制，定义路由配置对象时，声明访问该路由需要的role
+  - http请求级权限控制，访问敏感数据或执行敏感操作时需要检查role
+  - 其他参考
+    - 动态添加路由
+    - 菜单与路由分离，菜单由后端返回菜单
+    - 或者 菜单与路由完全由后端返回
+
+- useEffect的返回值函数未执行的原因
+  - 可能组件已经卸载，就不会执行了
+
+## 1123
+
+- material-ui 暂时没有dropdown组件
+  - select组件样式太简陋
 
 - nextjs动态路由
   - 将匹配路由的过程在构建时或请求时自动计算匹配
@@ -184,7 +221,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - [x] 图标
   - [x] 折叠
   - [x] 排序
-  - 工具条
+  - [ ] 工具条
   - [ ] sticky header
 
 - react-table选用哪种布局
