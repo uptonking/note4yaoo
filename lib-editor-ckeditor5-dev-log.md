@@ -38,6 +38,10 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## not-yet
 
+- to-do
+  - workspace
+    - sticky header
+
 - workspace如何设计
   - 本地仓库、云端仓库
   - 我的仓库、公共仓库
@@ -104,8 +108,23 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+- affine产品操作流程
+  1. 用户登录  >  landing未登录页、注册页、登录页
+     - /usernameId
+
+  2. 请求workspace列表  >  用户个人主页
+     - /usernameId 
+
+  3. 打开单个workspace  >  workspace页面
+     - /usernameId/workspaceId 
+
+  4. 打开单个文档  >  编辑器页面
+     - /usernameId/docId
 
 ## 1123
+
+- material-ui 暂时没有dropdown组件
+  - select组件样式太简陋
 
 - nextjs用户登录的实现
   - rbac路由
