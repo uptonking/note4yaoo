@@ -26,14 +26,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - almanac体验-pros
 - almanac体验-cons
-  - 版本控制
-    - 没有显示分支的时间先后关系，只显示了已合并未合并
-      - 类似github insights里面不同fork的顺序
 - almanac体验-feat-版本控制
   - 亮点：创建分支 + 合并修改
   - merge分支文档到主文档时，头部图片不会自动迁移，需要手动修改
-  - 分支文档被合并到主文档后，分支文档的状态会改变为 locked只读，不能再次编辑
+  - 分支文档被合并到主文档后，分支文档的状态会改变为locked只读，不能再次编辑
     - 已被合并过的分支文档，只有被再次复制创建副本，才能修改
+  - 版本控制cons
+    - 没有显示分支的时间先后关系，只显示了已合并未合并
+      - 类似github insights里面不同fork的顺序
 
 ## not-yet
 
@@ -42,6 +42,9 @@ modified: '2021-10-27T03:20:45.841Z'
     - sticky header
   - 全局路由守卫的时机错误
     - **应该在路由跳转前重定向，而不是在路由跳转后再次跳转**
+
+- 刷新页面，登陆会失效的问题
+  - 实现退出登录
 
 - workspace如何设计
   - 本地仓库、云端仓库
@@ -102,6 +105,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 系统操作菜单，如收藏、下载、删除当前图片
   - 替换当前图片
   - 自定义图片标题的显示和更新逻辑
+  - 如何插入inline图片，插入图片后，先缩小，再拖放到一行内
 
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
   - 插入元素的位置，通常放在command
@@ -109,6 +113,15 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+
+## 1126
+
+- 创建workspaceId以数字开头
+  - 但rxdb的数据库不能以数字开头
+  - 变通方案：保存前统一加前缀
+
+## 1124
+
 - affine产品操作流程
   1. 用户登录  >  landing未登录页、注册页、登录页
      - /usernameId
@@ -121,8 +134,6 @@ modified: '2021-10-27T03:20:45.841Z'
 
   4. 打开单个文档  >  编辑器页面
      - /usernameId/docId
-
-## 1124
 
 - nextjs router.push()要放到useEffect或onClick里面
 
@@ -151,6 +162,9 @@ modified: '2021-10-27T03:20:45.841Z'
     - 不要将router.push()写到render方法里面，要写到onClick方法或useEffect里面
   - [Role-Based Routing with Next.js](https://spin.atomicobject.com/2019/12/11/role-based-routing-with-next-js/)
     - 每次跳转page时检查 router.pathname.startsWith("/employee") && role !== "employee"
+  - [Next.js - Redirect to Login Page if Unauthenticated](https://jasonwatmore.com/post/2021/08/30/next-js-redirect-to-login-page-if-unauthenticated)
+  - [[RFC] - Route guards](https://github.com/vercel/next.js/discussions/11822)
+  - [Implement Protected Routes in NextJS： verify & no-verify token](https://dev.to/shubhamverma/implement-protected-routes-in-nextjs-37ml)
 
 - 解决用户权限的2个维度
   - 路由级权限控制，定义路由配置对象时，声明访问该路由需要的role
