@@ -20,9 +20,24 @@ modified: '2021-10-27T03:20:45.841Z'
 - dev-xp
   - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
 
-- deps
+- dev-summary
+  - 使用最多的组件
+    - button
+    - icon
+    - input/TextField
   - 日历热力图 react-activity-calendar
+    - 中文本地化
+    - 始终显示70+N天
+    - to-do
+      - tooltip传入组件
   - 文件列表 react-table
+    - 悬浮工具条
+    - to-do
+      - sticky header
+  - 文本以打字动画的形式动态展示 typed.js
+    - 书写动画、回退动画
+    - to-do
+      - 实现多行文本依次展示
 
 - almanac体验-pros
 - almanac体验-cons
@@ -120,11 +135,12 @@ modified: '2021-10-27T03:20:45.841Z'
 - affine
   - /e'fain/
   - adjective mathematics
-  - allowing for or preserving parallel relationships
+  - Allowing for or preserving parallel relationships
   - The Notion-like docs solution for enterprises.
 
 - affine首页的打字效果
   - https://www.theorange.digital/
+  - "typed.js":"^2.0.12"
 
 ## 1126
 
