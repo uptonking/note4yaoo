@@ -38,8 +38,9 @@ modified: '2021-10-27T03:20:45.841Z'
 ## not-yet
 
 - to-do
-  - workspace
+  - workspace 文档列表
     - sticky header
+    - 删除文档后，只在列表删除了，文档数据库中仍然存在
   - 全局路由守卫的时机错误
     - **应该在路由跳转前重定向，而不是在路由跳转后再次跳转**
 
@@ -114,7 +115,23 @@ modified: '2021-10-27T03:20:45.841Z'
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
 
+## 1127
+
+- affine
+  - /e'fain/
+  - adjective mathematics
+  - allowing for or preserving parallel relationships
+  - The Notion-like docs solution for enterprises.
+
+- affine首页的打字效果
+  - https://www.theorange.digital/
+
 ## 1126
+
+- 文章页 上下结构
+  - 右侧资源面板可切换隐藏
+
+## 1125
 
 - 创建workspaceId以数字开头
   - 但rxdb的数据库不能以数字开头
