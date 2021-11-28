@@ -18,17 +18,19 @@ modified: '2021-09-26T16:44:04.493Z'
   - 编辑器技术深度、广度都很大，值得长期投入，符合程序员的职业目标，而不是实现各种crud应用
 
 - self-cons
+  - 以前对技术方向和工作没有合理的规划，所以积累的技术和履历不多
   - 想法比较多
     - 技术选型
     - 功能细节的增删
   - 比较执着，追求完美
     - 想将产品做到更少的bug
+  - 算法能力和思维需要训练和加强
+    - 如ot、crdt
   - 经常陷入技术选型的无底洞
     - 如css-in-js、theming
     - 自己实现写得丑，第三方的依赖实在太多
-  - 算法能力和思维需要训练和加强，如ot、crdt
   - 方向不明确
-    - 编辑器baseline：prosemirror，slate，quill，editorjs
+    - 编辑器baseline：prosemirror，slate，quill，editorjs，etherpad
     - 产品方向：笔记、论文、office文档、jupyter
   - 技术不深入
     - 高性能渲染、更新
