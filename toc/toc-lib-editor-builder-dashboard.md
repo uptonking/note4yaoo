@@ -484,6 +484,13 @@ modified: '2021-01-08T11:48:16.590Z'
   - ActionView front-end source code, based on Reactjs＋Redux.
   - https://github.com/lxerxa/actionview /50Star/202101
   - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
+
+- https://github.com/nishantpainter/personal-kanban
+  - https://personalkanban.js.org/
+  - 依赖 material-ui.v4, formik, i18next, moment, react-beautiful-dnd
+  - columns and cards
+  - an offline capable application or tool that implements kanban to manage work at personal level
+  - The application is registered with service workers and behaves as a progressive web application (PWA)
 # draggable layout
 - gridstack.js /3.6kStar/MIT/202101/ts
   - https://github.com/gridstack/gridstack.js

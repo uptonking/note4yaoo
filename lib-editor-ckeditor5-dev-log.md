@@ -65,8 +65,9 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - 任务看板
   - features
-    - 切换 列表视图、看板视图、时间线视图
+    - 切换 列表视图、看板视图、时间线(甘特图)视图
     - 从看板创建文档
+    - checkbox
 
 - 刷新页面，登陆会失效的问题
   - 实现退出登录
@@ -138,6 +139,17 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
 # 2021
+- TODO
+  - 点击任务卡片时，应该出现弹窗
+  - 看板卡片右上角的删除图标应该悬浮时才出现
+  - checkbox
+
+## 1129
+
+- 之前的editoe组件为什么会报那个chunk错误？
+
+- codebase-https://github.com/nishantpainter/personal-kanban
+  - Column 看板的一列，是一个面板，上面可以放置小卡片
 
 ## 1127
 
