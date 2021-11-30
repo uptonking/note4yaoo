@@ -11,6 +11,21 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [a different version of babel-loader was detected higher up in the tree](https://q.cnblogs.com/q/112292/)
+  - node_module删了，用yarn重新下，create-react-app内部用的是yarn，他们嫌npm有问题，自己做了个yarn，所以最好换yarn来下载，这样出问题的概率要小很多。
+- [Babel-loader issues with Storybook](https://stackoverflow.com/questions/65280848/yarn-build-babel-loader-issues-with-storybook)
+  - If you are using yarn, you can easily get around it using `"resolutions": { "babel-loader": "8.1.0" },`
+
+```shell
+
+npm i --legacy-peer-deps
+
+npm ls babel-loader
+
+npm dedupe --legacy-peer-deps
+
+```
+
 - [Error: No router instance found. you should only use "next/router" inside the client side of your app.](https://github.com/vercel/next.js/issues/6713) 
   - 不要将router.push()写到render方法里面，要写到onClick方法或useEffect里面
 
