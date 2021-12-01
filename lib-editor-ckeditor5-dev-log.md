@@ -29,6 +29,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - button
     - icon
     - input/TextField
+    - list
   - 日历热力图 react-activity-calendar
     - 中文本地化
     - 始终显示70+N天
@@ -38,6 +39,8 @@ modified: '2021-10-27T03:20:45.841Z'
     - 悬浮工具条
     - to-do
       - sticky header
+  - 看板工具
+    - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
   - 文本以打字动画的形式动态展示 typed.js
     - 书写动画、回退动画
     - to-do
@@ -56,6 +59,9 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - dev-xp
   - 一段代码排查很久没找到原因，可能是复制粘贴代码时忘了修改细节，如粘贴后false未修改为true
+
+- material-ui缺点
+  - 没有dropdown，select默认会遮挡触发元素
 
 ## not-yet
 
@@ -145,12 +151,18 @@ modified: '2021-10-27T03:20:45.841Z'
 # 2021
 - TODO
   - [x] 点击任务卡片时，应该出现弹窗
-  - [ ] checkbox
-  - [ ] 添加日程：开始时间、结束时间
-  - [ ] @其他用户
-  - [ ] 创建文档
-  - [ ] 看板卡片右上角的删除图标应该悬浮时才出现
-  - [ ] 鼠标在卡片上方时，形状应该是pointer，而不是拖拽的grab
+  - [x] checklist/子任务
+  - [x] 添加日程：开始时间、结束时间
+  - [x] 创建文档
+  - [x] @负责人成员或用户
+  - [ ] 卡片弹窗应该自动保存内容，而不是显示保存和放弃修改按钮
+  - [x] 看板卡片右上角的删除图标应该悬浮时才出现
+  - [x] 鼠标在卡片上方时，形状应该是pointer，而不是拖拽的grab
+
+## 1201
+
+- https://github.com/nishantpainter/personal-kanban
+  - wipLimit可以限制一个面板内的任务卡片数量，当达到指定数量时，不能再添加新卡片
 
 ## 1129
 
