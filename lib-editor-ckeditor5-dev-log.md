@@ -152,12 +152,33 @@ modified: '2021-10-27T03:20:45.841Z'
 - TODO
   - [x] 点击任务卡片时，应该出现弹窗
   - [x] checklist/子任务
-  - [x] 添加日程：开始时间、结束时间
   - [x] 创建文档
+  - [x] 添加日程：开始时间、结束时间
   - [x] @负责人成员或用户
-  - [ ] 卡片弹窗应该自动保存内容，而不是显示保存和放弃修改按钮
-  - [x] 看板卡片右上角的删除图标应该悬浮时才出现
+  - [x] 看板卡片右上角的删除、更多图标应该悬浮时才出现
   - [x] 鼠标在卡片上方时，形状应该是pointer，而不是拖拽的grab
+  - [ ] 卡片弹窗应该自动保存内容，而不是显示保存和放弃修改按钮
+  - 卡片上文档列表展开时，底部头像会被快速挤到卡片之外，然后快速还原
+  - 卡片上需要动作菜单列表，对话框需要弹出搜索列表、选择列表、日期面板
+  - 子任务暂时不能修改，只能先删除再添加，需要一个列表
+
+## 1203
+
+## 1202
+
+- **react子组件获取不到父组件传递的props，始终是undefined**
+  - 原因排查
+    - 从react devtools工具中分析问题组件接收的props的具体值，发现Board组件的直接子组件是KanbanColumn，而不是Column
+    - 从Board到Column，中间还有KanbanColumn、Draggable、ContextProvider等组件
+    - 连源码都没有看清楚就想当然测试了，浪费了很多时间
+  - 错误思路
+    - 因为对react的forceUpdate理解不够深入
+    - const [ignored, forceUpdate] = useReducer(x => x + 1, 0); 
+    - function handleClick() { forceUpdate(); }
+    - `<button onClick={forceUpdate}>Force update</button>`
+
+- 更新对象数组中一个对象的方法
+  - setState(prevState => ( { data: prevState.data.map(el => (el.id === id ? { ...el, text } : el)) }) )
 
 ## 1201
 
