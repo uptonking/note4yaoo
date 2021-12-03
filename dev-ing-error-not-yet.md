@@ -9,8 +9,13 @@ modified: '2021-03-29T19:29:15.528Z'
 
 # pieces
 
+- ## input设置`border: none; `后，仍然显示边框的问题
+  - 排查失败
+  - MuiPickersUtilsProvider   DatePicker
+  - . MuiInputBase-input{ border: 0; }
+  - https://codesandbox.io/s/material-demo-forked-fg5xk?file=/demo.js
 
-- 在ckeditor项目执行yarn install的异常信息
+- ## 在ckeditor项目执行yarn install的异常信息
   - Error: https://github.com/ckeditor/jsdoc: ETIMEDOUT
   - Error: https://github.com/pemrouz/buble: ETIMEDOUT
   - Error: https://github.com/ckeditor/jsdoc: ESOCKETTIMEDOUT

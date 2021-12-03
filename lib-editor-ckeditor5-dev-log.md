@@ -164,6 +164,21 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 1203
 
+- @material-ui/pickers日历的局限
+  - 已废弃
+  - 日历文本必须先显示，日历卡片才能弹出在正确位置；
+  - 若日历文本未提前渲染到dom，文本和卡片同时渲染出来时，由于卡片的位置依赖于文本位置，所以会出现分离和漂移
+  - 临时解决方案：提前将日历文本渲染到dom，但`visibility：hidden`，会占据空间，不触发事件
+
+- onClick事件触发多个任务的实现思路
+  - 要考虑如何在其他地方触发相同的操作，将计算逻辑抽离出去方便其他地方复用
+
+- input设置`border: none; `后，仍然显示边框的问题
+  - 排查失败
+  - MuiPickersUtilsProvider   DatePicker
+  - . MuiInputBase-input{ border: 0; }
+  - https://codesandbox.io/s/material-demo-forked-fg5xk?file=/demo.js
+
 ## 1202
 
 - **react子组件获取不到父组件传递的props，始终是undefined**
