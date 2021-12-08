@@ -45,6 +45,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 书写动画、回退动画
     - to-do
       - 实现多行文本依次展示
+  - hover-show-otherwise-hidden
 
 - almanac体验-pros
 - almanac体验-cons
@@ -72,6 +73,9 @@ modified: '2021-10-27T03:20:45.841Z'
   - 全局路由守卫的时机错误
     - **应该在路由跳转前重定向，而不是在路由跳转后再次跳转**
 
+- 多维表格
+  - 对于每行，只能直接编辑文本类型的单元格，其他类型单元格的编辑要么
+
 - 任务看板
   - features
     - 切换 列表视图、看板视图、时间线(甘特图)视图
@@ -80,6 +84,7 @@ modified: '2021-10-27T03:20:45.841Z'
 - 看板 to-do
   - [x] 负责人列表不能多选
   - [ ] 截止日期不能清除
+  - 看板、表格的数据考虑全局，暴露出去给其他组件访问
 
 - 刷新页面，登陆会失效的问题
   - 实现退出登录
@@ -166,6 +171,16 @@ modified: '2021-10-27T03:20:45.841Z'
   - 子任务暂时不能修改，只能先删除再添加，需要一个列表
   - 将卡片拖动到最右边`添加分组`的空列时，应该支持自动新建卡片
   - 标签、子任务添加按钮出现时，旁边应该还有取消按钮
+
+
+## 1209
+- 待讨论：表格的实现形式
+  - 视觉上 单个表格
+    - https://v89sa2wwaq.feishu.cn/base/bascnDfGDUAC9uZmG8WAIm68pDf?table=tblLEEoU9EpeZpaF&view=vewG1l8FO1
+    - https://fupi20211128172727640.worktile.com/mission/projects/61a3bc018c35ea4484cf9468
+  - 视觉上 多个表格
+    - https://v89sa2wwaq.feishu.cn/base/bascnkYxZcXLhaTfIDpw6MIpvkd?table=tblAmjmotNVInT2p&view=vewxycGIAm
+    - https://tower.im/projects/fc0d13409e357c612254c3707d9150e3/list/todos/
 
 ## 1207
 

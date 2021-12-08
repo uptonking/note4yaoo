@@ -171,6 +171,9 @@ modified: '2021-01-08T11:48:16.590Z'
   - https://htmlstream.com/front-dashboard/index.html
     - https://htmlstream.com/templates/front-dashboard/
     - 源码需付费，白色主题，样式友好，右侧是可勾选配置项的浮动sidebar
+
+- https://github.com/ahmadbinshafiq/CL-FE
+  - admin dashboard template built with React and Bootstrap 4. Developed with ❤️ by Flatlogic
 # react-dashboard
 - https://github.com/llorentegerman/react-admin-dashboard
   - https://llorentegerman.github.io/react-admin-dashboard/

@@ -31,8 +31,8 @@ modified: '2021-05-13T02:54:43.606Z'
 # features
 
 - ## row span /WIP
-- [cell-level rowspan/colspan](https://github.com/tannerlinsley/react-table/issues/1933)
 - [How to use rowSpan](https://github.com/tannerlinsley/react-table/discussions/2233)
+- [cell-level rowspan/colspan](https://github.com/tannerlinsley/react-table/issues/1933)
 - [pr: Add useRowSpan plugin](https://github.com/tannerlinsley/react-table/pull/2534)
   - this comes to a need having virtualization with row spans, now i can't use row span html attribute because my HoCs are divs and React naturally can't handle that nested DOM validation.
 

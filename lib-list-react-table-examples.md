@@ -22,38 +22,27 @@ modified: '2021-07-20T13:28:26.296Z'
 - top-dependents-of-react-table.v6
   - nteract/data-explorer: 依赖d3、numeral
 # popular
-- ui-table /25Star/MIT/202107/ts
+- ui-table /25Star/MIT/202112/ts
   - https://github.com/habx/ui-table
   - https://habx.github.io/ui-table/
   - 依赖@habx/ui-core、react-table.v7、react-window、lodash、styled-components、exceljs、papaparse(csv)、react-dropzone
-  - 例子非常多，比较成熟
+  - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
+  - 单元格包括 array、boolean、icon、image；单元格没有dropdown
+  - 支持导入导出csv, xlsx
   - UI components for react-table based on [ui-core](https://github.com/habx/ui-core)
 
-- https://github.com/archit-p/editable-react-table
+- editable-react-table /410Star/MIT/202108/js
+  - https://github.com/archit-p/editable-react-table
   - https://codesandbox.io/s/editable-react-table-gchwp
   - React table built to resemble a database.
   - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable
+  - 支持3种单元格类型 Cell data types - number, text, select
 
-- react-table-ui /4Star/MIT/202105/ts
+- react-table-ui /7Star/MIT/202107/ts
   - https://github.com/GuptaSiddhant/react-table-ui
   - https://react-table-ui.js.org/
   - https://codesandbox.io/s/react-table-ui-basic-8ukxd
   - Out-of-the-box UI for React-Table 7
-
-- lineup-lite /7Star/MPLv2/202104/ts
-  - https://github.com/sgratzl/lineup-lite
-  - https://lineup-lite.js.org/docs/
-  - 依赖 react-table.v7、react-virtual.v2、lineup-lite
-  - LineUp-lite is an extension of the excellent react-table library for rendering beautiful interactive table visualizations based on the LineUp ranking visualization technique.
-  - @lineup-lite/hooks provide extensions to react-table such as additional React hooks and custom renderers. 
-  - @lineup-lite/table provides a wrapper around react-table providing a single LineUp-like React table component.
-
-- @superset-ui/plugin-chart-table
-  - https://github.com/apache-superset/superset-ui/tree/master/plugins/plugin-chart-table
-  - https://apache-superset.github.io/superset-ui/?path=/story/chart-plugins-plugin-chart-table--big-table
-  - This plugin provides Table chart for Superset.
-  - https://github.com/Arthanadftz/plugin-chart-table
-    - 依赖@emotion/core、@superset-ui/core、d3、react-table
 
 - @uidu/table /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
@@ -65,9 +54,37 @@ modified: '2021-07-20T13:28:26.296Z'
   - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
   - These components are Atlassian Design Guidelines(ADG) compliant
   - https://github.com/uidu-org/guidu/tree/main/packages/data/table
-    - 依赖react-table7、react-virtual2、styled-components5、react-intl5、@uidu
+    - 依赖react-table7、react-virtual、styled-components5、react-intl5、@uidu
   - https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets
     - 依赖@uidu/table、d3、amcharts4、cubejs-client/react、s-c
+
+- @superset-ui/plugin-chart-table
+  - https://github.com/apache-superset/superset-ui/tree/master/plugins/plugin-chart-table
+    - https://apache-superset.github.io/superset-ui/?path=/story/chart-plugins-plugin-chart-table--big-table
+    - This plugin provides Table chart for Superset.
+  - https://github.com/apache-superset/superset-ui
+    - packages that power the Apache Superset UI, and can be used to craft custom data applications
+  - https://github.com/Arthanadftz/plugin-chart-table
+    - 依赖@emotion/core、@superset-ui/core、d3、react-table
+  - https://github.com/w11k/superset-chart-plugins
+    - Table Chart; Scatter Chart
+
+- lineup-lite /7Star/MPLv2/202104/ts
+  - https://github.com/sgratzl/lineup-lite
+  - https://lineup-lite.js.org/docs/
+  - 依赖 react-table.v7、react-virtual.v2、lineup-lite
+  - LineUp-lite is an extension of the excellent react-table library for rendering beautiful interactive table visualizations based on the LineUp ranking visualization technique.
+  - @lineup-lite/hooks provide extensions to react-table such as additional React hooks and custom renderers. 
+  - @lineup-lite/table provides a wrapper around react-table providing a single LineUp-like React table component.
+
+- lumen-table
+  - https://github.com/EQWorks/lumen-table
+  - https://eqworks.github.io/lumen-table/
+  - React data table component.
+  - 示例比较多，但功能实现都过于简单
+  - 依赖 @material-ui/core.v4、@eqworks/lumen-ui，有部分ui包无法安装需要密码
+  - https://github.com/EQWorks/react-labs
+  - https://github.com/EQWorks/lumen-ui
 # react-table-extensions
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
@@ -80,7 +97,16 @@ modified: '2021-07-20T13:28:26.296Z'
 # examples
 - https://github.com/ggascoigne/react-table-example
   - https://codesandbox.io/s/github/ggascoigne/react-table-example
-  - Demo of React Table V7 using TypeScript as well as Material UI
+  - Demo of React Table V7 using TypeScript as well as Material UI v4
+- https://github.com/legendarydev007/react-material-dashboard
+  - built with material-ui framework coded by Lahm
+- https://github.com/Podoprigora/material-ui-custom-theme
+  - https://podoprigora.github.io/material-ui-custom-theme/
+  - Custom theme for material-ui by making use of sass.
+
+- https://github.com/paalamugan/excel-sheet-react-table
+  - https://paalamugan.github.io/excel-sheet-react-table/
+  - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
 
 - https://github.com/jimmybutton/react-tailwind-table
   - 只依赖 react-table7、@tailwindcss/forms
@@ -138,9 +164,13 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://github.com/toni783/MUI-react-virtual-table
   - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
   - react-table.v7, react-virtual, material-ui.v4
+
+- https://github.com/MelisaMert/crud-react-contextapi
+  - Basic Crud Operation with contextapi
 # design system/ui built with react-table
 - https://github.com/netdata/netdata-ui/tree/master/src/components/table
   - https://netdata.github.io/netdata-ui/
+  - 提供了一套设计系统的ui，table实现过于简单
   - Table component Implementation based on react-table lib.
   - Virtualized settings are mostly replicating react-window
   - Requires numeric width and height of the container.
@@ -151,18 +181,18 @@ modified: '2021-07-20T13:28:26.296Z'
   - customizable data table powered by react-table used in Entando projects specifically in Appbuilder & CMS.
   - columns resizable and reorderable (except actions column)
 
-- https://github.com/EQWorks/lumen-table
-  - https://eqworks.github.io/lumen-table/
-  - React data table component.
-  - 示例比较多
-  - 依赖 @material-ui/core.v4、@eqworks/lumen-ui，有部分ui包无法安装需要密码
+
+
+- https://github.com/patternfly/patternfly-react/tree/main/packages/react-table
+  - https://patternfly-react.surge.sh/components/table
+  - 给了很多示例，Compound expandable，Tree table
 - @heathmont/moon-table
   - https://github.com/coingaming/moon-design
 - @zenbu-ui/table
   - https://github.com/KodepandaID/zenbu-ui
 
-- more design system using react-table
-  - PatternFly
+- more ui/design system using react-table
+  - https://github.com/scality/zenko-ui
 
 - 过于简单
   - https://github.com/edx/paragon/tree/master/src/Table
@@ -190,3 +220,21 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/pramodsvidyarthi/react-table-virtualized
   - Created with CodeSandbox
+
+- https://github.com/ToolJet/ToolJet
+  - low-code framework to build and deploy internal tools
+
+- https://github.com/savecost/datav
+  - datav.io is a lightweight but better alternative to Grafana
+- https://github.com/nasa/earthdata-search
+  - Earthdata Search is a web application developed by NASA EOSDIS to enable data discovery, search, comparison
+
+- https://github.com/Buffme/superset-dashboard
+  - 抽出dashboard这块功能
+# non-react-table
+- https://github.com/venkatakireeti/meta-data-editor
+  - React table component with useful functions.
+  - 未使用react-table，但用了react-window
+
+- https://github.com/quantmind/metablock-js
+  - TypeScript tools for the metablock cloud
