@@ -9,13 +9,15 @@ modified: '2021-11-29T08:25:19.337Z'
 
 # guide
 - features
-  - 切换 列表视图、看板视图
+  - ~~切换 列表视图、看板视图~~
   - 从看板创建文档
   - 看板日程
   - emoji
 
 - 看板主要参考
   - trello、飞书、worktile、tower
+
+- 参考notion database的设计，将文档看板做成通用多维表格的一个可复用模板
 # kanpan-pm
 
 ## ux设计

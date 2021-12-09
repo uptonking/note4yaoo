@@ -156,6 +156,7 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
+  - 测试连续调用自定义hook时useRef的current的值的变化
 # 2021
 - TODO
   - [x] 点击任务卡片时，应该出现弹窗
@@ -171,10 +172,12 @@ modified: '2021-10-27T03:20:45.841Z'
   - 子任务暂时不能修改，只能先删除再添加，需要一个列表
   - 将卡片拖动到最右边`添加分组`的空列时，应该支持自动新建卡片
   - 标签、子任务添加按钮出现时，旁边应该还有取消按钮
-
+  - 对于看板上的日程，近期日程除了日期数字外，还可以显示类似下周日这样的文本
 
 ## 1209
-- 待讨论：表格的实现形式
+
+- ✔ 待讨论：表格的实现形式
+  - 多个表格的视觉形式通过分组实现
   - 视觉上 单个表格
     - https://v89sa2wwaq.feishu.cn/base/bascnDfGDUAC9uZmG8WAIm68pDf?table=tblLEEoU9EpeZpaF&view=vewG1l8FO1
     - https://fupi20211128172727640.worktile.com/mission/projects/61a3bc018c35ea4484cf9468
