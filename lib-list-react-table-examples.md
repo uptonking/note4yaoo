@@ -25,17 +25,18 @@ modified: '2021-07-20T13:28:26.296Z'
 - ui-table /25Star/MIT/202112/ts
   - https://github.com/habx/ui-table
   - https://habx.github.io/ui-table/
-  - 依赖@habx/ui-core、react-table.v7、react-window、lodash、styled-components、exceljs、papaparse(csv)、react-dropzone
-  - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
-  - 单元格包括 array、boolean、icon、image；单元格没有dropdown
-  - 支持导入导出csv, xlsx
   - UI components for react-table based on [ui-core](https://github.com/habx/ui-core)
+  - 依赖@habx/ui-core、react-table.v7、react-window、styled-components、lodash、exceljs、papaparse(csv)、react-dropzone
+  - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
+  - 单元格类似包括 array、boolean、icon、image；没有dropdown
+  - filter支持搜索框、滑动条、下拉菜单
+  - 支持导入导出csv, xlsx
 
 - editable-react-table /410Star/MIT/202108/js
   - https://github.com/archit-p/editable-react-table
   - https://codesandbox.io/s/editable-react-table-gchwp
   - React table built to resemble a database.
-  - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable
+  - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable, clsx
   - 支持3种单元格类型 number, text, select，弹出框很好用
 
 - react-table-ui /7Star/MIT/202107/ts
@@ -43,17 +44,18 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://react-table-ui.js.org/
   - https://codesandbox.io/s/react-table-ui-basic-8ukxd
   - Out-of-the-box UI for React-Table 7
+  - 依赖只有react-table
+  - 样式完全自己实现，样式添加基于完全自己实现的styled，useStylesheet会添加css到dom中，document.head.insertAdjacentElement
   - 示例类似kitchen sink，支持排序、过滤，不支持分组，每行hover时会出现悬浮操作菜单，点击有弹框
-  - 依赖styled-components，样式完全自己实现
 
 - lumen-table
   - https://github.com/EQWorks/lumen-table
   - https://eqworks.github.io/lumen-table/
   - React data table component.
-  - 示例比较多，但功能实现都过于简单
   - 依赖 @material-ui/core.v4、@eqworks/lumen-ui
-  - filter支持滑动条
+  - 示例比较多
   - 单元格支持可展开元素，当该元素展开时，整行会变高，示例在 render json
+  - filter支持 range滑动条、按现有值、日期范围
   - ref
     - https://github.com/EQWorks/react-labs
     - https://github.com/EQWorks/lumen-ui

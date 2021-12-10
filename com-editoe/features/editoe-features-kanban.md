@@ -18,7 +18,14 @@ modified: '2021-11-29T08:25:19.337Z'
   - trello、飞书、worktile、tower
 
 - 参考notion database的设计，将文档看板做成通用多维表格的一个可复用模板
-# kanpan-pm
+# 看板的设计与实现
+
+## 导出功能
+
+- [Making sense of Trello's JSON export](https://help.trello.com/article/924-making-sense-of-trellos-json-export)
+  - 在看板工具条的最右侧 show menu菜单 -> More -> Print and export
+  - https://trello.com/b/qoBz7TLE/hello-trello
+  - 导出的json文件 https://trello.com/b/qoBz7TLE.json
 
 ## ux设计
 

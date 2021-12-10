@@ -29,9 +29,7 @@ modified: '2020-11-13T07:31:23.527Z'
   - /1Star/MIT/202007
   - https://xl-vision.rhysxia.me/
   - React component library based on react hooks instead of class
-
 # components-hooks
-
 - hooks组件库参考
   - https://github.com/microsoft/fluentui
   - https://github.com/mui-org/material-ui
@@ -95,9 +93,7 @@ modified: '2020-11-13T07:31:23.527Z'
   - React components and hooks for @dash-ui
   - https://github.com/dash-ui/styles
     - A tiny, powerful, framework-agnostic CSS-in-JS library
-
 # utils-hooks
-
 - https://github.com/streamich/react-use
   - /16kStar/Unlicense/202010/ts
   - Collection of essential React Hooks
@@ -125,8 +121,12 @@ modified: '2020-11-13T07:31:23.527Z'
   - /4.2kStar/MIT/201906
   - Web APIs turned into React Hooks and Suspense-friendly React components
 
+- https://github.com/homerchen19/use-undo
+  - React Hooks to implement Undo and Redo functionality
+  - Refer to Redux Implementing Undo History, use-undo implements the same concept with useReducer.
+  - `{ past: Array<T>, present: <T>, future: Array<T> }` 状态结构
+  - there are three functions in actions (set, undo and redo) that dispatch defined types and necessary value.
 # more-hooks
-
 - https://github.com/Raathigesh/retoggle
   - /1.4kStar/MIT/202007
   - React hooks which provides UI toggles to manipulate your component state from outside. 
