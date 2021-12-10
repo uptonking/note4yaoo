@@ -26,10 +26,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - dev-summary
   - 使用最多的组件
-    - button
     - icon
+    - button
     - input/TextField
     - list
+    - dialog/modal/popover
   - 日历热力图 react-activity-calendar
     - 中文本地化
     - 始终显示70+N天
@@ -39,7 +40,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 悬浮工具条
     - to-do
       - sticky header
-  - 看板工具
+  - 看板工具 personal-kanban
     - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
   - 文本以打字动画的形式动态展示 typed.js
     - 书写动画、回退动画
@@ -72,9 +73,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 删除文档后，只在列表删除了，文档数据库中仍然存在
   - 全局路由守卫的时机错误
     - **应该在路由跳转前重定向，而不是在路由跳转后再次跳转**
-
-- 多维表格
-  - 对于每行，只能直接编辑文本类型的单元格，其他类型单元格的编辑要么
 
 - 任务看板
   - features
@@ -176,7 +174,7 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 1210
 
-- 预定义的字段名称不能太随意
+- 看板预定义的字段名称不能太随意
   - 可参考成熟的产品，如trello，这样就直接支持导入trello数据
 
 ## 1209
