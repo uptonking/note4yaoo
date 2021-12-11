@@ -80,7 +80,7 @@ modified: '2021-07-20T13:28:26.296Z'
     - 依赖@uidu/table、d3、amcharts4、cubejs-client/react、s-c
 
 - @superset-ui/plugin-chart-table
-  - https://github.com/apache-superset/superset-ui/tree/master/plugins/plugin-chart-table
+  - https://github.com/apache/superset/tree/master/superset-frontend/plugins/plugin-chart-table
     - https://apache-superset.github.io/superset-ui/?path=/story/chart-plugins-plugin-chart-table--big-table
     - This plugin provides Table chart for Superset.
   - https://github.com/apache-superset/superset-ui

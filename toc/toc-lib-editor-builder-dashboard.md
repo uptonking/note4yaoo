@@ -464,6 +464,11 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/riktar/jkanban /630Star/202012
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards
+- https://github.com/asseinfo/react-kanban
+  - https://nvjp3.csb.app/
+  - 样式较简单
+  - 只依赖 react-beautiful-dnd
+  - Yet another Kanban/Trello board lib for React.
 - https://github.com/rcdexta/react-trello /1.5kStar/202012
   - https://rcdexta.com/react-trello/
   - Pluggable components to add a kanban board to your application
@@ -480,9 +485,6 @@ modified: '2021-01-08T11:48:16.590Z'
     - 前端单独分离出来了
   - Sails.js, Knex.js
   - PostgreSQL
-- https://github.com/lourenci/react-kanban /样式较简单
-  - https://nvjp3.csb.app/
-  - Yet another Kanban/Trello board lib for React.
 - https://github.com/lxerxa/actionview-fe
   - ActionView front-end source code, based on Reactjs＋Redux.
   - https://github.com/lxerxa/actionview /50Star/202101

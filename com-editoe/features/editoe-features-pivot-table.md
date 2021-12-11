@@ -23,10 +23,14 @@ modified: '2021-12-07T05:12:27.586Z'
 - 多维表格主要参考
   - 飞书多维表格
   - notion database
+  - github issues看板
   - clickup
   - 其他
     - tower、worktile
+    - [github看板示例](https://github.com/orgs/toeverything/projects/1/views/4?layout=table)
     - [在飞书多维表格使用智能导入](https://helpdesk.feishu.cn/hc/zh-CN/articles/360049067854)
+    - [飞书多维表格接入指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/bitable/notification)
+      - 目前开放多维表格在App、数据表、视图、字段以及记录 5 种内容的 API 
 
 - why react-table
   - powerful
