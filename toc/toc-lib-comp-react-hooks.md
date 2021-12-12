@@ -126,6 +126,9 @@ modified: '2020-11-13T07:31:23.527Z'
   - Refer to Redux Implementing Undo History, use-undo implements the same concept with useReducer.
   - `{ past: Array<T>, present: <T>, future: Array<T> }` 状态结构
   - there are three functions in actions (set, undo and redo) that dispatch defined types and necessary value.
+- https://github.com/sandiiarov/use-simple-undo
+  - handle undo\redo turned into React Hooks.
+  - /inactive
 # more-hooks
 - https://github.com/Raathigesh/retoggle
   - /1.4kStar/MIT/202007

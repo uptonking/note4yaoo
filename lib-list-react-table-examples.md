@@ -45,7 +45,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://codesandbox.io/s/react-table-ui-basic-8ukxd
   - Out-of-the-box UI for React-Table 7
   - 依赖只有react-table
-  - 样式完全自己实现，样式添加基于完全自己实现的styled，useStylesheet会添加css到dom中，document.head.insertAdjacentElement
+  - 样式完全自己实现，样式添加基于完全自己实现的styled，useStylesheet会添加css到dom中，`document.head.insertAdjacentElement`手动插到dom头部
   - 示例类似kitchen sink，支持排序、过滤，不支持分组，每行hover时会出现悬浮操作菜单，点击有弹框
 
 - lumen-table

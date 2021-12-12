@@ -9,6 +9,10 @@ modified: '2021-11-05T13:31:12.802Z'
 
 # guide
 
+- ckeditor experts
+  - https://github.com/afeiship
+    - 提供了非常多的编辑器类模版项目
+  - https://github.com/letsbug/ckeditor5-build-multies
 # popular
 - https://github.com/ckeditor/github-writer
   - a WYSIWYG rich-text editor for GitHub. 
@@ -19,12 +23,6 @@ modified: '2021-11-05T13:31:12.802Z'
   - https://zendeskgarden.github.io/ckeditor/
   - This package provides Garden theme customizations for the @ckeditor/ckeditor5-theme-lark package
   - 只是样式，js极少
-
-- https://github.com/aghontpi/dnde
-  - https://dnde.bluepie.in/
-  - Drag and drop editor Designed for Mails
-  - built with react, antd, mjml(a markup language created by Mailjet and designed to reduce the pain of coding a responsive email)
-  - 依赖html2cansvas、quill
 # ckeditor-react
 - https://github.com/ckeditor/ckeditor5-react
   - https://ckeditor.com/ckeditor-5
@@ -52,13 +50,30 @@ modified: '2021-11-05T13:31:12.802Z'
   - https://github.com/urbania-media/micromag-js/tree/develop
   - 依赖draft-js、@micromag/core
 # ckeditor-extensions
-- https://github.com/letsbug/ckeditor5-plugins
-  - 适用于自定义构建的插件包。要使用此插件包，则不建议直接使用官方的classic、decoupled、inline、balloon等构建，建议自定义构建
+- https://github.com/JDinABox/ckeditor5-build-markdown
+  - A markdown version of the classic editor build of CKEditor 5
+  - Based on the classic editor build for CKEditor 5.
+
 - https://github.com/letsbug/ckeditor5-build-multies
   - 基于CKEditor5的自定义构建项目，它同时包含了官方的Classic、Decoupled、Inline构建，以及一些适用于中国富文本编辑排版的自定义插件。
+  - https://github.com/letsbug/ckeditor5-plugins
+    - 适用于自定义构建的插件包。要使用此插件包，则不建议直接使用官方的classic、decoupled、inline、balloon等构建，建议自定义构建
+    - 已弃用，源码转移到了上面仓库
 
 - https://github.com/lvshaoli/lleditor
   - 自己扩充ckEditor5插件，视频上传，和pdf上传
+
+- https://github.com/nkdas91/ckeditor5-classic-plus
+  - a Custom Build built on top of CKEditor 5 Build - Classic (version: 31.1.0). 
+  - It adds Simple Upload Adapter, Image Resize, Font Styling and much more to the official build.
+
+- https://github.com/deniapps/ckeditor5-build-classic-dna
+  - https://deniapps.com/playground/ckeditor
+  - Based on CKEditor5 Build Classic with code block and inserting an image by URL, uploading images, adding images from Unsplash, and more features.
+
+- https://github.com/y3owk1n/ckeditor-with-toc
+  - https://ckeditor-with-toc.vercel.app/
+  - 在编辑器外显示toc
 
 - https://github.com/isaul32/ckeditor5-math
   - a TeX-based mathematical plugin for CKEditor 5. 
@@ -79,6 +94,7 @@ modified: '2021-11-05T13:31:12.802Z'
   - Now, I recommend you to use the official plugin
 - https://github.com/SamhammerAG/ckeditor5-internallink-plugin
   - A generic ckeditor plugin to create link tags containing an identifier instead of a url
+  - https://github.com/SamhammerAG/ssp-ckeditor5-build-inline
 
 - https://github.com/RasmusRummel/ckeditor5-bookmark
   - a free bookmark plugin for CKEditor 5
@@ -86,7 +102,14 @@ modified: '2021-11-05T13:31:12.802Z'
 - https://github.com/wiris/html-integrations
   - MathType is a formula editor and equation writer. 
   - We develop and maintain MathType Web plugins for CKEditor, Froala, and TinyMCE.
+
+- https://github.com/antoniolucasnobar/ckeditor5-export-document
+  - supports RTF (using html-to-rtf-browser) and PDF (using html-to-pdfmake and pdfmake) conversion.
+  - it is not as good as the CKEditor5 paid implementation
 # ckeditor-examples
+- https://github.com/BetaPictoris/document-editor
+  - A simple Electron app that uses CKEditor 5's document editor.
+
 - https://github.com/ckeditor/ckeditor5-collaboration-samples
   - Collaboration integration examples for CKEditor 5
 
@@ -95,6 +118,10 @@ modified: '2021-11-05T13:31:12.802Z'
 
 - https://github.com/nomi9995/ckeditor-boilerplate
   - CKEditor boilerplate
+
+- https://github.com/luozz1994/multirooteditor5
+  - 基于ckeditor5的多根编辑器
+  - 基于ckeditor5的编辑器扩展，丰富编辑器功能，除了本身的功能外，还提供动态增删编辑器的功能、设置单个编辑器的数据，可以前后追加或者完全覆盖
 # ckeditor4
 - https://github.com/liferay/alloy-editor
   - WYSIWYG editor based on CKEditor 4 with completely rewritten UI
@@ -112,9 +139,12 @@ modified: '2021-11-05T13:31:12.802Z'
   - ckeditor定制版
   - CKEditor-based implementation and add some plugins, For example kityformula etc.
 # more-ckeditor
-
+- https://github.com/aghontpi/dnde
+  - https://dnde.bluepie.in/
+  - Drag and drop editor Designed for Mails
+  - built with react, antd, mjml(a markup language created by Mailjet and designed to reduce the pain of coding a responsive email)
+  - 依赖html2cansvas、quill
 # ckeditor-expert
-
 - https://github.com/letsbug
 
 - https://github.com/afeiship
