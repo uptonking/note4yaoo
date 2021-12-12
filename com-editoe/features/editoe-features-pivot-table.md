@@ -41,6 +41,8 @@ modified: '2021-12-07T05:12:27.586Z'
 
 - https://notionpages.com/
 # 多维表格产品的设计和实现
+- notion使用体验
+  - 当databse是full page的时候，难以删除，复制粘贴
 
 ## 问题讨论
 
