@@ -16,9 +16,13 @@ modified: '2021-11-29T08:25:19.337Z'
 
 - 看板主要参考
   - trello、飞书、worktile、tower
+  - [trello card api](https://developer.atlassian.com/cloud/trello/rest/api-group-cards/)
+  - [trello object definitions](https://developer.atlassian.com/cloud/trello/guides/rest-api/object-definitions/)
 
 - 参考notion database的设计，将文档看板做成通用多维表格的一个可复用模板
 # 看板的设计与实现
+- 看板的结构
+  - Board -> CardListGroup -> Card
 
 ## 导出功能
 

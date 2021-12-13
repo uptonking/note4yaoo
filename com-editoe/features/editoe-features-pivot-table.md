@@ -19,6 +19,12 @@ modified: '2021-12-07T05:12:27.586Z'
   - row as page
   - diff CompareTable
   - collapsible cell, not only row
+  - 可能的亮点
+    - 表格分身
+    - diff视图
+    - 可离线使用
+    - 交互元素丰富，如图片、折叠展开
+    - 分组聚合分析：上卷下钻
 
 - 多维表格主要参考
   - 飞书多维表格

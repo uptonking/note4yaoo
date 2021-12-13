@@ -38,6 +38,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - React table built to resemble a database.
   - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable, clsx
   - 支持3种单元格类型 number, text, select，弹出框很好用
+  - 没有全局工具条，但表头每列的下拉菜单很完整；不支持分组
 
 - react-table-ui /7Star/MIT/202107/ts
   - https://github.com/GuptaSiddhant/react-table-ui
@@ -47,6 +48,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - 依赖只有react-table
   - 样式完全自己实现，样式添加基于完全自己实现的styled，useStylesheet会添加css到dom中，`document.head.insertAdjacentElement`手动插到dom头部
   - 示例类似kitchen sink，支持排序、过滤，不支持分组，每行hover时会出现悬浮操作菜单，点击有弹框
+  - 有全局工具条，但没有每列工具条
 
 - lumen-table
   - https://github.com/EQWorks/lumen-table
@@ -55,6 +57,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - 依赖 @material-ui/core.v4、@eqworks/lumen-ui
   - 示例比较多
   - 单元格支持可展开元素，当该元素展开时，整行会变高，示例在 render json
+  - 工具条支持下拉菜单选择要显示的字段列
   - filter支持 range滑动条、按现有值、日期范围
   - ref
     - https://github.com/EQWorks/react-labs
