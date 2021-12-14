@@ -406,6 +406,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://nadbm.github.io/react-datasheet/
   - Excel-like data grid (table) component for React
   - 基于table标签实现，样式太简单
+- https://github.com/komarovalexander/ka-table
+  - /58Star/MIT/202010/ts
+  - http://ka-table.com/
+  - 基于table标签实现
+  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
 - rc-table /MIT/693star/202010/ts
   - https://github.com/react-component/table
   - http://react-component.github.io/table/
@@ -460,11 +465,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://axui-datagrid.jsdev.kr/introduction
   - 基于table标签实现
   - DataGrid, DataSheet for React
-- https://github.com/komarovalexander/ka-table
-  - /58Star/MIT/202010/ts
-  - http://ka-table.com/
-  - 基于table标签实现
-  - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more
 - https://github.com/erfangc/GigaGrid
   - /30Star/MIT/201703/ts
   - http://erfangc.github.io/GigaGrid/
