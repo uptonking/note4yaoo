@@ -178,6 +178,24 @@ modified: '2021-10-27T03:20:45.841Z'
     - 在文档中的不能修改checkbox，打开弹窗才能修改
     - 子任务转换成任务卡片
 
+- 多维表格实现计划
+  - [x] 工具条 + 表格
+  - [x] 切换表格视图、分组视图
+  - 去掉依赖
+  - 切换表格视图、看板视图
+  - 编辑单元格
+  - 样式调整
+    - 表格整体左边框和上边框缺失
+- 多维表格实现说明
+  - 分组
+    - 暂时只支持离散变量，不支持连续型数值
+
+## 1214
+
+- react-table的expanding和subComponent的区别
+  - expanding的行展开后，tableInstance的rows总行数会增加，折叠后rows数量会减少
+  - subComponent展开后，tableInstance的rows不变
+
 ## 1213
 
 - 如何更新看板的数据和ui
