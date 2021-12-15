@@ -13,6 +13,7 @@ modified: '2021-11-29T08:25:19.337Z'
   - 从看板创建文档
   - 看板日程
   - emoji
+  - actionsLog，查看操作记录
 
 - 看板主要参考
   - trello、飞书、worktile、tower
