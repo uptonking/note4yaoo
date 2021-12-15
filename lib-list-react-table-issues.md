@@ -28,8 +28,11 @@ modified: '2021-05-13T02:54:43.606Z'
 
 - [no horizontal scrollbar showing up when resizing columns to be wider than the available table width](https://github.com/tannerlinsley/react-table/issues/2630)
 
-# features
+- [A server side external sorting and filtering example](https://github.com/tannerlinsley/react-table/discussions/2033)
 
+- [Move filtering outside table](https://github.com/tannerlinsley/react-table/discussions/2234)
+  - https://codesandbox.io/s/react-table-filter-outside-table-bor4f
+# features
 - ## row span /WIP
 - [How to use rowSpan](https://github.com/tannerlinsley/react-table/discussions/2233)
 - [cell-level rowspan/colspan](https://github.com/tannerlinsley/react-table/issues/1933)
@@ -64,22 +67,28 @@ modified: '2021-05-13T02:54:43.606Z'
 
 - ## layout
 - [pr: useGridLayout](https://github.com/tannerlinsley/react-table/pull/2525)
-
 # issues
 
-- ## [v7 Feedback & Ideas](https://github.com/tannerlinsley/react-table/issues/1252)
+## [v7 Feedback & Ideas](https://github.com/tannerlinsley/react-table/issues/1252)
 
-- ## [[v7] Table 100% width](https://github.com/tannerlinsley/react-table/issues/1639)
+## [[v7] Table 100% width](https://github.com/tannerlinsley/react-table/issues/1639)
+
   - I use `useBlockLayout` and I don’t understand how to make the table stretch 100% of the width of the parent. In theory, the width of the columns should be adjusted as it was at V6
   - Out of the box, no, it does not behave like v6, since it is not using a flexbox model. 
   - useBlockLayout uses inline-block divs with precise widths. You can stretch the table container itself to take up the full width, but in a block or absolute layout, your columns will not grow automatically. 
   - The only way I know of to reliably do that is using the default html-table-element layout.
 
-- ## Recently I've been toying with the idea of making a factory for the column definitions.  One factory per domain object.
-- https://twitter.com/Brent_m_Clark/status/1363649341504823300
+## [Recently I've been toying with the idea of making a factory for the column definitions.  One factory per domain object.](https://twitter.com/Brent_m_Clark/status/1363649341504823300)
+
 - Maybe he says to automate the column creation with a function or so. 
   - Which takes the table row data and returns the column object as wanted by react table. 
   - I don’t see the use but might be feasible
 - We use a single table component and the columns are gotten from a factory object. Works well for us. 
   - The complexities we faced were because of some decisions we made earlier and not because of the pattern. 
   - For ex, some columns were generated from json and that was a mistake
+
+## [Conditionally rendering cell data based on accessor value](https://github.com/tannerlinsley/react-table/discussions/2093)
+
+- Using a ternary in the Cell renderer to check the value and render accordingly is the best way to achieve this!
+# more-issues
+- [Sub rows disappear after global filter](https://github.com/tannerlinsley/react-table/issues/2241)

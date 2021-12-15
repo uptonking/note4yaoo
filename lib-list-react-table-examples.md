@@ -31,6 +31,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - 单元格类似包括 array、boolean、icon、image；没有dropdown
   - filter支持搜索框、滑动条、下拉菜单
   - 支持导入导出csv, xlsx
+  - 缺点是不支持编辑、不支持改变列宽度
 
 - editable-react-table /410Star/MIT/202108/js
   - https://github.com/archit-p/editable-react-table
