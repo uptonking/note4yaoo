@@ -221,9 +221,26 @@ modified: '2021-10-27T03:20:45.841Z'
 - 多维表格数据源设置
   - { data : [] }
   - 对表格 data, columns
-    - 
+    - if( field === 'subTasksList' )
     - 特殊处理文档字段、子任务字段
-  - 对看板 
+  - 对看板 data -> kanbanData
+
+- notion卡片边框的样式
+
+```css
+.card {
+  position: static;
+  display: block;
+  margin-bottom: 5px;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  border-radius: 3px;
+  color: inherit;
+  background: white;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 100ms ease-out 0s;
+}
+```
 
 ## 1216
 
