@@ -9,8 +9,16 @@ modified: '2021-01-13T07:57:54.308Z'
 
 # guide
 
-# stimulus
+# react系
 
+## [如何看待由react router原班人马打造并获得三百万美元融资的ts全栈开发框架remix框架?](https://www.zhihu.com/question/502743886)
+
+- 如果remix框架仅仅是解决了语言的问题是远远不够的，它需要提供类似springcloud的完整解决方案，否则很可能类似现在的BFF模式，不是很有价值。
+  - 未来当然是好的，但是我们也应该看到，后端的技术栈并不仅仅是语言，它包含了许多的知识体系，比如SQL优化、微服务架构、RPC、限流、熔断降级、负载、读写分离、高并发等等。
+
+- 看过router源码的都知道其实现没什么难度。。。用的还是react提供的api.
+  - 这就像写了一个github很多人用的组件，比如通用switch按钮，tab之类的，说拿到融资然后要实现一个js框架。。。。你只会觉得unbelievable，至于期待什么的，我倒是挺好奇他们的技术水平能实现到什么程度
+# stimulus
 - stimulus /10kStar/MIT/202101/ts
   - https://github.com/hotwired/stimulus
   - https://stimulus.hotwire.dev/
