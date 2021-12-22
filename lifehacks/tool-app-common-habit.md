@@ -59,7 +59,8 @@ modified: '2020-12-29T17:53:03.684Z'
       - https://github.com/clementine-player/clementine
       - GPLv3
     - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
-      - `mkdir ~/.local/share/Last.fm`
+      - 对Linux，创建 `mkdir ~/.local/share/Last.fm` 目录
+      - 对win10，In order to have Clementine scrobble tracks on Windows you need to create a folder at:` %HOMEPATH%\AppData\Local\Last.fm` 目录
   - local-more
     - Tauon Music Box: linux only
       - 可显示滚动歌词/synced lyrics，但歌词的时间戳毫秒位不能是3位
