@@ -235,8 +235,13 @@ modified: '2021-10-27T03:20:45.841Z'
 ## 1223
 
 - 图片插件重构
+  - 无法稳定复现
+    - 在dev tools的application页面可以清除旧数据，然后插入图片就没有2个高亮框和无法缩放的问题了
   - 两个高亮框
   - 无法resize
+    - 原因是figure标签内层结构错误，用来缩放的div有3个
+      - `<div class="ck ck-reset_all ck-widget__resizer" style="height: 200px; left: 0px; top: 0px; width: 200px;">` 此div内包含用于缩放的4个点，会显示在图片4角
+      - 第1个ck-widget__resizer宽度特别宽，后2个resizer宽度正常
 
 - 多维表格新建视图的设计
   - 分组表格不是单独的视图，就是在表格视图下调整得到
