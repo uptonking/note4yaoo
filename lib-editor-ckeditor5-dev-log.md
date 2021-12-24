@@ -235,6 +235,27 @@ modified: '2021-10-27T03:20:45.841Z'
 - 表格 not-yet
   - 表格末尾为什么会渲染一个英文分号
 
+## 1225
+
+- ImageResize插件的结构
+  - ImageResizeEditing
+    - 在imageBlock/Inline的schema上添加了`width`属性
+    - 在downcast中，将width映射到style属性的width值
+    - 注册resizeImage命令
+  - ImageResizeHandles
+    - 此插件依赖 WidgetResize
+  - ImageResizeButtons
+    - 根据`image.resizeOptions`配置，创建button并注册缩放方法
+
+## 1224
+
+- 图片插件无法缩放问题分析
+  - 替换全新的InsertImage插件后，只产生了一个`<div class="ck ck-reset_all ck-widget__resizer"`，但是仍然无法缩放
+  - 定位问题在widget，而不是ImageResize
+  - 每次拖拽缩放图片后，正常情况下，
+    - figure元素会更新 `style="width:16.6%;"` 宽度值
+    - 内部resizer会更新 `<div class="ck ck-reset_all ck-widget__resizer" style="height:159px;left:0px;top:0px;width:334px;"` 宽度值
+
 ## 1223
 
 - 图片插件重构
@@ -245,6 +266,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 原因是figure标签内层结构错误，用来缩放的div有3个
       - `<div class="ck ck-reset_all ck-widget__resizer" style="height: 200px; left: 0px; top: 0px; width: 200px;">` 此div内包含用于缩放的4个点，会显示在图片4角
       - 第1个ck-widget__resizer宽度特别宽，后2个resizer宽度正常
+    - 原因需要进一步分析，UploadImage后有3个resizer div，InsertImage后有1个resizer div，此时InsertImage得到的图片仍然无法缩放大小
 
 - 多维表格新建视图的设计
   - 分组表格不是单独的视图，就是在表格视图下调整得到
