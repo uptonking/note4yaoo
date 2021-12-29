@@ -30,12 +30,21 @@ modified: '2021-11-07T11:05:40.405Z'
 
 ## image plugin
 
+- [Support setting data attributes on image from upload adapters](https://github.com/ckeditor/ckeditor5/issues/5204)
+  - For anyone interested, it's working fine providing that you extend the `imageBlock` schema.
+
 - [How can i change all images src attributes inserted in editor?](https://github.com/ckeditor/ckeditor5/issues/1917)
   - You can use walker to iterate over a whole document.
   - Then check if `value.item.is( 'image' )` and then update it's `source` attribute
 
+- [how to transform image's url post edit?](https://github.com/ckeditor/ckeditor5/issues/9056)
+  - I have a use case where an article is first internal only, with image urls being internal url. When the article is published to public site, the images will be copied to public server and the url will be changed.
+  -  You can use `TreeWalker` on the root to iterate over all elements in the document, filter `<image>` element and use `Writer` to change its model `src` attribute.
+
 - [How can I add custom attribute and class on an Image after upload?](https://github.com/ckeditor/ckeditor5/issues/8943)
-  - Hi! You can use e.g. DowncastDispatcher for listening on the image insertion and use DowncastWriter to add a proper class to your `<figure>` element (which by default wraps `<img>` element)
+  - Hi! You can use e.g. `DowncastDispatcher` for listening on the image insertion and use `DowncastWriter` to add a proper class to your `<figure>` element (which by default wraps `<img>` element)
+
+- [How to add custom attributes using custom upload adapter?](https://github.com/ckeditor/ckeditor5/issues/8192)
 
 - [How can I set the alignment of a `<figcaption>`?](https://github.com/ckeditor/ckeditor5/issues/7848)
 - Enabling the `AlignmentCommand` for a caption is tricky as image's caption is a limit element in the schema
@@ -80,7 +89,7 @@ modified: '2021-11-07T11:05:40.405Z'
 
 - You can read more about `attributeToAttribute()` conversion helper.
 
-- Unfortunately, `<ul>`s are more difficult because of the approach we took when implementing them. In the model, lists are represented the same way paragraphs are. This means that there is no actual `<ul>` element in the model, it is a flat structure, with indentation levels represented through attributes.
+- Unfortunately,  `<ul>`s are more difficult because of the approach we took when implementing them. In the model, lists are represented the same way paragraphs are. This means that there is no actual `<ul>` element in the model, it is a flat structure, with indentation levels represented through attributes.
   - This gave us more stable algorithms for features like enter, removing selections spanning over multiple items, merging blocks, etc. 
   - The drawback is that you don't have the parent element - it is created "on the fly" during conversion.
   - One reasonable way to overcome this would be to assign anything that you'd like on `<ul>` to the first item in the list. We will use this approach when we will start implementing features like lists starting number or lists styles. But this requires writing a custom converter, it is more difficult than the example above.
