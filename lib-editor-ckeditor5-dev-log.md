@@ -253,6 +253,12 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 1230
 
+- 编辑器依赖外部数据的解决办法
+
+- ??? 在downcast中执行 viewWriter.setAttribute('src', imgToBlobUrl, img); 后，ckeditor的view视图属性值更新了，但dom却没有更新
+  - ~~变通思路是在upcast里面做属性值替换~~
+  - 测试发现，不能在downcast和upcast里面有异步的过程
+
 - db?.get(doc?.id as DocumentEnum.article)
   - 当id是自定义字符串时，返回的doc.id是原字符串吗  
 
