@@ -9,6 +9,26 @@ modified: '2021-12-23T17:46:12.581Z'
 
 # plugin
 
+## [Dynamically update plugin view](https://github.com/ckeditor/ckeditor5/issues/1681)
+
+- Generally speaking, the dynamic UI works using collections. 
+  - `ViewCollections` can be bound to regular collections and work as view factories. 
+
+## [Update option in plugin](https://github.com/ckeditor/ckeditor5/issues/1849)
+
+- If you want to react on changes in lists you can use `Collection` class from ckeditor5-utils inside your plugin.
+- You can always call a method of your plugin from the outside like this:
+`editor.pugins.get( 'MyPlugin' ).doSomething()` if your plugin defines static get pluginName() getter.
+
+## [Change the config on runtime](https://github.com/ckeditor/ckeditor5/issues/6625)
+
+- Basically, there's no way to change the editor's config after the initialization. If your config has changed and you'd like to use it in the editor, the only solution will be destroying the current instance and creating a new one with the updated config.
+- However, it looks like your case doesn't require updating the whole editor. Mentions plugin supports a callback for providing feed items, so it's possible to make an asynchronous call to your data storage which should return updated list.
+
+## [How to add id attribute in header element using CKEditor heading plugin?](https://github.com/ckeditor/ckeditor5/issues/6539)
+
+- refer to the official doc
+
 ## [How to pass data to a plugin?](https://github.com/ckeditor/ckeditor5/issues/5611)
 
 - You should be able to use `editor.config`

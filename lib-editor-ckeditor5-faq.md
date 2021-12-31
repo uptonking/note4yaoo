@@ -20,11 +20,6 @@ modified: '2021-11-07T11:05:40.405Z'
 - editor.data没有提供document属性，
   - editor.editing.view.document提供了虚拟dom的属性和操作方法
 
-## [Dynamically update plugin view](https://github.com/ckeditor/ckeditor5/issues/1681)
-
-- Generally speaking, the dynamic UI works using collections. 
-  - `ViewCollections` can be bound to regular collections and work as view factories. 
-
 - [Extending classes in plugins](https://github.com/ckeditor/ckeditor5/issues/7592)
   - EditingPlugin should be before UIPlugin
 
@@ -89,7 +84,7 @@ modified: '2021-11-07T11:05:40.405Z'
 
 - You can read more about `attributeToAttribute()` conversion helper.
 
-- Unfortunately,  `<ul>`s are more difficult because of the approach we took when implementing them. In the model, lists are represented the same way paragraphs are. This means that there is no actual `<ul>` element in the model, it is a flat structure, with indentation levels represented through attributes.
+- Unfortunately, `<ul>`s are more difficult because of the approach we took when implementing them. In the model, lists are represented the same way paragraphs are. This means that there is no actual `<ul>` element in the model, it is a flat structure, with indentation levels represented through attributes.
   - This gave us more stable algorithms for features like enter, removing selections spanning over multiple items, merging blocks, etc. 
   - The drawback is that you don't have the parent element - it is created "on the fly" during conversion.
   - One reasonable way to overcome this would be to assign anything that you'd like on `<ul>` to the first item in the list. We will use this approach when we will start implementing features like lists starting number or lists styles. But this requires writing a custom converter, it is more difficult than the example above.
