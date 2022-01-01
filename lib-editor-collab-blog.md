@@ -10,7 +10,6 @@ modified: '2021-10-14T11:18:03.650Z'
 # guide
 
 - [数据冲突解决方案 - 最终一致性实现](https://juejin.cn/post/6983237844579909668)
-
 # [协同文档：OT与CRDT实现协同编辑笔记](https://www.zhoulujun.cn/html/webfront/engineer/Architecture/8564.html)
 - 实时协同编辑，是指多人同时编辑一个文档，你可以实时看到别人做出的修改，不用手动刷新页面，最典型的例子是 Google Docs。
 - 要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket
@@ -166,3 +165,5 @@ modified: '2021-10-14T11:18:03.650Z'
   - 支持选区，看到其他人选择的文本段，当然，这也有合并问题
   - 指针要更随文本变化移动到正确的位置
   - 支持undo
+# ref
+- [How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)

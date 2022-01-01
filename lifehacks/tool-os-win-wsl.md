@@ -24,5 +24,13 @@ modified: '2020-12-22T12:41:57.687Z'
 
 - 使用Linux开发并不一定需要自己装一个Linux，
   - 一般思路是远程登陆到服务器上，用ssh登陆到服务器上进行开发。也是不错的选择。
-
 # pieces
+
+# wsl install
+
+- wsl 默认安装路径
+  - C:\Users\用户名\AppData\Local\Packages\CanonicalGroupLimited. Ubuntu16.04onWindows_79rhkp1fndgsc\LocalState
+
+- [服务器Ubuntu安装nvm踩坑篇](https://blog.csdn.net/handsomezhanghui/article/details/111872159)
+  - failed to connect raw.githubusercontent.com port 443
+  - 解决方法 修改 hosts 文件

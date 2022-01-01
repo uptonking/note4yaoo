@@ -40,3 +40,10 @@ modified: '2020-12-29T17:48:26.735Z'
   - [Comparing WSL 2 and WSL 1](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
 
 # windows OS
+
+# ref
+
+- win 10 下载地址
+  - https://www.microsoft.com/en-us/software-download/windows10ISO
+  - https://www.microsoft.com/zh-cn/software-download/windows10
+  - [Windows 10 2004升级20h2三种图文教程](https://www.wogu.cc/windows/655.html)
