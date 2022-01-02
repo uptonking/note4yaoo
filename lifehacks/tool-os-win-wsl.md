@@ -26,11 +26,31 @@ modified: '2020-12-22T12:41:57.687Z'
   - 一般思路是远程登陆到服务器上，用ssh登陆到服务器上进行开发。也是不错的选择。
 # pieces
 
+- wsl体验
+  - react开发可以无缝切换
+  - wsl自身内存占用很高
+
+# 在windows中访问wsl
+
+- 在wsl中启动create-react-app npm start后，在win上 http://localhost:3000 可直接访问
+  - 注意win主机ip为 192.168.x.x，但访问wsl时localhost对应的ip为  http://172.28.200.181:3000
+
+
+# 在wsl中访问windows
+
+- curl yaoohpwin10.local
+  - 不能用 curl yaoohpwin10
+  - 不能用 curl yaoohpwin10.localdomain
+
 # wsl install
 
 - wsl 默认安装路径
-  - C:\Users\用户名\AppData\Local\Packages\CanonicalGroupLimited. Ubuntu16.04onWindows_79rhkp1fndgsc\LocalState
+  - C:\Users\jinya\AppData\Local\Packages\CanonicalGroupLimited. Ubuntu16.04onWindows_79rhkp1fndgsc\LocalState
 
 - [服务器Ubuntu安装nvm踩坑篇](https://blog.csdn.net/handsomezhanghui/article/details/111872159)
   - failed to connect raw.githubusercontent.com port 443
   - 解决方法 修改 hosts 文件
+
+# ref
+
+- [nvm 安装失败の解决方案!](https://segmentfault.com/a/1190000040303862)
