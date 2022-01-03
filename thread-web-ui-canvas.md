@@ -16,7 +16,12 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Put together a quick multiplayer implementation on tldraw using Yjs.
+- https://twitter.com/nayajunimesh/status/1477165474622234624
+  - https://opuwd.csb.app/
+  - https://codesandbox.io/s/yjs-tldraw-opuwd
+  - Undo/redo don't work as expected a lot of times but live cursors/live shape changes work quite well.
+  - he implementation is heavily inspired by the current tldraw liveblocks multiplayer implementation and @steveruizok 's yjs drawing example
 
 - ## The perfect-freehand algorithm starts from scratch every time, with nothing kept in memory, and this makes it both inefficient (in a minor way) but more importantly limited in what it can do.
 - https://twitter.com/steveruizok/status/1444397702251429890

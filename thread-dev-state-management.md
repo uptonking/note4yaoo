@@ -75,6 +75,20 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
+- https://twitter.com/dai_shi/status/1477593623156105217
+  - So, I created a ToDo app with a single store with jotai. 
+  - As a bonus, it uses `atomWithHash` , so the state is persisted in the URL.
+  - https://codesandbox.io/s/jotai-single-store-pmi40
+
+- I made another variant of the demo. It's single state and top-down approach, but yet somewhat atomic. Thanks to focusAtom and splitAtom. And, persisted with atomWithHash. Jotai is very flexible!
+  - https://codesandbox.io/s/jotai-todos-focus-atom-ledxb
+
+- Does zustand have something like atomWithHash?
+  - no, not handy like atomWithaHash.
+
 - ## Just released redux-in-worker v0.8.0, a library to run redux reducers and middleware in web workers
 - https://twitter.com/dai_shi/status/1434840658292842500
 
