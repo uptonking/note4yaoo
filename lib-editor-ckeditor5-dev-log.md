@@ -250,11 +250,6 @@ modified: '2021-10-27T03:20:45.841Z'
 - 表格 not-yet
   - 表格末尾为什么会渲染一个英文分号
 # 2022
-
-# 2021
-
-## 1231
-
 - 下一步工作内容
   - 完善docs 编辑文档页
     - 图片保存到本地数据库 迁移到 toe-frontend
@@ -262,6 +257,16 @@ modified: '2021-10-27T03:20:45.841Z'
     - 最近文档列表
   - 实现workspace
     - 文档搜索
+
+## 0104
+
+- 图片保存本地数据库仍然存在的问题
+  - 不显示dataReference属性的原因，在上传图片addRef后，不能  await dbClient.set(articleDbDoc); 
+  - Failed to execute 'createObjectURL' on 'URL': Overload resolution failed
+    - 不能稳定复现
+# 2021
+
+## 1231
 
 - 图片保存到本地数据库的改进点
   - 在应用层实现src属性替换，所以首次渲染图片时控制台会报错，但之后会正常显示图片

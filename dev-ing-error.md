@@ -11,6 +11,9 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- Failed to execute 'createObjectURL(obj)' on 'URL': Overload resolution failed.
+  - 因为obj不是预期的对象数据，是异常产生的
+
 - [a different version of babel-loader was detected higher up in the tree](https://q.cnblogs.com/q/112292/)
   - node_module删了，用yarn重新下，create-react-app内部用的是yarn，他们嫌npm有问题，自己做了个yarn，所以最好换yarn来下载，这样出问题的概率要小很多。
 - [Babel-loader issues with Storybook](https://stackoverflow.com/questions/65280848/yarn-build-babel-loader-issues-with-storybook)
