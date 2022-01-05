@@ -8,7 +8,12 @@ modified: '2021-01-01T22:13:44.013Z'
 # cli-catalog
 
 # 前端工程化工具相关
-- ## prettier
+```
+python -m SimpleHTTPServer 8000
+
+python -m http.server 8000
+```
+## prettier
 
 ```
 
@@ -17,7 +22,7 @@ prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-
 prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown
 ```
 
-- ## changelog
+## changelog
 
 ```
 

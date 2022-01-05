@@ -26,6 +26,8 @@ modified: '2021-10-27T03:20:45.841Z'
   - 时间精力有限，对于非核心问题，有时不必执着于实现细节，不一定需要完全搞清楚来龙去脉
     - 分析出核心问题，将精力全部花在重点之上
     - 有时修改bug只需要注释掉部分代码而已，没必要去看这些代码的实现流程
+  - 开发环境必须以linux为主，在windows vscode中打开linux下的源码
+    - 有些bug只在windows中才会出现，同事也难以分析排查
 
 - dev-summary
   - 使用最多的组件
@@ -264,6 +266,17 @@ modified: '2021-10-27T03:20:45.841Z'
   - 不显示dataReference属性的原因，在上传图片addRef后，不能  await dbClient.set(articleDbDoc); 
   - Failed to execute 'createObjectURL' on 'URL': Overload resolution failed
     - 不能稳定复现
+
+- 🤔 复现调试图片刷新时，突然编辑器不见了
+  - 🔈 变通的方案是在wsl的linux下复现bug，竟然能顺利执行，没有bug
+  - 注意wsl的4001端口会被windows的4001端口屏蔽掉，要检查端口是否相同
+    - ⚠ 开发环境必须以linux为主，在windows vscode中打开linux下的源码
+  - TypeError: Cannot read properties of null (reading 'getAttribute')
+  - at IconView._updateXMLContent (iconview.js:100)
+  - https://github.com/ckeditor/ckeditor5/issues/10927
+    - Most probably, the file-loader handles CKEditor 5 icons. You need to exclude CKEditor 5 assets from this loader. But it's hard to say more as we don't see the full webpack config.
+  - Cannot read property 'getAttribute' of null in react
+    - it seems there's something wrong with your webpack configuration
 # 2021
 
 ## 1231
