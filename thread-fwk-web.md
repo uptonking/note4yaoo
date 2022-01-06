@@ -136,8 +136,6 @@ modified: '2021-01-08T17:13:53.965Z'
 - Looks nice for creating components. I wrote a reactive library earlier this year for Svelte https://formula.svelte.codes 
   - Under the hood its vanilla JS and Svelte stores, but that could be made more generic like RxJS (I wish the DOM has reactive Set and Map)
 - The real cool part of this approach is it is decoupled from the components which lets it scale apart from them. People are having fun playing around with reactivity right now, but this has profound architectural benefits.
-- 
-- 
 
 - ## Logux is a framework to build real-time web apps with:
 - https://twitter.com/sitnikcode/status/1395070650927169536

@@ -10,6 +10,14 @@ modified: '2020-07-14T11:03:53.196Z'
 # guide
 - 实现状态管理的思路
   - flux、atoms、proxy、state-machine、server-state-cache
+- 状态管理选型参考
+  - react
+    - constate
+    - unstated-next
+    - react-redux
+  - event
+    - storeon
+    - redux
 # agnostic
 - redux /MIT/53.7kStar/202005/ts/单向数据流
   - https://github.com/reduxjs/redux
@@ -38,9 +46,17 @@ modified: '2020-07-14T11:03:53.196Z'
     - Create both global and local component states.
   - Put simply, a statechart is a beefed up state machine.  
     - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
+
+
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
   - A tiny event-based Redux-like state manager for React, Vue, Angular, and Svelte.
+- nanostores /1.2kStar/MIT/202201/js
+  - https://github.com/nanostores/nanostores
+  - A tiny state manager for React, React Native, Preact, Vue, Svelte, and vanilla JS.
+  - We released Nano Stores 0.5, a new version of tiny (200-900 bytes) state manager for React/Vue/Svelte, designed to:
+    - Move logic from components to stores and separate application logic and UI
+    - Support tree-shaking
 - reatom /504Star/MIT/202006/ts
   - https://github.com/artalar/reatom
   - Reatom is a blend of the one-way data flow (by flux and global store) and decentralized atoms for deterministic and flexible description of state and its changes

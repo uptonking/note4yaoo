@@ -9,6 +9,9 @@ modified: '2022-01-05T14:36:28.057Z'
 
 # guide
 
+- ref
+  - [npm trends: jotai vs recoil vs valtio vs zustand](https://www.npmtrends.com/jotai-vs-recoil-vs-valtio-vs-zustand)
+
 - zustand  /12.6kStar/MIT/202201/ts/NoDeps/Flux
   - https://github.com/pmndrs/zustand
   - https://zustand.surge.sh/

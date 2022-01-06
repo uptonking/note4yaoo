@@ -15,6 +15,16 @@ modified: '2021-09-04T14:03:39.046Z'
   - Persistent Redux store for Reasonaboutable  Offline-First applications, with first-class support for optimistic UI. 
   - Use with React, React Native, or as standalone state container for any web app.
 
+- https://github.com/logux/client
+  - https://logux.io/
+  - Logux is a new way to connect client and server. 
+  - Instead of sending HTTP requests (e.g., AJAX and GraphQL) it synchronizes log of operations between client, server, and other clients.
+  - Logux and WebSocket client/server framework to make:
+    - Logux has features inspired by CRDT to resolve edit conflicts between users. Real-time updates to prevent conflicts
+    - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
+    - Offline-first for the next billion users or New York City Subway. Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
+    - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
+
 - https://github.com/nornagon/autowiki
   - Autowiki is a tool for creating networked documents.
   - Autowiki is a local-first app: you own all the data you put into it, and your data never leaves your own machine unless you want it to.
