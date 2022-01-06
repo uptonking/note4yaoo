@@ -15,6 +15,7 @@ modified: '2020-07-14T11:03:53.196Z'
     - constate
     - unstated-next
     - react-redux
+    - unistore
   - event
     - storeon
     - redux
@@ -46,7 +47,6 @@ modified: '2020-07-14T11:03:53.196Z'
     - Create both global and local component states.
   - Put simply, a statechart is a beefed up state machine.  
     - The beefing up solves a lot of the problems that state machines have, especially state explosion that happens as state machines grow.
-
 
 - storeon /1.5kStar/MIT/202009/js
   - https://github.com/storeon/storeon
@@ -168,9 +168,10 @@ modified: '2020-07-14T11:03:53.196Z'
   - https://github.com/snakeUni/mut
   - state management library based on Immer and useMutableSource
   - if useMutableSource is available then use useMutableSource otherwise use useSubscribe
-- https://github.com/jaredpalmer/mutik
-  - A tiny (495B) immutable state management library based on Immer
-  - Mutik uses the recently-merged useMutableSource hook internally.
+
+- https://github.com/developit/unistore
+  - A tiny 350b centralized state container with component bindings for Preact & React.
+  - names and ideas from Redux-like libraries
 
 - constate /3.4kStar/MIT/202106/ts
   - https://github.com/diegohaz/constate
@@ -226,8 +227,10 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/aweary/react-copy-write
   - An immutable React state management library with a simple mutable API, memoized selectors, and structural sharing. 
   - Powered by Immer.
-- https://github.com/developit/unistore
-  - state container with component actions for Preact & React
+
+- https://github.com/jaredpalmer/mutik
+  - A tiny (495B) immutable state management library based on Immer
+  - Mutik uses the recently-merged useMutableSource hook internally.
 - https://github.com/keajs/kea
   - Production Ready State Management for React
 - pure-store /132Star/MIT/202006/ts

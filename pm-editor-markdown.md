@@ -24,6 +24,9 @@ modified: '2021-05-14T14:33:33.975Z'
 
 - painful
   - 对于页面不需要展示，但跳转需要用到的标题id，如何设计和书写
+  - 用markdown生成ppt的体验，很难控制空行高度、双栏布局；
+    - 对可视化要求高时，千万别用markdown或简单文本自动生成
+    - 应该使用编辑器，导出markdown
 # features
 - core
   - optional block style editor

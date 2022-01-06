@@ -35,6 +35,9 @@ modified: '2021-01-04T17:26:25.032Z'
   - light-weight while implementing all markdown features from the supported flavors & specification
 - https://github.com/eczn/down-parse /ts/2019
   - markdown parser with a wonderful plugin system
+- https://github.com/developit/snarkdown
+  - pass a Markdown string, get back an HTML string
+  - it's basically one regex and a huge if statement
 # markdown-editor
 - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark

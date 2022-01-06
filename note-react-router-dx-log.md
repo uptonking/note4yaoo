@@ -10,6 +10,7 @@ modified: '2021-09-19T15:14:45.954Z'
 # not-yet
 
 - 最新 Link 总是会重复添加 path，如 http://localhost:8999/dashboard/basic/basic/basic
+  - 此问题在v6 beta版会出现，后面已修复
 # upgrading
 - [v6.0.0-beta.4](https://github.com/remix-run/react-router/releases/tag/v6.0.0-beta.4)
   - Absolute nested path support

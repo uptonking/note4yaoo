@@ -1,15 +1,72 @@
 ---
-title: tech-auth-rbac
-tags: [auth, rbac]
+title: tech-auth-rbac-routing
+tags: [auth, rbac, react-router, router]
 created: '2021-08-11T07:35:28.800Z'
-modified: '2021-08-11T07:36:15.522Z'
+modified: '2022-01-06T17:30:03.280Z'
 ---
 
-# tech-auth-rbac
+# tech-auth-rbac-routing
 
 # guide
 
 # rbac-blogs
+- 区分3种路由
+  - RoutePrivate 未登录不可访问，登录后才可访问
+  - RouteUnauthorizedOnly 未登录可访问，登录后不可访问，会自动跳转到指定路由
+  - 默认public 未登录可访问，登录后可访问
+
+- 使用 `<Route>` 组件
+  - 优点
+    - 可读性好
+    - 符合React开发模型
+  - 缺点
+    - 每个私有route都要手动在外面添加组件
+- 使用 `routeObject` 对象
+  - 优点
+    - 方便批量生成私有路由
+  - 缺点
+    - 内层路由的可读性差
+
+## [react-router v6 官方示例 - 公开路由+私有路由](https://reactrouter.com/docs/en/v6/examples/auth)
+
+- [stackblitz auth routes demo](https://stackblitz.com/github/remix-run/react-router/tree/main/examples/auth?file=src/App.tsx)
+  - [routes object demo](https://stackblitz.com/github/remix-run/react-router/tree/main/examples/route-objects?file=src/App.tsx)
+
+```JSX
+<Route
+  path="/protected"
+  element={
+    <RequireAuth>
+      <ProtectedPage />
+    </RequireAuth>
+  }
+/>
+
+```
+
+- [Role Based Authorization with React Router v6 and Typescript](https://adarshaacharya.com.np/blog/role-based-auth-with-react-router-v6)
+  - 简单实用，思路清晰，先验证用户，再检查用户的权限是否符合路由要求
+  - PrivateRoute + requiredRoles
+  - [示例代码项目参考](https://github.com/adarshaacharya/MentorLabs/blob/main/client/src/router/Router.tsx)
+
+```JSX
+<Route
+  path={routes.LOGIN}
+  element={
+    <NonAuthRoute>
+      <Login />
+    </NonAuthRoute>
+  }
+/>
+<Route
+  path={routes.STUDENT_DASHBOARD}
+  element={
+    <AuthRoute roles={[Role.STUDENT]}>
+      <StudentDashboard />
+    </AuthRoute>
+  }
+/>
+```
 
 ## [Public, private, and role-based routes in React](https://javascript.plainenglish.io/role-based-authorization-role-based-access-control-v-2-in-react-js-cb958e338f4b)
 
@@ -32,6 +89,21 @@ modified: '2021-08-11T07:36:15.522Z'
   - 定义routes
   - 计算allowedRoutes：比较用户权限和各路由权限
   - 动态创建Route： MapAllowedRoutes
+
+```JS
+[{
+    component: Module1,
+    path: '/',
+    title: 'Module - 1',
+    exact: true,
+  },
+  {
+    component: Module2,
+    path: '/module-2',
+    title: 'Module - 2',
+  }
+]
+```
 
 - it is my second story on the same topic, there was some reason behind version-2 that are listed below.
   - Version 1 is tightly coupled with the project in which I have introduced this technique.
@@ -83,10 +155,6 @@ modified: '2021-08-11T07:36:15.522Z'
   - 还提供了express后端示例
   - https://github.com/cornflourblue/node-role-based-authorization-api
     - [Node.js - Role Based Authorization Tutorial with Example API](https://jasonwatmore.com/post/2018/11/28/nodejs-role-based-authorization-tutorial-with-example-api)
-
-- [Role Based Authorization with React Router v6 and Typescript](https://adarshaacharya.com.np/blog/role-based-auth-with-react-router-v6)
-  - 简单实用，思路清晰，先验证用户，再检查用户的权限是否符合路由要求
-  - PrivateRoute + requiredRoles
 
 - [React-router authorization based on user roles](https://www.nafrontendzie.pl/autoryzacja-react-router-role-uzytkownika)
   - [Role-based authorization using React-Router](http://web.archive.org/web/20170529015710/http://frontendinsights.com/role-based-authorization-using-react-router/)
