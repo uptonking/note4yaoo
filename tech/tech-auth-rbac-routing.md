@@ -21,11 +21,18 @@ modified: '2022-01-06T17:30:03.280Z'
     - 符合React开发模型
   - 缺点
     - 每个私有route都要手动在外面添加组件
+      - 但对于统一前缀的路由，可以通过`path='*'`在AuthRedirect里面统一添加跳转
 - 使用 `routeObject` 对象
   - 优点
     - 方便批量生成私有路由
   - 缺点
     - 内层路由的可读性差
+
+```JS
+ <Route path='id'>
+    <Route path='*' element={<AuthRedirect />} />
+  </Route>
+```
 
 ## [react-router v6 官方示例 - 公开路由+私有路由](https://reactrouter.com/docs/en/v6/examples/auth)
 
