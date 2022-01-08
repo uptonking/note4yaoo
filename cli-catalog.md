@@ -8,11 +8,13 @@ modified: '2021-01-01T22:13:44.013Z'
 # cli-catalog
 
 # 前端工程化工具相关
+
 ```
 python -m SimpleHTTPServer 8000
 
 python -m http.server 8000
 ```
+
 ## prettier
 
 ```
@@ -34,9 +36,14 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - cat .git/config
     - 查看本仓库git的配置文件，注意本地和全局配置可能不同；
     - 不论配置命令的大小写，`.gitconfig`中都是小写
+  - git config --global init.defaultBranch main 
   - git config --global core.fileMode false 
   - git config --global core.ignoreCase false 
-  - git config --global init.defaultBranch main 
+  - git config --global core.autocrlf true 
+  - git config --global alias.co checkout
+  - git config --global alias.br branch
+  - git config --global alias.ci commit
+  - git config --global alias.st status
 
 - git命令别名
   - git config --global alias.lg "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit"
@@ -55,18 +62,18 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
   - 撤销 commit, 同时本地删除该 commit 修改：
     - git reset --hard commit_id
+    - git reset --hard HEAD~
+    - git push origin -f
     - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName`
-  - `git clone -b dev <仓库地址>`
   - `git clone -b <branch-name> <repo-url> <destination-folder-name>`
 
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
   - 另一种方法：直接将远程要删除的文件加入 `.gitignore`
 
 ```
-
 git rm --cached 文件/夹名，只删除了缓存，实际文件不会删除
 git commit -m '备注'
 git push origin 分支
@@ -75,7 +82,6 @@ git push origin 分支
 - 删除本地和远程两份文件
 
 ```
-
 git rm 文件名       // 删除文件
 git rm -r 文件夹名   // 删除文件夹 
 git add .
@@ -86,19 +92,15 @@ git push origin 分支
 - 放弃本地修改，用远程覆盖本地
 
 ```
-
-git fetch --all
-git reset --hard origin/master
-
 git fetch --all
 git reset --hard origin/master
 git pull
 ```
 
 - 用本地覆盖远程
+  - -f is short for --force
 
 ```
-
 git push origin main --force 
 ```
 
@@ -156,7 +158,7 @@ git push
   - 另一种情况是，你只需要部分代码变动（某几个提交），这时可以采用 Cherry pick。
   - git checkout master
   - git cherry-pick commit-id1 commit-id2
-  - 将feature分支的commit-id1 id2合并到master
+    - 将feature分支的commit-id1 id2合并到master
 
 ## git-not-yet
 

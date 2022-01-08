@@ -260,10 +260,29 @@ modified: '2021-10-27T03:20:45.841Z'
   - 实现workspace
     - 文档搜索
 
+## 0108
+
+- 路由未解决的问题
+  - 刷新页面能保持原页面状态的问题，路由是不变的
+  - 示例MentorLabs给出的解决方案是，在 if (!isAuthenticated) 前有一个前置判断  if ( status === 'pending'){ show loading } 
+    - 首次请求用户数据pending时，会显示加载组件；
+    - 注意当用户数据请求完成后，isUserAuthenticated会变成true，下一个if也不会执行了
+
+- 注意更新user状态的顺序，前面会先执行，错误顺序会匹配执行错误的if分支
+  - 先 setUserInfo(userInfo); 
+  - 后 setUserStatus('resolved'); 
+
+- [React batch updates for multiple setState() calls inside useEffect hook](https://stackoverflow.com/questions/56885037)
+  - on next major release (probably v17) React will batch everywhere by default.
+
 ## 0107
 
 - routing难点
   - 登录用户刷新页面时，会闪过明显的登录窗口
+    - 可以使用useNavigate()在合适的时机命令式执行跳转，而不是使用`<Navigate>`声明式每次都会跳转
+
+- 刷新页面保持用户登录状态的方法
+  - https://github.com/adarshaacharya/MentorLabs/blob/main/client/src/App.tsx
 
 ## 0106
 
