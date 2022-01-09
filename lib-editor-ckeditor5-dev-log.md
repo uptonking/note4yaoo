@@ -260,6 +260,23 @@ modified: '2021-10-27T03:20:45.841Z'
   - 实现workspace
     - 文档搜索
 
+## 0109
+
+- 登录后无法访问登录页，需要实现退出登录的逻辑
+
+- react custom hook函数不需要有返回值
+  - useEffect可以有返回值，也可以没有
+
+- [useFetch: Building custom hooks in React to fetch Data](https://dev.to/shaedrizwan/building-custom-hooks-in-react-to-fetch-data-4ig6)
+
+- [How to extract React component logic into a custom Hook](https://www.benmvp.com/blog/how-to-extract-react-component-logic-custom-hook/)
+  - Most of the time I write the “messy” logic in the component first and then extract it into a custom Hook. 
+  - But sometimes I am able to “see in the future” and build the custom Hook first and “magically” have the data ready in the component.
+
+- [what is the difference between using useEffect inside a custom hook and a component](https://stackoverflow.com/questions/62329615)
+  - The `useEffect` function inside custom hook will only run when you use it inside a functional component and invoke it. 
+  - Also note that the behavior of `useEffect` will remain exactly the same as if it were written inside the functional component itself
+
 ## 0108
 
 - 路由未解决的问题
