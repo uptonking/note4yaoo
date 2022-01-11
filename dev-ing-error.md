@@ -11,6 +11,9 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- SyntaxError: Unexpected token < in JSON at position 0
+  - 检查网络请求的url是不是写错了，或者服务器未启动
+
 - Failed to execute 'createObjectURL(obj)' on 'URL': Overload resolution failed.
   - 因为obj不是预期的对象数据，是异常产生的
 

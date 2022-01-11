@@ -68,6 +68,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://github.com/coingaming/moon-design
   - https://moon.io/components/table/table
   - 拖动表格滚动条时，可以显示minimap
+  - 提供了日期字段作为一列的Calendar示例
 
 - @uidu/table /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
