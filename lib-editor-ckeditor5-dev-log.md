@@ -272,8 +272,8 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - 实现列表一行的悬浮菜单花费了大量时间
   - 原因是查看mui的Popover文档示例时，看漏了一行触发条件
-    -  const open = Boolean(anchorEl);
-    -  const id = open ? 'simple-popover' : undefined;
+    - const open = Boolean(anchorEl);
+    - const id = open ? 'simple-popover' : undefined;
 
 ## 0109
 
