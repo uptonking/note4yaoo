@@ -9,6 +9,12 @@ modified: '2021-05-13T02:54:43.606Z'
 
 # faq-not-yet
 
+- 不支持hover事件，需要自己实现
+  - [How can I prevent entire table from rerendering when using useRowState to manage row hover state?](https://github.com/tannerlinsley/react-table/discussions/2796)
+    - Use css hover
+    - Go with non-react way i.e. use dom apis to find all rows/cells in given
+table and do required op.
+
 - [add item after sortBy](https://github.com/tannerlinsley/react-table/issues/2641)
 - [Cannot sort by Date](https://github.com/tannerlinsley/react-table/issues/2613)
 
