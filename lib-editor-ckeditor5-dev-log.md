@@ -258,16 +258,48 @@ modified: '2021-10-27T03:20:45.841Z'
   - 表格末尾为什么会渲染一个英文分号
 # 2022
 - 下一步工作内容
-- 完善docs 编辑文档页
+- 完善/docs
   - [x] 图片保存到本地数据库 迁移到 toe-frontend
-- 实现user
+  - [ ] 文档内搜索
+- 实现/user
   - 最近文档列表
-- 实现workspace
-  - 文档搜索
+  - 搜索用户数据
+- 实现/workspace
+  - 输入关键字搜索出匹配文档名或内容的文档
   - [ ] 选中一篇文档后，所有行的复选框都应该显示
   - 全局header
 
-## 0114
+## 0117
+
+- latex入门
+  - [LaTeX入门指南|新手速进](https://www.zhihu.com/zvideo/1421078748670566400)
+
+- [在arXiv下载论文的LaTeX源码](https://www.jianshu.com/p/b8baca4bfc20)
+  - 找到一篇arXiv论文的版面，点击Download中的Other formats；
+  - 点击Source目录下的：Download source；
+  - 改名为：.zip， .tar.gz等的尾缀，然后解压缩此文件；
+  - 打开tex主文件，编译成PDF；
+
+
+- 闫东沟通
+  - workspace的操作接口写了哪些
+  - 向workspace中添加手机号或邮箱时，该用户登录后会自动拥有workspace的权限
+
+- 搜索ui的设计
+  - cmd+k调出位置固定的弹窗，类似docusaurus、notion
+    - 弹窗空间较多，可显示详细条目及信息
+  - 下拉菜单，类似github
+    - 可切换全局搜索、仓库内搜索、org内搜索
+
+- [flexsearch](https://github.com/nextapps-de/flexsearch)
+  - Next-Generation full text search library for Browser and Node.js
+  - fastest and most memory-flexible full-text search library with zero dependencies.
+  - `Document` is multi-field index which can store complex JSON documents (could also exist of worker indexes).
+
+- https://github.com/timc1/kbar
+  - https://kbar.vercel.app/
+  - Command+k interfaces are used to create a web experience where any type of action users would be able to do via clicking can be done through a command menu.
+  - With macOS's Spotlight and Linear's command+k experience in mind, kbar aims to be a simple abstraction to add a fast and extensible command+k menu to your site.
 
 ## 0111
 
@@ -792,7 +824,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 可以手动修改列宽
 
 - 表格一列的宽度无法设置
-  - 考虑使用useBlockLayout
+  - 考虑使用 `useBlockLayout` 布局
   - [Width is not working Material-UI Enhanced Table](https://github.com/tannerlinsley/react-table/discussions/2332)
 
 - workspace的文档列表功能实现顺序
@@ -1246,7 +1278,7 @@ return toWidget(container, writer, 'figure');
   - npm run pub 自动创建新分支，自动push，需要手动提添加新分支的pr
   - npm自动会自动发包
 
-## 1029-31
+## 1029
 
 - 上传图片的问题
   - 使用的是源码定制的编辑器ckeditor5-editor-classic，而不是预定义编辑器ckeditor5-build-classic
@@ -1377,4 +1409,4 @@ journey
   - editor.model.insertContent的第2个参数指定插入位置
 
 - 如何使用自定义react组件定制ui
-  - 参考文档示例，思路实现是ui插件时ui渲染部分使用react组件
+  - 参考文档示例，思路是实现ui插件时ui渲染部分使用react组件

@@ -11,6 +11,45 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [overleaf写作，如何输入中文？](https://www.zhihu.com/question/41206352)
+  - \usepackage[UTF8]{ctex}
+  - 左上角的Menu -> Setting -> Compiler -> XeLatex
+
+- Package inputenc Error: Unicode char 题 (U+9898) (inputenc) not set up for use with LaTeX.
+  - ⚠ 注意默认的latex模板文件顶部指定了TS-program = pdflatex；需要手动修改
+  - 用 XeLaTeX 和 CJK 宏包。 LaTeX 默认不支持中文。
+  - pdflatex是相对原始一点，xelatex新一点，支持Unicode，可以使用系统的字体。
+  - [Latex编译中中文问题](https://emacs-china.org/t/latex/4820)
+  - [处理中文时应该用ctex宏包还是应该用xeCJK宏包？](https://www.zhihu.com/question/58656895)
+    - 全中文的文档，尽量用 ctex 文档类。也就是 ctexart、ctexrep、ctexbook、ctexbeamer 这些。（如 \documentclass{ctexart}）
+    - 比较少见的情形下，你需要在某个原本不支持中文的文档类中写全中文的文档，此时用 ctex 包（\usepackage{ctex}）。实际的例子，如用 moderncv 写简历。
+    - 英文文档中的几段中文，建议用 scheme=plain 选项调用 ctex 包，即 \usepackage[scheme=plain]{ctex}。
+  - [Texlive+Texstudio支持中文的方法](https://blog.csdn.net/FLORIDA_tang/article/details/85044260)
+    - 在\begin{document}之前，添加下面一行。\usepackage[UTF8]{ctex}
+  - [有没有简单的 LaTeX 中文支持方案？](https://www.zhihu.com/question/23658979/answers/updated)
+    - \usepackage[UTF8, scheme = plain]{ctex}
+
+- 旧的不能编译的模板
+
+```latex
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+
+```
+
+- 新的能编译的模板
+
+```latex
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt,fontset=windows]{article}
+
+\usepackage[UTF8]{ctex}
+```
+
 - SyntaxError: Unexpected token < in JSON at position 0
   - 检查网络请求的url是不是写错了，或者服务器未启动
 
