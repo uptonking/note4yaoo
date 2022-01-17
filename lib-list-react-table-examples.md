@@ -254,3 +254,8 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/quantmind/metablock-js
   - TypeScript tools for the metablock cloud
+
+# ref
+
+- [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
+  - build a drag and drop sortable table using @dnd -kit and react-table.

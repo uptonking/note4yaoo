@@ -7,6 +7,8 @@ modified: '2021-01-08T17:13:43.392Z'
 
 # thread-web-dev
 
+- bookmarks处理到 20211223
+
 # repeat
 
 - ## Is there any reason not to use HTTP PUT and DELETE in a web application?

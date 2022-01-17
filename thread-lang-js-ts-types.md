@@ -18,7 +18,15 @@ modified: '2021-08-05T04:31:02.298Z'
 # discuss
 - ## 
 
-- ## 
+- ## Using generics in @TypeScript beyond simple use cases becomes a massive deep dive into the variable/type dependency graph of any system it touches. 
+- https://twitter.com/tannerlinsley/status/1476604095817404452
+  - TLDR: If your types have circular dependencies, you will eventually have to short circuit your inference and pick a starting point.
+- This is the primary reason why migrating JS libraries to TS is never a simple .js => .ts rename with added annotations. 
+  - The Typescript compiler forces you to write code that can incrementally reason about the inferrable and knowable parts of the entire system
+  - As you consume more generics, complexity grows linearly. If those generics begin to rely on each other or need to come in a specific order, the complexity skyrockets. And this is where the dependency graph of your vars/types comes in.
+- In the case of #ReactTable, we need to know the shape of your row data, filterFns, sorters, aggregators, etc, before we can infer anything in your column definitions, which consume all of those types together. Columns also have value-based inference as well,
+  - So technically we need to know about your column accessor, too, before we let you configure anything else. 
+
 
 - ## how to extract the generic type determined by a type guard function
 - https://twitter.com/acemarke/status/1435731824303648771

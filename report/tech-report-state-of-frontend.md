@@ -7,6 +7,10 @@ modified: '2021-01-04T16:00:05.478Z'
 
 # tech-report-state-of-frontend
 
+# guide
+
+- [2021 JavaScript Rising Stars](https://risingstars.js.org/2021/en)
+
 # [State of Frontend 2020 Report_2020](https://tsh.io/state-of-frontend/)
 
 - Notable results of the State of Frontend 2020 report:

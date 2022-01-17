@@ -1,28 +1,13 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
+title: tool-iot-devices
+tags: [iot, tool]
+created: '1970-01-01T00:00:00.000Z'
+modified: '2022-01-16T15:52:31.293Z'
+---
 
 ---
 title: tool-iot-devices
-tags: [dataseed,iot, tool]
+tags: [iot, tool]
 created: '2019-08-11T07:36:17.519Z'
 modified: '2020-12-22T12:42:44.995Z'
 ---
@@ -110,3 +95,4 @@ modified: '2020-12-22T12:42:44.995Z'
 # 华为HarmonyOS鸿蒙系统
 
 - 特点：分布架构、高性能、内核安全、生态共享、开源
+

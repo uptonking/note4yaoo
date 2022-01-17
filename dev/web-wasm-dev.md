@@ -273,3 +273,9 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
 - 如果产品规模较大的话， 最好还是Native框架 + cef 来做，
   - 系统 API 和库的使用就会方便的多，Node 对 Native 的支持很有限，
   - 功能实现会有限制，比如窗口控制、并行下载等。
+
+
+- [Is WebAssembly magic performance pixie dust?](https://surma.dev/things/js-to-asc/)
+  - The incredibly unsatisfying answer is: It depends. It depends on oh-so-many factors, and I’ll be touching on some of them here.
+  - V8 is really good at executing JavaScript.
+  - While WebAssembly can run faster than JavaScript, it is likely that you will have to hand-optimize your code to achieve that. 

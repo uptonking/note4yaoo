@@ -316,3 +316,11 @@ modified: '2020-07-14T11:03:53.196Z'
 - https://github.com/troch/reinspect
   - Use redux devtools to inspect useState and useReducer 
   - API: StateInspector, useState(initialState, id?), useReducer(reducer, initialState, initializer?, id?)
+
+- https://github.com/tinyplex/tinybase
+  - https://tinybase.org/
+  - TinyBase is a smarter way to structure your application state
+  - Familiar concepts of tables, rows, and cells, and schematization to model your data domain.
+  - Flexibly reactive to reconciled updates, so you only spend cycles on the data that changes.
+  - Indexing, metrics, relationships - and even an undo stack for your app state!
+  - Easily sync your data to local or remote storage, and use idiomatic bindings to your React UI.

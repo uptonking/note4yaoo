@@ -11,7 +11,8 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
-- ## 
+- ## BBC Visual and Data Journalism cookbook for R graphics
+- https://bbc.github.io/rcookbook/
 
 - ## summer nights are getting hotter because of climate chang
 - https://twitter.com/aatishb/status/1437439369678401539

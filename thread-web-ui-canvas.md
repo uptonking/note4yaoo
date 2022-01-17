@@ -16,6 +16,20 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Put together a quick multiplayer implementation on tldraw using Yjs
+- https://twitter.com/nayajunimesh/status/1477165474622234624
+  - https://opuwd.csb.app/
+
+- ## developing a mostly-accurate mental model around CSS transforms is my hardest-won dev perk
+- https://twitter.com/steveruizok/status/1478071639619383302
+  - Unfortunately no one can be told how transforms work, they need to fuck around and try every possible combination for years for themselves
+  - (scale comes before translate unless you have a good reason not to)
+  - (you’re moving the paper, not the pen)
+
 - ## Put together a quick multiplayer implementation on tldraw using Yjs.
 - https://twitter.com/nayajunimesh/status/1477165474622234624
   - https://opuwd.csb.app/

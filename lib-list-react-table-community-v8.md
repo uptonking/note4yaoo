@@ -13,7 +13,20 @@ modified: '2021-05-13T02:54:14.171Z'
   - https://github.com/schuchertmanagementberatung/react-table/tree/next
     - next-20200525
 # pieces
-- ## 
+
+- ## I love React hooks, but today I find myself writing my own edge-case memoization/performance optimization system. 
+- https://twitter.com/tannerlinsley/status/1476239050927329281
+  - With hooks I would need to compute all of the possible (and very expensive) outputs of this system using useMemo, even if they're not used
+  - In my custom approach, these computations are just fns that lazily track user and internal dependencies to return a memoized value. This way you only pay for what you use, instead of computing the universe on mount or even when a few deps change.
+- That's what always worries me with hooks. I feel out of control. You keep computing variables even if you don't need them. This is why I use refs sometimes. They are way more readables but I think that classes gave us more control.
+
+- ## [20220102] A quick snippet of an early ReactTable v8 table that renders!
+- https://twitter.com/tannerlinsley/status/1476778803045167106
+  - I like the API look so far! Similar enough to existing v7 to be a reasonable migration path, and I can see the logic behind the changes for type purposes already.
+  - https://gist.github.com/tannerlinsley/c63cd35cdba2189f31d211ee2f2cafb3
+
+- #ReactTable V8’s core is built in vanilla JS and uses getter fns for just about everything now… and since adopting this pattern I can’t help but see the silhouette/echo of @solid_js every time I work on it.
+- https://twitter.com/tannerlinsley/status/1477342367585751040
 
 - ## [20210430] I'm so tired of trying to make a TypeScript plugin system for React Table v8 
 - https://twitter.com/tannerlinsley/status/1386903354769477638

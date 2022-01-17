@@ -11,6 +11,35 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## avoiding edge cases is an under-rated skill
+- https://twitter.com/Swizec/status/1482140673809653763
+  - 很多时候不需要null，只需要用[]表达出数据为空或正在加载
+- This is why I love languages like Typescript and Rust which make types have to explicitly opt into nullability. It regularly forces you to question whether something should be nullable to begin with. There are many times where this makes you realize you don't need it.
+  - Fully agree. I often allow null to distinguish between “data has not yet been loaded/is not available” vs “there are no items”. Knowing explicitly via the type that these two possible states exist — vs where they don’t — is tremendously valuable.
+  - I’ve seen a lot of TypeScript where people expand the type to include the edge cases instead of realizing they didn’t need the edge case at all
+- Null arrays can help you distinguish loading state vs empty data.
+  - If you want null to indicate that it's still loading, then you can simplify this to be: `(stuff || []).map(...)`
+
+- ## Something about Redux I don't think most people appreciate enough:
+- https://twitter.com/acemarke/status/1482396019417620480
+  - "pure reducers" isn't just a stupid requirement or a fancy trick to make the devtools work. 
+  - Pure functions are easier to understand and think about.
+  - The more code you can write that way, the better.
+- This has reshaped how I wrote code even outside of Redux.
+  - Example: years ago I was working on a Python service that fetched data from another service, did post-processing to reformat it, and kept that data in memory as a cache so it could respond to client requests.
+  - But, all the post-processing mutated the in-memory cache (which was just a bunch of Python dictionaries)
+  - I realized it was possible to have a request come in, and due to interrupts, have the endpoint read from the cache in the middle of an update
+  - To solve that problem, I had to put a bunch of read/write locks around all accesses of the whole structure.
+  - I realized this would be so much easier if the processing worked like a reducer, and we keep a pointer to the current "root cache state", and then if a request comes it the handler just uses the pointer it gets and it knows it's safe to read the whole way through.
+  - But overall, this is why you should prefer writing code as "pure functions" by default. Easier to understand, easier to compose, easier to use.
+  - So, this _is_ a good reason to use Redux... but applicable even without Redux.
+- Related: the idea of selectors, calculating and memoizing derived state on demand has had a huge effect on how I write code in general. It formalized something that vaguely seemed like a good idea into something I can point at and talk about as a design pattern.
+  - Yep! Again with the "pure functions" idea, but going the other direction.(and I've repeatedly had to point out that a lot more React could should derive values while rendering rather than trying to set derived data into state! doubly so if it's setting in an effect)
+
 - ## being framework-agnostic
 - https://twitter.com/dai_shi/status/1434543349524877317
   - I started developing `jotai` to solve a certain issue in React. 

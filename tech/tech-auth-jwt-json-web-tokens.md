@@ -268,3 +268,6 @@ HMACSHA256(
 
 - [Next.js 11 - JWT Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/04/next-js-11-jwt-authentication-tutorial-with-example-app)
 - [Next.js - Basic HTTP Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/29/next-js-basic-http-authentication-tutorial-with-example-app)
+
+- the access and refresh token are shared across tabs! fortunately, you can implement a cross-tab lock since localstorage is shared and single ops are atomic.
+  - https://twitter.com/_paulshen/status/1478441122993086464
