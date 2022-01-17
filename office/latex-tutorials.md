@@ -39,6 +39,18 @@ modified: '2021-10-25T00:20:04.009Z'
 - 参考文献 
   - 方法1： 新建.bib输入参考文献信息，然后在.tex文件中使用\bibliography
     - 如何将参考文献加入目录
+    - BIBTEX程序在生成参考文献列表的时候，通常只列出用了\cite 命令引用的那些。
+    - 如果需要列出未被引用的文献，则需要 \nocite{ ⟨ citation ⟩ } 命令； 而 \nocite{*} 则让所有未被引用的文献都列出。
   - 方法2： 手动输入bib信息
 
 - 交叉引用
+# ref
+- https://bithesis.bitnp.net/
+  - BIThesis 是针对北京理工大学本科同学毕业设计、毕业论文制作的一个非官方的 LaTeX 模板，BIThesis 同时也包括其他本科学习中涉及到的文献综述、实验报告等的 LaTeX 模板。
+
+- [BibTeX Format Description](http://www.bibtex.org/Format/)
+
+- repo
+  - https://github.com/ORCID/bibtexParseJs
+  - https://github.com/retorquere/bibtex-parser
+    - A node/npm package for parsing bibtex (.bib) files. This is the parser that drives Better BibTeX for Zotero bib(la)tex imports.

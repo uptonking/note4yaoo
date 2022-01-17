@@ -22,11 +22,15 @@ modified: '2021-05-14T14:33:33.975Z'
 - faq-not-yet
   - 如何指向当前页面的标题
 
-- painful
+- pros
+  - 纯文本易搜索
+
+- cons-painful
   - 对于页面不需要展示，但跳转需要用到的标题id，如何设计和书写
-  - 用markdown生成ppt的体验，很难控制空行高度、双栏布局；
+  - 用markdown生成ppt的体验，很难控制空行高度、空白大小、双栏布局；
     - 对可视化要求高时，千万别用markdown或简单文本自动生成
     - 应该使用编辑器，导出markdown
+    - 就算使用类似latex纯文本的布局方案，布局代码仍会污染内容文本
 # features
 - core
   - optional block style editor

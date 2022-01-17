@@ -9,6 +9,8 @@ modified: '2021-10-14T10:54:58.518Z'
 
 # guide
 
+- A collection of reproducible benchmarks. 
+  - https://github.com/dmonad/crdt-benchmarks
 # [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)
 - You are welcome to ask about the differences. 
 - I don't have much experience with automerge. 
