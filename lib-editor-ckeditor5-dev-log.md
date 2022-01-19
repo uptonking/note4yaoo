@@ -271,6 +271,19 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 0119
 
+- BibTexBook的类型需要添加title，editions改为edition
+- 每个参考文献的元数据类型是否都要添加 `doi` 字段
+  - 还有url字段
+- 暂未实现，当一篇文章有多个作者时需要缩写，是在从数据库读取bibTex时实现，还是在渲染时实现
+- 暂未实现，bibTex的tag值中可能含有`{}`包裹的变量，需要在读取元数据字段时解析，还是就设计为不支持
+
+```latex
+@article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
+
+```
+
+- [TS 3.1 - 高级类型总结](https://www.cnblogs.com/qq3279338858/p/14206569.html)
+
 ## 0118
 
 - 参考文献的显示流程
