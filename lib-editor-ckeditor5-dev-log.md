@@ -269,7 +269,39 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 选中一篇文档后，所有行的复选框都应该显示
   - 全局header
 
+## 0119
+
+## 0118
+
+- 参考文献的显示流程
+  - 解析获取文章元数据的各个字段
+  - 判断文章类型，选择最合适的文献显示组件
+  - 参考文献组件根据文章元数据，渲染到dom
+
+- [APA style Reference List: Basic Rules](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_basic_rules.html)
+  - [Reference List: Articles in Periodicals](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_articles_in_periodicals.html)
+  - [Reference List: Books](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_books.html)
+
+- [How to Cite in APA Format (7th edition) | Guide & Generator](https://www.scribbr.com/category/apa-style/)
+  - components of a reference entry
+  - 1. author
+    - 一作，多个作者，合作者，通讯作者，联合@
+  - 2. date
+    - 年、年月日、未发布、未知日期
+  - 3. title
+    - 文章网页用普通文字、书籍用斜体、未知来源用方括号
+  - 4. source
+    - 期刊、出版社、网站、地址
+  - prefix
+    - doi
+    - Use the prefix field in situations like see also or i.e..
+
+- [How to Create an APA Style Appendix | Format & Examples](https://www.scribbr.com/apa-style/appendices/)
+  - 附录可以放图片、表格、伪代码、名词解释
+
 ## 0117
+
+- 参考文献暂不支持手动输入
 
 - latex入门
   - [LaTeX入门指南|新手速进](https://www.zhihu.com/zvideo/1421078748670566400)
@@ -279,7 +311,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - 点击Source目录下的：Download source；
   - 改名为：.zip， .tar.gz等的尾缀，然后解压缩此文件；
   - 打开tex主文件，编译成PDF；
-
 
 - 闫东沟通
   - workspace的操作接口写了哪些
