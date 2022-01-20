@@ -160,6 +160,12 @@ modified: '2021-07-21T18:09:20.751Z'
 - https://github.com/mraible/infoq-mini-book
   - 依赖java、jruby、asciidoctor-gradle-plugin
   - Template project for creating an InfoQ Mini-Book with Asciidoctor
+
+# latex
+
+- https://github.com/vincentdoerig/latex-css
+  - https://latex.vercel.app/
+  - This almost class-less CSS library turns your HTML document into a website that looks like a LATEX document. 
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/

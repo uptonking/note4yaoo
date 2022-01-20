@@ -269,9 +269,71 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 选中一篇文档后，所有行的复选框都应该显示
   - 全局header
 
+## 0120
+
+- https://github.com/enric1994/bibtexonline
+  - Convert your BibTeX bibliographies into text on the fly
+  - 但字体用的是无衬线体，十分圆润
+
+- https://github.com/bertobox/CSS-for-APA-Style-references
+
+- [Citation Style Language vs. biblatex (vs. possibly other "citing-systems"?)](https://tex.stackexchange.com/questions/434946)
+  - biblatex basically is a reimplementation and reinvention of the BibTeX way of creating bibliographies that had been with the TeX world since the late 1980ies
+    - With BibTeX the `.bst` files written in their own reverse Polish notation language determine the output of the bibliography. 
+    - BibTeX compiles all the information from the `.bib` file and outputs it to the `.bbl` in the expected format, LaTeX then simply imports the `.bbl` and typesets its contents. 
+  - With biblatex on the other hand the formatting is done on the LaTeX side. 
+  - CSL is an XML-based language for citation and bibliography styles. 
+    - It aims to be a universal language that can be used by all kinds of reference managers and word processors. 
+  - biblatex is basically LaTeX-only and CSL is supposed to be a universal standard.
+
+- [Overleaf Bibtex bibliography styles](https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles)
+
+- 当title字段中间存在"\url"时会提示错误，原因是\会被理解为转义字符
+  - 变通方法是将\url改为\\url
+  - [\u in JavaScript String.raw`template literal`](https://stackoverflow.com/questions/39310685)
+    - replacing the line with `\u005Cusepackage{indentfirst}`, or even just `\x5Cusepackage{indentfirst}`.
+      - `5C` corresponds with `\`.
+    - Another option might be using the dollar sign and curly braces notation for expressions. `${'\\'}usepackage{indentfirst}`
+
+- [overleaf中关于引用website的处理](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex)
+  - `@misc` is for whatever doesn’t quite fit any other entry type. 
+  - not all bibliography styles support the `url` field: plain doesn’t, but IEEEtran does. All styles support `note`. 
+  - It can be especially useful for web pages—by writing `note = \url{http://...}` or `url = {http://...}`
+
+- A simple way of doing it in BibTeX is with a `@misc` entry
+  - If you are using BibLaTeX there is an `@online` entry type
+- [Generate BibTeX entry from URL](https://www.reddit.com/r/LaTeX/comments/q85jo1/generate_bibtex_entry_from_url/)
+  - https://karlosos.github.io/url_to_bibtex/
+
+```latex
+@misc{WinNT,
+  title = {{MS Windows NT} Kernel Description},
+  howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
+  note = {Accessed: 2010-09-30}
+}
+
+@online{WinNT,
+  author = {MultiMedia LLC},
+  title = {{MS Windows NT} Kernel Description},
+  year = 1999,
+  url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm},
+  urldate = {2010-09-30}
+}
+
+@MISC{Anu:2013,
+author = {Aggarwal, Anupama},
+title = {This is how you cite a website in latex},
+month = may,
+year = {2013},
+howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
+}
+\usepackage{url}
+```
+
 ## 0119
 
 - BibTexBook的类型需要添加title，editions改为edition
+- BibTexMisc类型需要添加url
 - 每个参考文献的元数据类型是否都要添加 `doi` 字段
   - 还有url字段
 - 暂未实现，当一篇文章有多个作者时需要缩写，是在从数据库读取bibTex时实现，还是在渲染时实现
