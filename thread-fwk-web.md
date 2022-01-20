@@ -11,7 +11,11 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## Introducing Dioxus v0.1
+- https://dioxuslabs.com/blog/introducing-dioxus/
+  - New Rust framework inspired by React: hooks, VDOM, RSX...
+  - Strongly typed, performant, cross-platform, web, SSR, mobile+desktop (Tauri)
+
 
 - ## one of my issues with single file components is that i find it troubling having to make a file for each component, no matter how minor it is
 - https://twitter.com/intrnl0/status/1439427883659784194

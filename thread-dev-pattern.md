@@ -13,7 +13,13 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## Do you keep a “graveyard” for deleted / undid things that might be restored by an undo / redo? Is there a name for that pattern?
+- https://twitter.com/steveruizok/status/1484113858423836674
+- for undo/redo I’ve used two stacks, that contain commands for transforming state. For delete/undelete you use “logical delete”
+- Subnote does this. All events exist on a timeline (the primary data structure), including discrete undo/redo which reference a previous event’s id. You can scrub in time to revisit the system state at any moment in time, including states that are unreachable via undo.
+- We generate inverse operations for history states, which are stored in memory as a property of the state itself (ie, each op knows how to reverse itself). When a state is no longer relevant, it’s deleted and memory is restored without needing to clean up a graveyard
+- I don't have a name but it sounds like a good candidate for an event stream. We inherited a ledger app that stored state and incoherent history. We rewrote it to store time ordered events, then filter/map/reduced the stream to render views and deprecated stored state altogether.
+- Depends on how you implement undo/redo. For a multi-user system where there is no single history (i.e. user B’s undo shouldn’t negate user A’s changes) then you record the all history as incremental changes, including undos (reversals)… see Operational Transformation
 
 - ## avoiding edge cases is an under-rated skill
 - https://twitter.com/Swizec/status/1482140673809653763
