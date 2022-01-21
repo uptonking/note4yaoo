@@ -9,6 +9,17 @@ modified: '2020-07-17T10:54:16.341Z'
 
 # discuss
 
+- 参考文献列表中link的字体应该用monospace，合适的是有
+  - consolas (Monospaced, sans-serif)
+    - Consolas is a monospaced typeface
+    - It has been included with Windows since Windows Vista, Microsoft Office 2007
+  - source code pro (Sans-serif, Monospace)
+    - Source Code Pro is a monospaced sans serif typeface
+  - Latin Modern Mono (serif, monospace)
+  - JetBrains Mono (sans serif, monospaced, fixed-width)
+  - TeX Gyre Cursor can be used as a replacement for Courier
+    - https://www.1001fonts.com/monospaced+serif-fonts.html
+
 - ## [安卓系统的默认中文字体是什么？](https://www.zhihu.com/question/23487706)
 - android 4.0（<=4.0）之前只有三种字体: 有衬线、无衬线、等宽
   - normal (Droid Sans), serif (Droid Serif), and monospace(Droid Sans Mono).
@@ -34,9 +45,7 @@ modified: '2020-07-17T10:54:16.341Z'
     - Most browsers have a default strategy similar to `font-display: block`. 
     - The only option that prevents layout shift is `optional` (including FOUT and FOIT).
     - Supported by all modern browsers.
-
 # fonts
-
 - free
   - catalog
     - http://zenozeng.github.io/Free-Chinese-Fonts/

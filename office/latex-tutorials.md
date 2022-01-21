@@ -9,7 +9,10 @@ modified: '2021-10-25T00:20:04.009Z'
 
 # guide
 
-# [LaTeX入门指南|新手速进](https://www.zhihu.com/zvideo/1421078748670566400)
+# latex
+
+## [LaTeX入门指南|新手速进](https://www.zhihu.com/zvideo/1421078748670566400)
+
 - 编辑器
   - 侧边菜单栏：文件、图片
   - 编辑区
@@ -44,7 +47,18 @@ modified: '2021-10-25T00:20:04.009Z'
   - 方法2： 手动输入bib信息
 
 - 交叉引用
-# [使用 BibTeX 生成参考文献列表](https://liam.page/2016/01/23/using-bibtex-to-generate-reference/)
+# bibtex
+- 关于中文参考文献格式
+  - https://github.com/zepinglee/gbt7714-bibtex-style
+    - 支持“顺序编码制”和“著者-出版年制”两种风格。
+    - 提供了 2005 版的 .bst 文件。
+  - https://github.com/hushidong/biblatex-gb7714-2015
+    - A biblatex implementation of the GB/T7714-2015 bibliography style
+    - biblatex-gb7714-2015 宏包是中文参考文献著录/标注标准 GB/T 7714-2015 的 biblatex 实现
+    - 它本质上是一个样式包，提供了顺序编码制和著者年份制样式，在 tex 文档中配合 biblatex 宏包使用
+
+## [使用 BibTeX 生成参考文献列表](https://liam.page/2016/01/23/using-bibtex-to-generate-reference/)
+
 - BibTeX 是一个参考文献格式化工具，它会根据需要，按照（bst文件规定的）某种格式，将（bib文件中包含的）参考文献信息，格式化为 LaTeX 能够使用的列表信息。
 - BibTeX 涉及到两种特有的辅助的文件格式：bst 和 bib。
   - bst 是 (B)ibliography (ST)yle 的缩写。 bst 文件控制着参考文献列表的格式。
@@ -89,3 +103,6 @@ modified: '2021-10-25T00:20:04.009Z'
     - If the entry type is `@Comment`, is is not considered to be the start of an entry. 
     - (Actually, the rule is that everything from the `@Comment` and to the end of line is ignored.
   - A side effect of the very strong meaning of the `@` sign in the file format is that when BibTex encounters an error in an entry (as a missing coma between two fields, or an unbalanced braced expression), it is able to recover rather well by skipping everything until the next `@` sign.
+
+- https://github.com/CTeX-org/zhlipsum
+  - 本宏包提供了中文乱数假文的功能，可用于测试中文LaTeX文档， 支持UTF-8、GBK和Big5编码。

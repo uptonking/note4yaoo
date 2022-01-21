@@ -6,9 +6,8 @@ modified: '2021-03-29T19:29:15.528Z'
 ---
 
 # dev-ing-error-not-yet
-
+- 编译latex生成的pdf文档中参考文献的链接为什么有cyan色的边框
 # pieces
-
 - ## input设置`border: none; `后，仍然显示边框的问题
   - 排查失败
   - MuiPickersUtilsProvider   DatePicker

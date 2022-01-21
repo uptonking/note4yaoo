@@ -269,6 +269,11 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 选中一篇文档后，所有行的复选框都应该显示
   - 全局header
 
+## 0121
+
+- 封装bibtex的转换方法，默认转换方风格为plain
+
+
 ## 0120
 
 - https://github.com/enric1994/bibtexonline
