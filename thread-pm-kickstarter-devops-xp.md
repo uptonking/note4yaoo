@@ -13,7 +13,63 @@ modified: '2021-10-29T15:05:56.151Z'
 
 - ## 
 
-- ##  I repeat, this is a 100% true story that isn’t about open source but gives a good idea about what it’s like to maintain an open source project. 
+- ## 
+
+- ## I'm going to keep working on @tldraw . I'll be raising money in the new year to build a team and build an open-core platform for spatial canvas apps.
+- https://twitter.com/steveruizok/status/1468630460305747977
+- Turns out everyone like an infinite canvas. 
+  - I'm convinced that many of the next great products will be built on "design tool" paradigms—zoomable canvas, direct manipulation, and real-time multiplayer collaboration.
+- Bad news: these types of applications are incredibly hard to develop! 
+  - Especially for the web, where there are vanishingly few resources and trade-offs everywhere. 
+  - It takes a team of experts—and there just aren't enough experts.
+- Good news: spatial UI apps are 90% identical, with hundreds of "table stakes" features and services that can be abstracted away, so that a team focus on their domain problems instead of getting stuck on selection logic, arrow binding, or alignment snapping.
+- What do you mean by spacial UI? 
+  - This one is also sometimes called a "zoom ui", or "infinite canvas". Think miro / mural / figma, etc.
+
+- ## Startup idea. Get really good at state machines. Use them to solve a difficult problem. Sell the solution
+- https://twitter.com/mpocock1/status/1469329372691808263
+
+- ## Let’s talk about funding for open source projects, specifically my thoughts for @tldraw .
+- https://twitter.com/steveruizok/status/1469978436257169410
+  - I get about $2, 000 a month from GitHub sponsors. 
+- First off, I like open source for lots of reasons, some more ☭ than others, but the value game is all wrong. 
+  - Companies are making millions off of passion projects or casual labor—that’s neither fair nor sustainable.
+- For me, open source has been a way of sharing what I like to do, raising my profile as a developer while also sorta paying down some privilege. 
+  - It’s great to connect with other “prosumers”, collectively producing the product that we want to use.
+- tldraw is my first major open source project, insofar as I’m really building it to be used by other teams; 
+  - but, like anything serious, it’s too big to do “on the side” without sacrificing the project’s quality or my own happiness.
+- And while GitHub Sponsors has been a great way to help fund it’s early development (thank you) that money doesn’t remotely compare to the salaries I’ve turned down to work on it.
+- I see a few options:
+- 👉🏻️ 1. Sell time as a consultant for teams using the library. 
+  - For me, that would mean taking contacts with teams who need help integrating tldraw or building certain features which I would solve via the open source project.
+- 👉🏻️ 2. Build a product around the core library and monetize that product. 
+  - For me, this would be the tldraw engine (open) and the tldraw whiteboarding app (open core with new paid services for teams, etc).
+- 👉🏻️ 3. Raise VC money and hire a team to work on the project and related products of services, with the goal of gaining wide adoption. 
+  - For me, that would mean making tldraw the react/firebase of spatial uis, ie the default dev option, selling things like multiplayer.
+- 👉🏻️ 4. Find a corporate sponsor that will hire me to work on the project. 
+  - Ideally keep ownership of the project, in case things don’t work out and I decide to pivot to other options.
+- 👉🏻️ 6. Get acquihired by a company that does not want to maintain the project, but where I could work on similar problems within the company’s own products. 
+  - Not the worst ending for me, but death for the open source project.
+- 👉🏻️ 5. Double down on individual contributions. 
+  - Focus on content, start putting out YouTube videos, Twitch streams and farm sponsorships. Go very wide.
+- They’d all have trade offs, either in my own time, my freedom to set priorities myself, the value I’m able to extract for myself, or the possible scale of the project.
+  - Of all, the most comfortable would be acquisition by a company who wants to build on the project, or where it’s success would align with its other business goals.
+  - The least comfortable would be relying on sponsorships (content is hard!). Contracting isn’t too far ahead, though I think I could make it work.
+- Raising money would mean more pressure to build the product into a business though ideally with a longer runway than doing so myself, and a more ambitious goal with more people involved, and more likelihood of success.
+  - It’s pretty hard to strategize! And many conflicting priorities.
+
+- Have you considered selling the product? Replicache uses the bsl license, is developed in the open, like open source and becomes true open source after two years. We don’t have concrete data on how well this works but early signals are good and it directly reflects your goals.
+  - I think this is compatible with raising money. The difference I’m getting at is compared to (2): instead of giving away the core and selling something else (a service), just sell the core directly.
+- 
+- 
+
+- ## Unpopular opinion: an SQLite SaaS would be my pick for anything slow/write fast/read scenario (blogs to name one). Not sure why nothing exists already out there
+- https://twitter.com/WebReflection/status/1476586199251058689
+- Can you tell me how important SQL part is, or do you technically need Firebase infra with option to send SQL? Or maybe SQL is not important?
+  - any NoSQL library out there looks like knex but is not standard ... which is why I believe SQL is extremely important but, on top of that, I have mentioned SQLite, not any SQL, strictly, truly, SQLite as a remote service that any static page *could* access: no Server needed.
+- But if you are using it as SaaS you'd just be using SQL to it, so from your POV there'd be no difference to using some other db like postgresql at the back? (modulo the dialects etc). Same local dev + prod is Hundred points symbol tho. SQLite at lambda/cloudflare workers would be 
+
+- ## I repeat, this is a 100% true story that isn’t about open source but gives a good idea about what it’s like to maintain an open source project. 
 - https://twitter.com/slicknet/status/1430334633611202562
   - A lot of people suggest a lot of changes to open source projects not understanding that there is a maintenance cost to every new line of code added.
   - The person coming up with the idea thinks that it’s great because they aren’t the ones that have to maintain it.

@@ -16,6 +16,35 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## I wish we could use Rust in React Native (instead of C++) but supporting Rust cross-platform has such a long tail of infrastructure issues to work out. And more popping up...
+- https://twitter.com/sebmarkbage/status/1213199159840260096
+  - We have a list of other blockers before we can use it. So it's not the only reason. However, if it was the only reason it would still be a blocker for quite a while longer. Who knows if it's temporary or a similar issue will happen later. Maybe one day it'll hit critical mass.
+  - Any non-Apple alternative cross-platform language has to deal with Apple issues. That comes with the territory of a cross-platform ecosystem. If we, that like Rust, don't find workarounds then C++ wins in the end.
+- A cross platform route could be to compile Rust to Webassembly and either embed a standalone Webassembly runtime since JavascriptCore lacks support or compile the .wasm  back to .c with wasm2c.
+
+- ## All I want for Xmas is for React devs to stop copying props into state with useEffect.
+- https://twitter.com/acemarke/status/1474221514400616502
+- But should we useMemo everything instead? Or is that the same as useEffect? It's not exactly clear to me when deriving data on each re-render is worth it and when it isn't. How expensive does the calculation need to be to useMemo?
+  - That's up to you to decide. Similar to use of `React.memo()` : start by just writing the code "the right way" first. Then perf profile once it's working, and see _if_ you need to optimize further.
+
+- ## Before creating a new state variable, make sure it can't be calculated from the existing state.
+- https://twitter.com/asidorenko_/status/1483473130383450114
+  - "But why?" 
+  - By creating a redundant state variable, you introduce a new source of truth. 
+  - Now you have to maintain it to make sure it's always in sync with the other state. 
+  - It's a common source of bugs. 
+  - By computing data from the existing state, you avoid this problem altogether.
+- Bonus points is you useMemo to derive that value
+- This is a common mistake. I've seen instances of this mistake in our codebase also. We tend to introduce a new state because of the controls that come with it, but we ignore the cost it brings. If it can be derived, then derive it!
+
+- ## Question every useEffect that tries to sync state between different states in react 
+- https://twitter.com/TkDodo/status/1483888488059752452
+  - be it between two useStates like here, or e.g. between local and global state / server state. 
+  - That code is more complex and more error prone at the same time. It is not what effects are for!
+  - i also prefer to only add primitive types to useEffect arrays. So `objProp.fooColor` instead of the whole `objProp`
+
+- value derivated of state → useMemo (or manual calculation). what's cool in Vue (for comparison) is that the api is crystal clear (data for state, computed for memos)
+
 - ## Today we are releasing react-freeze
 - https://twitter.com/swmansion/status/1454086713719070726
 - https://github.com/software-mansion-labs/react-freeze

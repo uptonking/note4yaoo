@@ -169,6 +169,11 @@ modified: '2020-07-14T11:03:53.196Z'
   - state management library based on Immer and useMutableSource
   - if useMutableSource is available then use useMutableSource otherwise use useSubscribe
 
+- https://github.com/nanxiaobei/flooks
+  - State Manager for React Hooks, Auto Optimized
+  - flooks realizes a gorgeous auto optimization, only actually used data will be injected into the component, re-render completely on demand
+  - zustand, need a selector; flooks, no selector needed
+
 - https://github.com/developit/unistore
   - A tiny 350b centralized state container with component bindings for Preact & React.
   - names and ideas from Redux-like libraries

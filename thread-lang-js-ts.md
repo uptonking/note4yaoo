@@ -22,6 +22,29 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TIL: In javascript, assignment operation returns the value assigned. 
+- https://twitter.com/bpsagar/status/1470015051671040000
+  - So, the assignment operation can be used in an if condition and create a nice scoped (not syntactically) variable. Found it in Prosemirror's code. 
+
+- ## I rarely see the “in” operator used in JS. Why not?
+- https://twitter.com/jarredsumner/status/1471867724678664192
+  - 若属性名存在且属性值为undefined，in会返回true，但typeof却是undefined
+
+- ## I just spent ~4 hours investigating an "eats-all-the-gigabytes" memory leak in JavaScript and the solution turned out to be:
+- https://twitter.com/andrestaltz/status/1473669713490235397
+  - Because `map` passes 3 args: item, index, thisObj. Friends, be careful.
+
+```diff
+-arr.map(myFunction)
++http://arr.map(x => myFunction(x))
+```
+
 - ##  `Array.from` uses (rightly so) `Symbol.species` , while `Object.fromEntries` doesn't
 - https://twitter.com/WebReflection/status/1461320477012631554
   - Amend: Array.from uses `this` , not Symbol.species … yet Object.fromEntries doesn’t

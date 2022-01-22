@@ -7,9 +7,11 @@ modified: '2021-01-08T17:13:43.392Z'
 
 # thread-web-dev
 
-- bookmarks处理到 20211223
-
 # repeat
+
+- ## This Pagination component might be a good test for a technical interview
+- https://twitter.com/WebReflection/status/1484558920660262913
+  - [Can You Recreate this Web Component?](https://hackernoon.com/developer-challenge-can-you-recreate-this-web-component)
 
 - ## Is there any reason not to use HTTP PUT and DELETE in a web application?
 - https://stackoverflow.com/questions/1101888
@@ -32,6 +34,31 @@ modified: '2021-01-08T17:13:43.392Z'
 - ## 
 
 - ## 
+
+- ## Working with my routes as arrays/objects instead of JSX is refreshing. 
+- https://twitter.com/tannerlinsley/status/1459015713390092291
+  - Many have have told me that JSX routes look "cleaner" to them, but at the end of the day, it's an abstraction that doesn't really give me much in return.
+- What’s the difference? I just have a big array of objects that maps to a route component?
+  - Yeah, that's the idea. I mean, that's what's happening under the hood with most routers either way.
+
+- ## I am ONCE AGAIN reminding you: do not use heading elements unless they introduce a section of content!
+- https://twitter.com/heydonworks/status/1466797867369177092
+  - If the only content of your card component is a heading, it shouldn’t be a heading—it should just be big text. #a11y
+
+- ## I can't believe devs still don't `document.querySelector(location.hash).scrollIntoView()` when content is ready!
+- https://twitter.com/WebReflection/status/1470770711174262790
+  - a constantly broken pattern:
+  * a link with a name/id is shared
+  * the SPA loads content for that link on demand
+  * the whole intent of pin-pointing the link is lost
+- that and styling :target
+
+- ## Why are img tags inline elements? What's the rationale behind that?
+- https://twitter.com/Andrei_Calazans/status/1471799716426010624
+- I think it's closely related to RTF specification at time. Microsoft Word also makes images inline by default, and also, it appears to be heritage of RTF.
+
+- ## there are developers writing articles about how great vanilla JS is compared to libraries, the same developers that then write stuff like: `removeEventListener(type, obj.fn.bind(obj))` as if that ever worked. these mistakes are the reasons most devs use libraries: they don't test
+- https://twitter.com/WebReflection/status/1476088827831889927
 
 - ## New Node module: "html-segmentator", a thing for splitting an HTML string into its top-level tags. 
 - https://twitter.com/fabiospampinato/status/1444436271120752641

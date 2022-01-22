@@ -11,7 +11,10 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Yes, Logseq does copy some features and UX from roam, that's why I open sourced logseq. 
+- https://twitter.com/tiensonqin/status/1374351298456219654
+  - But Logseq is not a clone, we have two-way sync between plain-text and Datascript, almost full org-mode support,  GitHub sync on Web, 
+  - and last, we don't store user's data
 
 - ## Announcing http://papertohtml.org, an on-demand PDF to HTML converter for scientific papers!
 - https://twitter.com/lucyluwang/status/1437837455902658560

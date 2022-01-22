@@ -215,6 +215,12 @@ modified: '2021-02-09T19:27:01.319Z'
       - https://generative.parts/
     - https://github.com/winkerVSbecks/sketchbook
       - https://sketchbook.netlify.app/
+
+
+- vazurio 白色简洁网站设计，未开源
+  - https://github.com/vazurio?tab=repositories&type=source
+  - https://vazurio.co/
+  - https://p1-five.vercel.app/
 # dev-more
 - 徐飞
   - https://www.zhihu.com/people/sharpmaster/posts
@@ -223,3 +229,4 @@ modified: '2021-02-09T19:27:01.319Z'
 
 - 蒋鹏飞 react/express 手写源码系列
   - https://segmentfault.com/u/jiangpengfei_5ecce944a3d8a/articles
+

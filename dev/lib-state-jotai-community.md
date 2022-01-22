@@ -10,6 +10,22 @@ modified: '2022-01-05T14:25:35.961Z'
 # guide
 
 # discuss
+
+- ## Demystifying the internal of jotai https://jotai.org, an atomic state management solution for @ReactJS .
+- https://twitter.com/dai_shi/status/1484835169475653634
+  - Here's a simplified version of the core.
+  - Notice that this simplified version of jotai core is **not** pseudo code. It actually works!
+  - https://codesandbox.io/s/zealous-field-z2xk6?file=/src/App.js
+- Here's the simplified valtio
+  - valtio is my take with the same metal model as mobx.
+- in the `useAtom` hook, there is still a `useState`. how does this behave in nested components when this useAtom hook is accessed on the top level? does it still cause a rerender to all children? if yes, what is the advantage/difference of jotai from react's `context+useState`?
+  - Yes, all child components under the tree re-render, unless they are memoized (or stable). 
+  - The advantage is 1) simpler syntax, and 2) dynamic atom creation without re-mounting the entire tree (which is impossible with context).
+- 
+- 
+- 
+- 
+
 - ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
 - https://twitter.com/dai_shi/status/1477593623156105217  /20220102
   - So, I created a ToDo app with a single store with jotai. 

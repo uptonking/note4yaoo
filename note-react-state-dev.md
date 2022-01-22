@@ -8,6 +8,9 @@ modified: '2020-12-08T13:40:02.577Z'
 # note-react-state-dev
 # guide
 
+- [A community-maintained spec for global state libraries](https://github.com/reactwg/react-18/discussions/116)
+  - https://github.com/dai-shi/will-this-react-global-state-work-in-concurrent-rendering
+
 - context selector的主要实现
   - 依赖scheduler: dashi/use-context-selector,@fluentui/react-context-selector
   - 其他实现: mohebifar/react-use-context-selector(无依赖)

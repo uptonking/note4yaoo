@@ -183,6 +183,15 @@ modified: '2020-10-05T06:22:02.107Z'
   - A canvas experiment in which a set of particles is used to render different shapes based on the user's input.
   - It supports multiple modes: text, countdown, time and icons.
   - 粒子动画示例的效果amazing
+
+- https://github.com/vizzuhq/vizzu-lib
+  - https://lib.vizzuhq.com/
+  - Library for animated data visualizations and data stories.
+  - Designed with animation in focus; 
+  - Automatic data aggregation & data filtering; 
+  - HTML5 canvas rendering; 
+  - Written in C++ compiled to WebAssembly; 
+  - Dependency-free.
 # interactive-ui-components
 - scrollreveal /GPLv3/18.9kStar/202007
   - https://github.com/jlmakes/scrollreveal

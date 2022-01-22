@@ -13,7 +13,10 @@ modified: '2021-09-22T05:47:54.470Z'
 
 - ## 
 
-- ## 
+- ## https://github.com/wclr/yalc
+- When developing and authoring multiple packages (private or public), you often find yourself in need of using the latest/WIP versions in other projects that you are working on in your local environment without publishing those packages to the remote registry. 
+  - NPM and Yarn address this issue with a similar approach of symlinked packages (npm/yarn link). Though this may work in many cases, it often brings nasty constraints and problems with dependency resolution, symlink interoperability between file systems, etc.
+- yalc acts as very simple local repository for your locally developed packages that you want to share across your local environment.
 
 - ## For checking if a codepoint is possibly a JS identifier, using a gigantic switch statement seems 3.5x faster than binary search 
 - https://twitter.com/jarredsumner/status/1451355843857768452

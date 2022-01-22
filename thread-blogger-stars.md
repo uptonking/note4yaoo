@@ -79,3 +79,8 @@ modified: '2021-02-09T19:27:07.664Z'
 - phodal
   - js
   - https://github.com/phodal
+
+- 蒋继发
+  - https://twitter.com/ThaddeusJiang/status/1460096795996950530
+  - 现在叫スマカン，English: SmartCompany
+和公司核心产品名保持一致。

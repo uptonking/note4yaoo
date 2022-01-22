@@ -15,7 +15,14 @@ modified: '2021-08-16T06:56:58.774Z'
 
 - ## 
 
-- ## 
+- ## Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser
+- https://blog.replit.com/code-editors
+- In late 2018 Marijn announced a rewrite for CodeMirror to modernize the editor, CodeMirror version 6 with an excellent design doc. 
+- **One of the primary motivators for the rewrite was adding support for touch devices**. 
+- If you want a code editor that supports mobile, you should use CodeMirror 6. 
+  - Ace has not-bad support but does not come close, and Monaco is unusable on mobile.
+  - I'd go as far as saying that CodeMirror is probably suitable even for native applications as a webview component. 
+  - Most things in CodeMirror are serializable so you can interop with the webview from your native code.
 
 - ## It'd be neat if we could reference other files/lines of code in comments, and tooling would let you jump into and out of those links. Add `#135` at the end of a comment and you could jump to that line
 - https://twitter.com/jlongster/status/1437423113139101701

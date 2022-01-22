@@ -643,3 +643,11 @@ ReactDOM.render(<App />, document.getElementById('root'))
 - https://github.com/jquense/uncontrollable
   - Wrap a controlled react component, to allow specific prop/handler pairs to be omitted by Component consumers. 
   - Uncontrollable allows you to write React components, with minimal state, and then wrap them in a component that will manage state for prop/handlers if they are excluded.
+
+# ref
+
+- [How to write performant React code: rules, patterns, do's and don'ts](https://www.developerway.com/posts/how-to-write-performant-react-code)
+  - Rule #1: If the only reason why you want to extract your inline functions in props into useCallback is to avoid re-renders of children components: don’t. It doesn’t work.
+  - Rule #2: If your component manages state, find parts of the render tree that don’t depend on the changed state and memoise them to minimize their re-renders.
+  - Rule #3. Never create new components inside the render function of another component.
+  - Rule #4. When using context, make sure that value property is always memoised if it’s not a number, string or boolean.

@@ -18,6 +18,9 @@ modified: '2021-05-13T02:54:14.171Z'
 - https://twitter.com/tannerlinsley/status/1476239050927329281
   - With hooks I would need to compute all of the possible (and very expensive) outputs of this system using useMemo, even if they're not used
   - In my custom approach, these computations are just fns that lazily track user and internal dependencies to return a memoized value. This way you only pay for what you use, instead of computing the universe on mount or even when a few deps change.
+- Don't misunderstand me
+  - Hooks are the 💣-diggity 99% of the time.  
+  - The biggest reason I am doing this is because I have libraries (like #ReactQuery and #ReactTable) that pack some serious logic into very simple hooks eg. useQuery/useTable
 - That's what always worries me with hooks. I feel out of control. You keep computing variables even if you don't need them. This is why I use refs sometimes. They are way more readables but I think that classes gave us more control.
 
 - ## [20220102] A quick snippet of an early ReactTable v8 table that renders!

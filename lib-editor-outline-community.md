@@ -37,6 +37,12 @@ modified: '2021-12-21T03:14:26.843Z'
   - Outline has its own internal editor state like other editor libraries. 
   - **Outline's EditorState is in a tree structure, rather than a flat structure with blocks and ranges**. You can think of it more like a DOM structure.
   - There's an example of the Outline API
+- Blocks and ranges have an interesting byproduct: they are friendly with realtime collaboration using CRDT/OT algorithms. What's the story of multiplayer support for DOM like tree structure? Just curious.
+  - We have outline-yjs bindings for collaboration with Yjs and we keep our tree structure there using Y.XmlElement, Y.XmlText and few other clever implementation details. We actually found that avoided some common issues with blocks/ranges by going this approach (lists come to mind)
+  - I'm thinking through what could be a good CRDT direction for block elements exactly like lists (and tables) 
+  - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
+  - https://github.com/inkandswitch/peritext
+    - A CRDT for asynchronous rich-text collaboration, where authors can work independently and then merge their changes.
 - CodeMirror 6 also uses a concept of separate state and view. Is outline different?
   - In outline we have the notions of an editor, nodes and immutable editor states (which are the source of truth). 
   - There are two editor states, a current one which is what you see on the DOM, and a pending one that is currently being generated. The editor reconciles the editor state

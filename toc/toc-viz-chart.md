@@ -248,7 +248,17 @@ modified: '2020-10-22T10:22:33.292Z'
   - Every charts in this project relies solely on semantic markup — `<table>` based — and a spread of CSS variables carried by the tags. 
   - No JavaScript required for display
 # more
-- https://www.rgraph.net/download.html
+- https://github.com/vizzuhq/vizzu-lib
+  - https://lib.vizzuhq.com/
+  - Library for animated data visualizations and data stories.
+  - Designed with animation in focus; 
+  - Automatic data aggregation & data filtering; 
+  - HTML5 canvas rendering; 
+  - Written in C++ compiled to WebAssembly; 
+  - Dependency-free.
+
+- https://github.com/heyesr/rgraph
+  - https://www.rgraph.net/download.html
   - svg, canvas, csv, google sheets, ajax, database
 
 - https://github.com/frappe/gantt

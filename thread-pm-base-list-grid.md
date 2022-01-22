@@ -17,7 +17,9 @@ modified: '2021-08-16T06:57:03.570Z'
 
 - ## 
 
-- ## 
+- ## This is a fantastic blog post about how to implement an efficient spreadsheet-like reactive computation system. 
+- https://twitter.com/geoffreylitt/status/1460618741696372743
+  - [HOW TO RECALCULATE A SPREADSHEET](https://lord.io/spreadsheets/)
 
 - ## Excel formula language: The most used programming language in the world! 
 - https://twitter.com/hjalli/status/1433803892094078978

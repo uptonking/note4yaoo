@@ -53,3 +53,5 @@ modified: '2021-07-29T20:37:39.797Z'
   - Add a drop shadow and a transparent background
   - Don't make the modal window too large
 # ref
+
+- [ebay: Rethink Modals Management in React](https://medium.com/ebaytech/rethink-modals-management-in-react-cf3b6804223d)

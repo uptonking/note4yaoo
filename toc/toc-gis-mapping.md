@@ -81,6 +81,10 @@ modified: '2021-01-04T16:21:18.990Z'
   - Mapus is a tool to explore and annotate collaboratively on a map  
   - Draw, add markers, create lines and areas, find places to go, observe other users, and much more.
 # map-app
+- https://github.com/giswqs/leafmap
+  - https://leafmap.org/
+  - A Python package for interactive mapping and geospatial analysis with minimal coding in a Jupyter environment
+
 - https://github.com/mapbox/storytelling
   - This template is designed to accelerate building out a "scrollytelling" map story.
     - The output is an HTML and JavaScript file. 

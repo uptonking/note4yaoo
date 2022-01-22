@@ -15,7 +15,9 @@ modified: '2021-09-22T04:13:22.341Z'
 
 - ## 
 
-- ## 
+- ## Declarative animations are returning to vanilla JavaScript via Motion One!
+- https://twitter.com/mattgperry/status/1455443495032967169
+  - Springs, inView, stagger, and an API thats even simpler than CSS.
 
 - ## Introducing Motion One. The smallest fully-featured animation library for the web.
 - https://twitter.com/mattgperry/status/1440341298582523904

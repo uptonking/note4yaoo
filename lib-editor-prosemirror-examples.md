@@ -188,3 +188,6 @@ modified: '2021-07-20T02:15:25.917Z'
   - 依赖express4、jquery、katex、react
   - 典型的适合学术论文的文档
   - 服务端依赖python，实现了协作编辑、图片上传
+
+- https://github.com/lukesmurray/prosemirror-async-query
+  - A simple declarative API for using promises in prosemirror plugin state.

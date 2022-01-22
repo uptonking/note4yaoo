@@ -44,3 +44,30 @@ modified: '2020-12-08T13:35:12.509Z'
 - Please note that pretty much any databases that have a SqlAlchemy integration should work perfectly fine as a datasource for Superset, just not as the OLTP backend.
 # ref
 - [SuperSet安装配置及导入示例数据](https://iminto.github.io/post/superset%E5%AE%89%E8%A3%85/)
+
+- [Understanding the Superset Semantic Layer](https://preset.io/blog/understanding-superset-semantic-layer/)
+  - A semantic layer is an abstraction over your base data, which usually inhabits some type of SQL-speaking data base or data engine, that maps the underlying data to human-friendly metaphors.
+  - The goal of a thin semantic layer then is to primarily enable last mile data transformation for the explicit purpose of visualization.
+  - Looker built an entire product essentially around a semantic layer (LookML). 
+    - While this established Looker as a source of truth in an organization for business metrics, it also created an immense amount of lock in. 
+    - You couldn’t take your LookML models with you and use them with another tool, if you decided to switch BI tools.
+  - The semantic layer in Superset consists of three main metaphors:
+  - 👉🏻️ Virtual Datasets
+    - A physical dataset in Superset represents a table or view in your database. 
+    - Superset is able to automatically pull in relevant information from the database (like schema and column types). This information is saved in Superset’s metadata database. 
+    - If a change to the underlying database table occurs, you can click Sync Columns from Source to force Superset to update its internal data model.
+    - Virtual datasets enable you to elevate a freeform SQL query against your database into a dataset entity in Superset. 
+  - 👉🏻️ Metrics
+    - a metric in Superset is any valid, aggregating SQL snippet that can be included in a SELECT clause. 
+    - Each line within the SELECT clause below are valid metrics in Superset
+    - like count(*), max('price'), sum('iphone_orders')
+  - 👉🏻️ Calculated Columns
+    - Calculated columns let you define simple transformations (as SELECT statements) for quick, last-mile data preparation.
+    - You can define any valid, non-aggregate SQL snippets that can be included in a SELECT clause. Note that this means you can reference multiple columns in your calculated column queries.
+  - it’s helpful to remember that all of these features exist to help you craft better and more complex SQL queries. 
+  - BI tools provide convenient UI interfaces and affordances so you can avoid having to manually write very long SQL queries from scratch.
+  - Ultimately, the end-user facing features of Superset  help you generate more complex SQL queries.
+    - Virtual datasets, metrics, and calculated columns provide useful abstractions and superpowers to augment your queries.
+    - Explore provides a no-code, drag & drop UI for quickly generating queries that power visualizations.
+    - Because the final artifact of the workflows in Superset is SQL, you can use SQL Lab to debug any of the queries that are written. 
+    - When in Explore, select the hamburger menu in the top right corner and then select View Query to observe the query SQL Superset generated.
