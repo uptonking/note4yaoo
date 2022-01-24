@@ -10,14 +10,24 @@ modified: '2021-01-22T08:32:57.313Z'
 # guide
 
 # pieces
-
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Wordle是一个英文的猜词游戏](https://zhuanlan.zhihu.com/p/460730883)，
+  - 玩家需要在6次内猜出英文单词；并且输入的内容必须为英文单词。
+- wordle web game
+  - https://www.powerlanguage.co.uk/wordle/
+  - Each guess must be a valid 5 letter word. Hit the enter button to submit.
+  - After each guess, the color of the tiles will change to show how close your guess was to the word.
+  - A new WORDLE will be available each day!
+- wordle impl
+  - https://github.com/yyx990803/vue-wordle
+  - [Let's write a Wordle clone in javascript](https://www.youtube.com/watch?v=Qxn4-bTOx0g)
+- [词频视觉分析神器：Wordle](https://zhuanlan.zhihu.com/p/43699909)
+  - 进入网站之后，点create, 然后网站允许你直接copy-paste上你想要分析的文章。然后点【go】，词频图就来了。
 
 - ## Github commit-graph image 可手动填充
 - https://twitter.com/jh3yy/status/1388816235882811395

@@ -14,7 +14,7 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## [The how and why on React’s usage of linked list in Fiber to walk the component’s tree](https://indepth.dev/posts/1007/the-how-and-why-on-reacts-usage-of-linked-list-in-fiber-to-walk-the-components-tree)
 
 - ## I wish we could use Rust in React Native (instead of C++) but supporting Rust cross-platform has such a long tail of infrastructure issues to work out. And more popping up...
 - https://twitter.com/sebmarkbage/status/1213199159840260096

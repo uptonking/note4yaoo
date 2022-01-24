@@ -10,7 +10,6 @@ modified: '2022-01-05T14:25:35.961Z'
 # guide
 
 # discuss
-
 - ## Demystifying the internal of jotai https://jotai.org, an atomic state management solution for @ReactJS .
 - https://twitter.com/dai_shi/status/1484835169475653634
   - Here's a simplified version of the core.
@@ -21,10 +20,16 @@ modified: '2022-01-05T14:25:35.961Z'
 - in the `useAtom` hook, there is still a `useState`. how does this behave in nested components when this useAtom hook is accessed on the top level? does it still cause a rerender to all children? if yes, what is the advantage/difference of jotai from react's `context+useState`?
   - Yes, all child components under the tree re-render, unless they are memoized (or stable). 
   - The advantage is 1) simpler syntax, and 2) dynamic atom creation without re-mounting the entire tree (which is impossible with context).
-- 
-- 
-- 
-- 
+
+- this simplified version of zustand is **not** pseudo code. It's usable.
+  - https://codesandbox.io/s/purple-tree-noyy6?file=/src/App.js
+  - https://twitter.com/dai_shi/status/1484851943696924677
+
+- a simplified version of valtio 
+  - https://twitter.com/dai_shi/status/1484496249776934917
+- here's the full version of the simplified version of Valtio
+  - https://codesandbox.io/s/modest-currying-mu0j7
+  - https://twitter.com/dai_shi/status/1485036663290368002
 
 - ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
 - https://twitter.com/dai_shi/status/1477593623156105217  /20220102

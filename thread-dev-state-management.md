@@ -75,7 +75,11 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## 
+- ## Mobx supports concurrent rendering too.But after playing around with valtio, I realized you did implement in your "simple code"  the most important feature of valtio and mobx - it won't rerender if the non-accessed field has changed
+- https://twitter.com/terrysahaidak/status/1484881817752772610
+  - This is the most important feature. It's that all the other state managers are missing. Also, without it I don't recommend using any of these state managers in react native where rerenders do matter a lot.This is why I don't recommend redux. At all. Never use it in React Native
+- Totally agreed here. Actually, I started adding the feature for redux: https://github.com/dai-shi/reactive-react-redux and even created a PR for react-redux.
+  - Now, I have React Tracked https://react-tracked.js.org which adds render optimization for any selector based hooks, like react-redux and zustand.
 
 - ## Just released redux-in-worker v0.8.0, a library to run redux reducers and middleware in web workers
 - https://twitter.com/dai_shi/status/1434840658292842500

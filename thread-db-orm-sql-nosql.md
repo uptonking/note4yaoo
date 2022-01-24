@@ -11,7 +11,8 @@ modified: '2021-05-23T10:17:05.993Z'
 
 - ## 
 
-- ## 
+- ## how & why #ScyllaDB engineers moved to B-tree & B+-tree data structures for linear search in their #NoSQL distributed database.
+- [The Taming of the B-Trees](https://www.scylladb.com/2021/11/23/the-taming-of-the-b-trees/)
 
 - ## Very common mistake in ActiveRecord: checking for the existence of a belongs_to associated record with `present?` or `blank?` . 
 - https://twitter.com/nateberkopec/status/1441406828424822792

@@ -11,24 +11,37 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## URLs, a poll: trailing-slash vs no-trailing-slash
+- https://twitter.com/zachleat/status/1485010201937944578
+- 在浏览器控制台执行 new URL("https://google.com?foo=bar").toString()
+  - 结果会自动加上slash到地址中。
+  - 'https://google.com/?foo=bar'
+  - this is not even correct URL You put to URL constructor... domain name needs to always end with trailing-slash if there is path, anchor or parameters.
+- The right answer is whatever framework has adopted.
+  - I think it’s because trailing slash implies a collection of resources (with a corresponding index), and non-trailing implies a specific file. The original web, then REST, were built on those ideas. Conventions today are descendants of that original design.
+- Firefox has given me trouble loading relative assets with an implicit index.html from a no-slash URL, while trailing-slash worked, so based on that single experience, my entire slash philosophy is absolutely yes to trailing slashes.
+- No trailing slash. Aesthetically I think of it as file path in file-explorer
+- I grew up on the Web that one of its beauties is that URLs can be anything.From that angle, trailing slash or not is preference, and there is no right or wrong
+
 - ## Introducing Dioxus v0.1
 - https://dioxuslabs.com/blog/introducing-dioxus/
   - New Rust framework inspired by React: hooks, VDOM, RSX...
   - Strongly typed, performant, cross-platform, web, SSR, mobile+desktop (Tauri)
 
-
 - ## one of my issues with single file components is that i find it troubling having to make a file for each component, no matter how minor it is
 - https://twitter.com/intrnl0/status/1439427883659784194
 - This has been one of mine as well. We have something for this in @MarkoDevTeam templates called the macro tag.
 - [rfc: Inline components for svelte](https://github.com/sveltejs/rfcs/pull/34)
-- 
-- 
-- 
 
 - ## HTML is the original single file component. 
 - https://twitter.com/devongovett/status/1436853348896935942
   - Big fan of using inline `<script>` and `<style>` elements, at least while prototyping.
-
 
 - ## More frameworks have been deprecated than HTML tags.
 - https://twitter.com/claviska/status/1436436571474038784

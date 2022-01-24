@@ -20,3 +20,6 @@ modified: '2021-08-19T13:02:28.478Z'
 - 可以在地址栏显示扩展图标
   - chrome-extension://iahnhfdhidomcpggpaimmmahffihkfnj
   - 要查看图标的扩展必须已启用，edge扩展和chrome扩展都支持
+- [Chrome Platform Status](https://chromestatus.com/features)
+  - https://github.com/GoogleChrome/chromium-dashboard
+  - https://chromestatus.com/metrics/feature/timeline/popularity/2617

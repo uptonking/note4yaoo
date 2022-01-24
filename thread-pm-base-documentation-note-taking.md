@@ -11,9 +11,28 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We now had five opponents in the competition: @RoamResearch , @obsdmd , @logseq , @craftdocsapp , and @rem_note .
+- https://twitter.com/rcvd_io/status/1485256388888641541
+- [TfT Performance: Interim(期中的；暂时的) Results](https://www.goedel.io/p/tft-performance-interim-results)
+  - Obsidian ranked first in almost every category; 
+  - RemNote delivered pretty solid results even with larger data sets
+  - Logseq showed that it’s pretty fast on small data sets, but the larger the collection gets, the slower it becomes. 
+  - The same goes for Roam Research in contrast to Logseq handles even the big data set, but some of the processing times are annoying.
+- [TfT Performance: Methodology](https://www.goedel.io/p/tft-performance-methodology)
+  - This is the first article in a series looking at the performance of current applications for Personal Knowledge Management - so-called "Tools for Thought."
+  - This is how the generated pages look in Roam Research and in Logseq
+
 - ## Yes, Logseq does copy some features and UX from roam, that's why I open sourced logseq. 
 - https://twitter.com/tiensonqin/status/1374351298456219654
-  - But Logseq is not a clone, we have two-way sync between plain-text and Datascript, almost full org-mode support,  GitHub sync on Web, 
+  - But Logseq is not a clone, we have two-way sync between plain-text and Datascript, almost full org-mode support, GitHub sync on Web, 
   - and last, we don't store user's data
 
 - ## Announcing http://papertohtml.org, an on-demand PDF to HTML converter for scientific papers!

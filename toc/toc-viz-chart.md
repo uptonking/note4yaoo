@@ -247,6 +247,12 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://ffoodd.github.io/chaarts
   - Every charts in this project relies solely on semantic markup — `<table>` based — and a spread of CSS variables carried by the tags. 
   - No JavaScript required for display
+# gantt
+- https://github.com/bvaughn/planner
+  - https://plannerjs.dev/
+  - Lightweight, interactive planning tool that visualizes a series of tasks using an HTML canvas
+- https://github.com/frappe/gantt
+  - https://frappe.io/gantt
 # more
 - https://github.com/vizzuhq/vizzu-lib
   - https://lib.vizzuhq.com/
@@ -261,8 +267,6 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.rgraph.net/download.html
   - svg, canvas, csv, google sheets, ajax, database
 
-- https://github.com/frappe/gantt
-  - https://frappe.io/gantt
 - xchart /MIT/352Star/201903
   - https://github.com/yugasun/x-chart
   - https://yugasun.github.io/x-chart/

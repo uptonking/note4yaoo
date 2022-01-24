@@ -34,6 +34,11 @@ modified: '2021-07-20T02:15:25.917Z'
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+- rino /20Star/GPLv3/202201/ts
+  - https://github.com/ocavue/rino
+  - https://rino.app/
+  - 依赖 remirror、codemirror6
+  - A better way to write Markdown
 
 - https://github.com/marionebl/prosemirror  /mdx
   -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView

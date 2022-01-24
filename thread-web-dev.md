@@ -33,7 +33,8 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## New quick tip: CSS-only External Link Favicons
+- https://www.zachleat.com/web/external-link-favicons/
 
 - ## Working with my routes as arrays/objects instead of JSX is refreshing. 
 - https://twitter.com/tannerlinsley/status/1459015713390092291
