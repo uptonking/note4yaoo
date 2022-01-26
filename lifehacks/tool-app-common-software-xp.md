@@ -22,6 +22,12 @@ modified: '2020-12-29T17:52:23.312Z'
 - 文字不可选择、不可复制
   - https://www.mingyantong.com/ju/5704496
 
+# office
+
+- office许可过期
+  - https://github.com/infohost/infohost.github.io/blob/main/office-license-is-not-genuine.html
+  - https://htmlpreview.github.io/?
+  - 
 # markdown-formatter
 
 - [sumnow/markdown-formatter](https://github.com/sumnow/markdown-formatter)
