@@ -258,16 +258,11 @@ modified: '2021-10-27T03:20:45.841Z'
   - 表格末尾为什么会渲染一个英文分号
 # 2022
 - 下一步工作内容
-- 完善/docs
-  - [x] 图片保存到本地数据库 迁移到 toe-frontend
-  - [ ] 文档内搜索
-- 实现/user
-  - 最近文档列表
-  - 搜索用户数据
-- 实现/workspace
-  - 输入关键字搜索出匹配文档名或内容的文档
-  - [ ] 选中一篇文档后，所有行的复选框都应该显示
-  - 全局header
+  - 总结 react patterns
+  - 总结 typescript patterns
+  - crud table
+  - draggable list
+  - 重构文章页题头部分组件
 
 ## 0126
 
@@ -439,6 +434,19 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - https://kbar.vercel.app/
   - Command+k interfaces are used to create a web experience where any type of action users would be able to do via clicking can be done through a command menu.
   - With macOS's Spotlight and Linear's command+k experience in mind, kbar aims to be a simple abstraction to add a fast and extensible command+k menu to your site.
+
+## 0112
+
+- 完善/docs
+  - [x] 图片保存到本地数据库 迁移到 toe-frontend
+  - [ ] 文档内搜索
+- 实现/user
+  - 最近文档列表
+  - 搜索用户数据
+- 实现/workspace
+  - 输入关键字搜索出匹配文档名或内容的文档
+  - [ ] 选中一篇文档后，所有行的复选框都应该显示
+  - 全局header
 
 ## 0111
 
