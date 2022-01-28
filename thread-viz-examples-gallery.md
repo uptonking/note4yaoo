@@ -11,6 +11,16 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## My data visualization for the 2021 SOTI Challenge –by the Data Viz Society, describing the relationship between professional roles and data viz tasks in terms of devoted time.
+- https://twitter.com/martina_dossi/status/1486420898387304460
+  - https://www.behance.net/gallery/135695715/DVS-2021-CHALLENGE
+
 - ## BBC Visual and Data Journalism cookbook for R graphics
 - https://bbc.github.io/rcookbook/
 

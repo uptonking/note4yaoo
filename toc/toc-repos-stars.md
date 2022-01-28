@@ -62,6 +62,11 @@ modified: '2021-01-12T18:49:13.490Z'
   - 依赖glassfish、postgresql、smtp、solr、DOI/Handle.net
 
 # collection
+
+- https://github.com/microsoft/vscode-webview-ui-toolkit
+  - A component library for building webview-based extensions in Visual Studio Code.
+  - 基于微软自研的fast-element和react-wrapper实现
+
 - https://github.com/pouyakary/TextKit
   - TextKit is a framework for creating Textual Graphics. 
   - It provides layers, styling, rich color, text justification, layouts, tables, view-ports, transparency, etc. 

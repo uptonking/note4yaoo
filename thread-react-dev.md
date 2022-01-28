@@ -12,7 +12,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## In React (and other UI frameworks), we spend a lot of time deciding where state should live.
+- https://twitter.com/acemarke/status/1486359294127792131
+  - Found a post that suggests using "lifetime analysis" (inspired by the Rust compiler) to decide what components own what data
+  - [From Rust to TypeScript: Lifetime Analysis for React Component Architecture](https://valand.dev/blog/post/from-rust-to-typescript-lifetime-analysis)
 
 - ## [The how and why on React’s usage of linked list in Fiber to walk the component’s tree](https://indepth.dev/posts/1007/the-how-and-why-on-reacts-usage-of-linked-list-in-fiber-to-walk-the-components-tree)
 

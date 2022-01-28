@@ -16,7 +16,23 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Implemented click detection all the way up to quadruple clicks. 
+- https://twitter.com/steveruizok/status/1486716043984736264
+- It sort of works like this: each time the user clicks, we fire three events—we fire onPointerDown when they start clicking, then onPointerUp _and_ onClick when the they stop clicking.
+  - We also keep track of a clicking state. This starts in "idle" and can be either "idle", "pendingDoubleClick", "pendingTripleClick", "pendingQuadrupleClick", or "overflow".
+  - When we a pointer down event, what we do next depends on our current state.
+  - If our state is idle, then we change our state to "pendingDoubleClick". We also set a timer for ~450ms. When that time goes off, it will set the state back to "idle"
+  - If we get another pointer event while we're still in "pendingDoubleClick", we've got a double click! We first fire a single click, then a double click, then clear the current timer and set a new one that, when it goes off, will advance us to "pendingTripleClick".
+  - Repeat for triple click—fire a single click, fire a triple click, clear the timer, move to "pendingQuadrupleClick", and set a new timer.
+  - Repeat for quadruple click—fire a click, fire a quadruple click, clear the timer, move to "overflow", and set a new timer.
+  - The "overflow" state is special! The overflow state prevents us from firing additional events other than regular "click" until there's been at least our ~450ms between clicks. Each click in "overflow" resets the timer but returns us to overflow.
+  - That's the pattern. I'll see if I can work out a nice isolated implementation, but in the meantime here are my tests:
+    - https://gist.github.com/steveruizok/007db653ab78c3f2e25aafa2a75c6c03
+    - https://codesandbox.io/s/modest-hamilton-446e9
+  - Also—moving the pointer more than a certain threshold (~5px) clears the timer. This prevents accidental double-clicks after finishing a drag. So "down, move, up, down" should be a single click, even if it happens quickly.
+- Doesn’t this add a lag time during single click since you have to wait some window of time to see if a second click will occur or not? The same lag will be experienced for double and triple?
+  - Nope, each pointer down immediately fires a single click. Like in the browser, a double click is always a single click first.
+  - So a triple click will look like this: 1st click: single 2nd: single, double 3rd: single, double, triple
 
 - ## Did the hard work today of splitting tldraw's v2 into a core library (headless) and a react library, which opens up possible futures for vue/svelte/etc. 
 - https://twitter.com/steveruizok/status/1470525905328091156

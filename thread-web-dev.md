@@ -33,6 +33,15 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## did my best to condense all the lessons of processing files dragged & dropped onto a website into one module that you can use
+- https://github.com/placemark/flat-drop-files
+
+
+
 - ## New quick tip: CSS-only External Link Favicons
 - https://www.zachleat.com/web/external-link-favicons/
 

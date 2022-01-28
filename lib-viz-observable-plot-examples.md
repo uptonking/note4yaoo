@@ -63,3 +63,5 @@ modified: '2021-08-21T12:54:10.152Z'
 
 - https://github.com/looker/vizzy
   - Custom visualization utilities for Looker.
+
+- [Plot Cheatsheets - Layouts](https://observablehq.com/@observablehq/plot-cheatsheets-layouts)
