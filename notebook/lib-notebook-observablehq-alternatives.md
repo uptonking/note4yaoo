@@ -72,6 +72,10 @@ modified: '2021-05-14T14:46:37.026Z'
   - Juniper is a lightweight JavaScript library for adding interactive, editable and runnable code snippets to any website. 
   - It uses JupyterLab components and Binder, inspired by Min RK's Thebelab
 
+- https://github.com/datalayer/jupyter-react
+  - https://datalayer.tech/
+  - React.js components to create a data product compatible with the Jupyter ecosystem .
+
 ## js-based-notebook
 
 - https://github.com/ottomatica/docable-notebooks
@@ -87,7 +91,6 @@ modified: '2021-05-14T14:46:37.026Z'
     - Embed your slides, YouTube video, and more
   - Docable's interactive cells are simply Markdown code block (```) with addition of a few json annotations
   - These code blocks are 100% compatible with GitHub's Markdown rendering and the JSON is simply ignored
-
 
 ## more-notebook
 

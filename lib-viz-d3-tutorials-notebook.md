@@ -7,6 +7,10 @@ modified: '2021-05-18T08:49:58.244Z'
 
 # lib-viz-d3-tutorials-notebook
 
+# guide
+
+- [D3 Charts: D3 examples as reusable functions! Ready for import or copy-paste.](https://observablehq.com/collection/@d3/charts)
+
 # Learn D3
 
 ## introduction

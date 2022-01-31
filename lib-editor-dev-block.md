@@ -46,6 +46,25 @@ modified: '2021-06-01T20:03:38.284Z'
 - Custom blocks, or blocks you’ve added with plugins, can be easily found by users just by clicking the + sign in the editor. 
   - Shortcodes, in the classic editor, didn’t have such a discovery method.
 - Re-usable blocks allow you to easily create content you can re-use across posts or pages, see this nice tutorial on WP Beginner.
+# discuss-stars
+- ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
+- https://twitter.com/EryouHao/status/1486954447943057409
+  - 如果在网络上的 Block 是可互换和可重复使用的，不是很酷吗？
+  - 于是一个开放的、免费的、非专有的协议诞生了
+- https://blockprotocol.org/
+  - https://github.com/blockprotocol/blockprotocol
+  - An open standard for building and using data-driven blocks. Make your applications both human and machine-readable.
+  - Any valid HTML is already a block.
+
+- 这个想法不错，block 最初是为了解决多人同时协作的时候的冲突问题。那以后文档就是按 block 作为基本组件了？
+  - 是的。 甚至 Block 不仅应用于文档场景。例如一个纯粹的 Todo 应用也可以使用 Block 的协议来定义导入、导出、复制流转等，这样跨应用识别和适配就可能会不错。
+  - WebDAV不就已经可以做到这个了吗？日历里的event和todo就是啊，结构化可协作分布式协议。有不少经验和教训在里面的。
+
+- Gadget、Widget 换了个新名词叫 Block。
+
+- 现在 block 们最讨厌、最影响写作体验的有两点：
+  - 自动把一个段落（哪怕只有一个字）转成一个 block，不方便把一组段落设置为一个 block
+  - 很难跨 block 选两句话，一跨 block 选择、就自动变成了选中两个 block
 # discuss
 - ## 
 

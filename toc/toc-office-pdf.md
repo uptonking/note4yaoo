@@ -18,6 +18,10 @@ modified: '2021-01-04T17:26:43.784Z'
   - https://mozilla.github.io/pdf.js/
   - Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.
 
+
+- https://gitlab.coko.foundation/pagedjs/pagedjs
+  - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
+  - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 # pdf4j
 
 - OpenPDF /1.7kStar/LGPLv2||MPLv2/202009

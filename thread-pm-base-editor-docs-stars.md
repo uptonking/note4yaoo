@@ -14,7 +14,14 @@ modified: '2021-08-22T07:29:34.045Z'
 
 - ## 
 
-- ## 
+- ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
+- https://twitter.com/EryouHao/status/1486954447943057409
+  - 如果在网络上的 Block 是可互换和可重复使用的，不是很酷吗？
+  - 于是一个开放的、免费的、非专有的协议诞生了
+- https://blockprotocol.org/
+  - https://github.com/blockprotocol/blockprotocol
+  - An open standard for building and using data-driven blocks. Make your applications both human and machine-readable.
+  - Any valid HTML is already a block.
 
 - ## I’m working on a spike(尖刺) for TLDraw’s renderer, replacing the current “one big SVG” approach with lots of divs for each shape instead.
 - https://twitter.com/steveruizok/status/1436638874432851968
