@@ -16,6 +16,28 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
+- ## 
+
+- ## Working on a new Undo/Redo manager that runs on mobx and JSON patches. Here's how it works! 
+- https://twitter.com/steveruizok/status/1487052071685734410
+  - https://codesandbox.io/s/mobx-undo-redo-kmifv
+- In our system, we're tracking changes to a "document". 
+  - Each time the document changes, we generate a "snapshot" and compare it with our previous snapshot in order to create a "patch" that describes how to get from the current snapshot back to the previous.
+  - These patches are "JSON patches" (http://jsonpatch.com). Each patch is made up of a series of operations that will turn one object into another. In our case, our patches describe all of the operations needed to get from our current snapshot back to our previous snapshot.
+  - We store these patches in a "stack". This is a list that has a "pointer" that refers to the current patch. We also keep around a snapshot from our last change (or the initial document, if we haven't changed anything yet).
+- When our document changes, we first take a snapshot of the current document 
+  - and we compare it against our previous snapshot in order to create a new patch. Again, this patch describes all the steps needed to "undo" the new change.
+  - Next, we push the new patch onto the stack and move the pointer up so that it points to our new patch.
+  - Finally, we save the snapshot we made of our current document as our new previous snapshot. (We can discard the old previous snapshot.)
+  - Now we're ready for the next change!
+
+- To undo a change, we apply the current patch (e.g. the one that the pointer is pointing to) to the current document. Applying a patch performs the patch's operations and will bring the state back to where it was before the most recent change.
+
+- ## Let's talk about edge cases in an undo/redo system.
+- https://twitter.com/steveruizok/status/1487072814049943552
+  - In our last thread, we looked at basic change, undo and redo operations.
+  - What happens if we need to "pause" the undo / redo manager? 
+
 - ## Implemented click detection all the way up to quadruple clicks. 
 - https://twitter.com/steveruizok/status/1486716043984736264
 - It sort of works like this: each time the user clicks, we fire three events—we fire onPointerDown when they start clicking, then onPointerUp _and_ onClick when the they stop clicking.
@@ -27,8 +49,10 @@ modified: '2021-08-06T07:36:05.864Z'
   - Repeat for quadruple click—fire a click, fire a quadruple click, clear the timer, move to "overflow", and set a new timer.
   - The "overflow" state is special! The overflow state prevents us from firing additional events other than regular "click" until there's been at least our ~450ms between clicks. Each click in "overflow" resets the timer but returns us to overflow.
   - That's the pattern. I'll see if I can work out a nice isolated implementation, but in the meantime here are my tests:
+
     - https://gist.github.com/steveruizok/007db653ab78c3f2e25aafa2a75c6c03
     - https://codesandbox.io/s/modest-hamilton-446e9
+
   - Also—moving the pointer more than a certain threshold (~5px) clears the timer. This prevents accidental double-clicks after finishing a drag. So "down, move, up, down" should be a single click, even if it happens quickly.
 - Doesn’t this add a lag time during single click since you have to wait some window of time to see if a second click will occur or not? The same lag will be experienced for double and triple?
   - Nope, each pointer down immediately fires a single click. Like in the browser, a double click is always a single click first.
@@ -38,7 +62,7 @@ modified: '2021-08-06T07:36:05.864Z'
 - https://twitter.com/steveruizok/status/1470525905328091156
   - Also extracting skeleton shapes/tools into their own packages.
 - Are there any parts of the vanilla code now that looked/felt better when it was done in React?
-  - The types around events were more clean before, as I’m now having to inject a map of events to event types (eg pointer: React.PointerEvent). Other than that, I’d also kept things pretty separate no big changes.
+  - The types around events were more clean before, as I’m now having to inject a map of events to event types (eg pointer: React. PointerEvent). Other than that, I’d also kept things pretty separate no big changes.
 
 - ## Put together a quick multiplayer implementation on tldraw using Yjs
 - https://twitter.com/nayajunimesh/status/1477165474622234624

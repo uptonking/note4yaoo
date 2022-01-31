@@ -208,6 +208,8 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://github.com/scality/zenko-ui
   - @zenbu-ui/table
     - https://github.com/KodepandaID/zenbu-ui
+  - https://github.com/SAP/ui5-webcomponents-react/tree/main/packages/main/src/components/AnalyticalTable
+    - https://sap.github.io/ui5-webcomponents-react/?path=/docs/data-display-analyticaltable--default-story
 
 - 过于简单
   - https://github.com/edx/paragon/tree/master/src/Table
@@ -254,9 +256,9 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/quantmind/metablock-js
   - TypeScript tools for the metablock cloud
-
 # ref
-
 - [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
   - build a drag and drop sortable table using @dnd -kit and react-table.
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9
+
+- [Table Virtuoso integrated with React Table](https://virtuoso.dev/react-table-integration/)

@@ -11,9 +11,29 @@ modified: '2021-09-22T04:13:22.341Z'
 
 - ## 
 
-- ## 
+- ## Motion One's new custom animations let you hook it up to an external library like Flubber to perform these morphing SVG animations
+- https://twitter.com/mattgperry/status/1487701600529534979
+  - https://codesandbox.io/s/motion-one-morph-svg-paths-qldsz?file=/src/index.js
 
-- ## 
+- ## Hardware-accelerated CSS and WAAPI animations should be considered *progressive enhancement*, rather than mandatory. 
+- https://twitter.com/mattgperry/status/1488076336958738432
+  - Why? One word, that you're probably sick of hearing: Safari.
+- Safari uses Apple's Core Animation for accelerated animations, the API that powers animations across iOS and macOS.
+  - This means that if Core Animation doesn't support a feature, Safari bails the animation out of acceleration.
+- The list of unsupported features is extensive:
+  - 🙅🏾‍♀️ playbackRate !== 1
+  - 🙅‍♂️ alternate/reverse playback direction
+  - 🙅🏻 step easing
+  - 🙅🏿‍♂️ cubic-bezier easing with overshoot (pictured)
+  - 🙅🏼‍♀️ filter in iOS
+- Usually when a bug is encountered with accelerated animations their go-to bugfix is to just add another bail-out.
+- Over time the list of bail-outs has grown into an unknowable mishmash. However, getting accelerated animations to work is only half the battle.
+- Success leads to synchronisation issues, timing issues and rendering oddities
+- This is why Motion One disables acceleration in Safari by default
+  - The Safari team contacted me about fixing this and then ghosted. Apple doesn't allow 3rd party browsers so we're stuck in this situation until the richest company in the world adequately supports their browser
+
+- Out of curiosity, how do you disable hardware acceleration in Safari? I didn't think it was possible when animating properties like opacity and transform 
+  - We trigger a bail-out, currently by setting playbackRate to something imperceptibly small like 1.00000001. I've been assured this won't be fixed (so we can continue to exploit) until sync/render/timing bugs have been squashed.
 
 - ## Declarative animations are returning to vanilla JavaScript via Motion One!
 - https://twitter.com/mattgperry/status/1455443495032967169

@@ -10,6 +10,17 @@ modified: '2021-08-22T16:08:42.552Z'
 # guide
 
 # discuss
+
+- ## `background-color: var(--colors-brand);` Is this code valid? Is this variable defined anywhere? 
+- https://twitter.com/markdalgleish/status/1487393650607034373
+  - Unless you look at every other CSS file in your project, there's no way to know.
+  - This is what we're addressing when we talk about "type safety" for CSS variables in vanilla-extract.
+
+- I can’t imagine working with an untyped theme ever again! I would like to use Vanilla Extract - but the randomized CSS variable names makes themes difficult to reuse across technologies, like styling third party widgets, cookie banners and such
+  - There's a global theming API to deal with this
+- How can your typing tell if the call-site is in the context of the provider though? Say you have multiple providers in an app with competing, overlapping, and extra vars, how do you type hint to the developer? Actually had a working session on Friday about this problem.
+  - Can't type that part, unfortunately.
+
 - ## First look at Vanilla Extract
 - https://twitter.com/kylemathews/status/1382212439538761732?lang=en
 - Does Vanilla Extract support to react-native?

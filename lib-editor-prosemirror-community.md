@@ -8,6 +8,15 @@ modified: '2021-06-12T02:41:33.389Z'
 # lib-editor-prosemirror-community
 
 # discuss-stars
+
+- ## I'm curious what you would consider "Prosemirror regrets" -- things that you'd do different or things you dont like about the current implementation
+- https://twitter.com/moonriseTK/status/1487832468308774918
+  - Writing correct document-changing commands, especially schema-agnostic ones, is ridiculously hard right now. 
+  - Also the extension system is not as powerful as that in codemirror 6.
+
+- Can you talk more about the formalisms ProseMirror adopts that you admire?
+  - I'm still discovering it but mostly the transaction and NodeView systems. Make it really easy to add custom behaviour. I just added checkbox support for my notetaking app in a few lines of code.
+
 - ## Remove contenteditable completely?
 - https://discuss.prosemirror.net/t/remove-contenteditable-completely/1766
 - using contenteditable for rendering/cursor tracking reduces complexity by avoiding the need to implement layout. 

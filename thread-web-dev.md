@@ -35,12 +35,12 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## We made a Chinese version of Wordle! 汉兜 - 汉字 Wordle 每天一词，汉字、声母、韵母、声调都会独立进行颜色判断，同时也支持繁体输入与注音，欢迎来玩
+- https://twitter.com/antfu7/status/1487459883037634563
+  - https://handle.antfu.me/
 
 - ## did my best to condense all the lessons of processing files dragged & dropped onto a website into one module that you can use
 - https://github.com/placemark/flat-drop-files
-
-
 
 - ## New quick tip: CSS-only External Link Favicons
 - https://www.zachleat.com/web/external-link-favicons/
