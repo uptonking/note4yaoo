@@ -15,7 +15,9 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## One fact that was unknown to me before becoming an open source maintainer is: You have to really understand a contribution before accepting it, as _you_ have to maintain it.
+- https://twitter.com/TkDodo/status/1487804403356680201
+  - If I'm getting issues for a contribution made by someone else who is now unavailable, what am I gonna do?
 
 - ## 代码中 state 和 status 区别：
 - https://twitter.com/ThaddeusJiang/status/1444133176352247810

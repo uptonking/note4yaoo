@@ -181,6 +181,11 @@ modified: '2020-10-22T06:49:10.760Z'
   - yet another table library for React
   - 依赖styled-components
   - 提供了多个主题 material-ui、semantic、bootstrap、antd
+- react-datasheet-grid /71Star/MIT/202202/ts
+  - https://github.com/Equify/react-datasheet-grid
+  - https://react-datasheet-grid.netlify.app/docs/features
+  - 依赖react、react-window、react-resize-detector
+  - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
 - react-bolivianite-grid /MIT/85Star/201905
   - https://github.com/papasnippy/react-bolivianite-grid
   - https://papasnippy.github.io/react-bolivianite-grid/
@@ -216,10 +221,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现，特别的是，每行的源码顺序从上到下显示出来的单元格dom元素是从右到左排列
   - 依赖element-resize-detector、iscroll、react-proptypes
   - a low level component for building fast tables
-- react-datasheet-grid 
-  - https://github.com/Equify/react-datasheet-grid
-  - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, 
-  - and each column is responsible for a single property of each row
 - rc-virtual-list /172Star/MIT/202010/ts
   - https://github.com/react-component/virtual-list
   - https://rc-virtual-list.react-component.now.sh/

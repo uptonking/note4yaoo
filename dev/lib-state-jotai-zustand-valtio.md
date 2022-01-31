@@ -45,6 +45,24 @@ modified: '2022-01-05T14:36:28.057Z'
   - 依赖 proxy-compare
 # comparison
 
+## [When I Use Valtio and When I Use Jotai ?](https://blog.axlight.com/posts/when-i-use-valtio-and-when-i-use-jotai/)
+
+- My answer is I would use valtio for data-centric apps and jotai for component-centric apps.
+
+- In the past, I had this tweet, mentioning “React Centric” and “Data Centric”. React component centric approach is an internal store, where as data centric approach is an external store.
+- Here’s another tweet with the same idea. It’s “state resides at component level (inside react)” vs. “state resides at module level (outside react)”.
+- The data-centric approach is you have data first regardless of React components. React components are used to represent those data. For example, in game development, it’s likely that you may have game state in advance to design components. You don’t want these data to be controlled by React lifecycle.
+- On the other hand, with the component-centric approach, you would design components first. Some states can be locally defined in components with useState. Other states will be shared across components. For example, in a GUI intensive app, you want to control UI parts in sync, but they are far away in the component tree.
+- https://github.com/dai-shi/remote-faces
+  - it uses valtio. It’s an app to share your face image with your colleagues to show presense in a remote-work environment.
+  - It has data to be shared with other users. The latest version uses valtio-yjs to sync data with others.
+- https://github.com/dai-shi/katachidraw
+  - it uses jotai. This is an SVG-based drawing app.
+  - It’s actually developed to demonstrate how jotai can extensively used.
+
+- Another suggestion is, if you really like the syntax of valtio, pick valtio, otherwise pick jotai. 
+  - If you are even unsure about it, just pick jotai which has less gotchas.
+
 ## [How is Jotai different from Zustand?](https://github.com/pmndrs/jotai/blob/main/docs/basics/comparison.mdx)
 
 - Jotai is close to Recoil. 

@@ -260,8 +260,9 @@ modified: '2021-10-27T03:20:45.841Z'
 - 下一步工作内容
   - 总结 react patterns
   - 总结 typescript patterns
-  - crud table
+  - crud list
   - draggable list
+  - sortable-filterable-groupable table
   - 重构文章页题头部分组件
 
 ## 0126
