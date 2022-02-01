@@ -21,7 +21,14 @@ modified: '2021-10-29T15:06:33.422Z'
 
 - ## 
 
-- ## 
+- ## In talking with folks about Reactiflux, pretty frequently I get asked about how we handled growth. 
+- https://twitter.com/vcarl_/status/1488242326157807619
+  - The weird truth is that, we didn't really do anything in particular other than not fuck up the position we were in
+  - We were ~ the only chat community for React for a good number of years.
+  - we moved to Discord after Slack shut down invites due to the high member count(funny comparison: slack showed us the door at 7k total members, requiring us to find somewhere else or pay $5/head. on discord, we now have 170, 000, with about 13k online at peak)
+  - Two of our best decisions: Crowning members who had distinguished themselves as "MVPs", and adding a #​jobs-advice channel. Playing a part in these have been my proudest contributions to the JS ecosystem, if small.
+  - It's not really a helpful story for people trying to grow their community though. "Just tie yourself to a rocket and be a role model for 7 years, " but it worked pretty well for Reactiflux
+  - I guess it is worth mentioning, I followed a similar process for creating and managing Nodeiflux, a sister server focusing on Node.js. It's much smaller, but it still has 10k members and ~1.5k online, with a small but dedicated crew moderating
 
 - ## 我突然发现微软才是那个老老实实在做生产力工具的公司, 苹果天天把生产力工具挂嘴上但其实好像没做什么啊...
 - https://twitter.com/Cailurus/status/1426877534914838528

@@ -32,9 +32,26 @@ modified: '2021-10-29T15:02:28.882Z'
 
 - ## 
 
-- ## 
+- ## WebVM
+- https://webvm.io/
+- https://github.com/leaningtech/webvm
+  - WebVM is a server-less virtual Linux environment running fully client-side in HTML5/WebAssembly. 
+  - In this demo, it runs an unmodified Debian distribution including many native development toolchains.
+  - WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser.
+  - CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator.
 
-- ## 
+- ## ar5iv
+- https://ar5iv.org/
+- Articles from arXiv.org as responsive HTML5 web pages.
+  - Converted from TeX with LaTeXML.
+  - Sources upto the end of 2021. Not a live preview service.
+- https://twitter.com/khinsen/status/1488415031972843526
+  - You can download / archive them, and convert them to EPub for better reading (via pagination) on an e-ink device. No offline reading though, because of @MathJax .
+  - For long-term archiving, better stick to the PDF files from arXiv. That is the weak point of HTML-based scholarly publishing.
+  - 
+- https://github.com/brucemiller/LaTeXML
+  - LaTeXML is a TeX & LaTeX to XML, HTML, MathML, ePub, JATS, ... converter.
+  - 实现语言为perl
 
 - ## So when does @GitHub copilot SEO officially start?
 - https://twitter.com/tannerlinsley/status/1461706183799189509

@@ -8,8 +8,27 @@ modified: '2021-05-23T16:34:27.206Z'
 
 # pm-list-grid
 
+# roadmap
+- table-view
+  - sort/filter/group + test
+- kanban-view
+  - sort/filter/group + test
+  - views switch test
+- pivot-table component
+  - examples/stories
+- prosemirror-pivot-table
+  - alternative to prosemirror-table
+- pivot-table collab
+  - crdt
+  - yjs
+  - prosemirror yjs
+  - test
+- ckeditor-pivot-table
+  - alternative to ckeditor-table
+- refactor pivot table  to vanillajs
+  - react-table v7 to v8
+- refactor to plugins support
 # guide
-
 - ag-grid源码要点
   - ioc
   - rowModel
@@ -31,26 +50,6 @@ modified: '2021-05-23T16:34:27.206Z'
 - grid实现细节
   - 常将大部分样式如display布局放在className中，但元素具体位置相关的样式如position, left, top, width, height通过style object直接传递
   - 注意header-column和row-cell的相同点，可以共用很多逻辑，如virtualize
-# roadmap
-- table-view
-  - sort/filter/group + test
-- kanban-view
-  - sort/filter/group + test
-  - views switch test
-- pivot-table component
-  - examples/stories
-- prosemirror-pivot-table
-  - alternative to prosemirror-table
-- pivot-table collab
-  - crdt
-  - yjs
-  - prosemirror yjs
-  - test
-- ckeditor-pivot-table
-  - alternative to ckeditor-table
-- refactor pivot table  to vanillajs
-  - react-table v7 to v8
-- refactor to plugins support
 # why-datable
 - very few options for a data table with all the following 
   - div-based css table, not html table element

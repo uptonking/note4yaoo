@@ -12,11 +12,17 @@ modified: '2021-01-13T19:30:59.508Z'
 - excalidraw /15.3kStar/MIT/202101/ts
   - https://github.com/excalidraw/excalidraw
   - https://excalidraw.com/
+  - 基于canvas实现
   - Virtual whiteboard for sketching hand-drawn like diagrams
   - https://twitter.com/Vjeux/status/1292706657663762432
     - Excalidraw stores everything into a giant variable "AppState" and whenever it changes, we re-draw the canvas and optionally the UI if needs be.
-    - We don't use requestAnimationFrame, we respond to DOM events directly. 
-    - History is implemented pushing JSON.stringify(appState) to an array. It's pretty memory heavy, we need to optimize this at some point! 
+    - We don't use `requestAnimationFrame`, we respond to DOM events directly. 
+    - History is implemented pushing `JSON.stringify(appState)` to an array. It's pretty memory heavy, we need to optimize this at some point! 
+
+- tldraw /5.8kStar/MIT/202202/ts
+  - https://github.com/tldraw/tldraw
+  - https://www.tldraw.com/
+  - 基于svg实现
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz

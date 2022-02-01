@@ -47,6 +47,30 @@ modified: '2021-06-01T20:03:38.284Z'
   - Shortcodes, in the classic editor, didn’t have such a discovery method.
 - Re-usable blocks allow you to easily create content you can re-use across posts or pages, see this nice tutorial on WP Beginner.
 # discuss-stars
+- ## We've been working a new protocol at @hashintel. It's called the block protocol
+- https://twitter.com/Mappletons/status/1488131234089873408
+  - It allows you to build reusable blocks (aka. components) that are interchangeable across website/apps
+  - To recap: 
+  - We now have a standard way to create reusable blocks that can read / write semantic data and be used in any app that opts into the ecosystem. Which saves us from block fortresses.
+  - And blocks create structured data by default, without devs manually doing it.
+  - Disclaimer: The spec is currently a draft and has flaws.
+
+- Do blocks compose? i.e. Can I have a block that contains other blocks inside?
+  - Yes, you can - the container block would act as an embedder of the contained block, and provide it with the data and functions it needed. Maybe a straight pass through from the parent application, maybe supplementing it. This needs more testing though, with more complex blocks
+  - Yeah, it seems like the types would get quite complex when you're essentially handling parametric polymorphism by allowing a container to embed arbitrary blocks
+
+- Isn't this what web-components are trying to solve?
+  - [Isn't this basically web components?](https://github.com/blockprotocol/blockprotocol/discussions/149)
+  - One additional thing that the Block Protocol provides which Web Components do not is standardising the interface between the component and the embedding application - e.g. the methods or events the WC is using.
+  - The Block Protocol specifies the name and purpose for applications to provide to blocks, and blocks to use to do things. 
+  - Web Components can describe their interface programmatically, but each one can be different - they are described but not standardized. 
+  - This means that you often need to know the API of a specific WC in order to implement it. 
+  - The aim of the Block Protocol is that all blocks have the same API, and thus new blocks can be added to an application without having to learn anything about them.
+  - We are indeed aiming to build on top of the existing standards: we don't want to invent a new way of implementing encapsulated web components (there's already several of those), but instead standardize how those encapsulated components communicate with the application using them. There's a bit more in the FAQ about our relation to existing standards.
+- I think this suffers from trying to be everything to everyone & yet also being fairly React centric.
+  - If I had to guess you'll end up with Web Components + a Restful Entity Crud Api + MetaData.json
+  - The documentation seems to be more hype than anything, I found it very hard reading
+
 - ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
 - https://twitter.com/EryouHao/status/1486954447943057409
   - 如果在网络上的 Block 是可互换和可重复使用的，不是很酷吗？
