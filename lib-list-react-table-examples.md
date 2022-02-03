@@ -10,7 +10,7 @@ modified: '2021-07-20T13:28:26.296Z'
 # guide
 
 - tips
-  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化
+  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图标的示例如ag-grid-charts
     - github最新的issues多维表格界面基于react-table实现
     - outline wiki使用了react-table和react-window
 
@@ -190,6 +190,12 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/MelisaMert/crud-react-contextapi
   - Basic Crud Operation with contextapi
+
+- react-table chart column 图表作为一列
+  - https://codesandbox.io/s/react-table-highcharts-jm125
+
+
+- list和grid切换
 # design system/ui built with react-table
 - https://github.com/netdata/netdata-ui/tree/master/src/components/table
   - https://netdata.github.io/netdata-ui/
@@ -257,6 +263,7 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://github.com/quantmind/metablock-js
   - TypeScript tools for the metablock cloud
 # ref
+
 - [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
   - build a drag and drop sortable table using @dnd -kit and react-table.
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9

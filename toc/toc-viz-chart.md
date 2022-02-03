@@ -24,25 +24,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://plotly.com/javascript/
   - JavaScript charting library behind Plotly and Dash
   - 依赖d3.js、stack.gl、regl、turf、alpha-shape
-- amcharts4 /786Star/FreeWithAttribution/202009
-  - https://github.com/amcharts/amcharts4
-  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
-  - the most advanced JavaScript dataviz library ever.
-  - 产品：charts、map、timeline、editor
-    - ammap3在单独旧仓库，ammap4在amcharts4的仓库，map还是自己实现最灵活
-  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
-  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
-- AnyChart /266Star/Free4NonCommercial/202009
-  - https://github.com/AnyChart/AnyChart
-  - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
-  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
-  - 文件模块使用的是google-closure-builder的模块系统
-- highcharts /9.6kStar/Free4NonCommercial/202007
-  - https://github.com/highcharts/highcharts
-  - http://www.highcharts.com/
-  - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
-  - 依赖svg2pdf.js、jspdf-yworks
-  - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
+  - 开源了图表编辑器
 
 - vega /9.2kStar/BSD/202105/js
   - https://github.com/vega/vega
@@ -64,9 +46,11 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/vega/vega-geo
     - This package has been consolidated into the vega/vega repository
 
-- ag-charts /6.7kStar/MIT/202010/ts
+- ag-charts /6.7kStar/MIT/202010/ts/canvas
   - https://github.com/ag-grid/ag-grid
   - https://www.ag-grid.com/javascript-charts-api-explorer/
+  - 无依赖，基于canvas实现
+  - 方便与ag-grid集成，集成示例提供了修改表格过滤条件后更新多个图表的功能
   - The internal ag-Charts engine is implemented in TypeScript with zero dependencies. 
 - carbon-charts /156Star/Apache2/202007
   - https://github.com/carbon-design-system/carbon-charts
@@ -100,6 +84,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://www.chartjs.org/
   - Simple HTML5 Charts using the canvas tag
   - https://github.com/SeanSobey/ChartjsNodeCanvas
+  - [图表库源码剖析 - Chart.js 最流行的 Canvas 图表库](https://zhuanlan.zhihu.com/p/32740553)
 - echarts /Apache2/42kStar/202007
   - https://github.com/apache/incubator-echarts
   - http://echarts.apache.org/
@@ -113,6 +98,35 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/frappe/charts
   - https://frappe.io/charts
   - Simple, responsive, modern SVG Charts with zero dependencies
+  - [图表库源码剖析 - 你不知道的 Frappé Charts](https://zhuanlan.zhihu.com/p/31902446)
+  - [图表库源码剖析 - 轻巧的 SVG.js](https://zhuanlan.zhihu.com/p/31225775)
+  - Taco /MIT/13Star/201712
+    - https://github.com/nefe/Taco
+    - https://nefe.github.io/Taco/
+    - svg based charts
+    - 无依赖
+
+- amcharts4 /786Star/FreeWithAttribution/202009
+  - https://github.com/amcharts/amcharts4
+  - https://www.amcharts.com/docs/v4/getting-started/integrations/using-react/
+  - the most advanced JavaScript dataviz library ever.
+  - 产品：charts、map、timeline、editor
+    - ammap3在单独旧仓库，ammap4在amcharts4的仓库，map还是自己实现最灵活
+  - 依赖d3、stackblur-canvas、venn.js，基于svg实现
+    - 只有部分图表和工具依赖d3，大部分自研实现
+  - 支持react、vue、angular，集成时需要手动管理挂载与卸载
+- AnyChart /266Star/Free4NonCommercial/202009
+  - https://github.com/AnyChart/AnyChart
+  - AnyChart is a flexible JavaScript (HTML5, SVG, VML) charting framework
+  - 无依赖，依赖本公司实现的底层GraphicsJS来绘制svg图形
+  - 文件模块使用的是google-closure-builder的模块系统
+- highcharts /9.6kStar/Free4NonCommercial/202007
+  - https://github.com/highcharts/highcharts
+  - http://www.highcharts.com/
+  - a JS charting library based on SVG, with fallbacks to VML and canvas for old browsers.
+  - 依赖svg2pdf.js、jspdf-yworks
+  - Highcharts by default is self-contained, but in some situations Highcharts Stock/Maps require external dependencies to enable certain features.
+
 - plottable /MIT/2.7kStar/202006
   - https://github.com/palantir/plottable
   - http://plottablejs.org/
@@ -142,6 +156,7 @@ modified: '2020-10-22T10:22:33.292Z'
   - https://github.com/tannerlinsley/react-charts
   - https://react-charts.js.org/
   - interactive charts for React powered by D3
+
 - lightweight-charts /2.1kStar/Apache2/202007
   - https://github.com/tradingview/lightweight-charts
   - https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/
@@ -200,11 +215,6 @@ modified: '2020-10-22T10:22:33.292Z'
   - http://nvd3.org/
   - A reusable charting library written in d3.js
   - NVD3 is recommended to go with d3.js version 3.5.3 and later, but NOT d3 4.x yet.
-- Taco /MIT/13Star/201712
-  - https://github.com/nefe/Taco
-  - https://nefe.github.io/Taco/
-  - svg based charts
-  - 无依赖
 - elastic-charts /Apache2/137Star/202007
   - https://github.com/elastic/elastic-charts
   - https://elastic.github.io/elastic-charts

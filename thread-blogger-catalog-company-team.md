@@ -7,8 +7,12 @@ modified: '2020-10-22T13:06:52.353Z'
 
 # thread-blogger-catalog-company-team
 
+# guide
+- 看再多技术文章和资讯，不如动手写一写
+- 确定某一个技术方向后，应该集中精力到某一方面的技术和深入
+# 团队专栏
+- [阿里 前端新能源](https://www.zhihu.com/column/ne-fe)
 # 技术周刊
-
 - 科技爱好者周刊 by 阮一峰
   - https://github.com/ruanyf/weekly
   - 记录每周值得分享的科技内容，周五发布
@@ -45,19 +49,14 @@ modified: '2020-10-22T13:06:52.353Z'
     - http://fex.baidu.com/weekly/
   - 腾讯IVWEB团队
     - https://ivweb.io/weekly.html
-
 # 技术团队
-
-- 参考
-  - 领到人数/团队人数
 - 阿里团队
   - 361淘汰制
 - 携程团队
   - 早期团队多来自于eBay
-- 涂鸦智能团队 x
+- 涂鸦智能团队
   - 主要方向为智能设备
   - 大多来自阿里、百度
-
 # 技术博客
 
 ## 公司技术团队博客

@@ -27,7 +27,6 @@ modified: '2020-12-29T17:52:23.312Z'
 - office许可过期
   - https://github.com/infohost/infohost.github.io/blob/main/office-license-is-not-genuine.html
   - https://htmlpreview.github.io/?
-  - 
 # markdown-formatter
 
 - [sumnow/markdown-formatter](https://github.com/sumnow/markdown-formatter)
@@ -65,6 +64,8 @@ modified: '2020-12-29T17:52:23.312Z'
 - sysget
   - one syntax to every package manager
 
+- upower -d 命令 查看蓝牙电量，但要区分出蓝牙设备名称，但很多设备还是无法显示
+  - 因为 By default Bluez 'hides' the Battery Service UUID. 
 # products
 
 - https://github.com/junaid33/opensource.builders

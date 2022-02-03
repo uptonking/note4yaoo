@@ -327,6 +327,10 @@ modified: '2020-10-22T06:49:10.760Z'
   - the open-source data grid powering @glideapps
 - https://github.com/ericdrowell/PowerGrid
   - blazing fast performance and massive scale (100M cells+) via virtualized viewport
+- https://github.com/linhuiw/canvas-excel
+  - https://linhuiw.github.io/canvas-excel/
+  - online excel built with canvas
+  - 半成品玩具
 
 - OpenWebSheet /MIT/14Star/202003/ts/vue
   - https://github.com/SiamandMaroufi/OpenWebSheet
