@@ -7,8 +7,29 @@ modified: '2021-05-23T16:34:51.399Z'
 
 # toc-lib-list-grid-examples
 
-# app
+# list/grid view
 
+- https://github.com/ShuvoHabib/reactjs-toggle-list-grid-view
+  - toggle through List and Grid view
+- https://github.com/vesnaguja/react-users
+  - https://vesnaguja.github.io/react-users/
+  - A SPA for searching users and displaying results in list or grid view.
+- https://github.com/j-biber/people
+  - https://j-biber.github.io/people/
+  - switch page view between list and grid on a button click and filter people by name.
+
+- https://github.com/codingmarket07/list-grid-views
+  - https://htmlpreview.github.io/?https://github.com/codingmarket07/list-grid-views/blob/master/index.html
+  - How to create the List Grid Views using HTML CSS and Javascript
+
+- https://github.com/KrishnaPG/vue-list-grid
+  - Allows you to switch between list and grid view of the given data.
+- https://github.com/sanuradhag/angular-switchable-grid
+  - A simple grid for angular, Which can be switched between typical List view and a tile block view
+
+- https://github.com/turbolent/collection-view
+  - A container for displaying large ordered collections of data items and presenting them using arbitrary layouts (e.g. lists, grids). 
+# app
 - gridstudio /AGPLv3/7.8kStar/202006/go/python
   - https://github.com/ricklamers/gridstudio
   - https://gridstudio.io/

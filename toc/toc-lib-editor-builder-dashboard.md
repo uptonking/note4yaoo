@@ -461,6 +461,9 @@ modified: '2021-01-08T11:48:16.590Z'
   - Admin-panel using ReactJs, ExpressJs, NodeJs, MongoDB and Bootstrap
   - 样式陈旧
 # kanban
+- https://github.com/atlassian/react-beautiful-dnd
+  - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
+  - 官方示例就是看板
 - https://github.com/riktar/jkanban /630Star/202012
   - https://www.riccardotartaglia.it/jkanban/
   - Vanilla Javascript plugin for manage kanban boards

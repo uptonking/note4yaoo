@@ -7,8 +7,15 @@ modified: '2021-09-19T15:14:45.954Z'
 
 # note-react-router-dx-log
 
-# not-yet
+# stars
 
+- [Trailing Slashes on URLs: Contentious or Settled?](https://twitter.com/sebastienlorber/status/1488568747447181315)
+  - Trailing slashes are complicated and non-std:
+    - depends on output: /path/index.html VS /path.html
+    - depends on host behavior
+  - [TRAILING SLASHES ON URLS: CONTENTIOUS OR SETTLED?](https://www.zachleat.com/web/trailing-slash/)
+    - resource/index.html is marginally safer than resource.html
+# not-yet
 - 最新 Link 总是会重复添加 path，如 http://localhost:8999/dashboard/basic/basic/basic
   - 此问题在v6 beta版会出现，后面已修复
 # upgrading

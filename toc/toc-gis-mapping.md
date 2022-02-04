@@ -50,6 +50,9 @@ modified: '2021-01-04T16:21:18.990Z'
   - https://github.com/openlayers/openlayers
   - https://openlayers.org/
   - feature-packed library for creating interactive maps on the web
+- https://github.com/terrestris/react-geo
+  - https://terrestris.github.io/react-geo/
+  - A set of geo related modules to use in combination with React, Ant Design and OpenLayers.
 - harp.gl /Apache2/664Star/202009
   - https://github.com/heremaps/harp.gl
   - https://harp.gl/

@@ -10,7 +10,7 @@ modified: '2021-07-20T13:28:26.296Z'
 # guide
 
 - tips
-  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图标的示例如ag-grid-charts
+  - react-table的问题在于没有成熟的使用案例，没有大公司案例支持，缺少样式主题、性能优化，特别是缺少在表格的单元格中显示图表的示例如ag-grid-charts
     - github最新的issues多维表格界面基于react-table实现
     - outline wiki使用了react-table和react-window
 
@@ -27,6 +27,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://habx.github.io/ui-table/
   - UI components for react-table based on [ui-core](https://github.com/habx/ui-core)
   - 依赖@habx/ui-core、react-table.v7、react-window、styled-components、lodash、exceljs、papaparse(csv)、react-dropzone
+  - display布局: table-grid, tr-grid, td-flex
   - 例子非常多，包括 virtualized、infiniteScroll、filter、header、footer、CompareTable
   - 单元格类似包括 array、boolean、icon、image；没有dropdown
   - filter支持搜索框、滑动条、下拉菜单
@@ -38,6 +39,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://codesandbox.io/s/editable-react-table-gchwp
   - React table built to resemble a database.
   - 依赖react-table.v7, react-window, popperjs.v2, react-contenteditable, clsx
+  - display布局： table.div-block, tr.div-flex, td.div-flex
   - 支持3种单元格类型 number, text, select，弹出框很好用
   - 没有全局工具条，但表头每列的下拉菜单很完整；不支持分组
 
@@ -56,6 +58,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://eqworks.github.io/lumen-table/
   - React data table component.
   - 依赖 @material-ui/core.v4、@eqworks/lumen-ui
+  - display布局: table, table-row, table-cell
   - 示例比较多
   - 单元格支持可展开元素，当该元素展开时，整行会变高，示例在 render json
   - 工具条支持下拉菜单选择要显示的字段列
@@ -67,15 +70,18 @@ modified: '2021-07-20T13:28:26.296Z'
 - @heathmont/moon-table
   - https://github.com/coingaming/moon-design
   - https://moon.io/components/table/table
+  - display布局: table.div-block, tr.div-flex, td.div-block
   - 拖动表格滚动条时，可以显示minimap
   - 提供了日期字段作为一列的Calendar示例
 
 - @uidu/table /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
+  - https://uidu.design/packages/data/dashlets
   - table组件依赖于 react-table, react-virtual, styled-components, numeral
   - Guidu is uidu's design system library
   - 完全复制了atlassian-editor，并将组件替换成了自己的design system
+    - dashlet会不会也是复制的？
   - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
   - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
   - These components are Atlassian Design Guidelines(ADG) compliant
@@ -194,8 +200,7 @@ modified: '2021-07-20T13:28:26.296Z'
 - react-table chart column 图表作为一列
   - https://codesandbox.io/s/react-table-highcharts-jm125
 
-
-- list和grid切换
+- list和grid切换 需要自己实现
 # design system/ui built with react-table
 - https://github.com/netdata/netdata-ui/tree/master/src/components/table
   - https://netdata.github.io/netdata-ui/
@@ -263,7 +268,6 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://github.com/quantmind/metablock-js
   - TypeScript tools for the metablock cloud
 # ref
-
 - [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
   - build a drag and drop sortable table using @dnd -kit and react-table.
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9

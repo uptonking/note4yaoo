@@ -30,7 +30,11 @@ modified: '2021-10-29T15:02:28.882Z'
 
 - ## 
 
-- ## 
+- ## Monetizing OSS is difficult by nature, but I hope people will pay if they find a value. 
+- https://twitter.com/dai_shi/status/1489205927542591488
+  - It's more meaningful to pay for a content, instead of tipping for OSS. So, I decided to challenge. 
+  - This is my first paid content to teach the library code, Zustand.
+- [Build your own state management library for React (zustand-like)](https://rohitpotato.hashnode.dev/build-your-own-state-management-library-for-react)
 
 - ## WebVM
 - https://webvm.io/

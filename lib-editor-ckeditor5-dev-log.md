@@ -258,8 +258,9 @@ modified: '2021-10-27T03:20:45.841Z'
   - 表格末尾为什么会渲染一个英文分号
 # 2022
 - 下一步工作内容
-  - 总结 react patterns
-  - 总结 typescript patterns
+  - 开发规范
+    - 总结 react patterns
+    - 总结 typescript patterns
   - crud list
   - draggable list
   - sortable-filterable-groupable table

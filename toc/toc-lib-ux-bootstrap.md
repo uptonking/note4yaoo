@@ -9,10 +9,16 @@ modified: '2021-01-10T22:18:36.696Z'
 
 # bs-components
 
-- https://github.com/react-bootstrap/react-bootstrap
+- react-bootstrap /20.4kStar/MIT/202202/ts
+  - https://github.com/react-bootstrap/react-bootstrap
+  - https://react-bootstrap.github.io/getting-started/introduction
+  - 依赖 @restart/hooks、@restart/ui、uncontrollable
   - Bootstrap components built with React
-  - more-bs-react
-    - https://github.com/reactstrap/reactstrap /inactive
+- reactstrap /10.2kStar/MIT/202111/js
+  - https://github.com/reactstrap/reactstrap
+  - https://reactstrap.github.io/
+  - Simple React Bootstrap 5 components
+  - 依赖 @popperjs/core.v2
 - https://github.com/uxsolutions/bootstrap-datepicker
   - A datepicker for twitter bootstrap
 - https://github.com/wenzhixin/bootstrap-table
@@ -32,9 +38,7 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/froala/design-blocks
   - Over 170 responsive design blocks ready to be used
   - All blocks are based on the Bootstrap Library
-
 # bs-themes
-
 - https://github.com/thomaspark/bootswatch
   - https://bootswatch.com/
   - A collection of open source themes for Bootstrap
@@ -59,9 +63,7 @@ modified: '2021-01-10T22:18:36.696Z'
     - We have redesigned many of its components to look flat in every pixel.
 - https://github.com/bootflat/bootflat.github.io
   - an open source Flat UI KIT based on Bootstrap 3.3 css
-
 # bs-like
-
 - https://github.com/alphasights/paint
   - http://alphasights.github.io/paint/
   - CSS framework like Bootstrap but more modern and delivered through SCSS mixins
@@ -72,9 +74,7 @@ modified: '2021-01-10T22:18:36.696Z'
   - Drawers is a light weight and modulable web framework to replace Bootstrap or JQuery for my personal usage
 - https://github.com/jere-mie/bornais-css
   - A CSS framework I am making in my free time to replace Bootstrap
-
 # bs-css-vars
-
 - https://github.com/Marcisbee/chipolette
   - http://marcisbee.com/chipolette/
   - It is designed to replace Bootstrap and to be used with CSS variables.
@@ -91,9 +91,7 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/HTMLElements/smart-bootstrap
   - Extends Bootstrap with Material and CSS3 Variables
   - The Boostrap components are rewritten from scratch and are built as Web Components by using the Smart Framework.
-
 # bootstrap5
-
 - https://github.com/yanchokraev/grayshift
   - https://grayshift.io/docs/getting-started/introduction/
   - A lightweight component library for developing fast web interfaces.
@@ -110,5 +108,4 @@ modified: '2021-01-10T22:18:36.696Z'
 - https://github.com/themesberg/volt-bootstrap-5-dashboard
   - Bootstrap 5 Admin Dashboard Template with vanilla Javascript
   - Volt does not require jQuery as a dependency meaning that every library and script's are jQuery free.
-
 # more-bs

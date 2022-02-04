@@ -16,7 +16,12 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Here's an even more efficient undo/redo manager in mobx. 
+- https://twitter.com/steveruizok/status/1488858696360861696
+  - This time, instead of using snapshots/comparisons, we're using `deepObserve` and manually converting the changes it reports to JSON patches.
+  - The big advantage here: we don't have to be constantly converting between the observable document and a regular JavaScript object. This gives makes the history much more efficient for performance and memory.
+  - How it works: mobx-utils has a function called `deepObserve` that will call its listener whenever an observable changes. It passes along where the change occurred, what the operation was (add/remove/replace), and what the old/new values were.
+- I don't plan to keep selection as part of the undo/redo stack. If I did want to do that though, then I'd either make it part of the model, or else a separate stack?
 
 - ## Working on a new Undo/Redo manager that runs on mobx and JSON patches. Here's how it works! 
 - https://twitter.com/steveruizok/status/1487052071685734410

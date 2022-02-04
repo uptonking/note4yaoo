@@ -8,7 +8,6 @@ modified: '2021-01-06T14:40:03.364Z'
 # thread-fwk-react-dev
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
 # discuss-stars
-
 - ## do you know why we need @reactjs ? why not build an app using only DOM API directly?
 - https://twitter.com/sseraphini/status/1379547345130565632
 - For me it’s the declarative way to define how your UI and data behaves and not having to care about the necessary dom changes to do that.
@@ -63,6 +62,15 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React (and React based frameworks) have an uphill performance battle.
+- https://twitter.com/zachleat/status/1489612637008805890
+
 - ## It's time for the React Router v6 mega thread!
 - https://twitter.com/mjackson/status/1436117485808349204
   - We are on the home stretch; the last 10%. This is the hardest part of any project
@@ -88,6 +96,7 @@ React.useEffect(() => {
   // side effect goes here
 }, [location]);
 ```
+
 - The same thing can be said from backend middlewares, they can be declared within controllers, but somehow it's much better to do it with middlewares.
   - I think coupling those things into react are unnecessary, since they do not work with react. Making it harder to test or debug. 
   - Another example is that the router algorithm itself can be overridden because it can be a middleware.

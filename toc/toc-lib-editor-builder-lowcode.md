@@ -51,4 +51,15 @@ modified: '2020-12-28T12:24:09.275Z'
     - 通过配置渲染页面
     - 通过交互组件修改 Store 数据，重新渲染页面
   - 依赖antd4、codemirror5、mobx5、showdown
+
+- https://github.com/whitebrick/whitebrick
+  - Open Source Airtable Alternative (No Code DB)
+  - Whitebrick is a lightweight No Code Database with 3 points of difference:
+    - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
+    - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
+    - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
+
+- https://github.com/steedos/app-builder
+  - 华炎魔方是Salesforce低代码平台的开源替代方案
+  - 华炎魔方前端使用 React 开发表单、列表视图控件，并基于 Meteor 实现完整界面。
 # more-lowcode

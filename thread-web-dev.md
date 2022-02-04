@@ -33,7 +33,23 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## How to query a database from CSS
+- https://twitter.com/argyleink/status/1489280746061631489
+  - [Yes, I can connect to a DB in CSS](https://www.leemeichin.com/posts/yes-i-can-connect-to-a-db-in-css.html)
+
+```CSS
+.query-display {
+  background: paint(sql-css);
+}
+
+main {
+  --sql-query: SELECT * FROM genre;
+  --sql-database: url(...);
+}
+```
+
+- Sure you can, but …why?!?
+  - "It's been a hell of a long time since I last embarked on a quality shitpost project, in fact it's been so long that back then I probably didn't even have the word shitpost in my vocabulary."
 
 - ## We made a Chinese version of Wordle! 汉兜 - 汉字 Wordle 每天一词，汉字、声母、韵母、声调都会独立进行颜色判断，同时也支持繁体输入与注音，欢迎来玩
 - https://twitter.com/antfu7/status/1487459883037634563

@@ -21,9 +21,20 @@ modified: '2021-01-01T20:08:16.810Z'
   - adapter对象包含各种setState逻辑
 - ref
   - [rmwc: Foundation Adapter Implementation](https://github.com/jamesmfriedman/rmwc/issues/141)
+# material you (material design 3)
+- [When is Material Web 3 Coming?](https://github.com/material-components/material-web/issues/3050)
+  - material-components-web is our Material 2 implementation, available today. It will not be updated for Material 3.
+  - material-web will be the Material 3 implementation. It's in progress and will launch in late 2022.
+  - Our goal is for material-web to be a long-term supported library that supports M3 and future design refreshes as well.
 
+- [Adopt Material Design 3 / Material You](https://github.com/mui-org/material-ui/issues/29345)
+  - 列出了其他组件库升级md3的讨论
+
+- [Implement Material You](https://github.com/material-components/material-web/issues/2441)
+
+- https://github.com/beercss/beercss
+  - Build material design interfaces in record time... without stress for devs
 # material components for react
-
 - ## material-components-web-react
 - https://github.com/material-components/material-components-web-react
   - 未使用hooks，基于class组件实现
@@ -48,7 +59,7 @@ modified: '2021-01-01T20:08:16.810Z'
     - So by adding foundation to state, we can guarantee that the will always have a foundation.
     - foundation is moved to state so that Text Field's componentDidMount will trigger a re-render through setState after initializing the foundation
 
-``` jsx
+```jsx
 // 将复杂组件拆分成可组合的小组件
 return (
   <div className={classes} {...otherProps}>
@@ -121,7 +132,6 @@ return (
  
 
 # 使用material-design-web的示例项目
-
 - https://github.com/lucka-me/mapler
   - Web app to make map as wallpaper
   - 入口组件下只有4个二级组件，个别组件实现代码较长
@@ -134,7 +144,7 @@ return (
   - mount方法中会动态创建子组件内容 `this.mountPoint.innerHTML = 'domstring'`
   - 通过ejs-loader将import导入的.html模板文件转换成js函数，来创建对应的html字符串
 
-``` JS
+```JS
 // Use the "interpolate" delimiter to create a compiled template.
 var compiled = _.template('hello <%= user %>!');
 compiled({ 'user': 'fred' });
