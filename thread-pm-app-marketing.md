@@ -9,6 +9,15 @@ modified: '2021-10-29T15:06:33.422Z'
 
 # guide
 
+- twitter blue
+  - no ads
+  - undo tweet
+  - hottest tweet in your network
+  - long tweet support
+  - bookmarks management
+  - custom top nav menus
+  - themes
+  - longer videos
 # discuss-stars
 - ## Immutable software means people *can* create workflows, can learn, become experts, and optimize their experiences through automation. 
 - https://twitter.com/andrestaltz/status/1433782109458649102

@@ -367,7 +367,9 @@ modified: '2021-05-14T15:04:55.849Z'
   - /6kStar/MIT/202009
   - Zero-runtime CSS in JS library
 - https://github.com/daybrush/moveable
-  - /4.8kStar/MIT/202009
+  - https://daybrush.com/moveable/
+  - /4.8kStar/MIT/202009/ts
+  - https://daybrush.com/moveable/
   - Moveable! Draggable! Resizable! Scalable! Rotatable! Warpable! Pinchable! Groupable! Snappable!
 - https://github.com/shoelace-style/shoelace
   - /4.1kStar/MIT/202009

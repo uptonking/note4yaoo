@@ -33,6 +33,17 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Question for the #webperf folks, is `<script type="application/ld+json">` render blocking?
+- https://twitter.com/TimVereecke/status/1490011729643945990
+- TL; DR No.
+  - Spec-wise, scripts that are not JS are not processed by the browser at all, and their src attribute is ignored. Naturally nothing will happen until the inline content is downloaded and the next tag is parsed, but otherwise there is no "render-blocking" operation AFAIK
+
 - ## How to query a database from CSS
 - https://twitter.com/argyleink/status/1489280746061631489
   - [Yes, I can connect to a DB in CSS](https://www.leemeichin.com/posts/yes-i-can-connect-to-a-db-in-css.html)

@@ -20,6 +20,7 @@ modified: '2021-12-07T05:12:27.586Z'
   - diff CompareTable
   - collapsible cell, not only row
   - 可能的亮点
+    - resizable/zoomable，表格可作为整体缩放大小
     - 表格视图分身，可以复制视图和配置
       - 分身的表格会和原表格数据联动，但直接复制的表格不会
       - 分身的表格数据联动但配置不联动，如分身表格可以有单独的组字段

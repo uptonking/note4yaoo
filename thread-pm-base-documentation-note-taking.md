@@ -15,7 +15,12 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## What are some apps that use an "infinite canvas" for things other than white-boarding or visual design?
+- https://twitter.com/steveruizok/status/1479437094552489991
+- Node based programming. Shader graphs. Audio effects editors. 2D side scrolling games if they need zoom and are touchpad/mouse/touch based controls
+- Many flow/node based programming environments have an infinite canvas. Starting with max/map and puredata up to UE Blueprint, Unity animation state machines, shader graphs, etc etc
+- You surely know about it but if you don’t, I think you’d love @KinopioClub (mind mapping, journaling, note-taking on canvas)
+- prezi
 
 - ## How are the best Storybooks organized? We surveyed 60 teams to find out.
 - https://twitter.com/storybookjs/status/1488919138001207299

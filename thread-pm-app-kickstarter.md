@@ -28,7 +28,9 @@ modified: '2021-10-29T15:02:28.882Z'
 # ideas
 - ## 
 
-- ## 
+- ## I can’t prove this but I suspect if someone built a Next.js/Remix/etc for React Native (i.e. single codebase for client and server) they would make a trillion dollars
+- https://twitter.com/acdlite/status/1489755769876754434
+  - The ideal version of this would also do server rendering and hydration of native views. Something we hope to add to React one day. (There’s a stub for this in our repo, not implemented.)
 
 - ## Monetizing OSS is difficult by nature, but I hope people will pay if they find a value. 
 - https://twitter.com/dai_shi/status/1489205927542591488

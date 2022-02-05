@@ -73,6 +73,9 @@ modified: '2021-01-01T20:08:01.651Z'
   - 夏加尔
   - 德加
   - 梵高
+
+- [GitHub 上赋予每个编程语言一种颜色，似乎成了一种标准的色盘。](https://twitter.com/magic_akari/status/1489853045110235136)
+  - go蓝、ts蓝、python蓝
 # brand-color
 - [google-logo-brand-color](https://www.designpieces.com/palette/google-new-logo-2015-color-palette-hex-and-rgb/)
   - red 
@@ -99,7 +102,6 @@ modified: '2021-01-01T20:08:01.651Z'
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.
 # color-repos
-
 - https://github.com/yeun/open-color
   - https://yeun.github.io/open-color/
   - an open-source color scheme optimized for UI like font, background, border, etc.

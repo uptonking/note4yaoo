@@ -8,11 +8,10 @@ modified: '2021-01-12T18:49:07.422Z'
 # toc-lib-comp-stars
 
 # calendar-heatmap
-
 - https://github.com/grubersjoe/react-activity-calendar
   - https://grubersjoe.github.io/react-activity-calendar/
   - A React component to display activity data in a calendar (heatmap)
-  - 依赖date-fns,tinycolor2,react-tooltip
+  - 依赖date-fns, tinycolor2, react-tooltip
 - https://github.com/uiwjs/react-heat-map
   - https://uiwjs.github.io/react-heat-map/
   - 依赖react
@@ -28,7 +27,7 @@ modified: '2021-01-12T18:49:07.422Z'
 
 - https://github.com/g1eb/reactjs-calendar-heatmap
   - https://rawgit.com/g1eb/reactjs-calendar-heatmap/master/
-  - 依赖d3 v4,moment
+  - 依赖d3 v4, moment
 
 - https://github.com/wa0x6e/cal-heatmap
   - https://cal-heatmap.com/

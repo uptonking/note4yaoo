@@ -18,22 +18,25 @@ modified: '2020-07-12T19:00:27.345Z'
     - Built for React: exposes hooks such as useDraggable and useDroppable
   - Supports a wide range of use cases: lists, grids, multiple containers, nested contexts, variable sized items, virtualized lists, 2D Games, and more.
   - 作者旧轮子 [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
-  - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
+  - 树形组件示例
+    - https://github.com/clauderic/dnd-kit/tree/master/stories/3%20-%20Examples/Tree
     - https://5fc05e08a4a65d0021ae0bf2-vrdufzklrj.chromatic.com/?path=/story/examples-tree-sortable--basic-setup
-    - https://twitter.com/clauderic_d/status/1375623307060510731
-      - I recently built a sortable tree example with @dndkit.
-      - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
+  - https://twitter.com/clauderic_d/status/1375623307060510731
+    - I recently built a sortable tree example with @dndkit.
+    - Collapsible subtrees, removable items, unlimited nesting, dynamic placeholder, keyboard support and zero external dependencies.
 
 - react-treeview /MIT/1kStar/201706/js/NoDeps
   - https://github.com/chenglou/react-treeview
   - demos: [controlled, uncontrolled](https://cdn.rawgit.com/chenglou/react-treeview/aa72ed8b9e0b31fabc09e2f8bd4084947d48bb09/demos/index.html)
   - 无依赖；可折叠；无样式主题
   - Easy, light, flexible tree view made with React.
+
 - cp-react-tree-table /MIT/41Star/202106/ts/NoDeps
   - https://github.com/constantin-p/cp-react-tree-table
   - https://constantin-p.github.io/cp-react-tree-table/
   - 给出的示例很像data table，可以从外部按钮触发展开、折叠、滚动
   - A fast, efficient tree table component for ReactJS
+
 - react-simple-tree-menu /MIT/62Star/202008/ts
   - https://github.com/iannbing/react-simple-tree-menu
   - https://iannbing.github.io/react-simple-tree-menu/

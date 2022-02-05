@@ -11,7 +11,13 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## Immutability is good... but all code _does_ have a cost, and that includes copying objects/arrays.
+- https://twitter.com/acemarke/status/1489670150651580417
+  - There are many times that you _can_ truly mutate data safely (especially when it's scoped inside a single function).
+- Definitely a valid point in the general sense, but the root problem here was the O(n) spread operation for making copies of native arrays.
+  - In a data structure optimized for immutable operations with proper structural sharing, such as the List in ImmutableJS, appending is O(1).
+- Most persistent data structures today are implemented as hash trees, not lists, because structural sharing is key to performant immutable updates.
+  - This oldie from Rich Hickey has a good explanation of how they work under the hood
 
 - ## Do you keep a “graveyard” for deleted / undid things that might be restored by an undo / redo? Is there a name for that pattern?
 - https://twitter.com/steveruizok/status/1484113858423836674

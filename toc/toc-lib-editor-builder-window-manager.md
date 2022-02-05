@@ -52,6 +52,10 @@ modified: '2021-01-08T11:48:16.590Z'
   - split平铺窗口后，无法拖拽改变两边大小，不能下滑查看更多窗口
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
+
+- https://github.com/aeagle/react-spaces
+  - https://allaneagle.com/projects/react-spaces
+  - An easy to understand and nestable layout system, React Spaces allow you to divide a page or container into anchored, scrollable and resizable spaces enabling you to build desktop type user interfaces in the browser.
 - https://github.com/rlamana/Ventus
   - /300Star/MIT/201812/js/只依赖lodash
   - http://www.rlamana.com/ventus/code/examples/simple/

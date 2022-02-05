@@ -19,6 +19,15 @@ modified: '2022-01-30T19:55:44.761Z'
   - https://react-datasheet-grid.netlify.app/docs/features
   - 依赖react、react-window、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
+  - features
+    - Fast
+      - can easily handle hundreds of thousands of rows thanks to its virtualized architecture.
+      - Renders have been optimized to the strict minimum, follow the performance guides 
+    - Customizable
+      - Control every behavior of the spreadsheet, implement you own widgets, and customize the style of DSG to match your app.
+    - Feature rich
+      - Supports copy/pasting to and from Excel, Google-sheet, Notion
+      - Keyboard navigation and shortcuts fully-supported
 
 - https://github.com/rowyio/rowy
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser, 

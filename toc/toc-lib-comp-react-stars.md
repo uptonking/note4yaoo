@@ -120,27 +120,6 @@ modified: '2021-01-12T18:49:02.623Z'
   - https://frontend-collective.github.io/react-sortable-tree/
   - Drag-and-drop sortable component for nested data and hierarchies
   - 依赖react-dnd, react-virtualized
-- https://github.com/bokuweb/re-resizable
-  - /1.1kStar/MIT/202009
-  - https://bokuweb.github.io/re-resizable/
-  - A resizable component for React
-  - 只依赖fast-memoize
-- https://github.com/bokuweb/react-rnd
-  - /1.8kStar/MIT/202009
-  - A resizable and draggable component for React.
-  - 依赖react-draggable、re-resizable
-- https://github.com/react-dnd/react-dnd
-  - /14.5kStar/MIT/202009 
-  - Drag and Drop for React
-- https://github.com/STRML/react-draggable
-  - /6kStar/MIT/202008
-  - http://strml.github.io/react-draggable/example/
-  - React draggable component
-- https://github.com/STRML/react-resizable
-  - /1.2kStar/MIT/202009
-  - https://strml.github.io/react-resizable/examples/1.html
-  - A simple React component that is resizable with a handle.
-  - 依赖react-draggable
 
 - https://github.com/civiccc/react-waypoint
   - A React component to execute a function whenever you scroll to an element.
@@ -160,11 +139,6 @@ modified: '2021-01-12T18:49:02.623Z'
   - Ultimate calendar for your React app.
 - https://github.com/gpbl/react-day-picker
   - Lightweight date picker component for React
-# react-rewritten
-- https://github.com/RubyLouvre/anu
-  - /3.1kStar/Apache2/202002
-  - https://rubylouvre.github.io/anu/
-  - React16-compat library with hooks
 # pieces
 - https://github.com/johvin/react-performance-optimization
   - React性能优化的误区

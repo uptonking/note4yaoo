@@ -10,7 +10,6 @@ modified: '2021-02-09T19:23:39.082Z'
 # watching
 
 # data/saas
-
 - Mike Bostock
   - info
     - https://twitter.com/mbostock
@@ -39,6 +38,12 @@ modified: '2021-02-09T19:23:39.082Z'
     - Simple yet flexible js charting for designers & developers
     - https://www.chartjs.org/
     - https://github.com/chartjs/Chart.js
+
+- Steve Ruiz
+  - info
+    - https://twitter.com/steveruizok
+  - works
+    - tldraw/core, tldraw.app
 
 - Chris Whong
   - info

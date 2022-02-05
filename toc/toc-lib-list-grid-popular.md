@@ -27,7 +27,8 @@ modified: '2020-10-22T06:49:10.760Z'
 
 - src-list-grid-canvas
   - **luckysheet**: 未使用class类，函数式风格
-  - **x-spreadsheet**: class类和函数式都有
+  - x-spreadsheet: class类和函数式都有
+  - glide: react组件
   - cheetah-grid(ts): 基于class类继承
 # list-grid-with-div
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps
@@ -71,13 +72,19 @@ modified: '2020-10-22T06:49:10.760Z'
   - 基于div实现，每行对应的dom元素不存在
   - 表格主体ReactVirtualized__Grid__innerScrollContainer内全是单元格
   - React components for efficiently rendering large lists and tabular data
-- react-window /MIT/8.5kStar/202106/js
+- react-window /8.5kStar/MIT/202106/js
   - https://github.com/bvaughn/react-window
   - https://react-window.now.sh/
   - 基于div实现，每行对应的dom元素不存在
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set(just enough to fill viewport).
   - https://github.com/coston/react-window-ui
+- react-virtuoso /876Star/MIT/202011/ts/list
+  - https://github.com/petyosi/react-virtuoso
+  - https://virtuoso.dev/
+  - powerful React virtual list/table component
+  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces. 
+
 - frappe-datatable /MIT/502Star/202201/js
   - https://github.com/frappe/datatable
   - https://frappe.io/datatable
@@ -105,7 +112,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - https://react-datasheet-grid.netlify.app/docs/features
   - 依赖react、react-window、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
-
 
 - rsuite-table /327Star/MIT/202010/ts
   - https://github.com/rsuite/rsuite-table
@@ -136,7 +142,6 @@ modified: '2020-10-22T06:49:10.760Z'
   - Inspired by react-table but with Typescript support built in and a simpler API.
 
 ## div-react
-
 
 - react-data-table-component /1.2kStar/Apache2/202112/ts
   - https://github.com/jbetancur/react-data-table-component
@@ -260,10 +265,6 @@ modified: '2020-10-22T06:49:10.760Z'
 - https://github.com/developit/preact-virtual-list
   - https://jsfiddle.net/developit/qqan9pdo/
   - Virtual List that only renders visible items. Supports millions of rows.
-- react-virtuoso /876Star/MIT/202011/ts/list
-  - https://github.com/petyosi/react-virtuoso
-  - virtual list component for React
-  - V1 brings improvements to reverse infinite scrolling behavior - suitable for chat and feed user interfaces. 
 
 ## div-more
 
@@ -304,6 +305,12 @@ modified: '2020-10-22T06:49:10.760Z'
 - glide-data-grid /836Star/MIT/202202/ts
   - https://github.com/glideapps/glide-data-grid
   - https://grid.glideapps.com/
+  - features
+    - 未实现group
+    - scales to millions of rows. Cells are rendered lazily on demand for memory efficiency.
+    - Supports multiple types of cells. Numbers, text, markdown, bubble, image, drilldown, uri
+    - Editing is built in.
+    - Resizable and movable columns.
   - high-performance React grid component, with rich rendering
   - Canvas based data editor supporting millions of rows, rapid updating, and fully native scrolling. 
   - the open-source data grid powering @glideapps
@@ -411,7 +418,7 @@ modified: '2020-10-22T06:49:10.760Z'
   - Excel-like data grid (table) component for React
   - 基于table标签实现，样式太简单
 - https://github.com/komarovalexander/ka-table
-  - /58Star/MIT/202010/ts
+  - /58Star/MIT/202010/ts/inactive
   - http://ka-table.com/
   - 基于table标签实现
   - Controllable React Table component with Sorting, Filtering, Grouping, Virtualization, Editing and many more

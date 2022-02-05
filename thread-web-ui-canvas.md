@@ -8,6 +8,14 @@ modified: '2021-08-06T07:36:05.864Z'
 # thread-web-ui-canvas
 
 # guide
+
+- [Creating a Zoom UI](https://www.steveruiz.me/posts/zoom-ui)
+  - "zoom UI" like figma/ps. This pattern lets a user explore a "canvas" of content by panning around the canvas or zooming in on a specific point.
+  - an SVG implementation
+    - https://codesandbox.io/s/zoom-ui-example-ep0cf
+  - the same implementation with HTML canvas
+    - https://codesandbox.io/s/zoom-ui-example-canvas-6j3wo
+
 - https://github.com/tldraw/core
   - This package contains the Renderer and core utilities used by tldraw.
   - You can use this package to render React components in a canvas user interface.
@@ -15,6 +23,28 @@ modified: '2021-08-06T07:36:05.864Z'
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I'm going to keep working on @tldraw . I'll be raising money in the new year to build a team and build an open-core platform for spatial canvas apps.
+- https://twitter.com/steveruizok/status/1468630454601408518
+  - Turns out everyone like an infinite canvas. I'm convinced that many of the next great products will be built on "design tool" paradigms—zoomable canvas, direct manipulation, and real-time multiplayer collaboration.
+  - Bad news: these types of applications are incredibly hard to develop! Especially for the web, where there are vanishingly few resources and trade-offs everywhere. It takes a team of experts—and there just aren't enough experts.
+  - Good news: spatial UI apps are 90% identical, with hundreds of "table stakes" features and services that can be abstracted away, so that a team focus on their domain problems instead of getting stuck on selection logic, arrow binding, or alignment snapping.
+  - and it just so happens that I _love_ working on things like selection logic, arrow binding, and alignment snapping.
+- What about the current tldraw app? It's still growing, with new contibutions and users everyday. We'll make it better together and continue to use it as a flagship product built on top of the engine, with a nice cycle of building the core to support new features.
+
+- What do you mean by spacial UI? 
+  - This one is also sometimes called a "zoom ui", or "infinite canvas". Think miro / mural / figma, etc.
+
+- ## Hit a snag: deepObserve does not respect transactions —#mobx's way to "batch" multiple changes—so each changing multiple properties creates multiple undos.
+- https://twitter.com/steveruizok/status/1489653335829458945
+  - The solution is to debounce the listener and collect the patches while debouncing, so that we deliver them all together. We can use a zero-length timeout, since we're just waiting for the event loop to clear.
+  - https://codesandbox.io/s/mobx-undo-redo-v3-vx2oo
 
 - ## Here's an even more efficient undo/redo manager in mobx. 
 - https://twitter.com/steveruizok/status/1488858696360861696
