@@ -61,9 +61,10 @@ modified: '2020-07-12T19:00:27.345Z'
   - A React component for efficiently rendering tree like structures with support for `position: sticky`. 
   - uses a similar API to react-virtualized.
 
-- react-sortable-tree /MIT/3.3kStar/202005
+- react-sortable-tree /MIT/3.3kStar/202005/js/inactive
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
+  - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
 - react-ui-tree /MIT/693Star/201811

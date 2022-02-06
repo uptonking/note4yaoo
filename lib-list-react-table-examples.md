@@ -126,6 +126,7 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://github.com/ggascoigne/react-table-example
   - https://codesandbox.io/s/github/ggascoigne/react-table-example
   - Demo of React Table V7 using TypeScript as well as Material UI v4
+  - 全局filter，各种类型的filter
 - https://github.com/legendarydev007/react-material-dashboard
   - built with material-ui framework coded by Lahm
 - https://github.com/Podoprigora/material-ui-custom-theme

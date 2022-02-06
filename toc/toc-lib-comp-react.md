@@ -325,14 +325,6 @@ modified: '2020-11-13T07:31:20.012Z'
 - https://joepuzzo.github.io/informed
   - https://github.com/joepuzzo/informed
 
-## tree 树型组件
-
-- https://frontend-collective.github.io/react-sortable-tree/
-  - https://github.com/frontend-collective/react-sortable-tree
-  - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
-- https://cdn.rawgit.com/chenglou/react-treeview/aa72ed8b9e0b31fabc09e2f8bd4084947d48bb09/demos/index.html
-  - https://github.com/chenglou/react-treeview
-
 ## dropdown 下拉菜单
 
 - http://fraserxu.me/react-dropdown/

@@ -261,8 +261,19 @@ modified: '2021-10-27T03:20:45.841Z'
   - 开发规范
     - 总结 react patterns
     - 总结 typescript patterns
-  - crud list
-  - draggable list
+  - readonly-list-grid
+    - plain
+      - no sort/filter/group
+      - no reorder
+      - no column width resize
+      - custom cell renderer
+    - searchable
+    - virtualizable
+  - crud-list-grid
+    - checkbox
+    - draggable/reorder list
+    - fields menu - filter/groupable
+    - inline editing
   - sortable-filterable-groupable table
   - 文章页可拖拽改变侧边栏宽度
   - 重构文章页题头部分组件
