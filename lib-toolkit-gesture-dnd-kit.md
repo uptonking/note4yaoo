@@ -171,21 +171,36 @@ const Item = forwardRef(({ children, ...props }, ref) => {
 ```
 
 ## Sensors
+
 - Sensors are an abstraction to detect different input methods in order to initiate drag operations, respond to movement and end or cancel the operation. 
 - Sensors may define one or multiple activator events.
 - Sensors are initialized once one of the activator events is detected.
+
 ## Modifiers
+
 - Modifiers let you dynamically modify the movement coordinates that are detected by sensors. 
+
 ## Preset - useSortable
 
 - useSortable hook is an abstraction that composes the useDroppable and useDraggable hooks
 - we added a droppable zone around each sortable context. 
   - This isn't required, but will likely be the behaviour most people want. 
   - If you move all sortable items from one column into the other, you will need a droppable zone for the empty column so that you may drag sortable items back into that empty column
-
-
 # examples
 
 ## popular
 
+- https://github.com/shaddix/dnd-kit-sortable-tree
+  - https://shaddix.github.io/dnd-kit-sortable-tree/
+  - a Tree component extracted from dndkit examples and abstracted a bit. 
+
+- https://github.com/wuifdesign/antd-react-extensions
+  - https://wuifdesign.github.io/antd-react-extensions/
+  - Extentions for Ant Design React
+
 ## repos-dnd-kit
+
+- https://github.com/wyhinton/react_konva-dnd_kit
+  - https://codesandbox.io/s/react-konva-dnd-kit-e6rck
+  - Example of using dnd-kit to drag an element out a react konva canvas
+  - 依赖konva、react-konva
