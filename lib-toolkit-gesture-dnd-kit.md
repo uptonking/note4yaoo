@@ -196,7 +196,7 @@ const Item = forwardRef(({ children, ...props }, ref) => {
 
 - https://github.com/wuifdesign/antd-react-extensions
   - https://wuifdesign.github.io/antd-react-extensions/
-  - Extentions for Ant Design React
+  - Extentions for Ant Design Reactd
 
 ## repos-dnd-kit
 

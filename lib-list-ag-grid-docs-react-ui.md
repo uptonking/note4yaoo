@@ -13,6 +13,13 @@ modified: '2021-08-20T12:24:38.227Z'
 
 ## [React Data Grid: React UI](https://www.ag-grid.com/react-data-grid/reactui/)
 
+- What's Next for React UI
+  - In AG Grid v26.2 has a production ready version of React UI. 
+    - It is turned on by setting the grid property reactUi=true.
+  - In AG Grid v27 we plan to make this the default with a fallback property to keep the old rendering. 
+    - The fallback property will be for emergency only and will be released as deprecated.
+  - In AG Grid v28 we plan to remove the old way of React rendering.
+
 - Up until now AG Grid React wrapped the JavaScript version of AG Grid. 
   - The next generation of AG Grid React will have it's UI written purely in React. 
 - Up until now AG Grid's core was written in Plain JavaScript using our in house rendering engine. 
