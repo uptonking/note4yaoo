@@ -32,8 +32,14 @@ modified: '2022-02-05T18:45:34.558Z'
   - 依赖react-draggable
 - react-dnd /14.5kStar/MIT/202009/ts
   - https://github.com/react-dnd/react-dnd
+  - https://react-dnd.github.io/react-dnd/examples/sortable/simple
   - core依赖于redux
   - Drag and Drop for React
+  - 拖拽列表项的示例，没有显示底层被拖拽项的阴影
+- react-beautiful-dnd /26.2kStar/Apache2/202110/js
+  - https://github.com/atlassian/react-beautiful-dnd
+  - https://react-beautiful-dnd.netlify.app/
+  - Beautiful and accessible drag and drop for lists with React
 
 - https://github.com/daybrush/moveable
   - https://daybrush.com/moveable/

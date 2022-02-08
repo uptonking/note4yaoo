@@ -10,9 +10,8 @@ modified: '2021-07-28T20:11:47.388Z'
 > 通知、反馈类组件
 
 # guide
-
+- "dropdowns should all be modal dialogs on mobile."
 # discuss
-
 - ## 
 
 - ## How to Make Tooltips Responsive
