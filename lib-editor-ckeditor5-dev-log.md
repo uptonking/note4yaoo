@@ -55,7 +55,10 @@ modified: '2021-10-27T03:20:45.841Z'
     - 书写动画、回退动画
     - to-do
       - 实现多行文本依次展示
-  - hover-show-otherwise-hidden
+  - css模式
+    - hover-show-otherwise-hidden
+  - react开发模式
+    - enum vs switch-case
 
 - almanac体验-pros
 - almanac体验-cons
@@ -280,6 +283,10 @@ modified: '2021-10-27T03:20:45.841Z'
 - to-be-discussed
   - 初步实现的菜单项都是英文，产品化时应该用中文
 
+- 重构题头部分
+  - [x] 更换emoji picker
+  - 字段列表分类型重构
+
 - bugs
   - 文章左侧标题目录toc点击无法跳转
   - 文章左侧标题目录toc的收起折叠按钮会被文章中的图片挡住
@@ -288,16 +295,54 @@ modified: '2021-10-27T03:20:45.841Z'
   - hard
     - 粘贴第三方文章时，侧边栏和导航栏字体会缩小到无法辨认
 
-- 重构题头部分
-  - [x] 更换emoji picker
-  - 字段列表分类型重构
-
 - 侧边栏部分
   - 已注册的用户是不可删除的，是否要不显示删除按钮
   - [ ] 文章页可拖拽改变侧边栏宽度
 
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
+
+## 0209
+
+- [React.js with Factory Pattern ? Building Complex UI With Ease](https://dev.to/shadid12/react-js-with-factory-pattern-building-complex-ui-with-ease-1ojf)
+  - 示例用的switch-case获取指定类型的组件，这些组件被memo过
+
+- [React Hooks Factories](https://dev.to/pietmichal/react-hooks-factories-48bi)
+  - 
+
+```JS
+// Alternatively, without classes
+
+function getUser(name: string): User {
+  return { name }
+}
+
+const user = getUser("Bob") // { name: "Bob" }
+
+// Factory function that returns a new function that uses Hooks API.
+function createHook(initialValue: string) {
+  return function useHook() {
+    return React.useState(initialValue)
+  }
+}
+```
+
+- [Conditionally render react components in cleaner way](https://dev.to/ms_yogii/conditionally-render-react-components-in-cleaner-way-1ik5)
+  - 提出了enum 和 switch-case 2种方法并争论
+  - enum-pros
+    - 简单直观，直接从预定义对象中取组件
+    - {roleSettings(username)[userRole]} 所有子组件都有username参数
+    - {createElement(RoleSettings[userRole], { username })}
+  - enum-cons
+    - A downside of enum solution is all the component will be compiled even it doesn't need to rendered，但可解决
+  - switch-case-pros
+    - 选择组件自身也是一个组件，all in react
+    - memo后方便优化性能
+    - 扩展case方便
+  - switch-case-cons
+    - The long term cost of the switch/case in this scenario is higher. 
+      - When you're wrapping different components inside a single component (which is the case for this component), is better to share props across them because they will be used in the same places, so ideally they should receive the same props
+  - 不要直接写组件，可以先定义一个组件变量
 
 ## 0208
 
