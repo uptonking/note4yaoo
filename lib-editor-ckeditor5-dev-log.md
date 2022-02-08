@@ -275,16 +275,37 @@ modified: '2021-10-27T03:20:45.841Z'
     - fields menu - filter/groupable
     - inline editing
   - sortable-filterable-groupable table
-  - 文章页可拖拽改变侧边栏宽度
   - 重构文章页题头部分组件
 
 - to-be-discussed
   - 初步实现的菜单项都是英文，产品化时应该用中文
 
 - bugs
-  - 图片按回车不能换行
-  - 粘贴第三方文章时，侧边栏和导航栏字体会缩小到无法辨认
   - 文章左侧标题目录toc点击无法跳转
+  - 文章左侧标题目录toc的收起折叠按钮会被文章中的图片挡住
+  - 图片按回车不能换行
+  - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
+  - hard
+    - 粘贴第三方文章时，侧边栏和导航栏字体会缩小到无法辨认
+
+- 重构题头部分
+  - [x] 更换emoji picker
+  - 字段列表分类型重构
+
+- 侧边栏部分
+  - 已注册的用户是不可删除的，是否要不显示删除按钮
+  - [ ] 文章页可拖拽改变侧边栏宽度
+
+- 测试文献部分
+  - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
+
+## 0208
+
+- react实现conditional rendering的3种模式
+  - [Which is the react way of complex conditional rendering?](https://stackoverflow.com/questions/50901604)
+  - 👍 `{ this.state.err ? <Err /> : <Main /> }` 数据驱动视图
+  - 👎 `<div className="App"> {this.state.comp} </div>` state中不要存comp
+    - `<div className="App"> {comp} </div>` 将comp提取成变量更好
 
 ## 0207
 
