@@ -282,33 +282,39 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - to-be-discussed
   - 初步实现的菜单项都是英文，产品化时应该用中文
+    - [ ] 文章页可拖拽改变侧边栏宽度
 
 - 重构题头部分
   - [x] 更换emoji picker
   - 字段列表分类型重构
 
-- bugs
-  - 文章左侧标题目录toc点击无法跳转
-  - 文章左侧标题目录toc的收起折叠按钮会被文章中的图片挡住
-  - 图片按回车不能换行
-  - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
+- bugs真的多，修的我很烦躁
+  - 文章页
+    - 去掉水平滚动条
+  - 文章左侧标题目录toc
+    - 点击无法跳转
+    - 收起折叠按钮会被文章中的图片挡住
+  - 编辑器
+    - 图片按回车不能换行
+    - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
+  - 侧边栏部分
+    - 已注册的用户是不可删除的，是否应该不显示删除按钮
   - hard
-    - 粘贴第三方文章时，侧边栏和导航栏字体会缩小到无法辨认
-
-- 侧边栏部分
-  - 已注册的用户是不可删除的，是否要不显示删除按钮
-  - [ ] 文章页可拖拽改变侧边栏宽度
+    - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
 
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
 ## 0209
 
+- bug修复
+  - 移除文章页水平滚动条
+  - 去掉container 100vw 100vh
+
 - [React.js with Factory Pattern ? Building Complex UI With Ease](https://dev.to/shadid12/react-js-with-factory-pattern-building-complex-ui-with-ease-1ojf)
   - 示例用的switch-case获取指定类型的组件，这些组件被memo过
 
 - [React Hooks Factories](https://dev.to/pietmichal/react-hooks-factories-48bi)
-  - 
 
 ```JS
 // Alternatively, without classes
@@ -334,6 +340,7 @@ function createHook(initialValue: string) {
     - {roleSettings(username)[userRole]} 所有子组件都有username参数
     - {createElement(RoleSettings[userRole], { username })}
   - enum-cons
+    - 对每个组件不方便传入定制参数
     - A downside of enum solution is all the component will be compiled even it doesn't need to rendered，但可解决
   - switch-case-pros
     - 选择组件自身也是一个组件，all in react

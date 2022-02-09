@@ -32,3 +32,7 @@ modified: '2021-06-02T17:19:46.638Z'
 
 - Block-Style Editor has its roots in CMS(content management system), SSG (static site generator), GitHub& Markdown, MDX, JSX, and Low-code Site Building.
 - In a sense, a Block Style Editor is a Modular CMS for web document use case.
+
+# ref
+
+- [基于 Google Doc 思想的L2编辑器演示项目](https://zhuanlan.zhihu.com/p/392055486)
