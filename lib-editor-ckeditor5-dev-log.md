@@ -305,11 +305,18 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0209
+## 0210
 
 - bug修复
-  - 移除文章页水平滚动条
-  - 去掉container 100vw 100vh
+  - [x] 移除文章页水平滚动条
+  - [x] 去掉container 100vw 100vh
+  - [ ] 修复添加bibtex后刷新页面却显示为空的问题
+  - [ ] 修改store中的doc对象为docId
+
+## 0209
+
+- 设置调试逻辑
+  - localstorage.debug = 'DocumentDB:*'
 
 - [React.js with Factory Pattern ? Building Complex UI With Ease](https://dev.to/shadid12/react-js-with-factory-pattern-building-complex-ui-with-ease-1ojf)
   - 示例用的switch-case获取指定类型的组件，这些组件被memo过
