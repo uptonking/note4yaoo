@@ -291,6 +291,7 @@ modified: '2021-10-27T03:20:45.841Z'
 - bugs真的多，修的我很烦躁
   - 文章页
     - 去掉水平滚动条
+    - 应该使用CustomScrollbar，最好去掉浏览器默认的数值滚动条
   - 文章左侧标题目录toc
     - 点击无法跳转
     - 收起折叠按钮会被文章中的图片挡住
@@ -305,13 +306,49 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0211
+
+- bug修复
+  - [ ] 修改store中的doc对象为docId
+    - 等到闫东先实现请求文章id再实现此工作
+  - 修改编辑器中代码字体 monospace  ->  'Courier New', monospace
+  - 讨论要不要做退出登录
+
 ## 0210
+
+- [First item from a Map on JavaScript ES2015](https://stackoverflow.com/questions/32373301)
+  - console.log(m.entries().next().value);
+
+- 早期在 useUser(){} hook声明中放useEffect请求数据的缺陷
+  - react创建虚拟dom树时，所有执行了useUser() 的组件都会触发http请求
+  - 解决方案1
+    - 抽象出一个单独的 useInitUser(){} hook，只执行请求初始化操作；
+      - 在顶层组件(通常是Router组件)中获取到user对象后才渲染其他组件
+      - 其他组件直接从useUser()中取user对象，而useUser中没有请求操作
+
+- 测试添加bibtex的示例
+
+```js
+await editor.db.setReference({
+  entry: 'article',
+  author: 'Grishchenko, Victor',
+  year: '2010',
+  title: 'Deep hypertext with embedded revision control',
+  journal: 'proceedings of the 6th International Symposium on Open Collaboration',
+});
+
+await editor.db.search({ tag: 'type:reference' });
+```
 
 - bug修复
   - [x] 移除文章页水平滚动条
   - [x] 去掉container 100vw 100vh
-  - [ ] 修复添加bibtex后刷新页面却显示为空的问题
-  - [ ] 修改store中的doc对象为docId
+  - [x] 修复添加bibtex后刷新页面却显示为空的问题
+
+- [Microsoft 提供的等宽 TrueType 字体](https://support.microsoft.com/zh-cn/topic/microsoft-%E6%8F%90%E4%BE%9B%E7%9A%84%E7%AD%89%E5%AE%BD-truetype-%E5%AD%97%E4%BD%93-93aa7a47-2149-be09-31a9-c22df598c952)
+  - Microsoft 隨附的唯一 monospaced TrueType 字型是「宋體」（隨附于 Windows 3.1）和黑體（包含在 TrueType 字型套件中）。 Windows 3.1 隨附的所有其他 TrueType 字型，以及 TrueType 字型套件都是成比例字型。
+  - Microsoft 附带的唯一等宽 TrueType 字体是 Microsoft 3.1 附带的 "宋体" 和 "宋体"，它包含在 TrueType 字体包中。 Windows 3.1 和 TrueType 字体包中包含的所有其他 TrueType 字体都是成比例字体。
+  - The only monospaced TrueType fonts shipped by Microsoft are Courier New, which shipped with Windows 3.1, and Lucida Sans Typewriter, which was included in the TrueType Font Pack. All other TrueType fonts included with Windows 3.1 and the TrueType Font Pack are proportional fonts.
 
 ## 0209
 
