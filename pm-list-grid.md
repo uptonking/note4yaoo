@@ -11,6 +11,7 @@ modified: '2021-05-23T16:34:27.206Z'
 # roadmap
 - table-view
   - sort/filter/group + test
+  - resizable-table/list
 - kanban-view
   - sort/filter/group + test
   - views switch test

@@ -28,7 +28,14 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Really learning a lot reading through @steveruizok's fantastic #tldraw codebase
+- https://twitter.com/aboutgeo/status/1492055746351087637
+  - overall state management & abstractions. 
+    - Abstraction of drawing process as a "session" (if I understood that correctly). 
+  - Other things similar but slightly different, e.g. abstractions around drawing new shapes vs. editing existing.
+- 
+- 
+- 
 
 - ## I'm going to keep working on @tldraw . I'll be raising money in the new year to build a team and build an open-core platform for spatial canvas apps.
 - https://twitter.com/steveruizok/status/1468630454601408518

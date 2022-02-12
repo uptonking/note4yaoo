@@ -277,6 +277,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - draggable/reorder list
     - fields menu - filter/groupable
     - inline editing
+    - orm integration
   - sortable-filterable-groupable table
   - 重构文章页题头部分组件
 

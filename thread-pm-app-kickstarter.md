@@ -10,6 +10,13 @@ modified: '2021-10-29T15:02:28.882Z'
 > new marketable apps
 
 # ideas-stars
+- ## storybook Component Encyclopedia is in beta
+- https://twitter.com/storybookjs/status/1491806826739941377
+- We’re on a mission catalog the world’s UI components for you to learn from—3, 490 components & 44 projects so far.
+  - Reference components from top teams
+  - Play with live implementation 
+  - view source
+
 - ## Harsh truth: Reading about other successful creators won't make you one. 
 - https://twitter.com/mkhundmiri/status/1383688592099135498
   - Start creating so that you have your own success story to tell.
@@ -27,6 +34,15 @@ modified: '2021-10-29T15:02:28.882Z'
   - make a project to solve your problem
 # ideas
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 目前可以用 https://notionlytics.com 免费版就够了，有一些简单的统计
+- https://twitter.com/xatest/status/1491263423942131714
 
 - ## I can’t prove this but I suspect if someone built a Next.js/Remix/etc for React Native (i.e. single codebase for client and server) they would make a trillion dollars
 - https://twitter.com/acdlite/status/1489755769876754434

@@ -14,7 +14,7 @@ modified: '2021-07-20T13:50:23.433Z'
   - rendering(~~web~~) is the future, but not the present.
   - 参考各种解决方案的优点，积累方案、算法、库、框架、应用
 
-- techstacks: nocode editor
+- techstacks: rich editor
   - design system
     - themeable/headless/a11y
   - text editor
@@ -48,6 +48,7 @@ modified: '2021-07-20T13:50:23.433Z'
     - more: easy viz
 
 - integrations/connections
+  - wechat小程序、公众号、实时通知
   - github/gitee
   - 腾讯文档
   - 类似outline集成slack

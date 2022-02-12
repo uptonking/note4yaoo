@@ -13,8 +13,6 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
-
 - ## What are some apps that use an "infinite canvas" for things other than white-boarding or visual design?
 - https://twitter.com/steveruizok/status/1479437094552489991
 - Node based programming. Shader graphs. Audio effects editors. 2D side scrolling games if they need zoom and are touchpad/mouse/touch based controls

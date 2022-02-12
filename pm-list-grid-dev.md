@@ -11,7 +11,7 @@ modified: '2021-05-23T16:34:36.693Z'
 
 # usage
 
-``` JS
+```JS
 // demo for ag-grid
 // two essential configuration properties of the grid - the column definitions (columnDefs) and the data (rowData).
 import { AgGridReact } from 'ag-grid-react';
@@ -50,7 +50,7 @@ class App extends Component {
 render(<App />, document.getElementById('root'));
 ```
 
-``` JS
+```JS
 // demo for react-virtualized
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -84,7 +84,7 @@ ReactDOM.render(
 );
 ```
 
-``` JS
+```JS
 // demo for react-window
 import { FixedSizeList as List, FixedSizeGrid as Grid } from 'react-window';
 
@@ -123,7 +123,7 @@ const Example = () => (
 );
 ```
 
-``` JS
+```JS
 // demo for handsontable
 import React from 'react';
 import { HotTable } from '@handsontable/react';
@@ -151,9 +151,9 @@ class App extends React.Component {
 ```
 
 # summary
-
 - 如何区分click和double click
   - setTimeout
+
 - infinite scroll vs pagination
   - An infinite scroller is a modern alternative to pagination.
   - Rather than wait for the user to click 'next page', new content is automatically loaded everytime the user reaches the bottom of the page. 
@@ -161,9 +161,11 @@ class App extends React.Component {
     - 在componentDidMount方法中 `this.refs.myscroll.addEventListener("scroll",f)`
     - 在滚动事件处理函数中判断，若到达底部，则触发请求新数据，再setState
   - pagination ux vs infinite scroll + search/filter
+
 - infinite scroll vs regular scroll
   - 无限滚动(不带virtualized)因为在开始时渲染的DOM元素较少而性能较高，在滚动时会不停地添加列表项到列表元素，一旦滚动数量过多，仍会由于DOM节点过多造成样式计算或DOM操作开销大，性能就变差了
   - 无限滚动最好还是结合virtualized使用，在每次scroll事件触发时请求数据
+
 - 列表类组件开发常见问题
   - 是否使用virtualized/window来显示可滚动的表格
     - 虚拟化要求定高，可参考react-window的VariableSizeList提供的解决方案
@@ -181,10 +183,12 @@ class App extends React.Component {
       - 使用tr-td会使后面实现drag,resize,sort ,group更复杂
       - ref
         - http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/
+
 - 列表组件开发难点
   - try to avoid scroll events, especially if they’re not debounced
     - react-intersection-observer falls back to scroll events *only* if necessary
   - 虚拟滚动时如何实现拖拽排序动画
+
 - virtualized or window
   - List virtualization, or "windowing", is the concept of only rendering what is visible to the user. 
   - The number of elements that are rendered at first is a very small subset of the entire list and the "window" of visible content moves when the user continues to scroll. 

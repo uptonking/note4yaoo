@@ -26,3 +26,10 @@ modified: '2021-09-19T15:14:45.954Z'
 - [v6.0.0-beta.3 NavLink: replace activeClassName + activeStyle props](https://github.com/remix-run/react-router/pull/7985)
   - replace them by allowing either `style` or `className` to accept functions with the active state. 
 # issues
+
+# discuss
+
+- ## I find it interesting that React Router is synchronous and essentially knows nothing about the route tree until it attempts to render it. 
+- https://twitter.com/tannerlinsley/status/1492155286240456710
+  - This is very different from RL which knows about your entire route tree when the router is rendered (but maybe not the route elements, etc)
+  - Knowing about the entire route configuration up front has some benefits. In RL namely, we use that info to support colocation of search filters and fetching logic with routes (at the cost of not supporting lazy-routes like RR does with Suspense. So there's definitely a balance...

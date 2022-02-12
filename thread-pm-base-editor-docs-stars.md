@@ -14,6 +14,13 @@ modified: '2021-08-22T07:29:34.045Z'
 
 - ## 
 
+- ## storybook Component Encyclopedia is in beta
+- https://twitter.com/storybookjs/status/1491806826739941377
+- We’re on a mission catalog the world’s UI components for you to learn from—3, 490 components & 44 projects so far.
+  - Reference components from top teams
+  - Play with live implementation 
+  - view source
+
 - ## Notion、WordPress 等有基于Block概念的编辑器。人们喜欢 Block。我们似乎标准化了一件事：插入新 Block 的 / 键。但是其他所有的内容都是完全专有且非标准的
 - https://twitter.com/EryouHao/status/1486954447943057409
   - 如果在网络上的 Block 是可互换和可重复使用的，不是很酷吗？
