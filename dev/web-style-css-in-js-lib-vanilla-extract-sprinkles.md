@@ -9,8 +9,45 @@ modified: '2021-08-22T16:08:42.552Z'
 
 # guide
 
-# discuss
+# examples
+- https://github.com/one-aalam/awesome-vanilla-extract-css
+  - Early Adopters: shopify
+- https://github.com/markdalgleish/nextjs-vanilla-extract-example
+  - 官方示例，仅单文件
 
+- https://github.com/samuelkraft/design-system
+  - WIP design system starter repo.
+  - Design system
+    - Styling with Vanilla Extract (can easily be changed)
+    - Theming with next-themes
+  - Docs site
+    - Powered by MDX (with contentlayer)
+    - Live editable code
+  - Playground
+    - TBA
+- https://github.com/huijiewei/agile-ui
+  - http://agile-ui.vercel.app/
+  - React + TypeScript + Tailwind CSS Components
+- https://github.com/timoclsn/mauli-vanilla-extract
+  - https://mauli-vanilla-extract.vercel.app/
+  - Experimental design system exploration with React and Vanilla Extract.
+- https://github.com/whoisryosuke/gelato-ui
+  - React component library and design system powered by Vanilla Extract
+
+- https://github.com/copiest/fronttigger-blog
+  - [next.js + vanilla-extract + mdx] fronttigger's blog
+  - 依赖 recoil、mdx-bundler
+
+- https://github.com/lukin/vanilla-reset
+  - A tiny modern CSS reset for vanilla-extract.
+
+## eg-csb
+
+- official-examples
+  - https://codesandbox.io/s/github/seek-oss/vanilla-extract/tree/master/examples/webpack-react
+
+- https://codesandbox.io/s/radix-ui-with-vanilla-extract-rnl9d
+# discuss
 - ## `background-color: var(--colors-brand);` Is this code valid? Is this variable defined anywhere? 
 - https://twitter.com/markdalgleish/status/1487393650607034373
   - Unless you look at every other CSS file in your project, there's no way to know.
