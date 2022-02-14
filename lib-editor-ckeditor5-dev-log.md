@@ -312,12 +312,28 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 修改store中的doc对象为docId
     - 等到闫东先实现请求文章id再实现此工作
   - 修改编辑器中代码字体 monospace  ->  'Courier New', monospace
-  - 讨论要不要做退出登录
+  - 讨论
+    - 要不要做退出登录
+    - 要不要暂停修复编辑器bugs，开始实现分享功能
+
+- react-router
+  - 应该将PublicRoutes和PrivateRoutes分开，这样在public路由页面就不会发出用户数据请求
+
+```JS
+(await (await editor.db.getNamedDocument('global')).getDecodedContent()).getMap('recent-docs').get('lastDocument')
+await (await editor.db.getNamedDocument('global')).getDecodedContent()
+temp1.getMap('recent-docs').get('lastDocument')
+temp1.getMap('recent-docs')
+temp1.getMap('recent-docs').get('d')
+temp1.getMap('recent-docs').set('d', 'idddd')
+temp3.set('d', 'idddd')
+temp3.get('d')
+```
 
 ## 0210
 
 - [First item from a Map on JavaScript ES2015](https://stackoverflow.com/questions/32373301)
-  - console.log(m.entries().next().value);
+  - console.log(m.entries().next().value); 
 
 - 早期在 useUser(){} hook声明中放useEffect请求数据的缺陷
   - react创建虚拟dom树时，所有执行了useUser() 的组件都会触发http请求
