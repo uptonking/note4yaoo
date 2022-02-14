@@ -1,12 +1,25 @@
 ---
-title: toc-repos-saas
+title: toc-saas-repos
 tags: [repos, saas, starter]
 created: '2020-12-08T20:35:41.091Z'
-modified: '2021-05-14T15:06:05.773Z'
+modified: '2022-02-12T23:36:22.503Z'
 ---
 
-# toc-repos-saas
+# toc-saas-repos
 
+# popular
+
+- https://github.com/async-labs/saas /ts
+  - Build your own SaaS business with SaaS boilerplate. 
+  - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. 
+
+- https://github.com/marmelab/react-admin
+  - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
+  - https://marmelab.com/react-admin-demo/#/
+  - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
+  - simple-example 依赖mui.v4、ra-data-fakerest
+  - demo-example 依赖 react-redux、redux-saga、react-router.v5、recharts
+  - The React-Admin Enterprise Edition  offers additional features and services for react-admin
 # spa-react-boilerplate
 - https://github.com/themesberg/volt-react-dashboard
   - dashboard + components + pages
@@ -28,31 +41,26 @@ modified: '2021-05-14T15:06:05.773Z'
   - 教程示例丰富
   - [React Hooks CRUD example with Axios and Web API](https://www.bezkoder.com/react-hooks-crud-axios-api/)
   - [build a server api: Express, Sequelize & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
-# js-ts
-- https://github.com/timeoffthescheduler/server
+# saas-apps
+- https://github.com/timeoffthescheduler/server /js
   - Server Side Implementation of TimeOff TS, A Scheduler
   - Express.js, MongoDB, Passport
   - https://github.com/timeoffthescheduler/app
     - Client Side Implementation of TimeOff TS, A Scheduler
     - react-router,redux, redux-saga
-- https://github.com/atapas/covid-19
+- https://github.com/atapas/covid-19 /js
   - COVID-19 World is yet another Project to build a Dashboard like app to showcase the data related to the COVID-19
-- https://github.com/peterjoseph/Reeve
+- https://github.com/peterjoseph/Reeve /js
   - a boilerplate framework that assists developers in reducing the setup time required to build production-ready scalable web applications.
   - 依赖express, react, redux, react-router, mysql, jwt
-- https://github.com/atulmy/fullstack-javascript-architecture
+- https://github.com/atulmy/fullstack-javascript-architecture /js
   - Opinionated project architecture for Full-Stack JavaScript Applications.
   - Express, MongoDB, React, Material UI, Redux
-- https://github.com/staart/api
+- https://github.com/staart/api /inactive
   - SaaS backend & API framework powered by @nestjs
   - https://github.com/staart/ui
     - Frontend Vue PWA starter for SaaS startups
-- https://github.com/async-labs/saas
-  - Build your own SaaS business with SaaS boilerplate. 
-  - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. 
-- https://github.com/Uconnect-Technologies/wertik-js
-  - A library that powers your app with GraphQL + Rest API
-- https://github.com/aloysius-tim/saas-react-starter-kit-boilerplate
+- https://github.com/aloysius-tim/saas-react-starter-kit-boilerplate  /js
   - a React SaaS boilerplate to kickstart your new SaaS adventure
   - Built on top of Adonis JS for the BackEnd and React Starter Kit for the Front-End
 - https://github.com/prakhar897/nodeSaas
@@ -68,7 +76,7 @@ modified: '2021-05-14T15:06:05.773Z'
   - This app is designed to work hand-in-hand with the Django-Serverless backend.
 - https://github.com/arwildo/akunter
   - Full-stack DRRM (Django, React, Redux, MySQL) application to handle the store's accounting and databases
-# saas-app
+# saas-solutions
 - https://github.com/steedos/steedos-platform
   - Open source Low Code Development Platform, Salesforce alternative in nodejs and mongodb
   - 华炎魔方致力于打造 Salesforce Platform 的开源替代方案。
@@ -80,10 +88,6 @@ modified: '2021-05-14T15:06:05.773Z'
   - It runs separately to your application so you have two web servers instead of one
 - https://github.com/cbiltekin/survey-maker
   - This is a survey creating, sharing, answering web application using tools like React, Redux, and Spring.
-# netlify/vercel/self-hostable
-- https://github.com/coollabsio/coolify
-  - https://coollabs.io/coolify
-  - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
 # more-saas
 - https://github.com/staqjs/staq
   - Staq is a Javascript library for creating Software-as-a-Service (SaaS) businesses

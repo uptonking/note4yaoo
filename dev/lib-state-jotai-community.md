@@ -9,7 +9,9 @@ modified: '2022-01-05T14:25:35.961Z'
 
 # guide
 
-# discuss
+- jotai-examples
+  - https://github.com/dai-shi/katachidraw
+# discuss-stars
 - ## Demystifying the internal of jotai https://jotai.org, an atomic state management solution for @ReactJS .
 - https://twitter.com/dai_shi/status/1484835169475653634
   - Here's a simplified version of the core.
@@ -30,7 +32,7 @@ modified: '2022-01-05T14:25:35.961Z'
 - here's the full version of the simplified version of Valtio
   - https://codesandbox.io/s/modest-currying-mu0j7
   - https://twitter.com/dai_shi/status/1485036663290368002
-
+# discuss
 - ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
 - https://twitter.com/dai_shi/status/1477593623156105217  /20220102
   - So, I created a ToDo app with a single store with jotai. 

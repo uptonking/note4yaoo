@@ -21,10 +21,10 @@ modified: '2021-07-23T08:38:53.805Z'
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
   - 使用场景: 笔记、文档、手册、教程、私有化部署
 
-- outline /12.5kStar/BSD > BSL/202109/js
+- outline /12.5kStar/BSD > BSL/202109/ts
   - https://github.com/outline/outline
   - The fastest wiki and knowledge base for growing teams.
-  - 依赖rich-markdown-editor、postgres、redis
+  - 依赖rich-markdown-editor、mobx-react、dnd-kit、dnd-kit、framer-motion、i18next、markdown-it、reakit、postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)

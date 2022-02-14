@@ -37,8 +37,13 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Been doing some prototyping lately. Turns out, JavaScript with no types is nice, actually!
+- https://twitter.com/devongovett/status/1490729034803724289
+- You can use tsc as a js linter...catches some things eslint doesn't, ime.3
 
+- I have two prototyping workflows:
+  1) TS with no types, everything `any` , then 'harden' until everything's strictly typed.
+  2) TS types and function signatures, strictly typed, but with no code, then add the function bodies after all the types compile.
 - ## Question for the #webperf folks, is `<script type="application/ld+json">` render blocking?
 - https://twitter.com/TimVereecke/status/1490011729643945990
 - TL; DR No.

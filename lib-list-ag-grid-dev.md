@@ -15,6 +15,10 @@ modified: '2021-05-13T02:42:31.809Z'
   - 可定制性有限，支持自定义renderer、filter等；但不支持类似handsontable、prosemirror这样的全局功能拦截插件
   - 社区版开源，专业版也开源，但专业版的源码和社区版深度耦合，在开源版基础上魔改也有较大的法律风险
 
+- ag-grid-playground
+  - resizable
+  - ag-charts to observable-plot
+
 - usecase
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
     - AdapTable is a sophisticated HTML5 DataGrid add-on.

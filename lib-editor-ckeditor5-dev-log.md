@@ -277,6 +277,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - draggable/reorder list
     - fields menu - filter/groupable
     - inline editing
+    - orm integration
   - sortable-filterable-groupable table
   - 重构文章页题头部分组件
 
@@ -305,6 +306,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
+
+## 0213
+
+- 让dom中id为`#id001`的元素滚动到页面顶端的方法 (如toc点击跳转)
+  - `$('#fixed-tabs').scrollIntoView({ block: 'start', behavior: 'smooth' })`
 
 ## 0211
 
@@ -337,7 +343,7 @@ temp3.get('d')
 
 - 早期在 useUser(){} hook声明中放useEffect请求数据的缺陷
   - react创建虚拟dom树时，所有执行了useUser() 的组件都会触发http请求
-  - 解决方案1
+  - 解决方案1: 拆分成2个hook
     - 抽象出一个单独的 useInitUser(){} hook，只执行请求初始化操作；
       - 在顶层组件(通常是Router组件)中获取到user对象后才渲染其他组件
       - 其他组件直接从useUser()中取user对象，而useUser中没有请求操作

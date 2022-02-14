@@ -13,7 +13,10 @@ modified: '2021-10-29T15:05:56.151Z'
 
 - ## 
 
-- ## 
+- ## SaaS 公司的价值: 说实话，即便是我们做了一套很牛的软件产品，也就是“一把不错的铁锹”，卖铁锹给别人，别人挖出来金矿和我们没有任何关系。 我们还是一个卖铁锹的。
+- https://twitter.com/ThaddeusJiang/status/1492133196087308289
+  - 卖铁锹的，怎么能跟客户的营收有关系呢？我们可以考虑加入到行业的业务层面，帮助客户一起找金矿。给客户挖金矿的方法或者一起运营金矿的业务，这样才能和客户一起分享挖出来的金矿。
+  - 等挖金矿的人多了，卖铁锹也赚钱啊。这就相当于做基础设施建设，Figma 还有国内的 Moka 就属于这一类，也赚得钵满盆溢啊。不过你得根据挖金矿的人的需求升级，得做自动挖矿铁锹， 不能一直做铁锹。
 
 - ## I'm going to keep working on @tldraw . I'll be raising money in the new year to build a team and build an open-core platform for spatial canvas apps.
 - https://twitter.com/steveruizok/status/1468630460305747977
