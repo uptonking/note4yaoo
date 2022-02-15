@@ -21,8 +21,8 @@ modified: '2021-05-13T02:43:00.595Z'
   - rowSelection="multiple"
 - Grouping
   - headerName, field, rowGroup
-- ag-grid 18~21 -- react 15.x
-- ag-grid 22.x  -- react 16.3+
+- ag-grid 18~21.2 -- react 15.x
+- ag-grid 22+  -- react 16.3+/17+
 
 - Columns can be defined in three ways: 
   - declaratively (i.e. via `<AgGridColumn>` markup), 
