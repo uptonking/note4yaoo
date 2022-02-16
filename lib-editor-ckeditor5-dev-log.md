@@ -290,22 +290,73 @@ modified: '2021-10-27T03:20:45.841Z'
   - 字段列表分类型重构
 
 - bugs真的多，修的我很烦躁
-  - 文章页
-    - 去掉水平滚动条
-    - 应该使用CustomScrollbar，最好去掉浏览器默认的数值滚动条
-  - 文章左侧标题目录toc
-    - 点击无法跳转
-    - 收起折叠按钮会被文章中的图片挡住
   - 编辑器
+    - blockquote插件中的换行，每次刷新页面后，中间的空行会加一个
+      - 空文档无此问题，复制示范文档会出现此问题
     - 图片按回车不能换行
     - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
+  - 文章页
+    - [x] 去掉水平滚动条
+    - [x] 应该使用CustomScrollbar，最好去掉浏览器默认的竖直滚动条
+  - 文章左侧标题目录toc
+    - [x] 点击无法跳转
+    - [x] 收起折叠按钮会被文章中的图片挡住
   - 侧边栏部分
     - 已注册的用户是不可删除的，是否应该不显示删除按钮
   - hard
     - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
+      - 光标移动到待创建双链的文字的位置时，文字会突然缩小
 
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
+
+## 0217
+
+- 列表项上显示悬浮卡片是不是一种优雅的交互体验？
+  - 可采用类似wolai的单独的侧边悬浮卡片
+
+- 为什么编辑器中插入的bibtex文献，点击后跳转的url显示的id变了
+  - 
+
+## 0216
+
+- 样式picker
+  - almanac侧边栏的主文字 #3E4C5C，灰色文字 #757C8A
+
+- magic-css-heading-title
+  - 为什么文末参考文献 h1-References 的高度为71
+    - margin-block-start/end 的效果就是 margin-top/bottom
+
+- 登录后，没有从 /docs 跳转到 /docs/docId 的原因是
+  - 后端获取workspace的请求失败了
+  - url前面多了一个空格，见npm run dev后webpack-dev-server的异常信息
+
+```bibtex
+@misc{piece, author={J Strother Moore}, title={``{M}y'' Best Ideas.\\ \url{https://www.cs.utexas.edu/users/moore/best-ideas/structure-sharing/text-editing.html}}}
+
+@article{myers1986ano,
+    title={An {O(ND)} difference algorithm and its variations},
+    author={Myers, Eugene W},
+    journal={Algorithmica},
+    volume={1},
+    number={1-4},
+    pages={251--266},
+    year={1986},
+    publisher={Springer}
+}
+
+```
+
+- 文字省略号的一种实现方式
+
+```CSS
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+```
 
 ## 0215
 

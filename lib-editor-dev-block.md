@@ -47,6 +47,16 @@ modified: '2021-06-01T20:03:38.284Z'
   - Shortcodes, in the classic editor, didn’t have such a discovery method.
 - Re-usable blocks allow you to easily create content you can re-use across posts or pages, see this nice tutorial on WP Beginner.
 # discuss-stars
+- ## [Choosing DB model for an app similar to Notion, Block-based ("paragraphs") or document-based?](https://stackoverflow.com/questions/71024175)
+- 比较项目
+  - Fetch the contents of a page
+  - Render the content of a page**
+  - Update the content of a paragraph in the DB
+  - Alternatives for rendering very large documents *
+  - Import or paste content
+  - Copy content**
+  - Real-Time Collaboration
+
 - ## We've been working a new protocol at @hashintel. It's called the block protocol
 - https://twitter.com/Mappletons/status/1488131234089873408
   - It allows you to build reusable blocks (aka. components) that are interchangeable across website/apps

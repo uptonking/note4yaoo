@@ -18,6 +18,7 @@ modified: '2021-09-14T18:58:58.275Z'
   - MPL
 
 - ref
+  - https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
   - linkware, watermark
