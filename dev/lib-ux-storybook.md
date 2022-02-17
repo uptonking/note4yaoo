@@ -17,6 +17,9 @@ modified: '2021-05-13T03:05:37.665Z'
 
 - alternatives to storybook
   - https://github.com/remorses/vitro
+    - Vitro is a storybook alternative that builds 20x faster; built on top of esbuild (thanks to bundless)
+  - https://github.com/ccontrols/component-controls
+    - Using MDX or javascript to author documentation files, the sites can be generated with highly-optimized site generators as gatsby or nextjs, storybook
 
 - ref
   - [storybook docs rfc](https://docs.google.com/document/d/1D4Ov4UvrB80Uy1CLGshbFEWQKWEpr8dL4FmOqRDwjwI/edit)
@@ -24,7 +27,6 @@ modified: '2021-05-13T03:05:37.665Z'
     - Args is a proposed addition to Storybook’s CSF
   - [React Single File Components Are Here](https://www.swyx.io/react-sfcs-here/)
   - [Storybook Docs MDX usage example](https://github.com/storybookjs/storybook/blob/master/addons/docs/docs/mdx.md)
-
 # pieces
 
 # storybook-docs
@@ -42,7 +44,7 @@ modified: '2021-05-13T03:05:37.665Z'
 - ## CSF Stories with MDX Docs 在mdx中导入csf的stories
   - write your stories in CSF, but document them in MDX
 
-``` mdx
+```mdx
 // Button.stories.js
 
 import React from 'react';
@@ -71,7 +73,7 @@ And I can also embed arbitrary markdown & JSX in this file.
 
 - ## CSF Stories with arbitrary MDX 在csf中导入任意mdx
 
-``` 
+```
 
 // Button.mdx 注意名称后缀不是.stories.mdx
 // 本文件会被mdx loader处理，不要使用Meta定义标题了，挂载点不在这里
@@ -124,9 +126,7 @@ export const basic = () => <Button>Basic</Button>;
 - Documentation-only MDX
   - Typically, when you use Storybook MDX, you define stories in the MDX documentation is automatically associated with those stories.
   - If you don't define stories in your MDX, you can write MDX documentation and associate it with an existing story, or embed that MDX as its own documentation node in your Storybook's navigation.
-
 # storybook-web-components
-
 - [Storybook for web components on steroids](https://dev.to/open-wc/storybook-for-web-components-on-steroids-4h29)
   - For demoing, documenting and showcasing different states of your Web Component, we recommend using storybook.
   - https://github.com/open-wc/open-wc/tree/master/packages/demoing-storybook
@@ -135,8 +135,6 @@ export const basic = () => <Button>Basic</Button>;
 - examples
   - [html-kitchen-sink](https://github.com/storybookjs/storybook/tree/next/examples/html-kitchen-sink)
   - [web-components-kitchen-sink](https://github.com/storybookjs/storybook/tree/next/examples/web-components-kitchen-sink)
-
 # ref
-
 - [Build a Web Component library with Stencil and Storybook](https://dev.to/ofhouse/build-a-web-component-library-with-stencil-and-storybook-c27)
 - [Storybook Controls w/ CRA & TypeScript](https://gist.github.com/shilman/69c1dd41a466bae137cc88bd2c6ef487)

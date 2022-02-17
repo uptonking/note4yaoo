@@ -21,7 +21,7 @@ modified: '2021-01-12T18:48:52.713Z'
 - data-catalog-components /5Star/GPLv3/202104/js
   - https://github.com/getdkan/data-catalog-components
   - https://getdkan.github.io/data-catalog-components
-  - 依赖bootstrap.v4、reactstrap、react-dnd, react-table.v
+  - 依赖bootstrap.v4、reactstrap、react-dnd, react-table.v7
   - 样式普通
   - A set of React components to facilitate the creation of Open Data Catalogs with React.
   - built for dkan(基于php，而ckan基于python)

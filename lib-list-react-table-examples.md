@@ -19,6 +19,9 @@ modified: '2021-07-20T13:28:26.296Z'
     - @component-controls/components
     - @edx/paragon
     - guidu
+    - ref
+      - https://www.npmjs.com/browse/depended/react-table
+      - https://github.com/search?o=desc&q=react-table+filename%3Apackage.json&s=indexed&type=Code
 - top-dependents-of-react-table.v6
   - nteract/data-explorer: 依赖d3、numeral
 # popular
@@ -73,22 +76,27 @@ modified: '2021-07-20T13:28:26.296Z'
   - display布局: table.div-block, tr.div-flex, td.div-block
   - 拖动表格滚动条时，可以显示minimap
   - 提供了日期字段作为一列的Calendar示例
+- table-x
+  - https://github.com/gmfe/gm-pc/tree/master/packages/table-x
+  - https://gmfe.github.io/gm-pc-docs/?path=/story/tablex-tablex--com-table-x
+  - 依赖 react-window、sortablejs、@gm-pc/react
+  - 注意不要随意升级版本，目前使用 react-table.v7.0.0-rc.11
+  - 7.0.0-rc.11 天然不支持 column.show, 所以自行实现了 column.show 的支持
+  - 斑马线，不能用 css 的 :even 和 :odd 实现。因为在使用虚拟列表的时候有坑。
 
 - @uidu/table /13Star/MIT/202105/ts/react
   - https://github.com/uidu-org/guidu
   - https://uidu.design/
   - https://uidu.design/packages/data/dashlets
-  - table组件依赖于 react-table, react-virtual, styled-components, numeral
-  - Guidu is uidu's design system library
-  - 完全复制了atlassian-editor，并将组件替换成了自己的design system
-    - dashlet会不会也是复制的？
-  - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
-  - 依赖styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
-  - These components are Atlassian Design Guidelines(ADG) compliant
   - https://github.com/uidu-org/guidu/tree/main/packages/data/table
-    - 依赖react-table7、react-virtual、styled-components5、react-intl5、@uidu
+    - 依赖react-table.v7、react-virtual、styled-components5、react-intl5、@uidu/popup
+  - Guidu is uidu's design system library
+    - 完全复制了atlassian-editor，并将组件替换成了自己的design system
+    - dashlet会不会也是复制的？
+    - 提供了专门的数据类别组件：list, table, data manager, data views, timeline, dashlet, dashboard
+    - These components are Atlassian Design Guidelines(ADG) compliant
   - https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets
-    - 依赖@uidu/table、d3、amcharts4、cubejs-client/react、s-c
+    - 依赖@uidu/table、styled-components、@amcharts/amcharts4、d3、@cubejs-client/react、react-table、twin.macro
 
 - @superset-ui/plugin-chart-table
   - https://github.com/apache/superset/tree/master/superset-frontend/plugins/plugin-chart-table
@@ -113,6 +121,10 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://github.com/patternfly/patternfly-react/tree/main/packages/react-table
   - https://patternfly-react.surge.sh/components/table
   - 给了很多示例，Compound expandable，Tree table
+- @equinor/fusion-react-table
+  - https://github.com/equinor/fusion-react-components/tree/main/packages/table
+  - https://equinor.github.io/fusion-react-components/?path=/docs/table-examples-toolbar-table--toolbar-table
+  - 功能简单，但sort、filter实现的结构清晰
 # react-table-extensions
 - https://github.com/GuillaumeJasmin/react-table-sticky
   - Sticky hook for React Table v7
@@ -188,6 +200,8 @@ modified: '2021-07-20T13:28:26.296Z'
 - data-catalog-components /5Star/GPLv3/202104/js
   - https://github.com/getdkan/data-catalog-components
   - https://getdkan.github.io/data-catalog-components
+  - 依赖bootstrap.v4、reactstrap、react-dnd, react-table.v7
+  - 样式普通
   - A set of React components to facilitate the creation of Open Data Catalogs with React.
   - built for dkan(基于php，而ckan基于python)
 
@@ -211,6 +225,12 @@ modified: '2021-07-20T13:28:26.296Z'
   - Requires numeric width and height of the container.
 - https://github.com/onaio/js-tools/tree/master/packages/DrillDownTable
   - a bootstrap-based higher order component that works with React Table.
+
+- https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
+  - https://www.saas-ui.dev/docs/data-display/data-table
+  - A DataTable component for Chakra UI, build with react-table.
+  - 功能过于简单
+  - 文档样式非常好
 
 - https://github.com/entando/frontend-libraries/tree/master/packages/entando-datatable
   - customizable data table powered by react-table used in Entando projects specifically in Appbuilder & CMS.

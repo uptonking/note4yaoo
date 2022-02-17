@@ -31,6 +31,7 @@ modified: '2020-11-11T13:16:34.742Z'
 # gov-app
 - https://github.com/visualize-admin/covid19-dashboard
   - https://www.covid19.admin.ch/en/overview
+  - 依赖 angular
   - Frontend of the COVID-19 Dashboard. 
   - Project Ownership: Federal Office of Public Health FOPH
 # covid-examples
