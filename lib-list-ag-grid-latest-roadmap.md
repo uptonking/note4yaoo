@@ -11,19 +11,20 @@ modified: '2021-05-13T02:43:35.993Z'
 
 - [The ag-Grid pipeline](https://www.ag-grid.com/ag-grid-pipeline/)
 
-
-
+- What's Next for React UI
+  - In AG Grid v26.2 has a production ready version of React UI. 
+    - It is turned on by setting the grid property reactUi=true.
+  - In AG Grid v27 we plan to make this the default with a fallback property to keep the old rendering. 
+    - The fallback property will be for emergency only and will be released as deprecated.
+  - In AG Grid v28 we plan to remove the old way of React rendering.
 # latest
-
 - 24.0.0
   - [Aggregation] Custom Aggregation methods to have more information in parameters 
     - Pass nodes, and source to know where the aggregation is for 
     - (ie to Do aggregations based on other aggregations)
   - Cleanup Legacy Properties (> 1 year old)
   - Filter: Allow set filter to be combined with other filters
-
 # discuss
-
 - ## We've spent the last 6 months porting AG Grid to React, so it's not longer using a wrapper for AG Grid, but AG Grid 100% React. 
 - https://twitter.com/ag_grid/status/1426087043831062528
   - Our release next week is going to showcase it. 
