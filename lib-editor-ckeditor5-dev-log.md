@@ -303,6 +303,10 @@ modified: '2021-10-27T03:20:45.841Z'
     - [x] 收起折叠按钮会被文章中的图片挡住
   - 侧边栏部分
     - 已注册的用户是不可删除的，是否应该不显示删除按钮
+    - 参考文献
+      - 连续按两次插入bibtex后，会出现2个编辑器
+      - [x] 有时点击插入bibtex的图标会无反应
+        - 首次添加bibtex时，新添加的bibtex entry会带有onClick点击事件
   - hard
     - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
       - 光标移动到待创建双链的文字的位置时，文字会突然缩小
@@ -316,12 +320,15 @@ modified: '2021-10-27T03:20:45.841Z'
   - 可采用类似wolai的单独的侧边悬浮卡片
 
 - 为什么编辑器中插入的bibtex文献，点击后跳转的url显示的id变了
-  - 
+  - 原因是默认创建的文档类型是 binary，而不是 article
+  - (await editor.db.get('d65338ed-8651-4dc8-91e2-60649e5711db')).type
+  - 等待以后修复双链的链接文档
 
 ## 0216
 
-- 样式picker
-  - almanac侧边栏的主文字 #3E4C5C，灰色文字 #757C8A
+- 样式picker almanac侧边栏
+  - 主文字 #2E4155，灰色文字 #757C8A
+  - font-family: "Microsoft YaHei"
 
 - magic-css-heading-title
   - 为什么文末参考文献 h1-References 的高度为71

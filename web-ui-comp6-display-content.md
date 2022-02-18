@@ -11,8 +11,17 @@ modified: '2021-07-28T20:11:37.860Z'
 
 # guide
 
-# discuss
+# card
+- github-card 卡片效果参考
+  - https://twitter.com/remix_run/status/1494053866194624514
+    - twitter上显示的卡片有语言横条
+  - https://github.com/nwtgck/gh-card
+    - 经典3行式：标题；  简介；  lang、star、fork
 
+- [卡片hover变大的效果](https://online.stanford.edu/content-gallery)
+  - [How to enlarge Card size on hovering over it in Material UI?](https://stackoverflow.com/questions/64080401)
+    - `cardHovered: { transform: "scale3d(1.05, 1.05, 1)" }`
+# discuss
 - ## 7 UI Tips for beautiful & usable card designs
 - https://twitter.com/d__raptis/status/1385572926200688641
   - 每条技巧都有图片说明正确与错误用例
