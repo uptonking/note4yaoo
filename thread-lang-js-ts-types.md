@@ -18,7 +18,11 @@ modified: '2021-08-05T04:31:02.298Z'
 # discuss
 - ## 
 
-- ## 
+- ## You are probably familiar with index access operations. 
+- https://twitter.com/TitianCernicova/status/1494683318230605827
+  - Where you can get the type of a property in another type using the T[K] syntax. 
+  - This works well for when K is literal type or a union of literal types
+  - It also works if T is a union, but only for common keys. This isn’t necessarily surprising as only common keys are accessible on a union.
 
 - ## Cross-fading any two DOM elements is impossible right now. Here's why
 - https://twitter.com/jaffathecake/status/1462803936679763971

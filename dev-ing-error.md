@@ -11,6 +11,21 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [SyntaxError: Unexpected eval or arguments in strict mode](https://github.com/nodejs/node/issues/42051)
+  - 严格模式下慎用 arguments 和 eval
+  - It is a Syntax Error if the source text matched by this production is contained in strict mode code and the StringValue of Identifier is "arguments" or "eval".
+  - Turn on strict mode and you should see the same error. Try this:
+
+```JS
+(function() {
+  'use strict';
+  document.addEventListener('message', ({ detail: { arguments } }) => {
+    console.log(arguments);
+  });
+  document.dispatchEvent(new CustomEvent('message', { detail: { arguments: ['ok'] } }));
+})();
+```
+
 - [overleaf写作，如何输入中文？](https://www.zhihu.com/question/41206352)
   - \usepackage[UTF8]{ctex}
   - 左上角的Menu -> Setting -> Compiler -> XeLatex

@@ -39,7 +39,10 @@ modified: '2021-10-29T15:02:28.882Z'
 
 - ## 
 
-- ## 
+- ## http://Replay.io is a runtime company. 
+- https://twitter.com/jasonlaster11/status/1494430547153674253
+  - All runtimes (Browsers, Node, Python, ...) should be replayable.
+  - We're improving our runtime tooling so that eventually anyone can make their own runtimes replayable as well.
 
 - ## 目前可以用 https://notionlytics.com 免费版就够了，有一些简单的统计
 - https://twitter.com/xatest/status/1491263423942131714

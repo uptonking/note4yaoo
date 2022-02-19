@@ -17,7 +17,10 @@ modified: '2021-03-11T11:26:06.670Z'
 
 - ## 
 
-- ## 
+- ## A modern SVG rendering engine is ready.: resvg-js 2.0 Alpha with WASM support. 
+- https://twitter.com/yisibl/status/1493597768904212482
+  - now you can even convert SVG to PNG in Web Worker. for Node.js, 
+  - with resvg-js you can get rid of the heavy Puppeteer or node-canvas
 
 - ## TIL that the transform origin property of an SVG element is relative to the SVG image, rather than the center of the transforming element like it is in CSS.
 - https://twitter.com/steveruizok/status/1440730385248260104

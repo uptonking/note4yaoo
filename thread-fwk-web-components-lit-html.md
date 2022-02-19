@@ -13,7 +13,12 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## 简单总结 Web Component 样式问题
+- https://twitter.com/zQwQs/status/1493902262779138048
+  1. 要 attachShadow({ mode }) 才启用隔离。这里mode不影响样式
+  2. 样式隔离后，自定义属性（如CSS Variable）仍然可以穿透
+  3. 组件里import样式，挂载瞬间可能因为加载而出现样式闪烁，故推荐内联style标签
+  4. 继承全局样式有新特性::part
 
 - ## I've been using shadow dom for over a year a half, and I still don't see many real world use cases for it. 
 - https://twitter.com/little_bret/status/1419829971376381952
