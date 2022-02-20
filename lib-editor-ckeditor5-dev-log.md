@@ -314,6 +314,11 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0221
+
+- ckeditor的默认图表文件导出位置
+  - packages/ckeditor5-core/src/index.js
+
 ## 0220
 
 - 高亮块功能设计
@@ -325,11 +330,15 @@ modified: '2021-10-27T03:20:45.841Z'
     - 不支持 > 快捷键
 
 - 高亮块api设计
-  - width
-  - backgroundColor
+  - width 0.5, 0.75, 1
+  - backgroundColor none, gray, rgby
+  - showBorder
 
 - 高亮块ui交互设计
   - 参考 ckeditor blockquote/link/codeblock
+  - 配置项放在balloon toolbar
+
+- documentdb接入yjs前的版本是 1.0.32
 
 ## 0217
 
