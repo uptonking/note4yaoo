@@ -316,6 +316,9 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 0221
 
+- dev-plan
+  - alert-block plugin upcast
+
 - ckeditor的默认图表文件导出位置
   - packages/ckeditor5-core/src/index.js
 
