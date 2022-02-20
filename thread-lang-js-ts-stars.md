@@ -11,7 +11,16 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
-- ## 
+- ## Habit: When declaring REST API response types via #TypeScript, I only declare properties for the fields we use.
+- https://twitter.com/housecor/status/1495023556358455298
+- Benefits:
+  1. The type is simpler.
+  2. The type contains no noise. All properties are relevant.
+  3. The type is handy for mocks. It declares only the properties we use.
+- To clarify, generated types are great. 👍 I just don't want to use them directly because they often contain properties I don't need or use. 
+  - So, I use TypeScript's `Pick` or `Omit` utility functions to derive my own more narrow types.
+- manually defined API types often do not reflect the reality and even if they do now, they can get out of sync real quickly.
+  - We've moved to openAPI contract definitions and let the types be generated from that - and I don't want to go back 
 
 - ## FWIW we spent considerable effort exploring whether modern syntax could benefit Preact, and our conclusion was that hand-optimized ES5 is still fastest.
 - https://twitter.com/_developit/status/1437429523893600256
@@ -19,10 +28,10 @@ modified: '2021-06-22T11:54:44.506Z'
 - Example - here's the fastest ES20xx JSX factory vs ES5
   - The ES5 version is faster than the modern syntax version - not because rest parameters are slow, but because syntactic rest parameters unconditionally allocate an Array. In the verbose ES5 version allocation is conditional for the two most common cases (0 children / 1 child).
 - There are a bunch of these cases:
-  - `for..of`: faster than `forEach()`, slower than `for(;;)` syntax
-  - `Map`: faster than array pairs, slower than dictionary-mode object
-  - `async`: faster than `Promise` chains, slower than callbacks
-  - `class`: faster than transpiled ES5, slower than hand-written
+  - `for..of` : faster than `forEach()` , slower than `for(;;)` syntax
+  - `Map` : faster than array pairs, slower than dictionary-mode object
+  - `async` : faster than `Promise` chains, slower than callbacks
+  - `class` : faster than transpiled ES5, slower than hand-written
 - I believe we're sort of at the point where modern JS is fast enough for 95% of things and should be the default, but library authors seeking low-level performance wins still drop down to ES5 where verbosity can better inform VM optimizations
   - Ideally this would reverse itself over time, but that's a chicken-egg problem.
 
