@@ -31,6 +31,10 @@ modified: '2021-05-13T03:09:56.491Z'
 - 小程序
   - mpvue(deprecated)
 
+- 抛弃移动端app的产品
+  - the verge
+  - dribbble
+    - [We're sunsetting Dribbble's iOS & Android apps](https://dribbble.com/stories/2021/01/29/sunsetting-dribbble-mobile-apps)
 # features
 
 - 跨平台一致的ui体验

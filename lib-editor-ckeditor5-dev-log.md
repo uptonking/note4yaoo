@@ -314,6 +314,20 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0218
+
+- 开发计划
+  - 设置项保存到本地数据库
+  - 高亮块 或 窄宽度的段落
+  - 通用的文档列表弹窗
+
+- 高亮块组件设计
+
+- [How to align horizontal icon and text in MUI](https://stackoverflow.com/questions/51940157)
+
+- [How to keep showing the 'popover' on hovering on the anchorEl and 'popover' as well?](https://stackoverflow.com/questions/54705254)
+  - 要点在设置 pointerEvents
+
 ## 0217
 
 - 列表项上显示悬浮卡片是不是一种优雅的交互体验？
