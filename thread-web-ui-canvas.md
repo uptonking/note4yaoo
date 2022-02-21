@@ -26,16 +26,22 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Optimizing FPS of a 2D zoomable canvas built with React+DOM and hit a hard wall: Why does this "Recalculate Style" in the rendering pipeline takes so much time? 
+- https://twitter.com/donpark/status/1492972719704477697
+  - Is there any chance to improve it? 
+  - For reference, @tldraw is also built with React+DOM (SVG) and has the same issue.
+- AFAIK this is one of the reasons why Figma renders in a worker thread. Use something like new WebAssembly version of resvg-js to render SVG to canvas. On Chrome, mapped OffscreenCanvas can be used to avoid canvas transfer.
+- I’d actually be very surprised if rendering html/svgs to canvas and stamping that over would be faster than the browser just rendering svg?
+  - There is known perf issues with large scale svg scenes which is why most teams use webGL instead…because it gives you more control over performance
+  - I’ve seen this with SVG (http://globs.design is one big svg and I had to cut corners to get perf decent), but regular dom scenes (eg tldraw) seem alright
+- Mixing CSS style attribute w/SVG also spells trouble. Another reason I like resvg is it breaks complex SVG into Micro SVG which could be used as is w/less side-effects or target canvas, WebGL, WebGPU or whatever w/a small bucket of elbow grease. 
+- Yeah for sure. We also use a lot of svg assets and just render them via webGL to have more control over perf
 
 - ## Really learning a lot reading through @steveruizok's fantastic #tldraw codebase
 - https://twitter.com/aboutgeo/status/1492055746351087637
-  - overall state management & abstractions. 
-    - Abstraction of drawing process as a "session" (if I understood that correctly). 
-  - Other things similar but slightly different, e.g. abstractions around drawing new shapes vs. editing existing.
-- 
-- 
-- 
+- overall state management & abstractions. 
+  - Abstraction of drawing process as a "session" (if I understood that correctly). 
+- Other things similar but slightly different, e.g. abstractions around drawing new shapes vs. editing existing.
 
 - ## I'm going to keep working on @tldraw . I'll be raising money in the new year to build a team and build an open-core platform for spatial canvas apps.
 - https://twitter.com/steveruizok/status/1468630454601408518

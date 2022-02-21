@@ -33,9 +33,17 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## I think my ideal learning path is 1) find good toy implementation, 2) port to a different language.
+- https://twitter.com/geoffreylitt/status/1493410385168420868
+  - Porting can be fast, efficient, methodical -- but also forces enough engagement to actually understand. 
+  - Easily 10x more effective than just reading source
+  - Recent example: had a hard time understanding Adapton, an incremental computation system. Luckily found miniAdapton, a beautiful small Scheme implementation. After porting that to Typescript, could go back and actually grok the original paper
 
-- ## 
+- ## "Using Google Fonts is faster, as the font might already be in the browser's cache!"
+- https://twitter.com/PixelAmbacht/status/1494272370076536840
+  - ⚠️ This hasn't been true for over a year now: cross domain caching has been disabled in all major browsers. 
+  - Using a CDN for fonts is NEVER faster than self-hosting!
+- Totally correct thread, but Google Fonts supports self hosting and so this all only applies when using the Google Fonts CDN which really should only be used for quick hacks at this point.
 
 - ## Been doing some prototyping lately. Turns out, JavaScript with no types is nice, actually!
 - https://twitter.com/devongovett/status/1490729034803724289

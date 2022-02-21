@@ -11,6 +11,19 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Thinking in Frontend
+- step1: 根据 wireframe 开发 Layout 
+- step2: 使用 mock data 开发 UI
+- step3: 美化 UI
+- step4: 使用 real data from API
+- step5: ...
+
 - ## Immutability is good... but all code _does_ have a cost, and that includes copying objects/arrays.
 - https://twitter.com/acemarke/status/1489670150651580417
   - There are many times that you _can_ truly mutate data safely (especially when it's scoped inside a single function).

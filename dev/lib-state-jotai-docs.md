@@ -30,6 +30,8 @@ modified: '2022-01-05T13:59:29.002Z'
 
 ## eg-csb
 - eg-stars
+  - https://codesandbox.io/s/redux-essentials-counter-example-replaced-by-jotai-r7xqy7
+    - 将redux counter示例用jotai重写
   - https://codesandbox.io/s/zustand-valtio-jotai-counters-my6np
 - jotai-eg
   - https://codesandbox.io/s/jotai-query-hacker-news-u4sli

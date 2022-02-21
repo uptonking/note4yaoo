@@ -10,6 +10,15 @@ modified: '2021-05-13T03:13:52.403Z'
 # guide
 
 # discuss
+- ## I break down a step-by-step process for how I model statecharts
+- https://twitter.com/mpocock1/status/1493236276899815424
+  - https://www.youtube.com/watch?v=wykDyFwr8Lk
+1. List the events
+2. List the side effects
+3. Figure out the machine's lifecycle
+4. Figure out the first state
+5. Use the events as paths to create new states
+
 - ## [statechart vs state-machine](https://stackoverflow.com/questions/37034913)
 - A state machine is a mathematical model of computation that is less general purpose than a Turing Machine. 
   - Another common usage of the term "state machine" is the code that implements that model and runs on a computer.

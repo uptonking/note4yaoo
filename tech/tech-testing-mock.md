@@ -41,6 +41,12 @@ modified: '2021-08-12T20:21:51.264Z'
 - https://github.com/marmelab/FakeRest
   - Intercept AJAX calls to fake a REST server based on JSON data.  
   - Use it on top of Sinon.js (for XMLHTTPRequest) or fetch-mock (for fetch) to test JavaScript REST clients on the browser side (e.g. single page apps) without a server.
+- https://github.com/typicode/json-server
+  - Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+- https://github.com/mswjs/msw
+  - Seamless REST/GraphQL API mocking library for browser and Node.js.
+  - https://github.com/stordco/msw-toolbar
+    - a little utility package that helps toggle between your mocks + a real API. 
 
 - https://github.com/fiverr/react-fetch-mock-provider
   - wrapper around fetch-mock, that provides a more React-friendly interface.

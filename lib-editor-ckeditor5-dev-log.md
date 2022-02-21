@@ -314,14 +314,40 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0218
+## 0221
 
-- 开发计划
+- dev-plan
+  - alert-block plugin upcast
   - 设置项保存到本地数据库
   - 高亮块 或 窄宽度的段落
   - 通用的文档列表弹窗
 
-- 高亮块组件设计
+- ckeditor的默认图标文件导出位置
+  - packages/ckeditor5-core/src/index.js
+
+## 0220
+
+- 高亮块功能设计
+  - 可调整宽度
+  - 可设置背景色
+  - 支持编辑高亮块内容
+  - 不支持
+    - 不支持嵌套高亮块
+    - 不支持 > 快捷键
+
+- 高亮块api设计
+  - width 0.5, 0.75, 1
+  - backgroundColor none, gray, rgby
+  - showBorder
+
+- 高亮块ui交互设计
+  - 参考 ckeditor blockquote/link/codeblock
+  - 配置项放在balloon toolbar
+
+- documentdb接入yjs前的版本是 1.0.32
+
+## 0218
+
 
 - [How to align horizontal icon and text in MUI](https://stackoverflow.com/questions/51940157)
 
