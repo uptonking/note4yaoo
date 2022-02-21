@@ -54,6 +54,14 @@ modified: '2020-12-29T17:52:23.312Z'
 - [知乎怎么查看自己评论过的问题？](https://www.zhihu.com/question/35126639/answers/updated)
   - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
+# running
+- 国内的跑步类app几乎都不支持导出数据
+- 国内的gps工具类app几乎都将导出数据或批量数据操作作为付费功能
+- 国外的运动、gps类app几乎都依赖google服务
+- 跨国公司如nike砍掉了不盈利的nike run club网页版
+
+> 结论是，如果要完全掌握数据，则需要选择支持导出gpx数据的硬件，不能是硬件不支持而必须在网页或app操作导出的那种产品
+
 # app-win10
 
 - FileExplorer
