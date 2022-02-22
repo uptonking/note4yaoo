@@ -314,13 +314,39 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0223
+
+- 紧急bugs
+  - createImgDataRefConverterPlugin() 创建的图片插件有问题，每次切换文章会抛出异常
+    - plugincollection-plugin-name-conflict {"pluginName":"ImgDataRefConverterPlugin"}
+  - 登录后打开的最近一篇文档，所有人都是相同的
+  - 创建新文章时，目录树组件更新有问题
+  - 点击新建文档按钮时，控制台抛出异常  (reading 'model') at Pr._save
+
+## 0222
+
+- 站点测试
+  - 重新登录后，编辑器无法显示
+
+- 路由验证的场景
+  - 没spaceId就进不去编辑器页面
+    - 首次登录时
+    - 刷新页面时
+  - 退出登录时
+    - `location.reload()` method reloads the current URL, like the Refresh button.
+    - `location.assign(url)` method causes the window to load and display the document at the URL specified.
+
+- location.href property vs. location.assign() 
+  - it may be true that `location.href = url;` is faster than `location.assign(url)`, although it may depend on the JavaScript engine implementation
+  - Calling a function should be slightly slower than accessing the property, but in terms of memory there should not be a big difference in my humble opinion.
+
 ## 0221
 
 - dev-plan
-  - alert-block plugin upcast
+  - [x] alert-block plugin upcast
   - 设置项保存到本地数据库
-  - 高亮块 或 窄宽度的段落
-  - 通用的文档列表弹窗
+  - [x] 高亮块 或 窄宽度的段落
+  - ~~通用的文档列表弹窗~~
 
 - ckeditor的默认图标文件导出位置
   - packages/ckeditor5-core/src/index.js
@@ -347,7 +373,6 @@ modified: '2021-10-27T03:20:45.841Z'
 - documentdb接入yjs前的版本是 1.0.32
 
 ## 0218
-
 
 - [How to align horizontal icon and text in MUI](https://stackoverflow.com/questions/51940157)
 
@@ -462,8 +487,8 @@ await (await editor.db.getNamedDocument('global')).getDecodedContent()
 temp1.getMap('recent-docs').get('lastDocument')
 temp1.getMap('recent-docs')
 temp1.getMap('recent-docs').get('d')
-temp1.getMap('recent-docs').set('d', 'idddd')
-temp3.set('d', 'idddd')
+temp1.getMap('recent-docs').set('d', 'id')
+temp3.set('d', 'id')
 temp3.get('d')
 ```
 
