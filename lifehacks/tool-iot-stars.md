@@ -1,6 +1,6 @@
 ---
 title: tool-iot-stars
-tags: [iot, laptop, phone]
+tags: [iot, laptop, phone, yaoo]
 created: '2020-01-12T12:32:03.096Z'
 modified: '2021-01-12T18:49:22.746Z'
 ---
@@ -113,7 +113,6 @@ modified: '2021-01-12T18:49:22.746Z'
   - https://zh.wikipedia.org/wiki/IPhone_6s
 - [iPhone 6s Plus](https://www.theiphonewiki.com/wiki/IPhone_6s_Plus)
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
-
 # laptop
 
 ## HP ENVY - 15-as109tu
@@ -184,3 +183,25 @@ modified: '2021-01-12T18:49:22.746Z'
 - [惠普 ENVY 薄锐笔记本 - 15-as109tu 产品规格](https://support.hp.com/cn-zh/document/c05255263)
 - [HP ENVY - 15-as109tu Product Specifications](https://support.hp.com/us-en/product/hp-envy-15-as100-notebook-pc/12499192/model/13402468/document/c05255261)
 - [惠普ENVY 15-AS109TU(Y8H74PA)参数](http://detail.zol.com.cn/1156/1155399/param.shtml)
+# watch
+
+## Amazfit T-Rex Pro
+
+- docs
+  - user guide
+    - https://cn.amazfit.com/cn/services/download.html
+
+- pros
+  - 支持跑步数据导出，但仅支持在app单条导出，不支持批量导出，且手表自身只保存最近20次运动记录
+  - 支持多种运动模式记录，如跑步、健走、骑行
+  - 支持多种健康指标，如心率、睡眠
+- cons
+  - 导出数据功能不够强大，且默认导出格式只支持gpx
+  - 首次开机使用时，必须先用app扫码绑定手表，手表才可正常使用
+  - 价格小贵
+
+- 手表的数据线只有2个金属触点，仅支持充电，不支持数据传输
+- 在zepp app上导出运动记录后，gpx文件所在位置路径为从手机根目录开始
+  - /storage/emulated/0/Android/data/com.huami.watch.huamiwatchmanager/files/zepp/gpx/Zepp20220223231809.gpx
+
+- gpx
