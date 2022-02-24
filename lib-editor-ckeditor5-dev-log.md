@@ -51,6 +51,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - 看板工具 personal-kanban
     - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
   - 多维表格
+  - 支持不同行类型的list
   - 文本以打字动画的形式动态展示 typed.js
     - 书写动画、回退动画
     - to-do
@@ -279,7 +280,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - inline editing
     - orm integration
   - sortable-filterable-groupable table
-  - 重构文章页题头部分组件
 
 - to-be-discussed
   - 初步实现的菜单项都是英文，产品化时应该用中文
@@ -314,14 +314,55 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0225
+
+## 0224
+
+- dev-plan
+  - [x] 登录后打开的最近一篇文档，所有人都是相同的
+  - [x] 恢复插入数学公式的按钮
+  - [x] 用户设置项保存到本地数据库
+  - [ ] 从侧边栏bibtex列表中删除项目
+  - [ ] 通过新建文档按钮创建的新文档没有出现在左侧目录树
+  - [ ] 所有文档列表
+  - [ ] 修复字体突然变小的问题
+  - [ ] 定制标题样式
+  - 待讨论
+    - bibtex是归属到workspace，还是归属到文章？
+      - 暂时整个workspace共享
+    - 新建的空文档(无标题文档、无内容文档)是否要保存？
+    - 待实现，删除文档
+    - 分享文章的功能
+
+- 紧急bug
+  - 协作编辑时，第2个人的输入无法同步到第1个人
+  - bibtex无法添加
+  - 打开链接文档会卡顿，打开目录树会卡顿
+  - 分享功能
+
+- 需要修改图标的大小
+- m
+  - 上极限
+  - 下极限
+  - 所有三角函数，如 余弦
+- l
+  - 所有矩阵，如 多行对齐等式
+- xl
+
+- [How to change font-size to a SVG?](https://stackoverflow.com/questions/64914200)
+  - You can not change the font size or font width because SVG is not a font. It is Scalable Vector Graphics. 
+  - If you would have some text in your SVG, then you could do something with the font from the text element.
+  - The trick is to assign with and height the em unit
+
 ## 0223
 
-- 紧急bugs
-  - createImgDataRefConverterPlugin() 创建的图片插件有问题，每次切换文章会抛出异常
-    - plugincollection-plugin-name-conflict {"pluginName":"ImgDataRefConverterPlugin"}
-  - 登录后打开的最近一篇文档，所有人都是相同的
+- bugs整理
+  - 切换文章相关 (bugs自己消失了)
+    - createImgDataRefConverterPlugin() 创建的图片插件有问题，每次切换文章会抛出异常
+      - plugincollection-plugin-name-conflict {"pluginName":"ImgDataRefConverterPlugin"}
+    - 点击新建文档按钮时，控制台抛出异常  (reading 'model') at Pr._save
   - 创建新文章时，目录树组件更新有问题
-  - 点击新建文档按钮时，控制台抛出异常  (reading 'model') at Pr._save
+  - [x] 登录用户没有workspace时弹窗提醒
 
 ## 0222
 
