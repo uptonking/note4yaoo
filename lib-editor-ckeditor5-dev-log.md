@@ -281,15 +281,13 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
-- to-be-discussed
-  - 初步实现的菜单项都是英文，产品化时应该用中文
-    - [ ] 文章页可拖拽改变侧边栏宽度
-
-- 重构题头部分
-  - [x] 更换emoji picker
-  - 字段列表分类型重构
-
-- bugs真的多，修的我很烦躁
+- dev-affine-old
+  - to-be-discussed
+    - 初步实现的菜单项都是英文，产品化时应该用中文
+    - ~~文章页可拖拽改变侧边栏宽度~~
+  - 重构题头部分
+    - [x] 更换emoji picker
+    - ~~字段列表分类型重构~~
   - 编辑器
     - blockquote插件中的换行，每次刷新页面后，中间的空行会加一个
       - 空文档无此问题，复制示范文档会出现此问题
@@ -297,7 +295,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
   - 文章页
     - [x] 去掉水平滚动条
-    - [x] 应该使用CustomScrollbar，最好去掉浏览器默认的竖直滚动条
+    - [x] 使用CustomScrollbar后，最好去掉浏览器默认的竖直滚动条
   - 文章左侧标题目录toc
     - [x] 点击无法跳转
     - [x] 收起折叠按钮会被文章中的图片挡住
@@ -315,6 +313,9 @@ modified: '2021-10-27T03:20:45.841Z'
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
 ## 0225
+
+- 路由部分重构思路
+  - 使用isLoading和user对象来判断，而不是userStatus
 
 ## 0224
 
@@ -335,19 +336,19 @@ modified: '2021-10-27T03:20:45.841Z'
     - 分享文章的功能
 
 - 紧急bug
-  - 协作编辑时，第2个人的输入无法同步到第1个人
   - bibtex无法添加
+  - 协作编辑时，第2个人的输入无法同步到第1个人
   - 打开链接文档会卡顿，打开目录树会卡顿
-  - 分享功能
+  - ~~分享功能~~
 
 - 需要修改图标的大小
-- m
-  - 上极限
-  - 下极限
-  - 所有三角函数，如 余弦
-- l
-  - 所有矩阵，如 多行对齐等式
-- xl
+  - m
+    - 上极限
+    - 下极限
+    - 所有三角函数，如 余弦
+  - l
+    - 所有矩阵，如 多行对齐等式
+  - xl
 
 - [How to change font-size to a SVG?](https://stackoverflow.com/questions/64914200)
   - You can not change the font size or font width because SVG is not a font. It is Scalable Vector Graphics. 
