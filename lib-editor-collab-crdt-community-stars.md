@@ -9,6 +9,10 @@ modified: '2021-11-24T17:10:40.462Z'
 
 # discuss
 
+- ## The future of apps is local-first and CRDTs
+- https://twitter.com/AdventureBeard/status/1495973698846736387
+  - [Local-first software](https://www.inkandswitch.com/local-first/)
+
 - ## Peritext: a CRDT for rich text collab
 
 - https://twitter.com/geoffreylitt/status/1463244227412824066

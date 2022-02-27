@@ -7,8 +7,9 @@ modified: '2021-08-06T07:36:05.864Z'
 
 # thread-web-ui-canvas
 
-# guide
+> tldraw/react-three-fiber
 
+# guide
 - [Creating a Zoom UI](https://www.steveruiz.me/posts/zoom-ui)
   - "zoom UI" like figma/ps. This pattern lets a user explore a "canvas" of content by panning around the canvas or zooming in on a specific point.
   - an SVG implementation
@@ -22,9 +23,19 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
-- ## 
+- ## ever wondered how to make context aware follow-along cursors? 
+- https://twitter.com/0xca0a/status/1495791102884028416
+  - it's a bit of a problem because canvas lives in another context than the dom and lifting up state is always awkward. 
+  - here's a solution using @pmndrs tunnel-rat: grab state, dig a tunnel
+  - https://codesandbox.io/s/basic-demo-forked-5nd0fc
+- I wish there was a tunnel lib that supported SSR 😏 (not necessarily for R3f usage)
 
-- ## 
+- ## I'm starting to see some interesting patterns now that the scene graph is headless / separated from the rendering solution, which has its own (and much more complex) graph.
+- https://twitter.com/steveruizok/status/1497974253429403648
+
+- graph crew, what do you call graphs where there are two types of edges between the same set of nodes? Are these two separate graphs?
+  - https://twitter.com/steveruizok/status/1497852148004052993
+- I think it could be described as a labelled multidigraph. But I’d definitely model your use case with two different graphs.
 
 - ## Optimizing FPS of a 2D zoomable canvas built with React+DOM and hit a hard wall: Why does this "Recalculate Style" in the rendering pipeline takes so much time? 
 - https://twitter.com/donpark/status/1492972719704477697

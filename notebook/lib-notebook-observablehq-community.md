@@ -11,7 +11,10 @@ modified: '2021-05-14T14:55:00.191Z'
 
 - ## 
 
-- ## 
+- ## Anyone seen any good patterns for running automated tests in an @observablehq notebook?
+- https://twitter.com/simonw/status/1495094294851428352
+- If ya looking for more end-to-end or integration tests: https://github.com/asg017/observable-prerender
+  - Otherwise, abstracting your JS code into a separate package is always cool, or moving your data processing into a node script is also helpful
 
 - ## Observable’s Not JavaScript_201906
 - https://news.ycombinator.com/item?id=20184181

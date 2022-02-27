@@ -75,9 +75,29 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## Mobx supports concurrent rendering too.But after playing around with valtio, I realized you did implement in your "simple code"  the most important feature of valtio and mobx - it won't rerender if the non-accessed field has changed
+- ## 
+
+- ## 
+
+- ## i made it(zustand) initially bc of problems that redux couldn't solve, after using redux for multiple years i started to dislike the opinionated nature. it's still flux which scales well.
+- https://twitter.com/0xca0a/status/1495360284139139074
+  - we have it running in a massive application (CAD) with hundreds of thousands of nested state nodes.
+- Is it all just one Zustand instance or spread over multiple based on concern?
+- one store, multiple factories that create fractions of state, + primed hook selectors: 
+  - const foo = useDrawing(ID, drawing => drawing.foo)
+  - const bar = usePlugin(ID, plugin => plugin.bar)
+  - this way we have split up the state model into multiple concerns.
+- What were the problems which Redux couldn't solve? 
+  - the big one was that redux is context based for no apparent reason. the app provider it prescribes is useless in 99% of all cases. bc of this it cannot be used between renderers. state in react-dom can not pierce into canvas for instance.
+  - opinions like these made it sour among other problems. zustand is redux, but closer to the non-react original and without opinions. if i wanted zustand to propagate via context i can make it so, but it doesn't prescribe any patterns.
+  - zustand being @pmndrs also probably is the only state manager in react that holds complex games with ECS (Entity-Component-System) logic and state bound components with 120fps refresh rates. it gets stress tested in ways that go well beyond regular UI, but UI benefits.
+- What makes it performant? Most state management trash memory in my experience. Especially if your web app/games have 100s/1000s of constantly changing objects
+  - flux state has the benefit of being outside the component tree, it's javascript state, not react state. 
+  - hence it can be used similar to react animation libs that go outside of react but that can still bind to objects or components.
+
+- ## Mobx supports concurrent rendering too. But after playing around with valtio, I realized you did implement in your "simple code"  the most important feature of valtio and mobx - it won't rerender if the non-accessed field has changed
 - https://twitter.com/terrysahaidak/status/1484881817752772610
-  - This is the most important feature. It's that all the other state managers are missing. Also, without it I don't recommend using any of these state managers in react native where rerenders do matter a lot.This is why I don't recommend redux. At all. Never use it in React Native
+  - This is the most important feature. It's that all the other state managers are missing. Also, without it I don't recommend using any of these state managers in react native where rerenders do matter a lot. This is why I don't recommend redux. At all. Never use it in React Native
 - Totally agreed here. Actually, I started adding the feature for redux: https://github.com/dai-shi/reactive-react-redux and even created a PR for react-redux.
   - Now, I have React Tracked https://react-tracked.js.org which adds render optimization for any selector based hooks, like react-redux and zustand.
 

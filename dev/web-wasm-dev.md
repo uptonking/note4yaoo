@@ -64,6 +64,7 @@ modified: '2021-01-01T20:10:51.125Z'
 ### discussion
 
 - [Why WASM is not (for now) the future of Babylon.js](https://twitter.com/deltakosh/status/1423657621010087947)
+- [Why WASM is not the future of Babylon.js](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
 - What about WebGPU?
   - Webgpu can be seen like webgl3 so no difference
 - Nice writeup, yeah it’ll be hard to integrate WASM in unless we figure out a way to let WASM do its own thing for longer without too much communication with the JS side.

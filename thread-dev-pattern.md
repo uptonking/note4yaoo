@@ -15,7 +15,14 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## 三种日期格式，以及主要使用国家。
+- https://twitter.com/ruanyf/status/1496144593577984008
+  - YYYY-MM-DD：加拿大、中国、日本、立陶宛等。
+  - MM-DD-YYYY：美国和菲律宾。
+  - DD-MM-YYYY：其他所有国家，包括几乎整个欧洲和非洲。
+- 只有 YYYY-MM-DD 能正确排序
+  - YYYY-MM-DD: ISO 8601标准。 我们搞计算机的人喜欢的格式，因为可以按照字节顺序排序。技术没有国界
+- 德国比较特殊，TT-MM-JJJJ，做本地化格式处理比较坑
 
 - ## Thinking in Frontend
 - step1: 根据 wireframe 开发 Layout 

@@ -13,7 +13,8 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## TIL you can use "it.only" to run only one test at a time
+- https://twitter.com/steveruizok/status/1496052781945397252
 
 - ## One fact that was unknown to me before becoming an open source maintainer is: You have to really understand a contribution before accepting it, as _you_ have to maintain it.
 - https://twitter.com/TkDodo/status/1487804403356680201

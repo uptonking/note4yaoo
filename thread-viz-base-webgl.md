@@ -7,14 +7,18 @@ modified: '2021-03-11T11:26:12.335Z'
 
 # thread-viz-base-webgl
 
+# guide
+- [Why WASM is not the future of Babylon.js](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
+  - What about WebGPU? Webgpu can be seen like webgl3. so no difference
 # babylon
-
 - ref
   - https://twitter.com/search?q=babylon%20(from%3A0xca0a)&src=typed_query&f=live
 # pieces
 - ## 
 
-- ## 
+- ## RIP to AWS Sumerian, which was officially laid to rest yesterday. 
+- https://twitter.com/visageofscott/status/1496263200786239492
+  - @babylonjs is now the officially recommended migration destination of Sumerian users, making babylon the suggested engine for both AWS and Azure customers.
 
 - ## Just released v2 of TinySDF, my ~1.2kb browser-side SDF font generator (useful for rendering crisp scalable text in WebGL) 
 - https://twitter.com/mourner/status/1440713101049929745

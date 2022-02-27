@@ -11,6 +11,41 @@ modified: '2021-10-29T15:05:56.151Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 6 years ago I joined a 5 person startup. We raised over $54.2M in funding over 5 rounds. Now that company has been sold for parts and all employees are underwater. 
+- https://twitter.com/tommoor/status/1497640705434521609
+
+- 6 years ago I joined a 20-person startup.
+  - I wanted to quit after my first week, but didn't.
+  - Now our company is worth over $1B and has 200+ employees.
+  - Here's what I've learned about succeeding at a startup:
+- https://twitter.com/bbourque/status/1497563992478257153
+  - 1) Startups are HARD. 
+  - 2) There's a massive amount of UNCERTAINTY
+  - 3) A great founder will challenge you constantly.
+  - 4) The leadership team's values are INCREDIBLY important
+  - 5) It sucks to miss goals and let people down
+  - 6) What you do in year 1 is very different from year 2, year 3, year 4, etc...
+  - 7) Be biased to act
+    - Small experiments can reveal big insights quickly. 
+    - Don’t waste time over-planning / overthinking. 
+    - Run lots of small experiments and expect that some will work out.
+  - 8) MVP most things.
+  - 9) Take risks
+  - 10) Nothing is “not my job”. 
+  - 11) Show people it’s okay to be wrong
+  - 12) Let curiosity carry you.
+  - 13) Understanding technical things is very useful. 
+  - 14) There's only so much that scrappy people can figure out quickly...
+  - 15) Identify your weaknesses
+
 - ## 在 V2ex 看到一个独立开发的哥们，只能说，读书少确实害了他自己，做错了几乎所有事情。得亏是有个好的老婆和岳父，能坚持到现在。
 - https://twitter.com/xiqingongzi/status/1493456735180587008
   - 独立开发并非毫无指南，多读书，多看报，会少踩很多坑。不要踩别人踩过的坑。

@@ -10,9 +10,19 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ReactNode TS type is too loose
+- https://twitter.com/sebastienlorber/status/1496170761249296391
+  - Suggests to create a userland StrictReactNode type 
+
 - ## are there tools for manipulating the AST of code interactively? i'm converting `function MyComponent` to `const MyComponent` and would love to record AST operations like vim macros
 - https://twitter.com/brian_wtLau/status/1494410666202984452
-- What are the potential benefits of converting `function` to `const`?
+- What are the potential benefits of converting `function` to `const` ?
   - needed to wrap a react component with `memo` or `forwardRef`
 
 - ## In React (and other UI frameworks), we spend a lot of time deciding where state should live.
