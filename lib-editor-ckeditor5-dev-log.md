@@ -312,21 +312,16 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0225
-
-- 路由部分重构思路
-  - 使用isLoading和user对象来判断，而不是userStatus
-- 添加bibtex去重，根据标题
-
-## 0224
+## 0228
 
 - dev-plan
-  - [x] 登录后打开的最近一篇文档，所有人都是相同的
-  - [x] 恢复插入数学公式的按钮
-  - [x] 用户设置项保存到本地数据库
+  - [x] 所有文档列表，重构更多操作
   - [ ] 从侧边栏bibtex列表中删除项目
+  - [ ] 双链从文中删除时，却没有从尾部删除
+  - [ ] fix 默认显示文末参考文献
+  - [ ] fix 文档树的最下方默认无法完整显示
+  - [ ] 默认字体修改为衬线体
   - [ ] 通过新建文档按钮创建的新文档没有出现在左侧目录树
-  - [ ] 所有文档列表
   - [ ] 修复字体突然变小的问题
   - [ ] 定制标题样式
   - 待讨论
@@ -335,6 +330,24 @@ modified: '2021-10-27T03:20:45.841Z'
     - 新建的空文档(无标题文档、无内容文档)是否要保存？
     - 待实现，删除文档
     - 分享文章的功能
+
+## 0228
+
+- dev-plan
+  - [x] 添加bibtex去重，根据标题
+  - [x] 所有文档列表
+
+## 0225
+
+- 路由部分重构思路
+  - 使用isLoading和user对象来判断，而不是userStatus
+
+## 0224
+
+- dev-plan
+  - [x] 登录后打开的最近一篇文档，所有人都是相同的
+  - [x] 恢复插入数学公式的按钮
+  - [x] 用户设置项保存到本地数据库
 
 - 紧急bug
   - bibtex无法添加
@@ -349,7 +362,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 所有三角函数，如 余弦
   - l
     - 所有矩阵，如 多行对齐等式
-  - xl
 
 - [How to change font-size to a SVG?](https://stackoverflow.com/questions/64914200)
   - You can not change the font size or font width because SVG is not a font. It is Scalable Vector Graphics. 
