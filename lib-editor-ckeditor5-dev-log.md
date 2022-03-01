@@ -312,16 +312,47 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0228
+## 0301
+
+- 开会小结
+  - 新的基座工程项目
+    - 路由管控
+    - 接入子项目
+    - 在test.affine上能上线
+    - 登录保留authing
+  - block editor 后端可以很简单
+    - 单个拉取
+    - 批量拉取
+    - version解决同步冲突的问题，但yjs也可以解决冲突问题
+  - 客户端如何拉取数据
+    - 一批一批
+    - 同步数据库
+  - yjs的二进制数据包含了历史记录，但二进制默认不可识别，服务器实现搜索需要额外功能
+  - 设计block数据表
+  - 数据同步放在编辑器层，还是数据库层？ 编辑器变了，通知数据库？还是数据库变了，通知编辑器？
+    - yjs提供了合并编辑器多个操作的方法
+    - 光标的同步更适合通过yjs
+
+- bug定位，通过vscode-git-graph
+  - refactor: docActionsMenu state
+    - 无法分页
+  - fix table types
+    - 无法正常运行
+  - chore: remove unused code
+    - 可正常分页
+    - 65b141e7fcabd98511e73f49aced5d714d044812
 
 - dev-plan
-  - [x] 所有文档列表，重构更多操作
+  - [x] 完善所有文档列表
+    - [x] 重构更多操作按钮组
+    - [ ] 快速查看我的文档
+    - [ ] 新建文档操作应该传入类似bibtex的数据
   - [ ] 从侧边栏bibtex列表中删除项目
   - [ ] 双链从文中删除时，却没有从尾部删除
   - [ ] fix 默认显示文末参考文献
   - [ ] fix 文档树的最下方默认无法完整显示
   - [ ] 默认字体修改为衬线体
-  - [ ] 通过新建文档按钮创建的新文档没有出现在左侧目录树
+  - [x] 通过新建文档按钮创建的新文档没有出现在左侧目录树
   - [ ] 修复字体突然变小的问题
   - [ ] 定制标题样式
   - 待讨论
@@ -330,6 +361,18 @@ modified: '2021-10-27T03:20:45.841Z'
     - 新建的空文档(无标题文档、无内容文档)是否要保存？
     - 待实现，删除文档
     - 分享文章的功能
+
+- 测试新建文章时文件列表不实时更新的原因
+  - 前端读取文件列表是异步，当文件列表在服务端生成也是异步时，可能会出现前端新建文档后，马上打开文档列表时，服务端还没更新索引，前端的列表总是少一项的情况
+
+```JS
+await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values()).filter(doc => !doc.metadata?.ttl))
+```
+
+- forEach中不能写await的解决办法
+  - https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop
+  - await y.forEach(async (x) => {
+    - await Promise.all(y.map(async (x) => {
 
 ## 0228
 
