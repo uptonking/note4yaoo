@@ -20,6 +20,15 @@ modified: '2021-03-22T18:24:50.639Z'
     - 6212 2518 0900 0758 487
     - 6212251809000758487
 
+- js产生定长字符串
+
+```JS
+Math.random()
+  .toString(36)
+  .replace(/[^a-z]+/g, '')
+  .substring(0, 5);
+```
+
 - authing返回值
 
 ```JS
