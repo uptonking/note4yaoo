@@ -23,9 +23,6 @@ modified: '2021-08-22T08:05:39.413Z'
   - 百度网盘替换部分视频为8秒短视频
   - 百度网盘后期限速，就算开了超级会员仍然可能因为带宽流量消耗过多而被系统限制
   - 腾讯起诉DD373交易平台，庭审时腾讯代表称「账号主人不可转卖自己的手机游戏账号」
-# examples-local-first
-- https://github.com/jaredly/local-first
-  - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
 # [Local-first software__201910](https://www.inkandswitch.com/local-first.html)
 - Cloud apps like Google Docs and Trello are popular because they enable real-time collaboration with colleagues, and they make it easy for us to access our work ~~from all of our devices~~ anytime anywhere. 
   - However, by centralizing data storage on servers, cloud apps also take away ownership and agency from users. 
@@ -258,140 +255,169 @@ modified: '2021-08-22T08:05:39.413Z'
   - in many cases, SQLite is a far better choice than either a custom file format, a pile-of-files, or a wrapped pile-of-files. 
   - SQLite is a high-level, stable, reliable, cross-platform, widely-deployed, extensible, performant, accessible, concurrent file format. 
   - It deserves your consideration as the standard file format on your next application design.
-# discuss
-- ## I'm having trouble reconciling an offline-first app with online SaaS sync. 
-- https://twitter.com/_paulshen/status/1431745519873781765
-  - How do you handle auth while offline? 
-  - What happens to your offline documents/changes when you reconnect logged out or as a different user?
-- files backed by git provide some inspiration. you own the files on your disk. but the manual push/pull and resolution steps don't translate directly to "apps"
-- Maybe figma can help you with some ideas of how to handle it
-  - [Can I work offline with Figma?](https://help.figma.com/hc/en-us/articles/360040328553-Can-I-work-offline-with-Figma-)
-  - Figma is probably the gold standard here. this doc is very thorough. thanks!
-  - I tried making some Figma changes offline and deleted my session cookie. It silently lost the changes but Figma doesn't claim to be an offline tool. The save to `.fig` file is nice.
-- Understood. The feature to save the document to .fig file is neat, as that's the only guaranteed way to avoid losing data.
-- Brainstorm: it could be split into different layers:
-  - give the user a way to export the docs to a file (avoid user losing offline data if they want to, ex, uninstall the browser)
-  - when reconnecting, if session is ok + user still has same access to the docs, sync the changes*
-- I think it’s ok to disallow switching accounts when you’re offline.
-- agreed but things can change on the server side while you're offline. maybe you lose permissions to the file or you triggered an action to log out of all your clients.
-  - What should happen in those cases isn’t technically hard, but more of a problem of designing a UI that informs and sets expectations effectively. I do understand designing such a UI isn’t trivial.
-- Offline data sync is complicated with web browsers. User might have a few tabs opened, so you need to sync between them.
-  - You probably don't want to sync the same changes from all tabs. 
-  - Only Chrome has a way to sync data in background I think. 
-  - Other browser quirks like IndexedDB not working in FF private tabs and Safari had some problems. So it gets complicated quickly
+# [Building data-centric apps with a reactive relational database Riffle](https://riffle.systems/essays/prelude/)
+- We’re exploring a new way to manage data in apps by storing all app state—including the state of the UI—in a single reactive database. 
+  - Instead of imperatively fetching data from the database, the user writes reactive queries that update with fresh results whenever their dependencies change.
+- As an initial prototype, we have built a reactive layer around SQLite that populates data in a React app, and used it to build a music library app.
+- Even in our limited prototype, we’ve found thinking of apps as queries to be a powerful frame, opening up new approaches to debugging, persistence, and cross-app interoperability.
+  - Together, our ideas and experiments suggest that we could take this frame even further. 
+  - We sketch a vision for thinking of every layer of an app, from the event log to the pixels on the screen, as pieces of a single large query.
+  - Furthermore, we believe that the key components for building such a system already exist, in tools developed for incremental view maintenance and fine-grained provenance tracking.
 
-- ## It’s quite rare for software to offer both a real local file format and also substantial(大量的，重大的) cloud/SaaS behavior (ie other than syncing). 
-- https://twitter.com/andy_matuschak/status/1428777459235782660
-  - Usually it’s one or the other
-  - if the cloud has active behavior, apps are thin clients which don’t expose an accessible on-disk format (eg Notion).
-  - I recently finished re-architecting @withorbit to expose an on-disk format, thought I’d write a bit about what I learned.
-- Orbit的解决方案小结
-  - 存储层基于SQLite
-  - 协作/同步层基于比CRDT更简单的events log
-- It’s hard to pull this off, as I&S describe. 
-  - You need to design a file format which syncs efficiently and reliably, which is already tough. 
-  - Gets tougher when your SaaS is an active replica with its own public API, and when you layer on indexing/querying, migration, sparsity.
-- There are enterprise solutions which solve these problems (Realm, CouchDB), 
-  - but one consistent limitation is that they “own” the file format, and often the server component as well. 
-  - I don’t feel good exposing my on-disk format to local clients if it’s tied to a specific backend.
-- CRDTs are a useful piece of the puzzle, but they don’t solve the problem as fully as people often imagine. 
-  - The I&S folks are working diligently on many of these. 
-  - But **one problem I don’t know how to solve** is the complexity of the resulting opaque file formats.
-- In an ideal world, everything’s just plaintext, so you can modify it with whatever tool you like. No libraries needed. 
-  - Problems with this include semantic sync, indexing, structured data, etc. 
-  - SQLite is almost as good, if the schema is well-defined
-  - [SQLite As An Application File Format](https://www.sqlite.org/appfileformat.html)
-- Maybe someday automerge’s serialization format will be as durable and universal as SQLite’s, but in the meantime, it’s certainly not amenable(易处理的) to casual concurrent local access in some user script.
-- Of course, **SQLite leaves you to solve syncing**. 
-  - The typical approach is a write-only log of events (CRDT mutations or otherwise) which can be replayed across replicas. 
-  - Snapshots of entity states are computed from queries across these events.
-- That’s **the approach Orbit takes**: simple event structures (simpler than CRDTs, sacrificing some of their key guarantees to reduce complexity), with well-defined merge operations, in a SQLite db. 
-  - Users can write scripts to insert their own events if they like.
-- I’m still not satisfied with this. 
-  - Reading/writing data yourself requires using Orbit’s libraries or a SQLite library and an understanding of the schema. 
-  - I’d like to just expose the data as plaintext, but I’m not yet sure how to achieve that practically.
-- One approach is to define Git-style “plumbing” CLI primitives which offer plaintext-like I/O to your data structures. 
-- Another is to define a FuseFS layer, @rsnous style.
-- Orbit’s cloud server has its own (third, ugh) backend implementation, which it uses to offer APIs, aggregate analytics (for my research), and services like study reminder notifications.
-  - I see now why people don’t generally do this. It was a huge amount of work. 
-  - As it happens, Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others.
-  - https://github.com/andymatuschak/orbit
-    - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
-- another hard thing about implementing this type of data format is that web browsers demand their own implementation. 
-  - @kirkbyo_ kindly implemented an IDB-based Orbit backend. Excited about absurd-sql
+## Introduction
 
-- I like what @craftdocsapp does here: for each note, you can choose to persist either to on-disk file or to their realtime cloud. A sensible compromise given there's not a great way (yet!) to get the best of both worlds
-  - In your Metamuse interview I really liked when you (or maybe it was @_adamwiggins_ or @mmcgrana ) talked about how code IDEs provide all these features on top of basic data, like “jump to definition”, syntax highlighting etc. Wonder how this can be applied to other data…
-  - Another example is Photoshop (or any bitmap image editor); Instead of an array of bytes representing plain text, it operates on an array of bytes representing pixels. Adds computed information like histogram, color replacement, etc.
-  - Yeah layering complex interpretations over a simple serialized format seems to work well in those domains. 
-  - Note taking seems trickier… eg, Markdown isn’t powerful enough to express Notion documents
-  - Maybe Notion documents is not a good benchmark and maybe markdown is not the ideal “elemental material” or perhaps it is. Figma is interesting as its file format is a list of key-value maps. The app then gives special meaning to certain keys and values.
-  - Aside: interestingly this is the data format underlying almost everything in Spotify; an ordered dictionary. 
-  - Keys and values are just byte strings. Hierarchy and meaning applied computationally. (3-way diff-merge was less hard to implement this way. Etc etc.)
-- Ingredients for a future:
-  • Elemental material that is absent of meaning (but has some structure)
-  • Domain-specific agreements about meaning of data (eg rich text editor, game scene, etc)
-  • Synchronization tools that act on the elemental material (w/ optional domain knowledge)
-- Elemental material: maybe XML is the closest we've ever gotten? HTML, RSS, SVG are three distinct domains.
-  - I had always hoped a file sync service like Dropbox or iCloud could add a developer API and become the last point, but that didn't happen.
-- Maybe JSON can be the elemental material? Definitely my default choice moving simple structured data between programs.
-  - This is why I find automerge interesting--it provides that sync tool on the structured layer without any domain-specific knowledge
-- I think JSON is popular because it is the weakest link. 
-  - No integers or pointers, sparse representation (like XML.) 
-  - But ultimately I think that story of how PostScript came out of the JaM project as a solution the problem of an evolving data structure is a good lesson.
-  - Hmm yeah... maybe this gets at a fundamental tension: weaker, stripped-down formats are easier to make generic across domains + tools? Eg: a huge drawback of plaintext code is the lack of pointers, and yet smart editors can "rename function" just fine by interpreting the text
-  - Similarly, newline-delimited text in classic UNIX tools is a very underconstrained/weak format, but simultaneously super versatile and quite useful... maybe two sides of the same coin? idk
-- I wonder a lot about relational database as "elemental material"... eg, what if my emails, calendar, photos, contacts, projects, tasks were all just in sqlite? I could routinely use a nice Airtable-style UI to manually edit, and also write scripts against my DB quite easily
-  - Very interesting idea. SQLite is very portable and truly open, so that's a good start. 
-  - I struggle with one thing with SQLite though and I wonder how you deal with this: How to... look at it, copy paste, massage the structure, etc. (e.g. bitmap = image editor, text = text editor)
-  - There are plenty of GUI apps for SQLite of course but they are all MUCH less flexible than say editing a text file in a good text editor with things like Ctrl+A to select all
-  - Maybe what we need is a really good editor for whatever a good "elemental material" is for data. I'm thinking something that can make use of the speed of a keyboard but have more dimensions than sequential bytes (i.e. plain text.) Maybe a DOM structure?
-- Yeah, agree: the elemental material can only be as good as the best editor for the format. 
-  - Fun to imagine the ideal keyboard-driven SQLite viewer/editor for daily usage. Inspirations could be classic iTunes, Airtable, + more powerful visual query UIs
-  - It's funny how many apps eventually build a table UI... each one has unique quirks, and usually not extraordinary UI since the team is busy w/ other stuff
-  - Like, instead of Github building a table UI for Issues, could I just use familiar Airtable or magic generic table editor ?
-- I wonder if better to focus on SQL as the communication protocol, rather than SQLite as an implementation?
-  - For example: maybe I would like to use my table editor with a web service exposing a virtual SQL database as just an API; I don't care what lives behind the SQL protocol
-- If you use a Mac, there's a decent chance your email, photos, calendar and tasks are already in SQLite
-- I tend not to run it directly against the SQLite files in-use by apps though, 
-  - since they're not designed with concurrency in mind (they often don't enable WAL mode so you get a lot of locking errors) - my tools tend to create a separate database copy which I update intermittently(间歇的，断断续续的)
-- I've not tried applying a write to a file used by some application yet - my worry is that they'd have some weird denormalizations that I wouldn't fulfill and I'd break things
-  - Yeah that makes sense. Seems like a general challenge w/ sharing a database across apps... I guess only hope would be to try to encode as many constraints as possible directly in the DB layer
-- The other problem with encouraging other apps to access your DB file directly is that it turns your schema into a supported API, which makes schema changes massively harder if you don't want to break things outside your app's control
-- I like the idea of defining named SQL views that are the "supported" way to access data - that way you can change the rest of the schema and then modify those views to continue serving the same shape of data against the modified schema
-  - Yeah that makes total sense for reads! Writes seem to require more machinery though... I guess you can (1) get fancy and figure out how to send writes backwards through the view query, or (2) treat SQL as just a read interface and have some separate constrained write API
-  - I guess writes could be handled by predefined stored procedures in databases that support those, but sadly SQLite doesn't (yet)
-- @simonw ‘s blog post about querying photo metadata gives me hope that sqlite are at the heart of other consumer apps even though it’s not advertised widely.
-- Another random inspiration is how Automerge assigns unique IDs to every little piece of a JSON blob… hard to make it efficient, but incredibly convenient foundation for having pointers that stably reference anything
-  - Re: types, I am enamored by super rich types, things like “phone number”, “email address”, “US State”, etc. Maybe naive to imagine these types can be agreed upon by everyone (I know world is complicated!) but still feel so convenient…
+- Consider a music player app like iTunes. The core user interface is simple: it manages a music collection and displays a variety of custom views organized by various properties like the album, artist, or genre. 
+- In data-centric apps, much of the complexity of building and modifying the app comes from managing and propagating state
+- We’ve found that state management tends to be a colossal pain. 
+  - In a traditional desktop app, state is usually split between app’s main memory and external stores like filesystems and embedded databases, which are cumbersome to coordinate. 
+  - In a web app, the situation is even worse: the app developer has to thread the state through from the backend database to the frontend and back. 
+  - A “simple” web app might use a relational database queried via SQL, an ORM on a backend server, a REST API used via HTTP requests, and objects in a rich client-side application, further manipulated in Javascript
+  - The need to work across all these layers results in tremendous complexity. Adding a new feature to an app often requires writing code in many languages at many layers.
+  - To optimize performance, developers must carefully design caching and indexing strategies at every level.
 
-- This was the world people imagined with RDF
-  - It's supported today by Google (search engines, Gmail) and other large small companies. JSON-LD, RDFa, microformats.  Works directly with many triple stores with a standard graph query language. Whatever it's flaws nothing is nearly as widely supported.
+- We think one promising pattern is a local-first architecture where all data is stored locally on the client, available to be freely edited at any time, and synchronized across clients whenever a network is available
+  - This architecture allows rich, low-latency access to application state, which could unlock totally new patterns for managing state. 
+  - If an app developer could rely on a sufficiently powerful local state management layer, then their UI code could just read and write local data, without worrying about synchronizing data, sending API requests, caching, or other chores of app development.
+- what might such a powerful state management layer look like? 
+  - It turns out that researchers and engineers have worked for decades on systems that specialize in managing state: databases! 
+  - We think that many of the technical challenges in client-side application development can be solved by ideas originating in the databases community. 
+  - As a simple example, frontend programmers commonly build data structures tailored to looking up by a particular attribute; databases solve precisely the same problem with indexes, which offer more powerful and automated solutions. 
+- In the Riffle project, our goal is to apply ideas from local-first software and databases research to radically simplify app development.
+  - In this essay, we start by proposing some design principles for achieving this simplification. 
+  - We think that a relational model, fast reactivity, and unified approach that treats all state the same way form a potent trio, which we call the reactive relational model. 
+  - We’ve also built a concrete prototype implementing this idea using SQLite and React, and have used the prototype to build some apps that we can actually use.
 
-- Have you looked at Firebird? It's a db that supports ANSI SQL and claims to seamlessly flip between on-disk, in-memory and client/server. I've never tried it beyond v simple local things.
+## Principles
 
-- Didn't consider scuttlebutt but looked at many distributed logs like it. 
-  - Two key issues are the need for indexing/querying and an on-disk file format I can expose to local clients, ideally one which is not tied to protocol implementation.
+- Declarative queries clarify application structure
+- In a local-first application, all the queries can instead happen directly within the client. 
+  - This raises the question: how should those queries be constructed? 
+  - We suspect that a good answer for many applications is to use a relational query model directly in the client UI.
+  - Anyone who has worked with a relational database is familiar with the convenience of using declarative queries to express complex reshaping operations on data. 
+  - Declarative queries express intent more concisely than imperative code, and allow a query planner to design an efficient execution strategy independently of the app developer's work.
+- This is an uncontroversial stance in backend web development where SQL is commonplace. 
+  - It’s also a typical approach in desktop and mobile development—many complex apps use SQLite as an embedded datastore, including Adobe Lightroom, Apple Photos, Google Chrome, and Facebook Messenger.
+- However, we’ve observed that the primary use of database queries is to manage peristence: that is, storing and retrieving data from disk. 
+- We imagine a more expansive role for the relational database, where even data that would normally be kept in an in-memory data structure would be logically maintained “in the database”. 
+  - In this sense, our approach is reminiscent of tools like Datascript and LINQ which expose a query interface over in-memory data structures. 
+  - **There’s also a similarity to end-user focused tools like Airtable**: Airtable users express data dependencies in a spreadsheet-like formula language that operates primarily on tables rather than scalar data.
 
-- This is very top of mind for me with http://natto.dev. I've tried representing canvases as text files and using isomorphic git in the browser. The current live version uses yjs, a CRDT, though not syncing. hoping to share the next (final?) iteration soon.
+## Fast reactive queries provide a clean mental model
 
-- TabFS is an example of another (perhaps heavier) way to go about it, basically keeping client/server by using a virtual filesystem
-  - https://omar.website/tabfs/
-  - Technically no cloud, but you are integrating with a foreign and otherwise opaque system
-  - TabFS is a browser extension that mounts your browser tabs as a filesystem on your computer. Each of your open tabs is mapped to a folder.
+- A reactive system tracks dependencies between data and automatically keeps downstream data updated, so that the developer doesn’t need to manually propagate change. 
+  - Frameworks like React, Svelte, and Solid have popularized this style in web UI development, and end-users have built complex reactive programs in spreadsheets for decades.
+- However, database queries are often not included in the core reactive loop.
+  - When a query to a backend database requires an expensive network request, it’s impractical to keep a query constantly updated in real-time; 
+  - instead, database reads and writes are modeled as side effects which must interact with the reactive system. 
+  - Many applications only pull new data when the user makes an explicit request like reloading a page; 
+  - keeping data updated in realtime usually requires a manual approach to sending diffs between a server and client. 
+  - This limits the scope of reactivity: the UI is guaranteed to show the latest local state, but not the latest state of the overall system.
+- In a local-first architecture where queries are much cheaper to run, we can take a different approach. The developer can register reactive queries, where the system guarantees that they will be updated in response to changing data.
+  - Reactive queries can also depend on each other, and the system will decide on an efficient execution order and ensure data remains updated. 
+  - The UI is guaranteed accurately reflect the database's contents, without the developer needing to manage side effects.
 
-- One observation that @pvh makes is that web browsers aren't a good fit for local-first. They're fundamentally thin clients with throwaway local caches. Maybe that's part of the mismatch for Orbit?
-  - Thick clients with a sync-style model like Dropbox, Git, Craft, and Obsidian are easier to fit with this, although often still don't have a user-facing flat file format outside of explicit export.
-  - **On CRDTs and merging: I think this is less about realtime collaboration** (although that's important) and more about the fact that once you have multiple sources of truth, there has to be a reliable way to reconcile them.
-  - If my phone and my laptop are peers rather than subservient to a central server, it doesn't matter if I'm never "live" editing on both devices. 
-  - There will be situations where the changes need to be merged, and Git-style conflict resolution is too heavyweight for many/most apps.
+- When queries happen locally, they are fast enough to run in the core reactive loop. 
+  - In the span of a single frame (16ms on a 60Hz display, or even 8ms on modern 120Hz display), we have enough time to ① write a new track to the database, ② re-run the queries that change because of that new track, and ③ propagate those updates to the UI. From the point of view of the developer and user, there was no intermediate invalid state.
+- Low latency is a critical property for reactive systems.
+- The database community has spent considerable effort making it fast to execute relational queries; 
+  - many SQLite queries complete in well under one millisecond. 
+  - Furthermore, there has been substantial work on incrementally maintaining relational queries (e.g., Materialize, Noria, SQLive, and Differential Datalog) which can make small updates to queries much faster than re-running from scratch.
 
-- Currently I’m staying far away from automatic merging of text edits precisely because of the “opaque file format” problem. 
-  - But automatic merging of edits made to “conceptually different text chunks” is straightforward in a replicated key/value store & the format is still simple.
-- Stopped thinking about storage implementations earlier because I knew that would require another project entirely. Glad someone took a stab at it!
+## Managing all state in one system provides greater flexibility
 
-- An in-between solution is to keep source of truth on the server but 
-  - (a) guarantee all data can import/export to a simple format like csv, 
-  - and (b) periodically export it to user owned place (eg s3, gdrive), so the user doesnt worry that “a” is a fake claim.
+- With a fast database close at hand, this split doesn’t need to exist. What if we instead combined both “UI state” and “app state” into a single state management system? This unified approach would help with managing a reactive query system—if queries need to react to UI state, then the database needs to somehow be aware of that UI state. Such a system could also present a unified system model to a developer, e.g. allow them to view the entire state of a UI in a debugger.
+
+## Prototype system: SQLite + React
+
+- We built an initial prototype of Riffle: a state manager for web browser apps. 
+  - For this prototype, our goal was to rapidly explore the experience of building with local data, so we reduced scope by building a local-only prototype which doesn’t do any multi-device sync. 
+  - Syncing a SQLite database across devices is a problem others have solved (e.g., James Long’s CRDT-based approach in Actual Budget) so we’re confident it can be done. 
+- Our prototype is implemented as a reactive layer over the SQLite embedded relational database. The reactive layer runs in the UI thread, and sends queries to a SQLite database running locally on-device. For rendering, we use React, which interacts with Riffle via custom hooks.
+- To run apps in the browser, we run the SQLite database in a web worker and persist data to IndexedDB, using SQL.js and absurd-sql. 
+  - We also have a desktop app version based on Tauri (an Electron competitor that uses native webviews instead of bundling Chromium); 
+  - in that architecture we run the frontend UI in a webview and run SQLite in a native process, persisting to the device filesystem.
+- A first reactive query
+  - We can do this declaratively, specifying the tables to join separately from any particular join strategy.
+  - Once we’ve written this query, we’ve already done most of the work for showing this particular UI. We can simply extract the results and use a JSX template in a React component to render the data
+
+- Reacting to UI state in the database
+- The current sort property and direction represents a new piece of state that needs to be managed in our application.
+  - A typical React solution might be to introduce some local component state with the useState hook. 
+  - But the idiomatic Riffle solution is to **avoid React state, and instead to store the UI state in the database**.
+- Our prototype has a mechanism for storing local state associated with UI components. 
+  - **Each type of component gets a relational table, with a schema that defines the local state for that component**. 
+  - Each row of the table is associated with a specific instance of the component, identified by a unique ID called the component key.
+
+- Building a more complex app has revealed several challenges. 
+  - One issue has been integrating Riffle’s reactive queries with React’s own reactivity in a way that doesn’t create confusion for a developer. 
+  - Another challenge has been maintaining low latency even as the app grows in complexity. 
+  - Finally, there are many details which matter greatly for day-to-day developer experience, including API design, TypeScript type inference for query results, and schema/migration management.
+
+## Findings
+
+- Structured queries make it easier to understand an app
+- Data-centric design encourages interoperability
+  - When using the desktop version of our app, the database is stored in a SQLite file on disk which can be opened in a generic SQL tool like TablePlus. 
+  - This is helpful for debugging, because we can inspect any app or UI state. 
+  - But we can also go even further: we can modify the UI state of the app! 
+- Users and developers benefit from unified state
+  - We were frequently (and unexpectedly) delighted by the persistent-by-default UI state. 
+  - In most apps, closing a window is a destructive operation, but we found ourselves delighted to restart the app and find ourselves looking at the same playlist that we were looking at before
+- restarting the app didn’t work as well when the buggy UI state persisted between runs. 
+  - We often found ourselves digging through the database to delete the offending rows.
+  - in this model, we can decouple restarting the app from resetting the state. Since the system is entirely reactive, we could reset the UI state completely without closing the app.
+
+- SQL is a mediocre language for UI development
+- A few key pain points for us were:
+  - Standard SQL doesn’t support nesting
+  - SQL syntax is verbose and non-uniform. 
+  - SQL’s scalar expression language is weird and limited.
+  - QL doesn't have good tools for metaprogramming and changing the shape of a query at runtime
+
+- Performance is a challenge with existing tools
+- The application developer can model the data conceptually, and it is up to the database to find an efficient way to implement the read and write access patterns of the application. 
+- On the bright side, the core database itself has been mostly fast
+  - Even running in the browser using WebAssembly, SQLite is fast enough that most queries with a few joins over a few tens of thousands of rows complete in less than a millisecond. 
+  - We've had some limited exceptions, which we've worked around for now by creating materialized views which are recomputed outside of the main synchronous reactive loop.
+- However, outside of the database proper, we’ve encountered challenges in making a reactive query system that integrates well with existing frontend web development tools in a performant way.
+- One challenge has been inter-process communication. 
+  - When the reactive graph is running in the UI thread and the SQLite database is on a web worker or native process, each query results in an asynchronous call that has to serialize and deserialize data. 
+  - When trying to run dozens of fast queries within a single animation frame, we’ve found that this overhead can become a major source of latency. 
+  - One solution we’re exploring is to synchronously run SQLite in the UI thread, and to asynchronously mirror changes to a persistent database.
+- Another challenge has been integrating with React. 
+  - In an ideal world, a write would result in Riffle fully atomically updating the query graph in a single pass, and minimally updating all the relevant templates. 
+  - However, to preserve idiomatic React patterns (like passing component dependencies using props), we've found that it sometimes takes a few passes to respond to an update—a write occurs, Riffle queries update, React renders the UI tree and passes down new props, Riffle queries are updated with new parameters, then React renders the tree again, and so on. 
+  - We're still finding the best patterns to integrate with React in a fast and unsurprising way.
+
+## Migrations are a challenge
+
+- In our experience, migrations are a consistent pain when working with SQL databases. 
+- However, our prototype created entirely new levels of pain because of the frequency with which our schema changed.
+- Our prototype stores all state, including ephemeral UI state that would normally live exclusively in the main object graph, in the database, so any change to the layout of that ephemeral state forced a migration
+  - In most cases, we chose to simply delete the relevant tables and recreate them while in development, which essentially recreates the traditional workflow with ephemeral state.
+
+- Of course, Riffle is not the first system to struggle with migrations; indeed, one of us has already done extensive work on migrations for local-first software
+
+## Towards a more radical approach
+
+- In this section, we describe a more radical approach to spreading reactive relational queries further up and down the stack. These ideas are more speculative and we haven’t yet substantiated them with concrete implementations
+
+- View templates as queries
+  - So far, in our prototype, we’ve delegated rendering to React. The database’s responsibility ends at updating derived data views; React is responsible for rendering those into view templates and applying updates to the DOM
+- What if we removed React (or any other rendering library) from the stack, and used reactive relational queries to directly render view templates?
+  - It’s difficult to imagine doing this in a language like SQL, but with a different relational language and a careful approach to templating, it’s plausible. Jamie Brandon has explored this direction in his work on Relational UI.
+
+- CRDTs as queries
+- There’s yet another part of the stack that we’ve mostly ignored in this essay. 
+  - In many collaborative apps, we need to turn events representing user actions into some base state that’s seen by all users. 
+  - One common approach to this step is to use Conflict-Free Replicated Data Types (CRDTs), which ensure that all users see the same state even if their events got applied in different orders
+  - Typically, CRDTs are developed for maintaining specific kinds of data structures, by reasoning very carefully about commutativity properties. 
+  - However, there’s an elegant idea of representing CRDTs in a more general way: as a declarative, relational query that turns a set of events into a final state—as seen in Martin Kleppmann’s implementation of a text CRDT using Datalog. 
+
+- What might compressing the stack into a query get us?
+- If the UI can be expressed in a way that is friendly to one of these automated incremental maintenance, perhaps as a declarative view of the data, we might be able to express user interfaces in a declarative, build-from-scratch way but obtain the performance benefits of incremental updates. Other efforts in this space, like the Incremental and inc-dom libraries, have shown considerable success in these directions.
+
+- Where we’re going
+  - we see the outline of an approach where user interfaces are expressed as queries, those queries are executed by a fast, performant incremental maintenance system, 
 # ref
 - [Optimistic, Offline-First Apps__202001](https://www.swyx.io/svelte-amplify-datastore/)
