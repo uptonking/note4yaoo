@@ -21,15 +21,19 @@ modified: '2021-10-27T03:20:45.841Z'
   - 提出问题之后，有什么更好的方案、行业内更专业的方案
 
 - dev-xp
-  - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间，新的api也许自身就提供了实现
-  - 一段代码排查很久没找到原因，可能是复制粘贴代码时忘了修改细节，如粘贴后false未修改为true
+  - 文档数据库的add/update/delete监听只是简单的发布订阅模式，开发了4个月居然没看出来
+    - 每次操作数据库后手动调用fetch，不如 `emit('updateDocMetadata')` 事件
+  - 不要执着于在旧版代码中找实现参考，有时会浪费过多时间
+    - 新的api也许自身就提供了实现
+  - 一段代码排查很久没找到原因，可能是复制粘贴代码时忘了重做修改细节
+    - 如粘贴后false未修改为true
   - 时间精力有限，对于非核心问题，有时不必执着于实现细节，不一定需要完全搞清楚来龙去脉
     - 分析出核心问题，将精力全部花在重点之上
     - 有时修改bug只需要注释掉部分代码而已，没必要去看这些代码的实现流程
   - 不一定要执着于自己实现组件
     - 自己实现的邮件菜单样式简陋
     - 功能不全，如hover时显示浅色背景
-  - 开发环境必须以linux为主，在windows vscode中打开linux下的源码
+  - 开发环境必须以linux为主，在windows vscode中以WSL Remote打开linux下的源码
     - 有些bug只在windows中才会出现，同事也难以分析排查
 
 - dev-summary
@@ -60,9 +64,8 @@ modified: '2021-10-27T03:20:45.841Z'
     - hover-show-otherwise-hidden
   - react开发模式
     - enum vs switch-case
+    - 折叠列表时，如何添加事件监听器的能减少rerender
 
-- almanac体验-pros
-- almanac体验-cons
 - almanac体验-feat-版本控制
   - 亮点：创建分支 + 合并修改
   - merge分支文档到主文档时，头部图片不会自动迁移，需要手动修改
@@ -96,10 +99,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 截止日期不能清除
   - 看板、表格的数据考虑全局，暴露出去给其他组件访问
 
-- 刷新页面，登陆会失效的问题
-  - 实现退出登录
-  - 登录时，不支持未注册用户直接通过验证码登录
-
 - workspace如何设计
   - 本地仓库、云端仓库
   - 我的仓库、公共仓库
@@ -125,14 +124,10 @@ modified: '2021-10-27T03:20:45.841Z'
 - 编辑器工作计划
   - ~~左侧目录显示参考文献锚点~~
   - ~~编辑器首页顶部显示图片~~
-
-- 折叠列表时，如何添加事件监听器的能减少rerender
-
-- 日期时间的处理
-  - 可参考日历组件的实现方案
-
-- 流程图bug
-  - ~~复制粘贴后，就变成图片，无法编辑代码了~~
+  - 日期时间的处理
+    - 可参考日历组件的实现方案
+  - 流程图bug
+    - ~~复制粘贴后，就变成图片，无法编辑代码了~~
 
 - 检查图片的接入方式
   - toolbar打开文件选择器
@@ -140,11 +135,11 @@ modified: '2021-10-27T03:20:45.841Z'
   - ctrl+v粘贴图片到编辑器
 
 - 图片上传的问题
-  - ~~将 同步执行的createObjectURL 改为 异步执行的` FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`~~
+  - ~~将 同步执行的createObjectURL 改为 异步执行的 `FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`~~
   - 上传已经以前已经上传过的图片时，是否保存了2份数据，存在冗余
   - 首次渲染图片时，由于blobUrl失效了，控制台会报错
     - blob:http://127.0.0.1:4001/223c5400-55e2-4ac7-b936-574b47cd0201 net::ERR_FILE_NOT_FOUND
-  - 考虑直接将数据库中docId存储到
+  - 考虑直接将数据库中docId存储到编辑器图片model
 
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
@@ -281,10 +276,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
-- dev-affine-old
-  - to-be-discussed
-    - 初步实现的菜单项都是英文，产品化时应该用中文
-    - ~~文章页可拖拽改变侧边栏宽度~~
+- dev-products-old
   - 重构题头部分
     - [x] 更换emoji picker
     - ~~字段列表分类型重构~~
@@ -312,26 +304,20 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0302
-
-- 文档数据库问题测试
-  - ⚠ 碰到数据库显示有延迟/需要刷新才更新的问题，一定要先检查调用函数时是不是少写了await
-
-```JS
-await editor.db.get('article')
-// 创建文章后，一定要set，否则下面get返回的是一篇新文档
-await editor.db.get(id)
-```
+## 0303
 
 - dev-plan
   - [x] 完善所有文档列表
     - [x] 重构更多操作按钮组
     - [ ] 快速查看我的文档
-    - [ ] 新建文档操作应该传入类似bibtex的数据
-    - [ ] 新建文档传入bibtex数据后，侧边栏bibtex初始化时search type reference却搜索出来了
+    - [x] 新建文档操作应该传入类似bibtex的数据
+      - 新建文档传入bibtex数据后，侧边栏bibtex初始化时search type reference却搜索出来了
     - [x] 文档树和文件列表数据同步
+      - 通过双链创建的新文章能立即显示在文档列表，但通过新建按钮创建的文档不会立即显示在文档列表，需要先输入标题
     - [ ] 当前编辑的文章 应该高亮显示？ 不许删除？
-  - [ ] 从侧边栏bibtex列表中删除项目
+  - [x] 从侧边栏bibtex列表中删除项目
+  - [x] 添加bibtex后，未实时取到数据，应该在应用层，还是在数据库层实现？
+    - 问题出现在数据库层
   - [ ] 双链从文中删除时，却没有从尾部删除
   - [ ] fix 默认显示文末参考文献
   - [ ] fix 文档树的最下方默认无法完整显示
@@ -344,7 +330,33 @@ await editor.db.get(id)
       - 暂时整个workspace共享
     - 新建的空文档(无标题文档、无内容文档)是否要保存？
     - 待实现，删除文档
-    - 分享文章的功能
+
+- bibtex与文献的设计
+  - 侧边栏的bibtex是数据源
+    - 删除后所有地方会消失
+  - 文末参考文献完全自动生成，不可编辑
+  - 文中引用
+    - 只能通过侧边栏插入
+    - 能通过键盘退格键删除
+
+- 分享文章的功能
+
+- 清空本地数据库的方法，方便测试
+  - editor.db.inspector().clear()
+
+- 文档数据库修改操作丢失的问题
+  - ⚠ 当editor在操作currentDoc对象时，若在其他react业务组件中也要操作当前文档，必须使用全局共享的currentDoc对象，不能用db.get(id)得到的对象，否则某处的修改会丢失
+
+## 0302
+
+- 文档数据库问题测试
+  - ⚠ 碰到数据库显示有延迟/需要刷新才更新的问题，一定要先检查调用函数时是不是少写了await
+
+```JS
+await editor.db.get('article')
+// 创建文章后，一定要set，否则下面get返回的是一篇新文档
+await editor.db.get(id)
+```
 
 ## 0301
 
@@ -544,7 +556,7 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
 
 ## 0215
 
-- 编辑器设置选项分类
+- 编辑器设置选项分类 功能设计
   - 编辑器样式
     - 字体、大小、宽度
     - toc目录样式
