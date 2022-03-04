@@ -15,7 +15,9 @@ modified: '2021-05-13T16:12:47.773Z'
 
 - ## 
 
-- ## 
+- ## When you aggregate & simplify data, you often lose the signal & context needed to make sense of what you are seeing.
+- https://twitter.com/observablehq/status/1499412568330280962
+  - [Stop aggregating away the signal in your data](https://stackoverflow.blog/2022/03/03/stop-aggregating-away-the-signal-in-your-data/)
 
 - ## Did you ever want to learn how to read ROC curves?
 - https://twitter.com/haltakov/status/1438206936680386560

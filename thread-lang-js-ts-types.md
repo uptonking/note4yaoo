@@ -18,6 +18,17 @@ modified: '2021-08-05T04:31:02.298Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Object.entries() and Object.fromEntries() are soo useful but TypeScript’s built-in types for them are soo bad
+- https://twitter.com/buildsghost/status/1498895804798357510
+
 - ## You are probably familiar with index access operations. 
 - https://twitter.com/TitianCernicova/status/1494683318230605827
   - Where you can get the type of a property in another type using the T[K] syntax. 
@@ -30,7 +41,7 @@ modified: '2021-08-05T04:31:02.298Z'
 - The spec change has landed, and there's an implementation behind a flag in Chrome Canary!
 - This is a good explanation of why there can be subtle opacity dips with Framer Motion's shared layout animations. We use opposing easing curves that keep the overall opacity as close to 1 as possible but something like this CSS rule would really help.
 
-- ## Note to future self: this is the tsconfig you want for a library in a monorepo. Don't use `paths` to get types from other packages, use `references`!
+- ## Note to future self: this is the tsconfig you want for a library in a monorepo. Don't use `paths` to get types from other packages, use `references` !
 - https://twitter.com/steveruizok/status/1464906551664250884
   - The reason for this is that you'll also want to run some code after build to replace the "~" paths with relative paths, but you don't want to replace imports from other packages in the repo (e.g. @monorepo/vec) with relative paths
 - do you build with tsc or esbuild? I found that references only work with tsc and it's extremely slow

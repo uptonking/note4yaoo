@@ -11,6 +11,23 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We’re redesigning Notion’s sidebar so you can organize your pages by custom teams! 
+- https://twitter.com/NotionHQ/status/1499069682581590020
+  - Create teams. Hide some. Show others.
+  - All part of the plan for Notion to scale to every size 
+- [New sidebar design will help Notion scale to fit even the biggest companies](https://www.notion.so/blog/new-sidebar-design)
+  - we’re excited to unveil our Teams feature — a new sidebar design that makes scaling with Notion effortless for even the largest of workspaces.
+
+- Would love a right hand side bar that displays a perpetual calendar. The same way google apps have that right hand side bar for key application or blocks. Makes it easier to see things as a glance.
+
 - ## 总有人来教育我飞书多好用，就好像我没用过飞书一样。
 - https://twitter.com/haoel/status/1497197608908976128
   - 工作不是聊天，而是信息交换和共享。首要就是把信息做好，下面这些做不好，别来跟我说好用。

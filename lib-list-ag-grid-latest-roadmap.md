@@ -25,11 +25,10 @@ modified: '2021-05-13T02:43:35.993Z'
   - Cleanup Legacy Properties (> 1 year old)
   - Filter: Allow set filter to be combined with other filters
 # discuss
-- ## I never liked the property "𝒊𝒎𝒎𝒖𝒕𝒂𝒃𝒍𝒆𝑫𝒂𝒕𝒂=𝒕𝒓𝒖𝒆" or the callback "𝒈𝒆𝒕𝑹𝒐𝒘𝑵𝒐𝒅𝒆𝑰𝒅()" in AG Grid.
+- ## I never liked the property 𝒊𝒎𝒎𝒖𝒕𝒂𝒃𝒍𝒆𝑫𝒂𝒕𝒂=𝒕𝒓𝒖𝒆" or the callback "𝒈𝒆𝒕𝑹𝒐𝒘𝑵𝒐𝒅𝒆𝑰𝒅()" in AG Grid.
 - https://twitter.com/niallcrosby/status/1494325782109249545
   - Instead I've implemented "𝒈𝒆𝒕𝑹𝒐𝒘𝑲𝒆𝒚()" which does both.
-
-So I deprecated them both for the next release!
+  - So I deprecated them both for the next release!
 
 - ## We've spent the last 6 months porting AG Grid to React, so it's not longer using a wrapper for AG Grid, but AG Grid 100% React. 
 - https://twitter.com/ag_grid/status/1426087043831062528

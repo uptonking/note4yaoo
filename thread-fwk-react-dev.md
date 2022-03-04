@@ -66,7 +66,12 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## If I were to rebuild Inferno again today, I'd go down the path of making it a "hooks only" compiler designed framework. 
+- https://twitter.com/trueadm/status/1498515284877058052
+  - I'd also create two templates for each component - one dynamic and one static. 
+  - This would give the equivalent performance of Solid, whilst being tiny in size.
+  - Many of my previous ideas were conceptualized in the React Compiler project I was hacking on.
+  - https://github.com/trueadm/react-compiler
 
 - ## React (and React based frameworks) have an uphill performance battle.
 - https://twitter.com/zachleat/status/1489612637008805890

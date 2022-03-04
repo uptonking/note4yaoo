@@ -13,7 +13,14 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## This is precisely why I moved Popmotion away from FP/reactive streams. Hooks/Solid look fine to me, and at class components are messy but fairly straightforward.
+- https://twitter.com/mattgperry/status/1498982698613977090
+- I think that while the syntax itself is relatively straight forward in cases like this, Solid stays relatively straight forward in more complex situations while React gets weird pretty fast with both hooks and classes.
+  - react is explicit, i split my app into effects, state, memo and the view, these are the actual components of it. solid is fine, goes into implicit/magic territory, but if that's a choice why not. solving a count with a periodic fold map that feeds into a DOM: xs is just arbitrary
+  - I agree that React is explicit. My argument is that it doesn't scale with complexity as well as Solid and probably Cycle do. In simple situations like this being explicit / procedural (not sure if this is the right word) makes it straight forward but not in complex situations
+- It depends who you are (I'm a FP guy) and what is in question.
+  - For GUIs I'd still prefer something like React (but Cycle is truly “straightforward”)
+  - But for, say react-spring, I found it's implicit FP-ness hard to reason about hence I made a FP wrapper
 
 - ## 三种日期格式，以及主要使用国家。
 - https://twitter.com/ruanyf/status/1496144593577984008

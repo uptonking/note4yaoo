@@ -14,7 +14,20 @@ modified: '2021-05-14T10:08:51.423Z'
 
 - ## 
 
-- ## 
+- ## When I started building the Headless #DesignSystem I decided to move to a single @figma file per component.
+- https://twitter.com/EstherCheran/status/1497669972826681344
+  - I'm really happy I made this decision, but I'm curious what your experience/opinion is on this topic! How do you organise your library?
+  - It feels very organised.
+  - It allows me to version each component semantically having one page per version
+  - I can create purposeful pages like: component, documentation, hand-off & token architecture, UX research & references
+  - I can give component level access to collaborators or developers
+  - It is symmetric to the structure of my StencilJS Web Components library
+  - Less likely to run into large file performance issues
+  - Tasks in Jira are linked to a specific component Figma file; reviews, approval and publishing becomes easier.
+
+
+
+
 
 - ## Consistent Border-Radius
 - https://twitter.com/d__raptis/status/1437410390149931008
