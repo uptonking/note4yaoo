@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- [console.log() shows the changed value of a variable before the value actually changes](https://stackoverflow.com/questions/11284663)
+  - console.log() is passed a reference to the object, so the value in the Console changes as the object changes. 
+    - To avoid that you can: console.log(JSON.parse(JSON.stringify(c)))
+  - Please be warned that if you log objects in the latest versions of Chrome and Firefox what you get logged on the console is a reference to the object, which is not necessarily the 'value' of the object at the moment in time you call console.log(), but it is the value of the object at the moment you open the console.
+
 - [SyntaxError: Unexpected eval or arguments in strict mode](https://github.com/nodejs/node/issues/42051)
   - 严格模式下慎用 arguments 和 eval
   - It is a Syntax Error if the source text matched by this production is contained in strict mode code and the StringValue of Identifier is "arguments" or "eval".

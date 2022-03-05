@@ -26,7 +26,10 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
-- ## 
+- ## 推荐一个可定制的渐变SVG波形生成器SVG Wave，它可以为UI和网站设计生成很棒的 SVG 波形，支持自定义波浪的图层、颜色、波峰和高度等等
+- https://twitter.com/Larry_LiDev/status/1500069732606967816
+  - 可以导出SVG和PNG格式。
+  - https://svgwave.in/
 
 - ## Preferred storage format for looping algorithmic art collectibles: gif vs mp4 vs js-dynamic-live
 - https://twitter.com/golan/status/1435909958202183683

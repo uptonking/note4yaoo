@@ -8,3 +8,8 @@ modified: '2021-03-11T11:25:59.200Z'
 # thread-viz-base-canvas
 
 
+# discuss
+
+
+- ## Only 2% of all canvases use a WebGL rendering context.
+- https://twitter.com/mrdoob/status/1499874260415926276

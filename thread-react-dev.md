@@ -12,9 +12,25 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## react elements的props传递写法
+- https://twitter.com/tannerlinsley/status/1499773428739416068
+  - `<Comp1 { ...{ ...defaultProps, foo, bar, ...overrideProps } } />` 展开语法
+- This opinion is going to be even more divisive, but you can't convince me it's not even better:
+  - React.createElement(SomeComponent, { ...defaultProps, foo, bar, something: true, otherProps: someValue, ...overrideProps })
+  - It's better in regards to the props, but way worse when you start nesting those calls. JSX, like XML, provides excellent readability for nesting IMO.
+- It lacks some type-safety, though. If you spread props, you can pass any extra fields, even if they aren't valid.
+- Svelte def got this one right.
 
-- ## 
+- ## We're considering using React Elements as properties. Any downsides of doing so? 
+- https://twitter.com/wcandillon/status/1500037309185540098
+  - In terms of element creation/identity/performance. It seems to be the same. 
+  - What are your thoughts on such API style?
+- React is nothing but functions and functional composition
+  - React functions take only one argument, i.e. object, with props and children as its properties.
+  - Using children prop one can access children components in an array, if you dont want to name them.
+  - So, I think both are same
+- Quite common for us i would say. Mostly used for overriding default components or when to try to place the child at a specific spot.
+- I discovered svelte and the "slots" which does that in a named way
 
 - ## ReactNode TS type is too loose
 - https://twitter.com/sebastienlorber/status/1496170761249296391
