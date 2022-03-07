@@ -304,6 +304,24 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0306
+
+- dev-plan
+  - 文末参考文献按作者、年份排序
+  - 解决数据请求切换到listener模式后编辑器rerender过多的问题
+  - bibtex未显示页码
+  - bibtex支持更多类型
+
+- 🤔️ 排查添加bibtex需要点击2次的问题 和 文末参考文献无法显示的问题
+  - console.log打印出来的是引用，其实打印时刻是3，后面变成了4
+  - 👉🏻️ 问题出在数据库层
+
+```JS
+// ⚠️️ 获取一篇文章的ref需要传递额外的参数 resolve: 1
+
+(await editor.db.get('1e98d1b3-35d9-47e3-94c0-f7f78d7a0ac7', { resolve: 1 })).getRefsByType('binary')
+```
+
 ## 0305
 
 - 排查图片无法显示的问题，依次检查渲染层、数据库层
@@ -315,10 +333,6 @@ modified: '2021-10-27T03:20:45.841Z'
 const docContent = await doc.getDecodedContent();
 console.log(`editor取回的数据1`, docContent);
 ```
-
-- 排查添加bibtex需要点击2次的问题
-  - console.log打印出来的是引用，其实打印时刻是3，后面变成了4
-  - 问题出在数据库层
 
 ## 0304
 
@@ -557,6 +571,18 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
     year={1986},
     publisher={Springer}
 }
+
+@article{CitekeyArticle,
+  author   = "P. J. Cohen",
+  title    = "The independence of the continuum hypothesis",
+  journal  = "Proceedings of the National Academy of Sciences",
+  year     = 1963,
+  volume   = "50",
+  number   = "6",
+  pages    = "1143--1148",
+}
+
+@article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
 
 ```
 
@@ -797,7 +823,7 @@ function createHook(initialValue: string) {
 - [Generate BibTeX entry from URL](https://www.reddit.com/r/LaTeX/comments/q85jo1/generate_bibtex_entry_from_url/)
   - https://karlosos.github.io/url_to_bibtex/
 
-```latex
+```bibtex
 @misc{WinNT,
   title = {{MS Windows NT} Kernel Description},
   howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
@@ -819,6 +845,7 @@ month = may,
 year = {2013},
 howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 }
+
 \usepackage{url}
 ```
 
@@ -830,11 +857,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 还有url字段
 - 暂未实现，当一篇文章有多个作者时需要缩写，是在从数据库读取bibTex时实现，还是在渲染时实现
 - 暂未实现，bibTex的tag值中可能含有`{}`包裹的变量，需要在读取元数据字段时解析，还是就设计为不支持
-
-```latex
-@article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
-
-```
 
 - [TS 3.1 - 高级类型总结](https://www.cnblogs.com/qq3279338858/p/14206569.html)
 
