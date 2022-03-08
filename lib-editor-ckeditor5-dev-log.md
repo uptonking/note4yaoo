@@ -304,13 +304,33 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0308
+
+- dev-plan
+  - bibtex支持更多类型
+  - 点击标题名跳转路由后，文末参考文献消失了，为什么
+  - undo-redo 未处理恢复和删除参考文献、双链的情况，文末参考文献也应该同步更新
+  - 有时插入bibtex不会触发文末参考文献的更新
+  - [ ] 双链从文中删除时，却没有从尾部删除
+  - [ ] 默认字体修改为衬线体
+  - [ ] 修复字体突然变小的问题
+  - [ ] 定制标题样式
+  - [x] ~~编辑器中普通双链文章也无法点击跳转了~~，url也变化，但需要手动刷新浏览器
+
+## 0307
+
+- VM827:1 Uncaught TypeError: oo is not iterable at anonymous:1:21
+  - for (const [k, v] of oo) { console.log(k, v)}
+  - 应该使用 for-in
+
 ## 0306
 
 - dev-plan
-  - 文末参考文献按作者、年份排序
-  - 解决数据请求切换到listener模式后编辑器rerender过多的问题
-  - bibtex未显示页码
-  - bibtex支持更多类型
+  - [x] 从侧边栏插入bibtex到编辑器时，应用层必须执行 addRef，因为编辑器的command也没有
+  - [x] 文末参考文献按作者、年份排序
+  - [x] 解决数据请求切换到listener模式后编辑器rerender过多的问题
+    - 解决办法 debounce
+  - [x] bibtex未显示页码
 
 - 🤔️ 排查添加bibtex需要点击2次的问题 和 文末参考文献无法显示的问题
   - console.log打印出来的是引用，其实打印时刻是3，后面变成了4
@@ -349,12 +369,8 @@ console.log(`editor取回的数据1`, docContent);
   - [x] 从侧边栏bibtex列表中删除项目
   - [x] 添加bibtex后，未实时取到数据，应该在应用层，还是在数据库层实现？
     - 问题出在数据库层
-  - [ ] 双链从文中删除时，却没有从尾部删除
   - [x] fix 默认显示文末参考文献
   - [x] 通过新建文档按钮创建的新文档没有出现在左侧目录树
-  - [ ] 默认字体修改为衬线体
-  - [ ] 修复字体突然变小的问题
-  - [ ] 定制标题样式
   - 待讨论
     - bibtex是归属到workspace，还是归属到文章？
       - 暂时整个workspace共享
@@ -561,6 +577,16 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
 ```bibtex
 @misc{piece, author={J Strother Moore}, title={``{M}y'' Best Ideas.\\ \url{https://www.cs.utexas.edu/users/moore/best-ideas/structure-sharing/text-editing.html}}}
 
+@article{Ota1981,
+        author = {Terukazu Ota, Yoshihisa Asano and Jun-ichi Okawa},
+        title = {Teattachment length and transition of the separated flow over blunt flat plates},
+        journal = {Bulletin of the JSME},
+        volume = {24},
+        No = {192-7},
+        year = {June 1981},
+        pages = {941--947},
+        }
+
 @article{myers1986ano,
     title={An {O(ND)} difference algorithm and its variations},
     author={Myers, Eugene W},
@@ -569,8 +595,11 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
     number={1-4},
     pages={251--266},
     year={1986},
-    publisher={Springer}
+    publisher={Springer},
+    url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}
 }
+
+@article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
 
 @article{CitekeyArticle,
   author   = "P. J. Cohen",
@@ -581,8 +610,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   number   = "6",
   pages    = "1143--1148",
 }
-
-@article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
 
 ```
 
