@@ -15,7 +15,7 @@ modified: '2021-10-04T14:43:10.710Z'
 
 # 防抖 debounce
 
-- 不管事件触发频率多高，一定在事件触发n秒后才执行
+- 不管事件触发频率多高，一定在事件最后一次触发n秒后才执行
 - 使用场景
   - window 的 resize、scroll
   - mousedown、mousemove

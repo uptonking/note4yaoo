@@ -53,6 +53,13 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - %d 表示 分支、tag、HEAD 等信息；
     - %s 表示提交的信息。
 
+- debug相关
+- switch my git repository to a particular commit
+  - git checkout -b new_branch 6e559cb
+    - With the commit hash (or part of it)
+  - git checkout -b new_branch HEAD~4
+    - go back 4 commits from HEAD
+
 - commit相关
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
