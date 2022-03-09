@@ -8,18 +8,14 @@ modified: '2021-10-27T03:20:45.841Z'
 # lib-editor-ckeditor5-dev-log
 
 # working
-
 - company-unskilled
   - 确认下一步工作计划
-
 - **markdown-editor for vscode**
-
 - 工作开发问题
   - 原因定位
   - 解决方法
   - 其他方案
   - 提出问题之后，有什么更好的方案、行业内更专业的方案
-
 - dev-xp
   - 文档数据库的add/update/delete监听只是简单的发布订阅模式，开发了4个月居然没看出来
     - 每次操作数据库后手动调用fetch，不如 `emit('updateDocMetadata')` 事件
@@ -34,11 +30,14 @@ modified: '2021-10-27T03:20:45.841Z'
     - 自己实现的右键菜单样式简陋、功能不全，如hover时显示浅色背景
   - 开发环境必须以linux为主，在windows vscode中以WSL Remote打开linux下的源码
     - 有些bug只在windows中才会出现，同事也难以分析排查
-  - ckeditor编辑器刷新后，图片无法显示的问题；不同时刻触发的save方法，如何确保新数据覆盖旧数据
+  - 🤔 ckeditor编辑器刷新后，图片无法显示的问题；不同时刻触发save方法，如何确保新数据覆盖旧数据
     - 问题排查定位，旧数据覆盖了新数据
       - 不是防抖节流的问题，~~为了性能，将保存数据的函数防抖了，结果新数据被旧数据覆盖掉了~~
+      - 不是替换图片blobUrl的问题，一是save异步保存逻辑之后的位置打印出数据库内容就缺失了，二是注释掉保存逻辑取出数据库内容依然缺失
+      - 不是数据库保存数据丢失属性的问题，不是数据库同步的问题
     - 编辑器组件保存全量数据的save()方法是async异步的
-    - 上传图片时，会将图片数据异步保存在本地数据库，此过程是异步，上传时编辑器图片部分数据为 `<figure class="image"><img></figure>` 非完全版，此时可能会触发异步save()方法
+      - 👉 通过在save方法内部不同位置打t1/t2/t3的log，发现问题处在 
+      - 上传图片时，会将图片数据异步保存在本地数据库，此过程是异步，上传时编辑器图片部分数据为 `<figure class="image"><img></figure>` 非完全版，此时可能会触发异步save()方法
       - 若同时有其他异步操作更快地执行完了，也触发了数据保存
       - 那么其他操作触发的save()方法更早执行完，结果等上传图片完触发的save(旧的content)会覆盖掉新数据
     - 解决方案参考1
@@ -47,7 +46,6 @@ modified: '2021-10-27T03:20:45.841Z'
       - 在useEffect里面异步保存数据时，定义标记变量，if (content && !saving) {，若正在保存数据，则不再执行保存
     - 难以解决问题的原因
       - 还包括编辑器editor对象的创建销毁由ckeditor控制，而不由应用层控制
-
 - dev-summary
   - 使用最多的组件
     - icon
@@ -80,7 +78,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - react开发模式
     - enum vs switch-case
     - 折叠列表时，如何添加事件监听器的能减少rerender
-
 - almanac体验-feat-版本控制
   - 亮点：创建分支 + 合并修改
   - merge分支文档到主文档时，头部图片不会自动迁移，需要手动修改
@@ -89,7 +86,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - 版本控制cons
     - 没有显示分支的时间先后关系，只显示了已合并未合并
       - 类似github insights里面不同fork的顺序
-
 - material-ui缺点
   - ~~没有dropdown，select默认会遮挡触发元素~~
 
@@ -103,7 +99,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - ~~**应该在路由跳转前重定向，而不是在路由跳转后再次跳转**~~
       - 在跳转前显示loading可以解决此问题
     - 登录后无法访问登录页，需要实现退出登录的逻辑
-
 - 任务看板
   - features
     - 切换 列表视图、看板视图、时间线(甘特图)视图
@@ -113,29 +108,24 @@ modified: '2021-10-27T03:20:45.841Z'
   - [x] 负责人列表不能多选
   - [ ] 截止日期不能清除
   - 看板、表格的数据考虑全局，暴露出去给其他组件访问
-
 - workspace如何设计
   - 本地仓库、云端仓库
   - 我的仓库、公共仓库
   - 是否可参考github仓库？
-
 - affine文档核心功能
   - 双链展示
   - 分支文档
   - 工作空间内搜索
-
 - affine的ux交互设计
   - 落地页/未登录时的宣传页
   - 个人主页/首页
   - 工作空间页
   - 国内环境不适合对接github，可考虑百度网盘
-
 - affine新首页设计与工作计划
   - [x] 首页使用~~类似workspace的设计~~，快捷菜单跳转到workspace
   - [x] 布局改为左侧边栏
   - [x] 文档列表只显示创建的文件，最近操作的文档要跳转到单独页面
   - [ ] 文档列表：pin置顶一个日期
-
 - 编辑器工作计划
   - ~~左侧目录显示参考文献锚点~~
   - ~~编辑器首页顶部显示图片~~
@@ -143,28 +133,23 @@ modified: '2021-10-27T03:20:45.841Z'
     - 可参考日历组件的实现方案
   - 流程图bug
     - ~~复制粘贴后，就变成图片，无法编辑代码了~~
-
 - 检查图片的接入方式
   - toolbar打开文件选择器
   - 拖拽本地图片到编辑器光标位置
   - ctrl+v粘贴图片到编辑器
-
 - 图片上传的问题
   - ~~将 同步执行的createObjectURL 改为 异步执行的 `FileReader.readAsArrayBuffer` + `new Blob([arrayBuffer], { type: "mime/type" })`~~
   - 上传已经以前已经上传过的图片时，是否保存了2份数据，存在冗余
   - 首次渲染图片时，由于blobUrl失效了，控制台会报错
     - blob:http://127.0.0.1:4001/223c5400-55e2-4ac7-b936-574b47cd0201 net::ERR_FILE_NOT_FOUND
   - 考虑直接将数据库中docId存储到编辑器图片model
-
 - 如何在自定义插件中使用官方image-plugin的功能和UI
   - 类似插入buttonView一样插入imageView
   - 需要继承官方plugin暴露的各个class，然后添加自定义逻辑，再glue一个新的入口类
-
 - 是否需要更新图片标题的显示逻辑
   - 若不存在，则默认不显示；选中图片时，可输入标题
   - 若存在，则始终显示；选中图片时，可输入修改标题
   - 图片下方标题默认居中对齐
-
 - 要不要实现自定义image-plugin
   - 双击图片时，会在蒙版层中放大图片，全屏显示图片
   - 图片裁剪图标
@@ -172,7 +157,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - 替换当前图片
   - 自定义图片标题的显示和更新逻辑
   - 如何插入inline图片，插入图片后，先缩小，再拖放到一行内
-
 - 图片工具条的设计
   - notion 鼠标悬浮时自动显示工具条
     - 图片处于选中状态时，图片和caption上方会出现蓝色蒙版
@@ -183,16 +167,13 @@ modified: '2021-10-27T03:20:45.841Z'
   - ckeditor 鼠标悬浮时会显示边框
     - 图片处于选中状态时，会显示工具条
     - 工具条在图片外，且有三角形指示位置关系
-
 - boxEditing, boxUI 的ui部分为什么总是toolbar界面相关的内容
   - 插入元素的位置，通常放在command
-
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
   - 测试连续调用自定义hook时useRef的current的值的变化
 # 多维表格和看板-pending
 - 工作记录在20211220之前
-
 - TODO
   - [x] 点击任务卡片时，应该出现弹窗
   - [x] checklist/子任务
@@ -217,7 +198,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 看板必填项
     - 企业倾向于自动发邮件
       - 倾向于低代码完成自动化流程
-
 - 多维表格实现计划
   - [x] 工具条 + 表格
   - [x] 切换普通表格视图、分组表格视图
@@ -241,7 +221,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - 过滤筛选支持组合条件，如多个条件求交集
   - 更多搜索方式，如日期范围
   - 可设置显示 表格左边和上边的索引列、索引行
-
 - 多维表格实现问题
   - 🤔️ 多个视图来回切换时，如何保存每个视图的状态
     - 表格的每个ui状态都可以由tableOptions确定
@@ -253,7 +232,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 破坏了useExpandAll的sticky header
   - 竞品参考
     - 飞书和notion的多为表格都是现在在编辑器页面中，未考虑分页的情况
-
 - 🤔️ 看板组件和表格组件切换视图的状态设计问题
   - 除非要明确使用缓存，否则每个视图的数据都应该动态计算出来，这样能减少内存消耗和及时同步更新
     - 在顶层定义更新一行数据的方法，传下去
@@ -267,7 +245,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 如果只创建看板视图，那没必要定义表格数据的更新方法
   - 如果增加其他视图，比如甘特图呢？
     - 定义一份配置数据，传下去作为初始state
-
 - 表格 not-yet
   - 表格末尾为什么会渲染一个英文分号
 # 2022
@@ -290,7 +267,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - inline editing
     - orm integration
   - sortable-filterable-groupable table
-
 - dev-products-old
   - 重构题头部分
     - [x] 更换emoji picker
@@ -315,7 +291,6 @@ modified: '2021-10-27T03:20:45.841Z'
   - hard
     - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
       - 光标移动到待创建双链的文字的位置时，文字会突然缩小
-
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
@@ -332,6 +307,47 @@ modified: '2021-10-27T03:20:45.841Z'
   - [ ] 修复字体突然变小的问题
   - [ ] 定制标题样式
   - [x] ~~编辑器中普通双链文章也无法点击跳转了~~，url也变化，但需要手动刷新浏览器
+- 异步保存编辑器数据到本地数据库，导致新数据被旧数据覆盖的问题
+  - 先解决新数据一定要覆盖旧数据的问题，用闭包
+  - react组件useEffect如何书写节流防抖，应该包装请求方法，而不是包装setState
+    - [React use debounce with setState](https://stackoverflow.com/questions/60789246)
+      - 示例将防抖过的请求方法声明在了react组件之外，算是一个普通的js方法
+      - [debounce in useEffect](https://stackoverflow.com/questions/61785903)
+      - [React Hooks 搞定 Race Condition](https://segmentfault.com/a/1190000019893237)
+
+```JS
+ useEffect(() => {
+   const saveContent = async () => {
+     console.log(';; save编辑器数据-闭包 ', content);
+     const title =
+       new DOMParser().parseFromString(content, 'text/html').querySelector('h1')?.innerText || 'No Title';
+     await docInstance.save(content, { metadata: { title } });
+     console.log(';; save完成后编辑器数据 ', await docInstance.getDecodedContent());
+   };
+   if (content !== undefined) {
+     saveContent();
+   }
+ }, [content, docInstance]);
+```
+
+```JS
+const saveContent2 = useCallback(
+  throttle(async (text) => {
+    console.log(';; save编辑器数据-闭包 ', content);
+
+    const title =
+      new DOMParser().parseFromString(text, 'text/html').querySelector('h1')?.innerText || 'No Title';
+    await docInstance.save(text, { metadata: { title } });
+  }, 2000),
+  [docInstance]
+);
+
+useEffect(() => {
+  if (content !== undefined) {
+    saveContent2(content);
+  }
+}, [content, docInstance, saveContent2]);
+```
 
 ## 0307
 
@@ -347,14 +363,12 @@ modified: '2021-10-27T03:20:45.841Z'
   - [x] 解决数据请求切换到listener模式后编辑器rerender过多的问题
     - 解决办法 debounce
   - [x] bibtex未显示页码
-
 - 🤔️ 排查添加bibtex需要点击2次的问题 和 文末参考文献无法显示的问题
   - console.log打印出来的是引用，其实打印时刻是3，后面变成了4
   - 👉🏻️ 问题出在数据库层
 
 ```JS
 // ⚠️️ 获取一篇文章的ref需要传递额外的参数 resolve: 1
-
 (await editor.db.get('1e98d1b3-35d9-47e3-94c0-f7f78d7a0ac7', { resolve: 1 })).getRefsByType('binary')
 ```
 
@@ -401,12 +415,9 @@ console.log(`editor取回的数据1`, docContent);
   - 文中引用
     - 只能通过侧边栏插入
     - 能通过键盘退格键删除
-
 - 分享文章的功能
-
 - 清空本地数据库的方法，方便测试
   - editor.db.inspector().clear()
-
 - 文档数据库修改操作丢失的问题
   - ⚠ 当editor在操作currentDoc对象时，若在其他react业务组件中也要操作当前文档，必须使用全局共享的currentDoc对象，不能用db.get(id)得到的对象，否则某处的修改会丢失
 
@@ -441,7 +452,6 @@ await editor.db.get(id)
   - 数据同步放在编辑器层，还是数据库层？ 编辑器变了，通知数据库？还是数据库变了，通知编辑器？
     - yjs提供了合并编辑器多个操作的方法
     - 光标的同步更适合通过yjs
-
 - bug定位，通过vscode-git-graph
   - refactor: docActionsMenu state
     - 无法分页
@@ -450,7 +460,6 @@ await editor.db.get(id)
   - chore: remove unused code
     - 可正常分页
     - 65b141e7fcabd98511e73f49aced5d714d044812
-
 - 测试新建文章时文件列表不实时更新的原因
   - 前端读取文件列表是异步，当文件列表在服务端生成也是异步时，可能会出现前端新建文档后，马上打开文档列表时，服务端还没更新索引，前端的列表总是少一项的情况
 
@@ -480,13 +489,11 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - [x] 登录后打开的最近一篇文档，所有人都是相同的
   - [x] 恢复插入数学公式的按钮
   - [x] 用户设置项保存到本地数据库
-
 - 紧急bug
   - bibtex无法添加
   - 协作编辑时，第2个人的输入无法同步到第1个人
   - 打开链接文档会卡顿，打开目录树会卡顿
   - ~~分享功能~~
-
 - 需要修改图标的大小
   - m
     - 上极限
@@ -494,7 +501,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
     - 所有三角函数，如 余弦
   - l
     - 所有矩阵，如 多行对齐等式
-
 - [How to change font-size to a SVG?](https://stackoverflow.com/questions/64914200)
   - You can not change the font size or font width because SVG is not a font. It is Scalable Vector Graphics. 
   - If you would have some text in your SVG, then you could do something with the font from the text element.
@@ -514,7 +520,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
 
 - 站点测试
   - 重新登录后，编辑器无法显示
-
 - 路由验证的场景
   - 没spaceId就进不去编辑器页面
     - 首次登录时
@@ -522,7 +527,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - 退出登录时
     - `location.reload()` method reloads the current URL, like the Refresh button.
     - `location.assign(url)` method causes the window to load and display the document at the URL specified.
-
 - location.href property vs. location.assign() 
   - it may be true that `location.href = url;` is faster than `location.assign(url)`, although it may depend on the JavaScript engine implementation
   - Calling a function should be slightly slower than accessing the property, but in terms of memory there should not be a big difference in my humble opinion.
@@ -534,7 +538,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - 设置项保存到本地数据库
   - [x] 高亮块 或 窄宽度的段落
   - ~~通用的文档列表弹窗~~
-
 - ckeditor的默认图标文件导出位置
   - packages/ckeditor5-core/src/index.js
 
@@ -547,22 +550,18 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - 不支持
     - 不支持嵌套高亮块
     - 不支持 > 快捷键
-
 - 高亮块api设计
   - width 0.5, 0.75, 1
   - backgroundColor none, gray, rgby
   - showBorder
-
 - 高亮块ui交互设计
   - 参考 ckeditor blockquote/link/codeblock
   - 配置项放在balloon toolbar
-
 - documentdb接入yjs前的版本是 1.0.32
 
 ## 0218
 
 - [How to align horizontal icon and text in MUI](https://stackoverflow.com/questions/51940157)
-
 - [How to keep showing the 'popover' on hovering on the anchorEl and 'popover' as well?](https://stackoverflow.com/questions/54705254)
   - 要点在设置 pointerEvents
 
@@ -570,7 +569,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
 
 - 列表项上显示悬浮卡片是不是一种优雅的交互体验？
   - 可采用类似wolai的单独的侧边悬浮卡片
-
 - 为什么编辑器中插入的bibtex文献，点击后跳转的url显示的id变了
   - 原因是默认创建的文档类型是 binary，而不是 article
   - (await editor.db.get('d65338ed-8651-4dc8-91e2-60649e5711db')).type
@@ -581,18 +579,15 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
 - 样式picker almanac侧边栏
   - 主文字 #2E4155，灰色文字 #757C8A
   - font-family: "Microsoft YaHei"
-
 - magic-css-heading-title
   - 为什么文末参考文献 h1-References 的高度为71
     - margin-block-start/end 的效果就是 margin-top/bottom
-
 - 登录后，没有从 /docs 跳转到 /docs/docId 的原因是
   - 后端获取workspace的请求失败了
   - url前面多了一个空格，见npm run dev后webpack-dev-server的异常信息
 
 ```bibtex
 @misc{piece, author={J Strother Moore}, title={``{M}y'' Best Ideas.\\ \url{https://www.cs.utexas.edu/users/moore/best-ideas/structure-sharing/text-editing.html}}}
-
 @article{Ota1981,
         author = {Terukazu Ota, Yoshihisa Asano and Jun-ichi Okawa},
         title = {Teattachment length and transition of the separated flow over blunt flat plates},
@@ -602,7 +597,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
         year = {June 1981},
         pages = {941--947},
         }
-
 @article{myers1986ano,
     title={An {O(ND)} difference algorithm and its variations},
     author={Myers, Eugene W},
@@ -614,9 +608,7 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
     publisher={Springer},
     url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}
 }
-
 @article{grishchenko_2010, title={Deep hypertext with embedded revision control implemented in regular expressions}, DOI={10.1145/1832772.1832777}, journal={Proceedings of the 6th International Symposium on Wikis and Open Collaboration - WikiSym 10}, author={Grishchenko, Victor}, year={2010}}
-
 @article{CitekeyArticle,
   author   = "P. J. Cohen",
   title    = "The independence of the continuum hypothesis",
@@ -626,7 +618,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   number   = "6",
   pages    = "1143--1148",
 }
-
 ```
 
 - 文字省略号的一种实现方式
@@ -687,7 +678,6 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - 讨论
     - 要不要做退出登录
     - 要不要暂停修复编辑器bugs，开始实现分享功能
-
 - react-router
   - 应该将PublicRoutes和PrivateRoutes分开，这样在public路由页面就不会发出用户数据请求
 
@@ -706,14 +696,12 @@ temp3.get('d')
 
 - [First item from a Map on JavaScript ES2015](https://stackoverflow.com/questions/32373301)
   - console.log(m.entries().next().value); 
-
 - 早期在 useUser(){} hook声明中放useEffect请求数据的缺陷
   - react创建虚拟dom树时，所有执行了useUser() 的组件都会触发http请求
   - 解决方案1: 拆分成2个hook
     - 抽象出一个单独的 useInitUser(){} hook，只执行请求初始化操作；
       - 在顶层组件(通常是Router组件)中获取到user对象后才渲染其他组件
       - 其他组件直接从useUser()中取user对象，而useUser中没有请求操作
-
 - 测试添加bibtex的示例
 
 ```js
@@ -724,7 +712,6 @@ await editor.db.setReference({
   title: 'Deep hypertext with embedded revision control',
   journal: 'proceedings of the 6th International Symposium on Open Collaboration',
 });
-
 await editor.db.search({ tag: 'type:reference' });
 ```
 
@@ -732,7 +719,6 @@ await editor.db.search({ tag: 'type:reference' });
   - [x] 移除文章页水平滚动条
   - [x] 去掉container 100vw 100vh
   - [x] 修复添加bibtex后刷新页面却显示为空的问题
-
 - [Microsoft 提供的等宽 TrueType 字体](https://support.microsoft.com/zh-cn/topic/microsoft-%E6%8F%90%E4%BE%9B%E7%9A%84%E7%AD%89%E5%AE%BD-truetype-%E5%AD%97%E4%BD%93-93aa7a47-2149-be09-31a9-c22df598c952)
   - Microsoft 隨附的唯一 monospaced TrueType 字型是「宋體」（隨附于 Windows 3.1）和黑體（包含在 TrueType 字型套件中）。 Windows 3.1 隨附的所有其他 TrueType 字型，以及 TrueType 字型套件都是成比例字型。
   - Microsoft 附带的唯一等宽 TrueType 字体是 Microsoft 3.1 附带的 "宋体" 和 "宋体"，它包含在 TrueType 字体包中。 Windows 3.1 和 TrueType 字体包中包含的所有其他 TrueType 字体都是成比例字体。
@@ -742,21 +728,16 @@ await editor.db.search({ tag: 'type:reference' });
 
 - 设置调试逻辑
   - localstorage.debug = 'DocumentDB:*'
-
 - [React.js with Factory Pattern ? Building Complex UI With Ease](https://dev.to/shadid12/react-js-with-factory-pattern-building-complex-ui-with-ease-1ojf)
   - 示例用的switch-case获取指定类型的组件，这些组件被memo过
-
 - [React Hooks Factories](https://dev.to/pietmichal/react-hooks-factories-48bi)
 
 ```JS
 // Alternatively, without classes
-
 function getUser(name: string): User {
   return { name }
 }
-
 const user = getUser("Bob") // { name: "Bob" }
-
 // Factory function that returns a new function that uses Hooks API.
 function createHook(initialValue: string) {
   return function useHook() {
@@ -808,21 +789,17 @@ function createHook(initialValue: string) {
 - 🤔 通过双链创建新文档时，为什么在代码中可以打印出 `newDoc.getMetadata('metadata')` 的属性键值对，但在控制台打印出来却为空
   - 确定了问题出在文档数据库层
   - 原因是在执行 dbClient.set(newDoc) 后，其他地方触发执行了 dbClient.set(oldDoc)，很难排查
-
 - 文档页工作需求
   - [x] 从本地数据库中读取文章参考文献列表
   - [x] fix types
   - [ ] 实现更多的参考文献样式 bibtex styles
-
 - 检查parser是否具有isValid的方法
-
 - 补充ts类型
 
 ## 0124
 
 - latex的参考文献处理要考虑文中引用和文末条目
   - 文末条目默认是所有作者全部列出，且不使用作者缩写
-
 - bibtex style的难点
   - 多个作者的分隔符可能是逗号，也可能不是逗号，and是人名还是分隔符
 
@@ -835,9 +812,7 @@ function createHook(initialValue: string) {
 - https://github.com/enric1994/bibtexonline
   - Convert your BibTeX bibliographies into text on the fly
   - 但字体用的是无衬线体，十分圆润
-
 - https://github.com/bertobox/CSS-for-APA-Style-references
-
 - [Citation Style Language vs. biblatex (vs. possibly other "citing-systems"?)](https://tex.stackexchange.com/questions/434946)
   - biblatex basically is a reimplementation and reinvention of the BibTeX way of creating bibliographies that had been with the TeX world since the late 1980ies
     - With BibTeX the `.bst` files written in their own reverse Polish notation language determine the output of the bibliography. 
@@ -846,21 +821,17 @@ function createHook(initialValue: string) {
   - CSL is an XML-based language for citation and bibliography styles. 
     - It aims to be a universal language that can be used by all kinds of reference managers and word processors. 
   - biblatex is basically LaTeX-only and CSL is supposed to be a universal standard.
-
 - [Overleaf Bibtex bibliography styles](https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles)
-
 - 当title字段中间存在"\url"时会提示错误，原因是\会被理解为转义字符
   - 变通方法是将\url改为\\url
   - [\u in JavaScript String.raw`template literal`](https://stackoverflow.com/questions/39310685)
     - replacing the line with `\u005Cusepackage{indentfirst}`, or even just `\x5Cusepackage{indentfirst}`.
       - `5C` corresponds with `\`.
     - Another option might be using the dollar sign and curly braces notation for expressions. `${'\\'}usepackage{indentfirst}`
-
 - [overleaf中关于引用website的处理](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex)
   - `@misc` is for whatever doesn’t quite fit any other entry type. 
   - not all bibliography styles support the `url` field: plain doesn’t, but IEEEtran does. All styles support `note`. 
   - It can be especially useful for web pages—by writing `note = \url{http://...}` or `url = {http://...}`
-
 - A simple way of doing it in BibTeX is with a `@misc` entry
   - If you are using BibLaTeX there is an `@online` entry type
 - [Generate BibTeX entry from URL](https://www.reddit.com/r/LaTeX/comments/q85jo1/generate_bibtex_entry_from_url/)
@@ -872,7 +843,6 @@ function createHook(initialValue: string) {
   howpublished = {\url{http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm}},
   note = {Accessed: 2010-09-30}
 }
-
 @online{WinNT,
   author = {MultiMedia LLC},
   title = {{MS Windows NT} Kernel Description},
@@ -880,7 +850,6 @@ function createHook(initialValue: string) {
   url = {http://web.archive.org/web/20080207010024/http://www.808multimedia.com/winnt/kernel.htm},
   urldate = {2010-09-30}
 }
-
 @MISC{Anu:2013,
 author = {Aggarwal, Anupama},
 title = {This is how you cite a website in latex},
@@ -888,7 +857,6 @@ month = may,
 year = {2013},
 howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 }
-
 \usepackage{url}
 ```
 
@@ -900,7 +868,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 还有url字段
 - 暂未实现，当一篇文章有多个作者时需要缩写，是在从数据库读取bibTex时实现，还是在渲染时实现
 - 暂未实现，bibTex的tag值中可能含有`{}`包裹的变量，需要在读取元数据字段时解析，还是就设计为不支持
-
 - [TS 3.1 - 高级类型总结](https://www.cnblogs.com/qq3279338858/p/14206569.html)
 
 ## 0118
@@ -909,11 +876,9 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 解析获取文章元数据的各个字段
   - 判断文章类型，选择最合适的文献显示组件
   - 参考文献组件根据文章元数据，渲染到dom
-
 - [APA style Reference List: Basic Rules](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_basic_rules.html)
   - [Reference List: Articles in Periodicals](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_articles_in_periodicals.html)
   - [Reference List: Books](https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/reference_list_books.html)
-
 - [How to Cite in APA Format (7th edition) | Guide & Generator](https://www.scribbr.com/category/apa-style/)
   - components of a reference entry
   - 1. author
@@ -927,38 +892,31 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - prefix
     - doi
     - Use the prefix field in situations like see also or i.e..
-
 - [How to Create an APA Style Appendix | Format & Examples](https://www.scribbr.com/apa-style/appendices/)
   - 附录可以放图片、表格、伪代码、名词解释
 
 ## 0117
 
 - 参考文献暂不支持手动输入
-
 - latex入门
   - [LaTeX入门指南|新手速进](https://www.zhihu.com/zvideo/1421078748670566400)
-
 - [在arXiv下载论文的LaTeX源码](https://www.jianshu.com/p/b8baca4bfc20)
   - 找到一篇arXiv论文的版面，点击Download中的Other formats；
   - 点击Source目录下的：Download source；
   - 改名为：.zip， .tar.gz等的尾缀，然后解压缩此文件；
   - 打开tex主文件，编译成PDF；
-
 - 闫东沟通
   - workspace的操作接口写了哪些
   - 向workspace中添加手机号或邮箱时，该用户登录后会自动拥有workspace的权限
-
 - 搜索ui的设计
   - cmd+k调出位置固定的弹窗，类似docusaurus、notion
     - 弹窗空间较多，可显示详细条目及信息
   - 下拉菜单，类似github
     - 可切换全局搜索、仓库内搜索、org内搜索
-
 - [flexsearch](https://github.com/nextapps-de/flexsearch)
   - Next-Generation full text search library for Browser and Node.js
   - fastest and most memory-flexible full-text search library with zero dependencies.
   - `Document` is multi-field index which can store complex JSON documents (could also exist of worker indexes).
-
 - https://github.com/timc1/kbar
   - https://kbar.vercel.app/
   - Command+k interfaces are used to create a web experience where any type of action users would be able to do via clicking can be done through a command menu.
@@ -981,7 +939,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 - 实现所有文档列表组件时，要考虑在以后实现回收站文档列表时方便复用
   - 不支持文件夹的设计，大大简化了文件列表的实现难度
-
 - 实现列表一行的悬浮菜单花费了大量时间
   - 原因是查看mui的Popover文档示例时，看漏了一行触发条件
     - const open = Boolean(anchorEl);
@@ -990,16 +947,12 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 ## 0109
 
 - 登录后无法访问登录页，需要实现退出登录的逻辑
-
 - react custom hook函数不需要有返回值
   - useEffect可以有返回值，也可以没有
-
 - [useFetch: Building custom hooks in React to fetch Data](https://dev.to/shaedrizwan/building-custom-hooks-in-react-to-fetch-data-4ig6)
-
 - [How to extract React component logic into a custom Hook](https://www.benmvp.com/blog/how-to-extract-react-component-logic-custom-hook/)
   - Most of the time I write the “messy” logic in the component first and then extract it into a custom Hook. 
   - But sometimes I am able to “see in the future” and build the custom Hook first and “magically” have the data ready in the component.
-
 - [what is the difference between using useEffect inside a custom hook and a component](https://stackoverflow.com/questions/62329615)
   - The `useEffect` function inside custom hook will only run when you use it inside a functional component and invoke it. 
   - Also note that the behavior of `useEffect` will remain exactly the same as if it were written inside the functional component itself
@@ -1011,11 +964,9 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 示例MentorLabs给出的解决方案是，在 if (!isAuthenticated) 前有一个前置判断  if ( status === 'pending'){ show loading } 
     - 首次请求用户数据pending时，会显示加载组件；
     - 注意当用户数据请求完成后，isUserAuthenticated会变成true，下一个if也不会执行了
-
 - 注意更新user状态的顺序，前面会先执行，错误顺序会匹配执行错误的if分支
   - 先 setUserInfo(userInfo); 
   - 后 setUserStatus('resolved'); 
-
 - [React batch updates for multiple setState() calls inside useEffect hook](https://stackoverflow.com/questions/56885037)
   - on next major release (probably v17) React will batch everywhere by default.
 
@@ -1024,7 +975,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - routing难点
   - 登录用户刷新页面时，会闪过明显的登录窗口
     - 可以使用useNavigate()在合适的时机命令式执行跳转，而不是使用`<Navigate>`声明式每次都会跳转
-
 - 刷新页面保持用户登录状态的方法
   - https://github.com/adarshaacharya/MentorLabs/blob/main/client/src/App.tsx
 
@@ -1041,7 +991,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 不显示dataReference属性的原因，在上传图片addRef后，不能  await dbClient.set(articleDbDoc); 
   - Failed to execute 'createObjectURL' on 'URL': Overload resolution failed
     - 不能稳定复现
-
 - 🤔 复现调试图片刷新时，突然编辑器不见了
   - 🔈 变通的方案是在wsl的linux下复现bug，竟然能顺利执行，没有bug
   - 注意wsl的4001端口会被windows的4001端口屏蔽掉，要检查端口是否相同
@@ -1061,11 +1010,9 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 拖拽移动图片到inline位置后，imageInline的dataRef属性仍存在，还原成imageBlock时dataRef仍能正常显示
     - 但图片处于inline状态时，刷新页面后，dataRef属性会丢失，图片会无法显示
     - 已解决
-
 - 解决图片刷新的问题
   - 在react应用层更新图片src是最简单的
   - 也可以考虑afterInit钩子函数
-
 - 图片刷新的预期
   - model可以不变
   - 上传新图片后，旧图片不会重新刷新，刷新页面时，所有图片会刷新
@@ -1073,11 +1020,9 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 ## 1230
 
 - 编辑器依赖外部数据的解决办法
-
 - ??? 在downcast中执行 viewWriter.setAttribute('src', imgToBlobUrl, img); 后，ckeditor的view视图属性值更新了，但dom却没有更新
   - ~~变通思路是在upcast里面做属性值替换~~
   - 测试发现，不能在downcast和upcast里面有异步的过程
-
 - db?.get(doc?.id as DocumentEnum.article)
   - 当id是自定义字符串时，返回的doc.id是原字符串吗  
 
@@ -1088,9 +1033,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - 图片上传得到图片数据对象 -> src/blobUrl -> 显示 -> src/dbId -> 更新显示
   - 暂时流程
     - 图片数据对象 -> src/dbId -> src/blobUrl -> 显示
-
 - 要处理 `Ctrl + V` 粘贴的图片
-
 - 上传图片的保存
   - 保存到本地数据库
   - 图片model里面保存的是图片在数据库中的id
@@ -1105,10 +1048,8 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - ~~问题在于 figure 下的 div.ck-widget__type-around 标签宽度auto为全宽，而不是图片宽度~~
     - 将figure display改为table后，type-around的宽度为正常的预期值了
   - 缩放时，图片的高度为什么没有变化
-
 - 其他图片如何使用ImageToolbar插件
   - 本质上是WidgetToolbar
-
 - 流程图图片实现的问题、使用官方图片插件实现图片的问题
   - 选中图片时，会出现内外2个高亮框，内层图片高亮框是蓝色，外层mermaid高亮框是黄色
     - 变通的方式是鼠标悬浮时取消显示mermaid高亮框，但此时需要选中图片外的空白才能选中mermaid，按回车才能换行
@@ -1121,20 +1062,17 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 - 图片缩放问题稳定复现的场景
   - 在空编辑器的情况下，上传一张图片，此时img标签下面有3个resizer div
-
 - 转正答辩工作
 
 ## 1226
 
 - 在toe-editor里面缩放图片的体验不如ckeditor官方编辑器图片插件示例
   - 在沿水平或竖直方向缩放图片时，官方示例有时也会感到卡顿
-
 - 二分法排查问题
   - 注释掉 InsertBlankLine 插件后，上传图片就不会生成3个resizer div了
     - 注释掉其他插件时，缩放图片仍然可能出现突然变大或突然卡住，然后无法缩放的问题
     - 卡住的时候，可以看到view里面又生成了3个resizer div
     - 原因可能是，每次插入空行后，model数据发生变化，此时img resize相关插件读到的width就变为空了，然后style属性就变成空了，此时图片会显示成宽度最大且无法拖拽缩放
-
 - 图片插件问题确认
   - 在编辑器中创建图片插件imageBlock时，ImageResizeHandles Plugin 的init()中创建了3次resizer对象，所以dom中出现3个resizer div
     - 正确的方式应该只创建一次，后面缩放图片时不用创建，直接resizer.redraw();
@@ -1173,7 +1111,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
       - `<div class="ck ck-reset_all ck-widget__resizer" style="height: 200px; left: 0px; top: 0px; width: 200px;">` 此div内包含用于缩放的4个点，会显示在图片4角
       - 第1个ck-widget__resizer宽度特别宽，后2个resizer宽度正常
     - 原因需要进一步分析，UploadImage后有3个resizer div，InsertImage后有1个resizer div，此时InsertImage得到的图片仍然无法缩放大小
-
 - 多维表格新建视图的设计
   - 分组表格不是单独的视图，就是在表格视图下调整得到
   - 在分组表格下新建得到的表格视图，默认是不含分组的普通表格视图，也就是配置丢失了
@@ -1187,16 +1124,13 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 ## 1220
 
 - 看板或表格内容涉及到全局任务、全局文档时，难以本地化
-
 - 样式是实现表格复杂度最低的一部分，是靠后的一部分
   - 重点是过滤排序分组
-
 - 看板数据结构的层次
   - 数据存储结构
   - 看板视图结构
   - 表格视图结构
     - 任务id存在对应的任务名称
-
 - 多维表格数据结构的层次
   - 存储结构
     - 对象数组
@@ -1221,7 +1155,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - if( field === 'subTasksList' )
     - 特殊处理文档字段、子任务字段
   - 对看板 data -> kanbanData
-
 - notion卡片边框的样式
 
 ```css
@@ -1269,7 +1202,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - 如何更新看板的数据和ui
   - ✔ 看板的数据源作为props从外部传入
   - ✔ 看板更新的方法也作为props传入
-
 - 🤔 看板适不适合做成离线可用、本地数据库的形式?  独立看板、文档中的看板
   - 增加了看板任务/用户全局任务crud的复杂度；看板一定属于workspace
     - 文档侧边栏的任务从哪里读取
@@ -1285,7 +1217,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - 区分独立看板和文档中的看板，独立看板不可离线但可全局统计，文档中的看板可离线但不可全局统计
     - 编辑器内只能查看和读取任务项，不能修改，但可跳转到看板进行修改
     - 离线状态下，文档侧边栏的任务应该提示只读信息，不能访问全局看板
-
 - 卡片的存储结构
   - 最好是扁平的结构，每个卡片存储所属的分组列id和看板id
 
@@ -1318,7 +1249,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - CRUDList的使用场景
   - 待办事项、清单
   - 文档列表
-
 - SearchList的设计
   - 针对列表数据的搜索
 - SearchList的使用场景
@@ -1332,10 +1262,8 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 日历文本必须先显示，日历卡片才能弹出在正确位置；
   - 若日历文本未提前渲染到dom，文本和卡片同时渲染出来时，由于卡片的位置依赖于文本位置，所以会出现分离和漂移
   - 临时解决方案：提前将日历文本渲染到dom，但`visibility：hidden`，会占据空间，不触发事件
-
 - onClick事件触发多个任务的实现思路
   - 要考虑如何在其他地方触发相同的操作，将计算逻辑抽离出去方便其他地方复用
-
 - input设置`border: none; `后，仍然显示边框的问题
   - 排查失败
   - MuiPickersUtilsProvider   DatePicker
@@ -1354,7 +1282,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - const [ignored, forceUpdate] = useReducer(x => x + 1, 0); 
     - function handleClick() { forceUpdate(); }
     - `<button onClick={forceUpdate}>Force update</button>`
-
 - 更新对象数组中一个对象的方法
   - setState(prevState => ( { data: prevState.data.map(el => (el.id === id ? { ...el, text } : el)) }) )
 
@@ -1366,7 +1293,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 ## 1129
 
 - 之前的editoe组件为什么会报那个chunk错误？
-
 - codebase-https://github.com/nishantpainter/personal-kanban
   - Column 看板的一列，是一个面板，上面可以放置小卡片
 
@@ -1377,7 +1303,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - adjective mathematics
   - Allowing for or preserving parallel relationships
   - The Notion-like docs solution for enterprises.
-
 - affine首页的打字效果
   - https://www.theorange.digital/
   - "typed.js":"^2.0.12"
@@ -1409,25 +1334,21 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
      - /usernameId/docId
 
 - nextjs router.push()要放到useEffect或onClick里面
-
 - 权限状态码
   - 401 Unauthorized（未经授权），需要登陆
   - 403 Forbidden（被禁止），需要对应权限
   - 404 Not Found（找不到），可能的原因是服务器端没有这个页面
-
 - 处理复制粘贴url的流程
   - 先访问/user/me检查登录
   - 在获取workspace列表等基本信息
   - 然后检查目标url是否符合权限要求
   - 最后显示目标url的页面
-
 - 路由权限和http取数权限的验证返回值结构
   - 路由权限要检查返回的用户对象是否包含`role/canAccess`属性，通过后才跳转路由；
     - 需要新的查询接口，或者直接在前端配置规则
     - {errorCode: 401, canAccessRes: false}
   - http请求权限要在请求头中带上 authorization，检查返回值是否包含成功标志，返回值包含成功标志才直接使用，否则鉴权失败
     - {errorCode: 401, canAccessRes: false}
-
 - nextjs用户登录的实现
   - rbac路由
   - [Role-Based Routing](https://github.com/vercel/next.js/discussions/23041)
@@ -1438,7 +1359,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - [Next.js - Redirect to Login Page if Unauthenticated](https://jasonwatmore.com/post/2021/08/30/next-js-redirect-to-login-page-if-unauthenticated)
   - [[RFC] - Route guards](https://github.com/vercel/next.js/discussions/11822)
   - [Implement Protected Routes in NextJS： verify & no-verify token](https://dev.to/shubhamverma/implement-protected-routes-in-nextjs-37ml)
-
 - 解决用户权限的2个维度
   - 路由级权限控制，定义路由配置对象时，声明访问该路由需要的role
   - http请求级权限控制，访问敏感数据或执行敏感操作时需要检查role
@@ -1446,7 +1366,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - 动态添加路由
     - 菜单与路由分离，菜单由后端返回菜单
     - 或者 菜单与路由完全由后端返回
-
 - useEffect的返回值函数未执行的原因
   - 可能组件已经卸载，就不会执行了
 
@@ -1454,20 +1373,16 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 - material-ui 暂时没有dropdown组件
   - select组件样式太简陋
-
 - nextjs动态路由
   - 将匹配路由的过程在构建时或请求时自动计算匹配
   - 与react-router的手动计算类似
-
 - 不登录的时候，能够查看哪些内容
   - 本地缓存
   - 公共模版
   - 用户分享
-
 - workspace的路由url设计
   - 类似github的url： username/workspace
   - 用户名必须6位及以上，小于6位由系统保留使用
-
 - nextjs的全局状态管理
   - pages/_app.js 中可以定义全局使用的context，这样子组件就能通过useContext获取到
   - 可考虑将经常变动的state值放在单独的context，然后将不变的dispatch方法放在另一个单独的context
@@ -1494,15 +1409,12 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 </div>
 
 ```
-
 - 表格的最大宽度无法占满右边
   - 问题在于表格是inline-block，列宽默认150，总宽是多少就显示多少
   - 可以手动修改列宽
-
 - 表格一列的宽度无法设置
   - 考虑使用 `useBlockLayout` 布局
   - [Width is not working Material-UI Enhanced Table](https://github.com/tannerlinsley/react-table/discussions/2332)
-
 - workspace的文档列表功能实现顺序
   - [x] 替换mock数据
   - [x] 图标
@@ -1510,7 +1422,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - [x] 排序
   - [ ] 工具条
   - [ ] sticky header
-
 - react-table选用哪种布局
   - 参考相关示例和成熟的产品，可选择table或绝对定位
 
@@ -1532,7 +1443,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - gitee方块 13x15
   - affine方块 14x14
   - 方块样式参考github
-
 - 点击添加文档按钮，在日历热力图上会反映出操作记录
 
 ## 1117
@@ -1540,14 +1450,12 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - useStyles()的地方会触发warning
   - Each child in a list should have a unique "key" prop.
   - 原因定位，返回react fragment时，如果使用`<>`则无法添加key，必须使用完整的react元素 `<React. Fragment key='yourKey' >`
-
 - 利用mui的breakpoints，实现不同宽度时，同一位置显示不同元素
   - 只在宽屏时显示
     - hiddenSmDown:{ [theme.breakpoints.down('xs')]: { display: 'none' } }
   - 只在小屏时显示
     - hiddenSmUp:{ [theme.breakpoints.up('sm')]: { display: 'none' } }
   - [Using Breakpoints in MaterialUI](https://dev.to/christensenjoe/using-breakpoints-in-materialui-5gj0)
-
 - css单位
   - `ch` Represents the width, or more precisely the advance measure, of the glyph "0" (zero, the Unicode character U+0030) in the element's font.
 
@@ -1562,16 +1470,12 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - 首次执行editor.setData时，解决本地上传图片blobUrl失效的问题
   - 借助正则表达式
   - URL.createObjectURL返回的url一直是63位
-
 - 图片本地化后，刷新页面仍然会导致图片无法显示的问题
   - 因为modelWriter.setAttribute后，ckeditor的model变化不会自动触发react的setContent更新
   - 解决方法是手动触发更新content数据，接着自动保存更新内容
-
 - 保存图片数据后，如何恢复
   - 通过从rxdb中读取图片数据，再对blob对象创建url
-
 - 编辑器初始测试数据
-
 ```html
 <h1>title</h1>
 <figure class="image image-style-align-right">
@@ -1594,11 +1498,9 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - 对上传后保存图片和取出图片数据的api理解不清晰
   - 上传图片时，img-file  ->  blobUrl  ->  rxdb-doc-id
   - 刷新页面时，model不变，如何根据blobUrl查找图片数据
-
 - DocumentImpl.addVersion(blob, type)的目的是为了什么
   - 操作 DocumentImpl.#versions，保存新数据的版本
   - this.#versions.add(blob, type)
-
 - DocumentClient.set(document)的目的是为了什么
   - 通过DocumentClient操作rxdb数据库
   - this.#documents.atomicUpsert({ ...value, id })
@@ -1610,22 +1512,18 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 - 在imageBlock插件里面实现src url转换，还是在react层
   - 在react层，每次重载文档都会创建一次blobUrl
-
 - 每次刷新页面，图片无法显示的问题
   - URL.createObjectURL是临时的，每次刷新都会重新创建
   - model层存ref，而不是blobUrl
-
 - 如何处理同一张图片的问题
   - 上传已经以前已经上传过的图片时
     - 每次在保存图片数据前，能拿到ArrayBuffer
   - 复制粘贴src为blobUrl形式的图片时
     - 每次图片的src会自动变化
-
 - not-yet
   - URL.createObjectURL(file)每次返回的url都不相同，即使对于同一个文件
     - 每次粘贴普通图片后，粘贴得到的新图片url也不相同
   - 文档rxdb保存图片的ArrayBuffer时，去重是如何实现的？很难
-
 - 不同方式读取图片文件的ArrayBuffer得到的数据是否相等
   - 难以比较2个ArrayBuffer对象是否相等，因为是js对象
   - imgFileReaderRetArrayBuffer === fileArrayBuffer 
@@ -1642,18 +1540,14 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - 图片数据单独存储的目的
   - uploadedImg这个新api的设计
   - 只实现了图片存储，暂未实现editor.getData()获取文件的无关数据移出
-
 - 体验
   - 本地文档不方便调试图片
-
 - 实现图片本地化的思路
   - 1. 上传图片时，图片保存到本地数据库
   - 2. 图片保存的格式为blob格式的url
-
 - File是Blob的子类
   - new File([], 'foo.txt') instanceof File // true
   - new File([], 'foo.txt') instanceof Blob // true
-
 - [FileReader vs. URL.createObjectURL](https://stackoverflow.com/questions/31742072)
 - createObjectURL 同步执行
 - FileReader.readAsDataURL 异步
@@ -1674,7 +1568,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - 最后图片img的src应该显示的是什么
   - 流程图的图片src本身就是符合要求的url，只需要替换通过工具栏上传的图片
     - 但注意流程图要去掉无必要的元素标签
-
 - 审阅balloonToolbar悬浮工具条的方法
   - editor.plugins.get('BalloonToolbar').show()
 
@@ -1701,10 +1594,8 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
       - editor.setData(editor.getData())的过程，实测不会触发command
   - 比较理想的方式，是getData时只输出mermaidCode，不输出image，但没有找到具体实现方法，因为dataDowncast无法完全控制getData的输出过程
   - 变通的方式，是getData时输出mermaid和imageBlock，setData时修改upcast过程，避免创建新的imageBlock
-
 - 测试编辑器内容的保存
   - editor.setData(editor.getData())
-
 - editor.getData()的实现原理
   - 会调用DataApiMixin.getData( options ) { return this.data.get( options ); }
   - core/editor中, this.data = new DataController( this.model, stylesProcessor ); 
@@ -1713,39 +1604,31 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 会执行 DataController.stringify( modelElementOrFragment, options)，只做2件事
     - model -> view: const viewDocumentFragment = this.toView( modelElementOrFragment, options );
     - view -> data: return this.processor.toData( viewDocumentFragment );
-
 - editor.setData(data)的实现原理
   - DataController.set( data, options = {} ) 会把将新数据设置到editor的任务添加到队列
   - 会执行 DataController.parse(data, context)，只做2件事
     - data -> view: const viewDocumentFragment = this.processor.toView( data );
     - view -> model: return this.toModel( viewDocumentFragment, context );
-
 - mermaid dataDowncast的输出是正常的
   - mermaidView = writer.createContainerElement
-
 - 检查editor.getData的过程和dataDowncast的关系
 
 ## 1109
 
 - [ ] 流程图获取焦点时是否要移除外部蓝色边框
 - [ ] 流程图双击时出现编辑文本代码弹窗，但修改过的文本代码无法保存
-
 - CKEditorError: model-position-before-root
   - Cannot read properties of undefined (reading 'length')
   - 检查修改model时插入元素的位置
-
 - 媒体查询@media技巧
   - 如果判断最小值，即使用(min-width)，应该从小到大写；也是推荐的写法，因为一些前端框架（如：bootstrap）就是判断最小值，从小往大写的；
   - 如果判断最大值，即使用(max-width)，应该从大到小写
-
 - 给文档添加margin的设计
   - 飞书文档网页版未适配手机浏览器
   - 文档内容的宽度需要设置 min-width， max-width
   - 当宽度缩小到最小宽度以下，文档宽度就不会继续变小了，此时也没有水平滚动条，水平选择和浏览不方便
-
 - 飞书文档容器宽度样式css
   - 文档在宽屏上，最大宽度为790
-
 - mui的默认断点
   - xs 0
   - sm 600
@@ -1790,9 +1673,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 粘贴mermaid流程图文本代码时，无法正常显示
   - 双击流程图图片时，无法出现编辑mermaid代码的弹窗
   - ~~流程图的缩放仍未实现~~
-
 - [x] 图片标题切换显示要改成中文提示
-
 - 修改图片悬浮工具条的文字提示为中文
   - 思路0：利用官方提供的构建多语言的方法，add/t(), webpack配置
     - add需要手动在创建editor实例前，修改`window.CKEDITOR_TRANSLATIONS`属性对象，添加键值对
@@ -1808,16 +1689,13 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - MermaidUI.init()方法中，通过_enableUserBalloonInteractions()注册双击事件，每次双击mermaid图片节点，都会执行showUI()，触发执行 `ReactDOM.render(<MermaidPanel />, this.element)`，会显示包含流程图模版的弹窗
   - `<MermaidPanel />`会传入初始文本代码，以及更新文本代码的方法
   - 在MaterialUI中监听`'change:code'`事件，每次文本代码code更新，都会执行insertMermaid命令(该命令会创建或更新当前的model对象)，然后触发view更新
-
 - [x] 插入mermaid时，如何和image联系起来
   - 获取到mermaid或第三方的图片url地址后，不要手动创建img，而是修改image-plugin对应的的model数据
-
 - [x] 自定义图片更新时，修改model还是修改view
   - 比较理想的方式是model只定义最外层结构，不定义imageBlock的实现细节
   - 可考虑在downcast过程中动态创建imageBlock的model
   - 次优的方案是修改schema，将实现细节也定义出来
   - 因为modelWriter不检查schema，所以可以在不修改schema定义的前提下，动态插入内容
-
 - image-plugins
   - ImageToolbar
     - Instances of toolbar components (e.g. buttons) are created using the editor's component factory based on the image.toolbar configuration option.
@@ -1836,7 +1714,6 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - It recognizes image links in the pasted content and embeds them shortly after they are injected into the document.
   - ImageTextAlternative
   - LinkImage
-
 - editor.config中的配置变化时，如何rerender editor
   - 思路1: 先destroy editor实例，再创建新的editor实例
   - 思路2: 修改CKEditor的id属性，交给ckeditor5-react更新
@@ -1845,21 +1722,15 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 - 更新plugin config的方法
   - 提前设计成可开启关闭的配置项，然后添加到配置对象
-
 - All changes in the document structure, of the document’s selection and even the creation of elements, can only be done by using the model writer.
-
 - Currently, there is no straightforward way to override the schema preconfigured by features. 
   - If you want to override the default settings when initializing the editor, the best solution is to replace `editor.model.schema` with a new instance of it. 
   - This, however, requires rebuilding the editor.
-
 - The role of the model layer is to create an abstraction over the data. 
   - Its format was designed to allow storing and modifying the data in the most convenient way
   - Most features operate on the model (read from it and change it).
-
 - The view may need to be changed manually if the cause of such change is not represented in the model. 
-
 - Technically, the data pipeline does not have a document and a view controller. 
-
 - there is no editing upcasting 
   - because all user actions are handled by editor features by listening to view events, analyzing what happened and applying necessary changes to the model.
 
@@ -1869,29 +1740,23 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - 导出data view时，去掉image部分
   - 编辑显示时，添加imageBlock的部分
   - 打开带数据的文档初始化时，添加imageBlock的部分
-
 - 如果要用官方的image插件的功能，model包含imageBlock是最简单的方式
   - 否则，要在downcast之中手动创建元素
-
 - 插入图片和标题的参考
   - [How to insert an image with a caption into a custom element in CKEditor 5?](https://stackoverflow.com/questions/53208435)
   - [Refreshing a CKEditor5 widget upon model changes](https://stackoverflow.com/questions/51319311)
-
 - 流程图插入标题的自定义实现
 
 ```JS
 const mermaidView = writer.createEmptyElement('img', {
   src: `https://api.editoe.com/api/mermaid/generate?data=${encodeURI(mermaidCode)}`,
 });
-
 const figcaptionElem = writer.createEditableElement('figcaption', {
   class: 'ck-editor__editable ck-editor__nested-editable ck-placeholder image__caption_highlighted',
 });
-
 writer.insert(writer.createPositionAt(container, 0), mermaidView);
 writer.insert(writer.createPositionAt(container, 1), figcaptionElem);
 writer.insert(writer.createPositionAt(figcaptionElem, 0), writer.createText('请输入标题或描述'));
-
 return toWidget(container, writer, 'figure');
 ```
 
@@ -1900,7 +1765,6 @@ return toWidget(container, writer, 'figure');
 - 如何允许新的schema
   - 作为parent，包含已有schema，allowContent
   - 作为子元素，包含在已有父元素schema中，allowedIn
-
 - 修改model的writer参数对象 和 conversionaApi的writer属性(DowncastWriter) 不同
   - `editor.model.change((writer) => {` 在源码 @ckeditor/ckeditor5-engine/src/model/writer
     - The model can only be modified by using the writer. 
@@ -1911,13 +1775,11 @@ return toWidget(container, writer, 'figure');
   - `conversion.for( 'One-way converter' ) → DowncastHelpers` | UpcastHelpers
     - elementToElement( config = { config.model, config.view, [config.triggerBy], config.triggerBy.attributes, config.triggerBy.children } )
     - This conversion results in creating a view element.
-
 - **UI elements are ignored by the editor selection system**.
   - the selection cannot be placed in it, it is skipped (invisible) when the user modifies the selection by using arrow keys 
   - and the editor does not listen to any mutations which happen inside your UI elements.
   - The limitation is that you cannot convert a model element to a UI element. 
   - UI elements need to be created for markers or as additional elements inside normal container elements.
-
 - The **raw elements** work as data containers ("wrappers", "sandboxes") but their **children are not managed or even recognized by the editor**. 
   - This encapsulation allows integrations to maintain custom DOM structures in the editor content without, for instance, worrying about compatibility with other editor features. 
   - Raw elements are a perfect tool for integration with external frameworks and data sources.
@@ -1928,18 +1790,15 @@ return toWidget(container, writer, 'figure');
 - 读image部分的源码
   - 分析描述性标题的实现
   - 分析多语言的实现
-
 - 图片形式的内容如流程图是否要做个小重构
   - 是否要显示左右居中对齐、添加字幕
 
 ## 1102
 
 - [x] 要添加全局样式去掉所有图片的左上右下操作按钮
-
 - [x] nightly网站上最新commit未生效，右键菜单未去除插入相关菜单项，但本地运行时右键菜单已精简过了
   - 原因是pr合并到了错误的canary分支，应该合并到nightly分支
   - package-lock.json需要每次更新toe-editor的版本
-
 - 插入图片时，图片标题添加的代码位置 captionElementCreator()
   - editoe\plugins\ckeditor5-image\src\imagecaption\utils.js 
 
@@ -1947,7 +1806,6 @@ return toWidget(container, writer, 'figure');
 
 - 新编辑器缺少的props
   - autoSave, updateTitle
-
 - npm发版流程
   - npm run patch 修改版本号
   - npm run release
@@ -1963,9 +1821,7 @@ return toWidget(container, writer, 'figure');
   - 插入图片的command选择错误
     - insertImage -> uploadImage
   - 未实现将图片上传并保存到服务器
-
 - data view 和 editing view的区别
-
 - semantic views for rendering and data retrieval purposes and non-semantic views for data input.
 - The view may need to be changed manually if the cause of such change is not represented in the model.
 - Because the UI is organized according to the view-per-tree rule, it is clear which view is responsible for which part of the UI 
@@ -1973,11 +1829,9 @@ return toWidget(container, writer, 'figure');
 ## 图片上传问题
 
 - 上传图片到阿里云oss的逻辑不清晰
-
 - 临时变通的思路：
   - 上传时将图片转换成base64，保存到localStorage
   - 显示时使用 data: url 前缀的形式
-
 - 限制说明
   - 单个域名下，localStorage/sessionStorage的总大小不能超过5mb，若超出则丢弃而不会覆盖
 
@@ -1989,7 +1843,6 @@ return toWidget(container, writer, 'figure');
   - 支持插入外部图片url
 - 实现说明
   - 一次只能上传一张图片，暂不支持上传多张
-
 - 实现图片上传的基本步骤
   - The images are intercepted by the image upload plugin
   - For every image, the image upload plugin creates an instance of a file loader.
@@ -2000,30 +1853,24 @@ return toWidget(container, writer, 'figure');
     - [CKEditor5 With Custom Image Uploader in React](https://www.alvinrapada.com/stories/ckeditor5-with-custom-image-uploader-in-react)
     - [CKEditor Image upload with Firebase and React](https://dev.to/suraj975/ckeditor-image-upload-with-firebase-and-react-1pe8)
     - [How to enable image upload support in CKEditor 5?](https://newbedev.com/how-to-enable-image-upload-support-in-ckeditor-5)
-
 - 图片插件的问题
   - 要不要上传到后端? yes
   - 要不要支持用户输入任意图片url? no
-
 - 流程图
 
 ```markdown
-
 graph TD
     A-->B;
     A-->C;
     B-->D;
     C-->D;
-
 graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]
-
 - User Journey Diagram
-
 journey
     title My working day
     section Go to work
@@ -2041,7 +1888,6 @@ journey
   - upcast
   - dataDowncast
   - editingDowncast
-
 - 创建block widget的基本流程
   - 设计插件和widget的层次结构：entry、editing、ui、cmd
   - 在editing中定义schema
@@ -2050,7 +1896,6 @@ journey
   - 继承Command，实现execute/refresh
   - 在editing中注册commands
   - 在ui中创建图标，并添加到toolbar
-
 - 创建inline widget的基本流程
   - 设计插件和widget的层次结构
   - _defineSchema
@@ -2069,7 +1914,6 @@ journey
   - 在init方法中创建ui
   - 在ui组件中注册execute事件处理函数
   - 通过editor.model.insertContent插入内容到目标位置
-
 - 状态放在plugin，还是放在command
   - 放在plugin，可方便获取
   - 放在command，可方便修改 refresh() --> this.value
@@ -2077,12 +1921,9 @@ journey
     - 一般放在command，方便从外部触发修改
     - ui相关状态一般用react管理，而不是ckeditor
     - 编辑器内容相关状态，还可以考虑放在attributes
-
 - EmitterMixin、ObservableMixin 的区别
   - 用的很少
-
 - 怎么知道要将view放在plugin的位置
   - editor.model.insertContent的第2个参数指定插入位置
-
 - 如何使用自定义react组件定制ui
   - 参考文档示例，思路是实现ui插件时ui渲染部分使用react组件

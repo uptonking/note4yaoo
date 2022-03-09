@@ -59,6 +59,7 @@ for (var a = 0; a < 5; a++) {
   (function(i) {
     setTimeout(() => console.log(i), 1000 * i);
   })(a);
+}
 ```
 
 # 实现固定宽高比

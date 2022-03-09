@@ -16,6 +16,32 @@ modified: '2021-01-01T22:14:19.469Z'
   - lerna提供了主流的解决方案，但并不是每步都必须执行
 
 - Old but gold tip for Chrome and Firefox: To select part of a hyperlinked text, hold `Alt` while click-dragging the cursor.
+# utils
+
+```JS
+// 创建指定范围长度的数组
+
+// [1, 2, 3, 4, 5]
+Array.from(new Array(5), (x, i) => i + 1)
+Array.from({ length: 5 }, (x, i) => i + 1);
+Array.from(new Array(5), (x, i) => i + * lowerBound * );
+
+// [0, 1, 2, 3, 4]
+Array.from(Array(5).keys());
+[...Array(5).keys()];
+
+Array(10).fill(1).map((x, y) => x + y)
+const range = (start, stop, step = 1) =>
+  Array(Math.ceil((stop - start) / step)).fill(start).map((x, y) => x + y * step)
+const range = (start, stop, step) =>
+  Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
+
+function range(start, end) {
+  return Array.apply(0, Array(end - 1))
+    .map((element, index) => index + start);
+}
+```
+
 # react
 - cra
   - `npm x -- create-react-app react-cra-ts --template typescript --use-npm`
