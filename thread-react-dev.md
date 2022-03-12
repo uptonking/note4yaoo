@@ -12,6 +12,17 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## This is how I wish react hooks worked. Dep tracking built in and the ability to opt out is manual.
+- https://twitter.com/tannerlinsley/status/1502116674689925123
+  - 尝试去掉deps array
+- you driving React with Solid's "signals" logic?
+
 - ## react elements的props传递写法
 - https://twitter.com/tannerlinsley/status/1499773428739416068
   - `<Comp1 { ...{ ...defaultProps, foo, bar, ...overrideProps } } />` 展开语法

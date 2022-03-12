@@ -17,7 +17,11 @@ modified: '2021-09-10T14:15:55.903Z'
 
 - ## 
 
-- ## 
+- ## React Native's `fetch` could be so much faster.... 👀
+- https://twitter.com/mrousavy/status/1502321672296226831
+  1. RN's fetch does not support HTTP/3, QUIC, FTP or other protocols
+  2. RN's fetch is just a bunch of slow JS polyfills. Mine would be fully native C++ JSI
+  3. RN's fetch does not natively support Blobs with access on the JS side (ArrayBuffer streaming). I can support that.
 
 - ## Why isn’t there a react native for Linux yet?__202009
 - https://www.reddit.com/r/reactnative/comments/j855s7/why_isnt_there_a_react_native_for_linux_yet/

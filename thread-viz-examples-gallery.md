@@ -15,7 +15,8 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
-- ## 
+- ## American Companies That Failed in China
+- https://www.visualcapitalist.com/american-companies-that-failed-in-china/
 
 - ## My data visualization for the 2021 SOTI Challenge –by the Data Viz Society, describing the relationship between professional roles and data viz tasks in terms of devoted time.
 - https://twitter.com/martina_dossi/status/1486420898387304460
