@@ -30,22 +30,26 @@ modified: '2021-10-27T03:20:45.841Z'
     - 自己实现的右键菜单样式简陋、功能不全，如hover时显示浅色背景
   - 开发环境必须以linux为主，在windows vscode中以WSL Remote打开linux下的源码
     - 有些bug只在windows中才会出现，同事也难以分析排查
-  - 🤔 ckeditor编辑器刷新后，图片无法显示的问题；不同时刻触发save方法，如何确保新数据覆盖旧数据
-    - 问题排查定位，旧数据覆盖了新数据
-      - 不是防抖节流的问题，~~为了性能，将保存数据的函数防抖了，结果新数据被旧数据覆盖掉了~~
-      - 不是替换图片blobUrl的问题，一是save异步保存逻辑之后的位置打印出数据库内容就缺失了，二是注释掉保存逻辑取出数据库内容依然缺失
-      - 不是数据库保存数据丢失属性的问题，不是数据库同步的问题
+- 🤔 ckeditor编辑器刷新后，图片无法显示的问题；不同时刻触发save方法，如何确保新数据覆盖旧数据
+  - 问题排查定位，旧数据覆盖了新数据
+    - 不是防抖节流的问题，~~为了性能，将保存数据的函数防抖了，结果新数据被旧数据覆盖掉了~~
+    - 不是替换图片blobUrl的问题，一是save异步保存逻辑之后的位置打印出数据库内容就缺失了，二是注释掉保存逻辑取出数据库内容依然缺失
+    - 不是数据库保存数据丢失属性的问题，不是数据库同步的问题
     - 编辑器组件保存全量数据的save()方法是async异步的
       - 👉 通过在save方法内部不同位置打t1/t2/t3的log，发现问题处在 
       - 上传图片时，会将图片数据异步保存在本地数据库，此过程是异步，上传时编辑器图片部分数据为 `<figure class="image"><img></figure>` 非完全版，此时可能会触发异步save()方法
       - 若同时有其他异步操作更快地执行完了，也触发了数据保存
       - 那么其他操作触发的save()方法更早执行完，结果等上传图片完触发的save(旧的content)会覆盖掉新数据
-    - 解决方案参考1
-      - 每次save并不是真正的去保存到数据库的异步方法，将save方法改为简单的将数据保存到数组
-      - 通过闭包，保证节流时保存的是最新的数据，而不是旧数据
-      - 在useEffect里面异步保存数据时，定义标记变量，if (content && !saving) {，若正在保存数据，则不再执行保存
-    - 难以解决问题的原因
-      - 还包括编辑器editor对象的创建销毁由ckeditor控制，而不由应用层控制
+  - 解决方案参考1
+    - 每次save并不是真正的去保存到数据库的异步方法，将save方法改为简单的将数据保存到数组
+    - 通过闭包，保证节流时保存的是最新的数据，而不是旧数据
+    - 在useEffect里面异步保存数据时，定义标记变量，if (content && !saving) {，若正在保存数据，则不再执行保存
+  - 总结/难以解决问题的原因
+    - ⚡ 解决问题核心思路：用闭包确保执行异步方法的数据是有效的，类似setTimeout的延迟打印
+      - 搜索资料时，一定要参考关键词 useEffect autosave或其他编辑器的实现
+    - 不用数据而用boolean变量来操作ckeditor的model修改图片blob url是错误的实现思路
+    - 还包括编辑器editor对象的创建销毁由ckeditor控制，而不由应用层控制
+    - 睡一觉，第2天就会发现问题了，在前一天的错误上，多一次focus-blur触发保存，内容就正常了
 - dev-summary
   - 使用最多的组件
     - icon
@@ -293,6 +297,139 @@ modified: '2021-10-27T03:20:45.841Z'
       - 光标移动到待创建双链的文字的位置时，文字会突然缩小
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
+
+## 0311
+
+- debug为什么删除bibtex失效的问题
+  - 原因出现在useEffect里面注册db更新的监听器时，每次add后，马上就remove了
+  - 解决方法是只在组件卸载时移除监听器
+  - The clean-up function runs before the component is removed from the UI to prevent memory leaks. Additionally, if a component renders multiple times (as they typically do), the previous effect is cleaned up before executing the next effect.
+
+## 0310
+
+- bibtex列表和文末文献列表都应该使用ErrorBoundary拦截局部错误，避免整个页面坏掉
+  - 也可以完善解析容错的逻辑
+
+```bibtex
+@article{CitekeyArticle,
+  author   = "P. J. Cohen",
+  title    = "The independence of the continuum hypothesis",
+  journal  = "Proceedings of the National Academy of Sciences",
+  year     = 1963,
+  volume   = "50",
+  number   = "6",
+  pages    = "1143--1148",
+}
+
+@book{CitekeyBook,
+  author    = "Leonard Susskind and George Hrabovsky",
+  title     = "Classical mechanics: the theoretical minimum",
+  publisher = "Penguin Random House",
+  address   = "New York, NY",
+  year      = 2014
+}
+
+@booklet{CitekeyBooklet,
+  title        = "Canoe tours in {S}weden",
+  author       = "Maria Swetla", 
+  howpublished = "Distributed at the Stockholm Tourist Office",
+  month        = jul,
+  year         = 2015
+}
+
+@inbook{CitekeyInbook,
+  author    = "Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Jane B. Reece",
+  title     = "Photosynthesis",
+  booktitle = "Campbell Biology",
+  year      = "2016",
+  publisher = "Pearson",
+  address   = "New York, NY",
+  pages     = "187--221"
+}
+
+@manual{CitekeyManual,
+  title        = "{R}: A Language and Environment for Statistical Computing",
+  author       = "{R Core Team}",
+  organization = "R Foundation for Statistical Computing",
+  address      = "Vienna, Austria",
+  year         = 2018
+}
+
+@unpublished{CitekeyUnpublished,
+  author = "Mohinder Suresh",
+  title  = "Evolution: a revised theory",
+  year   = 2006
+}
+
+@proceedings{CitekeyProceedings,
+  editor    = "Susan Stepney and Sergey Verlan",
+  title     = "Proceedings of the 17th International Conference on Computation and Natural Computation, Fontainebleau, France",
+  series    = "Lecture Notes in Computer Science",
+  volume    = "10867",
+  publisher = "Springer",
+  address   = "Cham, Switzerland",
+  year      = 2018
+}
+
+@inproceedings{CitekeyInproceedings,
+  author    = "Holleis, Paul and Wagner, Matthias and Koolwaaij, Johan",
+  title     = "Studying mobile context-aware social services in the wild",
+  booktitle = "Proc. of the 6th Nordic Conf. on Human-Computer Interaction",
+  series    = "NordiCHI",
+  year      = 2010,
+  pages     = "207--216",
+  publisher = "ACM",
+  address   = "New York, NY"
+}
+
+@incollection{CitekeyIncollection,
+  author    = "Shapiro, Howard M.",
+  editor    = "Hawley, Teresa S. and Hawley, Robert G.",
+  title     = "Flow Cytometry: The Glass Is Half Full",
+  booktitle = "Flow Cytometry Protocols",
+  year      = 2018,
+  publisher = "Springer",
+  address   = "New York, NY",
+  pages     = "1--10"
+}
+
+@mastersthesis{CitekeyMastersthesis,
+  author  = "Jian Tang",
+  title   = "Spin structure of the nucleon in the asymptotic limit",
+  school  = "Massachusetts Institute of Technology",
+  year    = 1996,
+  address = "Cambridge, MA",
+  month   = sep
+}
+
+@phdthesis{CitekeyPhdthesis,
+  author  = "Rempel, Robert Charles",
+  title   = "Relaxation Effects for Coupled Nuclear Spins",
+  school  = "Stanford University",
+  address = "Stanford, CA",
+  year    = 1956,
+  month   = jun
+}
+
+@techreport{CitekeyTechreport,
+  title       = "{W}asatch {S}olar {P}roject Final Report",
+  author      = "Bennett, Vicki and Bowman, Kate and Wright, Sarah",
+  institution = "Salt Lake City Corporation",
+  address     = "Salt Lake City, UT",
+  number      = "DOE-SLC-6903-1",
+  year        = 2018,
+  month       = sep
+}
+
+@misc{CitekeyMisc,
+  title        = "Pluto: The 'Other' Red Planet",
+  author       = "{NASA}",
+  howpublished = "\url{https://www.nasa.gov/nh/pluto-the-other-red-planet}",
+  year         = 2015,
+  note         = "Accessed: 2018-12-06"
+}
+
+```
 
 ## 0309
 
