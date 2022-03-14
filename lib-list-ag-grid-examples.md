@@ -98,6 +98,10 @@ modified: '2021-07-20T13:45:26.460Z'
 - https://github.com/blackbaud/skyux-ag-grid
   - angular示例
 # examples
+- https://github.com/carlyrichmond/data-grid-alternatives
+  - 依赖ag-grid-react.v27、react-redux、recharts、highcharts
+  - This repository contains the accompanying examples for the talk Oh No! Not Another Data Grid.
+
 - https://github.com/Akashamba/Coronavirus-Tracker
   - https://coronavirus-tracker-live.netlify.app/
   - A Coronavirus Tracker built using the React Library.
@@ -139,6 +143,9 @@ modified: '2021-07-20T13:45:26.460Z'
 
 - https://github.com/ramepras/node-app-consuming-fake-rest-service
   - Node-Express app consumes JSON fake rest api and displays data on ag-grid.
+
+- https://github.com/MapColonies/discrete-layer-client
+  - React app written in typescript to define manage and browse discrete layers image catalog.
 # more-repos
 - https://github.com/terrestris/react-geo
   - https://terrestris.github.io/react-geo/
