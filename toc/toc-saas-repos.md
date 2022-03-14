@@ -20,6 +20,11 @@ modified: '2022-02-12T23:36:22.503Z'
   - simple-example 依赖mui.v4、ra-data-fakerest
   - demo-example 依赖 react-redux、redux-saga、react-router.v5、recharts
   - The React-Admin Enterprise Edition  offers additional features and services for react-admin
+
+- https://github.com/adarshaacharya/MentorLabs
+  - 前端依赖 redux/toolkit
+  - 后端依赖 express、typeorm
+  - 前后端都是ts类型
 # spa-react-boilerplate
 - https://github.com/themesberg/volt-react-dashboard
   - dashboard + components + pages

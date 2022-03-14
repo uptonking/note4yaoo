@@ -76,6 +76,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - display布局: table.div-block, tr.div-flex, td.div-block
   - 拖动表格滚动条时，可以显示minimap
   - 提供了日期字段作为一列的Calendar示例
+
 - table-x
   - https://github.com/gmfe/gm-pc/tree/master/packages/table-x
   - https://gmfe.github.io/gm-pc-docs/?path=/story/tablex-tablex--com-table-x
@@ -134,25 +135,41 @@ modified: '2021-07-20T13:28:26.296Z'
   - useExportData - Exporting data from table
   - useColumnSummary - For displaying and calculating column summaries
   - useCellRangeSelection - Allows Cell selection and Cell range selection
+
+- https://github.com/Podoprigora/material-ui-custom-theme
+  - https://podoprigora.github.io/material-ui-custom-theme/
+  - Custom theme for material-ui by making use of sass.
+  - 依赖material-ui.v5
 # examples
+- material-react-table /4Star/MIT/202203/ts
+  - https://github.com/KevinVandy/material-react-table
+  - https://www.material-react-table.com/
+  - A fully featured Material-UI V5 implementation of react-table, inspired by material-table and the MUI DataGrid, written from the ground up in TypeScript.
+  - 依赖 material-ui.v5、emotion/styled、react-table.v7、match-sorter
 - https://github.com/ggascoigne/react-table-example
   - https://codesandbox.io/s/github/ggascoigne/react-table-example
   - Demo of React Table V7 using TypeScript as well as Material UI v4
   - 全局filter，各种类型的filter
 - https://github.com/legendarydev007/react-material-dashboard
   - built with material-ui framework coded by Lahm
-- https://github.com/Podoprigora/material-ui-custom-theme
-  - https://podoprigora.github.io/material-ui-custom-theme/
-  - Custom theme for material-ui by making use of sass.
-  - 依赖material-ui.v5
+- https://github.com/toni783/MUI-react-virtual-table
+  - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
+  - react-table.v7, react-virtual, material-ui.v4
 
-- https://github.com/paalamugan/excel-sheet-react-table
+- https://github.com/paalamugan/exce  l-sheet-react-table
   - https://paalamugan.github.io/excel-sheet-react-table/
   - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
+  - 依赖 react-table、react-window、react-toastify、xlsx-parse-json
 
 - https://github.com/bezkoder/react-table-crud-example
   - React Table example: CRUD App with react-table v7, axios, Bootstrap
   - [React Table example: CRUD App | react-table 7](https://www.bezkoder.com/react-table-example-hooks-crud/)
+- https://github.com/jcape-gt/RemoteDataTable
+  - A CRUD data table library for React 
+  - 依赖react-table.v7、material-ui.v4、date-fns、react-hook-form
+  - Rows automatically support read/edit mode
+- https://github.com/MelisaMert/crud-react-contextapi
+  - Basic Crud Operation with contextapi
 
 - https://github.com/jimmybutton/react-tailwind-table
   - 只依赖 react-table7、@tailwindcss/forms
@@ -166,11 +183,6 @@ modified: '2021-07-20T13:28:26.296Z'
   - hooks-table-demo-with-pagination
   - 依赖bootstrap4、react-table7、reactstrap8
   - [React Table 7 - Hooks based library](https://thewidlarzgroup.com/react-table-7/)
-
-- https://github.com/jcape-gt/RemoteDataTable
-  - A CRUD data table library for React 
-  - 依赖react-table.v7、material-ui.v4、date-fns、react-hook-form
-  - Rows automatically support read/edit mode
 
 - https://github.com/Eversoft-Group/react-table
   - React table component build with Bootstrap and react-table
@@ -204,13 +216,6 @@ modified: '2021-07-20T13:28:26.296Z'
   - 样式普通
   - A set of React components to facilitate the creation of Open Data Catalogs with React.
   - built for dkan(基于php，而ckan基于python)
-
-- https://github.com/toni783/MUI-react-virtual-table
-  - https://codesandbox.io/s/github/toni783/MUI-react-virtual-table
-  - react-table.v7, react-virtual, material-ui.v4
-
-- https://github.com/MelisaMert/crud-react-contextapi
-  - Basic Crud Operation with contextapi
 
 - react-table chart column 图表作为一列
   - https://codesandbox.io/s/react-table-highcharts-jm125
@@ -257,9 +262,6 @@ modified: '2021-07-20T13:28:26.296Z'
 - https://www.npmjs.com/package/@preamp/tables
 - https://www.npmjs.com/package/@gmfe/table-x
 # more-repos
-- https://github.com/imcva/reactstrap-table
-  - A reactstrap skin for react-table v7
-
 - https://github.com/uqix/reactkit-table
   - Table component using react-table and material-ui
   - 和kitchen-sink示例太类似
@@ -281,6 +283,12 @@ modified: '2021-07-20T13:28:26.296Z'
 
 - https://github.com/Buffme/superset-dashboard
   - 抽出dashboard这块功能
+
+- https://github.com/supriya-kotturu/react-ts-tailwind-admin-ui
+  - https://react-ts-tailwind-admin-ui.netlify.app/
+- https://github.com/iqbalfasri/deur-app
+  - https://deur-app.vercel.app/
+  - 表格用的tailwind模版
 # non-react-table
 - https://github.com/venkatakireeti/meta-data-editor
   - React table component with useful functions.
@@ -290,7 +298,7 @@ modified: '2021-07-20T13:28:26.296Z'
   - TypeScript tools for the metablock cloud
 # ref
 - [Beautiful drag and drop interactions with react hooks](https://dev.to/griffadev/beautiful-drag-and-drop-interactions-with-react-hooks-4obo)
-  - build a drag and drop sortable table using @dnd -kit and react-table.
+  - build a drag and drop sortable table using @dnd-kit and react-table.
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9
 
 - [Table Virtuoso integrated with React Table](https://virtuoso.dev/react-table-integration/)

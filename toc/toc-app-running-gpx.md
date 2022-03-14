@@ -40,7 +40,13 @@ modified: '2022-02-23T18:59:51.587Z'
   - Mapbox for map display
   - Supports most sports apps such as nike strava...
   - If you don't want to make the data public, you can choose strava's fuzzy processing, or private repositories.
-# gpx
+# utils for gpx/fit
+- https://github.com/sports-alliance/sports-lib
+  - Sports Lib tries to achieve a common domain model and lib for sport activity formats such as GPX, TCX, FIT and other popular formats.
+  - Currently the support is limited to the main formats: GPX, TCX, FIT and JSON*
+  - 提供了转换示例
+    - Example converting a FIT file to GPX
+
 - https://github.com/mapbox/togeojson
   - converts KML & GPX to GeoJSON, in a browser or with Node.js.
   - Dependency-free

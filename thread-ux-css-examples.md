@@ -30,7 +30,9 @@ modified: '2021-02-05T14:00:02.922Z'
 
 - ## 
 
-- ## 
+- ## Skateboard-Like Preloader
+- https://twitter.com/jonkantner/status/1502270615998369793
+  - https://codepen.io/jkantner/pen/abEoyeK
 
 - ## CSS blooming flowers 🌷 with falling leaves 🍃
 - https://twitter.com/MdUsmanAnsari_/status/1493194247499296773

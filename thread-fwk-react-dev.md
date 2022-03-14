@@ -64,7 +64,14 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## jsx: What would you like it to "translate" to if this was native JS? DOM API constructs? Native VDOM? Something else?
+- https://twitter.com/devongovett/status/1501972169458425861
+  - Objects like React.createElement returns: { type, props, children }
+- But then the nodes are opaque, and you can't traverse them without executing the functions. For example, it's useful to be able to access props from a node object, or traverse into children. JSX represents a tree, and I think it's useful to expose it as one.
+  - FWIW, this introspection(内省/反射) is basically deprecated in React in my mind. It blocks essentially all optimizations we could do and very rarely used. We just have to provide suitable alternatives.
+  - That's unfortunate. We use it extensively to implement natural APIs for collections. We need to know all items up front e.g. for keyboard nav, but don't want to render them all to the DOM (virtual scrolling) or use some post-render registration pattern.
+  - Not sure there's another way to implement that at the moment. What optimizations does it prevent?
+  - Server Components passed to a child resolve eagerly. So the type goes to React. Node. Static optimizations like inlining or call-through without global reasoning (for perf). Lowering JSX inline to custom low-level DOM element creation. Etc.
 
 - ## If I were to rebuild Inferno again today, I'd go down the path of making it a "hooks only" compiler designed framework. 
 - https://twitter.com/trueadm/status/1498515284877058052

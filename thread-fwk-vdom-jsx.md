@@ -13,7 +13,14 @@ modified: '2021-08-23T09:58:18.490Z'
 
 - ## 
 
-- ## 
+- ## I would never want JSX standardized. 
+- https://twitter.com/trueadm/status/1502326881487626253
+  - It would be a huge mistake and three steps backward. 
+  - The innovation around JSX has come from it being safe from being standardized. 
+  - Inferno, Solid, Prepack, my React Compiler, all showed the potential of doing more at build time.
+- also, it would destroy any potential future in which JSX could be compiled to some more optimal representation - a Record, or maybe even a Struct (crossing my fingers)
+- Exactly. Then they can be passed around web workers for almost zero cost plus have guarantees during diffing.
+- I also don't want JSX to be standard because the structure behind this is very different, like Fre is a linked list, Preact is a tree, Solidjs is another completely different tree.
 
 - ## 到底哪种 diff 算法更快？
 - https://www.zhihu.com/pin/1412784357996572672

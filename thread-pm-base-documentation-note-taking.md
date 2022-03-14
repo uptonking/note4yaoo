@@ -15,9 +15,49 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## [Write plain text files](https://sive.rs/plaintext)
 
-- ## 
+- PORTABLE
+  - Every device, including ones long gone, and ones not invented yet, can read and edit plain text.
+- UN-COMMERCIAL
+- OFFLINE
+- NO DEPENDENCIES
+- EASIEST TO CONVERT
+  - HTML, Markdown, JSON, LaTeX, and many other standard formats, are just plain text.
+- NEED HIERARCHY?
+  - Use directories — also known as folders. 
+  - These are also good for keeping your text together with other files like images and audio.
+- NEED VISUALS OR GRAPHICS?
+  - Need visual mind-mapping with circles and lines? Maybe you do. But maybe you don’t.
+  - Maybe it’s just another distraction, focusing on the tools instead of your thinking.
+  - If you really need graphics, do your drawing using something else. Digital drawing into SVG files. Paper drawing, scanned into JPGs.
+  - Keep your graphics files alongside your text files. But keep your text as plain text.
+
+- CONCLUSION
+  - Reliable, flexible, portable, independent, and long-lasting. 
+
+- ## 用纯文本作效率软件
+- https://geekplux.zhubai.love/posts/2112558255871123456
+- 本文虽然标题是说用纯文本做效率软件，但无意于散布效率焦虑，主要目的是让大家尽量重视数据的控制权。
+- 各种效率工具的目的无非是时间管理，而各种笔记软件的目的也无非是知识沉淀，做好这两项对于纯文本来说绰绰有余，而我们的人生也大概率就是做这两件事。
+- OBTF（One big text file）在 2005 年的时候非常流行，在软件行业发展了十几年之后，越来越多人又回归到了这个概念。
+
+- 纯文本有以下几个好处：
+  - 不依赖任何公司，不依赖于任何软件。任何一个操作系统，包括手机，都有办法打开和处理纯文本文件
+  - 体积小。方便迁移、同步、备份
+  - 排版自由
+  - 离线。想想没网的时候打开那些在线写作软件
+  - 版本管理。计算机对纯文本的处理相当成熟，尤其是版本管理方面
+  - 方便转换。你可以随意根据自己的需求定制，可能要写点代码
+
+- 时间管理
+- Jeff Huang 用一个 .txt 文件做时间管理用了 12 年
+  - 每天临睡前把明天要做的事列出来，写上大致的时间，第二天晚上做同样的事情，列表里做完的事会自然沉淀到当天，而没做完的则可以复制粘贴到第二天，以此重复 12 年。
+  - 作者还有些小 tips，比如在阐述 todo 事项的时候尽量保持同样的风格，如 meet with XXX 就是和 XXX 开会，那么只要打开软件搜索 “meet with” 就可以搜到所有的开会记录
+
+- 自从被 Evernote 恶心到之后，我后来选择任何一个软件，第一件考虑的事情都是看它支不支持数据导出
+
+- 关于效率，文中说了这么多用纯文本做管理的好处与示例，但效率这种东西千人千面，适合自己的才是最好的。
 
 - ## We’re redesigning Notion’s sidebar so you can organize your pages by custom teams! 
 - https://twitter.com/NotionHQ/status/1499069682581590020
