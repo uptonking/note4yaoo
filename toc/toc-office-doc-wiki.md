@@ -42,6 +42,7 @@ modified: '2021-07-23T08:38:53.805Z'
 - https://github.com/zadam/trilium
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
+  - [Notion like database](https://github.com/zadam/trilium/issues/822)
 
 - https://github.com/hedgedoc/hedgedoc /AGPLv3
   - https://docs.hedgedoc.org/setup/getting-started/

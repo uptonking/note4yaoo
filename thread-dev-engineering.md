@@ -11,7 +11,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## developers at different levels
+- https://twitter.com/ZainRzv/status/1502550200396750851
+- Junior engineer:
+  - Take this tightly defined feature & build it
+- Mid-level engineer:
+  - Take this vaguely defined feature & build it
+- Senior engineer:
+  - Take this known problem & figure out how to solve it
+- Staff engineer:
+  - Take this goal & find the problems we should be solving
 
 - ## TIL you can use "it.only" to run only one test at a time
 - https://twitter.com/steveruizok/status/1496052781945397252

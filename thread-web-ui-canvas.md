@@ -23,6 +23,14 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I'm only now realizing just how much I got away with by not having shapes nest in tldraw.
+- https://twitter.com/steveruizok/status/1503156568380088320
+  - I guess there's a reason you're not allowed to select a child and its parent at the same time
+
 - ## ever wondered how to make context aware follow-along cursors? 
 - https://twitter.com/0xca0a/status/1495791102884028416
   - it's a bit of a problem because canvas lives in another context than the dom and lifting up state is always awkward. 

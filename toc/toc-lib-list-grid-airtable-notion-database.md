@@ -1,11 +1,11 @@
 ---
-title: toc-lib-list-grid-airtable
-tags: [airtable, grid, list, table, toc]
+title: toc-lib-list-grid-airtable-notion-database
+tags: [airtable, grid, list, notion-database, table, toc]
 created: '2022-01-30T19:35:55.709Z'
-modified: '2022-01-30T19:55:44.761Z'
+modified: '2022-03-14T19:55:47.081Z'
 ---
 
-# toc-lib-list-grid-airtable
+# toc-lib-list-grid-airtable-notion-database
 
 # guide
 
@@ -33,6 +33,12 @@ modified: '2022-01-30T19:55:44.761Z'
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser, 
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
+# notion database like
+- https://github.com/mattermost/focalboard
+  - https://www.focalboard.com/
+  - Focalboard comes in two main editions:
+  - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
+  - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
 # examples
 - https://github.com/qwtel/sqlite-viewer-vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
