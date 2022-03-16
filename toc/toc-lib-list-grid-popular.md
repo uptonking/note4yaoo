@@ -498,6 +498,11 @@ modified: '2020-10-22T06:49:10.760Z'
 
 ## table-tr-td-more
 
+- regular-table /233Star/Apache2/202203/js
+  - https://github.com/jpmorganchase/regular-table
+  - A Javascript library for the browser, regular-table exports a custom element named `<regular-table>`, which renders a regular HTML `<table>` to a sticky position within a scrollable viewport. 
+  - Only visible cells are rendered and queried from a natively async virtual data model, making regular-table ideal for enormous or remote data sets. 
+  - Small bundle size, no dependencies.
 - DataTables /MIT/6.6kStar/202005
   - https://github.com/DataTables/DataTablesSrc
   - https://github.com/DataTables/DataTables

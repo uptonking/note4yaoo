@@ -11,6 +11,9 @@ modified: '2021-03-31T06:50:19.936Z'
 
 - apache2服务器配置子域名的方法
   - [Ubuntu Apache配置子域名（单IP多域名）](https://www.jianshu.com/p/a9eeac672069)
+    - 在/etc/apache2/sites-available目录下，建立单独文件，如kanban.conf
+    - 保存后执行a2ensite kanban.conf，执行后会自动在/etc/apache2/sites-available建立相应的文件链接。
+    - 注意要做域名解析
 # pieces
 - ## 
 

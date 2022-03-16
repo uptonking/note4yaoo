@@ -20,6 +20,20 @@ modified: '2021-03-22T18:24:50.639Z'
     - 6212 2518 0900 0758 487
     - 6212251809000758487
 
+- 拼多多 链接分析
+
+```
+
+- 小虎宝儿 买一送一
+
+https://mobile.yangkeduo.com/promotion_op.html?id=181215&subject_id=&type=5&refer_share_id=de9501e0a57f42b7a702565df1d963b4&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
+
+- 拓路者 上新数量
+
+https://mobile.yangkeduo.com/sjs_brand_clearance_page.html?brand_id=13987&brand_name=%E6%8B%93%E8%B7%AF%E8%80%85&_ex_prom_name=broken_clearance&_ex_prom_level_one_name=tab_id_210&_ex_prom_level_two_name=recommend_brand&_ex_prom_level_three_name=recommend_brand_idx_0&refer_page_name=brand_clearance&refer_page_id=15002_1647358545543_o7dbbujd56&refer_page_sn=15002&page_from=88&refer_subjects_id=14&refer_abtest_info=%7B%7D&refer_share_id=9712384e59ba427293382948a3ec0a95&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
+
+```
+
 - js产生定长字符串
 
 ```JS

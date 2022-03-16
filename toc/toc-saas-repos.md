@@ -36,6 +36,9 @@ modified: '2022-02-12T23:36:22.503Z'
 
 - https://github.com/MelisaMert/crud-react-contextapi
   - Basic Crud Operation with context api
+
+- https://github.com/habx/lib-ts-template
+  - Template for client library in typescript
 # crud
 - https://github.com/taniarascia/react-hooks
   - https://taniarascia.github.io/react-hooks/

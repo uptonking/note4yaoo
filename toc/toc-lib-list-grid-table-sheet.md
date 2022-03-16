@@ -27,9 +27,21 @@ modified: '2020-10-22T06:49:25.812Z'
   - [SheetJS Test Files](https://github.com/SheetJS/test_files)
     - XLS/XLSX/XLSB and other spreadsheet formats
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
+# excel
+- https://github.com/dataspread/dataspread-web
+  - http://dataspread.github.io/
+  - DataSpread is a spreadsheet-database hybrid system, with a spreadsheet frontend, and a database backend. 
+  - Thus, DataSpread inherits the flexibility and ease-of-use of spreadsheets, as well as the scalability and power of databases.
+  - A flexible hybrid data model to represent spreadsheet data within a database
+  - 后端 java
+  - 前端依赖 handsontable.v6
 
+- https://github.com/dataspread/spreadsheet-benchmark
+  - We developed an exhaustive benchmark, sheetperf, to evaluate the performance of spreadsheet systems.
+    - measures the scalability of spreadsheet systems for a range of canonical spreadsheet operations, and
+    - investigates how a spreadsheet system stores data and whether it adopts optimizations to speed up computation.
+  - Our benchmark has been implemented for three popular spreadsheet systems, Microsoft Excel, LibreOffice Calc, and Google Sheets.
 # commercial-list-grid
-
 - FancyGrid /OneOffLic
   - https://www.fancygrid.com/
   - JS grid library with charts integration and server communication.
@@ -69,5 +81,4 @@ modified: '2020-10-22T06:49:25.812Z'
   - https://www.sencha.com/
   - 基于Ext JS实现
   - 基于div实现表格，单元格中可包含canvas图表
-
 # more
