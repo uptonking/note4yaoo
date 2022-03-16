@@ -78,6 +78,7 @@ modified: '2021-07-23T08:38:53.805Z'
 
 - https://github.com/dendronhq/dendron
   - https://wiki.dendron.so/
+  - /AGPL
   - local-first, markdown-based, note-taking tool built on top of VSCode. 
   - Dendron finds the usable center between the two extremes by supporting backlinks of any two arbitrary notes while also maintaining a canonical hierarchy for every note. 
   - We do this through our hierarchal first approach to note taking that relies on the combination of hierarchies, schemas, and path based lookups.

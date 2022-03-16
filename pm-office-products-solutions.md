@@ -9,6 +9,19 @@ modified: '2021-07-11T08:31:00.660Z'
 
 # guide
 
+- 偏向文本编辑
+  - almanac
+  - coda
+  - cloverapp
+
+- 偏向任务管理
+  - airtable
+  - monday
+  - taskade
+  - asana
+  - clickup
+  - trello
+  - focalboard
 # trending-office-products
 
 ## [almanac](https://almanac.io/features)

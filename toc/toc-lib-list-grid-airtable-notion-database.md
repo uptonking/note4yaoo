@@ -58,7 +58,7 @@ modified: '2022-03-14T19:55:47.081Z'
 - focalboard /10.3kStar/MIT-like/202203/ts+go
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
-  - Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
   - Focalboard comes in two main editions:
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
     - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.

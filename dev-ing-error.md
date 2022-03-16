@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- golang代理超时报错"https://proxy.golang.org/github.com/********** timeout 
+  - 解决方法只需要换一个国内能访问的代理即可，终端执行以下命令
+  - go env -w GOPROXY=https://goproxy.cn
+
 - [console.log() shows the changed value of a variable before the value actually changes](https://stackoverflow.com/questions/11284663)
   - console.log() is passed a reference to the object, so the value in the Console changes as the object changes. 
     - To avoid that you can: console.log(JSON.parse(JSON.stringify(c)))
