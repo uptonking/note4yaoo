@@ -298,11 +298,70 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0314
+
+- dev-plan
+  - bibtex支持更多类型
+  - 有时插入bibtex不会触发文末参考文献的更新
+  - bibtex refList 可以添加同名文件，然后控制台会打印异常信息
+  - 点击标题名跳转路由后，文末参考文献消失了，为什么
+  - undo-redo 未处理恢复和删除参考文献、双链的情况，文末参考文献也应该同步更新
+  - [ ] 双链从文中删除时，却没有从尾部删除
+  - [ ] 默认字体修改为衬线体
+  - [ ] 修复字体突然变小的问题
+  - [ ] 定制标题样式
+  - [x] ~~编辑器中普通双链文章也无法点击跳转了~~，url也变化，但需要手动刷新浏览器
+
+- 需求讨论
+  - 其他人有权限删除我的文档
+  - 更新bibtex的流程，推荐先删除再添加，如一个book bibtex，开始没有chapter，后面添加了chapter，那系统会认为是2条文献，对于title/booktitle/chapter字段的增删默认认为是2条
+
+- 不能稳定复现的bug
+  - 文档树一直显示转圈加载中
+
+```bibtex
+@inbook{CitekeyInbook,
+  author    = "Lisa A. Urry and Michael L. Cain and Steven A. Wasserman and Peter V. Minorsky and Jane B. Reece",
+  title     = "Photosynthesis",
+  booktitle = "Campbell Biology",
+  year      = "2016",
+  publisher = "Pearson",
+  address   = "New York, NY",
+  pages     = "187--221"
+}
+
+@phdthesis{CitekeyPhdthesis,
+    address = { Stanford, CA },
+    author = { Rempel, Robert Charles },
+    month = { 06 },
+    school = { Stanford University },
+    title = { Relaxation effects for coupled nuclear spins }
+}
+
+@inbook{test,
+  author={Grandstrand, O.},
+  year= 2004, 
+  chapter={Innovation and Intellectual Property Rights}, 
+  editor = {J. Fagerberg and D. C. Mowery and R. R. Nelson}, 
+  title= {Oxford Handbook of Innovation}, 
+  publisher= {Oxford University Press},
+  address= {Oxford}, 
+}
+
+```
+
+- continue和break支持在各种for循环中使用
+  - By loops I mean for, for...in, for...of, while and do...while, not forEach, which is actually a function defined on the Array prototype.
+  - forEach中要用return
+
 ## 0311
 
-- debug为什么删除bibtex失效的问题
+- 🤔 debug为什么删除bibtex失效的问题
   - 原因出现在useEffect里面注册db更新的监听器时，每次add后，马上就remove了
   - 解决方法是只在组件卸载时移除监听器
+  - 如何定位此问题
+    - a. 用浏览器的debug工具，发现useEffect的cleanup函数被执行多次
+    - b. 打印注册监听器和移除监听器的log，观察数量不对应
   - The clean-up function runs before the component is removed from the UI to prevent memory leaks. Additionally, if a component renders multiple times (as they typically do), the previous effect is cleaned up before executing the next effect.
 
 ## 0310
@@ -433,17 +492,6 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 0309
 
-- dev-plan
-  - bibtex支持更多类型
-  - 有时插入bibtex不会触发文末参考文献的更新
-  - bibtex refList 可以添加同名文件，然后控制台会打印异常信息
-  - 点击标题名跳转路由后，文末参考文献消失了，为什么
-  - undo-redo 未处理恢复和删除参考文献、双链的情况，文末参考文献也应该同步更新
-  - [ ] 双链从文中删除时，却没有从尾部删除
-  - [ ] 默认字体修改为衬线体
-  - [ ] 修复字体突然变小的问题
-  - [ ] 定制标题样式
-  - [x] ~~编辑器中普通双链文章也无法点击跳转了~~，url也变化，但需要手动刷新浏览器
 - 异步保存编辑器数据到本地数据库，导致新数据被旧数据覆盖的问题
   - 先解决新数据一定要覆盖旧数据的问题，用闭包
   - react组件useEffect如何书写节流防抖，应该包装请求方法，而不是包装setState
