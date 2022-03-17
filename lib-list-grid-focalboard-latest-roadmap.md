@@ -7,4 +7,24 @@ modified: '2022-03-16T20:46:53.277Z'
 
 # lib-list-grid-focalboard-latest-roadmap
 
+# guide
 
+# discuss
+
+## [Feature Idea: Role-Based Permissions](https://github.com/mattermost/focalboard/issues/584)
+
+- phase 1
+  - add concept of "admin" and "non-admin" users; admin user is first to register with app
+- phase 2
+  - add sophisticated RBAC as per table above
+
+## [Feature Idea: Focalboard API](https://github.com/mattermost/focalboard/issues/1116)
+
+- Right now, the current API is block-based (boards, cards, etc. are blocks with different types). 
+  - We are open to input on how to refactor this in the future, but the current API is fully functional, and should be able to support the scenarios mentioned above.
+
+## [Feature Request: Single page/wiki/note/folder without board](https://github.com/mattermost/focalboard/issues/166)
+
+- Such pages would be really useful for high-level briefs and team documentation.
+  - Markdown-like is fine but it would be great to have links between pages and cards as a first-class citizen. 
+  - Having backlinks for instance would make things very useful.

@@ -13,8 +13,25 @@ modified: '2021-03-11T11:26:12.335Z'
 # babylon
 - ref
   - https://twitter.com/search?q=babylon%20(from%3A0xca0a)&src=typed_query&f=live
-# pieces
+# discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## there was always something unfriendly about node editors, @splinetool saw that and used a more design oriented approach: layers. 
+- https://twitter.com/0xca0a/status/1504140883167703044
+  - now @CantBeFaraz made this into an oss lib, think of lamina as tailwind for shaders.
+  - https://github.com/pmndrs/lamina
+  - https://codesandbox.io/s/lamina-1-x-ledhe1
+- with nodes you didn't have to know shaders, but it's still atomic & takes some skill. 
+  - with layers you work in a confined, visual env, you blend pluggable abstractions like depth, gradient etc. 
+  - these are simpler to configure and do one thing only. more will be added, PR's welcome!
 
 - ## RIP to AWS Sumerian, which was officially laid to rest yesterday. 
 - https://twitter.com/visageofscott/status/1496263200786239492

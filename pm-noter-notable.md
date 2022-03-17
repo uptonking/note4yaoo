@@ -1,11 +1,11 @@
 ---
-title: pm-noter-notion
+title: pm-noter-notable
 tags: [note-taking, notion, office, pm]
 created: '2020-11-24T07:44:16.296Z'
-modified: '2021-07-11T08:26:43.528Z'
+modified: '2022-03-17T17:50:28.967Z'
 ---
 
-# pm-noter-notion
+# pm-noter-notable
 
 > easy to read， easy to write， content-centric notebook
 
