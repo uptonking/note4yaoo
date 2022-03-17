@@ -17,4 +17,10 @@ modified: '2022-03-16T20:45:17.243Z'
   - flexible views
     - tabs/multi-tiles
     - dynamic-ref vs detached-copy
+    - 通过detached-copy部分解决数据安全问题
+  - tested react view components
+    - kanban
+    - table
+    - gallery/card
+    - gantt
 # focalboard-examples
