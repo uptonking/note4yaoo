@@ -15,7 +15,11 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
-- ## 
+- ##  `<img>` and background-image download images differently.
+- https://twitter.com/iamakulov/status/1504804839921909761
+  - `<img>` tag fetches an image as soon as HTML arrives.
+  - background-image fetches it much later, only when all CSS files download (even if you specify `style="background-image: …"` straight in HTML).
+  - To download a background-image, the browser has to figure out *which* image to download, first.
 
 - ## Optimum `<head>` order for performance
 - https://twitter.com/smashingmag/status/1440697011985018881

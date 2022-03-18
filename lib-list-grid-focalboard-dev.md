@@ -12,13 +12,13 @@ modified: '2022-03-16T20:45:17.243Z'
 # focalboard-rewrite
 - goals
   - relicense => better-coding/pattern
-  - more notion-like database views => list/gantt/timeline
   - local-first
+  - more notion-like database views => list/gantt/timeline
   - flexible views
     - tabs/multi-tiles
     - dynamic-ref vs detached-copy
     - 通过detached-copy部分解决数据安全问题
-  - tested react view components
+  - tested headless react database view components
     - kanban
     - table
     - gallery/card

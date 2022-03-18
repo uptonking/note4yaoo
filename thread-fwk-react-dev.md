@@ -62,7 +62,42 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
-- ## 
+- ## When I build libraries for React, ironically, I don't really use hooks like useState, useReducer, etc. 
+- https://twitter.com/tannerlinsley/status/1504854824952610818
+  - One of the best perks (and footguns) of managing your state *outside* of react is that you get to have full control over when a component should rerender.
+- A great use case for this is when you need to call a bunch of state altering functions in succession. There's no waiting for your updates to come down the react pipeline, so you get up-to-date values immediately in your private state.
+  - Then, when you're finally ready to commit them to your component state, you can send your private state to your component usually by saving it to a ref (don't forget to trigger a rerender!) or by using setState. Okay... so I usually have at least *one* of those two hooks ; )
+  - **Rule of thumb** here is that once you take responsibility for managing state outside of react, you need to be extra aware of batching, unintended overwrites, and especially mutating your component state during render 😬
+  - Either way, it's a powerful pattern to learn and master.
+
+- Diving into the internals of many popular 3rd-party React hooks/libraries, I'd think many developers are in tacit agreement with this.
+  - "Update a ref and force a rerender" feels so dirty but also so nice. And `useSyncExternalStore` helps here too.
+  - 🙋‍♂️ Agreed. Like…state could even be managed in a framework agnostic outside library. 🤔
+
+- useReducer is def more direct since useState is built on it 
+
+```JS
+function useRerender() {
+  return React.useReducer(d => ({}), {})[1]
+}
+```
+
+- what I meant to ask is whether you use these hooks *only* to re-rerender, with "dummy" state, or if you actually put something useful into the state ever, as a way to "sync" or smth
+  - “It depends” Usually its a ref.
+  - a ref + this kind of dummy state setter to rerender?
+  - Yeah
+- This is actually pretty neat. useRef to store state + useState to force rerenders is something I’ve never used, but seems incredibly flexible.
+
+- Another reason to use Solid - this is the default behavior with hooks
+
+- useRef is just useState({current: initialValue })[0] so you are technically still *inside* of react hahaha. And yea if you mutate that state directly then it is instantaneous. But seriously I wonder what are the benefits of doing it on your own as opposed to asking react to do it
+  - The difference is the ability to change mutable, persistent state without also triggering a rerender.
+
+- I feel like half of my library code is usually just pubsub logic
+  - And the other half of mine are Monotonous Typescript Generics Incantations
+
+- Can you give Example ? Please
+  - #ReactQuery, #ReactTable, #ReactCharts
 
 - ## jsx: What would you like it to "translate" to if this was native JS? DOM API constructs? Native VDOM? Something else?
 - https://twitter.com/devongovett/status/1501972169458425861

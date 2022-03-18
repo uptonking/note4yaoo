@@ -13,6 +13,9 @@ modified: '2021-05-13T02:54:14.171Z'
   - https://github.com/schuchertmanagementberatung/react-table/tree/next
     - next-20200525
 # pieces
+- ## Column resizing is going to be even more powerful in @tan_stack #ReactTable v8. 
+- https://twitter.com/tannerlinsley/status/1504576494940528640
+  - As per usual, you can implement all of the UI however you like, but you'll have new tools like "onChange" and "onEnd" resizing modes and a unified markup-agnostic sizing model.
 
 - ## I love React hooks, but today I find myself writing my own edge-case memoization/performance optimization system. 
 - https://twitter.com/tannerlinsley/status/1476239050927329281

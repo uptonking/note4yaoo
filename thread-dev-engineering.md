@@ -11,6 +11,34 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How to write fast code: reduce memory access. 
+- https://twitter.com/devongovett/status/1504476131818237967
+- All of these tips stem from that:
+  01. Reduce the size of your data structures so more can fit in CPU cache.
+  02. Replace strings with numbers.
+  03. Make use of bit flags. Don’t waste space on booleans.
+  04. Access memory linearly.
+  05. Make judicious use of the heap. Inline the most commonly accessed values, move large or less common ones to the heap.
+  06. Model data like a database. Normalize commonly used structures and pass ids rather than copying them around.
+  07. Consider using a struct of arrays rather than an array of structs. For example, if you have two types of value, store them in separate arrays instead of a single one with a type field. This reduces memory usage and makes iterating by type linear.
+  08. Maybe obvious, but avoid copying things, especially strings. Use pointers for substrings, and reference counting or interning to avoid multiple copies of the same string.
+  09. Don't store data you can recompute quickly. It's often faster to do more CPU work with smaller data structures than it is to compute less but with more memory use. Memoizing and caching often _reduces_ performance. Always measure first.
+  10. Use indexes rather than pointers. This expands on tip 6. Indexes often use less memory than pointers (e.g. <= 32 bit vs always 64 bit), allowing structures to be packed tighter, among many other advantages (e.g. all values of a type in one place)
+
+- Another one to add: prefer sorted arrays to unsorted arrays
+
+- the #1 rule for a fast code: choose the right algorithm and data structure for your problem.
+  - You can also improve performance by increasing memory usage, for example by using Memoization
+  - Re memoization, it's overused IMO. Measure first.
+
+- Avoid branches as much as possible. Frequently is better to put number crunching code before and out of if-blocks even if there are cases that this calculations wouldn't be used.
+
 - ## developers at different levels
 - https://twitter.com/ZainRzv/status/1502550200396750851
 - Junior engineer:
@@ -90,11 +118,11 @@ modified: '2021-01-21T17:52:13.333Z'
   - Historically the peak performance was more important for server-side applications.
   - Cloud is changing it, at least partially, and people go a long way to improve startup times. 
 - Some examples:
-  1. Design brand new frameworks with great startup times as an explicit design goal.
-  2. Give-up on some language/VM features we used to take for granted.
-  3. Maintain a bunch of descriptors for the sake of a specific compiler.
-  4. Extract JIT compiler into a separate process and run it as a network server.
-  5. Switch to an entirely different language/ecosystem.
+  01. Design brand new frameworks with great startup times as an explicit design goal.
+  02. Give-up on some language/VM features we used to take for granted.
+  03. Maintain a bunch of descriptors for the sake of a specific compiler.
+  04. Extract JIT compiler into a separate process and run it as a network server.
+  05. Switch to an entirely different language/ecosystem.
 - Given all of the above, I wonder how come I don't hear about process snapshotting/checkpointing more.
 - Something like Criu sounds like a good fit for "stateless business logic" - That's precisely the place where the fast startup times are most relevant. 
   - The idea is simple: Run a regular JVM, with JIT and everything. 
@@ -136,10 +164,10 @@ modified: '2021-01-21T17:52:13.333Z'
 - https://twitter.com/d__raptis/status/1419611806557945859
   - I'd never find the problem otherwise.
 - It's quite simple (for React at least) : 
-  1. Use this Chrome plugin react-developer-tools 
-  2. Click record
-  3. Reproduce a laggy action
-  4. Check which components/actions are time-consuming
+  01. Use this Chrome plugin react-developer-tools 
+  02. Click record
+  03. Reproduce a laggy action
+  04. Check which components/actions are time-consuming
 - Now, you've located the issue and you need to check the code to find the real issue
 
 - ## Syncing sign-in state
@@ -168,8 +196,8 @@ modified: '2021-01-21T17:52:13.333Z'
 - pnpm is supposed to be very good, but since we focus on React Native, it's not an option for us.
   - Yarn 2 is almost an entirely different CLI altogether. I wish they'd just name it Berry (which is its code name) v1.
 - I feel your article is misleading in two important aspects:
-  1. Yarn 2+ supports React Native well with node_modules install scheme
-  2. Yarn 2+ perfs are better or comparable to perfs of Yarn 1, both with default PnP installs and with node_modules installs
+  01. Yarn 2+ supports React Native well with node_modules install scheme
+  02. Yarn 2+ perfs are better or comparable to perfs of Yarn 1, both with default PnP installs and with node_modules installs
 - I used to use yarn 1. After the acquisition of npm by GitHub I switched back to npm
 - I use whatever the project already uses but use npm for anything I start. No real reason though
 
@@ -650,12 +678,12 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## A list of basic Linux commands every developer should know:
 - https://twitter.com/iamdevloper/status/1368866110951596032
-1. Open your browser
-2. Head to your favourite search engine
-3. Type "how to copy a file to another directory"
-4. Click the first Stack Overflow link
-5. Copy the top voted answer
-6. Blindly paste it into your terminal
+01. Open your browser
+02. Head to your favourite search engine
+03. Type "how to copy a file to another directory"
+04. Click the first Stack Overflow link
+05. Copy the top voted answer
+06. Blindly paste it into your terminal
 
 - ## When should I (not) use mocks in testing?
 - https://dev.to/kettanaito/when-should-i-not-use-mocks-in-testing-544e
@@ -759,9 +787,9 @@ modified: '2021-01-21T17:52:13.333Z'
 - ## Sometimes it’s overwhelming to change some complex feature in the existing code.
 - https://twitter.com/BenLesh/status/1362762796501401601
 - I used to do this. But it's often dangerous. I try to take a more measured approach now.
-  1. Make a couple of PoCs off to the side to see what I learn.
-  2. Carefully improve the code and add tests in the parts of the code I'll be touching, and see what I learn.
-  3. Add the feature.
+  01. Make a couple of PoCs off to the side to see what I learn.
+  02. Carefully improve the code and add tests in the parts of the code I'll be touching, and see what I learn.
+  03. Add the feature.
 - I find that after part 2 above, often the approach I take is different and better than what I did in some of my PoC work.
 - The main difference between the new code and deleted code: The deleted code has been tested and hardened, if only by users. 
   - It already has behaviors that are expected. 
@@ -881,10 +909,10 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## A little technique we use all the time to audit the layout shifts and avoid performance issues.
 - https://twitter.com/smashingmag/status/1352185650091581441
-1. Add * { outline: 3px solid red } to your CSS.
-2. Record the loading of your site/app.
-3. Review it by exploring what happens in slow motion.
-4. Adjust and minimize shifts.
+01. Add * { outline: 3px solid red } to your CSS.
+02. Record the loading of your site/app.
+03. Review it by exploring what happens in slow motion.
+04. Adjust and minimize shifts.
 
 - Great tip, thanks! This one's less visual and more programmatic from the 'Performance' tab in Chrome.
   - You can hover over the 'Moved from' keys and this will visualise the movement in the browser window.

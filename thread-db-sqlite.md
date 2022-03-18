@@ -9,6 +9,11 @@ modified: '2021-08-25T14:05:18.280Z'
 
 # discuss
 
+
+- ## 3 projects pushing the boundaries of SQLite
+- https://twitter.com/simonw/status/1504604448202518529
+  - @litestream , @datasetteproj and Riffle!
+
 - ## Announcing "A future for SQL on the web": absurd-sql
 - https://twitter.com/jlongster/status/1425825714788503552
   - [A future for SQL on the web](https://jlongster.com/future-sql-web)
