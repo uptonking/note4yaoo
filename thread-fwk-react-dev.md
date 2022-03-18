@@ -73,6 +73,14 @@ modified: '2021-01-06T14:40:03.364Z'
 - Diving into the internals of many popular 3rd-party React hooks/libraries, I'd think many developers are in tacit agreement with this.
   - "Update a ref and force a rerender" feels so dirty but also so nice. And `useSyncExternalStore` helps here too.
   - 🙋‍♂️ Agreed. Like…state could even be managed in a framework agnostic outside library. 🤔
+- Of course, React + concurrent features work best when it manages *all* state using its own mechanisms (hooks), but that's simply not how the real-world works. Apps tend to rely on external data that can arrive at any time, & frameworks need to be able to handle this reliably.
+- React is not "reactive" in the traditional sense (especially granularly). If it was, integrating it with external pub/sub/actor style data sources would be both natural and likely more performant.
+- [TL; DR of Why React is Not Reactive](https://www.swyx.io/reactrally/)
+  - React could be fully push-reactive
+    - I later realized this is basically the default state of things if you write any JS user interface with no scheduler.
+  - But then you run into problems with backpressure, where you need batching, and expensive renders (eventually causing the need for time slicing and other async rendering techniques).
+  - The solution is to push updates (reacting to external events) into a queue, but only pull views on demand.
+    - This is also known as scheduling. It’s possible to implement this inside of an Rxjs-like paradigm, but it would be so finnicky that you’d basically be rebuilding push-pull reactivity inside of the scheduler anyway.
 
 - useReducer is def more direct since useState is built on it 
 
