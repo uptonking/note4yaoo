@@ -298,6 +298,60 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0318
+
+- 新品ui交互设计
+  - block工具条、多维表格工具条
+  - 将多维表格转换成todo-list，多维表格多余字段可折叠展开
+  - 无序列表、有序列表，实现为可拖动的树
+  - 每个block可外挂插件能力，缩进、可折叠、设置人、设置时间
+
+## 0317
+
+- 交付测试问题
+  - bibtex文中引用问题
+  - 登录后取出空白文档
+  - 现在正在有人编辑的前端实现
+
+- css选择器选择style属性的方法
+  - div[style*="display:block"]
+
+## 0316
+
+- bibtex列表需要虚拟化
+  - 去掉竖直滚动条
+  - 避免每次添加bibtex后刷新数据，列表重渲染后会跳转到顶部的问题
+  - 跳转到第一条就很简单
+
+- Shouldn't it be when useRef.current changes, the stuff in useEffect gets run?
+  - Short answer, no.
+  - react组件rerender的原因：
+    - prop变化
+    - state变化
+    - parent rerender
+
+```JS
+export default function App() {
+  const myRef = useRef(1);
+  useEffect(() => {
+    // ⚠ myRef.current变化后，effect不会执行
+    console.log("myRef current changed"); // this only gets triggered when the component mounts
+  }, [myRef.current]);
+  return (
+    <div className="App">
+      <button
+        onClick={() => {
+          myRef.current = myRef.current + 1;
+          console.log("myRef.current", myRef.current);
+        }}
+      >
+        change ref
+      </button>
+    </div>
+  );
+}
+```
+
 ## 0314
 
 - dev-plan
