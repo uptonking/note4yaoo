@@ -298,6 +298,10 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0319
+
+- prosemirror offline / local-first
+
 ## 0318
 
 - 新品ui交互设计
