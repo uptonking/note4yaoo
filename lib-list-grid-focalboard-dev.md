@@ -9,6 +9,18 @@ modified: '2022-03-16T20:45:17.243Z'
 
 # guide
 
+- focalboard-pros
+  - notion-like database
+
+- focalboard-cons
+  - 每个page只能显示一个database
+
+- features
+  - notion-like database
+  - open source self-hosted project management tool
+  - offline support with win/mac/linux client
+  - more
+    - some database features have mobile support
 # focalboard-rewrite
 - goals
   - relicense => better-coding/pattern

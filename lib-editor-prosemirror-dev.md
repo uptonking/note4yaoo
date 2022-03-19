@@ -20,6 +20,7 @@ modified: '2021-05-06T09:39:53.522Z'
   - atlassian, nytimes, guardian...
 
 - roadmap-toys
+  - prosemirror offline / local-first
   - prosemirror-codeblock
   - prosemirror-handsontable/data-grid
   - prosemirror-css/theming

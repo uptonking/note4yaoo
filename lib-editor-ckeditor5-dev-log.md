@@ -298,7 +298,17 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
-## 0319
+## 0320
+
+- js处理私有属性的方法
+  - ❌️ 名称以 _ 开头
+    - python、dart也有此习惯
+    - ide提示时很清晰
+    - microsoft/google都不推荐这种方式
+  - ✅️ 将私有属性或方法的声明全放在最前面或最后面
+  - ✅️ es6新提案支持class的属性名或方法名以#开头代表私有
+  - ❓️ 使用Symbol类型的值作为私有属性名
+    - 使用反射api可以获取到Symbol值
 
 - prosemirror offline / local-first
 
