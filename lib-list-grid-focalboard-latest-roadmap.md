@@ -18,6 +18,13 @@ modified: '2022-03-16T20:46:53.277Z'
 - phase 2
   - add sophisticated RBAC as per table above
 
+
+- [Upcoming changes to the Mattermost Boards permission system](https://github.com/mattermost/focalboard/discussions/2436)
+  - Currently in Mattermost Boards, access to each workspace is tied to a particular channel’s membership, and channel members have full edit access to all boards in that workspace.
+  - We are working on changing this so that each board has independent permission settings. Roles can be set for each board: admins and editors to start with, and additional roles (e.g. viewers) coming later. This will remove the “workspace” concept entirely, and boards will be scoped to a team in Mattermost. In addition, boards can be made accessible to everyone in a team, with a default role
+  - You’ll see the list of boards per team in the sidebar
+  - These changes apply to Mattermost Boards. Personal Desktop and Personal/Development Server will continue to behave the same, with all users having edit access to boards in the system.
+
 ## [Feature Idea: Focalboard API](https://github.com/mattermost/focalboard/issues/1116)
 
 - Right now, the current API is block-based (boards, cards, etc. are blocks with different types). 

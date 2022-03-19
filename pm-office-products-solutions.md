@@ -22,6 +22,10 @@ modified: '2021-07-11T08:31:00.660Z'
   - clickup
   - trello
   - focalboard
+
+- 产品形式
+  - 桌面端以编辑器为主
+  - 移动端以多维表格为主
 # trending-office-products
 
 ## [almanac](https://almanac.io/features)

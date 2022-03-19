@@ -23,6 +23,9 @@ modified: '2021-03-10T11:38:16.053Z'
     - 基于hsb颜色模型探索颜色
     - [Introducing the new ColorBox](https://kvyn.medium.com/introducing-the-new-colorbox-e0109c021729)
     - [classic clolorbox](https://lyft-colorbox.herokuapp.com/)
+
+- 《52 个设计原则》每个原则都有来源推到、案例解读、边界限制，由小红书产品设计中心制作，移动端和 PC 端体验都不错
+  - https://rpdc.xiaohongshu.com/52-design-principles
 # pieces
 - ## 
 

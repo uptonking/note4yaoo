@@ -107,6 +107,9 @@ function useRerender() {
 - Can you give Example ? Please
   - #ReactQuery, #ReactTable, #ReactCharts
 
+- You also get leaner components and the ability to swap your DOM manipulation library easily, i.e. to simply opt-out of React altogether with minimum effort if need be.
+  - For super generic libraries that aim to bind to more frameworks in the JS landcape, this pattern is a must.
+
 - ## jsx: What would you like it to "translate" to if this was native JS? DOM API constructs? Native VDOM? Something else?
 - https://twitter.com/devongovett/status/1501972169458425861
   - Objects like React.createElement returns: { type, props, children }
