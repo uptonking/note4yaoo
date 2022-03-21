@@ -303,3 +303,8 @@ modified: '2021-07-20T13:28:26.296Z'
   - https://codesandbox.io/s/react-table-drag-and-drop-sort-rows-with-dnd-kit-btpy9
 
 - [Table Virtuoso integrated with React Table](https://virtuoso.dev/react-table-integration/)
+
+- https://github.com/Blezzoh/RTable7
+  - React Table 7 implementation example
+  - https://codesandbox.io/s/github/Blezzoh/RTable7
+  - [React-table 7 Tutorial](https://medium.com/@blaiseiradukunda/react-table-7-tutorial-3d8ba6ac8b16)
