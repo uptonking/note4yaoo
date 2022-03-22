@@ -9,6 +9,13 @@ modified: '2021-05-13T02:54:23.406Z'
 
 # guide
 
+- react-table virtualized之后要检查功能
+  - scroll to index
+  - search/filter
+  - row selection
+  - 示例参考
+    - https://codesandbox.io/s/cubs-react-virtualized-resizable-sortable-filterable-table-x77iw
+      - 支持 virtualized、global filter、row selection
 # react-table表格实现的ui结构层次
 - ## useBlockLayout
   - 必须设置cell的width，使用行内样式设置
@@ -272,7 +279,7 @@ modified: '2021-05-13T02:54:23.406Z'
 
 - do you have mental model for when memoization should happen "inside" or "outside" of a component?
   - I always found it a bit strange that react-table documented props that need to memoized rather than just doing their own data diffing.
-  - Requiring memoized objects is not strange at all for custom hooks. In fact, if you use hooks, you are already required to pass arrays of memoized deps to useEffect, useMemo, and useCallback, the only difference is where you pass them: `useEffect(..., [dep])` , `useTable({ dep })`
+  - Requiring memoized objects is not strange at all for custom hooks. In fact, if you use hooks, you are already required to pass arrays of memoized deps to useEffect, useMemo, and useCallback, the only difference is where you pass them: `useEffect(..., [dep])` ,  `useTable({ dep })`
   - I think there is still a place for diffing data inside of a custom hook (and thus not requiring your users to memoize) for certain optimization cases, but I guess that react-table avoids that need.
   - For example (I'm guessing here) if you append a new column to your table, the other columns' values won't be recomputed because they would still each have stable accessors across the render.
   - Yes, true. I've actually modeled some of React Table's internals to do that, but it doesn't take very long for the internals to get very complicated and bloated. 

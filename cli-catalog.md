@@ -73,6 +73,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - git push origin -f
     - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
+- 将某个文件回退到某个commit，常用来处理package.json的依赖冲突
+  - git checkout c5f567 -- file1/to/restore file2/to/restore
+
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName`
   - `git clone -b <branch-name> <repo-url> <destination-folder-name>`

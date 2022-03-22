@@ -298,6 +298,36 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0321
+
+- editor自动保存失败
+  - 复现方法
+    - 在toe-editor仓库不能复现，说明问题出在前端应用层
+    - 当光标闪烁时，如光标在标题处刚修改完闪烁时，立刻刷新页面，就能复现
+  - 原因排查
+
+```
+  Uncaught (in promise) TypeError: Cannot read properties of null (reading 'forEach')
+    at Bs (index.js:9:66961)
+    at Fs (index.js:9:67618)
+    at index.js:9:83227
+    at ps (index.js:9:57845)
+    at yn.insert (index.js:9:83194)
+    at yn._integrate (index.js:9:82305)
+    at Bn.integrate (index.js:9:91244)
+    at Fn.integrate (index.js:9:94802)
+    at qs (index.js:9:68815)
+    at index.js:9:71751
+```
+
+- react-table virtualized之后要检查功能
+  - scroll to index
+  - search/filter
+  - row selection
+  - 示例参考
+    - https://codesandbox.io/s/cubs-react-virtualized-resizable-sortable-filterable-table-x77iw
+      - 支持 virtualized、global filter、row selection
+
 ## 0320
 
 - js处理私有属性的方法

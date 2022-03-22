@@ -12,6 +12,11 @@ modified: '2021-03-03T21:48:48.379Z'
   - react-live进一步的研发方向可以考虑类似storybook的controls
   - 考虑支持多种实现的切换，如react/vue/vanillajs，此时可考虑仅展示不编辑
 
+- react-live 在线编辑代码是伪需求
+  - 对于简单的情况，不需要，直接提供需求文本或选项的按钮就可以了
+  - 对于复杂的场景，短小的输入框和提示功能太弱了，更推荐嵌入codesandbox的方案
+  - 关注observable notebook的发展变化，特别是对于代码的支持力度
+
 - ref
   - [search: react live editor](https://github.com/search?o=desc&q=react+live+editor+stars%3A%3E0&s=updated&type=Repositories)
 # markdown-live-doc
