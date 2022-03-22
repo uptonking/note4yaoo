@@ -16,6 +16,9 @@ modified: '2021-05-14T12:04:55.412Z'
     - 开放api
     - 双向链接
 
+ - not-yet
+    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
+
 - 浏览器的键盘输入事件顺序
   - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)
     - 输入英文字母时 keydown > keypress > beforeinput > input > keyup

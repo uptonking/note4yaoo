@@ -298,6 +298,12 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0322
+
+- milestone 交付affine编辑器
+  - not-yet
+    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
+
 ## 0321
 
 - editor自动保存失败
@@ -305,6 +311,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 在toe-editor仓库不能复现，说明问题出在前端应用层
     - 当光标闪烁时，如光标在标题处刚修改完闪烁时，立刻刷新页面，就能复现
   - 原因排查
+    - yjs的更新是，先删除，再添加；当删除后，文档数据库gc发生，文档内容就变为空了
 
 ```
   Uncaught (in promise) TypeError: Cannot read properties of null (reading 'forEach')
