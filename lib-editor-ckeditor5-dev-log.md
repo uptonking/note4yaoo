@@ -298,6 +298,28 @@ modified: '2021-10-27T03:20:45.841Z'
 - 测试文献部分
   - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
 
+## 0323
+
+- 替换ckeditor图标的2种方法
+  - 1. 编译器替换：new webpack. NormalModuleReplacementPlugin
+  - 2. 运行期替换：自定义插件 localizedBoldPlugin 
+    - boldButton.icon = getIcon( 'bold', locale.language );
+    - 适合做国际化图标合文字
+  - NormalModuleReplacementPlugin site:github.com/ckeditor/ckeditor5
+
+- pnpm: fast, disk space efficient package manager
+- features
+  - fast
+  - efficient
+  - support monorepos
+  - strict access to pkg with non-flat node_modules
+
+- nx: build system with first class monorepo support and powerful integrations.
+- features
+  - Best-in-Class Support for Monorepos
+  - Integrated Development Experience
+  - Rich Plugin Ecosystem
+
 ## 0322
 
 - milestone 交付affine编辑器
@@ -311,7 +333,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 在toe-editor仓库不能复现，说明问题出在前端应用层
     - 当光标闪烁时，如光标在标题处刚修改完闪烁时，立刻刷新页面，就能复现
   - 原因排查
-    - yjs的更新是，先删除，再添加；当删除后，文档数据库gc发生，文档内容就变为空了
+    - yjs的set不是原子操作，先删除，再添加；当删除后，文档数据库gc发生，文档内容就变为空了的，之后执行的添加操作就成了添加undefined，内容变成空
 
 ```
   Uncaught (in promise) TypeError: Cannot read properties of null (reading 'forEach')
