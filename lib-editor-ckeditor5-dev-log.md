@@ -300,6 +300,11 @@ modified: '2021-10-27T03:20:45.841Z'
 
 ## 0323
 
+- ckeditor顶部工具条的dropdown被页面顶部导航栏挡住的原因
+  - 编辑器的父容器使用了自定义滚动条，外层div-overflow：hidden，内层div-overflow：scroll
+  - 临时的解决办法：外层 overflow：auto，内层div-overflow：auto，但此时编辑器无法滚动了
+  - 💡排查元素被部分挡住的问题，思路是查找position-absolute的元素、overflow-hidden的元素
+
 - 替换ckeditor图标的2种方法
   - 1. 编译器替换：new webpack. NormalModuleReplacementPlugin
   - 2. 运行期替换：自定义插件 localizedBoldPlugin 
