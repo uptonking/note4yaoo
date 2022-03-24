@@ -11,6 +11,9 @@ modified: '2021-05-06T09:58:23.803Z'
   - https://fonts.google.com/icons?selected=Material+Icons
   - https://primer.style/octicons/
 
+- 搜索矢量图标
+  - https://uxwing.com/
+
 - ## “How to make complex icons with only CSS”. Don’t do this.
 - https://twitter.com/SaraSoueidan/status/643803332117704704
   - Use #SVG. It was *made* for this kind of stuff.

@@ -92,10 +92,188 @@ modified: '2021-10-27T03:20:45.841Z'
       - 类似github insights里面不同fork的顺序
 - material-ui缺点
   - ~~没有dropdown，select默认会遮挡触发元素~~
+# 2022
+- my-next
+  - dev starter
+    - react patterns
+    - typescript patterns
+  - readonly-list-grid
+    - plain
+      - no sort/filter/group
+      - no reorder
+      - no column width resize
+      - custom cell renderer
+    - searchable
+    - virtualizable
+  - crud-list-grid
+    - checkbox
+    - draggable/reorder list
+    - fields menu - filter/groupable
+    - inline editing
+    - orm integration
+  - sortable-filterable-groupable table
 
-## not-yet
+## 0324
 
-- to-do
+- nx
+  - nx build myapp --skip-nx-cache
+
+- 使用nx编译修改源码后，nx在cli编译仍然报错
+  - src/lib/Text/Text.tsx(459, 25): semantic error TS7030: Not all code paths return a value.
+  - 原因是，nx在命令行报错针对的是转译后的代码；
+  - 要修改源码错误，应该以ide提示的problems/error的行数位置为准
+
+## 0323
+
+- pnpm: fast, disk space efficient package manager
+- features
+  - fast
+  - efficient
+  - support monorepos
+  - strict access to pkg with non-flat node_modules
+
+- nx: build system with first class monorepo support and powerful integrations.
+- features
+  - Best-in-Class Support for Monorepos
+  - Integrated Development Experience
+  - Rich Plugin Ecosystem
+
+- ckeditor顶部工具条的dropdown被页面顶部导航栏挡住的原因
+  - 编辑器的父容器使用了自定义滚动条，外层div-overflow：hidden，内层div-overflow：scroll
+  - 临时的解决办法：外层 overflow：auto，内层div-overflow：auto，但此时编辑器无法滚动了
+  - 💡排查元素被部分挡住的问题，思路是查找position-absolute的元素、overflow-hidden的元素
+
+- 替换ckeditor图标的2种方法
+  - 1. 编译器替换：new webpack. NormalModuleReplacementPlugin
+  - 2. 运行期替换：自定义插件 localizedBoldPlugin 
+    - boldButton.icon = getIcon( 'bold', locale.language );
+    - 适合做国际化图标合文字
+    - https://github.com/ckeditor/ckeditor5/issues/1613
+  - NormalModuleReplacementPlugin site:github.com/ckeditor/ckeditor5
+  - 在com-editor项目替换ckeditor图标完成后，在前端项目却仍显示ckeditor图标的解决办法
+    - 在com-frontend项目重复替换图标的逻辑
+
+```SCSS
+// 修改cke工具条文字
+& .ck.ck-toolbar__items .ck-heading-dropdown {
+    & .ck-button_with-text .ck-button__label{
+      color: #133b75;
+    }
+}
+```
+
+## 0322
+
+- milestone 交付affine编辑器
+  - not-yet
+    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
+
+### 多维表格和看板-pending
+
+- 工作记录在20211220之前
+- my-agenda
+  - [x] 点击任务卡片时，应该出现弹窗
+  - [x] checklist/子任务
+  - [x] 创建文档
+  - [x] 添加日程：开始时间、结束时间
+  - [x] @负责人成员或用户
+  - [x] 看板卡片右上角的删除、更多图标应该悬浮时才出现
+  - [x] 鼠标在卡片上方时，形状应该是pointer，而不是拖拽的grab
+  - [ ] 卡片弹窗应该自动保存内容，而不是显示保存和放弃修改按钮
+  - 卡片上文档列表展开时，底部头像会被快速挤到卡片之外，然后快速还原
+  - 卡片上需要动作菜单列表，对话框需要弹出搜索列表、选择列表、日期面板
+  - 子任务暂时不能修改，只能先删除再添加，需要一个列表
+  - 将卡片拖动到最右边`添加分组`的空列时，应该支持自动新建卡片
+  - 标签、子任务添加按钮出现时，旁边应该还有取消按钮
+  - 对于看板上的日程，近期日程除了日期数字外，还可以显示类似下周日这样的文本
+  - 看板任务与编辑器打通
+    - 全局task检索和展示
+    - 打通 看板任务、文档侧边栏的任务
+    - 在文档中的不能修改checkbox，打开弹窗才能修改
+    - 子任务转换成任务卡片
+  - 看板设计其他参考
+    - 看板必填项
+    - 企业倾向于自动发邮件
+      - 倾向于低代码完成自动化流程
+- 多维表格实现计划
+  - [x] 工具条 + 表格
+  - [x] 切换普通表格视图、分组表格视图
+  - [ ] 分组表格的测试数据修改为trello格式，也会作为看板数据源
+  - [x] 切换表格视图、看板视图
+    - 如果要做得像notion，不妨做得更像一点，样式改成适合编辑器的卡片和看板样式
+  - [x] 实现表格视图下特殊字段的显示，如子任务、参考文档、标签
+  - [ ] 全局菜单 字段配置
+  - [ ] 表格拖拽改变列宽度
+  - 表格顶部的工具条和标题栏都应该支持sticky到页面顶部
+  - 表格数据导出
+  - 编辑一行、单元格
+  - 子任务转换成任务卡片，任务卡片转换成子任务
+  - 样式调整
+    - 表格整体左边框和上边框缺失
+  - 去掉依赖
+  - 复制表格自身到下方的动画
+- 多维表格计划待定
+  - 支持添加任意自定义字段
+  - 支持设置字段类型，内置常用数据类型
+  - 过滤筛选支持组合条件，如多个条件求交集
+  - 更多搜索方式，如日期范围
+  - 可设置显示 表格左边和上边的索引列、索引行
+- 多维表格实现问题
+  - 🤔️ 多个视图来回切换时，如何保存每个视图的状态
+    - 表格的每个ui状态都可以由tableOptions确定
+  - 要不要区分普通表格和分组表格
+    - 分组表格不适合 合并单元格
+- 多维表格实现说明
+  - 分组
+    - 暂时只支持离散变量，不支持连续型数值
+    - 破坏了useExpandAll的sticky header
+  - 竞品参考
+    - 飞书和notion的多为表格都是现在在编辑器页面中，未考虑分页的情况
+- 🤔️ 看板组件和表格组件切换视图的状态设计问题
+  - 除非要明确使用缓存，否则每个视图的数据都应该动态计算出来，这样能减少内存消耗和及时同步更新
+    - 在顶层定义更新一行数据的方法，传下去
+    - 每个视图层可以进一步封装顶层数据更新方法，然后更新自己的ui时更新顶层数据和配置
+  - 工具栏的状态应该放在每个视图层，工具栏的dom可以放在顶层
+    - 每个视图可显示不同的过滤条件
+  - ✅️ 都存在自己的内部状态，将顶层存储数据和更新方法都传到2个组件
+    - 数据更新方法被调用后，所有视图被刷新
+  - ❌️ 以表格内部状态作为基础，将表格组件的数据和更新方法传到看板组件
+    - 表格更新时，数据源更新，看板会更新；看板更新时，表格也会更新
+    - 如果只创建看板视图，那没必要定义表格数据的更新方法
+  - 如果增加其他视图，比如甘特图呢？
+    - 定义一份配置数据，传下去作为初始state
+- 表格 not-yet
+  - 表格末尾为什么会渲染一个英文分号
+
+### products-old-dev-log
+
+- 重构题头部分
+  - [x] 更换emoji picker
+  - ~~字段列表分类型重构~~
+- 编辑器
+  - blockquote插件中的换行，每次刷新页面后，中间的空行会加一个
+    - 空文档无此问题，复制示范文档会出现此问题
+  - 图片按回车不能换行
+  - [x] 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
+- 文章页
+  - [x] 去掉水平滚动条
+  - [x] 使用CustomScrollbar后，最好去掉浏览器默认的竖直滚动条
+- 文章左侧标题目录toc
+  - [x] 点击无法跳转
+  - [x] 收起折叠按钮会被文章中的图片挡住
+- 侧边栏部分
+  - 已注册的用户是不可删除的，是否应该不显示删除按钮
+  - 参考文献
+    - 连续按两次插入bibtex后，会出现2个编辑器
+    - [x] 有时点击插入bibtex的图标会无反应
+      - 首次添加bibtex时，新添加的bibtex entry会带有onClick点击事件
+- hard
+  - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
+    - 光标移动到待创建双链的文字的位置时，文字会突然缩小
+
+### products-old-not-yet
+
+- my-agenda
   - workspace 文档列表
     - sticky header
     - 删除文档后，只在列表删除了，文档数据库中仍然存在
@@ -176,160 +354,6 @@ modified: '2021-10-27T03:20:45.841Z'
 - later
   - 就算postcss-loader/style-loader版本与官方文档一致，也可能会出现demo样式异常的问题
   - 测试连续调用自定义hook时useRef的current的值的变化
-# 多维表格和看板-pending
-- 工作记录在20211220之前
-- TODO
-  - [x] 点击任务卡片时，应该出现弹窗
-  - [x] checklist/子任务
-  - [x] 创建文档
-  - [x] 添加日程：开始时间、结束时间
-  - [x] @负责人成员或用户
-  - [x] 看板卡片右上角的删除、更多图标应该悬浮时才出现
-  - [x] 鼠标在卡片上方时，形状应该是pointer，而不是拖拽的grab
-  - [ ] 卡片弹窗应该自动保存内容，而不是显示保存和放弃修改按钮
-  - 卡片上文档列表展开时，底部头像会被快速挤到卡片之外，然后快速还原
-  - 卡片上需要动作菜单列表，对话框需要弹出搜索列表、选择列表、日期面板
-  - 子任务暂时不能修改，只能先删除再添加，需要一个列表
-  - 将卡片拖动到最右边`添加分组`的空列时，应该支持自动新建卡片
-  - 标签、子任务添加按钮出现时，旁边应该还有取消按钮
-  - 对于看板上的日程，近期日程除了日期数字外，还可以显示类似下周日这样的文本
-  - 看板任务与编辑器打通
-    - 全局task检索和展示
-    - 打通 看板任务、文档侧边栏的任务
-    - 在文档中的不能修改checkbox，打开弹窗才能修改
-    - 子任务转换成任务卡片
-  - 看板设计其他参考
-    - 看板必填项
-    - 企业倾向于自动发邮件
-      - 倾向于低代码完成自动化流程
-- 多维表格实现计划
-  - [x] 工具条 + 表格
-  - [x] 切换普通表格视图、分组表格视图
-  - [ ] 分组表格的测试数据修改为trello格式，也会作为看板数据源
-  - [x] 切换表格视图、看板视图
-    - 如果要做得像notion，不妨做得更像一点，样式改成适合编辑器的卡片和看板样式
-  - [x] 实现表格视图下特殊字段的显示，如子任务、参考文档、标签
-  - [ ] 全局菜单 字段配置
-  - [ ] 表格拖拽改变列宽度
-  - 表格顶部的工具条和标题栏都应该支持sticky到页面顶部
-  - 表格数据导出
-  - 编辑一行、单元格
-  - 子任务转换成任务卡片，任务卡片转换成子任务
-  - 样式调整
-    - 表格整体左边框和上边框缺失
-  - 去掉依赖
-  - 复制表格自身到下方的动画
-- 多维表格计划待定
-  - 支持添加任意自定义字段
-  - 支持设置字段类型，内置常用数据类型
-  - 过滤筛选支持组合条件，如多个条件求交集
-  - 更多搜索方式，如日期范围
-  - 可设置显示 表格左边和上边的索引列、索引行
-- 多维表格实现问题
-  - 🤔️ 多个视图来回切换时，如何保存每个视图的状态
-    - 表格的每个ui状态都可以由tableOptions确定
-  - 要不要区分普通表格和分组表格
-    - 分组表格不适合 合并单元格
-- 多维表格实现说明
-  - 分组
-    - 暂时只支持离散变量，不支持连续型数值
-    - 破坏了useExpandAll的sticky header
-  - 竞品参考
-    - 飞书和notion的多为表格都是现在在编辑器页面中，未考虑分页的情况
-- 🤔️ 看板组件和表格组件切换视图的状态设计问题
-  - 除非要明确使用缓存，否则每个视图的数据都应该动态计算出来，这样能减少内存消耗和及时同步更新
-    - 在顶层定义更新一行数据的方法，传下去
-    - 每个视图层可以进一步封装顶层数据更新方法，然后更新自己的ui时更新顶层数据和配置
-  - 工具栏的状态应该放在每个视图层，工具栏的dom可以放在顶层
-    - 每个视图可显示不同的过滤条件
-  - ✅️ 都存在自己的内部状态，将顶层存储数据和更新方法都传到2个组件
-    - 数据更新方法被调用后，所有视图被刷新
-  - ❌️ 以表格内部状态作为基础，将表格组件的数据和更新方法传到看板组件
-    - 表格更新时，数据源更新，看板会更新；看板更新时，表格也会更新
-    - 如果只创建看板视图，那没必要定义表格数据的更新方法
-  - 如果增加其他视图，比如甘特图呢？
-    - 定义一份配置数据，传下去作为初始state
-- 表格 not-yet
-  - 表格末尾为什么会渲染一个英文分号
-# 2022
-- 下一步工作内容
-  - 开发规范
-    - 总结 react patterns
-    - 总结 typescript patterns
-  - readonly-list-grid
-    - plain
-      - no sort/filter/group
-      - no reorder
-      - no column width resize
-      - custom cell renderer
-    - searchable
-    - virtualizable
-  - crud-list-grid
-    - checkbox
-    - draggable/reorder list
-    - fields menu - filter/groupable
-    - inline editing
-    - orm integration
-  - sortable-filterable-groupable table
-- dev-products-old
-  - 重构题头部分
-    - [x] 更换emoji picker
-    - ~~字段列表分类型重构~~
-  - 编辑器
-    - blockquote插件中的换行，每次刷新页面后，中间的空行会加一个
-      - 空文档无此问题，复制示范文档会出现此问题
-    - 图片按回车不能换行
-    - 编辑器工具条第一个查找替换图标是烂图标，左上部分都是黑色
-  - 文章页
-    - [x] 去掉水平滚动条
-    - [x] 使用CustomScrollbar后，最好去掉浏览器默认的竖直滚动条
-  - 文章左侧标题目录toc
-    - [x] 点击无法跳转
-    - [x] 收起折叠按钮会被文章中的图片挡住
-  - 侧边栏部分
-    - 已注册的用户是不可删除的，是否应该不显示删除按钮
-    - 参考文献
-      - 连续按两次插入bibtex后，会出现2个编辑器
-      - [x] 有时点击插入bibtex的图标会无反应
-        - 首次添加bibtex时，新添加的bibtex entry会带有onClick点击事件
-  - hard
-    - 粘贴第三方文章如知乎专栏复制的文章时，侧边栏和导航栏字体会缩小到无法辨认
-      - 光标移动到待创建双链的文字的位置时，文字会突然缩小
-- 测试文献部分
-  - 刷新页面后，侧边面板的bibtex未显示，原因是用了全局store中的doc对象
-
-## 0323
-
-- ckeditor顶部工具条的dropdown被页面顶部导航栏挡住的原因
-  - 编辑器的父容器使用了自定义滚动条，外层div-overflow：hidden，内层div-overflow：scroll
-  - 临时的解决办法：外层 overflow：auto，内层div-overflow：auto，但此时编辑器无法滚动了
-  - 💡排查元素被部分挡住的问题，思路是查找position-absolute的元素、overflow-hidden的元素
-
-- 替换ckeditor图标的2种方法
-  - 1. 编译器替换：new webpack. NormalModuleReplacementPlugin
-  - 2. 运行期替换：自定义插件 localizedBoldPlugin 
-    - boldButton.icon = getIcon( 'bold', locale.language );
-    - 适合做国际化图标合文字
-  - NormalModuleReplacementPlugin site:github.com/ckeditor/ckeditor5
-
-- pnpm: fast, disk space efficient package manager
-- features
-  - fast
-  - efficient
-  - support monorepos
-  - strict access to pkg with non-flat node_modules
-
-- nx: build system with first class monorepo support and powerful integrations.
-- features
-  - Best-in-Class Support for Monorepos
-  - Integrated Development Experience
-  - Rich Plugin Ecosystem
-
-## 0322
-
-- milestone 交付affine编辑器
-  - not-yet
-    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
 
 ## 0321
 
