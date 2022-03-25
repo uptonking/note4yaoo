@@ -31,6 +31,13 @@ modified: '2021-01-01T18:24:23.850Z'
   - and it offers less than regular custom elements, where you can share, and reuse, CSS like we’ve been doing for 20+ years
 
 # discuss
+- ## 遇到 Component Library issues 时，要不要处理的 #判断标准
+- https://twitter.com/ThaddeusJiang/status/1506899881751105537
+  - 去 Library 官网或者其他主流网站（Google，Twitter etc）确认一下， 
+    - 如果有相同问题，我们就不对应。 
+    - 如果只有我们有问题，就对应
+  - 如果是 Chromium 的问题，我们就不需要勉强自己，上世纪的软件开发公司才会对应这种问题。
+
 
 - ## Why aren't web components fully supported yet? I remember hearing about them in 2015 and still I'm using React.
 - https://twitter.com/justinfagnani/status/1161351100579999744

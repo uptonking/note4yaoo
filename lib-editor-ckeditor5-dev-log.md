@@ -113,6 +113,32 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
+## 0325
+
+- ts noImplicitAny的解决方法
+  - // @ts-ignore
+
+- Property 'current' does not exist on type 'ForwardedRef
+  - [React fordwardRef with typescript](https://stackoverflow.com/questions/69503174)
+  - `type ForwardedRef<T> = ((instance: T | null) => void) | MutableRefObject<T | null> | null;` 类型定义
+  - Therefore attempting to just access .current, without doing some type checking, won't work because functions do not have such a property.
+
+```jsx
+// This should work:
+
+const ProfileMenu = forwardRef<HTMLInputElement, PropsDummy>((props, forwardedRef) => {
+  if (forwardedRef != null && typeof forwardedRef !== 'function') {
+    console.log(forwardedRef.current);
+  }
+  
+  return (
+    <div className="App" ref={forwardedRef}>
+      <h1>Hello there</h1>
+    </div>
+  );
+});
+```
+
 ## 0324
 
 - nx
@@ -122,6 +148,10 @@ modified: '2021-10-27T03:20:45.841Z'
   - src/lib/Text/Text.tsx(459, 25): semantic error TS7030: Not all code paths return a value.
   - 原因是，nx在命令行报错针对的是转译后的代码；
   - 要修改源码错误，应该以ide提示的problems/error的行数位置为准
+
+- typescript playground可以打印出类型变量定义的结果，使用 `// ^?` 然后鼠标停在问号后就可以显示类型定义的结果
+  - 如果不能显示，可以刷新页面，之后就能显示
+  - [打印类型的示例](https://www.typescriptlang.org/play?pretty=true#code/C4TwDgpgBAqgdgSwPZwPIDMAqBXMAbCAZygF4BYAKCmqgB8oBtAIgAUE4BrJgGilYEM4wABYQATkwC6lGnUZMASkn4ATHnwXY4ccVJk16zNh37qmAYWHY9FSqEhRUAIwBWEAMbAAYmKQBbHHwiAB5AgmIIAA9gCDgVYgZCYDF2AHNeJJS4VMkAPlIoAG99agYw6HYocuJ+YnKGAAZJSQAuKtwCBgBGaQoAXygAMiK+yjtwaAUibDxgAuc3Tx9-auD4ZDQsDqJcygB6PdkAPQB+MYp7aEwJroKpwhm5+gByTLTngG59w5pToA)
 
 ## 0323
 
