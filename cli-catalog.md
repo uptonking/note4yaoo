@@ -9,25 +9,23 @@ modified: '2021-01-01T22:13:44.013Z'
 
 # 前端工程化工具相关
 
-```
+```shell
 python -m SimpleHTTPServer 8000
 
 python -m http.server 8000
 ```
 
-## prettier
+- prettier
 
-```
-
+```shell
 prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 
 prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown
 ```
 
-## changelog
+- changelog
 
-```
-
+```shell
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
@@ -54,11 +52,16 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - %s 表示提交的信息。
 
 - debug相关
-- switch my git repository to a particular commit
-  - git checkout -b new_branch 6e559cb
-    - With the commit hash (or part of it)
-  - git checkout -b new_branch HEAD~4
-    - go back 4 commits from HEAD
+  - 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）
+    - git checkout -b 本地分支名 origin/远程分支名
+    - 若提示origin/远程分支名不存在，需要先git fetch --all
+  - switch my git repository to a particular commit
+    - git checkout -b new_branch 6e559cb
+      - With the commit hash (or part of it)
+    - git checkout -b new_branch HEAD~4
+      - go back 4 commits from HEAD
+  - 将某个文件回退到某个commit，常用来处理package.json的依赖冲突
+    - git checkout c5f567 -- file1/to/restore file2/to/restore
 
 - commit相关
   - 修改最新的提交描述信息
@@ -73,11 +76,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - git push origin -f
     - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
 
-- 将某个文件回退到某个commit，常用来处理package.json的依赖冲突
-  - git checkout c5f567 -- file1/to/restore file2/to/restore
 
 - clone非master分支、修改克隆下来的文件夹名称
-  - `git checkout origin/branchName`
+  - `git checkout origin/branchName` 切换分支
   - `git clone -b <branch-name> <repo-url> <destination-folder-name>`
 
 - 删除远程仓库中的文件，如意外提交了node_modules文件夹
