@@ -67,9 +67,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
   - 撤销上次commit的记录，不回滚修改
+    - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
     - git reset HEAD~
     - git reset commit_id
-    - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
   - 撤销 commit, 同时本地删除该 commit 修改：
     - git reset --hard commit_id
     - git reset --hard HEAD~

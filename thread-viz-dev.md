@@ -11,7 +11,9 @@ modified: '2021-02-28T08:06:19.703Z'
 
 - ## 
 
-- ## 
+- ## Creating a React Library for Consistent Data Visualization
+- https://shopify.engineering/react-library-consistent-data-visualization
+  - Introducing the PolarisVizProvider
 
 - ## I know the customer is always right, but not when they ask for an option to support log scales on bar charts. No!
 - https://twitter.com/mistercrunch/status/1431103110022242307

@@ -8,6 +8,13 @@ modified: '2021-12-21T03:14:26.843Z'
 # lib-editor-outline-community
 
 # discuss
+
+- ## Lexical is a next-gen JavaScript web text editor framework we've been building at Meta – with an emphasis on reliability, accessibility and performance.
+- https://twitter.com/trueadm/status/1506461323160428558
+- As a replacement for draftjs?
+  - Lexical is very different from DraftJS, but you could think of it as that. Internally, we've been slowly migrating our surfaces to Lexical, and using that process to help inform us of missing features/functionality before open sourcing Lexical.
+  - Lexical doesn't have any dependencies, let along on ImmutableJS. It has its own typed immutable EditorState object internally which can be serialised to JSON, so it's highly flexible.
+
 - ## We've been building Outline – an extensible text editor library that does things differently. 
 - https://twitter.com/trueadm/status/1472377356044099587
   - If you use http://facebook.com or http://workplace.com, you've likely already used it.
@@ -38,7 +45,7 @@ modified: '2021-12-21T03:14:26.843Z'
   - **Outline's EditorState is in a tree structure, rather than a flat structure with blocks and ranges**. You can think of it more like a DOM structure.
   - There's an example of the Outline API
 - Blocks and ranges have an interesting byproduct: they are friendly with realtime collaboration using CRDT/OT algorithms. What's the story of multiplayer support for DOM like tree structure? Just curious.
-  - We have outline-yjs bindings for collaboration with Yjs and we keep our tree structure there using Y.XmlElement, Y.XmlText and few other clever implementation details. We actually found that avoided some common issues with blocks/ranges by going this approach (lists come to mind)
+  - We have outline-yjs bindings for collaboration with Yjs and we keep our tree structure there using Y. XmlElement, Y. XmlText and few other clever implementation details. We actually found that avoided some common issues with blocks/ranges by going this approach (lists come to mind)
   - I'm thinking through what could be a good CRDT direction for block elements exactly like lists (and tables) 
   - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
   - https://github.com/inkandswitch/peritext

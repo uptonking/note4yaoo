@@ -62,6 +62,22 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If I'm not wrong, in simple terms, Remix-Router = ReactQuery + ReactLocation.
+- https://twitter.com/ShajanSheriff/status/1506972204457627651
+- They are very similar in their data fetching goals. Even with all of the data loading, boundaries, and even built in mutations (which RL does not have), RR still lacks a robust search param API like RL. In practice, this is the most important feature to me right now, too.
+- If Remix/RR had
+  - ‘search: val | updateFn’ in useNavigate and Link components
+  - search filters
+  - structural sharing
+  - library wide inverted control of search param encode/decode, etc
+  - RL wouldn’t even exist. The async stuff was important but I would have been willing to wait.
+
 - ## When I build libraries for React, ironically, I don't really use hooks like useState, useReducer, etc. 
 - https://twitter.com/tannerlinsley/status/1504854824952610818
   - One of the best perks (and footguns) of managing your state *outside* of react is that you get to have full control over when a component should rerender.
@@ -69,6 +85,7 @@ modified: '2021-01-06T14:40:03.364Z'
   - Then, when you're finally ready to commit them to your component state, you can send your private state to your component usually by saving it to a ref (don't forget to trigger a rerender!) or by using setState. Okay... so I usually have at least *one* of those two hooks ; )
   - **Rule of thumb** here is that once you take responsibility for managing state outside of react, you need to be extra aware of batching, unintended overwrites, and especially mutating your component state during render 😬
   - Either way, it's a powerful pattern to learn and master.
+- Here, useTable creates the table instance with the rerenderer as the subscription. Since we are returning the instance itself (which manages its own state), we can just use a ref. Then, on every render, we send through the options again to the let the table instance update.
 
 - Diving into the internals of many popular 3rd-party React hooks/libraries, I'd think many developers are in tacit agreement with this.
   - "Update a ref and force a rerender" feels so dirty but also so nice. And `useSyncExternalStore` helps here too.

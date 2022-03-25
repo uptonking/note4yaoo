@@ -12,7 +12,20 @@ modified: '2021-05-13T02:54:14.171Z'
     - https://github.com/XiaoyueCai/react-table/tree/beta
   - https://github.com/schuchertmanagementberatung/react-table/tree/next
     - next-20200525
-# pieces
+# discuss
+- ## Hopefully in the future, I can make #ReactTableUI a reality. 
+- https://twitter.com/tannerlinsley/status/1507082151967150084
+  - This project would essentially be a "batteries included" approach to React Table with highly performant opinions around all of the hard parts of table UI like:
+  - virtualization
+  - column pinning
+  - filter/sort/column UI
+  - grouping / Pivoting UI
+  - faceting
+  - etc.
+  - I have good ideas on how to keep the UI implementations relatively "topless" (one step away from headless? 😂) too, to allow a similar amount of flexibility that you get with react-table when it comes to styles and markup control.
+- If you want inspiration, I think Ariakit is currently the best headless UI library in the game right now in terms of API design, extensibility, and how its internal code is laid out.
+  - 🚀️ Reakit > Ariakit
+
 - ## Column resizing is going to be even more powerful in @tan_stack #ReactTable v8. 
 - https://twitter.com/tannerlinsley/status/1504576494940528640
   - As per usual, you can implement all of the UI however you like, but you'll have new tools like "onChange" and "onEnd" resizing modes and a unified markup-agnostic sizing model.

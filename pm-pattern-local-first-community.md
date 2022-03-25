@@ -10,6 +10,13 @@ modified: '2022-03-03T18:20:12.075Z'
 # guide
 
 # discuss
+
+- ## In Riffle we avoid manual network by optimistically loading all data onto the client and doing queries locally. 
+- https://twitter.com/geoffreylitt/status/1505932761453977606
+  - HF / DIEL take a diff approach: keep some computation server-side, but help schedule across the boundary
+  - Interesting tradeoffs there. Having all data local seems simpler when it's possible. eg: 0 net latency enables new patterns like storing UI state in the DB.
+  - OTOH, def some benefits to putting data/compute off-device. Access control, avoid huge data / queries on device...
+
 - ## Wrote an essay about Riffle, a new project I've been working on. Guiding question: could we simplify app dev w/ a new kind of reactive local-first database?
 - https://twitter.com/geoffreylitt/status/1499083601387864069
 - I imagined: what if you could customize any web app in a spreadsheet view?

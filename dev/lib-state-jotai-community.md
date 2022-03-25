@@ -32,6 +32,13 @@ modified: '2022-01-05T14:25:35.961Z'
 - here's the full version of the simplified version of Valtio
   - https://codesandbox.io/s/modest-currying-mu0j7
   - https://twitter.com/dai_shi/status/1485036663290368002
+
+- ## Everyone seems excited about React without memo presented at React Conf 2021? Here's jotai approach to eliminating memo.
+- https://twitter.com/dai_shi/status/1468875799327817730
+  - https://codesandbox.io/s/jotai-approach-to-react-without-memo-0ue18
+- Yeah, there are some drawbacks, and it's not something to recommend right away for production. 
+  - The mental model is the one, another is probably the lack of devtools support. there can be some others. 
+  - All that said, I guess the approach is valid and effective.
 # discuss
 - ## Jotai https://jotai.org atoms are primarily for bottom-up approach, but it can do top-down approach like zustand. 
 - https://twitter.com/dai_shi/status/1477593623156105217  /20220102

@@ -13,9 +13,7 @@ modified: '2021-05-13T16:14:15.415Z'
   - Apache Arrow is a cross-language development platform for in-memory data. 
   - It specifies a standardized language-independent columnar memory format for flat and hierarchical data, organized for efficient analytic operations on modern hardware. 
   -  It also provides computational libraries and zero-copy streaming messaging and interprocess communication
-
 # data-tools
-
 - https://github.com/uwdata/arquero
   - https://uwdata.github.io/arquero
   - /438Star/BSD/202105/js
@@ -24,8 +22,9 @@ modified: '2021-05-13T16:14:15.415Z'
   - Arquero supports a range of data transformation tasks, including filter, sample, aggregation, window, join, and reshaping operations.
   - query over arrays, typed arrays, array-like objects, or Apache Arrow columns.
 
+- https://github.com/yifanwu/diel
+  - a declarative framework for scaling up your interactive visualizations with... SQL! (and some timesteps)
 # data-wasm
-
 - https://github.com/pyodide/pyodide
   - https://pyodide.org/en/stable/
   - /5.4kStar/MPLv2/202105/python
@@ -33,9 +32,7 @@ modified: '2021-05-13T16:14:15.415Z'
 
 - https://github.com/finos/perspective
   - Streaming pivot visualization via WebAssembly
-
 # ref
-
 - [Apache Arrow简介](https://zhuanlan.zhihu.com/p/339132159)
   - 由于历史原因，Snowflake一直使用了JSON作为结果集（ResultSet）的序列化方式，引起了许多问题。
     - 首先，JSON的序列化/反序列化的成本实在是太高了：
