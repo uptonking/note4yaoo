@@ -16,7 +16,11 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## The debate atm is trying to figure out how to design a hooks API that supports fetching multiple items within one component in parallel, without it turning into a waterfall accidentally.
+- https://twitter.com/acemarke/status/1507741160839786502
+- U need to read a batch to trigger a batch request (to avoid waterfall) or start requests elsewhere and only suspend in your hook
+  - that's how we do it, too. for instance useTexture in drei
+  - another possibility is preload
 
 - ## This is how I wish react hooks worked. Dep tracking built in and the ability to opt out is manual.
 - https://twitter.com/tannerlinsley/status/1502116674689925123

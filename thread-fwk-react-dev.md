@@ -66,7 +66,22 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## Poll: When do you create a custom React hook?
+- https://twitter.com/TkDodo/status/1504200942069194753
+  - 1. When it’s reusable logic
+  - 2. When it’s reusable logic or an async call (fetch)
+  - 3. When it’s reusable logic, an async call (fetch), or feels complex
+  - 4. For all logic and state. My components only contain JSX.
+- I think extracting to a custom hook only for reusability is a bit limiting. I have many custom hooks that are only used once, in one component, co-located to that component. Why?:
+  - to give it a name and a clear #typescript interface, which communicates intent.
+  - to encapsulate other hook calls. It can often become a black box to the using component what the hook depends on.
+  - to separate concern
+  - to make the tests easier to write (no need to look at the generated DOM)
+    - I don't usually test hooks in isolation, but the components that need them with either cypress or testing-library. react-query doesn't have a single hooks-test
+- If you want to unit test your hooks logic, you need to make it a custom React hook; otherwise, you can't unit test function components that contain hooks.
+  - With classes, we could gain access to the internal methods, but with hooks, you need custom hooks to do that.
+- It’s called extract method, so just for code clarity
+
 
 - ## If I'm not wrong, in simple terms, Remix-Router = ReactQuery + ReactLocation.
 - https://twitter.com/ShajanSheriff/status/1506972204457627651

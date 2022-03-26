@@ -113,6 +113,33 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
+## 0327
+
+- 浏览器中人工合成（synthetic）的事件派发（dispatch）是同步执行的，包括执行click()和dispatchEvent()这两种方式。
+  - Unlike "native"(dom) events, which are fired by the browser and invoke event handlers asynchronously via the event loop, dispatchEvent() invokes event handlers synchronously
+
+```JS
+
+console.log('本轮任务');
+
+new Promise((resolve, reject) => {
+resolve(3)
+}).then(() => {
+console.log('本轮微任务');
+});
+
+// 💡️ 通过click方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的。
+document.getElementById('div').addEventListener('click', () => { console.log('click'); })
+document.getElementById('div').click()
+```
+
+
+## 0326
+
+- affine新编辑器类型补充
+  - 难以补充类型的use case，主要是深层路径属性的取值
+    -  const element = editor?.children?.[path[0]]?.children?.[path[1]];
+
 ## 0325
 
 - ts noImplicitAny的解决方法

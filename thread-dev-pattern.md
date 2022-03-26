@@ -11,7 +11,16 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## api design crew: in a library, should a top level object expose public methods that belong to sub-modules?
+- https://twitter.com/steveruizok/status/1507682433914834955
+  - eg `scene.zoomToFit()` vs `scene.viewport.zoomToFit()` ?
+  - 自己比较api的设计风格 d3js vs threejs vs popular-js
+- If viewport fits into the mental model of the api, meaning the user should be concerned with it, yes. 
+  - If viewport is an internal organization pattern and users should only think about the scene, no.
+  - From your minimal example scene.zoomToFit() is cleaner and makes sense to me.
+- Depends how big the API is. 
+  - If it's very large, you might want to spit everything up into separate namespaces to facilitate tree-shaking. See Firebase's radical refactor to API 9 for instance (although in their case they took it a little too far and sacrificed readability)
+  - I believe three.js also did something similar recently
 
 - ## This is precisely why I moved Popmotion away from FP/reactive streams. Hooks/Solid look fine to me, and at class components are messy but fairly straightforward.
 - https://twitter.com/mattgperry/status/1498982698613977090
