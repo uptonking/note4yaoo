@@ -23,6 +23,10 @@ modified: '2021-02-05T14:00:02.922Z'
   - 显示box model的三维效果
   - 无依赖，纯css实现
   - https://codepen.io/argyleink/pen/BaLedvd
+
+- ## This collection of CSS-only loaders is for you 👇 ✅ One `<div>` = One loader
+- https://twitter.com/ChallengesCss/status/1508017861033439237
+  - https://codepen.io/t_afif/pen/PopXpXr
 # css-ux-examples
 - css firework
 

@@ -20,6 +20,10 @@ modified: '2021-08-06T07:36:05.864Z'
 - https://github.com/tldraw/core
   - This package contains the Renderer and core utilities used by tldraw.
   - You can use this package to render React components in a canvas user interface.
+# discuss-stars
+- ## I'm only now realizing just how much I got away with by not having shapes nest in tldraw.
+- https://twitter.com/steveruizok/status/1503156568380088320
+  - I guess there's a reason you're not allowed to select a child and its parent at the same time
 # discuss
 - ## 
 
@@ -28,10 +32,6 @@ modified: '2021-08-06T07:36:05.864Z'
 - ## Excited to share http://tlslides.com, a fork of @tldraw with some UI modifications to help with creation of slides on an infinite drawing canvas. It's still in early developmen
 - https://twitter.com/nayajunimesh/status/1506327522857869314
   - https://github.com/nimeshnayaju/tlslides
-
-- ## I'm only now realizing just how much I got away with by not having shapes nest in tldraw.
-- https://twitter.com/steveruizok/status/1503156568380088320
-  - I guess there's a reason you're not allowed to select a child and its parent at the same time
 
 - ## ever wondered how to make context aware follow-along cursors? 
 - https://twitter.com/0xca0a/status/1495791102884028416
