@@ -9,6 +9,10 @@ modified: '2022-03-16T20:46:53.277Z'
 
 # guide
 
+# changelog
+- merge permissions feature branch
+  - commit 2022-03-22 aa540e73ce669a1acd491a5edd7d55199ef1b87c
+  - [pr: Permissions feature branch](https://github.com/mattermost/focalboard/pull/2578)
 # discuss
 
 ## [Feature Idea: Role-Based Permissions](https://github.com/mattermost/focalboard/issues/584)
