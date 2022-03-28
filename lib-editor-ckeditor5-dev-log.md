@@ -30,6 +30,8 @@ modified: '2021-10-27T03:20:45.841Z'
     - 自己实现的右键菜单样式简陋、功能不全，如hover时显示浅色背景
   - 开发环境必须以linux为主，在windows vscode中以WSL Remote打开linux下的源码
     - 有些bug只在windows中才会出现，同事也难以分析排查
+  - 连续fix问题的时候，一定要fix完一个做一个集成测试，确保未对现有功能产生影响
+    - 否则fix完现有问题，却发现新的问题，但问题却很难排查了
 - 🤔 ckeditor编辑器刷新后，图片无法显示的问题；不同时刻触发save方法，如何确保新数据覆盖旧数据
   - 问题排查定位，旧数据覆盖了新数据
     - 不是防抖节流的问题，~~为了性能，将保存数据的函数防抖了，结果新数据被旧数据覆盖掉了~~
@@ -113,26 +115,37 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
+## 0328
+
+- fix类型后，出现编辑器持续重复渲染，且无法正常工作的问题
+  - 排查原因，先稳定复现bug
+
+- 新编辑器抽象层次
+- app 
+  - useDatabase => `<AffineEditor db={database} />` 传递数据库操作实例
+- affine-editor
+  - 定义block-editor的vdom结构，以及初始化editor对象
+  - EditorRoot, div, RenderBlock
+  - createDefaultEditor -- createStandaloneEditor
+
 ## 0327
 
 - 浏览器中人工合成（synthetic）的事件派发（dispatch）是同步执行的，包括执行click()和dispatchEvent()这两种方式。
   - Unlike "native"(dom) events, which are fired by the browser and invoke event handlers asynchronously via the event loop, dispatchEvent() invokes event handlers synchronously
 
 ```JS
-
 console.log('本轮任务');
 
 new Promise((resolve, reject) => {
-resolve(3)
+  resolve(3)
 }).then(() => {
-console.log('本轮微任务');
+  console.log('本轮微任务');
 });
 
 // 💡️ 通过click方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的。
 document.getElementById('div').addEventListener('click', () => { console.log('click'); })
 document.getElementById('div').click()
 ```
-
 
 ## 0326
 
