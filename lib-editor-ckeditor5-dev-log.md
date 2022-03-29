@@ -115,6 +115,44 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
+- 新产品设计
+
+## 0329
+
+- 两个daily notes
+  - 左侧calendar，日历热力图
+  - 上侧全屏calendar，交互细节还要设计和修改
+
+- cloverapp的daily notes文档是自动创建的
+  - subscription events
+  - overdue tasks
+
+- new-daily-notes-page，四个部分都是普通文档形式
+  - pinned desktop icons
+    - 可折叠
+  - imported info
+    - 笔记
+    - 代办
+  - tasks 以多维表格的形式自动生成标签，可切换看板
+    - in-progress
+    - overdue
+    - completed
+  - activities
+    - 创建文档
+    - 更新文档
+
+- dev-xp
+  - 用户可编辑/不可编辑，作为系统内置的filter实现
+  - 本地数据库是否都要支持pin、第三方导入的？
+    - 实现时讨论，本地pin预缓存然后合并云端数据源
+
+- [TS2322: Type 'Timeout' is not assignable to type 'number'](https://stackoverflow.com/questions/55550096)
+  - You could try with using `window.setTimeout` instead of just `setTimeout`, this way the typescript one will be explicitly used
+  - `let timeoutId: null | ReturnType<typeof setTimeout> = null` 显式声明
+    - timeoutId = setTimeout(fn, 1000)
+
+- 遇事不决，先按 F12 > Application/应用程序 > 存储/Storage > 清除站点数据 Clear site data
+
 ## 0328
 
 - fix类型后，出现编辑器持续重复渲染，且无法正常工作的问题
