@@ -19,6 +19,8 @@ modified: '2021-12-07T05:12:27.586Z'
   - row as page
   - diff CompareTable
   - collapsible cell, not only row
+  - database-first的体验，但体验不到可以的database，如文件夹切换列表、平铺视图
+  - 批注视图，方便展示presentation，对标miro
   - 可能的亮点
     - resizable/zoomable
       - 表格可作为整体缩放大小

@@ -115,7 +115,35 @@ modified: '2021-10-27T03:20:45.841Z'
     - orm integration
   - sortable-filterable-groupable table
 
-- 新产品设计
+- [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
+
+## 0330
+
+- 为什么要自定义calendar组件
+  - [x] 需要参考现有组件实现i18n
+  - [x] 自定义样式更灵活，如日期背景色、日期背景形状、日期小红点
+  - 定制功能更方便，如鼠标悬浮提示
+  - eg: Customized day rendering 👉 StaticDatePicker 没有弹出层
+    - renderDay属性类型是function
+  - eg: Dynamic data 👉 DatePicker
+    - renderLoading属性显示日期空白占位符
+    - 切换月份时更新highlightedDays
+    - renderDay属性值函数返回的是封装过PickersDay的组件
+  - eg: Sub-components 👉 CalendarPicker, MonthPicker, YearPicker
+    - rendered without a wrapper or outer logic (masked input, date values parsing and validation, etc.).
+    - 没有renderDay属性
+
+- StaticDatePicker 源码结构
+  - Picker
+    - CalendarPicker
+      - YearPicker
+      - MonthPicker
+      - PickersCalendar 选择日期
+
+- PickersCalendar 源码结构
+  - PickersCalendarWeek
+    - PickersDay
+      - children
 
 ## 0329
 

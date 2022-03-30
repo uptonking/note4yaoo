@@ -22,6 +22,7 @@ modified: '2021-01-01T22:14:19.469Z'
 // 创建指定范围长度的数组
 
 // [1, 2, 3, 4, 5]
+Array(5).fill().map((x, i) => i + 1);
 Array.from(new Array(5), (x, i) => i + 1)
 Array.from({ length: 5 }, (x, i) => i + 1);
 Array.from(new Array(5), (x, i) => i + * lowerBound * );
@@ -29,8 +30,9 @@ Array.from(new Array(5), (x, i) => i + * lowerBound * );
 // [0, 1, 2, 3, 4]
 Array.from(Array(5).keys());
 [...Array(5).keys()];
+[...Array(5).keys()].map(i => i + 1);
 
-Array(10).fill(1).map((x, y) => x + y)
+Array(10).fill(1).map((x, y) => x + y);
 const range = (start, stop, step = 1) =>
   Array(Math.ceil((stop - start) / step)).fill(start).map((x, y) => x + y * step)
 const range = (start, stop, step) =>
