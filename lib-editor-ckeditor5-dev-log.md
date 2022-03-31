@@ -117,12 +117,27 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0331
+
+- 日历热力图沟通
+  - 不显示当天
+  - 颜色分3级
+
+- style9的样式keys只支持 at-rules or pseudo selectors
+- material v5正在将部分组件迁移到付费plan
+  - 已迁移 data-grid、tree-view、date-picker
+  - 迁移中 charts、sparkline、gauge
+
 ## 0330
 
-- 为什么要自定义calendar组件
+- 为什么要自定义calendar组件 / mui-组件DatePicker的问题
   - [x] 需要参考现有组件实现i18n
   - [x] 自定义样式更灵活，如日期背景色、日期背景形状、日期小红点
+    - mui v5的日期选择器内层组件会丢失className，变通方案是使用普通css selector
+    - 自定义切换年月图标、星期与月份文字
+    - 定制日期选择的方块大小、方便与头部星期几对齐，同时控制高度增加时不会显示竖直滚动条
   - 定制功能更方便，如鼠标悬浮提示
+    - 定制选择年份的面板的内容，定制打开年份选择器时显示的初始年份(StaticDatePicker)
   - eg: Customized day rendering 👉 StaticDatePicker 没有弹出层
     - renderDay属性类型是function
   - eg: Dynamic data 👉 DatePicker
