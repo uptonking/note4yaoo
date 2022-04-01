@@ -117,6 +117,23 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0401
+
+- 顶部导航条的元素依次是
+- HeaderStart
+  - logo图片
+  - 侧边菜单图标
+  - 版本记录图标 + 版本文字
+  - 文章标题，可选emoji
+- HeaderMiddle
+  - 文章页
+    - 视图切换按钮：文章视图、白板视图
+- HeaderEnd
+  - 用户下拉菜单
+  - 打开文章面板
+
+- `升级到pro版`的元素的定位是fixed ？
+
 ## 0331
 
 - 日历热力图沟通

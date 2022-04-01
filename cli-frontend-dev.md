@@ -28,8 +28,8 @@ Array.from({ length: 5 }, (x, i) => i + 1);
 Array.from(new Array(5), (x, i) => i + * lowerBound * );
 
 // [0, 1, 2, 3, 4]
-Array.from(Array(5).keys());
 [...Array(5).keys()];
+Array.from(Array(5).keys());
 [...Array(5).keys()].map(i => i + 1);
 
 Array(10).fill(1).map((x, y) => x + y);
