@@ -117,6 +117,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0402
+
+- 当div定义宽度和实际宽度不同时，排查方向应该是作为flex容器内项目的grow或shrink比例生效了
+  - 若要去掉自动放大缩小，flex可取值 auto (1 1 auto) 和 none (0 0 auto)
+
+- 注意图标按钮写法
+  - `<IconButton><SvgIcon /></IconButton>` 如果只把svg设为visibility： hidden，那么外层IconButton的hover仍然会存在，不符合预期交互
+
 ## 0401
 
 - 顶部导航条的元素依次是
