@@ -117,6 +117,14 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0404
+
+- dev-to
+  - calendar-heatmap细节调整到完全还原设计稿
+  - 迁移旧项目文档树组件到新产品，并mock数据
+  - 完全理解dnd-kit的原理，设计实现多维表格的拖拽列宽度
+  - 重新实现calendar-heatmap组件
+
 ## 0402
 
 - 当div定义宽度和实际宽度不同时，排查方向应该是作为flex容器内项目的grow或shrink比例生效了
