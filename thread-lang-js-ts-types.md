@@ -13,6 +13,9 @@ modified: '2021-08-05T04:31:02.298Z'
 - https://github.com/typescript-cheatsheets/react
   - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
 
+- ## Here's everything I've learned from leading TS dev teams and working on XState's core team.
+- https://twitter.com/mpocock1/status/1509964736275927042
+
 - more-cheatsheet
   - https://nerdcave.com/tailwind-cheat-sheet
 # discuss
@@ -22,9 +25,15 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## Scared by TypeScript generics? The best way to get to grips with them is to understand how they're made.
+- https://twitter.com/mpocock1/status/1508757718630342657
+  - Here's a guide to EVERY way you can instantiate a generic in TypeScript.
 
-- ## 
+- ## yet another use case for higher order generics
+- https://twitter.com/tannerlinsley/status/1509208626338050055
+  - `type Foo<T> = { foo: T }` 普通泛型
+  - `type UseFoo<Foo extends any<T>, T> = Foo<T>` 高阶泛型
+- One use case for this in #ReactTable v8 would be the ability for other frameworks to provide their own type for what a "renderable" is (a generic provided to RT), and have React Table internals be able to pipe through other types to that generic (column, row, options, filters...)
 
 - ## Object.entries() and Object.fromEntries() are soo useful but TypeScript’s built-in types for them are soo bad
 - https://twitter.com/buildsghost/status/1498895804798357510

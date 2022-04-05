@@ -29,6 +29,25 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Is it just me, or are tabs for open files in code editors completely useless? 
+- https://twitter.com/devongovett/status/1509659544850415626
+  - Once you have more than a few open, it's impossible to find anything without ⌘P.
+- I keep them open only for undo/redo history tbh.
+
+- ## seriously, the ability to have multiple instances of web apps open simultaneously is the platform's superpower, and a main reason i avoid native apps. embrace it. 
+- https://twitter.com/Rich_Harris/status/1511003723442671616
+  - if middle-clicking something changes the URL but doesn't open a new tab in your web app you are Doing Web Dev Wrong
+- It’s really too bad SharedWorker is deprecated. I had a prototype working with it and it was amazing
+- The browser is the super app we've always needed.
+- Always add a working url in an anchor tag. Also when you catch the click event for in page functionality (SPA). The href link will be opened in a new tab/window when the user performs shift-click or middle-click!
+
+- ## motion one支持动画的logo设计灵感
+- https://twitter.com/blaindy/status/1511132868474458116
+
 - ## 推荐一个可定制的渐变SVG波形生成器SVG Wave，它可以为UI和网站设计生成很棒的 SVG 波形，支持自定义波浪的图层、颜色、波峰和高度等等
 - https://twitter.com/Larry_LiDev/status/1500069732606967816
   - 可以导出SVG和PNG格式。

@@ -26,7 +26,14 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## JS's lack of a `defaultdict` equivalent continues to be an annoyance.  Gotta keep doing checks like:
+- https://twitter.com/acemarke/status/1509619347676975114
+  - if (!obj[key]) { obj[key] = [] }
+  - obj[key].push(item)
+- Maybe the logical nullish assignment operator could improve this a little?
+  - obj.key ??= []
+  - obj.key.push(…)
+- This is a pattern you'd typically see in a `.reduce()` loop - typically some kind of a "group by" behavior. It's safe to mutate `obj` because it was freshly created for the loop, but there may not be an array for this key yet b/c we haven't seen it before.
 
 - ## TIL: In javascript, assignment operation returns the value assigned. 
 - https://twitter.com/bpsagar/status/1470015051671040000

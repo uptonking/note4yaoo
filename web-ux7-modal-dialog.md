@@ -9,7 +9,14 @@ modified: '2021-07-29T20:37:39.797Z'
 
 # guide
 
+- [popper > floating-ui motivation](https://floating-ui.com/docs/motivation)
 # discuss
+- ## The Floating UI components package will largely will consist of composable effects that have a similar API to the positioning middleware. 
+- https://twitter.com/atomiksdev/status/1484837373217480706
+  - Written in vanilla JS and can be wrapped by any framework of choice.
+  - currently it just focuses on positioning like Popper, so there's nothing related to actual user behavior/a11y
+  - but there will soon be ways to actually build (accessible) behavior in tandem with positioning logic
+
 - ## Popper v3 is now platform-agnostic, so it can run on React Native (or anything that runs JS)
 - https://twitter.com/atomiksdev/status/1461340424275054593
 - For React Native, this demo uses very simple/naive calls unlike the DOM version, need to dedicate some time to it!
@@ -53,5 +60,4 @@ modified: '2021-07-29T20:37:39.797Z'
   - Add a drop shadow and a transparent background
   - Don't make the modal window too large
 # ref
-
 - [ebay: Rethink Modals Management in React](https://medium.com/ebaytech/rethink-modals-management-in-react-cf3b6804223d)

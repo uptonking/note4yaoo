@@ -13,7 +13,9 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## Introducing Ladle, a drop-in alternative to Storybook for React components. 
+- https://twitter.com/vmiksu/status/1503748029354024971
+  - Based on @vite_js , instant server start, 4x faster production build, 20x smaller footprint, code-splitting, fast refresh, single dependency & command and no configuration required.
 
 - ## [Write plain text files](https://sive.rs/plaintext)
 

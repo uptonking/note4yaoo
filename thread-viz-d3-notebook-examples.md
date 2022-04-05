@@ -19,9 +19,10 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
-- ## 
+- ## Check out my observable notebook exploring COVID cases and deaths over time within the US
+- https://observablehq.com/@amdaccache/u-s-covid-19-confirmed-and-probable-cases-deaths-by-state-rep
 
-- ## It's the end of the year. I have worked with @observablehq for the entirety of 2021 and here are what I think are some of the best notebooks were,  
+- ## It's the end of the year. I have worked with @observablehq for the entirety of 2021 and here are what I think are some of the best notebooks were, 
 - https://dev.to/tomlarkworthy/100-beautiful-and-informative-notebooks-of-2021-23lg
   - curated into topics covering "dataviz", "maths", "art", "design", "dev", "apps", "tutorials" and "tools"
 

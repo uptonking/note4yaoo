@@ -7,6 +7,8 @@ modified: '2021-01-06T14:40:11.360Z'
 
 # thread-react-dev
 
+# guide
+- [Using Generators in React Components](https://blog.tomaszgil.me/using-generators-in-react-components)
 # discuss
 - ## 
 

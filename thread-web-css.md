@@ -24,6 +24,21 @@ modified: '2021-01-08T17:15:13.906Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## i think i've shared this tip before but if your font supports it, you can use `font-variant-numeric: tabular-nums` in your CSS to keep your numerals the same width and prevent shifting layout.
+- https://twitter.com/xdesro/status/1508172487347036169
+- you can use `font-feature-settings: "tnum"` as well, but I find the numeric-specific rule is better for code clarity.
+
+- ## Are you using the `hsla` function in CSS? 
+- https://twitter.com/Steve8708/status/1511136746892771332
+
+- important note, especially if you’re using HSLA for variable colors with contrast concerns: HSL isn’t perceptually uniform. In less jargony terms you’ll see some colors look wildly lighter at different contrasts than others. It’s a useful abstraction but a usability challenge
+
 - ## CSS trick to dynamically reduce the line-height as the font-size grows, large texts need condensed line-height
 - https://twitter.com/hihayk/status/1280979972258172928
   - line-height: calc(0.25rem + 1em)

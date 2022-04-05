@@ -25,7 +25,11 @@ modified: '2021-01-19T04:46:23.100Z'
 
 - ## 
 
-- ## 
+- ## highlighted-code is a textarea builtin extend that's embarrassing how simple, a11y compliant, versatile and lightweight is, compared to most competitors
+- https://twitter.com/WebReflection/status/1507814171211087875
+  - it's literally a textarea that shows highlighted code, usable in forms too
+  - https://github.com/WebReflection/highlighted-code
+  - https://webreflection.github.io/highlighted-code/test/demo.html
 
 - ## Do I understand correctly that "Custom Elements" (JavaScript classes extending HTMLElement) can not take constructor arguments and _have_ to be initialized in the god-awful imperative DOM way of setting attributes/properties one by one?
 - https://twitter.com/MarijnJH/status/1428678081255022593

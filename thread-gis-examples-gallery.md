@@ -17,7 +17,9 @@ modified: '2021-08-16T06:45:51.370Z'
 
 - ## 
 
-- ## 
+- ## Comparing the timing of spring leaf out in 2022 (so far) to the 30-year average (1991-2020) with @USANPN data
+- https://twitter.com/USGS_DataSci/status/1511088915297484801
+  - https://github.com/USGS-VIZLAB/chart-challenge-22/tree/main/04_flora_cnell
 
 - ## 典型的绿色园区示意图
 - https://twitter.com/bcsmaps/status/1430092524492894234

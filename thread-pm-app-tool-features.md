@@ -11,7 +11,9 @@ modified: '2021-10-29T15:05:07.897Z'
 
 - ## 
 
-- ## 
+- ## 推荐一个可以一键生成随机用户头像和名称的工具Random Users，
+- http://xsgames.co/randomusers/
+  - 网站上提供了一些参数可以选择，比如性别（男性或女性），头像风格可以是彩色、黑白或像素类型，头像形状支持圆形和方形，网站底部给出了对应的API可以直接使用。
 
 - ## Handshake is our(Framer) new game-changing beta feature, enabling anyone to import components into production with just a URL. 
 - https://twitter.com/framer/status/1454055435745611779

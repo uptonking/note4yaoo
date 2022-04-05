@@ -11,15 +11,36 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How to quickly find out when debugging if an array of objects has duplicates
+- https://twitter.com/AndaristRake/status/1505169709657997314
+  - arr.forEach((el, i) => (el.__i = i))
+  - and just inspect arr if some elements share the __i after that
+- new Set(arr).size === arr.length
+  - ye, the set thing is useful too but in this case i specifically have wanted to know **which** item is the duplicate
+
 - ## @replayio is an elegantly simple product, but I think it gets at some really deep ideas about the human psychology of debugging
 - https://twitter.com/geoffreylitt/status/1438152748449636360
 - A question that has always fascinated me: why is print debugging so popular? Like, there are nice fancy step-based debuggers, but most devs just use print statements most of the time. Why?
   - One idea could be: we don't need fancy tools! Print debugging is simple 
+
     - and it's good enough to get the job done. People don't want to bother learning fancy tools.
     - Maybe some truth to that, but I don't think it's the main reason...
+
   - IMO, a main reason is that print debugging is actually *better* than step-based debugging in one key area: *showing time in space*.
+
     - With print debugging, I see what my program did from start to end; 
     - I can "scrub through time" by just scrolling up and down in the terminal.
+
 - In contrast, in a step-based debugger, I'm stuck at one moment in time. 
   - It's hard to have a sense of place: where am I in the execution of the code? Gotta be careful not to step forward too far..
   - For me this leads to a vague sense of unease, even if I'm not consciously aware.

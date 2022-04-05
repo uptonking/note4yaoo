@@ -33,6 +33,17 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## I have found a cheap + simple way of generating custom drag previews with browser powered drag and drop
+- https://twitter.com/alexandereardon/status/1510826920023248900
+
+- ## Quick HTML tip: I just discovered that `li` elements support a `value` attribute to configure the start of an ordered list.
+- https://twitter.com/stefanjudis/status/1510922335104245766
+  - You can also use the `start` attribute for that.
+- And to top things off: there’s the `type` attribute as well
+
+- ## Unexpected token U in JSON at position 0 is a very common error that happens in JavaScript due to JSON.parse trying to parse an undefined value, always try-catch JSON.parse
+- https://twitter.com/Andrei_Calazans/status/1511058521235746819
+
 - ## I think my ideal learning path is 1) find good toy implementation, 2) port to a different language.
 - https://twitter.com/geoffreylitt/status/1493410385168420868
   - Porting can be fast, efficient, methodical -- but also forces enough engagement to actually understand. 

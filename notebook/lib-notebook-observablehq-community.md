@@ -9,7 +9,9 @@ modified: '2021-05-14T14:55:00.191Z'
 
 # discuss
 
-- ## 
+- ## To help investigate userspace bugs in long running @observablehq notebooks, I used @mootari 's access-runtime notebook to create a notebook state snapshot function. 
+- https://twitter.com/tomlarkworthy/status/1508384106937303043
+  - Now you get a readout of all the cells and their current state, and value is availible.
 
 - ## Anyone seen any good patterns for running automated tests in an @observablehq notebook?
 - https://twitter.com/simonw/status/1495094294851428352

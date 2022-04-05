@@ -11,6 +11,21 @@ modified: '2021-06-22T11:54:44.506Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Performance tip: if you need to set a lot of dynamic keys to an object, a Map can give you better perf
+- https://twitter.com/Steve8708/status/1508502291170484224
+  - In short, JS VMs try to assume a shape of an object using a hidden class. When the shape changes, this can lead to a deopt
+  - It's the same reason why setting a property to null/undefined can be faster than deleting
+  - A Map, on the other hand, is optimized for this very use case of frequently adding and removing keys (see the "performance" table row here)
+
+- ## How to specified an optional argument in #javascript ?
+- https://twitter.com/rauschma/status/1510961319268306948
+  - function foo(requiredParam, optionalParam = undefined) {}
+  - The `= undefined` doesn’t do anything but it tells people reading the code that a parameter is optional.
+
 - ## Habit: When declaring REST API response types via #TypeScript, I only declare properties for the fields we use.
 - https://twitter.com/housecor/status/1495023556358455298
 - Benefits:

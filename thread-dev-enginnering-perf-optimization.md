@@ -15,7 +15,13 @@ modified: '2022-03-18T20:56:35.254Z'
 
 - ## 
 
-- ## 
+- ## #最最简单的性能改善方法
+- https://twitter.com/ThaddeusJiang/status/1511151150095298560
+  1. frontend 分页请求数据
+  2. frontend 不要重复请求相同 API
+  3. backend 精简 response，提高 networking 响应速度
+- 进阶：
+  1. frontend 缓存从 API 请求的数据
 
 - ## How to write fast code: reduce memory access. 
 - https://twitter.com/devongovett/status/1504476131818237967

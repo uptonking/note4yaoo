@@ -33,3 +33,11 @@ modified: '2021-05-13T02:53:57.772Z'
 - Moral of the story: Only worry about rerenders if they are expensive or degrading performance.
 # pieces
 - ## 
+
+- ## 
+
+- ## 
+
+- ## So, turns out react-tracked is not a good choice as a way to build a context for react-table. 
+- https://twitter.com/code_tank_dev/status/1511215041856614406
+  - The table instance doesn't get notified of changes (eg. isSorted). Any idea why that could be?
