@@ -117,12 +117,21 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0406
+
+- 日历问题
+  - 选择年份后，星期那一行会被挡住，经排查是flex-column的弹性项目height不生效的问题
+
+- 还原设计稿时，注意卡片div2的margin是32px的代码实现方式， div1 > div2 > div3
+  - div2的margin为16，div2的内容div3如span的margin也为16
+
 ## 0404
 
 - dev-to
   - calendar-heatmap细节调整到完全还原设计稿
   - 迁移旧项目文档树组件到新产品，并mock数据
   - 完全理解dnd-kit的原理，设计实现多维表格的拖拽列宽度
+    - drag和layer的工作以前都做过，但没系统地总结
   - 重新实现calendar-heatmap组件
 
 ## 0402
