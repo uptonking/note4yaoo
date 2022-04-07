@@ -122,6 +122,19 @@ modified: '2021-10-27T03:20:45.841Z'
 - 研发方案讨论
   - 全局共享dbClient的方式，共享editor对象的方式
   - documentdb vs blockdb，该用哪一个
+  - 全局状态管理
+
+- 协作的粒度是block
+  - block层级 workspace-page, page, sub-page
+  - PageTree优先级很高
+
+- 文档树旧bug
+  - 拖到最下面时，会弹到最上面
+
+- 产品
+  - workspace 数据
+  - login
+  - daily notes
 
 - 左侧面板需求讨论
   - 面板内容如PageTree页面树太高时、太宽时如何显示和交互？
@@ -132,12 +145,20 @@ modified: '2021-10-27T03:20:45.841Z'
     - 在鼠标悬浮时，应该显示哪些内容
     - 拖拽的部分是标题文字，还是尾部手柄
 
-- PageTree组件需求分析
+- PageTree 组件需求分析
   - 每行内容为👉🏻️ 折叠按钮 + 文档图标 + 标题 + 悬浮操作菜单
   - 折叠展开
   - 拖拽移动实现改编顺序和层级
   - 拖拽时显示位置提示条
   - 每行末尾为悬浮操作菜单
+
+- doc-db执行db.set时异常 insert a new version before save
+  - 不能用 doc.addVersion('')
+  - 应该用 doc.addVersion(' ')
+
+- react-router
+  - useNavigate() may be used only in the context of a `<Router>` component. 
+  - I think duplicated react-router-dom is the problem. Removing react-router-dom can be the solution
 
 ## 0406
 
