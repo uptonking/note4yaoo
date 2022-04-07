@@ -117,6 +117,12 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0408
+
+- dev-to 完善本地数据库操作和文档树操作的逻辑
+  - 文档树的拖拽按钮被挡住了，重构为拖拽标题改变顺序
+  - 实现左侧面板滚动条
+
 ## 0407
 
 - 研发方案讨论
