@@ -24,7 +24,17 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## I was 30 seconds ago years old when I learned this "works":
+- https://twitter.com/acemarke/status/1511429178461241354
+
+```JS
+let obj = { 42: "life" }
+let arr = ["42"]
+arr.toString()
+// '42'
+obj[arr]
+// 'life'
+```
 
 - ## JS's lack of a `defaultdict` equivalent continues to be an annoyance.  Gotta keep doing checks like:
 - https://twitter.com/acemarke/status/1509619347676975114

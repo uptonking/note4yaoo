@@ -19,7 +19,16 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## 2021 年 5 月的想法：借助云平台的便利，爆速开发。
+- https://twitter.com/ThaddeusJiang/status/1512369748772003842
+  - 2022 年 4 月的想法：借助平台只能开发原型，项目初期节省的时间，在项目中后期全都会回来的。
+  - “走捷径才是最远的路。” ～ TJ
+- 不知道算不算坑，但是确实成本很高。
+  - 举几个例子：
+  - 1. firebase 提供发送邮件功能，MVP 够用。实际需求是根据用户角色、地区、语言等，给客户发送不同内容。
+  - 2. firebase 提供基本的 SSO 登陆，MVP 够用。实际需求是根据客户已经在使用的服务集成 SSO，例如 Microsoft，okta，onelogin 等等
+- 我之前挺喜欢这类产品。目前会区分产品的发展路线， 如果我就只做一个月，我会用这些。如果我要做很久。我会用传统的技术架构。
+  - 我现在不接短期项目了，太浪费生命了。
 
 - ## How to quickly find out when debugging if an array of objects has duplicates
 - https://twitter.com/AndaristRake/status/1505169709657997314

@@ -8,11 +8,44 @@ modified: '2021-03-11T11:26:12.335Z'
 # thread-viz-base-webgl
 
 # guide
-- [Why WASM is not the future of Babylon.js](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
+- ## [Why WASM is not the future of Babylon.js](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)
   - What about WebGPU? Webgpu can be seen like webgl3. so no difference
+
+- https://github.com/observablehq/stdlib
+  - If you are using WebGL (rather than 2D Canvas), you should use `DOM.canvas` or the html tagged template literal instead of `DOM.context2d`.
+
+- ## [Two.js released](https://news.ycombinator.com/item?id=9897329)
+- What I am struggling with, is the use case of a library like this.
+  - Is this oriented towards gaming or substitute something like d3.js or is it has a simplier api, for the developer than other libraries. 
+  - Or is it a library to showcase the cool stuff that can be done with new technologies.
+  - I think the main difference and the selling point is that it is "renderer agnostic" but I don't understand the benefits of that.
+- Renderer-agnostic is nice, actually, when you need to support lots of different browsers.
+  - Some mobile browsers can't do WebGL as fast as they do Canvas, for instance. Other browsers will have a huge speed advantage with WebGL.
+  - being able to do some test renders quickly in all three modes should allow you to select the fastest for a particular browser.
+  - Game developers are better off with a game-oriented library, and most games will need more than geometric figures.
+- I love SVG support because it means you can render something in vector art in the browser which is also downloadable as a file by the user. Drawing stuff in the browser which is then stuck there is cute but lacks an important layer of interoperability with the rest of the computing ecosystem. So here we appear to get the best of all worlds: render to whatever is fastest in the browser but get automatic "export as SVG" for free.
+  - We could make an HTML-Canvas-compliant library that renders SVG. node-canvas
+- Even Dojo Toolkit's dojox.gfx from 2007 supported multiple rendering contexts: SVG, canvas, VML, Silverlight.
+- I notice that this can render ThreeJS objects. Any reason to construct and object with ThreeJS and render it with Two?
+  - No no, you can create shapes and render/extrude them in Three.js. The puzzle piece in this example is a 2D path made in Two.js and then extruded in Three.js
+- As someone using D3.js a lot (even for a puzzle game) - what is the benefit of using Two.js? Jumping between SVG and Canvas? (But then, is it worth the price of reducing possibilities to circles and squares?)
+  - You can do quite a bit with "circles and squares". Two.js focuses on Path drawing and has robust SVG interpretation for complex vector shapes.
+  - I've found the portability to be fantastic. For instance http://patatap.com runs svg on iOS and canvas on Android. Two.js makes it simple to run either on the fly.
+- An alternative library that is Canvas only but works well with input is ZRender
+- Awesome...but. No text? That suddenly wipes out my use case (data viz). I was super encouraged reading this post, multiple renderers including canvas / webgl (so I assume speed - unlike D3), smart, clean, indeed creative looking logo/site...suggests the author has taste...but no text kills this for me. I see no obvious use case for animated 2d that does not do textures (personally happy to do without) but also does not do text.
+  - Unfortunately, this is a library authored and maintain by one person, me. I'd love to get to text at some point, but until then you'll have to stick with DOM. Also, depending on your renderer you have full access to SVG, Canvas, and WebGL so you can write text with those APIs...
+- Text is actually pretty tricky in WebGL. Lots of ways to do it, all very dependent on your application. I think it would be better to keep it out of the library but allow plugins/etc to compose easily with the rest of two.js.
+  - Maybe the author could utilize some npm modules to enable this. https://github.com/mattdesl/text-modules
 # babylon
 - ref
   - https://twitter.com/search?q=babylon%20(from%3A0xca0a)&src=typed_query&f=live
+# discuss-stars
+- ## Is there at TWO JS counterpart to THREE JS
+- https://stackoverflow.com/questions/11456758
+- pixi.js was released just recently - it's a 2D engine backed by WebGL for performance, but with a 2D canvas fallback for compatibility. I haven't used it myself but it's worth checking out.
+  - The API also seems to be very inspired by three.js
+- ivank.js is more complete , it also uses webgl(fallback to canvas or Dom) , I am testing it right now and it have alot of events (click , drag ) and vectors. It seems more complete
+  - http://lib.ivank.net/
 # discuss
 - ## 
 

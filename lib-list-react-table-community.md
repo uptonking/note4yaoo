@@ -10,6 +10,7 @@ modified: '2021-05-13T02:53:57.772Z'
 # guide
 
 - tutorials
+  - [This article about virtual scrolling and row streaming with #ReactTable](https://blog.px.dev/tables-are-hard-3/)
   - [Design Data Tables with Real Tables: Part 1](https://learnreact.design/2020/02/08/design-data-tables-with-real-tables-part-1)
   - [Data Grid (Table) Framer package](https://packages.framer.com/package/lintonye/data-grid-table)
     - https://github.com/lintonye/tables

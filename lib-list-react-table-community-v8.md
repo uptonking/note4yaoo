@@ -5,7 +5,7 @@ created: '2021-04-30T17:53:42.566Z'
 modified: '2021-05-13T02:54:14.171Z'
 ---
 
-# lib-list-react-table-commu
+# lib-list-react-table-community-v8
 - v8分支参考
   - https://github.com/HebleV/react-table/tree/beta
     - beta-20201109
@@ -13,6 +13,8 @@ modified: '2021-05-13T02:54:14.171Z'
   - https://github.com/schuchertmanagementberatung/react-table/tree/next
     - next-20200525
 # discuss
+
+
 - ## Hopefully in the future, I can make #ReactTableUI a reality. 
 - https://twitter.com/tannerlinsley/status/1507082151967150084
   - This project would essentially be a "batteries included" approach to React Table with highly performant opinions around all of the hard parts of table UI like:
@@ -25,6 +27,14 @@ modified: '2021-05-13T02:54:14.171Z'
   - I have good ideas on how to keep the UI implementations relatively "topless" (one step away from headless? 😂) too, to allow a similar amount of flexibility that you get with react-table when it comes to styles and markup control.
 - If you want inspiration, I think Ariakit is currently the best headless UI library in the game right now in terms of API design, extensibility, and how its internal code is laid out.
   - 🚀️ Reakit > Ariakit
+
+- #ReactTable v8 alpha updates:
+  - Row expansion
+  - Expansion Example
+  - Grouping/Aggregation Example
+  - Better filter performance
+  - Better grouping performance
+  - General bug fixes
 
 - ## Column resizing is going to be even more powerful in @tan_stack #ReactTable v8. 
 - https://twitter.com/tannerlinsley/status/1504576494940528640

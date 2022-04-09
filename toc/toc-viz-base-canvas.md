@@ -7,8 +7,9 @@ modified: '2020-10-05T06:17:42.467Z'
 
 # toc-viz-base-canvas
 
-# popular
+# guide
 
+# popular
 - canvas-engines-comparison
   - https://github.com/slaylines/canvas-engines-comparison
   - https://benchmarks.slaylines.io/
@@ -98,18 +99,14 @@ modified: '2020-10-05T06:17:42.467Z'
 - https://github.com/jarenchow/janvas
   - 未开源源码，目前 janvas.min.js 仅使用 uglifyjs --compress 简单压缩无混淆
   - 基于 HTML5 Canvas 2d 绘图上下文的 JavaScript 绘图库，不仅便于 拓展，拥有极佳的 灵活度 和超越原生 canvas API 开发的 性能
-
 # canvas-designer-builder
-
 - react-design-editor /556Star/MIT/202009
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
   - 画布区是canvas，其余地方是dom
   - developed direct manipulation of editable design tools like Powerpoint
   - We've developed it with reactjs, ant.design, fabricjs
-
 # canvas-extensions
-
 - https://github.com/udevbe/react-canvaskit
   - Experiment in creating a custom react renderer using an offscreen webgl canvas on top of Skia CanvasKit
   - This implementation allows you to use all familiar React concepts like hooks and contexts, in conjunction with JSX elements that closely match the existing Skia CanvasKit API. 
@@ -125,14 +122,15 @@ modified: '2020-10-05T06:17:42.467Z'
   - a layout engine which implements flex, can use in canvas/node-canvas
 - https://github.com/miguelpeixe/react-flexcanvas
   - Canvas grid system built with flexboxes for React
-
 # canvas-animation
-
 - https://github.com/CreateJS/EaselJS
   - /7.7kStar/MIT/202010/js
   - a library for building high-performance interactive 2D content in HTML5
   - It provides a feature-rich display list to allow you to manipulate and animate graphics. 
   - It also provides a robust interactive model for mouse and touch interactions.
+- https://github.com/CreateJS/EaselJSRenderers
+  - Runtime pluggable renderers for EaselJS (Canvas 2D, WebGL, HTML DOM, SVG).
+  - an experiment that aims to provide runtime pluggable renderers for a subset EaselJS content
 
 - https://github.com/jeremyckahn/rekapi
   - Rekapi is a keyframe animation library for JavaScript. 
@@ -140,9 +138,7 @@ modified: '2020-10-05T06:17:42.467Z'
   - Rekapi is renderer-agnostic. 
     - At its core, Rekapi does not perform any rendering. 
     - However, it does expose an API for defining renderers, and comes bundled with renderers for the HTML DOM and HTML5 2D `<canvas>`.
-
 # examples
-
 - https://github.com/snelsi/smart-canvas
   - https://smart-canvas.vercel.app/
   - 依赖react-router, three, react-three/fiber, zustand, chakra-ui/react, emotion/react, framer-motion
@@ -155,13 +151,9 @@ modified: '2020-10-05T06:17:42.467Z'
 
 - https://github.com/datavized/morph /201809
   - 5 steps to create generative art from tabular data (e.g. spreadsheets and comma-separated values).
-
 # more-repos
-
 - https://github.com/c-zhuo/easycanvas /2019
   - 一个同时支持2D和3D渲染、轻量、高效、MVVM模式的渐进式canvas渲染库
-
 # ref
-
 - [Best low level canvas library for making interactive animations?](https://stackoverflow.com/questions/24468958/best-low-level-canvas-library-for-making-interactive-animations)
   - KineticJS, Greensock

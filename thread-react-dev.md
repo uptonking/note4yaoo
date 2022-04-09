@@ -16,7 +16,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## React + TypeScript tip: No need to import DOM event handler types
+- https://twitter.com/sebastienlorber/status/1512420374201446405
+- Please, NO. This is bad... Use typescript to express the type with pick, and not repeat onChange 4 times. Adding a new props is also trivial!
+  - This is tkind of the same, both have use-cases. Sometimes you need the type for an individual hander, not as props (cf meme in the 2nd tweet with const handleChange)
 
 - ## The debate atm is trying to figure out how to design a hooks API that supports fetching multiple items within one component in parallel, without it turning into a waterfall accidentally.
 - https://twitter.com/acemarke/status/1507741160839786502

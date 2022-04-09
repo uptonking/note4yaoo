@@ -37,7 +37,8 @@ modified: '2021-01-08T17:15:13.906Z'
 - ## Are you using the `hsla` function in CSS? 
 - https://twitter.com/Steve8708/status/1511136746892771332
 
-- important note, especially if you’re using HSLA for variable colors with contrast concerns: HSL isn’t perceptually uniform. In less jargony terms you’ll see some colors look wildly lighter at different contrasts than others. It’s a useful abstraction but a usability challenge
+- important note, especially if you’re using HSLA for variable colors with contrast concerns: HSL isn’t perceptually uniform. 
+  - In less jargony terms you’ll see some colors look wildly lighter at different contrasts than others. It’s a useful abstraction but a usability challenge
 
 - ## CSS trick to dynamically reduce the line-height as the font-size grows, large texts need condensed line-height
 - https://twitter.com/hihayk/status/1280979972258172928

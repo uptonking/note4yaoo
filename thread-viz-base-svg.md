@@ -15,7 +15,10 @@ modified: '2021-03-11T11:26:06.670Z'
 
 - ## 
 
-- ## 
+- ## Know of any SVG to pdf libraries that support shadows?
+- https://twitter.com/steveruizok/status/1512533051154305027
+- PrinceXML/DocRaptor
+- A hunch: if you use puppeteer to generate the PDF it might preserve shadows. Though may not be the most optimal conversion
 
 - ## A modern SVG rendering engine is ready.: resvg-js 2.0 Alpha with WASM support. 
 - https://twitter.com/yisibl/status/1493597768904212482
