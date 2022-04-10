@@ -28,10 +28,14 @@ modified: '2021-03-22T18:24:50.639Z'
 
 https://mobile.yangkeduo.com/promotion_op.html?id=181215&subject_id=&type=5&refer_share_id=de9501e0a57f42b7a702565df1d963b4&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
 
-- 拓路者 买一送一
+- 拓路者 买一送一 首页入口
+  - 这里可以选择 外套、裤装
 
 https://mobile.yangkeduo.com/promotion_op.html?id=181999&subject_id=&type=5&refer_share_id=6b73d175a0c644e1ac09971b272f40f1&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
 
+- 拓路者 买一送一 男装 入口
+
+https://mobile.yangkeduo.com/promotion_op.html?id=181805&subject_id=&type=5&refer_share_id=7959ea7f435843ef9de48771eb8802d1&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
 ```
 
 - js产生定长字符串
