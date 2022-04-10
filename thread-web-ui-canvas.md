@@ -27,7 +27,12 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
-- ## 
+- ## tldraw v2 is "headless" meaning that it can be used together with any rendering technology. 
+- https://twitter.com/steveruizok/status/1491529764120764416
+  - I've mostly been building out the React renderer, but here's a ~1hr spike on an HTMLCanvas renderer
+- how does that work? changing renderers?
+  - Just creating a new app that takes the data from the the "core"—e.g. what's in the viewport, where the camera is, what's selected, etc—and puts it on the screen somehow
+  - This is pretty much how it works. The renderer sends events to the core (e.g. pointer moves, clicks, pans, etc). When the core's state changes (usually due to those events), the renderer decides how to display that state.
 
 - ## Excited to share http://tlslides.com, a fork of @tldraw with some UI modifications to help with creation of slides on an infinite drawing canvas. It's still in early developmen
 - https://twitter.com/nayajunimesh/status/1506327522857869314

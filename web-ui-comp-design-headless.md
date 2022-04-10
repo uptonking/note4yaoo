@@ -17,13 +17,14 @@ modified: '2021-04-11T17:37:29.528Z'
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
+    - 示例组件的动画体验非常好
   - react-spectrum
     - based on react-stately,react-aria
   - radix-ui
     - 提供了自研stitches的样式解决方案
   - renderlesskit-react
     - 依赖reakit,react-aria,chakra-ui
-  - reakit
+  - reakit/ariakit
     - who is using: bumbag-ui
   - reach-ui
   - react-containers: 有2种使用方式: hook, render prop

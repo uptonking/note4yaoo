@@ -12,6 +12,24 @@ modified: '2021-04-11T06:17:51.318Z'
 - 有状态无渲染，有渲染无状态，且状态尽量与具体业务解耦，状态逻辑尽量通用，这也是hooks设计的思路
 - headless, renderless, no styling, unstyled, accessible
 - I wonder... should these be called ui patterns rather than components.
+
+- headless-ui-examples
+  - headlessui
+    - listbox/select,dropdown/menu,switch,radio-group
+    - dialog,popover,disclosure,transition
+    - 示例组件的动画体验非常好
+  - react-spectrum
+    - based on react-stately,react-aria
+  - radix-ui
+    - 提供了自研stitches的样式解决方案
+  - renderlesskit-react
+    - 依赖reakit,react-aria,chakra-ui
+  - reakit/ariakit
+    - who is using: bumbag-ui
+  - reach-ui
+  - react-containers: 有2种使用方式: hook, render prop
+  - downshift
+  - react-bootstrap依赖的restart/hooks
 # popular-headless-ui
 - https://github.com/tailwindlabs/headlessui
   - /992Star/MIT/202009

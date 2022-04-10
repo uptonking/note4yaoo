@@ -14,7 +14,19 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## what are the main advantages of Radix UI compared to Headless UI ?
+- https://twitter.com/danigonlinea/status/1488863027898236943
+  - More Components 
+  - Better API imo
+  - Radix was actually easier to style with TailwindCSS
+- The only thing that was not on Radix UI was a Transition component
+  - what are you doing that required the Transition component? keen to understand use-cases that our Presence component (for CSS animation) doesn't handle.
+  - Our toast component used to mount on DOM with a transition, now I hide and show it with an animation. I’m not sure whether attributes like `aria-live` makes sense as this component is in the DOM always. And I also like props like enterFrom for transitions which accepts classes
+
+- https://twitter.com/haritssr/status/1474743842540691457
+  - The coolest part about headless libraries is how well they can work together. Opinionated styling limits your possibilities whereas using something like radix and headlessui together feels like they were made for each other.
+  - So you combined Radix UI primitive with Headless UI Transition ?
+  - Exactly
 
 - ## React + TypeScript tip: No need to import DOM event handler types
 - https://twitter.com/sebastienlorber/status/1512420374201446405
