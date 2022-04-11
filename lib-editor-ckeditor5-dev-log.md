@@ -120,7 +120,16 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
-## 0409
+## 0411
+
+- 数据请求的问题
+  - api函数放在哪里
+  - 有没有比拆分更好的方式
+
+- dev-to
+  - 推进affine上aws
+
+- 白板的激光笔设计，笔迹3S后自动消失
 
 ## 0408
 
