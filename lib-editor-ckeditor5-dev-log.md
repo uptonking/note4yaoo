@@ -120,11 +120,20 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0412
+
+- 浏览器滚动条宽度
+  - The default scrollbar width can range anywhere from 12px to 17px. 
+  - Webkit browsers also have the ability for the user to configure scrollbar widths. 
+  - Webkit browsers, such as Chrome can have custom scrollbars that can have any size scrollbar.
+
 ## 0411
 
 - 数据请求的问题
   - api函数放在哪里
   - 有没有比拆分更好的方式
+
+- 💡 发现将 useUser 和 useSpaces 合并为一个hook后能够减少请求次数，同时降低复杂度，流程更清晰
 
 - dev-to
   - 推进affine上aws
