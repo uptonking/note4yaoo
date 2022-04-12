@@ -120,6 +120,22 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0413
+
+- dev-to
+  - workspace flavor类型的block用来干嘛的
+    - workspace与page是如何关联的
+  - page flavor类型的block应该是类似以前的doc
+    - 如何设置title、author、lastUpdate、create
+  - 迁移到新db后更新目录树的数据源
+
+- block flavor
+  - workspace, page, text, title, comments, tag, reference, video, audio, image
+
+- blockdb结构
+  - workspace、page、block
+  -  page.insertChildren(block1);
+
 ## 0412
 
 - 浏览器滚动条宽度
