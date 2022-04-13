@@ -9,7 +9,17 @@ modified: '2021-10-31T15:56:24.071Z'
 
 # 2022
 
-
+- 工作小结
+  - 因为在线api服务无法跨域访问，就在本地跑通了登录、获取workspace列表的逻辑
+  - 对接blockdb相关
+    - 去掉找不到workspace的404页面，默认workspace为space前缀_userId
+    - 用户登录后，默认打开上次访问的文件，逻辑没跑通
+    - 刷新页面恢复用户和页面相关数据，需要继续完善
+  - PageTree获取blockdb数据源失败了，因为api改变了
+    - PageTree的更新方式有2种，会采用哪一种
+  - 登录相关细节优化
+    - 登录后显示google头像、退出登录
+    - 顶部导航条切换白板视图和页面视图已经work
 # guide
 
 # ckeditor-faq-repeat
