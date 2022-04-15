@@ -120,7 +120,31 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0414
+
+- dev-to
+  - 本地配置代理，直接使用后端在线服务
+  - 🤔 本地是否要实现免登录
+
+- daily-notes/calendar-view
+  - 作为文档的入口，比文档更高一级
+
+- workspace、page 的content可以用来放metadata
+  - 普通block的content用来放内容
+
 ## 0413
+
+- 工作小结
+  - 因为在线api服务无法跨域访问，就在本地跑通了登录、获取workspace列表的逻辑
+  - 对接blockdb相关
+    - 去掉找不到workspace的404页面，默认workspace为space前缀_userId
+    - 用户登录后，默认打开上次访问的文件，逻辑没跑通
+    - 刷新页面恢复用户和页面相关数据，需要继续完善
+  - PageTree获取blockdb数据源失败了，因为api改变了
+    - PageTree的更新方式有2种，会采用哪一种
+  - 登录相关细节优化
+    - 登录后显示google头像、退出登录
+    - 顶部导航条切换白板视图和页面视图已经work
 
 - dev-to
   - workspace flavor类型的block用来干嘛的
@@ -129,12 +153,20 @@ modified: '2021-10-27T03:20:45.841Z'
     - 如何设置title、author、lastUpdate、create
   - 迁移到新db后更新目录树的数据源
 
-- block flavor
+- 若没有workspace，则新创建默认workspace
+
+- block flavor  
   - workspace, page, text, title, comments, tag, reference, video, audio, image
 
 - blockdb结构
   - workspace、page、block
-  -  page.insertChildren(block1);
+  - page.insertChildren(block1); 
+
+- 实现数据存储和操作时，要考虑 编辑器多实例的问题
+
+- [wsl安装mongodb教程](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database)
+
+- caddy类似 nginx
 
 ## 0412
 
