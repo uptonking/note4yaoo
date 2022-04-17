@@ -11,6 +11,16 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- dnd-kit调试运行异常
+  - Invalid hook call. Hooks can only be called inside of the body of a function component. You might have more than one copy of React in the same app
+  - 🤔️ 通过断点调试发现react的多个版本
+    - 虽然手动修改了叶节点子包的react版本为v17
+    - 但引用了storybook的中间包的node_modules目录下却安装了react v16，所以最终叶节点子包使用的react版本为就近找到的v16
+    - 解决方法是修改目录名或层级，使得异常位置引入的react为最顶层node_modules/下的react包
+  - [第三方组件的Hooks为啥报错了？](https://cloud.tencent.com/developer/article/1815691)
+  - 定位问题在报错的useRef中打上断点，发现其来自于：http://localhost:8081/Users/项目目录/node_modules/组件库/node_modules/react/cjs/react.development.js
+  - 在项目里其他调用Hooks但是未报错的地方打上断点，发现资源来自于：http://localhost:8081/Users/项目目录/node_modules/react/cjs/react.development.js
+
 - golang代理超时报错"https://proxy.golang.org/github.com/********** timeout 
   - 解决方法只需要换一个国内能访问的代理即可，终端执行以下命令
   - go env -w GOPROXY=https://goproxy.cn

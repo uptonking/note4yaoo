@@ -11,6 +11,13 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## @logseq URL Protocol handler will be a game changer
+- https://twitter.com/HDanzu/status/1515515854112362498
+
 - ## While I love http://heptabse.io's vision of a unified flow, I think in the short term we'll see specialization
 - https://twitter.com/jasonlaster11/status/1513130393515565058
   * curation: http://Notion.so
