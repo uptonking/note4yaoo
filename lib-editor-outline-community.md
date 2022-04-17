@@ -9,6 +9,41 @@ modified: '2021-12-21T03:14:26.843Z'
 
 # discuss
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Lexical is now open-source
+- https://twitter.com/trueadm/status/1514298427840024581
+  - We're also experimenting with a Lexical for iOS, which will be a Swift based implementation of Lexical using TextKit.
+
+- How does this compare to slateJS? Seems the approach to nodes and transforms is pretty similar
+  - Yep, we took inspiration from Slate. 
+  - One area that we differ on is the fact Lexical has different event handling for composition/IME and also the compatibility around third-party browser extensions that can mutate the DOM (spellcheck etc).
+
+- Were collaboration features a consideration when building?
+  - Yep, we having collaboration bindings for yjs.
+  - We use Yjs internally, and maybe externally in the future.
+
+- Is Lexical a replacement of Draft.js?
+  - Internally, we've been replacing Draft.js with Lexical. To be clear though, they're different projects with little API compatibility.
+  - Why you don't simply improve Draft js ?
+  - Draft.js was built many years ago when the web was in a different place. It's architecture doesn't really fit the ethos that we're trying to promote today – we are trying to promote extensibility and a different kind of take on how you can build editors.
+
+- Is there LSP support? Or we would need to make a plugin if we want to use it? 
+  - Folks have also asked about this internally. We don't yet have support, but it shouldn't too difficult to add support. If anyone is feeling ambitious and would like to work on this, that would be epic! : D
+
+- Is Lexical support partical render when text content is very huge?
+  - We're exploring virtualization, but we have a bunch of higher-pri things to attend to first :)
+
+- huge congrats! always so awesome when you ship stuff. i'd love to see unfurls and "paste-in images" implemented in this, thats the last thing i look for in these solutions tho im sure you already thought of it and i just need to look harder
+
 - ## Lexical is a next-gen JavaScript web text editor framework we've been building at Meta – with an emphasis on reliability, accessibility and performance.
 - https://twitter.com/trueadm/status/1506461323160428558
 - As a replacement for draftjs?

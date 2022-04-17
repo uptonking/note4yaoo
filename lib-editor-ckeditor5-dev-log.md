@@ -120,6 +120,10 @@ modified: '2021-10-27T03:20:45.841Z'
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
+## 0415
+
+- nx的代理配置不在options页面，而在单独的配置教程页面
+
 ## 0414
 
 - dev-to

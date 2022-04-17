@@ -11,7 +11,12 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## While I love http://heptabse.io's vision of a unified flow, I think in the short term we'll see specialization
+- https://twitter.com/jasonlaster11/status/1513130393515565058
+  * curation: http://Notion.so
+  * exploration: figjam, 
+  @tldraw
+  * storytelling: http://Tome.app
 
 - ## Introducing Ladle, a drop-in alternative to Storybook for React components. 
 - https://twitter.com/vmiksu/status/1503748029354024971

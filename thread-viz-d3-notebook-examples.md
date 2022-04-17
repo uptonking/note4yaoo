@@ -19,6 +19,14 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
+- ## 
+
+- ## This is DependenTree! A dependency graph visualization library built on top of D3.
+- https://observablehq.com/@amogh/dependentree
+
+- ## We created a few datasets for our community to get started with on @observablehq . First up is Google Merchandise Sales Data.
+- https://twitter.com/observablehq/status/1514753644700344321
+
 - ## Check out my observable notebook exploring COVID cases and deaths over time within the US
 - https://observablehq.com/@amdaccache/u-s-covid-19-confirmed-and-probable-cases-deaths-by-state-rep
 

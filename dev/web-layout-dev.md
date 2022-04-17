@@ -46,6 +46,9 @@ modified: '2021-01-01T20:17:05.116Z'
 
  
 
+- I've gone through probably 100 iterations of layout APIs to come full circle back to a Stack component for layout 
+- https://twitter.com/souporserious/status/1515083960581120011
+
 - ## I was wrong. Auto-layout is the real deal 
 - https://twitter.com/steveschoger/status/1422993355353600013
   - Once the design is finalized, auto-layout makes it really easy to put together all of the responsive breakpoints.

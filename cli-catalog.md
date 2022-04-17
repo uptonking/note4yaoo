@@ -66,6 +66,9 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 - commit相关
   - 修改最新的提交描述信息
     - git commit --amend -m 'new msg'
+  - commit后又修改了，但不想添加记录
+    - git add .
+    - git commit --amend --no-edit
   - 撤销上次commit的记录，不回滚修改
     - **只撤销本次提交记录，实际修改后的文件仍然存在本地**
     - git reset HEAD~
@@ -75,7 +78,6 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - git reset --hard HEAD~
     - git push origin -f
     - [git放弃修改，放弃增加文件操作](https://blog.csdn.net/ustccw/article/details/79068547)
-
 
 - clone非master分支、修改克隆下来的文件夹名称
   - `git checkout origin/branchName` 切换分支
