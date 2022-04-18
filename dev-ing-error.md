@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- gyp: Undefined variable module_name in binding.gyp while trying to load binding.gyp
+  - ERR! gyp ERR! System Linux 5.10.102.1-microsoft-standard-WSL2
+  - 在wsl里面编译sqlite时根据系统名称下载依赖，这个系统名非常规，找不到
+
 - dnd-kit调试运行异常
   - Invalid hook call. Hooks can only be called inside of the body of a function component. You might have more than one copy of React in the same app
   - 🤔️ 通过断点调试发现react的多个版本

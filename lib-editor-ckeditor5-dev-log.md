@@ -127,10 +127,52 @@ modified: '2021-10-27T03:20:45.841Z'
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
+- daily-notes
+  - 日历关联的部分
+    - 实现大日历
+    - 实现大日历与小日历切换的交互
+    - 弹窗modal中展示大日历
+  - 顶部日期导航条可用
+  - daily文章部分由多维表格实现，提前准备好daily数据逻辑
+
+- new-daily-notes-page，四个部分都是普通文档形式
+  - pinned desktop icons
+    - 可折叠
+  - imported info
+    - 笔记
+    - 代办
+  - tasks 以多维表格的形式自动生成标签，可切换看板
+    - in-progress
+    - overdue
+    - completed
+  - activities
+    - 创建文档
+    - 更新文档
+
 ## 0418
+
+- discussion
+  - 小日历接入实际创作数据时，日历颜色根据什么指标确定？创建文件数量？
+    - 日历颜色分3级，分级指标如何确定？ 3/6/9？
+  - daily-notes数据具体包含哪些数据？ pin+todo-task+activities/comments
+    - 每天的daily-notes文档是动态计算生成的？还是把前一天的算好了存起来？若预先存储长期会占用空间？
+  - 顶部导航条什么时候显示7天日期？因为默认显示2个视图切换按钮
+  - 左侧日历热力图切换弹窗大日历？全页的大日历还存在吗？
 
 - dev-to
   - 重写PageTree正在进行中
+
+- google-calendar的格式已成为协同类产品的基建
+  - 功能参考
+  - 导入导出日程
+
+- 编辑器的数据与无状态react组件分离
+  - `<ReactComp blockId={dbBlockId} />` 抽离出react组件
+  - 让看板组件、日历组件能够在editor里面用，也能单独使用
+
+- 白板和editor集成的额外信息
+  - 白板shape的位置信息
+  - shape所属group
 
 ## 0415
 
@@ -366,20 +408,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - cloverapp的daily notes文档是自动创建的
   - subscription events
   - overdue tasks
-
-- new-daily-notes-page，四个部分都是普通文档形式
-  - pinned desktop icons
-    - 可折叠
-  - imported info
-    - 笔记
-    - 代办
-  - tasks 以多维表格的形式自动生成标签，可切换看板
-    - in-progress
-    - overdue
-    - completed
-  - activities
-    - 创建文档
-    - 更新文档
 
 - dev-xp
   - 用户可编辑/不可编辑，作为系统内置的filter实现
