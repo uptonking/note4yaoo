@@ -194,9 +194,16 @@ const Item = forwardRef(({ children, ...props }, ref) => {
   - https://shaddix.github.io/dnd-kit-sortable-tree/
   - a Tree component extracted from dndkit examples and abstracted a bit. 
 
+- https://github.com/ThaddeusJiang/react-sortable-list
+  - Easy Drag & Drop sort items
+
 - https://github.com/wuifdesign/antd-react-extensions
   - https://wuifdesign.github.io/antd-react-extensions/
   - Extentions for Ant Design Reactd
+
+- https://github.com/jado66/reactive-site-creator
+  - A website creator for React.
+  - 依赖react-quill、react-reveal、bootstrap5
 
 ## repos-dnd-kit
 
@@ -204,3 +211,6 @@ const Item = forwardRef(({ children, ...props }, ref) => {
   - https://codesandbox.io/s/react-konva-dnd-kit-e6rck
   - Example of using dnd-kit to drag an element out a react konva canvas
   - 依赖konva、react-konva
+
+- https://github.com/onmotion/react-tabtab-next
+  - A mobile support, draggable, editable and api based Tab for ReactJS
