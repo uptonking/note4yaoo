@@ -94,7 +94,7 @@ modified: '2021-10-27T03:20:45.841Z'
       - 类似github insights里面不同fork的顺序
 - material-ui缺点
   - ~~没有dropdown，select默认会遮挡触发元素~~
-# 2022
+# 2022-dev
 - my-next
   - dev starter
     - react patterns
@@ -119,6 +119,27 @@ modified: '2021-10-27T03:20:45.841Z'
   - headless date picker
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
+
+- dev-to-later
+  - 修改获取初始workspace的流程，优先使用本地找不到，可以不从api获取
+
+```JS
+console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
+```
+
+## 0415
+
+- dev-to
+  - 前端项目请求api通过proxy代理到线上服务端
+  - PageTree组件重写
+  - 后端登录流程熟悉
+
+- @nrwl/web:dev-server 的配置项不包含proxy, packages\web\src\executors\dev-server\schema.json
+  - 但其他文档有个单独的页面介绍了配置方法，proxyConfig
+  - 对照webpack-dev-server的文档，发现沿用了其配置
+
+- 多个useEffect尽量不要依赖执行顺序
+  - 有时候，deps依赖项过多，effects就会比预期的先执行，结果常是显示旧数据
 
 ## 0414
 
