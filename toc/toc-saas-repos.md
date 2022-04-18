@@ -25,6 +25,9 @@ modified: '2022-02-12T23:36:22.503Z'
   - 前端依赖 redux/toolkit
   - 后端依赖 express、typeorm
   - 前后端都是ts类型
+
+- https://github.com/ThaddeusJiang/react-app-starter
+  - 依赖 nextjs、tailwindcss、react-hook-form、react-query、react-table、storybook、react-testing、mock-service-worker
 # spa-react-boilerplate
 - https://github.com/themesberg/volt-react-dashboard
   - dashboard + components + pages

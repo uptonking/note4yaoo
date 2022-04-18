@@ -31,7 +31,9 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - ## 
 
-- ## 
+- ##  I am a freelance illustrator based in the SF Bay Area. I work in editorial, publishing, and motion. 
+- https://twitter.com/mcmintea/status/1513917685972701185
+
 
 - ## Is it just me, or are tabs for open files in code editors completely useless? 
 - https://twitter.com/devongovett/status/1509659544850415626

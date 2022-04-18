@@ -127,6 +127,11 @@ modified: '2021-10-27T03:20:45.841Z'
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
+## 0418
+
+- dev-to
+  - 重写PageTree正在进行中
+
 ## 0415
 
 - dev-to
@@ -137,6 +142,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - @nrwl/web:dev-server 的配置项不包含proxy, packages\web\src\executors\dev-server\schema.json
   - 但其他文档有个单独的页面介绍了配置方法，proxyConfig
   - 对照webpack-dev-server的文档，发现沿用了其配置
+  - nx的代理配置不在options页面，而在单独的配置教程页面，要先搜索，再提问讨论
 
 - 多个useEffect尽量不要依赖执行顺序
   - 有时候，deps依赖项过多，effects就会比预期的先执行，结果常是显示旧数据

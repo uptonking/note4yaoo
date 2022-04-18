@@ -18,7 +18,10 @@ modified: '2021-06-09T01:09:55.241Z'
 
 - ## 
 
-- ## 
+- ## Mark createStore as deprecated
+- https://github.com/reduxjs/redux/issues/4325
+  - We don't want anyone using the core createStore method directly in their apps today. 
+  - We want them using configureStore from RTK instead.
 
 - ## Is there a performance benefit on using Context API vs Redux?
 - https://stackoverflow.com/questions/57841048

@@ -64,7 +64,10 @@ modified: '2021-01-06T14:40:03.364Z'
 
 - ## 
 
-- ## 
+- ## unless mitosis uses custom elements builtin extend, there's no way to translate React into WC
+- https://twitter.com/WebReflection/status/1514631499961847810
+  - At that point, a fast/thin layer like uhtml would be a much better target/outcome (or uland with hooks!)
+  - not only tables, options, LIs, and others are problematic, current WC as target produces even more bloat than React would produce by itself!
 
 - ## Poll: When do you create a custom React hook?
 - https://twitter.com/TkDodo/status/1504200942069194753
@@ -77,11 +80,12 @@ modified: '2021-01-06T14:40:03.364Z'
   - to encapsulate other hook calls. It can often become a black box to the using component what the hook depends on.
   - to separate concern
   - to make the tests easier to write (no need to look at the generated DOM)
+
     - I don't usually test hooks in isolation, but the components that need them with either cypress or testing-library. react-query doesn't have a single hooks-test
+
 - If you want to unit test your hooks logic, you need to make it a custom React hook; otherwise, you can't unit test function components that contain hooks.
   - With classes, we could gain access to the internal methods, but with hooks, you need custom hooks to do that.
 - It’s called extract method, so just for code clarity
-
 
 - ## If I'm not wrong, in simple terms, Remix-Router = ReactQuery + ReactLocation.
 - https://twitter.com/ShajanSheriff/status/1506972204457627651

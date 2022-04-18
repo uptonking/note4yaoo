@@ -33,6 +33,32 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## Does there exist a decent, modern boilerplate for creating browser devtools? 
+- https://twitter.com/DavidKPiano/status/1512901804127830019
+- In the past I basically just ripped off @tannerlinsley pattern, he just mounts a “panel” (absolute positioned Div) within the app :)
+
+
+- ## 我在推微前端时，经常会被问： “为什么不用 iframe？”
+- https://twitter.com/ThaddeusJiang/status/1514604744790376450
+1. url 不同步。浏览器刷新 iframe url 状态丢失、后退前进按钮无法使用。
+2. UI 不同步，DOM 结构不共享。想象一下屏幕右下角 1/4 的 iframe 里来一个带遮罩层的弹框，同时我们要求这个弹框要浏览器居中显示，还要浏览器 resize 时自动居中..
+3. 全局上下文完全隔离，内存变量不共享。iframe 内外系统的通信、数据同步等需求，主应用的 cookie 要透传到根域名都不同的子应用中实现免登效果。
+4. 慢。每次子应用进入都是一次浏览器上下文重建、资源重新加载的过程。
+- 其中有的问题比较好解决(问题1)，有的问题我们可以睁一只眼闭一只眼(问题4)，但有的问题我们则很难解决(问题3)甚至无法解决(问题2)，
+  - 而这些无法解决的问题恰恰又会给产品带来非常严重的体验问题， 最终导致我们舍弃了 iframe 方案。
+
+- ## DOM diffing is surely one of the most discussed, explored, and implemented topics, 
+- https://twitter.com/WebReflection/status/1515083477275877382
+  - when it comes to Web development ... and the response from vendors is: counterproductive to keep repeating the same discussion every 2-3 years
+  - That's how slow/bad Web is
+  - That discussion tl; dr is like: It seems hard to even swap nodes w/o causing side effects like reloading an iframe
+
+- ## 不知道这个行为是不是符合规范，如果某行 css 中出现了一个伪元素下带其他元素的选择器，那么这一行的全部选择器都是无效的，也没有任何错误提示，
+- https://twitter.com/_Xheldon/status/1514994277100945408
+  - 在 Devtools 中检查元素压根看不到这行的任何规则，Chrome 和 Safari 均如此
+
 - ## I have found a cheap + simple way of generating custom drag previews with browser powered drag and drop
 - https://twitter.com/alexandereardon/status/1510826920023248900
 

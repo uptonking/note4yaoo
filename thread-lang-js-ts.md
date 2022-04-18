@@ -22,7 +22,10 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## When to use Map vs. Object, a reference guide.
+- https://twitter.com/builderio/status/1513955108614193155
+- would use for...of in objects too. key difference is also that object literals contain obj['constructor'] which might break expectations in some code.
+- Maps iterate over entries, not keys by default, and Object.keys is iterable as well and symbols are allowed as keys in objects, not just strings.
 
 - ## I was 30 seconds ago years old when I learned this "works":
 - https://twitter.com/acemarke/status/1511429178461241354

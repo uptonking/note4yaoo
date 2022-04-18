@@ -13,6 +13,18 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
+
+- ## @logseq URL Protocol handler will be a game changer
+- https://twitter.com/HDanzu/status/1515515854112362498
+
+- ## While I love http://heptabse.io's vision of a unified flow, I think in the short term we'll see specialization
+- https://twitter.com/jasonlaster11/status/1513130393515565058
+  * curation: http://Notion.so
+  * exploration: figjam, 
+  @tldraw
+  * storytelling: http://Tome.app
+
 - ## Introducing Ladle, a drop-in alternative to Storybook for React components. 
 - https://twitter.com/vmiksu/status/1503748029354024971
   - Based on @vite_js , instant server start, 4x faster production build, 20x smaller footprint, code-splitting, fast refresh, single dependency & command and no configuration required.
