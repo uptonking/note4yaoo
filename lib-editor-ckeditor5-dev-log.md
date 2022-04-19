@@ -149,10 +149,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
+## 0419
+
+- 大日历暂停
+
+- 先实现文章数据保存和恢复
+
+- 重构编辑器的load-save
+  - .get()
+  - .set()
+  - 去掉 .getContent()
+
 ## 0418
 
 - discussion
-  - 小日历接入实际创作数据时，日历颜色根据什么指标确定？创建文件数量？
+  - 小日历接入实际创作数据时，日历颜色根据什么指标确定？创建、修改文件数量？
     - 日历颜色分3级，分级指标如何确定？ 3/6/9？
   - daily-notes数据具体包含哪些数据？ pin+todo-task+activities/comments
     - 每天的daily-notes文档是动态计算生成的？还是把前一天的算好了存起来？若预先存储长期会占用空间？
