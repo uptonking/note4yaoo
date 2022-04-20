@@ -149,6 +149,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
+## 0420
+
+- PageTree现有组件的问题
+  - 所有内层叶节点默认展开，而不是记住折叠状态
+
 ## 0419
 
 - 大日历暂停
