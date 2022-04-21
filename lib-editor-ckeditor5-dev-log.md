@@ -149,6 +149,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
+## 0421
+
+- PageTree 数据结构和更新分析
+  - 更新标题名称时，异步通知再重新读取标题
+  - 更新标题顺序层级时，先更新缓存，再异步保存
+
 ## 0419
 
 - 大日历暂停
