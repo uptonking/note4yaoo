@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- useNavigate() may be used only in the context of a `<Router>` component
+  - https://github.com/remix-run/react-router/issues/8701
+  - 🤔️ 是统一项目使用了多个react-router导致的问题，可在package-lock.json文件中搜索确认；统一版本即可修复
+
 - gyp: Undefined variable module_name in binding.gyp while trying to load binding.gyp
   - ERR! gyp ERR! System Linux 5.10.102.1-microsoft-standard-WSL2
   - 在wsl里面编译sqlite时根据系统名称下载依赖，这个系统名非常规，找不到

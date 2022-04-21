@@ -154,6 +154,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - PageTree 数据结构和更新分析
   - 更新标题名称时，异步通知再重新读取标题
   - 更新标题顺序层级时，先更新缓存，再异步保存
+## 0420
+
+- PageTree现有组件的问题
+  - 所有内层叶节点默认展开，而不是记住折叠状态
 
 ## 0419
 
