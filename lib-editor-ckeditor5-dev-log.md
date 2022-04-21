@@ -149,11 +149,22 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
+## 0422
+
+- PageTree小结
+  - 标题支持点击和拖拽事件
+  - 支持保存和恢复折叠展开状态
+
+- dnd-kit-onClick失效的问题
+  - https://github.com/clauderic/dnd-kit/issues/296
+  - useSensor(PointerSensor, { activationConstraint: { distance: 10, }, }); 
+
 ## 0421
 
 - PageTree 数据结构和更新分析
   - 更新标题名称时，异步通知再重新读取标题
   - 更新标题顺序层级时，先更新缓存，再异步保存
+
 ## 0420
 
 - PageTree现有组件的问题
