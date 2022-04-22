@@ -96,7 +96,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - ~~没有dropdown，select默认会遮挡触发元素~~
 # 2022-dev
 - my-next
-  - dev starter
+  - dev-starter
     - react patterns
     - typescript patterns
   - readonly-list-grid
@@ -113,15 +113,12 @@ modified: '2021-10-27T03:20:45.841Z'
     - fields menu - filter/groupable
     - inline editing
     - orm integration
-  - sortable-filterable-groupable table
+  - sortable-filterable-groupable-table
 
 - 产品日历组件
-  - headless date picker
+  - headless-date-picker
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
-
-- dev-to-later
-  - 修改获取初始workspace的流程，优先使用本地找不到，可以不从api获取
 
 ```JS
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
@@ -141,7 +138,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - imported info
     - 笔记
     - 代办
-  - tasks 以多维表格的形式自动生成标签，可切换看板
+  - tasks，以多维表格的形式自动生成标签，可切换看板
     - in-progress
     - overdue
     - completed
@@ -149,7 +146,49 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
+- dev-to-later
+  - 修改默认workspace名称的逻辑，presetWorkspace
+  - 登录时，PageTree显示untitled
+
 ## 0422
+
+- daily-note初步实现
+  - 查询某一天的所有pages，基于search api实现
+  - 搜索基于tag实现
+  - 前端blockdb的搜索实现，直接用sql，还是自定义dsl
+    - 倾向于类似mongodb的查询dsl，完善类型，查询简单
+
+- daily-notes的数据源包括本地数据库和服务端数据2部分
+  - 本地直接读取
+  - 🤔 服务端数据可以直接请求数据、可以先从数据库请求然后前端从本地数据库
+
+- 登录时需要fetch recent workspaces，因为有多设备同步的问题
+  - 若用户先在设备A使用了spaceA，然后在设备B使用了spaceB，当再次登录设备A时应该进入spaceA
+
+- google-docs
+- 2005年收购 wirtely(doc)、xl2web(sheet)、DocVerse(collab)、QuickOffice(mobile)
+- 2015年google工程师回国，本地化、替换docker，发布一起写
+- 2017年快手收购一起写
+- google-docs控制台调试，save?id
+- 快手，?sid=
+- doc核心 
+  - 排版gui
+  - 数据交换协作协议
+- google办公套件
+  - drive
+  - document
+  - sheet
+  - ppt
+  - form
+  - cloud file
+- 产品一体化的研发趋势
+  - 黑盒卡片，集成im、figma
+  - 编辑器能力插件组合，学术版、设计版，类似vscode扩展包、ckeditor打包了四五种
+
+- 壁垒
+  - gui架构
+  - 排版器
+  - sheet比doc更复杂
 
 - PageTree小结
   - 标题支持点击和拖拽事件
@@ -158,6 +197,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dnd-kit-onClick失效的问题
   - https://github.com/clauderic/dnd-kit/issues/296
   - useSensor(PointerSensor, { activationConstraint: { distance: 10, }, }); 
+
+- pm-features
+  - block transform: notion/monday/asana
+  - page transform: miro/mural
+  - version control: almanac
+  - self-host with encryption: anytype/skiff
+  - publish editor: super/simple.ink
+  - automation: uipath/google docs
 
 ## 0421
 
@@ -171,6 +218,9 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 所有内层叶节点默认展开，而不是记住折叠状态
 
 ## 0419
+
+- dev-to
+  - [x] 修改获取初始workspace的流程，优先使用本地找不到，可以不从api获取
 
 - 大日历暂停
 
