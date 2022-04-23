@@ -12,7 +12,27 @@ modified: '2021-08-22T07:29:34.045Z'
 
 - ## 
 
-- ## 
+- ## Heptabase 面向未来的知识操作系统
+- https://sspai.com/post/71842
+- Hepta 的组织架构包括 Timeline、Tags、Map、Card Library。
+  - Hepta 便是由这些 App 构成的 Productivity App Store。
+  - 这四个 App 实质上是为用户提供了一个 收集 → 初步整理 → 深度思考 → 资料库 的完整工作流。
+  - Timeline 模式借鉴了 Roam Research 等产品倡导的 Daily Notes 设计，以及 Twitter 等产品的思绪流理念。每一天，你打开 Timeline，便可以快速收集你的各种灵感和想法。
+  - 当你在 Timeline 模式中进行快速记录时，顺手打上标签，你的卡片便会自动进入 Tags 模式的卡片分类之中
+  - Map 是 Hepta 的核心功能和特色功能。Map = WhiteBoards（相互关联的 Cards）。你可以在 Map 中自由创建白板 WhiteBoard，而在每个白板之中，你又可以自由创建无数相关关联的卡片。深度思考或者创造的核心，在于将抽象的思想具体化，并且使得想法相互碰撞中进行升华。传统的深度思考工具便是写作。然而单纯的文档写作无法以高效地方式呈现思维过程，因此，人们会使用思维导图、概念图、白板等思维工具。
+  - Card Library 负责对于信息和知识的聚合管理，属于你的知识库。在这个知识库中，你将可以使用多种方式对内容进行管理和呈现。
+- Hepta 的 Map 模式，本质上便是由若干个 Card 组成的 Whiteboard，即 Map Mode= Whiteboards (Card & Card)。
+  - 如何理解 Hepta 中的 Whiteboard & Card？目前，存在两种理解方式：
+  - Hepta : Whiteboard & Card = Roam : Page & Block；
+    - 第一种方法，适合进行卡片笔记写作
+  - Hepta : Whiteboard & Card = EverNote : Folders & Page；
+    - 第二种方法，适合进行项目管理
+  - 上面只是两种理想状态，具体取决于不同用户的使用习惯。最好的方法便是基于卡片的自由组合：短的内容视为 Block, 长的内容视为 Page。
+- 目前，Hepta 开发团队只有三人。除了维持几乎一天一版的高开发速度，开发者每天还需要响应处理 20-50 名用户的客户服务需求，以及大量的 1 - 1 视频教学。
+- 
+- 
+- 
+- 
 
 - ## storybook Component Encyclopedia is in beta
 - https://twitter.com/storybookjs/status/1491806826739941377
