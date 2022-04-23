@@ -11,6 +11,16 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Been updating all our AG Grid examples to use arrow functions. 
+- https://twitter.com/SCooperDev/status/1517533660576165888
+  - Why? So that if you want to access properties from `this` within your callback it will be correctly scoped to your current class.
+
 - ## api design crew: in a library, should a top level object expose public methods that belong to sub-modules?
 - https://twitter.com/steveruizok/status/1507682433914834955
   - eg `scene.zoomToFit()` vs `scene.viewport.zoomToFit()` ?

@@ -24,15 +24,32 @@ modified: '2021-08-22T07:29:34.045Z'
 - Hepta 的 Map 模式，本质上便是由若干个 Card 组成的 Whiteboard，即 Map Mode= Whiteboards (Card & Card)。
   - 如何理解 Hepta 中的 Whiteboard & Card？目前，存在两种理解方式：
   - Hepta : Whiteboard & Card = Roam : Page & Block；
-    - 第一种方法，适合进行卡片笔记写作
+  - 第一种方法，适合进行卡片笔记写作
   - Hepta : Whiteboard & Card = EverNote : Folders & Page；
-    - 第二种方法，适合进行项目管理
+  - 第二种方法，适合进行项目管理
   - 上面只是两种理想状态，具体取决于不同用户的使用习惯。最好的方法便是基于卡片的自由组合：短的内容视为 Block, 长的内容视为 Page。
 - 目前，Hepta 开发团队只有三人。除了维持几乎一天一版的高开发速度，开发者每天还需要响应处理 20-50 名用户的客户服务需求，以及大量的 1 - 1 视频教学。
-- 
-- 
-- 
-- 
+
+- 他们后端用的firebase，底层数据结构应该还是基于文档的
+  - 协同应该也是基于firebase的文档同步做的，已经输了
+  - 编辑器本身不够牛逼，我觉得方法论级别的大多数革命性特性都是空中楼阁
+  - 我们要做更好的tag、更好的search、更好的block扩展
+
+- 我们block-editor的数据结构已经有前人实践过了，缺的只是一个更好的展现方式
+  - 这种block式结构，我已知最早的实现是fossil
+  - 由sqlite的作者开发的scm，实际上blockdb的前身文档数据库就参考了部分设计，只是针对当时的整体架构做了调整
+  - 当我们再次将颗粒度细化到block层级后，实际上就变成了一个better fossil了
+  - fossil基于block结构实现了crdt的版本管理工具，我们则实现了crdt的编辑器
+  - fossil同样使用block存issue、pr、wiki等等数据，殊途同归
+  - 以后 blockdb powered by rust 说不定可以联系下作者
+  - yjs目前还没成为瓶颈，等啥时候成了瓶颈，就可以考虑wasm版blockdb了
+- 先盈利比较重要
+  - 也可能转型做技术开源的公司，商业混不下去
+  - 目前我们还在构建服务阶段，大多数时候创业创新产品，速度快比技术快更重要
+  - 大多数项目都没有性能优化的门票
+  - 过早优化适合兴趣项目，没有盈利要求，自己投资自己
+
+- 以后大可以用flomo整理block-editor的card，双向同步
 
 - ## storybook Component Encyclopedia is in beta
 - https://twitter.com/storybookjs/status/1491806826739941377

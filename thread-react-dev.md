@@ -12,7 +12,10 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
-- ## 
+- ## To avoid React 18's mount, unmount, remount in Strict mode, @niallcrosby created a small useEffectOnce hook.
+- https://blog.ag-grid.com/avoiding-react-18-double-mount/
+  - React 18 introduced a huge breaking change, when in Strict Mode, all components mount and unmount, then mount again
+  - this means a useEffect() with zero dependencies will be executed twice.
 
 - ## what are the main advantages of Radix UI compared to Headless UI ?
 - https://twitter.com/danigonlinea/status/1488863027898236943

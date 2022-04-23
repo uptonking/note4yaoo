@@ -13,7 +13,8 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## This is the flowchart of how slack decides to send a notification. 
+- https://twitter.com/alexxubyte/status/1514993500709863425
 
 - ## One of my go-to software development tricks: Have 2 clones of the repo side by side
 - https://twitter.com/andy_kelley/status/1504657645172449284

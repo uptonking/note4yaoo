@@ -9,6 +9,28 @@ modified: '2021-08-25T14:05:18.280Z'
 
 # discuss
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Also SQLite3’s Full Text Search combined with triggers is absolutely mind blowing.
+- https://twitter.com/SebastianSzturo/status/1515297367335247877
+  - Indexed 50GB of data in 10 lines of SQL and it queries under 20ms…
+  - This technology exists literally running on our toasters and we still throw Postgres and Elasticsearch at trivial problems.
+
+- Keeping tabs on some distributed SQLite projects that are up & coming:
+  - @litestreamio 
+  - rqlite & dqlite.io
+
+- The SQLite problem is the concurrent writes, right now you are only able to write one thread at a time, and each write block your whole database, so if you need to write in your database it could be a big problem. If  your use case is mostly about reading data I do agree.
+  - SQLite has WAL mode which allows concurrent writes without blocking.
+  - If I understood WAL mode correctly, it only enable you to write and read at the same time, but it does not help you with several writes at the same time right? So if you need concurrent writes you will have the same bottleneck.
 
 - ## 3 projects pushing the boundaries of SQLite
 - https://twitter.com/simonw/status/1504604448202518529

@@ -29,11 +29,11 @@ modified: '2021-03-10T11:38:16.053Z'
 # pieces
 - ## 
 
-- ## 
+- ## Today's “Garden” render is a nice one after a few not-so-good editions
+- https://twitter.com/georgedoescode/status/1516802985317257220
 
-- ##  I am a freelance illustrator based in the SF Bay Area. I work in editorial, publishing, and motion. 
+- ## I am a freelance illustrator based in the SF Bay Area. I work in editorial, publishing, and motion. 
 - https://twitter.com/mcmintea/status/1513917685972701185
-
 
 - ## Is it just me, or are tabs for open files in code editors completely useless? 
 - https://twitter.com/devongovett/status/1509659544850415626

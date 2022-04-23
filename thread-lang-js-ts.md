@@ -18,9 +18,13 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## 1MillionItems.forEach(() => { … // ☠️ }) This experience sucks.
+- https://twitter.com/tannerlinsley/status/1516185993535111172
+- https://github.com/TomerAberbach/lfi
+  - A lazy functional iteration library supporting sync, async, and concurrent iteration.
 
-- ## 
+- ## TIL that assigning default values in object destructure only protects you from `undefined`, not `null`
+- https://twitter.com/he_zhenghao/status/1516542439334371335
 
 - ## When to use Map vs. Object, a reference guide.
 - https://twitter.com/builderio/status/1513955108614193155

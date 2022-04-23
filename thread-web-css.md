@@ -28,7 +28,8 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## CSS pro tip💡 Check for your fonts locally, only download them as a fallback.
+- https://twitter.com/builderio/status/1516553394231644166
 
 - ## i think i've shared this tip before but if your font supports it, you can use `font-variant-numeric: tabular-nums` in your CSS to keep your numerals the same width and prevent shifting layout.
 - https://twitter.com/xdesro/status/1508172487347036169

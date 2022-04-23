@@ -14,6 +14,16 @@ modified: '2021-05-25T09:14:28.879Z'
   - https://github.com/analyzer2004
   - https://observablehq.com/@analyzer2004
   - https://ericlo.dev/
+
+- We created a collection of curated datasets for our community to get started
+- https://observablehq.com/@observablehq/curated-datasets
+  📊Google Merchandise Sales Data
+  📈Bandcamp Sales Data
+  ⚡️EIA Electricity Data
+  🌤NOAA Hourly Weather Data
+  💹Plot Test Data
+  🌍U. S. Geographic Data
+
 # discuss
 - ## 
 
