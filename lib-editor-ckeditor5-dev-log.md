@@ -147,8 +147,64 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 更新文档
 
 - dev-to-later
+  - calendar-heatmap sync
+  - daily notes pages init
+  - calendar-big 进度沟通
+  - authing-overseas 变更收集
+  - 重构editor
+  - 顶部七天周日，是否始终将当天放在第4个居中的位置
+  - 顶部七天周日，是否要支持键盘横向滚动，前后滚动7天？10天？
   - 修改默认workspace名称的逻辑，presetWorkspace
-  - 登录时，PageTree显示untitled
+
+- dev-to-login-issues
+  - 🤔 workspaceName为用户名带来的问题
+    - 解决命名冲突的问题，用户名+邮箱的方式
+    - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
+  - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
+    - 我认为有必要，在新浏览器登录时，可以恢复上次数据
+    - 若离线，则自动创建新的workspace，id为 用户名_创建日期
+  - 🤔 从用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(其实是先自动登录A然后手动切换到workspaceB)，晚上在设备A打开自动进入哪个workspace？
+    - workspaceId默认先用本地的，然后比较远程同步得到的id和时间
+  - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
+    - 计划存放在localStorage
+    - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
+
+## 0425
+
+- dev-to-calendar-heatmap
+  - 🤔 用户昨天只新建了一篇文章A，日历上显示最浅的颜色，今天把文章A删除了，要不要更新日历颜色
+    - 每次登录系统根据db数据动态计算，所以删除page后，颜色就变浅或消失了
+
+- databse需求及数据结构讨论
+  - notion中2个database跨表格拖动行时，对非文本列，根据列定义名称匹配
+    - 若将tableA的tags列拖到tableB的tags列，若OptionA在tableB中也存在，则显示，若不存在，则OptionA对应的列显示为空
+  - 要考虑支持列名的国际化
+    - 列名不能是字符串，要考虑方便用户添加翻译配置，使用对象
+    - 交互实现可以用2个输入框
+  - 省略的效果就是折叠展开，不支持部分折叠展开
+
+- 🤔 列定义、tags的动态修改放在page级别，还是workspace级别？
+  - 参考现有产品的设计
+  - 一个page的tags/column变动了，其他page也要变？
+  - tags跟随page?
+  - 💡 讨论阶段性结论
+    - 在跨group层级拖动block时，会先合并列字段，始终都是增量合并的方式，若存在同名列，则新建列col(1)
+    - 根据col名称合并
+
+- 目前db搜索所有content
+  - 如果
+
+- 对无序列表，一行是block
+  - 切换成看板视图，子任务显示进度
+  - 切换成列表视图，子任务在单元格？缩进子列表？
+
+- 用户选中任意元素的组成 block-group
+  - 隐式创建group的规则取舍太多
+  - 可以先实现显式手动创建group，在体验中继续优化逻辑
+
+- 默认一个page所有内容都在一个group
+
+- local-first要考虑用户断网的场景
 
 ## 0422
 
@@ -207,6 +263,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - automation: uipath/google docs
 
 ## 0421
+
+- 登录时，PageTree显示untitled
 
 - PageTree 数据结构和更新分析
   - 更新标题名称时，异步通知再重新读取标题
