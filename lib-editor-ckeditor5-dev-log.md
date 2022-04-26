@@ -135,19 +135,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - new-daily-notes-page，四个部分都是普通文档形式
   - pinned desktop icons
     - 可折叠
-  - imported info
-    - 笔记
-    - 代办
-  - tasks，以多维表格的形式自动生成标签，可切换看板
+  - tasks收集，以多维表格的形式自动生成标签，可切换看板
     - in-progress
     - overdue
     - completed
+  - imported info
+    - 笔记
+    - 代办
   - activities
     - 创建文档
     - 更新文档
 
 - dev-to-later
-  - calendar-heatmap sync
+  - [x] calendar-heatmap sync
   - daily notes pages init
   - calendar-big 进度沟通
   - authing-overseas 变更收集
@@ -169,13 +169,31 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 计划存放在localStorage
     - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
 
+## 0426
+
+- dev-to-daily-notes
+  - 点击每个日期时，显示当天的自动生成的统计page。只读？
+  - 显示什么内容？
+    - todo list 列表
+    - 文档创建修改记录
+
+- db层的设计
+  - getContent 用来获取block内容
+  - getChildren 用来构建block间的关系
+
+- 全局共享的editor对象，只在db初始化时创建一次，并未对外暴露修改自身的方法，所以可以直接在editor对象上添加新属性
+
+- debug在特定版本浏览器才会出现的问题
+  - 首先在同一台电脑上多试几个浏览器，如果只在一个浏览器出现问题，在其余浏览器是正常的，则说明是浏览器的问题，而不是代码的问题
+  - 在问题浏览器上debug时，发现问题是y-websocket的监听4个事件只处理了2个漏了2个导致的，但单步debug调试能锁定问题的位置和异常值
+
 ## 0425
 
 - dev-to-calendar-heatmap
   - 🤔 用户昨天只新建了一篇文章A，日历上显示最浅的颜色，今天把文章A删除了，要不要更新日历颜色
     - 每次登录系统根据db数据动态计算，所以删除page后，颜色就变浅或消失了
 
-- databse需求及数据结构讨论
+- databse需求讨论及数据结构
   - notion中2个database跨表格拖动行时，对非文本列，根据列定义名称匹配
     - 若将tableA的tags列拖到tableB的tags列，若OptionA在tableB中也存在，则显示，若不存在，则OptionA对应的列显示为空
   - 要考虑支持列名的国际化
@@ -192,7 +210,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 根据col名称合并
 
 - 目前db搜索所有content
-  - 如果
+  - 要优化对元数据的搜索
 
 - 对无序列表，一行是block
   - 切换成看板视图，子任务显示进度
@@ -205,6 +223,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - 默认一个page所有内容都在一个group
 
 - local-first要考虑用户断网的场景
+
+- 有对手比没有对手好。接下来我们的每一步都有honourable的对手：
+  - block transform ——》干死notion和monday，asana
+  - page transform ——》 干死miro和mural
+  - 版本控制 ——》干死almanac
+  - blockdb加密协作，selfhost ——》干死skiff和anytype
+  - 网页发布时编辑器套壳editor ——》干死super和simple.ink
+  - automation，流程自动化 ——》干死google docs和uipath
 
 ## 0422
 
@@ -250,7 +276,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 标题支持点击和拖拽事件
   - 支持保存和恢复折叠展开状态
 
-- dnd-kit-onClick失效的问题
+- dnd-kit-onClick 失效的问题
   - https://github.com/clauderic/dnd-kit/issues/296
   - useSensor(PointerSensor, { activationConstraint: { distance: 10, }, }); 
 
