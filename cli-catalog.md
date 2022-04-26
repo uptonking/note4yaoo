@@ -60,7 +60,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
       - With the commit hash (or part of it)
     - git checkout -b new_branch HEAD~4
       - go back 4 commits from HEAD
-  - 将某个文件回退到某个commit，常用来处理package.json的依赖冲突
+  - 将某个文件回退到某个commit，常用来处理package.json/lock-file的依赖冲突
     - git checkout c5f567 -- file1/to/restore file2/to/restore
 
 - commit相关
