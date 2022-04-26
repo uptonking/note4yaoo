@@ -177,12 +177,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - todo list 列表
     - 文档创建修改记录
 
-- db层的设计
-  - getContent 用来获取block内容
-  - getChildren 用来构建block间的关系
-
-- 全局共享的editor对象，只在db初始化时创建一次，并未对外暴露修改自身的方法，所以可以直接在editor对象上添加新属性
-
 - debug在特定版本浏览器才会出现的问题
   - 首先在同一台电脑上多试几个浏览器，如果只在一个浏览器出现问题，在其余浏览器是正常的，则说明是浏览器的问题，而不是代码的问题
   - 在问题浏览器上debug时，发现问题是y-websocket的监听4个事件只处理了2个漏了2个导致的，但单步debug调试能锁定问题的位置和异常值
