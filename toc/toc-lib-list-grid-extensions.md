@@ -43,3 +43,18 @@ modified: '2021-05-23T16:31:36.100Z'
   - https://github.com/tarunbatta/excelexportjs
   - Various server-side binaries and support libraries are present to help us export grids/tables data to excel sheets, but the same export handling at client side is a tough nut to crack. 
   - This plugin helps you achieve that, thereby providing advance features as well.
+# react-list-keyboard
+- react-window默认显示滚动条，但可通过css隐藏滚动条同时使内容支持滚动
+  - [Add option to FixedSizeList for hiding scrollbar](https://github.com/bvaughn/react-window/issues/375)
+    - scrollbar-color: transparent transparent;
+- mui默认的list就支持键盘操作
+
+- https://github.com/lukasbach/react-accessible-menu
+  - https://lukasbach.github.io/react-accessible-menu/storybook/
+  - 只依赖uuid
+  - Accessible keyboard-friendly interactive list/menu component
+  - 提供了丰富的示例，包括 vertical、horizontal、grid、imperative、virtualized
+  - virtualized的示例基于 react-virtualized
+
+- https://github.com/dzucconi/use-keyboard-list-navigation
+  - A React hook to navigate through lists with your keyboard.

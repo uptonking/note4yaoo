@@ -51,6 +51,29 @@ modified: '2021-01-17T06:18:28.855Z'
 - https://github.com/pieterv/react-layers
   - inspired by the work done on the react-bootstrap's [Overlay](https://react-bootstrap.github.io/components/overlays/)
   - Overlays rely on the third-party library Popper.js
+# focus-management
+- https://github.com/greena13/react-hotkeys
+  - Declarative hotkey and focus area management for React
+
+- https://github.com/Palmaswell/focus-manager
+  - a Keyboard and Focus manager context provider that allows you to implement keyboard navigation flows in React applications. 
+  - It registers, tracks, and delegate events to DOM elements or React components.
+
+- https://github.com/focus-trap/focus-trap
+  - Trap focus within a DOM node.
+  - to trap focus within a DOM node — so that when a user hits Tab or Shift+Tab or clicks around, she can't escape a certain cycle of focusable elements.
+
+- https://github.com/andreasbm/focus-trap
+  - A lightweight web component that traps focus within a DOM node
+
+- https://github.com/theKashey/react-focus-lock
+  - Modal dialogs. You can not leave it with "Tab", ie do a "tab-out".
+
+- https://github.com/vovacodes/react-sunbeam
+  - Spatial navigation and focus management system for React apps
+
+- https://github.com/evanminto/react-use-focus-management
+  - hook allowing for programmatic control over the currently focused element.
 # repos-layer
 - layerJS /MIT/1.8kStar/202010/js/inactive
   - https://github.com/layerJS/layerJS
