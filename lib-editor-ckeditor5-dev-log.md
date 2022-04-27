@@ -169,6 +169,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 计划存放在localStorage
     - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
 
+## 0427
+
+- block-editor插件重构
+  - 修改 defaultValue
+  - 修改 get properties/fields
+  - 新增 PageModel PluginModel
+  - 💡 将db操作重构为传统CRUD应用的service层
+
 ## 0426
 
 - dev-to-daily-notes

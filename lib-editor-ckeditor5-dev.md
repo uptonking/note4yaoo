@@ -29,10 +29,15 @@ modified: '2021-10-25T09:33:39.528Z'
 - BlockEditorEntry
   - editor.loadBlock(rootId)
   - editor.setRootBlock( editor.getBlockById(rootId) )
+  - 提供editor默认插件和配置
 
 - EditorRoot
   - 将全局共享的editor对象通过 EditorContext. Provider 传递下去
   - 触发编辑器的渲染 editor.pluginManager.runHook('render'); 
 
 - RenderBlock
-  - 
+  - `return <RenderBlockContent {...props} />;` 直接把props传过去渲染Content
+  - 注册 content 和 children 的监听器，触发block的重渲染
+
+- RenderBlockContent
+  - 渲染 `<View {...context}></View>` ，所有View都传入editor和RenderChildren/Map方法
