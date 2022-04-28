@@ -169,6 +169,17 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 计划存放在localStorage
     - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
 
+## 0428
+
+- 在架构上分离 dbBlock、businessBlock、editorBlock
+  - dbBlock是block在存储层的存储结构和实现
+  - businessBlock是block在业务层的较为通用的数据结构，通过dbBlock计算或转换得到
+  - editorBlock是block在具体编辑器业务层的数据结构，是编辑器直接存取的业务数据
+
+- 将数据转换和计算放到组件层，还是放在service层？
+  - 一个判断方法是，其他地方需不需要用原始数据？转换后的数据？
+  - 切换到react-native后，service需不需要改动？改动大不大？
+
 ## 0427
 
 - block-editor插件重构
