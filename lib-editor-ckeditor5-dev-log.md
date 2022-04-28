@@ -59,6 +59,9 @@ modified: '2021-10-27T03:20:45.841Z'
     - input/TextField
     - list
     - dialog/modal/popover
+  - 将组件中操作blockDB的逻辑分离到service层
+    - 降低前端业务开发对后端的依赖
+    - 在service提供observe这类自动更新的方法，不需要websocket
   - 日历热力图 react-activity-calendar
     - 中文本地化
     - 始终显示70+N天
