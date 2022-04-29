@@ -61,7 +61,9 @@ modified: '2021-10-27T03:20:45.841Z'
     - dialog/modal/popover
   - 将组件中操作blockDB的逻辑分离到service层
     - 降低前端业务开发对后端的依赖
-    - 在service提供observe这类自动更新的方法，不需要websocket
+      - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
+    - 在service层提供observe这类自动更新的方法，不需要websocket
+  - 
   - 日历热力图 react-activity-calendar
     - 中文本地化
     - 始终显示70+N天
@@ -160,17 +162,54 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
 
 - dev-to-login-issues
-  - 🤔 workspaceName为用户名带来的问题
-    - 解决命名冲突的问题，用户名+邮箱的方式
+- 🤔 workspaceName为用户名带来的问题
+    - 邮箱名冲突的问题，如a@qq.com/a@163.com
+        - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
     - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
-  - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
-    - 我认为有必要，在新浏览器登录时，可以恢复上次数据
-    - 若离线，则自动创建新的workspace，id为 用户名_创建日期
-  - 🤔 从用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(其实是先自动登录A然后手动切换到workspaceB)，晚上在设备A打开自动进入哪个workspace？
-    - workspaceId默认先用本地的，然后比较远程同步得到的id和时间
-  - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
+- 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
     - 计划存放在localStorage
+    - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
     - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
+- 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
+    - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
+    - 若离线，则自动创建新的workspace，id为 用户名_创建日期
+- 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
+    - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
+
+## 0429
+
+- todo
+  - subPage悬停菜单消失了
+  - 基于slate编辑器实现添加和清除富文本格式
+
+- 废弃 getWorkspaceConfig，自定义数据的读写统一用 get/setDecoration
+
+- 搜索的初步实现
+  - 搜索根据索引实现，而不是直接搜索源数据
+  - 元数据更新时，搜索结果是即时反馈的
+  - page内容更新时，搜索结果要等待一段时间
+
+- 在代码实现时，有疑问的、做决策花了很多时间的，要文档记录、然后讨论
+
+- pageEditorBlock.getChildren 获取所有直接block
+- workspaceDBBlock.getChildren ?
+
+- redo/undo分2类
+  - 文字加减
+  - 异步：上传文件、删除文件
+
+- ctrl+a 全选是否要选上标题
+  - notion选上
+  - 飞书第二次ctrl+a才会选上标题
+
+- 检查所有block的backspace、enter按键后的光标位置
+  - 特别是todo list
+
+- 从block查找其他block都通过搜索来实现
+
+- 富文本相关文字创作完全依赖slate实现
+
+- divider在回删时，保留分割线且删除到上个block，参考notion
 
 ## 0428
 
