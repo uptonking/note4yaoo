@@ -211,3 +211,9 @@ git push
   /usr/lib/jvm/java-8-openjdk-amd64/bin/javac   
   /usr/lib/jvm/java-11-openjdk-amd64/bin/javac   
 ```  
+# 视频格式转换
+
+```shell
+
+ffmpeg -i input.flv -codec copy output.mp4
+```
