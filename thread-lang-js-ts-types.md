@@ -23,7 +23,35 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## ts类型练习
+- https://twitter.com/tannerlinsley/status/1520057027124367360
+
+```typescript
+
+import * as React from 'react'
+
+type Generics = {
+  Render: () => React.ReactNode | JSX.Element
+}
+
+type Renderer<T extends Generics> = () => ReturnType<T['Render']>
+
+const MyComponent = <T extends Generics>() => {
+  // Why does this work?
+  const div1: ReturnType<Generics['Render']> = <div />
+
+  // But these don't?
+  const div2: ReturnType<T["Render"]> = <div />
+  const renderDiv: Renderer<T> = () => <div />
+}
+
+
+// this does not make sense:
+const foo = <T extends number | string>() => {
+const bar: T = 'bar'
+}
+
+```
 
 - ## Scared by TypeScript generics? The best way to get to grips with them is to understand how they're made.
 - https://twitter.com/mpocock1/status/1508757718630342657
