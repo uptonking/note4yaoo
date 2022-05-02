@@ -12,6 +12,23 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## In React's development mode, when a memoized callback is passed via props (e.g. onPointerMove), React will still create a new event listener each time an event fires. Why?
+- https://twitter.com/steveruizok/status/1521123775491756032
+  - All but the most recent of these listeners can be garbage collected, so it's not adding new listeners each time. )(And yeah, I know I shouldn't have the performance tab open while in development mode.)
+- in development mode react uses a technique of raising a fake event (and immediately handling it) to wrap user code (like handlers and renders) so that if it throws, the browser reports it as an uncaught error despite it being technically caught. at least from what i remember
+  - those fake event listeners are immediately removed but will show up in profiling so like you said, profiling in development mode won’t be representative
+  - specifically this preserves the DevTools “pause on uncaught exceptions” feature despite us technically catching the error. 
+
 - ## To avoid React 18's mount, unmount, remount in Strict mode, @niallcrosby created a small useEffectOnce hook.
 - https://blog.ag-grid.com/avoiding-react-18-double-mount/
   - React 18 introduced a huge breaking change, when in Strict Mode, all components mount and unmount, then mount again

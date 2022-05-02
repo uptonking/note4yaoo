@@ -22,6 +22,8 @@ modified: '2021-12-07T05:12:27.586Z'
   - database-first的体验，但体验不到可以的database，如文件夹切换列表、平铺视图
   - 批注视图，方便展示presentation，对标miro
   - 可能的亮点
+    - optional pivot-table from ul/li
+      - 解决需要通过斜杠菜单唤起创建菜单的问题
     - resizable/zoomable
       - 表格可作为整体缩放大小
     - 表格视图分身，可以复制视图和配置

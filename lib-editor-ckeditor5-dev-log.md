@@ -104,6 +104,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - dev-starter
     - react patterns
     - typescript patterns
+    - mvc pattern in data grid
   - readonly-list-grid
     - plain
       - no sort/filter/group
@@ -162,19 +163,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
 
 - dev-to-login-issues
-- 🤔 workspaceName为用户名带来的问题
-    - 邮箱名冲突的问题，如a@qq.com/a@163.com
-        - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
-    - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
-- 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
-    - 计划存放在localStorage
-    - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
-    - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
-- 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
-    - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
-    - 若离线，则自动创建新的workspace，id为 用户名_创建日期
-- 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
-    - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
+  - 🤔 workspaceName为用户名带来的问题
+      - 邮箱名冲突的问题，如a@qq.com/a@163.com
+          - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
+      - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
+  - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
+      - 计划存放在localStorage
+      - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
+      - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
+  - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
+      - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
+      - 若离线，则自动创建新的workspace，id为 用户名_创建日期
+  - 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
+      - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
 
 ## 0429
 
