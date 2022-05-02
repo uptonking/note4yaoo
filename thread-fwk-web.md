@@ -15,7 +15,15 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## there are some cool ideas in the air right now and this conf really brought them out
+- https://twitter.com/geoffreylitt/status/1520163910053023744
+- Few themes that really stuck out:
+  - Discontent at the current full-stack web dev situation, managing the client-server boundary
+  - Databases in the frontend
+  - Datalog datalog datalog
+
+- What are people doing with Datalog?
+  - A couple of interesting talks: Rubbing Datalog on UIs
 
 - ## URLs, a poll: trailing-slash vs no-trailing-slash
 - https://twitter.com/zachleat/status/1485010201937944578
@@ -27,7 +35,7 @@ modified: '2021-01-08T17:13:53.965Z'
   - I think it’s because trailing slash implies a collection of resources (with a corresponding index), and non-trailing implies a specific file. The original web, then REST, were built on those ideas. Conventions today are descendants of that original design.
 - Firefox has given me trouble loading relative assets with an implicit index.html from a no-slash URL, while trailing-slash worked, so based on that single experience, my entire slash philosophy is absolutely yes to trailing slashes.
 - No trailing slash. Aesthetically I think of it as file path in file-explorer
-- I grew up on the Web that one of its beauties is that URLs can be anything.From that angle, trailing slash or not is preference, and there is no right or wrong
+- I grew up on the Web that one of its beauties is that URLs can be anything. From that angle, trailing slash or not is preference, and there is no right or wrong
 
 - ## Introducing Dioxus v0.1
 - https://dioxuslabs.com/blog/introducing-dioxus/

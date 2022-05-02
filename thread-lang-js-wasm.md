@@ -21,7 +21,24 @@ modified: '2021-07-07T06:27:10.266Z'
 
 - ## 
 
-- ## 
+- ## Rust is faster than JS in some cases, but those cases are rarer than we expected, 
+- https://twitter.com/dalmaer/status/1520809822530142208
+  - and the performance gain is on the order of 2x some of the time, not 10x most of the time.” 
+  - WebAssembly is amazing, but it isn’t a silver bullet to make “everything faster”
+  - [Zaplib post-mortem](https://zaplib.com/docs/blog_post_mortem.html)
+- The rust is faster than js part is silly. WASM is faster than JS is the proper phrasing
+- "...but most of Figma’s performance magic is due to their WebGL renderer." Interesting too.
+- A few data-points that illustrate this:
+  1. Moving from asmjs -> wasm was a 3x speedup for many things in Figma
+  2. For the prototype viewer, attempting to switch from Skew (not wasm, but AOT optimization) to TypeScript resulted in a ~10% slowdown
+- The asmjs -> wasm switch of course has confounding factors, making the comparison difficult
+  - The existence of the prototype viewer, written in Skew rather than C++ but against WebGL also demonstrates that it's possible to write high perf w/o wasm. But AOT opt is still helpful
+
+- I agree getting a 10x perf boost moving from perf-tuned JS -> perf-tuned wasm is unlikely.
+  - Getting a 10x boost moving from DOM -> WebGL or Canvas2D -> WebGL is much more plausible because it unlocks totally different execution models.
+
+- You are comparing WASM with JS VM, not Rust vs JS.
+  - WASM is, on average, 10 times slower than native (Rust) code.
 
 - ## I was writing some WebAssembly code in C, and it performed quite well. 
 - https://twitter.com/dogriffiths/status/1412441672768688130

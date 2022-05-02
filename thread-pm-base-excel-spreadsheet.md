@@ -17,7 +17,10 @@ modified: '2022-04-23T18:48:32.550Z'
 
 - ## 
 
-- ## 
+- ## EXCEL 是你最被忽视的设计工具
+- https://twitter.com/nishuang/status/1519558823622680581
+  - 这些美观、易用的数据可视化图表和控制台面板，都是用 EXCEL 设计的
+  - 作者是数据可视化专家，介绍了利用形状、图片、图标、文本和色彩、特殊的图表样式，在 EXCEL 里进行设计。他还顺便卖模板
 
 - ## I feel like so many tools for "building interactive apps in a spreadsheet" end up struggling w/ the same problem: how to fit side effects and async computations into the simple spreadsheet model of reactivity.
 - https://twitter.com/geoffreylitt/status/1516904903184060416

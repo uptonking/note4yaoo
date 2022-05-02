@@ -13,7 +13,11 @@ modified: '2021-10-29T15:05:56.151Z'
 
 - ## 
 
-- ## 
+- ## I'm open-sourcing Actual. I'm sad that I couldn't make it work as a sustainable company
+- https://twitter.com/jlongster/status/1520063046101700610
+  - The code is very, very messy. I'm not proud of it. It's just  too big for me to spend time cleaning it up.
+  - It's a neat artifact though of what it takes to build an ambitious app. You'll see everything in there, raw and unedited.
+- orry it didn't work out as a company. I'm building something very much inspired by the Actual architecture and have learned a lot from your posts and talks. Thank you so much for choosing to open-source this. I think it can really help people trying to make local-first apps.
 
 - ## 想起以前创业的时候，公司规模一大，咱被迫也得学点管理学。
 - https://twitter.com/xiaoyuz/status/1510839847673491461

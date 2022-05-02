@@ -9,9 +9,17 @@ modified: '2020-11-13T07:28:27.824Z'
 
 # framework-agnostic components
 
+- https://github.com/chakra-ui/zag
+  - https://zagjs.com/overview/introduction
+  - UI components powered by State Machines.
+  - Zag is a collection of framework agnostic, accessible widgets (like accordion, menu, dialog, etc.) that can be used in React, Vue, & Solid.js.
+  - This project leans heavily on my recent experiments with XState and finite state machines.
+  - Zag will be used within Chakra UI components. 
+
 - https://github.com/material-components/material-components-web/
   - /14.9kStar/MIT/202009/ts/agnostic/MDC-Web
   - https://material.io/develop/web/components/buttons
+  - 此架构在升级material-ui.v3的过程中被抛弃，v3强推lit组件库
   - Modular and customizable Material Design UI components for the web
   - https://github.com/jamesmfriedman/rmwc
     - /1.4kStar/MIT/202009/ts/hooks
@@ -77,8 +85,6 @@ modified: '2020-11-13T07:28:27.824Z'
   - an agnostic UI component library prioritizing clean HTML and CSS, but built to agnostically work with many popular JavaScript frameworks
   - the philosophy of AgnosticUI is to curate the top-level component.html and component.css, and then to synchronize the css down into the framework-based variants. 
     - This is done via a simple Node script which literally copies the CSS over.
-
-
 # more
 - https://github.com/vicentedealencar/react-agnostic
   - you can write your components without any direct dependencies from platform specific components. 

@@ -15,7 +15,9 @@ modified: '2021-08-09T07:24:45.113Z'
 
 - ## 
 
-- ## 
+- ## I love delta, a CLI tool that makes git diffs pretty and useful.
+- https://twitter.com/cpojer/status/1520538000882487296
+  - https://dandavison.github.io/delta/introduction.html
 
 - ## Had a devious(不直接的，迂回的；欺诈的) thought: that SQLite.js trick where you host the DB file statically on GitHub pages? 
 - https://twitter.com/simonw/status/1428843031134834689
@@ -25,7 +27,7 @@ modified: '2021-08-09T07:24:45.113Z'
   - Or you could use a trick like this one to create encrypted API tokens that only have permission to call very specific API endpoints
 - Played around with that exact idea. Did analytics since I could set up a snowplow collector on another CDN & run a job to process the log files. 
   - https://analytics.serv.rs/
-- You could, the main problem is writes from multiple clients;only one client could ever write to it
+- You could, the main problem is writes from multiple clients; only one client could ever write to it
   - fwiw you’re free to hack on a new backend to absurd-sql. All the machinery is there for any kind of async backend
 - As @AbdulrhmnGhanem mentioned in a comment, I've done a very similar solution using Azure Functions and PyGitHub (which is a wrapper to GitHub REST API).
   - Database migrations are also triggered with a GitHub action, API authentication is handled with Auth0.

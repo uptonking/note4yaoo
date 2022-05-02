@@ -26,7 +26,8 @@ modified: '2021-01-08T17:15:13.906Z'
 
 - ## 
 
-- ## 
+- ## A suddenly-appearing scrollbar can shift a layout… but now you can use `scrollbar-gutter: stable` to mitigate that!
+- https://twitter.com/stackblitz/status/1518924375721873408
 
 - ## CSS pro tip💡 Check for your fonts locally, only download them as a fallback.
 - https://twitter.com/builderio/status/1516553394231644166

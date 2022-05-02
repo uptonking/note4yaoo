@@ -13,7 +13,15 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## what if jupyter notebooks looked like this(natto)? 
+- https://twitter.com/_paulshen/status/1521169957957955585
+  - cells with explicit dependencies
+  - 2D canvas
+  - interactive outputs
+
+- I love the 1D simplicity of Jupyter-like notebooks. 
+  - I think removing one dimension of layout complexity removes so much unnecessary faff and pain, that it's one of the best UI innovations of the last 20 years.
+  - Fewer Windows. Less "layout". More 1D scrolling!!!
 
 - ## @logseq URL Protocol handler will be a game changer
 - https://twitter.com/HDanzu/status/1515515854112362498

@@ -74,6 +74,24 @@ modified: '2021-07-27T11:27:37.050Z'
 - [腾讯文档 模版](https://docs.qq.com/mall/index)
 # products-solutions
 
+## logseq
+
+- [有什么 Roam Research 的替代方案？](https://www.zhihu.com/question/409872334/answer/1372000024)
+- 前端代码已经全部开源
+- Logseq 已经支持编辑和保存本地文件系统, 可以当完全离线文件的桌面端用了。
+- 完全离线，无需登录的桌面端已经发布
+
+- Logseq 和 Roam 或者其他工具的主要区别是:
+- 1. 服务端不存储用户 notes, notes 存在本地浏览器 IndexedDB, 目前可以通过 GitHub 同步。
+- 2. 支持 Markdown 和 Org mode。
+- 3. Logseq 使用了一个内存数据库叫 Datascript, 支持 Datalog 查询，据我们所知目前我们是第一个做到能双向同步 Datascript 数据库和 Markdown 文本内容(或者 Org Mode 或者将来支持的其他格式)，其实最主要是没几个人干这事儿, :) 
+  - 比如用户在 Outliner 模式下编辑，需要同时保存在 Datascript DB 和对应的文件中，同时如果有文件的改动，比如 Git pull，也需要对 Datascript DB 做增量索引。
+  - 这个是为什么 Roam Research 的作者 Conaws 不单在推上说 "Thrilled to check this out."，而且他也在 Logseq 的 discord 群组讨论一些具体技术细节。
+- 4. Markdown 从 Org mode 那边借鉴了很多好东西，比如 Heading properties, priorities, todo keywords 等等。而这些东西都可以自定义查询，并且支持自定义渲染。
+
+- Datalog是Prolog的一种适应于知识库的改进形式语言。
+  - Datalog是一种数据查询语言语法与Prolog相似
+
 ## [飞书](https://www.feishu.cn/hc/zh-CN/articles/134238909902)
 
 - features
@@ -179,13 +197,16 @@ modified: '2021-07-27T11:27:37.050Z'
 - 工作台
   - 工作台是用户登陆以后自己的首页，它可以帮助你快速到达语雀上任何地方，同时在工作台上你也可以找到你最近的参与的内容以及动态。
   - 可直接添加url地址作为快捷入口
+
 ## [gitbook](https://docs.gitbook.com/)
+
 - features
   - spaces
   - organizations
 
 - In GitBook, a space is a project where you can start organizing your ideas. 
   - Imagine it as a virtual book where you can start writing pages simultaneously with other members or individually with rich-content and rich-text.
+
 ## Confluence
 
 - features
@@ -232,7 +253,9 @@ modified: '2021-07-27T11:27:37.050Z'
 - ref
   - [confluence 6中文文档](https://www.cwiki.us/display/CONFLUENCEWIKI/About+Confluence)
   - [Confluence Documentation Directory 7.12__202107](https://confluence.atlassian.com/doc/get-started-777010817.html)
+
 ## [Documize](https://www.documize.com/product/)
+
 - Flexible organization strategies
   - labels, spaces and categories
 - Bring along existing assets
@@ -257,6 +280,7 @@ modified: '2021-07-27T11:27:37.050Z'
   - Invite and collaborate with external users whilst protecting internal documentation.
 - Endgame is your knowledge backbone
   - Provide the means to capture and centralize everything you absolutely need to know.
+
 ## Notion
 
 - features

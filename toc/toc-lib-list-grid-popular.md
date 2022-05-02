@@ -141,7 +141,7 @@ modified: '2020-10-22T06:49:10.760Z'
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
 
-## div-react
+# div-react
 
 - react-data-table-component /1.2kStar/Apache2/202112/ts
   - https://github.com/jbetancur/react-data-table-component
@@ -151,6 +151,10 @@ modified: '2020-10-22T06:49:10.760Z'
   - table library with built in sorting, pagination, selection, expandable rows and customizable styling.
   - If you want to achieve balance with the force and want a simple but flexible table library give React Data Table Component a chance. 
   - If you require an Excel clone or heavy "enterprise" capabilities, then this is not the React table library you are looking for
+- react-advanced-table
+  - https://github.com/ThaddeusJiang/react-advanced-table
+  - http://react-advanced-table.vercel.app/
+  - React Advanced Table
 - reactdatagrid /25Star/MIT/202201/js
   - https://github.com/inovua/reactdatagrid
   - https://reactdatagrid.io/demo

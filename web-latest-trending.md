@@ -8,7 +8,11 @@ modified: '2021-01-01T20:52:42.088Z'
 # web-latest-trending
 
 # guide
-- watching
+
+- 2022
+  - datalog
+
+- 2021
   - ssr
   - cjs to esm
   - ~~renderer using sika like flutter~~

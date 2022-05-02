@@ -13,7 +13,9 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
-- ## 
+- ## Tracking KPI progress with graphs - a first attempt.
+- https://twitter.com/kategchalmers/status/1519451096565043200
+  - 环形图展示各成员进度
 
 - ## American Companies That Failed in China
 - https://www.visualcapitalist.com/american-companies-that-failed-in-china/

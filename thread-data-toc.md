@@ -12,7 +12,13 @@ modified: '2021-01-31T08:40:11.675Z'
 - https://www.data-is-plural.com/
   - a weekly newsletter of useful/curious datasets
 # pieces
-- ## 
+- ## We’re releasing all of our data on all 40, 000+ properties identified using @NCOneMap data, along with our subsidiary lookup.
+- https://twitter.com/mtdukes/status/1520735400897265666
+  - We’re hoping it will help the public, researchers & policymakers understand the scope of corporate homeownership #securityforsale
+
+- https://twitter.com/dylfreed/status/1520947450470670337
+  - thank you for sharing all this data! I put together a quick @observablehq notebook to explore the homes on an interactive map
+  - https://observablehq.com/@freedmand/nc-corporate-landlord-homes
 
 - ## Test of Time Awards
 - http://ieeevis.org/year/2021/info/awards/test-of-time-awards

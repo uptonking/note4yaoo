@@ -16,11 +16,20 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## when you compose into components. Which one looks better now?
+- https://twitter.com/RyanCarniato/status/1519461122390118400
+- React wins all the time, by virtue of not requiring to learn another “language” (yes, there’s JSX, but it’s much thinner than the rest). It’s just too bad that React’s rendering and reactivity models are so bad. It’s one of @solid_js ’ appeal: feels like React, but very different.
 
-- ## 
+- ## in react, i often find myself wanting a non-reactive way to access a value. 
+- https://twitter.com/_paulshen/status/1519711253739933698
+  - what if there was a stable getter for the last committed state?
+- react-usestateref does just that 🙂
 
-- ## 
+- ## useSyncRef: this is a react hook util i use a lot in my code. let me know if there's a better way!
+- https://twitter.com/_paulshen/status/1519911984170381312
+- What's the difference between using `useLayoutEffect` and just using `ref.current = value` here ?
+  - iiuc, `ref.current = value` isn't safe for concurrent features because render != commit
+- Something minor that you or others may encounter with `useLayoutEffect` instead of `useEffect` is that React will warn you during server rendering (because it assumes that the visual result might be broken without invoking layout effects immediately after the markup is painted).
 
 - ## In React's development mode, when a memoized callback is passed via props (e.g. onPointerMove), React will still create a new event listener each time an event fires. Why?
 - https://twitter.com/steveruizok/status/1521123775491756032

@@ -21,9 +21,14 @@ modified: '2021-03-31T06:50:19.936Z'
 
 - ## 
 
-- ## 
+- ## 用微信云托管弄了个 Serverless 处理博客同步到微信公众号的流程，今天发个文章发现接口 400 了，
+- https://twitter.com/_Xheldon/status/1518082813085761536
+  - 问了客服才知道他们的服务器为了节约资源默认是半小时无请求自动关闭，直到下一个请求到来后才自动冷启动…
+- 一个简单的做法就是每 29 分钟给一次心跳……用 uptime 这个服务还免费
+- 我是用每次发两次请求解决的，启动服务只需要两秒，两个请求之间间隔 5 秒
 
-- ## 
+- ## What’s a good database provider to use with Prisma? I just got an email saying I’ve spent $230 with AWS during a month I barely used the db for dev work
+- https://twitter.com/mattgperry/status/1519609372288110593
 
 - ## #infrastructure  #Azure 如何选择 app service 还是 vm？
 - https://twitter.com/ThaddeusJiang/status/1433367427203559426

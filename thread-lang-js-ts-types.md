@@ -8,87 +8,90 @@ modified: '2021-08-05T04:31:02.298Z'
 # thread-lang-js-ts-types
 
 # guide
-
 - ## React TypeScript Cheatsheet
 - https://github.com/typescript-cheatsheets/react
   - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
-
 - ## Here's everything I've learned from leading TS dev teams and working on XState's core team.
 - https://twitter.com/mpocock1/status/1509964736275927042
-
 - more-cheatsheet
   - https://nerdcave.com/tailwind-cheat-sheet
 # discuss
 - ## 
-
-- ## 
+- ## One of my favorite little ts utils `export type Maybe<T> = T | undefined | null;` 可空类型
+- https://twitter.com/alexdotjs/status/1518915886400290818
+- I mean, it's good, but this is my fave
+  - `type ValueOf<T> = T[keyof T]; `
 
 - ## ts类型练习
 - https://twitter.com/tannerlinsley/status/1520057027124367360
 
+```JS
+// 要实现的效果，将创建对象实例的方法提取出去作为普通工具方法
+// 注意，属性和渲染方法都在参数中传进去
+
+function createFoo(options) {
+  return () => options.render(options.foo);
+}
+
+function Foo() {
+  const render = (d) => `${d}`;
+  const getFoo = createFoo({
+    foo: 1234,
+    render,
+  });
+  const foo = getFoo();
+}
+```
+
 ```typescript
 
 import * as React from 'react'
-
 type Generics = {
   Render: () => React.ReactNode | JSX.Element
 }
-
 type Renderer<T extends Generics> = () => ReturnType<T['Render']>
-
 const MyComponent = <T extends Generics>() => {
   // Why does this work?
   const div1: ReturnType<Generics['Render']> = <div />
-
   // But these don't?
   const div2: ReturnType<T["Render"]> = <div />
   const renderDiv: Renderer<T> = () => <div />
 }
-
-
 // this does not make sense:
 const foo = <T extends number | string>() => {
 const bar: T = 'bar'
 }
-
 ```
 
 - ## Scared by TypeScript generics? The best way to get to grips with them is to understand how they're made.
 - https://twitter.com/mpocock1/status/1508757718630342657
   - Here's a guide to EVERY way you can instantiate a generic in TypeScript.
-
 - ## yet another use case for higher order generics
 - https://twitter.com/tannerlinsley/status/1509208626338050055
   - `type Foo<T> = { foo: T }` 普通泛型
   - `type UseFoo<Foo extends any<T>, T> = Foo<T>` 高阶泛型
 - One use case for this in #ReactTable v8 would be the ability for other frameworks to provide their own type for what a "renderable" is (a generic provided to RT), and have React Table internals be able to pipe through other types to that generic (column, row, options, filters...)
-
 - ## Object.entries() and Object.fromEntries() are soo useful but TypeScript’s built-in types for them are soo bad
 - https://twitter.com/buildsghost/status/1498895804798357510
-
 - ## You are probably familiar with index access operations. 
 - https://twitter.com/TitianCernicova/status/1494683318230605827
   - Where you can get the type of a property in another type using the T[K] syntax. 
   - This works well for when K is literal type or a union of literal types
   - It also works if T is a union, but only for common keys. This isn’t necessarily surprising as only common keys are accessible on a union.
-
 - ## Cross-fading any two DOM elements is impossible right now. Here's why
 - https://twitter.com/jaffathecake/status/1462803936679763971
   - [Cross-fading any two DOM elements is currently impossible](https://jakearchibald.com/2021/dom-cross-fade/)
 - The spec change has landed, and there's an implementation behind a flag in Chrome Canary!
 - This is a good explanation of why there can be subtle opacity dips with Framer Motion's shared layout animations. We use opposing easing curves that keep the overall opacity as close to 1 as possible but something like this CSS rule would really help.
-
 - ## Note to future self: this is the tsconfig you want for a library in a monorepo. Don't use `paths` to get types from other packages, use `references` !
 - https://twitter.com/steveruizok/status/1464906551664250884
   - The reason for this is that you'll also want to run some code after build to replace the "~" paths with relative paths, but you don't want to replace imports from other packages in the repo (e.g. @monorepo/vec) with relative paths
 - do you build with tsc or esbuild? I found that references only work with tsc and it's extremely slow
   - I do use esbuild! I only use tsc to generate type declarations.
 - If the dep is meant to be published and depended upon - ye, it should still be defined as a dep in pkg.json
-
 - ## Always publish `src` files, 
 - https://twitter.com/__morse/status/1471169129478508551
   - if you use typescript you can also pass the `declarationMap` option to tsconfig to make cmd+click go to the original src file instead of the `.d.ts` file
-
 - ## Using generics in @TypeScript beyond simple use cases becomes a massive deep dive into the variable/type dependency graph of any system it touches. 
 - https://twitter.com/tannerlinsley/status/1476604095817404452
   - TLDR: If your types have circular dependencies, you will eventually have to short circuit your inference and pick a starting point.
@@ -97,12 +100,10 @@ const bar: T = 'bar'
   - As you consume more generics, complexity grows linearly. If those generics begin to rely on each other or need to come in a specific order, the complexity skyrockets. And this is where the dependency graph of your vars/types comes in.
 - In the case of #ReactTable, we need to know the shape of your row data, filterFns, sorters, aggregators, etc, before we can infer anything in your column definitions, which consume all of those types together. Columns also have value-based inference as well, 
   - So technically we need to know about your column accessor, too, before we let you configure anything else. 
-
 - ## how to extract the generic type determined by a type guard function
 - https://twitter.com/acemarke/status/1435731824303648771
   - type GuardedType<T> = T extends (x: any) => x is (infer T) ? T : never; 
 - [Get the guarded type of a custom type guard](https://github.com/microsoft/TypeScript/issues/30542)
-
 - ## TypeScript—I’ve switched:  From: `string[]` To: `Array<string>`
 
 - https://twitter.com/rauschma/status/1431884615862603781
@@ -118,7 +119,6 @@ const bar: T = 'bar'
   - Unless things really get error prone... like with tuple element type... in which case I will use `Array<..>` for an array.
 - In the same way, prefer `Record<string, T>` over `{ [key: string]: T }` for key value objects with consistent key value types.
 - Linters say to use [] though, so that's what I follow, simply so that the whole team can standardize on one model
-
 - ## Specifying the type of this for functions
 - https://stackoverflow.com/questions/44164032
 - Following up on specifying the type of `this` in a class or an interface, functions and methods can now declare the type of `this` they expect.
@@ -127,13 +127,11 @@ const bar: T = 'bar'
   - `this` parameters are fake parameters that come first in the parameter list of a function
 - Notice that `this` won't get translated into js, so it's not a real argument in the function.
 - function f(this: void)  // make sure `this` is unusable in this standalone function
-
 - ## how do people handle functions that can throw in typescript? 
 - https://twitter.com/tmcw/status/1423404151149580292
   - half-considering starting to use an Either type of returning result | Error, don’t want to rely on just remembering which functions are throwy
 - In majority of the cases it should be fine, but in some weird cases you might encounter some of the system errors `RangeError` or `TypeError` to name a few. Which makes me think exhaustively typing all the possible errors  is impossible.
 - I would even recommend creating a simple `Err` class for the error side of it's a logical error and not an actual unrecoverable error. Switching our parser to our own error type was a massive perf boost (somewhere around 100x for us)
-
 - ## how do you type a memoize function that accepts an arbitrary length of arbitrarily-typed arguments?
 - https://twitter.com/Rich_Harris/status/1423023727680315392
   - we have a winner! guardian alumni network to the rescue 

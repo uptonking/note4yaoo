@@ -17,7 +17,10 @@ modified: '2021-07-29T15:45:36.816Z'
 
 - ## 
 
-- ## 
+- ## Node.js now has a built-in test runner
+- https://twitter.com/rauschma/status/1516456272215826432
+  -  import test from 'node:test';
+  -  import * as assert from 'assert/strict';
 
 - ## Node.js: Best way for an app to run itself from the current(!) source on disk?
 - https://twitter.com/rauschma/status/1420839210387394564

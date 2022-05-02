@@ -37,7 +37,9 @@ modified: '2021-10-29T15:02:28.882Z'
 
 - ## 
 
-- ## 
+- ## Tailscale: Too good to be true? @apenwarr explains how our free plan stays free.
+- https://twitter.com/Tailscale/status/1504139595310460930
+  - [How our free plan stays free](https://tailscale.com/blog/free-plan/)
 
 - ## http://Replay.io is a runtime company. 
 - https://twitter.com/jasonlaster11/status/1494430547153674253
