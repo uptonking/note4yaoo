@@ -18,10 +18,20 @@ modified: '2021-08-16T06:56:53.061Z'
   - cells with explicit dependencies
   - 2D canvas
   - interactive outputs
+- natto has a related (but not exactly the same) interaction! you can select all upstream or downstream panes
 
 - I love the 1D simplicity of Jupyter-like notebooks. 
   - I think removing one dimension of layout complexity removes so much unnecessary faff and pain, that it's one of the best UI innovations of the last 20 years.
   - Fewer Windows. Less "layout". More 1D scrolling!!!
+
+- In addition to StickyLand this was explored in ipyspaghetti
+
+- It’s already challenging to keep track of variables and maintain good notebook hygiene in the current form lol.. spaghetti graphs is another level
+  - possibly! but one difference here is that there are no global variables. dependencies are explicit so you can better see the topology of the notebook.
+- as for large ML models, you're right that execution/state is session-based in the browser. but the execution semantics are similar to functional programming - autorun panes rerun whenever an input changes.
+- Cool, cool. Yeah, I get that computers "see" or "read" it as functional. Idempotent even in this case, no persistence. But having given 1000s of Jupyter Notebook/PPT presentations, I can say humans would struggle with that visual representation.
+  - good to know! my intuition is that 2D space allows more flexible layouts that show relationships between the cells. The trade off is non-linearity, increase in cognitive load.
+- My Jupyter notebooks are a mess in 1D already, but it does give me simulink vibes which is a good thing 👍
 
 - ## @logseq URL Protocol handler will be a game changer
 - https://twitter.com/HDanzu/status/1515515854112362498

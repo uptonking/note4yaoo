@@ -104,7 +104,7 @@ modified: '2021-10-27T03:20:45.841Z'
   - dev-starter
     - react patterns
     - typescript patterns
-    - mvc pattern in data grid
+    - mvc dev pattern(for app)  ~~in data grid~~
   - readonly-list-grid
     - plain
       - no sort/filter/group

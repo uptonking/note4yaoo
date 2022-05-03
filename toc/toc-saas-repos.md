@@ -42,6 +42,11 @@ modified: '2022-02-12T23:36:22.503Z'
 
 - https://github.com/habx/lib-ts-template
   - Template for client library in typescript
+
+- https://github.com/Lucifier129/react-imvc
+  - An Isomorphic MVC Framework supports both SSR and CSR
+  - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
+  - https://github.com/Lucifier129/isomorphic-cnode
 # crud
 - https://github.com/taniarascia/react-hooks
   - https://taniarascia.github.io/react-hooks/

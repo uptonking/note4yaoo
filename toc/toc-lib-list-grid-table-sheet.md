@@ -41,6 +41,11 @@ modified: '2020-10-22T06:49:25.812Z'
     - measures the scalability of spreadsheet systems for a range of canonical spreadsheet operations, and
     - investigates how a spreadsheet system stores data and whether it adopts optimizations to speed up computation.
   - Our benchmark has been implemented for three popular spreadsheet systems, Microsoft Excel, LibreOffice Calc, and Google Sheets.
+
+- https://github.com/programcsharp/griddly
+  - Griddly is an extremely configurable MVC/AJAX grid that separates render and data logic. 
+  - Data is returned from an action method, settings are done in the view.
+  - install NuGet, Install-Package Griddly
 # commercial-list-grid
 - FancyGrid /OneOffLic
   - https://www.fancygrid.com/

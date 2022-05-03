@@ -14,7 +14,11 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Using `useReducer` to manage one-way boolean state has become one of my favourite tricks lately.
+- https://twitter.com/markdalgleish/status/1521304112738217984
+  - const [isEnabled, enable] = useReducer(()=>true, false)
+
+- const [on, toggle] = useReducer(s => !s, false)
 
 - ## when you compose into components. Which one looks better now?
 - https://twitter.com/RyanCarniato/status/1519461122390118400

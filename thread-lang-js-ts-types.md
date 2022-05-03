@@ -17,10 +17,32 @@ modified: '2021-08-05T04:31:02.298Z'
   - https://nerdcave.com/tailwind-cheat-sheet
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## One of my favorite little ts utils `export type Maybe<T> = T | undefined | null;` 可空类型
 - https://twitter.com/alexdotjs/status/1518915886400290818
 - I mean, it's good, but this is my fave
   - `type ValueOf<T> = T[keyof T]; `
+
+- ## Generic maps (and hopefully the future of large-scale generics in TS) change everything. 
+- https://twitter.com/tannerlinsley/status/1521221444084002816
+  - Now, you only need to add a few lines of inference types to your public API call sites and subsequently use your new generic in your types. It's so liberating.
+  - P. S. Generic maps are not a TS "feature". They are a pattern of providing "maps" of key-value style generics as a single generic to a type, instead of passing each of those generics individually.
+  - The next missing piece to this pattern is TypeScript's ability to infer these maps.
+
+- I think it's just re-discovering `fn(one, two three)` vs `fn({ one, two, three })`. But for types instead of runtime. If you expect your parameters to grow, or contain values that should have an explicit label => use a bag (here: type map)
+  - I heard "option bags" before so "type bags" makes sense to me.
+- I wonder if there's a case for all internal types (i.e. those that aren't responsible for actually _inferring_ things from the generic slots) being objects, not separate slots.
+  - `myFunc<T1, T2>(): InternalThing<{ t1: T1; t2: T2 }>`; 
+  - You just described React Table v8
+- Lovely, and it all works as expected? I don't see why it wouldn't
+  - It works great! It's really just the inference sites that get a bit... interesting. You have to use call chaining (type builder pattern) to split up "optional" inference using a little `Overwrite<TGenerics, { ...partialGenerics }>` magic. Then you're home free.
+  - Yep. Once the language actually supports 1st-class inference for generic objects, I could see a lot of libraries moving to this pattern.
 
 - ## ts类型练习
 - https://twitter.com/tannerlinsley/status/1520057027124367360
@@ -112,7 +134,8 @@ const bar: T = 'bar'
   – Look similar to new `Array<string>()` which helps with type inference (default values, class field initializers).
 - Definitely better readability. When you see `Array<number>` you read it from the start as "array of numbers".
 - I used to prefer `Array<string>` for the same reasons but then switched to `string[]` because of readability in nested types. 
-  - `Promise<Array<string>>`  vs `Promise<string[]>`
+  - `Promise<Array<string>>` vs `Promise<string[]>`
+
 - After personally having strong opinions about code style in the past, I've learned that it's better to just align with common practices.
   - By applying common practices you will get a trained eye for it, which helps to read third-party code that most likely uses the same code style
   - Therefor I personally decided to just keep using `[]` for arrays.

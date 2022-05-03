@@ -16,14 +16,34 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## Just added an issue noting that we intend to deprecate the "object" syntax for `createReducer` and `createSlice.extraReducers` , 
+- https://twitter.com/acemarke/status/1521439296972115969
+  - and intend to add a runtime warning in RTK 1.9 saying to migrate to the "builder" syntax instead.
+- In other words, you should change from:
+
+```JS
+extraReducers: {
+  [todoAdded]: (state, action) => {}
+}
+
+// to:
+
+extraReducers: builder => {
+  builder.addCase(todoAdded, (state, action) => {})
+}
+```
+
+- This has better TS inference and circular import handling.
+
+- Any thought of adding builder syntax to the plain “reducer” property of createSlice? Would add consistency and help with file splitting (just pass the builder). 
 
 - ## 1MillionItems.forEach(() => { … // ☠️ }) This experience sucks.
 - https://twitter.com/tannerlinsley/status/1516185993535111172
 - https://github.com/TomerAberbach/lfi
   - A lazy functional iteration library supporting sync, async, and concurrent iteration.
 
-- ## TIL that assigning default values in object destructure only protects you from `undefined`, not `null`
+- ## TIL that assigning default values in object destructure only protects you from `undefined` , not `null`
+
 - https://twitter.com/he_zhenghao/status/1516542439334371335
 
 - ## When to use Map vs. Object, a reference guide.
