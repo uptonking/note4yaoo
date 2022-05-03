@@ -15,4 +15,6 @@ modified: '2021-07-28T20:11:24.350Z'
 # discuss
 - ## 
 
-- ## 
+- ## Using the JavaScript `FormData` Web API, you can progressively enhance a simple, accessible form, into a more dynamic form, without the downsides of heavy JS frameworks that do the same thing.
+- https://twitter.com/SaraSoueidan/status/1521469586691997696
+  - [Progressive Enhancement and HTML Forms: use FormData](https://www.bram.us/2022/04/22/progressive-enhancement-and-html-forms-use-formdata/)

@@ -10,6 +10,12 @@ modified: '2021-12-07T05:12:27.586Z'
 # guide
 
 - features
+  - required-features
+    - modular with rich features
+    - extensible and customizable
+      - headless / inversion of control
+    - typescript by default -> strongly typed
+    - zero dependencies
   - 多种视图切换
     - 可能的亮点：支持在同一文档中显示多次，这多个视图会同时更新
     - 比如先在前面显示高优先级的任务，然后在下面显示所有任务列表

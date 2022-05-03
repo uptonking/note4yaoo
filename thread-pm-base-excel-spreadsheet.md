@@ -15,7 +15,8 @@ modified: '2022-04-23T18:48:32.550Z'
 
 - ## 
 
-- ## 
+- ## The QUERY function: the most powerful and versatile spreadsheet function in existence.
+- https://twitter.com/benlcollins/status/1521528069105893378
 
 - ## EXCEL 是你最被忽视的设计工具
 - https://twitter.com/nishuang/status/1519558823622680581

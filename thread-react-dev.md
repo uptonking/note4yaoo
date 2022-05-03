@@ -12,7 +12,10 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
-- ## 
+- ## I'm thinking about adding State components to Ariakit. This actually makes a lot of sense, given that all modules expose both component and hook APIs. What do you think?
+- https://twitter.com/diegohaz/status/1521387103455744000
+  - Downside: you often need to access properties from the state value (like `combobox.matches` ). 
+  - The state component could support render props (just as other Ariakit components). But that would be a worse DX, I think.
 
 - ## Using `useReducer` to manage one-way boolean state has become one of my favourite tricks lately.
 - https://twitter.com/markdalgleish/status/1521304112738217984
