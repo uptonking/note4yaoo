@@ -16,6 +16,21 @@ modified: '2021-07-29T20:37:05.228Z'
   - 甚至可以用来实现多级评论 comments > tree > accordion
 # html-details-summary
 - accordion vs tab
+# collapse-impl 
+
+> 要参考主流组件库实现
+
+- https://github.com/nkbt/react-collapse /NoDeps
+  - Component-wrapper for collapse animation for elements with variable (and dynamic) height
+  - 支持动态修改内容高度、支持嵌套collapse
+
+- https://github.com/roginfarrer/react-collapsed
+  - https://react-collapsed.netlify.app/
+  - A custom hook for creating accessible expand/collapse components in React
+  - 支持嵌套
+
+- https://github.com/springload/react-accessible-accordion
+  - Accessible Accordion component for React
 # discuss
 - ## How to collapse a div with reactjs?
 - https://stackoverflow.com/questions/40629319/

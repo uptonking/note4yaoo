@@ -613,7 +613,6 @@ modified: '2020-11-13T07:29:55.201Z'
     - Automatic component initialization
       - Set an id attribute named `root` on a global container from where components will be watched for initialization.
     - Initialization for a single component import
-      - `Collapse.init();`
     - How to migrate from v3 to v4
       - there is no need to install dependencies.
         - Import @engie-group/fluid-design-system in your project or via script tag. 

@@ -58,7 +58,9 @@ modified: '2021-10-27T03:20:45.841Z'
     - button
     - input/TextField
     - list
-    - dialog/modal/popover
+    - modal/popover/tooltip/dropdown
+    - dnd-kit
+    - collapse
   - 将组件中操作blockDB的逻辑分离到service层
     - 降低前端业务开发对后端的依赖
       - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
@@ -1940,7 +1942,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
     - Most probably, the file-loader handles CKEditor 5 icons. You need to exclude CKEditor 5 assets from this loader. But it's hard to say more as we don't see the full webpack config.
   - Cannot read property 'getAttribute' of null in react
     - it seems there's something wrong with your webpack configuration
-# 2021
+# 2021-dev
 
 ## 1231
 
