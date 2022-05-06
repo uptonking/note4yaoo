@@ -200,6 +200,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 顶部七天周日，是否要支持键盘横向滚动，前后滚动7天？10天？
   - 修改默认workspace名称的逻辑，presetWorkspace
 
+## 0506
+
+- 为方便调试编辑器开发，应该提供一个单独的编辑器页面，不包含获取用户数据等逻辑
+
 ## 0505
 
 - 登录流程设计
