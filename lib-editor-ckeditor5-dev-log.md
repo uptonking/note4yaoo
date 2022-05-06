@@ -65,7 +65,6 @@ modified: '2021-10-27T03:20:45.841Z'
     - 降低前端业务开发对后端的依赖
       - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
     - 在service层提供observe这类自动更新的方法，不需要websocket
-  - 
   - 日历热力图 react-activity-calendar
     - 中文本地化
     - 始终显示70+N天
@@ -100,7 +99,7 @@ modified: '2021-10-27T03:20:45.841Z'
     - 没有显示分支的时间先后关系，只显示了已合并未合并
       - 类似github insights里面不同fork的顺序
 - material-ui缺点
-  - ~~没有dropdown，select默认会遮挡触发元素~~
+  - ~~没有dropdown，select组件默认会遮挡触发元素~~
 # 2022-dev
 - my-next
   - dev-starter
@@ -154,21 +153,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 创建文档
     - 更新文档
 
-- dev-to-login-issues
-  - 🤔 workspaceName为用户名带来的问题
-      - 邮箱名冲突的问题，如a@qq.com/a@163.com
-          - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
-      - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
-  - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
-      - 计划存放在localStorage
-      - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
-      - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
-  - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
-      - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
-      - 若离线，则自动创建新的workspace，id为 用户名_创建日期
-  - 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
-      - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
-
 - block-editor产品需求讨论
 - ✨️ subpage相关
   - 创建subpage
@@ -217,6 +201,39 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
 
 ## 0505
+
+- 登录流程设计
+  - 登录路由守备要支持offline
+
+- page-tree的状态同步
+  - 未调完的分支不要commit到主分支，会导致协作者debug很混乱
+
+- google closure 运行时
+  - 扩展了js、dom
+  - ui库
+
+- google closure compiler 编译器
+  - 提高js压缩率
+  - 编辑css为atomic css
+  - 从compiler迁移到webpack，体积增大了，但便于协作开发
+  - closure-templates 支持模板，类似handlebar/pug
+
+- goog.disposable.prototype.disposeInternal 在基类实现dispose方法
+
+- dev-to-login-issues
+  - 🤔 workspaceName为用户名带来的问题
+      - 邮箱名冲突的问题，如a@qq.com/a@163.com
+          - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
+      - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
+  - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
+      - 计划存放在localStorage
+      - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
+      - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
+  - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
+      - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
+      - 若离线，则自动创建新的workspace，id为 用户名_创建日期
+  - 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
+      - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
 
 ## 0429
 

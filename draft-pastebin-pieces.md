@@ -10,7 +10,19 @@ modified: '2021-03-22T18:24:50.639Z'
 
  
 
-------  
+--------------------------
+
+Yao King 邀请您参加预先安排的 Zoom 会议。
+
+主题：Yao King's Personal Meeting Room
+
+加入 Zoom 会议
+https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
+
+会议号：775 441 6829
+密码：uZKAn9
+
+----------------------------
 
 - debt
   - 金敏小姐(2017) - 30000
