@@ -11,6 +11,18 @@ modified: '2021-10-29T15:05:07.897Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 为了让我的个人网站 100 年后依然可用
+- https://twitter.com/ThaddeusJiang/status/1522476166703362048
+1. 使用 @TiddlyWiki 构建，真正零依赖，只有一个 HTML。
+2. #OSS in GitHub，同时部署在 GitHub Pages 和 @Netlify 。
+3. 使用 #互联网档案馆 备份，并且为其捐款。
+
 - ## 推荐一个可以一键生成随机用户头像和名称的工具Random Users，
 - http://xsgames.co/randomusers/
   - 网站上提供了一些参数可以选择，比如性别（男性或女性），头像风格可以是彩色、黑白或像素类型，头像形状支持圆形和方形，网站底部给出了对应的API可以直接使用。

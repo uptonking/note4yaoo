@@ -12,7 +12,8 @@ modified: '2021-04-19T14:52:58.244Z'
 # discuss
 - ## 
 
-- ## 
+- ## 飞书的小细节做的真不错！ 生僻字悬浮显示拼音
+- https://twitter.com/_hisriver/status/1522941200395038720?s=20&t=_G0N6GUdYn0pSUYBppxoFQ
 
 - ## The billion dollar Google Chrome extension club: Loom , Honey, Grammarly 
 - https://twitter.com/gregisenberg/status/1428796608561483785

@@ -11,7 +11,10 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
-- ## 
+- ## I am looking at my @logseq graph, and I see ... nothing.
+- https://twitter.com/preslavrachev/status/1522203242989502465
+- Are those block-based? I think this is only how the page connects to other pages. What I really need is having the separate blocks in a given page to form multiple graph clusters.
+  - I think that only @rem_note supports something like this yet. @obsdmd has powerful filters and graph options, but they also just include links to other pages (as far as I know).
 
 - ## what if jupyter notebooks looked like this(natto)? 
 - https://twitter.com/_paulshen/status/1521169957957955585

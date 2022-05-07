@@ -27,6 +27,29 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I want to copy an image programmatically to the clipboard. Is there a way to do this in JavaScript?
+- https://twitter.com/steveruizok/status/1522610641927823362
+  - So I should clarify, I was looking to copy an image file to the clipboard (as a File) rather than adding the image as a png. It doesn’t look like that’s possible (an event’s file list is read only)
+- https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/ClipboardItem
+
+- ## copy to PNG / export to PNG working on the client
+- https://twitter.com/steveruizok/status/1522624691806027777
+  - I'll describe it in better detail once I've worked out the kinks, but generally its:
+
+    - get the application JSON for the selection and add to clipboard as 'text/html'
+    - get the SVG for the selection, convert to base64 image, then to canvas, and save to the clipboard as 'image/png'
+
+  - Big tip here: since the clipboard API cannot take type "application/json", **store the application JSON under text/html instead, then slice off the meta tag when you retrieve it**. This prevents overwriting the user's "real" clipboard with a bunch of JSON
+  - Note that this will only work if you can create an SVG that represents a shape. For shapes that use web content (like a Mapbox map, YouTube video, or CodeSandbox), you'd still need to use something like Puppeteer on the server to take a screenshot.
+
+- begging for that element.getTexture({ type: "png" })  API
+
 - ## tldraw v2 is "headless" meaning that it can be used together with any rendering technology. 
 - https://twitter.com/steveruizok/status/1491529764120764416
   - I've mostly been building out the React renderer, but here's a ~1hr spike on an HTMLCanvas renderer

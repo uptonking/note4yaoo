@@ -13,6 +13,19 @@ modified: '2021-08-16T06:46:26.175Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Build delightful charts with React Native Skia
+- https://twitter.com/wcandillon/status/1521470237597749253
+
+- ## stats ad banner screen
+- https://twitter.com/CTO_ai/status/1521536776493445123?s=20&t=_G0N6GUdYn0pSUYBppxoFQ
+
+- ## Learn how to use Split Packed Bubble to display categorical data comparison.
+- https://www.highcharts.com/blog/chartchooser/split-packed-bubble-categorical-comparison/
+
 - ## Tracking KPI progress with graphs - a first attempt.
 - https://twitter.com/kategchalmers/status/1519451096565043200
   - 环形图展示各成员进度

@@ -15,7 +15,9 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## Suppose you wanted to create a REST API with Node.js that had OAuth/OpenID authentication. What would you use to build it?
+- https://twitter.com/slicknet/status/1521287278420643840
+- Seems like @auth0 is the consensus for identity management. Thanks everyone. 👍
 
 - ## 提高编程水平的一个高效的方式: 
 - https://twitter.com/ivyliner/status/1519472859239923712

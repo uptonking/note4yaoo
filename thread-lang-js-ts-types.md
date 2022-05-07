@@ -22,7 +22,12 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## which is the best approach to have type safety in the object values, while getting the literal types on the `keyof` expression?
+- https://twitter.com/P_FFigueiredo/status/1521417203064651776
+  1- Adding a type assertion to each value; 
+  2- Adding each property to the Object's key; 
+
+- What about "as const" assertions? It can be used for type safety for keys and for values
 
 - ## One of my favorite little ts utils `export type Maybe<T> = T | undefined | null;` 可空类型
 - https://twitter.com/alexdotjs/status/1518915886400290818

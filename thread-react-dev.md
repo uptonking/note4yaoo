@@ -12,6 +12,22 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React hooks tip: Prefer primitives in dependency arrays. Doing so helps avoid needless re-runs.
+- https://twitter.com/housecor/status/1522914348695445505
+  - The dependency array declares when a useEffect should re-run. So if I pass an entire object into the array, the useEffect will re-run anytime that object's identity changes.
+  - To fix, I pass only the string I need as a dependency to useEffect.
+- Is it recommended to use optional chaining in the dependency array? Like [user?.name]
+  - No since it only depends on name in this case
+- Good tip ! we can also directly use the destructed `name`
+
 - ## I'm thinking about adding State components to Ariakit. This actually makes a lot of sense, given that all modules expose both component and hook APIs. What do you think?
 - https://twitter.com/diegohaz/status/1521387103455744000
   - Downside: you often need to access properties from the state value (like `combobox.matches` ). 

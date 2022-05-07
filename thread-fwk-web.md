@@ -13,7 +13,8 @@ modified: '2021-01-08T17:13:53.965Z'
 
 - ## 
 
-- ## 
+- ## vice Worker Side Rendering (SWSR)
+- https://dev.to/thepassle/service-worker-side-rendering-swsr-cb1
 
 - ## there are some cool ideas in the air right now and this conf really brought them out
 - https://twitter.com/geoffreylitt/status/1520163910053023744

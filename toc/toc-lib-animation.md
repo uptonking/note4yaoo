@@ -256,3 +256,7 @@ modified: '2020-10-05T06:22:02.107Z'
   - Some best-guess methods for smoothly interpolating between 2-D shapes.
   - animating morphing SVG paths with Framer Motion. 
     - We make a custom useFlubber hook to repackage @veltman 's amazing Flubber library into a MotionValue.
+
+- https://github.com/Cuberto/mouse-follower
+  - A powerful javascript library to create amazing and smooth effects for the mouse cursor 
+  - 依赖 gsap

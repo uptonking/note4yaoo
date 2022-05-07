@@ -15,7 +15,17 @@ modified: '2021-02-19T12:23:12.286Z'
 
 - ## 
 
-- ## 
+- ## Dependency Injection frameworks are built by very clever groups of very clever engineers in very clever ways to very cleverly avoid simply passing parameters to functions"
+- https://twitter.com/omervk/status/1521554504952463361
+- I have a love-hate relationship with DI frameworks. On my team we have DI on the server, but not on the client.
+  - The server ended up complex, but at least it's easy to access stuff. 
+  - The client ended up simpler, but accessing stuff requires passing through TONS of fns and classes
+  - Depending on the day I'll find myself wanting us not to have DI on the server or wanting DI on the client. Basically, I'll never be satisfied 
+
+- Actually the problem is overuse of DI based on huge overestimation of the value of isolating unit tests. DI frameworks introduce magic and reduce flexibility. You would indeed be better doing DI manually, and being forced to avoid overuse because otherwise things get insane.
+  - In many cases manually DI ends in self-developed DI Framework.
+
+- I really think DI needs to be restricted to singletons keyed by datatype. 90% of the problems with DI arise from trying to cover use cases outside this core competency.
 
 - ## Been updating all our AG Grid examples to use arrow functions. 
 - https://twitter.com/SCooperDev/status/1517533660576165888
