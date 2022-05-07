@@ -12,6 +12,7 @@ modified: '2021-05-23T16:31:36.100Z'
   - [Add option to FixedSizeList for hiding scrollbar](https://github.com/bvaughn/react-window/issues/375)
     - scrollbar-color: transparent transparent;
 - mui默认的list就支持键盘操作
+- [Hide scroll bar, but while still being able to scroll](https://stackoverflow.com/questions/16670931)
 
 - https://github.com/lukasbach/react-accessible-menu
   - https://lukasbach.github.io/react-accessible-menu/storybook/
