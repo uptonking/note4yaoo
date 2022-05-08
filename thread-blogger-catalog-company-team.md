@@ -11,7 +11,13 @@ modified: '2020-10-22T13:06:52.353Z'
 - 看再多技术文章和资讯，不如动手写一写
 - 确定某一个技术方向后，应该集中精力到某一方面的技术和深入
 # 团队专栏
+- [360 奇舞周刊](https://weekly.75.team/)
+  - [奇舞周刊 知乎专栏 半停更](https://www.zhihu.com/column/75weekly)
+
 - [阿里 前端新能源](https://www.zhihu.com/column/ne-fe)
+  - [图表库源码剖析 - Chart.js 最流行的 Canvas 图表库](https://zhuanlan.zhihu.com/p/32740553)
+  - [图表库源码剖析 - 你不知道的 Frappé Charts](https://zhuanlan.zhihu.com/p/31902446)
+  - [图表库源码剖析 - 轻巧的 SVG.js](https://zhuanlan.zhihu.com/p/31225775)
 # 技术周刊
 - 科技爱好者周刊 by 阮一峰
   - https://github.com/ruanyf/weekly

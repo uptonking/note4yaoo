@@ -11,9 +11,11 @@ modified: '2022-02-06T13:41:39.750Z'
 
 - not-yet
   - resize
-  - tree
 
 - features
+  - good docs and examples
+    - tree
+    - kanban
   - Built for React
     - exposes hooks such as useDraggable and useDroppable, 
     - and  won't require you to re-architect your app or create additional wrapper DOM nodes.
@@ -188,7 +190,7 @@ const Item = forwardRef(({ children, ...props }, ref) => {
   - If you move all sortable items from one column into the other, you will need a droppable zone for the empty column so that you may drag sortable items back into that empty column
 # examples
 
-## popular
+## repos-dnd-kit
 
 - https://github.com/shaddix/dnd-kit-sortable-tree
   - https://shaddix.github.io/dnd-kit-sortable-tree/
@@ -199,13 +201,13 @@ const Item = forwardRef(({ children, ...props }, ref) => {
 
 - https://github.com/wuifdesign/antd-react-extensions
   - https://wuifdesign.github.io/antd-react-extensions/
-  - Extentions for Ant Design Reactd
+  - Extentions for Ant Design React
 
 - https://github.com/jado66/reactive-site-creator
   - A website creator for React.
   - 依赖react-quill、react-reveal、bootstrap5
 
-## repos-dnd-kit
+## repos-more
 
 - https://github.com/wyhinton/react_konva-dnd_kit
   - https://codesandbox.io/s/react-konva-dnd-kit-e6rck
