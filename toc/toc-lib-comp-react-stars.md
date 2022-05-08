@@ -30,6 +30,11 @@ modified: '2021-01-12T18:49:02.623Z'
   - Based on the WAI ARIA Authoring Practices Guide.
   - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
 # starred
+- https://github.com/algolia/autocomplete
+  - Fast and full-featured autocomplete library
+  - core无依赖，不依赖react
+  - Any Virtual DOM solution (JavaScript, Preact, React, Vue, etc.)
+
 - https://github.com/tanvesh01/notion-components
   - A React Component Library for the minimalists. 
   - Highly inspired by Notion - The all-in-one workplace.

@@ -34,6 +34,14 @@ modified: '2022-02-06T13:41:39.750Z'
   - Presets
     - Check out @dnd-kit/sortable, which is a thin layer built on top of @dnd-kit/core. 
     - More presets coming in the future.
+# not-yet-dnd-kit
+- [ ] onDragEnd delta.y property inaccurate when inside position fixed container
+  - https://github.com/clauderic/dnd-kit/issues/298
+
+- [x] perf regression: all Sortables in 5.0 rerender constantly on even smallest mouse movement
+  - https://github.com/clauderic/dnd-kit/issues/623
+  - The same problem is happening to me, 'useSortable' is causing retenders due to 'useContext'. 
+  - The easiest way to fix this is to use `useContextSelector` .
 # docs
 
 ## overview
