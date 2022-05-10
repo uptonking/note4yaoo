@@ -30,6 +30,7 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 # git相关
+- To get your commit through without running that pre-commit hook, use the `--no-verify` option.
 - git配置
   - cat .git/config
     - 查看本仓库git的配置文件，注意本地和全局配置可能不同；

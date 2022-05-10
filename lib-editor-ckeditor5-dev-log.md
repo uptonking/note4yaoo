@@ -202,6 +202,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0510
 
+- dev-log
+  - 清理了service层的逻辑，page和page-tree同步正常，page和navbar同步不正常
+  - 测试接入authing海外版，需要等authing的人对接修改配置
+
+- services之间的相互调用，考虑用依赖注入实现
+
+- `/usr/bin/env: ‘sh\r’`: No such file or directory
+
 ## 0509
 
 - 迁移到包含service层的架构后，顶部导航条获取page标题的时机难以确定
