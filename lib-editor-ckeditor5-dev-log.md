@@ -200,8 +200,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 顶部七天周日，是否要支持键盘横向滚动，前后滚动7天？10天？
   - 修改默认workspace名称的逻辑，presetWorkspace
 
+## 0510
+
 ## 0509
 
+- 迁移到包含service层的架构后，顶部导航条获取page标题的时机难以确定
+  - 原因1: 导航条NavigationBar是未被route_private包裹的，渲染时机非常早
+  - 原因2: 顶导航条通过router的useParams只能获取到workspace_id，不能获取到page_id
+  - 就算用魔法强制在page初始化后注册title更新的事件监听器，navbar更新title还是失败
 
 ## 0506
 

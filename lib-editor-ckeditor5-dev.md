@@ -9,11 +9,6 @@ modified: '2021-10-25T09:33:39.528Z'
 
 # 2022
 
-# 0510
-- 迁移到包含service层的架构后，顶部导航条获取page标题的时机难以确定
-  - 原因1: 导航条NavigationBar是未被route_private包裹的，渲染时机非常早
-  - 原因2: 顶导航条通过router的useParams只能获取到workspace_id，不能获取到page_id
-  - 就算用魔法强制在page初始化后注册title更新的事件监听器，navbar更新title还是失败
 # guide
 - features
 
