@@ -31,7 +31,12 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## Working on a local export as/copy to PNG for tldraw.
+- https://twitter.com/steveruizok/status/1523989134938882048
+  - The approach here is to get an SVG for the selected shapes (each shape implements its own toSvg method), then load that as an image, then copy the image's data to a canvas, turn that canvas into a blob, and put the blob on the clipboard (or download it as a file)
+  - The only downside with this approach is that webfonts don't work. That means I have to serialize those fonts, which are big, so that also means I need to create some external assets.json.
+
+- I’m not sure how Figma does their export, though I imagine they’re rendering directly to an html canvas, since they already render their app’s canvas to html canvas.
 
 - ## I want to copy an image programmatically to the clipboard. Is there a way to do this in JavaScript?
 - https://twitter.com/steveruizok/status/1522610641927823362

@@ -12,9 +12,17 @@ modified: '2021-05-13T02:54:14.171Z'
     - https://github.com/XiaoyueCai/react-table/tree/beta
   - https://github.com/schuchertmanagementberatung/react-table/tree/next
     - next-20200525
+# discuss-stars
+- ## Finally got #ReactTable working well with React's strict effects.
+- https://twitter.com/tannerlinsley/status/1523719550381944832
+  - Turns out having your own scheduler can make that pretty easy... did I mention that the core has its own scheduler?
+  - TLDR: I have built my own scheduling and memoization system into the ReactTable core
+- Then you are using refs and controlled rerenders, I know, well, I guess
+  - Indeed
+- I wouldn't say "easy", but the strict effect have a purpose: idempotency. Strict effects act on effects by running them multiple times, the design of the library should follow then (just execute the cleanup, and next time rexecute).
+  - Yep
+- Niiice, @ScriptedAlchemy and I have been writing some of our own as well. Using the event loop to schedule main thread work is awesome. Assuming you are using the event loop, ha!
 # discuss
-
-
 - ## Hopefully in the future, I can make #ReactTableUI a reality. 
 - https://twitter.com/tannerlinsley/status/1507082151967150084
   - This project would essentially be a "batteries included" approach to React Table with highly performant opinions around all of the hard parts of table UI like:
