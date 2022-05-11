@@ -13,7 +13,11 @@ modified: '2022-03-18T20:56:35.254Z'
 
 - ## 
 
-- ## 
+- ## If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>`, or extracts them into `<defs>` for use with `<use href="#">`.  
+- https://twitter.com/_developit/status/1382838803866521601
+  - Unlike JS, SVGs inlined into HTML are pretty cheap.
+  - SVG in HTML is fine - it gets parsed and rendered once by the browser. 
+  - SVG in JSX requires the JS to download & execute first, generate VDOM for the SVG, render that to DOM
 
 - ## #最最简单的性能改善方法
 - https://twitter.com/ThaddeusJiang/status/1511151150095298560

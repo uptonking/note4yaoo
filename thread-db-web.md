@@ -15,7 +15,9 @@ modified: '2022-02-19T10:25:22.934Z'
 
 - ## 
 
-- ## 
+- ## #idea: Compile #SQLite to #WASI to work in a #WebWorker with automatic (!) synchronisation with #IndexedDB. Or wait for #WebSQL to become a standard. Or wait for IndexedDB to become usable. 
+- https://twitter.com/vladfaust/status/1523653689050734592
+
 
 - ## Here's an interesting browser state solution: A database, written in JS, called TinyBase.
 - https://twitter.com/housecor/status/1492859757941637126
