@@ -18,7 +18,12 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## where can you cause side effects
+- https://twitter.com/DavidKPiano/status/1523396827529490432
+  - The best "solution" to all of this is to follow the React doc's advice:
+  - Put effects in event handlers
+  - Render-as-you-fetch using Suspense
+  - Only use the useEffect() hook as a *last resort*, or for synchronization
 
 - ## React hooks tip: Prefer primitives in dependency arrays. Doing so helps avoid needless re-runs.
 - https://twitter.com/housecor/status/1522914348695445505

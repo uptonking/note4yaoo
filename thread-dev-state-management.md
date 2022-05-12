@@ -77,7 +77,9 @@ modified: '2021-02-28T07:29:07.622Z'
 
 - ## 
 
-- ## 
+- ## Writing a comparison article - Redux vs XState.
+- https://twitter.com/mpocock1/status/1523967853430509572
+
 
 - ## i made it(zustand) initially bc of problems that redux couldn't solve, after using redux for multiple years i started to dislike the opinionated nature. it's still flux which scales well.
 - https://twitter.com/0xca0a/status/1495360284139139074

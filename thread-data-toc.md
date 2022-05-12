@@ -12,6 +12,17 @@ modified: '2021-01-31T08:40:11.675Z'
 - https://www.data-is-plural.com/
   - a weekly newsletter of useful/curious datasets
 # pieces
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## arXiv dataset and metadata of 1.7M+ scholarly papers across STEM
+- https://www.kaggle.com/datasets/Cornell-University/arxiv
+
 - ## We’re releasing all of our data on all 40, 000+ properties identified using @NCOneMap data, along with our subsidiary lookup.
 - https://twitter.com/mtdukes/status/1520735400897265666
   - We’re hoping it will help the public, researchers & policymakers understand the scope of corporate homeownership #securityforsale

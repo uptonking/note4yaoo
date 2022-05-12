@@ -13,7 +13,8 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## 80% of software is a reinvented spreadsheet or state machine (or both!) and you can’t convince me otherwise
+- https://twitter.com/worldwise001/status/1523150897169432576
 
 - ## Suppose you wanted to create a REST API with Node.js that had OAuth/OpenID authentication. What would you use to build it?
 - https://twitter.com/slicknet/status/1521287278420643840

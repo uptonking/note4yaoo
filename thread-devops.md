@@ -19,7 +19,8 @@ modified: '2021-03-31T06:50:19.936Z'
 
 - ## 
 
-- ## 
+- ## edge functions are cool but your database is probably in us-east-1 or us-west-2
+- https://twitter.com/sambreed/status/1523317291764514816
 
 - ## 用微信云托管弄了个 Serverless 处理博客同步到微信公众号的流程，今天发个文章发现接口 400 了，
 - https://twitter.com/_Xheldon/status/1518082813085761536

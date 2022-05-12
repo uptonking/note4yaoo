@@ -15,9 +15,14 @@ modified: '2021-08-25T14:05:18.280Z'
 
 - ## 
 
-- ## 
+- ## the idea of having SQLite as the DB has been in my mind for way too long 
+- https://twitter.com/WebReflection/status/1524394134429179904
+  - and I have also created a prototype that "just works" and it offers amazing DX ... 
+  - I was hoping to release it as SaaS (SQLite as a Service), but I guess I can't really compete here 
+  - [Cloudflare: Announcing D1: our first SQL database](https://blog.cloudflare.com/introducing-d1/)
 
-- ## 
+- ## What have you used IndexDB for? Would love to hear some stories / use cases, especially for media
+- 
 
 - ## Also SQLite3’s Full Text Search combined with triggers is absolutely mind blowing.
 - https://twitter.com/SebastianSzturo/status/1515297367335247877

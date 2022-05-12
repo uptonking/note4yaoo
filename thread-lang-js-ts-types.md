@@ -20,7 +20,10 @@ modified: '2021-08-05T04:31:02.298Z'
 
 - ## 
 
-- ## 
+- ## TypeScript protip: accept any string, but suggest some specific values on autocomplete.
+- https://twitter.com/diegohaz/status/1524257274012876801
+  - `type StringWithAutocomplete<T> = T | (string & Record<never, never>)` ; 
+  - `type Fruit = StringWithAutocomplete<"apple" | "banana" | "grape">` ; 
 
 - ## which is the best approach to have type safety in the object values, while getting the literal types on the `keyof` expression?
 - https://twitter.com/P_FFigueiredo/status/1521417203064651776
