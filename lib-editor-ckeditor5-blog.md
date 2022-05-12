@@ -9,9 +9,6 @@ modified: '2021-10-31T15:56:24.071Z'
 
 # 2022
 
-- authing海外版的2个问题
-  - google登录暂时未生效，authing控制后配置后需要等待一段时间，生效前需要每个人重新注册一个帐号
-  - 切换到海外版后，后端的/user和/spaces接口请求出现异常，需要后端修改一下请求authing用户的url
 # guide
 
 # ckeditor-faq-repeat
