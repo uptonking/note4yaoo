@@ -202,10 +202,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - 旧编辑器commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
 
-## 0511
+## 0512
 
 - dev-to
   - [ ] 清理了service层的逻辑，page和page-tree同步正常，page和navbar同步不正常
+  - [x] authing登录已经接入海外版，目前支持google登录和用户自己注册邮箱登录，不支持注册手机号登录
+
+- 编辑器的几种menu
+  - add
+  - slash command
+
+- 左侧菜单的触发条件 onMouseMove
+  - 斜杠菜单的触发条件 用户手动刚刚手动输入/
+
+## 0511
 
 - 创建subpage的两种方式
   - 斜杠菜单 /
