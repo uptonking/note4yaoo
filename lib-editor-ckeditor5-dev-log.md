@@ -200,11 +200,29 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 顶部七天周日，是否要支持键盘横向滚动，前后滚动7天？10天？
   - 修改默认workspace名称的逻辑，presetWorkspace
 
+- 旧编辑器commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
+
+## 0511
+
+- dev-to
+  - [ ] 清理了service层的逻辑，page和page-tree同步正常，page和navbar同步不正常
+
+- 创建subpage的两种方式
+  - 斜杠菜单 /
+  - 双链热键 [[
+  - 实现可以参考 menu/hover-toolbar
+
+- [python 字符串转列表出现\ufeff的解决方法](https://www.cnblogs.com/mjiang2017/p/8431977.html)
+  - 在Windows下用文本编辑器创建的文本文件，如果选择以UTF-8等Unicode格式保存，会在文件头（第一个字符）加入一个BOM标识。
+  - BOM = Byte Order Mark
+  - BOM是Unicode规范中推荐的标记字节顺序的方法。比如说对于UTF-16，如果接收者收到的BOM是FEFF，表明这个字节流是Big-Endian的；如果收到FFFE，就表明这个字节流是Little-Endian的。
+  - UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明“我是UTF-8编码”。BOM的UTF-8编码是EF BB BF（用UltraEdit打开文本、切换到16进制可以看到）。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
+- [Python 读取文件首行多了"\ufeff"字符串](https://blog.csdn.net/chenmozhe22/article/details/89472790)
+
 ## 0510
 
 - dev-log
-  - 清理了service层的逻辑，page和page-tree同步正常，page和navbar同步不正常
-  - 测试接入authing海外版，需要等authing的人对接修改配置
+  - [x] 测试接入authing海外版，需要等authing的人对接修改配置
 
 - services之间的相互调用，考虑用依赖注入实现
 

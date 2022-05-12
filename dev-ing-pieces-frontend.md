@@ -282,7 +282,6 @@ var t2 = new Date().getTime();
   - react 更新任务 didTimeout 过期时执行 renderRoot ，这个渲染阶段哪怕时间很长也最大限度的保证了浏览器高优先级别的动画和用户输入的流畅运行
 - 总结
   - 调度时通过 requestAnimationFrame api 在浏览器每次重绘前做想做的事
-  - 
 
 ## [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
 
