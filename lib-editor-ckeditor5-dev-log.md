@@ -177,18 +177,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 交互细节
     - 双[[默认唤起双链搜索的交互，但按退格键后可以默认展示双[[文本
     - 在当前文档中可以链接当前文档自身
-- 👉🏻️ authing海外迁移
-  - 我对接authing的技术支持
-  - https://core.authing.cn/api/v2/applications/61961a7b8b90af37e7c422e0/public-config
-- 👉🏻️ workspace初始化过程讨论
-  - 离线功能支持的程度
-    - 是否要离线可登录
-    - 是否支持离线切换page、跳转page
-  - 初始化workspace实现的细节
-  - 创建workspace的ui和交互
-  - 删除workspace的ui和交互
-- 👉🏻️ 其他task
-  - page-tree创建page后ui和state要视觉上立即更新
 
 - dev-to-later
   - [x] calendar-heatmap sync
@@ -229,6 +217,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明“我是UTF-8编码”。BOM的UTF-8编码是EF BB BF（用UltraEdit打开文本、切换到16进制可以看到）。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
 - [Python 读取文件首行多了"\ufeff"字符串](https://blog.csdn.net/chenmozhe22/article/details/89472790)
 
+- 👉🏻️ authing海外迁移
+  - 我对接authing的技术支持
+  - https://core.authing.cn/api/v2/applications/61961a7b8b90af37e7c422e0/public-config
+
 ## 0510
 
 - dev-log
@@ -256,6 +248,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - page-tree的状态同步
   - 未调完的分支不要commit到主分支，会导致协作者debug很混乱
+
+- 👉🏻️ workspace初始化过程讨论
+  - 离线功能支持的程度
+    - 是否要离线可登录
+    - 是否支持离线切换page、跳转page
+  - 初始化workspace实现的细节
+  - 创建workspace的ui和交互
+  - 删除workspace的ui和交互
+- 👉🏻️ 其他task
+  - page-tree创建page后ui和state要视觉上立即更新
 
 - google closure 运行时
   - 扩展了js、dom
