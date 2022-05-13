@@ -30,14 +30,16 @@ modified: '2021-10-25T09:33:39.528Z'
   - 获取editor最外层的div元素ref，挂到editor.container属性下
     - editor的内容blocks会作为children渲染
   - editor.getHooks().render(); 
-    - 执行所有render类型的hooks，此时plugin中的document.createElement已经创建了且内容可能未渲染
+    - 执行所有render类型的hooks，此时plugins中的document.createElement已经创建了且内容可能未渲染
   - 注册全局鼠标事件到editor最外层div
     - onMouseUp/Down/Move/Out，注册的事件是所有hooks回调函数集合
+  - 创建 SelectionRect 元素
 
 - RenderBlock
-  - 异步获取block对象
+  - 异步获取业务block对象
   - 每个block最外层都是div，div ref会挂到block.dom属性下
   - 通过 block_util?.createView({ block, editor }) 渲染block视图
+    - 会执行业务block如 Heading1/DividerBlock 的createView方法
   - 注册当前block的 onMouseMove 事件到editor全局
   - 提供了block层级的选区事件 useOnSelect/useOnSelectionChange
 

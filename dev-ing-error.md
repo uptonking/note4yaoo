@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- /usr/bin/env: ‘sh\r’: No such file or directory
+  - [docker env: bash\r: No such file or directory](https://stackoverflow.com/questions/70380310)
+  - 解决方案是，直接在vscode中，将 /.husky/pre-commit 文件的编码从CRLF改为LF
+
 - useNavigate() may be used only in the context of a `<Router>` component
   - https://github.com/remix-run/react-router/issues/8701
   - 🤔️ 是统一项目使用了多个react-router导致的问题，可在package-lock.json文件中搜索确认；统一版本即可修复

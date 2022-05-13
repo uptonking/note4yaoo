@@ -189,7 +189,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
   - [] page和page-tree同步正常，page和navbar同步不正常
 
-- 旧编辑器commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
+- 备份带斜杠菜单的编辑器-bak20220506
+  - commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
 
 ## 0513
 
@@ -197,6 +198,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 确定斜杠命令菜单的实现思路
   - 确定获取斜杠锚点dom元素位置的思路
   - 初步实现在焦点行的下一行唤起斜杠命令菜单
+
+- 编辑器基础
+  - 光标显示、是否可focus
+  - 选区拖拽：当block高度大于屏幕高度时，选区的实现
+  - 快捷键
+  - 滚动条
+
+- forEach 循环里面不能await，改普通for循环
 
 ## 0512
 
