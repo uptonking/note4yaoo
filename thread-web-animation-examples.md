@@ -39,7 +39,8 @@ modified: '2021-04-21T15:01:12.882Z'
 # pieces
 - ## 
 
-- ## 
+- ## What are the best examples of web apps you've used that have great, thoughtful animations/motion design?
+- https://twitter.com/DavidKPiano/status/1524477381288812544
 
 - ## Animated effect, but a square mask! 
 - https://twitter.com/argyleink/status/1437769098742538242

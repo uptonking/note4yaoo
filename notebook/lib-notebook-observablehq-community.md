@@ -9,6 +9,10 @@ modified: '2021-05-14T14:55:00.191Z'
 
 # discuss
 
+- ## One great thing about using @observablehq is that I am not "locked in". 
+- https://twitter.com/steren/status/1525226330039521280
+  - notebooks can be exported in idiomatic JavaScript, and later loaded on my own website:
+
 - ## To help investigate userspace bugs in long running @observablehq notebooks, I used @mootari 's access-runtime notebook to create a notebook state snapshot function. 
 - https://twitter.com/tomlarkworthy/status/1508384106937303043
   - Now you get a readout of all the cells and their current state, and value is availible.

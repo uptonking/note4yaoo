@@ -185,7 +185,9 @@ modified: '2021-01-01T20:06:19.327Z'
 
 - ## 
 
-- ## 
+- ## 2022 check-up: how do you bundle CSS alongside JavaScript in an NPM library?
+- https://twitter.com/steveruizok/status/1525106339692822529
+- No styles by default, but include an optional CSS file people can import if they want.
 
 - ## Working with vanilla-extract and treat for the last few years has me thinking compile time execution of code is a pretty unexplored space
 - https://twitter.com/mattcompiles/status/1422535524535869442

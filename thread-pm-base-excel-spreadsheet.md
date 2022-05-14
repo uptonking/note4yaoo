@@ -13,7 +13,8 @@ modified: '2022-04-23T18:48:32.550Z'
 
 - ## 
 
-- ## 
+- ## Need a versatile function that can make static spreadsheets fun & interactive? It’s gotta be the 🔥 IF function 🔥
+- https://twitter.com/GRID_hq/status/1524796293004107776
 
 - ## The QUERY function: the most powerful and versatile spreadsheet function in existence.
 - https://twitter.com/benlcollins/status/1521528069105893378

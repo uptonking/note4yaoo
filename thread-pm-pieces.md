@@ -12,6 +12,18 @@ modified: '2021-04-19T14:52:58.244Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Framer: It is now effortless to let others fork, tweak and publish your site. We call it “Remixing,”
+- https://twitter.com/framer/status/1524751380061122561
+  - 动画做得很好
+
+- ## html is the web publishing platform of the future
+- https://twitter.com/zachleat/status/1525158571465375744
+- Why can’t I import html then.
+
 - ## 飞书的小细节做的真不错！ 生僻字悬浮显示拼音
 - https://twitter.com/_hisriver/status/1522941200395038720?s=20&t=_G0N6GUdYn0pSUYBppxoFQ
 

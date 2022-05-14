@@ -16,6 +16,18 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Some people still think that JavaScript classes are just sugar for prototypes, even though that was never actually true and is most definitely not true now.
+- https://twitter.com/justinfagnani/status/1524481337855410176
+- Class fields for instance
+
 - ## Just added an issue noting that we intend to deprecate the "object" syntax for `createReducer` and `createSlice.extraReducers` , 
 - https://twitter.com/acemarke/status/1521439296972115969
   - and intend to add a runtime warning in RTK 1.9 saying to migrate to the "builder" syntax instead.

@@ -14,6 +14,19 @@ modified: '2021-05-14T10:08:51.423Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Biggest @figma change that no one’s talking about:
+- https://twitter.com/kirillz/status/1524835280565456907
+  - #c4c4c4  ->  #d9d9d9
+- Yes, their default grey #C4C4C4 was changed truly. They didn't mention it probably due to negligence or they didn't deem it fit. I like the #D9D9D9 shade better tho. It's lighter.
+- I often do #808080, the most neutral of the neutral
+
+
 - ## When I started building the Headless #DesignSystem I decided to move to a single @figma file per component.
 - https://twitter.com/EstherCheran/status/1497669972826681344
   - I'm really happy I made this decision, but I'm curious what your experience/opinion is on this topic! How do you organise your library?

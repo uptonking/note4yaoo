@@ -16,7 +16,9 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## It's been *very* annoying to debug certain things with React. StrictMode on. 
+- https://twitter.com/tannerlinsley/status/1525120888777060352
+  - It's wonderful for catching concurrency weirdness, but the fact that it suppresses console logs (yes, you read that right) is next-level gaslighting.
 
 - ## where can you cause side effects
 - https://twitter.com/DavidKPiano/status/1523396827529490432

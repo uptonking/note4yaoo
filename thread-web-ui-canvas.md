@@ -29,7 +29,13 @@ modified: '2021-08-06T07:36:05.864Z'
 
 - ## 
 
-- ## 
+- ## text editor in tldraw: I'm using the @tiptap_editor here, which has an amazing API. 
+- https://twitter.com/steveruizok/status/1524670756117958656
+  - I've had to tweak their React implementation in order to use a persistent editor—one that exists as a member of the shape, rather than only in the shape's React component.
+- For auto size, you can do text measuring offscreen in a worker. I’ve been meaning to wrap this up in a React lib. It should be a nice API with Suspense.
+  - That's similar to what I was doing, however it doesn't work well with mixed block or inline styles, or styles that are set via CSS.
+  - The current measurement approach is to manually set properties on the element, then measure the element, and then update the size in the data model if needed.
+  - Ah yeah, it does get tricky here since you need to know all of the box styles to determine things without querying. And I assume it’s not intense in your case to do these small measurements.
 
 - ## Working on a local export as/copy to PNG for tldraw.
 - https://twitter.com/steveruizok/status/1523989134938882048

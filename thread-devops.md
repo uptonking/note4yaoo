@@ -17,7 +17,20 @@ modified: '2021-03-31T06:50:19.936Z'
 # pieces
 - ## 
 
-- ## 
+- ## I’m a @Cypress_io fan. But, it’s not perfect.
+- https://twitter.com/housecor/status/1525087602545762305
+  1. Can’t trigger keyboard tab key
+  2. Can’t switch in/out of iframes
+  3. Can’t hover
+  4. Can't test content-security-policy headers
+  5. Can't change domains in a test
+  - There are workarounds for some of these, but they’re not perfect.
+- Wow, what timing: Cypress launched multi-domain support today - so number 5 is solved
+- I can relate to this a lot. After creating several hacks and workaround, I ended up switching to Playwright.
+  - Playwright is a lot faster, provides most of the items in this list (not sure about 5), and a VSCode extension to run tests without opening the browser
+- It's slow when things get bigger, is there any solution not to store fixtures as json locally? Any clue?
+  - I prefer to run my Cypress tests against mocked API calls via mock service worker
+- These are actually great reasons to consider @Storybookjs Interaction Testing.
 
 - ## edge functions are cool but your database is probably in us-east-1 or us-west-2
 - https://twitter.com/sambreed/status/1523317291764514816

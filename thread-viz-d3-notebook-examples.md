@@ -31,7 +31,8 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
-- ## 
+- ## Let's try MapLibre GL within @observablehq
+- https://observablehq.com/@neocartocnrs/hello-maplibre
 
 - ## Let's make "points Bertin" with #bertinjs. @observablehq
 - https://twitter.com/neocartocnrs/status/1518888355634757633
