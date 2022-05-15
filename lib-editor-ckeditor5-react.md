@@ -11,7 +11,7 @@ modified: '2021-11-07T11:02:15.399Z'
 
 # faq-repeat
 
-## 如何在ckeditor插件中更新react组件/的状态
+## 如何在ckeditor插件中更新react组件的状态
 
 - model变化后，会自动触发downcast，rerender整个react组件
 

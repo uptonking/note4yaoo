@@ -114,6 +114,10 @@ modified: '2021-07-20T02:15:25.917Z'
   - GFM Standard + Chart & UML Extensible.
   - 编辑器支持：chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
 
+- react-tinacms-editor
+  - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
+  - 基于ts
+
 - taleweaver(织书) /71Star/MIT/202007/ts
   - https://github.com/yuzhenmi/taleweaver
   - https://yuzhenmi.github.io/taleweaver/

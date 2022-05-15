@@ -1,11 +1,11 @@
 ---
-title: lib-editor-outline-community
-tags: [community, outline-editor]
+title: lib-editor-lexical-community
+tags: [community, lexical-editor]
 created: '2021-12-21T03:12:44.032Z'
-modified: '2021-12-21T03:14:26.843Z'
+modified: '2022-05-15T18:35:39.272Z'
 ---
 
-# lib-editor-outline-community
+# lib-editor-lexical-community
 
 # discuss
 
