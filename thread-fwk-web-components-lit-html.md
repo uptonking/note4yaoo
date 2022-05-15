@@ -11,7 +11,10 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
-- ## 
+- ## Photoshop runs on the web as a PWA https://web.dev/ps-on-the-web/  and uses web components for their UI.
+- https://twitter.com/Justinwillis96/status/1525514490829103104
+- [Photoshop's journey to the web](https://web.dev/ps-on-the-web/)
+
 
 - ## 简单总结 Web Component 样式问题
 - https://twitter.com/zQwQs/status/1493902262779138048

@@ -14,7 +14,9 @@ modified: '2021-04-19T14:52:58.244Z'
 
 - ## 
 
-- ## 
+- ## 国外越来越多产品用 discord 作为用户社区，但我觉得即时聊天作为社区真的很难用，没有话题归纳，一段时间没看就不知道在讨论什么了。微信群也一样。
+- https://twitter.com/chloerei/status/1525376736757571587
+- 我也感觉就信息处理上，传统的论坛和博客要比SNS更加好用
 
 - ## Framer: It is now effortless to let others fork, tweak and publish your site. We call it “Remixing,”
 - https://twitter.com/framer/status/1524751380061122561

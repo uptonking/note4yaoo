@@ -12,8 +12,11 @@ modified: '2021-08-30T19:30:56.453Z'
 - https://github.com/apache-superset/examples-data
   - This repo holds/serves the small data files that `superset load_examples` uses to load the example data into user databases.
 
+- https://github.com/jpwhite3/northwind-SQLite3
+  - This is a version of the Microsoft Access 2000 Northwind sample database, re-engineered for SQLite3.
+  - The Northwind sample database was provided with Microsoft Access as a tutorial schema for managing small business customers, orders, inventory, purchasing, suppliers, shipping, and employees.
+  - All the TABLES and VIEWS from the MSSQL-2000 version have been converted to Sqlite3 and included here.
 # data application
-
 - Very excited to publish our new project, http://realtimeinequality.org 
   - https://twitter.com/gabriel_zucman/status/1488151132161523714
   - Fulfilling an old dream: being able to know in real time who benefits from economic growth

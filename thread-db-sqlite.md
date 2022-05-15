@@ -13,7 +13,23 @@ modified: '2021-08-25T14:05:18.280Z'
 
 - ## 
 
-- ## 
+- ## Bun.js v0.0.83 gets a fast builtin SQLite client
+- https://twitter.com/jarredsumner/status/1525105862997442560
+- https://github.com/jpwhite3/northwind-SQLite3
+  - This is a version of the Microsoft Access 2000 Northwind sample database, re-engineered for SQLite3.
+  - The Northwind sample database was provided with Microsoft Access as a tutorial schema for managing small business customers, orders, inventory, purchasing, suppliers, shipping, and employees.
+  - All the TABLES and VIEWS from the MSSQL-2000 version have been converted to Sqlite3 and included here.
+
+- This is awesome, I was just looking at using SQLite in an Electron app the other day, there's just no great way to do that. You need either a native module, read/write the whole thing to disk or hacky stuff like this (https://github.com/jlongster/absurd-sql). This would be perfect for Electron.
+  - you could also include 3 sqlite3 binaries (win, mac, linux) and call it a day via https://github.com/WebReflection/sqlite-tag-spawned
+  - Potentially that's an easier option but I'd rather not have native binaries (other than node/electron) at all. If you look here  https://github.com/JoshuaWise/better-sqlite3/releases/tag/v7.5.1 there are like 6 binaries for linux, different binaries for node/electron (why?), no binaries for arm win/mac 
+  - lol I didn’t realize they have to compile separate binaries for every version, arch & platform of electron. Bun wouldn’t really have this problem to begin with because with FFI, you can dynamically link any version of any lib so long as the API hasn’t changed
+  - Yeah that's why I don't want to touch this stuff 😂 Bun looks great and it's getting better every day, but I just can't switch to it until it allows opening a webview window or something.
+  - I didn't suggest better-sqlite and it's slower than my spawned module for what I could test + it boots slow ...  I was suggesting the pre-compiled shell from the original repo. both node-sqlite and better-sqlite modules have never been a solution to me 
+- built-in? Like it'll ship as part of the runtime?
+  - Yeah, a “bun:sqlite” builtin module. On macOS it will technically be dynamically linked to system-provided macOS because that’s faster. But on linux it will have a statically linked copy
+- What if I wanna link with my custom SQLite on macOS?
+  - Fwiw, you probably don’t. It’s a 40%-ish perf loss to not use Apple’s version of SQLite. That being said, would actually be straightforward to make this work - just missing a way to specify a filepath to load sqlite from. It wouldn’t be possible on linux though
 
 - ## the idea of having SQLite as the DB has been in my mind for way too long 
 - https://twitter.com/WebReflection/status/1524394134429179904

@@ -27,7 +27,11 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
-- ## 
+- ## we're using the ClipboardAPI for copying images and pasting images, event.clipboardData for pasting files (but not copying files), HTML for copying application data, with IndexedDb as a backup for Safari.
+- https://twitter.com/steveruizok/status/1525474891671142400
+  - Certain things work fine on Safari but not on mobile Safari. 
+  - Firefox only implements Clipboard / ClipboardItem behind a flag. When copying html to the clipboard, every browser appends different metadata.
+  - Told you so. 😂 https://github.com/tomayac/SVGcode/blob/e84fc285e8f0469fc7340460853aa7a2698d939c/src/js/clipboard.js#L65-L137 is nothing I’m proud of.
 
 - ## text editor in tldraw: I'm using the @tiptap_editor here, which has an amazing API. 
 - https://twitter.com/steveruizok/status/1524670756117958656

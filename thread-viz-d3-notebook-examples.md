@@ -29,15 +29,6 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
-- ## 
-
-- ## Let's try MapLibre GL within @observablehq
-- https://observablehq.com/@neocartocnrs/hello-maplibre
-
-- ## Let's make "points Bertin" with #bertinjs. @observablehq
-- https://twitter.com/neocartocnrs/status/1518888355634757633
-  - https://observablehq.com/@neocartocnrs/bertin-js-regular-bubbles?collection=@neocartocnrs/bertin
-
 - ## We are using @observablehq notebooks and @vega_vis in our non-majors Intro to Data Vis course this quarter. 
 - https://twitter.com/jonfroehlich/status/1520149034421219328
   - I've enjoyed learning both platforms and creating some educational materials

@@ -20,9 +20,29 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Do you still use the Array method .forEach()? Poll:
+- https://twitter.com/rauschma/status/1525822812853870592
+- I prefer for-of:
+  - It works with any synchronous iterable [1].
+  - for-await-of [2] is similar and works with async iterables.
+  - You can `yield` and `await` inside for-of loops.
+- If you need access to Array indices
+  - for (const [index, elem] of arr.entries()) {  }
+- .forEach() can’t be terminated early, but .some() can be used as a workaround (return `true` to break).
+- for…of for minimizing the stack trace, and automatic infer types in TS
+- I avoid foreach and favor filter, map and reduce. Unless you specifically need a custom iterator it's better form.
 
-- ## 
+- ## JavaScript debugging tip—detecting invisible characters in strings:
+- https://twitter.com/rauschma/status/1525840065330659334
+  - console.log(JSON.stringify(Array.from('a​b')))
+  - // ["a", "​", "b"]
+- Why do you need JSON.stringify? u may console.log([...'a​b'])
+  - I like to see \n, \t, etc.
+  - JSON.stringify(Array.from(`a
+b​`))
+
+- Nice touch: When you enter text in Chrome’s console each zero-width space is displayed as “•”.
+  - https://twitter.com/rauschma/status/1525841738140684289
 
 - ## Some people still think that JavaScript classes are just sugar for prototypes, even though that was never actually true and is most definitely not true now.
 - https://twitter.com/justinfagnani/status/1524481337855410176

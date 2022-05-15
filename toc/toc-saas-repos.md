@@ -85,6 +85,13 @@ modified: '2022-02-12T23:36:22.503Z'
   - Commerce Cloud Reference Storefront Progressive Web Application in React
 - https://github.com/mobiosolutions/ms-bootstrap-admin
   - A sass base bootstrap admin panel.
+
+# db
+- https://github.com/ashleydavis/insta-mongo
+  - Instantly start a MongoDB dev server and load database fixtures.
+  - https://github.com/ashleydavis/insta-mongo-example
+
+
 # python
 - https://github.com/CaravelKit/saas-base
   - SaaS base application (Flask, Vue, Bootstrap, Webpack)

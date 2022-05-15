@@ -14,7 +14,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## React tip: if you need to access an element ref during render, use useState instead of useRef.
+- https://twitter.com/diegohaz/status/1525478538580676608
+  - 用state中保存ref要深入分析利弊
+  - This is a valid approach for those who are asking. It's especially helpful when you need to fire effects for conditionally rendered elements. This wouldn't work properly if we were using useRef.
 
 - ## It's been *very* annoying to debug certain things with React. StrictMode on. 
 - https://twitter.com/tannerlinsley/status/1525120888777060352

@@ -15,7 +15,11 @@ modified: '2021-08-16T06:45:51.370Z'
 
 - ## 
 
-- ## 
+- ## 谷歌地图宣布，将要推出“沉浸模式”，将 2D 地图转为 3D 模式，甚至还有室内建模，简直就是现实版的“模拟城市”
+- https://twitter.com/ruanyf/status/1525364031267422208
+- 谷歌做元宇宙就好了
+- 这是建模的还是实地采的数据，百度地图现在有低配全景模式，都是实地采的数据很花钱
+  - 谷歌的中国外的地区全景地图很丰富，百度主要是国内全景
 
 - ## Comparing the timing of spring leaf out in 2022 (so far) to the 30-year average (1991-2020) with @USANPN data
 - https://twitter.com/USGS_DataSci/status/1511088915297484801
