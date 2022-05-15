@@ -12,7 +12,9 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
-- ## 
+- ## I really like React. I think it's a perfectly capable UI rendering library that can interact with my app logic (data, states, transitions, effects, etc.) that I keep *outside* of React as much as I can.
+- https://twitter.com/DavidKPiano/status/1525880368221589509
+  - Yeah, I feel that too. React is more like a UI programming language, it's too low-level to do everything in it. We need proper design patterns that work on top of it for easy app development.
 
 - ## React tip: if you need to access an element ref during render, use useState instead of useRef.
 - https://twitter.com/diegohaz/status/1525478538580676608
