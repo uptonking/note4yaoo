@@ -16,6 +16,20 @@ modified: '2021-05-06T09:39:53.522Z'
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
   - 编辑器的多个插件存在依赖关系时如何处理
 
+- features
+  - Unopinionated
+    - core is small and generic, allowing different types of editors
+  - Customizable schemas
+    - Document schemas allow editing documents with a custom structure
+  - Modular
+    - only load the code you need
+  - Pluggable/Extensible
+    - easily enable additional functionality
+  - Collaborative editing
+    - multiple people can work on the same document in real time
+  - Functional
+    - largely functional and immutable architecture to implement complex behavior
+
 - who is using
   - atlassian, nytimes, guardian...
 

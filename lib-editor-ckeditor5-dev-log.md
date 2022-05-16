@@ -191,6 +191,78 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - 备份带斜杠菜单的编辑器-bak20220506
   - commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
+  - [旧架构的使用示例](https://github.com/toeverything/Ligo-Virgo/blob/b9d74bacb33198d073afb2b2331d1210ce476dc7/libs/components/heading/src/block.tsx)
+
+- 本周3个菜单
+  - command menu
+  - inline format menu: bold/italic
+  - block menu
+
+## 0516
+
+- dev-to
+  - command-menu
+  - inline-menu
+  - sub-page实现设计方案文档
+
+- 紧密联系功能
+  - backlinks
+  - slash command menu
+  - link page
+
+- 公司集体断网的原因
+  - maximum number of concurrent DNS queries reached.(max: 150)
+
+### oneOnOne-terry-表格研发体验
+
+- google docs dom转canvas的原因
+  - 最开始是基于dom实现滚动
+  - 每次滚动一行高度，不够平滑
+  - 虚拟滚动append缓冲行执行会卡顿
+  - 合并单元格基于colspan
+
+- 友商都在用spreadjs
+  - 石墨文档 handsontable -> spreadjs
+  - 腾讯文档 spreadjs
+
+- spreadjs基于canvas实现，且逻辑分层非常好
+  - spreadjs的模型是比较通用的，**数据模型层特别重要**
+  - spreadjs下性能并不是很优秀
+  - spreadjs不支持协同
+- 只保留spreadjs的渲染视图层，模型换成google-docs的数据层
+  - 行数量、每行的列、单元格输入内容、单元格文本格式/条件格式、单元格样式、单元格评论
+  - row[], cell[]
+  - 合并单元格保存在全局
+- 全局属性
+  - 行冻结、列冻结
+  - 全局边框色
+
+- canvas的性能一定能够更好吗
+  - canvas像素级绘制，dom依赖浏览器渲染
+  - canvas也能实现虚拟滚动，还能实现双缓存画布
+    - 利用双画布复用canvas内存对象
+    - dom的虚拟渲染未考虑，文字斜体；canvas直接复用2d的位置信息
+  - canvas的性能瓶颈，一行的高度取决于所有行中单元格所有文本的高度，word-segment分词算法，优化了排版算法
+  - canvas的兼容性在移动端更好
+
+- canvas上线后还会出现移动端黑屏的问题
+  - 部分移动端由于gpu的问题，导致渲染
+  - 页面canvas特别多，会出现粉屏
+
+- 要优化性能
+  - 一都会增加链路，使用简化的指令，传递指令
+  - 更现代的基础设置，不存对象数组，直接存数组，如用protobuff
+
+- 实现表格
+  - 稳健的架构
+    - 渲染可支持svg/canvas
+    - 离线需要优秀的模型设计 数据库模型、编辑器模型、视图层模型
+    - 协作需要指令，用户操作 -> taco -> 取缓存 -> 缓存中没有就刷新
+
+- crdt更新是整体block更新
+  - 性能不会比ot更好
+
+- 在效率和功能间取得平衡
 
 ## 0513
 
@@ -279,6 +351,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 删除workspace的ui和交互
 - 👉🏻️ 其他task
   - page-tree创建page后ui和state要视觉上立即更新
+
+### oneOnOne-terry-文档基建closure
 
 - google closure 运行时
   - 扩展了js、dom
@@ -433,7 +507,24 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - 登录时需要fetch recent workspaces，因为有多设备同步的问题
   - 若用户先在设备A使用了spaceA，然后在设备B使用了spaceB，当再次登录设备A时应该进入spaceA
 
-- google-docs
+- PageTree小结
+  - 标题支持点击和拖拽事件
+  - 支持保存和恢复折叠展开状态
+
+- dnd-kit-onClick 失效的问题
+  - https://github.com/clauderic/dnd-kit/issues/296
+  - useSensor(PointerSensor, { activationConstraint: { distance: 10, }, }); 
+
+- pm-features
+  - block transform: notion/monday/asana
+  - page transform: miro/mural
+  - version control: almanac
+  - self-host with encryption: anytype/skiff
+  - publish editor: super/simple.ink
+  - automation: uipath/google docs
+
+### oneOnOne-terry-google-docs-产品矩阵
+
 - 2005年收购 wirtely(doc)、xl2web(sheet)、DocVerse(collab)、QuickOffice(mobile)
 - 2015年google工程师回国，本地化、替换docker，发布一起写
 - 2017年快手收购一起写
@@ -457,22 +548,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - gui架构
   - 排版器
   - sheet比doc更复杂
-
-- PageTree小结
-  - 标题支持点击和拖拽事件
-  - 支持保存和恢复折叠展开状态
-
-- dnd-kit-onClick 失效的问题
-  - https://github.com/clauderic/dnd-kit/issues/296
-  - useSensor(PointerSensor, { activationConstraint: { distance: 10, }, }); 
-
-- pm-features
-  - block transform: notion/monday/asana
-  - page transform: miro/mural
-  - version control: almanac
-  - self-host with encryption: anytype/skiff
-  - publish editor: super/simple.ink
-  - automation: uipath/google docs
 
 ## 0421
 

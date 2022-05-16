@@ -10,20 +10,6 @@ modified: '2021-06-02T17:12:56.049Z'
 > A toolkit for building rich-text editors on the web
 
 # guide
-- features
-  - Unopinionated
-    - core is small and generic, allowing different types of editors
-  - Customizable schemas
-    - Document schemas allow editing documents with a custom structure
-  - Modular
-    - only load the code you need
-  - Pluggable/Extensible
-    - easily enable additional functionality
-  - Collaborative editing
-    - multiple people can work on the same document in real time
-  - Functional
-    - largely functional and immutable architecture to implement complex behavior
-
 - tips
   - cursor-motion, mouse-actions, typing都由browsers处理
 
@@ -438,7 +424,7 @@ tr.delete(5, 7).split(5) // ok too
 - Transform objects automatically accumulate a set of maps for the steps in them, using an abstraction called Mapping, 
   - which collects a series of step maps and allows you to `map` through them in one go.
 - There are cases where it's not entirely clear what a given position should be mapped to. 
-  - `map` method on step maps and mappings accepts a second parameter, `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
+  - `map` method on step maps and mappings accepts a second parameter,  `bias`, which you can set to `-1` to keep your position in place when content is inserted on top of it.
 - The reason that individual steps are defined as small, straightforward things is that it makes this kind of mapping possible, along with inverting steps in a lossless way, and mapping steps through each other's position maps.
 
 - Rebasing
@@ -458,7 +444,7 @@ stepB '(docA) = docAB
 
 ## The editor state
 
-- There are the three main components of a ProseMirror state, and exist on state objects as `doc`, `selection`, and `storedMarks`.
+- There are the three main components of a ProseMirror state, and exist on state objects as `doc`,  `selection`, and `storedMarks`.
   - But plugins may also need to store state
   - This is why the set of active plugins is also stored in the state, and these plugins can define additional slots for storing their own state.
 
