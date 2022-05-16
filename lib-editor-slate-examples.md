@@ -37,25 +37,24 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://www.npmjs.com/package/@frontify/arcade
     - Design System of Frontify
 
+- quadrats /4Star/MIT/202203/ts
+  - https://github.com/Quadrats/quadrats
+  - https://quadrats.github.io/quadrats
+  - A complete rich text editor. Currently based on Slate framework.
+  - storybook示例非常丰富
+
+- whim-notion-like /6Star/MIT/202108/ts
+  - https://github.com/coniel/whim 
+  - A highly customisable block based rich text editor inspired by Notion.
+
 - https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js
   - An alternative text editor for Volto, capable of completely replacing the default richtext editor
   - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
+  - 样式陈旧，编辑器和业务代码有联系
   - repos
     - https://github.com/eea/volto-slate-metadata-mentions
-
-- https://github.com/coniel/whim 
-  - /6Star/MIT/202108/ts
-  - A highly customisable block based rich text editor inspired by Notion.
 # slate-based-editors
-- https://github.com/Quadrats/quadrats
-  - https://quadrats.github.io/quadrats
-  - A complete rich text editor. Currently based on Slate framework.
-
-- https://github.com/tiddly-gittly/slate-write
-  - A WYSIWYG editor for TiddlyWiki. (WIP)
-  - 一个用于 太微TiddlyWiki 的所见即所得编辑器。 
-
 - @tinacms/toolkit
   - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
   - 依赖 @udecode/plate、headlessui、floating-ui
@@ -167,6 +166,10 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://github.com/humandx/slate-automerge
   - A example of a collaborative editor using Slate and Automerge
 # more-repos-slate
+- https://github.com/tiddly-gittly/slate-write
+  - A WYSIWYG editor for TiddlyWiki. (WIP)
+  - 一个用于 太微TiddlyWiki 的所见即所得编辑器。 
+
 - https://github.com/Dev-CasperTheGhost/full-slate-editor-example
   - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment
 
