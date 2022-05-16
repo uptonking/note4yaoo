@@ -7,8 +7,13 @@ modified: '2022-05-15T18:41:39.560Z'
 
 # lib-editor-slate-docs
 
-# guide
+> A completely customizable framework for building rich text editors.
 
+# guide
+- resources
+  - [Deep in Slate.js —— 深入 Slate.js gitbook](https://github.com/yoyoyohamapi/book-slate-editor-design/blob/master/SUMMARY.md)
+    - 这本小册基于的 Slate.js 0.44.x 版本，虽然 Slate.js 现在已经渐进到了 0.50.x 版本，但其架构编辑器的方式仍然是统一的，
+    - 小册的初衷也在于借 Slate.js 分析和讨论 Web 富文本编辑器的架构方式，而不是教导怎么使用 Slate.js
 # overview
 - slate /18.6kStar/MIT/202009/ts
   - https://github.com/ianstormtaylor/slate
@@ -38,24 +43,24 @@ modified: '2022-05-15T18:41:39.560Z'
   - Many editors were designed around simplistic "flat" documents, making things like tables, embeds and captions difficult to reason about and sometimes impossible.
 
 - Slate Principles
- - First-class plugins. 
-    - The most important part of Slate is that plugins are first-class entities. 
-    - That means you can completely customize the editing experience, to build complex editors like Medium's or Dropbox's, without having to fight against the library's assumptions.
-  - Schema-less core. 
-    - Slate's core logic assumes very little about the schema of the data you'll be editing
-  - Nested document model. 
-    - The document model used for Slate is a nested, recursive tree, just like the DOM itself. 
-    - This means that creating complex components like tables or nested block quotes are possible for advanced use cases.
-  - Parallel to the DOM. 
-    - Slate's data model is based on the DOM—the document is a nested tree, it uses selections and ranges, and it exposes all the standard event handlers. 
-    - This means that advanced behaviors like tables or nested block quotes are possible.
-  - Intuitive commands. 
-    - Slate documents are edited using "commands"
-    - This greatly increases your ability to reason about your code.
-  - Collaboration-ready data model. 
-    - The data model Slate uses—specifically how operations are applied to the document—has been designed to allow for collaborative editing to be layered on top
-  - Clear "core" boundaries. 
-    - With a plugin-first architecture, and a schema-less core, it becomes a lot clearer where the boundary is between "core" and "custom", which means that the core experience doesn't get bogged down in edge cases.
+- First-class plugins. 
+  - The most important part of Slate is that plugins are first-class entities. 
+  - That means you can completely customize the editing experience, to build complex editors like Medium's or Dropbox's, without having to fight against the library's assumptions.
+- Schema-less core. 
+  - Slate's core logic assumes very little about the schema of the data you'll be editing
+- Nested document model. 
+  - The document model used for Slate is a nested, recursive tree, just like the DOM itself. 
+  - This means that creating complex components like tables or nested block quotes are possible for advanced use cases.
+- Parallel to the DOM. 
+  - Slate's data model is based on the DOM—the document is a nested tree, it uses selections and ranges, and it exposes all the standard event handlers. 
+  - This means that advanced behaviors like tables or nested block quotes are possible.
+- Intuitive commands. 
+  - Slate documents are edited using "commands"
+  - This greatly increases your ability to reason about your code.
+- Collaboration-ready data model. 
+  - The data model Slate uses—specifically how operations are applied to the document—has been designed to allow for collaborative editing to be layered on top
+- Clear "core" boundaries. 
+  - With a plugin-first architecture, and a schema-less core, it becomes a lot clearer where the boundary is between "core" and "custom", which means that the core experience doesn't get bogged down in edge cases.
 # usage
 - We want the `editor` to be stable across renders, so we use the `useState` hook without a setter
   - const [editor] = useState(() => withReact(createEditor()))
@@ -249,9 +254,7 @@ interface Editor {
 - The `Editor` interface, like all Slate interfaces, exposes helper functions that are useful when implementing certain behaviors. 
   - There are also many iterator-based helpers
 
-
 - A plugin is simply a function that takes an `Editor` object and returns it after it has augmented it in some way.
-
 
 - Slate doesn't re-invent its own view layer that you have to learn. It tries to keep everything as React-y as possible.
   - Slate gives you control over the rendering behavior of your custom nodes and properties in your richtext domain.
@@ -260,7 +263,6 @@ interface Editor {
 - Be sure to mix in props.attributes and render props.children in your custom components! 
   - The attributes must be added to the top-level DOM element inside the component, as they are required for Slate's DOM helper functions to work. 
   - And the children are the actual text content of your document which Slate manages for you automatically.
-
 
 - When text-level formatting is rendered, the characters are grouped into "leaves" of text that each contain the same formatting applied to them.
   - To customize the rendering of each leaf, you use a custom renderLeaf prop
@@ -276,30 +278,24 @@ interface Editor {
   - This is helpful for dynamic formatting like syntax highlighting or search keywords, where changes to the content (or some external data) has the potential to change the formatting.
   - Decorations are different from Marks in that they are not stored on editor state.
 
-
 - In addition to controlling the rendering of nodes inside Slate, you can also retrieve the current editor context from inside other components using the `useSlate` hook.
   - That way other components can execute commands, query the editor state, or anything else.
   - A common use case for this is rendering a toolbar with formatting buttons that are highlighted based on the current selection
 
-
 - Slate's data model has been built with serialization in mind. 
   - Specifically, its text nodes are defined in a way that makes them easier to read at a glance, but also easy to serialize to common formats like HTML and Markdown.
   - And, because Slate uses plain JSON for its data, you can write serialization logic very easily.
-
 
 - deserializing
   - This is when you have some arbitrary input and want to convert it into a Slate-compatible JSON structure. 
   - Slate has a built-in helper for this: the slate-hyperscript package.
   - slate-hyperscript isn't only for JSX. It's just a way to build trees of Slate content. Which happens to be exactly what you want to do when you're deserializing something like HTML.
 
-
-
 - "Normalizing" is how you can ensure that your editor's content is always of a certain shape. 
   - It's similar to "validating", except instead of just determining whether the content is valid or invalid, its job is to fix the content to make it valid again.
   - Slate editors come with a few built-in constraints out of the box.
   - These constraints are there to make working with content much more predictable than standard contenteditable. 
   - All of the built-in logic in Slate depends on these constraints
-
 
 - Built-in Constraints
   - These default constraints are all mandated because they make working with Slate documents much more predictable.
@@ -324,7 +320,6 @@ interface Editor {
   - Instead, you should use an optional property, e.g. `foo?: string` instead of `foo: string | null`. 
   - This limitation is due to `null` being used in operations to represent the absence of a property.
 
-
 - you can also add your own constraints on top of the built-in ones that are specific to your domain.
   - extend the `normalizeNode` function on the editor. 
   - The `normalizeNode` function gets called every time an operation is applied that inserts or updates a node (or its descendants), giving you the opportunity to ensure that the changes didn't leave it in an invalid state, and correcting the node if so.
@@ -342,34 +337,8 @@ interface Editor {
   - This is frequently the case when you unwrapNodes followed by wrapNodes. 
   - For example, you might write a function to change the type of a block 
 
-
-
 - You must define CustomTypes, annotate useState, and annotate the editor's initial state when using TypeScript or Slate will display typing errors.
 - While you can define types directly in the CustomTypes interface, best practice is to define and export each type separately so that you can reference individual types like a ParagraphElement.
 
 - At the moment, Slate supports types for a single document model at a time. For example, it cannot support two different Rich Text Editor with different document schemas.
   - One workaround for supporting multiple document models is to create each editor in a separate package and then import them. This hasn't been tested but should work.
-
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 

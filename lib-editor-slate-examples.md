@@ -23,7 +23,7 @@ modified: '2022-05-15T18:45:27.570Z'
       - 使用扩展插件和模块的机制，保证扩展性
       - 现在 wangEditor 内置的各个功能，也都是通过扩展插件和模块的形式搭建起来的
 
-- plate
+- plate /1.4kStar/MIT/202205/ts
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - `slate-plugins` repo has been renamed to `plate`.
@@ -37,14 +37,16 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://www.npmjs.com/package/@frontify/arcade
     - Design System of Frontify
 
-- https://github.com/coniel/whim 
-  - /6Star/MIT/202108/ts
-  - A highly customisable block based rich text editor inspired by Notion.
-
-- https://github.com/eea/volto-slate
+- https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js
   - An alternative text editor for Volto, capable of completely replacing the default richtext editor
   - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
+  - repos
+    - https://github.com/eea/volto-slate-metadata-mentions
+
+- https://github.com/coniel/whim 
+  - /6Star/MIT/202108/ts
+  - A highly customisable block based rich text editor inspired by Notion.
 # slate-based-editors
 - https://github.com/Quadrats/quadrats
   - https://quadrats.github.io/quadrats
@@ -58,8 +60,28 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
   - 依赖 @udecode/plate、headlessui、floating-ui
 
+- https://github.com/accordproject/web-components/tree/master/packages/ui-markdown-editor
+  - https://ap-web-components.netlify.app/
+  - a WYSIWYG editor for markdown that conforms to the CommonMark specification
+  - 依赖markdown-it、slate、semantic-ui-react
+
+- https://github.com/slatejsx/slatejsx
+  - http://seditor.open.heyphp.com/
+  - 项目基于slate.js框架开发，项目内所有图标，风格组件均使用antd
+
+- https://github.com/Thinkei/hero-editor
+  - Hero editor is a WYSIWYG built on top of Slate (v0.58.3). It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
+  - This package also includes serializers and renderers for the Slate content.
+
+- https://github.com/webkom/lego-editor
+  - A React rich text editor written in TS with Slate.js for lego-webapp
+
 - https://github.com/Yan-Boogie/highlighter
   - A complete rich text editor based on Slate framework with extended 'Highlighting' functionality.
+
+- https://github.com/Rajatm544/react-rich-editor
+  - https://reactricheditor.netlify.app/
+  - A rich editor built using React and Slate. It has option to highlight text and show it as a tags beside the editor
 
 - https://github.com/sympto-health/slate-rte
   - Pre-built rich text editor for Slate in React.
@@ -84,18 +106,66 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/rs-pro/rocket-slate
   - A rich text editor based on SlateJS framework and slate-plugin-next
   - Supports slate 0.57 only
+
+- more-slate-editor
+  - https://github.com/worktile/slate-angular
+  - https://github.com/marsprince/slate-vue
+
+- deprecated
+  - https://github.com/kanweiwei/easy-editor
+  - https://github.com/roast-cms/french-press-editor
+  - https://github.com/Canner/canner-slate-editor
+  - https://github.com/chatterbugapp/chatterslate
+  - https://github.com/nossas/slate-editor
+  - https://github.com/nareshbhatia/react-force/tree/master/packages/slate-editor
 # slate-plugins
+- https://github.com/hanford/remark-slate
+  - Transform the contents of a slate 0.50+ editor into markdown and back again.
 - https://github.com/inokawa/remark-slate-transformer
   - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. Made for WYSIWYG markdown editor.
+
+- https://github.com/daibin0809/slate-table-demo
+  - slate 编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
+  - 表格中无法再添加表格；
+  - 表格中右键唤起工具菜单
+- https://github.com/lqs469/slate-table
+  - A pretty Slate.js table plugin (Slate.js version > 0.5)
+- https://github.com/whatever-company/slate-tables
+  - https://whatever-company.github.io/slate-tables/
+  - 依赖slate.v0.47
+  - A Slate plugin to handle table edition.
+  - The plugin supports nested tables natively.
+  - Colspan and Rowspan are supported. All operations create a matrix containing all cells' positions.
 
 - https://github.com/afeiship/next-slate-plugin
   - Slate plugin manager.
 
-- https://github.com/cudr/slate-collaborative
-  - slatejs collaborative plugin & microservice
+- https://github.com/mwood23/slate-test-utils
+  - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! Write user centric integration tests with ease
+
+- https://github.com/lukesmurray/use-slate-with-extensions
+  - https://use-slate-with-extensions.netlify.app/
+  - a simple, powerful, and tiny (< 2KB) hook which helps you build self contained and composable extensions for Slate. 
+
+- https://github.com/enzoferey/slate-instant-replace
+  - A Slate plugin that gives you full power on the last word your user typed.
+  - This package is compatible with <= slate@0.47
+
+- https://github.com/palerdot/react-slite
+  - This react component provides a slack like rich text editing experience powered by slate.js
+# slate-collab
+- https://github.com/solidoc/slate-ot
+  - Operation Transformations for slate 0.5x.
 
 - https://github.com/BitPhinix/slate-yjs
   - Yjs binding for Slate
+
+- https://github.com/6thfdwp/crdt-editor
+  - A collaborating editor based on Slate and Yjs
+
+- https://github.com/cudr/slate-collaborative
+  - https://github.com/humandx/slate-automerge
+  - A example of a collaborative editor using Slate and Automerge
 # more-repos-slate
 - https://github.com/Dev-CasperTheGhost/full-slate-editor-example
   - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment

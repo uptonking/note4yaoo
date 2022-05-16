@@ -198,6 +198,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - inline format menu: bold/italic
   - block menu
 
+## 0517
+
+- slate的selection和block-editor的selection有什么关系
+  - 如何存取slate编辑器的selection
+
 ## 0516
 
 - dev-to
