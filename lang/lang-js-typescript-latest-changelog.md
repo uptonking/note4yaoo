@@ -22,7 +22,7 @@ modified: '2020-07-14T12:06:37.292Z'
 - It's tail recursion at the type level, not at the runtime level.
 - How long is it going go take before TS becomes pluggable types engine for any other language
 
-## changelog-overview
+## changes-overview
 
 - Between TypeScript 1.0 and up until 2.0, the language added union types, type guards, modern ECMAScript support, type aliases, JSX support, literal types, and polymorphic this types. 
 - If we include TypeScript 2.0 with its introduction of non-nullable types, control flow analysis, tagged union support, this-types, and a simplified model around .d.ts file acquisition, that era truly defined the fundamentals of using TypeScript.
