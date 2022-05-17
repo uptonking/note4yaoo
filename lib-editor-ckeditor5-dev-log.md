@@ -198,12 +198,34 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - inline format menu: bold/italic
   - block menu
 
+## 0518
+
+- dev-to
+  - 如何注册菜单项，斜杠commandMenuItems、inlineMenuItems
+    - ckeditor采用的是初始化编辑器器传入toolbarConfig属性
+    - slate示例给的是创建一个自定义Menu组件
+  - commandMenu和inlineMenu的实现放在哪里更好
+    - 可以放在封装的TextView组件
+      - 优点是方便直接获取SlateEditor的selection数据和其他属性方法
+      - 触发条件 输入斜杠或选中
+    - 可以放在AffineEditor的plugin
+      - 优点是非TextView组件也能唤起斜杠菜单
+      - 缺点是针对工具条的不同操作，不同的按钮事件需要传入额外的不同的编辑器相关的参数
+      - 触发条件是 showCommandMenu
+
+- 关于编辑器中选中文字或其他元素才会出现的悬浮工具条的命名
+  - slate: hovering-toolbar ❌️ 并不是hover就会出现的
+  - ckeditor/slate-plate: balloon-toolbar
+  - prosemirror: tooltip
+  - medium-editor: inline/block-toolbar
+
 ## 0517
 
 - slate
   - mention输完@后，如何弹出下拉框
     - 整体架构为 `<Slate><Editable></Editable><Portal></Portal></Slate>`，注意只有在@x用户输入x非空时才渲染下拉框
-    - 下拉框中
+    - 下拉框出现的条件@后用户输入文字非空，且搜索结果非空
+    - 下拉框portal定位样式 position: 'absolute', 动态修改style.left/top
   - mention下拉列表中选中文字后，如何插入编辑器
     - 在Editable组件的onKeyDown事件中，检测到enter按键时插入文字到编辑器
     - Transforms.insertNodes(editor, mentionNode);
