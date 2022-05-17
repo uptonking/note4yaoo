@@ -270,7 +270,6 @@ function getOffsetX(event) {
   - 在没有滚动条时，scrollHeight===clientHeight恒成立
   - 练习中，不管有没有滚动条，document.body的scrollWidth与clientWidth一直相等
 
-
 - clientTop
   - border-top的高度，及上边框的粗细宽度
   - https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop
@@ -284,7 +283,6 @@ function getOffsetX(event) {
   - 包含content、padding、滚动条、border，**不包括margin**
   - 标准盒模型采用，设置style的height即这里
   - 对于inline的元素这个属性一直是0
-
 
 - offsetLeft
   - 当前元素相对于其offsetParent元素的左边的距离
@@ -440,3 +438,5 @@ function getOffsetX(event) {
   - e.pageY：鼠标相对于文档X方向的距离( ie678 不支持)
   - e.screenX：鼠标距离屏幕X方向的距离
   - e.screenY：鼠标距离屏幕Y方向的距离 
+# more-layout-position
+- https://caniuse.com/mdn-api_window_visualviewport

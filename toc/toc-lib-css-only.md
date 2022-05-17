@@ -9,6 +9,7 @@ modified: '2021-01-08T11:48:16.590Z'
 
 - ref
   - [You-Dont-Need-JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript)
+  - https://chokcoco.github.io/CSS-Inspiration/#/
   - https://github.com/search?o=desc&q=css+only&s=stars&type=Repositories
   - https://github.com/search?o=desc&q=pure+css&s=stars&type=Repositories
   - https://github.com/zhangyingwei/html-css-only

@@ -200,8 +200,23 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0517
 
+- slate
+  - mention输完@后，如何弹出下拉框
+    - 整体架构为 `<Slate><Editable></Editable><Portal></Portal></Slate>`，注意只有在@x用户输入x非空时才渲染下拉框
+    - 下拉框中
+  - mention下拉列表中选中文字后，如何插入编辑器
+    - 在Editable组件的onKeyDown事件中，检测到enter按键时插入文字到编辑器
+    - Transforms.insertNodes(editor, mentionNode);
+    - 上下键可以在下拉列表切换当前选择高亮项
+
 - slate的selection和block-editor的selection有什么关系
   - 如何存取slate编辑器的selection
+
+- 将block级的onMouseMove事件注册到root根节点的onMouseMove，然后在block级事件内判断位置只在block内才执行逻辑
+
+- 主要改动是createView返回react组件 -> 直接使用View组件 。
+  - 原来RenderBlock中是直接调用createView方法，这样会导致 react 的 hook 会报错，因为react会将这个函数理解为普通函数调用，hook会合并到RenderBlock的hook stack中。如果组件重渲染会报错（warning级别，不会影响build，因为createView调用位置保持一致，且在最后面)
+  - 写法明明就是 FunctionComponent，但是多加了一层，完全没必要。所以直接改为FC了
 
 ## 0516
 
