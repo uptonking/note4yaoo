@@ -178,7 +178,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 双[[默认唤起双链搜索的交互，但按退格键后可以默认展示双[[文本
     - 在当前文档中可以链接当前文档自身
 
-- dev-to-later
+- dev-to-later-v0429
   - [x] calendar-heatmap sync
   - daily notes pages init
   - calendar-big 进度沟通
@@ -193,6 +193,17 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
   - [旧架构的使用示例](https://github.com/toeverything/Ligo-Virgo/blob/b9d74bacb33198d073afb2b2331d1210ce476dc7/libs/components/heading/src/block.tsx)
 
+- dev-to-later-v0518
+  - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
+    - 参SelectionManager实现
+  - [ ] 先实现单例弹窗
+    - 获取当前选区及在viewport中的物理位置
+  - [ ] 实现静态悬浮菜单
+  - [ ] 实现动态菜单项
+  - [ ] 自定义菜单项事件
+  - [ ] 重构Text组件，底层Text不处理业务，只处理编辑器相关逻辑
+    - 上层BusinessTextHoc获取数据和操作方法
+
 - 本周3个菜单
   - command menu
   - inline format menu: bold/italic
@@ -200,24 +211,60 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0518
 
-- dev-to
-  - 如何注册菜单项，斜杠commandMenuItems、inlineMenuItems
+- 浮动工具条 FloatingToolbarPlugin
+  - 在plugin构造函数中注册ON_ENTER显示隐藏浮动工具条的方法
+  - 触发条件
+    - 在自定义block的useEffect中，onSelectionChange/输入变化时
+  - 在TextBlock或CodeBlock中触发 editor.getHooks().onEnter/onKeydown/onBeforeInput
+
+- dev-to-selection
+  - 向selectionManager中setSelection
+  - 从selectionManager中getSelection
+  - 下拉小弹窗、悬浮工具条，都需要从selection中 getBoundingClientRect
+    - 获取一个range的text
+
+- dev-to-inline-menus
+  - 👉 如何注册菜单项，斜杠commandMenuItems、inlineMenuItems
+    - ✔ 不需要在全局注册菜单项，每个block自己传入自己支持的菜单项及事件
     - ckeditor采用的是初始化编辑器器传入toolbarConfig属性
     - slate示例给的是创建一个自定义Menu组件
-  - commandMenu和inlineMenu的实现放在哪里更好
+  - 👉 如何实现动态菜单项
+    - ✔ 根据block type和block自身传入的配置
+  - 👉 与设计沟通文本悬浮工具条设计图
+  - 👉 悬浮工具条及下拉框是放在全局单例，还是和每个Text组件写在一起
+    - ✔ 放在全局，方便在不同block间复用
+  - 💡 commandMenu和inlineMenu的实现放在哪里更好
     - 可以放在封装的TextView组件
       - 优点是方便直接获取SlateEditor的selection数据和其他属性方法
+      - 容易获取editor command
       - 触发条件 输入斜杠或选中
-    - 可以放在AffineEditor的plugin
+    - 可以放在BlockEditor的plugin
       - 优点是非TextView组件也能唤起斜杠菜单
       - 缺点是针对工具条的不同操作，不同的按钮事件需要传入额外的不同的编辑器相关的参数
       - 触发条件是 showCommandMenu
+
 
 - 关于编辑器中选中文字或其他元素才会出现的悬浮工具条的命名
   - slate: hovering-toolbar ❌️ 并不是hover就会出现的
   - ckeditor/slate-plate: balloon-toolbar
   - prosemirror: tooltip
   - medium-editor: inline/block-toolbar
+
+- innos的编辑器可以将block拖入拖出card/group
+  - 可以将block拖到行内并列，并且保留样式背景色
+  - innos的设计强调卡片自适应变宽，占满一行
+  - innos的缺点，容器元素过多，心智成本高
+
+- block可以嵌套block
+  - group不要嵌套group
+
+- 拖动时应该默认带上子集一起拖动，因为子集数量可能很多超出屏幕
+  - 另一种设计是，按住其他键如shift可以只拖动父级单行
+  - shift可能白板也能用
+
+- 回退删除键的逻辑要讨论
+  - a. 直接跳过分隔线，直接在上一个block末尾删除文本
+  - b. 先focus分隔线，再删除分隔线
 
 ## 0517
 
@@ -722,7 +769,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - 💡 发现将 useUser 和 useSpaces 合并为一个hook后能够减少请求次数，同时降低复杂度，流程更清晰
 
 - dev-to
-  - 推进affine上aws
+  - 推进产品上aws
 
 - 白板的激光笔设计，笔迹3S后自动消失
 
@@ -897,8 +944,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - 新编辑器抽象层次
 - app 
-  - useDatabase => `<AffineEditor db={database} />` 传递数据库操作实例
-- affine-editor
+  - useDatabase => `<BlockEditor db={database} />` 传递数据库操作实例
+- block-editor
   - 定义block-editor的vdom结构，以及初始化editor对象
   - EditorRoot, div, RenderBlock
   - createDefaultEditor -- createStandaloneEditor
@@ -924,7 +971,7 @@ document.getElementById('div').click()
 
 ## 0326
 
-- affine新编辑器类型补充
+- block-editor新编辑器类型补充
   - 难以补充类型的use case，主要是深层路径属性的取值
     -  const element = editor?.children?.[path[0]]?.children?.[path[1]];
 
@@ -1009,7 +1056,7 @@ const ProfileMenu = forwardRef<HTMLInputElement, PropsDummy>((props, forwardedRe
 
 ## 0322
 
-- milestone 交付affine编辑器
+- milestone 交付jnu-editor编辑器
   - not-yet
     - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
 
@@ -1139,16 +1186,16 @@ const ProfileMenu = forwardRef<HTMLInputElement, PropsDummy>((props, forwardedRe
   - 本地仓库、云端仓库
   - 我的仓库、公共仓库
   - 是否可参考github仓库？
-- affine文档核心功能
+- 文档核心功能
   - 双链展示
   - 分支文档
   - 工作空间内搜索
-- affine的ux交互设计
+- ux交互设计
   - 落地页/未登录时的宣传页
   - 个人主页/首页
   - 工作空间页
   - 国内环境不适合对接github，可考虑百度网盘
-- affine新首页设计与工作计划
+- 新首页设计与工作计划
   - [x] 首页使用~~类似workspace的设计~~，快捷菜单跳转到workspace
   - [x] 布局改为左侧边栏
   - [x] 文档列表只显示创建的文件，最近操作的文档要跳转到单独页面
@@ -1624,7 +1671,7 @@ await editor.db.get(id)
   - 新的基座工程项目
     - 路由管控
     - 接入子项目
-    - 在test.affine上能上线
+    - 在test站点能上线
     - 登录保留authing
   - block editor 后端可以很简单
     - 单个拉取
@@ -2489,7 +2536,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
   - adjective mathematics
   - Allowing for or preserving parallel relationships
   - The Notion-like docs solution for enterprises.
-- affine首页的打字效果
+- 首页的打字效果
   - https://www.theorange.digital/
   - "typed.js":"^2.0.12"
 
@@ -2506,7 +2553,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 
 ## 1124
 
-- affine产品操作流程
+- 产品站点操作流程
   1. 用户登录  >  landing未登录页、注册页、登录页
      - /usernameId
 
@@ -2627,7 +2674,7 @@ howpublished={\url{http://precog.iiitd.edu.in/people/anupama}}
 - 日历热力图样式
   - github方块 10x10
   - gitee方块 13x15
-  - affine方块 14x14
+  - 自定义方块 14x14
   - 方块样式参考github
 - 点击添加文档按钮，在日历热力图上会反映出操作记录
 

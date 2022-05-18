@@ -11,6 +11,12 @@ modified: '2022-05-15T18:48:53.816Z'
 
 # faq
 
+## [onDocumentChange and onSelectionChange](https://github.com/ianstormtaylor/slate/issues/4687)
+
+- Currently the onChange event of slate is fired for changes on the document structure but also for changes on the selection. 
+- you can distinguish in the onChange event like:
+  - if (editor.operations.every(op => op.type === "set_selection"))
+
 ## [Why is content pasted as plain text?](https://docs.slatejs.org/general/faq)
 
 - One of Slate's core principles is that, unlike most other editors, it does not prescribe a specific "schema" to the content you are editing.

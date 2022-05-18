@@ -133,7 +133,7 @@ modified: '2021-04-23T17:10:52.920Z'
     - onChange在浏览器上，只要在这个文本输入框上，有任何的键盘动作它都会触发，也就是如果你是使用了中文、日文、韩文输入法(IME)，不论是哪一种，拼音的、笔划的还是其他的，只要有按下一个键盘的动作，就会触发一次浏览器上这个元素的change事件   
     - React attaches listeners for Component.onChange to the DOM element.oninput event. 
       - https://github.com/facebook/react/issues/3964
-- `oninput`
+- `oninput` 事件
   - input event fires when the value of an `<input>` ,  `<select>` , or `<textarea>` element has been changed
   - oninput event occurs when the text content of an element is changed through the user interface.
   - The event also applies to elements with contenteditable enabled, and to any element when designMode is turned on.

@@ -48,7 +48,11 @@ modified: '2021-10-25T09:33:39.528Z'
   - https://ckeditor.com/ckeditor-5/
   - https://ckeditor.com/docs/ckeditor5/latest/framework/index.html
 # block-editor-codebase
-- AffineEditor
+- block-editor的plugin设计
+  - 在Plugin构造函数中注册各类事件监听器，在editor render-root中执行所有RENDER事件
+  - 在editor-block中，也可以注册事件到全局hooks
+
+- BlockEditor
   - 准备编辑器相关配置包括blocks和plugins，初始化 BlockEditor 实例
   - RenderRoot 传入BlockEditor实例
   - RenderBlock 传入root_block_id
