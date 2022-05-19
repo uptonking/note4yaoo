@@ -62,7 +62,7 @@ modified: '2021-10-25T09:33:39.528Z'
   - 获取editor最外层的div元素ref，挂到editor.container属性下
     - editor的内容blocks会作为children渲染
   - editor.getHooks().render(); 
-    - 执行所有render类型的hooks，此时plugins中的document.createElement已经创建了且内容可能未渲染
+    - 执行所有render类型的hooks，此时plugins中的document.createElement已经创建了容器但内容可能未渲染
   - 注册全局鼠标事件到editor最外层div
     - onMouseUp/Down/Move/Out，注册的事件是所有hooks回调函数集合
   - 创建 SelectionRect 元素

@@ -26,13 +26,35 @@ modified: '2022-05-15T18:45:27.570Z'
 - plate /1.4kStar/MIT/202205/ts
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
-  - `slate-plugins` repo has been renamed to `plate`.
-  - The library formerly known as @udecode/slate-plugins is now available as @udecode/plate
-  - Slate is a low-level editor framework that helps you deal with difficult parts when building an editor, such as events handlers, elements, formatting, commands, rendering, serializing, normalizing, etc.
-  - @udecode/plate is built on top of slate to handle plugins and state management for an optimal development experience. 
-  - This repository comes with a lot of plugins as elements, marks, serializers, normalizers, queries, transforms, components and so on.
-  - [Generic typescript for slate](https://github.com/ianstormtaylor/slate/pull/4177)
-    - I unfortunately don't have the time to complete that PR, so I've forked that PR into Plate.
+  - A plugin framework for building rich text editors with slate.
+  - ✨ Features
+    - 编辑器开箱即用、功能丰富、架构比较稳定
+      - 光标、选区、快捷键、拖拽
+    - 提供了自定义plate插件系统和40+插件，方便自定义，可扩展
+      - 还提供了可复用的编辑器相关资源，如slate操作operation
+    - 支持多编辑器实例
+      - A store is used to handle multiple editor out of the box
+    - block支持拖拽改变顺序
+    - 支持常用markdown快捷键
+    - 支持嵌入各类媒体资源，如youtube、excalidraw
+    - built with typescript
+    - 分离了 plate-ui、plate-headless
+  - 🐛 Drawbacks
+    - 编辑器整体的技术选型比较opinionated
+    - 状态管理使用jotai和类似redux的zustand
+    - 未实现斜杠菜单
+    - mention和悬浮工具条功能比较简单
+    - table实现过于简单
+    - 未实现多栏布局
+  - plate的官方示例支持拖拽移动block，示例非常完整
+    - Slate is a low-level editor framework that helps you deal with difficult parts when building an editor, such as events handlers, elements, formatting, commands, rendering, serializing, normalizing, etc.
+    - `@udecode/plate` is built on top of slate to handle plugins and state management for an optimal development experience. 
+    - This repository comes with a lot of plugins as elements, marks, serializers, normalizers, queries, transforms, components and so on.
+    - `slate-plugins` repo has been renamed to `plate`.
+    - The library formerly known as @udecode/slate-plugins is now available as @udecode/plate
+    - [Generic typescript for slate](https://github.com/ianstormtaylor/slate/pull/4177)
+      - I unfortunately don't have the time to complete that PR, so I've forked that PR into Plate.
+
 - plate-repos
   - https://www.npmjs.com/package/@frontify/arcade
     - Design System of Frontify
@@ -42,10 +64,12 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://quadrats.github.io/quadrats
   - A complete rich text editor. Currently based on Slate framework.
   - storybook示例非常丰富
+  - 依赖 slate.v0.75.0
 
 - whim-notion-like /6Star/MIT/202108/ts
   - https://github.com/coniel/whim 
   - A highly customisable block based rich text editor inspired by Notion.
+  - 依赖 slate.v0.65.3，fuse.js(fuzzy-search)
 
 - https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js
@@ -54,6 +78,12 @@ modified: '2022-05-15T18:45:27.570Z'
   - 样式陈旧，编辑器和业务代码有联系
   - repos
     - https://github.com/eea/volto-slate-metadata-mentions
+    - https://github.com/eea/volto-slate-footnote
+
+- slate-angular /93Star/MIT/202205/ts
+  - https://github.com/worktile/slate-angular
+  - http://slate-angular.ngnice.com/
+  - Angular view layer for Slate
 # slate-based-editors
 - @tinacms/toolkit
   - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
@@ -85,10 +115,6 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/sympto-health/slate-rte
   - Pre-built rich text editor for Slate in React.
 
-- https://github.com/React-Artibox/artibox
-  - Artibox - A complete rich text editor based on Slate framework.
-  - /202011
-
 - https://github.com/rojer95/dslate
   - https://rojer95.github.io/dslate/#/
   - https://rojer95.github.io/dslate/#/docs/getting-started
@@ -106,8 +132,11 @@ modified: '2022-05-15T18:45:27.570Z'
   - A rich text editor based on SlateJS framework and slate-plugin-next
   - Supports slate 0.57 only
 
+- https://github.com/React-Artibox/artibox
+  - Artibox - A complete rich text editor based on Slate framework.
+  - /202011
+
 - more-slate-editor
-  - https://github.com/worktile/slate-angular
   - https://github.com/marsprince/slate-vue
 
 - deprecated
@@ -189,3 +218,12 @@ modified: '2022-05-15T18:45:27.570Z'
 
 - https://github.com/concord-consortium/slate-editor
   - Rich text editor based on Slate 0.47
+
+- https://github.com/Mirrorgo/slatejs
+  - 基于slate.js实现一个富文本编辑器, 用以学习富文本编辑器相关知识
+
+- https://github.com/gwwyn/react-editor
+  - Rich-text editor build with React and Slate
+
+- https://github.com/ccjr1120/story-editor_slate
+  - 基于slate的文本编辑器

@@ -209,6 +209,27 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - inline format menu: bold/italic
   - block menu
 
+## 0519
+
+- page初始渲染时，title是如何渲染的
+  - PageView渲染的不是title，而是普通Text组件，但传入了标题样式名
+
+- KeyboardEvent.metaKey
+  - On Macintosh keyboards, this is the ⌘ Command key
+  - 对windows，若按过windows键，则metaKey为true
+
+- 弹层应该实现为plugin，因为不处理编辑器核心的输入、渲染逻辑
+
+- block-left-menu、斜杠菜单、文本悬浮工具条、mention面板、group/ungroup悬浮菜单，可以有一个统一的唤起隐藏逻辑，根据所在block类型和数据动态渲染菜单项。
+
+- Editor层主要关注于编辑器核心能力的提供，例如编辑、选区、各种block的管理和控制，可以认为Editor是一个编辑器内核的sdk，类似于操作系统shell层；
+  - plugin是对Editor的能力增强，例如弹出菜单、下拉菜单、筛选过滤查找、导入导出等交互，这些交互形式不是编辑器内核关注的内容；
+  - plugin和Editor的交互，通过Editor层对外接口进行沟通，通过Editor的各种hook完成对plugin的回调
+
+- 可能的风险，现在大家都还没有使用plugin，我可能会根据需求增加plugin的api和方法的参数
+
+- undo/redo不仅回滚输入内容，还要回滚光标
+
 ## 0518
 
 - 浮动工具条 FloatingToolbarPlugin
@@ -217,13 +238,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 在自定义block的useEffect中，onSelectionChange/输入变化时
   - 在TextBlock或CodeBlock中触发 editor.getHooks().onEnter/onKeydown/onBeforeInput
 
-- dev-to-selection
+- dev-to-topic-selection
   - 向selectionManager中setSelection
   - 从selectionManager中getSelection
   - 下拉小弹窗、悬浮工具条，都需要从selection中 getBoundingClientRect
     - 获取一个range的text
 
-- dev-to-inline-menus
+- dev-to-topic-inline-menus
   - 👉 如何注册菜单项，斜杠commandMenuItems、inlineMenuItems
     - ✔ 不需要在全局注册菜单项，每个block自己传入自己支持的菜单项及事件
     - ckeditor采用的是初始化编辑器器传入toolbarConfig属性
@@ -243,9 +264,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
       - 缺点是针对工具条的不同操作，不同的按钮事件需要传入额外的不同的编辑器相关的参数
       - 触发条件是 showCommandMenu
 
-
 - 关于编辑器中选中文字或其他元素才会出现的悬浮工具条的命名
-  - slate: hovering-toolbar ❌️ 并不是hover就会出现的
+  - slate: hovering-toolbar 🤔 并不是hover就会出现的
   - ckeditor/slate-plate: balloon-toolbar
   - prosemirror: tooltip
   - medium-editor: inline/block-toolbar
