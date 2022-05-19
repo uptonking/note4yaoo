@@ -19,6 +19,10 @@ modified: '2022-05-15T18:41:17.192Z'
   - Collaboration-ready data model
   - Clear "core" boundaries
 
+- who is using slate
+  - worktile slate-angular
+  - wangEditor
+
 - slate-resources
   - https://docs.slatejs.org/
   - https://www.slatejs.org/examples/richtext

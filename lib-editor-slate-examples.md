@@ -73,12 +73,14 @@ modified: '2022-05-15T18:45:27.570Z'
 
 - https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js
+  - https://6.demo.plone.org/
   - An alternative text editor for Volto, capable of completely replacing the default richtext editor
   - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
   - 样式陈旧，编辑器和业务代码有联系
   - repos
     - https://github.com/eea/volto-slate-metadata-mentions
     - https://github.com/eea/volto-slate-footnote
+    - https://github.com/plone/volto
 
 - slate-angular /93Star/MIT/202205/ts
   - https://github.com/worktile/slate-angular
