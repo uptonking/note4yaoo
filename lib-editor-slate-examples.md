@@ -54,9 +54,12 @@ modified: '2022-05-15T18:45:27.570Z'
     - The library formerly known as @udecode/slate-plugins is now available as @udecode/plate
     - [Generic typescript for slate](https://github.com/ianstormtaylor/slate/pull/4177)
       - I unfortunately don't have the time to complete that PR, so I've forked that PR into Plate.
-
 - plate-repos
-  - https://www.npmjs.com/package/@frontify/arcade
+  - https://github.com/udecode/editor-protocol
+    - Editor Protocol is an open standard for building a rich text editor. 
+    - The protocol aims to cover all use-cases as there is no clear definition of what the standard should be.
+    - Plate is an example framework that will follow the Editor Protocol.
+  - https://github.com/frontify/arcade
     - Design System of Frontify
 
 - quadrats /4Star/MIT/202203/ts
@@ -154,6 +157,10 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/inokawa/remark-slate-transformer
   - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. Made for WYSIWYG markdown editor.
 
+- https://github.com/cihad/slate-table
+  - https://cihad.github.io/slate-table/
+  - Table Plugin for Slate (based on @udecode/slate-plugins above v1.0). Inspired by the Atlassian editor's table plugin.
+  - 依赖 slate.v0.61, @udecode/slate-plugins-table(2021)
 - https://github.com/daibin0809/slate-table-demo
   - slate 编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
   - 表格中无法再添加表格；

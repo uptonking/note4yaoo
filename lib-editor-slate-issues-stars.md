@@ -11,6 +11,12 @@ modified: '2022-05-15T18:48:53.816Z'
 
 # faq
 
+
+## [What is the purpose of onDOMBeforeInput?](https://github.com/ianstormtaylor/slate/issues/3302)
+- It's an event handler for the native DOM `beforeinput` event, because sadly React's synthetic events don't properly expose it. 
+  - In this case it's listening for specific inputTypes that browsers fire for context menus, etc.
+
+
 ## [Only use Slate Provider's value prop as initial state](https://github.com/ianstormtaylor/slate/pull/4540)
 
 - The value prop is now only used on the initial render to initialize the value prop. On subsequent changes it is ignored.

@@ -209,6 +209,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - inline format menu: bold/italic
   - block menu
 
+## 0520
+
+- inline悬浮工具条存在的问题
+  - 当菜单项过长时，未实现在工具条末尾添加更多图标来隐藏菜单项
+  - 工具条上每个图标都可以添加悬浮tooltip添加操作说明
+  - 工具条组件要支持下拉分组
+
+- TypeScript 3.9 给出了一个替代 // @ts-ignore 注释的方案：// @ts-expect-error。
+  - 从字面上我们不难理解为什么后者是更优的选择：
+  - 显示声明了会报错的原因，而不只是一味的规避检查；
+  - 向前兼容，未来如果 TypeScript 支持某语法导致不再报错，TypeScript 会主动提示删除注释，这会让代码变得更加简洁；
+
 ## 0519
 
 - page初始渲染时，title是如何渲染的

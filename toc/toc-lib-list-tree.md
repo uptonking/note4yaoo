@@ -98,6 +98,14 @@ modified: '2020-07-12T19:00:27.345Z'
   - https://lodin.github.io/react-vtree/
   - React component for efficiently rendering large tree structures
   - 依赖react-window
+
+- https://github.com/phb1206/atlaskit-tree-fork
+  - A modified version of @atlaskit/tree library.
+  - Flexible tree rendering
+  - Dynamic tree expansion with lazy loading
+
+Resources
+
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render
