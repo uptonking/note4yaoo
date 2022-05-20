@@ -1,17 +1,20 @@
 ---
-title: thread-web-testing
-tags: [testing, thread, web]
+title: thread-web-testing-debug
+tags: [debug, testing, thread, web]
 created: '2021-08-28T11:48:45.381Z'
 modified: '2021-08-28T11:49:05.730Z'
 ---
 
-# thread-web-testing
+# thread-web-testing-debug
 
 # discuss
 
 - ## 
 
-- ## 
+- ## Chrome can dynamically insert console.logs without touching your code.
+- https://twitter.com/marvinhagemeist/status/1527356830757933058
+  - Just right-click on the line and choose "logpoint", enter the variables you want to log and hit Enter
+- 💡 Pro-tip: instead of a logpoint for say `node` you can also use a conditional breakpoint with `console.trace(node)` as condition to achieve a logpoint that also includes the stack trace in the log message.
 
 - ## Use npm pack to test your packages locally
 - https://dev.to/scooperdev/use-npm-pack-to-test-your-packages-locally-486e

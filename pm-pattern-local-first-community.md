@@ -10,6 +10,21 @@ modified: '2022-03-03T18:20:12.075Z'
 # guide
 
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The idea of persisting UI state to a database has me thinking of tons of possibilities. 
+- https://twitter.com/devongovett/status/1526227167952117761
+  - Not only a super nice user feature, also great for development. You could reload and be right where you left off with no Fast Refresh needed. Or debug state using database tools. So cool!
+  - According to the article, sqlite is fast enough to store the scroll position and re-query data in a virtualized table in real time
+- Yes, that is how our app works for 7 years now ;-) we syns whole sate (localStorage then and idb now) and react to changes. All UI is built in browser. No hot reloads  needed.
+- I remember reading an article quite a while ago about how FB built their iOS app where everything was driven from SQLite tables - everything. It’s a pattern I’ve been interested in applying for a while. We already do it with business logic loaded + cached in client driving ui
+- There's a ClojureScript project that explores similar ideas: https://github.com/fulcrologic/fulcro. It changed my perspective on UI development
 
 - ## In Riffle we avoid manual network by optimistically loading all data onto the client and doing queries locally. 
 - https://twitter.com/geoffreylitt/status/1505932761453977606
@@ -83,7 +98,9 @@ modified: '2022-03-03T18:20:12.075Z'
   - I see now why people don’t generally do this. It was a huge amount of work. 
   - As it happens, Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others.
   - https://github.com/andymatuschak/orbit
+
     - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
+
 - another hard thing about implementing this type of data format is that web browsers demand their own implementation. 
   - @kirkbyo_ kindly implemented an IDB-based Orbit backend. Excited about absurd-sql
 

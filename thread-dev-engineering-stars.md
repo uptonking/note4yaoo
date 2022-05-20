@@ -15,7 +15,8 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## “Programming is mostly about reading previous code, researching what is needed and how it fits within the current system, and planning the writing of features with small, testable increments. The actual writing of lines of code is probably…” — @samerbuna
+- https://twitter.com/Yi_Xpress/status/1396602143575056389
 
 - ## 经常有人说国产数据库底层都是mysql/postgres没啥意思，其实他们大概率没有真的去开发过数据库。
 - https://twitter.com/niyue/status/1525081487175217152

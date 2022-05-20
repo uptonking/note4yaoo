@@ -27,6 +27,21 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
+- ## Played around with @rxdbjs this morning (https://rxdb.info, sound warning 😬). It makes a lot of interesting claims around local-first / synced / reactive apps. Have you used it before?
+- https://twitter.com/steveruizok/status/1526494443989356544
+
+- ## New blog post! about making tldraw's new "Copy to Multiplayer Project" feature with the @liveblocks storage APIs.
+- https://twitter.com/steveruizok/status/1527246419333107712
+
+- ## Hey, it's @tldraw on the @PopStage landing page!
+- https://twitter.com/steveruizok/status/1527269906269540353
+
+- ## We're developing Logseq whiteboards with @pengx17 (using the awesome open-source project @tldraw by @steveruizok ) to visualize the shape and connections of your thoughts
+- https://twitter.com/logseq/status/1527487236916228096
+- @Heptabase has a headstart for built-in functionality 💨 
+  - @obsdmd leverages @excalidraw thru the work of the tireless @zsviczian 🙏 
+  - was gonna say RIP @nototoapp (which dared to reach for 3 dimensions) …but looks like they're back as @sailoften
+
 - ## we're using the ClipboardAPI for copying images and pasting images, event.clipboardData for pasting files (but not copying files), HTML for copying application data, with IndexedDb as a backup for Safari.
 - https://twitter.com/steveruizok/status/1525474891671142400
   - Certain things work fine on Safari but not on mobile Safari. 

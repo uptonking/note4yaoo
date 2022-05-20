@@ -223,7 +223,10 @@ modified: '2021-06-12T02:41:33.389Z'
 
 - ## 
 
-- ## 
+- ## ProseMirror is now a TypeScript project_v20220520
+- https://discuss.prosemirror.net/t/prosemirror-is-now-a-typescript-project/4624
+- the code is now typed using strict TypeScript
+- No breaking changes should have been made to the JavaScript interface.
 
 - ## export work to Microsoft Word from our @prosemirror editor.
 - https://twitter.com/curvenote/status/1442542857944911873

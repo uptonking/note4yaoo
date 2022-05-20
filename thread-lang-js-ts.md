@@ -18,7 +18,8 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered?Besides the simplicity, you also get i18n for free.
+- https://twitter.com/diegohaz/status/1526874008049811461
 
 - ## Do you still use the Array method .forEach()? Poll:
 - https://twitter.com/rauschma/status/1525822812853870592
