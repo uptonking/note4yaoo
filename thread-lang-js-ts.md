@@ -16,9 +16,22 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
-- ## 
+- ## now that IE/Edge (legacy) are gone, I am using Proxy all over and one of the most compelling cases is the one-off cache through a Map
+- https://twitter.com/WebReflection/status/1528013495924666370
 
-- ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered?Besides the simplicity, you also get i18n for free.
+```JS
+const speedy = new Proxy(new Map, {
+  get(map, key) {
+    if (!map.has(key)) {
+      map.set(key, compute(key));
+    }
+    return map.get(key);
+  }
+});
+```
+- That’s destructuring to trigger the proxy getter and validate all at once … just one out of many examples where Proxy can improve DX a lot combined with modern JS syntax.
+
+- ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.
 - https://twitter.com/diegohaz/status/1526874008049811461
 
 - ## Do you still use the Array method .forEach()? Poll:
