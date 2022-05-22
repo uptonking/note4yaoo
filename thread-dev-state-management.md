@@ -75,11 +75,17 @@ modified: '2021-02-28T07:29:07.622Z'
 # pieces
 - ## 
 
-- ## 
+- ## IMO some things cleanly map to state machines, but a lot don’t. 
+- https://twitter.com/devongovett/status/1528013087470649345
+  - A hybrid approach is probably best where you have a state machine for actual states (ie booleans), and keep the rest separate. Forcing everything into these massive config objects is a recipe for unreadable code.
+  - State machines are a good tool, for states. For other things they have Redux level boilerplate (if not more). JS community tends to jump on new shiny things and apply them to everything. I would just urge a more measured approach. There are many ways of centralizing logic.
+  - Every example I’ve seen of any sort of complexity has had a lot of boilerplate. I find these configs much harder to read and follow than “traditional” code. Again, I think it’s a good tool, but if it were me I’d avoid context and actions and keep those outside the state machine.
+- The config objects shouldn't be massive. You should have separate machines for separate concerns. The hybrid approach is a valid approach
+  - The big advantage of keeping everything in one statechart is being able to target states directly in transitions (ie: minimize boilerplate by not needing more events).
+  - Part of what irks me are not only the massive configs but deeply indented inline closures … in people's code who should know better. IFL Lucy must help both 🎖️ I love XState conceptually
 
 - ## Writing a comparison article - Redux vs XState.
 - https://twitter.com/mpocock1/status/1523967853430509572
-
 
 - ## i made it(zustand) initially bc of problems that redux couldn't solve, after using redux for multiple years i started to dislike the opinionated nature. it's still flux which scales well.
 - https://twitter.com/0xca0a/status/1495360284139139074
