@@ -196,9 +196,9 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-later-v0518
   - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
     - 参SelectionManager实现
-  - [ ] 先实现单例弹窗
+  - [x] 先实现单例弹窗
     - 获取当前选区及在viewport中的物理位置
-  - [ ] 实现静态悬浮菜单
+  - [x] 实现静态悬浮菜单
   - [ ] 实现动态菜单项
   - [ ] 自定义菜单项事件
   - [ ] 重构Text组件，底层Text不处理业务，只处理编辑器相关逻辑
@@ -211,10 +211,43 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0520
 
+- dev-to
+  - popover
+    - block-left-menu、斜杠菜单、文本悬浮工具条、mention面板、group/ungroup悬浮菜单
+  - base states
+  - 图标资源
+
+- 讨论block-popover实现方式的问题
+  - 现在block-popover触发条件是onMouseEnter，交互友好吗？ 
+    - 之后会修改触发条件
+  - 是否用这种实现方式，每个block都有自己的弹窗，每个block都有自己的悬浮工具条吗？
+    - plugin机制是否要废弃，现在没人用，我感觉用react的方式我更顺手
+    - block的挂件工具条使用很频繁，且弹窗内容会转换为文内显示，支持2种形态，所以放在block是合理的
+  - 弹窗组件的内容是否要根据block类型动态变化
+    - 如对text-block有加粗斜体没有下载按钮，对list-block有切换类型
+    - 暂时不考虑太复杂的
+
+- 工具条设计稿
+- inline-menu 悬浮工具条
+  - 三级标题、block类型指示按钮、加粗、斜体、删除线、链接、代码块、字体颜色、字体背景色、对齐方式、block类型转换、唤起双链搜索
+  - 末尾更多是否一直显示？
+- tag-toolbar 挂件工具条
+  - 截止日期、人员、任务状态
+- group工具条
+  - list、kanban、table、add-view
+
 - inline悬浮工具条存在的问题
   - 当菜单项过长时，未实现在工具条末尾添加更多图标来隐藏菜单项
   - 工具条上每个图标都可以添加悬浮tooltip添加操作说明
   - 工具条组件要支持下拉分组
+  - selection变化时更新inlineMenu的位置
+
+- 悬浮工具条
+  - 第1个按钮，只修改标题级别
+  - 第2个按钮，只修改list类型，编号、无需、待办
+  - turn-into按钮，修改block类型
+    - 场景1，默认会拆分block
+    - 场景2，是具体目标类型而定，如变为图片标题
 
 - TypeScript 3.9 给出了一个替代 // @ts-ignore 注释的方案：// @ts-expect-error。
   - 从字面上我们不难理解为什么后者是更优的选择：
