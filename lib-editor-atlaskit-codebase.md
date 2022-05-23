@@ -14,7 +14,7 @@ modified: '2021-07-14T15:35:53.716Z'
 
 - src-branch-commit
   - [master-snapshot-v146.0.0](https://bitbucket.org/atlassian/atlassian-frontend-mirror/commits/92512bab8602ac0bc2bc8021a488c8fa81afe4dd)
-# reading
+# reading-to
 - primary toolbar
 - typeAhead
 - codeblock
@@ -26,6 +26,13 @@ modified: '2021-07-14T15:35:53.716Z'
 - 不支持动态改变编辑器底层prosemirror的schema
   - A significant issue is that we lose the ability to keep track of a user's history as the internal plugin state keeps a list of Steps to undo/redo (which are tied to the schema).
   - 尝试将部分plugin state同步到编辑器之外
+# codebase
+- atlaskit顶部工具条的实现原理
+  - 在editorState初始化时，读取所有plugins的配置，每个插件都包含 自己在 primaryToolbarComponent 的具体配置
+  - 每个plugin都可以对应一组工具条按钮
+    - 一组工具条按钮可以是水平按钮、下拉菜单
+    - 甚至在屏幕宽度很窄时，隐藏部分菜单项到更多菜单
+  - 每组按钮末尾都应该显示分隔竖线，最后一组除外
 # modules
 
 ## Atlaskit Editor/EditorProps

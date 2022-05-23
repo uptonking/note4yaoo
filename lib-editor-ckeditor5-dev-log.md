@@ -125,6 +125,13 @@ modified: '2021-10-27T03:20:45.841Z'
 - 产品日历组件
   - headless-date-picker
 
+- 编辑器参考
+  - atlassian-editor
+    - https://atlaskit.atlassian.com/packages/editor/editor-core
+    - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
+    - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
+    - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
+
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
 ```JS
@@ -189,10 +196,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
   - [] page和page-tree同步正常，page和navbar同步不正常
 
-- 备份带斜杠菜单的编辑器-bak20220506
-  - commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
-  - [旧架构的使用示例](https://github.com/toeverything/Ligo-Virgo/blob/b9d74bacb33198d073afb2b2331d1210ce476dc7/libs/components/heading/src/block.tsx)
-
 - dev-to-later-v0518
   - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
     - 参SelectionManager实现
@@ -208,6 +211,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - command menu
   - inline format menu: bold/italic
   - block menu
+
+## 0523
+
+- dev-to
+  - inline-menu 工具条ui、弹窗定位、selectionchange触发悬浮工具条
+
+- 工具条的视图类型
+  - 图标
+  - 图标 + 下拉三角图标
+  - 分隔竖线
 
 ## 0520
 
@@ -366,6 +379,10 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - 公司集体断网的原因
   - maximum number of concurrent DNS queries reached.(max: 150)
+
+- 备份带斜杠菜单的编辑器-bak20220506
+  - commit-id b9d74bacb33198d073afb2b2331d1210ce476dc7
+  - [旧架构的使用示例](https://github.com/toeverything/Ligo-Virgo/blob/b9d74bacb33198d073afb2b2331d1210ce476dc7/libs/components/heading/src/block.tsx)
 
 ### oneOnOne-terry-表格研发体验
 
