@@ -11,10 +11,23 @@ modified: '2021-01-19T17:09:26.629Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Many developers don't get why Web Components in React are an issue.
+- https://twitter.com/WebReflection/status/1527551263336013824
+  - In JSX a Component is a function that returns the element it wraps/hooks/represents.
+  - A Custom Element class though, represents *the element*, not its wrapping function: a different paradigm!
+  - The solution?
+  - It's pretty simple: Custom Elements Builtin Extend. This feature is the most natural, elegant, and easy to integrate (no DSD, SSR friendly) ever with JSX
+  - As summary, I see ShadowDOM as yet another dying API, with either a great new unintended purpose in the future, from some creative dev, or a slow defeat across every other possible userland custom made alternative that will be smaller, easier to reason about and easily faster too
+
 - ## Photoshop runs on the web as a PWA https://web.dev/ps-on-the-web/  and uses web components for their UI.
 - https://twitter.com/Justinwillis96/status/1525514490829103104
 - [Photoshop's journey to the web](https://web.dev/ps-on-the-web/)
-
 
 - ## 简单总结 Web Component 样式问题
 - https://twitter.com/zQwQs/status/1493902262779138048

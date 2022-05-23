@@ -17,6 +17,10 @@ modified: '2021-05-14T14:33:52.786Z'
 - comparison
   - popular: [prosemirror, codemirror, slate, draft](https://www.npmtrends.com/prosemirror-state-vs-draft-js-vs-@codemirror/state-vs-slate-vs-codemirror-vs-@editorjs/editorjs)
   - unpopular: @editorjs/editorjs, @craftjs/core, @tiptap/core, @codemirror/basic-setup
+
+- one data model to power editor and rendering
+  - 默认渲染为普通html元素，获取到焦点时变为编辑器
+  - 使用场景是评论
 # draft
 - 可拖拽的主界面
   - 考虑设计成类似trello这类数据卡片，可以任意拖动、缩放、auto-layout自动对齐

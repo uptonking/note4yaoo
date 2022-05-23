@@ -12,6 +12,17 @@ modified: '2021-01-06T14:40:11.360Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Syntax Highlighting - I have found this to be the easiest for syntax highlighting in react
+- https://twitter.com/theadamaho/status/1527753778384064513
+  - You can create your own theme as well. Then just pass the component to the MDXProvider as the `pre` component.
+
+- Big fan of this package! Changing the theme is as easy as copy-replace a css file and there are tons of themes to choose from (most popular VS Code themes included)
+  - https://github.com/FormidableLabs/prism-react-renderer/tree/master/src/themes
+
 - ## I really like React. I think it's a perfectly capable UI rendering library that can interact with my app logic (data, states, transitions, effects, etc.) that I keep *outside* of React as much as I can.
 - https://twitter.com/DavidKPiano/status/1525880368221589509
   - Yeah, I feel that too. React is more like a UI programming language, it's too low-level to do everything in it. We need proper design patterns that work on top of it for easy app development.

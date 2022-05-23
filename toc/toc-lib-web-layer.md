@@ -16,25 +16,14 @@ modified: '2021-01-17T06:18:28.855Z'
   - https://github.com/floating-ui/floating-ui
     - https://floating-ui.com/docs/motivation
     - Floating UI is the evolution of Popper v2, with a more modern API.
-    - Cross-platform
-      - Floating UI supports React Native, Canvas, WebGL, and more with the right interface logic.
+    - Cross-platform: React Native, Canvas, WebGL...
     - Inversion of control
-      - There were many issues opened surrounding the nature of `computeStyles` and `applyStyles` in Popper due to their opinionated defaults. 
       - Floating UI is just a function that returns some unrounded numbers for you, which you can use as you please.
-    - More intuitive API
-      - Popper's API is verbose and encourages mutation, which can be awkward to configure and hard to debug. 
-      - Floating UI is pure with more ergonomic usage
-    - Modular
-      - Popper is not tree-shakeable by default
-      - everything is modular by default, and thus tree-shakeable. 
-      - This means you can use Floating UI starting at its most fundamental level, without any middleware enabled already
+    - Modular: everything is modular by default, and thus tree-shakeable. 
     - Improved extensibility
-      - Modifiers in Popper are hard to write.
-      - Floating UI removes all of it, making it much easier to write custom middleware. 
       - The order of the array is yours to control and configure. 
       - The new architecture also supports finer control over the middleware lifecycle.
     - Strongly typed by default
-      - TypeScript is a first-class citizen
   - https://github.com/popperjs/popper-core
     - https://popper.js.org/
     - https://github.com/popperjs/react-popper
