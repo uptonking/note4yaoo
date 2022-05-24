@@ -237,6 +237,15 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - [unable to specify regexp inside json-config](https://github.com/dolsem/eslint-plugin-filename-rules/issues/8)
   - "ignorePath": "libs/components/ui/.eslintignore"
 
+- figma新图标引入
+  - 新 file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=4703%3A635
+  - 旧 file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=665%3A1735
+
+- 悬浮工具条样式
+  - height - 50
+  - 按钮 - 20x20
+  - 按钮 gap - 12
+
 ## 0523
 
 - dev-to
