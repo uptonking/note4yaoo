@@ -595,7 +595,8 @@ modified: '2020-10-22T06:49:10.760Z'
   - 支持table标签、li标签
 - https://github.com/vitmalina/w2ui
   - /1.8kStar/MIT/202009/js
-  - w2ui is a JavaScript UI library for building rich data-driven web applications. 
+  - UI widgets for modern apps. Data table, forms, toolbars, sidebar, tabs, tooltips, popups. All under 120kb (gzipped).
+  -  It aims to let you define your UI in a declarative way via JSON data structures.
   - 依赖jquery
 - https://github.com/webismymind/editablegrid
   - /765Star/MIT/201811/js

@@ -62,6 +62,10 @@ modified: '2020-12-29T17:52:31.539Z'
     - https://raw.githubusercontent.com/Leon406/pyutil/master/github/hosts
   - https://github.com/ineo6/hosts
     - GitHub最新hosts
+- 备用方法
+  - 直接百度搜索 github hosts，选择条件时间1月内，执行二次搜索
+  - gitee上搜索hosts
+    - https://gitee.com/yuchi-shentang/Hosts
 
 - git最近更新了socks5的语法，去掉了引号，git config --global http.proxy socks5://127.0.0.1:10808配合V2RayN可用
   - #只对github.com
