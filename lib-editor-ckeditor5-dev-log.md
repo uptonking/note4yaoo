@@ -212,6 +212,31 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - inline format menu: bold/italic
   - block menu
 
+- 拖拽逻辑继续
+  - 拖拽block到左右上下要放进去，dragend事件
+  - 菜单ui实现
+  - 拖拽时，没有显示横排布局
+
+## 0524
+
+- 浏览器点击任意位置时，selection.type === Caret 
+  - 浏览器双击文本选中时，selection.type === Range
+
+- 💡 hack editor-selection
+  - win浏览器双击选中文本时，先触发selection-caret，第2次点击后才会触发 selection-range
+  - mac浏览器无此问题
+  - 黑科技解决思路： 等待一段时间如300ms，可以在setTimeout里面拿到range类型的selection
+
+- Uncaught (in promise) TypeError: this.hide_inline_menu is not a function
+  - es6的class实例方法作为callback传递时，要在构造函数中bind
+
+- 解决eslint处理自动生成文件的异常
+  - 手动进文件添加 eslint-disable
+  - 在eslint-plugin仓库里面手动搜索issues，很可能是远古bug
+    - 使用第三方方案的缺点，早晚都会碰到未暴露的方法或不支持的配置项
+  - [unable to specify regexp inside json-config](https://github.com/dolsem/eslint-plugin-filename-rules/issues/8)
+  - "ignorePath": "libs/components/ui/.eslintignore"
+
 ## 0523
 
 - dev-to
