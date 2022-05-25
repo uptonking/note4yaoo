@@ -130,7 +130,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - toolbar bold/italic
     - 🤔️ 触发悬浮工具条渲染和更新时，要显示正确的初始状态，特别是高亮加粗斜体
     - 🤔️ 工具条按钮触发的编辑器操作，如何传入参数
+  - toolbar要在鼠标停止拖动后才显示，正在拖动时不应该显示，notion是此行为
   - drag to row layout
+
+- 需求
+  - 在其他react组件拿到编辑器数据和触发编辑器修改方法
+    - isFormatActive
+    - toggleFormat
+
+- 如何在其他react组件触发Text组件更新
+  - 思路1，将editor实例放到全局，getNodeById可拿到编辑器实例，就可以触发编辑器方法
+  - 思路2，getNodeById可拿到业务block实例，在工具条点击加粗，
+
+- selection选择时要考虑长表格的问题
+  - 删除部分行，还是删除整个表格
+  - database表格视图经常不显示所有行
 
 - toolbar组件参考
   - 优先参考 atlaskit 编辑器工具条的实现
@@ -140,6 +154,9 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - https://github.com/lucascassiano/react-minimalist-toolbar
 
 ## 0524
+
+- dev-to
+  - inline-menu 工具条ui、弹窗定位、selectionchange触发悬浮工具条
 
 - 🐛️ 对于在slate编辑器中双击选中文本时
   - chrome-linux的selectionchange事件，选区类型为range
@@ -174,9 +191,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 按钮 gap - 12
 
 ## 0523
-
-- dev-to
-  - inline-menu 工具条ui、弹窗定位、selectionchange触发悬浮工具条
 
 - 工具条的视图类型
   - 图标

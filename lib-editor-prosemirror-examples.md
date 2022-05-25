@@ -114,6 +114,11 @@ modified: '2021-07-20T02:15:25.917Z'
   - GFM Standard + Chart & UML Extensible.
   - 编辑器支持：chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
 
+- https://github.com/wenerme/wode
+  - https://wode.vercel.app/
+  - TipTap based Google Doc
+  - google采用canval好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
+
 - react-tinacms-editor
   - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
   - 基于ts
