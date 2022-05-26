@@ -167,8 +167,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to
   - toolbar bold/italic
-    - 🤔️ 触发悬浮工具条渲染和更新时，要显示正确的初始状态，特别是高亮加粗斜体
-    - 🤔️ 工具条按钮触发的编辑器操作，如何传入参数
+    - 触发悬浮工具条渲染和更新时，工具条按钮如何显示正确的初始状态，特别是高亮加粗斜体
+    - 工具条按钮触发的编辑器操作，如何传入参数
   - toolbar要在鼠标停止拖动后才显示，正在拖动时不应该显示，notion是此行为
   - drag to row layout
 
@@ -177,9 +177,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - isFormatActive
     - toggleFormat
 
-- 如何在其他react组件触发Text组件更新
-  - 思路1，将editor实例放到全局，getNodeById可拿到编辑器实例，就可以触发编辑器方法
-  - 思路2，getNodeById可拿到业务block实例，在工具条点击加粗，
+- 🤔️ 如何在其他react组件触发Text组件更新
+  - 👉🏻️ 思路1，命令式手动触发
+    - 将slate-text-editor实例放到全局，getNodeById可拿到编辑器实例，就可以触发编辑器方法
+  - 👉🏻️ 思路2，pub-sub
+    - 在工具条组件，getNodeById可拿到业务block实例，在工具条点击加粗，emit加粗事件，然后通过类似u
 
 - selection选择时要考虑长表格的问题
   - 删除部分行，还是删除整个表格

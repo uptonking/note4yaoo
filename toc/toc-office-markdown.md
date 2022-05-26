@@ -106,6 +106,10 @@ modified: '2021-01-04T17:26:25.032Z'
   - Foam is a personal knowledge management and sharing system built on VSCode and GitHub.
 - https://github.com/atom-community/markdown-preview-plus
   - a fork of Markdown Preview that provides a real-time preview of markdown documents.
+
+- https://github.com/markdoc/markdoc  /NoDeps
+  - Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites and experiences.
+  - We designed Markdoc to power Stripe's public docs
 # more-repos
 - https://github.com/rstudio/rmarkdown
   - rmarkdown package helps you create dynamic analysis documents
