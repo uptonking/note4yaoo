@@ -124,6 +124,45 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+## 0526
+
+- 🔨 在slate-text编辑器外的toolbar组件触发更新slate-text组件
+  - 点击toolbar按钮时，在toolbar组件触发 toggle-text-bold事件
+  - 在text组件中监听对应事件，然后执行toggleBold方法
+  - 若block是文本，则直接toggle高亮button
+  - 对于跨段落的选区，在各个text组件分别执行bold方法
+
+- 🔨 如何显示工具条上bold按钮的高亮状态
+  - toolbar渲染时，还是选区change后toolbar出现前？，在toolbar组件触发 check-text-bold事件
+    - emitter.emitAsync('check-bold',0) .then((results) => { console.log(results);  
+  - 在text组件中监听对应事件，然后执行isBold方法，将结果放到resolve参数
+  - 👉 等待所有isBold执行完毕
+    - 若全为true，则触发 toggle-toolbar-bold事件
+    - 若有一个为false，则do nothing
+
+- 复制粘贴的一般处理方式
+  - 软件内部json，软件外部富文本？
+
+- 旧代码未实现加粗斜体按钮显示初始高亮状态，不必执着于找参考实现
+
+- eventemitter流行度
+  - https://www.npmtrends.com/eventemitter2-vs-eventemitter3-vs-eventemitter4-vs-events
+- [React: Event Emitter](https://lolahef.medium.com/react-event-emitter-9a3bb0c719)
+- [Event Emitter instead of lifting state up in React](https://medium.com/@krzakmarek88/eventemitter-instead-of-lifting-state-up-f5f105054a5)
+
+- [EventEmitter implementation that allows you to get the listeners' results?](https://stackoverflow.com/questions/19214723)
+  - I don't think it should be. Event Emitter should not return callback results. Eventemitters are an alternative to asynchronous function calls, if you use them correctly. You should not try to combine them and complicate stuff.
+  - https://github.com/mercmobily/EventEmitterCollector
+  - https://github.com/EventEmitter2/EventEmitter2
+
+- [Node.js: how can I return a value from an event listener?](https://stackoverflow.com/questions/42802931)
+  - 思路是修改 emitter.emit("sayHello", data); 的data参数
+  - 但不清楚具体什么时候data才会变化
+  - 在其他地方很难拿到data数据
+
+- [NodeJS EventEmitter: how to wait for all events to finish?](https://stackoverflow.com/questions/71684125)
+  - 思路是 extends EventEmitter
+
 ## 0525
 
 - dev-to
