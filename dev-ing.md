@@ -124,6 +124,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+## 0527
+
+- dev-to
+  - 调整取消高亮的逻辑，部分文本含有mark标记时，应该先加粗，接着点击时才取消加粗
+  - 调整工具条位置，不要显示成2行
+  - 处理跨选区改变文本样式的情况
+  - 编辑器工具条按钮缺少下划线
+
+- SelectionManager是如何实现只通知和更新选中blocks，而不通知未选中blocks
+
 ## 0526
 
 - 🔨 在slate-text编辑器外的toolbar组件触发更新slate-text组件
