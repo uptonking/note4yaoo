@@ -93,6 +93,9 @@ modified: '2021-01-12T18:49:13.490Z'
 - ASCII Generator
   - https://www.snapfiles.com/screenshots/asciigenerator.htm
   - convert images into ASCII text art - an image that is entirely made of text characters.
+
+- https://github.com/bnoctis/activate-web
+  - The "Activate Windows" watermark ported to Open Web
 # engineering
 - https://github.com/microsoft/playwright
   - https://playwright.dev/

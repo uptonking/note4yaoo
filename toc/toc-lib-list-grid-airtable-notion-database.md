@@ -110,6 +110,9 @@ modified: '2022-03-14T19:55:47.081Z'
   - Backend: express.js, knex, 
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
+- https://github.com/nocobase/nocobase
+  - https://www.nocobase.com/
+  - NocoBase is a scalability-first, open-source no-code/low-code development platform.
 
 - https://github.com/seatable/seatable
   - SeaTable is a spreadsheet/database like Airtable.

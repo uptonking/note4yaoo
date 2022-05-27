@@ -32,9 +32,21 @@ modified: '2020-12-09T09:30:24.694Z'
 
 - https://github.com/rawgraphs/rawgraphs-app
   - https://rawgraphs.io/
-  - A web interface to create custom vector-based visualizations on top of RAWGraphs core
+  - RAWGraphs is an open web tool to create custom vector-based visualizations on top of the amazing d3.js
+  - RAWGraphs works with tabular data (e.g., spreadsheets and comma-separated values) as well as with copied-and-pasted texts from other applications. 
+  - Based on the SVG format, visualizations can be easily edited with vector graphics applications 
+  - data injected into RAWGraphs is processed only by the web browser: no server-side operations or storages are performed.
+- https://github.com/rawgraphs/rawgraphs-core
+  - https://rawgraphs.io/rawgraphs-core/docs/
+  - This javascript library was born to simplify and modularize development of the RawGraphs web app, but it can be used to implement the RAWGraphs workflow and rendering charts from javascript code.
+  - 只依赖d3
+- https://github.com/rawgraphs/rawgraphs-charts
+  - A curated selection of charts provided through RAWGraphs interface
+  - It uses the RAWGraphs core API to define charts behaviours.
+
 - https://github.com/getredash/redash
   - http://redash.io/
+  - 依赖 python-flask、antd、d3.v3.5.17
   - SQL users leverage Redash to explore, query, visualize, and share data from any data sources.
 
 - https://github.com/ricklamers/gridstudio
@@ -83,7 +95,7 @@ modified: '2020-12-09T09:30:24.694Z'
   - an interactive, animated COVID-19 coronavirus map to track the outbreak over time by country and by region
 
 - https://github.com/savecost/datav
-  - Visualization for metrics,traces and logs etc, datav is a lightweight but better alternative to Grafana. 
+  - Visualization for metrics, traces and logs etc, datav is a lightweight but better alternative to Grafana. 
   - 后端依赖go
 # misc
 - snorkel

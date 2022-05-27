@@ -6,6 +6,9 @@ modified: '2021-03-29T19:30:08.250Z'
 ---
 
 # dev-log-faq-100k-not-yet
+
+- 不同tab页面同步数据的方案
+
 - 闭包和class的实例变量
 
 - http和rest的区别是什么
