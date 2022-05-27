@@ -126,13 +126,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0527
 
-- dev-to
+- dev-to-inline-toolbar
   - 调整取消高亮的逻辑，部分文本含有mark标记时，应该先加粗，接着点击时才取消加粗
   - 调整工具条位置，不要显示成2行
   - 处理跨选区改变文本样式的情况
   - 编辑器工具条按钮缺少下划线
 
 - SelectionManager是如何实现只通知和更新选中blocks，而不通知未选中blocks
+  - emit事件时，传入需要执行方法的blocks ids
+
+- vscode使用本地ts
+  - "typescript.tsdk": "node_modules/typescript/lib"
+  - 还可以直接升级vscode，里面会带有某个版本的typescript
+
+- debug时发现，subscribe注册的方法总是执行2遍
+  - 排查发现是忘了在useEffect里面 return ()=> unsubscribe() 导致
 
 ## 0526
 
