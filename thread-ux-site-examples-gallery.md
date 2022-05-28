@@ -71,3 +71,6 @@ modified: '2021-08-16T06:46:12.800Z'
   - https://ishaan28malik.github.io/champion-runner-home/
   - https://divymr.tech/
   - https://abdulsalam.netlify.app/
+
+- ## What’s your favorite landing page these days?
+- https://twitter.com/linuz90/status/1530134398078799873

@@ -16,6 +16,15 @@ Symbol('a') === Symbol('a') //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## It just occurred to me—.filter() could also be called .findAll()
+- https://twitter.com/rauschma/status/1529099909575720962
+
 - ## now that IE/Edge (legacy) are gone, I am using Proxy all over and one of the most compelling cases is the one-off cache through a Map
 - https://twitter.com/WebReflection/status/1528013495924666370
 
@@ -29,6 +38,7 @@ const speedy = new Proxy(new Map, {
   }
 });
 ```
+
 - That’s destructuring to trigger the proxy getter and validate all at once … just one out of many examples where Proxy can improve DX a lot combined with modern JS syntax.
 
 - ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.

@@ -12,7 +12,9 @@ modified: '2021-04-19T14:52:58.244Z'
 # discuss
 - ## 
 
-- ## 
+- ## Did @framer pivot from prototyping tool to website builder? Very interesting move, and as usual the landing page is absolutely exceptional.
+- https://twitter.com/linuz90/status/1530114519661527040
+- Interesting, I think maybe it was a good bet as figma and skitch seems to be eating the market 👀
 
 - ## 国外越来越多产品用 discord 作为用户社区，但我觉得即时聊天作为社区真的很难用，没有话题归纳，一段时间没看就不知道在讨论什么了。微信群也一样。
 - https://twitter.com/chloerei/status/1525376736757571587

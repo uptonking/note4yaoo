@@ -13,7 +13,19 @@ modified: '2021-07-25T12:49:10.410Z'
 
 - ## 
 
-- ## 
+- ## Atomic CSS is surprisingly effective performance wise (if done well) which is why I'm all about it lately. 
+- https://twitter.com/sebmarkbage/status/1529622374575923206
+  - It scales well by flattening out both in terms of number of rules and incrementally loading rules. 
+  - It minimizes recalc of the whole documents. It allows for local scoping.
+  - The surprising part is why is it better than inline styles? Set aside the things inline styles can't do without JS like hover/media queries. Why is a string like `class="width-100 height-100"` (AND more bytes elsewhere) better for perf than `style="width: 100px; height: 100px"` ?
+  - It seems to me that it basically comes down to parsing and converting these rules to internal representations in the browser. This is also supported by similar data from React Native. It's surprisingly costly to convert these strings to the native representation of the platform.
+  - We're effectively using CSS only as a hash map to look up cached parsed values. Maybe browsers should just do that with all inline styles? At least the ones that don't change frequently (like a JS animation). We're effectively using classes as hint that something will be reused.
+- **It’s not parsing itself that’s slow - that can be super fast**. 
+  - It’s all the stuff that happens afterward, eg computing inherited values for every element, variable substitution etc. 
+  - Inline styles also use a lot more memory per element than pointers to matched rules.
+
+- Might be missing something but is `http://el.style.background = "some css string"` the same as `eval`?
+- https://twitter.com/markusparkus5/status/1529421308961890304
 
 - ## In CSS you can use `display: contents` to omit the box of an element, which makes it behave like its child elements
 - https://twitter.com/sobedominik/status/1441004416866213892

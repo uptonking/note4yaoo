@@ -16,6 +16,37 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## 
+
+- ## Here's how useAbortSignal is implemented. This is possible because React no longer warns about setting state of unmounted components.
+- https://twitter.com/dai_shi/status/1529413104505073664
+
+- ## We've told people for _years_ not to put non-serializable values like class instances into Redux, b/c it may cause issues with the DevTools + other problems.
+- https://twitter.com/acemarke/status/1530191105836335104
+
+- What are your issues exactly with unserializable data in this case?
+  - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,   `ValueFront`,   `Pause`, etc. 
+  - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
+  - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
+  - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
+  - As a hack workaround, I had to pre-freeze the top-level array of items being put into the reducer, so that Immer won't recursively freeze the values inside.
+
+- Alternative: onSubmit in your component, have it do your http://axios.post or fetch or whatever, and have the callbacks from it dispatch actions.
+  - Best practice: treat everything as immutable. Create new structs/objects/types whenever you want to change something inside it.
+
+- How would you model an abortable async call with only serializable types in Redux?
+  - Include a `signal` option in your fetch from an AbortController. Attach an event handler to your signal which dispatches an action when/if it's cancelled.
+
+- Yep! Treat redux like a REST api. Same rules apply. If you need fancy class stuff, pass the serialized values into the constructor of said fancy class when you need it.
+  - Bonus: way more flexibility as you can pass those values to many different types of fancy classes. You’re not stuck with that one implementation and instance.
+
+- Time for [Symbol.serialize], [Symbol.deserialize], [Symbol.comparator] and [Symbol.hash] to be added alongside [Symbol.iterator].
+
+- ## Does it make sense to use the new useInsertionEffect() in React-Helmet to update doc title/description?
+- https://twitter.com/sebastienlorber/status/1530180431475265537
+  - It’s unclear how it’ll interact with offscreen atm and it would likely mean that it gets inserted early for optimistic rendering which would update the title before you got there. In general I’d recommend everyone to not use it, unless it’s a `<style>` insertion library.
+
 - ## Syntax Highlighting - I have found this to be the easiest for syntax highlighting in react
 - https://twitter.com/theadamaho/status/1527753778384064513
   - You can create your own theme as well. Then just pass the component to the MDXProvider as the `pre` component.

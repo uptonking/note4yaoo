@@ -27,6 +27,20 @@ modified: '2021-08-06T07:36:05.864Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## getBoundingClientRects is always axis-aligned
+- https://twitter.com/steveruizok/status/1529926723504160771
+  - there we go. scrollWidth / scrollHeight to the rescue
+  - offsetTop/offsetLeft/clientWidth/clientHeight are calculated before transforms, although the positions are relative to the nearest positioned parent.
+  - Luckily in this case we only need the height and width, so I think we're good to go with those.
+- And as I’ve recently learned, expensive to compute too
+  - Depends how often and how many things! I think it's alright for text, though I wish there were better ways to isolate layout (e.g. for absolutely positioned things)
+
 - ## Played around with @rxdbjs this morning (https://rxdb.info, sound warning 😬). It makes a lot of interesting claims around local-first / synced / reactive apps. Have you used it before?
 - https://twitter.com/steveruizok/status/1526494443989356544
 

@@ -10,6 +10,15 @@ modified: '2021-08-06T08:32:26.142Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## After 3 years, I still love that data fetching hooks maximize the concurrency automatically. Which has been something tricky with awaits/Promises.
+- https://twitter.com/shuding_/status/1529264553900531712
+  - Data dependency is a directed acyclic graph. We used to describe that graph using `Promise.all` s, but in many cases it's still not optimized enough.
+  - With Dependent Fetching, we can walk through it as parallelized as possible (no extra code needed).
+
 - ## Thunks are great for "run some code now and dispatch eventually" logic, but they can't _listen_ for other actions.
 - https://twitter.com/acemarke/status/1440494692836069392
   - Sagas and observables are widely used for that, but they're heavyweight syntactically and conceptually.

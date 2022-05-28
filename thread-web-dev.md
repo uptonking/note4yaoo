@@ -33,12 +33,17 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
-- ## 
+- ## If your site has a dark theme, make sure to set: `:root { color-scheme: dark }` So scroll bars are also dark.
+- https://twitter.com/diegohaz/status/1529543787311144961
+  - If you need to set it programmatically with JavaScript:
+  - document.documentElement.style.colorScheme = "dark"
+
+- which is better this vs `<meta name="color-scheme" content="dark">` in head?
+  - You can use both, but the CSS color-scheme is more flexible since you can add it to individual elements
 
 - ## Does there exist a decent, modern boilerplate for creating browser devtools? 
 - https://twitter.com/DavidKPiano/status/1512901804127830019
 - In the past I basically just ripped off @tannerlinsley pattern, he just mounts a “panel” (absolute positioned Div) within the app :)
-
 
 - ## 我在推微前端时，经常会被问： “为什么不用 iframe？”
 - https://twitter.com/ThaddeusJiang/status/1514604744790376450

@@ -9,6 +9,21 @@ modified: '2021-05-13T03:13:52.403Z'
 
 # guide
 
+# discuss-stars
+- ## I was spending a lot of cycles trying to use statecharts for my @convey_it selection tool states/event-handling, but today decided to parachute out and back to a messier imperative approach. 
+- https://twitter.com/seflless/status/1530576508124811264
+  - Was using XState and the @statelyai editor for it, which is great. May revisit
+- I’m using tool states for tldraw though not xstate. Generally the events are finite (pointerMove, pointerDown) with different payloads depending on what is being interacted with. Having “local context” for states (eg members of the state instance) is extremely useful too.
+  - Context might be the wrong word for it. Having a class for each state lets me stick data onto the class, either non-reactive info that I want to keep around, like the original positions of things, or reactive (via mobx)
+  - Almost everything is non-reactive though. It’s more like “here’s a scratch pad of data that I can use while in this state, and which is relevant only to the state”.
+  - **I ran into the same problem with state-designer in globs/early tldraw**, where the context would get crowded with data that was really only needed in one particular state but needed to be shared among events/actions there
+
+- This exact thing around context getting crowded with variables not needed in many states, thrown away when finished etc. So encapsulating data into some state instance is cleaner
+  - I keep imagining some sort of clean category theory like state machine/chart that might solve this. Where a state is enumerated (name in editor) & strongly types (properties would show in editor) as to what “context” is allowed. Transitions would include a reducer to share state
+
+- why didn't state charts work for your scenario?
+  - There are a lot of states in a selection tool, modifiers, internal state, events to handle, & interrupt support. Selection tools have scale, creation, translating, rotating, modifier keys, etc. Coming up with names is annoying/fragile as you find edge cases and have to refactor
+
 # discuss
 - ## Who is using XState in production?
 - https://twitter.com/DavidKPiano/status/1514944861341892612

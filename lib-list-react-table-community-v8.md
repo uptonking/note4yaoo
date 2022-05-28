@@ -17,7 +17,9 @@ modified: '2021-05-13T02:54:14.171Z'
 
 - ## 
 
-- ## 
+- ## React Table will here-forth be known as... TanStack Table!
+- https://twitter.com/tannerlinsley/status/1530298053046857728
+  - Adapters for React, Solid, Svelte & Vue
 
 - ## After a lot of research and even implementation, I found requestIdleCallback scheduling is not the right performance tradeoff for the CPU/Memory load of #ReactTable. 
 - https://twitter.com/tannerlinsley/status/1524128427229335552

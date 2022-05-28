@@ -48,7 +48,34 @@ modified: '2021-08-22T16:08:42.552Z'
 
 - https://codesandbox.io/s/radix-ui-with-vanilla-extract-rnl9d
 # discuss
-- ## `background-color: var(--colors-brand);` Is this code valid? Is this variable defined anywhere? 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I missed this React discussion from 2021. Looks like they're officially recommending moving away from runtime CSS-in-JS towards static extraction
+- https://twitter.com/markdalgleish/status/1528948996706025472
+  - vanilla-extract isn't the only library doing this, but it's great to see our direction being validated.
+
+- I have been against css in js from day 0. Since we were putting work of html already in js and with css in js we had put all work in js bucket leaving css to wait for js to execute first. AFAIK css and js parsing can happen in parallel which was not leveraged in css in js.
+
+- Is there any plans to add nesting? The only downside I  see with vanilla-extract is it's pretty verbose. It takes a lot longer to style elements.
+  - Maybe he means targeting other descendant elements?
+
+- what's the possibility vanilla extract gets static extraction without requiring the styles to be isolated in a separate file
+  - It's something we've debated a lot amongst ourselves, but we find **we prefer the explicit boundary between the two execution environments**—similar to the way Server Components are handled.
+- yeah that's fair I just really enjoy the Stitches API since where the style definition and component definition is one step
+- pretty similar on how css modules are being handled in a lot of frameworks, right? `<Component>.module.css`
+
+- does vanilla-extract give you a stylesheet you can `<link ... />` to? i was told it didn't?
+  - Yep! It’s a build tool that takes all your .css.ts files and generates a stylesheet. Basically like Sass or CSS Modules except that you author the styles in TypeScript!
+
+- ##  `background-color: var(--colors-brand);` Is this code valid? Is this variable defined anywhere? 
 - https://twitter.com/markdalgleish/status/1487393650607034373
   - Unless you look at every other CSS file in your project, there's no way to know.
   - This is what we're addressing when we talk about "type safety" for CSS variables in vanilla-extract.
