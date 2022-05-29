@@ -19,6 +19,12 @@ modified: '2022-05-15T18:41:17.192Z'
   - Collaboration-ready data model
   - Clear "core" boundaries
 
+- pros
+  - easy to start
+
+- cons
+  - 未提供comment示例
+
 - who is using slate
   - worktile slate-angular
   - wangEditor

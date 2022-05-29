@@ -23,13 +23,18 @@ modified: '2022-05-15T18:41:39.560Z'
     - The data model is now comprised of simple JSON objects.(old: Immutable.js data structures)
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
     - The codebase now uses TypeScript. 
+
+- slate-examples
+  - https://www.slatejs.org/examples/richtext
+  - https://www.slatejs.org/examples/hovering-toolbar
+  - https://www.slatejs.org/examples/mentions
 # motivation
-- Why create Slate?
+- ## Why create Slate?
   - Before creating Slate, I tried a lot of the other rich text libraries out there—Draft.js, Prosemirror, Quill, etc.
   - What I found was that while getting simple examples to work was easy enough, once you started trying to build something like Medium, Dropbox Paper or Google Docs, you ran into deeper issues...
 - The editor's "schema" was hardcoded and hard to customize. 
   - Things like bold and italic were supported out of the box, but what about comments, or embeds, or even more domain-specific needs?
-- Transforming the documents programmatically was very convoluted. 
+- Transforming the documents programmatically was very convoluted(复杂的，晦涩的). 
   - Writing as a user may have worked, but making programmatic changes, which is critical for building advanced behaviors, was needlessly complex.
 - Serializing to HTML, Markdown, etc. seemed like an afterthought. 
   - Simple things like transforming a document to HTML or Markdown involved writing lots of boilerplate code, for what seemed like very common use cases.
@@ -42,7 +47,7 @@ modified: '2022-05-15T18:41:39.560Z'
 - Building complex, nested documents was impossible. 
   - Many editors were designed around simplistic "flat" documents, making things like tables, embeds and captions difficult to reason about and sometimes impossible.
 
-- Slate Principles
+- ## Slate Principles
 - First-class plugins. 
   - The most important part of Slate is that plugins are first-class entities. 
   - That means you can completely customize the editing experience, to build complex editors like Medium's or Dropbox's, without having to fight against the library's assumptions.
