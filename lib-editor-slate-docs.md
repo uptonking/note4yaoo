@@ -76,7 +76,7 @@ modified: '2022-05-15T18:41:39.560Z'
   - But it can also provide the editor state to other components like toolbars, menus, etc. using the `useSlate` hook.
   - You can think of the `<Slate>` component as providing a context to every component underneath it.
     - Slate Provider's "value" prop is only used as initial state for `editor.children`. 
-    - If your code relies on replacing `editor.children` you should do so by replacing it directly instead of relying on the "value" prop to do this for you. 
+    - If your code relies on replacing `editor.children`, you should do so by replacing it directly instead of relying on the "value" prop to do this for you. 
   - By having a shared context, those other components can execute commands, query the editor's state, etc.
 
 - `<Editable>` component acts like `contenteditable`.
@@ -106,7 +106,8 @@ modified: '2022-05-15T18:41:39.560Z'
 - if you want to save your content as plain text instead of JSON, we can write some logic to serialize and deserialize plain text values
   - Note that even though you can serialize your content however you like, there are tradeoffs. 
   - The serialization process has a cost itself, and certain formats may be harder to work with than others. 
-- If you want to update the editor's content in response to events from outside of slate, you need to change the children property directly. 
+
+- **If you want to update the editor's content in response to events from outside of slate**, you need to change the `children` property directly. 
   - The simplest way is to replace the value of editor.children `editor.children = newValue` and trigger a re-rendering (e.g. by calling `editor.onChange()` in the example above). Alternatively, you can use slate's internal operations to transform the value
   - Alternatively, you can use slate's internal operations to transform the value
 # concepts

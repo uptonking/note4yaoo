@@ -11,6 +11,11 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- 'Text.isTextList is not a function' 
+  - https://github.com/ianstormtaylor/slate/issues/1076
+  - 原因是忘了 import { Text } from 'slate'; 
+  - 默认会使用浏览器环境全局默认的Text类型
+
 - /usr/bin/env: ‘sh\r’: No such file or directory
   - [docker env: bash\r: No such file or directory](https://stackoverflow.com/questions/70380310)
   - 解决方案是，直接在vscode中，将 /.husky/pre-commit 文件的编码从CRLF改为LF
