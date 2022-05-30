@@ -124,6 +124,37 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+## 0530
+
+- dev-to
+  - inline-toolbar 页面滚动时，工具条没有reposition
+    - 暂时基于滚动条发出的通知来更新弹出层的位置
+
+- 基于eventemitter实现悬浮工具条加粗斜体的问题
+  - 实现加粗斜体的action实现容易，但获取选中文本初始高亮状态需要搜集action的结果，比较复杂
+  - plugin里面需要添加单独的eventemitter，与editor plugin的hooks设计不符
+
+- 优先实现command-menu、拖拽并排布局的功能
+  - 暂停显示按钮初始高亮状态
+
+- 现在SlateText组件对内容的覆盖，是全量覆盖text字段的value
+  - 可以在blockdb直接修改text数据，然后blockdb通知SlateText更新
+
+- ？ot默认指令，crdt默认修改
+
+- useSyncExternalStore使用示例，类似redux
+  - [React18中的新特性——useSyncExternalStore](https://juejin.cn/post/7056588815170813965)
+
+- 白板要点
+  - 里面的编辑器能可用、resize
+  - 各种笔
+  - 各种形状
+  - 白板协作：editor和白板的光标
+
+- 项目开发排期
+  - 一个星期一个功能
+
+- figma中点击导航条三角形演示按钮，可以播放设计稿中支持的动画
 ## 0527
 
 - dev-to-inline-toolbar
