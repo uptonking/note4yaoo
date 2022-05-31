@@ -19,6 +19,7 @@ modified: '2021-05-23T16:31:36.100Z'
   - 只依赖uuid
   - Accessible keyboard-friendly interactive list/menu component
   - 提供了丰富的示例，包括 vertical、horizontal、grid、imperative、virtualized
+  - 长列表的示例支持向下方向键自动滚动
   - virtualized的示例基于 react-virtualized
 
 - https://github.com/dzucconi/use-keyboard-list-navigation

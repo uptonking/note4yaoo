@@ -124,18 +124,96 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+## 0531
+
+- 旧项目双链的弹窗在数量很多时，会出现滚动条
+
+- [Hide scroll bar, but while still being able to scroll](https://stackoverflow.com/questions/16670931)
+- 思路1: 让子容器宽度大于父容器，然后子容器右边滚动条被挡住
+
+```css
+.container1 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container2 {
+  box-sizing: border-box;
+  /* 让子容器宽度大于父容器，然后子容器右边滚动条被挡住 */
+  width: calc(100% + 5px);
+  height: 100%;
+  overflow-y: scroll;
+}
+```
+
+- 思路2: 子容器采用绝对定位，right设置负值比父容器更宽而被挡住
+
+```CSS
+.container3 {
+  box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container4 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -5px;
+  overflow-y: scroll;
+}
+```
+
+- [CSS: How to get browser scrollbar width?](https://stackoverflow.com/questions/28360978)
+  - Scrollbar widths can vary between browsers and operating systems, and unfortunately CSS does not provide a way to detect those widths: we need to use JavaScript
+  - The default scrollbar width can range anywhere from 12px to 17px.
+
+```JS
+// This example would usually return: 15px
+let scrollbarWidth = (window.innerWidth - document.body.clientWidth) + 'px';
+// if your document.body has a max-width: 
+const scrollbarWidth = window.innerWidth - document.documentElement.offsetWidth
+```
+
+```JS
+// Create the div
+var scrollDiv = document.createElement("div");
+scrollDiv.className = "scrollbar-measure";
+document.body.appendChild(scrollDiv);
+
+// Get the scrollbar width
+var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+console.warn(scrollbarWidth);
+
+// Delete the div
+document.body.removeChild(scrollDiv);
+```
+
+- [Browser Scrollbar Widths (2018)](https://codepen.io/sambible/post/browser-scrollbar-widths)
+  - OSX (Chrome, Safari, Firefox) - 15px
+  - Windows XP (IE7, Chrome, Firefox) - 17px
+  - Windows 7 (IE10, IE11, Chrome, Firefox) - 17px
+  - Windows 8.1 (IE11, Chrome, Firefox) - 17px
+  - Windows 10 (IE11, Chrome, Firefox) - 17px
+  - Windows 10 (Edge 12/13) - 12px
+
 ## 0530
 
 - dev-to
   - inline-toolbar 页面滚动时，工具条没有reposition
-    - 暂时基于滚动条发出的通知来更新弹出层的位置
+    - 暂时可以采用基于滚动条发出的通知来更新弹出层的位置
+- 优先实现command-menu、拖拽并排布局的功能
+  - 暂停显示按钮初始高亮状态
 
 - 基于eventemitter实现悬浮工具条加粗斜体的问题
   - 实现加粗斜体的action实现容易，但获取选中文本初始高亮状态需要搜集action的结果，比较复杂
   - plugin里面需要添加单独的eventemitter，与editor plugin的hooks设计不符
-
-- 优先实现command-menu、拖拽并排布局的功能
-  - 暂停显示按钮初始高亮状态
 
 - 现在SlateText组件对内容的覆盖，是全量覆盖text字段的value
   - 可以在blockdb直接修改text数据，然后blockdb通知SlateText更新
@@ -155,6 +233,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 一个星期一个功能
 
 - figma中点击导航条三角形演示按钮，可以播放设计稿中支持的动画
+
 ## 0527
 
 - dev-to-inline-toolbar

@@ -48,9 +48,23 @@ modified: '2021-05-13T04:44:39.320Z'
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
 # blogging
 
-# [CKEditor 5: The Future of Rich Text Editing_201510](https://medium.com/content-uneditable/ckeditor-5-the-future-of-rich-text-editing-2b9300f9df2c)
-- Why CKEditor 5?
-  - (tl; dr) To keep leading on innovation everything is to be re-thought.
+## [在线协作软件的三个核心引擎](https://juejin.cn/post/7002595221103968293)
+
+- 优秀的协作软件必然由三个核心引擎构建：渲染引擎，协同引擎以及数据引擎
+- 渲染引擎
+  - 富文本编辑器
+  - 表格
+  - 图形编辑器
+  - bi
+- 协同引擎
+  - 即时性、一致性、健壮性
+- 数据引擎
+  - Word - openxml的设计
+  - Etherpad - 采用字符串 Z:1>6b|5+6b$Welcome to Etherpad!
+  - Google Docs Word - 采用一个commands集合的设计
+  - Google Docs Spread - 设计比较像Excel，但是使用的protobuf
+  - Notion - 很明显是结构化的属性数据，并且使用CRDT的冲突解决数据结构
+- 在Startup阶段，找到对应领域的合适技术选型，选择做出你协作软件的MVP，当自研能够成为你的壁垒或者优势，再选择自研
 # more
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)
 - [TEXT EDITING HATES YOU TOO](https://lord.io/text-editing-hates-you-too/)
@@ -58,3 +72,10 @@ modified: '2021-05-13T04:44:39.320Z'
 - [为什么 ContentEditable 很恐怖](https://www.oschina.net/translate/why-contenteditable-is-terrible)
 
 - [Slate.js - 革命性的富文本编辑框架](https://s1973.top/blog/0015499011852838c3eb8e0d6d14a3f97bee6e61fa1cd26000)
+
+- [How we use WebAssembly at Fiberplane_202205](https://fiberplane.dev/blog/how-we-use-webassembly-at-fiberplane/)
+- [Creating a Rich Text Editor using Rust and React_202204](https://fiberplane.dev/blog/creating-a-rich-text-editor-using-rust-and-react/)
+  - We used to use Slate.js — a fine editor — but as we’re implementing our own rich text primitives for collaborative editing, we discovered the disconnect between our own primitives and Slate’s data model to be somewhat of a hindrance. So we got to thinking - what if we just built our own Rich Text Editor (RTE)?
+  - From a very high-level perspective, a rich text editor is comprised of two components:
+  - A data model and the core logic to operate on it.
+  - A view that renders the state of said data model and that handles the user interactions.

@@ -44,3 +44,9 @@ modified: '2021-10-31T15:56:24.071Z'
   - extend的作用就是将EmitterMixin关于事件触发、监听和代理等方法引入有到ObservableMixin中
 
 - ckeditor5的locale方案会往全局变量`window. CKEDITOR_TRANSLATIONS`上挂载映射用的字典信息
+# blogging
+
+## [CKEditor 5: The Future of Rich Text Editing_201510](https://medium.com/content-uneditable/ckeditor-5-the-future-of-rich-text-editing-2b9300f9df2c)
+
+- Why CKEditor 5?
+  - (tl; dr) To keep leading on innovation everything is to be re-thought.
