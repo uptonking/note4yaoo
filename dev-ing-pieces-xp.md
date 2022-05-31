@@ -7,9 +7,35 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # dev-ing-pieces-xp
 
+# dev-2022
+
+- dev-to
+  - 斜杠菜单的action，创建sub page
+  - 斜杠菜单暂时不支持键盘导航
+
+- 斜杠菜单的设计稿
+  - mx: 12
+  - mt: 16
+
+- `ReactDOM.render(reactElement, container)` 触发react应用执行
+  - 需要在普通js环境直接执行
+
+- `ReactDOM.createPortal(child, container)` 触发react元素的render phase
+  - 需要在react环境下执行
+  - 需要在react组件中 return ReactDOM.createPortal( this.props.children, domNode ); 
+
+- [How to get the caret position in ContentEditable elements with respect to the innerText?](https://stackoverflow.com/questions/68822587)
+  - target.addEventListener('keyup', () => {  })
+  - get the Selection and Range from the `target` element
 # pieces
 
 ## 
+
+## 
+
+## 
+
+## slate编辑器的悬浮工具条做了一个月没做完
 
 ## overleaf的pdf
 

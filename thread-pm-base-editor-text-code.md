@@ -15,7 +15,7 @@ modified: '2021-08-16T06:56:58.774Z'
 
 - ## 
 
-- ## Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser
+- ## Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112
 - https://blog.replit.com/code-editors
 - In late 2018 Marijn announced a rewrite for CodeMirror to modernize the editor, CodeMirror version 6 with an excellent design doc. 
 - **One of the primary motivators for the rewrite was adding support for touch devices**. 
