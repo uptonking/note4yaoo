@@ -116,7 +116,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - 本周3个菜单
   - command menu
-  - inline format menu: bold/italic
+  - inline menu: bold/italic
   - block menu
 
 - 拖拽逻辑继续
@@ -124,7 +124,44 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+## 0601
+
+- 如何在多环境的ReactDOM.render()的组件内获取另一个环境内的useParams和导航
+  - 对于简单场景，可以直接 location.href
+  - 对于复杂场景，可以将需要的数据和方法作为参数传到组件
+  - 思路尝试，2个环境的react组件都都外部数据源获取和更新数据，而不使用react的state
+
+- [react-router: Support multiple React apps](https://github.com/remix-run/react-router/discussions/8647)
+  - 没有解决方案
+
 ## 0531
+
+- dev-to
+  - 斜杠菜单的action，创建sub page
+  - 斜杠菜单暂时不支持键盘导航
+
+- 斜杠菜单的设计稿
+  - 顶层容器
+    - mx: 12
+    - mt: 16
+  - 左边菜单item
+    - 行间距12，my-6
+  - 右边菜单item
+    - icon行间距 12，文字行间距 16
+  - 右边容器
+    - ml: 5
+    - 右边图标 pl: 22
+
+- `ReactDOM.render(reactElement, container)` 触发react应用执行
+  - 需要在普通js环境直接执行
+
+- `ReactDOM.createPortal(child, container)` 触发react元素的render phase
+  - 需要在react环境下执行
+  - 需要在react组件中 return ReactDOM.createPortal( this.props.children, domNode ); 
+
+- [How to get the caret position in ContentEditable elements with respect to the innerText?](https://stackoverflow.com/questions/68822587)
+  - target.addEventListener('keyup', () => {  })
+  - get the Selection and Range from the `target` element
 
 - 旧项目双链的弹窗在数量很多时，会出现滚动条
 

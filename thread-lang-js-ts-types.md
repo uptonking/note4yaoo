@@ -18,7 +18,12 @@ modified: '2021-08-05T04:31:02.298Z'
 # discuss
 - ## 
 
-- ## 
+- ## I'm still horrified that a certain subset of TypeScript developers think coercing(强制、强迫) types unsafely during decoding (JSON to structured data types) without checking the JSON is in the least bit reasonable. We have io-ts and many more libs that do the right things.
+- https://twitter.com/SusanPotter/status/1531309620857294851
+- There may also be a literacy problem here... people just don't understand why `unknown` is so much better than `any` or why type coercion ( `as` ) is bad, but type assertion ( `is` ) can be a great tool when used right.
+- Utilities like Zod + TRPC are great at avoiding situations like this IMO. That said, I believe that validation on the *client* (public code) isn't always necessary if it receives its data from a source it *should* be able to trust wherein static checks + try/catch should be fine.
+  - But just to reiterate for clarity and posterity...
+  - 👏 Validate 👏 Your 👏 User 👏 Inputs 👏 On 👏 The 👏 Server 👏 (at least)
 
 - ## TypeScript protip: accept any string, but suggest some specific values on autocomplete.
 - https://twitter.com/diegohaz/status/1524257274012876801

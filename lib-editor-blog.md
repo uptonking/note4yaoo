@@ -79,3 +79,6 @@ modified: '2021-05-13T04:44:39.320Z'
   - From a very high-level perspective, a rich text editor is comprised of two components:
   - A data model and the core logic to operate on it.
   - A view that renders the state of said data model and that handles the user interactions.
+
+
+- [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)

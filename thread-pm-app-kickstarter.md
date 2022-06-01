@@ -63,7 +63,10 @@ modified: '2021-10-29T15:02:28.882Z'
 # ideas
 - ## 
 
-- ## 
+- ## Why subscription-based revenue models work
+- https://grid.is/@grid/subscription-revenue-models-the-basics-3BdnnNcBTF:DMCY84TKiCA
+  - If you're familiar with software as a service (SaaS) business models – or Netflix for that matter – you're likely aware of how popular subscription-based revenue models have become.
+  - Software as a service (SaaS) companies can be very successful with a subscription-based revenue model, especially within a product-led growth (PLG) approach
 
 - ## Tailscale: Too good to be true? @apenwarr explains how our free plan stays free.
 - https://twitter.com/Tailscale/status/1504139595310460930
