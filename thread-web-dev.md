@@ -33,6 +33,40 @@ modified: '2021-01-08T17:13:43.392Z'
 # pieces
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Does anyone know how to hide/remove horizontal scroll bars on scrollable elements?
+- https://twitter.com/samselikoff/status/1532013589703409664
+  - I noticed the scrolling is built with css scroll-snap (scrolling still works without JS). 
+
+```SCSS
+& {
+  scrollbar-width: none;
+}
+
+&::-webkit-scrollbar {
+  display: none;
+}
+```
+
+```CSS
+.carousel {
+  scroll-snap-type: x mandatory;
+}
+
+.carousel .item {
+  scroll-snap-align: start;
+}
+```
+
+- I have successfully used `scroll-snap-type` with `scrollbar-width: none` to get the scrolling without scrollbars. Seems Stripe does the same they have that on the `TestimonialCarousel__track` class.
+
 - ## If your site has a dark theme, make sure to set: `:root { color-scheme: dark }` So scroll bars are also dark.
 - https://twitter.com/diegohaz/status/1529543787311144961
   - If you need to set it programmatically with JavaScript:
