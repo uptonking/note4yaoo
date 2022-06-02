@@ -8,6 +8,8 @@ modified: '2022-05-24T17:53:08.400Z'
 # dev-ing
 
 # dev-2022
+
+## dev-xp
 - my-next
   - dev-starter
     - react patterns
@@ -38,6 +40,7 @@ modified: '2022-05-24T17:53:08.400Z'
     - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
     - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-minimal
     - https://atlaskit.atlassian.com/packages/editor/editor-core/example/full-page-with-toolbar
+    - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
 
 - [新产品设计稿figma](https://www.figma.com/file/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=0%3A1)
 
@@ -53,7 +56,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 顶部日期导航条可用
   - daily文章部分由多维表格实现，提前准备好daily数据逻辑
 
-- new-daily-notes-page，四个部分都是普通文档形式
+- daily-notes-page-contents，四个部分都是普通文档形式
   - pinned desktop icons
     - 可折叠
   - tasks收集，以多维表格的形式自动生成标签，可切换看板
@@ -103,36 +106,46 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
   - [] page和page-tree同步正常，page和navbar同步不正常
 
-- dev-to-later-v0518
-  - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
-    - 参SelectionManager实现
-  - [x] 先实现单例弹窗
-    - 获取当前选区及在viewport中的物理位置
-  - [x] 实现静态悬浮菜单
-  - [ ] 实现动态菜单项
-  - [ ] 自定义菜单项事件
-  - [ ] 重构Text组件，底层Text不处理业务，只处理编辑器相关逻辑
-    - 上层BusinessTextHoc获取数据和操作方法
-
-- 本周3个菜单
-  - command menu
-  - inline menu: bold/italic
-  - block menu
-
 - 拖拽逻辑继续
   - 拖拽block到左右上下要放进去，dragend事件
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
+- dev-to-draft
+  - [ ] 新建page后，光标自定定位在page title 输入区域
+  - [ ] left-menu的定位问题，要符合白板
+
 ## 0601
 
+- 鼠标事件顺序
+  - mousedown --> mouseup --> click
+  - 鼠标先点击input，再点击button，触发的事件顺序
+    - mousedown -->  onblur(input) --> mouseup --> click
+  - 注意
+    - 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
+
+- 更新text或其他block的流程
+  - 理想流程：action  发布_command_  修改blockdb  只通知相关block数据更新  更新blockView
+  - 短期变通：action  只通知相关blockView更新  修改blockdb ...
+
+- 工具条设计稿
+- inline-menu 悬浮工具条
+  - 三级标题、block类型指示按钮、加粗、斜体、删除线、链接、代码块、字体颜色、字体背景色、对齐方式、block类型转换、唤起双链搜索
+  - 末尾更多是否一直显示？
+- tag-toolbar 挂件工具条
+  - 截止日期、人员、任务状态
+- group工具条
+  - list、kanban、table、add-view
+
 - 如何在多环境的ReactDOM.render()的组件内获取另一个环境内的useParams和导航
-  - 对于简单场景，可以直接 location.href
+  - 对于简单场景，可以直接 location.href ❌ 页面会刷新
   - 对于复杂场景，可以将需要的数据和方法作为参数传到组件
-  - 思路尝试，2个环境的react组件都都外部数据源获取和更新数据，而不使用react的state
+  - 思路尝试，2个环境的react组件都从外部数据源获取和更新数据，而不使用react的state
 
 - [react-router: Support multiple React apps](https://github.com/remix-run/react-router/discussions/8647)
   - 没有解决方案
+
+- [block-menu的动画效果](https://www.figma.com/proto/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=5863%3A2095&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5863%3A2052)
 
 ## 0531
 
@@ -270,6 +283,22 @@ document.body.removeChild(scrollDiv);
   - 一个星期一个功能
 
 - figma中点击导航条三角形演示按钮，可以播放设计稿中支持的动画
+
+- dev-to-inline-menu-text-v0518
+  - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
+    - 参SelectionManager实现 ❌  在service层封装page-tree数据操作
+  - [x] 先实现单例弹窗
+    - 获取当前选区及在viewport中的物理位置
+  - [x] 实现静态悬浮菜单
+  - [x] 实现动态菜单项
+  - [x] 自定义菜单项事件
+  - [x] 重构Text组件，底层Text不处理业务，只处理编辑器相关逻辑
+    - 上层BusinessTextHoc获取数据和操作方法
+
+- 本周3个菜单
+  - command menu
+  - inline menu: bold/italic
+  - block menu
 
 ## 0527
 
@@ -420,15 +449,6 @@ document.body.removeChild(scrollDiv);
   - 弹窗组件的内容是否要根据block类型动态变化
     - 如对text-block有加粗斜体没有下载按钮，对list-block有切换类型
     - 暂时不考虑太复杂的
-
-- 工具条设计稿
-- inline-menu 悬浮工具条
-  - 三级标题、block类型指示按钮、加粗、斜体、删除线、链接、代码块、字体颜色、字体背景色、对齐方式、block类型转换、唤起双链搜索
-  - 末尾更多是否一直显示？
-- tag-toolbar 挂件工具条
-  - 截止日期、人员、任务状态
-- group工具条
-  - list、kanban、table、add-view
 
 - inline悬浮工具条存在的问题
   - 当菜单项过长时，未实现在工具条末尾添加更多图标来隐藏菜单项
