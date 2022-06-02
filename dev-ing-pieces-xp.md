@@ -9,6 +9,19 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # dev-2022
 
+
+
+- left-menu的位置不符合白板的需求
+  - 若left-menu定位为fixed，则要修改style为left=0，top=shape-y坐标，menu按钮位置才会勉强符合需求
+  - 若left-menu定位为absolute，则要修改style为left=-8, top=0，menu按钮位置才勉强符合需求； 注意此时多行文本是否会自动更新位置
+- left-menu位置调整思路
+  - 👉🏻️ 环境下白板时，计算位置使用新逻辑
+  - 👉🏻️ 将left-menu组件渲染逻辑移到render-block组件
+
+- [HTML/Global_attributes/draggable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable)
+  - an enumerated attribute that indicates whether the element can be dragged, either with native browser behavior or the HTML Drag and Drop API.
+  - If this attribute is not set, its default value is auto, which means drag behavior is the default browser behavior: only text selections, images, and links can be dragged. 
+  - For other elements, the event `ondragstart` must be set for drag and drop to work
 # pieces
 
 ## 
@@ -18,6 +31,13 @@ modified: '2021-04-28T20:54:58.126Z'
 ## 
 
 ## slate编辑器的悬浮工具条做了一个月没做完
+
+- 思路💡️： slate-text和其他组件都从外部如database获取数据，这样更新database数据的方法就在外部了，到处都可以拿到
+
+- 思路1: 在全局创建eventmitter，在组件外其他地方emit事件，通知注册了监听函数的slate-text组件更新自身
+  - 缺点是在其他位置获取slate-text组件的数据很复杂，因为普通eventemitter很难获取emit事件的结果
+
+- 思路2-变通: 将slate-text组件的ref保存到全局，然后就可以在组件外其他地方通过拿到ref来操作更新slate-text组件
 
 ## overleaf的pdf
 
