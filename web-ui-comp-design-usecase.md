@@ -26,6 +26,8 @@ modified: '2021-04-11T17:38:41.941Z'
 - 语法高亮
 - 顶部显示鼠标所在位置的面包屑路径
 
+
+- [radix-ui Code blocks, but better](https://ped.ro/writing/code-blocks-but-better)
 # mobile-first 移动优先
 
 - 默认纵向布局显示

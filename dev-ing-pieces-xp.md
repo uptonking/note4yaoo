@@ -9,19 +9,6 @@ modified: '2021-04-28T20:54:58.126Z'
 
 # dev-2022
 
-
-
-- left-menu的位置不符合白板的需求
-  - 若left-menu定位为fixed，则要修改style为left=0，top=shape-y坐标，menu按钮位置才会勉强符合需求
-  - 若left-menu定位为absolute，则要修改style为left=-8, top=0，menu按钮位置才勉强符合需求； 注意此时多行文本是否会自动更新位置
-- left-menu位置调整思路
-  - 👉🏻️ 环境下白板时，计算位置使用新逻辑
-  - 👉🏻️ 将left-menu组件渲染逻辑移到render-block组件
-
-- [HTML/Global_attributes/draggable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable)
-  - an enumerated attribute that indicates whether the element can be dragged, either with native browser behavior or the HTML Drag and Drop API.
-  - If this attribute is not set, its default value is auto, which means drag behavior is the default browser behavior: only text selections, images, and links can be dragged. 
-  - For other elements, the event `ondragstart` must be set for drag and drop to work
 # pieces
 
 ## 

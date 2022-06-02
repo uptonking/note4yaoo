@@ -10,6 +10,7 @@ modified: '2022-05-24T17:53:08.400Z'
 # dev-2022
 
 ## dev-xp
+
 - my-next
   - dev-starter
     - react patterns
@@ -106,16 +107,67 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 修改默认workspace名称的逻辑，presetWorkspace
   - [] page和page-tree同步正常，page和navbar同步不正常
 
+## dev-ing
+
 - 拖拽逻辑继续
   - 拖拽block到左右上下要放进去，dragend事件
   - 菜单ui实现
   - 拖拽时，没有显示横排布局
 
 - dev-to-draft
-  - [ ] 新建page后，光标自定定位在page title 输入区域
-  - [ ] left-menu的定位问题，要符合白板
+  - [ ] 使用command方式迁移text bold/italic
+
+## 0602
+
+- search
+  - indexeddb
+    - local-first client/server architecture
+  - notion like  ; block editor
+
+- dev-log
+  - [x] inline code 的样式叠加方案，要兼容 code、comment
+    - slate的mark可支持加粗、斜体、下划线，使用自定义mark就可以支持comment
+  - [x] 主流inline code的样式和交互
+    - 常用网站
+      - github
+      - gitlab
+      - bitbucket
+      - notion
+      - logseq
+    - 常用编辑器
+      - atlaskit
+      - prosemirror
+      - ckeditor
+
+- 转换block类型时，block id不能变，要考虑协同的问题
+  - 所以不能先删除旧的，再创建新的，因为创建的新block的id变了
+
+- editor-commands的设计
+  - 将commands提升到editor的更上层，让commands同时支持文本编辑器、白板的编辑和更新
+  - 参考其他编辑器的设计
+    - slate-commands，一个接收editor的函数
+    - ckeditor-commands，一个class，可以有自己的状态
+
+- left-menu的位置不符合白板的需求
+  - 若left-menu定位为fixed，则要修改style为left=0，top=shape-y坐标，menu按钮位置才会勉强符合需求
+  - 若left-menu定位为absolute，则要修改style为left=-8, top=0，menu按钮位置才勉强符合需求； 注意此时多行文本是否会自动更新位置
+- left-menu位置调整思路
+  - 👉🏻️ 白板环境下，计算位置使用新逻辑
+  - 👉🏻️ 将left-menu组件渲染逻辑移到render-block组件
+  - 同时已解决
+
+- [HTML/Global_attributes/draggable](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable)
+  - an enumerated attribute that indicates whether the element can be dragged, either with native browser behavior or the HTML Drag and Drop API.
+  - If this attribute is not set, its default value is auto, which means drag behavior is the default browser behavior: only text selections, images, and links can be dragged. 
+  - For other elements, the event `ondragstart` must be set for drag and drop to work
+
+- [code和code block设计参考](https://www.notion.so/affineos/code-code-block-7061c2feff1a4962b37cf0d08cba973c)
 
 ## 0601
+
+- dev-log
+  - [x] 新建page后，光标自动定位在page title 输入区域
+  - [x] left-menu的定位问题，要符合白板； 👉 参考晓东实现，fixed -> absolute; 
 
 - 鼠标事件顺序
   - mousedown --> mouseup --> click

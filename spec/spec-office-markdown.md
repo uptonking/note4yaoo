@@ -18,6 +18,7 @@ modified: '2021-09-30T07:43:25.286Z'
 - GitHub Flavored Markdown Spec
   - https://github.github.com/gfm/
   - https://guides.github.com/features/mastering-markdown/
+  - [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - ReadMe-flavored markdown 
   - https://rdmd.readme.io/docs/syntax-extensions
   - Code Tabs, Callouts, @embed
