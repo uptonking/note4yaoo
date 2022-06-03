@@ -13,7 +13,11 @@ modified: '2021-09-28T06:00:34.338Z'
 
 - ## 
 
-- ## 
+- ## iframes are a better model than workers for concurrent JS in servers
+- https://twitter.com/jarredsumner/status/1532162212613066752
+  - half trolling but basically: instead of big app and some underpowered apps, lots of medium-sized apps coordinated externally
+- So kinda like micro apps (iframes) which together build up a bigger app?
+  - yeah, or maybe browser tabs are a better analogy than iframes
 
 - ## Synchronous communication for DOM operations between main and worker thread has been a fun challenge. 
 - https://twitter.com/adamdbradley/status/1442490416062943234

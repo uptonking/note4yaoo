@@ -11,7 +11,16 @@ modified: '2021-01-21T17:52:13.333Z'
 
 - ## 
 
-- ## 
+- ## me 4 years ago: “write a few lines, check if the code works”
+- https://twitter.com/jarredsumner/status/1532497943315435520
+  - me today: “write 10k loc in 3 sessions, fix the build failures all at once”
+  - Not saying one approach is better than the other fwiw. I find I’m faster at shipping this way, but it also means I have to hold a lot of information in my head or else I’ll get lost in the code
+- How is bun’s test coverage out of interest?
+  - Bun currently has four kinds of tests:
+  - 1. unit tests for runtime APIs (& transpiled with bun) 
+  - 2. integration tests for the transpiler/resolver that run in a headless browser and run code from npm
+  - 3. shell scripts that test basic stuff works end to end
+  - 4. zig tests
 
 - ## 80% of software is a reinvented spreadsheet or state machine (or both!) and you can’t convince me otherwise
 - https://twitter.com/worldwise001/status/1523150897169432576

@@ -15,7 +15,9 @@ modified: '2021-07-29T15:45:36.816Z'
 
 - ## 
 
-- ## 
+- ## An experimental API for command-line argument parsing landed in @nodejs v18.3.0 - the `util.parseArgs` method. Very cool 👌 
+- https://twitter.com/simonplend/status/1532304908585779201
+  - intended for developers of simple CLI tools, ad-hoc scripts, deployed Node.js applications, and learning materials.
 
 - ## Node.js now has a built-in test runner
 - https://twitter.com/rauschma/status/1516456272215826432

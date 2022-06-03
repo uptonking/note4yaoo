@@ -47,7 +47,18 @@ modified: '2021-04-24T08:29:02.272Z'
 
 - ## 
 
-- ## 
+- ## Everyone is talking about server-side rendering. Why? SEO and page load speed.
+- https://twitter.com/housecor/status/1532708512836505600
+  - Yet many web apps are:
+  - 1. Behind a login (so SEO doesn’t matter)
+  - 2. Used only on fast connections (so minor page load time differences matter little)
+  - Summary: Client-side rendering remains relevant
+- That said, I’m a big fan of modern server-side rendered frameworks. But I recognize they’re overkill for many internal business apps. In such cases minor performance differences aren’t typically a big concern because the users are on fast connections with powerful machines.
+- And a client-side app can actually be the fastest possible experience after initial load since everything is already loaded. 
+  - A client-side app with one bundle can provide truly instant responses. Why? Because it was all loaded up front. This pays off on heavily used apps.
+
+- This is very true. I've worked for 2 SAAS companies where the main persona is the dev (high end machine, at home/work with fiber connection).
+Those front-end products started way before the era of Next & co. Very little incentive to invest for such migration. Context matters.
 
 - ## I'm looking for a state of the art solution or architecture for loading external react components (basically js files) into an existing react app at runtime without rebuilding the app.
 - https://twitter.com/code_punkt/status/1438132387301535750
