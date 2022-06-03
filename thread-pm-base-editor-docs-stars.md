@@ -12,8 +12,11 @@ modified: '2021-08-22T07:29:34.045Z'
 
 - ## 想从零实现一个富文本编辑器是不是天坑……
 - https://twitter.com/waylybaye/status/1531463471371800576
+- https://github.com/Icemic/huozi.js
+  - A simple typography engine for CJK languages, especially designed for game rich-text. 用于游戏富文本的中日韩文字排印引擎。
 - 活字 JS 应该能满足基础的 Web 排版自绘需求，或者 Skia 提供的 CanvasKit WASM 也能实现。自己从头做的话可利用 HarfBuzz 的 shaping 结果查找字形 glyph，自行将它们分多 run 在平面上放置并折行。
 - 我之前为了兼容性尝试做过一个canvas渲染纯文本显示的，坑太多了弃了，老老实实嵌入webview
+
 
 - ## Heptabase 面向未来的知识操作系统
 - https://sspai.com/post/71842

@@ -28,6 +28,29 @@ modified: '2021-10-29T15:06:33.422Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I think maybe the expression "Blazing Fast" should be banned from DevTools product marketing now, together with “X. Done Right” and “Next Generation Y.”
+- https://twitter.com/leeerob/status/1531626433596035072
+
+- The future of X
+- The Uber of X
+- X, reinvented
+- We obsess over X
+- Innovative
+- By design
+- Unparalleled
+- Out of the box
+- Scalable
+- User-first, user-centric
+- X as code
+
+> I can go on for days.
+
 - ## 每次想尝试一些 toB 的 SaaS 服务，经常遇到 Pricing 页面不明示价格只有 Contact us。
 - https://twitter.com/waylybaye/status/1518505264693264385
   - 网站注册页面填完后不是直接创建账号而是告诉你“我们的销售会联系您”。
@@ -74,7 +97,6 @@ modified: '2021-10-29T15:06:33.422Z'
 - 呃，我就是这么做的，不过我会给试用，要继续用需要加客服。这么做是因为客户量很少，其次他用不了全部功能，最后是我希望和客户深入交流，进一步挖掘细分需求和改进产品
 
 - 根据客户预算进行pricing😂
-
 
 - ToB的核心就是支持、服务以及 price discrimination. 
   - SLA和整合路径不一样价格就会天差地别，直接把价钱放上刷卡的是toC 产品呀

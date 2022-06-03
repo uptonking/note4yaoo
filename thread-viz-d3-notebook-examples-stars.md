@@ -11,3 +11,6 @@ modified: '2022-05-20T19:34:35.500Z'
 
 - Just for fun - here is a bar chart race, looking at artists with the most top 100 songs throughout the 2010s!
 - https://twitter.com/_jphwang/status/1526473722731073536
+
+- Check out my Utilities collection @observablehq it includes Icons, Color Swatch Input, Polar Plot, and Indeterminate Loading indicator.
+- https://observablehq.com/collection/@mateh/utilities

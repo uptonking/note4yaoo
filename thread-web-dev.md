@@ -39,7 +39,10 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## Is there a way to keep track of V8 releases and their features? AFAICT, the V8 blog (*) skips releases.
+- https://twitter.com/rauschma/status/1532327360237797377
+- I've been able to track V8 releases with releases of Chromium, but features I've really only been able to find on the blog.
+- Not ideal, but I watch the kangax/compat-table repository and the maintainers/contributors usually open PRs for new supported features soon enough.
 
 - ## Does anyone know how to hide/remove horizontal scroll bars on scrollable elements?
 - https://twitter.com/samselikoff/status/1532013589703409664

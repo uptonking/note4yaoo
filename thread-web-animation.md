@@ -15,7 +15,9 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## I'm looking for the absolutely smallest implementation of a smooth-scroll animation loop powered by nothing more than request animation frame + some measurements at each tick. Anyone seen anything like that in the wild?
+- https://twitter.com/tannerlinsley/status/1532422987277668353
+- https://github.com/stipsan/smooth-scroll-into-view-if-needed
 
 - ## There's a little left to do before we release Framer Motion 5 
 - https://twitter.com/mattgperry/status/1432728000710184967

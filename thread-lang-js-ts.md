@@ -20,7 +20,15 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## JS should have a builtin FIFO type, imo
+- https://twitter.com/jarredsumner/status/1532503267455795200
+  - array.shift() and array.unshift() implementations are poorly optimized for this. fifo’s are very common
+- Most user-facing queues where the order matters actually want a fifo instead of a stack — you want to send stuff back in the same order the user provided it instead of the reverse order
+  - I mention .unshift() because often you want a prioritized queue — to be able to move some element to the front efficiently as well
+- What’s wrong with unshift and pop? Or push and shift?
+  - Don’t know if it’s true, but some articles claim that array.shift ist O(n) which would make a Queue iteration pretty inefficient.
+  - internally, it clones the entire array each shift() if the list is longer than a handful of elements
+  - JSC hasn't implemented the optimization for skipping that on small arrays so it's a little worse in JSC too
 
 - ## It just occurred to me—.filter() could also be called .findAll()
 - https://twitter.com/rauschma/status/1529099909575720962

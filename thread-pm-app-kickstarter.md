@@ -63,6 +63,32 @@ modified: '2021-10-29T15:02:28.882Z'
 # ideas
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 跟着回忆了一下国内移动互联网的发展历程。令我感到惊讶的是移动互联网时代成长起来的巨头们，似乎没有一个是技术立家的。
+- https://twitter.com/waylybaye/status/1531094977006403584
+  - 在其叙事中还刻意突出了不专业的特性，倒也能让我重新思考价值和技术的关系。
+  - 这本书强调的其实只有一个词：机遇。
+  - 在时代面前产品和技术都显得那么不重要，是有点令人沮丧的。
+
+- ## We are excited to announce the launch of Preset’s Managed Private Cloud (MPC)☁️🚀! Preset users now have the ability to deploy Preset workspaces inside their own #AWS #privatecloud as a fully managed solution.
+- https://twitter.com/preset_data/status/1532029240757178368
+
+- ## The very big news I mentioned yesterday: @modulz has been acquired by @WorkOS . 
+- https://twitter.com/colmtuite/status/1532024536673271810
+  - Myself, @sdothaney , and the team have joined to continue working on UI projects and OSS. 
+  - It's been an incredible ride, here's a quick recap 👇
+- It's been over 4 years since myself and @sdothaney founded Modulz. 
+  - Ultimately, **we didn't manage to find PMF for Modulz, but we've accomplished a lot that I'm proud of**.
+  - We built a super strong team who shipped some mind-blowing tech, and maintained a high bar for design quality.
+  - Radix is one of the highest-quality UI component libs available. With 4M+ npm installs/month, it's being used in production by hundreds of awesome teams including Vercel, Supabase, CodeSandbox, Linear, and of course, WorkOS.
+  - We also managed to make Stitches the fastest runtime CSS-in-JS lib available, with easy-to-use APIs offering a great DX.
+- When @grinich first reached out, we chatted for an hour about Radix, helping companies solve time-consuming challenges around SSO and UI, and the importance of design quality. 
+  - It was clear I was talking with someone who cares about these things as much as I do.
+  - Lastly, @WorkOS just announced an $80M Series B alongside this acquisition 💰
+
 - ## Why subscription-based revenue models work
 - https://grid.is/@grid/subscription-revenue-models-the-basics-3BdnnNcBTF:DMCY84TKiCA
   - If you're familiar with software as a service (SaaS) business models – or Netflix for that matter – you're likely aware of how popular subscription-based revenue models have become.
