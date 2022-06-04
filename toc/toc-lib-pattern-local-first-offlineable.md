@@ -52,6 +52,7 @@ modified: '2021-09-04T14:03:39.046Z'
 
 - https://github.com/pubkey/rxdb
   - A client side, offline-first, reactive database for JavaScript Applications
+  - RxDB is not a self contained database. It is a wrapper arround another database that implements the `RxStorage` interface. At the moment you can either use PouchDB or Dexie.js or LokiJS as underlaying storage. Each of them respectively has it's own adapters that can be swapped out, depending on your needs. For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
 # local-first examples
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.

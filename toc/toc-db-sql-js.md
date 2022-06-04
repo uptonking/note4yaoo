@@ -16,3 +16,8 @@ modified: '2021-08-30T18:56:14.863Z'
 - https://github.com/garrylachman/ElectroCRUD
   - ElectroCRUD is Open Source Database CRUD (Create, Read, Update, Delete) Software. No Code Needed
 # more
+- https://github.com/webqit/objective-sql
+  - The object-oriented, adaptive SQL for modern apps - query anything from the plain JSON object, to the client-side IndexedDB, to the server-side DB.
+
+- https://github.com/only-cliches/Nano-SQL /inactive
+  - Universal database layer for the client, server & mobile devices. It's like Lego for databases.

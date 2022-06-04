@@ -66,7 +66,7 @@ modified: '2022-03-14T19:55:47.081Z'
 - https://github.com/zadam/trilium
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
-  - [Notion like database](https://github.com/zadam/trilium/issues/822)
+  - [Notion like database request](https://github.com/zadam/trilium/issues/822)
     - https://github.com/mabeyj/trilium-collection-views
       - An extension for Trilium Notes that implements different ways of viewing collections of notes.
       - 样式过于简单

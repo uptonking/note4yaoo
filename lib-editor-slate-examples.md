@@ -27,40 +27,6 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://github.com/udecode/plate
   - https://plate.udecode.io/
   - A plugin framework for building rich text editors with slate.
-  - ✨ Features
-    - 编辑器开箱即用、功能丰富、架构比较稳定
-      - 光标、选区、快捷键、拖拽
-    - 提供了自定义plate插件系统和40+插件，方便自定义，可扩展
-      - 还提供了可复用的编辑器相关资源，如slate操作operation
-    - 支持多编辑器实例
-      - A store is used to handle multiple editor out of the box
-    - block支持拖拽改变顺序
-    - 支持常用markdown快捷键
-    - 支持嵌入各类媒体资源，如youtube、excalidraw
-    - built with typescript
-    - 分离了 plate-ui、plate-headless
-  - 🐛 Drawbacks
-    - 编辑器整体的技术选型比较opinionated
-    - 状态管理使用jotai和类似redux的zustand
-    - 未实现斜杠菜单
-    - mention和悬浮工具条功能比较简单
-    - table实现过于简单
-    - 未实现多栏布局
-  - plate的官方示例支持拖拽移动block，示例非常完整
-    - Slate is a low-level editor framework that helps you deal with difficult parts when building an editor, such as events handlers, elements, formatting, commands, rendering, serializing, normalizing, etc.
-    - `@udecode/plate` is built on top of slate to handle plugins and state management for an optimal development experience. 
-    - This repository comes with a lot of plugins as elements, marks, serializers, normalizers, queries, transforms, components and so on.
-    - `slate-plugins` repo has been renamed to `plate`.
-    - The library formerly known as @udecode/slate-plugins is now available as @udecode/plate
-    - [Generic typescript for slate](https://github.com/ianstormtaylor/slate/pull/4177)
-      - I unfortunately don't have the time to complete that PR, so I've forked that PR into Plate.
-- plate-repos
-  - https://github.com/udecode/editor-protocol
-    - Editor Protocol is an open standard for building a rich text editor. 
-    - The protocol aims to cover all use-cases as there is no clear definition of what the standard should be.
-    - Plate is an example framework that will follow the Editor Protocol.
-  - https://github.com/frontify/arcade
-    - Design System of Frontify
 
 - quadrats /4Star/MIT/202203/ts
   - https://github.com/Quadrats/quadrats
@@ -89,6 +55,12 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://github.com/worktile/slate-angular
   - http://slate-angular.ngnice.com/
   - Angular view layer for Slate
+
+- https://github.com/prezly/slate
+  - Prezly software built upon Slate
+
+- https://github.com/seafileltd/seafile-editor
+  - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 # slate-based-editors
 - @tinacms/toolkit
   - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
@@ -103,12 +75,26 @@ modified: '2022-05-15T18:45:27.570Z'
   - http://seditor.open.heyphp.com/
   - 项目基于slate.js框架开发，项目内所有图标，风格组件均使用antd
 
+- https://github.com/rojer95/dslate
+  - https://rojer95.github.io/dslate/#/
+  - https://rojer95.github.io/dslate/#/docs/getting-started
+  - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
+
+- https://github.com/slatable/slate
+  - 基于 slatejs 封装富文本编辑器
+  - /202006
+
 - https://github.com/Thinkei/hero-editor
   - Hero editor is a WYSIWYG built on top of Slate (v0.58.3). It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
   - This package also includes serializers and renderers for the Slate content.
 
 - https://github.com/webkom/lego-editor
   - A React rich text editor written in TS with Slate.js for lego-webapp
+
+- https://github.com/contentful/field-editors/tree/master/packages/rich-text
+  - https://contentful-field-editors.netlify.app/rich-text
+  - This package contains a React RichTextEditor component that is used as default for RichText field type in the Contentful web application.
+  -  Since these are developed using the App SDK, this will allow you to understand how each editor works, fork existing apps or create your own apps based on existing Contentful components' source rather than starting from scratch.
 
 - https://github.com/Yan-Boogie/highlighter
   - A complete rich text editor based on Slate framework with extended 'Highlighting' functionality.
@@ -119,15 +105,6 @@ modified: '2022-05-15T18:45:27.570Z'
 
 - https://github.com/sympto-health/slate-rte
   - Pre-built rich text editor for Slate in React.
-
-- https://github.com/rojer95/dslate
-  - https://rojer95.github.io/dslate/#/
-  - https://rojer95.github.io/dslate/#/docs/getting-started
-  - DSlate 是一个基于 Slate 构建的 Ant Design 风格的富文本编辑器
-
-- https://github.com/slatable/slate
-  - 基于 slatejs 封装富文本编辑器
-  - /202006
 
 - https://github.com/gwwyn/react-editor
   - https://gwwyn.github.io/react-editor/
@@ -140,6 +117,10 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/React-Artibox/artibox
   - Artibox - A complete rich text editor based on Slate framework.
   - /202011
+
+- https://github.com/quillforms/quillforms
+  - https://www.quillforms.com/
+  - Open Source TypeForm Alternative Based on React JS and Typescript | Best Typeform Clone
 
 - more-slate-editor
   - https://github.com/marsprince/slate-vue
@@ -211,6 +192,19 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/Dev-CasperTheGhost/full-slate-editor-example
   - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment
 
+- https://github.com/vip-git/universal-json-schema
+  - https://react-jsonschema-form-material-ui.github56.now.sh/
+  - Universal JSON Schema Form - Currently Support for React - Material UI components for building Web forms from JSON Schema.
+  - A Material UI port of jsonschema-form. (mui.v5)
+
+- https://github.com/payloadcms/payload
+  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - Block-based Layout Builder
+  - Extensible SlateJS rich text editor
+
+- https://github.com/commercetools/ui-kit
+  - Component library based on our design system
+
 - https://github.com/johnsonandjohnson/bodiless-js
   - Framework for building editable websites on the JAMStack
 
@@ -236,3 +230,5 @@ modified: '2022-05-15T18:45:27.570Z'
 
 - https://github.com/ccjr1120/story-editor_slate
   - 基于slate的文本编辑器
+
+- https://www.npmjs.com/package/@nocobase/client

@@ -1,11 +1,11 @@
 ---
-title: lib-toolkit-gesture-dnd-kit
-tags: [dnd, drag, gesture, lib, list, toolkit]
+title: lib-utils-gesture-dnd-kit
+tags: [dnd, drag, gesture, lib, list, utils]
 created: '2022-02-06T13:40:34.638Z'
-modified: '2022-02-06T13:41:39.750Z'
+modified: '2022-06-04T00:44:30.749Z'
 ---
 
-# lib-toolkit-gesture-dnd-kit
+# lib-utils-gesture-dnd-kit
 
 # guide
 

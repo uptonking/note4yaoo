@@ -39,6 +39,8 @@ modified: '2021-05-14T14:46:37.026Z'
   - https://data-forge-notebook.github.io/datakit/
   - Simple toolkit for reading and writing data CSV and JSON files
   - Consider using data-forge-ts for data transformation, analysis and visualization
+- https://github.com/data-forge-notebook/editor-core
+  - The core repository for Data-Forge Notebook's editor. Reused in the Electron and Online builds.
 
 ## jupyter-notebook-extensions
 

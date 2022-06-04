@@ -54,8 +54,11 @@ modified: '2021-07-21T10:03:38.002Z'
   - https://notion-clone.kmuenster.com/
   - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
   - 后端依赖 express、jsonwebtoken、mongoose
-
-
+  -  This clone tries to replicate some of the great note-taking features Notion has.
+  - The frontend is built with Next.js and fully server-side rendered. 
+    - Next.js · React.js · SCSS/SASS
+  - On the backend, a REST API handles saving user content and user management.
+    - Express.js · MongoDB with Mongoose · Nodemailer · JWT (Cookie-based)
 # toys-vanillajs-css
 - https://github.com/leocosta1/instagram-clone
   - https://leocosta1.github.io/instagram-clone/

@@ -130,6 +130,9 @@ modified: '2020-07-14T09:28:43.976Z'
 - [radEventListener: a Tale of Client-side Framework Performance_202008](https://css-tricks.com/radeventlistener-a-tale-of-client-side-framework-performance/)
   - To be fair to React, these pitfalls likely exist in many VDOM frameworks, because the nature of them adds necessary overhead to manage all sorts of things 
   - if you use React or any VDOM library, you should spend some time investigating its impact on an array of devices
+# db
+- https://github.com/pubkey/client-side-databases
+  - An implementation of the exact same app in Firestore, AWS Datastore, PouchDB, RxDB and WatermelonDB
 # engineering
 - https://github.com/seancdavis/ssg-build-performance-tests
   - A comparison on build performance of popular SSGs, as they are tasked with processing local markdown files as the data source

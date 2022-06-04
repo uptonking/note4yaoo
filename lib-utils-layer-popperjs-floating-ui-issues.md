@@ -1,11 +1,11 @@
 ---
-title: lib-toolkit-layer-popperjs-floating-ui-issues
+title: lib-utils-layer-popperjs-floating-ui-issues
 tags: [floating-ui, issues, popperjs]
 created: '2022-05-22T18:47:17.077Z'
-modified: '2022-05-22T18:47:35.383Z'
+modified: '2022-06-04T00:44:57.658Z'
 ---
 
-# lib-toolkit-layer-popperjs-floating-ui-issues
+# lib-utils-layer-popperjs-floating-ui-issues
 
 # issues-no-yet
 

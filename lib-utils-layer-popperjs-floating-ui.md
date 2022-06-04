@@ -1,11 +1,11 @@
 ---
-title: lib-toolkit-layer-popperjs-floating-ui
-tags: [floating-ui, layer, lib, popperjs]
+title: lib-utils-layer-popperjs-floating-ui
+tags: [floating-ui, layer, lib, popperjs, utils]
 created: '2022-05-22T17:31:46.307Z'
-modified: '2022-05-22T17:32:18.336Z'
+modified: '2022-06-04T00:44:40.955Z'
 ---
 
-# lib-toolkit-layer-popperjs-floating-ui
+# lib-utils-layer-popperjs-floating-ui
 
 # guide
 - resources
