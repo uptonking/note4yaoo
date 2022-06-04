@@ -37,7 +37,15 @@ modified: '2021-01-08T17:13:43.392Z'
 
 - ## 
 
-- ## 
+- ## process.env. NODE_ENV in browser code needs to die a quick and painful death.
+- https://twitter.com/justinfagnani/status/1532928015738363905
+- How to make `globalThis.ENV` a thing though? Some big framework needs to just adopt the convention so others can copy...
+  - Make a development build under the officially sanctioned(许可；准许) "development" export condition. Don't dynamically check anything.
+  - At the *very* least write `globalThis?.process?.ENV` so you don't crash in browsers.
+- The ENV branching usage pattern with dead code replacements may still not fall easily... so may benefit from both alternatives. `globalThis?.ENV` would be ideal IMO, we shouldn't have a `process` global created by every browser build....
+
+- maybe javascript needs some bundler｜compiler spec to solve this
+  - We already have it: It's called "export conditions"
 
 - ## Is there a way to keep track of V8 releases and their features? AFAICT, the V8 blog (*) skips releases.
 - https://twitter.com/rauschma/status/1532327360237797377

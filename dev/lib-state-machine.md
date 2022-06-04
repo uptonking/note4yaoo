@@ -23,13 +23,32 @@ modified: '2021-05-13T03:13:52.403Z'
 
 - why didn't state charts work for your scenario?
   - There are a lot of states in a selection tool, modifiers, internal state, events to handle, & interrupt support. Selection tools have scale, creation, translating, rotating, modifier keys, etc. Coming up with names is annoying/fragile as you find edge cases and have to refactor
-
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Working on some XState RFCs for v5 this weekend.
+- https://twitter.com/DavidKPiano/status/1533107555588784131
+  - https://github.com/statelyai/rfcs
+- We currently have RFCs for:
+  - VS Code snippets
+  - Input data
+  - React global hooks API (like Zustand/Recoil)
+  - Actor receptionist
+  - Better error handling
+
+- In your opinion, what would be the best way to combine server state managers like react-query with xstate?
+
 - ## Who is using XState in production?
 - https://twitter.com/DavidKPiano/status/1514944861341892612
   - And what kinds of features/tools would make it even more useful for you and your team?
 - 1. Better syncing with external state (in the real world we’ll always have a redux store that needs syncing). Now we have to rely a lot on “always”.
-  2. When a transition happens from A->C (without passing over B) is kind of hard to debug.
+  1. When a transition happens from A->C (without passing over B) is kind of hard to debug.
   - For 2. the plan is to make it easier to inspect microsteps in v5.
 - XState has indeed made me so much more productive and the codebase easier to read. For now everything is perfect and the TS support keeps getting better and better. I just wish "sendParent" was just working for child -> parent communication.
 

@@ -117,9 +117,29 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0603
+
+- ubuntu 20.04科学上网
+  - sudo apt install shadowsocks-libev -y
+  - /usr/bin/ss-local -c /opt/config/shadowsocks.json
+
+- [Linux下刷新DNS缓存（Ubuntu/CentOS）](https://www.cnblogs.com/EasonJim/p/10014517.html)
+  - 现在很多Linux发行版都没有内置DNS本地缓存，Linux不像Windows那样可以使用ipconfig /flushdns来刷新，在Linux下无需刷新，因为本身没有缓存；
+  - 当然，如果非要缓存刷新，可以安装nscd，然后刷新这个守护进程。
+  - apt-get install -y nscd
+  - service nscd restart
+
+- sudo systemd-resolve --flush-caches
+
+- 暂时修改 DNS ，修改后立即就可以起作用，但是重启电脑后还需要重新进行修改
+  - sudo vim /etc/resolv.conf
+
+- v2ray手动启动命令
+  - /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
+
 ## 0602
 
-- search
+- se
   - indexeddb
     - local-first client/server architecture
   - notion like  ; block editor

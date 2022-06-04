@@ -18,7 +18,23 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
-- ## 
+- ## function call: `return` does override the normal instantiation behavior but only if an object is returned
+- https://twitter.com/rauschma/status/1533061880830431232
+
+```JS
+function f1() {
+  return 123;
+}
+console.log('f1', new f1() instanceof f1); // true
+
+function f2() {
+  return {};
+}
+console.log('f2', new f2() instanceof f2); // false
+```
+
+- if explicitly we are returning an object from a function , even calling with new will get explicit object instead of newly fret we object ? 🙏 whole my life I did not know this 😑
+  - not just function, classes too, even if classes require `new` to be invoked, while functions don't (and arrows can't use new)
 
 - ## JS should have a builtin FIFO type, imo
 - https://twitter.com/jarredsumner/status/1532503267455795200
@@ -889,23 +905,6 @@ function somethingB<T extends Thing<any, any>>(
 - ## No, js classes have never been just sugar, various things are better/different.
 - https://twitter.com/WebReflection/status/1380809258095247360
 - [JS classes are not “just syntactic sugar”](https://webreflection.medium.com/js-classes-are-not-just-syntactic-sugar-28690fedf078)
-  - Strictly guarded by default
-  - Builtin Extends
-  - Species
-  - The super
-  - Methods
-  - Enumerability
-  - Arrows
-  - Privates
-- Summary
-  - there are many things that could be simulated via ES5 and old prototypal inheritance, but none of these come out of the box, are as fast, or as safe, as using appropriate syntax for classes and, 
-  - on top of that, there are things that are just not possible with prototypal inheritance.
-- Do you have resources explaining how JS classes are not syntactic sugar?
-  - The spec has some differences:
-  1. A class constructor can't be called without new.
-  2. Class methods are have their enumerable flag set to false.
-  3. The internal flag [[FunctionKind]] has the value "classConstructor".
-  4. "use strict" by default.
 
 - ## You'll never convince me that: `fn({ // One thousand random things here })` Is better than a class.
 - https://twitter.com/matthewcp/status/1380610388467793920
