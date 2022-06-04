@@ -36,6 +36,9 @@ modified: '2022-06-04T00:40:09.745Z'
 - https://github.com/lecepin/file-proxy-indexedDB
   - https://lecepin.github.io/file-proxy-indexedDB/
   - 使用ServiceWorker实现本地图片上传到IndexedDB，并进行 proxy 进行读取操作
+
+- https://github.com/jvilk/BrowserFS
+  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
 # more
 - https://github.com/SyncProxy/sync-client
   - SyncProxy javascript client with support for all major embedded databases (IndexedDB, SQLite, WebSQL, LokiJS...)

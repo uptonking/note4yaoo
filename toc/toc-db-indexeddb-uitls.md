@@ -41,6 +41,8 @@ modified: '2022-06-04T00:43:59.348Z'
   - A tiny and simple API for indexeddb with automatic batching for out of the box performance.
   - https://github.com/KayleePop/idbkv-chunk-store
     - Abstract chunk store built on idb-kv: the lightweight and simple API for indexeddb with automatic batching
+- https://github.com/simplifyjs/indexeddb-crud
+  - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
 # indexeddb-utils
 - https://github.com/dabblewriter/browserbase
   - IndexedDB wrapper providing promises, easy versioning, and events, including change events across tabs
@@ -87,3 +89,20 @@ modified: '2022-06-04T00:43:59.348Z'
 - https://github.com/eldomagan/vuex-orm-localforage
   - VuexORMLocalforage is a plugin for the amazing VuexORM that let you sync your Vuex Store with an IndexedDB database using LocalForage.
 # more-indexeddb-repos
+- https://github.com/jurca/indexed-db.es6
+  - The indexed-db.es6 is ES2015-style wrapper of the native IndexedDB HTML5 document-oriented database.
+  - declarative schema with data-migration support
+
+- https://github.com/JayPuff/browser-file-storage
+  - Abstracts the complexity of indexed DB so that a user can easily save files/blobs by key/filename on the browser
+  - Browser must support the IndexedDB API as it cannot be polyfilled
+
+- https://github.com/erikolson186/zangodb
+  - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+
+- https://github.com/mWater/minimongo
+  - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
+  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
+
+

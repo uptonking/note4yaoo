@@ -24,6 +24,8 @@ modified: '2022-06-03T22:06:47.464Z'
   - Offline maps in Leaflet using IndexedDb to store tiles
 - https://github.com/helgasoft/leaflet.dexie
   - A Leaflet plugin for local persistent storage using library Dexie.js
+- https://github.com/yagajs/indexed-db-tile-cache /inactive
+  - Spatial tile cache that saves its data into the IndexedDB of your browser
 
 - https://github.com/eyalzh/simple-kanban
   - A lightweight offline kanban board

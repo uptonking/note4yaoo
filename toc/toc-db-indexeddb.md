@@ -10,6 +10,10 @@ modified: '2022-06-03T22:06:16.249Z'
 > https://github.com/search?o=desc&q=indexeddb+stars%3A%3E0&s=updated&type=Repositories
 
 # popular
+- https://github.com/localForage/localForage
+  - https://localforage.github.io/localForage
+  - localForage is a fast and simple storage library for JavaScript. 
+  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
 - https://github.com/dannyconnell/localbase
   - A Firebase-Style Database ... Offline!
   - Localbase gives you an offline database with the simplicity & power of Firebase, all stored in the user's browser (in an IndexedDB database).
@@ -18,11 +22,6 @@ modified: '2022-06-03T22:06:16.249Z'
     - Databases contain Collections (e.g. users)
     - Collections contain Documents (e.g. { id: 1, name: 'Bill', age: 47 }
   - Localbase is built on top of LocalForage.
-
-- https://github.com/localForage/localForage
-  - https://localforage.github.io/localForage
-  - localForage is a fast and simple storage library for JavaScript. 
-  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
 - https://github.com/creately/rxdata
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
@@ -83,6 +82,10 @@ modified: '2022-06-03T22:06:16.249Z'
   - https://github.com/Microsoft/reactxp/tree/master/samples/TodoList
   - https://github.com/microsoft/reactxp /inactive
     - ReactXP is a library for cross-platform app development using React and React Native.
+
+- https://github.com/google/lovefield
+  - Lovefield is a relational database written in pure JavaScript. It provides SQL-like syntax and works cross-browser
+  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
 # indexeddb-query-sql
 - https://github.com/ujjwalguptaofficial/JsStore
   - A complete IndexedDB wrapper with SQL like syntax.
@@ -120,3 +123,9 @@ modified: '2022-06-03T22:06:16.249Z'
 
 - https://github.com/EmanHerawy/web3Drive
   - This project combines a browser-based frontend with web API crypto, 3box identity, 3box storage, and ifps storage to allow users to upload/share large files securely through end to end clientside based encryption
+
+- https://gist.github.com/robnyman/1894032
+  - IndexedDB storing and retrieving files
+
+- https://gist.github.com/inexorabletash/a279f03ab5610817c0540c83857e4295
+  - IndexedDB Full Text Search (Proof of Concept)
