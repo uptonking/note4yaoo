@@ -24,6 +24,10 @@ modified: '2022-06-03T22:12:42.368Z'
   - It uses a virtual database file stored in memory, and thus doesn't persist the changes made to the database. 
   - However, it allows you to import any existing sqlite file, and to export the created database as a JavaScript typed array.
 
+- https://github.com/ccorcos/tuple-database
+  - The local-first, "end-user database" database.
+  - All queries are reactive.
+
 - https://github.com/realm/realm-js
   - https://realm.io/
   - Realm is a mobile database: an alternative to SQLite & key-value stores
@@ -34,4 +38,3 @@ modified: '2022-06-03T22:12:42.368Z'
   - Indexed DB Implementation
   - 单文件测试idea
 # more-sqlite-web
-

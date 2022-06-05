@@ -16,13 +16,30 @@ modified: '2022-03-03T18:20:12.075Z'
 
 - ## 
 
-- ## 
+- ## My goal is to build a database that makes it easier to build local-first software.
+- https://twitter.com/ccorcos/status/1532185301438738433
+  - Embedded, reactive, schemaless, and transactional read/write directly to indexes (inspired by FoundationDb)
+- SQLite is great, but it leaves much to be desired. It's mostly just a problem with SQL. 
+  - Queries aren't reactive, no multi-valued columns, no indexes across tables for relational queries... All of these currently require bespoke(定制的) solutions.
+- Segment trees/ interval trees are cool, I implemented one once for keeping track of register liveness in a compiler code generator
+- Interesting idea to have cross-table indexes; is any RDBMS supporting that?
+  - I think many databases avoid it because of arbitrarily expensive write time complexity. 
+  - For example, one tweet = one row per follower. 
+  - In a large multi-tenant(租户) system, companies end up with event-sourced architecture like Twitter with eventual consistency.
+  - But for personal tools and fully distributed local-first p2p apps, that shouldn’t be as much of an issue. Worst case scenario, your computer is slow, but you aren’t going to break the app for everyone else.
+- Write amplification can be a problem in these scenarios as well.
+  - True. But if someone tweets and it needs to end up in 100M feeds, then thats just the nature of the problem… Not allowing indexes for this scenario doesn’t solve the problem.
+- https://github.com/ccorcos/tuple-database
+  - The local-first, "end-user database" database.
+- https://github.com/ccorcos/game-counter
+  - TupleDatabase as a UI state management system.
+  - External effects interface through services defined on the Environment.
 
 - ## The idea of persisting UI state to a database has me thinking of tons of possibilities. 
 - https://twitter.com/devongovett/status/1526227167952117761
   - Not only a super nice user feature, also great for development. You could reload and be right where you left off with no Fast Refresh needed. Or debug state using database tools. So cool!
   - According to the article, sqlite is fast enough to store the scroll position and re-query data in a virtualized table in real time
-- Yes, that is how our app works for 7 years now ;-) we syns whole sate (localStorage then and idb now) and react to changes. All UI is built in browser. No hot reloads  needed.
+- Yes, that is how our app works for 7 years now ; -) we syns whole sate (localStorage then and idb now) and react to changes. All UI is built in browser. No hot reloads  needed.
 - I remember reading an article quite a while ago about how FB built their iOS app where everything was driven from SQLite tables - everything. It’s a pattern I’ve been interested in applying for a while. We already do it with business logic loaded + cached in client driving ui
 - There's a ClojureScript project that explores similar ideas: https://github.com/fulcrologic/fulcro. It changed my perspective on UI development
 

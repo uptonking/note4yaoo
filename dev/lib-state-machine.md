@@ -43,6 +43,11 @@ modified: '2021-05-13T03:13:52.403Z'
   - Better error handling
 
 - In your opinion, what would be the best way to combine server state managers like react-query with xstate?
+  - I would use the React Query client directly inside of the machine (invoked). This also fits well with prefetching rather than relying on component lifecycle to fetch.
+  - But yeah, for external data, there's probably a smaller RFC to be made for that. We shouldn't shoehorn it into input.
+
+- Ability to provide a custom serializer that allows certain things in the context (such as symbols / objects) to be omitted from rendering / being read by external tools?
+  - That's a great suggestion. I've also been thinking about the inverse of this: serializing non-serializable things like inline functions
 
 - ## Who is using XState in production?
 - https://twitter.com/DavidKPiano/status/1514944861341892612

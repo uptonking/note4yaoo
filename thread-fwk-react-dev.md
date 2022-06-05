@@ -62,7 +62,13 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
-- ## 
+- ## I'm toying around with using a custom React renderer that doesn't actually do any rendering (all components return null) just so I can use hooks to manage effects.
+- https://twitter.com/ccorcos/status/1514437514722873350
+  - I noticed that even when pulling state out of components, those components still aren't pure because of useEffect.
+  - Now all components do is render HTML and I can test all of the state/effects logic (like fetching data, etc.) in complete isolation without needing the DOM...
+  - Is anyone else doing something like this? 
+  - I tried writing effects just as a state machine, but React hooks really are quite convenient and composable!
+  - https://github.com/pmndrs/react-nil
 
 - ## unless mitosis uses custom elements builtin extend, there's no way to translate React into WC
 - https://twitter.com/WebReflection/status/1514631499961847810

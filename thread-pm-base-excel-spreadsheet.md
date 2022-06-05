@@ -11,6 +11,16 @@ modified: '2022-04-23T18:48:32.550Z'
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Really powerful UI for working with relational databases! Nesting tables to represent joins is really clever.
+- https://twitter.com/ccorcos/status/1520273524161581057
+  - [Ultorg at the 2022 HYTRADBOI Database](https://vimeo.com/695905306)
+
 - ## The biggest reason Excel is the most popular layfolk programming language is that its UX and IDE is miles miles miles better than any other language
 - https://twitter.com/hillelogram/status/1525217533518831621
 - This is probably true but we should emphasize that the UX is mostly driven by the spreadsheet concept, rather than particular details about Excel.

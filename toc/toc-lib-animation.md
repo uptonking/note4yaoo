@@ -58,6 +58,12 @@ modified: '2020-10-05T06:22:02.107Z'
 - animations.js /3Star/MIT/202006
   - https://github.com/robertoentringer/animations.js
   - Web Animations API based in Animate.css
+# react-native
+- https://github.com/LegendApp/legend-motion
+  - Supports react-native and react-native-web
+  - Legend Motion is a declarative animations library for React Native, to make it easy to transition between styles without needing to manage animations.
+  - API similar to Framer Motion for easy mixing of React Native with React
+  - 0 dependencies using the built-in Animated
 # react animation
 - react-transition-group /BSD/7.5kStar/202005
   - https://github.com/reactjs/react-transition-group

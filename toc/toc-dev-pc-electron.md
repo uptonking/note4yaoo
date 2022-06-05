@@ -47,6 +47,13 @@ modified: '2021-01-16T20:50:23.893Z'
   - Cross-platform desktop note-taking app. 
   - Sticky notes with Markdown and Tabs. All in one .txt file.
 
+# boilerplate
+- https://github.com/ccorcos/electron-architecture
+  - This project is a boilerplate electron app with a thoughtfully designed architecture
+  - Main and renderer processes manage state using a Redux-like state machine.
+  - Electron BrowserWindows are controlled declaratively through the application state.
+  - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
+
 # more
 
 - https://github.com/uptick/react-keyed-file-browser

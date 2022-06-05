@@ -19,6 +19,27 @@ modified: '2021-09-04T14:03:39.046Z'
 - https://github.com/jaredly/local-first
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
 
+- https://github.com/ccorcos/tuple-database
+  - The local-first, "end-user database" database.
+    - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.
+    - As a constraint, this means that I'm interested in building an embedded database, like SQLite or LevelDb, that runs in process and is intended to be single tenant. 
+  - All queries are reactive.
+    - Polished applications these days require realtime reactivity.
+    - And it's not just for collaboration — reactivity necessary when a user has multiple windows or tabs showing the same data.
+    - Many systems have record-level or table-level reactivity, but I want all queries to be reactive. I'm tired of having to engineer custom solutions on top of databases with brittle logic where a developer might forget to emit an update event.
+  - Schemaless — schemas are enforced by the application, not the database.
+    - It took me some time to realize the the value of maintaining schemas in the application rather than the database. 
+  - Asynchronous or Synchronous, Persisted or In-Memory Storage
+    - I want to be able to persist data. And most persistence layers are asynchronous: LevelDb or even a cloud database. But even when persistence is synchronous, like SQLite, you might have to asynchronously cross a process boundary, such as an Electron window interacting with a database on the main process.
+    - I want to use a synchronous in-memory database for frontend state management 
+    - Works with synchronous and asynchronous storage including SQLite or LevelDb.
+  - Transactional read/writes written in TypeScript.
+  - Directly read/write indexes with the ability to index graph/relational queries.
+- https://github.com/ccorcos/game-counter
+  - A simple application for keeping score in games. For example, golf or Settlers of Catan.
+  - External effects interface through services defined on the Environment.
+  - TupleDatabase as a UI state management system.
+
 - https://github.com/logux/client
   - https://logux.io/
   - Logux is a new way to connect client and server. 
