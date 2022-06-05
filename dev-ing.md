@@ -117,6 +117,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0606
+
+- dev-to
+  - inline-menu block类型转换： 参考待办列表项实现
+
 ## 0603
 
 - ubuntu 20.04科学上网

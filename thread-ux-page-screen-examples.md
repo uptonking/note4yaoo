@@ -56,6 +56,9 @@ modified: '2021-05-14T14:25:57.616Z'
 
 - 页面背景灰色，卡片背景纯白
   - https://dev.to/awnton/7-code-smells-in-react-components-5f66
+
+# gradients
+- [标题渐变色](https://devtrium.com/posts/react-typescript-using-generics-in-react)
 # logo examples
 - 渐变圆润丝带
   - https://twitter.com/ChristiesInc/status/1435346651217108996

@@ -79,7 +79,7 @@ modified: '2020-12-21T07:46:17.578Z'
   - 指定弹性项目的基准宽度，可以用绝对值或百分比
   - 可理解为弹性项目的最小宽度，但具体宽度由flex属性中其他值决定
   - 当flex-basis值为0%时，是把该项目视为零尺寸的，故即使声明该尺寸为100px，也并没有什么用
-    - flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定。也就是说、弹性项目里内容的宽对项目的宽度没有影响。
+    - **flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定**。也就是说、弹性项目里内容的宽对项目的宽度没有影响。
   - 当flex-basis值为auto时，则跟根据尺寸的设定值(如100px)，则这100px不会纳入剩余空间
 
 - ## grow和shrink的关系
@@ -120,3 +120,8 @@ modified: '2020-12-21T07:46:17.578Z'
   - The benchmarks above only represent the Blink & WebKit side of things. Due to the time of implementation, flexbox is nearly identical across Safari, Chrome & Android.
 
 # [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)
+
+# blogs
+
+- [flex 布局的浏览器兼容性方案](https://juejin.cn/post/6871025038036844558)
+  - https://github.com/hezhikai/blog-flex_compatible

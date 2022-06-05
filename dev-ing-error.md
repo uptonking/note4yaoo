@@ -11,6 +11,9 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- "usestate" expected 0 arguments, but got 1
+  - 原因是自己不小心注释掉了 node_modules/@types/react 文件对应位置的类型定义
+
 - 'Text.isTextList is not a function' 
   - https://github.com/ianstormtaylor/slate/issues/1076
   - 原因是忘了 import { Text } from 'slate'; 
