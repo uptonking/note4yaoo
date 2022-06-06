@@ -122,6 +122,59 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - inline-menu block类型转换： 参考待办列表项实现
 
+- command也许会去掉
+  - 各家editor分发修改通过command
+  - 我们的block-editor有统一数据源，不需要command
+
+- 如何获取一个js对象的所有key和所有value的union type
+  - 思路是 `(typeof x)[keyof typeof x]`
+
+```typescript
+const VARIANTS_BY_ID = {
+  100: 'diagonal',
+  120: 'knight',
+  125: 'king',
+  200: 'disjointGroups',
+  300: 'consecutive',
+} as const;
+
+// type Variants = "diagonal" | "knight" | "king" | "disjointGroups" | "consecutive"
+type Variants = (typeof VARIANTS_BY_ID)[keyof typeof VARIANTS_BY_ID];
+
+```
+
+- command-menu 代码交流
+  - 当对分类菜单有强需求时，如点左边滚动右边，可将数据结构设计为map，而不是数组
+  - 向下键需要让元素自动滚到视野之内，原理是 ele.scrollIntoView
+    - 为了减少reflow，需要只在Rect位置不足时才执行scrollIntoView
+    - 可以每个需要滚到视野内的元素一个id或唯一className，然后得到ele
+
+- discussion-notion-database
+- notion的database奇怪的地方蛮多的，但不知道造成这种感觉的主要原因。
+- pros：可组合性强
+  - 和文档深度结合，使用体验一致
+  - 没有使用常见的点击项目弹窗调整表单项而是open as a page，进一步- 加强与文档的不隔离感
+- cons：block缩略信息策略较神奇不知道哪些字段会被显示哪些会被隐藏 
+  - 缩略信息时展示的信息过少
+  - 通知系统比较拉，recent updated term不是很好tracking
+
+- 就拿这个甘特图来看，飞书的界面超级简洁，一眼就可以看见各种状态
+  - 后面的排期颜色，notion的太素了，感觉和背景融合在一起
+- notion为了支持as page的能力，导致标题部分很乱
+- 从使用上，notion切换视图是在上面，并且各种可以自定义各种引用关系，所以新建任务的时候，总会感觉不知道新建在什么位置了
+- 而飞书的database更符合直觉，左侧目录区分不同database，可以新建表的形式融合各database
+- 功能上来讲，飞书database支持自动化、问卷等各种功能，notion没有
+- 从性能优化上讲，长task列表情况下，飞书不会默认隐藏，notion需要自己点开，并且加载的时候会跳
+- 文档中嵌入的多维表格是不完整的
+  - 但是这就够我们做项目管理用了呀。notion 的各种嵌套能力很强，但是我们用不到呀，甚至用起来会感觉很乱。
+- 真的应该看看linear，可以从github直接导入issue和project
+- 飞书这种设计相当于创建了一个datasource，文档只是引用了datasource的一部分
+  - 然后给这个datasource创建了一个好看的界面，那对用户来说他觉得我需要多用一套东西，心理负担就会高不少了
+- it's easy to compare features。飞书和notion都是巨无霸，要是讨论airtable更是巨无霸，因为这些多维表格都是multipurposed。
+  - 我觉得notion的心智是显然的。但是飞书也是显然的，飞书和维格都很像airtable，一个从数据出发而不是场景出发的东西，它是更好的excel不是更好的trello或者tower。
+  - 两个巨无霸比起来肯定能找出来一堆pro和con，我们应该总从第一性原理出发讲——做什么事情，应该怎么样。
+  - 我们现在还不考虑仓储管理啊依赖关系啊关联表啊。我们从最简单的元素开始，就是任务，子任务，时间轴
+
 ## 0603
 
 - ubuntu 20.04科学上网
