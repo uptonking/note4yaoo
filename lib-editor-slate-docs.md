@@ -28,6 +28,11 @@ modified: '2022-05-15T18:41:39.560Z'
   - https://www.slatejs.org/examples/richtext
   - https://www.slatejs.org/examples/hovering-toolbar
   - https://www.slatejs.org/examples/mentions
+
+- custom formatting的示例
+  - bold, italic, strikethrough, code
+- custom elements的示例
+  - code block
 # motivation
 - ## Why create Slate?
   - Before creating Slate, I tried a lot of the other rich text libraries out there—Draft.js, Prosemirror, Quill, etc.
