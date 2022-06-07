@@ -117,6 +117,26 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0607
+
+- link的实现和难点
+  - link作为单独的插件实现，还是放在inline-menu里面实现
+    - ❓ 甚至可以放在text组件内部实现，从外部更新slate-text组件
+- 👉 还是通过单独的插件实现，插件间的唤起与通信通过单独的eventemitter实现
+  - 优点是其他组件也可以唤起link弹出框
+
+- link的需求和设计
+  - 添加链接的输入框是否类似notion显示一个简单输入框 ❓
+    - notion输入框输入文字可以直接创建page
+    - 输入链接，则下面可以将选中文字转换为链接
+  - 默认样式，灰字，是否需要下划线 ❓
+  - 鼠标悬浮时，光标手型，出现链接悬浮框
+    - 当链接为产品内的双链时，样式默认加粗，是否显示为双链图标 ❓
+  - 点击悬浮框时编辑链接的交互
+
+- prosemirror的commands设计
+  - commands为函数，可以在插件中绑定到快捷键，一般用来暴露给外部
+
 ## 0606
 
 - dev-to
@@ -387,7 +407,9 @@ document.body.removeChild(scrollDiv);
 
 - dev-to
   - inline-toolbar 页面滚动时，工具条没有reposition
+
     - 暂时可以采用基于滚动条发出的通知来更新弹出层的位置
+
 - 优先实现command-menu、拖拽并排布局的功能
   - 暂停显示按钮初始高亮状态
 
@@ -416,13 +438,18 @@ document.body.removeChild(scrollDiv);
 
 - dev-to-inline-menu-text-v0518
   - 将page-tree相关的逻辑提取到顶层命名空间，方便复用，如斜杠菜单、全局快捷键
+
     - 参SelectionManager实现 ❌  在service层封装page-tree数据操作
+
   - [x] 先实现单例弹窗
+
     - 获取当前选区及在viewport中的物理位置
+
   - [x] 实现静态悬浮菜单
   - [x] 实现动态菜单项
   - [x] 自定义菜单项事件
   - [x] 重构Text组件，底层Text不处理业务，只处理编辑器相关逻辑
+
     - 上层BusinessTextHoc获取数据和操作方法
 
 - 本周3个菜单
@@ -491,8 +518,10 @@ document.body.removeChild(scrollDiv);
 
 - dev-to
   - toolbar bold/italic
+
     - 触发悬浮工具条渲染和更新时，工具条按钮如何显示正确的初始状态，特别是高亮加粗斜体
     - 工具条按钮触发的编辑器操作，如何传入参数
+
   - toolbar要在鼠标停止拖动后才显示，正在拖动时不应该显示，notion是此行为
   - drag to row layout
 
@@ -566,7 +595,9 @@ document.body.removeChild(scrollDiv);
 
 - dev-to
   - popover
+
     - block-left-menu、斜杠菜单、文本悬浮工具条、mention面板、group/ungroup悬浮菜单
+
   - base states
   - 图标资源
 
@@ -631,19 +662,27 @@ document.body.removeChild(scrollDiv);
   - 向selectionManager中setSelection
   - 从selectionManager中getSelection
   - 下拉小弹窗、悬浮工具条，都需要从selection中 getBoundingClientRect
+
     - 获取一个range的text
 
 - dev-to-topic-inline-menus
   - 👉 如何注册菜单项，斜杠commandMenuItems、inlineMenuItems
+
     - ✔ 不需要在全局注册菜单项，每个block自己传入自己支持的菜单项及事件
     - ckeditor采用的是初始化编辑器器传入toolbarConfig属性
     - slate示例给的是创建一个自定义Menu组件
+
   - 👉 如何实现动态菜单项
+
     - ✔ 根据block type和block自身传入的配置
+
   - 👉 与设计沟通文本悬浮工具条设计图
   - 👉 悬浮工具条及下拉框是放在全局单例，还是和每个Text组件写在一起
+
     - ✔ 放在全局，方便在不同block间复用
+
   - 💡 commandMenu和inlineMenu的实现放在哪里更好
+
     - 可以放在封装的TextView组件
       - 优点是方便直接获取SlateEditor的selection数据和其他属性方法
       - 容易获取editor command
@@ -872,15 +911,22 @@ document.body.removeChild(scrollDiv);
 
 - dev-to-login-issues
   - 🤔 workspaceName为用户名带来的问题
+
       - 邮箱名冲突的问题，如a@qq.com/a@163.com
           - 暂时解决命名冲突的问题，用户名_邮箱的方式，a_qq
       - useBlockDatabase传入的workspaceName，取回来的id是一致的吗
+
   - 🤔 上次的workspaceId/workspaceName存放在哪里，怎么获取？
+
       - 计划存放在localStorage
       - 先向服务端请求最近workspace列表，若为空，则使用localStorage中保存的
       - 如果存放在database中，则需要修改现在的初始化逻辑，在useInitEditor之前先初始化database
+
   - 🤔 有没有必要在每次登录或刷新页面时，从服务器请求用户的所有workspaceId列表？
+
       - 我认为有必要，在新浏览器登录时可恢复上次workspace，而不是在本地新建workspace
       - 若离线，则自动创建新的workspace，id为 用户名_创建日期
+
   - 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
+
       - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
