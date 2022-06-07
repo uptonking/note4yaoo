@@ -137,6 +137,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - prosemirror的commands设计
   - commands为函数，可以在插件中绑定到快捷键，一般用来暴露给外部
 
+- inline-menu的交互行为，参考notion
+  - 出现条件： selection非空
+  - 消失条件： selection为空
+  - 点击工具条图标：工具条对应按钮变色，编辑器对应内容更新，工具条不消失
+  - 点击下拉菜单：下拉菜单消失，工具条不消失，编辑器内容更新
+
 ## 0606
 
 - dev-to
