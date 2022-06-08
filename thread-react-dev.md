@@ -18,6 +18,30 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
+- ## React tip: if you have an effect that needs to be executed when your app starts, it's definitely okay to execute it *outside* the component, and *not* in useEffect().
+- https://twitter.com/DavidKPiano/status/1533798980596940800
+  - This is especially true if the effect should only execute once, which is an unavoidable constraint sometimes.
+  - 将effect逻辑写在 if( typeof window !== undefined) { auth() }
+  - Note: this is a viable option if you are using React. StrictMode and/or you have start-up effects that need to run once and only once. 
+  - You can make this self-contained and a bit more testable by wrapping it in a function
+- Im not sure I like this, useEffect seems decent for executing side effects.
+  - The side effect outside the component feels a lot less isolated and something that could leak into the rest of the code
+- This is only true for root component, which is a very specific case. For the sake of consistency I'm not sure it's worth having a specific way of handling on-mount effects differently for root and non-root components.
+
+- ## We want div ref prop to accept both `Ref<Div>` & `Ref<Element>` .
+- https://twitter.com/sebastienlorber/status/1533799595045789698
+  - Use setters/getters instead of an object attribute 
+  - This gives the opportunity to "split" the ref type into 2 distinct types: one covariant and one contravariant
+  - The div ref prop could then accept `ReactRefSetter<HTMLElement>`
+
+- ## So what’s the today way of code splitting React components with beefy dependencies? Like if I have a component that uses mapbox and that I don’t want that to be part of the initial bundle size
+- https://twitter.com/steveruizok/status/1534067957441171457
+- You can wrap it in a component and then make that component lazy - you can also use dynamic imports on the module itself you're wrapping
+
+- ## Did you know? useReducer and useState behave differently in React 18. So, preferring useState that can optimize more makes sense when useReducer isn't necessary. useState works for most cases even with _reducer_ 
+- https://twitter.com/dai_shi/status/1534170089981100032
+  - https://codesandbox.io/s/jolly-haibt-qqykok?file=/src/App.js
+
 - ## Here's how useAbortSignal is implemented. This is possible because React no longer warns about setting state of unmounted components.
 - https://twitter.com/dai_shi/status/1529413104505073664
 
@@ -26,7 +50,7 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,   `ValueFront`,   `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,     `ValueFront`,     `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
