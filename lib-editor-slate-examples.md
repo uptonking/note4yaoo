@@ -142,18 +142,37 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://cihad.github.io/slate-table/
   - Table Plugin for Slate (based on @udecode/slate-plugins above v1.0). Inspired by the Atlassian editor's table plugin.
   - 依赖 slate.v0.61, @udecode/slate-plugins-table(2021)
+- https://github.com/lqs469/slate-table /202003
+  - https://slate-table.vercel.app/
+  - A pretty Slate.js table plugin (Slate.js version > 0.5)
+- https://github.com/1build/leyden
+  - https://1build-org.gitbook.io/leyden/
+  - a data table framework powered by Slate.
+  - Leyden's coordinate system is simple and fully interoperable with Slate's Path system.
+  - Cells can access data from other cells using absolute coordinates and relative positions.
+  - Leyden exposes several pre-built validators (such as numeric and integer) for your cell data
+  - Slate requires users to define complicated render functions to detect different types of elements. Leyden handles this automatically
+  - Leyden builds upon Slate's schema definition system, providing an interface for users to define table-shaped schemas with powerfully customization cells.
 - https://github.com/daibin0809/slate-table-demo
+  - 依赖event-emitter
   - slate 编辑器完成的一个表格功能，能够进行表格的选区、单元格操作和行列操作等操作。
   - 表格中无法再添加表格；
   - 表格中右键唤起工具菜单
-- https://github.com/lqs469/slate-table
-  - A pretty Slate.js table plugin (Slate.js version > 0.5)
+- https://github.com/nod-engineering/slate-table
+  - /202106/js
+
 - https://github.com/whatever-company/slate-tables
   - https://whatever-company.github.io/slate-tables/
   - 依赖slate.v0.47
   - A Slate plugin to handle table edition.
   - The plugin supports nested tables natively.
   - Colspan and Rowspan are supported. All operations create a matrix containing all cells' positions.
+- https://github.com/jasonphillips/slate-deep-table
+  - https://jasonphillips.github.io/slate-deep-table/
+  - /201910/js/v0.44
+  - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
+  - https://github.com/George-A-Payne/slate-tables
+    - Forked from slate-deep-tables 
 
 - https://github.com/afeiship/next-slate-plugin
   - Slate plugin manager.

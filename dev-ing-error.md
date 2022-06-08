@@ -11,6 +11,16 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- npm install
+  - npm ERR! notarget No matching version found for @storybook
+  - https://stackoverflow.com/questions/44331005
+  - have npm 8.1.2 and was trying to install newer version of angualr cli, got an error saying "No matching version found for
+  - `npm cache clean --force`
+
+- Field 'browser' doesn't contain a valid alias configuration
+  - 原因是子包目录node_modules安装了slate，但workspace顶级目录node_modules没有安装slate
+  - 解决方法是删除子包的node_modules，在顶级目录npm i
+
 - "usestate" expected 0 arguments, but got 1
   - 原因是自己不小心注释掉了 node_modules/@types/react 文件对应位置的类型定义
 
