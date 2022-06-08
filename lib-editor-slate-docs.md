@@ -31,8 +31,12 @@ modified: '2022-05-15T18:41:39.560Z'
 
 - custom formatting的示例
   - bold, italic, strikethrough, code
+  - For every format you add, Slate will break up the text content into "leaves"
 - custom elements的示例
   - code block
+  - blockquote
+  - list item
+  - All elements default to being "block" elements
 # motivation
 - ## Why create Slate?
   - Before creating Slate, I tried a lot of the other rich text libraries out there—Draft.js, Prosemirror, Quill, etc.

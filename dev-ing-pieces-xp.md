@@ -15,7 +15,7 @@ modified: '2021-04-28T20:54:58.126Z'
 
 ## 
 
-## 
+## block-editor拖动鼠标形成选区后快捷键如加粗失效，但双击自动形成选取后快捷键仍可用
 
 ## slate编辑器的悬浮工具条做了一个月没做完
 
@@ -24,7 +24,7 @@ modified: '2021-04-28T20:54:58.126Z'
 - 思路1: 在全局创建eventmitter，在组件外其他地方emit事件，通知注册了监听函数的slate-text组件更新自身
   - 缺点是在其他位置获取slate-text组件的数据很复杂，因为普通eventemitter很难获取emit事件的结果
 
-- 思路2-变通: 将slate-text组件的ref保存到全局，然后就可以在组件外其他地方通过拿到ref来操作更新slate-text组件
+- 思路2-变通: 将slate-text组件的ref保存到全局，然后就可以在组件外其他地方通过拿到ref来操作slate-text组件通过useImperativeHandle暴露的方法，从而更新slate-text组件
 
 ## overleaf的pdf
 

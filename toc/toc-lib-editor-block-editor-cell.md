@@ -1,11 +1,11 @@
 ---
-title: toc-lib-editor-text-block-cell
-tags: [cell, editorjs, lib, text-editor, toc]
+title: toc-lib-editor-block-editor-cell
+tags: [block-editor, cell, editorjs, lib, toc]
 created: '2020-11-17T13:37:09.407Z'
-modified: '2021-05-14T10:37:33.820Z'
+modified: '2022-06-08T11:03:26.472Z'
 ---
 
-# toc-lib-editor-text-block-cell
+# toc-lib-editor-block-editor-cell
 
 # block-style-editor
 

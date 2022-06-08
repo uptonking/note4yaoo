@@ -117,6 +117,30 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0608
+
+- theme方案选择
+  - import theme对象字面量，使用时直接 theme.color.primary.blue500
+    - 缺点是编译时就打包进了theme，不支持动态切换主题
+    - style9不支持主题切换
+  - 通过ThemeProvider的方式传下去
+    - 方便动态切换主题
+
+- block-editor在鼠标选择后快捷键失效的问题
+  - 因为selectionManager在处理跨block选择时，有一个设置contenteditable为false的逻辑，false后就不接收快捷键
+  - notion的处理方式是，在chrome下整个editor顶层套一个额外的contenteditable-div，所以始终可以移动光标；在其他浏览器下不需要套额外的div
+
+- 自动标号，可以手动重新开始标号，可以在中间插入其他元素
+  - 不要纠结，忽略非核心问题
+
+- 苹果wwdc发布了官方的白板，官方推广了概念，降低了运营成本
+  - logo: better than apple free form
+
+- 飞书发布了block-editor (炫酷的功能，但可能不实用；飞书推广概念降低我们的运营成本)
+- 亮点是拖动实现水平并排布局，并排后可调节每栏宽度
+  - 分栏默认最多5个，之后不可再次添加分栏
+  - 日程可以拖到分栏里面，但多维表格不能拖到
+
 ## 0607
 
 - link的实现和难点
