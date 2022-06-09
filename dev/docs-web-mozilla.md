@@ -7,8 +7,20 @@ modified: '2021-01-04T16:19:02.355Z'
 
 # docs-web-mozilla
 
-# contenteditable vs contentEditable
+# [w3c html5 editing](https://www.w3.org/TR/2008/WD-html5-20080610/editing.html )
 
+- The `contenteditable` attribute is an enumerated attribute whose keywords are the empty string, true, and false. 
+  - The empty string and the `true` keyword map to the true state. The `false` keyword maps to the false state. 
+  - In addition, there is a third state, the `inherit` state, which is the missing value default (and the invalid value default).
+  - `contenteditable` 属性默认继承
+- If an element is editable and its parent element is not, or if an element is editable and it has no parent element, then the element is an editing host. 
+  - Editable elements can be nested. 
+  - User agents must make editing hosts focusable (which typically means they enter the tab order). 
+  - An editing host can contain non-editable sections, these are handled as described below. 
+  - An editing host can contain non-editable sections that contain further editing hosts.
+- When an editing host has focus, it must have a caret position that specifies where the current editing position is. It may also have a selection.
+  - How the caret and selection are represented depends entirely on the UA.
+# contenteditable vs contentEditable
 - `contenteditable` global attribute is an enumerated attribute indicating if the element should be editable by the user.
   - 作为html的属性
   - If so, the browser modifies its widget to allow editing.

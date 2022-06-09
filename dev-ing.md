@@ -117,6 +117,23 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0609
+
+- block-editor基于多编辑器实例
+  - pros
+    - 将slate作为主体应用渲染层的一小部分，开发者对数据和定制掌控力更强，方便替换掉slate
+  - cons
+    - 处理跨block选区需要自己计算选取信息和计算文字偏移量
+    - 需要自己实现基础计算：选区、光标、键盘、滚动条
+
+- block-editor基于单编辑器实例
+  - pros
+    - 更易复用slate的selection、工具方法
+  - cons
+    - 实现水平分栏可能更复杂
+
+- 普通react table组件和基于slate的table有什么区别？
+
 ## 0608
 
 - theme方案选择

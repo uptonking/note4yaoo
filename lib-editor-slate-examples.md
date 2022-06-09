@@ -138,11 +138,11 @@ modified: '2022-05-15T18:45:27.570Z'
 - https://github.com/inokawa/remark-slate-transformer
   - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. Made for WYSIWYG markdown editor.
 
-- https://github.com/cihad/slate-table
+- https://github.com/cihad/slate-table  /202107/ts
   - https://cihad.github.io/slate-table/
   - Table Plugin for Slate (based on @udecode/slate-plugins above v1.0). Inspired by the Atlassian editor's table plugin.
   - 依赖 slate.v0.61, @udecode/slate-plugins-table(2021)
-- https://github.com/lqs469/slate-table /202003
+- https://github.com/lqs469/slate-table  /202003/ts
   - https://slate-table.vercel.app/
   - A pretty Slate.js table plugin (Slate.js version > 0.5)
 - https://github.com/1build/leyden
