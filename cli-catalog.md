@@ -67,8 +67,12 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
     - git checkout c5f567 -- file1/to/restore file2/to/restore
 
 - commit相关
-  - 修改最新的提交描述信息
+  - 修改最新commit描述信息
     - git commit --amend -m 'new msg'
+  - 修改第N条commit描述信息
+    - you can use `reword` to be prompted to only change the commit message
+    - https://stackoverflow.com/questions/1884474
+    - git rebase -i HEAD~n    倒数条第N条，N>=1
   - commit后又修改了，但不想添加记录
     - git add .
     - git commit --amend --no-edit

@@ -8,6 +8,7 @@ modified: '2022-05-24T17:53:08.400Z'
 # dev-ing
 
 # dev-2022
+- 分析核心需求和问题，拆分问题，梳理任务、子任务
 
 ## dev-xp
 
@@ -116,6 +117,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
+
+## 0610
+
+- dev-to
+  - slate link的悬浮信息弹框应该使用mui的popover实现，而不是使用tooltip
+  - [x] 编辑link时要立即隐藏link悬浮框
+    - 还存在link文字突然变黑又变白引起的闪烁问题
+    - 编辑link链接的modal总input无法检测到ESC按键，但可click-away隐藏modal
+  - [ ] link编辑框的回车事件要正确更新slate model数据
+  - [ ] 在link输入框输入斜杠会意外触发斜杠菜单的keydown计算逻辑
 
 ## 0609
 
