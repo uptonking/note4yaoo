@@ -7,14 +7,7 @@ modified: '2022-06-08T11:05:33.767Z'
 
 # pm-editor-block-editor-xp
 
-# block-editor相对于notion的feature
-
-## 文字格式
-
-- 文本内链接设计
-  - 区分产品内链接和外部链接
-  - 标识图片链接
-# block-editor
+# guide
 - block-editor基于多编辑器实例
   - pros
     - 将slate作为主体应用渲染层的一小部分，开发者对数据和定制掌控力更强，方便替换掉slate
@@ -30,3 +23,16 @@ modified: '2022-06-08T11:05:33.767Z'
     - 实现鼠标左移右移更简单
 
 - 普通react table组件和基于slate的table有什么区别？
+# block-editor相对于notion的feature
+
+## 文字格式
+
+- 文本内链接设计
+  - 区分产品内链接和外部链接
+  - 标识图片链接
+# inline-toolbar
+- 选中区域文本格式在工具条的高亮色判断
+  - 全部加粗才高亮
+    - notion
+  - 部分加粗也高亮
+    - 飞书

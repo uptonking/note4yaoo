@@ -122,11 +122,32 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to
   - slate link的悬浮信息弹框应该使用mui的popover实现，而不是使用tooltip
+  - [ ] link编辑框的回车事件要正确更新slate model数据
   - [x] 编辑link时要立即隐藏link悬浮框
     - 还存在link文字突然变黑又变白引起的闪烁问题
     - 编辑link链接的modal总input无法检测到ESC按键，但可click-away隐藏modal
-  - [ ] link编辑框的回车事件要正确更新slate model数据
-  - [ ] 在link输入框输入斜杠会意外触发斜杠菜单的keydown计算逻辑
+  - [x] 在link输入框输入斜杠会意外触发斜杠菜单的keydown计算逻辑
+    - 通过在弹出框元素keydown时先将slate-text的selection设为空，然后enter时恢复selection解决，这样输入时就不会触发selection相关事件
+
+- isLinkActive的实现思路
+  - Editor.nodes  + n => n.type === 'link'
+
+- anchor元素的href和onClick同时存在时
+  - 若onClick中也存在路由跳转，则页面会先跳转onClick的url，再跳转href的url，共跳转2次
+  - If your onclick function returns false， the default browser behaviour is cancelled
+  - [HTML anchor tag with Javascript onclick event](https://stackoverflow.com/questions/7347786)
+
+- [React link OnClick prevent href](https://stackoverflow.com/questions/54921684)
+  - e.stopPropagation(); e.preventDefault(); 
+  - e.nativeEvent.stopImmediatePropagation(); 
+  - return false; 
+  - none of those seem to work.
+  - Returning false has been deprecated since React 0.12.
+
+- mui: 当文字很小且很短时，如只有2个字符，hover到文字上鼠标稍微移动一点点tooltip立即就消失了
+  - 原因排查定位是由于hover时会触发悬浮挂件面板导致的，下面会显示挂件面板和链接信息面板
+  - [Tooltip appears too far from the hovering element](https://github.com/mui/material-ui/issues/27220)
+  - This is done on purpose. If the distance was smaller, the tooltip would be covered by the cursor.
 
 ## 0609
 
