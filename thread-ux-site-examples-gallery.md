@@ -8,6 +8,21 @@ modified: '2021-08-16T06:46:12.800Z'
 # thread-ux-site-examples-gallery
 
 # discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Revisiting an old brainstorm I had for a personal site design.
+- https://twitter.com/vincentriemer/status/1535700481246343168
+  - 多个圆形依次弹出来
+
 - ## What are great OSS project websites you like? Looks nice, good docs, useful, etc?
 - https://twitter.com/wooorm/status/1432825380604420097
   - Specifically excluding stuff like:

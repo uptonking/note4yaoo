@@ -18,6 +18,29 @@ Symbol('a') === Symbol('a') //false
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## JavaScript Map usually performs better than plain objects when you have a large dataset and/or often set new key/value pairs.
+- https://twitter.com/diegohaz/status/1534888291732013058
+  - Here's how you can use Map with React state
+  - As others pointed out, it's better to copy the map before mutating it
+  - setSizes((sizes) => new Map(sizes) .set("item-1", 30) .set("item-2", 40) .set("item-3", 20) )
+  - I'm currently working with virtualized lists(ariakit-virtual-list) which require the manipulation of large datasets (for measurements, for example)
+  - I significantly improved performance by replacing some plain object states with maps.
+- Here's another piece of info to consider. The difference between `Object.keys(obj).length` and `map.size` is huge with large datasets.
+  - Basically O(n) vs. O(1).
+
+- It's probably safer to copy first before mutating.
+- Can I ask why useState(() => new Map()) and not useState(new Map())? What’s the difference between the two? Besides the syntax ofc. Is it a perf thing?
+  - Just to avoid creating a new map unnecessarily on every render, but that probably doesn’t make much difference.
+- I use a combo of Map with an array of tuples as initializer and Object.entries to generate a collection/dictionnary ? I found this pattern useful when dealing with tree data structure. Are they any caveats to this approach ? Should I be using Map instead ?
+  - Also I find Map not so typescript friendly. I don’t understand why the has method is not some kind of typeguard under the hood. When using .has() the item is still undefined for typescript. Using some kind of collection instead I only have to check for the key existence
+  - That .has() undefined bullshit pissed me off for a whole day I ended up abandoning Map permanently
+- Copy before update to prevent state changes that can be read before re-rendering.
+  - Considering objects, in Chrome/V8 the hidden class is preserved when a new prop with an integer key is added to the object. This speeds up the lookup since such props are stored as elements.
+
 - ## function call: `return` does override the normal instantiation behavior but only if an object is returned
 - https://twitter.com/rauschma/status/1533061880830431232
 

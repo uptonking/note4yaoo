@@ -11,18 +11,35 @@ modified: '2021-08-16T06:56:53.061Z'
 
 - ## 
 
+- ## 
 
 - ## 
 
-
 - ## 
 
+- ## . @logseq users in my timeline. How do define when to go block-based vs going page-based in your graphs?
+- https://twitter.com/PabloBernardoTW/status/1534193024934326273
+- Here's my writing process in @RoamResearch 
+  - 1. DNP for 95% of my writing 
+  - 2. Write blocks and liberally backlink to existing relevant pages 
+  - 3. Create new pages as recurring/important topics arise 
+  - 4. Tag important notes so it's easy to filter signal from noise in linked references
+- I typically create blocks within the context of a DNP which provides me with a type of "breadcrumbs" for traversing linked references.
+  - This encourages me to regularly review past DNP which can re-introduce me to past thoughts/ideas/topics.
+- I always create a page for any concept that can’t be expressed in a single block, while a block is never longer than a paragraph in a “traditional” note-taking app would be.
 
-- ## 
+- To me it is something like this:
+  - Block - default
+  - Page - when there is something specific that I want to keep as a standalone page - like for example the details of a project, the write up of an article, notes on a book, a course I am taking
 
+- blocks are like tweets, pages are like threads. it depends on the scaling and it helps to have both!
 
-- ## 
-
+- my xp
+  - 1. Always in blocks from a daily note
+  - 2. An empty page is now generated with linked references
+  - 3. If I search for a term and realise the page is empty with a lot of linked references - i use them as an inbox/todo list for organising into a page
+  - The outlining in Logseq excels in that it encourages single bullets/blocks to be naturally atomic concepts.
+  - Everything is a block, until I give it a title (because I keep referring to it), or I want to export it (because LS cannot export only blocks)
 
 - ## github markdown
 
@@ -30,16 +47,13 @@ modified: '2021-08-16T06:56:53.061Z'
 - https://github.com/jacob-ebey/github-md
   - A markdown parser API for GitHub. SWR for 2 days with revalidation every 5 minutes.
 
-
 - https://collected.press/
 - https://github.com/ThatCollected/collected-press
 - I made an open source service that loads from GitHub via jsDelivr and then renders the Markdown to HTML. Let me know if the docs aren’t clear or if you have feature suggestions!
   - jsDelivr can do the fetching of content for you, I believe they won’t be rate limited like normal GitHub API users. The hard part is getting the SHA of the repo’s HEAD. I solved this by doing the equivalent of `git ls-remote` to fetch from GitHub
 
-
 - Fastest way to get GitHub hosted markdown into @remix_run while avoiding rate limiting during dev: GO!
 - https://twitter.com/tannerlinsley/status/1527449478269005824
-
 
 - ## I am looking at my @logseq graph, and I see ... nothing.
 - https://twitter.com/preslavrachev/status/1522203242989502465

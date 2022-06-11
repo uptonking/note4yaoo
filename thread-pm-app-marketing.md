@@ -32,7 +32,8 @@ modified: '2021-10-29T15:06:33.422Z'
 
 - ## 
 
-- ## 
+- ## @sketch ’s “vs. @figma ” page is surprisingly misleading. At the same time, Figma’s page is actually quite respectful of Sketch’s role in the UI design toolkit.
+- https://twitter.com/efedorenko/status/1535352502891192321
 
 - ## I think maybe the expression "Blazing Fast" should be banned from DevTools product marketing now, together with “X. Done Right” and “Next Generation Y.”
 - https://twitter.com/leeerob/status/1531626433596035072

@@ -12,6 +12,17 @@ modified: '2021-04-19T14:52:58.244Z'
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 每次看到那种很酷、但是又没啥实用价值的开源项目，第一反应都是：这些人好闲啊，是没有生活压力的吗。
+- https://twitter.com/lichuang/status/1534350942082039808
+- 作者现在已经辞掉工作专门做这个了 光靠赞助就能养活自己 可以说是非常羡慕了 而且还吸引了一批人加入他 不乏许多大佬
+- “免受生活焦虑才有创造的自由”
+
 - ## Did @framer pivot from prototyping tool to website builder? Very interesting move, and as usual the landing page is absolutely exceptional.
 - https://twitter.com/linuz90/status/1530114519661527040
 - Interesting, I think maybe it was a good bet as figma and skitch seems to be eating the market 👀
@@ -20,7 +31,7 @@ modified: '2021-04-19T14:52:58.244Z'
 - https://twitter.com/chloerei/status/1525376736757571587
 - 我也感觉就信息处理上，传统的论坛和博客要比SNS更加好用
 
-- ## Framer: It is now effortless to let others fork, tweak and publish your site. We call it “Remixing,”
+- ## Framer: It is now effortless to let others fork, tweak and publish your site. We call it “Remixing, ”
 - https://twitter.com/framer/status/1524751380061122561
   - 动画做得很好
 

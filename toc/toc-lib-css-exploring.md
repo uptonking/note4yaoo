@@ -71,6 +71,18 @@ modified: '2020-10-22T13:09:57.085Z'
 - https://github.com/reflexjs/reflexjs
   - Starter kits, themes and blocks to help you build Gatsby and Next.js sites faster
 
+
+# css-infra
+
+- https://github.com/components-ai/css.gui
+  - https://components.ai/css-gui
+  - CSS GUI is a visual toolkit for editing element styles on the web. 
+  - It's theme-aware, performant, and can be composed into any React app.
+  - Controls for 280 CSS properties
+    - CSS GUI only supports a portion of the CSS spec currently, but the intention is to support it all.
+  - Responsive value arrays
+  - Scrubbable number inputs
+
 # more-css-repos
 
 - https://github.com/marcop135/bullframe.css

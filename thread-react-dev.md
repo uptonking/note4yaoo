@@ -16,7 +16,10 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - ## 
 
-- ## 
+- ## Has anyone ever investigate the cost of React context "at scale" - e.g. if most components are wrapped in Context is that a performance pitfall?
+- https://twitter.com/al_hinds/status/1535399948812173312
+  - I'm exploring imposed constraints disallowing events/className/style/ref as component API for DS composition either explicitly (render props) or implicitly (clone element). Some API would still exist for necessity of consumer API (ref/events) but the DS wouldn't use.
+- I can see the use of context being relevant for certain props like an appearance. But wholesale unsure.
 
 - ## React tip: if you have an effect that needs to be executed when your app starts, it's definitely okay to execute it *outside* the component, and *not* in useEffect().
 - https://twitter.com/DavidKPiano/status/1533798980596940800
@@ -38,9 +41,17 @@ modified: '2021-01-06T14:40:11.360Z'
 - https://twitter.com/steveruizok/status/1534067957441171457
 - You can wrap it in a component and then make that component lazy - you can also use dynamic imports on the module itself you're wrapping
 
-- ## Did you know? useReducer and useState behave differently in React 18. So, preferring useState that can optimize more makes sense when useReducer isn't necessary. useState works for most cases even with _reducer_ 
+- ## Did you know? useReducer and useState behave differently in React 18. 
 - https://twitter.com/dai_shi/status/1534170089981100032
+  - So, preferring useState that can optimize more makes sense when useReducer isn't necessary. 
+  - useState works for most cases even with _reducer_ 
   - https://codesandbox.io/s/jolly-haibt-qqykok?file=/src/App.js
+
+- One thing that’s notable is that useReducer is strictly more powerful (which can lead to fewer optimizations). It can do something that no third party nor useState can. It can respond to changes to a parent in the same batch, has already been queued or happens at higher pri.
+  - Yes, some of my libraries extensively use such useReducer feature, namely use-context-selector and jotai.
+
+- Interesting! Is that a difference in @preactjs since it uses useReducer for useState internally?
+  - You can implement useState using useReducer since semantically it's a subset. However, I think preact doesn't implement this particular semantic because the reducer is eagerly evaluated so updating the reducer's input in the same batch doesn't work in preact.
 
 - ## Here's how useAbortSignal is implemented. This is possible because React no longer warns about setting state of unmounted components.
 - https://twitter.com/dai_shi/status/1529413104505073664
@@ -50,7 +61,7 @@ modified: '2021-01-06T14:40:11.360Z'
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,     `ValueFront`,     `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,       `ValueFront`,       `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

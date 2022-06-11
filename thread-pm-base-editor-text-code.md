@@ -11,9 +11,20 @@ modified: '2021-08-16T06:56:58.774Z'
 
 - ## 
 
-- ## 
+- ## Markdown has built in support for showing differences. Very useful for showing required code changes.
+- https://twitter.com/SCooperDev/status/1534872488269824000
+  - markdown 的code block语法高亮显示diff
 
-- ## 
+```diff
+- const old = 111; // 旧内容
++ const new = 222; // 新内容，不仅是代码
+```
+
+- ## 将 contenteditable=“true” 放到每个 block 上而不是放到根结点是现在富文本的新趋势吗？ 
+- https://twitter.com/_Xheldon/status/1534795801989292032
+  - Notion 这么做了，新版的飞书也这么做了，除了性能上的考虑，还有其他的好处吗？目前发现的好处有：
+  1. 可以实现类似 word 的分栏效果。
+  2. 性能可能会好点？
 
 - ## Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112
 - https://blog.replit.com/code-editors

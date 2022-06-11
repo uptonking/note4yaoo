@@ -11,7 +11,15 @@ modified: '2021-08-10T03:51:01.891Z'
 
 - ## 
 
-- ## 
+- ## A fundamental truth of development: You will spend much more time reading code than you will creating it.
+- https://twitter.com/codecapers/status/1533937511222784000
+  - That's why frameworks & tools that get rid of "boilerplate" code are practically useless.
+  - Don't optimize for code creation... optimize for code understanding
+- To optimize anything, we first have to make it explicit.
+- Why use Next.js, when plain react would be "better" by this fundamental truth?
+  - Next.js is designed to sell Vercel. They make it easy for you to do certain things in the hope that you'll deploy your web page to their platform.
+  - There's nothing you can't do in Next.js that you can't do fairly quickly with any old bundler, React, React Router and the knowledge to wire it up to a backend.
+  - But it's certainly easier to use Next.js than it is to have to create a backend, frontend and SSR setup - if that's what you need.
 
 - ## “Programming is mostly about reading previous code, researching what is needed and how it fits within the current system, and planning the writing of features with small, testable increments. The actual writing of lines of code is probably…” — @samerbuna
 - https://twitter.com/Yi_Xpress/status/1396602143575056389

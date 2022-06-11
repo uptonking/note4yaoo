@@ -30,12 +30,17 @@ modified: '2021-01-08T17:13:43.392Z'
 - HTTP中那些method的真正区别只有那个单词拼写不一样。其他部分没有任何区别。
   - 各种Method的区别是语义上的。是为了让你的应用程序能够清晰简化的进行通信。对于HTTP本身来讲没有任何区别。当然安全性也没有任何区别。
   - 当然也有可能是一些其他的客观因素。比如公司斥巨资买了一个防火墙，发现只能拦截过滤POST和GET请求。。。。。
-# pieces
+# discuss
 - ## 
 
-- ## 
+- ## URLPattern is just a string matcher, like RegExp. React Router's route matching algorithm takes into account route nesting. It's a little more complex than a simple string pattern match.
+- https://twitter.com/mjackson/status/1532972006471180288
+- Unrelated: URLPattern shouldn’t have become a standard, imo. It’s slow by design because it encourages matching every route individually instead of all at once, and matching each route typically needs a regex
+  - Yeah, agree. I took one look at it and thought “this isn’t going to help at all”. It’s a classic case of premature standardization.
 
-- ## 
+- ## A few screens of JSON data
+- https://twitter.com/iamakulov/status/1534617100471439361
+  - (this is common with SSR when you’re inlining the initial data to load it on the client. it’s fine when it lives in the end of `<body>` – but if you put it into `<head>` , it will delay the First Paint)
 
 - ## process.env. NODE_ENV in browser code needs to die a quick and painful death.
 - https://twitter.com/justinfagnani/status/1532928015738363905

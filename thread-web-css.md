@@ -21,10 +21,13 @@ modified: '2021-01-08T17:15:13.906Z'
 - clipboard only fully supported by Safari
 - Typed OM & CSS Paint API only fully supported in Chrome
 - bitmaprenderer, feature policy, & web locks experimental
-# pieces
+# discuss
 - ## 
 
-- ## 
+- ## modern css can help us build better scrolling experiences. 
+- https://blog.mayank.co/better-scrolling-through-modern-css
+  - [Better scrolling through modern CSS](https://blog.mayank.co/better-scrolling-through-modern-css)
+  - from theming the scrollbars in light/dark mode to conditionally specifying scrollbar styling based on input modality
 
 - ## A suddenly-appearing scrollbar can shift a layout… but now you can use `scrollbar-gutter: stable` to mitigate that!
 - https://twitter.com/stackblitz/status/1518924375721873408

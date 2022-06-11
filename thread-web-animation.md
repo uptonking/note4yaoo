@@ -13,7 +13,9 @@ modified: '2021-01-08T17:14:34.841Z'
 
 - ## 
 
-- ## 
+- ## Just released an interesting bug fix for mixing rotation and layout animations in Framer Motion.
+- https://twitter.com/mattgperry/status/1534465693336363008
+  - In this video, the grey container is animating height via scale, which distorts its children. We usually correct for this, but these rotating children are still stretching.
 
 - ## I'm looking for the absolutely smallest implementation of a smooth-scroll animation loop powered by nothing more than request animation frame + some measurements at each tick. Anyone seen anything like that in the wild?
 - https://twitter.com/tannerlinsley/status/1532422987277668353

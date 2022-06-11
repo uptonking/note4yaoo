@@ -11,7 +11,9 @@ modified: '2021-08-23T09:58:18.490Z'
 
 - ## 
 
-- ## 
+- ## Panapasi (alpha) is the first I see based on @builderio Mitosis
+- https://twitter.com/sebastienlorber/status/1534221702502178816
+  - Mitosis: compiling a "JSX Lite" dialect to native frameworks 
 
 - ## I would never want JSX standardized. 
 - https://twitter.com/trueadm/status/1502326881487626253

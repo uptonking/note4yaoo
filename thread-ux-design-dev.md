@@ -26,8 +26,16 @@ modified: '2021-03-10T11:38:16.053Z'
 
 - 《52 个设计原则》每个原则都有来源推到、案例解读、边界限制，由小红书产品设计中心制作，移动端和 PC 端体验都不错
   - https://rpdc.xiaohongshu.com/52-design-principles
-# pieces
+# discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 如何处理圆角嵌套关系？
+- https://twitter.com/i/bookmarks
+  - 内部圆角 = 外部圆角 - Padding
 
 - ## Today's “Garden” render is a nice one after a few not-so-good editions
 - https://twitter.com/georgedoescode/status/1516802985317257220

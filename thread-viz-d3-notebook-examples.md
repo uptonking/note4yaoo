@@ -29,6 +29,32 @@ modified: '2021-05-25T09:14:28.879Z'
 
 - ## 
 
+- ## I updated my @observablehq example of how to combine @d3js_org and @Mapbox to make it more reusable, using the D3 examples format.
+- https://observablehq.com/@john-guerra/mapbox-d3
+  - Just give it some topoJSON features and it will draw them with D3, letting Mapbox do the zoom and panning
+
+- ## The new hexbin transform aggregates 2D points into hexagonal bins (true hexagons in screen space)
+- https://observablehq.com/@observablehq/plot-hexbin
+
+- ## Using scale to animate images between different aspect ratios will distort(使变形、扭曲) them. 
+- https://twitter.com/mattgperry/status/1534885775086604290
+  - My advice is usually to use two elements, an image and an outer div to clip it. 
+  - Here's a new approach that uses one element, applying scale correction to backgroundSize
+  - https://codesandbox.io/s/framer-motion-scale-correction-for-transformed-images-ude0np?file=/src/App.js
+- The downside to the background-size approach is you lose `<img>` semantics. 
+- Here's a hacky version using the upcoming `object-view-box ` rule, which is viewBox for images.
+  - (Chrome Canary required)
+
+- How are you handling layout changes if you're using transforms.
+  - The CSS changes the layout (in this case width/height/margin) and the transforms animate the change
+  - So what the point if using transforms if you still animate height and margin, etc...
+  - You don't - you change width/height once, this changes the layout (the expensive operation). Then you undo the change using a transform, which you then animate back down to zero.
+  - Here's a good write up of the general approach
+  - [FLIP Your Animations](https://aerotwist.com/blog/flip-your-animations/)
+
+- ## Render sketchy styled barchart with D3 & @antv/g
+- https://observablehq.com/@xiaoiver/d3-rough-barchart
+
 - ## We are using @observablehq notebooks and @vega_vis in our non-majors Intro to Data Vis course this quarter. 
 - https://twitter.com/jonfroehlich/status/1520149034421219328
   - I've enjoyed learning both platforms and creating some educational materials

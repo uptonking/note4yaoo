@@ -14,8 +14,23 @@ modified: '2021-03-31T06:50:19.936Z'
     - 在/etc/apache2/sites-available目录下，建立单独文件，如kanban.conf
     - 保存后执行a2ensite kanban.conf，执行后会自动在/etc/apache2/sites-available建立相应的文件链接。
     - 注意要做域名解析
-# pieces
+# discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## There’s a very real possibility local dev may be dead in 10 years. (The Death of Localhost)
+- https://twitter.com/swyx/status/1533910738942562304
+  - @isamlambert “Planetscale doesnt believe in localhost”
+  - @ericsimons40 Stackblitz runs Node fast in the browser 
+  - @GitHub runs entirely on Codespaces 
+  - This would be the biggest shift in dev workflow since git.
+- only 2 ways to make money in dev infra
+  - bundling and unbundling the mainframe
 
 - ## I’m a @Cypress_io fan. But, it’s not perfect.
 - https://twitter.com/housecor/status/1525087602545762305

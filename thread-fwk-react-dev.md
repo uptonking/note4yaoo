@@ -62,6 +62,55 @@ modified: '2021-01-06T14:40:03.364Z'
 # discuss
 - ## 
 
+- ## Is useReducer the only client state manager that can closure over props / server state? I don't  think you can do something like this with zustand, xstate or others. You probably can with redux, but only if all your state lives in redux.
+- https://twitter.com/TkDodo/status/1533528718064361474
+  - I meant reading something / having access to something from the outer scope, in this case, the `amount` . I think it would've been clearer if I inlined the reducer in the example instead of currying it.
+- This isn't a closure though; this is a new reducer being created on every render. React's keeping track of the previous reducer's state and using it for the new reducer, which seems bug-prone but just so happens to be fine for a contrived example like this one.
+
+- ## In hindsight the JSX transform that ships with TS is very much not general in many ways:
+- https://twitter.com/fabiospampinato/status/1533413033892098049
+- 1. The new automatic runtime function gets passed the "key" as its third argument, React cares about keys, Solid doesn't need them at all, they are just useless there.
+- 2. Children are called before parents, this works in React but breaks Solid entirely, arguably this is just conceptually wrong.
+- 3. Props are created before the h function is called, this makes other things that React doesn't care about impossible.
+
+- ## React opinion: most context providers should just be singletons instead.
+- https://twitter.com/jamonholmgren/status/1534295833562075136
+
+```JS
+// e.g. not:
+
+<RootStoreProvider store={rootStore}>
+  <App />
+</RootStoreProvider>
+
+// but this:
+
+let _store
+
+function useStore() {
+  if (!_store) // initialize it
+    return _store
+}
+
+const App = () => {
+  const store = useStore()
+}
+```
+
+- Primary issues brought up in replies seem to be:
+  - SSR: I do React Native, but yeah
+  - Mocking: I dislike mocking, but if you have to, probably need context
+  - Component and storybook snapshot tests: I avoid those tests, don’t find them all that useful myself
+  - But if those things are important to you, then yeah, use context. I am able to avoid it often myself.
+
+- The singleton pattern is anti pattern for good reasons… This does not work well with testing or storybook for example. Or server side rendering. Context is really a beautifull way to write SOLID code without the usual boilerplate of OOP.
+  - Hooks aren’t SOLID at all you’re completely subverting dependency injection (props) when you use context
+
+- The advantage with the context provider is that tests can easily supply a different value when testing which makes things much easier than having a singleton.
+  - Also for apps that run on Web and do SSR, we wouldn't want to use a singleton for values that can user-specific data.
+
+- Providers are react way for inverse of control. It gives you much more testability and flexibility. Enclosing state provider in singleton would be the same as accessing global variable directly - works, but easy to break and hard to test.
+
 - ## I'm toying around with using a custom React renderer that doesn't actually do any rendering (all components return null) just so I can use hooks to manage effects.
 - https://twitter.com/ccorcos/status/1514437514722873350
   - I noticed that even when pulling state out of components, those components still aren't pure because of useEffect.

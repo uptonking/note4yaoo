@@ -15,7 +15,8 @@ modified: '2022-04-23T18:48:32.550Z'
 
 - ## 
 
-- ## 
+- ## Introducing:  Observable for Excel Users! 
+ - https://observablehq.com/@observablehq/excel-introduction?collection=%40observablehq%2Fobservable-blog
 
 - ## Really powerful UI for working with relational databases! Nesting tables to represent joins is really clever.
 - https://twitter.com/ccorcos/status/1520273524161581057

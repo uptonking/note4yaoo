@@ -168,6 +168,15 @@ export default FrontPage
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## FWIW markdown-it doesn't escape single apostrophes [0], and the most performant way than I know to do that in the browser involves using the XMLSerializer thing [1], I think that was only some 20% faster or something.
+- https://twitter.com/fabiospampinato/status/1533419227100721158
+
 - ## I like markdown-it plugin: `# A heading {#​id-for-heading}` .
 - https://twitter.com/rauschma/status/1430458279096893440
   - Alas(不幸的是；哎呀), the available TOC plugins don’t pick up the custom ID. 

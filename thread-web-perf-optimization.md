@@ -13,7 +13,11 @@ modified: '2021-02-26T16:42:06.878Z'
 
 - ## 
 
-- ## 
+- ## how browsers parse HTML – do most browsers start parsing parts of the html _as_ they are still downloading or they have to wait until the whole HTML document is completely downloaded?
+- https://twitter.com/he_zhenghao/status/1534379242657660930
+  - also is parsing-while-downloading html the same as streaming html? 
+- HTML parsers are piped with the network stream on document downloads, but obviously not when using something like .innerHTML.
+  - HTML streaming is about streaming HTML from the server as it is SSRed, instead of waiting for it to be fully SSRed before sending it. AFAIK.
 
 - ##  `<img>` and background-image download images differently.
 - https://twitter.com/iamakulov/status/1504804839921909761
