@@ -124,6 +124,16 @@ modified: '2022-04-05T10:10:08.537Z'
 - Right now if you want you can use yjs or sharedb. But the APIs aren't spectacular. Eventually I want these things integrated into svelte / react / swiftui and postgres / sqlite / whatever so it just sort of all works together and we get nice tutorials taking you through what you need to know.
   - We aren't there yet. Automerge is slow (but this is being worked on). Yjs is hard to use well with databases, and its missing some features. We'll get there. The point of all the mathematical formalisms is that if we do it right, it should just work and you shouldn't have to understand the internals to use it.
 - It's worth noting that many of the CRDT discussions focus on collaborative text editing. That's a really hard problem. CRDTs are (and have been for some time) a useful primitive for building distributed systems.
+# [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
+- CRDT don't require a central authority to resolve sync conflicts
+  - They open up new possibilities to scale the backend infrastructure and are also well-suited as a data-model for distributed apps that don't require a server at all.
+- However, several text editor developers report not to use them because they impose a too significant overhead.
+- Marijn Haverbeke wrote about his considerations against using CRDTs as a data model for CodeMirror 6
+  - the cost of such a representation is significant, and in the end, I judged the requirement for converging positions to be too obscure to justify that level of extra complexity and memory use
+- The Xi Editor used a CRDT as its data model to allow different processes (syntax highlighter, type checker, ..) to concurrently access the editor state without blocking the process. They reverted to a synchronous model because
+- [CRDT is not pulling its (considerable) weight.__201905](https://github.com/xi-editor/xi-editor/issues/1187#issuecomment-491473599)
+  - By now we have lots of examples where trying to design features around the structure imposed by CRDT turned out to be a lot more complicated than it would be in a more synchronous world - we saw the auto-indent stuff above, difficulty getting the selection right in transpose
+  - CRDT is a tradeoff
 # discuss
 - ## Tom MacWright @tmcw · 14h if you were building a collaborative web application today, you'd use 
 - https://twitter.com/tmcw/status/1433436431658196997
@@ -234,3 +244,5 @@ modified: '2022-04-05T10:10:08.537Z'
 - [Peritext A CRDT for Rich-Text Collaboration](https://www.inkandswitch.com/peritext/)
   - supports overlapping inline formatting, and shown how to implement it efficiently.
   - it simply allows two versions of a rich-text document to be merged automatically.
+
+- [Are CRDTs suitable for shared editing?](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)

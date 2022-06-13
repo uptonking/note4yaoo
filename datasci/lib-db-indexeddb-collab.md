@@ -9,6 +9,12 @@ modified: '2022-06-13T06:14:26.048Z'
 
 # guide
 
+- 同步难点
+  - 将indexeddb的数据存储转换为mongodb-like结构
+  - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
+  - 是否需要中心化服务器
+  - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
+
 ## Dexie 
 
 ### [Is Dexie. Syncable using OT?](https://github.com/dexie/Dexie.js/issues/587)

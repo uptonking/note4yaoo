@@ -118,6 +118,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
 
+## 0613
+
+- 同步难点
+  - 将indexeddb的数据存储转换为mongodb-like结构
+  - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
+  - 是否需要中心化服务器
+  - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
 ## 0610
 
 - dev-to

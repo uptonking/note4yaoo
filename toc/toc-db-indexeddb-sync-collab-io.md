@@ -8,10 +8,11 @@ modified: '2022-06-04T00:40:09.745Z'
 # toc-db-indexeddb-sync-collab-io
 - 更适合block-editor的数据结构是否是 mongodb ？
 
-- 要点
+- 同步难点
   - 将indexeddb的数据存储转换为mongodb-like结构
   - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
   - 是否需要中心化服务器
+  - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
 # popular
 - https://github.com/Polarisation/indexeddb-export-import
   - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
@@ -45,8 +46,15 @@ modified: '2022-06-04T00:40:09.745Z'
   - The next time you join the session, your changes will still be there.
   - Minimizes the amount of data exchanged between server and client
   - Makes offline editing possible
+
 - https://github.com/clintharris/IDBSideSync
+  - https://idbsidesync-todo-demo.vercel.app/
   - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+
+- https://github.com/hesselbom/crdtmap-indexeddb
+  - https://github.com/hesselbom/crdtmap
+  - Inspired by yjs and the CRDT-variant LWW-Element-Set, this is a simple key-value map that can sync between different clients by letting latest timestamp always win.
+  - Key is always a string but value could be anything as long as it's just primitive values.
 # filesystem-on-indexeddb
 - https://github.com/filerjs/filer
   - Filer is a drop-in replacement for node's fs module, a POSIX-like file system for browsers.
