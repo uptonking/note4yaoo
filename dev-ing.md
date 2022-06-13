@@ -120,11 +120,24 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0613
 
+- 插件需求
+  - 插件间通信，功能待实现，但会增加复杂度 
+  - 添加挂件的插件，会影响block的内容和样式；
+    - 外部插件修改了block，设计不合理，插件影响范围太大；
+    - 可考虑放到renderBlock组件内，方便读写数据，而不用plugin方式实现
+  - 插件创建的元素如left-menu六个点，有时显示，有时隐藏
+    - 可能是插件的实现机制存在瑕疵，插件卸载再重载时，react组件的事件未绑定，热加载也可能有影响
+
+- 👉 结论是，暂时不考虑插件间通信，而是将添加link的弹窗做到inline-toolbar组件内
+  - notion打断点的方法，找到目标元素的位置，如输入框input的`Paste link or search pages`，然后在目标位置打断点跟踪
+  - 还可以打dom元素属性变更的断点
+
 - 同步难点
   - 将indexeddb的数据存储转换为mongodb-like结构
   - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
   - 是否需要中心化服务器
   - 不必过于纠结crdt的集成或三方库，关注于官方同步示例，如block-editor/y-indexeddb/dexie-sync
+
 ## 0610
 
 - dev-to
