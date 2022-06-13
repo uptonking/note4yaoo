@@ -10,7 +10,7 @@ modified: '2020-12-08T13:06:30.259Z'
 # editorjs-intro
 
 - features
-  - block-styled editor 较少了复杂度
+  - block-styled editor 减少了复杂度
   - clean data output in JSON
   - API designed to be extendable and pluggable
 

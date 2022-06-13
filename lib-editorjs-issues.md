@@ -12,6 +12,7 @@ modified: '2020-11-17T09:39:37.776Z'
 # faq
 
 - ## [Is there a "view" mode vs "edit" mode?](https://github.com/codex-team/editor.js/issues/914)
+- read-only mode is published with v2.19(202011)
 - Looks like we need to render the HTML ourselves with the clean data, which editor js provides. 
 - [JSON to back to html, How?](https://github.com/codex-team/editor.js/issues/676)
   - I've created a editorjs-parser package for this purpose. 

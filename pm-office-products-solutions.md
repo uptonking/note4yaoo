@@ -26,6 +26,37 @@ modified: '2021-07-11T08:31:00.660Z'
 - 产品形式
   - 桌面端以编辑器为主
   - 移动端以多维表格为主
+
+- [2022年协作文档的发展趋势与技术选型](https://juejin.cn/post/7049275631774728199)
+
+- L0
+  - 几乎完全依赖浏览器特性 contenteditable，execCommand
+- L1
+  - 部分依赖浏览器，光标，选区，文本换行、方向，字体渲染
+  - 数据和渲染分离的架构，内容更新一般抽象成MVC
+- L2
+  - 大部分完全自研实现，自定义程度最高
+    - 自己实现光标、选区，文字换行、方向，字体渲染
+
+- 文本编辑器
+  - 自研：ms-word, google-docs, wps
+  - 腾讯文档：Etherpad转自研
+  - 飞书文档：Etherpad转自研
+  - 语雀：slate转自研
+  - 石墨文档：quill
+  - 美团学城：prosemirror
+
+- 表格编辑器
+  - 自研canva：ms-excel, google-spreadsheets, wps
+  - 腾讯：handsontable转自研 
+  - 飞书：spreadjs
+  - 石墨：spreadjs
+
+- office软件厂商
+  - 国内主流：金山文档，腾讯文档，钉钉文档，语雀
+  - 国内其他：飞书，石墨
+  - 国外主流：GSuite, MSOffice
+  - 周边产品：Canva、Gravit、Framer
 # trending-office-products
 
 ## [almanac](https://almanac.io/features)
@@ -81,28 +112,22 @@ modified: '2021-07-11T08:31:00.660Z'
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
   - 在线文档作为其他产品的基础功能，如网盘支持在线打开文档
 
+- 基于canvas
+  - google docs
+
+- 基于svg
+  - wps online kdocs
+
+- 基于dom
+  - office word online
+  - 轻雀文档
+
 - [飞书 云文档功能更新](https://www.feishu.cn/hc/zh-CN/articles/360049067483)
 - [语雀 更新日志](https://www.yuque.com/yuque/changelog)
 - [Confluence Release Notes](https://confluence.atlassian.com/doc/confluence-release-notes-327.html)
 - [Notion What's New](https://www.notion.so/What-s-New-157765353f2c4705bd45474e5ba8b46c)
 - [腾讯文档 功能更新日志](https://docs.qq.com/doc/p/435191b004cbb16236da93588e128f87949c2646)
 - [Microsoft Office updates](https://docs.microsoft.com/en-us/officeupdates/)
-
-- office软件厂商
-  - 国内主流：金山文档，腾讯文档，钉钉文档，语雀
-  - 国内其他：飞书，石墨
-  - 国外主流：GSuite, MSOffice
-  - 周边产品：Canva、Gravit、Framer
-
-- 文字编辑器
-  - 石墨：Quill
-  - 腾讯：Etherpad转自研
-  - 语雀：slate转自研
-  - 美团学城：prosemirror
-
-- 表格
-  - 石墨：spreadjs
-  - 腾讯：handsontable转自研 
 
 - 多人协作冲突解决方案
   - OT算法，石墨和腾讯文档都是

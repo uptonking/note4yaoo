@@ -9,6 +9,11 @@ modified: '2021-05-14T14:33:52.786Z'
 
 # guide
 
+- features
+  - local-first
+  - database views
+  - collaborative editing
+
 - block-style editor
   - 内容视觉上为block，默认互不影响
   - 能够选择多个block/card，然后一起拖拽移动

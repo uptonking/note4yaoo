@@ -7,8 +7,12 @@ modified: '2021-06-02T17:19:46.638Z'
 
 # lib-editor-blog-stars
 
-# [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
+# guide
 
+- [基于 Google Doc 思想的L2编辑器演示项目](https://zhuanlan.zhihu.com/p/392055486)
+  - https://github.com/cg0101/docs
+  - https://cg0101.github.io/docs/
+# [Concept of Block Style Editor](https://domino-editor.psyhyde.vercel.app/docs/)
 - https://github.com/psyhyde/domino-editor
   - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
 
@@ -32,7 +36,10 @@ modified: '2021-06-02T17:19:46.638Z'
 
 - Block-Style Editor has its roots in CMS(content management system), SSG (static site generator), GitHub& Markdown, MDX, JSX, and Low-code Site Building.
 - In a sense, a Block Style Editor is a Modular CMS for web document use case.
-
 # ref
 
-- [基于 Google Doc 思想的L2编辑器演示项目](https://zhuanlan.zhihu.com/p/392055486)
+- [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
+
+- [wangEditor - 开发web富文本编辑器的坑有哪些](https://juejin.cn/post/6951364054224994312)
+
+- [自研一个word应用，需要哪些基本功能](https://juejin.cn/post/6922682336412696584)

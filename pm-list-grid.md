@@ -9,6 +9,12 @@ modified: '2021-05-23T16:34:27.206Z'
 # pm-list-grid
 
 # roadmap
+
+- features
+  - local-first
+  - database views
+  - collaborative editing
+
 - table-view
   - sort/filter/group + test
   - resizable-table/list

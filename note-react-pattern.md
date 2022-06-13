@@ -550,8 +550,6 @@ function Toggle() {
 - https://codesandbox.io/s/9j0pkq30lo
 
 ```JS
-import * as React from 'react'
-import ReactDOM from 'react-dom'
 import Switch from './switch'
 
 const actionTypes = {

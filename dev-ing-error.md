@@ -11,6 +11,10 @@ modified: '2021-03-29T19:29:32.505Z'
 
  
 
+- ERROR in Conflict: Multiple assets emit different content to the same filename index.html
+  - 原因是 webpack-merge 不同config时，在多处定义了 html-webpack-plugin
+  - 解决方法是注释掉顶层插件声明，只保留子包处的配置声明
+
 - npm install
   - npm ERR! notarget No matching version found for @storybook
   - https://stackoverflow.com/questions/44331005

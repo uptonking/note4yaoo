@@ -8,30 +8,24 @@ modified: '2021-05-14T12:04:55.412Z'
 # lib-editor-community
 
 # guide
-- 编辑器研发方向
-  - 实时协作
-  - 版本控制
-  - 离线存储
-  - features
-    - 开放api
-    - 双向链接
 
- - not-yet
-    - 将bibtex插入编辑器的逻辑实现有问题，如何只在光标点击editor内容后才执行插入bibtex的command，否则就会出现现在的问题，鼠标若不再editor中点击一下就不执行该逻辑
-
-- 浏览器的键盘输入事件顺序
-  - [Keyboard Event Viewer](https://w3c.github.io/uievents/tools/key-event-viewer.html)
-    - 输入英文字母时 keydown > keypress > beforeinput > input > keyup
-    - 输入中文时 keyup > keydown > beforeinput > input > keyup
-      - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
-  - [Keyboard Event Viewer for contenteditable](https://w3c.github.io/uievents/tools/key-event-viewer-ce.html)
-    - 事件顺序与上面一致
-
-- events-deprecated
-  - keypress  >  keydown/beforeinput
-
-- [从流行的编辑器架构聊聊富文本编辑器的困境](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ACE2 is EtherPad's editor, a content-editable-based rich text editor. 
+- https://news.ycombinator.com/item?id=18371309
+  - It supports collaborative editing using operation transforms (easysync2), undo/redo, copy/paste.
+  - The name "ACE2" is because this is a rewrite of aiba's original content-editable AppJet Code Editor.
+  - https://github.com/ether/pad/tree/master/infrastructure/ace
+
+> The name "ACE2" is because this is a rewrite of aiba's original content-editable AppJet Code Editor.
+
 - ## [The CKEditor 5 and CKEditor 4 comparison](https://support.ckeditor.com/hc/en-us/sections/115001489149-The-CKEditor-4-and-CKEditor-5-Comparison)
 - When compared to its predecessor, CKEditor 5 should be considered a totally new editor. 
   - Every single aspect of it was redesigned — from installation, to integration, to features, to its data model, and finally to its API. 
@@ -145,6 +139,7 @@ modified: '2021-05-14T12:04:55.412Z'
   - In CKEditor 5 we took perhaps the longest possible road so a tree structure with Operational Transformation support and couple of other goodies. It costed us a 3 years of work, but it was worth it. 
   - We proved the concept and validated the results by implementing the Letters app which supports real-time collaborative editing for real (with selective undo, commenting, displaying selections of other users, etc.). 
   - We'll now be working on adding more features like e.g. tables support which rise the bar for the data model and the whole architecture even higher, but we're very optimistic seeing the results to far.
+
 # discuss
 - ## 
 
@@ -244,3 +239,6 @@ modified: '2021-05-14T12:04:55.412Z'
   1. Can be used in #React  web apps;
   2. Out of box example which covers most of the use cases (image, formatting, code addition);
   3. Production-ready; 
+
+# more
+- [从流行的编辑器架构聊聊富文本编辑器的困境](http://yoyoyohamapi.me/2020/03/01/%E4%BB%8E%E6%B5%81%E8%A1%8C%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8%E6%9E%B6%E6%9E%84%E8%81%8A%E8%81%8A%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%9B%B0%E5%A2%83/)
