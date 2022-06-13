@@ -23,6 +23,9 @@ modified: '2022-06-08T11:14:10.668Z'
 
 - industry
   - wordpress强推自研的开源块级编辑器Gutenberg
+
+- 更适合block-editor的数据结构是否是 mongodb ？
+
 # blogging
 
 ## [The WordPress block editor: Why you should be using it](https://yoast.com/the-block-editor-gutenberg-why-you-should-be-using-it/)

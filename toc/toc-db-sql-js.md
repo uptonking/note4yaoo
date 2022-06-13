@@ -21,3 +21,6 @@ modified: '2021-08-30T18:56:14.863Z'
 
 - https://github.com/only-cliches/Nano-SQL /inactive
   - Universal database layer for the client, server & mobile devices. It's like Lego for databases.
+  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
+  - [Is this project still maintained?](https://github.com/only-cliches/Nano-SQL/issues/217)
+    - https://github.com/only-cliches/snap-db  /inactive

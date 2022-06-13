@@ -21,8 +21,10 @@ modified: '2022-06-08T11:05:33.767Z'
   - cons
     - 实现水平分栏可能更复杂
     - 实现鼠标左移右移更简单
-
+# not-yet
 - 普通react table组件和基于slate的table有什么区别？
+
+- 更适合block-editor的数据结构是否是 mongodb ？
 # block-editor相对于notion的feature
 
 ## 文字格式

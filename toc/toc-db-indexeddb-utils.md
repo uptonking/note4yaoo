@@ -1,25 +1,13 @@
 ---
-title: toc-db-indexeddb-uitls
+title: toc-db-indexeddb-utils
 tags: [indexeddb, toc, utils]
 created: '2022-06-04T00:43:13.971Z'
-modified: '2022-06-04T00:43:59.348Z'
+modified: '2022-06-13T03:05:27.313Z'
 ---
 
-# toc-db-indexeddb-uitls
+# toc-db-indexeddb-utils
 
 # popular
-- https://github.com/dexie/Dexie.js
-  - A Minimalistic Wrapper for IndexedDB
-- https://github.com/subshell/data-repositories
-  - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
-  - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.
-  - It is recommended to have separate Dexie databases for every repository (due to some issues with Dexie and the versioning across multiple repositories). 
-  - The repositories naturally work with RxJS and Observables. If you want to use JavaScript Promises instead you can just call .toPromise() on every returned Observable. 
-  - **Due to the nature of IndexedDB, there is no synchronous way to read or write any data**.
-- https://github.com/jaetask/dexie-easy-encrypt
-  - Easy, unopinionated, table encryption middleware for Dexie
-- more-dexie
-  - https://github.com/stutrek/dexie-hooks
 
 - https://github.com/jakearchibald/idb
   - IndexedDB, but with promises
@@ -104,5 +92,3 @@ modified: '2022-06-04T00:43:59.348Z'
   - A client-side MongoDB implementation which supports basic queries, including some geospatial ones.
   - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
   - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries 
-
-

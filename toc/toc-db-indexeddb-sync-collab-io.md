@@ -6,10 +6,38 @@ modified: '2022-06-04T00:40:09.745Z'
 ---
 
 # toc-db-indexeddb-sync-collab-io
+- 更适合block-editor的数据结构是否是 mongodb ？
 
+- 要点
+  - 将indexeddb的数据存储转换为mongodb-like结构
+  - 如何同步 mongodb-like 的结构，是否用 crdt，还是 http
+  - 是否需要中心化服务器
 # popular
 - https://github.com/Polarisation/indexeddb-export-import
   - Export/import an IndexedDB database to/from JSON. Can be used to backup and restore.
+
+- nedb /13.1kStar/MIT/2016/js/deprecated
+  - https://github.com/louischatriot/nedb
+  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
+  - API is a subset of MongoDB's and it's plenty fast.
+  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
+  - One datastore is the equivalent of a MongoDB collection
+  - Under the hood, NeDB's persistence uses an append-only format, meaning that all updates and deletes actually result in lines added at the end of the datafile, for performance reasons.
+  - If you specify a filename, the database will be persistent, and automatically select the best storage method available (IndexedDB, WebSQL or localStorage) depending on the browser.
+  - forks
+    - https://github.com/seald/nedb
+    - https://github.com/bajankristof/nedb-promises
+    - https://github.com/typicode/lowdb
+
+- https://github.com/logux/core
+  - https://logux.io/
+  - Logux is a new way to connect client and server. Instead of sending HTTP requests (e.g., AJAX and GraphQL) it synchronizes log of operations between client, server, and other clients.
+  - when multiple users work with the same document. Logux has features inspired by CRDT to resolve edit conflicts between users. 
+  - Time travel to keep actions order the same on every client. A distributed timer to detect the latest changes.
+  - offline first: Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
+  - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
+  - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
+  - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
 # collab
 - https://github.com/yjs/y-indexeddb
   - IndexedDB database adapter for Yjs

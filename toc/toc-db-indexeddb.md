@@ -9,22 +9,77 @@ modified: '2022-06-03T22:06:16.249Z'
 
 > https://github.com/search?o=desc&q=indexeddb+stars%3A%3E0&s=updated&type=Repositories
 
+- 更适合block-editor的数据结构是否是 mongodb ？
 # popular
-- https://github.com/localForage/localForage
+- Dexie.js /8kStar/Apache2/202206/ts
+  - https://github.com/dexie/Dexie.js
+  - https://dexie.org/
+  - https://dexie.org/docs/Tutorial/Hello-World
+  - A Minimalistic Wrapper for IndexedDB
+  - Dexie solves three main issues with the native IndexedDB API:
+    - Poor queries
+    - Code complexity
+    - Ambiguous error handling
+  - Reactive (Since v3.2)
+    - Query the db without boilerplate and let your components mirror the database in real time.
+- https://dexie.org/docs/Syncable/Dexie.Syncable.js
+  - Enables two-way synchronization with a remote server of any kind.
+  - https://github.com/nponiros/sync_server
+    - A small node server which uses NeDB to write data to the disk. 
+    - The server can be used with a client for example SyncClient to save change sets which can later be synchronized with other devices. 
+    - The server was made to work with the ISyncProtocol and Dexie.Syncable. 
+    - It supports the poll pattern using AJAX and the react pattern using nodejs-websocket.
+  - [Offline use with Sync to Server](https://github.com/only-cliches/Nano-SQL/issues/18)
+    - Dexie.Syncable the Sync Server just uses Nedb as a quick way to get a sample running. You would replace that with MongoDB or whatever backend DB you wanted so you con isn't relevant here.
+- https://github.com/subshell/data-repositories
+  - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
+  - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.
+  - It is recommended to have separate Dexie databases for every repository (due to some issues with Dexie and the versioning across multiple repositories). 
+  - The repositories naturally work with RxJS and Observables. If you want to use JavaScript Promises instead you can just call .toPromise() on every returned Observable. 
+  - **Due to the nature of IndexedDB, there is no synchronous way to read or write any data**.
+- https://github.com/jaetask/dexie-easy-encrypt
+  - Easy, unopinionated, table encryption middleware for Dexie
+- more-dexie
+  - https://github.com/stutrek/dexie-hooks
+  - https://www.npmjs.com/package/@3fv/dexie-orm
+
+- localForage /20.5kStar/Apache2/202110/js
+  - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
 - https://github.com/dannyconnell/localbase
   - A Firebase-Style Database ... Offline!
+  - Localbase is built on top of LocalForage.
   - Localbase gives you an offline database with the simplicity & power of Firebase, all stored in the user's browser (in an IndexedDB database).
   - You can create as many databases as you like.
   - Databases are organised into Collections and Documents (just like Firebase Cloud Firestore).
     - Databases contain Collections (e.g. users)
     - Collections contain Documents (e.g. { id: 1, name: 'Bill', age: 47 }
-  - Localbase is built on top of LocalForage.
 - https://github.com/creately/rxdata
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
+
+- minimongo /1kStar/LGPLv3/202205/ts
+  - https://github.com/mWater/minimongo
+  - Client-side in-memory mongodb backed by localstorage with server sync over http
+  - Uses code from Meteor.js minimongo package, reworked to support more geospatial queries. It was forked in January 2014.
+  - It is either IndexedDb backed (IndexedDb), WebSQL backed (WebSQLDb), Local storage backed (LocalStorageDb) or in memory only (MemoryDb).
+  - sqlite plugin is also supported when available
+- ZangoDB /1kStar/MIT/201710/js
+  - https://github.com/erikolson186/zangodb
+  - https://erikolson186.github.io/zangodb/
+  - a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
+
+- acebase /158Star/MIT/202206/js
+  - https://github.com/appy-one/acebase
+  - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications
+  - AceBase is designed to run in a Node.js environment, as it (by default) requires the 'fs' filesystem to store its data and indexes. 
+    - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
+  - By default, AceBase uses its own binary database format in Node.js environments, and IndexedDB (or LocalStorage) in the browser to store its data. 
+    - However, it is also possible to use AceBase's realtime capabilities, and have the actual data stored in other databases. 
+    - Currently, AceBase has built-in adapters for MSSQL, SQLite in Node.js environments; and IndexedDB, LocalStorage, SessionStorage for the browser. 
+  - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
 
 - https://github.com/AlaSQL/alasql
   - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
@@ -36,7 +91,8 @@ modified: '2022-06-03T22:06:16.249Z'
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
     - All major browsers, Node.js, and mobile applications
 
-- https://github.com/pubkey/rxdb
+- rxdb /17.6kStar/Apache2/202206/ts
+  - https://github.com/pubkey/rxdb
   - A realtime Database for JavaScript Applications
   - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
   - RxDB is not a self contained database. It is a wrapper around another database that implements the `RxStorage` interface. At the moment you can either use PouchDB or Dexie.js or LokiJS as underlaying storage. Each of them respectively has it's own adapters that can be swapped out, depending on your needs. For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
