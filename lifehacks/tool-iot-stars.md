@@ -214,6 +214,41 @@ GPS丨Glonass丨BeiDou丨Galileo
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
 # laptop
 
+## MacBook M1 Pro
+
+### 全局快捷键
+
+- 隐藏窗口 cmd + h
+- 截屏 cmd + shift + 3/4
+- 截指定窗口 cmd +shift + 4+ space
+- cmd + tab 切换程序时，松开tab然后按q，可退出程序
+- Control-Command-F 全屏
+
+### 文件管理器
+
+- 打开文件夹 cmd + N
+- 打开目录，根据输入路径 cmd + shift +g
+  - 输入～，可直接打开 /Users/yaoo
+- 进入文件夹 cmd + arrow-down
+- 返回上级文件夹 cmd + arrow-up
+- 重命名 回车
+- 切换到列表视图 cmd + 2
+- 删除文件 cmd + delete
+- 文件路径查看 cmd + i
+- 文件路径复制 cmd + opt + c
+- 移动文件 cmd + opt + v
+
+- 在finder显示文件路径
+  - defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
+### 浏览器 
+
+- command+L/option(alt)+command+F/fn＋control+F5：定位地址栏/聚焦搜索栏
+- command+点按：新标签页后台打开链接
+- shift+command+点按：新标签页前台打开链接
+- control+tab/shift+command+]/shift+command+→：显示下一个标签页，其中箭头对空tab无效。
+- control+shift+tab/shift+command+[/shift+command+←：显示上一个标签页，其中箭头对空tab无效。
+
 ## HP ENVY - 15-as109tu
 
 - 简介
