@@ -220,9 +220,14 @@ GPS丨Glonass丨BeiDou丨Galileo
 
 - 隐藏窗口 cmd + h
 - 截屏 cmd + shift + 3/4
-- 截指定窗口 cmd +shift + 4+ space
+- 截指定窗口 cmd +shift + 4 + space
 - cmd + tab 切换程序时，松开tab然后按q，可退出程序
 - Control-Command-F 全屏
+
+- 回到桌面
+  - cmd + f3
+  - fn + f11
+- 类似win的delete键向后删，fn + backspace
 
 ### 文件管理器
 
@@ -241,13 +246,29 @@ GPS丨Glonass丨BeiDou丨Galileo
 - 在finder显示文件路径
   - defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
-### 浏览器 
+### 浏览器
 
 - command+L/option(alt)+command+F/fn＋control+F5：定位地址栏/聚焦搜索栏
 - command+点按：新标签页后台打开链接
 - shift+command+点按：新标签页前台打开链接
 - control+tab/shift+command+]/shift+command+→：显示下一个标签页，其中箭头对空tab无效。
-- control+shift+tab/shift+command+[/shift+command+←：显示上一个标签页，其中箭头对空tab无效。
+- 前后切换标签页导航
+  - ctrl+shift+tab
+  - shift+cmd+[
+  - shift+cmd+←：显示上一个标签页，其中箭头对空tab无效。
+
+- 定位到地址栏： cmd + L
+
+### vscode
+
+- 跳转到定义
+  - cmd + 点击
+  - cmd + f12 + fn
+- 返回上一个位置
+  - Windows: Alt + ← ; 或者 鼠标侧键
+  - Linux: Ctrl + Alt + - ; 
+  - Mac: Ctrl + -
+- 左右括号之间跳转： ctrl + shift + \
 
 ## HP ENVY - 15-as109tu
 

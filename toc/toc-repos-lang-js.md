@@ -202,6 +202,8 @@ modified: '2021-05-14T15:04:42.225Z'
   - embeddable online markdown editor(component), based on CodeMirror & jQuery & Marked.
 - https://github.com/quilljs/quill
   - a modern WYSIWYG editor built for compatibility and extensibility
+  - vaadin rich-text-editor is built with Quill
+    - https://vaadin.com/docs/latest/components/rich-text-editor
 - https://github.com/facebook/draft-js
   - A React framework for building text editors.
 - https://github.com/wangeditor-team/wangEditor

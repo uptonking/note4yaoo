@@ -117,6 +117,44 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
+  - [ ] inline-toolbar在键盘创建选区时未显示
+
+## 0615
+
+- slate如何获取selection所在block
+  - [how to get the current Localtion in the editor, where the user is placing it's cursor at](https://github.com/ianstormtaylor/slate/issues/3485)
+  - editor.selection
+
+- 段落左中右对齐的实现方式
+  - 通过给p元素添加style对象实现
+    - slate-plate
+    - ckeditor 
+    - TinyMCE
+  - 通过给p元素添加className实现
+    - atlaskit
+    - quill
+
+- slate设置对齐方式的参考
+  - https://news.ycombinator.com/item?id=14127632
+
+- [How to change property of SlateJS node element onChange?](https://stackoverflow.com/questions/71152875)
+  - Transforms.setNodes( editor, { id: '123', }, { at: [0] }, )
+
+## 0614
+
+- [Get union type from indexed object values](https://stackoverflow.com/questions/50044023)
+
+```TypeScript
+const X = {
+ a: 'A',
+ b: 'B'
+ // mark properties as readonly, otherwise string type inferred 
+} as const
+
+type XValues = typeof X[keyof typeof X]
+// "A" | "B
+
+```
 
 ## 0613
 

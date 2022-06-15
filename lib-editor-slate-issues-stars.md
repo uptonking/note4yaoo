@@ -38,6 +38,9 @@ modified: '2022-05-15T18:48:53.816Z'
 - The value prop is now only used on the initial render to initialize the value prop. On subsequent changes it is ignored.
 - slate used to offer an API similar to any generic input, whereby it exposed props such as value and onChange. This enabled users to interact and maintain the value of the input with a useState hook
 
+- [Delayed setState(value) results in Cannot resolve a DOM point from Slate point](https://github.com/ianstormtaylor/slate/issues/3575)
+- 
+
 ## [onDocumentChange and onSelectionChange](https://github.com/ianstormtaylor/slate/issues/4687)
 
 - Currently the onChange event of slate is fired for changes on the document structure but also for changes on the selection. 
