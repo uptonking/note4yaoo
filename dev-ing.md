@@ -119,6 +119,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - [ ] 使用command方式迁移text bold/italic
   - [ ] inline-toolbar在键盘创建选区时未显示
 
+## 0616
+
+- slate设置文本对齐的方式示例在官方示例rich-text，自己却在其他地方找了很久，浪费时间
+
+- [Apply block level formatting (like text alignment) on node](https://github.com/ianstormtaylor/slate/issues/3569)
+
 ## 0615
 
 - slate如何获取selection所在block
