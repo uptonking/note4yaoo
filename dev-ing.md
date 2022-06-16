@@ -118,12 +118,29 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - [ ] 使用command方式迁移text bold/italic
   - [ ] inline-toolbar在键盘创建选区时未显示
+  - [ ] inline-toolbar在codeblock和挂件也会触发，不和预期
 
 ## 0616
 
+- 文本中添加前景色背景色的实现方式
+  - 通过给span添加style对象实现
+    - ckeditor
+    - slate-plate
+    - atlaskit
+      - style添加的是css var颜色定义
+
 - slate设置文本对齐的方式示例在官方示例rich-text，自己却在其他地方找了很久，浪费时间
 
+- [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
+- Found a work around for this issue thanks to a kind developer on slack channel. Writing here in case anybody needs it. 
+  - Store the selection value just before the editor loses focus. 
+  - In my case it was when I clicked on input field, so I stored it just when dialog box opens. 
+- I know Notion does something very similar in its editor;
+  - when you highlight some text and try to insert a hyperlink, they insert a fake blue wrapper span styled to look like a regular selection, and then they delete it afterwards.
+
 - [Apply block level formatting (like text alignment) on node](https://github.com/ianstormtaylor/slate/issues/3569)
+
+- 传说中的block editor鼻祖quip，notion抄的对象
 
 ## 0615
 

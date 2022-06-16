@@ -29,6 +29,22 @@ modified: '2022-06-08T11:05:33.767Z'
 
 ## 文字格式
 
+- 段落左中右对齐的实现方式
+  - 通过给p元素添加style对象实现
+    - slate-plate
+    - ckeditor 
+    - TinyMCE
+  - 通过给p元素添加className实现
+    - atlaskit
+    - quill
+
+- 文本中添加前景色背景色的实现方式
+  - 通过给span添加style对象实现
+    - ckeditor
+    - slate-plate
+    - atlaskit
+      - style添加的是css var颜色定义
+
 - 文本内链接设计
   - 区分产品内链接和外部链接
   - 标识图片链接
