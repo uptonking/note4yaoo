@@ -11,32 +11,128 @@ modified: '2022-05-15T18:48:53.816Z'
 
 # faq
 
-## [onKeyDown not fired for editable elements nested inside non-editables](https://github.com/ianstormtaylor/slate/issues/468)
+## 
 
-- [Keydown event on contenteditable div and child span](https://stackoverflow.com/questions/22895124)
-  - I have a contenteditable div containing a span and would like to trace the keydown events when typing in both the div itself and the span within the div.
-  - Everything seems to work fine so far in firefox but in webkit browsers the div keydown event seems to override the span event. 
-- it seems to happen because it is the div element that catches the keydown events, not the inner span elements. To make them catch the keydown events, you would need to set contenteditable=true for each of them while setting contenteditable=false for the div container.
-  - To make both the div container AND the inner span catch the keydown events, you can wrap your span in a non-editable span
+## 
 
-- [Focusing on nested contenteditable element](https://stackoverflow.com/questions/40907091)
-  - I have two contenteditable divs nested inside of another. When it is focused, nested should be focused but using console.log(document.activeElement); it shows that the top is focused and it doesn't recognize the nested div.
-- 👀 The way [contenteditable] elements are handled by browser made any nested [contenteditable] not handling any event, the editing host is the former editable parent. See spec:
-  - If an element is editable and its parent element is not, or if an element is editable and it has no parent element, then the element is an editing host. Editable elements can be nested. User agents must make editing hosts focusable (which typically means they enter the tab order). An editing host can contain non-editable sections, these are handled as described below. An editing host can contain non-editable sections that contain further editing hosts.
-- Now as a workaround, you could make focused nested editable element the hosting host by setting any of its editable parent temporarily not editable
-- Give `tabindex=-1` to the nested div, than can be focused
-  - 👀 `contenteditable` is inherited, so there is no need to specify it again.
-  - it only works with mouse focus. Moving the caret (cursor left/right) over the nested div, will not focus the nested div. Similarly, leaving a focused nested div with the caret, will not does not give the focus back to the parent div. Handling might need workarounds with keydown listener, range and selection.
+## 
+
+## 
+
+## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
+
+- `Transforms.select(editor: Editor, target: Location)`; 
+  - Set the selection to a new value specified by `target`. 
+  - When a selection already exists, this method is just a proxy for `setSelection` and will update the existing value.
+- `Transforms.setSelection(editor: Editor, props: Partial<Range>)`; 
+  - Set new properties on an active selection. 
+  - Since the value is a `Partial<Range>`, **this method can only handle updates to an existing selection**. 
+  - If there is no active selection the operation will be void. 
+  - Use `select` if you'd like to create a selection when there is none.
+
+- Found a work around for this issue thanks to a kind developer on slack channel. Writing here in case anybody needs it. 
+  - Store the selection value just before the editor loses focus. 
+  - In my case it was when I clicked on input field, so I stored it just when dialog box opens. 
+
+- I know Notion does something very similar in its editor; 
+  - when you highlight some text and try to insert a hyperlink, they insert a fake blue wrapper span styled to look like a regular selection, and then they delete it afterwards.
+
+- I don't know if this is a bug or expected behaviour. But here if you have value of selection with you (which is `editorSelection.current` ), you can pass it down to editor ( `editor.selection = editorSelection.current` ) before passing editor to `Transforms.insertNode` or anywhere else. 
+  - If you want to show the selection, may be try Transforms.setSelection or Transforms.select.
+
+- One alternative solution: When focus leaves the editor, wrap the current selection in a fake custom selection node. 
+  - Then, instead of relying on `editor.selection` being non-null, perform all operations and checks relative to that unique selection node. 
+  - And instead of using `editor.selection`, you can now define a custom `editor.getSelection` method that returns either the path/location of that fake selection or falls back to `editor.selection`. 
+  - Then remove the fake selection when the editor is re-focused.
+  - that's the basic idea: Just like you have other inline nodes (hyperlinks and whatever else), you can also mock up a selection node that doesn't get serialized/deserialized and is only a run-time helper.
+
+- You can get around this issue by setting readOnly to true before opening the link input or focusing outside the editor, and then setting back to false when done.
+
+- Here is my solution to this problem:
+  - Add "onBlur" handler to the `<Editable>` tag. In that handler save selection to some property on the editor. E.g. blurSelection
+  - Slate sets selection to null after blur, so before executing a command on the editor, you need to set selection to the saved one. Do it with Transforms.select(editor, editor.blurSelection); 
+  - since we have selection we can use ReactEditor.focus(editor) to return focus, so users can just continue typing.
+  - Make sure that your command doesn't modify selection under the hood. If you split nodes or change blocks that might be a case.
+
+- Hey guys, what if you use onMouseDown instead of onClick? This doesn't reset focus for me.
+  - I also added a preventDefault() at the end of the onMouseDown and it kept both selection and focus for me.
 
 ## [What is the purpose of onDOMBeforeInput?](https://github.com/ianstormtaylor/slate/issues/3302)
 
 - It's an event handler for the native DOM `beforeinput` event, because sadly React's synthetic events don't properly expose it. 
   - In this case it's listening for specific inputTypes that browsers fire for context menus, etc.
 
-## [Only use Slate Provider's value prop as initial state](https://github.com/ianstormtaylor/slate/pull/4540)
+## [Only use Slate Provider's value prop as initial state__202109.v0.70.0](https://github.com/ianstormtaylor/slate/pull/4540)
 
-- The value prop is now only used on the initial render to initialize the value prop. On subsequent changes it is ignored.
-- slate used to offer an API similar to any generic input, whereby it exposed props such as value and onChange. This enabled users to interact and maintain the value of the input with a useState hook
+> `slate-react` 中Slate组件经历了 非受控  > 受控  >  非受控 的过程
+
+- the `value` prop that must be passed to the `Slate` provider is kind of a hoax because in reality this prop has to be exactly what has been passed to `onChange`. This changes the `Slate` provider to relax this requirement. 
+- The `value` prop is now only used on the initial render to initialize the value prop. On subsequent changes it is ignored.
+
+- 👀️ onChange should not be the only way of changing the Component's value. If you rely on a database to render your content, you'll also want to pass the new value using the value prop. In that case you don't want to rely on a local state that is changed with onChange.
+  - An example would be when you need to display someone else changes to the value.
+
+- slate used to offer an API similar to any generic input, whereby it exposed props such as value and onChange. This enabled users to interact and maintain the value of the input with a `useState` hook
+
+- 👉🏻️ I definitely see how, since slate uses operations to mutate its state, using a controlled value pattern would be inconsistent. Specially considering that onChange is triggered for all operations including set_position
+
+### [Delayed setState(value) results in Cannot resolve a DOM point from Slate point ](https://github.com/ianstormtaylor/slate/issues/3575)
+
+- In my case, I'm using Apollo to keep some text in sync with the server
+  - I also encountered the same issue while trying to sync with some quite large (and badly written) Redux store
+
+- As far as I can tell, the `value` prop is really only meant to be used as an initial value. 
+  - When applying a different `value` prop (one that was not returned from onChange) later on this can cause all kinds of problems because `editor.selection`, and the history stack from `slate-history` (if you use that) can still contain values related to the old slate value. Perhaps it's a good idea to rename the value prop to initialValue instead?
+
+- As pointed out by @phamstack, this state mismatch can happen even on seemingly synchronous operations.
+  - **React state updates are by nature asynchronous, so there's isn't any guarantee that they will run quickly enough to satisfy Slate's requirements**.
+- The possible solutions I can think of are:
+  - Make Slate keep an internal `value` state, that gets kept in sync with what's passed in by props (difficult); 
+  - Make Slate wait to run selection operations until the content is updated (may introduce lag); 
+  - Make Slate silently fail - gracefully handle these errors; 
+
+- While you are correct that React updates are by nature asynchronous, Slate uses the ReactDOM.unstable_batchedUpdates helper to mitigate that
+
+- This is a problem when doing collaborative editing. Say user A has focus on line 2. User B removes the line above (line 1). 
+  - As far as I can tell there is no way I can adjust the selection for user A before Editable in slate-react tries to update the selection itself and fails because now line 2 no longer exists.
+  - So far I have forked slate-react and just fail silently, and then adjust the selection myself
+
+- I have the same problem described by @skogsmaskin. My application already has collaboration built-in, which powers other widgets (slate is just one of them). I am opting out of slate's collaborative handling and instead piggybacking on my own app's infrastructure to make things more uniform
+  - This error bites me constantly - when collaborating and also when using undo/redo (which, again, works through my own app code for consistency rather than using slate's system).
+  - User types paragraph A, then types paragraph B, then clicks undo. Paragraph A no longer exists, the selection is invalid, slate crashes.
+  - I also cannot store/reset the selection as part of the undo/redo mechanism, unless I use slate's system.
+
+- Slate core has a couple of ways to deal with this:
+  - both document contents (editor.children) and selection (editor.selection) are simple properties and can be changed at the same time.
+  - in collaboration, when an operation is applied to the editor, it will automatically update the selection (along with all other Ref instances).
+- **So perhaps the React editor should expose the ability to include selection in the state, as the core does**, but I also wonder if we need some documentation around getting started with collaboration. 
+  - The Slate design goal is (as far as I can tell) to synchronise based on operations, not state, for the best user experience.
+
+- Same issue here with remote updates as @skogsmaskin & @gabriel-peracio described, as current workaround I'm removing selection during the remote update (collaboration mode or history updates), and set it back once value updated
+
+- I'm doing something like notion when the user types '/' then a popup appears to select a block type and after selecting a block I want to remove that slash so I'm taking a backup when user types '/' and then resetting the value with backup after selecting a block, So how can I achieve this without passing a value to slate?
+  - You could use the Transforms interface to remove the current line.
+
+### [Bug: Cannot update slate state externally](https://github.com/ianstormtaylor/slate/issues/4612)
+
+- It works, but I agree, it's a hack. Setting `editor.children` directly also requires manual fixing of `selection`, because selected range remains the same even if some new nodes are added above the selection.
+
+- It does not seem like a hack based on the PR discussion. It's just not a React way, and not necessary to be a React way.
+
+- It took me several days to find out that changes in #3216(201912, Slate改为受控组件) were silently reversed in #4540(202109, Slate改为非受控组件).
+
+- I think you got it right in the controlled component vs uncontrolled component part. I originally argued in an issue that **it should be explicitly an uncontrolled component because some people were getting problems with the selection not updating as a result of setting the "controlled" value state**, see #3575 (comment).
+  - The problem is that whenever editor.children gets changed outside of slate's knowledge it has the potential to cause different inconsistencies to happen including the Cannot resolve a DOM point from Slate point error
+  - I find people generally get confused by the "passing value" API as it seems to indicate that's how you propagate changes, the "reacty" way. 
+  - But in reality slate operates on operations and keeps its internal state consistent using them. An API that reflects this behavior is therefore desirable was my reasoning.
+- Note that an Editor.reset method was proposed there which would then also handle the selection resetting and the history resetting (which wasn't handled by passing a different `value` prop). 
+  - As mentioned above setting editor.children explicitly to an initial value is the recommended way for now. 
+
+- For now, I've done as described above in this thread and added a `key` based on `initialValue` to a `div` containing the `Slate` editor.
+
+- [State is uncontrolled in slate-react@0.70.0](https://github.com/ianstormtaylor/slate/issues/4646)
+  - what is the best way right now for changing state as a whole?
+  - it can be changed directly by `editor.children = value`
 
 - [Delayed setState(value) results in Cannot resolve a DOM point from Slate point](https://github.com/ianstormtaylor/slate/issues/3575)
 - 
@@ -53,3 +149,20 @@ modified: '2022-05-15T18:48:53.816Z'
   - For the most part, this leads to increased flexibility without many downsides, but there are certain cases where you have to do a bit more work. Pasting is one of those cases.
   - Since Slate knows nothing about your domain, it can't know how to parse pasted HTML content (or other content). So, by default whenever a user pastes content into a Slate editor, it will parse it as plain text. 
   - If you want it to be smarter about pasted content, you need to override the insert_data command and deserialize the `DataTransfer` object's `text/html` data as you wish.
+
+## [onKeyDown not fired for editable elements nested inside non-editables](https://github.com/ianstormtaylor/slate/issues/468)
+
+- [Keydown event on contenteditable div and child span](https://stackoverflow.com/questions/22895124)
+  - I have a contenteditable div containing a span and would like to trace the keydown events when typing in both the div itself and the span within the div.
+  - Everything seems to work fine so far in firefox but in webkit browsers the div keydown event seems to override the span event. 
+- it seems to happen because it is the div element that catches the keydown events, not the inner span elements. To make them catch the keydown events, you would need to set contenteditable=true for each of them while setting contenteditable=false for the div container.
+  - To make both the div container AND the inner span catch the keydown events, you can wrap your span in a non-editable span
+
+- [Focusing on nested contenteditable element](https://stackoverflow.com/questions/40907091)
+  - I have two contenteditable divs nested inside of another. When it is focused, nested should be focused but using console.log(document.activeElement); it shows that the top is focused and it doesn't recognize the nested div.
+- 👀 The way [contenteditable] elements are handled by browser made any nested [contenteditable] not handling any event, the editing host is the former editable parent. See spec:
+  - If an element is editable and its parent element is not, or if an element is editable and it has no parent element, then the element is an editing host. Editable elements can be nested. User agents must make editing hosts focusable (which typically means they enter the tab order). An editing host can contain non-editable sections, these are handled as described below. An editing host can contain non-editable sections that contain further editing hosts.
+- Now as a workaround, you could make focused nested editable element the hosting host by setting any of its editable parent temporarily not editable
+- Give `tabindex=-1` to the nested div, than can be focused
+  - 👀 `contenteditable` is inherited, so there is no need to specify it again.
+  - it only works with mouse focus. Moving the caret (cursor left/right) over the nested div, will not focus the nested div. Similarly, leaving a focused nested div with the caret, will not does not give the focus back to the parent div. Handling might need workarounds with keydown listener, range and selection.

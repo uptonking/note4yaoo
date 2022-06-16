@@ -84,6 +84,19 @@ modified: '2022-05-15T18:45:27.570Z'
   - 基于 slatejs 封装富文本编辑器
   - /202006
 
+- https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor
+  - Sanity.io is the platform for structured content. 
+  - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
+  - 依赖slate.v0.72.3，自研slate-react
+  - 包含test
+  - 基于block进行设计
+
+- https://github.com/payloadcms/payload
+  - https://demo.payloadcms.com/admin
+  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
+  - Block-based Layout Builder
+  - Extensible SlateJS rich text editor
+
 - https://github.com/Thinkei/hero-editor
   - Hero editor is a WYSIWYG built on top of Slate (v0.58.3). It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
   - This package also includes serializers and renderers for the Slate content.
@@ -215,11 +228,6 @@ modified: '2022-05-15T18:45:27.570Z'
   - https://react-jsonschema-form-material-ui.github56.now.sh/
   - Universal JSON Schema Form - Currently Support for React - Material UI components for building Web forms from JSON Schema.
   - A Material UI port of jsonschema-form. (mui.v5)
-
-- https://github.com/payloadcms/payload
-  - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
-  - Block-based Layout Builder
-  - Extensible SlateJS rich text editor
 
 - https://github.com/commercetools/ui-kit
   - Component library based on our design system
