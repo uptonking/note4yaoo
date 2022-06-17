@@ -21,6 +21,19 @@ modified: '2022-05-15T18:48:53.816Z'
 
 ## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
 
+- 思路1
+  - 在编辑器失焦业务逻辑前如openDialog，手动保存editor.selection，然后在修改编辑器数据如setNodes前先设置选区
+    - editor.selection = savedEditorSelection
+    - If you want to show the selection, may be try Transforms`.setSelection` or `Transforms.select`.
+- 思路2
+  - 覆盖slate内部的方法，使得deselect逻辑不执行
+- 思路3
+  - 在Editable的onBlur方法中保存选区 editor.blurSelection = editor.selection
+  - 然后在修改编辑器数据如setNodes先设置选区
+
+- 编辑器失焦时蓝色selection不可见的问题
+  - 临时方案是在编辑器失焦时添加leaf属性，恢复焦点时移除leaf属性
+
 - `Transforms.select(editor: Editor, target: Location)`; 
   - Set the selection to a new value specified by `target`. 
   - When a selection already exists, this method is just a proxy for `setSelection` and will update the existing value.
@@ -37,6 +50,11 @@ modified: '2022-05-15T18:48:53.816Z'
 - I know Notion does something very similar in its editor; 
   - when you highlight some text and try to insert a hyperlink, they insert a fake blue wrapper span styled to look like a regular selection, and then they delete it afterwards.
 
+- a quick work around, is to not allow the editor to be unselected
+  - You can either run your own logic, or you can just "monkey patch" Transforms.deselect to be a empty function in the begginging of your app, 
+  - this worked like a charm, and I can seem where this is actually being used on the internals of Slate apart from Focus/UnFocus.
+- Better scenario would be to actually change Editable to not call deselect via a prop or something, and you would manually call deselect ( in case for multiple editors on the same page)
+
 - I don't know if this is a bug or expected behaviour. But here if you have value of selection with you (which is `editorSelection.current` ), you can pass it down to editor ( `editor.selection = editorSelection.current` ) before passing editor to `Transforms.insertNode` or anywhere else. 
   - If you want to show the selection, may be try Transforms.setSelection or Transforms.select.
 
@@ -44,7 +62,7 @@ modified: '2022-05-15T18:48:53.816Z'
   - Then, instead of relying on `editor.selection` being non-null, perform all operations and checks relative to that unique selection node. 
   - And instead of using `editor.selection`, you can now define a custom `editor.getSelection` method that returns either the path/location of that fake selection or falls back to `editor.selection`. 
   - Then remove the fake selection when the editor is re-focused.
-  - that's the basic idea: Just like you have other inline nodes (hyperlinks and whatever else), you can also mock up a selection node that doesn't get serialized/deserialized and is only a run-time helper.
+  - that's the basic idea: **Just like you have other inline nodes (hyperlinks and whatever else), you can also mock up a selection node that doesn't get serialized/deserialized and is only a run-time helper**.
 
 - You can get around this issue by setting readOnly to true before opening the link input or focusing outside the editor, and then setting back to false when done.
 
@@ -56,6 +74,10 @@ modified: '2022-05-15T18:48:53.816Z'
 
 - Hey guys, what if you use onMouseDown instead of onClick? This doesn't reset focus for me.
   - I also added a preventDefault() at the end of the onMouseDown and it kept both selection and focus for me.
+
+- It's not easy to keep the selection visually because it's the same document. 
+  - You could have a custom "Selection" plugin which draws a background behind the selection to have a visual effect maybe?
+- I think the safest solution is what you suggested, and draw a background explicitly when the focus is not there.
 
 ## [What is the purpose of onDOMBeforeInput?](https://github.com/ianstormtaylor/slate/issues/3302)
 

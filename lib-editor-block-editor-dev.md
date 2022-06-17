@@ -26,6 +26,8 @@ modified: '2022-06-08T11:14:10.668Z'
 
 - 更适合block-editor的数据结构是否是 mongodb ？
 
+- 难点
+  - block-editor从上到下选区要支持一行一行向下选，向下扩展
 # blogging
 
 ## [The WordPress block editor: Why you should be using it](https://yoast.com/the-block-editor-gutenberg-why-you-should-be-using-it/)

@@ -19,6 +19,12 @@ modified: '2021-04-23T17:10:52.920Z'
   - 注意不同浏览器实现可能有差异
 - keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
 
+- The `blur` event fires when an element has lost focus. 
+  - The main difference between this event and `focusout` is that `focusout` bubbles while `blur` does not.
+
+- The `focus` event fires when an element has received focus.
+  -  The main difference between this event and `focusin` is that `focusin` bubbles while `focus` does not.
+
 - ## 如何实现用2点触控two (simultaneous) touches事件模拟右键菜单，多点触控如何区分不同功能手势如放大缩小、
   - `UIEvent.detail`
     - The `MouseEvent` object passed into the event handler for click has its `detail` property set to the number of times the target was clicked. 

@@ -150,6 +150,9 @@ modified: '2022-05-15T18:45:27.570Z'
   - Transform the contents of a slate 0.50+ editor into markdown and back again.
 - https://github.com/inokawa/remark-slate-transformer
   - remark plugin to transform remark syntax tree (mdast) to Slate document tree, and vice versa. Made for WYSIWYG markdown editor.
+- https://github.com/accordproject/markdown-transform
+  - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
+  - 提供了很多子包，本身类似于remark
 
 - https://github.com/cihad/slate-table  /202107/ts
   - https://cihad.github.io/slate-table/

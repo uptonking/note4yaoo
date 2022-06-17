@@ -11,6 +11,10 @@ modified: '2021-02-09T19:27:07.664Z'
 
 - [中国独立开发者项目列表(主版面：用户不是程序员是普通人)](https://github.com/1c7/chinese-independent-developer)
   - [中国独立开发者项目列表（程序员版：用户是程序员）](https://github.com/1c7/chinese-independent-developer/blob/master/README-Programmer-Edition.md)
+
+- 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
+  - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
+
 # text-editor
 - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 # d3-notebook
