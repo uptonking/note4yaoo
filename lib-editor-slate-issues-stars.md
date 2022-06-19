@@ -32,7 +32,8 @@ modified: '2022-05-15T18:48:53.816Z'
   - 然后在修改编辑器数据如setNodes先设置选区
 
 - 编辑器失焦时蓝色selection不可见的问题
-  - 临时方案是在编辑器失焦时添加leaf属性，恢复焦点时移除leaf属性
+  - 临时方案是在编辑器失焦时添加leaf属性，恢复焦点时移除leaf属性，可以在编辑器框架层实现这个逻辑
+    - https://github.com/ianstormtaylor/slate/issues/3412#issuecomment-1147955840
 
 - `Transforms.select(editor: Editor, target: Location)`; 
   - Set the selection to a new value specified by `target`. 

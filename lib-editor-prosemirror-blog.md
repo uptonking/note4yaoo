@@ -9,11 +9,6 @@ modified: '2021-06-15T00:07:49.228Z'
 
 # guide
 
-- prosemirror-experts
-  - https://github.com/benrbray
-    - https://github.com/benrbray/noteworthy
-    - https://github.com/benrbray/prosemirror-math
-
 ## [ContentEditable困境与破局 prosemirror的基础实现原理](https://zhuanlan.zhihu.com/p/123341288)
 
 - 现在市面上针对富文本编辑器的方案大概分为以下三种

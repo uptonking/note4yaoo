@@ -116,10 +116,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 拖拽时，没有显示横排布局
 
 - dev-to-draft
-  - [ ] inline-toolbar在通过键盘创建选区时未显示
-  - [ ] inline-toolbar在codeblock和挂件也会触发，不合预期
-  - [ ] inline-toolbar操作时，视觉上始终显示蓝色选区
-  - [ ] 添加link弹窗中一输入文字就抛出异常
+  - inline-toolbar
+    - [ ] 在通过键盘创建选区时未显示工具条
+    - [ ] 在codeblock和挂件也会触发，不合预期
+    - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
+    - [ ] 添加link弹窗中一输入文字就抛出异常
+    - [ ] 在inline-menu上或下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件
+  - more-editor-issues
 
 ## 0617
 

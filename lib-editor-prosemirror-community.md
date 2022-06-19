@@ -7,8 +7,16 @@ modified: '2021-06-12T02:41:33.389Z'
 
 # lib-editor-prosemirror-community
 
+# guide
+- prosemirror-experts
+  - https://github.com/benrbray
+    - https://github.com/benrbray/noteworthy
+    - https://github.com/benrbray/prosemirror-math
+  - https://github.com/ocavue
+    - Core team member at remirror
+    - https://github.com/ocavue/rino
+      - A better way to write Markdown
 # discuss-stars
-
 - ## I'm curious what you would consider "Prosemirror regrets" -- things that you'd do different or things you dont like about the current implementation
 - https://twitter.com/moonriseTK/status/1487832468308774918
   - Writing correct document-changing commands, especially schema-agnostic ones, is ridiculously hard right now. 
