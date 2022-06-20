@@ -24,12 +24,14 @@ modified: '2022-05-15T18:48:53.816Z'
 - 思路1
   - 在编辑器失焦业务逻辑前如openDialog，手动保存editor.selection，然后在修改编辑器数据如setNodes前先设置选区
     - editor.selection = savedEditorSelection
-    - If you want to show the selection, may be try Transforms`.setSelection` or `Transforms.select`.
+    - If you want to show the selection, may be try `Transforms.setSelection` or `Transforms.select`.
 - 思路2
   - 覆盖slate内部的方法，使得deselect逻辑不执行
 - 思路3
   - 在Editable的onBlur方法中保存选区 editor.blurSelection = editor.selection
+  - 不能在onFocus中设置选区，因为光标变化时，一直处于focus状态，就不会执行onFocus事件
   - 然后在修改编辑器数据如setNodes先设置选区
+  - 没必要在onFocus中自动恢复选区，除非业务需要，利用onBlur和onFocus可自动保存和恢复选区，甚至可以在选区变空时给原选区位置addMark来显示蓝色状态
 
 - 编辑器失焦时蓝色selection不可见的问题
   - 临时方案是在编辑器失焦时添加leaf属性，恢复焦点时移除leaf属性，可以在编辑器框架层实现这个逻辑

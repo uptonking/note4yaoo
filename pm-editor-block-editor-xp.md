@@ -21,10 +21,17 @@ modified: '2022-06-08T11:05:33.767Z'
   - cons
     - 实现水平分栏可能更复杂
     - 实现鼠标左移右移更简单
+
+- 块编辑器的tradeoff
+  - 基于块来复用各种子块、资源
+  - 多维表格的特性在于数据展示和分析，而不是local-first
 # not-yet
 - 普通react table组件和基于slate的table有什么区别？
 
 - 更适合block-editor的数据结构是否是 mongodb ？
+
+- 块编辑器开始支持跨区选择，后面禁用此功能改为只支持单行选择的原因
+  - 跨区选择时，会将各子块的contenteditable改为false，此时选中的内容无法响应键盘事件
 # block-editor相对于notion的feature
 
 ## 文字格式

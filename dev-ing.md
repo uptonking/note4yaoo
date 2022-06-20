@@ -123,6 +123,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - [ ] 添加link弹窗中一输入文字就抛出异常
     - [ ] 在inline-menu上或下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件
   - more-editor-issues
+    - previous_selection永不为空的设计是否合理
+
+## 0620
+
+- 块编辑器开始支持跨区选择，后面禁用此功能改为只支持单行选择的原因
+  - 跨区选择时，会将各子块的contenteditable改为false，此时选中的内容无法响应键盘事件
+
+## 0619
+
+- inline-toolbar
+  - 点击一级按钮如加粗斜体时，只触发click事件，不会触发编辑器onBlur
+  - 点击按钮打开dropdown时，先触发工具条click事件，再触发slate-text组件的onBlur事件
 
 ## 0617
 
