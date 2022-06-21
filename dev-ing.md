@@ -125,6 +125,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - previous_selection永不为空的设计是否合理
 
+## 0621
+- 评论实现讨论
+  - google-docs会在内存保存评论位置
+
+- 评论prd-impl
+  - 评论暂时只不支持对齐
+    - 评论位置暂时只根据block，不细分到文本所在行
+  - 评论暂时只能@自己
+  - 锚点暂不考虑
+
 ## 0620
 
 - 块编辑器开始支持跨区选择，后面禁用此功能改为只支持单行选择的原因
