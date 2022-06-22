@@ -82,11 +82,6 @@ modified: '2022-05-15T18:48:53.816Z'
   - You could have a custom "Selection" plugin which draws a background behind the selection to have a visual effect maybe?
 - I think the safest solution is what you suggested, and draw a background explicitly when the focus is not there.
 
-## [What is the purpose of onDOMBeforeInput?](https://github.com/ianstormtaylor/slate/issues/3302)
-
-- It's an event handler for the native DOM `beforeinput` event, because sadly React's synthetic events don't properly expose it. 
-  - In this case it's listening for specific inputTypes that browsers fire for context menus, etc.
-
 ## [Only use Slate Provider's value prop as initial state__202109.v0.70.0](https://github.com/ianstormtaylor/slate/pull/4540)
 
 > `slate-react` 中Slate组件经历了 非受控  > 受控  >  非受控 的过程
@@ -161,6 +156,38 @@ modified: '2022-05-15T18:48:53.816Z'
 
 - [Delayed setState(value) results in Cannot resolve a DOM point from Slate point](https://github.com/ianstormtaylor/slate/issues/3575)
 - 
+
+## [Triple-click selection and Selection API issue](https://github.com/ianstormtaylor/slate/issues/4329)
+
+- The basic issue as I understand it is that the DOM selection API supports two kinds of selection endpoint:
+  - text node + character offset (I'll call it a "text endpoint")
+  - element node + child offset (I'll call it an "element endpoint"), used to signify that entire elements are in the selection, not just the text inside them
+- **but Slate selections support only text endpoints**.
+- When a DOM selection has an element endpoint, Slate looks for a corresponding text endpoint (ReactEditor.toSlatePoint). 
+  - In most cases, this text endpoint is after the original element endpoint; 
+  - so when the focus of a forward selection is an element endpoint, the Slate selection is "hanging": 
+  - its focus is at the beginning of the following block.
+- Browsers vary on exactly what actions produce element endpoints, but they are generally actions that sensibly mean "select the whole element":
+  - triple-click on a paragraph
+  - place the cursor at the beginning of a paragraph, shift-arrow-down past the end of the paragraph
+  - place the cursor at the beginning of a paragraph, shift-arrow-right to the end of the paragraph (selects the text within the paragraph), then shift-arrow-right again (selects the whole paragraph)
+  - drag the cursor from the beginning of a paragraph to the end (selects the text within the paragraph), then drag a little further / down (selects the whole paragraph)
+- All of these generate element endpoints (in most cases) in the browsers I've tested (Chrome, Firefox, Safari, all on a Mac), and in most cases the element endpoints turn into a hanging selection in Slate.
+  - It's good to have hanging selections! There's no other way in Slate to represent the selection of a whole block, and there are lots of actions that sensibly work on a whole block
+
+- But hanging selections have some bugs:
+- First, browsers differ in exactly how they generate selection endpoints for the actions above:
+  - Chrome always generates an element endpoint for the selection focus, which points to an element preceding the next editable text location, so Slate generates a hanging selection.
+  - Safari behaves like Chrome, except when there is an image before the next editable location; then it generates a text endpoint in the original paragraph (so Slate generates a non-hanging selection).
+  - I feel like these differences are not really a problem—applications should do something sensible with both hanging and non-hanging selections; so inconsistencies in when hanging / non-hanging selections are generated don't really matter. Just my opinion!
+- Second, applications don't always handle hanging selections correctly:
+  - I've been working on a branch that addresses these bugs by always looking for the text endpoint inside the DOM selection, never outside. 
+  - This works without browser-specific fixups, but it also gets rid of hanging selections (as above I think this is a mistake). 
+
+## [What is the purpose of onDOMBeforeInput?](https://github.com/ianstormtaylor/slate/issues/3302)
+
+- It's an event handler for the native DOM `beforeinput` event, because sadly React's synthetic events don't properly expose it. 
+  - In this case it's listening for specific inputTypes that browsers fire for context menus, etc.
 
 ## [onDocumentChange and onSelectionChange](https://github.com/ianstormtaylor/slate/issues/4687)
 
