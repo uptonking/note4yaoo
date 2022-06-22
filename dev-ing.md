@@ -110,30 +110,37 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## dev-ing
 
-- 拖拽逻辑继续
-  - 拖拽block到左右上下要放进去，dragend事件
-  - 菜单ui实现
-  - 拖拽时，没有显示横排布局
-
 - dev-to-draft
   - inline-toolbar
-    - [ ] 在通过键盘创建选区时未显示工具条
-    - [ ] 在codeblock和挂件也会触发，不合预期
-    - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
+    - [⚡️] 在通过键盘创建选区时未显示工具条
     - [ ] 添加link弹窗中一输入文字就抛出异常
-    - [ ] 在inline-menu上或下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件
+    - [x] 在codeblock和挂件也会触发，不合预期
+    - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
+    - [ ] 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
   - more-editor-issues
     - previous_selection永不为空的设计是否合理
 
+## 0622
+
+- ux-悬浮工具条
+  - 选中连续文字支持触发悬浮工具条
+
 ## 0621
+
 - 评论实现讨论
   - google-docs会在内存保存评论位置
 
-- 评论prd-impl
+- 评论prd-impl-talking
   - 评论暂时只不支持对齐
     - 评论位置暂时只根据block，不细分到文本所在行
   - 评论暂时只能@自己
   - 锚点暂不考虑
+
+- dev-style-talking
+  - 样式方案用css-in-js如styled更容易长期维护
+    - 可以放心删除未使用的纯样式组件
+    - 方便跳转样式定义
+  - 考虑vanilla-extract
 
 ## 0620
 
