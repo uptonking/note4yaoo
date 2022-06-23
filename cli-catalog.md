@@ -40,11 +40,14 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
   - git config --global init.defaultBranch main 
   - git config --global core.fileMode false 
   - git config --global core.ignoreCase false 
-  - git config --global core.autocrlf true 
   - git config --global alias.co checkout
   - git config --global alias.br branch
   - git config --global alias.ci commit
   - git config --global alias.st status
+  - git config --global core.autocrlf true 
+
+- "autocrlf" should be "input" on Unix (Mac/Linux) while "true" on Windows. 
+  - This is very well-explained on Git's official document under the[ "Formatting and Whitespacing"](https://stackoverflow.com/questions/44720236) section
 
 - git命令别名
   - git config --global alias.lg "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit"

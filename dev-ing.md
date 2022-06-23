@@ -112,13 +112,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - dev-to-draft
   - inline-toolbar
+    - [ ] 添加link输入框或小挂件输入框中一输入文字就抛出异常
+    - [ ] 创建新页面体验优化，光标聚焦到标题，下面显示类似notion的开始创作提示
+    - [ ] 菜单项包括inline-menu要显示鼠标提示，内容包括快捷键
+    - [ ] 优化page-tree新建page的逻辑
     - [⚡️] 在通过键盘创建选区时未显示工具条
-    - [ ] 添加link弹窗中一输入文字就抛出异常
     - [x] 在codeblock和挂件也会触发，不合预期
     - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
-    - [ ] 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
   - more-editor-issues
+    - [ ] 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
+
+## 0623
+
+- [Git branch command behaves like 'less'](https://stackoverflow.com/questions/48341920)
+  - git config --global pager.branch false
 
 ## 0622
 

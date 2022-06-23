@@ -13,7 +13,10 @@ modified: '2021-05-10T04:06:02.843Z'
   - https://codesandbox.io/s/mixing-html-and-webgl-r3f-laptop-f5i67
   - 在3d的笔记本的屏幕上显示产品效果，特别适合用来展示
 # pieces
-- ## 
+- ## google search ui history animation ui变化时间线
+- https://www.google.com/search/howsearchworks/our-history/
+
+- [HISTORY OF GOOGLE SEARCH](https://www.versionmuseum.com/history-of/google-search)
 
 - ## tldr rgby配色的logo
 - https://twitter.com/tldrnewsletter/status/1504519111094661122
