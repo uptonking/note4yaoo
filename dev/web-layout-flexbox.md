@@ -11,6 +11,7 @@ modified: '2020-12-21T07:46:17.578Z'
 
 - ref
   - [30分钟学会Flex布局](https://zhuanlan.zhihu.com/p/25303493)
+  - https://www.w3.org/TR/css-flexbox-1/
 
  
 
@@ -20,7 +21,7 @@ modified: '2020-12-21T07:46:17.578Z'
 
 - ## 弹性容器 `display: flex | inline-flex;`
 - flex-flow: flex-direction flex-wrap
-  - 默认值为：`row nowrap`
+  - 默认值为：`row nowrap` 默认水平排列
   - 简写不建议使用
 - flex-direction: 指定主轴上项目排列的方向
   - row/column/-reverse
@@ -55,7 +56,7 @@ modified: '2020-12-21T07:46:17.578Z'
   - 默认值：`0 1 auto`，弹性项目的宽度由里面的内容自动确定
   - 简写建议显式写出3个值
   - 快捷值：auto (1 1 auto) 和 none (0 0 auto)
-  - 当flex取值为一个非负数字时，则该数字为flex-grow值，flex-shrink 取 1，flex-basis 取 0%，即`N 1 0%` 可放大
+  - 当flex取值为一个非负数字时，则该数字为flex-grow值，flex-shrink 取 1，flex-basis 取 0，即`N 1 0%` 可放大
   - 当flex取值为0时，对应的三个值分别为 `0 1 0%` 不放大
   - 当flex取值为一个长度或百分比(如0%)时，则视为flex-basis值，flex-grow 取 1，flex-shrink 取 1
   - 当flex取值为两个非负数字，则分别视为flex-grow和flex-shrink的值，flex-basis 取 0%
@@ -80,7 +81,29 @@ modified: '2020-12-21T07:46:17.578Z'
   - 可理解为弹性项目的最小宽度，但具体宽度由flex属性中其他值决定
   - 当flex-basis值为0%时，是把该项目视为零尺寸的，故即使声明该尺寸为100px，也并没有什么用
     - **flex-basis属性的值为0%时，弹性项目的宽度完全由flex-grow属性决定**。也就是说、弹性项目里内容的宽对项目的宽度没有影响。
+  - 注意 👀 0===0px； 0 ?== 0%，因为%，所有要分析父元素是否有宽度，若父元素无宽度那么flex-item宽度fallback为auto
   - 当flex-basis值为auto时，则跟根据尺寸的设定值(如100px)，则这100px不会纳入剩余空间
+
+- [CSS flex-basis: 0% has different behaviour to flex-basis: 0px](https://stackoverflow.com/questions/63475073)
+  - Using `0` or `0px` is trivial since you will set the initial height to be 0 and then the element will grow to fill the remaining space
+  - Using `N%` is a different story because in this case you are setting the initial height to be based on the parent height.
+  - Percentages: relative to the flex container’s inner main size
+
+- **The spec clearly states "When omitted from the flex shorthand, its specified value is '0'". Why are browsers violating the spec and setting 0% instead?**
+  - because following the Spec is never an obligation. Some browser decide to do things differently either intentionally or by mistake (which we call a bug)
+
+- When you have flex-basis: 0, Chrome and Firefox compute to flex-basis: 0px.
+  - Instead, for cross-browser compatibility, use this: flex: 1 0 0%
+
+- [Understanding unit-less flex-basis](https://stackoverflow.com/questions/44847264)
+- There is a longstanding issue with Internet Explorer 11 and flexbox that a unit must be declared with flex
+  - The workaround would be to specify a unit for the ending zero - preferably % because minifiers don't usually remove that unit.
+  - Unfortunately, I am working with Prepros (SCSS compiler) and I use the built-in CSS minifier that decides to remove the percentage anyway.
+- When using a unitless 0 as initial value for the flex-basis property, the height will be based on the flex-grow/flex-shrink value.
+  - The in this case flex-grow value 1 will tell the item to grow and fill the remaining space of its parent, the container
+  - 测试表明
+    - 若flex-basis为0%且直接父元素有minHeight无height，则当前flex-item的高度会fallback为auto，即自身内容高度
+    - 若flex-basis为0且直接父元素有minHeight无height，则当前flex-item的高度由grow和shrink决定，grow时最大高度为minHeight
 
 - ## grow和shrink的关系
 - 当 flex-wrap 为 wrap/-reverse，且子项宽度和不及父容器宽度时，flex-grow 会起作用，子项会根据 flex-grow 设定的值放大（为0的项不放大）
@@ -90,7 +113,6 @@ modified: '2020-12-21T07:46:17.578Z'
 - 总结上面四点，可以看出不管在什么情况下，**在同一时间flex-shrink和flex-grow只有一个能起作用** 
   - 空间足够时，flex-grow 就有发挥的余地，而空间不足时，flex-shrink 就能起作用。
   - 当然，flex-wrap 的值为 wrap | wrap-reverse 时，表明可以换行，既然可以换行，一般情况下空间就总是足够的，flex-shrink 当然就不会起作用
-
 # [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 # The One Thing Flexbox Can’t Do - Row Span
@@ -103,9 +125,7 @@ modified: '2020-12-21T07:46:17.578Z'
 - Wrap each group of elements into another div, set that div to `display: flex` , tell it to `flex-direction: column` , 
   - and make sure one of the elements contains only two elements.
   - Give those elements different flex weights.
-
 # [Flexbox layout isn't slow](https://developers.google.com/web/updates/2013/10/Flexbox-layout-isn-t-slow)
-
 - Wilson notes: some flexbox layouts were taking close to 100 milliseconds; reworking our layouts without flexbox reduced this to 10 milliseconds!
 - Wilson's comments were about the original (legacy) flexbox that used `display: box;`
 - We asked Ojan Vafai, who wrote much of the implementation in WebKit & Blink, about the newer flexbox model and implementation.
@@ -118,7 +138,6 @@ modified: '2020-12-21T07:46:17.578Z'
   - Old is 2.3x slower than new.
   - I also ran the benchmark using `display:table-cell` and it hit 30ms, right between the two flexbox implementations.
   - The benchmarks above only represent the Blink & WebKit side of things. Due to the time of implementation, flexbox is nearly identical across Safari, Chrome & Android.
-
 # [Flexbox and absolute positioning](https://chenhuijing.com/blog/flexbox-and-absolute-positioning/)
 
 # blogs
