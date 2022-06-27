@@ -123,6 +123,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
 
+## 0627
+
+- dev-to
+  - styled中属性值如何选择子元素
+  - [x] 评论数据如何自动更新的 ?
+    - 类似PageTree的observe
+  - [x] 评论列表不能回复中间某一个人
+    - 点击中间部分评论内容时，直接聚焦到回复框，并且自动在回复框最前面添加@对应用户
+
+- 评论卡片宽度 w-322 + ml-22 + mr-26 = 370
+  - Hug是什么单位，在figma里面代表依据内容确定宽度
+
 ## 0624
 
 - 私有属性和方法
