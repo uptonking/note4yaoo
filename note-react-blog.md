@@ -7,6 +7,12 @@ modified: '2020-07-14T11:51:59.253Z'
 
 # note-react-blog
 
+# guide
+
+- blogs
+  - [use-context-selector demystified](https://dev.to/romaintrotard/use-context-selector-demystified-4f8e)
+    - https://codesandbox.io/s/own-implem-27kv6
+
 # [How Readable Are Your React Component's TypeScript Props Typing?](https://www.chakshunyu.com/blog/how-readable-are-your-react-component's-typescript-props-typing/)
 - This article will discuss and analyse three different ways of implementing the TypeScript implementation of a React component’s props typing.
 - To properly illustrate the different approaches, we will use one example problem in this article. 

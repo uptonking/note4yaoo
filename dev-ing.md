@@ -123,6 +123,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
 
+## 0628
+
+- 现在 getComments 的返回值是一系列type-comments的block，quote放在单独的block，评论内容content也放在单独block，我在前端需要做很多异步查询才能组装出需要的数据结构Comment[]，这部分逻辑放在前端做好，还是service层做好？
+  - 放在service层的好处是异步获取的数据量少，方便实现虚拟滚动动态请求，暂时没什么问题，你这边不用操作
+
+- 评论输入框拿到的数据结构是 `{ value: Array<{ text: string; bold?: boolean }> }` ，而不是text，方便切换到
+
+- event的dataTransfer是保护模式？可能拿不到
+
+- html input可以设置min-width属性
+  - There is size="20" set on `<input>` type text, search, tel, url, email, and password ... by default, which is approximately of 100px width, although it can vary in a different browser and operating system.
+
+
+
 ## 0627
 
 - dev-to
