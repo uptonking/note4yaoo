@@ -123,6 +123,32 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
 
+## 0629
+
+- 同步一下Group Filter/Sorter的节奏，目前有两种方式：
+  - 第一种：内存过滤（针对当前已经展示的数据进行过滤，不和db交互）；
+  - 第二种：db搜索，需要数据库支持；
+  - 考虑到稳定性及当前的节奏（Filter/Sorter以灰度存在，告诉用户有这个能力，并且会持续雕琢），当前采用第一种方式
+
+```shell
+# 我的分支是 feat1
+git co field
+git fetch origin field:field # 同步 field 到远端最新
+go co feat1
+git rebase field # 将当前分支基于 field 进行 rebase
+
+# 👉 不用切换分支
+git fetch origin field:field
+git rebase field
+
+```
+
+- 排查webpack一直热更新的问题花了很多时间，搜索也没人碰到过
+  - [webpack-dev-server] App updated. Recompiling...
+  - 其他同事没碰到的原因是只pull了最新代码，但没有执行 pnpm i
+  - 解决方式是将代码回退，找到没问题的版本，原因大致是monorepo其他地方修改了配置
+    - 其他同事也是这么解决的
+
 ## 0628
 
 - 现在 getComments 的返回值是一系列type-comments的block，quote放在单独的block，评论内容content也放在单独block，我在前端需要做很多异步查询才能组装出需要的数据结构Comment[]，这部分逻辑放在前端做好，还是service层做好？
@@ -134,8 +160,6 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 - html input可以设置min-width属性
   - There is size="20" set on `<input>` type text, search, tel, url, email, and password ... by default, which is approximately of 100px width, although it can vary in a different browser and operating system.
-
-
 
 ## 0627
 

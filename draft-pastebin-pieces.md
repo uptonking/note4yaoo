@@ -2,15 +2,13 @@
 title: draft-pastebin-pieces
 tags: [draft, todo]
 pinned: true
-created: '2019-11-11T06:57:46.101Z'
-modified: '2021-03-22T18:24:50.639Z'
+created: "2019-11-11T06:57:46.101Z"
+modified: "2021-03-22T18:24:50.639Z"
 ---
 
 # draft-pastebin-pieces
 
- 
-
---------------------------
+---
 
 Yao King 邀请您参加预先安排的 Zoom 会议。
 
@@ -22,15 +20,33 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 会议号：775 441 6829
 密码：uZKAn9
 
-----------------------------
+---
 
 - debt
   - 金敏小姐(2017) - 30000
   - 大丫(2016) - 17000 + 2000
   - 小姨(2016) - 20000 + 1500
-  - mom 
+  - mom
     - 6212 2518 0900 0758 487
     - 6212251809000758487
+
+```JS
+
+const unsubscribe2 = editor.selection.onSelectionChange(info => {
+        console.log(';; sel-chge ', info.type);
+    });
+
+    const unsubscribe = editor.selection.onSelectEnd(info => {
+        const { type, browserSelection, anchorNode } = info;
+
+        const current_selection_in_text_block =
+            editor.blockHelper.getCurrentSelection(anchorNode?.id);
+        console.log(
+            ';; sel-chge-end ',
+            type,
+            current_selection_in_text_block
+        );
+```
 
 - 拼多多 链接分析
 
@@ -54,7 +70,7 @@ https://mobile.yangkeduo.com/promotion_op.html?id=181805&subject_id=&type=5&refe
 
 https://mobile.yangkeduo.com/promotion_op.html?id=182650&subject_id=&type=5&refer_share_id=2941cbf46e2343fa95ff0f21ca74c120&refer_share_uid=9312667688517&refer_share_uin=TDBQE7Z3O5XOS4XUPTVYWPPN4E_GEXDA&refer_share_channel=copy_link&refer_share_form=text
 
-- js产生定长字符串
+- js 产生定长字符串
 
 ```JS
 Math.random()
@@ -63,7 +79,7 @@ Math.random()
   .substring(0, 5);
 ```
 
-- authing返回值
+- authing 返回值
 
 ```JS
 {
@@ -160,7 +176,7 @@ Math.random()
 }
 ```
 
-- 图片base64编码示例
+- 图片 base64 编码示例
 
 ```
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///+EMTGAJyeDLi6sfn5/JCR8GBiYV1fk1dW8l5d+ICDKsLB5DQ2CKyv9+vqcYGB6ExPYxMTw5+e3j4+OQ0N6EBB9HR2hamq/nZ3Su7umc3Pq39/cysp4BAS5kpJ7FxeIOTmRS0v38/PFpaWyiIjt5OSod3eINzeeZmaaXFyUUlKPSEjcOe1gAAAE6klEQVR4nO3dbVfaShSG4ZnEIAJRUAmgUKxw7LH9///v9GW51tHkCZM9k72Jfe7PBXIZCiHsIc6hbjfru146PMLH1Gz8Oq+KrJcm8/utNc+59a70/ZXv1ubAZY++X82NidtZz8CfxCtT4Y8+n6JvxC+GwHHfz9E/xDs74WGiIfT7o5nwIlMR+pEZUUvoRxefXegrI6Ke0FcPn11oRNQU2hBVhX6y+uxCC2JdmEfXSvzXXJjfR/fURiy0iTXhKP5T+bpoJb4m2OwO1YXj6Pu8ahVqEw2EvvieYMODsxDqEk2EPvt6nWDbw7IRahKNhD77oUW0Evrs/jnB5gdkJlQj2gl96VWIhkJfPmkQdYTgYLzMFYgqwvwVnLPUeKKqCCebKfjuoMxvEyBa0xFOHSSWfRO1hHZENaHbAGJe/BPPaElPiIlZr0RFISYmOK+A0xS6BfgqLy96JKoKMbHHvagrdNt58+FNXsU/LEhZiIn7vojaQrddAuK8J6K6UH0v6gvdGO3FWS/jUwZCN0Z7cd4H0ULoHkfgA+OuB6KJ0I0RcbmIfvSP2QjdY4X2YnKikRATl5vox3+fldA9ZoA4S0w0E7oNmjdLTLTbh/iU47LpDyLOSojeE//sxZREI+F43zrPkHIv2gi3s1bgzzeNQ/RWvGUi3J4e250nI1oI0Sf9dy1Tzb8bCBdhs/Op5t/1hZvQyfJERHUhOvfdREwy4q8t7AD0fp9ixF9ZeOi2+CEFUVeIgOUIDIEmGPFXFaIlVsXl9Qoch8cTNYUQ+GsIDBJjR/wVhV/mAHj5+1YPVT9EPSEEvg1jImLkQg014XF/AujcCyK+DEF4HDVv/eTmfzeExJhVDEqzGBcAWNy8uyX6Z1XEiL/OxNA38HZXm9xHxIhVDJZTX01LEyDxpuGBgrIUNu4Y9B+2kBINhWBxyd3pF91O2QnhC+SJI4OumQlb3gHSEq2Ere/iV4goWcVgJDxxmLIGxOx79/l3G+HJ47ADOBUgWMVgIgw4lj6gvdh5FYOFMOjz0HQHiPcdiQbCKuxj+xS89XddxVATVovb2I6tK2/L1XPQvTxfgbvpSKyvkq3msZ1YWlzG3k23VQzKK53TVH7rQByksNMqhmEKfRn+ijpQoZ8Ef6cxVKHfhT5PByusQr/qH6ywCH2aDlaYhZ5hHKywDD1vQ+HZRiGF5x+FLcL4H56tT+WVRWy1zZQLs5foHw9+/UgsH9ax1bZTLkxwnqb2K0qNU9Dd2n788tRUGDbn3a0FhTAKJVEoiUIchZIolEQhjkJJFEqiEEehJAolUYijUBKFkijEUSiJQkkU4iiURKEkCnEUSqJQEoU4CiVRKIlCHIWSKJREIY5CSRRKohBHoSQKJVGIo1AShZIoxFEoiUJJFOIolEShJApxFEqiUBKFOAolUSiJQhyFkiiURCGOQkkUSqIQR6EkCiVRiKNQEoWSKMRRKIlCSRTiKJREoSQKcRRKolAShTgKJVEoiUIchZLOXFiN3XVcjcLY+0wo9NUstvql8ybR91m7njWvjUDh+UchhecfhX+R8DhYYfO15+vVrgkzlLKwqwo7t91bb6qwahModL5+daZBVAVfanUKLvF95o0OoUDnHibWWytoEvpK+rvVfmhP1HzUCejcoaiyMh9KZVYV625A564Xx9XlUFodF/BF5j+Mt9zZWpXGVgAAAABJRU5ErkJggg==
@@ -168,35 +184,36 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///
 ```
 
 - install app-ubuntu-calibre
- - sudo mkdir -p /opt/calibre && sudo rm -rf /opt/calibre/* && sudo tar xvf calibre-5.13.0-x86_64.txz -C /opt/calibre && sudo /opt/calibre/calibre_postinstall
+- sudo mkdir -p /opt/calibre && sudo rm -rf /opt/calibre/\* && sudo tar xvf calibre-5.13.0-x86_64.txz -C /opt/calibre && sudo /opt/calibre/calibre_postinstall
 
 - TO-DO: components、datable、chart
 
 - 知乎禁止转载的回答测试
+
   - https://www.zhihu.com/question/25950466/answer/31731502
-  - 只有复制内容较长时才会提示申请转载，比如复制超过150字
+  - 只有复制内容较长时才会提示申请转载，比如复制超过 150 字
 
 - webpack react fast refresh
 
 ```
 
-"@pmmmwh/react-refresh-webpack-plugin": "^0.4.0-beta.7", 
-"react-refresh": "^0.8.3", 
+"@pmmmwh/react-refresh-webpack-plugin": "^0.4.0-beta.7",
+"react-refresh": "^0.8.3",
 
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'); 
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-new ReactRefreshWebpackPlugin(), 
+new ReactRefreshWebpackPlugin(),
 
-'react-refresh/babel', 
+'react-refresh/babel',
 ```
 
-- webpack 5移除了node模块兼容
+- webpack 5 移除了 node 模块兼容
 
 ```
 
-"crypto-browserify": "^3.12.0", 
-"stream-browserify": "^3.0.0", 
-"vm-browserify": "^1.1.2", 
+"crypto-browserify": "^3.12.0",
+"stream-browserify": "^3.0.0",
+"vm-browserify": "^1.1.2",
 ```
 
 - class extends
@@ -204,22 +221,22 @@ new ReactRefreshWebpackPlugin(),
 ```js
 class B {
   print = () => {
-    console.log('print b');
-  }
+    console.log("print b");
+  };
 }
 
 class D extends B {
   print() {
-    console.log('before-super-print');
+    console.log("before-super-print");
     super.print();
-    console.log('after-super-print');
-    console.log('print d');
+    console.log("after-super-print");
+    console.log("print d");
   }
 }
 
 const d = new D();
 d.print();
-d.__proto__.print()
+d.__proto__.print();
 // print b
 // before-super-print
 ```
@@ -233,8 +250,8 @@ $if(%albumartist%,%album%/,)
 $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$num(%tracknumber%,2) ,)$if(%_multiartist%,%artist% - ,)%title%
 ```
 
-- maven-aliyun: https://maven.aliyun.com/repository/central 
-- emotion的button
+- maven-aliyun: https://maven.aliyun.com/repository/central
+- emotion 的 button
 
 ```
 

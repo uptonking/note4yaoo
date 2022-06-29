@@ -83,6 +83,9 @@ modified: '2021-08-02T15:19:42.036Z'
   - 若要给没有license文件的repo添加license，直接本地上传一个即可
   - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
 
+- github.com site proxy
+  - https://hub.fastgit.xyz
+
 - github proxy(解决下载慢的问题)
   - http://g.widyun.com/
   - https://d.serctl.com/

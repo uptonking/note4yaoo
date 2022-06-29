@@ -10,8 +10,17 @@ modified: '2021-04-28T20:54:58.126Z'
 # dev-2022
 
 # pieces
+- 自己的分支b1想用没合并的pr分支b2怎么办，备注主分支是main
+  - 先rebase到b2，然后rebase到main时会自动跳过b2的commit
 
 ## 
+
+## 排查webpack一直热更新的问题花了很多时间，搜索也没人碰到过
+
+- [webpack-dev-server] App updated. Recompiling...
+- 其他同事没碰到的原因是只pull了最新代码，但没有执行 pnpm i
+- 解决方式是将代码回退，找到没问题的版本，原因大致是monorepo其他地方修改了配置
+  - 其他同事也是这么解决的
 
 ## slate设置文本对齐的方式示例在官方示例rich-text，自己却在其他地方找了很久，浪费时间
 
