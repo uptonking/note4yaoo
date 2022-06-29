@@ -278,7 +278,7 @@ GPS丨Glonass丨BeiDou丨Galileo
   - Linux: Ctrl + Alt + - ; 
   - Mac: Ctrl + -
 - 左右括号之间跳转： ctrl + shift + \
-
+N
 ## HP ENVY - 15-as109tu
 
 - 简介
