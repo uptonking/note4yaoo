@@ -7,6 +7,15 @@ modified: '2021-01-12T18:49:22.746Z'
 
 # tool-iot-stars
 
+# guide
+
+- 17寸笔记本的选择并不多
+  - DELL XPS / Alienware
+  - 惠普 暗影精灵 pro 经常无货
+  - 联想 拯救者 / 小新16pro
+  - 其他：微星
+  - 要点：售后
+
 # phone
 
 ## Redmi Note 9 4G
