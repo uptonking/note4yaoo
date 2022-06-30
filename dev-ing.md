@@ -123,6 +123,21 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
 
+## 0630
+
+- 评论实现方案比较
+  - notion评论默认黄色背景通过style属性添加
+    - hover或聚焦时深黄色通过添加带有 `!important`的classname实现
+  - 飞书评论默认黄色下划线通过className添加
+    - hover时无样式变化
+    - 聚焦时深黄色通过添加带有 `!important`的classname实现
+
+- 评论跟样式一样，是一个属性
+  - setNodes 和 unSetNode 就添加和撤销了
+  - 只是渲染的时候，评论的内容是单独保存的
+  - node 属性只存 id 属性，类似于 comment_xxx: true,comment_yyy: true 这种
+
+
 ## 0629
 
 - 同步一下Group Filter/Sorter的节奏，目前有两种方式：

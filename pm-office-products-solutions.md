@@ -121,6 +121,32 @@ modified: '2021-07-11T08:31:00.660Z'
     - password protect for docs
     - adjust permissions for dozens of documents at once
     - easily share folders and docs with multiple people
+
+## craft
+
+- features
+  - 移动端的动画和设计是最大亮点
+  - 每个block可以自定义样式，类似主题
+  - 完整的离线功能
+    - logseq是markdown，只存了数据，没存样式
+    - 导出的数据，可以是定期导出，而不是实时导出
+
+- cons
+  - 异步协作，如mention
+    - 协作功能大多是 coming soon
+  - 实时协作不支持
+  - 不支持目录
+
+- details
+  - 折叠列表时，不是显示三点省略号
+    - 显示二级图标、菜单文字
+    - 简单点时，可直接放一个代表block类型的icon
+  - 可在编辑器页面添加手绘页面/白板
+
+- 知识库功能和任务管理经常分为2个软件
+  - Notion将两个功能融合在一起了
+
+- TextBundle是一种文件格式，将图片和markdown一起导出，不再是难题
 # office-online-products
 - 选型参考
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml
