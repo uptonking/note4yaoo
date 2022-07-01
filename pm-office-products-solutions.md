@@ -71,6 +71,30 @@ modified: '2021-07-11T08:31:00.660Z'
 - who is using Quill
   - vaadin rich-text-editor is built with Quill
     - https://vaadin.com/docs/latest/components/rich-text-editor
+
+# editor-meeting-20220629
+- 选crdt原因
+  - 本地协作，无需中心服务器
+
+- affine的亮点
+  - 任意组合block成group，支持转换视图
+  - 编辑器与白板结合
+  - local-first
+
+- 插件系统设计因素
+  - 编辑器插件
+  - 外部扩展
+
+- 编辑器插件的实现方式
+  - 将editor对象暴露出去
+    - slate
+    - ckeditor
+    - prosemirror ? 
+  - 缺点是不知道用户用了哪些api？
+  - 插件的另一种实现方式，类似浏览器的沙箱
+
+- xheldon公司产品插件使用了rxjs和webpack-tapable
+
 # trending-office-products
 
 ## [almanac](https://almanac.io/features)

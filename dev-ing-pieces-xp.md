@@ -10,8 +10,6 @@ modified: '2021-04-28T20:54:58.126Z'
 # dev-2022
 
 # pieces
-- 自己的分支b1想用没合并的pr分支b2怎么办，备注主分支是main
-  - 先rebase到b2，然后rebase到main时会自动跳过b2的commit
 
 ## 
 
