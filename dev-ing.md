@@ -10,6 +10,13 @@ modified: '2022-05-24T17:53:08.400Z'
 # dev-2022
 - 分析核心需求和问题，拆分问题，梳理任务、子任务
 
+金瑶 邀请您加入【金瑶的个人会议室】
+
+点击链接直接加入会议：
+https://meeting.tencent.com/p/9606972663
+
+#腾讯会议：960-697-2663
+
 ## dev-xp
 
 - my-next
@@ -119,10 +126,46 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - [x] 在通过键盘创建选区时未显示工具条
     - [x] 在codeblock和挂件也会触发，不合预期
     - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
+    - [ ] 用户id和用户在哪里查询和缓存
   - more-editor-issues
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
     - previous_selection永不为空的设计是否合理
 
+## 0701
+
+- 评论功能排期
+  - resolve和恢复
+  - 评论操作菜单，如编辑、删除
+
+- 在已评论文字中选部分文字进行评论
+  - 飞书默认显示第一条；不会高亮内部文字评论
+  - notion默认按时间排序，默认显示第一条，然后会高亮内部部分文字和；会高亮内部和外部文字的评论
+
+- slate-toolbar： We use onMouseDown and not onClick which would have made the editor lose focus and selection to become null
+
+- This implies in the case of overlapping comments, the most important thing to consider is — once the user has inserted a comment thread, would there be a way for them to be able to select that comment thread in the future by clicking on some text inside it? 
+  - If not, we probably don’t want to allow them to insert it in the first place.
+  - To ensure this principle is respected most of the time in our editor, we introduce two rules
+- Before we define those rules, it’s worth calling out that different editors and word processors have different approaches when it comes to overlapping comments. 
+- 若当前文档包含多条评论，第一条该显示哪条？
+  - SHORTEST COMMENT RANGE RULE 
+  - If the user clicks on text that has multiple comment threads on it, we find the comment thread of the shortest text range and select that.
+- 若当前选择重叠时，是否存在完全被挡住永远无法展示的评论，如选区A=选区B+选区C
+  - 使用评论侧边栏
+  - INSERTION RULE
+  - If the text user has selected and is trying to comment on is already fully covered by comment thread(s), don’t allow that insertion.
+  - This is so because if we did allow this insertion, each character in that range would end up having at least two comment threads (one existing and another the new one we just allowed) making it difficult for us to determine which one to select when the user clicks on that character later.
+
+- 维基共享的图一般无版权问题
+  - splash图也ok
+
+- 要讨论在一些框架层面的事情，我这几天做评论的时候，看到的一些问题，你们可以参考看一下，不一定正确
+  - 感觉现在的Service 层更像是实体接入层，没有service逻辑在
+  - Block 创建者有对应字段，但没有存储信息；Service 层是否应该存储用户状态；即便有状态，是否需要统一管理
+  - 同步异步数据的隔离
+  - getBlockDatabase 多次读取时，会创建多次（这个我看已经修改过了）；缓存内容，没有考虑账号切换
+  - 数据驱动；editor是否只注册一个观察者就可以；感觉没有必要像现在这样，在editor管理更新，是否可以移动到service层
+  - Workspace 上挂着pages、二进制文件，这样的话，Observe 更新通知是否过于简陋，不知道更新了哪些内容，现在更新频率过高
 ## 0630
 
 - 评论实现方案比较
@@ -132,11 +175,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - hover时无样式变化
     - 聚焦时深黄色通过添加带有 `!important`的classname实现
 
-- 评论跟样式一样，是一个属性
-  - setNodes 和 unSetNode 就添加和撤销了
+- 请问一下大家，history一般是对编辑器里的内容的记录，但是对某一条句子添加了一条评论，然后再ctrl+z之后，评论也会相应删除，这种是怎么做到的呢？**评论也设计在了编辑器的数据模型之内吗**？
+  - 评论跟样式一样，是一个属性
+  - setNodes 和 unSetNodes 就添加和撤销了
   - 只是渲染的时候，评论的内容是单独保存的
-  - node 属性只存 id 属性，类似于 comment_xxx: true,comment_yyy: true 这种
-
+  - node 属性只存 id 属性，类似于 comment_xxx: true, comment_yyy: true 这种
 
 ## 0629
 
@@ -157,6 +200,10 @@ git fetch origin field:field
 git rebase field
 
 ```
+
+- rebase改为merge的案例
+  - 原代码删除后，找不到对应的人和commit记录了
+  - 线上事故后，找不到对应的负责人了
 
 - 排查webpack一直热更新的问题花了很多时间，搜索也没人碰到过
   - [webpack-dev-server] App updated. Recompiling...
@@ -523,7 +570,7 @@ type Variants = (typeof VARIANTS_BY_ID)[keyof typeof VARIANTS_BY_ID];
 
 ## 0602
 
-- se
+- search
   - indexeddb
     - local-first client/server architecture
   - notion like  ; block editor
@@ -579,7 +626,7 @@ type Variants = (typeof VARIANTS_BY_ID)[keyof typeof VARIANTS_BY_ID];
   - 鼠标先点击input，再点击button，触发的事件顺序
     - mousedown -->  onblur(input) --> mouseup --> click
   - 注意
-    - 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
+    - 👀 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
 
 - 更新text或其他block的流程
   - 理想流程：action  发布_command_  修改blockdb  只通知相关block数据更新  更新blockView

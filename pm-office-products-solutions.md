@@ -229,3 +229,17 @@ modified: '2021-07-11T08:31:00.660Z'
   - https://epilys.github.io/bibliothecula/
   - document organizer with tags and full-text-search, in a simple and clean sqlite3 schema
   - Store plain text notes with automatic full-text search and back-reference indexing
+# more-products
+
+## teamind
+
+teamind的新手引导里就已经出现了一些惊喜的元素，比如他们做了目录。
+他们的新手引导真不错。
+teamind在不同的frame切换时动画很不错。
+teamind的多个元素组合成复杂图形时，block的嵌套蛮丝滑的，逻辑似乎也比较清晰。
+teamind已经支持了聊天，留言，音视频，演示模式等有意思的东西。
+为了解决地图和无限大白板的定位问题，他们限制了拖动时候的地图边界，除非你画了东西或者拖了已经有的元素，否则画布不是无限大的。
+teamind似乎也基于dom而不是canvas
+
+- 工具产品，向内容平台扩展；让我想起了快手，从GIF工具到内容生态的跨越
+  - 和用户一起发展
