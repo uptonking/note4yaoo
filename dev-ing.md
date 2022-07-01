@@ -158,6 +158,12 @@ git rebase field
 
 ```
 
+- 自己的分支b1想用没合并的pr分支b2怎么办，备注主分支是main
+  - 先rebase到b2，然后rebase到main时会自动跳过b2的commit
+
+- rebase一般用来处理小改动，对于大改动，rebase后要处理的冲突特别多
+  - git rebase --abort
+
 - 排查webpack一直热更新的问题花了很多时间，搜索也没人碰到过
   - [webpack-dev-server] App updated. Recompiling...
   - 其他同事没碰到的原因是只pull了最新代码，但没有执行 pnpm i
