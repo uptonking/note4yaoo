@@ -11,6 +11,68 @@ modified: '2022-05-15T21:14:14.339Z'
 
 # slate-blogs
 
+## [Adding A Commenting System To A WYSIWYG Editor](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
+
+- https://github.com/shalabhvyas/wysiwyg-editor
+  - /202106
+
+- Comment Threads As Marks 
+  - The way we represent comment threads as marks is that each comment thread is represented by a mark named as `commentThread_threadID` where threadID is a unique ID we assign to each comment thread.
+  - The way this works (as it does with any mark) is that when a mark property is being set on the selected text, Slate’s `Editor.addMark` API would split the text node(s) if needed such that in the resulting structure, text nodes are set up in a way that each text node has the exact same value of the mark.
+
+- Highlighting Commented Text 
+  - 每个评论部分在编辑器数据模型中对应的属性名是 COMMENT_PREFIX_ID，值是boolean
+  - 直接根据slate的leaf对象计算comment数量，然后渲染对应的CommentedText组件
+
+- add a button to the toolbar that lets the user add comments
+  - assign an id to the new comment
+  - add a new mark to slate document
+
+- Overlapping Comments
+- This implies in the case of overlapping comments, the most important thing to consider is — once the user has inserted a comment thread, would there be a way for them to be able to select that comment thread in the future by clicking on some text inside it? 
+  - If not, we probably don’t want to allow them to insert it in the first place.
+  - To ensure this principle is respected most of the time in our editor, we introduce two rules
+- Before we define those rules, it’s worth calling out that different editors and word processors have different approaches when it comes to overlapping comments. 
+- 👉 Shortest Comment Range Rule  
+  - 若当前文档包含多条评论，第一条该显示哪条？
+  - If the user clicks on text that has multiple comment threads on it, we find the comment thread of the shortest text range and select that.
+  - 若当前选择重叠时，是否存在完全被挡住永远无法展示的评论，如选区A=选区B+选区C，使用评论侧边栏更好
+- 👉 Insertion Rule
+  - If the text user has selected and is trying to comment on is already fully covered by comment thread(s), don’t allow that insertion.
+  - This is so because if we did allow this insertion, each character in that range would end up having at least two comment threads (one existing and another the new one we just allowed) making it difficult for us to determine which one to select when the user clicks on that character later.
+  - 但飞书和notion都支持在已评论文字内部再选择文字评论，问题是光标处于文字内部时，该显示那条评论无法确定
+
+- 点击已评论的文字，onClick方法会将当前最短评论id设为activeId
+  - 其实不需要单独在全局保存此状态，只需要在editor.selection中判断当前光标位置文本的Comment_id是否和文本相等
+
+- when the user clicks on a commented text node, we use the Shortest Comment Range Rule to determine which comment thread should be selected
+  - 1. Find the shortest comment where click
+    - Get all the comment threads at the text node
+    - Traverse in either direction from that text node and keep updating the thread lengths being tracked
+    - 找到最短评论长度：非评论节点、起止节点、公共空白节点
+  - 2. Set that comment thread to be the active comment id
+  - 3. hightlight active comment
+    - 利用 `CommentedText` 组件的 `is-active` 属性
+
+- Adding Comment Thread Popovers
+  - build a Comment Popover to let the user add comments
+  - find the Slate Node closest to the DOM node where the click event happened
+  - ReactEditor.toSlateNode(editor, clickedDOMNode)
+  - Slate has a helper method toSlateNode that returns the Slate node that maps to a DOM node or its closest ancestor if itself isn’t a Slate Node
+  - Comment Popover has all the code it needs to allow inserting new comments and updating the Recoil state
+
+- sidebar用来解决编辑器内部分评论可能无法选中的问题
+  - we need a Comments Sidebar that lets the user get to any and all comment threads in the document.
+  - When the document is loaded in the editor, we need to scan the document to find all the comment threads and add them to the Recoil atoms
+
+- In the real-world usage of the Commenting System, comment threads are likely to be stored separately from the document contents themselves. 
+- If a document is really long and has a lot of users collaborating on it on a lot of comment threads, we might have to optimize the initialization code to only load comment threads for the first few pages of the document. 
+- Alternatively, we may choose to only load the light-weight metadata of all the comment threads instead of the entire list of comments which is likely the heavier part of the payload.
+
+- Resolving And Re-Opening Comments
+  - is-resolved
+  - is-active
+
 ## [Slate 介绍分析与实践](https://coldstone.fun/post/2020/12/13/slate-intro/)
 
 - 特点

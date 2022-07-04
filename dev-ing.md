@@ -11,7 +11,6 @@ modified: '2022-05-24T17:53:08.400Z'
 - 分析核心需求和问题，拆分问题，梳理任务、子任务
 
 金瑶 邀请您加入【金瑶的个人会议室】
-
 点击链接直接加入会议：
 https://meeting.tencent.com/p/9606972663
 
@@ -120,16 +119,32 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - inline-toolbar
     - [ ] 添加link输入框或小挂件输入框中一输入文字就抛出异常
-    - [ ] 创建新页面体验优化，光标聚焦到标题，下面显示类似notion的开始创作提示
     - [ ] 菜单项包括inline-menu要显示鼠标提示，内容包括快捷键
-    - [ ] 优化page-tree新建page的逻辑
     - [x] 在通过键盘创建选区时未显示工具条
     - [x] 在codeblock和挂件也会触发，不合预期
     - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
-    - [ ] 用户id和用户在哪里查询和缓存
-  - more-editor-issues
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
+  - comment
+    - [ ] 评论在slate的mark无法删除的问题，只能设为false
+    - [ ] active comment的交互效果：高亮 + 自动调出评论侧边栏
+    - [ ] 评论部分区域重叠时显示加深颜色
+    - [ ] comment和link样式叠加的edge-cases
+  - page
+    - [ ] 创建新页面体验优化，光标聚焦到标题，下面显示类似notion的开始创作提示
+    - [ ] 优化page-tree新建page的逻辑
+  - slate
     - previous_selection永不为空的设计是否合理
+  - more-editor-issues
+    - [ ] 用户id和用户在哪里查询和缓存
+
+## 0704
+
+- 👉 方案参考：编辑器选中评论部分时，加深高亮评论颜色和其他交互
+  - notion会高亮侧边对应的评论卡片的背景色
+  - 飞书会高亮侧边对应的评论卡片的
+
+- 协同功能需要权限系统作为前提
+  - 协同、分享、评论常一起考虑
 
 ## 0701
 
@@ -137,24 +152,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - resolve和恢复
   - 评论操作菜单，如编辑、删除
 
-- 在已评论文字中选部分文字进行评论
+- 👉 方案参考：在已评论文字中选择部分文字进行评论
   - 飞书默认显示第一条；不会高亮内部文字评论
   - notion默认按时间排序，默认显示第一条，然后会高亮内部部分文字和；会高亮内部和外部文字的评论
 
 - slate-toolbar： We use onMouseDown and not onClick which would have made the editor lose focus and selection to become null
-
-- This implies in the case of overlapping comments, the most important thing to consider is — once the user has inserted a comment thread, would there be a way for them to be able to select that comment thread in the future by clicking on some text inside it? 
-  - If not, we probably don’t want to allow them to insert it in the first place.
-  - To ensure this principle is respected most of the time in our editor, we introduce two rules
-- Before we define those rules, it’s worth calling out that different editors and word processors have different approaches when it comes to overlapping comments. 
-- 若当前文档包含多条评论，第一条该显示哪条？
-  - SHORTEST COMMENT RANGE RULE 
-  - If the user clicks on text that has multiple comment threads on it, we find the comment thread of the shortest text range and select that.
-- 若当前选择重叠时，是否存在完全被挡住永远无法展示的评论，如选区A=选区B+选区C
-  - 使用评论侧边栏
-  - INSERTION RULE
-  - If the text user has selected and is trying to comment on is already fully covered by comment thread(s), don’t allow that insertion.
-  - This is so because if we did allow this insertion, each character in that range would end up having at least two comment threads (one existing and another the new one we just allowed) making it difficult for us to determine which one to select when the user clicks on that character later.
 
 - 维基共享的图一般无版权问题
   - splash图也ok
@@ -166,6 +168,7 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - getBlockDatabase 多次读取时，会创建多次（这个我看已经修改过了）；缓存内容，没有考虑账号切换
   - 数据驱动；editor是否只注册一个观察者就可以；感觉没有必要像现在这样，在editor管理更新，是否可以移动到service层
   - Workspace 上挂着pages、二进制文件，这样的话，Observe 更新通知是否过于简陋，不知道更新了哪些内容，现在更新频率过高
+
 ## 0630
 
 - 评论实现方案比较
