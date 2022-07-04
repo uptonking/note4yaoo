@@ -72,7 +72,25 @@ modified: '2021-07-11T08:31:00.660Z'
   - vaadin rich-text-editor is built with Quill
     - https://vaadin.com/docs/latest/components/rich-text-editor
 
-# editor-meeting-20220629
+# editor-meeting-psp-block-editor-20220704
+- 编辑器的模型包括renderTree和blockTree
+  - 目的是方便实现翻译及原文、database多视图
+
+- yjs使用并没太大问题，只是在大文件时序列化花费时间很长
+  - 自己脚本进行文本测试，在控制台测试到5-6万行，花费时间长
+  - 业务层在3000行左右就开始卡，因为数据是异步的
+
+- yjs提供了ydoc，也提供了sub-doc
+  - 但websocket不支持sub-doc
+
+- 同步改异步容易，异步改同步
+
+- 轻雀概念文档操作都是同步的，先在本地操作
+
+- psp的操作都是同步的，但底层实现可以是异步的
+  - 对于需要异步的，可以先在内存state处理，然后批量执行操作
+
+# editor-meeting-xheldon-20220629
 - 选crdt原因
   - 本地协作，无需中心服务器
 
