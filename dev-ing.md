@@ -137,11 +137,68 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0705
+
+- xp-异常处理
+  - 在hook层，一般暴露crud方法，不处理异常而是直接抛出error
+  - 在视图组件层，处理输入异常，提示给用户的反馈
+
+- 方案参考
+  - 飞书的评论引文最多显示1行
+  - 飞书的评论引文最多显示3行
+
+- ❓ editor是否需要自己的状态，还是以indexeddb作为唯一数据源？
+
+- 编辑器重构设计讨论
+
+- editor-core
+  - selection
+  - cursor
+  - keyboard
+  - scroll
+  - drag-drop
+  - widget
+    - 松耦合的插件plugin和强耦合的widget
+
+- blockdb管理数据model
+  - viewController并不管理数据
+
+- 本地或远程数据源通过adapter
+
+- jwt封装了对block操作的抽象
+  - block实例
+  - 检索
+  - block响应式更新
+  - undo/redo
+  - snapshots
+
+- 异步接口转同步可以在editor-core内实现
+
+- command层只约定参数类型
+  - 设计得越来越像redux的action
+  - command只负责传参
+
+```shell
+# 编辑器与数据源交互的逻辑流程
+👉 blockdb/jwt 非
+
+👉 command-manager / action / 原子操作 
+
+^(command做为通信协议)  v(onUpdate)
+
+👉 editor-core
+
+```
+
+- 去掉AsyncBlock的原因
+  - 异步写起来麻烦
+  - 除了indexeddb的缓存，前端又缓存了一次数据
+
 ## 0704
 
 - 👉 方案参考：编辑器选中评论部分时，加深高亮评论颜色和其他交互
   - notion会高亮侧边对应的评论卡片的背景色
-  - 飞书会高亮侧边对应的评论卡片的
+  - 飞书会高亮侧边对应的评论卡片的顶部
 
 - 协同功能需要权限系统作为前提
   - 协同、分享、评论常一起考虑
@@ -245,14 +302,6 @@ git rebase field
 
 ## 0624
 
-- 私有属性和方法
-  - 目标：在视觉上区分，在编译执行安全性层次上区分，然后放心删除
-  - vscode的私有变量和方法是 _前下划线
-    - https://github.com/microsoft/vscode/blob/main/src/vs/editor/common/model/textModelSearch.ts
-  - 后下划线_ 也有人用
-  - rust社区 流行_中下划线
-  - 安全性应该通过单元测试、集成测试保证
-
 - 普通业务组件如何通过点击编辑器中元素唤起？
   - 在普通业务组件内注册 onSelectionChange
   - 普通业务组件先通过全局state拿到对应editor对象
@@ -274,6 +323,14 @@ git rebase field
   - 导航：上一个、下一个
   - 回复：文字、富文本、表情
 
+- 私有属性和方法
+  - 目标：在视觉上区分，在编译执行安全性层次上区分，然后放心删除
+  - vscode的私有变量和方法是 _前下划线
+    - https://github.com/microsoft/vscode/blob/main/src/vs/editor/common/model/textModelSearch.ts
+  - 后下划线_ 也有人用
+  - rust社区 流行_中下划线
+  - 安全性应该通过单元测试、集成测试保证
+
 ## 0623
 
 - [Git branch command behaves like 'less'](https://stackoverflow.com/questions/48341920)
@@ -282,7 +339,7 @@ git rebase field
 ## 0622
 
 - ux-悬浮工具条
-  - 选中连续文字支持触发悬浮工具条
+  - 通过键盘选中连续文字支持触发悬浮工具条
 
 ## 0621
 
