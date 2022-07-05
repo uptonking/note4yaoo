@@ -19,7 +19,7 @@
     "space_after_named_function": false
   },
   "[markdown]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.renderWhitespace": "all",
     "editor.quickSuggestions": {
       "other": true,
