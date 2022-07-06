@@ -137,6 +137,16 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0706
+
+
+- slate-bugs-通过增加条件减少触发搜索的逻辑
+
+```JS
+
+Uncaught (in promise) TypeError: Cannot destructure property 'selectionEnd' of 'this.getSelectionStartAndEnd(...)' as it is undefined
+```
+
 ## 0705
 
 - xp-异常处理

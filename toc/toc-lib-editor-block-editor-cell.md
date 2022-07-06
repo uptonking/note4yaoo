@@ -9,6 +9,11 @@ modified: '2022-06-08T11:03:26.472Z'
 
 # block-style-editor
 
+- https://github.com/vincentdchan/blocky-editor
+  - https://blocky-editor.dev/
+  - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
+  - Extensible. Extend the editor with custom blocks and spans.
+
 - https://github.com/psyhyde/domino-editor
   - https://domino-editor.vercel.app/
   - /6Star/NALic/202009/js/未开源代码-仅文档

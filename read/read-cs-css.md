@@ -323,7 +323,7 @@ modified: '2020-12-08T14:44:40.651Z'
   - `href="javascript:;"` works in both Android and iOS webviews, 也不添加历史记录
   - [Is an empty href valid?](https://stackoverflow.com/questions/5637969/is-an-empty-href-valid)
 - pseudo-class: link, visited, hover, active, focus, first-child
-- pseduo-elements: before, after, first-letter/line
+- pseudo-elements: before, after, first-letter/line
 - 搜索引擎不会取得伪元素的信息（因为它在标记中并不存在）
   - 因此，不要通过伪元素添加你想让搜索引擎索引的重要内容
 - css层叠规则提炼版
@@ -391,7 +391,7 @@ modified: '2020-12-08T14:44:40.651Z'
   - fixed：脱离了文档流，定位上下文是浏览器窗口或屏幕，不会随页面滚动而滚动
   - 在常规文档流中，若外部div没有内容，内部div就会跟它共享相同的起点。只有将元素的position属性设定为relative、absolute或fixed，这个元素的 top、right、bottom 和 left 属性才会起作用
   - 若未设置外层元素的position为relative/absolute/fixed，则内层元素的left/top等定位属性不会生效，会被忽略，默认都是static定位，内层div会和外层div同左上角起点
-  - 常用的定位模式是：外层ralative，内层absolute
+  - 常用的定位模式是：外层relative，内层absolute
   - float元素也会脱离文档流
 
 - background-color会应用到内容背景和padding背景，color前景色会应用到内容和边框
