@@ -137,14 +137,26 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0707
+
+- 在白板里面，如何拿到当前编辑器的selection
+  - 理想方案是先直接改数据，再通过数据更新通知视图更新
+  - 临时方案是先拿到editor对象，再通过editor对象拿到slate-selection
+
+- 当光标处于编辑器内高亮评论文本时，高亮文本的颜色会加深，这个状态最好不要保存到mark，因为这是临时状态，不需要持久化
+  - 持久化后也可能是feature
+  - ❓ 颜色加深条件使用点击事件最直接，使用collapse的selection也能做
+
 ## 0706
 
+- 更新依赖后，webpack热加载会一直recompiling
+  - 可能是style9生成的css导致的
 
 - slate-bugs-通过增加条件减少触发搜索的逻辑
 
 ```JS
-
-Uncaught (in promise) TypeError: Cannot destructure property 'selectionEnd' of 'this.getSelectionStartAndEnd(...)' as it is undefined
+Uncaught( in promise) TypeError: Cannot destructure property 'selectionEnd' of 'this.getSelectionStartAndEnd(...)'
+as it is undefined
 ```
 
 ## 0705
