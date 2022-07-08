@@ -137,6 +137,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0708
+
+- 文本折叠效果参考
+  - coda
+  - things
+  - height
+
 ## 0707
 
 - 在白板里面，如何拿到当前编辑器的selection
