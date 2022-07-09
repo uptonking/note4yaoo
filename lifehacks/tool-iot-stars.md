@@ -15,7 +15,6 @@ modified: '2021-01-12T18:49:22.746Z'
   - 联想 拯救者 / 小新16pro
   - 其他：微星
   - 要点：售后
-
 # phone
 
 ## Redmi Note 9 4G
@@ -223,6 +222,77 @@ GPS丨Glonass丨BeiDou丨Galileo
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
 # laptop
 
+## hp omen 8 plus
+
+### specs
+
+处理器 第十二代 英特尔® 酷睿™ i9-12900HX 处理器（16 核心，24 线程，采用 Turbo Boost 技术约可达 5.0 GHz） 
+处理器系列 第十二代 英特尔® 酷睿™ i9 处理器  
+内存（标配） 32 GB DDR5-4800 MHz 双通道内存 (2 x 16 GB) 
+Memory Note 传输速率高达 4800 MT/s。 
+硬盘说明  2 TB PCIe® NVMe™ M.2 SSD 
+存储类型 固态硬盘 
+显示屏 17.3 英寸，2.5K 165 Hz，IPS，100%sRGB高色域电竞屏 
+显卡 NVIDIA® GeForce RTX™ 3080 Ti笔记本电脑 GPU（16 GB GDDR6 独立显卡）
+电源类型 330 瓦交流电源适配器 
+电池类型 6芯 83 瓦时锂离子聚合物电池
+
+处理器
+CPU系列	英特尔 酷睿i9 12代系列
+CPU型号	Intel 酷睿i9 12900HX旗舰机更多酷睿i9CPU>
+CPU主频	2.3GHz
+最高睿频	5GHz运行流畅
+核心/线程数	16核心/24线程
+三级缓存	30MB
+核心代号	Alder Lake>
+制程工艺	Intel 7（10纳米）
+
+存储设备
+内存容量	32GB极速运行热门游戏本>
+内存类型	DDR5 4800MHz>
+插槽数量	2xSO-DIMM
+最大内存容量	32GB
+
+硬盘容量	2TB
+硬盘描述	SSD固态硬盘（PCIe4.0）
+
+显卡
+显卡类型	发烧级独立显卡
+显卡芯片	NVIDIA GeForce RTX 3080Ti
+显存容量	16GB显示流畅
+显存类型	GDDR6>
+显卡最高功耗	175w
+独显直连	支持
+
+显示屏
+触控屏	不支持触控
+屏幕类型	IPS屏
+屏幕尺寸	17.3英寸17.3更多17.3英寸笔记本>
+显示比例	16:9
+屏幕分辨率	2560x1440超高清屏更多超高清屏笔记本>
+屏占比	85%
+屏幕刷新率	165Hz
+响应时间	3ms
+
+### ref
+
+- [惠普暗影精灵8 Plus(i9 12900HX/32GB/2TB/RTX3080Ti/165Hz)参数](https://detail.zol.com.cn/1420/1419200/param.shtml)
+- [omen-8-plus vs envy-15](https://detail.zol.com.cn/ProductComp_param_1155399-1419200.html)
+
+### 售后
+
+- [惠普(HP)授权服务中心](http://support.hpicss.com/ascindex_detail.aspx)
+- 杭州市-杭州世虹网络科技有限公司西田城分公司
+ 电话：	18258251995
+ 地址：	浙江省杭州市余杭区良渚街道莫干山路1513号西田城商场C座1F-11惠普店
+ 服务时间：	周一到周日：9:00-18:00
+- 杭州市-惠普授权服务中心杭州分部
+ 电话：	0571-81992601/81992630
+ 地址：	杭州市西湖区文一西路75号数字娱乐产业园2号楼左侧105室
+ 服务时间：	周一至周日09:00-18:00
+
+### discussion
+
 ## MacBook M1 Pro
 
 ### 全局快捷键
@@ -279,7 +349,14 @@ GPS丨Glonass丨BeiDou丨Galileo
   - Mac: Ctrl + -
 - 左右括号之间跳转： ctrl + shift + \
 N
+
 ## HP ENVY - 15-as109tu
+
+- Product Name: HP ENVY Notebook
+  - SKU Number: Y8H74PA#AB2
+  - Serial Number: 5CG6404VT0
+
+### specs
 
 - 简介
   - 上市时间：2016年9月

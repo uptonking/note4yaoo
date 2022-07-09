@@ -7,6 +7,18 @@ modified: '2021-01-01T22:26:57.773Z'
 
 # tool-os-linux-ubuntu-xp
 
+# guide
+
+# ubuntu-starter
+- ubuntu查看序列号（serial number）和产品型号（product number）
+  - sudo dmidecode | less
+
+- [图吧工具箱，是开源、免费、绿色、纯净的硬件检测工具合集](http://www.tbtool.cn/)
+
+- win 11 & pro
+  - https://www.microsoft.com/software-download/windows11
+
+- [Office 2021官方镜像下载安装激活一条龙](https://www.cnblogs.com/hushaojun/p/15967885.html)
 # ubuntu-cons
 
 ## input-method

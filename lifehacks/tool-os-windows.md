@@ -10,7 +10,6 @@ modified: '2020-12-29T17:48:26.735Z'
 # cmd common
 - diskmgmt.msc
   - 打开 disk management 磁盘管理工具
-
 # guide
 
 ## win缺点
@@ -22,9 +21,7 @@ modified: '2020-12-29T17:48:26.735Z'
   - 系统编码设置为utf-8后，很多软件特别是陈旧软件的ui会显示乱码
 - 系统级依赖
   - 一些系统依赖包会缺失，如libjpeg-dev, libgif
-
 # WSL子系统
-
 - [WSL发展如此迅速，有没有可能会在未来替代原生Linux？](https://www.zhihu.com/question/396190471)
   - WSL2目前部分功能无法取代桌面Linux，但是日常开发是完全足够的，甚至可以直接跑docker
   - WSL2适用于在Windows上运行Linux的Windows子系统ELF64 Linux二进制文件，其实是Linux内核跑在Hyper-V下，目前能满足linux学习和大部份开发的需求。
@@ -42,7 +39,6 @@ modified: '2020-12-29T17:48:26.735Z'
 
 - ref
   - [Comparing WSL 2 and WSL 1](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
-
 # windows OS
 
 # ref
