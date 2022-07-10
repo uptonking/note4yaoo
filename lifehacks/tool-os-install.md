@@ -15,6 +15,13 @@ modified: '2020-12-22T12:42:14.745Z'
 
 ## guide
 
+## os-starter
+
+- [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
+
+- [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
+  - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
+
 ## software
 
 - 腾讯会议的linux版本发布之后，我去体验了一把，提示不支持wayland
@@ -26,6 +33,18 @@ modified: '2020-12-22T12:42:14.745Z'
 
 ## guide
 
+## os-starter
+
+- pe安装系统需要鼠标，键盘操作太困难
+  - 需要pe支持12代触摸板才可以
+  - [AnglePE](https://www.angel-pe.cn/2022/26/20/angeltspeclksddnzzxttwjc%d1%81ax.html)
+
+- [预装Windows 11系统的新电脑怎么跳过联网验机？](https://zhuanlan.zhihu.com/p/425326403)
+  - 开机出现如下界面，同时按下组合键Ctrl+Shift+F3。（部分机型没反应可以试试Ctrl+Shift+F3+Fn）
+
+- [使用WinNTSetup安装win10时提示efi part有红叉(win10安装UEFI系统安装）](https://www.cnblogs.com/sjdn/p/8975583.html)
+  - 引导盘要选esp分区，也就是第一个分区100/300M空间的那个
+
 ## software
 
 - ms-Office 2021官方镜像下载安装激活一条龙
@@ -33,3 +52,4 @@ modified: '2020-12-22T12:42:14.745Z'
 
 - adobe 大师版全家桶、sp版独立包
   - https://www.nite07.com/adobe/
+  - 密码 nite07

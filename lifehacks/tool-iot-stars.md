@@ -276,6 +276,7 @@ CPU主频	2.3GHz
 
 ### ref
 
+- [OMEN 17.3 英寸游戏本 17-ck1000 (509W2AV)](https://support.hp.com/cn-zh/product/omen-17.3-inch-gaming-laptop-pc-17-ck1000/2100997909/model/2100997924/product-info)
 - [惠普暗影精灵8 Plus(i9 12900HX/32GB/2TB/RTX3080Ti/165Hz)参数](https://detail.zol.com.cn/1420/1419200/param.shtml)
 - [omen-8-plus vs envy-15](https://detail.zol.com.cn/ProductComp_param_1155399-1419200.html)
 
