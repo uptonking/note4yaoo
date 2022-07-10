@@ -17,6 +17,8 @@ modified: '2020-12-22T12:42:14.745Z'
 
 ## os-starter
 
+- 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
+
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
 
 - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
@@ -39,7 +41,7 @@ modified: '2020-12-22T12:42:14.745Z'
   - 需要pe支持12代触摸板才可以
   - [AnglePE](https://www.angel-pe.cn/2022/26/20/angeltspeclksddnzzxttwjc%d1%81ax.html)
 
-- [预装Windows 11系统的新电脑怎么跳过联网验机？](https://zhuanlan.zhihu.com/p/425326403)
+- [预装Windows 11系统的新电脑怎么跳过联网验机？](https://zhuanlan.zhihu.com/p/4253264 03)
   - 开机出现如下界面，同时按下组合键Ctrl+Shift+F3。（部分机型没反应可以试试Ctrl+Shift+F3+Fn）
 
 - [使用WinNTSetup安装win10时提示efi part有红叉(win10安装UEFI系统安装）](https://www.cnblogs.com/sjdn/p/8975583.html)
