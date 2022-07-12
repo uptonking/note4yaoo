@@ -119,23 +119,67 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to-draft
   - inline-toolbar
     - [ ] 添加link输入框或小挂件输入框中一输入文字就抛出异常
-    - [ ] 菜单项包括inline-menu要显示鼠标提示，内容包括快捷键
+    - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
+    - [x] 菜单项包括inline-menu要显示鼠标提示，内容包括快捷键
     - [x] 在通过键盘创建选区时未显示工具条
     - [x] 在codeblock和挂件也会触发，不合预期
-    - [ ] 在工具条点击下拉菜单按钮时，视觉上始终显示蓝色选区
     - 在inline-menu上或在下拉菜单上移动鼠标时应禁止冒泡，不触发left-menu的mousemove事件，也不应更新left-menu位置
   - comment
     - [ ] 评论在slate的mark无法删除的问题，只能设为false
-    - [ ] active comment的交互效果：高亮 + 自动调出评论侧边栏
-    - [ ] 评论部分区域重叠时显示加深颜色
     - [ ] comment和link样式叠加的edge-cases
+    - [x] active comment的交互效果：高亮 + 自动调出评论侧边栏
+    - [x] 评论部分区域重叠时显示加深颜色
   - page
-    - [ ] 创建新页面体验优化，光标聚焦到标题，下面显示类似notion的开始创作提示
     - [ ] 优化page-tree新建page的逻辑
+    - [x] 创建新页面体验优化，光标聚焦到标题，下面显示类似notion的开始创作提示
   - slate
     - previous_selection永不为空的设计是否合理
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
+
+## 0712
+
+- 确定布局包的结构
+  - layout-header
+  - layout-left
+  - layout-right
+  - 讨论后决定先放在一个包，等代码变多或变复杂后再拆成子包
+
+## 0711
+
+- 评论pr合并前
+  - inline-menu入口使用featureFlag
+  - 块级评论去掉入口
+  - 添加评论插件去掉
+
+- 评论功能难点
+  - 创建块级评论
+  - 高亮的评论数据保存在slate中和comment-block中，什么场景应该删除高亮mark？
+    - 复制页面？
+    - 分享页面？
+  - 白板中的评论选中状态与高亮
+    - 将评论高亮功能放在slate-text-leaf层更容易实现支持多编辑器实例
+  - 评论卡片用户名和头像不符合设计
+  - 评论回复框复的ui用添加评论的回复框
+  - 评论卡片与编辑器内位置水平对齐
+
+- ❓ 如何在侧边栏解决评论时删除对应编辑器的高亮文本
+  - 先找blockId，再找带有高亮mark的textNode
+  - 第一步拿到slate-text的blockId没有直接方法，思路1-遍历page-block所有block来找，思路2-修改service的createComment方法，把评论关联的slate-text blockId 也存进去
+  - 👀 要考虑跨区评论的场景
+
+- 上周总结
+  - 在添加评论后，高亮编辑器内文本，且支持评论部分重叠
+  - 选中编辑器内已评论的文本，动画突出当前被评论卡片 
+  - 评论设计稿更新后，更新ui
+  - 修复了在tag-app或其他外部输入框输入文字slate抛出异常的问题
+  - 对顶部导航条进行小改动，实现了简单侧边栏显示评论
+
+- 每个block是async的问题
+  - remove + append  ?==  move ❓
+  - 在低性能电脑上，先删除后就刷新了，会导致闪烁
+
+- 先基础编辑，再卡片、group
 
 ## 0708
 
