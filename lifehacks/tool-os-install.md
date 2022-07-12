@@ -24,7 +24,34 @@ modified: '2020-12-22T12:42:14.745Z'
 - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
   - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
 
+- chinese-input
+  - sogou ubuntu
+  - [在Ubuntu下安装讯飞输入法linux版以及卸载方法](https://yoki.moe/Intstu/24.html)
+    - xunfei  http://packages.deepin.com/deepin/pool/non-free/i/iflyime/
+  - baidu https://srf.baidu.com/site/guanwang_linux/index.html
+
+- [How to Install Fonts on Ubuntu 20.04 Focal Fossa Linux](https://linuxconfig.org/how-to-install-fonts-on-ubuntu-20-04-focal-fossa-linux)
+  - sudo cp ~/Downloads/Bitwise.ttf /usr/local/share/fonts/sample/
+
+- ubuntu开机自动挂载win-ntfs硬盘
+  - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
+  - [UbuntuHelp: fstab](https://wiki.ubuntu.org.cn/UbuntuHelp:Fstab)
+    - [Device] [Mount Point] [File System Type] [Options] [Dump/backup] [Pass]
+    - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
+
+- 如何运行 . AppImage 文件
+  - chmod a+x *. AppImage
+  - ./qq. AppImage
+
+- 国内 nvm
+  - https://gitee.com/RubyKids/nvm-cn
+  - bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+
 ## software
+
+- 常用软件都可以直接在ubuntu官方包repository找到
+  - 包括 vlc，clementine，goldendict
+  - https://packages.ubuntu.com/
 
 - 腾讯会议的linux版本发布之后，我去体验了一把，提示不支持wayland
   - https://blog.csdn.net/m0_52640673/article/details/124911402
