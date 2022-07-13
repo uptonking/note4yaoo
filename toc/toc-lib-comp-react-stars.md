@@ -29,6 +29,31 @@ modified: '2021-01-12T18:49:02.623Z'
   - A11Y Nutrition Cards is an attempt to digest and simplify the accessibility expectations when it comes to component authoring. 
   - Based on the WAI ARIA Authoring Practices Guide.
   - Accordion, Button, Disclosure (Show/Hide), Menu & Menu Button, Tabs, Tooltip
+# nav
+- https://github.com/Zertz/react-headless-tabs  /ts
+  - https://react-headless-tabs.pierluc.io/#examples
+  - Headless and highly flexible tab-like primitives built with react hooks
+
+- https://github.com/reactjs/react-tabs  /js
+  - https://reactcommunity.org/react-tabs/
+  - Accessible and easy tab component for ReactJS
+
+- https://github.com/jeetiss/tabs  /js
+  - https://jeetiss.github.io/tabs/
+  - Headless tabs component for React
+  - 非常简洁
+  - https://github.com/Andarist/use-constant/blob/master/src/index.ts
+    - 不变的数据基于 useRef 实现
+
+- https://github.com/react-component/tabs  /antd/ts
+  - https://tabs.react-component.now.sh/
+  - React Tabs component (for antd)
+
+- https://github.com/ctxhou/react-tabtab  /201811/js
+  - https://ctxhou.github.io/react-tabtab/
+  - A mobile support, draggable, editable and api based Tab for ReactJS.
+
+- more
 # starred
 - https://github.com/algolia/autocomplete
   - Fast and full-featured autocomplete library
@@ -80,8 +105,7 @@ modified: '2021-01-12T18:49:02.623Z'
   - the `as` prop allows changing the HTML tag rendered by a component, 
 - https://github.com/reactjs/react-modal
   - Accessible modal dialog component for React
-- https://github.com/reactjs/react-tabs
-  - Accessible and easy tab component for ReactJS
+
 - https://github.com/wmira/react-sidenav
   - /319Star/MIT/202006
   - https://react-sidenav.now.sh/

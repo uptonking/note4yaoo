@@ -137,13 +137,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0713
+
+- nx build时一直抛出 property 'cursor' does not exist on type 'cssproperties' 的异常
+  - 异常信息提示的位置行数是错误的，不要过于依赖
+  - 解决方法是，手动找到该文件中使用 cursor 的位置，将cursor值类型由 `CSSProperties['cursor']` 改为联合类型 `'grab' | 'pointer'`
+
 ## 0712
 
 - 确定布局包的结构
   - layout-header
   - layout-left
   - layout-right
-  - 讨论后决定先放在一个包，等代码变多或变复杂后再拆成子包
+  - 讨论后决定，先将布局相关的放在一个包，等代码变多或变复杂后再拆成子包，不要过早优化
 
 ## 0711
 

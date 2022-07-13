@@ -36,6 +36,12 @@ modified: '2021-01-08T11:48:16.590Z'
   - 主要用于传统分栏布局，窗口不可重叠遮挡
   - 适合实现类似vscode、notable这类编辑器或文件管理器
 
+- https://github.com/caplin/FlexLayout  /ts
+  - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.7/demo/index.html
+  - A multi-tab layout manager
+  - 功能非常丰富，提供了类似vscode的左右侧边栏tabs，主内容区tabs，底部tabs
+  - 样式陈旧
+
 - https://github.com/ticlo/rc-dock
   - https://ticlo.github.io/rc-dock/examples
   - /170Star/Apache2/202106/ts
@@ -52,6 +58,10 @@ modified: '2021-01-08T11:48:16.590Z'
   - split平铺窗口后，无法拖拽改变两边大小，不能下滑查看更多窗口
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
+
+- https://github.com/mathuo/dockview
+  - https://dockview.dev/#live-demo
+  - A zero dependency layout manager built for React
 
 - https://github.com/aeagle/react-spaces
   - https://allaneagle.com/projects/react-spaces
@@ -221,10 +231,6 @@ modified: '2021-01-08T11:48:16.590Z'
 - https://github.com/alexkuz/react-dock
   - http://alexkuz.github.io/react-dock/demo/
   - Resizable dockable react component
-
-- https://github.com/caplin/FlexLayout
-  - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.5/demo/index.html
-  - A multi-tab layout manager
 
 - https://github.com/charto/phosphor-float-area
   - https://charto.github.io/phosphor-float-area/

@@ -7,8 +7,20 @@ modified: '2021-07-29T20:37:50.995Z'
 
 # web-ux4-navbar-sidebar
 
-# navbar
+# tabs
 
+- react-tabs的api结构
+- Tabs
+  - TabList
+    - Tab 1
+    - Tab 2
+  - TabPanel 1
+  - TabPanel 2
+
+- hooks
+  - Tabs顶层组件, useTabState, usePanelState
+  - 将tabs状态都放在context里面，分 activeIndex 和 tabs/panels内容 两种状态
+# navbar
 - mobile
   - form elements表单元素会折叠或收起或收缩为图标
 
@@ -46,9 +58,7 @@ modified: '2021-07-29T20:37:50.995Z'
   - So this alignment is assuming that you are actually building the page using.content and .card inside the actual containers
   - this works best with static navbars, because if navbars are fixed in place and if the content scrolls, then the alignment is off on the right side due to the presence of the scrollbar inside the .content-wrapper
   - However, you can still use containers inside fixed navbars for the max-width property, which can be useful in certain situations.
-
 # sidebar
-
 - a.k.a.
   - side menu
 
