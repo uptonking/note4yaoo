@@ -58,6 +58,10 @@ modified: '2020-12-22T12:42:14.745Z'
   - sudo vim /etc/gdm3/custom.conf
   - 取消注释 # WaylandEnable=false
   - sudo service gdm3 restart
+
+- chrome ubuntu版每次打开都要手动点 restore 恢复上次网页
+  - [chrome needs to restore tabs on every reboot](https://askubuntu.com/questions)
+  - 在设置里面关闭退出chrome后在后台继续运行app
 # win11
 
 ## guide
