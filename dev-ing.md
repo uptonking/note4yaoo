@@ -137,6 +137,14 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0714
+
+- 设计稿还原问题
+  - 导航栏高度是多少？  80 + 下边距96
+  - page的上面是否要预留一个图标的高度？ 
+    - 这个高度以后可能用来单独放一个page图标或emoji
+    - 对于大的空白间距，不要无脑 margin
+
 ## 0713
 
 - nx build时一直抛出 property 'cursor' does not exist on type 'cssproperties' 的异常

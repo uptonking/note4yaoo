@@ -21,7 +21,12 @@ modified: '2021-04-12T16:30:53.968Z'
 
 ## 
 
-## 
+## [为何 macOS 的内存占用那么大？](https://www.zhihu.com/question/21481625)
+
+- OS X 系统采用了 Unified Buffer Cache，空闲内存会被用来加速文件访问
+  - OS X 的早期版本的 UBC 管理策略不是很好，在个别情况下会造成 thrashing 从而严重影响系统响应速度。遇到这种情况，最简单彻底的解决方法是重新登录系统或者重启
+
+- 如果你经常使用Windows系统的PC，特别是内存不太足够的PC，你会发现应用程序之间的切换，经常会带来大量的硬盘卡顿，这就是内存和虚拟内存（硬盘）之间在做交
 
 ## [快看晕了，原来除了 Wi-Fi、蓝牙和 Zigbee，还有 Thread 和 Matter。智能家居的连接种类也太多了吧。](https://twitter.com/tualatrix/status/1525845136051081217)
 

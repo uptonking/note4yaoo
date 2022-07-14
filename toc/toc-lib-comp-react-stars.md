@@ -41,7 +41,8 @@ modified: '2021-01-12T18:49:02.623Z'
 - https://github.com/jeetiss/tabs  /js
   - https://jeetiss.github.io/tabs/
   - Headless tabs component for React
-  - 非常简洁
+  - 实现非常简洁
+    - https://github.com/jeetiss/tabs/blob/master/src/index.js
   - https://github.com/Andarist/use-constant/blob/master/src/index.ts
     - 不变的数据基于 useRef 实现
 
