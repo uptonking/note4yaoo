@@ -137,6 +137,12 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
+## 0715
+
+- dev-xp 👀
+  - 注意传入事件处理函数的写法 onClick={handleClick} , 默认event对象会做为第一个实参传入handleClick方法 
+  - 更推荐这样写 onClick={()=> handleClick() }
+
 ## 0714
 
 - 设计稿还原问题
