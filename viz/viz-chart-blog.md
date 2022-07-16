@@ -7,6 +7,9 @@ modified: '2021-01-19T12:47:29.048Z'
 
 # viz-chart-blog
 
+# guide
+- search 
+  - echarts site:preset.io/blog
 # [20 ideas for better data visualization](https://uxdesign.cc/20-ideas-for-better-data-visualization-73f7e3c2782d)
 01. Choose the right chart type
 02. Use correct plotting directions based on the positive and negative values
@@ -28,6 +31,17 @@ modified: '2021-01-19T12:47:29.048Z'
 18. Use a horizontal bar chart instead of rotating labels
 19. Choose your charting library
 20. Go beyond static reports
+# [Why Apache ECharts is the Future of Apache Superset™_202104](https://preset.io/blog/2021-4-1-why-echarts/)
+- Superset community consider ECharts as the replacement for NVD3 for its primary charting library.
+  - When Superset was started back in 2015, the D3 library was the clear choice for building data visualizations, and NVD3 offered a nice set of reusable charts built on top of D3 that allowed hooks and callbacks that integrated nicely with D3 primitives. 
+  - Over the past few years, the library has not been maintained actively and we've had to fork the project recently to ensure we could fix some bugs
+- When deciding what charting library to bet on next, the following factors were considered by the Superset community:
+  - large library of visualization types, rooted in a consistent visual design and API
+  - an active and growing community
+  - strong governance model where anyone can contribute and influence the direction
+  - high performance, ideally supporting canvas rendering
+  - powerful declarative API for customizing and theming charts
+  - internationalization support
 # [GitLab: Why we chose ECharts for data visualizations instead of d3.js_201909](https://about.gitlab.com/blog/2019/09/30/why-we-chose-echarts/)
 - As GitLab continues to grow in depth and breadth across the DevOps lifecycle, the use of charts and data visualizations has increased in frequency and complexity. 
 - As the number of different libraries increased along with our charting requirements, we decided it was time to start **unifying our charting libraries** to help us move quickly.

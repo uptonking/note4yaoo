@@ -53,11 +53,18 @@ modified: '2020-12-22T12:42:14.745Z'
   - 包括 vlc，clementine，goldendict
   - https://packages.ubuntu.com/
 
+- Clementine不支持抓取到last.fm的解决方法
+  - mkdir ~/.local/share/Last.fm
+  - [Last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
+    - 提供了linux和windows的解决方法，未直接提供了mac的方法，但提供了源码参考
+    - https://github.com/lastfm/liblastfm/blob/master/src/misc.cpp#L58
+
 - 腾讯会议的linux版本发布之后，我去体验了一把，提示不支持wayland
   - https://blog.csdn.net/m0_52640673/article/details/124911402
   - sudo vim /etc/gdm3/custom.conf
   - 取消注释 # WaylandEnable=false
   - sudo service gdm3 restart
+  - 也可以不使用wayland不支持的产品，比如不用腾讯会议而用飞书
 
 - chrome ubuntu版每次打开都要手动点 restore 恢复上次网页
   - [chrome needs to restore tabs on every reboot](https://askubuntu.com/questions)
