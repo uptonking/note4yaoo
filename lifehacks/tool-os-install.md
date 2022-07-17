@@ -55,6 +55,17 @@ sudo killall -s KILL snapd
 sudo snap refresh
 ```
 
+- ubuntu以非图形界面启动
+  - sudo systemctl set-default multi-user
+  - sudo systemctl set-default graphical
+
+- ubuntu安装nvidia显卡驱动
+- [Ubuntu 18.04 安装 NVIDIA 显卡驱动](https://zhuanlan.zhihu.com/p/59618999)
+  - 安装好驱动程序之后，进入系统无法显示图形化界面，黑屏，左上角有一条白色短线
+  - 这个问题这两天遇到好多次了，这里没人列出具体方法，我回答一下，就是驱动和显卡不匹配原因。
+    - 如果白线不闪烁，按Ctrl+ shift+F2，进入tty2，用 sudo apt --purge remove nvidia*，删除安装的驱动，如果是自行下载安装的官方驱动，则sudo ./驱动.run --uninstall。
+    - 若白线闪烁，在grub页面进入Ubuntu高级选项，选择低版本的内核可以进入系统，在系统中用终端卸载显卡驱动就可以了
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
