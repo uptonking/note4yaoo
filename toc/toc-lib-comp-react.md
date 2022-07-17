@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-react
 tags: [components, lib, react, toc]
-created: '2019-08-01T16:03:46.398Z'
-modified: '2020-11-13T07:31:20.012Z'
+created: 2019-08-01T16:03:46.398Z
+modified: 2020-11-13T07:31:20.012Z
 ---
 
 # toc-lib-comp-react

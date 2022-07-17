@@ -1,8 +1,8 @@
 ---
 title: pick-political-common
 tags: [pick, political]
-created: '2021-01-10T13:45:37.931Z'
-modified: '2021-01-10T14:25:16.067Z'
+created: 2021-01-10T13:45:37.931Z
+modified: 2021-01-10T14:25:16.067Z
 ---
 
 # pick-political-common

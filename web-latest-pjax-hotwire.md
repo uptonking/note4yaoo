@@ -1,8 +1,8 @@
 ---
 title: web-latest-pjax-hotwire
 tags: [frontend, hotwire, latest, pjax, web]
-created: '2020-12-23T15:36:47.371Z'
-modified: '2021-01-04T16:06:29.569Z'
+created: 2020-12-23T15:36:47.371Z
+modified: 2021-01-04T16:06:29.569Z
 ---
 
 # web-latest-pjax-hotwire

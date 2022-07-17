@@ -1,8 +1,8 @@
 ---
 title: toc-office-presentation-ppt
 tags: [office, ppt, presentation, toc]
-created: '2020-08-02T08:42:18.196Z'
-modified: '2021-04-30T20:14:17.669Z'
+created: 2020-08-02T08:42:18.196Z
+modified: 2021-04-30T20:14:17.669Z
 ---
 
 # toc-office-presentation-ppt

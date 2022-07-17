@@ -1,8 +1,8 @@
 ---
 title: note-fwk-ssr-isomorphic
 tags: [framework, isomorphic, server-side-rendering, ssr]
-created: '2020-12-19T13:02:19.041Z'
-modified: '2020-12-19T13:05:23.294Z'
+created: 2020-12-19T13:02:19.041Z
+modified: 2020-12-19T13:05:23.294Z
 ---
 
 # note-fwk-ssr-isomorphic

@@ -1,8 +1,8 @@
 ---
 title: toc-office-doc-site-examples
 tags: [documentation, examples, site, toc]
-created: '2021-08-23T18:38:30.626Z'
-modified: '2021-08-23T18:39:21.658Z'
+created: 2021-08-23T18:38:30.626Z
+modified: 2021-08-23T18:39:21.658Z
 ---
 
 # toc-office-doc-site-examples

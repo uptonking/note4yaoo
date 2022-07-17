@@ -1,8 +1,8 @@
 ---
 title: ux-design-theming
 tags: [design, theming]
-created: '2020-10-27T15:10:11.658Z'
-modified: '2021-01-01T20:08:55.833Z'
+created: 2020-10-27T15:10:11.658Z
+modified: 2021-01-01T20:08:55.833Z
 ---
 
 # ux-design-theming

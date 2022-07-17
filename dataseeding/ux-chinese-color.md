@@ -1,8 +1,8 @@
 ---
 title: ux-chinese-color
 tags: [color, ux]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-03-09T07:59:21.386Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-03-09T07:59:21.386Z
 ---
 
 # [中国传统颜色卡](http://blog.sina.com.cn/s/blog_5c3b139d0101deia.html)

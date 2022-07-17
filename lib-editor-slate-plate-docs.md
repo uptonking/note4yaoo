@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-plate-docs
 tags: [docs, plate, slate]
-created: '2022-06-03T20:19:28.437Z'
-modified: '2022-06-03T20:19:39.452Z'
+created: 2022-06-03T20:19:28.437Z
+modified: 2022-06-03T20:19:39.452Z
 ---
 
 # lib-editor-slate-plate-docs

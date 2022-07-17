@@ -1,8 +1,8 @@
 ---
 title: note-react-community-choices
 tags: [alternatives, community, react]
-created: '2021-07-27T10:03:39.430Z'
-modified: '2021-07-27T10:04:07.244Z'
+created: 2021-07-27T10:03:39.430Z
+modified: 2021-07-27T10:04:07.244Z
 ---
 
 # note-react-community-choices

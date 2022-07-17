@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-examples
 tags: [editor, examples, prosemirror]
-created: '2021-07-20T02:14:55.679Z'
-modified: '2021-07-20T02:15:25.917Z'
+created: 2021-07-20T02:14:55.679Z
+modified: 2021-07-20T02:15:25.917Z
 ---
 
 # lib-editor-prosemirror-examples

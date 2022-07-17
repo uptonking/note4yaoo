@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-near-zero-runtime
 tags: [css-in-js, style, zero-runtime]
-created: '2020-10-06T16:44:49.163Z'
-modified: '2021-01-01T20:06:44.439Z'
+created: 2020-10-06T16:44:49.163Z
+modified: 2021-01-01T20:06:44.439Z
 ---
 
 # web-style-css-in-js-near-zero-runtime

@@ -1,8 +1,8 @@
 ---
 title: web-css-sass-less-postcss
 tags: [css, less, postcss, sass, styling, web]
-created: '2020-10-06T12:03:25.728Z'
-modified: '2021-02-25T17:48:40.857Z'
+created: 2020-10-06T12:03:25.728Z
+modified: 2021-02-25T17:48:40.857Z
 ---
 
 # web-css-sass-less-postcss

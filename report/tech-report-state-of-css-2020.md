@@ -1,8 +1,8 @@
 ---
 title: tech-report-state-of-css-2020
 tags: [frontend, report, web]
-created: '2021-01-06T16:48:01.867Z'
-modified: '2021-01-06T17:00:05.478Z'
+created: 2021-01-06T16:48:01.867Z
+modified: 2021-01-06T17:00:05.478Z
 ---
 
 # tech-report-state-of-css-2020

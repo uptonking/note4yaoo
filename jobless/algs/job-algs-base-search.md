@@ -1,8 +1,8 @@
 ---
 title: job-algs-base-search
 tags: [algorithms, job, search]
-created: '2021-09-24T19:46:46.653Z'
-modified: '2021-09-24T19:47:03.031Z'
+created: 2021-09-24T19:46:46.653Z
+modified: 2021-09-24T19:47:03.031Z
 ---
 
 # job-algs-base-search

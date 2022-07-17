@@ -1,8 +1,8 @@
 ---
 title: spec-frontend-jsx
 tags: [format, jsx, spec]
-created: '2020-12-16T12:40:54.817Z'
-modified: '2021-01-14T13:21:33.678Z'
+created: 2020-12-16T12:40:54.817Z
+modified: 2021-01-14T13:21:33.678Z
 ---
 
 # spec-frontend-jsx

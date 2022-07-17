@@ -1,8 +1,8 @@
 ---
 title: web-browser-blog
 tags: [blog, browser, web]
-created: '2020-07-10T08:47:31.574Z'
-modified: '2020-12-21T07:44:45.828Z'
+created: 2020-07-10T08:47:31.574Z
+modified: 2020-12-21T07:44:45.828Z
 ---
 
 # web-browser-blog

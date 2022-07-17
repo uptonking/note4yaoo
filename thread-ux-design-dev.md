@@ -1,8 +1,8 @@
 ---
 title: thread-ux-design-dev
 tags: [thread, ux]
-created: '2021-03-10T11:37:30.373Z'
-modified: '2021-03-10T11:38:16.053Z'
+created: 2021-03-10T11:37:30.373Z
+modified: 2021-03-10T11:38:16.053Z
 ---
 
 # thread-ux-design-dev

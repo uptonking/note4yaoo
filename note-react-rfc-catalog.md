@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-catalog
 tags: [catalog, react, rfc]
-created: '2021-01-02T13:05:13.532Z'
-modified: '2021-01-02T13:05:43.529Z'
+created: 2021-01-02T13:05:13.532Z
+modified: 2021-01-02T13:05:43.529Z
 ---
 
 # note-react-rfc-catalog

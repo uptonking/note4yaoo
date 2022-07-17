@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-design-system
 tags: [adobe-spectrum, design-system, design-tokens, ui]
-created: '2021-04-12T16:52:40.979Z'
-modified: '2021-04-12T18:07:11.417Z'
+created: 2021-04-12T16:52:40.979Z
+modified: 2021-04-12T18:07:11.417Z
 ---
 
 # lib-ui-spectrum-design-system

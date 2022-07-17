@@ -1,8 +1,8 @@
 ---
 title: toc-lib-fwk-tagged-template-literals
 tags: [js, tagged-template-literals]
-created: '2020-11-05T09:27:49.883Z'
-modified: '2020-12-19T13:03:37.613Z'
+created: 2020-11-05T09:27:49.883Z
+modified: 2020-12-19T13:03:37.613Z
 ---
 
 # toc-lib-fwk-tagged-template-literals

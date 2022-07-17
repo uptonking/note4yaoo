@@ -1,8 +1,8 @@
 ---
 title: page-ui-comp-react-design
 tags: [blog, components, react]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-01-19T10:51:34.462Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-01-19T10:51:34.462Z
 ---
 
 # page-ui-comp-react-design

@@ -1,8 +1,8 @@
 ---
 title: tech-report-state-of-frontend
 tags: [frontend, report, web]
-created: '2020-08-07T16:48:01.867Z'
-modified: '2021-01-04T16:00:05.478Z'
+created: 2020-08-07T16:48:01.867Z
+modified: 2021-01-04T16:00:05.478Z
 ---
 
 # tech-report-state-of-frontend

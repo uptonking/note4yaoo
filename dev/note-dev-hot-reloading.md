@@ -1,8 +1,8 @@
 ---
 title: note-dev-hot-reloading
 tags: [dev, hot-reloading, webpack]
-created: '2020-07-09T13:24:45.379Z'
-modified: '2020-12-08T13:37:10.163Z'
+created: 2020-07-09T13:24:45.379Z
+modified: 2020-12-08T13:37:10.163Z
 ---
 
 # note-dev-hot-reloading

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-css-in-js
 tags: [components, css-in-js, lib]
-created: '2020-10-05T13:42:51.176Z'
-modified: '2020-11-13T07:28:43.293Z'
+created: 2020-10-05T13:42:51.176Z
+modified: 2020-11-13T07:28:43.293Z
 ---
 
 # toc-lib-comp-css-in-js

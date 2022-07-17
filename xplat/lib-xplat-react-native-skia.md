@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native-skia
 tags: [cross-platform, react-native, skia]
-created: '2021-09-05T13:19:47.408Z'
-modified: '2021-09-05T13:20:14.519Z'
+created: 2021-09-05T13:19:47.408Z
+modified: 2021-09-05T13:20:14.519Z
 ---
 
 # lib-xplat-react-native-skia

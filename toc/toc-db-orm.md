@@ -1,8 +1,8 @@
 ---
 title: toc-db-orm
 tags: [database, lib, orm, toc]
-created: '2020-10-05T16:22:46.508Z'
-modified: '2021-08-30T18:56:09.644Z'
+created: 2020-10-05T16:22:46.508Z
+modified: 2021-08-30T18:56:09.644Z
 ---
 
 # toc-db-orm

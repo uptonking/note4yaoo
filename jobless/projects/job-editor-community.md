@@ -1,8 +1,8 @@
 ---
 title: job-editor-community
 tags: [community, job, prosemirror, text-editor]
-created: '2021-10-01T06:40:08.860Z'
-modified: '2021-10-01T06:42:39.302Z'
+created: 2021-10-01T06:40:08.860Z
+modified: 2021-10-01T06:42:39.302Z
 ---
 
 # job-editor-community

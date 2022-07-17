@@ -1,8 +1,8 @@
 ---
 title: pm-editor-markdown
 tags: [editor, markdown, pm, pmgr]
-created: '2019-08-22T03:45:48.886Z'
-modified: '2021-05-14T14:33:33.975Z'
+created: 2019-08-22T03:45:48.886Z
+modified: 2021-05-14T14:33:33.975Z
 ---
 
 # pm-editor-markdown

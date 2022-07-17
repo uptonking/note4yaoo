@@ -1,8 +1,8 @@
 ---
 title: note-fwk-jamstack
 tags: [architecture, framework, jamstack]
-created: '2020-12-19T18:43:51.113Z'
-modified: '2020-12-19T18:46:26.818Z'
+created: 2020-12-19T18:43:51.113Z
+modified: 2020-12-19T18:46:26.818Z
 ---
 
 # note-fwk-jamstack

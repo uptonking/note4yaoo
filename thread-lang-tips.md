@@ -1,8 +1,8 @@
 ---
 title: thread-lang-tips
 tags: [lang, thread]
-created: '2021-04-30T11:09:55.766Z'
-modified: '2021-04-30T11:10:26.083Z'
+created: 2021-04-30T11:09:55.766Z
+modified: 2021-04-30T11:10:26.083Z
 ---
 
 # thread-lang-tips

@@ -1,8 +1,8 @@
 ---
 title: lib-utils-layer-reactjs-popup
 tags: [layer, lib, reactjs-popup]
-created: '2022-05-08T13:32:01.841Z'
-modified: '2022-06-04T00:45:01.403Z'
+created: 2022-05-08T13:32:01.841Z
+modified: 2022-06-04T00:45:01.403Z
 ---
 
 # lib-utils-layer-reactjs-popup

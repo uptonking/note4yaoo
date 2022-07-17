@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-docs-inspector
 tags: [docs, inspector, notebook, observablehq]
-created: '2021-05-22T18:46:37.275Z'
-modified: '2021-05-22T18:47:06.718Z'
+created: 2021-05-22T18:46:37.275Z
+modified: 2021-05-22T18:47:06.718Z
 ---
 
 # lib-notebook-observablehq-docs-inspector

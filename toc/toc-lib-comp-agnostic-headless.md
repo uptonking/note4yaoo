@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-agnostic-headless
 tags: [components, headless, toc]
-created: '2021-04-11T06:17:15.216Z'
-modified: '2021-04-11T06:17:51.318Z'
+created: 2021-04-11T06:17:15.216Z
+modified: 2021-04-11T06:17:51.318Z
 ---
 
 # toc-lib-comp-agnostic-headless

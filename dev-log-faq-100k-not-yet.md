@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-100k-not-yet
 tags: [faq, not-yet]
-created: '2020-01-03T10:25:55.928Z'
-modified: '2021-03-29T19:30:08.250Z'
+created: 2020-01-03T10:25:55.928Z
+modified: 2021-03-29T19:30:08.250Z
 ---
 
 # dev-log-faq-100k-not-yet

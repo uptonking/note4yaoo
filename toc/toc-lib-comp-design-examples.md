@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-examples
 tags: [design-system, examples]
-created: '2020-10-25T05:35:44.837Z'
-modified: '2020-12-08T14:24:07.931Z'
+created: 2020-10-25T05:35:44.837Z
+modified: 2020-12-08T14:24:07.931Z
 ---
 
 # toc-lib-comp-design-examples

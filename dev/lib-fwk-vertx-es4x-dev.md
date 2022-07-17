@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-vertx-es4x-dev
 tags: [docs, es4x, java, vertx]
-created: '2020-01-10T12:55:33.206Z'
-modified: '2020-12-08T13:28:50.105Z'
+created: 2020-01-10T12:55:33.206Z
+modified: 2020-12-08T13:28:50.105Z
 ---
 
 # lib-fwk-vertx-es4x-dev

@@ -1,8 +1,8 @@
 ---
-tags: [js, lang, proposal]
 title: lang-js-proposal
-created: '2020-06-27T07:29:09.318Z'
-modified: '2020-07-07T08:10:16.774Z'
+tags: [js, lang, proposal]
+created: 2020-06-27T07:29:09.318Z
+modified: 2020-07-07T08:10:16.774Z
 ---
 
 # lang-js-proposal

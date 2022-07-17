@@ -1,8 +1,8 @@
 ---
 title: page-creator-tanner-linsley-react-table-query
 tags: [creator, hooks, react]
-created: '2020-08-07T08:06:27.904Z'
-modified: '2020-08-17T07:31:22.391Z'
+created: 2020-08-07T08:06:27.904Z
+modified: 2020-08-17T07:31:22.391Z
 ---
 
 # page-creator-tanner-linsley-react-table-query

@@ -1,8 +1,8 @@
 ---
 title: docs-web-events
 tags: [events, web]
-created: '2020-08-19T13:37:04.996Z'
-modified: '2020-12-08T14:15:41.392Z'
+created: 2020-08-19T13:37:04.996Z
+modified: 2020-12-08T14:15:41.392Z
 ---
 
 # docs-web-events

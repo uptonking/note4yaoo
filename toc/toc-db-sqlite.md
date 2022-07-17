@@ -1,8 +1,8 @@
 ---
 title: toc-db-sqlite
 tags: [database, sqlite, toc]
-created: '2021-08-21T07:23:30.321Z'
-modified: '2021-08-30T18:56:18.632Z'
+created: 2021-08-21T07:23:30.321Z
+modified: 2021-08-30T18:56:18.632Z
 ---
 
 # toc-db-sqlite

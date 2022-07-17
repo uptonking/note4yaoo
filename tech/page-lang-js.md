@@ -1,8 +1,8 @@
 ---
 title: page-lang-js
 tags: [js, lang]
-created: '2020-08-28T07:27:16.385Z'
-modified: '2020-08-28T07:27:31.736Z'
+created: 2020-08-28T07:27:16.385Z
+modified: 2020-08-28T07:27:31.736Z
 ---
 
 # page-lang-js

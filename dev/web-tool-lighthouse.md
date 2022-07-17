@@ -1,8 +1,8 @@
 ---
 title: web-tool-lighthouse
 tags: [lighthouse, tool, web]
-created: '2021-01-07T16:42:57.760Z'
-modified: '2021-01-07T16:43:11.395Z'
+created: 2021-01-07T16:42:57.760Z
+modified: 2021-01-07T16:43:11.395Z
 ---
 
 # web-tool-lighthouse

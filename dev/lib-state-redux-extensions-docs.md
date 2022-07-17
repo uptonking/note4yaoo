@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux-extensions-docs
 tags: [docs, extensions, redux]
-created: '2019-08-01T16:03:46.390Z'
-modified: '2020-12-08T13:27:29.659Z'
+created: 2019-08-01T16:03:46.390Z
+modified: 2020-12-08T13:27:29.659Z
 ---
 
 # lib-state-redux-extensions-docs

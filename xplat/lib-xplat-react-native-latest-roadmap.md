@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native-latest-roadmap
 tags: [react-native, roadmap]
-created: '2021-09-10T14:08:49.875Z'
-modified: '2021-09-10T14:09:39.770Z'
+created: 2021-09-10T14:08:49.875Z
+modified: 2021-09-10T14:09:39.770Z
 ---
 
 # lib-xplat-react-native-latest-roadmap

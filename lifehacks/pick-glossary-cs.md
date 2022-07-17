@@ -1,8 +1,8 @@
 ---
 title: pick-glossary-cs
 tags: [cs, glossary, pick]
-created: '2020-07-14T11:39:11.610Z'
-modified: '2020-08-04T11:47:08.669Z'
+created: 2020-07-14T11:39:11.610Z
+modified: 2020-08-04T11:47:08.669Z
 ---
 
 # pick-glossary-cs

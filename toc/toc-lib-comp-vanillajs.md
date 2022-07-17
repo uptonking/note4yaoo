@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-vanillajs
 tags: [components, lib, toc, vanillajs]
-created: '2020-10-05T13:16:58.750Z'
-modified: '2021-01-01T18:00:01.202Z'
+created: 2020-10-05T13:16:58.750Z
+modified: 2021-01-01T18:00:01.202Z
 ---
 
 # toc-lib-comp-vanillajs

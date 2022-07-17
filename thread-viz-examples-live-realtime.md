@@ -1,8 +1,8 @@
 ---
 title: thread-viz-examples-live-realtime
 tags: [animation, live, realtime, thread, viz]
-created: '2021-04-21T11:51:23.696Z'
-modified: '2021-08-16T06:42:34.570Z'
+created: 2021-04-21T11:51:23.696Z
+modified: 2021-08-16T06:42:34.570Z
 ---
 
 # thread-viz-examples-live-realtime

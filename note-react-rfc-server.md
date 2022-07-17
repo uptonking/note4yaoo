@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-server
 tags: [react, rfc]
-created: '2020-12-22T14:08:04.179Z'
-modified: '2020-12-22T14:08:27.952Z'
+created: 2020-12-22T14:08:04.179Z
+modified: 2020-12-22T14:08:27.952Z
 ---
 
 # note-react-rfc-server

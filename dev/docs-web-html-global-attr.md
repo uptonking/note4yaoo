@@ -1,8 +1,8 @@
 ---
 title: docs-web-html-global-attr
 tags: [docs, html, web]
-created: '2020-07-20T03:10:32.499Z'
-modified: '2020-07-20T03:11:44.525Z'
+created: 2020-07-20T03:10:32.499Z
+modified: 2020-07-20T03:11:44.525Z
 ---
 
 # docs-web-html-global-attr

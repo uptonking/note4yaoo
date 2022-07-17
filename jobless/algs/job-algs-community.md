@@ -1,8 +1,8 @@
 ---
 title: job-algs-community
 tags: [algorithms, community, job]
-created: '2021-09-25T08:09:55.885Z'
-modified: '2021-09-25T08:10:17.911Z'
+created: 2021-09-25T08:09:55.885Z
+modified: 2021-09-25T08:10:17.911Z
 ---
 
 # job-algs-community

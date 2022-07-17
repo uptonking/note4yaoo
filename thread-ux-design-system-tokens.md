@@ -1,8 +1,8 @@
 ---
 title: thread-ux-design-system-tokens
 tags: [design-system, design-tokens, thread, ux]
-created: '2021-05-14T10:08:23.522Z'
-modified: '2021-05-14T10:08:51.423Z'
+created: 2021-05-14T10:08:23.522Z
+modified: 2021-05-14T10:08:51.423Z
 ---
 
 # thread-ux-design-system-tokens

@@ -1,8 +1,8 @@
 ---
 title: note-react-optimization
 tags: [optimization, react]
-created: '2020-08-07T09:03:40.736Z'
-modified: '2020-12-08T13:38:59.914Z'
+created: 2020-08-07T09:03:40.736Z
+modified: 2020-12-08T13:38:59.914Z
 ---
 
 # note-react-optimization

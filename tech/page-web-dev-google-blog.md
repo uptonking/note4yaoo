@@ -1,8 +1,8 @@
 ---
 title: page-web-dev-google-blog
 tags: [blog, dev, google, web]
-created: '2021-01-03T11:29:27.628Z'
-modified: '2021-01-03T11:44:34.694Z'
+created: 2021-01-03T11:29:27.628Z
+modified: 2021-01-03T11:44:34.694Z
 ---
 
 # page-web-dev-google-blog

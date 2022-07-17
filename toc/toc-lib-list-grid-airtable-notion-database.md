@@ -1,8 +1,8 @@
 ---
 title: toc-lib-list-grid-airtable-notion-database
 tags: [airtable, grid, list, notion-database, table, toc]
-created: '2022-01-30T19:35:55.709Z'
-modified: '2022-03-14T19:55:47.081Z'
+created: 2022-01-30T19:35:55.709Z
+modified: 2022-03-14T19:55:47.081Z
 ---
 
 # toc-lib-list-grid-airtable-notion-database

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-blog-stars
 tags: [blog, editor, text-editor]
-created: '2020-12-24T18:17:55.072Z'
-modified: '2021-06-02T17:19:46.638Z'
+created: 2020-12-24T18:17:55.072Z
+modified: 2021-06-02T17:19:46.638Z
 ---
 
 # lib-editor-blog-stars

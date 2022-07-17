@@ -1,8 +1,8 @@
 ---
 title: lib-db-community-stars
 tags: [community, database]
-created: '2021-08-30T15:51:01.157Z'
-modified: '2021-08-30T15:51:28.094Z'
+created: 2021-08-30T15:51:01.157Z
+modified: 2021-08-30T15:51:28.094Z
 ---
 
 # lib-db-community-stars

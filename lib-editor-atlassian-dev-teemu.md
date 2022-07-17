@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlassian-dev-teemu
 tags: [atlaskit-editor, community, editor]
-created: '2021-07-01T10:26:24.665Z'
-modified: '2021-07-01T10:27:24.764Z'
+created: 2021-07-01T10:26:24.665Z
+modified: 2021-07-01T10:27:24.764Z
 ---
 
 # lib-editor-atlassian-dev-teemu

@@ -1,8 +1,8 @@
 ---
 title: thread-viz-base-webgl
 tags: [thread, web, webgl]
-created: '2021-01-08T18:52:59.126Z'
-modified: '2021-03-11T11:26:12.335Z'
+created: 2021-01-08T18:52:59.126Z
+modified: 2021-03-11T11:26:12.335Z
 ---
 
 # thread-viz-base-webgl

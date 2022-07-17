@@ -1,8 +1,8 @@
 ---
 title: lib-editor-rich-markdown-issues
 tags: [issues, markdown, rich-markdown-editor]
-created: '2021-06-02T10:29:47.978Z'
-modified: '2021-06-02T10:30:09.481Z'
+created: 2021-06-02T10:29:47.978Z
+modified: 2021-06-02T10:30:09.481Z
 ---
 
 # lib-editor-rich-markdown-issues

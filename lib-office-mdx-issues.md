@@ -1,8 +1,8 @@
 ---
 title: lib-office-mdx-issues
 tags: [issues, markdown, mdx]
-created: '2021-05-27T15:08:51.036Z'
-modified: '2021-06-02T15:29:12.083Z'
+created: 2021-05-27T15:08:51.036Z
+modified: 2021-06-02T15:29:12.083Z
 ---
 
 # lib-office-mdx-issues

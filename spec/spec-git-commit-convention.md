@@ -1,8 +1,8 @@
 ---
 title: spec-git-commit-convention
 tags: [convention, git, spec]
-created: '2020-12-07T14:16:41.805Z'
-modified: '2020-12-07T14:17:56.061Z'
+created: 2020-12-07T14:16:41.805Z
+modified: 2020-12-07T14:17:56.061Z
 ---
 
 # spec-git-commit-convention

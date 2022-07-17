@@ -1,8 +1,8 @@
 ---
 title: tool-dev-engineering
 tags: [devtools, engineering, tool]
-created: '2020-10-05T08:14:22.192Z'
-modified: '2020-12-08T14:06:06.985Z'
+created: 2020-10-05T08:14:22.192Z
+modified: 2020-12-08T14:06:06.985Z
 ---
 
 # tool-dev-engineering

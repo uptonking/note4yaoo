@@ -1,8 +1,8 @@
 ---
 title: note-gis-dev
 tags: [geo, gis]
-created: '2019-06-09T05:38:26.039Z'
-modified: '2021-01-04T16:27:35.827Z'
+created: 2019-06-09T05:38:26.039Z
+modified: 2021-01-04T16:27:35.827Z
 ---
 
 # note-gis-dev

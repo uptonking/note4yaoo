@@ -1,8 +1,8 @@
 ---
 title: lib-editor-community-stars
 tags: [community, editor]
-created: '2022-06-12T22:14:05.479Z'
-modified: '2022-06-12T22:14:23.436Z'
+created: 2022-06-12T22:14:05.479Z
+modified: 2022-06-12T22:14:23.436Z
 ---
 
 # lib-editor-community-stars

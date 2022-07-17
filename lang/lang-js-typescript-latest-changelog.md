@@ -1,8 +1,8 @@
 ---
 title: lang-js-typescript-latest-changelog
 tags: [changelog, lang, typescript]
-created: '2020-07-14T02:36:53.471Z'
-modified: '2020-07-14T12:06:37.292Z'
+created: 2020-07-14T02:36:53.471Z
+modified: 2020-07-14T12:06:37.292Z
 ---
 
 # lang-js-typescript-latest-changelog

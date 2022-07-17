@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp1-general-elements
 tags: [components, ui]
-created: '2021-03-16T15:12:30.702Z'
-modified: '2021-07-28T20:10:24.131Z'
+created: 2021-03-16T15:12:30.702Z
+modified: 2021-07-28T20:10:24.131Z
 ---
 
 # web-ui-comp1-general-elements

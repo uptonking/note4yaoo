@@ -1,8 +1,8 @@
 ---
 title: editoe-engineering-guide
 tags: [editoe, engineering]
-created: '2021-10-23T18:07:53.915Z'
-modified: '2021-10-23T18:08:23.141Z'
+created: 2021-10-23T18:07:53.915Z
+modified: 2021-10-23T18:08:23.141Z
 ---
 
 # editoe-engineering-guide

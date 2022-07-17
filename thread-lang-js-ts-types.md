@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-ts-types
 tags: [lang, thread, typescript]
-created: '2021-08-05T04:30:46.106Z'
-modified: '2021-08-05T04:31:02.298Z'
+created: 2021-08-05T04:30:46.106Z
+modified: 2021-08-05T04:31:02.298Z
 ---
 
 # thread-lang-js-ts-types

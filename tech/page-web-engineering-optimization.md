@@ -1,8 +1,8 @@
 ---
 title: page-web-engineering-optimization
 tags: [engineering, optimization, web]
-created: '2020-12-16T09:30:04.797Z'
-modified: '2020-12-16T09:47:27.072Z'
+created: 2020-12-16T09:30:04.797Z
+modified: 2020-12-16T09:47:27.072Z
 ---
 
 # page-web-engineering-optimization

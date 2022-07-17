@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs-perf-optimization
 tags: [ag-grid, docs, optimization]
-created: '2020-08-25T14:01:07.182Z'
-modified: '2021-05-13T02:42:56.405Z'
+created: 2020-08-25T14:01:07.182Z
+modified: 2021-05-13T02:42:56.405Z
 ---
 
 # lib-list-ag-grid-docs-perf-optimization

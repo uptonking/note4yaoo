@@ -1,8 +1,8 @@
 ---
 title: toc-lib-fwk-ssr-isomorphic
 tags: [isomorphic, server-side-rendering, ssr, web]
-created: '2020-11-22T13:29:51.265Z'
-modified: '2020-12-19T13:04:40.865Z'
+created: 2020-11-22T13:29:51.265Z
+modified: 2020-12-19T13:04:40.865Z
 ---
 
 # toc-lib-fwk-ssr-isomorphic

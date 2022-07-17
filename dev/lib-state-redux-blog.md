@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux-blog
 tags: [blog, redux, state]
-created: '2020-11-03T13:12:54.267Z'
-modified: '2021-05-13T03:19:30.464Z'
+created: 2020-11-03T13:12:54.267Z
+modified: 2021-05-13T03:19:30.464Z
 ---
 
 # lib-state-redux-blog

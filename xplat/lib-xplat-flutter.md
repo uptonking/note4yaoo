@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-flutter
 tags: [cross-platform, flutter, lib]
-created: '2021-04-21T16:07:56.389Z'
-modified: '2021-05-13T03:10:56.112Z'
+created: 2021-04-21T16:07:56.389Z
+modified: 2021-05-13T03:10:56.112Z
 ---
 
 # lib-xplat-flutter

@@ -1,8 +1,8 @@
 ---
 title: toc-office-markdown-mdx-extensions
 tags: [extensions, markdown, mdx, toc]
-created: '2021-01-16T20:24:19.876Z'
-modified: '2021-01-16T20:24:48.984Z'
+created: 2021-01-16T20:24:19.876Z
+modified: 2021-01-16T20:24:48.984Z
 ---
 
 # toc-office-markdown-mdx-extensions

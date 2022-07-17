@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-react-dev
 tags: [framework, react, thread]
-created: '2020-12-05T17:52:28.808Z'
-modified: '2021-01-06T14:40:03.364Z'
+created: 2020-12-05T17:52:28.808Z
+modified: 2021-01-06T14:40:03.364Z
 ---
 
 # thread-fwk-react-dev

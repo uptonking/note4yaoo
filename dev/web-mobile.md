@@ -1,8 +1,8 @@
 ---
 title: web-mobile
 tags: [mobile, web]
-created: '2020-06-21T08:14:11.535Z'
-modified: '2020-12-21T07:46:29.597Z'
+created: 2020-06-21T08:14:11.535Z
+modified: 2020-12-21T07:46:29.597Z
 ---
 
 # web-mobile

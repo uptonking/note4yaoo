@@ -1,8 +1,8 @@
 ---
 title: web-layout-table
 tags: [layout, table, web]
-created: '2020-07-10T02:40:36.658Z'
-modified: '2020-12-21T07:46:23.299Z'
+created: 2020-07-10T02:40:36.658Z
+modified: 2020-12-21T07:46:23.299Z
 ---
 
 # web-layout-table

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-exploring
 tags: [design-system]
-created: '2020-10-25T13:51:07.606Z'
-modified: '2020-11-13T07:29:00.948Z'
+created: 2020-10-25T13:51:07.606Z
+modified: 2020-11-13T07:29:00.948Z
 ---
 
 # toc-lib-comp-design-exploring

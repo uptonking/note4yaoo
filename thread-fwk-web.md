@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-web
 tags: [framework, frontend, thread, web]
-created: '2020-12-05T17:52:28.808Z'
-modified: '2021-01-08T17:13:53.965Z'
+created: 2020-12-05T17:52:28.808Z
+modified: 2021-01-08T17:13:53.965Z
 ---
 
 # thread-fwk-web

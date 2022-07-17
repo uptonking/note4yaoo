@@ -1,8 +1,8 @@
 ---
 title: job-desc-hiring
 tags: [hiring, job]
-created: '2021-09-26T16:43:24.451Z'
-modified: '2021-09-26T16:44:04.493Z'
+created: 2021-09-26T16:43:24.451Z
+modified: 2021-09-26T16:44:04.493Z
 ---
 
 # job-desc-hiring

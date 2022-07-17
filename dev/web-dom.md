@@ -1,8 +1,8 @@
 ---
 title: web-dom
 tags: [dom, web]
-created: '2019-08-01T16:03:46.398Z'
-modified: '2020-12-21T07:46:02.608Z'
+created: 2019-08-01T16:03:46.398Z
+modified: 2020-12-21T07:46:02.608Z
 ---
 
 # web-dom

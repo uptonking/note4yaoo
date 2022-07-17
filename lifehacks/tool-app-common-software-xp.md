@@ -1,8 +1,8 @@
 ---
 title: tool-app-common-software-xp
 tags: [app, software, tool, xp]
-created: '2020-03-19T10:34:14.363Z'
-modified: '2020-12-29T17:52:23.312Z'
+created: 2020-03-19T10:34:14.363Z
+modified: 2020-12-29T17:52:23.312Z
 ---
 
 # tool-app-common-software-xp

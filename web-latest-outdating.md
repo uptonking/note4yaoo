@@ -1,8 +1,8 @@
 ---
 title: web-latest-outdating
 tags: [frontend, latest, outdating, web]
-created: '2020-12-23T16:17:06.241Z'
-modified: '2020-12-23T16:19:25.169Z'
+created: 2020-12-23T16:17:06.241Z
+modified: 2020-12-23T16:19:25.169Z
 ---
 
 # web-latest-outdating

@@ -1,8 +1,8 @@
 ---
 title: spec-format-json-dev
 tags: [format, json]
-created: '2021-02-27T15:29:51.481Z'
-modified: '2021-02-27T15:31:23.130Z'
+created: 2021-02-27T15:29:51.481Z
+modified: 2021-02-27T15:31:23.130Z
 ---
 
 # spec-format-json-dev

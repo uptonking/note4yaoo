@@ -1,8 +1,8 @@
 ---
 title: toc-site-ux-landing-page
 tags: [landing-page, site, toc, ux]
-created: '2020-12-28T10:39:43.707Z'
-modified: '2020-12-29T11:27:41.474Z'
+created: 2020-12-28T10:39:43.707Z
+modified: 2020-12-29T11:27:41.474Z
 ---
 
 # toc-site-ux-landing-page

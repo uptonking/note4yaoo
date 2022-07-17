@@ -1,8 +1,8 @@
 ---
 title: editoe-features-kanban
 tags: [editoe, features, kanban, pm]
-created: '2021-11-29T08:24:19.539Z'
-modified: '2021-11-29T08:25:19.337Z'
+created: 2021-11-29T08:24:19.539Z
+modified: 2021-11-29T08:25:19.337Z
 ---
 
 # editoe-features-kanban

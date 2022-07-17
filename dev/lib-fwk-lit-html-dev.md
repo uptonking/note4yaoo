@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-lit-html-dev
 tags: [lib, lit-html, tagged-template-literals]
-created: '2020-11-08T10:39:49.902Z'
-modified: '2021-05-13T02:48:27.497Z'
+created: 2020-11-08T10:39:49.902Z
+modified: 2021-05-13T02:48:27.497Z
 ---
 
 # lib-fwk-lit-html-dev

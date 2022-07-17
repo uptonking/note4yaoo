@@ -1,8 +1,8 @@
 ---
 title: note-react-blog
 tags: [blog, dev, react]
-created: '2020-06-29T08:43:56.344Z'
-modified: '2020-07-14T11:51:59.253Z'
+created: 2020-06-29T08:43:56.344Z
+modified: 2020-07-14T11:51:59.253Z
 ---
 
 # note-react-blog

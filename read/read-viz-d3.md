@@ -1,8 +1,8 @@
 ---
 title: read-viz-d3
 tags: [d3, read, viz]
-created: '2021-05-27T19:54:19.960Z'
-modified: '2021-05-27T19:54:31.731Z'
+created: 2021-05-27T19:54:19.960Z
+modified: 2021-05-27T19:54:31.731Z
 ---
 
 # read-viz-d3

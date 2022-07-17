@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-issues
 tags: [editor, issues, prosemirror]
-created: '2021-06-12T02:40:02.657Z'
-modified: '2021-06-12T02:40:42.535Z'
+created: 2021-06-12T02:40:02.657Z
+modified: 2021-06-12T02:40:42.535Z
 ---
 
 # lib-editor-prosemirror-issues

@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-string-regexp
 tags: [algorithms, coding, job, leetcode, regexp, string]
-created: '2021-10-05T09:04:48.742Z'
-modified: '2021-10-06T14:47:19.962Z'
+created: 2021-10-05T09:04:48.742Z
+modified: 2021-10-06T14:47:19.962Z
 ---
 
 # job-leetcode-string-regexp

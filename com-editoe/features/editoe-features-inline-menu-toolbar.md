@@ -1,8 +1,8 @@
 ---
 title: editoe-features-inline-menu-toolbar
 tags: [editoe]
-created: '2022-06-01T04:15:11.107Z'
-modified: '2022-06-01T04:16:34.253Z'
+created: 2022-06-01T04:15:11.107Z
+modified: 2022-06-01T04:16:34.253Z
 ---
 
 # editoe-features-inline-menu-toolbar

@@ -1,8 +1,8 @@
 ---
 title: lib-ui-bootstrap-blog
 tags: [blog, bootstrap, lib]
-created: '2020-10-19T09:05:34.294Z'
-modified: '2020-12-08T13:33:04.764Z'
+created: 2020-10-19T09:05:34.294Z
+modified: 2020-12-08T13:33:04.764Z
 ---
 
 # lib-ui-bootstrap-blog

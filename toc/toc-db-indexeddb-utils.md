@@ -1,8 +1,8 @@
 ---
 title: toc-db-indexeddb-utils
 tags: [indexeddb, toc, utils]
-created: '2022-06-04T00:43:13.971Z'
-modified: '2022-06-13T03:05:27.313Z'
+created: 2022-06-04T00:43:13.971Z
+modified: 2022-06-13T03:05:27.313Z
 ---
 
 # toc-db-indexeddb-utils

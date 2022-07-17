@@ -1,8 +1,8 @@
 ---
 title: toc-office-exploring
 tags: [exploring, office, toc]
-created: '2020-10-05T06:27:18.506Z'
-modified: '2021-01-04T17:31:49.998Z'
+created: 2020-10-05T06:27:18.506Z
+modified: 2021-01-04T17:31:49.998Z
 ---
 
 # toc-office-exploring

@@ -1,8 +1,8 @@
 ---
 title: toc-office-pdf
 tags: [doc, pdf, toc]
-created: '2020-09-26T17:53:26.962Z'
-modified: '2021-01-04T17:26:43.784Z'
+created: 2020-09-26T17:53:26.962Z
+modified: 2021-01-04T17:26:43.784Z
 ---
 
 # toc-office-pdf

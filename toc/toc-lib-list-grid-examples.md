@@ -1,8 +1,8 @@
 ---
 title: toc-lib-list-grid-examples
 tags: [examples, grid, list, table, toc]
-created: '2021-04-13T10:59:46.818Z'
-modified: '2021-05-23T16:34:51.399Z'
+created: 2021-04-13T10:59:46.818Z
+modified: 2021-05-23T16:34:51.399Z
 ---
 
 # toc-lib-list-grid-examples

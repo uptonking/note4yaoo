@@ -1,8 +1,8 @@
 ---
 title: thread-blogger-creator
 tags: [blogger, kickstarter]
-created: '2020-02-16T14:30:18.987Z'
-modified: '2021-02-09T19:23:39.082Z'
+created: 2020-02-16T14:30:18.987Z
+modified: 2021-02-09T19:23:39.082Z
 ---
 
 # thread-blogger-creator

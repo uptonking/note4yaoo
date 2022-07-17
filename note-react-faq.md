@@ -1,8 +1,8 @@
 ---
-tags: [faq, react]
 title: note-react-faq
-created: '2020-06-29T08:30:13.355Z'
-modified: '2020-06-30T12:51:08.791Z'
+tags: [faq, react]
+created: 2020-06-29T08:30:13.355Z
+modified: 2020-06-30T12:51:08.791Z
 ---
 
 # note-react-faq

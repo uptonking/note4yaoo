@@ -1,8 +1,8 @@
 ---
 title: toc-lib-ux-style-sketch-hand-drawn
 tags: [hand-drawn, sketch, toc, ux]
-created: '2020-08-09T09:04:58.352Z'
-modified: '2021-01-13T19:30:59.508Z'
+created: 2020-08-09T09:04:58.352Z
+modified: 2021-01-13T19:30:59.508Z
 ---
 
 # toc-lib-ux-style-sketch-hand-drawn

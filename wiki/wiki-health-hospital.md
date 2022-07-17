@@ -1,8 +1,8 @@
 ---
 title: wiki-health-hospital
 tags: [health, hospital]
-created: '2021-11-28T18:44:21.569Z'
-modified: '2021-11-28T18:44:35.068Z'
+created: 2021-11-28T18:44:21.569Z
+modified: 2021-11-28T18:44:35.068Z
 ---
 
 # wiki-health-hospital

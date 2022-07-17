@@ -1,8 +1,8 @@
 ---
 title: viz-chart-blog
 tags: [blog, charting, viz]
-created: '2020-08-08T11:30:42.489Z'
-modified: '2021-01-19T12:47:29.048Z'
+created: 2020-08-08T11:30:42.489Z
+modified: 2021-01-19T12:47:29.048Z
 ---
 
 # viz-chart-blog

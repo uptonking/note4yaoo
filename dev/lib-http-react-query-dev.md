@@ -1,8 +1,8 @@
 ---
 title: lib-http-react-query-dev
 tags: [ajax, lib, react-query]
-created: '2020-08-06T10:23:53.305Z'
-modified: '2021-05-13T02:52:41.975Z'
+created: 2020-08-06T10:23:53.305Z
+modified: 2021-05-13T02:52:41.975Z
 ---
 
 # lib-http-react-query-dev

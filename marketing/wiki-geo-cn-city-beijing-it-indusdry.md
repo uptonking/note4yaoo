@@ -1,8 +1,8 @@
 ---
 title: wiki-geo-cn-city-beijing-it-indusdry
 tags: [beijing, city, industry, it]
-created: '2021-09-18T14:35:48.772Z'
-modified: '2021-09-18T14:36:53.224Z'
+created: 2021-09-18T14:35:48.772Z
+modified: 2021-09-18T14:36:53.224Z
 ---
 
 # wiki-geo-cn-city-beijing-it-indusdry

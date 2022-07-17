@@ -1,8 +1,8 @@
 ---
 title: lib-db-sqlite-docs
 tags: [docs, sqlite]
-created: '2021-08-30T17:32:48.451Z'
-modified: '2021-08-30T17:33:20.586Z'
+created: 2021-08-30T17:32:48.451Z
+modified: 2021-08-30T17:33:20.586Z
 ---
 
 # lib-db-sqlite-docs

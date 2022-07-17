@@ -1,8 +1,8 @@
 ---
 title: toc-viz-examples
 tags: [examples, toc, viz]
-created: '2020-10-05T09:39:41.056Z'
-modified: '2020-10-22T16:09:43.158Z'
+created: 2020-10-05T09:39:41.056Z
+modified: 2020-10-22T16:09:43.158Z
 ---
 
 # toc-viz-examples

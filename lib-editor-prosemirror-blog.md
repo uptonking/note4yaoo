@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-blog
 tags: [blog, prosemirror]
-created: '2021-06-15T00:07:35.640Z'
-modified: '2021-06-15T00:07:49.228Z'
+created: 2021-06-15T00:07:35.640Z
+modified: 2021-06-15T00:07:49.228Z
 ---
 
 # lib-editor-prosemirror-blog

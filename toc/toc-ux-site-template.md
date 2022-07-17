@@ -1,8 +1,8 @@
 ---
 title: toc-ux-site-template
 tags: [site, template, toc, ux]
-created: '2020-04-08T20:57:51.107Z'
-modified: '2020-10-22T13:01:59.546Z'
+created: 2020-04-08T20:57:51.107Z
+modified: 2020-10-22T13:01:59.546Z
 ---
 
 # toc-ux-site-template

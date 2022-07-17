@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-number-math
 tags: [job, leetcode, math, numeric]
-created: '2021-10-08T18:03:56.082Z'
-modified: '2021-10-08T18:04:24.850Z'
+created: 2021-10-08T18:03:56.082Z
+modified: 2021-10-08T18:04:24.850Z
 ---
 
 # job-leetcode-number-math

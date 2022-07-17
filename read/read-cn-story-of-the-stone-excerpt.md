@@ -1,8 +1,8 @@
 ---
 title: read-cn-story-of-the-stone-excerpt
 tags: [cn, excerpt, read, story-of-the-stone]
-created: '2021-03-20T17:01:40.363Z'
-modified: '2021-03-20T17:02:27.479Z'
+created: 2021-03-20T17:01:40.363Z
+modified: 2021-03-20T17:02:27.479Z
 ---
 
 # read-cn-story-of-the-stone-excerpt

@@ -1,8 +1,8 @@
 ---
 title: job-fe-browser-event-loop
 tags: [browser, dom, frontend, job]
-created: '2021-09-23T08:23:18.415Z'
-modified: '2021-10-10T09:18:01.462Z'
+created: 2021-09-23T08:23:18.415Z
+modified: 2021-10-10T09:18:01.462Z
 ---
 
 # job-fe-browser-event-loop

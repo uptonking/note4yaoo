@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp-design-ideas-latest
 tags: [components, frontend, latest, web]
-created: '2020-10-29T12:46:59.023Z'
-modified: '2021-04-23T15:24:13.572Z'
+created: 2020-10-29T12:46:59.023Z
+modified: 2021-04-23T15:24:13.572Z
 ---
 
 # web-ui-comp-design-ideas-latest

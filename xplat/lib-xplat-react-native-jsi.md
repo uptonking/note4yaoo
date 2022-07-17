@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native-jsi
 tags: [cross-platform, jsi, react-native]
-created: '2021-09-07T15:25:31.081Z'
-modified: '2021-09-07T15:25:55.522Z'
+created: 2021-09-07T15:25:31.081Z
+modified: 2021-09-07T15:25:55.522Z
 ---
 
 # lib-xplat-react-native-jsi

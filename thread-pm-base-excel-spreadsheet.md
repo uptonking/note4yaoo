@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-excel-spreadsheet
 tags: [excel, pm, spreadsheet, thread]
-created: '2022-04-23T18:47:38.924Z'
-modified: '2022-04-23T18:48:32.550Z'
+created: 2022-04-23T18:47:38.924Z
+modified: 2022-04-23T18:48:32.550Z
 ---
 
 # thread-pm-base-excel-spreadsheet

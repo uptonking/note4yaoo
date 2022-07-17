@@ -1,8 +1,8 @@
 ---
 title: lib-office-remark-latest-changelog
 tags: [changelog, remark]
-created: '2021-06-03T15:57:32.197Z'
-modified: '2021-06-03T15:58:30.094Z'
+created: 2021-06-03T15:57:32.197Z
+modified: 2021-06-03T15:58:30.094Z
 ---
 
 # lib-office-remark-latest-changelog

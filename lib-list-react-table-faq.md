@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-table-faq
 tags: [faq, list, react-table]
-created: '2020-07-07T13:48:55.448Z'
-modified: '2021-05-13T02:54:38.048Z'
+created: 2020-07-07T13:48:55.448Z
+modified: 2021-05-13T02:54:38.048Z
 ---
 
 # lib-list-react-table-faq

@@ -1,8 +1,8 @@
 ---
 title: toc-gis-processing
 tags: [geoprocessing, gis, toc]
-created: '2020-11-13T07:35:23.232Z'
-modified: '2021-01-04T16:21:40.119Z'
+created: 2020-11-13T07:35:23.232Z
+modified: 2021-01-04T16:21:40.119Z
 ---
 
 # toc-gis-processing

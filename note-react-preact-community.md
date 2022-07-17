@@ -1,8 +1,8 @@
 ---
 title: note-react-preact-community
 tags: [community, preact, react]
-created: '2021-04-24T15:07:05.237Z'
-modified: '2021-05-13T03:46:35.666Z'
+created: 2021-04-24T15:07:05.237Z
+modified: 2021-05-13T03:46:35.666Z
 ---
 
 # note-react-preact-community

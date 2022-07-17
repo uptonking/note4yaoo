@@ -1,8 +1,8 @@
 ---
 title: job-viz-canvas
 tags: [canvas, job, viz]
-created: '2021-10-15T16:03:22.633Z'
-modified: '2021-10-15T16:03:50.979Z'
+created: 2021-10-15T16:03:22.633Z
+modified: 2021-10-15T16:03:50.979Z
 ---
 
 # job-viz-canvas

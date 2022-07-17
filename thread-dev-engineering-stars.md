@@ -1,8 +1,8 @@
 ---
 title: thread-dev-engineering-stars
 tags: [engineering, thread]
-created: '2021-08-10T03:50:40.299Z'
-modified: '2021-08-10T03:51:01.891Z'
+created: 2021-08-10T03:50:40.299Z
+modified: 2021-08-10T03:51:01.891Z
 ---
 
 # thread-dev-engineering-stars

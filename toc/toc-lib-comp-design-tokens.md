@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-tokens
 tags: [design-system, design-tokens, toc]
-created: '2020-10-23T03:56:35.731Z'
-modified: '2021-01-01T22:09:59.545Z'
+created: 2020-10-23T03:56:35.731Z
+modified: 2021-01-01T22:09:59.545Z
 ---
 
 # toc-lib-comp-design-tokens

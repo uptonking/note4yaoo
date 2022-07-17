@@ -1,8 +1,8 @@
 ---
 title: toc-datasource
 tags: [data, datasource, toc]
-created: '2019-07-08T06:03:13.300Z'
-modified: '2020-11-11T13:19:48.284Z'
+created: 2019-07-08T06:03:13.300Z
+modified: 2020-11-11T13:19:48.284Z
 ---
 
 # toc-datasource

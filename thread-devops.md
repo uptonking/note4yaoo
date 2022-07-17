@@ -1,8 +1,8 @@
 ---
 title: thread-devops
 tags: [devops, thread]
-created: '2021-03-31T06:49:31.508Z'
-modified: '2021-03-31T06:50:19.936Z'
+created: 2021-03-31T06:49:31.508Z
+modified: 2021-03-31T06:50:19.936Z
 ---
 
 # thread-devops

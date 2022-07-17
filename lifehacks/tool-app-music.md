@@ -1,8 +1,8 @@
 ---
 title: tool-app-music
 tags: [app, music, tool]
-created: '2021-10-02T09:02:33.893Z'
-modified: '2021-10-02T09:02:51.676Z'
+created: 2021-10-02T09:02:33.893Z
+modified: 2021-10-02T09:02:51.676Z
 ---
 
 # tool-app-music

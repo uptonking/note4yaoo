@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-latest-changelog
 tags: [changelog, pattern, rxjs]
-created: '2020-12-14T14:42:29.382Z'
-modified: '2020-12-14T14:44:23.079Z'
+created: 2020-12-14T14:42:29.382Z
+modified: 2020-12-14T14:44:23.079Z
 ---
 
 # lib-pattern-rxjs-latest-changelog

@@ -1,8 +1,8 @@
 ---
 title: dev-log-xp
 tags: [dev-log, dev-xp]
-created: '2022-05-24T17:57:37.897Z'
-modified: '2022-05-24T17:57:49.545Z'
+created: 2022-05-24T17:57:37.897Z
+modified: 2022-05-24T17:57:49.545Z
 ---
 
 # dev-log-xp

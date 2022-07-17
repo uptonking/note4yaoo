@@ -1,8 +1,8 @@
 ---
 title: toc-db-sql-js
 tags: [database, js, sql, toc]
-created: '2021-08-30T18:23:08.738Z'
-modified: '2021-08-30T18:56:14.863Z'
+created: 2021-08-30T18:23:08.738Z
+modified: 2021-08-30T18:56:14.863Z
 ---
 
 # toc-db-sql-js

@@ -1,8 +1,8 @@
 ---
 title: pick-wiki
 tags: [pick, wiki]
-created: '2019-05-30T13:45:37.931Z'
-modified: '2020-12-01T14:25:16.067Z'
+created: 2019-05-30T13:45:37.931Z
+modified: 2020-12-01T14:25:16.067Z
 ---
 
 # pick-wiki

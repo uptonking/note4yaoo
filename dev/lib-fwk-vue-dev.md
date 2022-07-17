@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-vue-dev
 tags: [framework, frontend, lib, vue]
-created: '2021-01-04T19:29:51.724Z'
-modified: '2021-01-04T19:34:22.729Z'
+created: 2021-01-04T19:29:51.724Z
+modified: 2021-01-04T19:34:22.729Z
 ---
 
 # lib-fwk-vue-dev

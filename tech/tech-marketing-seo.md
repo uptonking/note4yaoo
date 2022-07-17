@@ -1,8 +1,8 @@
 ---
 title: tech-marketing-seo
 tags: [marketing, seo]
-created: '2020-12-20T12:35:07.813Z'
-modified: '2020-12-20T12:36:17.694Z'
+created: 2020-12-20T12:35:07.813Z
+modified: 2020-12-20T12:36:17.694Z
 ---
 
 # tech-marketing-seo

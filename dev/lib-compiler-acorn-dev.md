@@ -1,8 +1,8 @@
 ---
 title: lib-compiler-acorn-dev
 tags: [acorn, compiler, lib]
-created: '2021-06-04T05:18:46.426Z'
-modified: '2021-06-04T05:24:21.182Z'
+created: 2021-06-04T05:18:46.426Z
+modified: 2021-06-04T05:24:21.182Z
 ---
 
 # lib-compiler-acorn-dev

@@ -1,8 +1,8 @@
 ---
 title: page-js-for-react
 tags: [copied, js]
-created: '2019-08-01T16:03:46.394Z'
-modified: '2020-07-14T10:49:58.315Z'
+created: 2019-08-01T16:03:46.394Z
+modified: 2020-07-14T10:49:58.315Z
 ---
 
 # page-js-for-react

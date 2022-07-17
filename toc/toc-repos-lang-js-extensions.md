@@ -1,8 +1,8 @@
 ---
 title: toc-repos-lang-js-extensions
 tags: [extensions, js, lang, lib, toc]
-created: '2020-12-16T17:46:43.646Z'
-modified: '2021-05-14T15:04:50.210Z'
+created: 2020-12-16T17:46:43.646Z
+modified: 2021-05-14T15:04:50.210Z
 ---
 
 # toc-repos-lang-js-extensions

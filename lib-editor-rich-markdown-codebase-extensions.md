@@ -1,8 +1,8 @@
 ---
 title: lib-editor-rich-markdown-codebase-extensions
 tags: [codebase, extensions, rich-markdown-editor]
-created: '2021-06-23T13:27:13.078Z'
-modified: '2021-06-23T13:27:56.975Z'
+created: 2021-06-23T13:27:13.078Z
+modified: 2021-06-23T13:27:56.975Z
 ---
 
 # lib-editor-rich-markdown-codebase-extensions

@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-spring-boot-dev
 tags: [framework, spring-boot, web]
-created: '2020-12-21T06:20:04.632Z'
-modified: '2020-12-21T06:21:52.752Z'
+created: 2020-12-21T06:20:04.632Z
+modified: 2020-12-21T06:21:52.752Z
 ---
 
 # lib-fwk-spring-boot-dev

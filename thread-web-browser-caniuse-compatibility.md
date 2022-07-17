@@ -1,8 +1,8 @@
 ---
 title: thread-web-browser-caniuse-compatibility
 tags: [browser, compatibility, css, js, thread, web]
-created: '2021-07-28T12:54:43.589Z'
-modified: '2021-07-29T11:15:44.100Z'
+created: 2021-07-28T12:54:43.589Z
+modified: 2021-07-29T11:15:44.100Z
 ---
 
 # thread-web-browser-caniuse-compatibility

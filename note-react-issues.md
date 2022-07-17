@@ -1,8 +1,8 @@
 ---
 title: note-react-issues
 tags: [issues, react]
-created: '2021-06-09T00:46:09.221Z'
-modified: '2021-06-09T00:46:34.611Z'
+created: 2021-06-09T00:46:09.221Z
+modified: 2021-06-09T00:46:34.611Z
 ---
 
 # note-react-issues

@@ -1,8 +1,8 @@
 ---
 title: toc-viz-base-webgl
 tags: [lib, toc, viz, webgl]
-created: '2020-07-17T13:33:55.480Z'
-modified: '2020-10-05T06:18:29.671Z'
+created: 2020-07-17T13:33:55.480Z
+modified: 2020-10-05T06:18:29.671Z
 ---
 
 # toc-viz-base-webgl

@@ -1,8 +1,8 @@
 ---
 title: toc-office-static-site-generator
 tags: [documentation, markdown, static-site-generator, toc]
-created: '2020-08-09T11:20:56.480Z'
-modified: '2021-07-17T03:00:02.268Z'
+created: 2020-08-09T11:20:56.480Z
+modified: 2021-07-17T03:00:02.268Z
 ---
 
 # toc-office-static-site-generator

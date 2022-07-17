@@ -1,8 +1,8 @@
 ---
 title: lib-ui-react-gui-dev
 tags: [lib, react-gui, ui]
-created: '2021-07-12T05:40:36.626Z'
-modified: '2021-07-12T05:40:55.209Z'
+created: 2021-07-12T05:40:36.626Z
+modified: 2021-07-12T05:40:55.209Z
 ---
 
 # lib-ui-react-gui-dev

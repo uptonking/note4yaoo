@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-comparison
 tags: [comparison, grid, list]
-created: '2020-09-25T16:41:20.596Z'
-modified: '2021-06-02T17:22:13.224Z'
+created: 2020-09-25T16:41:20.596Z
+modified: 2021-06-02T17:22:13.224Z
 ---
 
 # pm-list-grid-comparison

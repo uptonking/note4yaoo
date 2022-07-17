@@ -1,8 +1,8 @@
 ---
 title: lib-ui-bulma-dev
 tags: [bulma, lib, ui]
-created: '2020-10-19T16:22:26.951Z'
-modified: '2020-12-08T13:33:31.191Z'
+created: 2020-10-19T16:22:26.951Z
+modified: 2020-12-08T13:33:31.191Z
 ---
 
 # lib-ui-bulma-dev

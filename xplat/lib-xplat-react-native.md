@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native
 tags: [cross-platform, lib, react-native]
-created: '2020-12-29T09:04:40.044Z'
-modified: '2021-05-13T03:12:23.257Z'
+created: 2020-12-29T09:04:40.044Z
+modified: 2021-05-13T03:12:23.257Z
 ---
 
 # lib-xplat-react-native

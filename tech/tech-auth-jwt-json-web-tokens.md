@@ -1,8 +1,8 @@
 ---
 title: tech-auth-jwt-json-web-tokens
 tags: [auth, json-web-tokens]
-created: '2021-08-12T14:34:30.861Z'
-modified: '2021-08-12T14:36:02.148Z'
+created: 2021-08-12T14:34:30.861Z
+modified: 2021-08-12T14:36:02.148Z
 ---
 
 # tech-auth-jwt-json-web-tokens

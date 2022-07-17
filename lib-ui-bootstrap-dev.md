@@ -1,8 +1,8 @@
 ---
 title: lib-ui-bootstrap-dev
 tags: [bootstrap, lib]
-created: '2020-10-19T09:04:03.787Z'
-modified: '2020-12-08T13:33:11.249Z'
+created: 2020-10-19T09:04:03.787Z
+modified: 2020-12-08T13:33:11.249Z
 ---
 
 # lib-ui-bootstrap-dev

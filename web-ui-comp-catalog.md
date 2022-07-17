@@ -2,8 +2,8 @@
 title: web-ui-comp-catalog
 tags: [components]
 favorited: true
-created: '2020-08-09T05:13:36.363Z'
-modified: '2021-04-11T17:38:29.829Z'
+created: 2020-08-09T05:13:36.363Z
+modified: 2021-04-11T17:38:29.829Z
 ---
 
 # web-ui-comp-catalog

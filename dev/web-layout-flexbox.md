@@ -1,8 +1,8 @@
 ---
 title: web-layout-flexbox
 tags: [flexbox, layout, style, web]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2020-12-21T07:46:17.578Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2020-12-21T07:46:17.578Z
 ---
 
 # web-layout-flexbox

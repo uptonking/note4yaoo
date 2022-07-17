@@ -1,8 +1,8 @@
 ---
 title: job-js-es6-latest
 tags: [es6, job, js, latest]
-created: '2021-10-10T09:56:40.369Z'
-modified: '2021-10-10T09:56:56.337Z'
+created: 2021-10-10T09:56:40.369Z
+modified: 2021-10-10T09:56:56.337Z
 ---
 
 # job-js-es6-latest

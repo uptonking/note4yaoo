@@ -1,8 +1,8 @@
 ---
 title: viz-base-canvas
 tags: [canvas, viz]
-created: '2020-07-17T13:36:32.433Z'
-modified: '2020-12-21T07:46:54.190Z'
+created: 2020-07-17T13:36:32.433Z
+modified: 2020-12-21T07:46:54.190Z
 ---
 
 # viz-base-canvas

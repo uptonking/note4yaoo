@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-docs-components
 tags: [adobe-spectrum, components, docs]
-created: '2021-04-12T17:59:32.301Z'
-modified: '2021-04-12T18:07:34.356Z'
+created: 2021-04-12T17:59:32.301Z
+modified: 2021-04-12T18:07:34.356Z
 ---
 
 # lib-ui-spectrum-docs-components

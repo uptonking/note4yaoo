@@ -1,8 +1,8 @@
 ---
 title: thread-viz-examples-charting
 tags: [charting, examples, thread, viz]
-created: '2021-04-12T12:03:20.441Z'
-modified: '2021-04-12T12:03:37.628Z'
+created: 2021-04-12T12:03:20.441Z
+modified: 2021-04-12T12:03:37.628Z
 ---
 
 # thread-viz-examples-charting

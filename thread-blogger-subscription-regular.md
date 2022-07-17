@@ -1,8 +1,8 @@
 ---
 title: thread-blogger-subscription-regular
 tags: [blogger, regular, subscription, thread]
-created: '2021-09-20T18:00:13.114Z'
-modified: '2021-09-20T18:01:39.932Z'
+created: 2021-09-20T18:00:13.114Z
+modified: 2021-09-20T18:01:39.932Z
 ---
 
 # thread-blogger-subscription-regular

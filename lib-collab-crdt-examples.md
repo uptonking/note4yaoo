@@ -1,8 +1,8 @@
 ---
 title: lib-collab-crdt-examples
 tags: [collaboration, crdt, examples]
-created: '2022-01-22T16:14:32.323Z'
-modified: '2022-04-05T10:08:25.947Z'
+created: 2022-01-22T16:14:32.323Z
+modified: 2022-04-05T10:08:25.947Z
 ---
 
 # lib-collab-crdt-examples

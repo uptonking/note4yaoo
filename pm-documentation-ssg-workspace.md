@@ -1,8 +1,8 @@
 ---
 title: pm-documentation-ssg-workspace
 tags: [documentation, pm, pmgr, static-site-generator]
-created: '2020-08-04T06:26:13.984Z'
-modified: '2021-05-14T14:33:13.599Z'
+created: 2020-08-04T06:26:13.984Z
+modified: 2021-05-14T14:33:13.599Z
 ---
 
 # pm-documentation-ssg-workspace

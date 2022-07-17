@@ -1,8 +1,8 @@
 ---
 title: pm-editor-builder-lowcode
 tags: [builder, editor, lowcode, pm]
-created: '2020-08-08T19:39:58.351Z'
-modified: '2021-06-02T17:21:11.227Z'
+created: 2020-08-08T19:39:58.351Z
+modified: 2021-06-02T17:21:11.227Z
 ---
 
 # pm-editor-builder-lowcode

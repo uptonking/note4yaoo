@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-docs
 tags: [docs, observablehq]
-created: '2021-05-14T18:00:13.935Z'
-modified: '2021-05-14T18:00:35.421Z'
+created: 2021-05-14T18:00:13.935Z
+modified: 2021-05-14T18:00:35.421Z
 ---
 
 # lib-notebook-observablehq-docs

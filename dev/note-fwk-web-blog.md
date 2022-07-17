@@ -1,8 +1,8 @@
 ---
 title: note-fwk-web-blog
 tags: [blog, framework, web]
-created: '2020-11-08T10:01:14.339Z'
-modified: '2020-12-08T13:29:35.248Z'
+created: 2020-11-08T10:01:14.339Z
+modified: 2020-12-08T13:29:35.248Z
 ---
 
 # note-fwk-web-blog

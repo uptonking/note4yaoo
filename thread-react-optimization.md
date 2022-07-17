@@ -1,8 +1,8 @@
 ---
 title: thread-react-optimization
 tags: [job, optimization, react, thread]
-created: '2021-09-24T06:50:13.642Z'
-modified: '2021-09-24T06:50:31.330Z'
+created: 2021-09-24T06:50:13.642Z
+modified: 2021-09-24T06:50:31.330Z
 ---
 
 # thread-react-optimization

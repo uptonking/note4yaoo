@@ -1,8 +1,8 @@
 ---
 title: wiki-law
 tags: [law, wiki]
-created: '2019-07-21T11:31:37.472Z'
-modified: '2020-11-21T15:00:43.079Z'
+created: 2019-07-21T11:31:37.472Z
+modified: 2020-11-21T15:00:43.079Z
 ---
 
 # wiki-law

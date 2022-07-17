@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-examples
 tags: [ag-grid, examples, grid, list]
-created: '2021-07-20T13:44:45.705Z'
-modified: '2021-07-20T13:45:26.460Z'
+created: 2021-07-20T13:44:45.705Z
+modified: 2021-07-20T13:45:26.460Z
 ---
 
 # lib-list-ag-grid-examples

@@ -1,8 +1,8 @@
 ---
 title: lib-office-docusaurus-dev
 tags: [docusaurus, office]
-created: '2020-12-19T08:50:35.122Z'
-modified: '2020-12-19T08:52:02.671Z'
+created: 2020-12-19T08:50:35.122Z
+modified: 2020-12-19T08:52:02.671Z
 ---
 
 # lib-office-docusaurus-dev

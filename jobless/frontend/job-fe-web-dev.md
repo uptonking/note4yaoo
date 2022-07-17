@@ -1,8 +1,8 @@
 ---
 title: job-fe-web-dev
 tags: [frontend, job, web]
-created: '2021-09-23T08:18:44.835Z'
-modified: '2021-10-10T09:19:13.926Z'
+created: 2021-09-23T08:18:44.835Z
+modified: 2021-10-10T09:19:13.926Z
 ---
 
 # job-fe-web-dev

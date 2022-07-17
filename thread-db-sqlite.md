@@ -1,8 +1,8 @@
 ---
 title: thread-db-sqlite
 tags: [database, sqlite]
-created: '2021-08-25T14:05:02.158Z'
-modified: '2021-08-25T14:05:18.280Z'
+created: 2021-08-25T14:05:02.158Z
+modified: 2021-08-25T14:05:18.280Z
 ---
 
 # thread-db-sqlite

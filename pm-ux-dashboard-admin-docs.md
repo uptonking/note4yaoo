@@ -1,8 +1,8 @@
 ---
 title: pm-ux-dashboard-admin-docs
 tags: [dashboard, docs]
-created: '2021-08-10T16:38:29.854Z'
-modified: '2021-08-10T16:39:00.631Z'
+created: 2021-08-10T16:38:29.854Z
+modified: 2021-08-10T16:39:00.631Z
 ---
 
 # pm-ux-dashboard-admin-docs

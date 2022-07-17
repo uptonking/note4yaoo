@@ -1,8 +1,8 @@
 ---
 title: toc-lib-web-layer
 tags: [layer, lib, toc, web]
-created: '2021-01-17T06:17:44.570Z'
-modified: '2021-01-17T06:18:28.855Z'
+created: 2021-01-17T06:17:44.570Z
+modified: 2021-01-17T06:18:28.855Z
 ---
 
 # toc-lib-web-layer

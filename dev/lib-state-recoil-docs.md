@@ -1,8 +1,8 @@
 ---
 title: lib-state-recoil-docs
 tags: [docs, react, recoil, state]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2020-12-08T13:27:02.442Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2020-12-08T13:27:02.442Z
 ---
 
 # lib-state-recoil-docs

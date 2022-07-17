@@ -1,8 +1,8 @@
 ---
 title: lib-editor-rich-outline-docs
 tags: [docs, outline-wiki]
-created: '2021-09-09T18:29:59.214Z'
-modified: '2021-09-09T18:30:24.610Z'
+created: 2021-09-09T18:29:59.214Z
+modified: 2021-09-09T18:30:24.610Z
 ---
 
 # lib-editor-rich-outline-docs

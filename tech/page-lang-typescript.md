@@ -1,8 +1,8 @@
 ---
 title: page-lang-typescript
 tags: [lang, typescript]
-created: '2020-08-21T08:17:22.500Z'
-modified: '2020-08-21T08:17:49.726Z'
+created: 2020-08-21T08:17:22.500Z
+modified: 2020-08-21T08:17:49.726Z
 ---
 
 # page-lang-typescript

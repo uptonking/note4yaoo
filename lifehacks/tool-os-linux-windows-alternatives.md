@@ -1,8 +1,8 @@
 ---
 title: tool-os-linux-windows-alternatives
-tags: [alternatives, windows, linux]
-created: '2020-01-12T12:32:03.096Z'
-modified: '2021-01-12T18:49:22.746Z'
+tags: [alternatives, linux, windows]
+created: 2020-01-12T12:32:03.096Z
+modified: 2021-01-12T18:49:22.746Z
 ---
 
 # tool-os-linux-windows-alternatives

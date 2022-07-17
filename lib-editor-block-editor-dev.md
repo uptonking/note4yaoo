@@ -1,8 +1,8 @@
 ---
 title: lib-editor-block-editor-dev
 tags: [block-editor, cell, editor]
-created: '2021-06-01T20:03:25.130Z'
-modified: '2022-06-08T11:14:10.668Z'
+created: 2021-06-01T20:03:25.130Z
+modified: 2022-06-08T11:14:10.668Z
 ---
 
 # lib-editor-block-editor-dev

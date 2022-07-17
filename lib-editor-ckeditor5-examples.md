@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-examples
 tags: [ckeditor, examples]
-created: '2021-11-05T13:30:54.462Z'
-modified: '2021-11-05T13:31:12.802Z'
+created: 2021-11-05T13:30:54.462Z
+modified: 2021-11-05T13:31:12.802Z
 ---
 
 # lib-editor-ckeditor5-examples

@@ -1,8 +1,8 @@
 ---
 title: lang-js-arch-async-callback-promise
 tags: [architecture, async, js, lang, promise]
-created: '2021-08-30T07:00:06.476Z'
-modified: '2021-08-30T07:01:09.493Z'
+created: 2021-08-30T07:00:06.476Z
+modified: 2021-08-30T07:01:09.493Z
 ---
 
 # lang-js-arch-async-callback-promise

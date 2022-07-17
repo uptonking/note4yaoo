@@ -1,8 +1,8 @@
 ---
 title: lib-viz-d3-tutorials-notebook
 tags: [d3, notebook, tutorials, viz]
-created: '2021-05-18T08:48:48.865Z'
-modified: '2021-05-18T08:49:58.244Z'
+created: 2021-05-18T08:48:48.865Z
+modified: 2021-05-18T08:49:58.244Z
 ---
 
 # lib-viz-d3-tutorials-notebook

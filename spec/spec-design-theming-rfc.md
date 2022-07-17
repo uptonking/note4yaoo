@@ -1,8 +1,8 @@
 ---
 title: spec-design-theming-rfc
 tags: [design, rfc, spec, styling, theming]
-created: '2021-01-03T19:45:55.016Z'
-modified: '2021-01-04T17:07:56.548Z'
+created: 2021-01-03T19:45:55.016Z
+modified: 2021-01-04T17:07:56.548Z
 ---
 
 # spec-design-theming-rfc

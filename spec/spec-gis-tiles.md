@@ -1,8 +1,8 @@
 ---
 title: spec-gis-tiles
 tags: [gis, map-tiles, spec]
-created: '2021-09-30T08:29:41.711Z'
-modified: '2021-09-30T08:30:09.395Z'
+created: 2021-09-30T08:29:41.711Z
+modified: 2021-09-30T08:30:09.395Z
 ---
 
 # spec-gis-tiles

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-remirror-dev
 tags: [editor, lib, prosemirror, remirror]
-created: '2021-06-27T19:16:31.417Z'
-modified: '2021-06-27T19:16:51.396Z'
+created: 2021-06-27T19:16:31.417Z
+modified: 2021-06-27T19:16:51.396Z
 ---
 
 # lib-editor-remirror-dev

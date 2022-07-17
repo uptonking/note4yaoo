@@ -1,8 +1,8 @@
 ---
 title: web-ux2-layer-window-layout-portal
 tags: [components, portal, ui, window-layout]
-created: '2021-01-13T17:13:36.979Z'
-modified: '2021-07-29T20:39:09.187Z'
+created: 2021-01-13T17:13:36.979Z
+modified: 2021-07-29T20:39:09.187Z
 ---
 
 # web-ux2-layer-window-layout-portal

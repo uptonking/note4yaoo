@@ -1,8 +1,8 @@
 ---
 title: pm-office-logseq-xp
 tags: [logseq, note-taking, pm, xp]
-created: '2022-06-02T04:32:59.545Z'
-modified: '2022-06-02T06:11:16.758Z'
+created: 2022-06-02T04:32:59.545Z
+modified: 2022-06-02T06:11:16.758Z
 ---
 
 # pm-office-logseq-xp

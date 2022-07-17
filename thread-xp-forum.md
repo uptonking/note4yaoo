@@ -1,8 +1,8 @@
 ---
 title: thread-xp-forum
 tags: [forum, pm, thread, xp]
-created: '2021-06-04T03:23:34.187Z'
-modified: '2021-06-04T03:28:14.975Z'
+created: 2021-06-04T03:23:34.187Z
+modified: 2021-06-04T03:28:14.975Z
 ---
 
 # thread-xp-forum

@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-lib-vanilla-extract-sprinkles
 tags: [css-in-js, vanilla-extract]
-created: '2021-08-22T16:07:00.096Z'
-modified: '2021-08-22T16:08:42.552Z'
+created: 2021-08-22T16:07:00.096Z
+modified: 2021-08-22T16:08:42.552Z
 ---
 
 # web-style-css-in-js-lib-vanilla-extract-sprinkles

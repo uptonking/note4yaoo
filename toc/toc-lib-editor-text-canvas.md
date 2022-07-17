@@ -1,8 +1,8 @@
 ---
 title: toc-lib-editor-text-canvas
 tags: [canvas, lib, text-editor, toc]
-created: '2021-05-19T08:31:35.173Z'
-modified: '2021-05-19T08:32:28.120Z'
+created: 2021-05-19T08:31:35.173Z
+modified: 2021-05-19T08:32:28.120Z
 ---
 
 # toc-lib-editor-text-canvas

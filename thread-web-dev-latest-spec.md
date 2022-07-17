@@ -1,8 +1,8 @@
 ---
 title: thread-web-dev-latest-spec
 tags: [dev, latest, spec, thread, web]
-created: '2021-04-27T09:19:14.189Z'
-modified: '2021-04-27T09:19:37.711Z'
+created: 2021-04-27T09:19:14.189Z
+modified: 2021-04-27T09:19:37.711Z
 ---
 
 # thread-web-dev-latest-spec

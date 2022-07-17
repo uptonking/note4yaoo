@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp6-display-content
 tags: [components, ui, web]
-created: '2021-04-23T15:20:50.221Z'
-modified: '2021-07-28T20:11:37.860Z'
+created: 2021-04-23T15:20:50.221Z
+modified: 2021-07-28T20:11:37.860Z
 ---
 
 # web-ui-comp6-display-content

@@ -1,8 +1,8 @@
 ---
 title: thread-dev-enginnering-perf-optimization
 tags: [engineering, optimization]
-created: '2022-03-18T20:55:57.435Z'
-modified: '2022-03-18T20:56:35.254Z'
+created: 2022-03-18T20:55:57.435Z
+modified: 2022-03-18T20:56:35.254Z
 ---
 
 # thread-dev-enginnering-perf-optimization

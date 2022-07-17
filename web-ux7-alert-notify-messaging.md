@@ -1,8 +1,8 @@
 ---
 title: web-ux7-alert-notify-messaging
 tags: [alert, components, ui]
-created: '2021-04-04T15:50:44.364Z'
-modified: '2021-07-29T20:37:31.690Z'
+created: 2021-04-04T15:50:44.364Z
+modified: 2021-07-29T20:37:31.690Z
 ---
 
 # web-ux7-alert-notify-messaging

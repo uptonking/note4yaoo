@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-docs-aria
 tags: [adobe-spectrum, docs]
-created: '2021-04-12T17:59:04.250Z'
-modified: '2021-04-12T18:07:23.824Z'
+created: 2021-04-12T17:59:04.250Z
+modified: 2021-04-12T18:07:23.824Z
 ---
 
 # lib-ui-spectrum-docs-aria

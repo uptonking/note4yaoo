@@ -1,8 +1,8 @@
 ---
 title: pick-dict-comparison-synonym
 tags: [comparison, dict]
-created: '2020-08-04T11:47:31.668Z'
-modified: '2021-05-13T03:23:00.814Z'
+created: 2020-08-04T11:47:31.668Z
+modified: 2021-05-13T03:23:00.814Z
 ---
 
 # pick-dict-comparison-synonym

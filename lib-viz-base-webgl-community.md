@@ -1,8 +1,8 @@
 ---
 title: lib-viz-base-webgl-community
 tags: [community, lib, viz, webgl]
-created: '2021-05-20T13:46:26.354Z'
-modified: '2021-05-20T13:46:51.503Z'
+created: 2021-05-20T13:46:26.354Z
+modified: 2021-05-20T13:46:51.503Z
 ---
 
 # lib-viz-base-webgl-community

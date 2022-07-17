@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p7-concurrent-mode
 tags: [concurrent, docs, react]
-created: '2020-06-23T07:35:14.835Z'
-modified: '2021-05-13T03:46:27.576Z'
+created: 2020-06-23T07:35:14.835Z
+modified: 2021-05-13T03:46:27.576Z
 ---
 
 # note-react-docs-p7-concurrent-mode

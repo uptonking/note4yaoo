@@ -1,8 +1,8 @@
 ---
 title: thread-web-animation
 tags: [animation, thread, ux]
-created: '2021-01-06T14:39:01.923Z'
-modified: '2021-01-08T17:14:34.841Z'
+created: 2021-01-06T14:39:01.923Z
+modified: 2021-01-08T17:14:34.841Z
 ---
 
 # thread-web-animation

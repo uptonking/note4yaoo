@@ -1,8 +1,8 @@
 ---
 title: job-coding-repeat-everytime
 tags: [coding, job, repeat]
-created: '2021-10-04T14:16:22.069Z'
-modified: '2021-10-04T14:43:10.710Z'
+created: 2021-10-04T14:16:22.069Z
+modified: 2021-10-04T14:43:10.710Z
 ---
 
 # job-coding-repeat-everytime

@@ -1,8 +1,8 @@
 ---
 title: thread-dev-state-management
 tags: [dev, state, thread]
-created: '2021-02-28T07:28:44.040Z'
-modified: '2021-02-28T07:29:07.622Z'
+created: 2021-02-28T07:28:44.040Z
+modified: 2021-02-28T07:29:07.622Z
 ---
 
 # thread-dev-state-management

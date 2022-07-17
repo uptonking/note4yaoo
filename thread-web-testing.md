@@ -1,8 +1,8 @@
 ---
 title: thread-web-testing-debug
 tags: [debug, testing, thread, web]
-created: '2021-08-28T11:48:45.381Z'
-modified: '2021-08-28T11:49:05.730Z'
+created: 2021-08-28T11:48:45.381Z
+modified: 2021-08-28T11:49:05.730Z
 ---
 
 # thread-web-testing-debug

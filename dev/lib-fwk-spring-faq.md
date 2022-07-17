@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-spring-faq
 tags: [faq, framework, spring]
-created: '2021-09-18T13:13:46.487Z'
-modified: '2021-09-18T13:15:34.236Z'
+created: 2021-09-18T13:13:46.487Z
+modified: 2021-09-18T13:15:34.236Z
 ---
 
 # lib-fwk-spring-faq

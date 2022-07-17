@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-exploring
 tags: [css, exploring, lib, toc]
-created: '2020-07-19T12:11:19.361Z'
-modified: '2020-10-22T13:09:57.085Z'
+created: 2020-07-19T12:11:19.361Z
+modified: 2020-10-22T13:09:57.085Z
 ---
 
 # toc-lib-css-exploring

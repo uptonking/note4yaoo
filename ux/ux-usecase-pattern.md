@@ -1,8 +1,8 @@
 ---
 title: ux-usecase-pattern
 tags: [pattern, pm, usecase, ux]
-created: '2019-11-18T12:37:41.447Z'
-modified: '2021-01-01T20:10:11.503Z'
+created: 2019-11-18T12:37:41.447Z
+modified: 2021-01-01T20:10:11.503Z
 ---
 
 # ux-usecase-pattern

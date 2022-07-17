@@ -1,8 +1,8 @@
 ---
 title: tool-office-excel-xp
 tags: [excel, office, table, tool, xp]
-created: '2019-08-01T16:03:46.394Z'
-modified: '2020-12-29T17:52:42.667Z'
+created: 2019-08-01T16:03:46.394Z
+modified: 2020-12-29T17:52:42.667Z
 ---
 
 # tool-office-excel-xp

@@ -1,8 +1,8 @@
 ---
 title: toc-repos-lang-jvm
 tags: [java, repos, toc]
-created: '2020-09-28T08:59:32.864Z'
-modified: '2021-05-14T15:05:02.456Z'
+created: 2020-09-28T08:59:32.864Z
+modified: 2021-05-14T15:05:02.456Z
 ---
 
 # toc-repos-lang-jvm

@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-jupyter-dev
 tags: [jupyter, lib, notebook]
-created: '2021-05-17T11:52:36.756Z'
-modified: '2021-05-17T11:53:13.568Z'
+created: 2021-05-17T11:52:36.756Z
+modified: 2021-05-17T11:53:13.568Z
 ---
 
 # lib-notebook-jupyter-dev

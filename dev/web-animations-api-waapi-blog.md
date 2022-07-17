@@ -1,8 +1,8 @@
 ---
 title: web-animations-api-waapi-blog
 tags: [animation, waapi, web]
-created: '2020-08-03T06:38:58.197Z'
-modified: '2021-09-22T04:14:11.396Z'
+created: 2020-08-03T06:38:58.197Z
+modified: 2021-09-22T04:14:11.396Z
 ---
 
 # web-animations-api-waapi-blog

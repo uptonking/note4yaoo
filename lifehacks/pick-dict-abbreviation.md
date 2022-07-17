@@ -1,8 +1,8 @@
 ---
 title: pick-dict-abbreviation
 tags: [dict]
-created: '2020-08-06T05:17:40.848Z'
-modified: '2020-08-06T05:29:22.922Z'
+created: 2020-08-06T05:17:40.848Z
+modified: 2020-08-06T05:29:22.922Z
 ---
 
 # pick-dict-abbreviation

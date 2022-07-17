@@ -1,8 +1,8 @@
 ---
 title: toc-work-interview-catalog
 tags: [catalog, interview, work]
-created: '2020-10-05T20:21:35.706Z'
-modified: '2020-10-22T13:53:16.204Z'
+created: 2020-10-05T20:21:35.706Z
+modified: 2020-10-22T13:53:16.204Z
 ---
 
 # toc-work-interview-catalog

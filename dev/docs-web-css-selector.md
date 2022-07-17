@@ -1,8 +1,8 @@
 ---
 title: docs-web-css-selector
 tags: [css, docs, web]
-created: '2020-07-25T12:20:19.299Z'
-modified: '2020-07-25T12:20:37.613Z'
+created: 2020-07-25T12:20:19.299Z
+modified: 2020-07-25T12:20:37.613Z
 ---
 
 # docs-web-css-selector

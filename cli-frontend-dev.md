@@ -1,8 +1,8 @@
 ---
 title: cli-frontend-dev
 tags: [cli, frontend]
-created: '2020-06-19T04:40:23.543Z'
-modified: '2021-01-01T22:14:19.469Z'
+created: 2020-06-19T04:40:23.543Z
+modified: 2021-01-01T22:14:19.469Z
 ---
 
 # cli-frontend-dev

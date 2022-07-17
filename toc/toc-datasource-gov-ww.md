@@ -1,8 +1,8 @@
 ---
 title: toc-datasource-gov-ww
 tags: [datasource, gov, toc, ww]
-created: '2021-01-01T15:57:12.487Z'
-modified: '2021-01-01T15:57:54.768Z'
+created: 2021-01-01T15:57:12.487Z
+modified: 2021-01-01T15:57:54.768Z
 ---
 
 # toc-datasource-gov-ww

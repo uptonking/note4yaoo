@@ -1,8 +1,8 @@
 ---
 title: lib-collab-crdt-community
 tags: [collaboration, community, crdt]
-created: '2022-04-05T13:25:19.939Z'
-modified: '2022-04-05T13:25:40.892Z'
+created: 2022-04-05T13:25:19.939Z
+modified: 2022-04-05T13:25:40.892Z
 ---
 
 # lib-collab-crdt-community

@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-ts-stars
 tags: [js, lang, thread, typescript]
-created: '2021-06-22T11:54:15.957Z'
-modified: '2021-06-22T11:54:44.506Z'
+created: 2021-06-22T11:54:15.957Z
+modified: 2021-06-22T11:54:44.506Z
 ---
 
 # thread-lang-js-ts-stars

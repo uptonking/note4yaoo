@@ -1,8 +1,8 @@
 ---
 title: pm-noter-community
 tags: [community, note-taking, pm]
-created: '2021-06-30T11:10:31.908Z'
-modified: '2021-06-30T11:10:52.271Z'
+created: 2021-06-30T11:10:31.908Z
+modified: 2021-06-30T11:10:52.271Z
 ---
 
 # pm-noter-community

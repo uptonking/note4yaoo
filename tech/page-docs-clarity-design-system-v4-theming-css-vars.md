@@ -1,8 +1,8 @@
 ---
 title: page-docs-clarity-design-system-v4-theming-css-vars
 tags: [copied, design-system, docs, theming]
-created: '2019-12-12T13:39:25.692Z'
-modified: '2021-01-19T10:58:31.310Z'
+created: 2019-12-12T13:39:25.692Z
+modified: 2021-01-19T10:58:31.310Z
 toc: true
 ---
 

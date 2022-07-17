@@ -1,8 +1,8 @@
 ---
 title: tool-app-vscode-xp
 tags: [app, ide, tool, vscode, xp]
-created: '2020-08-30T13:08:19.102Z'
-modified: '2020-12-29T17:46:00.207Z'
+created: 2020-08-30T13:08:19.102Z
+modified: 2020-12-29T17:46:00.207Z
 ---
 
 # tool-app-vscode-xp

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-stars
 tags: [design-system]
-created: '2020-10-24T18:21:09.519Z'
-modified: '2021-01-12T18:48:52.713Z'
+created: 2020-10-24T18:21:09.519Z
+modified: 2021-01-12T18:48:52.713Z
 ---
 
 # toc-lib-comp-design-stars

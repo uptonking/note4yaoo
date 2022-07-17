@@ -1,8 +1,8 @@
 ---
 title: lib-viz-d3-latest-changelog
 tags: [changelog, d3, lib, viz]
-created: '2021-05-18T18:25:19.917Z'
-modified: '2021-05-18T18:25:41.202Z'
+created: 2021-05-18T18:25:19.917Z
+modified: 2021-05-18T18:25:41.202Z
 ---
 
 # lib-viz-d3-latest-changelog

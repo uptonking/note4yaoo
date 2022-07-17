@@ -1,8 +1,8 @@
 ---
 title: toc-db-sqlite-examples
 tags: [examples, sqlite, toc]
-created: '2022-06-03T22:05:28.840Z'
-modified: '2022-06-03T22:07:49.519Z'
+created: 2022-06-03T22:05:28.840Z
+modified: 2022-06-03T22:07:49.519Z
 ---
 
 # toc-db-sqlite-examples

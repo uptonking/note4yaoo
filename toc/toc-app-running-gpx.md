@@ -1,8 +1,8 @@
 ---
 title: toc-app-running-gpx
 tags: [app, gpx, running, toc]
-created: '2022-02-23T18:57:58.521Z'
-modified: '2022-02-23T18:59:51.587Z'
+created: 2022-02-23T18:57:58.521Z
+modified: 2022-02-23T18:59:51.587Z
 ---
 
 # toc-app-running-gpx

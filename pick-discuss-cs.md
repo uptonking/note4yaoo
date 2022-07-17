@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-cs
 tags: [cs, discuss, pick]
-created: '2021-01-25T15:38:45.583Z'
-modified: '2021-04-12T16:30:53.967Z'
+created: 2021-01-25T15:38:45.583Z
+modified: 2021-04-12T16:30:53.967Z
 ---
 
 # pick-discuss-cs

@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-ts-proposal
 tags: [js, proposal, thread]
-created: '2021-09-14T06:29:14.993Z'
-modified: '2021-09-14T06:29:41.503Z'
+created: 2021-09-14T06:29:14.993Z
+modified: 2021-09-14T06:29:41.503Z
 ---
 
 # thread-lang-js-ts-proposal

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-fwk-css-vars
 tags: [css, css-vars, toc]
-created: '2021-02-09T13:39:10.507Z'
-modified: '2021-02-09T13:39:41.705Z'
+created: 2021-02-09T13:39:10.507Z
+modified: 2021-02-09T13:39:41.705Z
 ---
 
 # toc-lib-css-fwk-css-vars

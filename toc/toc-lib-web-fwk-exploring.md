@@ -1,8 +1,8 @@
 ---
 title: toc-lib-web-fwk-exploring
 tags: [exploring, framework, lib, web]
-created: '2020-11-09T09:04:03.243Z'
-modified: '2020-12-31T17:05:37.410Z'
+created: 2020-11-09T09:04:03.243Z
+modified: 2020-12-31T17:05:37.410Z
 ---
 
 # toc-lib-web-fwk-exploring

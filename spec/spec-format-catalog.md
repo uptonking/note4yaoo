@@ -1,8 +1,8 @@
 ---
 title: spec-format-catalog
 tags: [catalog, format, spec]
-created: '2019-12-02T10:25:27.789Z'
-modified: '2020-10-15T13:42:23.746Z'
+created: 2019-12-02T10:25:27.789Z
+modified: 2020-10-15T13:42:23.746Z
 ---
 
 # spec-format-catalog

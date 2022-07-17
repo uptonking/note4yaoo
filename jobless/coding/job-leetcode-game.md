@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-game
 tags: [game, job, leetcode]
-created: '2021-10-08T10:50:06.814Z'
-modified: '2021-10-08T10:50:26.290Z'
+created: 2021-10-08T10:50:06.814Z
+modified: 2021-10-08T10:50:26.290Z
 ---
 
 # job-leetcode-game

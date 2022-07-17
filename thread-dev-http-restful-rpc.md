@@ -1,8 +1,8 @@
 ---
 title: thread-dev-http-restful-rpc
 tags: [graphql, http, restful, rpc, thread]
-created: '2021-09-20T18:37:02.986Z'
-modified: '2021-09-20T18:38:00.319Z'
+created: 2021-09-20T18:37:02.986Z
+modified: 2021-09-20T18:38:00.319Z
 ---
 
 # thread-dev-http-restful-rpc

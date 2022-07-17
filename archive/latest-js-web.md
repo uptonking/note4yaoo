@@ -1,8 +1,8 @@
 ---
 title: latest-js-web
 tags: [js, latest]
-created: '2019-10-15T12:20:05.196Z'
-modified: '2020-09-26T12:52:33.493Z'
+created: 2019-10-15T12:20:05.196Z
+modified: 2020-09-26T12:52:33.493Z
 ---
 
 # latest-js-web

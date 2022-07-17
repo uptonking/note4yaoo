@@ -1,8 +1,8 @@
 ---
 title: job-algs-tree-faq
 tags: [algorithms, job, tree]
-created: '2021-09-28T05:47:32.382Z'
-modified: '2021-09-28T05:47:56.650Z'
+created: 2021-09-28T05:47:32.382Z
+modified: 2021-09-28T05:47:56.650Z
 ---
 
 # job-algs-tree-faq

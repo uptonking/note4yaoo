@@ -1,8 +1,8 @@
 ---
 title: pm-office-community-stars
 tags: [comunity, documentation, office, pm]
-created: '2021-05-13T02:38:54.706Z'
-modified: '2021-07-11T08:30:03.165Z'
+created: 2021-05-13T02:38:54.706Z
+modified: 2021-07-11T08:30:03.165Z
 ---
 
 # pm-office-community-stars

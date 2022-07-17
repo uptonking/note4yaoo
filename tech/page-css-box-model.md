@@ -1,8 +1,8 @@
 ---
 title: page-css-box-model
 tags: [box-model, css]
-created: '2020-08-20T12:55:24.017Z'
-modified: '2020-08-20T12:57:07.524Z'
+created: 2020-08-20T12:55:24.017Z
+modified: 2020-08-20T12:57:07.524Z
 ---
 
 # page-css-box-model

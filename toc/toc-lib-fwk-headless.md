@@ -1,8 +1,8 @@
 ---
 title: toc-lib-fwk-headless
 tags: [fwk, headless, toc]
-created: '2021-05-24T16:55:24.630Z'
-modified: '2021-05-24T16:55:40.481Z'
+created: 2021-05-24T16:55:24.630Z
+modified: 2021-05-24T16:55:40.481Z
 ---
 
 # toc-lib-fwk-headless

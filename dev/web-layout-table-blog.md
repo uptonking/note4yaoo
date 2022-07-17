@@ -1,8 +1,8 @@
 ---
 title: web-layout-table-blog
 tags: [layout, table, web]
-created: '2020-07-28T16:02:49.375Z'
-modified: '2020-12-21T07:46:26.570Z'
+created: 2020-07-28T16:02:49.375Z
+modified: 2020-12-21T07:46:26.570Z
 ---
 
 # web-layout-table-blog

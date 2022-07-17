@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-codebase-architecture
 tags: [adobe-spectrum, architecture, codebase]
-created: '2021-04-12T17:14:17.736Z'
-modified: '2021-04-12T18:06:57.616Z'
+created: 2021-04-12T17:14:17.736Z
+modified: 2021-04-12T18:06:57.616Z
 ---
 
 # lib-ui-spectrum-codebase-architecture

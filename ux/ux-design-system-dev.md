@@ -1,8 +1,8 @@
 ---
 title: ux-design-system-dev
 tags: [design-system, dev]
-created: '2020-12-31T14:52:30.364Z'
-modified: '2021-01-01T20:08:38.154Z'
+created: 2020-12-31T14:52:30.364Z
+modified: 2021-01-01T20:08:38.154Z
 ---
 
 # ux-design-system-dev

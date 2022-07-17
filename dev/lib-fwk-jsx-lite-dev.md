@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-jsx-lite-dev
 tags: [dev, jsx, lib, web]
-created: '2020-12-05T07:56:38.412Z'
-modified: '2021-05-13T02:47:49.633Z'
+created: 2020-12-05T07:56:38.412Z
+modified: 2021-05-13T02:47:49.633Z
 ---
 
 # lib-fwk-jsx-lite-dev

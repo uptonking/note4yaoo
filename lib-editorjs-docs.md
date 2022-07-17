@@ -1,8 +1,8 @@
 ---
 title: lib-editorjs-docs
 tags: [docs, editorjs]
-created: '2020-11-16T13:20:14.528Z'
-modified: '2020-12-08T13:06:30.259Z'
+created: 2020-11-16T13:20:14.528Z
+modified: 2020-12-08T13:06:30.259Z
 ---
 
 # lib-editorjs-docs

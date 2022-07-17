@@ -1,8 +1,8 @@
 ---
 title: lib-ux-style-dictionary-dev
 tags: [devtools, engineering, lib, style-dictionary, utils]
-created: '2021-01-02T18:05:21.074Z'
-modified: '2021-05-13T03:05:54.852Z'
+created: 2021-01-02T18:05:21.074Z
+modified: 2021-05-13T03:05:54.852Z
 ---
 
 # lib-ux-style-dictionary-dev

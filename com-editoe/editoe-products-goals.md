@@ -1,8 +1,8 @@
 ---
 title: editoe-products-goals
 tags: [editoe, products]
-created: '2021-10-23T16:31:28.538Z'
-modified: '2021-10-23T16:31:59.465Z'
+created: 2021-10-23T16:31:28.538Z
+modified: 2021-10-23T16:31:59.465Z
 ---
 
 # editoe-products-goals

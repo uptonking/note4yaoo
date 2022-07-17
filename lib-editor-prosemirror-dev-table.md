@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-dev-table
 tags: [editor, prosemirror, table]
-created: '2021-06-16T07:09:12.311Z'
-modified: '2021-06-16T07:09:26.009Z'
+created: 2021-06-16T07:09:12.311Z
+modified: 2021-06-16T07:09:26.009Z
 ---
 
 # lib-editor-prosemirror-dev-table

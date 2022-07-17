@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-examples
 tags: [d3, examples, notebook, observablehq]
-created: '2021-05-27T19:07:51.925Z'
-modified: '2021-05-27T19:08:18.170Z'
+created: 2021-05-27T19:07:51.925Z
+modified: 2021-05-27T19:08:18.170Z
 ---
 
 # lib-notebook-observablehq-examples

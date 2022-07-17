@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-dev
 tags: [observer, pattern, rxjs]
-created: '2020-12-10T10:02:32.636Z'
-modified: '2021-05-13T04:02:49.797Z'
+created: 2020-12-10T10:02:32.636Z
+modified: 2021-05-13T04:02:49.797Z
 ---
 
 # lib-pattern-rxjs-dev

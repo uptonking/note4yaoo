@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-createElement
 tags: [react, rfc, roadmap]
-created: '2020-07-16T09:54:01.538Z'
-modified: '2020-07-17T06:01:14.632Z'
+created: 2020-07-16T09:54:01.538Z
+modified: 2020-07-17T06:01:14.632Z
 ---
 
 # note-react-rfc-createElement

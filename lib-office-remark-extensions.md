@@ -1,8 +1,8 @@
 ---
 title: lib-office-remark-extensions
 tags: [extensions, remark]
-created: '2021-06-02T16:48:25.585Z'
-modified: '2021-06-02T16:49:11.370Z'
+created: 2021-06-02T16:48:25.585Z
+modified: 2021-06-02T16:49:11.370Z
 ---
 
 # lib-office-remark-extensions

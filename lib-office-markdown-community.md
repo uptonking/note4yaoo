@@ -1,8 +1,8 @@
 ---
 title: lib-office-markdown-community
 tags: [community, mdx]
-created: '2021-05-29T18:23:23.944Z'
-modified: '2021-06-02T15:26:39.741Z'
+created: 2021-05-29T18:23:23.944Z
+modified: 2021-06-02T15:26:39.741Z
 ---
 
 # lib-office-markdown-community

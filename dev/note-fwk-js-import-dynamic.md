@@ -1,8 +1,8 @@
 ---
 title: note-fwk-js-import-dynamic
 tags: [framework, js]
-created: '2021-05-24T19:53:52.503Z'
-modified: '2021-05-24T19:55:05.575Z'
+created: 2021-05-24T19:53:52.503Z
+modified: 2021-05-24T19:55:05.575Z
 ---
 
 # note-fwk-js-import-dynamic

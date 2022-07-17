@@ -1,8 +1,8 @@
 ---
 title: lib-ui-react-gui-docs
 tags: [docs, react-gui, ui]
-created: '2021-07-12T05:36:51.907Z'
-modified: '2021-07-12T05:40:20.090Z'
+created: 2021-07-12T05:36:51.907Z
+modified: 2021-07-12T05:40:20.090Z
 ---
 
 # lib-ui-react-gui-docs

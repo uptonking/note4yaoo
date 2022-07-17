@@ -1,8 +1,8 @@
 ---
 title: pm-office-wiki-knowledge-base
 tags: [knowledge-base, office, pm, wiki]
-created: '2021-07-27T11:27:02.160Z'
-modified: '2021-07-27T11:27:37.050Z'
+created: 2021-07-27T11:27:02.160Z
+modified: 2021-07-27T11:27:37.050Z
 ---
 
 # pm-office-wiki-knowledge-base

@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-ssr
 tags: [framework, ssr, thread]
-created: '2021-04-24T08:28:46.667Z'
-modified: '2021-04-24T08:29:02.272Z'
+created: 2021-04-24T08:28:46.667Z
+modified: 2021-04-24T08:29:02.272Z
 ---
 
 # thread-fwk-ssr

@@ -1,8 +1,8 @@
 ---
 title: web-css-style-guide-spec
 tags: [css, spec, style]
-created: '2020-07-18T06:25:58.384Z'
-modified: '2020-12-21T07:45:49.032Z'
+created: 2020-07-18T06:25:58.384Z
+modified: 2020-12-21T07:45:49.032Z
 ---
 
 # web-css-style-guide-spec

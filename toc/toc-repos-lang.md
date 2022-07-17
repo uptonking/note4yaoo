@@ -1,8 +1,8 @@
 ---
 title: toc-repos-lang
 tags: [lang, repos, toc]
-created: '2020-10-05T06:25:05.942Z'
-modified: '2020-11-03T06:56:19.448Z'
+created: 2020-10-05T06:25:05.942Z
+modified: 2020-11-03T06:56:19.448Z
 ---
 
 # toc-repos-lang

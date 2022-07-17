@@ -1,8 +1,8 @@
 ---
 title: toc-lib-rewrite-build-your-own
 tags: [repeat, rewrite, toc]
-created: '2020-10-11T09:40:20.215Z'
-modified: '2021-09-29T13:23:09.969Z'
+created: 2020-10-11T09:40:20.215Z
+modified: 2021-09-29T13:23:09.969Z
 ---
 
 # toc-lib-rewrite-build-your-own

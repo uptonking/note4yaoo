@@ -1,8 +1,8 @@
 ---
 title: note-react-pattern
 tags: [pattern, react]
-created: '2021-05-11T14:35:46.252Z'
-modified: '2021-05-11T14:36:13.256Z'
+created: 2021-05-11T14:35:46.252Z
+modified: 2021-05-11T14:36:13.256Z
 ---
 
 # note-react-pattern

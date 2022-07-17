@@ -1,8 +1,8 @@
 ---
 title: toc-ux-repeat
 tags: [repeat, ux]
-created: '2020-12-23T09:26:09.713Z'
-modified: '2020-12-23T09:28:22.766Z'
+created: 2020-12-23T09:26:09.713Z
+modified: 2020-12-23T09:28:22.766Z
 ---
 
 # toc-ux-repeat

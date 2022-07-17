@@ -1,8 +1,8 @@
 ---
 title: toc-repos-exploring
 tags: [exploring, repos, toc]
-created: '2020-08-20T13:52:16.885Z'
-modified: '2020-11-03T06:55:09.225Z'
+created: 2020-08-20T13:52:16.885Z
+modified: 2020-11-03T06:55:09.225Z
 ---
 
 # toc-repos-exploring

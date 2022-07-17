@@ -1,8 +1,8 @@
 ---
 title: pick-dict-seldom
 tags: [dict]
-created: '2020-08-12T05:25:14.673Z'
-modified: '2020-08-12T05:25:30.311Z'
+created: 2020-08-12T05:25:14.673Z
+modified: 2020-08-12T05:25:30.311Z
 ---
 
 # pick-dict-seldom

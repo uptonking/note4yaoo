@@ -1,8 +1,8 @@
 ---
 title: pm-office-wiki-knowledge-base-community
 tags: [community, knowledge-base, pm, wiki]
-created: '2021-07-27T16:34:27.575Z'
-modified: '2021-07-27T16:35:20.057Z'
+created: 2021-07-27T16:34:27.575Z
+modified: 2021-07-27T16:35:20.057Z
 ---
 
 # pm-office-wiki-knowledge-base-community

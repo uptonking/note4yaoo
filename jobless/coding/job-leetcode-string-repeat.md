@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-string-repeat
 tags: [leetcode, repeat, string]
-created: '2021-10-08T19:43:08.951Z'
-modified: '2021-10-08T19:43:27.831Z'
+created: 2021-10-08T19:43:08.951Z
+modified: 2021-10-08T19:43:27.831Z
 ---
 
 # job-leetcode-string-repeat

@@ -1,8 +1,8 @@
 ---
 title: lib-db-mysql-dev
 tags: [database, mysql]
-created: '2020-12-18T04:59:20.998Z'
-modified: '2020-12-18T04:59:39.602Z'
+created: 2020-12-18T04:59:20.998Z
+modified: 2020-12-18T04:59:39.602Z
 ---
 
 # lib-db-mysql-dev

@@ -1,8 +1,8 @@
 ---
 title: wiki-license-terms-of-service
 tags: [law, license]
-created: '2020-07-13T04:33:04.547Z'
-modified: '2021-09-14T18:59:03.144Z'
+created: 2020-07-13T04:33:04.547Z
+modified: 2021-09-14T18:59:03.144Z
 ---
 
 # wiki-license-terms-of-service

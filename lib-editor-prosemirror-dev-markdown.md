@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-dev-markdown
 tags: [editor, markdown, prosemirror]
-created: '2021-06-16T07:09:35.180Z'
-modified: '2021-06-16T07:09:49.289Z'
+created: 2021-06-16T07:09:35.180Z
+modified: 2021-06-16T07:09:49.289Z
 ---
 
 # lib-editor-prosemirror-dev-markdown

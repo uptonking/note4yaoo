@@ -1,8 +1,8 @@
 ---
 title: tool-app-browser-chrome-edge-firefox-safari
 tags: [browser, chrome, tool, xp]
-created: '2021-08-19T12:58:41.917Z'
-modified: '2021-08-19T13:02:28.478Z'
+created: 2021-08-19T12:58:41.917Z
+modified: 2021-08-19T13:02:28.478Z
 ---
 
 # tool-app-browser-chrome-edge-firefox-safari

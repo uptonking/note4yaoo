@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-ux-design
 tags: [design-system, discuss, ux]
-created: '2021-03-09T07:58:43.484Z'
-modified: '2021-04-12T16:30:53.968Z'
+created: 2021-03-09T07:58:43.484Z
+modified: 2021-04-12T16:30:53.968Z
 ---
 
 # pick-discuss-ux-design

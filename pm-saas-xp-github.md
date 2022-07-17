@@ -1,8 +1,8 @@
 ---
 title: pm-saas-xp-github
 tags: [devtools, github, pm, saas, xp]
-created: '2020-07-31T11:59:56.787Z'
-modified: '2021-08-02T15:19:42.036Z'
+created: 2020-07-31T11:59:56.787Z
+modified: 2021-08-02T15:19:42.036Z
 ---
 
 # pm-saas-xp-github

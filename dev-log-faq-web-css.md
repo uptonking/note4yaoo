@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-web-css
 tags: [css, dev, faq, web]
-created: '2021-08-07T17:23:42.370Z'
-modified: '2021-08-07T17:24:01.266Z'
+created: 2021-08-07T17:23:42.370Z
+modified: 2021-08-07T17:24:01.266Z
 ---
 
 # dev-log-faq-web-css

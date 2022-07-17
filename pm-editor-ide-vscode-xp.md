@@ -1,8 +1,8 @@
 ---
 title: pm-editor-ide-vscode-xp
 tags: [ide, pm, vscode, xp]
-created: '2021-06-02T17:28:01.491Z'
-modified: '2021-06-02T18:24:50.218Z'
+created: 2021-06-02T17:28:01.491Z
+modified: 2021-06-02T18:24:50.218Z
 ---
 
 # pm-editor-ide-vscode-xp

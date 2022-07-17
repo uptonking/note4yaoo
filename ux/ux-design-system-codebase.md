@@ -1,8 +1,8 @@
 ---
 title: ux-design-system-codebase
 tags: [codebase, design-system, ux]
-created: '2021-01-02T22:26:48.350Z'
-modified: '2021-01-03T17:11:03.150Z'
+created: 2021-01-02T22:26:48.350Z
+modified: 2021-01-03T17:11:03.150Z
 ---
 
 # ux-design-system-codebase

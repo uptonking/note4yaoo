@@ -1,8 +1,8 @@
 ---
 title: note-react-event
 tags: [events, react]
-created: '2021-08-13T17:53:53.973Z'
-modified: '2021-08-13T17:54:06.302Z'
+created: 2021-08-13T17:53:53.973Z
+modified: 2021-08-13T17:54:06.302Z
 ---
 
 # note-react-event

@@ -1,8 +1,8 @@
 ---
 title: thread-gis-mapbox
 tags: [gis, mapbox, mapbox-gl-js, thread]
-created: '2022-06-11T20:55:30.348Z'
-modified: '2022-06-11T20:55:55.499Z'
+created: 2022-06-11T20:55:30.348Z
+modified: 2022-06-11T20:55:55.499Z
 ---
 
 # thread-gis-mapbox

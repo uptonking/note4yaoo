@@ -1,8 +1,8 @@
 ---
 title: cli-emoji
 tags: [emoji]
-created: '2021-11-19T06:53:12.105Z'
-modified: '2021-11-19T06:53:19.649Z'
+created: 2021-11-19T06:53:12.105Z
+modified: 2021-11-19T06:53:19.649Z
 ---
 
 # cli-emoji

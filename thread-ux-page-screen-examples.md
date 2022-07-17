@@ -1,8 +1,8 @@
 ---
 title: thread-ux-page-screen-examples
 tags: [examples, landing-page, products, thread, ux]
-created: '2021-05-14T14:25:17.003Z'
-modified: '2021-05-14T14:25:57.616Z'
+created: 2021-05-14T14:25:17.003Z
+modified: 2021-05-14T14:25:57.616Z
 ---
 
 # thread-ux-page-screen-examples

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-editor-text
 tags: [lib, text-editor, toc]
-created: '2021-07-27T15:11:58.769Z'
-modified: '2021-07-27T15:12:39.959Z'
+created: 2021-07-27T15:11:58.769Z
+modified: 2021-07-27T15:12:39.959Z
 ---
 
 # toc-lib-editor-text

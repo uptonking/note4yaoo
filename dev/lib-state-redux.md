@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux
 tags: [redux, state]
-created: '2020-11-02T06:05:20.019Z'
-modified: '2021-05-13T03:14:10.096Z'
+created: 2020-11-02T06:05:20.019Z
+modified: 2021-05-13T03:14:10.096Z
 ---
 
 # lib-state-redux

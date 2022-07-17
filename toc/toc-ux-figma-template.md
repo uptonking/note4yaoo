@@ -1,8 +1,8 @@
 ---
 title: toc-ux-figma-template
 tags: [figma, toc, ux]
-created: '2021-01-08T10:48:16.590Z'
-modified: '2021-01-08T11:48:16.590Z'
+created: 2021-01-08T10:48:16.590Z
+modified: 2021-01-08T11:48:16.590Z
 ---
 
 # toc-ux-figma-template

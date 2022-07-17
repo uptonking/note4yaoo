@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlassian-community-stars
 tags: [atlaskit-editor, community]
-created: '2021-06-30T19:45:22.053Z'
-modified: '2021-06-30T19:45:44.068Z'
+created: 2021-06-30T19:45:22.053Z
+modified: 2021-06-30T19:45:44.068Z
 ---
 
 # lib-editor-atlassian-community-stars

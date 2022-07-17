@@ -1,8 +1,8 @@
 ---
 title: viz-graphics
 tags: [graphics, viz]
-created: '2020-09-25T03:52:59.024Z'
-modified: '2020-12-21T07:47:15.858Z'
+created: 2020-09-25T03:52:59.024Z
+modified: 2020-12-21T07:47:15.858Z
 ---
 
 # viz-graphics

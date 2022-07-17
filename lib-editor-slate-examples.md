@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-examples
 tags: [examples, slate, toc]
-created: '2022-05-15T18:45:14.380Z'
-modified: '2022-05-15T18:45:27.570Z'
+created: 2022-05-15T18:45:14.380Z
+modified: 2022-05-15T18:45:27.570Z
 ---
 
 # lib-editor-slate-examples

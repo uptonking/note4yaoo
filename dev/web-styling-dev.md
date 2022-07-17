@@ -1,8 +1,8 @@
 ---
 title: web-styling-dev
 tags: [css, style, styling, web]
-created: '2019-08-05T11:51:59.761Z'
-modified: '2021-07-28T20:22:26.057Z'
+created: 2019-08-05T11:51:59.761Z
+modified: 2021-07-28T20:22:26.057Z
 ---
 
 # web-styling-dev

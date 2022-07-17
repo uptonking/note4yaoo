@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-theming
 tags: [css-vars, theming, toc]
-created: '2020-10-23T17:21:21.861Z'
-modified: '2021-01-28T21:34:18.645Z'
+created: 2020-10-23T17:21:21.861Z
+modified: 2021-01-28T21:34:18.645Z
 ---
 
 # toc-lib-css-theming

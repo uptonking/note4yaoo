@@ -1,8 +1,8 @@
 ---
 title: lib-editor-milkdown-docs
 tags: [docs, editor, markdown, milkdown]
-created: '2021-07-11T15:07:37.949Z'
-modified: '2021-07-11T15:08:34.195Z'
+created: 2021-07-11T15:07:37.949Z
+modified: 2021-07-11T15:08:34.195Z
 ---
 
 # lib-editor-milkdown-docs

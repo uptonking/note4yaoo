@@ -1,8 +1,8 @@
 ---
 title: tech-cs-computer-organization
 tags: [cs]
-created: '2019-10-29T09:33:49.744Z'
-modified: '2020-10-22T14:01:26.404Z'
+created: 2019-10-29T09:33:49.744Z
+modified: 2020-10-22T14:01:26.404Z
 ---
 
 # tech-cs-computer-organization

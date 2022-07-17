@@ -1,8 +1,8 @@
 ---
 title: page-ux-fonts-design
 tags: [fonts, ux]
-created: '2020-07-19T02:13:28.320Z'
-modified: '2021-01-19T10:53:56.122Z'
+created: 2020-07-19T02:13:28.320Z
+modified: 2021-01-19T10:53:56.122Z
 ---
 
 # page-ux-fonts-design

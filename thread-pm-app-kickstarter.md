@@ -1,8 +1,8 @@
 ---
 title: thread-pm-app-kickstarter
 tags: [app, ideas, kickstarter, pm, thread]
-created: '2021-01-17T17:13:54.678Z'
-modified: '2021-10-29T15:02:28.882Z'
+created: 2021-01-17T17:13:54.678Z
+modified: 2021-10-29T15:02:28.882Z
 ---
 
 # thread-pm-app-kickstarter

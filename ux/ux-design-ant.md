@@ -1,8 +1,8 @@
 ---
 title: ux-design-ant
 tags: [antd, design, ux]
-created: '2020-10-03T15:30:32.206Z'
-modified: '2021-01-01T20:07:55.350Z'
+created: 2020-10-03T15:30:32.206Z
+modified: 2021-01-01T20:07:55.350Z
 ---
 
 # ux-design-ant

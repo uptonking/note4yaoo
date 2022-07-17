@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs-react
 tags: [ag-grid, docs]
-created: '2020-08-24T09:15:06.175Z'
-modified: '2021-05-13T02:43:00.595Z'
+created: 2020-08-24T09:15:06.175Z
+modified: 2021-05-13T02:43:00.595Z
 ---
 
 # lib-list-ag-grid-docs-react

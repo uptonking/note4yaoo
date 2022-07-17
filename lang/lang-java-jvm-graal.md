@@ -1,8 +1,8 @@
 ---
 title: lang-java-jvm-graal
 tags: [graal, jvm, lang]
-created: '2021-01-15T04:08:52.762Z'
-modified: '2021-01-15T04:09:25.198Z'
+created: 2021-01-15T04:08:52.762Z
+modified: 2021-01-15T04:09:25.198Z
 ---
 
 # lang-java-jvm-graal

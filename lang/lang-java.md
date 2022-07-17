@@ -1,8 +1,8 @@
 ---
 title: lang-java
 tags: [java, lang]
-created: '2019-06-09T05:35:12.366Z'
-modified: '2020-07-14T09:26:35.281Z'
+created: 2019-06-09T05:35:12.366Z
+modified: 2020-07-14T09:26:35.281Z
 ---
 
 # lang-java

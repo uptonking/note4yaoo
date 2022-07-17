@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-search
 tags: [algorithms, coding, job, leetcode, search]
-created: '2021-10-05T09:04:20.790Z'
-modified: '2021-10-06T14:46:44.158Z'
+created: 2021-10-05T09:04:20.790Z
+modified: 2021-10-06T14:46:44.158Z
 ---
 
 # job-leetcode-search

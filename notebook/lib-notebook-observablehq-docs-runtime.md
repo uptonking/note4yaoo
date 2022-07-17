@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-docs-runtime
 tags: [docs, notebook, observablehq, runtime]
-created: '2021-05-14T14:44:25.385Z'
-modified: '2021-05-22T18:47:39.353Z'
+created: 2021-05-14T14:44:25.385Z
+modified: 2021-05-22T18:47:39.353Z
 ---
 
 # lib-notebook-observablehq-docs-runtime

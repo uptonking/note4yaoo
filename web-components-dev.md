@@ -1,8 +1,8 @@
 ---
 title: web-components-dev
 tags: [web-components]
-created: '2020-11-10T03:16:01.377Z'
-modified: '2021-01-01T18:24:23.850Z'
+created: 2020-11-10T03:16:01.377Z
+modified: 2021-01-01T18:24:23.850Z
 ---
 
 # web-components-dev

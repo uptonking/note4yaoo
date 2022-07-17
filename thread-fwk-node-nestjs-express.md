@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-node-nestjs-express
 tags: [express, framework, nestjs, thread]
-created: '2021-04-23T18:10:04.807Z'
-modified: '2021-04-23T18:19:10.316Z'
+created: 2021-04-23T18:10:04.807Z
+modified: 2021-04-23T18:19:10.316Z
 ---
 
 # thread-fwk-node-nestjs-express

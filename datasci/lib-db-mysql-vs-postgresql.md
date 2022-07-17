@@ -1,8 +1,8 @@
 ---
 title: lib-db-mysql-vs-postgresql
 tags: [comparison, database, mysql, postgresql]
-created: '2020-12-18T13:23:08.190Z'
-modified: '2020-12-18T13:23:43.939Z'
+created: 2020-12-18T13:23:08.190Z
+modified: 2020-12-18T13:23:43.939Z
 ---
 
 # lib-db-mysql-vs-postgresql

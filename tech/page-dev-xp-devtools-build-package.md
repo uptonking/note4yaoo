@@ -1,8 +1,8 @@
 ---
 title: page-dev-xp-devtools-build-package
 tags: [dev-xp, devtools]
-created: '2021-09-14T19:35:42.893Z'
-modified: '2021-09-14T19:36:26.597Z'
+created: 2021-09-14T19:35:42.893Z
+modified: 2021-09-14T19:36:26.597Z
 ---
 
 # page-dev-xp-devtools-build-package

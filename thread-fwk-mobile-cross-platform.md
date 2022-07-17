@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-mobile-cross-platform
 tags: [framework, mobile, thread]
-created: '2021-04-30T14:17:46.235Z'
-modified: '2021-04-30T15:26:55.024Z'
+created: 2021-04-30T14:17:46.235Z
+modified: 2021-04-30T15:26:55.024Z
 ---
 
 # thread-fwk-mobile-cross-platform

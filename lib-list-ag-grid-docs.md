@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs
 tags: [ag-grid, docs, grid, list, table]
-created: '2020-07-14T13:01:37.940Z'
-modified: '2021-05-13T02:42:37.479Z'
+created: 2020-07-14T13:01:37.940Z
+modified: 2021-05-13T02:42:37.479Z
 ---
 
 # lib-list-ag-grid-docs

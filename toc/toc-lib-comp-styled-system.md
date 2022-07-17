@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-styled-system
 tags: [components, css-in-js, lib, styled-system]
-created: '2020-10-05T13:41:52.822Z'
-modified: '2020-11-13T07:31:35.437Z'
+created: 2020-10-05T13:41:52.822Z
+modified: 2020-11-13T07:31:35.437Z
 ---
 
 # toc-lib-comp-styled-system

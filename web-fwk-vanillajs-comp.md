@@ -1,8 +1,8 @@
 ---
 title: web-fwk-vanillajs-comp
 tags: [components, vanillajs, web]
-created: '2020-11-06T13:55:26.840Z'
-modified: '2021-07-28T19:21:21.756Z'
+created: 2020-11-06T13:55:26.840Z
+modified: 2021-07-28T19:21:21.756Z
 ---
 
 # web-fwk-vanillajs-comp

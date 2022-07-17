@@ -1,8 +1,8 @@
 ---
 title: note-office-dev
 tags: [dev, office]
-created: '2019-07-08T04:55:46.940Z'
-modified: '2020-07-14T10:32:07.321Z'
+created: 2019-07-08T04:55:46.940Z
+modified: 2020-07-14T10:32:07.321Z
 ---
 
 # note-office-dev

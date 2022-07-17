@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-dev-compiler
 tags: [compiler, observablehq]
-created: '2021-05-14T14:47:46.096Z'
-modified: '2021-05-14T14:48:34.412Z'
+created: 2021-05-14T14:47:46.096Z
+modified: 2021-05-14T14:48:34.412Z
 ---
 
 # lib-notebook-observablehq-dev-compiler

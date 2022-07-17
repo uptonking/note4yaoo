@@ -1,8 +1,8 @@
 ---
 title: docs-web-cssom
 tags: [cssom, docs, web]
-created: '2020-08-08T17:04:11.201Z'
-modified: '2020-08-08T17:06:31.817Z'
+created: 2020-08-08T17:04:11.201Z
+modified: 2020-08-08T17:06:31.817Z
 ---
 
 # docs-web-cssom

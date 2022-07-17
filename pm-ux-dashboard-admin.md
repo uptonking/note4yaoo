@@ -1,8 +1,8 @@
 ---
 title: pm-ux-dashboard-admin
 tags: [antd, dashboard, pm, ux]
-created: '2021-07-27T09:07:57.334Z'
-modified: '2021-07-27T09:09:48.459Z'
+created: 2021-07-27T09:07:57.334Z
+modified: 2021-07-27T09:09:48.459Z
 ---
 
 # pm-ux-dashboard-admin

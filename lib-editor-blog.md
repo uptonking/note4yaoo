@@ -1,8 +1,8 @@
 ---
 title: lib-editor-blog
 tags: [blog, editor]
-created: '2021-05-13T04:44:23.155Z'
-modified: '2021-05-13T04:44:39.320Z'
+created: 2021-05-13T04:44:23.155Z
+modified: 2021-05-13T04:44:39.320Z
 ---
 
 # lib-editor-blog

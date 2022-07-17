@@ -1,8 +1,8 @@
 ---
 title: pm-notable-xp
 tags: [notable, note-taking, pm, xp]
-created: '2020-05-10T07:13:28.652Z'
-modified: '2021-06-02T18:24:28.052Z'
+created: 2020-05-10T07:13:28.652Z
+modified: 2021-06-02T18:24:28.052Z
 ---
 
 # pm-notable-xp

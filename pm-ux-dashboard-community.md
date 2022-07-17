@@ -1,8 +1,8 @@
 ---
 title: pm-ux-dashboard-community
 tags: [community, dashboard, pm]
-created: '2020-08-09T08:43:31.229Z'
-modified: '2021-08-03T16:25:16.596Z'
+created: 2020-08-09T08:43:31.229Z
+modified: 2021-08-03T16:25:16.596Z
 ---
 
 # pm-ux-dashboard-community

@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux-community-stars
 tags: [community, redux, state]
-created: '2021-06-09T01:08:31.499Z'
-modified: '2021-06-09T01:09:55.241Z'
+created: 2021-06-09T01:08:31.499Z
+modified: 2021-06-09T01:09:55.241Z
 ---
 
 # lib-state-redux-community-stars

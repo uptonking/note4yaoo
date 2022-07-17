@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native-community
 tags: [community, cross-platform, react-native]
-created: '2021-09-10T14:15:11.809Z'
-modified: '2021-09-10T14:15:55.903Z'
+created: 2021-09-10T14:15:11.809Z
+modified: 2021-09-10T14:15:55.903Z
 ---
 
 # lib-xplat-react-native-community

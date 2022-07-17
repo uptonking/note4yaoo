@@ -1,8 +1,8 @@
 ---
 title: dev-ing
 tags: [dev]
-created: '2022-05-24T17:52:58.048Z'
-modified: '2022-05-24T17:53:08.400Z'
+created: 2022-05-24T17:52:58.048Z
+modified: 2022-05-24T17:53:08.400Z
 ---
 
 # dev-ing

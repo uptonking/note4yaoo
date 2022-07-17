@@ -1,8 +1,8 @@
 ---
 title: job-com-editoe
 tags: [editoe, job]
-created: '2021-10-20T16:07:04.975Z'
-modified: '2021-10-20T16:09:13.280Z'
+created: 2021-10-20T16:07:04.975Z
+modified: 2021-10-20T16:09:13.280Z
 ---
 
 # job-com-editoe

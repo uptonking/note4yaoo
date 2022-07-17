@@ -1,8 +1,8 @@
 ---
 title: job-faq-iq
 tags: [faq, iq, job]
-created: '2021-09-24T18:39:34.640Z'
-modified: '2021-09-24T18:39:48.250Z'
+created: 2021-09-24T18:39:34.640Z
+modified: 2021-09-24T18:39:48.250Z
 ---
 
 # job-faq-iq

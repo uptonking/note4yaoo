@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-blog
 tags: [ag-grid, blog]
-created: '2020-07-30T13:50:07.752Z'
-modified: '2021-05-13T02:42:08.630Z'
+created: 2020-07-30T13:50:07.752Z
+modified: 2021-05-13T02:42:08.630Z
 ---
 
 # lib-list-ag-grid-blog

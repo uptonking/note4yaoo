@@ -1,8 +1,8 @@
 ---
 title: toc-lib-clone-toys-alternatives
 tags: [alternatives, lib, rewrite, toc]
-created: '2021-07-21T10:03:20.513Z'
-modified: '2021-07-21T10:03:38.002Z'
+created: 2021-07-21T10:03:20.513Z
+modified: 2021-07-21T10:03:38.002Z
 ---
 
 # toc-lib-clone-toys-alternatives

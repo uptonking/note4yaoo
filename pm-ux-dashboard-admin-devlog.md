@@ -1,8 +1,8 @@
 ---
 title: pm-ux-dashboard-admin-devlog
 tags: [dashboard, devlog, pm]
-created: '2021-08-08T08:38:41.856Z'
-modified: '2021-08-08T08:39:17.347Z'
+created: 2021-08-08T08:38:41.856Z
+modified: 2021-08-08T08:39:17.347Z
 ---
 
 # pm-ux-dashboard-admin-devlog

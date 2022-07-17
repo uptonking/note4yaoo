@@ -1,8 +1,8 @@
 ---
 title: lang-java-jvm-node
 tags: [java, lang, node]
-created: '2021-01-15T06:31:03.928Z'
-modified: '2021-01-15T06:31:22.258Z'
+created: 2021-01-15T06:31:03.928Z
+modified: 2021-01-15T06:31:22.258Z
 ---
 
 # lang-java-jvm-node

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-web-wasm
 tags: [toc, wasm, web, webassembly]
-created: '2020-12-31T15:18:36.947Z'
-modified: '2020-12-31T15:19:37.542Z'
+created: 2020-12-31T15:18:36.947Z
+modified: 2020-12-31T15:19:37.542Z
 ---
 
 # toc-lib-web-wasm

@@ -1,8 +1,8 @@
 ---
 title: lib-list-handsontable-docs
 tags: [changelog, docs, list, table]
-created: '2019-08-01T16:03:46.386Z'
-modified: '2021-05-13T02:46:20.869Z'
+created: 2019-08-01T16:03:46.386Z
+modified: 2021-05-13T02:46:20.869Z
 ---
 
 # lib-list-handsontable-docs

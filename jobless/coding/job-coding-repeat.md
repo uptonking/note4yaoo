@@ -1,8 +1,8 @@
 ---
 title: job-coding-repeat
 tags: [coding, job, repeat]
-created: '2021-10-04T14:47:10.364Z'
-modified: '2021-10-04T14:47:29.358Z'
+created: 2021-10-04T14:47:10.364Z
+modified: 2021-10-04T14:47:29.358Z
 ---
 
 # job-coding-repeat

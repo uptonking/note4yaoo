@@ -1,8 +1,8 @@
 ---
 title: web-css-triggers
 tags: [css, web]
-created: '2020-06-28T16:00:42.392Z'
-modified: '2020-12-21T07:45:52.317Z'
+created: 2020-06-28T16:00:42.392Z
+modified: 2020-12-21T07:45:52.317Z
 ---
 
 # web-css-triggers

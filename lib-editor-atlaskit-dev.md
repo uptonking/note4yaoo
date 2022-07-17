@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlaskit-dev
 tags: [atlaskit-editor, editor]
-created: '2021-06-30T19:29:35.962Z'
-modified: '2021-07-14T15:36:09.702Z'
+created: 2021-06-30T19:29:35.962Z
+modified: 2021-07-14T15:36:09.702Z
 ---
 
 # lib-editor-atlaskit-dev

@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-lab
 tags: [react, rfc]
-created: '2021-06-22T08:26:52.266Z'
-modified: '2021-06-22T08:27:11.511Z'
+created: 2021-06-22T08:26:52.266Z
+modified: 2021-06-22T08:27:11.511Z
 ---
 
 # note-react-rfc-lab

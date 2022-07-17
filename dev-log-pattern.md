@@ -1,8 +1,8 @@
 ---
 title: dev-log-pattern
 tags: [cs, dev, log, pattern]
-created: '2021-01-01T20:38:51.480Z'
-modified: '2021-03-29T19:16:46.931Z'
+created: 2021-01-01T20:38:51.480Z
+modified: 2021-03-29T19:16:46.931Z
 ---
 
 # dev-log-pattern

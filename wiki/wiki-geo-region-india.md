@@ -1,8 +1,8 @@
 ---
 title: wiki-geo-region-india
 tags: [geo, india, ww]
-created: '2020-11-21T15:05:54.669Z'
-modified: '2020-12-08T14:35:34.704Z'
+created: 2020-11-21T15:05:54.669Z
+modified: 2020-12-08T14:35:34.704Z
 ---
 
 # wiki-geo-region-india

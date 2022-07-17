@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-observer-callbag
 tags: [callbag, observer, pattern]
-created: '2020-12-15T09:40:19.722Z'
-modified: '2021-05-13T04:20:16.734Z'
+created: 2020-12-15T09:40:19.722Z
+modified: 2021-05-13T04:20:16.734Z
 ---
 
 # lib-pattern-observer-callbag

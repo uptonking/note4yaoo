@@ -1,8 +1,8 @@
 ---
 title: toc-lib-editor-text-code-prosemirror-codemirror
 tags: [code-editor, codemirror, prosemirror, text-editor, toc]
-created: '2021-05-14T10:28:05.856Z'
-modified: '2021-07-08T12:37:23.562Z'
+created: 2021-05-14T10:28:05.856Z
+modified: 2021-07-08T12:37:23.562Z
 ---
 
 # toc-lib-editor-text-code-prosemirror-codemirror

@@ -1,8 +1,8 @@
 ---
 title: thread-data-analysis-cases-examples
 tags: [data-analysis, examples, thread]
-created: '2022-05-02T19:11:16.362Z'
-modified: '2022-05-02T19:12:06.564Z'
+created: 2022-05-02T19:11:16.362Z
+modified: 2022-05-02T19:12:06.564Z
 ---
 
 # thread-data-analysis-cases-examples

@@ -1,8 +1,8 @@
 ---
 title: note-react-preact-latest-roadmap
 tags: [preact, react, roadmap]
-created: '2021-06-20T13:23:52.853Z'
-modified: '2021-06-20T13:24:35.295Z'
+created: 2021-06-20T13:23:52.853Z
+modified: 2021-06-20T13:24:35.295Z
 ---
 
 # note-react-preact-latest-roadmap

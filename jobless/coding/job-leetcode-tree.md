@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-tree
 tags: [algorithms, coding, job, leetcode, tree]
-created: '2021-10-05T09:02:06.952Z'
-modified: '2021-10-06T14:54:23.456Z'
+created: 2021-10-05T09:02:06.952Z
+modified: 2021-10-06T14:54:23.456Z
 ---
 
 # job-leetcode-tree

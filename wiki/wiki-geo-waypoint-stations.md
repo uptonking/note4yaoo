@@ -1,8 +1,8 @@
 ---
 title: wiki-geo-waypoint-stations
 tags: [geo, waypoint, wiki]
-created: '2019-09-25T04:04:18.266Z'
-modified: '2021-01-04T16:25:08.694Z'
+created: 2019-09-25T04:04:18.266Z
+modified: 2021-01-04T16:25:08.694Z
 ---
 
 # wiki-geo-waypoint-stations

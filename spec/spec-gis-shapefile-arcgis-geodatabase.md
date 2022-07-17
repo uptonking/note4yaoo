@@ -1,8 +1,8 @@
 ---
 title: spec-gis-shapefile-arcgis-geodatabase
 tags: [arcgis, geodatabase, gis, shapefile, spec]
-created: '2021-09-30T07:49:11.214Z'
-modified: '2021-09-30T08:07:04.860Z'
+created: 2021-09-30T07:49:11.214Z
+modified: 2021-09-30T08:07:04.860Z
 ---
 
 # spec-gis-shapefile-arcgis-geodatabase

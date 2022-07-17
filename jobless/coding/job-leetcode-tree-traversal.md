@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-tree-traversal
 tags: [coding, job, leetcode, traversal, tree]
-created: '2021-10-05T10:07:02.318Z'
-modified: '2021-10-06T14:54:33.247Z'
+created: 2021-10-05T10:07:02.318Z
+modified: 2021-10-06T14:54:33.247Z
 ---
 
 # job-leetcode-tree-traversal

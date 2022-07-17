@@ -1,8 +1,8 @@
 ---
 title: lib-collab-blog
 tags: [blog, collaboration]
-created: '2021-10-14T11:16:52.887Z'
-modified: '2022-04-05T10:10:27.212Z'
+created: 2021-10-14T11:16:52.887Z
+modified: 2022-04-05T10:10:27.212Z
 ---
 
 # lib-collab-blog

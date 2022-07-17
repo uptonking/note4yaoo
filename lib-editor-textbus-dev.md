@@ -1,8 +1,8 @@
 ---
 title: lib-editor-textbus-dev
 tags: [text-editor, textbus]
-created: '2021-10-07T14:50:16.532Z'
-modified: '2021-10-07T14:50:51.512Z'
+created: 2021-10-07T14:50:16.532Z
+modified: 2021-10-07T14:50:51.512Z
 ---
 
 # lib-editor-textbus-dev

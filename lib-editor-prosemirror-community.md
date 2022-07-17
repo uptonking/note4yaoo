@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-community
 tags: [community, editor, prosemirror]
-created: '2021-06-12T02:40:46.194Z'
-modified: '2021-06-12T02:41:33.389Z'
+created: 2021-06-12T02:40:46.194Z
+modified: 2021-06-12T02:41:33.389Z
 ---
 
 # lib-editor-prosemirror-community

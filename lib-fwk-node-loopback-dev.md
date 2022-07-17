@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-node-loopback-dev
 tags: [api, framework, lib, loopback, node, restful]
-created: '2021-07-28T19:00:29.005Z'
-modified: '2021-07-28T19:01:28.112Z'
+created: 2021-07-28T19:00:29.005Z
+modified: 2021-07-28T19:01:28.112Z
 ---
 
 # lib-fwk-node-loopback-dev

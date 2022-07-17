@@ -1,8 +1,8 @@
 ---
-tags: [hooks, react]
 title: note-react-hooks
-created: '2020-06-24T08:36:20.056Z'
-modified: '2020-06-29T13:14:27.166Z'
+tags: [hooks, react]
+created: 2020-06-24T08:36:20.056Z
+modified: 2020-06-29T13:14:27.166Z
 ---
 
 # note-react-hooks

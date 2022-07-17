@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-useMutableSource
 tags: [react, rfc]
-created: '2020-07-17T06:00:22.244Z'
-modified: '2021-01-04T17:05:20.422Z'
+created: 2020-07-17T06:00:22.244Z
+modified: 2021-01-04T17:05:20.422Z
 ---
 
 # note-react-rfc-useMutableSource

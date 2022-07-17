@@ -1,8 +1,8 @@
 ---
 title: wiki-history-cn-1636-1912-qing
 tags: [cn, date-16xx, history, 清朝]
-created: '2020-12-02T08:40:45.087Z'
-modified: '2020-12-08T14:28:39.548Z'
+created: 2020-12-02T08:40:45.087Z
+modified: 2020-12-08T14:28:39.548Z
 ---
 
 # wiki-history-cn-1636-1912-qing

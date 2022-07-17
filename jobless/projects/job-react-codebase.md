@@ -1,8 +1,8 @@
 ---
 title: job-react-codebase
 tags: [codebase, job, react]
-created: '2021-09-23T05:18:52.323Z'
-modified: '2021-10-10T09:25:07.095Z'
+created: 2021-09-23T05:18:52.323Z
+modified: 2021-10-10T09:25:07.095Z
 ---
 
 # job-react-codebase

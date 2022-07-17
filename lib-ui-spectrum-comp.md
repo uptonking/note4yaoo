@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-comp
 tags: [adobe-spectrum, components, ui]
-created: '2021-04-12T17:03:43.909Z'
-modified: '2021-04-12T18:07:04.610Z'
+created: 2021-04-12T17:03:43.909Z
+modified: 2021-04-12T18:07:04.610Z
 ---
 
 # lib-ui-spectrum-comp

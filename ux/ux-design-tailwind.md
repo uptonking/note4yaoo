@@ -1,8 +1,8 @@
 ---
 title: ux-design-tailwind
 tags: [design, ux]
-created: '2020-10-03T15:29:12.552Z'
-modified: '2021-01-03T17:11:47.916Z'
+created: 2020-10-03T15:29:12.552Z
+modified: 2021-01-03T17:11:47.916Z
 ---
 
 # ux-design-tailwind

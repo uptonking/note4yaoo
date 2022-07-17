@@ -1,8 +1,8 @@
 ---
 title: lib-office-markdown-extensions
 tags: [markdown, proposal]
-created: '2021-06-02T15:23:28.922Z'
-modified: '2021-06-02T15:26:19.890Z'
+created: 2021-06-02T15:23:28.922Z
+modified: 2021-06-02T15:26:19.890Z
 ---
 
 # lib-office-markdown-extensions

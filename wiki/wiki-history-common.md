@@ -1,8 +1,8 @@
 ---
 title: wiki-history-common
 tags: [cn, history, wiki, ww]
-created: '2019-07-17T06:19:47.946Z'
-modified: '2020-12-08T14:50:47.606Z'
+created: 2019-07-17T06:19:47.946Z
+modified: 2020-12-08T14:50:47.606Z
 ---
 
 # wiki-history-common

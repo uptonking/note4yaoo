@@ -1,8 +1,8 @@
 ---
 title: lib-office-docsify-dev
 tags: [docsify, lib, office]
-created: '2020-12-16T11:17:26.623Z'
-modified: '2020-12-16T11:18:30.262Z'
+created: 2020-12-16T11:17:26.623Z
+modified: 2020-12-16T11:18:30.262Z
 ---
 
 # lib-office-docsify-dev

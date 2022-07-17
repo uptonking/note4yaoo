@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-latest-changelog
 tags: [ag-grid, changelog]
-created: '2020-08-31T13:21:59.547Z'
-modified: '2021-05-13T02:43:31.897Z'
+created: 2020-08-31T13:21:59.547Z
+modified: 2021-05-13T02:43:31.897Z
 ---
 
 # lib-list-ag-grid-latest-changelog

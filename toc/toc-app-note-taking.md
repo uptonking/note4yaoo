@@ -1,8 +1,8 @@
 ---
 title: toc-app-note-taking
 tags: [app, note-taking]
-created: '2020-10-22T09:55:31.796Z'
-modified: '2020-10-22T10:03:50.526Z'
+created: 2020-10-22T09:55:31.796Z
+modified: 2020-10-22T10:03:50.526Z
 ---
 
 # toc-app-note-taking

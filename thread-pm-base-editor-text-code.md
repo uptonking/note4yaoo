@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-editor-text-code
 tags: [code-editor, text-editor, thread]
-created: '2021-05-23T10:31:12.011Z'
-modified: '2021-08-16T06:56:58.774Z'
+created: 2021-05-23T10:31:12.011Z
+modified: 2021-08-16T06:56:58.774Z
 ---
 
 # thread-pm-base-editor-text-code

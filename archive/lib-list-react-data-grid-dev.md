@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-data-grid-dev
 tags: [lib, react-data-grid]
-created: '2020-08-06T06:57:54.676Z'
-modified: '2021-05-13T02:51:35.505Z'
+created: 2020-08-06T06:57:54.676Z
+modified: 2021-05-13T02:51:35.505Z
 ---
 
 # lib-list-react-data-grid-dev

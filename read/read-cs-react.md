@@ -1,8 +1,8 @@
 ---
 title: read-cs-react
 tags: [cs, react, read]
-created: '2021-09-22T13:14:22.482Z'
-modified: '2021-09-22T13:14:36.958Z'
+created: 2021-09-22T13:14:22.482Z
+modified: 2021-09-22T13:14:36.958Z
 ---
 
 # read-cs-react

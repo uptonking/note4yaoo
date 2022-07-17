@@ -1,8 +1,8 @@
 ---
 title: toc-app-serverless-baas-faas-firebase-free
 tags: [baas, faas, firebase, free, serverless]
-created: '2022-02-26T15:46:39.316Z'
-modified: '2022-02-26T19:26:04.762Z'
+created: 2022-02-26T15:46:39.316Z
+modified: 2022-02-26T19:26:04.762Z
 ---
 
 # toc-app-serverless-baas-faas-firebase-free

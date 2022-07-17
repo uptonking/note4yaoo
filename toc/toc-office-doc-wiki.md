@@ -1,8 +1,8 @@
 ---
 title: toc-office-doc-wiki
 tags: [documentation, office, toc, wiki]
-created: '2021-07-23T08:38:26.538Z'
-modified: '2021-07-23T08:38:53.805Z'
+created: 2021-07-23T08:38:26.538Z
+modified: 2021-07-23T08:38:53.805Z
 ---
 
 # toc-office-doc-wiki

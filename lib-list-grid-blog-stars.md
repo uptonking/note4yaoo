@@ -1,8 +1,8 @@
 ---
 title: lib-list-grid-blog-stars
 tags: [blog, grid, list]
-created: '2022-06-12T21:57:03.315Z'
-modified: '2022-06-12T21:57:16.186Z'
+created: 2022-06-12T21:57:03.315Z
+modified: 2022-06-12T21:57:16.186Z
 ---
 
 # lib-list-grid-blog-stars

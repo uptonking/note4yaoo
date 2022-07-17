@@ -1,8 +1,8 @@
 ---
 title: web-layout-flexbox-dev
 tags: [flexbox, layout]
-created: '2020-08-17T13:31:05.254Z'
-modified: '2020-12-21T07:46:20.408Z'
+created: 2020-08-17T13:31:05.254Z
+modified: 2020-12-21T07:46:20.408Z
 ---
 
 # web-layout-flexbox-dev

@@ -1,8 +1,8 @@
 ---
 title: toc-office-markdown
 tags: [doc, markdown, toc]
-created: '2020-10-05T09:49:50.474Z'
-modified: '2021-01-04T17:26:25.032Z'
+created: 2020-10-05T09:49:50.474Z
+modified: 2021-01-04T17:26:25.032Z
 ---
 
 # toc-office-markdown

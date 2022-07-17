@@ -1,8 +1,8 @@
 ---
 title: note-react-alternatives-rewrite-blog
 tags: [alternatives, blog, react, rewrite]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-09-20T20:13:21.764Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-09-20T20:13:21.764Z
 ---
 
 # note-react-alternatives-rewrite-blog

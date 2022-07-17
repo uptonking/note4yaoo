@@ -1,8 +1,8 @@
 ---
 title: toc-lib-pattern-rxjs
 tags: [pattern, rxjs, toc]
-created: '2020-12-13T14:35:15.196Z'
-modified: '2020-12-13T14:36:15.618Z'
+created: 2020-12-13T14:35:15.196Z
+modified: 2020-12-13T14:36:15.618Z
 ---
 
 # toc-lib-pattern-rxjs

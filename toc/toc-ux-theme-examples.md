@@ -1,8 +1,8 @@
 ---
 title: toc-ux-theme-examples
 tags: [examples, theme, toc]
-created: '2020-09-25T09:48:06.559Z'
-modified: '2020-12-08T14:24:16.195Z'
+created: 2020-09-25T09:48:06.559Z
+modified: 2020-12-08T14:24:16.195Z
 ---
 
 # toc-ux-theme-examples

@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-community
 tags: [cross-platform]
-created: '2021-05-13T07:45:52.261Z'
-modified: '2021-05-13T07:47:11.964Z'
+created: 2021-05-13T07:45:52.261Z
+modified: 2021-05-13T07:47:11.964Z
 ---
 
 # lib-xplat-community

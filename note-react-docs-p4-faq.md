@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p4-faq
 tags: [docs, faq, react]
-created: '2020-06-23T07:27:08.496Z'
-modified: '2021-05-13T03:46:07.562Z'
+created: 2020-06-23T07:27:08.496Z
+modified: 2021-05-13T03:46:07.562Z
 ---
 
 # note-react-docs-p4-faq

@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux-rewrite
 tags: [react, redux, rewrite]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-05-13T03:44:33.382Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-05-13T03:44:33.382Z
 ---
 
 # lib-state-redux-rewrite

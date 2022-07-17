@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-docs-install
 tags: [ckeditor, docs]
-created: '2021-10-29T16:07:47.299Z'
-modified: '2021-10-29T16:09:06.481Z'
+created: 2021-10-29T16:07:47.299Z
+modified: 2021-10-29T16:09:06.481Z
 ---
 
 # lib-editor-ckeditor5-docs-install

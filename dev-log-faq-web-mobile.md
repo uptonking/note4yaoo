@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-web-mobile
 tags: [faq, mobile, web]
-created: '2021-08-25T12:30:18.405Z'
-modified: '2021-08-25T12:34:00.049Z'
+created: 2021-08-25T12:30:18.405Z
+modified: 2021-08-25T12:34:00.049Z
 ---
 
 # dev-log-faq-web-mobile

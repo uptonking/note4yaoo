@@ -1,8 +1,8 @@
 ---
-tags: [react, typescript]
 title: note-react-typescript
-created: '2020-06-24T08:39:45.804Z'
-modified: '2020-06-24T08:40:39.069Z'
+tags: [react, typescript]
+created: 2020-06-24T08:39:45.804Z
+modified: 2020-06-24T08:40:39.069Z
 ---
 
 # note-react-typescript

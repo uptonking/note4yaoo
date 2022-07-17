@@ -1,8 +1,8 @@
 ---
 title: thread-react-dev
 tags: [react, thread]
-created: '2020-12-25T15:22:27.224Z'
-modified: '2021-01-06T14:40:11.360Z'
+created: 2020-12-25T15:22:27.224Z
+modified: 2021-01-06T14:40:11.360Z
 ---
 
 # thread-react-dev

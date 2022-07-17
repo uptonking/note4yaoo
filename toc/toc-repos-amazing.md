@@ -1,8 +1,8 @@
 ---
 title: toc-repos-amazing
 tags: [amazing, repos, toc]
-created: '2020-09-22T13:18:19.426Z'
-modified: '2020-11-03T06:54:59.051Z'
+created: 2020-09-22T13:18:19.426Z
+modified: 2020-11-03T06:54:59.051Z
 ---
 
 # toc-repos-amazing

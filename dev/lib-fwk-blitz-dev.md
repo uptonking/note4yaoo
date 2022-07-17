@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-blitz-dev
 tags: [blitz, fwk, lib, nextjs, node, react-query]
-created: '2021-07-28T18:58:44.922Z'
-modified: '2021-07-28T19:00:16.604Z'
+created: 2021-07-28T18:58:44.922Z
+modified: 2021-07-28T19:00:16.604Z
 ---
 
 # lib-fwk-blitz-dev

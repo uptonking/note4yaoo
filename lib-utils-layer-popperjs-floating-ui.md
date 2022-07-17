@@ -1,8 +1,8 @@
 ---
 title: lib-utils-layer-popperjs-floating-ui
 tags: [floating-ui, layer, lib, popperjs, utils]
-created: '2022-05-22T17:31:46.307Z'
-modified: '2022-06-04T00:44:40.955Z'
+created: 2022-05-22T17:31:46.307Z
+modified: 2022-06-04T00:44:40.955Z
 ---
 
 # lib-utils-layer-popperjs-floating-ui

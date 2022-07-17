@@ -1,8 +1,8 @@
 ---
 title: spec-gis-geojson
 tags: [format, gis]
-created: '2019-12-24T12:58:14.641Z'
-modified: '2021-09-30T07:43:15.350Z'
+created: 2019-12-24T12:58:14.641Z
+modified: 2021-09-30T07:43:15.350Z
 ---
 
 # spec-gis-geojson

@@ -1,8 +1,8 @@
 ---
 title: note-game-dev
 tags: [dev, game]
-created: '2020-07-13T13:27:14.170Z'
-modified: '2020-08-03T13:29:04.709Z'
+created: 2020-07-13T13:27:14.170Z
+modified: 2020-08-03T13:29:04.709Z
 ---
 
 # note-game-dev

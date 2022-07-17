@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-latest-changelog
 tags: [changelog, observablehq]
-created: '2021-05-14T14:52:22.020Z'
-modified: '2021-05-14T14:52:48.486Z'
+created: 2021-05-14T14:52:22.020Z
+modified: 2021-05-14T14:52:48.486Z
 ---
 
 # lib-notebook-observablehq-latest-changelog

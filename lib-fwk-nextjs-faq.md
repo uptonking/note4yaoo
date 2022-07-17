@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-nextjs-faq
 tags: [faq, nextjs]
-created: '2020-12-20T08:19:13.475Z'
-modified: '2020-12-20T08:20:38.440Z'
+created: 2020-12-20T08:19:13.475Z
+modified: 2020-12-20T08:20:38.440Z
 ---
 
 # lib-fwk-nextjs-faq

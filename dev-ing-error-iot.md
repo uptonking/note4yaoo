@@ -1,8 +1,8 @@
 ---
 title: dev-ing-error-iot
 tags: [dev, error, iot]
-created: '2020-09-18T09:26:23.131Z'
-modified: '2021-03-29T19:29:42.140Z'
+created: 2020-09-18T09:26:23.131Z
+modified: 2021-03-29T19:29:42.140Z
 ---
 
 # dev-ing-error-iot

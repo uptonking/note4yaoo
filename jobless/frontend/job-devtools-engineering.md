@@ -1,8 +1,8 @@
 ---
 title: job-devtools-engineering
 tags: [devtools, engineering, job]
-created: '2021-10-10T09:23:56.665Z'
-modified: '2021-10-10T09:48:05.563Z'
+created: 2021-10-10T09:23:56.665Z
+modified: 2021-10-10T09:48:05.563Z
 ---
 
 # job-devtools-engineering

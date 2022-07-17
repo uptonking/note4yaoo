@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-common
 tags: [dev, faq]
-created: '2019-08-01T16:03:46.394Z'
-modified: '2021-03-29T19:16:23.854Z'
+created: 2019-08-01T16:03:46.394Z
+modified: 2021-03-29T19:16:23.854Z
 ---
 
 # dev-log-faq-common

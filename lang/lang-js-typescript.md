@@ -1,8 +1,8 @@
 ---
 title: lang-js-typescript
 tags: [js, lang, typescript]
-created: '2019-08-26T15:07:33.910Z'
-modified: '2020-07-14T09:27:08.258Z'
+created: 2019-08-26T15:07:33.910Z
+modified: 2020-07-14T09:27:08.258Z
 ---
 
 # lang-js-typescript

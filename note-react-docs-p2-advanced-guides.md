@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p2-advanced-guides
 tags: [docs, react]
-created: '2020-06-23T06:10:10.882Z'
-modified: '2021-05-13T03:45:57.557Z'
+created: 2020-06-23T06:10:10.882Z
+modified: 2021-05-13T03:45:57.557Z
 ---
 
 # note-react-docs-p2-advanced-guides

@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-base-table-dev
 tags: [grid]
-created: '2020-08-09T12:49:34.732Z'
-modified: '2021-05-13T02:51:13.937Z'
+created: 2020-08-09T12:49:34.732Z
+modified: 2021-05-13T02:51:13.937Z
 ---
 
 # lib-list-react-base-table-dev

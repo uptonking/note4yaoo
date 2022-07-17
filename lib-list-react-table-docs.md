@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-table-docs
 tags: [changelog, docs, list, react-table]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-05-13T02:54:31.238Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-05-13T02:54:31.238Z
 ---
 
 # lib-list-react-table-docs

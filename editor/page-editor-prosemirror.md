@@ -1,8 +1,8 @@
 ---
 title: page-editor-prosemirror
 tags: [editor, prosemirror]
-created: '2021-10-12T08:12:56.213Z'
-modified: '2021-10-12T08:13:20.183Z'
+created: 2021-10-12T08:12:56.213Z
+modified: 2021-10-12T08:13:20.183Z
 ---
 
 # page-editor-prosemirror

@@ -1,8 +1,8 @@
 ---
 title: lib-data-community
 tags: [community, data-analysis, data-processing, lib]
-created: '2021-05-13T14:36:20.064Z'
-modified: '2021-05-13T16:11:33.402Z'
+created: 2021-05-13T14:36:20.064Z
+modified: 2021-05-13T16:11:33.402Z
 ---
 
 # lib-data-community

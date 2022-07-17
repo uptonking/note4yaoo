@@ -1,8 +1,8 @@
 ---
 title: coding-snippet
 tags: [coding, draft]
-created: '2019-09-04T03:02:06.457Z'
-modified: '2020-07-14T09:15:48.967Z'
+created: 2019-09-04T03:02:06.457Z
+modified: 2020-07-14T09:15:48.967Z
 ---
 
 # coding-snippet

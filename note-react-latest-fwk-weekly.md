@@ -1,8 +1,8 @@
 ---
 title: note-react-latest-fwk-weekly
 tags: [framework, latest, react, weekly]
-created: '2021-03-22T18:41:38.839Z'
-modified: '2021-03-22T18:46:03.513Z'
+created: 2021-03-22T18:41:38.839Z
+modified: 2021-03-22T18:46:03.513Z
 ---
 
 # note-react-latest-fwk-weekly

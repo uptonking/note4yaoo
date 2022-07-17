@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-plate-dev
 tags: [plate, slate, text-editor]
-created: '2022-06-03T20:18:16.778Z'
-modified: '2022-06-03T20:18:42.086Z'
+created: 2022-06-03T20:18:16.778Z
+modified: 2022-06-03T20:18:42.086Z
 ---
 
 # lib-editor-slate-plate-dev

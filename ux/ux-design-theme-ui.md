@@ -1,8 +1,8 @@
 ---
 title: ux-design-theme-ui
 tags: [design-system, theme-ui, theming]
-created: '2020-12-27T19:31:52.925Z'
-modified: '2021-01-01T20:08:51.345Z'
+created: 2020-12-27T19:31:52.925Z
+modified: 2021-01-01T20:08:51.345Z
 ---
 
 # ux-design-theme-ui

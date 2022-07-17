@@ -1,8 +1,8 @@
 ---
 title: web-browser-chrome-firefox
 tags: [browser]
-created: '2020-06-28T12:46:23.814Z'
-modified: '2020-12-21T07:44:48.911Z'
+created: 2020-06-28T12:46:23.814Z
+modified: 2020-12-21T07:44:48.911Z
 ---
 
 # web-browser-chrome-firefox

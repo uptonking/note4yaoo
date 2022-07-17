@@ -1,8 +1,8 @@
 ---
 title: lib-collab-crdt-community-stars
 tags: [collaboration, community, crdt]
-created: '2021-11-24T17:08:48.275Z'
-modified: '2022-04-05T10:09:51.343Z'
+created: 2021-11-24T17:08:48.275Z
+modified: 2022-04-05T10:09:51.343Z
 ---
 
 # lib-collab-crdt-community-stars

@@ -1,8 +1,8 @@
 ---
 title: lang-js-engine-v8
 tags: [js, lang, v8]
-created: '2021-01-15T08:30:42.368Z'
-modified: '2021-08-30T06:55:46.491Z'
+created: 2021-01-15T08:30:42.368Z
+modified: 2021-08-30T06:55:46.491Z
 ---
 
 # lang-js-engine-v8

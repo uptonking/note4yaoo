@@ -1,8 +1,8 @@
 ---
 title: pick-dict-coding-dev
 tags: [coding, dev, dict]
-created: '2020-08-04T11:45:11.411Z'
-modified: '2020-08-04T11:47:02.131Z'
+created: 2020-08-04T11:45:11.411Z
+modified: 2020-08-04T11:47:02.131Z
 ---
 
 # pick-dict-coding-dev

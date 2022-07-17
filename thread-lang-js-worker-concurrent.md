@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-worker-concurrent
 tags: [concurrent, js, thread, web-worker]
-created: '2021-09-28T04:43:49.453Z'
-modified: '2021-09-28T06:00:34.338Z'
+created: 2021-09-28T04:43:49.453Z
+modified: 2021-09-28T06:00:34.338Z
 ---
 
 # thread-lang-js-worker-concurrent

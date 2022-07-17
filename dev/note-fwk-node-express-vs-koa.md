@@ -1,8 +1,8 @@
 ---
 title: note-fwk-node-express-vs-koa
 tags: [comparison, express, framework, koa]
-created: '2020-12-08T09:38:21.479Z'
-modified: '2021-04-23T18:11:48.029Z'
+created: 2020-12-08T09:38:21.479Z
+modified: 2021-04-23T18:11:48.029Z
 ---
 
 # note-fwk-node-express-vs-koa

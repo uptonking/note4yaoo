@@ -1,8 +1,8 @@
 ---
 title: lib-viz-britecharts-dev
 tags: [britecharts, charting, lib, viz]
-created: '2021-05-27T19:57:55.517Z'
-modified: '2021-05-27T19:59:02.463Z'
+created: 2021-05-27T19:57:55.517Z
+modified: 2021-05-27T19:59:02.463Z
 ---
 
 # lib-viz-britecharts-dev

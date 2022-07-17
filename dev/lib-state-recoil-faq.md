@@ -1,8 +1,8 @@
 ---
 title: lib-state-recoil-faq
 tags: [faq, react, recoil, state]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-05-13T03:18:21.333Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-05-13T03:18:21.333Z
 ---
 
 # lib-state-recoil-faq

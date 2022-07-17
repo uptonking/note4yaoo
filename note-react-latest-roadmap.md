@@ -1,8 +1,8 @@
 ---
 title: note-react-latest-roadmap
 tags: [react, roadmap]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-08T03:17:23.369Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2020-07-08T03:17:23.369Z
 ---
 
 # note-react-latest-roadmap

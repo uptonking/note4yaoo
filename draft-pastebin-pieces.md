@@ -2,8 +2,8 @@
 title: draft-pastebin-pieces
 tags: [draft, todo]
 pinned: true
-created: "2019-11-11T06:57:46.101Z"
-modified: "2021-03-22T18:24:50.639Z"
+created: 2019-11-11T06:57:46.101Z
+modified: 2021-03-22T18:24:50.639Z
 ---
 
 # draft-pastebin-pieces

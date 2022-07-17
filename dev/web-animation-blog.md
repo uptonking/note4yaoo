@@ -1,8 +1,8 @@
 ---
 title: web-animation-blog
 tags: [animation, blog, web]
-created: '2020-08-04T04:46:58.013Z'
-modified: '2020-12-21T07:44:14.728Z'
+created: 2020-08-04T04:46:58.013Z
+modified: 2020-12-21T07:44:14.728Z
 ---
 
 # web-animation-blog

@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-dev
 tags: [d3, notebook, observablehq]
-created: '2021-05-06T09:42:52.668Z'
-modified: '2021-05-14T14:44:14.720Z'
+created: 2021-05-06T09:42:52.668Z
+modified: 2021-05-14T14:44:14.720Z
 ---
 
 # lib-notebook-observablehq-dev

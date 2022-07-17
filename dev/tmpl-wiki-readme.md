@@ -1,8 +1,8 @@
 ---
 title: tmpl-wiki-readme
 tags: [template, wiki]
-created: '2020-12-17T09:04:30.694Z'
-modified: '2020-12-17T09:08:24.529Z'
+created: 2020-12-17T09:04:30.694Z
+modified: 2020-12-17T09:08:24.529Z
 ---
 
 # tmpl-wiki-readme

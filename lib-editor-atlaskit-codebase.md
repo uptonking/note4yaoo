@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlaskit-codebase
 tags: [atlaskit-editor, codebase]
-created: '2021-07-12T17:18:47.506Z'
-modified: '2021-07-14T15:35:53.716Z'
+created: 2021-07-12T17:18:47.506Z
+modified: 2021-07-14T15:35:53.716Z
 ---
 
 # lib-editor-atlaskit-codebase

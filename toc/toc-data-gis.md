@@ -1,8 +1,8 @@
 ---
 title: toc-data-gis
 tags: [datasource, gis]
-created: '2020-11-13T08:01:05.045Z'
-modified: '2021-01-04T16:20:47.941Z'
+created: 2020-11-13T08:01:05.045Z
+modified: 2021-01-04T16:20:47.941Z
 ---
 
 # toc-data-gis

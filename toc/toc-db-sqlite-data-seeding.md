@@ -1,8 +1,8 @@
 ---
 title: toc-db-sqlite-data-seeding
 tags: [dataseed, sqlite]
-created: '2022-06-03T22:04:43.590Z'
-modified: '2022-06-03T22:05:05.732Z'
+created: 2022-06-03T22:04:43.590Z
+modified: 2022-06-03T22:05:05.732Z
 ---
 
 # toc-db-sqlite-data-seeding

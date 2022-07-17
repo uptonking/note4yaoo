@@ -1,8 +1,8 @@
 ---
 title: toc-db-indexeddb-examples
 tags: [examples, indexeddb]
-created: '2022-06-03T22:06:28.976Z'
-modified: '2022-06-03T22:06:47.464Z'
+created: 2022-06-03T22:06:28.976Z
+modified: 2022-06-03T22:06:47.464Z
 ---
 
 # toc-db-indexeddb-examples

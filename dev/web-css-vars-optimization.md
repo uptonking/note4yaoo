@@ -1,8 +1,8 @@
 ---
 title: web-css-vars-optimization
 tags: [css, css-vars, optimization, style]
-created: '2020-10-27T16:03:13.703Z'
-modified: '2021-01-29T18:55:20.750Z'
+created: 2020-10-27T16:03:13.703Z
+modified: 2021-01-29T18:55:20.750Z
 ---
 
 # web-css-vars-optimization

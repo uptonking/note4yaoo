@@ -1,8 +1,8 @@
 ---
 title: pick-excerpt-books-novels-videos
 tags: [book, excerpt, pick]
-created: '2020-03-05T09:04:08.702Z'
-modified: '2020-12-08T13:47:58.170Z'
+created: 2020-03-05T09:04:08.702Z
+modified: 2020-12-08T13:47:58.170Z
 ---
 
 # pick-excerpt-books-novels-videos

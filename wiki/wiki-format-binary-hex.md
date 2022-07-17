@@ -1,8 +1,8 @@
 ---
 title: wiki-format-binary-hex
 tags: [format]
-created: '2020-07-28T07:13:15.690Z'
-modified: '2020-10-22T14:03:07.408Z'
+created: 2020-07-28T07:13:15.690Z
+modified: 2020-10-22T14:03:07.408Z
 ---
 
 # wiki-format-binary-hex

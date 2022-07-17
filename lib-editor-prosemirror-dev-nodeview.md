@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-dev-nodeview
 tags: [editor, lib, prosemirror]
-created: '2021-07-02T18:23:48.398Z'
-modified: '2021-07-02T18:24:12.955Z'
+created: 2021-07-02T18:23:48.398Z
+modified: 2021-07-02T18:24:12.955Z
 ---
 
 # lib-editor-prosemirror-dev-nodeview

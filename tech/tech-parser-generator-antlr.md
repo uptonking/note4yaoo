@@ -1,8 +1,8 @@
 ---
 title: tech-parser-generator-antlr
 tags: [antlr, format]
-created: '2020-07-03T10:35:24.549Z'
-modified: '2020-10-22T14:02:01.119Z'
+created: 2020-07-03T10:35:24.549Z
+modified: 2020-10-22T14:02:01.119Z
 ---
 
 # tech-parser-generator-antlr

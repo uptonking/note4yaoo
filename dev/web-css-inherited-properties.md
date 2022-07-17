@@ -1,8 +1,8 @@
 ---
 title: web-css-inherited-properties
 tags: [css, web]
-created: '2020-07-29T05:41:39.595Z'
-modified: '2020-12-21T07:45:31.968Z'
+created: 2020-07-29T05:41:39.595Z
+modified: 2020-12-21T07:45:31.968Z
 ---
 
 # web-css-inherited-properties

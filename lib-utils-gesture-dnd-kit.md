@@ -1,8 +1,8 @@
 ---
 title: lib-utils-gesture-dnd-kit
 tags: [dnd, drag, gesture, lib, list, utils]
-created: '2022-02-06T13:40:34.638Z'
-modified: '2022-06-04T00:44:30.749Z'
+created: 2022-02-06T13:40:34.638Z
+modified: 2022-06-04T00:44:30.749Z
 ---
 
 # lib-utils-gesture-dnd-kit

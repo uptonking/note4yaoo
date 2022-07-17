@@ -1,8 +1,8 @@
 ---
 title: thread-format-dev-usage
 tags: [format, json, json5, thread]
-created: '2021-01-20T04:23:21.917Z'
-modified: '2021-01-20T04:24:24.783Z'
+created: 2021-01-20T04:23:21.917Z
+modified: 2021-01-20T04:24:24.783Z
 ---
 
 # thread-format-dev-usage

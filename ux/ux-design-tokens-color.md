@@ -1,8 +1,8 @@
 ---
 title: ux-design-tokens-color
 tags: [color, design-tokens]
-created: '2019-12-29T12:47:41.725Z'
-modified: '2021-01-04T16:18:46.383Z'
+created: 2019-12-29T12:47:41.725Z
+modified: 2021-01-04T16:18:46.383Z
 ---
 
 # ux-design-tokens-color

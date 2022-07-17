@@ -1,8 +1,8 @@
 ---
 title: tech-bi-dev
 tags: [bi]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-01-01T20:20:18.269Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-01-01T20:20:18.269Z
 ---
 
 # tech-bi-dev

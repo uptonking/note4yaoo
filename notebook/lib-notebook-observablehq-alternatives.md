@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-alternatives
 tags: [alternatives, notebook, observablehq]
-created: '2021-05-13T04:01:17.658Z'
-modified: '2021-05-14T14:46:37.026Z'
+created: 2021-05-13T04:01:17.658Z
+modified: 2021-05-14T14:46:37.026Z
 ---
 
 # lib-notebook-observablehq-alternatives

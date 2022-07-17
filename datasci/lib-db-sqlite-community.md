@@ -1,8 +1,8 @@
 ---
 title: lib-db-sqlite-community
 tags: [community, sqlite]
-created: '2021-08-30T17:33:26.516Z'
-modified: '2021-08-30T17:33:46.086Z'
+created: 2021-08-30T17:33:26.516Z
+modified: 2021-08-30T17:33:46.086Z
 ---
 
 # lib-db-sqlite-community

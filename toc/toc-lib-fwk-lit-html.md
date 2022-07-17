@@ -1,8 +1,8 @@
 ---
 title: toc-lib-fwk-lit-html
 tags: [framework, lit-element, lit-html, toc]
-created: '2021-01-01T19:15:20.376Z'
-modified: '2021-01-01T19:16:38.879Z'
+created: 2021-01-01T19:15:20.376Z
+modified: 2021-01-01T19:16:38.879Z
 ---
 
 # toc-lib-fwk-lit-html

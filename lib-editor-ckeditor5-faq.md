@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-faq
 tags: [ckeditor, faq]
-created: '2021-10-29T16:09:39.273Z'
-modified: '2021-11-07T11:05:40.405Z'
+created: 2021-10-29T16:09:39.273Z
+modified: 2021-11-07T11:05:40.405Z
 ---
 
 # lib-editor-ckeditor5-faq

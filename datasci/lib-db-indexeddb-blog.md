@@ -1,8 +1,8 @@
 ---
 title: lib-db-indexeddb-blog
 tags: [blog, indexeddb]
-created: '2022-06-13T02:56:54.717Z'
-modified: '2022-06-13T02:57:07.648Z'
+created: 2022-06-13T02:56:54.717Z
+modified: 2022-06-13T02:57:07.648Z
 ---
 
 # lib-db-indexeddb-blog

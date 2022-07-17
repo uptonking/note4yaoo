@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-documentation-note-taking
 tags: [documentation, note-taking, pm, thread]
-created: '2021-04-19T14:49:44.712Z'
-modified: '2021-08-16T06:56:53.061Z'
+created: 2021-04-19T14:49:44.712Z
+modified: 2021-08-16T06:56:53.061Z
 ---
 
 # thread-pm-base-documentation-note-taking

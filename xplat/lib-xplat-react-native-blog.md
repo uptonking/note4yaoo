@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-react-native-blog
 tags: [blog, react-native]
-created: '2021-09-11T16:39:27.862Z'
-modified: '2021-09-11T16:39:49.984Z'
+created: 2021-09-11T16:39:27.862Z
+modified: 2021-09-11T16:39:49.984Z
 ---
 
 # lib-xplat-react-native-blog

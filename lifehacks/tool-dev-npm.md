@@ -1,8 +1,8 @@
 ---
 title: tool-dev-npm
 tags: [devtools, npm, tool]
-created: '2020-11-18T10:18:22.406Z'
-modified: '2020-12-08T14:05:52.048Z'
+created: 2020-11-18T10:18:22.406Z
+modified: 2020-12-08T14:05:52.048Z
 ---
 
 # tool-dev-npm

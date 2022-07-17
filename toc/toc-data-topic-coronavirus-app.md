@@ -1,8 +1,8 @@
 ---
 title: toc-data-topic-coronavirus-app
 tags: [app, coronavirus, data]
-created: '2020-07-21T13:03:01.952Z'
-modified: '2020-11-11T13:16:34.742Z'
+created: 2020-07-21T13:03:01.952Z
+modified: 2020-11-11T13:16:34.742Z
 ---
 
 # toc-data-topic-coronavirus-app

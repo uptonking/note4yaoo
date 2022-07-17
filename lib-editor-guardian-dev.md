@@ -1,8 +1,8 @@
 ---
 title: lib-editor-guardian-dev
 tags: [editor, guardian-editor, lib, prosemirror]
-created: '2021-07-08T17:19:20.729Z'
-modified: '2021-07-08T17:19:56.328Z'
+created: 2021-07-08T17:19:20.729Z
+modified: 2021-07-08T17:19:56.328Z
 ---
 
 # lib-editor-guardian-dev

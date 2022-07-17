@@ -1,8 +1,8 @@
 ---
 title: lib-office-mdx-dev
 tags: [lib, markdown, mdx]
-created: '2021-05-27T01:41:58.386Z'
-modified: '2021-06-02T16:45:56.858Z'
+created: 2021-05-27T01:41:58.386Z
+modified: 2021-06-02T16:45:56.858Z
 ---
 
 # lib-office-mdx-dev

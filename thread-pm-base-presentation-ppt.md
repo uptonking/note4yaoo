@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-presentation-ppt
 tags: [pm, ppt, presentation, thread]
-created: '2021-04-19T14:51:21.033Z'
-modified: '2021-08-16T06:59:32.581Z'
+created: 2021-04-19T14:51:21.033Z
+modified: 2021-08-16T06:59:32.581Z
 ---
 
 # thread-pm-base-presentation-ppt

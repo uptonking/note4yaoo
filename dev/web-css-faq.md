@@ -1,8 +1,8 @@
 ---
 title: web-css-faq
 tags: [css, faq, web]
-created: '2021-01-08T20:27:25.158Z'
-modified: '2021-01-08T20:28:00.955Z'
+created: 2021-01-08T20:27:25.158Z
+modified: 2021-01-08T20:28:00.955Z
 ---
 
 # web-css-faq

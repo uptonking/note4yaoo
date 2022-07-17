@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-table-faq-repeat
 tags: [faq, react-table, repeat]
-created: '2021-11-21T18:27:10.862Z'
-modified: '2021-11-21T18:27:22.494Z'
+created: 2021-11-21T18:27:10.862Z
+modified: 2021-11-21T18:27:22.494Z
 ---
 
 # lib-list-react-table-faq-repeat

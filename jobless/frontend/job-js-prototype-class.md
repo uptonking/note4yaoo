@@ -1,8 +1,8 @@
 ---
 title: job-js-prototype-class
 tags: [frontend, job, js]
-created: '2021-10-10T09:08:20.137Z'
-modified: '2021-10-10T09:31:04.461Z'
+created: 2021-10-10T09:08:20.137Z
+modified: 2021-10-10T09:31:04.461Z
 ---
 
 # job-js-prototype-class

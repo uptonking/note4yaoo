@@ -1,8 +1,8 @@
 ---
 title: page-css-vars
 tags: [css, css-vars]
-created: '2020-10-31T19:48:24.822Z'
-modified: '2021-01-19T10:53:20.381Z'
+created: 2020-10-31T19:48:24.822Z
+modified: 2021-01-19T10:53:20.381Z
 ---
 
 # page-css-vars

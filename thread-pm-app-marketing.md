@@ -1,8 +1,8 @@
 ---
 title: thread-pm-app-marketing
 tags: [marketing, pm, thread]
-created: '2020-12-07T06:07:44.432Z'
-modified: '2021-10-29T15:06:33.422Z'
+created: 2020-12-07T06:07:44.432Z
+modified: 2021-10-29T15:06:33.422Z
 ---
 
 # thread-pm-app-marketing

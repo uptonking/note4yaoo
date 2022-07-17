@@ -1,8 +1,8 @@
 ---
 title: lib-office-mdx-docs
 tags: [docs, lib, mdx]
-created: '2021-06-04T16:49:14.136Z'
-modified: '2021-06-04T16:49:32.208Z'
+created: 2021-06-04T16:49:14.136Z
+modified: 2021-06-04T16:49:32.208Z
 ---
 
 # lib-office-mdx-docs

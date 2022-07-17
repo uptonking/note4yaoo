@@ -1,8 +1,8 @@
 ---
 title: page-editor-dev
 tags: [editor, text-editor]
-created: '2021-10-12T07:07:44.058Z'
-modified: '2021-10-12T07:08:36.327Z'
+created: 2021-10-12T07:07:44.058Z
+modified: 2021-10-12T07:08:36.327Z
 ---
 
 # page-editor-dev

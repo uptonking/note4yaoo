@@ -1,8 +1,8 @@
 ---
 title: ux-usecase-stars
 tags: [usecase, ux]
-created: '2020-07-17T13:58:14.640Z'
-modified: '2021-04-19T18:10:10.394Z'
+created: 2020-07-17T13:58:14.640Z
+modified: 2021-04-19T18:10:10.394Z
 ---
 
 # ux-usecase-stars

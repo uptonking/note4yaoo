@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-blog
 tags: [blog, css-in-js]
-created: '2020-08-07T17:50:19.599Z'
-modified: '2021-01-01T20:06:12.929Z'
+created: 2020-08-07T17:50:19.599Z
+modified: 2021-01-01T20:06:12.929Z
 ---
 
 # web-style-css-in-js-blog

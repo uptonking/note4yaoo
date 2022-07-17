@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-solidjs-blog
 tags: [blog, lib, solidjs]
-created: '2020-12-05T07:11:47.041Z'
-modified: '2020-12-08T13:27:35.701Z'
+created: 2020-12-05T07:11:47.041Z
+modified: 2020-12-08T13:27:35.701Z
 ---
 
 # lib-fwk-solidjs-blog

@@ -1,8 +1,8 @@
 ---
 title: toc-office-notion-like-knowledge-base-workspace
 tags: [knowledge-base, notion-like, workspace]
-created: '2022-06-03T21:27:36.001Z'
-modified: '2022-06-03T21:34:54.893Z'
+created: 2022-06-03T21:27:36.001Z
+modified: 2022-06-03T21:34:54.893Z
 ---
 
 # toc-office-notion-like-knowledge-base-workspace

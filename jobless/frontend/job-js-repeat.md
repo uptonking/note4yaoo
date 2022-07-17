@@ -1,8 +1,8 @@
 ---
 title: job-js-repeat
 tags: [frontend, job, js, repeat]
-created: '2021-09-21T19:54:16.072Z'
-modified: '2021-10-10T09:31:09.831Z'
+created: 2021-09-21T19:54:16.072Z
+modified: 2021-10-10T09:31:09.831Z
 ---
 
 # job-js-repeat

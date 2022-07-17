@@ -1,8 +1,8 @@
 ---
 title: toc-lib-pattern-local-first-offlineable
 tags: [lib, local-first, pattern, toc]
-created: '2021-08-25T15:50:00.635Z'
-modified: '2021-09-04T14:03:39.046Z'
+created: 2021-08-25T15:50:00.635Z
+modified: 2021-09-04T14:03:39.046Z
 ---
 
 # toc-lib-pattern-local-first-offlineable

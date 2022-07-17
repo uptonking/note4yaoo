@@ -1,8 +1,8 @@
 ---
 title: editoe-yaoo-plan
 tags: [editoe, yaoo]
-created: '2021-10-23T16:25:23.823Z'
-modified: '2021-10-23T16:32:33.784Z'
+created: 2021-10-23T16:25:23.823Z
+modified: 2021-10-23T16:32:33.784Z
 ---
 
 # editoe-yaoo-plan

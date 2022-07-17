@@ -1,8 +1,8 @@
 ---
 title: lang-js-arch-event-loop
 tags: [architecture, event-loop, js, lang]
-created: '2021-08-30T06:49:37.481Z'
-modified: '2021-08-30T06:52:33.680Z'
+created: 2021-08-30T06:49:37.481Z
+modified: 2021-08-30T06:52:33.680Z
 ---
 
 # lang-js-arch-event-loop

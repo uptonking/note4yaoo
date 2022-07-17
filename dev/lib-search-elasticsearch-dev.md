@@ -1,8 +1,8 @@
 ---
 title: lib-search-elasticsearch-dev
 tags: [changelog, elasticsearch, search]
-created: '2020-03-29T15:38:04.974Z'
-modified: '2021-05-13T03:18:43.412Z'
+created: 2020-03-29T15:38:04.974Z
+modified: 2021-05-13T03:18:43.412Z
 ---
 
 # lib-search-elasticsearch-dev

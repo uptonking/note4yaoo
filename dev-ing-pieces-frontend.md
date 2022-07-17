@@ -1,8 +1,8 @@
 ---
 title: dev-ing-pieces-frontend
 tags: [dev, frontend]
-created: '2019-06-09T15:54:12.063Z'
-modified: '2021-03-29T19:30:00.059Z'
+created: 2019-06-09T15:54:12.063Z
+modified: 2021-03-29T19:30:00.059Z
 ---
 
 # dev-ing-pieces-frontend

@@ -1,8 +1,8 @@
 ---
 title: wiki-license-open-source-code
 tags: [law, license, open-source]
-created: '2020-07-13T03:29:04.214Z'
-modified: '2021-09-14T18:58:58.275Z'
+created: 2020-07-13T03:29:04.214Z
+modified: 2021-09-14T18:58:58.275Z
 ---
 
 # wiki-license-open-source-code

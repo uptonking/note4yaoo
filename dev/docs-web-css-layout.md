@@ -1,8 +1,8 @@
 ---
 title: docs-web-css-layout
 tags: [docs, layout, web]
-created: '2020-07-17T09:46:19.722Z'
-modified: '2021-04-23T17:10:43.970Z'
+created: 2020-07-17T09:46:19.722Z
+modified: 2021-04-23T17:10:43.970Z
 ---
 
 # docs-web-css-layout

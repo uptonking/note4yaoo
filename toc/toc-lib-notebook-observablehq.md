@@ -1,8 +1,8 @@
 ---
 title: toc-lib-notebook-observablehq
 tags: [lib, notebook, observablehq, toc]
-created: '2021-05-16T07:38:48.393Z'
-modified: '2021-05-16T07:39:23.267Z'
+created: 2021-05-16T07:38:48.393Z
+modified: 2021-05-16T07:39:23.267Z
 ---
 
 # toc-lib-notebook-observablehq

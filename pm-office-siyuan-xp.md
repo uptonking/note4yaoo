@@ -1,8 +1,8 @@
 ---
 title: pm-office-siyuan-xp
 tags: [note-taking, pm, siyuan, xp]
-created: '2022-06-01T18:55:16.290Z'
-modified: '2022-06-01T18:55:39.088Z'
+created: 2022-06-01T18:55:16.290Z
+modified: 2022-06-01T18:55:39.088Z
 ---
 
 # pm-office-siyuan-xp

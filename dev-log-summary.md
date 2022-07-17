@@ -1,8 +1,8 @@
 ---
 title: dev-log-summary
 tags: [dev, log, repeat]
-created: '2019-04-22T03:42:22.447Z'
-modified: '2021-03-29T19:14:57.440Z'
+created: 2019-04-22T03:42:22.447Z
+modified: 2021-03-29T19:14:57.440Z
 ---
 
 # dev-log-summary

@@ -1,8 +1,8 @@
 ---
 title: pick-naming
 tags: [pick]
-created: '2020-12-06T13:04:52.265Z'
-modified: '2020-12-06T13:05:51.375Z'
+created: 2020-12-06T13:04:52.265Z
+modified: 2020-12-06T13:05:51.375Z
 ---
 
 # pick-naming

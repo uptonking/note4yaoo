@@ -1,8 +1,8 @@
 ---
 title: mktg-smart-home-xiaomi
 tags: [marketing, smart-home, 小米]
-created: '2021-10-18T12:29:01.676Z'
-modified: '2021-10-18T12:32:22.675Z'
+created: 2021-10-18T12:29:01.676Z
+modified: 2021-10-18T12:32:22.675Z
 ---
 
 # mktg-smart-home-xiaomi

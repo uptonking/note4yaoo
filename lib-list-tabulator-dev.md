@@ -1,8 +1,8 @@
 ---
 title: lib-list-tabulator-dev
 tags: [docs, grid, tabulator]
-created: '2020-10-21T12:46:30.133Z'
-modified: '2021-05-13T02:55:41.288Z'
+created: 2020-10-21T12:46:30.133Z
+modified: 2021-05-13T02:55:41.288Z
 ---
 
 # lib-list-tabulator-dev

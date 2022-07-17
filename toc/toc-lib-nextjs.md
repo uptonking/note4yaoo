@@ -1,8 +1,8 @@
 ---
 title: toc-lib-nextjs
 tags: [lib, nextjs, toc]
-created: '2020-12-12T19:29:08.048Z'
-modified: '2020-12-12T19:29:51.981Z'
+created: 2020-12-12T19:29:08.048Z
+modified: 2020-12-12T19:29:51.981Z
 ---
 
 # toc-lib-nextjs

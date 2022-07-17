@@ -1,8 +1,8 @@
 ---
 title: thread-web-css
 tags: [css, thread, ux, web]
-created: '2021-01-08T17:14:57.157Z'
-modified: '2021-01-08T17:15:13.906Z'
+created: 2021-01-08T17:14:57.157Z
+modified: 2021-01-08T17:15:13.906Z
 ---
 
 # thread-web-css

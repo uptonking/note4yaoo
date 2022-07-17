@@ -1,8 +1,8 @@
 ---
 title: cli-db-sql-nosql
 tags: [cli, database, nosql, sql]
-created: '2020-12-18T04:28:11.723Z'
-modified: '2021-05-23T10:16:39.269Z'
+created: 2020-12-18T04:28:11.723Z
+modified: 2021-05-23T10:16:39.269Z
 ---
 
 # cli-db-sql-nosql

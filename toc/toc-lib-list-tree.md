@@ -1,8 +1,8 @@
 ---
 title: toc-lib-list-tree
 tags: [lib, toc, tree]
-created: '2020-07-12T18:55:54.993Z'
-modified: '2020-07-12T19:00:27.345Z'
+created: 2020-07-12T18:55:54.993Z
+modified: 2020-07-12T19:00:27.345Z
 ---
 
 # toc-lib-list-tree

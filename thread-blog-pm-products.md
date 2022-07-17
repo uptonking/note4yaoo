@@ -1,8 +1,8 @@
 ---
 title: thread-blog-pm-products
 tags: [blog, pm, products, thread]
-created: '2021-06-29T07:04:44.912Z'
-modified: '2021-06-29T07:05:13.621Z'
+created: 2021-06-29T07:04:44.912Z
+modified: 2021-06-29T07:05:13.621Z
 ---
 
 # thread-blog-pm-products

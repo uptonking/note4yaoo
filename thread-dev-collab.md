@@ -1,8 +1,8 @@
 ---
 title: thread-dev-collab
 tags: [collaboration, dev, thread]
-created: '2022-01-16T15:53:39.739Z'
-modified: '2022-01-16T15:54:09.168Z'
+created: 2022-01-16T15:53:39.739Z
+modified: 2022-01-16T15:54:09.168Z
 ---
 
 # thread-dev-collab

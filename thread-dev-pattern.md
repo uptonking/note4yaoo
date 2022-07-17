@@ -1,8 +1,8 @@
 ---
 title: thread-dev-pattern
 tags: [dev, pattern, thread]
-created: '2021-02-19T12:22:55.958Z'
-modified: '2021-02-19T12:23:12.286Z'
+created: 2021-02-19T12:22:55.958Z
+modified: 2021-02-19T12:23:12.286Z
 ---
 
 # thread-dev-pattern

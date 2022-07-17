@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-lib-treat
 tags: [css-in-js, style, treat]
-created: '2020-10-27T05:45:54.419Z'
-modified: '2021-01-01T20:06:40.149Z'
+created: 2020-10-27T05:45:54.419Z
+modified: 2021-01-01T20:06:40.149Z
 ---
 
 # web-style-css-in-js-lib-treat

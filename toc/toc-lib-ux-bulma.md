@@ -1,8 +1,8 @@
 ---
 title: toc-lib-ux-bulma
 tags: [bulma, components, lib, toc, ux]
-created: '2020-10-05T13:46:32.360Z'
-modified: '2021-01-10T22:19:27.519Z'
+created: 2020-10-05T13:46:32.360Z
+modified: 2021-01-10T22:19:27.519Z
 ---
 
 # toc-lib-ux-bulma

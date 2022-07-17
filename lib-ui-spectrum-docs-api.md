@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-docs-api
 tags: [adobe-spectrum, api, docs]
-created: '2021-04-12T16:44:13.601Z'
-modified: '2021-04-12T18:07:20.604Z'
+created: 2021-04-12T16:44:13.601Z
+modified: 2021-04-12T18:07:20.604Z
 ---
 
 # lib-ui-spectrum-docs-api

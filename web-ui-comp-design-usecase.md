@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp-design-usecase
 tags: [components, design-style, usecase]
-created: '2021-04-11T10:23:39.124Z'
-modified: '2021-04-11T17:38:41.941Z'
+created: 2021-04-11T10:23:39.124Z
+modified: 2021-04-11T17:38:41.941Z
 ---
 
 # web-ui-comp-design-usecase

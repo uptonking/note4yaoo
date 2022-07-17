@@ -1,8 +1,8 @@
 ---
 title: toc-viz-base-svg
 tags: [svg, toc, viz]
-created: '2020-08-02T08:58:55.414Z'
-modified: '2020-10-05T06:18:21.639Z'
+created: 2020-08-02T08:58:55.414Z
+modified: 2020-10-05T06:18:21.639Z
 ---
 
 # toc-viz-base-svg

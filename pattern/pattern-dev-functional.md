@@ -1,8 +1,8 @@
 ---
 title: pattern-dev-functional
 tags: [functional, pattern]
-created: '2020-08-28T07:37:32.196Z'
-modified: '2020-12-20T16:01:15.556Z'
+created: 2020-08-28T07:37:32.196Z
+modified: 2020-12-20T16:01:15.556Z
 ---
 
 # pattern-dev-functional

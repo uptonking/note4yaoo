@@ -1,8 +1,8 @@
 ---
 title: ux-design-generative
 tags: [design, generative, ux]
-created: '2021-09-04T16:34:53.063Z'
-modified: '2021-09-04T16:35:14.449Z'
+created: 2021-09-04T16:34:53.063Z
+modified: 2021-09-04T16:35:14.449Z
 ---
 
 # ux-design-generative

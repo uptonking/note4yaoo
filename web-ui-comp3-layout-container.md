@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp3-layout-container
 tags: [components, layout, ui, web]
-created: '2021-04-14T18:35:52.173Z'
-modified: '2021-07-28T20:10:58.558Z'
+created: 2021-04-14T18:35:52.173Z
+modified: 2021-07-28T20:10:58.558Z
 ---
 
 # web-ui-comp3-layout-container

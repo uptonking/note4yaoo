@@ -1,8 +1,8 @@
 ---
 title: ux-design-system-features
 tags: [design-system, pm]
-created: '2020-12-27T09:13:57.265Z'
-modified: '2021-01-01T20:08:42.719Z'
+created: 2020-12-27T09:13:57.265Z
+modified: 2021-01-01T20:08:42.719Z
 ---
 
 # ux-design-system-features

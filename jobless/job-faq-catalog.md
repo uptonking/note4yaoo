@@ -1,8 +1,8 @@
 ---
 title: job-faq-catalog
-tags: [interview, work, job]
-created: '2021-09-20T08:59:54.555Z'
-modified: '2021-09-20T09:00:43.564Z'
+tags: [interview, job, work]
+created: 2021-09-20T08:59:54.555Z
+modified: 2021-09-20T09:00:43.564Z
 ---
 
 # job-faq-catalog

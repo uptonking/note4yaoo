@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-kotlin-compose-community
 tags: [community, compose, cross-platform, kotlin]
-created: '2021-05-13T07:52:19.930Z'
-modified: '2021-05-13T07:52:46.653Z'
+created: 2021-05-13T07:52:19.930Z
+modified: 2021-05-13T07:52:46.653Z
 ---
 
 # lib-xplat-kotlin-compose-community

@@ -1,8 +1,8 @@
 ---
 title: thread-pm-kickstarter-devops-xp
 tags: [kickstarter, marketing, pm, thread, xp]
-created: '2021-08-16T06:54:23.073Z'
-modified: '2021-10-29T15:05:56.151Z'
+created: 2021-08-16T06:54:23.073Z
+modified: 2021-10-29T15:05:56.151Z
 ---
 
 # thread-pm-kickstarter-devops-xp

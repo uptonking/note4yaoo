@@ -1,8 +1,8 @@
 ---
 title: web-style-common-props-attr
 tags: [css, style, web]
-created: '2019-10-09T01:32:01.391Z'
-modified: '2021-04-06T13:55:58.501Z'
+created: 2019-10-09T01:32:01.391Z
+modified: 2021-04-06T13:55:58.501Z
 ---
 
 # web-style-common-props-attr

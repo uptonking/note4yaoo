@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-linked-list
 tags: [algorithms, coding, job, leetcode, linked-list]
-created: '2021-10-05T09:01:17.377Z'
-modified: '2021-10-06T14:46:31.518Z'
+created: 2021-10-05T09:01:17.377Z
+modified: 2021-10-06T14:46:31.518Z
 ---
 
 # job-leetcode-linked-list

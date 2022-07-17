@@ -1,8 +1,8 @@
 ---
 title: tool-iot-mobile-phone
 tags: [iot, mobile, phone]
-created: '2020-12-22T12:32:03.096Z'
-modified: '2020-12-22T12:40:40.412Z'
+created: 2020-12-22T12:32:03.096Z
+modified: 2020-12-22T12:40:40.412Z
 ---
 
 # tool-iot-mobile-phone

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-codemirror-collab
 tags: [codemirror, collaboration, editor]
-created: '2021-10-14T17:12:36.915Z'
-modified: '2021-10-14T17:13:04.791Z'
+created: 2021-10-14T17:12:36.915Z
+modified: 2021-10-14T17:13:04.791Z
 ---
 
 # lib-editor-codemirror-collab

@@ -1,8 +1,8 @@
 ---
 title: job-fe-faq
 tags: [engineering, faq, frontend, job]
-created: '2021-09-21T19:48:12.024Z'
-modified: '2021-10-10T09:18:13.931Z'
+created: 2021-09-21T19:48:12.024Z
+modified: 2021-10-10T09:18:13.931Z
 ---
 
 # job-fe-faq

@@ -1,8 +1,8 @@
 ---
 title: docs-web-html-elements-common
 tags: [docs, dom, html, web]
-created: '2020-07-17T09:39:12.042Z'
-modified: '2020-12-08T13:14:07.354Z'
+created: 2020-07-17T09:39:12.042Z
+modified: 2020-12-08T13:14:07.354Z
 ---
 
 # docs-web-html-elements-common

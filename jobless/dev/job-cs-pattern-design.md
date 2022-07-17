@@ -1,8 +1,8 @@
 ---
 title: job-cs-pattern-design
 tags: [cs, design-pattern, job]
-created: '2021-09-23T18:31:09.718Z'
-modified: '2021-09-23T18:31:42.015Z'
+created: 2021-09-23T18:31:09.718Z
+modified: 2021-09-23T18:31:42.015Z
 ---
 
 # job-cs-pattern-design

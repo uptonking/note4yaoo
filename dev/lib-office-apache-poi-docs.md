@@ -1,8 +1,8 @@
 ---
 title: lib-office-apache-poi-docs
 tags: [apache-poi, docs]
-created: '2019-08-01T16:03:46.386Z'
-modified: '2021-05-13T02:43:55.877Z'
+created: 2019-08-01T16:03:46.386Z
+modified: 2021-05-13T02:43:55.877Z
 ---
 
 # lib-office-apache-poi-docs

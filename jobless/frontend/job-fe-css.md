@@ -1,8 +1,8 @@
 ---
 title: job-fe-css
 tags: [css, frontend, job]
-created: '2021-09-23T08:17:26.015Z'
-modified: '2021-10-10T09:17:08.066Z'
+created: 2021-09-23T08:17:26.015Z
+modified: 2021-10-10T09:17:08.066Z
 ---
 
 # job-fe-css

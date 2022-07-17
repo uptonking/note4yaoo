@@ -1,8 +1,8 @@
 ---
 title: thread-office-dev-usage
 tags: [office, thread]
-created: '2021-01-14T13:17:05.456Z'
-modified: '2021-01-14T13:17:38.972Z'
+created: 2021-01-14T13:17:05.456Z
+modified: 2021-01-14T13:17:38.972Z
 ---
 
 # thread-office-dev-usage

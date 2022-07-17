@@ -1,8 +1,8 @@
 ---
 title: lib-gis-deck-gl-dev
 tags: [deck.gl, gis, lib]
-created: '2021-06-22T11:15:36.202Z'
-modified: '2021-06-22T11:23:05.135Z'
+created: 2021-06-22T11:15:36.202Z
+modified: 2021-06-22T11:23:05.135Z
 ---
 
 # lib-gis-deck-gl-dev

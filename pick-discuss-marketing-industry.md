@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-marketing-industry
 tags: [discuss, industry, marketing, pick]
-created: '2021-01-21T04:05:58.195Z'
-modified: '2021-04-12T16:30:53.968Z'
+created: 2021-01-21T04:05:58.195Z
+modified: 2021-04-12T16:30:53.968Z
 ---
 
 # pick-discuss-marketing-industry

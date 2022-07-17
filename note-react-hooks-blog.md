@@ -1,8 +1,8 @@
 ---
 title: note-react-hooks-blog
 tags: [blog, hooks, react]
-created: '2020-12-29T14:16:59.370Z'
-modified: '2020-12-29T14:18:03.808Z'
+created: 2020-12-29T14:16:59.370Z
+modified: 2020-12-29T14:18:03.808Z
 ---
 
 # note-react-hooks-blog

@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-faq
 tags: [ag-grid, faq, lib]
-created: '2020-08-05T09:28:52.117Z'
-modified: '2021-05-13T02:43:27.691Z'
+created: 2020-08-05T09:28:52.117Z
+modified: 2021-05-13T02:43:27.691Z
 ---
 
 # lib-list-ag-grid-faq

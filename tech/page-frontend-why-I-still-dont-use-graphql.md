@@ -1,8 +1,8 @@
 ---
 title: page-frontend-why-I-still-dont-use-graphql
 tags: [api, graphql]
-created: '2020-08-06T08:48:07.770Z'
-modified: '2021-01-19T10:57:46.316Z'
+created: 2020-08-06T08:48:07.770Z
+modified: 2021-01-19T10:57:46.316Z
 ---
 
 # page-frontend-why-I-still-dont-use-graphql

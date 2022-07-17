@@ -1,8 +1,8 @@
 ---
 title: toc-lib-nestjs
 tags: [lib, nestjs, toc]
-created: '2020-12-13T13:14:12.113Z'
-modified: '2020-12-13T13:14:40.141Z'
+created: 2020-12-13T13:14:12.113Z
+modified: 2020-12-13T13:14:40.141Z
 ---
 
 # toc-lib-nestjs

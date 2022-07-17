@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-list-grid
 tags: [faq, grid, list]
-created: '2020-11-05T08:16:43.492Z'
-modified: '2021-03-29T19:16:31.873Z'
+created: 2020-11-05T08:16:43.492Z
+modified: 2021-03-29T19:16:31.873Z
 ---
 
 # dev-log-faq-list-grid

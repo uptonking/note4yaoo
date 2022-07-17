@@ -1,8 +1,8 @@
 ---
 title: viz-base-svg
 tags: [svg, viz, web]
-created: '2019-08-01T05:10:56.452Z'
-modified: '2020-12-21T07:46:58.910Z'
+created: 2019-08-01T05:10:56.452Z
+modified: 2020-12-21T07:46:58.910Z
 ---
 
 # viz-base-svg

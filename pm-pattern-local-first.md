@@ -1,8 +1,8 @@
 ---
 title: pm-pattern-local-first
 tags: [local-first, pattern, pm]
-created: '2021-08-22T08:05:15.252Z'
-modified: '2021-08-22T08:05:39.413Z'
+created: 2021-08-22T08:05:15.252Z
+modified: 2021-08-22T08:05:39.413Z
 ---
 
 # pm-pattern-local-first

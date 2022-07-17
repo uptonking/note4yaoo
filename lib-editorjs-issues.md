@@ -1,8 +1,8 @@
 ---
 title: lib-editorjs-issues
 tags: [editorjs, issues]
-created: '2020-11-17T09:38:33.792Z'
-modified: '2020-11-17T09:39:37.776Z'
+created: 2020-11-17T09:38:33.792Z
+modified: 2020-11-17T09:39:37.776Z
 ---
 
 # lib-editorjs-issues

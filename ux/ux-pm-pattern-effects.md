@@ -1,8 +1,8 @@
 ---
 title: ux-pm-pattern-effects
 tags: [pattern, pm, ux]
-created: '2020-11-06T08:42:13.756Z'
-modified: '2021-04-12T17:41:42.395Z'
+created: 2020-11-06T08:42:13.756Z
+modified: 2021-04-12T17:41:42.395Z
 ---
 
 # ux-pm-pattern-effects

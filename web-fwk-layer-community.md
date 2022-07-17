@@ -1,8 +1,8 @@
 ---
 title: web-fwk-layer-community
 tags: [community, layer, web]
-created: '2021-08-15T16:49:15.428Z'
-modified: '2021-08-15T16:49:35.180Z'
+created: 2021-08-15T16:49:15.428Z
+modified: 2021-08-15T16:49:35.180Z
 ---
 
 # web-fwk-layer-community

@@ -1,8 +1,8 @@
 ---
 title: note-react-concurrent-v18
 tags: [concurrent, react]
-created: '2021-08-14T07:07:50.968Z'
-modified: '2021-08-14T07:08:11.957Z'
+created: 2021-08-14T07:07:50.968Z
+modified: 2021-08-14T07:08:11.957Z
 ---
 
 # note-react-concurrent-v18

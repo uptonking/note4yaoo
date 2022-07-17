@@ -1,8 +1,8 @@
 ---
 title: toc-db-indexeddb-sync-collab-io
 tags: [collab, indexeddb]
-created: '2022-06-04T00:39:34.320Z'
-modified: '2022-06-04T00:40:09.745Z'
+created: 2022-06-04T00:39:34.320Z
+modified: 2022-06-04T00:40:09.745Z
 ---
 
 # toc-db-indexeddb-sync-collab-io

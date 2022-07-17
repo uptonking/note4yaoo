@@ -1,8 +1,8 @@
 ---
 title: pattern-arch-ioc-dependency-injection
 tags: [dependency-injection, pattern]
-created: '2021-08-04T13:38:54.030Z'
-modified: '2021-08-04T13:40:01.125Z'
+created: 2021-08-04T13:38:54.030Z
+modified: 2021-08-04T13:40:01.125Z
 ---
 
 # pattern-arch-ioc-dependency-injection

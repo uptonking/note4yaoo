@@ -1,8 +1,8 @@
 ---
 title: web-ux8-lab-common-pattern-usecase
 tags: [components, lab, usecase, ux]
-created: '2021-09-13T13:32:14.868Z'
-modified: '2021-09-13T13:34:01.331Z'
+created: 2021-09-13T13:32:14.868Z
+modified: 2021-09-13T13:34:01.331Z
 ---
 
 # web-ux8-lab-common-pattern-usecase

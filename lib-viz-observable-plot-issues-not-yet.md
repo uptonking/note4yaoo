@@ -1,8 +1,8 @@
 ---
 title: lib-viz-observable-plot-issues-not-yet
 tags: [issues, not-yet, observable-plot]
-created: '2021-05-31T18:12:17.654Z'
-modified: '2021-05-31T18:13:54.087Z'
+created: 2021-05-31T18:12:17.654Z
+modified: 2021-05-31T18:13:54.087Z
 ---
 
 # lib-viz-observable-plot-issues-not-yet

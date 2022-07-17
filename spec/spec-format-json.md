@@ -1,8 +1,8 @@
 ---
 title: spec-format-json
 tags: [format, json]
-created: '2019-12-24T12:57:52.481Z'
-modified: '2020-10-15T13:41:01.275Z'
+created: 2019-12-24T12:57:52.481Z
+modified: 2020-10-15T13:41:01.275Z
 ---
 
 # spec-format-json

@@ -1,8 +1,8 @@
 ---
 title: pm-editor-block-editor-alternatives
 tags: [alternatives, block-editor, features]
-created: '2022-06-08T11:06:00.338Z'
-modified: '2022-06-08T11:12:21.488Z'
+created: 2022-06-08T11:06:00.338Z
+modified: 2022-06-08T11:12:21.488Z
 ---
 
 # pm-editor-block-editor-alternatives

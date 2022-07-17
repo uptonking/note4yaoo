@@ -1,8 +1,8 @@
 ---
 title: thread-web-mobile
 tags: [job, mobile, thread, web]
-created: '2021-09-29T06:38:20.588Z'
-modified: '2021-09-29T06:38:35.002Z'
+created: 2021-09-29T06:38:20.588Z
+modified: 2021-09-29T06:38:35.002Z
 ---
 
 # thread-web-mobile

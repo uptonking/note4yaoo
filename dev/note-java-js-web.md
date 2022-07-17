@@ -1,8 +1,8 @@
 ---
-tags: [java, js, web, webview]
 title: note-java-js-web
-created: '2019-10-15T12:34:00.837Z'
-modified: '2020-06-22T09:12:26.115Z'
+tags: [java, js, web, webview]
+created: 2019-10-15T12:34:00.837Z
+modified: 2020-06-22T09:12:26.115Z
 ---
 
 # note-java-js-web

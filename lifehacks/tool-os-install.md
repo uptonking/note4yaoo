@@ -1,15 +1,13 @@
 ---
 title: tool-os-install
 tags: [iot, linux, operating-system]
-created: '2020-11-25T08:20:22.803Z'
-modified: '2020-12-22T12:42:14.745Z'
+created: 2020-11-25T08:20:22.803Z
+modified: 2020-12-22T12:42:14.745Z
 ---
 
 # tool-os-install
 
 # guide
-
-# starter
 
 # ubuntu22.04
 
@@ -60,11 +58,26 @@ sudo snap refresh
   - sudo systemctl set-default graphical
 
 - ubuntu安装nvidia显卡驱动
+  - 最简单的方式是使用ubuntu系统自带推荐的驱动，而不是到官网下载的驱动
+  - sudo ubuntu-drivers autoinstall 会安装n卡驱动
+  - 未避免开机黑屏，重启电脑前先删除或重命名备份文件 /etc/X11/xorg.conf
+  - ubuntu 22.04使用nvidia驱动使默认使用x11桌面，要使用wayland需要注释部分行
+    - /usr/lib/udev/rules.d/61-gdm.rules
+  - 貌似安装完n卡后，只能默认用n卡了，就算 prime-select intel 改为集成显卡，重启后也会变成用n卡
 - [Ubuntu 18.04 安装 NVIDIA 显卡驱动](https://zhuanlan.zhihu.com/p/59618999)
   - 安装好驱动程序之后，进入系统无法显示图形化界面，黑屏，左上角有一条白色短线
   - 这个问题这两天遇到好多次了，这里没人列出具体方法，我回答一下，就是驱动和显卡不匹配原因。
-    - 如果白线不闪烁，按Ctrl+ shift+F2，进入tty2，用 sudo apt --purge remove nvidia*，删除安装的驱动，如果是自行下载安装的官方驱动，则sudo ./驱动.run --uninstall。
+    - 如果白线不闪烁，按Ctrl+ shift+F2，进入tty2，用 sudo apt remove --purge  nvidia*，删除安装的驱动，如果是自行下载安装的官方驱动，则sudo ./驱动.run --uninstall。
     - 若白线闪烁，在grub页面进入Ubuntu高级选项，选择低版本的内核可以进入系统，在系统中用终端卸载显卡驱动就可以了
+- [Ubuntu 21. 友	Dr. 十月		07-18 01:16
+你的身材和你喜欢的身材04 & NVIDIA RTX3080 Ti 驱动安装](https://zhuanlan.zhihu.com/p/396680736)
+- [3080电脑安装ubuntu系统及显卡驱动的若干问题总结](https://www.ai2news.com/blog/972612/#google_vignette)
+  - 安装完显卡驱动，重启后黑屏，左上角有光标
+  - 删除 /etc/X11/xorg.conf后重启即可
+- [Can't use Wayland with Nvidia 510 drivers on Ubuntu 22.04 LTS](https://askubuntu.com/questions/1403854)
+  - sudo gedit /usr/lib/udev/rules.d/61-gdm.rule
+- [Install NVIDIA Driver & Switch Between Intel and NVIDIA in Ubuntu 22.04](https://ubuntuhandbook.org/index.php/2021/06/install-nvidia-driver-switch-between-intel-nvidia-ubuntu/)
+  - 切换n卡时只支持 xorg，没有完美的方案
 
 ## software
 
@@ -100,18 +113,19 @@ sudo snap refresh
 ## os-starter
 
 - pe安装系统需要鼠标，键盘操作太困难
-  - 需要pe支持12代触摸板才可以
+  - 需要pe系统支持12代触摸板才可以
   - [AnglePE](https://www.angel-pe.cn/2022/26/20/angeltspeclksddnzzxttwjc%d1%81ax.html)
 
 - [预装Windows 11系统的新电脑怎么跳过联网验机？](https://zhuanlan.zhihu.com/p/4253264 03)
   - 开机出现如下界面，同时按下组合键Ctrl+Shift+F3。（部分机型没反应可以试试Ctrl+Shift+F3+Fn）
+  - 更推荐直接重装
 
 - [使用WinNTSetup安装win10时提示efi part有红叉(win10安装UEFI系统安装）](https://www.cnblogs.com/sjdn/p/8975583.html)
   - 引导盘要选esp分区，也就是第一个分区100/300M空间的那个
 
 ## software
 
-- ms-Office 2021官方镜像下载安装激活一条龙
+- ms-office 2021官方镜像下载安装激活一条龙
   - https://www.cnblogs.com/hushaojun/p/15967885.html
 
 - adobe 大师版全家桶、sp版独立包

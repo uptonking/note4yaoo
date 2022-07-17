@@ -1,8 +1,8 @@
 ---
 title: spec-encoding-cn-gbk
 tags: [encoding, gbk, spec]
-created: '2021-02-16T05:17:07.833Z'
-modified: '2021-02-16T05:17:27.642Z'
+created: 2021-02-16T05:17:07.833Z
+modified: 2021-02-16T05:17:27.642Z
 ---
 
 # spec-encoding-cn-gbk

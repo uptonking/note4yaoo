@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-in-js
 tags: [css-in-js, lib, toc]
-created: '2020-08-07T18:20:02.290Z'
-modified: '2020-09-25T05:56:32.022Z'
+created: 2020-08-07T18:20:02.290Z
+modified: 2020-09-25T05:56:32.022Z
 ---
 
 # toc-lib-css-in-js

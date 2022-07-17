@@ -1,8 +1,8 @@
 ---
 title: ux-design-style-neumorphism
 tags: [design-style, neumorphism, ux]
-created: '2021-01-09T16:10:51.118Z'
-modified: '2021-01-09T16:12:16.423Z'
+created: 2021-01-09T16:10:51.118Z
+modified: 2021-01-09T16:12:16.423Z
 ---
 
 # ux-design-style-neumorphism

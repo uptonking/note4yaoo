@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-spring-dev
 tags: [docs, spring]
-created: '2019-08-01T16:03:46.394Z'
-modified: '2020-12-08T13:28:14.387Z'
+created: 2019-08-01T16:03:46.394Z
+modified: 2020-12-08T13:28:14.387Z
 ---
 
 # lib-fwk-spring-dev

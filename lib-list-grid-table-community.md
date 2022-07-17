@@ -1,8 +1,8 @@
 ---
 title: lib-list-grid-table-community
 tags: [community, grid, list, table]
-created: '2021-06-24T08:48:24.911Z'
-modified: '2021-06-24T08:48:54.797Z'
+created: 2021-06-24T08:48:24.911Z
+modified: 2021-06-24T08:48:54.797Z
 ---
 
 # lib-list-grid-table-community

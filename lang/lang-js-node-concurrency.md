@@ -1,8 +1,8 @@
 ---
 title: lang-js-node-concurrency
 tags: [concurrent, js, lang, node]
-created: '2021-08-30T06:41:24.479Z'
-modified: '2021-08-30T06:41:48.713Z'
+created: 2021-08-30T06:41:24.479Z
+modified: 2021-08-30T06:41:48.713Z
 ---
 
 # lang-js-node-concurrency

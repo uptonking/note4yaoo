@@ -1,8 +1,8 @@
 ---
 title: spec-gis-geopackage
 tags: [geopackage, gis, spec]
-created: '2021-09-30T07:46:25.527Z'
-modified: '2021-09-30T07:46:40.968Z'
+created: 2021-09-30T07:46:25.527Z
+modified: 2021-09-30T07:46:40.968Z
 ---
 
 # spec-gis-geopackage

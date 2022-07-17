@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-styled-components
 tags: [css-in-js, style]
-created: '2019-08-17T10:19:06.636Z'
-modified: '2021-05-13T02:58:45.832Z'
+created: 2019-08-17T10:19:06.636Z
+modified: 2021-05-13T02:58:45.832Z
 ---
 
 # web-style-css-in-js-styled-components

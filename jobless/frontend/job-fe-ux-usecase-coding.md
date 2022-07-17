@@ -1,8 +1,8 @@
 ---
 title: job-fe-ux-usecase-coding
 tags: [coding, frontend, job, usecase, ux]
-created: '2021-09-24T16:33:42.242Z'
-modified: '2021-10-10T09:19:27.035Z'
+created: 2021-09-24T16:33:42.242Z
+modified: 2021-10-10T09:19:27.035Z
 ---
 
 # job-fe-ux-usecase-coding

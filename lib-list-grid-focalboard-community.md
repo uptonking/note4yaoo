@@ -1,8 +1,8 @@
 ---
 title: lib-list-grid-focalboard-community
 tags: [community, focalboard]
-created: '2022-03-16T20:45:38.338Z'
-modified: '2022-03-16T20:45:50.527Z'
+created: 2022-03-16T20:45:38.338Z
+modified: 2022-03-16T20:45:50.527Z
 ---
 
 # lib-list-grid-focalboard-community

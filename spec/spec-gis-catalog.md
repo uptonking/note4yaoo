@@ -1,8 +1,8 @@
 ---
 title: spec-gis-catalog
 tags: [catalog, gis, spec]
-created: '2019-12-12T09:07:57.883Z'
-modified: '2021-09-30T07:45:22.343Z'
+created: 2019-12-12T09:07:57.883Z
+modified: 2021-09-30T07:45:22.343Z
 ---
 
 # spec-gis-catalog

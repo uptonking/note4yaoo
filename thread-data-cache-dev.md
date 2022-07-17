@@ -1,8 +1,8 @@
 ---
 title: thread-data-cache-dev
 tags: [cache, data, thread]
-created: '2021-08-27T07:44:27.021Z'
-modified: '2021-08-27T07:44:55.105Z'
+created: 2021-08-27T07:44:27.021Z
+modified: 2021-08-27T07:44:55.105Z
 ---
 
 # thread-data-cache-dev

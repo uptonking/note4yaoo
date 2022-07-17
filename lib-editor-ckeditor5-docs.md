@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-docs
 tags: [ckeditor, editor]
-created: '2021-10-25T09:32:44.058Z'
-modified: '2021-10-25T09:33:13.353Z'
+created: 2021-10-25T09:32:44.058Z
+modified: 2021-10-25T09:33:13.353Z
 ---
 
 # lib-editor-ckeditor5-docs

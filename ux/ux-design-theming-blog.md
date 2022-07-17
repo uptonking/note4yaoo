@@ -1,8 +1,8 @@
 ---
 title: ux-design-theming-blog
 tags: [blog, design, theming]
-created: '2020-12-29T18:00:51.271Z'
-modified: '2021-01-01T20:09:00.055Z'
+created: 2020-12-29T18:00:51.271Z
+modified: 2021-01-01T20:09:00.055Z
 ---
 
 # ux-design-theming-blog

@@ -1,8 +1,8 @@
 ---
 title: note-git-dev
 tags: [git]
-created: '2021-06-01T16:55:33.625Z'
-modified: '2021-06-01T16:55:46.743Z'
+created: 2021-06-01T16:55:33.625Z
+modified: 2021-06-01T16:55:46.743Z
 ---
 
 # note-git-dev

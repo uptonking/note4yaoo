@@ -1,8 +1,8 @@
 ---
 title: note-react-faq-repeat
 tags: [faq, react]
-created: '2021-06-10T06:26:55.150Z'
-modified: '2021-06-10T06:44:27.120Z'
+created: 2021-06-10T06:26:55.150Z
+modified: 2021-06-10T06:44:27.120Z
 ---
 
 # note-react-faq-repeat

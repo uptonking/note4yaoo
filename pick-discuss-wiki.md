@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-wiki
 tags: [discuss, wiki, zhihu]
-created: '2020-02-03T14:15:02.412Z'
-modified: '2021-04-12T16:30:53.969Z'
+created: 2020-02-03T14:15:02.412Z
+modified: 2021-04-12T16:30:53.969Z
 ---
 
 # pick-discuss-wiki

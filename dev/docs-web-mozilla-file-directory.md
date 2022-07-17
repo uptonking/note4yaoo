@@ -1,8 +1,8 @@
 ---
 title: docs-web-mozilla-file-directory
 tags: [docs, file, web]
-created: '2021-01-14T16:28:19.728Z'
-modified: '2021-01-15T01:29:18.204Z'
+created: 2021-01-14T16:28:19.728Z
+modified: 2021-01-15T01:29:18.204Z
 ---
 
 # docs-web-mozilla-file-directory

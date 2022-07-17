@@ -1,8 +1,8 @@
 ---
 title: job-coding-repeat-promise
 tags: [async, coding, promise, repeat, 手撕代码]
-created: '2021-09-23T08:20:13.005Z'
-modified: '2021-10-06T17:17:34.809Z'
+created: 2021-09-23T08:20:13.005Z
+modified: 2021-10-06T17:17:34.809Z
 ---
 
 # job-coding-repeat-promise

@@ -1,8 +1,8 @@
 ---
 title: note-comparison-catalog
 tags: [comparison]
-created: '2020-05-03T08:55:25.435Z'
-modified: '2020-10-22T10:07:42.771Z'
+created: 2020-05-03T08:55:25.435Z
+modified: 2020-10-22T10:07:42.771Z
 ---
 
 # note-comparison-catalog

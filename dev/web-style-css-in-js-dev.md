@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-dev
 tags: [css-in-js, style]
-created: '2020-08-07T16:13:30.609Z'
-modified: '2021-01-01T20:06:19.327Z'
+created: 2020-08-07T16:13:30.609Z
+modified: 2021-01-01T20:06:19.327Z
 ---
 
 # web-style-css-in-js-dev

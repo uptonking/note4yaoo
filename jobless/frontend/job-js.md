@@ -1,8 +1,8 @@
 ---
 title: job-js
 tags: [frontend, job, js]
-created: '2021-09-23T08:24:24.348Z'
-modified: '2021-10-10T09:30:51.190Z'
+created: 2021-09-23T08:24:24.348Z
+modified: 2021-10-10T09:30:51.190Z
 ---
 
 # job-js

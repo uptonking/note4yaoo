@@ -1,8 +1,8 @@
 ---
 title: lib-list-luckysheet-faq
 tags: [faq, lib, luckysheet]
-created: '2020-10-19T17:59:58.018Z'
-modified: '2021-05-13T02:49:13.772Z'
+created: 2020-10-19T17:59:58.018Z
+modified: 2021-05-13T02:49:13.772Z
 ---
 
 # lib-list-luckysheet-faq

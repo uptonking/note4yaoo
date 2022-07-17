@@ -1,8 +1,8 @@
 ---
 title: toc-office-catalog
 tags: [documentation, office, toc]
-created: '2020-10-05T09:44:12.399Z'
-modified: '2021-01-04T17:31:31.845Z'
+created: 2020-10-05T09:44:12.399Z
+modified: 2021-01-04T17:31:31.845Z
 ---
 
 # toc-office-catalog

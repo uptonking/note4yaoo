@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-wasm
 tags: [js, lang, thread, wasm]
-created: '2021-07-07T06:26:49.767Z'
-modified: '2021-07-07T06:27:10.266Z'
+created: 2021-07-07T06:26:49.767Z
+modified: 2021-07-07T06:27:10.266Z
 ---
 
 # thread-lang-js-wasm

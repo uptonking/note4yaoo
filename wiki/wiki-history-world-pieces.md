@@ -1,8 +1,8 @@
 ---
 title: wiki-history-world-pieces
 tags: [history, ww]
-created: '2020-12-05T10:35:45.308Z'
-modified: '2020-12-08T14:34:56.482Z'
+created: 2020-12-05T10:35:45.308Z
+modified: 2020-12-08T14:34:56.482Z
 ---
 
 # wiki-history-world-pieces

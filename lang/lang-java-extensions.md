@@ -1,8 +1,8 @@
 ---
 title: lang-java-extensions
 tags: [engineering, extensions, java, lang]
-created: '2020-12-14T13:18:38.355Z'
-modified: '2021-01-04T15:51:00.214Z'
+created: 2020-12-14T13:18:38.355Z
+modified: 2021-01-04T15:51:00.214Z
 ---
 
 # lang-java-extensions

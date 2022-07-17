@@ -1,8 +1,8 @@
 ---
 title: ux-design-material
 tags: [design, material-design, ux]
-created: '2020-10-03T15:28:12.712Z'
-modified: '2021-01-01T20:08:06.371Z'
+created: 2020-10-03T15:28:12.712Z
+modified: 2021-01-01T20:08:06.371Z
 ---
 
 # ux-design-material

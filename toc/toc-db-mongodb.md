@@ -1,8 +1,8 @@
 ---
 title: toc-db-mongodb
 tags: [mongodb, toc]
-created: '2022-06-13T03:56:47.999Z'
-modified: '2022-06-13T03:57:09.891Z'
+created: 2022-06-13T03:56:47.999Z
+modified: 2022-06-13T03:57:09.891Z
 ---
 
 # toc-db-mongodb

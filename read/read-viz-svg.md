@@ -1,8 +1,8 @@
 ---
 title: read-viz-svg
 tags: [book, read, svg, viz]
-created: '2020-08-03T09:38:20.763Z'
-modified: '2020-12-08T14:45:24.028Z'
+created: 2020-08-03T09:38:20.763Z
+modified: 2020-12-08T14:45:24.028Z
 ---
 
 # read-viz-svg

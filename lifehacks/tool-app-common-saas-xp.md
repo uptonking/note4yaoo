@@ -1,8 +1,8 @@
 ---
 title: tool-app-common-saas-xp
 tags: [app, saas, tool, xp]
-created: '2020-07-12T15:27:22.003Z'
-modified: '2020-12-29T17:52:31.539Z'
+created: 2020-07-12T15:27:22.003Z
+modified: 2020-12-29T17:52:31.539Z
 ---
 
 # tool-app-common-saas-xp

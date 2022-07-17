@@ -1,8 +1,8 @@
 ---
 title: toc-lib-react-extensions
 tags: [extensions]
-created: '2020-11-19T12:42:31.906Z'
-modified: '2020-11-19T12:43:25.788Z'
+created: 2020-11-19T12:42:31.906Z
+modified: 2020-11-19T12:43:25.788Z
 ---
 
 # toc-lib-react-extensions

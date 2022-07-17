@@ -1,8 +1,8 @@
 ---
 title: lib-viz-d3-community
 tags: [community, d3, viz]
-created: '2021-05-29T21:05:33.951Z'
-modified: '2021-05-29T21:06:01.999Z'
+created: 2021-05-29T21:05:33.951Z
+modified: 2021-05-29T21:06:01.999Z
 ---
 
 # lib-viz-d3-community

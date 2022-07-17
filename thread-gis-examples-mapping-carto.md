@@ -1,8 +1,8 @@
 ---
 title: thread-gis-examples-mapping-carto
 tags: [carto, examples, gis, mapping, thread]
-created: '2021-03-26T11:29:28.403Z'
-modified: '2021-08-16T06:45:26.099Z'
+created: 2021-03-26T11:29:28.403Z
+modified: 2021-08-16T06:45:26.099Z
 ---
 
 # thread-gis-examples-mapping-carto

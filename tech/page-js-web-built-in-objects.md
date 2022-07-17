@@ -1,8 +1,8 @@
 ---
 title: page-js-web-built-in-objects
 tags: [js, lang, web]
-created: '2020-09-04T05:15:50.664Z'
-modified: '2021-01-19T10:55:07.688Z'
+created: 2020-09-04T05:15:50.664Z
+modified: 2021-01-19T10:55:07.688Z
 ---
 
 # page-js-web-built-in-objects

@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-electron-dev
 tags: [cross-platform, dev, electron]
-created: '2020-05-18T09:49:23.005Z'
-modified: '2021-05-13T03:08:52.583Z'
+created: 2020-05-18T09:49:23.005Z
+modified: 2021-05-13T03:08:52.583Z
 ---
 
 # lib-xplat-electron-dev

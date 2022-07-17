@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p1-main-concepts
 tags: [docs, lib, react]
-created: '2019-08-01T16:03:46.386Z'
-modified: '2021-05-13T03:45:50.439Z'
+created: 2019-08-01T16:03:46.386Z
+modified: 2021-05-13T03:45:50.439Z
 ---
 
 # note-react-docs-p1-main-concepts

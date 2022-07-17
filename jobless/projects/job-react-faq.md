@@ -1,8 +1,8 @@
 ---
 title: job-react-faq
 tags: [job, react]
-created: '2021-09-21T19:31:15.701Z'
-modified: '2021-10-05T08:23:17.099Z'
+created: 2021-09-21T19:31:15.701Z
+modified: 2021-10-05T08:23:17.099Z
 ---
 
 # job-react-faq

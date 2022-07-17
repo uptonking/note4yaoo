@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-react
 tags: [ckeditor, lib, react]
-created: '2021-11-07T11:01:44.444Z'
-modified: '2021-11-07T11:02:15.399Z'
+created: 2021-11-07T11:01:44.444Z
+modified: 2021-11-07T11:02:15.399Z
 ---
 
 # lib-editor-ckeditor5-react

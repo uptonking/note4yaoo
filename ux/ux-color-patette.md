@@ -1,8 +1,8 @@
 ---
 title: ux-color-patette
 tags: [color, ux]
-created: '2020-07-17T09:55:30.767Z'
-modified: '2021-01-01T20:08:01.651Z'
+created: 2020-07-17T09:55:30.767Z
+modified: 2021-01-01T20:08:01.651Z
 ---
 
 # ux-color-patette

@@ -1,8 +1,8 @@
 ---
 title: editoe-latest-changelog
 tags: [changelog, editoe]
-created: '2021-10-23T18:07:10.580Z'
-modified: '2021-10-23T18:07:42.972Z'
+created: 2021-10-23T18:07:10.580Z
+modified: 2021-10-23T18:07:42.972Z
 ---
 
 # editoe-latest-changelog

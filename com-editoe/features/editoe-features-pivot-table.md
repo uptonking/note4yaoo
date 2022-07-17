@@ -1,8 +1,8 @@
 ---
 title: editoe-features-pivot-table
 tags: [editoe, features, pivot-table]
-created: '2021-12-07T05:10:28.280Z'
-modified: '2021-12-07T05:12:27.586Z'
+created: 2021-12-07T05:10:28.280Z
+modified: 2021-12-07T05:12:27.586Z
 ---
 
 # editoe-features-pivot-table

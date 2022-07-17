@@ -1,8 +1,8 @@
 ---
 title: lib-viz-observable-plot-examples
 tags: [examples, observable-plot, viz]
-created: '2021-08-21T12:53:43.058Z'
-modified: '2021-08-21T12:54:10.152Z'
+created: 2021-08-21T12:53:43.058Z
+modified: 2021-08-21T12:54:10.152Z
 ---
 
 # lib-viz-observable-plot-examples

@@ -1,8 +1,8 @@
 ---
 title: spec-format-apache-arrow-community
 tags: [apache-arrow, community]
-created: '2021-07-24T08:16:02.068Z'
-modified: '2021-07-24T08:16:41.076Z'
+created: 2021-07-24T08:16:02.068Z
+modified: 2021-07-24T08:16:41.076Z
 ---
 
 # spec-format-apache-arrow-community

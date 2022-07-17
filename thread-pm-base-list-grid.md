@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-list-grid
 tags: [grid, list, pm, table, thread]
-created: '2021-04-19T14:50:45.904Z'
-modified: '2021-08-16T06:57:03.570Z'
+created: 2021-04-19T14:50:45.904Z
+modified: 2021-08-16T06:57:03.570Z
 ---
 
 # thread-pm-base-list-grid

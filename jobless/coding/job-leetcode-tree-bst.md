@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-tree-bst
 tags: [bst, job, leetcode, tree]
-created: '2021-10-06T17:25:04.121Z'
-modified: '2021-10-06T17:25:25.427Z'
+created: 2021-10-06T17:25:04.121Z
+modified: 2021-10-06T17:25:25.427Z
 ---
 
 # job-leetcode-tree-bst

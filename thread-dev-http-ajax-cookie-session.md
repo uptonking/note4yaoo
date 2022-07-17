@@ -1,8 +1,8 @@
 ---
 title: thread-dev-http-ajax-cookie-session
 tags: [ajax, cookie, http, jwt, session]
-created: '2021-08-06T08:30:13.653Z'
-modified: '2021-08-06T08:32:26.142Z'
+created: 2021-08-06T08:30:13.653Z
+modified: 2021-08-06T08:32:26.142Z
 ---
 
 # thread-dev-http-ajax-cookie-session

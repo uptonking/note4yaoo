@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp-design-headless
 tags: [components, headless, ui, web]
-created: '2021-04-11T17:36:35.781Z'
-modified: '2021-04-11T17:37:29.528Z'
+created: 2021-04-11T17:36:35.781Z
+modified: 2021-04-11T17:37:29.528Z
 ---
 
 # web-ui-comp-design-headless

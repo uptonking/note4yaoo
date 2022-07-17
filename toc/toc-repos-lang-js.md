@@ -1,8 +1,8 @@
 ---
 title: toc-repos-lang-js
 tags: [js, repos, toc]
-created: '2020-09-28T05:27:32.927Z'
-modified: '2021-05-14T15:04:42.225Z'
+created: 2020-09-28T05:27:32.927Z
+modified: 2021-05-14T15:04:42.225Z
 ---
 
 # toc-repos-lang-js

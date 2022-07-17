@@ -1,8 +1,8 @@
 ---
 title: spec-gis-streaming-geobuf
 tags: [geobuf, gis, spec, streaming]
-created: '2021-09-30T08:15:38.824Z'
-modified: '2021-09-30T08:17:00.070Z'
+created: 2021-09-30T08:15:38.824Z
+modified: 2021-09-30T08:17:00.070Z
 ---
 
 # spec-gis-streaming-geobuf

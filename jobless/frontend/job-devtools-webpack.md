@@ -1,8 +1,8 @@
 ---
 title: job-devtools-webpack
 tags: [devtools, job, webpack]
-created: '2021-09-24T19:13:02.407Z'
-modified: '2021-09-24T19:13:17.894Z'
+created: 2021-09-24T19:13:02.407Z
+modified: 2021-09-24T19:13:17.894Z
 ---
 
 # job-devtools-webpack

@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-lit-html-blog
 tags: [blog, lit-html]
-created: '2021-01-07T19:22:44.082Z'
-modified: '2021-05-13T02:48:04.397Z'
+created: 2021-01-07T19:22:44.082Z
+modified: 2021-05-13T02:48:04.397Z
 ---
 
 # lib-fwk-lit-html-blog

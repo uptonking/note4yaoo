@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comment
 tags: [comment, toc]
-created: '2020-12-19T11:41:56.538Z'
-modified: '2020-12-20T08:23:22.808Z'
+created: 2020-12-19T11:41:56.538Z
+modified: 2020-12-20T08:23:22.808Z
 ---
 
 # toc-lib-comment

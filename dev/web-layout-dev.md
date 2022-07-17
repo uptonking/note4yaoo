@@ -1,8 +1,8 @@
 ---
 title: web-layout-dev
 tags: [layout, web]
-created: '2020-07-25T10:01:27.897Z'
-modified: '2021-01-01T20:17:05.116Z'
+created: 2020-07-25T10:01:27.897Z
+modified: 2021-01-01T20:17:05.116Z
 ---
 
 # web-layout-dev

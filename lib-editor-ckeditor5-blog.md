@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-blog
 tags: [blog, ckeditor]
-created: '2021-10-31T15:56:15.028Z'
-modified: '2021-10-31T15:56:24.071Z'
+created: 2021-10-31T15:56:15.028Z
+modified: 2021-10-31T15:56:24.071Z
 ---
 
 # lib-editor-ckeditor5-blog

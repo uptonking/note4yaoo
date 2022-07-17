@@ -1,8 +1,8 @@
 ---
 title: toc-lib-notebook-style-cell
 tags: [cell, lib, notebook, toc]
-created: '2021-05-13T16:07:05.876Z'
-modified: '2021-05-13T16:08:15.067Z'
+created: 2021-05-13T16:07:05.876Z
+modified: 2021-05-13T16:08:15.067Z
 ---
 
 # toc-lib-notebook-style-cell

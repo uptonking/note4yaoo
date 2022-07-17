@@ -1,8 +1,8 @@
 ---
 title: ux-interaction-pattern
 tags: [style, ux, web]
-created: '2019-10-10T08:40:08.927Z'
-modified: '2021-01-01T20:09:35.330Z'
+created: 2019-10-10T08:40:08.927Z
+modified: 2021-01-01T20:09:35.330Z
 ---
 
 # ux-interaction-pattern

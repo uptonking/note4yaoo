@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-issues-not-yet
 tags: [issues, not-yet, observablehq]
-created: '2021-05-22T19:54:41.082Z'
-modified: '2021-05-22T19:55:00.238Z'
+created: 2021-05-22T19:54:41.082Z
+modified: 2021-05-22T19:55:00.238Z
 ---
 
 # lib-notebook-observablehq-issues-not-yet

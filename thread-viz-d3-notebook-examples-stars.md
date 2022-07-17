@@ -1,8 +1,8 @@
 ---
 title: thread-viz-d3-notebook-examples-stars
 tags: [d3, examples, notebook, observablehq]
-created: '2022-05-20T19:33:46.908Z'
-modified: '2022-05-20T19:34:35.500Z'
+created: 2022-05-20T19:33:46.908Z
+modified: 2022-05-20T19:34:35.500Z
 ---
 
 # thread-viz-d3-notebook-examples-stars

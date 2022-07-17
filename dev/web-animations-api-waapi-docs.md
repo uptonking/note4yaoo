@@ -1,8 +1,8 @@
 ---
 title: web-animations-api-waapi-docs
 tags: [animation, docs, waapi, web]
-created: '2020-08-02T13:35:01.695Z'
-modified: '2021-09-22T04:13:57.615Z'
+created: 2020-08-02T13:35:01.695Z
+modified: 2021-09-22T04:13:57.615Z
 ---
 
 # web-animations-api-waapi-docs

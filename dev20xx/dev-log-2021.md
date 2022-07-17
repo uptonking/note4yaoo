@@ -1,8 +1,8 @@
 ---
 title: dev-log-2021
 tags: ['2021', dev-log, dev-xp]
-created: '2022-05-24T17:56:10.721Z'
-modified: '2022-05-24T17:56:46.683Z'
+created: 2022-05-24T17:56:10.721Z
+modified: 2022-05-24T17:56:46.683Z
 ---
 
 # dev-log-2021

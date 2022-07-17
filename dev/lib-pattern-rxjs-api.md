@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-api
 tags: [api, pattern, rxjs]
-created: '2020-12-15T17:39:03.558Z'
-modified: '2020-12-15T17:39:23.394Z'
+created: 2020-12-15T17:39:03.558Z
+modified: 2020-12-15T17:39:23.394Z
 ---
 
 # lib-pattern-rxjs-api

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-docs-fwk-architecture
 tags: [architecture, ckeditor, docs, framework]
-created: '2021-10-29T16:10:08.172Z'
-modified: '2021-10-29T16:10:35.146Z'
+created: 2021-10-29T16:10:08.172Z
+modified: 2021-10-29T16:10:35.146Z
 ---
 
 # lib-editor-ckeditor5-docs-fwk-architecture

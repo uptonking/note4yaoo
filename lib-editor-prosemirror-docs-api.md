@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-docs-api
 tags: [api, docs, editor, prosemirror]
-created: '2021-06-13T07:56:30.857Z'
-modified: '2021-06-13T07:57:01.122Z'
+created: 2021-06-13T07:56:30.857Z
+modified: 2021-06-13T07:57:01.122Z
 ---
 
 # lib-editor-prosemirror-docs-api

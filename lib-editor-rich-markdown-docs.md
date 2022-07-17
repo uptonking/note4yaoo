@@ -1,8 +1,8 @@
 ---
 title: lib-editor-rich-markdown-docs
 tags: [docs, rich-markdown-editor]
-created: '2021-06-02T10:34:01.602Z'
-modified: '2021-06-02T10:34:16.329Z'
+created: 2021-06-02T10:34:01.602Z
+modified: 2021-06-02T10:34:16.329Z
 ---
 
 # lib-editor-rich-markdown-docs

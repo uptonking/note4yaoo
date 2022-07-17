@@ -1,8 +1,8 @@
 ---
 title: thread-web-css-stars
 tags: [css, thread, web]
-created: '2021-07-25T12:48:41.836Z'
-modified: '2021-07-25T12:49:10.410Z'
+created: 2021-07-25T12:48:41.836Z
+modified: 2021-07-25T12:49:10.410Z
 ---
 
 # thread-web-css-stars

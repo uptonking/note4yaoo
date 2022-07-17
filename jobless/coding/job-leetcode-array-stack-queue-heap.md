@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-array-stack-queue-heap
 tags: [algorithms, coding, heap, job, leetcode, queue, stack]
-created: '2021-09-21T19:40:24.161Z'
-modified: '2021-10-06T14:54:06.837Z'
+created: 2021-09-21T19:40:24.161Z
+modified: 2021-10-06T14:54:06.837Z
 ---
 
 # job-leetcode-array-stack-queue-heap

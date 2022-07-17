@@ -1,8 +1,8 @@
 ---
 title: pm-pattern-local-first-community
 tags: [community, local-first, pattern]
-created: '2022-03-03T18:19:36.049Z'
-modified: '2022-03-03T18:20:12.075Z'
+created: 2022-03-03T18:19:36.049Z
+modified: 2022-03-03T18:20:12.075Z
 ---
 
 # pm-pattern-local-first-community

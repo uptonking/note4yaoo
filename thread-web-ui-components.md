@@ -1,8 +1,8 @@
 ---
 title: thread-web-ui-components
 tags: [components, thread, ui, web]
-created: '2021-01-19T04:45:46.454Z'
-modified: '2021-01-19T04:46:23.100Z'
+created: 2021-01-19T04:45:46.454Z
+modified: 2021-01-19T04:46:23.100Z
 ---
 
 # thread-web-ui-components

@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-faq
 tags: [faq, lib, pattern, rxjs]
-created: '2020-12-14T14:41:15.362Z'
-modified: '2020-12-14T14:42:11.433Z'
+created: 2020-12-14T14:41:15.362Z
+modified: 2020-12-14T14:42:11.433Z
 ---
 
 # lib-pattern-rxjs-faq

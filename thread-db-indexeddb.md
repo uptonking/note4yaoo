@@ -1,8 +1,8 @@
 ---
 title: thread-db-indexeddb
 tags: [db, indexeddb]
-created: '2022-05-11T16:25:08.946Z'
-modified: '2022-05-11T16:25:26.808Z'
+created: 2022-05-11T16:25:08.946Z
+modified: 2022-05-11T16:25:26.808Z
 ---
 
 # thread-db-indexeddb

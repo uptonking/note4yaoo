@@ -1,8 +1,8 @@
 ---
 title: dev-log-news-industry-latest
 tags: [industry, latest, log, news]
-created: '2019-06-24T11:19:00.127Z'
-modified: '2021-08-07T15:30:42.655Z'
+created: 2019-06-24T11:19:00.127Z
+modified: 2021-08-07T15:30:42.655Z
 ---
 
 # dev-log-news-industry-latest

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlaskit-latest-changelog
 tags: [atlaskit-editor, changelog]
-created: '2021-07-14T15:37:36.676Z'
-modified: '2021-07-14T15:38:06.614Z'
+created: 2021-07-14T15:37:36.676Z
+modified: 2021-07-14T15:38:06.614Z
 ---
 
 # lib-editor-atlaskit-latest-changelog

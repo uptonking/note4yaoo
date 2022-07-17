@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-canvas
 tags: [canvas, components, design-system, lib, toc]
-created: '2021-05-19T13:53:40.087Z'
-modified: '2021-05-19T13:54:12.338Z'
+created: 2021-05-19T13:53:40.087Z
+modified: 2021-05-19T13:54:12.338Z
 ---
 
 # toc-lib-comp-design-canvas

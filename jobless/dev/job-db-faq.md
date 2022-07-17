@@ -1,8 +1,8 @@
 ---
 title: job-db-faq
 tags: [database, job]
-created: '2021-09-28T14:38:20.560Z'
-modified: '2021-09-28T14:38:46.122Z'
+created: 2021-09-28T14:38:20.560Z
+modified: 2021-09-28T14:38:46.122Z
 ---
 
 # job-db-faq

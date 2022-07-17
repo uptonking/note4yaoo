@@ -1,8 +1,8 @@
 ---
 title: ux-design-tokens-dev
 tags: [design-system, design-tokens, ux]
-created: '2020-12-31T20:07:19.497Z'
-modified: '2021-01-01T20:09:10.218Z'
+created: 2020-12-31T20:07:19.497Z
+modified: 2021-01-01T20:09:10.218Z
 ---
 
 # ux-design-tokens-dev

@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p5-codebase-deisgn-test
 tags: [docs, react]
-created: '2020-06-25T17:53:19.549Z'
-modified: '2021-05-13T03:46:13.213Z'
+created: 2020-06-25T17:53:19.549Z
+modified: 2021-05-13T03:46:13.213Z
 ---
 
 # note-react-docs-p5-codebase-deisgn-test

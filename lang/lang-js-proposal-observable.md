@@ -1,8 +1,8 @@
 ---
 title: lang-js-proposal-observable
 tags: [js, lang, observer, pattern, proposal]
-created: '2020-12-14T11:27:40.522Z'
-modified: '2020-12-14T11:29:00.678Z'
+created: 2020-12-14T11:27:40.522Z
+modified: 2020-12-14T11:29:00.678Z
 ---
 
 # lang-js-proposal-observable

@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs-rendering-customization
 tags: [ag-grid, docs]
-created: '2020-08-26T11:00:16.149Z'
-modified: '2021-05-13T02:43:04.944Z'
+created: 2020-08-26T11:00:16.149Z
+modified: 2021-05-13T02:43:04.944Z
 ---
 
 # lib-list-ag-grid-docs-rendering-customization

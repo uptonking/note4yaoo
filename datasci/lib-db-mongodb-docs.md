@@ -1,8 +1,8 @@
 ---
 title: lib-db-mongodb-docs
 tags: [docs, mongodb]
-created: '2022-06-13T02:58:31.397Z'
-modified: '2022-06-13T02:58:46.880Z'
+created: 2022-06-13T02:58:31.397Z
+modified: 2022-06-13T02:58:46.880Z
 ---
 
 # lib-db-mongodb-docs

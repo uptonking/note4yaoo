@@ -1,8 +1,8 @@
 ---
 title: toc-gis-mapping
 tags: [gis, mapping, toc]
-created: '2019-12-22T12:22:13.746Z'
-modified: '2021-01-04T16:21:18.990Z'
+created: 2019-12-22T12:22:13.746Z
+modified: 2021-01-04T16:21:18.990Z
 ---
 
 # toc-gis-mapping

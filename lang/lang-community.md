@@ -1,8 +1,8 @@
 ---
 title: lang-community
 tags: [community, lang]
-created: '2021-08-30T06:33:01.504Z'
-modified: '2021-08-30T06:33:45.293Z'
+created: 2021-08-30T06:33:01.504Z
+modified: 2021-08-30T06:33:45.293Z
 ---
 
 # lang-community

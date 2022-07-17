@@ -1,8 +1,8 @@
 ---
 title: viz-dev
 tags: [intro, viz]
-created: '2020-08-03T09:11:08.024Z'
-modified: '2021-01-01T20:21:10.887Z'
+created: 2020-08-03T09:11:08.024Z
+modified: 2021-01-01T20:21:10.887Z
 ---
 
 # viz-dev

@@ -1,8 +1,8 @@
 ---
 title: note-react-comp-in-action-blog-series
 tags: [blog, copied, optimization, react, series, xp]
-created: '2020-06-22T07:53:20.287Z'
-modified: '2021-05-13T03:16:00.269Z'
+created: 2020-06-22T07:53:20.287Z
+modified: 2021-05-13T03:16:00.269Z
 ---
 
 # note-react-comp-in-action-blog-series

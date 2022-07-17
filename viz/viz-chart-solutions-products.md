@@ -1,8 +1,8 @@
 ---
 title: viz-chart-solutions-products
 tags: [charting, products, solutions, viz]
-created: '2021-04-08T12:15:44.953Z'
-modified: '2021-04-08T12:16:54.274Z'
+created: 2021-04-08T12:15:44.953Z
+modified: 2021-04-08T12:16:54.274Z
 ---
 
 # viz-chart-solutions-products

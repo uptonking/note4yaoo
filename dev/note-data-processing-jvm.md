@@ -1,8 +1,8 @@
 ---
 title: note-data-processing-jvm
 tags: [data, data-processing, java]
-created: '2019-10-05T05:43:13.087Z'
-modified: '2021-05-13T16:11:59.456Z'
+created: 2019-10-05T05:43:13.087Z
+modified: 2021-05-13T16:11:59.456Z
 ---
 
 # note-data-processing-jvm

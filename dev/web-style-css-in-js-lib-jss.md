@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-lib-jss
 tags: [css-in-js, jss, style]
-created: '2020-10-29T17:37:32.823Z'
-modified: '2021-01-01T20:06:31.225Z'
+created: 2020-10-29T17:37:32.823Z
+modified: 2021-01-01T20:06:31.225Z
 ---
 
 # web-style-css-in-js-lib-jss

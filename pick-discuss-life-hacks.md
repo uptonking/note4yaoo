@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-life-hacks
 tags: [discuss, life-hacks]
-created: '2021-09-14T18:51:49.418Z'
-modified: '2021-09-14T18:52:07.351Z'
+created: 2021-09-14T18:51:49.418Z
+modified: 2021-09-14T18:52:07.351Z
 ---
 
 # pick-discuss-life-hacks

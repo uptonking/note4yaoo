@@ -1,8 +1,8 @@
 ---
-tags: [coding, dev]
 title: coding-style
-created: '2019-09-03T14:06:29.976Z'
-modified: '2020-06-30T05:17:43.290Z'
+tags: [coding, dev]
+created: 2019-09-03T14:06:29.976Z
+modified: 2020-06-30T05:17:43.290Z
 ---
 
 # coding-style

@@ -1,8 +1,8 @@
 ---
 title: toc-viz-chart
 tags: [charting, toc, viz]
-created: '2020-10-06T07:42:03.630Z'
-modified: '2020-10-22T10:22:33.292Z'
+created: 2020-10-06T07:42:03.630Z
+modified: 2020-10-22T10:22:33.292Z
 ---
 
 # toc-viz-chart

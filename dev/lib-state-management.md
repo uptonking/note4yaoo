@@ -1,8 +1,8 @@
 ---
 title: lib-state-management
 tags: [state]
-created: '2020-10-31T19:09:23.017Z'
-modified: '2021-05-13T03:14:00.514Z'
+created: 2020-10-31T19:09:23.017Z
+modified: 2021-05-13T03:14:00.514Z
 ---
 
 # lib-state-management

@@ -1,8 +1,8 @@
 ---
 title: lang-js-typescript-pattern
 tags: [lang, pattern, typescript]
-created: '2021-03-22T14:42:21.776Z'
-modified: '2021-03-22T14:43:12.866Z'
+created: 2021-03-22T14:42:21.776Z
+modified: 2021-03-22T14:43:12.866Z
 ---
 
 # lang-js-typescript-pattern

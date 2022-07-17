@@ -1,8 +1,8 @@
 ---
 title: toc-work-portfolio-resume
 tags: [interview, portfolio, resume, work]
-created: '2020-09-22T12:18:43.931Z'
-modified: '2021-01-09T16:56:35.339Z'
+created: 2020-09-22T12:18:43.931Z
+modified: 2021-01-09T16:56:35.339Z
 ---
 
 # toc-work-portfolio-resume

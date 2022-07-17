@@ -2,8 +2,8 @@
 title: dev-log-repeat-solutions
 tags: [dev, repeat, solutions]
 favorited: true
-created: '2021-01-08T00:10:18.987Z'
-modified: '2021-07-20T13:50:23.433Z'
+created: 2021-01-08T00:10:18.987Z
+modified: 2021-07-20T13:50:23.433Z
 ---
 
 # dev-log-repeat-solutions

@@ -1,8 +1,8 @@
 ---
 title: note-gis-mapping-carto-solutions
 tags: [carto, gis, mapping, solutions]
-created: '2020-12-23T10:02:55.947Z'
-modified: '2021-01-04T16:27:19.903Z'
+created: 2020-12-23T10:02:55.947Z
+modified: 2021-01-04T16:27:19.903Z
 ---
 
 # note-gis-mapping-carto-solutions

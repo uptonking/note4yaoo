@@ -1,8 +1,8 @@
 ---
 title: lib-db-indexeddb-collab
 tags: [collaboration, indexeddb]
-created: '2022-06-13T06:14:03.941Z'
-modified: '2022-06-13T06:14:26.048Z'
+created: 2022-06-13T06:14:03.941Z
+modified: 2022-06-13T06:14:26.048Z
 ---
 
 # lib-db-indexeddb-collab

@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-table-issues
 tags: [issues, react-table]
-created: '2020-07-15T13:08:35.143Z'
-modified: '2021-05-13T02:54:43.606Z'
+created: 2020-07-15T13:08:35.143Z
+modified: 2021-05-13T02:54:43.606Z
 ---
 
 # lib-list-react-table-issues

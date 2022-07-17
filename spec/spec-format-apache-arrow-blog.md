@@ -1,8 +1,8 @@
 ---
 title: spec-format-apache-arrow-blog
 tags: [apache-arrow, blog]
-created: '2021-07-24T08:16:58.416Z'
-modified: '2021-07-24T08:18:08.017Z'
+created: 2021-07-24T08:16:58.416Z
+modified: 2021-07-24T08:18:08.017Z
 ---
 
 # spec-format-apache-arrow-blog

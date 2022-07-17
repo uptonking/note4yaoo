@@ -1,8 +1,8 @@
 ---
 title: pm-office-wiki-datalking
 tags: [datalking, pm, wiki]
-created: '2021-08-07T19:56:54.345Z'
-modified: '2021-08-07T19:58:20.142Z'
+created: 2021-08-07T19:56:54.345Z
+modified: 2021-08-07T19:58:20.142Z
 ---
 
 # pm-office-wiki-datalking

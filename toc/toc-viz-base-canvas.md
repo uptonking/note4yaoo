@@ -1,8 +1,8 @@
 ---
 title: toc-viz-base-canvas
 tags: [canvas, toc, viz]
-created: '2020-08-02T08:59:13.271Z'
-modified: '2020-10-05T06:17:42.467Z'
+created: 2020-08-02T08:59:13.271Z
+modified: 2020-10-05T06:17:42.467Z
 ---
 
 # toc-viz-base-canvas

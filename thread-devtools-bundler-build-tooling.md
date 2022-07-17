@@ -1,8 +1,8 @@
 ---
 title: thread-devtools-bundler-build-tooling
 tags: [compiler, devtools, thread, tool]
-created: '2021-07-07T07:14:21.190Z'
-modified: '2021-09-22T05:47:54.470Z'
+created: 2021-07-07T07:14:21.190Z
+modified: 2021-09-22T05:47:54.470Z
 ---
 
 # thread-devtools-bundler-build-tooling

@@ -1,8 +1,8 @@
 ---
 title: web-fwk-icons
 tags: [icon, web]
-created: '2021-04-17T15:27:54.454Z'
-modified: '2021-07-28T19:22:07.339Z'
+created: 2021-04-17T15:27:54.454Z
+modified: 2021-07-28T19:22:07.339Z
 ---
 
 # web-fwk-icons

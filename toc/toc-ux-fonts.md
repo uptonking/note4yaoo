@@ -1,8 +1,8 @@
 ---
 title: toc-ux-fonts
 tags: [fonts, toc, ux]
-created: '2020-07-17T10:51:21.597Z'
-modified: '2020-07-17T10:54:16.341Z'
+created: 2020-07-17T10:51:21.597Z
+modified: 2020-07-17T10:54:16.341Z
 ---
 
 # toc-ux-fonts

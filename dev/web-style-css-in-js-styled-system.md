@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-styled-system
 tags: [css-in-js, design-system, style]
-created: '2019-12-17T03:13:59.953Z'
-modified: '2021-05-13T03:01:17.352Z'
+created: 2019-12-17T03:13:59.953Z
+modified: 2021-05-13T03:01:17.352Z
 ---
 
 # web-style-css-in-js-styled-system

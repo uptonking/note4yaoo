@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-fwk
 tags: [design-system, toc]
-created: '2020-10-24T19:43:53.135Z'
-modified: '2021-01-04T17:33:00.370Z'
+created: 2020-10-24T19:43:53.135Z
+modified: 2021-01-04T17:33:00.370Z
 ---
 
 # toc-lib-comp-design-fwk

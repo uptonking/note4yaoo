@@ -1,8 +1,8 @@
 ---
 title: lib-ui-material-ui-v5-docs
 tags: [docs, material-ui, react-components]
-created: '2022-03-29T05:57:53.866Z'
-modified: '2022-03-29T05:59:52.797Z'
+created: 2022-03-29T05:57:53.866Z
+modified: 2022-03-29T05:59:52.797Z
 ---
 
 # lib-ui-material-ui-v5-docs

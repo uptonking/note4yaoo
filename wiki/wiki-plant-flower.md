@@ -1,8 +1,8 @@
 ---
 title: wiki-plant-flower
 tags: [wiki]
-created: '2020-06-07T04:43:50.950Z'
-modified: '2020-07-14T11:20:37.541Z'
+created: 2020-06-07T04:43:50.950Z
+modified: 2020-07-14T11:20:37.541Z
 ---
 
 # wiki-plant-flower

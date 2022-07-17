@@ -1,8 +1,8 @@
 ---
 title: note-dev-pc
 tags: [dev, pc]
-created: '2019-06-09T05:28:24.696Z'
-modified: '2020-07-14T09:32:35.359Z'
+created: 2019-06-09T05:28:24.696Z
+modified: 2020-07-14T09:32:35.359Z
 ---
 
 # note-dev-pc

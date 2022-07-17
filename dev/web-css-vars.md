@@ -1,8 +1,8 @@
 ---
 title: web-css-vars
 tags: [css, css-vars, style]
-created: '2020-11-01T06:32:11.038Z'
-modified: '2021-01-29T18:55:16.043Z'
+created: 2020-11-01T06:32:11.038Z
+modified: 2021-01-29T18:55:16.043Z
 ---
 
 # web-css-vars

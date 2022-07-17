@@ -1,8 +1,8 @@
 ---
 title: thread-db-sql-search-query
 tags: [search, sql, thread]
-created: '2022-06-11T20:34:39.918Z'
-modified: '2022-06-11T20:35:11.775Z'
+created: 2022-06-11T20:34:39.918Z
+modified: 2022-06-11T20:35:11.775Z
 ---
 
 # thread-db-sql-search-query

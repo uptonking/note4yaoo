@@ -1,8 +1,8 @@
 ---
 title: wiki-law-labor-contract-law
 tags: [labor-contract-law, law]
-created: '2021-01-05T10:25:53.587Z'
-modified: '2021-01-05T10:26:50.320Z'
+created: 2021-01-05T10:25:53.587Z
+modified: 2021-01-05T10:26:50.320Z
 ---
 
 # wiki-law-labor-contract-law

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-bangle-dev
 tags: [bangle-editor, editor, lib]
-created: '2021-06-27T18:43:46.836Z'
-modified: '2021-06-27T18:44:15.023Z'
+created: 2021-06-27T18:43:46.836Z
+modified: 2021-06-27T18:44:15.023Z
 ---
 
 # lib-editor-bangle-dev

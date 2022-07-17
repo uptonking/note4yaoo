@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-web-components
 tags: [components, lib, web-components]
-created: '2020-10-05T19:59:29.873Z'
-modified: '2020-11-13T07:31:42.369Z'
+created: 2020-10-05T19:59:29.873Z
+modified: 2020-11-13T07:31:42.369Z
 ---
 
 # toc-lib-comp-web-components

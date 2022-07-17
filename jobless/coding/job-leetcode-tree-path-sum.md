@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-tree-path-sum
 tags: [leetcode, repeat, tree]
-created: '2021-10-08T19:43:31.119Z'
-modified: '2021-10-08T19:52:20.160Z'
+created: 2021-10-08T19:43:31.119Z
+modified: 2021-10-08T19:52:20.160Z
 ---
 
 # job-leetcode-tree-path-sum

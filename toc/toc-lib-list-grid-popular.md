@@ -1,8 +1,8 @@
 ---
 title: toc-lib-list-grid-popular
 tags: [grid, lib, list, toc]
-created: '2020-10-22T06:47:15.435Z'
-modified: '2020-10-22T06:49:10.760Z'
+created: 2020-10-22T06:47:15.435Z
+modified: 2020-10-22T06:49:10.760Z
 ---
 
 # toc-lib-list-grid-popular

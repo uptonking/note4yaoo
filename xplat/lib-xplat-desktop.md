@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-desktop
 tags: [cross-platform, desktop, qt]
-created: '2021-08-24T05:52:27.794Z'
-modified: '2021-08-24T05:53:18.376Z'
+created: 2021-08-24T05:52:27.794Z
+modified: 2021-08-24T05:53:18.376Z
 ---
 
 # lib-xplat-desktop

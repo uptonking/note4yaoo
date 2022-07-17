@@ -1,8 +1,8 @@
 ---
 title: thread-pieces
 tags: [thread]
-created: '2021-01-11T12:10:14.202Z'
-modified: '2021-01-11T12:10:50.900Z'
+created: 2021-01-11T12:10:14.202Z
+modified: 2021-01-11T12:10:50.900Z
 ---
 
 # thread-pieces

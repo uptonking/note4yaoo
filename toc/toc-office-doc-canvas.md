@@ -1,8 +1,8 @@
 ---
 title: toc-office-doc-canvas
 tags: [canvas, documentation, office, toc]
-created: '2021-05-19T08:32:31.285Z'
-modified: '2021-05-19T08:33:14.171Z'
+created: 2021-05-19T08:32:31.285Z
+modified: 2021-05-19T08:33:14.171Z
 ---
 
 # toc-office-doc-canvas

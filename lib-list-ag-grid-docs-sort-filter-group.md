@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs-sort-filter-group
 tags: [ag-grid]
-created: '2020-08-24T09:17:28.346Z'
-modified: '2021-05-13T02:43:13.859Z'
+created: 2020-08-24T09:17:28.346Z
+modified: 2021-05-13T02:43:13.859Z
 ---
 
 # lib-list-ag-grid-docs-sort-filter-group

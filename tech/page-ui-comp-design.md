@@ -1,8 +1,8 @@
 ---
 title: page-ui-comp-design
 tags: [components, ui]
-created: '2020-09-28T16:28:19.740Z'
-modified: '2021-01-19T10:51:22.355Z'
+created: 2020-09-28T16:28:19.740Z
+modified: 2021-01-19T10:51:22.355Z
 ---
 
 # page-ui-comp-design

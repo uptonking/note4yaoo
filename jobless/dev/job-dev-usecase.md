@@ -1,8 +1,8 @@
 ---
 title: job-dev-usecase
 tags: [job, usecase]
-created: '2021-09-24T18:42:57.211Z'
-modified: '2021-09-24T18:43:09.080Z'
+created: 2021-09-24T18:42:57.211Z
+modified: 2021-09-24T18:43:09.080Z
 ---
 
 # job-dev-usecase

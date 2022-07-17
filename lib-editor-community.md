@@ -1,8 +1,8 @@
 ---
 title: lib-editor-community
 tags: [community, editor, lib, text-editor]
-created: '2021-05-14T12:04:27.547Z'
-modified: '2021-05-14T12:04:55.412Z'
+created: 2021-05-14T12:04:27.547Z
+modified: 2021-05-14T12:04:55.412Z
 ---
 
 # lib-editor-community

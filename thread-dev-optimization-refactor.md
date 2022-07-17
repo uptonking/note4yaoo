@@ -1,8 +1,8 @@
 ---
 title: thread-dev-optimization-refactor
 tags: [dev, optimization, refactor, thread]
-created: '2021-04-07T10:20:26.431Z'
-modified: '2021-04-07T10:21:02.611Z'
+created: 2021-04-07T10:20:26.431Z
+modified: 2021-04-07T10:21:02.611Z
 ---
 
 # thread-dev-optimization-refactor

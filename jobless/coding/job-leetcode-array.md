@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-array
 tags: [algorithms, array, coding, job, leetcode]
-created: '2021-10-05T09:00:35.959Z'
-modified: '2021-10-06T14:45:51.381Z'
+created: 2021-10-05T09:00:35.959Z
+modified: 2021-10-06T14:45:51.381Z
 ---
 
 # job-leetcode-array

@@ -1,8 +1,8 @@
 ---
 title: pm-saas-xp-web-browser
 tags: [browser, saas, xp]
-created: '2021-08-02T15:19:56.259Z'
-modified: '2021-08-02T15:20:28.360Z'
+created: 2021-08-02T15:19:56.259Z
+modified: 2021-08-02T15:20:28.360Z
 ---
 
 # pm-saas-xp-web-browser

@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-node-nestjs-dev
 tags: [framework, lib, nestjs]
-created: '2020-12-12T19:22:14.437Z'
-modified: '2021-04-23T18:12:10.049Z'
+created: 2020-12-12T19:22:14.437Z
+modified: 2021-04-23T18:12:10.049Z
 ---
 
 # lib-fwk-node-nestjs-dev

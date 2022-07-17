@@ -1,8 +1,8 @@
 ---
 title: toc-features-preview-screenshot
 tags: [features, preview, screenshot, toc]
-created: '2021-01-30T15:35:07.367Z'
-modified: '2021-01-30T16:05:48.466Z'
+created: 2021-01-30T15:35:07.367Z
+modified: 2021-01-30T16:05:48.466Z
 ---
 
 # toc-features-preview-screenshot

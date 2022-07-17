@@ -1,8 +1,8 @@
 ---
 title: lib-state-jotai-zustand-valtio
 tags: [jotai, valtio, zustand]
-created: '2022-01-05T14:25:43.576Z'
-modified: '2022-01-05T14:36:28.057Z'
+created: 2022-01-05T14:25:43.576Z
+modified: 2022-01-05T14:36:28.057Z
 ---
 
 # lib-state-jotai-zustand-valtio

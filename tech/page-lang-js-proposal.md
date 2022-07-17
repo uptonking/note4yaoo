@@ -1,8 +1,8 @@
 ---
 title: page-lang-js-proposal
-tags: [ ECMAScript, js, lang, proposal]
-created: '2021-01-19T10:56:19.934Z'
-modified: '2021-01-19T10:56:51.898Z'
+tags: [ECMAScript, js, lang, proposal]
+created: 2021-01-19T10:56:19.934Z
+modified: 2021-01-19T10:56:51.898Z
 ---
 
 # page-lang-js-proposal

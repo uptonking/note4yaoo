@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-major-fwk
 tags: [components, framework, lib, toc]
-created: '2020-06-16T02:31:56.711Z'
-modified: '2021-01-01T18:01:50.596Z'
+created: 2020-06-16T02:31:56.711Z
+modified: 2021-01-01T18:01:50.596Z
 ---
 
 # toc-lib-comp-major-fwk

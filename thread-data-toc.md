@@ -1,8 +1,8 @@
 ---
 title: thread-data-toc
 tags: [data, thread, toc]
-created: '2021-01-31T08:39:55.563Z'
-modified: '2021-01-31T08:40:11.675Z'
+created: 2021-01-31T08:39:55.563Z
+modified: 2021-01-31T08:40:11.675Z
 ---
 
 # thread-data-toc

@@ -1,8 +1,8 @@
 ---
 title: spec-gis-spatialite
 tags: [gis, spatialite, spec]
-created: '2021-09-30T07:59:26.096Z'
-modified: '2021-09-30T07:59:56.263Z'
+created: 2021-09-30T07:59:26.096Z
+modified: 2021-09-30T07:59:56.263Z
 ---
 
 # spec-gis-spatialite

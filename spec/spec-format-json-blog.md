@@ -1,8 +1,8 @@
 ---
 title: spec-format-json-blog
-tags: [blog, json, format]
-created: '2021-02-27T15:08:43.563Z'
-modified: '2021-02-27T15:09:07.825Z'
+tags: [blog, format, json]
+created: 2021-02-27T15:08:43.563Z
+modified: 2021-02-27T15:09:07.825Z
 ---
 
 # spec-format-json-blog

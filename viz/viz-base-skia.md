@@ -1,8 +1,8 @@
 ---
 title: viz-base-skia
 tags: [canvas, skia, viz, webgl]
-created: '2021-05-19T17:46:51.794Z'
-modified: '2021-05-19T17:48:06.572Z'
+created: 2021-05-19T17:46:51.794Z
+modified: 2021-05-19T17:48:06.572Z
 ---
 
 # viz-base-skia

@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-node-loopback-docs
 tags: [docs, loopback, node]
-created: '2021-07-28T19:01:34.196Z'
-modified: '2021-07-28T19:02:15.922Z'
+created: 2021-07-28T19:01:34.196Z
+modified: 2021-07-28T19:02:15.922Z
 ---
 
 # lib-fwk-node-loopback-docs

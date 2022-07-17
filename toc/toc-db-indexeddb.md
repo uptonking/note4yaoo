@@ -1,8 +1,8 @@
 ---
 title: toc-db-indexeddb
 tags: [indexeddb, toc]
-created: '2022-06-03T22:06:01.133Z'
-modified: '2022-06-03T22:06:16.249Z'
+created: 2022-06-03T22:06:01.133Z
+modified: 2022-06-03T22:06:16.249Z
 ---
 
 # toc-db-indexeddb

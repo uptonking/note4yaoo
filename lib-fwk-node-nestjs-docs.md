@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-node-nestjs-docs
 tags: [docs, nestjs]
-created: '2020-12-17T09:10:52.151Z'
-modified: '2021-04-23T18:12:18.115Z'
+created: 2020-12-17T09:10:52.151Z
+modified: 2021-04-23T18:12:18.115Z
 ---
 
 # lib-fwk-node-nestjs-docs

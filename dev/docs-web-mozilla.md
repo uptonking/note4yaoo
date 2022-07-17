@@ -1,8 +1,8 @@
 ---
 title: docs-web-mozilla
 tags: [docs, web]
-created: '2020-07-18T12:22:41.248Z'
-modified: '2021-01-04T16:19:02.355Z'
+created: 2020-07-18T12:22:41.248Z
+modified: 2021-01-04T16:19:02.355Z
 ---
 
 # docs-web-mozilla

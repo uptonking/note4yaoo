@@ -1,8 +1,8 @@
 ---
 title: lib-editor-rich-markdown-community
 tags: [community, markdown, rich-markdown-editor]
-created: '2021-06-02T10:29:05.540Z'
-modified: '2021-06-02T10:29:43.088Z'
+created: 2021-06-02T10:29:05.540Z
+modified: 2021-06-02T10:29:43.088Z
 ---
 
 # lib-editor-rich-markdown-community

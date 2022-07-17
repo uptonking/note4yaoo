@@ -1,8 +1,8 @@
 ---
 title: cli-linux-shell
 tags: [cli, linux, shell]
-created: '2020-11-13T13:07:50.603Z'
-modified: '2020-11-13T13:08:39.052Z'
+created: 2020-11-13T13:07:50.603Z
+modified: 2020-11-13T13:08:39.052Z
 ---
 
 # cli-linux-shell

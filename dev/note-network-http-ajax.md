@@ -1,8 +1,8 @@
 ---
 title: note-network-http-ajax
 tags: [ajax, http, network]
-created: '2020-08-07T04:37:22.307Z'
-modified: '2020-12-21T06:03:02.191Z'
+created: 2020-08-07T04:37:22.307Z
+modified: 2020-12-21T06:03:02.191Z
 ---
 
 # note-network-http-ajax

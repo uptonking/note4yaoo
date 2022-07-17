@@ -1,8 +1,8 @@
 ---
 title: tool-os-linux-ubuntu-xp
 tags: [linux, os, ubuntu, xp]
-created: '2021-01-01T22:26:18.260Z'
-modified: '2021-01-01T22:26:57.773Z'
+created: 2021-01-01T22:26:18.260Z
+modified: 2021-01-01T22:26:57.773Z
 ---
 
 # tool-os-linux-ubuntu-xp

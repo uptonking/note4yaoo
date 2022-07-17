@@ -1,8 +1,8 @@
 ---
 title: web-browser-webkit
 tags: [web, webkit, webview]
-created: '2019-10-17T09:05:43.329Z'
-modified: '2021-01-01T20:11:00.889Z'
+created: 2019-10-17T09:05:43.329Z
+modified: 2021-01-01T20:11:00.889Z
 ---
 
 # web-browser-webkit

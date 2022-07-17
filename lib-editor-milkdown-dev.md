@@ -1,8 +1,8 @@
 ---
 title: lib-editor-milkdown-dev
 tags: [editor, lib, markdown, milkdown, prosemirror]
-created: '2021-07-11T12:20:13.844Z'
-modified: '2021-07-11T15:08:26.481Z'
+created: 2021-07-11T12:20:13.844Z
+modified: 2021-07-11T15:08:26.481Z
 ---
 
 # lib-editor-milkdown-dev

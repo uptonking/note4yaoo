@@ -1,8 +1,8 @@
 ---
 title: lang-js
 tags: [js, lang]
-created: '2019-06-09T05:36:13.734Z'
-modified: '2020-07-14T09:26:50.808Z'
+created: 2019-06-09T05:36:13.734Z
+modified: 2020-07-14T09:26:50.808Z
 ---
 
 # lang-js

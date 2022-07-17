@@ -1,8 +1,8 @@
 ---
 title: wiki-history-cn-bc-221-207-qin
 tags: [cn, date-bc-2xx, history, 秦]
-created: '2020-12-01T14:18:41.363Z'
-modified: '2020-12-08T14:29:19.421Z'
+created: 2020-12-01T14:18:41.363Z
+modified: 2020-12-08T14:29:19.421Z
 ---
 
 # wiki-history-cn-bc-221-207-qin

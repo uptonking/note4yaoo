@@ -1,8 +1,8 @@
 ---
 title: web-optimization-loading-perf
 tags: [browser, optimization, perf, web]
-created: '2020-06-28T12:12:28.341Z'
-modified: '2021-01-04T17:15:36.132Z'
+created: 2020-06-28T12:12:28.341Z
+modified: 2021-01-04T17:15:36.132Z
 ---
 
 # web-optimization-loading-perf

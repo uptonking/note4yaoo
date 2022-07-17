@@ -1,8 +1,8 @@
 ---
 title: spec-catalog
 tags: [catalog, spec]
-created: '2020-08-17T06:46:13.639Z'
-modified: '2020-08-17T07:16:58.844Z'
+created: 2020-08-17T06:46:13.639Z
+modified: 2020-08-17T07:16:58.844Z
 ---
 
 # spec-catalog

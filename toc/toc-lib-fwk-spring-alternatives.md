@@ -1,8 +1,8 @@
 ---
 title: toc-lib-fwk-spring-alternatives
 tags: [alternatives, framework, spring, toc]
-created: '2020-12-13T09:21:54.169Z'
-modified: '2020-12-13T09:22:29.232Z'
+created: 2020-12-13T09:21:54.169Z
+modified: 2020-12-13T09:22:29.232Z
 ---
 
 # toc-lib-fwk-spring-alternatives

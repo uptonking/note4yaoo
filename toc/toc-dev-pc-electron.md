@@ -1,8 +1,8 @@
 ---
 title: toc-dev-pc-electron
 tags: [electron, toc]
-created: '2021-01-16T20:49:44.833Z'
-modified: '2021-01-16T20:50:23.893Z'
+created: 2021-01-16T20:49:44.833Z
+modified: 2021-01-16T20:50:23.893Z
 ---
 
 # toc-dev-pc-electron

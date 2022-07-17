@@ -1,8 +1,8 @@
 ---
 title: toc-lib-editor-live-doc-knobs
 tags: [doc, editor, live, toc]
-created: '2021-01-17T07:13:51.223Z'
-modified: '2021-03-03T21:48:48.379Z'
+created: 2021-01-17T07:13:51.223Z
+modified: 2021-03-03T21:48:48.379Z
 ---
 
 # toc-lib-editor-live-doc-knobs

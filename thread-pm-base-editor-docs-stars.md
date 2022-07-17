@@ -1,8 +1,8 @@
 ---
 title: thread-pm-base-editor-docs-stars
 tags: [documentation, editor, pm, thread]
-created: '2021-08-22T07:28:43.964Z'
-modified: '2021-08-22T07:29:34.045Z'
+created: 2021-08-22T07:28:43.964Z
+modified: 2021-08-22T07:29:34.045Z
 ---
 
 # thread-pm-base-editor-docs-stars

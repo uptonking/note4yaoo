@@ -1,8 +1,8 @@
 ---
 title: ux-design-system-blog
 tags: [blog, design-system]
-created: '2020-12-29T16:18:21.626Z'
-modified: '2021-01-01T20:08:32.485Z'
+created: 2020-12-29T16:18:21.626Z
+modified: 2021-01-01T20:08:32.485Z
 ---
 
 # ux-design-system-blog

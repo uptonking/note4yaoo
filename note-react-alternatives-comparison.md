@@ -1,8 +1,8 @@
 ---
 title: note-react-alternatives-comparison
 tags: [alternatives, comparison, react]
-created: '2020-11-09T13:08:17.281Z'
-modified: '2021-05-13T03:17:03.376Z'
+created: 2020-11-09T13:08:17.281Z
+modified: 2021-05-13T03:17:03.376Z
 ---
 
 # note-react-alternatives-comparison

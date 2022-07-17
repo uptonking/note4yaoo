@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-engineering
 tags: [dev, engineering, faq]
-created: '2021-01-21T13:16:03.667Z'
-modified: '2021-03-29T19:17:06.810Z'
+created: 2021-01-21T13:16:03.667Z
+modified: 2021-03-29T19:17:06.810Z
 ---
 
 # dev-log-faq-engineering

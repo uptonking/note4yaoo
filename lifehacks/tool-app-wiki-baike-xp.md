@@ -1,8 +1,8 @@
 ---
 title: tool-app-wiki-baike-xp
 tags: [app, saas, wiki, xp]
-created: '2020-10-05T07:51:09.046Z'
-modified: '2020-12-29T17:51:22.482Z'
+created: 2020-10-05T07:51:09.046Z
+modified: 2020-12-29T17:51:22.482Z
 ---
 
 # tool-app-wiki-baike-xp

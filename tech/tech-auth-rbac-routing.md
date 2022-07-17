@@ -1,8 +1,8 @@
 ---
 title: tech-auth-rbac-routing
 tags: [auth, rbac, react-router, router]
-created: '2021-08-11T07:35:28.800Z'
-modified: '2022-01-06T17:30:03.280Z'
+created: 2021-08-11T07:35:28.800Z
+modified: 2022-01-06T17:30:03.280Z
 ---
 
 # tech-auth-rbac-routing

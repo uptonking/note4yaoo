@@ -1,8 +1,8 @@
 ---
 title: lib-state-storeon-dev
 tags: [state, storeon]
-created: '2020-11-01T18:29:13.989Z'
-modified: '2020-12-10T10:04:50.952Z'
+created: 2020-11-01T18:29:13.989Z
+modified: 2020-12-10T10:04:50.952Z
 ---
 
 # lib-state-storeon-dev

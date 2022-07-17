@@ -1,8 +1,8 @@
 ---
 title: toc-db-schema-sql-examples
 tags: [database, examples, sql, toc]
-created: '2021-08-30T18:56:31.626Z'
-modified: '2021-08-30T18:57:27.645Z'
+created: 2021-08-30T18:56:31.626Z
+modified: 2021-08-30T18:57:27.645Z
 ---
 
 # toc-db-schema-sql-examples

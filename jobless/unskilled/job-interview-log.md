@@ -1,8 +1,8 @@
 ---
 title: job-interview-log
 tags: [interview, job]
-created: '2021-10-13T13:23:25.535Z'
-modified: '2021-10-13T13:25:26.289Z'
+created: 2021-10-13T13:23:25.535Z
+modified: 2021-10-13T13:25:26.289Z
 ---
 
 # job-interview-log

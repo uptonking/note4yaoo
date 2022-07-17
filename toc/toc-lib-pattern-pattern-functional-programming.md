@@ -1,8 +1,8 @@
 ---
 title: toc-lib-pattern-pattern-functional-programming
 tags: [functional, pattern, toc]
-created: '2020-11-02T19:13:11.667Z'
-modified: '2020-12-20T15:47:26.038Z'
+created: 2020-11-02T19:13:11.667Z
+modified: 2020-12-20T15:47:26.038Z
 ---
 
 # toc-lib-pattern-pattern-functional-programming

@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-web
 tags: [faq, web]
-created: '2020-11-07T12:26:28.591Z'
-modified: '2021-03-29T19:17:38.650Z'
+created: 2020-11-07T12:26:28.591Z
+modified: 2021-03-29T19:17:38.650Z
 ---
 
 # dev-log-faq-web

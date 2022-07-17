@@ -1,8 +1,8 @@
 ---
 title: apps-data-contacts
 tags: [contacts, format]
-created: '2021-07-04T17:45:59.181Z'
-modified: '2021-07-04T17:46:42.750Z'
+created: 2021-07-04T17:45:59.181Z
+modified: 2021-07-04T17:46:42.750Z
 ---
 
 # apps-data-contacts

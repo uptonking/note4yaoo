@@ -1,8 +1,8 @@
 ---
 title: tool-os-android
 tags: [android, iot, operating-system]
-created: '2020-11-25T08:18:17.409Z'
-modified: '2020-12-22T12:42:09.830Z'
+created: 2020-11-25T08:18:17.409Z
+modified: 2020-12-22T12:42:09.830Z
 ---
 
 # tool-os-android

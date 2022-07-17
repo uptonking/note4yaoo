@@ -1,8 +1,8 @@
 ---
 title: tool-dev-webpack
 tags: [devtools, engineering, tool, webpack]
-created: '2020-11-20T19:29:35.880Z'
-modified: '2020-12-08T14:05:41.408Z'
+created: 2020-11-20T19:29:35.880Z
+modified: 2020-12-08T14:05:41.408Z
 ---
 
 # tool-dev-webpack

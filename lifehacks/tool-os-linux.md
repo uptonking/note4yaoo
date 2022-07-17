@@ -1,8 +1,8 @@
 ---
 title: tool-os-linux
 tags: [iot, linux, operating-system]
-created: '2020-11-25T08:20:22.803Z'
-modified: '2020-12-22T12:42:14.745Z'
+created: 2020-11-25T08:20:22.803Z
+modified: 2020-12-22T12:42:14.745Z
 ---
 
 # tool-os-linux

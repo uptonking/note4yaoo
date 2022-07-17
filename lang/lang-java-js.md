@@ -1,8 +1,8 @@
 ---
 title: lang-java-js
 tags: [java, js, lang]
-created: '2021-01-15T04:08:33.542Z'
-modified: '2021-01-15T04:08:46.423Z'
+created: 2021-01-15T04:08:33.542Z
+modified: 2021-01-15T04:08:46.423Z
 ---
 
 # lang-java-js

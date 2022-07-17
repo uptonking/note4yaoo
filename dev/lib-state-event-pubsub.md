@@ -1,8 +1,8 @@
 ---
 title: lib-state-event-pubsub
 tags: [pattern, pubsub, state]
-created: '2020-11-10T11:59:33.470Z'
-modified: '2021-05-13T03:13:45.375Z'
+created: 2020-11-10T11:59:33.470Z
+modified: 2021-05-13T03:13:45.375Z
 ---
 
 # lib-state-event-pubsub

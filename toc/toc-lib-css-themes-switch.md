@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-themes-switch
 tags: [css, css-vars, themes, theming, toc]
-created: '2021-01-28T21:12:30.674Z'
-modified: '2021-02-09T13:40:11.536Z'
+created: 2021-01-28T21:12:30.674Z
+modified: 2021-02-09T13:40:11.536Z
 ---
 
 # toc-lib-css-themes-switch

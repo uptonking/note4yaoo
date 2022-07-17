@@ -1,8 +1,8 @@
 ---
 title: tech-testing-mock
 tags: [mock-api, testing]
-created: '2021-08-12T20:21:02.816Z'
-modified: '2021-08-12T20:21:51.264Z'
+created: 2021-08-12T20:21:02.816Z
+modified: 2021-08-12T20:21:51.264Z
 ---
 
 # tech-testing-mock

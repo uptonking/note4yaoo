@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-lib-glaze-calico
 tags: [calico, css-in-js, glaze, style]
-created: '2020-10-29T10:46:45.637Z'
-modified: '2021-01-01T20:06:24.571Z'
+created: 2020-10-29T10:46:45.637Z
+modified: 2021-01-01T20:06:24.571Z
 ---
 
 # web-style-css-in-js-lib-glaze-calico

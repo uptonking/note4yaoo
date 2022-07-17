@@ -1,8 +1,8 @@
 ---
 title: page-js-event-loop
 tags: [js, lang]
-created: '2020-09-04T06:46:52.946Z'
-modified: '2020-09-04T06:47:12.681Z'
+created: 2020-09-04T06:46:52.946Z
+modified: 2020-09-04T06:47:12.681Z
 ---
 
 # page-js-event-loop

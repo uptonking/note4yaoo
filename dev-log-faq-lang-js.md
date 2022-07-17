@@ -1,8 +1,8 @@
 ---
 title: dev-log-faq-lang-js
 tags: [faq, js]
-created: '2020-11-07T11:48:30.544Z'
-modified: '2021-03-29T19:18:55.989Z'
+created: 2020-11-07T11:48:30.544Z
+modified: 2021-03-29T19:18:55.989Z
 ---
 
 # dev-log-faq-lang-js

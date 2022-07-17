@@ -1,8 +1,8 @@
 ---
 title: toc-lib-editor-block-editor-cell
 tags: [block-editor, cell, editorjs, lib, toc]
-created: '2020-11-17T13:37:09.407Z'
-modified: '2022-06-08T11:03:26.472Z'
+created: 2020-11-17T13:37:09.407Z
+modified: 2022-06-08T11:03:26.472Z
 ---
 
 # toc-lib-editor-block-editor-cell

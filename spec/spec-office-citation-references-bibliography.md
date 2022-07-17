@@ -1,8 +1,8 @@
 ---
 title: spec-office-citation-references-bibliography
 tags: [bibliography, citation, format, spec]
-created: '2021-07-28T13:01:39.543Z'
-modified: '2021-09-30T07:44:48.235Z'
+created: 2021-07-28T13:01:39.543Z
+modified: 2021-09-30T07:44:48.235Z
 ---
 
 # spec-office-citation-references-bibliography

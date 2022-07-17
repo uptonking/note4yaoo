@@ -1,8 +1,8 @@
 ---
 title: web-css-latest-rfc-feature-draft
 tags: [css, latest, rfc, web]
-created: '2021-04-09T13:13:48.992Z'
-modified: '2021-04-09T13:15:02.013Z'
+created: 2021-04-09T13:13:48.992Z
+modified: 2021-04-09T13:15:02.013Z
 ---
 
 # web-css-latest-rfc-feature-draft

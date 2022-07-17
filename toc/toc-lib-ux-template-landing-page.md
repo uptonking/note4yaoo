@@ -1,8 +1,8 @@
 ---
 title: toc-lib-ux-template-landing-page
 tags: [landing-page, template, toc]
-created: '2021-01-11T23:21:03.182Z'
-modified: '2021-01-11T23:21:37.132Z'
+created: 2021-01-11T23:21:03.182Z
+modified: 2021-01-11T23:21:37.132Z
 ---
 
 # toc-lib-ux-template-landing-page

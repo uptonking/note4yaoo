@@ -1,8 +1,8 @@
 ---
 title: note-react-extensions
 tags: [extensions, react]
-created: '2020-11-07T17:57:09.108Z'
-modified: '2020-11-19T12:44:05.442Z'
+created: 2020-11-07T17:57:09.108Z
+modified: 2020-11-19T12:44:05.442Z
 ---
 
 # note-react-extensions

@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-web-components-lit-html
 tags: [lit-element, lit-html, thread, web-components]
-created: '2021-01-07T19:36:55.221Z'
-modified: '2021-01-19T17:09:26.629Z'
+created: 2021-01-07T19:36:55.221Z
+modified: 2021-01-19T17:09:26.629Z
 ---
 
 # thread-fwk-web-components-lit-html

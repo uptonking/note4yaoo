@@ -1,8 +1,8 @@
 ---
 title: web-dev-fwk-solutions-frontend
 tags: [framework, frontend, solutions, web]
-created: '2020-11-01T09:48:26.955Z'
-modified: '2021-04-17T15:30:28.464Z'
+created: 2020-11-01T09:48:26.955Z
+modified: 2021-04-17T15:30:28.464Z
 ---
 
 # web-dev-fwk-solutions-frontend

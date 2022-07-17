@@ -1,8 +1,8 @@
 ---
 title: wiki-health-diabetes
 tags: [diabetes, health, wiki]
-created: '2020-08-27T12:36:28.660Z'
-modified: '2020-12-08T14:34:29.860Z'
+created: 2020-08-27T12:36:28.660Z
+modified: 2020-12-08T14:34:29.860Z
 ---
 
 # wiki-health-diabetes

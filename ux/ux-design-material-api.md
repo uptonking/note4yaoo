@@ -1,8 +1,8 @@
 ---
 title: ux-design-material-api
 tags: [api, material-design]
-created: '2020-10-10T16:34:57.054Z'
-modified: '2021-01-01T20:08:12.231Z'
+created: 2020-10-10T16:34:57.054Z
+modified: 2021-01-01T20:08:12.231Z
 ---
 
 # ux-design-material-api

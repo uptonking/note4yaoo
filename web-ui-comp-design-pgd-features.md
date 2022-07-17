@@ -1,8 +1,8 @@
 ---
 title: web-ui-comp-design-pgd-features
 tags: ['@pgd', components, design-tokens]
-created: '2020-10-02T11:42:34.698Z'
-modified: '2021-04-11T17:42:26.580Z'
+created: 2020-10-02T11:42:34.698Z
+modified: 2021-04-11T17:42:26.580Z
 ---
 
 # web-ui-comp-design-pgd-features

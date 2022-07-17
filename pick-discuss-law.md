@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-law
 tags: [discuss, law, zhihu]
-created: '2020-12-23T08:47:42.063Z'
-modified: '2021-04-12T16:30:53.967Z'
+created: 2020-12-23T08:47:42.063Z
+modified: 2021-04-12T16:30:53.967Z
 ---
 
 # pick-discuss-law

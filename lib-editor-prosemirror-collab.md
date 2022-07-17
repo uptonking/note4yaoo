@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-collab
 tags: [collaboration, editor, prosemirror]
-created: '2021-10-14T05:02:01.304Z'
-modified: '2021-10-14T05:03:19.234Z'
+created: 2021-10-14T05:02:01.304Z
+modified: 2021-10-14T05:03:19.234Z
 ---
 
 # lib-editor-prosemirror-collab

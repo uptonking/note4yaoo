@@ -1,8 +1,8 @@
 ---
 title: lib-state-blog-event-pubsub
 tags: [blog, pattern, pubsub, state]
-created: '2020-11-07T16:22:08.166Z'
-modified: '2021-05-13T03:12:58.306Z'
+created: 2020-11-07T16:22:08.166Z
+modified: 2021-05-13T03:12:58.306Z
 ---
 
 # lib-state-blog-event-pubsub

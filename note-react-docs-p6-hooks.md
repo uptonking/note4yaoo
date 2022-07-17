@@ -1,8 +1,8 @@
 ---
 title: note-react-docs-p6-hooks
 tags: [docs, hooks, react]
-created: '2020-06-23T07:26:09.551Z'
-modified: '2021-05-13T03:46:18.143Z'
+created: 2020-06-23T07:26:09.551Z
+modified: 2021-05-13T03:46:18.143Z
 ---
 
 # note-react-docs-p6-hooks

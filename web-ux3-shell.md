@@ -1,8 +1,8 @@
 ---
 title: web-ux3-shell
 tags: [components, ui, ui-shell]
-created: '2020-12-28T10:06:47.657Z'
-modified: '2021-07-29T20:38:03.631Z'
+created: 2020-12-28T10:06:47.657Z
+modified: 2021-07-29T20:38:03.631Z
 ---
 
 # web-ux3-shell

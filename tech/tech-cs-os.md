@@ -1,8 +1,8 @@
 ---
 title: tech-cs-os
 tags: [cs, os]
-created: '2019-10-29T09:54:50.745Z'
-modified: '2020-10-22T14:02:32.393Z'
+created: 2019-10-29T09:54:50.745Z
+modified: 2020-10-22T14:02:32.393Z
 ---
 
 # tech-cs-os

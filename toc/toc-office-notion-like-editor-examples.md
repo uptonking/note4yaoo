@@ -1,8 +1,8 @@
 ---
 title: toc-office-notion-like-editor-examples
 tags: [block-editor, examples, notion]
-created: '2022-06-03T21:57:31.178Z'
-modified: '2022-06-03T22:07:23.308Z'
+created: 2022-06-03T21:57:31.178Z
+modified: 2022-06-03T22:07:23.308Z
 ---
 
 # toc-office-notion-like-editor-examples

@@ -1,8 +1,8 @@
 ---
 title: topic-regular-yearly-slang-words-2020
 tags: [hot, regular, term, yearly]
-created: '2020-12-06T12:06:38.093Z'
-modified: '2022-01-03T15:22:07.667Z'
+created: 2020-12-06T12:06:38.093Z
+modified: 2022-01-03T15:22:07.667Z
 ---
 
 # topic-regular-yearly-slang-words-2020

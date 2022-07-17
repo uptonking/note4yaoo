@@ -1,8 +1,8 @@
 ---
 title: lib-office-mdx-roadmap
 tags: [markdown, mdx, office, roadmap]
-created: '2021-05-29T14:50:34.724Z'
-modified: '2021-05-29T14:51:21.929Z'
+created: 2021-05-29T14:50:34.724Z
+modified: 2021-05-29T14:51:21.929Z
 ---
 
 # lib-office-mdx-roadmap

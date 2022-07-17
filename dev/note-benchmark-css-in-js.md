@@ -1,8 +1,8 @@
 ---
 title: note-benchmark-css-in-js
 tags: [benchmark, css-in-js]
-created: '2020-08-08T11:39:35.407Z'
-modified: '2020-08-08T11:39:55.792Z'
+created: 2020-08-08T11:39:35.407Z
+modified: 2020-08-08T11:39:55.792Z
 ---
 
 # note-benchmark-css-in-js

@@ -1,8 +1,8 @@
 ---
 title: note-data-processing-pattern
 tags: [data, data-processing, pattern]
-created: '2021-05-23T17:09:35.689Z'
-modified: '2021-05-23T17:10:01.846Z'
+created: 2021-05-23T17:09:35.689Z
+modified: 2021-05-23T17:10:01.846Z
 ---
 
 # note-data-processing-pattern

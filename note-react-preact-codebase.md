@@ -1,8 +1,8 @@
 ---
 title: note-react-preact-codebase
 tags: [codebase, preact]
-created: '2021-06-20T13:25:16.180Z'
-modified: '2021-06-20T13:25:39.488Z'
+created: 2021-06-20T13:25:16.180Z
+modified: 2021-06-20T13:25:39.488Z
 ---
 
 # note-react-preact-codebase

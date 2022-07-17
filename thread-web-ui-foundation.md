@@ -1,8 +1,8 @@
 ---
 title: thread-web-ui-foundation
 tags: [components, pattern, thread, ui, web]
-created: '2021-04-23T09:23:02.552Z'
-modified: '2021-04-23T09:24:19.873Z'
+created: 2021-04-23T09:23:02.552Z
+modified: 2021-04-23T09:24:19.873Z
 ---
 
 # thread-web-ui-foundation

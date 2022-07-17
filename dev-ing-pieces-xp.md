@@ -1,8 +1,8 @@
 ---
 title: dev-ing-pieces-xp
 tags: [dev, xp]
-created: '2021-04-28T20:54:34.301Z'
-modified: '2021-04-28T20:54:58.126Z'
+created: 2021-04-28T20:54:34.301Z
+modified: 2021-04-28T20:54:58.126Z
 ---
 
 # dev-ing-pieces-xp

@@ -1,8 +1,8 @@
 ---
 title: thread-ux-design-effects-examples
 tags: [examples, thread, ux]
-created: '2021-03-26T09:10:52.255Z'
-modified: '2021-05-10T04:06:02.843Z'
+created: 2021-03-26T09:10:52.255Z
+modified: 2021-05-10T04:06:02.843Z
 ---
 
 # thread-ux-design-effects-examples

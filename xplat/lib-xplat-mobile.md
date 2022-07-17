@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-mobile
 tags: [cross-platform, dev, mobile]
-created: '2019-06-09T05:37:46.916Z'
-modified: '2021-05-13T03:09:56.491Z'
+created: 2019-06-09T05:37:46.916Z
+modified: 2021-05-13T03:09:56.491Z
 ---
 
 # lib-xplat-mobile

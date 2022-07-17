@@ -1,8 +1,8 @@
 ---
 title: thread-algs-usecase
 tags: [algorithms, thread, usecase]
-created: '2021-02-20T07:29:08.660Z'
-modified: '2021-02-20T07:30:23.867Z'
+created: 2021-02-20T07:29:08.660Z
+modified: 2021-02-20T07:30:23.867Z
 ---
 
 # thread-algs-usecase

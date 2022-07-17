@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-not-yet
 tags: [discuss, faq, zhihu]
-created: '2020-12-06T10:05:39.143Z'
-modified: '2021-04-12T16:30:53.968Z'
+created: 2020-12-06T10:05:39.143Z
+modified: 2021-04-12T16:30:53.968Z
 ---
 
 # pick-discuss-not-yet

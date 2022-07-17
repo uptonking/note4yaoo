@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-docs-row-column-cell
 tags: [ag-grid, docs]
-created: '2020-08-24T09:16:58.432Z'
-modified: '2021-05-13T02:43:09.584Z'
+created: 2020-08-24T09:16:58.432Z
+modified: 2021-05-13T02:43:09.584Z
 ---
 
 # lib-list-ag-grid-docs-row-column-cell

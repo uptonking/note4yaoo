@@ -1,8 +1,8 @@
 ---
 title: web-css-reset
 tags: [css, web]
-created: '2020-07-18T06:06:05.107Z'
-modified: '2020-12-21T07:45:40.012Z'
+created: 2020-07-18T06:06:05.107Z
+modified: 2020-12-21T07:45:40.012Z
 ---
 
 # web-css-reset

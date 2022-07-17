@@ -1,8 +1,8 @@
 ---
 title: lib-viz-observable-plot-blog-stars
 tags: [blog, observable-plot, viz]
-created: '2021-05-31T16:49:09.159Z'
-modified: '2021-05-31T16:51:41.692Z'
+created: 2021-05-31T16:49:09.159Z
+modified: 2021-05-31T16:51:41.692Z
 ---
 
 # lib-viz-observable-plot-blog-stars

@@ -1,8 +1,8 @@
 ---
 title: lib-list-react-table-issues-repeat
 tags: [issues, react-table, repeat]
-created: '2021-12-15T07:00:06.143Z'
-modified: '2021-12-15T07:00:28.397Z'
+created: 2021-12-15T07:00:06.143Z
+modified: 2021-12-15T07:00:28.397Z
 ---
 
 # lib-list-react-table-issues-repeat

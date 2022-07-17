@@ -1,8 +1,8 @@
 ---
 title: pm-list-grid-blog
 tags: [blog, grid, list]
-created: '2020-07-14T13:04:22.299Z'
-modified: '2021-05-23T16:34:32.755Z'
+created: 2020-07-14T13:04:22.299Z
+modified: 2021-05-23T16:34:32.755Z
 ---
 
 # pm-list-grid-blog

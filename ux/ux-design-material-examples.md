@@ -1,8 +1,8 @@
 ---
 title: ux-design-material-examples
 tags: [examples, material-design]
-created: '2020-10-18T14:01:57.034Z'
-modified: '2021-01-01T20:08:16.810Z'
+created: 2020-10-18T14:01:57.034Z
+modified: 2021-01-01T20:08:16.810Z
 ---
 
 # ux-design-material-examples

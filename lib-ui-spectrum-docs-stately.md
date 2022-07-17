@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-docs-stately
 tags: [adobe-spectrum, docs]
-created: '2021-04-12T17:58:20.417Z'
-modified: '2021-04-12T18:07:42.879Z'
+created: 2021-04-12T17:58:20.417Z
+modified: 2021-04-12T18:07:42.879Z
 ---
 
 # lib-ui-spectrum-docs-stately

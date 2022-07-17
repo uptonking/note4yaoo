@@ -1,8 +1,8 @@
 ---
 title: pick-dict-common
 tags: [dict]
-created: '2019-09-02T04:34:22.505Z'
-modified: '2020-12-01T14:24:22.252Z'
+created: 2019-09-02T04:34:22.505Z
+modified: 2020-12-01T14:24:22.252Z
 ---
 
 # pick-dict-common

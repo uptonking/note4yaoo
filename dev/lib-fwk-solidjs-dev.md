@@ -1,8 +1,8 @@
 ---
 title: lib-fwk-solidjs-dev
 tags: [dev, lib, solidjs]
-created: '2020-12-05T07:10:10.426Z'
-modified: '2020-12-08T13:27:56.600Z'
+created: 2020-12-05T07:10:10.426Z
+modified: 2020-12-08T13:27:56.600Z
 ---
 
 # lib-fwk-solidjs-dev

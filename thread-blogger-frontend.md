@@ -1,8 +1,8 @@
 ---
 title: thread-blogger-frontend
 tags: [blogger, frontend]
-created: '2021-02-09T19:19:01.827Z'
-modified: '2021-02-09T19:27:01.319Z'
+created: 2021-02-09T19:19:01.827Z
+modified: 2021-02-09T19:27:01.319Z
 ---
 
 # thread-blogger-frontend

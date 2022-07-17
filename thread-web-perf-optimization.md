@@ -1,8 +1,8 @@
 ---
 title: thread-web-perf-optimization
 tags: [optimization, thread, web]
-created: '2021-02-26T16:41:28.255Z'
-modified: '2021-02-26T16:42:06.878Z'
+created: 2021-02-26T16:41:28.255Z
+modified: 2021-02-26T16:42:06.878Z
 ---
 
 # thread-web-perf-optimization

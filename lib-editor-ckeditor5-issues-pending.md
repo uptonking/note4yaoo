@@ -1,8 +1,8 @@
 ---
 title: lib-editor-ckeditor5-issues-pending
 tags: [ckeditor, issues]
-created: '2021-12-23T17:44:51.944Z'
-modified: '2021-12-23T17:45:49.893Z'
+created: 2021-12-23T17:44:51.944Z
+modified: 2021-12-23T17:45:49.893Z
 ---
 
 # lib-editor-ckeditor5-issues-pending

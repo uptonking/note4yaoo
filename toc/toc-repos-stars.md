@@ -1,8 +1,8 @@
 ---
 title: toc-repos-stars
 tags: [repos, toc]
-created: '2020-10-05T09:22:55.948Z'
-modified: '2021-01-12T18:49:13.490Z'
+created: 2020-10-05T09:22:55.948Z
+modified: 2021-01-12T18:49:13.490Z
 ---
 
 # toc-repos-stars

@@ -1,8 +1,8 @@
 ---
 title: lib-ui-ant-design-dev
 tags: [antd, lib]
-created: '2020-06-15T10:25:37.356Z'
-modified: '2020-12-08T13:22:47.564Z'
+created: 2020-06-15T10:25:37.356Z
+modified: 2020-12-08T13:22:47.564Z
 ---
 
 # lib-ui-ant-design-dev

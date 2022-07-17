@@ -1,8 +1,8 @@
 ---
 title: job-algs-base-sort
 tags: [algorithms, job, sort]
-created: '2021-09-24T19:46:02.713Z'
-modified: '2021-09-24T19:46:42.224Z'
+created: 2021-09-24T19:46:02.713Z
+modified: 2021-09-24T19:46:42.224Z
 ---
 
 # job-algs-base-sort

@@ -1,8 +1,8 @@
 ---
 title: lang-js-faq-dev
 tags: [dev, js, lang]
-created: '2021-09-19T15:14:54.696Z'
-modified: '2021-09-19T15:16:22.324Z'
+created: 2021-09-19T15:14:54.696Z
+modified: 2021-09-19T15:16:22.324Z
 ---
 
 # lang-js-faq-dev

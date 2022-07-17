@@ -1,8 +1,8 @@
 ---
 title: thread-fwk-vdom-jsx
 tags: [framework, jsx, thread, vdom]
-created: '2021-08-21T06:13:22.806Z'
-modified: '2021-08-23T09:58:18.490Z'
+created: 2021-08-21T06:13:22.806Z
+modified: 2021-08-23T09:58:18.490Z
 ---
 
 # thread-fwk-vdom-jsx

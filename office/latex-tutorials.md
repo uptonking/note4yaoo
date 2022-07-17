@@ -1,8 +1,8 @@
 ---
 title: latex-tutorials
 tags: [latex]
-created: '2021-10-25T00:05:49.275Z'
-modified: '2021-10-25T00:20:04.009Z'
+created: 2021-10-25T00:05:49.275Z
+modified: 2021-10-25T00:20:04.009Z
 ---
 
 # latex-tutorials

@@ -1,8 +1,8 @@
 ---
 title: page-css-styling
 tags: [blog, css, styling]
-created: '2020-12-26T20:35:14.808Z'
-modified: '2021-01-19T10:58:58.943Z'
+created: 2020-12-26T20:35:14.808Z
+modified: 2021-01-19T10:58:58.943Z
 ---
 
 # page-css-styling

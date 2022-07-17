@@ -1,8 +1,8 @@
 ---
 title: wiki-format-unit
 tags: [wiki]
-created: '2020-07-18T12:43:38.903Z'
-modified: '2020-11-21T15:21:24.562Z'
+created: 2020-07-18T12:43:38.903Z
+modified: 2020-11-21T15:21:24.562Z
 ---
 
 # wiki-format-unit

@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlassian-dev-teemu-codebase
 tags: [atlaskit-editor, codebase, editor, prosemirror]
-created: '2021-07-05T18:12:03.081Z'
-modified: '2021-07-05T18:12:24.491Z'
+created: 2021-07-05T18:12:03.081Z
+modified: 2021-07-05T18:12:24.491Z
 ---
 
 # lib-editor-atlassian-dev-teemu-codebase

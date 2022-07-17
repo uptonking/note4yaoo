@@ -1,8 +1,8 @@
 ---
 title: lib-editor-atlaskit-codebase-not-yet
 tags: [atlaskit-editor, codebase]
-created: '2021-07-17T13:59:02.057Z'
-modified: '2021-07-17T13:59:24.514Z'
+created: 2021-07-17T13:59:02.057Z
+modified: 2021-07-17T13:59:24.514Z
 ---
 
 # lib-editor-atlaskit-codebase-not-yet

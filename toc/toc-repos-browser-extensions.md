@@ -1,8 +1,8 @@
 ---
 title: toc-repos-browser-extensions
 tags: [browser, extensions, repos, toc]
-created: '2020-10-05T07:49:04.680Z'
-modified: '2020-11-19T12:44:36.463Z'
+created: 2020-10-05T07:49:04.680Z
+modified: 2020-11-19T12:44:36.463Z
 ---
 
 # toc-repos-browser-extensions

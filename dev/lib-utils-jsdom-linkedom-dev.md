@@ -1,8 +1,8 @@
 ---
 title: lib-utils-jsdom-linkedom-dev
 tags: [jsdom, lib, linkedom, utils]
-created: '2021-02-03T08:12:34.230Z'
-modified: '2021-05-13T03:05:16.262Z'
+created: 2021-02-03T08:12:34.230Z
+modified: 2021-05-13T03:05:16.262Z
 ---
 
 # lib-utils-jsdom-linkedom-dev

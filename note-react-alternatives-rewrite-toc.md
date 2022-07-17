@@ -1,8 +1,8 @@
 ---
 title: note-react-alternatives-rewrite-toc
 tags: [alternatives, lib, react, rewrite, toc]
-created: '2020-12-12T09:10:55.449Z'
-modified: '2021-09-20T20:12:38.499Z'
+created: 2020-12-12T09:10:55.449Z
+modified: 2021-09-20T20:12:38.499Z
 ---
 
 # note-react-alternatives-rewrite-toc

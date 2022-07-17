@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-styled-system-dev
 tags: [css-in-js, styled-components, styled-system]
-created: '2020-08-08T08:07:31.739Z'
-modified: '2021-05-13T03:01:27.450Z'
+created: 2020-08-08T08:07:31.739Z
+modified: 2021-05-13T03:01:27.450Z
 ---
 
 # web-style-css-in-js-styled-system-dev

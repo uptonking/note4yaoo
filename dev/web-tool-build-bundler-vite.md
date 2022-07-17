@@ -1,8 +1,8 @@
 ---
 title: web-tool-build-bundler-vite
 tags: [bundler, tool, vite, web]
-created: '2021-01-10T16:18:22.283Z'
-modified: '2021-01-10T16:24:19.787Z'
+created: 2021-01-10T16:18:22.283Z
+modified: 2021-01-10T16:24:19.787Z
 ---
 
 # web-tool-build-bundler-vite

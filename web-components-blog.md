@@ -1,8 +1,8 @@
 ---
 title: web-components-blog
 tags: [blog, web-components]
-created: '2020-11-10T03:16:27.687Z'
-modified: '2020-12-21T08:04:19.490Z'
+created: 2020-11-10T03:16:27.687Z
+modified: 2020-12-21T08:04:19.490Z
 ---
 
 # web-components-blog

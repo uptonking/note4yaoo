@@ -1,8 +1,8 @@
 ---
 title: toc-lib-state-redux
 tags: [redux, state, toc]
-created: '2020-11-02T19:12:24.315Z'
-modified: '2020-11-02T19:13:04.103Z'
+created: 2020-11-02T19:12:24.315Z
+modified: 2020-11-02T19:13:04.103Z
 ---
 
 # toc-lib-state-redux

@@ -1,8 +1,8 @@
 ---
 title: wiki-fintech-debt-overdue
 tags: [debt, fintech]
-created: '2021-12-04T17:17:45.470Z'
-modified: '2021-12-04T20:28:37.765Z'
+created: 2021-12-04T17:17:45.470Z
+modified: 2021-12-04T20:28:37.765Z
 ---
 
 # wiki-fintech-debt-overdue

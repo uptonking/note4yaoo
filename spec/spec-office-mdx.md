@@ -1,8 +1,8 @@
 ---
 title: spec-office-mdx
 tags: [format, markdown, mdx, spec]
-created: '2021-06-04T16:50:05.110Z'
-modified: '2021-09-30T07:43:36.299Z'
+created: 2021-06-04T16:50:05.110Z
+modified: 2021-09-30T07:43:36.299Z
 ---
 
 # spec-office-mdx

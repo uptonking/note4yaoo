@@ -1,8 +1,8 @@
 ---
 title: web-animation-vs-transition
 tags: [animation, comparison, faq, web]
-created: '2020-08-02T13:31:18.116Z'
-modified: '2020-12-21T07:44:26.399Z'
+created: 2020-08-02T13:31:18.116Z
+modified: 2020-12-21T07:44:26.399Z
 ---
 
 # web-animation-vs-transition

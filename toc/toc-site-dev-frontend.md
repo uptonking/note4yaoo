@@ -1,8 +1,8 @@
 ---
 title: toc-site-dev-frontend
 tags: [dev, frontend, site, toc]
-created: '2020-12-28T19:20:02.468Z'
-modified: '2020-12-28T19:20:49.017Z'
+created: 2020-12-28T19:20:02.468Z
+modified: 2020-12-28T19:20:49.017Z
 ---
 
 # toc-site-dev-frontend

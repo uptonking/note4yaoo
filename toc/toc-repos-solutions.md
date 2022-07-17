@@ -1,8 +1,8 @@
 ---
 title: toc-repos-solutions
 tags: [repos, solutions, toc]
-created: '2020-10-05T08:55:29.692Z'
-modified: '2020-12-12T19:32:36.255Z'
+created: 2020-10-05T08:55:29.692Z
+modified: 2020-12-12T19:32:36.255Z
 ---
 
 # toc-repos-solutions

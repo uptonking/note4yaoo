@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-theme-spec
 tags: [css-in-js, style, theming, web]
-created: '2019-11-30T10:00:18.020Z'
-modified: '2021-01-01T20:06:50.117Z'
+created: 2019-11-30T10:00:18.020Z
+modified: 2021-01-01T20:06:50.117Z
 ---
 
 # web-style-css-in-js-theme-spec

@@ -1,8 +1,8 @@
 ---
 title: note-react-rfc-single-file-component
 tags: [react, rfc]
-created: '2020-10-29T13:48:07.751Z'
-modified: '2021-02-17T04:09:23.752Z'
+created: 2020-10-29T13:48:07.751Z
+modified: 2021-02-17T04:09:23.752Z
 ---
 
 # note-react-rfc-single-file-component

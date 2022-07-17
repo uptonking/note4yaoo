@@ -1,8 +1,8 @@
 ---
 title: job-algs-base-data-structure
 tags: [algorithms, data-structure, job]
-created: '2021-09-24T19:47:40.276Z'
-modified: '2021-09-24T19:48:07.178Z'
+created: 2021-09-24T19:47:40.276Z
+modified: 2021-09-24T19:48:07.178Z
 ---
 
 # job-algs-base-data-structure

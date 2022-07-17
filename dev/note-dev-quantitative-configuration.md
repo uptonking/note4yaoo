@@ -1,8 +1,8 @@
 ---
-tags: [dev, quantitative]
 title: note-dev-quantitative-configuration
-created: '2020-07-09T13:26:54.403Z'
-modified: '2020-07-09T13:30:55.664Z'
+tags: [dev, quantitative]
+created: 2020-07-09T13:26:54.403Z
+modified: 2020-07-09T13:30:55.664Z
 ---
 
 # note-dev-quantitative-configuration

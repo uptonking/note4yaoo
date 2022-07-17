@@ -1,8 +1,8 @@
 ---
 title: toc-lib-ux-bootstrap
 tags: [bootstrap, lib, theme, toc, ux]
-created: '2020-12-29T21:02:04.115Z'
-modified: '2021-01-10T22:18:36.696Z'
+created: 2020-12-29T21:02:04.115Z
+modified: 2021-01-10T22:18:36.696Z
 ---
 
 # toc-lib-ux-bootstrap

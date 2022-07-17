@@ -1,8 +1,8 @@
 ---
 title: web-ux6-accordion-collapse
 tags: [accordion, components, ui]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2021-07-29T20:37:05.228Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2021-07-29T20:37:05.228Z
 ---
 
 # web-ux6-accordion-collapse

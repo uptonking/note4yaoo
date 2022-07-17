@@ -1,8 +1,8 @@
 ---
 title: pattern-arch-plugin-system
 tags: [architecture, pattern, plugin-system]
-created: '2020-10-17T13:55:35.958Z'
-modified: '2020-12-20T15:46:29.566Z'
+created: 2020-10-17T13:55:35.958Z
+modified: 2020-12-20T15:46:29.566Z
 ---
 
 # pattern-arch-plugin-system

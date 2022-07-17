@@ -1,8 +1,8 @@
 ---
 title: read-cs-js
 tags: [book, cs, js, read]
-created: '2020-06-30T05:30:33.786Z'
-modified: '2020-12-08T14:44:50.697Z'
+created: 2020-06-30T05:30:33.786Z
+modified: 2020-12-08T14:44:50.697Z
 ---
 
 # read-cs-js

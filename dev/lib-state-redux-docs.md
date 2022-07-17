@@ -1,8 +1,8 @@
 ---
 title: lib-state-redux-docs
 tags: [docs, state]
-created: '2019-08-01T16:03:46.390Z'
-modified: '2020-12-08T13:27:16.321Z'
+created: 2019-08-01T16:03:46.390Z
+modified: 2020-12-08T13:27:16.321Z
 ---
 
 # lib-state-redux-docs

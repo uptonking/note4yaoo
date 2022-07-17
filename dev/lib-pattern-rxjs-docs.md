@@ -1,8 +1,8 @@
 ---
 title: lib-pattern-rxjs-docs
 tags: [docs, lib, pattern, rxjs]
-created: '2020-12-14T11:22:08.779Z'
-modified: '2020-12-14T11:22:48.700Z'
+created: 2020-12-14T11:22:08.779Z
+modified: 2020-12-14T11:22:48.700Z
 ---
 
 # lib-pattern-rxjs-docs

@@ -1,8 +1,8 @@
 ---
 title: web-ux4-navbar-sidebar
 tags: [components, navbar, sidebar, ui]
-created: '2021-03-22T19:03:11.916Z'
-modified: '2021-07-29T20:37:50.995Z'
+created: 2021-03-22T19:03:11.916Z
+modified: 2021-07-29T20:37:50.995Z
 ---
 
 # web-ux4-navbar-sidebar

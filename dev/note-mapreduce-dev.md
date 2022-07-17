@@ -1,8 +1,8 @@
 ---
 title: note-mapreduce-dev
 tags: [mapreduce]
-created: '2020-09-27T03:53:35.087Z'
-modified: '2020-09-27T03:58:20.682Z'
+created: 2020-09-27T03:53:35.087Z
+modified: 2020-09-27T03:58:20.682Z
 ---
 
 # note-mapreduce-dev

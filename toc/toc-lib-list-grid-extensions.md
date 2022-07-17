@@ -1,8 +1,8 @@
 ---
 title: toc-lib-list-grid-extensions
 tags: [extensions, grid, list, toc]
-created: '2021-05-23T16:31:14.208Z'
-modified: '2021-05-23T16:31:36.100Z'
+created: 2021-05-23T16:31:14.208Z
+modified: 2021-05-23T16:31:36.100Z
 ---
 
 # toc-lib-list-grid-extensions

@@ -1,8 +1,8 @@
 ---
 title: toc-gis-examples
 tags: [examples, gis]
-created: '2020-11-13T07:58:55.231Z'
-modified: '2021-01-04T16:20:58.685Z'
+created: 2020-11-13T07:58:55.231Z
+modified: 2021-01-04T16:20:58.685Z
 ---
 
 # toc-gis-examples

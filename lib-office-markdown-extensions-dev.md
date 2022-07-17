@@ -1,8 +1,8 @@
 ---
 title: lib-office-markdown-extensions-dev
 tags: [extensions, markdown, mdx]
-created: '2021-06-01T13:12:14.966Z'
-modified: '2021-06-02T15:29:52.268Z'
+created: 2021-06-01T13:12:14.966Z
+modified: 2021-06-02T15:29:52.268Z
 ---
 
 # lib-office-markdown-extensions-dev

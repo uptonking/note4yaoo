@@ -1,8 +1,8 @@
 ---
 title: docs-web-html-dom-element-api
 tags: [docs, dom, web]
-created: '2020-08-05T12:22:15.902Z'
-modified: '2020-08-05T12:29:43.618Z'
+created: 2020-08-05T12:22:15.902Z
+modified: 2020-08-05T12:29:43.618Z
 ---
 
 # docs-web-html-dom-element-api

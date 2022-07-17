@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-design-tokens-popular
 tags: [design-system, design-tokens, toc]
-created: '2021-01-01T22:06:15.062Z'
-modified: '2021-01-01T22:06:57.471Z'
+created: 2021-01-01T22:06:15.062Z
+modified: 2021-01-01T22:06:57.471Z
 ---
 
 # toc-lib-comp-design-tokens-popular

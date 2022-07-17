@@ -1,8 +1,8 @@
 ---
 title: job-js-concurrent-async
 tags: [async, concurrent, job, js]
-created: '2021-10-10T09:09:14.586Z'
-modified: '2021-10-10T09:30:55.386Z'
+created: 2021-10-10T09:09:14.586Z
+modified: 2021-10-10T09:30:55.386Z
 ---
 
 # job-js-concurrent-async

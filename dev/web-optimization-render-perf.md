@@ -1,8 +1,8 @@
 ---
 title: web-optimization-render-perf
 tags: [browser, optimization, perf, web]
-created: '2020-06-28T06:46:35.619Z'
-modified: '2021-01-04T17:09:19.278Z'
+created: 2020-06-28T06:46:35.619Z
+modified: 2021-01-04T17:09:19.278Z
 ---
 
 # web-optimization-render-perf

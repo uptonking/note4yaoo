@@ -1,8 +1,8 @@
 ---
 title: toc-lib-css-table
 tags: [css, lib, table, toc]
-created: '2020-07-19T16:23:30.640Z'
-modified: '2020-07-19T16:24:10.919Z'
+created: 2020-07-19T16:23:30.640Z
+modified: 2020-07-19T16:24:10.919Z
 ---
 
 # toc-lib-css-table

@@ -1,8 +1,8 @@
 ---
 title: lib-list-ag-grid-events
 tags: [ag-grid, events]
-created: '2020-09-17T17:18:09.303Z'
-modified: '2021-05-13T02:43:23.818Z'
+created: 2020-09-17T17:18:09.303Z
+modified: 2021-05-13T02:43:23.818Z
 ---
 
 # lib-list-ag-grid-events

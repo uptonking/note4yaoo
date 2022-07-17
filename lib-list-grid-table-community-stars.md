@@ -1,8 +1,8 @@
 ---
 title: lib-list-grid-table-community-stars
 tags: [community, grid, list, table]
-created: '2021-06-29T12:45:19.734Z'
-modified: '2021-06-29T12:45:55.775Z'
+created: 2021-06-29T12:45:19.734Z
+modified: 2021-06-29T12:45:55.775Z
 ---
 
 # lib-list-grid-table-community-stars

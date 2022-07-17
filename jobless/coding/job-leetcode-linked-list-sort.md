@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-linked-list-sort
 tags: [leetcode, linked-list, repeat]
-created: '2021-10-08T19:42:43.443Z'
-modified: '2021-10-08T19:49:54.670Z'
+created: 2021-10-08T19:42:43.443Z
+modified: 2021-10-08T19:49:54.670Z
 ---
 
 # job-leetcode-linked-list-sort

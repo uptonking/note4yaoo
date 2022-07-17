@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-dev-editor
 tags: [editor, observablehq]
-created: '2021-05-14T14:53:17.328Z'
-modified: '2021-05-14T14:53:41.083Z'
+created: 2021-05-14T14:53:17.328Z
+modified: 2021-05-14T14:53:41.083Z
 ---
 
 # lib-notebook-observablehq-dev-editor

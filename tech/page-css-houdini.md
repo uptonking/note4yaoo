@@ -1,8 +1,8 @@
 ---
 title: page-css-houdini
 tags: [css, houdini, proposal, roadmap, spec]
-created: '2020-08-08T11:28:48.214Z'
-modified: '2020-08-08T11:30:01.467Z'
+created: 2020-08-08T11:28:48.214Z
+modified: 2020-08-08T11:30:01.467Z
 ---
 
 # page-css-houdini

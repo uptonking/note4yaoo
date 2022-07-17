@@ -1,8 +1,8 @@
 ---
 title: web-style-css-in-js-lib-linaria
 tags: [css-in-js, linaria, style]
-created: '2020-10-27T06:49:35.370Z'
-modified: '2021-01-01T20:06:36.094Z'
+created: 2020-10-27T06:49:35.370Z
+modified: 2021-01-01T20:06:36.094Z
 ---
 
 # web-style-css-in-js-lib-linaria

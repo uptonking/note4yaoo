@@ -1,8 +1,8 @@
 ---
 title: page-web-render-layer-tooltip
 tags: [layer, render, tooltip, web]
-created: '2021-08-24T05:24:01.348Z'
-modified: '2021-08-24T05:24:53.991Z'
+created: 2021-08-24T05:24:01.348Z
+modified: 2021-08-24T05:24:53.991Z
 ---
 
 # page-web-render-layer-tooltip

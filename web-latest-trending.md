@@ -1,8 +1,8 @@
 ---
 title: web-latest-trending
 tags: [latest, web]
-created: '2021-01-01T20:52:04.258Z'
-modified: '2021-01-01T20:52:42.088Z'
+created: 2021-01-01T20:52:04.258Z
+modified: 2021-01-01T20:52:42.088Z
 ---
 
 # web-latest-trending

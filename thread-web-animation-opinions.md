@@ -1,8 +1,8 @@
 ---
 title: thread-web-animation-opinions
 tags: [animation, opinions, thread, web]
-created: '2021-01-08T19:15:15.849Z'
-modified: '2021-01-08T19:16:04.471Z'
+created: 2021-01-08T19:15:15.849Z
+modified: 2021-01-08T19:16:04.471Z
 ---
 
 # thread-web-animation-opinions

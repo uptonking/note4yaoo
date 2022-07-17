@@ -1,8 +1,8 @@
 ---
 title: thread-web-dev
 tags: [frontend, thread, web]
-created: '2020-12-05T07:43:47.005Z'
-modified: '2021-01-08T17:13:43.392Z'
+created: 2020-12-05T07:43:47.005Z
+modified: 2021-01-08T17:13:43.392Z
 ---
 
 # thread-web-dev

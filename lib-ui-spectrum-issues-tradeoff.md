@@ -1,8 +1,8 @@
 ---
 title: lib-ui-spectrum-issues-tradeoff
 tags: [adobe-spectrum, components, issues, tradeoff]
-created: '2021-05-10T13:46:31.467Z'
-modified: '2021-05-10T13:48:02.087Z'
+created: 2021-05-10T13:46:31.467Z
+modified: 2021-05-10T13:48:02.087Z
 ---
 
 # lib-ui-spectrum-issues-tradeoff

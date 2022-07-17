@@ -1,8 +1,8 @@
 ---
 title: web-css
 tags: [css, optimization, style, web]
-created: '2019-12-17T04:23:15.125Z'
-modified: '2020-12-21T07:45:28.814Z'
+created: 2019-12-17T04:23:15.125Z
+modified: 2020-12-21T07:45:28.814Z
 ---
 
 # web-css

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-dataframe
 tags: [data-processing, dataframe, lib]
-created: '2020-12-07T09:59:23.769Z'
-modified: '2021-05-13T16:14:41.762Z'
+created: 2020-12-07T09:59:23.769Z
+modified: 2021-05-13T16:14:41.762Z
 ---
 
 # toc-lib-dataframe

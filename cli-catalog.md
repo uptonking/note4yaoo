@@ -1,8 +1,8 @@
 ---
 title: cli-catalog
 tags: [cli]
-created: '2019-10-06T10:29:08.772Z'
-modified: '2021-01-01T22:13:44.013Z'
+created: 2019-10-06T10:29:08.772Z
+modified: 2021-01-01T22:13:44.013Z
 ---
 
 # cli-catalog

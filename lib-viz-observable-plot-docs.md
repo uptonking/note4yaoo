@@ -1,8 +1,8 @@
 ---
 title: lib-viz-observable-plot-docs
 tags: [docs, observable-plot]
-created: '2021-05-05T07:42:17.542Z'
-modified: '2021-05-05T07:42:37.727Z'
+created: 2021-05-05T07:42:17.542Z
+modified: 2021-05-05T07:42:37.727Z
 ---
 
 # lib-viz-observable-plot-docs

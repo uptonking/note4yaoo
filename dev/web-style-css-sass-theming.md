@@ -1,8 +1,8 @@
 ---
 title: web-style-css-sass-theming
 tags: [sass, style, theming]
-created: '2020-11-01T06:18:50.917Z'
-modified: '2021-01-01T20:07:04.485Z'
+created: 2020-11-01T06:18:50.917Z
+modified: 2021-01-01T20:07:04.485Z
 ---
 
 # web-style-css-sass-theming

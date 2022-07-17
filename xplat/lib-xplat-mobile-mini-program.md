@@ -1,8 +1,8 @@
 ---
 title: lib-xplat-mobile-mini-program
 tags: [dev, mini-program, mobile]
-created: '2021-04-21T17:01:43.679Z'
-modified: '2021-05-13T03:11:31.620Z'
+created: 2021-04-21T17:01:43.679Z
+modified: 2021-05-13T03:11:31.620Z
 ---
 
 # lib-xplat-mobile-mini-program

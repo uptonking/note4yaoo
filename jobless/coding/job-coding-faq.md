@@ -1,8 +1,8 @@
 ---
 title: job-coding-faq
 tags: [coding, engineering, job, 手撕代码]
-created: '2021-09-21T19:50:09.680Z'
-modified: '2021-10-10T08:52:32.419Z'
+created: 2021-09-21T19:50:09.680Z
+modified: 2021-10-10T08:52:32.419Z
 ---
 
 # job-coding-faq

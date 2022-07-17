@@ -1,8 +1,8 @@
 ---
 title: web-style-css-sass-dev
 tags: [css, sass, styling, web]
-created: '2020-10-31T06:56:52.341Z'
-modified: '2021-02-25T17:50:04.640Z'
+created: 2020-10-31T06:56:52.341Z
+modified: 2021-02-25T17:50:04.640Z
 ---
 
 # web-style-css-sass-dev

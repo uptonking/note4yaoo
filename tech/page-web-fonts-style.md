@@ -1,8 +1,8 @@
 ---
 title: page-web-fonts-style
 tags: [fonts, style, web]
-created: '2020-07-18T16:29:28.838Z'
-modified: '2020-07-18T16:29:56.497Z'
+created: 2020-07-18T16:29:28.838Z
+modified: 2020-07-18T16:29:56.497Z
 ---
 
 # page-web-fonts-style

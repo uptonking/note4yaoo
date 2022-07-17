@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-pm-xp
 tags: [notebook, observablehq, pm, xp]
-created: '2021-05-25T17:52:27.247Z'
-modified: '2021-05-25T17:53:28.504Z'
+created: 2021-05-25T17:52:27.247Z
+modified: 2021-05-25T17:53:28.504Z
 ---
 
 # lib-notebook-observablehq-pm-xp

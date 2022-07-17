@@ -1,8 +1,8 @@
 ---
 title: toc-lib-utils-vanillajs
 tags: [lib, toc, vanillajs]
-created: '2021-03-01T10:53:02.080Z'
-modified: '2021-03-01T10:54:24.828Z'
+created: 2021-03-01T10:53:02.080Z
+modified: 2021-03-01T10:54:24.828Z
 ---
 
 # toc-lib-utils-vanillajs

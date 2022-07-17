@@ -1,8 +1,8 @@
 ---
 title: toc-org-github
 tags: [github, organization, toc]
-created: '2020-08-20T13:47:22.122Z'
-modified: '2020-11-03T06:58:11.159Z'
+created: 2020-08-20T13:47:22.122Z
+modified: 2020-11-03T06:58:11.159Z
 ---
 
 # toc-org-github

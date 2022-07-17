@@ -1,8 +1,8 @@
 ---
 title: web-wasm-dev
 tags: [dev, wasm]
-created: '2020-12-31T19:17:26.544Z'
-modified: '2021-01-01T20:10:51.125Z'
+created: 2020-12-31T19:17:26.544Z
+modified: 2021-01-01T20:10:51.125Z
 ---
 
 # web-wasm-dev

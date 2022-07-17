@@ -1,8 +1,8 @@
 ---
 title: lib-notebook-observablehq-codebase
 tags: [codebase, notebook, observablehq]
-created: '2021-05-22T14:52:00.120Z'
-modified: '2021-05-22T14:52:46.216Z'
+created: 2021-05-22T14:52:00.120Z
+modified: 2021-05-22T14:52:46.216Z
 ---
 
 # lib-notebook-observablehq-codebase

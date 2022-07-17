@@ -1,8 +1,8 @@
 ---
 title: lib-editor-prosemirror-dev-decoration
 tags: [editor, prosemirror, text-editor]
-created: '2021-07-09T18:08:03.459Z'
-modified: '2021-07-09T18:08:34.957Z'
+created: 2021-07-09T18:08:03.459Z
+modified: 2021-07-09T18:08:34.957Z
 ---
 
 # lib-editor-prosemirror-dev-decoration

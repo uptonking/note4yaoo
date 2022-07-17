@@ -1,8 +1,8 @@
 ---
 title: lib-editor-lexical-dev
 tags: [lexical-editor]
-created: '2022-05-15T18:36:57.252Z'
-modified: '2022-05-15T18:37:07.368Z'
+created: 2022-05-15T18:36:57.252Z
+modified: 2022-05-15T18:37:07.368Z
 ---
 
 # lib-editor-lexical-dev

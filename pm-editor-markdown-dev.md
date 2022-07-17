@@ -1,8 +1,8 @@
 ---
 title: pm-editor-markdown-dev
 tags: [dev, editor, markdown, pmgr]
-created: '2020-07-13T13:39:04.621Z'
-modified: '2021-05-14T14:33:37.058Z'
+created: 2020-07-13T13:39:04.621Z
+modified: 2021-05-14T14:33:37.058Z
 ---
 
 # pm-editor-markdown-dev

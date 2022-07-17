@@ -1,8 +1,8 @@
 ---
 title: toc-lib-ux-template
 tags: [template, toc, ux]
-created: '2021-01-11T13:46:32.360Z'
-modified: '2021-01-11T22:19:27.519Z'
+created: 2021-01-11T13:46:32.360Z
+modified: 2021-01-11T22:19:27.519Z
 ---
 
 # toc-lib-ux-template

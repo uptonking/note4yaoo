@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-drag-resize-move
 tags: [components, drag, gesture, resize, toc]
-created: '2022-02-05T18:44:27.679Z'
-modified: '2022-02-05T18:45:34.558Z'
+created: 2022-02-05T18:44:27.679Z
+modified: 2022-02-05T18:45:34.558Z
 ---
 
 # toc-lib-comp-drag-resize-move

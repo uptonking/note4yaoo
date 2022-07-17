@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-fintech-bank
 tags: [bank, discuss, fintech]
-created: '2021-11-28T11:42:06.530Z'
-modified: '2021-11-28T11:42:29.012Z'
+created: 2021-11-28T11:42:06.530Z
+modified: 2021-11-28T11:42:29.012Z
 ---
 
 # pick-discuss-fintech-bank

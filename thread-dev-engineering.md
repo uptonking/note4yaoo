@@ -1,8 +1,8 @@
 ---
 title: thread-dev-engineering
 tags: [dev, engineering, thread]
-created: '2021-01-21T17:51:54.496Z'
-modified: '2021-01-21T17:52:13.333Z'
+created: 2021-01-21T17:51:54.496Z
+modified: 2021-01-21T17:52:13.333Z
 ---
 
 # thread-dev-engineering

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-web-worker
 tags: [lib, toc, web-worker]
-created: '2020-12-19T18:21:50.241Z'
-modified: '2020-12-19T18:22:27.577Z'
+created: 2020-12-19T18:21:50.241Z
+modified: 2020-12-19T18:22:27.577Z
 ---
 
 # toc-lib-web-worker

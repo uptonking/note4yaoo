@@ -1,8 +1,8 @@
 ---
 title: viz-base-webgl
 tags: [viz, webgl]
-created: '2019-07-06T12:36:53.822Z'
-modified: '2020-12-21T07:47:02.451Z'
+created: 2019-07-06T12:36:53.822Z
+modified: 2020-12-21T07:47:02.451Z
 ---
 
 # viz-base-webgl

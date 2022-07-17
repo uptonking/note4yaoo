@@ -1,8 +1,8 @@
 ---
 title: pick-discuss-marketing
 tags: [discuss, marketing, zhihu]
-created: '2020-12-04T02:19:01.335Z'
-modified: '2021-04-12T16:30:53.968Z'
+created: 2020-12-04T02:19:01.335Z
+modified: 2021-04-12T16:30:53.968Z
 ---
 
 # pick-discuss-marketing

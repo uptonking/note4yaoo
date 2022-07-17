@@ -1,8 +1,8 @@
 ---
 title: pm-editor-text
 tags: [editor, pm, pmgr, text-editor]
-created: '2020-07-13T13:50:42.498Z'
-modified: '2021-05-14T14:33:52.786Z'
+created: 2020-07-13T13:50:42.498Z
+modified: 2021-05-14T14:33:52.786Z
 ---
 
 # pm-editor-text

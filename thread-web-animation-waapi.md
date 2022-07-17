@@ -1,8 +1,8 @@
 ---
 title: thread-web-animation-waapi
 tags: [animation, thread, waapi]
-created: '2021-09-22T04:12:55.839Z'
-modified: '2021-09-22T04:13:22.341Z'
+created: 2021-09-22T04:12:55.839Z
+modified: 2021-09-22T04:13:22.341Z
 ---
 
 # thread-web-animation-waapi

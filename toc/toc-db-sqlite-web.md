@@ -1,8 +1,8 @@
 ---
 title: toc-db-sqlite-web
 tags: [sqlite, toc, web]
-created: '2022-06-03T22:12:22.597Z'
-modified: '2022-06-03T22:12:42.368Z'
+created: 2022-06-03T22:12:22.597Z
+modified: 2022-06-03T22:12:42.368Z
 ---
 
 # toc-db-sqlite-web

@@ -1,8 +1,8 @@
 ---
 title: lib-viz-observable-plot-latest-roadmap
 tags: [observable-plot, roadmap]
-created: '2021-05-05T07:44:41.621Z'
-modified: '2021-05-05T07:45:07.226Z'
+created: 2021-05-05T07:44:41.621Z
+modified: 2021-05-05T07:45:07.226Z
 ---
 
 # lib-viz-observable-plot-latest-roadmap

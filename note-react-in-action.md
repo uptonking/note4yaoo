@@ -1,8 +1,8 @@
 ---
 title: note-react-in-action
 tags: [dev, react]
-created: '1970-01-01T00:00:00.000Z'
-modified: '2020-07-14T11:59:09.463Z'
+created: 1970-01-01T00:00:00.000Z
+modified: 2020-07-14T11:59:09.463Z
 ---
 
 # note-react-in-action

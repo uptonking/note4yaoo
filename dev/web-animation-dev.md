@@ -1,8 +1,8 @@
 ---
 title: web-animation-dev
 tags: [animation, intro, web]
-created: '2019-10-16T06:58:19.848Z'
-modified: '2021-01-01T20:12:36.651Z'
+created: 2019-10-16T06:58:19.848Z
+modified: 2021-01-01T20:12:36.651Z
 ---
 
 # web-animation-dev

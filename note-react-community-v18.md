@@ -1,8 +1,8 @@
 ---
 title: note-react-community-v18
 tags: [community, react]
-created: '2021-06-09T10:37:45.741Z'
-modified: '2021-06-09T10:38:04.542Z'
+created: 2021-06-09T10:37:45.741Z
+modified: 2021-06-09T10:38:04.542Z
 ---
 
 # note-react-community-v18

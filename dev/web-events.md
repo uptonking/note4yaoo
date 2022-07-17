@@ -1,8 +1,8 @@
 ---
 title: web-events
 tags: [events, web]
-created: '2019-10-17T08:31:14.028Z'
-modified: '2021-04-23T17:10:52.920Z'
+created: 2019-10-17T08:31:14.028Z
+modified: 2021-04-23T17:10:52.920Z
 ---
 
 # web-events

@@ -1,8 +1,8 @@
 ---
 title: toc-lib-data-engineering
 tags: [data, engineering, lib, toc]
-created: '2020-10-05T09:34:33.467Z'
-modified: '2020-12-31T15:32:40.135Z'
+created: 2020-10-05T09:34:33.467Z
+modified: 2020-12-31T15:32:40.135Z
 ---
 
 # toc-lib-data-engineering

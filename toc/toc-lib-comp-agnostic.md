@@ -1,8 +1,8 @@
 ---
 title: toc-lib-comp-agnostic
 tags: [components, lib, toc]
-created: '2020-09-28T17:05:16.252Z'
-modified: '2020-11-13T07:28:27.824Z'
+created: 2020-09-28T17:05:16.252Z
+modified: 2020-11-13T07:28:27.824Z
 ---
 
 # toc-lib-comp-agnostic

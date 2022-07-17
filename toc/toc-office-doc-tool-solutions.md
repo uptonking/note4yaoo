@@ -1,8 +1,8 @@
 ---
 title: toc-office-doc-tool-solutions
 tags: [documentation, solutions, toc, tool]
-created: '2020-10-13T09:15:27.625Z'
-modified: '2021-07-21T18:07:43.056Z'
+created: 2020-10-13T09:15:27.625Z
+modified: 2021-07-21T18:07:43.056Z
 ---
 
 # toc-office-doc-tool-solutions

@@ -1,8 +1,8 @@
 ---
 title: wiki-spoken-world
 tags: [spoken, world]
-created: '2020-11-21T15:31:13.706Z'
-modified: '2020-11-21T15:32:31.707Z'
+created: 2020-11-21T15:31:13.706Z
+modified: 2020-11-21T15:32:31.707Z
 ---
 
 # wiki-spoken-world

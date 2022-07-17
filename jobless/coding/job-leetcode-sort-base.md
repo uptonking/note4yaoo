@@ -1,8 +1,8 @@
 ---
 title: job-leetcode-sort-base
 tags: [algorithms, coding, job, leetcode, sort]
-created: '2021-10-05T10:09:53.229Z'
-modified: '2021-10-06T14:47:12.319Z'
+created: 2021-10-05T10:09:53.229Z
+modified: 2021-10-06T14:47:12.319Z
 ---
 
 # job-leetcode-sort-base

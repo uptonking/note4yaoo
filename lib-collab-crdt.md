@@ -1,8 +1,8 @@
 ---
 title: lib-collab-crdt
 tags: [collaboration, crdt, pattern]
-created: '2021-07-23T15:50:09.211Z'
-modified: '2022-04-05T10:10:08.537Z'
+created: 2021-07-23T15:50:09.211Z
+modified: 2022-04-05T10:10:08.537Z
 ---
 
 # lib-collab-crdt

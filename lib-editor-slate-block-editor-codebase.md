@@ -1,8 +1,8 @@
 ---
 title: lib-editor-slate-block-editor-codebase
 tags: [block-editor, codebase, slate]
-created: '2022-05-27T09:43:58.962Z'
-modified: '2022-05-27T09:44:18.922Z'
+created: 2022-05-27T09:43:58.962Z
+modified: 2022-05-27T09:44:18.922Z
 ---
 
 # lib-editor-slate-block-editor-codebase
