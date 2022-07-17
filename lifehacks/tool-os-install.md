@@ -17,21 +17,9 @@ modified: '2020-12-22T12:42:14.745Z'
 
 ## os-starter
 
-- 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
-
 - [装了5次Ubuntu，告诉你win10+Ubuntu双系统的正确打开方式](https://zhuanlan.zhihu.com/p/101307629)
 
-- [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
-  - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
-
-- chinese-input
-  - sogou ubuntu
-  - [在Ubuntu下安装讯飞输入法linux版以及卸载方法](https://yoki.moe/Intstu/24.html)
-    - xunfei  http://packages.deepin.com/deepin/pool/non-free/i/iflyime/
-  - baidu https://srf.baidu.com/site/guanwang_linux/index.html
-
-- [How to Install Fonts on Ubuntu 20.04 Focal Fossa Linux](https://linuxconfig.org/how-to-install-fonts-on-ubuntu-20-04-focal-fossa-linux)
-  - sudo cp ~/Downloads/Bitwise.ttf /usr/local/share/fonts/sample/
+- 在ubuntu software update打勾可选源，以及配置apt mirror
 
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
@@ -39,19 +27,43 @@ modified: '2020-12-22T12:42:14.745Z'
     - [Device] [Mount Point] [File System Type] [Options] [Dump/backup] [Pass]
     - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
 
-- 如何运行 . AppImage 文件
-  - chmod a+x *. AppImage
-  - ./qq. AppImage
+- 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
+
+- [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
+  - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
+
+- chinese-input
+  - rime输入法配置的迁移比想像中要快得多，只需要拷贝文件夹
+  - sogou ubuntu
+  - [在Ubuntu下安装讯飞输入法linux版以及卸载方法](https://yoki.moe/Intstu/24.html)
+    - xunfei  http://packages.deepin.com/deepin/pool/non-free/i/iflyime/
+  - baidu https://srf.baidu.com/site/guanwang_linux/index.html
+
+- [How to Install Fonts on Ubuntu 20.04 Focal Fossa Linux](https://linuxconfig.org/how-to-install-fonts-on-ubuntu-20-04-focal-fossa-linux)
+  - sudo cp ~/Downloads/Bitwise.ttf /usr/local/share/fonts/sampleName/
 
 - 国内 nvm
   - https://gitee.com/RubyKids/nvm-cn
   - bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
+
+- Pending Update of Snap Store 的解决方法
+
+```shell
+
+# Close all open `snapd` process
+sudo killall -s KILL snapd
+sudo snap refresh
+```
 
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
   - 包括 vlc，clementine，goldendict
   - https://packages.ubuntu.com/
+
+- 如何运行 . AppImage 文件
+  - chmod a+x *. AppImage
+  - ./qq. AppImage
 
 - Clementine不支持抓取到last.fm的解决方法
   - mkdir ~/.local/share/Last.fm
@@ -69,6 +81,7 @@ modified: '2020-12-22T12:42:14.745Z'
 - chrome ubuntu版每次打开都要手动点 restore 恢复上次网页
   - [chrome needs to restore tabs on every reboot](https://askubuntu.com/questions)
   - 在设置里面关闭退出chrome后在后台继续运行app
+  - chrome点击标题栏不能全屏，方法1是打开系统标题栏，方法2是拖拽到屏幕顶部会自动全屏
 # win11
 
 ## guide
