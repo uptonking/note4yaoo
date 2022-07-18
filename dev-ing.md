@@ -11,7 +11,7 @@ modified: 2022-05-24T17:53:08.400Z
 - 分析核心需求和问题，拆分问题，梳理任务、子任务
 
 金瑶 邀请您加入【金瑶的个人会议室】
-点击链接直接加入会议：
+点击链接直接加入腾讯会议：
 https://meeting.tencent.com/p/9606972663
 
 #腾讯会议：960-697-2663
@@ -136,6 +136,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
     - previous_selection永不为空的设计是否合理
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
+
+## 0718
+
+- dev-to
+  - [ ] 导航条响应式隐藏元素
+  - [ ] slate左中右对齐未持久化
+
+- 删除逻辑在退格按键和各种菜单按钮都存在，逻辑经常重复
+
+- slate编辑器文本样式能持久化但对齐不能持久化的原因
+  - 文本样式属性加在TextNode，children变化后会触发持久化逻辑
+  - 对齐属性加在文本的父节点之上，改变对齐方式后，自身变化但children不会变化，所以未触发持久化逻辑
 
 ## 0715
 

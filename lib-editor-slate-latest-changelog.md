@@ -12,6 +12,32 @@ modified: 2022-05-15T18:43:59.130Z
   - [changelog list](https://docs.slatejs.org/general/changelog)
 # changelog
 
+## [v0.76.0__20220325](https://github.com/ianstormtaylor/slate/releases/tag/slate%400.76.0)
+
+- adds a separate `insertSoftBreak` method on the editor instance that gets called when a soft break is inserted. 
+- toSlatePoint should not consider a selection within a void node if the void node isn't in the editor itself.
+
+## [v0.67.0__20211019](https://github.com/ianstormtaylor/slate/releases/tag/slate-react%400.67.0)
+
+- The Slate Provider's `"value"` prop is now only used as initial state for `editor.children` as was intended before. 
+  - If your code relies on replacing editor.children you should do so by replacing it directly instead of relying on the "value" prop to do this for you.
+
+## v0.54.0__20191212
+
+- The `<Slate>` `onChange` handler no longer receives the `selection` argument. 
+  - Previously it received `(value, selection)`, now it receives simply `(value)`. 
+  - Instead, you can access any property of the editor directly (including the value as `editor.children`). 
+  - The value/onChange convention is provided purely for form-related use cases that expect it. This is along with the change to how extra props are "controlled". By default they are uncontrolled, but you can pass in any of the other top-level editor properties to take control of them
+
+- The `<Slate>` component is now pseudo-controlled. It requires a value= prop to be passed in which is controlled. 
+  - However, the selection, marks, history, or any other props are not required to be controlled. They default to being uncontrolled. 
+  - If your use case requires controlling these extra props you can pass them in and they will start being controlled again. 
+  - This change was made to make using Slate easier, while still allowing for more complex state to be controlled by core or plugins going forward—state that users don't need to concern themselves with most of time.
+- The Editor now has a `marks` property. 
+  - This property represents text-level formatting that will be applied to the next character that is inserted.
+  - This is a common richtext editor behavior, where pressing a Bold button with a collapsed selection turns on "bold" formatting mode, and then typing a character becomes bold. 
+  - This state isn't stored in the document, and is instead stored as an extra property on the editor itself.
+
 ## [v0.50.0__20191128](https://github.com/ianstormtaylor/slate/tags?after=slate-history%400.50.0)
 
 - [Migrating](https://docs.slatejs.org/concepts/xx-migrating)

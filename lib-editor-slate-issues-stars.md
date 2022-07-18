@@ -17,7 +17,14 @@ modified: 2022-05-15T18:48:53.816Z
 
 ## 
 
-## 
+## [Unique identifier for Nodes ](https://github.com/ianstormtaylor/slate/issues/3489)
+
+- the API was rewritten to effectively not rely on keys to locate nodes anymore, instead this is done with paths. 
+  - This alleviates the need for the API to recursively search the node hierarchy to locate a node by its key and is a performance improvement.
+
+- If you would like to bind keys to your nodes, the API allows this because you can freely add arbitrary properties to your nodes as you see fit (as long as you don't run into name collision with properties on the core interface). You can use this to write your own locate by key utilities and then that should yield you a path. If you like.
+
+- [How to have unique node ids?](https://github.com/ianstormtaylor/slate/discussions/4462)
 
 ## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
 
