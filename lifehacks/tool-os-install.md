@@ -79,6 +79,12 @@ sudo snap refresh
 - [Install NVIDIA Driver & Switch Between Intel and NVIDIA in Ubuntu 22.04](https://ubuntuhandbook.org/index.php/2021/06/install-nvidia-driver-switch-between-intel-nvidia-ubuntu/)
   - 切换n卡时只支持 xorg，没有完美的方案
 
+- ubuntu安装字体ttf
+  - 创建目录 ~/.fonts，只需将字体粘贴到那里，支持 .ttf 或 .otf
+  - 字体对所有用户生效， /usr/local/share/fonts
+  - [Ubuntu 18.04 LTS 上安装Windows 字体](https://zhuanlan.zhihu.com/p/40434062)
+  - [Linux 安装 Windows 字体教程](https://www.bilibili.com/read/cv16481012/)
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
