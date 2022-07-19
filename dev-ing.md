@@ -137,11 +137,18 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - more-editor-issues
     - [ ] 用户id和用户在哪里查询和缓存
 
-## 0718
+## 0719
 
 - dev-to
   - [ ] 导航条响应式隐藏元素
-  - [ ] slate左中右对齐未持久化
+
+- css设置了margin，就不要设置 width 为 100%
+  - border-box的width不包括margin，width: 100% + margin 总宽度会超出父容器
+
+## 0718
+
+- dev-to
+  - [x] slate左中右对齐未持久化
 
 - 删除逻辑在退格按键和各种菜单按钮都存在，逻辑经常重复
 
