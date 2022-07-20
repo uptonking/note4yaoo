@@ -301,7 +301,7 @@ modified: 2022-05-24T17:56:46.683Z
 
 ## 1129
 
-- 之前的editoe组件为什么会报那个chunk错误？
+- 之前的组件为什么会报那个chunk错误？
 - codebase-https://github.com/nishantpainter/personal-kanban
   - Column 看板的一列，是一个面板，上面可以放置小卡片
 
@@ -809,7 +809,7 @@ return toWidget(container, writer, 'figure');
   - 原因是pr合并到了错误的canary分支，应该合并到nightly分支
   - package-lock.json需要每次更新toe-editor的版本
 - 插入图片时，图片标题添加的代码位置 captionElementCreator()
-  - editoe\plugins\ckeditor5-image\src\imagecaption\utils.js 
+  - src\plugins\ckeditor5-image\src\imagecaption\utils.js 
 
 ## 1101
 
