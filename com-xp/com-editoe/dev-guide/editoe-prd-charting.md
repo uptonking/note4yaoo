@@ -1,11 +1,11 @@
 ---
-title: editoe-features-charting
+title: editoe-prd-charting
 tags: [charting, editoe]
 created: 2021-10-23T18:10:53.729Z
-modified: 2021-10-23T18:11:11.366Z
+modified: 2022-07-21T04:10:19.392Z
 ---
 
-# editoe-features-charting
+# editoe-prd-charting
 
 # guide
 

@@ -17,7 +17,7 @@ modified: 2022-05-15T18:48:53.816Z
 
 ## 
 
-## [Unique identifier for Nodes ](https://github.com/ianstormtaylor/slate/issues/3489)
+## [Unique identifier for Nodes](https://github.com/ianstormtaylor/slate/issues/3489)
 
 - the API was rewritten to effectively not rely on keys to locate nodes anymore, instead this is done with paths. 
   - This alleviates the need for the API to recursively search the node hierarchy to locate a node by its key and is a performance improvement.

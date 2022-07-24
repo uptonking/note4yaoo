@@ -1,11 +1,11 @@
 ---
-title: editoe-features-flowchart-mermaid
+title: editoe-prd-flowchart-mermaid
 tags: [editoe, flowchart, mermaid]
 created: 2021-10-23T18:09:52.150Z
-modified: 2021-10-23T18:10:47.531Z
+modified: 2022-07-21T04:10:34.712Z
 ---
 
-# editoe-features-flowchart-mermaid
+# editoe-prd-flowchart-mermaid
 
 # guide
 

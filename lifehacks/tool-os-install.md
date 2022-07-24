@@ -26,6 +26,7 @@ modified: 2020-12-22T12:42:14.745Z
     - [pass]: Controls the order in which fsck checks the device/partition for errors at boot time. The root device should be 1. Other partitions should be 2, or 0 to disable checking.
 
 - 当三方apt源很慢时，可以尝试手机移动网络，而不是电信宽带网络
+  - 特别是安装 vscode、git-core/ppa
 
 - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
   - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
@@ -88,7 +89,7 @@ sudo snap refresh
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
-  - 包括 vlc，clementine，goldendict
+  - 包括 vlc，clementine，goldendict, gimp, inkscape
   - https://packages.ubuntu.com/
 
 - 如何运行 . AppImage 文件
@@ -112,6 +113,17 @@ sudo snap refresh
   - [chrome needs to restore tabs on every reboot](https://askubuntu.com/questions)
   - 在设置里面关闭退出chrome后在后台继续运行app
   - chrome点击标题栏不能全屏，方法1是打开系统标题栏，方法2是拖拽到屏幕顶部会自动全屏
+
+## dev
+
+- ubuntu-mysql
+  - [ubuntu20.04安装MySQL以及MySQL-workbench可视化工具](https://blog.csdn.net/delilahy123/article/details/124834998)
+
+- ubuntu-postgresql
+  - [PostgreSQL之Ubuntu 20.04下的简单安装与相关设置](https://www.cnblogs.com/among-the-stars/p/15585198.html)
+  - [如何在 Ubuntu 20.04 上安装 PostgreSQL](https://zhuanlan.zhihu.com/p/143156636)
+  - [postgresql安装配置](https://www.xzhongwei.com/post/480)
+  - [Ubuntu18.04安装Postgresql与配置](https://www.blog8090.com/ubuntu18-04an-zhuang-postgresqlyu-pei-zhi/)
 # win11
 
 ## guide

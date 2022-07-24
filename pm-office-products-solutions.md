@@ -72,6 +72,7 @@ modified: 2021-07-11T08:31:00.660Z
   - vaadin rich-text-editor is built with Quill
     - https://vaadin.com/docs/latest/components/rich-text-editor
 
+- [效率软件综合测评 知乎专栏](https://www.zhihu.com/column/c_1486707752840425473)
 # editor-meeting-psp-block-editor-20220704
 - 编辑器的模型包括renderTree和blockTree
   - 目的是方便实现翻译及原文、database多视图
@@ -89,7 +90,6 @@ modified: 2021-07-11T08:31:00.660Z
 
 - psp的操作都是同步的，但底层实现可以是异步的
   - 对于需要异步的，可以先在内存state处理，然后批量执行操作
-
 # editor-meeting-xheldon-20220629
 - 选crdt原因
   - 本地协作，无需中心服务器
@@ -112,7 +112,6 @@ modified: 2021-07-11T08:31:00.660Z
   - 插件的另一种实现方式，类似浏览器的沙箱
 
 - xheldon公司产品插件使用了rxjs和webpack-tapable
-
 # trending-office-products
 
 ## [almanac](https://almanac.io/features)
@@ -189,6 +188,8 @@ modified: 2021-07-11T08:31:00.660Z
   - Notion将两个功能融合在一起了
 
 - TextBundle是一种文件格式，将图片和markdown一起导出，不再是难题
+# new-office-products
+- [黑客说](https://hackertalk.net/)
 # office-online-products
 - 选型参考
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml

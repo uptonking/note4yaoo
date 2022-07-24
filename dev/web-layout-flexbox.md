@@ -45,6 +45,10 @@ modified: 2020-12-21T07:46:17.578Z
     - 若项目里的内容不一样多，则各行的高度可能不同
 
 - ## 弹性项目
+
+- by the flexbox spec -- children of a flex container are forced to have a block-flavored display type.
+  - If you don't want this behavior, just wrap your `<span>` in a `<div>`, and then the `<div>` will play the role of the flex item so that the `<span>` can keep its display type.
+
 - order: 指定项目在行中排列的位置顺序
   - 默认值：0，数值越小，排列越靠左或上，可为负，可不连续
   - 让元素显示顺序与html源码中的顺序无关
@@ -101,9 +105,9 @@ modified: 2020-12-21T07:46:17.578Z
   - Unfortunately, I am working with Prepros (SCSS compiler) and I use the built-in CSS minifier that decides to remove the percentage anyway.
 - When using a unitless 0 as initial value for the flex-basis property, the height will be based on the flex-grow/flex-shrink value.
   - The in this case flex-grow value 1 will tell the item to grow and fill the remaining space of its parent, the container
-  - 测试表明
-    - 若flex-basis为0%且直接父元素有minHeight无height，则当前flex-item的高度会fallback为auto，即自身内容高度
-    - 若flex-basis为0且直接父元素有minHeight无height，则当前flex-item的高度由grow和shrink决定，grow时最大高度为minHeight
+- 测试表明
+  - 若flex-basis为0%且直接父元素有minHeight无height，则当前flex-item的高度会fallback为auto，即自身内容高度
+  - 若flex-basis为0且直接父元素有minHeight无height，则当前flex-item的高度由grow和shrink决定，grow时最大高度为minHeight
 
 - ## grow和shrink的关系
 - 当 flex-wrap 为 wrap/-reverse，且子项宽度和不及父容器宽度时，flex-grow 会起作用，子项会根据 flex-grow 设定的值放大（为0的项不放大）

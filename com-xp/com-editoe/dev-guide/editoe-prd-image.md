@@ -1,11 +1,11 @@
 ---
-title: editoe-features-image
+title: editoe-prd-image
 tags: [editoe, image]
 created: 2021-10-23T18:09:37.948Z
-modified: 2021-10-23T18:09:49.439Z
+modified: 2022-07-21T04:10:40.679Z
 ---
 
-# editoe-features-image
+# editoe-prd-image
 
 # guide
 

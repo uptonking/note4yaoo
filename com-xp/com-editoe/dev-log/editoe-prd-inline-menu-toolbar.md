@@ -1,11 +1,11 @@
 ---
-title: editoe-features-inline-menu-toolbar
+title: editoe-prd-inline-menu-toolbar
 tags: [editoe]
 created: 2022-06-01T04:15:11.107Z
-modified: 2022-06-01T04:16:34.253Z
+modified: 2022-07-21T04:10:47.060Z
 ---
 
-# editoe-features-inline-menu-toolbar
+# editoe-prd-inline-menu-toolbar
 
 # guide
 

@@ -1,11 +1,11 @@
 ---
-title: editoe-features-math
+title: editoe-prd-math
 tags: [editoe, math]
 created: 2021-10-23T18:09:11.241Z
-modified: 2021-10-23T18:09:35.703Z
+modified: 2022-07-21T04:11:03.028Z
 ---
 
-# editoe-features-math
+# editoe-prd-math
 
 # guide
 

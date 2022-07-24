@@ -12,9 +12,8 @@ modified: 2021-10-04T14:43:10.710Z
 > 超高频：面过的公司每家都问到了
 
 # guide
-
+- debounce和throttle都基于`setTimeout`实现
 # 防抖 debounce
-
 - 不管事件触发频率多高，一定在事件最后一次触发n秒后才执行
 - 使用场景
   - window 的 resize、scroll
@@ -159,6 +158,8 @@ function throttle(fn, wait, immediate) {
 }
 ```
 
+# react useDebounce/useThrottle
+- [一起围观由React Hooks防抖引发的面试翻车现场](https://www.cxyzjd.com/article/qiwoo_weekly/105721412)
 # curry 函数柯里化
 - 要判断当前传入函数的参数个数 (args.length) 是否大于等于原函数所需参数个数 (fn.length) ，
   - 如果是，则执行当前函数；

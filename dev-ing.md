@@ -13,7 +13,6 @@ modified: 2022-05-24T17:53:08.400Z
 金瑶 邀请您加入【金瑶的个人会议室】
 点击链接直接加入腾讯会议：
 https://meeting.tencent.com/p/9606972663
-
 #腾讯会议：960-697-2663
 
 # dev-xp
@@ -37,10 +36,8 @@ https://meeting.tencent.com/p/9606972663
     - inline editing
     - orm integration
   - sortable-filterable-groupable-table
-
 - 产品日历组件
   - headless-date-picker
-
 - 编辑器参考
   - atlassian-editor
     - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -53,4 +50,140 @@ https://meeting.tencent.com/p/9606972663
 console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
-# dev-ing
+# dev-review
+- 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
+- search notion like block editor
+# dev-07
+
+## 0724
+
+- [Does adding too many event listeners affect performance?](https://stackoverflow.com/questions/28627606)
+  - dding additional event handlers to an element DOES decrease performance. 
+  - Keep in mind that those tests are done with an empty function. When adding a real function that performs some additional tasks, the performance will slow down even further.
+
+- [git error: failed to push some refs to remote](https://stackoverflow.com/questions/24114676)
+  - 修改git仓库地址后，其他分支无法push
+  - 简单的解决办法是直接重命名无法push的分支
+  - git branch -m old-name new-name
+
+## 0723
+
+- 产品设计
+  - 需求列表
+  - 细分客户，定位准确
+
+## 0722
+
+- display: list-item 默认在内容前加上列表黑点
+- display: inline 行内元素设置width/height默认无效，行内元素宽高默认由内容决定
+  - flex item弹性项目默认都是 display: block，所以弹性容器内的span弹性项目设置width/height有效
+- [`<span>` element refuses to go inline in flexbox](https://stackoverflow.com/questions/20363441)
+  - by the flexbox spec -- children of a flex container are forced to have a block-flavored display type.
+  - If you don't want this behavior, just wrap your `<span>` in a `<div>`, and then the `<div>` will play the role of the flex item so that the `<span>` can keep its display type.
+
+- [css flex-item default height issue](https://stackoverflow.com/questions/47106934)
+  - All items in a flex row will take the largest height of them by default.
+  - After calling container as display:flex, may i consider all its contained items will behave like inline-block elements?
+
+### [python 字符串转列表出现\ufeff的解决方法](https://www.cnblogs.com/mjiang2017/p/8431977.html)
+
+- 在Windows下用文本编辑器创建的文本文件，如果选择以UTF-8等Unicode格式保存，会在文件头（第一个字符）加入一个BOM标识。
+  - BOM = Byte Order Mark
+  - BOM是Unicode规范中推荐的标记字节顺序的方法。比如说对于UTF-16，如果接收者收到的BOM是FEFF，表明这个字节流是Big-Endian的；如果收到FFFE，就表明这个字节流是Little-Endian的。
+  - UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明“我是UTF-8编码”。BOM的UTF-8编码是EF BB BF（用UltraEdit打开文本、切换到16进制可以看到）。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
+- [Python 读取文件首行多了"\ufeff"字符串](https://blog.csdn.net/chenmozhe22/article/details/89472790)
+
+- [json字符串头部出现非法字符“\ufeff”的问题处理](https://segmentfault.com/a/1190000010292346)
+  - 今天在处理将数组转为json 字符串后，然后获取到解析时，出现解析的json字符串为空的现象，首先看了下，我的json转换脚本之前没有任何输出，但还是出现json转化乱码，后来查了下，原来是脚本编码格式的问题。
+  - 其实解决方法很简单，就是涉及json转换的脚本文件的UTF-8格式编码 改成 UTF-8无BOM格式编码即可。
+
+### [什么零宽度字符，以及零宽度字符在JavaScript中的应用](https://juejin.cn/post/6844904164057677831)
+
+- 一种不可打印的Unicode字符, 在浏览器等环境不可见, 但是真是存在, 获取字符串长度时也会占位置, 表示某一种控制功能的字符.
+- 常见的零宽字符有哪些
+- 零宽空格（zero-width space, ZWSP）用于可能需要换行处。
+  - Unicode: U+200B  HTML: &#8203; 
+- 零宽不连字 (zero-width non-joiner，ZWNJ)放在电子文本的两个字符之间，抑制本来会发生的连字，而是以这两个字符原本的字形来绘制。
+  - Unicode: U+200C  HTML: &#8204; 
+- 零宽连字（zero-width joiner，ZWJ）是一个控制字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。
+  - Unicode: U+200D  HTML: &#8205; 
+- 左至右符号（Left-to-right mark，LRM）是一种控制字符，用于计算机的双向文稿排版中。
+  - Unicode: U+200E  HTML: &lrm; &#x200E; 或&#8206; 
+- 右至左符号（Right-to-left mark，RLM）是一种控制字符，用于计算机的双向文稿排版中。
+  - Unicode: U+200F  HTML: &rlm; &#x200F; 或&#8207; 
+- 字节顺序标记（byte-order mark，BOM）常被用来当做标示文件是以UTF-8、UTF-16或UTF-32编码的标记。
+  - Unicode: U+FEFF
+
+- 零宽度字符在JavaScript的应用
+- 数据防爬
+  - 将零宽度字符插入文本中, 干扰关键字匹配。
+  - 爬虫得到的带有零宽度字符的数据会影响他们的分析，但不会影响用户的阅读数据。
+- 信息传递
+  - 将自定义组合的零宽度字符插入文本中，用户复制后会携带不可见信息，达到传递作用。
+- 使用零宽度字符加密解密
+  - 信息加密解密的思路是, 把字符串转成二进制0和1, 并用空格把字符隔开, 然后用三种零宽表示0、1、空格, 然后用第四种零宽字符拼起来; 解密反向操作即可.
+- excel表格 中经常出现零宽字符 \u202c \u202d, 上传后解析或复制到 input 就会有问题, 
+  - 在 excel表格 中获取到的数据一般需要先过滤.
+
+## 0721
+
+### [How to use throttle or debounce with React Hook?](https://stackoverflow.com/questions/54666401)
+
+- After some time passed I'm sure it's much easier to handle things by your own with setTimeout/clearTimeout(and moving that into separate custom hook) than working with functional helpers.
+
+```JS
+const App = () => {
+  const [value, setValue] = useState(0)
+  const throttled = useRef(throttle((newValue) => console.log(newValue), 1000))
+
+  useEffect(() => throttled.current(value), [value])
+
+  return (
+    <button onClick={() => setValue(value + 1)}>{value}</button>
+  )
+}
+
+// It may work too
+const throttled = useCallback(throttle(newValue => console.log(newValue), 1000), []);
+```
+
+### [How to autosave small changes to big settings file without lag?](https://stackoverflow.com/questions/41232606)
+
+- Provided that you want to keep the model with a multi-MB settings file, the most reasonable solution would be to use **atomic writes** to avoid the problem of the app being quit in the middle of a save.
+- Assuming your file is called `settings.json`, atomic writes would work something like this:
+  - App decides to update settings, starts writing to a temporary file (to avoid overwriting the existing file halfway), say `settings.json.tmp-1482198169` (1482198169 being current unix timestamp).
+  - Once writing to `settings.json.tmp-1482198169` is complete, copy the current `settings.json` to `settings.json.bak`.
+  - Rename `settings.json.tmp-1482198169` to `settings.json`, overwriting the old one.
+- The basic idea is to construct a process where you always have a valid copy of `settings.json`, so it's only replaced with a complete copy.
+- npm has a number of implementations of this, like this one. I'd recommend you try one of those instead of writing your own, since any bugs in the implementation of the atomic write dance could cause you data loss, and it's tricky to get everything right when dealing with asynchronous code.
+  - https://github.com/npm/write-file-atomic
+  - Write files in an atomic fashion w/configurable ownership
+  - This is an extension for node's fs.writeFile that makes its operation atomic and allows you set ownership (uid/gid of the file).
+
+### [Is any solution to do localstorage setItem in asynchronous way](https://stackoverflow.com/questions/42921220)
+
+```JS
+const asyncLocalStorage = {
+  setItem: function(key, value) {
+    return Promise.resolve().then(function() {
+      localStorage.setItem(key, value);
+    });
+  },
+  getItem: function(key) {
+    return Promise.resolve().then(function() {
+      return localStorage.getItem(key);
+    });
+  }
+};
+
+const asyncLocalStorage2 = {
+  setItem: async function(key, value) {
+    await null;
+    return localStorage.setItem(key, value);
+  },
+  getItem: async function(key) {
+    await null;
+    return localStorage.getItem(key);
+  }
+};
+```

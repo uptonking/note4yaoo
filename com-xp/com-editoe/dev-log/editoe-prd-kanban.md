@@ -1,11 +1,11 @@
 ---
-title: editoe-features-kanban
+title: editoe-prd-kanban
 tags: [editoe, features, kanban, pm]
 created: 2021-11-29T08:24:19.539Z
-modified: 2021-11-29T08:25:19.337Z
+modified: 2022-07-21T04:10:52.505Z
 ---
 
-# editoe-features-kanban
+# editoe-prd-kanban
 
 # guide
 - features

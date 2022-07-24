@@ -1,11 +1,11 @@
 ---
-title: editoe-features-pivot-table
+title: editoe-prd-pivot-table
 tags: [editoe, features, pivot-table]
 created: 2021-12-07T05:10:28.280Z
-modified: 2021-12-07T05:12:27.586Z
+modified: 2022-07-21T04:11:08.550Z
 ---
 
-# editoe-features-pivot-table
+# editoe-prd-pivot-table
 
 # guide
 

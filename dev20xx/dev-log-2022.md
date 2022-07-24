@@ -9,7 +9,7 @@ modified: 2022-05-24T17:57:03.592Z
 
 # dev-xp
 
-# dev-07-end-job-edit202110
+# dev-07-job-leave-edit20211025-20220720
 
 ## more-tasks
 
@@ -1331,13 +1331,6 @@ document.body.removeChild(scrollDiv);
   - 双链热键 [[
   - 实现可以参考 menu/hover-toolbar
 
-- [python 字符串转列表出现\ufeff的解决方法](https://www.cnblogs.com/mjiang2017/p/8431977.html)
-  - 在Windows下用文本编辑器创建的文本文件，如果选择以UTF-8等Unicode格式保存，会在文件头（第一个字符）加入一个BOM标识。
-  - BOM = Byte Order Mark
-  - BOM是Unicode规范中推荐的标记字节顺序的方法。比如说对于UTF-16，如果接收者收到的BOM是FEFF，表明这个字节流是Big-Endian的；如果收到FFFE，就表明这个字节流是Little-Endian的。
-  - UTF-8不需要BOM来表明字节顺序，但可以用BOM来表明“我是UTF-8编码”。BOM的UTF-8编码是EF BB BF（用UltraEdit打开文本、切换到16进制可以看到）。所以如果接收者收到以EF BB BF开头的字节流，就知道这是UTF-8编码了。
-- [Python 读取文件首行多了"\ufeff"字符串](https://blog.csdn.net/chenmozhe22/article/details/89472790)
-
 - 👉🏻️ authing海外迁移
   - 我对接authing的技术支持
   - https://core.authing.cn/api/v2/applications/61961a7b8b90af37e7c422e0/public-config
@@ -1918,8 +1911,12 @@ new Promise((resolve, reject) => {
 });
 
 // 💡️ 通过click方式触发的事件是同步执行的，只有浏览器自己触发的事件才是放在一个 macrotask 里执行的。
-document.getElementById('div').addEventListener('click', () => { console.log('click'); })
-document.getElementById('div').click()
+document.body.addEventListener('click', () => { console.log('click-synchronously'); })
+document.body.click()
+
+// 本轮任务
+// click-synchronously
+// 本轮微任务
 ```
 
 ## 0326
@@ -2934,13 +2931,13 @@ function createHook(initialValue: string) {
 ```
 
 - [Conditionally render react components in cleaner way](https://dev.to/ms_yogii/conditionally-render-react-components-in-cleaner-way-1ik5)
-  - 提出了enum 和 switch-case 2种方法并争论
+  - 提出了enum 和 switch-case 2种方法并讨论，可以是Component或ReactElement(自带实参props)
   - enum-pros
     - 简单直观，直接从预定义对象中取组件
     - {roleSettings(username)[userRole]} 所有子组件都有username参数
     - {createElement(RoleSettings[userRole], { username })}
   - enum-cons
-    - 对每个组件不方便传入定制参数
+    - ~~对每个组件不方便传入定制参数~~
     - A downside of enum solution is all the component will be compiled even it doesn't need to rendered，但可解决
   - switch-case-pros
     - 选择组件自身也是一个组件，all in react

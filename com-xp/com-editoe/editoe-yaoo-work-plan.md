@@ -1,11 +1,11 @@
 ---
-title: editoe-yaoo-plan
+title: editoe-yaoo-work-plan
 tags: [editoe, yaoo]
 created: 2021-10-23T16:25:23.823Z
-modified: 2021-10-23T16:32:33.784Z
+modified: 2022-07-21T04:17:57.468Z
 ---
 
-# editoe-yaoo-plan
+# editoe-yaoo-work-plan
 
 # guide
 
@@ -16,7 +16,7 @@ modified: 2021-10-23T16:32:33.784Z
     - 人际关系
 
 - 我的规划
-  - 更专业的学术编辑器，对标word、latex-overleaf
+  - 更专业的学术编辑器，对标 word、latex-overleaf
   - 团队协作、资源共享
   - 更好的产品服务更多的用户：github for paper/knowledge
 
@@ -25,12 +25,12 @@ modified: 2021-10-23T16:32:33.784Z
   - 表格
   - ing: 图表可视化、协作
 
-- 我为什么来选择投光
+- 我为什么来选择 投光
   - 技术方向是喜欢的
   - 产品方向是一直在做，且很感兴趣的
   - 为什么不多花点时间精力来做到更好呢
-  - 准备长期投入时间、精力的
-# 投光编辑器体验-to-do
+  - 准备长期投入时间、精力
+# 投光编辑器体验
 - 工具栏
   - 悬浮在标题样式的菜单项时，选中内容不能动态切换样式进行预览
 # 投光编辑器功能体验

@@ -160,6 +160,13 @@ modified: 2021-07-20T02:15:25.917Z
   - Handler - A handler function takes the `editorView` and composes the modifier functions and `dispatches` them.
 - https://github.com/atlassian/prosemirror-utils
   - Utils library for ProseMirror
+
+- https://github.com/APMG/amat-react
+  - Amat React renders Prose Mirror JSON Documents as HTML
+
+- https://github.com/nextcloud/text
+  - Collaborative document editing using Markdown
+  - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 # prosemirror-examples-repos
 - https://github.com/YacheLee/Aditor
   - A React component made by ProseMirror

@@ -30,7 +30,7 @@ modified: 2021-10-10T09:17:08.066Z
   - 宽度默认为父元素 100% 宽度，设置 margin 和 padding 都生效
   - 代表：div、p、h1~h6、ul、ol、li、table、blockquote
 - inline
-  - 不会导致换行，width/height无效，实际宽高取决于内容
+  - 不会导致换行，**设置width/height无效**，实际宽高取决于内容
   - margin在垂直方向上不生效
   - padding在左右方向会生效，在垂直方向也生效（设置背景色会显示），但是实际上没有撑开父元素，不会影响周围元素布局
   - 代表：span、a、strong、b、i、textarea
@@ -457,7 +457,7 @@ p::first-line {}
   - opacity < 1 
   - transform/filter/perspective/clip-path/mask 属性值不为 `none` 时
   - Element with a `will-change` value specifying any property that would create a stacking context on non-initial value
-  - Element with a `contain` value of `layout`, or `paint`, or a composite value that includes either of them (i.e. `contain: strict`, `contain: content`)
+  - Element with a `contain` value of `layout`, or `paint`, or a composite value that includes either of them (i.e. `contain: strict`,  `contain: content`)
 
 - z-index默认值为 `auto`，不会创建一个新的本地堆叠上下文。当前堆叠上下文中生成的盒子的堆叠层级和父级盒子相同
 - z-index order 从远到近靠近用户/屏幕的顺序

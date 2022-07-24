@@ -1,11 +1,11 @@
 ---
-title: editoe-features-markdown
+title: editoe-prd-markdown
 tags: [editoe, markdown]
 created: 2021-10-23T18:08:35.370Z
-modified: 2021-10-23T18:09:08.865Z
+modified: 2022-07-21T04:10:58.593Z
 ---
 
-# editoe-features-markdown
+# editoe-prd-markdown
 
 # guide
 
