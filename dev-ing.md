@@ -57,7 +57,52 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 
 ## 0725
 
+- innerText vs textContent
+  - `innerText` is aware of things like `<br>` elements, and ignores hidden elements
+  - `innerText` is aware of styling and won't return the text of "hidden" elements.
+  - `textContent` gets the content of all elements, including `<script>` and `<style>` elements. In contrast,  `innerText` only shows "human-readable" elements.
+
+- [Is it possible to calculate the Viewport Width (vw) without scrollbar?](https://stackoverflow.com/questions/33606565)
+  - the viewport relative length units do not take scrollbars into account (and in fact, assume that they don't exist).
+  - According to the [specs](https://drafts.csswg.org/css-values-3/#viewport-relative-lengths),  `vw` does take scrollbar width away UNLESS the overflow is on auto, then it works like "hidden" for the vw value. So if the page must overflow, set it to "scroll". With overflow-x & overflow-y you choose which scrollbar to display
+
+- 100vw会在超长内容时出现水平滚动条的问题
+  - 具体宽度需要实测，很多资料的信息是过时的
+    - https://codepen.io/uptonking/pen/zYWdRLO
+  - chrome-linux 
+    - window.innerWidth  625
+    - document.documentElement.clientWidth  610
+    - 100vw.div.clientWidth  625
+    - 给容器设置100vw时，若出现竖直滚动条，因为vw默认没考虑滚动条，此时总宽度是100vw+竖直滚动条宽度，就会导致出现水平滚动条
+
+- [解决 100vw 下滚动条引发的问题](https://juejin.cn/post/6844904062702321672)
+  - 通过js工具函数计算滚动条宽度
+  - 解决100vw出现水平滚动条的问题
+    - .container  { width: calc(100vw - var(--scrollbar)); }
+  - 解决出现滚动条时右边距和上边距不相同的问题
+    - right: calc(40px + var(--scrollbar));
+
+- [深入浅出 Viewport 设计原理](https://www.cnblogs.com/onepixel/p/12144364.html)
+- css 中写的 px 指的就是逻辑像素，而不是物理像素，一个逻辑像素可以代表一个或多个物理像素
+- 简单来说：viewport 是屏幕背后的一张画布。
+- 浏览器会先把页面内容绘制到画布上，然后再通过屏幕窗口呈现出来。
+- 如果没有在 html 中加 viewport 的设置，画布其实也是存在的，浏览器会给画布设置一个默认宽度 ，不同平台的默认值
+- width=device-width 就是把画布的宽度设置为可视窗口的宽度，让画布上的内容完全呈现出来。
+- 在没有给页面设置 viewport 的情况下，当画布宽度大于可视窗口的时候，浏览器会自动对画布进行缩放，以适配可视窗口大小。这样页面在不滚动的情况下也能呈现全部内容。
+
 ### [Viewport concepts](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
+
+- 小结
+  - vw单位未考虑滚动条宽度，容易造成出现滚动条
+  - 100vw  === innerWidth
+  - layout viewport 是innerWidth/Height内区域
+  - visual viewport是layout viewport去掉不可见部分，一般是 键盘
+
+- [Visual Viewport API](https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API)
+  - The visual viewport is the visual portion of a screen excluding on-screen keyboards, areas outside of a pinch-zoom area, or any other on-screen artifact that doesn't scale with the dimensions of a page.
+- What happens when a web page element needs to be visible on screen regardless of the visible portion of a web page? 
+  - For example, what if you need a set of image controls to remain on screen regardless of the pinch zoom level of the device? Current browsers vary in how they handle this. 
+  - The visual viewport lets web developers solve this by positioning elements relative to what's shown on screen.
 
 - A viewport represents the area in computer graphics being currently viewed. 
   - In web browser terms, it is generally the same as the browser window, excluding the UI, menu bar, etc. 
