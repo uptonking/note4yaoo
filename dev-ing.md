@@ -55,6 +55,41 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - search notion like block editor
 # dev-07
 
+## 0725
+
+### [Viewport concepts](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
+
+- A viewport represents the area in computer graphics being currently viewed. 
+  - In web browser terms, it is generally the same as the browser window, excluding the UI, menu bar, etc. 
+  - That is the part of the document you are viewing.
+- Your viewport is everything that is currently visible
+  - The size of the viewport depends on the size of the screen, whether the browser is in fullscreen mode or not, and whether or not the user zoomed in. 
+  - On larger monitors where applications aren't necessarily full screen, the viewport is the size of the browser window.
+  - On most mobile devices and when the browser is in fullscreen mode, the viewport is the entire screen.
+  - In fullscreen mode, the viewport is the device screen, the window is the browser window, which can be as big as the viewport or smaller, and the document is the website, which can be much taller or wider than the viewport.
+  - To recap, the viewport is basically the part of the document that is currently visible.
+- The width of the viewport is not always the width of the window.
+  - The document element's `Element.clientWidth` is the inner width of a document in CSS pixels, including padding (but not borders, margins, or vertical scrollbars, if present). This is the viewport width. 不包含 border/margin/竖直滚动条宽度
+  - The `Window.innerWidth` is the width, in CSS pixels, of the browser window viewport including, if rendered, the vertical scrollbar. 包含竖直滚动条宽度
+  - The `Window.outerWidth` is the width of the outside of the browser window including all the window chrome.
+- The web contains two viewports, the layout viewport and the visual viewport. 
+  - The **area within the `innerHeight` and `innerWidth` is generally considered the layout viewport**. The browser chrome is not considered part of the viewport.
+  - The visual viewport is the part of the web page that is currently visible in the browser and can change. When the user pinch-zooms(双指缩放) the page, pops open a dynamic keyboard, or when a previously hidden address bar becomes visible, the visual viewport shrinks but the layout viewport is unchanged.
+- The visual viewport is the currently visible portion of the layout viewport. 
+  - The **visual viewport** is the visual portion of a screen **not including** on-screen keyboards, areas outside of a pinch-zoom area, or other feature that doesn't scale with the dimensions of a page. 
+  - The visual viewport is the same size as the layout viewport or smaller.
+- Sticky headers or footers, as discussed above, stick to the top and bottom of the layout viewport, and therefore remain in view when we zoom in with the keyboard. 
+  - If you pinch-zoom, the layout viewport may not be fully visible. 
+  - If you magnify from the middle of the layout viewport, the content will expand in all four directions. 
+  - If you have a sticky header or footer, they will still be stuck to the top or bottom of the layout viewport, but they may not be visible at the top and bottom of the device's screen — which is the visual viewport. 
+  - The visual viewport is the currently visible portion of the layout viewport.
+  - If you scroll down, you are changing the contents of the visual viewport and bringing the bottom of the layout viewport into view, displaying the sticky footer, which will then stay stuck at the bottom.
+
+- 现代桌面浏览器有两种缩放操作。
+  - 你在菜单栏上的缩放是改变像素大小（同时缩放layout viewport和visual viewport），
+  - 用触摸板双指操作才是只缩放visual viewport。
+  - （古代浏览器如IE还有另一种缩放，缩放字体大小，类似于改变rem的值）
+
 ## 0724
 
 - [Does adding too many event listeners affect performance?](https://stackoverflow.com/questions/28627606)

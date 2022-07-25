@@ -11,6 +11,49 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What is your equivalent to "making a blueprint" before coding? Is it whiteboarding? Diagramming? Writing a spec? Or do you just jump straight into code?
+- https://twitter.com/DavidKPiano/status/1550884682014892033
+  - By blueprint, I mean the human-level specification for "what" you are building, not the ones and zeros you're sending the computer to actually build the thing.
+
+- I write out a technical design doc for exactly what I'm building, why, and possible ways of implementing it along with my blueprints for how to build it. It usually ends up being me who does the work, but having a detailed plan ensures each step is on time.
+  - In the past, I'd just start coding, but I'd end up rewriting multiple times. Spending a bit of time architecting up front helps save a lot of time wasted coding throw-away code. I was never good enough to do this in the past though. Requires understand how the code works.
+
+- depends what I'm making! for UI/UX, wireframes are usually enough once the design language is mostly in place
+- Assuming it's a complex problem, straight to code until a POC is ready.
+  - Most diagrams feel like an abstraction on top of the problem. I.e, they can hide complexity. Getting close to code immediately is crucial for verifying your assumptions and not getting caught out.
+  - Also, ideally the POC should be as quick and dirty as possible - as short a time as necessary to validate your assumptions before actually doing the real thing.
+  - Exactly - the thing I'm most scared of is hidden complexity, and I love tools that can help me uncover this. If @statelyai can solve this problem in the diagramming phase it'll be huge.
+- Oftentimes: just writing prototype code. It helps me find edge cases that I couldn't think of before. After that, if I have the time, let it sit around for a while - if I'm "primed" like that, I'll just have ideas over the next days.
+
+- Hacking around - usually starting with the interface/api I want to achieve, then types that all `throw`, then the code. Sometimes I iterate a few times at every step. I am unable to do lengthy RFCs & ideas without making a POC along with them.
+  - Depends what it is tho, some stuff I start with db modelling instead. Generally it's just hacking around until something feels right 
+
+- A todo list of everything I know about the task, then start working and fill in the gaps as I go
+
+- At work, for large projects we write a design doc that has what we want to do, why we want to do it, and a high level sketch of how we ought to do it and risks involved.
+  - Once that has gone through review and feedback, we write a plan of action that details the how.
+
+- for me
+  - put all the UI and requirements up on a board 
+  - annotate those with data interfaces 
+  - sketch out storage requirements 
+  - sketch out transport layers
+  - attach sticky notes to edge cases/follow ups
+  - make a prototype of disconnected bits
+  - make an end to end prototype
+  - slice the work up into phases
+  - make detailed plan for first phase 
+  - make rough plan for later phases 
+  - collect open questions 
+  - link boards to tickets and vice versa
+  - along the way, put links and screenshots of docs for relevant 3rd party services and libraries on the board
+
 - ## me 4 years ago: “write a few lines, check if the code works”
 - https://twitter.com/jarredsumner/status/1532497943315435520
   - me today: “write 10k loc in 3 sessions, fix the build failures all at once”
@@ -31,9 +74,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 提高编程水平的一个高效的方式: 
 - https://twitter.com/ivyliner/status/1519472859239923712
-  01. 自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
-  02. 开始学习相关的知识, 看别人的代码
-  03. 这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
+  01.        自己先写一个中等复杂度的项目(在写的时候自己会知道哪些地方写得不够好, 当然也会有不知道的地方) 
+  02.        开始学习相关的知识, 看别人的代码
+  03.        这时候你会意识到哦原来还能这样用,  嗯用这个 API 看起来更优雅, 我去还能这样写. ..
   整个过程自我会感觉到不断精进.
 
 - 我个人最难的是代码边界控制。如何做到适当的业务上可扩展性和尽量缩小业务变更所带来的代码变更问题。
@@ -132,11 +175,11 @@ modified: 2021-01-21T17:52:13.333Z
   - Historically the peak performance was more important for server-side applications.
   - Cloud is changing it, at least partially, and people go a long way to improve startup times. 
 - Some examples:
-  01. Design brand new frameworks with great startup times as an explicit design goal.
-  02. Give-up on some language/VM features we used to take for granted.
-  03. Maintain a bunch of descriptors for the sake of a specific compiler.
-  04. Extract JIT compiler into a separate process and run it as a network server.
-  05. Switch to an entirely different language/ecosystem.
+  01.       Design brand new frameworks with great startup times as an explicit design goal.
+  02.       Give-up on some language/VM features we used to take for granted.
+  03.       Maintain a bunch of descriptors for the sake of a specific compiler.
+  04.       Extract JIT compiler into a separate process and run it as a network server.
+  05.       Switch to an entirely different language/ecosystem.
 - Given all of the above, I wonder how come I don't hear about process snapshotting/checkpointing more.
 - Something like Criu sounds like a good fit for "stateless business logic" - That's precisely the place where the fast startup times are most relevant. 
   - The idea is simple: Run a regular JVM, with JIT and everything. 
@@ -178,10 +221,10 @@ modified: 2021-01-21T17:52:13.333Z
 - https://twitter.com/d__raptis/status/1419611806557945859
   - I'd never find the problem otherwise.
 - It's quite simple (for React at least) : 
-  01. Use this Chrome plugin react-developer-tools 
-  02. Click record
-  03. Reproduce a laggy action
-  04. Check which components/actions are time-consuming
+  01.      Use this Chrome plugin react-developer-tools 
+  02.      Click record
+  03.      Reproduce a laggy action
+  04.      Check which components/actions are time-consuming
 - Now, you've located the issue and you need to check the code to find the real issue
 
 - ## Syncing sign-in state
@@ -210,8 +253,8 @@ modified: 2021-01-21T17:52:13.333Z
 - pnpm is supposed to be very good, but since we focus on React Native, it's not an option for us.
   - Yarn 2 is almost an entirely different CLI altogether. I wish they'd just name it Berry (which is its code name) v1.
 - I feel your article is misleading in two important aspects:
-  01. Yarn 2+ supports React Native well with node_modules install scheme
-  02. Yarn 2+ perfs are better or comparable to perfs of Yarn 1, both with default PnP installs and with node_modules installs
+  01.     Yarn 2+ supports React Native well with node_modules install scheme
+  02.     Yarn 2+ perfs are better or comparable to perfs of Yarn 1, both with default PnP installs and with node_modules installs
 - I used to use yarn 1. After the acquisition of npm by GitHub I switched back to npm
 - I use whatever the project already uses but use npm for anything I start. No real reason though
 
@@ -692,12 +735,12 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## A list of basic Linux commands every developer should know:
 - https://twitter.com/iamdevloper/status/1368866110951596032
-01. Open your browser
-02. Head to your favourite search engine
-03. Type "how to copy a file to another directory"
-04. Click the first Stack Overflow link
-05. Copy the top voted answer
-06. Blindly paste it into your terminal
+01.    Open your browser
+02.    Head to your favourite search engine
+03.    Type "how to copy a file to another directory"
+04.    Click the first Stack Overflow link
+05.    Copy the top voted answer
+06.    Blindly paste it into your terminal
 
 - ## When should I (not) use mocks in testing?
 - https://dev.to/kettanaito/when-should-i-not-use-mocks-in-testing-544e
@@ -801,9 +844,9 @@ modified: 2021-01-21T17:52:13.333Z
 - ## Sometimes it’s overwhelming to change some complex feature in the existing code.
 - https://twitter.com/BenLesh/status/1362762796501401601
 - I used to do this. But it's often dangerous. I try to take a more measured approach now.
-  01. Make a couple of PoCs off to the side to see what I learn.
-  02. Carefully improve the code and add tests in the parts of the code I'll be touching, and see what I learn.
-  03. Add the feature.
+  01.  Make a couple of PoCs off to the side to see what I learn.
+  02.   Carefully improve the code and add tests in the parts of the code I'll be touching, and see what I learn.
+  03.   Add the feature.
 - I find that after part 2 above, often the approach I take is different and better than what I did in some of my PoC work.
 - The main difference between the new code and deleted code: The deleted code has been tested and hardened, if only by users. 
   - It already has behaviors that are expected. 
@@ -923,10 +966,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## A little technique we use all the time to audit the layout shifts and avoid performance issues.
 - https://twitter.com/smashingmag/status/1352185650091581441
-01. Add * { outline: 3px solid red } to your CSS.
-02. Record the loading of your site/app.
-03. Review it by exploring what happens in slow motion.
-04. Adjust and minimize shifts.
+01.  Add * { outline: 3px solid red } to your CSS.
+02.  Record the loading of your site/app.
+03.  Review it by exploring what happens in slow motion.
+04.  Adjust and minimize shifts.
 
 - Great tip, thanks! This one's less visual and more programmatic from the 'Performance' tab in Chrome.
   - You can hover over the 'Moved from' keys and this will visualise the movement in the browser window.
