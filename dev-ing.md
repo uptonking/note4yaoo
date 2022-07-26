@@ -51,9 +51,17 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 ```
 
 # dev-review
-- 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
-- search notion like block editor
+- dev-to
+  - 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
+  - search notion like block editor for recursive rendering
 # dev-07
+
+## 0726
+
+- shop-iot-外接显示器
+  - 对显示器不太了解，请教了一下大佬，跟我说直接买他的那款就行。于是我买了两台，一台在家一台在公司，直到昨天我才知道这个显示器除了可以 65W 反向充电外，还可以直接插 USB 连键盘鼠标，不用再在电脑上接转接线连了...
+  - VX2780-4K-HDU 经济又便宜
+  - [优派 VX2780-4K-HDU 27"UHD三边微边框IPS技术HDR400支持PD65W充电滤蓝光不闪屏HDMI/DP/TypeC显示器](https://www.viewsonic.com.cn/products/lcd/VX2780-4K-HDU.php)
 
 ## 0725
 

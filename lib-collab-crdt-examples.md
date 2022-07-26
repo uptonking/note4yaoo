@@ -10,7 +10,12 @@ modified: 2022-04-05T10:08:25.947Z
 # guide
 
 # popular
-
+- https://github.com/dmonad/crdt-benchmarks
+  - A collection of reproducible CRDT benchmarks.
+  - B1: No conflicts
+  - B2: Two users producing conflicts
+  - B3: Many conflicts
+  - B4: Real-world editing dataset
 # yjs-crdt
 - https://github.com/yousefed/SyncedStore
   - https://syncedstore.org/docs/

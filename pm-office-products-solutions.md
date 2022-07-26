@@ -189,7 +189,7 @@ modified: 2021-07-11T08:31:00.660Z
 
 - TextBundle是一种文件格式，将图片和markdown一起导出，不再是难题
 # new-office-products
-- [黑客说](https://hackertalk.net/)
+- [黑客说，类twitter/知乎的社交与内容平台](https://hackertalk.net/)
 # office-online-products
 - 选型参考
   - 既满足协作编辑需求，也满足Office功能的兼容性需求，支持 office open xml

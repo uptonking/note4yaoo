@@ -31,7 +31,10 @@ modified: 2021-08-06T07:36:05.864Z
 
 - ## 
 
-- ## 
+- ## dialing in minimap UX with @CantBeFaraz
+- https://twitter.com/steveruizok/status/1551712864473419777
+- I saw a figma minimap plugin where it allowed you to close window, which was nice! separately, is the minimap scaled/zoomed to fit every single shape on the canvas? Or are you able to kind of zoom and pan within the minimap?
+- Any plans to put multi-cursors on the minimap? Seems like a nice UI to trigger Follow User. 
 
 - ## getBoundingClientRects is always axis-aligned
 - https://twitter.com/steveruizok/status/1529926723504160771

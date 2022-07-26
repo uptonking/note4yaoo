@@ -9,7 +9,7 @@ modified: 2022-05-24T17:57:49.545Z
 
 # dev-xp
 
-# working
+# dev-summary
 - company-unskilled
   - 确认下一步工作计划
 - **markdown-editor for vscode**
@@ -19,6 +19,41 @@ modified: 2022-05-24T17:57:49.545Z
   - 解决方法
   - 其他方案
   - 提出问题之后，有什么更好的方案、行业内更专业的方案
+
+- dev-summary
+  - 使用最多的组件
+    - icon
+    - button
+    - input/TextField
+    - list
+      - 支持不同行类型的list
+    - modal/popover/tooltip/dropdown
+    - dnd-kit
+    - collapse
+  - 日历热力图 react-activity-calendar
+    - 中文本地化
+    - 始终显示70+N天
+    - to-do
+      - tooltip传入组件
+  - 文件列表 react-table
+    - 悬浮工具条
+    - to-do
+      - sticky header
+  - 看板工具 personal-kanban
+    - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
+  - 多维表格
+  - 多种类型数据的转换和渲染
+    - 多种类型的bibtex，使用对应的转换器，渲染成不同样式的
+    - 多种类型的单元格，渲染成不同的组件
+  - 文本以打字动画的形式动态展示 typed.js
+    - 书写动画、回退动画
+    - to-do
+      - 实现多行文本依次展示
+  - css模式
+    - hover-show-otherwise-hidden
+  - react开发模式
+    - enum vs switch-case
+    - 折叠列表时，如何添加事件监听器的能减少rerender
 
 - dev-xp
   - 文档数据库的add/update/delete监听只是简单的发布订阅模式，开发了4个月居然没看出来
@@ -36,6 +71,10 @@ modified: 2022-05-24T17:57:49.545Z
     - 有些bug只在windows中才会出现，同事也难以分析排查
   - 连续fix问题的时候，一定要fix完一个做一个集成测试，确保未对现有功能产生影响
     - 否则fix完现有问题，却发现新的问题，但问题却很难排查了
+  - 将组件中操作blockDB的逻辑分离到service层
+    - 降低前端业务开发对后端的依赖
+      - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
+    - 在service层提供observe这类自动更新的方法，不需要在前端各个组件中连接websocket
 
 - vanillajs框架集成react组件的问题
   - 通过createPortal，可以拿到主应用中的state、theme、event
@@ -61,45 +100,6 @@ modified: 2022-05-24T17:57:49.545Z
     - 不用数据而用boolean变量来操作ckeditor的model修改图片blob url是错误的实现思路
     - 还包括编辑器editor对象的创建销毁由ckeditor控制，而不由应用层控制
     - 睡一觉，第2天就会发现问题了，在前一天的错误上，多一次focus-blur触发保存，内容就正常了
-
-- dev-summary
-  - 使用最多的组件
-    - icon
-    - button
-    - input/TextField
-    - list
-    - modal/popover/tooltip/dropdown
-    - dnd-kit
-    - collapse
-  - 将组件中操作blockDB的逻辑分离到service层
-    - 降低前端业务开发对后端的依赖
-      - 分离dbBlock和editorBlock，两者没有直接关系，但可以转换得到
-    - 在service层提供observe这类自动更新的方法，不需要websocket
-  - 日历热力图 react-activity-calendar
-    - 中文本地化
-    - 始终显示70+N天
-    - to-do
-      - tooltip传入组件
-  - 文件列表 react-table
-    - 悬浮工具条
-    - to-do
-      - sticky header
-  - 看板工具 personal-kanban
-    - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
-  - 多维表格
-  - 支持不同行类型的list
-  - 多种类型数据的转换和渲染
-    - 多种类型的bibtex，使用对应的转换器，渲染成不同样式的
-    - 多种类型的单元格，渲染成不同的组件
-  - 文本以打字动画的形式动态展示 typed.js
-    - 书写动画、回退动画
-    - to-do
-      - 实现多行文本依次展示
-  - css模式
-    - hover-show-otherwise-hidden
-  - react开发模式
-    - enum vs switch-case
-    - 折叠列表时，如何添加事件监听器的能减少rerender
 
 - almanac体验-feat-版本控制
   - 亮点：创建分支 + 合并修改

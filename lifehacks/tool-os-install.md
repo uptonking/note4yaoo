@@ -86,6 +86,11 @@ sudo snap refresh
   - [Ubuntu 18.04 LTS 上安装Windows 字体](https://zhuanlan.zhihu.com/p/40434062)
   - [Linux 安装 Windows 字体教程](https://www.bilibili.com/read/cv16481012/)
 
+- ubuntu定时关机
+  - gshutdown
+  - sudo shutdown -h now
+  - sudo shutdown -h +60 (just replace 60 with whatever number of minutes you want)
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到
