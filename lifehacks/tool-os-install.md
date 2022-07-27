@@ -103,6 +103,9 @@ sudo snap refresh
 - golang 版本管理 g
   - https://github.com/voidint/g
 
+- ubuntu默认的包或旧版包可以在第三方网站下载，但一般包的传递依赖较多，不推荐自己一个个下载
+  - https://ubuntu.pkgs.org/
+
 ## software
 
 - 常用软件都可以直接在ubuntu官方包repository找到

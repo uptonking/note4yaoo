@@ -8,9 +8,17 @@ modified: 2021-03-29T19:29:15.528Z
 # dev-ing-error-not-yet
 
 # pieces
-- react-accessible-menu的LotsOfItemsWithinContainer示例，最外层容器只能用height，而不能用maxHeight，否则内容高度会全部显示，而没有预期的overflow-hidden的效果
 
-- 编译latex生成的pdf文档中参考文献的链接为什么有cyan色的边框
+- ## Overriding existing handler for signal 10. Set JSC_SIGNAL_FOR_GC if you want WebKit to use a different signal
+- [GUI starts with empty black window with webkit2gtk 2.32.0](https://github.com/vertcoin-project/one-click-miner-vnext/issues/271)
+  - ubuntu上手动降级依赖特别麻烦，需要手动一个个下载传递依赖；并且当gnome依赖某一个传递依赖如gtk版本时，传递依赖不能乱下
+  - 降级ubuntu的源可能不能满足gnome依赖，要注意
+
+- ## react-accessible-menu的LotsOfItemsWithinContainer示例，最外层容器只能用height，而不能用maxHeight
+  - 否则内容高度会全部显示，而没有预期的overflow-hidden的效果
+
+- ## 编译latex生成的pdf文档中参考文献的链接为什么有cyan色的边框
+  - 因为网页上pdf是canvas显示，下面的文字在canvas上有个默认色，当选中时又有一个dom颜色
 - ## input设置`border: none; `后，仍然显示边框的问题
   - 排查失败
   - MuiPickersUtilsProvider   DatePicker
