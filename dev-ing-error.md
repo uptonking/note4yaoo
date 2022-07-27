@@ -11,6 +11,9 @@ modified: 2021-03-29T19:29:32.505Z
 
  
 
+- Definition for rule '@typescript-eslint/no-duplicate-enum-values' was not found
+  - 统一升级eslint 8即可，部分子包未升级会找不到规则
+
 - ERROR in Conflict: Multiple assets emit different content to the same filename index.html
   - 原因是 webpack-merge 不同config时，在多处定义了 html-webpack-plugin
   - 解决方法是注释掉顶层插件声明，只保留子包处的配置声明

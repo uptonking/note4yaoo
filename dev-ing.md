@@ -20,7 +20,7 @@ https://meeting.tencent.com/p/9606972663
   - dev-starter
     - react patterns
     - typescript patterns
-    - mvc dev pattern(for app)  ~~in data grid~~
+    - mvc dev pattern(for app/data-grid)
   - readonly-list-grid
     - plain
       - no sort/filter/group
@@ -55,6 +55,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
   - search notion like block editor for recursive rendering
 # dev-07
+
+## 0727
+
+- Cannot read properties of null (reading 'pickAlgorithm')
+  - ~~npm cache clear --force~~
+    - 多看一眼，异常上一行就是导致问题的依赖包名称
+  - 解决方法应该是将 .npmrc 里面的自定义npm镜像源注释掉，然后重新 npm i
 
 ## 0726
 

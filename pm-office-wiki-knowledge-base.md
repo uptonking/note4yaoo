@@ -7,8 +7,9 @@ modified: 2021-07-27T11:27:37.050Z
 
 # pm-office-wiki-knowledge-base
 
-# guide
+> tools for thought
 
+# guide
 - 知识库的设计一般分2部分
   - *笔记/随笔/速记 note/snippet/draft*
     - 对于临时书写的文章或难以分类的文章，不需要创建文件夹

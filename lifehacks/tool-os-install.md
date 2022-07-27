@@ -87,9 +87,21 @@ sudo snap refresh
   - [Linux 安装 Windows 字体教程](https://www.bilibili.com/read/cv16481012/)
 
 - ubuntu定时关机
-  - gshutdown
+  - sudo apt install -y gshutdown
   - sudo shutdown -h now
   - sudo shutdown -h +60 (just replace 60 with whatever number of minutes you want)
+
+- [System limit for number of file watchers reached](https://stackoverflow.com/questions/53930305)
+  - 先修改系统配置，再重载配置
+  - echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+  - sudo sysctl --system
+
+- nodejs 版本管理 nvm
+  - https://gitee.com/RubyKids/nvm-cn
+- jdk 版本管理 sdkman
+  - https://sdkman.io/install
+- golang 版本管理 g
+  - https://github.com/voidint/g
 
 ## software
 

@@ -14,6 +14,7 @@ modified: 2022-03-16T20:45:17.243Z
 
 - focalboard-cons
   - 每个page只能显示一个database
+  - 表格视图不能添加新字段，看板视图可以
 
 - features
   - notion-like database

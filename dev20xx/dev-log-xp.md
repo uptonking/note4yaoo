@@ -27,8 +27,9 @@ modified: 2022-05-24T17:57:49.545Z
     - input/TextField
     - list
       - 支持不同行类型的list
-    - modal/popover/tooltip/dropdown
+      - 支持键盘上下导航: react-accessible-menu
     - dnd-kit
+    - modal/popover/tooltip/dropdown
     - collapse
   - 日历热力图 react-activity-calendar
     - 中文本地化
@@ -43,8 +44,8 @@ modified: 2022-05-24T17:57:49.545Z
     - 参考github最新的看板设计和实现，github项目在twitter中预览的卡片
   - 多维表格
   - 多种类型数据的转换和渲染
-    - 多种类型的bibtex，使用对应的转换器，渲染成不同样式的
     - 多种类型的单元格，渲染成不同的组件
+    - 多种类型的bibtex，使用对应的转换器，渲染成不同样式的
   - 文本以打字动画的形式动态展示 typed.js
     - 书写动画、回退动画
     - to-do

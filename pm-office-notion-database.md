@@ -7,4 +7,8 @@ modified: 2022-03-17T17:50:05.384Z
 
 # pm-office-notion-database
 
+# guide
 
+# notion-database
+- [Working with databases](https://developers.notion.com/docs/working-with-databases)
+# notion-like-database

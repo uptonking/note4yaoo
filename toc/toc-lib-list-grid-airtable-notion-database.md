@@ -14,11 +14,13 @@ modified: 2022-03-14T19:55:47.081Z
     - no code 平台，但此类产品应该偏向automation
   - airtable 通用的前端表格组件，提供各种后端的集成
 # popular
-- react-datasheet-grid /71Star/MIT/202202/ts
+- react-datasheet-grid /133Star/MIT/202205/ts
   - https://github.com/Equify/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
   - 依赖react、react-window、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
+  - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
+  - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
   - features
     - Fast
       - can easily handle hundreds of thousands of rows thanks to its virtualized architecture.
@@ -34,15 +36,26 @@ modified: 2022-03-14T19:55:47.081Z
   - 未完成
 
 - https://github.com/rowyio/rowy
-  - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser, 
+  - http://rowy.io/
+  - Rowy is an open-source low-code platform for Firebase and Firestore. 
+    - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
+    - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
 # notion database like
+- focalboard /10.3kStar/MIT-like/202203/ts+go
+  - https://github.com/mattermost/focalboard
+  - https://www.focalboard.com/
+  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - Focalboard comes in two main editions:
+    - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
+    - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
+
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
   - Fast and accurate React renderer for Notion. TS batteries included.
   - Notion seems to publicly refers to collections as Notion databases, whereas their API and implementation consistently refers to them as collections and collection views.
-  - 提供了Notion中各种blocks的渲染器，但不是可切换视图的database
+  - 提供了Notion中各种blocks的渲染器，但不是可切换视图的database，组件有一定的参考价值
 
 - obsidian dataview
   - https://github.com/blacksmithgu/obsidian-dataview
@@ -54,14 +67,6 @@ modified: 2022-03-14T19:55:47.081Z
   - https://github.com/obsidianmd/obsidian-releases
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
-
-- focalboard /10.3kStar/MIT-like/202203/ts+go
-  - https://github.com/mattermost/focalboard
-  - https://www.focalboard.com/
-  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
-  - Focalboard comes in two main editions:
-    - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
-    - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
 
 - https://github.com/zadam/trilium
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
