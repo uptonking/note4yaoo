@@ -8,3 +8,6 @@ modified: 2021-08-11T03:33:20.171Z
 # thread-blog-dev-engineering-topics
 
 # guide
+
+# career
+- [Career lessons I learned in 8 years as a Software Developer](https://medium.com/geekculture/career-lessons-i-learned-in-8-years-as-a-software-developer-7842b69de53b)

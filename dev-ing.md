@@ -61,6 +61,8 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - 删除或编辑卡片的操作，状态是如何变化、更新的？
   - 全局的数据操作通过调用全局的mutator方法
 
+- 添加 card/row 时，状态如何变化？
+
 ## 0727
 
 - Cannot read properties of null (reading 'pickAlgorithm')

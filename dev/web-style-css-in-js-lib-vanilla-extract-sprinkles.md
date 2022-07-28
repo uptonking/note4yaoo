@@ -9,7 +9,12 @@ modified: 2021-08-22T16:08:42.552Z
 
 # guide
 
+- 如何去掉未使用的类名，或放心删除未使用的类名
+  - 可以间接通过ide的find references找引用的方式，去掉未被引用过的类名
 # examples
+- online
+  - https://codesandbox.io/s/vanilla-extract-esbuild-9h490m
+
 - https://github.com/one-aalam/awesome-vanilla-extract-css
   - Early Adopters: shopify
 - https://github.com/markdalgleish/nextjs-vanilla-extract-example
@@ -56,7 +61,9 @@ modified: 2021-08-22T16:08:42.552Z
 
 - ## 
 
-- ## 
+- ## Provide a way to prune unused css?
+- https://github.com/seek-oss/vanilla-extract/discussions/91
+  - 可以间接通过ide的find references找引用的方式，去掉未被引用过的类名
 
 - ## I missed this React discussion from 2021. Looks like they're officially recommending moving away from runtime CSS-in-JS towards static extraction
 - https://twitter.com/markdalgleish/status/1528948996706025472

@@ -22,10 +22,16 @@ modified: 2022-03-16T20:47:26.420Z
 - 视图切换原理
   - activeView.fields.viewType 支持 kanban/table/calendar/gallery 4种视图
 
+- 多维表格视图入口 CenterPanel
+  - 定义了会传给所有视图进行数据更新的方法，如addCard
+    - kanban视图添加卡片会执行 addCard
+    - table视图添加行会执行 addCard
+    - 注意onClick方法里执行addCard时传入的参数不同
+
 - 多维表格各种视图的前端实现入口在 src/components/centerPanel.tsx
   - TopBar 最顶部，不能算作导航条，只有feedback/help
   - PageTitle
-    - left: ViewTitle 页面标题
+    - left: ViewTitle 页面标题、描述
     - right: ShareBoardButton
   - ViewHeader 多维表格的表头组件
     - view dropdown with Editable view name 视图下拉列表
@@ -45,20 +51,23 @@ modified: 2022-03-16T20:47:26.420Z
   - view CalendarFullView
   - view Gallery
 
-## Kanban
+## Kanban jsx vdom
 
-- Kanban jsx vdom
-  - 顶层是 scrolling div
-  - board header
-    - visible KanbanColumnHeader
-    - hidden message
-    - add group button
-  - board body
-    - visible KanbanColumn
-    - hidden KanbanHiddenColumnItem
+- 顶层是 scrolling div
+
+- kanban-header 所有列的标题
+  - visible KanbanColumnHeader 每列标题
+  - hidden columns 所有被隐藏的列作为单独列
+  - add group button 添加列
+- kanban-body 所有列的卡片组
+  - visible KanbanColumn 每列所有卡片
+    - KanbanCard
+    - new card 添加卡片
+  - hidden columns
+    - KanbanHiddenColumnItem
 
 - KanbanColumn
-  - 一个简单的容器div
+- 一个简单的容器div
 
 - KanbanCard
   - 状态管理
@@ -82,10 +91,15 @@ modified: 2022-03-16T20:47:26.420Z
   - Router 基于路由守备定义了核心ui与路由对应的结构
     - /:boardId?/:viewId?/:cardId?
     - 所有核心路由对应的视图组件统一都是 `<BoardPage />` 组件
+    - 路由导致的变化，最后都会先在本组件处理，如更新数据
 
 - webapp/src/pages/boardPage/boardPage.tsx 
   - 作为Workspace的入口
   - 注册了websocket事件处理函数、undo/redo快捷键
+- Workspace
+  - 定义了核心视图的左右布局，左侧边栏展示视图列表，右侧内容区展示表格等视图
+  - CenterContent会渲染多维表格的核心视图组件 CenterPanel
+    - 这里从全局store中取出了核心数据 board、cards、activeView、groupByProperty、views
 
 - 项目国际化方案比较
   - react-intl: focalboard, atlaskit-editor

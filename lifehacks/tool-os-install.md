@@ -30,6 +30,7 @@ modified: 2020-12-22T12:42:14.745Z
 
 - [Qv2ray 使用详解](https://www.rultr.com/tutorials/4200.html)
   - 和win平台的v2ray客户端一样简单，导入账号信息即可科学上网
+  - [Qv2ray使用教程](https://xtrojan.org/client/qv2ray%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
 - chinese-input
   - rime输入法配置的迁移比想像中要快得多，只需要拷贝文件夹
