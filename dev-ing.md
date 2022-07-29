@@ -56,12 +56,20 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-07
 
+## 0729
+
+- mutator是如何更新数据的
+
+- [fedora flatpak.. sudo or not sudo?](https://forums.fedoraforum.org/showthread.php?327857-fedora-flatpak-sudo-or-not-sudo&p=1855999)
+  - 无一致答案
+  - It's not a "SAFER" thing! As I see it, it's rather about if you're installing for yourself, or for all users. If for yourself, then you won't need sudo.
+  - 参考apt安装命令用了sudo
+
 ## 0728
 
-- 删除或编辑卡片的操作，状态是如何变化、更新的？
-  - 全局的数据操作通过调用全局的mutator方法
-
-- 添加 card/row 时，状态如何变化？
+- 对于多维表格，一般将数据更新的方法定义在所有视图渲染的上层
+  - 添加 card/row 时，状态如何变化？
+  - 调用同一个 addCard 方法，但不同视图下传入的参数不同
 
 ## 0727
 

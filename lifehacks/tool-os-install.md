@@ -19,6 +19,24 @@ modified: 2020-12-22T12:42:14.745Z
 
 - 在ubuntu software update打勾可选源，以及配置apt mirror
 
+- snap 安装的软件包无法访问隐藏目录。默认安全模式太严格了。
+  - 改安全模式必须重新安装软件
+  - sudo snap remove firefox
+  - sudo snap install firefox --devmode 
+  - 考虑flatpak的自动更新软件包 firefox, chrome, vscode
+    - 缺点是flathub软件少，且安装体积大，snap体积也大
+    - 优点是支持自动更新，支持替换为国内源sjtu
+  - flatpak也存在无法访问目录的问题
+    - 方法1: 使用软件添加目录权限 Flatseal
+    - 方法2: flatpak override pkg.id --filesystem=/home/user
+- sudo apt-get install flatpak
+  - sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  - sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+  - [给flatpak添加国内镜像源](https://seekstar.github.io/2021/12/30/%E7%BB%99flatpak%E6%B7%BB%E5%8A%A0%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)
+    - sudo flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo
+    - 应用图标不可见的问题
+      - /var/lib/flatpak/app/*application_name*/current/active/files/share/applications 拷贝到 /usr/share/applications
+
 - ubuntu开机自动挂载win-ntfs硬盘
   - [ubuntu 配置/etc/fstab参数实现开机自动挂载硬盘](https://blog.csdn.net/u010632165/article/details/89597522)
   - [UbuntuHelp: fstab](https://wiki.ubuntu.org.cn/UbuntuHelp:Fstab)
@@ -34,6 +52,10 @@ modified: 2020-12-22T12:42:14.745Z
 
 - chinese-input
   - rime输入法配置的迁移比想像中要快得多，只需要拷贝文件夹
+    - emoji需要安装 apple-color-emoji
+    - 改为水平方向，需要新建文件，设置内容
+      - ibus_rime.custom.yaml
+      - patch: style: horizontal: true
   - sogou ubuntu
   - [在Ubuntu下安装讯飞输入法linux版以及卸载方法](https://yoki.moe/Intstu/24.html)
     - xunfei  http://packages.deepin.com/deepin/pool/non-free/i/iflyime/
