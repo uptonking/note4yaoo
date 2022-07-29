@@ -56,14 +56,30 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-07
 
-## 0729
+## 0730
 
-- mutator是如何更新数据的
+- replace mutator with reduxStore
+
+## 0729
 
 - [fedora flatpak.. sudo or not sudo?](https://forums.fedoraforum.org/showthread.php?327857-fedora-flatpak-sudo-or-not-sudo&p=1855999)
   - 无一致答案
   - It's not a "SAFER" thing! As I see it, it's rather about if you're installing for yourself, or for all users. If for yourself, then you won't need sudo.
   - 参考apt安装命令用了sudo
+
+### [http请求方式： post put patch 总结](https://blog.csdn.net/qianxing111/article/details/79791499)
+
+- idempotent 幂等的
+  - 如果一个方法重复执行多次，产生的效果是一样的，那就是idempotent的；
+  - idempotent的意思是如果相同的操作再執行第二遍第三遍，結果還是一樣。
+  - “Methods can also have the property of ‘idempotence’ in that (aside from error or expiration issues) the side-effects of N > 0 identical requests is the same as for a single request.”
+- POST方法不是幂等的，多次执行，将导致多条相同的用户被创建（users/1，users/2)
+- PUT比較正確的定義是 Replace (Create or Update)，
+  - 例如 PUT /items/1 的意思是替換 /items/1 ，如果已經存在就替換，沒有就新增；
+  - 因此，PUT方法一般会用来更新一个已知资源，除非在创建前，你完全知道自己要创建的对象的URI
+- PATCH方法是新引入的，是对PUT方法的补充，用来对已知资源进行局部更新
+  - HTTP PATCH method require a feature to do partial resource modification.
+  - The existing HTTP PUT method only allows a complete replacement of a document.
 
 ## 0728
 
