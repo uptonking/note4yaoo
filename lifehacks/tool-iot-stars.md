@@ -17,6 +17,95 @@ modified: 2021-01-12T18:49:22.746Z
   - 要点：售后
 # phone
 
+## Redmi Note 11 Pro
+
+- 国内发布会时间	2021年10月28日
+- 电商报价	￥1529
+
+- 机身材质	玻璃后壳
+- 指纹识别	侧面指纹识别
+
+- 外形
+长度	163.65mm
+宽度	76.19mm
+厚度	8.34mm
+重量	207g
+
+- 硬件
+CPU型号	联发科 天玑920 
+CPU频率	2.5Ghz A78*2+2.0GHz A55*6
+CPU核心数	八核
+GPU型号	ARM Mali-G68
+RAM容量	6GB
+RAM存储类型	LPDDR4X
+ROM容量	128GB>2.6万张照片1.1万首歌曲
+ROM存储类型	UFS 2.2>
+存储卡	MicroSD卡>
+出厂系统内核	Android 11>
+操作系统	MIUI 12.5
+散热	VC液冷立体散热
+扬声器	立体声双扬声器（JBL音质认证）
+
+- 屏幕
+屏幕尺寸	6.67英寸
+屏幕材质	AMOLED>
+分辨率	2400x1080像素>
+屏幕比例	20:9
+屏幕类型	全面屏（中置挖孔屏）>
+屏幕刷新率	120Hz>
+触控刷新率	360Hz
+对比度	4500000:1
+屏幕亮度	700nits全局亮度，1200nits峰值亮度
+屏幕色彩	DCI-P3色域
+屏幕技术	SGS高帧/护眼认证
+其他屏幕参数	360°光感，阳光屏，护眼模式
+
+- 摄像头
+摄像头总数	四摄像头（后三）>
+后置摄像头	1.08亿像素主镜头+800万像素超广角镜头+200万像素微距镜头普通级像素高清像素手机>
+前置摄像头	1600万像素>高清级像素高像素自拍手机>
+传感器类型	1/1.52英寸CMOS
+闪光灯	LED补光灯>
+广角	后置120°
+视频拍摄	后置：4K（3840x2160，30帧/秒）视频录制
+1080p（1920×1080，60帧/秒）视频录制
+1080p（1920×1080，30帧/秒）视频录制
+720p（1280×720，30帧/秒）视频录制
+1080p（1920×1080，120帧/秒）慢动作视频录制
+720p（1280×720，960帧/秒）慢动作视频录制
+720p（1280×720，240帧/秒）慢动作视频录制
+720p（1280×720，120帧/秒）慢动作视频录制
+
+前置：1080p（1920×1080，60帧/秒）视频录制
+1080p（1920×1080，30帧/秒）视频录制
+720p（1280×720，30帧/秒）视频录制
+720p（1280×720，120帧/秒）慢动作视频录制
+
+- 网络与连接
+网络类型	5G>，4G>，3G>
+SIM卡类型	双卡（三选二卡槽，双Nano-Sim卡或单Nano-Sim卡+单micro-SD卡）
+WLAN功能	单频/双频WiFi，WiFi6（IEEE 802.11 a/b/g/n/ac/ax），支持WiFi Direct，2x2 MIMO
+定位导航	北斗（B1I+B2a），GPS（L1+L5），Galileo（E1+E5a），GLONASS（G1），QZSS（L1+L5），NavIC，A-GPS，数据网络定位，Wi-Fi网络定位，sensor辅助定位
+蓝牙	蓝牙5.2，支持AAC/LDAC/LHDC
+NFC	多功能NFC 3.0（在天星金融·钱包App开通后，通过双击电源键可使用交通卡、Mi Pay、门卡、eID、车钥匙等功能）
+红外功能	支持
+机身接口	3.5mm耳机接口USB Type-C接口
+其他网络参数	全网通 7.0，双模5G纠错
+
+- 电池与续航
+电池类型	不可拆卸式电池
+电池容量	5160mAh大电池
+有线充电	67w(支持QC3+/PD2.0/PD3.0快充协议)纠错
+
+- 功能与服务
+三防功能	IP53等级>
+感应器	超声波距离传感器，360°环境光传感器，加速度传感器，陀螺仪，电子罗盘，X轴线性马达，红外线遥控器
+
+### ref
+
+- [Redmi Note 11 Pro（6GB/128GB/全网通/5G版）参数](https://detail.zol.com.cn/1393/1392432/param.shtml)
+- [Redmi Note 11 Pro系列](https://www.mi.com/redminote11pro/specs)
+
 ## Redmi Note 9 4G
 
 - Overview
@@ -125,7 +214,9 @@ GPS丨Glonass丨BeiDou丨Galileo
   - 第一季度销售量6s/6s plus是7480万台，销售量仅比前一代高出0.4%，低于市场预期
 - 外观/finish
   - 玫瑰金色、金色、银色、深空灰色
+
     - Rose Gold, Gold, Silver, Space Gray
+
   - 造型设计：直板、金属机身
 - 尺寸(h/w ~= 2.03)
   - width: 7.79 cm
@@ -140,10 +231,12 @@ GPS丨Glonass丨BeiDou丨Galileo
   - CPU: 1.85 GHz dual-core 64-bit, ARMv8-A "Twister"
   - GPU: PowerVR GT7600 (hexa-core)
   - A9 chip with 64-bit architecture
+
     - A9 by Samsung (N66AP) and A9 By TSMC (N66mAP) processor.
     - Apple称A9性能较A8处理器提升70%，图形处理也提升90%。
     - 本次分别采用三星的14nm FinFET制程和台积电的16nm FinFET制程
       - 三星代工的CPU虽然在制程上较台积电小，但经部分测试三星在温度上有容易过热问题以及效能及电力能耗的表现较差
+
   - Embedded M9 motion coprocessor
 - 内存/ram
   - 2 GB
@@ -153,7 +246,9 @@ GPS丨Glonass丨BeiDou丨Galileo
   - Retina HD display with 3D Touch
   - 5.5-inch(diagonal) widescreen LCD Multi-Touch display with IPS technology
   - 1920-by-1080-pixel resolution at 401 ppi
+
     - 1920/1080 = 16/9 ~= 1.778
+
   - 屏幕占比 67.67%
   - 1300:1 contrast ratio (typical)
   - 500 cd/m2 max brightness (typical)
@@ -166,14 +261,18 @@ GPS丨Glonass丨BeiDou丨Galileo
   - 光圈 后置f/2.2，前置f/2.2
   - 全景模式（最高可达 6300 万像素）
   - 视频拍摄
+
     - 4K视频拍摄，30 fps
     - 1080p高清视频拍摄，30 fps 或 60 fps
     - 720p高清视频拍摄，30 fps
     - 4K视频录制过程中拍摄 800 万像素静态照片
+
 - 电池/battery
   - 内置锂离子充电电池 2750 mAh
+
     - 通过电脑的USB端口或电源适配器充电
     - 6s电池容量为1715mAh容量
+
   - 不支持快充
   - 不可拆卸式电池
 - 操作系统/os
