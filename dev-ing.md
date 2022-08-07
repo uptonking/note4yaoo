@@ -54,6 +54,19 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
 - dev-to
   - 事项--重要性(ll/ml/hl)--截止日期(0730+放松)
   - search notion like block editor for recursive rendering
+# dev-08
+
+## 0805
+
+- [What is the difference between dpkg and aptitude/apt-get?](https://askubuntu.com/questions/309113)
+- `dpkg -i packageName.deb` will only install this Deb package, and will notify you of any dependencies that need to be installed, 
+  - but it will not install them, and 
+  - it will not configure the packageName.deb because well...the dependencies are not there.
+- `apt-get` is basically dpkg (I like to think of it as apt-get being a front-end for dpkg), but a clever one that will look for the dependencies and install them. 
+  - It even looks at the currently installed dependencies and determines ones that are not being used by any other packages, and will inform you that you can remove them.
+- `aptitude` then came along. It uses the libraries apt-get uses and actually has an interactive UI (user interface). 
+  - aptitude will automatically remove eligible packages, while apt-get needs a separate command to do so. 
+  - aptitude provides the functionality of dselect and apt-get as well as many additional features not found in either program.
 # dev-07
 
 ## 0730

@@ -9,6 +9,9 @@ modified: 2021-03-29T19:29:15.528Z
 
 # pieces
 
+- ## ubuntu The following packages have been kept back:
+- https://askubuntu.com/questions/1399734
+
 - ## Overriding existing handler for signal 10. Set JSC_SIGNAL_FOR_GC if you want WebKit to use a different signal
 - [GUI starts with empty black window with webkit2gtk 2.32.0](https://github.com/vertcoin-project/one-click-miner-vnext/issues/271)
   - ubuntu上手动降级依赖特别麻烦，需要手动一个个下载传递依赖；并且当gnome依赖某一个传递依赖如gtk版本时，传递依赖不能乱下
