@@ -17,7 +17,7 @@ modified: 2022-03-16T20:47:26.420Z
     - https://github.com/mattermost/focalboard/commits/main/webapp/src
 # faq
 - 删除或编辑卡片的操作，状态是如何变化、更新的？
-  - 全局的数据操作通过调用全局的mutator方法
+  - y数据操作通过调用全局的mutator方法
 # not-yet
 - 看板核心内容视图实现的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片
@@ -120,8 +120,9 @@ modified: 2022-03-16T20:47:26.420Z
   - It also ensures that the Undo-manager is called for each action
   - 前端操作基本都借助undoManager实现
 - `UndoManager` General-purpose undo manager
-  - 在undoManager里面更新block数据依赖 OctoClient
+  - 每个action都抽象为一个 UndoCommand，使用数组保存action
 - `OctoClient` is the client interface to the server APIs
+  - 更新block数据依赖 OctoClient
   - 服务端api对应的前端请求工具类
   - 这里定义了这个操作的url: const path = '/api/v2/login'
 # codebase
