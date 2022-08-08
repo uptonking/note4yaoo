@@ -120,7 +120,9 @@ modified: 2022-03-16T20:47:26.420Z
   - It also ensures that the Undo-manager is called for each action
   - 前端操作基本都借助undoManager实现
 - `UndoManager` General-purpose undo manager
-  - 每个action都抽象为一个 UndoCommand，使用数组保存action
+  - 每个action都抽象为一个 UndoCommand，使用数组保存所有 UndoCommand
+  - perform方法，先执行redo，再注册undo，最后返回redo方法的返回值
+  - execute方法，执行command，并保存结果到command对象
 - `OctoClient` is the client interface to the server APIs
   - 更新block数据依赖 OctoClient
   - 服务端api对应的前端请求工具类

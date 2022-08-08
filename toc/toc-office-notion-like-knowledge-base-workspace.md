@@ -66,7 +66,8 @@ modified: 2022-06-03T21:34:54.893Z
   - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
   - core基于remark
 
-- https://github.com/churichard/notabase
+- notabase  /434Star/AGPL.v3/202208/ts
+  - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
   - It is inspired by note-taking apps such as Notion, Obsidian, Typora, and Roam Research.

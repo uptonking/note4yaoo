@@ -15,7 +15,7 @@ modified: 2021-07-20T02:15:25.917Z
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
   - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
 - **vanillajs-first**
-  - tiptap/dante/wix, tui.editor.v3, remirror, emirror
+  - tiptap/dante/wix, remirror, bangle, tui.editor.v3, emirror
   - guardian-prosemirror-typerighter/elements/invisibles/noting, stacks-editor(StackOverflow)
   - milkdown(Typora), bangle.dev, pubpub-editor(202003)
   - start-editor, jcmnunes-bc-editor(md), zeditor
@@ -86,9 +86,18 @@ modified: 2021-07-20T02:15:25.917Z
   - 提供了针对image/file的图文混排工具
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
-  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
-    - copy the approach by Atlassian editor_v20201205
-    - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+- https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
+  - copy the approach by Atlassian editor_v20201205
+  - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+
+- bangle /527Star/MIT/202208/ts
+  - https://github.com/bangle-io/bangle.dev
+  - https://bangle.dev/docs/examples/markdown-editor
+  - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
+- bangle.io /711Star/AGPL.v3/202208/ts
+  - https://github.com/bangle-io/bangle-io
+  - https://bangle.io/
+  - A web only WYSIWYG note taking app that saves notes locally in markdown format
 
 - wax-prosemirror /MIT
   - https://gitlab.coko.foundation/wax/wax-prosemirror
@@ -167,6 +176,13 @@ modified: 2021-07-20T02:15:25.917Z
 - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
+
+- gitlab editor /js/vue/tiptap
+  - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
+  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
+    - implementing support for all of md flavors is an unnecessary cost.
+    - Solution 1: Traceability or file diffs
+    - Solution 2: Relying on the Markdown preview endpoint
 # prosemirror-examples-repos
 - https://github.com/YacheLee/Aditor
   - A React component made by ProseMirror

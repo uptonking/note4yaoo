@@ -56,11 +56,13 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-08
 
+## 0808
+
 ## 0807
 
 - 视图公共的 addCard 的逻辑分析
   - createCard 创建一个业务层对象
-  - mutator.performAsUndoGroup 持久化数据操作
+  - mutator 执行持久化数据操作
 - 👉🏻 action都被mutator和undoManager封装过了，需要进一步理清思路
 
 ## 0805

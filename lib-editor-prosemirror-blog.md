@@ -9,6 +9,22 @@ modified: 2021-06-15T00:07:49.228Z
 
 # guide
 
+## [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
+
+- We could address some of these points with Quill’s many config options and modules. 
+  - Yet, in the end, we realized that we got it all wrong: A monolithic editor with tons of config options would never bring us there. 
+  - We needed the opposite: a bag of “LEGO bricks” to build our own editor from the ground up.
+- Remirror: Functional blocks, like link handling, were encapsulated into extensions. Next to these standard extensions, we could simply add our own extensions to tailor the editor to our needs.
+
+## [Switching Rich Text Editors, Part 1: Picking Tiptap](https://www.ashbyhq.com/blog/engineering/tiptap-part-1)
+
+- slate maintainers introduced significant breaking changes to the API and document model in 0.50.x
+- There's no longer much difference between ReMirror and tiptap, and it's a great example of how quickly a library can change. 
+
+---
+
+- [Switching Rich Text Editors, Part 1: Picking Tiptap](https://news.ycombinator.com/item?id=30299800)
+
 ## [ContentEditable困境与破局 prosemirror的基础实现原理](https://zhuanlan.zhihu.com/p/123341288)
 
 - 现在市面上针对富文本编辑器的方案大概分为以下三种
@@ -399,6 +415,4 @@ dispatch(tr.replaceRangeWith(0, doc.content.size, newParagraph));
 - [Why Tag1 Selected ProseMirror_201911](https://www.tag1consulting.com/blog/modern-rich-text-editors-how-evaluate-evolving-landscape)
   - 比较了 prosemirror，draftjs、ckeditor5、quill、slate
 # ref
-- [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)
-
 - [Decouple look&feel from Remirror extensions: render props to the rescue](https://medium.com/collaborne-engineering/decouple-look-feel-from-remirror-extensions-87a06ad9214e)

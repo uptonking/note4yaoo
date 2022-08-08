@@ -28,7 +28,7 @@ modified: 2021-06-27T18:44:15.023Z
   - Extensibility
 - This is not really related to React but would love to bounce some ideas on this. 
   - The plugin architecture of PM works great, but PM leaves ambiguity on how to extend and share specs and plugins.
-- ## Bangle.dev: higher level Prosemirror components
+- ## Bangle.dev: higher level Prosemirror components__202012
 - https://discuss.prosemirror.net/t/bangle-dev-higher-level-prosemirror-components/3363
 - I am super excited to share with you all something I have been working as a side project for the past 1.5 years.
 - highlights of bangle.dev
