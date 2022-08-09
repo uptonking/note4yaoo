@@ -25,7 +25,7 @@ modified: 2020-11-02T08:29:11.847Z
     - To specify how the state tree is transformed by actions, you write pure reducers.
     - reducer纯函数可拆分、可灵活控制计算逻辑
 
-``` JS
+```JS
 import { createStore } from 'redux';
 
 /**
@@ -57,7 +57,7 @@ store.dispatch({ type: 'counter/incremented' })
   - redux-toolkit依赖redux, redux-thunk, immer, reselect
   - Redux Toolkit allows us to write shorter logic that's easier to read, while still following the same Redux behavior and data flow.
 
-``` JS
+```JS
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
@@ -90,3 +90,6 @@ store.subscribe(() => console.log(store.getState()));
 // Still pass action objects to dispatch, but they're created for us
 store.dispatch(incremented())
 ```
+
+# redux-toolkit
+- ## [undo/redo](https://github.com/reduxjs/redux-toolkit/issues/308)

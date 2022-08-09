@@ -127,6 +127,10 @@ modified: 2022-03-16T20:47:26.420Z
   - 更新block数据依赖 OctoClient
   - 服务端api对应的前端请求工具类
   - 这里定义了这个操作的url: const path = '/api/v2/login'
+# state-management
+- 典型的数据更新流程
+  - 先执行http请求，触发服务端数据更新
+  - 等服务端更新完成后，再在 afterRedo 方法中传入服务端返回的最新数据，更新前端redux数据
 # codebase
 - 前端整体结构
   - MainApp 传入reduxStore、处理用户初始化、首次连接websocket

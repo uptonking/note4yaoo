@@ -13,7 +13,26 @@ modified: 2021-06-22T11:54:44.506Z
 
 - ## 
 
-- ## 
+- ## ag-grid: Been experimenting further with #TypeScript and seeing what the user experience might be like if I was to create a "generic bag" type builder. 
+- https://twitter.com/SCooperDev/status/1556743650394181633
+  - Enabling users to provide generic params and not have to worry about providing defaults for all the previous params is intriguing.
+
+- react-table: Genmaps worked well internally, but ended up being cumbersome for user-land types. 
+- I finally took 9 generics and:
+  - Converted 3 to any
+  - Converted 4 to declaration merge-able interfaces
+  - Kept 2 as traditional slotted generics
+- Users liked it more and DX loss was negligible.
+
+- ## Join @tannerlinsley as he dives into the history of React Table and discusses everything it’s taught him.
+- https://twitter.com/tannerlinsley/status/1548730511832387585
+- Mapped types are different - it's a method for transforming types.
+- Generic maps are when you store generics as an object.
+- Oh I see, that's why @tannerlinsley is mentioning it when the function signature changes from many positional parameters to only one, which accepts an object using a generic map.
+
+- any way you could show this concept in a typescript playground? I was also intrigued after I watched the vid but my googling is failing me
+  - @prisma is also doing that, it just so happens that I wrote a blog post about that a few days ago. I think the generic `T` in all the examples would be called a Generic Map.
+  - [How Prisma adapts Result Types based on the Actual Arguments given](https://pkerschbaum.com/blog/how-prisma-adapts-result-types-based-on-the-actual-arguments-given)
 
 - ## Performance tip: if you need to set a lot of dynamic keys to an object, a Map can give you better perf
 - https://twitter.com/Steve8708/status/1508502291170484224

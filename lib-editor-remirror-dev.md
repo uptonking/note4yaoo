@@ -17,6 +17,12 @@ modified: 2021-06-27T19:16:51.396Z
   - Zero configuration support for Server Side Rendering (SSR).
   - Cross platform and cross-framework, with an Angular solution coming later this year.
 # discuss
+- ## Typing in remirror can feel pretty slow compared to typing in e.g. a normal html textarea or in a wysiwyg editor such as tiptap.dev
+- https://github.com/remirror/remirror/issues/1366
+- It seems like the Toolbar is rerendering for every state change, blocking the typing. Do you have any ideas on how to improve performance?
+  - Just noticed that when using the Remirror controlled passing the `state` and `onChange`, it has a low performance. Another approach if you can is to avoid controlling the component, and just passing the `manager` prop.
+  - Another trick is to `useMemo` when embedding your `Editor` component to prevent rendering on every keystroke if you are passing the state to the parent through something like `onChange`
+
 - ## Relation between schema definition and extensions_202003
 - https://github.com/remirror/remirror/discussions/272
 - I've discovered this project while researching the different options for ProseMirror/React bridges. 
