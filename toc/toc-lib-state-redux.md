@@ -30,16 +30,19 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/redux-observable/redux-observable
   - RxJS-based middleware for Redux. 
   - Compose and cancel async actions to create side effects and more.
-
-
+# redux-utils
+- https://github.com/rt2zz/redux-persist
+  - Persist and rehydrate a redux store.
 # redux-repos
-
 - https://github.com/rematch/rematch
+  - Rematch is Redux best practices without the boilerplate.
+
 - https://github.com/redux-form/redux-form
   - the general consensus of the community is that you should not put your form state in Redux.
   - The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built React Final Form
   - The only good reason, in the author's view, to use Redux Form is if you need really tight coupling of your form data with Redux
   - If you don't have that requirement, use React Final Form.
+
 - https://github.com/rcdexta/react-trello
   - Pluggable components to add a Trello (like) kanban board to your application
   - 依赖redux、styled-components

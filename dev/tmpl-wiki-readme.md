@@ -7,8 +7,7 @@ modified: 2020-12-17T09:08:24.529Z
 
 # tmpl-wiki-readme
 
-for README
----
+> for README
 
 # overview
 
@@ -17,7 +16,6 @@ for README
 - requirements
 
 - open a browser and go to http://localhost:3000
-
 # notes and issues
 
 # roadmap
@@ -26,29 +24,23 @@ for README
 
 - discussion
   - how to improve
-
 # license
 
 [MIT](https://opensource.org/licenses/MIT)
 
  
-for todo
----
+
+> for todo
 
 # fix
-
 - [ ] 修复
-
 # new
-
 - [ ] 添加
-
 # refactor
 
 # later
 
 - 提高
-
 # test
 
 # engineering
@@ -57,11 +49,9 @@ for todo
 
  
 
-for library/framework
----
+> for library/framework
 
 # guide
-
 - features
 
 - usecase
@@ -73,7 +63,6 @@ for library/framework
   - libs
 
 - tips
-
 # faq
 
 # pieces
@@ -82,23 +71,20 @@ for library/framework
 
  
 
-for faq
----
+> for faq
 
 # faq-not-yet
 
 # faq-repeat
 
 - ## vs
-
 # faq
 
 ## why
 
  
 
-for toc-lib
----
+> for toc-lib
 
 # popular
 

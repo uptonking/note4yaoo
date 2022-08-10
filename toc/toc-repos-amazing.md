@@ -36,6 +36,14 @@ modified: 2020-11-03T06:54:59.051Z
 - [1998年至2018年女演员在内地热度变化](https://www.bilibili.com/video/BV17t411X7bK)
   - 横向条形图动态变化
 
+- https://win11.blueedge.me/
+  - https://github.com/blueedgetechno/win11React
+  - replicate the Windows 11 desktop experience on web
+  - Framework - React (^17.0.2) + Redux
+  - Component/UI Library - None!!
+  - Styling Solution - SCSS and CSS Modules (tailwind).
+  - Icons - fontawesome
+
 - https://macos.now.sh/
   - https://github.com/puruvj/macos-web
   - 依赖 preact、vite、scss+css modules、no component lib、react-rnd、jotai、framer-motion、date-fns、rooks

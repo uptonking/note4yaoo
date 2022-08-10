@@ -93,6 +93,13 @@ modified: 2021-02-09T19:27:01.319Z
   - 前端/编译器，高德
   - https://www.zhihu.com/people/di-xu-guang-50/pins
 # dev-frontend
+- 许两会 react入门教程
+  - https://github.com/beforegolive
+  - https://www.twomeetings.com/
+    - https://github.com/beforegolive/my-gatsby-blog
+  - https://github.com/beforegolive/resumable-upload-demo
+    - 断点续传的demo
+
 - Andrea Giammarchi 
   - https://github.com/WebReflection
   - https://twitter.com/WebReflection
@@ -216,7 +223,6 @@ modified: 2021-02-09T19:27:01.319Z
     - https://github.com/winkerVSbecks/sketchbook
       - https://sketchbook.netlify.app/
 
-
 - vazurio 白色简洁网站设计，未开源
   - https://github.com/vazurio?tab=repositories&type=source
   - https://vazurio.co/
@@ -229,4 +235,3 @@ modified: 2021-02-09T19:27:01.319Z
 
 - 蒋鹏飞 react/express 手写源码系列
   - https://segmentfault.com/u/jiangpengfei_5ecce944a3d8a/articles
-

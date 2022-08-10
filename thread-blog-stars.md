@@ -14,6 +14,13 @@ modified: 2021-02-09T19:25:20.378Z
   - [course tour video](https://www.youtube.com/watch?v=SDWxeGKX7Fs)
   - https://github.com/kentcdodds/advanced-react-hooks
   - https://github.com/kentcdodds/advanced-react-patterns
+# engineering
+- [前端需要的免费在线api接口](https://juejin.cn/post/7041461420818432030)
+  - hacker news api
+  - 返回100条数据，每条内容都有帖子 ID、发贴人 ID、标题、以及简介。
+    - http://jsonplaceholder.typicode.com/posts
+  - 每次请求都会随机返回一张猫的图片。
+    - https://api.thecatapi.com/v1/images/search?limit=1
 # frontend
 - [TypeScript 中的 Decorator & 元数据反射：从小白到专家](https://zhuanlan.zhihu.com/p/20743919)
 - [理解 TypeScript 装饰器（为什么 Angular 不需要 Hooks）](https://zhuanlan.zhihu.com/p/65764702)

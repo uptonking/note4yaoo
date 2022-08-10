@@ -56,7 +56,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-08
 
-## 0808
+## 0810
+
+- [Redux DevTools 扩展的使用说明](https://juejin.cn/post/6998924455984496671)
+  - [使用 redux-devtools-extension 查看 Redux 中状态变化](https://lufanfan.github.io/20190109/redux-devtools/)
+  - `const store = createStore(reducer, composeWithDevTools());`
 
 ## 0807
 

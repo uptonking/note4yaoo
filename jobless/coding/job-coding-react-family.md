@@ -12,6 +12,9 @@ modified: 2021-10-05T15:35:15.751Z
 ## [手写一个Redux，深入理解其原理](https://segmentfault.com/a/1190000023084074)
 
 ```JS
+/**
+ * 💡 redux的核心就是最精简的发布订阅模式
+ */
 function createStore() {
   let state; // state记录所有状态
   let listeners = []; // 保存所有注册的回调
@@ -38,7 +41,7 @@ function createStore() {
     subscribe,
     dispatch,
     getState
-  }
+  };
 
   return store;
 }

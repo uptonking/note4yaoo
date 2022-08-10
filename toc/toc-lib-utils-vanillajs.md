@@ -9,11 +9,14 @@ modified: 2021-03-01T10:54:24.828Z
 
 # popular
 
+- https://github.com/paularmstrong/normalizr
+  - https://github.com/paularmstrong/normalizr/blob/master/docs/README.md
+  - Many APIs, public or not, return JSON data that has deeply nested objects. Using data in this kind of structure is often very difficult for JavaScript applications, especially those using Flux or Redux.
+  - Normalizr is a small, but powerful utility for taking JSON with a schema definition and returning nested entities with their IDs, gathered in dictionaries.
+
 - https://github.com/blakeembrey/change-case
   - Transform a string between camelCase, PascalCase, Capital Case, snake_case, param-case, CONSTANT_CASE, dot.case, Header-Case, no case, path/case, Sentence case and others.
-
 # more
-
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+
   - common-tags also exposes a means of composing pipelines of dynamic transformer plugins. 
