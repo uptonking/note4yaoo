@@ -9,6 +9,37 @@ modified: 2020-11-02T08:29:11.847Z
 
 # demo
 
+- ## [Inside a Redux Store](https://redux.js.org/tutorials/fundamentals/part-4-store)
+
+```JS
+function createStore(reducer, preloadedState) {
+  let state = preloadedState;
+  const listeners = [];
+
+  function getState() {
+    return state;
+  }
+
+  function subscribe(listener) {
+    listeners.push(listener);
+    return function unsubscribe() {
+      const index = listeners.indexOf(listener);
+      listeners.splice(index, 1);
+    }
+  }
+
+  function dispatch(action) {
+    // 👀 先计算 newState，再更新全局state
+    state = reducer(state, action);
+    listeners.forEach(listener => listener());
+  }
+
+  dispatch({ type: '@@redux/INIT' });
+
+  return { dispatch, subscribe, getState };
+}
+```
+
 - ## [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
 - Following in the steps of Flux, CQRS, and Event Sourcing, 
   - Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen.
@@ -27,7 +58,6 @@ modified: 2020-11-02T08:29:11.847Z
 
 ```JS
 import { createStore } from 'redux';
-
 /**
  * reducer's function : (state, action) => 
  * 单一数据源、只读状态、纯函数更新
@@ -42,13 +72,10 @@ function counterReducer(state = { value: 0 }, action) {
       return state
   }
 }
-
 // Its API is { subscribe, dispatch, getState }.
 let store = createStore(counterReducer);
-
 // use subscribe() to update the UI in response to state changes.
 store.subscribe(() => console.log(store.getState()))
-
 // The only way to mutate the internal state is to dispatch an action.
 store.dispatch({ type: 'counter/incremented' })
 ```
@@ -59,7 +86,6 @@ store.dispatch({ type: 'counter/incremented' })
 
 ```JS
 import { createSlice, configureStore } from '@reduxjs/toolkit';
-
 const counterSlice = createSlice({
   name: 'counter',
   initialState: {
@@ -78,15 +104,11 @@ const counterSlice = createSlice({
     }
   }
 });
-
 export const { incremented, decremented } = counterSlice.actions;
-
 const store = configureStore({
   reducer: counterSlice.reducer
 });
-
 store.subscribe(() => console.log(store.getState()));
-
 // Still pass action objects to dispatch, but they're created for us
 store.dispatch(incremented())
 ```
