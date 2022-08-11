@@ -40,6 +40,19 @@ function createStore(reducer, preloadedState) {
 }
 ```
 
+```JS
+const thunkMiddleware =
+  ({ dispatch, getState }) =>
+  next =>
+  action => {
+    if (typeof action === 'function') {
+      return action(dispatch, getState);
+    }
+
+    return next(action);
+  }
+```
+
 - ## [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
 - Following in the steps of Flux, CQRS, and Event Sourcing, 
   - Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen.

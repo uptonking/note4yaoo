@@ -6,11 +6,9 @@ modified: 2020-12-08T13:27:16.321Z
 ---
 
 # lib-state-redux-docs
-
 - Redux is a predictable state container for JavaScript apps.
-
+  - Redux is a pattern and library for managing and updating application state, using events called "actions". 
 # dev-tips
-
 - we ultimately wound up shipping three hooks:
   - `useSelector` : subscribes to the store and returns the selected value
   - `useDispatch` : returns the store's dispatch function
@@ -18,9 +16,7 @@ modified: 2020-12-08T13:27:16.321Z
 - 唯一会使用到bindActionCreators的场景是当你需要把action creator往下传到一个组件上，却不想让这个组件觉察到Redux的存在，而且不希望把dispatch或Redux store传给它
 - 通过redux的combineReducers可以很好的扁平化数据
 - compose：作用是从右到左来组合多个函数，其实就是让你少写几个函数嵌套， `compose(funcA, funcB, funcC)` 等价于 `funcA(funcB(funcC))`
-
 # resources
-
 - redux api docs
 	- https://cn.redux.js.org/docs/api/
 	- [react-redux v7 release notes](https://github.com/reduxjs/react-redux/releases/tag/v7.0.1)
@@ -31,9 +27,7 @@ modified: 2020-12-08T13:27:16.321Z
 	- [造玩具学原理系列 | redux 源码解析及模拟实现](https://zhuanlan.zhihu.com/p/82951588)
 - examples
 	- https://redux.js.org/introduction/examples
-
 # react-redux 
-
 - ref
   - [react-redux 杂谈 - 设计结构变迁](https://zhuanlan.zhihu.com/p/86336676)
   - [request: Allow for optionally using React Context instead of Redux under the hood](https://github.com/reduxjs/react-redux/issues/1612)
@@ -90,7 +84,6 @@ modified: 2020-12-08T13:27:16.321Z
 - React's `unstable_batchedUpdate()` API allows any React updates in an event loop tick to be batched together into a single render pass. 
   - React already uses this internally for its own event handler callbacks. 
   - This API is actually part of the renderer packages like ReactDOM and React Native, not the React core itself.
-
 # redux docs
 
 ## Getting Started with Redux
@@ -101,7 +94,7 @@ modified: 2020-12-08T13:27:16.321Z
 
 - basic example    
 
-``` js
+```js
 import { createStore } from 'redux'
 
 // reducer
@@ -266,7 +259,6 @@ store.dispatch({ type: 'INCREMENT' })
 - You may optionally specify the initial state as the second argument to createStore().
 - `subscribe(listener)`
 	- Arguments: `listener (Function)` : The callback to be invoked any time an action has been dispatched, and the state tree might have changed. 
-
 	  You may call getState() inside this callback to read the current state tree. 
 	  It is reasonable to expect that the store's reducer is a pure function, so you may compare references to some deep path in the state tree to learn whether its value has changed.
 
@@ -301,10 +293,10 @@ store.dispatch({ type: 'INCREMENT' })
 	- Each of these two moments usually require a change in the application state
 - Usually, for any API request you'll want to dispatch at least three different kinds of actions:
 	- 示例
-
 	
 
-``` 
+```
+
 	{ type: 'FETCH_POSTS_REQUEST' }
 	{ type: 'FETCH_POSTS_FAILURE', error: 'Oops' }
 	{ type: 'FETCH_POSTS_SUCCESS', response: { ... } }
@@ -312,7 +304,8 @@ store.dispatch({ type: 'INCREMENT' })
 
 	
 
-``` 
+```
+
 	{ type: 'FETCH_POSTS' }
 	{ type: 'FETCH_POSTS', status: 'error', error: 'Oops' }
 	{ type: 'FETCH_POSTS', status: 'success', response: { ... } }
@@ -342,7 +335,8 @@ store.dispatch({ type: 'INCREMENT' })
 	- Redux middleware can be used for logging, crash reporting, talking to an asynchronous API, routing, and more.
 - middleware实现链式调用
 
-``` 
+```
+
 function logger(store) {
   return function wrapDispatchToAddLogging(next) {
     return function dispatchAndLog(action) {
@@ -357,7 +351,8 @@ function logger(store) {
 
 使用es6的箭头函数柯里化
 
-``` 
+```
+
 const logger = store => next => action => {
   console.log('dispatching', action)
   let result = next(action)
@@ -375,9 +370,7 @@ const logger = store => next => action => {
 	-  If you want to add some styles, react-router-dom has another special <Link /> called <NavLink />
 - React Router Redux 将你的 redux 应用和 react-router 绑定在一起，并且使它们保持同步
 	- 如果没有这层绑定，你将不能通过时光旅行来回放 action，除非你需要这个，不然 React-router 和 Redux 完全可以分开操作
-
 # Redux Tips
-
 - we have to consider several things before we start coding, 
 	- such as: how to configure a store, store size, data structure, state model, middlewares, environment, async transactions, immutability, etc..
 -  UIs are simply data beautifully presented facilitates the process of building them
@@ -402,7 +395,8 @@ const logger = store => next => action => {
 - 撤销历史也是应用 state 的一部分，无论 state 如何随着时间不断变化，你都需要追踪 state 在不同时刻的历史记录
 - state设计
 
-``` 
+```
+
 {
   counterA: {
     past: [ 1, 0 ],
@@ -501,12 +495,10 @@ https://cn.redux.js.org/docs/FAQ.html
 		- Try reducer composition first, and only use multiple stores if it doesn't solve your problem.
 	- while you can reference your store instance by importing it directly, this is not a recommended pattern in Redux.
 		- If you create a store instance and export it from a module, it will become a singleton. This means it will be harder to isolate a Redux app as a component of a larger app
-
 		
 
 - Is it OK to have more than one middleware chain in my store enhancer? What is the difference between next and dispatch in a middleware function?
 	- Redux middleware act like a linked list. 
-
 	  Each middleware function can either call `next(action)` to pass an action along to the next middleware in line, 
 	  call `dispatch(action)` to restart the processing at the beginning of the list, 
 	  or do nothing at all to stop the action from being processed further.
@@ -516,7 +508,6 @@ https://cn.redux.js.org/docs/FAQ.html
 
 - How do I subscribe to only a portion of the state? Can I get the dispatched action as part of the subscription?
 	- redux provides a single store.subscribe method for notifying listeners that the store has updated. 
-
 	  Listener callbacks do not receive the current state as an argument—it is simply an indication that something has changed. 
 	  The subscriber logic can then call getState() to get the current state value.
        - UI bindings such as React Redux can create a subscription for each connected component. 
@@ -533,11 +524,9 @@ https://cn.redux.js.org/docs/FAQ.html
 
 - What async middleware should I use? How do you decide between thunks, sagas, observables, or something else?
 	- `redux-thunk` are best for complex synchronous logic (especially code that needs access to the entire Redux store state), 
-
 	    and simple async logic (like basic AJAX calls). With the use of async/await, it can be reasonable to use thunks for some more complex promise-based logic as well.
 
 	- `redux-saga` are best for complex async logic and decoupled "background thread"-type behavior, 
-
 	    especially if you need to listen to dispatched actions (which is something that can't be done with thunks). They require familiarity with ES6 generator functions and redux-saga's "effects" operators.
 
 	- `redux-observable` solve the same problems as sagas, but rely on RxJS to implement async behavior. They require familiarity with the RxJS API.
@@ -552,7 +541,6 @@ https://cn.redux.js.org/docs/FAQ.html
 
 - 浅比较和深比较有何区别？  
 	- 浅比较（也被称为 引用相等）只检查两个不同 变量 是否为同一对象的引用；与之相反，深比较（也被称为 原值相等）必须检查两个对象所有属性的 值 是否相等。
-
 	  所以，浅比较就是简单的（且快速的）a === b，而深比较需要以递归的方式遍历两个对象的所有属性，在每一个循环中对比各个属性的值。
 	  正是因为性能考虑，Redux 使用浅比较。
 	  
@@ -562,7 +550,6 @@ https://cn.redux.js.org/docs/FAQ.html
 
 - React-Redux 是如何使用浅比较的？
 	- React-Redux 使用浅比较来决定它包装的组件是否需要重新渲染。
-
 	  为了检测改变是否发生，React-Redux 会保留一个对根 state 对象的引用，还会保留 mapStateToProps 返回的 props 对象的每个值的引用。
 	  最后 React-Redux 会对根 state 对象的引用与传递给它的 state 对象进行浅比较，还会对每个 props 对象的每个值的引用与 mapStateToProps 返回的那些值进行一系列浅比较。
 
@@ -570,13 +557,11 @@ https://cn.redux.js.org/docs/FAQ.html
 	- 不小心直接修改了对象
 	- 重复代码
 	- 性能问题
-
 	
 
 - Won't calling “all my reducers” for each action be slow?
 	- It's important to note that a Redux store really only has a single reducer function. The store passes the current state and dispatched action to that one reducer function, and lets the reducer handle things appropriately.
 	- the common suggested pattern is to have a separate sub-reducer function that is responsible for managing updates to a particular slice of state at a specific key. 
-
 	  The combineReducers() that comes with Redux is one of the many possible ways to achieve this. 
 	  It's also highly suggested to keep your store state as flat and as normalized as possible.
 
@@ -591,7 +576,6 @@ https://cn.redux.js.org/docs/FAQ.html
 	- First, in terms of raw memory usage, Redux is no different than any other JavaScript library. The only difference is that all the various object references are nested together into one tree
 	- Second, a typical Redux app would probably have somewhat less memory usage than an equivalent Backbone app because Redux encourages use of plain JavaScript objects and arrays rather than creating instances of Models and Collections.
 	- Finally, Redux only holds onto a single state tree reference at a time. Objects that are no longer referenced in that tree will be garbage collected, as usual.
-
 	
 
 - Will caching remote data cause memory problems?
@@ -600,7 +584,6 @@ https://cn.redux.js.org/docs/FAQ.html
 	- First, only cache as much data as the user needs.
 	- Second, cache an abbreviated form of a record when possible. 
 	- Third, only cache a single copy of a record. T
-
 #  API Reference
 
 # changelog
@@ -642,17 +625,13 @@ https://cn.redux.js.org/docs/FAQ.html
 	- 参考 https://github.com/reduxjs/redux/releases?after=v3.0.0
 - 0.2.0-20150602
 	- initial public release
-
 # react-redux 
-
 - react-redux is the official React binding for Redux.      
 - It lets your React components read data from a Redux store, and dispatch actions to the store to update data.
-
 # dev-tips
 
 # resources
 
 - docs
     - https://react-redux.js.org/introduction/quick-start
-
 # react-redux docs 

@@ -103,6 +103,11 @@ modified: 2021-09-20T20:12:38.499Z
     - 实现过于简单，没有提供单独的github仓库
   - [知乎专栏发布](https://www.zhihu.com/column/c_1345788302880878592)
   - [个人网站的视频课程 需注册](https://xiaochen1024.com/series/60b1b600712e370039088e24)
+
+- https://github.com/baozouai/react-source-study
+  - 本仓库在 react-source-code-debug的基础上保留了V17和Lanes模型，且删除掉了大量无关文件、代码（如其中的__DEV__相关判断)，只保留了核心的react、react-dom、react-reconciler、和scheduler
+  - https://github.com/neroneroffy/react-source-code-debug
+    - React 源码调试环境，源代码详细注释，跟随官方仓库进行更新
 # react-like-repos
 - https://github.com/NervJS/nerv
   - /5.3kStar/MIT/202006/ts/inactive
@@ -176,7 +181,6 @@ modified: 2021-09-20T20:12:38.499Z
   - The code base is tiny compared to React but React's core functionality is nonetheless implemented faithfully
   - https://github.com/djalbat/Inference
     - A dispatcher in a similar vein to Redux. To go hand in hand with Reaction. 
-
 
 ## react-api-like
 
