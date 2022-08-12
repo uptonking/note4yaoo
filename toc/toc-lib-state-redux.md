@@ -16,26 +16,55 @@ modified: 2020-11-02T19:13:04.103Z
   - 依赖redux、raf-schd、css-box-model
   - react-dnd does an incredible job at providing a set of drag and drop primitives
   - react-beautiful-dnd is a higher level abstraction specifically built for lists (vertical, horizontal, movement between lists, nested lists and so on).
+
 - https://github.com/react-page/react-page
   - highly customizable content editor for the browser - based on React and Redux and written in TypeScript
   - If you are fed up with the limitations of contenteditable, you are in the right place.
 - https://github.com/react-designer/react-designer
   - Editable vector graphics in your react apps
-- https://github.com/schrodinger/fixed-data-table-2
-- https://github.com/dvajs/dva
-  - React and redux based, lightweight and elm-style framework.
+
+- https://github.com/schrodinger/fixed-data-table-2 /js
+  - A React table component designed to allow presenting millions of rows of data.
+
 - https://github.com/jshjohnson/Choices
   - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
   - 依赖redux、fuse.js(fuzzy-search in js)
-- https://github.com/redux-observable/redux-observable
-  - RxJS-based middleware for Redux. 
-  - Compose and cancel async actions to create side effects and more.
 # redux-utils
 - https://github.com/rt2zz/redux-persist
   - Persist and rehydrate a redux store.
+- https://github.com/redux-observable/redux-observable
+  - RxJS-based middleware for Redux. 
+  - Compose and cancel async actions to create side effects and more.
+
+- https://github.com/redux-offline/redux-offline
+  - Build Offline-First Apps for Web and React Native
+# redux-saas-crud
+- https://github.com/Dbuggerx/react-pokeapi
+  - https://dbuggerx.github.io/react-pokeapi
+  - A sample of a SPA done with React, Redux-Toolkit, Typescript, Sass, CSS Grid, etc
+  - Retrieves data from the Pokémon REST API; 
+  - Styles created using SASS with the BEM methodology; 
+  - React Router v6 to display details in a different route when an item is clicked; 
+  - Tests implemented using Jest, React Testing Library and MSW; 
+
+- https://github.com/rogerndutiye/redux-toolkit-contact-card
+  - https://happy-albattani-e6d08a.netlify.app/
+  - A sample React TypeScript Redux Toolkit CRUD app
+- https://github.com/cmacdonnacha/awesome-address-book
+  - https://cmacdonnacha.github.io/awesome-address-book/
+  - a basic address book built with ReactJS, Redux Toolkit, React Router and Typescript
+
+- https://github.com/iamyuu/shoes-commerce
+  - https://shoes-commerce.vercel.app/
+  - Experiment with Redux (Redux Toolkit & RTK Query)
+
+- https://github.com/DevlinRocha/banter
+  - Banter is a feature-rich Discord clone built with React, Redux Toolkit, Next. JS, TypeScript, styled-components, Tailwind CSS, and uses Firebase to communicate with the back-end.
 # redux-repos
 - https://github.com/rematch/rematch
   - Rematch is Redux best practices without the boilerplate.
+- https://github.com/dvajs/dva
+  - React and redux based, lightweight and elm-style framework.
 
 - https://github.com/redux-form/redux-form
   - the general consensus of the community is that you should not put your form state in Redux.
@@ -75,6 +104,11 @@ modified: 2020-11-02T19:13:04.103Z
   - Micro-Frontends React + Redux + Typescript Framework
 - https://github.com/wix/repluggable
   - Pluggable micro frontends in React+Redux apps
+
+- https://github.com/rgommezz/react-native-offline
+  - Handful of utilities you should keep in your toolbelt to handle offline/online connectivity in React Native. 
+  - It supports iOS, Android and Windows platforms.
+  - There are 3 features that this library provides in order to leverage offline capabilities in your Redux store: a reducer, a middleware and an offline queue system. You can use all of them or just the ones that suits your needs.
 
 - more-redux
   - https://github.com/swagger-api/swagger-ui

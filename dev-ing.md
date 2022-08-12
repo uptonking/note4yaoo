@@ -56,6 +56,11 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-08
 
+## 0812
+
+- 百度网盘倍速播放的扩展
+  - global speed
+
 ## 0810
 
 - [Redux DevTools 扩展的使用说明](https://juejin.cn/post/6998924455984496671)

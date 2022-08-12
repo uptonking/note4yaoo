@@ -78,6 +78,10 @@ modified: 2021-01-17T06:18:28.855Z
 - https://github.com/pieterv/react-layers
   - inspired by the work done on the react-bootstrap's [Overlay](https://react-bootstrap.github.io/components/overlays/)
   - Overlays rely on the third-party library Popper.js
+
+- https://github.com/iamhosseindhv/notistack
+  - https://notistack.com/
+  - customizable notification snackbars (toasts) that can be stacked on top of each other
 # modal/portal
 - https://github.com/wellyshen/react-cool-portal
   - hook for Portals, which renders modals, dropdowns, tooltips etc. to `<body>` or else.
