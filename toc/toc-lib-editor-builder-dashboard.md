@@ -538,6 +538,9 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
   - https://marmelab.com/react-admin-demo/#/
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
+  - https://github.com/rayman1104/ra-data-nestjsx-crud
+    - a data-provider for react-admin
+    - backend application built via nestjs framework with nestjsx/crud plugin.
 
 - https://github.com/app-generator/react-datta-able-dashboard
   - https://github.com/app-generator

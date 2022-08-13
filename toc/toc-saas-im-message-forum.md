@@ -22,3 +22,6 @@ modified: 2021-05-14T15:04:15.333Z
 
 - discourse
   - http://www.discourse.org/
+# forum
+- https://github.com/plebbit/plebbit-js
+  - plebbit-js is an NPM module to wrap around the IPFS APIs used by plebbit. It is used in all clients: CLI, Electron (desktop GUI) and web.

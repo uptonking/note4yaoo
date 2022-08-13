@@ -6,13 +6,10 @@ modified: 2021-01-16T20:50:23.893Z
 ---
 
 # toc-dev-pc-electron
-
 - ref
   - search: file
   - https://github.com/sindresorhus/awesome-electron
-
 # popular
-
 - https://github.com/microsoft/vscode
   - https://code.visualstudio.com/
   - Visual Studio Code
@@ -29,9 +26,23 @@ modified: 2021-01-16T20:50:23.893Z
 - https://github.com/Foundry376/Mailspring
   - maintained fork of @nylas Mail by one of the original authors.
 
+- https://github.com/electron-react-boilerplate/electron-react-boilerplate
+  - https://electron-react-boilerplate.js.org/
+  - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
+- https://github.com/sprout2000/electron-react-ts
+  - An Electron boilerplate with hot reloading for React and TypeScript.
+- https://github.com/Devtography/electron-react-typescript-webpack-boilerplate
+  - Ready to use Electron project template with React, Webpack and TypeScript seamlessly integrated
+  - electron-builder for app packaging, with basic build config for Windows macOS included.
+- https://github.com/codesbiome/electron-react-webpack-typescript-2022
+  - Electron React Webpack Typescript Boilerplate with Custom Window and Titlebar Menus.
 
+- https://github.com/ArcherGu/fast-vite-nestjs-electron
+  - build vite + electron + nestjs projects. Build with Doubleshot, crazy fast!
+  - https://github.com/Doubleshotjs/doubleshot
+    - A split node backend and electron main process.
+    - integrating the nodejs backend framework with electron to build a desktop application. 
 # extensions
-
 - https://github.com/sindresorhus/electron-store
   - Simple data persistence for your Electron app or module
     - Save and load user preferences, app state, cache, etc
@@ -40,22 +51,17 @@ modified: 2021-01-16T20:50:23.893Z
 
 - https://github.com/weolar/miniblink49
   - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
-
 # examples
-
 - https://github.com/zonetti/zonote
   - Cross-platform desktop note-taking app. 
   - Sticky notes with Markdown and Tabs. All in one .txt file.
-
 # boilerplate
 - https://github.com/ccorcos/electron-architecture
   - This project is a boilerplate electron app with a thoughtfully designed architecture
   - Main and renderer processes manage state using a Redux-like state machine.
   - Electron BrowserWindows are controlled declaratively through the application state.
   - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
-
 # more
-
 - https://github.com/uptick/react-keyed-file-browser
   - https://uptick.github.io/react-keyed-file-browser/
   - Folder based file browser given a flat keyed list of objects, powered by React.

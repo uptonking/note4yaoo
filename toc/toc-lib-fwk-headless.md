@@ -27,13 +27,17 @@ modified: 2021-05-24T16:55:40.481Z
   - The original purpose of the project was to help Bootstrap your API
   - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
 
-- refine
+- refine /2.6kStar/MIT/202208/ts
   - https://github.com/pankod/refine
   - https://refine.dev/
   - refine is a React-based headless framework for building data-intensive applications 
-  - It ships with Ant Design System, an enterprise-level UI toolkit.
+  - t ships with Ant Design System and Material UI
+  - refine is a headless React framework, 
+    - which means all out-of-the-box features such as Routing, Networking, Authentication, Authorization, State Management, Realtime, i18n, etc. can be used without being tied to any UI element or framework. 
+    - Also, Ant Design as out-of-the-box is supported.
   - refine makes extensive use of hooks as a default way for interacting with your components. 
   - refine relies heavily to React Query for data handling, caching and state management. 
+  - Backend Agnostic : Connects to any custom backend. Built-in support for REST API, GraphQL
 # headless-platfrom
 - https://github.com/TencentCloudBase/cloudbase-extension-cms
   - https://docs.cloudbase.net/cms/intro.html

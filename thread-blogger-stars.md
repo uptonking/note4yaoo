@@ -14,9 +14,12 @@ modified: 2021-02-09T19:27:07.664Z
 
 - 在开源项目comments多的issue里面，很容易找到项目难点和业务使用场景
   - 甚至直接找到其他扩展开发者，以及他们的插件、轮子
-
 # text-editor
 - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
+
+- https://github.com/fantasticit
+  - https://github.com/fantasticit/think
+  - 低代码、文档
 # d3-notebook
 - Taras Novak
   - https://github.com/RandomFractals

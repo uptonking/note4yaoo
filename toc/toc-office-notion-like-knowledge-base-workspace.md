@@ -60,6 +60,11 @@ modified: 2022-06-03T21:34:54.893Z
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
   - 使用场景: 笔记、文档、手册、教程、私有化部署
 
+- https://github.com/fantasticit/think
+  - https://think.codingit.cn/
+  - 依赖 MySQL/NextJS/nestjs/tiptap
+  - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
+
 - foam /10.4kStar/MIT/202109/ts
   - https://github.com/foambubble/foam
   - https://foambubble.github.io/foam/
@@ -74,11 +79,12 @@ modified: 2022-06-03T21:34:54.893Z
   - Notabase uses Supabase as the backend (for authentication, database, and storage), so you'll have to make a Supabase account. 
 
 - https://github.com/usememos/memos
-  - https://memos.onrender.com/
+  - https://usememos.com/
   - /260Star/NALic/202206/ts/go
-  - ui高度复刻flomo
+  - ui高度复刻flomo，中文开发者作品
   - self-hosted knowledge base that works with a SQLite db file.
   - Write in the plain textarea without any burden
+  - 后端依赖 go
 
 - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/

@@ -7,56 +7,6 @@ modified: 2022-02-12T23:36:22.503Z
 
 # toc-saas-repos
 
-# popular
-
-- https://github.com/async-labs/saas /ts
-  - Build your own SaaS business with SaaS boilerplate. 
-  - 依赖React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. 
-
-- https://github.com/marmelab/react-admin
-  - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider
-  - https://marmelab.com/react-admin-demo/#/
-  - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
-  - simple-example 依赖mui.v4、ra-data-fakerest
-  - demo-example 依赖 react-redux、redux-saga、react-router.v5、recharts
-  - The React-Admin Enterprise Edition  offers additional features and services for react-admin
-
-- https://github.com/adarshaacharya/MentorLabs
-  - 前端依赖 redux/toolkit
-  - 后端依赖 express、typeorm
-  - 前后端都是ts类型
-
-- https://github.com/ThaddeusJiang/react-app-starter
-  - 依赖 nextjs、tailwindcss、react-hook-form、react-query、react-table、storybook、react-testing、mock-service-worker
-# spa-react-boilerplate
-- https://github.com/themesberg/volt-react-dashboard
-  - dashboard + components + pages
-  - 依赖 react-router、bootstrap5、react-chartist、react-live、simplebar(scrollbar)
-- https://github.com/nafiur63/techforing-landing-page
-  - https://techforing-by-nafiur-reza.netlify.app/
-  - 依赖react、bootstrap5、react-bootstrap.v1.6
-  - 样式普通，但依赖少
-
-- https://github.com/MelisaMert/crud-react-contextapi
-  - Basic Crud Operation with context api
-
-- https://github.com/habx/lib-ts-template
-  - Template for client library in typescript
-
-- https://github.com/Lucifier129/react-imvc
-  - An Isomorphic MVC Framework supports both SSR and CSR
-  - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
-  - https://github.com/Lucifier129/isomorphic-cnode
-# crud
-- https://github.com/taniarascia/react-hooks
-  - https://taniarascia.github.io/react-hooks/
-  - [Build a CRUD App in React with Hooks](https://www.taniarascia.com/crud-app-in-react-with-hooks/)
-  - a simple CRUD app that can add, update, or delete users.
-
-- https://github.com/bezkoder/react-hooks-crud-web-api
-  - 教程示例丰富
-  - [React Hooks CRUD example with Axios and Web API](https://www.bezkoder.com/react-hooks-crud-axios-api/)
-  - [build a server api: Express, Sequelize & PostgreSQL](https://www.bezkoder.com/node-express-sequelize-postgresql/)
 # saas-apps
 - https://github.com/timeoffthescheduler/server /js
   - Server Side Implementation of TimeOff TS, A Scheduler
@@ -85,13 +35,10 @@ modified: 2022-02-12T23:36:22.503Z
   - Commerce Cloud Reference Storefront Progressive Web Application in React
 - https://github.com/mobiosolutions/ms-bootstrap-admin
   - A sass base bootstrap admin panel.
-
 # db
 - https://github.com/ashleydavis/insta-mongo
   - Instantly start a MongoDB dev server and load database fixtures.
   - https://github.com/ashleydavis/insta-mongo-example
-
-
 # python
 - https://github.com/CaravelKit/saas-base
   - SaaS base application (Flask, Vue, Bootstrap, Webpack)

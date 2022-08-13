@@ -59,6 +59,13 @@ modified: 2020-12-19T13:04:40.865Z
   - react-dom/server does not have support for suspense yet.
   - react-ssr-prepass is a partial server-side React renderer that does a prepass on a React element tree and suspends when it finds thrown promises. 
 # ssr-solutions
+- https://github.com/pmb0/express-tsx-views
+  - Server-side JSX/TSX rendering for your express or NestJS application
+  - With this template engine, TSX files can be rendered server-side by your Express application. Unlike other JSX express renderers, this one does not rely on JSX files being transpiled by babel at runtime. Instead, TSX files are processed once by the tsc compiler.
+
+- https://github.com/MrWangJustToDo/fullstack-nest-react-ssr-template
+  - fullstack ssr template, BE with nestjs, FE with react
+
 - https://github.com/GoogleChrome/rendertron
   - Rendertron is a headless Chrome rendering solution designed to render & serialise web pages on the fly.
   - Built with Puppeteer

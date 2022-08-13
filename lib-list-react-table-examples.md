@@ -146,6 +146,8 @@ modified: 2021-07-20T13:28:26.296Z
   - https://github.com/KevinVandy/material-react-table
   - https://www.material-react-table.com/
   - A fully featured Material-UI V5 implementation of react-table, inspired by material-table and the MUI DataGrid, written from the ground up in TypeScript.
+  - A fully featured Material UI V5 implementation of Tanstack React Table V8
+  - Inspired by material-table and the MUI X DataGrid
   - 依赖 material-ui.v5、emotion/styled、react-table.v7、match-sorter
 - https://github.com/ggascoigne/react-table-example
   - https://codesandbox.io/s/github/ggascoigne/react-table-example

@@ -16,6 +16,8 @@ modified: 2020-11-19T12:44:36.463Z
 - https://github.com/arthurhammer/github-toc
   - Browser extension that adds a table of contents to GitHub repos, wikis and gists.
 
+- https://github.com/int128/bntp
+  - Chrome extension providing Bookmarks in the New Tab Page
 - ## table
 - https://github.com/jamesandres/ColumnCopy
   - Google Chrome extension which enables selecting columns from table.
@@ -35,7 +37,9 @@ modified: 2020-11-19T12:44:36.463Z
   - Google chrome extension which helps you to copy from Wikipedia.
 - https://github.com/gambolputty/wikitable2csv
   - A web tool to convert Wiki tables to CSV
-
 # local-files
 
+# extension-starter
+- https://github.com/chibat/chrome-extension-typescript-starter
+  - Chrome Extension TypeScript Starter
 # more-extensions

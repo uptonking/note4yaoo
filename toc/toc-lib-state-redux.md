@@ -7,7 +7,7 @@ modified: 2020-11-02T19:13:04.103Z
 
 # toc-lib-state-redux
 
-# popular
+# redux-popular
 
 - https://github.com/react-dnd/react-dnd
   - core依赖redux
@@ -38,6 +38,10 @@ modified: 2020-11-02T19:13:04.103Z
 
 - https://github.com/redux-offline/redux-offline
   - Build Offline-First Apps for Web and React Native
+
+- https://github.com/iamogbz/react-ducks
+  - Implement ducks in React following the redux pattern but using React Context.
+  - Uses `immer` to wrap reducers when creating, ensuring atomic state mutations.
 # redux-saas-crud
 - https://github.com/Dbuggerx/react-pokeapi
   - https://dbuggerx.github.io/react-pokeapi
@@ -57,9 +61,45 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/iamyuu/shoes-commerce
   - https://shoes-commerce.vercel.app/
   - Experiment with Redux (Redux Toolkit & RTK Query)
+- https://github.com/nxiiln/the-shop
+  - https://nxiiln.github.io/the-shop/
+  - SPA for e-commerce
+  - 纯前端项目
+- https://github.com/QuocDat1994/react-fashion-shop
+  - http://fashion-shop.quocdat1994.surge.sh/
+  - A fashion shop built with react, antd, typescript and redux-toolkits.
+
+- https://github.com/vannizhang/react-redux-boilerplate
+  - Boilerplate to start React+Redux project with TypeScript in an easier and faster way.
+
+- https://github.com/santoshshinde2012/react-redux-typescript-boilerplate
+  - Our main purpose with this Skeleton is to start frontend application with react with redux toolkit and typescript
+- https://github.com/FrameMuse/react-template
+  - Typescript react template with basic layouts, buttons, modules that are often used in most websites.
+- https://github.com/jyoketsu/react-example
+  - 使用 Vite + React + TypeScript + React-Router + Redux-Toolkit + Material-UI + react-i18next 开发。支持多语言和暗黑模式。
+  - 登录用的 iframe， https://account.qingtime.cn/
+- https://github.com/MajorLift/typescript-fullstack-monorepo-starter
+  - React-Redux-Express-SQL monorepo boilerplate boosted with SWC and ESBuild.
+  - Frontend: React, Redux Toolkit, Tailwind CSS
+  - Backend: Express.js, RTK Query, PostgreSQL
+
+- https://github.com/KASTINpl/react-next-starter
+  - ReactJS + Next.js + TypeScript + Redux + MaterialUI + ESLint, Prettier + Cypress + Jest + Storybook
+
+- https://github.com/laststance/vite-rtk-query
+  - Redux Toolkit, RTK Query, eslint/prettier, jest/TS/react-testing-library/MSW, tailwindcss, GitHub Actions CI.
 
 - https://github.com/DevlinRocha/banter
   - Banter is a feature-rich Discord clone built with React, Redux Toolkit, Next. JS, TypeScript, styled-components, Tailwind CSS, and uses Firebase to communicate with the back-end.
+
+- https://github.com/matheuscruzhen/redux-toolkit-ts-questions-app
+  - A questions app made with React Redux, Redux Toolkit and Typescript.
+
+- https://github.com/typinghare/supervisor-backend
+  - Supervisor Backend (NestJS + Moment + TypeORM + JWT)
+  - https://github.com/typinghare/supervisor-frontend
+    - Supervisor Frontend (React + MUI + Redux + ApexCharts + Moment + Axios + Lodash)
 # redux-repos
 - https://github.com/rematch/rematch
   - Rematch is Redux best practices without the boilerplate.

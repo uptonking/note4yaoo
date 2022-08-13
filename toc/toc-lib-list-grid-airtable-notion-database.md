@@ -35,6 +35,9 @@ modified: 2022-03-14T19:55:47.081Z
   - React table built to resemble a database.
   - 未完成
 
+- https://github.com/linyows/notionate
+  - React components that uses the Notion API to display the Notion's database and page.
+
 - https://github.com/rowyio/rowy
   - http://rowy.io/
   - Rowy is an open-source low-code platform for Firebase and Firestore. 
