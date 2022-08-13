@@ -61,3 +61,6 @@ modified: 2020-11-03T06:55:09.225Z
 - https://github.com/codrops/BookBlock
   - A jQuery plugin that will create a booklet-like component that let's you navigate through its items by flipping the pages.
   - 书翻页的效果
+
+- https://github.com/Surile/Abraham
+  - 垃圾分类小程序

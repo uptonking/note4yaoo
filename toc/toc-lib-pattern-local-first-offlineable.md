@@ -15,6 +15,7 @@ modified: 2021-09-04T14:03:39.046Z
   - Build Offline-First Apps for Web and React Native
   - Persistent Redux store for Reasonaboutable Offline-First applications, with first-class support for optimistic UI. 
   - Use with React, React Native, or as standalone state container for any web app.
+  - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
 
 - https://github.com/jaredly/local-first
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
@@ -106,3 +107,6 @@ modified: 2021-09-04T14:03:39.046Z
 
 - https://github.com/dxxzst/OfflineMap
   - 基于MySQL + Node.js + Leaflet的离线地图展示，支持百度、谷歌、高德、腾讯地图
+
+- https://github.com/madipta/offline-first
+  - Sample offline first using Nx monorepo, React, RxDb, NestJs, Prisma, GraphQl, PostgreSql

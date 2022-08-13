@@ -31,6 +31,17 @@ modified: 2020-12-13T13:14:40.141Z
   - backend application built via nestjs framework with nestjsx/crud plugin.
   - https://github.com/marmelab/react-admin
 
+- https://github.com/dyb881/nest-serve
+  - 使用 Nestjs 8.x 以微服务方式开发的基础管理后台服务，并搭配 React 开发的管理后台前端（可自行根据 swagger 的接口开发对应的管理后台前端）
+  - https://github.com/dyb881/cra-template-seasoning
+    - 基于 create-react-app + react-app-rewired + Typescript + Less 脚手架初始化，并拓展配置
+    - 状态管理默认：Mobx
+    - pc-admin 有配套后端服务nest-serve，配合可直接使用
+
+- https://github.com/gabriel-roque/reactnest-boilerplate
+  - https://reactnest.netlify.app/
+  - starter project template with (Ngnix, ReactJS, Redux, Redux Thunk, React Router, NestJS, TypeORM, PostgreSQL, Docker, PM2) + (Code Style, Conventional Changelog with Commitlint, Husky, Git CZ)
+
 - https://github.com/lujakob/nestjs-realworld-example-app
   - real world backend API built with NestJS + TypeORM/Prisma
   - The branch master implements TypeORM with a mySQL database.
@@ -92,16 +103,14 @@ modified: 2020-12-13T13:14:40.141Z
 
 - https://github.com/chenc041/react-nestjs-full-stack
   - A react and nestjs full stack template
+  - api: nestjs, typeorm, winston-logger, jwt
+
 - https://github.com/alexKudryavtsev-web/template-nestjs-react
   - Template app by NestJs and React
   - Authorization by JWT
 
 - https://github.com/NiGhTTraX/ts-monorepo
   - Template project for setting up a TypeScript monorepo
-
-- https://github.com/coderinblack08/presage
-  - https://www.joinpresage.com/
-  - A Medium alternative built for referral podcasts and blogs
 
 - https://github.com/nathanielhall/mern-starter-app
   - Fullstack starter app using React, NestJS, PostgreSQL (not MERN)
@@ -114,9 +123,15 @@ modified: 2020-12-13T13:14:40.141Z
   - An example fullstack web app. NestJS + React + Docker-Compose.
   - typeorm
 
+- https://github.com/link-note/link-note
+  - 致力于打造一个All In System的产品。已主题为圆心向外进行功能辐射。笔记卡片作为第一个圈。文件、文件夹、图片、音频、视频处在第二圈。pdf阅读、习惯打卡、任务管理、RSS订阅等处在第三圈。强调连接的重要性，把所有能连接的事物通过主题连接起来
+  - typeorm 后端使用的orm框架
+  - GraphQL 对于简单的数据CURD
+  - rxjs 配合mobx和其它异步的事件
+
 ## blog/forum
 
-- https://github.com/fantasticit/wipi /202107
+- https://github.com/fantasticit/wipi
   - https://blog.codingit.cn/
   - A blog system written by React.js, Nest.js and MySQL.
   - Wipi是一个面向个人的开源的集成文章发表、页面创建、知识小册等功能的 CMS 系统
@@ -130,9 +145,14 @@ modified: 2020-12-13T13:14:40.141Z
   - https://www.lizc.net/
   - react blog project base on nodejs, nestjs, mongoose, typescript, react, ant-design, nextjs
 
+- https://github.com/coderinblack08/presage
+  - https://www.joinpresage.com/
+  - A Medium alternative built for referral podcasts and blogs
+
 - https://github.com/starryskystar/blog-c
   - 博客重构，后端服务基于nestjs；界面重度模仿知乎
   - 依赖antd4、umijs、marked、prismjs、braft-editor
+
 - https://github.com/hys1440248234/Developer-Forum
   - 仿掘金的开发者论坛，前后端，仅用于学习目的。
   - 使用 Vue.js3+Typescript+Nest.js
@@ -173,7 +193,7 @@ modified: 2020-12-13T13:14:40.141Z
 
 ## admin (很多blog/cms自身也会提供admin管理界面)
 
-- https://github.com/SolidZORO/leaa /202008
+- https://github.com/SolidZORO/leaa /202008/inactive
   - a monorepo CMS (Content Management System) built with Nest.js, Next.js, and Ant Design.
   - leaa-api/backend(Nest.js + @nestjsx/crud + MySQL + Docker Compose)
   - leaa-dashboard(demo)/dashboard (React.js + Antd + MobX)
@@ -199,6 +219,10 @@ modified: 2020-12-13T13:14:40.141Z
 - https://github.com/kelvin-mai/nest-commerce /201905
   - E-Commerce Web App built with NestJS
 
+- https://github.com/alicanerdurmaz/computer-store
+  - https://computer-store.vercel.app/
+  - nextjs, nestjs, mongoose, jwt
+
 ## starter
 
 - https://github.com/shalahinovilya/nestjs-react-store
@@ -216,6 +240,12 @@ modified: 2020-12-13T13:14:40.141Z
   - Appcket is a starter kit to build your next great app idea
 - https://github.com/alexdevero/docker-nestjs-react-postgres
   - Starter app build with Nest.js, React, PostgreSQL and Docker
+
+- https://github.com/arthurPrvst/starter-reactjs-nestjs-mysql
+  - Starter React.js NestJS MySQL with continuous integration and AWS deployment
+
+- https://github.com/nadavpodjarski/postgres-nest-react-typescript-boilerplate
+  - a Full-stack Dockerized boilerplate. A vanilla infrastructure made to simplify the develpoment and deploying processes.
 
 ## more-examples
 

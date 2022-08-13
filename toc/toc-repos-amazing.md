@@ -158,3 +158,7 @@ modified: 2020-11-03T06:54:59.051Z
   - 头像填充渐变色、小方块、表情形状；可选方形、圆形
   - https://boringavatars.com/
   - Boring avatars is a tiny JavaScript React library that generates custom, SVG-based, round avatars from any username and color palette.
+
+- https://github.com/SolidZORO/zpix-pixel-font
+  - https://zpix.vercel.app/
+  - Zpix (最像素) is a pixel font (像素字体), supporting English, Traditional Chinese, Simplified Chinese and Japanese.

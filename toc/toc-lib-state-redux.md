@@ -38,6 +38,20 @@ modified: 2020-11-02T19:13:04.103Z
 
 - https://github.com/redux-offline/redux-offline
   - Build Offline-First Apps for Web and React Native
+  - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
+
+- https://github.com/lscheibel/redux-yjs-bindings
+  - https://lscheibel.github.io/redux-yjs-bindings/
+  - Use Yjs to sync your Redux store with other peers!
+  - small (roughly 1kB) bridge to connect Redux with a Yjs, allows you to use the synchronization features of Yjs with the data management capabilities of Redux. 
+  - It works with any Redux store, whether you use Redux Toolkit or not, and even supports initial values. 
+  - Values that are transmitted over the network can be any JSON serializable value, from primitives to deeply nested object structures.
+  - Special thanks to Joseph Miles whose zustand-middleware-yjs library was an inspiration.
+  - https://github.com/joebobmiles/zustand-middleware-yjs
+    - Zustand middleware that enables sharing of state between clients via Yjs.
+    - One of the difficult things about using Yjs is that it's not easily integrated with modern state management libraries in React. 
+    - This middleware for Zustand solves that problem by allowing a Zustand store to be turned into a CRDT, with the store's state replicated to all peers.
+    - This differs from the other Yjs and Zustand solution, `zustand-yjs` by allowing any Zustand store be turned into a CRDT. This contrasts with `zustand-yjs`'s solution, which uses a Zustand store to collect shared types and access them through special hooks.
 
 - https://github.com/iamogbz/react-ducks
   - Implement ducks in React following the redux pattern but using React Context.

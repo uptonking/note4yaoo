@@ -53,6 +53,8 @@ modified: 2020-12-19T13:04:40.865Z
     - 本应用是直接采用webpack --watch + inline-sourcemap 的方式将文件写到本地，实现更加简洁。
     - next.js hmr采用hot-middleware + webpackHotDevClient.js实现
     - 本应用hmr直接用社区的热门库webpack-dev-server实现
+- https://github.com/zhangyuang/ssr
+  - 此框架脱胎于 egg-react-ssr 项目和 ssr v4版本（midway-faas + react ssr），在之前的基础上做了诸多演进，通过插件化的代码组织形式，支持任意服务端框架与任意前端框架的组合使用
 
 - https://github.com/FormidableLabs/react-ssr-prepass
   - A custom partial React SSR renderer for prefetching and suspense
