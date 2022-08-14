@@ -9,12 +9,21 @@ modified: 2022-06-03T21:34:54.893Z
 
 # guide
 
-# notion-like
-- https://github.com/siyuan-note/siyuan
+# notion-like-workspace
+- logseq
+
+- siyuan
+  - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
+
+- think
+  - https://github.com/fantasticit/think
+  - https://think.codingit.cn/
+  - 依赖 MySQL/NextJS/nestjs/tiptap
+  - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
 - outline /12.5kStar/BSD > BSL/202109/ts
   - https://github.com/outline/outline
@@ -23,33 +32,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
-# notion-clone
-- https://github.com/konstantinmuenster/notion-clone
-  - https://notion-clone.kmuenster.com/
-  - /2.3kStar/MIT/202106/js
-  - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
-  - 后端依赖 express、jsonwebtoken、mongoose
-  -  This clone tries to replicate some of the great note-taking features Notion has.
-  - The frontend is built with Next.js and fully server-side rendered. 
-    - Next.js · React.js · SCSS/SASS
-  - On the backend, a REST API handles saving user content and user management.
-    - Express.js · MongoDB with Mongoose · Nodemailer · JWT (Cookie-based)
-
-- https://github.com/tobi4120/notion-clone
-  - https://notion-app-clone.herokuapp.com/
-  - /125Star/NALic/202203/js
-  - his website allows users to create pages, add notes to those pages, add to-do's, link to other pages and more!
-
-- https://github.com/amjadbouhouch/notion-clone
-  - https://notion-clone-react.netlify.app/
-  - Notion Like, a front-end build with React and Tailwind CSS
-
-- https://github.com/tramio/JUN22-NOTION
-  - https://tramio.github.io/JUN22-NOTION/
-  - building a Notion clone with React.js and Firebase
-
-- https://github.com/fedeloterstein/open-notion
-  - Notion clone using Next.js with Typescript
 # github-wiki-confluence-like
 - MrDoc /1.4kStar/GPLv3/202107/js/python
   - https://github.com/zmister2016/MrDoc
@@ -59,11 +41,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端: LayUI + JQuery
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
   - 使用场景: 笔记、文档、手册、教程、私有化部署
-
-- https://github.com/fantasticit/think
-  - https://think.codingit.cn/
-  - 依赖 MySQL/NextJS/nestjs/tiptap
-  - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
 - foam /10.4kStar/MIT/202109/ts
   - https://github.com/foambubble/foam

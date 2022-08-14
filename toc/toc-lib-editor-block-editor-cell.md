@@ -14,12 +14,6 @@ modified: 2022-06-08T11:03:26.472Z
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
-- https://github.com/psyhyde/domino-editor
-  - https://domino-editor.vercel.app/
-  - /6Star/NALic/202009/js/未开源代码-仅文档
-  - Document Site for a Block Style Editor
-  - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
-
 - editorjs /19.8kStar/Apache2/202206/ts
   - https://github.com/codex-team/editor.js
   - https://editorjs.io/
@@ -43,6 +37,12 @@ modified: 2022-06-08T11:03:26.472Z
   - 一款基于 React 的、块级风格的、Markdown 友好的，富文本编辑器。
   - floating-ui: 右键菜单，行内公式的编辑，Heading 的左侧提示，在 floating-ui 的支持下都可以很简单的实现
   - Danfo.js: 提供了 js 上和 Python.pandas 类似的 DataFrame 类，用于表格支持
+
+- https://github.com/psyhyde/domino-editor
+  - https://domino-editor.vercel.app/
+  - /6Star/NALic/202009/js/未开源代码-仅文档
+  - Document Site for a Block Style Editor
+  - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
 
 - https://github.com/madebymany/sir-trevor-js
   - http://madebymany.github.io/sir-trevor-js/
