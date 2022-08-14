@@ -39,6 +39,8 @@ modified: 2022-05-15T18:45:27.570Z
   - https://github.com/coniel/whim 
   - A highly customisable block based rich text editor inspired by Notion.
   - 依赖 slate.v0.65.3，fuse.js(fuzzy-search)
+  - Whim is currently undergoing a complete re-write for version 2.0, with an initial release planned for the end of August 2022. 
+    - Version 2.0 will include a much improved API, detailed docs, and solid test coverage.
 
 - https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js

@@ -9,6 +9,9 @@ modified: 2021-09-29T13:23:09.969Z
 
 # guide
 
+- https://github.com/gouflv/build-my-own-x
+  - 再次发明轮子, 重写常用api和工具库
+
 - https://github.com/danistefanovic/build-your-own-x
   - Build your own (insert technology here), listing examples
   - 3D Renderer, database, react, redux, git, Neural Network, Physics Engine, Regex Engine

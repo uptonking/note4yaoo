@@ -15,6 +15,9 @@ modified: 2022-03-16T20:47:26.420Z
     - [v20220603](https://github.com/mattermost/focalboard/commits/main?after=e31821501c2d5f53329916b0ebd5165c09e480d8+69&branch=main)
   - 前端webapp开发历史记录
     - https://github.com/mattermost/focalboard/commits/main/webapp/src
+# roadmap
+- theme
+  - 支持 notion/airtable
 # faq
 - 删除或编辑卡片的操作，状态是如何变化、更新的？
   - y数据操作通过调用全局的mutator方法

@@ -50,11 +50,11 @@ modified: 2021-07-21T10:03:38.002Z
   - 前端依赖 react-router、formik、history、jwt、moment、express、quill(Editor)、react-beautiful-dnd、styled-components、sweet-pubsub
   - 后端依赖 express、jsonwebtoken、faker、pg、typeorm
 
-- https://github.com/konstantinmuenster/notion-clone
+- https://github.com/konstantinmuenster/notion-clone  /js
   - https://notion-clone.kmuenster.com/
   - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
   - 后端依赖 express、jsonwebtoken、mongoose
-  -  This clone tries to replicate some of the great note-taking features Notion has.
+  - This clone tries to replicate some of the great note-taking features Notion has.
   - The frontend is built with Next.js and fully server-side rendered. 
     - Next.js · React.js · SCSS/SASS
   - On the backend, a REST API handles saving user content and user management.

@@ -162,27 +162,30 @@ modified: 2020-07-14T11:03:53.196Z
     - No official guideline on how to integrate RxJS with React.
   - EVT is an attempt to address all these points while trying to remain as accessible as EventEmitter.
 # react
-- react-redux-useMutableSource
+- react-redux-useMutableSource(api已升级为useSyncExternalStore)
   - https://codesandbox.io/s/react-redux-usemutablesource-eyxoe
 - mut /7Star/MIT/202008/ts
   - https://github.com/snakeUni/mut
   - state management library based on Immer and useMutableSource
   - if useMutableSource is available then use useMutableSource otherwise use useSubscribe
 
-- https://github.com/nanxiaobei/flooks
-  - State Manager for React Hooks, Auto Optimized
-  - flooks realizes a gorgeous auto optimization, only actually used data will be injected into the component, re-render completely on demand
-  - zustand, need a selector; flooks, no selector needed
-
 - https://github.com/developit/unistore
   - A tiny 350b centralized state container with component bindings for Preact & React.
   - names and ideas from Redux-like libraries
 
-- constate /3.4kStar/MIT/202106/ts
+- constate /3.7kStar/MIT/202204/ts
   - https://github.com/diegohaz/constate
+  - https://codesandbox.io/s/github/diegohaz/constate/tree/master/examples/counter
   - 根据selector自动拆分成多个context，需要比较 创建多个context的消耗 和 使用useMemo的消耗
   - 使用selector自动创建的context是嵌套的，注意嵌套地狱
   - Write local state using React Hooks and lift it up to React Context only when needed with minimum effort.
+  - 优点：相比于unstated-next，不需要自己创建Provider
+  - 缺点：需要自己实现状态隔离
+  - [constate 原理解析](https://zhuanlan.zhihu.com/p/86630237)
+  - https://github.com/gouflv/constate-crud-example
+    - [基于 constate 的状态管理 - 实践](https://github.com/gouflv/blog/issues/2)
+    - [基于 constate 的状态管理](https://github.com/gouflv/blog/issues/5)
+
 - unstated-next /3.5kStar/MIT/202005/ts
   - https://github.com/jamiebuilds/unstated-next
   - 封装很少，无selector
@@ -233,6 +236,10 @@ modified: 2020-07-14T11:03:53.196Z
   - An immutable React state management library with a simple mutable API, memoized selectors, and structural sharing. 
   - Powered by Immer.
 
+- https://github.com/nanxiaobei/flooks
+  - State Manager for React Hooks, Auto Optimized
+  - flooks realizes a gorgeous auto optimization, only actually used data will be injected into the component, re-render completely on demand
+  - zustand, need a selector; flooks, no selector needed
 - https://github.com/jaredpalmer/mutik
   - A tiny (495B) immutable state management library based on Immer
   - Mutik uses the recently-merged useMutableSource hook internally.

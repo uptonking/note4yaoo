@@ -34,6 +34,8 @@ modified: 2022-03-14T19:55:47.081Z
 - https://github.com/archit-p/editable-react-table
   - React table built to resemble a database.
   - 未完成
+  - https://github.com/RafaelGB/obsidian-db-folder
+    - Obsidian Plugin to Allow Notion like database based on folders
 
 - https://github.com/linyows/notionate
   - React components that uses the Notion API to display the Notion's database and page.
@@ -45,6 +47,10 @@ modified: 2022-03-14T19:55:47.081Z
     - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - https://demo.rowy.io/table/allFieldTypes
     - 给出了常用字段类型的示例
+
+- https://github.com/mukulchugh/kanboard-notion-kanban-react
+  - https://notion-kanboard-mukul.netlify.app/
+  - 暂不支持视图切换
 # notion database like
 - focalboard /10.3kStar/MIT-like/202203/ts+go
   - https://github.com/mattermost/focalboard

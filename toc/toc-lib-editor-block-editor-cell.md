@@ -20,19 +20,29 @@ modified: 2022-06-08T11:03:26.472Z
   - Document Site for a Block Style Editor
   - A Playbook for Block Style Editor (BSE): Text Styling, Block Components, Misc Functions & Theme Switcher
 
-- https://github.com/codex-team/editor.js
+- editorjs /19.8kStar/Apache2/202206/ts
+  - https://github.com/codex-team/editor.js
   - https://editorjs.io/
-  - /15.4kStar/Apache2/202105/ts
   - A block-styled editor with clean JSON output
   - https://github.com/editor-js/awesome-editorjs
   - https://github.com/omegion/horul-editor
     - horul-editor is editorjs wrapper component with vue
+
+- gutenberg /8.1kStar/GPL.v2/202208/js
+  - https://github.com/WordPress/gutenberg
+  - https://wordpress.org/gutenberg/
+  - The Block Editor project for WordPress and beyond
 
 - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
   - /192Star/MIT/202003/ts
   - 依赖prosemirror、codemirror5、react-highlight.js、react-svg、styled-components
   - intuitive block based wysiwyg editor built with React and ProseMirror
+
+- https://github.com/spaced-all/MoEditor
+  - 一款基于 React 的、块级风格的、Markdown 友好的，富文本编辑器。
+  - floating-ui: 右键菜单，行内公式的编辑，Heading 的左侧提示，在 floating-ui 的支持下都可以很简单的实现
+  - Danfo.js: 提供了 js 上和 Python.pandas 类似的 DataFrame 类，用于表格支持
 
 - https://github.com/madebymany/sir-trevor-js
   - http://madebymany.github.io/sir-trevor-js/
@@ -58,7 +68,18 @@ modified: 2022-06-08T11:03:26.472Z
   - /archived--201504
   - a block-style editor written in ReactJS.
 
+- https://github.com/CedarXi/All-in-one
+  - http://all-in-one.qingzhu.co/
+  - https://all-in-one-kappa.vercel.app/
+  - /63Star/NALic/202004/js/vue/inactive
+  - All-in-one 是一个开源的模块化内容构建编辑器，基于Vue和element的打造
+  - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
+  - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
+  - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
 # editorjs-plugins
+- https://github.com/moveyourdigital/editorjs-blocks-react-renderer
+  - Renders EditorJS blocks to semantic React HTML5 components. Unnopinated and flexible.
+
 - https://github.com/yijian166/all-in-one-editorjs
 
 - https://github.com/affandes/katex-editorjs
@@ -101,3 +122,7 @@ modified: 2022-06-08T11:03:26.472Z
   - https://omnia-editor.vercel.app/
   - 依赖 svelte
   - A lightweight open source block style editor built for the modern web.
+# more-block-editor
+- https://github.com/hashintel/hash
+  - https://hash.dev/
+  - Data management, integration and modeling with blocks

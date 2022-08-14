@@ -7,7 +7,7 @@ modified: 2021-01-09T16:56:35.339Z
 
 # toc-work-portfolio-resume
 
-# markdown-resume
+# resume-markdown
 - https://github.com/youngyangyang04/Markdown-Resume-Template
   - BAT程序员自己的简历模板分享出来了。技术简历追求简单明了
 
@@ -34,6 +34,10 @@ modified: 2021-01-09T16:56:35.339Z
 - https://github.com/iRaul/creative-portfolios
 - https://github.com/resume/resume.github.com
 # portfolio-amazing
+- https://github.com/caglarturali/caglarturali.github.io
+  - https://turali.js.org/
+  - VS CodeAtom One Dark inspired developer portfolio app.
+
 - https://portfolio.zxh.io/
   - https://github.com/Renovamen/playground-macos
   - 依赖 @rooks/use-raf, framer-motion, react-markdown, react-redux, react-rnd
@@ -46,6 +50,52 @@ modified: 2021-01-09T16:56:35.339Z
     - https://news.ycombinator.com/item?id=27084995 (作者实现只用了10天时间)
   - 类似macOS风格的例子
     - https://github.com/puruvj/macos-web
+# portfolio-react
+- https://github.com/braydoncoyer/braydoncoyer.dev
+  - https://braydoncoyer.dev/
+  - My portfolio powered by Next.js, content sourced from Notion, styled with Tailwind CSS and deployed on Vercel
+
+- https://github.com/jakeherp/portfolio
+  - https://jacobherper.com/about
+  - my portfolio website, proudly built with Next.js, TypeScript, Tailwind. 
+  - The content is managed through GraphCMS and accessed via GraphQL endpoints using Apollo Client.
+
+- https://github.com/itsfaqih/fama
+  - https://itsfaqih.vercel.app/
+  - https://github.com/itsfaqih/fama/tree/v2
+  - TailwindCSS based personal branding template. Built with react and framer-motion
+
+- https://github.com/harshgoel05/another-portfolio
+  - https://harshgoel.me/
+  - An eye-catching developer Portfolio, Built on NextJS.
+
+- https://github.com/MA-Ahmad/myPortfolio
+  - https://mahmad.me/
+  - a portfolio application built by using Next.js, ChakraUi, Typescript and Dev.to api
+
+- https://github.com/BraydenTW/braydentw.io
+  - https://braydentw.io/
+  - My lovely portfolio built with React, NextJS, and TailwindCSS
+
+- https://github.com/MA-Ahmad/portfolio
+  - https://ma-ahmad.github.io/portfolio
+  - Typescript Reactjs Chakra UI Framer Motion react icons
+
+- https://github.com/avneesh0612/portfolio
+  - https://www.avneesh.tech/
+  - my portfolio which is also a template. 
+
+- https://github.com/jahirfiquitiva/jahir.dev
+  - https://jahir.dev/
+  -  Built using Next.js, TypeScript, MDX, contentlayer, Notion and Stitches styled components
+# portfolio-animation
+- https://github.com/philippetedajo/philippe.tedajo
+  - https://philippetedajo.vercel.app/
+  - A beautiful portofolio focus on simplicity, built with Next, TailwindCss
+
+- https://github.com/ayush013/folio
+  - https://www.ayushsingh.net/
+  - Interactive Portfolio with Next, GSAP, Tailwind, and React
 # portfolio
 - https://github.com/khang-nd/khang-nd.github.io
   - https://khang-nd.github.io/
