@@ -9,13 +9,17 @@ modified: 2021-06-27T19:16:51.396Z
 
 # guide
 
-- Features
+- features
   - A11y focused and ARIA compatible.
   - I18n support via lingui.
   - Collaborative editing with yjs.
   - 30+ extensions for creating fully customized editing experiences.
   - Zero configuration support for Server Side Rendering (SSR).
   - Cross platform and cross-framework, with an Angular solution coming later this year.
+# examples
+- https://github.com/bprofiro/editor
+  - https://remirror-editor-demo.vercel.app/
+  - A editor with the main features created using Remirror and with a special code block 
 # discuss
 - ## Typing in remirror can feel pretty slow compared to typing in e.g. a normal html textarea or in a wysiwyg editor such as tiptap.dev
 - https://github.com/remirror/remirror/issues/1366

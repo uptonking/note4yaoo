@@ -86,6 +86,12 @@ modified: 2022-05-15T18:45:27.570Z
   - 基于 slatejs 封装富文本编辑器
   - /202006
 
+- https://github.com/usunil0/slate-paged
+  - https://slate-paged-demo.vercel.app/
+  - 依赖slate.v0.59, nestjs， ts
+  - A paged editor rather than a continuous block. built using slate js.
+  - done: basic editor setup basic functionalities figure out the nodes length and paging
+
 - https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor
   - Sanity.io is the platform for structured content. 
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 

@@ -11,6 +11,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 # notion-like-workspace
 - logseq
+  - https://github.com/logseq/logseq
 
 - siyuan
   - https://github.com/siyuan-note/siyuan
@@ -54,6 +55,13 @@ modified: 2022-06-03T21:34:54.893Z
   - A personal knowledge base for networked thinking.
   - It is inspired by note-taking apps such as Notion, Obsidian, Typora, and Roam Research.
   - Notabase uses Supabase as the backend (for authentication, database, and storage), so you'll have to make a Supabase account. 
+
+- minddrop /3Star/NALic/202208/ts/提交多
+  - https://github.com/coniel/minddrop
+  - https://minddrop.app/
+  - 编辑器使用 slate.v0.76，zustand
+  - 依赖 radix-ui
+  - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
 - https://github.com/usememos/memos
   - https://usememos.com/
@@ -144,6 +152,10 @@ modified: 2022-06-03T21:34:54.893Z
 # workspace
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
+
+- https://github.com/mraht-apps/notie
+  - Notion-like workspace with offline mode and encryption
+  - Completely offline (online synchronisation by storing encrypted file in cloud folder possible)
 
 - https://github.com/hashintel/hash
   - https://hash.dev/

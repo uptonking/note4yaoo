@@ -29,6 +29,7 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/
+  - 支持跨block选择部分文字
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
@@ -83,6 +84,14 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fedeloterstein/open-notion
   - Notion clone using Next.js with Typescript
+
+- https://github.com/0xycvv/hexx
+  - https://hexx.vercel.app/
+  - notion like block editor in react
+# notion-sketch-drawing
+- https://github.com/MrFoxPro/bloki
+  - https://bloki.app/
+  - 支持在文档上放画板
 # notion-ecosystem
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
@@ -112,3 +121,9 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/gridaco/boring
   - A very boring text editor engine like notion. 
+
+- https://github.com/likhaCMS/likhaCMS
+  - https://likhacms.github.io/
+  - a Web App Builder with Built-in UI Building Blocks, 
+Drag and Drop Page Builder, Component Code Editor, Dev and Staging Environment
+https://github.com/likhaCMS/likhaCMS.github.io

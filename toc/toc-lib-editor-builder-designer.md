@@ -127,7 +127,7 @@ modified: 2020-11-17T13:38:19.107Z
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
   - H5可视化页面配置解决方案
-  - 依赖dva、umi、antd、redux、react-dnd、koa
+  - 依赖umi、antd、redux、react-dnd、koa、braft-editor
 
 - react-designer /1.7kStar/MIT/201906/js
   - https://github.com/react-designer/react-designer
