@@ -9,6 +9,8 @@ modified: 2021-05-13T03:12:23.257Z
 
 # guide
 
+- [搞不定移动端性能，全球爆火的 Notion 从 Hybrid 转向了 Native__202207](https://www.infoq.cn/article/kiiff9kot0jttljpl93u)
+
 - web版和移动版要不要基于react-native复用大量代码
   - web支持的标准非常丰富，移动版只是其中的子集，只使用子集没有充分利用web特性，资源利用不充分
   - css的子集和css-in-js的实现方案

@@ -9,6 +9,8 @@ modified: 2022-08-14T16:26:48.558Z
 
 > search: block-editor, notion-editor
 
+# guide
+- 想要分析notion的block架构设计，可以参考clone示例
 # block-style-editor
 - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/
@@ -31,9 +33,9 @@ modified: 2022-08-14T16:26:48.558Z
   - The Block Editor project for WordPress and beyond
   - 第三方的插件特别丰富
 
-- https://github.com/appleple/smartblock
+- smartblock /192Star/MIT/202003/ts
+  - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
-  - /192Star/MIT/202003/ts
   - 依赖prosemirror、codemirror5、react-highlight.js、react-svg、styled-components
   - intuitive block based wysiwyg editor built with React and ProseMirror
 

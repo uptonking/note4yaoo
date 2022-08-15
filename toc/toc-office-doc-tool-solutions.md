@@ -30,6 +30,7 @@ modified: 2021-07-21T18:07:43.056Z
   - who is using
     - https://shoelace.style/
     - https://imdone.io/docs/
+
 - https://github.com/callstack/component-docs
   - /120Star/MIT/202011/ts
   - Simple documentation for your React components.
@@ -43,6 +44,7 @@ modified: 2021-07-21T18:07:43.056Z
     - hot reload
     - supports tsx/jsx/md/mdx
     - Support including markdown from a file reference in markdown files
+
 - https://github.com/facebook/docusaurus
   - /19.5kStar/MIT/202010
   - Docusaurus 1 used to be a pure documentation site generator. 
@@ -71,6 +73,15 @@ modified: 2021-07-21T18:07:43.056Z
   - 基于react、Ant Design的静态文档生成器
   - 配置，代码模仿自VuePress
   - 依赖@hot-loader/react-dom、@loadable/babel-plugin、prism-react-renderer
+
+- helpkb /8Star/MIT/202208/js
+  - https://github.com/mrvautin/helpkb
+  - https://docs.helpkb.org/
+  - 后端依赖 express、sequelize、gray-matter
+  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
+  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
+  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
+
 - https://github.com/palantir/documentalist
   - /125Star/Apache2/202010
   - 依赖kss(a documentation syntax for CSS)、marked、typedoc

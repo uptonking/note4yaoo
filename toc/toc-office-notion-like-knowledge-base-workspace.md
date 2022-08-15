@@ -9,18 +9,16 @@ modified: 2022-06-03T21:34:54.893Z
 
 # guide
 
+- 想要分析notion的block架构设计，可以参考clone示例
 # notion-like-workspace
-- logseq
-  - https://github.com/logseq/logseq
-
-- siyuan
+- siyuan /6.6kStar/AGPL.v3/202208/ts/go
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
 
-- think
+- think /1kStar/MIT/202208/ts
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
   - 依赖 MySQL/NextJS/nestjs/tiptap
@@ -33,9 +31,28 @@ modified: 2022-06-03T21:34:54.893Z
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
+
+- logseq /15.9kStar/AGPL.v3/202208/clojure/ts
+  - https://github.com/logseq/logseq
+  - https://logseq.com/
+  - 依赖 clojure
+  - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
+  - A privacy-first, open-source platform for knowledge management and collaboration
+# vscode
+- foam /10.4kStar/MIT/202109/ts
+  - https://github.com/foambubble/foam
+  - https://foambubble.github.io/foam/
+  - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+  - core基于remark
+
+- memo /613Star/MIT/202208/ts
+  - https://github.com/svsool/memo
+  - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
+  - Inspired by Obsidian.md and RoamResearch.
 # github-wiki-confluence-like
-- MrDoc /1.4kStar/GPLv3/202107/js/python
+- MrDoc /2.1kStar/GPL.v3/202208/js/python
   - https://github.com/zmister2016/MrDoc
+  - https://mrdoc.pro/
   - http://mrdoc.zmister.com/project-20/
   - MrDoc是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
   - 后端: Python + Django
@@ -43,13 +60,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
   - 使用场景: 笔记、文档、手册、教程、私有化部署
 
-- foam /10.4kStar/MIT/202109/ts
-  - https://github.com/foambubble/foam
-  - https://foambubble.github.io/foam/
-  - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
-  - core基于remark
-
-- notabase  /434Star/AGPL.v3/202208/ts
+- notabase /434Star/AGPL.v3/202208/ts
   - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
@@ -63,19 +74,30 @@ modified: 2022-06-03T21:34:54.893Z
   - 依赖 radix-ui
   - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
-- https://github.com/usememos/memos
+- memos /260Star/NALic/202206/ts/go
+  - https://github.com/usememos/memos
   - https://usememos.com/
-  - /260Star/NALic/202206/ts/go
+  - 后端依赖 go
   - ui高度复刻flomo，中文开发者作品
   - self-hosted knowledge base that works with a SQLite db file.
   - Write in the plain textarea without any burden
+
+- https://github.com/infobsmi/bsmi-kb
+  - https://kb.bsmi.info/#
   - 后端依赖 go
+  - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
 
 - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
   - a unique non-linear notebook for capturing, organising and sharing complex information
+- https://github.com/tiddly-gittly/TidGi-Desktop
+  - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
+  - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
+  - 
 
-- https://github.com/zadam/trilium
+- trilium /17.1kStar/AGPL.v3/202208/js
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
@@ -124,10 +146,6 @@ modified: 2022-06-03T21:34:54.893Z
     - But this is difficult to do in practice.
     - My solution is something I call hierarchical note taking.
 
-- https://github.com/logseq/logseq
-  - 依赖clojure
-  - A local-first, non-linear, outliner notebook for organizing and sharing your personal knowledge base.
-  - A privacy-first, open-source platform for knowledge management and collaboration
 - https://github.com/andymatuschak/orbit
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
 
@@ -149,6 +167,22 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
   - 依赖vue、element-ui、vditor、egg、x-spreadsheet
+
+- helpkb /8Star/MIT/202208/js
+  - https://github.com/mrvautin/helpkb
+  - https://docs.helpkb.org/
+  - 后端依赖 express、sequelize、gray-matter
+  - 前端依赖 nextjs、react-bootstrap、react-markdown、sharp处理图片
+  - helpkb is an open-source Next.js knowledge base or FAQ which is super fast, easy to use and quick to develop.
+  - You need a Database for your data. You can use either postgres (recommended), mysql2, mariadb, sqlite3 or mssql.
+
+- openKB /636Star/MIT/202205/js/handlebars
+  - https://github.com/mrvautin/openKB
+  - https://openkb.markmoffat.com/
+  - openKB is a Markdown Knowledge base application (FAQ) built with Nodejs and ExpressJS. The application uses an embedded database (nedb) by default but can also use a MongoDB server by changing the config (see below)
+  - openKB is a search based Knowledge base (FAQ) backed by Lunr.js indexing 
+  - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
+  - openKB uses Markdown-it 
 # workspace
 - https://github.com/unigraph-dev/unigraph-dev
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
@@ -163,10 +197,20 @@ modified: 2022-06-03T21:34:54.893Z
   - The Block Protocol is an open-source standard and registry for sharing interactive blocks connected to structured data.
   - You can build your own blocks, embed them in a website, or allow your users to embed blocks directly within your application.
   - HASH is our forthcoming open-source, all-in-one workspace platform built around structured data and interactive blocks.
-# notion-like ecosystem
-- https://github.com/webclipper/web-clipper
-  - https://clipper.website/
-  - For Notion, OneNote, Bear, Yuque, Joplin。Clip anything to anywhere
+
+- affine /7.1kStar/MIT/202208/ts
+  - https://github.com/toeverything/AFFiNE
+  - https://affine.pro/
+  - Affine is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.
+
+- monotome /151Star/AGPL.v3/202008/js
+  - https://github.com/cblgh/monotome
+  - a personal knowledge base system. markdown markup, runs in the browser
+  - Monotome has support for the common `[[wiki]]` syntax, 
+  - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 # more
 - https://github.com/obsidian-tasks-group/obsidian-tasks
   - ask management for the Obsidian knowledge base.
+
+- https://github.com/Lalit2005/pagely /inactive
+  - Launch beautiful websites straight from your Notion workspace or from your GitHub repo

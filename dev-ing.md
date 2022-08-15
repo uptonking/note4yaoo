@@ -56,6 +56,17 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-08
 
+## 0815
+
+- js基础 数据类型、运算符operator、表达式、流程控制
+  - 新的数据类型，bigint
+  - typeof
+  - 流程控制：顺序、条件、循环
+  - if使用场景，切换主题
+    - https://codepen.io/uptonking/pen/xxWzYJq
+  - 循环使用场景，批量生成html元素
+    - https://codepen.io/uptonking/pen/LYdpPBW
+
 ## 0812
 
 - 百度网盘倍速播放的扩展

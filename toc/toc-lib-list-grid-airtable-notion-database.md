@@ -78,7 +78,9 @@ modified: 2022-03-14T19:55:47.081Z
     - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
     - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
 
-- https://github.com/zadam/trilium
+- trilium /17.1kStar/AGPL.v3/202208/js
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
   - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
   - [Notion like database request](https://github.com/zadam/trilium/issues/822)
@@ -86,7 +88,9 @@ modified: 2022-03-14T19:55:47.081Z
       - An extension for Trilium Notes that implements different ways of viewing collections of notes.
       - 样式过于简单
 
-- https://github.com/AppFlowy-IO/AppFlowy
+- AppFlowy /25.8kStar/AGPL.v3/202208/rust/dart
+  - https://github.com/AppFlowy-IO/AppFlowy
+  - https://www.appflowy.io/
   - [[FR] Databases](https://github.com/AppFlowy-IO/AppFlowy/issues/98)
   - AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. 
   - Built with Flutter and Rust.

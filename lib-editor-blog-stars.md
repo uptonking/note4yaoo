@@ -13,6 +13,8 @@ modified: 2021-06-02T17:19:46.638Z
   - https://github.com/cg0101/docs
   - https://cg0101.github.io/docs/
 
+- [现代编辑器技术原理](https://www.wenxi.tech/principles-of-modern-editor-technology)
+- [现代编辑器技术原理](https://www.wenxi.tech/principles-of-modern-editor-technology)
 # [Are CRDTs suitable for shared editing?__202008](https://blog.kevinjahns.de/are-crdts-suitable-for-shared-editing/)
 - CRDT don't require a central authority to resolve sync conflicts
   - They open up new possibilities to scale the backend infrastructure and are also well-suited as a data-model for distributed apps that don't require a server at all.
@@ -48,7 +50,6 @@ modified: 2021-06-02T17:19:46.638Z
 - Block-Style Editor has its roots in CMS(content management system), SSG (static site generator), GitHub& Markdown, MDX, JSX, and Low-code Site Building.
 - In a sense, a Block Style Editor is a Modular CMS for web document use case.
 # ref
-
 - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
 
 - [wangEditor - 开发web富文本编辑器的坑有哪些](https://juejin.cn/post/6951364054224994312)

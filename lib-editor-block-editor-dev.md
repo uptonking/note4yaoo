@@ -61,6 +61,9 @@ modified: 2022-06-08T11:14:10.668Z
   - Import or paste content
   - Copy content**
   - Real-Time Collaboration
+- Our conclusions
+  - The problem with those tests is that it is difficult to draw an accurate conclusion about the goodness of both models. Obsidian uses documents locally, so you don't have to sync notes. Roam Research is a very new and poorly optimized app. Standard Notes encrypts notes locally. In other words, it's not always apples to apples.
+  - So, we tried to push our doubt as far as we could, but we are still not sure of the answer Which of the two models do you think would offer better performance for our app and why?
 
 - ## We've been working a new protocol at @hashintel. It's called the block protocol
 - https://twitter.com/Mappletons/status/1488131234089873408

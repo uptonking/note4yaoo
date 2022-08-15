@@ -12,8 +12,11 @@ modified: 2021-07-11T09:59:06.221Z
 - usecase
   - 开源建站编辑器工具可参考gutenberg、wix
 # docs
-- https://github.com/WordPress/gutenberg
-  - The Block Editor project for WordPress
+- gutenberg /8.1kStar/GPL.v2/202208/js
+  - https://github.com/WordPress/gutenberg
+  - https://wordpress.org/gutenberg/
+  - The Block Editor project for WordPress and beyond
+  - 第三方的插件特别丰富
 
 - Gutenberg’s all-encompassing goal is a post- and page-building experience that makes it easy to create rich layouts. 
   - The block editor was the first product launched following this methodology for working with content.

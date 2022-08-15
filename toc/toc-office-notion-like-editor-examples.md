@@ -9,6 +9,32 @@ modified: 2022-06-03T22:07:23.308Z
 
 # guide
 
+- 想要分析notion的block架构设计，可以参考clone示例
+- block可以抽象成ast，结构设计可参考 gutenberg
+
+- notion-resources
+  - [The data model behind Notion's flexibility](https://www.notion.so/blog/data-model-behind-notion)
+  - [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
+    - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
+  - [Notion 编辑器原理分析](https://zhuanlan.zhihu.com/p/359122473)
+  - [探索 Notion 的实现](https://zhuanlan.zhihu.com/p/152964640)
+  - [Notion 的数据协同原理](https://juejin.cn/post/7070062834901598216)
+  - [Notion 编辑器是怎么实现的？](https://www.yuexun.me/blog/how-the-notion-editor-is-implemented/)
+# notion-block-structure
+- https://github.com/dragonman225/nast
+  - A block-based intermediate representation for document-like content.
+  - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
+  - `nast-util-from-notionapi`: Import data from a Notion page.
+  - `nast-util-to-react`: Render data to JSX. Element or HTML. (Preferred)
+
+- https://github.com/anconprotocol/parkydb
+  - block based, linkable and verifiable document database
+  - A data mesh database using Web 3.0 technology
+  - Note: Requires Node v18 and up for development
+
+- https://github.com/tyleregeto/autoblock-editor
+  - Very minimal multi-user block based document editor to play with CRDT in that context. 
+  - Uses automerge for CRDT implementation. Doesn't do anything useful.
 # notion-like-editor
 - https://github.com/sereneinserenade/notitap
   - https://sereneinserenade.github.io/notitap/
@@ -40,9 +66,10 @@ modified: 2022-06-03T22:07:23.308Z
   - http://cm-page-builder.herokuapp.com/
   - a modern rich text component based page builder inspired from Notion. 
 
-- https://github.com/ryuever/react-tapable-editor
+- https://github.com/ryuever/react-tapable-editor  /328Star/MIT/202010/ts
   - A pluginable, intuitive medium/notion like rich text editor
   - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
+
 - https://github.com/ericyip/hexx
   - https://hexx.vercel.app/
   - notion like block editor in react
@@ -55,9 +82,36 @@ modified: 2022-06-03T22:07:23.308Z
   - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
-# notion-clone-workspace
+
+- https://github.com/fouita/tailwind-editor
+  - notion like tailwindcss editor built with svelte
+# notion-clone-with-workspace
 - https://github.com/brenogcota/simple-notion-api-clone
   - a simple Notion API clone, made with Typescript, Express, Prisma ORM
+
+- https://github.com/Mabloq/mabloq-notion
+  - An implementation of the popular Workspace App: Notion.
+  - [Minimalist Notion Implementation: Part 1-Everything Is a Block](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
+
+- https://github.com/minwook-shin/notion-database
+  - https://notion-database.readthedocs.io/
+  - Notion API Database Python Implementation
+
+- https://github.com/dryadsoft/node-notion-database
+  - 只是 notion database api 使用示例
+- https://github.com/JPDesignTech/NotionAPI
+  - This project's main goal is to show off all the cool things you can do with the Official Notion API. 
+  - This project will use Nest.js as a framework to create a simple RESTful API whose endpoints will plug into Notion's API References
+
+- https://github.com/zhaowb/notion-params
+  - a helper to build Notion API params, parse markdown text into Notion API blocks, include a simple client support all APIs version
+  - 基于python
+
+- https://github.com/deve-sh/NoteItDown
+  - https://noteitdown.vercel.app/
+  - A Simple Yet Extensive Note Taking Workspace Application for an entire team. Inspired By Notion
+  - Thanks to Chakra UI for making styling so simple.
+  - A Simple Note Taking App For an Entire Team, pre-packaged with support for Google and GitHub logins with Firebase Auth, database as Firestore.
 
 - https://github.com/konstantinmuenster/notion-clone
   - https://notion-clone.kmuenster.com/
@@ -91,7 +145,7 @@ modified: 2022-06-03T22:07:23.308Z
 # notion-sketch-drawing
 - https://github.com/MrFoxPro/bloki
   - https://bloki.app/
-  - 支持在文档上放画板
+  - 支持在文档上放画板，ui设计友好
 # notion-ecosystem
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
@@ -111,6 +165,22 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/tugboatcoding/react-potion  /js
   - A Notion-like design system
+
+- https://github.com/nategadzhi/notoma
+  - https://nategadzhi.github.io/notoma/
+  - Use Notion as your blogging editor, with any static gen blog engine. Notoma converts Notion pages to Markdown files.
+
+- https://github.com/takux/notion-block-renderer
+  - This package is suitable for use with Reactjs or Nextjs. Notion blocks are rendered into React components. That component has a CSS class name corresponding to the block type.
+- https://github.com/ridafkih/notion-react
+  - Easily map Notion blocks to React components, completely customizable and type-safe
+
+- https://github.com/webclipper/web-clipper
+  - https://clipper.website/
+  - For Notion, OneNote, Bear, Yuque, Joplin。Clip anything to anywhere
+
+- https://github.com/tangly1024/NotionNext
+  - 一个使用 NextJS + Notion API 实现的，部署在 Vercel 上的静态博客系统。为Notion和所有创作者设计。
 # more-notion-like
 - https://anytype.io/
   - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.
@@ -127,3 +197,15 @@ modified: 2022-06-03T22:07:23.308Z
   - a Web App Builder with Built-in UI Building Blocks, 
 Drag and Drop Page Builder, Component Code Editor, Dev and Staging Environment
 https://github.com/likhaCMS/likhaCMS.github.io
+
+- https://github.com/bdryanovski/block-editor
+  - Experimental block-editor based on the idea of Notion Editor - build only with WebComponents
+
+- https://github.com/4teamwork/ftw.simplelayout
+  - SimpleLayout provides an intuitive way of adding and arranging the different elements of a page such as paragraphs, images, files and links using drag-and-drop functionality. 
+  - These elements are implemented as addable and easily arrangeable "blocks".
+
+- https://github.com/GSS-Cogs/dd-cms
+  - A data-driven content management system prototype, based on Plone/Volto and data blocks
+  - https://github.com/plone/volto
+    - React-based frontend for the Plone Content Management System
