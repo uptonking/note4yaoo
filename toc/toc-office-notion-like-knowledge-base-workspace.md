@@ -15,10 +15,13 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
+  - 思源笔记是一款本地优先的个人知识管理系统，支持完全离线使用，同时也支持端到端加密同步。
+    - 所有本地功能都是免费的，云端服务需要年付订阅。
+    - 不支持网页版，要使用桌面版或移动版
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
 
-- think /1kStar/MIT/202208/ts
+- think /1kStar/MIT/202208/ts/nestjs
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
   - 依赖 MySQL/NextJS/nestjs/tiptap
@@ -26,6 +29,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - outline /12.5kStar/BSD > BSL/202109/ts
   - https://github.com/outline/outline
+  - https://www.getoutline.com/
   - The fastest wiki and knowledge base for growing teams.
   - 依赖rich-markdown-editor、mobx-react、dnd-kit、dnd-kit、framer-motion、i18next、markdown-it、reakit、postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
   - 与slack集成很好
@@ -45,7 +49,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
   - core基于remark
 
-- memo /613Star/MIT/202208/ts
+- memo /613Star/MIT/202208/ts/inactive
   - https://github.com/svsool/memo
   - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
   - Inspired by Obsidian.md and RoamResearch.
@@ -74,6 +78,17 @@ modified: 2022-06-03T21:34:54.893Z
   - 依赖 radix-ui
   - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
+- trilium /17.1kStar/AGPL.v3/202208/js
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
+  - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
+  - a hierarchical note taking application with focus on building large personal knowledge bases. 
+  - Synchronization with self-hosted sync server
+  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
+    - Mac OS desktop build is available, but it is unsupported.
+    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
+  - [Notion like database](https://github.com/zadam/trilium/issues/822)
+
 - memos /260Star/NALic/202206/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/
@@ -85,6 +100,7 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/infobsmi/bsmi-kb
   - https://kb.bsmi.info/#
   - 后端依赖 go
+  - 样式过于简单
   - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
 
 - https://github.com/Jermolene/TiddlyWiki5
@@ -93,14 +109,6 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/tiddly-gittly/TidGi-Desktop
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
   - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
-  - 
-
-- trilium /17.1kStar/AGPL.v3/202208/js
-  - https://github.com/zadam/trilium
-  - https://github.com/zadam/trilium/wiki/
-  - a hierarchical note taking application with focus on building large personal knowledge bases. 
-  - 依赖 electron、express、jsdom、turndown、ckeditor、codemirror、fancytree、bootstrap
-  - [Notion like database](https://github.com/zadam/trilium/issues/822)
 
 - https://github.com/hedgedoc/hedgedoc /AGPLv3
   - https://docs.hedgedoc.org/setup/getting-started/
@@ -119,6 +127,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/documize/community
   - https://docs.documize.com/
+  - 依赖 go、js、handlebars、EmberJS
   - Modern Confluence alternative designed for internal & external docs, built with Golang + EmberJS
   - [Understanding Document Basics](https://docs.documize.com/s/WOzFU_MXigAB6sIH/user-guides/d/WOvEC_MXigAB6sE1/understanding-document-basics)
     - How Documize works: sections, revisions, attachments
@@ -136,7 +145,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/dendronhq/dendron
   - https://wiki.dendron.so/
-  - /AGPL
+  - /AGPL.v3/vscode
   - local-first, markdown-based, note-taking tool built on top of VSCode. 
   - Dendron finds the usable center between the two extremes by supporting backlinks of any two arbitrary notes while also maintaining a canonical hierarchy for every note. 
   - We do this through our hierarchal first approach to note taking that relies on the combination of hierarchies, schemas, and path based lookups.
@@ -203,7 +212,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://affine.pro/
   - Affine is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.
 
-- monotome /151Star/AGPL.v3/202008/js
+- monotome /151Star/AGPL.v3/202208/js
   - https://github.com/cblgh/monotome
   - a personal knowledge base system. markdown markup, runs in the browser
   - Monotome has support for the common `[[wiki]]` syntax, 

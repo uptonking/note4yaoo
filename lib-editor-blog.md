@@ -53,11 +53,18 @@ modified: 2021-05-13T04:44:39.320Z
 - 优秀的协作软件必然由三个核心引擎构建：渲染引擎，协同引擎以及数据引擎
 - 渲染引擎
   - 富文本编辑器
-  - 表格
-  - 图形编辑器
-  - bi
+  - 表格编辑器
+  - ppt/mind-map：图形编辑器
+  - bi：布局设计器 + 图标设计器
 - 协同引擎
   - 即时性、一致性、健壮性
+  - 协同引擎存在的目的，本质就是保持各个终端在展示同一个内容模型时，能够在单个操作消费到模型之后，模型保持一致
+  - 阶段1 - 客户端发送操作，
+    - 操作等待同步给Server(其他协作者) pendingCommmands
+    - 操作同步给Server（其他协作者） sendingCommands
+    - 操作已同步给Server（其他协作者） sentCommmands
+  - 阶段2 - 客户端模型消费操作
+    - 操作作用于Model之后，客户端的Model应当与服务端的Model保持一致
 - 数据引擎
   - Word - openxml的设计
   - Etherpad - 采用字符串 Z:1>6b|5+6b$Welcome to Etherpad!
@@ -79,6 +86,5 @@ modified: 2021-05-13T04:44:39.320Z
   - From a very high-level perspective, a rich text editor is comprised of two components:
   - A data model and the core logic to operate on it.
   - A view that renders the state of said data model and that handles the user interactions.
-
 
 - [Text Rendering Hates You](https://gankra.github.io/blah/text-hates-you/)

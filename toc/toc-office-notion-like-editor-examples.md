@@ -9,8 +9,14 @@ modified: 2022-06-03T22:07:23.308Z
 
 # guide
 
+- 编辑器功能检查
+  - 是否支持跨block选择部分文字
+  - 是否支持拖拽block修改顺序
+  - 支持协作
+
 - 想要分析notion的block架构设计，可以参考clone示例
 - block可以抽象成ast，结构设计可参考 gutenberg
+- 除了数据模型层、视图层的设计，还要考虑持久化保存和实时更新的实现
 
 - notion-resources
   - [The data model behind Notion's flexibility](https://www.notion.so/blog/data-model-behind-notion)
@@ -31,19 +37,26 @@ modified: 2022-06-03T22:07:23.308Z
   - block based, linkable and verifiable document database
   - A data mesh database using Web 3.0 technology
   - Note: Requires Node v18 and up for development
+  - 对数据的查询依赖 graphql.v15、graphql-compose-json
 
 - https://github.com/tyleregeto/autoblock-editor
   - Very minimal multi-user block based document editor to play with CRDT in that context. 
   - Uses automerge for CRDT implementation. Doesn't do anything useful.
+# notion-sketch-drawing
+- https://github.com/MrFoxPro/bloki
+  - https://bloki.app/
+  - 支持在文档上放画板，ui设计友好
 # notion-like-editor
 - https://github.com/sereneinserenade/notitap
   - https://sereneinserenade.github.io/notitap/
   - Notion like editor built on top of tiptap.
   - 块级拖拽是pro版，暂无预览体验
 
-- https://github.com/kiaksarg/edu-editor
+- https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js framework
+  - 支持跨block选择部分文字
+  - 不支持拖拽block修改顺序
   - 暂不支持块级拖拽
 
 - whim-notion-like /6Star/MIT/202108/ts
@@ -53,26 +66,38 @@ modified: 2022-06-03T22:07:23.308Z
   - Whim is currently undergoing a complete re-write for version 2.0, with an initial release planned for the end of August 2022. 
     - Version 2.0 will include a much improved API, detailed docs, and solid test coverage.
 
-- https://github.com/vincentdchan/blocky-editor
+- blocky-editor /150Star/MIT/202208/ts
+  - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/
   - 支持跨block选择部分文字
+  - 不支持拖拽block修改顺序
+  - 支持协作
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
 - https://github.com/Xheldon/NotionEditor  /202103/ts
-  - A Notion's editor implement based on ProseMirror
+  - A Notion's editor implement based on ProseMirror, just for feasibility studies.
+  - 不允许跨 block 选择部分文本内容
+  - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text
+  - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
+  - 使用了 React 构建界面的有: Slash
 
-- https://github.com/commutatus/cm-page-builder
+- cm-page-builder /26Star/ISC/202106/js/inactive/提交多
+  - https://github.com/commutatus/cm-page-builder
   - http://cm-page-builder.herokuapp.com/
   - a modern rich text component based page builder inspired from Notion. 
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序
 
 - https://github.com/ryuever/react-tapable-editor  /328Star/MIT/202010/ts
   - A pluginable, intuitive medium/notion like rich text editor
   - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
 
-- https://github.com/ericyip/hexx
+- https://github.com/ericyip/hexx /archived
   - https://hexx.vercel.app/
   - notion like block editor in react
+  - 不支持跨block选择部分文字
+  - 不支持拖拽block修改顺序
 
 - https://github.com/CedarXi/All-in-one
   - http://all-in-one.qingzhu.co/
@@ -91,12 +116,12 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/Mabloq/mabloq-notion
   - An implementation of the popular Workspace App: Notion.
+  - 依赖 nestjs、mongoose、passport、rxjs
   - [Minimalist Notion Implementation: Part 1-Everything Is a Block](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
 
 - https://github.com/minwook-shin/notion-database
   - https://notion-database.readthedocs.io/
   - Notion API Database Python Implementation
-
 - https://github.com/dryadsoft/node-notion-database
   - 只是 notion database api 使用示例
 - https://github.com/JPDesignTech/NotionAPI
@@ -109,6 +134,8 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/deve-sh/NoteItDown
   - https://noteitdown.vercel.app/
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序
   - A Simple Yet Extensive Note Taking Workspace Application for an entire team. Inspired By Notion
   - Thanks to Chakra UI for making styling so simple.
   - A Simple Note Taking App For an Entire Team, pre-packaged with support for Google and GitHub logins with Firebase Auth, database as Firestore.
@@ -116,6 +143,8 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/konstantinmuenster/notion-clone
   - https://notion-clone.kmuenster.com/
   - /2.3kStar/MIT/202106/js
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序
   - 前端依赖 next9、react-beautiful-dnd、react-contenteditable，未使用复杂编辑器
   - 后端依赖 express、jsonwebtoken、mongoose
   -  This clone tries to replicate some of the great note-taking features Notion has.
@@ -126,44 +155,41 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/tobi4120/notion-clone  /146Star/NALic/202203/js
   - https://notion-app-clone.herokuapp.com/
+  - 不支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - 整体还原度非常高，包括page-tree
   - This website allows users to create pages, add notes to those pages, add to-do's, link to other pages and more!
 
 - https://github.com/amjadbouhouch/notion-clone
   - https://notion-clone-react.netlify.app/
   - a front-end build with React and Tailwind CSS
+  - 不支持跨block选择部分文字
+  - 不支持拖拽block修改顺序
 
 - https://github.com/tramio/JUN22-NOTION
   - https://tramio.github.io/JUN22-NOTION/
   - building a Notion clone with React.js and Firebase
+  - 只实现了落地页，未实现编辑器
 
 - https://github.com/fedeloterstein/open-notion
   - Notion clone using Next.js with Typescript
-
-- https://github.com/0xycvv/hexx
-  - https://hexx.vercel.app/
-  - notion like block editor in react
-# notion-sketch-drawing
-- https://github.com/MrFoxPro/bloki
-  - https://bloki.app/
-  - 支持在文档上放画板，ui设计友好
 # notion-ecosystem
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
   - Fast and accurate React renderer for Notion.
   - react-notion-x is a fork of react-notion with better support for different types of Notion content (especially collections).
+  - When we want to retrieve the content of a Notion page, using the Notion API we will obtain a complex block structure
+  - This package solves that structure and takes care of rendering that response.
+
 - https://github.com/splitbee/react-notion /inactive
   - A fast React renderer for Notion pages
-
-- https://github.com/NotionX/react-notion-x
-  - When we want to retrieve the content of a Notion page, using the Notion API we will obtain a complex block structure(like this example). 
-  - This package solves that structure and takes care of rendering that response.
 
 - https://github.com/viqueen/notion-renderer
   - Simple and naive Notion react renderer, not as advanced as react-notion-x
 - https://github.com/piotrzaborow/notion-blocks-react-renderer
   - React Renderer for @notionhq/client blocks
 
-- https://github.com/tugboatcoding/react-potion  /js
+- https://github.com/tugboatcoding/react-potion  /js/inactive
   - A Notion-like design system
 
 - https://github.com/nategadzhi/notoma
@@ -194,9 +220,8 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/likhaCMS/likhaCMS
   - https://likhacms.github.io/
-  - a Web App Builder with Built-in UI Building Blocks, 
-Drag and Drop Page Builder, Component Code Editor, Dev and Staging Environment
-https://github.com/likhaCMS/likhaCMS.github.io
+  - a Web App Builder with Built-in UI Building Blocks, Drag and Drop Page Builder, Component Code Editor, Dev and Staging Environment
+  - https://github.com/likhaCMS/likhaCMS.github.io
 
 - https://github.com/bdryanovski/block-editor
   - Experimental block-editor based on the idea of Notion Editor - build only with WebComponents
@@ -209,3 +234,8 @@ https://github.com/likhaCMS/likhaCMS.github.io
   - A data-driven content management system prototype, based on Plone/Volto and data blocks
   - https://github.com/plone/volto
     - React-based frontend for the Plone Content Management System
+
+- https://github.com/jan9won/notion-page-tree/tree/main/packages/notion-page-tree
+  - readme里面的短横文本构成的表格特别多
+  - Pages inside non-page blocks are also fetched.
+  - Max request-depth can be set in your preference.
