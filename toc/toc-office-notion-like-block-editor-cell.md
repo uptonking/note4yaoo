@@ -11,12 +11,20 @@ modified: 2022-08-14T16:26:48.558Z
 
 # guide
 - 编辑器功能检查
-  - 是否支持跨block选择部分文字
-  - 是否支持拖拽block修改顺序
+  - 是否支持跨block选择部分文字 (重要)
+  - 是否支持拖拽block修改顺序 (重要)
   - 支持协作
 
 - 想要分析notion的block架构设计，可以参考clone示例
 # block-style-editor
+- plate /1.6kStar/MIT/202208/ts
+  - https://github.com/udecode/plate
+  - https://plate.udecode.io/
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - code-block自研实现，不依赖第三方代码编辑器
+  - A plugin framework for building rich text editors with slate.
+
 - blocky-editor /150Star/MIT/202208/ts
   - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/
@@ -44,7 +52,7 @@ modified: 2022-08-14T16:26:48.558Z
   - The Block Editor project for WordPress and beyond
   - 第三方的插件特别丰富
 
-- smartblock /192Star/MIT/202003/ts
+- smartblock /192Star/MIT/202003/ts/prosemirror
   - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
   - 依赖prosemirror、codemirror5、react-highlight.js、react-svg、styled-components
@@ -52,7 +60,8 @@ modified: 2022-08-14T16:26:48.558Z
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
-- https://github.com/spaced-all/MoEditor
+- MoEditor /2Star/NALic/202208/ts
+  - https://github.com/spaced-all/MoEditor
   - 一款基于 React 的、块级风格的、Markdown 友好的，富文本编辑器。
   - 跨block选区实现存在问题
   - 不支持拖拽block修改顺序
@@ -156,9 +165,6 @@ modified: 2022-08-14T16:26:48.558Z
 
 - https://github.com/LuceusXylian/BausteinEditor
   - Editor in Blocks: Import, Edit, Move, Delete, Add, Export
-
-- https://github.com/vikingcms/viking
-  - The main repository for Viking CMS. Currently in Development.
 
 - https://github.com/TorstenDittmann/omnia-editor
   - https://omnia-editor.vercel.app/

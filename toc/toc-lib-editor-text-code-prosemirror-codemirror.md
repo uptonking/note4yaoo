@@ -144,7 +144,7 @@ modified: 2021-07-08T12:37:23.562Z
 
 - https://gitlab.com/smoores/ode
   - A self-hosted collaborative rich text editor.
-  - It's based on Parse Platform, an open source, self-hosted "Complete Application Stack," and Prosemirror, a rich text editor toolkit.
+  - It's based on Parse Platform, an open source, self-hosted "Complete Application Stack, " and Prosemirror, a rich text editor toolkit.
 
 - https://github.com/li-yechao/paper-editor
   - Write everything in your life

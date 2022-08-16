@@ -17,8 +17,12 @@ modified: 2021-09-04T14:03:39.046Z
   - Use with React, React Native, or as standalone state container for any web app.
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作
 
-- https://github.com/jaredly/local-first
+- https://github.com/jaredly/local-first /191Star/202104/js/inactive
   - This aims to eventually be a fully-featured solution for managing, syncing, and storing application data, in a way that works offline, and collaboratively.
+  - Currently implemented
+    - a hybrid logical clock (blog post, code)
+    - a nested object CRDT (code)
+    - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.

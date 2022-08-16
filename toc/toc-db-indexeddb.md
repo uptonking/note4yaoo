@@ -9,7 +9,14 @@ modified: 2022-06-03T22:06:16.249Z
 
 > https://github.com/search?o=desc&q=indexeddb+stars%3A%3E0&s=updated&type=Repositories
 
+# guide
+- search
+  - big json store/update
+
 - 更适合block-editor的数据结构是否是 mongodb ？
+
+- 用indexeddb如何保存和更新层数很深的树型数据？
+  - 可以将tree打平为索引号 1.1, 1.2.1
 # popular
 - Dexie.js /8kStar/Apache2/202206/ts
   - https://github.com/dexie/Dexie.js
@@ -22,7 +29,7 @@ modified: 2022-06-03T22:06:16.249Z
     - Ambiguous error handling
   - Reactive (Since v3.2)
     - Query the db without boilerplate and let your components mirror the database in real time.
-- https://dexie.org/docs/Syncable/Dexie.Syncable.js
+- https://dexie.org/docs/Syncable/Dexie. Syncable.js
   - Enables two-way synchronization with a remote server of any kind.
   - https://github.com/nponiros/sync_server
     - A small node server which uses NeDB to write data to the disk. 
@@ -175,7 +182,7 @@ modified: 2022-06-03T22:06:16.249Z
   - BroadcastChannel to send data between different browser-tabs or nodejs-processes satellite + LeaderElection over the channels
 
 - https://github.com/piotr-cz/redux-persist-idb-storage
-  - Storage adapter to use IndexedDB via idb v3 with redux-persist ripped from idb v3 
+  - Storage adapter to use IndexedDB via idb v3 with `redux-persist` ripped from idb v3 
 
 - https://github.com/EmanHerawy/web3Drive
   - This project combines a browser-based frontend with web API crypto, 3box identity, 3box storage, and ifps storage to allow users to upload/share large files securely through end to end clientside based encryption

@@ -10,8 +10,8 @@ modified: 2022-06-03T22:07:23.308Z
 # guide
 
 - 编辑器功能检查
-  - 是否支持跨block选择部分文字
-  - 是否支持拖拽block修改顺序
+  - 是否支持跨block选择部分文字 (重要)
+  - 是否支持拖拽block修改顺序 (重要)
   - 支持协作
 
 - 想要分析notion的block架构设计，可以参考clone示例
@@ -26,27 +26,19 @@ modified: 2022-06-03T22:07:23.308Z
   - [探索 Notion 的实现](https://zhuanlan.zhihu.com/p/152964640)
   - [Notion 的数据协同原理](https://juejin.cn/post/7070062834901598216)
   - [Notion 编辑器是怎么实现的？](https://www.yuexun.me/blog/how-the-notion-editor-is-implemented/)
-# notion-block-structure
-- https://github.com/dragonman225/nast
-  - A block-based intermediate representation for document-like content.
-  - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
-  - `nast-util-from-notionapi`: Import data from a Notion page.
-  - `nast-util-to-react`: Render data to JSX. Element or HTML. (Preferred)
-
-- https://github.com/anconprotocol/parkydb
-  - block based, linkable and verifiable document database
-  - A data mesh database using Web 3.0 technology
-  - Note: Requires Node v18 and up for development
-  - 对数据的查询依赖 graphql.v15、graphql-compose-json
-
-- https://github.com/tyleregeto/autoblock-editor
-  - Very minimal multi-user block based document editor to play with CRDT in that context. 
-  - Uses automerge for CRDT implementation. Doesn't do anything useful.
 # notion-sketch-drawing
 - https://github.com/MrFoxPro/bloki
   - https://bloki.app/
   - 支持在文档上放画板，ui设计友好
 # notion-like-editor
+- plate /1.6kStar/MIT/202208/ts
+  - https://github.com/udecode/plate
+  - https://plate.udecode.io/
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - code-block自研实现，不依赖第三方代码编辑器
+  - A plugin framework for building rich text editors with slate.
+
 - https://github.com/sereneinserenade/notitap
   - https://sereneinserenade.github.io/notitap/
   - Notion like editor built on top of tiptap.
@@ -110,6 +102,22 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
+# notion-block-structure
+- https://github.com/dragonman225/nast
+  - A block-based intermediate representation for document-like content.
+  - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
+  - `nast-util-from-notionapi`: Import data from a Notion page.
+  - `nast-util-to-react`: Render data to JSX. Element or HTML. (Preferred)
+
+- https://github.com/anconprotocol/parkydb
+  - block based, linkable and verifiable document database
+  - A data mesh database using Web 3.0 technology
+  - Note: Requires Node v18 and up for development
+  - 对数据的查询依赖 graphql.v15、graphql-compose-json
+
+- https://github.com/tyleregeto/autoblock-editor
+  - Very minimal multi-user block based document editor to play with CRDT in that context. 
+  - Uses automerge for CRDT implementation. Doesn't do anything useful.
 # notion-clone-with-workspace
 - https://github.com/brenogcota/simple-notion-api-clone
   - a simple Notion API clone, made with Typescript, Express, Prisma ORM
@@ -207,6 +215,9 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/tangly1024/NotionNext
   - 一个使用 NextJS + Notion API 实现的，部署在 Vercel 上的静态博客系统。为Notion和所有创作者设计。
+
+- https://github.com/Lalit2005/pagely /inactive
+  - Launch beautiful websites straight from your Notion workspace or from your GitHub repo
 # more-notion-like
 - https://anytype.io/
   - Anytype is a next generation software that breaks down barriers between applications, **gives back privacy and data ownership to users**.

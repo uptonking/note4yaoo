@@ -32,6 +32,9 @@ modified: 2020-11-02T19:13:04.103Z
 # redux-utils
 - https://github.com/rt2zz/redux-persist
   - Persist and rehydrate a redux store.
+- https://github.com/piotr-cz/redux-persist-idb-storage
+  - Storage adapter to use IndexedDB via idb v3 with `redux-persist` ripped from idb v3
+
 - https://github.com/redux-observable/redux-observable
   - RxJS-based middleware for Redux. 
   - Compose and cancel async actions to create side effects and more.

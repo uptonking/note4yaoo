@@ -30,10 +30,15 @@ modified: 2020-10-22T10:03:50.526Z
     - v1.4.0..v1.5.1: These later releases have been published under AGPL-v3
     - The source code for newer versions of the app is unavailable
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
-- https://github.com/benrbray/noteworthy
+
+- noteworthy /166Star/AGPL.v3/202207/ts
+  - https://github.com/benrbray/noteworthy
+  - https://noteworthy.ink/
   - Markdown editor with bidirectional links and excellent math support
-  - 参考了prosemirror、zettlr、vscode、notable
   - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
+  - 参考了prosemirror、zettlr、vscode、notable
+  - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
+
 - https://github.com/vicjohnson1213/Medley
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
   - A tag-based note taking app using Markdown for formatting.

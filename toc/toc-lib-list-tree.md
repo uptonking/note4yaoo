@@ -60,6 +60,11 @@ modified: 2020-07-12T19:00:27.345Z
   - 使用场景类似滚动城市列表时能固定省名
   - A React component for efficiently rendering tree like structures with support for `position: sticky`. 
   - uses a similar API to react-virtualized.
+- react-arborist /1.6kStar/MIT/202207/ts
+  - https://github.com/brimdata/react-arborist
+  - https://react-arborist.netlify.app/
+  - A sortable, virtual, customizable tree component for React.
+  - 依赖 react-dnd, react-window
 
 - react-sortable-tree /MIT/3.3kStar/202005/js/inactive
   - https://github.com/frontend-collective/react-sortable-tree
@@ -103,9 +108,24 @@ modified: 2020-07-12T19:00:27.345Z
   - A modified version of @atlaskit/tree library.
   - Flexible tree rendering
   - Dynamic tree expansion with lazy loading
+# tree-data-structure
+- https://github.com/philipstanislaus/performant-array-to-tree
+  - Converts an array of items with ids and parent ids to a nested tree in a performant O(n) way. Runs in browsers and Node.js.
 
-Resources
+- https://github.com/mihneadb/node-directory-tree
+  - Creates a JavaScript object representing a directory tree.
 
+- https://github.com/DenQ/list-to-tree
+  - Convert list to tree
+
+- https://github.com/kwhitley/treeize
+  - Converts row data (in JSON/associative array format or flat array format) to object/tree structure based on simple column naming conventions.
+
+- https://github.com/arqex/freezer
+  - A tree data structure that emits events on updates, even if the modification is triggered by one of the leaves, making it easier to think in a reactive way.
+
+- https://github.com/joaonuno/tree-model-js
+  - Manipulate and traverse tree-like structures in javascript.
 # file-folder-directory-scan-watch
 - 文件编辑浏览的实现思路
   - edit > ~~save(内存或本地)~~ > render

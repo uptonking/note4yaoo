@@ -9,75 +9,29 @@ modified: 2021-07-20T02:15:25.917Z
 
 # guide
 
-- prosemirror-examples
-  - 方向：markdown、collab协作、data-grid、codeblock
+- prosemirror-futuristic
+  - 方向：collab、markdown、pivot-table、media/embed
   - 大部分的方案是以vanillajs为core，react为wrapper
+  - toys
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
-  - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
-- **vanillajs-first**
-  - tiptap/dante/wix, remirror, bangle, tui.editor.v3, emirror
+    - 尝试用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
+
+- 💡 vanillajs-first
+  - tiptap/dante/wix, bangle.dev, tui.editor.v3, emirror
   - guardian-prosemirror-typerighter/elements/invisibles/noting, stacks-editor(StackOverflow)
-  - milkdown(Typora), bangle.dev, pubpub-editor(202003)
+  - milkdown(Typora), pubpub-editor(202003)
   - start-editor, jcmnunes-bc-editor(md), zeditor
   - y-prosemirror, NotionEditor(toy)
-- **react-first**
-  - rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror(coko wax editor), xkeditor-next(r-m-e)
+
+- 💡 react-first
+  - remirror, rich-markdown-editor/keyboardnotes, @atlaskit/editor-core, wax-prosemirror(coko wax editor), xkeditor-next(r-m-e)
   - curvenote-editor(redux), czi-prosemirror(201906), licit(word), perry-white(newspaper)
   - Aditor, smartblock(202003), xen-editor(vanillajs为主，代码不多)，nib-edit(高级功能未开源如comment/collab)
-- more-editor
+
+- more-prosemirror
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
-# extensions-remark-parse
-- milkdown /454Star/MIT/202106/ts
-  - https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
-  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
-- rino /20Star/GPLv3/202201/ts
-  - https://github.com/ocavue/rino
-  - https://rino.app/
-  - 依赖 remirror、codemirror6
-  - A better way to write Markdown
-
-- https://github.com/marionebl/prosemirror  /mdx
-  -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView
-  - A personal experiment libraries over prosemirror project
-  - prosemirror + remark demos
-  - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
-    - This library is a full React implementation of the official prosemirror-view package. 
-    - Aims to implement a simple React Component that uses ProseMirror Data Model to render the document and bind the right events to synchronize the user selection and created ProseMirror transaction based on user inputs.
-
-- https://github.com/Novartis/mdx-utils  /mdx
-  - 实现了将mdx ast转换成PMNode，视图层仍然使用prosemirror-view
-  - This package contains utilities for working with MDX syntax.
-  - Parses an MDX document and its frontmatter into an AST.
-  - Create a custom Prosemirror schema. 
-    - This extends the Prosemirror Markdown schema with your custom elements, allowing its AST to represent your MDX document.
-  - transforms an MDX syntax tree into a Prosemirror syntax tree. 
-    - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
-
-- https://github.com/bytedance/syllepsis
-  - https://bytedance.github.io/syllepsis/#/
-  - rich text editor compatible with mainstream modern browsers.
-  - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins
-
-- https://github.com/dxos/editor 
-  - /AGPLv3/202101/js
-  - Collaborative editor
-  - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
-- https://github.com/benrbray/noteworthy
-  - Markdown editor with bidirectional links and excellent math support
-  - 参考了prosemirror、zettlr、vscode、notable
-  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
-
-- https://github.com/rexxars/react-prosemirror-document
-  - Render a ProseMirror document in JSON-format using React
-  - 不使用prosemirror-view，直接转换PMNode然后用react渲染文档，实现过于简单
-- https://github.com/ryaninvents/prosemirror-doc-tpl
-  - jsx转PMNode，实现很简单
-  - provides a concise way to create Prosemirror documents using a JSX-like syntax, for testing or content generation.
-# prosemirror-examples-stars
+# prosemirror-editor-app-stars
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
@@ -86,11 +40,11 @@ modified: 2021-07-20T02:15:25.917Z
   - 提供了针对image/file的图文混排工具
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
-- https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
-  - copy the approach by Atlassian editor_v20201205
-  - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
+    - copy the approach by Atlassian editor_v20201205
+    - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
 
-- bangle /527Star/MIT/202208/ts
+- bangle-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
   - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
@@ -99,7 +53,7 @@ modified: 2021-07-20T02:15:25.917Z
   - https://bangle.io/
   - A web only WYSIWYG note taking app that saves notes locally in markdown format
 
-- wax-prosemirror /MIT
+- wax-prosemirror /9Star/MIT/202208/js
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - http://wax-demo.coko.foundation/
   - https://waxjs.net/docs/wax/
@@ -110,10 +64,11 @@ modified: 2021-07-20T02:15:25.917Z
   - 依赖注入使用了很多class
   - 大量使用react组件
 
-- tui.editor /11.8kStar/MIT/202009/popular
+- tui.editor.v3 /11.8kStar/MIT/202009/popular
   - https://github.com/nhn/tui.editor
   - http://ui.toast.com/tui-editor
-  - core只依赖 codemirror5，另外提供了react/vue-editor，v3新版本迁移到了prosemirror
+  - 👀 v3新版本迁移到了prosemirror
+  - core只依赖 codemirror5，另外提供了react/vue-editor
   - 全都是vanillajs，react的封装很薄，只有3文件
   - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
   - 代码复杂度高
@@ -123,14 +78,26 @@ modified: 2021-07-20T02:15:25.917Z
   - GFM Standard + Chart & UML Extensible.
   - 编辑器支持：chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
 
-- https://github.com/wenerme/wode
-  - https://wode.vercel.app/
-  - TipTap based Google Doc
-  - google采用canval好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
+- syllepsis /187Star/MIT/202208/ts/字节
+  - https://github.com/bytedance/syllepsis
+  - https://bytedance.github.io/syllepsis/#/
+  - rich text editor compatible with mainstream modern browsers.
+  - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins
 
-- react-tinacms-editor
-  - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
-  - 基于ts
+- gitlab editor /js/vue2/tiptap.v2
+  - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
+  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
+    - implementing support for all of md flavors is an unnecessary cost.
+    - Solution 1: Traceability or file diffs
+    - Solution 2: Relying on the Markdown preview endpoint
+
+- noteworthy /166Star/AGPL.v3/202207/ts
+  - https://github.com/benrbray/noteworthy
+  - https://noteworthy.ink/
+  - Markdown editor with bidirectional links and excellent math support
+  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
+  - 参考了prosemirror、zettlr、vscode、notable
+    - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
 
 - taleweaver(织书) /71Star/MIT/202007/ts
   - https://github.com/yuzhenmi/taleweaver
@@ -162,6 +129,11 @@ modified: 2021-07-20T02:15:25.917Z
   - Reprose’s functionality is contained in features. 
   - A feature can provide schema aspects (nodes, marks), and authoring aspects (key bindings, menu items, ProseMirror plugins).
 
+- https://github.com/wenerme/wode
+  - https://wode.vercel.app/
+  - TipTap based Google Doc
+  - google采用canval好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
+
 - https://bitbucket.org/jstleger/prosemirror-composer
   - A useful way to keep complex prosemirror projects tidy, maintainable and testable.
   - complex Prosemirror project: [how we structured our code](https://discuss.prosemirror.net/t/prosemirror-composer-wip/3887)
@@ -176,14 +148,45 @@ modified: 2021-07-20T02:15:25.917Z
 - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
+# prosemirror-markdown-remark
+- milkdown /454Star/MIT/202106/ts
+  - https://github.com/Saul-Mirone/milkdown
+  - https://saul-mirone.github.io/milkdown/
+  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
 
-- gitlab editor /js/vue/tiptap
-  - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
-  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
-    - implementing support for all of md flavors is an unnecessary cost.
-    - Solution 1: Traceability or file diffs
-    - Solution 2: Relying on the Markdown preview endpoint
-# prosemirror-examples-repos
+- rino /20Star/GPLv3/202201/ts
+  - https://github.com/ocavue/rino
+  - https://rino.app/
+  - 依赖 remirror、codemirror6
+  - A better way to write Markdown
+
+- https://github.com/marionebl/prosemirror  /mdx
+  -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView
+  - A personal experiment libraries over prosemirror project
+  - prosemirror + remark demos
+  - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
+    - This library is a full React implementation of the official prosemirror-view package. 
+    - Aims to implement a simple React Component that uses ProseMirror Data Model to render the document and bind the right events to synchronize the user selection and created ProseMirror transaction based on user inputs.
+
+- https://github.com/Novartis/mdx-utils  /mdx
+  - 实现了将mdx ast转换成PMNode，视图层仍然使用prosemirror-view
+  - This package contains utilities for working with MDX syntax.
+  - Parses an MDX document and its frontmatter into an AST.
+  - Create a custom Prosemirror schema. 
+    - This extends the Prosemirror Markdown schema with your custom elements, allowing its AST to represent your MDX document.
+  - transforms an MDX syntax tree into a Prosemirror syntax tree. 
+    - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
+
+- https://github.com/rexxars/react-prosemirror-document
+  - Render a ProseMirror document in JSON-format using React
+  - 不使用prosemirror-view，直接转换PMNode然后用react渲染文档，实现过于简单
+
+- https://github.com/ryaninvents/prosemirror-doc-tpl
+  - jsx转PMNode，实现很简单
+  - provides a concise way to create Prosemirror documents using a JSX-like syntax, for testing or content generation.
+# prosemirror-editor-more
 - https://github.com/YacheLee/Aditor
   - A React component made by ProseMirror
   - nodes和marks的自定义渲染执行发生在pm-plugin的new Plugin()过程中，没有使用NodeView
@@ -192,6 +195,15 @@ modified: 2021-07-20T02:15:25.917Z
   - A React renderless rich text editor component.
   - 只依赖prosemirror、react
   - 没有提供使用示例
+
+- react-tinacms-editor
+  - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
+  - 基于ts
+
+- https://github.com/dxos/editor 
+  - /AGPLv3/202101/js
+  - Collaborative editor
+  - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
 
 - https://github.com/d4rkr00t/prosemirror-dev-tools
   - Developer Tools for ProseMirror
@@ -230,3 +242,4 @@ modified: 2021-07-20T02:15:25.917Z
 
 - https://github.com/lukesmurray/prosemirror-async-query
   - A simple declarative API for using promises in prosemirror plugin state.
+# prosemirror-examples-apps
