@@ -56,6 +56,15 @@ console.log(';; r1-user-spaces ', pathname, user, userSpaces, currentSpaceId);
   - search notion like block editor for recursive rendering
 # dev-08
 
+## 0818
+
+- RESTFul 架构下的两个缺点：
+  - 在一个 RESTful 架构下，因为后端开发人员定义在各个 URL 的资源上返回的数据，而不是前端开发人员来提出数据需求，使得按需获取数据会非常困难。经常前端需要请求一个资源中所有的信息，即便只需要其中的一部分数据。这个问题被称之为过度获取（overfetching）。
+  - 最恶劣的场景下，一个客户端应用不得不请求多个而不是一个资源，这通常会发起多个网络请求。这不仅会造成过度获取的问题，也会造成瀑布式的网络请求（waterfall network requests）。
+- GraphQL最初就是为了解决上述两个问题设计的
+  - GraphQL schema提供了一个所有可用数据检索的源头，通常会在服务端定义，客户端可以基于 schema 读取（query）和写入（mutation）数据
+  - 但是呢，因为GraphQL获取数据是动态的，随机的，所以肯定会有人对数据的缓存提出较大的疑问
+
 ## 0815
 
 - js基础 数据类型、运算符operator、表达式、流程控制

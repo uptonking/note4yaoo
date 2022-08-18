@@ -59,6 +59,11 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/iamogbz/react-ducks
   - Implement ducks in React following the redux pattern but using React Context.
   - Uses `immer` to wrap reducers when creating, ensuring atomic state mutations.
+
+- https://github.com/reduxjs/redux-mock-store
+  - A mock store for testing Redux async action creators and middleware. T
+  - this library is designed to test the action-related logic, not the reducer-related one. 
+  - In other words, it does not update the Redux store. 
 # redux-saas-crud
 - https://github.com/Dbuggerx/react-pokeapi
   - https://dbuggerx.github.io/react-pokeapi

@@ -71,6 +71,13 @@ modified: 2022-05-15T18:45:27.570Z
   - 支持只读模式
   - 代码量不大，思路清晰
 
+- editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
+  - https://github.com/editablejs/editable
+  - https://editor.aomao.com/
+  - 一个实验性的富文本编辑器框架，希望通过自绘光标来替代原生 contenteditable 属性，提供更丰富、稳定的编辑能力。
+  - 使用slatejs数据模型，借助 react 使用自绘光标的模式渲染，不再依赖 contenteditable 属性
+  - 主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确，所以需要这个工具包来解决这个问题。
+
 - hero-editor /10Star/MIT/202205/js/代码少
   - https://github.com/Thinkei/hero-editor
   - http://hero-editor.surge.sh/
@@ -92,20 +99,25 @@ modified: 2022-05-15T18:45:27.570Z
   - http://full-slate-editor-example.vercel.app/
   - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment
 
-- https://github.com/eea/volto-slate/tree/develop
-  - /23Star/MIT/202203/js
-  - https://6.demo.plone.org/
-  - An alternative text editor for Volto, capable of completely replacing the default richtext editor
-  - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
-  - 样式陈旧，编辑器和业务代码有联系
-  - repos
-    - https://github.com/eea/volto-slate-metadata-mentions
-    - https://github.com/eea/volto-slate-footnote
-    - https://github.com/plone/volto
+- material-slate /20Star/MIT/202111/js/inactive
+  - https://github.com/unicef/material-slate
+  - https://unicef.github.io/material-slate/
+  - 依赖slate.v0.57、material-ui.v4
+  - Rich text editor based on Slate for Material UI (React)
+  - 实现了简单的评论列表、脚注序列
 
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 # slate-based-editors
+- boatproject-editor /1Star/MIT/202208/ts/plate/提交多
+  - https://github.com/boatproject/editor
+  - 依赖 plate、slate、styled-components
+  - Rich text editor component for React. Built with Plate and MUI
+
+- https://github.com/webkom/lego-editor /ts
+  - A React rich text editor written in TS with Slate.js for lego-webapp
+  - 代码量少，适合入门，支持上传图片
+
 - @tinacms/toolkit
   - https://github.com/tinacms/tinacms/blob/main/packages/%40tinacms/toolkit
   - 依赖 @udecode/plate、headlessui、floating-ui
@@ -135,6 +147,21 @@ modified: 2022-05-15T18:45:27.570Z
   - A paged editor rather than a continuous block. built using slate js.
   - done: basic editor setup basic functionalities figure out the nodes length and paging
 
+- volto-slate /23Star/MIT/202203/js/依赖后端
+  - https://github.com/eea/volto-slate
+  - https://6.demo.plone.org/
+  - An alternative text editor for Volto, capable of completely replacing the default richtext editor
+  - Some of the main reasons that drove us to create volto-slate instead of enhancing Volto's draftjs implementation
+  - 样式陈旧，编辑器和业务代码有联系
+  - repos
+    - https://github.com/plone/volto
+      - React-based frontend for the Plone Content Management System
+    - https://github.com/plone/Products.CMFPlone
+      - Plone is a mature, secure and user-friendly Content Management System (CMS).
+      - 后端基于python实现
+    - https://github.com/eea/volto-slate-metadata-mentions
+    - https://github.com/eea/volto-slate-footnote
+
 - https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor
   - Sanity.io is the platform for structured content. 
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
@@ -155,9 +182,6 @@ modified: 2022-05-15T18:45:27.570Z
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
-
-- https://github.com/webkom/lego-editor
-  - A React rich text editor written in TS with Slate.js for lego-webapp
 
 - https://github.com/contentful/field-editors/tree/master/packages/rich-text
   - https://contentful-field-editors.netlify.app/rich-text
@@ -240,7 +264,10 @@ modified: 2022-05-15T18:45:27.570Z
   - /201910/js/v0.44
   - Forked from the slate-edit-table implementation, allowing for creation of tables with nested content
   - https://github.com/George-A-Payne/slate-tables
-    - Forked from slate-deep-tables 
+    - Forked from slate-deep-tables
+
+- https://github.com/shrutikachawla/slateTables /js
+  - 依赖material-ui.v4、antd
 
 - https://github.com/sodenn/react-fluent-edit
   - https://react-fluent-edit.vercel.app/
@@ -250,7 +277,10 @@ modified: 2022-05-15T18:45:27.570Z
   - Slate plugin manager.
 
 - https://github.com/mwood23/slate-test-utils
-  - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! Write user centric integration tests with ease
+  - A toolkit to test Slate rich text editors with Jest, React Testing Library, and hyperscript! 
+  - There's so many user input mechanisms, edge cases, selection, state, normalization, and more to keep in mind when developing.
+  - It's an abstraction that uses hyperscript to generate editor states that can be tested in a JSDOM environment with a bit of black magic.
+  - It's well documented that JSDOM does not support `contenteditable`
 
 - https://github.com/lukesmurray/use-slate-with-extensions
   - https://use-slate-with-extensions.netlify.app/
@@ -260,8 +290,27 @@ modified: 2022-05-15T18:45:27.570Z
   - A Slate plugin that gives you full power on the last word your user typed.
   - This package is compatible with <= slate@0.47
 
-- https://github.com/palerdot/react-slite
+- https://github.com/palerdot/react-slite /代码过于简单
   - This react component provides a slack like rich text editing experience powered by slate.js
+
+- https://github.com/rockettomatooo/slate-react-presentation
+  - a small package that lets you render a slate.js document without the overhead of the actual editor.
+# slate-examples
+- https://github.com/inthelamp/book-reviewer
+  - a learning project to obtain knowledge and skills about the MERN stack
+  - Redux, Redux Thunk, axios, Slate, Lodash
+  - Sign-in with JWT token
+
+- https://github.com/wwsalmon/postulate
+  - http://postulate.us/
+  - Postulate is an all-in-one tool for collecting and publishing your knowledge.
+  - Built on Next.js and MongoDB.
+
+- https://github.com/madmaxmehdi44/platforms-slate-supabase
+  - Build a blogging platform based on Slate.js, Supabase and Vercel.
+  - Skip the PlanetScale installation and instead create a database on Supabase
+  - [Platforms Starter Kit: a template for site builders, multi-tenant platforms, and low-code tools.](https://demo.vercel.pub/platforms-starter-kit)
+  - [How to Build a Multi-Tenant App with Custom Domains Using Next.js](https://vercel.com/guides/nextjs-multi-tenant-application)
 # slate-collab
 - https://github.com/solidoc/slate-ot
   - Operation Transformations for slate 0.5x.
@@ -276,10 +325,6 @@ modified: 2022-05-15T18:45:27.570Z
   - https://github.com/humandx/slate-automerge
   - A example of a collaborative editor using Slate and Automerge
 # more-slate
-- https://github.com/unicef/material-slate /202111
-  - https://unicef.github.io/material-slate/
-  - Rich text editor based on Slate for Material UI (React)
-
 - https://github.com/tiddly-gittly/slate-write
   - A WYSIWYG editor for TiddlyWiki. (WIP)
   - 一个用于 太微TiddlyWiki 的所见即所得编辑器。 

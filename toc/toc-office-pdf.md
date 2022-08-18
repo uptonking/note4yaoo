@@ -7,23 +7,25 @@ modified: 2021-01-04T17:26:43.784Z
 
 # toc-office-pdf
 
-
 # guide
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
-
 - pdf.js /32kStar/Apache2/202009
   - https://github.com/mozilla/pdf.js
   - https://mozilla.github.io/pdf.js/
   - Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.
 
-
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
+# office
+- databyss /39Star/AGPL.v3/202208/js
+  - https://github.com/databyss-org/databyss
+  - https://databyss.org/
+  - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
+  - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
 # pdf4j
-
 - OpenPDF /1.7kStar/LGPLv2||MPLv2/202009
   - https://github.com/LibrePDF/OpenPDF
   - OpenPDF is the LGPL/MPL open source successor of iText

@@ -10,7 +10,7 @@ modified: 2021-07-20T02:15:25.917Z
 # guide
 
 - prosemirror-futuristic
-  - 方向：collab、markdown、pivot-table、media/embed
+  - 方向：collab、markdown、pivot-table、math/formula、media/embed
   - 大部分的方案是以vanillajs为core，react为wrapper
   - toys
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
@@ -31,7 +31,7 @@ modified: 2021-07-20T02:15:25.917Z
 - more-prosemirror
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
-# prosemirror-editor-app-stars
+# prosemirror-popular
 - @atlaskit/editor-core /Apache2/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
@@ -148,45 +148,7 @@ modified: 2021-07-20T02:15:25.917Z
 - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
-# prosemirror-markdown-remark
-- milkdown /454Star/MIT/202106/ts
-  - https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
-  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
-
-- rino /20Star/GPLv3/202201/ts
-  - https://github.com/ocavue/rino
-  - https://rino.app/
-  - 依赖 remirror、codemirror6
-  - A better way to write Markdown
-
-- https://github.com/marionebl/prosemirror  /mdx
-  -基于react重新实现了部分prosemirror-view的功能，视图层用了pm-EditorState但没用pm-EditorView
-  - A personal experiment libraries over prosemirror project
-  - prosemirror + remark demos
-  - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
-    - This library is a full React implementation of the official prosemirror-view package. 
-    - Aims to implement a simple React Component that uses ProseMirror Data Model to render the document and bind the right events to synchronize the user selection and created ProseMirror transaction based on user inputs.
-
-- https://github.com/Novartis/mdx-utils  /mdx
-  - 实现了将mdx ast转换成PMNode，视图层仍然使用prosemirror-view
-  - This package contains utilities for working with MDX syntax.
-  - Parses an MDX document and its frontmatter into an AST.
-  - Create a custom Prosemirror schema. 
-    - This extends the Prosemirror Markdown schema with your custom elements, allowing its AST to represent your MDX document.
-  - transforms an MDX syntax tree into a Prosemirror syntax tree. 
-    - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
-
-- https://github.com/rexxars/react-prosemirror-document
-  - Render a ProseMirror document in JSON-format using React
-  - 不使用prosemirror-view，直接转换PMNode然后用react渲染文档，实现过于简单
-
-- https://github.com/ryaninvents/prosemirror-doc-tpl
-  - jsx转PMNode，实现很简单
-  - provides a concise way to create Prosemirror documents using a JSX-like syntax, for testing or content generation.
-# prosemirror-editor-more
+# prosemirror-editor-collection
 - https://github.com/YacheLee/Aditor
   - A React component made by ProseMirror
   - nodes和marks的自定义渲染执行发生在pm-plugin的new Plugin()过程中，没有使用NodeView
@@ -242,4 +204,3 @@ modified: 2021-07-20T02:15:25.917Z
 
 - https://github.com/lukesmurray/prosemirror-async-query
   - A simple declarative API for using promises in prosemirror plugin state.
-# prosemirror-examples-apps
