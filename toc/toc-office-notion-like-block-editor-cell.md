@@ -52,7 +52,7 @@ modified: 2022-08-14T16:26:48.558Z
   - The Block Editor project for WordPress and beyond
   - 第三方的插件特别丰富
 
-- smartblock /192Star/MIT/202003/ts/prosemirror
+- smartblock /249Star/MIT/202003/ts/inactive/prosemirror
   - https://github.com/appleple/smartblock
   - https://appleple.github.io/smartblock/
   - 依赖prosemirror、codemirror5、react-highlight.js、react-svg、styled-components

@@ -67,7 +67,8 @@ modified: 2022-06-03T22:07:23.308Z
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
-- https://github.com/Xheldon/NotionEditor  /202103/ts
+- NotionEditor /30Star/GPL.v2/202103/ts/inactive
+  - https://github.com/Xheldon/NotionEditor
   - A Notion's editor implement based on ProseMirror, just for feasibility studies.
   - 不允许跨 block 选择部分文本内容
   - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text

@@ -33,6 +33,8 @@ modified: 2021-01-13T19:30:59.508Z
     - Excalidraw stores everything into a giant variable "AppState" and whenever it changes, we re-draw the canvas and optionally the UI if needs be.
     - We don't use `requestAnimationFrame`, we respond to DOM events directly. 
     - History is implemented pushing `JSON.stringify(appState)` to an array. It's pretty memory heavy, we need to optimize this at some point! 
+  - https://github.com/UreekaBiz/svg-poc
+    - An Excalidraw-like SVG Proof-of-Concept
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz

@@ -24,22 +24,26 @@ modified: 2021-09-04T14:03:39.046Z
     - a nested object CRDT (code)
     - a rich-text CRDT (code, example integration with quill, visualization of the data structure)
 
-- https://github.com/ccorcos/tuple-database
-  - The local-first, "end-user database" database.
+- tuple-database /200Star/NALic/202208/ts
+  - https://github.com/ccorcos/tuple-database
+  - The architecture of this database draws inspiration from a bunch of different places (although, primarily from FoundationDb).
+  - 👉🏻 The local-first, "end-user database" database.
     - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.
     - As a constraint, this means that I'm interested in building an embedded database, like SQLite or LevelDb, that runs in process and is intended to be single tenant. 
-  - All queries are reactive.
+  - 👉🏻 All queries are reactive.
     - Polished applications these days require realtime reactivity.
     - And it's not just for collaboration — reactivity necessary when a user has multiple windows or tabs showing the same data.
     - Many systems have record-level or table-level reactivity, but I want all queries to be reactive. I'm tired of having to engineer custom solutions on top of databases with brittle logic where a developer might forget to emit an update event.
-  - Schemaless — schemas are enforced by the application, not the database.
+  - 👉🏻 Schemaless — schemas are enforced by the application, not the database.
     - It took me some time to realize the the value of maintaining schemas in the application rather than the database. 
-  - Asynchronous or Synchronous, Persisted or In-Memory Storage
+  - 👉🏻 Asynchronous or Synchronous, Persisted or In-Memory Storage
     - I want to be able to persist data. And most persistence layers are asynchronous: LevelDb or even a cloud database. But even when persistence is synchronous, like SQLite, you might have to asynchronously cross a process boundary, such as an Electron window interacting with a database on the main process.
     - I want to use a synchronous in-memory database for frontend state management 
     - Works with synchronous and asynchronous storage including SQLite or LevelDb.
   - Transactional read/writes written in TypeScript.
   - Directly read/write indexes with the ability to index graph/relational queries.
+  - Suitable for frontend state management.
+
 - https://github.com/ccorcos/game-counter
   - A simple application for keeping score in games. For example, golf or Settlers of Catan.
   - External effects interface through services defined on the Environment.

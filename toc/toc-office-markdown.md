@@ -50,12 +50,14 @@ modified: 2021-01-04T17:26:25.032Z
   - 依赖prosemirror-markdown
   - React and Prosemirror based markdown editor that powers Outline.
   - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
-- milkdown /454Star/MIT/202106/ts
+- milkdown /6.5kStar/MIT/202208/ts
   - https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
+  - https://milkdown.dev/
+  - https://milkdown.dev/online-demo
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
-  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+  - 不同于其他prosemirror项目，可配置支持的markdown特性
+  - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
 - https://atlaskit.atlassian.com/packages/editor/editor-markdown-transformer
   - A Markdown to ProseMirror Node parser.
 

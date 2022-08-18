@@ -9,6 +9,12 @@ modified: 2021-06-02T17:12:12.347Z
 
 > A headless, framework-agnostic and extendable WYSIWYG rich text editor, based on ProseMirror.
 
+# guide
+- tiptap /16.1kStar/MIT/202208/ts/prosemirror
+  - https://github.com/ueberdosis/tiptap
+  - https://tiptap.dev/
+  - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
+  - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
 # docs
 
 ## quickstart-minimal

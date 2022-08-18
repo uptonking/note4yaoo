@@ -9,7 +9,7 @@ modified: 2021-07-27T15:12:39.959Z
 
 # known-text-editor
 
-- prosemirror /6kStar/MIT/202009/ts
+- prosemirror /6kStar/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirror
   - http://prosemirror.net/
   - rich semantic content editor based on contentEditable, with support for collaborative editing and custom document schemas.
@@ -24,9 +24,11 @@ modified: 2021-07-27T15:12:39.959Z
     - Plugins are now plain functions that augment the Editor object they receive and return it again.
     - The codebase now uses TypeScript.
 
-- https://github.com/tbhuabi/textbus
-  - /150Star/GPL/202011/ts
-  - 依赖prismjs、rxjs、reflect-metadata、@tanbo/di, @tanbo/css-themes, @tanbo/color
+- textbus /648Star/GPL.v3/202208/ts
+  - https://github.com/tbhuabi/textbus
+  - https://textbus.io/collab
+  - 依赖prismjs、~~rxjs~~、reflect-metadata、@tanbo/di、@tanbo/stream、@tanbo/color、katex
+  - 依赖自研 @tanbo/stream，最基础的数据流类，每一次订阅产生一个新的数据流。
   - 基于数据驱动的富文本编辑器
   - 为什么我还要另起炉灶呢？
     - 目前大多数富文本内容都太脏了，比如，加粗一段文字，可能是一个 strong 标签，也有可能是多个，如果这段文字同时还有其它格式，那么就更热闹了
@@ -41,6 +43,11 @@ modified: 2021-07-27T15:12:39.959Z
     - 实时代码高亮
     - 由于TextBus的架构设计天然的支持过滤脏内容，所以，当粘贴进 TextBus 不认识的数据时，会自动忽略掉
     - 粘贴进来的资源上传，目前正在开发中
+  - Textbus 2.0 已经到来
+    - 重新设计了数据模型，可根据用户的操作生成特定的底层原子命令，这让细粒度的历史记录和文档协同成为可能
+    - 重写了渲染层，现在 Textbus 2.0 大多数情况下更新视图仅需要 0.2ms 时间，比 1.0 性能更好
+    - 核心架构脱离了具体平台，让 Textbus 的能力不仅限于在 PC 端，通过编写特定的中间层，可以方便的在移动端，甚至小程序上实现丰富的富文本能力
+    - 重新设计了组件系统，去掉了大家难以理解的装饰器，改为用类似 vue 的 setup 形式开发组件
 
 - editablejs-editable /17Star/MIT/202208/ts/只依赖slate不依赖slate-react/自绘光标
   - https://github.com/editablejs/editable
@@ -55,6 +62,16 @@ modified: 2021-07-27T15:12:39.959Z
   - 协同编辑基于ShareDB实现。
   - 过去两年中，am-editor 编辑器基于 contenteditable 属性上做了很多功能和扩展，也遇到了很多问题。
     - 所以，现在大胆一些，尝试抛弃contenteditable属性，使用自绘光标的模式开发的下一个版本的富文本编辑器。
+
+- taleweaver(织书) /71Star/MIT/202007/ts
+  - https://github.com/yuzhenmi/taleweaver
+  - https://yuzhenmi.github.io/taleweaver/
+  - Web word processor for 2Tale Writer's Portal.
+  - feature
+    - 基于dom实现，且支持显示分页
+  - core无依赖，react封装很少(只有2个文件)，不依赖prosemirror
+  - 大量使用es6 class
+  - 自己实现了依赖注入，设计了model/service/component
 # collaborative-editor
 - https://github.com/yjs/yjs
   - https://docs.yjs.dev/

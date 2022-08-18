@@ -18,23 +18,31 @@ modified: 2021-06-02T10:28:39.488Z
   - markdown生成的heading没有id
 # roadmap
 
-# examples-repos
+# repos-forks
+- https://github.com/dominiczy/traverse-markdown-editor
+  - A React and Prosemirror based editor that powers Traverse 
+  - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
 
-- rich-markdown-editor forks
-  - https://github.com/ZNotes/znotes-editor
+- https://github.com/hackernoon/rich-markdown-editor
+  - A React and Prosemirror based editor that powers HackerNoon
 
+- https://github.com/ZNotes/znotes-editor
+# repos-examples
 - https://github.com/albingroen/keyboardnotes
   - https://app.keyboardnotes.io/
   - Notes app that's entirely accessible through your keyboard
   - 依赖auth0、antd4、framer-motion、react-redux、showdown
   - 样式非常友好，设计偏向文档，笔记功能可用
-- https://github.com/syfxlin/xkeditor-next
+
+- xkeditor-next /9Star/Apache2/202112/ts/archived
+  - https://github.com/syfxlin/xkeditor-next 
   - https://xkeditor-next.ixk.me/
   - 基于 rich-markdown-editor 开发的编辑器，在其基础上添加了更多的模块，比如 Monaco Editor 对应的几个模块
 - https://github.com/stroym/snovy
   - note manager with tagging and filtering capabilities
   - 功能可用，样式陈旧，值得测试，布局很像ide，有左右两个侧边栏
   - 编辑器没有大修改
+
 - https://github.com/drishit96/gitnotek
   - A note taking app that can store your notes in any git hosting service
   - 依赖@headlessui/react、@isomorphic-git、lightning-fs、styled-components

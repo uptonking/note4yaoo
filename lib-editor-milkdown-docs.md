@@ -10,16 +10,15 @@ modified: 2021-07-11T15:08:34.195Z
 > A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
 
 # guide
-
-# overview
-- milkdown /940Star/MIT/202107/ts
+- milkdown /6.5kStar/MIT/202208/ts
   - https://github.com/Saul-Mirone/milkdown
-  - https://saul-mirone.github.io/milkdown/
-  - https://saul-mirone.github.io/milkdown/#/online-demo
+  - https://milkdown.dev/
+  - https://milkdown.dev/online-demo
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
-
+# overview
 - Milkdown treats every features as plugins.
   - With this pattern, developers can choose what they need in an editor instead of bundle all features even they won't need.
   - Developers can extends the plugin to satisfy their habit such as define a vim keymap plugin.

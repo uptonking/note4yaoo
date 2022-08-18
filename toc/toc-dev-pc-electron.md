@@ -56,7 +56,7 @@ modified: 2021-01-16T20:50:23.893Z
   - Cross-platform desktop note-taking app. 
   - Sticky notes with Markdown and Tabs. All in one .txt file.
 # boilerplate
-- https://github.com/ccorcos/electron-architecture
+- https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts
   - This project is a boilerplate electron app with a thoughtfully designed architecture
   - Main and renderer processes manage state using a Redux-like state machine.
   - Electron BrowserWindows are controlled declaratively through the application state.

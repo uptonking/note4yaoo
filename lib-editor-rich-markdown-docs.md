@@ -11,13 +11,13 @@ modified: 2021-06-02T10:34:16.329Z
 
 ## overview
 
-- rich-markdown-editor /2kStar/BSD/202105/ts
+- rich-markdown-editor /2.7kStar/BSD/202112/ts/archived
   - https://github.com/outline/rich-markdown-editor
   - https://www.getoutline.com/
   - 依赖react、styled-components、prosemirror-markdown、markdown-it、prism-refractor
   - v11.0.0_202009: styled-components is now a peer dependency
   - [v10.0.0_202005: a complete rewrite of the editor from slate to prosemirror](https://github.com/outline/rich-markdown-editor/releases/tag/v10.0.0)
-  - A React and Prosemirror based editor that powers Outline 
+  - A React and Prosemirror based editor that powers Outline
   - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
   - > This project is not attempting to be an all-purpose Markdown editor but for Outline's needs
 # api

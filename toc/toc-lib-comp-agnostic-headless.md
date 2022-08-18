@@ -58,9 +58,12 @@ modified: 2021-04-11T06:17:51.318Z
     - https://ebay.github.io/skin/
     - Pure CSS framework designed & developed by eBay
 
-- https://github.com/ueberdosis/tiptap
+- tiptap /16.1kStar/MIT/202208/ts/prosemirror
+  - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
+  - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
+
 - https://github.com/jieter/leaflet-headless
   - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
   - Uses jsdom to fake ad DOM.

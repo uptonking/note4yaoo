@@ -12,6 +12,7 @@ modified: 2022-06-03T22:06:16.249Z
 # guide
 - search
   - big json store/update
+  - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
 - 更适合block-editor的数据结构是否是 mongodb ？
 

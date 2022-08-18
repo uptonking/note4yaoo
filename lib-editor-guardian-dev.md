@@ -36,7 +36,10 @@ modified: 2021-07-08T17:19:56.328Z
 - 代码架构
   - 几乎都基于函数实现，很少用class
 # overview
-- https://github.com/guardian/prosemirror-elements
+- prosemirror-elements /21Star/MIT/202208/ts
+  - https://github.com/guardian/prosemirror-elements
+  - This Prosemirror plugin adds the ability to add custom 'elements' to a document.
+    - Modelling non-text content in Prosemirror can be tricky. 
+    - it provides an abstraction that makes it easy to write custom elements
   - A ProseMirror plugin for adding user-defined 'elements' containing arbitrary fields to a document.
-  - prosemirror-elements provides an abstraction that makes it easy to write custom elements that
   - renderer-agnostic (we use React as a default)

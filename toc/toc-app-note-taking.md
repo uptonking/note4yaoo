@@ -37,7 +37,7 @@ modified: 2020-10-22T10:03:50.526Z
   - Markdown editor with bidirectional links and excellent math support
   - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
   - 参考了prosemirror、zettlr、vscode、notable
-  - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
+    - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
 
 - https://github.com/vicjohnson1213/Medley
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
