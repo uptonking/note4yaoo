@@ -342,7 +342,9 @@ modified: 2020-11-13T07:31:20.012Z
 - https://react-motion-drawer.netlify.com
   - https://github.com/stoeffel/react-motion-drawer
 
-  
+- https://github.com/azouaoui-med/react-pro-sidebar
+  - https://azouaoui-med.github.io/react-pro-sidebar/
+  - Customizable and responsive react sidebar library with dropdown menus and unlimited number of nested submenus
 
 ## datepicker 时间日期选择器
 

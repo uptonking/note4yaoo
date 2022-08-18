@@ -50,27 +50,47 @@ modified: 2022-05-15T18:45:27.570Z
 
 - prezly-slate /31Star/MIT/202208/ts/提交多
   - https://github.com/prezly/slate 
+  - 依赖 @udecode/plate-core、popperjs2、@prezly/sdk、react-bootstrap
   - Prezly software built upon Slate
   - 悬浮工具条使用卡片的形式
+  - https://www.prezly.com/
+    - With Prezly, you can publish and share your content with your audience, directly. No algorithms, no middlemen, no BS.
 
 - slate-angular /93Star/MIT/202205/ts
   - https://github.com/worktile/slate-angular
   - http://slate-angular.ngnice.com/
   - Angular view layer for Slate
 
-- https://github.com/kiaksarg/edu-editor  /slate
+- edu-editor /2Star/MIT/202207/ts/slate
+  - https://github.com/kiaksarg/edu-editor  
   - https://edu-editor.netlify.app/
   - a basic medium/notion like rich text editor based on Slate.js framework
+  - 依赖 chakra-ui、nextjs、react-table.v7、slate.v0.72
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序
-  - 暂不支持块级拖拽
+  - 支持只读模式
+  - 代码量不大，思路清晰
 
 - hero-editor /10Star/MIT/202205/js/代码少
   - https://github.com/Thinkei/hero-editor
   - http://hero-editor.surge.sh/
   - Hero editor is a WYSIWYG built on top of Slate (v0.58.3).
-  -  It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
+  - It's designed for mobile-first, hence all of the communications from plugins to the editor must go through message channel. 
   - This package also includes serializers and renderers for the Slate content.
+
+- react-rich-editor /3Star/MIT/202203/js
+  - https://github.com/Rajatm544/react-rich-editor
+  - https://reactricheditor.netlify.app/
+  - A rich text editor built using React and Slate as part of the internship assignment for Plotline
+
+- rich-slate /1Star/ts/active
+  - https://github.com/ahmedosama7450/rich-slate
+  - Opinionated rich text editor on top of slate (Under development)
+
+- full-slate-editor-example /3Star/MIT/202208/ts
+  - https://github.com/Dev-CasperTheGhost/full-slate-editor-example
+  - http://full-slate-editor-example.vercel.app/
+  - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment
 
 - https://github.com/eea/volto-slate/tree/develop
   - /23Star/MIT/202203/js
@@ -119,8 +139,15 @@ modified: 2022-05-15T18:45:27.570Z
   - Sanity.io is the platform for structured content. 
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
   - 依赖slate.v0.72.3，自研slate-react
-  - 包含test
+  - 包含test，但测试示例storybook效果过于简单
   - [V3 portable text editor_202208](https://github.com/sanity-io/sanity/pull/3465)
+  - https://github.com/sanity-io/sanity  /MIT
+    - Sanity.io is the platform for structured content. 
+    - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
+    - Sanity Studio is an open source headless real-time CMS, that you can customize with JavaScript and React.
+    - Sanity.io has powerful APIs for querying, patching, and mutating data in the real-time content backend. In addition to our GROQ(Graph-Relational Object Queries) API, we also support deploying GraphQL APIs to query your content.
+    - [Query JSON documents in the Terminal with GROQ](https://css-tricks.com/query-json-documents-in-the-terminal-with-groq/)
+      - Graph-Relational Object Queries (GROQ) is a query language (like SQL, but different) which is designed to work directly on JSON documents.
 
 - https://github.com/payloadcms/payload
   - https://demo.payloadcms.com/admin
@@ -128,17 +155,6 @@ modified: 2022-05-15T18:45:27.570Z
   - Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - Block-based Layout Builder
   - Extensible SlateJS rich text editor
-
-- https://github.com/Rajatm544/react-rich-editor
-  - https://reactricheditor.netlify.app/
-  - A rich editor built using React and Slate. It has option to highlight text and show it as a tags beside the editor
-
-- https://github.com/ahmedosama7450/rich-slate
-  - Opinionated rich text editor on top of slate (Under development)
-
-- https://github.com/Dev-CasperTheGhost/full-slate-editor-example
-  - http://full-slate-editor-example.vercel.app/
-  - A full Slate editor example with many features such as text formatting, block formatting (quotes, headers, lists) and text alignment
 
 - https://github.com/webkom/lego-editor
   - A React rich text editor written in TS with Slate.js for lego-webapp
@@ -153,12 +169,15 @@ modified: 2022-05-15T18:45:27.570Z
 
 - https://github.com/sympto-health/slate-rte
   - Pre-built rich text editor for Slate in React.
+  - 基于ts，但所有源码都放在src文件夹，看起来较乱
+  - https://github.com/sympto-health/slate-rte-demo  /js
 
 - https://github.com/gwwyn/react-editor
   - https://gwwyn.github.io/react-editor/
   - Rich-text editor build with React and Slate
+  - 支持 add column，但看起来乱
 
-- https://github.com/rs-pro/rocket-slate /202008
+- https://github.com/rs-pro/rocket-slate /202008/inactive
   - A rich text editor based on SlateJS framework and slate-plugin-next
   - Supports slate 0.57 only
 
