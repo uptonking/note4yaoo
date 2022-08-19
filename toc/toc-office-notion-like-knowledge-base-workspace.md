@@ -155,6 +155,18 @@ modified: 2022-06-03T21:34:54.893Z
   - 「 太记 」是一个基于「 太微 TiddlyWiki 」的知识管理桌面应用，能保护隐私内容、高级自动化、自动Git云备份、部署为博客，且可通过RESTAPI与Anki等应用连接。
   - 太微的 NodeJS 版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
 
+- Metagraph /19Star/NALic/202205/ts/vue
+  - https://github.com/Wizard-wen/Metagraph
+  - https://metagraph.design/
+  - Metagraph是一款知识创作分享工具，Metagraph提供了强大的内容关联能力。
+
+- https://github.com/c2d7fa/thinktool /75Star/AGPL.v3/202208/ts
+  - https://thinktool.io/
+  - https://thinktool.io/demo
+  - Novel fusion of hierarchical and graph-based approaches to taking notes, based on ideas from Roam Research, TheBrain and others.
+  - https://github.com/c2d7fa/nextool
+    - GTD-oriented task manager with support for nested tasks and a focus on finding actionable tasks.
+
 - https://github.com/documize/community
   - https://docs.documize.com/
   - 依赖 go、js、handlebars、EmberJS
@@ -225,6 +237,11 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/mraht-apps/notie
   - Notion-like workspace with offline mode and encryption
   - Completely offline (online synchronisation by storing encrypted file in cloud folder possible)
+
+- https://github.com/lidotcircle/webdisk
+  - 文件管理、Markdown笔记、数据图表
+  - 前端采用 Angular
+  - 后端采用 Node.js + Express.js + typeorm + sqlite3
 
 - https://github.com/hashintel/hash
   - https://hash.dev/

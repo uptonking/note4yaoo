@@ -52,6 +52,11 @@ modified: 2020-12-28T12:24:09.275Z
     - 通过交互组件修改 Store 数据，重新渲染页面
   - 依赖antd4、codemirror5、mobx5、showdown
 
+- https://github.com/ngx-lazy-admin/lazy-admin /angular
+  - http://lazy-admin-pro.com/
+  - Low code production-ready solution for admin business components packages
+  - Built on the design principles developed by Ant Design And Formly
+
 - https://github.com/whitebrick/whitebrick
   - Open Source Airtable Alternative (No Code DB)
   - Whitebrick is a lightweight No Code Database with 3 points of difference:

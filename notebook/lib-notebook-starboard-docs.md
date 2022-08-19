@@ -10,15 +10,14 @@ modified: 2021-05-13T04:11:32.930Z
 # guide
 
 # overview
-
-- Starboard Notebook /651Star/MPLv2/202105/ts
+- Starboard Notebook /889Star/MPLv2/202206/ts
   - https://github.com/gzuidhof/starboard-notebook
   - https://unpkg.com/starboard-notebook/dist/index.html
   - https://starboard.gg/
   - In-browser literal notebook runtime used in Starboard.
-
+  - 编辑器已分离，基于rich-markdown-editor和prosemirror
+  - 前端基于lit
 # [About Why Starboard is worth building](https://starboard.gg/about)
-
 - Starboard's unique design decisions
   - Browser-native: 
     - there is no bridge required between the server and the browser like in Jupyter notebook as everything is in-browser. 
@@ -36,9 +35,7 @@ modified: 2021-05-13T04:11:32.930Z
   - Starboard Notebook is the actual notebook runtime with the editor (the code cells, outputs and buttons).
   - This website, Starboard, embeds this editor and allows you to save and share notebooks (allowing you to share by just a link) and will in the future have some social features (stars, upvotes, followers, ...). Think of it as a publishing platform for your notebooks.
   - A somewhat correct analogy: If Starboard was GitHub, Starboard Notebook would be Git.
-
 # [An Open Source ObservableHQ notebook environment](https://starboard.gg/gz/open-source-observablehq-nfwK2VA)
-
 - Large parts of Observable are open source, but not everything. 
   - In particular the editor and compiler are closed which means that you have to use the ObservableHQ web app to author notebooks. 
   - You can however embed the resulting notebook on your own website.

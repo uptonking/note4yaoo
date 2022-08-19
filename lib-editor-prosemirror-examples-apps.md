@@ -9,7 +9,7 @@ modified: 2022-08-18T16:57:15.296Z
 
 # guide
 
-# promirror-starter
+# prosemirror-starter
 - https://github.com/syfxlin/tiptap-starter-kit
   - Tiptap 编辑器的非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown 解析、序列化等功能。
 
@@ -35,7 +35,32 @@ modified: 2022-08-18T16:57:15.296Z
   - DoX Editor aims to be a web text editor application that allows users to create, edit, store and share several documents.
   - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
   - DoX is clearly inspired to well known online word processors such as Google Docs
+
+- https://github.com/vivaxy/examples/tree/master/libraries/prosemirror
+  - https://vivaxy.github.io/examples/libraries/prosemirror/
+  - 日常积累的各种demo，包括prosemirror/yjs/算法
+
+- https://github.com/edp1096/hello-prosemirror
+  - https://edp1096.github.io/hello-prosemirror/
+  - 测试
 # office/notebook
+- noteworthy /166Star/AGPL.v3/202207/ts
+  - https://github.com/benrbray/noteworthy
+  - https://noteworthy.ink/
+  - Markdown editor with bidirectional links and excellent math support
+  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
+  - 参考了prosemirror、zettlr、vscode、notable
+    - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
+  - https://github.com/benrbray/prosemirror-math
+
+- Starboard Notebook /889Star/MPLv2/202206/ts
+  - https://github.com/gzuidhof/starboard-notebook
+  - https://unpkg.com/starboard-notebook/dist/index.html
+  - https://starboard.gg/
+  - In-browser literal notebook runtime used in Starboard.
+  - 编辑器已分离，基于rich-markdown-editor和prosemirror
+  - 前端基于lit
+
 - mdSilo-web /208Star/AGPL.v3/202208/ts
   - https://github.com/danloh/mdSilo-web
   - https://mdsilo.com/
@@ -56,12 +81,55 @@ modified: 2022-08-18T16:57:15.296Z
     - ProseMirror-based Editor
   - https://ureeka.biz/
     - Ureeka is the ultimate small business growth engine built by successful entrepreneurs who know the formula proven to drive growth.
+
+- https://github.com/gfrancine/mnote
+  - Mnote: a desktop app to write notes in more than just text
+# prosemirror-apps
+- oak /4Star/MIT/202208/js/提交多
+  - https://github.com/p3ol/oak
+  - 整体上是一个可切换文本编辑器的页面编辑器
+  - 页面从上到下由块构成，内容文字默认不可编辑，需要点击悬浮编辑按钮
+  - Modern, lightweight & modulable page builder
+  - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
+  - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
+
+- wix-tiptap-editor /260Star/MIT/202008/ts
+  - https://github.com/wix/ricos
+  - https://wix-rich-content.herokuapp.com/
+  - https://ricos.js.org/docs/ricos/ricos-intro
+  - 每行前有加号，但每行不支持拖拽block修改顺序
+  - A React-based rich content editor with an extensible plugin system
+  - wix公司开源了自己的内容编辑器，公开了自己的json schema规范，提供了wix-rich-content-editor、wix-rich-content-viewer
+  - 还支持在基于tiptap v2的编辑器中编辑内容，提供了draftToTiptap()转换方法，将ricos-draft的json格式转换成tiptap支持的json格式
+  - 内部插件大多严重依赖自研ui库和基础库，如wix-rich-content-ui-components、ricos-content
+
+- mashcard /204Star/Apache2/202208/ts/ruby
+  - https://github.com/mashcard/mashcard
+  - https://www.producthunt.com/upcoming/brickdoc
+  - 旧编辑器tiptap，编辑器直接使用prosemirror
+  - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
+  - It's not only an open source alternative to Coda and Notion
+
+- https://github.com/pageboard/client /4Star/MIT/202208/js
+  - uses prosemirror to drive HTML wysiwyg editing.
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .
+- https://github.com/khirayama/aha
+  - 比较多个编辑器 prosemirror、lexical、tinymce
+
+- https://github.com/lawrencecchen/azinaka
+  - http://azinaka.vercel.app/
+  - Browser based notes.
+  - 依赖solidjs
 
 - https://github.com/NoteHub-official/RetroFlux
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
+
+- https://github.com/PelagicCreatures/marlin /inactive
+  - An ExpressJS CMS for sites with Sequelize db backends
+  - This package implements a relational typed admin backend built from sequelize model definitions with granular access control for editing tables using ACLs for users and roles.
+  - https://github.com/PelagicCreatures/marlin-app
 
 - https://github.com/ShenQingchuan/HeteroDoc
   - Heterocube Cloud Collaborative Docs. 
@@ -79,3 +147,49 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/abingham/prosemirror-tauri
   - an experiment to try using the ProseMirror editor widget with the Tauri application framework.
+
+- https://github.com/gamejolt/gamejolt
+  - This is the whole frontend for Game Jolt. It powers the site and the desktop app.
+
+- https://github.com/isle-project/isle-editor
+  - Editor for ISLE (Integrated Statistics Learning Environment) lessons.
+  - A desktop-application that can be used to author and preview integrated statistics learning environment (ISLE) lessons before they are deployed online. 
+
+- https://github.com/blinkk/editor.dev-ui
+  - https://editor.dev/example/
+  - Provides a rich UI for editing structured data with live previews.
+
+- https://github.com/salmenf/webwriter
+  - Web-based authoring tool for open explorables
+  - Author open, interactive and multimedial content on Windows/Mac/Linux
+  - WebWriter is the product of a dissertation project at RWTH Aachen University’s Learning Technologies Research Group.
+
+- https://github.com/archguard/archguard-frontend
+  - ProseMirror as core editor
+  - MonacoEditor as a source code editor
+
+- https://github.com/manakuro/project-management-demo-frontend
+  - https://project-management-demo.manatoworks.me/
+  - ui设计友好
+
+- https://github.com/pipipi-pikachu/PPTist
+  - https://pipipi-pikachu.github.io/PPTist/
+  - 基于 Vue3.x + TypeScript 的在线演示文稿（幻灯片）应用，还原了大部分 Office PowerPoint 常用功能，实现在线PPT的编辑、演示。支持导出PPT文件。
+
+- https://github.com/stencila/stencila
+  - https://stenci.la/
+  - a platform for authoring, collaborating on, and publishing executable documents.
+
+- https://github.com/xland/redredstar
+  - 个人信息管理工具
+
+- https://github.com/mpazik/docland
+  - https://docland.app/
+  - an application that allows a user to display, organize, search and store all the articles and ebooks a person has ever read, together with personal annotations and comments.
+  - Docland's mission is to give you control over your data. Its design goal is to store all information documents together, forever.
+
+- https://github.com/webxdc/yjs_editor
+  - This tool uses yjs (A CRDT tool), Deltachat and Vuejs to provide a WYSIWYG editor which can be used right out of deltachat.
+
+- https://github.com/pierre-lgb/slashwriter
+- https://github.com/martinemmert/fleeting-notes-editor

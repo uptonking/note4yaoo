@@ -94,6 +94,10 @@ modified: 2021-05-14T14:46:37.026Z
   - Docable's interactive cells are simply Markdown code block (```) with addition of a few json annotations
   - These code blocks are 100% compatible with GitHub's Markdown rendering and the JSON is simply ignored
 
+- https://github.com/stencila/stencila
+  - https://stenci.la/
+  - a platform for authoring, collaborating on, and publishing executable documents.
+
 ## more-notebook
 
 - https://github.com/airbnb/knowledge-repo

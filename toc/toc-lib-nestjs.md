@@ -148,6 +148,7 @@ modified: 2020-12-13T13:14:40.141Z
 - https://github.com/coderinblack08/presage
   - https://www.joinpresage.com/
   - A Medium alternative built for referral podcasts and blogs
+  - 前端依赖 zustand、tiptap
 
 - https://github.com/starryskystar/blog-c
   - 博客重构，后端服务基于nestjs；界面重度模仿知乎

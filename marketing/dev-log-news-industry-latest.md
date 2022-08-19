@@ -7,10 +7,12 @@ modified: 2021-08-07T15:30:42.655Z
 
 # dev-log-news-industry-latest
 
+# 2022
+- 20220
+
+- 202208-saas-全球SaaS软件巨头Salesforce正在关闭包括香港地区在内的中国业务，业务将由阿里云代销。
+
 # 2021
-
-- 2021
-
 - 202109-tech-Footnotes now supported in Markdown fields
 - 202107-market-因政策原因，K12校外教育培训遇冷；字节跳动大力教育大裁员
 - 202106-career-腾讯、快手、字节等头部一线公司开始取消996加班规定
@@ -28,7 +30,6 @@ modified: 2021-08-07T15:30:42.655Z
   - 特朗普被twitter、facebook、aws等主流媒体封禁，想推Parler平台也被下架
   - 互联网最自由的是web页面，易用易分享
 - 202101-world-首批90后31岁，80后41岁，70后51岁，60后61岁
-
 # 2020
 - 2020
   - Chromebooks outsold Macs worldwide in 2020, cutting into Windows market share.

@@ -10,7 +10,7 @@ modified: 2022-08-18T16:57:29.058Z
 # guide
 
 # prosemirror-markdown-remark
-- milkdown /6.5kStar/MIT/202208/ts
+- milkdown /6.5kStar/MIT/202208/ts/remark
   - https://github.com/Saul-Mirone/milkdown
   - https://milkdown.dev/
   - https://milkdown.dev/online-demo
@@ -19,7 +19,7 @@ modified: 2022-08-18T16:57:29.058Z
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
 
-- rich-markdown-editor /2.7kStar/BSD/202112/ts/archived
+- rich-markdown-editor /2.7kStar/BSD/202112/ts/markdown-it/archived
   - https://github.com/outline/rich-markdown-editor
   - https://www.getoutline.com/
   - 依赖react、styled-components、prosemirror-markdown、markdown-it、prism-refractor
@@ -27,13 +27,27 @@ modified: 2022-08-18T16:57:29.058Z
   - [v10.0.0_202005: a complete rewrite of the editor from slate to prosemirror](https://github.com/outline/rich-markdown-editor/releases/tag/v10.0.0)
   - A React and Prosemirror based editor that powers Outline
 
-- rino /26Star/GPL.v3/202208/ts
+- tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
+  - https://github.com/dennis84/tiny-write
+  - https://tiny-write.pages.dev/
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
+  - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
+  - 跨平台客户端基于tauri实现，tari部分使用rust实现
+
+- rino /26Star/GPL.v3/202208/ts/remirror/markdown-it
   - https://github.com/ocavue/rino
   - https://rino-editor.vercel.app/
   - https://rino.app/
   - 提供了类似typora的行内实时编辑预览
   - editor依赖 remirror、unstated-next、codemirror.v6、mui.v5、floating-ui、markdown-it、mdast-util-from-markdown
   - A better way to write Markdown
+
+- blank /23Star/MIT/202208/ts
+  - https://github.com/FPurchess/blank
+  - A minimalist, opinionated markdown editor made for writing
+  - available for Linux, macOS and Windows， 基于tauri
 
 - prosemirror-markdown /210Star/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirror-markdown
@@ -121,7 +135,7 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/BlueMona/prosemirror-react-renderer /201710/ts
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
-# prosemirror-collab
+# collab
 - https://github.com/ProseMirror/prosemirror-collab
   - Collaborative editing for ProseMirror
   - This module implements a plugin that helps track and merge changes for collaborative editing.
@@ -155,6 +169,13 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/alihesari/prosemirror-demo
   - a demo of a ProseMirror editor that was made collaborative with Yjs & y-prosemirror.
   - We use the y-websocket provider to share document updates through a server. 
+
+- https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/prosemirror
+  - An experimental implementation of how to take the open source ProseMirror rich text editor and enable real-time coauthoring using the Fluid Framework.
+  - Fluid Framework is a library for building distributed, real-time collaborative web applications using JavaScript or TypeScript.
+
+- https://github.com/tororosoba0534/collab-note-yjs-wsserver
+  - Collab-Note-YJS is a multi-repo project which divided by two repositories (frontend and backend). 
 # prosemirror-table
 - prosemirror-datagrid /3Star/MIT/202109/ts
   - https://github.com/hedgerwang/prosemirror-datagrid

@@ -14,17 +14,18 @@ modified: 2022-08-18T16:57:46.405Z
   - 大部分的方案是以vanillajs为core，react为wrapper
   - toys
     - 尝试保留rich-markdown-editor的api，将core用~~tiptap~~重写
-    - 尝试用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
+    - 尝试用atlassian editor重写outline，抽象出可替换编辑器的接口，考虑可替换的协作同步方案
     - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
 - 💡 vanillajs-first
-  - tiptap/dante/wix, bangle.dev, tui.editor.v3, stacks-editor(StackOverflow)
-  - guardian-prosemirror-typerighter/elements/invisibles/noting
-  - milkdown(Typora), syllepsis(字节), pubpub-editor(202003)
-  - start-editor, jcmnunes-bc-editor(md), zeditor, emirror, NotionEditor(toy)
+  - tiptap/dante/wix, bangle.dev, tui.editor.v3
+  - guardian-prosemirror-elements/typerighter/invisibles/noting
+  - stacks-editor(StackOverflow), syllepsis(字节)
+  - milkdown(Typora), jcmnunes-bc-editor(md)
+  - start-editor, zeditor, emirror, NotionEditor(toy)
 
 - 💡 react-first
-  - remirror, rich-markdown-editor/keyboardnotes, @atlaskit/editor-core
+  - remirror, @atlaskit/editor-core, rich-markdown-editor/keyboardnotes
   - wax-prosemirror(coko editor), curvenote-editor(redux), czi/licit(word), perry-white(newspaper)
   - smartblock(202003), xen-editor，nib-edit(高级功能未开源如comment/collab)
 
@@ -44,38 +45,60 @@ modified: 2022-08-18T16:57:46.405Z
 - remirror /1.8kStar/MIT/202208/ts
   - https://github.com/remirror/remirror
   - https://remirror.io/
-  - https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic
+  - [basic editor demo](https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic)
   - A React toolkit for building cross-platform text editors, based on ProseMirror.
   - I18n support via lingui.
   - Great support for mobile devices.
   - Out-of-the-box editors, or create own by composing extensions.
   - Collaborative editing with yjs or prosemirror-collab.
 
-- @atlaskit/editor-core /Apache2/ts
+- @atlaskit/editor-core /8Star/Apache2/202208/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
+  - https://atlaskit.atlassian.com/packages/editor/editor-core
   - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
   - A package contains Atlassian editor core functionality
   - 基于react class组件实现
   - 提供了针对image/file的图文混排工具
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
-- https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
-  - copy the approach by Atlassian editor_v20201205
-  - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
+    - copy the approach by Atlassian editor_v20201205
+  - ref
+    - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
+    - https://github.com/pioug/atlassian-frontend-mirror
 
-- bangle-editor /527Star/MIT/202208/ts
+- bangle.dev-editor /527Star/MIT/202208/ts
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
   - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
-- bangle.io /711Star/AGPL.v3/202208/ts
-  - https://github.com/bangle-io/bangle-io
-  - https://bangle.io/
-  - A web only WYSIWYG note taking app that saves notes locally in markdown format
+  - bangle.io /711Star/AGPL.v3/202208/ts
+    - https://github.com/bangle-io/bangle-io
+    - https://bangle.io/
+    - A web only WYSIWYG note taking app that saves notes locally in markdown format
+
+- tui.editor.v3 /15.1kStar/MIT/202208/ts/popular
+  - https://github.com/nhn/tui.editor
+  - http://ui.toast.com/tui-editor
+  - 👀 v3新版本迁移到了prosemirror
+  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
+  - core只依赖 codemirror5，另外提供了react/vue-editor
+  - 全都是vanillajs，react的封装很薄，只有3文件
+  - 编辑器支持分屏查看、双屏同步滚动、配置图表chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
+  - 代码复杂度高
+  - 支持通过代码块中的图表配置信息生成图表
+  - The Editor allows you to edit your Markdown documents using text or WYSIWYG and comes with Syntax Highlighting, Scroll-Sync, Live Preview, and Chart features.
+  - ref
+    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
+    - https://github.com/QinHongZhe/hongzhe-tui.editor
 
 - wax-prosemirror /9Star/MIT/202208/js
   - https://gitlab.coko.foundation/wax/wax-prosemirror
-  - http://wax-demo.coko.foundation/
   - https://waxjs.net/docs/wax/
+  - http://wax-demo.coko.foundation/
+  - https://waxjs.net/features/
+  - 提供了丰富示例，包括编辑器内带下拉框的表单、脚注面板浮层、Track changes
+  - 👀 支持评论，评论卡片可与编辑器内容水平对齐，但被评论文本不支持部分重叠
+  - The Word Processor for the Web
   - Wax depends on the following libraries.
     - React for the view(UI)
     - Styled-components for theming and styling.
@@ -85,45 +108,23 @@ modified: 2022-08-18T16:57:46.405Z
   - ref
     - https://github.com/christos8333/wax-prosemirror
     - licit也是适合论文的编辑器
+    - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
+    - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
 
 - curvenote-editor /140Star/MIT/202208/ts
   - https://github.com/curvenote/editor
   - https://curvenote.com/
   - 依赖 redux-toolkit、codemirror.v5、material-ui.v4、date-fns
-  - 支持 footnote、comment、latex
+  - 支持 footnote、comment、很多latex特性
+  - 👀 支持在编辑器内定义变量和滑块
   - interactive scientific editor built with ProseMirror, React and Redux
   - A collaborative, rich text editor for interactive technical & scientific content., implementing the MyST standard, and integrating with JupyterLab, JupyterBook and Sphinx. 
   - We aim to lower the barriers to writing computational narratives.
     - Today, narrative is often moved out of computational notebooks into static document creation tools (Microsoft Word, Google Docs, LaTeX, Slides/PPT).
-
-- tui.editor.v3 /11.8kStar/MIT/202009/popular
-  - https://github.com/nhn/tui.editor
-  - http://ui.toast.com/tui-editor
-  - 👀 v3新版本迁移到了prosemirror
-  - core只依赖 codemirror5，另外提供了react/vue-editor
-  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
-  - 全都是vanillajs，react的封装很薄，只有3文件
-  - 代码复杂度高
-  - 支持通过代码块中的图表配置信息生成图表
-    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
-    - Markdown WYSIWYG Editor. 
-    - GFM Standard + Chart & UML Extensible.
-    - 编辑器支持：chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
-
-- syllepsis /187Star/MIT/202208/ts/字节
-  - https://github.com/bytedance/syllepsis
-  - https://bytedance.github.io/syllepsis/#/
-  - rich text editor compatible with mainstream modern browsers.
-  - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins
-  - https://github.com/lastnigtic/syllepsis-collab
-    - Example of `Syllepsis` collaborative editing using `prosemirror-collab`
-
-- gitlab editor /js/vue2/tiptap.v2
-  - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
-  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
-    - implementing support for all of md flavors is an unnecessary cost.
-    - Solution 1: Traceability or file diffs
-    - Solution 2: Relying on the Markdown preview endpoint
+  - https://github.com/curvenote/curvenote /7Star/MIT/202208/ts
+    - curvenote is an open source library and command line interface (CLI) to create share and publish technical documents.
+  - https://github.com/curvenote/blocks
+    - Schemas, types and utilities for Curvenote APIs and DTOs.
 
 - guardian-prosemirror-elements /21Star/MIT/202208/ts
   - https://github.com/guardian/prosemirror-elements
@@ -140,21 +141,32 @@ modified: 2022-08-18T16:57:46.405Z
   - 依赖prosemirror, hightlight.js、markdown-it、@lezer/markdown、stacks-ui，不依赖react
   - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/481492297f680472c51e57c981f050133681edc6/src/rich-text/editor.ts#L76)的过程非常标准，无封装
 
-- noteworthy /166Star/AGPL.v3/202207/ts
-  - https://github.com/benrbray/noteworthy
-  - https://noteworthy.ink/
-  - Markdown editor with bidirectional links and excellent math support
-  - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
-  - 参考了prosemirror、zettlr、vscode、notable
-    - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
-  - https://github.com/benrbray/prosemirror-math
+- syllepsis /187Star/MIT/202208/ts/字节/参考中文支持
+  - https://github.com/bytedance/syllepsis
+  - https://bytedance.github.io/syllepsis/#/zh-cn/about
+  - [编辑器在线例子](https://bytedance.github.io/syllepsis/#/zh-cn/playground)
+  - 支持格式刷、调整文字间距、段落间距
+  - 支持[Card或Block插件](https://bytedance.github.io/syllepsis/#/zh-cn/chapters/card-plugin)，但不支持拖拽
+  - 设计了占位插件，可实现左侧加号按钮
+  - rich text editor compatible with mainstream modern browsers.
+  - We re-encapsulate Prosemirror to provide more concise APIs, a large number of basic plugins
+  - https://github.com/lastnigtic/syllepsis-collab
+    - Example of `Syllepsis` collaborative editing using `prosemirror-collab`
 
-- taleweaver(织书) /71Star/MIT/202007/ts
+- gitlab-editor /3916Star/MIT/202208/js/vue2/tiptap2
+  - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
+  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
+    - implementing support for all of md flavors is an unnecessary cost.
+    - Solution 1: Traceability or file diffs
+    - Solution 2: Relying on the Markdown preview endpoint
+  - ref
+    - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
+
+- taleweaver(织书) /90Star/MIT/202008/ts
   - https://github.com/yuzhenmi/taleweaver
   - https://yuzhenmi.github.io/taleweaver/
   - Web word processor for 2Tale Writer's Portal.
-  - feature
-    - 基于dom实现，且支持显示分页
+  - 👀 基于dom实现，且支持显示分页
   - core无依赖，react封装很少(只有2个文件)，不依赖prosemirror
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
@@ -174,9 +186,17 @@ modified: 2022-08-18T16:57:46.405Z
 
 - wode /3Star/MIT/202206/ts
   - https://github.com/wenerme/wode
-  - https://wode.vercel.app/
+  - https://wode.vercel.app/tiptap
   - TipTap based Google Doc
+  - 实现了预定义2/3多栏布局，但不work
   - google采用canval好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
+
+- jcmnunes-editor /5Star/MIT/202203/ts
+  - https://github.com/jcmnunes/editor
+  - https://editor.binarycapsule.tech/
+  - 功能简单，短小精悍
+  - Prosemirror based text editor with markdown shortcuts and serialization
+  - It is highly inspired by rich-markdown-editor, linear-app-editor
 
 - smartblock /249Star/MIT/202003/ts/inactive/prosemirror
   - https://github.com/appleple/smartblock
@@ -190,6 +210,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/Xheldon/NotionEditor
   - A Notion's editor implement based on ProseMirror, just for feasibility studies.
   - 不允许跨 block 选择部分文本内容
+  - 依赖 redux、lodash
   - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text
   - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
   - 使用了 React 构建界面的有: Slash
@@ -222,10 +243,14 @@ modified: 2022-08-18T16:57:46.405Z
   - A React component made by ProseMirror
   - nodes和marks的自定义渲染执行发生在pm-plugin的new Plugin()过程中，没有使用NodeView
 
-- https://github.com/shobokshy/rpm-editor /1Star/MIT/202201/ts
+- rpm-editor /1Star/MIT/202201/ts
+  - https://github.com/shobokshy/rpm-editor
   - A React renderless rich text editor component.
   - 只依赖prosemirror、react
   - 没有提供使用示例
+
+- https://github.com/littlemyx/ProseMirrorReactWrapper
+  - Autocomplete words by hitting the Tab key in the end of the word by the local dictionary
 
 - https://github.com/johnkueh/prosemirror-react-nodeviews /202003/ts
   - An example of how to use React components as NodeViews for ProseMirror
@@ -245,43 +270,51 @@ modified: 2022-08-18T16:57:46.405Z
   - Inspect active marks
   - See document stats – size, child count
   - ref
+    - https://github.com/NovelAI/prosemirror-dev-tools
+      - a monkey patched fork of https://github.com/d4rkr00t/prosemirror-dev-tools which fixed the wrong indexing problem
     - https://github.com/luke-john-atlassian/prosemirror-devtools
-# tiptap/remirror/milkdown
-- better-virgool /9Star/MIT/NALic/202208/ts
+# tiptap/milkdown/remirror/atlassian/wax
+- better-virgool /9Star/MIT/NALic/202208/ts/tiptap
   - https://github.com/ahhshm/better-virgool
   - https://ahhshm.github.io/better-virgool/
   - An attempt to create a better rich text editor than virgool.io. Powered by Tiptap and ProseMirror
   - 实现了RTL国际化方向
 
-- element-tiptap /825Star/MIT/202208/ts/vue/inactive
+- element-tiptap /825Star/MIT/202208/ts/vue/tiptap/inactive
   - https://github.com/Leecason/element-tiptap
   - https://element-tiptap.vercel.app/
   - WYSIWYG rich-text editor using tiptap and Element UI for Vue2 (tiptap2 and Vue3 is in alpha)
   - new version2 support Vue3, use tiptap2 and Element Plus
 
-- https://github.com/ueberdosis/tiptap-php
-  - A PHP package to work with Tiptap content. 
-  - You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it.
-
-- nextcloud-text /366Star/AGPL.v3/202208/js/php
+- nextcloud-text /366Star/AGPL.v3/202208/js/vue/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
-- standardnotes.markdown-visual-editor /4Star/AGPL.v3/202208/ts
+- standardnotes.markdown-visual-editor /4Star/AGPL.v3/202208/ts/milkdown
   - https://github.com/standardnotes/app/tree/main/packages/components/src/Packages/Editors/org.standardnotes.markdown-visual-editor
   - https://github.com/standardnotes/markdown-visual
   - A lightweight WYSIWYG markdown editor, derivated from Milkdown editor
   - https://github.com/dec0dOS/standard-notes-ultimate-editor
     - A mobile-friendly and high-performance editor for s-notes
 
-- https://github.com/Collaborne/remirror-react-beautiful-dnd-poc
+- remirror-react-beautiful-dnd-poc /remirror
+  - https://github.com/Collaborne/remirror-react-beautiful-dnd-poc
   - https://collaborne.github.io/remirror-react-beautiful-dnd-poc/
   - Drag and drop the quotes (powered by react-beautiful-dnd) onto this Remirror editor
   - whilst Remirror does support native drag-n-drop events, it doesn't support react-beautiful-dnds Draggables.
   - Our react-beautiful-dnd based solution requires lots of workarounds, that could be confusing to maintain.
     - If your use case for drag-n-drop behaviour is simple, it may be more worthwhile to remove react-beautiful-dnd's abstraction layer, and use the native implementation instead.
-# prosemirror-editor-collection
+# prosemirror-editors-for-design-system
+- https://github.com/cultureamp/rich-text-toolkit
+  - helpers for building a rich text editor (WYSIWYG) with ProseMirror.
+  - If you only need basic rich text editing functions (bold, italics, lists, links)—take a look at the Kaizen Rich Text Editor, which uses these helpers to create a plug-and-play component.
+  - https://github.com/cultureamp/kaizen-design-system/tree/master/packages/rich-text-editor
+  - https://cultureamp.design/storybook/?path=/story/components-rich-text-editor-rich-text-editor--default
+
+- https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
+  - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
+# prosemirror-editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit
   - http://greathints.com/licit/
@@ -311,25 +344,37 @@ modified: 2022-08-18T16:57:46.405Z
   - 高级功能未开源如comment/collab
   - Nib not only has good rich text editing capabilities but also addresses complex editing requirements like tracking changes made to a document, adding comments in document, collaborative editing and more...
 
-- jcmnunes-editor /5Star/MIT/202203/ts
-  - https://github.com/jcmnunes/editor
-  - https://editor.binarycapsule.tech/
-  - 功能简单，短小精悍
-  - Prosemirror based text editor with markdown shortcuts and serialization
-  - It is highly inspired by rich-markdown-editor, linear-app-editor
-
 - gem /10Star/MIT/202205/ts/代码量少
   - https://github.com/tanishqkancharla/gem
-  - Gem (previously called Editor) is a performant and simple plain text editor, 
-  - The design is very inpsired by Paco Coursey's [Writer](https://github.com/pacocoursey/writer).
   - 只依赖prosemirror，不依赖react
+  - Gem (previously called Editor) is a performant and simple plain text editor, 
+  - The design is very inpsired by Paco Coursey's [Writer]().
+  - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
+    - https://writer.paco.sh/
+    - Plain text editor from scratch, made for the web. Drag and drop files to open them.
+    - Buffer is an array of array of lines
+    - Text is manually measured and wrapped with canvas
+    - Lines are virtualized on scroll and drawn as divs
 
-- BrianHung-editor /202110/ts/inactive
+- kangxi-editor /2Star/MIT/202208/ts
+  - https://github.com/mgenware/kangxi-editor
+  - https://mgenware.github.io/kangxi-editor/
+  - Another web-based rich text editor.
+  - 只依赖prosemirror，不依赖react
+  - 编辑器功能简单
+
+- BrianHung-editor /10Star/NALic/202110/ts/inactive
   - https://github.com/BrianHung/editor
   - https://editor-brianhung.vercel.app/
   - 依赖prosemirror-markdown、codemirror6、katex，不依赖react、tiptap、rich-markdown-editor
   - a rich text editor built upon the ProseMirror framework. 
   - It is based off tiptap and rich-markdown-editor, but tries to stay agnostic to Vue and React.
+
+- https://github.com/IsaacAderogba/pine /1Star/MIT/202208/ts
+  - https://www.craft.do/s/yE0O3cmWP35qHQ
+  - An extensible and headless text-editor framework.
+  - Pine is an extensible text-editor framework that prioritizes modularity and performance.
+  - Pine adopts an extension system, similar to other prosemirror-based frameworks such as TipTap.
 
 - xen-editor /4Star/MIT/202112/ts
   - https://github.com/specup/xen-editor
@@ -361,16 +406,24 @@ modified: 2022-08-18T16:57:46.405Z
       - Paper powered by jsipfs and ProseMirror
     - https://github.com/li-yechao/paper-collab
 
-- react-tinacms-editor
+- react-tinacms-editor /ts
   - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
-  - 基于ts
 
 - https://github.com/humhub/humhub-prosemirror /202205/js
   - 打包使用grunt
 
+- https://github.com/Musery/report_system
+  - rjx-wysiwyg 基于 prosemirror和mdast及其相关扩展插件实现的可视化 markdown 语法报表在线编辑和支持docx, pdf格式报表导出
+
+- https://github.com/SeogJongYu/editor-demo
+  - Django Backend / React Frontend ，使用@toast-ui/editor.v3
+
 - pubpub-editor /100Star/GPL.v2/202003/js/inactive
   - https://github.com/pubpub/pubpub-editor
   - A stand alone, extensible WSIWYG editor based on ProseMirror.
+  - https://github.com/pubpub/pubpub/tree/master/client/components/Editor
+    - Collaborative Community Publishing
+    - 最新的编辑器
   - https://github.com/pubpub/prosemirror-reactive /NoDeps
     - Reactive documents for Prosemirror
 
@@ -386,9 +439,9 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/adrianheine/ProsePad /25Star/AGPL.v3/201909/js/inactive
   - ProsePad is a real-time collaborative text editor like Etherpad, but based on ProseMirror
 
-- https://gitlab.com/smoores/ode /inactive
+- https://gitlab.com/smoores/ode /202101/ts/inactive
   - A self-hosted collaborative rich text editor.
-  - It's based on Parse Platform, an open source, self-hosted "Complete Application Stack, " and Prosemirror, a rich text editor toolkit.
+  - It's based on Parse Platform, an open source, self-hosted "Complete Application Stack, " and Prosemirror.
 
 - https://github.com/Collaborne/mwc-markdown-editor /202006/inactive
   - A markdown editor following Material Design spec
@@ -405,7 +458,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://lkiarest.github.io/zeditor/
   - ProseMirro based Rich Text Editor
 
-- pubsweet/xpub-edit /inactive
+- pubsweet/xpub-edit /202111/js/inactive
   - https://gitlab.coko.foundation/pubsweet/pubsweet/-/tree/master/components/client/xpub-edit
 
 - https://github.com/vuau/simplemirror /2Star/MIT/202102/js/inactive

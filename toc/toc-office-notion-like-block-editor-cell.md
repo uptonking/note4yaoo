@@ -34,6 +34,15 @@ modified: 2022-08-14T16:26:48.558Z
   - an editor which supports the concept of blocks. It can help you to build an editor like Notion. 
   - Extensible. Extend the editor with custom blocks and spans.
 
+- tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
+  - https://github.com/dennis84/tiny-write
+  - https://tiny-write.pages.dev/
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序
+  - 依赖solid-js、codemirror6、idb-keyval、date-fns、markdown-it、y-prosemirror
+  - Just a little writing tool with markdown shortcuts that saves every change to local indexeddb.
+  - 跨平台客户端基于tauri实现，tari部分使用rust实现
+
 - editorjs /19.8kStar/Apache2/202206/ts
   - https://github.com/codex-team/editor.js
   - https://editorjs.io/
@@ -162,6 +171,10 @@ modified: 2022-08-14T16:26:48.558Z
 - https://github.com/hashintel/hash
   - https://hash.dev/
   - Data management, integration and modeling with blocks
+  - The Block Protocol is an open-source standard and registry for sharing interactive blocks connected to structured data.
+  - You can build your own blocks, embed them in a website, or allow your users to embed blocks directly within your application.
+  - HASH is our forthcoming open-source, all-in-one workspace platform built around structured data and interactive blocks.
+  - 前端依赖 mui5、headlessui、graphql、apollo/client、prosemirror
 
 - https://github.com/LuceusXylian/BausteinEditor
   - Editor in Blocks: Import, Edit, Move, Delete, Add, Export
