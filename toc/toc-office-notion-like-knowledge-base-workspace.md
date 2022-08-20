@@ -27,6 +27,8 @@ modified: 2022-06-03T21:34:54.893Z
   - 依赖 MySQL/NextJS/nestjs/tiptap
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序
+  - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
+  - 后端依赖 nestjs、passport、typeorm、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
 
 - outline /12.5kStar/BSD > BSL/202109/ts
@@ -242,6 +244,13 @@ modified: 2022-06-03T21:34:54.893Z
   - 文件管理、Markdown笔记、数据图表
   - 前端采用 Angular
   - 后端采用 Node.js + Express.js + typeorm + sqlite3
+
+- mashcard /204Star/Apache2/202208/ts/ruby
+  - https://github.com/mashcard/mashcard
+  - https://www.producthunt.com/upcoming/brickdoc
+  - 旧编辑器tiptap，新编辑器直接使用prosemirror
+  - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
+  - It's not only an open source alternative to Coda and Notion
 
 - https://github.com/hashintel/hash
   - https://hash.dev/

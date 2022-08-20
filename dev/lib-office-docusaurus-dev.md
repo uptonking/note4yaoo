@@ -19,6 +19,11 @@ modified: 2020-12-19T08:52:02.671Z
 
 # examples
 
+- https://github.com/ThinkBucket/docsite
+  - https://thinkbucket.cn/
+  - 只依赖react、@docusaurus/core.v2
+  - 典型的文档风格，左侧目录，右侧书签toc
+
 - https://github.com/wgao19/docusaurus-template-no-style
   - https://docusaurus-template-no-style.netlify.app/
   - Opinionated minimum style template for Docusaurus 2

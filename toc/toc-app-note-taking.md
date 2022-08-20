@@ -18,8 +18,8 @@ modified: 2020-10-22T10:03:50.526Z
   - /633Star/MPLv2/202005/ts
   - In-browser literal notebook runtime used in Starboard.
 
-- https://github.com/notable/notable
-  - /16.4kStar/MIT |AGPLv3/202007/ts
+- notable /16.4kStar/MIT |AGPLv3/202007/ts/桌面版
+  - https://github.com/notable/notable
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
   - license
@@ -31,13 +31,23 @@ modified: 2020-10-22T10:03:50.526Z
     - The source code for newer versions of the app is unavailable
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
 
-- noteworthy /166Star/AGPL.v3/202207/ts
+- noteworthy /166Star/AGPL.v3/202207/ts/桌面版
   - https://github.com/benrbray/noteworthy
   - https://noteworthy.ink/
   - Markdown editor with bidirectional links and excellent math support
   - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
+
+- yn /3.6kStar/AGPL.v3/202208/ts/vue/网页版+桌面版
+  - https://github.com/purocean/yn
+  - https://yank-note.vercel.app/
+  - 一款面向程序员的 Markdown 笔记应用
+  - 使用 Monaco 内核，专为 Markdown 优化，拥有和 VSCode 一样的编辑体验
+  - 支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML 图形、Drawio 图形、宏替换等；支持接入 OpenAI 自动补全。
+  - 兼容性强：数据保存为本地 Markdown 文件；拓展功能尽量用 Markdown 原有的语法实现。
+  - 支持用户编写自己的插件来拓展编辑器的功能。
+  - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。
 
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it
@@ -87,8 +97,9 @@ modified: 2020-10-22T10:03:50.526Z
   - /404Star/AGPLv3/202009/ts
   - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
   - https://github.com/0xGG/vscode-crossnote
+
 - https://github.com/hackmdio/codimd
-  - /6.4kStar/AGPLv3/202009/js
+  - /8kStar/AGPLv3/202208/js/inactive
   - Realtime collaborative markdown notes on all platforms.
   - HackMD helps developers write better documents and build active communities with open collaboration
   - CodiMD is the free software version of HackMD, developed by the HackMD team with reduced features (without book mode)

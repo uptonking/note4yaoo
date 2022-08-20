@@ -57,6 +57,8 @@ modified: 2021-07-21T18:07:43.056Z
     - GraphQL is also pretty core to Gatsby
   - Docusaurus tries to do one thing super well - be the best tool for writing and publishing content.
   - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
+  - ref
+    - https://github.com/ThinkBucket/docsite
 
 - https://github.com/ccontrols/component-controls
   - https://component-controls.com/

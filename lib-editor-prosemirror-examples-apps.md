@@ -106,7 +106,7 @@ modified: 2022-08-18T16:57:15.296Z
 - mashcard /204Star/Apache2/202208/ts/ruby
   - https://github.com/mashcard/mashcard
   - https://www.producthunt.com/upcoming/brickdoc
-  - 旧编辑器tiptap，编辑器直接使用prosemirror
+  - 旧编辑器tiptap，新编辑器直接使用prosemirror
   - MashCard is an all-in-one workspace and low-code platform with Compound Document at its core. 
   - It's not only an open source alternative to Coda and Notion
 
