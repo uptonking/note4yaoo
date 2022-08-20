@@ -127,11 +127,11 @@ modified: 2021-10-25T00:20:04.009Z
   - https://mezek.github.io/Bst_generator/generator.html
   - 生成bst，但下一步的选项太多了，估计有30多个下一步选项
 # Citation Style Language (CSL)
-
 - [手把手教你如何使用Zotero自定义参考文献格式（csl）](https://codeantenna.com/a/xOZGExJP1L)
   - 样式分为两个部分：1）文中引用（IN-TEXT CITATION）；2）参考文献（BIBLIOGRAPHIC ENTRY）
 
 ## [四步实现自定义 Zotero 参考文献格式](https://zhuanlan.zhihu.com/p/31326415)
+
 - "流行的"指的是以 Citation Style Language (CSL) 为基础的一类参考文献软件，相对经典的EndNote 而言，Zotero, Mendeley, Docear 等软件均属于此类。
   - Citation Style Language 是一种基于XML的广泛使用的开源语言，用于定义 citation 和 bibliography 的格式。
 - 称 citation 为参考文献索引，或简称索引。它就是正文中的 [1~3, 5] 或者 somebody (year) 这样的东西。
@@ -145,9 +145,10 @@ modified: 2021-10-25T00:20:04.009Z
   - [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/)
 
 - repo
-  - https://github.com/ORCID/bibtexParseJs
   - https://github.com/retorquere/bibtex-parser
     - A node/npm package for parsing bibtex (.bib) files. This is the parser that drives Better BibTeX for Zotero bib(la)tex imports.
+  - https://github.com/ORCID/bibtexParseJs
+  - https://github.com/GeeLaw/bibtex-ts
 
 - [A summary of BibTex](https://maverick.inria.fr/~Xavier.Decoret/resources/xdkbibtex/bibtex_summary.html)
   - you can have a valid BibTex file that is correctly parsed but produce no output with the standard style files (e.g. alpha.bst) 
@@ -188,4 +189,3 @@ modified: 2021-10-25T00:20:04.009Z
 
 - [LaTeX 第七课：排版参考文献](https://zhuanlan.zhihu.com/p/25013341)
   - \bibliographystyle{apacite}
-

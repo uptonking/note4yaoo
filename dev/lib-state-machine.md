@@ -100,5 +100,5 @@ modified: 2021-05-13T03:13:52.403Z
   - Visualize XState state machines and statecharts in real-time.
 
 - 基于状态机实现解析器的示例
-  - https://github.com/GeeLaw/bibtex-ts/blob/master/src/ObjectModel/ParseDatabase.ts
   - remark > micromark
+  - https://github.com/GeeLaw/bibtex-ts/blob/master/src/ObjectModel/ParseDatabase.ts

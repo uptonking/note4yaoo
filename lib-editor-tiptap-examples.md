@@ -50,6 +50,13 @@ modified: 2022-08-19T23:00:22.162Z
   - An attempt to create a better rich text editor than virgool.io. Powered by Tiptap and ProseMirror
   - 实现了RTL国际化方向
 
+- neeto-editor-tiptap /10Star/MIT/202208/js/tiptap/提交多
+  - https://github.com/bigbinary/neeto-editor-tiptap
+  - https://neeto-editor.onrender.com/
+  - [editor demo with addons](https://neeto-editor.onrender.com/?path=/docs/examples-customize-options-addons--addons)
+  - 支持定义变量
+  - neetoEditor library drives the rich text experience in the neeto products built at BigBinary
+
 - element-tiptap /825Star/MIT/202208/ts/vue/tiptap/inactive
   - https://github.com/Leecason/element-tiptap
   - https://element-tiptap.vercel.app/
@@ -85,13 +92,32 @@ modified: 2022-08-19T23:00:22.162Z
 - https://github.com/GoCapsule/tiptap-extensions
   - https://codesandbox.io/p/github/leonard-henriquez/column-extension/main
   - 支持选中文字后创建分栏，并将选中文字放在第一栏
+
+- https://github.com/n8b8dy/tiptap-spoiler
+  - React extension (actually two extensions) for TipTap to add spoilers to the editor.
+  - http://zetamen.github.io/ckeditor-spoiler/ /ckeditor4
+
+- https://github.com/yaskevich/extension-marker
+  - Tiptap extension for setting custom class of the inline node (mark)
 # examples
+- https://github.com/justinmoon/tiptap-markdown-demo
+  - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.
+
+- notes /4Star/GPL.v3/202208/js
+  - https://github.com/keymorph/notes
+  - https://notes.keymorph.com/
+  - A free web application for creating and editing notes.
+
 - https://github.com/lostdesign/linked
   - https://uselinked.com/
   - Daily journaling without distraction.
 
-- https://github.com/justinmoon/tiptap-markdown-demo
-  - TipTap rich text editor doesn't support markdown, but this repo shows how to hack it in yourself.
+- note-it /16Star/Apache2/202208/ts/tiptap
+  - https://github.com/MuhametSmaili/note-it
+  - https://www.youtube.com/watch?v=jxBAMwxbk78
+  - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
+  - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
+  - You can take notes, convert images to text, download notes to pdf, and more.
 # more
 - https://github.com/ujw0712/editor-and-pdf
   - 依赖 vue3、jspdf, html2canvas、@tiptap/extension-collaboration, yjs, @hocuspocus/provider

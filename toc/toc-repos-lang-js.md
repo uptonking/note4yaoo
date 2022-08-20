@@ -244,6 +244,7 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/ColorlibHQ/AdminLTE
   - /36.2kStar/MIT/202009/js
   - Free admin dashboard template based on Bootstrap 4
+
 - https://github.com/mozilla/pdf.js
   - /32.3kStar/Apache2/202009/js
   - PDF Reader in JavaScript
@@ -252,6 +253,10 @@ modified: 2021-05-14T15:04:42.225Z
     - Create and modify PDF documents in any JavaScript environment
   - https://github.com/MrRio/jsPDF
     - Client-side JavaScript PDF generation for everyone
+  - https://github.com/bpampuch/pdfmake
+    - http://pdfmake.org/
+    - PDF document generation library for server-side and client-side in pure JavaScript.
+
 - https://github.com/pixijs/pixi.js
   - /30.7kStar/MIT/202009/ts
   - Create digital content with the fastest 2D WebGL renderer.

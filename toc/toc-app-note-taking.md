@@ -39,6 +39,13 @@ modified: 2020-10-22T10:03:50.526Z
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
 
+- note-it /16Star/Apache2/202208/ts/tiptap
+  - https://github.com/MuhametSmaili/note-it
+  - https://www.youtube.com/watch?v=jxBAMwxbk78
+  - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
+  - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
+  - You can take notes, convert images to text, download notes to pdf, and more.
+
 - https://github.com/vicjohnson1213/Medley
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
   - A tag-based note taking app using Markdown for formatting.
